@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/07/19 15:27:11 landry Exp $
+$OpenBSD: README,v 1.4 2014/04/30 21:52:07 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,9 +6,9 @@ $OpenBSD: README,v 1.3 2012/07/19 15:27:11 landry Exp $
 
 tt-rss has been installed into ${INSTDIR}
 
-You should point this to the DocumentRoot of your web-server:
+You should point this to the document root of your web-server:
    # cd /var/www/htdocs && ln -s ../tt-rss .
-(make sure you use a relative symlink since Apache is chrooted)
+(make sure you use a relative symlink for chrooted servers)
 
 and proceed to complete the installation by reading the online
 documentation. Which can be found at:

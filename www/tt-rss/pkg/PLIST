@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/12/21 07:32:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/04/30 21:52:07 landry Exp $
 tt-rss/
 tt-rss/LICENSE
 tt-rss/README.md
@@ -75,10 +75,12 @@ tt-rss/config.php-dist
 @sample tt-rss/config.php
 tt-rss/css/
 tt-rss/css/cdm.css
+tt-rss/css/dijit.css
 tt-rss/css/layout.css
 tt-rss/css/prefs.css
 tt-rss/css/tt-rss.css
 tt-rss/css/utility.css
+tt-rss/css/zoom.css
 tt-rss/errors.php
 @owner www
 tt-rss/feed-icons/
@@ -120,8 +122,11 @@ tt-rss/images/score_low.png
 tt-rss/images/score_neutral.png
 tt-rss/images/star.png
 tt-rss/images/tag.png
+tt-rss/images/tick.png
 tt-rss/images/time.png
 tt-rss/images/toolbar.png
+tt-rss/images/treeExpandImages.png
+tt-rss/images/untick.png
 tt-rss/images/user.png
 tt-rss/include/
 tt-rss/include/autoload.php
@@ -134,6 +139,7 @@ tt-rss/include/digest.php
 tt-rss/include/errorhandler.php
 tt-rss/include/feedbrowser.php
 tt-rss/include/functions.php
+tt-rss/include/functions2.php
 tt-rss/include/labels.php
 tt-rss/include/login_form.php
 tt-rss/include/rssfuncs.php
@@ -2270,7 +2276,6 @@ tt-rss/lib/pubsubhubbub/publisher.php
 tt-rss/lib/pubsubhubbub/subscriber.php
 tt-rss/lib/scriptaculous/
 tt-rss/lib/scriptaculous/controls.js
-tt-rss/lib/scriptaculous/dragdrop.js
 tt-rss/lib/scriptaculous/effects.js
 tt-rss/lib/scriptaculous/scriptaculous.js
 tt-rss/lib/sphinxapi.php
@@ -2354,6 +2359,10 @@ tt-rss/locale/zh_CN/
 tt-rss/locale/zh_CN/LC_MESSAGES/
 tt-rss/locale/zh_CN/LC_MESSAGES/messages.mo
 tt-rss/locale/zh_CN/LC_MESSAGES/messages.po
+tt-rss/locale/zh_TW/
+tt-rss/locale/zh_TW/LC_MESSAGES/
+tt-rss/locale/zh_TW/LC_MESSAGES/messages.mo
+tt-rss/locale/zh_TW/LC_MESSAGES/messages.po
 @owner www
 tt-rss/lock/
 tt-rss/lock/.empty
@@ -2362,32 +2371,28 @@ tt-rss/lock/.htaccess
 tt-rss/messages.pot
 tt-rss/opml.php
 tt-rss/plugins/
-tt-rss/plugins/af_buni/
-tt-rss/plugins/af_buni/init.php
-tt-rss/plugins/af_buttersafe/
-tt-rss/plugins/af_buttersafe/init.php
-tt-rss/plugins/af_dilbert/
-tt-rss/plugins/af_dilbert/init.php
-tt-rss/plugins/af_explosm/
-tt-rss/plugins/af_explosm/init.php
+tt-rss/plugins/af_comics/
+tt-rss/plugins/af_comics/af_comics_template.php
+tt-rss/plugins/af_comics/filter_base.php
+tt-rss/plugins/af_comics/filters/
+tt-rss/plugins/af_comics/filters/af_comics_cad.php
+tt-rss/plugins/af_comics/filters/af_comics_comicpress.php
+tt-rss/plugins/af_comics/filters/af_comics_dilbert.php
+tt-rss/plugins/af_comics/filters/af_comics_explosm.php
+tt-rss/plugins/af_comics/filters/af_comics_gocomics.php
+tt-rss/plugins/af_comics/filters/af_comics_pa.php
+tt-rss/plugins/af_comics/filters/af_comics_twp.php
+tt-rss/plugins/af_comics/init.php
 tt-rss/plugins/af_fsckportal/
 tt-rss/plugins/af_fsckportal/init.php
-tt-rss/plugins/af_gocomics/
-tt-rss/plugins/af_gocomics/init.php
 tt-rss/plugins/af_natgeo/
 tt-rss/plugins/af_natgeo/init.php
-tt-rss/plugins/af_pennyarcade/
-tt-rss/plugins/af_pennyarcade/init.php
 tt-rss/plugins/af_redditimgur/
 tt-rss/plugins/af_redditimgur/init.php
 tt-rss/plugins/af_sciam/
 tt-rss/plugins/af_sciam/init.php
-tt-rss/plugins/af_threewordphrase/
-tt-rss/plugins/af_threewordphrase/init.php
 tt-rss/plugins/af_unburn/
 tt-rss/plugins/af_unburn/init.php
-tt-rss/plugins/af_whomp/
-tt-rss/plugins/af_whomp/init.php
 tt-rss/plugins/auth_internal/
 tt-rss/plugins/auth_internal/init.php
 tt-rss/plugins/auth_remote/
@@ -2495,6 +2500,7 @@ tt-rss/schema/versions/mysql/120.sql
 tt-rss/schema/versions/mysql/121.sql
 tt-rss/schema/versions/mysql/122.sql
 tt-rss/schema/versions/mysql/123.sql
+tt-rss/schema/versions/mysql/124.sql
 tt-rss/schema/versions/mysql/13.sql
 tt-rss/schema/versions/mysql/14.sql
 tt-rss/schema/versions/mysql/15.sql
@@ -2617,6 +2623,7 @@ tt-rss/schema/versions/pgsql/120.sql
 tt-rss/schema/versions/pgsql/121.sql
 tt-rss/schema/versions/pgsql/122.sql
 tt-rss/schema/versions/pgsql/123.sql
+tt-rss/schema/versions/pgsql/124.sql
 tt-rss/schema/versions/pgsql/13.sql
 tt-rss/schema/versions/pgsql/14.sql
 tt-rss/schema/versions/pgsql/15.sql
@@ -2717,10 +2724,12 @@ tt-rss/templates/digest_template.txt
 tt-rss/templates/digest_template_html.txt
 tt-rss/templates/email_article_template.txt
 tt-rss/templates/generated_feed.txt
+tt-rss/templates/resetpass_link_template.txt
 tt-rss/templates/resetpass_template.txt
 tt-rss/themes/
 tt-rss/themes/.empty
 tt-rss/themes/default.css
+tt-rss/themes/night.css
 tt-rss/update.php
 tt-rss/update_daemon2.php
 tt-rss/utils/
