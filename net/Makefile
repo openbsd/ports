@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.842 2014/04/22 10:02:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.843 2014/04/30 22:01:59 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -197,6 +197,7 @@
      SUBDIR += libupnp
      SUBDIR += livemedia
      SUBDIR += lldpd
+     SUBDIR += lldpd,snmp
      SUBDIR += loudmouth
      SUBDIR += luasocket
      SUBDIR += luasocket,lua52
