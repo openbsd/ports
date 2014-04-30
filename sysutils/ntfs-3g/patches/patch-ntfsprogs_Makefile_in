@@ -1,7 +1,7 @@
-$OpenBSD: patch-ntfsprogs_Makefile_in,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
---- ntfsprogs/Makefile.in.orig	Sun Jan 13 08:46:46 2013
-+++ ntfsprogs/Makefile.in	Fri Jun 14 11:59:19 2013
-@@ -1083,7 +1083,7 @@ uninstall-man: uninstall-man8
+$OpenBSD: patch-ntfsprogs_Makefile_in,v 1.2 2014/04/30 23:07:25 pirofti Exp $
+--- ntfsprogs/Makefile.in.orig	Sat Feb 15 16:08:00 2014
++++ ntfsprogs/Makefile.in	Tue Apr 29 11:29:37 2014
+@@ -1184,7 +1184,7 @@ uninstall-man: uninstall-man8
  
  @ENABLE_NTFSPROGS_TRUE@install-exec-hook:
  @ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)/sbin

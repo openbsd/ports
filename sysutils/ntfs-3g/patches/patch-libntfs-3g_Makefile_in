@@ -1,7 +1,7 @@
-$OpenBSD: patch-libntfs-3g_Makefile_in,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
---- libntfs-3g/Makefile.in.orig	Sun Jan 13 08:46:46 2013
-+++ libntfs-3g/Makefile.in	Fri Jun 14 12:23:11 2013
-@@ -852,15 +852,9 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
+$OpenBSD: patch-libntfs-3g_Makefile_in,v 1.2 2014/04/30 23:07:25 pirofti Exp $
+--- libntfs-3g/Makefile.in.orig	Sat Feb 15 16:08:00 2014
++++ libntfs-3g/Makefile.in	Tue Apr 29 11:29:37 2014
+@@ -915,15 +915,9 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
  # We may need to move .so files to root
  # And create ldscript or symbolic link from /usr
  install-exec-hook: install-rootlibLTLIBRARIES

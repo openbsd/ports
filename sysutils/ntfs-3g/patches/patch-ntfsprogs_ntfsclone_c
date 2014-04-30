@@ -1,7 +1,7 @@
-$OpenBSD: patch-ntfsprogs_ntfsclone_c,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
---- ntfsprogs/ntfsclone.c.orig	Thu Jun 13 10:49:08 2013
-+++ ntfsprogs/ntfsclone.c	Thu Jun 13 10:51:37 2013
-@@ -746,7 +746,7 @@ static void copy_cluster(int rescue, u64 rescue_lcn, u
+$OpenBSD: patch-ntfsprogs_ntfsclone_c,v 1.2 2014/04/30 23:07:25 pirofti Exp $
+--- ntfsprogs/ntfsclone.c.orig	Sat Feb 15 16:07:52 2014
++++ ntfsprogs/ntfsclone.c	Tue Apr 29 11:29:37 2014
+@@ -818,7 +818,7 @@ static void copy_cluster(int rescue, u64 rescue_lcn, u
  #ifndef NO_STATFS
  		int err = errno;
  		perr_printf("Write failed");
@@ -10,7 +10,7 @@ $OpenBSD: patch-ntfsprogs_ntfsclone_c,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp 
  			Printf("Apparently you tried to clone to a remote "
  			       "Windows computer but they don't\nhave "
  			       "efficient sparse file handling by default. "
-@@ -2056,7 +2056,7 @@ static void set_filesize(s64 filesize)
+@@ -2238,7 +2238,7 @@ static void set_filesize(s64 filesize)
  		Printf("WARNING: Couldn't get filesystem type: "
  		       "%s\n", strerror(errno));
  	else

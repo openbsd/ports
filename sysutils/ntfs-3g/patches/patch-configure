@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
---- configure.orig	Thu Jun 13 09:23:47 2013
-+++ configure	Thu Jun 13 09:24:04 2013
-@@ -20385,7 +20385,7 @@ else
+$OpenBSD: patch-configure,v 1.2 2014/04/30 23:07:25 pirofti Exp $
+--- configure.orig	Sat Feb 15 16:07:59 2014
++++ configure	Tue Apr 29 11:29:37 2014
+@@ -11890,7 +11890,7 @@ else
  fi
  
  		;;
