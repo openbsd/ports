@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.122 2014/04/02 09:36:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.123 2014/04/30 10:54:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.12.0
-REVISION=		0
+GNOME_VERSION=		3.12.1
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -18,16 +17,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject clutter-1.0 clutter-gst-2.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango dbus-1 cogl-path grlpls-0.2
-WANTLIB += expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path dbus-1 expat
+WANTLIB += ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz json-glib-1.0
-WANTLIB += lzma m nautilus-extension orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 stdc++ totem-plparser
-WANTLIB += totem-plparser-mini xcb xcb-render xcb-shm xml2 z zeitgeist-2.0
+WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2 grlpls-0.2
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += json-glib-1.0 lzma m nautilus-extension orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
+WANTLIB += stdc++ totem-plparser totem-plparser-mini xcb xcb-render
+WANTLIB += xcb-shm xml2 z zeitgeist-2.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
