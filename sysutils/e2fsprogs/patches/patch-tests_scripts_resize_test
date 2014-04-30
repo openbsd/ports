@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_scripts_resize_test,v 1.1 2014/04/30 12:38:55 sthen Exp $
+--- tests/scripts/resize_test.orig	Thu Dec 26 05:26:22 2013
++++ tests/scripts/resize_test	Wed Apr 30 10:24:59 2014
+@@ -11,7 +11,7 @@ if truncate -s $SIZE_2 $TMPFILE 2> /dev/null; then
+         > $TMPFILE
+ else
+ 	rm $TMPFILE
+-	export TMPFILE=$(TMPDIR=. mktemp -t $test_name.XXXXXX.tmp)
++	export TMPFILE=$(TMPDIR=. mktemp -t $test_name.tmp.XXXXXXXXXX)
+ 	touch $TMPFILE
+ 	if ! truncate -s $SIZE_2 $TMPFILE 2> /dev/null; then
+ 		rm $TMPFILE
+@@ -22,7 +22,7 @@ fi
+ echo $MKE2FS $FEATURES -qF $TMPFILE $SIZE_1 > $LOG
+ $MKE2FS $FEATURES -qF $TMPFILE $SIZE_1 >> $LOG
+ 
+-OUT_TMP=$(mktemp -t csum-tmp.XXXXXX)
++OUT_TMP=$(mktemp -t csum-tmp.XXXXXXXXXX)
+ 
+ date > $OUT_TMP
+ cat $E2FSCK >> $OUT_TMP

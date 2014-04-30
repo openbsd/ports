@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_test_one_in,v 1.1 2014/04/30 12:38:55 sthen Exp $
+--- tests/test_one.in.orig	Wed Apr 30 10:22:32 2014
++++ tests/test_one.in	Wed Apr 30 10:22:40 2014
+@@ -28,7 +28,7 @@ fi
+ 
+ . $TEST_CONFIG
+ 
+-TMPFILE=$(mktemp -t e2fsprogs-tmp.XXXXXX)
++TMPFILE=$(mktemp -t e2fsprogs-tmp.XXXXXXXXXX)
+ 
+ test_name=`echo $test_dir | sed -e 's;.*/;;'`
+ if [ -f $test_dir ] ; then

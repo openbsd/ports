@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2014/04/30 11:40:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2014/04/30 12:38:55 sthen Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
 DISTNAME=	e2fsprogs-1.42.9
+REVISION=	0
 CATEGORIES=	sysutils devel
 SHARED_LIBS=	blkid		0.0 \
 		com_err		21.0 \

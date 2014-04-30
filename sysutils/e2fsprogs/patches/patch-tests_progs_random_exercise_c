@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_progs_random_exercise_c,v 1.1 2014/04/30 12:38:55 sthen Exp $
+--- tests/progs/random_exercise.c.orig	Wed Apr 30 10:20:57 2014
++++ tests/progs/random_exercise.c	Wed Apr 30 10:22:07 2014
+@@ -71,7 +71,7 @@ unsigned int get_inode_num(int fd)
+ 
+ void create_random_file()
+ {
+-	char template[16] = "EX.XXXXXX";
++	char template[16] = "EX.XXXXXXXXXX";
+ 	int	fd;
+ 	int	isdir = 0;
+ 	int	size;

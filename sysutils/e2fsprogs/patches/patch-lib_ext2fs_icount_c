@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ext2fs_icount_c,v 1.1 2014/04/30 12:38:55 sthen Exp $
+--- lib/ext2fs/icount.c.orig	Wed Apr 30 10:20:57 2014
++++ lib/ext2fs/icount.c	Wed Apr 30 10:21:37 2014
+@@ -191,7 +191,7 @@ errcode_t ext2fs_create_icount_tdb(ext2_filsys fs, cha
+ 	if (retval)
+ 		goto errout;
+ 	uuid_unparse(fs->super->s_uuid, uuid);
+-	sprintf(fn, "%s/%s-icount-XXXXXX", tdb_dir, uuid);
++	sprintf(fn, "%s/%s-icount-XXXXXXXXXX", tdb_dir, uuid);
+ 	fd = mkstemp(fn);
+ 	if (fd < 0)
+ 		return fd;

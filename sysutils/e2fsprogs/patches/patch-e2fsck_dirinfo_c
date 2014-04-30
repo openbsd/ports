@@ -1,0 +1,12 @@
+$OpenBSD: patch-e2fsck_dirinfo_c,v 1.1 2014/04/30 12:38:55 sthen Exp $
+--- e2fsck/dirinfo.c.orig	Wed Apr 30 10:20:57 2014
++++ e2fsck/dirinfo.c	Wed Apr 30 10:21:40 2014
+@@ -61,7 +61,7 @@ static void setup_tdb(e2fsck_t ctx, ext2_ino_t num_dir
+ 		return;
+ 
+ 	uuid_unparse(ctx->fs->super->s_uuid, uuid);
+-	sprintf(db->tdb_fn, "%s/%s-dirinfo-XXXXXX", tdb_dir, uuid);
++	sprintf(db->tdb_fn, "%s/%s-dirinfo-XXXXXXXXXX", tdb_dir, uuid);
+ 	fd = mkstemp(db->tdb_fn);
+ 	if (fd < 0) {
+ 		db->tdb = NULL;

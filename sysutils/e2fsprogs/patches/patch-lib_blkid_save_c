@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_blkid_save_c,v 1.1 2014/04/30 12:38:55 sthen Exp $
+--- lib/blkid/save.c.orig	Wed Apr 30 10:20:57 2014
++++ lib/blkid/save.c	Wed Apr 30 10:21:34 2014
+@@ -94,7 +94,7 @@ int blkid_flush_cache(blkid_cache cache)
+ 	if (ret == 0 && S_ISREG(st.st_mode)) {
+ 		tmp = malloc(strlen(filename) + 8);
+ 		if (tmp) {
+-			sprintf(tmp, "%s-XXXXXX", filename);
++			sprintf(tmp, "%s-XXXXXXXXXX", filename);
+ 			fd = mkstemp(tmp);
+ 			if (fd >= 0) {
+ 				file = fdopen(fd, "w");
