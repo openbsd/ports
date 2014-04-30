@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/19 10:05:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/04/30 10:54:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
-VERSION =		5.0.6
+VERSION =		5.0.7
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
@@ -19,7 +19,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += aspell m pthread sqlite3
-WANTLIB-main += ${WANTLIB} c stdc++
+WANTLIB-main += ${WANTLIB} c
 WANTLIB-java += ${WANTLIB} link-grammar
 
 MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
