@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/04/29 09:39:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.50 2014/04/30 09:31:20 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -11,7 +11,7 @@ PKGNAME-langlist =	kde4-langlist-${MODKDE4_VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs->=4
-REVISION-main =		6
+REVISION-main =		7
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -97,6 +97,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			misc/shared-desktop-ontologies \
 			net/cagibi \
 			sysutils/gamin \
+			sysutils/upower \
 			x11/dbus \
 			x11/grantlee \
 			x11/gtk+2,-guic \

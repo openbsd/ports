@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/02/08 18:15:20 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/04/30 09:31:20 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @newgroup _kdm:730
@@ -411,6 +411,7 @@ lib/libkdeinit4_plasma-windowed.so
 lib/python${MODPY_VERSION}/site-packages/PyKDE4/plasmascript.py
 lib/python${MODPY_VERSION}/site-packages/PyKDE4/plasmascript.pyc
 lib/strigi/strigita_font.so
+@bin libexec/backlighthelper
 @bin libexec/fontinst
 @bin libexec/fontinst_helper
 libexec/fontinst_x11
@@ -1376,6 +1377,7 @@ share/dbus-1/system-services/org.kde.fontinst.service
 share/dbus-1/system-services/org.kde.kcontrol.kcmclock.service
 share/dbus-1/system-services/org.kde.kcontrol.kcmkdm.service
 share/dbus-1/system-services/org.kde.ksysguard.processlisthelper.service
+share/dbus-1/system-services/org.kde.powerdevil.backlighthelper.service
 share/doc/HTML/en/kcontrol/autostart/
 share/doc/HTML/en/kcontrol/autostart/common
 share/doc/HTML/en/kcontrol/autostart/index.cache.bz2
@@ -1624,6 +1626,7 @@ share/examples/dbus-1/system.d/org.kde.kcontrol.kcmkdm.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmkdm.conf
 share/examples/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
+share/examples/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
 share/examples/kde/
 share/examples/kde/kdm/
 @sample ${SYSCONFDIR}/kdm/
@@ -2513,6 +2516,7 @@ share/polkit-1/actions/org.kde.fontinst.policy
 share/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
 share/polkit-1/actions/org.kde.kcontrol.kcmkdm.policy
 share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
+share/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy
 share/sounds/pop-kde4.wav
 share/wallpapers/
 share/wallpapers/stripes.png

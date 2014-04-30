@@ -1,0 +1,38 @@
+$OpenBSD: patch-powerdevil_daemon_BackendConfig_cmake,v 1.1 2014/04/30 09:31:20 zhuk Exp $
+--- powerdevil/daemon/BackendConfig.cmake.orig Thu Jan 30 20:25:09 2014
++++ powerdevil/daemon/BackendConfig.cmake      Mon Mar 31 23:24:56 2014
+@@ -3,7 +3,6 @@
+
+
+ ########################## UPower Backend #####################################
+-if (UDEV_FOUND)
+     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/backends/upower
+                         ${X11_INCLUDE_DIR}
+                         ${X11_Xrandr_INCLUDE_PATH})
+@@ -14,10 +13,16 @@ if (UDEV_FOUND)
+         backends/upower/powerdevilupowerbackend.cpp
+         backends/upower/xrandrbrightness.cpp
+         backends/upower/xrandrx11helper.cpp
+-        backends/upower/udevqtclient.cpp
+-        backends/upower/udevqtdevice.cpp
+     )
+
++    if (UDEV_FOUND)
++        set(powerdevilupowerbackend_SRCS
++            ${powerdevilupowerbackend_SRCS}
++            backends/upower/udevqtclient.cpp
++            backends/upower/udevqtdevice.cpp
++        )
++    endif (UDEV_FOUND)
++
+     set_source_files_properties(
+     ${CMAKE_CURRENT_SOURCE_DIR}/backends/upower/dbus/org.freedesktop.UPower.xml
+     ${CMAKE_CURRENT_SOURCE_DIR}/backends/upower/dbus/org.freedesktop.UPower.Device.xml
+@@ -47,7 +52,6 @@ if (UDEV_FOUND)
+     install(TARGETS backlighthelper DESTINATION ${LIBEXEC_INSTALL_DIR})
+     kde4_install_auth_helper_files(backlighthelper org.kde.powerdevil.backlighthelper root)
+     kde4_install_auth_actions(org.kde.powerdevil.backlighthelper ${CMAKE_CURRENT_SOURCE_DIR}/backends/upower/backlight_helper_actions.actions)
+-endif (UDEV_FOUND)
+
+ ########################## HAL Backend #####################################
+
