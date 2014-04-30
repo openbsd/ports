@@ -1,38 +1,30 @@
-$OpenBSD: patch-Makefile,v 1.4 2013/12/11 10:45:49 dcoppa Exp $
---- Makefile.orig	Tue Nov 26 09:48:03 2013
-+++ Makefile	Wed Dec 11 11:38:37 2013
-@@ -5,7 +5,7 @@
+$OpenBSD: patch-Makefile,v 1.5 2014/04/30 05:09:29 dcoppa Exp $
+--- Makefile.orig	Mon Dec  9 21:52:28 2013
++++ Makefile	Wed Apr 30 07:05:05 2014
+@@ -5,8 +5,8 @@
  # http://miniupnp.free.fr/libnatpmp.html
  
  OS = $(shell uname -s)
 -CC = gcc
+-INSTALL = install -p
 +CC ?= gcc
- INSTALL = install
++INSTALL ?= install -p
+ ARCH = $(shell uname -m | sed -e s/i.86/i686/)
  VERSION = $(shell cat VERSION)
  
-@@ -22,7 +22,7 @@ endif
- # APIVERSION is used in soname
- APIVERSION = 1
- #LDFLAGS = -Wl,--no-undefined
--CFLAGS = -Os
-+CFLAGS ?= -Os
- #CFLAGS = -g -O0
- CFLAGS += -fPIC
- CFLAGS += -Wall
-@@ -47,9 +47,9 @@ ifneq (,$(findstring WIN,$(OS)))
+@@ -49,9 +49,9 @@ ifneq (,$(findstring WIN,$(OS)))
    CC = i686-w64-mingw32-gcc
    EXTRA_LD = -lws2_32 -lIphlpapi -Wl,--no-undefined -Wl,--enable-runtime-pseudo-reloc --Wl,kill-at
  else
 -  SHAREDLIB = libnatpmp.so
--  JNISHAREDLIB = libjninatpmp.so
--  SONAME = $(SHAREDLIB).$(APIVERSION)
 +  SHAREDLIB ?= libnatpmp.so
-+  JNISHAREDLIB ?= libjninatpmp.so
+   JNISHAREDLIB = libjninatpmp.so
+-  SONAME = $(SHAREDLIB).$(APIVERSION)
 +  SONAME ?= $(SHAREDLIB).$(APIVERSION)
+   SONAMEFLAGS=-Wl,-soname,$(JNISHAREDLIB)
  endif
  endif
- 
-@@ -88,13 +88,12 @@ depend:
+@@ -93,13 +93,12 @@ depend:
  
  install:	$(HEADERS) $(STATICLIB) $(SHAREDLIB) natpmpc-shared
  	$(INSTALL) -d $(INSTALLDIRINC)
@@ -49,8 +41,8 @@ $OpenBSD: patch-Makefile,v 1.4 2013/12/11 10:45:49 dcoppa Exp $
 +	$(INSTALL_PROGRAM) natpmpc-shared $(INSTALLDIRBIN)/natpmpc
  
  $(JNIHEADERS): fr/free/miniupnp/libnatpmp/NatPmp.class
- 	javah -jni fr.free.miniupnp.libnatpmp.NatPmp
-@@ -157,7 +156,7 @@ $(SHAREDLIB):	$(LIBOBJS)
+ 	$(JAVAH) -jni fr.free.miniupnp.libnatpmp.NatPmp
+@@ -165,7 +164,7 @@ $(SHAREDLIB):	$(LIBOBJS)
  ifeq ($(OS), Darwin)
  	$(CC) -dynamiclib -Wl,-install_name,$(SONAME) -o $@ $^
  else

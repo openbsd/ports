@@ -1,0 +1,15 @@
+$OpenBSD: patch-natpmp_h,v 1.1 2014/04/30 05:09:29 dcoppa Exp $
+--- natpmp.h.orig	Tue Apr 29 22:01:36 2014
++++ natpmp.h	Tue Apr 29 22:03:40 2014
+@@ -48,10 +48,9 @@ typedef unsigned short uint16_t;
+ #define in_addr_t uint32_t
+ #include "declspec.h"
+ #else	/* WIN32 */
++#define LIBSPEC
+ #include <netinet/in.h>
+ #endif	/* WIN32 */
+-
+-#include "declspec.h"
+ 
+ typedef struct {
+ 	int s;	/* socket */
