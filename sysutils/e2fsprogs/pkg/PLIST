@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/04/22 10:21:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/04/30 11:40:04 ajacoutot Exp $
 @conflict e2fs-uuid-*
 @conflict uuid-*
 @conflict ossp-uuid-<1.6.2p2
@@ -77,6 +77,9 @@ lib/pkgconfig/uuid.pc
 @man man/man3/uuid_time.3
 @man man/man3/uuid_unparse.3
 @man man/man5/e2fsck.conf.5
+@man man/man5/ext2.5
+@man man/man5/ext3.5
+@man man/man5/ext4.5
 @man man/man5/mke2fs.conf.5
 @man man/man8/badblocks.8
 @man man/man8/blkid.8
