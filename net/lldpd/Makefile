@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/11 12:23:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/30 19:38:51 jasper Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 DISTNAME=	lldpd-0.7.7
+REVISION=	0
 
 SHARED_LIBS +=	lldpctl                   0.0 # 1.0
 
@@ -34,7 +35,7 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 CONFIGURE_ARGS+=	--with-snmp
 LIB_DEPENDS+=		net/net-snmp
 WANTLIB += netsnmp netsnmpagent netsnmpmibs
-WANTLIB += crypto kvm m perl util wrap
+WANTLIB += crypto kvm m perl util
 .endif
 
 CPPFLAGS+=		-I${LOCALBASE}/include
