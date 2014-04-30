@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.7 2014/04/30 13:21:00 kurt Exp $
+--- jdk/make/common/shared/Sanity.gmk.orig	Fri Sep  6 14:27:37 2013
++++ jdk/make/common/shared/Sanity.gmk	Tue Apr 29 08:12:24 2014
+@@ -521,7 +521,7 @@ sane-variant:
+ # LD_LIBRARY_PATH should not be set, unless you are insane.
+ ######################################################
+ sane-ld_library_path:
+-ifdef LD_LIBRARY_PATH
++ifdef LD_LIBRARY_PATH_DISABLED
+ 	@$(ECHO) "ERROR: Your LD_LIBRARY_PATH environment variable is set.  This may \n" \
+ 	   "      produce binaries binaries incorrectly.  Please unset it \n" \
+ 	   "      and start your build again. \n" \

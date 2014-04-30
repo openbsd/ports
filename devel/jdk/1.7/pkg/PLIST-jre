@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.11 2013/01/14 20:16:56 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.12 2014/04/30 13:21:00 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8|jre->=1.7v0,<1.8v0
 ${JREHOME}/
@@ -17,33 +17,11 @@ ${JREHOME}/bin/
 @bin ${JREHOME}/bin/tnameserv
 @bin ${JREHOME}/bin/unpack200
 ${JREHOME}/lib/
-${JREHOME}/lib/applet/
-${JREHOME}/lib/calendars.properties
-${JREHOME}/lib/charsets.jar
-${JREHOME}/lib/classlist
-${JREHOME}/lib/cmm/
-${JREHOME}/lib/cmm/CIEXYZ.pf
-${JREHOME}/lib/cmm/GRAY.pf
-${JREHOME}/lib/cmm/LINEAR_RGB.pf
-${JREHOME}/lib/cmm/PYCC.pf
-${JREHOME}/lib/cmm/sRGB.pf
-${JREHOME}/lib/content-types.properties
-${JREHOME}/lib/currency.data
-${JREHOME}/lib/ext/
-${JREHOME}/lib/ext/dnsns.jar
-${JREHOME}/lib/ext/localedata.jar
-${JREHOME}/lib/ext/meta-index
-${JREHOME}/lib/ext/sunec.jar
-${JREHOME}/lib/ext/sunjce_provider.jar
-${JREHOME}/lib/ext/sunpkcs11.jar
-${JREHOME}/lib/ext/zipfs.jar
-${JREHOME}/lib/flavormap.properties
-${JREHOME}/lib/fontconfig.bfc
-${JREHOME}/lib/fontconfig.properties.src
 ${JREHOME}/lib/${MACHINE_ARCH}/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
 @bin ${JREHOME}/lib/${MACHINE_ARCH}/jexec
+@bin ${JREHOME}/lib/${MACHINE_ARCH}/jspawnhelper
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
 ${JREHOME}/lib/${MACHINE_ARCH}/jvm.cfg
@@ -68,7 +46,6 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libjdwp.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjpeg.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsdt.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsdt.so
-${JREHOME}/lib/${MACHINE_ARCH}/libjsig.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsound.so
 ${JREHOME}/lib/${MACHINE_ARCH}/liblcms.so
@@ -79,8 +56,6 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libnet.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnio.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnpt.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libnpt.so
-${JREHOME}/lib/${MACHINE_ARCH}/librmi.so
-${JREHOME}/lib/${MACHINE_ARCH}/libsaproc.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libsunec.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
@@ -89,12 +64,33 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/
 ${JREHOME}/lib/${MACHINE_ARCH}/server/Xusage.txt
-${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
-${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/libmawt.so
+${JREHOME}/lib/applet/
+${JREHOME}/lib/calendars.properties
+${JREHOME}/lib/charsets.jar
+${JREHOME}/lib/classlist
+${JREHOME}/lib/cmm/
+${JREHOME}/lib/cmm/CIEXYZ.pf
+${JREHOME}/lib/cmm/GRAY.pf
+${JREHOME}/lib/cmm/LINEAR_RGB.pf
+${JREHOME}/lib/cmm/PYCC.pf
+${JREHOME}/lib/cmm/sRGB.pf
+${JREHOME}/lib/content-types.properties
+${JREHOME}/lib/currency.data
+${JREHOME}/lib/ext/
+${JREHOME}/lib/ext/dnsns.jar
+${JREHOME}/lib/ext/localedata.jar
+${JREHOME}/lib/ext/meta-index
+${JREHOME}/lib/ext/sunec.jar
+${JREHOME}/lib/ext/sunjce_provider.jar
+${JREHOME}/lib/ext/sunpkcs11.jar
+${JREHOME}/lib/ext/zipfs.jar
+${JREHOME}/lib/flavormap.properties
+${JREHOME}/lib/fontconfig.bfc
+${JREHOME}/lib/fontconfig.properties.src
 ${JREHOME}/lib/images/
 ${JREHOME}/lib/images/cursors/
 ${JREHOME}/lib/images/cursors/cursors.properties
@@ -127,8 +123,6 @@ ${JREHOME}/lib/security/cacerts
 ${JREHOME}/lib/security/java.policy
 ${JREHOME}/lib/security/java.security
 ${JREHOME}/lib/security/local_policy.jar
-${JREHOME}/lib/servicetag/
-${JREHOME}/lib/servicetag/jdk_header.png
 ${JREHOME}/lib/sound.properties
 ${JREHOME}/lib/zi/
 ${JREHOME}/lib/zi/Africa/
@@ -157,7 +151,6 @@ ${JREHOME}/lib/zi/Africa/Freetown
 ${JREHOME}/lib/zi/Africa/Gaborone
 ${JREHOME}/lib/zi/Africa/Harare
 ${JREHOME}/lib/zi/Africa/Johannesburg
-${JREHOME}/lib/zi/Africa/Juba
 ${JREHOME}/lib/zi/Africa/Kampala
 ${JREHOME}/lib/zi/Africa/Khartoum
 ${JREHOME}/lib/zi/Africa/Kigali
@@ -187,7 +180,6 @@ ${JREHOME}/lib/zi/Africa/Windhoek
 ${JREHOME}/lib/zi/America/
 ${JREHOME}/lib/zi/America/Adak
 ${JREHOME}/lib/zi/America/Anchorage
-${JREHOME}/lib/zi/America/Anguilla
 ${JREHOME}/lib/zi/America/Antigua
 ${JREHOME}/lib/zi/America/Araguaina
 ${JREHOME}/lib/zi/America/Argentina/
@@ -203,7 +195,6 @@ ${JREHOME}/lib/zi/America/Argentina/San_Juan
 ${JREHOME}/lib/zi/America/Argentina/San_Luis
 ${JREHOME}/lib/zi/America/Argentina/Tucuman
 ${JREHOME}/lib/zi/America/Argentina/Ushuaia
-${JREHOME}/lib/zi/America/Aruba
 ${JREHOME}/lib/zi/America/Asuncion
 ${JREHOME}/lib/zi/America/Atikokan
 ${JREHOME}/lib/zi/America/Bahia
@@ -232,7 +223,6 @@ ${JREHOME}/lib/zi/America/Dawson
 ${JREHOME}/lib/zi/America/Dawson_Creek
 ${JREHOME}/lib/zi/America/Denver
 ${JREHOME}/lib/zi/America/Detroit
-${JREHOME}/lib/zi/America/Dominica
 ${JREHOME}/lib/zi/America/Edmonton
 ${JREHOME}/lib/zi/America/Eirunepe
 ${JREHOME}/lib/zi/America/El_Salvador
@@ -241,8 +231,6 @@ ${JREHOME}/lib/zi/America/Glace_Bay
 ${JREHOME}/lib/zi/America/Godthab
 ${JREHOME}/lib/zi/America/Goose_Bay
 ${JREHOME}/lib/zi/America/Grand_Turk
-${JREHOME}/lib/zi/America/Grenada
-${JREHOME}/lib/zi/America/Guadeloupe
 ${JREHOME}/lib/zi/America/Guatemala
 ${JREHOME}/lib/zi/America/Guayaquil
 ${JREHOME}/lib/zi/America/Guyana
@@ -283,7 +271,6 @@ ${JREHOME}/lib/zi/America/Moncton
 ${JREHOME}/lib/zi/America/Monterrey
 ${JREHOME}/lib/zi/America/Montevideo
 ${JREHOME}/lib/zi/America/Montreal
-${JREHOME}/lib/zi/America/Montserrat
 ${JREHOME}/lib/zi/America/Nassau
 ${JREHOME}/lib/zi/America/New_York
 ${JREHOME}/lib/zi/America/Nipigon
@@ -316,17 +303,12 @@ ${JREHOME}/lib/zi/America/Sao_Paulo
 ${JREHOME}/lib/zi/America/Scoresbysund
 ${JREHOME}/lib/zi/America/Sitka
 ${JREHOME}/lib/zi/America/St_Johns
-${JREHOME}/lib/zi/America/St_Kitts
-${JREHOME}/lib/zi/America/St_Lucia
-${JREHOME}/lib/zi/America/St_Thomas
-${JREHOME}/lib/zi/America/St_Vincent
 ${JREHOME}/lib/zi/America/Swift_Current
 ${JREHOME}/lib/zi/America/Tegucigalpa
 ${JREHOME}/lib/zi/America/Thule
 ${JREHOME}/lib/zi/America/Thunder_Bay
 ${JREHOME}/lib/zi/America/Tijuana
 ${JREHOME}/lib/zi/America/Toronto
-${JREHOME}/lib/zi/America/Tortola
 ${JREHOME}/lib/zi/America/Vancouver
 ${JREHOME}/lib/zi/America/Whitehorse
 ${JREHOME}/lib/zi/America/Winnipeg
@@ -338,7 +320,6 @@ ${JREHOME}/lib/zi/Antarctica/Davis
 ${JREHOME}/lib/zi/Antarctica/DumontDUrville
 ${JREHOME}/lib/zi/Antarctica/Macquarie
 ${JREHOME}/lib/zi/Antarctica/Mawson
-${JREHOME}/lib/zi/Antarctica/McMurdo
 ${JREHOME}/lib/zi/Antarctica/Palmer
 ${JREHOME}/lib/zi/Antarctica/Rothera
 ${JREHOME}/lib/zi/Antarctica/Syowa
@@ -381,6 +362,7 @@ ${JREHOME}/lib/zi/Asia/Kamchatka
 ${JREHOME}/lib/zi/Asia/Karachi
 ${JREHOME}/lib/zi/Asia/Kashgar
 ${JREHOME}/lib/zi/Asia/Kathmandu
+${JREHOME}/lib/zi/Asia/Khandyga
 ${JREHOME}/lib/zi/Asia/Kolkata
 ${JREHOME}/lib/zi/Asia/Krasnoyarsk
 ${JREHOME}/lib/zi/Asia/Kuala_Lumpur
@@ -419,6 +401,7 @@ ${JREHOME}/lib/zi/Asia/Thimphu
 ${JREHOME}/lib/zi/Asia/Tokyo
 ${JREHOME}/lib/zi/Asia/Ulaanbaatar
 ${JREHOME}/lib/zi/Asia/Urumqi
+${JREHOME}/lib/zi/Asia/Ust-Nera
 ${JREHOME}/lib/zi/Asia/Vientiane
 ${JREHOME}/lib/zi/Asia/Vladivostok
 ${JREHOME}/lib/zi/Asia/Yakutsk
@@ -520,7 +503,6 @@ ${JREHOME}/lib/zi/Europe/Stockholm
 ${JREHOME}/lib/zi/Europe/Tallinn
 ${JREHOME}/lib/zi/Europe/Tirane
 ${JREHOME}/lib/zi/Europe/Uzhgorod
-${JREHOME}/lib/zi/Europe/Vaduz
 ${JREHOME}/lib/zi/Europe/Vienna
 ${JREHOME}/lib/zi/Europe/Vilnius
 ${JREHOME}/lib/zi/Europe/Volgograd
@@ -561,7 +543,6 @@ ${JREHOME}/lib/zi/Pacific/Gambier
 ${JREHOME}/lib/zi/Pacific/Guadalcanal
 ${JREHOME}/lib/zi/Pacific/Guam
 ${JREHOME}/lib/zi/Pacific/Honolulu
-${JREHOME}/lib/zi/Pacific/Johnston
 ${JREHOME}/lib/zi/Pacific/Kiritimati
 ${JREHOME}/lib/zi/Pacific/Kosrae
 ${JREHOME}/lib/zi/Pacific/Kwajalein

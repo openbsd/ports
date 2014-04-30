@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.67 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2014/04/30 13:21:00 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${V}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V}
-U=		21
+U=		55
 V=		1.7.0.${U}
-B=		b11
+B=		b13
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
-REVISION=	2
 EPOCH=		0
 
-JDK_SRC=	openjdk-7u6-fcs-src-b24-28_aug_2012.zip
-PATCH_SET=	openjdk-7u${U}-patch-set-20130506.zip
+JDK_SRC=	openjdk-7u40-fcs-src-b43-26_aug_2013.zip
+PATCH_SET=	openjdk-7u${U}-patch-set-20140428.zip
 
 DISTFILES=	${JDK_SRC} ${PATCH_SET}:1
 EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET}
@@ -31,7 +30,7 @@ FLAVOR?=
 
 HOMEPAGE=	http://openjdk.java.net/
 
-MASTER_SITES=	http://www.java.net/download/openjdk/jdk7u6/promoted/${B}/ \
+MASTER_SITES=	http://download.java.net/openjdk/jdk7u40/promoted/b43/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		http://distfiles.nl/
 MASTER_SITES1=  http://www.intricatesoftware.com/distfiles/ \
@@ -143,3 +142,22 @@ do-install:
 	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
 
 .include <bsd.port.mk>
+
+# The bootjdk is the jdk image with some parts deleted
+# and a copy of the system shared libs needed to run it.
+# The parts deleted are not needed for bootstrap and would
+# require more system shared libs to be saved.
+build-bootjdk: ${_BUILD_COOKIE}
+	@rm -rf ${WRKDIR}/tmp
+	@mkdir -p ${WRKDIR}/tmp/bootjdk
+	@mkdir -p ${WRKDIR}/tmp/bootjdk-libs
+	@cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${WRKDIR}/tmp/bootjdk -xf - 
+	@cd ${WRKDIR}/tmp/bootjdk && rm -rf demo sample
+	@cd ${WRKDIR}/tmp/bootjdk && rm bin/appletviewer bin/policytool jre/bin/policytool
+	@cd ${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH} && rm libnpt.so libinstrument.so libsplashscreen.so libjsound.so xawt/libmawt.so
+	@LD_LIBRARY_PATH="${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH}:${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH}/server" \
+		find ${WRKDIR}/tmp/bootjdk -type f -perm -500 -exec ldd {} \; 2>/dev/null | \
+		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
+		xargs -I % cp /% ${WRKDIR}/tmp/bootjdk-libs
+	@cd ${WRKDIR}/tmp && tar czf openjdk7-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*
+	@echo "New bootjdk is located at ${WRKDIR}/tmp/openjdk7-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz"

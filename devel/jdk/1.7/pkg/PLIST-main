@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2013/01/14 20:16:56 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2014/04/30 13:21:00 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
 ${JDKHOME}/
@@ -442,33 +442,11 @@ ${JDKHOME}/jre/bin/
 @bin ${JDKHOME}/jre/bin/tnameserv
 @bin ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/lib/
-${JDKHOME}/jre/lib/applet/
-${JDKHOME}/jre/lib/calendars.properties
-${JDKHOME}/jre/lib/charsets.jar
-${JDKHOME}/jre/lib/classlist
-${JDKHOME}/jre/lib/cmm/
-${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
-${JDKHOME}/jre/lib/cmm/GRAY.pf
-${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
-${JDKHOME}/jre/lib/cmm/PYCC.pf
-${JDKHOME}/jre/lib/cmm/sRGB.pf
-${JDKHOME}/jre/lib/content-types.properties
-${JDKHOME}/jre/lib/currency.data
-${JDKHOME}/jre/lib/ext/
-${JDKHOME}/jre/lib/ext/dnsns.jar
-${JDKHOME}/jre/lib/ext/localedata.jar
-${JDKHOME}/jre/lib/ext/meta-index
-${JDKHOME}/jre/lib/ext/sunec.jar
-${JDKHOME}/jre/lib/ext/sunjce_provider.jar
-${JDKHOME}/jre/lib/ext/sunpkcs11.jar
-${JDKHOME}/jre/lib/ext/zipfs.jar
-${JDKHOME}/jre/lib/flavormap.properties
-${JDKHOME}/jre/lib/fontconfig.bfc
-${JDKHOME}/jre/lib/fontconfig.properties.src
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
 @bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jexec
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jspawnhelper
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/libjli.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jvm.cfg
@@ -494,7 +472,6 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjdwp.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjpeg.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsound.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/liblcms.so
@@ -505,8 +482,6 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnet.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnio.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/librmi.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
@@ -516,12 +491,33 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
+${JDKHOME}/jre/lib/applet/
+${JDKHOME}/jre/lib/calendars.properties
+${JDKHOME}/jre/lib/charsets.jar
+${JDKHOME}/jre/lib/classlist
+${JDKHOME}/jre/lib/cmm/
+${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
+${JDKHOME}/jre/lib/cmm/GRAY.pf
+${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
+${JDKHOME}/jre/lib/cmm/PYCC.pf
+${JDKHOME}/jre/lib/cmm/sRGB.pf
+${JDKHOME}/jre/lib/content-types.properties
+${JDKHOME}/jre/lib/currency.data
+${JDKHOME}/jre/lib/ext/
+${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/localedata.jar
+${JDKHOME}/jre/lib/ext/meta-index
+${JDKHOME}/jre/lib/ext/sunec.jar
+${JDKHOME}/jre/lib/ext/sunjce_provider.jar
+${JDKHOME}/jre/lib/ext/sunpkcs11.jar
+${JDKHOME}/jre/lib/ext/zipfs.jar
+${JDKHOME}/jre/lib/flavormap.properties
+${JDKHOME}/jre/lib/fontconfig.bfc
+${JDKHOME}/jre/lib/fontconfig.properties.src
 ${JDKHOME}/jre/lib/images/
 ${JDKHOME}/jre/lib/images/cursors/
 ${JDKHOME}/jre/lib/images/cursors/cursors.properties
@@ -554,8 +550,6 @@ ${JDKHOME}/jre/lib/security/cacerts
 ${JDKHOME}/jre/lib/security/java.policy
 ${JDKHOME}/jre/lib/security/java.security
 ${JDKHOME}/jre/lib/security/local_policy.jar
-${JDKHOME}/jre/lib/servicetag/
-${JDKHOME}/jre/lib/servicetag/jdk_header.png
 ${JDKHOME}/jre/lib/sound.properties
 ${JDKHOME}/jre/lib/zi/
 ${JDKHOME}/jre/lib/zi/Africa/
@@ -584,7 +578,6 @@ ${JDKHOME}/jre/lib/zi/Africa/Freetown
 ${JDKHOME}/jre/lib/zi/Africa/Gaborone
 ${JDKHOME}/jre/lib/zi/Africa/Harare
 ${JDKHOME}/jre/lib/zi/Africa/Johannesburg
-${JDKHOME}/jre/lib/zi/Africa/Juba
 ${JDKHOME}/jre/lib/zi/Africa/Kampala
 ${JDKHOME}/jre/lib/zi/Africa/Khartoum
 ${JDKHOME}/jre/lib/zi/Africa/Kigali
@@ -614,7 +607,6 @@ ${JDKHOME}/jre/lib/zi/Africa/Windhoek
 ${JDKHOME}/jre/lib/zi/America/
 ${JDKHOME}/jre/lib/zi/America/Adak
 ${JDKHOME}/jre/lib/zi/America/Anchorage
-${JDKHOME}/jre/lib/zi/America/Anguilla
 ${JDKHOME}/jre/lib/zi/America/Antigua
 ${JDKHOME}/jre/lib/zi/America/Araguaina
 ${JDKHOME}/jre/lib/zi/America/Argentina/
@@ -630,7 +622,6 @@ ${JDKHOME}/jre/lib/zi/America/Argentina/San_Juan
 ${JDKHOME}/jre/lib/zi/America/Argentina/San_Luis
 ${JDKHOME}/jre/lib/zi/America/Argentina/Tucuman
 ${JDKHOME}/jre/lib/zi/America/Argentina/Ushuaia
-${JDKHOME}/jre/lib/zi/America/Aruba
 ${JDKHOME}/jre/lib/zi/America/Asuncion
 ${JDKHOME}/jre/lib/zi/America/Atikokan
 ${JDKHOME}/jre/lib/zi/America/Bahia
@@ -659,7 +650,6 @@ ${JDKHOME}/jre/lib/zi/America/Dawson
 ${JDKHOME}/jre/lib/zi/America/Dawson_Creek
 ${JDKHOME}/jre/lib/zi/America/Denver
 ${JDKHOME}/jre/lib/zi/America/Detroit
-${JDKHOME}/jre/lib/zi/America/Dominica
 ${JDKHOME}/jre/lib/zi/America/Edmonton
 ${JDKHOME}/jre/lib/zi/America/Eirunepe
 ${JDKHOME}/jre/lib/zi/America/El_Salvador
@@ -668,8 +658,6 @@ ${JDKHOME}/jre/lib/zi/America/Glace_Bay
 ${JDKHOME}/jre/lib/zi/America/Godthab
 ${JDKHOME}/jre/lib/zi/America/Goose_Bay
 ${JDKHOME}/jre/lib/zi/America/Grand_Turk
-${JDKHOME}/jre/lib/zi/America/Grenada
-${JDKHOME}/jre/lib/zi/America/Guadeloupe
 ${JDKHOME}/jre/lib/zi/America/Guatemala
 ${JDKHOME}/jre/lib/zi/America/Guayaquil
 ${JDKHOME}/jre/lib/zi/America/Guyana
@@ -710,7 +698,6 @@ ${JDKHOME}/jre/lib/zi/America/Moncton
 ${JDKHOME}/jre/lib/zi/America/Monterrey
 ${JDKHOME}/jre/lib/zi/America/Montevideo
 ${JDKHOME}/jre/lib/zi/America/Montreal
-${JDKHOME}/jre/lib/zi/America/Montserrat
 ${JDKHOME}/jre/lib/zi/America/Nassau
 ${JDKHOME}/jre/lib/zi/America/New_York
 ${JDKHOME}/jre/lib/zi/America/Nipigon
@@ -743,17 +730,12 @@ ${JDKHOME}/jre/lib/zi/America/Sao_Paulo
 ${JDKHOME}/jre/lib/zi/America/Scoresbysund
 ${JDKHOME}/jre/lib/zi/America/Sitka
 ${JDKHOME}/jre/lib/zi/America/St_Johns
-${JDKHOME}/jre/lib/zi/America/St_Kitts
-${JDKHOME}/jre/lib/zi/America/St_Lucia
-${JDKHOME}/jre/lib/zi/America/St_Thomas
-${JDKHOME}/jre/lib/zi/America/St_Vincent
 ${JDKHOME}/jre/lib/zi/America/Swift_Current
 ${JDKHOME}/jre/lib/zi/America/Tegucigalpa
 ${JDKHOME}/jre/lib/zi/America/Thule
 ${JDKHOME}/jre/lib/zi/America/Thunder_Bay
 ${JDKHOME}/jre/lib/zi/America/Tijuana
 ${JDKHOME}/jre/lib/zi/America/Toronto
-${JDKHOME}/jre/lib/zi/America/Tortola
 ${JDKHOME}/jre/lib/zi/America/Vancouver
 ${JDKHOME}/jre/lib/zi/America/Whitehorse
 ${JDKHOME}/jre/lib/zi/America/Winnipeg
@@ -765,7 +747,6 @@ ${JDKHOME}/jre/lib/zi/Antarctica/Davis
 ${JDKHOME}/jre/lib/zi/Antarctica/DumontDUrville
 ${JDKHOME}/jre/lib/zi/Antarctica/Macquarie
 ${JDKHOME}/jre/lib/zi/Antarctica/Mawson
-${JDKHOME}/jre/lib/zi/Antarctica/McMurdo
 ${JDKHOME}/jre/lib/zi/Antarctica/Palmer
 ${JDKHOME}/jre/lib/zi/Antarctica/Rothera
 ${JDKHOME}/jre/lib/zi/Antarctica/Syowa
@@ -808,6 +789,7 @@ ${JDKHOME}/jre/lib/zi/Asia/Kamchatka
 ${JDKHOME}/jre/lib/zi/Asia/Karachi
 ${JDKHOME}/jre/lib/zi/Asia/Kashgar
 ${JDKHOME}/jre/lib/zi/Asia/Kathmandu
+${JDKHOME}/jre/lib/zi/Asia/Khandyga
 ${JDKHOME}/jre/lib/zi/Asia/Kolkata
 ${JDKHOME}/jre/lib/zi/Asia/Krasnoyarsk
 ${JDKHOME}/jre/lib/zi/Asia/Kuala_Lumpur
@@ -846,6 +828,7 @@ ${JDKHOME}/jre/lib/zi/Asia/Thimphu
 ${JDKHOME}/jre/lib/zi/Asia/Tokyo
 ${JDKHOME}/jre/lib/zi/Asia/Ulaanbaatar
 ${JDKHOME}/jre/lib/zi/Asia/Urumqi
+${JDKHOME}/jre/lib/zi/Asia/Ust-Nera
 ${JDKHOME}/jre/lib/zi/Asia/Vientiane
 ${JDKHOME}/jre/lib/zi/Asia/Vladivostok
 ${JDKHOME}/jre/lib/zi/Asia/Yakutsk
@@ -947,7 +930,6 @@ ${JDKHOME}/jre/lib/zi/Europe/Stockholm
 ${JDKHOME}/jre/lib/zi/Europe/Tallinn
 ${JDKHOME}/jre/lib/zi/Europe/Tirane
 ${JDKHOME}/jre/lib/zi/Europe/Uzhgorod
-${JDKHOME}/jre/lib/zi/Europe/Vaduz
 ${JDKHOME}/jre/lib/zi/Europe/Vienna
 ${JDKHOME}/jre/lib/zi/Europe/Vilnius
 ${JDKHOME}/jre/lib/zi/Europe/Volgograd
@@ -988,7 +970,6 @@ ${JDKHOME}/jre/lib/zi/Pacific/Gambier
 ${JDKHOME}/jre/lib/zi/Pacific/Guadalcanal
 ${JDKHOME}/jre/lib/zi/Pacific/Guam
 ${JDKHOME}/jre/lib/zi/Pacific/Honolulu
-${JDKHOME}/jre/lib/zi/Pacific/Johnston
 ${JDKHOME}/jre/lib/zi/Pacific/Kiritimati
 ${JDKHOME}/jre/lib/zi/Pacific/Kosrae
 ${JDKHOME}/jre/lib/zi/Pacific/Kwajalein
@@ -1060,7 +1041,6 @@ ${JDKHOME}/man/man1/
 @man ${JDKHOME}/man/man1/jstack.1
 @man ${JDKHOME}/man/man1/jstat.1
 @man ${JDKHOME}/man/man1/jstatd.1
-@man ${JDKHOME}/man/man1/jvisualvm.1
 @man ${JDKHOME}/man/man1/keytool.1
 @man ${JDKHOME}/man/man1/native2ascii.1
 @man ${JDKHOME}/man/man1/orbd.1
