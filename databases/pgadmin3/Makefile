@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/04/19 21:03:58 pea Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/30 14:20:08 pea Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.18.1
+REVISION=	0
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
 
@@ -32,7 +33,7 @@ WANTLIB +=      wx_base_xml wx_gtk2_html \
 BUILD_DEPENDS +=	databases/postgresql,-server
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -DAI_ADDRCONFIG=0"
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"
 CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} 
 
 USE_GMAKE=	Yes
