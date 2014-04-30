@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/14 09:21:17 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/04/30 05:04:03 dcoppa Exp $
 @mode g+s
 @group utmp
 @bin bin/urxvt
@@ -33,6 +33,7 @@ lib/urxvt/perl/selection
 lib/urxvt/perl/selection-autotransform
 lib/urxvt/perl/selection-pastebin
 lib/urxvt/perl/selection-popup
+lib/urxvt/perl/selection-to-clipboard
 lib/urxvt/perl/tabbed
 lib/urxvt/perl/urxvt-popup
 lib/urxvt/perl/xim-onthespot
@@ -58,6 +59,7 @@ lib/urxvt/urxvt.pm
 @man man/man1/urxvt-selection-autotransform.1
 @man man/man1/urxvt-selection-pastebin.1
 @man man/man1/urxvt-selection-popup.1
+@man man/man1/urxvt-selection-to-clipboard.1
 @man man/man1/urxvt-selection.1
 @man man/man1/urxvt-tabbed.1
 @man man/man1/urxvt-xim-onthespot.1

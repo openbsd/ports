@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.2 2010/11/25 13:19:35 dcoppa Exp $
---- doc/rxvtd.1.man.in.orig	Wed Dec 30 07:13:12 2009
-+++ doc/rxvtd.1.man.in	Sun Nov 14 14:23:05 2010
-@@ -133,7 +133,7 @@
+$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.3 2014/04/30 05:04:03 dcoppa Exp $
+--- doc/rxvtd.1.man.in.orig	Sat Apr 26 16:29:58 2014
++++ doc/rxvtd.1.man.in	Tue Apr 29 16:45:16 2014
+@@ -142,7 +142,7 @@
  @@RXVT_NAME@@d \- @@RXVT_NAME@@ terminal daemon
  .SH "SYNOPSIS"
  .IX Header "SYNOPSIS"
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_rxvtd_1_man_in,v 1.2 2010/11/25 13:19:35 dcoppa Exp $
  .PP
  \&\fB@@RXVT_NAME@@d\fR \-q \-o \-f    # for .xsession use
  .SH "DESCRIPTION"
-@@ -175,20 +175,6 @@ the lifetime of a specific display/server. If the serv
+@@ -184,20 +184,6 @@ the lifetime of a specific display/server. If the serv
  .IX Item "-f, --fork"
  This makes \fB@@RXVT_NAME@@d\fR fork after it has bound itself to its control
  socket.
