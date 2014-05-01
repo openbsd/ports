@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_extension_internal_pdfinput_pdf-parser_cpp,v 1.6 2014/04/28 16:48:54 kili Exp $
+$OpenBSD: patch-src_extension_internal_pdfinput_pdf-parser_cpp,v 1.7 2014/05/01 20:43:10 kili Exp $
+
+Reported to upstream: https://bugs.launchpad.net/inkscape/+bug/1315142
+
 --- src/extension/internal/pdfinput/pdf-parser.cpp.orig	Thu Dec 13 18:00:46 2012
 +++ src/extension/internal/pdfinput/pdf-parser.cpp	Sun Apr 27 18:26:18 2014
 @@ -861,7 +861,7 @@ void PdfParser::opSetExtGState(Object args[], int numA
