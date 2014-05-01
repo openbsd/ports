@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/31 10:12:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/05/01 20:19:25 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 bin/bind9-config
+@bin bin/delv
 @bin bin/dig
 @bin bin/host
 bin/isc-config.sh
@@ -11,8 +12,10 @@ include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
 include/dns/
+include/dns/acache.h
 include/dns/acl.h
 include/dns/adb.h
+include/dns/bit.h
 include/dns/byaddr.h
 include/dns/cache.h
 include/dns/callbacks.h
@@ -26,25 +29,36 @@ include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
 include/dns/dlz.h
+include/dns/dlz_dlopen.h
+include/dns/dns64.h
 include/dns/dnssec.h
 include/dns/ds.h
+include/dns/dsdigest.h
+include/dns/ecdb.h
 include/dns/enumclass.h
 include/dns/enumtype.h
 include/dns/events.h
 include/dns/fixedname.h
+include/dns/forward.h
+include/dns/geoip.h
 include/dns/iptable.h
 include/dns/journal.h
+include/dns/keydata.h
 include/dns/keyflags.h
 include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/lib.h
 include/dns/log.h
+include/dns/lookup.h
 include/dns/master.h
 include/dns/masterdump.h
 include/dns/message.h
 include/dns/name.h
 include/dns/ncache.h
 include/dns/nsec.h
+include/dns/nsec3.h
+include/dns/opcode.h
+include/dns/order.h
 include/dns/peer.h
 include/dns/portlist.h
 include/dns/private.h
@@ -63,19 +77,24 @@ include/dns/resolver.h
 include/dns/result.h
 include/dns/rootns.h
 include/dns/rpz.h
+include/dns/rriterator.h
+include/dns/rrl.h
 include/dns/sdb.h
 include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
 include/dns/soa.h
 include/dns/ssu.h
+include/dns/stats.h
 include/dns/tcpmsg.h
 include/dns/time.h
+include/dns/timer.h
 include/dns/tkey.h
 include/dns/tsec.h
 include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
+include/dns/update.h
 include/dns/validator.h
 include/dns/version.h
 include/dns/view.h
@@ -88,18 +107,29 @@ include/dst/dst.h
 include/dst/gssapi.h
 include/dst/lib.h
 include/dst/result.h
+include/irs/
+include/irs/context.h
+include/irs/dnsconf.h
+include/irs/netdb.h
+include/irs/platform.h
+include/irs/resconf.h
+include/irs/types.h
+include/irs/version.h
 include/isc/
+include/isc/aes.h
 include/isc/app.h
 include/isc/assertions.h
 include/isc/atomic.h
+include/isc/backtrace.h
+include/isc/base32.h
 include/isc/base64.h
 include/isc/bind9.h
-include/isc/bitstring.h
 include/isc/boolean.h
 include/isc/buffer.h
 include/isc/bufferlist.h
 include/isc/commandline.h
 include/isc/condition.h
+include/isc/crc64.h
 include/isc/dir.h
 include/isc/entropy.h
 include/isc/error.h
@@ -117,6 +147,8 @@ include/isc/httpd.h
 include/isc/int.h
 include/isc/interfaceiter.h
 include/isc/iterated_hash.h
+include/isc/json.h
+include/isc/keyboard.h
 include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
@@ -130,17 +162,20 @@ include/isc/msgcat.h
 include/isc/msgs.h
 include/isc/mutex.h
 include/isc/mutexblock.h
-include/isc/namespace.h
 include/isc/net.h
 include/isc/netaddr.h
 include/isc/netdb.h
+include/isc/netscope.h
 include/isc/offset.h
 include/isc/once.h
 include/isc/ondestroy.h
 include/isc/os.h
 include/isc/parseint.h
 include/isc/platform.h
+include/isc/pool.h
+include/isc/portset.h
 include/isc/print.h
+include/isc/queue.h
 include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
@@ -159,9 +194,11 @@ include/isc/sha2.h
 include/isc/sockaddr.h
 include/isc/socket.h
 include/isc/stat.h
+include/isc/stats.h
 include/isc/stdio.h
 include/isc/stdlib.h
 include/isc/stdtime.h
+include/isc/strerror.h
 include/isc/string.h
 include/isc/symtab.h
 include/isc/syslog.h
@@ -192,6 +229,7 @@ include/isccc/version.h
 include/isccfg/
 include/isccfg/aclconf.h
 include/isccfg/cfg.h
+include/isccfg/dnsconf.h
 include/isccfg/grammar.h
 include/isccfg/log.h
 include/isccfg/namedconf.h
@@ -209,13 +247,27 @@ include/lwres/net.h
 include/lwres/netdb.h
 include/lwres/platform.h
 include/lwres/result.h
+include/lwres/stdlib.h
 include/lwres/version.h
+include/pk11/
+include/pk11/constants.h
+include/pk11/internal.h
+include/pk11/pk11.h
+include/pk11/result.h
+include/pkcs11/
+include/pkcs11/cryptoki.h
+include/pkcs11/pkcs11.h
+include/pkcs11/pkcs11f.h
+include/pkcs11/pkcs11t.h
 lib/libbind9.a
 lib/libbind9.la
 @lib lib/libbind9.so.${LIBbind9_VERSION}
 lib/libdns.a
 lib/libdns.la
 @lib lib/libdns.so.${LIBdns_VERSION}
+lib/libirs.a
+lib/libirs.la
+@lib lib/libirs.so.${LIBirs_VERSION}
 lib/libisc.a
 lib/libisc.la
 @lib lib/libisc.so.${LIBisc_VERSION}
@@ -230,9 +282,11 @@ lib/liblwres.la
 @lib lib/liblwres.so.${LIBlwres_VERSION}
 @man man/man1/arpaname.1
 @man man/man1/bind9-config.1
+@man man/man1/delv.1
 @man man/man1/dig.1
 @man man/man1/host.1
 @man man/man1/isc-config.sh.1
+@man man/man1/named-rrchecker.1
 @man man/man1/nslookup.1
 @man man/man1/nsupdate.1
 @man man/man3/lwres.3
@@ -326,6 +380,7 @@ lib/liblwres.la
 @man man/man8/dnssec-checkds.8
 @man man/man8/dnssec-coverage.8
 @man man/man8/dnssec-dsfromkey.8
+@man man/man8/dnssec-importkey.8
 @man man/man8/dnssec-keyfromlabel.8
 @man man/man8/dnssec-keygen.8
 @man man/man8/dnssec-revoke.8
@@ -343,6 +398,7 @@ lib/liblwres.la
 @man man/man8/nsec3hash.8
 @man man/man8/rndc-confgen.8
 @man man/man8/rndc.8
+@man man/man8/tsig-keygen.8
 @bin sbin/arpaname
 @bin sbin/ddns-confgen
 sbin/dnssec-checkds
@@ -363,9 +419,11 @@ sbin/dnssec-coverage
 @bin sbin/named-checkzone
 sbin/named-compilezone
 @bin sbin/named-journalprint
+@bin sbin/named-rrchecker
 @bin sbin/nsec3hash
 @bin sbin/rndc
 @bin sbin/rndc-confgen
+sbin/tsig-keygen
 share/examples/bind9/
 share/examples/bind9/bind.keys
 @sample ${SYSCONFDIR}/bind.keys

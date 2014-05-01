@@ -3,6 +3,5 @@ BIND is open source software that implements the Domain Name System
 of those protocols, but it is also production-grade software,
 suitable for use in high-volume and high-reliability applications.
 
-The optional "ratelimit" flavour builds BIND9 with the experimental
-patches to add rate limits for authoritative servers, information about
-how to use this is available at http://www.redbarn.org/dns/ratelimits
+Flavours:
+	geoip - build BIND with support for geolocation using the GeoIP api.

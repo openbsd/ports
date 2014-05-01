@@ -1,17 +1,22 @@
-# $OpenBSD: Makefile,v 1.25 2014/04/15 08:53:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2014/05/01 20:19:25 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-V=		9.9.5
+V=		9.10.0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
-SHARED_LIBS +=	bind9                0.0      # 90.9
-SHARED_LIBS +=	dns                  0.1      # 102.2
-SHARED_LIBS +=	isc                  0.2      # 100.0
-SHARED_LIBS +=	isccc                0.0      # 90.6
-SHARED_LIBS +=	isccfg               0.1      # 91.0
-SHARED_LIBS +=	lwres                0.0      # 90.7
+SHARED_LIBS +=	isc                  1.0      # 143.1
+SHARED_LIBS +=	isccc                0.0      # 140.1
+SHARED_LIBS +=	dns                  1.0      # 144.1
+SHARED_LIBS +=	isccfg               0.2      # 142.0
+SHARED_LIBS +=	bind9                0.0      # 140.4
+SHARED_LIBS +=	lwres                0.0      # 140.1
+SHARED_LIBS +=	irs                  0.0      # 141.1
+
+# not installed:
+#SHARED_LIBS +=	isc-nosymtbl         0.0      # 143.1
+#SHARED_LIBS +=	t_api                0.0      # unknown
 
 CATEGORIES=	net
 
@@ -39,6 +44,14 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-python=${MODPY_BIN}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
+
+FLAVORS=	geoip
+FLAVOR?=
+.if ${FLAVOR:Mgeoip}
+CONFIGURE_ARGS+= --with-geoip
+LIB_DEPENDS+=	net/GeoIP
+WANTLIB+=	GeoIP
+.endif
 
 # not strictly speaking interactive, but it configures temporary addresses on
 # lo0 as root, so let's try and avoid running it unintentionally

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.1.1.1 2012/07/19 08:36:45 sthen Exp $
---- lib/isc/unix/socket.c.orig	Fri Feb 18 04:01:16 2011
-+++ lib/isc/unix/socket.c	Thu Apr 21 16:18:42 2011
-@@ -31,6 +31,7 @@
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.2 2014/05/01 20:19:25 sthen Exp $
+--- lib/isc/unix/socket.c.orig	Mon Apr  7 23:02:19 2014
++++ lib/isc/unix/socket.c	Sun Apr 13 22:38:25 2014
+@@ -36,6 +36,7 @@
  #include <errno.h>
  #include <fcntl.h>
  #include <stddef.h>
