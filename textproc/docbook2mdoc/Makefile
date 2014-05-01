@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/03 06:12:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/01 04:02:15 bentley Exp $
 
 COMMENT =		convert DocBook refentry to mdoc
 
-DISTNAME =		docbook2mdoc-0.0.7
+DISTNAME =		docbook2mdoc-0.0.9
 
 CATEGORIES =		textproc
 
