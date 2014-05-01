@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/11/01 16:03:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.31 2014/05/01 13:43:13 benoit Exp $
 
 COMMENT =	medical image conversion
 
@@ -6,9 +6,9 @@ DISTNAME =	xmedcon-0.13.0
 SHARED_LIBS =	mdc	2.3	# .2.1
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://xmedcon.sourceforge.net
+REVISION =	0
 
-MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
+HOMEPAGE =	http://xmedcon.sourceforge.net
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
