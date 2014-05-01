@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.16 2014/04/02 14:34:47 ajacoutot Exp $
+# $OpenBSD: mk.conf.template,v 1.17 2014/05/01 21:25:44 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -17,8 +17,10 @@
 #CDIAGFLAGS=-Wall
 
 # Common(ish) misspellings:
+.poison BUILD_DEPEDNS
 .poison BUILD_DEPEND
 .poison DISTFLIES
+.poison EXTRACT_SUFFIX
 .poison LIB_DEPEND
 .poison MASTER_SITE_SOURCEFORGET
 .poison MODGCC3_ARCHES
@@ -35,6 +37,7 @@
 .poison REVISON
 .poison REVSION
 .poison RUN_DEPEND
+.poison RUN_DEPEDNS
 .poison SEPERATE_BUILD
 .poison SUBIDR
 .poison WABTLIB
