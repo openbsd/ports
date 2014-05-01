@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2014/04/30 13:21:00 kurt Exp $
+# $OpenBSD: Makefile,v 1.69 2014/05/01 00:47:25 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -11,6 +11,8 @@ B=		b13
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
+REVISION-main=	0
+REVISION-jre=	0
 EPOCH=		0
 
 JDK_SRC=	openjdk-7u40-fcs-src-b43-26_aug_2013.zip
@@ -36,6 +38,10 @@ MASTER_SITES=	http://download.java.net/openjdk/jdk7u40/promoted/b43/ \
 MASTER_SITES1=  http://www.intricatesoftware.com/distfiles/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		http://distfiles.nl/
+MASTER_SITES2=	http://spacehopper.org/mirrors/ \
+		http://www.intricatesoftware.com/distfiles/
+MASTER_SITES3=	${MASTER_SITE_APACHE:=ant/binaries/} \
+		http://archive.apache.org/dist/ant/binaries/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
@@ -45,20 +51,33 @@ PERMIT_PACKAGE_CDROM=	Yes
 USE_GROFF =	Yes
 NO_TEST=	Yes
 
+APACHE_ANT=	apache-ant-1.9.3-bin.tar.gz
+SUPDISTFILES+=	openjdk7-bootjdk-i386-20140430.tar.gz:2 \
+		openjdk7-bootjdk-amd64-20140430.tar.gz:2 \
+		${APACHE_ANT}:3
+
 .if ${FLAVOR:Mnative_bootstrap}
 INSTALLED!= (pkg_info -qe "jdk->=1.7.0.00v0,<1.8v0" && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.7.0.00v0 or greater jdk package"
 .endif
-BUILD_DEPENDS+=	jdk->=1.7.0.00v0,<1.8v0:devel/jdk/1.7
+BUILD_DEPENDS+=	jdk->=1.7.0.00v0,<1.8v0:devel/jdk/1.7 \
+		devel/apache-ant>=1.8.2
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.7.0
 .else
-BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6
-ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
+BOOT_JDK=	openjdk7-bootjdk-${ARCH}-20140430.tar.gz
+.include <bsd.port.arch.mk>
+.if (${ARCH}==amd64) || (${ARCH}==i386)
+DISTFILES+=	${BOOT_JDK}:2
+.endif
+DISTFILES+=	${APACHE_ANT}:3
+EXTRACT_ONLY+=	${BOOT_JDK} ${APACHE_ANT}
+MAKE_ENV+=	ANT_HOME=${WRKDIR}/apache-ant-1.9.3 \
+		LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
+ALT_BOOTDIR=	${WRKDIR}/bootjdk
 .endif
 
-BUILD_DEPENDS+=	devel/apache-ant>=1.8.2 \
-		archivers/zip \
+BUILD_DEPENDS+=	archivers/zip \
 		archivers/unzip \
 		print/cups,-libs
 MODULES=	converters/libiconv
@@ -72,7 +91,7 @@ PARALLEL_BUILD=         No
 # Allow HOTSPOT_BUILD_JOBS to be overridden
 HOTSPOT_BUILD_JOBS?= ${MAKE_JOBS}
 
-MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
+MAKE_ENV+=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
 		ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
