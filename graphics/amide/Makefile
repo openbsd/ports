@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.37 2014/04/03 19:53:07 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2014/05/01 07:18:02 benoit Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-1.0.5
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	http://amide.sourceforge.net/
-
-MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =   Yes
