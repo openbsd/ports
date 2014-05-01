@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/12 07:16:44 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/05/01 13:05:29 benoit Exp $
 bin/coverage
 bin/coverage-${MODPY_VERSION}
 bin/coverage2
@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/coverage/control.py
 lib/python${MODPY_VERSION}/site-packages/coverage/control.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/data.py
 lib/python${MODPY_VERSION}/site-packages/coverage/data.pyc
+lib/python${MODPY_VERSION}/site-packages/coverage/debug.py
+lib/python${MODPY_VERSION}/site-packages/coverage/debug.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/execfile.py
 lib/python${MODPY_VERSION}/site-packages/coverage/execfile.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/files.py
@@ -41,9 +43,9 @@ lib/python${MODPY_VERSION}/site-packages/coverage/html.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/coverage_html.js
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/index.html
-lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery-1.4.3.min.js
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery.hotkeys.js
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery.isonscreen.js
+lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery.min.js
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery.tablesorter.min.js
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/keybd_closed.png
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/keybd_open.png
