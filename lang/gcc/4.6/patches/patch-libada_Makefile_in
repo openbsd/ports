@@ -1,0 +1,22 @@
+$OpenBSD: patch-libada_Makefile_in,v 1.1 2014/05/01 23:08:26 tobiasu Exp $
+
+Right above this patch hunk is this amusing comment:
+# The tedious process of getting CFLAGS right.
+
+Nice try!
+
+GNATLIBCFLAGS can't be set via configure and ADA_CFLAGS is not set by default.
+This patch should retain default behavior while allowing to change e.g.
+optimization level when needed.
+
+--- libada/Makefile.in.orig	Thu May  1 21:56:49 2014
++++ libada/Makefile.in	Thu May  1 21:58:40 2014
+@@ -63,7 +63,7 @@ GCC_WARN_CFLAGS = $(LOOSE_WARN)
+ WARN_CFLAGS = @warn_cflags@
+ 
+ TARGET_LIBGCC2_CFLAGS=
+-GNATLIBCFLAGS= -g -O2
++GNATLIBCFLAGS= -g -O2 $(ADA_CFLAGS)
+ GNATLIBCFLAGS_FOR_C = $(GNATLIBCFLAGS) $(TARGET_LIBGCC2_CFLAGS) -fexceptions \
+ 	-DIN_RTS @have_getipinfo@
+ 

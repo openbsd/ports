@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.3 2014/04/27 21:50:55 tobiasu Exp $
---- gcc/ada/gcc-interface/Makefile.in.orig	Fri Nov 18 12:46:58 2011
-+++ gcc/ada/gcc-interface/Makefile.in	Sun Apr 27 02:01:57 2014
-@@ -1197,6 +1197,108 @@ ifeq ($(strip $(filter-out %86 freebsd%,$(arch) $(osys
+$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.4 2014/05/01 23:08:26 tobiasu Exp $
+--- gcc/ada/gcc-interface/Makefile.in.orig	Sun Apr 27 19:25:39 2014
++++ gcc/ada/gcc-interface/Makefile.in	Sun Apr 27 19:28:44 2014
+@@ -1197,6 +1197,132 @@ ifeq ($(strip $(filter-out %86 freebsd%,$(arch) $(osys
    LIBRARY_VERSION := $(LIB_VERSION)
  endif
  
@@ -95,6 +95,30 @@ $OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.3 2014/04/27 21:50:55 tobi
 +  s-taspri.ads<s-taspri-posix.ads \
 +  s-tpopsp.adb<s-tpopsp-posix.adb \
 +  system.ads<system-openbsd-hppa.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  # Empty when not using ZCX
++  EH_MECHANISM=
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++endif
++
++ifeq ($(strip $(filter-out %alpha openbsd%,$(arch) $(osys))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-osinte.adb<s-osinte-openbsd.adb \
++  s-osinte.ads<s-osinte-openbsd.ads \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  system.ads<system-openbsd-alpha.ads
 +
 +  TOOLS_TARGET_PAIRS = \
 +  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2014/04/27 21:50:55 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.75 2014/05/01 23:08:26 tobiasu Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 # ignore arches that have a valid 4.8 port
@@ -17,6 +17,8 @@ ADASTRAP_LIBC-sparc64 = 73.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-4.tar.xz
 ADASTRAP_LIBC-hppa = 74.1
 ADASTRAP-hppa = adastrap-hppa-$V-4.tar.xz
+ADASTRAP_LIBC-alpha = 74.0
+ADASTRAP-alpha = adastrap-alpha-$V-4.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -28,13 +30,13 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.6,<4.7
 
-REVISION-main =	7
+REVISION-main =	8
 REVISION-c++ =	5
 #REVISION-estdc =
 REVISION-f95 =	4
 REVISION-java =	4
 REVISION-objc =	3
-REVISION-ada =	7
+REVISION-ada =	8
 REVISION-go =	4
 
 SHARED_LIBS =	estdc++		14.0 \
@@ -51,7 +53,7 @@ SHARED_LIBS =	estdc++		14.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = i386 amd64 sparc64 hppa
+ONLY_FOR_ARCHS-ada = i386 amd64 sparc64 hppa alpha
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 NOT_FOR_ARCHS-go = alpha hppa mips64el
 
@@ -69,7 +71,7 @@ DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.6.jar
 ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-i386}:0 ${ADASTRAP-amd64}:0 ${ADASTRAP-sparc64}:0 \
-		${ADASTRAP-hppa}:0 ${ECJ}:1
+		${ADASTRAP-hppa}:0 ${ADASTRAP-alpha}:0 ${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 
@@ -105,6 +107,12 @@ LANGS := ${LANGS},ada
 DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
 EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRA_ENV += ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
+
+. if ${MACHINE_ARCH} == "alpha"
+# ICE in combine.c on alpha at -O2
+EXTRA_ENV += ADA_CFLAGS="-O1"
+. endif
+
 CC = ${WRKDIR}/bin/egcc
 TEST_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
