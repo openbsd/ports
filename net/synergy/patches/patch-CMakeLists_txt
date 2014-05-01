@@ -1,7 +1,16 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2013/11/18 23:56:35 bcallah Exp $
---- CMakeLists.txt.orig	Sun Nov 17 15:00:17 2013
-+++ CMakeLists.txt	Sun Nov 17 15:00:17 2013
-@@ -87,7 +87,7 @@ if (UNIX)
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2014/05/01 14:46:53 bcallah Exp $
+--- CMakeLists.txt.orig	Fri Mar 14 16:34:19 2014
++++ CMakeLists.txt	Tue Apr 15 22:35:21 2014
+@@ -77,7 +77,7 @@ if (UNIX)
+ 
+ 	# warnings as errors:
+ 	# we have a problem with people checking in code with warnings.
+-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
++	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+ 
+ 	# For config.h, detect the libraries, functions, etc.
+ 	include(CheckIncludeFiles)
+@@ -99,7 +99,7 @@ if (UNIX)
  	check_include_files(strings.h HAVE_STRINGS_H)
  	check_include_files(string.h HAVE_STRING_H)
  	check_include_files(sys/select.h HAVE_SYS_SELECT_H)
@@ -10,7 +19,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2013/11/18 23:56:35 bcallah Exp $
  	check_include_files(sys/stat.h HAVE_SYS_STAT_H)
  	check_include_files(sys/time.h HAVE_SYS_TIME_H)
  	check_include_files(sys/utsname.h HAVE_SYS_UTSNAME_H)
-@@ -98,7 +98,6 @@ if (UNIX)
+@@ -110,7 +110,6 @@ if (UNIX)
  	check_function_exists(gmtime_r HAVE_GMTIME_R)
  	check_function_exists(nanosleep HAVE_NANOSLEEP)
  	check_function_exists(poll HAVE_POLL)
@@ -18,18 +27,18 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2013/11/18 23:56:35 bcallah Exp $
  	check_function_exists(strftime HAVE_STRFTIME)
  	check_function_exists(vsnprintf HAVE_VSNPRINTF)
  	check_function_exists(inet_aton HAVE_INET_ATON)
-@@ -140,6 +139,8 @@ if (UNIX)
- 	else (HAVE_PTHREAD)
+@@ -153,6 +152,8 @@ if (UNIX)
  		message(FATAL_ERROR "Missing library: pthread")
  	endif()
-+
-+	check_library_exists("pthread" sigwait "" HAVE_POSIX_SIGWAIT)
- 	
- 	if (APPLE)
- 		exec_program(uname ARGS -v OUTPUT_VARIABLE DARWIN_VERSION)
-@@ -174,78 +175,58 @@ if (UNIX)
  
- 	else()
++	check_library_exists("pthread" sigwait "" HAVE_POSIX_SIGWAIT)
++
+ 	# curl is used on both Linux and Mac
+ 	find_package(CURL)
+ 	if (CURL_FOUND)
+@@ -194,78 +195,60 @@ if (UNIX)
+ 
+ 	else() # not-apple
  
 -		# add include dir for bsd (posix uses /usr/include/)
 -		set(CMAKE_INCLUDE_PATH "${CMAKE_INCLUDE_PATH}:/usr/local/include")
@@ -65,7 +74,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2013/11/18 23:56:35 bcallah Exp $
 +			set(HAVE_X11_EXTENSIONS_XTEST_H 1)
 +			list(APPEND libs ${X11_XTest_LIB})
 +		else()
-+			message(FATAL_ERROR "Xtst is needed")
++			message(FATAL_ERROR "XTest is needed")
  		endif()
  
 -		check_library_exists("SM;ICE" IceConnectionNumber "" HAVE_ICE)
@@ -102,11 +111,8 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2013/11/18 23:56:35 bcallah Exp $
 +			list(APPEND libs ${X11_Xext_LIB})
  		endif()
  
--		if (HAVE_Xext)
--			list(APPEND libs Xext)
-+		if(X11_Xinerama_FOUND)
-+			set(HAVE_X11_EXTENSIONS_XINERAMA_H 1)
-+			list(APPEND libs ${X11_Xinerama_LIB})
+ 		if (HAVE_Xext)
+ 			list(APPEND libs Xext)
  		endif()
  
 -		if (HAVE_Xinerama)
@@ -116,35 +122,40 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2013/11/18 23:56:35 bcallah Exp $
 -				set(HAVE_X11_EXTENSIONS_XINERAMA_H 0)
 -				message(WARNING "Old Xinerama implementation detected, disabled")
 -			endif()
-+		if(X11_Xinput_FOUND)
-+			set(HAVE_XI2 1)
-+			list(APPEND libs ${X11_Xinput_LIB})
++		if(X11_Xinerama_FOUND)
++			set(HAVE_X11_EXTENSIONS_XINERAMA_H 1)
++			list(APPEND libs ${X11_Xinerama_LIB})
  		endif()
  
 -		if (HAVE_Xrandr)
 -			list(APPEND libs Xrandr)
++		if(X11_Xinput_FOUND)
++			set(HAVE_XI2 1)
++			list(APPEND libs ${X11_Xinput_LIB})
+ 		endif()
+-		
+-		# this was outside of the linux scope,
+-		# not sure why, moving it back inside.
+-		if(HAVE_Xi)
+-			list(APPEND libs Xi)
++
 +		if(X11_Xrandr_FOUND)
 +			set(HAVE_X11_EXTENSIONS_XRANDR_H 1)
 +			list(APPEND libs ${X11_Xrandr_LIB})
  		endif()
++	
++		if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++			include_directories(${OPENBSD_LOCALBASE}/include)
++			link_directories(${OPENBSD_LOCALBASE}/lib)
++		endif()
  
  	endif()
  
--        IF(HAVE_Xi)
--                LIST(APPEND libs Xi)
--        ENDIF()
-+	if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-+		include_directories(${OPENBSD_LOCALBASE}/include)
-+		link_directories(${OPENBSD_LOCALBASE}/lib)
-+	endif()
- 
- 	# For config.h, set some static values; it may be a good idea to make
- 	# these values dynamic for non-standard UNIX compilers.
-@@ -295,7 +276,6 @@ else (UNIX)
+@@ -317,7 +300,6 @@ else() # not-unix
  endif()
  
  add_subdirectory(src)
--add_subdirectory(tools)
+-add_subdirectory(ext)
  
  if (WIN32)
- 	# add /analyze in order to unconver potential bugs in the source code
+ 	# TODO:	consider using /analyze to uncover potential bugs in the source code.

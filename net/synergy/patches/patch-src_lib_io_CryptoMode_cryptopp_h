@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_io_CryptoMode_cryptopp_h,v 1.1 2014/05/01 14:46:53 bcallah Exp $
+--- src/lib/io/CryptoMode_cryptopp.h.orig	Tue Apr 15 22:33:00 2014
++++ src/lib/io/CryptoMode_cryptopp.h	Tue Apr 15 22:33:25 2014
+@@ -25,6 +25,6 @@
+ #	pragma GCC system_header
+ #endif 
+ 
+-#include <cryptopp562/gcm.h>
+-#include <cryptopp562/modes.h>
+-#include <cryptopp562/aes.h>
++#include <cryptopp/gcm.h>
++#include <cryptopp/modes.h>
++#include <cryptopp/aes.h>

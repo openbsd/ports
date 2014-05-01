@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_lib_io_CryptoStream_cryptopp_h,v 1.1 2014/05/01 14:46:53 bcallah Exp $
+--- src/lib/io/CryptoStream_cryptopp.h.orig	Tue Apr 15 22:34:13 2014
++++ src/lib/io/CryptoStream_cryptopp.h	Tue Apr 15 22:34:21 2014
+@@ -25,5 +25,5 @@
+ #	pragma GCC system_header
+ #endif
+ 
+-#include <cryptopp562/osrng.h>
+-#include <cryptopp562/sha.h>
++#include <cryptopp/osrng.h>
++#include <cryptopp/sha.h>

@@ -1,28 +1,27 @@
-# $OpenBSD: Makefile,v 1.23 2013/12/05 15:53:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.24 2014/05/01 14:46:53 bcallah Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
-V=			1.4.15
-DISTNAME=		synergy-${V}-Source
+V=			1.4.17
+DISTNAME=		synergy-${V}-r2055-Source
 PKGNAME=		synergy-${V}
-REVISION=		0
 CATEGORIES=		net x11
 
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
-
 HOMEPAGE=		http://synergy-foss.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xi Xinerama Xrandr Xtst \
-			c cryptopp m pthread stdc++
+			c cryptopp curl m pthread stdc++
 
-MASTER_SITES=		https://synergy.googlecode.com/files/
+MASTER_SITES=		http://fossfiles.com/synergy/
 
 BUILD_DEPENDS=		archivers/gtar
 
-LIB_DEPENDS=		devel/cryptopp
+LIB_DEPENDS=		devel/cryptopp \
+			net/curl
 
 # tar: Invalid header, starting valid header search.
 TAR=			${LOCALBASE}/bin/gtar
@@ -31,8 +30,7 @@ MODULES=		devel/cmake
 
 NO_TEST=		Yes
 
-pre-patch:
-	@cd ${WRKSRC} ; perl -pi -e 's/\r$$//' CMakeLists.txt
+WRKDIST=		${WRKDIR}/synergy-${V}-Source
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/synergy[cs] ${PREFIX}/bin/
