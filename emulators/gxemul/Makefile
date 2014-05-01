@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2014/05/01 06:47:51 benoit Exp $
 
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
-DISTNAME=		gxemul-0.4.7.1
-REVISION=		1
+DISTNAME =		gxemul-0.6.0
 CATEGORIES=		emulators
 HOMEPAGE=		http://gxemul.sourceforge.net/
 
@@ -12,12 +11,11 @@ MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/src/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gxemul/}
 
-WANTLIB=		c m
+WANTLIB =		c m stdc++
 
 CONFIGURE_STYLE=	simple
-USE_GROFF =		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=

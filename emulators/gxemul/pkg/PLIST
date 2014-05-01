@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/01/05 21:14:03 grange Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/05/01 06:47:51 benoit Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -75,6 +75,10 @@ share/doc/gxemul/20070616-netbsd-pmppc-diskless.png
 share/doc/gxemul/20070616-netbsd-pmppc-diskless_small.png
 share/doc/gxemul/20081103-openbsd-landisk-small.png
 share/doc/gxemul/20081103-openbsd-landisk.png
+share/doc/gxemul/20100205-netbsd-playstation2-small.png
+share/doc/gxemul/20100205-netbsd-playstation2.png
+share/doc/gxemul/RELEASE.html
+share/doc/gxemul/TODO.html
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/debian-1-small.png
 share/doc/gxemul/debian-1.png
@@ -106,19 +110,25 @@ share/doc/gxemul/debian-8-small.png
 share/doc/gxemul/debian-8.png
 share/doc/gxemul/debian-9-small.png
 share/doc/gxemul/debian-9.png
+share/doc/gxemul/doxygen_footerFile.html
+share/doc/gxemul/doxygen_headerFile.html
 share/doc/gxemul/dreamcast.html
 share/doc/gxemul/experiments.html
+share/doc/gxemul/framework.html
 share/doc/gxemul/guestoses.html
+share/doc/gxemul/head.html
 share/doc/gxemul/index.html
 share/doc/gxemul/intro.html
-share/doc/gxemul/maddr.gif
+share/doc/gxemul/machine_template.html
 share/doc/gxemul/misc.html
+share/doc/gxemul/model.png
 share/doc/gxemul/networking.html
 share/doc/gxemul/openbsd-pmax-20040710.png
 share/doc/gxemul/openbsd-pmax-20040710_small.png
 share/doc/gxemul/simplified_dyntrans.png
 share/doc/gxemul/sprite-20040711.png
 share/doc/gxemul/sprite-20040711_small.png
+share/doc/gxemul/tail.html
 share/doc/gxemul/technical.html
 share/doc/gxemul/translation.html
 share/doc/gxemul/ultrix4.5-20040706.png

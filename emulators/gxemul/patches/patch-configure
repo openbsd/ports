@@ -1,25 +1,23 @@
-$OpenBSD: patch-configure,v 1.1 2008/01/31 20:44:55 okan Exp $
---- configure.orig	Wed Jan 30 18:24:14 2008
-+++ configure	Wed Jan 30 18:39:25 2008
-@@ -651,21 +651,6 @@ else
- 		fi
- 		printf "#define SOLARIS\n" >> config.h
- 		OTHERLIBS="-lsocket $OTHERLIBS"
--	else
--		#  gcc or something else:
--		if [ ! z"$DEBUG" = zYES ]; then
--			$CC $CFLAGS _testprog.c -o _testprog -O 2> /dev/null
--			if [ -x _testprog ]; then
--				rm -f _testprog
--				$CC $CFLAGS _testprog.c -o _testprog	\
--					-O3 2> /dev/null
--				if [ -x _testprog ]; then
--					CFLAGS="-O3 $CFLAGS"
--				else
--					CFLAGS="-O $CFLAGS"
--				fi
--			fi
--		fi
- 	fi
+$OpenBSD: patch-configure,v 1.2 2014/05/01 06:47:51 benoit Exp $
+--- configure.orig	Sun Feb 14 10:33:54 2010
++++ configure	Sat Jan  1 23:42:15 2011
+@@ -481,19 +481,6 @@
+ 	rm -f _testprog _testprog.error _testprog.stdout
  fi
+ 
+-#  -O for optimization
+-if [ ! z"$DEBUG" = zYES ]; then
+-	$CXX $CXXFLAGS -O _testprog.cc -o _testprog 2> /dev/null
+-	if [ -x _testprog ]; then
+-		rm -f _testprog
+-		$CXX $CXXFLAGS -O3 _testprog.cc -o _testprog 2> /dev/null
+-		if [ -x _testprog ]; then
+-			CXXFLAGS="-O3 $CXXFLAGS"
+-		else
+-			CXXFLAGS="-O $CXXFLAGS"
+-		fi
+-	fi
+-fi
  rm -f _testprog
+ 
+ 
