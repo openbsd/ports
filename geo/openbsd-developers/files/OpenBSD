@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.112 2014/04/19 11:53:20 logan Exp $
+# $OpenBSD: OpenBSD,v 1.113 2014/05/01 19:48:09 pascal Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -96,7 +96,7 @@
 49.22		-123.10		"hugh"		# Hugh Graham
 49.313446	-123.063975	"mjc"		# Michael Coulter
 49.48		8.42		"naddy"		# Christian Weisgerber
-50.362309	7.586465	"pascal"	# Pascal Stumpf
+50.342651	7.584064	"pascal"	# Pascal Stumpf
 50.752		-3.276		"sthen"		# Stuart Henderson
 50.76859	6.10157		"mpi"		# Martin Pieuchot
 50.7819		6.0856		"mikeb"		# Mike Belopuhov
