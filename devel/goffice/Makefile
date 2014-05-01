@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2014/04/13 19:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2014/05/01 06:21:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.14
+GNOME_VERSION=	0.10.15
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
