@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2014/04/17 18:12:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2014/05/01 07:28:47 jasper Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
-DISTNAME=	mcollective-2.4.1
-REVISION=	0
+DISTNAME=	mcollective-2.5.0
 
 CATEGORIES=	sysutils
 

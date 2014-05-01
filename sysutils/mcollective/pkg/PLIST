@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/01/24 08:53:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/05/01 07:28:47 jasper Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -32,6 +32,7 @@ ${MODRUBY_SITEDIR}/mcollective/ddl/dataddl.rb
 ${MODRUBY_SITEDIR}/mcollective/ddl/discoveryddl.rb
 ${MODRUBY_SITEDIR}/mcollective/ddl/validatorddl.rb
 ${MODRUBY_SITEDIR}/mcollective/discovery.rb
+${MODRUBY_SITEDIR}/mcollective/exceptions.rb
 ${MODRUBY_SITEDIR}/mcollective/facts/
 ${MODRUBY_SITEDIR}/mcollective/facts.rb
 ${MODRUBY_SITEDIR}/mcollective/facts/base.rb
@@ -337,6 +338,7 @@ share/doc/mcollective/MCollective/Aggregate/Result/CollectionResult.html
 share/doc/mcollective/MCollective/Aggregate/Result/NumericResult.html
 share/doc/mcollective/MCollective/Application.html
 share/doc/mcollective/MCollective/Applications.html
+share/doc/mcollective/MCollective/BackoffSuggestion.html
 share/doc/mcollective/MCollective/Cache.html
 share/doc/mcollective/MCollective/Client.html
 share/doc/mcollective/MCollective/Config.html
@@ -377,6 +379,7 @@ share/doc/mcollective/MCollective/Matcher.html
 share/doc/mcollective/MCollective/Matcher/Parser.html
 share/doc/mcollective/MCollective/Matcher/Scanner.html
 share/doc/mcollective/MCollective/Message.html
+share/doc/mcollective/MCollective/MessageNotReceived.html
 share/doc/mcollective/MCollective/MissingRPCData.html
 share/doc/mcollective/MCollective/MsgDoesNotMatchRequestID.html
 share/doc/mcollective/MCollective/MsgTTLExpired.html
@@ -412,6 +415,7 @@ share/doc/mcollective/MCollective/Security.html
 share/doc/mcollective/MCollective/Security/Base.html
 share/doc/mcollective/MCollective/SecurityValidationFailed.html
 share/doc/mcollective/MCollective/Shell.html
+share/doc/mcollective/MCollective/UnexpectedMessageType.html
 share/doc/mcollective/MCollective/UnixDaemon.html
 share/doc/mcollective/MCollective/UnknownRPCAction.html
 share/doc/mcollective/MCollective/UnknownRPCError.html
