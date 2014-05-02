@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2014/04/02 09:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.142 2014/05/02 07:02:46 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.12.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			textproc/exempi \
 			x11/gnome/tracker
 
-MODGNOME_TOOLS += desktop-file-utils gobject-introspection shared-mime-info
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection shared-mime-info
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
