@@ -1,7 +1,15 @@
-$OpenBSD: patch-cmds_c,v 1.4 2007/06/06 11:39:53 steven Exp $
---- cmds.c.orig	Wed Jun  6 13:34:53 2007
-+++ cmds.c	Wed Jun  6 13:36:16 2007
-@@ -594,7 +594,6 @@ do_mount(int argc, const char ** argv)
+$OpenBSD: patch-cmds_c,v 1.5 2014/05/02 08:29:52 benoit Exp $
+--- cmds.c.orig	Fri Mar  7 14:06:29 2014
++++ cmds.c	Sat Apr 26 20:53:08 2014
+@@ -28,7 +28,6 @@
+ #else
+ #define dev_t unsigned short
+ #endif
+-#include <linux/loop.h>
+ #undef dev_t
+ #define dev_t dev_t
+ 
+@@ -748,7 +747,6 @@
  #elif	HAVE_BSD_MOUNT
  	{
  		struct	    ufs_args ufs;
@@ -9,24 +17,26 @@ $OpenBSD: patch-cmds_c,v 1.4 2007/06/06 11:39:53 steven Exp $
  		struct	    iso_args iso;
  		struct	    mfs_args mfs;
  		struct	    msdosfs_args msdosfs;
-@@ -603,11 +602,6 @@ do_mount(int argc, const char ** argv)
- 		if(!strcmp(type, "ffs") || !strcmp(type, "ufs")) {
+@@ -759,13 +757,6 @@
  			ufs.fspec = (char*) argv[0];
  			args = &ufs;
--		} else if(!strcmp(type, "adosfs")) {
+ 		}
+-		else if (!strcmp(type, "adosfs"))
+-		{
 -			adosfs.fspec = (char*) argv[0];
 -			adosfs.uid = 0;
 -			adosfs.gid = 0;
 -			args = &adosfs;
- 		} else if(!strcmp(type, "cd9660")) {
+-		}
+ 		else if (!strcmp(type, "cd9660"))
+ 		{
  			iso.fspec = (char*) argv[0];
- 			args = &iso;
-@@ -622,7 +616,7 @@ do_mount(int argc, const char ** argv)
- 		} else {
+@@ -787,7 +778,7 @@
+ 		{
  			fprintf(stderr, "Unknown filesystem type: %s", type);
  			fprintf(stderr,
 -			    "Supported: ffs ufs adosfs cd9660 mfs msdos\n");
 +			    "Supported: ffs ufs cd9660 mfs msdos\n");
- 			return;
- 		}
  
+ 			return 1;
+ 		}
