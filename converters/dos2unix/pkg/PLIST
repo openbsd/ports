@@ -1,14 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/09 16:22:59 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/05/02 13:43:24 benoit Exp $
 @bin bin/dos2unix
 bin/mac2unix
 @bin bin/unix2dos
 bin/unix2mac
+man/de/
+man/de/man1/
+@man man/de/man1/dos2unix.1
+@man man/de/man1/mac2unix.1
+@man man/de/man1/unix2dos.1
+@man man/de/man1/unix2mac.1
 man/es/
 man/es/man1/
 @man man/es/man1/dos2unix.1
 @man man/es/man1/mac2unix.1
 @man man/es/man1/unix2dos.1
 @man man/es/man1/unix2mac.1
+man/fr/
+man/fr/man1/
+@man man/fr/man1/dos2unix.1
+@man man/fr/man1/mac2unix.1
+@man man/fr/man1/unix2dos.1
+@man man/fr/man1/unix2mac.1
 @man man/man1/dos2unix.1
 @man man/man1/mac2unix.1
 @man man/man1/unix2dos.1
@@ -19,6 +31,24 @@ man/nl/man1/
 @man man/nl/man1/mac2unix.1
 @man man/nl/man1/unix2dos.1
 @man man/nl/man1/unix2mac.1
+man/pl/
+man/pl/man1/
+@man man/pl/man1/dos2unix.1
+@man man/pl/man1/mac2unix.1
+@man man/pl/man1/unix2dos.1
+@man man/pl/man1/unix2mac.1
+man/pt_BR/
+man/pt_BR/man1/
+@man man/pt_BR/man1/dos2unix.1
+@man man/pt_BR/man1/mac2unix.1
+@man man/pt_BR/man1/unix2dos.1
+@man man/pt_BR/man1/unix2mac.1
+man/uk/
+man/uk/man1/
+@man man/uk/man1/dos2unix.1
+@man man/uk/man1/mac2unix.1
+@man man/uk/man1/unix2dos.1
+@man man/uk/man1/unix2mac.1
 share/doc/dos2unix/
 share/doc/dos2unix/BUGS.txt
 share/doc/dos2unix/COPYING.txt
@@ -27,10 +57,40 @@ share/doc/dos2unix/INSTALL.txt
 share/doc/dos2unix/NEWS.txt
 share/doc/dos2unix/README.txt
 share/doc/dos2unix/TODO.txt
+share/doc/dos2unix/de/
+share/doc/dos2unix/de/dos2unix.htm
+share/doc/dos2unix/de/dos2unix.txt
 share/doc/dos2unix/dos2unix.htm
 share/doc/dos2unix/dos2unix.txt
+share/doc/dos2unix/es/
+share/doc/dos2unix/es/dos2unix.htm
+share/doc/dos2unix/es/dos2unix.txt
+share/doc/dos2unix/fr/
+share/doc/dos2unix/fr/dos2unix.htm
+share/doc/dos2unix/fr/dos2unix.txt
+share/doc/dos2unix/nl/
+share/doc/dos2unix/nl/dos2unix.htm
+share/doc/dos2unix/nl/dos2unix.txt
+share/doc/dos2unix/pl/
+share/doc/dos2unix/pl/dos2unix.htm
+share/doc/dos2unix/pl/dos2unix.txt
+share/doc/dos2unix/pt_BR/
+share/doc/dos2unix/pt_BR/dos2unix.htm
+share/doc/dos2unix/pt_BR/dos2unix.txt
+share/doc/dos2unix/uk/
+share/doc/dos2unix/uk/dos2unix.htm
+share/doc/dos2unix/uk/dos2unix.txt
+share/locale/da/LC_MESSAGES/dos2unix.mo
 share/locale/de/LC_MESSAGES/dos2unix.mo
 share/locale/eo/LC_MESSAGES/dos2unix.mo
 share/locale/es/LC_MESSAGES/dos2unix.mo
+share/locale/fr/LC_MESSAGES/dos2unix.mo
+share/locale/hu/LC_MESSAGES/dos2unix.mo
 share/locale/nl/LC_MESSAGES/dos2unix.mo
+share/locale/pl/LC_MESSAGES/dos2unix.mo
+share/locale/pt_BR/LC_MESSAGES/dos2unix.mo
 share/locale/ru/LC_MESSAGES/dos2unix.mo
+share/locale/sr/LC_MESSAGES/dos2unix.mo
+share/locale/uk/LC_MESSAGES/dos2unix.mo
+share/locale/vi/LC_MESSAGES/dos2unix.mo
+share/locale/zh_TW/LC_MESSAGES/dos2unix.mo
