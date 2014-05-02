@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/04/02 14:34:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2014/05/02 11:08:57 ajacoutot Exp $
 
 TRACKER_VERSION=1.0
 
@@ -7,8 +7,7 @@ SHARED_ONLY=	Yes
 COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
-GNOME_VERSION=	3.12.0
-REVISION=	1
+GNOME_VERSION=	3.12.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,13 +22,12 @@ WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuuc idn javascriptcoregtk-3.0
-WANTLIB += jpeg json-glib-1.0 kvm m mozjs-24 ncursesw nspr4
-WANTLIB += nss3 oauth orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += jpeg json-glib-1.0 kvm m mediaart-1.0 mozjs-24 ncursesw
+WANTLIB += nspr4 nss3 oauth orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += readline rest-0.7 secret-1 smime3 softokn3 soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 stdc++
-WANTLIB += uuid webkitgtk-3.0 webp xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z zapojit-0.0 mediaart-1.0
+WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 stdc++ uuid webkitgtk-3.0
+WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z zapojit-0.0
 WANTLIB += tracker-control-${TRACKER_VERSION}
 WANTLIB += tracker-sparql-${TRACKER_VERSION}
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
