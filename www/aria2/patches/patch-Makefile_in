@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2014/05/02 15:06:31 juanfra Exp $
+
+Generated from https://github.com/tatsuhiro-t/aria2/commit/6020756d2e
+
+--- Makefile.in.orig	Sun Apr 27 18:08:48 2014
++++ Makefile.in	Sun Apr 27 18:10:18 2014
+@@ -79,7 +79,6 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+-@HAVE_RST2HTML_TRUE@am__append_1 = README.html
+ subdir = .
+ DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
+ 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+@@ -433,7 +432,7 @@ EXTRA_DIST = config.rpath \
+ 	     makerelease-osx.mk osx-package/DS_Store osx-package/etc/paths.d/aria2c osx-package/etc/manpaths.d/aria2 \
+ 	     examples/libaria2ex.cc examples/libaria2wx.cc
+ 
+-dist_doc_DATA = README README.rst $(am__append_1)
++dist_doc_DATA = README README.rst README.html
+ dist_noinst_DATA = LICENSE.OpenSSL
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
