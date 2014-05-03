@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/12 22:51:21 abieber Exp $
+# $OpenBSD: Makefile,v 1.13 2014/05/03 14:24:03 abieber Exp $
 
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs EABI/aapcs
@@ -11,6 +11,7 @@ COMMENT =	just-in-time compiler for Lua
 V =		2.0.3
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	lang
 
@@ -26,6 +27,7 @@ WANTLIB =	c m
 MASTER_SITES =	${HOMEPAGE}download/
 
 MODULES =	lang/lua
+MODLUA_SA=	Yes
 
 MODULES +=	gcc4
 MODGCC4_ARCHS =	powerpc
@@ -41,6 +43,11 @@ MAKE_FLAGS += \
 	PREFIX="${PREFIX}"
 
 USE_GMAKE =	Yes
+
+SUBST_VARS+=	MODLUA_VERSION
+
+pre-configure:
+	${SUBST_CMD} ${WRKDIST}/Makefile
 
 post-install:
 	mv ${PREFIX}/bin/luajit-$V ${PREFIX}/bin/luajit${MODLUA_DEP_VERSION}
