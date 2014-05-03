@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2014/04/29 21:47:00 landry Exp $
+# $OpenBSD: Makefile,v 1.156 2014/05/03 07:28:30 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -10,11 +10,12 @@ MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
+REVISION =		0
 PKGNAME-lightning =	lightning-seamonkey-3.1
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
+#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 
 SO_VERSION =	37.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -63,6 +64,10 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
+
+CONFIGURE_ARGS +=	--enable-gstreamer
+BUILD_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
 
 ALL_TARGET =	default
 
