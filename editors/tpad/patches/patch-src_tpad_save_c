@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tpad_save_c,v 1.1 2014/05/03 03:51:14 bcallah Exp $
+--- src/tpad_save.c.orig	Fri May  2 11:13:22 2014
++++ src/tpad_save.c	Fri May  2 11:13:55 2014
+@@ -91,7 +91,7 @@ void save_as(){
+ 		
+ 	    if (getcRpath() != NULL) gtk_file_chooser_set_filename (GTK_FILE_CHOOSER(dialog),getcRpath());
+ 		else {
+-					 struct passwd *pw = getpwuid(syscall(__NR_getuid));
++					 struct passwd *pw = getpwuid(getuid());
+ 			         gtk_file_chooser_set_filename (GTK_FILE_CHOOSER(dialog),(gchar *)pw->pw_dir);
+ 		}
+ 	}

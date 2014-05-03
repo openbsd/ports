@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tpad_config_c,v 1.1 2014/05/03 03:51:14 bcallah Exp $
+--- src/tpad_config.c.orig	Fri May  2 11:13:16 2014
++++ src/tpad_config.c	Fri May  2 11:13:41 2014
+@@ -299,7 +299,7 @@ void clean_userCfg(){
+ }
+ //////////////////////////////////////////////////////////////////////////
+ void config_file(){
+-	struct passwd *pw = getpwuid(syscall(__NR_getuid));
++	struct passwd *pw = getpwuid(getuid());
+ 	ccfile = g_strconcat((gchar *)pw->pw_dir,(gchar *)CONFIG_FILE_SUFFIX,NULL);
+ }
+ //////////////////////////////////////////////////////////////////////////

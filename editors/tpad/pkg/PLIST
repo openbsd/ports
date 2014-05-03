@@ -1,13 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/29 14:22:32 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/03 03:51:14 bcallah Exp $
 @bin bin/tpad
 @man man/man1/tpad.1
 share/applications/tpad.desktop
 share/icons/
 share/icons/tpad.png
+share/locale/br/
+share/locale/br/LC_MESSAGES/
+share/locale/br/LC_MESSAGES/tpad.mo
 share/locale/de/LC_MESSAGES/tpad.mo
 share/locale/en/LC_MESSAGES/tpad.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/tpad.mo
 share/locale/es/LC_MESSAGES/tpad.mo
 share/locale/fr/LC_MESSAGES/tpad.mo
+share/locale/ko/LC_MESSAGES/tpad.mo
 share/locale/tr/LC_MESSAGES/tpad.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
