@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/30 18:39:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/03 17:50:21 bcallah Exp $
 
 COMMENT =	Tetris and Pong played simultaneously on one playing field
-DISTNAME =	tong-1.2
+DISTNAME =	tong-1.3
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.nongnu.org/tong/
