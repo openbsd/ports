@@ -1,0 +1,38 @@
+$OpenBSD: patch-buildtools_wafsamba_symbols_py,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+1. Our nm(1) defaults to show dynamic symbol table, unless there are many.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9891
+
+2. Add a bunch of common symbols to allow tests to run. Those that added in
+safe_symbols initially should probably go upstream, _Jv_RegisterClasses is
+a strange one (weak symbol everywhere in the whole system) and others are
+coming from libgcc.a.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9892
+--- buildtools/wafsamba/symbols.py.orig	Tue May 14 17:30:33 2013
++++ buildtools/wafsamba/symbols.py	Tue May 14 19:58:59 2013
+@@ -46,8 +46,8 @@ def symbols_extract(bld, objfiles, dynamic=False):
+         return ret
+ 
+     cmd = ["nm"]
+-    if dynamic:
+-        # needed for some .so files
++    if dynamic and not sys.platform.startswith("openbsd"):
++        # needed for some .so files on non-OpenBSD platforms
+         cmd.append("-D")
+     cmd.extend(list(objfiles))
+ 
+@@ -569,7 +569,14 @@ def symbols_whyneeded(task):
+ 
+ def report_duplicate(bld, binname, sym, libs, fail_on_error):
+     '''report duplicated symbols'''
+-    if sym in ['_init', '_fini', '_edata', '_end', '__bss_start']:
++
++    safe_symbols = ['_init', '_fini', '_edata', '_end', '__bss_start', '__cxa_finalize', '__got_start', '__got_end', '__data_start', '__data_end']
++
++    if sys.platform.startswith("openbsd"):
++        safe_symbols.extend('__udiv_w_sdiv __fixxfdi __fixunsxfdi __divdi3 __udivmoddi4 __floatundidf __floatundixf __floatdixf __divdc3 __umoddi3 __fixdfdi __fixunsdfdi __divxc3 __negdi2 __popcountdi2 __divsc3 __muldi3 __udivdi3 __mulvsi3 __clear_cache __powisf2 __mulvdi3 __powixf2 __gcc_personality_v0 _Unwind_Backtrace _Unwind_DeleteException _Unwind_FindEnclosingFunction _Unwind_ForcedUnwind _Unwind_GetCFA _Unwind_GetDataRelBase _Unwind_GetGR _Unwind_GetIP _Unwind_GetIPInfo _Unwind_GetLanguageSpecificData _Unwind_GetRegionStart _Unwind_GetTextRelBase _Unwind_RaiseException _Unwind_Resume _Unwind_Resume_or_Rethrow _Unwind_SetGR _Unwind_SetIP __frame_state_for _Unwind_Find_FDE __deregister_frame __deregister_frame_info __deregister_frame_info_bases __register_frame __register_frame_info __register_frame_info_bases __register_frame_info_table __register_frame_info_table_bases __register_frame_table __absvdi2 __mulxc3 __floatundisf __ashrdi3 __fixsfdi __fixunssfdi __fixunsdfsi __paritydi2 __paritysi2 __ucmpdi2 __muldc3 __fixunsxfsi __negvdi2 __floatdisf __ffsdi2 __negvsi2 __ffssi2 __moddi3 __ashldi3 __floatdidf __ctzdi2 __gnat_default_lock __gnat_default_unlock __gnat_install_locks __gthread_active_p __gthread_mutex_lock __gthread_mutex_unlock __absvsi2 __popcountsi2 __ctzsi2 __addvsi3 __fixunssfsi __powidf2 __cmpdi2 __lshrdi3 __clzdi2 __addvdi3 __subvsi3 __clzsi2 __subvdi3 __mulsc3 __enable_execute_stack'.split(' '))
++        safe_symbols.append('_Jv_RegisterClasses')
++
++    if sym in safe_symbols:
+         return
+     libnames = []
+     for lib in libs:

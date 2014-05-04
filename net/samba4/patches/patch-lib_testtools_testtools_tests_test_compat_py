@@ -1,0 +1,65 @@
+$OpenBSD: patch-lib_testtools_testtools_tests_test_compat_py,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+--- lib/testtools/testtools/tests/test_compat.py.orig	Mon Apr  8 15:52:50 2013
++++ lib/testtools/testtools/tests/test_compat.py	Mon Apr  8 15:56:38 2013
+@@ -45,15 +45,15 @@ class TestDetectEncoding(testtools.TestCase):
+         """
+         # With interpreter binary and using Emacs style file encoding comment:
+         self._check_encoding("latin-1", (
+-            "#!/usr/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "# -*- coding: latin-1 -*-\n",
+             "import os, sys\n"))
+         self._check_encoding("iso-8859-15", (
+-            "#!/usr/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "# -*- coding: iso-8859-15 -*-\n",
+             "import os, sys\n"))
+         self._check_encoding("ascii", (
+-            "#!/usr/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "# -*- coding: ascii -*-\n",
+             "import os, sys\n"))
+         # Without interpreter line, using plain text:
+@@ -63,28 +63,28 @@ class TestDetectEncoding(testtools.TestCase):
+         # Text editors might have different ways of defining the file's
+         # encoding, e.g.
+         self._check_encoding("latin-1", (
+-            "#!/usr/local/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "# coding: latin-1\n",
+             "import os, sys\n"))
+         # Without encoding comment, Python's parser will assume ASCII text:
+         self._check_encoding("ascii", (
+-            "#!/usr/local/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "import os, sys\n"))
+         # Encoding comments which don't work:
+         #   Missing "coding:" prefix:
+         self._check_encoding("ascii", (
+-            "#!/usr/local/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "# latin-1\n",
+             "import os, sys\n"))
+         #   Encoding comment not on line 1 or 2:
+         self._check_encoding("ascii", (
+-            "#!/usr/local/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "#\n",
+             "# -*- coding: latin-1 -*-\n",
+             "import os, sys\n"))
+         #   Unsupported encoding:
+         self._check_encoding("ascii", (
+-            "#!/usr/local/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "# -*- coding: utf-42 -*-\n",
+             "import os, sys\n"),
+             possibly_invalid=True)
+@@ -114,7 +114,7 @@ class TestDetectEncoding(testtools.TestCase):
+             "# Or is it coding: iso-8859-2\n"),
+             possibly_invalid=True)
+         self._check_encoding("iso-8859-1", (
+-            "#!/usr/bin/python\n",
++            "#!${MODPY_BIN}\n",
+             "# Is the coding: iso-8859-1\n",
+             "# Or is it coding: iso-8859-2\n"))
+         self._check_encoding("iso-8859-1", (

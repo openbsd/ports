@@ -1,0 +1,15 @@
+$OpenBSD: patch-source3_lib_sysquotas_nfs_c,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9889
+--- source3/lib/sysquotas_nfs.c.orig	Mon Apr  8 20:00:46 2013
++++ source3/lib/sysquotas_nfs.c	Mon Apr  8 20:01:53 2013
+@@ -155,8 +155,8 @@ int sys_get_nfs_quota(const char *path, const char *bd
+ 	gq_args.gqa_uid = id.uid;
+ 
+ 	DEBUG(10, ("sys_get_nfs_quotas: Asking for quota of path '%s' on "
+-		   "host '%s', rpcprog '%i', rpcvers '%i', network '%s'\n",
+-		    host, testpath+1, RQUOTAPROG, RQUOTAVERS, "udp"));
++		   "host '%s', rpcprog '%lld', rpcvers '%lld', network '%s'\n",
++		    host, testpath+1, (long long)RQUOTAPROG, (long long)RQUOTAVERS, "udp"));
+ 
+ 	clnt = clnt_create(host, RQUOTAPROG, RQUOTAVERS, "udp");
+ 	if (clnt == NULL) {

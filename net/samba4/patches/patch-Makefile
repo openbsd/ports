@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9886
+--- Makefile.orig	Fri Apr 26 00:49:58 2013
++++ Makefile	Fri Apr 26 00:50:45 2013
+@@ -2,7 +2,8 @@
+ 
+ PYTHON?=python
+ WAF_BINARY=$(PYTHON) ./buildtools/bin/waf
+-WAF=WAF_MAKE=1 $(WAF_BINARY)
++WAF_ARGS?=
++WAF=WAF_MAKE=1 $(WAF_BINARY) $(WAF_ARGS)
+ 
+ all:
+ 	$(WAF) build

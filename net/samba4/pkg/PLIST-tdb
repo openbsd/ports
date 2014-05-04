@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-tdb,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+@pkgpath databases/tdb
+@bin bin/tdbbackup
+@bin bin/tdbdump
+@bin bin/tdbrestore
+@bin bin/tdbtool
+include/samba-4.0/tdb.h
+@lib lib/libtdb.so.${LIBtdb_VERSION}
+lib/pkgconfig/tdb.pc
+lib/python${MODPY_VERSION}/site-packages/tdb.so
+@man man/man8/tdbbackup.8
+@man man/man8/tdbdump.8
+@man man/man8/tdbrestore.8
+@man man/man8/tdbtool.8

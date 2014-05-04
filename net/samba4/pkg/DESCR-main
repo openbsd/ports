@@ -1,0 +1,3 @@
+The Samba suite is a set of programs that implement a server for the
+Windows file- and printer-sharing protocols (SMB/CIFS) and Active
+Directory compatible Domain Controller.

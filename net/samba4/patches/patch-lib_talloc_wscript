@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_talloc_wscript,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Force building standalone library (e.g., put headers in apporiate place).
+--- lib/talloc/wscript.orig	Mon May 27 20:45:17 2013
++++ lib/talloc/wscript	Mon May 27 20:45:27 2013
+@@ -40,6 +40,7 @@ def configure(conf):
+     conf.RECURSE('lib/replace')
+ 
+     conf.env.standalone_talloc = conf.IN_LAUNCH_DIR()
++    conf.env.standalone_talloc = True
+ 
+     conf.env.disable_python = getattr(Options.options, 'disable_python', False)
+ 

@@ -1,0 +1,17 @@
+$OpenBSD: patch-buildtools_wafadmin_Tools_gxx_py,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Disable SONAME write on OpenBSD.
+--- buildtools/wafadmin/Tools/gxx.py.orig	Sun May  4 00:00:22 2014
++++ buildtools/wafadmin/Tools/gxx.py	Sun May  4 00:01:00 2014
+@@ -41,7 +41,11 @@ def gxx_common_flags(conf):
+ 	v['RPATH_ST']            = '-Wl,-rpath,%s'
+ 	v['CXXDEFINES_ST']       = '-D%s'
+ 
+-	v['SONAME_ST']           = '-Wl,-h,%s'
++	if sys.platform.startswith('openbsd'):
++		# OpenBSD relies on version info in file names
++		v['SONAME_ST']           = ''
++	else:
++		v['SONAME_ST']           = '-Wl,-h,%s'
+ 	v['SHLIB_MARKER']        = '-Wl,-Bdynamic'
+ 	v['STATICLIB_MARKER']    = '-Wl,-Bstatic'
+ 	v['FULLSTATIC_MARKER']   = '-static'

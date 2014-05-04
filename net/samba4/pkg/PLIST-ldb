@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-ldb,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+@bin bin/ldbadd
+@bin bin/ldbdel
+@bin bin/ldbedit
+@bin bin/ldbmodify
+@bin bin/ldbrename
+@bin bin/ldbsearch
+include/samba-4.0/ldb.h
+include/samba-4.0/ldb_errors.h
+include/samba-4.0/ldb_handlers.h
+include/samba-4.0/ldb_module.h
+include/samba-4.0/ldb_version.h
+include/samba-4.0/pyldb.h
+@lib lib/libldb.so.${LIBldb_VERSION}
+@lib lib/libpyldb-util.so.${LIBpyldb-util_VERSION}
+lib/pkgconfig/ldb.pc
+lib/pkgconfig/pyldb-util.pc
+lib/python${MODPY_VERSION}/site-packages/ldb.so
+lib/samba/ldb/
+lib/samba/libldb-cmdline.so
+@man man/man1/ldbadd.1
+@man man/man1/ldbdel.1
+@man man/man1/ldbedit.1
+@man man/man1/ldbmodify.1
+@man man/man1/ldbrename.1
+@man man/man1/ldbsearch.1
+@man man/man3/ldb.3

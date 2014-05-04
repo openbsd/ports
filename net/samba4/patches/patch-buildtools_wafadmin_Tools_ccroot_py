@@ -1,0 +1,70 @@
+$OpenBSD: patch-buildtools_wafadmin_Tools_ccroot_py,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
+--- buildtools/wafadmin/Tools/ccroot.py.orig	Mon May 27 17:48:53 2013
++++ buildtools/wafadmin/Tools/ccroot.py	Mon May 27 18:06:35 2013
+@@ -568,7 +568,7 @@ def apply_implib(self):
+ @before('apply_lib_vars', 'default_link_install')
+ def apply_vnum(self):
+ 	"""
+-	libfoo.so is installed as libfoo.so.1.2.3
++	libfoo.so is installed as libfoo.so.1.2.3, unless there is OS-specific scheme
+ 	"""
+ 	if not getattr(self, 'vnum', '') or not 'cshlib' in self.features or os.name != 'posix' or self.env.DEST_BINFMT not in ('elf', 'mac-o'):
+ 		return
+@@ -576,19 +576,33 @@ def apply_vnum(self):
+ 	self.meths.remove('default_link_install')
+ 
+ 	link = self.link_task
+-	nums = self.vnum.split('.')
+ 	node = link.outputs[0]
+-
+ 	libname = node.name
++
++	# OpenBSD-like library handling:
++	#  * each shared library should be named libfoo.so.MAJOR.MINOR
++	#  * no symlinks should be created
++	target_name = self.target
++	osvnum = os.getenv('LIB' + target_name.replace('-', '_') + '_VERSION')
++	if osvnum:
++		self.vnum = osvnum
++	nums = self.vnum.split('.')
++
++	name2 = None
+ 	if libname.endswith('.dylib'):
+ 		name3 = libname.replace('.dylib', '.%s.dylib' % self.vnum)
+-		name2 = libname.replace('.dylib', '.%s.dylib' % nums[0])
++		if not osvnum:
++			name2 = libname.replace('.dylib', '.%s.dylib' % nums[0])
+ 	else:
+ 		name3 = libname + '.' + self.vnum
+-		name2 = libname + '.' + nums[0]
++		if not osvnum:
++			name2 = libname + '.' + nums[0]
+ 
+ 	if self.env.SONAME_ST:
+-		v = self.env.SONAME_ST % name2
++		if name2:
++			v = self.env.SONAME_ST % name2
++		else:
++			v = self.env.SONAME_ST % name3
+ 		self.env.append_value('LINKFLAGS', v.split())
+ 
+ 	bld = self.bld
+@@ -598,11 +612,11 @@ def apply_vnum(self):
+ 	if not path: return
+ 
+ 	bld.install_as(path + os.sep + name3, node, env=self.env)
+-	bld.symlink_as(path + os.sep + name2, name3)
+-	bld.symlink_as(path + os.sep + libname, name3)
+-
+-	# the following task is just to enable execution from the build dir :-/
+-	self.create_task('vnum', node, [node.parent.find_or_declare(name2), node.parent.find_or_declare(name3)])
++	if not osvnum:
++		bld.symlink_as(path + os.sep + name2, name3)
++		bld.symlink_as(path + os.sep + libname, name3)
++		# the following task is just to enable execution from the build dir :-/
++		self.create_task('vnum', node, [node.parent.find_or_declare(name2), node.parent.find_or_declare(name3)])
+ 
+ def exec_vnum_link(self):
+ 	for x in self.outputs:

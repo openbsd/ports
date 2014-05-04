@@ -1,0 +1,18 @@
+$OpenBSD: patch-source4_torture_smbtorture_c,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+This code isn't needed at all because lib/replace/system/readline.h
+automatically includes <readline/history.h> if supportted, and it
+breaks the build when devel/readline is installed.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9885
+--- source4/torture/smbtorture.c.orig	Mon May 13 00:27:51 2013
++++ source4/torture/smbtorture.c	Mon May 13 00:31:00 2013
+@@ -34,10 +34,6 @@
+ #include "param/param.h"
+ #include "lib/util/samba_modules.h"
+ 
+-#if HAVE_READLINE_HISTORY_H
+-#include <readline/history.h>
+-#endif
+-
+ static char *prefix_name(TALLOC_CTX *mem_ctx, const char *prefix, const char *name)
+ {
+ 	if (prefix == NULL)

@@ -1,0 +1,14 @@
+$OpenBSD: patch-pidl_pidl,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Fix annoying warning that pollute output.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9887
+--- pidl/pidl.orig	Sat May 11 00:34:16 2013
++++ pidl/pidl	Sat May 11 00:35:13 2013
+@@ -605,7 +605,7 @@ sub process_file($)
+ 		require Parse::Pidl::IDL;
+ 
+ 		$pidl = Parse::Pidl::IDL::parse_file($idl_file, \@opt_incdirs);
+-		defined @$pidl || die "Failed to parse $idl_file";
++		defined $pidl || die "Failed to parse $idl_file";
+ 	}
+ 
+ 	require Parse::Pidl::Typelist;

@@ -1,0 +1,19 @@
+$OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
+--- buildtools/wafsamba/wafsamba.py.orig	Tue May 14 15:17:30 2013
++++ buildtools/wafsamba/wafsamba.py	Tue May 14 20:16:50 2013
+@@ -192,6 +192,13 @@ def SAMBA_LIBRARY(bld, libname, source,
+     deps = TO_LIST(deps)
+     deps.append(obj_target)
+ 
++    osvnum = os.getenv('LIB' + libname.replace('-', '_') + '_VERSION')
++    if osvnum:
++        vnum = osvnum
++        if realname:  realname  = re.sub(r'(\.[0-9]+)+$', '.' + osvnum, realname)
++        if link_name: link_name = re.sub(r'(\.[0-9]+)+$', '.' + osvnum, link_name)
++        if soname:    soname    = re.sub(r'(\.[0-9]+)+$', '.' + osvnum, soname)
++
+     realname = bld.map_shlib_extension(realname, python=(target_type=='PYTHON'))
+     link_name = bld.map_shlib_extension(link_name, python=(target_type=='PYTHON'))
+ 

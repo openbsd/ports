@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_tdb_wscript,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Force building standalone library (e.g., put headers in apporiate place).
+--- lib/tdb/wscript.orig	Mon May 27 20:45:34 2013
++++ lib/tdb/wscript	Mon May 27 20:45:51 2013
+@@ -31,6 +31,7 @@ def configure(conf):
+     conf.RECURSE('lib/replace')
+ 
+     conf.env.standalone_tdb = conf.IN_LAUNCH_DIR()
++    conf.env.standalone_tdb = True
+     conf.env.building_tdb = True
+ 
+     if not conf.env.standalone_tdb:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ldb_wscript,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Force building standalone library (e.g., put headers in apporiate place).
+--- lib/ldb/wscript.orig	Mon May 27 16:42:26 2013
++++ lib/ldb/wscript	Mon May 27 20:45:07 2013
+@@ -44,6 +44,7 @@ def configure(conf):
+     conf.CONFIG_PATH('LDB_MODULESDIR', conf.SUBST_ENV_VAR('MODULESDIR') + '/ldb')
+ 
+     conf.env.standalone_ldb = conf.IN_LAUNCH_DIR()
++    conf.env.standalone_ldb = True
+ 
+     if not conf.env.standalone_ldb:
+         if conf.CHECK_BUNDLED_SYSTEM_PKG('ldb', minversion=VERSION,

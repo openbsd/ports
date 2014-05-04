@@ -1,0 +1,32 @@
+$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Sort -L flags to unbreak linking when any other version of Samba is installed.
+--- buildtools/wafsamba/samba_autoconf.py.orig	Sat May 11 12:20:52 2013
++++ buildtools/wafsamba/samba_autoconf.py	Sat May 11 13:04:26 2013
+@@ -716,6 +716,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):
+     if not 'EXTRA_LDFLAGS' in conf.env:
+         conf.env['EXTRA_LDFLAGS'] = []
+     conf.env['EXTRA_LDFLAGS'].extend(TO_LIST(flags))
++
++    ''' Make sure things go in order:
++        1. Local -L and -rpath flags
++        2. External -L and -rpath flags
++        3. Others
++    '''
++    localL = []
++    extL = []
++    other = []
++    for f in conf.env['EXTRA_LDFLAGS']:
++        if f.startswith("-L%s" % "/usr/ports"):
++            localL.extend( [ f ] )
++        elif f.startswith("-L"):
++            extL.extend( [ f ] )
++        else:
++            other.extend( [ f ] )
++    conf.env['EXTRA_LDFLAGS'] = []
++    conf.env['EXTRA_LDFLAGS'].extend(localL)
++    conf.env['EXTRA_LDFLAGS'].extend(extL)
++    conf.env['EXTRA_LDFLAGS'].extend(other)
++
+     return flags
+ 
+ 

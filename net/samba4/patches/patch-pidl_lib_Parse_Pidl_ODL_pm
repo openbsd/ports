@@ -1,0 +1,14 @@
+$OpenBSD: patch-pidl_lib_Parse_Pidl_ODL_pm,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Fix annoying warning that pollute output.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9887
+--- pidl/lib/Parse/Pidl/ODL.pm.orig	Sat May 11 00:33:56 2013
++++ pidl/lib/Parse/Pidl/ODL.pm	Sat May 11 00:35:29 2013
+@@ -70,7 +70,7 @@ sub ODL2IDL
+ 					next;
+ 				}
+ 				my $podl = Parse::Pidl::IDL::parse_file($idl_path, $opt_incdirs);
+-				if (defined(@$podl)) {
++				if (defined($podl)) {
+ 					require Parse::Pidl::Typelist;
+ 					my $basename = basename($idl_path, ".idl");
+ 

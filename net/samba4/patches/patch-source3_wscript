@@ -1,0 +1,13 @@
+$OpenBSD: patch-source3_wscript,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Use more generic check for OpenBSD.
+--- source3/wscript.orig	Thu May  1 16:31:03 2014
++++ source3/wscript	Thu May  1 16:31:03 2014
+@@ -69,7 +69,7 @@ def configure(conf):
+     if Options.options.with_swat:
+         conf.env['build_swat'] = True
+ 
+-    if sys.platform != 'openbsd5':
++    if not sys.platform.startswith('openbsd'):
+         conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
+ 
+     conf.CHECK_HEADERS('execinfo.h libexc.h libunwind.h netdb.h')

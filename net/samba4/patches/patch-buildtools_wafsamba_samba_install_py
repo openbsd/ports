@@ -1,0 +1,70 @@
+$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
+--- buildtools/wafsamba/samba_install.py.orig	Thu May  1 16:31:00 2014
++++ buildtools/wafsamba/samba_install.py	Thu May  1 16:31:00 2014
+@@ -67,6 +67,11 @@ def install_library(self):
+         self.env.RPATH = build_ldflags
+         return
+ 
++    target_name = self.target
++
++    # OpenBSD-like library handling
++    osvnum = os.getenv('LIB' + target_name.replace('-', '_') + '_VERSION')
++
+     # setup the install path, expanding variables
+     install_path = getattr(self, 'samba_inst_path', None)
+     if install_path is None:
+@@ -76,8 +81,6 @@ def install_library(self):
+             install_path = '${LIBDIR}'
+     install_path = bld.EXPAND_VARIABLES(install_path)
+ 
+-    target_name = self.target
+-
+     if install_ldflags != build_ldflags:
+         # we will be creating a new target name, and using that for the
+         # install link. That stops us from overwriting the existing build
+@@ -103,23 +106,37 @@ def install_library(self):
+     if getattr(self, 'samba_realname', None):
+         install_name = self.samba_realname
+         install_link = None
+-        if getattr(self, 'soname', ''):
++        if osvnum:
++            if getattr(self, 'soname', ''):
++                osname = self.soname
++            else:
++                osname = install_name
++            osname = re.sub(r'(\.[0-9]+)+$', '', osname) + '.' + osvnum
++            # OpenBSD requires "lib" prefix for all versioned shared libraries
++            osname = re.sub(r'^(.*/|)(?:lib)?(([^l]|l[^i]|li[^b])[^/]+)$', r'\1lib\2', osname)
++            install_name = osname
++            if getattr(self, 'soname', ''):
++                self.soname = osname
++        elif getattr(self, 'soname', ''):
+             install_link = self.soname
+         if getattr(self, 'samba_type', None) == 'PYTHON':
+             inst_name    = bld.make_libname(t.target, nolibprefix=True, python=True)
+         else:
+             inst_name    = bld.make_libname(t.target)
+     elif self.vnum:
+-        vnum_base    = self.vnum.split('.')[0]
+-        install_name = bld.make_libname(target_name, version=self.vnum)
+-        install_link = bld.make_libname(target_name, version=vnum_base)
++        install_link     = None
++        if osvnum:
++            install_name = bld.make_libname(target_name, version=osvnum)
++        else:
++            install_name = bld.make_libname(target_name, version=self.vnum)
++            vnum_base    = self.vnum.split('.')[0]
+         inst_name    = bld.make_libname(t.target)
+-        if not self.private_library:
++        if not self.private_library and not osvnum:
+             # only generate the dev link for non-bundled libs
+             dev_link     = bld.make_libname(target_name)
+     elif getattr(self, 'soname', ''):
+         install_name = bld.make_libname(target_name)
+-        install_link = self.soname
++        install_link = None
+         inst_name    = bld.make_libname(t.target)
+     else:
+         install_name = bld.make_libname(target_name)

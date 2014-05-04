@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-tevent,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+include/samba-4.0/tevent.h
+@lib lib/libtevent.so.${LIBtevent_VERSION}
+lib/pkgconfig/tevent.pc
+lib/python${MODPY_VERSION}/site-packages/_tevent.so
+lib/python${MODPY_VERSION}/site-packages/tevent.py
+lib/python${MODPY_VERSION}/site-packages/tevent.pyc
+lib/python${MODPY_VERSION}/site-packages/tevent.pyo
