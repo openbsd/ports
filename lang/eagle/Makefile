@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/14 22:08:41 stu Exp $
+# $OpenBSD: Makefile,v 1.13 2014/05/04 17:33:34 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		5173.31244
+P =		5217.20046
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}-beta29
+PKGNAME =	${DISTNAME}-beta30
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -56,10 +56,13 @@ do-install:
 	chown ${BINOWN}:${BINGRP} ${EAGLE_BIN}
 	chmod ${BINMODE} ${EAGLE_BIN}
 
+# "set test_log {}" disables logging test results to a file
+# "-namespaces 1" enables namespace tests
 # "set no(exec) 1; set no(compileCSharp) 1" is needed to work around Mono bugs
 do-test:
 	${SETENV} ${MAKE_ENV} ${ALL_TEST_FLAGS} \
 	${LOCALBASE}/bin/mono ${WRKSRC}/bin/EagleShell.exe \
+	-namespaces 1 \
 	-preInitialize 'set no(exec) 1; set no(compileCSharp) 1; set test_log {}' \
 	-file ${WRKSRC}/Tests/all.eagle \
 	${EAGLE_TEST_FLAGS}
