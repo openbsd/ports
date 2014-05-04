@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2013/10/30 15:22:33 landry Exp $
---- configure.orig	Tue Oct 29 23:24:34 2013
-+++ configure	Tue Oct 29 23:25:28 2013
-@@ -21882,9 +21882,9 @@ $as_echo "$as_me: OpenJPEG (JPEG2000) support disabled
+$OpenBSD: patch-configure,v 1.8 2014/05/04 20:17:35 landry Exp $
+--- configure.orig	Wed Apr 16 22:04:49 2014
++++ configure	Wed Apr 30 22:15:37 2014
+@@ -22142,9 +22142,9 @@ $as_echo "$as_me: OpenJPEG (JPEG2000) support disabled
  
  elif test "$with_openjpeg" = "yes" -o "$with_openjpeg" = "" ; then
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.7 2013/10/30 15:22:33 landry Exp $
  if test "x$ac_cv_header_openjpeg_2_0_openjpeg_h" = xyes; then :
    cat >>confdefs.h <<_ACEOF
  #define HAVE_OPENJPEG_2_0_OPENJPEG_H 1
-@@ -21944,7 +21944,7 @@ fi
+@@ -22204,7 +22204,7 @@ fi
  else
  
    HAVE_OPENJPEG=yes

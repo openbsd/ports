@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/05/31 15:00:09 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2014/05/04 20:17:35 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -21,6 +21,7 @@ bin/gdal-config
 @bin bin/nearblack
 @bin bin/ogr2ogr
 @bin bin/ogrinfo
+@bin bin/ogrlineref
 @bin bin/ogrtindex
 @bin bin/testepsg
 include/cpl_atomic_ops.h
@@ -44,6 +45,7 @@ include/cpl_quad_tree.h
 include/cpl_spawn.h
 include/cpl_string.h
 include/cpl_time.h
+include/cpl_virtualmem.h
 include/cpl_vsi.h
 include/cpl_vsi_virtual.h
 include/cpl_vsil_curl_priv.h
@@ -63,7 +65,10 @@ include/gdal_simplesurf.h
 include/gdal_version.h
 include/gdal_vrt.h
 include/gdalexif.h
+include/gdalgeorefpamdataset.h
 include/gdalgrid.h
+include/gdalgrid_priv.h
+include/gdaljp2abstractdataset.h
 include/gdaljp2metadata.h
 include/gdalwarper.h
 include/gdalwarpkernel_opencl.h
@@ -86,6 +91,7 @@ lib/gdalplugins/
 lib/libgdal.a
 lib/libgdal.la
 @lib lib/libgdal.so.${LIBgdal_VERSION}
+lib/pkgconfig/gdal.pc
 share/gdal/
 share/gdal/GDALLogoBW.svg
 share/gdal/GDALLogoColor.svg
@@ -106,11 +112,17 @@ share/gdal/gcs.override.csv
 share/gdal/gdal_datum.csv
 share/gdal/gdalicon.png
 share/gdal/geoccs.csv
+share/gdal/gml_registry.xml
 share/gdal/gt_datum.csv
 share/gdal/gt_ellips.csv
 share/gdal/header.dxf
+share/gdal/inspire_cp_BasicPropertyUnit.gfs
+share/gdal/inspire_cp_CadastralBoundary.gfs
+share/gdal/inspire_cp_CadastralParcel.gfs
+share/gdal/inspire_cp_CadastralZoning.gfs
 share/gdal/nitf_spec.xml
 share/gdal/nitf_spec.xsd
+share/gdal/ogrvrt.xsd
 share/gdal/osmconf.ini
 share/gdal/ozi_datum.csv
 share/gdal/ozi_ellips.csv
@@ -120,6 +132,8 @@ share/gdal/pcs.csv
 share/gdal/pcs.override.csv
 share/gdal/prime_meridian.csv
 share/gdal/projop_wparm.csv
+share/gdal/ruian_vf_ob_v1.gfs
+share/gdal/ruian_vf_st_v1.gfs
 share/gdal/s57agencies.csv
 share/gdal/s57attributes.csv
 share/gdal/s57attributes_aml.csv

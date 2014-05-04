@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.5 2013/05/31 15:00:09 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.6 2014/05/04 20:17:35 landry Exp $
 bin/epsg_tr.py
 bin/esri2wkt.py
 bin/gcps2vec.py
@@ -6,20 +6,23 @@ bin/gcps2wld.py
 bin/gdal2tiles.py
 bin/gdal2xyz.py
 bin/gdal_auth.py
+bin/gdal_calc.dox
 bin/gdal_calc.py
-bin/gdal_edit.py
 bin/gdal_edit.dox
+bin/gdal_edit.py
 bin/gdal_fillnodata.dox
 bin/gdal_fillnodata.py
 bin/gdal_merge.py
-bin/gdal_polygonize.py
 bin/gdal_polygonize.dox
-bin/gdal_proximity.py
+bin/gdal_polygonize.py
 bin/gdal_proximity.dox
+bin/gdal_proximity.py
 bin/gdal_retile.py
 bin/gdal_sieve.dox
 bin/gdal_sieve.py
 bin/gdalchksum.py
+bin/gdalcompare.dox
+bin/gdalcompare.py
 bin/gdalident.py
 bin/gdalimport.py
 bin/gdalmove.dox

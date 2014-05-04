@@ -1,0 +1,14 @@
+$OpenBSD: patch-ogr_ogrsf_frmts_cartodb_ogrcartodbdatasource_cpp,v 1.1 2014/05/04 20:17:35 landry Exp $
+http://trac.osgeo.org/gdal/ticket/5449
+http://trac.osgeo.org/gdal/changeset/27267
+--- ogr/ogrsf_frmts/cartodb/ogrcartodbdatasource.cpp.orig	Wed Apr 30 23:31:50 2014
++++ ogr/ogrsf_frmts/cartodb/ogrcartodbdatasource.cpp	Wed Apr 30 23:32:00 2014
+@@ -504,7 +504,7 @@ json_object* OGRCARTODBDataSource::RunSQL(const char* 
+     {
+         CPLError( CE_Failure, CPLE_AppDefined,
+                     "JSON parsing error: %s (at offset %d)",
+-                    json_tokener_errors[jstok->err], jstok->char_offset);
++                    json_tokener_error_desc(jstok->err), jstok->char_offset);
+         json_tokener_free(jstok);
+         CPLHTTPDestroyResult(psResult);
+         return NULL;

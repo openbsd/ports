@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/21 15:20:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2014/05/04 20:17:35 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		1.10.0
+V =		1.11.0
 DISTNAME =	gdal-${V}
-REVISION-main =	2
-REVISION-perl =	0
 SHARED_ONLY =	Yes
 
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
 
-SHARED_LIBS =	gdal 20.0 #18.0
+SHARED_LIBS =	gdal 21.0 #19.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -37,6 +35,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			geo/geos \
 			geo/spatialite/libspatialite \
 			devel/libidn \
+			devel/json-c \
 			graphics/png \
 			graphics/giflib \
 			graphics/jpeg \
@@ -46,8 +45,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/proj \
 			devel/geotiff
 
-WANTLIB-main =		${WANTLIB} c expat m stdc++ z tiff openjp2 \
-			curl pq geos geos_c idn png gif jpeg jasper geotiff \
+WANTLIB-main =		${WANTLIB} c expat m stdc++ z tiff openjp2 ssl crypto \
+			curl pq geos geos_c idn png gif jpeg jasper json-c geotiff \
 			proj pthread freexl pcre spatialite sqlite3 xml2
 
 
@@ -57,7 +56,7 @@ WANTLIB-python =	${MODPY_WANTLIB} gdal m pthread stdc++
 LIB_DEPENDS-perl =	${PKGNAME}:${BASE_PKGPATH},-main
 WANTLIB-perl =		gdal crypto curl expat geos_c geotiff gif idn \
 			jasper jpeg openjp2 m png pq ssl tiff z pthread \
-			freexl pcre spatialite xml2 \
+			json-c freexl pcre spatialite sqlite3 xml2 \
 			${MODGETTEXT_WANTLIB}
 
 RUN_DEPENDS +=		math/py-numpy
@@ -100,6 +99,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 		--with-curl=${LOCALBASE} \
 		--with-gif=${LOCALBASE} \
 		--with-jpeg=${LOCALBASE} \
+		--with-libjson-c=${LOCALBASE} \
 		--with-jasper=${LOCALBASE}
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-ogr_ogrsf_frmts_couchdb_ogrcouchdbdatasource_cpp,v 1.1 2014/05/04 20:17:35 landry Exp $
+http://trac.osgeo.org/gdal/ticket/5449
+http://trac.osgeo.org/gdal/changeset/27267
+--- ogr/ogrsf_frmts/couchdb/ogrcouchdbdatasource.cpp.orig	Wed Apr 30 23:18:12 2014
++++ ogr/ogrsf_frmts/couchdb/ogrcouchdbdatasource.cpp	Wed Apr 30 23:18:21 2014
+@@ -1078,7 +1078,7 @@ json_object* OGRCouchDBDataSource::REQUEST(const char*
+     {
+         CPLError( CE_Failure, CPLE_AppDefined,
+                     "JSON parsing error: %s (at offset %d)",
+-                    json_tokener_errors[jstok->err], jstok->char_offset);
++                    json_tokener_error_desc(jstok->err), jstok->char_offset);
+ 
+         json_tokener_free(jstok);
+ 

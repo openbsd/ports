@@ -1,0 +1,15 @@
+$OpenBSD: patch-frmts_mbtiles_mbtilesdataset_cpp,v 1.1 2014/05/04 20:17:35 landry Exp $
+cope with json-c 0.12
+http://trac.osgeo.org/gdal/ticket/5449
+http://trac.osgeo.org/gdal/changeset/27267
+--- frmts/mbtiles/mbtilesdataset.cpp.orig	Wed Apr 30 22:29:34 2014
++++ frmts/mbtiles/mbtilesdataset.cpp	Wed Apr 30 22:30:17 2014
+@@ -620,7 +620,7 @@ char* MBTilesDataset::FindKey(int iPixel, int iLine,
+     {
+         CPLError( CE_Failure, CPLE_AppDefined,
+                     "JSON parsing error: %s (at offset %d)",
+-                    json_tokener_errors[jstok->err],
++                    json_tokener_error_desc(jstok->err),
+                     jstok->char_offset);
+         json_tokener_free(jstok);
+ 

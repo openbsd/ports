@@ -1,0 +1,14 @@
+$OpenBSD: patch-ogr_ogrsf_frmts_geojson_ogrtopojsonreader_cpp,v 1.1 2014/05/04 20:17:35 landry Exp $
+http://trac.osgeo.org/gdal/ticket/5449
+http://trac.osgeo.org/gdal/changeset/27267
+--- ogr/ogrsf_frmts/geojson/ogrtopojsonreader.cpp.orig	Wed Apr 30 23:17:52 2014
++++ ogr/ogrsf_frmts/geojson/ogrtopojsonreader.cpp	Wed Apr 30 23:18:04 2014
+@@ -74,7 +74,7 @@ OGRErr OGRTopoJSONReader::Parse( const char* pszText )
+         {
+             CPLError( CE_Failure, CPLE_AppDefined,
+                       "TopoJSON parsing error: %s (at offset %d)",
+-            	      json_tokener_errors[jstok->err], jstok->char_offset);
++            	      json_tokener_error_desc(jstok->err), jstok->char_offset);
+             
+             json_tokener_free(jstok);
+             return OGRERR_CORRUPT_DATA;
