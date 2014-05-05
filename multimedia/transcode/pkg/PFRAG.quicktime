@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.quicktime,v 1.4 2013/01/19 08:42:35 brad Exp $
-lib/transcode/export_mov.so
-lib/transcode/import_mov.so

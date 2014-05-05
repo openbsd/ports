@@ -1,9 +1,20 @@
-$OpenBSD: patch-import_probe_ffmpeg_c,v 1.2 2013/01/26 12:47:44 brad Exp $
+$OpenBSD: patch-import_probe_ffmpeg_c,v 1.3 2014/05/05 11:51:37 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- import/probe_ffmpeg.c.orig	Sat Nov 19 11:50:27 2011
-+++ import/probe_ffmpeg.c	Fri Jan 18 19:58:49 2013
++++ import/probe_ffmpeg.c	Mon May  5 02:49:34 2014
+@@ -51,8 +51,8 @@ static void translate_info(const AVFormatContext *ctx,
+             info->bitrate = st->codec->bit_rate / 1000;
+             info->width = st->codec->width;
+             info->height = st->codec->height;
+-            if (st->r_frame_rate.num > 0 && st->r_frame_rate.den > 0) {
+-                info->fps = av_q2d(st->r_frame_rate);
++            if (st->avg_frame_rate.num > 0 && st->avg_frame_rate.den > 0) {
++                info->fps = av_q2d(st->avg_frame_rate);
+             } else {
+                 /* watch out here */
+                 info->fps = 1.0/av_q2d(st->codec->time_base);
 @@ -99,8 +99,8 @@ void probe_ffmpeg(info_t *ipipe)
  
      TC_INIT_LIBAVCODEC;
@@ -15,3 +26,21 @@ Update for newer FFmpeg API.
      if (ret != 0) {
          tc_log_error(__FILE__, "unable to open '%s'"
                                 " (libavformat failure)",
+@@ -109,7 +109,7 @@ void probe_ffmpeg(info_t *ipipe)
+         return;
+     }
+ 
+-    ret = av_find_stream_info(lavf_dmx_context);
++    ret = avformat_find_stream_info(lavf_dmx_context, NULL);
+     if (ret < 0) {
+         tc_log_error(__FILE__, "unable to fetch informations from '%s'"
+                                " (libavformat failure)",
+@@ -120,7 +120,7 @@ void probe_ffmpeg(info_t *ipipe)
+ 
+     translate_info(lavf_dmx_context, ipipe->probe_info);
+ 
+-    av_close_input_file(lavf_dmx_context);
++    avformat_close_input(&lavf_dmx_context);
+     return;
+ }
+ 

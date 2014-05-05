@@ -1,10 +1,18 @@
-$OpenBSD: patch-export_export_ffmpeg_c,v 1.7 2013/01/26 12:47:44 brad Exp $
+$OpenBSD: patch-export_export_ffmpeg_c,v 1.8 2014/05/05 11:51:37 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- export/export_ffmpeg.c.orig	Sat Nov 19 11:50:27 2011
-+++ export/export_ffmpeg.c	Fri Jan 18 22:50:29 2013
-@@ -180,7 +180,7 @@ static char *tc_strchrnul(const char *s, int c) {
++++ export/export_ffmpeg.c	Mon May  5 02:55:13 2014
+@@ -122,6 +122,7 @@ static uint8_t             *img_buffer = NULL;
+ static AVFrame             *lavc_convert_frame = NULL;
+ 
+ static AVCodec             *lavc_venc_codec = NULL;
++static AVDictionary        *lavc_venc_opts = NULL;
+ static AVFrame             *lavc_venc_frame = NULL;
+ static AVCodecContext      *lavc_venc_context;
+ static avi_t               *avifile = NULL;
+@@ -180,7 +181,7 @@ static char *tc_strchrnul(const char *s, int c) {
  
  
  /* START: COPIED FROM ffmpeg-0.5_p22846(ffmpeg.c, cmdutils.c) */
@@ -13,15 +21,43 @@ Update for newer FFmpeg API.
  #include <libavutil/avstring.h>
  #include <libswscale/swscale.h>
  
-@@ -362,6 +362,7 @@ static int opt_preset(const char *opt, const char *arg
- MOD_init
- {
-     char *user_codec_string = NULL;
-+    AVDictionary *opts = NULL;
+@@ -239,6 +240,14 @@ static void opt_subtitle_codec(const char *arg)
+     opt_codec(&subtitle_stream_copy, &subtitle_codec_name, AVMEDIA_TYPE_SUBTITLE, arg);
+ }
  
-     if (param->flag == TC_VIDEO) {
-         size_t fsize = 0;
-@@ -470,7 +471,6 @@ MOD_init
++static int av_set_string3_fallback(void *obj, const char *name, const char *val, int alloc, const AVOption **o_out)
++{
++    const AVOption *o = av_opt_find(obj, name, NULL, 0, 0);
++    if (o_out)
++        *o_out = o;
++    return av_opt_set(obj, name, val, 0);
++}
++
+ static
+ int opt_default(const char *opt, const char *arg){
+     int type;
+@@ -249,9 +258,9 @@ int opt_default(const char *opt, const char *arg){
+     for(type=0; type<AVMEDIA_TYPE_NB && ret>= 0; type++){
+ 		/* GLUE: +if */
+ 		if (type == AVMEDIA_TYPE_VIDEO) {
+-        const AVOption *o2 = av_find_opt(avcodec_opts[0], opt, NULL, opt_types[type], opt_types[type]);
++        const AVOption *o2 = av_opt_find(avcodec_opts[0], opt, NULL, opt_types[type], 0);
+         if(o2)
+-            ret = av_set_string3(avcodec_opts[type], opt, arg, 1, &o);
++            ret = av_set_string3_fallback(avcodec_opts[type], opt, arg, 1, &o);
+ 		/* GLUE: +if */
+ 		}
+     }
+@@ -266,7 +275,7 @@ int opt_default(const char *opt, const char *arg){
+         if(opt[0] == 'a')
+             ret = av_set_string3(avcodec_opts[AVMEDIA_TYPE_AUDIO], opt+1, arg, 1, &o);
+         else */ if(opt[0] == 'v')
+-            ret = av_set_string3(avcodec_opts[AVMEDIA_TYPE_VIDEO], opt+1, arg, 1, &o);
++            ret = av_set_string3_fallback(avcodec_opts[AVMEDIA_TYPE_VIDEO], opt+1, arg, 1, &o);
+ 		/* GLUE: disabling
+         else if(opt[0] == 's')
+             ret = av_set_string3(avcodec_opts[AVMEDIA_TYPE_SUBTITLE], opt+1, arg, 1, &o);
+@@ -470,7 +479,6 @@ MOD_init
      }
  
      TC_LOCK_LIBAVCODEC;
@@ -29,73 +65,116 @@ Update for newer FFmpeg API.
      avcodec_register_all();
      TC_UNLOCK_LIBAVCODEC;
  
-@@ -598,7 +598,6 @@ MOD_init
-         lavc_param_rc_max_rate = 1150;
-         lavc_param_rc_buffer_size = 40 * 8;
-         lavc_param_rc_buffer_aggressivity = 99;
--        lavc_param_scan_offset = 0;
+@@ -486,7 +494,7 @@ MOD_init
+ 		            codec->name, codec->fourCC, codec->comments);
+     }
  
-         break;
+-    lavc_venc_context = avcodec_alloc_context();
++    lavc_venc_context = avcodec_alloc_context3(lavc_venc_codec);
+     lavc_venc_frame   = avcodec_alloc_frame();
  
-@@ -634,7 +633,7 @@ MOD_init
+     lavc_convert_frame= avcodec_alloc_frame();
+@@ -634,7 +642,7 @@ MOD_init
          lavc_param_rc_max_rate = 2516;
          lavc_param_rc_buffer_size = 224 * 8;
          lavc_param_rc_buffer_aggressivity = 99;
 -        lavc_param_scan_offset = CODEC_FLAG_SVCD_SCAN_OFFSET;
-+        av_dict_set(&opts, "scan_offset", "1", 0);
++        lavc_param_scan_offset = 1;
  
          break;
  
-@@ -674,7 +673,7 @@ MOD_init
+@@ -674,7 +682,7 @@ MOD_init
  
          lavc_param_rc_buffer_size = 224 * 8;
          lavc_param_rc_buffer_aggressivity = 99;
 -        lavc_param_scan_offset = CODEC_FLAG_SVCD_SCAN_OFFSET;
-+        av_dict_set(&opts, "scan_offset", "1", 0);
++        lavc_param_scan_offset = 1;
  
          break;
  
-@@ -1065,15 +1064,20 @@ MOD_init
+@@ -838,8 +846,13 @@ MOD_init
+     lavc_venc_context->rc_strategy        = lavc_param_vrc_strategy;
+     lavc_venc_context->b_frame_strategy   = lavc_param_vb_strategy;
+     lavc_venc_context->b_quant_offset     = lavc_param_vb_qoffset;
+-    lavc_venc_context->luma_elim_threshold= lavc_param_luma_elim_threshold;
+-    lavc_venc_context->chroma_elim_threshold= lavc_param_chroma_elim_threshold;
++
++    char buf[1024];
++#define set_dict_opt(val, opt) \
++       snprintf(buf, sizeof(buf), "%i", val); \
++       av_dict_set(&lavc_venc_opts, opt, buf, 0)
++    set_dict_opt(lavc_param_luma_elim_threshold, "luma_elim_threshold");
++    set_dict_opt(lavc_param_chroma_elim_threshold, "chroma_elim_threshold");
+     lavc_venc_context->rtp_payload_size   = lavc_param_packet_size;
+ #if LIBAVCODEC_VERSION_INT < ((52<<16)+(0<<8)+0)   
+     if (lavc_param_packet_size)
+@@ -870,7 +883,7 @@ MOD_init
+     lavc_venc_context->context_model      = lavc_param_context;
+     lavc_venc_context->scenechange_threshold= lavc_param_sc_threshold;
+     lavc_venc_context->noise_reduction    = lavc_param_noise_reduction;
+-    lavc_venc_context->inter_threshold    = lavc_param_inter_threshold;
++    set_dict_opt(lavc_param_inter_threshold, "inter_threshold");
+     lavc_venc_context->intra_dc_precision = lavc_param_intra_dc_precision;
+     lavc_venc_context->skip_top           = lavc_param_skip_top;
+     lavc_venc_context->skip_bottom        = lavc_param_skip_bottom;
+@@ -887,7 +900,7 @@ MOD_init
+ 		    lavc_venc_context->thread_count);
+     }
+ 
+-    avcodec_thread_init(lavc_venc_context, lavc_param_threads);
++    lavc_venc_context->thread_count = lavc_param_threads;
+ 
+     if (lavc_param_intra_matrix) {
+         char *tmp;
+@@ -1065,15 +1078,12 @@ MOD_init
      lavc_venc_context->flags |= lavc_param_closedgop;
      lavc_venc_context->flags |= lavc_param_trunc;
      lavc_venc_context->flags |= lavc_param_aic;
 -    lavc_venc_context->flags |= lavc_param_umv;
-+    if (lavc_param_umv)
-+        av_dict_set(&opts, "umv", "1", 0);
      lavc_venc_context->flags |= lavc_param_v4mv;
 -    lavc_venc_context->flags |= lavc_param_data_partitioning;
-+    if (lavc_param_data_partitioning)
-+        av_dict_set(&opts, "data_partitioning", "1", 0);
-     lavc_venc_context->flags |= lavc_param_cbp;
+-    lavc_venc_context->flags |= lavc_param_cbp;
++    if(lavc_param_cbp)
++       av_dict_set(&lavc_venc_opts, "mpv_flags", "+cbp_rd", 0);
      lavc_venc_context->flags |= lavc_param_mv0;
-     lavc_venc_context->flags |= lavc_param_qp_rd;
+-    lavc_venc_context->flags |= lavc_param_qp_rd;
 -    lavc_venc_context->flags |= lavc_param_scan_offset;
 -    lavc_venc_context->flags |= lavc_param_ss;
 -    lavc_venc_context->flags |= lavc_param_alt;
-+    if (lavc_param_scan_offset)
-+        av_dict_set(&opts, "scan_offset", "1", 0);
-+    if (lavc_param_ss)
-+        av_dict_set(&opts, "structured_slices", "1", 0);
-+    if (lavc_param_alt)
-+        av_dict_set(&opts, "alternate_scan", "1", 0);
++    if(lavc_param_qp_rd)
++       av_dict_set(&lavc_venc_opts, "mpv_flags", "+qp_rd", 0);
      lavc_venc_context->flags |= lavc_param_ilme;
  #if LIBAVCODEC_VERSION_INT < ((52<<16)+(0<<8)+0)   
      lavc_venc_context->flags |= lavc_param_trell;
-@@ -1082,7 +1086,7 @@ MOD_init
- #endif
+@@ -1241,20 +1251,39 @@ MOD_init
+ 		}
+ 	}
  
-     if (lavc_param_gray)
--        lavc_venc_context->flags |= CODEC_FLAG_GRAY;
-+        av_dict_set(&opts, "gray", "1", 0);
-     if (lavc_param_normalize_aqp)
-         lavc_venc_context->flags |= CODEC_FLAG_NORMALIZE_AQP;
++    if (lavc_param_scan_offset) {
++        av_dict_set(&lavc_venc_opts, "scan_offset", "1", 0);
++    }
  
-@@ -1245,14 +1249,14 @@ MOD_init
++    if (lavc_param_ss) {
++        av_dict_set(&lavc_venc_opts, "structured_slices", "1", 0);
++    }
++
++   if (lavc_param_alt) {
++       av_dict_set(&lavc_venc_opts, "alternate_scan", "1", 0);
++    }
++
++    if (lavc_param_umv) {
++        av_dict_set(&lavc_venc_opts, "umv", "1", 0);
++    }
++
++    if (lavc_param_data_partitioning) {
++        av_dict_set(&lavc_venc_opts, "vdpart", "1", 0);
++    }
++
      //-- open codec --
      //----------------
      TC_LOCK_LIBAVCODEC;
 -    ret = avcodec_open(lavc_venc_context, lavc_venc_codec);
-+    ret = avcodec_open2(lavc_venc_context, lavc_venc_codec, &opts);
++    ret = avcodec_open2(lavc_venc_context, lavc_venc_codec, &lavc_venc_opts);
      TC_UNLOCK_LIBAVCODEC;
      if (ret < 0) {
        tc_log_warn(MOD_NAME, "could not open FFMPEG codec");
@@ -103,7 +182,10 @@ Update for newer FFmpeg API.
      }
  
 -    if (lavc_venc_context->codec->encode == NULL) {
-+    if (lavc_venc_context->codec->encode2 == NULL) {
++    if (av_codec_is_encoder(lavc_venc_context->codec) == 0) {
        tc_log_warn(MOD_NAME, "could not open FFMPEG codec "
-               "(lavc_venc_context->codec->encode == NULL)");
+-              "(lavc_venc_context->codec->encode == NULL)");
++              "(av_codec_is_encoder(lavc_venc_context->codec) == 0)");
        return TC_EXPORT_ERROR;
+     }
+ 

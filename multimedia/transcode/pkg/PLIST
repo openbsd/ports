@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/19 08:42:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/05/05 11:51:37 brad Exp $
+@pkgpath multimedia/transcode,quicktime
 %%i386%%
 %%lzo%%
 %%mjpegtools%%
-%%quicktime%%
 @bin bin/avifix
 @bin bin/aviindex
 @bin bin/avimerge
@@ -29,6 +29,7 @@ lib/transcode/export_dvraw.so
 lib/transcode/export_ffmpeg.so
 lib/transcode/export_jpg.so
 lib/transcode/export_lame.so
+lib/transcode/export_mov.so
 lib/transcode/export_mp2.so
 lib/transcode/export_null.so
 lib/transcode/export_ogg.so
@@ -103,6 +104,7 @@ lib/transcode/import_dv.so
 lib/transcode/import_dvd.so
 lib/transcode/import_ffmpeg.so
 lib/transcode/import_framegen.so
+lib/transcode/import_mov.so
 lib/transcode/import_mp3.so
 lib/transcode/import_mpeg2.so
 lib/transcode/import_mplayer.so

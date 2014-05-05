@@ -1,9 +1,9 @@
-$OpenBSD: patch-import_decode_lavc_c,v 1.4 2013/01/26 12:47:44 brad Exp $
+$OpenBSD: patch-import_decode_lavc_c,v 1.5 2014/05/05 11:51:37 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- import/decode_lavc.c.orig	Sat Nov 19 11:50:27 2011
-+++ import/decode_lavc.c	Fri Jan 18 22:01:06 2013
++++ import/decode_lavc.c	Mon May  5 02:31:48 2014
 @@ -120,6 +120,7 @@ void decode_lavc(decode_t *decode)
    char               *yuv2rgb_buffer = NULL;
    AVCodec            *lavc_dec_codec = NULL;
@@ -12,7 +12,24 @@ Update for newer FFmpeg API.
    int                 x_dim = 0, y_dim = 0;
    int                 pix_fmt, frame_size = 0, bpp = 8;
    struct ffmpeg_codec *codec;
-@@ -177,16 +178,11 @@ void decode_lavc(decode_t *decode)
+@@ -128,7 +129,7 @@ void decode_lavc(decode_t *decode)
+   char *mp4_ptr=NULL;
+   int flush = 0;
+   int mp4_size=0;
+-  int buf_len=0;
++  unsigned int buf_len=0;
+   int run=0;
+ 
+   // decoder
+@@ -170,23 +171,18 @@ void decode_lavc(decode_t *decode)
+ 
+   // Set these to the expected values so that ffmpeg's decoder can
+   // properly detect interlaced input.
+-  lavc_dec_context = avcodec_alloc_context();
++  lavc_dec_context = avcodec_alloc_context3(lavc_dec_codec);
+   if (lavc_dec_context == NULL) {
+       tc_log_error(__FILE__, "Could not allocate enough memory.");
+       goto decoder_error;
    }
    lavc_dec_context->width  = x_dim;
    lavc_dec_context->height = y_dim;

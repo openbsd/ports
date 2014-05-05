@@ -15,9 +15,6 @@ There are a few FLAVORS that add functionality to transcode:
     mjpegtools: adds video encoding with mpeg2enc and audio
         encoding with mp2enc from the mjpegtools package.
         also adds the ability to import YUV4MPEG streams.
-    quicktime: adds the ability to import and export using
-        the libquicktime API, thus it adds the ability to
-        import and export QuickTime-compatible .mov files.
     altivec: uses altivec vector unit for a huge speed-up.
         Only works on powerpc platform with altivec hardware support.
         Altivec is present on all PowerPC G4 processors.

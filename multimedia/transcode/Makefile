@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/05/05 11:51:37 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	3
+REVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
@@ -15,18 +15,18 @@ HOMEPAGE=	http://www.transcoding.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52
-WANTLIB += avcodec avformat avutil bz2 c crypto dv dvdread freetype
-WANTLIB += gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4 postproc
-WANTLIB += pthread pthread-stubs schroedinger-1.0 sndio speex ssl
-WANTLIB += theora theoradec theoraenc usbhid vorbis vorbisenc
-WANTLIB += vorbisfile vpx x264 xcb xml2 z
+WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52 avcodec
+WANTLIB += avformat avutil bz2 c crypto dv dvdcss dvdread freetype gsm jpeg
+WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus orc-0.4 postproc pthread
+WANTLIB += pthread-stubs quicktime schroedinger-1.0 sndio speex ssl theora
+WANTLIB += theoradec theoraenc usbhid vorbis vorbisenc vorbisfile vpx x264
+WANTLIB += xcb xml2 z
 
 # xvidcore is dlopen()d so check-lib-depends shows it as Extra, however we
 # want to track changes to the ABI to ensure transcode is updated if needed.
 WANTLIB += xvidcore
 
-FLAVORS=	lzo mjpegtools quicktime altivec
+FLAVORS=	lzo mjpegtools altivec
 FLAVOR?=
 
 .if ${MACHINE_ARCH} == "i386"
@@ -35,7 +35,7 @@ PKG_ARGS+=	-Di386=1
 PKG_ARGS+=	-Di386=0
 .endif
 
-MODULES=	converters/libiconv
+MODULES=	devel/gettext
 
 AUTOCONF_VERSION= 2.68
 AUTOMAKE_VERSION= 1.11
@@ -50,6 +50,7 @@ LIB_DEPENDS=	audio/lame \
 		graphics/jpeg \
 		graphics/libmpeg2 \
 		multimedia/libdv \
+		multimedia/libquicktime \
 		multimedia/libtheora \
 		multimedia/x264 \
 		multimedia/xvidcore \
@@ -81,6 +82,7 @@ CONFIGURE_ARGS+=--enable-a52 \
 		--enable-libmpeg2 \
 		--enable-libmpeg2convert \
 		--enable-libpostproc \
+		--enable-libquicktime \
 		--enable-libxml2 \
 		--enable-netstream \
 		--enable-ogg \
@@ -105,22 +107,12 @@ PKG_ARGS+=	-Dlzo=0
 
 .if ${FLAVOR:Mmjpegtools}
 CONFIGURE_ARGS+=--enable-mjpegtools
-WANTLIB +=	mjpegutils-1.9
+WANTLIB +=	mjpegutils
 LIB_DEPENDS+=	multimedia/mjpegtools
 RUN_DEPENDS+=	multimedia/mjpegtools
 PKG_ARGS+=	-Dmjpegtools=1
 .else
 PKG_ARGS+=	-Dmjpegtools=0
-.endif
-
-.if ${FLAVOR:Mquicktime}
-CONFIGURE_ARGS+=--enable-libquicktime
-LIB_DEPENDS+=	multimedia/libquicktime
-WANTLIB +=	quicktime
-MODULES+=	devel/gettext
-PKG_ARGS+=	-Dquicktime=1
-.else
-PKG_ARGS+=	-Dquicktime=0
 .endif
 
 .if ${FLAVOR:Maltivec}

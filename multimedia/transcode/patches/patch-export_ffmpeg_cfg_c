@@ -1,9 +1,18 @@
-$OpenBSD: patch-export_ffmpeg_cfg_c,v 1.2 2013/01/26 12:47:44 brad Exp $
+$OpenBSD: patch-export_ffmpeg_cfg_c,v 1.3 2014/05/05 11:51:37 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- export/ffmpeg_cfg.c.orig	Sat Nov 19 11:50:27 2011
-+++ export/ffmpeg_cfg.c	Fri Jan 18 22:38:18 2013
++++ export/ffmpeg_cfg.c	Mon May  5 00:59:06 2014
+@@ -126,7 +126,7 @@ int lavc_param_gmc = 0;
+ //int lavc_param_atag = 0;
+ //int lavc_param_abitrate = 224;
+ 
+-char *lavc_param_video_preset = "medium";
++char *lavc_param_video_preset = NULL;
+ char *lavc_param_ffmpeg_datadir = "/usr/share/ffmpeg";
+ 
+ TCConfigEntry lavcopts_conf[]={
 @@ -160,9 +160,9 @@ TCConfigEntry lavcopts_conf[]={
      {"vcelim", &lavc_param_chroma_elim_threshold, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, -99, 99},
      {"vpsize", &lavc_param_packet_size, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 0, 100000000},
@@ -12,11 +21,11 @@ Update for newer FFmpeg API.
 +    {"vdpart", &lavc_param_data_partitioning, TCCONF_TYPE_INT, 0, 0, 1},
  //    {"keyint", &lavc_param_keyint, TCCONF_TYPE_INT, 0, 0, 0},
 -    {"gray", &lavc_param_gray, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_PART},
-+    {"gray", &lavc_param_gray, TCCONF_TYPE_INT, 0, 0, 1},
++    {"gray", &lavc_param_gray, TCCONF_TYPE_INT, 0, 0, CODEC_FLAG_GRAY},
      {"mpeg_quant", &lavc_param_mpeg_quant, TCCONF_TYPE_FLAG, 0, 0, 1},
      {"vi_qfactor", &lavc_param_vi_qfactor, TCCONF_TYPE_FLOAT, TCCONF_FLAG_RANGE, -31.0, 31.0},
      {"vi_qoffset", &lavc_param_vi_qoffset, TCCONF_TYPE_FLOAT, TCCONF_FLAG_RANGE, 0.0, 31.0},
-@@ -211,7 +211,7 @@ TCConfigEntry lavcopts_conf[]={
+@@ -211,21 +211,21 @@ TCConfigEntry lavcopts_conf[]={
  #else
      {"aic", &lavc_param_aic, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_AC_PRED},
  #endif    
@@ -25,9 +34,15 @@ Update for newer FFmpeg API.
      {"ibias", &lavc_param_ibias, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, -512, 512},
      {"pbias", &lavc_param_pbias, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, -512, 512},
      {"coder", &lavc_param_coder, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 0, 10},
-@@ -223,9 +223,9 @@ TCConfigEntry lavcopts_conf[]={
+     {"context", &lavc_param_context, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 0, 10},
+     {"intra_matrix", &lavc_param_intra_matrix, TCCONF_TYPE_STRING, 0, 0, 0},
+     {"inter_matrix", &lavc_param_inter_matrix, TCCONF_TYPE_STRING, 0, 0, 0},
+-    {"cbp", &lavc_param_cbp, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_CBP_RD},
++    {"cbp", &lavc_param_cbp, TCCONF_TYPE_FLAG, 0, 0, 1},
+     {"mv0", &lavc_param_mv0, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_MV0},
      {"nr", &lavc_param_noise_reduction, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 0, 1000000},
-     {"qprd", &lavc_param_qp_rd, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_QP_RD},
+-    {"qprd", &lavc_param_qp_rd, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_QP_RD},
++    {"qprd", &lavc_param_qp_rd, TCCONF_TYPE_FLAG, 0, 0, 1},
      {"threads", &lavc_param_threads, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 1, 16},
 -    {"ss", &lavc_param_ss, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_H263P_SLICE_STRUCT},
 -    {"svcd_sof", &lavc_param_scan_offset, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_SVCD_SCAN_OFFSET},
@@ -38,3 +53,11 @@ Update for newer FFmpeg API.
      {"ilme", &lavc_param_ilme, TCCONF_TYPE_FLAG, 0, 0, CODEC_FLAG_INTERLACED_ME},
      {"inter_threshold", &lavc_param_inter_threshold, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, -1000000, 1000000},
      {"sc_threshold", &lavc_param_sc_threshold, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, -1000000, 1000000},
+@@ -237,7 +237,6 @@ TCConfigEntry lavcopts_conf[]={
+     {"skip_top", &lavc_param_skip_top, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 0, 1000},
+     {"skip_bottom", &lavc_param_skip_bottom, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 0, 1000},
+     {"fps_code", &lavc_param_fps_code, TCCONF_TYPE_INT, TCCONF_FLAG_RANGE, 0, 9},
+-    {"vpre", &lavc_param_video_preset, TCCONF_TYPE_STRING, 0, 0, 0},
+     {"ffmpeg_datadir", &lavc_param_ffmpeg_datadir, TCCONF_TYPE_STRING, 0, 0, 0},
+     {NULL, NULL, 0, 0, 0, 0}
+ };
