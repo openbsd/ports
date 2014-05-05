@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2014/04/07 11:57:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2014/05/05 11:53:34 brad Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -64,6 +64,7 @@
      SUBDIR += swfmill
      SUBDIR += swftools
      SUBDIR += transcode
+     SUBDIR += transcode,lzo,mjpegtools
      SUBDIR += vitunes
      SUBDIR += x264
      SUBDIR += xine-lib
