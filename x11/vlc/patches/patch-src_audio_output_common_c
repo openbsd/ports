@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_audio_output_common_c,v 1.1 2014/04/28 17:35:35 brad Exp $
+$OpenBSD: patch-src_audio_output_common_c,v 1.2 2014/05/05 08:34:08 brad Exp $
+
+Deal with newer FFmpeg API.
+
 --- src/audio_output/common.c.orig	Thu Apr 24 22:10:46 2014
 +++ src/audio_output/common.c	Thu Apr 24 22:11:25 2014
 @@ -650,6 +650,42 @@ void aout_ChannelReorder( uint8_t *p_buf, int i_buffer

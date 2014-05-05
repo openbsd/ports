@@ -1,4 +1,7 @@
-$OpenBSD: patch-modules_codec_avcodec_audio_c,v 1.4 2014/04/28 17:35:35 brad Exp $
+$OpenBSD: patch-modules_codec_avcodec_audio_c,v 1.5 2014/05/05 08:34:08 brad Exp $
+
+Deal with newer FFmpeg API.
+
 --- modules/codec/avcodec/audio.c.orig	Fri Feb 21 10:27:16 2014
 +++ modules/codec/avcodec/audio.c	Thu Apr 24 21:38:21 2014
 @@ -57,10 +57,6 @@ struct decoder_sys_t

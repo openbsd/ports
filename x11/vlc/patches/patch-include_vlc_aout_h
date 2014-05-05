@@ -1,4 +1,7 @@
-$OpenBSD: patch-include_vlc_aout_h,v 1.1 2014/04/28 17:35:35 brad Exp $
+$OpenBSD: patch-include_vlc_aout_h,v 1.2 2014/05/05 08:34:08 brad Exp $
+
+Deal with newer FFmpeg API.
+
 --- include/vlc_aout.h.orig	Thu Apr 24 22:04:59 2014
 +++ include/vlc_aout.h	Thu Apr 24 22:08:24 2014
 @@ -212,6 +212,8 @@ static const uint32_t pi_vlc_chan_order_wg4[] =

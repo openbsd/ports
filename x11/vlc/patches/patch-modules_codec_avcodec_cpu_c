@@ -1,4 +1,7 @@
-$OpenBSD: patch-modules_codec_avcodec_cpu_c,v 1.1 2014/04/12 20:41:26 brad Exp $
+$OpenBSD: patch-modules_codec_avcodec_cpu_c,v 1.2 2014/05/05 08:34:08 brad Exp $
+
+Deal with newer FFmpeg API.
+
 --- modules/codec/avcodec/cpu.c.orig	Thu Apr 10 21:09:43 2014
 +++ modules/codec/avcodec/cpu.c	Thu Apr 10 21:22:54 2014
 @@ -0,0 +1,81 @@

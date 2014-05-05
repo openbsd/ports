@@ -1,4 +1,7 @@
-$OpenBSD: patch-modules_codec_avcodec_avcodec_c,v 1.5 2014/04/28 17:35:35 brad Exp $
+$OpenBSD: patch-modules_codec_avcodec_avcodec_c,v 1.6 2014/05/05 08:34:08 brad Exp $
+
+Deal with newer FFmpeg API.
+
 --- modules/codec/avcodec/avcodec.c.orig	Fri Feb 21 10:27:16 2014
 +++ modules/codec/avcodec/avcodec.c	Thu Apr 24 21:19:30 2014
 @@ -274,44 +274,11 @@ static int OpenDecoder( vlc_object_t *p_this )
