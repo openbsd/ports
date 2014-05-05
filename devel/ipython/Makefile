@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/04/28 21:19:41 edd Exp $
+# $OpenBSD: Makefile,v 1.27 2014/05/05 12:13:33 edd Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	2.0.0
+REVISION =		0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -12,8 +13,9 @@ MAINTAINER=		Edd Barrett <edd@openbsd.org>
 
 MODULES=		lang/python
 
-# py-qt4 as a "soft" dependency for qtconsole.
-# sympy is also optional.
+# py-qt4 as a "soft" run dependency, i.e. ipython will run fine without
+# it, but the qtconsole functionality will not be available.
+# Sympy is also optional.
 # There are a bunch of other event loops which are used in rare cases.
 # These can be soft dependencies too.
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -30,7 +32,9 @@ BUILD_DEPENDS =		textproc/py-sphinx \
 			graphics/py-matplotlib>=1.2.0 \
 			net/py-zmq \
 			math/graphviz \
-			textproc/py-numpydoc
+			textproc/py-numpydoc \
+			www/py-tornado>=3.2 \
+			x11/py-qt4
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
