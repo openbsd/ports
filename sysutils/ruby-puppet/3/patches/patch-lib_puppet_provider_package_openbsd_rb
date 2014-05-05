@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.16 2014/05/04 12:32:26 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.17 2014/05/05 12:17:18 jasper Exp $
 
 (PUP-660) Implement feature :upgradeable for OpenBSD package provider.
 https://github.com/puppetlabs/puppet/pull/2558
@@ -7,7 +7,7 @@ https://github.com/puppetlabs/puppet/pull/2558
 https://github.com/puppetlabs/puppet/pull/2563
 
 --- lib/puppet/provider/package/openbsd.rb.orig	Wed Apr 16 01:06:55 2014
-+++ lib/puppet/provider/package/openbsd.rb	Tue Apr 22 00:36:32 2014
++++ lib/puppet/provider/package/openbsd.rb	Mon May  5 16:14:08 2014
 @@ -4,7 +4,9 @@ require 'puppet/provider/package'
  Puppet::Type.type(:package).provide :openbsd, :parent => Puppet::Provider::Package do
    desc "OpenBSD's form of `pkg_add` support."
@@ -27,7 +27,7 @@ https://github.com/puppetlabs/puppet/pull/2563
  
    def self.instances
      packages = []
-@@ -54,6 +57,53 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -54,6 +57,59 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      [command(:pkginfo), "-a"]
    end
  
@@ -53,7 +53,7 @@ https://github.com/puppetlabs/puppet/pull/2563
 +      return properties[:ensure]
 +    else
 +      # Remove all fuzzy matches first.
-+      output = output.split.select! {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
++      output = output.split.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
 +      debug "pkg_info -Q for #{resource[:name]}: #{output}"
 +    end
 +
@@ -63,7 +63,13 @@ https://github.com/puppetlabs/puppet/pull/2563
 +    else
 +      match = /^(.*)-(\d[^-]*)[-]?(\w*)$/.match(output)
 +      debug "Latest available for #{resource[:name]}: #{match[2]}"
-+      if properties[:ensure] > match[2]
++      if properties[:ensure].to_sym == :absent
++        return match[2]
++      end
++
++      vcmp = properties[:ensure].split('.').map{|s|s.to_i} <=> match[2].split('.').map{|s|s.to_i}
++      if vcmp > 0
++        debug "ensure: #{properties[:ensure]}"
 +        # The locally installed package may actually be newer than what a mirror
 +        # has. Log it at debug, but ignore it otherwise.
 +        debug "Package #{resource[:name]} #{properties[:ensure]} newer then available #{match[2]}"
@@ -81,7 +87,7 @@ https://github.com/puppetlabs/puppet/pull/2563
    def parse_pkgconf
      unless @resource[:source]
        if Puppet::FileSystem.exist?("/etc/pkg.conf")
-@@ -80,14 +130,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -80,14 +136,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      end
    end
  
@@ -109,7 +115,7 @@ https://github.com/puppetlabs/puppet/pull/2563
      else
        e_vars = {}
        full_name = @resource[:source]
-@@ -96,13 +157,17 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -96,13 +163,17 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      cmd << install_options
      cmd << full_name
  
@@ -129,7 +135,7 @@ https://github.com/puppetlabs/puppet/pull/2563
        master_version = 0
        version = -1
  
-@@ -166,7 +231,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -166,7 +237,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def uninstall
