@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/05/04 16:08:30 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/05/05 14:03:09 zhuk Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -1122,6 +1122,10 @@ sbin/samba_upgradedns
 @bin sbin/smbd
 @bin sbin/swat
 @bin sbin/winbindd
+share/examples/samba/
+@sample ${SYSCONFDIR}/samba/
+share/examples/samba/smb.conf.default
+@sample ${SYSCONFDIR}/samba/smb.conf
 share/samba/
 share/samba/codepages/
 share/samba/codepages/de.msg
@@ -1278,8 +1282,12 @@ share/samba/swat/lang/tr/images/samba.gif
 share/samba/swat/lang/tr/images/shares.gif
 share/samba/swat/lang/tr/images/status.gif
 share/samba/swat/lang/tr/images/viewconfig.gif
+@mode 0750
 @sample /var/cache/samba/
-@sample /var/log/samba/
+@sample ${SAMBA_LOGDIR}/
+@mode
 @sample /var/run/samba/
+@mode 0750
 @sample /var/samba/
+@mode 0700
 @sample /var/samba/private/

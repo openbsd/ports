@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/05 14:03:09 zhuk Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.0.17
@@ -23,7 +23,6 @@ LDB_V =			1.1.16
 TALLOC_V =		2.0.7
 TDB_V =			1.2.11
 TEVENT_V =		0.9.18
-
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			dcerpc			0.0 \
@@ -168,6 +167,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--private-libraries="NONE" \
 			--sharedstatedir=/var \
 			--sysconfdir=${SYSCONFDIR} \
+			--with-configdir=${SYSCONFDIR}/samba \
 			--with-statedir=/var/samba \
 			--with-privatedir=/var/samba/private \
 			--with-lockdir=/var/run/samba \
@@ -193,6 +193,11 @@ MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
+SAMBA_CONFIG =	${PREFIX}/share/examples/samba/smb.conf.default
+SAMBA_LOGDIR =	${SYSCONFDIR}/log/samba
+
+SUBST_VARS =	SAMBA_LOGDIR
+
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
@@ -203,22 +208,28 @@ post-configure:
 	    ${WRKBUILD}/bin/c4che/default.cache.py
 
 post-install:
+	# removing extra files
 	@find ${PREFIX} \
 	    -name '*${PATCHORIG}' -or \
 	    -name '*.beforesubst' -or \
 	    -name '*.deconforig' | \
 		xargs -rt rm --
+	# precompiling Python modules
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${WRKINST}${MODPY_SITEPKG}
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
 		${WRKINST}${MODPY_SITEPKG}
+	# creating library symlinks
 .for _l in ${UTIL_LIBS}
 	cd ${PREFIX}/lib && ln -fs samba/lib${_l}.so.${LIB${_l}_VERSION}
 .endfor
-.for _l in ${KRB5_LIBS}
-	cd ${PREFIX}/lib && ln -fs \
-		samba/lib${_l}-samba4.so.${LIB${_l}_VERSION} \
-		lib${_l}.so.${LIB${_l}_VERSION}
-.endfor
+	# installing sample config
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
+	@sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
+	     -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
+	     -e 's:MYGROUP:WORKGROUP:' \
+	     ${WRKDIST}/examples/smb.conf.default > ${SAMBA_CONFIG}.tmp && \
+	    mv ${SAMBA_CONFIG}.tmp ${SAMBA_CONFIG}
 
 .include <bsd.port.mk>
