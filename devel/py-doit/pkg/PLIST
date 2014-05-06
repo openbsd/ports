@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/26 12:56:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/05/06 23:50:24 bcallah Exp $
 bin/doit
 lib/python${MODPY_VERSION}/site-packages/doit/
 lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/doit/__main__.py
 lib/python${MODPY_VERSION}/site-packages/doit/__main__.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/action.py
 lib/python${MODPY_VERSION}/site-packages/doit/action.pyc
+lib/python${MODPY_VERSION}/site-packages/doit/api.py
+lib/python${MODPY_VERSION}/site-packages/doit/api.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_auto.py
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_auto.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_base.py
@@ -54,3 +56,5 @@ lib/python${MODPY_VERSION}/site-packages/doit/task.py
 lib/python${MODPY_VERSION}/site-packages/doit/task.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/tools.py
 lib/python${MODPY_VERSION}/site-packages/doit/tools.pyc
+lib/python${MODPY_VERSION}/site-packages/doit/version.py
+lib/python${MODPY_VERSION}/site-packages/doit/version.pyc
