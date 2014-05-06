@@ -1,0 +1,16 @@
+$OpenBSD: patch-libgupnp_gupnp-service_h,v 1.1 2014/05/06 18:56:17 jasper Exp $
+
+XXX: Prevent redefinition of GUPnPService.
+
+--- libgupnp/gupnp-service.h.orig	Tue May  6 20:29:31 2014
++++ libgupnp/gupnp-service.h	Tue May  6 20:30:22 2014
+@@ -65,7 +65,9 @@ gupnp_service_action_get_type (void) G_GNUC_CONST;
+ #define GUPNP_TYPE_SERVICE_ACTION (gupnp_service_action_get_type ())
+ 
+ typedef struct _GUPnPServicePrivate GUPnPServicePrivate;
++#if 0
+ typedef struct _GUPnPService GUPnPService;
++#endif
+ typedef struct _GUPnPServiceClass GUPnPServiceClass;
+ 
+ /**

@@ -1,0 +1,16 @@
+$OpenBSD: patch-libgupnp_gupnp-device_h,v 1.1 2014/05/06 18:56:17 jasper Exp $
+
+XXX: Prevent redefinition of GUPnPDevice.
+
+--- libgupnp/gupnp-device.h.orig	Tue May  6 20:29:37 2014
++++ libgupnp/gupnp-device.h	Tue May  6 20:29:57 2014
+@@ -51,7 +51,9 @@ gupnp_device_get_type (void) G_GNUC_CONST;
+                  GUPnPDeviceClass))
+ 
+ typedef struct _GUPnPDevicePrivate GUPnPDevicePrivate;
++#if 0
+ typedef struct _GUPnPDevice GUPnPDevice;
++#endif
+ typedef struct _GUPnPDeviceClass GUPnPDeviceClass;
+ 
+ /**
