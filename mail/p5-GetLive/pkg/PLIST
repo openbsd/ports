@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/05 13:37:04 gsoares Exp $
-bin/GetLive
-share/doc/GetLive/
-share/doc/GetLive/License
-share/doc/GetLive/Manual
-share/doc/pkg-readmes/${FULLPKGNAME}
-share/examples/GetLive/
-share/examples/GetLive/SmtpAuthForward.pl
-share/examples/GetLive/SmtpForward.pl
