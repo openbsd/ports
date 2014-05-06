@@ -1,0 +1,1 @@
+lib::abs - "lib" that makes relative path absolute to caller.
