@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/29 23:58:06 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2014/05/06 04:19:55 brad Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
@@ -35,7 +35,7 @@ SUBST_VARS=	BASH
 
 MAKE_FLAGS=	LIBVPX_VERSION=${LIBvpx_VERSION} verbose=yes
 
-# compiler spins at 100% CPU on one particular file. using -O1
+# compiler spins at 100% CPU on vp9/vp9_cx_iface.c. using -O1
 # works around the issue.
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS+=	-O1
