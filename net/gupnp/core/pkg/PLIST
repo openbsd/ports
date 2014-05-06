@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/04/01 13:21:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/05/06 18:55:59 jasper Exp $
 bin/gupnp-binding-tool
 include/gupnp-1.0/
 include/gupnp-1.0/libgupnp/
+include/gupnp-1.0/libgupnp/gupnp-acl.h
 include/gupnp-1.0/libgupnp/gupnp-context-manager.h
 include/gupnp-1.0/libgupnp/gupnp-context.h
 include/gupnp-1.0/libgupnp/gupnp-control-point.h
@@ -57,8 +58,10 @@ share/gtk-doc/html/gupnp/home.png
 share/gtk-doc/html/gupnp/index.html
 share/gtk-doc/html/gupnp/index.sgml
 share/gtk-doc/html/gupnp/ix01.html
+share/gtk-doc/html/gupnp/left-insensitive.png
 share/gtk-doc/html/gupnp/left.png
 share/gtk-doc/html/gupnp/overview.html
+share/gtk-doc/html/gupnp/right-insensitive.png
 share/gtk-doc/html/gupnp/right.png
 share/gtk-doc/html/gupnp/schemas-device.html
 share/gtk-doc/html/gupnp/schemas-service.html
@@ -66,6 +69,7 @@ share/gtk-doc/html/gupnp/schemas.html
 share/gtk-doc/html/gupnp/server-tutorial.html
 share/gtk-doc/html/gupnp/style.css
 share/gtk-doc/html/gupnp/tutorial.html
+share/gtk-doc/html/gupnp/up-insensitive.png
 share/gtk-doc/html/gupnp/up.png
 share/vala/vapi/gupnp-1.0.deps
 share/vala/vapi/gupnp-1.0.vapi
