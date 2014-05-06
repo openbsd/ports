@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/05 14:03:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/05/06 11:29:34 zhuk Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.0.17
@@ -10,6 +10,7 @@ COMMENT-ldb =		LDAP-like embedded database
 COMMENT-tdb =		trivial database library
 COMMENT-tevent =	event system based on talloc
 COMMENT-util =		common libraries for Samba suite
+COMMENT-docs =		additional documentation and examples for Samba
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-ldb =		ldb-${LDB_V}
@@ -17,6 +18,9 @@ PKGNAME-ldb =		ldb-${LDB_V}
 PKGNAME-tdb =		tdb-${TDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
+PKGNAME-docs =		samba-docs-${VERSION}
+
+PKG_ARCH-docs =		*
 
 LDB_V =			1.1.16
 #NTDB_V =		0.9
@@ -111,10 +115,12 @@ WANTLIB-tevent +=	${UTIL_WANTLIB}
 
 WANTLIB-util =		${WANTLIB-common}
 
+WANTLIB-docs =
+
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
 
-MULTI_PACKAGES =	-main -ldb -tdb -tevent -util
+MULTI_PACKAGES =	-main -ldb -tdb -tevent -util -docs
 #MULTI_PACKAGES +=	-ntdb		# disabled by default in Samba4
 
 MODULES =		devel/gettext lang/python perl
@@ -124,6 +130,8 @@ BUILD_DEPENDS =		net/py-dnspython \
 			textproc/libxslt
 
 RUN_DEPENDS-main =	net/py-dnspython
+
+RUN_DEPENDS-docs =
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			${BUILD_PKGPATH},-tdb>=${TDB_V} \
@@ -152,6 +160,8 @@ LIB_DEPENDS-tdb =	${BUILD_PKGPATH},-util>=${TALLOC_V}
 LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${TALLOC_V}
 
 LIB_DEPENDS-util =	${MODPY_LIB_DEPENDS}
+
+LIB_DEPENDS-docs =
 
 CONFIGURE_STYLE =	simple
 
@@ -223,9 +233,14 @@ post-install:
 .for _l in ${UTIL_LIBS}
 	cd ${PREFIX}/lib && ln -fs samba/lib${_l}.so.${LIB${_l}_VERSION}
 .endfor
-	# installing sample config
+	# install samba docs and sample config
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
+	@cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
+	@find ${PREFIX}/share/examples/samba -type f | \
+		xargs chmod ${SHAREMODE}
+	@find ${PREFIX}/share/examples/samba -type d | \
+		xargs chmod ${DIRMODE}
 	@sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
 	     -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
 	     -e 's:MYGROUP:WORKGROUP:' \
