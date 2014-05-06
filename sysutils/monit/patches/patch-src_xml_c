@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_xml_c,v 1.1 2014/05/06 08:36:25 ajacoutot Exp $
+$OpenBSD: patch-src_xml_c,v 1.2 2014/05/06 09:20:56 jasper Exp $
 
 Fix for 64bit time_t.
 
---- src/xml.c.orig	Tue May  6 10:22:45 2014
-+++ src/xml.c	Tue May  6 10:26:58 2014
+--- src/xml.c.orig	Thu Mar 27 13:27:21 2014
++++ src/xml.c	Tue May  6 13:03:54 2014
 @@ -142,7 +142,7 @@ static void status_service(Service_T S, StringBuffer_T
          else
                  StringBuffer_append(B, "<service type=\"%d\"><name>%s</name>", S->type, S->name ? S->name : "");
@@ -13,7 +13,7 @@ Fix for 64bit time_t.
                  "<collected_usec>%ld</collected_usec>"
                  "<status>%d</status>"
                  "<status_hint>%d</status_hint>"
-@@ -347,7 +347,7 @@ static void status_event(Event_T E, StringBuffer_T B) 
+@@ -353,7 +353,7 @@ static void status_event(Event_T E, StringBuffer_T B) 
          struct timeval *tv = Event_get_collected(E);
          StringBuffer_append(B,
                  "<event>"

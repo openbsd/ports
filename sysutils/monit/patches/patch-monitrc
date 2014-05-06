@@ -1,7 +1,7 @@
-$OpenBSD: patch-monitrc,v 1.1 2012/05/29 15:45:56 jasper Exp $
---- monitrc.orig	Fri May 25 10:44:37 2012
-+++ monitrc	Fri May 25 10:44:58 2012
-@@ -117,8 +117,9 @@ set httpd port 2812 and
+$OpenBSD: patch-monitrc,v 1.2 2014/05/06 09:20:56 jasper Exp $
+--- monitrc.orig	Thu Mar 27 13:27:21 2014
++++ monitrc	Tue May  6 13:03:54 2014
+@@ -123,8 +123,9 @@ set httpd port 2812 and
      use address localhost  # only accept connection from localhost
      allow localhost        # allow localhost to connect to the server and
      allow admin:monit      # require user 'admin' with password 'monit'
