@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1 2014/05/06 11:02:04 zhuk Exp $
+share/man/
+share/man/man1/
+share/man/man1/foo.1
+share/info/
+share/info/foo
