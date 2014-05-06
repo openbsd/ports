@@ -1,0 +1,15 @@
+$OpenBSD: patch-libmonit_test_InputStreamTest_c,v 1.1 2014/05/06 08:36:25 ajacoutot Exp $
+
+Fix for 64bit time_t.
+
+--- libmonit/test/InputStreamTest.c.orig	Tue May  6 10:22:29 2014
++++ libmonit/test/InputStreamTest.c	Tue May  6 10:22:36 2014
+@@ -43,7 +43,7 @@ int main(void) {
+         {
+                 assert((fd = File_open(DATA, "r")) >= 0);
+                 in = InputStream_new(fd);
+-                printf("\tCurrent timeout: %ldms\n", InputStream_getTimeout(in));
++                printf("\tCurrent timeout: %lldms\n", InputStream_getTimeout(in));
+                 InputStream_setTimeout(in, TIMEOUT);
+                 assert(InputStream_getTimeout(in) == TIMEOUT);
+                 printf("\tTimeout set to:  %dms\n", TIMEOUT);

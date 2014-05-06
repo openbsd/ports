@@ -1,0 +1,25 @@
+$OpenBSD: patch-libmonit_src_system_Time_c,v 1.1 2014/05/06 08:36:25 ajacoutot Exp $
+
+Fix for 64bit time_t.
+
+--- libmonit/src/system/Time.c.orig	Thu May 10 22:52:38 2012
++++ libmonit/src/system/Time.c	Tue May  6 10:31:47 2014
+@@ -599,15 +599,15 @@ char *Time_uptime(time_t sec, char *result) {
+                 result[0] = 0;
+                 if (sec > 0) {
+                         if ((r = sec/86400) > 0) {
+-                                n = snprintf(result, 24, "%ldd", r);
++                                n = snprintf(result, 24, "%lldd", r);
+                                 sec -= r * 86400;
+                         }
+                         if((r = sec/3600) > 0) {
+-                                n += snprintf(result + n, (24 - n), "%s%ldh", n ? ", " : "", r);
++                                n += snprintf(result + n, (24 - n), "%s%lldh", n ? ", " : "", r);
+                                 sec -= r * 3600;
+                         }
+                         r = sec/60;
+-                        snprintf(result + n, (24 - n), "%s%ldm", n ? ", " : "", r);
++                        snprintf(result + n, (24 - n), "%s%lldm", n ? ", " : "", r);
+                 }
+         }
+         return result;

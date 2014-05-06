@@ -1,0 +1,15 @@
+$OpenBSD: patch-libmonit_test_OutputStreamTest_c,v 1.1 2014/05/06 08:36:25 ajacoutot Exp $
+
+Fix for 64bit time_t.
+
+--- libmonit/test/OutputStreamTest.c.orig	Tue May  6 10:19:55 2014
++++ libmonit/test/OutputStreamTest.c	Tue May  6 10:20:02 2014
+@@ -39,7 +39,7 @@ int main(void) {
+         printf("=> Test1: get/set timeout\n");
+         {
+                 out = OutputStream_new(STDOUT);
+-                printf("\tCurrent timeout: %ldms\n", OutputStream_getTimeout(out));
++                printf("\tCurrent timeout: %lldms\n", OutputStream_getTimeout(out));
+                 OutputStream_setTimeout(out, TIMEOUT);
+                 assert(OutputStream_getTimeout(out) == TIMEOUT);
+                 printf("\tTimeout set to:  %dms\n", TIMEOUT);
