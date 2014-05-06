@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/06 21:09:28 landry Exp $
+${P5SITE}/Dancer/Plugin/Thumbnail.pm
+@man man/man3p/Dancer::Plugin::Thumbnail.3p
