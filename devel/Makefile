@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1222 2014/05/01 08:51:43 edd Exp $
+# $OpenBSD: Makefile,v 1.1223 2014/05/06 21:10:40 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1095,6 +1095,7 @@
      SUBDIR += p5-enum
      SUBDIR += p5-indirect
      SUBDIR += p5-libintl
+     SUBDIR += p5-lib-abs
      SUBDIR += p5-namespace-autoclean
      SUBDIR += p5-namespace-clean
      SUBDIR += p5-prefork
