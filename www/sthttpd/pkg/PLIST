@@ -1,19 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/10 02:48:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/06 09:00:37 jasper Exp $
 @conflict thttpd-*
 @pkgpath www/thttpd
 libexec/sthttpd/
-@comment libexec/sthttpd/index.html
-@comment @bin libexec/sthttpd/phf
-@comment libexec/sthttpd/printenv
 @bin libexec/sthttpd/redirect
 @bin libexec/sthttpd/ssi
-@comment @man man/man1/htpasswd.1
-@comment @man man/man1/makeweb.1
+@man man/man1/th_htpasswd.1
 @man man/man8/redirect.8
 @man man/man8/ssi.8
 @man man/man8/syslogtocern.8
 @man man/man8/thttpd.8
-@comment @bin sbin/htpasswd
-@comment @bin sbin/makeweb
 sbin/syslogtocern
+@bin sbin/th_htpasswd
 @bin sbin/thttpd
