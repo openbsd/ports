@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2014/05/06 14:01:16 landry Exp $
+--- setup.py.orig	Tue May  6 13:52:45 2014
++++ setup.py	Tue May  6 13:53:11 2014
+@@ -33,5 +33,5 @@ setup(
+     scripts = ['puddletag'],
+     data_files=[('share/pixmaps/', ('puddletag.png',)),
+         ('share/applications/', ('puddletag.desktop',)),
+-        ('share/man/man1/', ('puddletag.1',))]
++        ('man/man1/', ('puddletag.1',))]
+      )
