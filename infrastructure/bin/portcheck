@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.73 2014/04/27 17:57:14 zhuk Exp $
+# $OpenBSD: portcheck,v 1.74 2014/05/06 11:00:55 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -735,6 +735,9 @@ sub_checks() {
 #
 #   * Each .py should have corresponding .pyc files, to avoid
 #     generation of the latter at run-time.
+#
+#   * Manual (man and info) pages should go under ${PREFIX}/{man,info},
+#     not under ${PREFIx}/share/{man,info}.
 check_plist() {
 	$debugging && echo "CALLED: check_plist($*)" >&2
 
@@ -775,6 +778,8 @@ check_plist() {
 	# Lists of .py, .pyc and .pyo items found, accordingly
 	local py_files=   pyc_files=   pyo_files=
 	unset py_files[0] pyc_files[0] pyo_files[0]
+
+	local wrong_man=false wrong_info=false
 
 	# Temporary ones
 	local app l theme varname py
@@ -904,6 +909,13 @@ check_plist() {
 			;;
 		*.pyo)
 			pyo_files[${#pyo_files[@]}]=$(normalize_pyco "$l")
+			;;
+
+		share/man/*)
+			wrong_man=true
+			;;
+		share/info/*)
+			wrong_info=true
 			;;
 		esac
 	done
@@ -1064,6 +1076,11 @@ check_plist() {
 	#	    "expected: ${pyo_files[$io]%o}"
 	#	((++io))
 	#done
+
+	$wrong_man && err "${portref}manual pages should go under" \
+	    "\${PREFIX}/man/ rather than under \${PREFIX}/share/man/"
+	$wrong_info && err "${portref}info pages should go under" \
+	    "\${PREFIX}/info/ rather than under \${PREFIX}/share/info/"
 }
 
 # Checks made:
