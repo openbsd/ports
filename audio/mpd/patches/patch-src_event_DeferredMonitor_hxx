@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_event_DeferredMonitor_hxx,v 1.1 2014/05/06 10:49:23 dcoppa Exp $
+
+commit 0efb67b51e0d9d34c65bbdbd9df567a8a991cc4c
+Author: Max Kellermann <max@duempel.org>
+Date:   Sat Apr 26 22:11:23 2014 +0200
+
+DeferredMonitor: fix race condition when using GLib event loop
+
+Turns out the lock-free code using atomics was not thread-safe. The
+given callback could be invoked by GLib before the source_id attribute
+was assigned. This commit changes the DeferredMonitor class to use
+a Mutex to block the event loop until source_id is assigned. This
+bug does not exist in the 0.19 branch because it does not use the
+GLib main loop anymore.
+
+--- src/event/DeferredMonitor.hxx.orig	Wed Dec 11 20:51:53 2013
++++ src/event/DeferredMonitor.hxx	Tue Apr 29 11:32:48 2014
+@@ -27,6 +27,7 @@
+ #include "SocketMonitor.hxx"
+ #include "WakeFD.hxx"
+ #else
++#include "thread/Mutex.hxx"
+ #include <glib.h>
+ #endif
+ 
+@@ -48,7 +49,9 @@ class DeferredMonitor
+ #else
+ 	EventLoop &loop;
+ 
+-	std::atomic<guint> source_id;
++	Mutex mutex;
++
++	guint source_id;
+ #endif
+ 
+ public:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.11 2013/09/19 15:02:16 dcoppa Exp $
---- doc/mpdconf.example.orig	Thu Aug  1 09:15:41 2013
-+++ doc/mpdconf.example	Thu Sep 19 16:58:31 2013
+$OpenBSD: patch-doc_mpdconf_example,v 1.12 2014/05/06 10:49:23 dcoppa Exp $
+--- doc/mpdconf.example.orig	Wed Dec 11 20:51:53 2013
++++ doc/mpdconf.example	Tue Mar 18 22:19:40 2014
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -69,7 +69,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.11 2013/09/19 15:02:16 dcoppa Exp $
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -320,6 +322,14 @@ input {
+@@ -324,6 +326,14 @@ input {
  #	name		"My Null Output"
  #	mixer_type      "none"			# optional
  #}
@@ -82,5 +82,5 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.11 2013/09/19 15:02:16 dcoppa Exp $
 +	mixer_type      	"software"
 +}
  #
- # This setting will change all decoded audio to be converted to the specified
- # format before being passed to the audio outputs. By default, this setting is
+ # If MPD has been compiled with libsamplerate support, this setting specifies 
+ # the sample rate converter to use.  Possible values can be found in the 
