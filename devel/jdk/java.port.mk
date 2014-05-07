@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.32 2013/07/02 10:36:35 espie Exp $
+# $OpenBSD: java.port.mk,v 1.33 2014/05/07 15:42:15 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -33,34 +33,18 @@ MODJAVA_JRERUN?=no
 # default JAVA_HOME or JAVACMD vars for a package.
 #
 
-.if ${MODJAVA_VER} == "1.3" || ${MODJAVA_VER} == "1.4" || ${MODJAVA_VER} == "1.5"
+.if ${MODJAVA_VER} == "1.3" || ${MODJAVA_VER} == "1.4" || ${MODJAVA_VER} == "1.5" || ${MODJAVA_VER} == "1.6"
     BROKEN=MODJAVA_VER=${MODJAVA_VER} only ports are not supported
-.elif ${MODJAVA_VER} == "1.3+" || ${MODJAVA_VER} == "1.4+" || ${MODJAVA_VER} == "1.5+"
+.elif ${MODJAVA_VER} == "1.3+" || ${MODJAVA_VER} == "1.4+" || ${MODJAVA_VER} == "1.5+" || ${MODJAVA_VER} == "1.6+"
    ONLY_FOR_ARCHS?= i386 amd64
 .  if ${NO_BUILD:L} != "yes"
-     JAVA_HOME= ${LOCALBASE}/jdk-1.6.0
-     BUILD_DEPENDS+= jdk->=1.6.0,<1.7:devel/jdk/1.6
+     JAVA_HOME= ${LOCALBASE}/jdk-1.7.0
+     BUILD_DEPENDS+= jdk->=1.7.0,<1.8v0:devel/jdk/1.7
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
-     MODJAVA_RUN_DEPENDS= jdk->=1.6.0|jre->=1.6.0|jamvm-*:devel/jdk/1.6
+     MODJAVA_RUN_DEPENDS= jdk->=1.7.0|jre->=1.7.0:devel/jdk/1.7
 .  else
-     MODJAVA_RUN_DEPENDS= jdk->=1.6.0:devel/jdk/1.6
-.  endif
-.elif ${MODJAVA_VER:S/+//} == "1.6"
-   ONLY_FOR_ARCHS?= i386 amd64
-.  if ${NO_BUILD:L} != "yes"
-     JAVA_HOME= ${LOCALBASE}/jdk-1.6.0
-     BUILD_DEPENDS+= jdk->=1.6.0,<1.7:devel/jdk/1.6
-.  endif
-.  if ${MODJAVA_JRERUN:L} == "yes"
-     _MODJAVA_RUNDEP= jdk->=1.6.0,<1.7|jre->=1.6.0,<1.7
-.  else
-     _MODJAVA_RUNDEP= jdk->=1.6.0,<1.7
-.  endif
-.  if ${MODJAVA_VER} == "1.6+"
-     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.7//g}:devel/jdk/1.6
-.  else
-     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.6
+     MODJAVA_RUN_DEPENDS= jdk->=1.7.0:devel/jdk/1.7
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.7"
    ONLY_FOR_ARCHS?= i386 amd64

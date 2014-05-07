@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/28 16:34:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/05/07 15:42:15 kurt Exp $
 
 COMMENT=	Java library to assist with developing IO functionality
 
@@ -6,6 +6,7 @@ V=		2.4
 DISTNAME=	commons-io-$V-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://commons.apache.org/io/
 

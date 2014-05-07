@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/05/07 15:42:16 kurt Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
 V=		2.2.1
 DISTNAME=	tr-$V
 PKGNAME=	thinkingrock-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://www.trgtd.com.au/

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/06 20:36:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/05/07 15:42:16 kurt Exp $
 
 COMMENT=		open source alternative to Microsoft Project
 
 DISTNAME=		projectlibre-1.5.7
 CATEGORIES=		productivity
+REVISION=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

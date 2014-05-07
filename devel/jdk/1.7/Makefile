@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2014/05/01 00:47:25 kurt Exp $
+# $OpenBSD: Makefile,v 1.70 2014/05/07 15:42:15 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -11,8 +11,8 @@ B=		b13
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
-REVISION-main=	0
-REVISION-jre=	0
+REVISION-main=	1
+REVISION-jre=	1
 EPOCH=		0
 
 JDK_SRC=	openjdk-7u40-fcs-src-b43-26_aug_2013.zip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/20 13:17:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2014/05/07 15:42:16 kurt Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		language/IDE for images, animations and interactions
 V=			1.5.1
 DISTNAME=		processing-$V-linux
 PKGNAME=		${DISTNAME:S/-linux//}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		lang graphics
 

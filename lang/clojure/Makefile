@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/30 21:08:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2014/05/07 15:42:16 kurt Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
 VER =			1.6.0
 DISTNAME =		clojure-${VER}
-REVISION =		0
+REVISION =		1
 
 PKG_ARCH =		*
 

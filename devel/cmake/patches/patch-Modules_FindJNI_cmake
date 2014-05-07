@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.10 2013/08/12 16:09:50 zhuk Exp $
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.11 2014/05/07 15:42:15 kurt Exp $
 Note: we always build with Java 1.6 even when 1.6+ requested; "+" is meaningful
 for run-time only.
---- Modules/FindJNI.cmake.orig	Fri Jun  7 19:21:34 2013
-+++ Modules/FindJNI.cmake	Sat Jul 27 21:46:41 2013
+--- Modules/FindJNI.cmake.orig	Thu Jan 16 12:15:08 2014
++++ Modules/FindJNI.cmake	Fri May  2 07:27:01 2014
 @@ -26,6 +26,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -25,7 +25,7 @@ for run-time only.
      endif()
  
      # Sometimes ${CMAKE_SYSTEM_PROCESSOR} is added to the list to prefer
-@@ -88,44 +92,57 @@ endmacro()
+@@ -88,44 +92,48 @@ endmacro()
  get_filename_component(java_install_version
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit;CurrentVersion]" NAME)
  
@@ -68,17 +68,10 @@ for run-time only.
 -  /usr/local/jre-1.6.0/lib/{libarch}
 -  )
 +if(MODJAVA_VER)
-+  if(MODJAVA_VER MATCHES "^1\\.6\\+?$")
-+    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
-+      ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
-+      ${LOCALBASE}/jre-1.6.0/lib/{libarch}
-+      )
-+  else()
-+    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
-+      ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
-+      ${LOCALBASE}/jre-1.7.0/lib/{libarch}
-+      )
-+  endif()
++  JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
++    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
++    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
++    )
 +else()
 +  set(JAVA_AWT_LIBRARY_DIRECTORIES
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/lib"
@@ -112,14 +105,12 @@ for run-time only.
 +    # OpenBSD specific paths for default JVM
 +    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
 +    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
-+    ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
-+    ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +    )
 +endif()
  
  set(JAVA_JVM_LIBRARY_DIRECTORIES)
  foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
-@@ -137,31 +154,42 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+@@ -137,31 +145,35 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
      )
  endforeach()
  
@@ -149,15 +140,9 @@ for run-time only.
 -  /usr/local/jdk-1.6.0/include
 -  )
 +if(MODJAVA_VER)
-+  if(MODJAVA_VER MATCHES "^1\\.6\\+?$")
-+    set(JAVA_AWT_INCLUDE_DIRECTORIES
-+      ${LOCALBASE}/jdk-1.6.0/include
-+      )
-+  else()
-+    set(JAVA_AWT_INCLUDE_DIRECTORIES
-+      ${LOCALBASE}/jdk-1.7.0/include
-+      )
-+  endif()
++  set(JAVA_AWT_INCLUDE_DIRECTORIES
++    ${LOCALBASE}/jdk-1.7.0/include
++    )
 +else()
 +  set(JAVA_AWT_INCLUDE_DIRECTORIES
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/include"
@@ -181,7 +166,6 @@ for run-time only.
 +    /usr/lib/jvm/default-java/include
 +    # OpenBSD specific path for default JVM
 +    ${LOCALBASE}/jdk-1.7.0/include
-+    ${LOCALBASE}/jdk-1.6.0/include
 +    )
 +endif()
  

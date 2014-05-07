@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2014/04/30 13:21:00 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2014/05/07 15:42:15 kurt Exp $
+@pkgpath devel/jdk/1.6,-jdk
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
 ${JDKHOME}/

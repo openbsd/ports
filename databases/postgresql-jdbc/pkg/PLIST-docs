@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.2 2011/09/06 19:28:36 kili Exp $
+@comment $OpenBSD: PLIST-docs,v 1.3 2014/05/07 15:42:15 kurt Exp $
 share/doc/postgresql-jdbc/
 share/doc/postgresql-jdbc/allclasses-frame.html
 share/doc/postgresql-jdbc/allclasses-noframe.html
@@ -89,6 +89,9 @@ share/doc/postgresql-jdbc/overview-summary.html
 share/doc/postgresql-jdbc/overview-tree.html
 share/doc/postgresql-jdbc/package-list
 share/doc/postgresql-jdbc/resources/
-share/doc/postgresql-jdbc/resources/inherit.gif
+share/doc/postgresql-jdbc/resources/background.gif
+share/doc/postgresql-jdbc/resources/tab.gif
+share/doc/postgresql-jdbc/resources/titlebar.gif
+share/doc/postgresql-jdbc/resources/titlebar_end.gif
 share/doc/postgresql-jdbc/serialized-form.html
 share/doc/postgresql-jdbc/stylesheet.css

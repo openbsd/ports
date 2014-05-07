@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/21 13:38:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/07 15:42:16 kurt Exp $
 share/java/
 share/java/asm/
 share/java/asm/doc/
@@ -262,7 +262,10 @@ share/java/asm/doc/javadoc/user/overview-summary.html
 share/java/asm/doc/javadoc/user/overview-tree.html
 share/java/asm/doc/javadoc/user/package-list
 share/java/asm/doc/javadoc/user/resources/
-share/java/asm/doc/javadoc/user/resources/inherit.gif
+share/java/asm/doc/javadoc/user/resources/background.gif
+share/java/asm/doc/javadoc/user/resources/tab.gif
+share/java/asm/doc/javadoc/user/resources/titlebar.gif
+share/java/asm/doc/javadoc/user/resources/titlebar_end.gif
 share/java/asm/doc/javadoc/user/serialized-form.html
 share/java/asm/doc/javadoc/user/stylesheet.css
 share/java/asm/examples/

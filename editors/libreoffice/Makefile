@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2014/05/07 15:34:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2014/05/07 15:42:15 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,6 +16,7 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
+REVISION-java=	0
 
 EPOCH=		0
 

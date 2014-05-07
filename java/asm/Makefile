@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/02 10:36:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/05/07 15:42:16 kurt Exp $
 
 COMMENT=	Java bytecode manipulation framework
 
 V=		3.3.1
 DISTNAME=	asm-$V
 CATEGORIES=	java devel
+REVISION=	0
 
 HOMEPAGE=	http://asm.ow2.org/
 

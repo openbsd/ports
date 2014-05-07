@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/05/07 15:42:15 kurt Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
 
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://download.jetbrains.com/idea/
 
 MODULES=		java
-MODJAVA_VER=		1.6
+MODJAVA_VER=		1.7
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
