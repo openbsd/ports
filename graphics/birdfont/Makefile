@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/26 12:57:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/05/07 02:23:54 bcallah Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-0.36
+DISTNAME =	birdfont-0.37
 CATEGORIES =	graphics print
 
 SHARED_LIBS +=	birdfont			0.0 # 0.0

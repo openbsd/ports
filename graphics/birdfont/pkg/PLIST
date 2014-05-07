@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/03/26 12:57:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/05/07 02:23:54 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-export
 @lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
@@ -32,11 +32,12 @@ share/birdfont/icons/double_points.png
 share/birdfont/icons/edit_point.png
 share/birdfont/icons/edit_point_cubic.png
 share/birdfont/icons/edit_point_handle.png
-share/birdfont/icons/export.png
+share/birdfont/icons/export_fonts.png
 share/birdfont/icons/fill_open_path.png
 share/birdfont/icons/flip_horizontal.png
 share/birdfont/icons/flip_vertical.png
 share/birdfont/icons/full_glyph.png
+share/birdfont/icons/generate_html_document.png
 share/birdfont/icons/help_lines.png
 share/birdfont/icons/info_icon.png
 share/birdfont/icons/insert_background.png
@@ -58,6 +59,7 @@ share/birdfont/icons/pen_tool.png
 share/birdfont/icons/point_tool.png
 share/birdfont/icons/prev.png
 share/birdfont/icons/previous_tab.png
+share/birdfont/icons/progress_wheel.png
 share/birdfont/icons/quadratic_points.png
 share/birdfont/icons/rectangle.png
 share/birdfont/icons/resize.png
@@ -78,7 +80,7 @@ share/birdfont/icons/tab2_left.png
 share/birdfont/icons/tab2_right.png
 share/birdfont/icons/tab3_left.png
 share/birdfont/icons/tab3_right.png
-share/birdfont/icons/tabbar_background.png
+share/birdfont/icons/tab_bar_background.png
 share/birdfont/icons/test_case.png
 share/birdfont/icons/test_icon.png
 share/birdfont/icons/tie_is_active.png
@@ -90,6 +92,7 @@ share/birdfont/icons/tool_button_selected_active.png
 share/birdfont/icons/track.png
 share/birdfont/icons/ttf_units.png
 share/birdfont/icons/union_paths.png
+share/birdfont/icons/update_webview.png
 share/birdfont/icons/utf_8.png
 share/birdfont/icons/version.png
 share/birdfont/icons/view_result.png
@@ -116,10 +119,12 @@ share/locale/oc/LC_MESSAGES/birdfont.mo
 share/locale/pt/LC_MESSAGES/birdfont.mo
 share/locale/pt_BR/LC_MESSAGES/birdfont.mo
 share/locale/ru/LC_MESSAGES/birdfont.mo
+share/locale/sk/LC_MESSAGES/birdfont.mo
 share/locale/sr/LC_MESSAGES/birdfont.mo
 share/locale/sv/LC_MESSAGES/birdfont.mo
 share/locale/tr/LC_MESSAGES/birdfont.mo
 share/locale/zh_CN/LC_MESSAGES/birdfont.mo
+share/mime/packages/birdfont.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
