@@ -1,10 +1,8 @@
 syweb's default install assumes that:
-  - apache is chrooted at ${PREFIX}
+  - web server is chrooted at ${PREFIX}
   - rrdtool is installed in the chroot
   - symux rrd files are kept in ${PREFIX}/symon/rrds/<host>/*.rrd
 
-rrdtool can be installed in the chroot using
-  ${PREFIX}/symon/install_rrdtool.sh
-
 Customise ${PREFIX}/htdocs/syweb/setup.inc if these assumptions are
-incorrect.
+incorrect. rrdtool must also be copied into the chroot jail; for this,
+see rrdtool's pkg-readme document.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/01 13:15:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/05/07 18:10:27 sthen Exp $
 htdocs/syweb/
 htdocs/syweb/class_cache.inc
 htdocs/syweb/class_graph.inc
@@ -26,7 +26,7 @@ symon/cache/
 @mode
 @group
 symon/hifn_test.layout
-symon/install_rrdtool.sh
+@comment symon/install_rrdtool.sh
 symon/pf.layout
 symon/rrds/
 symon/total_firewall.layout
