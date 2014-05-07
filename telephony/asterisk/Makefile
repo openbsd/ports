@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2014/04/26 11:59:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.198 2014/05/07 00:38:59 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -123,7 +123,7 @@ FLAVORS=		imap
 ## flavours:
 
 .if ${FLAVOR:Mimap}
-CONFIGURE_ARGS+=	--with-imap=yes
+CONFIGURE_ARGS+=	--with-imap=system
 MAKE_FLAGS+=		MENUSELECT_OPTS_app_voicemail=IMAP_STORAGE
 CPPFLAGS+=		-I${LOCALBASE}/include/c-client
 LIB_DEPENDS-main+=	mail/alpine,-c-client
