@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/19 16:41:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/07 11:52:50 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -28,6 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/crop_text.p
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_group.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_iis_component.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_installed_application.ps1
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_installed_hot_fix.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_service.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_user.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_usergroup.ps1
@@ -44,6 +45,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/arch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/fedora.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd10.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/gentoo.rb
@@ -51,6 +53,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/plamo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat7.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/smartos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris10.rb
