@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2014/01/30 18:29:51 jasper Exp $
+$OpenBSD: README-main,v 1.4 2014/05/07 10:59:53 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,10 +19,10 @@ to setup SSL. First create an empty jetty.ini:
 
 As the Puppet Master need not to run on the same host as PuppetDB we will
 assume your configuration is stored in ${SYSCONFDIR}/puppet/ on
-OpenBSD or /etc/puppet/ on most other operating systems.
+OpenBSD or ${SYSCONFDIR}/puppet/ on most other operating systems.
 
 Now manually copy over the following .pem files from your Puppet Master into
-${SYSCONFDIR}/puppetdb/ssl/ (relative to /etc/puppet/):
+${SYSCONFDIR}/puppetdb/ssl/ (relative to ${SYSCONFDIR}/puppet/):
 
     ssl/certs/ca.pem
     ssl/private_keys/<puppet master certname>.pem
@@ -33,7 +33,7 @@ Now run to finalize the setup:
     ${LOCALBASE}/libexec/puppetdb/puppetdb-ssl-setup
 
 You may need to merge ${SYSCONFDIR}/puppetdb/conf.d/jetty.ini into
-${SYSCONFDIR}/puppetdb/conf.d/puppetdb.conf
+${SYSCONFDIR}/puppetdb/conf.d/puppetdb.ini
 
 Configuring the Puppet Master
 -----------------------------
@@ -41,7 +41,7 @@ Several steps are needed on the Puppet Master to make use of PuppetDB for
 storing facts, reports as well as exported resources and stored
 configurations.
 
-First create /etc/puppet/routes.yaml so Puppet can store facts to PuppetDB:
+First create ${SYSCONFDIR}/puppet/routes.yaml so Puppet can store facts to PuppetDB:
 
     ---
       master:
@@ -49,14 +49,14 @@ First create /etc/puppet/routes.yaml so Puppet can store facts to PuppetDB:
           terminus: puppetdb
           cache: yam
 
-Next create /etc/puppet/puppetdb.conf to teach Puppet how to reach PuppetDB:
+Next create ${SYSCONFDIR}/puppet/puppetdb.conf to teach Puppet how to reach PuppetDB:
 
     [main]
       server = puppetdb.example.com
       port   = 8081
 
 Finally instruct Puppet to use PuppetDB for stored configs and reports; in the
-'[master]' section of /etc/puppet/puppet.conf:
+'[master]' section of ${SYSCONFDIR}/puppet/puppet.conf:
 
     reports      = store,puppetdb
     storeconfigs = true

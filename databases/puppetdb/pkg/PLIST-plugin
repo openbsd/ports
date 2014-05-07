@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-plugin,v 1.2 2013/12/15 11:29:22 jasper Exp $
+@comment $OpenBSD: PLIST-plugin,v 1.3 2014/05/07 10:59:53 jasper Exp $
 ${MODRUBY_SITEDIR}/puppet/application/storeconfigs.rb
 ${MODRUBY_SITEDIR}/puppet/face/node/deactivate.rb
 ${MODRUBY_SITEDIR}/puppet/face/node/status.rb
@@ -16,3 +16,4 @@ ${MODRUBY_SITEDIR}/puppet/util/puppetdb/char_encoding.rb
 ${MODRUBY_SITEDIR}/puppet/util/puppetdb/command.rb
 ${MODRUBY_SITEDIR}/puppet/util/puppetdb/command_names.rb
 ${MODRUBY_SITEDIR}/puppet/util/puppetdb/config.rb
+${MODRUBY_SITEDIR}/puppet/util/puppetdb/global_check.rb
