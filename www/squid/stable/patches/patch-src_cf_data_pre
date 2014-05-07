@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_cf_data_pre,v 1.4 2014/04/24 14:26:21 sthen Exp $
+$OpenBSD: patch-src_cf_data_pre,v 1.5 2014/05/07 20:52:06 sthen Exp $
 
 30 seconds is too long for rc.d
 
---- src/cf.data.pre.orig	Wed Apr 23 15:02:16 2014
-+++ src/cf.data.pre	Thu Apr 24 14:30:34 2014
-@@ -5757,7 +5757,7 @@ NAME: shutdown_lifetime
+--- src/cf.data.pre.orig	Fri May  2 13:09:05 2014
++++ src/cf.data.pre	Wed May  7 20:00:23 2014
+@@ -5766,7 +5766,7 @@ NAME: shutdown_lifetime
  COMMENT: time-units
  TYPE: time_t
  LOC: Config.shutdownLifetime
