@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.75 2014/05/07 21:57:00 zhuk Exp $
+# $OpenBSD: portcheck,v 1.76 2014/05/07 22:27:06 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -730,6 +730,9 @@ sub_checks() {
 #     misc/shared-mime-info dependency and @exec/@unexec-delete with
 #     %D/bin/update-mime-database %D/share/mime
 #
+#   * If package adds a GLib schema, it should have @exec/@unexec-delete
+#     with %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+#
 #   * If package installs .mo files under ${PREFIX}/share/locale/, then
 #     run-time dependency on devel/gettext should exists.
 #
@@ -764,6 +767,11 @@ check_plist() {
 	local mimepkg_dep_needed=false
 	local mimepkg_exec_cnt=0
 	local mimepkg_unexec_cnt=0
+
+	local glib_dep=false
+	local glib_dep_needed=false
+	local glibxml_exec_cnt=0
+	local glibxml_unexec_cnt=0
 
 	# Lists of icon themes discovered through reading
 	# @file, @exec and @unexec lines, accordingly.
@@ -887,6 +895,23 @@ check_plist() {
 			;;
 		@?(un)exec?(-delete|-update)" %D/bin/update-mime-database"*)
 			err "${portref}incorrect update-mime-database" \
+			    "invocation: ${l#@* }"
+			;;
+
+		share/glib-2.0/schemas/*.xml)
+			glib_dep_needed=true
+			;;
+		"@depend devel/glib2"[\|:]*)
+			glib_dep=true
+			;;
+		"@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null")
+			((++glibxml_exec_cnt))
+			;;
+		"@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null")
+			((++glibxml_unexec_cnt))
+			;;
+		@?(un)exec?(-delete|-update)" %D/bin/glib-compile-schemas"*)
+			err "${portref}incorrect glib-compile-schemas" \
 			    "invocation: ${l#@* }"
 			;;
 
@@ -1016,6 +1041,26 @@ check_plist() {
 		err "${portref}extra @unexec-delete of update-mime-database"
 	elif ((mimepkg_unexec_cnt < 0)); then
 		err "${portref}missing @unexec-delete of update-mime-database"
+	fi
+
+	# glib-compile-schemas (almost same as previous)
+	$glib_dep_needed && ! $glib_dep &&
+	    [[ $fullpkgname != glib2-* ]] &&
+		err "${portref}missing RDEP on devel/glib2"
+	if $glib_dep_needed; then
+		((glibxml_exec_cnt--)) || true
+		((glibxml_unexec_cnt--)) || true
+	fi
+	if ((glibxml_exec_cnt > 0)) &&
+	    [[ $fullpkgname != glib2-* ]]; then
+		err "${portref}extra @exec of glib-compile-schemas"
+	elif ((glibxml_exec_cnt < 0)); then
+		err "${portref}missing @exec of glib-compile-schemas"
+	fi
+	if ((glibxml_unexec_cnt > 0)); then
+		err "${portref}extra @unexec-delete of glib-compile-schemas"
+	elif ((glibxml_unexec_cnt < 0)); then
+		err "${portref}missing @unexec-delete of glib-compile-schemas"
 	fi
 
 	# gettext
