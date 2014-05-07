@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2014/04/21 11:47:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.305 2014/05/07 18:04:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -125,7 +125,6 @@
      SUBDIR += p5-Email-Valid-Loose
      SUBDIR += p5-FuzzyOcr
      SUBDIR += p5-GMail-IMAPD
-     SUBDIR += p5-GetLive
      SUBDIR += p5-Log-Procmail
      SUBDIR += p5-MIME-Base32
      SUBDIR += p5-MIME-Charset
