@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/19 16:42:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/07 11:53:01 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -75,6 +75,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/selinux.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/windows_feature.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/windows_hot_fix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/windows_registry_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/yumrepo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/zfs.rb
@@ -148,6 +149,30 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/debian/selinux_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/debian/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/debian/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/debian/zfs_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/cgroup_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/command_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/cron_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/default_gateway_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/group_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/host_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/interface_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/iptables_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/kernel_module_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/linux_kernel_parameter_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/lxc_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/mail_alias_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/package_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/php_config_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/port_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/process_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/routing_table_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/selinux_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/service_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/yumrepo_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fedora/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/freebsd/command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/freebsd/cron_spec.rb
@@ -189,6 +214,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/gentoo/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/gentoo/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/properties_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/helper/type_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/plamo/
 ${GEM_LIB}/gems/${DISTNAME}/spec/plamo/cgroup_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/plamo/command_spec.rb
@@ -235,6 +261,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/redhat/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/redhat/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/redhat/yumrepo_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/redhat/zfs_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/redhat7/
+${GEM_LIB}/gems/${DISTNAME}/spec/redhat7/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/smartos/
 ${GEM_LIB}/gems/${DISTNAME}/spec/smartos/mail_alias_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/smartos/process_spec.rb
@@ -294,6 +322,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/windows/group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/windows/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/windows/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/windows/user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/windows/windows_hot_fix_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/windows/windows_registry_key_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/wercker.yml
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
