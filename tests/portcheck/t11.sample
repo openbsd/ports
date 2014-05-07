@@ -1,0 +1,9 @@
+in -exec: extra @exec of glib-compile-schemas
+in -nodep: missing RDEP on devel/glib2
+in -noexec: missing @exec of glib-compile-schemas
+in -nounexec: missing @unexec-delete of glib-compile-schemas
+in -unexec: extra @unexec-delete of glib-compile-schemas
+in -wrong: incorrect glib-compile-schemas invocation: %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+in -wrong: incorrect glib-compile-schemas invocation: %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+in -wrong: missing @exec of glib-compile-schemas
+in -wrong: missing @unexec-delete of glib-compile-schemas
