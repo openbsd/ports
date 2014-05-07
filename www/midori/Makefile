@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2014/04/21 19:31:57 landry Exp $
+# $OpenBSD: Makefile,v 1.66 2014/05/07 15:08:52 juanfra Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.5.8
+REVISION =	0
 XFCE_GOODIE =	midori
 WRKDIST =	${WRKDIR}
 
