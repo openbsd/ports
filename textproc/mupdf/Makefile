@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2014/04/17 20:30:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2014/05/07 09:10:14 sthen Exp $
+
+SHARED_ONLY =	Yes
+SHARED_LIBS +=	mupdf 0.0
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.4
+REVISION =	0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 
@@ -46,6 +50,7 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		CURL_LIBS="-lpthread -lidn -lssl -lcurl" \
 		SYS_OPENSSL_LIBS="-lssl -lcrypto" \
 		LDFLAGS="${LDFLAGS}" \
+		LIBmupdf_VERSION="${LIBmupdf_VERSION}" \
 		build= verbose=yes
 
 FAKE_FLAGS =	NOCURL= prefix=${PREFIX} mandir=${PREFIX}/man
