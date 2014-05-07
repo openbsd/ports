@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/09 21:27:03 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/05/07 11:39:16 bcallah Exp $
 bin/veusz
 bin/veusz_listen
 lib/python${MODPY_VERSION}/site-packages/veusz/
@@ -97,6 +97,8 @@ lib/python${MODPY_VERSION}/site-packages/veusz/document/emf_export.py
 lib/python${MODPY_VERSION}/site-packages/veusz/document/emf_export.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/document/export.py
 lib/python${MODPY_VERSION}/site-packages/veusz/document/export.pyc
+lib/python${MODPY_VERSION}/site-packages/veusz/document/loader.py
+lib/python${MODPY_VERSION}/site-packages/veusz/document/loader.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/document/mime.py
 lib/python${MODPY_VERSION}/site-packages/veusz/document/mime.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/document/operations.py
@@ -127,6 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/examples/boxplot.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/broken_axis.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/coloredpoints.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/contour.vsz
+lib/python${MODPY_VERSION}/site-packages/veusz/examples/contour_labels.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/dataset_operations.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/datebar.dat
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/datebar.vsz
@@ -209,6 +212,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barends.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_box.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_boxfill.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_curve.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_curvefill.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_diamond.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_diamondfill.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_fillhorz.svg
