@@ -1,25 +1,25 @@
-$OpenBSD: patch-config_nimrod_cfg,v 1.2 2014/03/30 00:15:01 jturner Exp $
---- config/nimrod.cfg.orig	Wed May  8 15:34:44 2013
-+++ config/nimrod.cfg	Sat Mar 29 20:14:09 2014
-@@ -69,7 +69,7 @@ hint[LineTooLong]=off
-     tcc.options.linker = "-ldl"
-   @else:
+$OpenBSD: patch-config_nimrod_cfg,v 1.3 2014/05/08 01:05:50 jturner Exp $
+--- config/nimrod.cfg.orig	Mon Apr 21 20:06:24 2014
++++ config/nimrod.cfg	Mon Apr 21 20:13:40 2014
+@@ -71,7 +71,7 @@ hint[LineTooLong]=off
+   @end
+   @if bsd or haiku:
      # BSD got posix_spawn only recently, so we deactivate it for osproc:
 -    define:useFork
 +    #define:useFork
      # at least NetBSD has problems with thread local storage:
      tlsEmulation:on
    @end
-@@ -97,6 +97,8 @@ hint[LineTooLong]=off
+@@ -99,6 +99,8 @@ hint[LineTooLong]=off
  @else:
    gcc.options.always = "-w"
-   gpp.options.always = "-w"
+   gpp.options.always = "-w -fpermissive"
 +  egcc.options.always = "-w"
-+  egpp.options.always = "-w"
++  egpp.options.alaways = "-w -fpermissive"
  @end
  
  gcc.options.speed = "-O3 -fno-strict-aliasing"
-@@ -107,6 +109,15 @@ gpp.options.speed = "-O3 -fno-strict-aliasing"
+@@ -109,6 +111,11 @@ gpp.options.speed = "-O3 -fno-strict-aliasing"
  gpp.options.size = "-Os"
  gpp.options.debug = "-g3 -O0"
  #passl = "-pg"
@@ -28,10 +28,6 @@ $OpenBSD: patch-config_nimrod_cfg,v 1.2 2014/03/30 00:15:01 jturner Exp $
 +egcc.options.speed = "-O3 -fno-strict-aliasing"
 +egcc.options.size = "-Os"
 +egcc.options.debug = "-g3 -O0"
-+
-+egpp.options.speed = "-O3 -fno-strict-aliasing"
-+egpp.options.size = "-Os"
-+egpp.options.debug = "-g3 -O0"
  
  # Configuration for the LLVM GCC compiler:
  llvm_gcc.options.debug = "-g"

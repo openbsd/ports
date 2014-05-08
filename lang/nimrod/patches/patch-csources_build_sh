@@ -1,0 +1,16 @@
+$OpenBSD: patch-csources_build_sh,v 1.1 2014/05/08 01:05:50 jturner Exp $
+--- csources/build.sh.orig	Mon Apr 21 20:01:20 2014
++++ csources/build.sh	Mon Apr 21 20:01:54 2014
+@@ -26,9 +26,9 @@ do
+   esac
+ done
+ 
+-CC="gcc"
+-LINKER="gcc"
+-COMP_FLAGS="-w$extraBuildArgs"
++#CC="gcc"
++#LINKER="gcc"
++COMP_FLAGS="$COMP_FLAGS -w$extraBuildArgs"
+ LINK_FLAGS=""
+ # platform detection
+ ucpu=`uname -m`

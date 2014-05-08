@@ -1,44 +1,36 @@
-$OpenBSD: patch-compiler_extccomp_nim,v 1.1.1.1 2014/03/29 23:59:26 jturner Exp $
---- compiler/extccomp.nim.orig	Tue May  7 19:23:26 2013
-+++ compiler/extccomp.nim	Sat Mar 29 12:01:19 2014
+$OpenBSD: patch-compiler_extccomp_nim,v 1.2 2014/05/08 01:05:50 jturner Exp $
+--- compiler/extccomp.nim.orig	Mon Apr 21 20:02:51 2014
++++ compiler/extccomp.nim	Mon Apr 21 20:06:11 2014
 @@ -16,7 +16,7 @@ import
  type 
    TSystemCC* = enum 
      ccNone, ccGcc, ccLLVM_Gcc, ccCLang, ccLcc, ccBcc, ccDmc, ccWcc, ccVcc, 
--    ccTcc, ccPcc, ccUcc, ccIcl, ccGpp
-+    ccTcc, ccPcc, ccUcc, ccIcl, ccGpp, ccEGcc, ccEGpp
+-    ccTcc, ccPcc, ccUcc, ccIcl
++    ccTcc, ccPcc, ccUcc, ccIcl, ccEGcc
    TInfoCCProp* = enum         # properties of the C compiler:
      hasSwitchRange,           # CC allows ranges in switch statements (GNU C)
      hasComputedGoto,          # CC has computed goto (GNU C extension)
-@@ -85,6 +85,20 @@ compiler gpp:
-   # XXX: Hmm, I'm keeping this from the previos version, 
-   # but my gcc doesn't even have such an option (is this mingw?)
+@@ -84,6 +84,13 @@ compiler gcc:
+     props: {hasSwitchRange, hasComputedGoto, hasCpp, hasGcGuard, hasGnuAsm,
+             hasNakedAttribute})
  
 +compiler egcc:
 +  result = gcc()
 +
 +  result.name = "egcc"
 +  result.compilerExe = "egcc"
-+  result.linkerExe = "egcc"
-+
-+compiler egpp:
-+  result = gcc()
-+
-+  result.name = "egpp"
-+  result.compilerExe = "eg++"
-+  result.linkerExe = "eg++"
++  result.cppCompiler = "eg++"
 +
  compiler llvmGcc:
    result = gcc()
    
-@@ -294,7 +308,9 @@ const 
+@@ -316,7 +323,8 @@ const 
+     tcc(),
      pcc(),
      ucc(),
-     icl(),
--    gpp()]
-+    gpp(),
-+    egcc(),
-+    egpp()]
+-    icl()]
++    icl(),
++    egcc()]
  
  const
-   hExt* = "h"
+   hExt* = ".h"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-csources_c_code_7_1_stdlib_posix_c,v 1.1 2014/05/08 01:05:50 jturner Exp $
+--- csources/c_code/7_1/stdlib_posix.c.orig	Mon Apr 21 20:19:54 2014
++++ csources/c_code/7_1/stdlib_posix.c	Mon Apr 21 20:19:59 2014
+@@ -16,8 +16,6 @@
+ 
+ #include <fenv.h>
+ 
+-#include <fmtmsg.h>
+-
+ #include <fnmatch.h>
+ 
+ #include <ftw.h>
