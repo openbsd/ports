@@ -1,6 +1,6 @@
-$OpenBSD: patch-libclamav_mbox_c,v 1.9 2013/09/20 15:23:02 sthen Exp $
---- libclamav/mbox.c.orig	Mon Sep 16 20:28:14 2013
-+++ libclamav/mbox.c	Fri Sep 20 15:27:54 2013
+$OpenBSD: patch-libclamav_mbox_c,v 1.10 2014/05/08 08:18:51 sthen Exp $
+--- libclamav/mbox.c.orig	Tue May  6 19:39:56 2014
++++ libclamav/mbox.c	Thu May  8 00:45:57 2014
 @@ -24,11 +24,6 @@ static	char	const	rcsid[] = "$Id: mbox.c,v 1.381 2007/
  #include "clamav-config.h"
  #endif
@@ -11,5 +11,5 @@ $OpenBSD: patch-libclamav_mbox_c,v 1.9 2013/09/20 15:23:02 sthen Exp $
 -#endif
 -#endif
  
- #define _GNU_SOURCE
- 
+ #include <stdio.h>
+ #include <stdlib.h>

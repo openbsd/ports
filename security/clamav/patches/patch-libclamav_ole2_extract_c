@@ -1,7 +1,7 @@
-$OpenBSD: patch-libclamav_ole2_extract_c,v 1.11 2014/01/15 13:06:47 jasper Exp $
---- libclamav/ole2_extract.c.orig	Mon Jan 13 18:02:34 2014
-+++ libclamav/ole2_extract.c	Wed Jan 15 11:45:25 2014
-@@ -202,7 +202,7 @@ static unsigned char magic_id[] = {0xd0, 0xcf, 0x11, 0
+$OpenBSD: patch-libclamav_ole2_extract_c,v 1.12 2014/05/08 08:18:51 sthen Exp $
+--- libclamav/ole2_extract.c.orig	Tue May  6 19:42:41 2014
++++ libclamav/ole2_extract.c	Thu May  8 00:45:57 2014
+@@ -206,7 +206,7 @@ static unsigned char magic_id[] = {0xd0, 0xcf, 0x11, 0
  
  
  static char    *

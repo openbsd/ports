@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_clamd_conf_sample,v 1.2 2014/01/15 13:06:47 jasper Exp $
---- etc/clamd.conf.sample.orig	Mon Jan 13 18:02:34 2014
-+++ etc/clamd.conf.sample	Wed Jan 15 11:01:06 2014
+$OpenBSD: patch-etc_clamd_conf_sample,v 1.3 2014/05/08 08:18:51 sthen Exp $
+--- etc/clamd.conf.sample.orig	Tue May  6 19:39:56 2014
++++ etc/clamd.conf.sample	Thu May  8 00:45:57 2014
 @@ -11,7 +11,7 @@ Example
  # LogFile must be writable for the user running daemon.
  # A full path is required.
@@ -19,7 +19,7 @@ $OpenBSD: patch-etc_clamd_conf_sample,v 1.2 2014/01/15 13:06:47 jasper Exp $
  
  # Only load the official signatures published by the ClamAV project.
  # Default: no
-@@ -191,7 +191,7 @@ Example
+@@ -192,7 +192,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges
@@ -28,7 +28,7 @@ $OpenBSD: patch-etc_clamd_conf_sample,v 1.2 2014/01/15 13:06:47 jasper Exp $
  
  # Initialize supplementary group access (clamd must be started by root).
  # Default: no
-@@ -452,7 +452,7 @@ Example
+@@ -463,7 +463,7 @@ Example
  # deeply the process should be continued.
  # Note: setting this limit too high may result in severe damage to the system.
  # Default: 16

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libclamav_str_c,v 1.8 2013/09/20 15:23:03 sthen Exp $
---- libclamav/str.c.orig	Mon Sep 16 20:28:14 2013
-+++ libclamav/str.c	Fri Sep 20 15:27:54 2013
-@@ -166,9 +166,9 @@ int cli_hex2str_to(const char *hex, char *ptr, size_t 
+$OpenBSD: patch-libclamav_str_c,v 1.9 2014/05/08 08:18:51 sthen Exp $
+--- libclamav/str.c.orig	Tue May  6 19:39:56 2014
++++ libclamav/str.c	Thu May  8 00:45:57 2014
+@@ -170,9 +170,9 @@ int cli_hex2str_to(const char *hex, char *ptr, size_t 
  
      for(i = 0; i < len; i += 2) {
  	if((c = cli_hex2int(hex[i])) >= 0) {
