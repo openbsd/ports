@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2014/05/08 17:19:58 zhuk Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.90
 GNOME_PROJECT =	emerillon
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	geo x11
 
@@ -30,7 +30,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
 
-MODULES=	devel/gettext \
+MODULES=	devel/dconf \
+		devel/gettext \
 		x11/gnome
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection vala yelp
