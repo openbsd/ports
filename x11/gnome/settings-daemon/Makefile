@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2014/05/05 16:28:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2014/05/08 17:51:57 zhuk Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -8,6 +8,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.12.2
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +28,8 @@ WANTLIB += smime3 sndfile softokn3 soup-2.4 sqlite3 ssl ssl3 upower-glib
 WANTLIB += vorbis vorbisenc vorbisfile xcb xcb-render xcb-shm
 WANTLIB += xkbfile xml2 z
 
-MODULES=		devel/gettext \
+MODULES=		devel/dconf \
+			devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
