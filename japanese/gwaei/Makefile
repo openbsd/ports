@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/04/02 09:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2014/05/08 17:24:48 zhuk Exp $
 
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS =	waei	0.0
 
@@ -25,7 +25,8 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/}
 
-MODULES =	devel/gettext \
+MODULES =	devel/dconf \
+		devel/gettext \
 		x11/gnome
 
 RUN_DEPENDS =	fonts/ja-kanjistrokeorders-ttf \
