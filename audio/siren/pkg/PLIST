@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1 2014/05/08 09:51:30 ratchov Exp $
+@bin bin/siren
+lib/siren/
+lib/siren/ip/
+lib/siren/ip/flac.so
+lib/siren/ip/mad.so
+lib/siren/ip/sndfile.so
+lib/siren/ip/vorbis.so
+lib/siren/op/
+lib/siren/op/sndio.so
+@man man/man1/siren.1

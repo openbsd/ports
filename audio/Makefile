@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.325 2014/05/06 14:02:17 landry Exp $
+# $OpenBSD: Makefile,v 1.326 2014/05/08 09:51:30 ratchov Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -226,6 +226,7 @@
      SUBDIR += shntool
      SUBDIR += shorten
      SUBDIR += sidplay
+     SUBDIR += siren
      SUBDIR += snack
      SUBDIR += solfege
      SUBDIR += sonata
