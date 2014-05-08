@@ -1,1 +1,2 @@
+hardcoded paths detected in Makefile, consider using SUBST_VARS and TRUEPREFIX/LOCALBASE/LOCALSTATEDIR/VARBASE
 hardcoded paths detected in pkg/README, consider using SUBST_VARS and TRUEPREFIX/LOCALBASE/LOCALSTATEDIR/VARBASE
