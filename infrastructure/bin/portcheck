@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.79 2014/05/08 15:41:55 zhuk Exp $
+# $OpenBSD: portcheck,v 1.80 2014/05/08 17:07:46 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -694,15 +694,18 @@ sub_checks() {
 				check_permit_subpkg "$portref" "$subpkg" \
 				    "$perm_pkg_cdrom" "$perm_pkg_ftp" ||
 				    error=true
+
+				if $plist_checks; then
+					(make "${make_args[@]}" \
+					    print-plist-with-depends || true) \
+					    </dev/null |&
+					check_plist "$portref" "$fullpkgname" \
+					    "$flavor" "${subpkg%-}" "$modules"
+					wait
+				fi
+
 				! $error
 			} || error=true
-
-			if $plist_checks; then
-				(make "${make_args[@]}" print-plist-with-depends ||
-				    true) </dev/null |&
-				check_plist "$portref" "$fullpkgname" "$flavor"
-				wait
-			fi
 
 			! $error
 		) || error=true
@@ -748,6 +751,8 @@ check_plist() {
 	local portref=$1; shift
 	local fullpkgname=$1; shift
 	local flavor_list=$1; shift
+	local subpkg=$1; shift
+	local modules_list=$1; shift
 
 	local flavor is_static=false
 	for flavor in $flavor_list; do
@@ -769,6 +774,12 @@ check_plist() {
 	local mimepkg_exec_cnt=0
 	local mimepkg_unexec_cnt=0
 
+	local dconf_module
+	if [[ $modules_list == ?(* )devel/dconf?( *) ]]; then
+		dconf_module=true
+	else
+		dconf_module=false
+	fi
 	local dconf_dep=false
 	local dconf_dep_needed=false
 	local dconf_exec_cnt=0
@@ -1048,9 +1059,16 @@ check_plist() {
 	#
 	# TODO: detect situation of extra devel/dconf in MODULES
 	# (requires investigation of all subpackages).
-	$dconf_dep_needed && ! $dconf_dep &&
-		err "${portref}GLib2 XML schemas found without devel/dconf in" \
-		    "MODULES or RUN_DEPENDS"
+	if $dconf_dep_needed; then
+		if ! $dconf_module; then
+			err "${portref}GLib2 XML schemas found without" \
+			    "devel/dconf in MODULES"
+		elif ! $dconf_dep; then
+			err "${portref}missing" \
+			    "RUN_DEPENDS${subpkg}+=\${MODDCONF_RUN_DEPENDS}"
+		fi
+	fi
+
 	if $dconf_dep_needed; then
 		((dconf_exec_cnt--)) || true
 		((dconf_unexec_cnt--)) || true
