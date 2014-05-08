@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2014/04/27 09:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2014/05/08 04:15:21 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-# CVS checkout of branch v3_5_STABLE
-# Mon Apr 21 20:51:31 CEST 2014
-DISTNAME=	gnugk-3.5.0.1
+DISTNAME=	gnugk-3.6
 
 CATEGORIES=	net telephony
 
@@ -19,12 +17,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c crypto expat h323 kvm lber ldap ldap_r lua5.1
 WANTLIB += m netsnmp netsnmpagent netsnmpmibs pt pthread sasl2
-WANTLIB += ssh ssl stdc++
+WANTLIB += ssh ssl stdc++ z
 
 MODULES=	lang/lua
 
-MASTER_SITES=	https://distfiles.bsdfrog.org/
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
 BUILD_DEPENDS=	databases/mysql \
 		databases/postgresql
