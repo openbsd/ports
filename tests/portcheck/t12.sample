@@ -1,4 +1,5 @@
 in -exec: extra @exec of glib-compile-schemas
+in -nodep: missing RUN_DEPENDS-nodep+=${MODDCONF_RUN_DEPENDS}
 in -noexec: missing @exec of glib-compile-schemas
 in -nounexec: missing @unexec-delete of glib-compile-schemas
 in -unexec: extra @unexec-delete of glib-compile-schemas
