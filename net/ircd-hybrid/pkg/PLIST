@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/02/04 09:46:48 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/05/08 14:36:49 brad Exp $
 @conflict bnc-*
-@conflict irc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
 @newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
+@bin bin/ircd
 @bin bin/mkpasswd
 @bin bin/respond
 lib/ircd-hybrid/
@@ -113,8 +113,6 @@ lib/ircd-hybrid/modules/autoload/m_user.la
 lib/ircd-hybrid/modules/autoload/m_user.so
 lib/ircd-hybrid/modules/autoload/m_userhost.la
 lib/ircd-hybrid/modules/autoload/m_userhost.so
-lib/ircd-hybrid/modules/autoload/m_users.la
-lib/ircd-hybrid/modules/autoload/m_users.so
 lib/ircd-hybrid/modules/autoload/m_version.la
 lib/ircd-hybrid/modules/autoload/m_version.so
 lib/ircd-hybrid/modules/autoload/m_wallops.la
@@ -158,7 +156,6 @@ lib/ircd-hybrid/modules/m_sjoin.so
 lib/ircd-hybrid/modules/m_squit.la
 lib/ircd-hybrid/modules/m_squit.so
 @man man/man8/ircd.8
-@bin sbin/ircd
 share/examples/ircd-hybrid/
 @mode 700
 @owner _ircd-hybrid
@@ -241,7 +238,6 @@ share/ircd-hybrid/help/unresv
 share/ircd-hybrid/help/unxline
 share/ircd-hybrid/help/user
 share/ircd-hybrid/help/userhost
-share/ircd-hybrid/help/users
 share/ircd-hybrid/help/version
 share/ircd-hybrid/help/wallops
 share/ircd-hybrid/help/who

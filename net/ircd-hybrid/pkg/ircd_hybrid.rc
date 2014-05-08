@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: ircd_hybrid.rc,v 1.4 2011/10/19 13:46:17 jasper Exp $
+# $OpenBSD: ircd_hybrid.rc,v 1.5 2014/05/08 14:36:49 brad Exp $
 
-daemon="${TRUEPREFIX}/sbin/ircd"
+daemon="${TRUEPREFIX}/bin/ircd"
 
 . /etc/rc.d/rc.subr
 

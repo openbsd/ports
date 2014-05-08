@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_rsa_c,v 1.1 2014/04/19 18:23:58 sthen Exp $
---- src/rsa.c.orig	Sat Apr 19 19:23:13 2014
-+++ src/rsa.c	Sat Apr 19 19:23:27 2014
-@@ -68,12 +68,6 @@ binary_to_hex(unsigned char *bin, char *hex, int lengt
+$OpenBSD: patch-src_rsa_c,v 1.2 2014/05/08 14:36:49 brad Exp $
+--- src/rsa.c.orig	Sun Apr 20 11:06:24 2014
++++ src/rsa.c	Tue Apr 22 22:15:23 2014
+@@ -70,12 +70,6 @@ binary_to_hex(unsigned char *bin, char *hex, int lengt
  int
  get_randomness(unsigned char *buf, int length)
  {

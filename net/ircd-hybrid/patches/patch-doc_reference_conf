@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_reference_conf,v 1.2 2013/09/17 19:53:00 brad Exp $
---- doc/reference.conf.orig	Sun Aug 18 16:12:33 2013
-+++ doc/reference.conf	Sun Sep 15 15:06:50 2013
+$OpenBSD: patch-doc_reference_conf,v 1.3 2014/05/08 14:36:49 brad Exp $
+--- doc/reference.conf.orig	Thu May  1 16:58:12 2014
++++ doc/reference.conf	Thu May  8 06:09:45 2014
 @@ -108,7 +108,7 @@ serverinfo {
  	 *	chown <ircd-user>.<ircd.group> rsa.key
  	 *	chmod 0600 rsa.key
@@ -29,7 +29,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.2 2013/09/17 19:53:00 brad Exp $
  	/*
  	 * ssl_cipher_list:
 @@ -453,7 +453,7 @@ operator {
- 	 * A password should not be defined when this is used; see 
+ 	 * A password should not be defined when this is used; see
  	 * doc/challenge.txt for more information.
  	 */
 -#	rsa_public_key_file = "/usr/local/ircd/etc/oper.pub";
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.2 2013/09/17 19:53:00 brad Exp $
  
  	/*
  	 * ssl_certificate_fingerprint: enhances security by additionally checking
-@@ -1233,8 +1233,8 @@ modules {
+@@ -1235,8 +1235,8 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_defaults_h,v 1.6 2013/08/07 23:41:08 brad Exp $
---- include/defaults.h.orig	Thu May 23 16:00:07 2013
-+++ include/defaults.h	Thu May 30 18:58:14 2013
-@@ -47,6 +47,11 @@
+$OpenBSD: patch-include_defaults_h,v 1.7 2014/05/08 14:36:49 brad Exp $
+--- include/defaults.h.orig	Sun Apr 20 11:06:23 2014
++++ include/defaults.h	Tue Apr 22 22:15:23 2014
+@@ -48,15 +48,20 @@
   * AUTOMODPATH = directory for autoloaded modules
   */
  
@@ -11,18 +11,17 @@ $OpenBSD: patch-include_defaults_h,v 1.6 2013/08/07 23:41:08 brad Exp $
 +#endif
 +
  /* dirs */
- #define DPATH       PREFIX                                                     
- #define SBINPATH    PREFIX "/sbin/"
-@@ -55,9 +60,9 @@
- #define MODPATH		  LIBDIR "/" PACKAGE "/modules/"
- #define HPATH		    DATADIR "/" PACKAGE "/help"
- #define AUTOMODPATH	MODPATH "/autoload/"
--#define ETCPATH     SYSCONFDIR
--#define	LOGPATH		  LOCALSTATEDIR "/log"
--#define RUNPATH           LOCALSTATEDIR "/run"
-+#define ETCPATH     SYSCONFDIR "/ircd-hybrid/"
-+#define	LOGPATH		  LOCALSTATEDIR "/log/ircd-hybrid"
-+#define RUNPATH           LOCALSTATEDIR "/run/ircd-hybrid"
+ #define DPATH        PREFIX
+ #define BINPATH      PREFIX "/bin/"
+ #define MODPATH      LIBDIR "/" PACKAGE "/modules/"
+ #define HPATH        DATADIR "/" PACKAGE "/help"
+ #define AUTOMODPATH  MODPATH "/autoload/"
+-#define ETCPATH      SYSCONFDIR
+-#define LOGPATH      LOCALSTATEDIR "/log"
+-#define RUNPATH      LOCALSTATEDIR "/run"
++#define ETCPATH      SYSCONFDIR "/ircd-hybrid/"
++#define LOGPATH      LOCALSTATEDIR "/log/ircd-hybrid"
++#define RUNPATH      LOCALSTATEDIR "/run/ircd-hybrid"
  
  /* files */
- #define SPATH   SBINPATH "/ircd"                /* ircd executable */
+ #define SPATH     BINPATH "/ircd"  /* ircd executable */
