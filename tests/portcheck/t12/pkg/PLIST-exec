@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-exec,v 1.1 2014/05/08 15:44:43 zhuk Exp $
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+share/glib-2.0/schemas/foo.xml
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

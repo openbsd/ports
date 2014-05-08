@@ -1,13 +1,7 @@
-in -exec: GLib2 XML schemas found without devel/dconf in MODULES or RUN_DEPENDS
 in -exec: extra @exec of glib-compile-schemas
-in -main: GLib2 XML schemas found without devel/dconf in MODULES or RUN_DEPENDS
-in -noexec: GLib2 XML schemas found without devel/dconf in MODULES or RUN_DEPENDS
 in -noexec: missing @exec of glib-compile-schemas
-in -nounexec: GLib2 XML schemas found without devel/dconf in MODULES or RUN_DEPENDS
 in -nounexec: missing @unexec-delete of glib-compile-schemas
-in -unexec: GLib2 XML schemas found without devel/dconf in MODULES or RUN_DEPENDS
 in -unexec: extra @unexec-delete of glib-compile-schemas
-in -wrong: GLib2 XML schemas found without devel/dconf in MODULES or RUN_DEPENDS
 in -wrong: incorrect glib-compile-schemas invocation: %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 in -wrong: incorrect glib-compile-schemas invocation: %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 in -wrong: missing @exec of glib-compile-schemas
