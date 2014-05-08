@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1 2014/05/08 09:51:30 ratchov Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/08 10:15:31 ratchov Exp $
 
 # installs and requires its own shared object modules
 SHARED_ONLY =		Yes
 
-COMMENT =		a text-based audio player
+COMMENT =		text-based audio player
 DISTNAME =		siren-0.3.1
 CATEGORIES =		audio
 HOMEPAGE =		http://www.kariliq.nl/siren/
 MAINTAINER =		Alexandre Ratchov <alex@caoua.org>
 
-# BSD
+# ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/dist/
