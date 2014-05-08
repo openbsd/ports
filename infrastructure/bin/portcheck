@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.77 2014/05/08 07:02:33 zhuk Exp $
+# $OpenBSD: portcheck,v 1.78 2014/05/08 15:39:49 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -732,6 +732,7 @@ sub_checks() {
 #
 #   * If package adds a GLib schema, it should have @exec/@unexec-delete
 #     with %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+#     and "devel/dconf" in MODULES (or at least RDEP on devel/dconf).
 #
 #   * If package installs .mo files under ${PREFIX}/share/locale/, then
 #     run-time dependency on devel/gettext should exists.
@@ -768,10 +769,10 @@ check_plist() {
 	local mimepkg_exec_cnt=0
 	local mimepkg_unexec_cnt=0
 
-	local glib_dep=false
-	local glib_dep_needed=false
-	local glibxml_exec_cnt=0
-	local glibxml_unexec_cnt=0
+	local dconf_dep=false
+	local dconf_dep_needed=false
+	local dconf_exec_cnt=0
+	local dconf_unexec_cnt=0
 
 	# Lists of icon themes discovered through reading
 	# @file, @exec and @unexec lines, accordingly.
@@ -899,16 +900,16 @@ check_plist() {
 			;;
 
 		share/glib-2.0/schemas/*.xml)
-			glib_dep_needed=true
+			dconf_dep_needed=true
 			;;
-		"@depend devel/glib2"[\|:]*)
-			glib_dep=true
+		"@depend devel/dconf"*)
+			dconf_dep=true
 			;;
 		"@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null")
-			((++glibxml_exec_cnt))
+			((++dconf_exec_cnt))
 			;;
 		"@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null")
-			((++glibxml_unexec_cnt))
+			((++dconf_unexec_cnt))
 			;;
 		@?(un)exec?(-delete|-update)" %D/bin/glib-compile-schemas"*)
 			err "${portref}incorrect glib-compile-schemas" \
@@ -1044,22 +1045,25 @@ check_plist() {
 	fi
 
 	# glib-compile-schemas (almost same as previous)
-	$glib_dep_needed && ! $glib_dep &&
-	    [[ $fullpkgname != glib2-* ]] &&
-		err "${portref}missing RDEP on devel/glib2"
-	if $glib_dep_needed; then
-		((glibxml_exec_cnt--)) || true
-		((glibxml_unexec_cnt--)) || true
+	#
+	# TODO: detect situation of extra devel/dconf in MODULES
+	# (requires investigation of all subpackages).
+	$dconf_dep_needed && ! $dconf_dep &&
+		err "${portref}GLib2 XML schemas found without devel/dconf in" \
+		    "MODULES or RUN_DEPENDS"
+	if $dconf_dep_needed; then
+		((dconf_exec_cnt--)) || true
+		((dconf_unexec_cnt--)) || true
 	fi
-	if ((glibxml_exec_cnt > 0)) &&
+	if ((dconf_exec_cnt > 0)) &&
 	    [[ $fullpkgname != glib2-* ]]; then
 		err "${portref}extra @exec of glib-compile-schemas"
-	elif ((glibxml_exec_cnt < 0)); then
+	elif ((dconf_exec_cnt < 0)); then
 		err "${portref}missing @exec of glib-compile-schemas"
 	fi
-	if ((glibxml_unexec_cnt > 0)); then
+	if ((dconf_unexec_cnt > 0)); then
 		err "${portref}extra @unexec-delete of glib-compile-schemas"
-	elif ((glibxml_unexec_cnt < 0)); then
+	elif ((dconf_unexec_cnt < 0)); then
 		err "${portref}missing @unexec-delete of glib-compile-schemas"
 	fi
 
