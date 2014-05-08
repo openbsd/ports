@@ -1,8 +1,0 @@
-This gem adds transaction support for datamapper. The currently
-supported adapters are:
-
-* postgres
-* mysql
-* sqlite3
-* oracle
-* sqlserver

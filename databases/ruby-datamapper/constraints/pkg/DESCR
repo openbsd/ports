@@ -1,4 +1,0 @@
-DataMapper Plugin that adds foreign key constraints to associations.
-Currently supports only PostgreSQL and MySQL.  All constraints are added
-to the underlying database, but constraining is implemented in pure
-ruby.
