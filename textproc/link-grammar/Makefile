@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2014/05/08 21:22:46 kurt Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 COMMENT-main =		syntactic parser of different languages
@@ -7,6 +7,7 @@ VERSION =		5.0.7
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
+REVISION-main =		0
 REVISION-java =		0
 
 SHARED_LIBS +=  link-grammar         1.0      # 5.5
@@ -40,6 +41,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 LIB_DEPENDS-java =	${LIB_DEPENDS} \
 			${BUILD_PKGPATH},-main
 
+RUN_DEPENDS-main = 
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 SEPARATE_BUILD =	No
