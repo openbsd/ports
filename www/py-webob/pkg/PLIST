@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/18 17:58:07 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/05/08 16:20:18 bcallah Exp $
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/webob/
@@ -14,6 +15,10 @@ lib/python${MODPY_VERSION}/site-packages/webob/byterange.py
 lib/python${MODPY_VERSION}/site-packages/webob/byterange.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/cachecontrol.py
 lib/python${MODPY_VERSION}/site-packages/webob/cachecontrol.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/client.py
+lib/python${MODPY_VERSION}/site-packages/webob/client.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/compat.py
+lib/python${MODPY_VERSION}/site-packages/webob/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/cookies.py
 lib/python${MODPY_VERSION}/site-packages/webob/cookies.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/datetime_utils.py
@@ -34,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/webob/request.py
 lib/python${MODPY_VERSION}/site-packages/webob/request.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/response.py
 lib/python${MODPY_VERSION}/site-packages/webob/response.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/static.py
+lib/python${MODPY_VERSION}/site-packages/webob/static.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/util.py
 lib/python${MODPY_VERSION}/site-packages/webob/util.pyc
 share/doc/py-webob/

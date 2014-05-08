@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/05/08 16:20:18 bcallah Exp $
 
 COMMENT =	wsgi request and response object
 
-MODPY_EGG_VERSION = 1.1.1
+MODPY_EGG_VERSION = 1.3.1
 DISTNAME =	WebOb-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -14,7 +14,6 @@ HOMEPAGE =	http://webob.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebOb/}
-EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
 
