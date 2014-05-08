@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.25 2014/05/08 21:23:21 kurt Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 # do not include i386 here until JDK 1.6 issues there are solved
@@ -16,6 +16,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
 
+REVISION-main=		0
 REVISION-java=		0
 
 HOMEPAGE =		http://www.opencv.org/
@@ -82,8 +83,7 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		devel/doxygen \
 			math/py-numpy
 
-RUN_DEPENDS-main =	${RUN_DEPENDS} \
-			math/py-numpy
+RUN_DEPENDS-main =	math/py-numpy
 RUN_DEPENDS-docs =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
