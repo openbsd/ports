@@ -1,10 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2014/03/15 13:37:18 benoit Exp $
+$OpenBSD: patch-Makefile,v 1.2 2014/05/08 20:49:41 sthen Exp $
 - respect ports CFLAGS
 - use OpenBSD shared library naming
 - sys.mk defines CFLAGS and LDFLAGS so don't use conditional value assignments
   for those.
---- Makefile.orig	Thu Feb 27 02:05:51 2014
-+++ Makefile	Mon Mar 10 12:38:53 2014
+- we don't patch the install-osx target, because we don't use it
+--- Makefile.orig	Tue May  6 11:42:07 2014
++++ Makefile	Thu May  8 21:41:43 2014
 @@ -5,20 +5,19 @@ MAKE_DIR     ?= install -d
  INSTALL_DATA ?= install
  
@@ -17,22 +18,22 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/03/15 13:37:18 benoit Exp $
  
  all: reference
  
- OBJS= crypto_scrypt-nosse.o sha256.o crypto_scrypt-hexconvert.o crypto-mcf.o b64.o crypto-scrypt-saltgen.o crypto_scrypt-check.o crypto_scrypt-hash.o
+ OBJS= crypto_scrypt-nosse.o sha256.o crypto_scrypt-hexconvert.o crypto-mcf.o b64.o crypto-scrypt-saltgen.o crypto_scrypt-check.o crypto_scrypt-hash.o slowequals.o
  
 -libscrypt.so.0: $(OBJS) 
--	$(CC)  $(LDFLAGS) -shared -o libscrypt.so.0 -lc -lm  $(OBJS)
+-	$(CC)  $(LDFLAGS) -shared -o libscrypt.so.0  $(OBJS) -lm -lc
 +libscrypt.so.${LIBscrypt_VERSION}: $(OBJS) 
-+	$(CC)  $(LDFLAGS) -shared -o libscrypt.so.${LIBscrypt_VERSION} -lc -lm  $(OBJS)
++	$(CC)  $(LDFLAGS) -shared -o libscrypt.so.${LIBscrypt_VERSION}  $(OBJS) -lm -lc
  	ar rcs libscrypt.a  $(OBJS)
  
--reference: libscrypt.so.0 main.o b64.o
+-reference: libscrypt.so.0 main.o b64.o crypto_scrypt-hexconvert.o
 -	ln -s -f libscrypt.so.0 libscrypt.so
-+reference: libscrypt.so.${LIBscrypt_VERSION} main.o b64.o
- 	$(CC) -Wall -o reference main.o  b64.o $(CFLAGS_EXTRA) -L.  -lscrypt
++reference: libscrypt.so.${LIBscrypt_VERSION} main.o b64.o crypto_scrypt-hexconvert.o
+ 	$(CC) -Wall -o reference main.o b64.o crypto_scrypt-hexconvert.o $(CFLAGS_EXTRA) -L.  -lscrypt
  
  clean:
 @@ -33,11 +32,10 @@ devtest:
- 	splint crypto-scrypt-saltgen.c +posixlib
+ 	splint crypto-scrypt-saltgen.c +posixlib -compdef
  	valgrind ./reference
  
 -install: libscrypt.so.0
@@ -44,6 +45,11 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/03/15 13:37:18 benoit Exp $
 +	$(MAKE_DIR) $(LIBDIR) $(INCLUDEDIR)
 +	$(INSTALL_DATA) -pm 0755 libscrypt.so.${LIBscrypt_VERSION} $(LIBDIR)
 +	$(INSTALL_DATA) -pm 0644 libscrypt.h  $(INCLUDEDIR)
+ 
+ install-osx: libscrypt.so.0
+ 	$(MAKE_DIR) $(DESTDIR) $(DESTDIR)$(PREFIX) $(DESTDIR)$(LIBDIR) $(DESTDIR)$(INCLUDEDIR)
+@@ -46,4 +44,4 @@ install-osx: libscrypt.so.0
+ 	$(INSTALL_DATA) -pm 0644 libscrypt.h  $(DESTDIR)$(INCLUDEDIR)
  
  install-static: libscrypt.a
 -	$(INSTALL_DATA) -pm 0644 libscrypt.a $(DESTDIR)$(LIBDIR)

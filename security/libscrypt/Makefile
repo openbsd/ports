@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/15 13:37:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/08 20:49:41 sthen Exp $
 
 # should build a static library without using -fPIC
 SHARED_ONLY =	Yes
 
 COMMENT =	shared library that implements scrypt() functionality
 
-GH_VER =	1.17
+GH_VER =	1.19
 PROJECT =	libscrypt
 DISTNAME =	${PROJECT}-${GH_VER}
 
-SHARED_LIBS =	scrypt		0.0	# 0
+SHARED_LIBS =	scrypt		1.0	# 0
 
 CATEGORIES =	security
 
