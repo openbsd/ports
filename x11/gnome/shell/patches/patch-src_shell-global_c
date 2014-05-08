@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_shell-global_c,v 1.10 2014/05/08 09:33:17 ajacoutot Exp $
+$OpenBSD: patch-src_shell-global_c,v 1.11 2014/05/08 09:45:07 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=727763
 
 --- src/shell-global.c.orig	Tue Apr 15 23:36:27 2014
-+++ src/shell-global.c	Thu May  8 11:30:47 2014
++++ src/shell-global.c	Thu May  8 11:41:10 2014
 @@ -34,7 +34,6 @@
  #endif
  
@@ -31,7 +31,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
    buf_end = buf+len;
    arr = g_ptr_array_new ();
    /* The cmdline file is NUL-separated */
-@@ -1161,7 +1150,33 @@ shell_global_reexec_self (ShellGlobal *global)
+@@ -1161,7 +1150,31 @@ shell_global_reexec_self (ShellGlobal *global)
      g_ptr_array_add (arr, buf_p);
  
    g_ptr_array_add (arr, NULL);
@@ -52,8 +52,6 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
 +
 +  arr = g_ptr_array_new ();
 +  for (args_p = args; *args_p != NULL; args_p++) {
-+    if (args_p != args)
-+      g_ptr_array_add (arr, " ");
 +    g_ptr_array_add (arr, *args_p);
 +  }
 +
@@ -65,7 +63,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
    /* Close all file descriptors other than stdin/stdout/stderr, otherwise
     * they will leak and stay open after the exec. In particular, this is
     * important for file descriptors that represent mapped graphics buffer
-@@ -1176,6 +1191,8 @@ shell_global_reexec_self (ShellGlobal *global)
+@@ -1176,6 +1189,8 @@ shell_global_reexec_self (ShellGlobal *global)
    execvp (arr->pdata[0], (char**)arr->pdata);
    g_warning ("failed to reexec: %s", g_strerror (errno));
    g_ptr_array_free (arr, TRUE);
