@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2014/04/06 21:10:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2014/05/08 16:21:16 bcallah Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION=2.2.1
-REVISION=	0
+MODPY_EGG_VERSION=2.3
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
 
 HOMEPAGE=	http://www.mnemosyne-proj.org/
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,6 +26,7 @@ RUN_DEPENDS=	x11/py-qt4 \
 		graphics/py-Pillow \
 		graphics/py-matplotlib \
 		www/py-CherryPy \
+		www/py-webob>=1.3.1 \
 		devel/desktop-file-utils
 
 NO_TEST=	Yes

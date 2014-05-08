@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/09/06 18:26:50 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/05/08 16:21:16 bcallah Exp $
 bin/mnemosyne
-bin/mnemosyne-webserver
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -193,6 +192,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/cards_added.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/cards_added.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/cards_learned.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/cards_learned.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/current_card.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/current_card.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/easiness.py
@@ -244,6 +245,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/__init_
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade1.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade1.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade2.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade2.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/utils.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/
@@ -281,8 +284,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_cr
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_cramming.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_main.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_main.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_sync_server.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_sync_server.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_servers.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_servers.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/convert_card_type_keys_dlg.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/convert_card_type_keys_dlg.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/criterion_wdgt_default.py
@@ -323,6 +326,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qt_sync_server.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qt_sync_server.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qt_translator.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qt_translator.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qt_web_server.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qt_web_server.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qtextedit2.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qtextedit2.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qwebview2.py
@@ -373,8 +378,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_cramming.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_main.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_main.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_sync_server.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_sync_server.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_servers.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_servers.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_convert_card_type_keys_dlg.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_convert_card_type_keys_dlg.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_criterion_wdgt_default.py
@@ -418,17 +423,21 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/version.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/version.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/review_wdgt.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/review_wdgt.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/server.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/server.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/webserver_render_chain.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/webserver_render_chain.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/webserver_renderer.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/webserver/webserver_renderer.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/jquery_mb_html5_audio.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/jquery_mb_html5_audio.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/review_wdgt.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/review_wdgt.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/simple_html5_audio.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/simple_html5_audio.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/web_server.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/web_server.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/web_server_render_chain.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/web_server_render_chain.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/web_server_renderer.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/web_server_renderer.pyc
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/__init__.py
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/__init__.pyc
@@ -461,6 +470,8 @@ lib/python${MODPY_VERSION}/site-packages/openSM2sync/ui.pyc
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/utils.py
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/utils.pyc
 share/applications/mnemosyne.desktop
+share/locale/ca/LC_MESSAGES/mnemosyne.mo
+share/locale/ca@valencia/LC_MESSAGES/mnemosyne.mo
 share/locale/cs/LC_MESSAGES/mnemosyne.mo
 share/locale/da/LC_MESSAGES/mnemosyne.mo
 share/locale/de/LC_MESSAGES/mnemosyne.mo
@@ -481,7 +492,10 @@ share/locale/pl/LC_MESSAGES/mnemosyne.mo
 share/locale/pt/LC_MESSAGES/mnemosyne.mo
 share/locale/pt_BR/LC_MESSAGES/mnemosyne.mo
 share/locale/ru/LC_MESSAGES/mnemosyne.mo
+share/locale/sr/LC_MESSAGES/mnemosyne.mo
+share/locale/sv/LC_MESSAGES/mnemosyne.mo
 share/locale/tr/LC_MESSAGES/mnemosyne.mo
+share/locale/uk/LC_MESSAGES/mnemosyne.mo
 share/locale/zh_CN/LC_MESSAGES/mnemosyne.mo
 share/locale/zh_HK/LC_MESSAGES/mnemosyne.mo
 share/locale/zh_TW/LC_MESSAGES/mnemosyne.mo
