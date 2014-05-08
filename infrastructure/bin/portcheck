@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.76 2014/05/07 22:27:06 zhuk Exp $
+# $OpenBSD: portcheck,v 1.77 2014/05/08 07:02:33 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1529,6 +1529,7 @@ check_makefile() {
 	local F="$1"
 	check_trailing_whitespace "$F"
 	check_long_lines "$F"
+	check_hardcoded "$F"
 	head -n 1 -- "$F" |
 		egrep -q '^#[[:space:]]*\$OpenBSD.*\$' ||
 		err "$F does not have \$OpenBSD\$ RCS tag at the top"
