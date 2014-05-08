@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.34 2014/01/09 09:59:55 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.35 2014/05/08 20:23:19 sthen Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -38,7 +38,7 @@ LIB_DEPENDS-main?=
 RUN_DEPENDS-main?=
 NOT_FOR_ARCHS-tcl = ${NO_SHARED_ARCHS}
 #ONLY_FOR_ARCHS = ${ALL_ARCHS}
-ONLY_FOR_ARCHS-java = amd64 # XXX java broken on i386
+ONLY_FOR_ARCHS-java = amd64 i386
 
 .include <bsd.port.arch.mk>
 
