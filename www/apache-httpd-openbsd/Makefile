@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/04/01 15:07:19 florian Exp $
+# $OpenBSD: Makefile,v 1.3 2014/05/09 11:40:44 florian Exp $
 
 COMMENT=	OpenBSD improved and secured version of Apache 1.3
 
-DISTNAME=	apache-httpd-openbsd-1.3p54
-PKGNAME=	apache-httpd-openbsd-1.3
-REVISION=	55
+DISTNAME=	apache-httpd-openbsd-1.3.20140502
 CATEGORIES=	www
 
 HOMEPAGE=	https://github.com/fobser/apache-httpd-openbsd
