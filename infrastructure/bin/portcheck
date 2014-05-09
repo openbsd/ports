@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.80 2014/05/08 17:07:46 zhuk Exp $
+# $OpenBSD: portcheck,v 1.81 2014/05/09 20:34:36 kirby Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1110,7 +1110,7 @@ check_plist() {
 		else
 			err "${portref}Python module without" \
 			    "compiled version, consider using" \
-			    "\${MODPY_LIBDIR}/compileall.py: $py"
+			    "\${MODPY_BIN} \${MODPY_LIBDIR}/compileall.py: $py"
 		fi
 
 		while [[ $io -lt ${#pyo_files[@]} ]]; do
