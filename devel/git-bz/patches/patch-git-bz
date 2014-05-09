@@ -1,0 +1,66 @@
+$OpenBSD: patch-git-bz,v 1.1.1.1 2014/05/09 15:28:58 ajacoutot Exp $
+
+http://pkgs.fedoraproject.org/cgit/git-bz.git/plain/Include-token-when-submitting-patches.patch
+http://pkgs.fedoraproject.org/cgit/git-bz.git/plain/0001-Search-for-cookies-for-.host-in-addition-to-host-fro.patch
+http://pkgs.fedoraproject.org/cgit/git-bz.git/plain/0001-Add-default-config-for-bugzilla.redhat.com.patch
+
+--- git-bz.orig	Wed May  7 17:49:46 2014
++++ git-bz	Wed May  7 17:58:12 2014
+@@ -66,6 +66,13 @@ https = true
+ default-priority = ---
+ """
+ 
++CONFIG['bugzilla.redhat.com'] = \
++"""
++https = true
++default-product = Fedora
++default-version = rawhide
++"""
++
+ # Default values for options that can be configured via 'git config'
+ git_config = {
+     'browser': 'firefox3',
+@@ -586,7 +593,7 @@ def get_cookies_from_sqlite(host, cookies_sqlite, brow
+ 
+ def get_cookies_from_sqlite_xulrunner(host, cookies_sqlite, name):
+     return get_cookies_from_sqlite(host, cookies_sqlite, name,
+-                                   "select name,value,path,expiry from moz_cookies where host = :host")
++                                   "select name,value,path,expiry from moz_cookies where host in (:host, '.'||:host)")
+ 
+ def get_bugzilla_cookies_ff3(host):
+     profiles_dir = os.path.expanduser('~/.mozilla/firefox')
+@@ -643,7 +650,7 @@ def get_bugzilla_cookies_chr(host, browser, config_dir
+     if not os.path.exists(cookies_sqlite):
+         raise CookieError("%s doesn't exist" % cookies_sqlite)
+     return get_cookies_from_sqlite(host, cookies_sqlite, browser,
+-                                   "select name,value,path,expires_utc from cookies where host_key = :host",
++                                   "select name,value,path,expires_utc from cookies where host_key in (:host, '.'||:host)",
+                                    chromium_time=True)
+ 
+ def get_bugzilla_cookies_chromium(host):
+@@ -1245,12 +1252,25 @@ class Bug(object):
+         print self.get_url()
+ 
+     def create_patch(self, description, comment, filename, data, obsoletes=[], status='none'):
++
++        # Get token from html enter attachment form
++        url = "/attachment.cgi?bugid=" + str(self.id) + "&action=enter"
++        response = self.server.send_request("GET", url)
++        if response.status != 200:
++            die ("Failed to retrieve attachment token: %d" % response.status)
++        html = response.read()
++        match = re.search(r'<input type="hidden" name="token" value="(\w*)">', html)
++        if match is None:
++            die ("Failed to find attachment token")
++        token = match.group(1)
++
+         fields = {}
+         fields['bugid'] = str(self.id)
+         fields['action'] = 'insert'
+         fields['ispatch'] = '1'
+         fields['attachments.status'] = status
+         fields['description'] = description
++        fields['token'] = token
+         if comment:
+             fields['comment'] = comment
+         if obsoletes:
