@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/04/01 18:26:56 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2014/05/09 08:47:48 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,8 @@ CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.heanet.ie/mirrors/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/
 
-REVISION-server= 0
+REVISION-main=	0
+REVISION-server= 1
 
 LIB_VERSION=	25
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
@@ -70,7 +71,24 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_LIBEDIT=Off \
 		-DCONNECT_WITH_LIBXML2=Off
 
-MULTI_PACKAGES=	-main -server -tests
+MULTI_PACKAGES=	-main
+
+# archs with atomic ops
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" ||
+    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc" ||
+    ${MACHINE_ARCH} == "sparc64"
+MULTI_PACKAGES+= -server -tests
+.endif
+
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-server}
+CONFIGURE_ARGS+=-DWITHOUT_SERVER=On
+.endif
+
+.if !${BUILD_PACKAGES:M-tests}
+CONFIGURE_ARGS+=-DWITH_UNIT_TESTS=Off
+.endif
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake
@@ -80,7 +98,11 @@ post-install:
 		ln -sf mysql/libmysqlclient.so.${LIBmysqlclient_VERSION} . && \
 		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} .
 
+.if ${BUILD_PACKAGES:M-tests}
 do-regress:
 	@cd ${WRKBUILD}/mysql-test && ./mysql-test-run.pl --force --max-test-fail=0
+.else
+NO_TEST=	Yes
+.endif
 
 .include <bsd.port.mk>
