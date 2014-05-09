@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/17 19:46:21 juanfra Exp $
+# $OpenBSD: Makefile,v 1.11 2014/05/09 01:06:44 juanfra Exp $
 
 COMMENT =		FTP server library for Python
 
-MODPY_EGG_VERSION =	1.3.0
-REVISION =		0
+MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		pyftpdlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-ftpdlib-${MODPY_EGG_VERSION}
 
@@ -16,7 +15,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =		https://pyftpdlib.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_PYPI:=p/pyftpdlib/}
 
 MODULES =		lang/python
 
