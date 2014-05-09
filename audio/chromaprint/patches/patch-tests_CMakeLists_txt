@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2014/05/09 09:00:19 sthen Exp $
+--- tests/CMakeLists.txt.orig	Sat Nov 23 16:43:42 2013
++++ tests/CMakeLists.txt	Wed May  7 15:12:15 2014
+@@ -3,7 +3,6 @@ include_directories(
+ 	${Boost_INCLUDE_DIRS}
+ 	${CMAKE_CURRENT_SOURCE_DIR}/../src
+ )
+-add_subdirectory(${GTEST_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/gtest_build)
+ 
+ set(tests_SOURCES
+ 	main.cpp
