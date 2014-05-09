@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/07 20:52:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/05/09 09:13:47 sthen Exp $
 
 D=		20140506-r13398
 V=		3.5pre${D:C/-.*//}
@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--disable-arch-native \
 		--enable-ssl-crtd
 
+BUILD_DEPENDS+=	devel/cppunit
 LIB_DEPENDS+=	security/gnutls
 MODULES+=	devel/gettext
 WANTLIB+=	ffi gmp gnutls hogweed p11-kit tasn1 z
