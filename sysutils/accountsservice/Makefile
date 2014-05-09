@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/03/30 12:50:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/05/09 12:59:50 ajacoutot Exp $
 
 # XXX fix change password (gnome-cc run-passwd.c: argv[0])
 
@@ -6,7 +6,7 @@ COMMENT=	D-Bus interface for user account query and manipulation
 
 DISTNAME=	accountsservice-0.6.37
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  accountsservice           0.0 # 0.0
 
@@ -19,7 +19,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 kvm pcre
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre
 WANTLIB += polkit-gobject-1 pthread z
 
 MASTER_SITES=	http://www.freedesktop.org/software/accountsservice/

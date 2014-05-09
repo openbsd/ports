@@ -1,19 +1,16 @@
-$OpenBSD: patch-src_util_c,v 1.14 2014/01/30 10:01:33 ajacoutot Exp $
+$OpenBSD: patch-src_util_c,v 1.15 2014/05/09 12:59:50 ajacoutot Exp $
 
 XXX push upstream: we don't use /proc on OpenBSD
 
---- src/util.c.orig	Sat May 11 21:54:43 2013
-+++ src/util.c	Thu May 30 20:00:16 2013
-@@ -32,11 +32,20 @@
+--- src/util.c.orig	Tue Oct 15 22:25:19 2013
++++ src/util.c	Fri May  9 14:54:31 2014
+@@ -32,11 +32,17 @@
  
  #include <polkit/polkit.h>
  
 +#ifdef __OpenBSD__
-+#include <sys/param.h>
-+#include <sys/types.h>
-+#include <sys/proc.h>
++#include <errno.h>
 +#include <sys/sysctl.h>
-+#include <kvm.h>
 +#endif
 +
  #include "util.h"
@@ -25,39 +22,37 @@ XXX push upstream: we don't use /proc on OpenBSD
    gchar *ret = NULL;
    gchar *filename;
    gchar *contents;
-@@ -70,7 +79,31 @@ get_cmdline_of_pid (GPid pid)
+@@ -70,7 +76,29 @@ get_cmdline_of_pid (GPid pid)
   out:
    g_free (filename);
    g_free (contents);
 +#else /* OpenBSD */
-+  kvm_t *kd;
 +  gchar *ret = NULL;
-+  int nproc;
-+  struct kinfo_proc *kp;
-+  char **pargv;
++  gchar **strs = NULL;
++  gsize len;
++  gint mib[] = { CTL_KERN, KERN_PROC_ARGS, pid, KERN_PROC_ARGV };
++ 
++  if (sysctl (mib, G_N_ELEMENTS (mib), NULL, &len, NULL, 0) == -1)
++    goto out;
  
-+  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
-+    goto out;
++  strs = g_malloc0 (len);
 +
-+  if ((kp = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(*kp), &nproc)) == NULL)
++  if (sysctl (mib, G_N_ELEMENTS (mib), strs, &len, NULL, 0) == -1) {
++    g_warning ("failed to get command line args: %d", errno);
 +    goto out;
++  }
 +
-+  if ((kp->p_flag & P_SYSTEM) != 0) 
-+    goto out;
-+
-+  if ((pargv = kvm_getargv(kd, kp, 0)) == NULL)
-+    goto out;
-+
-+  ret = g_path_get_basename(pargv[0]);
++  ret = g_strjoinv (" ", strs);
++  g_strstrip (ret);
 +
 +out:
-+  kvm_close(kd);
++  g_free (strs);
 +#endif
 +
    return ret;
  }
  
-@@ -230,12 +263,14 @@ compat_check_exit_status (int      estatus,
+@@ -230,12 +258,14 @@ compat_check_exit_status (int      estatus,
  static void
  setup_loginuid (gpointer data)
  {

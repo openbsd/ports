@@ -1,11 +1,9 @@
-$OpenBSD: patch-src_Makefile_in,v 1.12 2014/03/26 17:16:22 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.13 2014/05/09 12:59:50 ajacoutot Exp $
 
 /var/lib -> /var/db
 
-XXX push upstream: -lkvm
-
 --- src/Makefile.in.orig	Thu Mar 20 19:52:50 2014
-+++ src/Makefile.in	Wed Mar 26 18:11:45 2014
++++ src/Makefile.in	Fri May  9 14:26:08 2014
 @@ -402,8 +402,8 @@ SUBDIRS = . libaccountsservice
  INCLUDES = \
  	-DLOCALSTATEDIR=\""$(localstatedir)"\" \
@@ -17,13 +15,3 @@ XXX push upstream: -lkvm
  	-I$(srcdir)		\
  	-I$(builddir)		\
  	$(POLKIT_CFLAGS)	\
-@@ -435,7 +435,8 @@ accounts_daemon_SOURCES = \
- 
- accounts_daemon_LDADD = \
- 	libaccounts-generated.la	\
--	$(POLKIT_LIBS)
-+	$(POLKIT_LIBS)			\
-+	-lkvm
- 
- EXTRA_DIST = \
- 	fgetpwent.c	\
