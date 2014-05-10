@@ -1,0 +1,4 @@
+The libvirt-python package provides a module that permits applications
+written in the Python programming language to call the interface
+supplied by the libvirt library, to manage the virtualization
+capabilities of recent versions of Linux (and other OSes).

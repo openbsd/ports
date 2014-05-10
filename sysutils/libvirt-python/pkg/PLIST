@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/10 07:48:53 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/libvirt.py
+lib/python${MODPY_VERSION}/site-packages/libvirt.pyc
+lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.py
+lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.pyc
+lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.py
+lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.pyc
+lib/python${MODPY_VERSION}/site-packages/libvirtmod.so
+lib/python${MODPY_VERSION}/site-packages/libvirtmod_lxc.so
+lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.so
