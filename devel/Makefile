@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1225 2014/05/10 01:56:47 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1226 2014/05/10 17:14:09 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -889,6 +889,7 @@
      SUBDIR += p5-Package-Generator
      SUBDIR += p5-Package-Stash
      SUBDIR += p5-Package-Stash-XS
+     SUBDIR += p5-Package-Variant
      SUBDIR += p5-PadWalker
      SUBDIR += p5-Pango
      SUBDIR += p5-Parallel-ForkManager
