@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/10 11:24:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/05/10 11:25:05 jasper Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
@@ -41,6 +41,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/virtcli/cliconfig.py
 
 do-test:
-       @${MODPY_TEST_TARGET}
+	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
