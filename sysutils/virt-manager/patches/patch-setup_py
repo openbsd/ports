@@ -1,0 +1,42 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2014/05/10 11:19:50 jasper Exp $
+
+- Skip prefix tests.
+- Adjust manpath
+
+--- setup.py.orig	Mon Feb 17 18:37:52 2014
++++ setup.py	Fri May  9 21:03:19 2014
+@@ -229,16 +229,6 @@ class my_install(install):
+     Error if we weren't 'configure'd with the correct install prefix
+     """
+     def finalize_options(self):
+-        if self.prefix is None:
+-            if cliconfig.prefix != sysprefix:
+-                print "Using prefix from 'configure': %s" % cliconfig.prefix
+-                self.prefix = cliconfig.prefix
+-        elif self.prefix != cliconfig.prefix:
+-            print("Install prefix=%s doesn't match configure prefix=%s\n"
+-                  "Pass matching --prefix to 'setup.py configure'" %
+-                  (self.prefix, cliconfig.prefix))
+-            sys.exit(1)
+-
+         install.finalize_options(self)
+ 
+ 
+@@ -609,7 +599,7 @@ setup(
+          ["data/org.virt-manager.virt-manager.gschema.xml"]),
+         ("share/virt-manager/ui", glob.glob("ui/*.ui")),
+ 
+-        ("share/man/man1", [
++        ("man/man1", [
+             "man/virt-manager.1",
+             "man/virt-install.1",
+             "man/virt-clone.1",
+@@ -617,7 +607,7 @@ setup(
+             "man/virt-convert.1",
+             "man/virt-xml.1"
+         ]),
+-        ("share/man/man5", ["man/virt-image.5"]),
++        ("man/man5", ["man/virt-image.5"]),
+ 
+         ("share/virt-manager/virtManager", glob.glob("virtManager/*.py")),
+ 

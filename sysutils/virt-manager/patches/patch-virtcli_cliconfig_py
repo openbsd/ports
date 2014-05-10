@@ -1,0 +1,15 @@
+$OpenBSD: patch-virtcli_cliconfig_py,v 1.1.1.1 2014/05/10 11:19:50 jasper Exp $
+
+Set correct $PREFIX
+
+--- virtcli/cliconfig.py.orig	Fri May  9 21:01:50 2014
++++ virtcli/cliconfig.py	Fri May  9 21:02:05 2014
+@@ -69,7 +69,7 @@ if _usr_version is not None and _usr_version != "":
+     __version__ = _usr_version
+ 
+ # We should map this into the config somehow but I question if anyone cares
+-prefix = _get_param("prefix", "/usr")
++prefix = _get_param("prefix", "${PREFIX}")
+ gettext_dir = os.path.join(prefix, "share", "locale")
+ install_asset_dir = os.path.join(prefix, "share", "virt-manager")
+ if os.getcwd() == _srcdir:
