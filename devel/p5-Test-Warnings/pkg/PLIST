@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/10 01:54:20 afresh1 Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Warnings.pm
+@man man/man3p/Test::Warnings.3p
