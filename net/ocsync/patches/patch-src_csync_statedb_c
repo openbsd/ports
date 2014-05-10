@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_csync_statedb_c,v 1.1 2014/05/10 06:57:26 kirby Exp $
+
+Fix for 64bit time_t.
+
+--- src/csync_statedb.c.orig	Sat May 10 00:04:13 2014
++++ src/csync_statedb.c	Sat May 10 00:05:57 2014
+@@ -567,7 +567,7 @@ static int _insert_metadata_visitor(void *obj, void *d
+       CSYNC_LOG(CSYNC_LOG_PRIORITY_TRACE,
+                 "SQL statement: INSERT INTO metadata_temp \n"
+                 "\t\t\t(phash, pathlen, path, inode, uid, gid, mode, modtime, type, md5) VALUES \n"
+-                "\t\t\t(%lld, %lu, %s, %lld, %u, %u, %u, %lu, %d, %s);",
++                "\t\t\t(%lld, %lu, %s, %lld, %u, %u, %u, %lld, %d, %s);",
+                 (long long signed int) phash,
+                 (long unsigned int) pathlen,
+                 path,

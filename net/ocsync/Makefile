@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/12/18 12:02:56 kirby Exp $
+# $OpenBSD: Makefile,v 1.18 2014/05/10 06:57:26 kirby Exp $
 
 # XXX updating requires Thread Local Storage support
 
@@ -8,7 +8,7 @@ COMMENT=	bidirectional directories synchronizer (owncloud version)
 
 DISTNAME=	ocsync-0.90.4
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	ocsync                    0.0 # 0.2
 
