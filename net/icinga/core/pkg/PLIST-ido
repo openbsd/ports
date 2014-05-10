@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ido,v 1.13 2014/03/25 01:26:33 sthen Exp $
+@comment $OpenBSD: PLIST-ido,v 1.14 2014/05/10 22:15:38 sthen Exp $
 @bin bin/ido2db
 @bin bin/log2ido
 lib/idomod.so
@@ -16,6 +16,8 @@ share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0rc.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.10.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.11.0.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.11.3.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.12.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.3.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.4.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.5.0.sql
@@ -37,6 +39,7 @@ share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.2-fix-object-relation
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.3.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.10.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.11.0.sql
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.11.3.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.3.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.4.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.5.0.sql
@@ -56,6 +59,8 @@ share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.0.1.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.0.3.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.10.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.11.0.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.11.3.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.12.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.3.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.4.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.5.0.sql
