@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/10 17:12:56 afresh1 Exp $
+${P5SITE}/Package/
+${P5SITE}/Package/Variant.pm
+@man man/man3p/Package::Variant.3p
