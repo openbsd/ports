@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/10 11:19:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/10 11:24:08 ajacoutot Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
@@ -31,7 +31,7 @@ RUN_DEPENDS +=		x11/gtk+3
 
 NO_BUILD=		Yes
 
-RUN_DEPENDS=		devel/desktop-file-utils \
+RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
 MODPY_ADJ_FILES=	virt-clone virt-convert virt-image virt-install \
@@ -39,6 +39,8 @@ MODPY_ADJ_FILES=	virt-clone virt-convert virt-image virt-install \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/virtcli/cliconfig.py
-	${MODPYTHON_pre-configure}
+
+do-test:
+       @${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
