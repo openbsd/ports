@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/05/10 03:02:08 afresh1 Exp $
 
-COMMENT=	helper for installing code into packages
+COMMENT =	helper for installing code into packages
 
-MODULES=	cpan
-DISTNAME=	Sub-Install-0.925
-REVISION=	0
-CATEGORIES=	devel
+DISTNAME =	Sub-Install-0.927
+CATEGORIES =	devel
 
-# perl
-PERMIT_PACKAGE_CDROM=	Yes
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
-MAKE_ENV=	PERL_TEST_CRITIC=Yes
+# perl_5
+PERMIT_PACKAGE_CDROM =	Yes
 
-TEST_DEPENDS=	devel/p5-Test-Output \
-			devel/p5-Test-Perl-Critic
+MODULES =	cpan
+
+TEST_DEPENDS =	devel/p5-Test-Output 
 
 .include <bsd.port.mk>
