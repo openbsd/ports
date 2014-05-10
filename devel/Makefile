@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1224 2014/05/09 15:29:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1225 2014/05/10 01:56:47 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1038,6 +1038,7 @@
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
+     SUBDIR += p5-Test-Warnings
      SUBDIR += p5-Test-Weaken
      SUBDIR += p5-Test-YAML-Valid
      SUBDIR += p5-Test-use-ok
