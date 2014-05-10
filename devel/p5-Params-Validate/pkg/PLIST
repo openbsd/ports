@@ -1,18 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/01/08 16:20:49 steven Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/05/10 17:17:55 afresh1 Exp $
 ${P5ARCH}/
 ${P5ARCH}/Attribute/
 ${P5ARCH}/Attribute/Params/
 ${P5ARCH}/Attribute/Params/Validate.pm
 ${P5ARCH}/Params/
+${P5ARCH}/Params/Validate/
 ${P5ARCH}/Params/Validate.pm
+${P5ARCH}/Params/Validate/Constants.pm
+${P5ARCH}/Params/Validate/PP.pm
+${P5ARCH}/Params/Validate/XS.pm
 ${P5ARCH}/Params/ValidatePP.pm
 ${P5ARCH}/Params/ValidateXS.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Params/
 ${P5ARCH}/auto/Params/Validate/
-${P5ARCH}/auto/Params/Validate/Validate.bs
-${P5ARCH}/auto/Params/Validate/Validate.so
+${P5ARCH}/auto/Params/Validate/XS/
+${P5ARCH}/auto/Params/Validate/XS/XS.bs
+${P5ARCH}/auto/Params/Validate/XS/XS.so
 @man man/man3p/Attribute::Params::Validate.3p
 @man man/man3p/Params::Validate.3p
-@man man/man3p/Params::ValidatePP.3p
-@man man/man3p/Params::ValidateXS.3p
