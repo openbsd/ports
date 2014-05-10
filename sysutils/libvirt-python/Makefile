@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/10 07:48:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/10 11:23:31 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -22,5 +22,13 @@ MODULES =		lang/python
 WANTLIB =		pthread virt virt-lxc virt-qemu ${MODPY_WANTLIB}
 
 LIB_DEPENDS =		sysutils/libvirt
+
+TEST_DEPENDS =		devel/py-nose \
+			textproc/py-lxml
+
+do-test:
+	perl -pi -e 's,/usr/bin/nosetests,${LOCALBASE}/bin/nosetests,' \
+		${WRKSRC}/setup.py
+	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
