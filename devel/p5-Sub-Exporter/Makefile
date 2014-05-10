@@ -1,24 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/05/10 03:06:31 afresh1 Exp $
 
-COMMENT=	exporter on steroids
+COMMENT =	exporter on steroids
 
-MODULES=	cpan
-DISTNAME=	Sub-Exporter-0.982
-REVISION=	0
-CATEGORIES=	devel
-USE_GROFF =	Yes
+DISTNAME =	Sub-Exporter-0.987
+CATEGORIES =	devel
 
-# perl
-PERMIT_PACKAGE_CDROM=	Yes
+MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 
-RUN_DEPENDS=	devel/p5-Data-OptList \
-		devel/p5-Params-Util \
-		devel/p5-Sub-Install
+# perl_5
+PERMIT_PACKAGE_CDROM =	Yes
 
-MAKE_ENV=	TEST_POD=Yes \
-		PERL_TEST_CRITIC=Yes
+MODULES =	cpan
 
-TEST_DEPENDS=devel/p5-Package-Generator \
-		devel/p5-Test-Perl-Critic
+RUN_DEPENDS =	devel/p5-Data-OptList>=0.100 \
+		devel/p5-Params-Util>=0.14 \
+		devel/p5-Sub-Install>=0.92
+
+TEST_DEPENDS =	devel/p5-Package-Generator
 
 .include <bsd.port.mk>
