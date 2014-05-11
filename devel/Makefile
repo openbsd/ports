@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1226 2014/05/10 17:14:09 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1227 2014/05/11 20:56:26 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1134,6 +1134,7 @@
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
+     SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
      SUBDIR += py-argh
      SUBDIR += py-argcomplete
