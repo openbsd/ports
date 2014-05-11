@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/25 23:29:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2014/05/11 16:27:43 afresh1 Exp $
 
-COMMENT =		expose the flag which marks global destruction
+COMMENT =	expose the flag which marks global destruction
 
-DISTNAME =		Devel-GlobalDestruction-0.03
-REVISION =		1
-CATEGORIES =		devel
+DISTNAME =	Devel-GlobalDestruction-0.12
+CATEGORIES =	devel
 
-# perl
+MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
+
+# perl_5
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+MODULES =	cpan
 
-MODULES =		cpan
-
-RUN_DEPENDS =		devel/p5-Scope-Guard \
-			devel/p5-Sub-Exporter
+RUN_DEPENDS =	devel/p5-Sub-Exporter-Progressive>=0.001011
 
 .include <bsd.port.mk>
