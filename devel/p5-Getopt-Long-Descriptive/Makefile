@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/05/11 16:22:30 afresh1 Exp $
 
-COMMENT=		Getopt::Long, but simpler and more powerful
+COMMENT =	Getopt::Long, but simpler and more powerful
 
-MODULES=		cpan
-DISTNAME=		Getopt-Long-Descriptive-0.087
-REVISION=		0
-CATEGORIES=		devel
-USE_GROFF =		Yes
+MODULES =	cpan
+DISTNAME =	Getopt-Long-Descriptive-0.097
+CATEGORIES =	devel
 
-MAINTAINER=		Jim Razmus II <jim@openbsd.org>
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=		devel/p5-Params-Validate \
-			devel/p5-Sub-Exporter
-BUILD_DEPENDS=		${RUN_DEPENDS}
-TEST_DEPENDS=	devel/p5-Test-Pod \
-			devel/p5-Test-Pod-Coverage
+RUN_DEPENDS =	devel/p5-Params-Validate>=0.97 \
+		devel/p5-Sub-Exporter>=0.972
+
+TEST_DEPENDS =	devel/p5-Test-Warnings>=0.005 \
+		devel/p5-Test-Fatal
 
 .include <bsd.port.mk>
