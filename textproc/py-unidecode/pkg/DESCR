@@ -1,0 +1,4 @@
+ASCII transliterations of Unicode text.
+
+This is a Python port of Text::Unidecode Perl module by Sean M. Burke
+<sburke@cpan.org>.
