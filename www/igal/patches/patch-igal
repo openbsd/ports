@@ -1,12 +1,16 @@
-$OpenBSD: patch-igal,v 1.2 2010/07/15 16:08:22 ckuethe Exp $
---- igal.orig	Wed Feb 27 04:18:03 2008
-+++ igal	Fri Jul  9 09:35:28 2010
+$OpenBSD: patch-igal,v 1.3 2014/05/11 12:10:03 sthen Exp $
+
+- add jhead support
+- avoid deprecation warnings in newer perl
+
+--- igal.orig	Wed Feb 27 12:18:03 2008
++++ igal	Wed Oct  2 08:42:45 2013
 @@ -5,7 +5,7 @@ eval 'exec perl -wS $0 ${1+"$@"}'
  ############################################################################
  # Please change this accordingly if you change the DESTDIR in the tarball 
  # distribution Makefile or the --prefix of the RPM installation
 -$LIBDIR = "/usr/local/lib/igal";
-+$LIBDIR = "/usr/local/share/igal";
++$LIBDIR = "${TRUEPREFIX}/share/igal";
  # for example if you make DESTDIR=/usr then $LIBDIR="/usr/lib/igal"
  ############################################################################
  #
@@ -53,10 +57,19 @@ $OpenBSD: patch-igal,v 1.2 2010/07/15 16:08:22 ckuethe Exp $
  
  # let users store their templates in a $HOME/.igal directory, if it exists,
 -# instead of the site-wide /usr/local/lib/igal (from line 8 up top)
-+# instead of the site-wide /usr/local/share/igal (from line 8 up top)
++# instead of the site-wide ${TRUEPREFIX}/share/igal (from line 8 up top)
  $LIBDIR = $userigaldir if ((-r $userigaldir) && (-d $userigaldir));
  
  # load up image files from $opt_d into array @imgfiles
+@@ -222,7 +230,7 @@ if ($opt_AddSubdir) {
+ 			push(@directories, $file);
+ 		}
+ 	}
+-	if (defined(@directories)) {
++	if (@directories) {
+ 		@directories = sort @directories;      # sort alphabetically, by name
+ 	} else {
+ 		print "Information: Option --AddSubdir is set, but can't find any matching subdiretories!\n";
 @@ -313,6 +321,10 @@ print "\nWARNING:  The ImageMagick package (imagemagic
  $HAVELJ = (&exist("cjpeg") and &exist("djpeg") &exist("pnmscale")) unless ($HAVELJ or ($njpg == 0) or $HAVEIM);
  print "\nWARNING:  at least one of the commands \"cjpeg\", \"djpeg\" and \"pnmscale\" is not\ninstalled.  You can find these at rpmfind.net (inside libjpeg and libgr-progs)\nor you can download the source code from:\n    http://www.ijg.org/ and\n    http://netpbm.sourceforge.net/\n\n" unless ($HAVELJ or ($njpg == 0) or $HAVEIM);
@@ -82,3 +95,12 @@ $OpenBSD: patch-igal,v 1.2 2010/07/15 16:08:22 ckuethe Exp $
  		# add in the image counter unless -x is specified
  		if ($opt_x) {
  			$imagecaption = $captions[$i];
+@@ -616,7 +633,7 @@ $indexfile =~ s/<!--#IGAL-OPTIONS#-->/@igal_options/g;
+ $indexfile =~ s/<!--#IGAL-CSS#-->/$opt_dest$csstemplate/g; # set the name (and path) of css template file
+ 
+ # Generate the 
+-if ($opt_AddSubdir && defined(@directories)) {
++if ($opt_AddSubdir && @directories) {
+ 
+ 	if (! -e "$opt_d/$opt_dest.$directorylinefile") {
+ 		print "No $opt_dest.$directorylinefile file ... getting a copy from $LIBDIR/\n";

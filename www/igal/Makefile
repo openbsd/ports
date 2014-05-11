@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/05/11 12:10:03 sthen Exp $
 
 COMMENT=	online Image GALlery generator
 
 V=		1.4.7
 DISTNAME=	igal-$V-wt
 PKGNAME=	igal-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://trexler.at/igal/
@@ -22,13 +22,11 @@ RUN_DEPENDS=	graphics/ImageMagick \
 NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
-USE_GROFF =	Yes
 
 DATADIR=	${PREFIX}/share/igal
 
 do-configure:
-	@perl -pi -e "s,/usr/local,${PREFIX},g;" \
-		-e "s,${PREFIX}/lib/igal,${DATADIR},g;" ${WRKSRC}/igal{,.1}
+	@${SUBST_CMD} ${WRKSRC}/igal{,.1}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/igal ${PREFIX}/bin
