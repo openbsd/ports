@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/11 20:53:29 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/munkres.py
+lib/python${MODPY_VERSION}/site-packages/munkres.pyc
