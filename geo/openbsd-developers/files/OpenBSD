@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.113 2014/05/01 19:48:09 pascal Exp $
+# $OpenBSD: OpenBSD,v 1.114 2014/05/11 15:07:19 gilles Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -67,7 +67,7 @@
 45.5		-122.5		"joshe"		# Joshua Elsasser
 45.6103		-122.7455	"afresh1"	# Andrew Fresh
 45.69296	3.25642		"landry"	# Landry Breuil
-47.209074	-1.525726	"gilles"	# Gilles Chehade
+47.2230677	-1.5538359	"gilles"	# Gilles Chehade
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
 47.369024	8.538033	"stephan"	# Stephan A. Rickauer
