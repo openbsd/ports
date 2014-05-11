@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2014/04/20 19:59:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.36 2014/05/11 13:29:52 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -22,6 +22,7 @@ roundcubemail/SQL/mssql/2013011000.sql
 roundcubemail/SQL/mssql/2013042700.sql
 roundcubemail/SQL/mssql/2013052500.sql
 roundcubemail/SQL/mssql/2013061000.sql
+roundcubemail/SQL/mssql/2014042900.sql
 roundcubemail/SQL/mysql/
 roundcubemail/SQL/mysql.initial.sql
 roundcubemail/SQL/mysql/2008030300.sql
@@ -41,6 +42,7 @@ roundcubemail/SQL/mysql/2013011000.sql
 roundcubemail/SQL/mysql/2013042700.sql
 roundcubemail/SQL/mysql/2013052500.sql
 roundcubemail/SQL/mysql/2013061000.sql
+roundcubemail/SQL/mysql/2014042900.sql
 roundcubemail/SQL/postgres/
 roundcubemail/SQL/postgres.initial.sql
 roundcubemail/SQL/postgres/2008030300.sql
@@ -59,6 +61,7 @@ roundcubemail/SQL/postgres/2013011000.sql
 roundcubemail/SQL/postgres/2013042700.sql
 roundcubemail/SQL/postgres/2013052500.sql
 roundcubemail/SQL/postgres/2013061000.sql
+roundcubemail/SQL/postgres/2014042900.sql
 roundcubemail/SQL/sqlite/
 roundcubemail/SQL/sqlite.initial.sql
 roundcubemail/SQL/sqlite/2008030300.sql
@@ -78,6 +81,7 @@ roundcubemail/SQL/sqlite/2013011700.sql
 roundcubemail/SQL/sqlite/2013042700.sql
 roundcubemail/SQL/sqlite/2013052500.sql
 roundcubemail/SQL/sqlite/2013061000.sql
+roundcubemail/SQL/sqlite/2014042900.sql
 roundcubemail/UPGRADING
 @mode 750
 @owner root
@@ -104,8 +108,10 @@ roundcubemail/bin/updatedb.sh
 roundcubemail/composer.json-dist
 @sample roundcubemail/composer.json
 @mode 700
+@owner root
 roundcubemail/composer.phar
 @mode
+@owner
 roundcubemail/config/
 roundcubemail/config/config.inc.php.sample
 @sample roundcubemail/config/config.inc.php
