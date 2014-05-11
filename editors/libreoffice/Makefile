@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2014/05/07 15:42:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.109 2014/05/11 16:42:18 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -215,7 +215,7 @@ WANTLIB-kde+=		Xrender
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES+=		java
-MODJAVA_VER=		1.6
+MODJAVA_VER=		1.7+
 MODJAVA_JRERUN=		Yes
 .endif
 LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP}
