@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/02/08 17:49:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/05/11 01:19:07 brad Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	Playstation 1 emulator
 
 DISTNAME =	pcsxr-1.9.94.r87113p0
 PKGNAME =	pcsxr-1.9.94beta0
-
+REVISION =	0
 CATEGORIES =	emulators games
 HOMEPAGE =	http://pcsxr.codeplex.com/
 
@@ -21,7 +21,7 @@ USE_GMAKE =	Yes
 
 MODULES =	devel/gettext textproc/intltool
 
-WANTLIB += GL ICE SDL2 SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += GL ICE SDL SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xv
 WANTLIB += Xxf86vm atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += cdio dbus-1 drm expat ffi fontconfig freetype gdk-3
@@ -31,7 +31,8 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sndio stdc++ usbhid xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm z
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS =	--enable-libcdio --enable-opengl --enable-dynarec=no
@@ -39,12 +40,12 @@ LIBTOOL_FLAGS =		--tag=disable-static
 
 LIB_DEPENDS =	audio/libcdio \
 		x11/gtk+3 \
-		devel/sdl2
+		devel/sdl
 RUN_DEPENDS =	devel/desktop-file-utils
+
+NO_TEST =	Yes
 
 post-install:
 	find ${WRKINST} -name '*.la' -print0 | xargs -0 rm
-
-NO_TEST =	Yes
 
 .include <bsd.port.mk>

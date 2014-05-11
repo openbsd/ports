@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure_ac,v 1.1 2014/05/11 01:19:07 brad Exp $
+
+Use SDL instead of SDL2 for now.
+
+--- configure.ac.orig	Tue Sep 10 05:55:59 2013
++++ configure.ac	Fri May  9 22:45:22 2014
+@@ -26,12 +26,12 @@ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["${GETTEXT_PACK
+ PKG_CHECK_MODULES(GLIB2, glib-2.0 >= 2.20, [], AC_MSG_ERROR([*** glib2 >= 2.20 not found!]))
+ PKG_CHECK_MODULES(GTK3, gtk+-3.0 , [], AC_MSG_ERROR([*** libgtk3 >= 3.0 not found!]))
+ 
+-PKG_CHECK_MODULES([SDL2], [sdl2 >= 2.0.0],
+-   [AC_DEFINE([HAVE_SDL2], [1], [Use SDL2])],
+-   [PKG_CHECK_MODULES([SDL], [sdl >= 1.2.12],
+-       [AC_DEFINE([HAVE_SDL], [1], [Use SDL])
+-    ], AC_MSG_ERROR([*** SDL >= 1.2.12 not found!]))
+-])
++PKG_CHECK_MODULES(SDL, sdl >= 1.2.12, [], AC_MSG_ERROR([*** SDL >= 1.2.12 not found!]))
++
++SDL2_CFLAGS=""
++SDL2_LIBS=""
++AC_SUBST(SDL2_CFLAGS)
++AC_SUBST(SDL2_LIBS)
+ 
+ AC_SUBST(GLIB2_CFLAGS)
+ AC_SUBST(GLIB2_LIBS)
