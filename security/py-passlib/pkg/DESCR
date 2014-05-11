@@ -1,0 +1,4 @@
+PassLib is a password hashing library for Python, which provides
+cross-platform implementations of over 30 password hashing algorithms;
+as well as a framework for managing and migrating existing password
+hashes.
