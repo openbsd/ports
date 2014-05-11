@@ -1,21 +1,25 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/05/11 16:21:14 afresh1 Exp $
 
 COMMENT =	lets you build groups of accessors
 
 MODULES =	cpan
-DISTNAME =	Class-Accessor-Grouped-0.10003
+DISTNAME =	Class-Accessor-Grouped-0.10010
 CATEGORIES =	devel
-USE_GROFF =	Yes
+
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =	devel/p5-Class-Inspector \
-		devel/p5-Class-XSAccessor>=1.11 \
-		devel/p5-Sub-Identify \
-		devel/p5-Sub-Name>=0.05 \
-		devel/p5-Test-Exception>=0.31
+CONFIGURE_ARGS =	--skipdeps
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+RUN_DEPENDS =	devel/p5-Module-Runtime>=0.012
+
+TEST_DEPENDS =	devel/p5-Test-Exception>=0.31
+
+# Optional depends to avoid skipping tests
+TEST_DEPENDS +=	devel/p5-Class-XSAccessor \
+		devel/p5-Sub-Name \
+		devel/p5-Package-Stash
 
 .include <bsd.port.mk>
