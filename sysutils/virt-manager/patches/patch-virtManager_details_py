@@ -1,0 +1,27 @@
+$OpenBSD: patch-virtManager_details_py,v 1.1 2014/05/11 12:41:34 ajacoutot Exp $
+
+From 932e6e00bb08647800a62e59f61c8adee9c5de59 Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Thu, 3 Apr 2014 10:53:54 -0400
+Subject: details: Fix changing graphics type (bz 1083903)
+
+--- virtManager/details.py.orig	Sat Mar 22 22:58:14 2014
++++ virtManager/details.py	Sun May 11 13:28:36 2014
+@@ -1096,7 +1096,7 @@ class vmmDetails(vmmGObjectUI):
+             self.widget("toolbar-box").hide()
+ 
+     def get_boot_selection(self):
+-        return uiutil.get_list_selection(self.widget("config-boot-list"))
++        return uiutil.get_list_selection(self.widget("config-boot-list"), None)
+ 
+     def set_hw_selection(self, page, disable_apply=True):
+         if disable_apply:
+@@ -1104,7 +1104,7 @@ class vmmDetails(vmmGObjectUI):
+         uiutil.set_list_selection(self.widget("hw-list"), page)
+ 
+     def get_hw_row(self):
+-        return uiutil.get_list_selection(self.widget("hw-list"))
++        return uiutil.get_list_selection(self.widget("hw-list"), None)
+ 
+     def get_hw_selection(self, field):
+         row = self.get_hw_row()

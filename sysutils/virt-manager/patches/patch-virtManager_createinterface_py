@@ -1,0 +1,18 @@
+$OpenBSD: patch-virtManager_createinterface_py,v 1.1 2014/05/11 12:41:34 ajacoutot Exp $
+
+From 932e6e00bb08647800a62e59f61c8adee9c5de59 Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Thu, 3 Apr 2014 10:53:54 -0400
+Subject: details: Fix changing graphics type (bz 1083903)
+
+--- virtManager/createinterface.py.orig	Mon Feb 17 18:37:52 2014
++++ virtManager/createinterface.py	Sun May 11 13:28:36 2014
+@@ -775,7 +775,7 @@ class vmmCreateInterface(vmmGObjectUI):
+         is_manual = self.widget("ip-do-manual").get_active()
+ 
+         copy_row = uiutil.get_list_selection(
+-            self.widget("ip-copy-interface-combo"))
++            self.widget("ip-copy-interface-combo"), None)
+ 
+         v4_mode = self.widget("ipv4-mode").get_active()
+         v4_addr = self.widget("ipv4-address").get_text()

@@ -1,0 +1,21 @@
+$OpenBSD: patch-virtManager_gfxdetails_py,v 1.1 2014/05/11 12:41:34 ajacoutot Exp $
+
+From 932e6e00bb08647800a62e59f61c8adee9c5de59 Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Thu, 3 Apr 2014 10:53:54 -0400
+Subject: details: Fix changing graphics type (bz 1083903)
+
+--- virtManager/gfxdetails.py.orig	Sat Mar 22 23:24:42 2014
++++ virtManager/gfxdetails.py	Sun May 11 13:28:36 2014
+@@ -134,9 +134,9 @@ class vmmGraphicsDetails(vmmGObjectUI):
+         self.widget("graphics-password-chk").set_active(False)
+ 
+     def get_values(self):
+-        gtype = uiutil.get_list_selection(self.widget("graphics-type"))
++        gtype = uiutil.get_list_selection(self.widget("graphics-type"), 0)
+         port, tlsport = self._get_config_graphics_ports()
+-        addr = uiutil.get_list_selection(self.widget("graphics-address"))
++        addr = uiutil.get_list_selection(self.widget("graphics-address"), 0)
+         keymap = uiutil.get_combo_entry(self.widget("graphics-keymap"))
+         if keymap == "auto":
+             keymap = None
