@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.no-python3,v 1.2 2014/05/11 20:58:23 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/OSRNG/nt.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/OSRNG/nt.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py21compat.py

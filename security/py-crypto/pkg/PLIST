@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/27 19:02:21 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/05/11 20:58:23 sthen Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/Crypto/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/
@@ -226,6 +226,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/${MODPY_PYCACHE}test_random.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/${MODPY_PYCACHE}test_rpoolcompat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/test__UserFriendlyRNG.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/test_random.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/test_rpoolcompat.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/

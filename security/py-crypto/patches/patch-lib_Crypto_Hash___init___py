@@ -1,21 +1,17 @@
-$OpenBSD: patch-lib_Crypto_Hash___init___py,v 1.6 2013/11/08 15:26:05 ajacoutot Exp $
+$OpenBSD: patch-lib_Crypto_Hash___init___py,v 1.7 2014/05/11 20:58:23 sthen Exp $
 
 Patch with reduced context as otherwise CVS Id would get expanded.
 
-*** lib/Crypto/Hash/__init__.py.orig	Thu May 24 14:55:30 2012
---- lib/Crypto/Hash/__init__.py	Fri May 25 14:09:50 2012
-*************** The hashing modules here all support the interface des
-*** 48,53 ****
-  
-! :undocumented: _MD2, _MD4, _RIPEMD160, _SHA224, _SHA256, _SHA384, _SHA512
-  """
-  
-! __all__ = ['HMAC', 'MD2', 'MD4', 'MD5', 'RIPEMD', 'SHA',
-             'SHA224', 'SHA256', 'SHA384', 'SHA512']
---- 48,53 ----
-  
-! :undocumented: _MD4, _RIPEMD160, _SHA224, _SHA256, _SHA384, _SHA512
-  """
-  
-! __all__ = ['HMAC', 'MD4', 'MD5', 'RIPEMD', 'SHA',
-             'SHA224', 'SHA256', 'SHA384', 'SHA512']
+--- lib/Crypto/Hash/__init__.py.orig	Mon Oct 14 22:38:10 2013
++++ lib/Crypto/Hash/__init__.py	Sun May 11 19:56:54 2014
+@@ -46,10 +46,10 @@ The hashing modules here all support the interface des
+ 
+ .. _`PEP 247` : http://www.python.org/dev/peps/pep-0247/
+ 
+-:undocumented: _MD2, _MD4, _RIPEMD160, _SHA224, _SHA256, _SHA384, _SHA512
++:undocumented: _MD4, _RIPEMD160, _SHA224, _SHA256, _SHA384, _SHA512
+ """
+ 
+-__all__ = ['HMAC', 'MD2', 'MD4', 'MD5', 'RIPEMD', 'SHA',
++__all__ = ['HMAC', 'MD4', 'MD5', 'RIPEMD', 'SHA',
+            'SHA224', 'SHA256', 'SHA384', 'SHA512']
