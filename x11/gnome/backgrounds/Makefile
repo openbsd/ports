@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/14 15:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/05/12 15:58:11 ajacoutot Exp $
 
 COMMENT=		wallpapers for GNOME
 
 GNOME_PROJECT=		gnome-backgrounds
-GNOME_VERSION=		3.12.1
+GNOME_VERSION=		3.12.2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
