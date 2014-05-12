@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/12 16:04:13 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/__init__.py
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/compat.py
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/mbxml.py
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/mbxml.pyc
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/musicbrainz.py
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/musicbrainz.pyc
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/util.py
+lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/util.pyc
