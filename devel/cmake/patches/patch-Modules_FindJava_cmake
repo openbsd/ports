@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.12 2013/08/12 16:09:50 zhuk Exp $
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.13 2014/05/12 14:47:49 dcoppa Exp $
 Note: we always build with Java 1.6 even when 1.6+ requested; "+" is meaningful
 for run-time only.
---- Modules/FindJava.cmake.orig	Fri Jun  7 19:21:34 2013
-+++ Modules/FindJava.cmake	Sat Jul 27 21:48:06 2013
+--- Modules/FindJava.cmake.orig	Thu Jan 16 18:15:08 2014
++++ Modules/FindJava.cmake	Mon May 12 16:41:39 2014
 @@ -56,6 +56,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -12,7 +12,7 @@ for run-time only.
  # The HINTS option should only be used for values computed from the system.
  set(_JAVA_HINTS
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
-@@ -70,19 +72,27 @@ set(_JAVA_HINTS
+@@ -70,19 +72,22 @@ set(_JAVA_HINTS
    )
  # Hard-coded guesses should still go in PATHS. This ensures that the user
  # environment can always override hard guesses.
@@ -30,11 +30,7 @@ for run-time only.
 -  /usr/local/jdk-1.6.0/bin
 -  )
 +if(MODJAVA_VER)
-+  if(MODJAVA_VER MATCHES "^1\\.6\\+?$")
-+    set(_JAVA_PATHS ${LOCALBASE}/jdk-1.6.0/bin)
-+  else()
-+    set(_JAVA_PATHS ${LOCALBASE}/jdk-1.7.0/bin)
-+  endif()
++  set(_JAVA_PATHS ${LOCALBASE}/jdk-1.7.0/bin)
 +else()
 +  set(_JAVA_PATHS
 +    /usr/lib/java/bin
@@ -47,7 +43,6 @@ for run-time only.
 +    /usr/lib/j2sdk1.5-sun/bin
 +    /opt/sun-jdk-1.5.0.04/bin
 +    ${LOCALBASE}/jdk-1.7.0/bin
-+    ${LOCALBASE}/jdk-1.6.0/bin
 +    )
 +endif()
  find_program(Java_JAVA_EXECUTABLE
