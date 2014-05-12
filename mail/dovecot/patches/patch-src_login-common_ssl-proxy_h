@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_login-common_ssl-proxy_h,v 1.1 2014/05/12 09:20:52 brad Exp $
+
+Fix a DoS attack against imap/pop3-login processes. CVE-2014-3430
+
+--- src/login-common/ssl-proxy.h.orig	Mon May 12 04:54:49 2014
++++ src/login-common/ssl-proxy.h	Mon May 12 04:55:12 2014
+@@ -34,6 +34,7 @@ const char *ssl_proxy_get_last_error(const struct ssl_
+ const char *ssl_proxy_get_security_string(struct ssl_proxy *proxy);
+ const char *ssl_proxy_get_compression(struct ssl_proxy *proxy);
+ const char *ssl_proxy_get_cert_error(struct ssl_proxy *proxy);
++void ssl_proxy_destroy(struct ssl_proxy *proxy);
+ void ssl_proxy_free(struct ssl_proxy **proxy);
+ 
+ /* Return number of active SSL proxies */
