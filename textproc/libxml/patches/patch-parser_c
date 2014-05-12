@@ -1,0 +1,30 @@
+$OpenBSD: patch-parser_c,v 1.9 2014/05/12 07:48:35 jasper Exp $
+
+Security fix for CVE-2014-0191
+external parameter entity loaded when entity substitution is disabled
+
+https://git.gnome.org/browse/libxml2/commit/?id=9cd1c3cfbd32655d60572c0a413e017260c854df
+
+--- parser.c.orig	Tue Apr 16 15:39:18 2013
++++ parser.c	Mon May 12 09:42:56 2014
+@@ -2595,6 +2595,20 @@ xmlParserHandlePEReference(xmlParserCtxtPtr ctxt) {
+ 		    xmlCharEncoding enc;
+ 
+ 		    /*
++		     * Note: external parsed entities will not be loaded, it is
++		     * not required for a non-validating parser, unless the
++		     * option of validating, or substituting entities were
++		     * given. Doing so is far more secure as the parser will
++		     * only process data coming from the document entity by
++		     * default.
++		     */
++                    if ((entity->etype == XML_EXTERNAL_PARAMETER_ENTITY) &&
++		        ((ctxt->options & XML_PARSE_NOENT) == 0) &&
++			((ctxt->options & XML_PARSE_DTDVALID) == 0) &&
++			(ctxt->validate == 0))
++			return;
++
++		    /*
+ 		     * handle the extra spaces added before and after
+ 		     * c.f. http://www.w3.org/TR/REC-xml#as-PE
+ 		     * this is done independently.

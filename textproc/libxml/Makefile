@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2014/03/09 19:54:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.153 2014/05/12 07:48:35 jasper Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -12,6 +12,7 @@ CATEGORIES=		textproc
 MASTER_SITES=		http://gd.tuwien.ac.at/pub/libxml/ \
 			ftp://xmlsoft.org/libxml/
 
+REVISION=		0
 
 HOMEPAGE=		http://xmlsoft.org/
 
