@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/17 09:49:46 ratchov Exp $
+# $OpenBSD: Makefile,v 1.4 2014/05/12 00:59:26 brad Exp $
+
+BROKEN=		issues with ld.so and SSP
 
 COMMENT=	cross-platform multimedia library
 
