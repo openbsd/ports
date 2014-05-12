@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/28 23:58:48 rpe Exp $
+# $OpenBSD: Makefile,v 1.14 2014/05/12 20:35:50 rpe Exp $
 
 COMMENT =	python interface to amazon web services
 
-MODPY_EGG_VERSION = 2.8.0
+MODPY_EGG_VERSION = 2.28.0
 DISTNAME =	boto-${MODPY_EGG_VERSION}
 PKGNAME = 	py-${DISTNAME}
 CATEGORIES =	net
@@ -18,14 +18,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		textproc/py-sphinx \
-			security/py-M2Crypto \
+RUN_DEPENDS =		security/py-paramiko \
+			textproc/py-yaml \
 			www/py-requests
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			textproc/py-sphinx \
 
-TEST_DEPENDS =		devel/py-nose \
-			devel/py-mock
+# XXX The tests are not suited for automatic testing because online
+#     user accounts at Amazon are necessary for this.
+NO_TEST =		Yes
 
 DOCDIR =		${PREFIX}/share/doc/py-boto
 
@@ -40,12 +42,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/build/doc/*.txt ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/build/doc/ref/*.txt ${DOCDIR}/ref
-
-# XXX: This tests only ec2 and s2, which is only a small part of
-#      the whole testsuite. An aws user account with the respective
-#      features enabled is needed.
-do-test:
-	@cd ${WRKSRC}/tests && python test.py -v -t ec2 -t s3
-	
 
 .include <bsd.port.mk>
