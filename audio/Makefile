@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.326 2014/05/08 09:51:30 ratchov Exp $
+# $OpenBSD: Makefile,v 1.327 2014/05/12 16:06:46 benoit Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -195,6 +195,7 @@
      SUBDIR += py-mpd
      SUBDIR += py-mpd2
      SUBDIR += py-mpd2,python3
+     SUBDIR += py-musicbrainzngs
      SUBDIR += py-mutagen
      SUBDIR += py-ogg
      SUBDIR += py-tagger
