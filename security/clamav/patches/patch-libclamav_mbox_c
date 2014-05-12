@@ -1,6 +1,18 @@
-$OpenBSD: patch-libclamav_mbox_c,v 1.10 2014/05/08 08:18:51 sthen Exp $
+$OpenBSD: patch-libclamav_mbox_c,v 1.11 2014/05/12 17:26:01 sthen Exp $
+
+- unsure about hunk #1, there since original import
+
+- hunk #3
+
+From 4a5d422dfe4995337198a1e05439d97f0747ac62 Mon Sep 17 00:00:00 2001
+From: Steven Morgan <smorgan@sourcefire.com>
+Date: Mon, 12 May 2014 12:51:02 -0400
+Subject: [PATCH] bz10996: fix buffer underrun in mbox.c
+
+- hunk #2, another instance of the above
+
 --- libclamav/mbox.c.orig	Tue May  6 19:39:56 2014
-+++ libclamav/mbox.c	Thu May  8 00:45:57 2014
++++ libclamav/mbox.c	Mon May 12 18:17:03 2014
 @@ -24,11 +24,6 @@ static	char	const	rcsid[] = "$Id: mbox.c,v 1.381 2007/
  #include "clamav-config.h"
  #endif
@@ -13,3 +25,21 @@ $OpenBSD: patch-libclamav_mbox_c,v 1.10 2014/05/08 08:18:51 sthen Exp $
  
  #include <stdio.h>
  #include <stdlib.h>
+@@ -2153,7 +2148,7 @@ boundaryStart(const char *line, const char *boundary)
+         char *p;
+         /* Trim trailing spaces */
+         p = newline + strlen(newline)-1;
+-        while (*p == ' ')
++        while (p >= newline && *p == ' ')
+             *(p--) = '\0';
+     }
+ 
+@@ -2275,7 +2270,7 @@ boundaryEnd(const char *line, const char *boundary)
+     if (newline != line && strlen(newline)) {
+         /* Trim trailing spaces */
+         p2 = newline + strlen(newline)-1;
+-        while (*p2 == ' ')
++        while (p2 >= newline && *p2 == ' ')
+             *(p2--) = '\0';
+     }
+ 
