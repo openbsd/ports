@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_configfile-glue_c,v 1.3 2014/05/12 06:50:25 brad Exp $
+
+Fix bad shift in conditional netmask ".../0" handling.
+
+--- src/configfile-glue.c.orig	Mon May 12 01:54:28 2014
++++ src/configfile-glue.c	Mon May 12 01:55:57 2014
+@@ -357,6 +357,12 @@ static cond_result_t config_check_cond_nocache(server 
+ 				return COND_RESULT_FALSE;
+ 			}
+ 
++			if (nm_bits > 32 || nm_bits < 0) {
++				log_error_write(srv, __FILE__, __LINE__, "sbs", "ERROR: invalid netmask:", dc->string, err);
++
++				return COND_RESULT_FALSE;
++			}
++
+ 			/* take IP convert to the native */
+ 			buffer_copy_string_len(srv->cond_check_buf, dc->string->ptr, nm_slash - dc->string->ptr);
+ #ifdef __WIN32
+@@ -375,7 +381,7 @@ static cond_result_t config_check_cond_nocache(server 
+ #endif
+ 
+ 			/* build netmask */
+-			nm = htonl(~((1 << (32 - nm_bits)) - 1));
++			nm = nm_bits ? htonl(~((1 << (32 - nm_bits)) - 1)) : 0;
+ 
+ 			if ((val_inp.s_addr & nm) == (con->dst_addr.ipv4.sin_addr.s_addr & nm)) {
+ 				return (dc->cond == CONFIG_COND_EQ) ? COND_RESULT_TRUE : COND_RESULT_FALSE;
