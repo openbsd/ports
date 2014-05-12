@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/10 20:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/05/12 12:45:53 jasper Exp $
 
 MULTI_PACKAGES=	-main -urlcheck
 COMMENT-main=	libclamav-based virus scanner for c-icap
@@ -8,6 +8,8 @@ V=		0.3.2
 DISTNAME=	c_icap_modules-$V
 PKGNAME-main=	c-icap-clamav-$V
 PKGNAME-urlcheck= c-icap-urlcheck-$V
+
+REVISION-main=	0
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
