@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/04/25 08:55:13 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/05/12 23:09:27 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
@@ -23,7 +23,6 @@ ${P5ARCH}/Net/DNS/RR/CERT.pm
 ${P5ARCH}/Net/DNS/RR/CNAME.pm
 ${P5ARCH}/Net/DNS/RR/DHCID.pm
 ${P5ARCH}/Net/DNS/RR/DNAME.pm
-${P5ARCH}/Net/DNS/RR/EID.pm
 ${P5ARCH}/Net/DNS/RR/EUI48.pm
 ${P5ARCH}/Net/DNS/RR/EUI64.pm
 ${P5ARCH}/Net/DNS/RR/GPOS.pm
@@ -43,9 +42,7 @@ ${P5ARCH}/Net/DNS/RR/MR.pm
 ${P5ARCH}/Net/DNS/RR/MX.pm
 ${P5ARCH}/Net/DNS/RR/NAPTR.pm
 ${P5ARCH}/Net/DNS/RR/NID.pm
-${P5ARCH}/Net/DNS/RR/NIMLOC.pm
 ${P5ARCH}/Net/DNS/RR/NS.pm
-${P5ARCH}/Net/DNS/RR/NSAP.pm
 ${P5ARCH}/Net/DNS/RR/NULL.pm
 ${P5ARCH}/Net/DNS/RR/OPT.pm
 ${P5ARCH}/Net/DNS/RR/PTR.pm
@@ -97,7 +94,6 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::CNAME.3p
 @man man/man3p/Net::DNS::RR::DHCID.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
-@man man/man3p/Net::DNS::RR::EID.3p
 @man man/man3p/Net::DNS::RR::EUI48.3p
 @man man/man3p/Net::DNS::RR::EUI64.3p
 @man man/man3p/Net::DNS::RR::GPOS.3p
@@ -117,9 +113,7 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::MX.3p
 @man man/man3p/Net::DNS::RR::NAPTR.3p
 @man man/man3p/Net::DNS::RR::NID.3p
-@man man/man3p/Net::DNS::RR::NIMLOC.3p
 @man man/man3p/Net::DNS::RR::NS.3p
-@man man/man3p/Net::DNS::RR::NSAP.3p
 @man man/man3p/Net::DNS::RR::NULL.3p
 @man man/man3p/Net::DNS::RR::OPT.3p
 @man man/man3p/Net::DNS::RR::PTR.3p
