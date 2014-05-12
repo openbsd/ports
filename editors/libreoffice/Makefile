@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/05/11 16:42:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.110 2014/05/12 08:15:25 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -132,6 +132,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		databases/db/v4 \
 		databases/openldap \
 		devel/bison \
+		devel/gpatch \
 		devel/gperf \
 		devel/libexecinfo \
 		shells/bash \
@@ -342,6 +343,7 @@ SUBST_VARS+=	BV OA
 pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
+	@ln -fs /usr/local/bin/gpatch ${WRKDIR}/bin/patch
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
 	@ln -fs /usr/local/bin/gsed ${WRKDIR}/bin/sed
 	@ln -fs /usr/local/bin/gtouch ${WRKDIR}/bin/touch
