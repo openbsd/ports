@@ -1,4 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.2 2014/04/17 12:12:20 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2014/05/12 15:22:40 jasper Exp $
+
+From 315c60744598616ae3cb585a3523ae74f118d7b6 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Thu, 17 Apr 2014 15:46:16 +0200
+Subject: [PATCH] 32558: _XOPEN_SOURCE_EXTENDED now OK on OpenBSD
+
 --- configure.ac.orig	Wed Nov 27 20:00:20 2013
 +++ configure.ac	Mon Apr 14 18:10:09 2014
 @@ -756,7 +756,7 @@ AH_TEMPLATE([ZSH_NO_XOPEN],
