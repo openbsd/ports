@@ -1,6 +1,13 @@
-$OpenBSD: patch-libclamav_mbox_c,v 1.11 2014/05/12 17:26:01 sthen Exp $
+$OpenBSD: patch-libclamav_mbox_c,v 1.12 2014/05/12 18:04:30 sthen Exp $
 
 - unsure about hunk #1, there since original import
+
+- hunk #2
+
+From 26f427331b068d5501a59d1163b2e219ea8c0dda Mon Sep 17 00:00:00 2001
+From: Steven Morgan <smorgan@sourcefire.com>
+Date: Mon, 12 May 2014 13:57:22 -0400
+Subject: [PATCH] fix another buffer underrun in mbox.c
 
 - hunk #3
 
@@ -8,8 +15,6 @@ From 4a5d422dfe4995337198a1e05439d97f0747ac62 Mon Sep 17 00:00:00 2001
 From: Steven Morgan <smorgan@sourcefire.com>
 Date: Mon, 12 May 2014 12:51:02 -0400
 Subject: [PATCH] bz10996: fix buffer underrun in mbox.c
-
-- hunk #2, another instance of the above
 
 --- libclamav/mbox.c.orig	Tue May  6 19:39:56 2014
 +++ libclamav/mbox.c	Mon May 12 18:17:03 2014
