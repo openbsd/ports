@@ -1,11 +1,13 @@
-$OpenBSD: patch-data_oses_openbsd_xml_in,v 1.1 2014/04/03 12:48:35 jasper Exp $
+$OpenBSD: patch-data_oses_openbsd_xml_in,v 1.2 2014/05/12 15:27:01 jasper Exp $
 
-Update information for OpenBSD with past two releases.
-https://fedorahosted.org/libosinfo/ticket/14
+From 749420b6429c66ae97facee92882560ba0b33038 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 12 May 2014 15:13:33 +0200
+Subject: Update OpenBSD information and add test data
 
---- data/oses/openbsd.xml.in.orig	Thu Apr  3 13:50:29 2014
-+++ data/oses/openbsd.xml.in	Thu Apr  3 13:50:33 2014
-@@ -207,4 +207,64 @@
+--- data/oses/openbsd.xml.in.orig	Thu Nov 21 16:58:04 2013
++++ data/oses/openbsd.xml.in	Mon May 12 17:24:25 2014
+@@ -207,4 +207,66 @@
      </media>
    </os>
  
@@ -19,6 +21,7 @@ https://fedorahosted.org/libosinfo/ticket/14
 +    <upgrades id='http://openbsd.org/openbsd/5.3'/>
 +    <derives-from id='http://openbsd.org/openbsd/5.3'/>
 +
++    <release-date>2013-11-01</release-date>
 +
 +    <media arch='i686'>
 +      <iso>
@@ -49,6 +52,7 @@ https://fedorahosted.org/libosinfo/ticket/14
 +    <upgrades id='http://openbsd.org/openbsd/5.4'/>
 +    <derives-from id='http://openbsd.org/openbsd/5.4'/>
 +
++    <release-date>2014-05-01</release-date>
 +
 +    <media arch='i686'>
 +      <iso>
