@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/12 16:19:21 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/enum/
+lib/python${MODPY_VERSION}/site-packages/enum/LICENSE
+lib/python${MODPY_VERSION}/site-packages/enum/README
+lib/python${MODPY_VERSION}/site-packages/enum/__init__.py
+lib/python${MODPY_VERSION}/site-packages/enum/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/enum/doc/
+lib/python${MODPY_VERSION}/site-packages/enum/doc/enum.rst
+lib/python${MODPY_VERSION}/site-packages/enum/enum.py
+lib/python${MODPY_VERSION}/site-packages/enum/enum.pyc
+lib/python${MODPY_VERSION}/site-packages/enum/test_enum.py
+lib/python${MODPY_VERSION}/site-packages/enum/test_enum.pyc
+lib/python${MODPY_VERSION}/site-packages/enum34-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
