@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/09/10 09:16:34 jasper Exp $
+$OpenBSD: README,v 1.2 2014/05/12 08:02:41 giovanni Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,13 +8,8 @@ Piwik has been installed into ${INSTDIR}
 
 You should point this to the DocumentRoot of your web-server:
    # ln -s ../piwik /var/www/htdocs/piwik
-(make sure you use a relative symlink since Apache is chrooted)
 
-You will also need to add these lines to you php.ini file:
-    extension=pdo.so
-    extension=pdo_mysql.so
-    extension=gd.so
-
+You will also need to enable gd and pdo_mysql extensions
 and proceed to complete the installation by reading the online
 documentation. Which can be found at:
 http://piwik.org/docs/installation/

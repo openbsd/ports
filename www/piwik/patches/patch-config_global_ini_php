@@ -1,0 +1,17 @@
+$OpenBSD: patch-config_global_ini_php,v 1.1 2014/05/12 08:02:41 giovanni Exp $
+--- config/global.ini.php.orig	Fri May  9 09:46:17 2014
++++ config/global.ini.php	Fri May  9 09:46:42 2014
+@@ -412,11 +412,11 @@ enable_delete_old_data_settings_admin = 1
+ enable_general_settings_admin = 1
+ 
+ ; By setting this option to 0, it will disable the "Auto update" feature
+-enable_auto_update = 1
++enable_auto_update = 0
+ 
+ ; By setting this option to 0, no emails will be sent in case of an available core.
+ ; If set to 0 it also disables the "sent plugin update emails" feature in general and the related setting in the UI.
+-enable_update_communication = 1
++enable_update_communication = 0
+ 
+ [Tracker]
+ ; Piwik uses first party cookies by default. If set to 1,
