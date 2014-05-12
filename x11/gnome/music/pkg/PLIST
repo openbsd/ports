@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/04/14 09:13:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/05/12 16:27:40 ajacoutot Exp $
 bin/gnome-music
 lib/gnome-music/
 lib/gnome-music/girepository-1.0/
@@ -89,6 +89,22 @@ share/help/cs/gnome-music/playlist-remove-songs.page
 share/help/cs/gnome-music/playlist-repeat.page
 share/help/cs/gnome-music/playlist-shuffle.page
 share/help/cs/gnome-music/search.page
+share/help/de/
+share/help/de/gnome-music/
+share/help/de/gnome-music/figures/
+share/help/de/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/de/gnome-music/index.page
+share/help/de/gnome-music/introduction.page
+share/help/de/gnome-music/legal.xml
+share/help/de/gnome-music/play-music.page
+share/help/de/gnome-music/playlist-create-albums.page
+share/help/de/gnome-music/playlist-create-artists.page
+share/help/de/gnome-music/playlist-create-songs.page
+share/help/de/gnome-music/playlist-delete.page
+share/help/de/gnome-music/playlist-remove-songs.page
+share/help/de/gnome-music/playlist-repeat.page
+share/help/de/gnome-music/playlist-shuffle.page
+share/help/de/gnome-music/search.page
 share/help/el/
 share/help/el/gnome-music/
 share/help/el/gnome-music/figures/
@@ -215,6 +231,7 @@ share/locale/sk/LC_MESSAGES/gnome-music.mo
 share/locale/sl/LC_MESSAGES/gnome-music.mo
 share/locale/sr/LC_MESSAGES/gnome-music.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-music.mo
+share/locale/sv/LC_MESSAGES/gnome-music.mo
 share/locale/te/LC_MESSAGES/gnome-music.mo
 share/locale/tg/LC_MESSAGES/gnome-music.mo
 share/locale/tr/LC_MESSAGES/gnome-music.mo
