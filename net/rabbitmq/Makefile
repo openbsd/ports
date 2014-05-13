@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/04 07:57:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2014/05/13 22:57:26 sthen Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -29,6 +29,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 		archivers/unzip \
 		archivers/zip \
 		textproc/docbook \
+		textproc/docbook-xsl \
 		textproc/libxslt \
 		textproc/xmlto
 
