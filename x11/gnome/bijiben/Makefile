@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2014/04/02 09:36:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2014/05/13 08:43:58 jasper Exp $
 
 TRACKER_VERSION=	1.0
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.12.0
+GNOME_VERSION=		3.12.2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,6 +40,7 @@ LIB_DEPENDS=		graphics/clutter/clutter-gtk \
 # needs xdg-email
 RUN_DEPENDS=		devel/xdg-utils
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
+MODGNOME_TOOLS +=	desktop-file-utils gtk-update-icon-cache \
+			shared-mime-info yelp
 
 .include <bsd.port.mk>
