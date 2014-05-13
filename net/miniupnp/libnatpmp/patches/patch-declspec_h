@@ -1,0 +1,17 @@
+$OpenBSD: patch-declspec_h,v 1.1 2014/05/13 10:19:01 dcoppa Exp $
+--- declspec.h.orig	Tue May 13 12:13:07 2014
++++ declspec.h	Tue May 13 12:13:25 2014
+@@ -9,12 +9,7 @@
+ 		#define LIBSPEC __declspec(dllimport)
+ 	#endif
+ #else
+-	#if defined(__GNUC__) && __GNUC__ >= 4
+-		/* fix dynlib for OS X 10.9.2 and Apple LLVM version 5.0 */
+-		#define LIBSPEC __attribute__ ((visibility ("default")))
+-	#else
+-		#define LIBSPEC
+-	#endif
++	#define LIBSPEC
+ #endif
+ 
+ #endif
