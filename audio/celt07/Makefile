@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/03 18:23:09 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2014/05/13 19:39:54 miod Exp $
 
 # Warning: CELT is experimental software. Neither the API/ABI, nor
 # the bit-stream are stable. Compatibility between different releases
 # (even minor ones) is not preserved.
 
-BROKEN-hppa =	celt.c:1540: internal compiler error: in delete_output_reload, at reload1.c:7926
 COMMENT =	experimental ultra-low delay audio codec (0.7 API)
 
 V =		0.7.1
@@ -33,5 +32,10 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-ogg=${LOCALBASE}
 
 CONFIGURE_ENV =		CPPFLAGS="-DUSE_SNDIO"
+.if "${MACHINE}" == "hppa"
+# Building with -Os or -finline-functions to avoid
+# celt.c:1540: internal compiler error: in delete_output_reload, at reload1.c:7926
+CONFIGURE_ENV +=	CFLAGS="-O2 -finline-functions"
+.endif
 
 .include <bsd.port.mk>
