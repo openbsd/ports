@@ -1,6 +1,6 @@
-$OpenBSD: patch-usr_bin_mysql-zrm-verify-backup,v 1.3 2012/03/29 09:30:05 giovanni Exp $
---- usr/bin/mysql-zrm-verify-backup.orig	Thu Feb  4 01:19:25 2010
-+++ usr/bin/mysql-zrm-verify-backup	Thu Mar 29 11:16:27 2012
+$OpenBSD: patch-usr_bin_mysql-zrm-verify-backup,v 1.4 2014/05/13 14:00:45 giovanni Exp $
+--- usr/bin/mysql-zrm-verify-backup.orig	Mon Aug 26 22:45:37 2013
++++ usr/bin/mysql-zrm-verify-backup	Tue May 13 15:45:54 2014
 @@ -30,7 +30,7 @@ use lib "/usr/lib/mysql-zrm";
  use ZRM::Common;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-usr_bin_mysql-zrm-verify-backup,v 1.3 2012/03/29 09:30:05 giovan
  my $CHECKSUM_FILE="zrm_checksum";
  my $CHECKSUM_PENDING=".checksum_pending";
  
-@@ -55,8 +55,9 @@ sub verifyCheckSum()
+@@ -55,13 +55,13 @@ sub verifyCheckSum()
  				$_ ne $EXTRACTED_FILENAME && $_ ne $CHECKSUM_FILE ){
  				my $file = $File::Find::fullname;
  				if( -f $file ){
@@ -21,11 +21,26 @@ $OpenBSD: patch-usr_bin_mysql-zrm-verify-backup,v 1.3 2012/03/29 09:30:05 giovan
  					if( !defined $x ){
  						&printError( "Could not get md5 checksum\n" );
  					}else{
-@@ -122,6 +123,7 @@ sub calculateMD5Sum()
+-						my @a = split( / /, $x );
+-						&verifyCMForFile( $file, $a[0],
++						&verifyCMForFile( $file, $x,
+ 								 	$dir );
+ 					}
+ 				}
+@@ -120,13 +120,13 @@ sub calculateMD5Sum()
+                         if( $_ ne "index" && $_ ne $CHECKSUM_PENDING ){
+                                 my $file = $File::Find::fullname;
                                  if( -f $file ){
-                                         my $x = $MD5SUM." -b "."\"$file\"";
+-                                        my $x = $MD5SUM." -b "."\"$file\"";
++                                        my $x = $MD5SUM." -q "."\"$file\"";
                                          $x = &execCmdAndGetOutput($x);
 +					chomp($x);
                                          if( !defined $x ){
                                                  &printError( "Could not get md5 checksum\n" );
                                          }else{
+-                                                my @a = split( / /, $x );
+-                                                $mdcheck{$file}=$a[0];
++                                                $mdcheck{$file}=$x;
+                                         }
+                                 }
+                         }

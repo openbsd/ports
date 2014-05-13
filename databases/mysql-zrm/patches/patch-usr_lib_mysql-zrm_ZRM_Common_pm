@@ -1,20 +1,18 @@
-$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.4 2013/03/11 20:59:05 sthen Exp $
---- usr/lib/mysql-zrm/ZRM/Common.pm.orig	Thu Feb  4 00:19:25 2010
-+++ usr/lib/mysql-zrm/ZRM/Common.pm	Mon Mar 11 20:48:14 2013
-@@ -90,9 +90,9 @@ our $LOGGER;
- our $INDEX_FILENAME="index";
+$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.5 2014/05/13 14:00:45 giovanni Exp $
+--- usr/lib/mysql-zrm/ZRM/Common.pm.orig	Mon Aug 26 22:45:36 2013
++++ usr/lib/mysql-zrm/ZRM/Common.pm	Wed Apr 23 20:23:21 2014
+@@ -91,8 +91,8 @@ our $INDEX_FILENAME="index";
  our $MYSQL_ZRM_CONFIG_FILE=catfile( $MYSQL_ZRM_BASEDIR, "mysql-zrm.conf");
  #Compress & Encrypt progs
--our $TAR="tar";
+ our $TAR="tar";
 -our $TAR_COMPRESS_OPTIONS=" --same-owner -cpsC ";
 -our $TAR_UNCOMPRESS_OPTIONS=" --same-owner -xpsC ";
-+our $TAR="gtar";
-+our $TAR_COMPRESS_OPTIONS=" --same-owner -f- -cpsC ";
-+our $TAR_UNCOMPRESS_OPTIONS=" --same-owner -f- -xpsC ";
++our $TAR_COMPRESS_OPTIONS=" --same-owner -f- -cpC ";
++our $TAR_UNCOMPRESS_OPTIONS=" --same-owner -f- -xpC ";
  our $TAR_EXCLUDE_OPTION=" --exclude";
  our $COMPRESS_FILENAME="backup-data";
  our $COMPRESS_LOGICAL_FILENAME="backup-sql";
-@@ -1349,7 +1349,7 @@ sub createConfigFile()
+@@ -1350,7 +1350,7 @@ sub createConfigFile()
  #	if( $action eq "check" ){
  		#return;
  	#}

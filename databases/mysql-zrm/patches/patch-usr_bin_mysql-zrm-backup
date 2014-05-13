@@ -1,6 +1,6 @@
-$OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.4 2012/03/29 09:30:05 giovanni Exp $
---- usr/bin/mysql-zrm-backup.orig	Thu Feb  4 01:19:25 2010
-+++ usr/bin/mysql-zrm-backup	Thu Mar 29 11:05:57 2012
+$OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.5 2014/05/13 14:00:45 giovanni Exp $
+--- usr/bin/mysql-zrm-backup.orig	Mon Aug 26 22:45:36 2013
++++ usr/bin/mysql-zrm-backup	Tue May 13 15:31:42 2014
 @@ -40,7 +40,7 @@ $SIG{'TERM'} = sub { $abort_flag = 1; };
  $SIG{'PIPE'} = sub { &printWarning( "Communication pipe broke. Continuing\n" ); };
  
@@ -10,7 +10,30 @@ $OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.4 2012/03/29 09:30:05 giovanni Exp 
  
  
  my $MAILCMD="";
-@@ -1889,8 +1889,9 @@ sub totalSize()
+@@ -1692,8 +1692,11 @@ sub doMyDumper()
+         if( $abort_flag ){
+                 &abortAndDie( );
+         }
+-	    my $command = "";
+-	    $command .= " ".$_[0]." --outputdir ".$inputs{"destination"};
++	    my $command = " ";
++	    if ( defined $_[0] ) {
++		$command .= $_[0];
++	    }
++	    $command .= " --outputdir ".$inputs{"destination"};
+ 	    if( defined $inputs{"extra-mydumper-options"} ){
+                 $command .= " ".$inputs{"extra-mydumper-options"};
+         }
+@@ -1834,7 +1837,7 @@ sub doMySqlDump()
+         $command .= " 2>>$CMDERR";
+         $command = $p.$command;
+         my $pipestatus =tmpnam();
+-        $command ="bash -c '$command;echo \${PIPESTATUS[@]} > $pipestatus 2>>$CMDERR'";
++        $command ="sh -c '$command;echo \${PIPESTATUS[@]} > $pipestatus 2>>$CMDERR'";
+ 	if( $verbose ) {
+ 		&printLog( "Command used for logical backup is ".$p.$command."\n" );
+ 	}
+@@ -2035,13 +2038,13 @@ sub totalSize()
  				    $inputs{"synchronous-checksum"} == 1 ){
  					my $file = $File::Find::fullname;
  					if( -f $file ){
@@ -21,3 +44,18 @@ $OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.4 2012/03/29 09:30:05 giovanni Exp 
  						if( !defined $x ){
  							&printError( "Could not get md5 checksum\n" );
  						}else{
+-                                			my @a = split( / /, $x );
+-                                			$mdcheck{$file}=$a[0];
++                                			$mdcheck{$file}=$x;
+ 						}
+ 					}
+ 				}
+@@ -2369,7 +2372,7 @@ sub runAsyncChecksumProcess()
+ 		my $f = catfile( $inputs{"destination"}, ".checksum_pending" );
+ 		open( TP, ">$f" );
+ 		close( TP );
+-		system( "/usr/bin/mysql-zrm-verify-backup --create-checksum --source-directory $inputs{'destination'} --backup-set $backupset 2>/dev/null" );
++		system( "${TRUEPREFIX}/bin/mysql-zrm-verify-backup --create-checksum --source-directory $inputs{'destination'} --backup-set $backupset 2>/dev/null" );
+ 	}
+ }
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_MySQL_pm,v 1.1 2014/05/13 14:00:45 giovanni Exp $
+--- usr/lib/mysql-zrm/ZRM/MySQL.pm.orig	Tue Sep 17 13:35:08 2013
++++ usr/lib/mysql-zrm/ZRM/MySQL.pm	Tue Sep 17 13:35:30 2013
+@@ -599,7 +599,7 @@ sub checkForLogicalParallelBackup()
+         $isMyDumper = 1;
+     }
+     if($isMyDumper){
+-        my $mydumper = "$MYSQL_BIN_PATH/mydumper";
++        my $mydumper = "${LOCALBASE}/bin/mydumper";
+         if(! -f $mydumper){
+             &printAndDie("mydumper not found - $mydumper. Logical Parallel backup requires the mydumper tool\n");
+         }

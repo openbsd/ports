@@ -1,6 +1,17 @@
-$OpenBSD: patch-usr_bin_mysql-zrm-scheduler,v 1.1 2013/03/11 20:59:05 sthen Exp $
---- usr/bin/mysql-zrm-scheduler.orig	Mon Mar 11 20:48:00 2013
-+++ usr/bin/mysql-zrm-scheduler	Mon Mar 11 20:48:10 2013
+$OpenBSD: patch-usr_bin_mysql-zrm-scheduler,v 1.2 2014/05/13 14:00:45 giovanni Exp $
+--- usr/bin/mysql-zrm-scheduler.orig	Mon Aug 26 22:45:37 2013
++++ usr/bin/mysql-zrm-scheduler	Tue May 13 15:33:21 2014
+@@ -38,8 +38,8 @@ my $logdir="/var/log/mysql-zrm";
+ my $confdir="/etc/mysql-zrm";
+ my $def_dest="/var/lib/mysql-zrm";         # backup root
+ my $logfile="$logdir/$prog.log";
+-my $zrm="/usr/bin/mysql-zrm";
+-my $pre_scheduler="/usr/bin/zrm-pre-scheduler";
++my $zrm="${TRUEPREFIX}/bin/mysql-zrm";
++my $pre_scheduler="${TRUEPREFIX}/bin/zrm-pre-scheduler";
+ my $zrm_pre_backup="$pre_scheduler --action backup";
+ my $zrm_backup="$zrm --action backup";
+ my $zrm_purge="$zrm --action purge";
 @@ -351,7 +351,7 @@ if ( $interval eq "monthly" ) {
  }
  

@@ -1,16 +1,20 @@
-$OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.3 2010/05/05 17:03:19 giovanni Exp $
---- etc/mysql-zrm/mysql-zrm.conf.orig	Thu Feb  4 01:19:25 2010
-+++ etc/mysql-zrm/mysql-zrm.conf	Wed May  5 12:10:00 2010
-@@ -40,7 +40,7 @@
+$OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.4 2014/05/13 14:00:45 giovanni Exp $
+--- etc/mysql-zrm/mysql-zrm.conf.orig	Mon Aug 26 22:45:37 2013
++++ etc/mysql-zrm/mysql-zrm.conf	Tue May 13 13:19:28 2014
+@@ -40,8 +40,11 @@
  # mysqldump(1) tool
  # This parameter is optional and default value is "raw".
  #
 -#backup-mode=raw
 +backup-mode=logical
  
++# Enable to use mydumper utility
++logical-parallel=0
++
  # Size of LVM snapshot. This parameter is optional and  is required only 
  # for "raw" backup-mode and if the MySQL database data are stored in 
-@@ -64,7 +64,7 @@
+ # LVM logical volumes. 
+@@ -64,7 +67,7 @@
  # directory.  This parameter is optional and the default 
  # value is "/var/lib/mysql-zrm"
  #
@@ -19,16 +23,16 @@ $OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.3 2010/05/05 17:03:19 giovanni 
  
  # Specifies how long the backup should be retained. The value can be 
  # specified in days (suffix D), weeks (suffix: W), months (suffix: M) or 
-@@ -97,7 +97,7 @@
+@@ -97,7 +100,7 @@
  
  # This parameter specifies that the program that should be used for 
  # backup data encryption. "decrypt-option" parameter should also be specified.
 -#encrypt-plugin="/usr/share/mysql-zrm/plugins/encrypt.pl"
-+encrypt-plugin="${PREFIX}/share/mysql-zrm/plugins/encrypt.pl"
++encrypt-plugin="${TRUEPREFIX}/share/mysql-zrm/plugins/encrypt.pl"
  
  # This specifies the option to be passed to the encryption 
  # program specified as "encrypt-plugin" parameter for decryption.
-@@ -165,7 +165,7 @@
+@@ -165,7 +168,7 @@
  
  #Name of Socket file that can be used for connecting to MySQL
  #
@@ -37,12 +41,12 @@ $OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.3 2010/05/05 17:03:19 giovanni 
  
  # ssl-options are arguments that are passed to MySQL client commands 
  # for SSL connection to the MySQL server. This parameter is optional and is
-@@ -272,18 +272,18 @@
+@@ -272,18 +275,18 @@
  #
  # Please read the Notes at /usr/share/doc/mysql-zrm/README-plugin-socket-copy
  #
 -#copy-plugin=/usr/share/mysql-zrm/plugins/socket-copy.pl
-+copy-plugin=${PREFIX}/share/mysql-zrm/plugins/socket-copy.pl
++copy-plugin=${TRUEPREFIX}/share/mysql-zrm/plugins/socket-copy.pl
  
  # SSH Copy plugin is to used to transfer backup files from MySQL server to
  # the machine running ZRM for MySQL with ssh
@@ -50,30 +54,36 @@ $OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.3 2010/05/05 17:03:19 giovanni 
  # Please read the Notes at /usr/share/doc/mysql-zrm/README-plugin-ssh-copy
  #
 -#copy-plugin=/usr/share/mysql-zrm/plugins/ssh-copy.pl
-+copy-plugin=${PREFIX}/share/mysql-zrm/plugins/ssh-copy.pl
++copy-plugin=${TRUEPREFIX}/share/mysql-zrm/plugins/ssh-copy.pl
  
  # PRE-BACKUP plugin: Plugin that will be called before a backup run for 
  # the backup set.
 -#pre-backup-plugin="/usr/share/mysql-zrm/plugins/pre-backup.pl"
-+pre-backup-plugin="${PREFIX}/share/mysql-zrm/plugins/pre-backup.pl"
++pre-backup-plugin="${TRUEPREFIX}/share/mysql-zrm/plugins/pre-backup.pl"
  
  # Set of parameters passed to the pre-backup-plugin. These parameters are
  # passed to "pre-backup-plugin" before a backup run for the backup set.
-@@ -292,7 +292,7 @@
+@@ -292,7 +295,7 @@
  
  # POST-BACKUP plugin: Plugin that will be called after a backup run for 
  # the backup set.
 -#post-backup-plugin="/usr/share/mysql-zrm/plugins/post-backup.pl"
-+post-backup-plugin="${PREFIX}/share/mysql-zrm/plugins/post-backup.pl"
++post-backup-plugin="${TRUEPREFIX}/share/mysql-zrm/plugins/post-backup.pl"
  
  # Set of parameters passed to the post-backup-plugin. These parameters are
  # passed to "post-backup-plugin" after a backup run for the backup set.
-@@ -301,7 +301,7 @@
+@@ -301,7 +304,7 @@
  
  # PRE-SCHEDULER plugin: Plugin that can be used to dynamically determine the 
  # start time for a backup run.
 -#pre-scheduler-plugin="/usr/share/mysql-zrm/plugins/pre-scheduler.pl"
-+#pre-scheduler-plugin="${PREFIX}/share/mysql-zrm/plugins/pre-scheduler.pl"
++#pre-scheduler-plugin="${TRUEPREFIX}/share/mysql-zrm/plugins/pre-scheduler.pl"
  
  # ZRM Plugin configuration parameters
  
+@@ -328,4 +331,4 @@
+ # This parameter is used by the windows-copy.pl plugin to specify the port
+ # to be opened on the windows machine during restore
+ #windows-restore-port="10081"
+-
++extra-mysqldump-options="--triggers --events"
