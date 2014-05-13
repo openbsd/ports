@@ -1,7 +1,7 @@
-$OpenBSD: patch-SSLeay_xs,v 1.3 2014/04/19 14:52:44 sthen Exp $
---- SSLeay.xs.orig	Sat Apr 19 08:44:26 2014
-+++ SSLeay.xs	Sat Apr 19 08:44:47 2014
-@@ -2038,11 +2038,6 @@ RAND_poll()
+$OpenBSD: patch-SSLeay_xs,v 1.4 2014/05/13 00:52:45 bluhm Exp $
+--- SSLeay.xs.orig	Mon May 12 09:31:37 2014
++++ SSLeay.xs	Tue May 13 01:39:37 2014
+@@ -2228,11 +2228,6 @@ RAND_poll()
  int
  RAND_status()
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-SSLeay_xs,v 1.3 2014/04/19 14:52:44 sthen Exp $
  SV *
  RAND_file_name(num)
      size_t num
-@@ -2079,10 +2074,6 @@ RAND_load_file(file_name, how_much)
+@@ -2269,10 +2264,6 @@ RAND_load_file(file_name, how_much)
  int
  RAND_write_file(file_name)
       char *  file_name
