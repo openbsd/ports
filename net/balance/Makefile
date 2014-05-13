@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/05/13 11:50:45 gonzalo Exp $
 
 COMMENT=		TCP proxy with load balancing and failover mechanisms
 
-DISTNAME=		balance-3.54
+DISTNAME=		balance-3.56
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.inlab.de/balance.html
