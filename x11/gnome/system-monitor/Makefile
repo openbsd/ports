@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2014/04/15 07:13:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2014/05/13 08:54:43 jasper Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
-GNOME_VERSION=	3.12.1
+GNOME_VERSION=	3.12.2
 
 CATEGORIES=	sysutils
 
@@ -25,7 +25,7 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	devel/libgtop2>=2.28.5p2 \
+LIB_DEPENDS=	devel/libgtop2>=2.30.0 \
 		x11/gnome/librsvg \
 		x11/gtk3mm
 
