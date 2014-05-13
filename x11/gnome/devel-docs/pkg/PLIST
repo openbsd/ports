@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/03/09 22:00:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/05/13 06:40:30 ajacoutot Exp $
 share/help/
 share/help/C/
 share/help/C/accessibility-devel-guide/
@@ -82,7 +82,6 @@ share/help/C/gnome-devel-demos/filechooserdialog.vala.page
 share/help/C/gnome-devel-demos/fontchooserwidget.js.page
 share/help/C/gnome-devel-demos/fontchooserwidget.py.page
 share/help/C/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/C/gnome-devel-demos/getting-ready.page
 share/help/C/gnome-devel-demos/gmenu.c.page
 share/help/C/gnome-devel-demos/gmenu.js.page
 share/help/C/gnome-devel-demos/gmenu.py.page
@@ -741,6 +740,7 @@ share/help/C/platform-overview/dev-translate-setup.page
 share/help/C/platform-overview/dev-translate-tools.page
 share/help/C/platform-overview/dev-translate.page
 share/help/C/platform-overview/index.page
+share/help/C/platform-overview/license.page
 share/help/C/platform-overview/media/
 share/help/C/platform-overview/media/glade-new-window.png
 share/help/C/platform-overview/media/glade-result.png
@@ -860,7 +860,6 @@ share/help/ca/gnome-devel-demos/filechooserdialog.vala.page
 share/help/ca/gnome-devel-demos/fontchooserwidget.js.page
 share/help/ca/gnome-devel-demos/fontchooserwidget.py.page
 share/help/ca/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/ca/gnome-devel-demos/getting-ready.page
 share/help/ca/gnome-devel-demos/gmenu.c.page
 share/help/ca/gnome-devel-demos/gmenu.js.page
 share/help/ca/gnome-devel-demos/gmenu.py.page
@@ -1311,6 +1310,7 @@ share/help/ca/platform-overview/dev-translate-setup.page
 share/help/ca/platform-overview/dev-translate-tools.page
 share/help/ca/platform-overview/dev-translate.page
 share/help/ca/platform-overview/index.page
+share/help/ca/platform-overview/license.page
 share/help/ca/platform-overview/media/
 share/help/ca/platform-overview/media/glade-new-window.png
 share/help/ca/platform-overview/media/glade-result.png
@@ -1391,6 +1391,7 @@ share/help/cs/platform-overview/dev-translate-setup.page
 share/help/cs/platform-overview/dev-translate-tools.page
 share/help/cs/platform-overview/dev-translate.page
 share/help/cs/platform-overview/index.page
+share/help/cs/platform-overview/license.page
 share/help/cs/platform-overview/media/
 share/help/cs/platform-overview/media/glade-new-window.png
 share/help/cs/platform-overview/media/glade-result.png
@@ -1524,7 +1525,6 @@ share/help/de/gnome-devel-demos/filechooserdialog.vala.page
 share/help/de/gnome-devel-demos/fontchooserwidget.js.page
 share/help/de/gnome-devel-demos/fontchooserwidget.py.page
 share/help/de/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/de/gnome-devel-demos/getting-ready.page
 share/help/de/gnome-devel-demos/gmenu.c.page
 share/help/de/gnome-devel-demos/gmenu.js.page
 share/help/de/gnome-devel-demos/gmenu.py.page
@@ -2183,6 +2183,7 @@ share/help/de/platform-overview/dev-translate-setup.page
 share/help/de/platform-overview/dev-translate-tools.page
 share/help/de/platform-overview/dev-translate.page
 share/help/de/platform-overview/index.page
+share/help/de/platform-overview/license.page
 share/help/de/platform-overview/media/
 share/help/de/platform-overview/media/glade-new-window.png
 share/help/de/platform-overview/media/glade-result.png
@@ -2316,7 +2317,6 @@ share/help/el/gnome-devel-demos/filechooserdialog.vala.page
 share/help/el/gnome-devel-demos/fontchooserwidget.js.page
 share/help/el/gnome-devel-demos/fontchooserwidget.py.page
 share/help/el/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/el/gnome-devel-demos/getting-ready.page
 share/help/el/gnome-devel-demos/gmenu.c.page
 share/help/el/gnome-devel-demos/gmenu.js.page
 share/help/el/gnome-devel-demos/gmenu.py.page
@@ -2975,6 +2975,7 @@ share/help/el/platform-overview/dev-translate-setup.page
 share/help/el/platform-overview/dev-translate-tools.page
 share/help/el/platform-overview/dev-translate.page
 share/help/el/platform-overview/index.page
+share/help/el/platform-overview/license.page
 share/help/el/platform-overview/media/
 share/help/el/platform-overview/media/glade-new-window.png
 share/help/el/platform-overview/media/glade-result.png
@@ -3108,7 +3109,6 @@ share/help/es/gnome-devel-demos/filechooserdialog.vala.page
 share/help/es/gnome-devel-demos/fontchooserwidget.js.page
 share/help/es/gnome-devel-demos/fontchooserwidget.py.page
 share/help/es/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/es/gnome-devel-demos/getting-ready.page
 share/help/es/gnome-devel-demos/gmenu.c.page
 share/help/es/gnome-devel-demos/gmenu.js.page
 share/help/es/gnome-devel-demos/gmenu.py.page
@@ -3767,6 +3767,7 @@ share/help/es/platform-overview/dev-translate-setup.page
 share/help/es/platform-overview/dev-translate-tools.page
 share/help/es/platform-overview/dev-translate.page
 share/help/es/platform-overview/index.page
+share/help/es/platform-overview/license.page
 share/help/es/platform-overview/media/
 share/help/es/platform-overview/media/glade-new-window.png
 share/help/es/platform-overview/media/glade-result.png
@@ -3900,7 +3901,6 @@ share/help/fr/gnome-devel-demos/filechooserdialog.vala.page
 share/help/fr/gnome-devel-demos/fontchooserwidget.js.page
 share/help/fr/gnome-devel-demos/fontchooserwidget.py.page
 share/help/fr/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/fr/gnome-devel-demos/getting-ready.page
 share/help/fr/gnome-devel-demos/gmenu.c.page
 share/help/fr/gnome-devel-demos/gmenu.js.page
 share/help/fr/gnome-devel-demos/gmenu.py.page
@@ -4559,6 +4559,7 @@ share/help/fr/platform-overview/dev-translate-setup.page
 share/help/fr/platform-overview/dev-translate-tools.page
 share/help/fr/platform-overview/dev-translate.page
 share/help/fr/platform-overview/index.page
+share/help/fr/platform-overview/license.page
 share/help/fr/platform-overview/media/
 share/help/fr/platform-overview/media/glade-new-window.png
 share/help/fr/platform-overview/media/glade-result.png
@@ -4671,7 +4672,6 @@ share/help/gl/gnome-devel-demos/filechooserdialog.vala.page
 share/help/gl/gnome-devel-demos/fontchooserwidget.js.page
 share/help/gl/gnome-devel-demos/fontchooserwidget.py.page
 share/help/gl/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/gl/gnome-devel-demos/getting-ready.page
 share/help/gl/gnome-devel-demos/gmenu.c.page
 share/help/gl/gnome-devel-demos/gmenu.js.page
 share/help/gl/gnome-devel-demos/gmenu.py.page
@@ -5330,6 +5330,7 @@ share/help/gl/platform-overview/dev-translate-setup.page
 share/help/gl/platform-overview/dev-translate-tools.page
 share/help/gl/platform-overview/dev-translate.page
 share/help/gl/platform-overview/index.page
+share/help/gl/platform-overview/license.page
 share/help/gl/platform-overview/media/
 share/help/gl/platform-overview/media/glade-new-window.png
 share/help/gl/platform-overview/media/glade-result.png
@@ -5402,6 +5403,7 @@ share/help/it/platform-overview/dev-translate-setup.page
 share/help/it/platform-overview/dev-translate-tools.page
 share/help/it/platform-overview/dev-translate.page
 share/help/it/platform-overview/index.page
+share/help/it/platform-overview/license.page
 share/help/it/platform-overview/media/
 share/help/it/platform-overview/media/glade-new-window.png
 share/help/it/platform-overview/media/glade-result.png
@@ -5495,6 +5497,7 @@ share/help/ja/platform-overview/dev-translate-setup.page
 share/help/ja/platform-overview/dev-translate-tools.page
 share/help/ja/platform-overview/dev-translate.page
 share/help/ja/platform-overview/index.page
+share/help/ja/platform-overview/license.page
 share/help/ja/platform-overview/media/
 share/help/ja/platform-overview/media/glade-new-window.png
 share/help/ja/platform-overview/media/glade-result.png
@@ -5567,6 +5570,7 @@ share/help/oc/platform-overview/dev-translate-setup.page
 share/help/oc/platform-overview/dev-translate-tools.page
 share/help/oc/platform-overview/dev-translate.page
 share/help/oc/platform-overview/index.page
+share/help/oc/platform-overview/license.page
 share/help/oc/platform-overview/media/
 share/help/oc/platform-overview/media/glade-new-window.png
 share/help/oc/platform-overview/media/glade-result.png
@@ -5700,7 +5704,6 @@ share/help/pt_BR/gnome-devel-demos/filechooserdialog.vala.page
 share/help/pt_BR/gnome-devel-demos/fontchooserwidget.js.page
 share/help/pt_BR/gnome-devel-demos/fontchooserwidget.py.page
 share/help/pt_BR/gnome-devel-demos/fontchooserwidget.vala.page
-share/help/pt_BR/gnome-devel-demos/getting-ready.page
 share/help/pt_BR/gnome-devel-demos/gmenu.c.page
 share/help/pt_BR/gnome-devel-demos/gmenu.js.page
 share/help/pt_BR/gnome-devel-demos/gmenu.py.page
@@ -6359,6 +6362,7 @@ share/help/pt_BR/platform-overview/dev-translate-setup.page
 share/help/pt_BR/platform-overview/dev-translate-tools.page
 share/help/pt_BR/platform-overview/dev-translate.page
 share/help/pt_BR/platform-overview/index.page
+share/help/pt_BR/platform-overview/license.page
 share/help/pt_BR/platform-overview/media/
 share/help/pt_BR/platform-overview/media/glade-new-window.png
 share/help/pt_BR/platform-overview/media/glade-result.png
@@ -6431,6 +6435,7 @@ share/help/ru/platform-overview/dev-translate-setup.page
 share/help/ru/platform-overview/dev-translate-tools.page
 share/help/ru/platform-overview/dev-translate.page
 share/help/ru/platform-overview/index.page
+share/help/ru/platform-overview/license.page
 share/help/ru/platform-overview/media/
 share/help/ru/platform-overview/media/glade-new-window.png
 share/help/ru/platform-overview/media/glade-result.png
@@ -6732,6 +6737,7 @@ share/help/sl/platform-overview/dev-translate-setup.page
 share/help/sl/platform-overview/dev-translate-tools.page
 share/help/sl/platform-overview/dev-translate.page
 share/help/sl/platform-overview/index.page
+share/help/sl/platform-overview/license.page
 share/help/sl/platform-overview/media/
 share/help/sl/platform-overview/media/glade-new-window.png
 share/help/sl/platform-overview/media/glade-result.png
@@ -6804,6 +6810,7 @@ share/help/sv/platform-overview/dev-translate-setup.page
 share/help/sv/platform-overview/dev-translate-tools.page
 share/help/sv/platform-overview/dev-translate.page
 share/help/sv/platform-overview/index.page
+share/help/sv/platform-overview/license.page
 share/help/sv/platform-overview/media/
 share/help/sv/platform-overview/media/glade-new-window.png
 share/help/sv/platform-overview/media/glade-result.png
@@ -6876,6 +6883,7 @@ share/help/uk/platform-overview/dev-translate-setup.page
 share/help/uk/platform-overview/dev-translate-tools.page
 share/help/uk/platform-overview/dev-translate.page
 share/help/uk/platform-overview/index.page
+share/help/uk/platform-overview/license.page
 share/help/uk/platform-overview/media/
 share/help/uk/platform-overview/media/glade-new-window.png
 share/help/uk/platform-overview/media/glade-result.png
@@ -7177,6 +7185,7 @@ share/help/zh_CN/platform-overview/dev-translate-setup.page
 share/help/zh_CN/platform-overview/dev-translate-tools.page
 share/help/zh_CN/platform-overview/dev-translate.page
 share/help/zh_CN/platform-overview/index.page
+share/help/zh_CN/platform-overview/license.page
 share/help/zh_CN/platform-overview/media/
 share/help/zh_CN/platform-overview/media/glade-new-window.png
 share/help/zh_CN/platform-overview/media/glade-result.png
