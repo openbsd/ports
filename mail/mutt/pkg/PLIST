@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/10/18 21:08:58 sthen Exp $
-@pkgpath mail/mutt/snapshot,hcache
+@comment $OpenBSD: PLIST,v 1.16 2014/05/13 14:27:53 sthen Exp $
+@pkgpath mail/mutt/stable${FLAVOR_COMMA}
+@pkgpath mail/mutt/snapshot[,hcache]${FLAVOR_COMMA}
 bin/flea
 @bin bin/mutt
 @bin bin/mutt_dotlock
@@ -47,11 +48,11 @@ share/doc/mutt/security.html
 share/doc/mutt/smime-notes.txt
 share/doc/mutt/tuning.html
 share/examples/mutt/
-@sample ${CONFDIR}/
+@sample ${SYSCONFDIR}/
 share/examples/mutt/Mush.rc
 @comment share/examples/mutt/Muttrc
 share/examples/mutt/Muttrc.dist
-@sample ${CONFDIR}/Muttrc
+@sample ${SYSCONFDIR}/Muttrc
 share/examples/mutt/Pine.rc
 share/examples/mutt/Tin.rc
 share/examples/mutt/ca-bundle.crt
@@ -79,7 +80,7 @@ share/examples/mutt/iconv/iconv.solaris-2.6.rc
 share/examples/mutt/iconv/iconv.solaris-2.7.rc
 @comment share/examples/mutt/mime.types
 share/examples/mutt/mime.types.dist
-@sample ${CONFDIR}/mime.types
+@sample ${SYSCONFDIR}/mime.types
 share/examples/mutt/mutt_xtitle
 share/examples/mutt/pgp2.rc
 share/examples/mutt/pgp5.rc

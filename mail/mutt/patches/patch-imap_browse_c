@@ -1,4 +1,4 @@
-$OpenBSD: patch-imap_browse_c,v 1.5 2009/06/16 09:37:19 sthen Exp $
+$OpenBSD: patch-imap_browse_c,v 1.1 2014/05/13 14:27:53 sthen Exp $
 --- imap/browse.c.orig	Tue Jan 20 04:36:13 2009
 +++ imap/browse.c	Mon Jun 15 21:06:09 2009
 @@ -322,7 +322,9 @@ int imap_mailbox_rename(const char* mailbox)

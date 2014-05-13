@@ -1,4 +1,4 @@
-$OpenBSD: patch-hcachever_sh_in,v 1.1 2013/08/23 16:40:30 sthen Exp $
+$OpenBSD: patch-hcachever_sh_in,v 1.1 2014/05/13 14:27:53 sthen Exp $
 
 Header cache files are sanity-checked so that changes in data types ought to
 invalidate the cache, however this doesn't use base types for everything i.e.

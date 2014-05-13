@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_Makefile_am,v 1.4 2013/10/21 19:21:20 sthen Exp $
+$OpenBSD: patch-doc_Makefile_am,v 1.1 2014/05/13 14:27:53 sthen Exp $
 --- doc/Makefile.am.orig	Fri Oct 18 05:48:24 2013
 +++ doc/Makefile.am	Mon Oct 21 20:20:29 2013
 @@ -165,7 +165,7 @@ update-doc: stamp-doc-xml stamp-doc-chunked stamp-doc-

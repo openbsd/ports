@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.6 2013/10/18 21:08:58 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.1 2014/05/13 14:27:53 sthen Exp $
 --- configure.ac.orig	Mon Apr 22 07:14:53 2013
 +++ configure.ac	Fri Oct 18 09:58:16 2013
 @@ -550,7 +550,7 @@ fi
