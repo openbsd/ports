@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.11 2014/05/07 15:42:15 kurt Exp $
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.12 2014/05/13 05:55:30 dcoppa Exp $
 Note: we always build with Java 1.6 even when 1.6+ requested; "+" is meaningful
 for run-time only.
---- Modules/FindJNI.cmake.orig	Thu Jan 16 12:15:08 2014
-+++ Modules/FindJNI.cmake	Fri May  2 07:27:01 2014
+--- Modules/FindJNI.cmake.orig	Thu Jan 16 18:15:08 2014
++++ Modules/FindJNI.cmake	Tue May 13 07:45:35 2014
 @@ -26,6 +26,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -25,7 +25,7 @@ for run-time only.
      endif()
  
      # Sometimes ${CMAKE_SYSTEM_PROCESSOR} is added to the list to prefer
-@@ -88,44 +92,48 @@ endmacro()
+@@ -88,44 +92,49 @@ endmacro()
  get_filename_component(java_install_version
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit;CurrentVersion]" NAME)
  
@@ -68,6 +68,7 @@ for run-time only.
 -  /usr/local/jre-1.6.0/lib/{libarch}
 -  )
 +if(MODJAVA_VER)
++  set(JAVA_AWT_LIBRARY_DIRECTORIES)
 +  JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
 +    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
 +    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
@@ -110,7 +111,7 @@ for run-time only.
  
  set(JAVA_JVM_LIBRARY_DIRECTORIES)
  foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
-@@ -137,31 +145,35 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+@@ -137,31 +146,35 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
      )
  endforeach()
  
