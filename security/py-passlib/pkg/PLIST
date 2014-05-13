@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/05/12 16:02:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/05/13 09:18:24 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/passlib/
 lib/python${MODPY_VERSION}/site-packages/passlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/passlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -20,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/passlib/${MODPY_PYCACHE}registry.${MODP
 lib/python${MODPY_VERSION}/site-packages/passlib/${MODPY_PYCACHE}win32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/_setup/
 lib/python${MODPY_VERSION}/site-packages/passlib/_setup/__init__.py
-lib/python${MODPY_VERSION}/site-packages/passlib/_setup/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/passlib/_setup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/passlib/_setup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/_setup/${MODPY_PYCACHE}docdist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/_setup/${MODPY_PYCACHE}stamp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,11 +32,11 @@ lib/python${MODPY_VERSION}/site-packages/passlib/context.py
 lib/python${MODPY_VERSION}/site-packages/passlib/exc.py
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/__init__.py
-lib/python${MODPY_VERSION}/site-packages/passlib/ext/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/passlib/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/__init__.py
-lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -44,7 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/models.py
 lib/python${MODPY_VERSION}/site-packages/passlib/ext/django/utils.py
 lib/python${MODPY_VERSION}/site-packages/passlib/handlers/
 lib/python${MODPY_VERSION}/site-packages/passlib/handlers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/passlib/handlers/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/passlib/handlers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/passlib/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/handlers/${MODPY_PYCACHE}bcrypt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/handlers/${MODPY_PYCACHE}cisco.${MODPY_PYC_MAGIC_TAG}pyc
@@ -95,7 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/passlib/registry.py
 lib/python${MODPY_VERSION}/site-packages/passlib/tests/
 lib/python${MODPY_VERSION}/site-packages/passlib/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/passlib/tests/__main__.py
-lib/python${MODPY_VERSION}/site-packages/passlib/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/passlib/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/passlib/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/tests/${MODPY_PYCACHE}_test_bad_register.${MODPY_PYC_MAGIC_TAG}pyc
@@ -140,7 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/passlib/tests/tox_support.py
 lib/python${MODPY_VERSION}/site-packages/passlib/tests/utils.py
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/__init__.py
-lib/python${MODPY_VERSION}/site-packages/passlib/utils/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/passlib/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/${MODPY_PYCACHE}des.${MODPY_PYC_MAGIC_TAG}pyc
@@ -149,7 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/passlib/utils/${MODPY_PYCACHE}md4.${MOD
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/${MODPY_PYCACHE}pbkdf2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/_blowfish/
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/_blowfish/__init__.py
-lib/python${MODPY_VERSION}/site-packages/passlib/utils/_blowfish/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/passlib/utils/_blowfish/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/_blowfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/_blowfish/${MODPY_PYCACHE}_gen_files.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/passlib/utils/_blowfish/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
