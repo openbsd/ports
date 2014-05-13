@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/03/27 08:14:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/05/13 08:49:27 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte2_90
@@ -44,12 +44,15 @@ share/gtk-doc/html/vte-2.90/home.png
 share/gtk-doc/html/vte-2.90/index.html
 share/gtk-doc/html/vte-2.90/index.sgml
 share/gtk-doc/html/vte-2.90/internal-objects.html
+share/gtk-doc/html/vte-2.90/left-insensitive.png
 share/gtk-doc/html/vte-2.90/left.png
 share/gtk-doc/html/vte-2.90/licence.html
 share/gtk-doc/html/vte-2.90/object-hierarchy.html
 share/gtk-doc/html/vte-2.90/pt01.html
+share/gtk-doc/html/vte-2.90/right-insensitive.png
 share/gtk-doc/html/vte-2.90/right.png
 share/gtk-doc/html/vte-2.90/style.css
+share/gtk-doc/html/vte-2.90/up-insensitive.png
 share/gtk-doc/html/vte-2.90/up.png
 share/gtk-doc/html/vte-2.90/vte-2.90.devhelp2
 share/gtk-doc/html/vte-2.90/vte-Version-Information.html
