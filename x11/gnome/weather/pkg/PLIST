@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/27 09:15:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/05/13 06:12:14 ajacoutot Exp $
 bin/gnome-weather
 lib/org.gnome.Weather.Application/
 lib/org.gnome.Weather.Application/girepository-1.0/
@@ -17,6 +17,7 @@ share/icons/hicolor/22x22/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/256x256/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/32x32/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/48x48/apps/org.gnome.Weather.Application.png
+share/locale/ar/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/as/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/be/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Weather.Application.mo
