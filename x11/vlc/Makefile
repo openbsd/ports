@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2014/04/28 17:35:35 brad Exp $
+# $OpenBSD: Makefile,v 1.180 2014/05/14 08:59:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -85,6 +85,7 @@ LIB_DEPENDS-jack= ${MODGETTEXT_LIB_DEPENDS} \
 BUILD_DEPENDS=	net/livemedia>=20120204p0 \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/bison \
 		devel/libtool
 RUN_DEPENDS-main= devel/desktop-file-utils \
 		x11/gtk+2,-guic
