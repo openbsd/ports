@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.10 2013/09/29 19:36:09 bcallah Exp $
---- src/osd/sdl/sdl.mak.orig	Fri Sep 20 12:15:23 2013
-+++ src/osd/sdl/sdl.mak	Fri Sep 20 12:15:23 2013
-@@ -721,9 +721,9 @@ LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --lib
+$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.11 2014/05/14 23:32:50 bcallah Exp $
+--- src/osd/sdl/sdl.mak.orig	Wed Apr 16 23:16:03 2014
++++ src/osd/sdl/sdl.mak	Wed Apr 16 23:16:03 2014
+@@ -703,9 +703,9 @@ LIBS += `pkg-config QtGui --libs`
  endif
  
  # some systems still put important things in a different prefix
@@ -12,4 +12,4 @@ $OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.10 2013/09/29 19:36:09 bcallah Exp $
 +INCPATH += -I${X11BASE}/include
  endif # NO_X11
  
- #-------------------------------------------------
+ # can't use native libs with emscripten
