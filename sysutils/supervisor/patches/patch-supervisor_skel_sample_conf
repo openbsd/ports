@@ -1,0 +1,78 @@
+$OpenBSD: patch-supervisor_skel_sample_conf,v 1.1.1.1 2014/05/14 09:56:44 jasper Exp $
+--- supervisor/skel/sample.conf.orig	Tue Dec 17 17:20:12 2013
++++ supervisor/skel/sample.conf	Tue Dec 17 17:39:28 2013
+@@ -7,7 +7,7 @@
+ ; variables can be expanded using this syntax: "%(ENV_HOME)s".
+ 
+ [unix_http_server]
+-file=/tmp/supervisor.sock   ; (the path to the socket file)
++file=${VARBASE}/run/supervisor/supervisor.sock   ; (the path to the socket file)
+ ;chmod=0700                 ; socket file mode (default 0700)
+ ;chown=nobody:nogroup       ; socket file uid:gid owner
+ ;username=user              ; (default is no username (open server))
+@@ -19,11 +19,11 @@ file=/tmp/supervisor.sock   ; (the path to the socket 
+ ;password=123               ; (default is no password (open server))
+ 
+ [supervisord]
+-logfile=/tmp/supervisord.log ; (main log file;default $CWD/supervisord.log)
++logfile=${VARBASE}/log/supervisord.log ; (main log file;default $CWD/supervisord.log)
+ logfile_maxbytes=50MB        ; (max main logfile bytes b4 rotation;default 50MB)
+ logfile_backups=10           ; (num of main logfile rotation backups;default 10)
+ loglevel=info                ; (log level;default info; others: debug,warn,trace)
+-pidfile=/tmp/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
++pidfile=${VARBASE}/run/supervisor/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
+ nodaemon=false               ; (start in foreground if true;default false)
+ minfds=1024                  ; (min. avail startup file descriptors;default 1024)
+ minprocs=200                 ; (min. avail process descriptors;default 200)
+@@ -43,7 +43,7 @@ minprocs=200                 ; (min. avail process des
+ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+ 
+ [supervisorctl]
+-serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
++serverurl=unix://${VARBASE}/run/supervisor/supervisor.sock ; use a unix:// URL  for a unix socket
+ ;serverurl=http://127.0.0.1:9001 ; use an http:// url to specify an inet socket
+ ;username=chris              ; should be same as http_username if set
+ ;password=123                ; should be same as http_password if set
+@@ -62,8 +62,8 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+ ;umask=022                     ; umask for process (default None)
+ ;priority=999                  ; the relative start priority (default 999)
+ ;autostart=true                ; start at supervisord start (default: true)
+-;autorestart=unexpected        ; whether/when to restart (default: unexpected)
+-;startsecs=1                   ; number of secs prog must stay running (def. 1)
++;autorestart=true              ; retstart at unexpected quit (default: true)
++;startsecs=10                  ; number of secs prog must stay running (def. 1)
+ ;startretries=3                ; max # of serial start failures (default 3)
+ ;exitcodes=0,2                 ; 'expected' exit codes for process (default 0,2)
+ ;stopsignal=QUIT               ; signal used to kill process (default TERM)
+@@ -100,14 +100,12 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+ ;umask=022                     ; umask for process (default None)
+ ;priority=-1                   ; the relative start priority (default -1)
+ ;autostart=true                ; start at supervisord start (default: true)
+-;autorestart=unexpected        ; whether/when to restart (default: unexpected)
+-;startsecs=1                   ; number of secs prog must stay running (def. 1)
++;autorestart=unexpected        ; restart at unexpected quit (default: unexpected)
++;startsecs=10                  ; number of secs prog must stay running (def. 1)
+ ;startretries=3                ; max # of serial start failures (default 3)
+ ;exitcodes=0,2                 ; 'expected' exit codes for process (default 0,2)
+ ;stopsignal=QUIT               ; signal used to kill process (default TERM)
+ ;stopwaitsecs=10               ; max num secs to wait b4 SIGKILL (default 10)
+-;stopasgroup=false             ; send stop signal to the UNIX process group (default false)
+-;killasgroup=false             ; SIGKILL the UNIX process group (def false)
+ ;user=chrism                   ; setuid to this UNIX account to run the program
+ ;redirect_stderr=true          ; redirect proc stderr to stdout (default false)
+ ;stdout_logfile=/a/path        ; stdout log path, NONE for none; default AUTO
+@@ -118,7 +116,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+ ;stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
+ ;stderr_logfile_backups        ; # of stderr logfile backups (default 10)
+ ;stderr_events_enabled=false   ; emit events on stderr writes (default false)
+-;environment=A="1",B="2"       ; process environment additions
++;environment=A=1,B=2           ; process environment additions
+ ;serverurl=AUTO                ; override serverurl computation (childutils)
+ 
+ ; The below sample group section shows all possible group values,
+@@ -136,4 +134,4 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+ ; include files themselves.
+ 
+ ;[include]
+-;files = relative/directory/*.ini
++;files = supervisord.d/*.ini

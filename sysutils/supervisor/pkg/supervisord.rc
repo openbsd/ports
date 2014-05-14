@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: supervisord.rc,v 1.1.1.1 2014/05/14 09:56:44 jasper Exp $
+
+daemon="${TRUEPREFIX}/bin/supervisord"
+daemon_flags="-c ${SYSCONFDIR}/supervisord.conf --pidfile /var/run/supervisor/supervisord.pid"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=YES
+
+rc_pre() {
+	install -d /var/run/supervisor
+}
+
+rc_cmd $1
