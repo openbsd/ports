@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.16 2014/05/14 08:07:24 brad Exp $
+
+Attempt to fix FFmpeg VP9 segfault.
+
+--- src/combined/ffmpeg/ff_video_decoder.c.orig	Thu Mar 13 00:06:09 2014
++++ src/combined/ffmpeg/ff_video_decoder.c	Tue May 13 21:11:15 2014
+@@ -406,9 +406,11 @@ static int get_buffer (AVCodecContext *context, AVFram
+ #endif /* ENABLE_VAAPI */
+ 
+   /* The alignment rhapsody */
+-  buf_width  += 2 * this->edge + 15;
+-  buf_width  &= ~15;
+-  buf_height += 2 * this->edge + 15;
++  /* SSE2+ requirement (U, V rows need to be 16 byte aligned too) */
++  buf_width  += 2 * this->edge + 31;
++  buf_width  &= ~31;
++  /* 2 extra lines for the edge wrap below plus XINE requirement */
++  buf_height += 2 * this->edge + 2 + 15;
+   buf_height &= ~15;
+ 
+   if ((this->full2mpeg || (this->context->pix_fmt != PIX_FMT_YUV420P &&
+@@ -503,12 +505,15 @@ static int get_buffer (AVCodecContext *context, AVFram
+   av_frame->linesize[2] = img->pitches[2];
+ 
+   if (this->output_format == XINE_IMGFMT_YV12) {
+-    av_frame->data[0] += (img->pitches[0] + 1) * this->edge;
+-    av_frame->data[1] += (img->pitches[1] + 1) * this->edge / 2;
+-    av_frame->data[2] += (img->pitches[2] + 1) * this->edge / 2;
+-    img->crop_left   = this->edge;
++    /* nasty hack: wrap right edge to the left side when needed to get proper
++       SSE2 alignment on all planes. */
++    int left_edge = (this->edge + 31) & ~31;
++    av_frame->data[0] += img->pitches[0] * this->edge + left_edge;
++    av_frame->data[1] += (img->pitches[1] * this->edge + left_edge) / 2;
++    av_frame->data[2] += (img->pitches[2] * this->edge + left_edge) / 2;
++    img->crop_left   = left_edge;
+     img->crop_top    = this->edge;
+-    img->crop_right  = buf_width  - width  - this->edge;
++    img->crop_right  = buf_width  - width - left_edge;
+     img->crop_bottom = buf_height - height - this->edge;
+   }
+ 

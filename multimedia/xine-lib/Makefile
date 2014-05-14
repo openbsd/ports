@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/04/16 05:09:00 brad Exp $
+# $OpenBSD: Makefile,v 1.110 2014/05/14 08:07:24 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,8 @@ DISTNAME=	xine-lib-1.2.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
+
+REVISION=	0
 
 SHARED_LIBS=	xine	31.0
 
