@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_config_mips_mips_h,v 1.1 2014/05/14 09:32:55 tobiasu Exp $
+--- gcc/config/mips/mips.h.orig	Fri May  2 13:26:58 2014
++++ gcc/config/mips/mips.h	Fri May  2 13:27:20 2014
+@@ -1175,7 +1175,9 @@ struct mips_cpu_info {
+ #define SUBTARGET_CPP_SPEC ""
+ #endif
+ 
++#ifndef CPP_SPEC
+ #define CPP_SPEC "%(subtarget_cpp_spec)"
++#endif
+ 
+ /* This macro defines names of additional specifications to put in the specs
+    that can be used in various specifications like CC1_SPEC.  Its definition

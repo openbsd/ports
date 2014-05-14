@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/30 19:30:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2014/05/14 09:32:55 tobiasu Exp $
 
-ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
+BROKEN-mips64 = ld: not enough GOT space for local GOT entries
+BROKEN-mips64el = ld: not enough GOT space for local GOT entries
+
+ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64 mips64 mips64el
 DPB_PROPERTIES = parallel
 
 V = 4.8.2
