@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/05/14 10:06:20 sthen Exp $
+--- Makefile.orig	Wed May 14 10:35:50 2014
++++ Makefile	Wed May 14 10:35:54 2014
+@@ -14,8 +14,6 @@ LDFLAGS=
+ 
+ all: grepcidr
+ 
+-grepcidr: grepcidr.o
+-
+ doc: grepcidr.1
+ 
+ grepcidr.1: grepcidr.sgml

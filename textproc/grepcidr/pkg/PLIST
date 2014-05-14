@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/14 10:06:20 sthen Exp $
+@bin bin/grepcidr
+@man man/man1/grepcidr.1
