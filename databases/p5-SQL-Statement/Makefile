@@ -1,17 +1,22 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/05/14 14:23:43 afresh1 Exp $
 
-COMMENT=	sql parsing and processing
+COMMENT =	sql parsing and processing
 
-MODULES=	cpan
-DISTNAME=	SQL-Statement-1.33
-CATEGORIES=	databases
+MODULES =	cpan
+DISTNAME =	SQL-Statement-1.405
+CATEGORIES =	databases
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
-# perl
-PERMIT_PACKAGE_CDROM=   Yes
+# perl_5
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Clone>=0.30 \
+RUN_DEPENDS =	devel/p5-Clone>=0.30 \
 		devel/p5-Params-Util>=1.00
 
+# Optional depends to avoid skipping tests
+TEST_DEPENDS +=	devel/p5-Test-Pod>=1.00 \
+		devel/p5-Test-Pod-Coverage>=1.00
+
 .include <bsd.port.mk>
+
