@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.107 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2014/05/14 07:04:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
-GNOME_VERSION=	3.12.0
-REVISION=	0
+GNOME_VERSION=	3.12.2
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,11 +23,11 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
+MODGNOME_TOOLS=	docbook
+
 LIB_DEPENDS=	x11/gnome/gcr
 
 CONFIGURE_ARGS=	--disable-pam
-
-CONFIGURE_ENV=	ac_cv_path_XSLTPROC=
 
 FAKE_FLAGS=	configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
