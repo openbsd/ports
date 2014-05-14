@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/01 16:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/05/14 13:30:30 ajacoutot Exp $
 
 COMMENT=	C++ bindings for GStreamer
 
@@ -32,6 +32,6 @@ BUILD_DEPENDS += x11/gtk3mm
 CONFIGURE_STYLE=	gnu
 
 post-install:
-	# post-install: do nothing to override Makefile.inc
+	# does nothing (overrides Makefile.inc)
 
 .include <bsd.port.mk>
