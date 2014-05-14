@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/05/10 22:15:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2014/05/14 10:32:20 sthen Exp $
 
 V =			1.11.3
 
@@ -8,6 +8,7 @@ COMMENT-ido =		store Icinga configuration and events in a database
 
 DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
+REVISION-main =		0
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
 

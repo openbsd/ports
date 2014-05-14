@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.17 2014/03/29 12:07:01 sthen Exp $
+$OpenBSD: README-main,v 1.18 2014/05/14 10:32:21 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -63,8 +63,8 @@ the icinga-cgi package, some files will need to be moved inside the
 jail and symbolic links created.
 
    mkdir -p ${PREFIX-cgi}/etc ${PREFIX-cgi}/var/log
-   mv ${SYSCONFDIR}/icinga ${PREFIX-cgi}/etc/
-   ln -s ${PREFIX-cgi}/etc/icinga ${SYSCONFDIR}
+   mv ${SYSCONFDIR} ${PREFIX-cgi}/etc/
+   ln -s ${PREFIX-cgi}/etc/icinga ${BASESYSCONFDIR}
    mv /var/icinga ${PREFIX-cgi}/var/
    ln -s ${PREFIX-cgi}/var/icinga /var
    mv /var/log/icinga ${PREFIX-cgi}/var/log/
