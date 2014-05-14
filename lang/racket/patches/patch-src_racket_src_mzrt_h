@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_racket_src_mzrt_h,v 1.1 2014/05/14 17:51:40 juanfra Exp $
+
+It's needed for platforms without atomic CAS.
+
+https://github.com/plt/racket/commit/bc871b904e6c2dc8ea74327774685c909bf3506e
+
+--- src/racket/src/mzrt.h.orig	Thu Apr 17 21:58:42 2014
++++ src/racket/src/mzrt.h	Fri May  9 01:28:33 2014
+@@ -90,6 +90,8 @@ int mzrt_sema_destroy(mzrt_sema *sema);
+ # pragma clang diagnostic ignored "-Wunused-function"
+ #endif
+ 
++#if defined(MZ_USE_PLACES) || defined(MZ_USE_FUTURES)
++
+ #define mz_CAS_T uintptr_t
+ #ifdef SIXTY_FOUR_BIT_INTEGERS
+ # define mz_CAS_64
+@@ -130,6 +132,13 @@ static MZ_INLINE void mzrt_ensure_max_cas(uintptr_t *a
+ #ifdef __clang__
+ # pragma clang diagnostic pop
+ #endif
++
++/* end defined(MZ_USE_PLACES) || defined(MZ_USE_FUTURES) */
++#endif
++
++/****************************************************************/
++
++/* end MZ_USE_MZRT */
+ 
+ #endif
+ 

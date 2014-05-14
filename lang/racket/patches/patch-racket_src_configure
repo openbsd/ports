@@ -1,7 +1,35 @@
-$OpenBSD: patch-racket_src_configure,v 1.1 2014/04/09 03:34:48 juanfra Exp $
---- src/configure.orig	Sat Jan 11 19:20:47 2014
-+++ src/configure	Sun Jan 26 02:08:24 2014
-@@ -9164,7 +9164,7 @@ if test "${enable_shared}" = "yes" ; then
+$OpenBSD: patch-racket_src_configure,v 1.2 2014/05/14 17:51:40 juanfra Exp $
+
+"enable pthreads by default, but don't force enabled" (needed for platforms
+without CAS)
+
+https://github.com/plt/racket/commit/2ff4802a14b7b03c80d0caee785f5b3699c3a01e
+
+--- src/configure.orig	Thu Apr 17 21:58:55 2014
++++ src/configure	Fri May  9 01:24:28 2014
+@@ -4442,7 +4442,7 @@ case "$host_os" in
+     ;;
+   openbsd*)
+     LIBS="$LIBS -Wl,--export-dynamic"
+-    enable_pthread=yes
++    enable_pthread_by_default=yes
+     try_kqueue_syscall=yes
+     ;;
+   dragonfly*)
+@@ -6215,6 +6215,12 @@ fi
+ 
+ ############### pthread ###################
+ 
++if test "${enable_pthread}" = "" ; then
++  if test "${enable_pthread_by_default}" = "yes" ; then
++    enable_pthread=yes
++  fi
++fi
++
+ if test "${enable_pthread}" = "yes" ; then
+   if test "${use_flag_pthread}" = "yes" ; then
+     PREFLAGS="$PREFLAGS -pthread"
+@@ -6492,7 +6498,7 @@ if test "${enable_shared}" = "yes" ; then
      plt_lib_version=`grep " MZSCHEME_VERSION " ${srcdir}/racket/src/schvers.h | cut -d '"' -f 2`
    fi
  
