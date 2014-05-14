@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/01 14:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/05/14 13:32:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -6,9 +6,8 @@ SHARED_ONLY=   	Yes
 
 COMMENT=	GTK+2 subtitles editor
 
-V=		0.40.0
+V=		0.41.0
 DISTNAME=	subtitleeditor-${V}
-REVISION=	7
 
 CATEGORIES=	graphics editors
 
@@ -27,30 +26,35 @@ WANTLIB += gobject-2.0 graphite2 gstaudio-0.10 gstbase-0.10 gstcdda-0.10
 WANTLIB += gstcontroller-0.10 gstdataprotocol-0.10 gstinterfaces-0.10
 WANTLIB += gstnet-0.10 gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gstreamermm-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz m
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz m orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
-WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z orc-0.4
+WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
 
 MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
 
 BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		devel/iso-codes
+
 LIB_DEPENDS=	textproc/enchant \
 		multimedia/gstreamer-0.10/mm \
 		multimedia/gstreamer-0.10/plugins-base \
 		x11/gtk2mm
+
 RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		devel/iso-codes \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
-MODULES+=	devel/gettext \
+MODULES=	devel/gettext \
 		textproc/intltool
 
+MODULES +=	gcc4
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
+
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -59,8 +63,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-default-video-sink=autovideosink \
 		--with-default-audio-sink=autoaudiosink \
-		--enable-ccache=no \
-		--enable-gl=no
+		--enable-ccache=no
 
 post-install:
 	rm ${PREFIX}/lib/subtitleeditor/plugins/*/*.{a,la}

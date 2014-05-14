@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/04/01 14:52:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/05/14 13:32:24 ajacoutot Exp $
 @bin bin/subtitleeditor
 lib/libsubtitleeditor.a
 lib/libsubtitleeditor.la
@@ -9,7 +9,9 @@ lib/subtitleeditor/plugins/actions/
 lib/subtitleeditor/plugins/actions/libabout.so
 lib/subtitleeditor/plugins/actions/libadjusttime.so
 lib/subtitleeditor/plugins/actions/libapplytranslation.so
+lib/subtitleeditor/plugins/actions/libbestfit.so
 lib/subtitleeditor/plugins/actions/libchangeframerate.so
+lib/subtitleeditor/plugins/actions/libclipboard.so
 lib/subtitleeditor/plugins/actions/libcombinesubtitles.so
 lib/subtitleeditor/plugins/actions/libcommand.so
 lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.so
@@ -27,6 +29,7 @@ lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
 lib/subtitleeditor/plugins/actions/libitalicize.so
 lib/subtitleeditor/plugins/actions/libjoindocument.so
 lib/subtitleeditor/plugins/actions/libkeyframesmanagement.so
+lib/subtitleeditor/plugins/actions/libminimizeduration.so
 lib/subtitleeditor/plugins/actions/libmoveafterprecedingsubtitle.so
 lib/subtitleeditor/plugins/actions/libmovesubtitles.so
 lib/subtitleeditor/plugins/actions/libplaintext.so
@@ -39,6 +42,7 @@ lib/subtitleeditor/plugins/actions/libsortsubtitles.so
 lib/subtitleeditor/plugins/actions/libspellchecking.so
 lib/subtitleeditor/plugins/actions/libsplitdocument.so
 lib/subtitleeditor/plugins/actions/libsplitsubtitle.so
+lib/subtitleeditor/plugins/actions/libstacksubtitles.so
 lib/subtitleeditor/plugins/actions/libstyleeditor.so
 lib/subtitleeditor/plugins/actions/libtextcorrection.so
 lib/subtitleeditor/plugins/actions/libtimemodemanagement.so
@@ -56,6 +60,7 @@ lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.so
 lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.so
 lib/subtitleeditor/plugins/subtitleformats/libmpl2.so
 lib/subtitleeditor/plugins/subtitleformats/libmpsub.so
+lib/subtitleeditor/plugins/subtitleformats/libplaintextformat.so
 lib/subtitleeditor/plugins/subtitleformats/libsami.so
 lib/subtitleeditor/plugins/subtitleformats/libsbv.so
 lib/subtitleeditor/plugins/subtitleformats/libsprucestl.so
@@ -106,7 +111,9 @@ share/subtitleeditor/plugins-description/actions/
 share/subtitleeditor/plugins-description/actions/about.se-plugin
 share/subtitleeditor/plugins-description/actions/adjusttime.se-plugin
 share/subtitleeditor/plugins-description/actions/applytranslation.se-plugin
+share/subtitleeditor/plugins-description/actions/bestfit.se-plugin
 share/subtitleeditor/plugins-description/actions/changeframerate.se-plugin
+share/subtitleeditor/plugins-description/actions/clipboard.se-plugin
 share/subtitleeditor/plugins-description/actions/combinesubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/command.se-plugin
 share/subtitleeditor/plugins-description/actions/configurekeyboardshortcuts.se-plugin
@@ -124,6 +131,7 @@ share/subtitleeditor/plugins-description/actions/insertsubtitlefromkeyframe.se-p
 share/subtitleeditor/plugins-description/actions/italicize.se-plugin
 share/subtitleeditor/plugins-description/actions/joindocument.se-plugin
 share/subtitleeditor/plugins-description/actions/keyframesmanagement.se-plugin
+share/subtitleeditor/plugins-description/actions/minimizeduration.se-plugin
 share/subtitleeditor/plugins-description/actions/moveafterprecedingsubtitle.se-plugin
 share/subtitleeditor/plugins-description/actions/movesubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/plaintext.se-plugin
@@ -136,6 +144,7 @@ share/subtitleeditor/plugins-description/actions/sortsubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/spellchecking.se-plugin
 share/subtitleeditor/plugins-description/actions/splitdocument.se-plugin
 share/subtitleeditor/plugins-description/actions/splitsubtitle.se-plugin
+share/subtitleeditor/plugins-description/actions/stacksubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/styleeditor.se-plugin
 share/subtitleeditor/plugins-description/actions/textcorrection.se-plugin
 share/subtitleeditor/plugins-description/actions/timemodemanagement.se-plugin
@@ -153,6 +162,7 @@ share/subtitleeditor/plugins-description/subtitleformats/dcsubtitle.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/microdvd.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/mpl2.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/mpsub.se-plugin
+share/subtitleeditor/plugins-description/subtitleformats/plaintextformat.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/sami.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/sbv.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/sprucestl.se-plugin
@@ -164,11 +174,12 @@ share/subtitleeditor/plugins-description/subtitleformats/timedtextauthoringforma
 share/subtitleeditor/plugins-share/
 share/subtitleeditor/plugins-share/advancedsubstationalpha/
 share/subtitleeditor/plugins-share/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
-share/subtitleeditor/plugins-share/bitc/
 share/subtitleeditor/plugins-share/changeframerate/
 share/subtitleeditor/plugins-share/changeframerate/dialog-change-framerate.ui
 share/subtitleeditor/plugins-share/configurekeyboardshortcuts/
 share/subtitleeditor/plugins-share/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui
+share/subtitleeditor/plugins-share/dialoguize/
+share/subtitleeditor/plugins-share/dialoguize/dialog-dialoguize-preferences.ui
 share/subtitleeditor/plugins-share/errorchecking/
 share/subtitleeditor/plugins-share/errorchecking/dialog-error-checking-preferences.ui
 share/subtitleeditor/plugins-share/errorchecking/dialog-error-checking.ui
