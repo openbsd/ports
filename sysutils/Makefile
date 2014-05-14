@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.314 2014/05/10 11:21:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.315 2014/05/14 09:58:12 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -207,6 +207,7 @@
      SUBDIR += stow
      SUBDIR += stress
      SUBDIR += superscript
+     SUBDIR += supervisor
      SUBDIR += supuner
      SUBDIR += symon
      SUBDIR += sysgen
