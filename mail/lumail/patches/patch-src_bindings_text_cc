@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bindings_text_cc,v 1.1 2014/05/15 01:29:52 jturner Exp $
+--- src/bindings_text.cc.orig	Wed May 14 21:01:56 2014
++++ src/bindings_text.cc	Wed May 14 21:02:01 2014
+@@ -19,7 +19,7 @@
+ 
+ 
+ #include <algorithm>
+-#include <cursesw.h>
++#include <curses.h>
+ #include <cstdlib>
+ #include <pcrecpp.h>
+ #include <stdio.h>
