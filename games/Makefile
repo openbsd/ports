@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.285 2014/04/18 15:15:13 pascal Exp $
+# $OpenBSD: Makefile,v 1.286 2014/05/15 12:16:22 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -84,6 +84,7 @@
      SUBDIR += frogatto
      SUBDIR += frotz
      SUBDIR += frozen-bubble
+     SUBDIR += galois
      SUBDIR += gamine
      SUBDIR += garden
      SUBDIR += gargoyle
