@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.18 2014/05/15 10:47:54 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.19 2014/05/15 20:17:16 jasper Exp $
 
 (PUP-660) Implement feature :upgradeable for OpenBSD package provider.
 https://github.com/puppetlabs/puppet/pull/2558
@@ -8,8 +8,8 @@ From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Tue, 22 Apr 2014 00:40:25 +0200
 Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_options given
 
---- lib/puppet/provider/package/openbsd.rb.orig	Wed Apr 16 01:06:55 2014
-+++ lib/puppet/provider/package/openbsd.rb	Mon May  5 16:14:08 2014
+--- lib/puppet/provider/package/openbsd.rb.orig	Thu May 15 01:10:29 2014
++++ lib/puppet/provider/package/openbsd.rb	Thu May 15 21:07:14 2014
 @@ -4,7 +4,9 @@ require 'puppet/provider/package'
  Puppet::Type.type(:package).provide :openbsd, :parent => Puppet::Provider::Package do
    desc "OpenBSD's form of `pkg_add` support."
@@ -137,7 +137,7 @@ Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_opt
        master_version = 0
        version = -1
  
-@@ -166,7 +237,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -142,7 +213,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def uninstall

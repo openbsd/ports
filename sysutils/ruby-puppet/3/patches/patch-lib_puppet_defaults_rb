@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.8 2014/04/17 13:55:00 jasper Exp $
---- lib/puppet/defaults.rb.orig	Fri Apr 11 01:06:49 2014
-+++ lib/puppet/defaults.rb	Tue Apr 15 10:19:21 2014
-@@ -857,11 +857,11 @@ EOT
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.9 2014/05/15 20:17:16 jasper Exp $
+--- lib/puppet/defaults.rb.orig	Thu May 15 01:10:29 2014
++++ lib/puppet/defaults.rb	Thu May 15 21:07:14 2014
+@@ -885,11 +885,11 @@ EOT
  
    define_settings(:master,
      :user => {
@@ -15,12 +15,12 @@ $OpenBSD: patch-lib_puppet_defaults_rb,v 1.8 2014/04/17 13:55:00 jasper Exp $
        :desc       => "The group puppet master should run as.",
      },
      :manifestdir => {
-@@ -936,7 +936,7 @@ EOT
+@@ -972,7 +972,7 @@ EOT
        :desc       => "Whether the master should function as a certificate authority.",
      },
      :basemodulepath => {
 -      :default => "$confdir/modules#{File::PATH_SEPARATOR}/usr/share/puppet/modules",
 +      :default => "$confdir/modules#{File::PATH_SEPARATOR}${TRUEPREFIX}/share/puppet/modules",
        :type => :path,
-       :desc => "The base non-environment specific search path for modules, included
-       also in all directory environment and default legacy environment modulepaths.",
+       :desc => "The search path for **global** modules. Should be specified as a
+         list of directories separated by the system path separator character. (The

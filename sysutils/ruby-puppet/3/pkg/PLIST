@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/04/17 14:04:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/05/15 20:17:17 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -199,6 +199,10 @@ ${MODRUBY_SITEDIR}/puppet/forge.rb
 ${MODRUBY_SITEDIR}/puppet/forge/cache.rb
 ${MODRUBY_SITEDIR}/puppet/forge/errors.rb
 ${MODRUBY_SITEDIR}/puppet/forge/repository.rb
+${MODRUBY_SITEDIR}/puppet/functions/
+${MODRUBY_SITEDIR}/puppet/functions.rb
+${MODRUBY_SITEDIR}/puppet/functions/assert_type.rb
+${MODRUBY_SITEDIR}/puppet/functions/import.rb
 ${MODRUBY_SITEDIR}/puppet/graph/
 ${MODRUBY_SITEDIR}/puppet/graph.rb
 ${MODRUBY_SITEDIR}/puppet/graph/key.rb
@@ -354,6 +358,7 @@ ${MODRUBY_SITEDIR}/puppet/interface/face_collection.rb
 ${MODRUBY_SITEDIR}/puppet/interface/option.rb
 ${MODRUBY_SITEDIR}/puppet/interface/option_builder.rb
 ${MODRUBY_SITEDIR}/puppet/interface/option_manager.rb
+${MODRUBY_SITEDIR}/puppet/loaders.rb
 ${MODRUBY_SITEDIR}/puppet/metatype/
 ${MODRUBY_SITEDIR}/puppet/metatype/manager.rb
 ${MODRUBY_SITEDIR}/puppet/module.rb
@@ -364,7 +369,6 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/applications.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/application.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/builder.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/checksummer.rb
-${MODRUBY_SITEDIR}/puppet/module_tool/applications/generator.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/installer.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/searcher.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/uninstaller.rb
@@ -381,18 +385,22 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/errors/shared.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/errors/uninstaller.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/errors/upgrader.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/install_directory.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/installed_modules.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/local_tarball.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/metadata.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/modulefile.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/shared_behaviors.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/
-${MODRUBY_SITEDIR}/puppet/module_tool/skeleton.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/
-${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/Modulefile.erb
-${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/README.erb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/README.md.erb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/Rakefile
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/manifests/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/manifests/init.pp.erb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/metadata.json.erb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/classes/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/classes/init_spec.rb.erb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/spec_helper.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/init.pp.erb
@@ -400,7 +408,6 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/tar/
 ${MODRUBY_SITEDIR}/puppet/module_tool/tar.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/tar/gnu.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/tar/mini.rb
-${MODRUBY_SITEDIR}/puppet/module_tool/tar/solaris.rb
 ${MODRUBY_SITEDIR}/puppet/network/
 ${MODRUBY_SITEDIR}/puppet/network.rb
 ${MODRUBY_SITEDIR}/puppet/network/auth_config_parser.rb
@@ -587,6 +594,7 @@ ${MODRUBY_SITEDIR}/puppet/pops/binder/system_bindings.rb
 ${MODRUBY_SITEDIR}/puppet/pops/containment.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/access_operator.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/callable_signature.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/closure.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/compare_operator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/epp_evaluator.rb
@@ -594,9 +602,27 @@ ${MODRUBY_SITEDIR}/puppet/pops/evaluator/evaluator_impl.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/external_syntax_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/relationship_operator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/runtime3_support.rb
+${MODRUBY_SITEDIR}/puppet/pops/functions/
+${MODRUBY_SITEDIR}/puppet/pops/functions/dispatch.rb
+${MODRUBY_SITEDIR}/puppet/pops/functions/dispatcher.rb
+${MODRUBY_SITEDIR}/puppet/pops/functions/function.rb
 ${MODRUBY_SITEDIR}/puppet/pops/issue_reporter.rb
 ${MODRUBY_SITEDIR}/puppet/pops/issues.rb
 ${MODRUBY_SITEDIR}/puppet/pops/label_provider.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/
+${MODRUBY_SITEDIR}/puppet/pops/loader/base_loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/dependency_loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/gem_support.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/loader_paths.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/module_loaders.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/null_loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/ruby_function_instantiator.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/ruby_legacy_function_instantiator.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/simple_environment_loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/static_loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/uri_helper.rb
+${MODRUBY_SITEDIR}/puppet/pops/loaders.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/
 ${MODRUBY_SITEDIR}/puppet/pops/model/ast_transformer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/ast_tree_dumper.rb
@@ -623,6 +649,7 @@ ${MODRUBY_SITEDIR}/puppet/pops/parser/makefile
 ${MODRUBY_SITEDIR}/puppet/pops/parser/parser_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/slurp_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/patterns.rb
+${MODRUBY_SITEDIR}/puppet/pops/semantic_error.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/
 ${MODRUBY_SITEDIR}/puppet/pops/types/class_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/enumeration.rb
@@ -847,6 +874,7 @@ ${MODRUBY_SITEDIR}/puppet/settings/config_file.rb
 ${MODRUBY_SITEDIR}/puppet/settings/directory_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/duration_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/enum_setting.rb
+${MODRUBY_SITEDIR}/puppet/settings/environment_conf.rb
 ${MODRUBY_SITEDIR}/puppet/settings/errors.rb
 ${MODRUBY_SITEDIR}/puppet/settings/file_or_directory_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/file_setting.rb
@@ -855,6 +883,7 @@ ${MODRUBY_SITEDIR}/puppet/settings/path_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/priority_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/string_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/terminus_setting.rb
+${MODRUBY_SITEDIR}/puppet/settings/ttl_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/value_translator.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/
 ${MODRUBY_SITEDIR}/puppet/ssl.rb
@@ -1101,6 +1130,7 @@ ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
 ${MODRUBY_SITEDIR}/puppet/vendor/
 ${MODRUBY_SITEDIR}/puppet/vendor.rb
 ${MODRUBY_SITEDIR}/puppet/vendor/load_safe_yaml.rb
+${MODRUBY_SITEDIR}/puppet/vendor/load_semantic.rb
 ${MODRUBY_SITEDIR}/puppet/vendor/require_vendored.rb
 ${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/
 ${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/CHANGES.md
@@ -1152,6 +1182,34 @@ ${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/to_float_spec.rb
 ${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/to_integer_spec.rb
 ${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/to_symbol_spec.rb
 ${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml_patches.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/Gemfile
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/Rakefile
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/dependency/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/dependency.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/dependency/graph.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/dependency/graph_node.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/dependency/module_release.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/dependency/source.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/dependency/unsatisfiable_graph.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/version.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/lib/semantic/version_range.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/spec_helper.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/dependency/
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/dependency/graph_node_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/dependency/graph_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/dependency/module_release_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/dependency/source_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/dependency/unsatisfiable_graph_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/dependency_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/version_range_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/version_spec.rb
 ${MODRUBY_SITEDIR}/puppet/version.rb
 ${MODRUBY_SITEDIR}/puppetx/
 ${MODRUBY_SITEDIR}/puppetx.rb
