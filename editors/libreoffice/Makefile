@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/05/15 08:52:19 robert Exp $
+# $OpenBSD: Makefile,v 1.112 2014/05/15 16:21:19 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,6 +16,9 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
+
+REVISION-main=	0
+REVISION-kde=	0
 
 EPOCH=		0
 
@@ -129,14 +132,12 @@ BUILD_DEPENDS+=	archivers/zip \
 		archivers/unzip \
 		archivers/gtar \
 		databases/db/v4 \
-		databases/openldap \
 		devel/bison \
 		devel/gpatch \
 		devel/gperf \
 		devel/libexecinfo \
 		shells/bash \
 		archivers/p5-Archive-Zip \
-		boost->=1.41.0:devel/boost \
 		misc/findutils \
 		security/nss \
 		sysutils/coreutils \
@@ -161,6 +162,8 @@ MODPY_VERSION=	3.3
 
 LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
+		boost->=1.41.0:devel/boost \
+		databases/openldap \
 		databases/postgresql \
 		graphics/lcms2 \
 		${MODGCC4_CPPLIBDEP} \
@@ -168,15 +171,15 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/raptor \
 		net/curl \
 		net/neon \
+		print/poppler \
 		textproc/icu4c \
 		textproc/redland \
-		textproc/hunspell \
-		print/poppler
+		textproc/hunspell
 
 WANTLIB-main=	estdc++ gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		xslt>=3 curl>=7 neon>=24 pq>=2 \
 		icuuc>=0 icui18n icule \
-		rdf>=0 poppler
+		rdf>=0
 WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
@@ -191,6 +194,9 @@ WANTLIB-main+=	Xt clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt gcrypt gpg-error icudata lcms2
 WANTLIB-main+=	nspr4 nss3 plc4 plds4 smime3 softokn3 ssl3
 WANTLIB-main+=	png raptor2
+WANTLIB-main+=	boost_date_time-mt boost_system
+WANTLIB-main+=	lber ldap
+WANTLIB-main+=	poppler
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -207,7 +213,8 @@ LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 WANTLIB-kde=		${MODQT_WANTLIB} \
 			X11 c estdc++ m pthread \
 			lib/kde3/kdecore \
-			lib/kde3/kdeui lib/kde3/kio
+			lib/kde3/kdeui lib/kde3/kio \
+			lib/kde3/kabc
 WANTLIB-kde+=		ICE SM Xext icule icuuc
 WANTLIB-kde+=		Xrender
 
