@@ -1,21 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/15 12:15:42 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/15 15:26:48 bcallah Exp $
 @bin bin/galois
 @man man/man6/galois.6
 share/applications/galois.desktop
-share/gnome/
-share/gnome/help/
-share/gnome/help/galois/
-share/gnome/help/galois/C/
-share/gnome/help/galois/C/fdl-1.3.xml
-share/gnome/help/galois/C/figure1.png
-share/gnome/help/galois/C/figure2.png
-share/gnome/help/galois/C/figure3.png
-share/gnome/help/galois/C/galois.html
-share/gnome/help/galois/C/galois.xml
-share/gnome/help/galois/C/gpl.dbk
-share/omf/
-share/omf/galois/
-share/omf/galois/galois-C.omf
 share/pixmaps/
 share/pixmaps/galois.png
 @exec %D/bin/update-desktop-database

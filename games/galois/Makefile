@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/15 12:15:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/15 15:26:48 bcallah Exp $
 
 COMMENT =	free multi-dimensional Tetris-like game
 DISTNAME =	galois-0.3
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.nongnu.org/galois/
@@ -37,10 +38,6 @@ NO_TEST =	Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/galois ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/galois.6 ${PREFIX}/man/man6
-	${INSTALL_DATA_DIR} ${PREFIX}/share/gnome/help/galois/C
-	${INSTALL_DATA} ${WRKSRC}/doc/*.{xml,png,html,dbk} ${PREFIX}/share/gnome/help/galois/C
-	${INSTALL_DATA_DIR} ${PREFIX}/share/omf/galois
-	${INSTALL_DATA} ${WRKSRC}/doc/galois-C.omf ${PREFIX}/share/omf/galois
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/misc/galois.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
