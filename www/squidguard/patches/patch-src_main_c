@@ -1,10 +1,9 @@
-$OpenBSD: patch-src_main_c,v 1.1 2014/04/25 16:35:42 sthen Exp $
+--- src/main.c.orig	Sat Aug 30 12:27:41 2008
++++ src/main.c	Thu May 15 16:32:39 2014
 
 Fix broken use of the old squid-2.5 helper protocol, see
 http://bugs.squid-cache.org/show_bug.cgi?id=3978#c3
 
---- src/main.c.orig	Fri Apr 25 17:24:54 2014
-+++ src/main.c	Fri Apr 25 17:28:06 2014
 @@ -175,7 +175,7 @@ int main(argc, argv, envp)
  	sgReloadConfig();
        }
@@ -40,10 +39,13 @@ http://bugs.squid-cache.org/show_bug.cgi?id=3978#c3
  		break;
  	      }
  	  } else {
-@@ -218,6 +218,10 @@ int main(argc, argv, envp)
- 	    fprintf(stdout,"%s %s/%s %s %s\n",redirect,squidInfo.src,
- 		    squidInfo.srcDomain,squidInfo.ident,
- 		    squidInfo.method);
+@@ -215,9 +215,10 @@ int main(argc, argv, envp)
+ 	      squidInfo.ident[0] = '-';
+ 	      squidInfo.ident[1] = '\0';
+ 	    }
+-	    fprintf(stdout,"%s %s/%s %s %s\n",redirect,squidInfo.src,
+-		    squidInfo.srcDomain,squidInfo.ident,
+-		    squidInfo.method);
 +	    if (isdigit(redirect[0]) && isdigit(redirect[1]) && isdigit(redirect[2]) && redirect[3]==':') {
 +	      fprintf(stdout,"OK status=%c%c%c url=\"%s\"\n", redirect[0], redirect[1], redirect[2], &redirect[4]);
 +	    } else
