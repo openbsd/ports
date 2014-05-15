@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2014/05/14 07:02:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2014/05/15 09:08:31 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -28,7 +28,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
-MODGNOME_TOOLS += 	desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala yelp
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/seahorse
 
