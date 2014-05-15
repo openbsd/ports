@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pt-br,v 1.14 2013/11/12 07:57:23 robert Exp $
+@comment $OpenBSD: PLIST-i18n-pt-br,v 1.15 2014/05/15 08:52:19 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/abppt-BR.res
 lib/libreoffice/program/resource/accpt-BR.res
@@ -343,6 +343,7 @@ lib/libreoffice/share/extensions/dict-pt-PT/README_th_pt_PT_v2.txt
 lib/libreoffice/share/extensions/dict-pt-PT/description.xml
 lib/libreoffice/share/extensions/dict-pt-PT/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-pt-PT/hyph_pt_PT.dic
+lib/libreoffice/share/extensions/dict-pt-PT/icon.png
 lib/libreoffice/share/extensions/dict-pt-PT/pt_PT.aff
 lib/libreoffice/share/extensions/dict-pt-PT/pt_PT.dic
 lib/libreoffice/share/extensions/dict-pt-PT/th_pt_PT_v2.dat
