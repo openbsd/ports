@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/11 21:14:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/05/15 22:00:13 sthen Exp $
 
 COMMENT =		crypto and ssl toolkit for python
 
@@ -25,8 +25,8 @@ MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		devel/swig
 
 # XXX don't allow the build to "succeed" unless the module is usable;
-# M2Crypto has problems with api changes in libressl
+# M2Crypto has had problems with api changes in libressl
 post-build:
-	${MODPY_TEST_TARGET} --test-suite=tests.test_rand
+	${MODPY_TEST_TARGET} --test-suite=tests.test_ssl_offline
 
 .include <bsd.port.mk>
