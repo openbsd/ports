@@ -1,10 +1,10 @@
-$OpenBSD: patch-etc_snort_conf,v 1.10 2013/08/21 02:28:43 lteo Exp $
+$OpenBSD: patch-etc_snort_conf,v 1.11 2014/05/15 20:11:43 lteo Exp $
 
 reputation preprocessor disabled, still experimental
 
---- etc/snort.conf.orig	Tue Jul 23 14:37:33 2013
-+++ etc/snort.conf	Mon Aug  5 14:38:56 2013
-@@ -101,17 +101,17 @@ ipvar AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.1
+--- etc/snort.conf.orig	Thu Apr  3 23:25:10 2014
++++ etc/snort.conf	Mon May  5 19:42:27 2014
+@@ -101,13 +101,13 @@ ipvar AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.1
  # Path to your rules files (this can be a relative path)
  # Note for Windows users:  You are advised to make this an absolute path,
  # such as:  c:\snort\rules
@@ -16,10 +16,6 @@ reputation preprocessor disabled, still experimental
 +var PREPROC_RULE_PATH ${SYSCONFDIR}/snort/preproc_rules
  
  # If you are using reputation preprocessor set these
- # Currently there is a bug with relative paths, they are relative to where snort is
- # not relative to snort.conf like the above variables
- # This is completely inconsistent with how other vars work, BUG 89986
- # Set the absolute path appropriately
 -var WHITE_LIST_PATH ../rules
 -var BLACK_LIST_PATH ../rules
 +var WHITE_LIST_PATH ${SYSCONFDIR}/snort/rules
@@ -27,7 +23,7 @@ reputation preprocessor disabled, still experimental
  
  ###################################################
  # Step #2: Configure the decoder.  For more information, see README.decode
-@@ -158,6 +158,7 @@ config checksum_mode: all
+@@ -154,6 +154,7 @@ config checksum_mode: all
  #
  # config daq: <type>
  # config daq_dir: <dir>
@@ -35,7 +31,7 @@ reputation preprocessor disabled, still experimental
  # config daq_mode: <mode>
  # config daq_var: <var>
  #
-@@ -503,12 +504,12 @@ preprocessor dnp3: ports { 20000 } \
+@@ -499,12 +500,12 @@ preprocessor dnp3: ports { 20000 } \
     check_crc
  
  # Reputation preprocessor. For more information see README.reputation
@@ -54,7 +50,7 @@ reputation preprocessor disabled, still experimental
  
  ###################################################
  # Step #6: Configure output plugins
-@@ -542,8 +543,9 @@ include reference.config
+@@ -538,8 +539,9 @@ include reference.config
  ###################################################
  
  # site specific rules
@@ -65,7 +61,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/app-detect.rules
  include $RULE_PATH/attack-responses.rules
  include $RULE_PATH/backdoor.rules
-@@ -659,6 +661,9 @@ include $RULE_PATH/web-iis.rules
+@@ -655,6 +657,9 @@ include $RULE_PATH/web-iis.rules
  include $RULE_PATH/web-misc.rules
  include $RULE_PATH/web-php.rules
  include $RULE_PATH/x11.rules
