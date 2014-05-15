@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2014/05/10 22:24:33 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2014/05/15 21:24:33 sthen Exp $
 
 MULTI_PACKAGES=	-main
 # -ntlm may come back with samba 4
@@ -67,13 +67,17 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
 		--with-openssl \
-		--enable-storeio="aufs ufs diskd rock" \
+		--enable-storeio="aufs ufs diskd" \
 		--with-default-user="_squid" \
 		--with-filedescriptors=8192 \
 		--with-krb5-config=no \
 		--with-pidfile="/var/run/squid.pid" \
 		--with-pthreads \
 		--with-swapdir="${LOCALSTATEDIR}/cache"
+
+# "rock" not in --enable-storeio list due to an error at startup:
+# FATAL: Rock cache_dir at /var/squid/rock/rock failed to open db file: (40) Message too long"
+
 # PF transparent support requires access to /dev/pf to retrieve the original
 # source address; ipfw-transparent (which requires divert-to) uses an
 # unprivileged getsockname() call instead.
