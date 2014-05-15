@@ -1,0 +1,46 @@
+$OpenBSD: patch-libmpdemux_demux_real_c,v 1.5 2014/05/15 20:01:38 espie Exp $
+--- libmpdemux/demux_real.c.orig	Mon Jan  6 23:03:23 2014
++++ libmpdemux/demux_real.c	Wed May 14 17:50:47 2014
+@@ -1749,15 +1749,39 @@ header_end:
+     // detect streams:
+     if(demuxer->video->id==-1 && v_streams>0){
+ 	// find the valid video stream:
+-	if(!ds_fill_buffer(demuxer->video)){
+-          mp_msg(MSGT_DEMUXER,MSGL_INFO,"RM: " MSGTR_MissingVideoStream);
+-	}
++	ds_fill_buffer(demuxer->video);
+     }
+     if(demuxer->audio->id==-1 && a_streams>0){
+ 	// find the valid audio stream:
+ 	if(!ds_fill_buffer(demuxer->audio)){
+           mp_msg(MSGT_DEMUXER,MSGL_INFO,"RM: " MSGTR_MissingAudioStream);
+ 	}
++    }
++    if(demuxer->video->id==-1 && v_streams>0){
++	// try video once more in case there were too many audio packets first.
++	demuxer->video->eof = 0;
++	demuxer->video->fill_count = 0;
++	if(!ds_fill_buffer(demuxer->video)){
++          mp_msg(MSGT_DEMUXER,MSGL_INFO,"RM: " MSGTR_MissingVideoStream);
++	}
++    }
++    if(demuxer->video->id==-1 && v_streams>0){
++        // worst case just select the first
++        int i;
++        for (i = 0; i < MAX_V_STREAMS; i++)
++            if (demuxer->v_streams[i]) {
++                demuxer->video->id = i;
++                demuxer->video->sh = demuxer->v_streams[i];
++            }
++    }
++    if(demuxer->audio->id==-1 && a_streams>0){
++        // worst case just select the first
++        int i;
++        for (i = 0; i < MAX_A_STREAMS; i++)
++            if (demuxer->a_streams[i]) {
++                demuxer->audio->id = i;
++                demuxer->audio->sh = demuxer->a_streams[i];
++            }
+     }
+ 
+     if(demuxer->video->sh){
