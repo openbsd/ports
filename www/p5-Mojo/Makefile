@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/21 20:49:41 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2014/05/15 22:30:08 bluhm Exp $
 
 COMMENT =	next generation web framework
 
 MODULES =	cpan
-DISTNAME =	Mojolicious-4.66
+DISTNAME =	Mojolicious-4.99
 CATEGORIES =	www
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
@@ -16,8 +16,8 @@ HOMEPAGE =	http://mojolicio.us/
 CPAN_AUTHOR =	SRI
 
 RUN_DEPENDS =	devel/p5-EV \
-		net/p5-IO-Socket-IP \
-		security/p5-IO-Socket-SSL
+		net/p5-IO-Socket-IP>=0.20 \
+		security/p5-IO-Socket-SSL>=1.84
 
 MAKE_ENV += TEST_CACHING=Yes
 MAKE_ENV += TEST_EV=Yes

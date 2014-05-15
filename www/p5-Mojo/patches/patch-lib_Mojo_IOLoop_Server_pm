@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Mojo_IOLoop_Server_pm,v 1.1 2014/05/15 22:30:08 bluhm Exp $
+https://github.com/kraih/mojo/issues/622
+
+--- lib/Mojo/IOLoop/Server.pm.orig	Sun May 11 20:27:28 2014
++++ lib/Mojo/IOLoop/Server.pm	Tue May 13 23:04:55 2014
+@@ -127,7 +127,7 @@ sub _accept {
+     # Start TLS handshake
+     $self->emit_safe(accept => $handle) and next unless my $tls = $self->{tls};
+     $self->_handshake($self->{handles}{$handle} = $handle)
+-      if $handle = IO::Socket::SSL->start_SSL($handle, %$tls);
++      if $handle = IO::Socket::SSL->start_SSL($handle, %$tls, SSL_server => 1);
+   }
+ }
+ 
