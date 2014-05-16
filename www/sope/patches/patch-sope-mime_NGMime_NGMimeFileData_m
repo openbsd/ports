@@ -1,0 +1,16 @@
+$OpenBSD: patch-sope-mime_NGMime_NGMimeFileData_m,v 1.1 2014/05/16 14:54:16 giovanni Exp $
+Fixed fd leak where files were unlinked w/o being closed first. 
+https://github.com/inverse-inc/sope/commit/60caf252df2eed12115f05ff5025b54f01b42efb
+
+--- sope-mime/NGMime/NGMimeFileData.m.orig	Thu May 15 18:22:04 2014
++++ sope-mime/NGMime/NGMimeFileData.m	Thu May 15 18:23:19 2014
+@@ -95,6 +95,9 @@ static unsigned      tmpmask  = 0600;
+     [self release];
+     return nil;
+   }
++  
++  close(fd);
++
+   return [self initWithPath:filename removeFile:YES];
+ }
+ 
