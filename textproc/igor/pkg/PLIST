@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/16 12:36:21 schwarze Exp $
+bin/igor
+@man man/man1/igor.1
+@extra ${SYSCONFDIR}/igor/spelling
