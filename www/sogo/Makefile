@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2014/01/11 12:56:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/05/16 17:00:21 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	2.1.1
 DISTNAME =	SOGo-${VERSION}b
 PKGNAME =	sogo-${VERSION}.1
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	GDLContentStore 2.0
 SHARED_LIBS +=	NGCards		2.0
