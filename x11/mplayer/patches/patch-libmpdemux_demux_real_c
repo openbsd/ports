@@ -1,7 +1,11 @@
-$OpenBSD: patch-libmpdemux_demux_real_c,v 1.5 2014/05/15 20:01:38 espie Exp $
---- libmpdemux/demux_real.c.orig	Mon Jan  6 23:03:23 2014
-+++ libmpdemux/demux_real.c	Wed May 14 17:50:47 2014
-@@ -1749,15 +1749,39 @@ header_end:
+$OpenBSD: patch-libmpdemux_demux_real_c,v 1.6 2014/05/16 01:34:50 brad Exp $
+
+r37202
+always select a stream to play if available.
+
+--- libmpdemux/demux_real.c.orig	Tue May 13 22:08:45 2014
++++ libmpdemux/demux_real.c	Tue May 13 22:10:54 2014
+@@ -1842,15 +1842,39 @@ header_end:
      // detect streams:
      if(demuxer->video->id==-1 && v_streams>0){
  	// find the valid video stream:

@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.102 2013/12/28 00:40:05 brad Exp $
+# $OpenBSD: Makefile,v 1.103 2014/05/16 01:34:50 brad Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20131216
+V=		20140412
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		19.1 \
-		avdevice	7.1 \
-		avfilter	5.1 \
-		avformat	17.1 \
-		avresample	0.0 \
-		avutil		11.1 \
-		postproc	15.1 \
-		swresample	0.1 \
-		swscale		5.1
+SHARED_LIBS=	avcodec		20.0 \
+		avdevice	8.0 \
+		avfilter	6.0 \
+		avformat	18.0 \
+		avresample	0.1 \
+		avutil		11.2 \
+		postproc	15.2 \
+		swresample	0.2 \
+		swscale		5.2
 
 HOMEPAGE=	http://ffmpeg.org/
 
@@ -28,9 +27,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xfixes bz2 c crypto gsm m mp3lame opus \
+WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto gsm m mp3lame opus \
 		pthread schroedinger-1.0>=2 sndio speex ssl theoradec \
-		theoraenc vorbis vorbisenc vpx x264>=8 xvidcore z
+		theoraenc vorbis vorbisenc vpx>=5 x264>=8 xvidcore z
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -44,18 +43,18 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/gsm \
 		devel/sdl \
 		multimedia/libtheora \
-		multimedia/libvpx \
+		multimedia/libvpx>=1.3.0 \
 		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264>=20111027 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
-LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lsndio
+LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lXv -lsndio
 LIBavfilter_EXTRALIBS=
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -pthread
 LIBavresample_EXTRALIBS=
-LIBavutil_EXTRALIBS=-lm
+LIBavutil_EXTRALIBS=-lm -pthread
 LIBpostproc_EXTRALIBS=
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2014/05/15 20:01:38 espie Exp $
+# $OpenBSD: Makefile,v 1.237 2014/05/16 01:34:50 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,15 +7,14 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
-V =			20140106
-FFMPEG_V =		20131216
+V =			20140412
+FFMPEG_V =		20140412
 
 SUBST_VARS += 		PREFIX CONFDIR
 
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		4
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
@@ -36,9 +35,10 @@ WANTLIB =	EGL GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 # we use a snapshot
 MASTER_SITES =	http://comstyle.com/source/
 
-MAINTAINER =	Edd Barrett <edd@openbsd.org>
+MAINTAINER =	Brad Smith <brad@comstyle.com>
 
-MODULES +=	converters/libiconv
+MODULES +=	converters/libiconv \
+		lang/clang
 
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
@@ -71,6 +71,9 @@ BUILD_DEPENDS +=graphics/ffmpeg:patch
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 BUILD_DEPENDS += devel/yasm
 .endif
+
+MODCLANG_ARCHS=	amd64 i386
+MODCLANG_LANGS=	c
 
 CONFDIR =	${SYSCONFDIR}/mplayer
 
@@ -165,11 +168,8 @@ WANTLIB +=	vorbisenc vorbis
 
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
 
-# binutils 2.15 does not support SSSE3 / SSE4 for amd64 / i386
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS += --enable-runtime-cpudetection
-CONFIGURE_ARGS += --disable-ssse3
-CONFIGURE_ARGS += --disable-sse4
 .endif
 
 # binutils 2.15 assembler missing opcode support

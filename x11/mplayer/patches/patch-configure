@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
---- configure.orig	Mon Jan  6 17:03:04 2014
-+++ configure	Mon Jan  6 17:22:43 2014
-@@ -1497,36 +1497,36 @@ echo configuration: $configuration > "$TMPLOG"
+$OpenBSD: patch-configure,v 1.74 2014/05/16 01:34:50 brad Exp $
+--- configure.orig	Sat Apr 12 17:12:35 2014
++++ configure	Sat Apr 12 17:15:59 2014
+@@ -1505,39 +1505,39 @@ echo configuration: $configuration > "$TMPLOG"
  echo >> "$TMPLOG"
  
  
@@ -16,19 +16,22 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
 +#    exit 1
 +#fi
 +#
++#FFBRANCH=master
++#test -e FFBRANCH && FFBRANCH=$(cat FFMPEG_BRANCH)
++#
 +#if test -e ffmpeg/mp_auto_pull ; then
 +#    echo "Updating FFmpeg, (re)move ffmpeg/mp_auto_pull to disable"
-+#    (cd ffmpeg && git checkout master)
++#    (cd ffmpeg && git checkout $FFBRANCH)
 +#    if ! (cd ffmpeg && git pull --rebase --ff-only) ; then
 +#        echo "git pull failed, (re)move ffmpeg/mp_auto_pull to disable pulling"
 +#        exit 1
 +#    fi
 +#fi
 +#
-+#if ! test -e ffmpeg ; then
++#if test "$ffmpeg_a" != "no" && ! test -e ffmpeg ; then
 +#    echo "No FFmpeg checkout, press enter to download one with git or CTRL+C to abort"
 +#    read tmp
-+#    if ! git clone --depth 1 git://source.ffmpeg.org/ffmpeg.git ffmpeg ; then
++#    if ! git clone -b $FFBRANCH --depth 1 git://source.ffmpeg.org/ffmpeg.git ffmpeg ; then
 +#        rm -rf ffmpeg
 +#        echo "Failed to get a FFmpeg checkout"
 +#        echo "Please try again or put FFmpeg source code copy into ffmpeg/ manually."
@@ -40,19 +43,22 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
 +#    touch ffmpeg/mp_auto_pull
 +#fi
  
+-FFBRANCH=master
+-test -e FFBRANCH && FFBRANCH=$(cat FFMPEG_BRANCH)
+-
 -if test -e ffmpeg/mp_auto_pull ; then
 -    echo "Updating FFmpeg, (re)move ffmpeg/mp_auto_pull to disable"
--    (cd ffmpeg && git checkout master)
+-    (cd ffmpeg && git checkout $FFBRANCH)
 -    if ! (cd ffmpeg && git pull --rebase --ff-only) ; then
 -        echo "git pull failed, (re)move ffmpeg/mp_auto_pull to disable pulling"
 -        exit 1
 -    fi
 -fi
 -
--if ! test -e ffmpeg ; then
+-if test "$ffmpeg_a" != "no" && ! test -e ffmpeg ; then
 -    echo "No FFmpeg checkout, press enter to download one with git or CTRL+C to abort"
 -    read tmp
--    if ! git clone --depth 1 git://source.ffmpeg.org/ffmpeg.git ffmpeg ; then
+-    if ! git clone -b $FFBRANCH --depth 1 git://source.ffmpeg.org/ffmpeg.git ffmpeg ; then
 -        rm -rf ffmpeg
 -        echo "Failed to get a FFmpeg checkout"
 -        echo "Please try again or put FFmpeg source code copy into ffmpeg/ manually."
@@ -65,9 +71,9 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
 -fi
 -
  list_subparts() {
+   test ! -e ffmpeg/libav${3} && return 1
    pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
-   sed -n "$pattern" ffmpeg/libav${3} | toupper
-@@ -2364,7 +2364,7 @@ case "$host_arch" in
+@@ -2390,7 +2390,7 @@ case "$host_arch" in
      arch='sparc'
      iproc='sparc'
      if test "$host_arch" = "sparc64" ; then
@@ -76,7 +82,7 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
        proc='ultrasparc'
        def_fast_64bit='#define HAVE_FAST_64BIT 1'
      elif sunos ; then
-@@ -2692,7 +2692,7 @@ cat > $TMPC << EOF
+@@ -2724,7 +2724,7 @@ cat > $TMPC << EOF
  int ff_extern;
  EOF
  cc_check -c || die "Symbol mangling check failed."
@@ -85,7 +91,16 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
  extern_prefix=${sym%%ff_extern*}
  def_extern_asm="#define EXTERN_ASM $extern_prefix"
  def_extern_prefix="#define EXTERN_PREFIX \"$extern_prefix\""
-@@ -6153,7 +6153,7 @@ echocheck "cdparanoia"
+@@ -2852,7 +2852,7 @@ elif test $relocatable = "yes" ; then
+ fi
+ echores $relocatable
+ 
+-if x86_32 ; then
++if false ; then # x86_32
+   # Checking assembler (_as) compatibility...
+   # Added workaround for older as that reads from stdin by default - atmos
+   as_version=$(echo '' | $_as -version 2>&1 | sed -n 's/^.*assembler \(version \)*\([0-9.]*\).*$/\2/p')
+@@ -6191,7 +6191,7 @@ echocheck "cdparanoia"
  if test "$_cdparanoia" = auto ; then
      _cdparanoia=no
      for inc_tmp in "" "-I/usr/include/cdda" "-I/usr/local/include/cdda" ; do
@@ -94,7 +109,7 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
          _cdparanoia=yes && extra_cflags="$extra_cflags $inc_tmp" && break
      done
  fi
-@@ -8099,6 +8099,7 @@ extra_ldflags="$extra_ldflags $libm"
+@@ -8146,6 +8146,7 @@ extra_ldflags="$extra_ldflags $libm"
  # XML documentation tests
  echocheck "XML catalogs"
  for try_catalog in \
@@ -102,7 +117,7 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
    /etc/sgml/catalog \
    /usr/share/xml/docbook/*/catalog.xml \
    /opt/local/share/xml/docbook-xml/*/catalog.xml \
-@@ -8126,6 +8127,7 @@ fi
+@@ -8173,6 +8174,7 @@ fi
  
  echocheck "XML chunked stylesheet"
  for try_chunk_xsl in \
@@ -110,7 +125,7 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
    /usr/share/xml/docbook/*/html/chunk.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/chunk.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/chunk.xsl \
-@@ -8151,6 +8153,7 @@ fi
+@@ -8198,6 +8200,7 @@ fi
  
  echocheck "XML monolithic stylesheet"
  for try_docbook_xsl in \
@@ -118,7 +133,7 @@ $OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
    /usr/share/xml/docbook/*/html/docbook.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/docbook.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/docbook.xsl \
-@@ -8204,6 +8207,7 @@ EOF
+@@ -8251,6 +8254,7 @@ EOF
  echocheck "XML DTD"
  #FIXME: This should prefer higher version numbers, not the other way around ..
  for try_dtd in \

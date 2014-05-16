@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/12/28 00:40:05 brad Exp $
+@comment $OpenBSD: PLIST,v 1.28 2014/05/16 01:34:50 brad Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -46,15 +46,19 @@ include/libavutil/base64.h
 include/libavutil/blowfish.h
 include/libavutil/bprint.h
 include/libavutil/bswap.h
+include/libavutil/buffer.h
 include/libavutil/channel_layout.h
 include/libavutil/common.h
 include/libavutil/cpu.h
 include/libavutil/crc.h
 include/libavutil/dict.h
+include/libavutil/downmix_info.h
 include/libavutil/error.h
 include/libavutil/eval.h
+include/libavutil/ffversion.h
 include/libavutil/fifo.h
 include/libavutil/file.h
+include/libavutil/frame.h
 include/libavutil/hmac.h
 include/libavutil/imgutils.h
 include/libavutil/intfloat.h
@@ -63,9 +67,11 @@ include/libavutil/intreadwrite.h
 include/libavutil/lfg.h
 include/libavutil/log.h
 include/libavutil/lzo.h
+include/libavutil/macros.h
 include/libavutil/mathematics.h
 include/libavutil/md5.h
 include/libavutil/mem.h
+include/libavutil/murmur3.h
 include/libavutil/old_pix_fmts.h
 include/libavutil/opt.h
 include/libavutil/parseutils.h
@@ -73,8 +79,11 @@ include/libavutil/pixdesc.h
 include/libavutil/pixfmt.h
 include/libavutil/random_seed.h
 include/libavutil/rational.h
+include/libavutil/ripemd.h
 include/libavutil/samplefmt.h
 include/libavutil/sha.h
+include/libavutil/sha512.h
+include/libavutil/stereo3d.h
 include/libavutil/time.h
 include/libavutil/timecode.h
 include/libavutil/timestamp.h
@@ -117,6 +126,7 @@ lib/pkgconfig/libavutil.pc
 lib/pkgconfig/libpostproc.pc
 lib/pkgconfig/libswresample.pc
 lib/pkgconfig/libswscale.pc
+@man man/man1/ffmpeg-all.1
 @man man/man1/ffmpeg-bitstream-filters.1
 @man man/man1/ffmpeg-codecs.1
 @man man/man1/ffmpeg-devices.1
@@ -127,25 +137,51 @@ lib/pkgconfig/libswscale.pc
 @man man/man1/ffmpeg-scaler.1
 @man man/man1/ffmpeg-utils.1
 @man man/man1/ffmpeg.1
+@man man/man1/ffplay-all.1
 @man man/man1/ffplay.1
+@man man/man1/ffprobe-all.1
 @man man/man1/ffprobe.1
+@man man/man1/ffserver-all.1
 @man man/man1/ffserver.1
-man/man1/libavcodec.3
-man/man1/libavdevice.3
-man/man1/libavfilter.3
-man/man1/libavformat.3
-man/man1/libavutil.3
-man/man1/libswresample.3
-man/man1/libswscale.3
+@man man/man3/libavcodec.3
+@man man/man3/libavdevice.3
+@man man/man3/libavfilter.3
+@man man/man3/libavformat.3
+@man man/man3/libavutil.3
+@man man/man3/libswresample.3
+@man man/man3/libswscale.3
 share/doc/ffmpeg/
 share/doc/ffmpeg/developer.html
 share/doc/ffmpeg/faq.html
+share/doc/ffmpeg/fate.html
+share/doc/ffmpeg/ffmpeg-all.html
+share/doc/ffmpeg/ffmpeg-bitstream-filters.html
+share/doc/ffmpeg/ffmpeg-codecs.html
+share/doc/ffmpeg/ffmpeg-devices.html
+share/doc/ffmpeg/ffmpeg-filters.html
+share/doc/ffmpeg/ffmpeg-formats.html
+share/doc/ffmpeg/ffmpeg-protocols.html
+share/doc/ffmpeg/ffmpeg-resampler.html
+share/doc/ffmpeg/ffmpeg-scaler.html
+share/doc/ffmpeg/ffmpeg-utils.html
 share/doc/ffmpeg/ffmpeg.html
+share/doc/ffmpeg/ffplay-all.html
 share/doc/ffmpeg/ffplay.html
+share/doc/ffmpeg/ffprobe-all.html
 share/doc/ffmpeg/ffprobe.html
+share/doc/ffmpeg/ffserver-all.html
 share/doc/ffmpeg/ffserver.html
 share/doc/ffmpeg/general.html
+share/doc/ffmpeg/git-howto.html
+share/doc/ffmpeg/libavcodec.html
+share/doc/ffmpeg/libavdevice.html
 share/doc/ffmpeg/libavfilter.html
+share/doc/ffmpeg/libavformat.html
+share/doc/ffmpeg/libavutil.html
+share/doc/ffmpeg/libswresample.html
+share/doc/ffmpeg/libswscale.html
+share/doc/ffmpeg/nut.html
+share/doc/ffmpeg/platform.html
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ffmpeg/
 share/examples/ffmpeg/ffserver.conf
@@ -153,14 +189,18 @@ share/ffmpeg/
 share/ffmpeg/examples/
 share/ffmpeg/examples/Makefile
 share/ffmpeg/examples/README
-share/ffmpeg/examples/decoding_encoding.c
-share/ffmpeg/examples/demuxing.c
+share/ffmpeg/examples/avcodec.c
+share/ffmpeg/examples/avio_reading.c
+share/ffmpeg/examples/demuxing_decoding.c
+share/ffmpeg/examples/filter_audio.c
 share/ffmpeg/examples/filtering_audio.c
 share/ffmpeg/examples/filtering_video.c
 share/ffmpeg/examples/metadata.c
 share/ffmpeg/examples/muxing.c
+share/ffmpeg/examples/remuxing.c
 share/ffmpeg/examples/resampling_audio.c
 share/ffmpeg/examples/scaling_video.c
+share/ffmpeg/examples/transcode_aac.c
 share/ffmpeg/ffprobe.xsd
 share/ffmpeg/libvpx-1080p.ffpreset
 share/ffmpeg/libvpx-1080p50_60.ffpreset

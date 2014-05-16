@@ -1,8 +1,9 @@
-$OpenBSD: patch-version_sh,v 1.6 2011/04/12 22:59:07 sthen Exp $
---- version.sh.orig	Mon Mar 28 22:46:40 2011
-+++ version.sh	Mon Mar 28 22:48:02 2011
-@@ -1,5 +1,8 @@
- #!/bin/sh
+$OpenBSD: patch-version_sh,v 1.7 2014/05/16 01:34:50 brad Exp $
+--- version.sh.orig	Tue Mar 11 01:57:36 2014
++++ version.sh	Tue Mar 11 02:39:44 2014
+@@ -2,6 +2,9 @@
+ 
+ # Usage: version.sh <ffmpeg-root-dir> <output-version.h> <extra-version>
  
 +revision=$(cd "$1" && cat snapshot_version 2> /dev/null)
 +test "$revision" && revision=git-$revision
