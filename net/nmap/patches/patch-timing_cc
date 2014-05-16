@@ -1,4 +1,4 @@
-$OpenBSD: patch-timing_cc,v 1.1 2014/02/10 17:43:15 sthen Exp $
+$OpenBSD: patch-timing_cc,v 1.2 2014/05/16 15:08:54 sthen Exp $
 
 hunk 1-2: Avoid float-related assertion triggered on i386, not triggered
 on macppc/amd64/sparc64.
@@ -6,11 +6,9 @@ on macppc/amd64/sparc64.
 hunk 3-5: Format changes for 64-bit time_t, should go upstream.
 
 
---- timing.cc.orig	Sun Jul 28 23:08:48 2013
-+++ timing.cc	Mon Feb 10 11:58:00 2014
-@@ -126,6 +126,8 @@
- 
- /* $Id: patch-timing_cc,v 1.1 2014/02/10 17:43:15 sthen Exp $ */
+--- timing.cc.orig	Wed Feb 12 20:25:51 2014
++++ timing.cc	Thu May 15 20:12:32 2014
+@@ -126,4 +126,6 @@
  
 +#include <limits>
 +
@@ -26,7 +24,7 @@ hunk 3-5: Format changes for 64-bit time_t, should go upstream.
    /* If we record an amount in the very same instant that the timer is started,
       there's no way to calculate meaningful rates. Ignore it. */
    if (interval == 0.0)
-@@ -715,10 +717,10 @@ bool ScanProgressMeter::printStats(double perc_done, 
+@@ -715,10 +717,10 @@ bool ScanProgressMeter::printStats(double perc_done,
        floor(fmod(time_left_s, 60.0)));
    xml_open_start_tag("taskprogress");
    xml_attribute("task", "%s", scantypestr);

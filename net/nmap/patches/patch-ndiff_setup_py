@@ -1,10 +1,10 @@
-$OpenBSD: patch-ndiff_setup_py,v 1.1 2009/10/22 10:00:57 giovanni Exp $
---- ndiff/setup.py.orig	Tue Jul 21 20:17:10 2009
-+++ ndiff/setup.py	Tue Jul 21 20:17:18 2009
-@@ -29,5 +29,5 @@ class checked_install(distutils.command.install.instal
-                 + "Installing your distribution's python-dev package may solve this problem.")
+$OpenBSD: patch-ndiff_setup_py,v 1.2 2014/05/16 15:08:54 sthen Exp $
+--- ndiff/setup.py.orig	Sat Apr 12 02:24:32 2014
++++ ndiff/setup.py	Thu May 15 20:13:44 2014
+@@ -112,5 +112,5 @@ Installing your distribution's python-dev package may 
  
- distutils.core.setup(name = u"ndiff", scripts = [u"ndiff"],
--    data_files = [(u"share/man/man1", [u"docs/ndiff.1"])],
-+    data_files = [(u"man/man1", [u"docs/ndiff.1"])],
-     cmdclass = {"install_egg_info": null_command, "install": checked_install})
+ distutils.core.setup(name=u"ndiff", scripts=[u"scripts/ndiff"],
+     py_modules=[u"ndiff"],
+-    data_files=[(u"share/man/man1", [u"docs/ndiff.1"])],
++    data_files=[(u"man/man1", [u"docs/ndiff.1"])],
+     cmdclass={"install_egg_info": null_command, "install": checked_install})

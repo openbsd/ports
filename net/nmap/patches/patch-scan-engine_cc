@@ -1,13 +1,22 @@
-$OpenBSD: patch-scan-engine_cc,v 1.6 2014/02/10 17:43:15 sthen Exp $
+$OpenBSD: patch-scan-engine_cc,v 1.7 2014/05/16 15:08:54 sthen Exp $
 
 pcap_filter changes: to deal with base libpcap which doesn't support sctp
 (not currently needed as using internal libpcap)
 
 Format changes for 64-bit time_t, should go upstream
 
---- scan_engine.cc.orig	Mon Jul 29 00:08:48 2013
-+++ scan_engine.cc	Thu Jan  9 11:59:59 2014
-@@ -5544,13 +5544,13 @@ static void begin_sniffer(UltraScanInfo *USI, std::vec
+--- scan_engine.cc.orig	Thu Apr 17 23:58:39 2014
++++ scan_engine.cc	Wed Apr 30 19:56:54 2014
+@@ -2977,7 +2977,7 @@ static void ultrascan_host_probe_update(UltraScanInfo 
+     struct timeval tv;
+ 
+     gettimeofday(&tv, NULL);
+-    log_write(LOG_STDOUT, "%s called for machine %s state %s -> %s (trynum %d time: %ld)\n", __func__, hss->target->targetipstr(), readhoststate(hss->target->flags), readhoststate(newstate), probe->tryno, (long) TIMEVAL_SUBTRACT(tv, probe->sent));
++    log_write(LOG_STDOUT, "%s called for machine %s state %s -> %s (trynum %d time: %lld)\n", __func__, hss->target->targetipstr(), readhoststate(hss->target->flags), readhoststate(newstate), probe->tryno, (time_t) TIMEVAL_SUBTRACT(tv, probe->sent));
+   }
+ 
+   ultrascan_host_pspec_update(USI, hss, probe->pspec(), newstate);
+@@ -5590,13 +5590,13 @@ static void begin_sniffer(UltraScanInfo *USI, std::vec
      if (doIndividual) {
        pcap_filter = "dst host ";
        pcap_filter += inet_ntop_ez(&source, sizeof(source));
@@ -23,13 +32,3 @@ Format changes for 64-bit time_t, should go upstream
      }
    } else {
      assert(0);
-@@ -5941,7 +5941,7 @@ void bounce_scan(Target *target, u16 *portarray, int n
-   }
- 
-   if (o.debugging || o.verbose)
--    log_write(LOG_STDOUT, "Scanned %d ports in %ld seconds via the Bounce scan.\n",
--              numports, (long) time(NULL) - starttime);
-+    log_write(LOG_STDOUT, "Scanned %d ports in %lld seconds via the Bounce scan.\n",
-+              numports, (long long) (time(NULL) - starttime));
-   return;
- }

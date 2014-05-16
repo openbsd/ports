@@ -1,13 +1,13 @@
-$OpenBSD: patch-libnetutil_netutil_cc,v 1.4 2014/02/10 17:43:15 sthen Exp $
+$OpenBSD: patch-libnetutil_netutil_cc,v 1.5 2014/05/16 15:08:54 sthen Exp $
 
 chunks dealing with DLT_LINUX_SLL are to cope with non-bundled libpcap (not
 currently used). should probably be #ifdef DLT_LINUX_SLL and go upstream?
 
 chunks dealing with iovec: ???
 
---- libnetutil/netutil.cc.orig	Mon Jul 29 00:08:48 2013
-+++ libnetutil/netutil.cc	Wed Oct 16 22:00:54 2013
-@@ -3124,7 +3124,6 @@ static int route_dst_netlink(const struct sockaddr_sto
+--- libnetutil/netutil.cc.orig	Thu Nov  7 19:32:33 2013
++++ libnetutil/netutil.cc	Thu May 15 20:12:32 2014
+@@ -3140,7 +3140,6 @@ static int route_dst_netlink(const struct sockaddr_sto
                               const struct sockaddr_storage *spoofss) {
    struct sockaddr_nl snl;
    struct msghdr msg;
@@ -15,7 +15,7 @@ chunks dealing with iovec: ???
    struct nlmsghdr *nlmsg;
    struct rtmsg *rtmsg;
    struct rtattr *rtattr;
-@@ -3176,22 +3175,14 @@ static int route_dst_netlink(const struct sockaddr_sto
+@@ -3192,22 +3191,14 @@ static int route_dst_netlink(const struct sockaddr_sto
      add_rtattr_addr(nlmsg, &rtattr, &len, RTA_SRC, spoofss, intf_index);
    }
  
@@ -38,7 +38,7 @@ chunks dealing with iovec: ???
    len = recvmsg(fd, &msg, 0);
    if (len <= 0)
      netutil_fatal("%s: cannot recvmsg: %s", __func__, strerror(errno));
-@@ -3822,7 +3813,6 @@ static const unsigned char *add_exthdr_ancillary(struc
+@@ -3838,7 +3829,6 @@ static const unsigned char *add_exthdr_ancillary(struc
  static int send_ipv6_ip(const struct sockaddr_in6 *dst,
    const unsigned char *packet, size_t packetlen) {
    struct msghdr msg;
@@ -46,7 +46,7 @@ chunks dealing with iovec: ???
  
    const unsigned char *end;
    struct ip6_hdr *hdr;
-@@ -3838,8 +3828,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3854,8 +3844,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    /* Set up sendmsg data structure. iov is filled in below. */
    msg.msg_name = (void *) dst;
    msg.msg_namelen = sizeof(*dst);
@@ -55,7 +55,7 @@ chunks dealing with iovec: ???
    msg.msg_control = NULL;
    msg.msg_controllen = 0;
    msg.msg_flags = 0;
-@@ -3898,8 +3886,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3914,8 +3902,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    }
  
    assert(packet <= end);
@@ -64,7 +64,7 @@ chunks dealing with iovec: ???
  
    n = sendmsg(sd, &msg, 0);
    if (n == -1)
-@@ -4068,9 +4054,6 @@ int datalink_offset(int datalink)
+@@ -4084,9 +4070,6 @@ int datalink_offset(int datalink)
  {
    if (datalink == DLT_EN10MB)
      return ETH_HDR_LEN;
@@ -74,7 +74,7 @@ chunks dealing with iovec: ???
    else
      return -1;
  }
-@@ -4107,7 +4090,7 @@ static int read_reply_pcap(pcap_t *pd, long to_usec,
+@@ -4123,7 +4106,7 @@ static int read_reply_pcap(pcap_t *pd, long to_usec,
      netutil_fatal("Cannot obtain datalink information: %s", pcap_geterr(pd));
    ioffset = datalink_offset(*datalink);
    if (ioffset < 0)
@@ -83,7 +83,7 @@ chunks dealing with iovec: ???
    *offset = (unsigned int) ioffset;
  
    if (to_usec > 0) {
-@@ -4207,10 +4190,6 @@ static bool accept_arp(const unsigned char *p, const s
+@@ -4223,10 +4206,6 @@ static bool accept_arp(const unsigned char *p, const s
  
    if (datalink == DLT_EN10MB) {
      return ntohs(*((u16 *) (p + 12))) == ETH_TYPE_ARP;

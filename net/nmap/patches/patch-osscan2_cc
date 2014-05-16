@@ -1,10 +1,10 @@
-$OpenBSD: patch-osscan2_cc,v 1.1 2014/02/10 17:43:15 sthen Exp $
+$OpenBSD: patch-osscan2_cc,v 1.2 2014/05/16 15:08:54 sthen Exp $
 
 Format changes for 64-bit time_t, should go upstream
 
---- osscan2.cc.orig	Mon Jul 29 00:08:48 2013
-+++ osscan2.cc	Thu Jan  9 11:58:50 2014
-@@ -2460,8 +2460,8 @@ void HostOsScan::makeTSeqFP(HostOsScanStats *hss) {
+--- osscan2.cc.orig	Sat Mar 15 12:37:54 2014
++++ osscan2.cc	Thu May 15 20:12:32 2014
+@@ -2507,8 +2507,8 @@ void HostOsScan::makeTSeqFP(HostOsScanStats *hss) {
      if (lastboot != 0.0 && (hss->seq_send_times[0].tv_sec - lastboot > 63072000)) {
        /* Up 2 years?  Perhaps, but they're probably lying. */
        if (o.debugging) {
