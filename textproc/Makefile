@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2014/05/14 10:06:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.412 2014/05/16 12:43:40 schwarze Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -72,6 +72,7 @@
      SUBDIR += hyperestraier
      SUBDIR += icu4c
      SUBDIR += idiff
+     SUBDIR += igor
      SUBDIR += iksemel
      SUBDIR += info2html
      SUBDIR += intltool
