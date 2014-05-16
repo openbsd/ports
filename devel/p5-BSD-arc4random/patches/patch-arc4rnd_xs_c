@@ -1,0 +1,171 @@
+$OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
+--- arc4rnd_xs.c.orig	Sun Oct 11 00:44:17 2009
++++ arc4rnd_xs.c	Fri May 16 22:18:56 2014
+@@ -54,11 +54,6 @@ __RCSID("$MirOS: contrib/hosted/tg/code/BSD::arc4rando
+ #define u_int32_t	uint32_t
+ #endif
+ 
+-#ifdef NEED_ARC4RANDOM_DECL
+-u_int32_t arc4random(void);
+-void arc4random_addrandom(u_char *, int);
+-#endif
+-
+ XS(XS_BSD__arc4random_arc4random_xs);
+ XS(XS_BSD__arc4random_arc4random_xs)
+ {
+@@ -74,142 +69,14 @@ XS(XS_BSD__arc4random_arc4random_xs)
+ 	XSRETURN(1);
+ }
+ 
+-XS(XS_BSD__arc4random_stir_xs);
+-XS(XS_BSD__arc4random_stir_xs)
+-{
+-	dXSARGS;
+-
+-	arc4random_stir();
+-
+-	XSRETURN_EMPTY;
+-}
+-
+-XS(XS_BSD__arc4random_arc4random_addrandom_xs);
+-XS(XS_BSD__arc4random_arc4random_addrandom_xs)
+-{
+-	dXSARGS;
+-	dXSTARG;
+-	SV *sv;
+-	char *buf;
+-	STRLEN len;
+-	uint32_t rv;
+-
+-	sv = ST(0);
+-	buf = SvPV(sv, len);
+-	arc4random_addrandom((unsigned char *)buf, (int)len);
+-	rv = arc4random();
+-	XSprePUSH;
+-	PUSHu((UV)rv);
+-
+-	XSRETURN(1);
+-}
+-
+-#ifndef HAVE_ARC4RANDOM_PUSHB
+-#define HAVE_ARC4RANDOM_PUSHB	1
+-#endif
+-
+-#if HAVE_ARC4RANDOM_PUSHB
+-XS(XS_BSD__arc4random_arc4random_pushb_xs);
+-XS(XS_BSD__arc4random_arc4random_pushb_xs)
+-{
+-	dXSARGS;
+-	dXSTARG;
+-	SV *sv;
+-	char *buf;
+-	STRLEN len;
+-	uint32_t rv;
+-
+-	sv = ST(0);
+-	buf = SvPV(sv, len);
+-	rv = arc4random_pushb((void *)buf, (size_t)len);
+-	XSprePUSH;
+-	PUSHu((UV)rv);
+-
+-	XSRETURN(1);
+-}
+-#elif defined(arc4random_pushk)
+-#define XS_BSD__arc4random_arc4random_pushb_xs \
+-	XS_BSD__arc4random_arc4random_pushk_xs
+-#else
+-#define XS_BSD__arc4random_arc4random_pushb_xs \
+-	XS_BSD__arc4random_arc4random_addrandom_xs
+-#endif
+-
+-#if defined(arc4random_pushk)
+-XS(XS_BSD__arc4random_arc4random_pushk_xs);
+-XS(XS_BSD__arc4random_arc4random_pushk_xs)
+-{
+-	dXSARGS;
+-	dXSTARG;
+-	SV *sv;
+-	char *buf;
+-	STRLEN len;
+-	uint32_t rv;
+-
+-	sv = ST(0);
+-	buf = SvPV(sv, len);
+-	rv = arc4random_pushk((void *)buf, (size_t)len);
+-	XSprePUSH;
+-	PUSHu((UV)rv);
+-
+-	XSRETURN(1);
+-}
+-#elif HAVE_ARC4RANDOM_PUSHB
+-#define XS_BSD__arc4random_arc4random_pushk_xs \
+-	XS_BSD__arc4random_arc4random_pushb_xs
+-#else
+-#define XS_BSD__arc4random_arc4random_pushk_xs \
+-	XS_BSD__arc4random_arc4random_addrandom_xs
+-#endif
+-
+-#undef HAVE_ARC4RANDOM_KINTF
+-#if HAVE_ARC4RANDOM_PUSHB || defined(arc4random_pushk)
+-#define HAVE_ARC4RANDOM_KINTF	1
+-#else
+-#define HAVE_ARC4RANDOM_KINTF	0
+-#endif
+-
+-
+-/*
+- * These may be needed because praeprocessor commands inside a
+- * macro's argument list may not work
+- */
+-
+-#if HAVE_ARC4RANDOM_PUSHB
+-#define IDT_ARC4RANDOM_PUSHB	" arc4random_pushb"
+-#else
+-#define IDT_ARC4RANDOM_PUSHB	""
+-#endif
+-
+-#if defined(arc4random_pushk)
+-#define IDT_arc4random_pushk	" arc4random_pushk"
+-#else
+-#define IDT_arc4random_pushk	""
+-#endif
+-
+-#if HAVE_ARC4RANDOM_KINTF
+-#define IDT_ARC4RANDOM_KINTF	" have_kintf:=1"
+-#else
+-#define IDT_ARC4RANDOM_KINTF	" have_kintf:=0"
+-#endif
+-
+ __IDSTRING(api_text, "BSD::arc4random " XS_VERSION " with {"
+     " arc4random"
+-    " arc4random_addrandom"
+-    IDT_ARC4RANDOM_PUSHB
+-    IDT_arc4random_pushk
+-    IDT_ARC4RANDOM_KINTF
+     " }");
+ 
+ 
+ /* the Perl API is not const clean */
+ static char file[] = __FILE__;
+ static char func_a4r[] = "BSD::arc4random::arc4random_xs";
+-static char func_a4add[] = "BSD::arc4random::arc4random_addrandom_xs";
+-static char func_a4rpb[] = "BSD::arc4random::arc4random_pushb_xs";
+-static char func_a4rpk[] = "BSD::arc4random::arc4random_pushk_xs";
+-static char func_astir[] = "BSD::arc4random::arc4random_stir_xs";
+-static char func_kintf[] = "BSD::arc4random::have_kintf";
+ 
+ #ifdef __cplusplus
+ extern "C"
+@@ -222,12 +89,6 @@ XS(boot_BSD__arc4random)
+ 	XS_VERSION_BOOTCHECK;
+ 
+ 	newXS(func_a4r, XS_BSD__arc4random_arc4random_xs, file);
+-	newXS(func_a4add, XS_BSD__arc4random_arc4random_addrandom_xs, file);
+-	newXS(func_a4rpb, XS_BSD__arc4random_arc4random_pushb_xs, file);
+-	newXS(func_a4rpk, XS_BSD__arc4random_arc4random_pushk_xs, file);
+-	newXS(func_astir, XS_BSD__arc4random_stir_xs, file);
+-
+-	newCONSTSUB(NULL, func_kintf, newSViv(HAVE_ARC4RANDOM_KINTF));
+ 
+ 	XSRETURN_YES;
+ }

@@ -1,0 +1,42 @@
+$OpenBSD: patch-lib_BSD_arc4random_pm,v 1.1 2014/05/16 23:08:31 bluhm Exp $
+--- lib/BSD/arc4random.pm.orig	Mon Jun  6 01:19:28 2011
++++ lib/BSD/arc4random.pm	Fri May 16 21:46:22 2014
+@@ -73,35 +73,24 @@ arc4random()
+ sub
+ arc4random_addrandom($)
+ {
+-	my $buf = shift;
+-
+-	lock($arcfour_lock) if $have_threadlock;
+-	return &arc4random_addrandom_xs($buf);
++	goto &arc4random;
+ }
+ 
+ sub
+ arc4random_pushb($)
+ {
+-	my $buf = shift;
+-
+-	lock($arcfour_lock) if $have_threadlock;
+-	return &arc4random_pushb_xs($buf);
++	goto &arc4random;
+ }
+ 
+ sub
+ arc4random_pushk($)
+ {
+-	my $buf = shift;
+-
+-	lock($arcfour_lock) if $have_threadlock;
+-	return &arc4random_pushk_xs($buf);
++	goto &arc4random;
+ }
+ 
+ sub
+ arc4random_stir()
+ {
+-	lock($arcfour_lock) if $have_threadlock;
+-	&arc4random_stir_xs();
+ 	return;
+ }
+ 
