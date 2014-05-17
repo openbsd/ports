@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.11 2014/02/11 10:34:34 espie Exp $
+$OpenBSD: README.internals,v 1.12 2014/05/17 18:32:39 espie Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -254,11 +254,11 @@ Internal targets are:
 _internal-clean _internal-package-only _internal-run-depends
 _internal-runlib-depends _internal-runwantlib-depends _internal-package
 _internal-build-depends _internal-buildlib-depends
-_internal-buildwantlib-depends _internal-regress-depends
+_internal-buildwantlib-depends _internal-test-depends
 _internal-prepare _internal-depends _internal-fetch-all
 _internal-fetch _internal-all _internal-build _internal-checksum
 _internal-configure _internal-deinstall _internal-extract _internal-fake
-_internal-patch _internal-plist _internal-regress _internal-subpackage
+_internal-patch _internal-plist _internal-test _internal-subpackage
 _internal-subupdate _internal-uninstall _internal-update
 _internal-update-or-install _internal-update-or-install-all
 _internal-update-plist _internal-distpatch
@@ -302,7 +302,7 @@ Dependency variables
 --------------------
 Old legacy dependency styles are gone, so the compat code went away.
 The code has to deal with BUILD_DEPENDS, LIB_DEPENDS, RUN_DEPENDS,
-REGRESS_DEPENDS, WANTLIB and RUN_DEPENDS-* LIB_DEPENDS-*, WANTLIB-*
+TEST_DEPENDS, WANTLIB and RUN_DEPENDS-* LIB_DEPENDS-*, WANTLIB-*
 
 There is obviously completely different treatment for WANTLIB* and
 *DEPENDS*. Also, BUILD* stuff gets to inherit from LIB_DEPENDS* stripped
@@ -322,7 +322,7 @@ Symetrically:
 - define _LIB4-* as the interdependencies in LIB_DEPENDS-*
 - define _LIB4 as the full list of all _LIB4-*
 
-- define _BUILD_DEPLIST, _RUN_DEPLIST, _REGRESS_DEPLIST, _BUILDLIB_DEPLIST,
+- define _BUILD_DEPLIST, _RUN_DEPLIST, _TEST_DEPLIST, _BUILDLIB_DEPLIST,
 _RUNLIB_DEPLIST as the dependency lists relevant to the SUBPACKAGE being
 built (not set if NO_DEPENDS is Yes !)
 
@@ -341,15 +341,15 @@ _RUN_DEP3-*: RUN_DEPENDS-* (+LIB_DEPENDS-* if shared)
 _LIB_DEP3: (LIB_DEPENDS-s if shared)
 _LIB_DEP3-*: (LIB_DEPENDS-* if shared)
 
-_REGRESS_DEP2: REGRESS_DEPENDS
-_REGRESS_DEP3: REGRESS_DEPENDS
+_TEST_DEP2: TEST_DEPENDS
+_TEST_DEP3: TEST_DEPENDS
 
 _DEPBUILDLIBS: _BUILDWANTLIB
 _DEPRUNLIBS: WANTLIB-s
 
 _BUILD_DEP is the _BUILD_DEP2 paths, without the specs
 _RUN_DEP is the _RUN_DEP2 paths, without the specs
-_REGRESS_DEP is the _REGRESS_DEP2 paths, without the specs
+_TEST_DEP is the _TEST_DEP2 paths, without the specs
 
 e.g., *2 is "all the shit relevant to the port at hand", *3 is
 "only the shit directly relevant to the port with subpackages,
@@ -411,9 +411,9 @@ TODO document:
 	MAKE_JOBS
 	PARALLEL_BUILD
 	PARALLEL_INSTALL
-	XAUTHORITY for interactive regress
-fishy: FLAVORS regress ?
-fishy: REGRESS_STATUS_IGNORE
+	XAUTHORITY for interactive tests
+fishy: FLAVORS tests ?
+fishy: TEST_STATUS_IGNORE
 
 fishy:
 	GUNZIP_CMD
