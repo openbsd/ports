@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_CodeGen_StackProtector_cpp,v 1.5 2014/05/17 11:41:15 brad Exp $
+
+r206486
+Make the StackProtector pass respect ssp-buffer-size.
+
+--- lib/CodeGen/StackProtector.cpp.orig	Fri Apr 18 17:19:15 2014
++++ lib/CodeGen/StackProtector.cpp	Fri Apr 18 17:20:13 2014
+@@ -86,14 +86,14 @@ bool StackProtector::runOnFunction(Function &Fn) {
+   DT = DTWP ? &DTWP->getDomTree() : 0;
+   TLI = TM->getTargetLowering();
+ 
+-  if (!RequiresStackProtector())
+-    return false;
+-
+   Attribute Attr = Fn.getAttributes().getAttribute(
+       AttributeSet::FunctionIndex, "stack-protector-buffer-size");
+   if (Attr.isStringAttribute() &&
+       Attr.getValueAsString().getAsInteger(10, SSPBufferSize))
+       return false; // Invalid integer string
++
++  if (!RequiresStackProtector())
++    return false;
+ 
+   ++NumFunProtected;
+   return InsertStackProtectors();
