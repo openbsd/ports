@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2012/04/30 13:11:17 landry Exp $
+$OpenBSD: README-main,v 1.3 2014/05/18 11:22:01 stsp Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -52,9 +52,10 @@ Thunar file manager tips
 If you want to browse samba shares using GVfs, you'll need to install
 gvfs-smb package. You can also try gigolo package, which is a GUI to
 configure GVfs mounts.
-You can have a look at hotplugd(8) if you want some kind of auto-mount
+You install the toad package if you want to use the auto-mount
 feature in thunar, provided natively by gudev on Linux and FreeBSD.
-See also http://thunar.xfce.org/pwiki/documentation/faq.
+Since toad requires consolekit you'll need to pass --with-ck-launch
+to startxfce4 to use auto-mount.
 
 Terminal, special characters and localized applications
 =======================================================
