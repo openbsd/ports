@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/01/10 14:47:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2014/05/18 09:29:50 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,7 +8,7 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		6.4.0
+V =		6.4.1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -29,6 +29,7 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 MODULES=	converters/libiconv lang/php devel/cmake
 MODPHP_RUNDEP=	No
 RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
+RUN_DEPENDS-main =	www/spawn-fcgi
 BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
 
 LIB_DEPENDS=	devel/proj \
@@ -60,7 +61,7 @@ CONFIGURE_ARGS +=	-DPHP5_CONFIG_EXECUTABLE=${LOCALBASE}/bin/php-config-${MODPHP_
 
 PREFIX-main=	${VARBASE}/www
 
-SUBST_VARS+=	PREFIX-main
+SUBST_VARS+=	PREFIX-main VARBASE
 
 post-extract:
 	rm -f ${WRKSRC}/cmake/Find{Freetype,PostgreSQL,ICONV}.cmake

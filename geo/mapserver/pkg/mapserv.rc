@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: mapserv.rc,v 1.1 2014/05/18 09:29:50 landry Exp $
+
+daemon="${LOCALBASE}/bin/spawn-fcgi"
+daemon_flags="-c ${VARBASE}/www -s run/mapserv.sock -u www -- /cgi-bin/mapserv"
+
+. /etc/rc.d/rc.subr
+
+pexp="/cgi-bin/mapserv"
+
+rc_cmd $1

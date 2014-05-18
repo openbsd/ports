@@ -1,10 +1,10 @@
-$OpenBSD: README-main,v 1.1 2012/01/24 12:03:19 sthen Exp $
+$OpenBSD: README-main,v 1.2 2014/05/18 09:29:50 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-If you plan to use mapserv CGI with a chrooted httpd, make sure to
+If you plan to use mapserv CGI with a chrooted web server, make sure to
 copy the libs needed by mapserv binary from ${LOCALBASE}/lib, but also
 the projection definitions from libgeotiff and proj packages to the
 chroot:
@@ -13,16 +13,11 @@ chroot:
 # cp ${LOCALBASE}/share/epsg_csv/* ${PREFIX-main}${LOCALBASE}/share/epsg_csv
 # cp ${LOCALBASE}/share/proj/* ${PREFIX-main}${LOCALBASE}/share/proj
 
-If you would like to use FastCGI with httpd from base, install and enable
-the mod_fcgi package, and you can use configuration lines like this:
+If you would like to use FastCGI with nginx from base, use the provided rc.d(8)
+script and add the following lines to you nginx.conf:
 
-	<Location /cgi-bin/mapserv>
-		SetHandler fastcgi-script
-	</Location>
-
-	FastCgiConfig -appConnTimeout 60 -idle-timeout 60 \
-	  -init-start-delay 1 -minProcesses 2 -maxClassProcesses 30 \
-	  -startDelay 5
-
-For more information about this and changes to your .map files which may
-be useful with FastCGI, see http://mapserver.org/optimization/fastcgi.html
+	location /cgi-bin/mapserv {
+		fastcgi_pass  unix:run/mapserv.sock;
+		fastcgi_param SCRIPT_FILENAME /cgi-bin/mapserv;
+		include fastcgi_params;
+	}

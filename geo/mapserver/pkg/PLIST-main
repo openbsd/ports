@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/12/25 21:55:57 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/05/18 09:29:50 landry Exp $
 @bin cgi-bin/mapserv
 @cwd ${LOCALBASE}
 @bin bin/mapserv
 @lib lib/libmapserver.so.${LIBmapserver_VERSION}
+@rcscript ${RCDIR}/mapserv
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
