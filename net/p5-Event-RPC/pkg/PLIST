@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 10:06:53 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/18 21:25:15 bluhm Exp $
 ${P5SITE}/Event/
 ${P5SITE}/Event/RPC/
 ${P5SITE}/Event/RPC.pm
@@ -9,6 +9,7 @@ ${P5SITE}/Event/RPC/LogConnection.pm
 ${P5SITE}/Event/RPC/Logger.pm
 ${P5SITE}/Event/RPC/Loop/
 ${P5SITE}/Event/RPC/Loop.pm
+${P5SITE}/Event/RPC/Loop/AnyEvent.pm
 ${P5SITE}/Event/RPC/Loop/Event.pm
 ${P5SITE}/Event/RPC/Loop/Glib.pm
 ${P5SITE}/Event/RPC/Message.pm
@@ -19,6 +20,7 @@ ${P5SITE}/Event/RPC/Server.pm
 @man man/man3p/Event::RPC::LogConnection.3p
 @man man/man3p/Event::RPC::Logger.3p
 @man man/man3p/Event::RPC::Loop.3p
+@man man/man3p/Event::RPC::Loop::AnyEvent.3p
 @man man/man3p/Event::RPC::Loop::Event.3p
 @man man/man3p/Event::RPC::Loop::Glib.3p
 @man man/man3p/Event::RPC::Message.3p
