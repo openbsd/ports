@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/12/19 21:39:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.42 2014/05/18 15:43:54 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.7.9
+V =		1.7.12
 DISTNAME =	jruby-bin-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -50,7 +50,7 @@ JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
 RAKE_V =	10.1.0
-RDOC_V =	4.0.1	
+RDOC_V =	4.0.1
 JRUBY_LAUNCHER_GEM = jruby-launcher-1.0.19-java.gem
 SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V
 
