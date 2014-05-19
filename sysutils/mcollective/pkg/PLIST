@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/05/01 07:28:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/05/19 10:22:30 jasper Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -316,7 +316,6 @@ libexec/mcollective/mcollective/validator/shellsafe_validator.ddl
 libexec/mcollective/mcollective/validator/shellsafe_validator.rb
 libexec/mcollective/mcollective/validator/typecheck_validator.ddl
 libexec/mcollective/mcollective/validator/typecheck_validator.rb
-sbin/mc-call-agent
 sbin/mcollectived
 share/doc/mcollective/
 share/doc/mcollective/Array.html

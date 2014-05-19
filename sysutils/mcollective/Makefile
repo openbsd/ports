@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2014/05/01 07:28:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/05/19 10:22:30 jasper Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
-DISTNAME=	mcollective-2.5.0
+DISTNAME=	mcollective-2.5.1
 
 CATEGORIES=	sysutils
 
@@ -25,7 +25,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 SUBST_VARS +=	RUBY
 
-MODRUBY_ADJ_FILES=mco mcollectived mc-call-agent
+MODRUBY_ADJ_FILES=mco mcollectived
 
 MAKE_FILE=	ext/Makefile
 
