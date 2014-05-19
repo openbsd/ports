@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.81 2014/05/09 20:34:36 kirby Exp $
+# $OpenBSD: portcheck,v 1.82 2014/05/19 00:57:54 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -674,21 +674,30 @@ sub_checks() {
 			export SUBPACKAGE="$subpkg" FLAVOR="$flavor"
 
 			local wantlib_var=WANTLIB${subpkg%-}
-			local vars="MODULES PKG_ARCH$subpkg $wantlib_var"
+			local vars="COMMENT$subpkg MODULES"
+			vars="$vars PKG_ARCH$subpkg $wantlib_var"
 			vars="$vars PERMIT_PACKAGE_CDROM${subpkg%-}"
 			vars="$vars PERMIT_PACKAGE_FTP${subpkg%-}"
 			make "${make_args[@]}" show="$vars" | {
-				local modules pkg_arch wantlib
+				local comment modules pkg_arch wantlib
 				local perm_pkg_cdrom perm_pkg_ftp
+				read -r comment
 				read -r modules
 				read -r pkg_arch
 				read -r wantlib
 				read -r perm_pkg_cdrom
 				read -r perm_pkg_ftp
-				if [[ $pkg_arch = "*" && -n $wantlib ]]; then
+
+				if [[ $comment == @(a|an|the)" "* ]]; then
+					err "${portref}no leading articles in" \
+					    "COMMENT${subpkg%-}, please"
+				fi
+
+				if [[ $pkg_arch == "*" && -n $wantlib ]]; then
 					err "${portref}non-empty $wantlib_var for" \
 					    "arch-independent package"
 				fi
+
 				check_wantlib "$portref" "$modules" $wantlib ||
 				    error=true
 				check_permit_subpkg "$portref" "$subpkg" \
