@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2014/04/29 14:40:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.61 2014/05/19 08:45:48 dcoppa Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-2.11
+DISTNAME=	feh-2.12
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
@@ -13,11 +13,11 @@ MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	Imlib2 X11 Xinerama c curl exif giblib>=1 m png
+WANTLIB=	Imlib2 X11 Xinerama c curl exif m png
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	devel/giblib \
+LIB_DEPENDS=	graphics/imlib2 \
 		graphics/libexif \
 		net/curl
 
