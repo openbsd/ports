@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/19 17:53:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.16 2014/05/19 19:16:17 rpointel Exp $
 
 COMMENT =		series of applications for Mercurial
 
-MODPY_EGG_VERSION =	2.10.2
+MODPY_EGG_VERSION =    3.0
 DISTNAME =		tortoisehg-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
@@ -23,7 +23,7 @@ BUILD_DEPENDS =		x11/py-qt4 \
 
 RUN_DEPENDS =		${BUILD_DEPENDS} \
 			editors/py-qscintilla \
-			devel/mercurial>=2.8.2 \
+			devel/mercurial>=3.0 \
 			devel/py-iniparse
 
 NO_TEST =		Yes

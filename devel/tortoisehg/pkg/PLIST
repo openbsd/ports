@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/11/08 11:45:26 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/05/19 19:16:17 rpointel Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -44,8 +44,6 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cslist.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cslist.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/customtools.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/customtools.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/decorators.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/decorators.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/docklog.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/docklog.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filectxactions.py
@@ -54,12 +52,10 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filedata.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filedata.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filedialogs.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filedialogs.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filelistmodel.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filelistmodel.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/fileencoding.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/fileencoding.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filelistview.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filelistview.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filerevmodel.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filerevmodel.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/fileview.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/fileview.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graft.py
@@ -94,10 +90,6 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/lfprompt.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/lfprompt.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/license.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/license.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/logcolumns.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/logcolumns.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/manifestdialog.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/manifestdialog.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/manifestmodel.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/manifestmodel.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/matching.py
@@ -114,10 +106,6 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mqutil.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/mqutil.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/partialcommit.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/partialcommit.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pathedit.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pathedit.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pbranch.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pbranch.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/postreview.py
@@ -243,10 +231,14 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/menuthg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/menuthg.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/obsoleteutil.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/obsoleteutil.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/partialcommit.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/partialcommit.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/pipeui.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/pipeui.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/shlib.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/shlib.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/terminal.py
@@ -259,6 +251,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/version.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/version.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/wconfig.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/wconfig.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/win32ill.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/win32ill.pyc
 share/locale/ar/LC_MESSAGES/tortoisehg.mo
 share/locale/ca/LC_MESSAGES/tortoisehg.mo
 share/locale/cs/LC_MESSAGES/tortoisehg.mo
@@ -303,6 +297,8 @@ share/pixmaps/tortoisehg/icons/16x16/apps/
 share/pixmaps/tortoisehg/icons/16x16/apps/gnupg.png
 share/pixmaps/tortoisehg/icons/16x16/apps/kiln.png
 share/pixmaps/tortoisehg/icons/16x16/apps/reviewboard.png
+share/pixmaps/tortoisehg/icons/16x16/mimetypes/
+share/pixmaps/tortoisehg/icons/16x16/mimetypes/text-x-generic.png
 share/pixmaps/tortoisehg/icons/22x22/
 share/pixmaps/tortoisehg/icons/22x22/actions/
 share/pixmaps/tortoisehg/icons/22x22/actions/window-close.png
@@ -458,14 +454,14 @@ share/pixmaps/tortoisehg/icons/scalable/apps/tools-hooks.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/tools-spanner-hammer.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/utilities-terminal.svg
 share/pixmaps/tortoisehg/icons/scalable/status/
+share/pixmaps/tortoisehg/icons/scalable/status/hg-merged-both.svg
+share/pixmaps/tortoisehg/icons/scalable/status/hg-merged-p1.svg
+share/pixmaps/tortoisehg/icons/scalable/status/hg-merged-p2.svg
 share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-applied.svg
 share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-guarded.svg
 share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-unguarded.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-added-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-error.svg
-share/pixmaps/tortoisehg/icons/scalable/status/thg-file-merged.svg
-share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p0.svg
-share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p1.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-git-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-remote-repo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-removed-subrepo.svg
