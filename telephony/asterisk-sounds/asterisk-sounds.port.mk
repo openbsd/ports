@@ -1,4 +1,4 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.8 2013/11/05 15:49:59 sthen Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.9 2014/05/19 08:06:30 sthen Exp $
 
 # sync with asterisk-sounds/Makefile and asterisk-sounds/*sounds/Makefile
 MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
@@ -10,6 +10,7 @@ MASTER_SITES ?= http://downloads.asterisk.org/pub/telephony/sounds/releases/
 HOMEPAGE =	http://www.asterisk.org/
 COMMENT =	${MODAS_DESC}
 
+EXTRACT_ONLY =
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
@@ -50,10 +51,7 @@ _T = ${MODAS_NAME:S/asterisk-//}
 MODAS_INST ?=	share/asterisk/sounds/${MODAS_LANG}
 SUBST_VARS +=	MODAS_INST L MODAS_LANGNAME MODAS_CODEC MODAS_VER
 
-do-extract:
-	mkdir ${WRKDIST} && cd ${WRKDIST} && \
-	${GZIP_CMD} -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODAS_INST}
-	cd ${WRKDIST}; pax -rw ./ ${PREFIX}/${MODAS_INST}
+	${GZIP_CMD} -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+	    ${TAR} xf - -C ${PREFIX}/${MODAS_INST}
