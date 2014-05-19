@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.57 2014/05/06 10:49:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.58 2014/05/19 07:52:07 dcoppa Exp $
 
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.18.10
+DISTNAME =		mpd-0.18.11
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
