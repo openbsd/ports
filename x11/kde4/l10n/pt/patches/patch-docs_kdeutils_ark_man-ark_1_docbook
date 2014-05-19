@@ -1,0 +1,16 @@
+$OpenBSD: patch-docs_kdeutils_ark_man-ark_1_docbook,v 1.1 2014/05/19 12:57:41 dcoppa Exp $
+
+Unbreak build.
+Fix error: "Entity: line 1: parser error : Entity 'ark' not defined"
+
+--- docs/kdeutils/ark/man-ark.1.docbook.orig	Mon May 19 13:22:16 2014
++++ docs/kdeutils/ark/man-ark.1.docbook	Mon May 19 13:23:11 2014
+@@ -97,7 +97,7 @@
+ <title
+ >Descrição</title>
+ <para
+->O &kappname; é um programa para gerir vários formatos de pacotes no ambiente do &kde;. Os pacotes podem ser vistos, extraídos, criados e modificados dentro do &kappname;. O programa poderá lidar com vários formatos como o <application
++>O &ark; é um programa para gerir vários formatos de pacotes no ambiente do &kde;. Os pacotes podem ser vistos, extraídos, criados e modificados dentro do &ark;. O programa poderá lidar com vários formatos como o <application
+ >tar</application
+ >, o <application
+ >gzip</application
