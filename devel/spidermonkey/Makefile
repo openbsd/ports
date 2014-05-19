@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/03/26 16:05:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/05/19 10:28:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 24 engine
@@ -15,6 +15,7 @@ MOZILLA_VERSION =	24
 DISTNAME =		mozjs-${MOZILLA_VERSION}.2.0
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}.2.0
 PKGSPEC =		spidermonkey->=24.0,<25.0
+REVISION =		0
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs-24 ${SO_VERSION}
@@ -57,5 +58,12 @@ CONFIGURE_ARGS =	--with-pthread \
 CONFIGURE_ENV +=	SO_VERSION="${SO_VERSION}" \
 			MOZILLA_VERSION="${MOZILLA_VERSION}" \
 			LIBS=-lncurses
+
+post-install:
+	rm ${PREFIX}/lib/libmozjs-${MOZILLA_VERSION}.a
+.ifndef DEBUG
+	${STRIP} ${PREFIX}/bin/js${MOZILLA_VERSION}
+	${STRIP} ${PREFIX}/lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-24_VERSION}
+.endif
 
 .include <bsd.port.mk>

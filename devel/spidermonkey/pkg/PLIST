@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/03/26 10:11:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/05/19 10:28:39 ajacoutot Exp $
 @option no-default-conflict
 @conflict spidermonkey->=24.0,<25.0
 @bin bin/js${MOZILLA_VERSION}
@@ -79,6 +79,5 @@ include/mozjs-${MOZILLA_VERSION}/mozilla/TypedEnum.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/Types.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/Util.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/WeakPtr.h
-lib/libmozjs-${MOZILLA_VERSION}.a
 @lib lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-24_VERSION}
 lib/pkgconfig/mozjs-${MOZILLA_VERSION}.pc

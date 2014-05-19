@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/26 12:17:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/05/19 10:28:39 ajacoutot Exp $
 @option no-default-conflict
 @conflict spidermonkey->=17.0,<18.0
 @bin bin/js17
@@ -70,6 +70,5 @@ include/js-${MOZILLA_VERSION}/mozilla/TypeTraits.h
 include/js-${MOZILLA_VERSION}/mozilla/Types.h
 include/js-${MOZILLA_VERSION}/mozilla/Util.h
 include/js-${MOZILLA_VERSION}/mozilla/WeakPtr.h
-lib/libmozjs-${MOZILLA_VERSION}.a
 @lib lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-17.0_VERSION}
 lib/pkgconfig/mozjs-${MOZILLA_VERSION}.pc

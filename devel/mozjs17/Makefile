@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/03/26 12:17:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/05/19 10:28:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 17 engine
@@ -14,7 +14,7 @@ COMMENT =	Mozilla C implementation of JavaScript
 MOZILLA_VERSION =	17.0
 DISTNAME =		mozjs17.0.0
 PKGNAME =		mozjs17-${MOZILLA_VERSION}
-REVISION =		0
+REVISION =		1
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs-17.0 ${SO_VERSION}
@@ -49,5 +49,12 @@ CONFIGURE_ARGS =	--with-pthread \
 CONFIGURE_ENV +=	SO_VERSION="${SO_VERSION}" \
 			MOZILLA_VERSION="${MOZILLA_VERSION}" \
 			LIBS=-lncurses
+
+post-install:
+	rm ${PREFIX}/lib/libmozjs-${MOZILLA_VERSION}.a
+.ifndef DEBUG
+	${STRIP} ${PREFIX}/bin/js17
+	${STRIP} ${PREFIX}/lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-17.0_VERSION}
+.endif
 
 .include <bsd.port.mk>
