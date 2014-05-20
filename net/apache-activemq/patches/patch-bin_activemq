@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_activemq,v 1.4 2013/03/18 14:46:28 ajacoutot Exp $
---- bin/activemq.orig	Wed Feb  6 17:53:14 2013
-+++ bin/activemq	Wed Mar 13 16:03:24 2013
+$OpenBSD: patch-bin_activemq,v 1.5 2014/05/20 19:34:48 jasper Exp $
+--- bin/activemq.orig	Tue Apr  1 02:13:54 2014
++++ bin/activemq	Thu May 15 22:20:21 2014
 @@ -29,7 +29,7 @@
  
  # ------------------------------------------------------------------------
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_activemq,v 1.4 2013/03/18 14:46:28 ajacoutot Exp $
  
  # Backup invocation parameters
  COMMANDLINE_ARGS="$@"
-@@ -37,7 +37,7 @@ COMMANDLINE_ARGS="$@"
+@@ -38,7 +38,7 @@ EXEC_OPTION=""
  # For using instances
  if ( basename $0 | grep "activemq-instance-" > /dev/null);then
     INST="`basename $0|sed 's/^activemq-instance-//;s/\.sh$//'`"
@@ -19,7 +19,7 @@ $OpenBSD: patch-bin_activemq,v 1.4 2013/03/18 14:46:28 ajacoutot Exp $
     echo "INFO: Using alternative activemq configuration files: $ACTIVEMQ_CONFIGS"
  fi
  
-@@ -593,7 +593,6 @@ invoke_stop(){
+@@ -595,7 +595,6 @@ invoke_stop(){
           echo
           echo "INFO: Regular shutdown not successful,  sending SIGKILL to process with pid '$PID'"
           kill -KILL $PID
@@ -27,7 +27,7 @@ $OpenBSD: patch-bin_activemq,v 1.4 2013/03/18 14:46:28 ajacoutot Exp $
         fi
      elif [ -f "$ACTIVEMQ_PIDFILE" ];then
         echo "ERROR: No or outdated process id in '$ACTIVEMQ_PIDFILE'"
-@@ -651,10 +650,10 @@ Tasks provided by the sysv init script:
+@@ -653,10 +652,10 @@ Tasks provided by the sysv init script:
                        (see next usage section)
  
  Configuration of this script:
