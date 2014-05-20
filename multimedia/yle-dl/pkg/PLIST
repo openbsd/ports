@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/19 09:16:08 sthen Exp $
-@bin bin/rtmpdump-yle
+@comment $OpenBSD: PLIST,v 1.2 2014/05/20 14:37:03 sthen Exp $
 bin/yle-dl
 share/doc/yle-dl/
 share/doc/yle-dl/COPYING
