@@ -1,6 +1,6 @@
-$OpenBSD: patch-mscore_mscore_CMakeLists_txt,v 1.1.1.1 2013/02/01 06:26:48 bcallah Exp $
---- mscore/mscore/CMakeLists.txt.orig	Tue Mar 13 09:32:27 2012
-+++ mscore/mscore/CMakeLists.txt	Sat Jan 12 20:07:31 2013
+$OpenBSD: patch-mscore_mscore_CMakeLists_txt,v 1.2 2014/05/20 14:08:47 dcoppa Exp $
+--- mscore/mscore/CMakeLists.txt.orig	Wed Feb 27 12:28:59 2013
++++ mscore/mscore/CMakeLists.txt	Mon May 19 21:15:23 2014
 @@ -26,7 +26,7 @@ if (NOT MINGW)
  #     set library search path for runtime linker to load the same
  #     qt libraries as we used at compile time
@@ -22,7 +22,7 @@ $OpenBSD: patch-mscore_mscore_CMakeLists_txt,v 1.1.1.1 2013/02/01 06:26:48 bcall
  endif (NOT MINGW AND NOT APPLE)
  
  if (STATIC_SCRIPT_BINDINGS)
-@@ -345,7 +345,7 @@ if (NOT MINGW AND NOT APPLE)
+@@ -345,10 +345,11 @@ if (NOT MINGW AND NOT APPLE)
        )
     target_link_libraries(genft al ${QT_LIBRARIES} -lfreetype )
     set_target_properties(genft
@@ -30,4 +30,9 @@ $OpenBSD: patch-mscore_mscore_CMakeLists_txt,v 1.1.1.1 2013/02/01 06:26:48 bcall
 +      PROPERTIES COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -I${OPENBSD_X11BASE}/include -I${OPENBSD_X11BASE}/include/freetype2"
        )
  endif (NOT MINGW AND NOT APPLE)
+ 
+ ADD_DEPENDENCIES(${ExecutableName} mops1)
+-ADD_DEPENDENCIES(${ExecutableName} mops1)
++ADD_DEPENDENCIES(${ExecutableName} mops2)
++ADD_DEPENDENCIES(${ExecutableName} lrelease)
  

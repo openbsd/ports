@@ -1,0 +1,9 @@
+$OpenBSD: patch-mscore_rtf2html_CMakeLists_txt,v 1.1 2014/05/20 14:08:47 dcoppa Exp $
+--- mscore/rtf2html/CMakeLists.txt.orig	Wed Feb 27 12:29:20 2013
++++ mscore/rtf2html/CMakeLists.txt	Mon May 19 21:58:32 2014
+@@ -30,3 +30,5 @@ set_target_properties( rtf2html
+    PROPERTIES COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h"
+    )
+ 
++ADD_DEPENDENCIES(rtf2html mops1)
++ADD_DEPENDENCIES(rtf2html mops2)
