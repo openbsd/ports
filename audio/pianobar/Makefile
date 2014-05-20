@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2014/03/27 10:13:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.62 2014/05/20 14:51:46 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2013.09.15
-REVISION =	2
+DISTNAME =	pianobar-2014.04.22
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -13,19 +12,19 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://6xq.net/projects/pianobar/
 
-MASTER_SITES =	${HOMEPAGE}
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
-SHARED_LIBS =	piano	5.0	# 0.0.0
+SHARED_LIBS =	piano	6.0	# 0.0.0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	ao c faad gcrypt gnutls json-c m mad pthread
+WANTLIB =	ao avcodec avfilter avformat avutil c gcrypt \
+		gnutls json-c m pthread
 
-LIB_DEPENDS =	audio/faad>=2.7 \
-		audio/libao \
-		audio/libmad \
+LIB_DEPENDS =	audio/libao \
 		devel/json-c \
+		graphics/ffmpeg>=20140412 \
 		security/gnutls>=2.10.0 \
 		security/libgcrypt
 
@@ -35,6 +34,7 @@ CFLAGS +=	-DNDEBUG
 
 MAKE_FLAGS =	DYNLINK=1 \
 		CC=${CC} \
+		LIBAV="ffmpeg2.2" \
 		LIBGCRYPT_CFLAGS="-DGCRYPT_NO_DEPRECATED \
 				  -I${LOCALBASE}/include" \
 		LIBpiano_VERSION="${LIBpiano_VERSION}"

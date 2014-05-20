@@ -1,11 +1,14 @@
-$OpenBSD: patch-Makefile,v 1.22 2013/09/23 08:40:23 dcoppa Exp $
---- Makefile.orig	Sun Sep 15 15:54:04 2013
-+++ Makefile	Mon Sep 23 10:33:19 2013
-@@ -6,22 +6,8 @@ LIBDIR:=${PREFIX}/lib
+$OpenBSD: patch-Makefile,v 1.23 2014/05/20 14:51:46 dcoppa Exp $
+--- Makefile.orig	Tue May  6 09:18:31 2014
++++ Makefile	Tue May 20 16:35:10 2014
+@@ -6,27 +6,11 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
  DYNLINK:=0
 +CFLAGS+=-std=c99 -fgnu89-inline
+ # choose your libav implementation.
+ # supported: ffmpeg2.2, ffmpeg2.1, ffmpeg1.2, libav10, libav9
+ LIBAV:=undefined
  
 -# Respect environment variables set by user; does not work with :=
 -ifeq (${CFLAGS},)
@@ -17,6 +20,8 @@ $OpenBSD: patch-Makefile,v 1.22 2013/09/23 08:40:23 dcoppa Exp $
 -		CC=gcc -std=c99
 -	else ifeq (${OS},FreeBSD)
 -		CC=cc -std=c99
+-	else ifeq (${OS},OpenBSD)
+-		CC=cc -std=c99
 -	else
 -		CC=c99
 -	endif
@@ -25,26 +30,22 @@ $OpenBSD: patch-Makefile,v 1.22 2013/09/23 08:40:23 dcoppa Exp $
  PIANOBAR_DIR:=src
  PIANOBAR_SRC:=\
  		${PIANOBAR_DIR}/main.c \
-@@ -99,38 +85,32 @@ LIBJSONC_LDFLAGS:=$(shell pkg-config --libs json-c 2>/
+@@ -113,32 +97,26 @@ ALL_LDFLAGS:=${LDFLAGS} -lao -lpthread -lm \
  
  # build pianobar
  ifeq (${DYNLINK},1)
 -pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} libpiano.so.0
 -	@echo "  LINK  $@"
--	@${CC} -o $@ ${PIANOBAR_OBJ} ${LDFLAGS} -lao -lpthread -lm -L. -lpiano \
+-	@${CC} -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
 +pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} libpiano.so.${LIBpiano_VERSION}
-+	${CC} -o $@ ${PIANOBAR_OBJ} ${LDFLAGS} -lao -lpthread -lm -L. -lpiano \
- 			${LIBFAAD_LDFLAGS} ${LIBMAD_LDFLAGS} ${LIBGNUTLS_LDFLAGS} \
- 			${LIBGCRYPT_LDFLAGS}
++	${CC} -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
  else
  pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} \
  		${LIBWAITRESS_HDR}
 -	@echo "  LINK  $@"
--	@${CC} ${CFLAGS} ${LDFLAGS} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} \
-+	${CC} ${CFLAGS} ${LDFLAGS} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} \
- 			${LIBWAITRESS_OBJ} -lao -lpthread -lm \
- 			${LIBFAAD_LDFLAGS} ${LIBMAD_LDFLAGS} ${LIBGNUTLS_LDFLAGS} \
- 			${LIBGCRYPT_LDFLAGS} ${LIBJSONC_LDFLAGS} -o $@
+-	@${CC} -o $@ ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} \
++	${CC} -o $@ ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} \
+ 			${ALL_LDFLAGS}
  endif
  
  # build shared and static libpiano
@@ -52,12 +53,9 @@ $OpenBSD: patch-Makefile,v 1.22 2013/09/23 08:40:23 dcoppa Exp $
 +libpiano.so.${LIBpiano_VERSION}: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LIBWAITRESS_RELOBJ} \
  		${LIBWAITRESS_HDR} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ}
 -	@echo "  LINK  $@"
--	@${CC} -shared -Wl,-soname,libpiano.so.0 ${CFLAGS} ${LDFLAGS} \
--			-o libpiano.so.0.0.0 ${LIBPIANO_RELOBJ} \
-+	${CC} -shared ${CFLAGS} ${LDFLAGS} \
-+			-o libpiano.so.${LIBpiano_VERSION} ${LIBPIANO_RELOBJ} \
- 			${LIBWAITRESS_RELOBJ} ${LIBGNUTLS_LDFLAGS} ${LIBGCRYPT_LDFLAGS} \
- 			${LIBJSONC_LDFLAGS}
+-	@${CC} -shared -Wl,-soname,libpiano.so.0 -o libpiano.so.0.0.0 \
++	${CC} -shared -o libpiano.so.${LIBpiano_VERSION} \
+ 			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} ${ALL_LDFLAGS}
 -	@ln -s libpiano.so.0.0.0 libpiano.so.0
 -	@ln -s libpiano.so.0 libpiano.so
 -	@echo "    AR  libpiano.a"
@@ -69,27 +67,22 @@ $OpenBSD: patch-Makefile,v 1.22 2013/09/23 08:40:23 dcoppa Exp $
  %.d: %.c
 -	@set -e; rm -f $@; \
 +	set -e; rm -f $@; \
- 			$(CC) -M ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
- 			${LIBFAAD_CFLAGS} ${LIBMAD_CFLAGS} ${LIBGNUTLS_CFLAGS} \
- 			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} $< > $@.$$$$; \
-@@ -143,21 +123,18 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LI
+ 			$(CC) -M ${ALL_CFLAGS} $< > $@.$$$$; \
+ 			sed '1 s,^.*\.o[ :]*,$*.o $@ : ,g' < $@.$$$$ > $@; \
+ 			rm -f $@.$$$$
+@@ -149,17 +127,14 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LI
  
  # build standard object files
  %.o: %.c
 -	@echo "    CC  $<"
--	@${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
-+	${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
- 			${LIBFAAD_CFLAGS} ${LIBMAD_CFLAGS} ${LIBGNUTLS_CFLAGS} \
- 			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} -c -o $@ $<
+-	@${CC} -c -o $@ ${ALL_CFLAGS} $<
++	${CC} -c -o $@ ${ALL_CFLAGS} $<
  
  # create position independent code (for shared libraries)
  %.lo: %.c
 -	@echo "    CC  $< (PIC)"
--	@${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
--			${LIBJSONC_CFLAGS} \
-+	${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
-+			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} \
- 			-c -fPIC -o $@ $<
+-	@${CC} -c -fPIC -o $@ ${ALL_CFLAGS} $<
++	${CC} -c -fPIC -o $@ ${ALL_CFLAGS} $<
  
  clean:
 -	@echo " CLEAN"
@@ -98,7 +91,7 @@ $OpenBSD: patch-Makefile,v 1.22 2013/09/23 08:40:23 dcoppa Exp $
  			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} pianobar libpiano.so* \
  			libpiano.a waitress-test $(PIANOBAR_SRC:.c=.d) $(LIBPIANO_SRC:.c=.d) \
  			$(LIBWAITRESS_SRC:.c=.d)
-@@ -203,18 +180,16 @@ install: pianobar install-libpiano
+@@ -177,18 +152,16 @@ install: pianobar install-libpiano
  else
  install: pianobar
  endif
