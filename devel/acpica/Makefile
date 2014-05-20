@@ -1,45 +1,42 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/23 18:17:34 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2014/05/20 16:37:08 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
-V =			20111123
-DISTNAME =		acpica-unix-$V
+V =			20121018
+DISTNAME =		acpica-unix2-$V
 PKGNAME =		acpica-$V
 CATEGORIES =		devel
-REVISION =		2
 
-HOMEPAGE =		http://www.acpica.org/
-MASTER_SITES =		${HOMEPAGE}download/
+HOMEPAGE =		https://acpica.org/
+MASTER_SITES =		https://acpica.org/sites/acpica/files/
 
 WANTLIB =		c pthread
 
-# Intel License
-# http://www.acpica.org/downloads/unix_source_code.php
-PERMIT_PACKAGE_CDROM =	export restrictions
-PERMIT_PACKAGE_FTP =	Yes
+# BSD-ish (dual license)
+PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =		Yes
-NO_TEST =		Yes
 BUILD_DEPENDS =		devel/flex devel/bison
 
 do-build:
-	cd ${WRKSRC}/compiler && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
-	cd ${WRKSRC}/tools/acpisrc && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
-	cd ${WRKSRC}/tools/acpinames && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
-	cd ${WRKSRC}/tools/acpixtract && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
-	cd ${WRKSRC}/tools/acpiexec && \
+	cd ${WRKSRC}/source/compiler && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
+.for i in acpisrc acpinames acpixtract
+	cd ${WRKSRC}/source/tools/$i && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
+.endfor
+	cd ${WRKSRC}/source/tools/acpiexec && \
 	    env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM} clean acpiexec
 
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/compiler/iasl ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpisrc/acpisrc ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpinames/acpinames ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpixtract/acpixtract ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpiexec/acpiexec ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/source/compiler/iasl ${PREFIX}/bin/
+.for i in acpisrc acpinames acpixtract acpiexec
+	${INSTALL_PROGRAM} ${WRKSRC}/source/tools/$i/$i ${PREFIX}/bin/
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/acpica/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/acpica/
 	${INSTALL_DATA} ${FILESDIR}/LICENSE ${PREFIX}/share/doc/acpica/
+
+do-test:
+	cd ${WRKSRC}/tests/templates && sh templates.sh 1
 
 .include <bsd.port.mk>

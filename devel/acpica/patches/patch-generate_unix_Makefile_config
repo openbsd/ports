@@ -1,6 +1,6 @@
-$OpenBSD: patch-generate_unix_Makefile_config,v 1.1 2012/01/11 02:35:14 sthen Exp $
---- generate/unix/Makefile.config.orig	Wed Nov 23 16:22:31 2011
-+++ generate/unix/Makefile.config	Wed Jan 11 00:27:25 2012
+$OpenBSD: patch-generate_unix_Makefile_config,v 1.2 2014/05/20 16:37:09 sthen Exp $
+--- generate/unix/Makefile.config.orig	Wed Jul 11 11:55:07 2012
++++ generate/unix/Makefile.config	Fri May  9 02:15:58 2014
 @@ -118,16 +118,10 @@ CWARNINGFLAGS += \
      -Waddress \
      -Waggregate-return \

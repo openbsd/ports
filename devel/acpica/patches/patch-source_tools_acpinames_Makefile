@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_acpihelp_Makefile,v 1.1 2012/01/11 02:35:14 sthen Exp $
---- tools/acpihelp/Makefile.orig	Wed Nov 23 16:22:35 2011
-+++ tools/acpihelp/Makefile	Wed Jan 11 00:27:32 2012
-@@ -85,16 +85,10 @@ CWARNINGFLAGS += \
+$OpenBSD: patch-source_tools_acpinames_Makefile,v 1.1 2014/05/20 16:37:09 sthen Exp $
+--- source/tools/acpinames/Makefile.orig	Wed Jul 11 11:55:17 2012
++++ source/tools/acpinames/Makefile	Fri May  9 02:15:58 2014
+@@ -163,16 +163,10 @@ CWARNINGFLAGS += \
      -Waddress \
      -Waggregate-return \
      -Wchar-subscripts \
