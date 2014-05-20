@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/05/13 11:43:27 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/05/20 19:36:27 jasper Exp $
 bin/verilator
 @bin bin/verilator_bin
 @bin bin/verilator_bin_dbg
@@ -22,17 +22,6 @@ share/verilator/examples/test_sp/Makefile_obj
 share/verilator/examples/test_v/
 share/verilator/examples/test_v/input.vc
 share/verilator/examples/test_v/t.v
-share/verilator/examples/test_v/t_chg.v
-share/verilator/examples/test_v/t_clk.v
-share/verilator/examples/test_v/t_clk_flop.v
-share/verilator/examples/test_v/t_clk_two.v
-share/verilator/examples/test_v/t_inst.v
-share/verilator/examples/test_v/t_inst_a.v
-share/verilator/examples/test_v/t_inst_b.v
-share/verilator/examples/test_v/t_netlist.v
-share/verilator/examples/test_v/t_param.v
-share/verilator/examples/test_v/t_param_a.v
-share/verilator/examples/test_v/t_param_b.v
 share/verilator/examples/test_v/top.v
 share/verilator/include/
 share/verilator/include/verilated.cpp
