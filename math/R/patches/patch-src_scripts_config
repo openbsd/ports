@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_scripts_config,v 1.2 2014/03/12 11:04:41 dcoppa Exp $
---- src/scripts/config.orig	Sun Jun  2 00:05:05 2013
-+++ src/scripts/config	Mon Feb 10 13:11:12 2014
-@@ -58,7 +58,6 @@ Variables:
-   CXXFLAGS      C++ compiler flags
-   CXXPICFLAGS   special flags for compiling C++ code to be turned into a
- 		shared library
+$OpenBSD: patch-src_scripts_config,v 1.3 2014/05/20 11:02:12 dcoppa Exp $
+--- src/scripts/config.orig	Fri May  2 11:52:04 2014
++++ src/scripts/config	Fri May  2 11:52:40 2014
+@@ -64,7 +64,6 @@ Variables:
+   CXX1XXPICFLAGS
+                 special flags for compiling C++11 code to be turned into
+                 a shared library
 -  DYLIB_EXT	file extension (including '.') for dynamic libraries
    DYLIB_LD      command for linking dynamic libraries which contain
  		object files from a C or Fortran compiler only
    DYLIB_LDFLAGS
-@@ -233,7 +232,7 @@ query="${MAKE} -s ${makefiles} print R_HOME=${R_HOME}"
+@@ -243,7 +242,7 @@ query="${MAKE} -s ${makefiles} print R_HOME=${R_HOME}"
  
  ok_c_vars="CC CFLAGS CPICFLAGS CPP CPPFLAGS"
- ok_cxx_vars="CXX CXXCPP CXXFLAGS CXXPICFLAGS"
+ ok_cxx_vars="CXX CXXCPP CXXFLAGS CXXPICFLAGS CXX1X CXX1XSTD CXX1XFLAGS CXX1XPICFLAGS"
 -ok_dylib_vars="DYLIB_EXT DYLIB_LD DYLIB_LDFLAGS"
 +ok_dylib_vars="DYLIB_LD DYLIB_LDFLAGS"
  ok_objc_vars="OBJC OBJCFLAGS"

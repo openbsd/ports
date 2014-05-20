@@ -1,19 +1,30 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2014/03/12 11:04:41 dcoppa Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2014/05/20 11:02:12 dcoppa Exp $
 
 Do not build PDF versions of the R manuals
 
---- doc/Makefile.in.orig	Sat Jan 11 00:05:02 2014
-+++ doc/Makefile.in	Wed Mar 12 10:10:05 2014
-@@ -35,7 +35,7 @@ R: Makefile svnonly
+--- doc/Makefile.in.orig	Fri May  2 11:20:17 2014
++++ doc/Makefile.in	Fri May  2 11:22:45 2014
+@@ -15,8 +15,8 @@ INSTFILES = AUTHORS COPYING COPYRIGHTS CRAN_mirrors.cs
+ 	KEYWORDS KEYWORDS.db THANKS NEWS.0 NEWS.1 NEWS.2
+ DISTFILES = Makefile.in Makefile.win $(INSTFILES) R.aux Rscript.1 \
+   NEWS.Rd NEWS.2.Rd
+-INSTFILES2 = NEWS.rds NEWS NEWS.pdf
+-NON_SVN_INSTFILES = FAQ RESOURCES NEWS NEWS.pdf
++INSTFILES2 = NEWS.rds NEWS
++NON_SVN_INSTFILES = FAQ RESOURCES NEWS
+ ## generated later.
+ SUBDIRS = html manual
+ 
+@@ -36,7 +36,7 @@ R: Makefile svnonly
  	  $(MAKE) rdocdir=$(top_builddir)/doc install-sources; \
  	fi
  
--docs: R.1 NEWS.rds ../NEWS html/NEWS.html ../NEWS.pdf
-+docs: R.1 NEWS.rds ../NEWS html/NEWS.html
+-docs: R.1 NEWS.rds NEWS html/NEWS.html NEWS.pdf
++docs: R.1 NEWS.rds NEWS html/NEWS.html
  	@(cd manual && $(MAKE) $@)
  
  R.1:
-@@ -53,21 +53,9 @@ NEWS.rds: $(srcdir)/NEWS.Rd
+@@ -54,20 +54,8 @@ NEWS: NEWS.rds
  html/NEWS.html: NEWS.rds
  	@$(ECHO) 'options(warn=1);tools:::Rd2HTML_NEWS_in_Rd("NEWS.rds", "html/NEWS.html")' |  $(R_EXE)
  
@@ -21,22 +32,21 @@ Do not build PDF versions of the R manuals
 -## needs pdflatex (and more)
 -## Need LC_COLLATE to work around the misuse of [A-z] in texi2dvi 1.135
 -## (as reported by MM)
--../NEWS.pdf: NEWS.rds
+-NEWS.pdf: NEWS.rds
 -	@if test -z "$(PDFLATEX)"; then \
 -	  $(ECHO) "'pdflatex' is needed to make NEWS.pdf but is missing on your system."; \
 -	else \
 -	 $(ECHO) "creating NEWS.pdf"; \
--	 $(ECHO) 'options(warn=1);tools:::Rd2pdf_NEWS_in_Rd("NEWS.rds", "../NEWS.pdf")' |  LC_COLLATE=C $(R_EXE); \
+-	 $(ECHO) 'options(warn=1);tools:::Rd2pdf_NEWS_in_Rd("NEWS.rds", "NEWS.pdf")' |  LC_COLLATE=C $(R_EXE); \
 -	fi
 -
  ## NEWS.2.html ships as doc/html/NEWS.2.html in the sources.
- ## This target allows it to be regenerated if necessary.
 -docs2: NEWS.2.rds NEWS.2.html NEWS.2.pdf
 +docs2: NEWS.2.rds NEWS.2.html
  
  NEWS.2.rds: $(srcdir)/NEWS.2.Rd
  	@$(ECHO) "options(warn=1);saveRDS(tools:::prepare_Rd(tools::parse_Rd(\"$(srcdir)/NEWS.2.Rd\"), stages = 'install'), 'NEWS.2.rds')" | $(R_EXE)
-@@ -76,15 +64,6 @@ NEWS.2.html: NEWS.2.rds
+@@ -81,15 +69,6 @@ NEWS.2.html: NEWS.2.rds
  	@$(ECHO) "creating NEWS.2.html"
  	@$(ECHO) 'options(warn=1);tools:::Rd2HTML_NEWS_in_Rd("NEWS.2.rds", "NEWS.2.html")' |  $(R_EXE)
  
@@ -52,7 +62,7 @@ Do not build PDF versions of the R manuals
  install: install-message installdirs install-sources install-sources2 install-man
  	@for d in $(SUBDIRS); do \
  	  (cd $${d} && $(MAKE) $@) || exit 1; \
-@@ -127,9 +106,6 @@ uninstall:
+@@ -132,9 +111,6 @@ uninstall:
  	    || $(ECHO) "  subdir $(DESTDIR)$(subdir) not removed"; \
  	fi
  	@rm -f $(DESTDIR)$(mandir)/man1/R.1 $(DESTDIR)$(mandir)/man1/Rscript.1

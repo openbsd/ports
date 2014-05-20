@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_CommandLineArgs_c,v 1.7 2012/10/29 11:07:29 dcoppa Exp $
---- src/main/CommandLineArgs.c.orig	Tue Aug 28 00:05:06 2012
-+++ src/main/CommandLineArgs.c	Fri Oct 26 10:05:45 2012
+$OpenBSD: patch-src_main_CommandLineArgs_c,v 1.8 2014/05/20 11:02:12 dcoppa Exp $
+--- src/main/CommandLineArgs.c.orig	Fri May  2 11:27:47 2014
++++ src/main/CommandLineArgs.c	Fri May  2 11:28:56 2014
 @@ -191,7 +191,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
  		     !strcmp(*av, "-V") ||
  		     !strcmp(*av, "-n") ||

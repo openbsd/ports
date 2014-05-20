@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_modules_lapack_Makefile_in,v 1.3 2012/07/04 12:38:06 dcoppa Exp $
---- src/modules/lapack/Makefile.in.orig	Fri Jun 22 09:56:42 2012
-+++ src/modules/lapack/Makefile.in	Fri Jun 22 09:57:47 2012
-@@ -10,6 +10,7 @@ subdir = src/modules/lapack
- R_HOME = $(top_builddir)
+$OpenBSD: patch-src_modules_lapack_Makefile_in,v 1.4 2014/05/20 11:02:12 dcoppa Exp $
+--- src/modules/lapack/Makefile.in.orig	Thu Mar 13 00:03:24 2014
++++ src/modules/lapack/Makefile.in	Tue May 20 10:53:34 2014
+@@ -34,7 +34,7 @@ DISTFILES = \
+ 	cmplx.f dlapack.f dlamch.f
  
- include $(top_builddir)/Makeconf
-+DYLIB_EXT=.so.$(LIBRlapack_VERSION)
- 
- SOURCES_C = Lapack.c @USE_VECLIB_G95FIX_TRUE@ vecLibg95c.c
- SOURCES_F = @USE_VECLIB_G95FIX_TRUE@ vecLibg95f.f
+ lapack_la = lapack$(SHLIB_EXT)
+-Rlapack_la = libRlapack$(DYLIB_EXT)
++Rlapack_la = libRlapack.so.$(LIBRlapack_VERSION)
+ lapack_la_OBJECTS = $(OBJECTS)
+ ## Used for passing '+s' to SHLIB_LINK on HP-UX.
+ lapack_la_LDFLAGS = @LAPACK_LDFLAGS@

@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/03/12 11:04:41 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/05/20 11:02:12 dcoppa Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
 lib/R/COPYING
-lib/R/NEWS
-lib/R/NEWS.0
-lib/R/NEWS.1
-lib/R/NEWS.2
 lib/R/SVN-REVISION
 lib/R/bin/
 lib/R/bin/BATCH
@@ -43,6 +39,10 @@ lib/R/doc/CRAN_mirrors.csv
 lib/R/doc/FAQ
 lib/R/doc/KEYWORDS
 lib/R/doc/KEYWORDS.db
+lib/R/doc/NEWS
+lib/R/doc/NEWS.0
+lib/R/doc/NEWS.1
+lib/R/doc/NEWS.2
 lib/R/doc/NEWS.rds
 lib/R/doc/RESOURCES
 lib/R/doc/THANKS
@@ -99,6 +99,7 @@ lib/R/include/R_ext/Error.h
 lib/R/include/R_ext/GetX11Image.h
 lib/R/include/R_ext/GraphicsDevice.h
 lib/R/include/R_ext/GraphicsEngine.h
+lib/R/include/R_ext/Itermacros.h
 lib/R/include/R_ext/Lapack.h
 lib/R/include/R_ext/Linpack.h
 lib/R/include/R_ext/MathThreads.h
@@ -110,6 +111,7 @@ lib/R/include/R_ext/QuartzDevice.h
 lib/R/include/R_ext/R-ftp-http.h
 lib/R/include/R_ext/RS.h
 lib/R/include/R_ext/RStartup.h
+lib/R/include/R_ext/Rallocators.h
 lib/R/include/R_ext/Random.h
 lib/R/include/R_ext/Rdynload.h
 lib/R/include/R_ext/Riconv.h
@@ -171,6 +173,9 @@ lib/R/library/KernSmooth/po/de/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/KernSmooth/po/en@quot/
 lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/
 lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/R-KernSmooth.mo
+lib/R/library/KernSmooth/po/fr/
+lib/R/library/KernSmooth/po/fr/LC_MESSAGES/
+lib/R/library/KernSmooth/po/fr/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/KernSmooth/po/ko/
 lib/R/library/KernSmooth/po/ko/LC_MESSAGES/
 lib/R/library/KernSmooth/po/ko/LC_MESSAGES/R-KernSmooth.mo
@@ -595,6 +600,9 @@ lib/R/library/Matrix/po/en@quot/
 lib/R/library/Matrix/po/en@quot/LC_MESSAGES/
 lib/R/library/Matrix/po/en@quot/LC_MESSAGES/Matrix.mo
 lib/R/library/Matrix/po/en@quot/LC_MESSAGES/R-Matrix.mo
+lib/R/library/Matrix/po/fr/
+lib/R/library/Matrix/po/fr/LC_MESSAGES/
+lib/R/library/Matrix/po/fr/LC_MESSAGES/R-Matrix.mo
 lib/R/library/Matrix/po/pl/
 lib/R/library/Matrix/po/pl/LC_MESSAGES/
 lib/R/library/Matrix/po/pl/LC_MESSAGES/Matrix.mo
@@ -782,6 +790,7 @@ lib/R/library/base/html/difftime.html
 lib/R/library/base/html/dim.html
 lib/R/library/base/html/dimnames.html
 lib/R/library/base/html/do.call.html
+lib/R/library/base/html/dontCheck.html
 lib/R/library/base/html/double.html
 lib/R/library/base/html/dput.html
 lib/R/library/base/html/drop.html
@@ -1062,6 +1071,7 @@ lib/R/library/boot/R/
 lib/R/library/boot/R/boot
 lib/R/library/boot/R/boot.rdb
 lib/R/library/boot/R/boot.rdx
+lib/R/library/boot/bd.q
 lib/R/library/boot/data/
 lib/R/library/boot/data/Rdata.rdb
 lib/R/library/boot/data/Rdata.rds
@@ -1332,6 +1342,10 @@ lib/R/library/cluster/po/de/LC_MESSAGES/R-cluster.mo
 lib/R/library/cluster/po/en@quot/
 lib/R/library/cluster/po/en@quot/LC_MESSAGES/
 lib/R/library/cluster/po/en@quot/LC_MESSAGES/R-cluster.mo
+lib/R/library/cluster/po/en@quot/LC_MESSAGES/cluster.mo
+lib/R/library/cluster/po/fr/
+lib/R/library/cluster/po/fr/LC_MESSAGES/
+lib/R/library/cluster/po/fr/LC_MESSAGES/R-cluster.mo
 lib/R/library/cluster/po/pl/
 lib/R/library/cluster/po/pl/LC_MESSAGES/
 lib/R/library/cluster/po/pl/LC_MESSAGES/R-cluster.mo
@@ -1577,6 +1591,10 @@ lib/R/library/grDevices/R/grDevices
 lib/R/library/grDevices/R/grDevices.rdb
 lib/R/library/grDevices/R/grDevices.rdx
 lib/R/library/grDevices/afm/
+lib/R/library/grDevices/afm/ArialMT-Bold.afm.gz
+lib/R/library/grDevices/afm/ArialMT-BoldItalic.afm.gz
+lib/R/library/grDevices/afm/ArialMT-Italic.afm.gz
+lib/R/library/grDevices/afm/ArialMT.afm.gz
 lib/R/library/grDevices/afm/CM_boldx_10.afm.gz
 lib/R/library/grDevices/afm/CM_boldx_italic_10.afm.gz
 lib/R/library/grDevices/afm/CM_italic_10.afm.gz
@@ -1728,7 +1746,6 @@ lib/R/library/grDevices/html/devAskNewPage.html
 lib/R/library/grDevices/html/embedFonts.html
 lib/R/library/grDevices/html/extendrange.html
 lib/R/library/grDevices/html/getGraphicsEvent.html
-lib/R/library/grDevices/html/grDevices-defunct.html
 lib/R/library/grDevices/html/grDevices-package.html
 lib/R/library/grDevices/html/gray.colors.html
 lib/R/library/grDevices/html/gray.html
@@ -1895,6 +1912,7 @@ lib/R/library/grid/R/grid
 lib/R/library/grid/R/grid.rdb
 lib/R/library/grid/R/grid.rdx
 lib/R/library/grid/doc/
+lib/R/library/grid/doc/DivByZero.txt
 lib/R/library/grid/doc/changes.txt
 lib/R/library/grid/doc/displaylist.pdf
 lib/R/library/grid/doc/frame.pdf
@@ -1922,25 +1940,25 @@ lib/R/library/grid/html/R.css
 lib/R/library/grid/html/absolute.size.html
 lib/R/library/grid/html/arrow.html
 lib/R/library/grid/html/calcStringMetric.html
-lib/R/library/grid/html/convertNative.html
 lib/R/library/grid/html/current.viewport.html
 lib/R/library/grid/html/dataViewport.html
+lib/R/library/grid/html/depth.html
 lib/R/library/grid/html/drawDetails.html
 lib/R/library/grid/html/editDetails.html
+lib/R/library/grid/html/explode.html
 lib/R/library/grid/html/gEdit.html
 lib/R/library/grid/html/gPath.html
 lib/R/library/grid/html/getNames.html
 lib/R/library/grid/html/gpar.html
+lib/R/library/grid/html/grid-defunct.html
 lib/R/library/grid/html/grid-internal.html
 lib/R/library/grid/html/grid-package.html
 lib/R/library/grid/html/grid.DLapply.html
 lib/R/library/grid/html/grid.add.html
-lib/R/library/grid/html/grid.arrows.html
 lib/R/library/grid/html/grid.bezier.html
 lib/R/library/grid/html/grid.cap.html
 lib/R/library/grid/html/grid.circle.html
 lib/R/library/grid/html/grid.clip.html
-lib/R/library/grid/html/grid.collection.html
 lib/R/library/grid/html/grid.convert.html
 lib/R/library/grid/html/grid.copy.html
 lib/R/library/grid/html/grid.curve.html
@@ -1953,6 +1971,7 @@ lib/R/library/grid/html/grid.frame.html
 lib/R/library/grid/html/grid.function.html
 lib/R/library/grid/html/grid.get.html
 lib/R/library/grid/html/grid.grab.html
+lib/R/library/grid/html/grid.grep.html
 lib/R/library/grid/html/grid.grill.html
 lib/R/library/grid/html/grid.grob.html
 lib/R/library/grid/html/grid.layout.html
@@ -1987,10 +2006,10 @@ lib/R/library/grid/html/grid.yaxis.html
 lib/R/library/grid/html/grobName.html
 lib/R/library/grid/html/grobWidth.html
 lib/R/library/grid/html/grobX.html
+lib/R/library/grid/html/legendGrob.html
 lib/R/library/grid/html/makeContent.html
 lib/R/library/grid/html/plotViewport.html
-lib/R/library/grid/html/pop.viewport.html
-lib/R/library/grid/html/push.viewport.html
+lib/R/library/grid/html/resolveRasterSize.html
 lib/R/library/grid/html/showGrob.html
 lib/R/library/grid/html/showViewport.html
 lib/R/library/grid/html/stringWidth.html
@@ -2124,9 +2143,9 @@ lib/R/library/lattice/po/fr/LC_MESSAGES/R-lattice.mo
 lib/R/library/lattice/po/ko/
 lib/R/library/lattice/po/ko/LC_MESSAGES/
 lib/R/library/lattice/po/ko/LC_MESSAGES/R-lattice.mo
-lib/R/library/lattice/po/pl_PL/
-lib/R/library/lattice/po/pl_PL/LC_MESSAGES/
-lib/R/library/lattice/po/pl_PL/LC_MESSAGES/R-lattice.mo
+lib/R/library/lattice/po/pl/
+lib/R/library/lattice/po/pl/LC_MESSAGES/
+lib/R/library/lattice/po/pl/LC_MESSAGES/R-lattice.mo
 lib/R/library/methods/
 lib/R/library/methods/DESCRIPTION
 lib/R/library/methods/INDEX
@@ -2562,7 +2581,6 @@ lib/R/library/nlme/html/lme.html
 lib/R/library/nlme/html/lme.lmList.html
 lib/R/library/nlme/html/lmeControl.html
 lib/R/library/nlme/html/lmeObject.html
-lib/R/library/nlme/html/lmeScale.html
 lib/R/library/nlme/html/lmeStruct.html
 lib/R/library/nlme/html/logDet.corStruct.html
 lib/R/library/nlme/html/logDet.html
@@ -3617,6 +3635,7 @@ lib/R/library/tools/html/SweaveTeXFilter.html
 lib/R/library/tools/html/add_datalist.html
 lib/R/library/tools/html/assertCondition.html
 lib/R/library/tools/html/bibstyle.html
+lib/R/library/tools/html/buildVignette.html
 lib/R/library/tools/html/buildVignettes.html
 lib/R/library/tools/html/charsets.html
 lib/R/library/tools/html/checkFF.html
@@ -3633,6 +3652,7 @@ lib/R/library/tools/html/delimMatch.html
 lib/R/library/tools/html/dependsOnPkgs.html
 lib/R/library/tools/html/encoded.html
 lib/R/library/tools/html/fileutils.html
+lib/R/library/tools/html/find_gs_cmd.html
 lib/R/library/tools/html/getDepList.html
 lib/R/library/tools/html/getVignetteInfo.html
 lib/R/library/tools/html/installFoundDepends.html
@@ -3647,7 +3667,6 @@ lib/R/library/tools/html/print.via.format.html
 lib/R/library/tools/html/pskill.html
 lib/R/library/tools/html/psnice.html
 lib/R/library/tools/html/read.00Index.html
-lib/R/library/tools/html/readNEWS.html
 lib/R/library/tools/html/showNonASCII.html
 lib/R/library/tools/html/startDynamicHelp.html
 lib/R/library/tools/html/testInstalledPackage.html
@@ -3719,6 +3738,7 @@ lib/R/library/translations/de/LC_MESSAGES/splines.mo
 lib/R/library/translations/de/LC_MESSAGES/stats.mo
 lib/R/library/translations/de/LC_MESSAGES/tcltk.mo
 lib/R/library/translations/de/LC_MESSAGES/tools.mo
+lib/R/library/translations/de/LC_MESSAGES/utils.mo
 lib/R/library/translations/en/
 lib/R/library/translations/en/LC_MESSAGES/
 lib/R/library/translations/en/LC_MESSAGES/R.mo
@@ -4043,6 +4063,7 @@ lib/R/library/utils/html/browseURL.html
 lib/R/library/utils/html/browseVignettes.html
 lib/R/library/utils/html/bug.report.html
 lib/R/library/utils/html/capture.output.html
+lib/R/library/utils/html/changedFiles.html
 lib/R/library/utils/html/chooseBioCmirror.html
 lib/R/library/utils/html/chooseCRANmirror.html
 lib/R/library/utils/html/citEntry.html

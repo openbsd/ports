@@ -1,19 +1,8 @@
-$OpenBSD: patch-src_main_Makefile_in,v 1.7 2014/03/12 11:04:41 dcoppa Exp $
-
-Fix linking with external libintl
-
---- src/main/Makefile.in.orig	Wed Mar  6 00:02:40 2013
-+++ src/main/Makefile.in	Mon May 27 14:00:25 2013
-@@ -11,6 +11,7 @@ subdir = src/main
- R_HOME=$(top_builddir)
- 
- include $(top_builddir)/Makeconf
-+DYLIB_EXT=.so.$(LIBR_VERSION)
- 
- SOURCES_C = \
- 	CommandLineArgs.c \
-@@ -95,7 +96,7 @@ EXTRA_STATIC_LIBS = \
-   $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE) $(R_TRE) $(R_XDR) $(R_XZ) $(R_LIBINTL)
+$OpenBSD: patch-src_main_Makefile_in,v 1.8 2014/05/20 11:02:12 dcoppa Exp $
+--- src/main/Makefile.in.orig	Thu Mar 13 00:03:13 2014
++++ src/main/Makefile.in	Tue May 20 10:45:51 2014
+@@ -98,7 +98,7 @@ EXTRA_STATIC_LIBS = \
+   $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE) $(R_TRE) $(R_XDR) $(R_XZ) $(R_LIBINTL) $(R_TZONE)
  STATIC_LIBS = $(MAIN_LIBS) $(EXTRA_STATIC_LIBS)
  
 -EXTRA_LIBS = $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) @LIBINTL@ $(READLINE_LIBS) $(LIBS)
@@ -21,3 +10,12 @@ Fix linking with external libintl
  
  R_binary = R.bin
  R_bin_OBJECTS = Rmain.o @WANT_R_SHLIB_FALSE@$(OBJECTS)
+@@ -107,7 +107,7 @@ R_bin_OBJECTS = Rmain.o @WANT_R_SHLIB_FALSE@$(OBJECTS)
+ @WANT_R_SHLIB_TRUE@R_bin_LDADD = -L../../lib@R_ARCH@ -lR @BLAS_SHLIB_TRUE@-lRblas
+ @BUILD_LTO_FALSE@R_bin_DEPENDENCIES =@WANT_R_SHLIB_FALSE@ libR.a @USE_EXPORTFILES_TRUE@ $(top_builddir)/etc/R.exp
+ 
+-libR_la = libR$(DYLIB_EXT)
++libR_la = libR.so.$(LIBR_VERSION)
+ libR_la_OBJECTS = $(OBJECTS)
+ libR_la_LIBADD =  $(MAIN_OBJS) $(EXTRA_STATIC_LIBS) $(EXTRA_LIBS) @WANT_R_SHLIB_TRUE@ @USE_EXPORTFILES_TRUE@ -Wl,-bE:$(top_builddir)/etc/R.exp
+ libR_la_DEPENDENCIES = $(STATIC_LIBS) $(R_TZONE) @WANT_R_SHLIB_TRUE@ @USE_EXPORTFILES_TRUE@ $(top_builddir)/etc/R.exp

@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_extra_blas_Makefile_in,v 1.1 2009/03/11 08:21:33 sthen Exp $
---- src/extra/blas/Makefile.in.orig	Wed Mar 11 01:06:21 2009
-+++ src/extra/blas/Makefile.in	Wed Mar 11 01:06:58 2009
-@@ -10,6 +10,7 @@ subdir = src/extra/blas
- R_HOME = $(top_builddir)
+$OpenBSD: patch-src_extra_blas_Makefile_in,v 1.2 2014/05/20 11:02:12 dcoppa Exp $
+--- src/extra/blas/Makefile.in.orig	Fri Mar 18 00:05:03 2011
++++ src/extra/blas/Makefile.in	Tue May 20 10:45:06 2014
+@@ -16,7 +16,7 @@ ALL_FFLAGS = $(ALL_FFLAGS_LO)
  
- include $(top_builddir)/Makeconf
-+DYLIB_EXT=.so.$(LIBRblas_VERSION)
+ SOURCES = blas00.c blas.f cmplxblas.f
  
- ALL_CFLAGS = $(ALL_CFLAGS_LO)
- ALL_FFLAGS = $(ALL_FFLAGS_LO)
+-Rblas_la = libRblas$(DYLIB_EXT)
++Rblas_la = libRblas.so.$(LIBRblas_VERSION)
+ ## @RBLAS_LDFLAGS@ is used on Mac OS X
+ ## first for internal BLAS
+ Rblas_la_LIBADD = @RBLAS_LDFLAGS@ $(FLIBS_IN_SO)

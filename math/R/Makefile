@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.61 2014/03/24 09:08:46 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2014/05/20 11:02:12 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.0.3
+DISTNAME=	R-3.1.0
 
-SHARED_LIBS=	R	2.0  \
-		Rlapack	31.1 \
-		Rblas	31.0
+SHARED_LIBS=	R	2.1 	# 2.0
+SHARED_LIBS+=	Rlapack	31.2 	# 31.1
+SHARED_LIBS+=	Rblas	31.1 	# 31.0
 
 CATEGORIES=	math
 HOMEPAGE=	http://www.r-project.org/
@@ -41,7 +41,10 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
 		http://cran.stat.ucla.edu/src/base/R-3/ \
 		http://probability.ca/cran/src/base/R-3/
 
-MODULES=	fortran devel/gettext x11/tk
+MODULES=	fortran \
+		devel/gettext \
+		x11/tk
+
 MODFORTRAN_COMPILER= gfortran
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
@@ -112,7 +115,6 @@ TEXMFLOCAL=	${PREFIX}/share/texmf-local
 
 post-install:
 	mv ${WRKINST}/${LOCALBASE}/lib/R/share/texmf ${TEXMFLOCAL}
-	rm -rf ${WRKINST}/${LOCALBASE}/lib/R/share/texmf
 	@perl -i -pe 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \
 		${PREFIX}/bin/R
 
