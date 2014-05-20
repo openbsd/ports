@@ -1,12 +1,14 @@
-$OpenBSD: patch-generate_unix_acpiexec_Makefile,v 1.5 2014/05/20 16:37:09 sthen Exp $
---- generate/unix/acpiexec/Makefile.orig	Wed Jul 11 11:55:07 2012
-+++ generate/unix/acpiexec/Makefile	Fri May  9 02:15:58 2014
-@@ -205,7 +205,7 @@ OBJECTS = \
- CFLAGS+= \
-     -DACPI_EXEC_APP \
-     -I$(ACPIEXEC)
--LDFLAGS += -lpthread -lrt
-+LDFLAGS += -lpthread
+$OpenBSD: patch-generate_unix_acpiexec_Makefile,v 1.6 2014/05/20 17:02:30 sthen Exp $
+--- generate/unix/acpiexec/Makefile.orig	Thu Apr 24 16:48:58 2014
++++ generate/unix/acpiexec/Makefile	Tue May 20 17:40:55 2014
+@@ -235,10 +235,6 @@ endif
  
+ LDFLAGS += -lpthread
+ 
+-ifneq ($(HOST),_APPLE)
+-LDFLAGS += -lrt
+-endif
+-
  #
- # Rules
+ # Common Rules
+ #

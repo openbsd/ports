@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/05/20 16:37:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2014/05/20 17:02:30 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
-V =			20121018
-DISTNAME =		acpica-unix2-$V
-PKGNAME =		acpica-$V
+DISTNAME =		acpica-unix2-20140424
+PKGNAME =		${DISTNAME:S/-unix2//}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://acpica.org/
@@ -17,24 +16,10 @@ WANTLIB =		c pthread
 PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =		Yes
-BUILD_DEPENDS =		devel/flex devel/bison
-
-do-build:
-	cd ${WRKSRC}/source/compiler && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
-.for i in acpisrc acpinames acpixtract
-	cd ${WRKSRC}/source/tools/$i && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
-.endfor
-	cd ${WRKSRC}/source/tools/acpiexec && \
-	    env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM} clean acpiexec
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/source/compiler/iasl ${PREFIX}/bin/
-.for i in acpisrc acpinames acpixtract acpiexec
-	${INSTALL_PROGRAM} ${WRKSRC}/source/tools/$i/$i ${PREFIX}/bin/
-.endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/acpica/
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/acpica/
-	${INSTALL_DATA} ${FILESDIR}/LICENSE ${PREFIX}/share/doc/acpica/
+BUILD_DEPENDS =		devel/bison \
+			devel/flex
+MAKE_FLAGS =		CC="${CC}" NOOPT=true
+FAKE_FLAGS =		DESTDIR=
 
 do-test:
 	cd ${WRKSRC}/tests/templates && sh templates.sh 1
