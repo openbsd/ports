@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.3 2013/12/27 10:19:30 landry Exp $
---- setup.py.orig	Wed Dec 11 06:28:03 2013
-+++ setup.py	Fri Dec 27 08:48:25 2013
-@@ -335,7 +335,7 @@ SETUP_KWARGS = {'name': NAME,
+$OpenBSD: patch-setup_py,v 1.4 2014/05/21 07:39:48 ajacoutot Exp $
+--- setup.py.orig	Sat Jan 25 00:50:40 2014
++++ setup.py	Wed May 21 07:33:17 2014
+@@ -336,7 +336,7 @@ SETUP_KWARGS = {'name': NAME,
                               'salt.log.handlers',
                               ],
                  'package_data': {'salt.modules': ['rh_ip/*.jinja']},
@@ -10,7 +10,7 @@ $OpenBSD: patch-setup_py,v 1.3 2013/12/27 10:19:30 landry Exp $
                                  ['doc/man/salt-master.1',
                                   'doc/man/salt-key.1',
                                   'doc/man/salt.1',
-@@ -346,7 +346,7 @@ SETUP_KWARGS = {'name': NAME,
+@@ -347,7 +347,7 @@ SETUP_KWARGS = {'name': NAME,
                                   'doc/man/salt-ssh.1',
                                   'doc/man/salt-minion.1',
                                   ]),
