@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.114 2014/05/11 15:07:19 gilles Exp $
+# $OpenBSD: OpenBSD,v 1.115 2014/05/21 10:28:12 jca Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -44,7 +44,6 @@
 42.2731		-83.782		"aaron"		# Aaron Campbell
 42.436206	-83.896133	"jturner"	# James Turner
 42.49538	-82.89954	"nick"		# Nick Holland
-42.84302	-0.43806	"jca"		# Jeremie Courreges-Anglas
 43.0277		-86.13		"dhill"		# David Hill
 43.064216	-89.406185	"wcmaier"	# Will Maier
 43.240537 	5.384159	"pea"		# Pierre-Emmanuel Andre
@@ -67,6 +66,7 @@
 45.5		-122.5		"joshe"		# Joshua Elsasser
 45.6103		-122.7455	"afresh1"	# Andrew Fresh
 45.69296	3.25642		"landry"	# Landry Breuil
+47.22164	-1.55717	"jca"		# Jeremie Courreges-Anglas
 47.2230677	-1.5538359	"gilles"	# Gilles Chehade
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
