@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.13 2014/05/21 23:41:03 brad Exp $
+
+Demux Opus.
+
+--- src/demuxers/demux_matroska.c.orig	Wed May 21 09:35:32 2014
++++ src/demuxers/demux_matroska.c	Wed May 21 09:36:08 2014
+@@ -1425,6 +1425,11 @@ static int parse_track_entry(demux_matroska_t *this, m
+       track->buf_type = BUF_AUDIO_VORBIS;
+       init_codec = init_codec_xiph;
+ 
++    } else if (!strcmp(track->codec_id, MATROSKA_CODEC_ID_A_OPUS)) {
++      lprintf("MATROSKA_CODEC_ID_A_OPUS\n");
++      track->buf_type = BUF_AUDIO_OPUS;
++      init_codec = init_codec_audio;
++
+     } else if (!strcmp(track->codec_id, MATROSKA_CODEC_ID_A_ACM)) {
+       xine_waveformatex *wfh;
+       lprintf("MATROSKA_CODEC_ID_A_ACM\n");

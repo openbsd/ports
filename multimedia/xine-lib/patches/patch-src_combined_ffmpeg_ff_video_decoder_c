@@ -1,10 +1,20 @@
-$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.16 2014/05/14 08:07:24 brad Exp $
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.17 2014/05/21 23:41:03 brad Exp $
 
-Attempt to fix FFmpeg VP9 segfault.
+- Simplify FFmpeg video edge handling.
+- Add DR1 reenable message.
+- Fix multithreading.
 
 --- src/combined/ffmpeg/ff_video_decoder.c.orig	Thu Mar 13 00:06:09 2014
-+++ src/combined/ffmpeg/ff_video_decoder.c	Tue May 13 21:11:15 2014
-@@ -406,9 +406,11 @@ static int get_buffer (AVCodecContext *context, AVFram
++++ src/combined/ffmpeg/ff_video_decoder.c	Tue May 20 14:04:56 2014
+@@ -278,6 +278,7 @@ static int get_buffer (AVCodecContext *context, AVFram
+   /* The visible size, may be smaller. */
+   int width  = context->width;
+   int height = context->height;
++  int top_edge;
+   int guarded_render = 0;
+ 
+   /* A bit of unmotivated paranoia... */
+@@ -406,9 +407,14 @@ static int get_buffer (AVCodecContext *context, AVFram
  #endif /* ENABLE_VAAPI */
  
    /* The alignment rhapsody */
@@ -15,11 +25,26 @@ Attempt to fix FFmpeg VP9 segfault.
 +  buf_width  += 2 * this->edge + 31;
 +  buf_width  &= ~31;
 +  /* 2 extra lines for the edge wrap below plus XINE requirement */
-+  buf_height += 2 * this->edge + 2 + 15;
++  top_edge = this->edge;
++  if (top_edge)
++    top_edge += 2;
++  buf_height += top_edge + this->edge + 15;
    buf_height &= ~15;
  
    if ((this->full2mpeg || (this->context->pix_fmt != PIX_FMT_YUV420P &&
-@@ -503,12 +505,15 @@ static int get_buffer (AVCodecContext *context, AVFram
+@@ -449,7 +455,10 @@ static int get_buffer (AVCodecContext *context, AVFram
+     }
+   }
+ 
+-  this->is_direct_rendering_disabled = 0;
++  if (this->is_direct_rendering_disabled) {
++    xprintf (this->stream->xine, XINE_VERBOSITY_LOG, _("ffmpeg_video_dec: direct rendering enabled\n"));
++    this->is_direct_rendering_disabled = 0;
++  }
+ 
+   img = this->stream->video_out->get_frame (this->stream->video_out,
+                                             buf_width,
+@@ -503,13 +512,15 @@ static int get_buffer (AVCodecContext *context, AVFram
    av_frame->linesize[2] = img->pitches[2];
  
    if (this->output_format == XINE_IMGFMT_YV12) {
@@ -27,16 +52,35 @@ Attempt to fix FFmpeg VP9 segfault.
 -    av_frame->data[1] += (img->pitches[1] + 1) * this->edge / 2;
 -    av_frame->data[2] += (img->pitches[2] + 1) * this->edge / 2;
 -    img->crop_left   = this->edge;
-+    /* nasty hack: wrap right edge to the left side when needed to get proper
-+       SSE2 alignment on all planes. */
-+    int left_edge = (this->edge + 31) & ~31;
-+    av_frame->data[0] += img->pitches[0] * this->edge + left_edge;
-+    av_frame->data[1] += (img->pitches[1] * this->edge + left_edge) / 2;
-+    av_frame->data[2] += (img->pitches[2] * this->edge + left_edge) / 2;
-+    img->crop_left   = left_edge;
-     img->crop_top    = this->edge;
+-    img->crop_top    = this->edge;
 -    img->crop_right  = buf_width  - width  - this->edge;
-+    img->crop_right  = buf_width  - width - left_edge;
-     img->crop_bottom = buf_height - height - this->edge;
+-    img->crop_bottom = buf_height - height - this->edge;
++    /* nasty hack: wrap left edge to the right side to get proper
++       SSE2 alignment on all planes. */
++    av_frame->data[0] += img->pitches[0] * top_edge;
++    av_frame->data[1] += img->pitches[1] * top_edge / 2;
++    av_frame->data[2] += img->pitches[2] * top_edge / 2;
++    img->crop_left   = 0;
++    img->crop_top    = top_edge;
++    img->crop_right  = buf_width  - width;
++    img->crop_bottom = buf_height - height - top_edge;
    }
  
+   /* We should really keep track of the ages of xine frames (see
+@@ -2280,6 +2291,7 @@ static void ff_free_dr1_frames (ff_video_decoder_t *th
+      They will only be replaced when new ones arrive, and freed on codec close.
+      They also have no AVCodec.flush () callback for manual freeing (that is,
+      avcodec_flush_buffers () does nothing).
++     Even worse: multithreading seems to always do it like that...
+      So lets tolerate this behaviour on plain stream seek. */
+   if (!all) {
+     it = NULL;
+@@ -2288,7 +2300,7 @@ static void ff_free_dr1_frames (ff_video_decoder_t *th
+       frames++;
+     if (!frames)
+       return;
+-    if (frames < 5) {
++    if (frames < 12) {
+       xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
+         "ffmpeg_video_dec: tolerating %d held DR1 frames.\n", frames);
+       return;

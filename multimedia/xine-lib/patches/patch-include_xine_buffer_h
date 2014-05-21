@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_xine_buffer_h,v 1.1 2014/05/21 23:41:03 brad Exp $
+
+Add buffer type for Opus. 
+
+--- include/xine/buffer.h.orig	Wed May 21 09:33:56 2014
++++ include/xine/buffer.h	Wed May 21 09:34:30 2014
+@@ -272,6 +272,7 @@ extern "C" {
+ #define BUF_AUDIO_EAC3		0x03410000
+ #define BUF_AUDIO_AAC_LATM	0x03420000
+ #define BUF_AUDIO_ADPCM_G726	0x03430000
++#define BUF_AUDIO_OPUS		0x03440000
+ /*@}*/
+ 
+ /**

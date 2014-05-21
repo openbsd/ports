@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_combined_ffmpeg_xine_audio_list,v 1.1 2014/05/21 23:41:03 brad Exp $
+
+Enable Opus decoder.
+
+--- src/combined/ffmpeg/xine_audio.list.orig	Wed May 21 09:37:06 2014
++++ src/combined/ffmpeg/xine_audio.list	Wed May 21 09:37:32 2014
+@@ -46,6 +46,7 @@ AAC			AAC			MPEG4
+ AAC_LATM		AAC_LATM		AAC LATM
+ ADPCM_G726		ADPCM_G726		ADPCM G726
+ QCLP			QCELP			QualComm Purevoice
++OPUS			OPUS			Opus Audio
+ 
+ # disabled codecs (ref. configure.ac)
+ !			AC3
