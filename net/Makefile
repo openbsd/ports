@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.844 2014/05/01 20:19:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.845 2014/05/21 15:41:19 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -158,6 +158,7 @@
      SUBDIR += irssi
      SUBDIR += irssi,socks
      SUBDIR += irssi-icb
+     SUBDIR += irssi-otr
      SUBDIR += irssi-silc
      SUBDIR += irssi-xmpp
      SUBDIR += isc-bind
