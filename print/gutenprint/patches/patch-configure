@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2012/10/13 08:24:52 ajacoutot Exp $
---- configure.orig	Sat Jul  7 17:36:20 2012
-+++ configure	Sat Oct 13 10:03:59 2012
-@@ -12841,12 +12841,11 @@ else
+$OpenBSD: patch-configure,v 1.7 2014/05/21 06:57:43 ajacoutot Exp $
+--- configure.orig	Mon May 19 00:54:35 2014
++++ configure	Wed May 21 08:23:06 2014
+@@ -13037,12 +13037,11 @@ else
  #include <libintl.h>
  $gt_revision_test_code
  extern int _nl_msg_cat_cntr;
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.6 2012/10/13 08:24:52 ajacoutot Exp $
    ;
    return 0;
  }
-@@ -17538,7 +17537,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+@@ -17821,7 +17820,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  
    else
  

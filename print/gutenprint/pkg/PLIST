@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/10/19 09:26:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/21 06:57:43 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 @conflict foomatic-db-gutenprint-*
 @pkgpath print/gutenprint,-foomatic
 @pkgpath print/gutenprint,-main
-%%SHARED%%
 @bin bin/cups-calibrate
 @bin bin/escputil
 @bin bin/ijsgutenprint.${MAJOR_V}
@@ -32,13 +31,13 @@ include/gutenprint/util.h
 include/gutenprint/vars.h
 include/gutenprint/weave.h
 include/gutenprint/xml.h
-include/gutenprintui2/
-lib/gutenprint/
-lib/gutenprint/${MAJOR_V}/
-lib/gutenprint/${MAJOR_V}/modules/
 lib/libgutenprint.a
 lib/libgutenprint.la
+@lib lib/libgutenprint.so.${LIBgutenprint_VERSION}
 lib/pkgconfig/gutenprint.pc
+@mode 0700
+@bin libexec/cups/backend/gutenprint52+usb
+@mode
 @bin libexec/cups/driver/gutenprint.${MAJOR_V}
 @bin libexec/cups/filter/commandtocanon
 @bin libexec/cups/filter/commandtoepson
@@ -51,6 +50,8 @@ lib/pkgconfig/gutenprint.pc
 @bin sbin/cups-genppd.${MAJOR_V}
 sbin/cups-genppdupdate
 share/cups/calibrate.ppm
+share/cups/usb/
+share/cups/usb/net.sf.gimp-print.usb-quirks
 share/doc/gutenprint/
 share/doc/gutenprint/AUTHORS
 share/doc/gutenprint/COPYING
@@ -63,9 +64,9 @@ share/doc/gutenprint/gutenprint-users-manual.pdf
 share/doc/gutenprint/gutenprint.pdf
 share/doc/gutenprint/reference-html/
 share/doc/gutenprint/reference-html/book1.html
-share/doc/gutenprint/reference-html/c1717.html
+share/doc/gutenprint/reference-html/c1715.html
 share/doc/gutenprint/reference-html/c194.html
-share/doc/gutenprint/reference-html/c1968.html
+share/doc/gutenprint/reference-html/c1966.html
 share/doc/gutenprint/reference-html/c200.html
 share/doc/gutenprint/reference-html/c39.html
 share/doc/gutenprint/reference-html/c464.html
@@ -75,12 +76,12 @@ share/doc/gutenprint/reference-html/f14.html
 share/doc/gutenprint/reference-html/gpl-terms.html
 share/doc/gutenprint/reference-html/gpl.html
 share/doc/gutenprint/reference-html/ln10.html
-share/doc/gutenprint/reference-html/x1669.html
-share/doc/gutenprint/reference-html/x1734.html
+share/doc/gutenprint/reference-html/x1667.html
+share/doc/gutenprint/reference-html/x1732.html
 share/doc/gutenprint/reference-html/x271.html
 share/doc/gutenprint/reference-html/x67.html
 share/doc/gutenprint/reference-html/x79.html
-share/doc/gutenprint/reference-html/x955.html
+share/doc/gutenprint/reference-html/x953.html
 share/examples/gutenprint/
 share/examples/gutenprint/command.types
 @sample ${SYSCONFDIR}/cups/command.types
@@ -261,6 +262,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-5.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-6.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-7.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-8.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-9.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inkset.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inktype.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inputslot.xml
@@ -344,9 +346,11 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k34.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v10.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v4.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/standard_gen0.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/sx445.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/ultrachrome.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/wf40.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/wf500.xml
@@ -358,6 +362,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd_cutter_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cutter_roll_feed.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/default-duplex.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/default.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/pro3880.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/pro_cutter_roll_feed.xml
@@ -369,6 +374,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/rx680.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/rx700.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/spro5000.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/standard_roll_feed.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/wf7000.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/
 share/gutenprint/${MAJOR_V}/xml/escp2/media/artisan.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/b500.xml
@@ -405,6 +411,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_pigment.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3v.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3v10.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/r800.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/standard_gen0.xml
@@ -436,7 +443,11 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_114.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_115.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_116.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_117.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_118.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_119.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_12.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_120.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_121.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_13.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_14.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_15.xml
@@ -552,6 +563,8 @@ share/gutenprint/samples/colorsweep.png
 share/gutenprint/samples/extended.sample
 share/gutenprint/samples/profile.jpg
 share/gutenprint/samples/testpattern.sample
+share/locale/ca/LC_MESSAGES/gutenprint.mo
+share/locale/ca/gutenprint_ca.po
 share/locale/cs/LC_MESSAGES/gutenprint.mo
 share/locale/cs/gutenprint_cs.po
 share/locale/da/LC_MESSAGES/gutenprint.mo
@@ -594,8 +607,12 @@ share/locale/sl/LC_MESSAGES/gutenprint.mo
 share/locale/sl/gutenprint_sl.po
 share/locale/sv/LC_MESSAGES/gutenprint.mo
 share/locale/sv/gutenprint_sv.po
+share/locale/tr/LC_MESSAGES/gutenprint.mo
+share/locale/tr/gutenprint_tr.po
 share/locale/uk/LC_MESSAGES/gutenprint.mo
 share/locale/uk/gutenprint_uk.po
+share/locale/vi/LC_MESSAGES/gutenprint.mo
+share/locale/vi/gutenprint_vi.po
 share/locale/zh_CN/LC_MESSAGES/gutenprint.mo
 share/locale/zh_CN/gutenprint_zh_CN.po
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo

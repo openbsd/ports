@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2014/04/21 20:49:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/05/21 06:57:42 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
-V=			5.2.9
+V=			5.2.10
 DISTNAME=		gutenprint-${V}
-REVISION=		5
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -13,7 +12,7 @@ CATEGORIES=		print
 
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS+=		gutenprint	1.0	# .2.3
+SHARED_LIBS +=  gutenprint           2.0      # 5.0
 
 HOMEPAGE=		http://gimp-print.sourceforge.net/
 
@@ -23,7 +22,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += avahi-client avahi-common c crypto cups cupsimage dbus-1
-WANTLIB += ijs m ncurses pthread readline ssl z
+WANTLIB += ijs m ncurses pthread readline ssl usb-1.0 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
 
@@ -31,7 +30,8 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		print/foomatic-db-engine
 
-LIB_DEPENDS=		print/cups,-libs \
+LIB_DEPENDS=		devel/libusb1 \
+			print/cups,-libs \
 			print/ijs
 
 # foomatic-rip(1), foomatic-db(-engine)
@@ -48,14 +48,13 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
                         --with-cups=${LOCALBASE} \
                         --without-gimp2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-liconv -lintl" \
-			am_cv_prog_tar_ustar=plaintar
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .for i in DVIPS DB2PDF DVIPDF DB2PS DB2HTML DOXYGEN TEXI2HTML CONVERT
 CONFIGURE_ENV+=		ac_cv_path_$i=""
 .endfor
 
+MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 FAKE_FLAGS=		cups_conf_serverroot=${PREFIX}/share/examples/gutenprint
 
 post-install:

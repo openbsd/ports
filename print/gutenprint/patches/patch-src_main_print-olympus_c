@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_main_print-olympus_c,v 1.1 2014/05/21 06:57:43 ajacoutot Exp $
+
+error: #error "Unable to determine endianness, aborting compilation!"
+
+--- src/main/print-olympus.c.orig	Wed May 21 08:33:26 2014
++++ src/main/print-olympus.c	Wed May 21 08:34:20 2014
+@@ -79,6 +79,12 @@
+ #define MAX_BYTES_PER_CHANNEL	2
+ #define SIZE_THRESHOLD		6
+ 
++#if BYTE_ORDER == BIG_ENDIAN
++#define __BIG_ENDIAN
++#else
++#define __LITTLE_ENDIAN
++#endif
++
+ /*
+  * Random implementation from POSIX.1-2001 to yield reproducible results.
+  */

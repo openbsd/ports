@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2012/10/19 09:26:10 ajacoutot Exp $
-@lib lib/libgutenprint.so.${LIBgutenprint_VERSION}
