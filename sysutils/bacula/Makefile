@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2014/04/21 22:12:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2014/05/21 10:12:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			7.0.2
+V=			7.0.3
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -14,8 +14,6 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
-
-REVISION-server=	1
 
 SHARED_LIBS +=  bac                  5.0
 SHARED_LIBS +=  baccfg               5.0
@@ -153,6 +151,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 WANTLIB-bat += ${WANTLIB}
 WANTLIB-bat += ICE QtCore QtGui SM X11 Xext Xi Xinerama Xrender bac
 WANTLIB-bat += baccfg bacfind expat fontconfig freetype xcb pthread-stubs
+WANTLIB-bat += ffi glib-2.0 gobject-2.0 gthread-2.0 pcre png
 RUN_DEPENDS-bat=	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 LIB_DEPENDS-bat=	${LIB_DEPENDS} \
