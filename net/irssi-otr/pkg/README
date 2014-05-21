@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2014/05/21 15:40:54 sthen Exp $
+$OpenBSD: README,v 1.2 2014/05/21 15:48:13 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,10 +8,10 @@ Quick start
 ===========
 
 To load irssi-otr type in the IRSSI main window
-    /load libotr
+    /load otr
 
 To initiate OTR session open a chat window and type
     /otr init
 
-For further detail please refer to
-${PREFIX}/share/irssi/help/otr
+For further detail please refer to ${TRUEPREFIX}/share/irssi/help/otr
+and ${TRUEPREFIX}/share/doc/irssi/otr-plugin.txt

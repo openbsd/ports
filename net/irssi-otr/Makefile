@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/21 15:40:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/21 15:48:13 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	OTR (off the record) encryption support for irssi
 
 GH_VER =	1.0.0
+REVISION =	0
 DISTNAME =	irssi-otr-${GH_VER}
 
 CATEGORIES =	net security
@@ -51,5 +52,10 @@ post-patch:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -i
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irssi/
+	${INSTALL_DATA} ${WRKSRC}/README.md \
+	    ${PREFIX}/share/doc/irssi/otr-plugin.txt
 
 .include <bsd.port.mk>
