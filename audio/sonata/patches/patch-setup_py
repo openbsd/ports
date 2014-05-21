@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.6 2013/12/17 07:11:27 ajacoutot Exp $
---- setup.py.orig	Tue Nov 26 11:54:49 2013
-+++ setup.py	Tue Dec 17 08:07:28 2013
-@@ -48,9 +48,8 @@ versionfile.close()
+$OpenBSD: patch-setup_py,v 1.7 2014/05/21 18:02:38 ajacoutot Exp $
+--- setup.py.orig	Wed May 21 19:56:12 2014
++++ setup.py	Wed May 21 19:59:15 2014
+@@ -54,9 +54,8 @@ versionfile.close()
  
  
  data_files = [
