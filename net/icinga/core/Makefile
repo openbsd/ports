@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2014/05/14 10:32:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2014/05/21 23:37:55 sthen Exp $
 
 V =			1.11.3
 
@@ -11,6 +11,7 @@ PKGNAME-main =		icinga-$V
 REVISION-main =		0
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
+REVISION-ido =		0
 
 MASTER_SITES =	https://github.com/Icinga/icinga-core/releases/download/v$V/
 
