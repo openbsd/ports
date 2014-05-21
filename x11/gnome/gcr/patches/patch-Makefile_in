@@ -1,9 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2014/05/14 06:43:27 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2014/05/21 11:44:52 ajacoutot Exp $
 
-https://bugzilla.gnome.org/browse.cgi?product=gnome-keyring
+From e4cf94c764fd1cdd9f3ba16b2dd0880390345425 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 21 May 2014 12:49:07 +0200
+Subject: Don't use non-portable sed -i shell command
 
 --- Makefile.in.orig	Tue May 13 21:05:34 2014
-+++ Makefile.in	Wed May 14 08:30:41 2014
++++ Makefile.in	Wed May 21 12:22:58 2014
 @@ -6049,8 +6049,10 @@ recheck-memory: valgrind-suppressions
  
  asn:
@@ -17,25 +20,19 @@ https://bugzilla.gnome.org/browse.cgi?product=gnome-keyring
  	done
  
  gck/gck-marshal.h: gck/gck-marshal.list $(GLIB_GENMARSHAL)
-@@ -6104,12 +6106,17 @@ gcr/gcr-oids.c: gcr/gcr-oids.list gcr/gcr-mkoids
- 
- gcr/gcr-oids.h: gcr/gcr-oids.c
- 
--gcr/gcr-dbus-generated.c: $(DBUS_XML_DEFINITIONS)
-+gcr/temp-dbus-generated.c: $(DBUS_XML_DEFINITIONS)
+@@ -6107,9 +6109,14 @@ gcr/gcr-oids.h: gcr/gcr-oids.c
+ gcr/gcr-dbus-generated.c: $(DBUS_XML_DEFINITIONS)
  	$(AM_V_GEN) $(GDBUS_CODEGEN) --interface-prefix org.gnome.keyring.internal. \
--		--generate-c-code gcr/gcr-dbus-generated --c-namespace GcrDBus $^
+ 		--generate-c-code gcr/gcr-dbus-generated --c-namespace GcrDBus $^
 -	$(AM_V_GEN) sed -i -e 's/gcr_dbus/_gcr_dbus/g' gcr/gcr-dbus-generated.[ch]
-+		--generate-c-code gcr/temp-dbus-generated --c-namespace GcrDBus $^
- 
--gcr/gcr-dbus-generated.h: gcr/gcr-dbus-generated.c
-+gcr/gcr-dbus-generated.c: gcr/temp-dbus-generated.c
 +	$(AM_V_GEN) sed -e 's/gcr_dbus/_gcr_dbus/g' \
-+		-e 's/temp-dbus-generated.h/gcr-dbus-generated.h/g' \
-+		gcr/temp-dbus-generated.c > gcr/gcr-dbus-generated.c
-+
-+gcr/gcr-dbus-generated.h: gcr/temp-dbus-generated.c
-+	$(AM_V_GEN) sed -e 's/gcr_dbus/_gcr_dbus/g' gcr/temp-dbus-generated.h > gcr/gcr-dbus-generated.h
++		gcr/gcr-dbus-generated.c > gcr/gcr-dbus-generated.c.tmp && \
++	mv gcr/gcr-dbus-generated.c.tmp gcr/gcr-dbus-generated.c
+ 
+ gcr/gcr-dbus-generated.h: gcr/gcr-dbus-generated.c
++	$(AM_V_GEN) sed -e 's/gcr_dbus/_gcr_dbus/g' \
++		gcr/gcr-dbus-generated.h > gcr/gcr-dbus-generated.h.tmp && \
++	mv gcr/gcr-dbus-generated.h.tmp gcr/gcr-dbus-generated.h
  
  gcr-base-$(GCR_MAJOR).pc: gcr/gcr-base.pc
  	$(AM_V_GEN) cp gcr/gcr-base.pc gcr-base-$(GCR_MAJOR).pc
