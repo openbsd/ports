@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/05/19 10:22:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2014/05/21 11:22:22 jasper Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-2.5.1
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -27,16 +28,16 @@ SUBST_VARS +=	RUBY
 
 MODRUBY_ADJ_FILES=mco mcollectived
 
-MAKE_FILE=	ext/Makefile
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/ext/Makefile \
 		${WRKSRC}/etc/server.cfg.dist \
 		${WRKSRC}/etc/client.cfg.dist \
 
-post-install:
-	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/{libexec,share/doc}/mcollective \
-		${PREFIX}/${MODRUBY_SITEDIR}
+do-install:
+	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \
+		--destdir=${DESTDIR} \
+		--plugindir=${TRUEPREFIX}/libexec/mcollective/
+	mv ${WRKINST}${SYSCONFDIR}/mcollective \
+		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-mcollective/
 
 .include <bsd.port.mk>
