@@ -1,0 +1,11 @@
+$OpenBSD: patch-help_Makefile_am,v 1.1.1.1 2014/05/21 15:40:54 sthen Exp $
+--- help/Makefile.am.orig	Thu Jan 30 21:30:06 2014
++++ help/Makefile.am	Thu Jan 30 21:30:12 2014
+@@ -1,6 +1,4 @@
+-# The day Irssi will be able to check in $(prefix), this will change. Until
+-# then, it's hardcoded.
+-helpdir = /usr/share/irssi/help
++helpdir = ${prefix}/share/irssi/help
+ help_DATA = otr
+ 
+ EXTRA_DIST = otr

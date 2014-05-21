@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/21 15:40:54 sthen Exp $
+lib/irssi/modules/libotr.so
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/irssi/help/otr
