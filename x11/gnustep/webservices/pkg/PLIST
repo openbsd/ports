@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/25 16:34:06 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/05/22 17:56:13 sebastia Exp $
 include/WebServices/
 include/WebServices/GWSBinding.h
 include/WebServices/GWSCoder.h
@@ -6,6 +6,7 @@ include/WebServices/GWSConstants.h
 include/WebServices/GWSDocument.h
 include/WebServices/GWSElement.h
 include/WebServices/GWSExtensibility.h
+include/WebServices/GWSHash.h
 include/WebServices/GWSMessage.h
 include/WebServices/GWSPort.h
 include/WebServices/GWSPortType.h
