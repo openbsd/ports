@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.327 2014/05/12 16:06:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.328 2014/05/22 14:17:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -16,6 +16,7 @@
      SUBDIR += audacious-plugins
      SUBDIR += audacity
      SUBDIR += aumix
+     SUBDIR += beets
      SUBDIR += bladeenc
      SUBDIR += bonk
      SUBDIR += calf
