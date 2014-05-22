@@ -1,0 +1,31 @@
+$OpenBSD: README,v 1.1.1.1 2014/05/22 14:16:55 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Optional plugins
+================
+This package includes several optional plugins for beets; they need to be
+enabled by adding the name to the 'plugins:' line in your config.yaml file,
+and many require additional packages to be installed.
+
+Here are a few common examples.
+
+discogs: The discogs plugin extends the autotagger's search capabilities
+to include matches from the Discogs database. Install the py-discogs-client
+package with pkg_add(1) and add 'discogs' to the plugins: line.
+
+chroma: This plugin is for acoustic fingerprinting. Install py-acoustid
+and add 'chroma' to the plugins: line.
+
+replaygain: This plugin adds support for ReplayGain, a technique for
+normalizing audio playback levels. Install the mp3gain or aacgain packages
+and add 'replaygain' to the plugins: line.
+
+web: The web plugin lets your browse and listen to your library through
+an HTML5 compatible browser. Install the py-flask package and add 'web'
+to the plugins: line.
+
+See http://beets.readthedocs.org/en/latest/plugins/index.html for a
+complete list.

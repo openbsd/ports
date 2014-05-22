@@ -1,0 +1,23 @@
+The purpose of beets is to get your music collection right once and for
+all. It catalogs your collection, automatically improving its metadata
+as it goes using the MusicBrainz database. Then it provides a bouquet of
+tools for manipulating and accessing your music.
+
+If you plan to use plugins, please make sure that you have all necessary
+dependencies installed.
+
+Features include:
+
+- Fetch or calculate metadata: album art, lyrics, genres, tempos,
+ReplayGain levels, or acoustic fingerprints.
+
+- Get metadata from MusicBrainz, Discogs, or Beatport. Or guess metadata
+using songs' filenames or their acoustic fingerprints.
+
+- Transcode audio.
+
+- Check your library for duplicate tracks and albums or for albums
+that are missing tracks.
+
+- Browse your music library graphically through a Web browser and play
+it in any browser that supports HTML5 Audio.
