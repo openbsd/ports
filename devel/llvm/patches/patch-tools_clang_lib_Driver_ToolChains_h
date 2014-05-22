@@ -1,4 +1,8 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.7 2014/05/17 11:41:15 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.8 2014/05/22 13:30:23 brad Exp $
+
+r209432
+Use stack protector strong by default on OpenBSD
+
 --- tools/clang/lib/Driver/ToolChains.h.orig	Sun Mar  2 22:03:41 2014
 +++ tools/clang/lib/Driver/ToolChains.h	Fri Apr 18 17:14:52 2014
 @@ -538,7 +538,13 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
