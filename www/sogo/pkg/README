@@ -1,14 +1,14 @@
-# $OpenBSD: README,v 1.12 2014/05/16 17:00:21 sebastia Exp $
+# $OpenBSD: README,v 1.13 2014/05/22 09:50:07 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-General setup and configuration information about SOGo can be found 
+General setup and configuration information about SOGo can be found
 in ${TRUEPREFIX}/share/doc/sogo/.
 
 SOGo is designed with scalability in mind. All of the dependent components
-like mail-, database-, or web server can run on different hosts, and 
+like mail-, database-, or web server can run on different hosts, and
 you can even choose to install your preferred software to fulfill those tasks.
 You have to install those components manually on the servers where you
 want to run them. An overview is given in the list below.
@@ -36,23 +36,23 @@ over multiple systems, related to your needs:
   * install postfix package
   - or use smtpd or sendmail from base
 The alternatives marked with * are recommended. They are tested and verified
-to work together by the SOGo port maintainer. 
+to work together by the SOGo port maintainer.
 For the configuration of those components you should take a look at their
 respective documentation.
 
 The SOGo system user
-======================================
+====================
 The system user and group intended to run the SOGo application server
-is called _sogo. The users home directory is /var/sogo.
+is called _sogo. The users home directory is ${VARBASE}/sogo.
 
 The SOPE database adaptor
-=====================================
-The SOPE PostgreSQL database adaptor is automatically installed. 
+=========================
+The SOPE PostgreSQL database adaptor is automatically installed.
 If you want to use a MySQL database as backend, you have to install
 the sope-mysql package on the host where SOPE and SOGo are installed.
 
 SOGo with nginx
-======================================
+===============
 Since nginx configuration is not explained in the SOGo Manual, here is an example.
 It's assumed that nginx(8) and SOGo run on the same host. Nginx(8) listens on port 80,
 and SOGo is listening on its default port 20000.
@@ -60,15 +60,15 @@ and SOGo is listening on its default port 20000.
 Nginx runs in a chroot environment on OpenBSD, therefore you have to
 copy some files into the server's chroot environment:
 
-# mkdir -p /var/www/lib/sogo
-# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources /var/www/lib/sogo/www
+# mkdir -p ${VARBASE}/www/lib/sogo
+# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
 
 Edit /etc/nginx/nginx.conf
 
 server {
 
     listen 80;
-    root /var/www/lib/GNUstep/SOGo/WebServerResources/;
+    root ${VARBASE}/www/lib/GNUstep/SOGo/WebServerResources/;
 
     location = /
     {
@@ -118,28 +118,28 @@ server {
         break;
     }
     location /SOGo.woa/WebServerResources/ {
-        alias /var/www/lib/GNUstep/SOGo/WebServerResources/;
+        alias ${VARBASE}/www/lib/GNUstep/SOGo/WebServerResources/;
         allow all;
     }
 
     location /SOGo/WebServerResources/ {
-        alias /var/www/lib/GNUstep/SOGo/WebServerResources/;
+        alias ${VARBASE}/www/lib/GNUstep/SOGo/WebServerResources/;
         allow all;
     }
 
     location ^/SOGo/so/ControlPanel/Products/([^/]*)/Resources/(.*)$ {
-        alias /var/www/lib/GNUstep/SOGo/$1.SOGo/Resources/$2;
+        alias ${VARBASE}/www/lib/GNUstep/SOGo/$1.SOGo/Resources/$2;
     }
 
     location ^/SOGo/so/ControlPanel/Products/[^/]*UI/Resources/.*\.(jpg|png|gif|css|js)$
     {
-        alias /var/www/lib/GNUstep/SOGo/$1.SOGo/Resources/$2;
+        alias ${VARBASE}/www/lib/GNUstep/SOGo/$1.SOGo/Resources/$2;
     }
 }
 
 SOGo with OpenBSD apache-httpd-openbsd package
-======================================
-Since the httpd 1.3 configuration is slightly different than the Apache 2 
+==============================================
+Since the httpd 1.3 configuration is slightly different than the Apache 2
 configuration explained in the SOGo Manual, here is an example. It's assumed
 that the httpd and SOGo run on the same host. The httpd listens on port 80,
 and SOGo is listening on its default port 20000.
@@ -147,10 +147,10 @@ and SOGo is listening on its default port 20000.
 The OpenBSD httpd runs in a chroot environment, therefore you have to
 copy some files into the server's chroot environment:
 
-# mkdir -p /var/www/lib/sogo
-# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources /var/www/lib/sogo/www
+# mkdir -p ${VARBASE}/www/lib/sogo
+# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
 
-Edit /var/www/conf/httpd.conf:
+Edit ${VARBASE}/www/conf/httpd.conf:
 You should make sure the proxy and header modules are loaded:
 LoadModule proxy_module /usr/lib/apache/modules/libproxy.so
 LoadModule headers_module /usr/lib/apache/modules/mod_headers.so
@@ -182,7 +182,7 @@ SetEnv proxy-nokeepalive 1
 ProxyPreserveHost On
 
 # When using CAS, you should uncomment this and install cas-proxy-validate.py
-# in /var/www/cgi-bin to reduce server overloading
+# in ${VARBASE}/www/cgi-bin to reduce server overloading
 #
 # ProxyPass /SOGo/casProxy http://localhost/cgi-bin/cas-proxy-validate.py
 # <Proxy http://localhost/app/cas-proxy-validate.py>
@@ -201,16 +201,17 @@ RequestHeader set "x-webobjects-remote-host" "127.0.0.1"
 
 AddDefaultCharset UTF-8
 
-# To be able to use iPhone a vhost on port 8800 should be configured and those redirects must be set
+# To be able to use iPhone a vhost on port 8800 should be
+# configured and those redirects must be set
 RedirectMatch ^/principals/users/(.*)$ http://127.0.0.1:8800/SOGo/dav/$1
 RedirectMatch ^/principals/$ http://127.0.0.1:8800/SOGo/dav/
 RedirectMatch ^/.well-known/(caldav|carddav)$ http://127.0.0.1:8800/SOGo/dav/
 
-A note on using CAS 
-=======================
+A note on using CAS
+===================
 Using CAS with the base httpd is not tested by the maintainer. You
 have to copy ${TRUEPREFIX}/share/doc/sogo/cas-proxy-validate.py to
-/var/www/cgi-bin. Within the script, you have to edit the config
+${VARBASE}/www/cgi-bin. Within the script, you have to edit the config
 array and the path to your python to fit your configurtaion. Since
 the httpd runs in a chroot environment you at least have to copy Python
 and its dependencies into the chroot environment. Further you have to
@@ -219,14 +220,14 @@ chroot environment: cgi, memcache, os, sys. For the memcache
 module you have to install the py-memcached package.
 
 A note on using Thunderbird integrator
-=======================
+======================================
 If you are going to use Thunderbird integrator you will need the php
 script installed on ${TRUEPREFIX}/share/doc/sogo/updates.php.
-You should copy it under /var/www/htdocs, install the php package and
+You should copy it under ${VARBASE}/www/htdocs, install the php package and
 follow the instuctions under ${TRUEPREFIX}/share/doc/sogo/SOGo_Mozilla_Thunderbird_Configuration.odt.
 
 SOGo configuration example
-===================================
+==========================
 Below you see an example SOGo configuration. The example assumes you have
 the recommended server components installed as mentioned above.
 You have to apply them as user _sogo using the defaults command, i.e:
@@ -258,8 +259,8 @@ sogod SOGoTimeZone Europe/Berlin
 sogod SOGoFoldersSendEMailNotifications YES
 sogod SOGoMemcachedHost localhost
 sogod SOGoMailingMechanism smtp
-sogod WOLogFile /var/log/sogo/sogod.log
-sogod WOPidFile /var/sogo/sogod.pid
+sogod WOLogFile ${VARBASE}/log/sogo/sogod.log
+sogod WOPidFile ${VARBASE}/sogo/sogod.pid
 sogod SOGoMailDomain my-domain.com
 sogod OCSFolderInfoURL postgresql://_sogo:sogo@localhost:5432/sogo/sogo_folder_info
 sogod SOGoProfileURL postgresql://_sogo:sogo@localhost:5432/sogo/sogo_user_profile
@@ -273,27 +274,27 @@ sogod SOGoSentFolderName INBOX.Sent
 sogod SOGoZipPath ${LOCALBASE}/bin/zip
 
 Upgrading from older SOGo versions
-========================================
+==================================
 Update the files in the chroot environment of apache as root:
 
-$ sudo rm -rf /var/www/lib/sogo
-$ sudo mkdir -p /var/www/lib/sogo
-$ sudo cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources /var/www/lib/sogo/www
+$ sudo rm -rf ${VARBASE}/www/lib/sogo
+$ sudo mkdir -p ${VARBASE}/www/lib/sogo
+$ sudo cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
 
 Upgrade SOGo from < 1.3.5
-========================================
-Since version 1.3.5, SOGo requires to have a OCSSessionsFolderURL default set, 
+=========================
+Since version 1.3.5, SOGo requires to have a OCSSessionsFolderURL default set,
 which you need to create. For example run the following command as user _sogo:
 
 $ defaults write sogod OCSSessionsFolderURL \
 postgresql://_sogo:sogo@localhost:5432/sogo/sogo_sessions_folder
 
 Upgrade SOGo from < 1.3.12
-========================================
+==========================
 With version 1.3.12, the database schema got some enhancements, for example
 to permit syncs of cards with big photos in them.
 
-Run one of the following scripts as the SOGo system user _sogo. Depending on 
+Run one of the following scripts as the SOGo system user _sogo. Depending on
 the database you use, choose the postgres or mysql variant. The scripts
 will ask you for the database credentials.
 
@@ -301,16 +302,16 @@ $ sudo -u _sogo ${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.11_to_1.3.12-postgre
 $ sudo -u _sogo ${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.11_to_1.3.12-mysql.sh
 
 Upgrade SOGo from < 1.3.16
-=======================================
+==========================
 New password schemes were introduced. You may want to set the
 userPasswordAlgorithm default, i.e.:
 
 $ sudo -u _sogo defaults write sogod userPasswordAlgorithm ssha
 
 Upgrade SOGo from < 1.3.17
-=======================================
+==========================
 With version 1.3.17, the "cycle info" field of the calendar tables
-was enlarged. 
+was enlarged.
 
 Run one of the following scripts as the SOGo system user _sogo. Depending on
 the database you use, choose the postgres or mysql variant. The scripts
@@ -320,7 +321,7 @@ $ sudo -u _sogo ${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-postgre
 $ sudo -u _sogo ${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-mysql.sh
 
 Upgrade SOGo from < 2.1.1
-=======================================
+=========================
 With version 2.1.0, the WOPort default changed from listening on *:20000
 to 127.0.0.1:20000. To get back the old behaviour, run the following
 command:

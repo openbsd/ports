@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/03/13 17:33:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/05/22 09:50:22 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	5.5rc2
-REVISION=	0
+REVISION=	1
 DISTNAME =	opengroupware-${VERSION}
 
 SHARED_LIBS +=  LSAddress                 0.0 # 5.5
@@ -39,9 +39,9 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += DOM EOControl GDLAccess NGExtensions NGLdap NGMime
+WANTLIB += c DOM EOControl GDLAccess NGExtensions NGLdap NGMime
 WANTLIB += NGObjWeb NGStreams SaxObjC WEExtensions WOExtensions
-WANTLIB += XmlRpc c gnustep-base ldap m objc2 pthread
+WANTLIB += XmlRpc ldap
 
 MODULES =		apache-module x11/gnustep converters/libiconv
 MODGNUSTEP_NEEDS_GUI =	No
@@ -84,6 +84,8 @@ MAKE_FLAGS +=	libLSAddress_INTERFACE_VERSION=${LIBLSAddress_VERSION} \
 
 EXAMPLE_FILES =	opengroupware.conf NSGlobalDomain.plist ogo-webui.plist \
 		ogo-zidestore.plist ogo-xmlrpcd.plist
+
+SUBST_VARS +=	VARBASE
 
 post-build:
 	${MODAPACHE_CREATE_ENABLE_SCRIPT}

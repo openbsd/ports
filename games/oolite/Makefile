@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/22 16:52:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2014/05/22 09:50:43 sebastia Exp $
 
 COMMENT=	space combat and trading game in the style of Elite
 
 VERSION=	1.73.4
-REVISION =	6
+REVISION =	7
 DISTNAME=	oolite-dev-source-${VERSION}
 PKGNAME=	oolite-${VERSION}
 CATEGORIES=	games
@@ -24,7 +24,7 @@ MODGNUSTEP_NEEDS_GUI = No
 LIB_DEPENDS=	devel/sdl-mixer \
 		graphics/png
 
-WANTLIB += GL GLU SDL c m pthread SDL_mixer objc2 gnustep-base png
+WANTLIB += c GL GLU SDL SDL_mixer png
 
 MAKE_FILE =	Makefile
 MAKE_FLAGS =	LD="${CC}"

@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.1.1.1 2013/10/29 06:16:37 sebastia Exp $
+# $OpenBSD: README,v 1.2 2014/05/22 09:50:22 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,7 @@ The OpenGroupware system user
 =============================
 
 The system user and group intended to run the OpenGroupware application server
-is called _opengroupware. The users home directory is /var/opengroupware.
+is called _opengroupware. The users home directory is ${VARBASE}/opengroupware.
 
 OpenGroupware with httpd from OpenBSD base
 ==========================================
@@ -21,9 +21,9 @@ and OGo is listening on its default port 20000.
 The OpenBSD httpd runs in a chroot environment, therefore you have to
 copy some files into the server's chroot environment:
 
-$ sudo mkdir -p /var/www/htdocs/OpenGroupware55.woa
+$ sudo mkdir -p ${VARBASE}/www/htdocs/OpenGroupware55.woa
 $ sudo cp -R ${TRUEPREFIX}/share/opengroupware/www \
-	/var/www/htdocs/OpenGroupware55.woa/WebServerResources
+	${VARBASE}/www/htdocs/OpenGroupware55.woa/WebServerResources
 
 OpenGroupware needs the ngobjweb Apache module loaded. Enable it
 by running:
@@ -31,7 +31,7 @@ by running:
 $ sudo ${TRUEPREFIX}/sbin/mod_ngobjweb-enable
 
 A sample configuration is installed as example
-$ sudo cp ${TRUEPREFIX}/share/examples/opengroupware/opengroupware.conf /var/www/conf/modules
+$ sudo cp ${TRUEPREFIX}/share/examples/opengroupware/opengroupware.conf ${VARBASE}/www/conf/modules
 $ sudo /etc/rc.d/httpd restart
 
 OpenGroupware configuration example
