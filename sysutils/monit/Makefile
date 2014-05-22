@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2014/05/07 08:11:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2014/05/22 13:53:54 jasper Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-5.8
-REVISION=	0
+DISTNAME=	monit-5.8.1
 
 CATEGORIES=	sysutils
 
@@ -20,12 +19,9 @@ MASTER_SITES=	${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=gnu
 
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/monit
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/monit
-	cd ${WRKSRC} && ${INSTALL_DATA} README ${PREFIX}/share/doc/monit
-	cd ${WRKSRC} && ${INSTALL_DATA} monitrc \
-		${PREFIX}/share/examples/monit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/monit
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/monit
+	${INSTALL_DATA} ${WRKSRC}/monitrc ${PREFIX}/share/examples/monit
 
 .include <bsd.port.mk>
