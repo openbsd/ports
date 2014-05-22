@@ -1,27 +1,30 @@
-# $OpenBSD: Makefile,v 1.40 2014/05/22 15:13:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2014/05/22 15:47:38 jasper Exp $
 
 COMMENT=	web server log file analysis program
 
-V=		30
-DISTNAME=	webalizer-2.23-08-RB${V}-src
-PKGNAME=	webalizer-2.23.08.${V}
+RB_V=		30
+V=		2.23-08-RB${RB_V}
+DISTNAME=	webalizer-${V}-src
+PKGNAME=	webalizer-${V:S/-/./g:S/RB//}
+REVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb${V}/
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES=	${HOMEPAGE}/rb${V}/
+
+WANTLIB=	GeoIP>=5 c db gd>=18 m png pthread z
+
 LIB_DEPENDS=	databases/db/v4 \
 		graphics/gd \
 		net/GeoIP
 
-# GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
-
-WANTLIB=	GeoIP>=5 c db gd>=18 m png pthread z
-
-WRKDIST=	${WRKDIR}/webalizer-2.23-08-RB${V}
+WRKDIST=	${WRKDIR}/webalizer-${V}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-dns \
@@ -29,7 +32,7 @@ CONFIGURE_ARGS=	--enable-dns \
 		--with-db=${LOCALBASE}/include/db4 \
 		--with-dblib=${LOCALBASE}/lib/db4 \
 		--with-gd=${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
 

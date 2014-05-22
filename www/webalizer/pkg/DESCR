@@ -2,20 +2,11 @@ Webalizer is a web server log file analysis program which produces usage
 statistics in HTML format for viewing with a browser.  The results are
 presented in both columnar and graphical format, which facilitates
 interpretation.  Yearly, monthly, daily and hourly usage statistics are
-presented, along with the ability to display usage by site, URL, referrer,
-user agent (browser), search string, entry/exit page, username and country
-(some information is only available if supported and present in the log
-files being processed).  Processed data may also be exported into most
-database and spreadsheet programs that support tab delimited data formats.
-
-The Webalizer supports CLF (common log format) log files, as well as
-Combined log formats as defined by NCSA and others, and variations of these
-which it attempts to handle intelligently.  In addition, wu-ftpd xferlog
-formatted logs and squid proxy logs are supported.
-
-Gzip compressed logs may now be used as input directly.  Any log filename
-that ends with a '.gz'xtension will be assumed to be in gzip format and
-uncompressed on the fly as it is being read.  In addition, the Webalizer
-also supports DNS lookup capabilities if enabled at compile time.
+presented, along with the ability to display usage by site, URL,
+referrer, user agent (browser), search string, entry/exit page, username
+and country (some information is only available if supported and present
+in the log files being processed).  Processed data may also be exported
+into most database and spreadsheet programs that support tab delimited
+data formats.
 
 The OpenBSD port enables Reverse-DNS lookup by default.
