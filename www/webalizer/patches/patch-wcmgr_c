@@ -1,7 +1,7 @@
-$OpenBSD: patch-wcmgr_c,v 1.1 2011/01/05 08:19:18 giovanni Exp $
---- wcmgr.c.orig	Mon Jan  3 11:50:52 2011
-+++ wcmgr.c	Mon Jan  3 11:51:29 2011
-@@ -196,7 +196,7 @@ const char *ttl_age(time_t now, time_t then)
+$OpenBSD: patch-wcmgr_c,v 1.2 2014/05/22 15:13:37 jasper Exp $
+--- wcmgr.c.orig	Tue Apr  8 20:58:18 2014
++++ wcmgr.c	Tue May 20 22:22:14 2014
+@@ -203,7 +203,7 @@ const char *ttl_age(time_t now, time_t then)
     mins=age/60;
  
     /* format the string */
@@ -10,7 +10,7 @@ $OpenBSD: patch-wcmgr_c,v 1.1 2011/01/05 08:19:18 giovanni Exp $
  
     /* and return to caller */
     return our_buffer;
-@@ -407,7 +407,7 @@ void purge_cache()
+@@ -415,7 +415,7 @@ void purge_cache()
  
     /* generate output filename */
     memset(out_file, 0, sizeof(out_file));

@@ -1,15 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2012/01/19 15:31:02 giovanni Exp $
---- Makefile.in.orig	Sun Jan  2 23:54:32 2011
-+++ Makefile.in	Fri Dec 30 22:38:52 2011
-@@ -21,7 +21,7 @@ exec_prefix     = @exec_prefix@
- datadir         = @datarootdir@
- 
- BINDIR          = @bindir@
--MANDIR          = ${datadir}/man/man1
-+MANDIR          = @mandir@/man1
- ETCDIR          = @sysconfdir@
- GEODB           = @GEODB_LOC@
- CC              = @CC@
+$OpenBSD: patch-Makefile_in,v 1.10 2014/05/22 15:13:37 jasper Exp $
+--- Makefile.in.orig	Tue May 20 22:22:42 2014
++++ Makefile.in	Tue May 20 22:22:46 2014
 @@ -91,9 +91,6 @@ distclean: clean
  	@LN_S@ lang/webalizer_lang.@DEFAULT_LANG@ webalizer_lang.h
  

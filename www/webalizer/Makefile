@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.39 2014/03/17 23:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2014/05/22 15:13:37 jasper Exp $
 
 COMMENT=	web server log file analysis program
 
-V=		29
-DISTNAME=	webalizer-2.23-05-RB${V}-src
-PKGNAME=	webalizer-2.23.05.${V}
-REVISION=	4
+V=		30
+DISTNAME=	webalizer-2.23-08-RB${V}-src
+PKGNAME=	webalizer-2.23.08.${V}
 CATEGORIES=	www
 MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb${V}/
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
 
-MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 LIB_DEPENDS=	databases/db/v4 \
 		graphics/gd \
@@ -22,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	GeoIP>=5 c db gd>=18 m png pthread z
 
-WRKDIST=	${WRKDIR}/webalizer-2.23-05-RB${V}
+WRKDIST=	${WRKDIR}/webalizer-2.23-08-RB${V}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-dns \
