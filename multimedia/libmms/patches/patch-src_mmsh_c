@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_mmsh_c,v 1.1 2014/05/22 11:53:36 jasper Exp $
+
+Security fix for CVE-2014-2892, heap-based buffer overflow
+http://sourceforge.net/p/libmms/code/ci/03bcfccc22919c72742b7338d02859962861e0e8
+
+--- src/mmsh.c.orig	Thu May 22 13:47:18 2014
++++ src/mmsh.c	Thu May 22 13:48:30 2014
+@@ -307,7 +307,10 @@ static int get_answer (mms_io_t *io, mmsh_t *this) {
+         len = 0;
+       }
+     } else {
+-      len ++;
++      if (++len >= sizeof(this->buf)) {
++        lprintf("answer too large\n");
++        return 0;
++      }
+     }
+   }
+   if (this->stream_type == MMSH_UNKNOWN) {
