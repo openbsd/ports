@@ -1,0 +1,28 @@
+$OpenBSD: patch-srfi-4_scm,v 1.1 2014/05/22 11:22:27 jasper Exp $
+
+Security fix for CVE-2014-3776,
+buffer overflow in "read-u8vector!" procedure leads to DoS or arbitrary code exec
+
+http://code.call-cc.org/cgi-bin/gitweb.cgi?p=chicken-core.git;a=commit;h=1d06ce7e21c7e903ca5dca11fda6fcf2cc52de5e
+
+--- srfi-4.scm.orig	Fri Oct  4 03:44:52 2013
++++ srfi-4.scm	Thu May 22 08:48:19 2014
+@@ -653,12 +653,12 @@ EOF
+   (##sys#check-input-port port #t 'read-u8vector!)
+   (##sys#check-exact start 'read-u8vector!)
+   (##sys#check-structure dest 'u8vector 'read-u8vector!)
+-  (let ((dest (##sys#slot dest 1)))
+-    (when n
+-      (##sys#check-exact n 'read-u8vector!)
+-      (when (fx> (fx+ start n) (##sys#size dest))
+-	(set! n (fx- (##sys#size dest) start))))
+-    (##sys#read-string! n dest port start) ) )
++  (when n (##sys#check-exact n 'read-u8vector!))
++  (let* ((dest (##sys#slot dest 1))
++	 (size (##sys#size dest)))
++    (unless (and n (fx<= (fx+ start n) size))
++      (set! n (fx- size start)))
++    (##sys#read-string! n dest port start)))
+ 
+ (define read-u8vector
+   (let ()
