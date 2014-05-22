@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/09 19:49:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/05/22 14:05:40 jasper Exp $
 
 COMMENT=		Erlang build tool
 
-GH_VER=			2.2.0
+GH_VER=			2.3.0
 PROJECT=		rebar
 DISTNAME=		${PROJECT}-${GH_VER}
 
