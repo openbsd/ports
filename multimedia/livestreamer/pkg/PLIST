@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/04/25 15:13:31 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/05/22 13:17:29 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -99,6 +99,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/filmon_us.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/filmon_us.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/freedocast.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/freedocast.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/furstream.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/furstream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomexp.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomexp.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hashd.py
@@ -141,10 +143,14 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ustreamtv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ustreamtv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/veetle.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/veetle.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viasat.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viasat.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/weeb.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/weeb.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/youtube.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/youtube.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/zdf_mediathek.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/zdf_mediathek.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/session.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/session.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/
