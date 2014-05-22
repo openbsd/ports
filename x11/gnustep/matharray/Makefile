@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/19 13:25:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2014/05/22 09:48:57 sebastia Exp $
 
 COMMENT =	GNUstep library to manipulate matrices
 
@@ -14,7 +14,7 @@ MASTER_SITES =	${MASTER_SITE_GNUSTEP:=contrib/}
 
 WANTLIB += 		pthread
 MODULES =		x11/gnustep
-MODGNUSTEP_NEEDS_GUI = 	No
+MODGNUSTEP_IS_FRAMEWORK = Yes
 
 CONFIGURE_STYLE +=	gnu
 MAKE_FLAGS +=	libMathArray_INTERFACE_VERSION=${LIBMathArray_VERSION}

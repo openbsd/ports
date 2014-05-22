@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/18 12:18:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2014/05/22 09:48:57 sebastia Exp $
 
 COMMENT =	GNUstep webserver framework
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://wiki.gnustep.org/index.php/WebServer
 MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
-MODGNUSTEP_NEEDS_GUI = 	No
+MODGNUSTEP_IS_FRAMEWORK = Yes
 WANTLIB +=		Performance pthread
 LIB_DEPENDS +=		x11/gnustep/performance
 

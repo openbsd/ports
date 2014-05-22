@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/19 13:25:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2014/05/22 09:48:57 sebastia Exp $
 
 COMMENT=	framework to major mail protocols
 
 DISTNAME=	Pantomime-1.2.0pre3
-REVISION =	9
+REVISION =	10
 
 SHARED_LIBS=	Pantomime 1.2	# .1.2
 CATEGORIES=	mail
@@ -15,9 +15,8 @@ WANTLIB=	crypto ssl
 MASTER_SITES=	${HOMEPAGE}.data/releases/Stable/
 
 MODULES=	x11/gnustep
-MODGNUSTEP_NEEDS_GUI=	No
-MODGNUSTEP_NEEDS_BASE=	No
-BUILD_DEPENDS=	x11/gnustep/base
+MODGNUSTEP_IS_FRAMEWORK = Yes
+WANTLIB += 	pthread
 
 WRKDIST=	${WRKDIR}/Pantomime
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/19 13:24:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2014/05/22 09:48:56 sebastia Exp $
 
 COMMENT =	GNUstep dbus interface
 
 CATEGORIES +=   x11/gnustep devel
 VERSION =	0.1.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	dbuskit-${VERSION}
 PKGNAME =	gnustep-dbuskit-${VERSION}
 
@@ -15,11 +15,11 @@ MASTER_SITES =	http://download.gna.org/gnustep/
 
 MODULES +=		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No
-WANTLIB += 		c dbus-1 m pthread gnustep-base objc2
+WANTLIB += 		c dbus-1
 BUILD_DEPENDS +=	print/texlive/base \
 			textproc/texi2html
 
-# Setting porthome is needed to successfully build the 
+# Setting porthome is needed to successfully build the
 # documenation
 PORTHOME =	${WRKDIST}
 CONFIGURE_STYLE = gnu

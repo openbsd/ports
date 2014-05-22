@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2014/01/03 18:55:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.38 2014/05/22 09:48:56 sebastia Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME =	gnustep-gui-0.24.0
+REVISION =	0
 
 CATEGORIES=	devel
 
@@ -12,9 +13,9 @@ SHARED_LIBS =	gnustep-gui 0.24	# .0.23.1
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += objc2 gnustep-base stdc++ flite flite_cmu_us_kal sndio
-WANTLIB += tiff z ao jpeg gif png cups aspell c m pthread sndfile
-WANTLIB += icudata icui18n icuuc flite_cmulex flite_usenglish
+WANTLIB += ao aspell cups flite flite_cmu_us_kal flite_cmulex
+WANTLIB += flite_usenglish gif jpeg png sndfile sndio
+WANTLIB += stdc++ tiff c
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 

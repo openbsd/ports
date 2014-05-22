@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.33 2014/01/03 18:56:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.34 2014/05/22 09:48:56 sebastia Exp $
 
 COMMENT=	GNUstep gui backend
 
 V =		0.24.0
 DISTNAME=	gnustep-back-${V}
+REVISION =	0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
-MODULES=	x11/gnustep
+MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_BACK=	No
 
 WANTLIB += 	Xft Xrender cairo Xfixes Xcursor
-WANTLIB += 	freetype z GL X11 Xext Xmu Xt c m pthread
+WANTLIB += 	freetype GL X11 Xext Xmu Xt
 
 LIB_DEPENDS=	graphics/cairo
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/19 13:25:05 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2014/05/22 09:48:57 sebastia Exp $
 
 COMMENT =	GNUstep webservices framework
 
@@ -13,9 +13,9 @@ HOMEPAGE =	http://wiki.gnustep.org/index.php/WebServices
 MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
-WANTLIB += 		Performance
+WANTLIB += 		Performance pthread
 LIB_DEPENDS =		x11/gnustep/performance
-MODGNUSTEP_NEEDS_GUI = 	No
+MODGNUSTEP_IS_FRAMEWORK = Yes
 
 MAKE_FLAGS +=	WebServices_INTERFACE_VERSION=${LIBWebServices_VERSION}
 

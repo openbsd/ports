@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2014/01/03 18:53:01 sebastia Exp $
+# $OpenBSD: Makefile,v 1.54 2014/05/22 09:48:56 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.24.6
+REVISION =	1
 
 SHARED_LIBS=	gnustep-base 8.1
 CATEGORIES=	devel
@@ -21,8 +22,7 @@ WANTLIB += iberty
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
-MODULES=	x11/gnustep \
-		converters/libiconv
+MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No
 MODGNUSTEP_NEEDS_BASE=	No
 

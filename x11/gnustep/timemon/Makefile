@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/19 13:25:05 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2014/05/22 09:48:57 sebastia Exp $
 
 COMMENT=	CPU load monitor
 
 DISTNAME=	TimeMon-4.1
-REVISION =	4
+REVISION =	5
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gap.nongnu.org/timemon/
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
 
-MODULES=	x11/gnustep
-WANTLIB=	c m pthread
+MODULES =	x11/gnustep
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/19 13:25:04 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2014/05/22 09:48:57 sebastia Exp $
 
 COMMENT =	GNUstep database abstraction layer
 
 VERSION =	1.7.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	SQLClient-${VERSION}
 PKGNAME =	gnustep-sqlclient-${VERSION}
 
@@ -18,7 +18,6 @@ MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI = 	No
 WANTLIB +=		Performance pq ecpg mysqlclient sqlite3
-WANTLIB +=		gnustep-base m objc2 pthread
 LIB_DEPENDS +=		x11/gnustep/performance \
 			databases/mysql \
 			databases/postgresql

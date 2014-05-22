@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.21 2014/01/09 17:24:16 brad Exp $
+# $OpenBSD: gnustep.port.mk,v 1.22 2014/05/22 09:48:56 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	i386 amd64 macppc
@@ -11,8 +11,8 @@ USE_GMAKE ?=	Yes
 MAKE_FILE ?=	GNUmakefile
 
 MODULES +=			lang/clang
-BUILD_DEPENDS +=		x11/gnustep/make>=2.6.0
-MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make>=2.6.0
+BUILD_DEPENDS +=		x11/gnustep/make
+MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
 
 MODCLANG_ARCHS =		amd64 i386
 MODCLANG_LANGS =		c++
@@ -31,18 +31,40 @@ MAKE_ENV +=	INSTALL_AS_USER=${BINOWN}
 MAKE_ENV +=	INSTALL_AS_GROUP=${BINGRP}
 MAKE_ENV +=     GNUSTEP_CONFIG_FILE=${PORTSDIR}/x11/gnustep/GNUstep.conf
 
+MODGNUSTEP_IS_FRAMEWORK ?=	No
+MODGNUSTEP_NEEDS_LIBICONV ?=	Yes
+MODGNUSTEP_NEEDS_C ?=		Yes
+
+.if ${MODGNUSTEP_IS_FRAMEWORK:L} == yes
+BUILD_DEPENDS +=		x11/gnustep/base
+MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/base
+MODGNUSTEP_NEEDS_BASE ?=	No
+MODGNUSTEP_NEEDS_GUI ?=		No
+MODGNUSTEP_NEEDS_BACK ?=	No
+.else
+.  if ${MODGNUSTEP_NEEDS_LIBICONV:L} == yes
+MODULES +=			converters/libiconv
+MODGNUSTEP_WANTLIB +=		${MODLIBICONV_WANTLIB}
+.  endif
 MODGNUSTEP_NEEDS_BASE ?=	Yes
 MODGNUSTEP_NEEDS_GUI ?=		Yes
 MODGNUSTEP_NEEDS_BACK ?=	Yes
+.endif
 
-.if ${MODGNUSTEP_NEEDS_GUI:L} == yes 
-MODGNUSTEP_WANTLIB +=		objc2 gnustep-base gnustep-gui
+.if ${MODGNUSTEP_NEEDS_GUI:L} == yes
+MODGNUSTEP_WANTLIB +=		gnustep-base gnustep-gui
 MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/gui
+.  if ${MODGNUSTEP_NEEDS_C:L} == yes
+MODGNUSTEP_WANTLIB +=		c
+.  endif
 .  if ${MODGNUSTEP_NEEDS_BACK:L} == yes
 MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/back
 .  endif
 .endif
 .if ${MODGNUSTEP_NEEDS_BASE:L} == yes
+MODGNUSTEP_WANTLIB +=		objc2 avahi-client avahi-common ffi gcrypt gmp
+MODGNUSTEP_WANTLIB +=		gnutls icudata icui18n icuuc xml2 xslt z m
+MODGNUSTEP_WANTLIB +=		gnustep-base pthread
 MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/base
 .endif
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/19 13:24:55 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2014/05/22 09:48:56 sebastia Exp $
 
 COMMENT=	GNUstep address book
 
 DISTNAME=	Addresses-0.4.8
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS+=	Addresses 0.1	# .0.1
 SHARED_LIBS+=	AddressView 0.1	# .0.1
@@ -12,11 +12,11 @@ CATEGORIES=	mail
 
 HOMEPAGE=	http://gap.nongnu.org/addresses/index.html
 
-WANTLIB=	c m pthread Inspector
+WANTLIB =	Inspector
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
 
-MODULES=	x11/gnustep
+MODULES =	x11/gnustep
 LIB_DEPENDS +=	x11/gnustep/gworkspace
 
 MAKE_FLAGS+=	Addresses_VERSION=${LIBAddresses_VERSION} \
