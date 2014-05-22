@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2014/05/22 09:48:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2014/05/22 17:53:35 sebastia Exp $
 
 COMMENT =	GNUstep performance library
 
-VERSION =	0.4.0
+VERSION =	0.5.0
 DISTNAME =	Performance-${VERSION}
-REVISION =	0
 PKGNAME =	gnustep-performance-${VERSION}
 CATEGORIES =	devel
-SHARED_LIBS +=  Performance               0.1
+SHARED_LIBS +=  Performance               0.2
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/Performance
 MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/12/22 18:41:49 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/05/22 17:53:35 sebastia Exp $
 include/Performance/
 include/Performance/GSCache.h
 include/Performance/GSFIFO.h
@@ -8,6 +8,7 @@ include/Performance/GSSkipMutableArray.h
 include/Performance/GSThreadPool.h
 include/Performance/GSThroughput.h
 include/Performance/GSTicker.h
+include/Performance/GSUniqued.h
 @lib lib/libPerformance.so.${LIBPerformance_VERSION}
 share/doc/GNUstep/
 share/doc/GNUstep/Performance/
@@ -27,6 +28,8 @@ share/doc/GNUstep/Performance/GSThroughput.gsdoc
 share/doc/GNUstep/Performance/GSThroughput.html
 share/doc/GNUstep/Performance/GSTicker.gsdoc
 share/doc/GNUstep/Performance/GSTicker.html
+share/doc/GNUstep/Performance/GSUniqued.gsdoc
+share/doc/GNUstep/Performance/GSUniqued.html
 share/doc/GNUstep/Performance/OrderedSymbolDeclarations.plist
 share/doc/GNUstep/Performance/Performance.igsdoc
 share/doc/GNUstep/Performance/dependencies
