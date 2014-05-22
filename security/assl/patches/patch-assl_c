@@ -1,0 +1,11 @@
+$OpenBSD: patch-assl_c,v 1.3 2014/05/22 11:33:05 naddy Exp $
+--- assl.c.orig	Thu Nov  7 12:51:14 2013
++++ assl.c	Tue May 20 19:12:23 2014
+@@ -15,6 +15,7 @@
+  */
+ 
+ #include <stdlib.h>
++#include <string.h>
+ #include <err.h>
+ #include <fcntl.h>
+ #include <poll.h>

@@ -1,0 +1,11 @@
+$OpenBSD: patch-assl_socket_c,v 1.1 2014/05/22 11:33:05 naddy Exp $
+--- assl_socket.c.orig	Thu Nov  7 12:51:14 2013
++++ assl_socket.c	Tue May 20 19:12:35 2014
+@@ -14,6 +14,7 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ 
