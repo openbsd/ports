@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_code_c,v 1.1 2014/05/22 09:29:56 sthen Exp $
+--- src/code.c.orig	Thu May 22 10:25:57 2014
++++ src/code.c	Thu May 22 10:27:01 2014
+@@ -11,6 +11,7 @@
+ 
+ #ifdef	HAS_STDLIB_H
+ #include	<stdlib.h>
++#include	<string.h>
+ #else
+ #	include "proto.h"
+ 	extern char	* memcpy P((char *, char *, int));
