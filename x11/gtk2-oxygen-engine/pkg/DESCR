@@ -1,0 +1,6 @@
+Oxygen-Gtk is a port of the default KDE widget theme (Oxygen) to GTK.
+
+Its primary goal is to ensure visual consistency between GTK and
+Qt-based applications running under KDE. A secondary objective is to
+also have a stand-alone nice looking GTK theme that behaves well in
+other desktop environments.
