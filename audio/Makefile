@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2014/05/23 20:47:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.332 2014/05/23 21:16:26 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -209,6 +209,7 @@
      SUBDIR += py-xmms
      SUBDIR += pykaraoke
      SUBDIR += pympd
+     SUBDIR += quodlibet
      SUBDIR += rhythmbox
      SUBDIR += rioutil
      SUBDIR += rplay
