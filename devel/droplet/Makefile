@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/22 10:48:21 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2014/05/23 12:31:36 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
 
 VERSION=		1.1
-REVISION=		1
+REVISION=		2
 DISTNAME=		droplet-${VERSION}
 HOMEPAGE=		https://github.com/scality/Droplet
 
