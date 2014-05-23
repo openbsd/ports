@@ -1,0 +1,169 @@
+$OpenBSD: patch-src_http_c,v 1.1.1.1 2014/05/23 20:46:05 naddy Exp $
+
+No struct timeb / ftime(3) support; libcompat is gone.
+Replace with struct timeval / gettimeofday(2).
+
+--- src/http.c.orig	Thu Dec  5 17:49:13 2013
++++ src/http.c	Thu May 22 19:55:42 2014
+@@ -347,7 +347,7 @@ typedef int op_sock;
+ #  define op_reset_errno() (errno=0)
+ 
+ # endif
+-# include <sys/timeb.h>
++# include <sys/time.h>
+ # include <openssl/x509v3.h>
+ 
+ /*The maximum number of simultaneous connections.
+@@ -788,7 +788,7 @@ struct OpusHTTPConn{
+   /*The next connection in either the LRU or free list.*/
+   OpusHTTPConn *next;
+   /*The last time we blocked for reading from this connection.*/
+-  struct timeb  read_time;
++  struct timeval  read_time;
+   /*The number of bytes we've read since the last time we blocked.*/
+   opus_int64    read_bytes;
+   /*The estimated throughput of this connection, in bytes/s.*/
+@@ -838,7 +838,7 @@ struct OpusHTTPStream{
+     struct sockaddr_in6 v6;
+   }                addr;
+   /*The last time we re-resolved the host.*/
+-  struct timeb     resolve_time;
++  struct timeval   resolve_time;
+   /*A buffer used to build HTTP requests.*/
+   OpusStringBuf    request;
+   /*A buffer used to build proxy CONNECT requests.*/
+@@ -992,26 +992,25 @@ static int op_http_conn_estimate_available(OpusHTTPCon
+   return available;
+ }
+ 
+-static opus_int32 op_time_diff_ms(const struct timeb *_end,
+- const struct timeb *_start){
++static opus_int32 op_time_diff_ms(const struct timeval *_end,
++ const struct timeval *_start){
+   opus_int64 dtime;
+-  dtime=_end->time-(opus_int64)_start->time;
+-  OP_ASSERT(_end->millitm<1000);
+-  OP_ASSERT(_start->millitm<1000);
+-  if(OP_UNLIKELY(dtime>(OP_INT32_MAX-1000)/1000))return OP_INT32_MAX;
+-  if(OP_UNLIKELY(dtime<(OP_INT32_MIN+1000)/1000))return OP_INT32_MIN;
+-  return (opus_int32)dtime*1000+_end->millitm-_start->millitm;
++  dtime=_end->tv_sec-_start->tv_sec;
++  dtime=dtime*1000+(_end->tv_usec-_start->tv_usec)/1000;
++  if(OP_UNLIKELY(dtime>OP_INT32_MAX))return OP_INT32_MAX;
++  if(OP_UNLIKELY(dtime<OP_INT32_MIN))return OP_INT32_MIN;
++  return (opus_int32)dtime;
+ }
+ 
+ /*Update the read rate estimate for this connection.*/
+ static void op_http_conn_read_rate_update(OpusHTTPConn *_conn){
+-  struct timeb read_time;
++  struct timeval read_time;
+   opus_int32   read_delta_ms;
+   opus_int64   read_delta_bytes;
+   opus_int64   read_rate;
+   read_delta_bytes=_conn->read_bytes;
+   if(read_delta_bytes<=0)return;
+-  ftime(&read_time);
++  gettimeofday(&read_time,NULL);
+   read_delta_ms=op_time_diff_ms(&read_time,&_conn->read_time);
+   read_rate=_conn->read_rate;
+   read_delta_ms=OP_MAX(read_delta_ms,1);
+@@ -1902,7 +1901,7 @@ static int op_sock_connect_next(op_sock _fd,
+ # define OP_NPROTOS (2)
+ 
+ static int op_http_connect_impl(OpusHTTPStream *_stream,OpusHTTPConn *_conn,
+- const struct addrinfo *_addrs,struct timeb *_start_time){
++ const struct addrinfo *_addrs,struct timeval *_start_time){
+   const struct addrinfo *addr;
+   const struct addrinfo *addrs[OP_NPROTOS];
+   struct pollfd          fds[OP_NPROTOS];
+@@ -1932,7 +1931,7 @@ static int op_http_connect_impl(OpusHTTPStream *_strea
+   _stream->free_head=_conn->next;
+   _conn->next=_stream->lru_head;
+   _stream->lru_head=_conn;
+-  ftime(_start_time);
++  gettimeofday(_start_time,NULL);
+   *&_conn->read_time=*_start_time;
+   _conn->read_bytes=0;
+   _conn->read_rate=0;
+@@ -2034,14 +2033,14 @@ static int op_http_connect_impl(OpusHTTPStream *_strea
+ }
+ 
+ static int op_http_connect(OpusHTTPStream *_stream,OpusHTTPConn *_conn,
+- const struct addrinfo *_addrs,struct timeb *_start_time){
+-  struct timeb     resolve_time;
++ const struct addrinfo *_addrs,struct timeval *_start_time){
++  struct timeval   resolve_time;
+   struct addrinfo *new_addrs;
+   int              ret;
+   /*Re-resolve the host if we need to (RFC 6555 says we MUST do so
+      occasionally).*/
+   new_addrs=NULL;
+-  ftime(&resolve_time);
++  gettimeofday(&resolve_time,NULL);
+   if(_addrs!=&_stream->addr_info||op_time_diff_ms(&resolve_time,
+    &_stream->resolve_time)>=OP_RESOLVE_CACHE_TIMEOUT_MS){
+     new_addrs=op_resolve(_stream->connect_host,_stream->connect_port);
+@@ -2191,8 +2190,8 @@ static int op_http_stream_open(OpusHTTPStream *_stream
+   addrs=NULL;
+   for(nredirs=0;nredirs<OP_REDIRECT_LIMIT;nredirs++){
+     OpusParsedURL  next_url;
+-    struct timeb   start_time;
+-    struct timeb   end_time;
++    struct timeval start_time;
++    struct timeval end_time;
+     char          *next;
+     char          *status_code;
+     int            minor_version_pos;
+@@ -2321,7 +2320,7 @@ static int op_http_stream_open(OpusHTTPStream *_stream
+     if(OP_UNLIKELY(ret<0))return ret;
+     ret=op_http_conn_read_response(_stream->conns+0,&_stream->response);
+     if(OP_UNLIKELY(ret<0))return ret;
+-    ftime(&end_time);
++    gettimeofday(&end_time,NULL);
+     next=op_http_parse_status_line(&v1_1_compat,&status_code,
+      _stream->response.buf);
+     if(OP_UNLIKELY(next==NULL))return OP_FALSE;
+@@ -2733,18 +2732,18 @@ static int op_http_conn_handle_response(OpusHTTPStream
+                 converted into a request for the rest.*/
+ static int op_http_conn_open_pos(OpusHTTPStream *_stream,
+  OpusHTTPConn *_conn,opus_int64 _pos,opus_int32 _chunk_size){
+-  struct timeb  start_time;
+-  struct timeb  end_time;
+-  opus_int32    connect_rate;
+-  opus_int32    connect_time;
+-  int           ret;
++  struct timeval    start_time;
++  struct timeval    end_time;
++  opus_int32        connect_rate;
++  opus_int32        connect_time;
++  int               ret;
+   ret=op_http_connect(_stream,_conn,&_stream->addr_info,&start_time);
+   if(OP_UNLIKELY(ret<0))return ret;
+   ret=op_http_conn_send_request(_stream,_conn,_pos,_chunk_size,0);
+   if(OP_UNLIKELY(ret<0))return ret;
+   ret=op_http_conn_handle_response(_stream,_conn);
+   if(OP_UNLIKELY(ret!=0))return OP_FALSE;
+-  ftime(&end_time);
++  gettimeofday(&end_time,NULL);
+   _stream->cur_conni=_conn-_stream->conns;
+   OP_ASSERT(_stream->cur_conni>=0&&_stream->cur_conni<OP_NCONNS_MAX);
+   /*The connection has been successfully opened.
+@@ -2996,7 +2995,7 @@ static int op_http_conn_read_ahead(OpusHTTPStream *_st
+ }
+ 
+ static int op_http_stream_seek(void *_stream,opus_int64 _offset,int _whence){
+-  struct timeb     seek_time;
++  struct timeval   seek_time;
+   OpusHTTPStream  *stream;
+   OpusHTTPConn    *conn;
+   OpusHTTPConn   **pnext;
+@@ -3037,7 +3036,7 @@ static int op_http_stream_seek(void *_stream,opus_int6
+     op_http_conn_read_rate_update(stream->conns+ci);
+     *&seek_time=*&stream->conns[ci].read_time;
+   }
+-  else ftime(&seek_time);
++  else gettimeofday(&seek_time,NULL);
+   /*If we seeked past the end of the stream, just disable the active
+      connection.*/
+   if(pos>=content_length){

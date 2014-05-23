@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/23 20:46:05 naddy Exp $
+include/opus/
+include/opus/opusfile.h
+lib/libopusfile.a
+lib/libopusfile.la
+@lib lib/libopusfile.so.${LIBopusfile_VERSION}
+lib/libopusurl.a
+lib/libopusurl.la
+@lib lib/libopusurl.so.${LIBopusurl_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/opusfile.pc
+lib/pkgconfig/opusurl.pc
+share/doc/opusfile/
+share/doc/opusfile/AUTHORS
+share/doc/opusfile/COPYING
+share/doc/opusfile/README.txt
