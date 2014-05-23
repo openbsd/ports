@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdist_man_py,v 1.1.1.1 2014/05/23 21:16:05 sthen Exp $
+--- gdist/man.py.orig	Fri May 23 15:34:19 2014
++++ gdist/man.py	Fri May 23 15:34:30 2014
+@@ -44,7 +44,7 @@ class install_man(Command):
+         return self.outfiles
+ 
+     def run(self):
+-        basepath = os.path.join(self.prefix, 'share', 'man')
++        basepath = os.path.join(self.prefix, 'man')
+         if self.root is not None:
+             basepath = change_root(self.root, basepath)
+         out = self.mkpath(basepath)

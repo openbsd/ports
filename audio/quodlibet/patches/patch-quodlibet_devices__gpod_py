@@ -1,0 +1,19 @@
+$OpenBSD: patch-quodlibet_devices__gpod_py,v 1.1.1.1 2014/05/23 21:16:05 sthen Exp $
+--- quodlibet/devices/_gpod.py.orig	Fri May 23 21:38:58 2014
++++ quodlibet/devices/_gpod.py	Fri May 23 21:39:07 2014
+@@ -18,13 +18,13 @@ from ctypes import *
+ 
+ 
+ try:
+-    _glib = CDLL("libglib-2.0.so.0")
++    _glib = CDLL("libglib-2.0.so")
+ except OSError:
+     raise ImportError("Couldn't find libglib-2.0")
+ 
+ 
+ try:
+-    _lib = CDLL("libgpod.so.4")
++    _lib = CDLL("libgpod.so")
+ except OSError:
+     raise ImportError("Couldn't find libgpod")
+ 
