@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/05/22 15:47:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2014/05/23 22:17:56 kili Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -16,7 +16,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/rb${V}/
+MASTER_SITES=	${HOMEPAGE}/rb${RB_V}/
 
 WANTLIB=	GeoIP>=5 c db gd>=18 m png pthread z
 
