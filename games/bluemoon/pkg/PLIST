@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/12 20:13:21 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/23 18:09:58 bcallah Exp $
 @bin bin/bluemoon
 @man man/man6/bluemoon.6
+share/applications/bluemoon.desktop
+share/pixmaps/
+share/pixmaps/bluemoon.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
