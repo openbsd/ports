@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_openbsd_up-backend_c,v 1.16 2014/04/23 09:55:18 jasper Exp $
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.17 2014/05/23 19:21:07 landry Exp $
 
 From 4bed9c99c1d459f0d1bc760716573e2a2af5e0e1 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -7,7 +7,7 @@ Subject: Update lid status when updating ac status.
          https://bugs.freedesktop.org/show_bug.cgi?id=77692
 
 --- src/openbsd/up-backend.c.orig	Tue Oct 29 11:37:08 2013
-+++ src/openbsd/up-backend.c	Sun Apr 20 18:54:05 2014
++++ src/openbsd/up-backend.c	Sat May 17 17:55:23 2014
 @@ -34,6 +34,7 @@ static void	up_backend_finalize	(GObject		*object);
  static gboolean	up_backend_apm_get_power_info(struct apm_power_info*);
  UpDeviceState up_backend_apm_get_battery_state_value(u_char battery_state);
@@ -37,7 +37,60 @@ Subject: Update lid status when updating ac status.
  	ret = up_backend_apm_get_power_info(&a);
  	if (!ret)
  		return ret;
-@@ -405,6 +407,70 @@ up_apm_device_refresh(UpDevice* device)
+@@ -319,8 +321,8 @@ up_backend_update_acpibat_state(UpDevice* device, stru
+ {
+ 	enum sensor_type type;
+ 	int numt;
+-	gdouble bst_volt, bst_rate, bif_lastfullcap, bst_cap, bif_lowcap;
+-	/* gdouble bif_dvolt, bif_dcap, capacity; */
++	gdouble bst_volt, bst_rate, bif_cap, bif_lastfullcap, bst_cap, bif_lowcap, capacity;
++	/* gdouble bif_dvolt; */
+ 	struct sensor sens;
+ 	size_t slen = sizeof(sens);
+ 	int mib[] = {CTL_HW, HW_SENSORS, 0, 0, 0};
+@@ -335,6 +337,9 @@ up_backend_update_acpibat_state(UpDevice* device, stru
+ 			else if (slen > 0 && (sens.flags & SENSOR_FINVALID) == 0) {
+ 				if (sens.type == SENSOR_VOLTS_DC && !strcmp(sens.desc, "current voltage"))
+ 					bst_volt = sens.value / 1000000.0f;
++				if ((sens.type == SENSOR_AMPHOUR || sens.type == SENSOR_WATTHOUR) && !strcmp(sens.desc, "design capacity")) {
++					bif_cap = (sens.type == SENSOR_AMPHOUR ? bst_volt : 1) * sens.value / 1000000.0f;
++				}
+ 				if ((sens.type == SENSOR_AMPHOUR || sens.type == SENSOR_WATTHOUR) && !strcmp(sens.desc, "last full capacity")) {
+ 					bif_lastfullcap = (sens.type == SENSOR_AMPHOUR ? bst_volt : 1) * sens.value / 1000000.0f;
+ 				}
+@@ -349,19 +354,30 @@ up_backend_update_acpibat_state(UpDevice* device, stru
+ 				}
+ 				/*
+ 				bif_dvolt = "voltage" = unused ?
+-				capacity = lastfull/dcap * 100 ?
+ 				amphour1 = warning capacity ?
+ 				raw0 = battery state
+ 				*/
+ 			}
+ 		}
+ 	}
++
++	capacity = 0.0f;
++	if(bif_lastfullcap > 0 && bif_cap > 0) {
++		capacity = (bif_lastfullcap / bif_cap) * 100.0f;
++		if (capacity < 0)
++			capacity = 0.0f;
++		if (capacity > 100.0)
++			capacity = 100.0f;
++	}
++
+ 	g_object_set (device,
+ 		"energy", bst_cap,
+ 		"energy-full", bif_lastfullcap,
++		"energy-full-design", bif_cap,
+ 		"energy-rate", bst_rate,
+ 		"energy-empty", bif_lowcap,
+ 		"voltage", bst_volt,
++		"capacity", capacity,
+ 		(void*) NULL);
+ }
+ 
+@@ -405,6 +421,70 @@ up_apm_device_refresh(UpDevice* device)
  	}
  
  	return ret;
