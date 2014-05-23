@@ -1,0 +1,11 @@
+$OpenBSD: patch-cachemgr_c,v 1.1 2014/05/23 12:37:17 sthen Exp $
+--- cachemgr.c.orig	Fri May 23 13:33:54 2014
++++ cachemgr.c	Fri May 23 13:34:00 2014
+@@ -35,6 +35,7 @@
+ #include "log.h"
+ #include "attrib.h"
+ 
++#include <string.h>
+ #include <pthread.h>
+ 
+ #include <netinet/in.h>

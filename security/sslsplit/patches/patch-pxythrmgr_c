@@ -1,0 +1,11 @@
+$OpenBSD: patch-pxythrmgr_c,v 1.1 2014/05/23 12:37:17 sthen Exp $
+--- pxythrmgr.c.orig	Fri May 23 13:34:26 2014
++++ pxythrmgr.c	Fri May 23 13:34:33 2014
+@@ -31,6 +31,7 @@
+ #include "sys.h"
+ #include "log.h"
+ 
++#include <string.h>
+ #include <pthread.h>
+ 
+ /*

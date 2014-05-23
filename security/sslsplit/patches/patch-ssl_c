@@ -1,0 +1,11 @@
+$OpenBSD: patch-ssl_c,v 1.1 2014/05/23 12:37:17 sthen Exp $
+--- ssl.c.orig	Fri May 23 13:34:58 2014
++++ ssl.c	Fri May 23 13:35:07 2014
+@@ -34,6 +34,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <limits.h>
+ 
+ #include <openssl/crypto.h>
