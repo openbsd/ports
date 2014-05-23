@@ -1,0 +1,11 @@
+$OpenBSD: patch-net_c,v 1.1 2014/05/23 12:23:05 sthen Exp $
+--- net.c.orig	Fri May 23 13:20:41 2014
++++ net.c	Fri May 23 13:20:49 2014
+@@ -26,6 +26,7 @@
+ #include <errno.h>
+ #include <poll.h>
+ #include <stdio.h>
++#include <string.h>
+ 
+ #include <openssl/ssl.h>
+ 

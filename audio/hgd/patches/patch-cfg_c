@@ -1,0 +1,11 @@
+$OpenBSD: patch-cfg_c,v 1.1 2014/05/23 12:23:05 sthen Exp $
+--- cfg.c.orig	Fri May 23 13:21:06 2014
++++ cfg.c	Fri May 23 13:21:12 2014
+@@ -20,6 +20,7 @@
+ #ifdef HAVE_LIBCONFIG /* entire file */
+ 
+ #include <limits.h>
++#include <string.h>
+ 
+ #include "cfg.h"
+ #include "hgd.h"

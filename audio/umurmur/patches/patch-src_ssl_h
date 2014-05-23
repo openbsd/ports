@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ssl_h,v 1.1 2014/05/23 12:25:32 sthen Exp $
+--- src/ssl.h.orig	Fri May 23 13:24:22 2014
++++ src/ssl.h	Fri May 23 13:24:43 2014
+@@ -36,6 +36,8 @@
+ #include <config.h>
+ #endif
+ 
++#include <string.h>
++
+ #ifdef USE_POLARSSL
+ #include <polarssl/ssl.h>
+ #include <polarssl/version.h>

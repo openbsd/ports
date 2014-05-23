@@ -1,0 +1,11 @@
+$OpenBSD: patch-user_c,v 1.1 2014/05/23 12:23:05 sthen Exp $
+--- user.c.orig	Fri May 23 13:21:39 2014
++++ user.c	Fri May 23 13:21:45 2014
+@@ -17,6 +17,7 @@
+ 
+ #include <sqlite3.h>
+ #include <openssl/rand.h>
++#include <string.h>
+ 
+ #include "user.h"
+ #include "hgd.h"
