@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2013/09/17 14:12:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2014/05/23 20:26:44 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
-MODPY_EGG_VERSION = 1.22
+MODPY_EGG_VERSION = 1.23
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
 
 HOMEPAGE =	https://mutagen.googlecode.com/
 
-MASTER_SITES =	${HOMEPAGE}files/
+MASTER_SITES =	https://bitbucket.org/lazka/mutagen/downloads/
 
-# GPLv2
+# GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
