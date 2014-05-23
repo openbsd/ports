@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_tlscontext_c,v 1.1 2014/05/23 12:53:01 sthen Exp $
+--- lib/tlscontext.c.orig	Fri May 23 13:43:20 2014
++++ lib/tlscontext.c	Fri May 23 13:43:39 2014
+@@ -28,6 +28,7 @@
+ #if ENABLE_SSL
+ 
+ #include <arpa/inet.h>
++#include <string.h>
+ #include <openssl/x509_vfy.h>
+ #include <openssl/x509v3.h>
+ #include <openssl/err.h>
