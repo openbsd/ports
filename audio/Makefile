@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.330 2014/05/22 21:44:54 landry Exp $
+# $OpenBSD: Makefile,v 1.331 2014/05/23 20:47:16 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -153,6 +153,7 @@
      SUBDIR += opennap
      SUBDIR += opus
      SUBDIR += opus-tools
+     SUBDIR += opusfile
      SUBDIR += p5-Audio-CD
      SUBDIR += p5-Audio-FLAC-Header
      SUBDIR += p5-Audio-M4P
