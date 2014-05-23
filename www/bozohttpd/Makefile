@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/04/06 15:48:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2014/05/23 12:54:48 sthen Exp $
 
 COMMENT =	bozotic HTTP server
 
 DISTNAME =	bozohttpd-20140201
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.eterna.com.au/bozohttpd/

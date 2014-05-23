@@ -1,0 +1,11 @@
+$OpenBSD: patch-ssl-bozo_c,v 1.1 2014/05/23 12:54:48 sthen Exp $
+--- ssl-bozo.c.orig	Fri May 23 13:53:52 2014
++++ ssl-bozo.c	Fri May 23 13:54:02 2014
+@@ -34,6 +34,7 @@
+ 
+ #include <stdarg.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <syslog.h>
+ #include <unistd.h>
+ 
