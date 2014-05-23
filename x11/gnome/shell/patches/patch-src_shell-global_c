@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_shell-global_c,v 1.11 2014/05/08 09:45:07 ajacoutot Exp $
+$OpenBSD: patch-src_shell-global_c,v 1.12 2014/05/23 06:55:45 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=727763
 
---- src/shell-global.c.orig	Tue Apr 15 23:36:27 2014
-+++ src/shell-global.c	Thu May  8 11:41:10 2014
+--- src/shell-global.c.orig	Wed May 14 10:28:09 2014
++++ src/shell-global.c	Wed May 21 09:45:58 2014
 @@ -34,7 +34,6 @@
  #endif
  
@@ -63,12 +63,15 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
    /* Close all file descriptors other than stdin/stdout/stderr, otherwise
     * they will leak and stay open after the exec. In particular, this is
     * important for file descriptors that represent mapped graphics buffer
-@@ -1176,6 +1189,8 @@ shell_global_reexec_self (ShellGlobal *global)
+@@ -1176,6 +1189,11 @@ shell_global_reexec_self (ShellGlobal *global)
    execvp (arr->pdata[0], (char**)arr->pdata);
    g_warning ("failed to reexec: %s", g_strerror (errno));
    g_ptr_array_free (arr, TRUE);
-+  if (args)
-+    g_free (args);
++#if defined __linux__
++  g_free (buf);
++#elif defined __OpenBSD__
++  g_free (args);
++#endif
  }
  
  /**
