@@ -1,7 +1,7 @@
 Fluxbox is yet another window manager for X. It's based on the
 original Blackbox 0.61.1 code. Fluxbox looks like Blackbox and
-handles styles, colors, window placement and similar things i
+handles styles, colors, window placement, and similar things
 exactly like Blackbox (100% theme/style compatibility). 
 
-So what's the difference between Fluxbox and Blackbox then? The
-answer is: LOTS!
+So what's the difference between Fluxbox and Blackbox then?
+The answer is: LOTS!
