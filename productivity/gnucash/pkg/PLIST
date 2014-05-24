@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/04/01 13:21:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/05/24 06:42:29 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -1850,16 +1850,6 @@ share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
-share/omf/
-share/omf/gnucash-guide/
-share/omf/gnucash-guide/gnucash-guide-C.omf
-share/omf/gnucash-guide/gnucash-guide-de.omf
-share/omf/gnucash-guide/gnucash-guide-it.omf
-share/omf/gnucash-guide/gnucash-guide-ja.omf
-share/omf/gnucash-help/
-share/omf/gnucash-help/gnucash-help-C.omf
-share/omf/gnucash-help/gnucash-help-de.omf
-share/omf/gnucash-help/gnucash-help-it.omf
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
