@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/04/13 19:38:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2014/05/24 06:37:21 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -252,6 +252,7 @@ share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GODocControl.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOEditor.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOErrorInfo.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOFileSaver.html
+share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOFont.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOFontSel.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOFormat.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOFormatSel.html
@@ -354,7 +355,6 @@ share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOComplex.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GODataCVector.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOFileOpeners.html
-share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOFont.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOPattern.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOQuad.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GORange.html
@@ -382,13 +382,16 @@ share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/gsf-index.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/home.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/index.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/index.sgml
+share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/left-insensitive.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/left.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/pt01.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/pt02.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/pt03.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/pt04.html
+share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/right-insensitive.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/right.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/style.css
+share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/up-insensitive.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/up.png
 share/locale/am/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/ar/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
