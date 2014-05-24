@@ -1,6 +1,6 @@
-$OpenBSD: patch-remoting_remoting_host_gypi,v 1.1 2014/04/17 16:27:53 robert Exp $
---- remoting/remoting_host.gypi.orig.port	Tue Apr 15 19:56:34 2014
-+++ remoting/remoting_host.gypi	Tue Apr 15 19:57:11 2014
+$ penBSD: patch-remoting_remoting_host_gypi,v 1.1 2014/04/17 16:27:53 robert Exp $
+--- remoting/remoting_host.gypi.orig.port	Wed May 14 21:23:38 2014
++++ remoting/remoting_host.gypi	Thu May 22 21:42:27 2014
 @@ -12,7 +12,7 @@
    'variables': {
      'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-remoting_remoting_host_gypi,v 1.1 2014/04/17 16:27:53 robert Exp
          'enable_remoting_host': 1,
        }, {
          'enable_remoting_host': 0,
-@@ -251,7 +251,7 @@
+@@ -259,7 +259,7 @@
              'host/win/wts_terminal_observer.h',
            ],
            'conditions': [

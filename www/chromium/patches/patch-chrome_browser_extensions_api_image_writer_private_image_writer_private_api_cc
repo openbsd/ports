@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_image_writer_private_api_cc,v 1.4 2014/04/17 16:27:53 robert Exp $
---- chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig.port	Wed Apr  2 21:04:35 2014
-+++ chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc	Sat Apr 12 09:40:41 2014
-@@ -166,10 +166,12 @@ ImageWriterPrivateListRemovableStorageDevicesFunction:
+$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_image_writer_private_api_cc,v 1.5 2014/05/24 15:27:34 robert Exp $
+--- chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig.port	Wed May 14 21:23:11 2014
++++ chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc	Thu May 22 21:42:27 2014
+@@ -167,10 +167,12 @@ ImageWriterPrivateListRemovableStorageDevicesFunction:
  }
  
  bool ImageWriterPrivateListRemovableStorageDevicesFunction::RunImpl() {

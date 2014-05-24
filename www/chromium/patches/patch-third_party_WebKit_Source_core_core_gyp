@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.6 2014/04/17 16:27:53 robert Exp $
---- third_party/WebKit/Source/core/core.gyp.orig.port	Tue Apr 15 19:58:28 2014
-+++ third_party/WebKit/Source/core/core.gyp	Tue Apr 15 19:59:19 2014
-@@ -627,7 +627,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.7 2014/05/24 15:27:34 robert Exp $
+--- third_party/WebKit/Source/core/core.gyp.orig.port	Wed May 14 21:27:35 2014
++++ third_party/WebKit/Source/core/core.gyp	Thu May 22 21:42:27 2014
+@@ -641,7 +641,7 @@
            # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
            'cflags': ['-Wno-uninitialized'],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.6 2014/04/17 16:27:5
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -671,7 +671,7 @@
+@@ -685,7 +685,7 @@
          ['OS=="win" and buildtype=="Official"', {
            'msvs_shard': 19,
          }],

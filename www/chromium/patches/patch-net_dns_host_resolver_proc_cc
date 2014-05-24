@@ -1,0 +1,14 @@
+$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.1 2014/05/24 15:27:34 robert Exp $
+--- net/dns/host_resolver_proc.cc.orig.port	Fri May 23 19:09:47 2014
++++ net/dns/host_resolver_proc.cc	Fri May 23 19:09:51 2014
+@@ -13,10 +13,6 @@
+ #include "net/base/net_errors.h"
+ #include "net/base/sys_addrinfo.h"
+ 
+-#if defined(OS_OPENBSD)
+-#define AI_ADDRCONFIG 0
+-#endif
+-
+ namespace net {
+ 
+ namespace {

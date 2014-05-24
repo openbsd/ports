@@ -1,0 +1,16 @@
+$OpenBSD: patch-chrome_browser_media_galleries_media_folder_finder_cc,v 1.1 2014/05/24 15:27:34 robert Exp $
+--- chrome/browser/media_galleries/media_folder_finder.cc.orig.port	Sat May 24 00:21:27 2014
++++ chrome/browser/media_galleries/media_folder_finder.cc	Sat May 24 10:54:26 2014
+@@ -50,10 +50,10 @@ const int kPrunedPaths[] = {
+   chrome::DIR_USER_APPLICATIONS,
+   chrome::DIR_USER_LIBRARY,
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   base::DIR_CACHE,
+ #endif
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   base::DIR_TEMP,
+ #endif
+ };

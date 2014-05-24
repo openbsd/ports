@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:27:53 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Wed Apr  2 21:03:33 2014
-+++ content/browser/child_process_launcher.cc	Sat Apr 12 09:40:41 2014
-@@ -58,7 +58,7 @@ class ChildProcessLauncher::Context
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.15 2014/05/24 15:27:34 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Wed May 14 21:22:04 2014
++++ content/browser/child_process_launcher.cc	Thu May 22 21:42:27 2014
+@@ -59,7 +59,7 @@ class ChildProcessLauncher::Context
          termination_status_(base::TERMINATION_STATUS_NORMAL_TERMINATION),
          exit_code_(RESULT_CODE_NORMAL_EXIT),
          starting_(true)
@@ -10,16 +10,16 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
          , zygote_(false)
  #endif
          {
-@@ -245,7 +245,7 @@ class ChildProcessLauncher::Context
+@@ -231,7 +231,7 @@ class ChildProcessLauncher::Context
      // child termination.
-     file_util::ScopedFD ipcfd_closer(&ipcfd);
+     base::ScopedFD ipcfd_closer(ipcfd);
  
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
      GetContentClient()->browser()->
          GetAdditionalMappedFilesForChildProcess(*cmd_line, child_process_id,
                                                  &files_to_register);
-@@ -266,7 +266,7 @@ class ChildProcessLauncher::Context
+@@ -252,7 +252,7 @@ class ChildProcessLauncher::Context
                  base::GlobalDescriptors::kBaseDescriptor));
        }
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
        if (process_type == switches::kRendererProcess) {
          const int sandbox_fd =
              RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
-@@ -320,7 +320,7 @@ class ChildProcessLauncher::Context
+@@ -306,7 +306,7 @@ class ChildProcessLauncher::Context
        base::Bind(
            &Context::Notify,
            this_object.get(),
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
            use_zygote,
  #endif
            handle));
-@@ -328,7 +328,7 @@ class ChildProcessLauncher::Context
+@@ -314,7 +314,7 @@ class ChildProcessLauncher::Context
    }
  
    void Notify(
@@ -46,7 +46,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -341,7 +341,7 @@ class ChildProcessLauncher::Context
+@@ -327,7 +327,7 @@ class ChildProcessLauncher::Context
      if (!handle)
        LOG(ERROR) << "Failed to launch child process";
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -368,7 +368,7 @@ class ChildProcessLauncher::Context
+@@ -354,7 +354,7 @@ class ChildProcessLauncher::Context
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          base::Bind(
              &Context::TerminateInternal,
@@ -64,7 +64,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
              zygote_,
  #endif
              process_.handle()));
-@@ -382,7 +382,7 @@ class ChildProcessLauncher::Context
+@@ -368,7 +368,7 @@ class ChildProcessLauncher::Context
    }
  
    static void TerminateInternal(
@@ -73,7 +73,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -396,7 +396,7 @@ class ChildProcessLauncher::Context
+@@ -382,7 +382,7 @@ class ChildProcessLauncher::Context
      process.Terminate(RESULT_CODE_NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -82,7 +82,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
      if (zygote) {
        // If the renderer was created via a zygote, we have to proxy the reaping
        // through the zygote process.
-@@ -423,7 +423,7 @@ class ChildProcessLauncher::Context
+@@ -409,7 +409,7 @@ class ChildProcessLauncher::Context
  #if defined(OS_ANDROID)
    // The fd to close after creating the process.
    int ipcfd_;
@@ -91,7 +91,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.14 2014/04/17 16:2
    bool zygote_;
  #endif
  };
-@@ -481,7 +481,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
+@@ -451,7 +451,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
        *exit_code = context_->exit_code_;
      return context_->termination_status_;
    }

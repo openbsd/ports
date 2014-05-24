@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.27 2014/04/17 16:27:53 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Tue Apr 15 19:50:48 2014
-+++ chrome/chrome_browser.gypi	Tue Apr 15 20:41:36 2014
-@@ -2949,7 +2949,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.28 2014/05/24 15:27:34 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Wed May 14 21:23:27 2014
++++ chrome/chrome_browser.gypi	Thu May 22 21:42:27 2014
+@@ -3025,7 +3025,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.27 2014/04/17 16:27:53 robert Exp
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3077,7 +3077,7 @@
+@@ -3166,7 +3166,7 @@
              '../build/linux/system.gyp:xscrnsaver',
            ],
          }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.27 2014/04/17 16:27:53 robert Exp
            'sources': [
              'app/chrome_breakpad_client.cc',
              'app/chrome_breakpad_client.h',
-@@ -3343,6 +3343,13 @@
+@@ -3432,6 +3432,13 @@
              ['exclude', '^browser/sync/glue/theme_'],
              ['exclude', '^browser/usb/'],
              ['exclude', '^third_party/mozilla_security_manager/'],

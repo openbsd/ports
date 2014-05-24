@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_webrtc_modules_desktop_capture_desktop_capture_gypi,v 1.4 2014/04/17 16:27:53 robert Exp $
---- third_party/webrtc/modules/desktop_capture/desktop_capture.gypi.orig.port	Wed Apr  2 21:06:17 2014
-+++ third_party/webrtc/modules/desktop_capture/desktop_capture.gypi	Sat Apr 12 09:40:41 2014
-@@ -88,6 +88,7 @@
+$OpenBSD: patch-third_party_webrtc_modules_desktop_capture_desktop_capture_gypi,v 1.5 2014/05/24 15:27:34 robert Exp $
+--- third_party/webrtc/modules/desktop_capture/desktop_capture.gypi.orig.port	Wed May 14 21:24:36 2014
++++ third_party/webrtc/modules/desktop_capture/desktop_capture.gypi	Thu May 22 21:42:27 2014
+@@ -90,6 +90,7 @@
            ],
          }],
          ['use_x11 == 1', {

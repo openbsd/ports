@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/04/17 16:27:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/05/24 15:27:34 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -70,6 +70,7 @@ chrome/resources/extension/demo/library.js
 chrome/resources/inspector/
 chrome/resources/inspector/AuditsPanel.js
 chrome/resources/inspector/CodeMirrorTextEditor.js
+chrome/resources/inspector/ConsolePanel.js
 chrome/resources/inspector/ElementsPanel.js
 chrome/resources/inspector/ExtensionServer.js
 chrome/resources/inspector/HeapSnapshotWorker.js
@@ -121,10 +122,6 @@ chrome/resources/inspector/Images/searchPrev.png
 chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/settingsListRemove.png
 chrome/resources/inspector/Images/settingsListRemove_2x.png
-chrome/resources/inspector/Images/spinnerActive.gif
-chrome/resources/inspector/Images/spinnerActiveSelected.gif
-chrome/resources/inspector/Images/spinnerInactive.gif
-chrome/resources/inspector/Images/spinnerInactiveSelected.gif
 chrome/resources/inspector/Images/statusbarButtonGlyphs.png
 chrome/resources/inspector/Images/statusbarButtonGlyphs_2x.png
 chrome/resources/inspector/Images/statusbarResizerHorizontal.png
@@ -139,6 +136,7 @@ chrome/resources/inspector/Images/toolbarItemSelected.png
 chrome/resources/inspector/Images/trackHoriz.png
 chrome/resources/inspector/Images/trackVert.png
 chrome/resources/inspector/LayersPanel.js
+chrome/resources/inspector/Main.js
 chrome/resources/inspector/NetworkPanel.js
 chrome/resources/inspector/ProfilesPanel.js
 chrome/resources/inspector/ResourcesPanel.js
@@ -165,7 +163,6 @@ chrome/resources/inspector/heapProfiler.css
 chrome/resources/inspector/helpScreen.css
 chrome/resources/inspector/indexedDBViews.css
 chrome/resources/inspector/inspector.css
-chrome/resources/inspector/inspector.js
 chrome/resources/inspector/inspectorCommon.css
 chrome/resources/inspector/layersPanel.css
 chrome/resources/inspector/navigatorView.css

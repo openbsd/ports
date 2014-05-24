@@ -1,18 +1,18 @@
-$OpenBSD: patch-skia_skia_gyp,v 1.16 2014/03/11 14:52:01 robert Exp $
---- skia/skia.gyp.orig.port	Thu Feb 20 21:28:32 2014
-+++ skia/skia.gyp	Fri Feb 21 19:39:55 2014
-@@ -104,12 +104,12 @@
-             '-msse2',
+$OpenBSD: patch-skia_skia_gyp,v 1.17 2014/05/24 15:27:34 robert Exp $
+--- skia/skia.gyp.orig.port	Thu May 22 21:54:00 2014
++++ skia/skia.gyp	Sat May 24 13:44:49 2014
+@@ -106,12 +106,12 @@
            ],
          }],
--        [ 'target_arch != "arm" and target_arch != "mipsel"', {
-+        [ 'target_arch != "arm" and target_arch != "mipsel" or disable_sse2 != 1', {
+         [ 'target_arch != "arm" and target_arch != "mipsel" and \
+-           target_arch != "arm64"', {
++           target_arch != "arm64" and OS != "openbsd"', {
            'sources': [
              'ext/convolver_SSE2.cc',
            ],
          }],
 -        [ 'target_arch == "mipsel"',{
-+        [ 'target_arch == "mipsel" or disable_sse2 == 1',{
++        [ 'target_arch == "mipsel" or os_bsd == 1',{
            'cflags': [
              '-fomit-frame-pointer',
            ],

@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.12 2014/04/17 16:27:53 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Wed Apr  2 21:04:19 2014
-+++ chrome/app/chrome_main_delegate.cc	Sat Apr 12 09:40:41 2014
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.13 2014/05/24 15:27:34 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig.port	Wed May 14 21:22:39 2014
++++ chrome/app/chrome_main_delegate.cc	Thu May 22 21:42:27 2014
 @@ -95,7 +95,7 @@
  #include "ui/base/x/x11_util.h"
  #endif
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.12 2014/04/17 16:27:53 ro
  void SIGTERMProfilingShutdown(int signal) {
    Profiling::Stop();
    struct sigaction sigact;
-@@ -629,7 +629,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -630,7 +630,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.12 2014/04/17 16:27:53 ro
    breakpad::SetBreakpadClient(g_chrome_breakpad_client.Pointer());
  #endif
  
-@@ -747,7 +747,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -748,7 +748,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  #endif
    }
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.12 2014/04/17 16:27:53 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -844,7 +844,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -845,7 +845,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
    return process_type == switches::kNaClLoaderProcess ||
        process_type == switches::kRelauncherProcess;
  }

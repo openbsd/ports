@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_test_automation_proxy_launcher_cc,v 1.9 2013/12/12 10:43:18 robert Exp $
---- chrome/test/automation/proxy_launcher.cc.orig.port	Wed Dec  4 21:55:17 2013
-+++ chrome/test/automation/proxy_launcher.cc	Thu Dec  5 15:32:45 2013
-@@ -38,6 +38,10 @@
+$OpenBSD: patch-chrome_test_automation_proxy_launcher_cc,v 1.10 2014/05/24 15:27:34 robert Exp $
+--- chrome/test/automation/proxy_launcher.cc.orig.port	Wed May 14 21:23:02 2014
++++ chrome/test/automation/proxy_launcher.cc	Thu May 22 21:42:27 2014
+@@ -39,6 +39,10 @@
  #include "base/posix/global_descriptors.h"
  #endif
  

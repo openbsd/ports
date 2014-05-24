@@ -1,21 +1,12 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.11 2014/04/17 16:27:53 robert Exp $
---- chrome/browser/browser_resources.grd.orig.port	Sat Apr 12 09:50:46 2014
-+++ chrome/browser/browser_resources.grd	Sat Apr 12 09:51:23 2014
-@@ -228,7 +228,7 @@
-       <if expr="pp_ifdef('chromeos')">
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.12 2014/05/24 15:27:34 robert Exp $
+--- chrome/browser/browser_resources.grd.orig.port	Thu May 22 21:48:54 2014
++++ chrome/browser/browser_resources.grd	Thu May 22 21:49:22 2014
+@@ -226,7 +226,7 @@
+       <if expr="chromeos">
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>
--      <if expr="pp_ifdef('desktop_linux')">
-+      <if expr="pp_ifdef('desktop_linux') or is_posix">
+-      <if expr="desktop_linux">
++      <if expr="desktop_linux or is_posix">
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_linux.json" type="BINDATA" />
        </if>
        <if expr="is_android">
-@@ -357,7 +357,7 @@
-       <if expr="pp_ifdef('chromeos')">
-         <include name="IDR_NETWORK_CONFIGURATION_MANIFEST" file="resources\chromeos\network_configuration\manifest.json" type="BINDATA" />
-       </if>
--      <if expr="(pp_ifdef('desktop_linux') and pp_ifdef('toolkit_views')) or pp_ifdef('use_ash')">
-+      <if expr="((pp_ifdef('desktop_linux') or is_posix) and pp_ifdef('toolkit_views')) or pp_ifdef('use_ash')">
-         <include name="IDR_HTTP_AUTH_HTML" file="resources\http_auth.html" flattenhtml="true" type="BINDATA" />
-         <include name="IDR_TAB_MODAL_CONFIRM_DIALOG_HTML" file="resources\tab_modal_confirm_dialog.html" flattenhtml="true" type="BINDATA" />
-       </if>

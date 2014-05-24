@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gl_gl_gyp,v 1.5 2014/04/17 16:27:53 robert Exp $
---- ui/gl/gl.gyp.orig.port	Wed Apr  2 21:04:03 2014
-+++ ui/gl/gl.gyp	Sat Apr 12 09:40:41 2014
-@@ -170,7 +170,7 @@
+$OpenBSD: patch-ui_gl_gl_gyp,v 1.6 2014/05/24 15:27:34 robert Exp $
+--- ui/gl/gl.gyp.orig.port	Wed May 14 21:23:31 2014
++++ ui/gl/gl.gyp	Fri May 23 18:21:41 2014
+@@ -171,7 +171,7 @@
          },
        ],
        'conditions': [
@@ -10,3 +10,12 @@ $OpenBSD: patch-ui_gl_gl_gyp,v 1.5 2014/04/17 16:27:53 robert Exp $
            'sources': [
              'egl_util.cc',
              'egl_util.h',
+@@ -190,7 +190,7 @@
+             '<(DEPTH)/third_party/khronos',
+         ],
+         }],
+-        ['OS in ("android", "linux")', {
++        ['OS in ("android", "linux", "openbsd")', {
+           'sources': [
+             'gl_implementation_osmesa.cc',
+             'gl_implementation_osmesa.h',

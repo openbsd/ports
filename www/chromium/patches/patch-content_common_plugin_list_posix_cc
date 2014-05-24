@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_common_plugin_list_posix_cc,v 1.4 2014/04/17 16:27:53 robert Exp $
---- content/common/plugin_list_posix.cc.orig.port	Wed Apr  2 21:03:31 2014
-+++ content/common/plugin_list_posix.cc	Sat Apr 12 09:40:41 2014
-@@ -472,11 +472,11 @@ void PluginList::GetPluginDirectories(std::vector<base
+$OpenBSD: patch-content_common_plugin_list_posix_cc,v 1.5 2014/05/24 15:27:34 robert Exp $
+--- content/common/plugin_list_posix.cc.orig.port	Wed May 14 21:22:09 2014
++++ content/common/plugin_list_posix.cc	Thu May 22 21:42:27 2014
+@@ -468,11 +468,11 @@ void PluginList::GetPluginDirectories(std::vector<base
    // 3) NS_SYSTEM_PLUGINS_DIR:
    // This varies across different browsers and versions, so check 'em all.
    plugin_dirs->push_back(base::FilePath("/usr/lib/browser-plugins"));

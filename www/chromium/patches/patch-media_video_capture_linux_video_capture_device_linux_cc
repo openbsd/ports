@@ -1,10 +1,10 @@
-$OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.5 2014/04/17 16:27:53 robert Exp $
---- media/video/capture/linux/video_capture_device_linux.cc.orig.port	Tue Apr 15 19:55:29 2014
-+++ media/video/capture/linux/video_capture_device_linux.cc	Tue Apr 15 19:55:57 2014
+$OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.6 2014/05/24 15:27:34 robert Exp $
+--- media/video/capture/linux/video_capture_device_linux.cc.orig.port	Thu May 22 21:53:06 2014
++++ media/video/capture/linux/video_capture_device_linux.cc	Thu May 22 21:53:25 2014
 @@ -170,10 +170,7 @@ void VideoCaptureDevice::GetDeviceSupportedFormats(
-     v4l2_frmsizeenum frame_size = {};
      frame_size.pixel_format = pixel_format.pixelformat;
-     while (HANDLE_EINTR(ioctl(fd, VIDIOC_ENUM_FRAMESIZES, &frame_size)) == 0) {
+     while (HANDLE_EINTR(ioctl(fd.get(), VIDIOC_ENUM_FRAMESIZES, &frame_size)) ==
+            0) {
 -      if (frame_size.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
 -        supported_format.frame_size.SetSize(
 -            frame_size.discrete.width, frame_size.discrete.height);
@@ -19,8 +19,8 @@ $OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.5 20
        frame_interval.pixel_format = pixel_format.pixelformat;
 -      frame_interval.width = frame_size.discrete.width;
 -      frame_interval.height = frame_size.discrete.height;
-       while (HANDLE_EINTR(
-                  ioctl(fd, VIDIOC_ENUM_FRAMEINTERVALS, &frame_interval)) == 0) {
+       while (HANDLE_EINTR(ioctl(
+                  fd.get(), VIDIOC_ENUM_FRAMEINTERVALS, &frame_interval)) == 0) {
 -        if (frame_interval.type == V4L2_FRMIVAL_TYPE_DISCRETE) {
 -          if (frame_interval.discrete.numerator != 0) {
 -            supported_format.frame_rate =

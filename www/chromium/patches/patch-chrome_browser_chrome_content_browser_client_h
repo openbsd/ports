@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.4 2014/04/17 16:27:53 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Wed Apr  2 21:04:38 2014
-+++ chrome/browser/chrome_content_browser_client.h	Sat Apr 12 09:40:41 2014
-@@ -255,7 +255,7 @@ class ChromeContentBrowserClient : public content::Con
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.5 2014/05/24 15:27:34 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Wed May 14 21:23:27 2014
++++ chrome/browser/chrome_content_browser_client.h	Thu May 22 21:42:27 2014
+@@ -267,7 +267,7 @@ class ChromeContentBrowserClient : public content::Con
        const base::FilePath& storage_partition_path,
        ScopedVector<fileapi::FileSystemBackend>* additional_backends) OVERRIDE;
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    virtual void GetAdditionalMappedFilesForChildProcess(
-       const CommandLine& command_line,
+       const base::CommandLine& command_line,
        int child_process_id,

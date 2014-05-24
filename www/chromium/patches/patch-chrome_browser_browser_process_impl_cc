@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.8 2014/04/17 16:27:53 robert Exp $
---- chrome/browser/browser_process_impl.cc.orig.port	Wed Apr  2 21:04:38 2014
-+++ chrome/browser/browser_process_impl.cc	Wed Apr 16 23:09:02 2014
-@@ -261,7 +261,7 @@ void BrowserProcessImpl::StartTearDown() {
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.9 2014/05/24 15:27:34 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Thu May 22 21:48:19 2014
++++ chrome/browser/browser_process_impl.cc	Thu May 22 21:48:51 2014
+@@ -256,7 +256,7 @@ void BrowserProcessImpl::StartTearDown() {
  
    ExtensionRendererState::GetInstance()->Shutdown();
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.8 2014/04/17 16:27:53
    media_file_system_registry_.reset();
    // Remove the global instance of the Storage Monitor now. Otherwise the
    // FILE thread would be gone when we try to release it in the dtor and
-@@ -954,7 +954,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -948,7 +948,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
    }
  #endif
  
 -#if !defined(OS_ANDROID) && !defined(OS_IOS)
 +#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
-   StorageMonitor::Create();
+   storage_monitor::StorageMonitor::Create();
  #endif
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.18 2014/04/17 16:27:53 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Apr  2 21:03:33 2014
-+++ content/browser/browser_main_loop.cc	Sat Apr 12 09:40:41 2014
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.19 2014/05/24 15:27:34 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Wed May 14 21:22:04 2014
++++ content/browser/browser_main_loop.cc	Thu May 22 21:42:27 2014
 @@ -102,7 +102,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.18 2014/04/17 16:27:53 
    // No thread should be created before this call, as SetupSandbox()
    // will end-up using fork().
    SetupSandbox(parsed_command_line_);
-@@ -777,7 +777,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
+@@ -780,7 +780,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
    }
  #endif
  

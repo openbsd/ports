@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_h,v 1.1 2013/10/29 06:51:34 robert Exp $
---- chrome/app/chrome_main_delegate.h.orig.port	Sun Oct 20 20:48:19 2013
-+++ chrome/app/chrome_main_delegate.h	Sun Oct 20 20:48:25 2013
-@@ -31,7 +31,7 @@ class ChromeMainDelegate : public content::ContentMain
+$OpenBSD: patch-chrome_app_chrome_main_delegate_h,v 1.2 2014/05/24 15:27:34 robert Exp $
+--- chrome/app/chrome_main_delegate.h.orig.port	Wed May 14 21:22:39 2014
++++ chrome/app/chrome_main_delegate.h	Thu May 22 21:42:27 2014
+@@ -35,7 +35,7 @@ class ChromeMainDelegate : public content::ContentMain
    virtual bool ShouldSendMachPort(const std::string& process_type) OVERRIDE;
    virtual bool DelaySandboxInitialization(
        const std::string& process_type) OVERRIDE;

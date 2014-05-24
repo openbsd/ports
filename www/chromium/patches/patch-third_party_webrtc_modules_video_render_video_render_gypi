@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.3 2014/01/18 11:42:04 robert Exp $
---- third_party/webrtc/modules/video_render/video_render.gypi.orig.port	Mon Jan 13 22:01:58 2014
-+++ third_party/webrtc/modules/video_render/video_render.gypi	Thu Jan 16 12:26:42 2014
+$OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.4 2014/05/24 15:27:34 robert Exp $
+--- third_party/webrtc/modules/video_render/video_render.gypi.orig.port	Wed May 14 21:24:40 2014
++++ third_party/webrtc/modules/video_render/video_render.gypi	Thu May 22 21:42:27 2014
 @@ -103,7 +103,7 @@
              'ios/video_render_ios_view.mm',
            ],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.3 
            'sources!': [
              'linux/video_render_linux_impl.h',
              'linux/video_x11_channel.h',
-@@ -196,7 +196,7 @@
+@@ -199,7 +199,7 @@
              'test/testAPI/testAPI_mac.mm',
            ],
            'conditions': [
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.3 
                'cflags': [
                  '-Wno-write-strings',
                ],
-@@ -204,9 +204,8 @@
+@@ -207,9 +207,8 @@
                  '-lpthread -lm',
                ],
              }],

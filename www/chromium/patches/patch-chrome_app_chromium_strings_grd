@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.1 2014/05/24 15:27:34 robert Exp $
+--- chrome/app/chromium_strings.grd.orig.port	Sat May 24 10:24:12 2014
++++ chrome/app/chromium_strings.grd	Sat May 24 10:24:33 2014
+@@ -1115,7 +1115,7 @@ Signing in anyway will merge Chromium information like
+       </message>
+ 
+       <!-- ProcessSingleton -->
+-      <if expr="is_linux">
++      <if expr="is_linux or is_bsd"> 
+         <message name="IDS_PROFILE_IN_USE_LINUX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
+           The profile appears to be in use by another Chromium process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). Chromium has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chromium.
+         </message>

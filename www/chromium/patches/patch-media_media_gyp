@@ -1,26 +1,27 @@
-$OpenBSD: patch-media_media_gyp,v 1.27 2014/04/17 16:27:53 robert Exp $
---- media/media.gyp.orig.port	Tue Apr 15 19:53:36 2014
-+++ media/media.gyp	Tue Apr 15 19:55:22 2014
-@@ -22,13 +22,17 @@
+$OpenBSD: patch-media_media_gyp,v 1.28 2014/05/24 15:27:34 robert Exp $
+--- media/media.gyp.orig.port	Thu May 22 21:50:36 2014
++++ media/media.gyp	Fri May 23 18:24:55 2014
+@@ -22,7 +22,7 @@
          'media_use_libvpx%': 1,
        }],
        # Enable ALSA and Pulse for runtime selection.
--      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and embedded!=1 and use_cras==0', {
-+      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and embedded!=1 and use_cras==0 and os_bsd!=1', {
+-      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and embedded!=1', {
++      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and embedded!=1 and os_bsd != 1', {
+         # ALSA is always needed for Web MIDI even if the cras is enabled.
          'use_alsa%': 1,
-         'use_pulseaudio%': 1,
-       }, {
-         'use_alsa%': 0,
-         'use_pulseaudio%': 0,
-       }],
+         'conditions': [
+@@ -31,6 +31,10 @@
+           }, {
+             'use_pulseaudio%': 1,
+           }],
 +      # Override to dynamically link the sndio library.
 +      ['OS=="openbsd"', {
 +        'use_sndioaudio%': 0,
 +      }],
-     ],
-   },
-   'includes': [
-@@ -153,6 +157,8 @@
+         ],
+       }, {
+         'use_alsa%': 0,
+@@ -163,6 +167,8 @@
          'audio/pulse/pulse_input.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
@@ -29,7 +30,7 @@ $OpenBSD: patch-media_media_gyp,v 1.27 2014/04/17 16:27:53 robert Exp $
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
          'audio/sample_rates.cc',
-@@ -604,6 +610,24 @@
+@@ -622,6 +628,24 @@
              'formats/webm/chromeos/webm_encoder.h',
            ],
          }],
@@ -54,16 +55,16 @@ $OpenBSD: patch-media_media_gyp,v 1.27 2014/04/17 16:27:53 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -625,7 +649,7 @@
+@@ -643,7 +667,7 @@
              'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
 -        ['OS=="linux"', {
 +        ['OS=="linux" or OS=="openbsd"', {
-           'variables': {
-             'conditions': [
-               ['sysroot!=""', {
-@@ -885,7 +909,7 @@
+           'conditions': [
+             ['use_x11==1', {
+               'dependencies': [
+@@ -894,7 +918,7 @@
              'base/simd/convert_yuv_to_rgb_x86.cc',
            ],
          }],
@@ -72,21 +73,21 @@ $OpenBSD: patch-media_media_gyp,v 1.27 2014/04/17 16:27:53 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1068,7 +1092,7 @@
+@@ -1082,7 +1106,7 @@
              'USE_PULSEAUDIO',
            ],
          }],
 -        ['os_posix==1 and OS!="mac"', {
 +        ['os_posix==1 and OS!="mac" and OS!="openbsd"', {
            'conditions': [
-             ['linux_use_tcmalloc==1', {
-               'dependencies': [
-@@ -1661,7 +1685,7 @@
+             # TODO(dmikurube): Kill linux_use_tcmalloc. http://crbug.com/345554
+             ['(use_allocator!="none" and use_allocator!="see_use_tcmalloc") or (use_allocator=="see_use_tcmalloc" and linux_use_tcmalloc==1)', {
+@@ -1687,7 +1711,7 @@
              'filters/pipeline_integration_test_base.cc',
            ],
            'conditions': [
 -            ['os_posix==1 and OS!="mac"', {
 +            ['os_posix==1 and OS!="mac" and OS!="openbsd"', {
                'conditions': [
-                 ['linux_use_tcmalloc==1', {
-                   'dependencies': [
+                 # TODO(dmikurube): Kill linux_use_tcmalloc. http://crbug.com/345554
+                 ['(use_allocator!="none" and use_allocator!="see_use_tcmalloc") or (use_allocator=="see_use_tcmalloc" and linux_use_tcmalloc==1)', {
