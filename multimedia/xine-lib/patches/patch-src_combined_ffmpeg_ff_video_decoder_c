@@ -1,20 +1,41 @@
-$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.17 2014/05/21 23:41:03 brad Exp $
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.18 2014/05/24 16:16:14 brad Exp $
 
 - Simplify FFmpeg video edge handling.
 - Add DR1 reenable message.
 - Fix multithreading.
 
 --- src/combined/ffmpeg/ff_video_decoder.c.orig	Thu Mar 13 00:06:09 2014
-+++ src/combined/ffmpeg/ff_video_decoder.c	Tue May 20 14:04:56 2014
-@@ -278,6 +278,7 @@ static int get_buffer (AVCodecContext *context, AVFram
++++ src/combined/ffmpeg/ff_video_decoder.c	Sat May 24 11:17:54 2014
+@@ -278,8 +278,19 @@ static int get_buffer (AVCodecContext *context, AVFram
    /* The visible size, may be smaller. */
    int width  = context->width;
    int height = context->height;
 +  int top_edge;
    int guarded_render = 0;
  
++  /* multiple threads have individual contexts !! */
++#ifdef AVCODEC_HAS_COLORSPACE
++  if (context != this->context) {
++    if (this->context->colorspace == 2) /* undefined */
++      this->context->colorspace = context->colorspace;
++    if (this->context->color_range == 0)
++      this->context->color_range = context->color_range;
++  }
++#endif
++
    /* A bit of unmotivated paranoia... */
-@@ -406,9 +407,14 @@ static int get_buffer (AVCodecContext *context, AVFram
+   if (buf_width < width)
+     buf_width = width;
+@@ -303,7 +314,7 @@ static int get_buffer (AVCodecContext *context, AVFram
+   avcodec_align_dimensions(context, &buf_width, &buf_height);
+ 
+ #ifdef ENABLE_VAAPI
+-  if( this->context->pix_fmt == PIX_FMT_VAAPI_VLD) {
++  if( context->pix_fmt == PIX_FMT_VAAPI_VLD ) {
+ 
+     av_frame->opaque  = NULL;
+     av_frame->data[0] = NULL;
+@@ -406,13 +417,18 @@ static int get_buffer (AVCodecContext *context, AVFram
  #endif /* ENABLE_VAAPI */
  
    /* The alignment rhapsody */
@@ -31,8 +52,14 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.17 2014/05/21 23:41:0
 +  buf_height += top_edge + this->edge + 15;
    buf_height &= ~15;
  
-   if ((this->full2mpeg || (this->context->pix_fmt != PIX_FMT_YUV420P &&
-@@ -449,7 +455,10 @@ static int get_buffer (AVCodecContext *context, AVFram
+-  if ((this->full2mpeg || (this->context->pix_fmt != PIX_FMT_YUV420P &&
+-			   this->context->pix_fmt != PIX_FMT_YUVJ420P)) || guarded_render) {
++  if (this->full2mpeg || guarded_render ||
++    (context->pix_fmt != PIX_FMT_YUV420P && context->pix_fmt != PIX_FMT_YUVJ420P)) {
+     if (!this->is_direct_rendering_disabled) {
+       xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
+               _("ffmpeg_video_dec: unsupported frame format, DR1 disabled.\n"));
+@@ -449,7 +465,10 @@ static int get_buffer (AVCodecContext *context, AVFram
      }
    }
  
@@ -44,7 +71,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.17 2014/05/21 23:41:0
  
    img = this->stream->video_out->get_frame (this->stream->video_out,
                                              buf_width,
-@@ -503,13 +512,15 @@ static int get_buffer (AVCodecContext *context, AVFram
+@@ -503,13 +522,15 @@ static int get_buffer (AVCodecContext *context, AVFram
    av_frame->linesize[2] = img->pitches[2];
  
    if (this->output_format == XINE_IMGFMT_YV12) {
@@ -67,7 +94,15 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.17 2014/05/21 23:41:0
    }
  
    /* We should really keep track of the ages of xine frames (see
-@@ -2280,6 +2291,7 @@ static void ff_free_dr1_frames (ff_video_decoder_t *th
+@@ -731,6 +752,7 @@ static void init_video_codec (ff_video_decoder_t *this
+   if( this->codec->capabilities & CODEC_CAP_DR1 && this->class->enable_dri ) {
+ #ifdef AV_BUFFER
+     this->context->get_buffer2 = get_buffer;
++    this->context->thread_safe_callbacks = 1;
+ #else
+     this->context->get_buffer = get_buffer;
+     this->context->release_buffer = release_buffer;
+@@ -2280,6 +2302,7 @@ static void ff_free_dr1_frames (ff_video_decoder_t *th
       They will only be replaced when new ones arrive, and freed on codec close.
       They also have no AVCodec.flush () callback for manual freeing (that is,
       avcodec_flush_buffers () does nothing).
@@ -75,7 +110,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.17 2014/05/21 23:41:0
       So lets tolerate this behaviour on plain stream seek. */
    if (!all) {
      it = NULL;
-@@ -2288,7 +2300,7 @@ static void ff_free_dr1_frames (ff_video_decoder_t *th
+@@ -2288,7 +2311,7 @@ static void ff_free_dr1_frames (ff_video_decoder_t *th
        frames++;
      if (!frames)
        return;
