@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2014/04/01 08:08:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2014/05/25 09:02:09 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -381,8 +381,6 @@ share/gtk-doc/html/rhythmbox/right.png
 share/gtk-doc/html/rhythmbox/style.css
 share/gtk-doc/html/rhythmbox/up-insensitive.png
 share/gtk-doc/html/rhythmbox/up.png
-share/help/
-share/help/C/
 share/help/C/rhythmbox/
 share/help/C/rhythmbox/fdl-appendix.xml
 share/help/C/rhythmbox/figures/
