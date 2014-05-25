@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/25 20:15:05 kirby Exp $
 share/applications/vegastrike.desktop
 share/icons/
-share/icons/vegastrike.ico
+share/icons/vegastrike.xpm
 share/vegastrike/
 share/vegastrike/.vegastrike/
 share/vegastrike/.vegastrike/.system
@@ -4947,7 +4947,6 @@ share/vegastrike/universe/unexp_nebulae.txt
 share/vegastrike/vega-license.txt
 share/vegastrike/vega.ico
 share/vegastrike/vegastrike.config
-share/vegastrike/vegastrike.desktop
 share/vegastrike/vegastrike.ico
 share/vegastrike/vegastrike.xpm
 share/vegastrike/vsinstall.sh
