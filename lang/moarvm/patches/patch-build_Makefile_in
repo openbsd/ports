@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_Makefile_in,v 1.1.1.1 2014/05/25 21:49:55 pascal Exp $
+--- build/Makefile.in.orig	Fri Jan 24 22:30:34 2014
++++ build/Makefile.in	Fri Jan 24 22:30:46 2014
+@@ -25,7 +25,7 @@ NOERR =
+ @mknoisy@
+ 
+ PREFIX    = @prefix@
+-CFLAGS    = @cflags@ @ccdef@MVM_TRACING=$(TRACING) @ccdef@MVM_CGOTO=$(CGOTO)
++CFLAGS    += @cflags@ @ccdef@MVM_TRACING=$(TRACING) @ccdef@MVM_CGOTO=$(CGOTO)
+ CINCLUDES = @ccinc@3rdparty/libuv/include \
+             @ccinc@3rdparty/libuv/src \
+             @ccinc@3rdparty/libatomic_ops/src \
