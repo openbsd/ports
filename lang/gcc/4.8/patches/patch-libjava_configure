@@ -1,6 +1,6 @@
-$OpenBSD: patch-libjava_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- libjava/configure.orig	Wed Dec 12 14:40:15 2012
-+++ libjava/configure	Sat Jan 12 13:27:15 2013
+$OpenBSD: patch-libjava_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- libjava/configure.orig	Fri Apr  4 15:53:39 2014
++++ libjava/configure	Thu May 22 20:04:22 2014
 @@ -6397,7 +6397,7 @@ openbsd*)
    need_lib_prefix=no
    need_version=no
@@ -10,7 +10,7 @@ $OpenBSD: patch-libjava_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -12789,7 +12789,7 @@ openbsd*)
+@@ -12795,7 +12795,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -19,7 +19,7 @@ $OpenBSD: patch-libjava_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -16473,7 +16473,7 @@ openbsd*)
+@@ -16479,7 +16479,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -28,7 +28,7 @@ $OpenBSD: patch-libjava_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -20754,7 +20754,7 @@ case "$THREADS" in
+@@ -20760,7 +20760,7 @@ case "$THREADS" in
  	# support for weak references to pthread_* functions ala gthr.h API.
  	THREADSPEC='%{!pthread: %{!shared: %eUnder this configuration, the user must provide -pthread when linking.}}'
  	;;

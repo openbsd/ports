@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_mips_mips_h,v 1.1 2014/05/14 09:32:55 tobiasu Exp $
---- gcc/config/mips/mips.h.orig	Fri May  2 13:26:58 2014
-+++ gcc/config/mips/mips.h	Fri May  2 13:27:20 2014
-@@ -1175,7 +1175,9 @@ struct mips_cpu_info {
+$OpenBSD: patch-gcc_config_mips_mips_h,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- gcc/config/mips/mips.h.orig	Thu Jan  9 21:06:19 2014
++++ gcc/config/mips/mips.h	Thu May 22 20:04:20 2014
+@@ -1180,7 +1180,9 @@ struct mips_cpu_info {
  #define SUBTARGET_CPP_SPEC ""
  #endif
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnattools_Makefile_in,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- gnattools/Makefile.in.orig	Sun Apr 15 14:00:07 2012
-+++ gnattools/Makefile.in	Sun Apr 15 14:00:20 2012
-@@ -50,7 +50,7 @@ WARN_CFLAGS = @warn_cflags@
+$OpenBSD: patch-gnattools_Makefile_in,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- gnattools/Makefile.in.orig	Thu Dec 12 23:53:43 2013
++++ gnattools/Makefile.in	Thu May 22 20:04:20 2014
+@@ -52,7 +52,7 @@ WARN_CFLAGS = @warn_cflags@
  ADA_CFLAGS=@ADA_CFLAGS@
  
  # Variables for gnattools.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgfortran_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- libgfortran/configure.orig	Sat Oct  6 22:56:05 2012
-+++ libgfortran/configure	Fri Oct 12 10:42:48 2012
-@@ -11740,7 +11740,7 @@ openbsd*)
+$OpenBSD: patch-libgfortran_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- libgfortran/configure.orig	Thu May 22 11:13:48 2014
++++ libgfortran/configure	Thu May 22 20:04:21 2014
+@@ -11746,7 +11746,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -10,7 +10,7 @@ $OpenBSD: patch-libgfortran_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -15363,7 +15363,7 @@ openbsd*)
+@@ -15369,7 +15369,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

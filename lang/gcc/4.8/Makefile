@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/05/14 09:32:55 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.35 2014/05/25 21:45:39 pascal Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
@@ -6,19 +6,19 @@ BROKEN-mips64el = ld: not enough GOT space for local GOT entries
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64 mips64 mips64el
 DPB_PROPERTIES = parallel
 
-V = 4.8.2
+V = 4.8.3
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 73.0
+ADASTRAP_LIBC-i386 = 75.0
 ADASTRAP_LIBM-i386 = 9.0
-ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
-ADASTRAP_LIBC-amd64 = 73.0
+ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
+ADASTRAP_LIBC-amd64 = 75.0
 ADASTRAP_LIBM-amd64 = 9.0
-ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
-ADASTRAP_LIBC-sparc64 = 73.0
+ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
+ADASTRAP_LIBC-sparc64 = 75.0
 ADASTRAP_LIBM-sparc64 = 9.0
-ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tar.xz
+ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -31,13 +31,13 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
 
-REVISION-main	= 3
-REVISION-c++	= 4
+#REVISION-main	= 
+#REVISION-c++	= 
 #REVISION-estdc	=
-REVISION-f95	= 3
-REVISION-java	= 3
-REVISION-objc	= 3
-REVISION-ada	= 3
+#REVISION-f95	= 
+#REVISION-java	= 
+#REVISION-objc	= 
+#REVISION-ada	= 
 #REVISION-go	=
 
 SHARED_LIBS =	estdc++		16.0 \

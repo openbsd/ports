@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
---- gcc/builtins.c.orig	Thu Jan 10 21:38:27 2013
-+++ gcc/builtins.c	Wed Jan 23 22:48:28 2013
+$OpenBSD: patch-gcc_builtins_c,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- gcc/builtins.c.orig	Fri May  9 12:16:14 2014
++++ gcc/builtins.c	Thu May 22 20:04:19 2014
 @@ -114,9 +114,11 @@ static rtx expand_builtin_memcpy (tree, rtx);
  static rtx expand_builtin_mempcpy (tree, rtx, enum machine_mode);
  static rtx expand_builtin_mempcpy_args (tree, tree, tree, rtx,
@@ -13,7 +13,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
  static rtx expand_builtin_strncpy (tree, rtx);
  static rtx builtin_memset_gen_str (void *, HOST_WIDE_INT, enum machine_mode);
  static rtx expand_builtin_memset (tree, rtx, enum machine_mode);
-@@ -3211,6 +3213,7 @@ expand_builtin_mempcpy_args (tree dest, tree src, tree
+@@ -3228,6 +3230,7 @@ expand_builtin_mempcpy_args (tree dest, tree src, tree
  # define CODE_FOR_movstr CODE_FOR_nothing
  #endif
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
  /* Expand into a movstr instruction, if one is available.  Return NULL_RTX if
     we failed, the caller should emit a normal call, otherwise try to
     get the result in TARGET, if convenient.  If ENDP is 0 return the
-@@ -3361,6 +3364,7 @@ expand_builtin_stpcpy (tree exp, rtx target, enum mach
+@@ -3378,6 +3381,7 @@ expand_builtin_stpcpy (tree exp, rtx target, enum mach
        return expand_movstr (dst, src, target, /*endp=*/2);
      }
  }
@@ -29,7 +29,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
  
  /* Callback routine for store_by_pieces.  Read GET_MODE_BITSIZE (MODE)
     bytes from constant string DATA + OFFSET and return it as target
-@@ -6142,9 +6146,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
+@@ -6174,9 +6178,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
        break;
  
      case BUILT_IN_STRCPY:
@@ -41,7 +41,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
        break;
  
      case BUILT_IN_STRNCPY:
-@@ -6154,9 +6160,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
+@@ -6186,9 +6192,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
        break;
  
      case BUILT_IN_STPCPY:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libjava_libltdl_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- libjava/libltdl/configure.orig	Wed Oct 26 11:30:24 2011
-+++ libjava/libltdl/configure	Wed Jan 25 21:13:59 2012
-@@ -6891,9 +6891,6 @@ cc_basename=`$echo "X$cc_temp" | $Xsed -e 's%.*/%%' -e
+$OpenBSD: patch-libjava_libltdl_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- libjava/libltdl/configure.orig	Thu May 22 11:13:48 2014
++++ libjava/libltdl/configure	Thu May 22 20:04:22 2014
+@@ -6897,9 +6897,6 @@ cc_basename=`$echo "X$cc_temp" | $Xsed -e 's%.*/%%' -e
        with_gnu_ld=no
      fi
      ;;
@@ -11,7 +11,7 @@ $OpenBSD: patch-libjava_libltdl_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal E
    esac
  
    ld_shlibs=yes
-@@ -8183,7 +8180,7 @@ openbsd*)
+@@ -8189,7 +8186,7 @@ openbsd*)
    need_lib_prefix=no
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

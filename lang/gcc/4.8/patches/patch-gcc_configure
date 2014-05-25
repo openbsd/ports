@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_configure,v 1.2 2013/12/02 22:34:55 pascal Exp $
---- gcc/configure.orig	Wed Jun 19 03:18:38 2013
-+++ gcc/configure	Wed Oct 16 18:56:49 2013
-@@ -17250,7 +17250,7 @@ openbsd*)
+$OpenBSD: patch-gcc_configure,v 1.3 2014/05/25 21:45:39 pascal Exp $
+--- gcc/configure.orig	Mon Apr 28 12:05:29 2014
++++ gcc/configure	Thu May 22 20:04:20 2014
+@@ -17260,7 +17260,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_configure,v 1.2 2013/12/02 22:34:55 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -20910,7 +20910,7 @@ openbsd*)
+@@ -20920,7 +20920,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_configure,v 1.2 2013/12/02 22:34:55 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -26782,6 +26782,7 @@ else
+@@ -26864,6 +26864,7 @@ else
  fi
  
          ;;

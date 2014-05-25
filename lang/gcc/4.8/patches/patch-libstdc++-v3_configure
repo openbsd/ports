@@ -1,7 +1,7 @@
-$OpenBSD: patch-libstdc++-v3_configure,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
---- libstdc++-v3/configure.orig	Thu Dec 20 15:36:56 2012
-+++ libstdc++-v3/configure	Sat Jan 12 13:27:16 2013
-@@ -10920,7 +10920,7 @@ openbsd*)
+$OpenBSD: patch-libstdc++-v3_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- libstdc++-v3/configure.orig	Fri Apr  4 15:53:39 2014
++++ libstdc++-v3/configure	Thu May 22 20:04:23 2014
+@@ -10926,7 +10926,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -10,7 +10,7 @@ $OpenBSD: patch-libstdc++-v3_configure,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp 
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -14604,7 +14604,7 @@ openbsd*)
+@@ -14610,7 +14610,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

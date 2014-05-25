@@ -1,7 +1,7 @@
-$OpenBSD: patch-zlib_configure,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
---- zlib/configure.orig	Sat Sep 15 01:43:33 2012
-+++ zlib/configure	Fri Oct 12 10:42:49 2012
-@@ -9801,7 +9801,7 @@ openbsd*)
+$OpenBSD: patch-zlib_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- zlib/configure.orig	Fri Apr  4 15:53:39 2014
++++ zlib/configure	Thu May 22 20:04:23 2014
+@@ -9807,7 +9807,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

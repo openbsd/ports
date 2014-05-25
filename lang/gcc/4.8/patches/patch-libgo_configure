@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- libgo/configure.orig	Mon Feb 11 20:03:04 2013
-+++ libgo/configure	Tue Mar  5 19:45:42 2013
+$OpenBSD: patch-libgo_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- libgo/configure.orig	Fri Apr  4 15:53:39 2014
++++ libgo/configure	Thu May 22 20:04:21 2014
 @@ -669,6 +669,8 @@ LIBGO_IS_IRIX_FALSE
  LIBGO_IS_IRIX_TRUE
  LIBGO_IS_FREEBSD_FALSE
@@ -10,7 +10,7 @@ $OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
  LIBGO_IS_DARWIN_FALSE
  LIBGO_IS_DARWIN_TRUE
  go_include
-@@ -10527,7 +10529,7 @@ openbsd*)
+@@ -10533,7 +10535,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -19,7 +19,7 @@ $OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -13453,6 +13455,10 @@ fi
+@@ -13459,6 +13461,10 @@ fi
  # architectures don't support it.  FIXME: We should set a default
  # based on the host.
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
  # Check whether --with-libffi was given.
  if test "${with_libffi+set}" = set; then :
    withval=$with_libffi; :
-@@ -13480,6 +13486,7 @@ go_include="-include"
+@@ -13486,6 +13492,7 @@ go_include="-include"
  
  is_darwin=no
  is_freebsd=no
@@ -38,7 +38,7 @@ $OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
  is_irix=no
  is_linux=no
  is_netbsd=no
-@@ -13490,6 +13497,7 @@ GOOS=unknown
+@@ -13496,6 +13503,7 @@ GOOS=unknown
  case ${host} in
    *-*-darwin*)   is_darwin=yes;  GOOS=darwin ;;
    *-*-freebsd*)  is_freebsd=yes; GOOS=freebsd ;;
@@ -46,7 +46,7 @@ $OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
    *-*-irix6*)    is_irix=yes;    GOOS=irix ;;
    *-*-linux*)    is_linux=yes;   GOOS=linux ;;
    *-*-netbsd*)	 is_netbsd=yes;  GOOS=netbsd ;;
-@@ -13521,6 +13529,14 @@ else
+@@ -13527,6 +13535,14 @@ else
    LIBGO_IS_IRIX_FALSE=
  fi
  
@@ -61,7 +61,7 @@ $OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
   if test $is_linux = yes; then
    LIBGO_IS_LINUX_TRUE=
    LIBGO_IS_LINUX_FALSE='#'
-@@ -14115,13 +14131,13 @@ fi
+@@ -14121,13 +14137,13 @@ fi
  
  
  PTHREAD_LIBS=
@@ -78,7 +78,7 @@ $OpenBSD: patch-libgo_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14152,7 +14168,7 @@ fi
+@@ -14158,7 +14174,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :

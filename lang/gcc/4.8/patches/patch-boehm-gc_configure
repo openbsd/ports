@@ -1,7 +1,7 @@
-$OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
---- boehm-gc/configure.orig	Sun Jan  6 23:42:58 2013
-+++ boehm-gc/configure	Sat Jan 12 13:27:06 2013
-@@ -10678,7 +10678,7 @@ netbsd*)
+$OpenBSD: patch-boehm-gc_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- boehm-gc/configure.orig	Thu May 22 11:13:48 2014
++++ boehm-gc/configure	Thu May 22 20:04:19 2014
+@@ -10684,7 +10684,7 @@ netbsd*)
    need_version=no
    if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -10,7 +10,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
      dynamic_linker='NetBSD (a.out) ld.so'
    else
      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major ${libname}${shared_ext}'
-@@ -14403,7 +14403,7 @@ openbsd*)
+@@ -14409,7 +14409,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -19,7 +19,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -14779,6 +14779,11 @@ $as_echo "#define _REENTRANT 1" >>confdefs.h
+@@ -14785,6 +14785,11 @@ $as_echo "#define _REENTRANT 1" >>confdefs.h
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&5
  $as_echo "$as_me: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&2;}
  	;;
@@ -31,7 +31,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
       *-*-kfreebsd*-gnu)
         $as_echo "#define GC_FREEBSD_THREADS 1" >>confdefs.h
  
-@@ -14908,7 +14913,6 @@ else
+@@ -14914,7 +14919,6 @@ else
    POWERPC_DARWIN_FALSE=
  fi
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
  # Darwin needs a few extra special tests to deal with variation in the
  # system headers.
  case "$host" in
-@@ -15218,6 +15222,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
+@@ -15224,6 +15228,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
      ;;
   sparc-*-netbsd*)
      machdep="sparc_netbsd_mach_dep.lo"

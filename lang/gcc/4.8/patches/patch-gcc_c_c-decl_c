@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_c_c-decl_c,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
---- gcc/c/c-decl.c.orig	Thu Jan 10 21:38:27 2013
-+++ gcc/c/c-decl.c	Wed Jan 23 22:48:28 2013
-@@ -4857,6 +4857,8 @@ warn_variable_length_array (tree name, tree size)
+$OpenBSD: patch-gcc_c_c-decl_c,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- gcc/c/c-decl.c.orig	Thu Apr 10 09:54:08 2014
++++ gcc/c/c-decl.c	Thu May 22 20:04:19 2014
+@@ -4859,6 +4859,8 @@ warn_variable_length_array (tree name, tree size)
  		     "variable length array is used");
  	}
      }

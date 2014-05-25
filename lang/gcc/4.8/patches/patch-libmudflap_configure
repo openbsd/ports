@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmudflap_configure,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- libmudflap/configure.orig	Sat Sep 15 01:37:57 2012
-+++ libmudflap/configure	Fri Oct 12 10:42:48 2012
-@@ -10037,7 +10037,7 @@ openbsd*)
+$OpenBSD: patch-libmudflap_configure,v 1.2 2014/05/25 21:45:39 pascal Exp $
+--- libmudflap/configure.orig	Fri Apr  4 15:53:39 2014
++++ libmudflap/configure	Thu May 22 20:04:22 2014
+@@ -10043,7 +10043,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
