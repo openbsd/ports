@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/05/21 11:22:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/05/25 19:13:50 jasper Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
@@ -22,7 +22,6 @@ MODRUBY_REV=	2.0
 RUN_DEPENDS=	net/ruby-stomp,${MODRUBY_FLAVOR}>=1.3.2
 
 PKG_ARCH=	*
-NO_BUILD=	Yes
 NO_TEST=	Yes
 SUBST_VARS +=	RUBY
 
