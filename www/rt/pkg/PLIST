@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/08/08 19:37:05 robert Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/05/25 21:38:05 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -250,6 +250,7 @@ share/doc/rt3/UPGRADING-3.6
 share/doc/rt3/UPGRADING-3.8
 share/doc/rt3/UPGRADING-4.0
 share/doc/rt3/UPGRADING.mysql
+share/doc/rt3/automating_rt.pod
 share/doc/rt3/backups.pod
 share/doc/rt3/customizing/
 share/doc/rt3/customizing/approvals.pod
@@ -276,6 +277,7 @@ share/doc/rt3/network-diagram.svg
 share/doc/rt3/schema.dot
 share/doc/rt3/security.pod
 share/doc/rt3/web_deployment.pod
+share/doc/rt3/writing_extensions.pod
 share/examples/rt3/
 @sample ${SYSCONFDIR}/rt3/
 @sample ${SYSCONFDIR}/rt3/local/
@@ -421,9 +423,6 @@ share/examples/rt3/upgrade/3.7.87/
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.87/
 share/examples/rt3/upgrade/3.7.87/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.87/content
-share/examples/rt3/upgrade/3.8-branded-queues-extension
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8-branded-queues-extension
-share/examples/rt3/upgrade/3.8-branded-queues-extension.in
 share/examples/rt3/upgrade/3.8-ical-extension
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8-ical-extension
 share/examples/rt3/upgrade/3.8-ical-extension.in
@@ -525,6 +524,9 @@ share/examples/rt3/upgrade/3.9.8/schema.SQLite
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.8/schema.SQLite
 share/examples/rt3/upgrade/3.9.8/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.8/schema.mysql
+share/examples/rt3/upgrade/4.0-customfield-checkbox-extension
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0-customfield-checkbox-extension
+share/examples/rt3/upgrade/4.0-customfield-checkbox-extension.in
 share/examples/rt3/upgrade/4.0.0rc2/
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc2/
 share/examples/rt3/upgrade/4.0.0rc2/schema.mysql
@@ -563,6 +565,16 @@ share/examples/rt3/upgrade/4.0.13/schema.Pg
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/schema.Pg
 share/examples/rt3/upgrade/4.0.13/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/schema.mysql
+share/examples/rt3/upgrade/4.0.18/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.18/
+share/examples/rt3/upgrade/4.0.18/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.18/content
+share/examples/rt3/upgrade/4.0.19/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.19/
+share/examples/rt3/upgrade/4.0.19/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.19/content
+share/examples/rt3/upgrade/4.0.19/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.19/schema.mysql
 share/examples/rt3/upgrade/4.0.3/
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.3/
 share/examples/rt3/upgrade/4.0.3/content
@@ -1485,6 +1497,7 @@ share/rt3/html/NoAuth/css/base/jquery-ui.custom.modified.css
 share/rt3/html/NoAuth/css/base/login.css
 share/rt3/html/NoAuth/css/base/main.css
 share/rt3/html/NoAuth/css/base/misc.css
+share/rt3/html/NoAuth/css/base/msie6.css
 share/rt3/html/NoAuth/css/base/nav.css
 share/rt3/html/NoAuth/css/base/portlets.css
 share/rt3/html/NoAuth/css/base/rights-editor.css
