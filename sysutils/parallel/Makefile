@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/23 12:30:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2014/05/25 15:39:46 rpe Exp $
 
 COMMENT =		execute jobs in parallel
 
-DISTNAME =		parallel-20140322
+DISTNAME =		parallel-20140522
 
 CATEGORIES =		sysutils
 
