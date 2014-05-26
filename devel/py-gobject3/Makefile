@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/15 06:52:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/05/26 12:24:28 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.12.1
+GNOME_VERSION=		3.12.2
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
 PKGNAME-main=		py-gobject3-${GNOME_VERSION}
@@ -60,8 +60,10 @@ RUN_DEPENDS-main +=	graphics/py-cairo
 
 CONFIGURE_STYLE=	gnu
 
-TEST_DEPENDS=		${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
+TEST_DEPENDS=		${BUILD_PKGPATH} \
+			devel/pep8 \
+			devel/pyflakes
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gi/*.{a,la}
