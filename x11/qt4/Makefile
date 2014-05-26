@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2014/04/09 12:30:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2014/05/26 19:24:28 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,7 +24,7 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-main =		3
+REVISION-main =		4
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
