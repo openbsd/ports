@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.118 2014/05/12 13:19:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2014/05/26 16:52:35 ajacoutot Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.4.2
+V =		2.4.3
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
