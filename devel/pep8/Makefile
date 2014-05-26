@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/07 21:57:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/05/26 14:37:07 ajacoutot Exp $
 
 COMMENT =		python style guide checker
 
-MODPY_EGG_VERSION =	1.0.1
+MODPY_EGG_VERSION =	1.5.6
 DISTNAME =		pep8-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/jcrocholl/pep8
 
-MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
-
 # Expat
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=p/pep8/}
 
