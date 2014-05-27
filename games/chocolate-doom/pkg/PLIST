@@ -1,23 +1,53 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/03/23 08:47:03 rfreeman Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/05/27 06:35:01 jsg Exp $
 @bin bin/chocolate-doom
+@bin bin/chocolate-doom-setup
+@bin bin/chocolate-heretic
+@bin bin/chocolate-heretic-setup
+@bin bin/chocolate-hexen
+@bin bin/chocolate-hexen-setup
 @bin bin/chocolate-server
-@bin bin/chocolate-setup
+@bin bin/chocolate-strife
+@bin bin/chocolate-strife-setup
 @man man/man5/chocolate-doom.cfg.5
+@man man/man5/chocolate-heretic.cfg.5
+@man man/man5/chocolate-hexen.cfg.5
+@man man/man5/chocolate-strife.cfg.5
 @man man/man5/default.cfg.5
+@man man/man5/heretic.cfg.5
+@man man/man5/hexen.cfg.5
+@man man/man5/strife.cfg.5
 @man man/man6/chocolate-doom.6
+@man man/man6/chocolate-heretic.6
+@man man/man6/chocolate-hexen.6
 @man man/man6/chocolate-server.6
 @man man/man6/chocolate-setup.6
+@man man/man6/chocolate-strife.6
 share/applications/chocolate-doom.desktop
 share/applications/chocolate-setup.desktop
 share/applications/screensavers/
 share/applications/screensavers/chocolate-doom-screensaver.desktop
 share/doc/chocolate-doom/
-share/doc/chocolate-doom/CMDLINE
 share/doc/chocolate-doom/ChangeLog
 share/doc/chocolate-doom/NEWS
 share/doc/chocolate-doom/NOT-BUGS
 share/doc/chocolate-doom/README
 share/doc/chocolate-doom/README.OPL
+share/doc/chocolate-heretic/
+share/doc/chocolate-heretic/ChangeLog
+share/doc/chocolate-heretic/NEWS
+share/doc/chocolate-heretic/README
+share/doc/chocolate-heretic/README.OPL
+share/doc/chocolate-hexen/
+share/doc/chocolate-hexen/ChangeLog
+share/doc/chocolate-hexen/NEWS
+share/doc/chocolate-hexen/README
+share/doc/chocolate-hexen/README.OPL
+share/doc/chocolate-strife/
+share/doc/chocolate-strife/ChangeLog
+share/doc/chocolate-strife/NEWS
+share/doc/chocolate-strife/README
+share/doc/chocolate-strife/README.OPL
+share/doc/chocolate-strife/README.Strife
 share/doom/
 share/icons/
 share/icons/chocolate-doom.png

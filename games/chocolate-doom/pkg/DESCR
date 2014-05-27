@@ -3,19 +3,26 @@ from the days of DOS. The author, Simon Howard, has worked to insure
 Chocolate Doom, which is nothing more than a directly modified version
 of the released iD Software source code, has zero changes that affect
 gameplay, look, or feel, and also re-created a DOS-like setup program to
-configure the game much like the original setup.exe.
+configure the game much like the original setup.exe.  The project also
+maintains versions of the engine for Heretic, Hexen, and Strife.
 
 Chocolate Doom provides:
-  chocolate-doom   - the game
-  chocolate-setup  - the game setup program 
-  chocolate-server - server for up to 4-player net games
+  chocolate-doom          - the Doom executable
+  chocolate-doom-setup    - the Doom setup executable
+  chocolate-heretic       - the Heretic executable
+  chocolate-heretic-setup - the Heretic setup executable
+  chocolate-hexen         - the Hexen executable
+  chocolate-hexen-setup   - the Hexen setup executable
+  chocolate-strife        - the Strife executable
+  chocolate-strife-setup  - the Strife setup executable
+  chocolate-server        - server for up to 4-player net games
 
-Due to the port re-implementing the original game as closely as
+
+Due to the port re-implementing the original games as closely as
 possible, all original game PWADs and demos work flawlessly. Other
-original features include a PC-speaker driver written with OpenBSD in
-mind, just like the DOS PC-speaker driver, and a working -left and
--right network command parameter system for the 'surround display' setup
-that was obtainable with the original DOS executables over an IPX
-network.
+original features include a PC-speaker driver, just like the DOS
+PC-speaker driver, and a working -left and -right network command
+parameter system for the 'surround display' setup that was
+obtainable with the original DOS executables over an IPX network.
 
 Check the chocolate-*(6) manpages for additional information.

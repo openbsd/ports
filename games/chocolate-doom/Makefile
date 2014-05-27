@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:49:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/05/27 06:35:01 jsg Exp $
 
-COMMENT =	portable version of iD Software's Doom
-DISTNAME =	chocolate-doom-1.7.0
+COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
+V =		2.0.0
+DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.chocolate-doom.org/
@@ -17,21 +18,26 @@ LIB_DEPENDS =	devel/sdl-mixer \
 		devel/sdl-net \
 		audio/libsamplerate
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=chocolate-doom/}
+MASTER_SITES =	http://www.chocolate-doom.org/downloads/${V}/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
 
 CONFIGURE_STYLE =	gnu
+USE_GMAKE =		Yes
 
 # we don't need to require python to build
 CONFIGURE_ENV +=	HAVE_PYTHON=false
 
 # set correct program directory
-MAKE_FLAGS =	gamesdir="${TRUEPREFIX}/bin"
+MAKE_FLAGS =	execgamesdir="${TRUEPREFIX}/bin"
 
-MAN_5 =		chocolate-doom.cfg default.cfg
-MAN_6 =		chocolate-doom chocolate-server chocolate-setup
+MAN_5 =		chocolate-doom.cfg default.cfg \
+		chocolate-heretic.cfg heretic.cfg \
+		chocolate-hexen.cfg hexen.cfg \
+		chocolate-strife.cfg strife.cfg
+MAN_6 =		chocolate-doom chocolate-server chocolate-setup \
+		chocolate-heretic chocolate-hexen chocolate-strife
 
 post-extract:
 	# set correct data directory
