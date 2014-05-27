@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_mumble_ServerHandler_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+$OpenBSD: patch-src_mumble_ServerHandler_cpp,v 1.2 2014/05/27 12:14:07 jasper Exp $
 
 Add missing headers
 
---- src/mumble/ServerHandler.cpp.orig	Sat Jun  1 23:16:32 2013
-+++ src/mumble/ServerHandler.cpp	Wed Aug 21 16:01:20 2013
-@@ -46,6 +46,13 @@
+--- src/mumble/ServerHandler.cpp.orig	Wed May 14 20:01:46 2014
++++ src/mumble/ServerHandler.cpp	Tue May 27 13:46:04 2014
+@@ -47,6 +47,13 @@
  #include "SSL.h"
  #include "User.h"
  
