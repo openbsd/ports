@@ -1,12 +1,23 @@
-# $OpenBSD: Makefile,v 1.9 2014/05/27 14:16:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/05/27 14:35:50 ajacoutot Exp $
 
-# XXX devel/py-gitpython for fileserver backend ?
+# optional dependencies
+# https://github.com/saltstack/salt/blob/develop/doc/conf.py#L37
+# libvirt-python
+# py-GitPython
+# py-django
+# py-mako
+# py-mongo
+# py-mysql
+# py-openssl
+# py-redis
+# py-requests
+# rabbitmq
 
 COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2014.1.4
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -20,12 +31,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=s/salt/}
 
 MODULES =		lang/python
-RUN_DEPENDS =		net/py-libcloud \
-			net/py-msgpack \
+
+RUN_DEPENDS =		net/py-msgpack \
 			net/py-zmq \
 			security/py-M2Crypto \
 			security/py-crypto \
-			textproc/py-MarkupSafe \
 			textproc/py-yaml \
 			www/py-jinja2
 
