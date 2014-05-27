@@ -1,31 +1,21 @@
-$OpenBSD: patch-lily_ttf_cc,v 1.5 2014/01/10 18:17:07 landry Exp $
---- lily/ttf.cc.orig	Tue Jul 26 00:42:15 2011
-+++ lily/ttf.cc	Fri Jan 10 18:56:22 2014
-@@ -20,7 +20,8 @@
- #include <cstdio>
- #include "freetype.hh"
- 
--#include <freetype/tttables.h>
-+#include <ft2build.h>
-+#include FT_TRUETYPE_TABLES_H
- 
- #include "international.hh"
- #include "memory-stream.hh"
-@@ -440,7 +441,7 @@ print_trailer (void *out,
+$OpenBSD: patch-lily_ttf_cc,v 1.6 2014/05/27 20:43:50 kili Exp $
+--- lily/ttf.cc.orig	Tue May 13 10:25:46 2014
++++ lily/ttf.cc	Tue May 13 10:26:24 2014
+@@ -439,7 +439,7 @@ print_trailer (void *out,
        if (!glyph_name[0] && ic_map.find (i) != ic_map.end ())
- 	{
- 	  FT_ULong ucode = ic_map[i];
--	  get_unicode_name (glyph_name, ucode);
-+	  get_unicode_name (glyph_name, sizeof(glyph_name), ucode);
- 	}
+         {
+           FT_ULong ucode = ic_map[i];
+-          get_unicode_name (glyph_name, ucode);
++          get_unicode_name (glyph_name, sizeof(glyph_name), ucode);
+         }
  
        if (i == 0)
-@@ -449,7 +450,7 @@ print_trailer (void *out,
- 	glyph_name[0] = '\0';
+@@ -448,7 +448,7 @@ print_trailer (void *out,
+         glyph_name[0] = '\0';
  
        if (!glyph_name[0])
--	get_glyph_index_name (glyph_name, i);
-+	get_glyph_index_name (glyph_name, sizeof(glyph_name), i);
+-        get_glyph_index_name (glyph_name, i);
++        get_glyph_index_name (glyph_name, sizeof(glyph_name), i);
  
        if (glyph_name[0])
- 	{
+         {

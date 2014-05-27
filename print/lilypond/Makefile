@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.40 2013/10/11 23:50:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2014/05/27 20:43:50 kili Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.14.2
+VERSION=		2.18.2
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
-REVISION-main =		1
 CATEGORIES=		print
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
@@ -43,7 +42,8 @@ CONFIGURE_ARGS+=	--disable-debugging \
 			--disable-documentation \
 			--disable-optimising \
 			--disable-pipe \
-			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
+			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts \
+			--with-python-include=${MODPY_INCDIR}
 USE_GMAKE=		Yes
 MAKE_FILE=		GNUmakefile
 
@@ -56,7 +56,7 @@ WANTLIB-docs =
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-WANTLIB-main=		X11 c expat fontconfig freetype gmp gthread-2.0 ltdl m \
+WANTLIB-main=		c fontconfig freetype gmp gthread-2.0 ltdl m \
 			pthread stdc++ z guile>=20 glib-2.0>=1000 \
 			gmodule-2.0>=1000 gobject-2.0>=1000 \
 			pango-1.0>=1200 pangoft2-1.0>=1200 ${WANTLIB}
@@ -84,7 +84,7 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lilypond/${VERSION}
-	umask 022 && cp -R ${WRKDIR}/docs/share/doc/lilypond/html/offline-root/* \
+	umask 022 && cp -R ${WRKDIR}/docs/share/doc/lilypond/html/* \
 		${PREFIX}/share/doc/lilypond/${VERSION}
 	for f in ${WRKDIR}/docs/share/man/man1/*; do \
 		${INSTALL_MAN} $$f ${PREFIX}/man/man1; \

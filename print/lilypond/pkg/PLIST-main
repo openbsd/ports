@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/07/06 14:14:06 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2014/05/27 20:43:50 kili Exp $
 @pkgpath print/lilypond
 bin/abc2ly
 bin/convert-ly
@@ -76,11 +76,19 @@ share/lilypond/${VERSION}/fonts/source/feta-brackettips.mf
 share/lilypond/${VERSION}/fonts/source/feta-clefs.mf
 share/lilypond/${VERSION}/fonts/source/feta-dots.mf
 share/lilypond/${VERSION}/fonts/source/feta-dynamics.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags-generic.mf
 share/lilypond/${VERSION}/fonts/source/feta-flags.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags11.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags13.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags14.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags16.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags18.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags20.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags23.mf
+share/lilypond/${VERSION}/fonts/source/feta-flags26.mf
 share/lilypond/${VERSION}/fonts/source/feta-generic.mf
 share/lilypond/${VERSION}/fonts/source/feta-macros.mf
 share/lilypond/${VERSION}/fonts/source/feta-noteheads-generic.mf
-share/lilypond/${VERSION}/fonts/source/feta-noteheads-test-generic.mf
 share/lilypond/${VERSION}/fonts/source/feta-noteheads.mf
 share/lilypond/${VERSION}/fonts/source/feta-noteheads11.mf
 share/lilypond/${VERSION}/fonts/source/feta-noteheads13.mf
@@ -102,6 +110,7 @@ share/lilypond/${VERSION}/fonts/source/feta-test16.mf
 share/lilypond/${VERSION}/fonts/source/feta-test20.mf
 share/lilypond/${VERSION}/fonts/source/feta-test23.mf
 share/lilypond/${VERSION}/fonts/source/feta-test26.mf
+share/lilypond/${VERSION}/fonts/source/feta-ties.mf
 share/lilypond/${VERSION}/fonts/source/feta-timesignatures.mf
 share/lilypond/${VERSION}/fonts/source/feta-trills.mf
 share/lilypond/${VERSION}/fonts/source/feta11.mf
@@ -119,7 +128,16 @@ share/lilypond/${VERSION}/fonts/source/parmesan-dots.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-flags.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-generic.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-macros.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads-generic.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-noteheads.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads11.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads13.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads14.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads16.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads18.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads20.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads23.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-noteheads26.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-rests.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-scripts.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-timesignatures.mf
@@ -159,6 +177,7 @@ share/lilypond/${VERSION}/ly/bagpipe.ly
 share/lilypond/${VERSION}/ly/catalan.ly
 share/lilypond/${VERSION}/ly/chord-modifiers-init.ly
 share/lilypond/${VERSION}/ly/chord-repetition-init.ly
+share/lilypond/${VERSION}/ly/context-mods-init.ly
 share/lilypond/${VERSION}/ly/declarations-init.ly
 share/lilypond/${VERSION}/ly/deutsch.ly
 share/lilypond/${VERSION}/ly/drumpitch-init.ly
@@ -166,6 +185,7 @@ share/lilypond/${VERSION}/ly/dynamic-scripts-init.ly
 share/lilypond/${VERSION}/ly/english.ly
 share/lilypond/${VERSION}/ly/engraver-init.ly
 share/lilypond/${VERSION}/ly/espanol.ly
+share/lilypond/${VERSION}/ly/event-listener.ly
 share/lilypond/${VERSION}/ly/festival.ly
 share/lilypond/${VERSION}/ly/generate-documentation.ly
 share/lilypond/${VERSION}/ly/generate-interface-doc-init.ly
@@ -191,11 +211,13 @@ share/lilypond/${VERSION}/ly/predefined-mandolin-fretboards.ly
 share/lilypond/${VERSION}/ly/predefined-ukulele-fretboards.ly
 share/lilypond/${VERSION}/ly/property-init.ly
 share/lilypond/${VERSION}/ly/scale-definitions-init.ly
+share/lilypond/${VERSION}/ly/scheme-sandbox.ly
 share/lilypond/${VERSION}/ly/script-init.ly
 share/lilypond/${VERSION}/ly/spanners-init.ly
 share/lilypond/${VERSION}/ly/string-tunings-init.ly
 share/lilypond/${VERSION}/ly/suomi.ly
 share/lilypond/${VERSION}/ly/svenska.ly
+share/lilypond/${VERSION}/ly/text-replacements.ly
 share/lilypond/${VERSION}/ly/titling-init.ly
 share/lilypond/${VERSION}/ly/toc-init.ly
 share/lilypond/${VERSION}/ly/vlaams.ly
@@ -232,9 +254,11 @@ share/lilypond/${VERSION}/python/rational.pyc
 share/lilypond/${VERSION}/python/safeeval.py
 share/lilypond/${VERSION}/python/safeeval.pyc
 share/lilypond/${VERSION}/scm/
+share/lilypond/${VERSION}/scm/accreg.scm
 share/lilypond/${VERSION}/scm/auto-beam.scm
 share/lilypond/${VERSION}/scm/autochange.scm
 share/lilypond/${VERSION}/scm/backend-library.scm
+share/lilypond/${VERSION}/scm/bar-line.scm
 share/lilypond/${VERSION}/scm/bezier-tools.scm
 share/lilypond/${VERSION}/scm/c++.scm
 share/lilypond/${VERSION}/scm/chord-entry.scm
@@ -259,6 +283,7 @@ share/lilypond/${VERSION}/scm/define-woodwind-diagrams.scm
 share/lilypond/${VERSION}/scm/display-lily.scm
 share/lilypond/${VERSION}/scm/display-woodwind-diagrams.scm
 share/lilypond/${VERSION}/scm/document-backend.scm
+share/lilypond/${VERSION}/scm/document-context-mods.scm
 share/lilypond/${VERSION}/scm/document-functions.scm
 share/lilypond/${VERSION}/scm/document-identifiers.scm
 share/lilypond/${VERSION}/scm/document-markup.scm
@@ -288,6 +313,7 @@ share/lilypond/${VERSION}/scm/lily-library.scm
 share/lilypond/${VERSION}/scm/lily-sort.scm
 share/lilypond/${VERSION}/scm/lily.scm
 share/lilypond/${VERSION}/scm/ly-syntax-constructors.scm
+share/lilypond/${VERSION}/scm/markup-macros.scm
 share/lilypond/${VERSION}/scm/markup.scm
 share/lilypond/${VERSION}/scm/memory-trace.scm
 share/lilypond/${VERSION}/scm/midi.scm
@@ -306,12 +332,16 @@ share/lilypond/${VERSION}/scm/part-combiner.scm
 share/lilypond/${VERSION}/scm/predefined-fretboards.scm
 share/lilypond/${VERSION}/scm/ps-to-png.scm
 share/lilypond/${VERSION}/scm/safe-lily.scm
+share/lilypond/${VERSION}/scm/safe-utility-defs.scm
+share/lilypond/${VERSION}/scm/scheme-engravers.scm
 share/lilypond/${VERSION}/scm/script.scm
+share/lilypond/${VERSION}/scm/skyline.scm
 share/lilypond/${VERSION}/scm/song-util.scm
 share/lilypond/${VERSION}/scm/song.scm
 share/lilypond/${VERSION}/scm/standalone.scm
 share/lilypond/${VERSION}/scm/stencil.scm
 share/lilypond/${VERSION}/scm/tablature.scm
+share/lilypond/${VERSION}/scm/text.scm
 share/lilypond/${VERSION}/scm/time-signature-settings.scm
 share/lilypond/${VERSION}/scm/titling.scm
 share/lilypond/${VERSION}/scm/to-xml.scm
@@ -332,10 +362,12 @@ share/lilypond/${VERSION}/vim/syntax/
 share/lilypond/${VERSION}/vim/syntax/lilypond-words
 share/lilypond/${VERSION}/vim/syntax/lilypond-words.vim
 share/lilypond/${VERSION}/vim/syntax/lilypond.vim
+share/locale/ca/LC_MESSAGES/lilypond.mo
 share/locale/cs/LC_MESSAGES/lilypond.mo
 share/locale/da/LC_MESSAGES/lilypond.mo
 share/locale/de/LC_MESSAGES/lilypond.mo
 share/locale/el/LC_MESSAGES/lilypond.mo
+share/locale/eo/LC_MESSAGES/lilypond.mo
 share/locale/es/LC_MESSAGES/lilypond.mo
 share/locale/fi/LC_MESSAGES/lilypond.mo
 share/locale/fr/LC_MESSAGES/lilypond.mo
