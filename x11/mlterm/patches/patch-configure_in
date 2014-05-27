@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.4 2014/03/28 10:19:22 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.5 2014/05/27 10:30:13 dcoppa Exp $
 
 OpenBSD lacks 'nm -D'
 
@@ -6,9 +6,9 @@ setuid root/setgid utmp are handled by PLIST
 
 Do not enable VTE support if libvte is around
 
---- configure.in.orig	Sat Mar 22 23:06:41 2014
-+++ configure.in	Fri Mar 28 10:05:45 2014
-@@ -313,7 +313,7 @@ AC_SUBST(IMAGELIB_LIBS)
+--- configure.in.orig	Sun May 25 07:42:27 2014
++++ configure.in	Tue May 27 12:06:14 2014
+@@ -309,7 +309,7 @@ AC_SUBST(IMAGELIB_LIBS)
  for ml_cv_lib_path in /lib /usr/lib /lib/* `echo $LIBRARY_PATH | tr ":" " "` ; do
  	libm_files=`ls $ml_cv_lib_path/libm\\.so* $ml_cv_lib_path/libm\\.sl* 2> /dev/null`
  	for libm_file in $libm_files ; do
@@ -17,7 +17,7 @@ Do not enable VTE support if libvte is around
  			ml_cv_libm_dir=`dirname $libm_file`
  		fi
  	done
-@@ -625,39 +625,12 @@ AC_ARG_ENABLE(pty_helper,
+@@ -621,39 +621,12 @@ AC_ARG_ENABLE(pty_helper,
  	pty_helper=$enable_pty_helper)
  if test "$utmp" = "yes" -a "$pty_helper" != "yes" ; then
  	UTMP_CFLAGS="-DUSE_UTMP"
