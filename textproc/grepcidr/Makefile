@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/14 10:06:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/27 13:42:38 sthen Exp $
 
 COMMENT=	filter files for IP address matches
 
-DISTNAME=	grepcidr-1.4
+DISTNAME=	grepcidr-2.0
 
 CATEGORIES=	textproc net
 
