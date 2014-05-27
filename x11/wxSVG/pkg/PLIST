@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/26 16:16:50 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/05/27 07:30:34 brad Exp $
 @bin bin/svgview
 include/wxSVG/
 include/wxSVG/Animated.h
@@ -38,6 +38,7 @@ include/wxSVG/SVGAnimatedPreserveAspectRatio.h
 include/wxSVG/SVGAnimatedRect.h
 include/wxSVG/SVGAnimatedString.h
 include/wxSVG/SVGAnimatedTransformList.h
+include/wxSVG/SVGAnimatedType.h
 include/wxSVG/SVGAnimationElement.h
 include/wxSVG/SVGCSSRule.h
 include/wxSVG/SVGCanvas.h
