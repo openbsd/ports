@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/12/30 21:59:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/05/27 19:44:56 naddy Exp $
 @pkgpath audio/libao,-main
 @pkgpath audio/libao,no_arts
 @pkgpath audio/libao,no_arts,no_esd
@@ -9,6 +9,7 @@ include/ao/os_types.h
 include/ao/plugin.h
 lib/libao.a
 lib/libao.la
+@lib lib/libao.so.${LIBao_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/ao.pc
 @man man/man5/libao.conf.5

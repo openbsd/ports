@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_plugins_Makefile_in,v 1.6 2011/06/08 20:00:47 naddy Exp $
---- src/plugins/Makefile.in.orig	Tue Feb 22 23:54:29 2011
-+++ src/plugins/Makefile.in	Wed Jun  8 15:48:58 2011
-@@ -299,7 +299,7 @@ $(RECURSIVE_TARGETS):
+$OpenBSD: patch-src_plugins_Makefile_in,v 1.7 2014/05/27 19:44:56 naddy Exp $
+--- src/plugins/Makefile.in.orig	Tue Jan 28 00:57:41 2014
++++ src/plugins/Makefile.in	Tue May 27 17:06:54 2014
+@@ -388,7 +388,7 @@ $(am__recursive_targets):
  	  else \
  	    local_target="$$target"; \
  	  fi; \
--	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
-+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) LIBTOOL="$(LIBTOOL) --tag=disable-static" $$local_target) \
+-	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
++	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) LIBTOOL="$(LIBTOOL) --tag=disable-static" $$local_target) \
  	  || eval $$failcom; \
  	done; \
  	if test "$$dot_seen" = "no"; then \

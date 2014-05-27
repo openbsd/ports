@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.12 2011/06/08 20:00:47 naddy Exp $
---- configure.orig	Tue Feb 22 17:30:22 2011
-+++ configure	Wed Jun  8 15:48:58 2011
-@@ -11082,9 +11082,9 @@ else
+$OpenBSD: patch-configure,v 1.13 2014/05/27 19:44:56 naddy Exp $
+--- configure.orig	Mon Jan 27 18:10:36 2014
++++ configure	Tue May 27 17:07:14 2014
+@@ -12077,9 +12077,9 @@ else
                  PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
       	*)
                  PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.12 2011/06/08 20:00:47 naddy Exp $
          esac
  fi
  CFLAGS="$CFLAGS $cflags_save -DAO_BUILDING_LIBAO"
-@@ -11127,8 +11127,8 @@ else
+@@ -12120,8 +12120,8 @@ else
    HAVE_LD_VERSION_SCRIPT_FALSE=
  fi
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-configure,v 1.12 2011/06/08 20:00:47 naddy Exp $
  # we link to libpthread just in case one of our plugins does
  # in which case this is required to avoid problems on dlclose()
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
-@@ -11176,7 +11176,7 @@ _ACEOF
+@@ -12169,7 +12169,7 @@ _ACEOF
  
  fi
  

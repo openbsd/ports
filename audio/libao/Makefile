@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2014/05/27 19:44:56 naddy Exp $
 
 COMMENT=	portable audio output library
 
-DISTNAME=	libao-1.1.0
+DISTNAME=	libao-1.2.0
 CATEGORIES=    	audio
-HOMEPAGE=	http://www.xiph.org/ao/
-SHARED_LIBS=	ao                   5.0      # .4.0
+HOMEPAGE=	https://www.xiph.org/ao/
+SHARED_LIBS=	ao                   5.0      # 5.0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -26,6 +26,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
 		--disable-pulse
 # disable sun audio detection
 CONFIGURE_ENV=	ac_cv_header_sys_audioio_h=no
+
+# do not install
+MAKE_FLAGS=	ckport_DATA=""
 
 pre-build:
 	@perl -i -pe 's:/etc/libao.conf:${SYSCONFDIR}/libao.conf:g' \
