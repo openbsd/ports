@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2014/05/12 13:40:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.230 2014/05/27 10:03:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.12.2
+REVISION=		0
 
 # NOTE: when EVO_VERSION changes, increment accordingly and bump:
 # mail/evolution-ews
@@ -19,7 +20,20 @@ CATEGORIES=		mail
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
+MASTER_SITES0=		https://git.gnome.org/browse/evolution/patch/?id=
+PATCH_DIST_STRIP=	-p1
+IDS=			ca274218bd56637a55fbe4456c4090ba87da94f2 \
+			a63089164f4d70cac6e07187583d0526f970b7c5 \
+			02e30ea2f06ea4ed48f6f7ec5286b3a5c0ce4edc \
+			ddadd86f960f37d0243f29e484a96fd1c4d3912c \
+			8ad84cf9fb009af8de29864e6ff4018ab58f02a4 \
+			9a7be72f6d00befd4985632b0a44d552e15eb39b \
+			75d8f1e60130bb35a41c93812565835b3ab91cc2
+.for i in ${IDS}
+PATCHFILES +=		$i:0
+.endfor
+
+# GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
