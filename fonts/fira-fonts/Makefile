@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/17 17:19:58 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2014/05/27 20:47:10 juanfra Exp $
 
 COMMENT =		Firefox OS typeface
 
-DISTNAME =		fira-fonts-20130928
+# Version 3.1
+DISTNAME =		fira-fonts-20140527
 
 CATEGORIES =		fonts x11
 
-HOMEPAGE =		http://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/
+# Alternative homepage http://dev.carrois.com/fira-3-1/
+HOMEPAGE =		https://mozilla.github.io/Fira/
 
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
@@ -15,6 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://download.tuxfamily.org/jod/fonts/fira-fonts/ \
 			ftp://download.tuxfamily.org/jod/fonts/fira-fonts/
+EXTRACT_SUFX =		.tar.lz
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
