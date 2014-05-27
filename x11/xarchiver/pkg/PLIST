@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/05/27 13:06:05 giovanni Exp $
 @bin bin/xarchiver
 libexec/thunar-archive-plugin/
 libexec/thunar-archive-plugin/xarchiver.tap
@@ -44,19 +44,9 @@ share/doc/xarchiver/html/images/password_dialog.png
 share/doc/xarchiver/html/images/pref_dialog.png
 share/doc/xarchiver/html/index.html
 share/doc/xarchiver/html/xarchiver.css
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/xarchiver.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/xarchiver.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/xarchiver.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xarchiver.svg
 share/locale/bg/LC_MESSAGES/xarchiver.mo
 share/locale/ca/LC_MESSAGES/xarchiver.mo
