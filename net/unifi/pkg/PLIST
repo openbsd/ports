@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/18 21:49:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/27 19:16:01 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 @owner _unifi
@@ -12,17 +12,17 @@ share/unifi/conf/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
-share/unifi/dl/firmware/BZ2/3.1.10.2519/
-share/unifi/dl/firmware/BZ2/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/BZ2/${FW_VER}/
+share/unifi/dl/firmware/BZ2/${FW_VER}/firmware.bin
 share/unifi/dl/firmware/U2S48/
-share/unifi/dl/firmware/U2S48/3.1.10.2519/
-share/unifi/dl/firmware/U2S48/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/U2S48/${FW_VER}/
+share/unifi/dl/firmware/U2S48/${FW_VER}/firmware.bin
 share/unifi/dl/firmware/U7E/
-share/unifi/dl/firmware/U7E/3.1.10.2519/
-share/unifi/dl/firmware/U7E/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/U7E/${FW_VER}/
+share/unifi/dl/firmware/U7E/${FW_VER}/firmware.bin
 share/unifi/dl/firmware/U7P/
-share/unifi/dl/firmware/U7P/3.1.10.2519/
-share/unifi/dl/firmware/U7P/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/U7P/${FW_VER}/
+share/unifi/dl/firmware/U7P/${FW_VER}/firmware.bin
 share/unifi/dl/firmware/bundles.json
 @owner
 share/unifi/lib/
