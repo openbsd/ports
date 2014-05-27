@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_master,v 1.1 2013/08/22 18:14:48 kirby Exp $
---- conf/master.orig	Thu Aug 22 18:21:13 2013
-+++ conf/master	Thu Aug 22 18:21:44 2013
+$OpenBSD: patch-conf_master,v 1.2 2014/05/27 10:13:43 ajacoutot Exp $
+--- conf/master.orig	Mon May  5 18:47:41 2014
++++ conf/master	Tue May 27 10:20:55 2014
 @@ -11,7 +11,7 @@
  #default_include: master.d/*.conf
  
@@ -10,10 +10,10 @@ $OpenBSD: patch-conf_master,v 1.1 2013/08/22 18:14:48 kirby Exp $
  
  # Whether the master should listen for IPv6 connections. If this is set to True,
  # the interface option must be adjusted too (for example: "interface: '::'")
-@@ -23,7 +23,7 @@
- # The user to run the salt-master as. Salt will update all permissions to
- # allow the specified user to run the master. If the modified files cause
- # conflicts set verify_env to False.
+@@ -24,7 +24,7 @@
+ # permissions to allow the specified user to run the master. The exception is
+ # the job cache, which must be deleted if this user is changed.  If the
+ # modified files cause conflicts set verify_env to False.
 -#user: root
 +user: _salt-master
  

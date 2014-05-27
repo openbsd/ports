@@ -1,0 +1,64 @@
+$OpenBSD: patch-salt_modules_openbsdservice_py,v 1.1 2014/05/27 10:13:43 ajacoutot Exp $
+--- salt/modules/openbsdservice.py.orig	Mon May  5 18:47:41 2014
++++ salt/modules/openbsdservice.py	Tue May 27 11:54:56 2014
+@@ -5,6 +5,7 @@ The service module for OpenBSD
+ 
+ # Import python libs
+ import os
++import glob
+ 
+ # XXX enable/disable support would be nice
+ 
+@@ -23,6 +24,52 @@ def __virtual__():
+         if krel[0] > 5 or (krel[0] == 5 and krel[1] > 0):
+             return __virtualname__
+     return False
++
++
++def available(name):
++    '''
++    Return True if the named service is available.
++
++    CLI Example:
++
++    .. code-block:: bash
++
++        salt '*' service.available sshd
++    '''
++    return name in get_all()
++
++
++def missing(name):
++    '''
++    The inverse of service.available.
++    Return True if the named service is not available.
++
++    CLI Example:
++
++    .. code-block:: bash
++
++        salt '*' service.missing sshd
++    '''
++    return not name in get_all()
++
++
++def get_all():
++    '''
++    Return all installed services.
++
++    CLI Example:
++
++    .. code-block:: bash
++
++        salt '*' service.get_all
++    '''
++    ret = []
++    lines = glob.glob('/etc/rc.d/*')
++    for line in lines:
++        service = line.split('/etc/rc.d/')[1]
++        if service != 'rc.subr':
++            ret.append(service)
++    return sorted(ret)
+ 
+ 
+ def start(name):

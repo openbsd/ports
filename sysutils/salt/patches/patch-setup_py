@@ -1,21 +1,18 @@
-$OpenBSD: patch-setup_py,v 1.4 2014/05/21 07:39:48 ajacoutot Exp $
---- setup.py.orig	Sat Jan 25 00:50:40 2014
-+++ setup.py	Wed May 21 07:33:17 2014
-@@ -336,7 +336,7 @@ SETUP_KWARGS = {'name': NAME,
-                              'salt.log.handlers',
-                              ],
-                 'package_data': {'salt.modules': ['rh_ip/*.jinja']},
+$OpenBSD: patch-setup_py,v 1.5 2014/05/27 10:13:43 ajacoutot Exp $
+--- setup.py.orig	Mon May  5 18:47:41 2014
++++ setup.py	Tue May 27 10:20:21 2014
+@@ -458,12 +458,12 @@ SETUP_KWARGS = {'name': NAME,
+                                     'virt/*.jinja'
+                                     ],
+                                 },
 -                'data_files': [('share/man/man1',
 +                'data_files': [('man/man1',
-                                 ['doc/man/salt-master.1',
-                                  'doc/man/salt-key.1',
-                                  'doc/man/salt.1',
-@@ -347,7 +347,7 @@ SETUP_KWARGS = {'name': NAME,
-                                  'doc/man/salt-ssh.1',
+                                 ['doc/man/salt-cp.1',
+                                  'doc/man/salt-call.1',
                                   'doc/man/salt-minion.1',
                                   ]),
--                               ('share/man/man7', ['doc/man/salt.7']),
-+                               ('man/man7', ['doc/man/salt.7']),
+-                               ('share/man/man7',
++                               ('man/man7',
+                                 ['doc/man/salt.7',
+                                  ]),
                                 ],
-                 # Required for esky builds
-                 'install_requires': REQUIREMENTS,

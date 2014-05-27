@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_runtests_py,v 1.2 2013/10/08 07:02:35 landry Exp $
---- tests/runtests.py.orig	Fri Sep 20 22:00:11 2013
-+++ tests/runtests.py	Mon Oct  7 20:44:51 2013
-@@ -33,7 +33,7 @@ try:
+$OpenBSD: patch-tests_runtests_py,v 1.3 2014/05/27 10:13:43 ajacoutot Exp $
+--- tests/runtests.py.orig	Mon May  5 18:47:41 2014
++++ tests/runtests.py	Tue May 27 10:19:56 2014
+@@ -34,7 +34,7 @@ try:
  except OSError as err:
-     print 'Failed to change directory to salt\'s source: {0}'.format(err)
+     print('Failed to change directory to salt\'s source: {0}'.format(err))
  
 -REQUIRED_OPEN_FILES = 3072
 +REQUIRED_OPEN_FILES = 512

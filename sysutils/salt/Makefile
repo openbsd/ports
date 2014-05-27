@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/05/21 07:39:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/05/27 10:13:43 ajacoutot Exp $
 
 COMMENT =	remote execution and configuration management system
 
-MODPY_EGG_VERSION =	0.17.5
+MODPY_EGG_VERSION =	2014.1.4
 DISTNAME =	salt-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils net devel
@@ -15,18 +15,19 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	${MASTER_SITE_PYPI:=s/salt/}
 
 MODULES =	lang/python
-RUN_DEPENDS =	net/py-zmq \
+RUN_DEPENDS =	net/py-libcloud \
 		net/py-msgpack \
-		www/py-jinja2 \
+		net/py-zmq \
 		security/py-M2Crypto \
 		security/py-crypto \
 		textproc/py-MarkupSafe \
-		textproc/py-yaml
+		textproc/py-yaml \
+		www/py-jinja2
 
 TEST_DEPENDS =	devel/py-pip \
 		sysutils/salt-testing
 
-# FAILED (total=568, skipped=77, passed=464, failures=18, errors=9)
+# FAILED (total=816, skipped=179, passed=612, failures=16, errors=9)
 do-test:
 	ln -sf ${LOCALBASE}/bin/pip-${MODPY_VERSION} ${WRKDIR}/bin/pip
 	@${MODPY_TEST_TARGET}
