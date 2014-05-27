@@ -1,36 +1,36 @@
-# $OpenBSD: Makefile,v 1.8 2014/05/27 14:12:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/05/27 14:16:35 ajacoutot Exp $
 
 # XXX devel/py-gitpython for fileserver backend ?
 
-COMMENT =	remote execution and configuration management system
+COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2014.1.4
-DISTNAME =	salt-${MODPY_EGG_VERSION}
-REVISION =	0
+DISTNAME =		salt-${MODPY_EGG_VERSION}
+REVISION =		0
 
-CATEGORIES =	sysutils net devel
+CATEGORIES =		sysutils net devel
 
-HOMEPAGE =	http://saltstack.org/
+HOMEPAGE =		http://saltstack.org/
 
-MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=s/salt/}
+MASTER_SITES =		${MASTER_SITE_PYPI:=s/salt/}
 
-MODULES =	lang/python
-RUN_DEPENDS =	net/py-libcloud \
-		net/py-msgpack \
-		net/py-zmq \
-		security/py-M2Crypto \
-		security/py-crypto \
-		textproc/py-MarkupSafe \
-		textproc/py-yaml \
-		www/py-jinja2
+MODULES =		lang/python
+RUN_DEPENDS =		net/py-libcloud \
+			net/py-msgpack \
+			net/py-zmq \
+			security/py-M2Crypto \
+			security/py-crypto \
+			textproc/py-MarkupSafe \
+			textproc/py-yaml \
+			www/py-jinja2
 
-TEST_DEPENDS =	devel/py-pip \
-		sysutils/salt-testing
+TEST_DEPENDS =		devel/py-pip \
+			sysutils/salt-testing
 
 pre-configure:
 	perl -pi -e 's,share/man,man,g' ${WRKSRC}/setup.py
