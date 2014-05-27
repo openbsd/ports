@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/30 13:09:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/05/27 18:08:27 rpointel Exp $
 
 COMMENT=	cairo bindings for Python
 
@@ -32,6 +32,12 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		graphics/cairo
 
 TEST_DEPENDS=devel/py-test${MODPY_FLAVOR}
+
+# du to the fact that waf extract embedded bzip2 tarball unpacked at runtime.
+# we need to call waf to create files before patching files.
+post-extract:
+	cd ${WRKSRC} && ${MODPY_BIN} ./waf --help 1>&2 > /dev/null
+	cd ${WRKSRC} && ln -s .waf3-* waf3
 
 do-configure:
 	cd ${WRKSRC} && env PYTHON=${MODPY_BIN} \

@@ -1,0 +1,19 @@
+$OpenBSD: patch-_waf3-waflib_Tools_python_py,v 1.1 2014/05/27 18:08:27 rpointel Exp $
+--- waf3/waflib/Tools/python.py.orig	Wed Mar 30 08:17:51 2011
++++ waf3/waflib/Tools/python.py	Sun May 18 09:48:35 2014
+@@ -169,7 +169,7 @@ def check_python_headers(conf):
+ 		conf.find_program('python-config-%s'%num,var='PYTHON_CONFIG',mandatory=False)
+ 	includes=[]
+ 	if conf.env.PYTHON_CONFIG:
+-		for incstr in conf.cmd_and_log(conf.env.PYTHON+[conf.env.PYTHON_CONFIG,'--includes']).strip().split():
++		for incstr in conf.cmd_and_log([conf.env.PYTHON_CONFIG,'--includes']).strip().split():
+ 			if(incstr.startswith('-I')or incstr.startswith('/I')):
+ 				incstr=incstr[2:]
+ 			if incstr not in includes:
+@@ -278,4 +278,4 @@ feature('pyembed')(init_pyembed)
+ conf(get_python_variables)
+ conf(check_python_headers)
+ conf(check_python_version)
+-conf(check_python_module)
+\ No newline at end of file
++conf(check_python_module)
