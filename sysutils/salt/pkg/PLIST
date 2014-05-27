@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/05/27 14:12:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/05/27 14:51:52 ajacoutot Exp $
 @newgroup _salt:722
 @newuser _salt-master:722:722:daemon:Salt master Daemon:/nonexistent:/sbin/nologin
-@extraunexec rm -rf ${SYSCONFDIR}/salt/pki
+@extraunexec rm -rf ${SYSCONFDIR}/salt/{master.d,minion.d,minion_id,pki}
 @extraunexec rm -rf /var/cache/salt
 @extraunexec rm -rf /var/log/salt
 bin/salt
