@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/27 10:13:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/05/27 14:12:43 ajacoutot Exp $
 @newgroup _salt:722
-@newuser _salt-master:722:722:daemon:Salt-Master Daemon:/nonexistent:/sbin/nologin
-@owner _salt-master
-@group _salt
-@sample /var/cache/salt/
-@sample /var/log/salt/
-@owner
-@group
+@newuser _salt-master:722:722:daemon:Salt master Daemon:/nonexistent:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/salt/pki
+@extraunexec rm -rf /var/cache/salt
+@extraunexec rm -rf /var/log/salt
 bin/salt
 bin/salt-call
 bin/salt-cloud
@@ -1120,14 +1117,20 @@ lib/python${MODPY_VERSION}/site-packages/salt/wheel/pillar_roots.pyc
 @man man/man1/salt-syndic.1
 @man man/man1/salt.1
 @man man/man7/salt.7
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/salt/
 @sample ${SYSCONFDIR}/salt/
-share/examples/salt/master.sample
+share/examples/salt/cloud
+@sample ${SYSCONFDIR}/salt/cloud
+share/examples/salt/cloud.profiles
+@sample ${SYSCONFDIR}/salt/cloud.profiles
+share/examples/salt/cloud.providers
+@sample ${SYSCONFDIR}/salt/cloud.providers
+share/examples/salt/master
 @sample ${SYSCONFDIR}/salt/master
-share/examples/salt/minion.sample
+share/examples/salt/minion
 @sample ${SYSCONFDIR}/salt/minion
-@sample ${SYSCONFDIR}/salt/master.d/
-@sample ${SYSCONFDIR}/salt/minion.d/
+share/examples/salt/roster
+@sample ${SYSCONFDIR}/salt/roster
 @rcscript ${RCDIR}/salt_master
 @rcscript ${RCDIR}/salt_minion
+@rcscript ${RCDIR}/salt_syndic

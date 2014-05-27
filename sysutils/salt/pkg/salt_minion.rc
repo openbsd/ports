@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: salt_minion.rc,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
+# $OpenBSD: salt_minion.rc,v 1.2 2014/05/27 14:12:43 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/bin/salt-minion"
-daemon_flags="-d --pid-file /var/run/salt/minion.pid"
+daemon="${TRUEPREFIX}/bin/salt-minion -d"
 
 . /etc/rc.d/rc.subr
 

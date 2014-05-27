@@ -1,15 +1,6 @@
-$OpenBSD: patch-conf_master,v 1.2 2014/05/27 10:13:43 ajacoutot Exp $
+$OpenBSD: patch-conf_master,v 1.3 2014/05/27 14:12:43 ajacoutot Exp $
 --- conf/master.orig	Mon May  5 18:47:41 2014
-+++ conf/master	Tue May 27 10:20:55 2014
-@@ -11,7 +11,7 @@
- #default_include: master.d/*.conf
- 
- # The address of the interface to bind to
--#interface: 0.0.0.0
-+interface: 127.0.0.1
- 
- # Whether the master should listen for IPv6 connections. If this is set to True,
- # the interface option must be adjusted too (for example: "interface: '::'")
++++ conf/master	Tue May 27 15:52:13 2014
 @@ -24,7 +24,7 @@
  # permissions to allow the specified user to run the master. The exception is
  # the job cache, which must be deleted if this user is changed.  If the
