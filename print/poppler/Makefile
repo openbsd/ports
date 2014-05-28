@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2014/04/28 16:48:27 kili Exp $
+# $OpenBSD: Makefile,v 1.83 2014/05/28 19:45:53 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.26.0
+V=		0.26.1
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -14,7 +14,7 @@ PKGNAME-qt=	poppler-qt-$V
 PKGNAME-qt4=	poppler-qt4-$V
 OLDSHIT =	poppler-0.16.7
 
-SHARED_LIBS +=	poppler              21.0     # 46.0
+SHARED_LIBS +=	poppler              21.1     # 46.0
 SHARED_LIBS +=	poppler-glib         13.1     # 14.0
 SHARED_LIBS +=	poppler-qt           12.0     # 3.0
 SHARED_LIBS +=	poppler-qt4          13.1     # 8.0
@@ -84,9 +84,10 @@ WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		${MODGETTEXT_WANTLIB}
 WANTLIB-qt=	${cWANTLIB} lcms2 openjpeg poppler png pthread-stubs \
 		${MODQT3_WANTLIB}
-WANTLIB-qt4=	${cWANTLIB} ${MODQT4_WANTLIB} ICE QtGui QtXml SM X11 \
-		Xext Xi Xinerama Xrender lcms2 openjpeg png poppler \
-		pthread-stubs QtCore QtGui QtXml
+WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
+		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
+		gobject-2.0 gthread-2.0 iconv intl lcms2 openjpeg \
+		png poppler pcre pthread-stubs xcb
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 		png pthread-stubs xcb xcb-render xcb-shm openjpeg \
 		poppler z ${cWANTLIB}
