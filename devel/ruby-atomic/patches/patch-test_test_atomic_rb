@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_test_atomic_rb,v 1.1.1.1 2014/05/28 21:59:01 jeremy Exp $
+--- test/test_atomic.rb.orig	Mon Mar 17 06:11:40 2014
++++ test/test_atomic.rb	Tue May 27 12:39:01 2014
+@@ -10,10 +10,10 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-require 'minitest/autorun'
++require 'test/unit'
+ require 'atomic'
+ 
+-class TestAtomic < MiniTest::Test
++class TestAtomic < Test::Unit::TestCase
+   def test_construct
+     atomic = Atomic.new
+     assert_equal nil, atomic.value
