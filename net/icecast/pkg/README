@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/07/08 02:14:58 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2014/05/28 13:37:25 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -64,5 +64,7 @@ Random hints:
      that dumb or broken players can send the stream to the appropriate
      decoder.
 
-   * The default "bind to any address" only opens an IPv6 socket. 
-     Specify a specific address or use 0.0.0.0 to accept any IPv4 address.
+   * The default configuration is setup to bind to 127.0.0.1 only.
+     Changing this to "bind to any address" will use IPv6 only; to
+     listen to requests on any IPv4 address, you must bind to 0.0.0.0.
+     As mentioned earlier, don't forget to change the default password!

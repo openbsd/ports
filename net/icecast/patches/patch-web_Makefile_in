@@ -1,10 +1,10 @@
-$OpenBSD: patch-web_Makefile_in,v 1.3 2012/09/01 17:35:54 gonzalo Exp $
---- web/Makefile.in.orig	Mon Jun 11 14:03:14 2012
-+++ web/Makefile.in	Mon Aug 13 13:35:19 2012
-@@ -33,7 +33,7 @@ am__make_dryrun = \
-     esac; \
-     test $$am__dry = yes; \
-   }
+$OpenBSD: patch-web_Makefile_in,v 1.4 2014/05/28 13:37:25 gonzalo Exp $
+--- web/Makefile.in.orig	Tue May 13 08:42:42 2014
++++ web/Makefile.in	Tue May 13 08:47:55 2014
+@@ -60,7 +60,7 @@ am__make_running_with_option = \
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/examples/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@

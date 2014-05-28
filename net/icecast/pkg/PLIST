@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/09/01 17:35:54 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/05/28 13:37:25 gonzalo Exp $
 @newgroup _icecast:611
 @newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
 @bin bin/icecast
@@ -6,13 +6,13 @@ share/doc/icecast/
 share/doc/icecast/AUTHORS
 share/doc/icecast/NEWS
 share/doc/icecast/icecast2_admin.html
+share/doc/icecast/icecast2_auth.html
 share/doc/icecast/icecast2_basicsetup.html
 share/doc/icecast/icecast2_changes.html
 share/doc/icecast/icecast2_config_file.html
 share/doc/icecast/icecast2_faq.html
 share/doc/icecast/icecast2_glossary.html
 share/doc/icecast/icecast2_introduction.html
-share/doc/icecast/icecast2_listenerauth.html
 share/doc/icecast/icecast2_relay.html
 share/doc/icecast/icecast2_stats.html
 share/doc/icecast/icecast2_win32.html
@@ -59,26 +59,20 @@ share/examples/icecast/web/
 @sample /var/icecast/web/
 share/examples/icecast/web/auth.xsl
 @sample /var/icecast/web/auth.xsl
-share/examples/icecast/web/corner_bottomleft.jpg
-@sample /var/icecast/web/corner_bottomleft.jpg
-share/examples/icecast/web/corner_bottomright.jpg
-@sample /var/icecast/web/corner_bottomright.jpg
-share/examples/icecast/web/corner_topleft.jpg
-@sample /var/icecast/web/corner_topleft.jpg
-share/examples/icecast/web/corner_topright.jpg
-@sample /var/icecast/web/corner_topright.jpg
 share/examples/icecast/web/icecast.png
 @sample /var/icecast/web/icecast.png
-share/examples/icecast/web/key.gif
-@sample /var/icecast/web/key.gif
 share/examples/icecast/web/key.png
 @sample /var/icecast/web/key.png
 share/examples/icecast/web/server_version.xsl
 @sample /var/icecast/web/server_version.xsl
+share/examples/icecast/web/status-json.xsl
+@sample /var/icecast/web/status-json.xsl
+share/examples/icecast/web/xml2json.xslt
+@sample /var/icecast/web/xml2json.xslt
+@owner _icecast
+@group _icecast
 share/examples/icecast/web/status.xsl
 @sample /var/icecast/web/status.xsl
-share/examples/icecast/web/status2.xsl
-@sample /var/icecast/web/status2.xsl
 share/examples/icecast/web/style.css
 @sample /var/icecast/web/style.css
 share/examples/icecast/web/tunein.png
