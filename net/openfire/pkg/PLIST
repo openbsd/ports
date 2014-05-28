@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/16 01:34:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/05/28 11:20:17 sthen Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @extraunexec rm -rf %D/openfire/conf/*
@@ -414,6 +414,14 @@ share/examples/openfire/security/
 @owner root
 @group _openfire
 @sample openfire/resources/security/
+@mode
+@owner
+@group
+share/examples/openfire/security.xml
+@mode 660
+@owner root
+@group _openfire
+@sample openfire/conf/security.xml
 @mode
 @owner
 @group

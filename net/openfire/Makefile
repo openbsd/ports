@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.30 2014/03/16 01:34:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2014/05/28 11:20:17 sthen Exp $
 
 COMMENT=	XMPP real time collaboration server
-V=		3.9.1
+V=		3.9.3
 DISTNAME=	openfire_src_${V:S/./_/g}
 PKGNAME=	openfire-$V
 CATEGORIES=	net
@@ -44,8 +44,11 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/documentation/docs/database.html \
 		${PREFIX}/share/doc/openfire
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/security
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/
 	${INSTALL_DATA} ${WRKDIST}/target/openfire/conf/openfire.xml \
-		${PREFIX}/share/examples/openfire
+		${PREFIX}/share/examples/openfire/
+	${INSTALL_DATA} ${WRKDIST}/target/openfire/conf/security.xml \
+		${PREFIX}/share/examples/openfire/
 	${INSTALL_DATA} ${WRKBUILD}/security/* \
 		${PREFIX}/share/examples/openfire/security
 
