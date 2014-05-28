@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/28 22:00:15 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/GNUmakefile
+${GEM_LIB}/gems/${DISTNAME}/History.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/fast_xs.so
+${GEM_LIB}/gems/${DISTNAME}/lib/fast_xs_extra.so
+${GEM_LIB}/gems/${DISTNAME}/lib/fast_xs_monkey_patcher.rb
+${GEM_LIB}/gems/${DISTNAME}/setup.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_cgi_class_overrides.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_erb_util_module_overrides.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_mongrel_overrides.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_rack_util_overrides.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_xml_escaping.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

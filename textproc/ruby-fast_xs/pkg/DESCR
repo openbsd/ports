@@ -1,0 +1,5 @@
+fast_xs provides C extensions for escaping text.
+
+fast_xs_extra is an experimental extension that can be used with
+fast_xs_monkey_patcher to monkey patch methods in common libraries:
+CGI, ERB::Util, Rack::Utils, Mongrel.
