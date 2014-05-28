@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.177 2014/04/28 13:37:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.178 2014/05/28 08:04:47 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		1.7.2
+VERSION=		1.7.3
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
-
-REVISION-main=		1
-REVISION-libs=		0
 
 CATEGORIES=		print sysutils
 

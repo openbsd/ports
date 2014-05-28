@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2014/04/10 17:15:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2014/05/28 08:04:47 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -736,6 +736,75 @@ share/cups/templates/printer-stop.tmpl
 share/cups/templates/printer.tmpl
 share/cups/templates/printers-header.tmpl
 share/cups/templates/printers.tmpl
+share/cups/templates/pt_BR/
+share/cups/templates/pt_BR/add-class.tmpl
+share/cups/templates/pt_BR/add-printer.tmpl
+share/cups/templates/pt_BR/add-rss-subscription.tmpl
+share/cups/templates/pt_BR/admin.tmpl
+share/cups/templates/pt_BR/choose-device.tmpl
+share/cups/templates/pt_BR/choose-make.tmpl
+share/cups/templates/pt_BR/choose-model.tmpl
+share/cups/templates/pt_BR/choose-serial.tmpl
+share/cups/templates/pt_BR/choose-uri.tmpl
+share/cups/templates/pt_BR/class-added.tmpl
+share/cups/templates/pt_BR/class-confirm.tmpl
+share/cups/templates/pt_BR/class-deleted.tmpl
+share/cups/templates/pt_BR/class-jobs-header.tmpl
+share/cups/templates/pt_BR/class-modified.tmpl
+share/cups/templates/pt_BR/class.tmpl
+share/cups/templates/pt_BR/classes-header.tmpl
+share/cups/templates/pt_BR/classes.tmpl
+share/cups/templates/pt_BR/command.tmpl
+share/cups/templates/pt_BR/edit-config.tmpl
+share/cups/templates/pt_BR/error-op.tmpl
+share/cups/templates/pt_BR/error.tmpl
+share/cups/templates/pt_BR/header.tmpl
+share/cups/templates/pt_BR/help-header.tmpl
+share/cups/templates/pt_BR/job-cancel.tmpl
+share/cups/templates/pt_BR/job-hold.tmpl
+share/cups/templates/pt_BR/job-move.tmpl
+share/cups/templates/pt_BR/job-moved.tmpl
+share/cups/templates/pt_BR/job-release.tmpl
+share/cups/templates/pt_BR/job-restart.tmpl
+share/cups/templates/pt_BR/jobs-header.tmpl
+share/cups/templates/pt_BR/jobs.tmpl
+share/cups/templates/pt_BR/list-available-printers.tmpl
+share/cups/templates/pt_BR/modify-class.tmpl
+share/cups/templates/pt_BR/modify-printer.tmpl
+share/cups/templates/pt_BR/norestart.tmpl
+share/cups/templates/pt_BR/option-boolean.tmpl
+share/cups/templates/pt_BR/option-conflict.tmpl
+share/cups/templates/pt_BR/option-header.tmpl
+share/cups/templates/pt_BR/option-pickmany.tmpl
+share/cups/templates/pt_BR/option-pickone.tmpl
+share/cups/templates/pt_BR/option-trailer.tmpl
+share/cups/templates/pt_BR/pager.tmpl
+share/cups/templates/pt_BR/printer-accept.tmpl
+share/cups/templates/pt_BR/printer-added.tmpl
+share/cups/templates/pt_BR/printer-configured.tmpl
+share/cups/templates/pt_BR/printer-confirm.tmpl
+share/cups/templates/pt_BR/printer-default.tmpl
+share/cups/templates/pt_BR/printer-deleted.tmpl
+share/cups/templates/pt_BR/printer-jobs-header.tmpl
+share/cups/templates/pt_BR/printer-modified.tmpl
+share/cups/templates/pt_BR/printer-purge.tmpl
+share/cups/templates/pt_BR/printer-reject.tmpl
+share/cups/templates/pt_BR/printer-start.tmpl
+share/cups/templates/pt_BR/printer-stop.tmpl
+share/cups/templates/pt_BR/printer.tmpl
+share/cups/templates/pt_BR/printers-header.tmpl
+share/cups/templates/pt_BR/printers.tmpl
+share/cups/templates/pt_BR/restart.tmpl
+share/cups/templates/pt_BR/samba-export.tmpl
+share/cups/templates/pt_BR/samba-exported.tmpl
+share/cups/templates/pt_BR/search.tmpl
+share/cups/templates/pt_BR/set-printer-options-header.tmpl
+share/cups/templates/pt_BR/set-printer-options-trailer.tmpl
+share/cups/templates/pt_BR/subscription-added.tmpl
+share/cups/templates/pt_BR/subscription-canceled.tmpl
+share/cups/templates/pt_BR/test-page.tmpl
+share/cups/templates/pt_BR/trailer.tmpl
+share/cups/templates/pt_BR/users.tmpl
 share/cups/templates/restart.tmpl
 share/cups/templates/ru/
 share/cups/templates/ru/add-class.tmpl
@@ -939,6 +1008,8 @@ share/doc/cups/it/
 share/doc/cups/it/index.html
 share/doc/cups/ja/
 share/doc/cups/ja/index.html
+share/doc/cups/pt_BR/
+share/doc/cups/pt_BR/index.html
 share/doc/cups/robots.txt
 share/doc/cups/ru/
 share/doc/cups/ru/index.html
@@ -992,6 +1063,7 @@ share/locale/es/cups_es.po
 share/locale/fr/cups_fr.po
 share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
+share/locale/pt_BR/cups_pt_BR.po
 share/locale/ru/cups_ru.po
 @extraunexec rm -rf /var/cache/cups
 @extraunexec rm -rf /var/spool/cups
