@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1228 2014/05/12 16:21:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.1229 2014/05/28 22:17:46 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1268,6 +1268,10 @@
      SUBDIR += rebar
      SUBDIR += remake
      SUBDIR += rlog
+     SUBDIR += ruby-atomic,ruby18
+     SUBDIR += ruby-atomic,ruby19
+     SUBDIR += ruby-atomic,ruby20
+     SUBDIR += ruby-atomic,ruby21
      SUBDIR += ruby-abstract
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-bacon
