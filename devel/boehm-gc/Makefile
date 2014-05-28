@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2014/03/19 13:28:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2014/05/28 04:53:55 landry Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -7,7 +7,8 @@ VERSION=	7.2d
 DISTNAME=	gc-${VERSION}
 PKGNAME-atomic=	libatomic_ops-${VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
-REVISION-main=	0
+REVISION-atomic=0
+REVISION-main=	1
 
 WRKDIST=	${WRKDIR}/gc-7.2
 MULTI_PACKAGES=	-main -atomic
@@ -20,7 +21,7 @@ CATEGORIES=	devel
 
 MASTER_SITES=	${HOMEPAGE}gc_source/
 
-HOMEPAGE=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/
+HOMEPAGE=	http://hboehm.info/gc/
 
 # currently works only on most ELF archs
 NOT_FOR_ARCHS=	m88k vax mips64 mips64el
