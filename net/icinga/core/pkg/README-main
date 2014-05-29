@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.20 2014/05/29 00:09:04 sthen Exp $
+$OpenBSD: README-main,v 1.21 2014/05/29 00:19:54 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -70,6 +70,11 @@ jail and symbolic links created.
    mv /var/log/icinga ${PREFIX-cgi}/var/log/
    ln -s ${PREFIX-cgi}/var/log/icinga /var/log
 
+To display times in your local timezone, you will also need to provide
+a suitable /var/www/etc/localtime; due to the chroot, a symbolic link cannot
+be used here, instead the file can be copied:
+
+   cp /usr/share/zoneinfo/Antarctica/South_Pole ${PREFIX-cgi}/etc/localtime
 
 Web User-Interfaces
 ===================
