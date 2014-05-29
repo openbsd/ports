@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.18 2014/05/14 10:32:21 sthen Exp $
+$OpenBSD: README-main,v 1.19 2014/05/29 00:05:48 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -166,14 +166,12 @@ Two web-based user interfaces are available for Icinga:
 
    2.6) To enable icinga-web, link the provided httpd.conf snippet:
 
-      $ sudo ln -s /var/www/conf/modules.sample/icinga-web.conf \
-         /var/www/conf/modules
+      $ sudo ln -s ../modules.sample/icinga-web.conf /var/www/conf/modules
 
-   2.7) Currently, icinga-web is not tested to work with the httpd
-   chroot environment. So before you start httpd, ensure that you've
-   added "-u" to httpd_flags in /etc/rc.d/httpd.
-
-      $ sudo /etc/rc.d/httpd start
+   2.7) Currently, icinga-web is not tested to work in a web server chroot
+   environment. You may have success by symlinking /var/www/var/www to
+   /var/www (mkdir -p /var/www/var && ln -s ../.. /var/www/var/www).
+   This topic will be revisited in a future version of this package.
 
    You should then be able to access the web interface at
 
