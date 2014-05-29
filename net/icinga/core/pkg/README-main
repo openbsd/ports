@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.19 2014/05/29 00:05:48 sthen Exp $
+$OpenBSD: README-main,v 1.20 2014/05/29 00:09:04 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -74,7 +74,9 @@ jail and symbolic links created.
 Web User-Interfaces
 ===================
 
-Two web-based user interfaces are available for Icinga:
+Two web-based user interfaces are available for Icinga. They are provided
+in their own packages; one or both must be installed separately ("pkg_add
+icinga-cgi" or "pkg_add icinga-web").
 
 1) icinga-cgi: the classic (but improved) Nagios-style interface
 
