@@ -1,6 +1,6 @@
-# $OpenBSD: clang.port.mk,v 1.8 2014/04/18 09:30:48 brad Exp $
+# $OpenBSD: clang.port.mk,v 1.9 2014/05/29 00:28:33 brad Exp $
 
-MODCLANG_VERSION=	3.5.20140228
+MODCLANG_VERSION=	3.5.20140228p2
 
 MODCLANG_ARCHS ?=
 MODCLANG_LANGS ?=
