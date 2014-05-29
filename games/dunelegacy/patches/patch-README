@@ -1,0 +1,17 @@
+$OpenBSD: patch-README,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Additional construction yard and factory keybindings.
+From upstream: 319cb3491ffbdfb9763fd8c3b9a71319d5595dec
+
+--- README.orig	Sun Feb 17 00:11:56 2013
++++ README	Mon May 26 08:43:56 2014
+@@ -79,6 +79,9 @@ General Keyboard Shortcuts:
+  Key F12						-	Toggle display of FPS
+  Key Up, Down, Left or Right	-	Move on the map
+ 
++ Key H							-	Cycle through construction yards
++ Key F							-	Cycle through factories/other builders
++
+  Key F5							-	Skip 30 seconds (only in singleplayer)
+  Key F6							-	Skip 2 minutes (only in singleplayer)
+  Key -							-	Decrease gamespeed (only in singleplayer)

@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+@bin bin/dunelegacy
+share/applications/dunelegacy.desktop
+share/doc/dunelegacy/
+share/doc/dunelegacy/README
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/dunelegacy/
+share/dunelegacy/Dune2-Versions.txt
+share/dunelegacy/LEGACY.PAK
+share/dunelegacy/OPENSD2.PAK
+share/dunelegacy/locale/
+share/dunelegacy/locale/English.en.po
+share/dunelegacy/locale/French.fr.po
+share/dunelegacy/locale/German.de.po
+share/dunelegacy/locale/dunelegacy.pot
+share/dunelegacy/maps/
+share/dunelegacy/maps/multiplayer/
+share/dunelegacy/maps/multiplayer/2P - 32x32 - X-Factor.ini
+share/dunelegacy/maps/multiplayer/2P - 64x32 - Cliffs Of Rene.ini
+share/dunelegacy/maps/multiplayer/2P - 64x64 - Bottle Neck.ini
+share/dunelegacy/maps/multiplayer/2P - 64x64 - Broken Mountains.ini
+share/dunelegacy/maps/multiplayer/2P - 64x64 - David's Pass.ini
+share/dunelegacy/maps/multiplayer/2P - 64x64 - Face Off.ini
+share/dunelegacy/maps/multiplayer/2P - 64x64 - Great Divide.ini
+share/dunelegacy/maps/multiplayer/2P - 64x64 - Sanctuarys.ini
+share/dunelegacy/maps/multiplayer/4P - 128x128 - The Sardaukar Outpost.ini
+share/dunelegacy/maps/multiplayer/4P - 64x64 - Clear Path.ini
+share/dunelegacy/maps/multiplayer/4P - 64x64 - Four Chambers.ini
+share/dunelegacy/maps/multiplayer/4P - 64x64 - Four Courners.ini
+share/dunelegacy/maps/multiplayer/4P - 64x64 - Sietch Stefan.ini
+share/dunelegacy/maps/multiplayer/4P - 64x64 - Vast Armies Have Arrived.ini
+share/dunelegacy/maps/singleplayer/
+share/dunelegacy/maps/singleplayer/2P - 32x128 - Canyon.ini
+share/dunelegacy/maps/singleplayer/2P - 64x64 - Duality.ini
+share/dunelegacy/maps/singleplayer/2P - 64x64 - North vs. South.ini
+share/dunelegacy/maps/singleplayer/2P - 64x64 - Twin Fists.ini
+share/dunelegacy/maps/singleplayer/3P - 64x32 - Middle Man.ini
+share/dunelegacy/maps/singleplayer/5P - 128x128 - All against Atreides.ini
+share/pixmaps/
+share/pixmaps/dunelegacy.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

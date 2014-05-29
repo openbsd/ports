@@ -1,0 +1,35 @@
+$OpenBSD: patch-include_Game_h,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Additional construction yard and factory keybindings.
+From upstream: 319cb3491ffbdfb9763fd8c3b9a71319d5595dec
+
+--- include/Game.h.orig	Sat Feb 16 16:46:31 2013
++++ include/Game.h	Mon May 26 08:43:56 2014
+@@ -288,7 +288,12 @@ class Game (public)
+ 	/**
+         Marks that the selection changed (and must be retransmitted to other players in multiplayer games)
+ 	*/
+-	inline void selectionChanged() { bSelectionChanged = true; };
++	inline void selectionChanged() {
++        bSelectionChanged = true;
++        if(pInterface) {
++            pInterface->updateObjectInterface();
++        }
++    };
+ 
+ 
+ 	void onReceiveSelectionList(std::string name, std::set<Uint32> newSelectionList, int groupListIndex);
+@@ -465,6 +470,13 @@ class Game (public)
+         \return true if action click is possible
+     */
+     bool handleSelectedObjectsActionClick(int xPos, int yPos);
++
++
++    /**
++        Selects the next structure of any of the types specified in itemIDs. If none of this type is currently selected the first one is selected.
++        \param  itemIDs  the ids of the structures to select
++    */
++    void selectNextStructureOfType(const std::set<Uint32>& itemIDs);
+ 
+ public:
+     enum {

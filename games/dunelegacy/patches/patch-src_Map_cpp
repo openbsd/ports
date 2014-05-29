@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Map_cpp,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Additional construction yard and factory keybindings.
+From upstream: 319cb3491ffbdfb9763fd8c3b9a71319d5595dec
+
+--- src/Map.cpp.orig	Sat Feb 16 16:36:18 2013
++++ src/Map.cpp	Mon May 26 08:43:56 2014
+@@ -539,10 +539,6 @@ void Map::selectObjects(int houseID, int x1, int y1, i
+ 	} else if (lastSelectedObject != NULL) {
+ 		lastSelectedObject->playSelectSound();	//we only want one unit responding
+ 	}
+-
+-/*
+-	if ((selectedList->getNumElements() == 1) && lastSelectedObject && lastSelectedObject->isAStructure() && ((StructureBase*)lastSelectedObject)->isABuilder())
+-		((BuilderBase*)lastSelectedObject)->checkBuildList();*/
+ }
+ 
+ 

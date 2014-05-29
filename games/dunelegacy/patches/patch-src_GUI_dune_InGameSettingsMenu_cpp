@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_GUI_dune_InGameSettingsMenu_cpp,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Increase maximum scroll speed.
+From upstream: 4907d69135ac5bd3d850b449799e438d4290a3c2
+
+--- src/GUI/dune/InGameSettingsMenu.cpp.orig	Mon Feb 25 22:24:01 2013
++++ src/GUI/dune/InGameSettingsMenu.cpp	Mon May 26 08:54:27 2014
+@@ -122,7 +122,7 @@ void InGameSettingsMenu::init() {
+ 	volumeBar.setProgress((100.0*volume)/MIX_MAX_VOLUME);
+ 
+     scrollSpeed = screenborder->getScrollSpeed();
+-	scrollSpeedBar.setProgress((scrollSpeed-2.0)*5.0);
++	scrollSpeedBar.setProgress((scrollSpeed-2.0)*2.0);
+ }
+ 
+ bool InGameSettingsMenu::handleKeyPress(SDL_KeyboardEvent& key) {
+@@ -199,15 +199,15 @@ void InGameSettingsMenu::onVolumeMinus() {
+ }
+ 
+ void InGameSettingsMenu::onScrollSpeedPlus() {
+-    if(scrollSpeed < 21) {
++    if(scrollSpeed < 51) {
+         scrollSpeed += 2;
+-        scrollSpeedBar.setProgress((scrollSpeed-2)*5.0);
++        scrollSpeedBar.setProgress((scrollSpeed-2)*2.0);
+     }
+ }
+ 
+ void InGameSettingsMenu::onScrollSpeedMinus() {
+     if(scrollSpeed > 3) {
+         scrollSpeed -= 2;
+-        scrollSpeedBar.setProgress((scrollSpeed-2)*5.0);
++        scrollSpeedBar.setProgress((scrollSpeed-2)*2.0);
+     }
+ }

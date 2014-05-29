@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_FileClasses_TextManager_cpp,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Fix mentat text using wrong house.
+From upstream: 9924f7676a40f99af3890fe05313aa1e25f1eb9e
+
+--- src/FileClasses/TextManager.cpp.orig	Mon Jan  7 19:24:09 2013
++++ src/FileClasses/TextManager.cpp	Mon May 26 08:49:10 2014
+@@ -55,9 +55,9 @@ void TextManager::loadData() {
+ 
+     // load all mentat texts
+ 	SDL_RWops* mentat_lng[3];
+-	mentat_lng[0] = pFileManager->openFile("MENTATH." + _("LanguageFileExtension"));
+-	mentat_lng[1] = pFileManager->openFile("MENTATA." + _("LanguageFileExtension"));
+-	mentat_lng[2] = pFileManager->openFile("MENTATO." + _("LanguageFileExtension"));
++	mentat_lng[HOUSE_HARKONNEN] = pFileManager->openFile("MENTATH." + _("LanguageFileExtension"));
++	mentat_lng[HOUSE_ATREIDES] = pFileManager->openFile("MENTATA." + _("LanguageFileExtension"));
++	mentat_lng[HOUSE_ORDOS] = pFileManager->openFile("MENTATO." + _("LanguageFileExtension"));
+ 
+ 	for(int i=0;i<3;i++) {
+ 		if(mentat_lng[i] == NULL) {
+@@ -497,27 +497,27 @@ std::vector<MentatTextFile::MentatEntry> TextManager::
+         case HOUSE_HARKONNEN:
+         case HOUSE_SARDAUKAR:
+         default: {
+-            for(unsigned int i = 0; i <  mentatStrings[2]->getNumEntries(); i++) {
+-                if(mentatStrings[2]->getMentatEntry(i).techLevel <= techLevel) {
+-                    mentatEntries.push_back(mentatStrings[2]->getMentatEntry(i));
++            for(unsigned int i = 0; i <  mentatStrings[HOUSE_HARKONNEN]->getNumEntries(); i++) {
++                if(mentatStrings[HOUSE_HARKONNEN]->getMentatEntry(i).techLevel <= techLevel) {
++                    mentatEntries.push_back(mentatStrings[HOUSE_HARKONNEN]->getMentatEntry(i));
+                 }
+             }
+         } break;
+ 
+         case HOUSE_ATREIDES:
+         case HOUSE_FREMEN: {
+-            for(unsigned int i = 0; i <  mentatStrings[0]->getNumEntries(); i++) {
+-                if(mentatStrings[0]->getMentatEntry(i).techLevel <= techLevel) {
+-                    mentatEntries.push_back(mentatStrings[0]->getMentatEntry(i));
++            for(unsigned int i = 0; i <  mentatStrings[HOUSE_ATREIDES]->getNumEntries(); i++) {
++                if(mentatStrings[HOUSE_ATREIDES]->getMentatEntry(i).techLevel <= techLevel) {
++                    mentatEntries.push_back(mentatStrings[HOUSE_ATREIDES]->getMentatEntry(i));
+                 }
+             }
+         } break;
+ 
+         case HOUSE_ORDOS:
+         case HOUSE_MERCENARY: {
+-            for(unsigned int i = 0; i <  mentatStrings[1]->getNumEntries(); i++) {
+-                if(mentatStrings[1]->getMentatEntry(i).techLevel <= techLevel) {
+-                    mentatEntries.push_back(mentatStrings[1]->getMentatEntry(i));
++            for(unsigned int i = 0; i <  mentatStrings[HOUSE_ORDOS]->getNumEntries(); i++) {
++                if(mentatStrings[HOUSE_ORDOS]->getMentatEntry(i).techLevel <= techLevel) {
++                    mentatEntries.push_back(mentatStrings[HOUSE_ORDOS]->getMentatEntry(i));
+                 }
+             }
+         } break;

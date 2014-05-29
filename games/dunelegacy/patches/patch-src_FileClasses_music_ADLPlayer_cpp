@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_FileClasses_music_ADLPlayer_cpp,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Fix a sound-related crash.
+From upstream: 5f744345ad903517ba06259c2e5a2e38aa7ec6f4
+
+--- src/FileClasses/music/ADLPlayer.cpp.orig	Mon Feb 25 22:43:50 2013
++++ src/FileClasses/music/ADLPlayer.cpp	Mon May 26 08:52:44 2014
+@@ -196,6 +196,7 @@ void ADLPlayer::changeMusic(MUSICTYPE musicType)
+             printf("Unable to load %s!\n",filename.c_str());
+ 	    } else {
+             pSoundAdlibPC = new SoundAdlibPC(rwop);
++            pSoundAdlibPC->setVolume(musicVolume);
+ 
+             SDL_RWclose(rwop);
+ 
+@@ -243,5 +244,7 @@ void ADLPlayer::toggleSound()
+ 
+ void ADLPlayer::setMusicVolume(int newVolume) {
+     MusicPlayer::setMusicVolume(newVolume);
+-    pSoundAdlibPC->setVolume(newVolume);
++    if(musicOn) {
++        pSoundAdlibPC->setVolume(newVolume);
++    }
+ }

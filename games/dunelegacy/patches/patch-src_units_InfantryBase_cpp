@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_units_InfantryBase_cpp,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Additional construction yard and factory keybindings.
+From upstream: 319cb3491ffbdfb9763fd8c3b9a71319d5595dec
+
+--- src/units/InfantryBase.cpp.orig	Fri Jan  4 19:47:17 2013
++++ src/units/InfantryBase.cpp	Mon May 26 08:43:56 2014
+@@ -271,7 +271,6 @@ void InfantryBase::checkPos() {
+                         pNewStructure->setSelected(true);
+                         currentGame->getSelectedList().insert(pNewStructure->getObjectID());
+                         currentGame->selectionChanged();
+-                        currentGame->getGameInterface().updateObjectInterface();
+                     }
+ 
+                     if(isSelectedByOtherPlayer == true) {

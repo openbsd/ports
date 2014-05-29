@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+
+Use net/enet instead of embedded enet.
+
+--- src/Makefile.in.orig	Mon Feb 25 23:03:07 2013
++++ src/Makefile.in	Sun May 25 11:42:01 2014
+@@ -63,10 +63,8 @@ am_dunelegacy_OBJECTS = AStarSearch.$(OBJEXT) Bullet.$
+ 	WSAVideoEvent.$(OBJEXT) FadeOutVideoEvent.$(OBJEXT) \
+ 	FadeInVideoEvent.$(OBJEXT) HoldPictureVideoEvent.$(OBJEXT) \
+ 	CrossBlendVideoEvent.$(OBJEXT) TextEvent.$(OBJEXT) \
+-	CutSceneTrigger.$(OBJEXT) callbacks.$(OBJEXT) \
+-	compress.$(OBJEXT) host.$(OBJEXT) list.$(OBJEXT) \
+-	packet.$(OBJEXT) peer.$(OBJEXT) protocol.$(OBJEXT) \
+-	unix.$(OBJEXT) win32.$(OBJEXT) draw_util.$(OBJEXT) \
++	CutSceneTrigger.$(OBJEXT)  \
++	draw_util.$(OBJEXT) \
+ 	FileSystem.$(OBJEXT) fnkdat.$(OBJEXT) IFileStream.$(OBJEXT) \
+ 	md5.$(OBJEXT) OFileStream.$(OBJEXT) sound_util.$(OBJEXT) \
+ 	strictmath.$(OBJEXT) string_util.$(OBJEXT) Scaler.$(OBJEXT) \
+@@ -128,7 +126,7 @@ am_dunelegacy_OBJECTS = AStarSearch.$(OBJEXT) Bullet.$
+ 	Soldier.$(OBJEXT) SonicTank.$(OBJEXT) Tank.$(OBJEXT) \
+ 	Trike.$(OBJEXT) Trooper.$(OBJEXT)
+ dunelegacy_OBJECTS = $(am_dunelegacy_OBJECTS)
+-dunelegacy_LDADD = $(LDADD)
++dunelegacy_LDADD = $(LDADD) -lenet
+ DEFAULT_INCLUDES = -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -295,16 +293,6 @@ dunelegacy_SOURCES = AStarSearch.cpp\
+ 						CutScenes/CrossBlendVideoEvent.cpp\
+ 						CutScenes/TextEvent.cpp\
+ 						CutScenes/CutSceneTrigger.cpp\
+-						$(NULL)\
+-						enet/callbacks.c\
+-						enet/compress.c\
+-						enet/host.c\
+-						enet/list.c\
+-						enet/packet.c\
+-						enet/peer.c\
+-						enet/protocol.c\
+-						enet/unix.c\
+-						enet/win32.c\
+ 						$(NULL)\
+ 						misc/draw_util.cpp\
+ 						misc/FileSystem.cpp\
