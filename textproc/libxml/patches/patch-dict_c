@@ -1,0 +1,51 @@
+$OpenBSD: patch-dict_c,v 1.3 2014/05/29 13:40:51 sthen Exp $
+--- dict.c.orig	Fri Apr  5 16:58:37 2013
++++ dict.c	Thu May 29 14:18:00 2014
+@@ -38,7 +38,7 @@
+  *  list we will use the BigKey algo as soon as the hash size grows
+  *  over MIN_DICT_SIZE so this actually works
+  */
+-#if defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME)
++#if (defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME)) || defined(HAVE_ARC4RANDOM)
+ #define DICT_RANDOMIZATION
+ #endif
+ 
+@@ -139,7 +139,7 @@ static xmlRMutexPtr xmlDictMutex = NULL;
+ static int xmlDictInitialized = 0;
+ 
+ #ifdef DICT_RANDOMIZATION
+-#ifdef HAVE_RAND_R
++#if defined(HAVE_RAND_R) && !defined(HAVE_ARC4RANDOM)
+ /*
+  * Internal data for random function, protected by xmlDictMutex
+  */
+@@ -180,7 +180,7 @@ int __xmlInitializeDict(void) {
+         return(0);
+     xmlRMutexLock(xmlDictMutex);
+ 
+-#ifdef DICT_RANDOMIZATION
++#if defined(DICT_RANDOMIZATION) && !defined(HAVE_ARC4RANDOM)
+ #ifdef HAVE_RAND_R
+     rand_seed = time(NULL);
+     rand_r(& rand_seed);
+@@ -200,13 +200,17 @@ int __xmlRandom(void) {
+     if (xmlDictInitialized == 0)
+         __xmlInitializeDict();
+ 
++#ifdef HAVE_ARC4RANDOM
++    ret = arc4random();
++#else
+     xmlRMutexLock(xmlDictMutex);
+-#ifdef HAVE_RAND_R
++#  ifdef HAVE_RAND_R
+     ret = rand_r(& rand_seed);
+-#else
++#  else
+     ret = rand();
+-#endif
++#  endif
+     xmlRMutexUnlock(xmlDictMutex);
++#endif
+     return(ret);
+ }
+ #endif
