@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1229 2014/05/28 22:17:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1230 2014/05/30 09:22:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1186,6 +1186,7 @@
      SUBDIR += py-kid
      SUBDIR += py-liblarch
      SUBDIR += py-libmagic
+     SUBDIR += py-libmagic,python3
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
      SUBDIR += py-minimock
@@ -1203,10 +1204,12 @@
      SUBDIR += py-peak-rules
      SUBDIR += py-pexpect
      SUBDIR += py-pip
+     SUBDIR += py-pip,python3
      SUBDIR += py-prioritized_methods
      SUBDIR += py-progressbar
      SUBDIR += py-protocols
      SUBDIR += py-py
+     SUBDIR += py-py,python3
      SUBDIR += py-pyprof2calltree
      SUBDIR += py-pyro
      SUBDIR += py-radix
@@ -1216,7 +1219,9 @@
      SUBDIR += py-send2trash
      SUBDIR += py-serial
      SUBDIR += py-setproctitle
+     SUBDIR += py-setproctitle,python3
      SUBDIR += py-setuptools
+     SUBDIR += py-setuptools,python3
      SUBDIR += py-silc
      SUBDIR += py-simplejson
      SUBDIR += py-sip
@@ -1226,6 +1231,7 @@
      SUBDIR += py-suds
      SUBDIR += py-symboltype
      SUBDIR += py-test
+     SUBDIR += py-test,python3
      SUBDIR += py-testtools
      SUBDIR += py-tpg
      SUBDIR += py-turbocheetah
