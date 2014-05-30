@@ -1,0 +1,12 @@
+$OpenBSD: patch-node__bin_munin-asyncd_in,v 1.1 2014/05/30 10:28:17 kirby Exp $
+--- node/_bin/munin-asyncd.in.orig	Wed Apr  2 17:57:15 2014
++++ node/_bin/munin-asyncd.in	Wed Apr  2 17:58:32 2014
+@@ -311,7 +311,7 @@ munin-asyncd [options]
+ 
+  Options:
+      --host <hostname:port>     Connect to this munin-node [localhost:4949]
+-     -s --spool <spooldir>      Store the spooled data in this dir [/var/lib/munin-async]
++     -s --spool <spooldir>      Store the spooled data in this dir [@@SPOOLDIR@@]
+      -i --interval <seconds>    Override default interval size of one day [86400]
+         --timeout <seconds>     Wake up at least this number of seconds. [3600]
+         --minrate <seconds>     This is the minimal rate you want to poll a node [300]

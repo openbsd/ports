@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.7 2013/12/18 14:17:32 kirby Exp $
---- Makefile.orig	Wed Nov 13 00:13:23 2013
-+++ Makefile	Tue Dec  3 15:15:23 2013
+$OpenBSD: patch-Makefile,v 1.8 2014/05/30 10:28:17 kirby Exp $
+--- Makefile.orig	Sat Mar 29 01:25:57 2014
++++ Makefile	Wed Apr  2 15:53:34 2014
 @@ -72,7 +72,6 @@ install-pre: Makefile Makefile.config
  	mkdir -p $(STATEDIR)
  	mkdir -p $(SPOOLDIR)
@@ -45,77 +45,7 @@ $OpenBSD: patch-Makefile,v 1.7 2013/12/18 14:17:32 kirby Exp $
  	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
  
  	for p in build/plugins/node.d/* build/plugins/node.d.$(OSTYPE)/* ; do \
-@@ -254,38 +253,37 @@ build/%: %.in
- build-common-prime: build-common-pre common/blib/lib/Munin/Common/Defaults.pm build-common
- 
- substitue-confvar-inline:
--	@sed -e 's|@@PREFIX@@|$(PREFIX)|g'                      \
--             -e 's|@@CONFDIR@@|$(CONFDIR)|g'                    \
--             -e 's|@@BINDIR@@|$(BINDIR)|g'                      \
--             -e 's|@@SBINDIR@@|$(SBINDIR)|g'                    \
--             -e 's|@@DOCDIR@@|$(DOCDIR)|g'                      \
--             -e 's|@@LIBDIR@@|$(LIBDIR)|g'                      \
--             -e 's|@@MANDIR@@|$(MANDIR)|g'                      \
--             -e 's|@@LOGDIR@@|$(LOGDIR)|g'                      \
--             -e 's|@@HTMLDIR@@|$(HTMLDIR)|g'                    \
--             -e 's|@@DBDIR@@|$(DBDIR)|g'                        \
--             -e 's|@@STATEDIR@@|$(STATEDIR)|g'                  \
--             -e 's|@@SPOOLDIR@@|$(SPOOLDIR)|g'                  \
--             -e 's|@@PERL@@|$(PERL)|g'                          \
--             -e 's|@@PERLLIB@@|$(PERLLIB)|g'                    \
--             -e 's|@@PYTHON@@|$(PYTHON)|g'                      \
--             -e 's|@@RUBY@@|$(RUBY)|g'                          \
--             -e 's|@@JAVARUN@@|$(JAVARUN)|g'                    \
--             -e 's|@@JAVALIBDIR@@|$(JAVALIBDIR)|g'              \
--             -e 's|@@OSTYPE@@|$(OSTYPE)|g'                      \
--             -e 's|@@HOSTNAME@@|$(HOSTNAME)|g'                  \
--             -e 's|@@MKTEMP@@|$(MKTEMP)|g'                      \
--             -e 's|@@VERSION@@|$(VERSION)|g'                    \
--             -e 's|@@PLUGSTATE@@|$(PLUGSTATE)|g'                \
--             -e 's|@@CGIDIR@@|$(CGIDIR)|g'                      \
--             -e 's|@@USER@@|$(USER)|g'                          \
--             -e 's|@@GROUP@@|$(GROUP)|g'                        \
--             -e 's|@@PLUGINUSER@@|$(PLUGINUSER)|g'              \
--             -e 's|@@GOODSH@@|$(GOODSH)|g'                      \
--             -e 's|@@BASH@@|$(BASH)|g'                          \
--             -e 's|@@HASSETR@@|$(HASSETR)|g'                    \
--             --in-place                                         \
--             ./master/blib/libdoc/Munin::Master::HTMLOld.3pm    \
-+	@perl -pi -e "s'@@PREFIX@@'$(PREFIX)'g;"                      \
-+             -e "s'@@CONFDIR@@'$(CONFDIR)'g;"                    \
-+             -e "s'@@BINDIR@@'$(BINDIR)'g;"                      \
-+             -e "s'@@SBINDIR@@'$(SBINDIR)'g;"                    \
-+             -e "s'@@DOCDIR@@'$(DOCDIR)'g;"                      \
-+             -e "s'@@LIBDIR@@'$(LIBDIR)'g;"                      \
-+             -e "s'@@MANDIR@@'$(MANDIR)'g;"                      \
-+             -e "s'@@LOGDIR@@'$(LOGDIR)'g;"                      \
-+             -e "s'@@HTMLDIR@@'$(HTMLDIR)'g;"                    \
-+             -e "s'@@DBDIR@@'$(DBDIR)'g;"                        \
-+             -e "s'@@STATEDIR@@'$(STATEDIR)'g;"                  \
-+             -e "s'@@SPOOLDIR@@'$(SPOOLDIR)'g;"                  \
-+             -e "s'@@PERL@@'$(PERL)'g;"                          \
-+             -e "s'@@PERLLIB@@'$(PERLLIB)'g;"                    \
-+             -e "s'@@PYTHON@@'$(PYTHON)'g;"                      \
-+             -e "s'@@RUBY@@'$(RUBY)'g;"                          \
-+             -e "s'@@JAVARUN@@'$(JAVARUN)'g;"                    \
-+             -e "s'@@JAVALIBDIR@@'$(JAVALIBDIR)'g;"              \
-+             -e "s'@@OSTYPE@@'$(OSTYPE)'g;"                      \
-+             -e "s'@@HOSTNAME@@'$(HOSTNAME)'g;"                  \
-+             -e "s'@@MKTEMP@@'$(MKTEMP)'g;"                      \
-+             -e "s'@@VERSION@@'$(VERSION)'g;"                    \
-+             -e "s'@@PLUGSTATE@@'$(PLUGSTATE)'g;"                \
-+             -e "s'@@CGIDIR@@'$(CGIDIR)'g;"                      \
-+             -e "s'@@USER@@'$(USER)'g;"                          \
-+             -e "s'@@GROUP@@'$(GROUP)'g;"                        \
-+             -e "s'@@PLUGINUSER@@'$(PLUGINUSER)'g;"              \
-+             -e "s'@@GOODSH@@'$(GOODSH)'g;"                      \
-+             -e "s'@@BASH@@'$(BASH)'g;"                          \
-+             -e "s'@@HASSETR@@'$(HASSETR)'g;"                    \
-+             ./master/blib/libdoc/Munin::Master::HTMLOld.3p    \
-              ./master/blib/lib/Munin/Master/HTMLOld.pm          \
-              ./node/blib/sbin/munin-node-configure              \
-              ./node/blib/sbin/munin-node                        \
-@@ -466,7 +464,7 @@ install-%: %/Build
+@@ -465,7 +464,7 @@ install-%: %/Build
              --install_path script=$(BINDIR)		\
              --install_path sbin=$(SBINDIR)		\
              --install_path bindoc=$(MANDIR)/man1	\

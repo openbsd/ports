@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: munin_asyncd.rc,v 1.1 2014/05/30 10:28:17 kirby Exp $
+
+daemon="${TRUEPREFIX}/libexec/munin/munin-asyncd --fork"
+daemon_user="_munin"
+
+. /etc/rc.d/rc.subr
+
+pexp="perl: munin-asyncd"
+
+rc_bg=YES
+
+rc_cmd $1

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2014/03/25 08:42:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.39 2014/05/30 10:28:17 kirby Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.0.19
+V =		2.0.21
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V

@@ -1,19 +1,15 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2013/03/22 15:00:29 kirby Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2014/05/30 10:28:17 kirby Exp $
 @extraunexec rm -rf /var/www/htdocs/munin/*
 @extraunexec rm -rf /var/db/munin/*
 @owner www
 @sample /var/db/munin/cgi-tmp/
 @owner _munin
-@sample /var/db/munin/
-@sample /var/db/munin/spool/
 @sample /var/www/htdocs/munin/
 @owner
 bin/munin-cron
 libexec/munin/
 libexec/munin/DejaVuSans.ttf
 libexec/munin/DejaVuSansMono.ttf
-libexec/munin/munin-async
-libexec/munin/munin-asyncd
 libexec/munin/munin-datafile2storable
 libexec/munin/munin-graph
 libexec/munin/munin-html
