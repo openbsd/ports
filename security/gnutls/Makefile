@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.100 2014/05/09 13:54:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2014/05/30 11:32:21 sthen Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.2.14
+V=		3.2.15
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
