@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2014/01/06 14:46:02 pea Exp $
+# $OpenBSD: Makefile,v 1.15 2014/05/30 13:20:13 sthen Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
 VERSION =	2013-12-08
-DISTNAME = 	dokuwiki-${VERSION}
-PKGNAME = 	dokuwiki-${VERSION:S/-/./g}
+DISTNAME =	dokuwiki-${VERSION}
+PKGNAME =	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
 HOMEPAGE =	http://www.dokuwiki.org/dokuwiki
+REVISION =	0
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://download.dokuwiki.org/src/dokuwiki/
 
-EXTRACT_SUFX = 	.tgz
+EXTRACT_SUFX =	.tgz
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
