@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_shell-global_c,v 1.12 2014/05/23 06:55:45 ajacoutot Exp $
+$OpenBSD: patch-src_shell-global_c,v 1.13 2014/05/30 09:29:38 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=727763
+From 35848879384888db7adf11dfef21ff70ea5a454d Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 30 May 2014 11:26:39 +0200
+Subject: openbsd: fix shell_global_reexec_self()
 
 --- src/shell-global.c.orig	Wed May 14 10:28:09 2014
-+++ src/shell-global.c	Wed May 21 09:45:58 2014
++++ src/shell-global.c	Fri May 30 11:13:33 2014
 @@ -34,7 +34,6 @@
  #endif
  
@@ -12,7 +15,20 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
  #include <sys/sysctl.h>
  #endif
  
-@@ -1143,17 +1142,7 @@ shell_global_reexec_self (ShellGlobal *global)
+@@ -1132,28 +1131,19 @@ shell_global_reexec_self (ShellGlobal *global)
+ {
+   GPtrArray *arr;
+   gsize len;
++
++#if defined __linux__
+   char *buf;
+   char *buf_p;
+   char *buf_end;
+   GError *error = NULL;
+ 
+-#if defined __linux__
+   if (!g_file_get_contents ("/proc/self/cmdline", &buf, &len, &error))
+     {
        g_warning ("failed to get /proc/self/cmdline: %s", error->message);
        return;
      }
@@ -31,7 +47,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
    buf_end = buf+len;
    arr = g_ptr_array_new ();
    /* The cmdline file is NUL-separated */
-@@ -1161,7 +1150,31 @@ shell_global_reexec_self (ShellGlobal *global)
+@@ -1161,7 +1151,31 @@ shell_global_reexec_self (ShellGlobal *global)
      g_ptr_array_add (arr, buf_p);
  
    g_ptr_array_add (arr, NULL);
@@ -63,7 +79,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
    /* Close all file descriptors other than stdin/stdout/stderr, otherwise
     * they will leak and stay open after the exec. In particular, this is
     * important for file descriptors that represent mapped graphics buffer
-@@ -1176,6 +1189,11 @@ shell_global_reexec_self (ShellGlobal *global)
+@@ -1176,6 +1190,11 @@ shell_global_reexec_self (ShellGlobal *global)
    execvp (arr->pdata[0], (char**)arr->pdata);
    g_warning ("failed to reexec: %s", g_strerror (errno));
    g_ptr_array_free (arr, TRUE);
