@@ -1,4 +1,4 @@
-SQLgrey is a Postfix greylisting policy service with 
+SQLgrey is a Postfix greylisting policy service with
 auto-white-listing with SQL database as storage backend.
 It has many features including ipv6 support, activity
 reports, fine log controls.

@@ -1,0 +1,11 @@
+$OpenBSD: patch-sqlgrey,v 1.1 2014/05/30 13:22:57 giovanni Exp $
+--- sqlgrey.orig	Thu May 29 00:59:30 2014
++++ sqlgrey	Thu May 29 00:59:45 2014
+@@ -30,6 +30,7 @@ use Pod::Usage;
+ use Getopt::Long 2.25 qw(:config posix_default no_ignore_case);
+ use Net::Server::Multiplex;
+ use DBI;
++use DBIx::DBCluster;
+ 
+ use POSIX ':sys_wait_h';
+ 

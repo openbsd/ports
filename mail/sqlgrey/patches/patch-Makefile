@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
+$OpenBSD: patch-Makefile,v 1.2 2014/05/30 13:22:57 giovanni Exp $
 --- Makefile.orig	Sun Oct 22 17:05:57 2006
-+++ Makefile	Tue Nov 10 18:26:14 2009
++++ Makefile	Thu May 29 00:27:00 2014
 @@ -1,10 +1,10 @@
  INSTALL = install
 -ETCDIR = $(ROOTDIR)/etc
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
  
  clean:
  	rm -f sqlgrey.1
-@@ -45,22 +46,24 @@ clean:
+@@ -45,22 +46,26 @@ clean:
  
  install: all
  	$(INSTALL) -d -m 755 $(SBINDIR)
@@ -46,7 +46,9 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
  	$(INSTALL) -m 644 etc/discrimination.regexp $(CONFDIR)
  	$(INSTALL) -m 644 etc/dyn_fqdn.regexp $(CONFDIR)
  	$(INSTALL) -m 644 etc/smtp_server.regexp $(CONFDIR)
++	$(INSTALL) -m 644 FAQ $(DOCDIR)
 +	$(INSTALL) -m 644 HOWTO $(DOCDIR)
++	$(INSTALL) -m 644 README.* $(DOCDIR)
  	$(INSTALL) -m 644 etc/README $(CONFDIR)
  	$(INSTALL) -m 644 sqlgrey.1 $(MANDIR)
 +	$(INSTALL) -m 644 sqlgrey-logstats.1 $(MANDIR)

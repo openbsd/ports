@@ -1,6 +1,6 @@
-$OpenBSD: patch-update_sqlgrey_config,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
---- update_sqlgrey_config.orig	Wed Mar  2 01:49:41 2005
-+++ update_sqlgrey_config	Thu Jun  5 19:03:17 2008
+$OpenBSD: patch-update_sqlgrey_config,v 1.2 2014/05/30 13:22:57 giovanni Exp $
+--- update_sqlgrey_config.orig	Thu Sep 15 12:11:24 2005
++++ update_sqlgrey_config	Thu May 29 00:31:44 2014
 @@ -1,10 +1,10 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -15,7 +15,21 @@ $OpenBSD: patch-update_sqlgrey_config,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp
      exit -1
  fi
  DIFF=`which diff 2>/dev/null`
-@@ -33,11 +33,6 @@ if [ -z "$whitelists_host" ]
+@@ -13,12 +13,7 @@ then
+     echo "diff not found in PATH, can't continue"
+     exit -1
+ fi
+-WGET=`which wget 2>/dev/null`
+-if [ $? -ne 0 ]
+-then
+-    echo "wget not found in PATH, can't continue"
+-    exit -1
+-fi
++FTP=/usr/bin/ftp
+ 
+ # md5sum output parsing need a known locale
+ LANG=C
+@@ -33,11 +28,6 @@ if [ -z "$whitelists_host" ]
  then
      whitelists_host="sqlgrey.bouton.name"
  fi
@@ -27,7 +41,7 @@ $OpenBSD: patch-update_sqlgrey_config,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp
  
  # Go into a temp directory
  MYTMP=`mktemp -d ${TMPDIR:-/tmp}/sqlgrey.XXXXXX`
-@@ -48,7 +43,6 @@ MYTMP=`mktemp -d ${TMPDIR:-/tmp}/sqlgrey.XXXXXX`
+@@ -48,18 +38,17 @@ MYTMP=`mktemp -d ${TMPDIR:-/tmp}/sqlgrey.XXXXXX`
  
  # Setup a clean exit
  clean_exit() {
@@ -35,7 +49,11 @@ $OpenBSD: patch-update_sqlgrey_config,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp
      [ -n "$MYTMP" -a -d "$MYTMP" ] && rm -rf $MYTMP
      exit $1
  }
-@@ -59,7 +53,7 @@ $WGET -q http://$whitelists_host/MD5SUMS
+ trap clean_exit 2 3 15
+ 
+ # Fetch MD5
+-$WGET -q http://$whitelists_host/MD5SUMS
++$FTP -V http://$whitelists_host/MD5SUMS
  
  # Check installed files
  cd $MYDIR
@@ -44,7 +62,16 @@ $OpenBSD: patch-update_sqlgrey_config,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp
  
  if [ -z "$TOUPDATE" ]
  then
-@@ -85,7 +79,7 @@ do
+@@ -77,7 +66,7 @@ for todownload in $TOUPDATE
+ do
+     echo "updating $MYDIR/$todownload:"
+     rm $todownload 2>/dev/null
+-    $WGET -N -q http://$whitelists_host/$todownload
++    $FTP -V http://$whitelists_host/$todownload
+     if [ -f $MYDIR/$todownload ]; then
+ 	$DIFF -u $MYDIR/$todownload $todownload
+     else
+@@ -85,7 +74,7 @@ do
      fi
  done
  
@@ -53,7 +80,7 @@ $OpenBSD: patch-update_sqlgrey_config,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp
  if [ $? -ne 0 ]
  then
      # Can only happen if remote site is borked or file got corrupt in transit
-@@ -99,6 +93,6 @@ rm MD5SUMS
+@@ -99,6 +88,6 @@ rm MD5SUMS
  mv * $MYDIR
  
  # Reload whitelists

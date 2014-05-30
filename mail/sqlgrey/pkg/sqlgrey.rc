@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: sqlgrey.rc,v 1.1 2014/05/30 13:22:57 giovanni Exp $
+
+daemon="${TRUEPREFIX}/sbin/sqlgrey -d"
+
+. /etc/rc.d/rc.subr
+
+pexp="/usr/bin/perl -w ${daemon}${daemon_flags:+ ${daemon_flags}}"
+
+rc_reload=NO
+
+rc_cmd $1

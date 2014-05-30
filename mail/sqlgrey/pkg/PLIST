@@ -1,13 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/30 13:22:57 giovanni Exp $
 @newgroup _sqlgrey:647
 @newuser _sqlgrey:647:_sqlgrey:daemon:SQLgrey Account:/nonexistent:/sbin/nologin
 bin/sqlgrey-logstats
+libdata/perl5/site_perl/DBIx/
+libdata/perl5/site_perl/DBIx/DBCluster.pm
 @man man/man1/sqlgrey-logstats.1
 @man man/man1/sqlgrey.1
 sbin/sqlgrey
 sbin/update_sqlgrey_config
 share/doc/sqlgrey/
+share/doc/sqlgrey/FAQ
 share/doc/sqlgrey/HOWTO
+share/doc/sqlgrey/README.DBCLUSTER
+share/doc/sqlgrey/README.DISCRIMINATION
+share/doc/sqlgrey/README.OPTINOUT
+share/doc/sqlgrey/README.PERF
 share/examples/sqlgrey/
 @sample ${SYSCONFDIR}/sqlgrey/
 share/examples/sqlgrey/README
@@ -24,3 +31,4 @@ share/examples/sqlgrey/smtp_server.regexp
 @sample ${SYSCONFDIR}/sqlgrey/smtp_server.regexp
 share/examples/sqlgrey/sqlgrey.conf
 @sample ${SYSCONFDIR}/sqlgrey/sqlgrey.conf
+@rcscript ${RCDIR}/sqlgrey
