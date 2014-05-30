@@ -1,0 +1,23 @@
+$OpenBSD: patch-engine_hexenworld_server_Makefile,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+
+Use standard optimisations.
+
+--- engine/hexenworld/server/Makefile.orig	Thu Jan 10 18:04:20 2013
++++ engine/hexenworld/server/Makefile	Sat May 24 01:19:33 2014
+@@ -62,15 +62,7 @@ endif
+ # Overrides for the default CPUFLAGS
+ CPUFLAGS=$(CPU_X86)
+ 
+-CFLAGS += -g -Wall
+-CFLAGS += $(CPUFLAGS)
+-ifndef DEBUG
+-# optimization flags
+-CFLAGS += -O2 -DNDEBUG=1 -ffast-math -fomit-frame-pointer
+-endif
+-
+-CPPFLAGS=
+-LDFLAGS =
++CFLAGS += -Wall
+ 
+ # compiler includes
+ INCLUDES= -I. -I$(COMMON_HW) -I$(COMMONDIR) -I$(UHEXEN2_SHARED)

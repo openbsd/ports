@@ -1,0 +1,32 @@
+$OpenBSD: patch-engine_hexenworld_client_Makefile,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+
+Disable internal timidity. Use standard optimisations.
+
+--- engine/hexenworld/client/Makefile.orig	Wed Mar  6 09:21:08 2013
++++ engine/hexenworld/client/Makefile	Sat May 24 01:19:43 2014
+@@ -123,7 +123,7 @@ USE_CODEC_VORBIS=yes
+ USE_CODEC_OPUS=no
+ # either timidity or wildmidi (both possible
+ # but not needed nor meaningful)
+-USE_CODEC_TIMIDITY=yes
++USE_CODEC_TIMIDITY=no
+ USE_CODEC_WILDMIDI=no
+ # compile timidity with DLS instruments support? (no:
+ # the dls code isn't good enough and isn't used in unix
+@@ -154,15 +154,7 @@ endif
+ # Overrides for the default CPUFLAGS
+ CPUFLAGS=$(CPU_X86)
+ 
+-CFLAGS += -g -Wall
+-CFLAGS += $(CPUFLAGS)
+-ifndef DEBUG
+-# optimization flags
+-CFLAGS += -O2 -DNDEBUG=1 -ffast-math -fomit-frame-pointer
+-endif
+-
+-CPPFLAGS=
+-LDFLAGS =
++CFLAGS += -Wall
+ 
+ # compiler includes
+ INCLUDES= -I. -I$(COMMON_HW) -I$(COMMONDIR) -I$(UHEXEN2_SHARED)

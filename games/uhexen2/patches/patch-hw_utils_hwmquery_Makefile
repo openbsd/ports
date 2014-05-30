@@ -1,0 +1,22 @@
+$OpenBSD: patch-hw_utils_hwmquery_Makefile,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+
+Use standard optimisations.
+
+--- hw_utils/hwmquery/Makefile.orig	Thu Jan  3 18:28:36 2013
++++ hw_utils/hwmquery/Makefile	Sat May 24 01:18:54 2014
+@@ -50,14 +50,7 @@ endif
+ # Overrides for the default CPUFLAGS
+ CPUFLAGS=$(CPU_X86)
+ 
+-CFLAGS += -g -Wall
+-CFLAGS += $(CPUFLAGS)
+-ifndef DEBUG
+-CFLAGS += -O2 -DNDEBUG=1
+-endif
+-
+-CPPFLAGS=
+-LDFLAGS =
++CFLAGS += -Wall
+ 
+ # compiler includes
+ INCLUDES= -I. -I$(UHEXEN2_SHARED)

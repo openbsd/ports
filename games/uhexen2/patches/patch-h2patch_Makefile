@@ -1,0 +1,20 @@
+$OpenBSD: patch-h2patch_Makefile,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+
+Use standard optimisations.
+
+--- h2patch/Makefile.orig	Thu Jan  3 18:28:36 2013
++++ h2patch/Makefile	Sat May 24 01:20:28 2014
+@@ -18,12 +18,7 @@ endif
+ LINKER = $(CC)
+ 
+ CPUFLAGS=
+-CFLAGS  = -g -Wall
+-CFLAGS += $(CPUFLAGS)
+-ifndef DEBUG
+-CFLAGS += -O2 -DNDEBUG=1
+-endif
+-LDFLAGS =
++CFLAGS  += -Wall
+ 
+ XDELTA_DIR:= $(LIBS_DIR)/xdelta3
+ XDFLAGS:= -DXD3_DEBUG=0

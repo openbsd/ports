@@ -1,0 +1,21 @@
+$OpenBSD: patch-launcher_Makefile,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+
+Use standard optimisations.
+
+--- launcher/Makefile.orig	Sat May 24 00:51:35 2014
++++ launcher/Makefile	Sat May 24 00:52:06 2014
+@@ -60,13 +60,7 @@ PTHREAD_LIBS  = $(shell sh $(UHEXEN2_TOP)/scripts/pthr
+ 
+ CPUFLAGS=
+ 
+-CFLAGS += -g -Wall
+-CFLAGS += $(CPUFLAGS)
+-ifdef DEBUG
+-CFLAGS += -DDEBUG=1
+-else
+-CFLAGS += -O2 -DNDEBUG=1
+-endif
++CFLAGS += -Wall
+ XDFLAGS +=$(CFLAGS)
+ 
+ CFLAGS += -I. -I$(UHEXEN2_SHARED)

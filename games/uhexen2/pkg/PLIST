@@ -1,0 +1,91 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+bin/glhexen2
+bin/glhwcl
+bin/h2ded
+bin/h2launcher
+bin/h2patch
+bin/hwmaster
+bin/hwmquery
+bin/hwrcon
+bin/hwsv
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/uhexen2/
+share/doc/uhexen2/ABOUT
+share/doc/uhexen2/AUTHORS
+share/doc/uhexen2/BUGS
+share/doc/uhexen2/CHANGES
+share/doc/uhexen2/CHANGES.old
+share/doc/uhexen2/COMPILE
+share/doc/uhexen2/COPYING
+share/doc/uhexen2/Features
+share/doc/uhexen2/README
+share/doc/uhexen2/README.3dfx
+share/doc/uhexen2/README.AoT
+share/doc/uhexen2/README.launcher
+share/doc/uhexen2/README.music
+share/doc/uhexen2/ReleaseNotes
+share/doc/uhexen2/ReleaseNotes.old
+share/doc/uhexen2/SrcNotes.txt
+share/doc/uhexen2/TODO
+share/uhexen2/
+share/uhexen2/LICENSE.txt
+share/uhexen2/README.deps
+share/uhexen2/cdrip_hexen2.sh
+share/uhexen2/cdrip_hexen2_matroxm3d.sh
+share/uhexen2/cdrip_hexen2_xplosiv.sh
+share/uhexen2/cdrip_missionpack.sh
+share/uhexen2/data1/
+share/uhexen2/data1/autoexec.cfg
+share/uhexen2/data1/default.cfg
+share/uhexen2/data1/demo1.dem
+share/uhexen2/data1/demo2.dem
+share/uhexen2/data1/demo3.dem
+share/uhexen2/data1/hexen.rc
+share/uhexen2/data1/maps/
+share/uhexen2/data1/maps/README.txt
+share/uhexen2/data1/maps/cath.ent
+share/uhexen2/data1/maps/cath.txt
+share/uhexen2/data1/maps/demo2.ent
+share/uhexen2/data1/maps/demo2.txt
+share/uhexen2/data1/maps/egypt4.ent
+share/uhexen2/data1/maps/egypt4.txt
+share/uhexen2/data1/maps/egypt5.ent
+share/uhexen2/data1/maps/egypt5.txt
+share/uhexen2/data1/maps/romeric5.ent
+share/uhexen2/data1/maps/romeric5.txt
+share/uhexen2/data1/maps/tower.ent
+share/uhexen2/data1/maps/tower.txt
+share/uhexen2/data1/progs.dat
+share/uhexen2/data1/progs2.dat
+share/uhexen2/data1/strings.txt
+@bin share/uhexen2/glhexen2
+@bin share/uhexen2/glhwcl
+@bin share/uhexen2/h2ded
+@bin share/uhexen2/h2launcher
+@bin share/uhexen2/h2patch
+share/uhexen2/hexen2
+share/uhexen2/hexen2.png
+share/uhexen2/hexen2.svga
+@bin share/uhexen2/hwmaster
+@bin share/uhexen2/hwmquery
+@bin share/uhexen2/hwrcon
+@bin share/uhexen2/hwsv
+share/uhexen2/patchdat/
+share/uhexen2/patchdat.txt
+share/uhexen2/patchdat/data1/
+share/uhexen2/patchdat/data1/data1pk0.xd3
+share/uhexen2/patchdat/data1/data1pk1.xd3
+share/uhexen2/portals/
+share/uhexen2/portals/default.cfg
+share/uhexen2/portals/hexen.rc
+share/uhexen2/portals/infolist.txt
+share/uhexen2/portals/maplist.txt
+share/uhexen2/portals/maps/
+share/uhexen2/portals/maps/README.txt
+share/uhexen2/portals/maps/tibet2.ent
+share/uhexen2/portals/maps/tibet2.txt
+share/uhexen2/portals/maps/tibet9.ent
+share/uhexen2/portals/maps/tibet9.txt
+share/uhexen2/portals/progs.dat
+share/uhexen2/portals/puzzles.txt
+share/uhexen2/portals/strings.txt

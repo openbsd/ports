@@ -1,0 +1,12 @@
+In 2000, Raven Software released the source code to their class based
+shooter game Hexen II and its multiplayer extension HexenWorld. Since
+then, there has been some source ports of this game, such as the now
+discontinued Anvil of Thyrion project, but nothing has been done for
+Linux since the beginning of 2002.
+
+The Hammer of Thyrion project is a cross-platform source port effort: We
+continue the development for Linux, BSD and Mac OS X people, with
+continued support for Windows users as well. Many bugs are fixed and
+even new features are added: New sound modes, improved mouse handling,
+improved video modes, OpenGL glows and more. You can go to our project
+page for more information.
