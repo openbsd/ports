@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/28 14:33:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/30 13:14:09 sthen Exp $
 htdocs/rackmonkey/
 htdocs/rackmonkey/RackMonkey/
 htdocs/rackmonkey/RackMonkey/CGI.pm
@@ -40,6 +40,7 @@ htdocs/rackmonkey/styles/tabs.css
 rackmonkey/
 rackmonkey/conf/
 rackmonkey/conf/httpd-rackmonkey.conf
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/httpd-rackmonkey.conf
 rackmonkey/conf/rackmonkey.conf-default
 @mode 750

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/03 10:27:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/05/30 13:14:09 sthen Exp $
 @group daemon
 @bin cgi-bin/cgit.cgi
 conf/modules.sample/cgit.conf.dist
+@sample conf/modules.sample/
 @sample conf/modules.sample/cgit.conf
 htdocs/cgit.css
 htdocs/cgit.png

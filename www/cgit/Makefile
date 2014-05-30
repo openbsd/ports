@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/07 21:32:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2014/05/30 13:14:09 sthen Exp $
 
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-0.9.2
+REVISION =	0
 CATEGORIES =	www devel
 
 DISTFILES =	${DISTNAME}.tar.gz:0 \

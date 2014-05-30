@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2012/06/21 06:58:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2014/05/30 13:14:08 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.3,<5.4
 @conflict php5-core->=5.2
@@ -30,6 +30,7 @@ lib/php-${PV}/modules/
 @man man/man1/phpize-${PV}.1
 share/examples/php-${PV}/
 share/examples/php-${PV}/php.conf
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/php-${PV}.conf
 share/examples/php-${PV}/php.ini-development
 share/examples/php-${PV}/php.ini-production
