@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/22 09:50:06 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2014/05/31 10:49:02 jca Exp $
 
 COMMENT=		daemontools alike replacement for init
 
@@ -28,8 +28,8 @@ DOCS1=			benefits.html chpst.8.html dependencies.html faq.html \
 DOCS2=			CHANGES README COPYING THANKS
 EXAMPLES=		etc/2 etc/openbsd/1 etc/openbsd/3 etc/openbsd/ctrlaltdel
 
-pre-build:
-	echo "${CC} ${CFLAGS} ${COPTS}" > ${WRKSRC}/conf-cc
+do-configure:
+	echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	echo "${CC} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 
 do-build:
