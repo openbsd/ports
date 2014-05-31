@@ -1,7 +1,7 @@
-$OpenBSD: patch-configs_asterisk_conf_sample,v 1.6 2013/12/30 23:04:49 sthen Exp $
---- configs/asterisk.conf.sample.orig	Mon Dec 16 19:21:00 2013
-+++ configs/asterisk.conf.sample	Mon Dec 16 23:08:38 2013
-@@ -61,8 +61,8 @@ astsbindir => /usr/sbin
+$OpenBSD: patch-configs_asterisk_conf_sample,v 1.7 2014/05/31 00:35:31 sthen Exp $
+--- configs/asterisk.conf.sample.orig	Fri Apr  4 19:46:18 2014
++++ configs/asterisk.conf.sample	Thu May 29 21:32:09 2014
+@@ -60,8 +60,8 @@ astsbindir => /usr/sbin
  				; not otherwise require one.
  ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
  				; directly.
@@ -12,7 +12,7 @@ $OpenBSD: patch-configs_asterisk_conf_sample,v 1.6 2013/12/30 23:04:49 sthen Exp
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
  ;forceblackbackground = yes     ; Force the background of the terminal to be 
-@@ -83,7 +83,8 @@ documentation_language = en_US	; Set the language you 
+@@ -82,7 +82,8 @@ documentation_language = en_US	; Set the language you 
  				; gosub - Invoke the stdexten using a gosub as
  				;         documented in extensions.conf.sample.
  				; Default gosub.
@@ -22,7 +22,7 @@ $OpenBSD: patch-configs_asterisk_conf_sample,v 1.6 2013/12/30 23:04:49 sthen Exp
  				; functions from external sources (AMI,
  				; etc.) These functions (such as SHELL) are
  				; considered dangerous because they can allow
-@@ -91,11 +92,11 @@ documentation_language = en_US	; Set the language you 
+@@ -90,11 +91,11 @@ documentation_language = en_US	; Set the language you 
  				; Default yes, for backward compatability.
  
  ; Changing the following lines may compromise your security.
