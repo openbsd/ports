@@ -1,29 +1,33 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/05/31 14:55:08 jcs Exp $
 
-ONLY_FOR_ARCHS =amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 
-COMMENT =	vmware userland helper for X
+COMMENT=	vmware userland helper for X
 
-DISTNAME =	vmwh-0.20110905
+V=		1.1
+DISTNAME=	v${V}
+PKGNAME=	vmwh-${V}
+EPOCH=		0
+CATEGORIES=	sysutils x11
 
-CATEGORIES =	sysutils x11
-
-HOMEPAGE =	https://github.com/jcs/vmwh/
+HOMEPAGE=	https://github.com/jcs/vmwh/
+MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES=	${HOMEPAGE}archive/
+DIST_SUBDIR=	vmwh
 
-WANTLIB +=	X11 Xmu c
+WANTLIB+=	X11 Xmu c
+RUN_DEPENDS=	x11/xclip
 
-RUN_DEPENDS =	x11/xclip
-
-MAKE_FLAGS =	INCLUDES="-I${X11BASE}/include" \
+WRKDIST=	${WRKDIR}/${PKGNAME}
+MAKE_FLAGS=	INCLUDES="-I${X11BASE}/include" \
 		LDPATH="-L${X11BASE}/lib"
-FAKE_FLAGS =	PREFIX="${PREFIX}" \
+FAKE_FLAGS=	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
-NO_TEST =	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
