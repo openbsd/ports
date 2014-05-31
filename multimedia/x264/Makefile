@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2014/01/10 19:31:51 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2014/05/31 01:54:17 brad Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
 V=		20131002
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
@@ -24,7 +24,7 @@ WANTLIB=	c m pthread
 
 MODULES=	lang/clang
 
-MODCLANG_ARCHS=	amd64
+MODCLANG_ARCHS=	amd64 i386
 MODCLANG_LANGS=	c
 
 .if ${MACHINE_ARCH} == "amd64"
