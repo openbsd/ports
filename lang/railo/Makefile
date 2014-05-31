@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/31 10:57:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/05/31 13:42:15 sthen Exp $
 
 COMMENT=		open-source CFML engine
 
-V=			4.1.2.005
+V=			4.2.1.000
 EPOCH=			0
-REVISION=		1
 DISTNAME=		railo-$V
 EXTRACT_SUFX=		.war
 
@@ -17,7 +16,7 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =		http://www.getrailo.org/down.cfm?item=/railo/remote/download/$V/custom/all/
+MASTER_SITES =		http://www.getrailo.org/railo/remote/download42/$V/custom/all/
 
 # doesn't actually need tomcat to build, but listing it here avoids
 # wasting time on !java arch
@@ -50,7 +49,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/railo ${PREFIX}/lib ${PREFIX}/conf
 	cd ${WRKSRC}/WEB-INF/lib && pax -rw * ${PREFIX}/lib/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/*
-	${INSTALL_DATA} ${WRKSRC}/index.cfm ${PREFIX}/railo/index.cfm.dist
 	${INSTALL_DATA} ${WRKSRC}/WEB-INF/web.xml ${PREFIX}/conf/web-railo.xml.dist
 
 .include <bsd.port.mk>

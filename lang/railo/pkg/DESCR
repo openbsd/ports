@@ -1,8 +1,15 @@
-Railo is a high-performance open-source CFML engine. It has good
-compatibility with other CFML engines. Most sites can be ported to
-Railo with very little effort and all of the major CFML frameworks
-support Railo out of the box.
+Railo is a high-performance open-source CFML engine with good compatibility
+with other CFML engines.  Most sites can be ported to Railo with little
+effort, and all major CFML frameworks support Railo out of the box.
 
-Railo will very probably run your sites faster than any other CFML
-engine, allowing you to handle more load and to provide a better
-experience for end users.
+CFML ("ColdFusion Markup Lanuage") is a server-side web scripting language
+that augments standard HTML files with database commands, conditional
+operators, high-level formatting functions, and other elements to produce
+web applications. ColdFusion Components (CFCs), CFML's version of objects,
+allow for separation of business logic from presentation.
+
+The language uses either HTML-like tags (good for intermixing with HTML
+text) or with a JavaScript-like "cfscript" syntax.  If the many built-in
+functions (including imaging, Lucene search, S3 storage and PostgreSQL/
+MySQL/MSSQL drivers) aren't enough, it is also fairly easy to call
+native Java classes from your appications.

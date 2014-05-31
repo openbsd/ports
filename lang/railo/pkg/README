@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2014/03/31 10:28:20 sthen Exp $
+$OpenBSD: README,v 1.6 2014/05/31 13:42:15 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -63,6 +63,13 @@ but ongoing maintenance is reduced.
 Starting the service and online configuration
 =============================================
 
+- Add the Java agent to Tomcat's command-line flags:
+
+tomcat_flags="-server -javaagent:var/tomcat/lib/railo-inst.jar"
+
+Any other JVM options can be added as necessary (for example, those
+options to adjust Java memory use, enable JMXRemote, etc).
+
 - Start/restart tomcat:
 
 	${RCDIR}/tomcat restart
@@ -71,10 +78,11 @@ Starting the service and online configuration
 default Railo homepage including a couple of samples and links to the
 admin pages.
 
-- Connect to the admin pages and set passwords:
+- Connect to the server and web administration pages. At first run of
+a successful new installation, you will be prompted to set passwords.
 
-	http://localhost:8080/railo-context/admin/server.cfm
-	http://localhost:8080/railo-context/admin/web.cfm
+	http://127.0.0.1:8080/railo-context/admin/server.cfm
+	http://127.0.0.1:8080/railo-context/admin/web.cfm
 
 - You can add pages to /var/tomcat/webapps/ROOT to be used for "localhost".
 Additional host configurations can be added to ${CATALINA_BASE}/conf/server.xml.

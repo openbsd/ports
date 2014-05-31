@@ -1,10 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/11/28 22:41:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/05/31 13:42:15 sthen Exp $
 @extraunexec rm -rf %D/railo/server-config/* %D/railo/web-config/*
 @extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
+@extraunexec rm -rf %D/webapps/manager/WEB-INF/flex
 conf/
 conf/web-railo.xml.dist
+@owner root
+@group wheel
+@sample webapps/manager/
+@sample webapps/manager/WEB-INF/
 @owner _tomcat
 @group _tomcat
+@sample webapps/manager/WEB-INF/flex/
 @sample conf/web-railo.xml
 @owner
 @group
@@ -143,10 +149,8 @@ lib/xmlparserv2.jar
 railo/
 @sample railo/server-config/
 @sample railo/web-config/
-railo/index.cfm.dist
 @sample webapps/
 @sample webapps/ROOT/
-@sample webapps/ROOT/index.cfm
 @owner
 @group
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
