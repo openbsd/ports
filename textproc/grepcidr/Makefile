@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/27 13:42:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/01 11:22:31 sthen Exp $
 
 COMMENT=	filter files for IP address matches
 
+# note there's also a "grepcidr-2" fork; this port is for the original
+# version which is still developed by the original author.
 DISTNAME=	grepcidr-2.0
 
 CATEGORIES=	textproc net
