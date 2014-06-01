@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/01 00:08:57 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/01 15:11:55 jturner Exp $
 
 COMMENT =		POP3 daemon with POP3S and STARTTLS extensions
 
 VERSION =		1.0
 DISTNAME =		pop3d-${VERSION}
+REVISION =		0
 DISTFILES =		${DISTNAME}{v${VERSION}}.tar.gz
 CATEGORIES =		mail
 
