@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.225 2014/04/18 21:50:56 sthen Exp $
+$OpenBSD: user.list,v 1.226 2014/06/01 00:07:38 jturner Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -241,3 +241,4 @@ id  user		group		port options
 730 _kdm		_kdm		x11/kde4/workspace
 731 _geoclue		_geoclue	geo/geoclue2
 732 _unifi		_unifi		net/unifi
+733 _pop3d		_pop3d		mail/pop3d
