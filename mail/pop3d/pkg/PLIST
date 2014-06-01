@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/01 00:08:57 jturner Exp $
+@newgroup _pop3d:733
+@newuser _pop3d:733:_pop3d:daemon:POP3 Daemon:/var/empty:/sbin/nologin
+@man man/man8/pop3d.8
+@bin sbin/pop3d
+@rcscript ${RCDIR}/pop3d

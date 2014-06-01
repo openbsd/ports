@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: pop3d.rc,v 1.1.1.1 2014/06/01 00:08:57 jturner Exp $
+
+daemon="${TRUEPREFIX}/sbin/pop3d"
+
+. /etc/rc.d/rc.subr
+
+pexp="pop3d: \[priv\]"
+
+rc_reload=NO
+
+rc_cmd $1

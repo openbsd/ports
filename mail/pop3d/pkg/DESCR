@@ -1,0 +1,2 @@
+POP3 daemon with POP3S, STARTTLS extensions. Supports maildir, mbox
+formats.
