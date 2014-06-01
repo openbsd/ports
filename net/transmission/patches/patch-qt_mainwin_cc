@@ -1,0 +1,28 @@
+$OpenBSD: patch-qt_mainwin_cc,v 1.1 2014/06/01 11:37:06 naddy Exp $
+
+We do not support C++11 yet.
+
+--- qt/mainwin.cc.orig	Sun May 18 22:52:27 2014
++++ qt/mainwin.cc	Sun May 25 00:04:18 2014
+@@ -1165,8 +1165,8 @@ TrMainWindow :: openTorrent ()
+   QCheckBox * b = new QCheckBox (tr ("Show &options dialog"));
+   b->setChecked (myPrefs.getBool (Prefs::OPTIONS_PROMPT));
+   b->setObjectName (SHOW_OPTIONS_CHECKBOX_NAME);
+-  auto l = dynamic_cast<QGridLayout*> (d->layout ());
+-  if (l == nullptr)
++  QGridLayout* l = dynamic_cast<QGridLayout*> (d->layout ());
++  if (l == NULL)
+     {
+       l = new QGridLayout;
+       d->setLayout (l);
+@@ -1313,8 +1313,8 @@ TrMainWindow :: removeTorrents (const bool deleteFiles
+   msgBox.setDefaultButton (QMessageBox::Cancel);
+   msgBox.setIcon (QMessageBox::Question);
+   // hack needed to keep the dialog from being too narrow
+-  auto layout = dynamic_cast<QGridLayout*>(msgBox.layout());
+-  if (layout == nullptr)
++  QGridLayout* layout = dynamic_cast<QGridLayout*>(msgBox.layout());
++  if (layout == NULL)
+     {
+       layout = new QGridLayout;
+       msgBox.setLayout (layout);
