@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2014/05/18 23:31:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.21 2014/06/01 14:05:55 bcallah Exp $
 
-V =		20140518
+V =		20140601
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
@@ -41,6 +41,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/bin/*.a ${PREFIX}/lib/seed7/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/seed7/lib
 	${INSTALL_DATA} ${WRKDIST}/lib/*.s7i ${PREFIX}/lib/seed7/lib
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/seed7/lib/comp
+	${INSTALL_DATA} ${WRKDIST}/lib/comp/*.s7i ${PREFIX}/lib/seed7/lib/comp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/seed7
 	${INSTALL_DATA} ${WRKDIST}/prg/*.{dna,sd7,dat,s7i} ${PREFIX}/share/examples/seed7
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/seed7

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/01/19 20:21:01 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/06/01 14:05:56 bcallah Exp $
 @bin bin/s7
 @bin bin/s7c
 lib/seed7/
@@ -32,6 +32,51 @@ lib/seed7/lib/chartype.s7i
 lib/seed7/lib/cipher.s7i
 lib/seed7/lib/clib_file.s7i
 lib/seed7/lib/color.s7i
+lib/seed7/lib/comp/
+lib/seed7/lib/comp/act_act.s7i
+lib/seed7/lib/comp/action.s7i
+lib/seed7/lib/comp/arr_act.s7i
+lib/seed7/lib/comp/big_act.s7i
+lib/seed7/lib/comp/bln_act.s7i
+lib/seed7/lib/comp/bst_act.s7i
+lib/seed7/lib/comp/chr_act.s7i
+lib/seed7/lib/comp/cmd_act.s7i
+lib/seed7/lib/comp/con_act.s7i
+lib/seed7/lib/comp/config.s7i
+lib/seed7/lib/comp/const.s7i
+lib/seed7/lib/comp/copy.s7i
+lib/seed7/lib/comp/create.s7i
+lib/seed7/lib/comp/dcl_act.s7i
+lib/seed7/lib/comp/debug.s7i
+lib/seed7/lib/comp/destr.s7i
+lib/seed7/lib/comp/drw_act.s7i
+lib/seed7/lib/comp/enu_act.s7i
+lib/seed7/lib/comp/error.s7i
+lib/seed7/lib/comp/expr.s7i
+lib/seed7/lib/comp/expr_util.s7i
+lib/seed7/lib/comp/fil_act.s7i
+lib/seed7/lib/comp/flt_act.s7i
+lib/seed7/lib/comp/gkb_act.s7i
+lib/seed7/lib/comp/hsh_act.s7i
+lib/seed7/lib/comp/int_act.s7i
+lib/seed7/lib/comp/itf_act.s7i
+lib/seed7/lib/comp/kbd_act.s7i
+lib/seed7/lib/comp/library.s7i
+lib/seed7/lib/comp/literal.s7i
+lib/seed7/lib/comp/pol_act.s7i
+lib/seed7/lib/comp/prc_act.s7i
+lib/seed7/lib/comp/prg_act.s7i
+lib/seed7/lib/comp/ref_act.s7i
+lib/seed7/lib/comp/rfl_act.s7i
+lib/seed7/lib/comp/sct_act.s7i
+lib/seed7/lib/comp/set_act.s7i
+lib/seed7/lib/comp/soc_act.s7i
+lib/seed7/lib/comp/stat.s7i
+lib/seed7/lib/comp/str_act.s7i
+lib/seed7/lib/comp/tim_act.s7i
+lib/seed7/lib/comp/typ_act.s7i
+lib/seed7/lib/comp/type.s7i
+lib/seed7/lib/comp/ut8_act.s7i
 lib/seed7/lib/complex.s7i
 lib/seed7/lib/console.s7i
 lib/seed7/lib/crc32.s7i
