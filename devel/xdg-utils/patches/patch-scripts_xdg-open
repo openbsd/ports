@@ -1,10 +1,19 @@
-$OpenBSD: patch-scripts_xdg-open,v 1.8 2013/01/04 11:42:18 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-open,v 1.9 2014/06/02 09:25:33 stsp Exp $
 
+Make xdg-open work with toad(8) under KDE4.
 Fix sed(1) usage (i.e. !GNU sed).
 
 --- scripts/xdg-open.orig	Sat Jan  1 11:03:14 2011
-+++ scripts/xdg-open	Fri Jan  4 12:33:10 2013
-@@ -384,14 +384,14 @@ open_xfce()
++++ scripts/xdg-open	Sat May 31 19:33:38 2014
+@@ -304,6 +304,7 @@ fi
+ detectDE()
+ {
+     if [ x"$KDE_FULL_SESSION" = x"true" ]; then DE=kde;
++    elif `dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.GetNameOwner string:org.kde.KWin > /dev/null 2>&1` ; then DE=kde;
+     elif [ x"$GNOME_DESKTOP_SESSION_ID" != x"" ]; then DE=gnome;
+     elif `dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.GetNameOwner string:org.gnome.SessionManager > /dev/null 2>&1` ; then DE=gnome;
+     elif xprop -root _DT_SAVE_MODE 2> /dev/null | grep ' = \"xfce4\"$' >/dev/null 2>&1; then DE=xfce;
+@@ -384,14 +385,14 @@ open_xfce()
  
  open_generic_xdg_mime()
  {
@@ -21,7 +30,7 @@ Fix sed(1) usage (i.e. !GNU sed).
  
          for x in `echo "$xdg_user_dir:$xdg_system_dirs" | sed 's/:/ /g'`; do
              local file="$x/applications/$default"
-@@ -526,7 +526,7 @@ fi
+@@ -526,7 +527,7 @@ fi
  if [ x"$BROWSER" = x"" ]; then
      BROWSER=links2:links:lynx:w3m
      if [ -n "$DISPLAY" ]; then
