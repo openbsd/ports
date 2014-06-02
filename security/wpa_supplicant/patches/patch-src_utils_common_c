@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_utils_common_c,v 1.1 2014/06/02 11:26:21 sthen Exp $
+--- src/utils/common.c.orig	Mon Jun  2 12:22:46 2014
++++ src/utils/common.c	Mon Jun  2 12:23:29 2014
+@@ -350,7 +350,7 @@ void printf_encode(char *txt, size_t maxlen, const u8 
+ 	size_t i;
+ 
+ 	for (i = 0; i < len; i++) {
+-		if (txt + 4 > end)
++		if (txt + 4 >= end)
+ 			break;
+ 
+ 		switch (data[i]) {
