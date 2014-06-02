@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/05/03 14:24:03 abieber Exp $
+# $OpenBSD: Makefile,v 1.14 2014/06/02 19:43:50 juanfra Exp $
 
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs EABI/aapcs
@@ -11,7 +11,7 @@ COMMENT =	just-in-time compiler for Lua
 V =		2.0.3
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 
@@ -45,6 +45,11 @@ MAKE_FLAGS += \
 USE_GMAKE =	Yes
 
 SUBST_VARS+=	MODLUA_VERSION
+
+# http://luajit.org/extensions.html
+.if defined(FLAVOR) && ${FLAVOR:Mlua52}
+MAKE_FLAGS +=	XCFLAGS="-DLUAJIT_ENABLE_LUA52COMPAT"
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/Makefile
