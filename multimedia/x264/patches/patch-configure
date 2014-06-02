@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.15 2013/10/06 20:38:52 brad Exp $
---- configure.orig	Wed Oct  2 16:45:04 2013
-+++ configure	Wed Oct  2 21:54:21 2013
+$OpenBSD: patch-configure,v 1.16 2014/06/02 22:01:02 brad Exp $
+--- configure.orig	Sun May 25 16:45:05 2014
++++ configure	Mon May 26 15:16:07 2014
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
  cat <<EOF
-@@ -963,18 +963,6 @@ fi
+@@ -991,18 +991,6 @@ fi
  
  cc_check "stdint.h" "" "uint32_t test_vec __attribute__ ((vector_size (16))) = {0,1,2,3};" && define HAVE_VECTOREXT
  
@@ -24,9 +24,9 @@ $OpenBSD: patch-configure,v 1.15 2013/10/06 20:38:52 brad Exp $
 -fi
 -
  if [ "$strip" = "yes" ]; then
-     CFLAGS="$CFLAGS -s"
      LDFLAGS="$LDFLAGS -s"
-@@ -985,9 +973,9 @@ if [ "$debug" = "yes" ]; then
+ fi
+@@ -1012,9 +1000,9 @@ if [ "$debug" = "yes" ]; then
  elif [ $ARCH = ARM ]; then
      # arm-gcc-4.2 produces incorrect output with -ffast-math
      # and it doesn't save any speed anyway on 4.4, so disable it
@@ -38,7 +38,7 @@ $OpenBSD: patch-configure,v 1.15 2013/10/06 20:38:52 brad Exp $
  fi
  
  if cc_check '' -fno-tree-vectorize ; then
-@@ -1161,7 +1149,6 @@ if [ "$cli" = "yes" ]; then
+@@ -1189,7 +1177,6 @@ if [ "$cli" = "yes" ]; then
  fi
  
  if [ "$shared" = "yes" ]; then
@@ -46,7 +46,7 @@ $OpenBSD: patch-configure,v 1.15 2013/10/06 20:38:52 brad Exp $
      if [ "$SYS" = "WINDOWS" -o "$SYS" = "CYGWIN" ]; then
          echo "SONAME=libx264-$API.dll" >> config.mak
          if [ $compiler = ICL ]; then
-@@ -1189,7 +1176,7 @@ if [ "$shared" = "yes" ]; then
+@@ -1217,7 +1204,7 @@ if [ "$shared" = "yes" ]; then
      else
          echo "SOSUFFIX=so" >> config.mak
          echo "SONAME=libx264.so.$API" >> config.mak

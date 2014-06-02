@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.11 2013/10/06 20:38:52 brad Exp $
---- Makefile.orig	Wed Oct  2 16:45:04 2013
-+++ Makefile	Wed Oct  2 22:00:35 2013
-@@ -102,7 +102,9 @@ ifdef ARCH_X86
+$OpenBSD: patch-Makefile,v 1.12 2014/06/02 22:01:02 brad Exp $
+--- Makefile.orig	Sun May 25 16:45:05 2014
++++ Makefile	Mon May 26 15:16:54 2014
+@@ -101,7 +101,9 @@ ifdef ARCH_X86
  ASFLAGS += -I$(SRCPATH)/common/x86/
  SRCS   += common/x86/mc-c.c common/x86/predict-c.c
  OBJASM  = $(ASMSRC:%.asm=%.o)
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.11 2013/10/06 20:38:52 brad Exp $
  OBJCHK += tools/checkasm-a.o
  endif
  endif
-@@ -155,8 +157,10 @@ SRCS += common/opencl.c encoder/slicetype-cl.c
+@@ -154,8 +156,10 @@ SRCS += common/opencl.c encoder/slicetype-cl.c
  endif
  
  OBJS   += $(SRCS:%.c=%.o)
@@ -22,7 +22,7 @@ $OpenBSD: patch-Makefile,v 1.11 2013/10/06 20:38:52 brad Exp $
  
  .PHONY: all default fprofiled clean distclean install uninstall lib-static lib-shared cli install-lib-dev install-lib-static install-lib-shared install-cli
  
-@@ -169,8 +173,8 @@ $(LIBX264): $(GENERATED) .depend $(OBJS) $(OBJASM)
+@@ -168,8 +172,8 @@ $(LIBX264): $(GENERATED) .depend $(OBJS) $(OBJASM)
  	$(AR)$@ $(OBJS) $(OBJASM)
  	$(if $(RANLIB), $(RANLIB) $@)
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-Makefile,v 1.11 2013/10/06 20:38:52 brad Exp $
  
  ifneq ($(EXE),)
  .PHONY: x264 checkasm
-@@ -179,7 +183,7 @@ checkasm: checkasm$(EXE)
+@@ -178,7 +182,7 @@ checkasm: checkasm$(EXE)
  endif
  
  x264$(EXE): $(GENERATED) .depend $(OBJCLI) $(CLI_LIBX264)
@@ -42,7 +42,7 @@ $OpenBSD: patch-Makefile,v 1.11 2013/10/06 20:38:52 brad Exp $
  
  checkasm$(EXE): $(GENERATED) .depend $(OBJCHK) $(LIBX264)
  	$(LD)$@ $(OBJCHK) $(LIBX264) $(LDFLAGS)
-@@ -190,10 +194,21 @@ $(OBJS) $(OBJASM) $(OBJSO) $(OBJCLI) $(OBJCHK): .depen
+@@ -189,10 +193,21 @@ $(OBJS) $(OBJASM) $(OBJSO) $(OBJCLI) $(OBJCHK): .depen
  	$(AS) $(ASFLAGS) -o $@ $<
  	-@ $(if $(STRIP), $(STRIP) -x $@) # delete local/anonymous symbols, so they don't show up in oprofile
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-Makefile,v 1.11 2013/10/06 20:38:52 brad Exp $
  %.dll.o: %.rc x264.h
  	$(RC) $(RCFLAGS)$@ -DDLL $<
  
-@@ -239,7 +254,7 @@ fprofiled:
+@@ -238,7 +253,7 @@ fprofiled:
  endif
  
  clean:
@@ -73,11 +73,11 @@ $OpenBSD: patch-Makefile,v 1.11 2013/10/06 20:38:52 brad Exp $
  	rm -f checkasm checkasm.exe $(OBJCHK) $(GENERATED) x264_lookahead.clbin
  	rm -f $(SRC2:%.c=%.gcda) $(SRC2:%.c=%.gcno) *.dyn pgopti.dpi pgopti.dpi.lock
  
-@@ -268,7 +283,6 @@ ifneq ($(IMPLIBNAME),)
- 	install -m 755 $(SONAME) $(DESTDIR)$(bindir)
- 	install -m 644 $(IMPLIBNAME) $(DESTDIR)$(libdir)
+@@ -267,7 +282,6 @@ ifneq ($(IMPLIBNAME),)
+ 	$(INSTALL) -m 755 $(SONAME) $(DESTDIR)$(bindir)
+ 	$(INSTALL) -m 644 $(IMPLIBNAME) $(DESTDIR)$(libdir)
  else ifneq ($(SONAME),)
 -	ln -f -s $(SONAME) $(DESTDIR)$(libdir)/libx264.$(SOSUFFIX)
- 	install -m 755 $(SONAME) $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 $(SONAME) $(DESTDIR)$(libdir)
  endif
  
