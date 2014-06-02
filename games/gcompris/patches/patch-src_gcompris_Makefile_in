@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_gcompris_Makefile_in,v 1.9 2014/04/11 14:52:46 ajacoutot Exp $
+$OpenBSD: patch-src_gcompris_Makefile_in,v 1.10 2014/06/02 12:31:44 ajacoutot Exp $
 
 We need the bundled libgoocanvas because the one in ports misses some
 functions. However, we need to rename it to prevent undefined refs.
 
---- src/gcompris/Makefile.in.orig	Sat Mar 29 09:45:14 2014
-+++ src/gcompris/Makefile.in	Fri Apr 11 15:44:28 2014
-@@ -104,7 +104,7 @@ am__DEPENDENCIES_1 =
+--- src/gcompris/Makefile.in.orig	Sat May 31 20:14:16 2014
++++ src/gcompris/Makefile.in	Mon Jun  2 13:23:11 2014
+@@ -149,7 +149,7 @@ am__DEPENDENCIES_1 =
  @USE_SQLITE_TRUE@am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
  @SUGAR_TRUE@am__DEPENDENCIES_3 = $(am__DEPENDENCIES_1)
  gcompris_DEPENDENCIES =  \
@@ -14,7 +14,7 @@ functions. However, we need to rename it to prevent undefined refs.
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_3)
-@@ -376,7 +376,7 @@ gcompris_SOURCES = $(cairo_c) $(cairo_h) about.c about
+@@ -452,7 +452,7 @@ gcompris_SOURCES = $(cairo_c) $(cairo_h) about.c about
  gcompris_LDFLAGS = \
  	-export-dynamic $(cairo_ldflags)
  

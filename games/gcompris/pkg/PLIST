@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/04/11 14:52:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/06/02 12:31:44 ajacoutot Exp $
 @bin bin/gcompris
 @bin bin/gcompris-gnuchess
 lib/gcompris/
@@ -1144,6 +1144,8 @@ share/gcompris/boards/foot.svg
 share/gcompris/boards/france_region.svg
 share/gcompris/boards/fun.svg
 share/gcompris/boards/fun.xml
+share/gcompris/boards/gcompris/
+share/gcompris/boards/gcompris/mimetypes/
 share/gcompris/boards/geo_country/
 share/gcompris/boards/geo_country.xml
 share/gcompris/boards/geo_country/argentina/
@@ -2063,6 +2065,7 @@ share/gcompris/boards/geography/southamerica/south_america.png
 share/gcompris/boards/geography/southamerica/suriname.png
 share/gcompris/boards/geography/southamerica/uruguay.png
 share/gcompris/boards/geography/southamerica/venezuela.png
+share/gcompris/boards/geography_country/
 share/gcompris/boards/geometry.svg
 share/gcompris/boards/geometry.xml
 share/gcompris/boards/gletters/
@@ -3716,6 +3719,7 @@ share/gcompris/boards/memory_tux.svg
 share/gcompris/boards/memory_tux.xml
 share/gcompris/boards/memory_wordnumber.xml
 share/gcompris/boards/menu.xml
+share/gcompris/boards/mimetypes/
 share/gcompris/boards/mining/
 share/gcompris/boards/mining.svg
 share/gcompris/boards/mining.xml
@@ -4613,6 +4617,8 @@ share/gcompris/boards/skins/babytoy/timers/sablier6.png
 share/gcompris/boards/skins/babytoy/timers/sablier7.png
 share/gcompris/boards/skins/babytoy/timers/sablier8.png
 share/gcompris/boards/skins/babytoy/timers/sablier9.png
+share/gcompris/boards/skins/babytoy/timers/sea.png
+share/gcompris/boards/skins/babytoy/timers/tuxballoon.png
 share/gcompris/boards/smallnumbers/
 share/gcompris/boards/smallnumbers.svg
 share/gcompris/boards/smallnumbers.xml
@@ -10839,6 +10845,7 @@ share/gcompris/boards/voices/gd/words/write.ogg
 share/gcompris/boards/voices/gd/words/yarn.ogg
 share/gcompris/boards/voices/gd/words/yummy.ogg
 share/gcompris/boards/voices/gd/words/zoo.ogg
+share/gcompris/boards/voices/generate_voices_rcc.sh
 share/gcompris/boards/voices/he/
 share/gcompris/boards/voices/he/alphabet/
 share/gcompris/boards/voices/he/alphabet/10.ogg
@@ -11469,7 +11476,6 @@ share/gcompris/boards/voices/hu/intro/readingv.ogg
 share/gcompris/boards/voices/hu/intro/redraw.ogg
 share/gcompris/boards/voices/hu/intro/redraw_symmetrical.ogg
 share/gcompris/boards/voices/hu/intro/reversecount.ogg
-share/gcompris/boards/voices/hu/intro/scalesboard weight.ogg
 share/gcompris/boards/voices/hu/intro/scalesboard.ogg
 share/gcompris/boards/voices/hu/intro/searace.ogg
 share/gcompris/boards/voices/hu/intro/searace1player.ogg
@@ -13967,6 +13973,7 @@ share/gcompris/boards/voices/sk/geography/venezuela.ogg
 share/gcompris/boards/voices/sk/geography/western_sahara.ogg
 share/gcompris/boards/voices/sk/geography/zambia.ogg
 share/gcompris/boards/voices/sk/geography/zimbabwe.ogg
+share/gcompris/boards/voices/sk/intro/
 share/gcompris/boards/voices/sk/misc/
 share/gcompris/boards/voices/sk/misc/about.ogg
 share/gcompris/boards/voices/sk/misc/awesome.ogg

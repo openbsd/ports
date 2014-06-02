@@ -1,20 +1,20 @@
-$OpenBSD: patch-src_goocanvas_src_Makefile_in,v 1.7 2014/04/11 14:52:46 ajacoutot Exp $
+$OpenBSD: patch-src_goocanvas_src_Makefile_in,v 1.8 2014/06/02 12:31:44 ajacoutot Exp $
 
 We need the bundled libgoocanvas because the one in ports misses some
 functions. However, we need to rename it to prevent undefined refs.
 
---- src/goocanvas/src/Makefile.in.orig	Sat Mar 29 09:45:16 2014
-+++ src/goocanvas/src/Makefile.in	Fri Apr 11 15:44:28 2014
-@@ -92,7 +92,7 @@ AM_V_lt = $(am__v_lt_@AM_V@)
- am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+--- src/goocanvas/src/Makefile.in.orig	Sat May 31 20:14:18 2014
++++ src/goocanvas/src/Makefile.in	Mon Jun  2 13:41:24 2014
+@@ -138,7 +138,7 @@ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
+ am__v_lt_1 = 
  libgoocanvas_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 -	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 +	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) -avoid-version \
  	$(AM_CFLAGS) $(CFLAGS) $(libgoocanvas_la_LDFLAGS) $(LDFLAGS) \
  	-o $@
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
-@@ -324,7 +324,7 @@ AM_CPPFLAGS = \
+ AM_V_P = $(am__v_P_@AM_V@)
+@@ -400,7 +400,7 @@ AM_CPPFLAGS = \
  	-DG_LOG_DOMAIN=\"GooCanvas\" \
  	@GCOMPRIS_CFLAGS@
  
@@ -23,10 +23,10 @@ functions. However, we need to rename it to prevent undefined refs.
  libgoocanvas_la_LIBADD = @GCOMPRIS_LIBS@ $(INTLLIBS)
  @PLATFORM_WIN32_TRUE@no_undefined = -no-undefined
  libtool_opts = \
-@@ -462,7 +462,7 @@ clean-libLTLIBRARIES:
- 	  echo "rm -f \"$${dir}/so_locations\""; \
- 	  rm -f "$${dir}/so_locations"; \
- 	done
+@@ -543,7 +543,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f $${locs}; \
+ 	}
+ 
 -libgoocanvas.la: $(libgoocanvas_la_OBJECTS) $(libgoocanvas_la_DEPENDENCIES) $(EXTRA_libgoocanvas_la_DEPENDENCIES) 
 +libgoocanvas-gc.la: $(libgoocanvas_la_OBJECTS) $(libgoocanvas_la_DEPENDENCIES) $(EXTRA_libgoocanvas_la_DEPENDENCIES) 
  	$(AM_V_CCLD)$(libgoocanvas_la_LINK) -rpath $(libdir) $(libgoocanvas_la_OBJECTS) $(libgoocanvas_la_LIBADD) $(LIBS)
