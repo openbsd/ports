@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2014/03/23 01:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/06/02 12:31:24 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.11
+V =			1.6.12
 DISTNAME =		nfdump-$V
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
@@ -16,7 +16,7 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c pthread z
+WANTLIB =		c z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nfdump/}
 
@@ -36,8 +36,10 @@ MULTI_PACKAGES =	-main -nfprofile
 LIB_DEPENDS-main =	net/flow-tools>=0.68.5
 WANTLIB-main =		${WANTLIB} ft
 LIB_DEPENDS-nfprofile =	net/rrdtool
-WANTLIB-nfprofile =	${WANTLIB} rrd
+WANTLIB-nfprofile =	${WANTLIB} pthread rrd
 RUN_DEPENDS-nfprofile =	nfdump-$V:net/nfdump,-main
+
+REORDER_DEPENDENCIES += ${PORTSDIR}/infrastructure/mk/automake.dep
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nfdump

@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_nfprofile_c,v 1.1 2013/05/03 01:16:36 sthen Exp $
---- bin/nfprofile.c.orig	Fri May  3 01:29:10 2013
-+++ bin/nfprofile.c	Fri May  3 01:29:18 2013
-@@ -47,6 +47,7 @@
+$OpenBSD: patch-bin_nfprofile_c,v 1.2 2014/06/02 12:31:24 sthen Exp $
+--- bin/nfprofile.c.orig	Sun Feb 16 12:59:29 2014
++++ bin/nfprofile.c	Mon Jun  2 10:59:51 2014
+@@ -48,6 +48,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/param.h>
