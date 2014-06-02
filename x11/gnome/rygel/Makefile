@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/04/15 07:01:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2014/06/02 08:20:22 jasper Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -7,7 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
-GNOME_VERSION=		0.22.1
+GNOME_VERSION=		0.22.2
 API_V=			2.2
 
 SHARED_LIBS +=  rygel-core-${API_V}         0.0      # .2.2
