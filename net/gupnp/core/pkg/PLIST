@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/05/06 18:55:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/06/02 08:08:31 jasper Exp $
 bin/gupnp-binding-tool
 include/gupnp-1.0/
 include/gupnp-1.0/libgupnp/
@@ -27,6 +27,7 @@ lib/libgupnp-1.0.la
 lib/pkgconfig/gupnp-1.0.pc
 share/gir-1.0/GUPnP-1.0.gir
 share/gtk-doc/html/gupnp/
+share/gtk-doc/html/gupnp/GUPnPAcl.html
 share/gtk-doc/html/gupnp/GUPnPContext.html
 share/gtk-doc/html/gupnp/GUPnPContextManager.html
 share/gtk-doc/html/gupnp/GUPnPControlPoint.html
@@ -41,6 +42,7 @@ share/gtk-doc/html/gupnp/GUPnPServiceProxy.html
 share/gtk-doc/html/gupnp/GUPnPWhiteList.html
 share/gtk-doc/html/gupnp/GUPnPXMLDoc.html
 share/gtk-doc/html/gupnp/annotation-glossary.html
+share/gtk-doc/html/gupnp/api-context.html
 share/gtk-doc/html/gupnp/api-device-control.html
 share/gtk-doc/html/gupnp/api-device-impl.html
 share/gtk-doc/html/gupnp/api-device-info.html

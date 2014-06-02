@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2014/05/06 18:55:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2014/06/02 08:08:31 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		framework for creating UPnP devices and control points
 
 GNOME_PROJECT=		gupnp
-GNOME_VERSION=		0.20.11
+GNOME_VERSION=		0.20.12
 
 SHARED_LIBS +=  gupnp-1.0            3.2     # 4.0
 
