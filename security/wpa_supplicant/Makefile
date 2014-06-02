@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/02 11:26:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/06/02 20:12:53 sthen Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://hostap.epitest.fi/wpa_supplicant/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-# Dual BSD/GPL
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ssl crypto pcap pcsclite pthread
