@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/06 18:36:21 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/02 10:39:11 stsp Exp $
 bin/dvdrip
 bin/dvdrip-exec
 bin/dvdrip-master
@@ -102,6 +102,7 @@ ${P5SITE}/Video/DVDRip/translators.txt
 @man man/man3p/Video::DVDRip.3p
 @man man/man3p/Video::DVDRip::CPAN::Scanf.3p
 share/applications/dvdrip.desktop
+share/icons/hicolor/scalable/apps/dvdrip.svg
 share/locale/cs/LC_MESSAGES/video.dvdrip.mo
 share/locale/da/LC_MESSAGES/video.dvdrip.mo
 share/locale/de/LC_MESSAGES/video.dvdrip.mo
@@ -114,3 +115,5 @@ share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/video.dvdrip.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

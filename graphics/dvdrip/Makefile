@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/04/06 18:36:21 stsp Exp $
+# $OpenBSD: Makefile,v 1.16 2014/06/02 10:39:11 stsp Exp $
 
 COMMENT=	full featured DVD copy program
 
 VERSION=	0.98.11
+REVISION=	0
 DISTNAME=	dvdrip-${VERSION}
 CATEGORIES=	graphics audio multimedia perl5
 
@@ -24,7 +25,8 @@ RUN_DEPENDS=	graphics/ImageMagick \
 		net/p5-Event-RPC \
 		x11/p5-Gtk2-Ex-FormFactory \
 		multimedia/ogmtools \
-		multimedia/lsdvd>=0.15
+		multimedia/lsdvd>=0.15 \
+		x11/gtk+2,-guic
 BUILD_DEPENDS=	devel/p5-Event-ExecFlow \
 		net/p5-Event-RPC \
 		x11/p5-Gtk2-Ex-FormFactory
@@ -47,5 +49,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dvdrip.desktop ${PREFIX}/share/applications
 	rm -f ${PREFIX}/${P5SITE}/Video/DVDRip/Config.pm.orig
 	rm -f ${PREFIX}/${P5SITE}/Video/DVDRip/GUI/Project/Title.pm.orig
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps/
+	${INSTALL_DATA} ${WRKSRC}/dvdrip-icon-hq.svg ${PREFIX}/share/icons/hicolor/scalable/apps/dvdrip.svg
 
 .include <bsd.port.mk>
