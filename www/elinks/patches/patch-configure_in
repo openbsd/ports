@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_in,v 1.1 2014/06/02 14:37:16 sthen Exp $
+--- configure.in.orig	Sat Aug 22 12:15:08 2009
++++ configure.in	Mon Jun  2 15:33:42 2014
+@@ -744,7 +744,7 @@ if test -z "$disable_lua"; then
+ 	for luadir in "$withval" "" /usr /usr/local; do
+ 		for suffix in "" 50; do
+ 			if test "$cf_result" = no; then
+-				LUA_LIBS="-llua$suffix -llualib$suffix -lm"
++				LUA_LIBS="-llua$suffix -lm"
+ 
+ 				if test ! -z "$luadir"; then
+ 					LUA_LIBS="-L$luadir/lib $LUA_LIBS"
+@@ -904,6 +904,8 @@ else
+ fi
+ 
+ AC_MSG_RESULT($cf_result)
++
++AC_CHECK_FUNCS(RAND_egd)
+ 
+ CONFIG_GNUTLS_OPENSSL_COMPAT=no
+ dnl ---- GNU TLS
