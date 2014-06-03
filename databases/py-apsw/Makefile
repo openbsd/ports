@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/08 22:52:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/03 11:32:18 rpointel Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	thin SQLite wrapper for Python
 
+REVISION = 0
 MODPY_EGG_VERSION = 3.8.0.2
 DISTNAME =	apsw-${MODPY_EGG_VERSION}-r1
 EXTRACT_SUFX =	.zip
