@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2014/05/08 17:38:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.80 2014/06/03 11:37:56 rpointel Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.12.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 
