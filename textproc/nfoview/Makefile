@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/14 17:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/06/03 11:35:30 rpointel Exp $
 
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.13.1
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	textproc x11
+
+REVISION = 0
 
 HOMEPAGE =	http://home.gna.org/nfoview/
 
