@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/06/03 02:55:50 lteo Exp $
 
 COMMENT=		passive OS fingerprinting tool
 
@@ -15,7 +15,7 @@ MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c pcap
 
-MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/
+MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/old/2.x/
 
 WRKDIST=	${WRKDIR}/p0f
 
