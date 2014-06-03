@@ -1,0 +1,14 @@
+John the Ripper is a fast and powerful password cracker. It combines several
+cracking modes in one program, and is fully configurable for your particular
+needs (you can even define a custom cracking mode using the built-in compiler
+supporting a subset of C).
+
+Out of the box, John supports (and autodetects) the following crypt formats:
+standard and double-length DES-based, BSDI's extended DES-based, FreeBSD's
+MD5-based and OpenBSD's Blowfish-based.
+
+This package includes the "jumbo" patch of community enhancements, including
+support for many additional hash and cipher types (including popular ones
+such as NTLM, raw MD5, etc., and even things such as encrypted OpenSSH
+private keys, ZIP and RAR archives, PDF files, etc.), as well as some
+optimizations and features.

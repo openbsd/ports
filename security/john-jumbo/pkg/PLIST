@@ -1,0 +1,94 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/03 14:27:54 sthen Exp $
+@conflict john-*
+@bin bin/SIPdump
+@bin bin/calc_stat
+bin/cracf2john.py
+bin/genincstats.rb
+@bin bin/genmkvpwd
+@bin bin/john
+bin/ldif2john.pl
+bin/lion2john-alt.pl
+bin/lion2john.pl
+bin/mailer
+@bin bin/mkvcalcproba
+bin/mozilla2john
+bin/netntlm.pl
+bin/netscreen.py
+bin/odf2john.py
+@bin bin/office2john
+bin/pass_gen.pl
+bin/pdf2john
+bin/racf2john
+bin/radius2john.pl
+bin/rar2john
+bin/sap2john.pl
+bin/sha-dump.pl
+bin/sha-test.pl
+bin/sipdump2john.py
+bin/ssh2john
+@bin bin/tgtsnarf
+@bin bin/unafs
+@bin bin/unique
+@bin bin/unshadow
+@bin bin/vncpcap2john
+share/doc/john/
+share/doc/john/BUGS
+share/doc/john/CHANGES
+share/doc/john/CHANGES-jumbo
+share/doc/john/CHANGES-jumbo.git
+share/doc/john/CONFIG
+share/doc/john/CONTACT
+@comment share/doc/john/CREDITS
+share/doc/john/CREDITS-jumbo
+share/doc/john/DYNAMIC
+share/doc/john/DYNAMIC_SCRIPTING
+share/doc/john/ENCODINGS
+share/doc/john/EPi.patch.README
+share/doc/john/EXAMPLES
+share/doc/john/EXTERNAL
+share/doc/john/FAQ
+share/doc/john/HDAA_README
+share/doc/john/INSTALL
+share/doc/john/LICENSE
+share/doc/john/LICENSE.mpi
+share/doc/john/MARKOV
+share/doc/john/MODES
+share/doc/john/NETNTLM_README
+share/doc/john/OFFICE
+share/doc/john/OPTIONS
+share/doc/john/README
+share/doc/john/README-CUDA
+share/doc/john/README.bash-completion
+share/doc/john/README.mozilla
+share/doc/john/README.mpi
+share/doc/john/README.opencl
+share/doc/john/README.pwsafe
+share/doc/john/RULES
+share/doc/john/SIPcrack-LICENSE
+share/doc/john/pass_gen.Manifest
+share/doc/john/pdfcrack_README
+share/doc/john/pdfcrack_TODO
+share/examples/john/
+@sample ${SYSCONFDIR}/john/
+share/examples/john/all.chr
+@sample ${SYSCONFDIR}/john/all.chr
+share/examples/john/alnum.chr
+@sample ${SYSCONFDIR}/john/alnum.chr
+share/examples/john/alpha.chr
+@sample ${SYSCONFDIR}/john/alpha.chr
+share/examples/john/digits.chr
+@sample ${SYSCONFDIR}/john/digits.chr
+share/examples/john/dumb16.conf
+@sample ${SYSCONFDIR}/john/dumb16.conf
+share/examples/john/dumb32.conf
+@sample ${SYSCONFDIR}/john/dumb32.conf
+share/examples/john/dynamic.conf
+@sample ${SYSCONFDIR}/john/dynamic.conf
+share/examples/john/john.conf
+@sample ${SYSCONFDIR}/john.conf
+share/examples/john/john.local.conf
+@sample ${SYSCONFDIR}/john/john.local.conf
+share/examples/john/lanman.chr
+@sample ${SYSCONFDIR}/john/lanman.chr
+share/examples/john/password.lst
+@sample ${SYSCONFDIR}/john/password.lst

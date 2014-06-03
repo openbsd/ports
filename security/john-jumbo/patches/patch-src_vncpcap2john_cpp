@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_vncpcap2john_cpp,v 1.1.1.1 2014/06/03 14:27:54 sthen Exp $
+--- src/vncpcap2john.cpp.orig	Tue Apr 17 15:47:17 2012
++++ src/vncpcap2john.cpp	Tue Apr 17 15:52:23 2012
+@@ -32,9 +32,14 @@
+ #include <stdexcept>
+ #include <string>
+ #include <vector>
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <arpa/inet.h>
+-#include <netinet/if_ether.h>
++#include <net/if.h>
++#include <net/if_arp.h>
+ #include <netinet/in.h>
++#include <netinet/in_systm.h>
++#include <netinet/if_ether.h>
+ 
+ #define __FAVOR_BSD
+ #include <netinet/ip.h>
