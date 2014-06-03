@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/05/21 18:02:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2014/06/03 11:31:10 rpointel Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
@@ -7,6 +7,8 @@ MODPY_EGG_VERSION=1.7a2
 # git checkout 1d75758caac69c6086f16376ed5b9d9e0fe65efb
 DISTNAME=	sonata-1.7.1.20140328
 CATEGORIES=	audio
+
+REVISION = 0
 
 HOMEPAGE=	http://sonata.berlios.de/
 
