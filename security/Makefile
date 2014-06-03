@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.342 2014/05/15 12:05:24 jturner Exp $
+# $OpenBSD: Makefile,v 1.343 2014/06/03 14:28:10 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -77,6 +77,7 @@
      SUBDIR += its4
      SUBDIR += jailkit
      SUBDIR += john
+     SUBDIR += john-jumbo
      SUBDIR += kc
      SUBDIR += kedpm
      SUBDIR += keepassx
