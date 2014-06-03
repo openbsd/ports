@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_ts_CMakeLists_txt,v 1.1 2014/06/03 20:41:36 zhuk Exp $
+--- modules/ts/CMakeLists.txt.orig	Fri Apr 11 12:15:26 2014
++++ modules/ts/CMakeLists.txt	Mon May 26 22:11:21 2014
+@@ -4,8 +4,8 @@ if(IOS)
+   ocv_module_disable(ts)
+ endif()
+ 
+-set(OPENCV_MODULE_TYPE STATIC)
+-set(OPENCV_MODULE_IS_PART_OF_WORLD FALSE)
++#set(OPENCV_MODULE_TYPE STATIC)
++#set(OPENCV_MODULE_IS_PART_OF_WORLD FALSE)
+ 
+ ocv_warnings_disable(CMAKE_CXX_FLAGS -Wundef)
+ 

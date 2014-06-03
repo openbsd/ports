@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/10/21 22:46:29 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/06/03 20:41:36 zhuk Exp $
 @bin bin/opencv_createsamples
 @bin bin/opencv_haartraining
 @bin bin/opencv_performance
@@ -25,6 +25,7 @@ include/opencv2/contrib/hybridtracker.hpp
 include/opencv2/contrib/openfabmap.hpp
 include/opencv2/contrib/retina.hpp
 include/opencv2/core/
+include/opencv2/core/affine.hpp
 include/opencv2/core/core.hpp
 include/opencv2/core/core_c.h
 include/opencv2/core/cuda_devptrs.hpp
@@ -139,6 +140,9 @@ include/opencv2/nonfree/nonfree.hpp
 include/opencv2/nonfree/ocl.hpp
 include/opencv2/objdetect/
 include/opencv2/objdetect/objdetect.hpp
+include/opencv2/ocl/
+include/opencv2/ocl/matrix_operations.hpp
+include/opencv2/ocl/ocl.hpp
 include/opencv2/opencv.hpp
 include/opencv2/opencv_modules.hpp
 include/opencv2/photo/
@@ -196,6 +200,7 @@ include/opencv2/videostab/videostab.hpp
 @lib lib/libopencv_ml.so.${LIBopencv_ml_VERSION}
 @lib lib/libopencv_nonfree.so.${LIBopencv_nonfree_VERSION}
 @lib lib/libopencv_objdetect.so.${LIBopencv_objdetect_VERSION}
+@lib lib/libopencv_ocl.so.${LIBopencv_ocl_VERSION}
 @lib lib/libopencv_photo.so.${LIBopencv_photo_VERSION}
 @lib lib/libopencv_stitching.so.${LIBopencv_stitching_VERSION}
 @lib lib/libopencv_superres.so.${LIBopencv_superres_VERSION}
@@ -209,6 +214,8 @@ lib/python${MODPY_VERSION}/site-packages/cv2.so
 share/OpenCV/
 share/OpenCV/OpenCVConfig-version.cmake
 share/OpenCV/OpenCVConfig.cmake
+share/OpenCV/OpenCVModules-release.cmake
+share/OpenCV/OpenCVModules.cmake
 share/OpenCV/haarcascades/
 share/OpenCV/haarcascades/haarcascade_eye.xml
 share/OpenCV/haarcascades/haarcascade_eye_tree_eyeglasses.xml

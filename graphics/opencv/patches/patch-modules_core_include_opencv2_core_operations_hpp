@@ -1,13 +1,13 @@
-$OpenBSD: patch-modules_core_include_opencv2_core_operations_hpp,v 1.1 2014/01/23 15:21:31 zhuk Exp $
+$OpenBSD: patch-modules_core_include_opencv2_core_operations_hpp,v 1.2 2014/06/03 20:41:36 zhuk Exp $
 All to build on sparc64 at least.
---- modules/core/include/opencv2/core/operations.hpp.orig	Sun Jan 19 14:25:06 2014
-+++ modules/core/include/opencv2/core/operations.hpp	Sun Jan 19 14:25:28 2014
+--- modules/core/include/opencv2/core/operations.hpp.orig	Fri Apr 11 14:15:26 2014
++++ modules/core/include/opencv2/core/operations.hpp	Sun Jun  1 13:12:28 2014
 @@ -65,7 +65,7 @@
    #elif __GNUC__*10 + __GNUC_MINOR__ >= 42
  
      #if !(defined WIN32 || defined _WIN32) && (defined __i486__ || defined __i586__ || \
 -        defined __i686__ || defined __MMX__ || defined __SSE__  || defined __ppc__) || \
-+        defined __i686__ || defined __MMX__ || defined __SSE__  || defined __ppc__ || defined _GLIBCXX_ATOMIC_BUILTINS ) || \
-         (defined __GNUC__ && defined _STLPORT_MAJOR)
-       #define CV_XADD __sync_fetch_and_add
-     #else
++        defined __i686__ || defined __MMX__ || defined __SSE__  || defined __ppc__ || defined _GLIBCXX_ATOMIC_BUILTINS) || \
+         (defined __GNUC__ && defined _STLPORT_MAJOR) || \
+         defined __EMSCRIPTEN__
+ 
