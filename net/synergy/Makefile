@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2014/05/01 14:46:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.25 2014/06/03 13:45:41 bcallah Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
-V=			1.4.17
-DISTNAME=		synergy-${V}-r2055-Source
+V=			1.5.0
+DISTNAME=		synergy-${V}-r2278-Source
 PKGNAME=		synergy-${V}
 CATEGORIES=		net x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		ICE SM X11 Xext Xi Xinerama Xrandr Xtst \
 			c cryptopp curl m pthread stdc++
 
-MASTER_SITES=		http://fossfiles.com/synergy/
+MASTER_SITES=		http://synergy-project.org/files/packages/
 
 BUILD_DEPENDS=		archivers/gtar
 
@@ -33,7 +33,7 @@ NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/synergy-${V}-Source
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/synergy[cs] ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/synergy[cds] ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/synergy
 	${INSTALL_DATA} ${WRKSRC}/doc/synergy.conf.exampl* \
 		${PREFIX}/share/examples/synergy/

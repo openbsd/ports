@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2014/05/01 14:46:53 bcallah Exp $
---- CMakeLists.txt.orig	Fri Mar 14 16:34:19 2014
-+++ CMakeLists.txt	Tue Apr 15 22:35:21 2014
-@@ -77,7 +77,7 @@ if (UNIX)
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2014/06/03 13:45:41 bcallah Exp $
+--- CMakeLists.txt.orig	Fri May 23 11:43:58 2014
++++ CMakeLists.txt	Fri May 23 14:42:41 2014
+@@ -76,7 +76,7 @@ if (UNIX)
  
  	# warnings as errors:
  	# we have a problem with people checking in code with warnings.
@@ -10,7 +10,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.5 2014/05/01 14:46:53 bcallah Exp $
  
  	# For config.h, detect the libraries, functions, etc.
  	include(CheckIncludeFiles)
-@@ -99,7 +99,7 @@ if (UNIX)
+@@ -98,7 +98,7 @@ if (UNIX)
  	check_include_files(strings.h HAVE_STRINGS_H)
  	check_include_files(string.h HAVE_STRING_H)
  	check_include_files(sys/select.h HAVE_SYS_SELECT_H)
@@ -19,7 +19,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.5 2014/05/01 14:46:53 bcallah Exp $
  	check_include_files(sys/stat.h HAVE_SYS_STAT_H)
  	check_include_files(sys/time.h HAVE_SYS_TIME_H)
  	check_include_files(sys/utsname.h HAVE_SYS_UTSNAME_H)
-@@ -110,7 +110,6 @@ if (UNIX)
+@@ -109,7 +109,6 @@ if (UNIX)
  	check_function_exists(gmtime_r HAVE_GMTIME_R)
  	check_function_exists(nanosleep HAVE_NANOSLEEP)
  	check_function_exists(poll HAVE_POLL)
@@ -27,7 +27,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.5 2014/05/01 14:46:53 bcallah Exp $
  	check_function_exists(strftime HAVE_STRFTIME)
  	check_function_exists(vsnprintf HAVE_VSNPRINTF)
  	check_function_exists(inet_aton HAVE_INET_ATON)
-@@ -153,6 +152,8 @@ if (UNIX)
+@@ -152,6 +151,8 @@ if (UNIX)
  		message(FATAL_ERROR "Missing library: pthread")
  	endif()
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.5 2014/05/01 14:46:53 bcallah Exp $
  	# curl is used on both Linux and Mac
  	find_package(CURL)
  	if (CURL_FOUND)
-@@ -194,78 +195,60 @@ if (UNIX)
+@@ -193,78 +194,60 @@ if (UNIX)
  
  	else() # not-apple
  
@@ -151,7 +151,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.5 2014/05/01 14:46:53 bcallah Exp $
  
  	endif()
  
-@@ -317,7 +300,6 @@ else() # not-unix
+@@ -316,7 +299,6 @@ else() # not-unix
  endif()
  
  add_subdirectory(src)

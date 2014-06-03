@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/18 18:37:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/06/03 13:45:41 bcallah Exp $
 @bin bin/synergyc
+@bin bin/synergyd
 @bin bin/synergys
 @man man/man1/synergyc.1
 @man man/man1/synergys.1
