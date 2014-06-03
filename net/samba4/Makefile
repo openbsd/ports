@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2014/05/06 11:29:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/03 20:37:40 zhuk Exp $
 
 SHARED_ONLY =		Yes
-VERSION =		4.0.17
+VERSION =		4.0.18
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -182,8 +182,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--with-privatedir=/var/samba/private \
 			--with-lockdir=/var/run/samba \
 			--with-privileged-socket-dir=/var/samba \
-			--with-perl-vendorarch=${PREFIX}/${P5ARCH} \
-			--with-perl-vendorlib=${PREFIX}/${P5SITE} \
+			--with-perl-arch-install-dir=${PREFIX}/${P5ARCH} \
+			--with-perl-lib-install-dir=${PREFIX}/${P5SITE} \
 			--enable-selftest \
 			--pedantic
 

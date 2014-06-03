@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.1 2014/05/06 11:29:34 zhuk Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2014/06/03 20:37:40 zhuk Exp $
 @pkgpath net/samba,-docs
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
@@ -28,6 +28,17 @@ share/examples/samba/VFS/shadow_copy_test.c
 share/examples/samba/VFS/skel_opaque.c
 share/examples/samba/VFS/skel_transparent.c
 share/examples/samba/VFS/wscript_build
+share/examples/samba/ad-bench/
+share/examples/samba/ad-bench/README
+share/examples/samba/ad-bench/ad-bench.sh
+share/examples/samba/ad-bench/settings.sh
+share/examples/samba/ad-bench/test_utils.sh
+share/examples/samba/ad-bench/time_group.sh
+share/examples/samba/ad-bench/time_join.sh
+share/examples/samba/ad-bench/time_kinit.sh
+share/examples/samba/ad-bench/time_ldap.sh
+share/examples/samba/ad-bench/time_user.sh
+share/examples/samba/ad-bench/utils.sh
 share/examples/samba/auth/
 share/examples/samba/auth/Makefile
 share/examples/samba/auth/auth_skel.c
