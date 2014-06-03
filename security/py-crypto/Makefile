@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/05/11 20:58:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2014/06/03 11:35:12 rpointel Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,6 +8,8 @@ MODPY_EGG_VERSION =	2.6.1
 DISTNAME =		pycrypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-crypto-${MODPY_EGG_VERSION}
 CATEGORIES =		security devel
+
+REVISION = 0
 
 HOMEPAGE =		https://www.dlitz.net/software/pycrypto/
 
