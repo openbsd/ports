@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/27 15:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/06/03 00:45:40 bcallah Exp $
 
 COMMENT=	modern gopher server
-DISTNAME=	gophernicus-1.4
-REVISION=	1
+DISTNAME=	gophernicus-1.5
 CATEGORIES=	net
 
 HOMEPAGE=	http://gophernicus.org
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	${HOMEPAGE}/software/gophernicus/server/
+MASTER_SITES=	${HOMEPAGE}/software/gophernicus/
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 NO_TEST=	Yes
