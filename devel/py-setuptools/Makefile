@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/04/27 17:04:23 rpointel Exp $
+# $OpenBSD: Makefile,v 1.23 2014/06/03 11:34:24 rpointel Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
@@ -8,6 +8,8 @@ PKGNAME=		py-${DISTNAME:S/c/./}
 EPOCH = 		0
 CATEGORIES=		devel
 PKG_ARCH=		*
+
+REVISION = 0
 
 MASTER_SITES=	${MASTER_SITE_PYPI:=s/setuptools/}
 HOMEPAGE=	http://peak.telecommunity.com/DevCenter/setuptools
