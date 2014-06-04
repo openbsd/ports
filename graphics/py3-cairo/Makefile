@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/05/27 18:08:27 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/04 12:05:00 rpointel Exp $
 
 COMMENT=	cairo bindings for Python
 
@@ -6,7 +6,7 @@ VERSION=	1.10.0
 DISTNAME=	pycairo-${VERSION}
 PKGNAME=	py3-cairo-${VERSION}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics
 
