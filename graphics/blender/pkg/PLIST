@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/03/24 21:16:15 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/06/04 13:37:39 rpointel Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -958,7 +958,7 @@ share/blender/datafiles/colormanagement/luts/adx_adx10_to_cdd.spimtx
 share/blender/datafiles/colormanagement/luts/adx_cdd_to_cid.spimtx
 share/blender/datafiles/colormanagement/luts/adx_cid_to_rle.spi1d
 share/blender/datafiles/colormanagement/luts/adx_exp_to_aces.spimtx
-share/blender/datafiles/colormanagement/luts/colorworks_filmlg_to_p${MODPY_VERSION}dl
+share/blender/datafiles/colormanagement/luts/colorworks_filmlg_to_p3.3dl
 share/blender/datafiles/colormanagement/luts/dci_xyz.spi1d
 share/blender/datafiles/colormanagement/luts/film_response/
 share/blender/datafiles/colormanagement/luts/film_response/agfa_advantix_100.spi1d
