@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/11/05 16:24:14 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2014/06/04 17:42:43 abieber Exp $
 
 COMMENT =	sqlite3 bindings for Node.js
 
-NPM_VERSION =	2.1.7
+NPM_VERSION =	2.2.3
 NPM_NAME =	sqlite3
-
-REVISION = 2
 
 CATEGORIES =	databases
 
@@ -23,6 +21,14 @@ CONFIGURE_STYLE =	npm ext
 WANTLIB =	sqlite3
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
+
+.if ${MACHINE_ARCH} == "i386"
+M=		ia32
+.elif ${MACHINE_ARCH} == "amd64"
+M=		x64
+.endif
+
+SUBST_VARS=	M
 
 # needs expresso and further love
 NO_TEST =	Yes
