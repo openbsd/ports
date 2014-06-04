@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.17 2014/04/11 10:48:17 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.18 2014/06/04 13:37:20 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- configure.orig	Fri Feb 28 19:44:15 2014
-+++ configure	Fri Apr 11 11:42:01 2014
-@@ -18237,7 +18237,7 @@ fi
+--- configure.orig	Fri May 23 12:46:43 2014
++++ configure	Wed Jun  4 15:17:19 2014
+@@ -18305,7 +18305,7 @@ fi
  
  
  # per-machine directory

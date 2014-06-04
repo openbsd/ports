@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_cd-main_c,v 1.12 2014/04/11 10:48:17 ajacoutot Exp $
+$OpenBSD: patch-src_cd-main_c,v 1.13 2014/06/04 13:37:20 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- src/cd-main.c.orig	Tue Dec 10 15:45:02 2013
-+++ src/cd-main.c	Fri Apr 11 11:49:37 2014
-@@ -1788,8 +1788,8 @@ cd_main_icc_store_added_cb (CdIccStore *icc_store,
+--- src/cd-main.c.orig	Wed May 21 11:09:37 2014
++++ src/cd-main.c	Wed Jun  4 15:17:19 2014
+@@ -1791,8 +1791,8 @@ cd_main_icc_store_added_cb (CdIccStore *icc_store,
  	/* create profile */
  	profile = cd_profile_new ();
  	filename = cd_icc_get_filename (icc);
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_cd-main_c,v 1.12 2014/04/11 10:48:17 ajacoutot Exp $
  		cd_profile_set_is_system_wide (profile, TRUE);
  
  	/* parse the profile name */
-@@ -2721,7 +2721,7 @@ main (int argc, char *argv[])
+@@ -2725,7 +2725,7 @@ main (int argc, char *argv[])
  	/* connect to the mapping db */
  	priv->mapping_db = cd_mapping_db_new ();
  	ret = cd_mapping_db_load (priv->mapping_db,
@@ -24,7 +24,7 @@ $OpenBSD: patch-src_cd-main_c,v 1.12 2014/04/11 10:48:17 ajacoutot Exp $
  				  &error);
  	if (!ret) {
  		g_warning ("CdMain: failed to load mapping database: %s",
-@@ -2733,7 +2733,7 @@ main (int argc, char *argv[])
+@@ -2737,7 +2737,7 @@ main (int argc, char *argv[])
  	/* connect to the device db */
  	priv->device_db = cd_device_db_new ();
  	ret = cd_device_db_load (priv->device_db,
