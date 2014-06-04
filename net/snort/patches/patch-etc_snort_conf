@@ -1,9 +1,9 @@
-$OpenBSD: patch-etc_snort_conf,v 1.11 2014/05/15 20:11:43 lteo Exp $
+$OpenBSD: patch-etc_snort_conf,v 1.12 2014/06/04 03:17:12 lteo Exp $
 
 reputation preprocessor disabled, still experimental
 
---- etc/snort.conf.orig	Thu Apr  3 23:25:10 2014
-+++ etc/snort.conf	Mon May  5 19:42:27 2014
+--- etc/snort.conf.orig	Thu Apr  3 17:25:10 2014
++++ etc/snort.conf	Mon Jun  2 00:13:35 2014
 @@ -101,13 +101,13 @@ ipvar AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.1
  # Path to your rules files (this can be a relative path)
  # Note for Windows users:  You are advised to make this an absolute path,
@@ -23,7 +23,20 @@ reputation preprocessor disabled, still experimental
  
  ###################################################
  # Step #2: Configure the decoder.  For more information, see README.decode
-@@ -154,6 +154,7 @@ config checksum_mode: all
+@@ -138,7 +138,11 @@ config disable_ipopt_alerts
+ # config enable_decode_oversized_drops
+ 
+ # Configure IP / TCP checksum mode
+-config checksum_mode: all
++# OpenBSD delays the IP and protocol checksum calculation for outbound packets
++# until late in the outbound path.  However, this causes Snort to think it is
++# seeing packets with bad checksums and discard them and never trigger alerts.
++# To prevent this, turn off Snort's checksum verification subsystem.
++config checksum_mode: none
+ 
+ # Configure maximum number of flowbit references.  For more information, see README.flowbits
+ # config flowbits_size: 64
+@@ -154,6 +158,7 @@ config checksum_mode: all
  #
  # config daq: <type>
  # config daq_dir: <dir>
@@ -31,7 +44,7 @@ reputation preprocessor disabled, still experimental
  # config daq_mode: <mode>
  # config daq_var: <var>
  #
-@@ -499,12 +500,12 @@ preprocessor dnp3: ports { 20000 } \
+@@ -499,12 +504,12 @@ preprocessor dnp3: ports { 20000 } \
     check_crc
  
  # Reputation preprocessor. For more information see README.reputation
@@ -50,7 +63,7 @@ reputation preprocessor disabled, still experimental
  
  ###################################################
  # Step #6: Configure output plugins
-@@ -538,8 +539,9 @@ include reference.config
+@@ -538,8 +543,9 @@ include reference.config
  ###################################################
  
  # site specific rules
@@ -61,7 +74,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/app-detect.rules
  include $RULE_PATH/attack-responses.rules
  include $RULE_PATH/backdoor.rules
-@@ -655,6 +657,9 @@ include $RULE_PATH/web-iis.rules
+@@ -655,6 +661,9 @@ include $RULE_PATH/web-iis.rules
  include $RULE_PATH/web-misc.rules
  include $RULE_PATH/web-php.rules
  include $RULE_PATH/x11.rules
