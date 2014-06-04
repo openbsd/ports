@@ -1,0 +1,19 @@
+$OpenBSD: patch-dcmpstat_tests_msgserv_cc,v 1.1 2014/06/04 13:15:17 jasper Exp $
+
+Security fix for CVE-2013-6825, DCMTK Root Privilege escalation
+http://hmarco.org/bugs/dcmtk-3.6.1-privilege-escalation.html
+
+--- dcmpstat/tests/msgserv.cc.orig	Wed Dec 14 18:43:42 2005
++++ dcmpstat/tests/msgserv.cc	Wed Jun  4 13:31:17 2014
+@@ -210,7 +210,10 @@ int main(int argc, char *argv[])
+        * and run by another user.  Running as root user may be
+        * potentially disasterous if this program screws up badly.
+        */
+-      setuid(getuid());
++     if( setuid(getuid()) != 0){
++        CERR << "Failed to drop privileges";
++        return -1;
++     }
+ #endif
+ 
+     fd_set fdset;

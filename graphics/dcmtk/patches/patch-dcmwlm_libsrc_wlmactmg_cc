@@ -1,0 +1,20 @@
+$OpenBSD: patch-dcmwlm_libsrc_wlmactmg_cc,v 1.1 2014/06/04 13:15:17 jasper Exp $
+
+Security fix for CVE-2013-6825, DCMTK Root Privilege escalation
+http://hmarco.org/bugs/dcmtk-3.6.1-privilege-escalation.html
+
+--- dcmwlm/libsrc/wlmactmg.cc.orig	Thu Dec  8 16:48:35 2005
++++ dcmwlm/libsrc/wlmactmg.cc	Wed Jun  4 13:43:34 2014
+@@ -226,7 +226,11 @@ OFCondition WlmActivityManager::StartProvidingService(
+   // things go very wrong. Only works if the program is setuid root,
+   // and run by another user. Running as root user may be
+   // potentially disasterous if this program screws up badly.
+-  setuid( getuid() );
++  if( setuid(getuid()) != 0 ){
++     sprintf( msg, "Failed to drop privileges\n" );
++     DumpMessage( msg );
++     return( WLM_ECC_InsufficientPortPrivileges );
++  }
+ #endif
+ 
+   // If we get to this point, the entire initialization process has been completed
