@@ -372,7 +372,8 @@ ffi_prep_closure_loc (ffi_closure* closure, ffi_cif* cif,
   unsigned int *tramp = (unsigned int *) codeloc;
   void *fn;
 
-  FFI_ASSERT (cif->abi == FFI_OBSD);
+  if (cif->abi != FFI_ELFBSD)
+    return FFI_BAD_ABI;
 
   if (cif->rtype->type == FFI_TYPE_STRUCT && !cif->flags)
     fn = &ffi_closure_struct_OBSD;

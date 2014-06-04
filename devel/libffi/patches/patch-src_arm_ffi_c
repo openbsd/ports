@@ -1,25 +1,16 @@
-$OpenBSD: patch-src_arm_ffi_c,v 1.4 2013/10/23 17:46:01 fgsch Exp $
+$OpenBSD: patch-src_arm_ffi_c,v 1.5 2014/06/04 17:40:27 jasper Exp $
 
 Fix warning: implicit declaration of function '__clear_cache' and
 change the code to follow our current ABI (APCS).
 
---- src/arm/ffi.c.orig	Tue Dec 29 15:22:26 2009
-+++ src/arm/ffi.c	Mon Oct 21 15:51:29 2013
-@@ -29,6 +29,8 @@
- 
- #include <stdlib.h>
+--- src/arm/ffi.c.orig	Sat Mar 16 12:19:39 2013
++++ src/arm/ffi.c	Wed Apr 16 12:04:25 2014
+@@ -37,6 +37,8 @@
+ static int vfp_type_p (ffi_type *);
+ static void layout_vfp_args (ffi_cif *);
  
 +extern void __clear_cache(char *beg, char *end);
 +
  /* ffi_prep_args is called by the assembly routine once stack space
-    has been allocated for the function's arguments */
- 
-@@ -130,7 +132,7 @@ ffi_status ffi_prep_cif_machdep(ffi_cif *cif)
-       break;
- 
-     case FFI_TYPE_STRUCT:
--      if (cif->rtype->size <= 4)
-+      if (cif->rtype->size <= 4 && !cif->rtype->elements[1])
- 	/* A Composite Type not larger than 4 bytes is returned in r0.  */
- 	cif->flags = (unsigned)FFI_TYPE_INT;
-       else
+    has been allocated for the function's arguments
+    

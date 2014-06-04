@@ -1,66 +1,43 @@
-$OpenBSD: patch-configure_ac,v 1.1 2014/04/20 16:09:47 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2014/06/04 17:40:27 jasper Exp $
 
 Enable libffi on hppa, m88k, mips64(el), powerpc and vax platforms.
 
---- configure.ac.orig	Sun Apr 20 17:41:46 2014
-+++ configure.ac	Sun Apr 20 17:44:09 2014
-@@ -67,7 +67,7 @@ case "$host" in
- 	TARGET=FRV; TARGETDIR=frv
- 	;;
- 
--  hppa*-*-linux* | parisc*-*-linux*)
-+  hppa*-*-linux* | hppa*-*-openbsd* | parisc*-*-linux*)
- 	TARGET=PA_LINUX; TARGETDIR=pa
- 	;;
-   hppa*64-*-hpux*)
-@@ -107,10 +107,14 @@ case "$host" in
+--- configure.ac.orig	Sun Mar 17 23:36:15 2013
++++ configure.ac	Sun Apr 20 18:16:16 2014
+@@ -191,6 +191,10 @@ case "$host" in
  	TARGET=M68K; TARGETDIR=m68k
  	;;
  
-+  m88k-*-openbsd*)
++  m88k-*-*)
 +	TARGET=M88K; TARGETDIR=m88k
 +	;;
 +
-   mips-sgi-irix5.* | mips-sgi-irix6.*)
- 	TARGET=MIPS; TARGETDIR=mips
+   microblaze*-*-*)
+ 	TARGET=MICROBLAZE; TARGETDIR=microblaze
  	;;
--  mips*-*-linux*)
-+  mips*-*-linux* | mips*-*-openbsd*)
- 	# Support 128-bit long double for NewABI.
- 	HAVE_LONG_DOUBLE='defined(__mips64)'
- 	TARGET=MIPS; TARGETDIR=mips
-@@ -128,7 +132,7 @@ case "$host" in
-   powerpc-*-aix* | rs6000-*-aix*)
- 	TARGET=POWERPC_AIX; TARGETDIR=powerpc
- 	;;
--  powerpc-*-freebsd*)
-+  powerpc-*-freebsd* | powerpc-*-openbsd*)
- 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
- 	;;
-   powerpc*-*-rtems*)
-@@ -150,6 +154,10 @@ case "$host" in
- 	TARGET=SPARC; TARGETDIR=sparc
- 	;;
+@@ -256,6 +260,10 @@ case "$host" in
+         TARGET=TILE; TARGETDIR=tile
+         ;;
  
 +  vax-*-openbsd*)
 +	TARGET=VAX; TARGETDIR=vax
 +	;;
 +
-   x86_64-*-darwin*)
- 	TARGET=X86_DARWIN; TARGETDIR=x86
+   xtensa*-*)
+ 	TARGET=XTENSA; TARGETDIR=xtensa
  	;;
-@@ -181,6 +189,7 @@ AM_CONDITIONAL(ALPHA, test x$TARGET = xALPHA)
+@@ -281,6 +289,7 @@ AM_CONDITIONAL(ALPHA, test x$TARGET = xALPHA)
  AM_CONDITIONAL(IA64, test x$TARGET = xIA64)
  AM_CONDITIONAL(M32R, test x$TARGET = xM32R)
  AM_CONDITIONAL(M68K, test x$TARGET = xM68K)
 +AM_CONDITIONAL(M88K, test x$TARGET = xM88K)
- AM_CONDITIONAL(POWERPC, test x$TARGET = xPOWERPC)
- AM_CONDITIONAL(POWERPC_AIX, test x$TARGET = xPOWERPC_AIX)
- AM_CONDITIONAL(POWERPC_DARWIN, test x$TARGET = xPOWERPC_DARWIN)
-@@ -196,6 +205,7 @@ AM_CONDITIONAL(SH64, test x$TARGET = xSH64)
- AM_CONDITIONAL(PA_LINUX, test x$TARGET = xPA_LINUX)
- AM_CONDITIONAL(PA_HPUX, test x$TARGET = xPA_HPUX)
+ AM_CONDITIONAL(MICROBLAZE, test x$TARGET = xMICROBLAZE)
+ AM_CONDITIONAL(METAG, test x$TARGET = xMETAG)
+ AM_CONDITIONAL(MOXIE, test x$TARGET = xMOXIE)
+@@ -302,6 +311,7 @@ AM_CONDITIONAL(PA_HPUX, test x$TARGET = xPA_HPUX)
  AM_CONDITIONAL(PA64_HPUX, test x$TARGET = xPA64_HPUX)
+ AM_CONDITIONAL(TILE, test x$TARGET = xTILE)
+ AM_CONDITIONAL(XTENSA, test x$TARGET = xXTENSA)
 +AM_CONDITIONAL(VAX, test x$TARGET = xVAX)
  
  AC_HEADER_STDC

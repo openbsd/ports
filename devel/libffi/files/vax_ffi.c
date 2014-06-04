@@ -246,7 +246,8 @@ ffi_prep_closure_loc (ffi_closure *closure, ffi_cif *cif,
   char *tramp = (char *) codeloc;
   void *fn;
 
-  FFI_ASSERT (cif->abi == FFI_ELFBSD);
+  if (cif->abi != FFI_ELFBSD)
+    return FFI_BAD_ABI;
 
   /* entry mask */
   *(unsigned short *)(tramp + 0) = 0x0000;
