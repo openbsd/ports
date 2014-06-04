@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_keychain_fmt_plug_c,v 1.1.1.1 2014/06/03 14:27:54 sthen Exp $
---- src/keychain_fmt_plug.c.orig	Mon Jun  2 18:20:56 2014
-+++ src/keychain_fmt_plug.c	Mon Jun  2 18:23:11 2014
+$OpenBSD: patch-src_keychain_fmt_plug_c,v 1.2 2014/06/04 13:52:40 sthen Exp $
+--- src/keychain_fmt_plug.c.orig.port	Wed Jun  4 08:49:27 2014
++++ src/keychain_fmt_plug.c	Wed Jun  4 11:10:28 2014
 @@ -11,6 +11,7 @@
  
  #include <string.h>

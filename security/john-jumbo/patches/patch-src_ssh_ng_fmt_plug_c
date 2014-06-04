@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ssh_ng_fmt_plug_c,v 1.1 2014/06/04 13:52:40 sthen Exp $
+--- src/ssh_ng_fmt_plug.c.orig.port	Wed Jun  4 11:32:01 2014
++++ src/ssh_ng_fmt_plug.c	Wed Jun  4 11:32:07 2014
+@@ -10,6 +10,7 @@
+  * are permitted. */
+ 
+ #include <string.h>
++#include <des.h>
+ #include <openssl/aes.h>
+ #include <openssl/des.h>
+ #include <openssl/asn1.h>

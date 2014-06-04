@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_orig,v 1.1 2014/06/04 13:52:40 sthen Exp $
+
+Yes, the Makefile we are using really is named Makefile.orig.
+(there's a wip autoconf conversion, but it doesn't build yet).
+
+--- src/Makefile.orig.orig.port	Wed Jun  4 12:01:45 2014
++++ src/Makefile.orig	Wed Jun  4 12:01:59 2014
+@@ -2402,7 +2402,7 @@ endif
+ 
+ ../run/cprepair: cprepair.c unicode.c unicode.h options.h misc.h misc.c \
+ 	memdbg.h memdbg.c
+-	gcc -Wall -O3 -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
++	$(CC) -Wall $(COPTFLAGS) -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
+ 	misc.c memdbg.c -o ../run/cprepair
+ 
+ ../run/tgtsnarf: tgtsnarf.o

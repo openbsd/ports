@@ -1,36 +1,92 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/03 14:27:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/04 13:52:40 sthen Exp $
 @conflict john-*
+bin/1password2john.py
+bin/7z2john.py
 @bin bin/SIPdump
+bin/aix2john.pl
+bin/aix2john.py
+bin/androidfde2john.py
+bin/apex2john.py
+bin/bitcoin2john.py
+bin/blockchain2john.py
 @bin bin/calc_stat
+bin/cisco2john.pl
+@bin bin/cprepair
 bin/cracf2john.py
+bin/dmg2john
+bin/dmg2john.py
+bin/ecryptfs2john.py
+bin/encfs2john.py
+bin/gadu2john.py
 bin/genincstats.rb
 @bin bin/genmkvpwd
+bin/gpg2john
+bin/hccap2john
+bin/hextoraw.pl
+bin/htdigest2john.py
+bin/ikescan2john.py
+bin/ios7tojohn.pl
 @bin bin/john
+bin/kdcdump2john.py
+bin/keepass2john
+bin/keychain2john
+bin/keychain2john.py
+bin/keyring2john
+bin/keystore2john
+bin/keystore2john.py
+bin/krbpa2john.py
+bin/kwallet2john
+bin/kwallet2john.py
+bin/lastpass2john.py
 bin/ldif2john.pl
+bin/leet.pl
 bin/lion2john-alt.pl
 bin/lion2john.pl
+bin/lotus2john.py
+@bin bin/luks2john
 bin/mailer
+bin/makechr
+bin/mcafee_epo2john.py
 @bin bin/mkvcalcproba
+bin/ml2john.py
 bin/mozilla2john
 bin/netntlm.pl
 bin/netscreen.py
 bin/odf2john.py
-@bin bin/office2john
+bin/office2john.py
+bin/openssl2john.py
 bin/pass_gen.pl
-bin/pdf2john
+bin/pdf2john.py
+bin/pfx2john
+bin/putty2john
+bin/pwsafe2john
 bin/racf2john
 bin/radius2john.pl
 bin/rar2john
+bin/rar5tojohn.py
+@bin bin/raw2dyna
+bin/rexgen2rules.pl
+bin/s7tojohn.py
 bin/sap2john.pl
 bin/sha-dump.pl
 bin/sha-test.pl
 bin/sipdump2john.py
 bin/ssh2john
+bin/ssh2sshng.py
+bin/sshng2john.py
+bin/strip2john.py
+bin/sxc2john.py
+bin/tcpmd5tojohn.py
 @bin bin/tgtsnarf
-@bin bin/unafs
-@bin bin/unique
-@bin bin/unshadow
+bin/truecrypt_volume2john
+@bin bin/uaf2john
+bin/unafs
+bin/undrop
+bin/unique
+bin/unshadow
 @bin bin/vncpcap2john
+@bin bin/wpapcap2john
+bin/zip2john
 share/doc/john/
 share/doc/john/BUGS
 share/doc/john/CHANGES
@@ -38,17 +94,18 @@ share/doc/john/CHANGES-jumbo
 share/doc/john/CHANGES-jumbo.git
 share/doc/john/CONFIG
 share/doc/john/CONTACT
-@comment share/doc/john/CREDITS
+share/doc/john/COPYING
+share/doc/john/CREDITS
 share/doc/john/CREDITS-jumbo
 share/doc/john/DYNAMIC
 share/doc/john/DYNAMIC_SCRIPTING
 share/doc/john/ENCODINGS
-share/doc/john/EPi.patch.README
 share/doc/john/EXAMPLES
 share/doc/john/EXTERNAL
 share/doc/john/FAQ
 share/doc/john/HDAA_README
 share/doc/john/INSTALL
+share/doc/john/INSTALL-UBUNTU
 share/doc/john/LICENSE
 share/doc/john/LICENSE.mpi
 share/doc/john/MARKOV
@@ -58,24 +115,46 @@ share/doc/john/OFFICE
 share/doc/john/OPTIONS
 share/doc/john/README
 share/doc/john/README-CUDA
+share/doc/john/README-OPENCL
+share/doc/john/README-krb5-18-23
+share/doc/john/README.FreeBSD
+share/doc/john/README.LotusNotes
+share/doc/john/README.MinGW
+share/doc/john/README.apex
 share/doc/john/README.bash-completion
+share/doc/john/README.bitcoin
+share/doc/john/README.cprepair
+share/doc/john/README.format-epi
+share/doc/john/README.gpg
+share/doc/john/README.ios7
+share/doc/john/README.keychain
+share/doc/john/README.keyring
+share/doc/john/README.keystore
+share/doc/john/README.kwallet
+share/doc/john/README.librexgen
 share/doc/john/README.mozilla
 share/doc/john/README.mpi
-share/doc/john/README.opencl
 share/doc/john/README.pwsafe
+share/doc/john/README.ssh
 share/doc/john/RULES
+share/doc/john/Regen-Lost-Salts.txt
 share/doc/john/SIPcrack-LICENSE
+share/doc/john/dynamic_history.txt
+share/doc/john/john-1.7.9-jumbo-7-licensing-stats.txt
+share/doc/john/john-1.7.9-jumbo-7-licensing.txt
 share/doc/john/pass_gen.Manifest
 share/doc/john/pdfcrack_README
 share/doc/john/pdfcrack_TODO
 share/examples/john/
 @sample ${SYSCONFDIR}/john/
-share/examples/john/all.chr
-@sample ${SYSCONFDIR}/john/all.chr
 share/examples/john/alnum.chr
 @sample ${SYSCONFDIR}/john/alnum.chr
+share/examples/john/alnumspace.chr
+@sample ${SYSCONFDIR}/john/alnumspace.chr
 share/examples/john/alpha.chr
 @sample ${SYSCONFDIR}/john/alpha.chr
+share/examples/john/ascii.chr
+@sample ${SYSCONFDIR}/john/ascii.chr
 share/examples/john/digits.chr
 @sample ${SYSCONFDIR}/john/digits.chr
 share/examples/john/dumb16.conf
@@ -84,11 +163,36 @@ share/examples/john/dumb32.conf
 @sample ${SYSCONFDIR}/john/dumb32.conf
 share/examples/john/dynamic.conf
 @sample ${SYSCONFDIR}/john/dynamic.conf
+share/examples/john/dynamic_flat_sse_formats.conf
+@sample ${SYSCONFDIR}/john/dynamic_flat_sse_formats.conf
 share/examples/john/john.conf
 @sample ${SYSCONFDIR}/john.conf
 share/examples/john/john.local.conf
-@sample ${SYSCONFDIR}/john/john.local.conf
+share/examples/john/korelogic.conf
+@sample ${SYSCONFDIR}/john/korelogic.conf
 share/examples/john/lanman.chr
 @sample ${SYSCONFDIR}/john/lanman.chr
+share/examples/john/latin1.chr
+@sample ${SYSCONFDIR}/john/latin1.chr
+share/examples/john/lm_ascii.chr
+@sample ${SYSCONFDIR}/john/lm_ascii.chr
+share/examples/john/lower.chr
+@sample ${SYSCONFDIR}/john/lower.chr
+share/examples/john/lowernum.chr
+@sample ${SYSCONFDIR}/john/lowernum.chr
+share/examples/john/lowerspace.chr
+@sample ${SYSCONFDIR}/john/lowerspace.chr
 share/examples/john/password.lst
 @sample ${SYSCONFDIR}/john/password.lst
+share/examples/john/regex_alphabets.conf
+@sample ${SYSCONFDIR}/john/regex_alphabets.conf
+share/examples/john/repeats16.conf
+@sample ${SYSCONFDIR}/john/repeats16.conf
+share/examples/john/repeats32.conf
+@sample ${SYSCONFDIR}/john/repeats32.conf
+share/examples/john/upper.chr
+@sample ${SYSCONFDIR}/john/upper.chr
+share/examples/john/uppernum.chr
+@sample ${SYSCONFDIR}/john/uppernum.chr
+share/examples/john/utf8.chr
+@sample ${SYSCONFDIR}/john/utf8.chr

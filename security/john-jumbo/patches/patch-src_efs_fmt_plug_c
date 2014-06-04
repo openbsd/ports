@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_efs_fmt_plug_c,v 1.1 2014/06/04 13:52:40 sthen Exp $
+--- src/efs_fmt_plug.c.orig.port	Wed Jun  4 11:32:11 2014
++++ src/efs_fmt_plug.c	Wed Jun  4 11:32:16 2014
+@@ -16,6 +16,7 @@
+ 
+ #include <string.h>
+ #include <assert.h>
++#include <des.h>
+ #include <errno.h>
+ #include "arch.h"
+ #include "misc.h"

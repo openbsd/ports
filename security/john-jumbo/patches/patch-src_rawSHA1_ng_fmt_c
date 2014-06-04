@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_rawSHA1_ng_fmt_c,v 1.1.1.1 2014/06/03 14:27:54 sthen Exp $
+$OpenBSD: patch-src_rawSHA1_ng_fmt_c,v 1.2 2014/06/04 13:52:40 sthen Exp $
 
 revert https://github.com/magnumripper/JohnTheRipper/commit/ef2b184a571851ecf0ddc509ae387d54209eaf6b; segfaults in tests
 
---- src/rawSHA1_ng_fmt.c.orig	Tue Jun  3 13:34:15 2014
-+++ src/rawSHA1_ng_fmt.c	Tue Jun  3 14:06:52 2014
-@@ -379,7 +379,7 @@ static void sha1_fmt_set_key(char *key, int index)
+--- src/rawSHA1_ng_fmt.c.orig.port	Wed Jun  4 08:49:27 2014
++++ src/rawSHA1_ng_fmt.c	Wed Jun  4 11:10:28 2014
+@@ -406,7 +406,7 @@ static void sha1_fmt_set_key(char *key, int index)
  
  static char * sha1_fmt_get_key(int index)
  {
@@ -13,7 +13,7 @@ revert https://github.com/magnumripper/JohnTheRipper/commit/ef2b184a571851ecf0dd
  
      // This function is not hot, we can do this slowly. First, restore
      // endianness.
-@@ -388,8 +388,8 @@ static char * sha1_fmt_get_key(int index)
+@@ -415,8 +415,8 @@ static char * sha1_fmt_get_key(int index)
      key[2] = __builtin_bswap32(M[index][2]);
      key[3] = __builtin_bswap32(M[index][3]);
  

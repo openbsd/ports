@@ -1,40 +1,54 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/03 14:27:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/04 13:52:40 sthen Exp $
 
 COMMENT =		extremely fast password cracker, with community patches
 
-V =			1.7.9
-JV =			7
+V =		1.8.0
+JV =		20140604
 
-DISTNAME =		john-$V-jumbo-${JV}
-PKGNAME =		john-jumbo-$Vpl${JV}
-CATEGORIES =		security
+# when jumbo1 is out, use JV=1 and change PKGNAME to use pl${JV} not pre${JV}
+T =		3f5494dc78c2ee64fbbbd8c74d495d0bcc895dbc
+WRKDIST =	${WRKDIR}/JohnTheRipper-$T
 
-HOMEPAGE =		http://www.openwall.com/john/
+DISTNAME =	john-$V-jumbo-${JV}
+DISTFILES =	${DISTNAME}{$T}.tar.gz
+PKGNAME =	john-jumbo-$Vpre${JV}
+CATEGORIES =	security
 
-# GPL & Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+HOMEPAGE =	http://www.openwall.com/john/
 
-WANTLIB += c crypto glib-2.0 gobject-2.0 gsf-1 m nspr4
-WANTLIB += nss3 pcap plc4 plds4 pthread smime3 softokn3 ssl ssl3
-WANTLIB += stdc++ xml2 z
+# files from various authors; see license review txt file
+PERMIT_PACKAGE_CDROM =	see doc/john-1.7.9-jumbo-7-licensing.txt
+PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES =		http://www.openwall.com/john/g/
-MODULES +=		devel/gettext
-LIB_DEPENDS =		devel/libgsf \
-			security/nss \
-			textproc/libxml
+WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 pthread smime3
+WANTLIB += softokn3 sqlite3 ssl ssl3 z
+
+# Using a bleeding-jumbo snapshot for now.
+# Releases: http://www.openwall.com/john/g/
+MASTER_SITES =		https://github.com/magnumripper/JohnTheRipper/archive/
+
+LIB_DEPENDS =		security/nss
 
 USE_GMAKE =		Yes
+MAKE_FILE =		Makefile.orig
+PATCHORIG =		.orig.port
+
+MODULES +=		lang/python
+MODPY_BUILDDEP =	No
+MODPY_RUNDEP =		No
+MODPY_ADJ_FILES =	../run/*.py
+CONFIGURE_STYLE =	bleh # hack around python.port.mk default
 
 WRKSRC =		${WRKDIST}/src
 
+COPTFLAGS :=		${CFLAGS}
 CFLAGS +=		-c -DHAVE_NSS `pkg-config --cflags nss` \
 			-DJOHN_SYSTEMWIDE=1 \
 			-DJOHN_SYSTEMWIDE_HOME='\"${SYSCONFDIR}/john\"'
 LDFLAGS +=		-lssl -lcrypto -lm -lz `pkg-config --libs nss`
 
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-			HAVE_NSS="-DHAVE_NSS"
+			COPTFLAGS="${COPTFLAGS}" HAVE_NSS="-DHAVE_NSS"
 
 .if ${MACHINE_ARCH} == "i386"
 # there is actually a fallback method to allow use of sse where available and
@@ -60,30 +74,28 @@ ALL_TARGET=		openbsd-sparc64
 ALL_TARGET=		generic
 .endif
 
-BINS=			office2john vncpcap2john SIPdump
-ALL_TARGET+=		${BINS}
+BINS += SIPdump calc_stat cprepair genmkvpwd luks2john makechr
+BINS += mkvcalcproba raw2dyna tgtsnarf uaf2john vncpcap2john wpapcap2john
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/params.h
+	perl -pi -e 's,\$$JOHN/john.conf,${SYSCONFDIR}/john.conf,' ${WRKSRC}/params.h
 	rm ${WRKSRC}/KRB4_*_plug.c # undefined reference to `des_set_odd_parity'
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john
 	${INSTALL_PROGRAM} ${WRKDIST}/run/john ${PREFIX}/bin
-	cd ${WRKDIST}/run; ${INSTALL_PROGRAM} ${BINS} calc_stat genmkvpwd \
-	     mkvcalcproba tgtsnarf unafs unique unshadow ${PREFIX}/bin
+	cd ${WRKDIST}/run; ${INSTALL_PROGRAM} ${BINS} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIST}/run/mailer \
 	    ${WRKDIST}/run/*.{pl,py,rb} ${PREFIX}/bin
-.for i in mozilla2john pdf2john racf2john rar2john ssh2john
-	ln -sf john ${PREFIX}/bin/$i
-.endfor
+	for i in `find ${WRKDIST}/run -type l`; do \
+	    ln -sf john ${PREFIX}/bin/`basename $$i`; done
 	${INSTALL_DATA} ${WRKDIST}/run/*.{chr,conf,lst} \
 	    ${PREFIX}/share/examples/john
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
 
 # not using TEST_TARGET as it gets confused by the quotes in CFLAGS
 do-test:
-	cd ${WRKSRC}; ${MAKE_PROGRAM} check
+	cd ${WRKSRC}; ${MAKE_PROGRAM} -f ${MAKE_FILE} check
 
 .include <bsd.port.mk>
