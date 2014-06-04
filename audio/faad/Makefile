@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2013/12/15 19:50:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2014/06/04 21:37:30 miod Exp $
+
+# gcc -iquote
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for MP4/M4A/AAC files
