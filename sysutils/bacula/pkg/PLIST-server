@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.15 2014/04/19 09:44:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.16 2014/06/04 14:40:08 ajacoutot Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
@@ -47,6 +47,7 @@ libexec/bacula/updatedb/update_bacula_tables_8_to_9
 libexec/bacula/updatedb/update_bdb_tables_8_to_9
 libexec/bacula/updatedb/update_mysql_tables_10_to_11
 libexec/bacula/updatedb/update_mysql_tables_11_to_12
+libexec/bacula/updatedb/update_mysql_tables_12_to_14
 libexec/bacula/updatedb/update_mysql_tables_4_to_5
 libexec/bacula/updatedb/update_mysql_tables_5_to_6
 libexec/bacula/updatedb/update_mysql_tables_6_to_7
@@ -55,11 +56,13 @@ libexec/bacula/updatedb/update_mysql_tables_8_to_9
 libexec/bacula/updatedb/update_mysql_tables_9_to_10
 libexec/bacula/updatedb/update_postgresql_tables_10_to_11
 libexec/bacula/updatedb/update_postgresql_tables_11_to_12
+libexec/bacula/updatedb/update_postgresql_tables_12_to_14
 libexec/bacula/updatedb/update_postgresql_tables_7_to_8
 libexec/bacula/updatedb/update_postgresql_tables_8_to_9
 libexec/bacula/updatedb/update_postgresql_tables_9_to_10
 libexec/bacula/updatedb/update_sqlite3_tables_10_to_11
 libexec/bacula/updatedb/update_sqlite3_tables_11_to_12
+libexec/bacula/updatedb/update_sqlite3_tables_12_to_14
 libexec/bacula/updatedb/update_sqlite3_tables_8_to_9
 libexec/bacula/updatedb/update_sqlite3_tables_9_to_10
 libexec/bacula/updatedb/update_sqlite_tables_4_to_5
