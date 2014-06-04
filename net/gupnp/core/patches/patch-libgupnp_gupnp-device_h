@@ -1,6 +1,7 @@
-$OpenBSD: patch-libgupnp_gupnp-device_h,v 1.1 2014/05/06 18:56:17 jasper Exp $
+$OpenBSD: patch-libgupnp_gupnp-device_h,v 1.2 2014/06/04 14:02:52 jasper Exp $
 
 XXX: Prevent redefinition of GUPnPDevice.
+https://bugzilla.gnome.org/show_bug.cgi?id=731209
 
 --- libgupnp/gupnp-device.h.orig	Tue May  6 20:29:37 2014
 +++ libgupnp/gupnp-device.h	Tue May  6 20:29:57 2014
