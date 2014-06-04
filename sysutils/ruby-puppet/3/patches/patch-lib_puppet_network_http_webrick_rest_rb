@@ -1,0 +1,35 @@
+$OpenBSD: patch-lib_puppet_network_http_webrick_rest_rb,v 1.1 2014/06/04 07:53:09 jasper Exp $
+
+From 4744a7f9deb514302333cd81a30cd662a3453c96 Mon Sep 17 00:00:00 2001
+From: Josh Partlow <joshua.partlow@puppetlabs.com>
+Date: Tue, 27 May 2014 12:45:13 -0700
+Subject: [PATCH] (PUP-2659) Synchronize all webrick requests.
+
+--- lib/puppet/network/http/webrick/rest.rb.orig	Thu May 22 20:48:04 2014
++++ lib/puppet/network/http/webrick/rest.rb	Wed Jun  4 09:48:56 2014
+@@ -7,6 +7,10 @@ class Puppet::Network::HTTP::WEBrickREST < WEBrick::HT
+ 
+   include Puppet::Network::HTTP::Handler
+ 
++  def self.mutex
++    @mutex ||= Mutex.new
++  end
++
+   def initialize(server)
+     raise ArgumentError, "server is required" unless server
+     register([Puppet::Network::HTTP::API::V2.routes, Puppet::Network::HTTP::API::V1.routes])
+@@ -26,9 +30,12 @@ class Puppet::Network::HTTP::WEBrickREST < WEBrick::HT
+     params.merge(client_information(request))
+   end
+ 
+-  # WEBrick uses a service method to respond to requests.  Simply delegate to the handler response method.
++  # WEBrick uses a service method to respond to requests.  Simply delegate to
++  # the handler response method.
+   def service(request, response)
+-    process(request, response)
++    self.class.mutex.synchronize do
++      process(request, response)
++    end
+   end
+ 
+   def headers(request)
