@@ -1,35 +1,51 @@
-$OpenBSD: patch-lib_puppet_type_resources_rb,v 1.4 2014/05/15 20:17:16 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_resources_rb,v 1.5 2014/06/04 07:48:23 jasper Exp $
 
-From 535e748d2f0c102d0b5041988480e2ef237cd10f Mon Sep 17 00:00:00 2001
+From e69fa60ac14c35e8826f93224258a0a4f45a57df Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 17 Apr 2014 17:12:36 +0200
-Subject: [PATCH] User ID's below 1000, not 500, are generally considered system users on OpenBSD.
+Subject: [PATCH 1/2] (PUP-2454) Use 999 as the max system uid for certain operating systems.
 
---- lib/puppet/type/resources.rb.orig	Thu May 15 01:10:29 2014
-+++ lib/puppet/type/resources.rb	Thu May 15 21:07:14 2014
-@@ -49,7 +49,11 @@ Puppet::Type.newtype(:resources) do
+--- lib/puppet/type/resources.rb.orig	Thu May 22 20:48:04 2014
++++ lib/puppet/type/resources.rb	Wed Jun  4 09:34:35 2014
+@@ -39,7 +39,7 @@ Puppet::Type.newtype(:resources) do
+ 
+   newparam(:unless_system_user) do
+     desc "This keeps system users from being purged.  By default, it
+-      does not purge users whose UIDs are less than or equal to 500, but you can specify
++      does not purge users whose UIDs are less than 500 or 1000, depending on operating system, but you can specify
+       a different UID as the inclusive limit."
+ 
+     newvalues(:true, :false, /^\d+$/)
+@@ -49,7 +49,7 @@ Puppet::Type.newtype(:resources) do
        when /^\d+/
          Integer(value)
        when :true, true
 -        500
-+        if Facter.value('operatingsystem') != 'OpenBSD'
-+          500
-+        else
-+          1000
-+        end
++        @resource.system_users_max_uid
        when :false, false
          false
        when Integer; value
-@@ -60,7 +64,11 @@ Puppet::Type.newtype(:resources) do
+@@ -60,7 +60,7 @@ Puppet::Type.newtype(:resources) do
  
      defaultto {
        if @resource[:name] == "user"
 -        500
-+        if Facter.value('operatingsystem') != 'OpenBSD'
-+          500
-+        else
-+          1000
-+        end
++        @resource.system_users_max_uid
        else
          nil
        end
+@@ -159,5 +159,14 @@ Puppet::Type.newtype(:resources) do
+ 
+   def system_users
+     %w{root nobody bin noaccess daemon sys}
++  end
++
++  def system_users_max_uid
++    case Facter.value(:osfamily)
++    when 'Debian', 'OpenBSD', 'FreeBSD'
++      999
++    else
++      499
++    end
+   end
+ end
