@@ -1,0 +1,20 @@
+$OpenBSD: patch-snapdl_pl,v 1.1 2014/06/05 20:22:42 giovanni Exp $
+--- snapdl.pl.orig	Sun Jul  4 02:11:32 2010
++++ snapdl.pl	Tue May 13 16:48:57 2014
+@@ -208,6 +208,7 @@ HW: {
+ 
+ print "Getting SHA256 from main mirror\n";
+ my $SHA256 = `ftp -o - http://ftp.OpenBSD.org/pub/OpenBSD/snapshots/$hw/SHA256`;
++my $SHA256sig = `ftp -o - http://ftp.OpenBSD.org/pub/OpenBSD/snapshots/$hw/SHA256.sig`;
+ 
+ if ( $SHA256 =~ /base([0-9]{2,2}).tgz/ ) {
+         my $r = $1;
+@@ -343,6 +344,8 @@ if ($pretend eq "no") {
+         open my $index_txt, '>', 'index.txt' or die $!;
+         print $str_index_txt;
+         print $index_txt $str_index_txt;
++	 open my $fh_SHA256sig, '>', 'SHA256.sig' or die $!;
++	 print $fh_SHA256sig $SHA256sig;
+ }
+ 
+ 

@@ -1,8 +1,9 @@
-#$OpenBSD: Makefile,v 1.6 2013/03/11 11:41:32 espie Exp $
+#$OpenBSD: Makefile,v 1.7 2014/06/05 20:22:42 giovanni Exp $
 
 COMMENT =		download snapshots of OpenBSD-current
 
 DISTNAME =		snapdl-1.2.2
+REVISION =		0
 CATEGORIES =		sysutils
 PKG_ARCH =		*
 
