@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1265 2014/04/25 15:28:52 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1266 2014/06/05 10:06:09 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2273,7 +2273,7 @@ _internal-checksum: _internal-fetch
 		done; \
 		if $$missing; then \
 			bad=true; \
-			echo 1>&2 "!!! File '$$i' not found in ${CHECKSUM_FILE}"; \
+			echo 1>&2 "!!! Extra file '$$i' in ${CHECKSUM_FILE}"; \
 			echo 1>&2 "!!! Read up on SUPDISTFILES in bsd.port.mk(5)"; \
 			exit 1; \
 		fi; \
