@@ -1,0 +1,39 @@
+$OpenBSD: patch-usmb_dir_c,v 1.1.1.1 2014/06/05 15:40:09 sthen Exp $
+
+allow readdir to work.
+
+--- usmb_dir.c.orig	Mon Feb  4 20:32:17 2013
++++ usmb_dir.c	Thu Jun  5 16:35:40 2014
+@@ -30,6 +30,7 @@
+ #include "usmb.h"
+ #include "utils.h"
+ 
++#include <unistd.h>
+ 
+ int usmb_mkdir (const char *dirname, mode_t mode)
+ {
+@@ -111,19 +112,21 @@ int usmb_readdir (const char *path, void *h, fuse_fill
+     while (NULL != (dirent = smbc_getFunctionReaddir (ctx_) (ctx_, file)))
+     {
+       struct stat stbuf;
++      memset(&stbuf, 0, sizeof(&stbuf));
++      stbuf.st_ino = arc4random();
+ 
+       switch (dirent->smbc_type)
+       {
+         case SMBC_DIR:
+-          stbuf.st_mode = DT_DIR << 12;
++          stbuf.st_mode = S_IFDIR;
+           break;
+ 
+         case SMBC_FILE:
+-          stbuf.st_mode = DT_REG << 12;
++          stbuf.st_mode = S_IFREG;
+           break;
+ 
+         case SMBC_LINK:
+-          stbuf.st_mode = DT_LNK << 12;
++          stbuf.st_mode = S_IFLNK;
+           break;
+ 
+         default:

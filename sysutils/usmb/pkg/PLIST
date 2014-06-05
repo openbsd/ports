@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/05 15:40:09 sthen Exp $
+@bin bin/usmb
+share/doc/usmb/
+share/doc/usmb/README
+share/examples/usmb/
+share/examples/usmb/usmb.conf
+@man man/man1/usmb.1

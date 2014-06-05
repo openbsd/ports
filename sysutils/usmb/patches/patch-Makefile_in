@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/06/05 15:40:09 sthen Exp $
+--- Makefile.in.orig	Mon Feb  4 19:32:17 2013
++++ Makefile.in	Tue Jun  3 10:36:28 2014
+@@ -22,7 +22,7 @@ prefix = ${DESTDIR}@prefix@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+ datarootdir = @datarootdir@
+-mandir = @mandir@
++mandir = ${DESTDIR}@mandir@
+ man1dir = $(mandir)/man1
+ 
+ CFLAGS = @CFLAGS@ -I@srcdir@ -I@builddir@ -Werror
+@@ -65,7 +65,7 @@ install-strip: STRIPFLAGS = -s
+ install install-strip: $(PROGRAM)
+ 	@MKDIR_P@ $(bindir) $(man1dir)
+ 	@INSTALL@ -m 755 $(STRIPFLAGS) $(PROGRAM) $(bindir)/
+-	@INSTALL@ -m 644 $(MANPAGE) $(man1dir)/
++	@INSTALL@ -m 644 @srcdir@/$(MANPAGE) $(man1dir)/
+ 
+ 
+ uninstall:
+@@ -100,7 +100,7 @@ tar:
+ 	 tar zcf $(PWD)/$(PACKAGE)-$(VERSION).tar.gz $(PACKAGE)-$(VERSION))
+ 	rm -rf $(STAGING)
+ 
+-include debian/Makefile.pkgdeb
++include @srcdir@/debian/Makefile.pkgdeb
+ 
+ 
+ config.rng.h: @srcdir@/config.rng

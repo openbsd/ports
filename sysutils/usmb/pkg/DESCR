@@ -1,0 +1,8 @@
+usmb lets you mount SMB shares as unprivileged users via FUSE, in the
+vein of Windows' Map Network Drive facility. It differs from the other
+FUSE SMB filesystems (fusesmb, SMB for FUSE) in that it doesn't have
+Network Neighbourhood functionality: this means that you can mount
+shares that you can't see via NetBIOS browsing.
+
+(Note: unprivileged mounting requires both kern.usermount=1 and access
+to /dev/fuse0).
