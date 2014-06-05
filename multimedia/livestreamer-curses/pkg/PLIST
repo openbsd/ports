@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/03/18 23:56:07 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/05 20:24:23 bcallah Exp $
 bin/livestreamer-curses
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/__init__.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/__init__.pyc
