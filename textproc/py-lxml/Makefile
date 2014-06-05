@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2014/06/04 14:50:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/06/05 06:57:03 jasper Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-MODPY_EGG_VERSION=	2.3.2
+MODPY_EGG_VERSION=	3.3.5
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
-REVISION=	1
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://lxml.de/
@@ -21,6 +20,7 @@ WANTLIB=	m xml2 z exslt xslt ${MODPY_WANTLIB}
 MODULES=	lang/python
 
 LIB_DEPENDS=	textproc/libxslt
+TEST_DEPENDS=	textproc/py-cssselect
 
 MODPY_SETUPTOOLS=Yes
 
