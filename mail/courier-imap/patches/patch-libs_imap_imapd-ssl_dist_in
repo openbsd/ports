@@ -1,6 +1,6 @@
-$OpenBSD: patch-imap_imapd-ssl_dist_in,v 1.9 2012/10/18 08:06:27 giovanni Exp $
---- imap/imapd-ssl.dist.in.orig	Fri Jun 22 14:24:14 2012
-+++ imap/imapd-ssl.dist.in	Sat Sep 22 11:48:04 2012
+$OpenBSD: patch-libs_imap_imapd-ssl_dist_in,v 1.1 2014/06/05 20:45:35 giovanni Exp $
+--- libs/imap/imapd-ssl.dist.in.orig	Mon Nov 11 03:56:33 2013
++++ libs/imap/imapd-ssl.dist.in	Sun Jun  1 17:41:04 2014
 @@ -72,13 +72,13 @@ SSLLOGGEROPTS="-name=imapd-ssl"
  #
  #  Whether or not to start IMAP over SSL on simap port:
@@ -17,7 +17,7 @@ $OpenBSD: patch-imap_imapd-ssl_dist_in,v 1.9 2012/10/18 08:06:27 giovanni Exp $
  
  ##NAME: IMAP_TLS_REQUIRED:1
  #
-@@ -268,8 +268,8 @@ TLS_VERIFYPEER=NONE
+@@ -293,8 +293,8 @@ TLS_VERIFYPEER=NONE
  # problems with SSL clients.  Disable SSL caching by commenting out the
  # following settings:
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_pop3d-ssl_dist_in,v 1.9 2012/10/18 08:06:27 giovanni Exp $
---- imap/pop3d-ssl.dist.in.orig	Fri Jun 22 14:24:14 2012
-+++ imap/pop3d-ssl.dist.in	Sat Sep 22 11:48:04 2012
-@@ -253,8 +253,8 @@ TLS_VERIFYPEER=NONE
+$OpenBSD: patch-libs_imap_pop3d-ssl_dist_in,v 1.1 2014/06/05 20:45:35 giovanni Exp $
+--- libs/imap/pop3d-ssl.dist.in.orig	Mon Nov 11 03:56:33 2013
++++ libs/imap/pop3d-ssl.dist.in	Sun Jun  1 17:41:04 2014
+@@ -256,8 +256,8 @@ TLS_VERIFYPEER=NONE
  # problems with SSL clients.  Disable SSL caching by commenting out the
  # following settings:
  

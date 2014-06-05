@@ -1,9 +1,6 @@
-$OpenBSD: patch-liblock_locktest_c,v 1.2 2013/03/17 19:37:36 rpe Exp $
-
-mktemp change
-
---- liblock/locktest.c.orig	Mon Dec  6 11:18:55 1999
-+++ liblock/locktest.c	Fri Jan  6 19:06:31 2006
+$OpenBSD: patch-libs_liblock_locktest_c,v 1.1 2014/06/05 20:45:35 giovanni Exp $
+--- libs/liblock/locktest.c.orig	Sun Aug 25 20:52:10 2013
++++ libs/liblock/locktest.c	Fri Oct  4 15:13:39 2013
 @@ -5,6 +5,7 @@
  
  /* $Id */

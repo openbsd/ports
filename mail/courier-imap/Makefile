@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.93 2014/04/15 08:53:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2014/06/05 20:45:35 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.13
+V=			4.15
 DISTNAME=		courier-imap-${V}
-REVISION=		0
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-
-REVISION-main=		0
-REVISION-pop3=		0
 
 CATEGORIES=		mail
 
@@ -24,8 +20,10 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c courierauth courierauthsasl gdbm idn
-WANTLIB-pop3=		c courierauth courierauthsasl idn ${MODGETTEXT_WANTLIB}
+WANTLIB=		c courierauth courierauthcommon courierauthsasl gdbm
+WANTLIB+=		idn pcre
+WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl
+WANTLIB-pop3+=		idn pcre ${MODGETTEXT_WANTLIB}
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
@@ -39,7 +37,8 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_lib_db_db_env_create=no
 
 LIB_DEPENDS=		mail/courier-authlib \
-			devel/libidn
+			devel/libidn \
+			devel/pcre
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
@@ -64,13 +63,13 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--cache-file=${WRKDIR}/courier-imap.cache
 
 DOCS=			AUTHORS INSTALL \
-			NEWS imap/ChangeLog \
-			imap/README imap/README.proxy \
-			maildir/README.imapkeywords.html \
-			maildir/README.maildirfilter.html \
-			maildir/README.maildirquota.txt \
-			maildir/README.sharedfolders.txt \
-			tcpd/README.couriertls
+			NEWS libs/imap/ChangeLog \
+			libs/imap/README libs/imap/README.proxy \
+			libs/maildir/README.imapkeywords.html \
+			libs/maildir/README.maildirfilter.html \
+			libs/maildir/README.maildirquota.txt \
+			libs/maildir/README.sharedfolders.txt \
+			libs/tcpd/README.couriertls
 
 FLAVORS=		no_trashquota imap_bugs
 FLAVOR?=
@@ -112,15 +111,15 @@ NO_TEST=		Yes
 
 post-extract:
 	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/urandom,g' \
-	    ${WRKSRC}/imap/imapd.cnf.openssl.in
+	    ${WRKSRC}/libs/imap/imapd.cnf.openssl.in
 	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/urandom,g' \
-	    ${WRKSRC}/imap/pop3d.cnf.openssl.in
+	    ${WRKSRC}/libs/imap/pop3d.cnf.openssl.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courier
-	${INSTALL_DATA} ${WRKSRC}/unicode/README \
+	${INSTALL_DATA} ${WRKSRC}/libs/unicode/README \
 	    ${PREFIX}/share/doc/courier/README.unicode.txt
-	${INSTALL_DATA} ${WRKSRC}/imap/README \
+	${INSTALL_DATA} ${WRKSRC}/libs/imap/README \
 	    ${PREFIX}/share/doc/courier/README.imap.txt
 .	for i in ${DOCS}
 	     ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/courier

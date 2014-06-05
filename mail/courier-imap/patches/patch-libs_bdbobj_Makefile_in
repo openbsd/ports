@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_bdbobj_Makefile_in,v 1.1 2014/06/05 20:45:35 giovanni Exp $
+--- libs/bdbobj/Makefile.in.orig	Sun Aug 25 20:52:35 2013
++++ libs/bdbobj/Makefile.in	Fri Oct  4 15:11:24 2013
+@@ -123,7 +123,7 @@ am__objects_2 = testbdb.$(OBJEXT)
+ testbdb_OBJECTS = $(am_testbdb_OBJECTS)
+ testbdb_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+-	$(CXXFLAGS) $(testbdb_LDFLAGS) $(LDFLAGS) -o $@
++	$(CXXFLAGS) $(LDFLAGS) -o $@
+ SCRIPTS = $(noinst_SCRIPTS)
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)

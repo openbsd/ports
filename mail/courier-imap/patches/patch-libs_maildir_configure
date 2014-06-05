@@ -1,0 +1,55 @@
+$OpenBSD: patch-libs_maildir_configure,v 1.1 2014/06/05 20:45:35 giovanni Exp $
+--- libs/maildir/configure.orig	Sun Aug 25 20:53:34 2013
++++ libs/maildir/configure	Sun Jun  1 18:11:15 2014
+@@ -16396,7 +16396,7 @@ $as_echo "#define TIME_WITH_SYS_TIME 1" >>confdefs.h
+ 
+ fi
+ 
+-for ac_header in sys/stat.h sys/wait.h fcntl.h unistd.h sysexits.h utime.h pcre.h pcre/pcre.h
++for ac_header in sys/stat.h sys/wait.h fcntl.h unistd.h sysexits.h utime.h pcre.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
+@@ -16416,16 +16416,6 @@ if test "x$ac_cv_header_pcre_h" = xyes; then :
+ fi
+ 
+ 
+-
+-ac_fn_c_check_header_mongrel "$LINENO" "pcre/pcre.h" "ac_cv_header_pcre_pcre_h" "$ac_includes_default"
+-if test "x$ac_cv_header_pcre_pcre_h" = xyes; then :
+-  LIBPCRE=-lpcre
+-fi
+-
+-
+-
+-
+-
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sys/wait.h that is POSIX.1 compatible" >&5
+ $as_echo_n "checking for sys/wait.h that is POSIX.1 compatible... " >&6; }
+ if ${ac_cv_header_sys_wait_h+:} false; then :
+@@ -16890,7 +16880,7 @@ if ${ac_cv_lib_fam_FAMOpen+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lfam  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16925,7 +16915,7 @@ if test "x$ac_cv_lib_fam_FAMOpen" = xyes; then :
+ 			LIBFAM=-lfam
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define HAVE_FAM 1
++#define HAVE_FAM 0
+ _ACEOF
+ 
+ 
+@@ -16955,7 +16945,6 @@ fi
+ 
+ 
+ 
+-echo "$LIBFAM" >maildir.libdeps
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for missing gethostname prototype" >&5
+ $as_echo_n "checking for missing gethostname prototype... " >&6; }
