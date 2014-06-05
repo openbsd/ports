@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/11/07 07:09:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/06/05 21:04:51 giovanni Exp $
 @pkgpath mail/maildrop
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/maildrop/*
 @owner _courier
 @group _courier
 @bin bin/lockmail
@@ -59,4 +60,9 @@ share/doc/maildrop/html/rfc2045.html
 share/doc/maildrop/html/rfc822.html
 share/doc/maildrop/maildroptips.txt
 share/doc/maildrop/quotawarnmsg
+@sample ${SYSCONFDIR}/maildrop/
+@mode 644
+@owner _courier
+@group _courier
+@sample ${SYSCONFDIR}/maildrop/quotawarnmsg
 share/doc/pkg-readmes/${FULLPKGNAME}

@@ -1,34 +1,37 @@
-# $OpenBSD: Makefile,v 1.48 2013/11/07 07:09:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2014/06/05 21:04:51 giovanni Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
-V=			2.5.5
+V=			2.7.1
 DISTNAME=		maildrop-$V
 PKGNAME-main=		maildrop-${V}
 FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
 
-REVISION-main=		1
-REVISION-utils=		0
-
 HOMEPAGE=		http://www.courier-mta.org/maildrop/
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
 
-FLAVORS=		postfix
+FLAVORS=		postfix no_trashquota
 FLAVOR?=
 
 MULTI_PACKAGES=		-main -utils
-
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
+			ac_cv_header_fam_h=no \
+			ac_cv_lib_fam_FAMOpen=no \
+			ac_cv_lib_db_dbopen=no \
+			ac_cv_func_dbopen=no
+MAKE_ENV=		INCLUDES="-I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
 
@@ -60,9 +63,9 @@ DOCFILES=		${WRKSRC}/README \
 			${WRKSRC}/UPGRADE \
 			${WRKSRC}/README.postfix \
 			${WRKSRC}/maildroptips.txt \
-			${WRKSRC}/maildir/README.sharedfolders.txt \
-			${WRKSRC}/maildir/README.maildirquota.txt \
-			${WRKSRC}/maildir/quotawarnmsg
+			${WRKSRC}/libs/maildir/README.sharedfolders.txt \
+			${WRKSRC}/libs/maildir/README.maildirquota.txt \
+			${WRKSRC}/libs/maildir/quotawarnmsg
 
 
 .if ${FLAVOR:Mpostfix}
@@ -74,6 +77,12 @@ RUN_DEPENDS=		mail/postfix/stable
 CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 CONFIGURE_ARGS+=	--enable-trusted-users="root _courier"
 CONFIGURE_ARGS+=	--enable-trusted-groups="wheel _courier"
+.endif
+
+.if ${FLAVOR:Mno_trashquota}
+CONFIGURE_ARGS+=	--without-trashquota
+.else
+CONFIGURE_ARGS+=	--with-trashquota
 .endif
 
 MODULES=		devel/gettext
@@ -88,6 +97,9 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pcre \
 			mail/courier-authlib
 
+USE_GROFF=		Yes
+USE_LIBTOOL=		Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop
 	@for i in ${DOCFILES}; do \
@@ -95,7 +107,7 @@ post-install:
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/maildrop ;\
 	    fi \
 	done
-	${INSTALL_DATA} ${WRKSRC}/unicode/README \
+	${INSTALL_DATA} ${WRKSRC}/libs/unicode/README \
 	    ${PREFIX}/share/doc/maildrop/README.unicode.txt
 
 .include <bsd.port.mk>

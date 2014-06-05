@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_maildrop_maildropfilter_7_in,v 1.1 2014/06/05 21:04:51 giovanni Exp $
+--- libs/maildrop/maildropfilter.7.in.orig	Thu Aug 29 14:31:35 2013
++++ libs/maildrop/maildropfilter.7.in	Fri Oct  4 15:36:35 2013
+@@ -377,7 +377,7 @@ seconds before trying to create its own dot\-lock file
+ .PP
+ \fILOGNAME\fR
+ .RS 4
+-Name of the user to who the message is being delivered\&.
++Name of the user to whom the message is being delivered\&.
+ .RE
+ .PP
+ \fIMAILDROP_OLD_REGEXP\fR

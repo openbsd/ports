@@ -1,4 +1,4 @@
-$OpenBSD: patch-maildrop_deliver_C,v 1.2 2012/09/04 11:33:35 gonzalo Exp $
+$OpenBSD: patch-libs_maildrop_deliver_C,v 1.1 2014/06/05 21:04:51 giovanni Exp $
 
 maildrop adds a newline to mbox files before delivering new messages.
 This effectively alters the final message in the mbox, causing a
@@ -15,8 +15,8 @@ gracefully handle the delivery of new mail to an open folder.
 [1] http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=132411
 [2] http://markmail.org/message/w5mwn3jpmn3qeo5x
 
---- maildrop/deliver.C.orig	Mon Apr  4 12:58:58 2011
-+++ maildrop/deliver.C	Mon Sep  3 14:44:36 2012
+--- libs/maildrop/deliver.C.orig	Sun Aug 25 20:54:20 2013
++++ libs/maildrop/deliver.C	Fri Oct  4 15:36:27 2013
 @@ -230,15 +230,7 @@ Buffer	b;
  		{
  			format_mbox.Init(1);
