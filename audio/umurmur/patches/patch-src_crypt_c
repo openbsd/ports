@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_crypt_c,v 1.4 2014/06/06 09:08:37 dcoppa Exp $
+
+Fix an issue with byte switching. The preprocessor directive used to
+determine the endianess of the system only worked on Linux resulting in
+voice running over TCP only when umurmur runs on other platforms.
+
+Adapted from upstream git commit 27da14ea2abe5680ddfcffbf2a59be5f5a67cecd
+
+--- src/crypt.c.orig	Wed Jan  1 22:40:30 2014
++++ src/crypt.c	Fri Jun  6 10:39:52 2014
+@@ -220,16 +220,14 @@ bool_t CryptState_decrypt(cryptState_t *cs, const unsi
+ #define SHIFTBITS 63
+ typedef uint64_t subblock;
+ 
+-#if __BYTE_ORDER == __BIG_ENDIAN
++#if defined(BYTE_ORDER_BIG_ENDIAN)
+ #define SWAPPED(x) (x)
+-#else
+-#ifdef __x86_64__
++#elif defined( __x86_64__)
+ #define SWAPPED(x) ({register uint64_t __out, __in = (x); __asm__("bswap %q0" : "=r"(__out) : "0"(__in)); __out;})
+ #else
+ #include <byteswap.h>
+ #define SWAPPED(x) bswap_64(x)
+-#endif
+-#endif
++#endif // defined(BYTE_ORDER_BIG_ENDIAN)
+ 
+ #else
+ 
