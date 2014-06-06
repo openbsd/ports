@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2014/05/19 07:52:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.59 2014/06/06 14:53:37 jturner Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.18.11
+REVISION =		0
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -9,10 +10,10 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		FLAC ao audiofile c cdio cdio_cdda cdio_paranoia \
-			curl glib-2.0 gthread-2.0 id3tag m mad \
-			mikmod ogg pthread samplerate sndfile sndio \
-			bz2 mpdclient opus z
+WANTLIB =		FLAC ao audiofile avcodec avformat avutil c \
+			cdio cdio_cdda cdio_paranoia curl glib-2.0 \
+			gthread-2.0 id3tag m mad mikmod ogg pthread \
+			samplerate sndfile sndio bz2 mpdclient opus z
 
 MASTER_SITES =		http://www.musicpd.org/download/mpd/stable/
 
@@ -30,6 +31,7 @@ LIB_DEPENDS =		devel/libaudiofile \
 			audio/libmikmod \
 			audio/opus \
 			audio/libmpdclient \
+			graphics/ffmpeg \
 			net/curl \
 			devel/glib2
 
@@ -39,7 +41,6 @@ FLAVOR ?=
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-alsa \
-			--disable-ffmpeg \
 			--disable-fluidsynth \
 			--disable-gme \
 			--disable-inotify \
@@ -62,6 +63,7 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--enable-audiofile \
 			--enable-cdio-paranoia \
 			--enable-curl \
+			--enable-ffmpeg \
 			--enable-lsr \
 			--enable-mad \
 			--enable-mikmod \
