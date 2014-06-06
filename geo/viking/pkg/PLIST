@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/08/07 10:37:44 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/06/06 11:18:24 kirby Exp $
 @bin bin/viking
 share/applications/viking.desktop
 share/gnome/
@@ -6,7 +6,16 @@ share/gnome/help/
 share/gnome/help/viking/
 share/gnome/help/viking/C/
 share/gnome/help/viking/C/figures/
+share/gnome/help/viking/C/figures/DEM_file_info_dialog.png
+share/gnome/help/viking/C/figures/LayersTracksList.png
+share/gnome/help/viking/C/figures/LayersTracksStatistics.png
+share/gnome/help/viking/C/figures/Maps_download_region_dialog.png
+share/gnome/help/viking/C/figures/Track_elevation_graph.png
+share/gnome/help/viking/C/figures/Track_properties.png
+share/gnome/help/viking/C/figures/Track_statistics.png
+share/gnome/help/viking/C/figures/Trackpoint_edit_dialog.png
 share/gnome/help/viking/C/figures/Viking-OSM-CycleMap-ManyTracks.jpg
+share/gnome/help/viking/C/figures/WaypointsList.png
 share/gnome/help/viking/C/figures/addtr_18.png
 share/gnome/help/viking/C/figures/addwp_18.png
 share/gnome/help/viking/C/figures/demdl_18.png
@@ -30,12 +39,14 @@ share/gnome/help/viking/C/figures/zoom_status_popup.png
 share/gnome/help/viking/C/legal.xml
 share/gnome/help/viking/C/viking.xml
 share/icons/hicolor/48x48/apps/viking.png
+share/locale/ast/LC_MESSAGES/viking.mo
 share/locale/cs/LC_MESSAGES/viking.mo
 share/locale/da/LC_MESSAGES/viking.mo
 share/locale/de/LC_MESSAGES/viking.mo
 share/locale/el/LC_MESSAGES/viking.mo
 share/locale/en_GB/LC_MESSAGES/viking.mo
 share/locale/es/LC_MESSAGES/viking.mo
+share/locale/eu/LC_MESSAGES/viking.mo
 share/locale/fi/LC_MESSAGES/viking.mo
 share/locale/fr/LC_MESSAGES/viking.mo
 share/locale/he/LC_MESSAGES/viking.mo
@@ -53,6 +64,7 @@ share/locale/nl/LC_MESSAGES/viking.mo
 share/locale/pl/LC_MESSAGES/viking.mo
 share/locale/pt_BR/LC_MESSAGES/viking.mo
 share/locale/ru/LC_MESSAGES/viking.mo
+share/locale/sk/LC_MESSAGES/viking.mo
 share/locale/sl/LC_MESSAGES/viking.mo
 share/locale/sv/LC_MESSAGES/viking.mo
 share/locale/uk/LC_MESSAGES/viking.mo
