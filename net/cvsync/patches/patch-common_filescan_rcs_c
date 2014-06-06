@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_filescan_rcs_c,v 1.1 2014/06/06 15:53:15 sthen Exp $
+--- common/filescan_rcs.c.orig	Thu Jun  5 16:27:25 2014
++++ common/filescan_rcs.c	Thu Jun  5 16:28:01 2014
+@@ -931,6 +931,10 @@ filescan_rcs_update_rcs_delta(struct filescan_args *fs
+ 					   rev->next.n_len);
+ 		}
+ 
++		/* commitid */
++		(*hashops->update)(fsa->fsa_hash_ctx, rev->commitid.i_id,
++				   rev->commitid.i_len);
++
+ 		(*hashops->final)(fsa->fsa_hash_ctx, cmd);
+ 
+ 		if (!mux_send(fsa->fsa_mux, MUX_FILECMP, cmd, hashops->length))

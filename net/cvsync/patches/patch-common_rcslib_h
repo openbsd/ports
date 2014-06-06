@@ -1,0 +1,11 @@
+$OpenBSD: patch-common_rcslib_h,v 1.1 2014/06/06 15:53:15 sthen Exp $
+--- common/rcslib.h.orig	Thu Jun  5 16:29:26 2014
++++ common/rcslib.h	Thu Jun  5 16:29:36 2014
+@@ -102,6 +102,7 @@ struct rcslib_revision {
+ 	struct rcsnum		next;
+ 	struct rcsstr		log;
+ 	struct rcsstr		text;
++	struct rcsid		commitid;
+ 
+ 	/* internal use */
+ 	struct rcslib_revision	*rv_next;

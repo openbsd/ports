@@ -1,0 +1,61 @@
+$OpenBSD: patch-common_rcslib_c,v 1.1 2014/06/06 15:53:15 sthen Exp $
+--- common/rcslib.c.orig	Thu Jun  5 16:28:08 2014
++++ common/rcslib.c	Thu Jun  5 16:29:21 2014
+@@ -64,6 +64,7 @@ static const struct rcs_keyword rcs_keywords[] = {
+ 	{ "strict",	6 },
+ 	{ "symbols",	7 },
+ 	{ "text",	4 },
++	{ "commitid",	8 },
+ 	{ NULL,		0 }
+ };
+ 
+@@ -83,7 +84,8 @@ enum {
+ 	RCS_STATE,
+ 	RCS_STRICT,
+ 	RCS_SYMBOLS,
+-	RCS_TEXT
++	RCS_TEXT,
++	RCS_COMMITID
+ };
+ 
+ #define	RCS_SKIP(p, e)			\
+@@ -569,6 +571,39 @@ rcslib_parse_delta(struct rcslib_file *rcs, char *sp, 
+ 		}
+ 
+ 		if (*sp++ != ';') {
++			free(delta->rd_rev);
++			return (NULL);
++		}
++
++		RCS_SKIP_NORET(sp, bp)
++		if (sp > bp) {
++			free(delta->rd_rev);
++			return (NULL);
++		}
++
++		/* commitid id; */
++		rcskey = &rcs_keywords[RCS_COMMITID];
++		if ((sp + rcskey->namelen > bp) ||
++		    (memcmp(sp, rcskey->name, rcskey->namelen) != 0)) {
++			free(delta->rd_rev);
++			return (NULL);
++		}
++		sp += rcskey->namelen;
++
++		p = sp;
++		RCS_SKIP_NORET(sp, bp)
++		if ((sp > bp) || (sp == p)) {
++			free(delta->rd_rev);
++			return (NULL);
++		}
++
++		if ((sp = rcslib_parse_id(sp, bp, &rev->commitid)) == NULL) {
++			free(delta->rd_rev);
++			return (NULL);
++		}
++
++		RCS_SKIP_NORET(sp, bp)
++		if ((sp > bp) || (*sp++ != ';')) {
+ 			free(delta->rd_rev);
+ 			return (NULL);
+ 		}
