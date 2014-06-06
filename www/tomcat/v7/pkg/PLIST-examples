@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.19 2014/03/13 09:18:33 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.20 2014/06/06 10:13:05 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -1059,7 +1059,6 @@ webapps/docs/api/org/apache/jasper/compiler/ELFunctionMapper.html
 webapps/docs/api/org/apache/jasper/compiler/ELInterpreter.html
 webapps/docs/api/org/apache/jasper/compiler/ELInterpreterFactory.DefaultELInterpreter.html
 webapps/docs/api/org/apache/jasper/compiler/ELInterpreterFactory.html
-webapps/docs/api/org/apache/jasper/compiler/ELParser.TextBuilder.html
 webapps/docs/api/org/apache/jasper/compiler/ELParser.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorDispatcher.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorHandler.html
@@ -1587,7 +1586,6 @@ webapps/docs/api/org/apache/tomcat/util/digester/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/file/
-webapps/docs/api/org/apache/tomcat/util/file/Constants.html
 webapps/docs/api/org/apache/tomcat/util/file/Matcher.html
 webapps/docs/api/org/apache/tomcat/util/file/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/file/package-summary.html
@@ -1804,10 +1802,17 @@ webapps/docs/api/org/apache/tomcat/util/scan/UrlJar.html
 webapps/docs/api/org/apache/tomcat/util/scan/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/scan/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/scan/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/security/
+webapps/docs/api/org/apache/tomcat/util/security/PrivilegedGetTccl.html
+webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetTccl.html
+webapps/docs/api/org/apache/tomcat/util/security/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/security/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/security/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/threads/
 webapps/docs/api/org/apache/tomcat/util/threads/Constants.html
 webapps/docs/api/org/apache/tomcat/util/threads/LimitLatch.html
 webapps/docs/api/org/apache/tomcat/util/threads/ResizableExecutor.html
+webapps/docs/api/org/apache/tomcat/util/threads/StopPooledThreadException.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskQueue.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskThread.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskThreadFactory.html
@@ -1816,6 +1821,7 @@ webapps/docs/api/org/apache/tomcat/util/threads/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-tree.html
 webapps/docs/api/org/apache/tomcat/websocket/
+webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelGroupUtil.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapper.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperNonSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperSecure.html

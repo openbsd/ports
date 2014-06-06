@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.9 2014/02/03 10:24:07 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.10 2014/06/06 10:13:05 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
@@ -928,7 +928,6 @@ webapps/docs/api/org/apache/jasper/compiler/AttributeParser.html
 webapps/docs/api/org/apache/jasper/compiler/BeanRepository.html
 webapps/docs/api/org/apache/jasper/compiler/Compiler.html
 webapps/docs/api/org/apache/jasper/compiler/ELFunctionMapper.html
-webapps/docs/api/org/apache/jasper/compiler/ELParser.TextBuilder.html
 webapps/docs/api/org/apache/jasper/compiler/ELParser.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorDispatcher.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorHandler.html
@@ -1506,6 +1505,12 @@ webapps/docs/api/org/apache/tomcat/util/res/StringManager.html
 webapps/docs/api/org/apache/tomcat/util/res/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/res/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/res/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/security/
+webapps/docs/api/org/apache/tomcat/util/security/PrivilegedGetTccl.html
+webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetTccl.html
+webapps/docs/api/org/apache/tomcat/util/security/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/security/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/security/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/threads/
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPool.ControlRunnable.html
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPool.MonitorRunnable.html

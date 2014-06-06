@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2014/06/06 10:13:05 dcoppa Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -7,7 +7,6 @@ VER =		${MAJ_VER}.${MIN_VER}.${MICRO_VER}
 DISTNAME =	apache-tomcat-${VER}
 PKGNAME-main =	tomcat-${VER}
 PKGNAME-examples =tomcat-examples-${VER}
-REVISION =	0
 
 CATEGORIES =	www
 
