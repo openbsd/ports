@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/05/18 15:49:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.31 2014/06/06 17:33:30 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ BROKEN-powerpc = no atomics for this arch
 
 COMMENT =	Ruby virtual machine and core library
 
-V=		2.2.6
+V=		2.2.7
 EXTRACT_SUFX=	.tar.bz2
 DISTNAME =	rubinius-${V}
 
@@ -45,7 +45,8 @@ MAKE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CC="${CC}" \
 		make=gmake \
 		GEM_HOME=${GEM_HOME} \
-		GEM_PATH=${GEM_HOME}/ruby/2.0:${LOCALBASE}/lib/ruby/gems/2.0
+		GEM_PATH=${GEM_HOME}/ruby/2.0:${LOCALBASE}/lib/ruby/gems/2.0 \
+		LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 RBX_ARCH =	${MACHINE_ARCH}-openbsd
 GEM_HOME =	${WRKSRC}/vendor/build-gems
@@ -101,8 +102,8 @@ TEST_IS_INTERACTIVE = Yes
 
 # VM Test: Failed 1 of 650 tests
 # mspec:
-# amd64: 2160 files, 19266 examples, 155393 expectations, 16 failures, 1 error
-# i386:  2160 files, 19243 examples, 149109 expectations, 19 failures, 1 error
+# amd64: 2141 files, 19407 examples, 155561 expectations, 8 failures, 0 errors
+# i386:  2141 files, 19384 examples, 149277 expectations, 11 failures, 0 errors
 do-test:
 	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} vm:test
 	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci -f s
