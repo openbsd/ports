@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/06/07 20:20:42 sthen Exp $
+
+BROKEN-i386=	frequent segfaults during build
 
 COMMENT=	gcc for arm-elf cross-development
 
