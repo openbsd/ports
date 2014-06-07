@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2014/06/03 20:41:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.27 2014/06/07 14:55:29 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-ONLY_FOR_ARCHS-java =	amd64 i386
+# XXX no i386 due to often JDK build failures
+ONLY_FOR_ARCHS-java =	amd64
 SHARED_ONLY =		Yes
 
 CATEGORIES =		graphics devel
