@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/04/13 07:10:11 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/06/07 15:01:27 rpointel Exp $
 @option no-default-conflict
 @conflict python->=3.4,<3.5
 @pkgpath lang/python3/3.4,-main
@@ -1597,7 +1597,7 @@ lib/python3.4/ensurepip/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/ensurepip/__pycache__/_uninstall.cpython-34.pyc
 lib/python3.4/ensurepip/__pycache__/_uninstall.cpython-34.pyo
 lib/python3.4/ensurepip/_bundled/
-lib/python3.4/ensurepip/_bundled/pip-1.5.4-py2.py3-none-any.whl
+lib/python3.4/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
 lib/python3.4/ensurepip/_bundled/setuptools-2.1-py2.py3-none-any.whl
 lib/python3.4/ensurepip/_uninstall.py
 lib/python3.4/enum.py

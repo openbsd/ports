@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.1.1.1 2014/04/13 07:10:10 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2014/06/07 15:01:27 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=3.4,<3.5
 @pkgpath lang/python3/3.4,-idle
@@ -213,6 +213,8 @@ lib/python3.4/idlelib/idle_test/__init__.py
 lib/python3.4/idlelib/idle_test/__pycache__/
 lib/python3.4/idlelib/idle_test/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/htest.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/htest.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/mock_idle.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/mock_idle.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/mock_tk.cpython-34.pyc
@@ -239,6 +241,7 @@ lib/python3.4/idlelib/idle_test/__pycache__/test_text.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_text.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_warning.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_warning.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/htest.py
 lib/python3.4/idlelib/idle_test/mock_idle.py
 lib/python3.4/idlelib/idle_test/mock_tk.py
 lib/python3.4/idlelib/idle_test/test_calltips.py

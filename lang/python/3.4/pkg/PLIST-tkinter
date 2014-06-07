@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.1.1.1 2014/04/13 07:10:12 rpointel Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.2 2014/06/07 15:01:27 rpointel Exp $
 @option no-default-conflict
 @conflict python-tkinter->=3.4,<3.4
 @pkgpath lang/python3/3.4,-tkinter
@@ -69,6 +69,8 @@ lib/python3.4/tkinter/test/test_tkinter/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/__init__.cpython-34.pyo
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_font.cpython-34.pyc
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_font.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-34.pyo
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-34.pyc
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-34.pyo
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-34.pyc
@@ -80,6 +82,7 @@ lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-34.py
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-34.pyc
 lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-34.pyo
 lib/python3.4/tkinter/test/test_tkinter/test_font.py
+lib/python3.4/tkinter/test/test_tkinter/test_geometry_managers.py
 lib/python3.4/tkinter/test/test_tkinter/test_loadtk.py
 lib/python3.4/tkinter/test/test_tkinter/test_misc.py
 lib/python3.4/tkinter/test/test_tkinter/test_text.py
