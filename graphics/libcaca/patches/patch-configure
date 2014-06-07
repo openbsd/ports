@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2014/01/15 22:57:44 bcallah Exp $
+$OpenBSD: patch-configure,v 1.5 2014/06/07 20:29:32 bcallah Exp $
 
 1. Disable detection of pangoft2.
 
@@ -6,9 +6,9 @@ $OpenBSD: patch-configure,v 1.4 2014/01/15 22:57:44 bcallah Exp $
 
 3. Disable detection of ftgl. (no --disable-ftgl option.)
 
---- configure.orig	Fri Apr  6 16:48:32 2012
-+++ configure	Wed Jan 15 15:16:46 2014
-@@ -17412,8 +17412,7 @@ if test -n "$FTGL_CFLAGS"; then
+--- configure.orig	Fri May 16 15:15:32 2014
++++ configure	Sat Jun  7 14:03:02 2014
+@@ -17495,8 +17495,7 @@ if test -n "$FTGL_CFLAGS"; then
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.4 2014/01/15 22:57:44 bcallah Exp $
  else
    pkg_failed=yes
  fi
-@@ -17429,8 +17428,7 @@ if test -n "$FTGL_LIBS"; then
+@@ -17512,8 +17511,7 @@ if test -n "$FTGL_LIBS"; then
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.4 2014/01/15 22:57:44 bcallah Exp $
  else
    pkg_failed=yes
  fi
-@@ -18553,7 +18551,7 @@ fi
+@@ -18672,7 +18670,7 @@ fi
  
  # Build development tools?
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.4 2014/01/15 22:57:44 bcallah Exp $
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PANGOFT2" >&5
  $as_echo_n "checking for PANGOFT2... " >&6; }
  
-@@ -18844,7 +18842,7 @@ fi
+@@ -18963,7 +18961,7 @@ fi
  
  # Use cppunit for unit tests?
  

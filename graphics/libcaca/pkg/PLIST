@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/17 14:31:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/07 20:29:32 bcallah Exp $
 bin/caca-config
+@bin bin/cacaclock
 @bin bin/cacademo
 @bin bin/cacafire
 @bin bin/cacaplay
@@ -10,14 +11,11 @@ include/caca.h
 include/caca0.h
 include/caca_conio.h
 include/caca_types.h
-include/cucul.h
 lib/libcaca.a
 lib/libcaca.la
 @lib lib/libcaca.so.${LIBcaca_VERSION}
-lib/libcucul.la
 lib/pkgconfig/
 lib/pkgconfig/caca.pc
-lib/pkgconfig/cucul.pc
 @man man/man1/caca-config.1
 @man man/man1/cacademo.1
 @man man/man1/cacafire.1

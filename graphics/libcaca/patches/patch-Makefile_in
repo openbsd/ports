@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2014/01/05 18:39:05 bcallah Exp $
---- Makefile.in.orig	Fri Apr  6 16:48:34 2012
-+++ Makefile.in	Sat Jan  4 14:38:00 2014
-@@ -320,7 +320,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-Makefile_in,v 1.5 2014/06/07 20:29:32 bcallah Exp $
+--- Makefile.in.orig	Fri May 16 15:15:33 2014
++++ Makefile.in	Sat Jun  7 14:03:02 2014
+@@ -410,7 +410,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = kernel caca src examples tools \
