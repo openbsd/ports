@@ -1,0 +1,23 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2014/06/07 10:48:39 sthen Exp $
+--- aclocal.m4.orig	Sat Jun  7 11:03:08 2014
++++ aclocal.m4	Sat Jun  7 11:04:37 2014
+@@ -274,10 +274,6 @@ AC_DEFUN([AC_SYBASE_ASE], [
+ 			else
+ 				SYBASE_LIBDIR="$SYBASE_OCOS/lib"
+ 			fi
+-			if [[ ! -f $SYBASE_LIBDIR/libct.so ]]; then
+-				AC_MSG_RESULT(fail)
+-				AC_MSG_ERROR([No properly installed FreeTDS or Sybase environment found in ${SYBASE_OCOS}.])
+-			fi
+ 			case "${host_os}" in
+ 	                        *cygwin)
+ 					SYBASE_LIBS="-lct"
+@@ -364,6 +360,8 @@ AC_DEFUN([AC_SYBASE_ASE], [
+ 		case "${host_os}" in
+ 			linux*)
+ 				SYBASE_OS="-ldl -lm";;
++			openbsd*)
++				SYBASE_OS="-lm";;
+ 			irix*)
+ 				SYBASE_OS="-lnsl -lm";;
+ 			ncr*)

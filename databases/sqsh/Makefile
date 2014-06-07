@@ -1,24 +1,27 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 02:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2014/06/07 10:48:39 sthen Exp $
 
 COMMENT=	SQL shell for FreeTDS
 
-DISTNAME=	sqsh-2.1.8
+DISTNAME=	sqsh-2.5.16.1
+WRKDIST=	${WRKDIR}/sqsh-2.5
+EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	databases shells
 
-HOMEPAGE=	http://www.sqsh.org/
+HOMEPAGE=	http://sourceforge.net/projects/sqsh/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ct>=2 curses m readline
+WANTLIB += c ct>=2 ncurses m pthread readline
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/}
 
-MODULES=	devel/gettext
+MODULES=	converters/libiconv
 LIB_DEPENDS=	databases/freetds
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=  autoconf
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--with-readline
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
