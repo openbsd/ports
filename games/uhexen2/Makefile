@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/07 13:36:42 bcallah Exp $
 
 COMMENT =		Hexen II: Hammer of Thyrion
 
@@ -6,6 +6,7 @@ V =			1.5.6
 DISTNAME =		hexen2source-${V}
 PKGNAME =		uhexen2-${V}
 EXTRACT_SUFX =		.tgz
+REVISION =		0
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			hexen2-${V}-linux-i586.tgz
 
@@ -18,6 +19,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uhexen2/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+.if ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS =		devel/nasm
+.endif
 
 LIB_DEPENDS =		devel/sdl \
 			audio/libmad \
