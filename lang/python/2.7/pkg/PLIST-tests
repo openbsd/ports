@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.6 2014/01/09 18:03:35 fgsch Exp $
+@comment $OpenBSD: PLIST-tests,v 1.7 2014/06/07 14:46:46 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -30,6 +30,7 @@ lib/python2.7/test/autotest.pyc
 lib/python2.7/test/autotest.pyo
 lib/python2.7/test/bad_coding.py
 lib/python2.7/test/bad_coding2.py
+lib/python2.7/test/bad_coding3.py
 lib/python2.7/test/badcert.pem
 lib/python2.7/test/badkey.pem
 lib/python2.7/test/badsyntax_future3.py
@@ -245,6 +246,18 @@ lib/python2.7/test/gdb_sample.pyo
 lib/python2.7/test/greyrgb.uue
 lib/python2.7/test/https_svn_python_org_root.pem
 lib/python2.7/test/ieee754.txt
+lib/python2.7/test/imghdrdata/
+lib/python2.7/test/imghdrdata/python.bmp
+lib/python2.7/test/imghdrdata/python.gif
+lib/python2.7/test/imghdrdata/python.jpg
+lib/python2.7/test/imghdrdata/python.pbm
+lib/python2.7/test/imghdrdata/python.pgm
+lib/python2.7/test/imghdrdata/python.png
+lib/python2.7/test/imghdrdata/python.ppm
+lib/python2.7/test/imghdrdata/python.ras
+lib/python2.7/test/imghdrdata/python.sgi
+lib/python2.7/test/imghdrdata/python.tiff
+lib/python2.7/test/imghdrdata/python.xbm
 lib/python2.7/test/infinite_reload.py
 lib/python2.7/test/infinite_reload.pyc
 lib/python2.7/test/infinite_reload.pyo
@@ -870,6 +883,9 @@ lib/python2.7/test/test_imaplib.pyo
 lib/python2.7/test/test_imgfile.py
 lib/python2.7/test/test_imgfile.pyc
 lib/python2.7/test/test_imgfile.pyo
+lib/python2.7/test/test_imghdr.py
+lib/python2.7/test/test_imghdr.pyc
+lib/python2.7/test/test_imghdr.pyo
 lib/python2.7/test/test_imp.py
 lib/python2.7/test/test_imp.pyc
 lib/python2.7/test/test_imp.pyo

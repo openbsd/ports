@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.1.1.1 2011/04/24 09:31:46 rpointel Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.2 2014/06/07 14:46:46 rpointel Exp $
 @option no-default-conflict
 @conflict python-tkinter->=2.7,<2.8
 lib/python2.7/lib-dynload/_tkinter.so
@@ -48,6 +48,12 @@ lib/python2.7/lib-tk/test/test_tkinter/test_loadtk.pyo
 lib/python2.7/lib-tk/test/test_tkinter/test_text.py
 lib/python2.7/lib-tk/test/test_tkinter/test_text.pyc
 lib/python2.7/lib-tk/test/test_tkinter/test_text.pyo
+lib/python2.7/lib-tk/test/test_tkinter/test_variables.py
+lib/python2.7/lib-tk/test/test_tkinter/test_variables.pyc
+lib/python2.7/lib-tk/test/test_tkinter/test_variables.pyo
+lib/python2.7/lib-tk/test/test_tkinter/test_widgets.py
+lib/python2.7/lib-tk/test/test_tkinter/test_widgets.pyc
+lib/python2.7/lib-tk/test/test_tkinter/test_widgets.pyo
 lib/python2.7/lib-tk/test/test_ttk/
 lib/python2.7/lib-tk/test/test_ttk/__init__.py
 lib/python2.7/lib-tk/test/test_ttk/__init__.pyc
@@ -67,6 +73,9 @@ lib/python2.7/lib-tk/test/test_ttk/test_style.pyo
 lib/python2.7/lib-tk/test/test_ttk/test_widgets.py
 lib/python2.7/lib-tk/test/test_ttk/test_widgets.pyc
 lib/python2.7/lib-tk/test/test_ttk/test_widgets.pyo
+lib/python2.7/lib-tk/test/widget_tests.py
+lib/python2.7/lib-tk/test/widget_tests.pyc
+lib/python2.7/lib-tk/test/widget_tests.pyo
 lib/python2.7/lib-tk/tkColorChooser.py
 lib/python2.7/lib-tk/tkColorChooser.pyc
 lib/python2.7/lib-tk/tkColorChooser.pyo
