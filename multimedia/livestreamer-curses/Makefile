@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/05 20:24:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/07 00:18:50 bcallah Exp $
 
 MODPY_EGG_VERSION =	1.2.0
 COMMENT =	curses-based front-end for livestreamer
 DISTNAME =	livestreamer-curses-${MODPY_EGG_VERSION}
 DISTFILES =	${DISTNAME}{v${MODPY_EGG_VERSION}}${EXTRACT_SUFX}
+REVISION =	0
 CATEGORIES =	multimedia net
 
 HOMEPAGE =	https://github.com/gapato/livestreamer-curses
@@ -18,7 +19,8 @@ MASTER_SITES =	https://github.com/gapato/livestreamer-curses/archive/
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS +=	lang/python/${MODPY_VERSION},-gdbm
+BUILD_DEPENDS +=	lang/python/${MODPY_VERSION},-gdbm \
+			multimedia/livestreamer
 
 RUN_DEPENDS =	multimedia/livestreamer
 
