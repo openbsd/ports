@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2014/06/07 13:03:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.291 2014/06/07 13:37:09 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -218,6 +218,7 @@
      SUBDIR += tuxpaint-config
      SUBDIR += tuxpaint-stamps
      SUBDIR += ufoai
+     SUBDIR += uhexen2
      SUBDIR += uqm
      SUBDIR += valyriatear
      SUBDIR += vectoroids
