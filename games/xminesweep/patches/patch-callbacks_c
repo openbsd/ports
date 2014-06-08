@@ -1,0 +1,17 @@
+$OpenBSD: patch-callbacks_c,v 1.1 2014/06/08 12:00:54 espie Exp $
+--- callbacks.c.orig	Sun Jun  8 13:58:54 2014
++++ callbacks.c	Sun Jun  8 13:59:14 2014
+@@ -417,11 +417,11 @@ void Do_Clock(client_data,call_data )
+ XtPointer client_data;
+ XtIntervalId *call_data;
+ {
+-char str[11];
++    char str[25];
+ 
+   Crnt_Time++;
+ 
+-  sprintf(str,"Time: %.5d",Crnt_Time);
++  snprintf(str, sizeof str, "Time: %.5d",Crnt_Time);
+ 
+   XtVaSetValues(timelw,XtNlabel,(XtArgVal)str,NULL);  
+ 
