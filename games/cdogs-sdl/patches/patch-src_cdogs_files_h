@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cdogs_files_h,v 1.1.1.1 2014/06/08 02:53:49 bcallah Exp $
+
+swap16 and swap32 are already function names.
+
+--- src/cdogs/files.h.orig	Sat May 24 11:31:23 2014
++++ src/cdogs/files.h	Sat May 24 11:31:39 2014
+@@ -218,7 +218,7 @@ size_t f_read(FILE *f, void *buf, size_t size);
+ size_t f_read32(FILE *f, void *buf, size_t size);
+ size_t f_read16(FILE *f, void *buf, size_t size);
+ 
+-void swap32 (void *d);
+-void swap16 (void *d);
++void lswap32 (void *d);
++void lswap16 (void *d);
+ 
+ #endif

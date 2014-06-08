@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_cdogs_files_c,v 1.1.1.1 2014/06/08 02:53:49 bcallah Exp $
+
+swap16 and swap32 are already function names.
+
+--- src/cdogs/files.c.orig	Sat May 24 11:32:30 2014
++++ src/cdogs/files.c	Sat May 24 11:32:48 2014
+@@ -72,7 +72,7 @@ static const int bendian = 1;
+ static const int bendian = 0;
+ #endif
+ 
+-void swap32 (void *d)
++void lswap32 (void *d)
+ {
+ 	if (bendian)
+ 	{
+@@ -90,12 +90,12 @@ size_t f_read32(FILE *f, void *buf, size_t size)
+ 	size_t ret = 0;
+ 	if (buf) {
+ 		ret = f_read(f, buf, size);
+-		swap32((int *)buf);
++		lswap32((int *)buf);
+ 	}
+ 	return ret;
+ }
+ 
+-void swap16 (void *d)
++void lswap16 (void *d)
+ {
+ 	if (bendian)
+ 	{
+@@ -109,7 +109,7 @@ size_t f_read16(FILE *f, void *buf, size_t size)
+ 	if (buf)
+ 	{
+ 		ret = f_read(f, buf, size);
+-		swap16((int16_t *)buf);
++		lswap16((int16_t *)buf);
+ 	}
+ 	return ret;
+ }

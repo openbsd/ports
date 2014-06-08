@@ -1,0 +1,27 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/06/08 02:53:49 bcallah Exp $
+--- CMakeLists.txt.orig	Sat May 24 11:16:04 2014
++++ CMakeLists.txt	Tue Jun  3 09:52:20 2014
+@@ -97,7 +97,7 @@ else()
+ 		endif()
+ 	endif()
+ 	if(NOT BEOS AND NOT HAIKU)
+-		add_definitions(-Winline -Werror)
++		add_definitions(-Winline)
+ 		set(EXTRA_LIBRARIES "m")
+ 	endif()
+ endif()
+@@ -174,11 +174,11 @@ INSTALL(DIRECTORY
+ 	${SOURCE_DIRECTORY}/graphics
+ 	${SOURCE_DIRECTORY}/music
+ 	${SOURCE_DIRECTORY}/sounds
+-	DESTINATION ${INSTALL_PREFIX})
+-INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs_icon.bmp ${SOURCE_DIRECTORY}/README.md DESTINATION ${INSTALL_PREFIX})
++	DESTINATION ${CMAKE_INSTALL_PREFIX}/share/cdogs-sdl)
++INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs_icon.bmp ${SOURCE_DIRECTORY}/README.md DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/cdogs-sdl)
+ IF(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU)
+ 	INSTALL(FILES ${SOURCE_DIRECTORY}/build/linux/cdogs-sdl.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+-	INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs-sdl.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
++	INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs-sdl.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pixmaps)
+ elseif(MSVC)
+ 	# Package for Windows
+ 	FILE(GLOB DLLS "${SOURCE_DIRECTORY}/src/*.dll")

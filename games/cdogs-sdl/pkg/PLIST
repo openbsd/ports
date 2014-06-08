@@ -1,0 +1,311 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/08 02:53:49 bcallah Exp $
+@bin bin/cdogs-sdl
+@bin bin/cdogs-sdl-editor
+share/applications/
+share/applications/cdogs-sdl.desktop
+share/cdogs-sdl/
+share/cdogs-sdl/doc/
+share/cdogs-sdl/doc/AUTHORS
+share/cdogs-sdl/doc/COPYING.BSD
+share/cdogs-sdl/doc/COPYING.GPL
+share/cdogs-sdl/doc/CREDITS
+share/cdogs-sdl/doc/README_DATA
+share/cdogs-sdl/doc/original_readme.txt
+share/cdogs-sdl/dogfights/
+share/cdogs-sdl/dogfights/Traut/
+share/cdogs-sdl/dogfights/Traut/DANGER1.DF
+share/cdogs-sdl/dogfights/Traut/DANGER2.DF
+share/cdogs-sdl/dogfights/Traut/SUICTND1.DF
+share/cdogs-sdl/dogfights/Traut/SUICTND2.DF
+share/cdogs-sdl/dogfights/Traut/SUICTND3.DF
+share/cdogs-sdl/dogfights/Willie/
+share/cdogs-sdl/dogfights/Willie/Army.df
+share/cdogs-sdl/dogfights/Willie/Dodc.df
+share/cdogs-sdl/dogfights/Willie/Dodgtw.df
+share/cdogs-sdl/dogfights/Willie/Govtest.df
+share/cdogs-sdl/graphics/
+share/cdogs-sdl/graphics/LICENSE.md
+share/cdogs-sdl/graphics/arrow_down.png
+share/cdogs-sdl/graphics/arrow_left.png
+share/cdogs-sdl/graphics/arrow_right.png
+share/cdogs-sdl/graphics/arrow_up.png
+share/cdogs-sdl/graphics/barrel.png
+share/cdogs-sdl/graphics/barrel_blue.png
+share/cdogs-sdl/graphics/barrel_skull.png
+share/cdogs-sdl/graphics/barrel_wood.png
+share/cdogs-sdl/graphics/cdogs.px
+share/cdogs-sdl/graphics/cdogs2.px
+share/cdogs-sdl/graphics/crosshair.png
+share/cdogs-sdl/graphics/crosshair.png.txt
+share/cdogs-sdl/graphics/editor/
+share/cdogs-sdl/graphics/editor/add.png
+share/cdogs-sdl/graphics/editor/arrow.png
+share/cdogs-sdl/graphics/editor/box.png
+share/cdogs-sdl/graphics/editor/box_filled.png
+share/cdogs-sdl/graphics/editor/bucket.png
+share/cdogs-sdl/graphics/editor/collapse.png
+share/cdogs-sdl/graphics/editor/expand.png
+share/cdogs-sdl/graphics/editor/line.png
+share/cdogs-sdl/graphics/editor/pencil.png
+share/cdogs-sdl/graphics/editor/room.png
+share/cdogs-sdl/graphics/editor/select.png
+share/cdogs-sdl/graphics/editor/set_exit.png
+share/cdogs-sdl/graphics/editor/set_key.png
+share/cdogs-sdl/graphics/editor/start.png
+share/cdogs-sdl/graphics/font.px
+share/cdogs-sdl/graphics/health.png
+share/cdogs-sdl/graphics/health.png.txt
+share/cdogs-sdl/missions/
+share/cdogs-sdl/missions/AntiHukkanen/
+share/cdogs-sdl/missions/AntiHukkanen/ASCENT.CPN
+share/cdogs-sdl/missions/AntiHukkanen/Death inc.doc
+share/cdogs-sdl/missions/AntiHukkanen/Death.cpn
+share/cdogs-sdl/missions/AntiHukkanen/MILITARY.CPN
+share/cdogs-sdl/missions/AntiHukkanen/NIPPON.CPN
+share/cdogs-sdl/missions/AntiHukkanen/trilogy/
+share/cdogs-sdl/missions/AntiHukkanen/trilogy/CORPS.CPN
+share/cdogs-sdl/missions/AntiHukkanen/trilogy/GANGS.CPN
+share/cdogs-sdl/missions/AntiHukkanen/trilogy/PI.CPN
+share/cdogs-sdl/missions/AntiHukkanen/trilogy/PI.TXT
+share/cdogs-sdl/missions/AntiHukkanen/trilogy/TRILOGY.TXT
+share/cdogs-sdl/missions/Markeroo/
+share/cdogs-sdl/missions/Markeroo/HPNFLWRS.CPN
+share/cdogs-sdl/missions/Markeroo/HPNhrd.CPN
+share/cdogs-sdl/missions/Sand.cpn
+share/cdogs-sdl/missions/Traut/
+share/cdogs-sdl/missions/Traut/007.s3m
+share/cdogs-sdl/missions/Traut/ARENADUM.CPN
+share/cdogs-sdl/missions/Traut/JKEHNTR.CPN
+share/cdogs-sdl/missions/Traut/JOKEhrd.CPN
+share/cdogs-sdl/missions/Traut/MADLIB.CPN
+share/cdogs-sdl/missions/Traut/MDLBhrd.CPN
+share/cdogs-sdl/missions/Traut/MSCRez.CPN
+share/cdogs-sdl/missions/Traut/MSCRhrd.CPN
+share/cdogs-sdl/missions/Traut/SITez.CPN
+share/cdogs-sdl/missions/Traut/SIThrd.CPN
+share/cdogs-sdl/missions/Willie/
+share/cdogs-sdl/missions/Willie/Alien.cpn
+share/cdogs-sdl/missions/cpns/
+share/cdogs-sdl/missions/cpns/Fugitive1.cpn
+share/cdogs-sdl/missions/cpns/ageorang.cpn
+share/cdogs-sdl/missions/cpns/arena.cpn
+share/cdogs-sdl/missions/cpns/army.cpn
+share/cdogs-sdl/missions/cpns/awful.cpn
+share/cdogs-sdl/missions/cpns/black.cpn
+share/cdogs-sdl/missions/cpns/blitz.cpn
+share/cdogs-sdl/missions/cpns/blogee.cpn
+share/cdogs-sdl/missions/cpns/bob.cpn
+share/cdogs-sdl/missions/cpns/bond.cpn
+share/cdogs-sdl/missions/cpns/boom.cpn
+share/cdogs-sdl/missions/cpns/cola.cpn
+share/cdogs-sdl/missions/cpns/cpns/
+share/cdogs-sdl/missions/cpns/cpns/ARMAGEDD.CPN
+share/cdogs-sdl/missions/cpns/cpns/BC2.CPN
+share/cdogs-sdl/missions/cpns/cpns/Bc.cpn
+share/cdogs-sdl/missions/cpns/cpns/Bc2Expansion.cpn
+share/cdogs-sdl/missions/cpns/cpns/Bc3.cpn
+share/cdogs-sdl/missions/cpns/cpns/BcExtra.cpn
+share/cdogs-sdl/missions/cpns/cpns/CHOSEN.CPN
+share/cdogs-sdl/missions/cpns/cpns/LEGACY.CPN
+share/cdogs-sdl/missions/cpns/cpns/RIOT.CPN
+share/cdogs-sdl/missions/cpns/cyclops.cpn
+share/cdogs-sdl/missions/cpns/death.cpn
+share/cdogs-sdl/missions/cpns/deathh.cpn
+share/cdogs-sdl/missions/cpns/distress.cpn
+share/cdogs-sdl/missions/cpns/evil.cpn
+share/cdogs-sdl/missions/cpns/frogs.cpn
+share/cdogs-sdl/missions/cpns/fugitive.cpn
+share/cdogs-sdl/missions/cpns/gangs.cpn
+share/cdogs-sdl/missions/cpns/ghosts.cpn
+share/cdogs-sdl/missions/cpns/gijim.cpn
+share/cdogs-sdl/missions/cpns/hive.cpn
+share/cdogs-sdl/missions/cpns/hunt.cpn
+share/cdogs-sdl/missions/cpns/hyper.cpn
+share/cdogs-sdl/missions/cpns/hyper2.cpn
+share/cdogs-sdl/missions/cpns/insane.cpn
+share/cdogs-sdl/missions/cpns/insu_1.cpn
+share/cdogs-sdl/missions/cpns/insu_2.cpn
+share/cdogs-sdl/missions/cpns/kungfoo.cpn
+share/cdogs-sdl/missions/cpns/legend.cpn
+share/cdogs-sdl/missions/cpns/london.cpn
+share/cdogs-sdl/missions/cpns/madsci.cpn
+share/cdogs-sdl/missions/cpns/mk.cpn
+share/cdogs-sdl/missions/cpns/nicrostc.cpn
+share/cdogs-sdl/missions/cpns/night.cpn
+share/cdogs-sdl/missions/cpns/phunkt.cpn
+share/cdogs-sdl/missions/cpns/phunkt2.cpn
+share/cdogs-sdl/missions/cpns/points.cpn
+share/cdogs-sdl/missions/cpns/ra.cpn
+share/cdogs-sdl/missions/cpns/raid.cpn
+share/cdogs-sdl/missions/cpns/secret.cpn
+share/cdogs-sdl/missions/cpns/slater.cpn
+share/cdogs-sdl/missions/cpns/smashtv.cpn
+share/cdogs-sdl/missions/cpns/smurf.cpn
+share/cdogs-sdl/missions/cpns/som.cpn
+share/cdogs-sdl/missions/cpns/terror.cpn
+share/cdogs-sdl/missions/cpns/tourney/
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (CTF arena 3) CTF.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (CTF arena) CTF.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (CTF arena2) CTF.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Domination arena 2) Domination.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Domination arena 3) Domination.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Domination arena 4) Domination.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Domination arena) Domination.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Greed arena 2) Greed.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Greed arena 3) Greed.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Greed arena) Greed.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (HITC arena 2) HITC.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (HITC arena 3) HITC.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (HITC arena 4) HITC.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (HITC arena) HITC.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (KOTH).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (KOTH)2.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (KOTH)3.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (KOTH)4.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Nukes).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Nukes)2.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Nukes)3.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (Nukes)4.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 1).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 2).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 3).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 4).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 5).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 6).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 7).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 8).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (STIMMAP 9).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (TM arena 1) TM .cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (TM arena 2) TM .cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (TM arena 3) TM .cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (TM arena 4) TM .cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 10).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 11).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 12).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 13).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 2) Greed.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 2).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 3) tournament.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 3).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 4) tournament.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 4).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 5) CTF.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 5).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 6).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 7).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 8).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (arena 9).cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (tournament arena 2) tournament.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER (tournament arena) tournament.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER .cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER2.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER3.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER4.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER5.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER6.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER7.cpn
+share/cdogs-sdl/missions/cpns/tourney/LOG ONTO SERVER8.cpn
+share/cdogs-sdl/missions/cpns/tourney/Player List.txt
+share/cdogs-sdl/missions/cpns/trilogy/
+share/cdogs-sdl/missions/cpns/trilogy/aa.cpn
+share/cdogs-sdl/missions/cpns/trilogy/aa.txt
+share/cdogs-sdl/missions/cpns/trilogy/ab.cpn
+share/cdogs-sdl/missions/cpns/trilogy/ab.txt
+share/cdogs-sdl/missions/cpns/trilogy/ac.cpn
+share/cdogs-sdl/missions/cpns/trilogy/ac.txt
+share/cdogs-sdl/missions/cpns/undead1.cpn
+share/cdogs-sdl/missions/cpns/undead2.cpn
+share/cdogs-sdl/missions/cpns/undersea.cpn
+share/cdogs-sdl/missions/cpns/unholy.cpn
+share/cdogs-sdl/missions/cpns/vampire.cpn
+share/cdogs-sdl/missions/cpns/vampire1.cpn
+share/cdogs-sdl/missions/cpns/zombiex.cpn
+share/cdogs-sdl/missions/cpns/zombiex2.cpn
+share/cdogs-sdl/missions/distress.cpn
+share/cdogs-sdl/missions/doom.cpn
+share/cdogs-sdl/missions/oxygene.mod
+share/cdogs-sdl/missions/sauer2/
+share/cdogs-sdl/missions/sauer2/antares3consp.cpn
+share/cdogs-sdl/missions/sauer2/devhell.cpn
+share/cdogs-sdl/missions/sauer2/devhell1.xm
+share/cdogs-sdl/missions/sauer2/devhell2.xm
+share/cdogs-sdl/missions/sauer2/spacepirates.cpn
+share/cdogs-sdl/missions/sauer2/thechip.cpn
+share/cdogs-sdl/missions/sauer2/youaretheexperiment.cpn
+share/cdogs-sdl/missions/sauer2/youaretheexperiment2.cpn
+share/cdogs-sdl/missions/techdemo/
+share/cdogs-sdl/missions/techdemo/followtheleader.cpn
+share/cdogs-sdl/missions/techdemo/minimal.cpn
+share/cdogs-sdl/missions/techdemo/objectives.cpn
+share/cdogs-sdl/missions/techdemo/spritetest.cpn
+share/cdogs-sdl/missions/techdemo/static.cpn
+share/cdogs-sdl/missions/terror.cpn
+share/cdogs-sdl/missions/zombie.cpn
+share/cdogs-sdl/music/
+share/cdogs-sdl/music/game/
+share/cdogs-sdl/music/game/Mysterious Hallway.ogg
+share/cdogs-sdl/music/game/Mysterious Hallway.ogg.txt
+share/cdogs-sdl/music/game/README.txt
+share/cdogs-sdl/music/game/molrevenge.mod
+share/cdogs-sdl/music/game/molrevenge.mod.txt
+share/cdogs-sdl/music/game/rage.mod
+share/cdogs-sdl/music/game/rage.mod.txt
+share/cdogs-sdl/music/menu/
+share/cdogs-sdl/music/menu/README.txt
+share/cdogs-sdl/music/menu/The promise.ogg
+share/cdogs-sdl/music/menu/The promise.ogg.txt
+share/cdogs-sdl/music/menu/space_0.ogg
+share/cdogs-sdl/music/menu/space_0.ogg.txt
+share/cdogs-sdl/sounds/
+share/cdogs-sdl/sounds/aargh1.wav
+share/cdogs-sdl/sounds/aargh2.wav
+share/cdogs-sdl/sounds/aargh3.wav
+share/cdogs-sdl/sounds/bang.wav
+share/cdogs-sdl/sounds/booom.wav
+share/cdogs-sdl/sounds/click.wav
+share/cdogs-sdl/sounds/flamer.wav
+share/cdogs-sdl/sounds/footstep.txt
+share/cdogs-sdl/sounds/footstep.wav
+share/cdogs-sdl/sounds/fusion.wav
+share/cdogs-sdl/sounds/hahaha.wav
+share/cdogs-sdl/sounds/health.txt
+share/cdogs-sdl/sounds/health.wav
+share/cdogs-sdl/sounds/hit_fire.txt
+share/cdogs-sdl/sounds/hit_fire.wav
+share/cdogs-sdl/sounds/hit_flesh.txt
+share/cdogs-sdl/sounds/hit_flesh.wav
+share/cdogs-sdl/sounds/hit_gas.wav
+share/cdogs-sdl/sounds/hit_hard.txt
+share/cdogs-sdl/sounds/hit_hard.wav
+share/cdogs-sdl/sounds/hit_petrify.txt
+share/cdogs-sdl/sounds/hit_petrify.wav
+share/cdogs-sdl/sounds/key.txt
+share/cdogs-sdl/sounds/key.wav
+share/cdogs-sdl/sounds/knife_flesh.txt
+share/cdogs-sdl/sounds/knife_flesh.wav
+share/cdogs-sdl/sounds/knife_hard.txt
+share/cdogs-sdl/sounds/knife_hard.wav
+share/cdogs-sdl/sounds/launch.wav
+share/cdogs-sdl/sounds/mg.wav
+share/cdogs-sdl/sounds/package_r.txt
+share/cdogs-sdl/sounds/package_r.wav
+share/cdogs-sdl/sounds/pickup.wav
+share/cdogs-sdl/sounds/powergun.wav
+share/cdogs-sdl/sounds/powergun_r.txt
+share/cdogs-sdl/sounds/powergun_r.wav
+share/cdogs-sdl/sounds/scream.wav
+share/cdogs-sdl/sounds/shotgun.wav
+share/cdogs-sdl/sounds/shotgun_r.txt
+share/cdogs-sdl/sounds/shotgun_r.wav
+share/cdogs-sdl/sounds/slide.txt
+share/cdogs-sdl/sounds/slide.wav
+share/cdogs-sdl/sounds/switch.wav
+share/cdogs-sdl/sounds/whistle.wav
+share/doc/cdogs-sdl/
+share/doc/cdogs-sdl/README.md
+share/doc/cdogs-sdl/cdogs_icon.bmp
+share/pixmaps/
+share/pixmaps/cdogs-sdl.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
