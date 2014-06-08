@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2014/06/08 18:56:33 kili Exp $
 
 COMMENT=	PDF viewer for X11
 
-DISTNAME=	xpdf-3.03
-REVISION=	0
+DISTNAME=	xpdf-3.04
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
-		ftp://gd.tuwien.ac.at/publishing/xpdf/ \
 		http://mirror.ctan.org/support/xpdf/
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
@@ -15,7 +13,7 @@ HOMEPAGE=	http://www.foolabs.com/xpdf/
 # GPLv2 only or GPLv3 only or both (at our choice)
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS+=	x11/openmotif
+LIB_DEPENDS+=	graphics/png x11/openmotif
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-multithreaded \
@@ -29,7 +27,7 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 RUN_DEPENDS=	print/ghostscript/gnu-fonts
 
 WANTLIB=	ICE SM X11 Xext Xpm Xt freetype Xm \
-		c m pthread stdc++ z
+		c m png pthread stdc++ z
 
 NO_TEST=	Yes
 
@@ -42,5 +40,9 @@ post-install:
 	rm ${PREFIX}/man/man1/$i.1
 	rm ${PREFIX}/bin/$i
 .endfor
+# forgotten in Makefile.in (there's also a pdfthtml, but it conflicts
+# with poppler-utils):
+	${INSTALL_PROGRAM} ${WRKBUILD}/xpdf/pdftopng ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/pdftopng.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

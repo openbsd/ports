@@ -1,0 +1,18 @@
+$OpenBSD: patch-splash_SplashXPath_h,v 1.1 2014/06/08 18:56:33 kili Exp $
+
+Replace Miod's fix from 2009 by some assert's, because the bug
+*should* have been fixed in a different way and I'm too lazy to
+verify it. (needs a change to strokeAdjust(), which is private)
+
+--- splash/SplashXPath.h.orig	Wed May 28 20:50:50 2014
++++ splash/SplashXPath.h	Fri May 30 15:33:45 2014
+@@ -99,7 +99,8 @@ class SplashXPath { (private)
+   void transform(SplashCoord *matrix, SplashCoord xi, SplashCoord yi,
+ 		 SplashCoord *xo, SplashCoord *yo);
+   void strokeAdjust(SplashXPathPoint *pts,
+-		    SplashPathHint *hints, int nHints);
++		    SplashPathHint *hints, int nHints,
++		    int plength);
+   void grow(int nSegs);
+   void addCurve(SplashCoord x0, SplashCoord y0,
+ 		SplashCoord x1, SplashCoord y1,

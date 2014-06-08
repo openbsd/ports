@@ -1,12 +1,12 @@
-$OpenBSD: patch-splash_Makefile_in,v 1.1 2004/01/25 06:02:40 brad Exp $
---- splash/Makefile.in.orig	2004-01-24 23:49:23.000000000 -0500
-+++ splash/Makefile.in	2004-01-24 23:49:34.000000000 -0500
+$OpenBSD: patch-splash_Makefile_in,v 1.2 2014/06/08 18:56:33 kili Exp $
+--- splash/Makefile.in.orig	Wed May 28 20:50:50 2014
++++ splash/Makefile.in	Fri May 30 14:29:41 2014
 @@ -16,7 +16,7 @@ GOOLIBDIR = ../goo
  FOFISRCDIR = $(srcdir)/../fofi
  FOFILIBDIR = ../fofi
  
--CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @t1_CFLAGS@ @freetype2_CFLAGS@
-+CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @t1_CFLAGS@ @freetype2_CFLAGS@
+-CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @freetype2_CFLAGS@
++CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @freetype2_CFLAGS@
  
  CXX = @CXX@
  AR = @AR@

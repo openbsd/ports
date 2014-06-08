@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_sample-xpdfrc,v 1.4 2011/10/01 19:46:35 kili Exp $
---- doc/sample-xpdfrc.orig	Mon Aug 15 23:08:53 2011
-+++ doc/sample-xpdfrc	Thu Aug 18 21:10:22 2011
+$OpenBSD: patch-doc_sample-xpdfrc,v 1.5 2014/06/08 18:56:33 kili Exp $
+--- doc/sample-xpdfrc.orig	Wed May 28 20:50:50 2014
++++ doc/sample-xpdfrc	Fri May 30 14:26:13 2014
 @@ -56,7 +56,7 @@
  
  # Set the default PostScript file or command.
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_sample-xpdfrc,v 1.4 2011/10/01 19:46:35 kili Exp $
  
  # Set the default PostScript paper size -- this can be letter, legal,
  # A4, or A3.  You can also specify a paper size as width and height
-@@ -88,5 +88,5 @@
+@@ -87,5 +87,5 @@
  # Set the command used to run a web browser when a URL hyperlink is
  # clicked.
  

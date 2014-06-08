@@ -1,32 +1,49 @@
-$OpenBSD: patch-splash_SplashXPath_cc,v 1.3 2011/10/01 19:46:35 kili Exp $
---- splash/SplashXPath.cc.orig	Mon Aug 15 23:08:53 2011
-+++ splash/SplashXPath.cc	Thu Aug 18 21:10:22 2011
-@@ -73,10 +73,26 @@ SplashXPath::SplashXPath(SplashPath *path, SplashCoord
- 					    sizeof(SplashXPathAdjust));
-     for (i = 0; i < path->hintsLength; ++i) {
-       hint = &path->hints[i];
-+      if (hint->firstPt >= path->length || hint->lastPt >= path->length) {
-+	path->hintsLength = i;
-+	if (i == 0) {
-+	  gfree(adjusts);
-+	  adjusts = NULL;
-+	}
-+	break;
-+      }
-       x0 = pts[hint->ctrl0    ].x;    y0 = pts[hint->ctrl0    ].y;
--      x1 = pts[hint->ctrl0 + 1].x;    y1 = pts[hint->ctrl0 + 1].y;
-+      if (hint->ctrl0 + 1 >= path->length) {
-+	x1 = x0; y1 = y0;
-+      } else {
-+	x1 = pts[hint->ctrl0 + 1].x;    y1 = pts[hint->ctrl0 + 1].y;
-+      }
-       x2 = pts[hint->ctrl1    ].x;    y2 = pts[hint->ctrl1    ].y;
--      x3 = pts[hint->ctrl1 + 1].x;    y3 = pts[hint->ctrl1 + 1].y;
-+      if (hint->ctrl1 + 1 >= path->length) {
-+	x3 = x2; y3 = y2;
-+      } else {
-+	x3 = pts[hint->ctrl1 + 1].x;    y3 = pts[hint->ctrl1 + 1].y;
-+      }
-       if (x0 == x1 && x2 == x3) {
- 	adjusts[i].vert = gTrue;
- 	adj0 = x0;
+$OpenBSD: patch-splash_SplashXPath_cc,v 1.4 2014/06/08 18:56:33 kili Exp $
+
+Replace Miod's fix from 2009 by some assert's, because the bug
+*should* have been fixed in a different way and I'm too lazy to
+verify it. (needs a change to strokeAdjust(), which is private)
+
+--- splash/SplashXPath.cc.orig	Wed May 28 20:50:50 2014
++++ splash/SplashXPath.cc	Fri May 30 15:31:49 2014
+@@ -8,6 +8,8 @@
+ 
+ #include <aconf.h>
+ 
++#include <assert.h>
++
+ #ifdef USE_GCC_PRAGMAS
+ #pragma implementation
+ #endif
+@@ -69,7 +71,7 @@ SplashXPath::SplashXPath(SplashPath *path, SplashCoord
+ 
+   // do stroke adjustment
+   if (path->hints) {
+-    strokeAdjust(pts, path->hints, path->hintsLength);
++    strokeAdjust(pts, path->hints, path->hintsLength, path->length);
+   }
+ 
+   segs = NULL;
+@@ -176,7 +178,8 @@ SplashXPath::SplashXPath(SplashPath *path, SplashCoord
+ }
+ 
+ void SplashXPath::strokeAdjust(SplashXPathPoint *pts,
+-			       SplashPathHint *hints, int nHints) {
++			       SplashPathHint *hints, int nHints,
++			       int plength) {
+   SplashXPathAdjust *adjusts, *adjust;
+   SplashPathHint *hint;
+   SplashCoord x0, y0, x1, y1, x2, y2, x3, y3;
+@@ -188,9 +191,12 @@ void SplashXPath::strokeAdjust(SplashXPathPoint *pts,
+   adjusts = (SplashXPathAdjust *)gmallocn(nHints, sizeof(SplashXPathAdjust));
+   for (i = 0; i < nHints; ++i) {
+     hint = &hints[i];
++    assert(hint->firstPt < plength && hint->lastPt < plength);
+     x0 = pts[hint->ctrl0    ].x;    y0 = pts[hint->ctrl0    ].y;
++    assert(hint->ctrl0 + 1 < plength);
+     x1 = pts[hint->ctrl0 + 1].x;    y1 = pts[hint->ctrl0 + 1].y;
+     x2 = pts[hint->ctrl1    ].x;    y2 = pts[hint->ctrl1    ].y;
++    assert(hint->ctrl1 + 1 < plength);
+     x3 = pts[hint->ctrl1 + 1].x;    y3 = pts[hint->ctrl1 + 1].y;
+     if (x0 == x1 && x2 == x3) {
+       adjusts[i].vert = gTrue;

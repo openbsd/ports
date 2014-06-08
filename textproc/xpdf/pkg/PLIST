@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/06 18:28:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/06/08 18:56:33 kili Exp $
+@conflict xpdf-utils-*
 @pkgpath textproc/xpdf,-main
 @pkgpath textproc/xpdf,-utils
-@conflict xpdf-utils-*
 @bin bin/pdfdetach
+@bin bin/pdftopng
 @bin bin/xpdf
 @man man/man1/pdfdetach.1
+@man man/man1/pdftopng.1
 @man man/man1/xpdf.1
 @man man/man5/xpdfrc.5
 share/examples/xpdf/

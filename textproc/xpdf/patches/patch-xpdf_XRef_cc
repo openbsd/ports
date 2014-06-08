@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_XRef_cc,v 1.6 2011/10/01 19:46:35 kili Exp $
---- xpdf/XRef.cc.orig	Mon Aug 15 23:08:53 2011
-+++ xpdf/XRef.cc	Thu Aug 18 21:10:22 2011
-@@ -806,19 +806,19 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
+$OpenBSD: patch-xpdf_XRef_cc,v 1.7 2014/06/08 18:56:33 kili Exp $
+--- xpdf/XRef.cc.orig	Wed May 28 20:50:50 2014
++++ xpdf/XRef.cc	Fri May 30 14:26:13 2014
+@@ -958,19 +958,19 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
  }
  
  GBool XRef::okToPrint(GBool ignoreOwnerPW) {
