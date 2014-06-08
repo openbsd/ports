@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/10/19 08:00:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/06/08 07:32:56 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
@@ -78,11 +78,14 @@ share/locale/cs/LC_MESSAGES/d-feet.mo
 share/locale/de/LC_MESSAGES/d-feet.mo
 share/locale/el/LC_MESSAGES/d-feet.mo
 share/locale/es/LC_MESSAGES/d-feet.mo
+share/locale/fi/LC_MESSAGES/d-feet.mo
+share/locale/fr/LC_MESSAGES/d-feet.mo
 share/locale/gl/LC_MESSAGES/d-feet.mo
 share/locale/hu/LC_MESSAGES/d-feet.mo
 share/locale/lv/LC_MESSAGES/d-feet.mo
 share/locale/pl/LC_MESSAGES/d-feet.mo
 share/locale/pt_BR/LC_MESSAGES/d-feet.mo
+share/locale/ru/LC_MESSAGES/d-feet.mo
 share/locale/sl/LC_MESSAGES/d-feet.mo
 share/locale/sr/LC_MESSAGES/d-feet.mo
 share/locale/sr@latin/LC_MESSAGES/d-feet.mo
