@@ -1,0 +1,17 @@
+$OpenBSD: patch-gcc_c-family_c-cppbuiltin_c,v 1.1 2014/06/08 18:55:36 brad Exp $
+
+Add stack protector strong support.
+
+http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35acea43
+
+--- gcc/c-family/c-cppbuiltin.c.orig	Sat May 24 16:46:19 2014
++++ gcc/c-family/c-cppbuiltin.c	Sat May 24 16:48:30 2014
+@@ -888,6 +888,8 @@ c_cpp_builtins (cpp_reader *pfile)
+   /* Make the choice of the stack protector runtime visible to source code.
+      The macro names and values here were chosen for compatibility with an
+      earlier implementation, i.e. ProPolice.  */
++  if (flag_stack_protect == 3)
++    cpp_define (pfile, "__SSP_STRONG__=3");
+   if (flag_stack_protect == 2)
+     cpp_define (pfile, "__SSP_ALL__=2");
+   else if (flag_stack_protect == 1)

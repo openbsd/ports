@@ -1,6 +1,11 @@
-$OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- gcc/common.opt.orig	Thu Mar 14 10:13:36 2013
-+++ gcc/common.opt	Mon Mar 25 22:55:38 2013
+$OpenBSD: patch-gcc_common_opt,v 1.2 2014/06/08 18:55:36 brad Exp $
+
+Add stack protector strong support.
+
+http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35acea43
+
+--- gcc/common.opt.orig	Thu Mar 14 05:13:36 2013
++++ gcc/common.opt	Sat May 24 17:11:22 2014
 @@ -572,6 +572,10 @@ Wlarger-than=
  Common RejectNegative Joined UInteger Warning
  -Wlarger-than=<number>	Warn if an object is larger than <number> bytes
@@ -68,16 +73,26 @@ $OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
  Generate position-independent code for executables if possible (large mode)
  
  fpic
-@@ -1902,7 +1910,7 @@ Common RejectNegative Joined Var(common_deferred_optio
+@@ -1902,13 +1910,17 @@ Common RejectNegative Joined Var(common_deferred_optio
  -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>
  
  fstack-protector
 -Common Report Var(flag_stack_protect, 1)
-+Common Report Var(flag_stack_protect, 1) Init(-1)
++Common Report Var(flag_stack_protect, 3) Init(-1)
  Use propolice as a stack protection method
  
  fstack-protector-all
-@@ -2307,7 +2315,7 @@ Common JoinedOrMissing Negative(gdwarf-)
+ Common Report RejectNegative Var(flag_stack_protect, 2)
+ Use a stack protection method for every function
+ 
++fstack-protector-strong
++Common Report RejectNegative Var(flag_stack_protect, 3)
++Use a smart stack protection method for certain functions
++
+ fstack-usage
+ Common RejectNegative Var(flag_stack_usage)
+ Output stack usage information on a per-function basis
+@@ -2307,7 +2319,7 @@ Common JoinedOrMissing Negative(gdwarf-)
  Generate debug information in COFF format
  
  gdwarf-
@@ -86,7 +101,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
  Generate debug information in DWARF v2 (or later) format
  
  ggdb
-@@ -2391,6 +2399,9 @@ no-canonical-prefixes
+@@ -2391,6 +2403,9 @@ no-canonical-prefixes
  Driver
  
  nodefaultlibs

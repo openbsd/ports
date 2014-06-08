@@ -1,0 +1,32 @@
+$OpenBSD: patch-gcc_doc_invoke_texi,v 1.1 2014/06/08 18:55:36 brad Exp $
+
+Add stack protector strong support.
+
+http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35acea43
+
+--- gcc/doc/invoke.texi.orig	Mon Apr 28 06:05:29 2014
++++ gcc/doc/invoke.texi	Sun May 25 18:26:14 2014
+@@ -406,8 +406,8 @@ Objective-C and Objective-C++ Dialects}.
+ -fsel-sched-pipelining -fsel-sched-pipelining-outer-loops @gol
+ -fshrink-wrap -fsignaling-nans -fsingle-precision-constant @gol
+ -fsplit-ivs-in-unroller -fsplit-wide-types -fstack-protector @gol
+--fstack-protector-all -fstrict-aliasing -fstrict-overflow @gol
+--fthread-jumps -ftracer -ftree-bit-ccp @gol
++-fstack-protector-all -fstack-protector-strong -fstrict-aliasing @gol
++-fstrict-overflow -fthread-jumps -ftracer -ftree-bit-ccp @gol
+ -ftree-builtin-call-dce -ftree-ccp -ftree-ch @gol
+ -ftree-coalesce-inline-vars -ftree-coalesce-vars -ftree-copy-prop @gol
+ -ftree-copyrename -ftree-dce -ftree-dominator-opts -ftree-dse @gol
+@@ -8890,6 +8890,12 @@ If a guard check fails, an error message is printed an
+ @item -fstack-protector-all
+ @opindex fstack-protector-all
+ Like @option{-fstack-protector} except that all functions are protected.
++
++@item -fstack-protector-strong
++@opindex fstack-protector-strong
++Like @option{-fstack-protector} but includes additional functions to
++be protected --- those that have local array definitions, or have
++references to local frame addresses.
+ 
+ @item -fsection-anchors
+ @opindex fsection-anchors
