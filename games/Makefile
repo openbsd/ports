@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2014/06/07 13:37:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.292 2014/06/08 02:54:08 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -32,6 +32,7 @@
      SUBDIR += bzflag
      SUBDIR += capitan-sevilla
      SUBDIR += castle-combat
+     SUBDIR += cdogs-sdl
      SUBDIR += cgoban
      SUBDIR += childsplay
      SUBDIR += chocolate-doom
