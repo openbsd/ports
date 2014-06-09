@@ -1,0 +1,29 @@
+$OpenBSD: patch-sound_aosound_c,v 1.1 2014/06/09 08:55:00 bentley Exp $
+From upstream r5016.
+--- sound/aosound.c.orig	Thu May 16 14:26:12 2013
++++ sound/aosound.c	Tue Apr 29 03:15:05 2014
+@@ -78,14 +78,14 @@ driver_error( void )
+   }
+ }
+ 
+-static void
++static int
+ parse_driver_options( const char *device, int *driver_id, ao_option **options )
+ {
+   char *mutable, *option, *key, *value;
+ 
+   /* Get a copy of the device string we can modify */
+   if( !device || *device == '\0' )
+-    return;
++    return 1;
+ 
+   mutable = utils_safe_strdup( device );
+ 
+@@ -119,6 +119,7 @@ parse_driver_options( const char *device, int *driver_
+   }
+ 
+   free( mutable );
++  return 0;
+ }
+ 
+ int
