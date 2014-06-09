@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2014/04/01 13:21:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2014/06/09 09:12:09 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -1073,6 +1073,11 @@ share/gtk-doc/html/evolution-mail-engine/MailFolderCache.html
 share/gtk-doc/html/evolution-mail-engine/api-index-full.html
 share/gtk-doc/html/evolution-mail-engine/ch01.html
 share/gtk-doc/html/evolution-mail-engine/ch02.html
+share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine-Legacy-Utilities.html
+share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine-Mail-Folder-Utilities.html
+share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine-Mail-Session-Utilities.html
+share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine-Mail-Store-Utilities.html
+share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine-Miscellaneous-Utilities.html
 share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine.devhelp2
 share/gtk-doc/html/evolution-mail-engine/home.png
 share/gtk-doc/html/evolution-mail-engine/index.html
