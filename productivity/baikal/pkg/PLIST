@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/09/13 15:27:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/06/09 13:12:53 jasper Exp $
 @ask-update baikal-<0.2.4p1 Due to a bug in older versions of this package, backup baikal/Specific/db/db.sqlite before updating and restore it afterwards.
 baikal/
 baikal/ChangeLog.md
@@ -89,6 +89,7 @@ baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/AddressBooks.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/Calendars.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Users.html
+baikal/Core/Frameworks/BaikalAdmin/Resources/html5.js
 baikal/Core/Frameworks/BaikalAdmin/Route/
 baikal/Core/Frameworks/BaikalAdmin/Route/Dashboard.php
 baikal/Core/Frameworks/BaikalAdmin/Route/Logout.php
@@ -427,6 +428,7 @@ baikal/vendor/composer/
 baikal/vendor/composer/ClassLoader.php
 baikal/vendor/composer/autoload_classmap.php
 baikal/vendor/composer/autoload_namespaces.php
+baikal/vendor/composer/autoload_psr4.php
 baikal/vendor/composer/autoload_real.php
 baikal/vendor/composer/installed.json
 baikal/vendor/sabre/
@@ -936,8 +938,6 @@ baikal/vendor/sabre/vobject/bin/bench.php
 baikal/vendor/sabre/vobject/bin/generateicalendardata.php
 baikal/vendor/sabre/vobject/bin/vobjectvalidate.php
 baikal/vendor/sabre/vobject/composer.json
-baikal/vendor/sabre/vobject/doc/
-baikal/vendor/sabre/vobject/doc/DesignFor3_0.md
 baikal/vendor/sabre/vobject/lib/
 baikal/vendor/sabre/vobject/lib/Sabre/
 baikal/vendor/sabre/vobject/lib/Sabre/VObject/
@@ -991,6 +991,8 @@ baikal/vendor/sabre/vobject/tests/Sabre/VObject/EmClientTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/FreeBusyGeneratorTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/Issue153Test.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/Issue154Test.php
+baikal/vendor/sabre/vobject/tests/Sabre/VObject/Issue48Test.php
+baikal/vendor/sabre/vobject/tests/Sabre/VObject/Issue50Test.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/ParameterTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/Property/
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/Property/CompoundTest.php
@@ -999,9 +1001,12 @@ baikal/vendor/sabre/vobject/tests/Sabre/VObject/Property/MultiDateTimeTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/PropertyTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/ReaderTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorFifthTuesdayProblemTest.php
+baikal/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorIncorrectExpandTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorInfiniteLoopProblemTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorMinusOneProblemTest.php
+baikal/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorMissingOverriddenTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorTest.php
+baikal/vendor/sabre/vobject/tests/Sabre/VObject/SlashRTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/ICalendarTest.php
 baikal/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/VCardTest.php
