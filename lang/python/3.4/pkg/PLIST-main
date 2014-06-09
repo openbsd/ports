@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/06/07 15:01:27 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/06/09 05:14:45 rpointel Exp $
 @option no-default-conflict
 @conflict python->=3.4,<3.5
 @pkgpath lang/python3/3.4,-main
@@ -1749,9 +1749,9 @@ lib/python3.4/lib-dynload/xxlimited.so
 lib/python3.4/lib-dynload/zlib.so
 lib/python3.4/lib2to3/
 lib/python3.4/lib2to3/Grammar.txt
-lib/python3.4/lib2to3/Grammar3.4.0.final.0.pickle
+lib/python3.4/lib2to3/Grammar3.4.1.final.0.pickle
 lib/python3.4/lib2to3/PatternGrammar.txt
-lib/python3.4/lib2to3/PatternGrammar3.4.0.final.0.pickle
+lib/python3.4/lib2to3/PatternGrammar3.4.1.final.0.pickle
 lib/python3.4/lib2to3/__init__.py
 lib/python3.4/lib2to3/__main__.py
 lib/python3.4/lib2to3/__pycache__/
