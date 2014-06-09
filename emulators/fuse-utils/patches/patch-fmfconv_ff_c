@@ -1,0 +1,66 @@
+$OpenBSD: patch-fmfconv_ff_c,v 1.1 2014/06/09 08:55:16 bentley Exp $
+
+Fix build with recent ffmpeg. From upstream r5072.
+
+--- fmfconv_ff.c.orig	Tue Apr 29 04:21:51 2014
++++ fmfconv_ff.c	Tue Apr 29 04:24:00 2014
+@@ -113,6 +113,14 @@ static int res_rte = -1;
+ static void setup_x264_dict( AVDictionary **  pm );
+ #endif
+ 
++#if LIBAVCODEC_BUILD >= AV_VERSION_INT(54,25,0)
++#define FMF_CODEC_ID AVCodecID
++#define FMF_CODEC(name) AV_##name
++#else
++#define FMF_CODEC_ID CodecID
++#define FMF_CODEC(name) name
++#endif
++
+ /* check that a given sample format is supported by the encoder */
+ static int
+ check_sample_fmt( AVCodec *codec, enum AVSampleFormat sample_fmt )
+@@ -224,7 +232,7 @@ ffmpeg_rescale_video( void )
+  */
+ 
+ static int
+-add_audio_stream( enum CodecID codec_id, int freq, int stereo )
++add_audio_stream( enum FMF_CODEC_ID codec_id, int freq, int stereo )
+ {
+   AVCodecContext *c;
+ 
+@@ -440,7 +448,7 @@ check_framerate( const AVRational *frates, int timing 
+ 
+ /* add a video output stream */
+ static int
+-add_video_stream( enum CodecID codec_id, int w, int h, int timing )
++add_video_stream( enum FMF_CODEC_ID codec_id, int w, int h, int timing )
+ {
+   AVCodecContext *c;
+ 
+@@ -674,7 +682,7 @@ out_write_ffmpegheader( void )
+ {
+ 
+   AVCodec *ac, *vc;
+-  enum CodecID acodec, vcodec;
++  enum FMF_CODEC_ID acodec, vcodec;
+ 
+   ff_picture = NULL;
+   ff_tmp_picture = NULL;
+@@ -725,7 +733,7 @@ out_write_ffmpegheader( void )
+   vcodec = fmt->video_codec;
+   acodec = fmt->audio_codec;
+ 
+-  if( out_t == TYPE_FFMPEG && vcodec != CODEC_ID_NONE ) {
++  if( out_t == TYPE_FFMPEG && vcodec != FMF_CODEC( CODEC_ID_NONE ) ) {
+ 
+     /* Find the video encoder requested by user selection */
+     if( ffmpeg_vcodec != NULL && *ffmpeg_vcodec != 0 ) {
+@@ -758,7 +766,7 @@ out_write_ffmpegheader( void )
+       return 1;
+   }
+ 
+-  if( snd_t == TYPE_FFMPEG && acodec != CODEC_ID_NONE ) {
++  if( snd_t == TYPE_FFMPEG && acodec != FMF_CODEC( CODEC_ID_NONE ) ) {
+ 
+     /* Find the audio encoder requested by user selection */
+     if( ffmpeg_acodec != NULL && *ffmpeg_acodec != 0 ) {

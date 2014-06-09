@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/07 18:00:20 grange Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/09 08:55:16 bentley Exp $
 @bin bin/audio2tape
 @bin bin/createhdf
+@bin bin/fmfconv
 @bin bin/listbasic
 @bin bin/profile2map
 @bin bin/raw2hdf
@@ -15,6 +16,7 @@
 @bin bin/tzxlist
 @man man/man1/audio2tape.1
 @man man/man1/createhdf.1
+@man man/man1/fmfconv.1
 @man man/man1/fuse-utils.1
 @man man/man1/listbasic.1
 @man man/man1/profile2map.1
