@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/03/13 01:03:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/06/10 00:16:12 sthen Exp $
 @extraunexec rm -rf /var/www/racktables/plugins/*
 htdocs/racktables/
 htdocs/racktables/index.php
@@ -129,6 +129,7 @@ racktables/wwwroot/pix/mitsudragon.png
 racktables/wwwroot/pix/node-collapsed.png
 racktables/wwwroot/pix/node-expanded-static.png
 racktables/wwwroot/pix/node-expanded.png
+racktables/wwwroot/pix/patch_cables.png
 racktables/wwwroot/pix/pencil-icon.png
 racktables/wwwroot/pix/pgadmin3-viewdata-grayscale.png
 racktables/wwwroot/pix/pgadmin3-viewdata.png
