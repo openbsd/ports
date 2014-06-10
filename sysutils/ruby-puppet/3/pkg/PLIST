@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/05/20 20:00:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/06/10 19:51:42 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -498,7 +498,6 @@ ${MODRUBY_SITEDIR}/puppet/parser/ast/resource_override.rb
 ${MODRUBY_SITEDIR}/puppet/parser/ast/resource_reference.rb
 ${MODRUBY_SITEDIR}/puppet/parser/ast/resourceparam.rb
 ${MODRUBY_SITEDIR}/puppet/parser/ast/selector.rb
-${MODRUBY_SITEDIR}/puppet/parser/ast/tag.rb
 ${MODRUBY_SITEDIR}/puppet/parser/ast/top_level_construct.rb
 ${MODRUBY_SITEDIR}/puppet/parser/ast/vardef.rb
 ${MODRUBY_SITEDIR}/puppet/parser/code_merger.rb
@@ -867,6 +866,7 @@ ${MODRUBY_SITEDIR}/puppet/scheduler/splay_job.rb
 ${MODRUBY_SITEDIR}/puppet/scheduler/timer.rb
 ${MODRUBY_SITEDIR}/puppet/settings/
 ${MODRUBY_SITEDIR}/puppet/settings.rb
+${MODRUBY_SITEDIR}/puppet/settings/array_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/autosign_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/base_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/boolean_setting.rb
