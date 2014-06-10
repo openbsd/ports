@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/05/07 02:23:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2014/06/10 02:36:39 bcallah Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-0.37
+DISTNAME =	birdfont-0.38
 CATEGORIES =	graphics print
 
-SHARED_LIBS +=	birdfont			0.0 # 0.0
+SHARED_LIBS +=	birdfont			1.0 # 1.0
 
 HOMEPAGE =	http://birdfont.org/
 
@@ -14,12 +14,12 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += javascriptcoregtk-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread
-WANTLIB += soup-2.4 webkitgtk-1.0 xcb-render xcb-shm xcb xml2 z
+WANTLIB += javascriptcoregtk-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 webkitgtk-1.0
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	http://birdfont.org/releases/
 
