@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2014/06/10 21:24:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2014/06/10 21:54:03 sthen Exp $
 
 V =			1.11.4
 REVISION-main =		2
-REVISION-cgi =		0
+REVISION-ido =		0
+REVISION-cgi =		1
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -12,8 +13,6 @@ DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
-REVISION-ido =		0
-REVISION-cgi =		0
 
 MASTER_SITES =	https://github.com/Icinga/icinga-core/releases/download/v$V/
 
