@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cgi,v 1.12 2014/03/25 01:26:33 sthen Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.13 2014/06/10 21:24:26 sthen Exp $
 cgi-bin/icinga/
 @bin cgi-bin/icinga/avail.cgi
 @bin cgi-bin/icinga/cmd.cgi
@@ -2228,6 +2228,7 @@ icinga-cgi/js/common_functions.js
 icinga-cgi/js/jquery-1.8.0.js
 icinga-cgi/js/jquery-1.8.0.min.js
 icinga-cgi/js/jquery.dd.js
+icinga-cgi/js/jquery.dd.min.js
 icinga-cgi/js/menu.js
 icinga-cgi/js/page_refresh.js
 icinga-cgi/js/skinnytip.js
