@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/06/27 19:03:32 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/06/10 04:34:48 rpointel Exp $
 bin/nosetests${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/nose/
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,8 +9,10 @@ lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nose/__init__.py
+lib/python${MODPY_VERSION}/site-packages/nose/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}case.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,7 +27,6 @@ lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}pyversion.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}result.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}selector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}suite.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}twistedtools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/case.py
@@ -100,7 +101,14 @@ lib/python${MODPY_VERSION}/site-packages/nose/sphinx/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/nose/sphinx/${MODPY_PYCACHE}pluginopts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/sphinx/pluginopts.py
 lib/python${MODPY_VERSION}/site-packages/nose/suite.py
-lib/python${MODPY_VERSION}/site-packages/nose/tools.py
+lib/python${MODPY_VERSION}/site-packages/nose/tools/
+lib/python${MODPY_VERSION}/site-packages/nose/tools/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}nontrivial.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}trivial.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nose/tools/nontrivial.py
+lib/python${MODPY_VERSION}/site-packages/nose/tools/trivial.py
 lib/python${MODPY_VERSION}/site-packages/nose/twistedtools.py
 lib/python${MODPY_VERSION}/site-packages/nose/usage.txt
 lib/python${MODPY_VERSION}/site-packages/nose/util.py

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2014/06/03 11:34:24 rpointel Exp $
+# $OpenBSD: Makefile,v 1.26 2014/06/10 04:34:48 rpointel Exp $
 
 COMMENT=		discovery-based unittest extension
 
-MODPY_EGG_VERSION=	1.1.2
+MODPY_EGG_VERSION=	1.3.3
 DISTNAME=		nose-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://readthedocs.org/docs/nose/en/latest/
@@ -26,7 +25,7 @@ FLAVOR?=
 .if ${FLAVOR:Mpython3}
 NO_TEST=		Yes
 .else
-TEST_DEPENDS=		devel/py-nose \
+TEST_DEPENDS=		${FULLPKGNAME}:devel/py-nose \
 			devel/py-twisted/core \
 			devel/py-coverage
 .endif
