@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/22 22:21:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/10 02:08:52 bcallah Exp $
 
 COMMENT =	Python 2 and 3 compatibility library
-MODPY_EGG_VERSION =	1.6.1
+MODPY_EGG_VERSION =	1.7.2
 DISTNAME =	six-${MODPY_EGG_VERSION}
 PKGNAME =	py-six-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
