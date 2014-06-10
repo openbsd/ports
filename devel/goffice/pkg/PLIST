@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2014/05/24 06:37:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2014/06/10 07:00:57 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -172,6 +172,7 @@ include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-style.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-styled-object.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-svg.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-undo.h
+include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-unit.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-units.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/goffice-utils.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/regutf8.h
