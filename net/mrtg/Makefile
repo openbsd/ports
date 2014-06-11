@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2014/03/21 00:48:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2014/06/11 12:19:49 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.17.4
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -59,5 +59,6 @@ do-install:
 	    ${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \
 	    ${PREFIX}/share/examples/mrtg
+	ln -s ../man1/mrtg-reference.1 ${PREFIX}/man/man5/mrtg.cfg.5
 
 .include <bsd.port.mk>
