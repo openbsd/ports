@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
+# $OpenBSD: Makefile.template,v 1.69 2014/06/11 02:42:33 bentley Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -55,9 +55,9 @@ CATEGORIES =		???
 # Make SURE you get these values right.
 
 # Put a comment there to state what's going on.
-# Can be as brief as `BSD' or `GPLv2', but it'd better be easy to check,
+# Can be as brief as `BSD' or `GPLv2+', but it'd better be easy to check,
 # if someone wants to double-check licensing.
-# In case of GPL, version number must be appended (e.g. v2, v2+, v3).
+# For GPL, all applicable versions must be included (e.g. v2+, v2 only, v3+).
 # Setting PERMIT_PACKAGE_CDROM=Yes defaults other PERMIT_* variables to Yes.
 #PERMIT_PACKAGE_CDROM =	Yes | Reason if No
 #PERMIT_PACKAGE_FTP =	Yes | Reason if No
