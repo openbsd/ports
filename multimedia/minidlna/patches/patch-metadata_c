@@ -1,0 +1,17 @@
+$OpenBSD: patch-metadata_c,v 1.4 2014/06/11 01:07:44 sthen Exp $
+
+Crash with long long time_t on 32-bit systems
+
+--- metadata.c.orig	Wed Jun 11 02:03:16 2014
++++ metadata.c	Wed Jun 11 02:03:30 2014
+@@ -453,8 +453,8 @@ GetAudioMetadata(const char *path, char *name)
+ 	                   " (PATH, SIZE, TIMESTAMP, DURATION, CHANNELS, BITRATE, SAMPLERATE, DATE,"
+ 	                   "  TITLE, CREATOR, ARTIST, ALBUM, GENRE, COMMENT, DISC, TRACK, DLNA_PN, MIME, ALBUM_ART) "
+ 	                   "VALUES"
+-	                   " (%Q, %lld, %ld, '%s', %d, %d, %d, %Q, %Q, %Q, %Q, %Q, %Q, %Q, %d, %d, %Q, '%s', %lld);",
+-	                   path, (long long)file.st_size, file.st_mtime, m.duration, song.channels, song.bitrate, song.samplerate, m.date,
++	                   " (%Q, %lld, %lld, '%s', %d, %d, %d, %Q, %Q, %Q, %Q, %Q, %Q, %Q, %d, %d, %Q, '%s', %lld);",
++	                   path, (long long)file.st_size, (long long)file.st_mtime, m.duration, song.channels, song.bitrate, song.samplerate, m.date,
+ 	                   m.title, m.creator, m.artist, m.album, m.genre, m.comment, song.disc, song.track,
+ 	                   m.dlna_pn, song.mime?song.mime:m.mime, album_art);
+ 	if( ret != SQLITE_OK )
