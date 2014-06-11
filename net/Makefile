@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.846 2014/05/27 09:59:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.847 2014/06/11 22:45:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -114,6 +114,7 @@
      SUBDIR += gupnp
      SUBDIR += h323plus
      SUBDIR += haproxy
+     SUBDIR += hexchat
      SUBDIR += honeyd
      SUBDIR += hping
      SUBDIR += hpodder
