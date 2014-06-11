@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/03/09 20:21:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/06/11 08:27:36 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -178,8 +178,7 @@ share/libvirt/schemas/networkcommon.rng
 share/libvirt/schemas/nodedev.rng
 share/libvirt/schemas/nwfilter.rng
 share/libvirt/schemas/secret.rng
-share/libvirt/schemas/storageencryption.rng
-share/libvirt/schemas/storagefilefeatures.rng
+share/libvirt/schemas/storagecommon.rng
 share/libvirt/schemas/storagepool.rng
 share/libvirt/schemas/storagevol.rng
 share/locale/af/LC_MESSAGES/libvirt.mo
