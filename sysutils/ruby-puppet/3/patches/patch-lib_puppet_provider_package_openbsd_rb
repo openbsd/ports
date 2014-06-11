@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.19 2014/05/15 20:17:16 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.20 2014/06/11 18:24:05 jasper Exp $
 
-(PUP-660) Implement feature :upgradeable for OpenBSD package provider.
-https://github.com/puppetlabs/puppet/pull/2558
+From 3637c48d97e4ed9fddbad883cc1cce571270e187 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 21 Apr 2014 20:02:27 +0200
+Subject: [PATCH] (PUP-1069) Implement feature :upgradeable for OpenBSD package  provider.
 
 From e59b8a725e1b6324c9c4db81d0017f76b924eb88 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
