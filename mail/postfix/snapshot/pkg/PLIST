@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.64 2013/12/21 23:23:27 brad Exp $
+@comment $OpenBSD: PLIST,v 1.65 2014/06/11 20:57:48 brad Exp $
 @conflict postfix-*
 @pkgpath mail/postfix/snapshot,sqlite
 @newgroup _postfix:507
@@ -28,6 +28,7 @@ libexec/postfix/master.cf
 @bin libexec/postfix/pipe
 libexec/postfix/post-install
 libexec/postfix/postfix-files
+libexec/postfix/postfix-files.d/
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
 libexec/postfix/postmulti-script
