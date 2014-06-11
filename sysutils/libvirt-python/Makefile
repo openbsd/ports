@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/10 11:23:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/11 08:31:28 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	1.2.3
+MODPY_EGG_VERSION =	1.2.5
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
 
@@ -21,7 +21,7 @@ MODULES =		lang/python
 
 WANTLIB =		pthread virt virt-lxc virt-qemu ${MODPY_WANTLIB}
 
-LIB_DEPENDS =		sysutils/libvirt
+LIB_DEPENDS =		sysutils/libvirt>=1.2.5
 
 TEST_DEPENDS =		devel/py-nose \
 			textproc/py-lxml
