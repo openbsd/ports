@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/19 13:29:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/06/11 13:49:46 sthen Exp $
 
 COMMENT=	C library for the Yubikey OTP token
 
-DISTNAME=	libyubikey-1.11
+DISTNAME=	libyubikey-1.12
 SHARED_LIBS +=  yubikey              0.0      # 1.4
 CATEGORIES=	devel security
 
