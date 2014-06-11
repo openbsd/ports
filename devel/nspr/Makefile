@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2014/03/10 20:17:27 landry Exp $
+# $OpenBSD: Makefile,v 1.53 2014/06/11 07:58:17 landry Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 mips64 mips64el powerpc sparc sparc64 hppa
 SHARED_ONLY =	Yes
 
 COMMENT =		Netscape Portable Runtime
 
-VER=			4.10.3
+VER=			4.10.6
 DISTNAME=		nspr-${VER}
 
 SO_VERSION=		23.1
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES =		http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
 
 USE_GMAKE=		Yes
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
 
 MAKE_ENV=		SO_VERSION="${SO_VERSION}"
