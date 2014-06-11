@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/11 21:54:00 sthen Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=          Yes
 
 MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 
-MODPY_BUILD_DEP=	No
+MODPY_BUILDDEP=	No
 MODULES=		lang/python
 
 BUILD_DEPENDS=		lang/erlang
