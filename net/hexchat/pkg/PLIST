@@ -1,0 +1,82 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/11 22:45:36 sthen Exp $
+@bin bin/hexchat
+include/hexchat-plugin.h
+lib/hexchat/
+lib/hexchat/plugins/
+@comment lib/hexchat/plugins/checksum.la
+lib/hexchat/plugins/checksum.so
+@comment lib/hexchat/plugins/doat.la
+lib/hexchat/plugins/doat.so
+@comment lib/hexchat/plugins/fishlim.la
+lib/hexchat/plugins/fishlim.so
+@comment lib/hexchat/plugins/perl.la
+lib/hexchat/plugins/perl.so
+@comment lib/hexchat/plugins/python.la
+lib/hexchat/plugins/python.so
+lib/pkgconfig/hexchat-plugin.pc
+@man man/man1/hexchat.1
+share/appdata/
+share/appdata/hexchat.appdata.xml
+share/applications/hexchat.desktop
+share/dbus-1/services/org.hexchat.service.service
+share/icons/hicolor/48x48/apps/hexchat.png
+share/icons/hicolor/scalable/apps/hexchat.svg
+share/locale/af/LC_MESSAGES/hexchat.mo
+share/locale/am/LC_MESSAGES/hexchat.mo
+share/locale/ast/LC_MESSAGES/hexchat.mo
+share/locale/az/LC_MESSAGES/hexchat.mo
+share/locale/be/LC_MESSAGES/hexchat.mo
+share/locale/bg/LC_MESSAGES/hexchat.mo
+share/locale/ca/LC_MESSAGES/hexchat.mo
+share/locale/cs/LC_MESSAGES/hexchat.mo
+share/locale/da/LC_MESSAGES/hexchat.mo
+share/locale/de/LC_MESSAGES/hexchat.mo
+share/locale/el/LC_MESSAGES/hexchat.mo
+share/locale/en_GB/LC_MESSAGES/hexchat.mo
+share/locale/es/LC_MESSAGES/hexchat.mo
+share/locale/et/LC_MESSAGES/hexchat.mo
+share/locale/eu/LC_MESSAGES/hexchat.mo
+share/locale/fi/LC_MESSAGES/hexchat.mo
+share/locale/fr/LC_MESSAGES/hexchat.mo
+share/locale/gl/LC_MESSAGES/hexchat.mo
+share/locale/gu/LC_MESSAGES/hexchat.mo
+share/locale/hi/LC_MESSAGES/hexchat.mo
+share/locale/hu/LC_MESSAGES/hexchat.mo
+share/locale/id/LC_MESSAGES/hexchat.mo
+share/locale/it/LC_MESSAGES/hexchat.mo
+share/locale/ja_JP/
+share/locale/ja_JP/LC_MESSAGES/
+share/locale/ja_JP/LC_MESSAGES/hexchat.mo
+share/locale/kn/LC_MESSAGES/hexchat.mo
+share/locale/ko/LC_MESSAGES/hexchat.mo
+share/locale/lt/LC_MESSAGES/hexchat.mo
+share/locale/lv/LC_MESSAGES/hexchat.mo
+share/locale/mk/LC_MESSAGES/hexchat.mo
+share/locale/ml/LC_MESSAGES/hexchat.mo
+share/locale/ms/LC_MESSAGES/hexchat.mo
+share/locale/nb/LC_MESSAGES/hexchat.mo
+share/locale/nl/LC_MESSAGES/hexchat.mo
+share/locale/no/LC_MESSAGES/hexchat.mo
+share/locale/pa/LC_MESSAGES/hexchat.mo
+share/locale/pl/LC_MESSAGES/hexchat.mo
+share/locale/pt/LC_MESSAGES/hexchat.mo
+share/locale/pt_BR/LC_MESSAGES/hexchat.mo
+share/locale/ru/LC_MESSAGES/hexchat.mo
+share/locale/rw/LC_MESSAGES/hexchat.mo
+share/locale/sk/LC_MESSAGES/hexchat.mo
+share/locale/sl/LC_MESSAGES/hexchat.mo
+share/locale/sq/LC_MESSAGES/hexchat.mo
+share/locale/sr/LC_MESSAGES/hexchat.mo
+share/locale/sr@latin/LC_MESSAGES/hexchat.mo
+share/locale/sv/LC_MESSAGES/hexchat.mo
+share/locale/th/LC_MESSAGES/hexchat.mo
+share/locale/tr/LC_MESSAGES/hexchat.mo
+share/locale/uk/LC_MESSAGES/hexchat.mo
+share/locale/vi/LC_MESSAGES/hexchat.mo
+share/locale/wa/LC_MESSAGES/hexchat.mo
+share/locale/zh_CN/LC_MESSAGES/hexchat.mo
+share/locale/zh_TW/LC_MESSAGES/hexchat.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
