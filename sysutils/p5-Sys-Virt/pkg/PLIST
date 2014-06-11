@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/27 19:40:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/11 08:29:07 jasper Exp $
 ${P5ARCH}/Sys/
 ${P5ARCH}/Sys/Virt/
 ${P5ARCH}/Sys/Virt.pm
@@ -38,6 +38,7 @@ share/examples/p5-Sys-Virt/dump-info.pl
 share/examples/p5-Sys-Virt/dump-xml.pl
 share/examples/p5-Sys-Virt/emulator-pin.pl
 share/examples/p5-Sys-Virt/events.pl
+share/examples/p5-Sys-Virt/fs-freeze.pl
 share/examples/p5-Sys-Virt/hv-stat.pl
 share/examples/p5-Sys-Virt/node-cpu.pl
 share/examples/p5-Sys-Virt/node-devlist.pl
