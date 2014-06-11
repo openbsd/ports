@@ -1,7 +1,7 @@
-$OpenBSD: patch-upnphttp_c,v 1.3 2013/05/07 20:37:23 sthen Exp $
---- upnphttp.c.orig	Mon Mar 18 05:37:46 2013
-+++ upnphttp.c	Sat Mar 30 20:51:55 2013
-@@ -1300,6 +1300,10 @@ SendResp_icon(struct upnphttp * h, char * icon)
+$OpenBSD: patch-upnphttp_c,v 1.4 2014/06/11 00:26:59 sthen Exp $
+--- upnphttp.c.orig	Thu Jun  5 23:14:30 2014
++++ upnphttp.c	Wed Jun 11 01:20:08 2014
+@@ -1362,6 +1362,10 @@ SendResp_icon(struct upnphttp * h, char * icon)
  	                                       "Server: " MINIDLNA_SERVER_STRING "\r\n\r\n",
  	                                       mime, size, date);
  
@@ -11,4 +11,4 @@ $OpenBSD: patch-upnphttp_c,v 1.3 2013/05/07 20:37:23 sthen Exp $
 +#endif
  	if( send_data(h, header, ret, MSG_MORE) == 0 )
  	{
-  		if( h->req_command != EHead )
+ 		if( h->req_command != EHead )
