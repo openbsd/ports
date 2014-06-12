@@ -1,0 +1,10 @@
+$OpenBSD: README,v 1.1 2014/06/12 19:00:31 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Please note, it is common for scripts using this package to use the
+softlimit application to restrict the datasize limit of tcpclient/tcpserver;
+in some cases the suggested limits are too small for successful use with
+OpenBSD and may cause process termination.

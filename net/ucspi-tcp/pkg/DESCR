@@ -1,0 +1,5 @@
+This package contains TCP socket client and server programs
+that conform to UCSPI, the UNIX Client-Server Program Interface.
+
+For more information on the UCSPI standard, see
+http://cr.yp.to/proto/ucspi.txt

@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.5 2014/06/12 19:00:31 sthen Exp $
+@bin bin/addcr
+@bin bin/argv0
+bin/date@
+@bin bin/delcr
+bin/finger@
+@bin bin/fixcrio
+bin/http@
+bin/mconnect
+@bin bin/mconnect-io
+@bin bin/rblsmtpd
+@bin bin/recordio
+bin/tcpcat
+@bin bin/tcpclient
+@bin bin/tcprules
+@bin bin/tcprulescheck
+@bin bin/tcpserver
+bin/who@
+@man man/man1/addcr.1
+@man man/man1/argv0.1
+@man man/man1/date@.1
+@man man/man1/delcr.1
+@man man/man1/finger@.1
+@man man/man1/fixcr.1
+@man man/man1/http@.1
+@man man/man1/mconnect.1
+@man man/man1/recordio.1
+@man man/man1/tcpclient.1
+@man man/man1/tcprules.1
+@man man/man1/tcprulescheck.1
+@man man/man1/tcpserver.1
+@man man/man1/who@.1
+@man man/man5/tcp-environ.5
+share/doc/pkg-readmes/${FULLPKGNAME}
