@@ -1,0 +1,12 @@
+$OpenBSD: patch-f5_c,v 1.1 2014/06/12 18:21:13 sthen Exp $
+--- f5.c.orig	Thu Jun 12 19:13:46 2014
++++ f5.c	Thu Jun 12 19:13:51 2014
+@@ -77,7 +77,7 @@ f5_compress(struct image *image, struct jeasy *je, int
+ 	struct jpeg_compress_struct cinfo;
+ 	struct jpeg_decompress_struct *jinfo;
+ 	static struct jpeg_error_mgr jerr, jsrcerr;
+-	char template[] = "/tmp/stegdetect.XXXX";
++	char template[] = "/tmp/stegdetect.XXXXXX";
+ 	JSAMPROW row_pointer[1];	/* pointer to JSAMPLE row[s] */
+ 	FILE *fout, *fin;
+ 	int row_stride;		/* physical row width in image buffer */
