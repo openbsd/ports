@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.13 2014/05/22 09:50:07 sebastia Exp $
+# $OpenBSD: README,v 1.14 2014/06/12 06:16:35 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -60,15 +60,15 @@ and SOGo is listening on its default port 20000.
 Nginx runs in a chroot environment on OpenBSD, therefore you have to
 copy some files into the server's chroot environment:
 
-# mkdir -p ${VARBASE}/www/lib/sogo
-# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
+$ sudo mkdir -p ${VARBASE}/www/lib/sogo
+$ sudo cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
 
 Edit /etc/nginx/nginx.conf
 
 server {
 
     listen 80;
-    root ${VARBASE}/www/lib/GNUstep/SOGo/WebServerResources/;
+    root ${VARBASE}/www/lib/sogo/www/;
 
     location = /
     {
@@ -86,7 +86,7 @@ server {
     location = /.well-known/caldav/
     {
         rewrite ^ http://$server_name/SOGo/dav;
-            }
+    }
 
     location = /.well-known/carddav/
     {
@@ -94,7 +94,8 @@ server {
         allow all;
     }
 
-    location ^~/SOGo {
+    location ^~/SOGo
+    {
         proxy_pass http://127.0.0.1:20000;
         proxy_redirect http://127.0.0.1:20000 default;
         # forward user's IP address
@@ -117,23 +118,27 @@ server {
         client_body_buffer_size 128k;
         break;
     }
-    location /SOGo.woa/WebServerResources/ {
-        alias ${VARBASE}/www/lib/GNUstep/SOGo/WebServerResources/;
+
+    location /SOGo.woa/WebServerResources/
+    {
+        alias ${VARBASE}/www/lib/sogo/www/;
         allow all;
     }
 
-    location /SOGo/WebServerResources/ {
-        alias ${VARBASE}/www/lib/GNUstep/SOGo/WebServerResources/;
+    location /SOGo/WebServerResources/
+    {
+        alias ${VARBASE}/www/lib/sogo/www/;
         allow all;
     }
 
-    location ^/SOGo/so/ControlPanel/Products/([^/]*)/Resources/(.*)$ {
-        alias ${VARBASE}/www/lib/GNUstep/SOGo/$1.SOGo/Resources/$2;
+    location ^/SOGo/so/ControlPanel/Products/([^/]*)/Resources/(.*)$
+    {
+        alias ${VARBASE}/www/lib/sogo/$1.SOGo/Resources/$2;
     }
 
     location ^/SOGo/so/ControlPanel/Products/[^/]*UI/Resources/.*\.(jpg|png|gif|css|js)$
     {
-        alias ${VARBASE}/www/lib/GNUstep/SOGo/$1.SOGo/Resources/$2;
+        alias ${VARBASE}/www/lib/sogo/$1.SOGo/Resources/$2;
     }
 }
 
