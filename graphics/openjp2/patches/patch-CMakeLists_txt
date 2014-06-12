@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/10/29 00:01:50 sthen Exp $
---- CMakeLists.txt.orig	Tue Apr  2 18:03:46 2013
-+++ CMakeLists.txt	Tue Apr  2 18:04:07 2013
-@@ -95,7 +95,10 @@ endif()
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/06/12 14:07:17 sthen Exp $
+--- CMakeLists.txt.orig	Tue Apr 22 08:54:27 2014
++++ CMakeLists.txt	Thu Jun 12 14:46:50 2014
+@@ -96,7 +96,10 @@ endif()
  # Install directories
  
  string(TOLOWER ${PROJECT_NAME} projectname)

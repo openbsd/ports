@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_lib_openjp2_opj_malloc_h,v 1.1.1.1 2013/10/29 00:01:50 sthen Exp $
---- src/lib/openjp2/opj_malloc.h.orig	Tue Apr  2 17:33:28 2013
-+++ src/lib/openjp2/opj_malloc.h	Tue Apr  2 17:34:39 2013
-@@ -86,7 +86,7 @@ Allocate memory aligned to a 16 byte boundry
+$OpenBSD: patch-src_lib_openjp2_opj_malloc_h,v 1.2 2014/06/12 14:07:17 sthen Exp $
+--- src/lib/openjp2/opj_malloc.h.orig	Thu Jun 12 14:31:00 2014
++++ src/lib/openjp2/opj_malloc.h	Thu Jun 12 14:31:00 2014
+@@ -101,7 +101,7 @@ Allocate memory aligned to a 16 byte boundry
    #elif defined(__FreeBSD__)
      #define HAVE_POSIX_MEMALIGN
  	/* Linux x86_64 and OSX always align allocations to 16 bytes */
