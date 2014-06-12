@@ -1,10 +1,10 @@
-$OpenBSD: patch-channels_chan_sip_c,v 1.15 2014/05/31 00:35:31 sthen Exp $
+$OpenBSD: patch-channels_chan_sip_c,v 1.16 2014/06/12 22:39:12 sthen Exp $
 
 https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-11.3.0
 
---- channels/chan_sip.c.orig	Tue May 13 18:40:00 2014
-+++ channels/chan_sip.c	Thu May 29 21:32:09 2014
-@@ -8436,8 +8436,6 @@ static struct ast_frame *sip_read(struct ast_channel *
+--- channels/chan_sip.c.orig	Thu Jun 12 17:54:15 2014
++++ channels/chan_sip.c	Thu Jun 12 23:27:59 2014
+@@ -8440,8 +8440,6 @@ static struct ast_frame *sip_read(struct ast_channel *
  			ast_channel_unlock(ast);
  			if (ast_exists_extension(ast, target_context, "fax", 1,
  				S_COR(ast_channel_caller(ast)->id.number.valid, ast_channel_caller(ast)->id.number.str, NULL))) {
@@ -13,7 +13,7 @@ https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-1
  				ast_verb(2, "Redirecting '%s' to fax extension due to CNG detection\n", ast_channel_name(ast));
  				pbx_builtin_setvar_helper(ast, "FAXEXTEN", ast_channel_exten(ast));
  				if (ast_async_goto(ast, target_context, "fax", 1)) {
-@@ -8446,10 +8444,10 @@ static struct ast_frame *sip_read(struct ast_channel *
+@@ -8450,10 +8448,10 @@ static struct ast_frame *sip_read(struct ast_channel *
  				ast_frfree(fr);
  				fr = &ast_null_frame;
  			} else {
@@ -26,7 +26,7 @@ https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-1
  		}
  	}
  
-@@ -10734,6 +10732,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
+@@ -10738,6 +10736,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
  						ast_channel_unlock(p->owner);
  						if (ast_exists_extension(p->owner, target_context, "fax", 1,
  							S_COR(ast_channel_caller(p->owner)->id.number.valid, ast_channel_caller(p->owner)->id.number.str, NULL))) {
