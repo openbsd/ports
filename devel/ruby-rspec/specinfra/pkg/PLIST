@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/05/07 11:52:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/12 10:08:35 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -29,6 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_group.
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_iis_component.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_installed_application.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_installed_hot_fix.ps1
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_scheduled_task.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_service.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_user.ps1
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/backend/powershell/support/find_usergroup.ps1
