@@ -1,14 +1,14 @@
-$OpenBSD: patch-chirp_platform_py,v 1.1.1.1 2013/06/13 11:42:43 sthen Exp $
---- chirp/platform.py.orig	Thu May 30 13:12:52 2013
-+++ chirp/platform.py	Thu May 30 13:13:35 2013
-@@ -277,7 +277,9 @@ class UnixPlatform(Platform):
+$OpenBSD: patch-chirp_platform_py,v 1.2 2014/06/12 21:54:30 abieber Exp $
+--- chirp/platform.py.orig	Tue Apr  9 01:01:35 2013
++++ chirp/platform.py	Thu Jun 12 14:14:18 2014
+@@ -283,7 +283,9 @@ class UnixPlatform(Platform):
          os.system("firefox '%s'" % path)
  
      def list_serial_ports(self):
--        return sorted(glob.glob("/dev/ttyS*") +
-+        return sorted(glob.glob("/dev/cuaU*") +
-+                      glob.glob("/dev/cua0*") +
-+                      glob.glob("/dev/ttyS*") +
-                       glob.glob("/dev/ttyUSB*") +
-                       glob.glob("/dev/cu.*") +
-                       glob.glob("/dev/term/*") +
+-        ports = ["/dev/ttyS*",
++        ports = ["/dev/cuaU*",
++                 "/dev/cua0*",
++                 "/dev/ttyS*",
+                  "/dev/ttyUSB*",
+                  "/dev/ttyAMA*",
+                  "/dev/cu.*",

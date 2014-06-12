@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/13 11:42:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/12 21:54:30 abieber Exp $
 bin/chirpw
 lib/python${MODPY_VERSION}/site-packages/chirp/
 lib/python${MODPY_VERSION}/site-packages/chirp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -6,18 +6,36 @@ lib/python${MODPY_VERSION}/site-packages/chirp/__init__.py
 lib/python${MODPY_VERSION}/site-packages/chirp/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/alinco.py
 lib/python${MODPY_VERSION}/site-packages/chirp/alinco.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/anytone.py
+lib/python${MODPY_VERSION}/site-packages/chirp/anytone.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan.py
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_au.py
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_au.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_iaru_r1.py
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_iaru_r1.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_iaru_r2.py
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_iaru_r2.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_iaru_r3.py
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_iaru_r3.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_na.py
+lib/python${MODPY_VERSION}/site-packages/chirp/bandplan_na.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/baofeng_uv3r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/baofeng_uv3r.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/bitwise.py
 lib/python${MODPY_VERSION}/site-packages/chirp/bitwise.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/bitwise_grammar.py
 lib/python${MODPY_VERSION}/site-packages/chirp/bitwise_grammar.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/bjuv55.py
+lib/python${MODPY_VERSION}/site-packages/chirp/bjuv55.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/chirp_common.py
 lib/python${MODPY_VERSION}/site-packages/chirp/chirp_common.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/detect.py
 lib/python${MODPY_VERSION}/site-packages/chirp/detect.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/directory.py
 lib/python${MODPY_VERSION}/site-packages/chirp/directory.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/elib_intl.py
+lib/python${MODPY_VERSION}/site-packages/chirp/elib_intl.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/errors.py
 lib/python${MODPY_VERSION}/site-packages/chirp/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/ft1802.py
@@ -36,12 +54,18 @@ lib/python${MODPY_VERSION}/site-packages/chirp/ft817.py
 lib/python${MODPY_VERSION}/site-packages/chirp/ft817.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/ft857.py
 lib/python${MODPY_VERSION}/site-packages/chirp/ft857.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/ft90.py
+lib/python${MODPY_VERSION}/site-packages/chirp/ft90.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/ftm350.py
+lib/python${MODPY_VERSION}/site-packages/chirp/ftm350.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/generic_csv.py
 lib/python${MODPY_VERSION}/site-packages/chirp/generic_csv.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/generic_tpe.py
 lib/python${MODPY_VERSION}/site-packages/chirp/generic_tpe.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/generic_xml.py
 lib/python${MODPY_VERSION}/site-packages/chirp/generic_xml.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/h777.py
+lib/python${MODPY_VERSION}/site-packages/chirp/h777.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/ic208.py
 lib/python${MODPY_VERSION}/site-packages/chirp/ic208.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/ic2100.py
@@ -80,6 +104,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/icx8x_ll.py
 lib/python${MODPY_VERSION}/site-packages/chirp/icx8x_ll.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/id31.py
 lib/python${MODPY_VERSION}/site-packages/chirp/id31.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/id51.py
+lib/python${MODPY_VERSION}/site-packages/chirp/id51.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/id800.py
 lib/python${MODPY_VERSION}/site-packages/chirp/id800.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/id880.py
@@ -90,6 +116,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/import_logic.py
 lib/python${MODPY_VERSION}/site-packages/chirp/import_logic.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/kenwood_hmk.py
 lib/python${MODPY_VERSION}/site-packages/chirp/kenwood_hmk.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/kenwood_itm.py
+lib/python${MODPY_VERSION}/site-packages/chirp/kenwood_itm.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/kenwood_live.py
 lib/python${MODPY_VERSION}/site-packages/chirp/kenwood_live.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/memmap.py
@@ -110,10 +138,14 @@ lib/python${MODPY_VERSION}/site-packages/chirp/template.py
 lib/python${MODPY_VERSION}/site-packages/chirp/template.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/th_uv3r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/th_uv3r.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/th_uvf8d.py
+lib/python${MODPY_VERSION}/site-packages/chirp/th_uvf8d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/thd72.py
 lib/python${MODPY_VERSION}/site-packages/chirp/thd72.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/thuv1f.py
 lib/python${MODPY_VERSION}/site-packages/chirp/thuv1f.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/tk8102.py
+lib/python${MODPY_VERSION}/site-packages/chirp/tk8102.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/tmv71.py
 lib/python${MODPY_VERSION}/site-packages/chirp/tmv71.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/tmv71_ll.py
@@ -122,10 +154,16 @@ lib/python${MODPY_VERSION}/site-packages/chirp/util.py
 lib/python${MODPY_VERSION}/site-packages/chirp/util.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/uv5r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/uv5r.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/uvb5.py
+lib/python${MODPY_VERSION}/site-packages/chirp/uvb5.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/vx2.py
+lib/python${MODPY_VERSION}/site-packages/chirp/vx2.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/vx3.py
 lib/python${MODPY_VERSION}/site-packages/chirp/vx3.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/vx5.py
 lib/python${MODPY_VERSION}/site-packages/chirp/vx5.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/vx510.py
+lib/python${MODPY_VERSION}/site-packages/chirp/vx510.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/vx6.py
 lib/python${MODPY_VERSION}/site-packages/chirp/vx6.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/vx7.py
@@ -145,6 +183,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/yaesu_clone.pyc
 lib/python${MODPY_VERSION}/site-packages/chirpui/
 lib/python${MODPY_VERSION}/site-packages/chirpui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/chirpui/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/chirpui/bandplans.py
+lib/python${MODPY_VERSION}/site-packages/chirpui/bandplans.pyc
 lib/python${MODPY_VERSION}/site-packages/chirpui/bankedit.py
 lib/python${MODPY_VERSION}/site-packages/chirpui/bankedit.pyc
 lib/python${MODPY_VERSION}/site-packages/chirpui/clone.py
@@ -173,18 +213,46 @@ lib/python${MODPY_VERSION}/site-packages/chirpui/memedit.py
 lib/python${MODPY_VERSION}/site-packages/chirpui/memedit.pyc
 lib/python${MODPY_VERSION}/site-packages/chirpui/miscwidgets.py
 lib/python${MODPY_VERSION}/site-packages/chirpui/miscwidgets.pyc
+lib/python${MODPY_VERSION}/site-packages/chirpui/radiobrowser.py
+lib/python${MODPY_VERSION}/site-packages/chirpui/radiobrowser.pyc
 lib/python${MODPY_VERSION}/site-packages/chirpui/reporting.py
 lib/python${MODPY_VERSION}/site-packages/chirpui/reporting.pyc
 lib/python${MODPY_VERSION}/site-packages/chirpui/settingsedit.py
 lib/python${MODPY_VERSION}/site-packages/chirpui/settingsedit.pyc
 lib/python${MODPY_VERSION}/site-packages/chirpui/shiftdialog.py
 lib/python${MODPY_VERSION}/site-packages/chirpui/shiftdialog.pyc
+@man man/man1/chirpw.1
 share/applications/chirp.desktop
 share/chirp/
 share/chirp/chirp.xsd
 share/chirp/chirp_banks.xsd
 share/chirp/chirp_memory.xsd
 share/chirp/images/
+share/chirp/locale/
+share/chirp/locale/de/
+share/chirp/locale/de/LC_MESSAGES/
+share/chirp/locale/de/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/en_US/
+share/chirp/locale/en_US/LC_MESSAGES/
+share/chirp/locale/en_US/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/hu/
+share/chirp/locale/hu/LC_MESSAGES/
+share/chirp/locale/hu/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/it/
+share/chirp/locale/it/LC_MESSAGES/
+share/chirp/locale/it/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/nl/
+share/chirp/locale/nl/LC_MESSAGES/
+share/chirp/locale/nl/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/pl/
+share/chirp/locale/pl/LC_MESSAGES/
+share/chirp/locale/pl/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/pt_BR/
+share/chirp/locale/pt_BR/LC_MESSAGES/
+share/chirp/locale/pt_BR/LC_MESSAGES/CHIRP.mo
+share/chirp/locale/ru/
+share/chirp/locale/ru/LC_MESSAGES/
+share/chirp/locale/ru/LC_MESSAGES/CHIRP.mo
 share/chirp/stock_configs/
 share/chirp/stock_configs/EU LPD and PMR Channels.csv
 share/chirp/stock_configs/Marine VHF Channels.csv
@@ -196,7 +264,6 @@ share/chirp/stock_configs/US FRS and GMRS Channels.csv
 share/chirp/stock_configs/US MURS Channels.csv
 share/doc/chirp/
 share/doc/chirp/COPYING
-@man man/man1/chirpw.1
 share/pixmaps/
 share/pixmaps/chirp.png
 @exec %D/bin/update-desktop-database

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/20 22:05:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/12 21:54:30 abieber Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
-MODPY_EGG_VERSION= 0.3.1
-REVISION=	1
+MODPY_EGG_VERSION= 0.4.0
 DISTNAME=	chirp-${MODPY_EGG_VERSION}
 
 CATEGORIES=	comms hamradio
