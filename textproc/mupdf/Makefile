@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2014/05/07 09:10:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2014/06/12 14:07:19 sthen Exp $
 
 SHARED_ONLY =	Yes
-SHARED_LIBS +=	mupdf 0.0
+SHARED_LIBS +=	mupdf 1.0
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.4
-REVISION =	0
+V =		1.5
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 
@@ -31,7 +30,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
 LIB_DEPENDS =	graphics/jbig2dec \
 		graphics/jpeg \
-		graphics/openjp2 \
+		graphics/openjp2>=2.0.1 \
 		net/curl
 
 USE_GMAKE =	Yes
@@ -56,19 +55,13 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 FAKE_FLAGS =	NOCURL= prefix=${PREFIX} mandir=${PREFIX}/man
 
 pre-configure:
-	cd ${WRKSRC}/; ${SUBST_CMD} Makerules platform/debian/mupdf.pc
+	cd ${WRKSRC}/; ${SUBST_CMD} Makerules
 	rm -rf ${WRKSRC}/thirdparty
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ \
-	    ${PREFIX}/share/application-registry/ ${PREFIX}/share/pixmaps \
-	    ${PREFIX}/lib/pkgconfig/
-.for a b in mupdf.xpm share/pixmaps \
-  mupdf.applications share/application-registry \
-  mupdf.desktop share/applications \
-  mupdf.pc lib/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/platform/debian/$a ${PREFIX}/$b
-.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}
+	${INSTALL_DATA} ${FILESDIR}/mupdf.xpm ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${FILESDIR}/mupdf.desktop ${PREFIX}/share/applications/
 	cd ${PREFIX}/bin; ln -s mupdf-x11 mupdf
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makerules,v 1.11 2014/04/17 20:30:57 sthen Exp $
---- Makerules.orig	Fri Apr 11 16:10:41 2014
-+++ Makerules	Thu Apr 17 21:11:06 2014
+$OpenBSD: patch-Makerules,v 1.12 2014/06/12 14:07:19 sthen Exp $
+--- Makerules.orig	Tue Jun 10 16:09:28 2014
++++ Makerules	Thu Jun 12 14:59:25 2014
 @@ -7,6 +7,7 @@ OS := $(OS:Darwin=MACOS)
  
  CFLAGS += -Wall
@@ -26,22 +26,18 @@ $OpenBSD: patch-Makerules,v 1.11 2014/04/17 20:30:57 sthen Exp $
  
  HAVE_X11 ?= yes
  
-@@ -64,15 +66,15 @@ SYS_OPENSSL_LIBS = $(shell pkg-config --libs libcrypto
+@@ -68,12 +70,12 @@ HAVE_CURL = yes
+ SYS_CURL_CFLAGS = $(shell pkg-config --cflags libcurl)
+ SYS_CURL_LIBS = $(shell pkg-config --libs libcurl)
  endif
- 
- # TODO: use pkg-config for system CURL
 -SYS_CURL_DEPS = -lpthread -lrt
 +SYS_CURL_DEPS = -lpthread
  
  SYS_X11_CFLAGS = $(shell pkg-config --cflags x11 xext)
  SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
  
- SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2)
+-SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2)
++SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2) -I${LOCALBASE}/include
  SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype2)
--SYS_OPENJPEG_CFLAGS = $(shell pkg-config --cflags libopenjpeg1)
--SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenjpeg1)
-+SYS_OPENJPEG_CFLAGS = -I${LOCALBASE}/include/openjp2 -I${LOCALBASE}/include
-+SYS_OPENJPEG_LIBS = -L${LOCALBASE}/lib -lopenjp2
- SYS_JBIG2DEC_LIBS = -ljbig2dec
- SYS_JPEG_LIBS = -ljpeg
- SYS_ZLIB_LIBS = -lz
+ SYS_OPENJPEG_CFLAGS = $(shell pkg-config --cflags libopenjp2)
+ SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenjp2)

@@ -1,9 +1,0 @@
-$OpenBSD: patch-platform_debian_mupdf_pc,v 1.1 2013/10/29 22:08:59 sthen Exp $
---- platform/debian/mupdf.pc.orig	Wed Aug 14 13:41:20 2013
-+++ platform/debian/mupdf.pc	Tue Oct 29 21:28:07 2013
-@@ -1,4 +1,4 @@
--prefix=/usr
-+prefix=${PREFIX}
- exec_prefix=${prefix}
- libdir=${exec_prefix}/lib
- includedir=${prefix}/include

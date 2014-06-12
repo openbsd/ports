@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/05/07 09:10:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/06/12 14:07:19 sthen Exp $
 @bin bin/mudraw
 @bin bin/mujstest
 bin/mupdf
@@ -75,13 +75,9 @@ include/mupdf/pdf/xref.h
 include/mupdf/tiff.h
 include/mupdf/xps.h
 @lib lib/libmupdf.so.${LIBmupdf_VERSION}
-lib/pkgconfig/
-lib/pkgconfig/mupdf.pc
 @man man/man1/mudraw.1
 @man man/man1/mupdf.1
 @man man/man1/mutool.1
-share/application-registry/
-share/application-registry/mupdf.applications
 share/applications/mupdf.desktop
 share/doc/mupdf/
 share/doc/mupdf/CHANGES
