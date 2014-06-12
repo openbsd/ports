@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.53 2014/04/21 22:54:50 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.54 2014/06/12 14:24:34 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -592,6 +592,9 @@ share/examples/asterisk/openbsd/voicemail.conf.sample
 @sample /var/log/asterisk/cdr-csv/
 @sample /var/log/asterisk/cdr-custom/
 @sample /var/spool/asterisk/voicemail/
+@owner _asterisk
+@group _asterisk
+@mode 755
 @sample /var/spool/asterisk/voicemail/default/
 @sample /var/spool/asterisk/voicemail/default/1234/
 @group
