@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_shell_c,v 1.1 2012/10/23 08:10:27 sthen Exp $
---- src/shell.c.orig	Wed Aug  8 12:15:08 2012
-+++ src/shell.c	Wed Aug  8 12:15:16 2012
+$OpenBSD: patch-src_shell_c,v 1.2 2014/06/13 02:30:32 jturner Exp $
+
+Remove SQLITE_TESTCTRL_BYTEORDER to support our in tree SQLite.
+
+--- src/shell.c.orig	Thu Jun 12 13:33:27 2014
++++ src/shell.c	Thu Jun 12 20:32:00 2014
 @@ -32,7 +32,7 @@
  #include <string.h>
  #include <stdio.h>
@@ -10,3 +13,19 @@ $OpenBSD: patch-src_shell_c,v 1.1 2012/10/23 08:10:27 sthen Exp $
  #include <ctype.h>
  #include <stdarg.h>
  
+@@ -3143,7 +3143,6 @@ static int do_meta_command(char *zLine, struct callbac
+       { "optimizations",         SQLITE_TESTCTRL_OPTIMIZATIONS          },
+       { "iskeyword",             SQLITE_TESTCTRL_ISKEYWORD              },
+       { "scratchmalloc",         SQLITE_TESTCTRL_SCRATCHMALLOC          },
+-      { "byteorder",             SQLITE_TESTCTRL_BYTEORDER              },
+     };
+     int testctrl = -1;
+     int rc = 0;
+@@ -3187,7 +3186,6 @@ static int do_meta_command(char *zLine, struct callbac
+         case SQLITE_TESTCTRL_PRNG_SAVE:
+         case SQLITE_TESTCTRL_PRNG_RESTORE:
+         case SQLITE_TESTCTRL_PRNG_RESET:
+-        case SQLITE_TESTCTRL_BYTEORDER:
+           if( nArg==2 ){
+             rc = sqlite3_test_control(testctrl);
+             fprintf(p->out, "%d (0x%08x)\n", rc, rc);
