@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2014/06/04 14:40:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2014/06/13 13:34:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,6 +14,8 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
+
+REVISION-server=	0
 
 SHARED_LIBS +=  bac                  5.0
 SHARED_LIBS +=  baccfg               5.0

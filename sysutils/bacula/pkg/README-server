@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.9 2014/04/19 09:44:11 ajacoutot Exp $
+$OpenBSD: README-server,v 1.10 2014/06/13 13:34:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ Also, the Director and Storage Daemons must be upgraded at the same
 time, but older File Daemons can be used with 5.2.x.
 
 The official Bacula documentation can be found at:
-    http://bacula.org/5.2.x-manuals/en/main/main/index.html
+    http://blog.bacula.org/documentation/documentation/
 
 Setting up the database for the Bacula Director
 ===============================================
