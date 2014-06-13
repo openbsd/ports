@@ -1,0 +1,6 @@
+# $OpenBSD: configure,v 1.1.1.1 2014/06/13 20:48:58 naddy Exp $
+
+for d in $SUBDIRS; do
+	(cd $d && ./configure "$@") || exit
+	PATH=$d:$PATH	# for lib*-config
+done

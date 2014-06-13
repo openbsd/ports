@@ -1,0 +1,9 @@
+$OpenBSD: patch-ZenLib_Project_GNU_Library_libzen-config_in,v 1.1.1.1 2014/06/13 20:48:58 naddy Exp $
+--- ZenLib/Project/GNU/Library/libzen-config.in.orig	Thu Apr 24 13:30:26 2014
++++ ZenLib/Project/GNU/Library/libzen-config.in	Wed Jun  4 01:28:56 2014
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if test "$1" = "CXXFLAGS"; then
+ echo @ZenLib_CXXFLAGS@

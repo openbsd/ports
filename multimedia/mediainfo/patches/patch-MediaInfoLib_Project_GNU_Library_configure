@@ -1,0 +1,13 @@
+$OpenBSD: patch-MediaInfoLib_Project_GNU_Library_configure,v 1.1.1.1 2014/06/13 20:48:58 naddy Exp $
+--- MediaInfoLib/Project/GNU/Library/configure.orig	Thu Apr 24 13:30:14 2014
++++ MediaInfoLib/Project/GNU/Library/configure	Wed Jun  4 18:52:51 2014
+@@ -18818,9 +18818,6 @@ if test "$GXX" = yes ; then
+ 	if test "$enable_debug" = "yes"; then
+ 		CFLAGS="$CFLAGS -O0 -g -Wall -Wundef"
+ 		CXXFLAGS="$CXXFLAGS -O0 -g -Wall -W -Wundef -Wcast-qual -Wno-ctor-dtor-privacy"
+-	else
+-		CFLAGS="$CFLAGS -O2"
+-		CXXFLAGS="$CXXFLAGS -O2"
+ 	fi
+ 	if test "$enable_gprof" = "yes"; then
+ 		CFLAGS="$CFLAGS -pg -g"
