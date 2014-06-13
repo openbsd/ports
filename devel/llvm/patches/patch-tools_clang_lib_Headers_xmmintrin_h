@@ -1,0 +1,18 @@
+$OpenBSD: patch-tools_clang_lib_Headers_xmmintrin_h,v 1.1 2014/06/13 22:29:40 brad Exp $
+
+r209489
+The last step of _mm_cvtps_pi16 should use _mm_packs_pi32, which is a function
+that reads two __m64 values and packs four 32-bit values into four 16-bit
+values.
+
+--- tools/clang/lib/Headers/xmmintrin.h.orig	Thu Jun  5 00:06:01 2014
++++ tools/clang/lib/Headers/xmmintrin.h	Thu Jun  5 00:06:36 2014
+@@ -905,7 +905,7 @@ _mm_cvtps_pi16(__m128 __a)
+   __a = _mm_movehl_ps(__a, __a);
+   __c = _mm_cvtps_pi32(__a);
+   
+-  return _mm_packs_pi16(__b, __c);
++  return _mm_packs_pi32(__b, __c);
+ }
+ 
+ static __inline__ __m64 __attribute__((__always_inline__, __nodebug__))

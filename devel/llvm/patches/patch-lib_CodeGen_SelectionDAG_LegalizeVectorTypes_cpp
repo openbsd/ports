@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_CodeGen_SelectionDAG_LegalizeVectorTypes_cpp,v 1.1 2014/06/13 22:29:40 brad Exp $
+
+r203311
+ISel: Make VSELECT selection terminate in cases where the condition type has to
+be split and the result type widened.
+
+When the condition of a vselect has to be split it makes no sense widening the
+vselect and thereby widening the condition. We end up in an endless loop of
+widening (vselect result type) and splitting (condition mask type) doing this.
+Instead, split both the condition and the vselect and widen the result.
+
+--- lib/CodeGen/SelectionDAG/LegalizeVectorTypes.cpp.orig	Thu Jun  5 00:00:32 2014
++++ lib/CodeGen/SelectionDAG/LegalizeVectorTypes.cpp	Thu Jun  5 00:01:21 2014
+@@ -2192,6 +2192,17 @@ SDValue DAGTypeLegalizer::WidenVecRes_SELECT(SDNode *N
+     if (getTypeAction(CondVT) == TargetLowering::TypeWidenVector)
+       Cond1 = GetWidenedVector(Cond1);
+ 
++    // If we have to split the condition there is no point in widening the
++    // select. This would result in an cycle of widening the select ->
++    // widening the condition operand -> splitting the condition operand ->
++    // splitting the select -> widening the select. Instead split this select
++    // further and widen the resulting type.
++    if (getTypeAction(CondVT) == TargetLowering::TypeSplitVector) {
++      SDValue SplitSelect = SplitVecOp_VSELECT(N, 0);
++      SDValue Res = ModifyToType(SplitSelect, WidenVT);
++      return Res;
++    }
++
+     if (Cond1.getValueType() != CondWidenVT)
+       Cond1 = ModifyToType(Cond1, CondWidenVT);
+   }

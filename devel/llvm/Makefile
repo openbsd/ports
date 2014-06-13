@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2014/05/29 00:23:36 brad Exp $
+# $OpenBSD: Makefile,v 1.75 2014/06/13 22:29:40 brad Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -10,7 +10,7 @@ COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
 LLVM_V =	3.5
 DISTNAME =	llvm-${LLVM_V}.20140228
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 MASTER_SITES =	http://comstyle.com/source/
 EXTRACT_SUFX =	.tar.xz

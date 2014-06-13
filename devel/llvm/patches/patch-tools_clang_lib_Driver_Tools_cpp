@@ -1,11 +1,40 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.19 2014/05/29 00:23:36 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.20 2014/06/13 22:29:40 brad Exp $
+
+r210883
+Use dwarf-2 by default on OpenBSD and FreeBSD.
 
 r209479
 Don't reduce the stack protector level given -fstack-protector.
 
 --- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/Tools.cpp	Thu May 22 17:52:57 2014
-@@ -3197,9 +3197,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
++++ tools/clang/lib/Driver/Tools.cpp	Fri Jun 13 00:15:55 2014
+@@ -2696,8 +2696,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+       // FIXME: we should support specifying dwarf version with
+       // -gline-tables-only.
+       CmdArgs.push_back("-gline-tables-only");
+-      // Default is dwarf-2 for darwin.
+-      if (getToolChain().getTriple().isOSDarwin())
++      // Default is dwarf-2 for Darwin, OpenBSD and FreeBSD.
++      const llvm::Triple &Triple = getToolChain().getTriple();
++      if (Triple.isOSDarwin() || Triple.getOS() == llvm::Triple::OpenBSD ||
++          Triple.getOS() == llvm::Triple::FreeBSD)
+         CmdArgs.push_back("-gdwarf-2");
+     } else if (A->getOption().matches(options::OPT_gdwarf_2))
+       CmdArgs.push_back("-gdwarf-2");
+@@ -2707,8 +2709,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+       CmdArgs.push_back("-gdwarf-4");
+     else if (!A->getOption().matches(options::OPT_g0) &&
+              !A->getOption().matches(options::OPT_ggdb0)) {
+-      // Default is dwarf-2 for darwin.
+-      if (getToolChain().getTriple().isOSDarwin())
++      // Default is dwarf-2 for Darwin, OpenBSD and FreeBSD.
++      const llvm::Triple &Triple = getToolChain().getTriple();
++      if (Triple.isOSDarwin() || Triple.getOS() == llvm::Triple::OpenBSD ||
++          Triple.getOS() == llvm::Triple::FreeBSD)
+         CmdArgs.push_back("-gdwarf-2");
+       else
+         CmdArgs.push_back("-g");
+@@ -3197,9 +3201,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                 options::OPT_fstack_protector_all,
                                 options::OPT_fstack_protector_strong,
                                 options::OPT_fstack_protector)) {
@@ -19,7 +48,7 @@ Don't reduce the stack protector level given -fstack-protector.
        StackProtectorLevel = LangOptions::SSPStrong;
      else if (A->getOption().matches(options::OPT_fstack_protector_all))
        StackProtectorLevel = LangOptions::SSPReq;
-@@ -5743,6 +5744,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+@@ -5743,6 +5748,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
                                         "/4.2.1"));
  
    Args.AddAllArgs(CmdArgs, options::OPT_L);
