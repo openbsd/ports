@@ -1,10 +1,25 @@
-$OpenBSD: patch-configure_ac,v 1.5 2013/10/22 00:15:00 edd Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2014/06/13 20:52:52 kili Exp $
+
+First chunk reported to upstream and committed on trunk and the
+0.48 branch: https://bugs.launchpad.net/inkscape/+bug/1315142
 
 Hardcoded -dl.
 
---- configure.ac.orig	Thu Oct 10 14:50:45 2013
-+++ configure.ac	Thu Oct 10 14:51:10 2013
-@@ -780,7 +780,7 @@ if test "x$cairo_pdf" = "xyes"; then
+--- configure.ac.orig	Sat Dec 15 17:50:19 2012
++++ configure.ac	Fri May 30 21:26:52 2014
+@@ -610,6 +610,11 @@ else
+ 	AC_MSG_RESULT(no)
+ fi
+ 
++PKG_CHECK_MODULES(POPPLER_EVEN_NEWER_COLOR_SPACE_API, poppler >= 0.26.0, popplernewercolorspaceapi=yes, popplernewercolorspaceapi=no)
++if test "x$popplernewercolorspaceapi" = "xyes"; then
++	AC_DEFINE(POPPLER_EVEN_NEWER_COLOR_SPACE_API, 1, [Use even newer color space API from Poppler >= 0.26.0])
++fi
++
+ # Poppler's b604a008 commit changes this
+ AC_MSG_CHECKING([whether Poppler's GfxPatch no longer uses GfxColor])
+ popplergfxcolor="no"
+@@ -780,7 +785,7 @@ if test "x$cairo_pdf" = "xyes"; then
  fi
  
  dnl Shouldn't we test for libpng and libz?
