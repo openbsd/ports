@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.103 2014/05/30 13:20:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2014/06/13 17:01:36 giovanni Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
-V=		4.2.1
+V=		4.2.2
 
 PKGNAME=	phpMyAdmin-$V
 DISTNAME=	phpMyAdmin-$V-all-languages
@@ -35,6 +35,7 @@ post-extract:
 	    ${WRKSRC}/examples/phpMyAdmin-httpd.conf
 
 do-install:
+	@find ${WRKSRC} -type f -name "*.orig" -exec rm -f {} \;
 	${INSTALL_DATA_DIR} ${INSTDIR}/
 	cd ${WRKSRC}; pax -rw ./ ${INSTDIR}/
 

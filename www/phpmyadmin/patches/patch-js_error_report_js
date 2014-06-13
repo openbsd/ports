@@ -1,0 +1,15 @@
+$OpenBSD: patch-js_error_report_js,v 1.1 2014/06/13 17:01:36 giovanni Exp $
+Error "token mismatch" when a new user is created on a remote
+database.
+http://sourceforge.net/p/phpmyadmin/bugs/3893/
+
+--- js/error_report.js.orig	Fri Jun 13 17:45:51 2014
++++ js/error_report.js	Fri Jun 13 17:47:18 2014
+@@ -21,6 +21,7 @@ var ErrorReport = {
+         ErrorReport._last_exception = exception;
+         $.get("error_report.php", {
+             ajax_request: true,
++            server: PMA_commonParams.get('server'),
+             token: PMA_commonParams.get('token'),
+             get_settings: true
+         }, function (data) {

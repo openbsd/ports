@@ -1,0 +1,15 @@
+$OpenBSD: patch-js_server_privileges_js,v 1.1 2014/06/13 17:01:36 giovanni Exp $
+Error "token mismatch" when a new user is created on a remote
+database.
+http://sourceforge.net/p/phpmyadmin/bugs/3893/
+
+--- js/server_privileges.js.orig	Fri Jun 13 17:45:36 2014
++++ js/server_privileges.js	Fri Jun 13 17:46:48 2014
+@@ -192,6 +192,7 @@ AJAX.registerOnload('server_privileges.js', function (
+             var href = $("form[name='usersForm']").attr('action');
+             var params = {
+                 'ajax_request' : true,
++                'server' : PMA_commonParams.get('server'),
+                 'token' : PMA_commonParams.get('token'),
+                 'validate_username' : true,
+                 'username' : username
