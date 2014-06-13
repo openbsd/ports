@@ -1,0 +1,9 @@
+$OpenBSD: patch-prog_reg_wrapper_sh,v 1.1 2014/06/13 07:37:27 sthen Exp $
+--- prog/reg_wrapper.sh.orig	Thu Jun 12 23:57:12 2014
++++ prog/reg_wrapper.sh	Thu Jun 12 23:58:21 2014
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!${LOCALBASE}/bin/bash
+ #
+ #  This testing wrapper was written by James Le Cuirot.
+ #

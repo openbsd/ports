@@ -1,220 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/18 14:11:23 ajacoutot Exp $
-@bin bin/adaptmaptest
-@bin bin/adaptnorm_reg
-@bin bin/affine_reg
-@bin bin/alltests_reg
-@bin bin/alphaops_reg
-@bin bin/alphaxform_reg
-@bin bin/arithtest
-@bin bin/barcodetest
-@bin bin/baselinetest
-@bin bin/bilinear_reg
-@bin bin/binarize_reg
-@bin bin/bincompare
-@bin bin/binmorph1_reg
-@bin bin/binmorph2_reg
-@bin bin/binmorph3_reg
-@bin bin/binmorph4_reg
-@bin bin/binmorph5_reg
-@bin bin/blend2_reg
-@bin bin/blend_reg
-@bin bin/blendcmaptest
-@bin bin/blendtest1
-@bin bin/buffertest
-@bin bin/byteatest
-@bin bin/ccbordtest
-@bin bin/cctest1
-@bin bin/ccthin1_reg
-@bin bin/ccthin2_reg
-@bin bin/cmapquant_reg
-@bin bin/coloring_reg
-@bin bin/colormask_reg
-@bin bin/colormorphtest
-@bin bin/colorquant_reg
-@bin bin/colorseg_reg
-@bin bin/colorsegtest
-@bin bin/colorspacetest
-@bin bin/compare_reg
-@bin bin/comparepages
-@bin bin/comparetest
-@bin bin/compfilter_reg
-@bin bin/conncomp_reg
-@bin bin/contrasttest
-@bin bin/conversion_reg
+@comment $OpenBSD: PLIST,v 1.3 2014/06/13 07:37:27 sthen Exp $
 @bin bin/convertfilestopdf
 @bin bin/convertfilestops
 @bin bin/convertformat
 @bin bin/convertsegfilestopdf
 @bin bin/convertsegfilestops
-@bin bin/converttogray
+@bin bin/converttopdf
 @bin bin/converttops
-@bin bin/convolve_reg
-@bin bin/convolvetest
-@bin bin/cornertest
-@bin bin/croptext
-@bin bin/dewarp_reg
-@bin bin/dewarptest1
-@bin bin/dewarptest2
-@bin bin/dewarptest3
-@bin bin/digitprep1
-@bin bin/distance_reg
-@bin bin/dithertest
-@bin bin/dna_reg
-@bin bin/dwalineargen
-@bin bin/dwamorph1_reg
-@bin bin/dwamorph2_reg
-@bin bin/edgetest
-@bin bin/enhance_reg
-@bin bin/equal_reg
-@bin bin/expand_reg
-@bin bin/extrema_reg
-@bin bin/falsecolortest
-@bin bin/fcombautogen
-@bin bin/fhmtauto_reg
-@bin bin/fhmtautogen
 @bin bin/fileinfo
-@bin bin/findpattern1
-@bin bin/findpattern2
-@bin bin/findpattern3
-@bin bin/findpattern_reg
-@bin bin/flipdetect_reg
-@bin bin/flipselgen
-@bin bin/fmorphauto_reg
-@bin bin/fmorphautogen
-@bin bin/fpix_reg
-@bin bin/fpixcontours
-@bin bin/gammatest
-@bin bin/genfonts
-@bin bin/gifio_reg
-@bin bin/graphicstest
-@bin bin/grayfill_reg
-@bin bin/graymorph1_reg
-@bin bin/graymorph2_reg
-@bin bin/graymorphtest
-@bin bin/grayquant_reg
-@bin bin/hardlight_reg
-@bin bin/heap_reg
-@bin bin/histotest
-@bin bin/inserttest
-@bin bin/ioformats_reg
-@bin bin/iotest
-@bin bin/jbcorrelation
-@bin bin/jbrankhaus
-@bin bin/jbwords
-@bin bin/kernel_reg
-@bin bin/lineremoval
-@bin bin/listtest
-@bin bin/livre_adapt
-@bin bin/livre_hmt
-@bin bin/livre_makefigs
-@bin bin/livre_orient
-@bin bin/livre_pageseg
-@bin bin/livre_seedgen
-@bin bin/livre_tophat
-@bin bin/locminmax_reg
-@bin bin/logicops_reg
-@bin bin/lowaccess_reg
-@bin bin/maketile
-@bin bin/maze_reg
-@bin bin/misctest1
-@bin bin/modifyhuesat
-@bin bin/morphseq_reg
-@bin bin/morphtest1
-@bin bin/mtifftest
-@bin bin/numa_reg
-@bin bin/numaranktest
-@bin bin/otsutest1
-@bin bin/otsutest2
-@bin bin/overlap_reg
-@bin bin/pagesegtest1
-@bin bin/pagesegtest2
-@bin bin/paint_reg
-@bin bin/paintmask_reg
-@bin bin/partitiontest
-@bin bin/pdfiotest
-@bin bin/pdfseg_reg
-@bin bin/pixa1_reg
-@bin bin/pixa2_reg
-@bin bin/pixaatest
-@bin bin/pixadisp_reg
-@bin bin/pixalloc_reg
-@bin bin/pixcomp_reg
-@bin bin/pixmem_reg
-@bin bin/pixserial_reg
-@bin bin/pixtile_reg
-@bin bin/plottest
-@bin bin/pngio_reg
 @bin bin/printimage
 @bin bin/printsplitimage
 @bin bin/printtiff
-@bin bin/projection_reg
-@bin bin/projective_reg
-@bin bin/psio_reg
-@bin bin/psioseg_reg
-@bin bin/pta_reg
-@bin bin/ptra1_reg
-@bin bin/ptra2_reg
-@bin bin/quadtreetest
-@bin bin/rank_reg
-@bin bin/rankbin_reg
-@bin bin/rankhisto_reg
-@bin bin/ranktest
-@bin bin/rasterop_reg
-@bin bin/rasteropip_reg
-@bin bin/reducetest
-@bin bin/removecmap
-@bin bin/renderfonts
-@bin bin/rotate1_reg
-@bin bin/rotate2_reg
-@bin bin/rotatefastalt
-@bin bin/rotateorth_reg
-@bin bin/rotateorthtest1
-@bin bin/rotatetest1
-@bin bin/runlengthtest
-@bin bin/scale_reg
-@bin bin/scaleandtile
-@bin bin/scaletest1
-@bin bin/scaletest2
-@bin bin/seedfilltest
-@bin bin/seedspread_reg
-@bin bin/selio_reg
-@bin bin/sharptest
-@bin bin/shear2_reg
-@bin bin/shear_reg
-@bin bin/sheartest
-@bin bin/showedges
-@bin bin/skew_reg
-@bin bin/skewtest
-@bin bin/smallpix_reg
-@bin bin/smoothedge_reg
-@bin bin/snapcolortest
-@bin bin/sorttest
-@bin bin/splitcomp_reg
 @bin bin/splitimage2pdf
-@bin bin/string_reg
-@bin bin/subpixel_reg
-@bin bin/sudokutest
-@bin bin/textlinemask
-@bin bin/threshnorm_reg
-@bin bin/translate_reg
-@bin bin/trctest
-@bin bin/viewertest
-@bin bin/warper_reg
-@bin bin/warpertest
-@bin bin/watershedtest
-@bin bin/wordsinorder
-@bin bin/writemtiff
-@bin bin/writetext_reg
-@bin bin/xformbox_reg
 @bin bin/xtractprotos
-@bin bin/xvdisp
-@bin bin/yuvtest
 include/leptonica/
 include/leptonica/allheaders.h
 include/leptonica/alltypes.h
 include/leptonica/array.h
 include/leptonica/arrayaccess.h
 include/leptonica/bbuffer.h
+include/leptonica/bilateral.h
 include/leptonica/bmf.h
 include/leptonica/bmp.h
 include/leptonica/ccbord.h
@@ -232,6 +36,7 @@ include/leptonica/pix.h
 include/leptonica/ptra.h
 include/leptonica/queue.h
 include/leptonica/readbarcode.h
+include/leptonica/recog.h
 include/leptonica/regutils.h
 include/leptonica/stack.h
 include/leptonica/sudoku.h
@@ -239,3 +44,5 @@ include/leptonica/watershed.h
 lib/liblept.a
 lib/liblept.la
 @lib lib/liblept.so.${LIBlept_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/lept.pc
