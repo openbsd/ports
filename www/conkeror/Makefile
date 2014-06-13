@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/29 21:38:42 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/13 06:58:14 jasper Exp $
 
 COMMENT =		keyboard-oriented Mozilla-based browser
 
@@ -7,7 +7,7 @@ GITREV =		38b6279c2053854c2e8f24e70facb5328d9f170c
 DISTNAME =		conkeror-1.0pre.${DATE}
 DISTFILES =		conkeror-${DATE}-${GITREV}${EXTRACT_SUFX}
 WRKDIST =		${WRKDIR}/conkeror
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
