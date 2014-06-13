@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2014/06/13 13:34:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2014/06/13 15:31:21 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,7 +15,9 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-server=	0
+REVISION-server=	1
+REVISION-main=		0
+REVISION-bat=		0
 
 SHARED_LIBS +=  bac                  5.0
 SHARED_LIBS +=  baccfg               5.0
@@ -65,19 +67,17 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--with-pid-dir=/var/run \
 			--with-subsys-dir=${LOCALSTATEDIR} \
 			--with-working-dir=${LOCALSTATEDIR} \
-			--with-archivedir=/tmp \
+			--with-bsrdir=${LOCALSTATEDIR} \
+			--with-logdir=${LOCALSTATEDIR} \
 			--with-sbin-perm=755 \
 			--without-x \
-			--without-smtp-host \
-			--without-job-email \
-			--without-dump-email \
 			--disable-nls \
 			--disable-conio \
 			--enable-readline \
 			--with-readline=/usr \
 			--with-openssl \
 			--with-basename=bacula \
-			--with-hostname=bacula
+			--with-hostname=bacula.domain.tld
 
 MAKE_FLAGS=		NO_ECHO=
 
