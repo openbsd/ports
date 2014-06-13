@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/06/13 19:24:26 gonzalo Exp $
 
 COMMENT=		simple, lightweight tiling and floating window manager
 
-DISTNAME=		echinus-0.4.7
-REVISION=		0
+DISTNAME=		echinus-0.4.9
 
 CATEGORIES=		x11
 
@@ -14,19 +13,21 @@ MAINTAINER=		Alexander Polakov <polachok@gmail.com>
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xft Xrandr Xrender c expat fontconfig
-WANTLIB += freetype pthread-stubs xcb z
+WANTLIB += X11 Xft Xrandr c
 
 MASTER_SITES=		${HOMEPAGE}/static/echinus/
 
-MAKE_ENV=		BINPREFIX="${LOCALBASE}/bin"
-MAKE_ENV+=		MANPREFIX="${LOCALBASE}/man"
-MAKE_ENV+=		DOCPREFIX="${LOCALBASE}/share/doc"
-MAKE_ENV+=		CONFPREFIX="${LOCALBASE}/share/examples"
-MAKE_ENV+=		CONF="${SYSCONFDIR}/xdg/echinus"
-MAKE_ENV+=		CLFAGS_EXTRA="${CFLAGS}"
-MAKE_ENV+=		CC="${CC}"
+MAKE_ENV=		BINPREFIX="${LOCALBASE}/bin" \
+			MANPREFIX="${LOCALBASE}/man" \
+			DOCPREFIX="${LOCALBASE}/share/doc" \
+			CONFPREFIX="${LOCALBASE}/share/examples" \
+			CONF="${SYSCONFDIR}/xdg/echinus" \
+			CLFAGS_EXTRA="${CFLAGS}" \
+			CC="${CC}"
 
 NO_TEST=		Yes
+
+post-extract:
+	@chmod 644 ${WRKSRC}/{max.xbm,iconify.xbm,close.xbm,echinusrc}
 
 .include <bsd.port.mk>
