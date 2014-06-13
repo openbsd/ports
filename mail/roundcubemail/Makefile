@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2014/05/30 13:20:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2014/06/13 16:59:20 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -6,7 +6,7 @@ COMPOSER_V=	1.0.0-alpha8
 DISTNAME=	roundcubemail-1.0.1
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.roundcube.net/
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -34,7 +34,8 @@ SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mcrypt \
-		lang/php/${MODPHP_VERSION},-pspell
+		lang/php/${MODPHP_VERSION},-pspell \
+		lang/php/${MODPHP_VERSION},-zip
 
 post-extract:
 	cp ${FULLDISTDIR}/composer-${COMPOSER_V}.phar ${WRKSRC}/composer.phar
