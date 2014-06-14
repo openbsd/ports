@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/14 23:25:42 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		interface to TrustCommerce gateway
 MODULES=		cpan
 DISTNAME=		Net_TCLink.pm-3.4
 PKGNAME=		p5-Net-TCLink-3.4
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 CPAN_AUTHOR=		WITTEN
 

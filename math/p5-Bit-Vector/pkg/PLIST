@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/01 03:40:14 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:25:41 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Bit/
 ${P5ARCH}/Bit/Vector/
@@ -11,7 +11,7 @@ ${P5ARCH}/Bit/Vector/String.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Bit/
 ${P5ARCH}/auto/Bit/Vector/
-${P5ARCH}/auto/Bit/Vector/Vector.bs
+@comment ${P5ARCH}/auto/Bit/Vector/Vector.bs
 ${P5ARCH}/auto/Bit/Vector/Vector.so
 @man man/man3p/Bit::Vector.3p
 @man man/man3p/Bit::Vector::Overload.3p

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/11 17:31:16 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Socket6.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Socket6/
-${P5ARCH}/auto/Socket6/Socket6.bs
+@comment ${P5ARCH}/auto/Socket6/Socket6.bs
 ${P5ARCH}/auto/Socket6/Socket6.so
 @man man/man3p/Socket6.3p

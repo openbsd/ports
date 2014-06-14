@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/08 04:27:26 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:41 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Math/
 ${P5ARCH}/Math/Pari.pm
@@ -8,7 +8,7 @@ ${P5ARCH}/Math/libPARI.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/Pari/
-${P5ARCH}/auto/Math/Pari/Pari.bs
+@comment ${P5ARCH}/auto/Math/Pari/Pari.bs
 ${P5ARCH}/auto/Math/Pari/Pari.so
 @man man/man3p/Math::Pari.3p
 @man man/man3p/Math::PariInit.3p

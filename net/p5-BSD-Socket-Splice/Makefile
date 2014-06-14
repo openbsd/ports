@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/06/14 23:25:41 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		perl interface to OpenBSD socket splicing
 
 DISTNAME =		BSD-Socket-Splice-0.05
+REVISION =		0
 
 CATEGORIES =		net
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/06 18:52:21 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/RawIP/
@@ -14,7 +14,7 @@ ${P5ARCH}/Net/RawIP/udphdr.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/RawIP/
-${P5ARCH}/auto/Net/RawIP/RawIP.bs
+@comment ${P5ARCH}/auto/Net/RawIP/RawIP.bs
 ${P5ARCH}/auto/Net/RawIP/RawIP.so
 ${P5ARCH}/auto/Net/RawIP/autosplit.ix
 @man man/man3p/Net::RawIP.3p

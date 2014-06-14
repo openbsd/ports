@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/13 00:14:51 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:41 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/File/
 ${P5ARCH}/File/MMagic/
@@ -9,6 +9,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/File/
 ${P5ARCH}/auto/File/MMagic/
 ${P5ARCH}/auto/File/MMagic/XS/
-${P5ARCH}/auto/File/MMagic/XS/XS.bs
+@comment ${P5ARCH}/auto/File/MMagic/XS/XS.bs
 ${P5ARCH}/auto/File/MMagic/XS/XS.so
 @man man/man3p/File::MMagic::XS.3p

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:12:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:25:41 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Math/
 ${P5ARCH}/Math/GMP.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/GMP/
-${P5ARCH}/auto/Math/GMP/GMP.bs
+@comment ${P5ARCH}/auto/Math/GMP/GMP.bs
 ${P5ARCH}/auto/Math/GMP/GMP.so
 ${P5ARCH}/auto/Math/GMP/autosplit.ix
 @man man/man3p/Math::GMP.3p

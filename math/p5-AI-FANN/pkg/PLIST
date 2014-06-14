@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/03 15:20:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:25:41 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/AI/
 ${P5ARCH}/AI/FANN.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/AI/
 ${P5ARCH}/auto/AI/FANN/
-${P5ARCH}/auto/AI/FANN/FANN.bs
+@comment ${P5ARCH}/auto/AI/FANN/FANN.bs
 ${P5ARCH}/auto/AI/FANN/FANN.so
 @man man/man3p/AI::FANN.3p
 share/examples/p5-AI-FANN/

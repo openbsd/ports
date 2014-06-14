@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/12 12:06:48 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/BSD/
 ${P5ARCH}/BSD/Socket/
@@ -7,6 +7,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/BSD/
 ${P5ARCH}/auto/BSD/Socket/
 ${P5ARCH}/auto/BSD/Socket/Splice/
-${P5ARCH}/auto/BSD/Socket/Splice/Splice.bs
+@comment ${P5ARCH}/auto/BSD/Socket/Splice/Splice.bs
 ${P5ARCH}/auto/BSD/Socket/Splice/Splice.so
 @man man/man3p/BSD::Socket::Splice.3p

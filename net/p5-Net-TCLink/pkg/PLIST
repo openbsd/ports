@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/28 19:08:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/TCLink.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/TCLink/
-${P5ARCH}/auto/Net/TCLink/TCLink.bs
+@comment ${P5ARCH}/auto/Net/TCLink/TCLink.bs
 ${P5ARCH}/auto/Net/TCLink/TCLink.so
 ${P5ARCH}/auto/Net/TCLink/autosplit.ix
 @man man/man3p/Net::TCLink.3p

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/25 14:24:54 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/IO/Socket/
 ${P5ARCH}/IO/Socket/Multicast.pm
 ${P5ARCH}/auto/IO/Socket/
 ${P5ARCH}/auto/IO/Socket/Multicast/
-${P5ARCH}/auto/IO/Socket/Multicast/Multicast.bs
+@comment ${P5ARCH}/auto/IO/Socket/Multicast/Multicast.bs
 ${P5ARCH}/auto/IO/Socket/Multicast/Multicast.so
 @man man/man3p/IO::Socket::Multicast.3p
 share/examples/p5-IO-Socket-Multicast/

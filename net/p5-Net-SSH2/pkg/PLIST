@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/07 22:50:12 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/SSH2/
@@ -12,7 +12,7 @@ ${P5ARCH}/Net/SSH2/SFTP.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/SSH2/
-${P5ARCH}/auto/Net/SSH2/SSH2.bs
+@comment ${P5ARCH}/auto/Net/SSH2/SSH2.bs
 ${P5ARCH}/auto/Net/SSH2/SSH2.so
 ${P5ARCH}/auto/Net/SSH2/autosplit.ix
 @man man/man3p/Net::SSH2.3p

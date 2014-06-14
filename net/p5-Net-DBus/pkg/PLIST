@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/21 21:12:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DBus/
 ${P5ARCH}/Net/DBus.pm
@@ -39,7 +39,7 @@ ${P5ARCH}/Net/DBus/Tutorial/ExportingObjects.pod
 ${P5ARCH}/Net/DBus/Tutorial/UsingObjects.pod
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/DBus/
-${P5ARCH}/auto/Net/DBus/DBus.bs
+@comment ${P5ARCH}/auto/Net/DBus/DBus.bs
 ${P5ARCH}/auto/Net/DBus/DBus.so
 @man man/man3p/Net::DBus.3p
 @man man/man3p/Net::DBus::ASyncReply.3p

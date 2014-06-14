@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/03/18 17:56:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2014/06/14 23:25:42 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Geo-IP-1.43
 CPAN_AUTHOR=	BORISZ
 CATEGORIES=	net geo
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

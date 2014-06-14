@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/05 00:31:59 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:25:41 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/File/
 ${P5ARCH}/File/LibMagic.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/File/
 ${P5ARCH}/auto/File/LibMagic/
-${P5ARCH}/auto/File/LibMagic/LibMagic.bs
+@comment ${P5ARCH}/auto/File/LibMagic/LibMagic.bs
 ${P5ARCH}/auto/File/LibMagic/LibMagic.so
 @man man/man3p/File::LibMagic.3p

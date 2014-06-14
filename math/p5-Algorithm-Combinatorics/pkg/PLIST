@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/07 03:42:53 jim Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:25:41 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Algorithm/
 ${P5ARCH}/Algorithm/Combinatorics.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Algorithm/
 ${P5ARCH}/auto/Algorithm/Combinatorics/
-${P5ARCH}/auto/Algorithm/Combinatorics/Combinatorics.bs
+@comment ${P5ARCH}/auto/Algorithm/Combinatorics/Combinatorics.bs
 ${P5ARCH}/auto/Algorithm/Combinatorics/Combinatorics.so
 @man man/man3p/Algorithm::Combinatorics.3p

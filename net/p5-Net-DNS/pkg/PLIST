@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/05/12 23:09:27 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/06/14 23:25:42 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
@@ -72,7 +72,7 @@ ${P5ARCH}/Net/DNS/ZoneFile.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/DNS/
-${P5ARCH}/auto/Net/DNS/DNS.bs
+@comment ${P5ARCH}/auto/Net/DNS/DNS.bs
 ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS.3p
 @man man/man3p/Net::DNS::Domain.3p

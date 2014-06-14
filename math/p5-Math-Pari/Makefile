@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/20 22:54:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2014/06/14 23:25:41 sthen Exp $
 
 # Lacks p5-Term-Gnuplot regress dependency!
 
@@ -10,6 +10,7 @@ MODULES=	cpan
 # beware may need EPOCH if updating
 DISTNAME=	Math-Pari-2.01080605
 CATEGORIES=	math
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
