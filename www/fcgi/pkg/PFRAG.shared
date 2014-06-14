@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2013/04/20 16:28:09 sthen Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2014/06/14 10:34:45 sthen Exp $
 @lib lib/libfcgi++.so.${LIBfcgi++_VERSION}
 @lib lib/libfcgi.so.${LIBfcgi_VERSION}
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/FCGI/FCGI.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/FCGI/FCGI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/FCGI/FCGI.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/04/20 14:58:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2014/06/14 10:34:44 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,7 @@ PKGNAME-main=	hamlib-${VERSION}
 PKGNAME-python=	hamlib-python-${VERSION}
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
 CATEGORIES=	comms hamradio
+REVISION-main=	0
 
 MULTI_PACKAGES=	-main -python -tcl
 

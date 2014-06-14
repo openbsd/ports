@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2013/08/12 10:03:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.45 2014/06/14 10:34:45 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 bin/Magick++-config
@@ -171,7 +171,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Image/Magick.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Magick.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Magick.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Magick.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/autosplit.ix
 @man man/man1/ImageMagick.1

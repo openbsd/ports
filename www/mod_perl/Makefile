@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2014/03/13 17:33:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2014/06/14 10:34:45 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
 DISTNAME=	mod_perl-1.32pre20130312
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www perl5
 
 # svn checkout; upstream is at http://perl.apache.org/dist/

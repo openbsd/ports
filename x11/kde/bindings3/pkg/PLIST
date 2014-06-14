@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2013/10/22 11:33:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.30 2014/06/14 10:34:46 sthen Exp $
 @bin bin/embedjs
 @bin bin/jsaccess
 bin/kdepyuic
@@ -117,7 +117,7 @@ ${P5ARCH}/DCOP.pm
 ${P5ARCH}/DCOP/Object.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/DCOP/
-${P5ARCH}/auto/DCOP/DCOP.bs
+@comment ${P5ARCH}/auto/DCOP/DCOP.bs
 ${P5ARCH}/auto/DCOP/DCOP.so
 @man man/man1/kjscmd.1
 @man man/man3p/DCOP.3p

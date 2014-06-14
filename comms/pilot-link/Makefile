@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/06/04 18:41:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2014/06/14 10:34:44 sthen Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 
@@ -6,7 +6,7 @@ DISTNAME=	pilot-link-0.12.5
 SHARED_LIBS +=	pisock               11.0      # .9.2
 SHARED_LIBS +=	pisync               2.0      # .0.3
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	comms
 

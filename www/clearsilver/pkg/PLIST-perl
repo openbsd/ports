@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-perl,v 1.2 2012/06/20 14:45:23 sthen Exp $
+@comment $OpenBSD: PLIST-perl,v 1.3 2014/06/14 10:34:45 sthen Exp $
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
@@ -6,6 +6,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/ClearSilver.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/ClearSilver.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/ClearSilver.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/ClearSilver.so
 @man man/man3p/ClearSilver.3p

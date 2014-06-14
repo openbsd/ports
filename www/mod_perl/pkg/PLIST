@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/04/20 13:55:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/06/14 10:34:45 sthen Exp $
 lib/${MODAPACHE_MODULE}
 @exec-update test ! -f ${MODAPACHE_FINAL} || cp -fp %D/%F ${MODAPACHE_FINAL}
 ${P5ARCH}/Apache/
@@ -45,10 +45,10 @@ ${P5ARCH}/Bundle/
 ${P5ARCH}/Bundle/Apache.pm
 ${P5ARCH}/auto/Apache/
 ${P5ARCH}/auto/Apache/Leak/
-${P5ARCH}/auto/Apache/Leak/Leak.bs
+@comment ${P5ARCH}/auto/Apache/Leak/Leak.bs
 ${P5ARCH}/auto/Apache/Leak/Leak.so
 ${P5ARCH}/auto/Apache/Symbol/
-${P5ARCH}/auto/Apache/Symbol/Symbol.bs
+@comment ${P5ARCH}/auto/Apache/Symbol/Symbol.bs
 ${P5ARCH}/auto/Apache/Symbol/Symbol.so
 ${P5ARCH}/auto/Apache/include/
 ${P5ARCH}/auto/Apache/include/ap_config_auto.h

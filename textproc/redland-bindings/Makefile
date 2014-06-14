@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/14 10:34:45 sthen Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 #COMMENT-lua=		Redland librdf Lua Bindings
@@ -15,6 +15,7 @@ PKGNAME-php=		php-librdf-$V
 PKGNAME-python=		py-librdf-$V
 PKGNAME-ruby=		ruby-librdf-$V
 REVISION-php=		0
+REVISION-main=		0
 
 HOMEPAGE=		http://librdf.org/bindings/
 

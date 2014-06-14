@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-perl,v 1.10 2013/06/19 14:34:53 sthen Exp $
+@comment $OpenBSD: PLIST-perl,v 1.11 2014/06/14 10:34:44 sthen Exp $
 @conflict p5-UUID-*
 @pkgpath devel/uuid,-perl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
@@ -8,6 +8,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/OSSP/uuid.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/uuid.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/uuid.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/uuid.so
 @man man/man3p/OSSP::uuid.3

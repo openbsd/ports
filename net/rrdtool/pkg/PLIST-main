@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/11/05 17:56:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/06/14 10:34:45 sthen Exp $
 @newgroup _rrdcached:726
 @newuser _rrdcached:726:_rrdcached:daemon:rrdcached user:/nonexistent:/sbin/nologin
 @conflict p5-RRD-*
@@ -22,7 +22,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/RRDs.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.so
 @man man/man1/bin_dec_hex.1
 @man man/man1/cdeftutorial.1

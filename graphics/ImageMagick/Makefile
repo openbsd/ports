@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.134 2014/06/14 10:34:45 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		image processing tools
 
 VER=			6.7.7
 DASHVER=		7
-REVISION=		6
+REVISION=		7
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 

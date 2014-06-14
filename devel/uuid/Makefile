@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/06/19 14:34:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2014/06/14 10:34:44 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ SHARED_LIBS +=	ossp-uuid            0.0      # 16.22
 SHARED_LIBS +=	ossp-uuid++          0.0      # 16.22
 
 REVISION-main=		2
-REVISION-perl=		3
+REVISION-perl=		4
 
 # Note there is a different libuuid in sysutils/e2fsprogs,-uuid.
 # If you are porting something which needs libuuid, you may need

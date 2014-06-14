@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.opt,v 1.1.1.1 2005/03/03 00:10:54 espie Exp $
+@comment $OpenBSD: PFRAG.opt,v 1.2 2014/06/14 10:34:44 sthen Exp $
 ${P5ACE}/Ace/Freesubs.pm
 ${P5ACE}/auto/Ace/Freesubs/
-${P5ACE}/auto/Ace/Freesubs/Freesubs.bs
+@comment ${P5ACE}/auto/Ace/Freesubs/Freesubs.bs
 ${P5ACE}/auto/Ace/Freesubs/Freesubs.so

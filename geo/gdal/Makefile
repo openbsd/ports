@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/05/04 20:17:35 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2014/06/14 10:34:44 sthen Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -11,6 +11,7 @@ SHARED_ONLY =	Yes
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
+REVISION-perl =	0
 
 SHARED_LIBS =	gdal 21.0 #19.0
 CATEGORIES =	geo devel

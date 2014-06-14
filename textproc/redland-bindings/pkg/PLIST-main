@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/12/13 13:46:01 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/06/14 10:34:45 sthen Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/RDF/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/RDF/Redland/
@@ -24,7 +24,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RDF/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RDF/Redland/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RDF/Redland/CORE/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RDF/Redland/CORE/CORE.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RDF/Redland/CORE/CORE.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RDF/Redland/CORE/CORE.so
 @man man/man3p/RDF::Redland.3p
 @man man/man3p/RDF::Redland::BlankNode.3p
