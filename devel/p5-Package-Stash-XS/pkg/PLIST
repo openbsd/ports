@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/22 23:18:07 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Package/
 ${P5ARCH}/Package/Stash/
@@ -7,6 +7,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Package/
 ${P5ARCH}/auto/Package/Stash/
 ${P5ARCH}/auto/Package/Stash/XS/
-${P5ARCH}/auto/Package/Stash/XS/XS.bs
+@comment ${P5ARCH}/auto/Package/Stash/XS/XS.bs
 ${P5ARCH}/auto/Package/Stash/XS/XS.so
 @man man/man3p/Package::Stash::XS.3p

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/03/22 13:53:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2014/06/14 23:24:57 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	complete modern object system for perl 5
 MODULES=	cpan
 DISTNAME=	Moose-2.1204
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

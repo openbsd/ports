@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/17 23:33:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/GDBM_File.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/GDBM_File/
-${P5ARCH}/auto/GDBM_File/GDBM_File.bs
+@comment ${P5ARCH}/auto/GDBM_File/GDBM_File.bs
 ${P5ARCH}/auto/GDBM_File/GDBM_File.so
 @man man/man3p/GDBM_File.3p

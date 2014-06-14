@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 21:05:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Params/
 ${P5ARCH}/Params/Classify.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Params/
 ${P5ARCH}/auto/Params/Classify/
-${P5ARCH}/auto/Params/Classify/Classify.bs
+@comment ${P5ARCH}/auto/Params/Classify/Classify.bs
 ${P5ARCH}/auto/Params/Classify/Classify.so
 @man man/man3p/Params::Classify.3p

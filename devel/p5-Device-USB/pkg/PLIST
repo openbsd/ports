@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/10 21:41:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:56 sthen Exp $
 %%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Device/
@@ -14,7 +14,7 @@ ${P5ARCH}/Device/dump_usb.pl
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Device/
 ${P5ARCH}/auto/Device/USB/
-${P5ARCH}/auto/Device/USB/USB.bs
+@comment ${P5ARCH}/auto/Device/USB/USB.bs
 @man man/man3p/Device::USB.3p
 @man man/man3p/Device::USB::Bus.3p
 @man man/man3p/Device::USB::DevConfig.3p

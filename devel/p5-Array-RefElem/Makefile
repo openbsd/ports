@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/11 23:48:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2014/06/14 23:24:54 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		set up array elements as aliases
 
 DISTNAME=		Array-RefElem-1.00
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 # perl

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/02 06:47:14 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Clone.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Clone/
-${P5ARCH}/auto/Clone/Clone.bs
+@comment ${P5ARCH}/auto/Clone/Clone.bs
 ${P5ARCH}/auto/Clone/Clone.so
 ${P5ARCH}/auto/Clone/autosplit.ix
 @man man/man3p/Clone.3p

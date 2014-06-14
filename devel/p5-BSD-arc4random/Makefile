@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2014/05/16 23:08:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/14 23:24:54 sthen Exp $
 
 COMMENT =		perl interface to the arc4 random number generator
 
 SHARED_ONLY =		Yes
 MODULES =		cpan
 DISTNAME =		BSD-arc4random-1.50
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 

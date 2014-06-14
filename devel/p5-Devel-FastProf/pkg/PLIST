@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/05 23:02:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:24:56 sthen Exp $
 bin/fprofpp
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/FastProf/
@@ -6,7 +6,7 @@ ${P5ARCH}/Devel/FastProf.pm
 ${P5ARCH}/Devel/FastProf/Reader.pm
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/FastProf/
-${P5ARCH}/auto/Devel/FastProf/FastProf.bs
+@comment ${P5ARCH}/auto/Devel/FastProf/FastProf.bs
 ${P5ARCH}/auto/Devel/FastProf/FastProf.so
 @man man/man1/fprofpp.1
 @man man/man3p/Devel::FastProf.3p

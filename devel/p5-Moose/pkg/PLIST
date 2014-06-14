@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/03/22 13:53:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/06/14 23:24:57 sthen Exp $
 @pkgpath devel/p5-Class-MOP
 %%SHARED%%
 bin/moose-outdated
@@ -473,7 +473,7 @@ ${P5ARCH}/Moose/Util/TypeConstraints/Builtins.pm
 ${P5ARCH}/Test/
 ${P5ARCH}/Test/Moose.pm
 ${P5ARCH}/auto/Moose/
-${P5ARCH}/auto/Moose/Moose.bs
+@comment ${P5ARCH}/auto/Moose/Moose.bs
 ${P5ARCH}/metaclass.pm
 ${P5ARCH}/oose.pm
 @man man/man3p/Class::MOP.3p

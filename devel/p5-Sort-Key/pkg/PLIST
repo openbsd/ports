@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/09 22:43:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Sort/
 ${P5ARCH}/Sort/Key/
@@ -10,7 +10,7 @@ ${P5ARCH}/Sort/Key/Register.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Sort/
 ${P5ARCH}/auto/Sort/Key/
-${P5ARCH}/auto/Sort/Key/Key.bs
+@comment ${P5ARCH}/auto/Sort/Key/Key.bs
 ${P5ARCH}/auto/Sort/Key/Key.so
 @man man/man3p/Sort::Key.3p
 @man man/man3p/Sort::Key::Maker.3p

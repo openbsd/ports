@@ -4,6 +4,6 @@ ${P5ARCH}/File/FnMatch.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/File/
 ${P5ARCH}/auto/File/FnMatch/
-${P5ARCH}/auto/File/FnMatch/FnMatch.bs
+@comment ${P5ARCH}/auto/File/FnMatch/FnMatch.bs
 ${P5ARCH}/auto/File/FnMatch/FnMatch.so
 @man man/man3p/File::FnMatch.3p

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:48:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2014/06/14 23:24:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	terminal screen handling and optimisation
 
 MODULES=	cpan
 DISTNAME=	Curses-1.28
-REVISION=	2
+REVISION=	3
 CPAN_AUTHOR=	GIRAFFED
 EXTRACT_SUFX=	.tgz
 

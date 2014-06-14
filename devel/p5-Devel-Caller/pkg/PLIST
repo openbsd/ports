@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 00:28:50 jim Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/Caller.pm
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/Caller/
-${P5ARCH}/auto/Devel/Caller/Caller.bs
+@comment ${P5ARCH}/auto/Devel/Caller/Caller.bs
 ${P5ARCH}/auto/Devel/Caller/Caller.so
 @man man/man3p/Devel::Caller.3p

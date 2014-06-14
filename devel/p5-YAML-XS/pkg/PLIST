@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/18 18:08:06 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:00 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/YAML/
 ${P5ARCH}/YAML/LibYAML.pm
@@ -9,7 +9,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/YAML/
 ${P5ARCH}/auto/YAML/XS/
 ${P5ARCH}/auto/YAML/XS/LibYAML/
-${P5ARCH}/auto/YAML/XS/LibYAML/LibYAML.bs
+@comment ${P5ARCH}/auto/YAML/XS/LibYAML/LibYAML.bs
 ${P5ARCH}/auto/YAML/XS/LibYAML/LibYAML.so
 @man man/man3p/YAML::XS.3p
 @man man/man3p/YAML::XS::LibYAML.3p

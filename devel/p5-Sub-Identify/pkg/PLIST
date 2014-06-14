@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/11/23 10:13:07 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:24:59 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Sub/
 ${P5ARCH}/Sub/Identify.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Sub/
 ${P5ARCH}/auto/Sub/Identify/
-${P5ARCH}/auto/Sub/Identify/Identify.bs
+@comment ${P5ARCH}/auto/Sub/Identify/Identify.bs
 ${P5ARCH}/auto/Sub/Identify/Identify.so
 @man man/man3p/Sub::Identify.3p

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/10/02 22:25:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/BSD/
 ${P5ARCH}/BSD/Resource.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/BSD/
 ${P5ARCH}/auto/BSD/Resource/
-${P5ARCH}/auto/BSD/Resource/Resource.bs
+@comment ${P5ARCH}/auto/BSD/Resource/Resource.bs
 ${P5ARCH}/auto/BSD/Resource/Resource.so
 ${P5ARCH}/auto/BSD/Resource/_find_prio.al
 ${P5ARCH}/auto/BSD/Resource/_find_rlimit.al

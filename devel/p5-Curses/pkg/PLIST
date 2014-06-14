@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Curses.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Curses/
-${P5ARCH}/auto/Curses/Curses.bs
+@comment ${P5ARCH}/auto/Curses/Curses.bs
 ${P5ARCH}/auto/Curses/Curses.so
 @man man/man3p/Curses.3p

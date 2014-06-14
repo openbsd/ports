@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/05 09:22:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Class/
 ${P5ARCH}/Class/C3/
@@ -7,6 +7,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Class/
 ${P5ARCH}/auto/Class/C3/
 ${P5ARCH}/auto/Class/C3/XS/
-${P5ARCH}/auto/Class/C3/XS/XS.bs
+@comment ${P5ARCH}/auto/Class/C3/XS/XS.bs
 ${P5ARCH}/auto/Class/C3/XS/XS.so
 @man man/man3p/Class::C3::XS.3p

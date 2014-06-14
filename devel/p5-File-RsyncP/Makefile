@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/14 23:24:56 sthen Exp $
 
 COMMENT =	perl implementation of an Rsync client
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	File-RsyncP-0.70
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # perl

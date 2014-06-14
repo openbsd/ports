@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/06/14 23:24:54 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	shared data cache using memory mapped files
 MODULES=	cpan
 DISTNAME=	Cache-Mmap-0.11
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # perl

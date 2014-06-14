@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/28 19:28:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/B/
 ${P5ARCH}/B/Utils/
@@ -11,7 +11,7 @@ ${P5ARCH}/B/Utils/OP.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/B/
 ${P5ARCH}/auto/B/Utils/
-${P5ARCH}/auto/B/Utils/Utils.bs
+@comment ${P5ARCH}/auto/B/Utils/Utils.bs
 ${P5ARCH}/auto/B/Utils/Utils.so
 @man man/man3p/B::Utils.3p
 @man man/man3p/B::Utils::OP.3p

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/28 19:28:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/Data/
 ${P5ARCH}/Data/Dump/
 ${P5ARCH}/Data/Dump/Streamer/
@@ -8,6 +8,6 @@ ${P5ARCH}/Data/Dump/Streamer/_/Printers.pm
 ${P5ARCH}/auto/Data/
 ${P5ARCH}/auto/Data/Dump/
 ${P5ARCH}/auto/Data/Dump/Streamer/
-${P5ARCH}/auto/Data/Dump/Streamer/Streamer.bs
+@comment ${P5ARCH}/auto/Data/Dump/Streamer/Streamer.bs
 ${P5ARCH}/auto/Data/Dump/Streamer/Streamer.so
 @man man/man3p/Data::Dump::Streamer.3p

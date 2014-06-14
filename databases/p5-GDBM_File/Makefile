@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:48:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/06/14 23:24:53 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to gdbm
@@ -6,7 +6,7 @@ COMMENT=	perl interface to gdbm
 DISTNAME=	perl-5.8.8
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	p5-GDBM_File-1.08
-REVISION=	2
+REVISION=	3
 CATEGORIES=	databases perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../src/}

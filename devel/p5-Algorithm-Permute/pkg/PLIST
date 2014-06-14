@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Algorithm/
 ${P5ARCH}/Algorithm/Permute.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Algorithm/
 ${P5ARCH}/auto/Algorithm/Permute/
-${P5ARCH}/auto/Algorithm/Permute/Permute.bs
+@comment ${P5ARCH}/auto/Algorithm/Permute/Permute.bs
 ${P5ARCH}/auto/Algorithm/Permute/Permute.so
 ${P5ARCH}/auto/Algorithm/Permute/autosplit.ix
 @man man/man3p/Algorithm::Permute.3p

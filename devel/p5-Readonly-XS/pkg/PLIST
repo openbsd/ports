@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/25 14:53:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Readonly/
 ${P5ARCH}/Readonly/XS.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Readonly/
 ${P5ARCH}/auto/Readonly/XS/
-${P5ARCH}/auto/Readonly/XS/XS.bs
+@comment ${P5ARCH}/auto/Readonly/XS/XS.bs
 ${P5ARCH}/auto/Readonly/XS/XS.so
 @man man/man3p/Readonly::XS.3p

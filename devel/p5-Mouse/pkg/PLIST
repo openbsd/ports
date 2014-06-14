@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/07 14:28:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:24:57 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Mouse/
 ${P5ARCH}/Mouse.pm
@@ -38,7 +38,7 @@ ${P5ARCH}/Test/
 ${P5ARCH}/Test/Mouse.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Mouse/
-${P5ARCH}/auto/Mouse/Mouse.bs
+@comment ${P5ARCH}/auto/Mouse/Mouse.bs
 ${P5ARCH}/auto/Mouse/Mouse.so
 ${P5ARCH}/ouse.pm
 @man man/man3p/Mouse.3p

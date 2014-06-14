@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/06/14 23:24:57 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	Moose minus the antlers
 
 MODULES =	cpan
 DISTNAME =	Mouse-0.97
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>

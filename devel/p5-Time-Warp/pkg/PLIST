@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/22 20:32:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:59 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Time/
 ${P5ARCH}/Time/Warp.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Time/
 ${P5ARCH}/auto/Time/Warp/
-${P5ARCH}/auto/Time/Warp/Warp.bs
+@comment ${P5ARCH}/auto/Time/Warp/Warp.bs
 ${P5ARCH}/auto/Time/Warp/Warp.so
 @man man/man3p/Time::Warp.3p

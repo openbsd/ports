@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:49:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/06/14 23:24:59 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		retrieve names of code references
 
 DISTNAME =		Sub-Identify-0.04
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # perl

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/18 19:29:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:57 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/List/
 ${P5ARCH}/List/MoreUtils.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/List/
 ${P5ARCH}/auto/List/MoreUtils/
-${P5ARCH}/auto/List/MoreUtils/MoreUtils.bs
+@comment ${P5ARCH}/auto/List/MoreUtils/MoreUtils.bs
 ${P5ARCH}/auto/List/MoreUtils/MoreUtils.so
 @man man/man3p/List::MoreUtils.3p

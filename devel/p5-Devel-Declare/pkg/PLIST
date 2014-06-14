@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2010/01/12 08:58:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/Declare/
 ${P5ARCH}/Devel/Declare.pm
@@ -8,6 +8,6 @@ ${P5ARCH}/Devel/Declare/MethodInstaller/
 ${P5ARCH}/Devel/Declare/MethodInstaller/Simple.pm
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/Declare/
-${P5ARCH}/auto/Devel/Declare/Declare.bs
+@comment ${P5ARCH}/auto/Devel/Declare/Declare.bs
 ${P5ARCH}/auto/Devel/Declare/Declare.so
 @man man/man3p/Devel::Declare.3p

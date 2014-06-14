@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/08 19:00:49 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:57 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Locale/
 ${P5ARCH}/Locale/gettext.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Locale/
 ${P5ARCH}/auto/Locale/gettext/
-${P5ARCH}/auto/Locale/gettext/gettext.bs
+@comment ${P5ARCH}/auto/Locale/gettext/gettext.bs
 ${P5ARCH}/auto/Locale/gettext/gettext.so
 @man man/man3p/Locale::gettext.3p

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/08/22 16:55:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:24:53 sthen Exp $
 ${P5ARCH}/DBD/SQLite/
 ${P5ARCH}/DBD/SQLite.pm
 ${P5ARCH}/DBD/SQLite/Cookbook.pod
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/SQLite/
-${P5ARCH}/auto/DBD/SQLite/SQLite.bs
+@comment ${P5ARCH}/auto/DBD/SQLite/SQLite.bs
 ${P5ARCH}/auto/DBD/SQLite/SQLite.so
 @man man/man3p/DBD::SQLite.3p
 @man man/man3p/DBD::SQLite::Cookbook.3p

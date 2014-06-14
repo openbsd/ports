@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/02/04 08:02:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:56 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/Gladiator.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/Gladiator/
-${P5ARCH}/auto/Devel/Gladiator/Gladiator.bs
+@comment ${P5ARCH}/auto/Devel/Gladiator/Gladiator.bs
 ${P5ARCH}/auto/Devel/Gladiator/Gladiator.so
 @man man/man3p/Devel::Gladiator.3p

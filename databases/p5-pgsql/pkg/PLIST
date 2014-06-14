@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:31:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Pg.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Pg/
-${P5ARCH}/auto/Pg/Pg.bs
+@comment ${P5ARCH}/auto/Pg/Pg.bs
 ${P5ARCH}/auto/Pg/Pg.so
 ${P5ARCH}/auto/Pg/autosplit.ix
 @man man/man3p/Pg.3p

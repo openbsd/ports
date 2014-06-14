@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/04 18:37:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:56 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/B/
 ${P5ARCH}/B/FindAmpersand.pm
@@ -8,7 +8,7 @@ ${P5ARCH}/Devel/SawAmpersand.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/SawAmpersand/
-${P5ARCH}/auto/Devel/SawAmpersand/SawAmpersand.bs
+@comment ${P5ARCH}/auto/Devel/SawAmpersand/SawAmpersand.bs
 ${P5ARCH}/auto/Devel/SawAmpersand/SawAmpersand.so
 @man man/man3p/B::FindAmpersand.3p
 @man man/man3p/Devel::FindAmpersand.3p

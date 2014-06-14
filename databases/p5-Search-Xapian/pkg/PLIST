@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/06/10 14:51:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:24:54 sthen Exp $
 %%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Search/
@@ -56,7 +56,7 @@ ${P5ARCH}/Search/Xapian/WritableDatabase.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Search/
 ${P5ARCH}/auto/Search/Xapian/
-${P5ARCH}/auto/Search/Xapian/Xapian.bs
+@comment ${P5ARCH}/auto/Search/Xapian/Xapian.bs
 @man man/man3p/Search::Xapian.3p
 @man man/man3p/Search::Xapian::AssertionError.3p
 @man man/man3p/Search::Xapian::BM25Weight.3p

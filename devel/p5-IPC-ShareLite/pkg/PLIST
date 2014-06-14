@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:24:57 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/IPC/
 ${P5ARCH}/IPC/ShareLite.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/IPC/
 ${P5ARCH}/auto/IPC/ShareLite/
-${P5ARCH}/auto/IPC/ShareLite/ShareLite.bs
+@comment ${P5ARCH}/auto/IPC/ShareLite/ShareLite.bs
 ${P5ARCH}/auto/IPC/ShareLite/ShareLite.so
 ${P5ARCH}/auto/IPC/ShareLite/autosplit.ix
 @man man/man3p/IPC::ShareLite.3p

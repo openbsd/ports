@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Class/
 ${P5ARCH}/Class/Date/
@@ -8,6 +8,6 @@ ${P5ARCH}/Class/Date/Const.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Class/
 ${P5ARCH}/auto/Class/Date/
-${P5ARCH}/auto/Class/Date/Date.bs
+@comment ${P5ARCH}/auto/Class/Date/Date.bs
 ${P5ARCH}/auto/Class/Date/Date.so
 @man man/man3p/Class::Date.3p

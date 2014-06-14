@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/10 21:34:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Acme/
 ${P5ARCH}/Acme/Damn.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Acme/
 ${P5ARCH}/auto/Acme/Damn/
-${P5ARCH}/auto/Acme/Damn/Damn.bs
+@comment ${P5ARCH}/auto/Acme/Damn/Damn.bs
 ${P5ARCH}/auto/Acme/Damn/Damn.so
 @man man/man3p/Acme::Damn.3p

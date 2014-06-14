@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2006/07/17 12:17:16 steven Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Class/
 ${P5ARCH}/Class/MethodMaker/
@@ -19,7 +19,7 @@ ${P5ARCH}/auto/Class/MethodMaker/Engine/abstract.al
 ${P5ARCH}/auto/Class/MethodMaker/Engine/autosplit.ix
 ${P5ARCH}/auto/Class/MethodMaker/Engine/copy.al
 ${P5ARCH}/auto/Class/MethodMaker/Engine/new.al
-${P5ARCH}/auto/Class/MethodMaker/MethodMaker.bs
+@comment ${P5ARCH}/auto/Class/MethodMaker/MethodMaker.bs
 ${P5ARCH}/auto/Class/MethodMaker/MethodMaker.so
 ${P5ARCH}/auto/Class/MethodMaker/array/
 ${P5ARCH}/auto/Class/MethodMaker/array/arra0000.al

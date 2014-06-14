@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/21 20:58:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/Coro/
 ${P5ARCH}/Coro.pm
 ${P5ARCH}/Coro/AIO.pm
@@ -27,10 +27,10 @@ ${P5ARCH}/Coro/jit-amd64-unix.pl
 ${P5ARCH}/Coro/jit-x86-unix.pl
 ${P5ARCH}/auto/Coro/
 ${P5ARCH}/auto/Coro/Event/
-${P5ARCH}/auto/Coro/Event/Event.bs
+@comment ${P5ARCH}/auto/Coro/Event/Event.bs
 ${P5ARCH}/auto/Coro/Event/Event.so
 ${P5ARCH}/auto/Coro/State/
-${P5ARCH}/auto/Coro/State/State.bs
+@comment ${P5ARCH}/auto/Coro/State/State.bs
 ${P5ARCH}/auto/Coro/State/State.so
 @man man/man3p/Coro.3p
 @man man/man3p/Coro::AIO.3p

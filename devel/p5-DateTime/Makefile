@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/16 02:58:06 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2014/06/14 23:24:55 sthen Exp $
 
 COMMENT =		perl objected oriented Date Time
 
@@ -8,6 +8,7 @@ MODULES =		cpan
 DISTNAME =		DateTime-1.07
 EPOCH =			0
 CATEGORIES =		devel
+REVISION =		0
 
 MAINTAINER = Andrew Fresh <andrew@cpan.org>
 

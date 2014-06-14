@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/18 22:25:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:56 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/File/
 ${P5ARCH}/File/RsyncP/
@@ -10,11 +10,11 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/File/
 ${P5ARCH}/auto/File/RsyncP/
 ${P5ARCH}/auto/File/RsyncP/Digest/
-${P5ARCH}/auto/File/RsyncP/Digest/Digest.bs
+@comment ${P5ARCH}/auto/File/RsyncP/Digest/Digest.bs
 ${P5ARCH}/auto/File/RsyncP/Digest/Digest.so
 ${P5ARCH}/auto/File/RsyncP/Digest/autosplit.ix
 ${P5ARCH}/auto/File/RsyncP/FileList/
-${P5ARCH}/auto/File/RsyncP/FileList/FileList.bs
+@comment ${P5ARCH}/auto/File/RsyncP/FileList/FileList.bs
 ${P5ARCH}/auto/File/RsyncP/FileList/FileList.so
 ${P5ARCH}/auto/File/RsyncP/FileList/autosplit.ix
 @man man/man3p/File::RsyncP.3p

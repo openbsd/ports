@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/23 14:17:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2014/06/14 23:24:55 sthen Exp $
 
 COMMENT =		meatier versions of caller
 
@@ -7,6 +7,7 @@ MODULES =		cpan
 DISTNAME =		Devel-Caller-2.06
 CATEGORIES =		devel
 CPAN_AUTHOR =		RCLAMP
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

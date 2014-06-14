@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 09:04:13 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:59 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Test/
 ${P5ARCH}/Test/LeakTrace/
@@ -8,7 +8,7 @@ ${P5ARCH}/Test/LeakTrace/Script.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Test/
 ${P5ARCH}/auto/Test/LeakTrace/
-${P5ARCH}/auto/Test/LeakTrace/LeakTrace.bs
+@comment ${P5ARCH}/auto/Test/LeakTrace/LeakTrace.bs
 ${P5ARCH}/auto/Test/LeakTrace/LeakTrace.so
 @man man/man3p/Test::LeakTrace.3p
 @man man/man3p/Test::LeakTrace::JA.3p

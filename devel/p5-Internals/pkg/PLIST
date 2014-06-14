@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/01 22:51:13 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:57 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Internals.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Internals/
-${P5ARCH}/auto/Internals/Internals.bs
+@comment ${P5ARCH}/auto/Internals/Internals.bs
 ${P5ARCH}/auto/Internals/Internals.so
 @man man/man3p/Internals.3p

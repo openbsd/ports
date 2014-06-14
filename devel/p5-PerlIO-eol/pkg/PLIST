@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 03:28:40 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/PerlIO/
 ${P5ARCH}/PerlIO/eol.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/PerlIO/
 ${P5ARCH}/auto/PerlIO/eol/
-${P5ARCH}/auto/PerlIO/eol/eol.bs
+@comment ${P5ARCH}/auto/PerlIO/eol/eol.bs
 ${P5ARCH}/auto/PerlIO/eol/eol.so
 @man man/man3p/PerlIO::eol.3p

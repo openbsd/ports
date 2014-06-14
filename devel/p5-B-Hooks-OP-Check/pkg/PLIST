@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 07:52:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/B/
 ${P5ARCH}/B/Hooks/
@@ -13,6 +13,6 @@ ${P5ARCH}/auto/B/
 ${P5ARCH}/auto/B/Hooks/
 ${P5ARCH}/auto/B/Hooks/OP/
 ${P5ARCH}/auto/B/Hooks/OP/Check/
-${P5ARCH}/auto/B/Hooks/OP/Check/Check.bs
+@comment ${P5ARCH}/auto/B/Hooks/OP/Check/Check.bs
 ${P5ARCH}/auto/B/Hooks/OP/Check/Check.so
 @man man/man3p/B::Hooks::OP::Check.3p

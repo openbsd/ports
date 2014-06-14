@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:44:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/06/14 23:24:59 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Term/
 ${P5ARCH}/Term/ReadKey.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Term/
 ${P5ARCH}/auto/Term/ReadKey/
-${P5ARCH}/auto/Term/ReadKey/ReadKey.bs
+@comment ${P5ARCH}/auto/Term/ReadKey/ReadKey.bs
 ${P5ARCH}/auto/Term/ReadKey/ReadKey.so
 ${P5ARCH}/auto/Term/ReadKey/autosplit.ix
 @man man/man3p/Term::ReadKey.3p

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/23 14:27:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/06/14 23:24:55 sthen Exp $
 
 COMMENT =	coroutines for perl
 
@@ -6,6 +6,7 @@ SHARED_ONLY =	Yes
 MODULES =	cpan
 DISTNAME =	Coro-6.23
 CATEGORIES =	devel
+REVISION =	0
 
 
 # perl

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:48:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/06/14 23:24:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	per-line quick profiler for perl
 CATEGORIES=	devel
 DISTNAME=	Devel-FastProf-0.08
-REVISION=	2
+REVISION=	3
 MODULES=	cpan
 
 # perl

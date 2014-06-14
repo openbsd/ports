@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/10/11 08:54:21 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:24:55 sthen Exp $
 ${P5ARCH}/DateTime/
 ${P5ARCH}/DateTime.pm
 ${P5ARCH}/DateTime/Duration.pm
@@ -8,7 +8,7 @@ ${P5ARCH}/DateTime/LeapSecond.pm
 ${P5ARCH}/DateTimePP.pm
 ${P5ARCH}/DateTimePPExtra.pm
 ${P5ARCH}/auto/DateTime/
-${P5ARCH}/auto/DateTime/DateTime.bs
+@comment ${P5ARCH}/auto/DateTime/DateTime.bs
 ${P5ARCH}/auto/DateTime/DateTime.so
 @man man/man3p/DateTime.3p
 @man man/man3p/DateTime::Duration.3p

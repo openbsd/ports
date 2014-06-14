@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/14 23:24:58 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	argument type classification
 
 MODULES =	cpan
 DISTNAME =	Params-Classify-0.013
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # same as perl

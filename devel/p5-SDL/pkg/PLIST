@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 ${P5ARCH}/SDL/
 ${P5ARCH}/SDL.pm
 ${P5ARCH}/SDL/App.pm
@@ -34,13 +34,13 @@ ${P5ARCH}/SDL/Video.pm
 ${P5ARCH}/SDL_perl.pm
 ${P5ARCH}/auto/SDL/
 ${P5ARCH}/auto/SDL/OpenGL/
-${P5ARCH}/auto/SDL/OpenGL/OpenGL.bs
+@comment ${P5ARCH}/auto/SDL/OpenGL/OpenGL.bs
 ${P5ARCH}/auto/SDL/OpenGL/OpenGL.so
 ${P5ARCH}/auto/SDL/SFont/
-${P5ARCH}/auto/SDL/SFont/SFont.bs
+@comment ${P5ARCH}/auto/SDL/SFont/SFont.bs
 ${P5ARCH}/auto/SDL/SFont/SFont.so
 ${P5ARCH}/auto/SDL_perl/
-${P5ARCH}/auto/SDL_perl/SDL_perl.bs
+@comment ${P5ARCH}/auto/SDL_perl/SDL_perl.bs
 ${P5ARCH}/auto/SDL_perl/SDL_perl.so
 @man man/man3p/SDL.3p
 @man man/man3p/SDL::App.3p

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/11 23:49:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2014/06/14 23:24:59 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ MODULES=		cpan
 V=			2.30
 DISTNAME=		TermReadKey-${V}
 PKGNAME=		p5-Term-ReadKey-${V}
-REVISION=		5
+REVISION=		6
 CATEGORIES=		devel
 
 PERMIT_PACKAGE_CDROM=	Yes

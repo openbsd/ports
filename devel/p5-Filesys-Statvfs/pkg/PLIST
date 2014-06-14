@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/21 20:35:41 syl Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:56 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Filesys/
 ${P5ARCH}/Filesys/Statvfs.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Filesys/
 ${P5ARCH}/auto/Filesys/Statvfs/
-${P5ARCH}/auto/Filesys/Statvfs/Statvfs.bs
+@comment ${P5ARCH}/auto/Filesys/Statvfs/Statvfs.bs
 ${P5ARCH}/auto/Filesys/Statvfs/Statvfs.so
 @man man/man3p/Filesys::Statvfs.3p

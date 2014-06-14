@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/05 12:36:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/14 23:25:00 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	lexically warn about using the indirect method call syntax
 
 MODULES=	cpan
 DISTNAME=	indirect-0.31
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

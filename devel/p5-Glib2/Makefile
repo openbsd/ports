@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/12/31 08:15:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2014/06/14 23:24:57 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ V=		1.304
 DISTNAME=	Glib-${V}
 PKGNAME=	p5-Glib2-${V}
 CATEGORIES=	x11 devel
+REVISION=	0
 
 CPAN_AUTHOR=	XAOC
 

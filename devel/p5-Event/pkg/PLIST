@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/04/19 14:49:43 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/06/14 23:24:56 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Event/
 ${P5ARCH}/Event.pm
@@ -18,7 +18,7 @@ ${P5ARCH}/Event/typemap
 ${P5ARCH}/Event/var.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Event/
-${P5ARCH}/auto/Event/Event.bs
+@comment ${P5ARCH}/auto/Event/Event.bs
 ${P5ARCH}/auto/Event/Event.so
 @man man/man3p/Event.3p
 @man man/man3p/Event::MakeMaker.3p

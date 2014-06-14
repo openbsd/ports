@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 08:45:52 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 @conflict p5-Gtk2-<1.220
 ${P5ARCH}/Pango/
 ${P5ARCH}/Pango.pm
@@ -64,7 +64,7 @@ ${P5ARCH}/Pango/TabArray.pod
 ${P5ARCH}/Pango/index.pod
 ${P5ARCH}/Pango/version.pod
 ${P5ARCH}/auto/Pango/
-${P5ARCH}/auto/Pango/Pango.bs
+@comment ${P5ARCH}/auto/Pango/Pango.bs
 ${P5ARCH}/auto/Pango/Pango.so
 @man man/man3p/Pango.3p
 @man man/man3p/Pango::AttrBackground.3p

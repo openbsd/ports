@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/23 17:56:07 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:54 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/BSD/
 ${P5ARCH}/BSD/stat.pm
@@ -6,6 +6,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/BSD/
 ${P5ARCH}/auto/BSD/stat/
 ${P5ARCH}/auto/BSD/stat/autosplit.ix
-${P5ARCH}/auto/BSD/stat/stat.bs
+@comment ${P5ARCH}/auto/BSD/stat/stat.bs
 ${P5ARCH}/auto/BSD/stat/stat.so
 @man man/man3p/BSD::stat.3p

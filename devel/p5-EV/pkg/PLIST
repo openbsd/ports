@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/01 14:27:57 millert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:56 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/EV/
 ${P5ARCH}/EV.pm
@@ -8,7 +8,7 @@ ${P5ARCH}/EV/ev.h
 ${P5ARCH}/EV/libev.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/EV/
-${P5ARCH}/auto/EV/EV.bs
+@comment ${P5ARCH}/auto/EV/EV.bs
 ${P5ARCH}/auto/EV/EV.so
 @man man/man3p/EV.3p
 @man man/man3p/EV::MakeMaker.3p

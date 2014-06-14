@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/06/14 23:24:57 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		perl5 extra list utilities
 
 DISTNAME =		List-MoreUtils-0.33
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

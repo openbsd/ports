@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/05/26 15:27:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/06/14 23:24:59 sthen Exp $
 
 COMMENT=	YAML and JSON for perl, optimized C
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 
 DISTNAME=	YAML-Syck-1.27
 CATEGORIES=	devel
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/19 21:59:02 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Regexp/
 ${P5ARCH}/Regexp/Copy.pm
@@ -6,7 +6,7 @@ ${P5ARCH}/Regexp/Storable.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Regexp/
 ${P5ARCH}/auto/Regexp/Copy/
-${P5ARCH}/auto/Regexp/Copy/Copy.bs
+@comment ${P5ARCH}/auto/Regexp/Copy/Copy.bs
 ${P5ARCH}/auto/Regexp/Copy/Copy.so
 ${P5ARCH}/auto/Regexp/Copy/autosplit.ix
 @man man/man3p/Regexp::Copy.3p

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 22:00:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:57 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Locale/
 ${P5ARCH}/Locale/Hebrew.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Locale/
 ${P5ARCH}/auto/Locale/Hebrew/
-${P5ARCH}/auto/Locale/Hebrew/Hebrew.bs
+@comment ${P5ARCH}/auto/Locale/Hebrew/Hebrew.bs
 ${P5ARCH}/auto/Locale/Hebrew/Hebrew.so
 ${P5ARCH}/auto/Locale/Hebrew/autosplit.ix
 @man man/man3p/Locale::Hebrew.3p
