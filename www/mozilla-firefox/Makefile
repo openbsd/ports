@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.252 2014/05/10 05:50:56 landry Exp $
+# $OpenBSD: Makefile,v 1.253 2014/06/14 13:03:31 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	29.0.1
+MOZILLA_VERSION =	30.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
-SO_VERSION =	47.0
+SO_VERSION =	48.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
@@ -50,16 +50,15 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
 
-CONFIGURE_ARGS +=	--enable-gstreamer
+CONFIGURE_ARGS +=	--enable-gstreamer=1.0
 
 # libxul doesnt link directly with gst but dlopens it at runtime
 # see content/media/gstreamer/GStreamerLoader.cpp
 #LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
 #WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
 #WANTLIB += gstvideo-0.10 xml2
-
-BUILD_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
+BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 MOZILLA_AUTOCONF_DIRS +=	js/src
 

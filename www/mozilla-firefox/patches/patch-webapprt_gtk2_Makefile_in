@@ -1,0 +1,22 @@
+$OpenBSD: patch-webapprt_gtk2_Makefile_in,v 1.1 2014/06/14 13:03:31 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=1012447
+--- webapprt/gtk2/Makefile.in.orig	Thu May 15 23:23:38 2014
++++ webapprt/gtk2/Makefile.in	Mon May 19 21:18:02 2014
+@@ -4,7 +4,7 @@
+ 
+ LIBS = \
+   $(XPCOM_STANDALONE_GLUE_LDOPTS) \
+-  $(MOZ_GTK2_LIBS) \
++  $(TK_LIBS) \
+   $(NULL)
+ 
+ NSDISTMODE = copy
+@@ -14,7 +14,7 @@ PROGRAMS_DEST = $(DIST)/bin
+ include $(topsrcdir)/config/rules.mk
+ 
+ CXXFLAGS += \
+-	$(MOZ_GTK2_CFLAGS) \
++	$(TK_CFLAGS) \
+ 	$(NULL)
+ 
+ GRE_BUILDID := $(shell cat $(DEPTH)/config/buildid)

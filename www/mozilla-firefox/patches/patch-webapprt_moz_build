@@ -1,0 +1,13 @@
+$OpenBSD: patch-webapprt_moz_build,v 1.1 2014/06/14 13:03:31 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=1012447
+--- webapprt/moz.build.orig	Mon May  5 23:56:22 2014
++++ webapprt/moz.build	Sat May 17 08:53:20 2014
+@@ -8,7 +8,7 @@ if CONFIG['OS_ARCH'] == 'WINNT':
+     DIRS += ['win']
+ elif CONFIG['OS_ARCH'] == 'Darwin':
+     DIRS += ['mac']
+-elif CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gtk2':
++elif CONFIG['MOZ_ENABLE_GTK']:
+     DIRS += ['gtk2']
+ 
+ DIRS += ['locales']
