@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2014/04/07 14:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/06/14 23:23:12 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		binary data conversion using C types
 
 DISTNAME =		Convert-Binary-C-0.76
-REVISION =		1
+REVISION =		2
 CATEGORIES =		converters
 
 # perl

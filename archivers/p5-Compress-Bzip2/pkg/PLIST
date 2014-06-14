@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/11 13:55:21 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:23:11 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Compress/
 ${P5ARCH}/Compress/Bzip2.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Compress/
 ${P5ARCH}/auto/Compress/Bzip2/
-${P5ARCH}/auto/Compress/Bzip2/Bzip2.bs
+@comment ${P5ARCH}/auto/Compress/Bzip2/Bzip2.bs
 ${P5ARCH}/auto/Compress/Bzip2/Bzip2.so
 ${P5ARCH}/auto/Compress/Bzip2/autosplit.ix
 @man man/man3p/Compress::Bzip2.3p

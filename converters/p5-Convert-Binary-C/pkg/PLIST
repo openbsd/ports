@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/24 21:12:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:23:12 sthen Exp $
 bin/ccconfig
 ${P5ARCH}/
 ${P5ARCH}/Convert/
@@ -10,7 +10,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Convert/
 ${P5ARCH}/auto/Convert/Binary/
 ${P5ARCH}/auto/Convert/Binary/C/
-${P5ARCH}/auto/Convert/Binary/C/C.bs
+@comment ${P5ARCH}/auto/Convert/Binary/C/C.bs
 ${P5ARCH}/auto/Convert/Binary/C/C.so
 @man man/man1/ccconfig.1
 @man man/man3p/Convert::Binary::C.3p

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/25 08:25:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2014/06/14 23:23:12 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ DISTNAME =	Convert-UUlib-1.4
 EPOCH =		1
 CATEGORIES=	converters
 MODULES=	cpan
+REVISION =	0
 
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
 

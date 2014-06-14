@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:25:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:23:12 sthen Exp $
 bin/map
 bin/mirrorMappings
 bin/mkCSGB2312
@@ -114,7 +114,7 @@ ${P5ARCH}/Unicode/Map/REGISTRY
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unicode/
 ${P5ARCH}/auto/Unicode/Map/
-${P5ARCH}/auto/Unicode/Map/Map.bs
+@comment ${P5ARCH}/auto/Unicode/Map/Map.bs
 ${P5ARCH}/auto/Unicode/Map/Map.so
 @man man/man1/map.1
 @man man/man1/mkmapfile.1

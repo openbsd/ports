@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/10 18:12:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:23:12 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/LineFold/
@@ -18,7 +18,7 @@ ${P5ARCH}/Unicode/LineBreak/JA_JP.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unicode/
 ${P5ARCH}/auto/Unicode/LineBreak/
-${P5ARCH}/auto/Unicode/LineBreak/LineBreak.bs
+@comment ${P5ARCH}/auto/Unicode/LineBreak/LineBreak.bs
 ${P5ARCH}/auto/Unicode/LineBreak/LineBreak.so
 @man man/man3p/Text::LineFold.3p
 @man man/man3p/Text::LineFold::JA_JP.3p

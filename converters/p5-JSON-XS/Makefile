@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/13 01:01:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2014/06/14 23:23:12 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,7 @@ MODULES =	cpan
 DISTNAME =	JSON-XS-2.33
 EPOCH =		1
 CATEGORIES =	converters
+REVISION =	0
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

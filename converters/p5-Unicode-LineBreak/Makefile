@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/06/14 23:23:12 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Unicode line breaking algorithm
 
 DISTNAME =	Unicode-LineBreak-2011.05
-REVISION =	0
+REVISION =	1
 CATEGORIES =	converters
 MODULES =	cpan
 

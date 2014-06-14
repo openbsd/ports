@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/07/01 10:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2014/06/14 23:23:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	interface to FLAC header metadata
 
 MODULES=	cpan
 DISTNAME=	Audio-FLAC-Header-2.3
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio
 
 # perl

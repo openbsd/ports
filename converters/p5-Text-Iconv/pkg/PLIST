@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:25:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:23:12 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/Iconv.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Text/
 ${P5ARCH}/auto/Text/Iconv/
-${P5ARCH}/auto/Text/Iconv/Iconv.bs
+@comment ${P5ARCH}/auto/Text/Iconv/Iconv.bs
 ${P5ARCH}/auto/Text/Iconv/Iconv.so
 ${P5ARCH}/auto/Text/Iconv/autosplit.ix
 @man man/man3p/Text::Iconv.3p

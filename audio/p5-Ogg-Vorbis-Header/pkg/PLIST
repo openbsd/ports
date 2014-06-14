@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/08 23:08:29 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:23:11 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Ogg/
 ${P5ARCH}/Ogg/Vorbis/
@@ -7,6 +7,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Ogg/
 ${P5ARCH}/auto/Ogg/Vorbis/
 ${P5ARCH}/auto/Ogg/Vorbis/Header/
-${P5ARCH}/auto/Ogg/Vorbis/Header/Header.bs
+@comment ${P5ARCH}/auto/Ogg/Vorbis/Header/Header.bs
 ${P5ARCH}/auto/Ogg/Vorbis/Header/Header.so
 @man man/man3p/Ogg::Vorbis::Header.3p
