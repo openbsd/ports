@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.69 2014/04/29 21:16:26 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.70 2014/06/14 12:50:40 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -33,14 +33,12 @@ EXTRACT_SUFX ?=	.tar.bz2
 DIST_SUBDIR ?=	mozilla
 
 MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils
-MODMOZ_BUILD_DEPENDS =	devel/libIDL \
-			archivers/gtar \
+MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/unzip \
 			archivers/zip>=2.3
 
-MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
-			textproc/hunspell \
-			devel/nspr>=4.10.3 \
+MODMOZ_LIB_DEPENDS =	textproc/hunspell \
+			devel/nspr>=4.10.6 \
 			security/nss>=3.16
 
 # bug #736961
@@ -51,10 +49,9 @@ SEPARATE_BUILD =	Yes
 MODMOZ_BUILD_DEPENDS +=	devel/yasm
 .endif
 
-MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-		Xinerama Xrandr Xrender Xt atk-1.0 c cairo \
-		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
+MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
+		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		gobject-2.0 gthread-2.0 m \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		plc4 plds4 pthread event kvm sqlite3>=27 \
 		smime3 sndio nssutil3 ssl3 stdc++ z hunspell-1.3
@@ -100,6 +97,9 @@ CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
 		--disable-dbus
 
 FLAVORS +=	debug
+.if ${PKGPATH} == "www/mozilla-firefox"
+FLAVORS += gtk3
+.endif
 FLAVOR ?=
 
 .if ${FLAVOR:Mdebug}
@@ -108,6 +108,18 @@ CONFIGURE_ARGS +=	--enable-debug \
 			--enable-debug-symbols=yes \
 			--disable-install-strip
 INSTALL_STRIP =
+.endif
+
+.if ${FLAVOR:Mgtk3}
+# https://bugzilla.mozilla.org/show_bug.cgi?id=983843
+CONFIGURE_ARGS +=	--with-system-cairo
+CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
+MODMOZ_LIB_DEPENDS +=	x11/gtk+3
+MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3 pixman-1 pthread-stubs
+.else
+MODMOZ_LIB_DEPENDS +=	x11/gtk+2
+MODMOZ_WANTLIB +=	Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
+			Xrandr gdk-x11-2.0 gtk-x11-2.0
 .endif
 
 # from browser/config/mozconfig
