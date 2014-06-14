@@ -94,6 +94,7 @@
 	native-futimens: permit
 	native-getdents: permit
 	native-getegid: permit
+	native-getentropy: permit
 	native-geteuid: permit
 	native-getfsstat: permit
 	native-getgid: permit
