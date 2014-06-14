@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/06/06 12:06:42 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 22:11:41 sthen Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.order
@@ -7,7 +7,6 @@ ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/.travis/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -46,11 +45,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/redis/subscribe.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redis/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/redis.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/bitpos_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/blocking_commands_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/command_map_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/commands_on_hashes_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/commands_on_hyper_log_log_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/commands_on_lists_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/commands_on_sets_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/commands_on_sorted_sets_test.rb
@@ -60,7 +57,6 @@ ${GEM_LIB}/gems/${DISTNAME}/test/connection_handling_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/db/
 ${GEM_LIB}/gems/${DISTNAME}/test/distributed_blocking_commands_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/distributed_commands_on_hashes_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/distributed_commands_on_hyper_log_log_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/distributed_commands_on_lists_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/distributed_commands_on_sets_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/distributed_commands_on_sorted_sets_test.rb
@@ -79,14 +75,12 @@ ${GEM_LIB}/gems/${DISTNAME}/test/distributed_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/distributed_transactions_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/encoding_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/error_replies_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/fork_safety_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/helper_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/internals_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/lint/
 ${GEM_LIB}/gems/${DISTNAME}/test/lint/blocking_commands.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/lint/hashes.rb
-${GEM_LIB}/gems/${DISTNAME}/test/lint/hyper_log_log.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/lint/lists.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/lint/sets.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/lint/sorted_sets.rb
