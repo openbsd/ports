@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/17 23:45:48 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Unix/
 ${P5ARCH}/Unix/Statgrab.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unix/
 ${P5ARCH}/auto/Unix/Statgrab/
-${P5ARCH}/auto/Unix/Statgrab/Statgrab.bs
+@comment ${P5ARCH}/auto/Unix/Statgrab/Statgrab.bs
 ${P5ARCH}/auto/Unix/Statgrab/Statgrab.so
 ${P5ARCH}/auto/Unix/Statgrab/autosplit.ix
 @man man/man3p/Unix::Statgrab.3p

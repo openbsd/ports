@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/06/14 23:26:01 sthen Exp $
 
 COMMENT =	interface to the Skein digest algorithm
 
 DISTNAME =	Digest-Skein-0.05
 CATEGORIES =	security
 
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://www.skein-hash.info/
 

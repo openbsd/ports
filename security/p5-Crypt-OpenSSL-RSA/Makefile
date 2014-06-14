@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/11/03 22:14:06 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2014/06/14 23:26:00 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,7 @@ MODULES =	cpan
 
 DISTNAME =	Crypt-OpenSSL-RSA-0.28
 CATEGORIES =	security
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM = Yes

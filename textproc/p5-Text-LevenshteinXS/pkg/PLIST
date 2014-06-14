@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/18 11:36:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:02 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/LevenshteinXS.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Text/
 ${P5ARCH}/auto/Text/LevenshteinXS/
-${P5ARCH}/auto/Text/LevenshteinXS/LevenshteinXS.bs
+@comment ${P5ARCH}/auto/Text/LevenshteinXS/LevenshteinXS.bs
 ${P5ARCH}/auto/Text/LevenshteinXS/LevenshteinXS.so
 ${P5ARCH}/auto/Text/LevenshteinXS/autosplit.ix
 @man man/man3p/Text::LevenshteinXS.3p

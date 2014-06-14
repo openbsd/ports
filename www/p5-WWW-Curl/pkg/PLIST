@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/15 13:31:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:26:03 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/WWW/
 ${P5ARCH}/WWW/Curl/
@@ -10,6 +10,6 @@ ${P5ARCH}/WWW/Curl/Share.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/WWW/
 ${P5ARCH}/auto/WWW/Curl/
-${P5ARCH}/auto/WWW/Curl/Curl.bs
+@comment ${P5ARCH}/auto/WWW/Curl/Curl.bs
 ${P5ARCH}/auto/WWW/Curl/Curl.so
 @man man/man3p/WWW::Curl.3p

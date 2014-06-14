@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/10/03 21:34:18 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Proc/
 ${P5ARCH}/Proc/Killall.pm
@@ -12,7 +12,7 @@ ${P5ARCH}/auto/Proc/
 ${P5ARCH}/auto/Proc/ProcessTable/
 ${P5ARCH}/auto/Proc/ProcessTable/Process/
 ${P5ARCH}/auto/Proc/ProcessTable/Process/autosplit.ix
-${P5ARCH}/auto/Proc/ProcessTable/ProcessTable.bs
+@comment ${P5ARCH}/auto/Proc/ProcessTable/ProcessTable.bs
 ${P5ARCH}/auto/Proc/ProcessTable/ProcessTable.so
 @man man/man3p/Proc::Killall.3p
 @man man/man3p/Proc::Killfam.3p

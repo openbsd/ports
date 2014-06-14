@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/02 22:59:23 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/X/
 ${P5ARCH}/X/Osd.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/X/
 ${P5ARCH}/auto/X/Osd/
-${P5ARCH}/auto/X/Osd/Osd.bs
+@comment ${P5ARCH}/auto/X/Osd/Osd.bs
 ${P5ARCH}/auto/X/Osd/Osd.so
 ${P5ARCH}/auto/X/Osd/autosplit.ix
 @man man/man3p/X::Osd.3p

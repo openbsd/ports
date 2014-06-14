@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/04/11 18:51:49 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/SSLeay/
@@ -8,7 +8,7 @@ ${P5ARCH}/Net/SSLeay/Handle.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/SSLeay/
-${P5ARCH}/auto/Net/SSLeay/SSLeay.bs
+@comment ${P5ARCH}/auto/Net/SSLeay/SSLeay.bs
 ${P5ARCH}/auto/Net/SSLeay/SSLeay.so
 ${P5ARCH}/auto/Net/SSLeay/autosplit.ix
 ${P5ARCH}/auto/Net/SSLeay/debug_read.al

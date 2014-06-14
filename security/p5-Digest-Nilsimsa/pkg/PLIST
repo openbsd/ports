@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Digest/
 ${P5ARCH}/Digest/Nilsimsa.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Digest/
 ${P5ARCH}/auto/Digest/Nilsimsa/
-${P5ARCH}/auto/Digest/Nilsimsa/Nilsimsa.bs
+@comment ${P5ARCH}/auto/Digest/Nilsimsa/Nilsimsa.bs
 ${P5ARCH}/auto/Digest/Nilsimsa/Nilsimsa.so
 @man man/man3p/Digest::Nilsimsa.3p

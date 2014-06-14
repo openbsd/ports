@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/05 14:12:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Proc/
 ${P5ARCH}/Proc/Wait3.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Proc/
 ${P5ARCH}/auto/Proc/Wait3/
-${P5ARCH}/auto/Proc/Wait3/Wait3.bs
+@comment ${P5ARCH}/auto/Proc/Wait3/Wait3.bs
 ${P5ARCH}/auto/Proc/Wait3/Wait3.so
 @man man/man3p/Proc::Wait3.3p

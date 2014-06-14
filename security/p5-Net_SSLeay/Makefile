@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2014/05/26 22:27:52 bluhm Exp $
+# $OpenBSD: Makefile,v 1.50 2014/06/14 23:26:01 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		perl module for using OpenSSL
 
 DISTNAME =		Net-SSLeay-1.63
+REVISION =		0
 
 CATEGORIES =		security
 

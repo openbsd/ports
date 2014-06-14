@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/11/06 09:05:25 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:26:00 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/OpenSSL/
@@ -9,7 +9,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/OpenSSL/
 ${P5ARCH}/auto/Crypt/OpenSSL/DSA/
-${P5ARCH}/auto/Crypt/OpenSSL/DSA/DSA.bs
+@comment ${P5ARCH}/auto/Crypt/OpenSSL/DSA/DSA.bs
 ${P5ARCH}/auto/Crypt/OpenSSL/DSA/DSA.so
 @man man/man3p/Crypt::OpenSSL::DSA.3p
 @man man/man3p/Crypt::OpenSSL::DSA::Signature.3p

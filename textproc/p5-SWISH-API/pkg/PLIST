@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/11 20:55:21 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:02 sthen Exp $
 ${P5ARCH}/SWISH/
 ${P5ARCH}/SWISH/API.pm
 ${P5ARCH}/auto/SWISH/
 ${P5ARCH}/auto/SWISH/API/
-${P5ARCH}/auto/SWISH/API/API.bs
+@comment ${P5ARCH}/auto/SWISH/API/API.bs
 ${P5ARCH}/auto/SWISH/API/API.so
 @man man/man3p/SWISH::API.3p

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:51:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2014/06/14 23:26:02 sthen Exp $
 
 COMMENT=		perl implementation of Levenshtein edit distance
 
 MODULES=		cpan
 DISTNAME=		Text-LevenshteinXS-0.03
-REVISION=		4
+REVISION=		5
 CATEGORIES=		textproc devel
 SHARED_ONLY=		Yes
 

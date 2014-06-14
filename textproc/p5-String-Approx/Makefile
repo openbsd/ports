@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/24 21:42:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2014/06/14 23:26:02 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	module for approximate matching
 MODULES=	cpan
 DISTNAME =	String-Approx-3.27
 CATEGORIES=	textproc
+REVISION =	0
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

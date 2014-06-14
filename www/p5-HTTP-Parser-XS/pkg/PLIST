@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/07 13:45:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
 %%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/HTTP/
@@ -10,5 +10,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/HTTP/
 ${P5ARCH}/auto/HTTP/Parser/
 ${P5ARCH}/auto/HTTP/Parser/XS/
-${P5ARCH}/auto/HTTP/Parser/XS/XS.bs
+@comment ${P5ARCH}/auto/HTTP/Parser/XS/XS.bs
 @man man/man3p/HTTP::Parser::XS.3p

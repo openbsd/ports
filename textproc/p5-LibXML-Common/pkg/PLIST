@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/XML/
 ${P5ARCH}/XML/LibXML/
@@ -7,6 +7,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/XML/
 ${P5ARCH}/auto/XML/LibXML/
 ${P5ARCH}/auto/XML/LibXML/Common/
-${P5ARCH}/auto/XML/LibXML/Common/Common.bs
+@comment ${P5ARCH}/auto/XML/LibXML/Common/Common.bs
 ${P5ARCH}/auto/XML/LibXML/Common/Common.so
 @man man/man3p/XML::LibXML::Common.3p

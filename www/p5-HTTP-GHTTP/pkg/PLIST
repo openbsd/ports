@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:26:03 sthen Exp $
 bin/g-request
 ${P5ARCH}/
 ${P5ARCH}/HTTP/
@@ -6,6 +6,6 @@ ${P5ARCH}/HTTP/GHTTP.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/HTTP/
 ${P5ARCH}/auto/HTTP/GHTTP/
-${P5ARCH}/auto/HTTP/GHTTP/GHTTP.bs
+@comment ${P5ARCH}/auto/HTTP/GHTTP/GHTTP.bs
 ${P5ARCH}/auto/HTTP/GHTTP/GHTTP.so
 @man man/man3p/HTTP::GHTTP.3p

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:39:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Quota.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Quota/
-${P5ARCH}/auto/Quota/Quota.bs
+@comment ${P5ARCH}/auto/Quota/Quota.bs
 ${P5ARCH}/auto/Quota/Quota.so
 ${P5ARCH}/auto/Quota/autosplit.ix
 @man man/man3p/Quota.3p

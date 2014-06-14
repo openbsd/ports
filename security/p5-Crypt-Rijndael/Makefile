@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/06/14 23:26:00 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	interface to the rijndael encryption algorithm aka AES
 
 MODULES=	cpan
 DISTNAME=	Crypt-Rijndael-1.09
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security
 
 # LGPLv2

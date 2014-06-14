@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/06/14 23:26:02 sthen Exp $
 
 COMMENT=		interactive debugger for modperl
 
 MODULES=		cpan
 DISTNAME=		Apache-DB-0.14
-REVISION=		3
+REVISION=		4
 SHARED_ONLY=		Yes
 CATEGORIES=		www devel
 USE_GROFF =		Yes

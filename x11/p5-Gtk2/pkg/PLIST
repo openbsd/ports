@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/26 08:29:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/06/14 23:26:03 sthen Exp $
 ${P5ARCH}/Gtk2/
 ${P5ARCH}/Gtk2.pm
 ${P5ARCH}/Gtk2/AboutDialog.pod
@@ -343,7 +343,7 @@ ${P5ARCH}/Gtk2/index.pod
 ${P5ARCH}/Gtk2/main.pod
 ${P5ARCH}/Gtk2/version.pod
 ${P5ARCH}/auto/Gtk2/
-${P5ARCH}/auto/Gtk2/Gtk2.bs
+@comment ${P5ARCH}/auto/Gtk2/Gtk2.bs
 ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2.3p
 @man man/man3p/Gtk2::AboutDialog.3p

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/03/19 07:23:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2014/06/14 23:26:00 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	module to implement the Twofish cipher
 MODULES=	cpan
 DISTNAME=	Crypt-Twofish-2.17
 CATEGORIES=	security
+REVISION=	0
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

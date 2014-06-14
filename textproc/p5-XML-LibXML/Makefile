@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2014/06/14 23:26:02 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	perl interface to the libxml2 library
 DISTNAME=	XML-LibXML-1.69
 EPOCH=		0
 
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	textproc
 

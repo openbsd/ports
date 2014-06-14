@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2014/06/14 23:26:03 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	perl binding for curl
 MODULES=	cpan devel/gettext
 DISTNAME=	WWW-Curl-4.15
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www net
 
 HOMEPAGE=	http://curl.haxx.se/libcurl/perl/

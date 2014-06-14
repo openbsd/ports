@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/29 14:30:44 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
 %%SHARED%%
 ${P5ARCH}/Tk/TableMatrix/
 ${P5ARCH}/Tk/TableMatrix.pm
@@ -10,7 +10,7 @@ ${P5ARCH}/Tk/pTk/tkTable.h
 ${P5ARCH}/Tk/pTk/tkTableversion.h
 ${P5ARCH}/Tk/pTk/version.h
 ${P5ARCH}/auto/Tk/TableMatrix/
-${P5ARCH}/auto/Tk/TableMatrix/TableMatrix.bs
+@comment ${P5ARCH}/auto/Tk/TableMatrix/TableMatrix.bs
 ${P5ARCH}/auto/Tk/TableMatrix/autosplit.ix
 @comment ${P5ARCH}/auto/Tk/pTk/extralibs.ld
 @man man/man3p/Tk::TableMatrix.3p

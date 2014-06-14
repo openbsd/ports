@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:44:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:26:02 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/String/
 ${P5ARCH}/String/Approx.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/String/
 ${P5ARCH}/auto/String/Approx/
-${P5ARCH}/auto/String/Approx/Approx.bs
+@comment ${P5ARCH}/auto/String/Approx/Approx.bs
 ${P5ARCH}/auto/String/Approx/Approx.so
 @man man/man3p/String::Approx.3p

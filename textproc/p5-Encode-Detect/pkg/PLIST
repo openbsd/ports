@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/16 00:01:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Encode/
 ${P5ARCH}/Encode/Detect/
@@ -8,7 +8,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Encode/
 ${P5ARCH}/auto/Encode/Detect/
 ${P5ARCH}/auto/Encode/Detect/Detector/
-${P5ARCH}/auto/Encode/Detect/Detector/Detector.bs
+@comment ${P5ARCH}/auto/Encode/Detect/Detector/Detector.bs
 ${P5ARCH}/auto/Encode/Detect/Detector/Detector.so
 @man man/man3p/Encode::Detect.3p
 @man man/man3p/Encode::Detect::Detector.3p

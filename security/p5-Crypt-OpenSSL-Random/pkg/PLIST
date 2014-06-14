@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:26:00 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/OpenSSL/
@@ -7,7 +7,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/OpenSSL/
 ${P5ARCH}/auto/Crypt/OpenSSL/Random/
-${P5ARCH}/auto/Crypt/OpenSSL/Random/Random.bs
+@comment ${P5ARCH}/auto/Crypt/OpenSSL/Random/Random.bs
 ${P5ARCH}/auto/Crypt/OpenSSL/Random/Random.so
 ${P5ARCH}/auto/Crypt/OpenSSL/Random/autosplit.ix
 @man man/man3p/Crypt::OpenSSL::Random.3p

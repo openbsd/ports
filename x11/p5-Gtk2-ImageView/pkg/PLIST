@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/27 09:51:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
 ${P5ARCH}/Gtk2/Gdk/Pixbuf/
 ${P5ARCH}/Gtk2/Gdk/Pixbuf/Draw/
 ${P5ARCH}/Gtk2/Gdk/Pixbuf/Draw/Cache.pod
@@ -21,7 +21,7 @@ ${P5ARCH}/Gtk2/ImageView/Tool/Selector.pod
 ${P5ARCH}/Gtk2/ImageView/Zoom.pod
 ${P5ARCH}/Gtk2/ImageView/index.pod
 ${P5ARCH}/auto/Gtk2/ImageView/
-${P5ARCH}/auto/Gtk2/ImageView/ImageView.bs
+@comment ${P5ARCH}/auto/Gtk2/ImageView/ImageView.bs
 ${P5ARCH}/auto/Gtk2/ImageView/ImageView.so
 @man man/man3p/Gtk2::Gdk::Pixbuf::Draw::Cache.3p
 @man man/man3p/Gtk2::ImageView.3p

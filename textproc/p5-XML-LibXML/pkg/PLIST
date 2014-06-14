@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/11/23 07:47:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/06/14 23:26:02 sthen Exp $
 ${P5ARCH}/XML/LibXML.pm
 ${P5ARCH}/XML/LibXML.pod
 ${P5ARCH}/XML/LibXML/Attr.pod
@@ -38,7 +38,7 @@ ${P5ARCH}/XML/LibXML/Text.pod
 ${P5ARCH}/XML/LibXML/XPathContext.pm
 ${P5ARCH}/XML/LibXML/XPathContext.pod
 ${P5ARCH}/XML/LibXML/XPathExpression.pod
-${P5ARCH}/auto/XML/LibXML/LibXML.bs
+@comment ${P5ARCH}/auto/XML/LibXML/LibXML.bs
 ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML.3p
 @man man/man3p/XML::LibXML::Attr.3p

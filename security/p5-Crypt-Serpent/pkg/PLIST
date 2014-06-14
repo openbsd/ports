@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/06 13:09:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:00 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/Serpent.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/Serpent/
-${P5ARCH}/auto/Crypt/Serpent/Serpent.bs
+@comment ${P5ARCH}/auto/Crypt/Serpent/Serpent.bs
 ${P5ARCH}/auto/Crypt/Serpent/Serpent.so
 @man man/man3p/Crypt::Serpent.3p

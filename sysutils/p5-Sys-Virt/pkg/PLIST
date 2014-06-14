@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/06/11 08:29:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:26:01 sthen Exp $
 ${P5ARCH}/Sys/
 ${P5ARCH}/Sys/Virt/
 ${P5ARCH}/Sys/Virt.pm
@@ -16,7 +16,7 @@ ${P5ARCH}/Sys/Virt/StorageVol.pm
 ${P5ARCH}/Sys/Virt/Stream.pm
 ${P5ARCH}/auto/Sys/
 ${P5ARCH}/auto/Sys/Virt/
-${P5ARCH}/auto/Sys/Virt/Virt.bs
+@comment ${P5ARCH}/auto/Sys/Virt/Virt.bs
 ${P5ARCH}/auto/Sys/Virt/Virt.so
 @man man/man3p/Sys::Virt.3p
 @man man/man3p/Sys::Virt::Domain.3p

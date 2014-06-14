@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/25 20:12:40 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:26:02 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/Tmpl.pm
@@ -8,7 +8,7 @@ ${P5ARCH}/Text/template_syntax.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Text/
 ${P5ARCH}/auto/Text/Tmpl/
-${P5ARCH}/auto/Text/Tmpl/Tmpl.bs
+@comment ${P5ARCH}/auto/Text/Tmpl/Tmpl.bs
 ${P5ARCH}/auto/Text/Tmpl/Tmpl.so
 ${P5ARCH}/auto/Text/Tmpl/autosplit.ix
 @man man/man3p/Text::Tmpl.3

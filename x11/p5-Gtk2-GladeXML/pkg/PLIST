@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/16 18:28:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
 ${P5ARCH}/Gtk2/GladeXML/
 ${P5ARCH}/Gtk2/GladeXML.pm
 ${P5ARCH}/Gtk2/GladeXML/Install/
@@ -6,6 +6,6 @@ ${P5ARCH}/Gtk2/GladeXML/Install/Files.pm
 ${P5ARCH}/Gtk2/GladeXML/Install/gladexmlperl.h
 ${P5ARCH}/Gtk2/GladeXML/Install/gladexmlperl.typemap
 ${P5ARCH}/auto/Gtk2/GladeXML/
-${P5ARCH}/auto/Gtk2/GladeXML/GladeXML.bs
+@comment ${P5ARCH}/auto/Gtk2/GladeXML/GladeXML.bs
 ${P5ARCH}/auto/Gtk2/GladeXML/GladeXML.so
 @man man/man3p/Gtk2::GladeXML.3p

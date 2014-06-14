@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/02 15:39:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:26:02 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/XML/
 ${P5ARCH}/XML/SAX/
@@ -28,7 +28,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/XML/
 ${P5ARCH}/auto/XML/SAX/
 ${P5ARCH}/auto/XML/SAX/ExpatXS/
-${P5ARCH}/auto/XML/SAX/ExpatXS/ExpatXS.bs
+@comment ${P5ARCH}/auto/XML/SAX/ExpatXS/ExpatXS.bs
 ${P5ARCH}/auto/XML/SAX/ExpatXS/ExpatXS.so
 @man man/man3p/XML::SAX::ExpatXS.3p
 @man man/man3p/XML::SAX::ExpatXS::Encoding.3p

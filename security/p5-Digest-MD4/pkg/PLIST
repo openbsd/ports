@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/06 12:58:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:00 sthen Exp $
 %%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Digest/
@@ -6,5 +6,5 @@ ${P5ARCH}/Digest/MD4.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Digest/
 ${P5ARCH}/auto/Digest/MD4/
-${P5ARCH}/auto/Digest/MD4/MD4.bs
+@comment ${P5ARCH}/auto/Digest/MD4/MD4.bs
 @man man/man3p/Digest::MD4.3p

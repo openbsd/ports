@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:26:03 sthen Exp $
 ${P5ARCH}/Apache/Cookie.pm
 ${P5ARCH}/Apache/Request.pm
 ${P5ARCH}/Apache/libapreq.pm
 ${P5ARCH}/auto/Apache/Cookie/
-${P5ARCH}/auto/Apache/Cookie/Cookie.bs
+@comment ${P5ARCH}/auto/Apache/Cookie/Cookie.bs
 ${P5ARCH}/auto/Apache/Cookie/Cookie.so
 ${P5ARCH}/auto/Apache/Request/
-${P5ARCH}/auto/Apache/Request/Request.bs
+@comment ${P5ARCH}/auto/Apache/Request/Request.bs
 ${P5ARCH}/auto/Apache/Request/Request.so
 ${P5ARCH}/auto/libapreq/
 ${P5ARCH}/auto/libapreq/extralibs.ld

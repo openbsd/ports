@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:22:01 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
 bin/apreq2-config
 include/apache2/apreq2/
 include/apache2/apreq2/apreq_module_apache2.h
@@ -39,27 +39,27 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Apache2/Request.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Apache2/Upload.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/Apache2.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/Apache2.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/Apache2.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/CGI.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/CGI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/CGI.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/Cookie.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/Cookie.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/Cookie.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/Error.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/Error.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/Error.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/Hook.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/Hook.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/Hook.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/Param.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/Param.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/Param.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/Parser.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/Parser.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/Parser.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Request.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Request.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Request.so
 @man man/man3p/APR::Request.3p
 @man man/man3p/APR::Request::Apache2.3p
