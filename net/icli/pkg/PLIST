@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/29 13:31:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 14:04:07 sthen Exp $
 bin/icli
-@comment bin/icli.orig
+${P5SITE}/App/
+${P5SITE}/App/Icli/
+${P5SITE}/App/Icli.pm
+${P5SITE}/App/Icli/ConfigData.pm
 @man man/man1/icli.1
-@comment @man man/man1/icli.orig.1
+@man man/man3p/App::Icli.3p
+@man man/man3p/App::Icli::ConfigData.3p
