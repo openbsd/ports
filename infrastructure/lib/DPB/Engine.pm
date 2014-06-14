@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.105 2014/03/17 10:47:12 espie Exp $
+# $OpenBSD: Engine.pm,v 1.106 2014/06/14 01:23:48 afresh1 Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -185,7 +185,9 @@ sub adjust
 	my ($self, $v, $kind, $kind2) = @_;
 	return 0 if !exists $v->{info}{$kind};
 	my $not_yet = 0;
-	for my $d (values %{$v->{info}{$kind}}) {
+	# XXX don't use `values` in this loop, it may trigger perlbug 77706
+	my @values = values %{$v->{info}{$kind}};
+	for my $d (@values) {
 		$self->{heuristics}->mark_depend($d, $v);
 		if ($self->{installable}{$d} ||
 		    (defined $d->{info} &&
