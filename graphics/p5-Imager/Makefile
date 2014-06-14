@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/25 07:55:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2014/06/14 23:25:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	generate and manipulate images
 DISTNAME=	Imager-0.97
 CATEGORIES=	graphics
 MODULES=	cpan
+REVISION=	0
 
 HOMEPAGE=	http://imager.perl.org/
 

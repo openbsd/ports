@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/03/17 09:59:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/06/14 23:25:21 sthen Exp $
 bin/bdf2gdfont.pl
 ${P5ARCH}/
 ${P5ARCH}/GD/
@@ -10,7 +10,7 @@ ${P5ARCH}/GD/Polyline.pm
 ${P5ARCH}/GD/Simple.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/GD/
-${P5ARCH}/auto/GD/GD.bs
+@comment ${P5ARCH}/auto/GD/GD.bs
 ${P5ARCH}/auto/GD/GD.so
 ${P5ARCH}/auto/GD/autosplit.ix
 ${P5ARCH}/qd.pl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/25 07:58:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/14 23:25:21 sthen Exp $
 
 BROKEN=		needs further tweaking for giflib 5.0+
 
@@ -7,7 +7,7 @@ SHARED_ONLY=	Yes
 COMMENT=	low-overhead image rescaling module for Perl
 
 DISTNAME=	Image-Scale-0.08
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics
 
 # GPLv2+

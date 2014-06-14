@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/20 19:27:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:21 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Image/
 ${P5ARCH}/Image/Scale.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Image/
 ${P5ARCH}/auto/Image/Scale/
-${P5ARCH}/auto/Image/Scale/Scale.bs
+@comment ${P5ARCH}/auto/Image/Scale/Scale.bs
 ${P5ARCH}/auto/Image/Scale/Scale.so
 @man man/man3p/Image::Scale.3p

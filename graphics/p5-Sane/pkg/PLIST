@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/27 09:48:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:21 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Sane.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Sane/
-${P5ARCH}/auto/Sane/Sane.bs
+@comment ${P5ARCH}/auto/Sane/Sane.bs
 ${P5ARCH}/auto/Sane/Sane.so
 @man man/man3p/Sane.3p
 share/examples/p5-Sane/

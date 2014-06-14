@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:25:21 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Image/
 ${P5ARCH}/Image/EXIF.pm
@@ -6,7 +6,7 @@ ${P5ARCH}/Image/EXIF.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Image/
 ${P5ARCH}/auto/Image/EXIF/
-${P5ARCH}/auto/Image/EXIF/EXIF.bs
+@comment ${P5ARCH}/auto/Image/EXIF/EXIF.bs
 ${P5ARCH}/auto/Image/EXIF/EXIF.so
 ${P5ARCH}/auto/Image/EXIF/autosplit.ix
 @man man/man3p/Image::EXIF.3p

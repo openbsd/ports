@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/27 09:47:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:21 sthen Exp $
 bin/perlmine.pl
 bin/perltetris.pl
 ${P5ARCH}/Goo/
@@ -42,7 +42,7 @@ ${P5ARCH}/Goo/Canvas/Widget.pod
 ${P5ARCH}/Goo/Canvas/index.pod
 ${P5ARCH}/auto/Goo/
 ${P5ARCH}/auto/Goo/Canvas/
-${P5ARCH}/auto/Goo/Canvas/Canvas.bs
+@comment ${P5ARCH}/auto/Goo/Canvas/Canvas.bs
 ${P5ARCH}/auto/Goo/Canvas/Canvas.so
 @man man/man1/perlmine.pl.1
 @man man/man1/perltetris.pl.1

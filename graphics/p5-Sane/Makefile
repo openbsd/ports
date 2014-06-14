@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/27 09:48:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/14 23:25:21 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Perl extension for the SANE Project
 
 DISTNAME=		Sane-0.05
+REVISION=		0
 
 CATEGORIES=		graphics
 

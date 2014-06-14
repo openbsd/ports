@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/09/25 07:55:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/06/14 23:25:21 sthen Exp $
 @pkgpath graphics/p5-Imager,libs
 ${P5ARCH}/
 ${P5ARCH}/Imager/
@@ -94,45 +94,45 @@ ${P5ARCH}/Imager/typemap
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Imager/
 ${P5ARCH}/auto/Imager/CountColor/
-${P5ARCH}/auto/Imager/CountColor/CountColor.bs
+@comment ${P5ARCH}/auto/Imager/CountColor/CountColor.bs
 ${P5ARCH}/auto/Imager/CountColor/CountColor.so
 ${P5ARCH}/auto/Imager/File/
 ${P5ARCH}/auto/Imager/File/GIF/
-${P5ARCH}/auto/Imager/File/GIF/GIF.bs
+@comment ${P5ARCH}/auto/Imager/File/GIF/GIF.bs
 ${P5ARCH}/auto/Imager/File/GIF/GIF.so
 ${P5ARCH}/auto/Imager/File/ICO/
-${P5ARCH}/auto/Imager/File/ICO/ICO.bs
+@comment ${P5ARCH}/auto/Imager/File/ICO/ICO.bs
 ${P5ARCH}/auto/Imager/File/ICO/ICO.so
 ${P5ARCH}/auto/Imager/File/JPEG/
-${P5ARCH}/auto/Imager/File/JPEG/JPEG.bs
+@comment ${P5ARCH}/auto/Imager/File/JPEG/JPEG.bs
 ${P5ARCH}/auto/Imager/File/JPEG/JPEG.so
 ${P5ARCH}/auto/Imager/File/PNG/
-${P5ARCH}/auto/Imager/File/PNG/PNG.bs
+@comment ${P5ARCH}/auto/Imager/File/PNG/PNG.bs
 ${P5ARCH}/auto/Imager/File/PNG/PNG.so
 ${P5ARCH}/auto/Imager/File/SGI/
-${P5ARCH}/auto/Imager/File/SGI/SGI.bs
+@comment ${P5ARCH}/auto/Imager/File/SGI/SGI.bs
 ${P5ARCH}/auto/Imager/File/SGI/SGI.so
 ${P5ARCH}/auto/Imager/File/TIFF/
-${P5ARCH}/auto/Imager/File/TIFF/TIFF.bs
+@comment ${P5ARCH}/auto/Imager/File/TIFF/TIFF.bs
 ${P5ARCH}/auto/Imager/File/TIFF/TIFF.so
 ${P5ARCH}/auto/Imager/Filter/
 ${P5ARCH}/auto/Imager/Filter/DynTest/
-${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.bs
+@comment ${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.bs
 ${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.so
 ${P5ARCH}/auto/Imager/Filter/Flines/
-${P5ARCH}/auto/Imager/Filter/Flines/Flines.bs
+@comment ${P5ARCH}/auto/Imager/Filter/Flines/Flines.bs
 ${P5ARCH}/auto/Imager/Filter/Flines/Flines.so
 ${P5ARCH}/auto/Imager/Filter/Mandelbrot/
-${P5ARCH}/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
+@comment ${P5ARCH}/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
 ${P5ARCH}/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
 ${P5ARCH}/auto/Imager/Font/
 ${P5ARCH}/auto/Imager/Font/FT2/
-${P5ARCH}/auto/Imager/Font/FT2/FT2.bs
+@comment ${P5ARCH}/auto/Imager/Font/FT2/FT2.bs
 ${P5ARCH}/auto/Imager/Font/FT2/FT2.so
 ${P5ARCH}/auto/Imager/Font/T1/
-${P5ARCH}/auto/Imager/Font/T1/T1.bs
+@comment ${P5ARCH}/auto/Imager/Font/T1/T1.bs
 ${P5ARCH}/auto/Imager/Font/T1/T1.so
-${P5ARCH}/auto/Imager/Imager.bs
+@comment ${P5ARCH}/auto/Imager/Imager.bs
 ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager.3p
 @man man/man3p/Imager::API.3p

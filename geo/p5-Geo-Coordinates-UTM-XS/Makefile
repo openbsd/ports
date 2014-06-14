@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/06/14 23:25:21 sthen Exp $
 
 COMMENT=	C/XS reimplementation of Geo::Coordinates::UTM
 MODULES=	cpan
 SHARED_ONLY=	Yes
 DISTNAME=	Geo-Coordinates-UTM-XS-0.04
-REVISION=	2
+REVISION=	3
 CATEGORIES=	geo
 USE_GROFF =	Yes
 

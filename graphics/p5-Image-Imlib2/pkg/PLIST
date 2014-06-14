@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/08 13:00:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:25:21 sthen Exp $
 %%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Image/
@@ -6,5 +6,5 @@ ${P5ARCH}/Image/Imlib2.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Image/
 ${P5ARCH}/auto/Image/Imlib2/
-${P5ARCH}/auto/Image/Imlib2/Imlib2.bs
+@comment ${P5ARCH}/auto/Image/Imlib2/Imlib2.bs
 @man man/man3p/Image::Imlib2.3p

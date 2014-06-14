@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/14 22:44:13 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:21 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Geo/
 ${P5ARCH}/Geo/Coordinates/
@@ -9,6 +9,6 @@ ${P5ARCH}/auto/Geo/
 ${P5ARCH}/auto/Geo/Coordinates/
 ${P5ARCH}/auto/Geo/Coordinates/UTM/
 ${P5ARCH}/auto/Geo/Coordinates/UTM/XS/
-${P5ARCH}/auto/Geo/Coordinates/UTM/XS/XS.bs
+@comment ${P5ARCH}/auto/Geo/Coordinates/UTM/XS/XS.bs
 ${P5ARCH}/auto/Geo/Coordinates/UTM/XS/XS.so
 @man man/man3p/Geo::Coordinates::UTM::XS.3p

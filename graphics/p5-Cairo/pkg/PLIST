@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 14:24:01 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:21 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Cairo/
 ${P5ARCH}/Cairo.pm
@@ -11,6 +11,6 @@ ${P5ARCH}/Cairo/Install/cairo-perl.typemap
 ${P5ARCH}/Cairo/Install/doctypes
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Cairo/
-${P5ARCH}/auto/Cairo/Cairo.bs
+@comment ${P5ARCH}/auto/Cairo/Cairo.bs
 ${P5ARCH}/auto/Cairo/Cairo.so
 @man man/man3p/Cairo.3p

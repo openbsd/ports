@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/27 09:47:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/14 23:25:21 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Perl interface to the GooCanvas
 
 DISTNAME=		Goo-Canvas-0.06
+REVISION=		0
 
 CATEGORIES=		graphics
 

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/17 19:04:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:21 sthen Exp $
 ${P5ARCH}/Imager/QRCode.pm
 ${P5ARCH}/auto/Imager/QRCode/
-${P5ARCH}/auto/Imager/QRCode/QRCode.bs
+@comment ${P5ARCH}/auto/Imager/QRCode/QRCode.bs
 ${P5ARCH}/auto/Imager/QRCode/QRCode.so
 @man man/man3p/Imager::QRCode.3p
 share/examples/p5-Imager-QRCode/

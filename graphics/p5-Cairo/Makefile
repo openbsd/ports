@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/03/21 15:28:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/06/14 23:25:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Cairo-1.104
 CATEGORIES=	graphics devel
 CPAN_AUTHOR=	XAOC
+REVISION=	0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
