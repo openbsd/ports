@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_configure_ac,v 1.1 2014/06/15 20:20:34 sthen Exp $
+--- examples/configure.ac.orig	Fri Jan 10 21:04:41 2014
++++ examples/configure.ac	Thu Jun 12 19:44:27 2014
+@@ -207,6 +207,8 @@ case "$enable_dane" in
+       ;;
+ esac
+ 
++AC_CHECK_FUNCS(ENGINE_load_cryptodev)
++
+ LDFLAGS="$tmp_LDFLAGS"
+ LIBS="$tmp_LIBS"
+ 

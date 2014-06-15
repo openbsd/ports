@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2014/01/22 00:15:36 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2014/06/15 20:20:34 sthen Exp $
 
 VERSION=	1.6.17
 
@@ -14,7 +14,7 @@ MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE?=	gnu
 CONFIGURE_ENV+=		ac_cv_prog_doxygen= \
 			cv_prog_cc_flag_O2=
 
