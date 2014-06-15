@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/05/27 14:51:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/06/15 10:08:14 ajacoutot Exp $
+@comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
-@newuser _salt-master:722:722:daemon:Salt master Daemon:/nonexistent:/sbin/nologin
+@newuser _salt-master:722:722:daemon:Salt master Daemon:/srv/salt:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/salt/{master.d,minion.d,minion_id,pki}
 @extraunexec rm -rf /var/cache/salt
 @extraunexec rm -rf /var/log/salt
