@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/12 08:17:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/15 17:56:48 landry Exp $
 
 SHARED_ONLY =		Yes
 
@@ -26,6 +26,7 @@ WANTLIB += xcb-render xcb-shm z
 MASTER_SITES =		http://dl.hexchat.net/hexchat/
 
 MODULES =		devel/gettext \
+			textproc/intltool \
 			lang/python
 
 BUILD_DEPENDS =		devel/iso-codes
