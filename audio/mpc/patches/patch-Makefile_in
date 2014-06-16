@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2014/01/13 08:30:42 dcoppa Exp $
---- Makefile.in.orig	Sat Nov  9 20:09:11 2013
-+++ Makefile.in	Mon Jan 13 07:47:57 2014
-@@ -273,9 +273,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-Makefile_in,v 1.8 2014/06/16 09:35:16 jasper Exp $
+--- Makefile.in.orig	Tue May 13 08:33:48 2014
++++ Makefile.in	Tue Jun 10 13:27:28 2014
+@@ -331,9 +331,7 @@ top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4
  AUTOMAKE_OPTIONS = foreign 1.11 dist-xz
  man_MANS = doc/mpc.1
