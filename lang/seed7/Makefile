@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2014/06/01 14:05:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2014/06/16 01:01:42 bcallah Exp $
 
-V =		20140601
+V =		20140615
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
@@ -24,7 +24,7 @@ MAKE_FLAGS =	CC="${CC}" LDFLAGS="-Wl,--gc-sections -L${X11BASE}/lib"
 MAKE_ENV +=	S7_LIB_DIR=${TRUEPREFIX}/lib/seed7/bin \
 		SEED7_LIBRARY=${TRUEPREFIX}/lib/seed7/lib
 MAKE_FILE =	makefile
-ALL_TARGET =	depend s7 s7c
+ALL_TARGET =	depend s7 s7c make7
 
 CFLAGS +=	-I${X11BASE}/include
 
@@ -37,6 +37,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/s7{,c} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIST}/bin/make7 ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/seed7/bin
 	${INSTALL_DATA} ${WRKDIST}/bin/*.a ${PREFIX}/lib/seed7/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/seed7/lib
