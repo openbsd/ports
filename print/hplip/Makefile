@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2014/04/21 12:23:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2014/06/16 17:45:05 jca Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,7 @@ PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
 REVISION-main=		0
-REVISION-hpaio=		0
+REVISION-hpaio=		1
 REVISION-hpcups=	0
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
@@ -181,6 +181,12 @@ pre-configure:
 		${WRKSRC}/ui4/nodevicesdialog.py \
 		${WRKSRC}/ui/devmgr4.py \
 		${WRKSRC}/ui/nodevicesform.py
+	# grep for load_library
+	perl -pi -e 's/libhpmud\.so\.[0-9.]*/libhpmud.so/g;' \
+		 -e 's/libm\.so\.[0-9.]*/libm.so/g;' \
+	    ${WRKSRC}/scan/sane/marvell.c \
+	    ${WRKSRC}/scan/sane/soap.c \
+	    ${WRKSRC}/scan/sane/soapht.c
 
 post-install:
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/hplip.state \
