@@ -1,12 +1,24 @@
-$OpenBSD: patch-libnetutil_netutil_cc,v 1.5 2014/05/16 15:08:54 sthen Exp $
+$OpenBSD: patch-libnetutil_netutil_cc,v 1.6 2014/06/16 10:22:15 sthen Exp $
 
-chunks dealing with DLT_LINUX_SLL are to cope with non-bundled libpcap (not
-currently used). should probably be #ifdef DLT_LINUX_SLL and go upstream?
+first chunk:
+http://marc.info/?l=openbsd-ports&m=140284432321370&w=2
+
+similar diff to DLT_LINUX_SLL chunks sent upstream but they seem uninterested.
+http://marc.info/?l=nmap-dev&m=140179174718457&w=2
 
 chunks dealing with iovec: ???
 
 --- libnetutil/netutil.cc.orig	Thu Nov  7 19:32:33 2013
-+++ libnetutil/netutil.cc	Thu May 15 20:12:32 2014
++++ libnetutil/netutil.cc	Sun Jun 15 20:36:36 2014
+@@ -916,7 +916,7 @@ void set_ttl(int sd, int ttl) {
+ /* Other than WIN32, what these systems have in common is that they use BPF for
+    packet capture. (Solaris 10 and earlier used DLPI and had valid selectable
+    fds.) */
+-#if defined(WIN32) || defined(MACOSX) || (defined(FREEBSD) && (__FreeBSD_version < 500000) || defined(SOLARIS_BPF_PCAP_CAPTURE))
++#if defined(WIN32) || defined(MACOSX) || defined(OPENBSD) || (defined(FREEBSD) && (__FreeBSD_version < 500000) || defined(SOLARIS_BPF_PCAP_CAPTURE))
+ /* Returns whether the system supports pcap_get_selectable_fd() properly */
+ int pcap_selectable_fd_valid() {
+   return 0;
 @@ -3140,7 +3140,6 @@ static int route_dst_netlink(const struct sockaddr_sto
                               const struct sockaddr_storage *spoofss) {
    struct sockaddr_nl snl;
