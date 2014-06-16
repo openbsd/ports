@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/16 20:25:59 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,8 @@ LIB_DEPENDS=		graphics/png
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-tools \
-			--with-tests
+			--with-tests \
+			--with-sdl-prefix=/no
 CONFIGURE_ENV+= 	png_CFLAGS="`pkg-config --cflags libpng`" \
 			png_LIBS="`pkg-config --libs libpng`"
 
