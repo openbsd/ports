@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2014/06/05 11:11:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2014/06/16 11:54:44 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -17,7 +17,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-kde=	0
 
 EPOCH=		0
@@ -164,7 +164,7 @@ MODGCC4_LANGS=	c++
 MODULES+=	lang/python \
 		devel/gettext
 
-MODPY_VERSION=	3.3
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
