@@ -1,7 +1,10 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.8 2014/05/22 13:30:23 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.9 2014/06/16 23:14:15 brad Exp $
 
 r209432
 Use stack protector strong by default on OpenBSD
+
+r211075
+Use the integrated assembler by default on OpenBSD/powerpc
 
 --- tools/clang/lib/Driver/ToolChains.h.orig	Sun Mar  2 22:03:41 2014
 +++ tools/clang/lib/Driver/ToolChains.h	Fri Apr 18 17:14:52 2014
