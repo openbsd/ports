@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-ntlm,v 1.1 2012/11/28 17:45:29 sthen Exp $
-@conflict squid-<3
-@bin libexec/squid/basic_smb_auth
-libexec/squid/basic_smb_auth.sh
-libexec/squid/ext_wbinfo_group_acl
-@bin libexec/squid/ntlm_fake_auth
-@bin libexec/squid/ntlm_smb_lm_auth
-@man man/man8/ext_wbinfo_group_acl.8
