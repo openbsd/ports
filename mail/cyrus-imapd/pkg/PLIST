@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/06/14 10:34:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/06/16 15:08:43 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -71,11 +71,9 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/managesieve.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.so
 libexec/cyrus-imapd/
 @bin libexec/cyrus-imapd/arbitron
