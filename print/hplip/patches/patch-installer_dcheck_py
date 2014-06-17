@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_dcheck_py,v 1.6 2013/03/08 06:51:46 ajacoutot Exp $
---- installer/dcheck.py.orig	Wed Feb 13 17:35:01 2013
-+++ installer/dcheck.py	Fri Feb 22 15:56:24 2013
+$OpenBSD: patch-installer_dcheck_py,v 1.7 2014/06/17 08:51:18 ajacoutot Exp $
+--- installer/dcheck.py.orig	Tue Jun  3 08:31:24 2014
++++ installer/dcheck.py	Tue Jun 17 09:35:56 2014
 @@ -46,7 +46,7 @@ mod_output = ''
  def update_ld_output():
      # For library checks
@@ -19,15 +19,21 @@ $OpenBSD: patch-installer_dcheck_py,v 1.6 2013/03/08 06:51:46 ajacoutot Exp $
      log.debug("Searching for file '%s' in '%s'..." % (f, dir))
      for w in utils.walkFiles(dir, recurse=True, abs_paths=True, return_folders=False, pattern=f):
          log.debug("File found at '%s'" % w)
-@@ -361,9 +361,12 @@ def get_libpthread_version():
+@@ -361,12 +361,15 @@ def get_libpthread_version():
          return '-'
      else:
  #        LIBC = ctypes.CDLL(ctypes.util.find_library('c'), use_errno=True)
--        LIBC = ctypes.CDLL(ctypes.util.find_library('c'),ctypes.DEFAULT_MODE,None, True)
+-        try:
+-            LIBC = ctypes.CDLL(ctypes.util.find_library('c'),ctypes.DEFAULT_MODE,None, True)
+-        except:
+-            LIBC = ctypes.CDLL(ctypes.util.find_library('c'),ctypes.DEFAULT_MODE,None) #python2.4 and below syntax
 -        LIBC.gnu_get_libc_version.restype = ctypes.c_char_p
 -        return LIBC.gnu_get_libc_version()
 +        if sys.platform.startswith('linux'):
-+            LIBC = ctypes.CDLL(ctypes.util.find_library('c'),ctypes.DEFAULT_MODE,None, True)
++            try:
++                LIBC = ctypes.CDLL(ctypes.util.find_library('c'),ctypes.DEFAULT_MODE,None, True)
++            except:
++                LIBC = ctypes.CDLL(ctypes.util.find_library('c'),ctypes.DEFAULT_MODE,None) #python2.4 and below syntax
 +            LIBC.gnu_get_libc_version.restype = ctypes.c_char_p
 +            return LIBC.gnu_get_libc_version()
 +        else:

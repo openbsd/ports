@@ -1,0 +1,14 @@
+$OpenBSD: patch-logcapture_py,v 1.1 2014/06/17 08:51:18 ajacoutot Exp $
+--- logcapture.py.orig	Tue Jun 17 09:39:20 2014
++++ logcapture.py	Tue Jun 17 09:39:48 2014
+@@ -34,8 +34,8 @@ from base.g import *
+ from base import utils,tui,module, os_utils
+ from subprocess import Popen, PIPE
+ 
+-CUPS_FILE='/etc/cups/cupsd.conf'
+-CUPS_BACKUP_FILE='/etc/cups/cupsd.conf_orginal'
++CUPS_FILE='${SYSCONFDIR}/cups/cupsd.conf'
++CUPS_BACKUP_FILE='${SYSCONFDIR}/cups/cupsd.conf_orginal'
+ LOG_FOLDER_PATH='./'
+ LOG_FOLDER_NAME='hplip_troubleshoot_logs'
+ LOG_FILES=LOG_FOLDER_PATH + LOG_FOLDER_NAME

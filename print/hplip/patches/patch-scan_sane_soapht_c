@@ -1,0 +1,12 @@
+$OpenBSD: patch-scan_sane_soapht_c,v 1.1 2014/06/17 08:51:18 ajacoutot Exp $
+--- scan/sane/soapht.c.orig	Tue Jun 17 10:32:52 2014
++++ scan/sane/soapht.c	Tue Jun 17 10:33:11 2014
+@@ -62,7 +62,7 @@ static int bb_load(struct soap_session *ps, const char
+    int stat=1;
+ 
+    /* Load hpmud manually with symbols exported. Otherwise the plugin will not find it. */ 
+-   if ((ps->hpmud_handle = load_library("libhpmud.so.0")) == NULL)
++   if ((ps->hpmud_handle = load_library("libhpmud.so")) == NULL)
+    {
+ 	   if ((ps->hpmud_handle = load_library("libhpmud.so.0")) == NULL)
+            goto bugout;

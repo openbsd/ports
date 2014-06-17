@@ -1,6 +1,21 @@
-$OpenBSD: patch-base_utils_py,v 1.14 2014/01/23 11:43:31 ajacoutot Exp $
---- base/utils.py.orig	Wed Jan  8 10:32:57 2014
-+++ base/utils.py	Thu Jan 23 12:38:19 2014
+$OpenBSD: patch-base_utils_py,v 1.15 2014/06/17 08:51:18 ajacoutot Exp $
+--- base/utils.py.orig	Tue Jun  3 08:33:10 2014
++++ base/utils.py	Tue Jun 17 09:40:41 2014
+@@ -134,11 +134,11 @@ for s in EXPECT_WORD_LIST:
+ def get_cups_systemgroup_list():
+     lis = []
+     try:
+-        fp=open('/etc/cups/cupsd.conf')
++        fp=open('${SYSCONFDIR}/cups/cupsd.conf')
+     except IOError:
+         try:
+-            if "root" != grp.getgrgid(os.stat('/etc/cups/cupsd.conf').st_gid).gr_name:
+-                return [grp.getgrgid(os.stat('/etc/cups/cupsd.conf').st_gid).gr_name]
++            if "root" != grp.getgrgid(os.stat('${SYSCONFDIR}/cups/cupsd.conf').st_gid).gr_name:
++                return [grp.getgrgid(os.stat('${SYSCONFDIR}/cups/cupsd.conf').st_gid).gr_name]
+         except OSError:
+             return lis
+ 
 @@ -575,7 +575,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'

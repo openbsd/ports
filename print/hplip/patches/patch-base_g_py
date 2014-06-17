@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_g_py,v 1.9 2013/10/15 14:20:59 ajacoutot Exp $
---- base/g.py.orig	Fri Oct 11 11:40:14 2013
-+++ base/g.py	Tue Oct 15 15:42:07 2013
+$OpenBSD: patch-base_g_py,v 1.10 2014/06/17 08:51:18 ajacoutot Exp $
+--- base/g.py.orig	Tue Jun  3 08:33:10 2014
++++ base/g.py	Tue Jun 17 09:32:14 2014
 @@ -145,7 +145,7 @@ class ConfigBase(object):
  
  class SysConfig(ConfigBase):
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_g_py,v 1.9 2013/10/15 14:20:59 ajacoutot Exp $
  
  
  class UserConfig(ConfigBase):
-@@ -251,9 +251,9 @@ prop.max_message_len = 8192
+@@ -246,9 +246,9 @@ prop.max_message_len = 8192
  prop.max_message_read = 65536
  prop.read_timeout = 90
  

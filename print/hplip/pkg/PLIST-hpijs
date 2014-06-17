@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.37 2014/04/13 07:47:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.38 2014/06/17 08:51:18 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -172,6 +172,7 @@ share/foomatic/db/source/PPD/HP/hp-designjet_4500mfp.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_4500ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_4520mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_4520ps-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_d5800-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1100ps_24in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1100ps_44in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1120ps_24in-ps.ppd.gz
@@ -181,8 +182,10 @@ share/foomatic/db/source/PPD/HP/hp-designjet_t1300_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1500-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t2300_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t2500-postscript.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_t3500-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t7100ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t7100ps_monochrome-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_t7200-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t770_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t770ps_24in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t790ps_24in-ps.ppd.gz
@@ -195,6 +198,7 @@ share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_42in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6200_42in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6200_60in_photo-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_z6800_photo-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1000_j110_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1010_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1050_j410_series-hpijs.ppd.gz
@@ -811,6 +815,8 @@ share/foomatic/db/source/PPD/HP/hp-officejet_pro_8600-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8610-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8620-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8630-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_pro_8640-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_pro_8660-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_k5300-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_k5400-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_k550-hpijs.ppd.gz
