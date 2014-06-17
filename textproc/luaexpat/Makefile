@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/06/17 16:08:24 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		lua library for the expat XML parser
-DISTNAME =		luaexpat-1.2.0
-REVISION =		2
+DISTNAME =		luaexpat-1.3.0
 
 CATEGORIES =		textproc
 HOMEPAGE =		http://matthewwild.co.uk/projects/luaexpat/
@@ -21,9 +20,8 @@ MODLUA_TEST_DEPENDS =	textproc/luaexpat
 
 REGRESS_FILES =		test-lom test
 
-MAKE_FLAGS+=		LUA_INC="${MODLUA_INCL_DIR}"
+MAKE_FLAGS+=		LUA_INC="-I${MODLUA_INCL_DIR}"
 USE_GMAKE =		Yes
-MAKE_FILE =		makefile
 ALL_TARGET =		lib
 
 LUA = 			${MODLUA_BIN}
