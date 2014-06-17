@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/09 11:51:33 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/17 10:14:41 jasper Exp $
 bin/gunicorn
 bin/gunicorn_django
 bin/gunicorn_paster
@@ -64,6 +64,8 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/run_gunico
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/commands/run_gunicorn.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/reloader.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/reloader.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/six.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/six.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/sock.py
@@ -77,10 +79,13 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/async.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/async.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gaiohttp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/geventlet.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/geventlet.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/ggevent.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/ggevent.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gthread.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gthread.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gtornado.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gtornado.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/sync.py
