@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_master,v 1.3 2014/05/27 14:12:43 ajacoutot Exp $
+$OpenBSD: patch-conf_master,v 1.4 2014/06/17 12:30:39 ajacoutot Exp $
 --- conf/master.orig	Mon May  5 18:47:41 2014
 +++ conf/master	Tue May 27 15:52:13 2014
 @@ -24,7 +24,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-conf_master,v 1.3 2014/05/27 14:12:43 ajacoutot Exp $
  # the job cache, which must be deleted if this user is changed.  If the
  # modified files cause conflicts set verify_env to False.
 -#user: root
-+user: _salt-master
++user: _salt
  
  # Max open files
  # Each minion connecting to the master uses AT LEAST one file descriptor, the

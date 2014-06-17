@@ -1,15 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: salt_syndic.rc,v 1.1 2014/05/27 14:12:43 ajacoutot Exp $
+# $OpenBSD: salt_syndic.rc,v 1.2 2014/06/17 12:30:39 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/salt-syndic -d"
-daemon_flags="-u _salt-master"
+daemon_flags="-u _salt"
 
 . /etc/rc.d/rc.subr
-
-rc_pre() {
-	install -o _salt-master -d /var/run/salt/
-}
 
 pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
