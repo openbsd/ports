@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/06/17 12:30:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/06/17 13:16:15 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L37
@@ -39,6 +39,8 @@ RUN_DEPENDS =		net/py-msgpack \
 			textproc/py-yaml \
 			www/py-jinja2
 
+# for tests
+PORTHOME =		${WRKDIST}
 TEST_DEPENDS =		devel/py-pip \
 			sysutils/salt-testing
 
@@ -50,7 +52,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/!(*.orig) \
 		${PREFIX}/share/examples/salt/
 
-# FAILED (total=816, skipped=179, passed=612, failures=16, errors=9)
+# FAILED (total=815, skipped=186, passed=590, failures=31, errors=8)
 do-test:
 	ln -sf ${LOCALBASE}/bin/pip-${MODPY_VERSION} ${WRKDIR}/bin/pip
 	@${MODPY_TEST_TARGET}
