@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/18 14:03:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/17 13:16:44 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/SaltTesting-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/salttesting/
 lib/python${MODPY_VERSION}/site-packages/salttesting/__init__.py
@@ -26,6 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/parser/cover.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/flask_sqlalchemy_transform.py
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/flask_sqlalchemy_transform.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep263.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep263.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep8.py
@@ -38,3 +40,5 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/unit.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/unit.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/version.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/version.pyc
+lib/python${MODPY_VERSION}/site-packages/salttesting/xmlunit.py
+lib/python${MODPY_VERSION}/site-packages/salttesting/xmlunit.pyc
