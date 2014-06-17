@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetboard.rc,v 1.1 2013/12/27 11:06:33 jasper Exp $
+# $OpenBSD: puppetboard.rc,v 1.2 2014/06/17 11:55:11 jasper Exp $
 
 daemon="puppetboard_wsgi"
 daemon_flags="--workers 4"
 
 . /etc/rc.d/rc.subr
 
-pexp="python${MODPY_VERSION}:.*${daemon}:application"
+pexp="${MODPY_BIN}.*${daemon}:application"
 
 rc_start() {
 	${rcexec} "cd ${INSTDIR} && \
