@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+$OpenBSD: README,v 1.2 2014/06/17 23:57:29 bcallah Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,9 +10,9 @@ Installing the Game Data
 To play Hexen2 you need the pak files (pak*.pak) from the original game.
 After obtaining them, copy them into ${TRUEPREFIX}/share/uhexen2/data1.
 
-If you pak files need to be patched, then run the `h2patch` tool.
+If your pak files need to be patched, then run the `h2patch` tool.
 
 Starting the Game
 =================
 
-Type `glhexen2` or `h2launcher`.
+Type `glhexen2` or `hexen2` or `h2launcher`.

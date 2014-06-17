@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/17 23:57:29 bcallah Exp $
 bin/glhexen2
 bin/glhwcl
 bin/h2ded
 bin/h2launcher
 bin/h2patch
+bin/hexen2
+bin/hwcl
 bin/hwmaster
 bin/hwmquery
 bin/hwrcon
@@ -63,9 +65,10 @@ share/uhexen2/data1/strings.txt
 @bin share/uhexen2/h2ded
 @bin share/uhexen2/h2launcher
 @bin share/uhexen2/h2patch
-share/uhexen2/hexen2
+@bin share/uhexen2/hexen2
 share/uhexen2/hexen2.png
 share/uhexen2/hexen2.svga
+@bin share/uhexen2/hwcl
 @bin share/uhexen2/hwmaster
 @bin share/uhexen2/hwmquery
 @bin share/uhexen2/hwrcon

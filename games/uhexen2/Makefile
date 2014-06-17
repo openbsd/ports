@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/07 13:36:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/17 23:57:29 bcallah Exp $
 
 COMMENT =		Hexen II: Hammer of Thyrion
 
@@ -6,7 +6,7 @@ V =			1.5.6
 DISTNAME =		hexen2source-${V}
 PKGNAME =		uhexen2-${V}
 EXTRACT_SUFX =		.tgz
-REVISION =		0
+REVISION =		1
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			hexen2-${V}-linux-i586.tgz
 
@@ -40,9 +40,13 @@ MAKE_FLAGS +=		CC=${CC}
 
 DOMAKE =		${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 do-build:
+	cd ${WRKBUILD}/engine/hexen2 && ${DOMAKE} h2
+	cd ${WRKBUILD}/engine/hexen2 && ${DOMAKE} clean
 	cd ${WRKBUILD}/engine/hexen2 && ${DOMAKE} glh2
 	cd ${WRKBUILD}/engine/hexen2/server && ${DOMAKE}
 	cd ${WRKBUILD}/engine/hexenworld/server && ${DOMAKE}
+	cd ${WRKBUILD}/engine/hexenworld/client && ${DOMAKE} hw
+	cd ${WRKBUILD}/engine/hexenworld/client && ${DOMAKE} clean
 	cd ${WRKBUILD}/engine/hexenworld/client && ${DOMAKE} glhw
 	cd ${WRKBUILD}/launcher && ${DOMAKE}
 	cd ${WRKBUILD}/h2patch && ${DOMAKE}
@@ -50,8 +54,10 @@ do-build:
 	cd ${WRKBUILD}/hw_utils/hwmquery && ${DOMAKE}
 	cd ${WRKBUILD}/hw_utils/hwrcon && ${DOMAKE}
 
-BINS =	engine/hexen2/glhexen2 \
+BINS =	engine/hexen2/hexen2 \
+	engine/hexen2/glhexen2 \
 	engine/hexen2/server/h2ded \
+	engine/hexenworld/client/hwcl \
 	engine/hexenworld/client/glhwcl \
 	engine/hexenworld/server/hwsv \
 	launcher/h2launcher \
