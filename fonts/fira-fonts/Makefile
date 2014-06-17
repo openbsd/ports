@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/27 20:47:10 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/17 17:47:23 juanfra Exp $
 
 COMMENT =		Firefox OS typeface
 
-# Version 3.1
-DISTNAME =		fira-fonts-20140527
+# Version 3.1.8
+DISTNAME =		fira-fonts-20140605
 
 CATEGORIES =		fonts x11
 
-# Alternative homepage http://dev.carrois.com/fira-3-1/
+# Alternative homepage http://www.carrois.com/fira-3-1/
 HOMEPAGE =		https://mozilla.github.io/Fira/
 
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
@@ -25,19 +25,13 @@ NO_TEST =		Yes
 PKG_ARCH =		*
 
 FONTS_DIR =		${PREFIX}/lib/X11/fonts/fira
-DOCS_DIR =		${PREFIX}/share/doc/fira-fonts
 WEBFONTS_DIR =		${PREFIX}/share/fira-fonts
 
 do-install:
-	${INSTALL_DATA_DIR} ${FONTS_DIR} ${DOCS_DIR} \
-		${WEBFONTS_DIR}/eot ${WEBFONTS_DIR}/woff
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/fira.css ${DOCS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/otf/* ${FONTS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf/* ${FONTS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/eot/* ${WEBFONTS_DIR}/eot
-	${INSTALL_DATA} ${WRKSRC}/woff/* ${WEBFONTS_DIR}/woff
+	${INSTALL_DATA_DIR} ${FONTS_DIR} ${WEBFONTS_DIR}/webfonts
+	@echo 'This directory contains the web version of the Fira typeface' >\
+		${WEBFONTS_DIR}/README
+	${INSTALL_DATA} ${WRKSRC}/OTF/* ${FONTS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/WEB/* ${WEBFONTS_DIR}/webfonts
 
 .include <bsd.port.mk>
