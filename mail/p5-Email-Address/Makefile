@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/09 15:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2014/06/18 11:18:32 sthen Exp $
 
-COMMENT=	RFC 2822 Address Parsing and Creation
+COMMENT=	RFC 2822 address parsing and creation
 
 MODULES=	cpan
-DISTNAME=	Email-Address-1.898
+DISTNAME=	Email-Address-1.905
 CATEGORIES=	mail
 
-MAINTAINER=	Sam Smith <s@msmith.net>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-# Same as Perl
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 .include <bsd.port.mk>
