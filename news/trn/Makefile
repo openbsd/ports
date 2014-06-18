@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/06/18 21:27:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2014/06/18 14:23:36 naddy Exp $
 
 COMMENT=	threaded newsreader
 
@@ -26,6 +26,7 @@ SEPARATE_BUILD=Yes
 
 pre-configure: 
 	cp ${FILESDIR}/openbsd-hints ${WRKSRC}/hints/openbsd.sh
+	ln -s /usr/bin/true ${WRKDIR}/bin/nroff
 
 FAKE_FLAGS= \
 	rnbin=${WRKINST}${PREFIX}/bin \
