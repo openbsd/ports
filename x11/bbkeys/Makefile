@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/06/18 01:16:56 william Exp $
 
 COMMENT=	X keygrabber for blackbox
 
 DISTNAME=	bbkeys-0.9.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bbkeys/}
 
 HOMEPAGE=	http://bbkeys.sourceforge.net/
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
