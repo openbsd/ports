@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Mail_DKIM_Verifier_pm,v 1.1 2014/06/18 01:03:52 william Exp $
+
+Don't choke on addresses with no domain, like "From: root".
+
+
+--- lib/Mail/DKIM/Verifier.pm.orig	Fri Jun 13 13:37:17 2014
++++ lib/Mail/DKIM/Verifier.pm	Fri Jun 13 13:38:31 2014
+@@ -566,7 +566,8 @@ sub fetch_author_domain_policies
+ 	my $self = shift;
+ 	use Mail::DKIM::AuthorDomainPolicy;
+ 
+-	return () unless $self->{headers_by_name}->{from};
++	return () unless ($self->{headers_by_name}->{from} &&
++	    $self->{headers_by_name}->{from} =~ /\@/);
+ 	my @list = Mail::Address->parse(
+ 		$self->{headers_by_name}->{from}
+ 		);
