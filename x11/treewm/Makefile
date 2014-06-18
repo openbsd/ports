@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/06/18 01:17:22 william Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/} \
-			http://openbsd.rutgers.edu/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/}
 
 HOMEPAGE=		http://treewm.sourceforge.net/
 
-MAINTAINER=		William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=		William Yodlowsky <william@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
