@@ -1,12 +1,15 @@
-$OpenBSD: patch-uip_rcvtty_c,v 1.1 2013/01/02 04:19:55 william Exp $
+$OpenBSD: patch-uip_rcvtty_c,v 1.2 2014/06/18 05:51:47 pascal Exp $
 
 Upstream no longer supports utmp...
 http://git.savannah.gnu.org/cgit/nmh.git/patch/?id=7ba29497ff3f164e2a507eda35e81f1cb0658c74
 
+Backout recent breakage...
+http://git.savannah.gnu.org/cgit/nmh.git/patch/?id=6443ed24f6c3b41186636a0b0fea93ebe9452047
 
---- uip/rcvtty.c.orig	Mon Jun 11 00:06:19 2012
-+++ uip/rcvtty.c	Tue Jan  1 18:11:37 2013
-@@ -24,6 +24,8 @@
+
+--- uip/rcvtty.c.orig	Mon Apr 14 13:41:27 2014
++++ uip/rcvtty.c	Wed Apr 16 07:59:10 2014
+@@ -23,6 +23,8 @@
  
  #ifdef HAVE_GETUTXENT
  #include <utmpx.h>
@@ -15,7 +18,17 @@ http://git.savannah.gnu.org/cgit/nmh.git/patch/?id=7ba29497ff3f164e2a507eda35e81
  #endif /* HAVE_GETUTXENT */
  
  #define	SCANFMT	\
-@@ -83,7 +85,12 @@ main (int argc, char **argv)
+@@ -69,9 +71,7 @@ char *getusername(void);
+ static void alrmser (int);
+ static int message_fd (char **);
+ static int header_fd (void);
+-#if HAVE_GETUTXENT
+ static void alert (char *, int);
+-#endif /* HAVE_GETUTXENT */
+ 
+ 
+ int
+@@ -80,7 +80,12 @@ main (int argc, char **argv)
      int md, vecp = 0;
      char *cp, *user, buf[BUFSIZ], tty[BUFSIZ];
      char **argp, **arguments, *vec[MAXARGS];
@@ -25,14 +38,15 @@ http://git.savannah.gnu.org/cgit/nmh.git/patch/?id=7ba29497ff3f164e2a507eda35e81
 +    struct utmp ut;
 +    register FILE *uf;
 +#endif
- #ifdef LOCALE
-     setlocale(LC_ALL, "");
- #endif
-@@ -169,6 +176,16 @@ main (int argc, char **argv)
-         }
+ 
+     if (nmh_init(argv[0], 1)) { return 1; }
+ 
+@@ -162,8 +167,15 @@ main (int argc, char **argv)
      }
      endutxent();
-+#else
+ #else
+-    NMH_UNUSED (tty);
+-    NMH_UNUSED (utp);
 +    if ((uf = fopen (_PATH_UTMP, "r")) == NULL)
 +       exit (RCV_MBX);
 +    while (fread ((char *) &ut, sizeof(ut), 1, uf) == 1)
@@ -45,3 +59,16 @@ http://git.savannah.gnu.org/cgit/nmh.git/patch/?id=7ba29497ff3f164e2a507eda35e81
  #endif /* HAVE_GETUTXENT */
  
      exit (RCV_MOK);
+@@ -274,7 +286,6 @@ header_fd (void)
+ }
+ 
+ 
+-#if HAVE_GETUTXENT
+ static void
+ alert (char *tty, int md)
+ {
+@@ -312,4 +323,3 @@ alert (char *tty, int md)
+ 
+     close (td);
+ }
+-#endif /* HAVE_GETUTXENT */

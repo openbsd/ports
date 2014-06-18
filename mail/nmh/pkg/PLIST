@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/06/18 16:03:00 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/06/18 05:51:47 pascal Exp $
 @bin bin/ali
 @bin bin/anno
 @bin bin/burst
@@ -6,6 +6,7 @@
 @bin bin/dist
 @bin bin/flist
 @bin bin/flists
+@bin bin/fmttest
 @bin bin/fnext
 @bin bin/folder
 @bin bin/folders
@@ -15,8 +16,9 @@
 @bin bin/install-mh
 @bin bin/mark
 @bin bin/mhbuild
+@bin bin/mhfixmsg
 @bin bin/mhlist
-@bin bin/mhmail
+bin/mhmail
 @bin bin/mhn
 @bin bin/mhparam
 @bin bin/mhpath
@@ -56,6 +58,7 @@ lib/nmh/mhl.forward
 lib/nmh/mhl.headers
 lib/nmh/mhl.reply
 lib/nmh/mhn.defaults
+lib/nmh/mhshow.marker
 lib/nmh/mts.conf
 lib/nmh/rcvdistcomps
 lib/nmh/rcvdistcomps.outbox
@@ -63,7 +66,9 @@ lib/nmh/replcomps
 lib/nmh/replgroupcomps
 lib/nmh/scan.MMDDYY
 lib/nmh/scan.YYYYMMDD
+lib/nmh/scan.curses
 lib/nmh/scan.default
+lib/nmh/scan.highlighted
 lib/nmh/scan.mailx
 lib/nmh/scan.nomime
 lib/nmh/scan.size
@@ -76,13 +81,14 @@ lib/nmh/scan.unseen
 @bin libexec/fmtdump
 @bin libexec/mhl
 @bin libexec/mhtest
+@bin libexec/mkstemp
 @bin libexec/post
 @bin libexec/rcvdist
 @bin libexec/rcvpack
 @bin libexec/rcvstore
 @bin libexec/rcvtty
 @bin libexec/slocal
-@bin libexec/spost
+libexec/spost
 @bin libexec/viamail
 @man man/man1/ali.1
 @man man/man1/anno.1
@@ -91,6 +97,7 @@ lib/nmh/scan.unseen
 @man man/man1/dist.1
 @man man/man1/flist.1
 @man man/man1/flists.1
+@man man/man1/fmttest.1
 @man man/man1/fnext.1
 @man man/man1/folder.1
 @man man/man1/folders.1
@@ -99,8 +106,9 @@ lib/nmh/scan.unseen
 @man man/man1/inc.1
 @man man/man1/install-mh.1
 @man man/man1/mark.1
-@man man/man1/mh-chart.1
+@man man/man1/mh-mkstemp.1
 @man man/man1/mhbuild.1
+@man man/man1/mhfixmsg.1
 @man man/man1/mhl.1
 @man man/man1/mhlist.1
 @man man/man1/mhmail.1
@@ -113,7 +121,6 @@ lib/nmh/scan.unseen
 @man man/man1/msh.1
 @man man/man1/new.1
 @man man/man1/next.1
-@man man/man1/nmh.1
 @man man/man1/packf.1
 @man man/man1/pick.1
 @man man/man1/prev.1
@@ -137,6 +144,7 @@ lib/nmh/scan.unseen
 @man man/man1/whom.1
 @man man/man5/mh-alias.5
 @man man/man5/mh-draft.5
+@man man/man5/mh-folders.5
 @man man/man5/mh-format.5
 @man man/man5/mh-mail.5
 @man man/man5/mh-profile.5
@@ -144,6 +152,9 @@ lib/nmh/scan.unseen
 @man man/man5/mh-tailor.5
 @man man/man5/mh_profile.5
 @man man/man5/mts.conf.5
+@man man/man7/mh-chart.7
+@man man/man7/mh-mime.7
+@man man/man7/nmh.7
 @man man/man8/ap.8
 @man man/man8/conflict.8
 @man man/man8/dp.8
@@ -164,6 +175,7 @@ share/doc/nmh/README
 share/doc/nmh/README-ATTACHMENTS
 share/doc/nmh/README-HOOKS
 share/doc/nmh/README-components
+share/doc/nmh/README-iCalendar
 share/doc/nmh/README.SASL
 share/doc/nmh/README.about
 share/doc/nmh/README.developers
@@ -172,5 +184,6 @@ share/doc/nmh/TODO
 share/doc/nmh/VERSION
 share/doc/nmh/contrib/
 share/doc/nmh/contrib/build_nmh
-share/doc/nmh/contrib/nmh.spec
+share/doc/nmh/contrib/ml
 share/doc/nmh/contrib/replyfilter
+share/doc/nmh/contrib/vpick

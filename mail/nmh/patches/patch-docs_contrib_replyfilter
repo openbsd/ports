@@ -1,16 +1,17 @@
-$OpenBSD: patch-docs_contrib_replyfilter,v 1.1 2012/06/18 16:03:00 pascal Exp $
---- docs/contrib/replyfilter.orig	Mon Jun 11 19:35:27 2012
-+++ docs/contrib/replyfilter	Mon Jun 11 19:37:26 2012
-@@ -71,8 +71,10 @@ $maxcolwidth = 78;
- # Out HTML converter program & arguments
+$OpenBSD: patch-docs_contrib_replyfilter,v 1.2 2014/06/18 05:51:47 pascal Exp $
+--- docs/contrib/replyfilter.orig	Thu Apr 17 06:00:44 2014
++++ docs/contrib/replyfilter	Mon Jun 16 10:04:04 2014
+@@ -76,8 +76,11 @@ $maxcolwidth = 78;
+ # Out HTML converter program & arguments. charset will be appended
  #
  
 -@htmlconv = ('w3m', '-dump', '-cols', $maxcolwidth - 2, '-T', 'text/html',
--	     '-O', $outcharset);
+-	     '-O', $outcharset, '-I');
 +#@htmlconv = ('w3m', '-dump', '-cols', $maxcolwidth - 2, '-T', 'text/html',
-+#	     '-O', $outcharset);
++#	     '-O', $outcharset, '-I');
 +@htmlconv = ('lynx', '-stdin', '-dump', '-force_html', '-nolist',
 +	     '-width', $maxcolwidth - 2, '-display_charset', $outcharset);
++
  
  
  die "Usage: $0 Content-type content-transfer-encoding quote-prefix\n"

@@ -1,20 +1,19 @@
-$OpenBSD: patch-configure,v 1.1 2012/06/18 16:03:00 pascal Exp $
---- configure.orig	Mon Jun 11 13:46:28 2012
-+++ configure	Mon Jun 11 14:03:30 2012
-@@ -7122,7 +7122,6 @@ fi
+$OpenBSD: patch-configure,v 1.2 2014/06/18 05:51:47 pascal Exp $
+--- configure.orig	Sun Jun 15 22:34:17 2014
++++ configure	Mon Jun 16 10:04:04 2014
+@@ -6181,7 +6181,6 @@ fi
  
- if test x"$with_readline" = xyes -o x"$with_readline" = xmaybe; then
+ if test x"$with_readline" = xyes -o x"$with_readline" = xmaybe; then :
    save_LIBS="$LIBS"
 -    LIBS=
-     { echo "$as_me:$LINENO: checking for library containing readline" >&5
- echo $ECHO_N "checking for library containing readline... $ECHO_C" >&6; }
- if test "${ac_cv_search_readline+set}" = set; then
-@@ -7151,7 +7150,8 @@ return readline ();
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing readline" >&5
+ $as_echo_n "checking for library containing readline... " >&6; }
+ if ${ac_cv_search_readline+:} false; then :
+@@ -6206,7 +6205,7 @@ return readline ();
    return 0;
  }
  _ACEOF
 -for ac_lib in '' readline editline; do
-+
 +for ac_lib in '' edit readline editline; do
    if test -z "$ac_lib"; then
      ac_res="none required"
