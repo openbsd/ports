@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/27 19:05:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2014/06/18 23:52:56 bcallah Exp $
 
 COMMENT=	translate common internet acronyms
 
-DISTNAME=	wtf-20140525
+DISTNAME=	wtf-20140614
 CATEGORIES=	games
 
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
