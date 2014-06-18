@@ -1,0 +1,24 @@
+$OpenBSD: patch-xsel_c,v 1.1 2014/06/18 20:49:15 matthew Exp $
+
+Format "32" properties use "long", not "int", even on LP64 platforms.
+
+--- xsel.c.orig	Wed Jun 18 12:42:56 2014
++++ xsel.c	Wed Jun 18 12:43:16 2014
+@@ -630,7 +630,7 @@ wait_selection (Atom selection, Atom request_target)
+         } else if (target == incr_atom) {
+           /* Handle INCR transfers */
+           retval = wait_incr_selection (selection, &event.xselection,
+-                                        *(int *)value);
++                                        *(long *)value);
+           keep_waiting = False;
+         } else if (target != utf8_atom && target != XA_STRING &&
+                    target != compound_text_atom &&
+@@ -1165,7 +1165,7 @@ change_property (Display * display, Window requestor, 
+                  Atom selection, Time time, MultTrack * mparent)
+ {
+   XSelectionEvent ev;
+-  int nr_bytes;
++  long nr_bytes;
+   IncrTrack * it;
+ 
+   print_debug (D_TRACE, "change_property ()");
