@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2014/06/19 23:24:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/06/19 23:33:09 sthen Exp $
+@newgroup _icinga:667
+@newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nolog
+@comment done this way (rather than SYSCONFDIR/*) for safety...
+@extraunexec rm -rf ${SYSCONFDIR}/icinga/etc*
+@extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/log/icinga2/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/run/icinga2/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/spool/icinga2/*
 bin/icinga2-build-ca
 bin/icinga2-build-key
 bin/icinga2-sign-key
@@ -48,56 +56,103 @@ share/doc/icinga2/markdown/6-configuring-icinga-2.md
 share/doc/icinga2/markdown/7-troubleshooting.md
 share/doc/icinga2/markdown/8-migration.md
 share/doc/icinga2/markdown/9-appendix.md
-@comment XXX needs sampling into SYSCONFDIR
 share/examples/icinga2/
+@sample ${SYSCONFDIR}/icinga2/
 share/examples/icinga2/conf.d/
+@sample ${SYSCONFDIR}/icinga2/conf.d/
 share/examples/icinga2/conf.d/commands.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/commands.conf
 share/examples/icinga2/conf.d/downtimes.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/downtimes.conf
 share/examples/icinga2/conf.d/groups.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/groups.conf
 share/examples/icinga2/conf.d/hosts/
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/
 share/examples/icinga2/conf.d/hosts/localhost/
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/
 share/examples/icinga2/conf.d/hosts/localhost.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost.conf
 share/examples/icinga2/conf.d/hosts/localhost/disk.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/disk.conf
 share/examples/icinga2/conf.d/hosts/localhost/http.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/http.conf
 share/examples/icinga2/conf.d/hosts/localhost/icinga.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/icinga.conf
 share/examples/icinga2/conf.d/hosts/localhost/load.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/load.conf
 share/examples/icinga2/conf.d/hosts/localhost/procs.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/procs.conf
 share/examples/icinga2/conf.d/hosts/localhost/ssh.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/ssh.conf
 share/examples/icinga2/conf.d/hosts/localhost/swap.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/swap.conf
 share/examples/icinga2/conf.d/hosts/localhost/users.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/hosts/localhost/users.conf
 share/examples/icinga2/conf.d/notifications.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/notifications.conf
 share/examples/icinga2/conf.d/services.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/services.conf
 share/examples/icinga2/conf.d/templates.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/templates.conf
 share/examples/icinga2/conf.d/timeperiods.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/timeperiods.conf
 share/examples/icinga2/conf.d/users.conf
+@sample ${SYSCONFDIR}/icinga2/conf.d/users.conf
 share/examples/icinga2/constants.conf
+@sample ${SYSCONFDIR}/icinga2/constants.conf
 share/examples/icinga2/features-available/
+@sample ${SYSCONFDIR}/icinga2/features-available/
 share/examples/icinga2/features-available/api.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/api.conf
 share/examples/icinga2/features-available/checker.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/checker.conf
 share/examples/icinga2/features-available/command.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/command.conf
 share/examples/icinga2/features-available/compatlog.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/compatlog.conf
 share/examples/icinga2/features-available/debuglog.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/debuglog.conf
 share/examples/icinga2/features-available/graphite.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/graphite.conf
 share/examples/icinga2/features-available/icingastatus.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/icintastatus.conf
 share/examples/icinga2/features-available/livestatus.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/livestatus.conf
 share/examples/icinga2/features-available/mainlog.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/mainlog.conf
 share/examples/icinga2/features-available/notification.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/notification.conf
 share/examples/icinga2/features-available/perfdata.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/perfdata.conf
 share/examples/icinga2/features-available/statusdata.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/statusdata.conf
 share/examples/icinga2/features-available/syslog.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/syslog.conf
 share/examples/icinga2/features-enabled/
+@sample ${SYSCONFDIR}/icinga2/features-enabled/
 share/examples/icinga2/features-enabled/checker.conf
+@sample ${SYSCONFDIR}/icinga2/features-enabled/checker.conf
 share/examples/icinga2/features-enabled/mainlog.conf
+@sample ${SYSCONFDIR}/icinga2/features-enabled/mainlog.conf
 share/examples/icinga2/features-enabled/notification.conf
+@sample ${SYSCONFDIR}/icinga2/features-enabled/notification.conf
 share/examples/icinga2/icinga2.conf
+@sample ${SYSCONFDIR}/icinga2/icinga2.conf
 share/examples/icinga2/pki/
+@sample ${SYSCONFDIR}/icinga2/pki/
 share/examples/icinga2/scripts/
+@sample ${SYSCONFDIR}/icinga2/scripts/
 share/examples/icinga2/scripts/mail-host-notification.sh
+@sample ${SYSCONFDIR}/icinga2/scripts/mail-host-notification.sh
 share/examples/icinga2/scripts/mail-service-notification.sh
+@sample ${SYSCONFDIR}/icinga2/scripts/mail-service-notification.sh
 @comment share/examples/icinga2/sysconfig
 share/examples/icinga2/zones.conf
+@sample ${SYSCONFDIR}/icinga2/zones.conf
 share/examples/icinga2/zones.d/
+@sample ${SYSCONFDIR}/icinga2/zones.d/
 share/examples/icinga2/zones.d/README
+@sample ${SYSCONFDIR}/icinga2/zones.d/README
 @comment share/examples/init.d/
 @comment share/examples/init.d/icinga2
 @comment share/examples/logrotate.d/
@@ -115,7 +170,9 @@ share/icinga2/pki/openssl-quiet.cnf
 share/icinga2/pki/openssl.cnf
 share/icinga2/pki/pkifuncs
 share/icinga2/pki/vars
-@comment XXX permissions
+@mode 755
+@owner _icinga
+@group _icinga
 @sample ${LOCALSTATEDIR}/cache/icinga2/
 @sample ${LOCALSTATEDIR}/lib/
 @sample ${LOCALSTATEDIR}/lib/icinga2/
@@ -131,3 +188,7 @@ share/icinga2/pki/vars
 @sample ${LOCALSTATEDIR}/spool/icinga2/
 @sample ${LOCALSTATEDIR}/spool/icinga2/perfdata/
 @sample ${LOCALSTATEDIR}/spool/icinga2/tmp/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/icinga2

@@ -1,0 +1,9 @@
+$OpenBSD: patch-etc_icinga2_scripts_mail-service-notification_sh,v 1.1 2014/06/19 23:33:09 sthen Exp $
+--- etc/icinga2/scripts/mail-service-notification.sh.orig	Thu Jun 19 14:51:56 2014
++++ etc/icinga2/scripts/mail-service-notification.sh	Thu Jun 19 14:52:03 2014
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/ksh
+ template=$(cat <<TEMPLATE
+ ***** Icinga  *****
+ 

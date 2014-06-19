@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_icinga2_constants_conf,v 1.1 2014/06/19 23:33:09 sthen Exp $
+--- etc/icinga2/constants.conf.orig	Thu Jun 19 14:45:43 2014
++++ etc/icinga2/constants.conf	Thu Jun 19 14:46:03 2014
+@@ -4,7 +4,7 @@
+  */
+ 
+ /* The directory which contains the plugins from the Monitoring Plugins project. */
+-const PluginDir = "/usr/lib/nagios/plugins"
++const PluginDir = "${TRUEPREFIX}/libexec/nagios"
+ 
+ /* Our local instance name. By default this is the server's hostname as returned by `hostname --fqdn`.
+  * This should be the common name from the API certificate.

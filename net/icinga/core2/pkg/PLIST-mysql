@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.1 2014/06/19 23:24:47 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.2 2014/06/19 23:33:09 sthen Exp $
 lib/icinga2/libdb_ido_mysql.so
 share/examples/icinga2/features-available/ido-mysql.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/ido-mysql.conf
