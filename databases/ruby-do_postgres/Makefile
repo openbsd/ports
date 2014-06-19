@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/15 02:13:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2014/06/19 20:25:49 jeremy Exp $
 
 COMMENT=		DataObjects driver for PostgreSQL
 
-V=			0.10.12
+V=			0.10.14
 DISTNAME=		do_postgres-${V}
-REVISION =		2
 CATEGORIES=		databases
 
 # MIT

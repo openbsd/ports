@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_do_postgres_do_common_c,v 1.1 2014/06/19 20:25:49 jeremy Exp $
+
+Fix use-after-free, upstream commit 23cea14f4576acea9d53df3358280ba8db7b9e5b.
+
+--- ext/do_postgres/do_common.c.orig	Thu Feb 13 02:59:50 2014
++++ ext/do_postgres/do_common.c	Mon Jun 16 11:08:01 2014
+@@ -63,7 +63,7 @@ void data_objects_debug(VALUE connection, VALUE string
+   rb_funcall(connection, DO_ID_LOG, 1, message);
+ }
+ 
+-void data_objects_raise_error(VALUE self, const struct errcodes *errors, int errnum, const char *message, VALUE query, VALUE state) {
++void data_objects_raise_error(VALUE self, const struct errcodes *errors, int errnum, VALUE message, VALUE query, VALUE state) {
+   const char *exception_type = "SQLError";
+   const struct errcodes *e;
+   VALUE uri, exception;
+@@ -82,7 +82,7 @@ void data_objects_raise_error(VALUE self, const struct
+     data_objects_const_get(mDO, exception_type),
+     DO_ID_NEW,
+     5,
+-    rb_str_new2(message),
++    message,
+     INT2NUM(errnum),
+     state,
+     query,

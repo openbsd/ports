@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_do_postgres_do_postgres_c,v 1.1 2014/06/19 20:25:49 jeremy Exp $
+
+Fix use-after-free, upstream commits 5cec3c5b723d14b210eada26519258255a175c05
+and 23cea14f4576acea9d53df3358280ba8db7b9e5b.
+
+--- ext/do_postgres/do_postgres.c.orig	Thu Feb 13 02:59:50 2014
++++ ext/do_postgres/do_postgres.c	Mon Jun 16 11:11:55 2014
+@@ -99,13 +99,14 @@ VALUE do_postgres_typecast(const char *value, long len
+ }
+ 
+ void do_postgres_raise_error(VALUE self, PGresult *result, VALUE query) {
+-  const char *message = PQresultErrorMessage(result);
++  VALUE message = rb_str_new2(PQresultErrorMessage(result));
+   char *sql_state = PQresultErrorField(result, PG_DIAG_SQLSTATE);
+   int postgres_errno = MAKE_SQLSTATE(sql_state[0], sql_state[1], sql_state[2], sql_state[3], sql_state[4]);
++  VALUE str = rb_str_new2(sql_state);
+ 
+   PQclear(result);
+ 
+-  data_objects_raise_error(self, do_postgres_errors, postgres_errno, message, query, rb_str_new2(sql_state));
++  data_objects_raise_error(self, do_postgres_errors, postgres_errno, message, query, str);
+ }
+ 
+ /* ====== Public API ======= */

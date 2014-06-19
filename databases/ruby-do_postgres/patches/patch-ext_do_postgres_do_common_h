@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_do_postgres_do_common_h,v 1.1 2014/06/19 20:25:49 jeremy Exp $
+
+Fix use-after-free, upstream commit 23cea14f4576acea9d53df3358280ba8db7b9e5b.
+
+--- ext/do_postgres/do_common.h.orig	Thu Feb 13 02:59:50 2014
++++ ext/do_postgres/do_common.h	Mon Jun 16 11:08:01 2014
+@@ -123,7 +123,7 @@ static inline void data_objects_define_errors(VALUE sc
+   }
+ }
+ 
+-extern void data_objects_raise_error(VALUE self, const struct errcodes *errors, int errnum, const char *message, VALUE query, VALUE state);
++extern void data_objects_raise_error(VALUE self, const struct errcodes *errors, int errnum, VALUE message, VALUE query, VALUE state);
+ 
+ extern VALUE data_objects_typecast(const char *value, long length, const VALUE type, int encoding);
+ 
