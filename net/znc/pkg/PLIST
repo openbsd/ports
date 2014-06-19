@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/11/17 00:16:54 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/06/19 23:02:55 brad Exp $
 @bin bin/znc
 bin/znc-buildmod
 include/znc/
@@ -20,6 +20,7 @@ include/znc/SHA256.h
 include/znc/Server.h
 include/znc/Socket.h
 include/znc/Template.h
+include/znc/Threads.h
 include/znc/User.h
 include/znc/Utils.h
 include/znc/WebModules.h
@@ -48,6 +49,7 @@ lib/znc/buffextras.so
 lib/znc/cert.so
 lib/znc/certauth.so
 lib/znc/chansaver.so
+lib/znc/charset.so
 lib/znc/clearbufferonmsg.so
 lib/znc/clientnotify.so
 lib/znc/controlpanel.so
@@ -65,6 +67,7 @@ lib/znc/lastseen.so
 lib/znc/listsockets.so
 lib/znc/log.so
 lib/znc/missingmotd.so
+lib/znc/modules_online.so
 lib/znc/nickserv.so
 lib/znc/notes.so
 lib/znc/notify_connect.so
