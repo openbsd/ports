@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/18 22:00:00 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2014/06/19 18:40:00 kili Exp $
 
 COMMENT =	Haskell platform meta-package
 
@@ -63,7 +63,7 @@ RUN_DEPENDS +=	devel/hs-async=2.0.1.4 \
 RUN_DEPENDS +=	devel/hs-primitive=0.5.0.1
 
 # Tools:
-# Depend on the inofficial haddock-2.11.0 bundled with ghc and let's
+# Depend on the inofficial haddock-2.13.2 bundled with ghc and let's
 # hope that haddock upstream will follow the ghc-internal changes.
 
 RUN_DEPENDS +=	devel/alex=3.0.5 \
