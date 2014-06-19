@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_facter_memory_rb,v 1.8 2014/04/04 14:31:16 jasper Exp $
+$OpenBSD: patch-lib_facter_memory_rb,v 1.9 2014/06/19 13:56:10 jasper Exp $
 --- lib/facter/memory.rb.orig	Tue Apr  1 19:23:03 2014
 +++ lib/facter/memory.rb	Fri Apr  4 15:34:23 2014
 @@ -82,6 +82,16 @@ end
@@ -18,36 +18,3 @@ $OpenBSD: patch-lib_facter_memory_rb,v 1.8 2014/04/04 14:31:16 jasper Exp $
  if Facter.value(:kernel) == "Darwin"
    Facter.add("SwapEncrypted") do
      confine :kernel => :Darwin
-@@ -157,6 +167,32 @@ Facter.add("swapfree_mb") do
-     swap_anon_use = Facter::Core::Execution.exec("/sbin/sysctl -n vm.swap_anon_use").to_f * page_size
-     swap_cache_use = Facter::Core::Execution.exec("/sbin/sysctl -n vm.swap_cache_use").to_f * page_size
-     swapfree = swaptotal - swap_anon_use - swap_cache_use
-+    "%.2f" % [(swapfree.to_f / 1024.0) / 1024.0]
-+  end
-+end
-+
-+Facter.add("swapsize_mb") do
-+  confine :kernel => :openbsd
-+  setcode do
-+    swap = Facter::Util::Resolution.exec('swapctl -s') || ""
-+    swapfree, swaptotal, sbsize = 0, 0, 0
-+    if swap =~ /^total: (\d+) (\d+)-blocks allocated, (\d+) used, (\d+) available$/
-+      sbsize = $2.to_i
-+      swaptotal = ($1.to_i * sbsize)
-+    end
-+    "%.2f" % [(swaptotal.to_f / 1024.0) / 1024.0]
-+  end
-+end
-+
-+Facter.add("swapfree_mb") do
-+  confine :kernel => :openbsd
-+  setcode do
-+    swap = Facter::Util::Resolution.exec('swapctl -s') || ""
-+    swapfree, swaptotal, sbsize = 0, 0, 0
-+    if swap =~ /^total: (\d+) (\d+)-blocks allocated, (\d+) used, (\d+) available$/
-+      sbsize = $2.to_i
-+      swapfree  = ($4.to_i * sbsize)
-+    end
-     "%.2f" % [(swapfree.to_f / 1024.0) / 1024.0]
-   end
- end
