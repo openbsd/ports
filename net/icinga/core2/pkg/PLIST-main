@@ -1,0 +1,133 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2014/06/19 23:24:47 sthen Exp $
+bin/icinga2-build-ca
+bin/icinga2-build-key
+bin/icinga2-sign-key
+lib/icinga2/
+lib/icinga2/libbase.so
+lib/icinga2/libcJSON.so
+lib/icinga2/libchecker.so
+lib/icinga2/libcompat.so
+lib/icinga2/libconfig.so
+lib/icinga2/libdb_ido.so
+lib/icinga2/libdemo.so
+lib/icinga2/libexecvpe.so
+lib/icinga2/libhello.so
+lib/icinga2/libicinga.so
+lib/icinga2/liblivestatus.so
+lib/icinga2/libmethods.so
+lib/icinga2/libmmatch.so
+lib/icinga2/libnotification.so
+lib/icinga2/libperfdata.so
+lib/icinga2/libremote.so
+@man man/man8/icinga2-build-ca.8
+@man man/man8/icinga2-build-key.8
+@man man/man8/icinga2-disable-feature.8
+@man man/man8/icinga2-enable-feature.8
+@man man/man8/icinga2-prepare-dirs.8
+@man man/man8/icinga2-sign-key.8
+@man man/man8/icinga2.8
+@bin sbin/icinga2
+sbin/icinga2-disable-feature
+sbin/icinga2-enable-feature
+sbin/icinga2-prepare-dirs
+share/doc/icinga2/
+share/doc/icinga2/AUTHORS
+share/doc/icinga2/COPYING
+share/doc/icinga2/COPYING.Exceptions
+share/doc/icinga2/ChangeLog
+share/doc/icinga2/INSTALL
+share/doc/icinga2/NEWS
+share/doc/icinga2/README
+share/doc/icinga2/markdown/
+share/doc/icinga2/markdown/1-about.md
+share/doc/icinga2/markdown/2-getting-started.md
+share/doc/icinga2/markdown/3-monitoring-basics.md
+share/doc/icinga2/markdown/4-monitoring-remote-systems.md
+share/doc/icinga2/markdown/5-addons-plugins.md
+share/doc/icinga2/markdown/6-configuring-icinga-2.md
+share/doc/icinga2/markdown/7-troubleshooting.md
+share/doc/icinga2/markdown/8-migration.md
+share/doc/icinga2/markdown/9-appendix.md
+@comment XXX needs sampling into SYSCONFDIR
+share/examples/icinga2/
+share/examples/icinga2/conf.d/
+share/examples/icinga2/conf.d/commands.conf
+share/examples/icinga2/conf.d/downtimes.conf
+share/examples/icinga2/conf.d/groups.conf
+share/examples/icinga2/conf.d/hosts/
+share/examples/icinga2/conf.d/hosts/localhost/
+share/examples/icinga2/conf.d/hosts/localhost.conf
+share/examples/icinga2/conf.d/hosts/localhost/disk.conf
+share/examples/icinga2/conf.d/hosts/localhost/http.conf
+share/examples/icinga2/conf.d/hosts/localhost/icinga.conf
+share/examples/icinga2/conf.d/hosts/localhost/load.conf
+share/examples/icinga2/conf.d/hosts/localhost/procs.conf
+share/examples/icinga2/conf.d/hosts/localhost/ssh.conf
+share/examples/icinga2/conf.d/hosts/localhost/swap.conf
+share/examples/icinga2/conf.d/hosts/localhost/users.conf
+share/examples/icinga2/conf.d/notifications.conf
+share/examples/icinga2/conf.d/services.conf
+share/examples/icinga2/conf.d/templates.conf
+share/examples/icinga2/conf.d/timeperiods.conf
+share/examples/icinga2/conf.d/users.conf
+share/examples/icinga2/constants.conf
+share/examples/icinga2/features-available/
+share/examples/icinga2/features-available/api.conf
+share/examples/icinga2/features-available/checker.conf
+share/examples/icinga2/features-available/command.conf
+share/examples/icinga2/features-available/compatlog.conf
+share/examples/icinga2/features-available/debuglog.conf
+share/examples/icinga2/features-available/graphite.conf
+share/examples/icinga2/features-available/icingastatus.conf
+share/examples/icinga2/features-available/livestatus.conf
+share/examples/icinga2/features-available/mainlog.conf
+share/examples/icinga2/features-available/notification.conf
+share/examples/icinga2/features-available/perfdata.conf
+share/examples/icinga2/features-available/statusdata.conf
+share/examples/icinga2/features-available/syslog.conf
+share/examples/icinga2/features-enabled/
+share/examples/icinga2/features-enabled/checker.conf
+share/examples/icinga2/features-enabled/mainlog.conf
+share/examples/icinga2/features-enabled/notification.conf
+share/examples/icinga2/icinga2.conf
+share/examples/icinga2/pki/
+share/examples/icinga2/scripts/
+share/examples/icinga2/scripts/mail-host-notification.sh
+share/examples/icinga2/scripts/mail-service-notification.sh
+@comment share/examples/icinga2/sysconfig
+share/examples/icinga2/zones.conf
+share/examples/icinga2/zones.d/
+share/examples/icinga2/zones.d/README
+@comment share/examples/init.d/
+@comment share/examples/init.d/icinga2
+@comment share/examples/logrotate.d/
+@comment share/examples/logrotate.d/icinga2
+share/icinga2/
+share/icinga2/include/
+share/icinga2/include/command-icinga.conf
+share/icinga2/include/command-plugins.conf
+share/icinga2/include/command.conf
+share/icinga2/include/itl
+share/icinga2/include/plugins
+share/icinga2/include/timeperiod.conf
+share/icinga2/pki/
+share/icinga2/pki/openssl-quiet.cnf
+share/icinga2/pki/openssl.cnf
+share/icinga2/pki/pkifuncs
+share/icinga2/pki/vars
+@comment XXX permissions
+@sample ${LOCALSTATEDIR}/cache/icinga2/
+@sample ${LOCALSTATEDIR}/lib/
+@sample ${LOCALSTATEDIR}/lib/icinga2/
+@sample ${LOCALSTATEDIR}/lib/icinga2/api/
+@sample ${LOCALSTATEDIR}/lib/icinga2/api/log/
+@sample ${LOCALSTATEDIR}/lib/icinga2/api/repository/
+@sample ${LOCALSTATEDIR}/lib/icinga2/api/zones/
+@sample ${LOCALSTATEDIR}/log/icinga2/
+@sample ${LOCALSTATEDIR}/log/icinga2/compat/
+@sample ${LOCALSTATEDIR}/log/icinga2/compat/archives/
+@sample ${LOCALSTATEDIR}/run/icinga2/
+@sample ${LOCALSTATEDIR}/run/icinga2/cmd/
+@sample ${LOCALSTATEDIR}/spool/icinga2/
+@sample ${LOCALSTATEDIR}/spool/icinga2/perfdata/
+@sample ${LOCALSTATEDIR}/spool/icinga2/tmp/

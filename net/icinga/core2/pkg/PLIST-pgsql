@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1 2014/06/19 23:24:47 sthen Exp $
+lib/icinga2/libdb_ido_pgsql.so
+share/examples/icinga2/features-available/ido-pgsql.conf
