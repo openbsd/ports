@@ -1,7 +1,7 @@
-$OpenBSD: patch-cmake_install_macros_cmake,v 1.4 2014/03/11 09:27:45 brad Exp $
---- cmake/install_macros.cmake.orig	Sat Mar  8 07:41:32 2014
-+++ cmake/install_macros.cmake	Mon Mar 10 18:15:31 2014
-@@ -192,6 +192,36 @@ IF(UNIX)
+$OpenBSD: patch-cmake_install_macros_cmake,v 1.5 2014/06/19 23:04:42 brad Exp $
+--- cmake/install_macros.cmake.orig	Sat May 10 18:36:18 2014
++++ cmake/install_macros.cmake	Mon May 12 21:04:57 2014
+@@ -196,6 +196,36 @@ IF(UNIX)
  ENDIF()
  ENDMACRO()
  

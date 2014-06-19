@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.9 2014/05/09 08:47:48 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.10 2014/06/19 23:04:42 brad Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -101,6 +101,7 @@ include/mysql/private/opt_subselect.h
 include/mysql/private/parse_file.h
 include/mysql/private/partition_element.h
 include/mysql/private/partition_info.h
+include/mysql/private/pcre.h
 include/mysql/private/procedure.h
 include/mysql/private/protocol.h
 include/mysql/private/records.h
@@ -121,13 +122,13 @@ include/mysql/private/rpl_tblmap.h
 include/mysql/private/rpl_utility.h
 include/mysql/private/scheduler.h
 include/mysql/private/set_var.h
+include/mysql/private/slave.h
 include/mysql/private/sp.h
 include/mysql/private/sp_cache.h
 include/mysql/private/sp_head.h
 include/mysql/private/sp_pcontext.h
 include/mysql/private/sp_rcontext.h
 include/mysql/private/spatial.h
-include/mysql/private/slave.h
 include/mysql/private/sql_acl.h
 include/mysql/private/sql_admin.h
 include/mysql/private/sql_alter.h
@@ -254,7 +255,6 @@ lib/mysql/plugin/sql_errlog.so
 @man man/man1/mysql.server.1
 @man man/man1/mysql_convert_table_format.1
 @man man/man1/mysql_fix_extensions.1
-@man man/man1/mysql_fix_privilege_tables.1
 @man man/man1/mysql_install_db.1
 @man man/man1/mysql_plugin.1
 @man man/man1/mysql_secure_installation.1
@@ -270,16 +270,15 @@ lib/mysql/plugin/sql_errlog.so
 @man man/man1/resolve_stack_dump.1
 @man man/man1/resolveip.1
 @man man/man8/mysqld.8
-@man man/man8/mysqlmanager.8
 share/doc/mysql/
 share/doc/mysql/COPYING
 share/doc/mysql/COPYING.LESSER
 share/doc/mysql/CREDITS
+share/doc/mysql/EXCEPTIONS-CLIENT
 share/doc/mysql/INFO_BIN
 share/doc/mysql/INFO_SRC
 share/doc/mysql/INSTALL-BINARY
 share/doc/mysql/README
-share/doc/mysql/TODO
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mysql/
 share/examples/mysql/SELinux/
@@ -287,9 +286,6 @@ share/examples/mysql/SELinux/RHEL4/
 share/examples/mysql/SELinux/RHEL4/mysql.fc
 share/examples/mysql/SELinux/RHEL4/mysql.te
 share/examples/mysql/binary-configure
-share/examples/mysql/config.huge.ini
-share/examples/mysql/config.medium.ini
-share/examples/mysql/config.small.ini
 share/examples/mysql/magic
 share/examples/mysql/my-huge.cnf
 share/examples/mysql/my-innodb-heavy-4G.cnf
@@ -300,9 +296,6 @@ share/examples/mysql/my-small.cnf
 share/examples/mysql/mysql-log-rotate
 share/examples/mysql/mysql.server
 share/examples/mysql/mysqld_multi.server
-share/examples/mysql/ndb-config-2-node.ini
-share/examples/mysql/solaris/
-share/examples/mysql/solaris/postinstall-solaris
 share/mysql/
 share/mysql/charsets/
 share/mysql/charsets/Index.xml

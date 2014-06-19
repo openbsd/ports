@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/09 08:47:48 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2014/06/19 23:04:42 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,17 +6,14 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.0.10
+VERSION=	10.0.12
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
 CATEGORIES=	databases
-MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/ \
-		http://ftp.heanet.ie/mirrors/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/
-
-REVISION-main=	0
-REVISION-server= 1
+MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
+		http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
 
 LIB_VERSION=	25
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
@@ -74,8 +71,8 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 MULTI_PACKAGES=	-main
 
 # archs with atomic ops
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" ||
-    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc" ||
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc" || \
     ${MACHINE_ARCH} == "sparc64"
 MULTI_PACKAGES+= -server -tests
 .endif
