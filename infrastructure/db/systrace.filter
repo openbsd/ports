@@ -137,6 +137,8 @@
 	native-listen: permit
 	native-lseek: permit
 	native-madvise: permit
+	native-mincore: permit
+	native-minherit: permit
 	native-mknod: filename match "/tmp" then permit
 	native-mknod: filename match "/var/tmp" then permit
 	native-mknod: filename match "${TMPDIR}" then permit
@@ -145,7 +147,6 @@
 	native-mknodat: filename match "/var/tmp" then permit
 	native-mknodat: filename match "${TMPDIR}" then permit
 	native-mknodat: filename match "${WRKDIR}" then permit
-	native-mincore: permit
 	native-mlock: permit
 	native-mlockall: permit
 	native-mmap: permit
