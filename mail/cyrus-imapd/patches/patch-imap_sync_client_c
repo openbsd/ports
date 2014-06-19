@@ -1,0 +1,27 @@
+$OpenBSD: patch-imap_sync_client_c,v 1.1 2014/06/19 08:38:31 ajacoutot Exp $
+
+https://bugzilla.cyrusimap.org/show_bug.cgi?id=3376
+
+--- imap/sync_client.c.orig	Sat Dec  1 20:57:54 2012
++++ imap/sync_client.c	Thu Jun 19 10:21:00 2014
+@@ -573,7 +573,7 @@ static int folder_unannotation(const char *mboxname, c
+ /* ====================================================================== */
+ 
+ static int sieve_upload(const char *userid, const char *filename,
+-			unsigned long last_update)
++			time_t last_update)
+ {
+     const char *cmd = "SIEVE";
+     struct dlist *kl;
+@@ -913,9 +913,9 @@ static void log_record(const char *name, struct mailbo
+ 		       struct index_record *record)
+ {
+     syslog(LOG_NOTICE, "SYNCNOTICE: %s uid:%u modseq:" MODSEQ_FMT " "
+-	  "last_updated:%lu internaldate:%lu flags:(%s)",
++	  "last_updated:" MODSEQ_FMT " internaldate:" MODSEQ_FMT " flags:(%s)",
+ 	   name, record->uid, record->modseq,
+-	   record->last_updated, record->internaldate,
++	   (modseq_t)record->last_updated, (modseq_t)record->internaldate,
+ 	   make_flags(mailbox, record));
+ }
+ 
