@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.12 2014/05/15 20:17:16 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.13 2014/06/19 12:28:34 jasper Exp $
 
 * https://github.com/puppetlabs/puppet/pull/2557
 - Do not unconditionally alphabetically sort the list of pkg_scripts
@@ -9,16 +9,18 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.12 2014/05/15 20:17:1
 - Use a faster way of determining if something is in base, instead of checking
   something is from packages with pkg_info.
 
---- lib/puppet/provider/service/openbsd.rb.orig	Thu May 15 21:04:49 2014
-+++ lib/puppet/provider/service/openbsd.rb	Thu May 15 21:04:52 2014
-@@ -172,7 +172,9 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+--- lib/puppet/provider/service/openbsd.rb.orig	Mon Jun  9 23:08:19 2014
++++ lib/puppet/provider/service/openbsd.rb	Fri Jun 20 00:25:27 2014
+@@ -171,8 +171,10 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+       content.reject! {|l| l.nil? }
      end
  
-     if flags.nil?
+-    if flags.nil?
 -      append = resource[:name] + '_flags=""'
++    if flags.nil? or flags.size == 0
 +      if in_base?
-+	append = resource[:name] + '_flags=""'
-+     end
++        append = resource[:name] + '_flags=""'
++      end
      else
        append = resource[:name] + '_flags="' + flags + '"'
      end
