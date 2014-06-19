@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:31:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/06/19 20:55:02 sthen Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
 V=		1.0.2
 PKGNAME=	arduino-${V}
+# Arduino uses the ARDUINO macro to control the renaming scheme they did
+# on 1.0.x, from WProgram.h to Arduino.h, this is defined in files/BSDmakefile.
+# If updating the port, check whether this needs to be adjusted.
 DISTNAME=	arduino-${V}-src
 EPOCH=		0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 HOMEPAGE=	http://www.arduino.cc/
 

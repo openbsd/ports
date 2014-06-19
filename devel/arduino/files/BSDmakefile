@@ -1,4 +1,4 @@
-# $OpenBSD: BSDmakefile,v 1.7 2013/05/14 14:31:30 edd Exp $
+# $OpenBSD: BSDmakefile,v 1.8 2014/06/19 20:55:02 sthen Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
@@ -32,7 +32,7 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: BSDmakefile,v 1.7 2013/05/14 14:31:30 edd Exp $
+# $Id: BSDmakefile,v 1.8 2014/06/19 20:55:02 sthen Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
 
@@ -97,8 +97,8 @@ DEBUG = stabs
 OPT = s
 
 # Place -D or -U options here
-CDEFS = -DF_CPU=$(F_CPU)
-CXXDEFS = -DF_CPU=$(F_CPU)
+CDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100
+CXXDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100
 
 # Place -I options here
 ROOTLIBINCS=${LIBRARIES:S|^|-I$(ARDUINO)/libraries/|g}
