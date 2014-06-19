@@ -1,6 +1,6 @@
-$OpenBSD: patch-amavisd_conf-default,v 1.2 2012/07/07 19:09:36 giovanni Exp $
---- amavisd.conf-default.orig	Sun Jul  1 00:15:39 2012
-+++ amavisd.conf-default	Tue Jul  3 18:13:00 2012
+$OpenBSD: patch-amavisd_conf-default,v 1.3 2014/06/19 22:17:32 sthen Exp $
+--- amavisd.conf-default.orig	Fri Jun 28 19:52:26 2013
++++ amavisd.conf-default	Thu Jun 19 22:31:13 2014
 @@ -20,9 +20,9 @@ use strict;
  # $mydomain   = ... no useful default, should be set if used in expressions
  # $snmp_contact  = '';
@@ -14,7 +14,7 @@ $OpenBSD: patch-amavisd_conf-default,v 1.2 2012/07/07 19:09:36 giovanni Exp $
  # $TEMPBASE      = $MYHOME;                # after-default
  # $db_home       = "$MYHOME/db";           # after-default
  # $pid_file      = "$MYHOME/amavisd.pid";  # after-default
-@@ -356,8 +356,8 @@ use strict;
+@@ -370,8 +370,8 @@ use strict;
  ### ['tar',  \&do_tar],  # no longer supported
  #   ['deb',  \&do_ar, \$ar],
  ### ['a',    \&do_ar, \$ar],  # unpacking .a seems an overkill
