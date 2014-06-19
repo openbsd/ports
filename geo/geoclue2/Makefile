@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/06/19 08:48:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/06/19 11:20:29 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -6,6 +6,7 @@ VERSION=		2.1.9
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
+REVISION=		0
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -23,7 +24,10 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		devel/libsoup \
 			devel/json-glib
-RUN_DEPENDS=		security/wpa_supplicant
+
+# XXX requires DBus support in wpa_supplicant
+# (wpa_supplicant in OpenBSD is also crippled in other ways)
+#RUN_DEPENDS=		security/wpa_supplicant
 
 MODGNOME_TOOLS +=	desktop-file-utils
 
