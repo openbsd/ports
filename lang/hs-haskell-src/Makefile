@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/06/19 18:58:02 kili Exp $
 
 COMMENT =		manipulating Haskell source code
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		haskell-src-1.0.1.5
 REVISION =		1
 CATEGORIES =		lang devel

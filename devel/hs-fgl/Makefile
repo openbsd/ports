@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/06/19 18:58:01 kili Exp $
 
 COMMENT =		functional graph library
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		fgl-5.4.2.4
 REVISION =		1
 CATEGORIES =		devel

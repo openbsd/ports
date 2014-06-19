@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/07/18 21:47:28 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2014/06/19 18:58:02 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL graphics system
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		OpenGL-2.8.0.0
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/HOpenGL/

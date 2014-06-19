@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/18 21:52:57 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2014/06/19 18:58:01 kili Exp $
 
 COMMENT =		efficient hashing-based container types
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		unordered-containers-0.2.3.0
 CATEGORIES =		devel
 

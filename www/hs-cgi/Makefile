@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/07/18 21:54:21 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2014/06/19 18:58:02 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		cgi-3001.1.7.5
 CATEGORIES =		www devel
 HOMEPAGE =		http://andersk.mit.edu/haskell/cgi/

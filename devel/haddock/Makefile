@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2013/07/18 21:44:12 kili Exp $
+# $OpenBSD: Makefile,v 1.46 2014/06/19 18:58:01 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =	haddock-2.13.2
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}

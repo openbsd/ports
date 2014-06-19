@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/07/18 21:47:59 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2014/06/19 18:58:02 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		GLUT-2.4.0.0
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/HOpenGL/

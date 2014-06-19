@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/06/19 18:58:02 kili Exp $
 
 COMMENT =		HTML combinator library
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		html-1.0.1.2
 REVISION =		9
 CATEGORIES =		www devel

@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/06/19 18:58:01 kili Exp $
 
 COMMENT =		concrete monad transformers
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =		transformers-0.3.0.0
 REVISION =		1
 CATEGORIES =		devel
