@@ -1,17 +1,40 @@
-$OpenBSD: patch-src_iodined_c,v 1.2 2009/03/30 09:17:45 sthen Exp $
-
-Drop privileges and chroot by default.
-
---- src/iodined.c.orig	Sat Mar 21 14:07:49 2009
-+++ src/iodined.c	Mon Mar 30 10:25:08 2009
-@@ -961,8 +961,8 @@ main(int argc, char **argv)
- 	int skipipconfig;
- 	char *netsize;
+$OpenBSD: patch-src_iodined_c,v 1.3 2014/06/19 22:45:56 chris Exp $
+--- src/iodined.c.orig	Mon Jun 16 13:28:43 2014
++++ src/iodined.c	Thu Jun 19 15:16:45 2014
+@@ -771,7 +771,7 @@ handle_null_request(int tun_fd, int dns_fd, struct que
+ 				int i;
+ 				struct sockaddr_in *tempin;
  
+-				users[userid].seed = rand();
++				users[userid].seed = arc4random();
+ 				/* Store remote IP number */
+ 				tempin = (struct sockaddr_in *) &(q->from);
+ 				memcpy(&(users[userid].host), &(tempin->sin_addr), sizeof(struct in_addr));
+@@ -1100,7 +1100,7 @@ handle_null_request(int tun_fd, int dns_fd, struct que
+ 		} else {
+ 			char buf[2048];
+ 			int i;
+-			unsigned int v = ((unsigned int) rand()) & 0xff ;
++			unsigned int v = ((unsigned int) arc4random()) & 0xff ;
+ 
+ 			memset(buf, 0, sizeof(buf));
+ 			buf[0] = (req_frag_size >> 8) & 0xff;
+@@ -2293,8 +2293,8 @@ main(int argc, char **argv)
+ 	pw = NULL;
+ #endif
+ 	errormsg = NULL;
 -	username = NULL;
 -	newroot = NULL;
 +	username = "_iodine";
-+	newroot = "/var/empty";
++	newroot = "/var/empty"; 
+ 	context = NULL;
  	device = NULL;
  	foreground = 0;
- 	bind_enable = 0;
+@@ -2332,7 +2332,6 @@ main(int argc, char **argv)
+ #endif
+ 
+ 	memset(password, 0, sizeof(password));
+-	srand(time(NULL));
+ 	fw_query_init();
+ 
+ 	while ((choice = getopt(argc, argv, "vcsfhDu:t:d:m:l:p:n:b:P:z:F:i:")) != -1) {

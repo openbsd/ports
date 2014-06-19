@@ -1,18 +1,25 @@
-$OpenBSD: patch-src_iodine_c,v 1.2 2009/03/30 09:17:45 sthen Exp $
-
-Drop privileges and chroot by default.
-
---- src/iodine.c.orig	Sat Mar 21 14:07:49 2009
-+++ src/iodine.c	Mon Mar 30 10:25:08 2009
-@@ -1009,9 +1009,9 @@ main(int argc, char **argv)
- 	int autodetect_frag_size;
- 
- 	memset(password, 0, 33);
+$OpenBSD: patch-src_iodine_c,v 1.3 2014/06/19 22:45:56 chris Exp $
+--- src/iodine.c.orig	Mon Jun 16 13:28:43 2014
++++ src/iodine.c	Thu Jun 19 15:16:45 2014
+@@ -155,11 +155,10 @@ main(int argc, char **argv)
+ #ifndef WINDOWS32
+ 	pw = NULL;
+ #endif
 -	username = NULL;
 +	username = "_iodine";
+ 	memset(password, 0, 33);
+-	srand(time(NULL));
  	foreground = 0;
 -	newroot = NULL;
 +	newroot = "/var/empty";
+ 	context = NULL;
  	device = NULL;
- 	chunkid = 0;
+ 	pidfile = NULL;
+@@ -177,7 +176,6 @@ main(int argc, char **argv)
+ 	WSAStartup(req_version, &wsa_data);
+ #endif
  
+-	srand((unsigned) time(NULL));
+ 	client_init();
+ 
+ #if !defined(BSD) && !defined(__GLIBC__)

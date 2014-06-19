@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_client_c,v 1.1 2014/06/19 22:45:56 chris Exp $
+--- src/client.c.orig	Mon Jun 16 13:28:43 2014
++++ src/client.c	Thu Jun 19 15:16:45 2014
+@@ -121,11 +121,11 @@ client_init()
+ 	b64u = get_base64u_encoder();
+ 	b128 = get_base128_encoder();
+ 	dataenc = get_base32_encoder();
+-	rand_seed = ((unsigned int) rand()) & 0xFFFF;
++	rand_seed = ((unsigned int) arc4random()) & 0xFFFF;
+ 	send_ping_soon = 1;	/* send ping immediately after startup */
+ 	conn = CONN_DNS_NULL;
+ 
+-	chunkid = ((unsigned int) rand()) & 0xFFFF;
++	chunkid = ((unsigned int) arc4random()) & 0xFFFF;
+ 	chunkid_prev = 0;
+ 	chunkid_prev2 = 0;
+ 
