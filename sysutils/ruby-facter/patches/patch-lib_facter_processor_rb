@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_facter_processor_rb,v 1.1 2014/05/02 18:36:55 jasper Exp $
+$OpenBSD: patch-lib_facter_processor_rb,v 1.2 2014/06/20 22:41:53 jasper Exp $
 
-Make the 'processor' fact consistent with other operating systems.
+From d12321564bb4c242dc5c89e823549b05d9c6873f Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 2 May 2014 22:46:20 +0200
+Subject: [PATCH] (FACT-476) Make the 'processor' fact for OpenBSD consistent with other operating systems.
 
 --- lib/facter/processor.rb.orig	Fri May  2 22:33:29 2014
 +++ lib/facter/processor.rb	Fri May  2 22:33:47 2014

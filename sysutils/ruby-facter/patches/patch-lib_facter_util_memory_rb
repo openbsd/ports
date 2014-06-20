@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_facter_util_memory_rb,v 1.1 2014/06/19 13:56:10 jasper Exp $
+$OpenBSD: patch-lib_facter_util_memory_rb,v 1.2 2014/06/20 22:41:53 jasper Exp $
 
-Unbreak swapfree/swapswize facts for OpenBSD
+From 4ee27ee558d280e9ef483af91e1c6270737afb4d Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 19 Jun 2014 15:19:44 +0200
+Subject: [PATCH] (FACT-592) Unbreak swapfree/swapsize facts on OpenBSD
 
 --- lib/facter/util/memory.rb.orig	Fri Jun 20 01:45:38 2014
 +++ lib/facter/util/memory.rb	Fri Jun 20 01:45:44 2014
