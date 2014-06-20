@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2014/04/30 09:36:04 zhuk Exp $
+# $OpenBSD: Makefile,v 1.52 2014/06/20 10:34:08 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -129,7 +129,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \
 			-DWITH_HSPELL:Bool=FALSE \
 			-DWITH_HUpnp:Bool=FALSE \
-			-DWITH_UDev:Bool=FALSE
+			-DWITH_UDev:Bool=FALSE \
+			-DWITH_GSSAPI:Bool=FALSE
 
 # some basic defines
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
