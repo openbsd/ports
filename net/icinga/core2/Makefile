@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/19 23:33:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/20 22:11:57 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -47,7 +47,7 @@ RUN_DEPENDS-pgsql =	${BASE_PKGPATH},-main
 # XXX different group for COMMAND_GROUP, upstream uses icingacmd
 CONFIGURE_ARGS += \
 	-DCMAKE_INSTALL_MANDIR:String="${PREFIX}/man" \
-	-DCMAKE_INSTALL_SYSCONFDIR:String="${PREFIX}/share/examples" \
+	-DCMAKE_INSTALL_SYSCONFDIR:String="${SYSCONFDIR}" \
 	-DCMAKE_INSTALL_LOCALSTATEDIR:String="${LOCALSTATEDIR}" \
 	-DICINGA2_COMMAND_USER:String="_icinga" \
 	-DICINGA2_COMMAND_GROUP:String="_icinga" \
@@ -64,5 +64,9 @@ LDFLAGS +=	-lpthread
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gflex ${WRKDIR}/bin/flex
 	@${SUBST_CMD} ${WRKSRC}/etc/icinga2/constants.conf
+
+post-configure:
+	perl -pi -e 's,}${SYSCONFDIR}/icinga2,}${TRUEPREFIX}/share/examples/icinga2,g' \
+	    ${WRKBUILD}/etc/cmake_install.cmake
 
 .include <bsd.port.mk>
