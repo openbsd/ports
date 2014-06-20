@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/12/04 19:49:37 jasper Exp $
-@extraunexec rm -rf /var/db/hiera/*
+@comment $OpenBSD: PLIST,v 1.7 2014/06/20 19:39:01 jasper Exp $
+@unexec-delete rm -rf /var/db/hiera/*
 ${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
