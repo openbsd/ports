@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2014/05/27 07:30:34 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2014/06/20 07:10:42 brad Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
-DISTNAME=		wxsvg-1.4
+DISTNAME=		wxsvg-1.4.1
 EPOCH=			0
 CATEGORIES=		x11 graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
