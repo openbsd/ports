@@ -1,17 +1,21 @@
-$OpenBSD: patch-lib_facter_virtual_rb,v 1.7 2014/04/17 13:56:28 jasper Exp $
+$OpenBSD: patch-lib_facter_virtual_rb,v 1.8 2014/06/20 22:44:00 jasper Exp $
 
 From 149b3ac8742699009e39802adcdf58829ed8b689 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Tue, 15 Apr 2014 14:07:33 +0200
 Subject: [PATCH] On OpenBSD, when running on oVirt, correctly set is_virtual/virtual facts
 
---- lib/facter/virtual.rb.orig	Tue Apr  1 19:23:03 2014
-+++ lib/facter/virtual.rb	Fri Apr  4 15:34:23 2014
-@@ -98,6 +98,7 @@ Facter.add("virtual") do
+Unbreak {is_,}virtual fact for OpenBSD when running on KVM.
+https://github.com/puppetlabs/facter/pull/701
+
+--- lib/facter/virtual.rb.orig	Fri Jun  6 20:02:18 2014
++++ lib/facter/virtual.rb	Sat Jun 21 10:35:54 2014
+@@ -98,6 +98,8 @@ Facter.add("virtual") do
        next "vmware"     if lines.any? {|l| l =~ /VMware/ }
        next "virtualbox" if lines.any? {|l| l =~ /VirtualBox/ }
        next "xenhvm"     if lines.any? {|l| l =~ /HVM domU/ }
 +      next "ovirt"      if lines.any? {|l| l =~ /oVirt Node/ }
++      next "kvm"        if lines.any? {|l| l =~ /KVM/ }
      end
    end
  end
