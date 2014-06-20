@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/06/20 10:34:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.53 2014/06/20 13:12:36 jasper Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -11,7 +11,7 @@ PKGNAME-langlist =	kde4-langlist-${MODKDE4_VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs->=4
-REVISION-main =		8
+REVISION-main =		10
 
 DPB_PROPERTIES =	parallel tag:kde4
 
