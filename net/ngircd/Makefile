@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/03 23:29:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2014/06/21 11:17:30 jasper Exp $
 
 COMMENT =	lightweight irc server
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c crypto ssl z
 
-MASTER_SITES =	ftp://ftp.berlios.de/pub/ngircd/ \
-		http://ngircd.barton.de/pub/ngircd/
+MASTER_SITES =	http://ngircd.barton.de/pub/ngircd/ \
+		http://ngircd.mirror.3rz.org/pub/ngircd/
 
 MODULES =	converters/libiconv
 TEST_DEPENDS =	lang/expect \
