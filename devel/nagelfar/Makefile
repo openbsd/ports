@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/21 11:34:26 jasper Exp $
 
 COMMENT =	syntax analysis tool for Tcl
 
 DISTNAME =	nagelfar1112
 PKGNAME =	nagelfar-1.1.12
+REVISION =	0
 CATEGORIES =	devel
-HOMEPAGE =	http://nagelfar.berlios.de/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv2 (Nagelfar)
 # BSD (textSearch)
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_BERLIOS:=nagelfar/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nagelfar.berlios/}
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
