@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/06/21 11:23:58 jasper Exp $
 
 COMMENT=	tools for handling audio-file cue sheets and toc files
 
 DISTNAME=	cuetools-1.3.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio textproc
 
-HOMEPAGE=	http://developer.berlios.de/projects/cuetools/
+HOMEPAGE=	http://www.cuetools.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=cuetools/}
+# XXX: When updating, MASTER_SITES= ${HOMEPAGE}/install/
+MASTER_SITES=	http://distfiles.nl/
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
