@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2014/06/21 11:46:07 jasper Exp $
 
 COMMENT=		HP48sx emulator
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		X11 Xext c ncurses readline util
 
-MASTER_SITES=		${MASTER_SITE_BERLIOS:=x48/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=x48.berlios/}
 EXTRACT_SUFX=		.tar.bz2
 
 AUTOCONF_VERSION=	2.60

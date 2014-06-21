@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/06/21 11:46:07 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=python-silc/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-silc.berlios/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python converters/libiconv
