@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/12 16:43:38 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/21 11:54:29 jasper Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL SDL SDL_image SDL_mixer X11 c m pthread stdc++ z
 
-MASTER_SITES =		${MASTER_SITE_BERLIOS:=supertux/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertux.berlios/}
 EXTRACT_SUFX =		.tar.bz2
 
 RUN_DEPENDS =		devel/desktop-file-utils
