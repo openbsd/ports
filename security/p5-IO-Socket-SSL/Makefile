@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2014/06/20 13:34:56 bluhm Exp $
+# $OpenBSD: Makefile,v 1.74 2014/06/22 14:19:31 bluhm Exp $
 
 COMMENT =		perl interface to SSL sockets
 
-DISTNAME =		IO-Socket-SSL-1.993
+DISTNAME =		IO-Socket-SSL-1.994
 
 CATEGORIES =		security
 
