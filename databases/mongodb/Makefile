@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2014/02/01 16:41:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/06/22 13:20:31 sthen Exp $
 
 #atomic_int.h: error "unsupported compiler or platform" on other archs
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r2.4.9
+DISTNAME =	mongodb-src-r2.4.10
 PKGNAME =	${DISTNAME:S/src-r//}
 
 SHARED_LIBS =	mongoclient	2.0
