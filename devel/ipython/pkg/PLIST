@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/04/28 21:19:41 edd Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/06/22 19:50:59 edd Exp $
 bin/ipcluster
 bin/ipcluster2
 bin/ipcontroller
@@ -1374,6 +1374,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/base.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/files/
+lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/files/hello.py
+lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/files/hello.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/files/ipython_nbconvert_config.py
 lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/files/ipython_nbconvert_config.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/nbconvert/tests/files/notebook1.ipynb
@@ -1902,6 +1904,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_path.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_path.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_pickleshare.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_pickleshare.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_pickleutil.py
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_pickleutil.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_process.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_process.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_pycolorize.py
@@ -2326,7 +2330,6 @@ share/doc/ipython/html/_sources/config/options/
 share/doc/ipython/html/_sources/config/options/index.txt
 share/doc/ipython/html/_sources/config/options/kernel.txt
 share/doc/ipython/html/_sources/config/options/notebook.txt
-share/doc/ipython/html/_sources/config/options/qtconsole.txt
 share/doc/ipython/html/_sources/config/options/terminal.txt
 share/doc/ipython/html/_sources/development/
 share/doc/ipython/html/_sources/development/config.txt
@@ -2379,9 +2382,6 @@ share/doc/ipython/html/_sources/whatsnew/github-stats-0.13.txt
 share/doc/ipython/html/_sources/whatsnew/github-stats-1.0.txt
 share/doc/ipython/html/_sources/whatsnew/github-stats-2.0.txt
 share/doc/ipython/html/_sources/whatsnew/index.txt
-share/doc/ipython/html/_sources/whatsnew/pr/
-share/doc/ipython/html/_sources/whatsnew/pr/antigravity-feature.txt
-share/doc/ipython/html/_sources/whatsnew/pr/incompat-switching-to-perl.txt
 share/doc/ipython/html/_sources/whatsnew/version0.10.txt
 share/doc/ipython/html/_sources/whatsnew/version0.11.txt
 share/doc/ipython/html/_sources/whatsnew/version0.12.txt
@@ -2752,7 +2752,6 @@ share/doc/ipython/html/config/options/
 share/doc/ipython/html/config/options/index.html
 share/doc/ipython/html/config/options/kernel.html
 share/doc/ipython/html/config/options/notebook.html
-share/doc/ipython/html/config/options/qtconsole.html
 share/doc/ipython/html/config/options/terminal.html
 share/doc/ipython/html/development/
 share/doc/ipython/html/development/config.html
@@ -2815,9 +2814,6 @@ share/doc/ipython/html/whatsnew/github-stats-0.13.html
 share/doc/ipython/html/whatsnew/github-stats-1.0.html
 share/doc/ipython/html/whatsnew/github-stats-2.0.html
 share/doc/ipython/html/whatsnew/index.html
-share/doc/ipython/html/whatsnew/pr/
-share/doc/ipython/html/whatsnew/pr/antigravity-feature.html
-share/doc/ipython/html/whatsnew/pr/incompat-switching-to-perl.html
 share/doc/ipython/html/whatsnew/version0.10.html
 share/doc/ipython/html/whatsnew/version0.11.html
 share/doc/ipython/html/whatsnew/version0.12.html

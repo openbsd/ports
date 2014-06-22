@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2014/05/05 12:13:33 edd Exp $
+# $OpenBSD: Makefile,v 1.28 2014/06/22 19:50:59 edd Exp $
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	2.0.0
-REVISION =		0
+MODPY_EGG_VERSION =	2.1.0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -27,7 +26,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 # Oddly enough, Ipython installs the test suite, so we can run it right out
 # of ${LOCALBASE}. Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
-			devel/py-nose
+			devel/py-nose \
+			devel/py-mock
 BUILD_DEPENDS =		textproc/py-sphinx \
 			graphics/py-matplotlib>=1.2.0 \
 			net/py-zmq \
@@ -81,10 +81,12 @@ pre-build:
 do-test:
 	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest
 
-# A couple of test failures, reported, but upstream think these are bugs
-# in the test harness. They refuse to fix since the 1.x branch is about to
-# become legacy: https://github.com/ipython/ipython/issues/5217
+# A test failure, reported upstream:
+# https://github.com/ipython/ipython/issues/5217
 # To repro:
 # python2.7 /usr/local/lib/python2.7/site-packages/IPython/testing/iptest.py -vvs IPython.core
+
+# Note also that tests will fail if pdb++ is installed! Bug raised:
+# https://github.com/ipython/ipython/issues/6004
 
 .include <bsd.port.mk>
