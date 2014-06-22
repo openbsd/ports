@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/06/19 23:33:09 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/06/22 20:29:51 sthen Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nolog
-@comment done this way (rather than SYSCONFDIR/*) for safety...
-@extraunexec rm -rf ${SYSCONFDIR}/icinga/etc*
+@extraunexec rm -rf ${SYSCONFDIR}/icinga2/etc*
 @extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/run/icinga2/*
@@ -130,13 +129,11 @@ share/examples/icinga2/features-available/syslog.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/syslog.conf
 share/examples/icinga2/features-enabled/
 @sample ${SYSCONFDIR}/icinga2/features-enabled/
-share/examples/icinga2/features-enabled/checker.conf
-@sample ${SYSCONFDIR}/icinga2/features-enabled/checker.conf
-share/examples/icinga2/features-enabled/mainlog.conf
-@sample ${SYSCONFDIR}/icinga2/features-enabled/mainlog.conf
-share/examples/icinga2/features-enabled/notification.conf
-@sample ${SYSCONFDIR}/icinga2/features-enabled/notification.conf
-share/examples/icinga2/icinga2.conf
+@comment share/examples/icinga2/features-enabled/checker.conf
+@comment share/examples/icinga2/features-enabled/mainlog.conf
+@comment share/examples/icinga2/features-enabled/notification.conf
+@exec-add ln -s ../features-available/{checker,mainlog,notification}.conf ${SYSCONFDIR}/icinga2/features-enabled
+@extraunexec rm -rf ${SYSCONFDIR}/icinga2/features-enabled/*
 @sample ${SYSCONFDIR}/icinga2/icinga2.conf
 share/examples/icinga2/pki/
 @sample ${SYSCONFDIR}/icinga2/pki/
