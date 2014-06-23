@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-sqlite3,v 1.1 2014/06/23 07:57:48 ajacoutot Exp $
+@conflict bacula-server-<7.0.4p2
+@conflict bacula-pgsql-*
+@conflict bacula-mysql-*
+@comment no checksum
+@lib lib/libbaccats.so.${LIBbaccats_VERSION}
+lib/libbaccats-sqlite3.a
+lib/libbaccats-sqlite3.la
+@lib lib/libbaccats-sqlite3.so.${LIBbaccats-sqlite3_VERSION}
+libexec/bacula/
+libexec/bacula/create_sqlite3_database
+libexec/bacula/drop_sqlite3_database
+libexec/bacula/drop_sqlite3_tables
+libexec/bacula/grant_sqlite3_privileges
+libexec/bacula/make_sqlite3_tables
+libexec/bacula/update_sqlite3_tables
+libexec/bacula/updatedb/
+libexec/bacula/updatedb/update_sqlite3_tables_10_to_11
+libexec/bacula/updatedb/update_sqlite3_tables_11_to_12
+libexec/bacula/updatedb/update_sqlite3_tables_12_to_14
+libexec/bacula/updatedb/update_sqlite3_tables_8_to_9
+libexec/bacula/updatedb/update_sqlite3_tables_9_to_10
+@exec cp %D/lib/libbaccats-sqlite3.so.${LIBbaccats-sqlite3_VERSION} %D/lib/libbaccats.so.${LIBbaccats_VERSION}

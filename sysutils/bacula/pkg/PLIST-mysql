@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1 2014/06/23 07:57:48 ajacoutot Exp $
+@conflict bacula-server-<7.0.4p2
+@conflict bacula-pgsql-*
+@conflict bacula-sqlite3-*
+@comment no checksum
+@lib lib/libbaccats.so.${LIBbaccats_VERSION}
+lib/libbaccats-mysql.a
+lib/libbaccats-mysql.la
+@lib lib/libbaccats-mysql.so.${LIBbaccats-mysql_VERSION}
+libexec/bacula/
+libexec/bacula/create_mysql_database
+libexec/bacula/drop_mysql_database
+libexec/bacula/drop_mysql_tables
+libexec/bacula/grant_mysql_privileges
+libexec/bacula/make_mysql_tables
+libexec/bacula/update_mysql_tables
+libexec/bacula/updatedb/
+libexec/bacula/updatedb/update_mysql_tables_10_to_11
+libexec/bacula/updatedb/update_mysql_tables_11_to_12
+libexec/bacula/updatedb/update_mysql_tables_12_to_14
+libexec/bacula/updatedb/update_mysql_tables_4_to_5
+libexec/bacula/updatedb/update_mysql_tables_5_to_6
+libexec/bacula/updatedb/update_mysql_tables_6_to_7
+libexec/bacula/updatedb/update_mysql_tables_7_to_8
+libexec/bacula/updatedb/update_mysql_tables_8_to_9
+libexec/bacula/updatedb/update_mysql_tables_9_to_10
+@exec cp %D/lib/libbaccats-mysql.so.${LIBbaccats-mysql_VERSION} %D/lib/libbaccats.so.${LIBbaccats_VERSION}

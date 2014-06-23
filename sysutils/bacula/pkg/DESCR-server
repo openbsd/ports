@@ -14,10 +14,3 @@ bacula-server contains the bacula-sd "storage daemon" that writes the
 backup data to the backup device.  bacula-dir is the "director" that
 manages backups.  bconsole is the management application to control the
 director and get status of file daemons and storage daemons.
-
-Available flavors are:
-	- sqlite: use the sqlite 2.x library as a storage engine.
-	- sqlite3: use the sqlite 3.x library as a storage engine.
-	  This is the default.
-	- pgsql: use a postgresql server as a storage engine.
-	- mysql: use a mysql server as a storage engine.

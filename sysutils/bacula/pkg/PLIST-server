@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST-server,v 1.17 2014/06/13 15:31:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.18 2014/06/23 07:57:48 ajacoutot Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
+@pkgpath sysutils/bacula,-server,mysql
+@pkgpath sysutils/bacula,-server,pgsql
+@pkgpath sysutils/bacula,-server,sqlite3
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/bacula
 lib/libbacsql.a
 lib/libbacsql.la
 @lib lib/libbacsql.so.${LIBbacsql_VERSION}
-lib/libbaccats-${BACKEND}.a
-lib/libbaccats-${BACKEND}.la
-@lib lib/libbaccats.so.${LIBbaccats_VERSION}
-@lib lib/libbaccats-${BACKEND}.so.${LIBbaccats-${BACKEND}_VERSION}
 libexec/bacula/bacula
 libexec/bacula/bacula-ctl-dir
 libexec/bacula/bacula-ctl-sd
@@ -21,18 +20,13 @@ libexec/bacula/chio-changer-openbsd.dist
 @sample libexec/bacula/chio-changer-openbsd
 @mode
 libexec/bacula/create_bacula_database
-libexec/bacula/create_${BACKEND}_database
 libexec/bacula/delete_catalog_backup
 libexec/bacula/disk-changer
 libexec/bacula/drop_bacula_database
-libexec/bacula/drop_${BACKEND}_database
 libexec/bacula/drop_bacula_tables
-libexec/bacula/drop_${BACKEND}_tables
 libexec/bacula/dvd-handler
 libexec/bacula/grant_bacula_privileges
-libexec/bacula/grant_${BACKEND}_privileges
 libexec/bacula/make_bacula_tables
-libexec/bacula/make_${BACKEND}_tables
 libexec/bacula/make_catalog_backup
 libexec/bacula/make_catalog_backup.pl
 libexec/bacula/mtx-changer
@@ -40,37 +34,7 @@ libexec/bacula/mtx-changer.conf.dist
 @sample libexec/bacula/mtx-changer.conf
 libexec/bacula/query.sql.dist
 @sample libexec/bacula/query.sql
-libexec/bacula/update_bacula_tables
-libexec/bacula/update_${BACKEND}_tables
-libexec/bacula/updatedb/
 libexec/bacula/updatedb/README
-libexec/bacula/updatedb/update_bacula_tables_8_to_9
-libexec/bacula/updatedb/update_bdb_tables_8_to_9
-libexec/bacula/updatedb/update_mysql_tables_10_to_11
-libexec/bacula/updatedb/update_mysql_tables_11_to_12
-libexec/bacula/updatedb/update_mysql_tables_12_to_14
-libexec/bacula/updatedb/update_mysql_tables_4_to_5
-libexec/bacula/updatedb/update_mysql_tables_5_to_6
-libexec/bacula/updatedb/update_mysql_tables_6_to_7
-libexec/bacula/updatedb/update_mysql_tables_7_to_8
-libexec/bacula/updatedb/update_mysql_tables_8_to_9
-libexec/bacula/updatedb/update_mysql_tables_9_to_10
-libexec/bacula/updatedb/update_postgresql_tables_10_to_11
-libexec/bacula/updatedb/update_postgresql_tables_11_to_12
-libexec/bacula/updatedb/update_postgresql_tables_12_to_14
-libexec/bacula/updatedb/update_postgresql_tables_7_to_8
-libexec/bacula/updatedb/update_postgresql_tables_8_to_9
-libexec/bacula/updatedb/update_postgresql_tables_9_to_10
-libexec/bacula/updatedb/update_sqlite3_tables_10_to_11
-libexec/bacula/updatedb/update_sqlite3_tables_11_to_12
-libexec/bacula/updatedb/update_sqlite3_tables_12_to_14
-libexec/bacula/updatedb/update_sqlite3_tables_8_to_9
-libexec/bacula/updatedb/update_sqlite3_tables_9_to_10
-libexec/bacula/updatedb/update_sqlite_tables_4_to_5
-libexec/bacula/updatedb/update_sqlite_tables_5_to_6
-libexec/bacula/updatedb/update_sqlite_tables_6_to_7
-libexec/bacula/updatedb/update_sqlite_tables_7_to_8
-libexec/bacula/updatedb/update_sqlite_tables_8_to_9
 @man man/man1/bsmtp.1
 @man man/man8/bacula-dir.8
 @man man/man8/bacula-sd.8
