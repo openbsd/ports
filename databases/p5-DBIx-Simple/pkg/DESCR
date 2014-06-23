@@ -1,0 +1,7 @@
+DBIx::Simple provides a simplified interface to DBI, Perl's powerful
+database module.
+
+This module is aimed at rapid development and easy maintenance. Query
+preparation and execution are combined in a single method, the result
+object (which is a wrapper around the statement handle) provides easy
+row-by-row and slurping methods.

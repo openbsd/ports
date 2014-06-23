@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/23 19:08:01 henning Exp $
+${P5SITE}/DBIx/
+${P5SITE}/DBIx/Simple/
+${P5SITE}/DBIx/Simple.pm
+${P5SITE}/DBIx/Simple/Comparison.pod
+${P5SITE}/DBIx/Simple/Examples.pod
+${P5SITE}/DBIx/Simple/Result/
+${P5SITE}/DBIx/Simple/Result/RowObject.pm
+@man man/man3p/DBIx::Simple.3p
+@man man/man3p/DBIx::Simple::Comparison.3p
+@man man/man3p/DBIx::Simple::Examples.3p
+@man man/man3p/DBIx::Simple::Result::RowObject.3p
