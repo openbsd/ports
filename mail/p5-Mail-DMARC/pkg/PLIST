@@ -1,0 +1,123 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/23 19:17:28 henning Exp $
+bin/dmarc_http_client
+bin/dmarc_httpd
+bin/dmarc_lookup
+bin/dmarc_receive
+bin/dmarc_send_reports
+bin/dmarc_view_reports
+@comment bin/install_deps.pl
+${P5SITE}/Mail/
+${P5SITE}/Mail/DMARC/
+${P5SITE}/Mail/DMARC.pm
+${P5SITE}/Mail/DMARC/Base.pm
+${P5SITE}/Mail/DMARC/HTTP.pm
+${P5SITE}/Mail/DMARC/Policy.pm
+${P5SITE}/Mail/DMARC/PurePerl.pm
+${P5SITE}/Mail/DMARC/Report/
+${P5SITE}/Mail/DMARC/Report.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/
+${P5SITE}/Mail/DMARC/Report/Aggregate.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Metadata.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record.pm
+${P5SITE}/Mail/DMARC/Report/Receive.pm
+${P5SITE}/Mail/DMARC/Report/Send/
+${P5SITE}/Mail/DMARC/Report/Send.pm
+${P5SITE}/Mail/DMARC/Report/Send/HTTP.pm
+${P5SITE}/Mail/DMARC/Report/Send/SMTP.pm
+${P5SITE}/Mail/DMARC/Report/Store/
+${P5SITE}/Mail/DMARC/Report/Store.pm
+${P5SITE}/Mail/DMARC/Report/Store/SQL.pm
+${P5SITE}/Mail/DMARC/Report/URI.pm
+${P5SITE}/Mail/DMARC/Result.pm
+${P5SITE}/auto/share/dist/Mail-DMARC/
+${P5SITE}/auto/share/dist/Mail-DMARC/dmarc-report-2013-draft.xsd
+${P5SITE}/auto/share/dist/Mail-DMARC/dmarc_whitelist
+${P5SITE}/auto/share/dist/Mail-DMARC/html/
+${P5SITE}/auto/share/dist/Mail-DMARC/html/css/
+${P5SITE}/auto/share/dist/Mail-DMARC/html/css/ellipsis-xbl.xml
+${P5SITE}/auto/share/dist/Mail-DMARC/html/css/ui.jqgrid.css
+${P5SITE}/auto/share/dist/Mail-DMARC/html/css/ui.multiselect.css
+${P5SITE}/auto/share/dist/Mail-DMARC/html/index.html
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-ar.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-bg.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-bg1251.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-cat.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-cn.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-cs.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-da.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-de.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-dk.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-el.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-en.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-es.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-fa.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-fi.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-fr.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-gl.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-he.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-hr.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-hr1250.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-hu.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-id.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-is.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-it.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-ja.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-kr.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-lt.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-mne.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-nl.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-no.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-pl.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-pt-br.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-pt.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-ro.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-ru.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-sk.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-sr-latin.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-sr.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-sv.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-th.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-tr.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-tw.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-ua.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/i18n/grid.locale-vi.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/js/jquery.jqGrid.min.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/grid.addons.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/grid.postext.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/grid.setcolumns.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/jquery.contextmenu.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/jquery.searchFilter.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/jquery.tablednd.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/searchFilter.css
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/ui.multiselect.css
+${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/ui.multiselect.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.mysql
+${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.sqlite
+${P5SITE}/auto/share/dist/Mail-DMARC/public_suffix_list
+@man man/man1/dmarc_http_client.1
+@man man/man1/dmarc_httpd.1
+@man man/man1/dmarc_lookup.1
+@man man/man1/dmarc_receive.1
+@man man/man1/dmarc_send_reports.1
+@man man/man1/dmarc_view_reports.1
+@comment @man man/man1/install_deps.pl.1
+@man man/man3p/Mail::DMARC.3p
+@man man/man3p/Mail::DMARC::Base.3p
+@man man/man3p/Mail::DMARC::HTTP.3p
+@man man/man3p/Mail::DMARC::Policy.3p
+@man man/man3p/Mail::DMARC::PurePerl.3p
+@man man/man3p/Mail::DMARC::Report.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Metadata.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Record.3p
+@man man/man3p/Mail::DMARC::Report::Receive.3p
+@man man/man3p/Mail::DMARC::Report::Send.3p
+@man man/man3p/Mail::DMARC::Report::Send::HTTP.3p
+@man man/man3p/Mail::DMARC::Report::Send::SMTP.3p
+@man man/man3p/Mail::DMARC::Report::Store.3p
+@man man/man3p/Mail::DMARC::Report::Store::SQL.3p
+@man man/man3p/Mail::DMARC::Report::URI.3p
+@man man/man3p/Mail::DMARC::Result.3p
