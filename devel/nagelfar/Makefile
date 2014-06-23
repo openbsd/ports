@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/21 11:34:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/06/23 21:05:09 naddy Exp $
 
 COMMENT =	syntax analysis tool for Tcl
 
 DISTNAME =	nagelfar1112
 PKGNAME =	nagelfar-1.1.12
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
@@ -18,7 +18,6 @@ RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
-REVISION =	0
 
 NF_LIB_DIR =	${PREFIX}/libdata/nagelfar
 NF_DOC_DIR =	${PREFIX}/share/doc/nagelfar
