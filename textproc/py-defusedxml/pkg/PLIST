@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/23 13:33:28 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/defusedxml/
+lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/defusedxml/ElementTree.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/ElementTree.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/__init__.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/cElementTree.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/cElementTree.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/common.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/common.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/expatbuilder.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/expatbuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/expatreader.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/expatreader.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/lxml.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/lxml.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/minidom.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/minidom.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/pulldom.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/pulldom.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/sax.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/sax.pyc
+lib/python${MODPY_VERSION}/site-packages/defusedxml/xmlrpc.py
+lib/python${MODPY_VERSION}/site-packages/defusedxml/xmlrpc.pyc
