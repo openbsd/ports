@@ -1,24 +1,27 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/06/23 13:37:02 jasper Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
-DISTNAME=	SOAPpy-0.11.6
+MODPY_EGG_VERSION=0.12.22
+DISTNAME=	SOAPpy-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/^/py-/}
-REVISION =	7
 CATEGORIES=    	devel www
-
-HOMEPAGE=	http://pywebsvcs.sourceforge.net/
 
 MODULES=	lang/python
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pywebsvcs/}
+MASTER_SITES=	${MASTER_SITE_PYPI:=S/SOAPpy/}
+EXTRACT_SUFX=	.zip
+
+MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=	devel/py-fpconst
 RUN_DEPENDS=	devel/py-fpconst \
-		textproc/py-xml
+		textproc/py-defusedxml \
+		textproc/py-xml \
+		www/py-wtools
 TEST_DEPENDS=${RUN_DEPENDS}
 
 # There are lots of tests, but most of them require network access

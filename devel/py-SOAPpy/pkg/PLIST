@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/12 00:57:13 djm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/23 13:37:02 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/SOAPpy/
+lib/python${MODPY_VERSION}/site-packages/SOAP${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/SOAP${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/SOAP${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/SOAP${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/SOAP${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/SOAP${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/SOAPpy/Client.py
 lib/python${MODPY_VERSION}/site-packages/SOAPpy/Client.pyc
 lib/python${MODPY_VERSION}/site-packages/SOAPpy/Config.py
@@ -30,20 +36,3 @@ lib/python${MODPY_VERSION}/site-packages/SOAPpy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/SOAPpy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/SOAPpy/version.py
 lib/python${MODPY_VERSION}/site-packages/SOAPpy/version.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/Namespaces.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/Namespaces.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/TimeoutSocket.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/TimeoutSocket.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/UserTuple.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/UserTuple.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/Utility.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/Utility.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/WSDLTools.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/WSDLTools.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/XMLSchema.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/XMLSchema.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/XMLname.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/XMLname.pyc
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/__init__.py
-lib/python${MODPY_VERSION}/site-packages/SOAPpy/wstools/__init__.pyc
