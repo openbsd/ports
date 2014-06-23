@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.848 2014/06/12 20:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.849 2014/06/23 19:12:54 henning Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -355,6 +355,7 @@
      SUBDIR += p5-Net-SMTP-SSL
      SUBDIR += p5-Net-SMTP-TLS-ButMaintained
      SUBDIR += p5-Net-SMTP_auth
+     SUBDIR += p5-Net-SMTPS
      SUBDIR += p5-Net-SNMP
      SUBDIR += p5-Net-SNPP
      SUBDIR += p5-Net-SSH
