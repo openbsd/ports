@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.316 2014/06/05 15:40:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.317 2014/06/23 07:58:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -10,9 +10,7 @@
      SUBDIR += augeas
      SUBDIR += autossh
      SUBDIR += backuppc
-     SUBDIR += bacula,mysql
-     SUBDIR += bacula,pgsql
-     SUBDIR += bacula,sqlite3
+     SUBDIR += bacula
      SUBDIR += bchunk
      SUBDIR += binwalk
      SUBDIR += bubblemon-dockapp
