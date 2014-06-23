@@ -1,0 +1,181 @@
+$OpenBSD: README-main,v 1.1 2014/06/23 21:56:04 rpe Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Notes about Icinga2
+===================
+
+Icinga2 is not a drop-in replacement for Icinga (or Nagios)!
+
+Read the "Migration from Icinga 1.x" and the "Differences between Icinga
+1.x and 2" sections in the documentation.
+
+A migration script (https://github.com/Icinga/icinga2-migration) exists,
+but it has several limitations (see the Known Caveats section).
+
+
+Getting Started
+===============
+
+The main documentation for Icinga2 is provided in markdown format.
+See ${LOCALBASE}/share/doc/icinga2/markdown or at
+http://docs.icinga.org/icinga2/latest/doc.
+
+The included sample configuration carries out some simple checks
+on the local machine; these should work as-is.
+
+You may check your configuration file format before starting Icinga:
+
+   $ sudo -u _icinga ${TRUEPREFIX}/sbin/icinga2 -v ${SYSCONFDIR}/icinga2.cfg
+
+This will parse all configuration files and warn about any problems
+which have been identified.
+
+To enable automatic startup on boot for icinga2, add it to pkg_scripts
+in ${BASESYSCONFDIR}/rc.conf.local, for example:
+
+   pkg_scripts="${pkg_scripts} icinga2"
+
+To start icinga2, reboot or start it manually:
+
+   $ sudo /etc/rc.d/icinga2 start
+
+
+Chroot Considerations
+=====================
+
+If you're using OpenBSD's default chroot environment for nginx, some files
+will need to be moved inside the jail and symbolic links created.
+
+   mkdir -p ${PREFIX-cgi}/etc ${PREFIX-cgi}/var/log
+   mv ${SYSCONFDIR} ${PREFIX-cgi}/etc/
+   ln -s ${PREFIX-cgi}/etc/icinga ${BASESYSCONFDIR}
+   mv /var/icinga ${PREFIX-cgi}/var/
+   ln -s ${PREFIX-cgi}/var/icinga /var
+   mv /var/log/icinga ${PREFIX-cgi}/var/log/
+   ln -s ${PREFIX-cgi}/var/log/icinga /var/log
+
+To display times in your local timezone, you will also need to provide
+a suitable /var/www/etc/localtime; due to the chroot, a symbolic link cannot
+be used here, instead the file can be copied:
+
+   cp /usr/share/zoneinfo/Antarctica/South_Pole ${PREFIX-cgi}/etc/localtime
+
+Web User-Interfaces
+===================
+
+A web-based user interface for Icinga2 is in development. Until its release
+you can use the classic or the API based user interfaces. They are provided
+in their own packages; one or both must be installed separately
+("pkg_add icinga-cgi" or "pkg_add icinga-web").
+
+1) icinga-cgi: the classic (but improved) Nagios-style interface
+
+   nginx doesn't support CGI scripts directly; instead the slowcgi(8) wrapper
+   must be used. Enable it at startup:
+
+   # echo slowcgi_flags= >> /etc/rc.conf.local
+   # /etc/rc.d/slowcgi start
+
+   And add a configuration section like this to /etc/nginx/nginx.conf:
+
+   location /icinga/ {
+	alias		/icinga-cgi/;
+	satisfy		any;
+	allow		127.0.0.1/32;
+	allow		::1/128;
+	auth_basic	"Icinga Access";
+	auth_basic_user_file /etc/icinga/htpasswd.users;
+   }
+   location /cgi-bin/icinga/ {
+	satisfy		any;
+	allow		127.0.0.1/32;
+	allow		::1/128;
+	root		/;
+	auth_basic	"Icinga Access";
+	auth_basic_user_file /etc/icinga/htpasswd.users;
+	try_files	$uri =404;
+	fastcgi_pass	unix:run/slowcgi.sock;
+	fastcgi_param	REMOTE_USER $remote_user;
+	include		fastcgi_params;
+   }
+
+   The example above permits access from the local machine without password,
+   and requires HTTP basic authentication from other locations. The password
+   file can be created as follows:
+
+      # htpasswd ${SYSCONFDIR}/htpasswd.users <username>
+
+   When done, reload the web server:
+
+      # /etc/rc.d/nginx reload
+
+   You should then be able to access the web interface at
+   http://localhost/icinga/
+
+
+2) icinga-web: new API-based interface
+
+** N.B. These icinga-web instructions have not yet been updated for use with
+** with nginx; 2.6 and 2.7 below relate to use with the apache-httpd-openbsd
+** package. Please contact the port maintainer if you can provide suitable
+** configuration sections to use icinga-web with nginx.
+
+   2.1) Setup the icinga database. For details see:
+   ${TRUEPREFIX}/share/examples/icinga/db/README
+
+   2.2) Enable the ido2db daemon. Add it to the pkg_scripts line
+   in ${BASESYSCONFDIR}/rc.conf.local before icinga, for example:
+
+      pkg_scripts="${pkg_scripts} ido2db icinga"
+
+   Afterwards, you can start it by rebooting, or manually:
+
+      $ sudo /etc/rc.d/ido2db start
+
+   2.3) Enable the "broker_module=${TRUEPREFIX}/lib/idomod.so ..." line in
+   ${SYSCONFDIR}/icinga.cfg and restart icinga:
+
+      $ sudo /etc/rc.d/icinga restart
+
+   Now you should see in the icinga logfile, that icinga is storing
+   information in the db.
+
+   2.4) Setup the icinga_web database (change the password!):
+
+      mysql -u root -p <<EOF
+      CREATE DATABASE icinga_web;
+      GRANT USAGE ON *.* TO 'icinga_web'@'localhost'
+         IDENTIFIED BY 'icinga_web_password';
+      GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, INDEX
+         ON icinga_web.* TO 'icinga_web'@'localhost';
+      FLUSH PRIVILEGES;
+      \u icinga_web
+      \. /var/www/icinga-web/etc/schema/mysql.sql
+      EOF
+
+   2.5) Change the db settings accordingly for both icinga and for
+   icinga_web in /var/www/icinga-web/etc/conf.d/databases.xml.
+
+   2.6) To enable icinga-web, link the provided httpd.conf snippet:
+
+      $ sudo ln -s ../modules.sample/icinga-web.conf /var/www/conf/modules
+
+   2.7) Currently, icinga-web is not tested to work in a web server chroot
+   environment. You may have success by symlinking /var/www/var/www to
+   /var/www (mkdir -p /var/www/var && ln -s ../.. /var/www/var/www).
+   This topic will be revisited in a future version of this package.
+
+   You should then be able to access the web interface at
+
+      http://localhost/icinga-web/
+
+   using user 'root' and 'password' as password. Change the default
+   password in the preferences as soon as possible!.
+
+   If you want to use the classic interface from within icinga-web
+   you have to install the icinga-cgi package. The reporting component
+   of icinga-web depends on external software which is not installed
+   by default.
