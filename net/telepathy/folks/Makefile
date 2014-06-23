@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.69 2014/04/21 13:41:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2014/06/23 09:56:21 jasper Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.9.6
+GNOME_VERSION=		0.9.7
 # MODULE_VERSION in config.h
-API_V=			41
-REVISION=		2
+API_V=			42
 
-SHARED_LIBS +=  folks-telepathy           5.1 # 41.1
-SHARED_LIBS +=  folks                     5.4 # 41.1
-SHARED_LIBS +=  folks-eds                 1.1 # 41.1
+SHARED_LIBS +=  folks-telepathy           5.1 # 42.0
+SHARED_LIBS +=  folks                     5.4 # 42.0
+SHARED_LIBS +=  folks-eds                 1.1 # 42.0
+SHARED_LIBS +=  folks-dummy               0.0 # 42.0
 
 SUBST_VARS=		API_V
 
-HOMEPAGE=		${HOMEPAGE_TP:=Folks}
+HOMEPAGE=		https://wiki.gnome.org/Projects/Folks
 
 WANTLIB += c camel-1.2 db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2
 WANTLIB += ebook-contacts-1.2 edata-book-1.2 edataserver-1.2 ffi

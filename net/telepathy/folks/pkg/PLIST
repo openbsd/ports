@@ -1,16 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/11/15 08:26:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/06/23 09:56:21 jasper Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
 @bin bin/folks-import
 @bin bin/folks-inspect
 include/folks/
+include/folks/folks-dummy.h
 include/folks/folks-eds.h
 include/folks/folks-telepathy.h
 include/folks/folks.h
 lib/folks/
 lib/folks/${API_V}/
 lib/folks/${API_V}/backends/
+lib/folks/${API_V}/backends/dummy/
+lib/folks/${API_V}/backends/dummy/dummy.so
 lib/folks/${API_V}/backends/eds/
 lib/folks/${API_V}/backends/eds/eds.so
 lib/folks/${API_V}/backends/key-file/
@@ -18,8 +21,12 @@ lib/folks/${API_V}/backends/key-file/key-file.so
 lib/folks/${API_V}/backends/telepathy/
 lib/folks/${API_V}/backends/telepathy/telepathy.so
 lib/girepository-1.0/Folks-0.6.typelib
+lib/girepository-1.0/FolksDummy-0.6.typelib
 lib/girepository-1.0/FolksEds-0.6.typelib
 lib/girepository-1.0/FolksTelepathy-0.6.typelib
+lib/libfolks-dummy.a
+lib/libfolks-dummy.la
+@lib lib/libfolks-dummy.so.${LIBfolks-dummy_VERSION}
 lib/libfolks-eds.a
 lib/libfolks-eds.la
 @lib lib/libfolks-eds.so.${LIBfolks-eds_VERSION}
@@ -29,11 +36,13 @@ lib/libfolks-telepathy.la
 lib/libfolks.a
 lib/libfolks.la
 @lib lib/libfolks.so.${LIBfolks_VERSION}
+lib/pkgconfig/folks-dummy.pc
 lib/pkgconfig/folks-eds.pc
 lib/pkgconfig/folks-telepathy.pc
 lib/pkgconfig/folks.pc
 share/GConf/gsettings/folks.convert
 share/gir-1.0/Folks-0.6.gir
+share/gir-1.0/FolksDummy-0.6.gir
 share/gir-1.0/FolksEds-0.6.gir
 share/gir-1.0/FolksTelepathy-0.6.gir
 share/glib-2.0/schemas/org.freedesktop.folks.gschema.xml
@@ -91,6 +100,8 @@ share/locale/vi/LC_MESSAGES/folks.mo
 share/locale/zh_CN/LC_MESSAGES/folks.mo
 share/locale/zh_HK/LC_MESSAGES/folks.mo
 share/locale/zh_TW/LC_MESSAGES/folks.mo
+share/vala/vapi/folks-dummy.deps
+share/vala/vapi/folks-dummy.vapi
 share/vala/vapi/folks-eds.deps
 share/vala/vapi/folks-eds.vapi
 share/vala/vapi/folks-telepathy.deps
