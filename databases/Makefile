@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.268 2014/05/30 09:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.269 2014/06/23 19:08:42 henning Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -103,6 +103,7 @@
      SUBDIR += p5-DBIx-DataModel
      SUBDIR += p5-DBIx-Migration
      SUBDIR += p5-DBIx-SearchBuilder
+     SUBDIR += p5-DBIx-Simple
      SUBDIR += p5-DBIx-XHTML_Table
      SUBDIR += p5-DBM-Deep
      SUBDIR += p5-Data-Page
