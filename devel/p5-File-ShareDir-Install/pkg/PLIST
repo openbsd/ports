@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/23 19:10:04 henning Exp $
+${P5SITE}/File/
+${P5SITE}/File/ShareDir/
+${P5SITE}/File/ShareDir/Install.pm
+@man man/man3p/File::ShareDir::Install.3p
