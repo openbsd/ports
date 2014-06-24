@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.663 2014/06/23 13:35:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.664 2014/06/24 21:48:22 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -454,6 +454,8 @@
      SUBDIR += ruby-ntlm,ruby21
      SUBDIR += ruby-passenger,ruby18
      SUBDIR += ruby-passenger,ruby19
+     SUBDIR += ruby-passenger,ruby20
+     SUBDIR += ruby-passenger,ruby21
      SUBDIR += ruby-rack
      SUBDIR += ruby-rack-protection
      SUBDIR += ruby-rack-test
