@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.27 2014/04/11 16:28:17 ajacoutot Exp $
+$OpenBSD: README,v 1.28 2014/06/24 08:49:14 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -148,9 +148,17 @@ access is done over https instead of http.
 
 Synchronization
 ===============
-The "ocsync" package (net/ocsync) can be installed to synchronize local
-files with ownCloud. e.g.
+
+CLI
+---
+The "ocsync" package (net/ocsync) can be installed to synchronize with
+an ownCloud server. e.g.
     $ ocsync /path/to/localdir ownclouds://<username>:<password>@<hostname>/files/webdav.php/remotedir/
+
+GUI
+---
+The "mirall" package (net/mirall) is a graphical (QT) application to
+synchronize with an ownCloud server.
 
 Encryption app and chroot
 =========================
