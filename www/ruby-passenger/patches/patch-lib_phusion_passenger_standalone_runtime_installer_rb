@@ -1,27 +1,20 @@
-$OpenBSD: patch-lib_phusion_passenger_standalone_runtime_installer_rb,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+$OpenBSD: patch-lib_phusion_passenger_standalone_runtime_installer_rb,v 1.2 2014/06/24 21:45:06 jeremy Exp $
 
 We don't want to check with the passenger servers to see if they have a binary
 version for OpenBSD.
 
 We also don't want to depend on asciidoc.
 
---- lib/phusion_passenger/standalone/runtime_installer.rb.orig	Wed Dec 31 16:00:00 1969
-+++ lib/phusion_passenger/standalone/runtime_installer.rb	Thu Dec  1 07:27:21 2011
-@@ -91,7 +91,7 @@ protected
- 		if Dependencies.fastthread_required?
- 			result << Dependencies::FastThread
- 		end
--		if Dependencies.asciidoc_required?
-+		if false
- 			result << Dependencies::AsciiDoc
- 		end
- 		return result
-@@ -185,7 +185,7 @@ private
+--- lib/phusion_passenger/standalone/runtime_installer.rb.orig	Thu May 29 05:13:26 2014
++++ lib/phusion_passenger/standalone/runtime_installer.rb	Thu Jun  5 09:28:36 2014
+@@ -223,9 +223,7 @@ private
  	end
- 	
+ 
  	def should_download_binaries?
--		return @download_binaries && @binaries_url_root
+-		return PhusionPassenger.installed_from_release_package? &&
+-			@download_binaries &&
+-			@binaries_url_root
 +		false
  	end
- 	
- 	def show_welcome_screen
+ 
+ 	def download_support_binaries

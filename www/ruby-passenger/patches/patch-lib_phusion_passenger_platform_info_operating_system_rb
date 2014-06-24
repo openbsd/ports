@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_phusion_passenger_platform_info_operating_system_rb,v 1.1 2014/06/24 21:45:06 jeremy Exp $
+--- lib/phusion_passenger/platform_info/operating_system.rb.orig	Thu Jun  5 12:04:04 2014
++++ lib/phusion_passenger/platform_info/operating_system.rb	Thu Jun  5 12:04:12 2014
+@@ -32,6 +32,7 @@ module PlatformInfo
+ 	# Linux is always identified as "linux". OS X is always identified as "macosx".
+ 	# Identifiers for other operating systems may contain a version number, e.g. "freebsd10".
+ 	def self.os_name
++		return 'openbsd'
+ 		if rb_config['target_os'] =~ /darwin/ && (sw_vers = find_command('sw_vers'))
+ 			return "macosx"
+ 		elsif rb_config['target_os'] == "linux-"

@@ -1,21 +1,21 @@
-$OpenBSD: patch-lib_phusion_passenger_standalone_utils_rb,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+$OpenBSD: patch-lib_phusion_passenger_standalone_utils_rb,v 1.2 2014/06/24 21:45:06 jeremy Exp $
 
 Passenger standalone is designed so that multiple versions can be downloaded
 and installed at runtime, separated by ruby and platform version.  The
 OpenBSD port is already separated by ruby and platform version, so it uses
 the same runtime_version_string across platforms and ruby versions.
 
---- lib/phusion_passenger/standalone/utils.rb.orig	Wed Nov 16 02:48:42 2011
-+++ lib/phusion_passenger/standalone/utils.rb	Wed Nov 16 02:49:16 2011
+--- lib/phusion_passenger/standalone/utils.rb.orig	Thu May 29 05:13:26 2014
++++ lib/phusion_passenger/standalone/utils.rb	Thu Jun  5 10:25:35 2014
 @@ -33,12 +33,7 @@ private
  	end
  	
- 	def runtime_version_string
--		if PhusionPassenger.natively_packaged?
--			return "natively-packaged"
--		else
+ 	def runtime_version_string(nginx_version)
+-		if PhusionPassenger.originally_packaged? || nginx_version != PhusionPassenger::PREFERRED_NGINX_VERSION
 -			require_platform_info_binary_compatibility
 -			return "#{VERSION_STRING}-#{PlatformInfo.passenger_binary_compatibility_id}"
+-		else
+-			return VERSION_STRING
 -		end
 +		"runtime"
  	end

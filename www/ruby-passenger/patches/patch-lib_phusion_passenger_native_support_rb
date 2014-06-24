@@ -1,16 +1,15 @@
-$OpenBSD: patch-lib_phusion_passenger_native_support_rb,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+$OpenBSD: patch-lib_phusion_passenger_native_support_rb,v 1.2 2014/06/24 21:45:06 jeremy Exp $
 
 We compile this library and place it in the gem lib directory, so requiring
 it should not fail.
 
---- lib/phusion_passenger/native_support.rb.orig	Wed Nov 16 11:49:04 2011
-+++ lib/phusion_passenger/native_support.rb	Wed Nov 16 11:55:06 2011
-@@ -30,6 +30,8 @@ class NativeSupportLoader
+--- lib/phusion_passenger/native_support.rb.orig	Thu May 29 05:13:26 2014
++++ lib/phusion_passenger/native_support.rb	Fri Jun  6 11:41:17 2014
+@@ -40,6 +40,7 @@ class NativeSupportLoader
+ 	end
  	
  	def start
- 		require 'phusion_passenger'
-+		require 'passenger_native_support'
-+		return
- 		load_from_source_dir ||
- 		load_from_load_path ||
- 		load_from_home ||
++		return load_from_load_path
+ 		if ENV['PASSENGER_USE_RUBY_NATIVE_SUPPORT'] == '0'
+ 			STDERR.puts " --> Continuing without #{library_name}."
+ 			STDERR.puts "     Because PASSENGER_USE_RUBY_NATIVE_SUPPORT is set to 0."

@@ -1,15 +1,30 @@
-$OpenBSD: patch-lib_phusion_passenger_standalone_package_runtime_command_rb,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+$OpenBSD: patch-lib_phusion_passenger_standalone_package_runtime_command_rb,v 1.2 2014/06/24 21:45:06 jeremy Exp $
 
 OpenBSD tar defaults to /dev/rst0 if not given an f flag.
 
---- lib/phusion_passenger/standalone/package_runtime_command.rb.orig	Wed Nov 16 00:54:41 2011
-+++ lib/phusion_passenger/standalone/package_runtime_command.rb	Wed Nov 16 00:55:06 2011
-@@ -67,12 +67,12 @@ class PackageRuntimeCommand < Command
+--- lib/phusion_passenger/standalone/package_runtime_command.rb.orig	Thu May 29 05:13:26 2014
++++ lib/phusion_passenger/standalone/package_runtime_command.rb	Thu Jun  5 12:06:18 2014
+@@ -64,6 +64,7 @@ class PackageRuntimeCommand < Command
+ 		installer = RuntimeInstaller.new(
+ 			:targets     => [:nginx, :ruby, :support_binaries],
+ 			:support_dir => support_dir,
++			:lib_dir     => support_dir,
+ 			:ruby_dir    => ruby_dir,
+ 			:nginx_dir   => nginx_dir,
+ 			:nginx_version     => @options[:nginx_version],
+@@ -74,17 +75,18 @@ class PackageRuntimeCommand < Command
  		Dir.chdir(support_dir) do
  			support_dir_name = File.basename(support_dir)
  			puts "cd #{support_dir}"
 -			sh "tar -c . | gzip --best > ../#{support_dir_name}.tar.gz"
 +			sh "tar -cf - . | gzip --best > ../#{support_dir_name}.tar.gz"
+ 		end
++		Dir.mkdir(ruby_dir)
+ 		Dir.chdir(ruby_dir) do
+ 			ruby_dir_name = File.basename(ruby_dir)
+ 			puts "cd #{ruby_dir}"
+-			sh "tar -c . | gzip --best > ../#{ruby_dir_name}.tar.gz"
++			sh "tar -cf - . | gzip --best > ../#{ruby_dir_name}.tar.gz"
  		end
  		Dir.chdir(nginx_dir) do
  			nginx_dir_name   = File.basename(nginx_dir)
@@ -18,4 +33,4 @@ OpenBSD tar defaults to /dev/rst0 if not given an f flag.
 +			sh "tar -cf - . | gzip --best > ../#{nginx_dir_name}.tar.gz"
  		end
  		puts "cd #{runtime_dir}"
- 		sh "rm", "-rf", support_dir, nginx_dir
+ 		sh "rm", "-rf", support_dir, ruby_dir, nginx_dir

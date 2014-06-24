@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_phusion_passenger_standalone_command_rb,v 1.1 2011/12/13 18:38:18 jeremy Exp $
---- lib/phusion_passenger/standalone/command.rb.orig	Wed Nov 16 13:41:34 2011
-+++ lib/phusion_passenger/standalone/command.rb	Wed Nov 16 13:42:02 2011
-@@ -215,7 +215,7 @@ private
+$OpenBSD: patch-lib_phusion_passenger_standalone_command_rb,v 1.2 2014/06/24 21:45:06 jeremy Exp $
+--- lib/phusion_passenger/standalone/command.rb.orig	Thu May 29 05:13:26 2014
++++ lib/phusion_passenger/standalone/command.rb	Thu Jun  5 09:25:29 2014
+@@ -291,7 +291,7 @@ private
  		if @options[:socket_file]
- 			UNIXSocket.new(@options[:socket_file])
+ 			ping_spec = [:unix, @options[:socket_file]]
  		else
--			TCPSocket.new(@options[:address], nginx_ping_port)
-+			TCPSocket.new(@options[:address] == '0.0.0.0' ? '127.0.0.1' : @options[:address], nginx_ping_port)
+-			ping_spec = [:tcp, @options[:address], nginx_ping_port]
++			ping_spec = [:tcp, @options[:address] == '0.0.0.0' ? '127.0.0.1' : @options[:address], nginx_ping_port]
  		end
- 	end
- 	
+ 		opts = {
+ 			:identifier    => 'Nginx',

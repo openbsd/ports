@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_phusion_passenger_platform_info_cxx_portability_rb,v 1.1 2014/06/24 21:45:06 jeremy Exp $
+
+Do not define PASSENGER_DEBUG, otherwise the logs get spammed with debugging
+information.
+
+--- lib/phusion_passenger/platform_info/cxx_portability.rb.orig	Mon Jun 23 12:27:28 2014
++++ lib/phusion_passenger/platform_info/cxx_portability.rb	Mon Jun 23 12:27:52 2014
+@@ -149,7 +149,7 @@ private
+ 		flags << '-DHAVE_ACCEPT4' if has_accept4?
+ 		flags << '-DHAS_SFENCE' if supports_sfence_instruction?
+ 		flags << '-DHAS_LFENCE' if supports_lfence_instruction?
+-		flags << "-DPASSENGER_DEBUG -DBOOST_DISABLE_ASSERTS"
++		flags << "-DBOOST_DISABLE_ASSERTS"
+ 
+ 		if cc_or_cxx == :cxx
+ 			flags << cxx_11_flag if cxx_11_flag

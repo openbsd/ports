@@ -1,40 +1,13 @@
-$OpenBSD: patch-lib_phusion_passenger_rb,v 1.3 2011/12/13 18:38:18 jeremy Exp $
---- lib/phusion_passenger.rb.orig	Wed Dec 31 16:00:00 1969
-+++ lib/phusion_passenger.rb	Thu Dec  1 08:15:40 2011
-@@ -46,12 +46,12 @@ module PhusionPassenger
- 		return @natively_packaged
- 	end
- 	
--	NATIVELY_PACKAGED_SOURCE_ROOT        = "/usr/share/phusion-passenger/source"
--	NATIVELY_PACKAGED_DOCDIR             = "/usr/share/doc/phusion-passenger"
--	NATIVELY_PACKAGED_RESOURCES_DIR      = "/usr/share/phusion-passenger"
--	NATIVELY_PACKAGED_AGENTS_DIR         = "/usr/lib/phusion-passenger/agents"
--	NATIVELY_PACKAGED_HELPER_SCRIPTS_DIR = "/usr/share/phusion-passenger/helper-scripts"
--	NATIVELY_PACKAGED_APACHE2_MODULE     = "/usr/lib/apache2/modules/mod_passenger.so"
-+	NATIVELY_PACKAGED_SOURCE_ROOT        = "${PASSENGER_ROOT}/source"
-+	NATIVELY_PACKAGED_DOCDIR             = "${PASSENGER_ROOT}/doc"
-+	NATIVELY_PACKAGED_RESOURCES_DIR      = "${PASSENGER_ROOT}/resources"
-+	NATIVELY_PACKAGED_AGENTS_DIR         = "${PASSENGER_ROOT}/agents"
-+	NATIVELY_PACKAGED_HELPER_SCRIPTS_DIR = "${PASSENGER_ROOT}/helper-scripts"
-+	NATIVELY_PACKAGED_APACHE2_MODULE     = "${LOCALBASE}/lib/apache2/modules/mod_passenger.so"
- 	
- 	# Directory containing the Phusion Passenger Ruby libraries.
- 	LIBDIR         = File.expand_path(File.dirname(__FILE__))
-@@ -63,15 +63,14 @@ module PhusionPassenger
- 	LOCAL_DIR      = ".passenger"
+$OpenBSD: patch-lib_phusion_passenger_rb,v 1.4 2014/06/24 21:45:06 jeremy Exp $
+--- lib/phusion_passenger.rb.orig	Thu May 29 05:13:25 2014
++++ lib/phusion_passenger.rb	Thu Jun  5 10:47:23 2014
+@@ -51,8 +51,7 @@ module PhusionPassenger
  	
  	# Directories in which to look for plugins.
--	PLUGIN_DIRS    = ["/usr/share/phusion-passenger/plugins",
--		"/usr/local/share/phusion-passenger/plugins",
-+	PLUGIN_DIRS    = ["${PASSENGER_ROOT}/plugins",
- 		"~/#{LOCAL_DIR}/plugins"]
+ 	PLUGIN_DIRS = [
+-		"/usr/share/#{GLOBAL_NAMESPACE_DIRNAME}/plugins",
+-		"/usr/local/share/#{GLOBAL_NAMESPACE_DIRNAME}/plugins",
++		"${PASSENGER_ROOT}/plugins",
+ 		"~/#{USER_NAMESPACE_DIRNAME}/plugins"
+ 	]
  	
- 	# Directory under $HOME for storing Phusion Passenger Standalone resource files.
- 	LOCAL_STANDALONE_RESOURCE_DIR  = File.join(LOCAL_DIR, "standalone")
- 	
- 	# System-wide directory for storing Phusion Passenger Standalone resource files.
--	GLOBAL_STANDALONE_RESOURCE_DIR = "/var/lib/passenger-standalone"
-+	GLOBAL_STANDALONE_RESOURCE_DIR = "${PASSENGER_ROOT}/standalone/support/resources"
- 	
- 	if !natively_packaged?
- 		# Top directory of the Phusion Passenger source code.

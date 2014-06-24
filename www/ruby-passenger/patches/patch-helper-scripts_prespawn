@@ -1,11 +1,11 @@
-$OpenBSD: patch-helper-scripts_prespawn,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+$OpenBSD: patch-helper-scripts_prespawn,v 1.2 2014/06/24 21:45:06 jeremy Exp $
 
 Just because you can listen on 0.0.0.0 does not mean you can
 connect to it.
 
---- helper-scripts/prespawn.orig	Wed Nov 16 13:16:37 2011
-+++ helper-scripts/prespawn	Wed Nov 16 13:18:06 2011
-@@ -79,7 +79,9 @@ class PrespawnLocation
+--- helper-scripts/prespawn.orig	Thu May 29 05:13:25 2014
++++ helper-scripts/prespawn	Thu Jun  5 09:02:32 2014
+@@ -80,7 +80,9 @@ class PrespawnLocation
  	end
  
  	def request_host

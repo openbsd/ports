@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_phusion_passenger_standalone_runtime_locator_rb,v 1.1 2014/06/24 21:45:06 jeremy Exp $
+--- lib/phusion_passenger/standalone/runtime_locator.rb.orig	Thu Jun  5 15:48:46 2014
++++ lib/phusion_passenger/standalone/runtime_locator.rb	Thu Jun  5 16:08:49 2014
+@@ -51,6 +51,7 @@ class RuntimeLocator
+ 	# Returns the directory in which Passenger Standalone
+ 	# support binaries are stored, or nil if not installed.
+ 	def find_support_dir
++		return File.join(File.dirname(__FILE__), '../../../standalone')
+ 		return @support_dir if @has_support_dir
+ 
+ 		if PhusionPassenger.originally_packaged?
+@@ -74,6 +75,7 @@ class RuntimeLocator
+ 	# Returns the path to the Nginx binary that Passenger Standalone
+ 	# may use, or nil if not installed.
+ 	def find_nginx_binary
++		return File.join(File.dirname(__FILE__), '../../../standalone/PassengerWebHelper')
+ 		return @nginx_binary if @has_nginx_binary
+ 
+ 		if File.exist?(config_filename)

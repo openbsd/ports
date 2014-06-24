@@ -1,0 +1,11 @@
+$OpenBSD: patch-ext_nginx_config,v 1.6 2014/06/24 21:45:06 jeremy Exp $
+--- ext/nginx/config.orig	Thu Jun  5 11:47:46 2014
++++ ext/nginx/config	Thu Jun  5 11:48:08 2014
+@@ -1,6 +1,6 @@
+ # passenger-config is run with the 'ruby' command in $PATH, even when natively packaged,
+ # so we check whether 'ruby' is correctly in $PATH.
+-if ! ruby -v >/dev/null 2>/dev/null; then
++if ! ${RUBY} -v >/dev/null 2>/dev/null; then
+     echo '*** ERROR: Cannot find the "ruby" command in $PATH. Please fix your $PATH. You can learn more about $PATH at: http://www.modrails.com/documentation/Users%20guide%20Nginx.html#_the_path_environment_variable'
+     echo '*** Do you think that you set $PATH correctly, and you happen to be using sudo or rvmsudo? Read this: http://www.modrails.com/documentation/Users%20guide%20Nginx.html#env_vars_and_sudo'
+     exit 1

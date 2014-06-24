@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_phusion_passenger_platform_info_depcheck_specs_libs_rb,v 1.1 2014/06/24 21:45:06 jeremy Exp $
+--- lib/phusion_passenger/platform_info/depcheck_specs/libs.rb.orig	Thu May 29 05:13:26 2014
++++ lib/phusion_passenger/platform_info/depcheck_specs/libs.rb	Thu Jun  5 11:59:57 2014
+@@ -106,7 +106,7 @@ define 'pcre-dev' do
+ 	name "PCRE development headers"
+ 	website "http://www.pcre.org/"
+ 	define_checker do
+-		check_for_header('pcre.h')
++		check_for_header('pcre.h', :c, '-I${LOCALBASE}/include')
+ 	end
+ 
+ 	on :debian do
