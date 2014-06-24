@@ -1,0 +1,19 @@
+$OpenBSD: patch-ext_common_ApplicationPool2_Pool_h,v 1.1 2014/06/24 21:43:02 jeremy Exp $
+
+Analytics collection fails, due to some issue with parsing the
+output of ps.  There's a complete lack of debugging code (e.g
+showing where the parse error occurs in the ps output), so it
+would be difficult to fix the problem.  As analytics are not
+useful unless being reported to Phusion's "Union Station" app,
+it's probably best to skip this code entirely.
+
+--- ext/common/ApplicationPool2/Pool.h.orig	Thu May 29 05:13:25 2014
++++ ext/common/ApplicationPool2/Pool.h	Thu Jun  5 19:09:43 2014
+@@ -857,7 +857,6 @@ class Pool: public boost::enable_shared_from_this<Pool
+ 			UPDATE_TRACE_POINT();
+ 			processMetrics = ProcessMetricsCollector().collect(pids);
+ 		} catch (const ParseException &) {
+-			P_WARN("Unable to collect process metrics: cannot parse 'ps' output.");
+ 			goto end;
+ 		}
+ 		try {

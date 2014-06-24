@@ -1,0 +1,11 @@
+$OpenBSD: patch-build_basics_rb,v 1.1 2014/06/24 21:43:02 jeremy Exp $
+--- build/basics.rb.orig	Thu Jun  5 10:35:33 2014
++++ build/basics.rb	Thu Jun  5 10:35:45 2014
+@@ -198,6 +198,6 @@ PKG_DIR                   = string_option('PKG_DIR', "
+ 
+ 
+ # Whether to use the vendored libev or the system one.
+-USE_VENDORED_LIBEV = boolean_option("USE_VENDORED_LIBEV", true)
++USE_VENDORED_LIBEV = boolean_option("USE_VENDORED_LIBEV", false)
+ # Whether to use the vendored libeio or the system one.
+ USE_VENDORED_LIBEIO = boolean_option("USE_VENDORED_LIBEIO", true)

@@ -1,12 +1,14 @@
-$OpenBSD: patch-build_common_library_rb,v 1.1 2013/05/07 23:20:11 jeremy Exp $
---- build/common_library.rb.orig	Fri May  3 17:28:47 2013
-+++ build/common_library.rb	Fri May  3 17:29:05 2013
-@@ -265,7 +265,7 @@ if USE_VENDORED_LIBEV
- 		end
- 	end
+$OpenBSD: patch-build_common_library_rb,v 1.2 2014/06/24 21:43:02 jeremy Exp $
+--- build/common_library.rb.orig	Thu May 29 05:13:24 2014
++++ build/common_library.rb	Thu Jun  5 11:23:25 2014
+@@ -151,8 +151,8 @@ if USE_VENDORED_LIBEV
+ 	
+ 	task :clean => 'libev:clean'
  else
 -	LIBEV_CFLAGS = string_option('LIBEV_CFLAGS', '-I/usr/include/libev')
-+	LIBEV_CFLAGS = string_option('LIBEV_CFLAGS', '-I${LOCALBASE}/include/libev')
- 	LIBEV_LIBS   = string_option('LIBEV_LIBS', '-lev')
+-	LIBEV_LIBS   = string_option('LIBEV_LIBS', '-lev')
++	LIBEV_CFLAGS = string_option('LIBEV_CFLAGS', '-I/${LOCALBASE}/include/libev')
++	LIBEV_LIBS   = string_option('LIBEV_LIBS', '-L${LOCALBASE}/lib -lev')
+ 	LIBEV_TARGET = nil
  	task :libev  # do nothing
  end

@@ -1,0 +1,48 @@
+$OpenBSD: patch-ext_common_agents_HelperAgent_SystemMetricsTool_cpp,v 1.1 2014/06/24 21:43:02 jeremy Exp $
+--- ext/common/agents/HelperAgent/SystemMetricsTool.cpp.orig	Thu Jun  5 11:17:31 2014
++++ ext/common/agents/HelperAgent/SystemMetricsTool.cpp	Thu Jun  5 11:18:35 2014
+@@ -41,7 +41,7 @@ struct Options {
+ 	SystemMetrics::XmlOptions xmlOptions;
+ 	SystemMetrics::DescriptionOptions descOptions;
+ 	int interval;
+-	bool stdin;
++	bool use_stdin;
+ 	bool exitOnUnexpectedError;
+ 	bool help;
+ 
+@@ -49,7 +49,7 @@ struct Options {
+ 		xml = false;
+ 		descOptions.colors = isatty(1);
+ 		interval = -1;
+-		stdin = false;
++		use_stdin = false;
+ 		exitOnUnexpectedError = true;
+ 		help = false;
+ 	}
+@@ -117,7 +117,7 @@ parseOptions(int argc, char *argv[]) {
+ 				exit(1);
+ 			}
+ 		} else if (isFlag(argv[i], '\0', "--stdin")) {
+-			options.stdin = true;
++			options.use_stdin = true;
+ 			i++;
+ 		} else if (isFlag(argv[i], '\0', "--no-exit-on-unexpected-error")) {
+ 			options.exitOnUnexpectedError = false;
+@@ -131,7 +131,7 @@ parseOptions(int argc, char *argv[]) {
+ 			exit(1);
+ 		}
+ 	}
+-	if (options.interval != -1 && options.stdin) {
++	if (options.interval != -1 && options.use_stdin) {
+ 		fprintf(stderr, "ERROR: --watch and --stdin are mutually exclusive.\n");
+ 		exit(1);
+ 	}
+@@ -181,7 +181,7 @@ main(int argc, char *argv[]) {
+ 		usleep(50000);
+ 	}
+ 
+-	if (options.stdin) {
++	if (options.use_stdin) {
+ 		while (waitForNextLine()) {
+ 			perform(options, collector, metrics);
+ 		}

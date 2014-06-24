@@ -1,12 +1,11 @@
-$OpenBSD: patch-build_documentation_rb,v 1.3 2011/12/13 18:38:17 jeremy Exp $
---- build/documentation.rb.orig	Thu Jan  1 01:00:00 1970
-+++ build/documentation.rb	Tue Nov 15 23:50:42 2011
-@@ -29,7 +29,7 @@ task :doc => Packaging::ASCII_DOCS
- Packaging::ASCII_DOCS.each do |target|
- 	source = target.sub(/\.html$/, '.txt')
- 	file target => [source] + Dir["doc/users_guide_snippets/**/*"] do
--		if PlatformInfo.asciidoc
-+		if false
- 			if target =~ /apache/i
- 				type = "-a apache"
- 			elsif target =~ /nginx/i
+$OpenBSD: patch-build_documentation_rb,v 1.4 2014/06/24 21:43:02 jeremy Exp $
+--- build/documentation.rb.orig	Thu May 29 05:13:24 2014
++++ build/documentation.rb	Thu Jun  5 09:17:32 2014
+@@ -45,7 +45,6 @@ Packaging::ASCII_DOCS.each do |target|
+ 		if juvia_site_key
+ 			command << " -c juvia --juvia-url http://juvia.phusion.nl --juvia-site-key #{juvia_site_key}"
+ 		end
+-		sh(command)
+ 	end
+ 	
+ 	task :clean do
