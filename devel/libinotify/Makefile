@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/24 08:09:05 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/24 08:32:19 ajacoutot Exp $
 
 COMMENT =		kevent based inotify
 
 DISTNAME =		libinotify-20120419
+REVISION =		0
 
 SHARED_LIBS =		inotify 0.0
 
@@ -25,13 +26,13 @@ BUILD_DEPENDS =		devel/libtool \
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS += 	--libdir=${TRUEPREFIX}/lib/inotify/ \
-			--includedir=${TRUEPREFIX}/include/inotify/
+CONFIGURE_ARGS = 	--libdir=${PREFIX}/lib/inotify/ \
+			--includedir=${PREFIX}/include/inotify/
 
-AUTOCONF_VERSION =	2.63
-AUTOMAKE_VERSION =	1.11
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.14
 
-TEST_TARGET = 		test
+TEST_TARGET =		test
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
