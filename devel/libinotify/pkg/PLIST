@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/24 08:09:05 kirby Exp $
+include/inotify/
+include/inotify/sys/
+include/inotify/sys/inotify.h
+lib/inotify/
+lib/inotify/libinotify.a
+lib/inotify/libinotify.la
+@lib lib/inotify/libinotify.so.${LIBinotify_VERSION}

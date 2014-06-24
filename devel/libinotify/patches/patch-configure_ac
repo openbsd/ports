@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2014/06/24 08:09:05 kirby Exp $
+--- configure.ac.orig	Wed Apr 30 14:07:24 2014
++++ configure.ac	Wed Apr 30 14:08:59 2014
+@@ -13,10 +13,14 @@ case "$host_os" in
+ *freebsd*)
+    OS=FreeBSD
+    ;;
++*openbsd*)
++   OS=OpenBSD
++   ;;
+ esac
+ 
+ AM_CONDITIONAL(LINUX, [test "$OS" = "Linux"])
+ AM_CONDITIONAL(FREEBSD, [test "$OS" = "FreeBSD"])
++AM_CONDITIONAL(OPENBSD, [test "$OS" = "OpenBSD"])
+ 
+ 
+ AC_ARG_ENABLE([perrors],
