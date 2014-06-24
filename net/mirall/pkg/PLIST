@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/24 09:53:59 ajacoutot Exp $
 @bin bin/owncloud
 @lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
 share/applications/owncloud.desktop
 share/examples/mirall/
+share/examples/mirall/ownCloud/
 @sample ${SYSCONFDIR}/ownCloud/
-share/examples/mirall/sync-exclude.lst
+share/examples/mirall/ownCloud/sync-exclude.lst
 @sample ${SYSCONFDIR}/ownCloud/sync-exclude.lst
 share/icons/hicolor/128x128/apps/owncloud.png
 share/icons/hicolor/22x22/apps/owncloud.png

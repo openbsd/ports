@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/24 09:53:59 ajacoutot Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		mirall-1.4.2
+REVISION =		0
 
 SHARED_LIBS =		owncloudsync 0.0
 
@@ -24,7 +25,6 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/cmake x11/qt4 gcc4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS = 	c++
-MODGCC4_VERSION = 	4.8
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 LIB_DEPENDS =		devel/libinotify \
@@ -37,8 +37,7 @@ CONFIGURE_ARGS +=	-DBUILD_TYPE=Release \
 NO_TEST =		Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mirall
-	@mv ${PREFIX}/etc/ownCloud/sync-exclude.lst ${PREFIX}/share/examples/mirall/
-	@rm -r ${PREFIX}/etc
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	mv ${PREFIX}/etc ${PREFIX}/share/examples/mirall
 
 .include <bsd.port.mk>
