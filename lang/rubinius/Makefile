@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/06/06 17:33:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.32 2014/06/24 21:51:16 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ BROKEN-powerpc = no atomics for this arch
 
 COMMENT =	Ruby virtual machine and core library
 
-V=		2.2.7
+V=		2.2.9
 EXTRACT_SUFX=	.tar.bz2
 DISTNAME =	rubinius-${V}
 
@@ -102,8 +102,8 @@ TEST_IS_INTERACTIVE = Yes
 
 # VM Test: Failed 1 of 650 tests
 # mspec:
-# amd64: 2141 files, 19407 examples, 155561 expectations, 8 failures, 0 errors
-# i386:  2141 files, 19384 examples, 149277 expectations, 11 failures, 0 errors
+# amd64: 2142 files, 19451 examples, 155608 expectations, 8 failures, 0 errors
+# i386:  2142 files, 19428 examples, 149322 expectations, 11 failures, 0 errors
 do-test:
 	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} vm:test
 	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci -f s
