@@ -1,0 +1,28 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/06/24 16:51:35 sthen Exp $
+
+FindBacktrace.cmake - in cmake 3 /
+http://www.openbsd.org/cgi-bin/cvsweb/ports/devel/cmake/files/FindBacktrace.cmake
+
+XXX version in cmake 3 uses Backtrace_* in variable names, but version
+in ports uses BACKTRACE_*. s/BACKTRACE_/Backtrace_/ when moving to the
+committed version.
+
+--- CMakeLists.txt.orig	Mon Jun 16 08:02:43 2014
++++ CMakeLists.txt	Tue Jun 24 16:42:48 2014
+@@ -110,13 +110,11 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/Bin/${C
+ include(CheckFunctionExists)
+ include(CheckLibraryExists)
+ check_function_exists(vfork HAVE_VFORK)
+-check_function_exists(backtrace_symbols HAVE_BACKTRACE_SYMBOLS)
+ check_function_exists(pipe2 HAVE_PIPE2)
+ check_library_exists(dl dladdr "dlfcn.h" HAVE_DLADDR)
+-check_library_exists(execinfo backtrace_symbols "" HAVE_LIBEXECINFO)
+-
+-if(HAVE_LIBEXECINFO)
+-  set(HAVE_BACKTRACE_SYMBOLS TRUE)
++find_package(Backtrace)
++if(BACKTRACE_FOUND)
++  include_directories(${BACKTRACE_INCLUDE_DIRS})
+ endif()
+ 
+ include(GNUInstallDirs)

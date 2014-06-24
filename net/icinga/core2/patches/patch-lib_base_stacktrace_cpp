@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_base_stacktrace_cpp,v 1.1 2014/06/24 16:51:35 sthen Exp $
+
+XXX version in cmake 3 uses Backtrace_* in variable names, but version
+in ports uses BACKTRACE_*. s/BACKTRACE_/Backtrace_/ when moving to the
+committed version.
+
+--- lib/base/stacktrace.cpp.orig	Tue Jun 24 16:43:31 2014
++++ lib/base/stacktrace.cpp	Tue Jun 24 16:44:02 2014
+@@ -22,9 +22,9 @@
+ #include "base/utility.hpp"
+ #include "base/initialize.hpp"
+ 
+-#ifdef HAVE_BACKTRACE_SYMBOLS
+-#	include <execinfo.h>
+-#endif /* HAVE_BACKTRACE_SYMBOLS */
++#if BACKTRACE_FOUND
++#	include <${BACKTRACE_HEADER}>
++#endif /* BACKTRACE_FOUND */
+ 
+ using namespace icinga;
+ 
