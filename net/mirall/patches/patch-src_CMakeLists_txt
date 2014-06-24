@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
+--- src/CMakeLists.txt.orig	Mon Oct 21 16:05:25 2013
++++ src/CMakeLists.txt	Mon Jun 23 16:27:28 2014
+@@ -140,7 +140,7 @@ qt4_wrap_cpp(syncMoc ${libsync_HEADERS})
+ list(APPEND libsync_LINK_TARGETS
+     ${QT_LIBRARIES}
+     ${CSYNC_LIBRARY}
+-    dl
++    ${INOTIFY_LIBRARY}
+ )
+ 
+ if(QTKEYCHAIN_FOUND)
+@@ -233,6 +233,7 @@ endif()
+ # csync is required.
+ include_directories(${CSYNC_INCLUDE_DIR}/csync ${CSYNC_INCLUDE_DIR} ${CSYNC_BUILD_PATH}/src)
+ include_directories(${3rdparty_INC})
++include_directories(${INOTIFY_INCLUDE_DIR})
+ 
+ qt4_wrap_cpp(mirallMoc ${mirall_HEADERS})
+ 

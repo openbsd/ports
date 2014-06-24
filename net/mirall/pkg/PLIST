@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
+@bin bin/owncloud
+@lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
+share/applications/owncloud.desktop
+share/examples/mirall/
+@sample ${SYSCONFDIR}/ownCloud/
+share/examples/mirall/sync-exclude.lst
+@sample ${SYSCONFDIR}/ownCloud/sync-exclude.lst
+share/icons/hicolor/128x128/apps/owncloud.png
+share/icons/hicolor/22x22/apps/owncloud.png
+share/icons/hicolor/32x32/apps/owncloud.png
+share/icons/hicolor/48x48/apps/owncloud.png
+share/icons/hicolor/64x64/apps/owncloud.png
+share/owncloud/
+share/owncloud/i18n/
+share/owncloud/i18n/mirall_TW.qm
+share/owncloud/i18n/mirall_ca.qm
+share/owncloud/i18n/mirall_cs.qm
+share/owncloud/i18n/mirall_de.qm
+share/owncloud/i18n/mirall_el.qm
+share/owncloud/i18n/mirall_en.qm
+share/owncloud/i18n/mirall_es.qm
+share/owncloud/i18n/mirall_es_AR.qm
+share/owncloud/i18n/mirall_et.qm
+share/owncloud/i18n/mirall_eu.qm
+share/owncloud/i18n/mirall_fa.qm
+share/owncloud/i18n/mirall_fi.qm
+share/owncloud/i18n/mirall_fr.qm
+share/owncloud/i18n/mirall_gl.qm
+share/owncloud/i18n/mirall_hu.qm
+share/owncloud/i18n/mirall_it.qm
+share/owncloud/i18n/mirall_ja.qm
+share/owncloud/i18n/mirall_nl.qm
+share/owncloud/i18n/mirall_pl.qm
+share/owncloud/i18n/mirall_pt.qm
+share/owncloud/i18n/mirall_pt_BR.qm
+share/owncloud/i18n/mirall_ru.qm
+share/owncloud/i18n/mirall_sk.qm
+share/owncloud/i18n/mirall_sl.qm
+share/owncloud/i18n/mirall_sv.qm
+share/owncloud/i18n/mirall_th.qm
+share/owncloud/i18n/mirall_uk.qm
+share/owncloud/i18n/mirall_zh_CN.qm
+share/owncloud/i18n/mirall_zh_TW.qm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

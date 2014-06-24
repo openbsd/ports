@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mirall_application_cpp,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
+--- src/mirall/application.cpp.orig	Tue Apr 29 15:04:54 2014
++++ src/mirall/application.cpp	Tue Apr 29 15:05:15 2014
+@@ -81,7 +81,7 @@ static const char optionsC[] =
+ 
+ QString applicationTrPath()
+ {
+-#ifdef Q_OS_LINUX
++#ifdef Q_OS_UNIX
+     return QString::fromLatin1(DATADIR"/"APPLICATION_EXECUTABLE"/i18n/");
+ #endif
+ #ifdef Q_OS_MAC

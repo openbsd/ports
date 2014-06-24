@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_modules_FindINotify_cmake,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
+--- cmake/modules/FindINotify.cmake.orig	Mon Jun 23 16:36:04 2014
++++ cmake/modules/FindINotify.cmake	Mon Jun 23 16:51:10 2014
+@@ -8,6 +8,8 @@ find_path(INOTIFY_INCLUDE_DIR sys/inotify.h 
+           HINTS /usr/include/${CMAKE_LIBRARY_ARCHITECTURE})
+ mark_as_advanced(INOTIFY_INCLUDE_DIR)
+ 
++find_library(INOTIFY_LIBRARY inotify PATH_SUFFIXES lib/inotify)
++
+ # all listed variables are TRUE
+ # handle the QUIETLY and REQUIRED arguments and set INOTIFY_FOUND to TRUE if
+ include(FindPackageHandleStandardArgs)
