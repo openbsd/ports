@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/04/28 09:02:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2014/06/24 00:03:21 bentley Exp $
 
 COMMENT =		lightweight web browser
 
@@ -34,7 +34,9 @@ MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_RSVG=YES \
 			NETSURF_USE_NSSVG=NO \
 			NETSURF_USE_ROSPRITE=NO \
-			NETSURF_USE_WEBP=YES
+			NETSURF_USE_WEBP=YES \
+			NETSURF_USE_MOZJS=NO \
+			NETSURF_USE_JS=NO
 
 post-install:
 # bug in pkg_add -u prevents symlink->directory in pkg updates
