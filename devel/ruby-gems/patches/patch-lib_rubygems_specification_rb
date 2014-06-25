@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_rubygems_specification_rb,v 1.1 2014/06/25 15:38:18 jeremy Exp $
+
+Backport fix for Gem.refresh from upstream commit
+b61c621fb2e00e215bcc8ad7d9fe45433881da14.
+
+--- lib/rubygems/specification.rb.orig	Tue Jun 24 14:21:46 2014
++++ lib/rubygems/specification.rb	Tue Jun 24 14:21:52 2014
+@@ -275,6 +275,12 @@ class Gem::Specification
+ 
+       @@all = specs.values
+ 
++      # After a reset, make sure already loaded specs
++      # are still marked as activated.
++      specs = {}
++      Gem.loaded_specs.each_value{|s| specs[s] = true}
++      @@all.each{|s| s.activated = true if specs[s]}
++
+       _resort!
+     end
+     @@all
