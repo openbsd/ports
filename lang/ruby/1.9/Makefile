@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/03/11 20:07:07 jeremy Exp $
+# $OpenBSD: Makefile,v 1.45 2014/06/25 15:38:39 jeremy Exp $
 
 BROKEN-alpha =		miniruby abort trap when generating rdoc
 
@@ -18,6 +18,7 @@ PKGNAME-gdbm =		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-dbm =		ruby-dbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby-ri_docs-${VERSION}.${PATCHLEVEL}
+REVISION-main =		0
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
