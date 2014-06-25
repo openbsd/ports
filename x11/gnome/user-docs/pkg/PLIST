@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/03/26 13:33:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/06/25 09:17:12 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -386,39 +386,35 @@ share/help/C/gnome-help/wacom-multi-monitor.page
 share/help/C/gnome-help/wacom-stylus.page
 share/help/C/gnome-help/wacom.page
 share/help/C/system-admin-guide/
-share/help/C/system-admin-guide/background.page
-share/help/C/system-admin-guide/backgrounds-extra.page
-share/help/C/system-admin-guide/command-line-access.page
-share/help/C/system-admin-guide/compose-key.page
-share/help/C/system-admin-guide/ctrl-alt-backspace.page
-share/help/C/system-admin-guide/dconf-custom-defaults.page
-share/help/C/system-admin-guide/dconf-favorite-applications.page
+share/help/C/system-admin-guide/appearance.page
 share/help/C/system-admin-guide/dconf-keyfiles.page
 share/help/C/system-admin-guide/dconf-lockdown.page
-share/help/C/system-admin-guide/dconf-nfs-home.page
-share/help/C/system-admin-guide/dconf-profiles.page
-share/help/C/system-admin-guide/enterprise-login.page
+share/help/C/system-admin-guide/dconf-snippets.xml
+share/help/C/system-admin-guide/dconf.page
+share/help/C/system-admin-guide/desktop-favorite-applications.page
 share/help/C/system-admin-guide/extensions-enable.page
 share/help/C/system-admin-guide/extensions-lockdown.page
-share/help/C/system-admin-guide/extensions-mandatory.page
 share/help/C/system-admin-guide/extensions.page
 share/help/C/system-admin-guide/fonts-user.page
-share/help/C/system-admin-guide/fonts.page
 share/help/C/system-admin-guide/index.page
 share/help/C/system-admin-guide/keyboard-layout.page
 share/help/C/system-admin-guide/legal.xml
-share/help/C/system-admin-guide/login-background.page
-share/help/C/system-admin-guide/login-banner.page
-share/help/C/system-admin-guide/login-logo.page
-share/help/C/system-admin-guide/overrides.page
-share/help/C/system-admin-guide/power-dim-screen.page
-share/help/C/system-admin-guide/printer-configuration.page
-share/help/C/system-admin-guide/processes.page
-share/help/C/system-admin-guide/screen-locking.page
-share/help/C/system-admin-guide/servers-list.page
-share/help/C/system-admin-guide/user-autologin.page
-share/help/C/system-admin-guide/user-session.page
-share/help/C/system-admin-guide/vpn-list.page
+share/help/C/system-admin-guide/lockdown-command-line.page
+share/help/C/system-admin-guide/login-automatic.page
+share/help/C/system-admin-guide/login-enterprise.page
+share/help/C/system-admin-guide/login-fingerprint.page
+share/help/C/system-admin-guide/login-userlist-disable.page
+share/help/C/system-admin-guide/login.page
+share/help/C/system-admin-guide/mime-types-application-user.page
+share/help/C/system-admin-guide/mime-types-application.page
+share/help/C/system-admin-guide/mime-types-custom-user.page
+share/help/C/system-admin-guide/mime-types-custom.page
+share/help/C/system-admin-guide/mime-types.page
+share/help/C/system-admin-guide/session-custom.page
+share/help/C/system-admin-guide/session-user.page
+share/help/C/system-admin-guide/software.page
+share/help/C/system-admin-guide/sundry.page
+share/help/C/system-admin-guide/user-settings.page
 share/help/as/
 share/help/as/gnome-help/
 share/help/as/gnome-help/a11y-bouncekeys.page
