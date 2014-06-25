@@ -1,11 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/06/24 16:51:35 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/06/25 11:14:50 sthen Exp $
 
 FindBacktrace.cmake - in cmake 3 /
 http://www.openbsd.org/cgi-bin/cvsweb/ports/devel/cmake/files/FindBacktrace.cmake
-
-XXX version in cmake 3 uses Backtrace_* in variable names, but version
-in ports uses BACKTRACE_*. s/BACKTRACE_/Backtrace_/ when moving to the
-committed version.
 
 --- CMakeLists.txt.orig	Mon Jun 16 08:02:43 2014
 +++ CMakeLists.txt	Tue Jun 24 16:42:48 2014
@@ -21,8 +17,8 @@ committed version.
 -if(HAVE_LIBEXECINFO)
 -  set(HAVE_BACKTRACE_SYMBOLS TRUE)
 +find_package(Backtrace)
-+if(BACKTRACE_FOUND)
-+  include_directories(${BACKTRACE_INCLUDE_DIRS})
++if(Backtrace_FOUND)
++  include_directories(${Backtrace_INCLUDE_DIRS})
  endif()
  
  include(GNUInstallDirs)

@@ -1,9 +1,4 @@
-$OpenBSD: patch-config_h_cmake,v 1.1 2014/06/24 16:51:35 sthen Exp $
-
-XXX version in cmake 3 uses Backtrace_* in variable names, but version
-in ports uses BACKTRACE_*. s/BACKTRACE_/Backtrace_/ when moving to the
-committed version.
-
+$OpenBSD: patch-config_h_cmake,v 1.2 2014/06/25 11:14:50 sthen Exp $
 --- config.h.cmake.orig	Tue Jun 24 15:33:20 2014
 +++ config.h.cmake	Tue Jun 24 16:42:24 2014
 @@ -1,11 +1,10 @@
@@ -15,7 +10,7 @@ committed version.
  #cmakedefine HAVE_VFORK
  #cmakedefine HAVE_DLADDR
 -#cmakedefine HAVE_LIBEXECINFO
-+#cmakedefine01 BACKTRACE_FOUND
++#cmakedefine01 Backtrace_FOUND
  
  #define ICINGA_PREFIX "${CMAKE_INSTALL_PREFIX}"
  #define ICINGA_SYSCONFDIR "${CMAKE_INSTALL_FULL_SYSCONFDIR}"
