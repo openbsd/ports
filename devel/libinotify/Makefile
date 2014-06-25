@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/24 08:32:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/25 09:12:00 ajacoutot Exp $
 
 COMMENT =		kevent based inotify
 
-DISTNAME =		libinotify-20120419
-REVISION =		0
+DISTNAME =		libinotify-20140622
 
 SHARED_LIBS =		inotify 0.0
 
@@ -16,9 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES = 		http://ftp.vim.org/pub/ftp/os/BSD/FreeBSD/ports/local-distfiles/sunpoet/ \
-			http://www.linklevel.net/distfiles/
-EXTRACT_SUFX = 		.tar.xz
+MASTER_SITES = 		http://distcache.freebsd.org/ports-distfiles/
+WRKDIST =		${WRKDIR}/dmatveev-libinotify-kqueue-d775062
 
 BUILD_DEPENDS =		devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \
