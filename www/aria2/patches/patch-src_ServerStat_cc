@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_ServerStat_cc,v 1.1 2014/06/25 13:48:58 bcallah Exp $
+
+Fix a time_t warning.
+
+--- src/ServerStat.cc.orig	Sun Mar 30 05:23:59 2014
++++ src/ServerStat.cc	Tue Jun 24 21:03:46 2014
+@@ -205,13 +205,13 @@ bool ServerStat::operator==(const ServerStat& serverSt
+ std::string ServerStat::toString() const
+ {
+   return fmt("host=%s, protocol=%s, dl_speed=%d, sc_avg_speed=%d,"
+-             " mc_avg_speed=%d, last_updated=%ld, counter=%d, status=%s",
++             " mc_avg_speed=%d, last_updated=%lld, counter=%d, status=%s",
+              getHostname().c_str(),
+              getProtocol().c_str(),
+              getDownloadSpeed(),
+              getSingleConnectionAvgSpeed(),
+              getMultiConnectionAvgSpeed(),
+-             getLastUpdated().getTime(),
++             (long long)getLastUpdated().getTime(),
+              getCounter(),
+              STATUS_STRING[getStatus()]);
+ }
