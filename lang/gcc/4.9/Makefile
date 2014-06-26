@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2014/06/26 21:01:37 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -60,7 +60,7 @@ MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-estdc}
 .endif
 
-DISTNAME =   	gcc-${FULL_VERSION}
+DISTNAME =	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.9.jar
 ECJ =		ecj-4.5.jar
@@ -71,7 +71,7 @@ EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo
 
-TEST_DEPENDS = 	devel/dejagnu \
+TEST_DEPENDS =	devel/dejagnu \
 		devel/autogen
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
