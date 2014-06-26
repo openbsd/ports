@@ -1,0 +1,25 @@
+$OpenBSD: patch-source3_libsmb_clirap_c,v 1.1 2014/06/26 11:43:54 sthen Exp $
+
+- CVE-2014-0244 (Denial of service - CPU loop)
+- CVE-2014-3493 (Denial of service - Server crash/memory corruption).
+
+--- source3/libsmb/clirap.c.orig	Wed Jun 25 14:57:41 2014
++++ source3/libsmb/clirap.c	Wed Jun 25 14:59:58 2014
+@@ -319,7 +319,7 @@ bool cli_NetServerEnum(struct cli_state *cli, char *wo
+ 				sizeof(param) - PTR_DIFF(p,param) - 1,
+ 				STR_TERMINATE|STR_UPPER);
+ 
+-		if (len == (size_t)-1) {
++		if (len == 0) {
+ 			SAFE_FREE(last_entry);
+ 			return false;
+ 		}
+@@ -331,7 +331,7 @@ bool cli_NetServerEnum(struct cli_state *cli, char *wo
+ 					sizeof(param) - PTR_DIFF(p,param) - 1,
+ 					STR_TERMINATE);
+ 
+-			if (len == (size_t)-1) {
++			if (len == 0) {
+ 				SAFE_FREE(last_entry);
+ 				return false;
+ 			}

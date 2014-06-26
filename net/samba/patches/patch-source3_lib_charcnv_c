@@ -1,0 +1,42 @@
+$OpenBSD: patch-source3_lib_charcnv_c,v 1.1 2014/06/26 11:43:54 sthen Exp $
+
+- CVE-2014-0244 (Denial of service - CPU loop)
+- CVE-2014-3493 (Denial of service - Server crash/memory corruption)
+
+--- source3/lib/charcnv.c.orig	Wed Jun 25 14:53:54 2014
++++ source3/lib/charcnv.c	Wed Jun 25 14:56:56 2014
+@@ -822,7 +822,7 @@ size_t ucs2_align(const void *base_ptr, const void *p,
+  **/
+ size_t push_ascii(void *dest, const char *src, size_t dest_len, int flags)
+ {
+-	size_t src_len = strlen(src);
++	size_t src_len = 0;
+ 	char *tmpbuf = NULL;
+ 	size_t ret;
+ 
+@@ -840,17 +840,21 @@ size_t push_ascii(void *dest, const char *src, size_t 
+ 		src = tmpbuf;
+ 	}
+ 
++	src_len = strlen(src);
+ 	if (flags & (STR_TERMINATE | STR_TERMINATE_ASCII)) {
+ 		src_len++;
+ 	}
+ 
+ 	ret = convert_string(CH_UNIX, CH_DOS, src, src_len, dest, dest_len, True);
+-	if (ret == (size_t)-1 &&
+-			(flags & (STR_TERMINATE | STR_TERMINATE_ASCII))
++
++	SAFE_FREE(tmpbuf);
++	if (ret == (size_t)-1) {
++		if ((flags & (STR_TERMINATE | STR_TERMINATE_ASCII))
+ 			&& dest_len > 0) {
+-		((char *)dest)[0] = '\0';
++			((char *)dest)[0] = '\0';
++		}
++		return 0;
+ 	}
+-	SAFE_FREE(tmpbuf);
+ 	return ret;
+ }
+ 
