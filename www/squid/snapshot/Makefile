@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/06/26 13:08:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2014/06/26 21:13:47 sthen Exp $
 
 D=		20140626-r13480
 V=		3.5pre${D:C/-.*//}
@@ -18,8 +18,6 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--disable-arch-native \
 		--enable-ssl-crtd
 
-BUILD_DEPENDS+=	devel/cppunit
-# alternatively set ac_cv_path_CPPUNITCONFIG=false to disable
 LIB_DEPENDS+=	security/gnutls
 MODULES+=	devel/gettext
 WANTLIB+=	ffi gmp gnutls hogweed p11-kit tasn1 z
@@ -29,6 +27,9 @@ AUTOMAKE_VERSION?= 1.14
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
+
+# for stable version, replace with setting ac_cv_path_CPPUNITCONFIG=false
+BUILD_DEPENDS+=	devel/cppunit
 
 post-patch:
 	cd ${WRKSRC}; \
