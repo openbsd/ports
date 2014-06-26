@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+--- gcc/ada/gcc-interface/Make-lang.in.orig	Thu Dec 12 23:50:07 2013
++++ gcc/ada/gcc-interface/Make-lang.in	Fri Feb 14 21:33:08 2014
+@@ -878,8 +878,8 @@ ada.stagefeedback: stagefeedback-start
+ 
+ lang_checks += check-gnat
+ 
+-check-ada: check-acats check-gnat
+-check-ada-subtargets: check-acats-subtargets check-gnat-subtargets
++check-ada: check-gnat
++check-ada-subtargets: check-gnat-subtargets
+ 
+ ACATSDIR = $(TESTSUITEDIR)/ada/acats
+ 

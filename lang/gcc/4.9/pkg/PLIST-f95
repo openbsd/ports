@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST-f95,v 1.1.1.1 2014/06/26 16:30:20 pascal Exp $
+@conflict gfortran-*
+@conflict libgfortran-*
+@bin bin/egfortran
+@bin bin/${CONFIG}-egfortran
+@info info/gfortran.info
+lib/gcc/${CONFIG}/${V}/finclude/
+lib/gcc/${CONFIG}/${V}/libcaf_single.a
+lib/gcc/${CONFIG}/${V}/libcaf_single.la
+lib/gcc/${CONFIG}/${V}/libgfortranbegin.a
+lib/gcc/${CONFIG}/${V}/libgfortranbegin.la
+lib/libgfortran.a
+lib/libgfortran.la
+lib/libgfortran.spec
+@bin libexec/gcc/${CONFIG}/${V}/f951
+@man man/man1/egfortran.1

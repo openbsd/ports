@@ -1,0 +1,12 @@
+$OpenBSD: patch-lto-plugin_configure,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
+--- lto-plugin/configure.orig	Mon Mar 17 14:04:12 2014
++++ lto-plugin/configure	Wed Apr 23 12:49:07 2014
+@@ -9984,7 +9984,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in

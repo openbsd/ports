@@ -1,0 +1,21 @@
+$OpenBSD: patch-libcilkrts_runtime_os-unix_c,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- libcilkrts/runtime/os-unix.c.orig	Mon Jan 20 18:49:22 2014
++++ libcilkrts/runtime/os-unix.c	Fri Feb 14 20:24:55 2014
+@@ -56,6 +56,8 @@
+     // Uses sysconf(_SC_NPROCESSORS_ONLN) in verbose output
+ #elif defined  __FreeBSD__
+ // No additional include files
++#elif defined  __OpenBSD__
++// No additional include files
+ #elif defined __CYGWIN__
+ // Cygwin on Windows - no additional include files
+ #elif defined  __VXWORKS__
+@@ -374,7 +376,7 @@ COMMON_SYSDEP int __cilkrts_hardware_cpu_count(void)
+     assert((unsigned)count == count);
+ 
+     return count;
+-#elif defined  __FreeBSD__ || defined __CYGWIN__
++#elif defined  __FreeBSD__ || defined __OpenBSD__ || defined __CYGWIN__
+     int ncores = sysconf(_SC_NPROCESSORS_ONLN);
+ 
+     return ncores;

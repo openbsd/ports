@@ -1,0 +1,282 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+--- Makefile.in.orig	Fri Apr  4 22:53:48 2014
++++ Makefile.in	Wed Apr 23 12:48:58 2014
+@@ -2369,7 +2369,7 @@ install:
+ 	@: $(MAKE); $(unstage)
+ 	@r=`${PWD_COMMAND}`; export r; \
+ 	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
+-	$(MAKE) $(RECURSE_FLAGS_TO_PASS) installdirs install-host install-target
++	$(MAKE) $(RECURSE_FLAGS_TO_PASS) -j1 installdirs install-host install-target
+ 
+ .PHONY: install-host-nogcc
+ install-host-nogcc:  \
+@@ -2662,7 +2662,7 @@ configure-build-libiberty: 
+ 	srcdiroption="--srcdir=$${topdir}/libiberty"; \
+ 	libsrcdir="$$s/libiberty"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -2718,7 +2718,7 @@ configure-build-bison: 
+ 	srcdiroption="--srcdir=$${topdir}/bison"; \
+ 	libsrcdir="$$s/bison"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -2774,7 +2774,7 @@ configure-build-flex: 
+ 	srcdiroption="--srcdir=$${topdir}/flex"; \
+ 	libsrcdir="$$s/flex"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -2830,7 +2830,7 @@ configure-build-m4: 
+ 	srcdiroption="--srcdir=$${topdir}/m4"; \
+ 	libsrcdir="$$s/m4"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -2886,7 +2886,7 @@ configure-build-texinfo: 
+ 	srcdiroption="--srcdir=$${topdir}/texinfo"; \
+ 	libsrcdir="$$s/texinfo"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -2942,7 +2942,7 @@ configure-build-fixincludes: 
+ 	srcdiroption="--srcdir=$${topdir}/fixincludes"; \
+ 	libsrcdir="$$s/fixincludes"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -31244,7 +31244,7 @@ configure-target-libstdc++-v3: 
+ 	srcdiroption="--srcdir=$${topdir}/libstdc++-v3"; \
+ 	libsrcdir="$$s/libstdc++-v3"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -32218,7 +32218,7 @@ configure-target-libsanitizer: 
+ 	srcdiroption="--srcdir=$${topdir}/libsanitizer"; \
+ 	libsrcdir="$$s/libsanitizer"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -33192,7 +33192,7 @@ configure-target-libvtv: 
+ 	srcdiroption="--srcdir=$${topdir}/libvtv"; \
+ 	libsrcdir="$$s/libvtv"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -34167,7 +34167,7 @@ configure-target-libcilkrts: 
+ 	srcdiroption="--srcdir=$${topdir}/libcilkrts"; \
+ 	libsrcdir="$$s/libcilkrts"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -34624,7 +34624,7 @@ configure-target-libssp: 
+ 	srcdiroption="--srcdir=$${topdir}/libssp"; \
+ 	libsrcdir="$$s/libssp"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -35081,7 +35081,7 @@ configure-target-newlib: 
+ 	srcdiroption="--srcdir=$${topdir}/newlib"; \
+ 	libsrcdir="$$s/newlib"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -35537,7 +35537,7 @@ configure-target-libgcc: 
+ 	srcdiroption="--srcdir=$${topdir}/libgcc"; \
+ 	libsrcdir="$$s/libgcc"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -36507,7 +36507,7 @@ configure-target-libbacktrace: 
+ 	srcdiroption="--srcdir=$${topdir}/libbacktrace"; \
+ 	libsrcdir="$$s/libbacktrace"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -36964,7 +36964,7 @@ configure-target-libquadmath: 
+ 	srcdiroption="--srcdir=$${topdir}/libquadmath"; \
+ 	libsrcdir="$$s/libquadmath"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -37421,7 +37421,7 @@ configure-target-libgfortran: 
+ 	srcdiroption="--srcdir=$${topdir}/libgfortran"; \
+ 	libsrcdir="$$s/libgfortran"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -37878,7 +37878,7 @@ configure-target-libobjc: 
+ 	srcdiroption="--srcdir=$${topdir}/libobjc"; \
+ 	libsrcdir="$$s/libobjc"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -38335,7 +38335,7 @@ configure-target-libgo: 
+ 	srcdiroption="--srcdir=$${topdir}/libgo"; \
+ 	libsrcdir="$$s/libgo"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -38792,7 +38792,7 @@ configure-target-libtermcap: 
+ 	srcdiroption="--srcdir=$${topdir}/libtermcap"; \
+ 	libsrcdir="$$s/libtermcap"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -39184,7 +39184,7 @@ configure-target-winsup: 
+ 	srcdiroption="--srcdir=$${topdir}/winsup"; \
+ 	libsrcdir="$$s/winsup"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -39641,7 +39641,7 @@ configure-target-libgloss: 
+ 	srcdiroption="--srcdir=$${topdir}/libgloss"; \
+ 	libsrcdir="$$s/libgloss"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -40093,7 +40093,7 @@ configure-target-libffi: 
+ 	srcdiroption="--srcdir=$${topdir}/libffi"; \
+ 	libsrcdir="$$s/libffi"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -40540,7 +40540,7 @@ configure-target-libjava: 
+ 	srcdiroption="--srcdir=$${topdir}/libjava"; \
+ 	libsrcdir="$$s/libjava"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption} $(EXTRA_CONFIGARGS_LIBJAVA) \
+ 	  || exit 1
+@@ -40997,7 +40997,7 @@ configure-target-zlib: 
+ 	srcdiroption="--srcdir=$${topdir}/zlib"; \
+ 	libsrcdir="$$s/zlib"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -41454,7 +41454,7 @@ configure-target-boehm-gc: 
+ 	srcdiroption="--srcdir=$${topdir}/boehm-gc"; \
+ 	libsrcdir="$$s/boehm-gc"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -41911,7 +41911,7 @@ configure-target-rda: 
+ 	srcdiroption="--srcdir=$${topdir}/rda"; \
+ 	libsrcdir="$$s/rda"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -42368,7 +42368,7 @@ configure-target-libada: 
+ 	srcdiroption="--srcdir=$${topdir}/libada"; \
+ 	libsrcdir="$$s/libada"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -42824,7 +42824,7 @@ configure-target-libgomp: 
+ 	srcdiroption="--srcdir=$${topdir}/libgomp"; \
+ 	libsrcdir="$$s/libgomp"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -43799,7 +43799,7 @@ configure-target-libitm: 
+ 	srcdiroption="--srcdir=$${topdir}/libitm"; \
+ 	libsrcdir="$$s/libitm"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1
+@@ -44256,7 +44256,7 @@ configure-target-libatomic: 
+ 	srcdiroption="--srcdir=$${topdir}/libatomic"; \
+ 	libsrcdir="$$s/libatomic"; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) $${libsrcdir}/configure \
++	$(SHELL) $${libsrcdir}/configure \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+ 	  --target=${target_alias} $${srcdiroption}  \
+ 	  || exit 1

@@ -1,0 +1,30 @@
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- gcc/config/i386/i386.c.orig	Fri Mar 28 23:02:32 2014
++++ gcc/config/i386/i386.c	Wed Apr 23 12:49:01 2014
+@@ -2307,6 +2307,8 @@ struct ix86_frame
+   HOST_WIDE_INT reg_save_offset;
+   HOST_WIDE_INT sse_reg_save_offset;
+ 
++  HOST_WIDE_INT local_size;
++
+   /* When save_regs_using_mov is set, emit prologue using
+      move instead of push instructions.  */
+   bool save_regs_using_mov;
+@@ -9487,6 +9489,7 @@ ix86_compute_frame_layout (struct ix86_frame *frame)
+   HOST_WIDE_INT size = get_frame_size ();
+   HOST_WIDE_INT to_allocate;
+ 
++  frame->local_size = size;
+   frame->nregs = ix86_nsaved_regs ();
+   frame->nsseregs = ix86_nsaved_sseregs ();
+ 
+@@ -10851,6 +10854,9 @@ ix86_expand_prologue (void)
+       m->fs.sp_offset = INCOMING_FRAME_SP_OFFSET;
+       m->fs.realigned = true;
+     }
++
++  if (warn_stack_larger_than && frame.local_size > stack_larger_than_size)
++    warning (OPT_Wstack_larger_than_, "stack usage is %ld bytes", frame.local_size);
+ 
+   int_registers_saved = (frame.nregs == 0);
+   sse_registers_saved = (frame.nsseregs == 0);

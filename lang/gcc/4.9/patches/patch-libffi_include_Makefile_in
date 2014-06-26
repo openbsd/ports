@@ -1,0 +1,12 @@
+$OpenBSD: patch-libffi_include_Makefile_in,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- libffi/include/Makefile.in.orig	Tue Apr 22 11:14:50 2014
++++ libffi/include/Makefile.in	Wed Apr 23 12:49:03 2014
+@@ -384,7 +384,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-toollibffiHEADERS
++install-data-am:
+ 
+ install-dvi: install-dvi-am
+ 

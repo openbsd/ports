@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_config_alpha_alpha_md,v 1.1.1.1 2014/06/26 16:30:16 pascal Exp $
+--- gcc/config/alpha/alpha.md.orig	Fri Jun  7 08:26:42 2013
++++ gcc/config/alpha/alpha.md	Wed Oct 16 18:56:48 2013
+@@ -4887,7 +4887,8 @@
+   if (CONST_INT_P (operands[1])
+       && INTVAL (operands[1]) < 32768)
+     {
+-      if (INTVAL (operands[1]) >= 4096)
++      if (INTVAL (operands[1]) >= 4096
++	&& (flag_stack_check || STACK_CHECK_BUILTIN))
+ 	{
+ 	  /* We do this the same way as in the prologue and generate explicit
+ 	     probes.  Then we update the stack by the constant.  */

@@ -1,0 +1,23 @@
+$OpenBSD: patch-boehm-gc_include_gc_config_macros_h,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+--- boehm-gc/include/gc_config_macros.h.orig	Sun Nov  4 23:56:02 2012
++++ boehm-gc/include/gc_config_macros.h	Sat Jan 12 13:27:06 2013
+@@ -22,7 +22,7 @@
+ 	defined(GC_GNU_THREADS) || \
+ 	defined(GC_HPUX_THREADS) || defined(GC_OSF1_THREADS) || \
+ 	defined(GC_DGUX386_THREADS) || defined(GC_DARWIN_THREADS) || \
+-	defined(GC_AIX_THREADS) || \
++	defined(GC_AIX_THREADS) || defined(GC_OPENBSD_THREADS) || \
+         (defined(GC_WIN32_THREADS) && defined(__CYGWIN32__))
+ #   define GC_PTHREADS
+ # endif
+@@ -55,6 +55,10 @@
+ # endif
+ # if !defined(GC_PTHREADS) && defined(__FreeBSD__)
+ #   define GC_FREEBSD_THREADS
++#   define GC_PTHREADS
++# endif
++# if !defined(GC_PTHREADS) && defined(__OpenBSD__)
++#   define GC_OPENBSD_THREADS
+ #   define GC_PTHREADS
+ # endif
+ # if defined(DGUX) && (defined(i386) || defined(__i386__))

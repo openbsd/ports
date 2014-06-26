@@ -1,0 +1,25 @@
+$OpenBSD: patch-libgcc_Makefile_in,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- libgcc/Makefile.in.orig	Wed Nov 13 01:24:49 2013
++++ libgcc/Makefile.in	Mon Dec  2 12:20:03 2013
+@@ -381,7 +381,7 @@ ASM_HIDDEN_OP = @asm_hidden_op@
+ 
+ define gen-hide-list
+ $(NM) -pg $< | \
+-  $(AWK) 'NF == 3 && $$2 !~ /^[UN]$$/ && $$3 !~ /.*_compat/ \
++  $(AWK) 'NF == 3 && $$2 !~ /^[UNF]$$/ && $$3 !~ /.*_compat/ \
+          && $$3 !~ /.*@.*/ \
+ 	 { print "\t$(ASM_HIDDEN_OP)", $$3 }' > $@T
+ mv -f $@T $@
+@@ -1097,10 +1097,10 @@ install-shared:
+ install-leaf: $(install-shared) $(install-libunwind)
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_libdir)
+ 
+-	$(INSTALL_DATA) libgcc.a $(DESTDIR)$(inst_libdir)/
++	cp libgcc.a $(DESTDIR)$(inst_libdir)/
+ 	chmod 644 $(DESTDIR)$(inst_libdir)/libgcc.a
+ 	$(RANLIB) $(DESTDIR)$(inst_libdir)/libgcc.a
+-	$(INSTALL_DATA) libgcov.a $(DESTDIR)$(inst_libdir)/
++	cp libgcov.a $(DESTDIR)$(inst_libdir)/
+ 	chmod 644 $(DESTDIR)$(inst_libdir)/libgcov.a
+ 	$(RANLIB) $(DESTDIR)$(inst_libdir)/libgcov.a
+ 

@@ -1,0 +1,39 @@
+$OpenBSD: patch-libjava_configure,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- libjava/configure.orig	Sun Dec  1 23:39:57 2013
++++ libjava/configure	Mon Dec  2 12:20:03 2013
+@@ -6397,7 +6397,7 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -12795,7 +12795,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -16479,7 +16479,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -20760,7 +20760,7 @@ case "$THREADS" in
+ 	# support for weak references to pthread_* functions ala gthr.h API.
+ 	THREADSPEC='%{!pthread: %{!shared: %eUnder this configuration, the user must provide -pthread when linking.}}'
+ 	;;
+-     *-*-freebsd*)
++     *-*-freebsd* | *-*-openbsd*)
+ 	# FreeBSD >=5.3 implements a model much closer to other modern UNIX
+ 	# systems which support threads and -lpthread.
+ 	THREADLDFLAGS=-pthread

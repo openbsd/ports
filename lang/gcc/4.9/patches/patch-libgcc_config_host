@@ -1,0 +1,26 @@
+$OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- libgcc/config.host.orig	Thu Mar 27 16:40:31 2014
++++ libgcc/config.host	Thu Jun  5 15:19:40 2014
+@@ -785,6 +785,12 @@ microblaze*-*-rtems*)
+ 	;;
+ mips*-*-netbsd*)			# NetBSD/mips, either endian.
+ 	;;
++mips64-*-openbsd*)
++       set
++       ;;
++mips64el-*-openbsd*)
++       set
++       ;;
+ mips*-*-linux*)				# Linux MIPS, either endian.
+ 	extra_parts="$extra_parts crtfastmath.o"
+ 	tmake_file="${tmake_file} t-crtfm"
+@@ -946,6 +952,9 @@ powerpc*-*-freebsd*)
+ 	;;
+ powerpc-*-netbsd*)
+ 	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
++	;;
++powerpc-*-openbsd*)
++	tmake_file="$tmake_file rs6000/t-crtstuff"
+ 	;;
+ powerpc-*-eabispe*)
+ 	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"

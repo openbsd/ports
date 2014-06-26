@@ -1,0 +1,32 @@
+$OpenBSD: patch-libffi_configure,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- libffi/configure.orig	Sun Feb  9 23:32:51 2014
++++ libffi/configure	Fri Feb 14 20:24:55 2014
+@@ -10329,7 +10329,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -11493,6 +11493,9 @@ case "$host" in
+   hppa*-*-linux* | parisc*-*-linux* | hppa*-*-openbsd*)
+ 	TARGET=PA_LINUX; TARGETDIR=pa
+ 	;;
++  hppa-*-openbsd*)
++	TARGET=PA_LINUX; TARGETDIR=pa
++	;;
+   hppa*64-*-hpux*)
+ 	TARGET=PA64_HPUX; TARGETDIR=pa
+ 	;;
+@@ -11552,6 +11555,9 @@ case "$host" in
+ 	;;
+   powerpc-*-amigaos*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc
++	;;
++  powerpc-*-openbsd*)
++	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
+ 	;;
+   powerpc-*-beos*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc

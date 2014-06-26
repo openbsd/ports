@@ -1,0 +1,91 @@
+$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+--- gcc/ada/gcc-interface/Makefile.in.orig	Wed Apr  9 16:54:29 2014
++++ gcc/ada/gcc-interface/Makefile.in	Wed Jun 11 20:46:50 2014
+@@ -1384,6 +1384,87 @@ ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cp
+   MISCLIB = -lutil
+ endif
+ 
++ifeq ($(strip $(filter-out %86 openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-osinte.ads<s-osinte-openbsd.ads \
++  s-osinte.adb<s-osinte-openbsd.adb \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_TARGET_PAIRS) \
++  system.ads<system-openbsd-x86.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  # Empty when not using ZCX
++  EH_MECHANISM=
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out %86_64 openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-osinte.ads<s-osinte-openbsd.ads \
++  s-osinte.adb<s-osinte-openbsd.adb \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_64_TARGET_PAIRS) \
++  system.ads<system-openbsd-x86_64.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  # Empty when not using ZCX
++  EH_MECHANISM=
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out sparc64 openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-osinte.ads<s-osinte-openbsd.ads \
++  s-osinte.adb<s-osinte-openbsd.adb \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<system-openbsd-sparcv9.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  # Empty when not using ZCX
++  EH_MECHANISM=
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
+ # S390 Linux
+ ifeq ($(strip $(filter-out s390% linux%,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS_COMMON = \

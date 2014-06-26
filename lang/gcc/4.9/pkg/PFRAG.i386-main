@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.i386-main,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
+lib/gcc/${CONFIG}/${V}/plugin/include/config/dbxelf.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/att.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/i386-opts.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/i386-protos.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/i386.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/openbsdelf.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/stringop.def
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/unix.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/x86-tune.def
+lib/gcc/${CONFIG}/${V}/plugin/include/config/initfini-array.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-libpthread.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-stdint.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/vxworks-dummy.h

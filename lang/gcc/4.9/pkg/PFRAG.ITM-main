@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.ITM-main,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
+@info info/libitm.info
+lib/libitm.a
+lib/libitm.la
+lib/libitm.spec

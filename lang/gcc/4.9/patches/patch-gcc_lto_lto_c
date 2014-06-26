@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_lto_lto_c,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- gcc/lto/lto.c.orig	Wed Mar 19 12:35:59 2014
++++ gcc/lto/lto.c	Wed Apr 23 12:49:03 2014
+@@ -3102,6 +3102,12 @@ read_cgraph_and_symbols (unsigned nfiles, const char *
+   all_file_decl_data = NULL;
+ }
+ 
++const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++
+ 
+ /* Materialize all the bodies for all the nodes in the callgraph.  */
+ 

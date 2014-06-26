@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.CILKRTS-libs,v 1.1.1.1 2014/06/26 16:30:22 pascal Exp $
+@lib lib/libcilkrts.so.${LIBcilkrts_VERSION}

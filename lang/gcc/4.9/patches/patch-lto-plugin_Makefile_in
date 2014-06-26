@@ -1,0 +1,26 @@
+$OpenBSD: patch-lto-plugin_Makefile_in,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
+--- lto-plugin/Makefile.in.orig	Mon Mar 17 14:04:12 2014
++++ lto-plugin/Makefile.in	Wed Apr 23 13:16:16 2014
+@@ -243,10 +243,12 @@ liblto_plugin_la_SOURCES = lto-plugin.c
+ liblto_plugin_la_LIBADD = \
+ 	$(if $(wildcard ../libiberty/pic/libiberty.a),$(Wc)../libiberty/pic/libiberty.a,)
+ 
++include $(top_srcdir)/../libversions
+ # Note that we intentionally override the bindir supplied by ACX_LT_HOST_FLAGS
+ liblto_plugin_la_LDFLAGS = $(AM_LDFLAGS) \
+ 	$(lt_host_flags) -module -bindir $(libexecsubdir) \
+-	$(if $(wildcard ../libiberty/pic/libiberty.a),,-Wc,../libiberty/libiberty.a)
++	$(if $(wildcard ../libiberty/pic/libiberty.a),,-Wc,../libiberty/libiberty.a) \
++	$(LIBlto_plugin_LTVERSION)
+ 
+ liblto_plugin_la_DEPENDENCIES = $(if $(wildcard \
+ 	../libiberty/pic/libiberty.a),../libiberty/pic/libiberty.a,)
+@@ -545,7 +547,7 @@ $(in_gcc_libs) : $(gcc_build_dir)/%: %
+ 	  echo WARNING: $* is static, not copying to $@ >&2 ; \
+ 	else \
+ 	  $(mkinstalldirs) $(gcc_build_dir) && \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $* `pwd`/$@ ; \
++	cp $* `pwd`/$@ ; \
+ 	fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

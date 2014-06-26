@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_config_pa_pa_c,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- gcc/config/pa/pa.c.orig	Sun Apr  6 17:17:41 2014
++++ gcc/config/pa/pa.c	Wed Apr 23 12:49:02 2014
+@@ -3814,6 +3814,9 @@ pa_expand_prologue (void)
+   if (flag_stack_usage_info)
+     current_function_static_stack_size = actual_fsize;
+ 
++  if (warn_stack_larger_than && actual_fsize > stack_larger_than_size)
++    warning (OPT_Wstack_larger_than_, "stack usage is %ld bytes", actual_fsize);
++
+   /* Compute a few things we will use often.  */
+   tmpreg = gen_rtx_REG (word_mode, 1);
+ 

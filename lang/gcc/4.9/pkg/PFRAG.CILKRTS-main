@@ -1,0 +1,27 @@
+@comment $OpenBSD: PFRAG.CILKRTS-main,v 1.1.1.1 2014/06/26 16:30:22 pascal Exp $
+lib/gcc/${CONFIG}/${V}/include/cilk/
+lib/gcc/${CONFIG}/${V}/include/cilk/cilk.h
+lib/gcc/${CONFIG}/${V}/include/cilk/cilk_api.h
+lib/gcc/${CONFIG}/${V}/include/cilk/cilk_api_linux.h
+lib/gcc/${CONFIG}/${V}/include/cilk/cilk_stub.h
+lib/gcc/${CONFIG}/${V}/include/cilk/cilk_undocumented.h
+lib/gcc/${CONFIG}/${V}/include/cilk/common.h
+lib/gcc/${CONFIG}/${V}/include/cilk/holder.h
+lib/gcc/${CONFIG}/${V}/include/cilk/hyperobject_base.h
+lib/gcc/${CONFIG}/${V}/include/cilk/metaprogramming.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_file.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_list.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_max.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_min.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_min_max.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_opadd.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_opand.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_opmul.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_opor.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_opxor.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_ostream.h
+lib/gcc/${CONFIG}/${V}/include/cilk/reducer_string.h
+lib/libcilkrts.a
+lib/libcilkrts.la
+lib/libcilkrts.spec

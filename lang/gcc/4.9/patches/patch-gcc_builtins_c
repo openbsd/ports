@@ -1,0 +1,55 @@
+$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2014/06/26 16:30:16 pascal Exp $
+--- gcc/builtins.c.orig	Tue Mar 18 12:31:04 2014
++++ gcc/builtins.c	Wed Apr 23 12:49:00 2014
+@@ -125,9 +125,11 @@ static rtx expand_builtin_memcpy (tree, rtx);
+ static rtx expand_builtin_mempcpy (tree, rtx, enum machine_mode);
+ static rtx expand_builtin_mempcpy_args (tree, tree, tree, rtx,
+ 					enum machine_mode, int);
++#ifndef NO_UNSAFE_BUILTINS
+ static rtx expand_builtin_strcpy (tree, rtx);
+ static rtx expand_builtin_strcpy_args (tree, tree, rtx);
+ static rtx expand_builtin_stpcpy (tree, rtx, enum machine_mode);
++#endif
+ static rtx expand_builtin_strncpy (tree, rtx);
+ static rtx builtin_memset_gen_str (void *, HOST_WIDE_INT, enum machine_mode);
+ static rtx expand_builtin_memset (tree, rtx, enum machine_mode);
+@@ -3370,6 +3372,7 @@ expand_builtin_mempcpy_args (tree dest, tree src, tree
+ # define CODE_FOR_movstr CODE_FOR_nothing
+ #endif
+ 
++#ifndef NO_UNSAFE_BUILTINS
+ /* Expand into a movstr instruction, if one is available.  Return NULL_RTX if
+    we failed, the caller should emit a normal call, otherwise try to
+    get the result in TARGET, if convenient.  If ENDP is 0 return the
+@@ -3521,6 +3524,7 @@ expand_builtin_stpcpy (tree exp, rtx target, enum mach
+       return expand_movstr (dst, src, target, /*endp=*/2);
+     }
+ }
++#endif
+ 
+ /* Callback routine for store_by_pieces.  Read GET_MODE_BITSIZE (MODE)
+    bytes from constant string DATA + OFFSET and return it as target
+@@ -6140,9 +6144,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
+       break;
+ 
+     case BUILT_IN_STRCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_strcpy (exp, target);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_STRNCPY:
+@@ -6152,9 +6158,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, e
+       break;
+ 
+     case BUILT_IN_STPCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_stpcpy (exp, target, mode);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_MEMCPY:

@@ -1,0 +1,17 @@
+$OpenBSD: patch-gcc_testsuite_gcc_dg_format_format_h,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- gcc/testsuite/gcc.dg/format/format.h.orig	Sat Nov 12 13:49:12 2011
++++ gcc/testsuite/gcc.dg/format/format.h	Sat Nov 12 13:49:42 2011
+@@ -35,11 +35,13 @@
+ #include <stdarg.h>
+ #include <stddef.h>
+ 
++#ifndef _WINT_T_DEFINED_
+ #ifndef _WINT_T
+ #ifndef __WINT_TYPE__
+ #define __WINT_TYPE__ unsigned int
+ #endif
+ typedef __WINT_TYPE__ wint_t;
++#endif
+ #endif
+ 
+ #ifdef _WIN64

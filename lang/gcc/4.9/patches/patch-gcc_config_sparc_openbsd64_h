@@ -1,0 +1,70 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Tue May 21 16:00:41 2013
++++ gcc/config/sparc/openbsd64.h	Sat Jun  1 08:55:09 2013
+@@ -20,7 +20,7 @@ along with GCC; see the file COPYING3.  If not see
+ /* XXX - do we really want HARD_QUAD? */
+ #undef TARGET_DEFAULT
+ #define TARGET_DEFAULT \
+-(MASK_V9 + MASK_PTR64 + MASK_64BIT + MASK_HARD_QUAD \
++(MASK_V9 + MASK_PTR64 + MASK_64BIT + /* MASK_HARD_QUAD */ \
+  + MASK_APP_REGS + MASK_FPU + MASK_STACK_BIAS + MASK_LONG_DOUBLE_128)
+ 
+ #undef SPARC_DEFAULT_CMODEL
+@@ -30,10 +30,7 @@ along with GCC; see the file COPYING3.  If not see
+ #define TARGET_OS_CPP_BUILTINS()		\
+   do						\
+     {						\
+-	builtin_define ("__unix__");		\
+-	builtin_define ("__OpenBSD__");		\
+-	builtin_assert ("system=unix");		\
+-	builtin_assert ("system=OpenBSD");	\
++	OPENBSD_OS_CPP_BUILTINS();		\
+ 	builtin_define ("__sparc64__");		\
+ 	builtin_define ("__sparcv9__");		\
+ 	builtin_define ("__sparc_v9__");	\
+@@ -41,14 +38,18 @@ along with GCC; see the file COPYING3.  If not see
+     }						\
+   while (0)
+ 
+-/* Inherited from sp64-elf.  */
+-#undef NO_IMPLICIT_EXTERN_C
+-
+ #undef ASM_SPEC
++#ifdef PIE_DEFAULT
+ #define ASM_SPEC "\
++-s %{fpic|fPIC:-K PIC} %{!fno-pie: %{!p: %{!pg: -K PIC}}} \
++%(asm_cpu) %(asm_arch) \
++"
++#else
++#define ASM_SPEC "\
+ -s %{fpic|fPIC|fpie|fPIE:-K PIC} \
+ %(asm_cpu) %(asm_arch) \
+ "
++#endif
+ 
+ /* Layout of source language data types.  */
+ #undef WCHAR_TYPE
+@@ -57,6 +58,15 @@ along with GCC; see the file COPYING3.  If not see
+ #undef WCHAR_TYPE_SIZE
+ #define WCHAR_TYPE_SIZE 32
+ 
++#undef WINT_TYPE
++#define WINT_TYPE "int"
++
++#undef INTMAX_TYPE
++#define INTMAX_TYPE "long long int"
++
++#undef UINTMAX_TYPE
++#define UINTMAX_TYPE "long long unsigned int"
++
+ #undef LONG_DOUBLE_TYPE_SIZE
+ #define LONG_DOUBLE_TYPE_SIZE 128
+ 
+@@ -66,6 +76,7 @@ along with GCC; see the file COPYING3.  If not see
+    %{shared:-shared} %{R*} \
+    %{static:-Bstatic} \
+    %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
+    %{assert*} \
+    -dynamic-linker /usr/libexec/ld.so"
+ 

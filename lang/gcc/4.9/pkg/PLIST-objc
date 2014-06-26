@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-objc,v 1.1.1.1 2014/06/26 16:30:22 pascal Exp $
+lib/gcc/${CONFIG}/${V}/include/objc/
+lib/gcc/${CONFIG}/${V}/include/objc/NXConstStr.h
+lib/gcc/${CONFIG}/${V}/include/objc/Object.h
+lib/gcc/${CONFIG}/${V}/include/objc/Protocol.h
+lib/gcc/${CONFIG}/${V}/include/objc/message.h
+lib/gcc/${CONFIG}/${V}/include/objc/objc-decls.h
+lib/gcc/${CONFIG}/${V}/include/objc/objc-exception.h
+lib/gcc/${CONFIG}/${V}/include/objc/objc-sync.h
+lib/gcc/${CONFIG}/${V}/include/objc/objc.h
+lib/gcc/${CONFIG}/${V}/include/objc/runtime.h
+lib/gcc/${CONFIG}/${V}/include/objc/thr.h
+lib/libobjc.a
+lib/libobjc.la
+@bin libexec/gcc/${CONFIG}/${V}/cc1obj

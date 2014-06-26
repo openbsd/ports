@@ -1,0 +1,62 @@
+$OpenBSD: patch-gcc_ada_Make-generated_in,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+--- gcc/ada/Make-generated.in.orig	Mon Feb 24 18:01:19 2014
++++ gcc/ada/Make-generated.in	Wed Apr 23 13:05:18 2014
+@@ -28,21 +28,21 @@ $(ADA_GEN_SUBDIR)/treeprs.ads : $(ADA_GEN_SUBDIR)/tree
+ 	-$(MKDIR) $(ADA_GEN_SUBDIR)/bldtools/treeprs
+ 	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/treeprs/,$(notdir $^))
+ 	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/treeprs
+-	(cd $(ADA_GEN_SUBDIR)/bldtools/treeprs; gnatmake -q xtreeprs ; ./xtreeprs treeprs.ads )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/treeprs; ls -la; gnatmake -c xtreeprs; ls -la; gnatmake xtreeprs; ls -la; ./xtreeprs treeprs.ads )
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/treeprs/treeprs.ads $(ADA_GEN_SUBDIR)/treeprs.ads
+ 
+ $(ADA_GEN_SUBDIR)/einfo.h : $(ADA_GEN_SUBDIR)/einfo.ads $(ADA_GEN_SUBDIR)/einfo.adb $(ADA_GEN_SUBDIR)/xeinfo.adb $(ADA_GEN_SUBDIR)/ceinfo.adb
+ 	-$(MKDIR) $(ADA_GEN_SUBDIR)/bldtools/einfo
+ 	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/einfo/,$(notdir $^))
+ 	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/einfo
+-	(cd $(ADA_GEN_SUBDIR)/bldtools/einfo; gnatmake -q xeinfo ; ./xeinfo einfo.h )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/einfo; ls -la; gnatmake -c xeinfo; ls -la; gnatmake xeinfo; ls -la; ./xeinfo einfo.h )
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/einfo/einfo.h $(ADA_GEN_SUBDIR)/einfo.h
+ 
+ $(ADA_GEN_SUBDIR)/sinfo.h : $(ADA_GEN_SUBDIR)/sinfo.ads $(ADA_GEN_SUBDIR)/sinfo.adb $(ADA_GEN_SUBDIR)/xsinfo.adb $(ADA_GEN_SUBDIR)/csinfo.adb
+ 	-$(MKDIR) $(ADA_GEN_SUBDIR)/bldtools/sinfo
+ 	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/sinfo/,$(notdir $^))
+ 	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/sinfo
+-	(cd $(ADA_GEN_SUBDIR)/bldtools/sinfo; gnatmake -q xsinfo ; ./xsinfo sinfo.h )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/sinfo; ls -la; gnatmake -c xsinfo; ls -la; gnatmake xsinfo; ls -la; ./xsinfo sinfo.h )
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/sinfo/sinfo.h $(ADA_GEN_SUBDIR)/sinfo.h
+ 
+ $(ADA_GEN_SUBDIR)/snames.h $(ADA_GEN_SUBDIR)/snames.ads $(ADA_GEN_SUBDIR)/snames.adb : $(ADA_GEN_SUBDIR)/stamp-snames ; @true
+@@ -50,7 +50,7 @@ $(ADA_GEN_SUBDIR)/stamp-snames : $(ADA_GEN_SUBDIR)/sna
+ 	-$(MKDIR) $(ADA_GEN_SUBDIR)/bldtools/snamest
+ 	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/snamest/,$(notdir $^))
+ 	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/snamest
+-	(cd $(ADA_GEN_SUBDIR)/bldtools/snamest; gnatmake -q xsnamest ; ./xsnamest )
++	(cd $(ADA_GEN_SUBDIR)/bldtools/snamest; ls -la; gnatmake -c xsnamest; ls -la; gnatmake xsnamest; ls -la; ./xsnamest )
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/snamest/snames.ns $(ADA_GEN_SUBDIR)/snames.ads
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/snamest/snames.nb $(ADA_GEN_SUBDIR)/snames.adb
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/snamest/snames.nh $(ADA_GEN_SUBDIR)/snames.h
+@@ -61,7 +61,7 @@ $(ADA_GEN_SUBDIR)/stamp-nmake: $(ADA_GEN_SUBDIR)/sinfo
+ 	-$(MKDIR) $(ADA_GEN_SUBDIR)/bldtools/nmake
+ 	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/nmake/,$(notdir $^))
+ 	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/nmake
+-	(cd $(ADA_GEN_SUBDIR)/bldtools/nmake; gnatmake -q xnmake ; ./xnmake -b nmake.adb ; ./xnmake -s nmake.ads)
++	(cd $(ADA_GEN_SUBDIR)/bldtools/nmake; ls -la; gnatmake -c xnmake; ls -la; gnatmake xnmake; ls -la; ./xnmake -b nmake.adb ; ./xnmake -s nmake.ads)
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/nmake/nmake.ads $(ADA_GEN_SUBDIR)/nmake.ads
+ 	$(MOVE_IF_CHANGE) $(ADA_GEN_SUBDIR)/bldtools/nmake/nmake.adb $(ADA_GEN_SUBDIR)/nmake.adb
+ 	touch $(ADA_GEN_SUBDIR)/stamp-nmake
+@@ -100,7 +100,7 @@ $(ADA_GEN_SUBDIR)/s-oscons.ads : $(ADA_GEN_SUBDIR)/s-o
+ 	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/oscons/,$(notdir $^))
+ 	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/oscons
+ 	_oscons_srcdir=`cd $(<D) && pwd` ; \
+-	(cd $(ADA_GEN_SUBDIR)/bldtools/oscons ; gnatmake -q xoscons ; \
++	(cd $(ADA_GEN_SUBDIR)/bldtools/oscons ; ls -la; gnatmake -q xoscons ; \
+ 		$(RM) s-oscons-tmplt.i s-oscons-tmplt.s ; \
+ 		$(OSCONS_CPP) ; \
+ 		$(OSCONS_EXTRACT) ; \
+@@ -143,5 +143,5 @@ $(ADA_GEN_SUBDIR)/gnat.hlp :  $(ADA_GEN_SUBDIR)/vms_he
+ 	$(RM) $(addprefix $(ADA_GEN_SUBDIR)/bldtools/gnat_hlp/,$(notdir $^))
+ 	$(CP) $^ $(ADA_GEN_SUBDIR)/bldtools/gnat_hlp
+ 	(cd $(ADA_GEN_SUBDIR)/bldtools/gnat_hlp; \
+-	  gnatmake -q vms_help; \
++	   ls -la; gnatmake -c vms_help; ls -la; gnatmake vms_help; ls -la; \
+ 	  ./vms_help$(build_exeext) gnat.help_in vms_data.ads ../../gnat.hlp)

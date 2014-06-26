@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+--- configure.orig	Wed Mar 26 10:19:44 2014
++++ configure	Wed Apr 23 12:48:59 2014
+@@ -2762,8 +2762,7 @@ host_libs="intl libiberty opcodes bfd readline tcl tk 
+ host_tools="texinfo flex bison binutils gas ld fixincludes gcc cgen sid sim gdb gprof etc expect dejagnu m4 utils guile fastjar gnattools"
+ 
+ # libgcj represents the runtime libraries only used by gcj.
+-libgcj="target-libffi \
+-	target-zlib \
++libgcj="target-zlib \
+ 	target-libjava"
+ 
+ # these libraries are built for the target environment, and are built after
+@@ -2784,6 +2783,7 @@ target_libraries="target-libgcc \
+ 		target-libquadmath \
+ 		target-libgfortran \
+ 		target-boehm-gc \
++		target-libffi \
+ 		${libgcj} \
+ 		target-libobjc \
+ 		target-libada \
+@@ -3095,7 +3095,7 @@ fi
+ 
+ # Save it here so that, even in case of --enable-libgcj, if the Java
+ # front-end isn't enabled, we still get libgcj disabled.
+-libgcj_saved=$libgcj
++libgcj_saved="target-libffi ${libgcj}"
+ case $enable_libgcj in
+ yes)
+   # If we reset it here, it won't get added to noconfigdirs in the
+@@ -3106,7 +3106,7 @@ yes)
+ no)
+   # Make sure we get it printed in the list of not supported target libs.
+   # Don't disable libffi, though, other languages use it.
+-  noconfigdirs="$noconfigdirs `echo ${libgcj} | sed -e 's/target-libffi//'`"
++  noconfigdirs="$noconfigdirs ${libgcj}"
+   # Clear libgcj_saved so that even if java is enabled libffi won't be
+   # built.
+   libgcj_saved=
+@@ -3335,6 +3335,8 @@ case "${target}" in
+   powerpc-*-freebsd*)
+     ;;
+   powerpc64-*-freebsd*)
++    ;;
++  powerpc-*-openbsd*)
+     ;;
+   powerpc*-*-rtems*)
+     ;;

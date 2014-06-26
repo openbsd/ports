@@ -1,0 +1,29 @@
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- gcc/config/rs6000/sysv4.h.orig	Mon Feb 10 15:46:24 2014
++++ gcc/config/rs6000/sysv4.h	Wed Apr 23 12:49:02 2014
+@@ -381,6 +381,7 @@ do {									\
+   asm_fprintf (FILE, "%L%s", PREFIX)
+ 
+ /* Globalizing directive for a label.  */
++#undef GLOBAL_ASM_OP
+ #define GLOBAL_ASM_OP "\t.globl "
+ 
+ /* This says how to output assembler code to declare an
+@@ -813,7 +814,7 @@ ncrtn.o%s"
+ 
+ /* OpenBSD support.  */
+ #ifndef	LIB_OPENBSD_SPEC
+-#define LIB_OPENBSD_SPEC "%{!shared:%{pthread:-lpthread%{p:_p}%{!p:%{pg:_p}}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
++#define LIB_OPENBSD_SPEC OBSD_LIB_SPEC
+ #endif
+ 
+ #ifndef	STARTFILE_OPENBSD_SPEC
+@@ -836,7 +837,7 @@ ncrtn.o%s"
+ #endif
+ 
+ #ifndef CPP_OS_OPENBSD_SPEC
+-#define CPP_OS_OPENBSD_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define CPP_OS_OPENBSD_SPEC OBSD_CPP_SPEC
+ #endif
+ 
+ /* Define any extra SPECS that the compiler needs to generate.  */

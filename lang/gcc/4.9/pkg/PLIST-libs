@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-libs,v 1.1.1.1 2014/06/26 16:30:22 pascal Exp $
+@option no-default-conflict
+@conflict gcc-libs->=4.9,<4.10
+@lib lib/libestdc++.so.${LIBestdc++_VERSION}
+@lib lib/libgfortran.so.${LIBgfortran_VERSION}
+@lib lib/libobjc.so.${LIBobjc_VERSION}
+%%ATOMIC%%
+%%CILKRTS%%
+%%ITM%%
+%%QUADMATH%%

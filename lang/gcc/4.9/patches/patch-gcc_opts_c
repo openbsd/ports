@@ -1,0 +1,42 @@
+$OpenBSD: patch-gcc_opts_c,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
+--- gcc/opts.c.orig	Fri Mar 14 18:58:52 2014
++++ gcc/opts.c	Wed Apr 23 12:49:03 2014
+@@ -50,6 +50,9 @@ const char *const debug_type_names[] =
+   ((strncmp (prefix, string, sizeof prefix - 1) == 0) \
+    ? ((string += sizeof prefix - 1), 1) : 0)
+ 
++int warn_stack_larger_than;
++HOST_WIDE_INT stack_larger_than_size;
++
+ void
+ set_struct_debug_option (struct gcc_options *opts, location_t loc,
+ 			 const char *spec)
+@@ -499,6 +502,7 @@ static const struct default_options default_options_ta
+     { OPT_LEVELS_2_PLUS, OPT_fisolate_erroneous_paths_dereference, NULL, 1 },
+ 
+     /* -O3 optimizations.  */
++    { OPT_LEVELS_3_PLUS, OPT_fstrict_aliasing, NULL, 1 },
+     { OPT_LEVELS_3_PLUS, OPT_ftree_loop_distribute_patterns, NULL, 1 },
+     { OPT_LEVELS_3_PLUS, OPT_fpredictive_commoning, NULL, 1 },
+     /* Inlining of functions reducing size is a good idea with -Os
+@@ -716,6 +720,8 @@ finish_options (struct gcc_options *opts, struct gcc_o
+ 
+   if (!opts->x_flag_opts_finished)
+     {
++      if (opts->x_flag_pic || opts->x_profile_flag)
++        opts->x_flag_pie = 0;
+       if (opts->x_flag_pie)
+ 	opts->x_flag_pic = opts->x_flag_pie;
+       if (opts->x_flag_pic && !opts->x_flag_pie)
+@@ -1548,6 +1554,11 @@ common_handle_option (struct gcc_options *opts,
+     case OPT_Wframe_larger_than_:
+       opts->x_frame_larger_than_size = value;
+       opts->x_warn_frame_larger_than = value != -1;
++      break;
++
++    case OPT_Wstack_larger_than_:
++      stack_larger_than_size = value;
++      warn_stack_larger_than = stack_larger_than_size != -1;
+       break;
+ 
+     case OPT_Wstack_usage_:

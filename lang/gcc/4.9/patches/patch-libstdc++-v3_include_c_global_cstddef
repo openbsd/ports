@@ -1,0 +1,12 @@
+$OpenBSD: patch-libstdc++-v3_include_c_global_cstddef,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
+--- libstdc++-v3/include/c_global/cstddef.orig	Mon Dec  2 14:32:27 2013
++++ libstdc++-v3/include/c_global/cstddef	Mon Dec  2 14:32:34 2013
+@@ -44,7 +44,7 @@
+ #include <bits/c++config.h>
+ #include <stddef.h>
+ 
+-#if __cplusplus >= 201103L
++#if 0
+ namespace std
+ {
+   // We handle size_t, ptrdiff_t, and nullptr_t in c++config.h.

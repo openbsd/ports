@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
+--- gcc/cp/g++spec.c.orig	Thu Nov 28 13:27:58 2013
++++ gcc/cp/g++spec.c	Mon Dec  2 12:20:03 2013
+@@ -47,7 +47,7 @@ along with GCC; see the file COPYING3.  If not see
+ #endif
+ 
+ #ifndef LIBSTDCXX
+-#define LIBSTDCXX "stdc++"
++#define LIBSTDCXX "estdc++"
+ #endif
+ #ifndef LIBSTDCXX_PROFILE
+ #define LIBSTDCXX_PROFILE LIBSTDCXX
