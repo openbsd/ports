@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/04 13:52:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/06/26 22:10:33 sthen Exp $
 
 COMMENT =		extremely fast password cracker, with community patches
 
@@ -48,7 +48,8 @@ CFLAGS +=		-c -DHAVE_NSS `pkg-config --cflags nss` \
 LDFLAGS +=		-lssl -lcrypto -lm -lz `pkg-config --libs nss`
 
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-			COPTFLAGS="${COPTFLAGS}" HAVE_NSS="-DHAVE_NSS"
+			COPTFLAGS="${COPTFLAGS}" HAVE_NSS="-DHAVE_NSS" \
+			J=${MAKE_JOBS}
 
 .if ${MACHINE_ARCH} == "i386"
 # there is actually a fallback method to allow use of sse where available and
