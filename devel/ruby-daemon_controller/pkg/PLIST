@@ -1,18 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/17 15:33:29 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/06/26 14:45:53 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.markdown
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/daemon_controller.gemspec
+${GEM_LIB}/gems/${DISTNAME}/debian.template/
+${GEM_LIB}/gems/${DISTNAME}/debian.template/changelog
+${GEM_LIB}/gems/${DISTNAME}/debian.template/compat
+${GEM_LIB}/gems/${DISTNAME}/debian.template/control.template
+${GEM_LIB}/gems/${DISTNAME}/debian.template/copyright
+${GEM_LIB}/gems/${DISTNAME}/debian.template/ruby-daemon-controller.install
+${GEM_LIB}/gems/${DISTNAME}/debian.template/rules
+${GEM_LIB}/gems/${DISTNAME}/debian.template/source/
+${GEM_LIB}/gems/${DISTNAME}/debian.template/source/format
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemon_controller/
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemon_controller.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemon_controller/lock_file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/daemon_controller/packaging.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemon_controller/spawn.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemon_controller/version.rb
+${GEM_LIB}/gems/${DISTNAME}/rpm/
+${GEM_LIB}/gems/${DISTNAME}/rpm/get_distro_id.py
+${GEM_LIB}/gems/${DISTNAME}/rpm/rubygem-daemon_controller.spec.template
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/daemon_controller_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/echo_server.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/run_echo_server
 ${GEM_LIB}/gems/${DISTNAME}/spec/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unresponsive_daemon.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
