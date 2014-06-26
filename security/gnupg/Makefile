@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.93 2014/03/19 13:40:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.94 2014/06/26 00:30:15 sthen Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
-DISTNAME=	gnupg-1.4.16
+DISTNAME=	gnupg-1.4.17
 CATEGORIES=	security
 
 # restrict, not compatible with gnupg-2.
