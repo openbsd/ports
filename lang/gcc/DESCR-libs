@@ -1,0 +1,12 @@
+The GNU Compiler Collection (GCC) includes front ends for C, C++,
+Objective-C, Fortran, Java, and Ada, as well as libraries for these
+languages (libstdc++, libgcj,...).
+
+GCC development is a part of the GNU Project and uses an open
+development environment. Its supports many other platforms in order to
+foster a world-class optimizing compiler, to attract a larger team of
+developers, to ensure that GCC and the GNU system work on multiple
+architectures and diverse environments, and to more thoroughly test and
+extend the features of GCC.
+
+This package contains runtime support libraries.
