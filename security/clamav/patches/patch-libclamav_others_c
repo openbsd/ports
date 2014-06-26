@@ -1,0 +1,14 @@
+$OpenBSD: patch-libclamav_others_c,v 1.1 2014/06/26 15:36:11 sthen Exp $
+
+https://bugzilla.clamav.net/show_bug.cgi?id=11037
+
+--- libclamav/others.c.orig	Thu Jun 26 16:28:46 2014
++++ libclamav/others.c	Thu Jun 26 16:29:01 2014
+@@ -298,6 +298,7 @@ int cl_init(unsigned int initoptions)
+ 	    return CL_EARG;
+ 	}
+     }
++    cl_initialize_crypto();
+     /* put dlopen() stuff here, etc. */
+     if (lt_init() == 0) {
+ 	cli_rarload();
