@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-java,v 1.4 2014/04/30 10:54:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST-java,v 1.5 2014/06/26 08:33:27 ajacoutot Exp $
 lib/liblink-grammar-java.a
 lib/liblink-grammar-java.la
 @lib lib/liblink-grammar-java.so.${LIBlink-grammar-java_VERSION}
 share/java/
-share/java/linkgrammar-5.0.7.jar
+share/java/linkgrammar-${VERSION}.jar
 share/java/linkgrammar.jar
