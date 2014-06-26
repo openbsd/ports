@@ -1,0 +1,56 @@
+$OpenBSD: patch-gfx_skia_trunk_src_opts_opts_check_SSE2_cpp,v 1.1 2014/06/26 13:40:59 sthen Exp $
+
+- we need to disable SSSE3 due to old binutils.
+
+- what is the point in having a cpuid check if you're going to
+ignore it if the build machine has SSSE3?!
+
+--- gfx/skia/trunk/src/opts/opts_check_SSE2.cpp.orig	Thu Jun 26 05:12:11 2014
++++ gfx/skia/trunk/src/opts/opts_check_SSE2.cpp	Thu Jun 26 05:12:11 2014
+@@ -70,7 +70,7 @@ static inline void getcpuid(int info_type, int info[4]
+ #endif
+ #endif
+ 
+-#if defined(__x86_64__) || defined(_WIN64) || SK_CPU_SSE_LEVEL >= SK_CPU_SSE_LEVEL_SSE2
++#if defined(__x86_64__) || defined(_WIN64)
+ /* All x86_64 machines have SSE2, or we know it's supported at compile time,  so don't even bother checking. */
+ static inline bool hasSSE2() {
+     return true;
+@@ -84,19 +84,11 @@ static inline bool hasSSE2() {
+ }
+ #endif
+ 
+-#if SK_CPU_SSE_LEVEL >= SK_CPU_SSE_LEVEL_SSSE3
+-/* If we know SSSE3 is supported at compile time, don't even bother checking. */
+ static inline bool hasSSSE3() {
+-    return true;
+-}
+-#else
+-
+-static inline bool hasSSSE3() {
+     int cpu_info[4] = { 0 };
+     getcpuid(1, cpu_info);
+     return (cpu_info[2] & 0x200) != 0;
+ }
+-#endif
+ 
+ static bool cachedHasSSE2() {
+     static bool gHasSSE2 = hasSSE2();
+@@ -121,6 +113,7 @@ void SkBitmapProcState::platformConvolutionProcs(SkCon
+ }
+ 
+ void SkBitmapProcState::platformProcs() {
++#if 0
+     if (cachedHasSSSE3()) {
+         if (fSampleProc32 == S32_opaque_D32_filter_DX) {
+             fSampleProc32 = S32_opaque_D32_filter_DX_SSSE3;
+@@ -134,6 +127,9 @@ void SkBitmapProcState::platformProcs() {
+             fSampleProc32 = S32_alpha_D32_filter_DXDY_SSSE3;
+         }
+     } else if (cachedHasSSE2()) {
++#else
++    if (cachedHasSSSE3() || cachedHasSSE2()) {
++#endif
+         if (fSampleProc32 == S32_opaque_D32_filter_DX) {
+             fSampleProc32 = S32_opaque_D32_filter_DX_SSE2;
+         } else if (fSampleProc32 == S32_alpha_D32_filter_DX) {

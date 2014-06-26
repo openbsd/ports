@@ -1,0 +1,22 @@
+$OpenBSD: patch-gfx_skia_generate_mozbuild_py,v 1.1 2014/06/26 13:40:59 sthen Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1028827#c9
+
+--- gfx/skia/generate_mozbuild.py.orig	Wed Jun 25 15:10:50 2014
++++ gfx/skia/generate_mozbuild.py	Wed Jun 25 15:11:21 2014
+@@ -77,12 +77,14 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
+ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
+     SOURCES['trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += ['-msse2']
+     SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += ['-msse2']
+-    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+     SOURCES['trunk/src/opts/SkBlitRect_opts_SSE2.cpp'].flags += ['-msse2']
+     SOURCES['trunk/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += ['-msse2']
+     SOURCES['trunk/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += ['-msse2']
+     SOURCES['trunk/src/opts/SkMorphology_opts_SSE2.cpp'].flags += ['-msse2']
+     SOURCES['trunk/src/opts/SkUtils_opts_SSE2.cpp'].flags += ['-msse2']
++
++if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
++    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+ 
+ DEFINES['SKIA_IMPLEMENTATION'] = 1
+ DEFINES['GR_IMPLEMENTATION'] = 1
