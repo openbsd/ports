@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/03 20:37:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/06/26 10:40:56 zhuk Exp $
 
 SHARED_ONLY =		Yes
-VERSION =		4.0.18
+VERSION =		4.0.19
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
