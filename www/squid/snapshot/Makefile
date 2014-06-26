@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2014/05/15 21:24:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/06/26 13:08:42 sthen Exp $
 
-D=		20140506-r13398
+D=		20140626-r13480
 V=		3.5pre${D:C/-.*//}
-REVISION=	0
 DISTNAME=	squid-3.HEAD-$D
 EXTRACT_SUFX=	.tar.bz2
 

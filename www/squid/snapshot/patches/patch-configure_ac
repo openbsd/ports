@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.6 2014/05/07 20:52:06 sthen Exp $
---- configure.ac.orig	Tue May  6 04:30:58 2014
-+++ configure.ac	Wed May  7 20:14:52 2014
-@@ -416,7 +416,7 @@ dnl Check for atomic operations support in the compile
+$OpenBSD: patch-configure_ac,v 1.7 2014/06/26 13:08:42 sthen Exp $
+--- configure.ac.orig	Thu Jun 26 04:30:02 2014
++++ configure.ac	Thu Jun 26 13:43:02 2014
+@@ -418,7 +418,7 @@ dnl Check for atomic operations support in the compile
  dnl
  AC_MSG_CHECKING([for GNU atomic operations support])
  AC_RUN_IFELSE([AC_LANG_PROGRAM([[

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/04/24 14:26:21 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/06/26 13:08:42 sthen Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/logs/*
-@extra /var/run/squid.pid
 @bin bin/purge
 @bin bin/squidclient
 libexec/squid/
@@ -1062,6 +1061,50 @@ share/squid/errors/ja/ERR_URN_RESOLVE
 share/squid/errors/ja/ERR_WRITE_ERROR
 share/squid/errors/ja/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/ja/error-details.txt
+share/squid/errors/ka/
+share/squid/errors/ka-ge
+share/squid/errors/ka/ERR_ACCESS_DENIED
+share/squid/errors/ka/ERR_ACL_TIME_QUOTA_EXCEEDED
+share/squid/errors/ka/ERR_AGENT_CONFIGURE
+share/squid/errors/ka/ERR_AGENT_WPAD
+share/squid/errors/ka/ERR_CACHE_ACCESS_DENIED
+share/squid/errors/ka/ERR_CACHE_MGR_ACCESS_DENIED
+share/squid/errors/ka/ERR_CANNOT_FORWARD
+share/squid/errors/ka/ERR_CONFLICT_HOST
+share/squid/errors/ka/ERR_CONNECT_FAIL
+share/squid/errors/ka/ERR_DIR_LISTING
+share/squid/errors/ka/ERR_DNS_FAIL
+share/squid/errors/ka/ERR_ESI
+share/squid/errors/ka/ERR_FORWARDING_DENIED
+share/squid/errors/ka/ERR_FTP_DISABLED
+share/squid/errors/ka/ERR_FTP_FAILURE
+share/squid/errors/ka/ERR_FTP_FORBIDDEN
+share/squid/errors/ka/ERR_FTP_NOT_FOUND
+share/squid/errors/ka/ERR_FTP_PUT_CREATED
+share/squid/errors/ka/ERR_FTP_PUT_ERROR
+share/squid/errors/ka/ERR_FTP_PUT_MODIFIED
+share/squid/errors/ka/ERR_FTP_UNAVAILABLE
+share/squid/errors/ka/ERR_GATEWAY_FAILURE
+share/squid/errors/ka/ERR_ICAP_FAILURE
+share/squid/errors/ka/ERR_INVALID_REQ
+share/squid/errors/ka/ERR_INVALID_RESP
+share/squid/errors/ka/ERR_INVALID_URL
+share/squid/errors/ka/ERR_LIFETIME_EXP
+share/squid/errors/ka/ERR_NO_RELAY
+share/squid/errors/ka/ERR_ONLY_IF_CACHED_MISS
+share/squid/errors/ka/ERR_PRECONDITION_FAILED
+share/squid/errors/ka/ERR_READ_ERROR
+share/squid/errors/ka/ERR_READ_TIMEOUT
+share/squid/errors/ka/ERR_SECURE_CONNECT_FAIL
+share/squid/errors/ka/ERR_SHUTTING_DOWN
+share/squid/errors/ka/ERR_SOCKET_FAILURE
+share/squid/errors/ka/ERR_TOO_BIG
+share/squid/errors/ka/ERR_UNSUP_HTTPVERSION
+share/squid/errors/ka/ERR_UNSUP_REQ
+share/squid/errors/ka/ERR_URN_RESOLVE
+share/squid/errors/ka/ERR_WRITE_ERROR
+share/squid/errors/ka/ERR_ZERO_SIZE_OBJECT
+share/squid/errors/ka/error-details.txt
 share/squid/errors/ko/
 share/squid/errors/ko-kp
 share/squid/errors/ko-kr
@@ -2187,3 +2230,4 @@ share/squid/icons/silk/script.png
 share/squid/icons/silk/script_gear.png
 share/squid/icons/silk/script_palette.png
 @rcscript ${RCDIR}/squid
+@extra /var/run/squid.pid
