@@ -1,0 +1,45 @@
+$OpenBSD: patch-dialects_n+obsd_dnode_c,v 1.9 2014/06/26 22:06:36 zhuk Exp $
+Add support for tmpfs.
+--- dialects/n+obsd/dnode.c.orig	Fri Jun 27 00:08:57 2014
++++ dialects/n+obsd/dnode.c	Fri Jun 27 00:23:36 2014
+@@ -198,8 +198,9 @@ process_node(va)
+ 	struct inode i;
+ 	struct mfsnode m;
+ 	struct nfsnode n;
++	struct tmpfs_node t;
+ 	enum nodetype {NONODE, CDFSNODE, DOSNODE, EXT2NODE, FDESCNODE, INODE,
+-		KERNFSNODE, MFSNODE, NFSNODE, PFSNODE, PTYFSNODE} nty;
++		KERNFSNODE, MFSNODE, NFSNODE, PFSNODE, PTYFSNODE, TMPFSNODE} nty;
+ 	enum vtype type;
+ 	struct vnode *v, vb;
+ 	struct l_vfs *vfs;
+@@ -471,6 +472,17 @@ process_overlaid_node:
+ 	    nty = MFSNODE;
+ 	    break;
+ 
++	case VT_TMPFS:
++	    if (!v->v_data
++	    ||  kread((KA_T)v->v_data, (char *)&t, sizeof(t))) {
++		(void) snpf(Namech, Namechl, "can't read tmpfsnode at: %s",
++		    print_kptr((KA_T)v->v_data, (char *)NULL, 0));
++		enter_nm(Namech);
++		return;
++	    }
++	    nty = TMPFSNODE;
++	    break;
++
+ #if	defined(HASMSDOSFS)
+ 	case VT_MSDOSFS:
+ 	    if (!v->v_data
+@@ -1016,6 +1028,11 @@ process_overlaid_node:
+ 
+ 		    case MFSNODE:
+ 			Lf->sz = (SZOFFTYPE)m.mfs_size;
++			Lf->sz_def = 1;
++			break;
++
++		    case TMPFSNODE:
++			Lf->sz = (SZOFFTYPE)t.tn_size;
+ 			Lf->sz_def = 1;
+ 			break;
+ 

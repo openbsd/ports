@@ -1,6 +1,8 @@
-$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.5 2013/05/23 15:08:36 dcoppa Exp $
---- dialects/n+obsd/dlsof.h.orig	Tue Mar 28 23:54:15 2006
-+++ dialects/n+obsd/dlsof.h	Wed Mar 14 10:04:34 2012
+$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.6 2014/06/26 22:06:36 zhuk Exp $
+1. Unbreak build.
+2. Add support for tmpfs.
+--- dialects/n+obsd/dlsof.h.orig	Wed Mar 29 01:54:15 2006
++++ dialects/n+obsd/dlsof.h	Fri Jun 27 01:11:41 2014
 @@ -150,6 +150,7 @@ struct uio;	/* dummy for function prototype in <sys/bu
  struct nameidata;	/* to satisfy a function prototype in msdosfsmount.h */
  #include <msdosfs/msdosfsmount.h>
@@ -19,3 +21,13 @@ $OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.5 2013/05/23 15:08:36 dcoppa Exp $
  #  endif	/* defined(OPENBSDV) */
  #define	FALSE	0
  #define	TRUE	1
+@@ -580,5 +580,9 @@ struct sfile {
+ #define	NCACHE_NODEID	nc_vpid		/* node ID in NCACHE */
+ #  endif	/* defined(HASNCVPID) */
+ # endif  /* defined(HASNCACHE) */
++
++#define	_KERNEL
++#include <tmpfs/tmpfs.h>
++#undef	_KERNEL
+ 
+ #endif	/* NETBSD_LSOF_H */
