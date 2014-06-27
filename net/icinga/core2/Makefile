@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/06/27 00:09:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/06/27 00:14:27 sthen Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -58,7 +58,8 @@ MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex
-LIB_DEPENDS =		devel/boost
+LIB_DEPENDS =		devel/boost \
+			devel/libexecinfo
 RUN_DEPENDS =           ${BASE_PKGPATH},-main
 
 MULTI_PACKAGES =	-main -mysql -pgsql
