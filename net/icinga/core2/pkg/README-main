@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2014/06/23 21:56:04 rpe Exp $
+$OpenBSD: README-main,v 1.2 2014/06/27 00:28:19 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -51,11 +51,11 @@ will need to be moved inside the jail and symbolic links created.
 
    mkdir -p ${PREFIX-cgi}/etc ${PREFIX-cgi}/var/log
    mv ${SYSCONFDIR} ${PREFIX-cgi}/etc/
-   ln -s ${PREFIX-cgi}/etc/icinga ${BASESYSCONFDIR}
-   mv /var/icinga ${PREFIX-cgi}/var/
+   ln -s ${PREFIX-cgi}/etc/icinga2 ${BASESYSCONFDIR}
+   mv /var/icinga2 ${PREFIX-cgi}/var/
    ln -s ${PREFIX-cgi}/var/icinga /var
-   mv /var/log/icinga ${PREFIX-cgi}/var/log/
-   ln -s ${PREFIX-cgi}/var/log/icinga /var/log
+   mv /var/log/icinga2 ${PREFIX-cgi}/var/log/
+   ln -s ${PREFIX-cgi}/var/log/icinga2 /var/log
 
 To display times in your local timezone, you will also need to provide
 a suitable /var/www/etc/localtime; due to the chroot, a symbolic link cannot
