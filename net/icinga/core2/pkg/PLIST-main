@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/06/27 00:09:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/06/27 00:16:08 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingacmd:734
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -115,7 +115,7 @@ share/examples/icinga2/features-available/debuglog.conf
 share/examples/icinga2/features-available/graphite.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/graphite.conf
 share/examples/icinga2/features-available/icingastatus.conf
-@sample ${SYSCONFDIR}/icinga2/features-available/icintastatus.conf
+@sample ${SYSCONFDIR}/icinga2/features-available/icingastatus.conf
 share/examples/icinga2/features-available/livestatus.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/livestatus.conf
 share/examples/icinga2/features-available/mainlog.conf
