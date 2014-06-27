@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/05/14 18:41:14 brad Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/06/27 00:06:42 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
@@ -18,6 +18,7 @@ include/quagga/quagga/if.h
 include/quagga/quagga/if_rmap.h
 include/quagga/quagga/jhash.h
 include/quagga/quagga/keychain.h
+include/quagga/quagga/libospf.h
 include/quagga/quagga/linklist.h
 include/quagga/quagga/log.h
 include/quagga/quagga/md5.h
