@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/24 16:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/27 00:09:29 sthen Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -79,7 +79,7 @@ CONFIGURE_ARGS += \
 	-DCMAKE_INSTALL_SYSCONFDIR:String="${SYSCONFDIR}" \
 	-DCMAKE_INSTALL_LOCALSTATEDIR:String="${LOCALSTATEDIR}" \
 	-DICINGA2_COMMAND_USER:String="_icinga" \
-	-DICINGA2_COMMAND_GROUP:String="_icinga" \
+	-DICINGA2_COMMAND_GROUP:String="_icingacmd" \
 	-DICINGA2_USER:String="_icinga" \
 	-DICINGA2_GROUP:String="_icinga" \
 	-DICINGA2_GIT_VERSION_INFO:Boolean="OFF" \
