@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/06/27 00:14:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/06/27 00:28:02 sthen Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -16,18 +16,12 @@
 # differently, /usr/X11R6/lib:/usr/local/lib vs /usr/local/lib:/usr/X11R6/lib
 
 # 2. directory structure and chroot.
-# icinga1 had a simple structure for directories written at runtime,
-# basically just var/icinga and var/log/icinga, so easy to move into
-# chroot (see core/pkg/README-main). icinga2 uses var/lib/icinga2,
-# var/log/icinga2, var/run/icinga2, var/spool/icinga2; README needs
-# adapting to move these into the right place, plus for OpenBSD hier
-# it should use var/db/icinga2 rather than var/lib/icinga2
-
-# 3. doesn't pick up libexecinfo. maybe FindBacktrace.cmake from
-# audio/clementine will help
-
-# 4. needs new gid for COMMAND_GROUP and set this in CONFIGURE_ARGS
-# (upstream uses icingacmd)
+# icinga1: /var/icinga /var/log/icinga /etc/icinga in chroot and symlinked
+# icinga2: s/icinga/icinga2 and adds /var/{lib,spool}/icinga2 - are these
+# required in chroot? add to README if needed.
+#
+# for OpenBSD hier it *ought* to use var/db/icinga2 rather than var/lib/icinga2
+# but this is rather an intrusive change in the code..
 
 SHARED_ONLY =	Yes
 
