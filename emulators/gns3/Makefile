@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2014/06/27 06:19:43 ajacoutot Exp $
 
 COMMENT=	graphical network simulator
 
-MODPY_EGG_VERSION = 0.8.3.1
+MODPY_EGG_VERSION = 0.8.6
 DISTNAME=	GNS3-${MODPY_EGG_VERSION}-src
 PKGNAME=	gns3-${MODPY_EGG_VERSION}
 
@@ -20,14 +20,15 @@ RUN_DEPENDS=	x11/py-qt4 \
 		emulators/dynagen \
 		emulators/qemu
 
+WRKDIST=	${WRKDIR}/gns3-legacy-GNS3-${MODPY_EGG_VERSION}
 NO_TEST=	Yes
 PKG_ARCH=	*
 
 MODPY_ADJ_FILES = qemuwrapper/qemuwrapper.py
 
 pre-configure:
-	cd ${WRKSRC}/src/GNS3; ${SUBST_CMD} \
-		Application.py Config/Defaults.py QemuManager.py
+	${SUBST_CMD} ${WRKSRC}/setup.py \
+		${WRKSRC}/src/GNS3/{Application,Config/Defaults,QemuManager}.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/gns3

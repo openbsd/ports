@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_GNS3_Config_Defaults_py,v 1.4 2012/10/25 12:27:53 gsoares Exp $
---- src/GNS3/Config/Defaults.py.orig	Mon Oct 22 15:17:09 2012
-+++ src/GNS3/Config/Defaults.py	Sun Oct 21 01:24:20 2012
-@@ -30,6 +30,8 @@ elif sys.platform.startswith('darwin'):
-         DYNAMIPS_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/dynamips-0.2.8-RC3-community-OSX.intel64.bin'
+$OpenBSD: patch-src_GNS3_Config_Defaults_py,v 1.5 2014/06/27 06:19:43 ajacoutot Exp $
+--- src/GNS3/Config/Defaults.py.orig	Wed Oct 23 04:57:46 2013
++++ src/GNS3/Config/Defaults.py	Fri Jun 27 08:08:30 2014
+@@ -29,6 +29,8 @@ elif sys.platform.startswith('darwin'):
+         DYNAMIPS_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/dynamips-0.2.10-OSX.intel64.bin'
      else:
-         DYNAMIPS_DEFAULT_PATH = os.getcwdu() + os.sep + 'dynamips-0.2.8-RC3-community-OSX.intel64.bin'
+         DYNAMIPS_DEFAULT_PATH = os.getcwdu() + os.sep + 'dynamips-0.2.10-OSX.intel64.bin'
 +elif sys.platform.startswith('openbsd'):
 +    DYNAMIPS_DEFAULT_PATH = unicode('${LOCALBASE}/bin/dynamips')
  else:
      DYNAMIPS_DEFAULT_PATH = unicode('dynamips')
  
-@@ -46,6 +48,8 @@ if sys.platform.startswith('win'):
+@@ -55,6 +57,8 @@ if sys.platform.startswith('win'):
      QEMUWRAPPER_DEFAULT_PATH = unicode('qemuwrapper.exe')
  elif sys.platform.startswith('darwin') and hasattr(sys, "frozen"):
      QEMUWRAPPER_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/qemuwrapper.py'
@@ -19,12 +19,12 @@ $OpenBSD: patch-src_GNS3_Config_Defaults_py,v 1.4 2012/10/25 12:27:53 gsoares Ex
  else:
      # look for qemuwrapper in the current working directory
      qemuwrapper_path = os.getcwdu() + os.sep + 'qemuwrapper/qemuwrapper.py'
-@@ -69,18 +73,20 @@ if sys.platform.startswith('win'):
-     QEMU_DEFAULT_PATH = unicode('qemu')
-     QEMU_IMG_DEFAULT_PATH = unicode('qemu-img')
+@@ -86,18 +90,20 @@ elif sys.platform.startswith('darwin') and hasattr(sys
+         QEMU_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/Qemu-0.11.0/bin/qemu'
+         QEMU_IMG_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/Qemu-0.11.0/bin/qemu-img'
  else:
--    QEMU_DEFAULT_PATH = unicode('qemu-system-i386')
 -    QEMU_IMG_DEFAULT_PATH = unicode('qemu-img')
+-    QEMU_DEFAULT_PATH = unicode('qemu')
 +    QEMU_DEFAULT_PATH = unicode('${LOCALBASE}/bin/qemu-system-i386')
 +    QEMU_IMG_DEFAULT_PATH = unicode('${LOCALBASE}/bin/qemu-img')
  
@@ -42,13 +42,4 @@ $OpenBSD: patch-src_GNS3_Config_Defaults_py,v 1.4 2012/10/25 12:27:53 gsoares Ex
 +    if os.path.exists(vboxwrapper_path):
          VBOXWRAPPER_DEFAULT_PATH = vboxwrapper_path
      elif platform.system() == 'Linux':
-         VBOXWRAPPER_DEFAULT_PATH = unicode("/usr/lib/gns3/vboxwrapper.py")
-@@ -170,7 +176,7 @@ if platform.system() == 'Linux' or platform.system()._
-                             'xterm (Linux/BSD)': 'xterm -T %d -e \'telnet %h %p\' >/dev/null 2>&1 &',
-                             'Putty (Linux/BSD)': 'putty -telnet %h %p',
-                             'Gnome Terminal (Linux/BSD)': 'gnome-terminal -t %d -e \'telnet %h %p\' >/dev/null 2>&1 &',
--                            'KDE Konsole (Linux/BSD)': '/usr/bin/konsole --new-tab -p tabtitle=%d -e telnet %h %p >/dev/null 2>&1 &'
-+                            'KDE Konsole (Linux/BSD)': 'konsole --new-tab -p tabtitle=%d -e telnet %h %p >/dev/null 2>&1 &'
-                             }
- elif platform.system() == 'Windows'  and os.path.exists("C:\Program Files (x86)\\"):
-     TERMINAL_PRESET_CMDS = {
+         VBOXWRAPPER_DEFAULT_PATH = unicode("/usr/share/gns3/vboxwrapper.py")

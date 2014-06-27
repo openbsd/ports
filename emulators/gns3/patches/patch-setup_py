@@ -1,0 +1,23 @@
+$OpenBSD: patch-setup_py,v 1.1 2014/06/27 06:19:43 ajacoutot Exp $
+--- setup.py.orig	Fri Jun 27 08:10:01 2014
++++ setup.py	Fri Jun 27 08:10:52 2014
+@@ -238,7 +238,7 @@ else:
+     if platform.system() == 'Linux':
+       wrapper_dir = '/usr/share/gns3/'
+     else:
+-      wrapper_dir = '/usr/local/libexec/gns3/'
++      wrapper_dir = '${PREFIX}/libexec/gns3/'
+ 
+     setup( # Distribution meta-data
+             name = 'GNS3',
+@@ -284,7 +284,7 @@ else:
+                 'GNS3.Langs'],
+           package_data = { 'GNS3': ['Langs/*.qm', 'Dynagen/configspec'] },
+           data_files = [ (wrapper_dir, ['qemuwrapper/qemuwrapper.py', 'vboxwrapper/vboxcontroller_4_1.py', 'vboxwrapper/vboxwrapper.py', 'vboxwrapper/tcp_pipe_proxy.py']),
+-                        ('/usr/local/share/examples/gns3/', ['baseconfig.txt', 'baseconfig_sw.txt']),
+-                        ('/usr/local/share/doc/gns3/', ['README', 'COPYING', 'CHANGELOG']),
+-                        ('/usr/local/share/man/man1/', ['docs/man/gns3.1'])]
++                        ('${PREFIX}/share/examples/gns3/', ['baseconfig.txt', 'baseconfig_sw.txt']),
++                        ('${PREFIX}/share/doc/gns3/', ['README', 'COPYING', 'CHANGELOG']),
++                        ('${PREFIX}/man/man1/', ['docs/man/gns3.1'])]
+     )
