@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/05/18 15:43:54 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/06/27 15:26:02 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -1819,12 +1819,12 @@ jruby/lib/ruby/gems/1.8/gems/rdoc-${RDOC_V}/bin/rdoc
 jruby/lib/ruby/gems/1.8/gems/rdoc-${RDOC_V}/bin/ri
 jruby/lib/ruby/gems/1.8/specifications/
 jruby/lib/ruby/gems/1.8/specifications/default/
-jruby/lib/ruby/gems/1.8/specifications/default/bouncy-castle-java-1.5.0147.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.3.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/ffi-1.9.3-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.5-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-1.8.0-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/krypt-0.0.2.rc1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/krypt-core-0.0.2.rc1-universal-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/krypt-provider-jdk-0.0.2.rc1.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/krypt-0.0.2.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/krypt-core-0.0.2-universal-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/krypt-provider-jdk-0.0.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-${RAKE_V}.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-${RDOC_V}.gemspec
 jruby/lib/ruby/gems/shared
@@ -1839,11 +1839,6 @@ jruby/lib/ruby/shared/ant/rake.rb
 jruby/lib/ruby/shared/ant/target.rb
 jruby/lib/ruby/shared/ant/tasks/
 jruby/lib/ruby/shared/ant/tasks/raketasks.rb
-jruby/lib/ruby/shared/bcpkix-jdk15on-1.47.jar
-jruby/lib/ruby/shared/bcpkix-jdk15on-147.jar
-jruby/lib/ruby/shared/bcprov-jdk15on-1.47.jar
-jruby/lib/ruby/shared/bcprov-jdk15on-147.jar
-jruby/lib/ruby/shared/bouncy-castle-java.rb
 jruby/lib/ruby/shared/ffi/
 jruby/lib/ruby/shared/ffi.rb
 jruby/lib/ruby/shared/ffi/autopointer.rb
@@ -1989,8 +1984,6 @@ jruby/lib/ruby/shared/json/pure/generator.rb
 jruby/lib/ruby/shared/json/pure/parser.rb
 jruby/lib/ruby/shared/json/version.rb
 jruby/lib/ruby/shared/krypt/
-jruby/lib/ruby/shared/krypt-core.rb
-jruby/lib/ruby/shared/krypt-provider-jdk.rb
 jruby/lib/ruby/shared/krypt.rb
 jruby/lib/ruby/shared/krypt/asn1/
 jruby/lib/ruby/shared/krypt/asn1.rb
@@ -2001,7 +1994,9 @@ jruby/lib/ruby/shared/krypt/codec.rb
 jruby/lib/ruby/shared/krypt/codec/base64.rb
 jruby/lib/ruby/shared/krypt/codec/base_codec.rb
 jruby/lib/ruby/shared/krypt/codec/hex.rb
+jruby/lib/ruby/shared/krypt/core/
 jruby/lib/ruby/shared/krypt/core.rb
+jruby/lib/ruby/shared/krypt/core/version.rb
 jruby/lib/ruby/shared/krypt/digest.rb
 jruby/lib/ruby/shared/krypt/hmac.rb
 jruby/lib/ruby/shared/krypt/ossl/
@@ -2018,7 +2013,9 @@ jruby/lib/ruby/shared/krypt/provider/ffi/digest.rb
 jruby/lib/ruby/shared/krypt/provider/ffi/ffi_helper.rb
 jruby/lib/ruby/shared/krypt/provider/ffi/provider.rb
 jruby/lib/ruby/shared/krypt/provider/ffi/provider_api.rb
+jruby/lib/ruby/shared/krypt/provider/jdk/
 jruby/lib/ruby/shared/krypt/provider/jdk.rb
+jruby/lib/ruby/shared/krypt/provider/jdk/version.rb
 jruby/lib/ruby/shared/krypt/provider/provider.rb
 jruby/lib/ruby/shared/krypt/version.rb
 jruby/lib/ruby/shared/krypt/x509/
@@ -2043,6 +2040,14 @@ jruby/lib/ruby/shared/openssl/ssl-internal.rb
 jruby/lib/ruby/shared/openssl/ssl.rb
 jruby/lib/ruby/shared/openssl/x509-internal.rb
 jruby/lib/ruby/shared/openssl/x509.rb
+jruby/lib/ruby/shared/org/
+jruby/lib/ruby/shared/org/bouncycastle/
+jruby/lib/ruby/shared/org/bouncycastle/bcpkix-jdk15on/
+jruby/lib/ruby/shared/org/bouncycastle/bcpkix-jdk15on/1.47/
+jruby/lib/ruby/shared/org/bouncycastle/bcpkix-jdk15on/1.47/bcpkix-jdk15on-1.47.jar
+jruby/lib/ruby/shared/org/bouncycastle/bcprov-jdk15on/
+jruby/lib/ruby/shared/org/bouncycastle/bcprov-jdk15on/1.47/
+jruby/lib/ruby/shared/org/bouncycastle/bcprov-jdk15on/1.47/bcprov-jdk15on-1.47.jar
 jruby/lib/ruby/shared/psych/
 jruby/lib/ruby/shared/psych.rb
 jruby/lib/ruby/shared/psych/coder.rb
