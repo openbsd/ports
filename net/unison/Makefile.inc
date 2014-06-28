@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.23 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2014/06/28 21:08:09 kili Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
-REVISION=	2
 
 HOMEPAGE=	http://www.cis.upenn.edu/~bcpierce/unison/
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
