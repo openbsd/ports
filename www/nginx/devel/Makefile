@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2014/05/20 10:17:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/06/28 20:31:10 kili Exp $
 
 VERSION=	1.5.7
-REVISION=	2
+REVISION=	3
 
 CONFIGURE_ARGS+= --with-http_auth_request_module
 
