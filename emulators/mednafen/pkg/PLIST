@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/27 04:13:17 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/06/28 04:08:48 jeremy Exp $
 @bin bin/mednafen
 share/doc/mednafen/
 share/doc/mednafen/Makefile.am
@@ -6,6 +6,7 @@ share/doc/mednafen/Makefile.in
 share/doc/mednafen/README.jpeg4a
 share/doc/mednafen/bwolf0.png
 share/doc/mednafen/bwolf1.png
+share/doc/mednafen/cheat.html
 share/doc/mednafen/cheats.txt
 share/doc/mednafen/debugger.html
 share/doc/mednafen/docgen.inc
