@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
---- bin/minilzo.c.orig	Thu Jun 26 23:57:12 2014
-+++ bin/minilzo.c	Thu Jun 26 23:57:25 2014
+$OpenBSD: patch-bin_minilzo_c,v 1.2 2014/06/28 02:42:57 sthen Exp $
+--- bin/minilzo.c.orig	Thu Dec 29 15:11:27 2011
++++ bin/minilzo.c	Sat Jun 28 03:41:38 2014
 @@ -2,21 +2,13 @@
  
     This file is part of the LZO real-time data compression library.
@@ -4021,7 +4021,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #else
      lzo_uintptr_t p, n;
      p = __lzo_ptr_linear(ptr);
-@@ -1928,38 +3895,34 @@ __lzo_align_gap(const lzo_voidp ptr, lzo_uint size)
+@@ -1928,17 +3895,18 @@ __lzo_align_gap(const lzo_voidp ptr, lzo_uint size)
  
      assert(size > 0);
      assert((long)n >= 0);
@@ -4044,18 +4044,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #if !defined(__LZO_IN_MINLZO)
      LZO_VERSION_STRING;
  #else
-     "\r\n\n"
-     "LZO data compression library.\n"
--    "$Copyright: LZO (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Markus Franz Xaver Johannes Oberhumer\n"
-+    "$Copyright: LZO Copyright (C) 1996-2014 Markus Franz Xaver Johannes Oberhumer\n"
-     "<markus@oberhumer.com>\n"
-     "http://www.oberhumer.com $\n\n"
--    "$Id: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $\n"
--    "$Built: " __DATE__ " " __TIME__ " $\n"
-+    "$Id: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $\n"
-     "$Info: " LZO_INFO_STRING " $\n";
- #endif
- 
+@@ -1955,11 +3923,7 @@ const char __lzo_copyright[] =
  LZO_PUBLIC(const lzo_bytep)
  lzo_copyright(void)
  {
@@ -4067,7 +4056,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  }
  
  LZO_PUBLIC(unsigned)
-@@ -2001,11 +3964,11 @@ _lzo_version_date(void)
+@@ -2001,11 +3965,11 @@ _lzo_version_date(void)
  #define LZO_DO8(buf,i)  LZO_DO4(buf,i); LZO_DO4(buf,i+4);
  #define LZO_DO16(buf,i) LZO_DO8(buf,i); LZO_DO8(buf,i+8);
  
@@ -4083,7 +4072,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
      unsigned k;
  
      if (buf == NULL)
-@@ -2038,6 +4001,7 @@ lzo_adler32(lzo_uint32 adler, const lzo_bytep buf, lzo
+@@ -2038,6 +4002,7 @@ lzo_adler32(lzo_uint32 adler, const lzo_bytep buf, lzo
  #undef LZO_DO8
  #undef LZO_DO16
  
@@ -4091,7 +4080,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #if !defined(MINILZO_CFG_SKIP_LZO_STRING)
  #undef lzo_memcmp
  #undef lzo_memcpy
-@@ -2060,9 +4024,9 @@ lzo_adler32(lzo_uint32 adler, const lzo_bytep buf, lzo
+@@ -2060,9 +4025,9 @@ lzo_adler32(lzo_uint32 adler, const lzo_bytep buf, lzo
  #endif
  LZOLIB_PUBLIC(int, lzo_hmemcmp) (const lzo_hvoid_p s1, const lzo_hvoid_p s2, lzo_hsize_t len)
  {
@@ -4104,7 +4093,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
      if __lzo_likely(len > 0) do
      {
          int d = *p1 - *p2;
-@@ -2077,10 +4041,10 @@ LZOLIB_PUBLIC(int, lzo_hmemcmp) (const lzo_hvoid_p s1,
+@@ -2077,10 +4042,10 @@ LZOLIB_PUBLIC(int, lzo_hmemcmp) (const lzo_hvoid_p s1,
  }
  LZOLIB_PUBLIC(lzo_hvoid_p, lzo_hmemcpy) (lzo_hvoid_p dest, const lzo_hvoid_p src, lzo_hsize_t len)
  {
@@ -4119,7 +4108,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
          return dest;
      do
          *p1++ = *p2++;
-@@ -2092,10 +4056,10 @@ LZOLIB_PUBLIC(lzo_hvoid_p, lzo_hmemcpy) (lzo_hvoid_p d
+@@ -2092,10 +4057,10 @@ LZOLIB_PUBLIC(lzo_hvoid_p, lzo_hmemcpy) (lzo_hvoid_p d
  }
  LZOLIB_PUBLIC(lzo_hvoid_p, lzo_hmemmove) (lzo_hvoid_p dest, const lzo_hvoid_p src, lzo_hsize_t len)
  {
@@ -4134,7 +4123,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
          return dest;
      if (p1 < p2)
      {
-@@ -2116,78 +4080,143 @@ LZOLIB_PUBLIC(lzo_hvoid_p, lzo_hmemmove) (lzo_hvoid_p 
+@@ -2116,78 +4081,143 @@ LZOLIB_PUBLIC(lzo_hvoid_p, lzo_hmemmove) (lzo_hvoid_p 
      return memmove(dest, src, len);
  #endif
  }
@@ -4318,7 +4307,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  LZO_PUBLIC(int)
  __lzo_init_v2(unsigned v, int s1, int s2, int s3, int s4, int s5,
                            int s6, int s7, int s8, int s9)
-@@ -2197,21 +4226,19 @@ __lzo_init_v2(unsigned v, int s1, int s2, int s3, int 
+@@ -2197,21 +4227,19 @@ __lzo_init_v2(unsigned v, int s1, int s2, int s3, int 
  #if defined(__LZO_IN_MINILZO)
  #elif (LZO_CC_MSC && ((_MSC_VER) < 700))
  #else
@@ -4345,7 +4334,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
          (s5 == -1 || s5 == (int) sizeof(lzo_uint)) &&
          (s6 == -1 || s6 == (int) lzo_sizeof_dict_t) &&
          (s7 == -1 || s7 == (int) sizeof(char *)) &&
-@@ -2246,27 +4273,47 @@ int __far __pascal LibMain ( int a, short b, short c, 
+@@ -2246,27 +4274,47 @@ int __far __pascal LibMain ( int a, short b, short c, 
  
  #endif
  
@@ -4398,7 +4387,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #undef LZO_DETERMINISTIC
  
  #define M1_MAX_OFFSET   0x0400
-@@ -2306,7 +4353,7 @@ int __far __pascal LibMain ( int a, short b, short c, 
+@@ -2306,7 +4354,7 @@ int __far __pascal LibMain ( int a, short b, short c, 
  #define DL_MIN_LEN          M2_MIN_LEN
  
  #ifndef __LZO_DICT_H
@@ -4407,7 +4396,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  
  #ifdef __cplusplus
  extern "C" {
-@@ -2347,10 +4394,10 @@ extern "C" {
+@@ -2347,10 +4395,10 @@ extern "C" {
  #if (D_BITS != DL_BITS + DD_BITS)
  #  error "D_BITS does not match"
  #endif
@@ -4420,7 +4409,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #  error "invalid DL_BITS"
  #endif
  #if (DD_BITS < 0 || DD_BITS > 6)
-@@ -2409,14 +4456,14 @@ extern "C" {
+@@ -2409,14 +4457,14 @@ extern "C" {
  #  define _DINDEX(dv,p)     (_DV_A((p),DL_SHIFT))
  
  #elif (LZO_HASH == LZO_HASH_GZIP_INCREMENTAL)
@@ -4437,7 +4426,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #  define DVAL_FIRST(dv,p)  dv = _DV_A((p),5)
  #  define DVAL_NEXT(dv,p) \
                  dv ^= (lzo_xint)(p[-1]) << (2*5); dv = (((dv) << 5) ^ p[2])
-@@ -2424,7 +4471,7 @@ extern "C" {
+@@ -2424,7 +4472,7 @@ extern "C" {
  #  define DVAL_LOOKAHEAD    DL_MIN_LEN
  
  #elif (LZO_HASH == LZO_HASH_LZO_INCREMENTAL_B)
@@ -4446,7 +4435,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #  define DVAL_FIRST(dv,p)  dv = _DV_B((p),5)
  #  define DVAL_NEXT(dv,p) \
                  dv ^= p[-1]; dv = (((dv) >> 5) ^ ((lzo_xint)(p[2]) << (2*5)))
-@@ -2453,7 +4500,12 @@ extern "C" {
+@@ -2453,7 +4501,12 @@ extern "C" {
  
  #if !defined(DVAL_ASSERT)
  #if defined(__LZO_HASH_INCREMENTAL) && !defined(NDEBUG)
@@ -4460,7 +4449,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  {
      lzo_xint df;
      DVAL_FIRST(df,(p));
-@@ -2464,11 +4516,11 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
+@@ -2464,11 +4517,11 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
  #endif
  #endif
  
@@ -4474,7 +4463,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #  define GINDEX(m_pos,m_off,dict,dindex,in)    m_off = dict[dindex]
  #endif
  
-@@ -2489,7 +4541,7 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
+@@ -2489,7 +4542,7 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
  
  #endif
  
@@ -4483,7 +4472,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  
  #define LZO_CHECK_MPOS_DET(m_pos,m_off,in,ip,max_offset) \
          (m_pos == NULL || (m_off = pd(ip, m_pos)) > max_offset)
-@@ -2498,7 +4550,7 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
+@@ -2498,7 +4551,7 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
      (BOUNDS_CHECKING_OFF_IN_EXPR(( \
          m_pos = ip - (lzo_uint) PTR_DIFF(ip,m_pos), \
          PTR_LT(m_pos,in) || \
@@ -4492,7 +4481,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
           m_off > max_offset )))
  
  #else
-@@ -2515,7 +4567,7 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
+@@ -2515,7 +4568,7 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
  
  #endif
  
@@ -4501,7 +4490,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #  define LZO_CHECK_MPOS    LZO_CHECK_MPOS_DET
  #else
  #  define LZO_CHECK_MPOS    LZO_CHECK_MPOS_NON_DET
-@@ -2531,17 +4583,25 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
+@@ -2531,17 +4584,25 @@ static void DVAL_ASSERT(lzo_xint dv, const lzo_bytep p
  
  #endif
  
@@ -4530,7 +4519,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
      const lzo_bytep ii;
      lzo_dict_p const dict = (lzo_dict_p) wrkmem;
  
-@@ -2549,14 +4609,17 @@ do_compress ( const lzo_bytep in , lzo_uint  in_len,
+@@ -2549,14 +4610,17 @@ do_compress ( const lzo_bytep in , lzo_uint  in_len,
      ip = in;
      ii = ip;
  
@@ -4552,7 +4541,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
          DINDEX1(dindex,ip);
          GINDEX(m_pos,m_off,dict,dindex,in);
          if (LZO_CHECK_MPOS_NON_DET(m_pos,m_off,in,ip,M4_MAX_OFFSET))
-@@ -2574,200 +4637,247 @@ do_compress ( const lzo_bytep in , lzo_uint  in_len,
+@@ -2574,200 +4638,247 @@ do_compress ( const lzo_bytep in , lzo_uint  in_len,
          goto literal;
  
  try_match:
@@ -4951,7 +4940,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  }
  
  LZO_PUBLIC(int)
-@@ -2775,16 +4885,30 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
+@@ -2775,16 +4886,30 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
                           lzo_bytep out, lzo_uintp out_len,
                           lzo_voidp wrkmem )
  {
@@ -4987,7 +4976,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  
      if (t > 0)
      {
-@@ -2793,7 +4917,7 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
+@@ -2793,7 +4918,7 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
          if (op == out && t <= 238)
              *op++ = LZO_BYTE(17 + t);
          else if (t <= 3)
@@ -4996,7 +4985,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
          else if (t <= 18)
              *op++ = LZO_BYTE(t - 3);
          else
-@@ -2804,12 +4928,14 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
+@@ -2804,12 +4929,14 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
              while (tt > 255)
              {
                  tt -= 255;
@@ -5013,7 +5002,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
      }
  
      *op++ = M4_MARKER | 1;
-@@ -2840,16 +4966,19 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
+@@ -2840,16 +4967,19 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
  #    define LZO_TEST_OVERRUN_OUTPUT      2
  #  endif
  #  if !defined(LZO_TEST_OVERRUN_LOOKBEHIND)
@@ -5034,7 +5023,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #undef HAVE_TEST_IP
  #undef HAVE_TEST_OP
  #undef HAVE_NEED_IP
-@@ -2864,6 +4993,7 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
+@@ -2864,6 +4994,7 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
  #  if (LZO_TEST_OVERRUN_INPUT >= 2)
  #    define NEED_IP(x) \
              if ((lzo_uint)(ip_end - ip) < (lzo_uint)(x))  goto input_overrun
@@ -5042,7 +5031,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #  endif
  #endif
  
-@@ -2875,12 +5005,13 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
+@@ -2875,12 +5006,13 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
  #    undef TEST_OP
  #    define NEED_OP(x) \
              if ((lzo_uint)(op_end - op) < (lzo_uint)(x))  goto output_overrun
@@ -5058,7 +5047,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #else
  #  define TEST_LB(m_pos)        ((void) 0)
  #  define TEST_LBO(m_pos,o)     ((void) 0)
-@@ -2891,44 +5022,46 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
+@@ -2891,44 +5023,46 @@ DO_COMPRESS      ( const lzo_bytep in , lzo_uint  in_l
  #endif
  
  #if defined(TEST_IP)
@@ -5121,7 +5110,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #if defined(DO_DECOMPRESS)
  LZO_PUBLIC(int)
  DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len,
-@@ -2936,14 +5069,14 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
+@@ -2936,14 +5070,14 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
                         lzo_voidp wrkmem )
  #endif
  {
@@ -5140,7 +5129,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #endif
  
      const lzo_bytep const ip_end = in + in_len;
-@@ -2978,46 +5111,65 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
+@@ -2978,46 +5112,65 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
      op = out;
      ip = in;
  
@@ -5214,7 +5203,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                      op += 4; ip += 4; t -= 4;
                  } while (t >= 4);
                  if (t > 0) do *op++ = *ip++; while (--t > 0);
-@@ -3025,12 +5177,12 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
+@@ -3025,12 +5178,12 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
              else
                  do *op++ = *ip++; while (--t > 0);
          }
@@ -5229,7 +5218,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
          {
              *op++ = *ip++; *op++ = *ip++; *op++ = *ip++;
              do *op++ = *ip++; while (--t > 0);
-@@ -3066,7 +5218,7 @@ first_literal_run:
+@@ -3066,7 +5219,7 @@ first_literal_run:
  #endif
          goto match_done;
  
@@ -5238,7 +5227,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  match:
              if (t >= 64)
              {
-@@ -3126,14 +5278,15 @@ match:
+@@ -3126,14 +5279,15 @@ match:
                  t &= 31;
                  if (t == 0)
                  {
@@ -5255,7 +5244,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                  }
  #if defined(COPY_DICT)
  #if defined(LZO1Z)
-@@ -3149,9 +5302,9 @@ match:
+@@ -3149,9 +5303,9 @@ match:
                      m_pos = op - off;
                      last_m_off = off;
                  }
@@ -5267,7 +5256,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #else
                  m_pos = op - 1;
                  m_pos -= (ip[0] >> 2) + (ip[1] << 6);
-@@ -3170,14 +5323,15 @@ match:
+@@ -3170,14 +5324,15 @@ match:
                  t &= 7;
                  if (t == 0)
                  {
@@ -5284,7 +5273,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                  }
  #if defined(COPY_DICT)
  #if defined(LZO1Z)
-@@ -3195,8 +5349,8 @@ match:
+@@ -3195,8 +5350,8 @@ match:
  #else
  #if defined(LZO1Z)
                  m_pos -= (ip[0] << 6) + (ip[1] >> 2);
@@ -5295,7 +5284,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #else
                  m_pos -= (ip[0] >> 2) + (ip[1] << 6);
  #endif
-@@ -3244,8 +5398,29 @@ match:
+@@ -3244,8 +5399,29 @@ match:
  #else
  
              TEST_LB(m_pos); assert(t > 0); NEED_OP(t+3-1);
@@ -5327,7 +5316,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
              if (t >= 2 * 4 - (3 - 1) && PTR_ALIGNED2_4(op,m_pos))
              {
                  assert((op - m_pos) >= 4);
-@@ -3253,10 +5428,10 @@ match:
+@@ -3253,10 +5429,10 @@ match:
              if (t >= 2 * 4 - (3 - 1) && (op - m_pos) >= 4)
              {
  #endif
@@ -5340,7 +5329,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                      op += 4; m_pos += 4; t -= 4;
                  } while (t >= 4);
                  if (t > 0) do *op++ = *m_pos++; while (--t > 0);
-@@ -3281,7 +5456,7 @@ match_done:
+@@ -3281,7 +5457,7 @@ match_done:
                  break;
  
  match_next:
@@ -5349,7 +5338,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #if 0
              do *op++ = *ip++; while (--t > 0);
  #else
-@@ -3289,16 +5464,10 @@ match_next:
+@@ -3289,16 +5465,10 @@ match_next:
              if (t > 1) { *op++ = *ip++; if (t > 2) { *op++ = *ip++; } }
  #endif
              t = *ip++;
@@ -5367,7 +5356,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
      *out_len = pd(op, out);
      return (ip == ip_end ? LZO_E_OK :
             (ip < ip_end  ? LZO_E_INPUT_NOT_CONSUMED : LZO_E_INPUT_OVERRUN));
-@@ -3324,7 +5493,7 @@ lookbehind_overrun:
+@@ -3324,7 +5494,7 @@ lookbehind_overrun:
  
  #endif
  
@@ -5376,7 +5365,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #undef DO_DECOMPRESS
  #define DO_DECOMPRESS       lzo1x_decompress_safe
  
-@@ -3338,16 +5507,19 @@ lookbehind_overrun:
+@@ -3338,16 +5508,19 @@ lookbehind_overrun:
  #    define LZO_TEST_OVERRUN_OUTPUT      2
  #  endif
  #  if !defined(LZO_TEST_OVERRUN_LOOKBEHIND)
@@ -5397,7 +5386,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #undef HAVE_TEST_IP
  #undef HAVE_TEST_OP
  #undef HAVE_NEED_IP
-@@ -3362,6 +5534,7 @@ lookbehind_overrun:
+@@ -3362,6 +5535,7 @@ lookbehind_overrun:
  #  if (LZO_TEST_OVERRUN_INPUT >= 2)
  #    define NEED_IP(x) \
              if ((lzo_uint)(ip_end - ip) < (lzo_uint)(x))  goto input_overrun
@@ -5405,7 +5394,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #  endif
  #endif
  
-@@ -3373,12 +5546,13 @@ lookbehind_overrun:
+@@ -3373,12 +5547,13 @@ lookbehind_overrun:
  #    undef TEST_OP
  #    define NEED_OP(x) \
              if ((lzo_uint)(op_end - op) < (lzo_uint)(x))  goto output_overrun
@@ -5421,7 +5410,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #else
  #  define TEST_LB(m_pos)        ((void) 0)
  #  define TEST_LBO(m_pos,o)     ((void) 0)
-@@ -3389,44 +5563,46 @@ lookbehind_overrun:
+@@ -3389,44 +5564,46 @@ lookbehind_overrun:
  #endif
  
  #if defined(TEST_IP)
@@ -5484,7 +5473,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #if defined(DO_DECOMPRESS)
  LZO_PUBLIC(int)
  DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len,
-@@ -3434,14 +5610,14 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
+@@ -3434,14 +5611,14 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
                         lzo_voidp wrkmem )
  #endif
  {
@@ -5503,7 +5492,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #endif
  
      const lzo_bytep const ip_end = in + in_len;
-@@ -3476,46 +5652,65 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
+@@ -3476,46 +5653,65 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
      op = out;
      ip = in;
  
@@ -5577,7 +5566,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                      op += 4; ip += 4; t -= 4;
                  } while (t >= 4);
                  if (t > 0) do *op++ = *ip++; while (--t > 0);
-@@ -3523,12 +5718,12 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
+@@ -3523,12 +5719,12 @@ DO_DECOMPRESS  ( const lzo_bytep in , lzo_uint  in_len
              else
                  do *op++ = *ip++; while (--t > 0);
          }
@@ -5592,7 +5581,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
          {
              *op++ = *ip++; *op++ = *ip++; *op++ = *ip++;
              do *op++ = *ip++; while (--t > 0);
-@@ -3564,7 +5759,7 @@ first_literal_run:
+@@ -3564,7 +5760,7 @@ first_literal_run:
  #endif
          goto match_done;
  
@@ -5601,7 +5590,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  match:
              if (t >= 64)
              {
-@@ -3624,14 +5819,15 @@ match:
+@@ -3624,14 +5820,15 @@ match:
                  t &= 31;
                  if (t == 0)
                  {
@@ -5618,7 +5607,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                  }
  #if defined(COPY_DICT)
  #if defined(LZO1Z)
-@@ -3647,9 +5843,9 @@ match:
+@@ -3647,9 +5844,9 @@ match:
                      m_pos = op - off;
                      last_m_off = off;
                  }
@@ -5630,7 +5619,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #else
                  m_pos = op - 1;
                  m_pos -= (ip[0] >> 2) + (ip[1] << 6);
-@@ -3668,14 +5864,15 @@ match:
+@@ -3668,14 +5865,15 @@ match:
                  t &= 7;
                  if (t == 0)
                  {
@@ -5647,7 +5636,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                  }
  #if defined(COPY_DICT)
  #if defined(LZO1Z)
-@@ -3693,8 +5890,8 @@ match:
+@@ -3693,8 +5891,8 @@ match:
  #else
  #if defined(LZO1Z)
                  m_pos -= (ip[0] << 6) + (ip[1] >> 2);
@@ -5658,7 +5647,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #else
                  m_pos -= (ip[0] >> 2) + (ip[1] << 6);
  #endif
-@@ -3742,8 +5939,29 @@ match:
+@@ -3742,8 +5940,29 @@ match:
  #else
  
              TEST_LB(m_pos); assert(t > 0); NEED_OP(t+3-1);
@@ -5690,7 +5679,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
              if (t >= 2 * 4 - (3 - 1) && PTR_ALIGNED2_4(op,m_pos))
              {
                  assert((op - m_pos) >= 4);
-@@ -3751,10 +5969,10 @@ match:
+@@ -3751,10 +5970,10 @@ match:
              if (t >= 2 * 4 - (3 - 1) && (op - m_pos) >= 4)
              {
  #endif
@@ -5703,7 +5692,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
                      op += 4; m_pos += 4; t -= 4;
                  } while (t >= 4);
                  if (t > 0) do *op++ = *m_pos++; while (--t > 0);
-@@ -3779,7 +5997,7 @@ match_done:
+@@ -3779,7 +5998,7 @@ match_done:
                  break;
  
  match_next:
@@ -5712,7 +5701,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
  #if 0
              do *op++ = *ip++; while (--t > 0);
  #else
-@@ -3787,16 +6005,10 @@ match_next:
+@@ -3787,16 +6006,10 @@ match_next:
              if (t > 1) { *op++ = *ip++; if (t > 2) { *op++ = *ip++; } }
  #endif
              t = *ip++;
@@ -5730,7 +5719,7 @@ $OpenBSD: patch-bin_minilzo_c,v 1.1 2014/06/26 23:00:15 sthen Exp $
      *out_len = pd(op, out);
      return (ip == ip_end ? LZO_E_OK :
             (ip < ip_end  ? LZO_E_INPUT_NOT_CONSUMED : LZO_E_INPUT_OVERRUN));
-@@ -3823,4 +6035,3 @@ lookbehind_overrun:
+@@ -3823,4 +6036,3 @@ lookbehind_overrun:
  #endif
  
  /***** End of minilzo.c *****/
