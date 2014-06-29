@@ -1,4 +1,4 @@
-$OpenBSD: patch-_htaccess,v 1.1 2014/06/29 09:06:07 kirby Exp $
+$OpenBSD: patch-_htaccess,v 1.2 2014/06/29 09:50:53 sthen Exp $
 --- .htaccess.orig	Sun Jun 29 12:10:37 2014
 +++ .htaccess	Sun Jun 29 12:10:51 2014
 @@ -31,7 +31,7 @@ RewriteRule ^favicon\.ico$ skins/larry/images/favicon.
@@ -6,7 +6,7 @@ $OpenBSD: patch-_htaccess,v 1.1 2014/06/29 09:06:07 kirby Exp $
  # - deny access to files not containing a dot or starting with a dot
  #   in all locations except installer directory
 -RewriteRule ^(?!installer)(\.?[^\.]+)$ - [F]
-+RewriteRule ^(/?!installer)(\.?[^\.]+)$ - [F]
++# XXX Apache 2.x (PCRE) only: RewriteRule ^(?!installer)(\.?[^\.]+)$ - [F]
  # - deny access to some locations
  RewriteRule ^/?(\.git|\.tx|SQL|bin|config|logs|temp|tests|program\/(include|lib|localization|steps)) - [F]
  # - deny access to some documentation files
