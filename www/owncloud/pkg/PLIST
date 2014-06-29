@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2014/04/29 14:47:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2014/06/29 17:08:56 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -494,13 +494,11 @@ owncloud/3rdparty/css/chosen/chosen.css
 owncloud/3rdparty/doctrine/
 owncloud/3rdparty/doctrine/common/
 owncloud/3rdparty/doctrine/common/.gitmodules
-owncloud/3rdparty/doctrine/common/.travis.yml
 owncloud/3rdparty/doctrine/common/LICENSE
 owncloud/3rdparty/doctrine/common/README.md
 owncloud/3rdparty/doctrine/common/UPGRADE_TO_2_1
 owncloud/3rdparty/doctrine/common/UPGRADE_TO_2_2
 owncloud/3rdparty/doctrine/common/build.properties
-owncloud/3rdparty/doctrine/common/build.xml
 owncloud/3rdparty/doctrine/common/composer.json
 owncloud/3rdparty/doctrine/common/lib/
 owncloud/3rdparty/doctrine/common/lib/Doctrine/
@@ -735,7 +733,6 @@ owncloud/3rdparty/doctrine/common/tests/NativePhpunitTask.php
 owncloud/3rdparty/doctrine/common/tests/README.markdown
 owncloud/3rdparty/doctrine/dbal/
 owncloud/3rdparty/doctrine/dbal/.gitmodules
-owncloud/3rdparty/doctrine/dbal/.travis.yml
 owncloud/3rdparty/doctrine/dbal/LICENSE
 owncloud/3rdparty/doctrine/dbal/README.md
 owncloud/3rdparty/doctrine/dbal/UPGRADE
@@ -744,7 +741,6 @@ owncloud/3rdparty/doctrine/dbal/bin/doctrine-dbal
 owncloud/3rdparty/doctrine/dbal/bin/doctrine-dbal.php
 owncloud/3rdparty/doctrine/dbal/bin/doctrine.php
 owncloud/3rdparty/doctrine/dbal/build.properties
-owncloud/3rdparty/doctrine/dbal/build.xml
 owncloud/3rdparty/doctrine/dbal/composer.json
 owncloud/3rdparty/doctrine/dbal/docs/
 owncloud/3rdparty/doctrine/dbal/docs/design/
@@ -2490,7 +2486,6 @@ owncloud/apps/calendar/templates/settings.php
 owncloud/apps/calendar/tests/
 owncloud/apps/calendar/tests/calendar.php
 owncloud/apps/contacts/
-owncloud/apps/contacts/.travis.yml
 owncloud/apps/contacts/COPYING-README
 owncloud/apps/contacts/Changelog
 owncloud/apps/contacts/README.md
@@ -7422,6 +7417,8 @@ owncloud/core/doc/admin/_images/custom_mount_config_gui-2.png
 owncloud/core/doc/admin/_images/custom_mount_config_gui-3.png
 owncloud/core/doc/admin/_images/custom_mount_config_gui-4.png
 owncloud/core/doc/admin/_images/edit_encrypted_file.png
+owncloud/core/doc/admin/_images/install-wizard-advanced.png
+owncloud/core/doc/admin/_images/install-wizard.png
 owncloud/core/doc/admin/_images/ldap-advanced-1-connection.png
 owncloud/core/doc/admin/_images/ldap-advanced-2-directory.png
 owncloud/core/doc/admin/_images/ldap-advanced-3-attributes.png
@@ -7519,6 +7516,7 @@ owncloud/core/doc/admin/_sources/installation/installation_others.txt
 owncloud/core/doc/admin/_sources/installation/installation_source.txt
 owncloud/core/doc/admin/_sources/installation/installation_ucs.txt
 owncloud/core/doc/admin/_sources/installation/installation_windows.txt
+owncloud/core/doc/admin/_sources/installation/installation_wizard.txt
 owncloud/core/doc/admin/_sources/issues/
 owncloud/core/doc/admin/_sources/issues/index.txt
 owncloud/core/doc/admin/_sources/maintenance/
@@ -7643,6 +7641,7 @@ owncloud/core/doc/admin/installation/installation_others.html
 owncloud/core/doc/admin/installation/installation_source.html
 owncloud/core/doc/admin/installation/installation_ucs.html
 owncloud/core/doc/admin/installation/installation_windows.html
+owncloud/core/doc/admin/installation/installation_wizard.html
 owncloud/core/doc/admin/issues/
 owncloud/core/doc/admin/issues/index.html
 owncloud/core/doc/admin/maintenance/
@@ -9540,6 +9539,7 @@ owncloud/lib/private/connector/sabre/auth.php
 owncloud/lib/private/connector/sabre/directory.php
 owncloud/lib/private/connector/sabre/exception/
 owncloud/lib/private/connector/sabre/exception/entitytoolarge.php
+owncloud/lib/private/connector/sabre/exception/filelocked.php
 owncloud/lib/private/connector/sabre/exception/unsupportedmediatype.php
 owncloud/lib/private/connector/sabre/exceptionloggerplugin.php
 owncloud/lib/private/connector/sabre/file.php
@@ -9579,6 +9579,7 @@ owncloud/lib/private/files.php
 owncloud/lib/private/files/cache/
 owncloud/lib/private/files/cache/backgroundwatcher.php
 owncloud/lib/private/files/cache/cache.php
+owncloud/lib/private/files/cache/changepropagator.php
 owncloud/lib/private/files/cache/homecache.php
 owncloud/lib/private/files/cache/legacy.php
 owncloud/lib/private/files/cache/permissions.php
@@ -9797,6 +9798,7 @@ owncloud/lib/public/files/file.php
 owncloud/lib/public/files/folder.php
 owncloud/lib/public/files/invalidcontentexception.php
 owncloud/lib/public/files/invalidpathexception.php
+owncloud/lib/public/files/locknotacquiredexception.php
 owncloud/lib/public/files/node.php
 owncloud/lib/public/files/notenoughspaceexception.php
 owncloud/lib/public/files/notfoundexception.php
