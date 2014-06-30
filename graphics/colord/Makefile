@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2014/06/04 13:37:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/06/30 13:13:04 kettenis Exp $
 
 COMMENT=	device color profile management daemon
-BROKEN-hppa= SIGBUS in cd-create-profile during build
 
 V=		1.2.1
 DISTNAME=	colord-${V}
