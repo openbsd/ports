@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/26 10:40:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/06/30 23:25:45 sthen Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.0.19
+REVISION-docs =		0
 DISTNAME =		samba-${VERSION}
+DOCSVERSION =		v3-5-test-4c5a1b6b
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			samba-docs-${DOCSVERSION}.tar.bz2:0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
@@ -120,6 +124,8 @@ WANTLIB-docs =
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
 
+MASTER_SITES0 =		http://www.samba.org/~samba-bugs/docs/v3-5-test/
+
 MULTI_PACKAGES =	-main -ldb -tdb -tevent -util -docs
 #MULTI_PACKAGES +=	-ntdb		# disabled by default in Samba4
 
@@ -203,10 +209,10 @@ MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
-SAMBA_CONFIG =	${PREFIX}/share/examples/samba/smb.conf.default
-SAMBA_LOGDIR =	${SYSCONFDIR}/log/samba
+SAMBA_CONFIG =		${PREFIX}/share/examples/samba/smb.conf.default
+SAMBA_LOGDIR =		${SYSCONFDIR}/log/samba
 
-SUBST_VARS =	SAMBA_LOGDIR
+SUBST_VARS =		SAMBA_LOGDIR
 
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
@@ -219,29 +225,27 @@ post-configure:
 
 post-install:
 	# removing extra files
-	@find ${PREFIX} \
+	find ${PREFIX} \
 	    -name '*${PATCHORIG}' -or \
 	    -name '*.beforesubst' -or \
 	    -name '*.deconforig' | \
 		xargs -rt rm --
 	# precompiling Python modules
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${WRKINST}${MODPY_SITEPKG}
-	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
-		${WRKINST}${MODPY_SITEPKG}
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 	# creating library symlinks
 .for _l in ${UTIL_LIBS}
 	cd ${PREFIX}/lib && ln -fs samba/lib${_l}.so.${LIB${_l}_VERSION}
 .endfor
 	# install samba docs and sample config
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
-	@cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
-	@find ${PREFIX}/share/examples/samba -type f | \
-		xargs chmod ${SHAREMODE}
-	@find ${PREFIX}/share/examples/samba -type d | \
-		xargs chmod ${DIRMODE}
-	@sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/samba
+	${INSTALL_DATA} ${WRKDIR}/samba-docs-${DOCSVERSION}/*.pdf \
+		${PREFIX}/share/doc/samba
+	cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
+	find ${PREFIX}/share/examples/samba -type f | xargs chmod ${SHAREMODE}
+	find ${PREFIX}/share/examples/samba -type d | xargs chmod ${DIRMODE}
+	sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
 	     -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
 	     -e 's:MYGROUP:WORKGROUP:' \
 	     ${WRKDIST}/examples/smb.conf.default > ${SAMBA_CONFIG}.tmp && \

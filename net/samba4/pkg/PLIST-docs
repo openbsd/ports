@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST-docs,v 1.2 2014/06/03 20:37:40 zhuk Exp $
+@comment $OpenBSD: PLIST-docs,v 1.3 2014/06/30 23:25:45 sthen Exp $
 @pkgpath net/samba,-docs
+share/doc/samba/
+share/doc/samba/Samba3-ByExample.pdf
+share/doc/samba/Samba3-Developers-Guide.pdf
+share/doc/samba/Samba3-HOWTO.pdf
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
 share/examples/samba/LDAP/convertSambaAccount
