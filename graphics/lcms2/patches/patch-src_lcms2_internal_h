@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lcms2_internal_h,v 1.3 2014/06/30 11:53:31 kettenis Exp $
+--- src/lcms2_internal.h.orig	Mon Mar 17 17:09:30 2014
++++ src/lcms2_internal.h	Sun Jun 29 14:32:06 2014
+@@ -56,8 +56,8 @@
+ // Alignment of ICC file format uses 4 bytes (cmsUInt32Number)
+ #define _cmsALIGNLONG(x) (((x)+(sizeof(cmsUInt32Number)-1)) & ~(sizeof(cmsUInt32Number)-1))
+ 
+-// Alignment to memory pointer
+-#define _cmsALIGNMEM(x)  (((x)+(sizeof(void *) - 1)) & ~(sizeof(void *) - 1))
++// Alignment to double
++#define _cmsALIGNMEM(x)  (((x)+(sizeof(double) - 1)) & ~(sizeof(double) - 1))
+ 
+ // Maximum encodeable values in floating point
+ #define MAX_ENCODEABLE_XYZ  (1.0 + 32767.0/32768.0)
