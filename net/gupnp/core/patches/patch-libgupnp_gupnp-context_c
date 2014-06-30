@@ -1,0 +1,17 @@
+$OpenBSD: patch-libgupnp_gupnp-context_c,v 1.1 2014/06/30 07:13:58 jasper Exp $
+
+From adaad1bc9eddcd1e9e4a6b25015271ec327377b1 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sun, 29 Jun 2014 13:08:21 +0200
+Subject: Avoid redefinition of GUPnPDevice and GUPnPService
+
+--- libgupnp/gupnp-context.c.orig	Thu May 29 14:51:43 2014
++++ libgupnp/gupnp-context.c	Mon Jun 30 09:10:34 2014
+@@ -59,6 +59,7 @@
+ #include "gupnp-marshal.h"
+ #include "gena-protocol.h"
+ #include "http-headers.h"
++#include "gupnp-device.h"
+ 
+ #define GUPNP_CONTEXT_DEFAULT_LANGUAGE "en"
+ 

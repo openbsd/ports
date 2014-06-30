@@ -1,0 +1,59 @@
+$OpenBSD: patch-libgupnp_gupnp-acl_h,v 1.1 2014/06/30 07:13:58 jasper Exp $
+
+From adaad1bc9eddcd1e9e4a6b25015271ec327377b1 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sun, 29 Jun 2014 13:08:21 +0200
+Subject: Avoid redefinition of GUPnPDevice and GUPnPService
+
+--- libgupnp/gupnp-acl.h.orig	Thu May 29 14:51:43 2014
++++ libgupnp/gupnp-acl.h	Mon Jun 30 09:10:34 2014
+@@ -68,22 +68,22 @@ typedef struct _GUPnPAcl GUPnPAcl;
+ typedef struct _GUPnPAclInterface GUPnPAclInterface;
+ 
+ /* Forward declarations to avoid recursive includes */
+-typedef struct _GUPnPDevice GUPnPDevice;
+-typedef struct _GUPnPService GUPnPService;
++struct _GUPnPDevice;
++struct _GUPnPService;
+ 
+ struct _GUPnPAclInterface {
+     GTypeInterface parent;
+ 
+     gboolean (*is_allowed) (GUPnPAcl     *self,
+-                            GUPnPDevice  *device,
+-                            GUPnPService *service,
++                            struct _GUPnPDevice  *device,
++                            struct _GUPnPService *service,
+                             const char   *path,
+                             const char   *address,
+                             const char   *agent);
+ 
+     void     (*is_allowed_async) (GUPnPAcl           *self,
+-                                  GUPnPDevice        *device,
+-                                  GUPnPService       *service,
++                                  struct _GUPnPDevice        *device,
++                                  struct _GUPnPService       *service,
+                                   const char         *path,
+                                   const char         *address,
+                                   const char         *agent,
+@@ -108,16 +108,16 @@ struct _GUPnPAclInterface {
+ 
+ gboolean
+ gupnp_acl_is_allowed (GUPnPAcl     *self,
+-                      GUPnPDevice  *device,
+-                      GUPnPService *service,
++                      struct _GUPnPDevice  *device,
++                      struct _GUPnPService *service,
+                       const char   *path,
+                       const char   *address,
+                       const char   *agent);
+ 
+ void
+ gupnp_acl_is_allowed_async (GUPnPAcl           *self,
+-                            GUPnPDevice        *device,
+-                            GUPnPService       *service,
++                            struct _GUPnPDevice        *device,
++                            struct _GUPnPService       *service,
+                             const char         *path,
+                             const char         *address,
+                             const char         *agent,
