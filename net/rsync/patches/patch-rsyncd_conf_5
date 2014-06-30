@@ -1,6 +1,6 @@
-$OpenBSD: patch-rsyncd_conf_5,v 1.4 2013/10/10 12:01:31 naddy Exp $
---- rsyncd.conf.5.orig	Sun Sep 29 04:57:23 2013
-+++ rsyncd.conf.5	Thu Oct  3 16:20:15 2013
+$OpenBSD: patch-rsyncd_conf_5,v 1.5 2014/06/30 19:34:36 naddy Exp $
+--- rsyncd.conf.5.orig	Sun Jun 22 19:07:36 2014
++++ rsyncd.conf.5	Fri Jun 27 18:59:01 2014
 @@ -68,12 +68,11 @@ When run via inetd you should add a line like this to 
  and a single line something like this to /etc/inetd.conf:
  .PP 
@@ -16,7 +16,7 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.4 2013/10/10 12:01:31 naddy Exp $
  reread its config file.
  .PP 
  Note that you should \fBnot\fP send the rsync daemon a HUP signal to force
-@@ -395,7 +394,7 @@ This parameter specifies the user name or user ID that
+@@ -402,7 +401,7 @@ This parameter specifies the user name or user ID that
  file transfers to and from that module should take place as when the daemon
  was run as root. In combination with the \(dq\&gid\(dq\& parameter this determines what
  file permissions are available. The default when run by a super\-user is to
@@ -25,7 +25,7 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.4 2013/10/10 12:01:31 naddy Exp $
  not try to change the user.  See also the \(dq\&gid\(dq\& parameter.
  .IP 
  The RSYNC_USER_NAME environment variable may be used to request that rsync run
-@@ -414,7 +413,7 @@ used when accessing the module.  The first one will be
+@@ -421,7 +420,7 @@ used when accessing the module.  The first one will be
  any extra ones be set as supplemental groups.  You may also specify a \(dq\&*\(dq\& as
  the first gid in the list, which will be replaced by all the normal groups for
  the transfer\(cq\&s user (see \(dq\&uid\(dq\&).  The default when run by a super\-user is to
@@ -34,7 +34,7 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.4 2013/10/10 12:01:31 naddy Exp $
  supplementary groups.  The default for a non\-super\-user is to not change any
  group attributes (and indeed, your OS may not allow a non\-super\-user to try to
  change their group settings).
-@@ -574,7 +573,7 @@ require that you specify a group password if you do no
+@@ -581,7 +580,7 @@ require that you specify a group password if you do no
  passwords.
  .IP 
  There is no default for the \(dq\&secrets file\(dq\& parameter, you must choose a name
@@ -43,7 +43,7 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.4 2013/10/10 12:01:31 naddy Exp $
  by \(dq\&other\(dq\&; see \(dq\&strict modes\(dq\&.  If the file is not found or is rejected, no
  logins for a \(dq\&user auth\(dq\& module will be possible.
  .IP 
-@@ -975,8 +974,8 @@ A more sophisticated example would be:
+@@ -982,8 +981,8 @@ A more sophisticated example would be:
  .PP 
  .nf 
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.4 2013/10/10 12:01:31 naddy Exp $
  use chroot = yes
  max connections = 4
  syslog facility = local5
-@@ -1002,12 +1001,12 @@ pid file = /var/run/rsyncd.pid
+@@ -1009,12 +1008,12 @@ pid file = /var/run/rsyncd.pid
          path = /data/cvs
          comment = CVS repository (requires authentication)
          auth users = tridge, susan
@@ -69,7 +69,7 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.4 2013/10/10 12:01:31 naddy Exp $
  .PP 
  .RS 
  \f(CWtridge:mypass\fP
-@@ -1020,7 +1019,7 @@ The /etc/rsyncd.secrets file would look something like
+@@ -1027,7 +1026,7 @@ The /etc/rsyncd.secrets file would look something like
  .SH "FILES"
  
  .PP 
