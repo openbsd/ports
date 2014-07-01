@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/13 20:24:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/01 18:55:11 bcallah Exp $
 
 COMMENT =		Python last.fm library
 
@@ -15,6 +15,9 @@ MAINTAINER = 		Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=p/pylast/}
+
+FLAVORS =	python3
+FLAVOR ?=
 
 MODULES =	lang/python
 
