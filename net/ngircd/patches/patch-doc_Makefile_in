@@ -1,22 +1,22 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2013/11/03 23:29:28 fgsch Exp $
---- doc/Makefile.in.orig	Wed Oct 30 21:21:47 2013
-+++ doc/Makefile.in	Wed Oct 30 22:14:16 2013
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2014/07/01 10:26:07 fgsch Exp $
+--- doc/Makefile.in.orig	Wed Mar 26 09:19:14 2014
++++ doc/Makefile.in	Wed Mar 26 09:20:50 2014
 @@ -586,16 +586,13 @@ maintainer-clean-local:
  all: $(generated_docs)
  
  install-data-hook: $(static_docs) $(toplevel_docs) $(generated_docs)
--	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	$(MKDIR_P) -m 755 $(DESTDIR)$(sysconfdir)
 -	@if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf ]; then \
 -	  make install-config; \
 -	 fi
- 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(docdir)
  	for f in $(static_docs) $(toplevel_docs); do \
  	  $(INSTALL) -m 644 -c $(srcdir)/$$f $(DESTDIR)$(docdir)/; \
  	 done
-+	$(mkinstalldirs) $(DESTDIR)${datarootdir}/examples/${PACKAGE_TARNAME}
++	$(MKDIR_P) -m 755 $(DESTDIR)$(datarootdir)/examples/${PACKAGE_TARNAME}
  	for f in $(generated_docs); do \
 -	  $(INSTALL) -m 644 -c $$f $(DESTDIR)$(docdir)/; \
-+	  $(INSTALL) -m 644 -c $$f $(DESTDIR)${datarootdir}/examples/${PACKAGE_TARNAME}; \
++	  $(INSTALL) -m 644 -c $$f $(DESTDIR)$(datarootdir)/examples/${PACKAGE_TARNAME}; \
  	 done
  
  install-config:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ngircd_conf_c,v 1.3 2013/11/03 23:29:28 fgsch Exp $
---- src/ngircd/conf.c.orig	Fri Oct 18 21:07:07 2013
-+++ src/ngircd/conf.c	Wed Oct 30 22:14:16 2013
-@@ -760,7 +760,7 @@ Set_Defaults(bool InitServers)
+$OpenBSD: patch-src_ngircd_conf_c,v 1.4 2014/07/01 10:26:07 fgsch Exp $
+--- src/ngircd/conf.c.orig	Sun Mar 23 13:07:42 2014
++++ src/ngircd/conf.c	Wed Mar 26 09:18:26 2014
+@@ -759,7 +759,7 @@ Set_Defaults(bool InitServers)
  	strlcat(Conf_HelpFile, HELP_FILE, sizeof(Conf_HelpFile));
  	strcpy(Conf_ServerPwd, "");
  	strlcpy(Conf_PidFile, PID_FILE, sizeof(Conf_PidFile));
