@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/06/27 00:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/01 22:55:27 sthen Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -22,6 +22,8 @@
 #
 # for OpenBSD hier it *ought* to use var/db/icinga2 rather than var/lib/icinga2
 # but this is rather an intrusive change in the code..
+
+# 3. intermittent segfaults at startup (~50% of the time or so?)
 
 SHARED_ONLY =	Yes
 
