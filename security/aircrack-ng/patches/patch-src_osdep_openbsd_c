@@ -1,6 +1,41 @@
-$OpenBSD: patch-src_osdep_openbsd_c,v 1.1 2011/05/21 11:19:24 fgsch Exp $
---- src/osdep/openbsd.c.orig	Mon Apr 25 09:26:31 2011
-+++ src/osdep/openbsd.c	Mon Apr 25 09:26:34 2011
+$OpenBSD: patch-src_osdep_openbsd_c,v 1.2 2014/07/01 12:15:10 sthen Exp $
+--- src/osdep/openbsd.c.orig	Tue Feb 26 11:12:19 2008
++++ src/osdep/openbsd.c	Tue Jul  1 05:37:42 2014
+@@ -19,26 +19,26 @@
+   */
+ #include <sys/types.h>
+ #include <sys/endian.h>
+-#include <errno.h>
+-#include <fcntl.h>
+-#include <sys/param.h>
+ #include <sys/sysctl.h>
+-#include <net/bpf.h>
+ #include <sys/socket.h>
++#include <sys/timeout.h>
++#include <sys/ioctl.h>
++#include <sys/uio.h>
++#include <net/bpf.h>
+ #include <net/if.h>
+ #include <net/if_media.h>
+-#include <sys/ioctl.h>
+ #include <net/if_dl.h>
++#include <net/if_var.h>
+ #include <net80211/ieee80211.h>
+-#include <net80211/ieee80211_crypto.h>
+ #include <net80211/ieee80211_ioctl.h>
+ #include <net80211/ieee80211_radiotap.h>
+-#include <net80211/ieee80211_proto.h>
++
++#include <errno.h>
++#include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+-#include <sys/uio.h>
+ #include <assert.h>
+ #include <ifaddrs.h>
+ 
 @@ -273,7 +273,7 @@ static int obsd_write(struct wif *wi, unsigned char *h
  	if (rc == -1)
  		return rc;
