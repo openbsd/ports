@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Mail_DMARC_Report_Receive_pm,v 1.1 2014/07/01 11:41:54 henning Exp $
+--- lib/Mail/DMARC/Report/Receive.pm.orig	Mon Jun 30 12:51:53 2014
++++ lib/Mail/DMARC/Report/Receive.pm	Mon Jun 30 12:52:26 2014
+@@ -229,7 +229,7 @@ sub handle_body {
+ 
+     print "handling decompressed body\n" if $self->{verbose};
+ 
+-    my $dom = XML::LibXML->load_xml( string => $body );
++    my $dom = XML::LibXML->new->parse_string($body);
+     $self->do_node_report_metadata( $dom->findnodes("/feedback/report_metadata") );
+     $self->do_node_policy_published( $dom->findnodes("/feedback/policy_published") );
+ 

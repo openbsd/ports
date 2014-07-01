@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/23 19:17:28 henning Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/01 11:41:54 henning Exp $
 
 COMMENT=	perl implementation of DMARC
 
 DISTNAME=	Mail-DMARC-1.20140622
 CATEGORIES=	mail
+REVISION=	0
 
 MAINTAINER=	
 
