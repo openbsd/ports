@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/30 11:48:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/02 19:10:04 landry Exp $
 bin/xfce4-popup-whiskermenu
 lib/xfce4/panel/plugins/libwhiskermenu.so
 @man man/man1/xfce4-popup-whiskermenu.1
@@ -32,6 +32,7 @@ share/locale/id/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/kk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ms/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/nb/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ne/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
@@ -42,6 +43,7 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ro/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/sl/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/sr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/sr@latin/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
@@ -49,6 +51,7 @@ share/locale/tr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/uz/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/xfce4/panel/plugins/whiskermenu.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
