@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/17 22:44:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/07/02 19:10:37 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -114,6 +114,19 @@ share/gnome/help/geary/es/search.page
 share/gnome/help/geary/es/shortcuts.page
 share/gnome/help/geary/es/star.page
 share/gnome/help/geary/es/write.page
+share/gnome/help/geary/it/
+share/gnome/help/geary/it/accounts.page
+share/gnome/help/geary/it/archive.page
+share/gnome/help/geary/it/bugs.page
+share/gnome/help/geary/it/index.page
+share/gnome/help/geary/it/label.page
+share/gnome/help/geary/it/limits.page
+share/gnome/help/geary/it/overview.page
+share/gnome/help/geary/it/preferences.page
+share/gnome/help/geary/it/search.page
+share/gnome/help/geary/it/shortcuts.page
+share/gnome/help/geary/it/star.page
+share/gnome/help/geary/it/write.page
 share/icons/hicolor/16x16/apps/geary.png
 share/icons/hicolor/24x24/apps/geary.png
 share/icons/hicolor/256x256/apps/geary.png
