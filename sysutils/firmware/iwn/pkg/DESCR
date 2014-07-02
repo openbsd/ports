@@ -1,10 +1,1 @@
 Firmware binary images for use with the iwn(4) driver.
-Obtained from:
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-4965-ucode-228.61.2.24.tgz
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-5000-ucode-8.24.2.12.tgz
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-5150-ucode-8.24.2.2.tgz
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-1000-ucode-128.50.3.1.tgz
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-6000-ucode-9.221.4.1.tgz
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-6050-ucode-41.28.5.1.tgz
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-6000g2a-ucode-17.168.5.1.tgz
-http://www.intellinuxwireless.org/iwlwifi/downloads/iwlwifi-6000g2b-ucode-17.168.5.1.tgz
