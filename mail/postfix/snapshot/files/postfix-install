@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: postfix-install,v 1.5 2011/04/28 00:22:23 sthen Exp $
+# $OpenBSD: postfix-install,v 1.6 2014/07/03 16:02:23 brad Exp $
 #
 # Post-installation setup of postfix
 
@@ -47,6 +47,15 @@ do_configs()
     POSTFIX="${PREFIX}/sbin/postfix"
 
     if [ -d $CONFIG_DIR ]; then
+	if [ ! -d $CONFIG_DIR/postfix-files.d ]; then
+	    install -d -o root -g wheel -m 755 $CONFIG_DIR/postfix-files.d
+	fi
+	for file in main.cf.proto master.cf.proto postfix-files ; do
+	    if [ ! -f $CONFIG_DIR/$file ]; then
+		install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/$file $CONFIG_DIR
+	    fi
+	done
+
 	echo ""
 	$POSTFIX upgrade-configuration
 	echo ""
@@ -55,10 +64,11 @@ do_configs()
 	echo "| The existing configuration files in $CONFIG_DIR have been preserved."
 	echo "| You may want to compare them to the current sample files,"
 	echo "| $SAMPLE_CONFIG_DIR, and update your configuration as needed."
-    	echo "+---------------"
+	echo "+---------------"
 	echo ""
     else
 	install -d -o root -g wheel -m 755 $CONFIG_DIR
+	install -d -o root -g wheel -m 755 $CONFIG_DIR/postfix-files.d
 	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
 
 	echo "+---------------"
