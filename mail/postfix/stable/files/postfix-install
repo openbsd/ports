@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: postfix-install,v 1.5 2011/04/28 00:22:23 sthen Exp $
+# $OpenBSD: postfix-install,v 1.6 2014/07/03 21:31:45 brad Exp $
 #
 # Post-installation setup of postfix
 
@@ -55,7 +55,7 @@ do_configs()
 	echo "| The existing configuration files in $CONFIG_DIR have been preserved."
 	echo "| You may want to compare them to the current sample files,"
 	echo "| $SAMPLE_CONFIG_DIR, and update your configuration as needed."
-    	echo "+---------------"
+	echo "+---------------"
 	echo ""
     else
 	install -d -o root -g wheel -m 755 $CONFIG_DIR
