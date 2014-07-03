@@ -1,12 +1,13 @@
-$OpenBSD: patch-intern_cycles_CMakeLists_txt,v 1.3 2014/03/24 21:16:15 pascal Exp $
---- intern/cycles/CMakeLists.txt.orig	Fri Mar 21 19:06:29 2014
-+++ intern/cycles/CMakeLists.txt	Fri Mar 21 19:06:46 2014
-@@ -53,7 +53,7 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
- 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ffast-math")
+$OpenBSD: patch-intern_cycles_CMakeLists_txt,v 1.4 2014/07/03 14:41:48 pascal Exp $
+--- intern/cycles/CMakeLists.txt.orig	Wed Jun 25 22:43:52 2014
++++ intern/cycles/CMakeLists.txt	Fri Jun 27 20:36:49 2014
+@@ -71,9 +71,6 @@ if(CXX_HAS_SSE)
+ 	add_definitions(
+ 		-DWITH_KERNEL_SSE2
+ 		-DWITH_KERNEL_SSE3
+-		-DWITH_KERNEL_SSE41
+-		-DWITH_KERNEL_AVX
+-		-DWITH_KERNEL_AVX2
+ 	)
  endif()
  
--add_definitions(-DWITH_KERNEL_SSE2 -DWITH_KERNEL_SSE3 -DWITH_KERNEL_SSE41 -DWITH_KERNEL_AVX)
-+add_definitions(-DWITH_KERNEL_SSE2 -DWITH_KERNEL_SSE3)
- 
- # for OSL
- if(WIN32 AND MSVC)

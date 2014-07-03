@@ -1,12 +1,12 @@
-$OpenBSD: patch-source_blender_blenloader_intern_writefile_c,v 1.10 2014/03/24 21:16:15 pascal Exp $
---- source/blender/blenloader/intern/writefile.c.orig	Wed Mar 19 23:05:25 2014
-+++ source/blender/blenloader/intern/writefile.c	Thu Mar 20 22:28:32 2014
-@@ -3464,7 +3464,7 @@ int BLO_write_file(Main *mainvar, const char *filepath
+$OpenBSD: patch-source_blender_blenloader_intern_writefile_c,v 1.11 2014/07/03 14:41:48 pascal Exp $
+--- source/blender/blenloader/intern/writefile.c.orig	Wed Jun 25 22:43:52 2014
++++ source/blender/blenloader/intern/writefile.c	Fri Jun 27 20:40:17 2014
+@@ -3474,7 +3474,7 @@ int BLO_write_file(Main *mainvar, const char *filepath
  	/* open temporary file, so we preserve the original in case we crash */
  	BLI_snprintf(tempname, sizeof(tempname), "%s@", filepath);
  
 -	file = BLI_open(tempname, O_BINARY+O_WRONLY+O_CREAT+O_TRUNC, 0666);
 +	file = BLI_open(tempname, O_BINARY|O_WRONLY|O_CREAT|O_TRUNC, 0666);
- 	if (file < 0) {
+ 	if (file == -1) {
  		BKE_reportf(reports, RPT_ERROR, "Cannot open file %s for writing: %s", tempname, strerror(errno));
  		return 0;

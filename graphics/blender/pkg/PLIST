@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/06/04 13:37:39 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/07/03 14:41:48 pascal Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -17,6 +17,7 @@ share/blender/datafiles/bfont.ttf
 share/blender/datafiles/blender_icons.svg
 share/blender/datafiles/blender_icons16/
 share/blender/datafiles/blender_icons16/icon16_action.dat
+share/blender/datafiles/blender_icons16/icon16_action_tweak.dat
 share/blender/datafiles/blender_icons16/icon16_aliased.dat
 share/blender/datafiles/blender_icons16/icon16_align.dat
 share/blender/datafiles/blender_icons16/icon16_anim.dat
@@ -157,6 +158,22 @@ share/blender/datafiles/blender_icons16/icon16_import.dat
 share/blender/datafiles/blender_icons16/icon16_info.dat
 share/blender/datafiles/blender_icons16/icon16_inlink.dat
 share/blender/datafiles/blender_icons16/icon16_ipo.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_back.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_bezier.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_bounce.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_circ.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_constant.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_cubic.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_ease_in.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_ease_in_out.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_ease_out.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_elastic.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_expo.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_linear.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_quad.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_quart.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_quint.dat
+share/blender/datafiles/blender_icons16/icon16_ipo_sine.dat
 share/blender/datafiles/blender_icons16/icon16_key_dehlt.dat
 share/blender/datafiles/blender_icons16/icon16_key_hlt.dat
 share/blender/datafiles/blender_icons16/icon16_keyingset.dat
@@ -270,6 +287,7 @@ share/blender/datafiles/blender_icons16/icon16_new.dat
 share/blender/datafiles/blender_icons16/icon16_newfolder.dat
 share/blender/datafiles/blender_icons16/icon16_next_keyframe.dat
 share/blender/datafiles/blender_icons16/icon16_nla.dat
+share/blender/datafiles/blender_icons16/icon16_nla_pushdown.dat
 share/blender/datafiles/blender_icons16/icon16_nocurve.dat
 share/blender/datafiles/blender_icons16/icon16_node.dat
 share/blender/datafiles/blender_icons16/icon16_node_sel.dat
@@ -468,6 +486,7 @@ share/blender/datafiles/blender_icons16/icon16_zoomin.dat
 share/blender/datafiles/blender_icons16/icon16_zoomout.dat
 share/blender/datafiles/blender_icons32/
 share/blender/datafiles/blender_icons32/icon32_action.dat
+share/blender/datafiles/blender_icons32/icon32_action_tweak.dat
 share/blender/datafiles/blender_icons32/icon32_aliased.dat
 share/blender/datafiles/blender_icons32/icon32_align.dat
 share/blender/datafiles/blender_icons32/icon32_anim.dat
@@ -608,6 +627,22 @@ share/blender/datafiles/blender_icons32/icon32_import.dat
 share/blender/datafiles/blender_icons32/icon32_info.dat
 share/blender/datafiles/blender_icons32/icon32_inlink.dat
 share/blender/datafiles/blender_icons32/icon32_ipo.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_back.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_bezier.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_bounce.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_circ.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_constant.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_cubic.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_ease_in.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_ease_in_out.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_ease_out.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_elastic.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_expo.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_linear.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_quad.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_quart.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_quint.dat
+share/blender/datafiles/blender_icons32/icon32_ipo_sine.dat
 share/blender/datafiles/blender_icons32/icon32_key_dehlt.dat
 share/blender/datafiles/blender_icons32/icon32_key_hlt.dat
 share/blender/datafiles/blender_icons32/icon32_keyingset.dat
@@ -721,6 +756,7 @@ share/blender/datafiles/blender_icons32/icon32_new.dat
 share/blender/datafiles/blender_icons32/icon32_newfolder.dat
 share/blender/datafiles/blender_icons32/icon32_next_keyframe.dat
 share/blender/datafiles/blender_icons32/icon32_nla.dat
+share/blender/datafiles/blender_icons32/icon32_nla_pushdown.dat
 share/blender/datafiles/blender_icons32/icon32_nocurve.dat
 share/blender/datafiles/blender_icons32/icon32_node.dat
 share/blender/datafiles/blender_icons32/icon32_node_sel.dat
@@ -947,6 +983,8 @@ share/blender/datafiles/brushicons/snake_hook.png
 share/blender/datafiles/brushicons/soften.png
 share/blender/datafiles/brushicons/subtract.png
 share/blender/datafiles/brushicons/texdraw.png
+share/blender/datafiles/brushicons/texfill.png
+share/blender/datafiles/brushicons/texmask.png
 share/blender/datafiles/brushicons/thumb.png
 share/blender/datafiles/brushicons/twist.png
 share/blender/datafiles/brushicons/vertexdraw.png
@@ -1045,6 +1083,7 @@ share/blender/datafiles/fonts/
 share/blender/datafiles/fonts/bmonofont-i18n.ttf.gz
 share/blender/datafiles/fonts/droidsans.ttf.gz
 share/blender/datafiles/locale/
+share/blender/datafiles/locale/.git
 share/blender/datafiles/locale/.gitignore
 share/blender/datafiles/locale/languages
 share/blender/datafiles/locale/po/
@@ -1120,6 +1159,7 @@ share/blender/datafiles/startup.blend
 share/blender/scripts/
 share/blender/scripts/addons/
 share/blender/scripts/addons/.arcconfig
+share/blender/scripts/addons/.git
 share/blender/scripts/addons/.gitignore
 share/blender/scripts/addons/add_curve_extra_objects/
 share/blender/scripts/addons/add_curve_extra_objects/__init__.py
@@ -1265,12 +1305,14 @@ share/blender/scripts/addons/io_scene_3ds/import_3ds.py
 share/blender/scripts/addons/io_scene_fbx/
 share/blender/scripts/addons/io_scene_fbx/__init__.py
 share/blender/scripts/addons/io_scene_fbx/cycles_shader_compat.py
+share/blender/scripts/addons/io_scene_fbx/data_types.py
+share/blender/scripts/addons/io_scene_fbx/encode_bin.py
 share/blender/scripts/addons/io_scene_fbx/export_fbx.py
+share/blender/scripts/addons/io_scene_fbx/export_fbx_bin.py
+share/blender/scripts/addons/io_scene_fbx/fbx_utils.py
 share/blender/scripts/addons/io_scene_fbx/import_fbx.py
+share/blender/scripts/addons/io_scene_fbx/json2fbx.py
 share/blender/scripts/addons/io_scene_fbx/parse_fbx.py
-share/blender/scripts/addons/io_scene_map/
-share/blender/scripts/addons/io_scene_map/__init__.py
-share/blender/scripts/addons/io_scene_map/export_map.py
 share/blender/scripts/addons/io_scene_ms3d/
 share/blender/scripts/addons/io_scene_ms3d/__init__.py
 share/blender/scripts/addons/io_scene_ms3d/ms3d_export.py
@@ -1493,6 +1535,7 @@ share/blender/scripts/addons/uv_bake_texture_to_vcols.py
 share/blender/scripts/addons/uv_texture_atlas.py
 share/blender/scripts/addons_contrib/
 share/blender/scripts/addons_contrib/.arcconfig
+share/blender/scripts/addons_contrib/.git
 share/blender/scripts/addons_contrib/.gitignore
 share/blender/scripts/addons_contrib/add_mesh_building_objects/
 share/blender/scripts/addons_contrib/add_mesh_building_objects/Blocks.py
@@ -1656,7 +1699,6 @@ share/blender/scripts/addons_contrib/mesh_border_deselect_outer.py
 share/blender/scripts/addons_contrib/mesh_copy_uvs_from_joined.py
 share/blender/scripts/addons_contrib/mesh_discombobulator.py
 share/blender/scripts/addons_contrib/mesh_easylattice.py
-share/blender/scripts/addons_contrib/mesh_edge_intersection_tools.py
 share/blender/scripts/addons_contrib/mesh_edgetools.py
 share/blender/scripts/addons_contrib/mesh_extra_tools/
 share/blender/scripts/addons_contrib/mesh_extra_tools/__init__.py
@@ -1687,6 +1729,14 @@ share/blender/scripts/addons_contrib/mesh_select_tools/mesh_select_innermost.py
 share/blender/scripts/addons_contrib/mesh_select_tools/mesh_selection_topokit.py
 share/blender/scripts/addons_contrib/mesh_select_vertex_groups.py
 share/blender/scripts/addons_contrib/mesh_show_vgroup_weights.py
+share/blender/scripts/addons_contrib/mesh_tinyCAD/
+share/blender/scripts/addons_contrib/mesh_tinyCAD/BIX.py
+share/blender/scripts/addons_contrib/mesh_tinyCAD/EXM.py
+share/blender/scripts/addons_contrib/mesh_tinyCAD/V2X.py
+share/blender/scripts/addons_contrib/mesh_tinyCAD/VTX.py
+share/blender/scripts/addons_contrib/mesh_tinyCAD/XALL.py
+share/blender/scripts/addons_contrib/mesh_tinyCAD/__init__.py
+share/blender/scripts/addons_contrib/mesh_tinyCAD/cad_module.py
 share/blender/scripts/addons_contrib/node_presets.py
 share/blender/scripts/addons_contrib/object_batch_rename_datablocks.py
 share/blender/scripts/addons_contrib/object_booleans.py

@@ -1,0 +1,12 @@
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_c,v 1.1 2014/07/03 14:41:48 pascal Exp $
+--- intern/guardedalloc/intern/mallocn.c.orig	Sun Jun 29 15:22:31 2014
++++ intern/guardedalloc/intern/mallocn.c	Sun Jun 29 15:22:56 2014
+@@ -73,7 +73,7 @@ void *aligned_malloc(size_t size, size_t alignment)
+ 	 */
+ 	assert(alignment == 16);
+ 	return malloc(size);
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ 	void *result;
+ 
+ 	if (posix_memalign(&result, alignment, size)) {

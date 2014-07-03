@@ -1,7 +1,7 @@
-$OpenBSD: patch-extern_libmv_third_party_glog_src_config_openbsd_h,v 1.1 2012/02/26 20:37:26 pascal Exp $
---- extern/libmv/third_party/glog/src/config_openbsd.h.orig	Thu Dec 15 12:33:26 2011
-+++ extern/libmv/third_party/glog/src/config_openbsd.h	Thu Dec 15 12:39:37 2011
-@@ -0,0 +1,161 @@
+$OpenBSD: patch-extern_libmv_third_party_glog_src_config_openbsd_h,v 1.2 2014/07/03 14:41:48 pascal Exp $
+--- extern/libmv/third_party/glog/src/config_openbsd.h.orig	Sun Jun 29 12:18:44 2014
++++ extern/libmv/third_party/glog/src/config_openbsd.h	Sun Jun 29 12:50:44 2014
+@@ -0,0 +1,164 @@
 +/* src/config.h.  Generated from config.h.in by configure.  */
 +/* src/config.h.in.  Generated from configure.ac by autoheader.  */
 +
@@ -28,6 +28,9 @@ $OpenBSD: patch-extern_libmv_third_party_glog_src_config_openbsd_h,v 1.1 2012/02
 +
 +/* Define to 1 if you have the `pthread' library (-lpthread). */
 +#define HAVE_LIBPTHREAD 1
++
++/* Define if you have the 'pread' function */
++#define HAVE_PREAD 1
 +
 +/* Define to 1 if you have the <libunwind.h> header file. */
 +/* #undef HAVE_LIBUNWIND_H */

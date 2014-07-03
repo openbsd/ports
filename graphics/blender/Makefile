@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2014/06/04 13:37:39 rpointel Exp $
+# $OpenBSD: Makefile,v 1.60 2014/07/03 14:41:48 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.70
-REVISION =	1
+DISTNAME =	blender-2.71
 
 CATEGORIES =	graphics
 
@@ -90,6 +89,7 @@ do-install:
 	${INSTALL_DATA} \
 		${WRKSRC}/release/freedesktop/icons/scalable/apps/blender.svg \
 		${PREFIX}/share/pixmaps
-	${INSTALL_MAN} ${WRKSRC}/doc/manpage/blender.1 ${PREFIX}/man/man1
+	${MODPY_BIN} ${WRKSRC}/doc/manpage/blender.1.py \
+		${WRKBUILD}/bin/blender ${PREFIX}/man/man1/blender.1
 
 .include <bsd.port.mk>

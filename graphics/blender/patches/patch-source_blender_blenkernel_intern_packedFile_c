@@ -1,12 +1,12 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.8 2014/03/24 21:16:15 pascal Exp $
---- source/blender/blenkernel/intern/packedFile.c.orig	Wed Sep 18 20:55:12 2013
-+++ source/blender/blenkernel/intern/packedFile.c	Fri Nov  1 01:20:09 2013
-@@ -329,7 +329,7 @@ int writePackedFile(ReportList *reports, const char *f
+$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.9 2014/07/03 14:41:48 pascal Exp $
+--- source/blender/blenkernel/intern/packedFile.c.orig	Wed Jun 25 22:43:52 2014
++++ source/blender/blenkernel/intern/packedFile.c	Fri Jun 27 20:37:52 2014
+@@ -322,7 +322,7 @@ int writePackedFile(ReportList *reports, const char *f
  	/* make sure the path to the file exists... */
  	BLI_make_existing_file(name);
  	
 -	file = BLI_open(name, O_BINARY + O_WRONLY + O_CREAT + O_TRUNC, 0666);
 +	file = BLI_open(name, O_BINARY | O_WRONLY | O_CREAT | O_TRUNC, 0666);
- 	if (file < 0) {
+ 	if (file == -1) {
  		BKE_reportf(reports, RPT_ERROR, "Error creating file '%s'", name);
  		ret_value = RET_ERROR;
