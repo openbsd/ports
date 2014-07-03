@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/07/03 07:44:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/07/03 07:54:53 ajacoutot Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -25,6 +25,8 @@ WANTLIB += soup-2.4 sqlite3 xcb xcb-render xcb-shm xml2 z
 MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES=		devel/gettext
+
+BUILD_DEPENDS=		devel/gobject-introspection
 
 LIB_DEPENDS=		devel/libsoup \
 			x11/gtk+3
