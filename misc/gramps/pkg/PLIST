@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/03/09 22:06:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/07/03 11:20:06 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -86,6 +86,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_datehandler.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_datehandler.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_dateparser.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_dateparser.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_datestrings.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_datestrings.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_dateutils.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_dateutils.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_grampslocale.py
@@ -223,6 +225,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hass
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hassourceidof.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hassourcenoteregexp.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hassourcenoteregexp.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hastag.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hastag.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_matchesfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_matchesfilter.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_matchespagesubstringof.py
@@ -250,6 +254,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hascita
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hascitation.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasdata.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasdata.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasdayofweek.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasdayofweek.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasgallery.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasgallery.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasidof.py
@@ -264,6 +270,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasrefe
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasreferencecountof.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hassourcecount.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hassourcecount.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hastag.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hastag.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hastype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hastype.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_matchesfilter.py
@@ -601,6 +609,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hassour
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hassourcecount.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hassourceof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hassourceof.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hastag.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hastag.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_inlatlonneighborhood.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_inlatlonneighborhood.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_matcheseventfilter.py
@@ -630,6 +640,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_ha
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_hasreferencecountof.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_hasrepo.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_hasrepo.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_hastag.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_hastag.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_matchesfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_matchesfilter.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_matchesnamesubstringof.py
@@ -661,6 +673,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasrep
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasrepository.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasrepositorycallnumberref.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasrepositorycallnumberref.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hastag.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hastag.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_matchesfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_matchesfilter.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_matchesrepositoryfilter.py
@@ -720,6 +734,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/genderstats.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/genderstats.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/grampstype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/grampstype.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/handle.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/handle.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/ldsord.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/ldsord.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/ldsordbase.py
@@ -756,6 +772,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/place.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/place.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/placebase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/placebase.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/placeref.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/placeref.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/placetype.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/placetype.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/primaryobj.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/primaryobj.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/privacybase.py
@@ -776,6 +796,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/secondaryobj.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/secondaryobj.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/src.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/src.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/srcattribute.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/srcattribute.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/srcattrtype.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/srcattrtype.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/srcmediatype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/srcmediatype.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/srcnote.py
@@ -1025,6 +1049,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/lds.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/lds.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/libformatting.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/libformatting.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/location.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/location.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/maclocale.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/maclocale.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/place.py
@@ -1079,6 +1105,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/addrembe
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/addrembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/addressmodel.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/addressmodel.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/altnameembedlist.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/altnameembedlist.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/altnamemodel.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/altnamemodel.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/attrembedlist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/attrembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/attrmodel.py
@@ -1097,12 +1127,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/citation
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/citationembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/citationrefmodel.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/citationrefmodel.pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/dataembedlist.py
-lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/dataembedlist.pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/datamodel.py
-lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/datamodel.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/embeddedlist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/embeddedlist.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/eventattrembedlist.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/eventattrembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/eventbackreflist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/eventbackreflist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/eventembedlist.py
@@ -1149,12 +1177,18 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/personre
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/personrefmodel.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/placebackreflist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/placebackreflist.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/placerefembedlist.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/placerefembedlist.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/placerefmodel.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/placerefmodel.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/repoembedlist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/repoembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/reporefmodel.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/reporefmodel.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/sourcebackreflist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/sourcebackreflist.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/srcattrembedlist.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/srcattrembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/surnamemodel.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/surnamemodel.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/surnametab.py
@@ -1199,6 +1233,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editpersonref.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editpersonref.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editplace.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editplace.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editplacename.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editplacename.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editplaceref.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editplaceref.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editprimary.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editprimary.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/editreference.py
@@ -1282,10 +1320,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editnote.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editperson.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editpersonref.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editplace.glade
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editplaceref.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editreporef.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editrepository.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editsource.glade
-lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editsourceref.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/editurl.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/grampletpane.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/glade/gramps.glade
@@ -1504,6 +1542,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/fanchart.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/fanchart.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/fanchartdesc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/fanchartdesc.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/grabbers.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/grabbers.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/grampletbar.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/grampletbar.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/grampletpane.py
@@ -1524,6 +1564,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/progressdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/progressdialog.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/reorderfam.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/reorderfam.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/selectionwidget.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/selectionwidget.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/shortlistcomboentry.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/shortlistcomboentry.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/springseparator.py
@@ -1625,6 +1667,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/ageondategrampl
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/ageondategramplet.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/agestats.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/agestats.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/ancestor.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/ancestor.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/attributes.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/attributes.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/backlinks.py
@@ -1635,8 +1679,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/children.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/children.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/citations.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/citations.pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/descendgramplet.py
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/descendgramplet.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/descendant.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/descendant.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/eval.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/eval.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/events.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/events.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/fanchartdescgramplet.py
@@ -1653,6 +1699,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/givennamegrampl
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/givennamegramplet.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/gramplet.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/gramplet.gpr.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/leak.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/leak.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/mediapreview.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/mediapreview.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/metadataviewer.py
@@ -1677,6 +1725,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/repositorydetai
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/repositorydetails.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/sessionloggramplet.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/sessionloggramplet.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/soundgen.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/soundgen.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/statsgramplet.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/statsgramplet.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/surnamecloudgramplet.py
@@ -1754,12 +1804,16 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libodfbackend.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libodfbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libpersonview.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libpersonview.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libplaceimport.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libplaceimport.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libplaceview.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libplaceview.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libplugins.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libplugins.gpr.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/librecords.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/librecords.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/librecurse.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/librecurse.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libsubstkeyword.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libsubstkeyword.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libtreebase.py
@@ -1879,6 +1933,10 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/categorysidebar.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/categorysidebar.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/dropdownsidebar.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/dropdownsidebar.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/expandersidebar.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/expandersidebar.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/sidebar.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/sidebar.gpr.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/
@@ -1936,14 +1994,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/check.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/check.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/dateparserdisplaytest.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/dateparserdisplaytest.pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/desbrowser.glade
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/desbrowser.py
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/desbrowser.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/dumpgenderstats.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/dumpgenderstats.pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/eval.glade
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/eval.py
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/eval.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/eventcmp.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/eventcmp.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/eventcmp.pyc
@@ -1954,9 +2006,6 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/extractcity.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/finddupes.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/finddupes.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/finddupes.pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/leak.glade
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/leak.py
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/leak.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/mediamanager.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/mediamanager.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/mergecitations.glade
@@ -1992,9 +2041,6 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/reorderids.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/reorderids.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/sortevents.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/sortevents.pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/soundgen.glade
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/soundgen.py
-lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/soundgen.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/testcasegenerator.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/testcasegenerator.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/tools.gpr.py
@@ -2363,6 +2409,7 @@ share/gramps/images/48x48/gramps-zoom-fit-width.png
 share/gramps/images/48x48/gramps-zoom-in.png
 share/gramps/images/48x48/gramps-zoom-out.png
 share/gramps/images/48x48/gramps.png
+share/gramps/images/add-parent-existing-family.png
 share/gramps/images/add.png
 share/gramps/images/bad.png
 share/gramps/images/caution.png
@@ -2371,6 +2418,9 @@ share/gramps/images/down.png
 share/gramps/images/good.png
 share/gramps/images/gramps-export.png
 share/gramps/images/gramps-import.png
+share/gramps/images/gramps-parents-add.png
+share/gramps/images/gramps-parents-open.png
+share/gramps/images/gramps-parents.png
 share/gramps/images/gramps-undo-history.png
 share/gramps/images/gramps-url.png
 share/gramps/images/gramps.png
@@ -2460,7 +2510,6 @@ share/gramps/images/webstuff/Web_Mainz_Mid.png
 share/gramps/images/webstuff/Web_Mainz_MidLight.png
 share/gramps/images/webstuff/blank.gif
 share/gramps/images/webstuff/crosshairs.png
-share/gramps/images/webstuff/document.png
 share/gramps/images/webstuff/favicon.ico
 share/gramps/images/webstuff/favicon2.ico
 share/gramps/images/webstuff/gramps-geo-altmap.png

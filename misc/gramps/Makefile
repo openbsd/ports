@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2014/07/03 07:51:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2014/07/03 11:20:06 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_EGG_VERSION=	4.0.3
+MODPY_EGG_VERSION=	4.1.0
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		3
 
 CATEGORIES=		misc x11
 
@@ -21,7 +20,7 @@ MODULES=		lang/python \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3 \
 			devel/xdg-utils \
-			geo/osm-gps-map>=1.0.1 \
+			geo/osm-gps-map \
 			graphics/goocanvas \
 			graphics/libgexiv2 \
 			graphics/py-Pillow \
@@ -29,16 +28,12 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			math/graphviz \
 			misc/shared-mime-info \
 			textproc/gtkspell3 \
-			www/webkit \
+			textproc/py-ICU \
+			www/webkit,gtk3 \
 			x11/gtk+2,-guic
 
-# pygobject GTK3 introspection (not provided by indirect dependencies)
-RUN_DEPENDS +=		x11/gtk+3
-
-# XXX missing: py-osmgpsmap
-# XXX missing: PyICU
-
 MODPY_DISTUTILS_BUILD=	build
+NO_TEST=		Yes
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${PREFIX}/share,g' ${WRKSRC}/data/gramps.keys.in
