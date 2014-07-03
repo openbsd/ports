@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.414 2014/06/23 13:35:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.415 2014/07/03 11:17:47 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -297,6 +297,7 @@
      SUBDIR += pod2mdoc
      SUBDIR += py-Chart
      SUBDIR += py-HappyDoc
+     SUBDIR += py-ICU
      SUBDIR += py-MarkupSafe
      SUBDIR += py-MarkupSafe,python3
      SUBDIR += py-chardet
