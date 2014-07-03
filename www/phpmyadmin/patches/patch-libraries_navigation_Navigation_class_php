@@ -1,0 +1,17 @@
+$OpenBSD: patch-libraries_navigation_Navigation_class_php,v 1.1 2014/07/03 13:13:59 giovanni Exp $
+Fix for CVE-2014-4349
+--- libraries/navigation/Navigation.class.php.orig	Wed Jul  2 12:52:09 2014
++++ libraries/navigation/Navigation.class.php	Wed Jul  2 12:52:50 2014
+@@ -189,9 +189,9 @@ class PMA_Navigation
+                         $html .= '<td style="width:80px"><a href="navigation.php?'
+                             . PMA_URL_getCommon()
+                             . '&unhideNavItem=true'
+-                            . '&itemType=' . $t
+-                            . '&itemName=' . urldecode($hiddenItem)
+-                            . '&dbName=' . urldecode($dbName) . '"'
++                            . '&itemType=' . urlencode($t)
++                            . '&itemName=' . urlencode($hiddenItem)
++                            . '&dbName=' . urlencode($dbName) . '"'
+                             . ' class="unhideNavItem ajax">'
+                             . PMA_Util::getIcon('lightbulb.png', __('Show'))
+                             .  '</a></td>';

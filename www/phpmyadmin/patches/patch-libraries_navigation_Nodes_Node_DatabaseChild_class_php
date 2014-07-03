@@ -1,0 +1,17 @@
+$OpenBSD: patch-libraries_navigation_Nodes_Node_DatabaseChild_class_php,v 1.1 2014/07/03 13:13:59 giovanni Exp $
+Fix for CVE-2014-4349
+--- libraries/navigation/Nodes/Node_DatabaseChild.class.php.orig	Wed Jul  2 12:53:08 2014
++++ libraries/navigation/Nodes/Node_DatabaseChild.class.php	Wed Jul  2 12:53:31 2014
+@@ -32,9 +32,9 @@ abstract class Node_DatabaseChild extends Node
+                 . '<a href="navigation.php?'
+                 . PMA_URL_getCommon()
+                 . '&hideNavItem=true'
+-                . '&itemType=' . urldecode($this->getItemType())
+-                . '&itemName=' . urldecode($item)
+-                . '&dbName=' . urldecode($db) . '"'
++                . '&itemType=' . urlencode($this->getItemType())
++                . '&itemName=' . urlencode($item)
++                . '&dbName=' . urlencode($db) . '"'
+                 . ' class="hideNavItem ajax">'
+                 . PMA_Util::getImage('lightbulb_off.png', __('Hide'))
+                 . '</a></span>';
