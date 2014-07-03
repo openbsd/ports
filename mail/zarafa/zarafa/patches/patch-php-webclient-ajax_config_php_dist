@@ -1,6 +1,6 @@
-$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.8 2013/01/27 13:06:20 robert Exp $
---- php-webclient-ajax/config.php.dist.orig	Wed Dec  5 15:22:58 2012
-+++ php-webclient-ajax/config.php.dist	Sun Jan 20 17:18:38 2013
+$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.9 2014/07/03 06:14:40 robert Exp $
+--- php-webclient-ajax/config.php.dist.orig	Fri May 23 15:00:09 2014
++++ php-webclient-ajax/config.php.dist	Wed Jul  2 17:28:25 2014
 @@ -17,9 +17,9 @@
  	define("CONFIG_CHECK_COOKIES_SSL", FALSE);
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.8 2013/01/27 13:06:20 rob
  
  	// Define the relative URL for dialogs, this string is appended with HTTP GET arguments
  	define("DIALOG_URL", "index.php?load=dialog&");
-@@ -158,7 +159,7 @@
+@@ -163,7 +164,7 @@
  
  	// Spellchecker, change here to enable
  	define('FCKEDITOR_SPELLCHECKER_ENABLED', false);

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.45 2014/04/07 13:46:06 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.46 2014/07/03 06:14:41 robert Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
@@ -310,7 +310,6 @@ lib/zarafa/ldapplugin.so
 @man man/man1/zarafa-set-oof.1
 @man man/man1/zarafa-spooler.1
 @man man/man1/zarafa-stats.1
-@man man/man1/zarafa-ws.1
 @man man/man1/zarafa.1
 @man man/man5/zarafa-archiver.cfg.5
 @man man/man5/zarafa-dagent.cfg.5
@@ -322,7 +321,6 @@ lib/zarafa/ldapplugin.so
 @man man/man5/zarafa-server.cfg.5
 @man man/man5/zarafa-spooler.cfg.5
 @man man/man5/zarafa-unix.cfg.5
-@man man/man5/zarafa-ws.cfg.5
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/zarafa/
 share/doc/zarafa/AGPL-3

@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.5 2011/06/03 15:52:12 ajacoutot Exp $
---- provider/soap/stdsoap2.h.orig	Wed Apr 20 19:51:43 2011
-+++ provider/soap/stdsoap2.h	Fri Jun  3 16:02:03 2011
-@@ -426,6 +426,27 @@ A commercial use license is available from Genivia, In
+$OpenBSD: patch-external_gsoap_stdsoap2_h,v 1.1 2014/07/03 06:14:40 robert Exp $
+--- external/gsoap/stdsoap2.h.orig	Fri May 23 15:56:35 2014
++++ external/gsoap/stdsoap2.h	Wed Jul  2 17:32:23 2014
+@@ -475,6 +475,27 @@ A commercial use license is available from Genivia, In
  #  define ULONG64 unsigned LONG64
  #  define SOAP_LONG_FORMAT "%ld"
  #  define SOAP_ULONG_FORMAT "%lu"
@@ -29,7 +29,7 @@ $OpenBSD: patch-provider_soap_stdsoap2_h,v 1.5 2011/06/03 15:52:12 ajacoutot Exp
  # else
  /* Default asumptions on supported functions */
  #  define HAVE_STRRCHR
-@@ -628,7 +649,7 @@ extern "C" {
+@@ -677,7 +698,7 @@ extern "C" {
  # endif
  #elif defined(SOCKLEN_T)
  # define SOAP_SOCKLEN_T SOCKLEN_T

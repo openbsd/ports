@@ -1,0 +1,12 @@
+$OpenBSD: patch-provider_soap_Makefile_in,v 1.1 2014/07/03 06:14:40 robert Exp $
+--- provider/soap/Makefile.in.orig	Wed Jul  2 17:46:19 2014
++++ provider/soap/Makefile.in	Wed Jul  2 17:46:24 2014
+@@ -648,7 +648,7 @@ uninstall-am:
+ 
+ $(SOAP_CPP_SRC) : ns.xsd
+ ns.xsd: $(SOAPHEADER)
+-	$(GSOAP_SOAPCPP2) -x -I$(SOAP_INC) $< >& /dev/null
++	$(GSOAP_SOAPCPP2) -x -I$(SOAP_INC) $< > /dev/null
+ 
+ check-syntax:
+ 	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) \
