@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2014/03/14 17:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2014/07/03 07:20:55 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION=	4.0.3
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		misc x11
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			graphics/goocanvas \
 			graphics/libgexiv2 \
 			graphics/py-Pillow \
+			${MODPY_RUN_DEPENDS},-bsddb \
 			math/graphviz \
 			misc/shared-mime-info \
 			textproc/gtkspell3 \
