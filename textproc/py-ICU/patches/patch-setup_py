@@ -1,0 +1,52 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2014/07/03 11:17:06 ajacoutot Exp $
+--- setup.py.orig	Thu Jul  3 10:09:32 2014
++++ setup.py	Thu Jul  3 10:11:14 2014
+@@ -13,6 +13,7 @@ INCLUDES = {
+     'darwin': ['/usr/local/include'],
+     'linux': [],
+     'freebsd': ['/usr/local/include'],
++    'openbsd': ['${LOCALBASE}/include'],
+     'win32': ['c:/icu/include'],
+     'sunos5': [],
+ }
+@@ -21,6 +22,7 @@ CFLAGS = {
+     'darwin': ['-Wno-write-strings', '-DPYICU_VER="%s"' %(VERSION)],
+     'linux': ['-DPYICU_VER="%s"' %(VERSION)],
+     'freebsd': ['-DPYICU_VER="%s"' %(VERSION)],
++    'openbsd': ['-DPYICU_VER="%s"' %(VERSION)],
+     'win32': ['/Zc:wchar_t', '/EHsc', '/DPYICU_VER=\\"%s\\"' %(VERSION)],
+     'sunos5': ['-DPYICU_VER="%s"' %(VERSION)],
+ }
+@@ -30,6 +32,7 @@ DEBUG_CFLAGS = {
+     'darwin': ['-O0', '-g', '-DDEBUG'],
+     'linux': ['-O0', '-g', '-DDEBUG'],
+     'freebsd': ['-O0', '-g', '-DDEBUG'],
++    'openbsd': ['-O0', '-g', '-DDEBUG'],
+     'win32': ['/Od', '/DDEBUG'],
+     'sunos5': ['-DDEBUG'],
+ }
+@@ -38,6 +41,7 @@ LFLAGS = {
+     'darwin': ['-L/usr/local/lib'],
+     'linux': [],
+     'freebsd': ['-L/usr/local/lib'],
++    'openbsd': ['-L${LOCALBASE}/lib'],
+     'win32': ['/LIBPATH:c:/icu/lib'],
+     'sunos5': [],
+ }
+@@ -46,6 +50,7 @@ LIBRARIES = {
+     'darwin': ['icui18n', 'icuuc', 'icudata', 'icule'],
+     'linux': ['icui18n', 'icuuc', 'icudata', 'icule'],
+     'freebsd': ['icui18n', 'icuuc', 'icudata', 'icule'],
++    'openbsd': ['icui18n', 'icuuc', 'icudata', 'icule'],
+     'win32': ['icuin', 'icuuc', 'icudt', 'icule'],
+     'sunos5': ['icui18n', 'icuuc', 'icudata', 'icule'],
+ }
+@@ -55,6 +60,8 @@ if platform.startswith('linux'):
+     platform = 'linux'
+ elif platform.startswith('freebsd'):
+     platform = 'freebsd'
++elif platform.startswith('openbsd'):
++    platform = 'openbsd'
+ 
+ if 'PYICU_INCLUDES' in os.environ:
+     _includes = os.environ['PYICU_INCLUDES'].split(os.pathsep)
