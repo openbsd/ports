@@ -1,39 +1,56 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/03 07:44:28 ajacoutot Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
-DISTNAME=		osm-gps-map-0.5.0
-REVISION=		5
-SHARED_LIBS +=  osmgpsmap 0.0 # .0.0
+DISTNAME=		osm-gps-map-1.0.1
 CATEGORIES=		geo x11
+
+SHARED_LIBS +=  osmgpsmap-1.0             0.0 # 0.0
 
 HOMEPAGE=		http://nzjrs.github.com/osm-gps-map/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.johnstowers.co.nz/files/osm-gps-map/
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += soup-2.4 sqlite3 xcb xcb-render xcb-shm xml2 z
+
+# 1.0.1.tar.gz
+#MASTER_SITES=		https://github.com/nzjrs/osm-gps-map/archive/
+MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES=		devel/gettext
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 stdc++
-WANTLIB += xcb xcb-render xcb-shm xml2 z
-
-
 LIB_DEPENDS=		devel/libsoup \
-			x11/gtk+2
+			x11/gtk+3
+
+USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-AUTOMAKE_VERSION=	1.8
-AUTOCONF_VERSION=	2.64
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=		osm_gps_mapdocdir=${PREFIX}/share/doc/osm-gps-map/
+
+### autohell
+AUTOMAKE_VERSION=	1.14
+AUTOCONF_VERSION=	2.69
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
+			textproc/gtk-doc \
+			x11/gnome/common
+
+post-patch:
+	cd ${WRKSRC} && \
+		env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		NOCONFIGURE=yes ./autogen.sh
+###
 
 .include <bsd.port.mk>

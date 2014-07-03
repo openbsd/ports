@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/03/04 20:51:23 jasper Exp $
-@lib lib/libosmgpsmap.so.${LIBosmgpsmap_VERSION}

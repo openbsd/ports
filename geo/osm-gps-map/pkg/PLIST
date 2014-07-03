@@ -1,11 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/15 11:48:14 jasper Exp $
-%%SHARED%%
-@bin bin/mapviewer
-include/osmgpsmap/
-include/osmgpsmap/osm-gps-map.h
-lib/libosmgpsmap.a
-lib/libosmgpsmap.la
+@comment $OpenBSD: PLIST,v 1.4 2014/07/03 07:44:28 ajacoutot Exp $
+include/osmgpsmap-1.0/
+include/osmgpsmap-1.0/osm-gps-map-compat.h
+include/osmgpsmap-1.0/osm-gps-map-image.h
+include/osmgpsmap-1.0/osm-gps-map-layer.h
+include/osmgpsmap-1.0/osm-gps-map-osd.h
+include/osmgpsmap-1.0/osm-gps-map-point.h
+include/osmgpsmap-1.0/osm-gps-map-source.h
+include/osmgpsmap-1.0/osm-gps-map-track.h
+include/osmgpsmap-1.0/osm-gps-map-widget.h
+include/osmgpsmap-1.0/osm-gps-map.h
+lib/girepository-1.0/
+lib/girepository-1.0/OsmGpsMap-1.0.typelib
+lib/libosmgpsmap-1.0.a
+lib/libosmgpsmap-1.0.la
+@lib lib/libosmgpsmap-1.0.so.${LIBosmgpsmap-1.0_VERSION}
 lib/pkgconfig/
-lib/pkgconfig/osmgpsmap.pc
+lib/pkgconfig/osmgpsmap-1.0.pc
 share/doc/osm-gps-map/
+share/doc/osm-gps-map/AUTHORS
+share/doc/osm-gps-map/COPYING
+share/doc/osm-gps-map/ChangeLog
+share/doc/osm-gps-map/INSTALL
+share/doc/osm-gps-map/NEWS
 share/doc/osm-gps-map/README
+share/gir-1.0/
+share/gir-1.0/OsmGpsMap-1.0.gir
