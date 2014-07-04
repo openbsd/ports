@@ -1,0 +1,12 @@
+$OpenBSD: patch-platform_OpenBSD_sm_mbuf_c,v 1.5 2014/07/04 22:23:01 sthen Exp $
+--- platform/OpenBSD/sm_mbuf.c.orig	Fri Jul  4 22:35:02 2014
++++ platform/OpenBSD/sm_mbuf.c	Fri Jul  4 22:40:21 2014
+@@ -64,7 +64,7 @@ get_mbuf(char *symon_buf, int maxlen, struct stream *s
+ {
+     struct mbstat mbstat;
+     int npools;
+-    struct pool pool, mbpool, mclpool;
++    struct kinfo_pool pool, mbpool, mclpool;
+     int mib[4];
+     size_t size;
+     int i;
