@@ -1,13 +1,14 @@
-$OpenBSD: patch-csc_scm,v 1.1 2014/03/09 20:17:01 jasper Exp $
---- csc.scm.orig	Fri Oct  4 03:44:52 2013
-+++ csc.scm	Tue Feb 25 11:32:56 2014
-@@ -969,8 +969,7 @@ EOF
+$OpenBSD: patch-csc_scm,v 1.2 2014/07/04 18:26:49 juanfra Exp $
+--- csc.scm.orig	Wed Jun 18 16:54:05 2014
++++ csc.scm	Wed Jun 18 16:55:06 2014
+@@ -980,9 +980,7 @@ EOF
+ 	      libchicken
  	      (cond (osx "dylib")
- 		    ((or win cygwin) "dll")
- 		    (else (string-append
+ 		    ((or mingw cygwin) "dll")
+-		    (else (string-append
 -                           "so."
 -                           (number->string BINARY_VERSION)))))))
-+                           "so.${LIBchicken_VERSION}"))))))
++		    (else "so.${LIBchicken_VERSION}")))))
      (copy-files lib targetdir)))
  
  (define (copy-files from to)

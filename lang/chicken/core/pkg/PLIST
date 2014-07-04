@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2014/03/09 20:17:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/04 18:26:49 juanfra Exp $
 @bin bin/chicken
 @bin bin/chicken-bug
 @bin bin/chicken-install
@@ -11,30 +11,30 @@ include/chicken/
 include/chicken/chicken-config.h
 include/chicken/chicken.h
 lib/chicken/
-lib/chicken/6/
-lib/chicken/6/chicken.import.so
-lib/chicken/6/csi.import.so
-lib/chicken/6/data-structures.import.so
-lib/chicken/6/extras.import.so
-lib/chicken/6/files.import.so
-lib/chicken/6/foreign.import.so
-lib/chicken/6/irregex.import.so
-lib/chicken/6/lolevel.import.so
-lib/chicken/6/ports.import.so
-lib/chicken/6/posix.import.so
-lib/chicken/6/setup-api.import.so
-lib/chicken/6/setup-api.so
-lib/chicken/6/setup-download.import.so
-lib/chicken/6/setup-download.so
-lib/chicken/6/srfi-1.import.so
-lib/chicken/6/srfi-13.import.so
-lib/chicken/6/srfi-14.import.so
-lib/chicken/6/srfi-18.import.so
-lib/chicken/6/srfi-4.import.so
-lib/chicken/6/srfi-69.import.so
-lib/chicken/6/tcp.import.so
-lib/chicken/6/types.db
-lib/chicken/6/utils.import.so
+lib/chicken/7/
+lib/chicken/7/chicken.import.so
+lib/chicken/7/csi.import.so
+lib/chicken/7/data-structures.import.so
+lib/chicken/7/extras.import.so
+lib/chicken/7/files.import.so
+lib/chicken/7/foreign.import.so
+lib/chicken/7/irregex.import.so
+lib/chicken/7/lolevel.import.so
+lib/chicken/7/ports.import.so
+lib/chicken/7/posix.import.so
+lib/chicken/7/setup-api.import.so
+lib/chicken/7/setup-api.so
+lib/chicken/7/setup-download.import.so
+lib/chicken/7/setup-download.so
+lib/chicken/7/srfi-1.import.so
+lib/chicken/7/srfi-13.import.so
+lib/chicken/7/srfi-14.import.so
+lib/chicken/7/srfi-18.import.so
+lib/chicken/7/srfi-4.import.so
+lib/chicken/7/srfi-69.import.so
+lib/chicken/7/tcp.import.so
+lib/chicken/7/types.db
+lib/chicken/7/utils.import.so
 lib/libchicken.a
 @lib lib/libchicken.so.${LIBchicken_VERSION}
 @man man/man1/chicken-bug.1
@@ -105,3 +105,4 @@ share/doc/chicken/manual/chicken.png
 share/doc/chicken/manual/faq.html
 share/doc/chicken/manual/index.html
 share/doc/chicken/manual/manual.css
+share/doc/pkg-readmes/${FULLPKGNAME}
