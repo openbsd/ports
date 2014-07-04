@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2014/02/02 19:16:18 zhuk Exp $
+$OpenBSD: README,v 1.2 2014/07/04 13:00:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
-| OpenBSD specifics for KDE PIM applications
+| Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 1) We use the SQLite driver provided by Qt, named QSQLITE. Akonadi
