@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.135 2014/07/04 13:47:44 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		image processing tools
 
 VER=			6.7.7
 DASHVER=		7
-REVISION=		7
+REVISION=		8
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 
@@ -28,10 +28,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=imagemagick/} \
 # http://www.imagemagick.org/script/license.php
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =		ICE SM X11 Xext Xt c bz2 djvulibre expat fftw3 \
-			fontconfig freetype jasper jbig jpeg lcms2 lzma \
-			ltdl m perl png pthread pthread-stubs stdc++ \
-			tiff wmflite-0.2 wmf-0.2 xcb xml2 z
+WANTLIB =		ICE SM X11 Xau Xdmcp Xext Xt c bz2 djvulibre expat \
+			fftw3 fontconfig freetype jasper jbig jpeg lcms2 \
+			lzma ltdl m perl png pthread pthread-stubs stdc++ \
+			tiff webp wmflite-0.2 wmf-0.2 xcb xml2 z
 
 MODULES =		converters/libiconv
 
@@ -43,6 +43,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/png \
 			graphics/tiff \
 			graphics/lcms2 \
+			graphics/libwebp \
 			graphics/libwmf \
 			graphics/jasper \
 			math/fftw3 \
@@ -68,7 +69,6 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-pango \
 			--with-perl \
 			--without-rsvg \
-			--without-webp \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib \
 			--disable-ltdl-install
