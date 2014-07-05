@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/21 20:45:43 miod Exp $
+# $OpenBSD: Makefile,v 1.22 2014/07/05 14:08:04 naddy Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
@@ -23,7 +23,6 @@ WANTLIB=	c m ncurses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man
-USE_GROFF =	Yes
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--with-regs

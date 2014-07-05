@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/06/24 15:05:46 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2014/07/05 14:08:04 naddy Exp $
 
 COMMENT=	Google WebP image format conversion tool
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	graphics/giflib \
 		graphics/png \
 		graphics/tiff
 
-USE_GROFF=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-everything
