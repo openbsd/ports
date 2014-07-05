@@ -1,6 +1,15 @@
-$OpenBSD: patch-stats_c,v 1.1 2014/01/29 16:26:17 naddy Exp $
---- stats.c.orig	Sun Feb 10 19:36:49 2013
-+++ stats.c	Tue Jan 28 20:07:06 2014
+$OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
+--- stats.c.orig	Sun Feb 10 18:36:49 2013
++++ stats.c	Sat Jul  5 11:01:08 2014
+@@ -83,7 +83,7 @@ static int sflag = 1;
+ typedef int bool;
+ 
+ struct  mbstat mbstat;
+-struct pool mbpool, mclpool;
++struct kinfo_pool mbpool, mclpool;
+ 
+ #ifdef INET6
+ char	*inet6name(struct in6_addr *);
 @@ -132,7 +132,7 @@ tcp_stats()
  	p(tcps_sndprobe, "\t\t%u window probe packet%s\n");
  	p(tcps_sndwinup, "\t\t%u window update packet%s\n");
@@ -41,3 +50,36 @@ $OpenBSD: patch-stats_c,v 1.1 2014/01/29 16:26:17 naddy Exp $
  	p(ips_notmember, "\t%lu multicast packet%s which we don't join\n");
  #undef p
  #undef p1
+@@ -788,7 +788,7 @@ mbpr(void)
+ 	int totmem, totused, totmbufs, totpct;
+ 	int i, mib[4], npools, flag = 0;
+ 	bool seen[256];
+-	struct pool pool;
++	struct kinfo_pool pool;
+ 	struct mbtypes *mp;
+ 	size_t size;
+ 	int page_size = getpagesize();
+@@ -825,7 +825,7 @@ mbpr(void)
+ 		mib[1] = KERN_POOL;
+ 		mib[2] = KERN_POOL_POOL;
+ 		mib[3] = i;
+-		size = sizeof(struct pool);
++		size = sizeof(struct kinfo_pool);
+ 		if (sysctl(mib, 4, &pool, &size, NULL, 0) < 0) {
+ 			if (errno == ENOENT)
+ 				continue;
+@@ -843,12 +843,12 @@ mbpr(void)
+ 		}
+ 
+ 		if (!strncmp(name, "mbpl", strlen("mbpl"))) {
+-			bcopy(&pool, &mbpool, sizeof(struct pool));
++			bcopy(&pool, &mbpool, sizeof(struct kinfo_pool));
+ 			flag++;
+ 		} else {
+ 			if (!strncmp(name, "mclpl", strlen("mclpl"))) {
+ 				bcopy(&pool, &mclpool,
+-				    sizeof(struct pool));
++				    sizeof(struct kinfo_pool));
+ 				flag++;
+ 			}
+ 		}
