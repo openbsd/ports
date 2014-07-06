@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/01/03 06:43:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/07/06 09:33:19 ajacoutot Exp $
 @bin bin/asn1Coding
 @bin bin/asn1Decoding
 @bin bin/asn1Parser
@@ -23,8 +23,10 @@ lib/pkgconfig/libtasn1.pc
 @man man/man3/asn1_delete_structure2.3
 @man man/man3/asn1_der_coding.3
 @man man/man3/asn1_der_decoding.3
+@man man/man3/asn1_der_decoding2.3
 @man man/man3/asn1_der_decoding_element.3
 @man man/man3/asn1_der_decoding_startEnd.3
+@man man/man3/asn1_dup_node.3
 @man man/man3/asn1_encode_simple_der.3
 @man man/man3/asn1_expand_any_defined_by.3
 @man man/man3/asn1_expand_octet_string.3
