@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.20 2013/12/22 09:43:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/06 09:09:10 ajacoutot Exp $
 
 COMMENT=	collection of educational activities for young children
 
-DISTNAME=	childsplay-2.5
+DISTNAME=	childsplay-2.6.3
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	games education
 
-HOMEPAGE=	http://childsplay.sourceforge.net/
+HOMEPAGE=	http://www.childsplay.mobi/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=childsplay/Childsplay/}
+MASTER_SITES=	http://download.savannah.gnu.org/releases/childsplay/
 
 MODULES=	lang/python
 
