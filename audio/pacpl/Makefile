@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/04/27 11:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/07/06 17:29:45 naddy Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		PAC (Perl Audio Converter)
 
 DISTNAME=		pacpl-4.0.5
+REVISION=		0
 CATEGORIES=		audio converters perl5
 
 HOMEPAGE=		http://pacpl.sourceforge.net/
@@ -17,8 +18,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pacpl/}
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-RUN_DEPENDS=		audio/bonk \
-			audio/lame \
+RUN_DEPENDS=		audio/lame \
 			audio/musepack \
 			audio/sox \
 			audio/speex \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2014/07/01 23:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.335 2014/07/06 17:29:44 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -18,7 +18,6 @@
      SUBDIR += aumix
      SUBDIR += beets
      SUBDIR += bladeenc
-     SUBDIR += bonk
      SUBDIR += calf
      SUBDIR += caps-plugins
      SUBDIR += cd-discid
@@ -281,7 +280,6 @@
      SUBDIR += xmix
      SUBDIR += xmmix
      SUBDIR += xmms
-     SUBDIR += xmms-bonk
      SUBDIR += xmms-flac
      SUBDIR += xmms-fmradio
      SUBDIR += xmms-mad
