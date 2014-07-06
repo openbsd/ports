@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/05/30 13:08:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/06 21:00:41 sthen Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
-DISTNAME =	the_silver_searcher-0.22.0
+DISTNAME =	the_silver_searcher-0.23.0
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://github.com/ggreer/the_silver_searcher
@@ -21,6 +21,7 @@ LIB_DEPENDS =	archivers/xz \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
+# referenced in Makefile, but apparently included in distfile
 NO_TEST =	YES
 
 do-install:
