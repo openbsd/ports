@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: outdated-perl-ports,v 1.1 2011/11/27 13:29:35 jasper Exp $
+# $OpenBSD: outdated-perl-ports,v 1.2 2014/07/07 20:01:39 bluhm Exp $
 #
 # Copyright (c) 2003 Sam Smith <S@mSmith.net>
 #
@@ -54,7 +54,7 @@ my @dir; # pkg subdir
 	open (PORTS, "< ${PORTSDIR}/INDEX") || die "can't open ${PORTSDIR}/INDEX: $!";
 	while ($line=<PORTS>) {
 		@line= split /\|/, $line;
-		next unless ($line =~ /^(p5\-(.+?)\-([\d\.]+)(?:p\d)?)\|/);
+		next unless ($line =~ /^(p5\-(.+?)\-([\d\.]+)(?:[pv]\d+)*)\|/);
 		# $1 has full package name in
 		# $2 is the name of the perl module (the stem minus the p5- prefix)
 		# $3 is the version number
