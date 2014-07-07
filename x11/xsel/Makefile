@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/06/18 20:49:15 matthew Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/07 08:25:16 sthen Exp $
 
 COMMENT=	command-line program for managing X selection contents
 
 DISTNAME=	xsel-1.2.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 HOMEPAGE=	http://www.vergenet.net/~conrad/software/xsel/
 
