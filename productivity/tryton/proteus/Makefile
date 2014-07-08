@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/28 08:55:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/08 20:11:24 ajacoutot Exp $
+
+MODPY_EGG_VERSION =	3.2.1
 
 COMMENT =		library to access Tryton's models like a client
 
