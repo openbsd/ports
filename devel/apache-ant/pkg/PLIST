@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/03/31 17:24:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/07/08 14:23:21 jasper Exp $
 @conflict jakarta-ant-*
 ant/
 ant/bin/
@@ -212,6 +212,7 @@ share/doc/java/ant/Types/fileset.html
 share/doc/java/ant/Types/filterchain.html
 share/doc/java/ant/Types/filterset.html
 share/doc/java/ant/Types/mapper.html
+share/doc/java/ant/Types/multirootfileset.html
 share/doc/java/ant/Types/namespace.html
 share/doc/java/ant/Types/patternset.html
 share/doc/java/ant/Types/permissions.html
@@ -1285,6 +1286,8 @@ share/doc/java/ant/api/org/apache/tools/ant/types/resources/LazyResourceCollecti
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/LogOutputResource.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/MappedResource.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/MappedResourceCollection.html
+share/doc/java/ant/api/org/apache/tools/ant/types/resources/MultiRootFileSet.SetType.html
+share/doc/java/ant/api/org/apache/tools/ant/types/resources/MultiRootFileSet.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/PropertyResource.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/ResourceDecorator.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/ResourceList.html
@@ -1438,12 +1441,14 @@ share/doc/java/ant/api/org/apache/tools/ant/util/LoaderUtils.html
 share/doc/java/ant/api/org/apache/tools/ant/util/MergingMapper.html
 share/doc/java/ant/api/org/apache/tools/ant/util/OutputStreamFunneler.html
 share/doc/java/ant/api/org/apache/tools/ant/util/PackageNameMapper.html
+share/doc/java/ant/api/org/apache/tools/ant/util/ProcessUtil.html
 share/doc/java/ant/api/org/apache/tools/ant/util/PropertyOutputStream.html
 share/doc/java/ant/api/org/apache/tools/ant/util/ProxySetup.html
 share/doc/java/ant/api/org/apache/tools/ant/util/ReaderInputStream.html
 share/doc/java/ant/api/org/apache/tools/ant/util/ReflectUtil.html
 share/doc/java/ant/api/org/apache/tools/ant/util/ReflectWrapper.html
 share/doc/java/ant/api/org/apache/tools/ant/util/RegexpPatternMapper.html
+share/doc/java/ant/api/org/apache/tools/ant/util/ResourceUtils.ReadOnlyTargetFileException.html
 share/doc/java/ant/api/org/apache/tools/ant/util/ResourceUtils.ResourceSelectorProvider.html
 share/doc/java/ant/api/org/apache/tools/ant/util/ResourceUtils.html
 share/doc/java/ant/api/org/apache/tools/ant/util/RetryHandler.html
