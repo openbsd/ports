@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2013/06/11 19:03:00 robert Exp $
+# $OpenBSD: Makefile,v 1.52 2014/07/08 08:30:24 robert Exp $
 
 COMMENT=	perl-compatible regular expression library
 
-DISTNAME=	pcre-8.33
+DISTNAME=	pcre-8.35
 
 SHARED_LIBS +=  pcre                 3.0      # 0.1
 SHARED_LIBS +=  pcre16               0.0      # 0.0
@@ -30,7 +30,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-pcre8 \
 			--enable-pcre16 \
 			--enable-utf \
-			--enable-unicode-properties
+			--enable-unicode-properties \
+			--enable-pcretest-libreadline
 
 # XXX compiler bugs
 .if ${MACHINE_ARCH} == "vax"
