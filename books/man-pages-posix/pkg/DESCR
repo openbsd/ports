@@ -1,0 +1,5 @@
+This package contains the IEEE Std 1003.1-2008 (POSIX.1) manual
+pages including the corrections contained in the first Technical
+Corrigendum, IEEE Std 1003.1-2008/Cor 1-2013. It include manuals
+for utilities in section 1, and for functions and headers in
+section 3.

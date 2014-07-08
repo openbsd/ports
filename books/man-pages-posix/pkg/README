@@ -1,0 +1,25 @@
+$OpenBSD: README,v 1.1.1.1 2014/07/08 08:45:22 zhuk Exp $
+
++-----------------------------------------------------------------------
+| Using ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Because the manuals contained in this package do not match any real software
+installed, they are not installed into directories that man(1) searches by
+default. Consider adding something like this to your shell startup file:
+
+  alias pman='man -M ${DOCDIR}/man'
+  alias papropos='apropos -M ${DOCDIR}/man'
+  alias pwhatis='whatis -M ${DOCDIR}/man'
+
+Then you can call it like usual "man" command:
+
+  papropos pthread
+  pman 3 chmod
+  pwhatis ldds
+
+Because manual page handling tools do not support section 0, header
+documentation is installed into section 3.
+
+Source package is installed to ${DOCDIR}, too,
+to satisfy the license requirements, see the POSIX-COPYRIGHT file there.
