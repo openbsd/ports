@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_os_mon_c_src_memsup_c,v 1.1 2014/07/08 10:40:26 sthen Exp $
+--- lib/os_mon/c_src/memsup.c.orig	Tue Jul  8 11:38:54 2014
++++ lib/os_mon/c_src/memsup.c	Tue Jul  8 11:39:30 2014
+@@ -116,7 +116,7 @@
+ #if !defined (__OpenBSD__) && !defined (__NetBSD__) 
+ #include <vm/vm_param.h>
+ #endif
+-#if defined (__FreeBSD__) || defined(__DragonFly__)
++#if defined (__FreeBSD__) || defined(__DragonFly__) || defined (__OpenBSD__)
+ #include <sys/vmmeter.h>
+ #endif
+ #endif
