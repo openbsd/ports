@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/06/19 08:53:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/08 09:27:10 zhuk Exp $
 
      SUBDIR =
      SUBDIR += AsteriskGuide
@@ -13,6 +13,7 @@
      SUBDIR += docbook-guide
      SUBDIR += grokking-the-gimp
      SUBDIR += haskell-report
+     SUBDIR += man-pages-posix
      SUBDIR += mason-book
      SUBDIR += svnbook
      SUBDIR += thinking-forth
