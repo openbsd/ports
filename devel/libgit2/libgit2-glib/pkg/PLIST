@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/09 20:01:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/08 15:33:42 jasper Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-blame-options.h
@@ -7,14 +7,18 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-blob-output-stream.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-blob.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch-enumerator.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-checkout-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-clone-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-commit.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred-plaintext.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-interactive.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-key-from-agent.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-delta.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-file.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-find-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-hunk.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-line.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-options.h
@@ -26,7 +30,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry-resolve-undo.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-main.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-merge-tree-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-merge-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-message.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-native.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory-base.h
@@ -43,6 +47,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-reflog.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-remote-callbacks.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-remote.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-repository.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-revert-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-revision-walker.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-signature.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-status-options.h
@@ -79,11 +84,9 @@ share/gtk-doc/html/libgit2-glib-1.0/GgitDiffFile.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitDiffHunk.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitDiffLine.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitDiffOptions.html
-share/gtk-doc/html/libgit2-glib-1.0/GgitError.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitIndex.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitIndexEntry.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitIndexEntryResolveUndo.html
-share/gtk-doc/html/libgit2-glib-1.0/GgitMergeTreeOptions.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitNative.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitOId.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitObject.html
@@ -114,6 +117,8 @@ share/gtk-doc/html/libgit2-glib-1.0/index.sgml
 share/gtk-doc/html/libgit2-glib-1.0/left-insensitive.png
 share/gtk-doc/html/libgit2-glib-1.0/left.png
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-Ggit-Main.html
+share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitError.html
+share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitMergeTreeOptions.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitMessage.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitStatusOptions.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0.devhelp2
