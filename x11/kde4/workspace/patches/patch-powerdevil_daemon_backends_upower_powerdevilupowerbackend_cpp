@@ -1,7 +1,7 @@
-$OpenBSD: patch-powerdevil_daemon_backends_upower_powerdevilupowerbackend_cpp,v 1.1 2014/04/30 09:31:20 zhuk Exp $
---- powerdevil/daemon/backends/upower/powerdevilupowerbackend.cpp.orig Thu Jan 30 20:25:09 2014
-+++ powerdevil/daemon/backends/upower/powerdevilupowerbackend.cpp Mon Mar 31 23:32:07 2014
-@@ -156,7 +156,14 @@ void PowerDevilUPowerBackend::init()
+$OpenBSD: patch-powerdevil_daemon_backends_upower_powerdevilupowerbackend_cpp,v 1.2 2014/07/08 10:01:04 sthen Exp $
+--- powerdevil/daemon/backends/upower/powerdevilupowerbackend.cpp.orig	Mon Apr 28 05:38:04 2014
++++ powerdevil/daemon/backends/upower/powerdevilupowerbackend.cpp	Tue Jul  8 10:58:17 2014
+@@ -160,7 +160,14 @@ void PowerDevilUPowerBackend::init()
      bool screenBrightnessAvailable = false;
      m_upowerInterface = new OrgFreedesktopUPowerInterface(UPOWER_SERVICE, "/org/freedesktop/UPower", QDBusConnection::systemBus(), this);
      m_brightnessControl = new XRandrBrightness();
@@ -17,7 +17,7 @@ $OpenBSD: patch-powerdevil_daemon_backends_upower_powerdevilupowerbackend_cpp,v 
          kDebug() << "Using helper";
          KAuth::Action action("org.kde.powerdevil.backlighthelper.syspath");
          action.setHelperID(HELPER_ID);
-@@ -169,12 +176,8 @@ void PowerDevilUPowerBackend::init()
+@@ -173,12 +180,8 @@ void PowerDevilUPowerBackend::init()
              connect(client, SIGNAL(deviceChanged(UdevQt::Device)), SLOT(onDeviceChanged(UdevQt::Device)));
              screenBrightnessAvailable = true;
          }
@@ -28,6 +28,6 @@ $OpenBSD: patch-powerdevil_daemon_backends_upower_powerdevilupowerbackend_cpp,v 
 -        screenBrightnessAvailable = true;
      }
 +#endif
-
+ 
      // Capabilities
      setCapabilities(SignalResumeFromSuspend);
