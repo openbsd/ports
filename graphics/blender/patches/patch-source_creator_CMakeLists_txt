@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_creator_CMakeLists_txt,v 1.1 2014/07/08 23:17:47 pascal Exp $
+--- source/creator/CMakeLists.txt.orig	Tue Jul  8 19:20:45 2014
++++ source/creator/CMakeLists.txt	Tue Jul  8 19:20:26 2014
+@@ -177,6 +177,7 @@ if(WITH_BUILDINFO)
+ 
+ 	# make an object library so can load with it in tests
+ 	add_library(buildinfoobj OBJECT buildinfo.c)
++	add_dependencies(buildinfoobj buildinfo)
+ endif()
+ 
+ # message(STATUS "Configuring blender")
