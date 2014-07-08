@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/29 08:05:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/07/08 20:11:04 ajacoutot Exp $
 
-COMMENT=		client of the Tryton application platform
+MODPY_EGG_VERSION =	3.2.2
 
-DISTNAME=		tryton-${MODPY_EGG_VERSION}
+COMMENT =		client of the Tryton application platform
 
-CATEGORIES=		x11
+DISTNAME =		tryton-${MODPY_EGG_VERSION}
 
-RUN_DEPENDS=		devel/gettext \
+CATEGORIES =		x11
+
+RUN_DEPENDS =		devel/gettext \
 			x11/py-gtk2 \
 			devel/py-dateutil \
 			devel/py-tz \
