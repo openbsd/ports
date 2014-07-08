@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2014/01/14 15:17:46 robert Exp $
---- configure.orig	Mon Dec  9 10:16:16 2013
-+++ configure	Tue Jan 14 09:17:46 2014
-@@ -6072,6 +6072,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+$OpenBSD: patch-configure,v 1.11 2014/07/08 08:10:38 robert Exp $
+--- configure.orig	Mon Jun 23 16:13:05 2014
++++ configure	Tue Jul  8 10:09:58 2014
+@@ -6253,6 +6253,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  $as_echo_n "checking for field ss_family in struct sockaddr_storage... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.10 2014/01/14 15:17:46 robert Exp $
  #include <sys/socket.h>
  int
  main ()
-@@ -8804,7 +8805,7 @@ $as_echo "yes" >&6; }
+@@ -9002,7 +9003,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.10 2014/01/14 15:17:46 robert Exp $
  
  fi
         else
-@@ -8814,7 +8815,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -9012,7 +9013,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"

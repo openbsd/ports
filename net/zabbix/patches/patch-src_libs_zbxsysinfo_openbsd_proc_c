@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.6 2014/01/14 15:17:46 robert Exp $
---- src/libs/zbxsysinfo/openbsd/proc.c.orig	Mon Dec  9 10:15:14 2013
-+++ src/libs/zbxsysinfo/openbsd/proc.c	Tue Jan 14 09:17:46 2014
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.7 2014/07/08 08:10:38 robert Exp $
+--- src/libs/zbxsysinfo/openbsd/proc.c.orig	Mon Jun 23 16:12:56 2014
++++ src/libs/zbxsysinfo/openbsd/proc.c	Tue Jul  8 10:09:58 2014
 @@ -40,7 +40,7 @@
  #	endif
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.6 2014/01/14 15:17:46 rob
  #	define ZBX_P_COMM	p_comm
  #	define ZBX_P_PID	p_pid
  #	define ZBX_P_STAT	p_stat
-@@ -125,13 +125,12 @@ int     PROC_MEM(AGENT_REQUEST *request, AGENT_RESULT 
+@@ -126,13 +126,12 @@ int     PROC_MEM(AGENT_REQUEST *request, AGENT_RESULT 
  
  	struct passwd		*usrinfo;
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.6 2014/01/14 15:17:46 rob
  
  	char	**argv = NULL, *args = NULL;
  	size_t	argv_alloc = 0, args_alloc = 0;
-@@ -180,40 +179,24 @@ int     PROC_MEM(AGENT_REQUEST *request, AGENT_RESULT 
+@@ -181,40 +180,24 @@ int     PROC_MEM(AGENT_REQUEST *request, AGENT_RESULT 
  		mib[3] = 0;
  	}
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.6 2014/01/14 15:17:46 rob
  
  	for (i = 0; i < count; i++)
  	{
-@@ -279,13 +262,12 @@ int	PROC_NUM(AGENT_REQUEST *request, AGENT_RESULT *res
+@@ -280,13 +263,12 @@ int	PROC_NUM(AGENT_REQUEST *request, AGENT_RESULT *res
  
  	struct passwd		*usrinfo;
  
@@ -89,7 +89,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.6 2014/01/14 15:17:46 rob
  
  	char	**argv = NULL, *args = NULL;
  	size_t	argv_alloc = 0, args_alloc = 0;
-@@ -332,40 +314,25 @@ int	PROC_NUM(AGENT_REQUEST *request, AGENT_RESULT *res
+@@ -333,40 +315,25 @@ int	PROC_NUM(AGENT_REQUEST *request, AGENT_RESULT *res
  		mib[3] = 0;
  	}
  
