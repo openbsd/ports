@@ -1,7 +1,15 @@
-$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.1 2006/02/18 13:29:36 espie Exp $
---- ksysguard/ksysguardd/OpenBSD/memory.c.orig	Sat Feb 18 14:14:15 2006
-+++ ksysguard/ksysguardd/OpenBSD/memory.c	Sat Feb 18 14:22:08 2006
-@@ -37,6 +37,8 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.2 2014/07/08 10:03:20 sthen Exp $
+--- ksysguard/ksysguardd/OpenBSD/memory.c.orig	Mon Oct 10 11:04:31 2005
++++ ksysguard/ksysguardd/OpenBSD/memory.c	Mon Jul  7 10:30:04 2014
+@@ -24,6 +24,7 @@
+ #include <sys/sysctl.h>
+ #include <sys/dkstat.h>
+ #include <sys/swap.h>
++#include <sys/vmmeter.h>
+ 
+ #include <limits.h>
+ #include <stdio.h>
+@@ -37,6 +38,8 @@
  
  static size_t Total = 0;
  static size_t MFree = 0;
@@ -10,7 +18,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.1 2006/02/18 13:29:36 
  static size_t Active = 0;
  static size_t InActive = 0;
  static size_t STotal = 0;
-@@ -71,6 +73,8 @@ initMemory(struct SensorModul* sm)
+@@ -71,6 +74,8 @@ initMemory(struct SensorModul* sm)
    registerMonitor("mem/physical/free", "integer", printMFree, printMFreeInfo, sm);
  	registerMonitor("mem/physical/active", "integer", printActive, printActiveInfo, sm);
  	registerMonitor("mem/physical/inactive", "integer", printInActive, printInActiveInfo, sm);
@@ -19,7 +27,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.1 2006/02/18 13:29:36 
  	registerMonitor("mem/swap/free", "integer", printSwapFree, printSwapFreeInfo, sm);
  	registerMonitor("mem/swap/used", "integer", printSwapUsed, printSwapUsedInfo, sm);
  }
-@@ -99,6 +103,9 @@ updateMemory(void)
+@@ -99,6 +104,9 @@ updateMemory(void)
  	InActive /= 1024;
  	InActive -= Active;
  
@@ -29,7 +37,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.1 2006/02/18 13:29:36 
  	swapmode(&SUsed, &STotal);
  	SFree = STotal - SUsed;
  	return 0;
-@@ -114,6 +121,30 @@ void
+@@ -114,6 +122,30 @@ void
  printMFreeInfo(const char* cmd)
  {
  	fprintf(CurrentClient, "Free Memory\t0\t%d\tKB\n", Total);
