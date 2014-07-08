@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/28 08:53:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/08 20:11:43 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/dunning.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/dunning.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/dunning.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/letter.odt
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/locale/ca_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning_letter/locale/de_DE.po
