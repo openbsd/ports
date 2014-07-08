@@ -1,13 +1,17 @@
-$OpenBSD: patch-src_libstatgrab_memory_stats_c,v 1.1 2011/07/06 12:45:04 jasper Exp $
+$OpenBSD: patch-src_libstatgrab_memory_stats_c,v 1.2 2014/07/08 10:15:39 sthen Exp $
 
 Fix implicit declarations of sysconf() and bzero().
 
---- src/libstatgrab/memory_stats.c.orig	Wed Jul  6 14:37:07 2011
-+++ src/libstatgrab/memory_stats.c	Wed Jul  6 14:38:26 2011
-@@ -50,6 +50,8 @@
- #include <sys/types.h>
+--- src/libstatgrab/memory_stats.c.orig	Sun Feb 21 10:04:26 2010
++++ src/libstatgrab/memory_stats.c	Tue Jul  8 11:09:23 2014
+@@ -47,9 +47,11 @@
+ #endif
+ #if defined(OPENBSD)
+ #include <sys/param.h>
+-#include <sys/types.h>
  #include <sys/sysctl.h>
  #include <sys/unistd.h>
++#include <sys/vmmeter.h>
 +#include <unistd.h>
 +#include <string.h>
  #endif

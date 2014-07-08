@@ -1,7 +1,7 @@
-$OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
+$OpenBSD: patch-xuvmstat_c,v 1.5 2014/07/08 10:15:39 sthen Exp $
 --- xuvmstat.c.orig	Fri Sep  9 14:38:48 2005
-+++ xuvmstat.c	Tue May 21 20:35:56 2013
-@@ -24,6 +24,7 @@
++++ xuvmstat.c	Tue Jul  8 11:13:36 2014
+@@ -24,16 +24,15 @@
   * xuvmstat.c
   */
  
@@ -9,9 +9,10 @@ $OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
  #include <errno.h>
  #include <stdio.h>
  #include <string.h>
-@@ -31,9 +32,6 @@
+ #include <unistd.h>
  #include <sys/param.h>
  #include <sys/errno.h>
++#include <sys/sysctl.h>
  #include <sys/time.h>
 -#if (__NetBSD_Version__ < 105000000)
 -#include <vm/vm.h>
@@ -19,7 +20,7 @@ $OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
  #include <uvm/uvm_extern.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
-@@ -52,6 +50,7 @@ struct graph *gp_faults, *gp_traps, *gp_intrs, *gp_ctx
+@@ -52,6 +51,7 @@ struct graph *gp_faults, *gp_traps, *gp_intrs, *gp_ctx
  
  #define WIDTH 300
  
@@ -27,7 +28,7 @@ $OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
  main(argc, argv)
  
  int argc;
-@@ -106,7 +105,7 @@ char **argv;
+@@ -106,7 +106,7 @@ char **argv;
    gettimeofday(&otv, NULL);
  
    {
@@ -36,7 +37,7 @@ $OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
      struct timeval now, incr, ping, timer;
      XEvent event;
     
-@@ -154,6 +153,8 @@ char **argv;
+@@ -154,6 +154,8 @@ char **argv;
  
    XFreeFont(xdpy.dpy, fnt_fixed);
    XCloseDisplay(xdpy.dpy);
@@ -45,7 +46,7 @@ $OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
  }
  
  /*
-@@ -214,6 +215,7 @@ int was_timeout;
+@@ -214,6 +216,7 @@ int was_timeout;
  		  vals, colors, white);
    }
  
@@ -53,7 +54,7 @@ $OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
    y += 8;
    {
      static char *names[] = { "file", "anon", "exec", "free", "kernel" };
-@@ -237,6 +239,7 @@ int was_timeout;
+@@ -237,6 +240,7 @@ int was_timeout;
      y = draw_barbox(xdpy, win, gc, fnt_fixed, 5, 295, y, 5, cexp.npages, names,
                    vals, colors, white);
    }
@@ -61,7 +62,7 @@ $OpenBSD: patch-xuvmstat_c,v 1.4 2013/05/21 19:38:08 sthen Exp $
  
    y += 8;
  
-@@ -353,8 +356,8 @@ int was_timeout;
+@@ -353,8 +357,8 @@ int was_timeout;
        static u_long color[3];
        init = 1;
        before[0] = &oexp.swtch; after[0] = &cexp.swtch; color[0] = black;

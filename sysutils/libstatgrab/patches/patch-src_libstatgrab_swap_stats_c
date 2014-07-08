@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libstatgrab_swap_stats_c,v 1.1 2014/07/08 10:15:39 sthen Exp $
+--- src/libstatgrab/swap_stats.c.orig	Tue Jul  8 11:11:12 2014
++++ src/libstatgrab/swap_stats.c	Tue Jul  8 11:11:42 2014
+@@ -49,6 +49,7 @@
+ #endif
+ #if defined(NETBSD) || defined(OPENBSD)
+ #include <sys/param.h>
++#include <sys/sysctl.h>
+ #include <sys/time.h>
+ #include <uvm/uvm.h>
+ #include <unistd.h>
