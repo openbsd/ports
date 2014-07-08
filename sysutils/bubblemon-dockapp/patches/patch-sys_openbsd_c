@@ -1,0 +1,11 @@
+$OpenBSD: patch-sys_openbsd_c,v 1.1 2014/07/08 10:26:59 sthen Exp $
+--- sys_openbsd.c.orig	Tue Jul  8 11:24:31 2014
++++ sys_openbsd.c	Tue Jul  8 11:26:28 2014
+@@ -23,6 +23,7 @@
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <sys/resource.h>
++#include <sys/tree.h>
+ 
+ #include <uvm/uvm_object.h>
+ #include <uvm/uvm_extern.h>
