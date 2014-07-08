@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2014/01/16 10:25:54 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2014/07/08 11:11:15 kirby Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
 V =	 	0.5.10
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
+REVISION = 	0
 CATEGORIES =	games
 
 MAINTAINER =	Antti Harri <iku@openbsd.fi>
@@ -34,9 +35,9 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/libxml \
 		x11/libxdg-basedir \
 		${MODLUA_LIB_DEPENDS}
+RUN_DEPENDS = 	devel/desktop-file-utils
 
 SEPARATE_BUILD =	Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="`pkg-config --cflags libpng sqlite3 sdl ${MODLUA_DEP}` -DSVN_REV='\"${V}\"'" \
@@ -57,5 +58,9 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmoto/
 	${INSTALL_DATA} ${WRKSRC}/{COPYING,README} ${PREFIX}/share/doc/xmoto/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/extra/xmoto.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/extra/xmoto.xpm ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
