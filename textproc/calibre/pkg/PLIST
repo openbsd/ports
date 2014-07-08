@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/05/15 10:10:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/07/08 09:55:16 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -926,6 +926,8 @@ lib/calibre/calibre/ebooks/oeb/polish/embed.py
 lib/calibre/calibre/ebooks/oeb/polish/embed.pyc
 lib/calibre/calibre/ebooks/oeb/polish/errors.py
 lib/calibre/calibre/ebooks/oeb/polish/errors.pyc
+lib/calibre/calibre/ebooks/oeb/polish/fonts.py
+lib/calibre/calibre/ebooks/oeb/polish/fonts.pyc
 lib/calibre/calibre/ebooks/oeb/polish/import_book.py
 lib/calibre/calibre/ebooks/oeb/polish/import_book.pyc
 lib/calibre/calibre/ebooks/oeb/polish/jacket.py
@@ -1328,6 +1330,8 @@ lib/calibre/calibre/gui2/actions/edit_collections.py
 lib/calibre/calibre/gui2/actions/edit_collections.pyc
 lib/calibre/calibre/gui2/actions/edit_metadata.py
 lib/calibre/calibre/gui2/actions/edit_metadata.pyc
+lib/calibre/calibre/gui2/actions/embed.py
+lib/calibre/calibre/gui2/actions/embed.pyc
 lib/calibre/calibre/gui2/actions/fetch_news.py
 lib/calibre/calibre/gui2/actions/fetch_news.pyc
 lib/calibre/calibre/gui2/actions/help.py
@@ -2127,6 +2131,8 @@ lib/calibre/calibre/gui2/tweak_book/editor/insert_resource.pyc
 lib/calibre/calibre/gui2/tweak_book/editor/smart/
 lib/calibre/calibre/gui2/tweak_book/editor/smart/__init__.py
 lib/calibre/calibre/gui2/tweak_book/editor/smart/__init__.pyc
+lib/calibre/calibre/gui2/tweak_book/editor/smart/css.py
+lib/calibre/calibre/gui2/tweak_book/editor/smart/css.pyc
 lib/calibre/calibre/gui2/tweak_book/editor/smart/html.py
 lib/calibre/calibre/gui2/tweak_book/editor/smart/html.pyc
 lib/calibre/calibre/gui2/tweak_book/editor/syntax/
@@ -2148,8 +2154,14 @@ lib/calibre/calibre/gui2/tweak_book/file_list.py
 lib/calibre/calibre/gui2/tweak_book/file_list.pyc
 lib/calibre/calibre/gui2/tweak_book/job.py
 lib/calibre/calibre/gui2/tweak_book/job.pyc
+lib/calibre/calibre/gui2/tweak_book/live_css.py
+lib/calibre/calibre/gui2/tweak_book/live_css.pyc
 lib/calibre/calibre/gui2/tweak_book/main.py
 lib/calibre/calibre/gui2/tweak_book/main.pyc
+lib/calibre/calibre/gui2/tweak_book/manage_fonts.py
+lib/calibre/calibre/gui2/tweak_book/manage_fonts.pyc
+lib/calibre/calibre/gui2/tweak_book/polish.py
+lib/calibre/calibre/gui2/tweak_book/polish.pyc
 lib/calibre/calibre/gui2/tweak_book/preferences.py
 lib/calibre/calibre/gui2/tweak_book/preferences.pyc
 lib/calibre/calibre/gui2/tweak_book/preview.py
@@ -2322,6 +2334,7 @@ lib/calibre/calibre/plugins/calibre_style.so
 lib/calibre/calibre/plugins/chm_extra.so
 lib/calibre/calibre/plugins/chmlib.so
 lib/calibre/calibre/plugins/freetype.so
+lib/calibre/calibre/plugins/html.so
 lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/libmtp.so
@@ -2336,6 +2349,7 @@ lib/calibre/calibre/plugins/progress_indicator.so
 lib/calibre/calibre/plugins/qt_hack.so
 lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
+lib/calibre/calibre/plugins/tokenizer.so
 lib/calibre/calibre/plugins/unrar.so
 lib/calibre/calibre/plugins/woff.so
 lib/calibre/calibre/ptempfile.py
@@ -2881,6 +2895,48 @@ lib/calibre/six.pyc
 lib/calibre/templite/
 lib/calibre/templite/__init__.py
 lib/calibre/templite/__init__.pyc
+lib/calibre/tinycss/
+lib/calibre/tinycss/__init__.py
+lib/calibre/tinycss/__init__.pyc
+lib/calibre/tinycss/color3.py
+lib/calibre/tinycss/color3.pyc
+lib/calibre/tinycss/css21.py
+lib/calibre/tinycss/css21.pyc
+lib/calibre/tinycss/decoding.py
+lib/calibre/tinycss/decoding.pyc
+lib/calibre/tinycss/fonts3.py
+lib/calibre/tinycss/fonts3.pyc
+lib/calibre/tinycss/media3.py
+lib/calibre/tinycss/media3.pyc
+lib/calibre/tinycss/page3.py
+lib/calibre/tinycss/page3.pyc
+lib/calibre/tinycss/parsing.py
+lib/calibre/tinycss/parsing.pyc
+lib/calibre/tinycss/tests/
+lib/calibre/tinycss/tests/__init__.py
+lib/calibre/tinycss/tests/__init__.pyc
+lib/calibre/tinycss/tests/color3.py
+lib/calibre/tinycss/tests/color3.pyc
+lib/calibre/tinycss/tests/css21.py
+lib/calibre/tinycss/tests/css21.pyc
+lib/calibre/tinycss/tests/decoding.py
+lib/calibre/tinycss/tests/decoding.pyc
+lib/calibre/tinycss/tests/fonts3.py
+lib/calibre/tinycss/tests/fonts3.pyc
+lib/calibre/tinycss/tests/main.py
+lib/calibre/tinycss/tests/main.pyc
+lib/calibre/tinycss/tests/media3.py
+lib/calibre/tinycss/tests/media3.pyc
+lib/calibre/tinycss/tests/page3.py
+lib/calibre/tinycss/tests/page3.pyc
+lib/calibre/tinycss/tests/tokenizing.py
+lib/calibre/tinycss/tests/tokenizing.pyc
+lib/calibre/tinycss/token_data.py
+lib/calibre/tinycss/token_data.pyc
+lib/calibre/tinycss/tokenizer.py
+lib/calibre/tinycss/tokenizer.pyc
+lib/calibre/tinycss/version.py
+lib/calibre/tinycss/version.pyc
 share/appdata/
 share/appdata/calibre-ebook-edit.appdata.xml
 share/appdata/calibre-ebook-viewer.appdata.xml
@@ -2964,6 +3020,7 @@ share/calibre/content_server/stacktrace.js
 share/calibre/content_server/star-half.png
 share/calibre/content_server/star-off.png
 share/calibre/content_server/star-on.png
+share/calibre/csscolorparser.js
 share/calibre/default_tweaks.py
 share/calibre/default_tweaks.pyc
 share/calibre/dictionaries/
@@ -3618,6 +3675,7 @@ share/calibre/recipes/danas.recipe
 share/calibre/recipes/dani.recipe
 share/calibre/recipes/dark_horizons.png
 share/calibre/recipes/dark_horizons.recipe
+share/calibre/recipes/dark_reading.recipe
 share/calibre/recipes/darknet.png
 share/calibre/recipes/darknet.recipe
 share/calibre/recipes/datasport.recipe
@@ -3854,6 +3912,7 @@ share/calibre/recipes/entrepeneur.png
 share/calibre/recipes/entrepeneur.recipe
 share/calibre/recipes/epicurious.recipe
 share/calibre/recipes/epl_talk.recipe
+share/calibre/recipes/epw.recipe
 share/calibre/recipes/equipped.png
 share/calibre/recipes/equipped.recipe
 share/calibre/recipes/escrevinhador.recipe
@@ -4923,7 +4982,8 @@ share/calibre/recipes/republica.recipe
 share/calibre/recipes/republika.recipe
 share/calibre/recipes/res_publica.png
 share/calibre/recipes/res_publica.recipe
-share/calibre/recipes/respekt.recipe
+share/calibre/recipes/respekt_magazine.recipe
+share/calibre/recipes/respekt_web.recipe
 share/calibre/recipes/resurgence.recipe
 share/calibre/recipes/reuters.png
 share/calibre/recipes/reuters.recipe

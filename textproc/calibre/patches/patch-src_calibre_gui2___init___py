@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_calibre_gui2___init___py,v 1.1 2014/07/08 09:55:16 sthen Exp $
+
+- enable --detach, used by some .desktop files
+
+--- src/calibre/gui2/__init__.py.orig	Fri Jul  4 05:05:26 2014
++++ src/calibre/gui2/__init__.py	Tue Jul  8 10:36:29 2014
+@@ -852,12 +852,12 @@ def load_builtin_fonts():
+                         _rating_font = u'calibre Symbols'
+ 
+ def setup_gui_option_parser(parser):
+-    if islinux:
++    if islinux or isbsd:
+         parser.add_option('--detach', default=False, action='store_true',
+                           help='Detach from the controlling terminal, if any (linux only)')
+ 
+ def detach_gui():
+-    if islinux and not DEBUG:
++    if (islinux or isbsd) and not DEBUG:
+         # Detach from the controlling process.
+         if os.fork() != 0:
+             raise SystemExit(0)

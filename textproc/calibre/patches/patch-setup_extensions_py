@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_extensions_py,v 1.7 2014/04/06 11:32:04 sthen Exp $
+$OpenBSD: patch-setup_extensions_py,v 1.8 2014/07/08 09:55:16 sthen Exp $
 
 - fix various header search paths
 - don't override compiler optimizer levels
@@ -9,8 +9,8 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk,
 and don't allow an updated patch to change the python shebang line,
 it's correct with "env" here (handled in infrastructure).
 
---- setup/extensions.py.orig	Fri Mar 28 05:30:33 2014
-+++ setup/extensions.py	Tue Apr  1 00:13:29 2014
+--- setup/extensions.py.orig	Fri Jul  4 05:05:26 2014
++++ setup/extensions.py	Tue Jul  8 10:36:28 2014
 @@ -12,7 +12,7 @@ from multiprocessing import cpu_count
  
  from PyQt4.pyqtconfig import QtGuiModuleMakefile
@@ -34,7 +34,7 @@ it's correct with "env" here (handled in infrastructure).
  
      def preflight(self, obj_dir, compiler, linker, builder, cflags, ldflags):
          pass
-@@ -281,9 +274,10 @@ if isosx:
+@@ -289,9 +282,10 @@ if isosx:
                  ldflags=['-framework', 'CoreServices', '-framework', 'IOKit'])
              )
  
@@ -46,7 +46,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['usb-1.0']
      ))
  
-@@ -297,6 +291,7 @@ if islinux or isosx:
+@@ -305,6 +299,7 @@ if islinux or isosx:
          'calibre/devices/mtp/unix/upstream/music-players.h',
          'calibre/devices/mtp/unix/upstream/device-flags.h',
          ],
@@ -54,7 +54,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['mtp']
      ))
  
-@@ -324,9 +319,9 @@ if isbsd:
+@@ -332,9 +327,9 @@ if isbsd:
      cflags.append('-pthread')
      ldflags.append('-shared')
      cflags.append('-I'+sysconfig.get_python_inc())
@@ -65,7 +65,7 @@ it's correct with "env" here (handled in infrastructure).
  if isosx:
      x, p = ('i386', 'x86_64')
      archs = ['-arch', x, '-arch', p, '-isysroot',
-@@ -533,7 +528,7 @@ class Build(Command):
+@@ -541,7 +536,7 @@ class Build(Command):
          DESTDIR = .
          TARGET = calibre
          QT *= svg
