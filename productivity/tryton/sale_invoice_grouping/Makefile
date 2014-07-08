@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/29 08:05:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/08 20:12:58 ajacoutot Exp $
+
+MODPY_EGG_VERSION =	3.2.1
 
 TRYTOND_MODULE =	sale_invoice_grouping
 
