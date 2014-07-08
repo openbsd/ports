@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.43 2014/04/29 12:01:54 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2014/07/08 20:07:53 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.16
-REVISION=		0
+VERSION=		3.16.2
 DISTNAME =		nss-${VERSION}
 
-SO_VERSION=		34.1
+SO_VERSION=		35.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
 CATEGORIES=		security
 
-HOMEPAGE=		http://www.mozilla.org/projects/security/pki/nss/
+HOMEPAGE=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
