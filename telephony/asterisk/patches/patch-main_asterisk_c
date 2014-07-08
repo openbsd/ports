@@ -1,0 +1,15 @@
+$OpenBSD: patch-main_asterisk_c,v 1.22 2014/07/08 10:23:18 sthen Exp $
+--- main/asterisk.c.orig	Tue Jul  8 11:16:25 2014
++++ main/asterisk.c	Tue Jul  8 11:16:50 2014
+@@ -87,11 +87,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.22 $")
+ #elif defined(HAVE_SYSCTL)
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+-#if !defined(__OpenBSD__)
+ #include <sys/vmmeter.h>
+ #if defined(__FreeBSD__)
+ #include <vm/vm_param.h>
+-#endif
+ #endif
+ #if defined(HAVE_SWAPCTL)
+ #include <sys/swap.h>
