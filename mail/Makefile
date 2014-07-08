@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2014/06/23 19:18:13 henning Exp $
+# $OpenBSD: Makefile,v 1.310 2014/07/08 20:23:28 jca Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -71,7 +71,6 @@
      SUBDIR += libetpan
      SUBDIR += libspf2
      SUBDIR += lumail
-     SUBDIR += mailcrypt
      SUBDIR += maildrop
      SUBDIR += mailgraph
      SUBDIR += mailman

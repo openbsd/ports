@@ -1,8 +1,0 @@
-Mailcrypt allows seamless integration of cryptography and internet
-usage.  It can be used to sign and encrypt mail, to sign usenet 
-articles, and to verify/decrypt mail and articles.
-
-Flavors:
-	pgp	- use PGP 2.x
-	pgp5	- use PGP 5.x
-	gnupg	- use GNU Privacy Guard

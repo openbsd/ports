@@ -1,9 +1,0 @@
-$OpenBSD: patch-tests_gpg-keys_make-rings_py,v 1.1 2002/10/27 16:59:48 naddy Exp $
---- tests/gpg-keys/make-rings.py.orig	Sun Oct 27 17:45:38 2002
-+++ tests/gpg-keys/make-rings.py	Sun Oct 27 17:47:56 2002
-@@ -1,4 +1,4 @@
--#! /usr/bin/python
-+#! %%LOCALBASE%%/bin/python
- 
- import popen2, commands, re, os, sys
- 

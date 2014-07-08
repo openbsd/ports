@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.157 2014/07/06 17:29:45 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.158 2014/07/08 20:23:28 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -417,6 +417,7 @@ my $obsolete_reason = {
 	'p5-GetLive' => 3,
 	'bonk' => 3,
 	'xmms-bonk' => 3,
+	'mailcrypt' => 0,
 };
 
 # ->is_base_system($handle, $state):
