@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.82 2014/05/19 00:57:54 zhuk Exp $
+# $OpenBSD: portcheck,v 1.83 2014/07/08 09:48:07 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -839,6 +839,13 @@ check_plist() {
 		share/icons/*(*/))
 			# Do not match intermediate directories to avoid false
 			# positives.
+			;;
+		share/icons/*.xpm)
+			app=${l#share/icons/}
+			app=${app%%/*}
+			app=${app%%.*}
+			err "${portref}installs icon ${l##*/} in ${l%/*}, it" \
+			    "should likely go in share/pixmaps/ instead"
 			;;
 		share/icons/*)
 			app=${l#share/icons/}
