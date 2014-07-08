@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/08 14:31:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/08 15:28:35 jasper Exp $
+
+# XXX: Bump REVISION of the following ports when updating as the _cffi__ hash
+# changes: devel/libgit/py-git2
 
 COMMENT=		Foreign Function Interface for Python calling C code
 
-MODPY_EGG_VERSION=	0.8.2
+MODPY_EGG_VERSION=	0.8.6
 DISTNAME=		cffi-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
 
 # MIT
