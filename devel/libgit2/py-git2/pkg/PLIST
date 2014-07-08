@@ -1,11 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/04/17 19:26:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/07/08 15:34:01 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/_cffi__x194db310xdd69d84f.so
 lib/python${MODPY_VERSION}/site-packages/_pygit2.so
 lib/python${MODPY_VERSION}/site-packages/pygit2/
-lib/python${MODPY_VERSION}/site-packages/pygit2-0.20.3-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pygit2-0.21.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pygit2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/config.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/config.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/credentials.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/credentials.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/decl.h
+lib/python${MODPY_VERSION}/site-packages/pygit2/errors.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/errors.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/ffi.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/ffi.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/refspec.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/refspec.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/remote.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/remote.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/repository.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/repository.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/settings.py
