@@ -1,10 +1,10 @@
-$OpenBSD: patch-mimedefang_pl_in,v 1.3 2013/06/13 07:27:49 ajacoutot Exp $
+$OpenBSD: patch-mimedefang_pl_in,v 1.4 2014/07/08 15:55:43 ajacoutot Exp $
 
 Fix Avira/Antivir.
 
---- mimedefang.pl.in.orig	Sat May 25 17:30:50 2013
-+++ mimedefang.pl.in	Thu Jun 13 09:24:32 2013
-@@ -3497,7 +3497,7 @@ sub entity_contains_virus_hbedv ($) {
+--- mimedefang.pl.in.orig	Wed May 21 15:50:26 2014
++++ mimedefang.pl.in	Tue Jul  8 17:51:19 2014
+@@ -3498,7 +3498,7 @@ sub entity_contains_virus_hbedv ($) {
  
      # Run antivir
      my($code, $category, $action) =
@@ -13,7 +13,7 @@ Fix Avira/Antivir.
      if ($action ne 'proceed') {
  	return (wantarray ? ($code, $category, $action) : $code);
      }
-@@ -3522,7 +3522,7 @@ sub message_contains_virus_hbedv () {
+@@ -3523,7 +3523,7 @@ sub message_contains_virus_hbedv () {
  
      # Run antivir
      my($code, $category, $action) =
@@ -22,7 +22,7 @@ Fix Avira/Antivir.
      return (wantarray ? interpret_hbedv_code($code) : $code);
  }
  
-@@ -3536,7 +3536,7 @@ sub interpret_hbedv_code ($) {
+@@ -3537,7 +3537,7 @@ sub interpret_hbedv_code ($) {
  
      # Virus or virus in memory
      if ($code == 1 || $code == 2 || $code == 3) {
