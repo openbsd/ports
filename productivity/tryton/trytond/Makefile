@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2014/04/29 08:04:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/07/08 20:10:51 ajacoutot Exp $
 
-COMMENT=		server of the Tryton application platform
+MODPY_EGG_VERSION =	3.2.1
 
-DISTNAME=		trytond-${MODPY_EGG_VERSION}
+COMMENT =		server of the Tryton application platform
 
-CATEGORIES=		www
+DISTNAME =		trytond-${MODPY_EGG_VERSION}
 
-RUN_DEPENDS=		databases/py-psycopg2 \
+CATEGORIES =		www
+
+RUN_DEPENDS =		databases/py-psycopg2 \
 			databases/py-sql \
 			devel/py-dateutil \
 			devel/py-tz \
