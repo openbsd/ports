@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/04/30 09:31:20 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/07/09 20:03:31 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @newgroup _kdm:730
@@ -623,6 +623,7 @@ share/apps/kdm/sessions/qvwm.desktop
 share/apps/kdm/sessions/ratpoison.desktop
 share/apps/kdm/sessions/sapphire.desktop
 share/apps/kdm/sessions/sawfish.desktop
+share/apps/kdm/sessions/subtle.desktop
 share/apps/kdm/sessions/twm.desktop
 share/apps/kdm/sessions/ude.desktop
 share/apps/kdm/sessions/vtwm.desktop
@@ -1503,10 +1504,6 @@ share/doc/HTML/en/kcontrol/solid-actions/edit-action.png
 share/doc/HTML/en/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/en/kcontrol/solid-actions/index.docbook
 share/doc/HTML/en/kcontrol/solid-actions/main.png
-share/doc/HTML/en/kcontrol/solid-hardware/
-share/doc/HTML/en/kcontrol/solid-hardware/common
-share/doc/HTML/en/kcontrol/solid-hardware/index.cache.bz2
-share/doc/HTML/en/kcontrol/solid-hardware/index.docbook
 share/doc/HTML/en/kcontrol/splashscreen/
 share/doc/HTML/en/kcontrol/splashscreen/common
 share/doc/HTML/en/kcontrol/splashscreen/get-new-theme.png

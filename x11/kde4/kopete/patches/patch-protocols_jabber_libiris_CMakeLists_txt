@@ -1,0 +1,13 @@
+$OpenBSD: patch-protocols_jabber_libiris_CMakeLists_txt,v 1.1 2014/07/09 20:03:27 zhuk Exp $
+Unbreak compilation.
+--- protocols/jabber/libiris/CMakeLists.txt.orig	Sat Jul  5 19:04:25 2014
++++ protocols/jabber/libiris/CMakeLists.txt	Sat Jul  5 19:04:34 2014
+@@ -215,7 +215,7 @@ src/irisnet/corelib/jdnsshared.h
+ add_definitions(-DIRISNET_STATIC)
+ 
+ if(CMAKE_COMPILER_IS_GNUCXX)
+-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu90")
++  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu89")
+ endif(CMAKE_COMPILER_IS_GNUCXX)
+ 
+ kde4_add_library(iris_kopete STATIC ${libiris_SRCS})

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-vi,v 1.4 2014/01/15 19:42:11 zhuk Exp $
+@comment $OpenBSD: PLIST-vi,v 1.5 2014/07/09 20:03:28 zhuk Exp $
 share/locale/vi/LC_MESSAGES/akregator.mo
 share/locale/vi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/vi/LC_MESSAGES/attica_kde.mo
@@ -30,7 +30,6 @@ share/locale/vi/LC_MESSAGES/katetextfilter.mo
 share/locale/vi/LC_MESSAGES/katexmlcheck.mo
 share/locale/vi/LC_MESSAGES/katexmltools.mo
 share/locale/vi/LC_MESSAGES/katomic.mo
-share/locale/vi/LC_MESSAGES/kbattleship.mo
 share/locale/vi/LC_MESSAGES/kblackbox.mo
 share/locale/vi/LC_MESSAGES/kbounce.mo
 share/locale/vi/LC_MESSAGES/kcm_attica.mo
@@ -126,6 +125,8 @@ share/locale/vi/LC_MESSAGES/kio_ldap.mo
 share/locale/vi/LC_MESSAGES/kio_man.mo
 share/locale/vi/LC_MESSAGES/kio_nepomuk.mo
 share/locale/vi/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/vi/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/vi/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/vi/LC_MESSAGES/kio_nfs.mo
 share/locale/vi/LC_MESSAGES/kio_nntp.mo
 share/locale/vi/LC_MESSAGES/kio_pop3.mo
@@ -134,7 +135,6 @@ share/locale/vi/LC_MESSAGES/kio_sftp.mo
 share/locale/vi/LC_MESSAGES/kio_smb.mo
 share/locale/vi/LC_MESSAGES/kio_smtp.mo
 share/locale/vi/LC_MESSAGES/kio_thumbnail.mo
-share/locale/vi/LC_MESSAGES/kio_timeline.mo
 share/locale/vi/LC_MESSAGES/kio_trash.mo
 share/locale/vi/LC_MESSAGES/kio_zeroconf.mo
 share/locale/vi/LC_MESSAGES/kioclient.mo
@@ -149,6 +149,7 @@ share/locale/vi/LC_MESSAGES/kmimetypefinder.mo
 share/locale/vi/LC_MESSAGES/kmousetool.mo
 share/locale/vi/LC_MESSAGES/kmouth.mo
 share/locale/vi/LC_MESSAGES/kmplot.mo
+share/locale/vi/LC_MESSAGES/knavalbattle.mo
 share/locale/vi/LC_MESSAGES/knetattach.mo
 share/locale/vi/LC_MESSAGES/knotify4.mo
 share/locale/vi/LC_MESSAGES/konqueror.mo

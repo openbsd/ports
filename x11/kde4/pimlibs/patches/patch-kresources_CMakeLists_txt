@@ -1,8 +1,8 @@
-$OpenBSD: patch-kresources_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kresources_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kresources/CMakeLists.txt.orig	Wed Nov  6 10:18:11 2013
-+++ kresources/CMakeLists.txt	Wed Nov  6 10:18:29 2013
-@@ -40,7 +40,7 @@ set(kcm_kresources_PART_SRCS kcmkresources.cpp)
+--- kresources/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kresources/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -49,7 +49,7 @@ set(kcm_kresources_PART_SRCS kcmkresources.cpp)
  
  kde4_add_plugin(kcm_kresources ${kcm_kresources_PART_SRCS})
  

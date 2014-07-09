@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/15 19:42:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:30 zhuk Exp $
 
 COMMENT =	convert PO files to XML
 DISTNAME =	poxml-${MODKDE4_VERSION}
@@ -6,7 +6,7 @@ DISTNAME =	poxml-${MODKDE4_VERSION}
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/poxml
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtXml
 
 MODULES =	devel/gettext

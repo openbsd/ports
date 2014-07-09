@@ -1,0 +1,18 @@
+$OpenBSD: patch-libdialogpages_viewsettings_h,v 1.1 2014/07/09 20:03:26 zhuk Exp $
+Unbreak build.
+Review: https://git.reviewboard.kde.org/r/119024/
+Committed: 339537ae5ecc7952c716140029564a212e4a9a4b
+--- libdialogpages/viewsettings.h.orig	Fri Jun 27 03:14:27 2014
++++ libdialogpages/viewsettings.h	Fri Jun 27 03:15:18 2014
+@@ -21,8 +21,9 @@
+ #include <QtGui/QColor>
+ #include <QtGui/QWidget>
+ 
+-#include "difference.h"
+-#include "settingsbase.h"
++#include <difference.h>
++#include <settingsbase.h>
++
+ #include "dialogpagesexport.h"
+ 
+ class DIALOGPAGES_EXPORT ViewSettings : public SettingsBase

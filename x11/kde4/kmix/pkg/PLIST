@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:20 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/09 20:03:26 zhuk Exp $
 @conflict kdemultimedia-<4
 @bin bin/kmix
 @bin bin/kmixctrl
+bin/kmixremote
 lib/kde4/kded_kmixd.so
 lib/kde4/plasma_engine_mixer.so
 lib/libkdeinit4_kmix.so
@@ -45,7 +46,9 @@ share/doc/HTML/en/kmix/
 share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
-share/doc/HTML/en/kmix/kmix-configure.png
+share/doc/HTML/en/kmix/kmix-configure-general.png
+share/doc/HTML/en/kmix/kmix-configure-sound-menu.png
+share/doc/HTML/en/kmix/kmix-configure-start.png
 share/doc/HTML/en/kmix/kmix-file.png
 share/doc/HTML/en/kmix/kmix-master.png
 share/doc/HTML/en/kmix/kmix-options.png

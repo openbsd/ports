@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_ProcessInfo_cpp,v 1.2 2014/01/30 21:28:42 zhuk Exp $
+$OpenBSD: patch-src_ProcessInfo_cpp,v 1.3 2014/07/09 20:03:27 zhuk Exp $
 Fix sysctl(3) error handling.
---- src/ProcessInfo.cpp.orig	Mon Jan 27 14:10:44 2014
-+++ src/ProcessInfo.cpp	Fri Jan 31 01:25:37 2014
-@@ -734,38 +734,28 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
+--- src/ProcessInfo.cpp.orig	Wed May  7 17:44:07 2014
++++ src/ProcessInfo.cpp	Fri Jun 27 02:01:25 2014
+@@ -738,38 +738,28 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
  
  private:
      virtual bool readProcInfo(int aPid) {
@@ -52,7 +52,7 @@ Fix sysctl(3) error handling.
          return true;
      }
  
-@@ -781,7 +771,7 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
+@@ -785,7 +775,7 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
          managementInfoBase[2] = aPid;
          managementInfoBase[3] = whatMib;
  
@@ -61,7 +61,7 @@ Fix sysctl(3) error handling.
              len *= 2;
              nbuf = realloc(buf, len);
              if (nbuf == NULL) {
-@@ -790,8 +780,13 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
+@@ -794,8 +784,13 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
  
              buf = nbuf;
              rc = ::sysctl(managementInfoBase, 4, buf, &len, NULL, 0);

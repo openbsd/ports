@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2013/12/08 19:13:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/07/09 20:03:29 zhuk Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
 
-DPB_PROPERTIES =	parallel
-
-SHARED_LIBS =	nepomukcore		52.0 # 4.9
+SHARED_LIBS =	nepomukcore		52.1 # 4.9
 #SHARED_LIBS +=	nepomuksync		0.0 # 4.9
-SHARED_LIBS +=	nepomukcommon		52.0 # 4.10
-SHARED_LIBS +=	kdeinit4_nepomukserver	52.0 # 4.10
-SHARED_LIBS +=	nepomukextractor	52.0
-SHARED_LIBS +=	nepomukcleaner		0.0
+SHARED_LIBS +=	nepomukcommon		52.1 # 4.10
+SHARED_LIBS +=	kdeinit4_nepomukserver	52.1 # 4.10
+SHARED_LIBS +=	nepomukextractor	52.1
+SHARED_LIBS +=	nepomukcleaner		0.1
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/baloocore ${KDE4LIB}/baloofiles ${KDE4LIB}/baloopim
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kidletime ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/solid
 WANTLIB += avcodec avformat avutil epub exiv2 poppler-qt4 soprano
@@ -33,9 +32,9 @@ LIB_DEPENDS =	audio/taglib \
 		graphics/exiv2 \
 		graphics/ffmpeg \
 		print/poppler,,-qt4 \
-		textproc/ebook-tools
+		textproc/ebook-tools \
+		${MODKDE4_DEP_DIR}/baloo>=${MODKDE4_DEP_VERSION}
 
-# turns on indexing, let user make decision, default=no by GNOME & KDE
-#RUN_DEPENDS +=	databases/virtuoso
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_QMobipocket=True
 
 .include <bsd.port.mk>

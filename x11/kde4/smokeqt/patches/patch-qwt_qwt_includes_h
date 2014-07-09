@@ -1,7 +1,7 @@
-$OpenBSD: patch-qwt_qwt_includes_h,v 1.1.1.1 2013/04/24 19:06:07 zhuk Exp $
---- qwt/qwt_includes.h.orig	Sun Oct  9 20:54:42 2011
-+++ qwt/qwt_includes.h	Sun Oct  9 20:58:17 2011
-@@ -50,7 +50,8 @@
+$OpenBSD: patch-qwt_qwt_includes_h,v 1.2 2014/07/09 20:03:31 zhuk Exp $
+--- qwt/qwt_includes.h.orig	Sun Nov 24 20:25:24 2013
++++ qwt/qwt_includes.h	Fri May 16 19:28:27 2014
+@@ -52,7 +52,8 @@
  #include <qwt_plot_scaleitem.h>
  #include <qwt_plot_spectrogram.h>
  

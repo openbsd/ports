@@ -1,5 +1,5 @@
-$OpenBSD: patch-kcalcore_config-kcalcore_h_cmake,v 1.2 2013/12/08 19:13:33 zhuk Exp $
-Unbreak build with OpenBSD UUID library specifics.
+$OpenBSD: patch-kcalcore_config-kcalcore_h_cmake,v 1.3 2014/07/09 20:03:30 zhuk Exp $
+Allow UUID library to be found even if not in default search path.
 --- kcalcore/config-kcalcore.h.cmake.orig	Tue Jul  2 19:26:28 2013
 +++ kcalcore/config-kcalcore.h.cmake	Tue Jul  2 19:27:02 2013
 @@ -1,5 +1,5 @@

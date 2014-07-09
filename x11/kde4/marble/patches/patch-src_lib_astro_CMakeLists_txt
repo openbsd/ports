@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_astro_CMakeLists_txt,v 1.1 2014/07/09 20:03:29 zhuk Exp $
+--- src/lib/astro/CMakeLists.txt.ports.orig	Tue Jun  3 14:58:40 2014
++++ src/lib/astro/CMakeLists.txt	Tue Jun  3 14:58:51 2014
+@@ -9,8 +9,6 @@ INCLUDE_DIRECTORIES(
+ SET(GENERIC_LIB_VERSION "0.17.20")
+ SET(GENERIC_LIB_SOVERSION "1")
+ 
+-ADD_DEFINITIONS(-O3)
+-
+ SET(astrolib_SRCS 
+   astrolib.cpp
+   astr2lib.cpp

@@ -1,0 +1,16 @@
+$OpenBSD: patch-kompare_shell_h,v 1.1 2014/07/09 20:03:26 zhuk Exp $
+Unbreak build.
+Review: https://git.reviewboard.kde.org/r/119024/
+Committed: 339537ae5ecc7952c716140029564a212e4a9a4b
+--- kompare_shell.h.orig	Fri Jun 27 03:04:21 2014
++++ kompare_shell.h	Fri Jun 27 03:04:43 2014
+@@ -21,8 +21,7 @@
+ 
+ #include <kapplication.h>
+ #include <kparts/mainwindow.h>
+-
+-#include "kompare.h"
++#include <kompare.h>
+ 
+ class KompareInterface;
+ namespace KParts {

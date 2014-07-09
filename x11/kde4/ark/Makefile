@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/08 19:13:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/09 20:03:23 zhuk Exp $
 
 COMMENT =	KDE file archiver
 DISTNAME =	ark-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kerfuffle	51.0 # 4.7
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml ${KDE4LIB}/kio

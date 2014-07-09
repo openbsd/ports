@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-et,v 1.5 2014/01/15 19:42:11 zhuk Exp $
+@comment $OpenBSD: PLIST-et,v 1.6 2014/07/09 20:03:28 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/et.txt
@@ -152,10 +152,6 @@ share/doc/HTML/et/katomic/
 share/doc/HTML/et/katomic/common
 share/doc/HTML/et/katomic/index.cache.bz2
 share/doc/HTML/et/katomic/index.docbook
-share/doc/HTML/et/kbattleship/
-share/doc/HTML/et/kbattleship/common
-share/doc/HTML/et/kbattleship/index.cache.bz2
-share/doc/HTML/et/kbattleship/index.docbook
 share/doc/HTML/et/kblackbox/
 share/doc/HTML/et/kblackbox/common
 share/doc/HTML/et/kblackbox/index.cache.bz2
@@ -435,10 +431,6 @@ share/doc/HTML/et/kcontrol/solid-device-automounter/
 share/doc/HTML/et/kcontrol/solid-device-automounter/common
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.docbook
-share/doc/HTML/et/kcontrol/solid-hardware/
-share/doc/HTML/et/kcontrol/solid-hardware/common
-share/doc/HTML/et/kcontrol/solid-hardware/index.cache.bz2
-share/doc/HTML/et/kcontrol/solid-hardware/index.docbook
 share/doc/HTML/et/kcontrol/spellchecking/
 share/doc/HTML/et/kcontrol/spellchecking/common
 share/doc/HTML/et/kcontrol/spellchecking/index.cache.bz2
@@ -814,6 +806,10 @@ share/doc/HTML/et/kmplot/introduction.docbook
 share/doc/HTML/et/kmplot/man-kmplot.1.docbook
 share/doc/HTML/et/kmplot/reference.docbook
 share/doc/HTML/et/kmplot/using.docbook
+share/doc/HTML/et/knavalbattle/
+share/doc/HTML/et/knavalbattle/common
+share/doc/HTML/et/knavalbattle/index.cache.bz2
+share/doc/HTML/et/knavalbattle/index.docbook
 share/doc/HTML/et/knetattach/
 share/doc/HTML/et/knetattach/common
 share/doc/HTML/et/knetattach/index.cache.bz2
@@ -1145,10 +1141,10 @@ share/doc/HTML/et/kuser/
 share/doc/HTML/et/kuser/common
 share/doc/HTML/et/kuser/index.cache.bz2
 share/doc/HTML/et/kuser/index.docbook
-share/doc/HTML/et/kwallet/
-share/doc/HTML/et/kwallet/common
-share/doc/HTML/et/kwallet/index.cache.bz2
-share/doc/HTML/et/kwallet/index.docbook
+share/doc/HTML/et/kwalletmanager/
+share/doc/HTML/et/kwalletmanager/common
+share/doc/HTML/et/kwalletmanager/index.cache.bz2
+share/doc/HTML/et/kwalletmanager/index.docbook
 share/doc/HTML/et/kwatchgnupg/
 share/doc/HTML/et/kwatchgnupg/common
 share/doc/HTML/et/kwatchgnupg/index.cache.bz2
@@ -1273,10 +1269,7 @@ share/locale/et/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/et/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/et/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/et/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_next.mo
 share/locale/et/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -1284,7 +1277,6 @@ share/locale/et/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/et/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/et/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/et/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/et/LC_MESSAGES/akonadicontact.mo
@@ -1301,6 +1293,7 @@ share/locale/et/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/et/LC_MESSAGES/audiorename_plugin.mo
 share/locale/et/LC_MESSAGES/autorefresh.mo
 share/locale/et/LC_MESSAGES/babelfish.mo
+share/locale/et/LC_MESSAGES/baloowidgets.mo
 share/locale/et/LC_MESSAGES/blinken.mo
 share/locale/et/LC_MESSAGES/blogilo.mo
 share/locale/et/LC_MESSAGES/bomber.mo
@@ -1380,7 +1373,6 @@ share/locale/et/LC_MESSAGES/katetextfilter.mo
 share/locale/et/LC_MESSAGES/katexmlcheck.mo
 share/locale/et/LC_MESSAGES/katexmltools.mo
 share/locale/et/LC_MESSAGES/katomic.mo
-share/locale/et/LC_MESSAGES/kbattleship.mo
 share/locale/et/LC_MESSAGES/kblackbox.mo
 share/locale/et/LC_MESSAGES/kblankscrn.mo
 share/locale/et/LC_MESSAGES/kblocks.mo
@@ -1489,7 +1481,6 @@ share/locale/et/LC_MESSAGES/kfile_dds.mo
 share/locale/et/LC_MESSAGES/kfile_drgeo.mo
 share/locale/et/LC_MESSAGES/kfile_exr.mo
 share/locale/et/LC_MESSAGES/kfile_kig.mo
-share/locale/et/LC_MESSAGES/kfile_mail.mo
 share/locale/et/LC_MESSAGES/kfile_pnm.mo
 share/locale/et/LC_MESSAGES/kfile_raw.mo
 share/locale/et/LC_MESSAGES/kfile_rgb.mo
@@ -1543,6 +1534,8 @@ share/locale/et/LC_MESSAGES/kio_man.mo
 share/locale/et/LC_MESSAGES/kio_mbox.mo
 share/locale/et/LC_MESSAGES/kio_nepomuk.mo
 share/locale/et/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/et/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/et/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/et/LC_MESSAGES/kio_nfs.mo
 share/locale/et/LC_MESSAGES/kio_nntp.mo
 share/locale/et/LC_MESSAGES/kio_perldoc.mo
@@ -1554,9 +1547,7 @@ share/locale/et/LC_MESSAGES/kio_sieve.mo
 share/locale/et/LC_MESSAGES/kio_smb.mo
 share/locale/et/LC_MESSAGES/kio_smtp.mo
 share/locale/et/LC_MESSAGES/kio_svn.mo
-share/locale/et/LC_MESSAGES/kio_tags.mo
 share/locale/et/LC_MESSAGES/kio_thumbnail.mo
-share/locale/et/LC_MESSAGES/kio_timeline.mo
 share/locale/et/LC_MESSAGES/kio_trash.mo
 share/locale/et/LC_MESSAGES/kio_zeroconf.mo
 share/locale/et/LC_MESSAGES/kioclient.mo
@@ -1587,6 +1578,7 @@ share/locale/et/LC_MESSAGES/kmix.mo
 share/locale/et/LC_MESSAGES/kmousetool.mo
 share/locale/et/LC_MESSAGES/kmouth.mo
 share/locale/et/LC_MESSAGES/kmplot.mo
+share/locale/et/LC_MESSAGES/knavalbattle.mo
 share/locale/et/LC_MESSAGES/knetattach.mo
 share/locale/et/LC_MESSAGES/knetwalk.mo
 share/locale/et/LC_MESSAGES/knode.mo
@@ -1714,6 +1706,7 @@ share/locale/et/LC_MESSAGES/libkldap.mo
 share/locale/et/LC_MESSAGES/libkleopatra.mo
 share/locale/et/LC_MESSAGES/libkmahjongg.mo
 share/locale/et/LC_MESSAGES/libkmime.mo
+share/locale/et/LC_MESSAGES/libkomparediff2.mo
 share/locale/et/LC_MESSAGES/libkonq.mo
 share/locale/et/LC_MESSAGES/libkpgp.mo
 share/locale/et/LC_MESSAGES/libkpimidentities.mo

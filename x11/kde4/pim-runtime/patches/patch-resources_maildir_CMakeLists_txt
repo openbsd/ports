@@ -1,13 +1,13 @@
-$OpenBSD: patch-resources_maildir_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-resources_maildir_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- resources/maildir/CMakeLists.txt.orig	Wed Nov  6 20:37:11 2013
-+++ resources/maildir/CMakeLists.txt	Wed Nov  6 20:37:24 2013
-@@ -41,7 +41,7 @@ else()
- kde4_add_plugin(akonadi_maildir_resource STATIC ${maildirresource_SRCS})
- endif()
+--- resources/maildir/CMakeLists.txt.orig	Thu May  8 12:42:54 2014
++++ resources/maildir/CMakeLists.txt	Sun May 18 20:58:41 2014
+@@ -37,7 +37,7 @@ qt4_add_dbus_adaptor(maildirresource_SRCS
  
--target_link_libraries(akonadi_maildir_resource ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_AKONADI_KMIME_LIBS} maildir ${QT_QTDBUS_LIBRARY} ${KDE4_KIO_LIBS} ${KDEPIMLIBS_KMIME_LIBS} )
-+target_link_libraries(akonadi_maildir_resource maildir ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_AKONADI_KMIME_LIBS} ${QT_QTDBUS_LIBRARY} ${KDE4_KIO_LIBS} ${KDEPIMLIBS_KMIME_LIBS} )
+ kde4_add_plugin(akonadi_maildir_resource ${maildirresource_SRCS})
+ 
+-target_link_libraries(akonadi_maildir_resource ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_AKONADI_KMIME_LIBS} maildir ${QT_QTDBUS_LIBRARY} ${KDE4_KIO_LIBS} ${KDEPIMLIBS_KMIME_LIBS} folderarchivesettings )
++target_link_libraries(akonadi_maildir_resource maildir folderarchivesettings ${KDEPIMLIBS_AKONADI_KMIME_LIBS} ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KIO_LIBS} ${KDEPIMLIBS_KMIME_LIBS} ${QT_QTDBUS_LIBRARY} )
  
  install(TARGETS akonadi_maildir_resource DESTINATION ${PLUGIN_INSTALL_DIR})
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.Akonadi.Maildir.Settings.xml

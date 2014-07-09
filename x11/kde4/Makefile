@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2014/01/14 20:44:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.37 2014/07/09 20:03:22 zhuk Exp $
 
 # Build dependency tree of main building blocks:
-# OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz
+# OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
+# libqaccessibilityclient, kwebkitpart, libktorrent
 #
 # smokegen
 # +-> smokeqt
@@ -18,22 +19,22 @@
 #     +-> baseapps                                       | |||
 #     |   +-> konsole                                    | |||
 #     |                                                  | |||
-#     +-> nepomuk-core                                   | |||
-#     |   +-> kactivities                                | |||
-#     |   |   +-> pimlibs                                | |||
-#     |   |       +-> pim-runtime                        | |||
-#     |   |       +-> pim                                | |||
-#     |   |       +-> py-kde                             | |||
-#     |   |       +-> py-kde                             | |||
-#     |   |                                              | |||
-#     |   +-> runtime                                    | |||
+#     |-> kfilemetadata -->-----+                        | |||
+#     +-> pimlibs               |                        | |||
+#     |   +-> libkfbapi         |                        | |||
+#     |   +-> libkgapi          |                        | |||
+#     |   +-> pim-runtime       |                        | |||
+#     |   +-> baloo <---------<-+                        | |||
+#     |       +-> nepomuk-core                           | |||
+#     |           +-> kactivities                        | |||
+#     |               +-> runtime                        | |||
+#     |           +-> pim                |               | |||
+#     |           +-> py-kde                             | |||
 #     |                                                  | |||
 #     +-> nepomuk-core                                   | |||
 #     |   +-> kactivities -->--+------->-+               | |||
 #     |   +-> runtime <--+---<-+         |               | |||
 #     |   +-> pimlibs ->-+               |               | |||
-#     |       +-> libkfbapi              |               | |||
-#     |       +-> libkgapi               |               | |||
 #     |       +-> pim-runtime            |               | |||
 #     |       +-> pim                    |               | |||
 #     |       +-> py-kde                 |               | |||
@@ -81,8 +82,13 @@ SUBDIR += libs
 SUBDIR += pimlibs
 
 # extra base
+SUBDIR += baloo
+SUBDIR += baloo-widgets
 SUBDIR += kactivities
+SUBDIR += kfilemetadata
+SUBDIR += kqtquickcharts
 SUBDIR += nepomuk-core
+SUBDIR += nepomuk-widgets
 SUBDIR += runtime
 SUBDIR += pim-runtime
 SUBDIR += workspace
@@ -124,12 +130,13 @@ SUBDIR += kfloppy
 SUBDIR += kgpg
 SUBDIR += kremotecontrol
 SUBDIR += ktimer
-SUBDIR += kwallet
+SUBDIR += kwalletmanager
 SUBDIR += print-manager
 SUBDIR += superkaramba
 SUBDIR += sweeper
 
 # former kdeedu
+SUBDIR += artikulate
 SUBDIR += blinken
 SUBDIR += cantor
 SUBDIR += analitza
@@ -233,7 +240,6 @@ SUBDIR += ksystemlog
 SUBDIR += kuser
 
 # former kdenetwork
-SUBDIR += kdnssd
 SUBDIR += kget
 SUBDIR += kopete
 SUBDIR += kppp
@@ -241,6 +247,7 @@ SUBDIR += krdc
 SUBDIR += krfb
 SUBDIR += network-filesharing
 SUBDIR += network-strigi-analyzers
+SUBDIR += zeroconf-ioslave
 
 # former kdesdk
 SUBDIR += cervisia
@@ -250,6 +257,7 @@ SUBDIR += dolphin-plugins
 SUBDIR += kapptemplate
 SUBDIR += kcachegrind
 SUBDIR += kompare
+SUBDIR += libkomparediff2
 SUBDIR += lokalize
 SUBDIR += okteta
 SUBDIR += poxml
@@ -267,7 +275,6 @@ SUBDIR += kteatime
 SUBDIR += artwork
 SUBDIR += base-artwork
 SUBDIR += l10n
-SUBDIR += nepomuk-widgets
 SUBDIR += plasma-addons
 SUBDIR += wallpapers
 

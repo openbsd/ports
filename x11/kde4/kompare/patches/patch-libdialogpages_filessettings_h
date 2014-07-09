@@ -1,0 +1,16 @@
+$OpenBSD: patch-libdialogpages_filessettings_h,v 1.1 2014/07/09 20:03:26 zhuk Exp $
+Unbreak build.
+Review: https://git.reviewboard.kde.org/r/119024/
+Committed: 339537ae5ecc7952c716140029564a212e4a9a4b
+--- libdialogpages/filessettings.h.orig	Fri Jun 27 03:14:17 2014
++++ libdialogpages/filessettings.h	Fri Jun 27 03:15:06 2014
+@@ -20,7 +20,8 @@
+ #include <QtCore/QString>
+ #include <QtCore/QStringList>
+ 
+-#include "settingsbase.h"
++#include <settingsbase.h>
++
+ #include "dialogpagesexport.h"
+ 
+ class KConfig;

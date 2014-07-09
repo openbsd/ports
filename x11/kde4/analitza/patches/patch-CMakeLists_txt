@@ -1,24 +1,31 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 11:21:42 zhuk Exp $
---- CMakeLists.txt.orig	Sat Dec  1 00:39:20 2012
-+++ CMakeLists.txt	Mon Dec 17 23:32:52 2012
-@@ -9,8 +9,16 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/07/09 20:03:23 zhuk Exp $
+Use correct check for building console client because curses should
+be found and linked, too.
+Review: https://git.reviewboard.kde.org/r/118959/
+Committed: 04683524c195a5b1a92874980a52de4c246d76e5
+--- CMakeLists.txt.orig	Sat Feb 15 21:03:35 2014
++++ CMakeLists.txt	Fri Jun 27 02:46:55 2014
+@@ -8,9 +8,18 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY
+ 
  #Checking whether we can compile calgebra
  include(CheckIncludeFiles)
++
++set(CURSES_NEED_NCURSES TRUE)
++macro_optional_find_package(Curses)
  macro_optional_find_package(Readline)
-+macro_optional_find_package(Ncurses)
- macro_bool_to_01(READLINE_FOUND HAVE_READLINE)
-+macro_bool_to_01(NCURSES_FOUND HAVE_NCURSES)
-+if(READLINE_FOUND AND NCURSES_FOUND)
+-macro_bool_to_01(READLINE_FOUND HAVE_READLINE)
++
++if(READLINE_FOUND AND CURSES_FOUND)
 +       set(CONSOLE_SUPPORTED TRUE)
-+else(READLINE_FOUND AND NCURSES_FOUND)
++else(READLINE_FOUND AND CURSES_FOUND)
 +       set(CONSOLE_SUPPORTED FALSE)
-+endif(READLINE_FOUND AND NCURSES_FOUND)
++endif(READLINE_FOUND AND CURSES_FOUND)
  macro_log_feature(READLINE_FOUND "GNU Readline" "Allows KAlgebra to provide a console interface." "http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html" FALSE "" "")
 +macro_log_feature(READLINE_FOUND "NCurses" "Allows KAlgebra to provide a console interface." "http://www.gnu.org/software/ncurses/" FALSE "" "")
  
  macro_optional_find_package(OpenGL)
  macro_bool_to_01(OPENGL_FOUND HAVE_OPENGL)
-@@ -22,9 +30,9 @@ add_definitions (-DQT_USE_FAST_CONCATENATION -DQT_USE_
+@@ -25,9 +34,9 @@ set(ANALITZA_LIB_SOVERSION "5")
  add_subdirectory(analitza)
  add_subdirectory(analitzaplot)
  add_subdirectory(analitzagui)

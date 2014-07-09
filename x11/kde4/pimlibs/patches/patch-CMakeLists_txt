@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/07/09 20:03:30 zhuk Exp $
 Unbreak build.
---- CMakeLists.txt.orig	Fri Nov  1 19:49:27 2013
-+++ CMakeLists.txt	Tue Nov  5 19:27:28 2013
-@@ -152,6 +152,8 @@ else()
+--- CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -135,6 +135,8 @@ else()
    set(LIBRARY_TYPE SHARED)
  endif()
  

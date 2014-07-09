@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/12/08 19:13:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/07/09 20:03:29 zhuk Exp $
 @unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
 share/icons/oxygen/
 share/icons/oxygen/128x128/
@@ -93,7 +93,6 @@ share/icons/oxygen/128x128/actions/window-duplicate.png
 share/icons/oxygen/128x128/actions/zoom-fit-best.png
 share/icons/oxygen/128x128/actions/zoom-fit-height.png
 share/icons/oxygen/128x128/actions/zoom-fit-width.png
-share/icons/oxygen/128x128/animations/
 share/icons/oxygen/128x128/apps/
 share/icons/oxygen/128x128/apps/Charm.png
 share/icons/oxygen/128x128/apps/accessories-calculator.png
@@ -334,8 +333,6 @@ share/icons/oxygen/128x128/emotes/face-smile.png
 share/icons/oxygen/128x128/emotes/face-surprise.png
 share/icons/oxygen/128x128/emotes/face-uncertain.png
 share/icons/oxygen/128x128/emotes/face-wink.png
-share/icons/oxygen/128x128/filesystems/
-share/icons/oxygen/128x128/intl/
 share/icons/oxygen/128x128/mimetypes/
 share/icons/oxygen/128x128/mimetypes/application-epub+zip.png
 share/icons/oxygen/128x128/mimetypes/application-illustrator.png
@@ -1336,6 +1333,7 @@ share/icons/oxygen/16x16/apps/kjournal.png
 share/icons/oxygen/16x16/apps/klipper.png
 share/icons/oxygen/16x16/apps/kmag.png
 share/icons/oxygen/16x16/apps/kmplayer.png
+share/icons/oxygen/16x16/apps/knetattach.png
 share/icons/oxygen/16x16/apps/knewsticker.png
 share/icons/oxygen/16x16/apps/knotes.png
 share/icons/oxygen/16x16/apps/kolf.png
@@ -1551,8 +1549,6 @@ share/icons/oxygen/16x16/emotes/face-smile.png
 share/icons/oxygen/16x16/emotes/face-surprise.png
 share/icons/oxygen/16x16/emotes/face-uncertain.png
 share/icons/oxygen/16x16/emotes/face-wink.png
-share/icons/oxygen/16x16/filesystems/
-share/icons/oxygen/16x16/intl/
 share/icons/oxygen/16x16/mimetypes/
 share/icons/oxygen/16x16/mimetypes/application-epub+zip.png
 share/icons/oxygen/16x16/mimetypes/application-illustrator.png
@@ -2622,6 +2618,7 @@ share/icons/oxygen/22x22/apps/kjournal.png
 share/icons/oxygen/22x22/apps/klipper.png
 share/icons/oxygen/22x22/apps/kmag.png
 share/icons/oxygen/22x22/apps/kmplayer.png
+share/icons/oxygen/22x22/apps/knetattach.png
 share/icons/oxygen/22x22/apps/knotes.png
 share/icons/oxygen/22x22/apps/kolf.png
 share/icons/oxygen/22x22/apps/konqueror.png
@@ -2880,8 +2877,6 @@ share/icons/oxygen/22x22/emotes/opinion-no.png
 share/icons/oxygen/22x22/emotes/opinion-okay.png
 share/icons/oxygen/22x22/emotes/rose-wilted.png
 share/icons/oxygen/22x22/emotes/rose.png
-share/icons/oxygen/22x22/filesystems/
-share/icons/oxygen/22x22/intl/
 share/icons/oxygen/22x22/mimetypes/
 share/icons/oxygen/22x22/mimetypes/application-epub+zip.png
 share/icons/oxygen/22x22/mimetypes/application-illustrator.png
@@ -3320,6 +3315,7 @@ share/icons/oxygen/256x256/apps/kig.png
 share/icons/oxygen/256x256/apps/kivio.png
 share/icons/oxygen/256x256/apps/kmag.png
 share/icons/oxygen/256x256/apps/kmail2.png
+share/icons/oxygen/256x256/apps/knetattach.png
 share/icons/oxygen/256x256/apps/konqueror.png
 share/icons/oxygen/256x256/apps/kontact-import-wizard.png
 share/icons/oxygen/256x256/apps/korgac.png
@@ -4366,6 +4362,7 @@ share/icons/oxygen/32x32/apps/kjournal.png
 share/icons/oxygen/32x32/apps/klipper.png
 share/icons/oxygen/32x32/apps/kmag.png
 share/icons/oxygen/32x32/apps/kmplayer.png
+share/icons/oxygen/32x32/apps/knetattach.png
 share/icons/oxygen/32x32/apps/knewsticker.png
 share/icons/oxygen/32x32/apps/knotes.png
 share/icons/oxygen/32x32/apps/kolf.png
@@ -4589,8 +4586,6 @@ share/icons/oxygen/32x32/emotes/face-smile.png
 share/icons/oxygen/32x32/emotes/face-surprise.png
 share/icons/oxygen/32x32/emotes/face-uncertain.png
 share/icons/oxygen/32x32/emotes/face-wink.png
-share/icons/oxygen/32x32/filesystems/
-share/icons/oxygen/32x32/intl/
 share/icons/oxygen/32x32/mimetypes/
 share/icons/oxygen/32x32/mimetypes/application-epub+zip.png
 share/icons/oxygen/32x32/mimetypes/application-illustrator.png
@@ -5618,6 +5613,7 @@ share/icons/oxygen/48x48/apps/kjournal.png
 share/icons/oxygen/48x48/apps/klipper.png
 share/icons/oxygen/48x48/apps/kmag.png
 share/icons/oxygen/48x48/apps/kmplayer.png
+share/icons/oxygen/48x48/apps/knetattach.png
 share/icons/oxygen/48x48/apps/knewsticker.png
 share/icons/oxygen/48x48/apps/knotes.png
 share/icons/oxygen/48x48/apps/kolf.png
@@ -5826,8 +5822,6 @@ share/icons/oxygen/48x48/emotes/face-smile.png
 share/icons/oxygen/48x48/emotes/face-surprise.png
 share/icons/oxygen/48x48/emotes/face-uncertain.png
 share/icons/oxygen/48x48/emotes/face-wink.png
-share/icons/oxygen/48x48/filesystems/
-share/icons/oxygen/48x48/intl/
 share/icons/oxygen/48x48/mimetypes/
 share/icons/oxygen/48x48/mimetypes/application-epub+zip.png
 share/icons/oxygen/48x48/mimetypes/application-illustrator.png
@@ -6316,7 +6310,6 @@ share/icons/oxygen/64x64/actions/window-duplicate.png
 share/icons/oxygen/64x64/actions/zoom-fit-best.png
 share/icons/oxygen/64x64/actions/zoom-fit-height.png
 share/icons/oxygen/64x64/actions/zoom-fit-width.png
-share/icons/oxygen/64x64/animations/
 share/icons/oxygen/64x64/apps/
 share/icons/oxygen/64x64/apps/Charm.png
 share/icons/oxygen/64x64/apps/accessories-calculator.png
@@ -6551,8 +6544,6 @@ share/icons/oxygen/64x64/emotes/face-smile.png
 share/icons/oxygen/64x64/emotes/face-surprise.png
 share/icons/oxygen/64x64/emotes/face-uncertain.png
 share/icons/oxygen/64x64/emotes/face-wink.png
-share/icons/oxygen/64x64/filesystems/
-share/icons/oxygen/64x64/intl/
 share/icons/oxygen/64x64/mimetypes/
 share/icons/oxygen/64x64/mimetypes/application-epub+zip.png
 share/icons/oxygen/64x64/mimetypes/application-illustrator.png

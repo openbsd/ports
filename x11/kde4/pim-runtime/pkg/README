@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2014/07/04 13:00:37 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/07/09 20:03:30 zhuk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -24,19 +24,7 @@ $OpenBSD: README,v 1.2 2014/07/04 13:00:37 ajacoutot Exp $
    recommend is called "SQLite (original)" here.
 
 
-2) Mail search relies on the Nepomuk indexing. Sometimes Nepomuk
-   Storage service goes down and you don't get noticed, until KMail
-   says that indexing service is not available. In this case you can
-   run the following command:
-
-     $ ${LOCALBASE}/bin/nepomukstorage &
-
-   This will start Nepomuk Storage service in background and, after
-   some time (when indexing will end) you'll be able to search for PIM
-   data.
-
-
-3) At the moment, Akonadi framework behaves badly on large mail data
+2) At the moment, Akonadi framework behaves badly on large mail data
    storage (5000+ mails). This is an upstream issue and could not be
    fixed easily. If you want to help improving situation, start by
    reading source code of productivity/akonadi and x11/kde4/pimlibs

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/25 14:12:54 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/09 20:03:29 zhuk Exp $
 @option no-default-conflict
 @conflict libkexiv2->=4
 include/kde4/libkexiv2/
@@ -15,6 +15,11 @@ include/kde4/libkexiv2/version.h
 lib/cmake/Kexiv2/
 lib/cmake/Kexiv2/Kexiv2Config.cmake
 lib/cmake/Kexiv2/Kexiv2ConfigVersion.cmake
+lib/cmake/libkexiv2-2.3.1/
+lib/cmake/libkexiv2-2.3.1/libkexiv2-config-version.cmake
+lib/cmake/libkexiv2-2.3.1/libkexiv2-config.cmake
+lib/cmake/libkexiv2-2.3.1/libkexiv2-export${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/libkexiv2-2.3.1/libkexiv2-export.cmake
 @lib ${KDE4LIB}/libkexiv2.so.${LIBkexiv2_VERSION}
 @lib lib/libkexiv2.so.${LIBkexiv2_VERSION}
 @comment lib/pkgconfig/libkexiv2.pc

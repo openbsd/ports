@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/01/16 09:15:49 zhuk Exp $
-@bin bin/akonadi_benchmarker
-@bin bin/akonaditest
+@comment $OpenBSD: PLIST,v 1.15 2014/07/09 20:03:30 zhuk Exp $
+@conflict kdepim-runtime-<4.13
+@bin bin/akonadi2xml
 include/kde4/KDE/Akonadi/
 include/kde4/KDE/Akonadi/AgentBase
 include/kde4/KDE/Akonadi/AgentFactory
@@ -15,6 +15,7 @@ include/kde4/KDE/Akonadi/AgentTypeDialog
 include/kde4/KDE/Akonadi/AgentTypeModel
 include/kde4/KDE/Akonadi/AgentTypeWidget
 include/kde4/KDE/Akonadi/Attribute
+include/kde4/KDE/Akonadi/AttributeEntity
 include/kde4/KDE/Akonadi/AttributeFactory
 include/kde4/KDE/Akonadi/CachePolicy
 include/kde4/KDE/Akonadi/Calendar/
@@ -27,10 +28,12 @@ include/kde4/KDE/Akonadi/Calendar/FetchJobCalendar
 include/kde4/KDE/Akonadi/Calendar/FreeBusyManager
 include/kde4/KDE/Akonadi/Calendar/FreeBusyProviderBase
 include/kde4/KDE/Akonadi/Calendar/History
+include/kde4/KDE/Akonadi/Calendar/ICalImporter
 include/kde4/KDE/Akonadi/Calendar/ITIPHandler
 include/kde4/KDE/Akonadi/Calendar/IncidenceChanger
 include/kde4/KDE/Akonadi/Calendar/PublishDialog
 include/kde4/KDE/Akonadi/Calendar/StandardCalendarActionManager
+include/kde4/KDE/Akonadi/Calendar/TodoPurger
 include/kde4/KDE/Akonadi/ChangeRecorder
 include/kde4/KDE/Akonadi/Collection
 include/kde4/KDE/Akonadi/CollectionAttributesSynchronizationJob
@@ -81,6 +84,7 @@ include/kde4/KDE/Akonadi/Control
 include/kde4/KDE/Akonadi/DBusConnectionPool
 include/kde4/KDE/Akonadi/ETMViewStateSaver
 include/kde4/KDE/Akonadi/Entity
+include/kde4/KDE/Akonadi/EntityAnnotationsAttribute
 include/kde4/KDE/Akonadi/EntityDisplayAttribute
 include/kde4/KDE/Akonadi/EntityHiddenAttribute
 include/kde4/KDE/Akonadi/EntityListView
@@ -131,6 +135,7 @@ include/kde4/KDE/Akonadi/RecursiveCollectionFilterProxyModel
 include/kde4/KDE/Akonadi/RecursiveItemFetchJob
 include/kde4/KDE/Akonadi/ResourceBase
 include/kde4/KDE/Akonadi/SearchCreateJob
+include/kde4/KDE/Akonadi/SearchQuery
 include/kde4/KDE/Akonadi/ServerManager
 include/kde4/KDE/Akonadi/Session
 include/kde4/KDE/Akonadi/SocialUtils/
@@ -138,6 +143,17 @@ include/kde4/KDE/Akonadi/SocialUtils/ImageProvider
 include/kde4/KDE/Akonadi/SocialUtils/SocialFeedItem
 include/kde4/KDE/Akonadi/SocialUtils/SocialNetworkAttributes
 include/kde4/KDE/Akonadi/StandardActionManager
+include/kde4/KDE/Akonadi/Tag
+include/kde4/KDE/Akonadi/TagAttribute
+include/kde4/KDE/Akonadi/TagCreateJob
+include/kde4/KDE/Akonadi/TagDeleteJob
+include/kde4/KDE/Akonadi/TagFetchJob
+include/kde4/KDE/Akonadi/TagFetchScope
+include/kde4/KDE/Akonadi/TagManagementDialog
+include/kde4/KDE/Akonadi/TagModel
+include/kde4/KDE/Akonadi/TagModifyJob
+include/kde4/KDE/Akonadi/TagSelectionDialog
+include/kde4/KDE/Akonadi/TagWidget
 include/kde4/KDE/Akonadi/TransactionBeginJob
 include/kde4/KDE/Akonadi/TransactionCommitJob
 include/kde4/KDE/Akonadi/TransactionRollbackJob
@@ -395,6 +411,8 @@ include/kde4/KDE/KPIMUtils/
 include/kde4/KDE/KPIMUtils/Email
 include/kde4/KDE/KPIMUtils/KFileIO
 include/kde4/KDE/KPIMUtils/LinkLocator
+include/kde4/KDE/KPIMUtils/ProgressIndicatorLabel
+include/kde4/KDE/KPIMUtils/ProgressIndicatorWidget
 include/kde4/KDE/KPIMUtils/SpellingFilter
 include/kde4/KDE/KResources/
 include/kde4/KDE/KResources/ConfigDialog
@@ -480,6 +498,7 @@ include/kde4/akonadi/agenttypemodel.h
 include/kde4/akonadi/agenttypewidget.h
 include/kde4/akonadi/akonadi_export.h
 include/kde4/akonadi/attribute.h
+include/kde4/akonadi/attributeentity.h
 include/kde4/akonadi/attributefactory.h
 include/kde4/akonadi/cachepolicy.h
 include/kde4/akonadi/cachepolicypage.h
@@ -494,10 +513,12 @@ include/kde4/akonadi/calendar/fetchjobcalendar.h
 include/kde4/akonadi/calendar/freebusymanager.h
 include/kde4/akonadi/calendar/freebusyproviderbase.h
 include/kde4/akonadi/calendar/history.h
+include/kde4/akonadi/calendar/icalimporter.h
 include/kde4/akonadi/calendar/incidencechanger.h
 include/kde4/akonadi/calendar/itiphandler.h
 include/kde4/akonadi/calendar/publishdialog.h
 include/kde4/akonadi/calendar/standardcalendaractionmanager.h
+include/kde4/akonadi/calendar/todopurger.h
 include/kde4/akonadi/changerecorder.h
 include/kde4/akonadi/collection.h
 include/kde4/akonadi/collectionattributessynchronizationjob.h
@@ -512,6 +533,7 @@ include/kde4/akonadi/collectionfilterproxymodel.h
 include/kde4/akonadi/collectionmodel.h
 include/kde4/akonadi/collectionmodifyjob.h
 include/kde4/akonadi/collectionmovejob.h
+include/kde4/akonadi/collectionpathresolver_p.h
 include/kde4/akonadi/collectionpropertiesdialog.h
 include/kde4/akonadi/collectionpropertiespage.h
 include/kde4/akonadi/collectionquotaattribute.h
@@ -544,6 +566,7 @@ include/kde4/akonadi/contact/contactviewerdialog.h
 include/kde4/akonadi/contact/emailaddressselection.h
 include/kde4/akonadi/contact/emailaddressselectiondialog.h
 include/kde4/akonadi/contact/emailaddressselectionwidget.h
+include/kde4/akonadi/contact/improtocols.h
 include/kde4/akonadi/contact/recentcontactscollectionrequestjob.h
 include/kde4/akonadi/contact/standardcontactactionmanager.h
 include/kde4/akonadi/contact/standardcontactformatter.h
@@ -552,6 +575,7 @@ include/kde4/akonadi/control.h
 include/kde4/akonadi/dbusconnectionpool.h
 include/kde4/akonadi/differencesalgorithminterface.h
 include/kde4/akonadi/entity.h
+include/kde4/akonadi/entityannotationsattribute.h
 include/kde4/akonadi/entitydeletedattribute.h
 include/kde4/akonadi/entitydisplayattribute.h
 include/kde4/akonadi/entityhiddenattribute.h
@@ -565,6 +589,7 @@ include/kde4/akonadi/entitytreeviewstatesaver.h
 include/kde4/akonadi/etmviewstatesaver.h
 include/kde4/akonadi/exception.h
 include/kde4/akonadi/favoritecollectionsmodel.h
+include/kde4/akonadi/gidextractorinterface.h
 include/kde4/akonadi/indexpolicyattribute.h
 include/kde4/akonadi/item.h
 include/kde4/akonadi/itemcopyjob.h
@@ -622,6 +647,7 @@ include/kde4/akonadi/resourcebasesettings.h
 include/kde4/akonadi/resourcesettings.h
 include/kde4/akonadi/resourcesynchronizationjob.h
 include/kde4/akonadi/searchcreatejob.h
+include/kde4/akonadi/searchquery.h
 include/kde4/akonadi/selectionproxymodel.h
 include/kde4/akonadi/servermanager.h
 include/kde4/akonadi/session.h
@@ -635,6 +661,17 @@ include/kde4/akonadi/specialcollectionsdiscoveryjob.h
 include/kde4/akonadi/specialcollectionsrequestjob.h
 include/kde4/akonadi/standardactionmanager.h
 include/kde4/akonadi/statisticsproxymodel.h
+include/kde4/akonadi/tag.h
+include/kde4/akonadi/tagattribute.h
+include/kde4/akonadi/tagcreatejob.h
+include/kde4/akonadi/tagdeletejob.h
+include/kde4/akonadi/tagfetchjob.h
+include/kde4/akonadi/tagfetchscope.h
+include/kde4/akonadi/tagmanagementdialog.h
+include/kde4/akonadi/tagmodel.h
+include/kde4/akonadi/tagmodifyjob.h
+include/kde4/akonadi/tagselectiondialog.h
+include/kde4/akonadi/tagwidget.h
 include/kde4/akonadi/transactionjobs.h
 include/kde4/akonadi/transactionsequence.h
 include/kde4/akonadi/transportresourcebase.h
@@ -643,6 +680,12 @@ include/kde4/akonadi/trashjob.h
 include/kde4/akonadi/trashrestorejob.h
 include/kde4/akonadi/trashsettings.h
 include/kde4/akonadi/unlinkjob.h
+include/kde4/akonadi/xml/
+include/kde4/akonadi/xml/akonadi-xml_export.h
+include/kde4/akonadi/xml/xmldocument.h
+include/kde4/akonadi/xml/xmlreader.h
+include/kde4/akonadi/xml/xmlwritejob.h
+include/kde4/akonadi/xml/xmlwriter.h
 include/kde4/gpgme++/
 include/kde4/gpgme++/assuanresult.h
 include/kde4/gpgme++/configuration.h
@@ -896,9 +939,6 @@ include/kde4/kimap/setquotajob.h
 include/kde4/kimap/storejob.h
 include/kde4/kimap/subscribejob.h
 include/kde4/kimap/unsubscribejob.h
-include/kde4/kimaptest/
-include/kde4/kimaptest/fakeserver.h
-include/kde4/kimaptest/mockjob.h
 include/kde4/kldap/
 include/kde4/kldap/ber.h
 include/kde4/kldap/kldap_export.h
@@ -970,6 +1010,7 @@ include/kde4/kpimutils/kpimutils_export.h
 include/kde4/kpimutils/linklocator.h
 include/kde4/kpimutils/networkaccesshelper.h
 include/kde4/kpimutils/processes.h
+include/kde4/kpimutils/progressindicatorlabel.h
 include/kde4/kpimutils/progressindicatorwidget.h
 include/kde4/kpimutils/spellingfilter.h
 include/kde4/kpimutils/supertrait.h
@@ -979,6 +1020,7 @@ include/kde4/kresources/configpage.h
 include/kde4/kresources/configwidget.h
 include/kde4/kresources/factory.h
 include/kde4/kresources/idmapper.h
+include/kde4/kresources/kcmkresources_export.h
 include/kde4/kresources/kresources_export.h
 include/kde4/kresources/manager.h
 include/kde4/kresources/managerimpl.h
@@ -1130,6 +1172,7 @@ lib/kde4/kio_smtp.so
 @lib ${KDE4LIB}/libakonadi-kmime.so.${LIBakonadi-kmime_VERSION}
 @lib ${KDE4LIB}/libakonadi-notes.so.${LIBakonadi-notes_VERSION}
 @lib ${KDE4LIB}/libakonadi-socialutils.so.${LIBakonadi-socialutils_VERSION}
+@lib ${KDE4LIB}/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
 @lib ${KDE4LIB}/libgpgme++-pthread.so.${LIBgpgme++-pthread_VERSION}
 @lib ${KDE4LIB}/libgpgme++.so.${LIBgpgme++_VERSION}
 @lib ${KDE4LIB}/libkabc.so.${LIBkabc_VERSION}
@@ -1165,6 +1208,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libakonadi-kmime.so.${LIBakonadi-kmime_VERSION}
 @lib lib/libakonadi-notes.so.${LIBakonadi-notes_VERSION}
 @lib lib/libakonadi-socialutils.so.${LIBakonadi-socialutils_VERSION}
+@lib lib/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
 @lib lib/libgpgme++-pthread.so.${LIBgpgme++-pthread_VERSION}
 @lib lib/libgpgme++.so.${LIBgpgme++_VERSION}
 @lib lib/libkabc.so.${LIBkabc_VERSION}
@@ -1176,7 +1220,6 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libkcalutils.so.${LIBkcalutils_VERSION}
 @lib lib/libkholidays.so.${LIBkholidays_VERSION}
 @lib lib/libkimap.so.${LIBkimap_VERSION}
-@comment lib/libkimaptest.a
 @lib lib/libkldap.so.${LIBkldap_VERSION}
 @lib lib/libkmbox.so.${LIBkmbox_VERSION}
 @lib lib/libkmime.so.${LIBkmime_VERSION}
@@ -1194,6 +1237,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 share/apps/akonadi/
 share/apps/akonadi-kde/
 share/apps/akonadi-kde/kcfg2dbus.xsl
+share/apps/akonadi/akonadi-xml.xsd
 share/apps/akonadi/contact/
 share/apps/akonadi/contact/data/
 share/apps/akonadi/contact/data/zone.tab
@@ -1217,6 +1261,7 @@ share/apps/akonadi/contact/pics/world.jpg
 share/apps/akonadi/plugins/
 share/apps/akonadi/plugins/serializer/
 share/apps/akonadi/plugins/serializer/akonadi_serializer_socialfeeditem.desktop
+share/apps/cmake/modules/AkonadiMacros.cmake
 share/apps/cmake/modules/CheckTimezone.cmake
 share/apps/cmake/modules/FindGpgme.cmake
 share/apps/cmake/modules/FindLdap.cmake

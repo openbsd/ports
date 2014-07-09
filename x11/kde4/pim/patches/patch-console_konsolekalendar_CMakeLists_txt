@@ -1,0 +1,22 @@
+$OpenBSD: patch-console_konsolekalendar_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- console/konsolekalendar/CMakeLists.txt.orig	Tue Jul  1 12:54:21 2014
++++ console/konsolekalendar/CMakeLists.txt	Tue Jul  1 12:55:00 2014
+@@ -36,12 +36,13 @@ kde4_add_app_icon(konsolekalendar_SRCS "${KDE4_ICON_DI
+ kde4_add_executable(konsolekalendar NOGUI ${konsolekalendar_SRCS})
+ 
+ target_link_libraries(konsolekalendar
+-                      ${KDE4_KDECORE_LIBS}
++                      akonadi-calendar
++                      calendarsupport
++                      kdepim
+                       ${KDEPIMLIBS_KCALUTILS_LIBS}
+                       ${KDEPIMLIBS_KCALCORE_LIBS}
+-                      kdepim
+-                      calendarsupport
+-                      akonadi-calendar)
++                      ${KDE4_KDECORE_LIBS}
++                      )
+ 
+ install(TARGETS konsolekalendar  ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 

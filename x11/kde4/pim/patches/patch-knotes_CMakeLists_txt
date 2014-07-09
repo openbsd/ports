@@ -1,0 +1,38 @@
+$OpenBSD: patch-knotes_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- knotes/CMakeLists.txt.orig	Tue Jul  1 12:58:52 2014
++++ knotes/CMakeLists.txt	Tue Jul  1 13:01:02 2014
+@@ -40,7 +40,7 @@ kde4_add_kcfg_files(libknotesprivate_kcfg_lib_SRCS ${l
+ 
+ kde4_add_library(knotesprivate ${LIBRARY_TYPE} ${libknotesprivate_lib_SRCS} ${libknotesprivate_kcfg_lib_SRCS} )
+ 
+-target_link_libraries(knotesprivate kdepim ${KDE4_KIO_LIBS} pimcommon ${KDE4_KPRINTUTILS_LIBS} ${KDE4_KCMUTILS_LIBS} ${Grantlee_CORE_LIBRARIES} ${KDE4_KDNSSD_LIBS} ${KDE4_KNEWSTUFF3_LIBS} noteshared akonadi_next ${BALOO_LIBRARIES})
++target_link_libraries(knotesprivate noteshared akonadi_next kdepim pimcommon ${BALOO_LIBRARIES} ${KDE4_KPRINTUTILS_LIBS} ${KDE4_KCMUTILS_LIBS} ${KDE4_KDNSSD_LIBS} ${KDE4_KNEWSTUFF3_LIBS} ${KDE4_KIO_LIBS} ${Grantlee_CORE_LIBRARIES})
+ 
+ set_target_properties(knotesprivate
+   PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION}
+@@ -65,11 +65,21 @@ kde4_add_app_icon(knotes_SRCS "${CMAKE_CURRENT_SOURCE_
+ 
+ kde4_add_executable(knotes ${knotes_SRCS})
+ 
+-target_link_libraries(knotes knotesprivate pimcommon kdepim ${KDE4_KIO_LIBS}
+-                             ${KDE4_KCMUTILS_LIBS} ${X11_X11_LIB} ${KDEPIMLIBS_KONTACTINTERFACE_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${KDE4_KDNSSD_LIBS} noteshared
++target_link_libraries(knotes
++  knotesprivate
++  noteshared
++  akonadi_next
++  kdepim
++  pimcommon
++  ${KDEPIMLIBS_KONTACTINTERFACE_LIBS}
+   ${KDEPIMLIBS_AKONADI_LIBS}
+   ${KDEPIMLIBS_KMIME_LIBS}
+-  akonadi_next)
++  ${KDE4_KCMUTILS_LIBS}
++  ${KDE4_KPRINTUTILS_LIBS}
++  ${KDE4_KDNSSD_LIBS}
++  ${KDE4_KIO_LIBS}
++  ${X11_X11_LIB}
++  )
+ install(TARGETS knotes  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+ 
+ 

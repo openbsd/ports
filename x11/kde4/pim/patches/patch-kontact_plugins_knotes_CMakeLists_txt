@@ -1,0 +1,35 @@
+$OpenBSD: patch-kontact_plugins_knotes_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- kontact/plugins/knotes/CMakeLists.txt.orig	Tue Jul  1 13:02:46 2014
++++ kontact/plugins/knotes/CMakeLists.txt	Tue Jul  1 13:03:40 2014
+@@ -31,17 +31,17 @@ kde4_add_plugin(kontact_knotesplugin ${kontact_knotesp
+ 
+ target_link_libraries(kontact_knotesplugin 
+                       knotesprivate 
++                      noteshared 
++                      akonadi_next
++                      kdepim 
++                      pimcommon 
+                       ${KDEPIMLIBS_KCALCORE_LIBS} 
+                       ${KDEPIMLIBS_KCALUTILS_LIBS} 
+                       ${KDEPIMLIBS_KONTACTINTERFACE_LIBS} 
+                       ${KDE4_KDEPRINT_LIBS} 
+                       ${KDE4_KPARTS_LIBS} 
+-                      kdepim 
+                       ${KDE4_KPRINTUTILS_LIBS} 
+-                      pimcommon 
+                       ${KDE4_KDNSSD_LIBS} 
+-                      noteshared 
+-                      akonadi_next
+ )
+ 
+ ########### install files ###############
+@@ -50,7 +50,7 @@ set(kcm_knotessummary_PART_SRCS kcmknotessummary.cpp )
+ 
+ kde4_add_plugin(kcm_knotessummary ${kcm_knotessummary_PART_SRCS})
+ 
+-target_link_libraries(kcm_knotessummary ${KDE4_KDEUI_LIBS} ${KDEPIMLIBS_KMIME_LIBS} ${KDEPIMLIBS_AKONADI_LIBS} akonadi_next pimcommon)
++target_link_libraries(kcm_knotessummary akonadi_next pimcommon ${KDEPIMLIBS_KMIME_LIBS} ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KDEUI_LIBS})
+ 
+ 
+ install(TARGETS kcm_knotessummary DESTINATION ${PLUGIN_INSTALL_DIR})

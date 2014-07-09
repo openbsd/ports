@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hr,v 1.5 2014/01/15 19:42:11 zhuk Exp $
+@comment $OpenBSD: PLIST-hr,v 1.6 2014/07/09 20:03:28 zhuk Exp $
 share/locale/hr/LC_MESSAGES/adblock.mo
 share/locale/hr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/hr/LC_MESSAGES/akonadi_contacts_resource.mo
@@ -18,6 +18,7 @@ share/locale/hr/LC_MESSAGES/blinken.mo
 share/locale/hr/LC_MESSAGES/blogilo.mo
 share/locale/hr/LC_MESSAGES/bomber.mo
 share/locale/hr/LC_MESSAGES/bovo.mo
+share/locale/hr/LC_MESSAGES/calendarsupport.mo
 share/locale/hr/LC_MESSAGES/cantor.mo
 share/locale/hr/LC_MESSAGES/cervisia.mo
 share/locale/hr/LC_MESSAGES/cvsservice.mo
@@ -63,7 +64,6 @@ share/locale/hr/LC_MESSAGES/katetextfilter.mo
 share/locale/hr/LC_MESSAGES/katexmlcheck.mo
 share/locale/hr/LC_MESSAGES/katexmltools.mo
 share/locale/hr/LC_MESSAGES/katomic.mo
-share/locale/hr/LC_MESSAGES/kbattleship.mo
 share/locale/hr/LC_MESSAGES/kblackbox.mo
 share/locale/hr/LC_MESSAGES/kblankscrn.mo
 share/locale/hr/LC_MESSAGES/kblocks.mo
@@ -213,6 +213,7 @@ share/locale/hr/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/hr/LC_MESSAGES/kio_man.mo
 share/locale/hr/LC_MESSAGES/kio_nepomuk.mo
 share/locale/hr/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/hr/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/hr/LC_MESSAGES/kio_nfs.mo
 share/locale/hr/LC_MESSAGES/kio_nntp.mo
 share/locale/hr/LC_MESSAGES/kio_pop3.mo
@@ -222,7 +223,6 @@ share/locale/hr/LC_MESSAGES/kio_sieve.mo
 share/locale/hr/LC_MESSAGES/kio_smb.mo
 share/locale/hr/LC_MESSAGES/kio_smtp.mo
 share/locale/hr/LC_MESSAGES/kio_thumbnail.mo
-share/locale/hr/LC_MESSAGES/kio_timeline.mo
 share/locale/hr/LC_MESSAGES/kio_trash.mo
 share/locale/hr/LC_MESSAGES/kio_zeroconf.mo
 share/locale/hr/LC_MESSAGES/kioclient.mo
@@ -248,6 +248,7 @@ share/locale/hr/LC_MESSAGES/kmix.mo
 share/locale/hr/LC_MESSAGES/kmousetool.mo
 share/locale/hr/LC_MESSAGES/kmouth.mo
 share/locale/hr/LC_MESSAGES/kmplot.mo
+share/locale/hr/LC_MESSAGES/knavalbattle.mo
 share/locale/hr/LC_MESSAGES/knetattach.mo
 share/locale/hr/LC_MESSAGES/knetwalk.mo
 share/locale/hr/LC_MESSAGES/knode.mo
@@ -344,6 +345,7 @@ share/locale/hr/LC_MESSAGES/libkdepim.mo
 share/locale/hr/LC_MESSAGES/libkexiv2.mo
 share/locale/hr/LC_MESSAGES/libkleopatra.mo
 share/locale/hr/LC_MESSAGES/libkmahjongg.mo
+share/locale/hr/LC_MESSAGES/libkomparediff2.mo
 share/locale/hr/LC_MESSAGES/libkonq.mo
 share/locale/hr/LC_MESSAGES/libkpgp.mo
 share/locale/hr/LC_MESSAGES/libksane.mo

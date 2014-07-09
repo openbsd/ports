@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/09 20:03:23 zhuk Exp $
 @conflict kdeaddons-<4
 @conflict kdebase-<4
 @newgroup _kdesud:583
@@ -298,6 +298,7 @@ share/doc/HTML/en/dolphin/index.docbook
 share/doc/HTML/en/dolphin/locationbar-breadcrumb.png
 share/doc/HTML/en/dolphin/locationbar-context-menu.png
 share/doc/HTML/en/dolphin/locationbar-editable.png
+share/doc/HTML/en/dolphin/locationbar-kioslaves-menu.png
 share/doc/HTML/en/dolphin/locationbar-places-icon.png
 share/doc/HTML/en/dolphin/nepomuk-search-more-options.png
 share/doc/HTML/en/dolphin/nepomuk-search.png
@@ -414,7 +415,12 @@ share/kde4/services/useragent.desktop
 share/kde4/services/useragentstrings/
 share/kde4/services/useragentstrings/android10.desktop
 share/kde4/services/useragentstrings/chrome10onwinnt51.desktop
+share/kde4/services/useragentstrings/chrome22oncurrent.desktop
+share/kde4/services/useragentstrings/chrome23oncurrent.desktop
+share/kde4/services/useragentstrings/chrome24oncurrent.desktop
 share/kde4/services/useragentstrings/chrome50oncurrent.desktop
+share/kde4/services/useragentstrings/firefox15oncurrent.desktop
+share/kde4/services/useragentstrings/firefox16oncurrent.desktop
 share/kde4/services/useragentstrings/firefox20oncurrent.desktop
 share/kde4/services/useragentstrings/firefox30oncurrent.desktop
 share/kde4/services/useragentstrings/firefox36oncurrent.desktop
@@ -425,12 +431,16 @@ share/kde4/services/useragentstrings/ie55onwinnt5.desktop
 share/kde4/services/useragentstrings/ie60oncurrent.desktop
 share/kde4/services/useragentstrings/ie60onwinnt51.desktop
 share/kde4/services/useragentstrings/ie70onwinnt51.desktop
+share/kde4/services/useragentstrings/ie80onwinnt60.desktop
+share/kde4/services/useragentstrings/ie90onwinnt71.desktop
 share/kde4/services/useragentstrings/lynxoncurrent.desktop
 share/kde4/services/useragentstrings/nn301oncurrent.desktop
 share/kde4/services/useragentstrings/nn475oncurrent.desktop
 share/kde4/services/useragentstrings/nn475onwin95.desktop
 share/kde4/services/useragentstrings/ns71oncurrent.desktop
 share/kde4/services/useragentstrings/ns71onwinnt51.desktop
+share/kde4/services/useragentstrings/op1162oncurrent.desktop
+share/kde4/services/useragentstrings/op1202oncurrent.desktop
 share/kde4/services/useragentstrings/op403onwinnt4.desktop
 share/kde4/services/useragentstrings/op85oncurrent.desktop
 share/kde4/services/useragentstrings/op90oncurrent.desktop
@@ -439,6 +449,8 @@ share/kde4/services/useragentstrings/safari20.desktop
 share/kde4/services/useragentstrings/safari30oniphone.desktop
 share/kde4/services/useragentstrings/safari32.desktop
 share/kde4/services/useragentstrings/safari40.desktop
+share/kde4/services/useragentstrings/safari517.desktop
+share/kde4/services/useragentstrings/safari60.desktop
 share/kde4/services/useragentstrings/w3moncurrent.desktop
 share/kde4/services/useragentstrings/wgetoncurrent.desktop
 share/kde4/services/webarchivethumbnail.desktop

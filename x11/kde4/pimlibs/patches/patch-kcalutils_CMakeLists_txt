@@ -1,20 +1,18 @@
-$OpenBSD: patch-kcalutils_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kcalutils_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kcalutils/CMakeLists.txt.orig	Wed Nov  6 10:18:53 2013
-+++ kcalutils/CMakeLists.txt	Wed Nov  6 10:19:24 2013
-@@ -34,11 +34,11 @@ kde4_add_ui_files(kcalutils_LIB_SRCS recurrenceactions
- kde4_add_library(kcalutils ${LIBRARY_TYPE} ${kcalutils_LIB_SRCS})
+--- kcalutils/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kcalutils/CMakeLists.txt	Sun May 18 20:27:10 2014
+@@ -34,11 +34,11 @@ add_library(kcalutils ${LIBRARY_TYPE} ${kcalutils_LIB_
+ generate_export_header(kcalutils)
  
  target_link_libraries(kcalutils
--  ${KDE4_KDECORE_LIBRARY}
--  ${KDE4_KDEUI_LIBRARY}
--  ${KDE4_KIO_LIBS}
--  kcalcore
+-  ${KDE4_KDECORE_LIBS}
+-  ${KDE4_KDEUI_LIBS}
+   kcalcore
+   kpimidentities
    kpimutils
-+  kcalcore
-+  ${KDE4_KIO_LIBS}
-+  ${KDE4_KDEUI_LIBRARY}
-+  ${KDE4_KDECORE_LIBRARY}
++  ${KDE4_KDEUI_LIBS}
++  ${KDE4_KDECORE_LIBS}
    ${QT_QTGUI_LIBRARY}
  )
  set_target_properties(kcalutils PROPERTIES

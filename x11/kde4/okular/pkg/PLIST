@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/03 13:17:43 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/09 20:03:29 zhuk Exp $
 @conflict gwenview->=4,<4.9.3
 @bin bin/okular
 include/kde4/okular/
@@ -49,6 +49,7 @@ lib/kde4/okularGenerator_fax.so
 lib/kde4/okularGenerator_fb.so
 lib/kde4/okularGenerator_ghostview.so
 lib/kde4/okularGenerator_kimgio.so
+lib/kde4/okularGenerator_mobi.so
 lib/kde4/okularGenerator_ooo.so
 lib/kde4/okularGenerator_plucker.so
 lib/kde4/okularGenerator_poppler.so
@@ -83,6 +84,7 @@ share/applications/kde4/okularApplication_fax.desktop
 share/applications/kde4/okularApplication_fb.desktop
 share/applications/kde4/okularApplication_ghostview.desktop
 share/applications/kde4/okularApplication_kimgio.desktop
+share/applications/kde4/okularApplication_mobi.desktop
 share/applications/kde4/okularApplication_ooo.desktop
 share/applications/kde4/okularApplication_pdf.desktop
 share/applications/kde4/okularApplication_plucker.desktop
@@ -111,6 +113,8 @@ share/apps/okular/pics/insert.png
 share/apps/okular/pics/key.png
 share/apps/okular/pics/newparagraph.png
 share/apps/okular/pics/note.png
+share/apps/okular/pics/okular-epub-movie.png
+share/apps/okular/pics/okular-epub-sound-icon.png
 share/apps/okular/pics/paperclip.png
 share/apps/okular/pics/paragraph.png
 share/apps/okular/pics/pushpin.png
@@ -179,6 +183,7 @@ share/kde4/services/libokularGenerator_fax.desktop
 share/kde4/services/libokularGenerator_fb.desktop
 share/kde4/services/libokularGenerator_ghostview.desktop
 share/kde4/services/libokularGenerator_kimgio.desktop
+share/kde4/services/libokularGenerator_mobi.desktop
 share/kde4/services/libokularGenerator_ooo.desktop
 share/kde4/services/libokularGenerator_plucker.desktop
 share/kde4/services/libokularGenerator_poppler.desktop
@@ -195,6 +200,7 @@ share/kde4/services/okularFax.desktop
 share/kde4/services/okularFb.desktop
 share/kde4/services/okularGhostview.desktop
 share/kde4/services/okularKimgio.desktop
+share/kde4/services/okularMobi.desktop
 share/kde4/services/okularOoo.desktop
 share/kde4/services/okularPlucker.desktop
 share/kde4/services/okularPoppler.desktop

@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.2 2014/07/09 20:03:24 zhuk Exp $
 Fix linking.
---- tests/CMakeLists.txt.orig	Mon Jan 13 22:38:15 2014
-+++ tests/CMakeLists.txt	Mon Jan 13 22:48:21 2014
+--- tests/CMakeLists.txt.orig	Fri May  9 12:43:33 2014
++++ tests/CMakeLists.txt	Wed Jun  4 04:02:31 2014
 @@ -20,7 +20,15 @@ include_directories(
    ${KDE4_KIO_INCLUDES}
  )
@@ -31,7 +31,7 @@ Fix linking.
  )
  
  ########### next target ###############
-@@ -86,10 +92,8 @@ target_link_libraries( completion_test ${KATE_TEST_LIN
+@@ -92,10 +98,8 @@ target_link_libraries( wordcompletion_test ${KATE_TEST
  kde4_add_unit_test(searchbar_test TESTNAME kate-searchbar_test searchbar_test.cpp)
  
  target_link_libraries( searchbar_test
@@ -43,7 +43,7 @@ Fix linking.
  )
  
  ########### vimode test ###############
-@@ -99,10 +103,8 @@ kde4_add_unit_test(vimode_test TESTNAME kate-vimode_te
+@@ -105,10 +109,8 @@ kde4_add_unit_test(vimode_test TESTNAME kate-vimode_te
  
  
  target_link_libraries( vimode_test
@@ -55,7 +55,7 @@ Fix linking.
  )
  
  ########### cursor test ###############
-@@ -110,10 +112,8 @@ target_link_libraries( vimode_test
+@@ -116,10 +118,8 @@ target_link_libraries( vimode_test
  kde4_add_unit_test(movingcursor_test TESTNAME kate-movingcursor_test movingcursor_test.cpp)
  
  target_link_libraries( movingcursor_test
@@ -67,7 +67,7 @@ Fix linking.
  )
  
  ########### moving range and feedback test ###############
-@@ -121,10 +121,8 @@ target_link_libraries( movingcursor_test
+@@ -127,10 +127,8 @@ target_link_libraries( movingcursor_test
  kde4_add_unit_test(movingrange_test TESTNAME kate-movingrange_test movingrange_test.cpp)
  
  target_link_libraries( movingrange_test
@@ -79,7 +79,7 @@ Fix linking.
  )
  
  ########### document test ###############
-@@ -132,10 +130,8 @@ target_link_libraries( movingrange_test
+@@ -138,10 +136,8 @@ target_link_libraries( movingrange_test
  kde4_add_unit_test(katedocument_test TESTNAME kate-katedocument_test katedocument_test.cpp)
  
  target_link_libraries( katedocument_test
@@ -91,7 +91,7 @@ Fix linking.
  )
  
  ########### view test ###############
-@@ -143,10 +139,8 @@ target_link_libraries( katedocument_test
+@@ -149,10 +145,8 @@ target_link_libraries( katedocument_test
  kde4_add_unit_test(kateview_test TESTNAME kate-kateview_test kateview_test.cpp)
  
  target_link_libraries( kateview_test
@@ -103,7 +103,7 @@ Fix linking.
  )
  
  ########### revision test ###############
-@@ -154,10 +148,8 @@ target_link_libraries( kateview_test
+@@ -160,10 +154,8 @@ target_link_libraries( kateview_test
  kde4_add_unit_test(revision_test TESTNAME kate-revision_test revision_test.cpp)
  
  target_link_libraries( revision_test
@@ -115,7 +115,7 @@ Fix linking.
  )
  
  ########### line modification test ###############
-@@ -165,10 +157,8 @@ target_link_libraries( revision_test
+@@ -171,10 +163,8 @@ target_link_libraries( revision_test
  kde4_add_unit_test(modificationsystem_test TESTNAME kate-modificationsystem_test modificationsystem_test.cpp)
  
  target_link_libraries( modificationsystem_test ${KATE_TEST_LINK_LIBS}
@@ -127,7 +127,7 @@ Fix linking.
  )
  
  ########### templatehandler test ###############
-@@ -176,10 +166,8 @@ target_link_libraries( modificationsystem_test ${KATE_
+@@ -182,10 +172,8 @@ target_link_libraries( modificationsystem_test ${KATE_
  kde4_add_unit_test(templatehandler_test TESTNAME kate-templatehandler_test templatehandler_test.cpp)
  
  target_link_libraries( templatehandler_test
@@ -139,7 +139,7 @@ Fix linking.
  )
  
  ########### text folding test ###############
-@@ -187,10 +175,8 @@ target_link_libraries( templatehandler_test
+@@ -193,10 +181,8 @@ target_link_libraries( templatehandler_test
  kde4_add_unit_test(katecodefoldingtest TESTNAME codefoldingtest katefoldingtest.cpp)
  
  target_link_libraries( katecodefoldingtest
@@ -151,7 +151,7 @@ Fix linking.
  )
  
  ########### indenting test ################
-@@ -235,10 +221,8 @@ kde4_add_unit_test(bug286887_test TESTNAME kate-bug286
+@@ -241,10 +227,8 @@ kde4_add_unit_test(bug286887_test TESTNAME kate-bug286
  set_tests_properties(kate-bug286887_test PROPERTIES TIMEOUT 4)
  
  target_link_libraries( bug286887_test
@@ -163,7 +163,7 @@ Fix linking.
  )
  
  ########### bug 313759 test ###############
-@@ -251,10 +235,8 @@ set(bug313759_SRCS
+@@ -257,10 +241,8 @@ set(bug313759_SRCS
  kde4_add_unit_test(bug313759_test TESTNAME kate-bug313759_test ${bug313759_SRCS})
  
  target_link_libraries(bug313759_test
@@ -175,7 +175,7 @@ Fix linking.
  )
  
  ########### bug 313769 test ###############
-@@ -262,10 +244,8 @@ target_link_libraries(bug313759_test
+@@ -268,10 +250,8 @@ target_link_libraries(bug313759_test
  kde4_add_unit_test(bug313769_test TESTNAME kate-bug313769_test bug313769.cpp)
  
  target_link_libraries( bug313769_test
@@ -187,7 +187,7 @@ Fix linking.
  )
  
  ########### bug 317111 test ###############
-@@ -278,10 +258,8 @@ set(bug317111_SRCS
+@@ -284,10 +264,8 @@ set(bug317111_SRCS
  kde4_add_unit_test(bug317111_test TESTNAME kate-bug317111_test ${bug317111_SRCS})
  
  target_link_libraries( bug317111_test
@@ -199,7 +199,7 @@ Fix linking.
  )
  
  ########### KTextEditor::DocumentCursor test ###############
-@@ -289,10 +267,8 @@ target_link_libraries( bug317111_test
+@@ -295,10 +273,8 @@ target_link_libraries( bug317111_test
  kde4_add_unit_test(kte_documentcursor_test TESTNAME kte-documentcursor_test kte_documentcursor.cpp)
  
  target_link_libraries( kte_documentcursor_test
@@ -211,7 +211,7 @@ Fix linking.
  )
  
  ########### KTextEditor::MessageInterface test ###############
-@@ -300,10 +276,8 @@ target_link_libraries( kte_documentcursor_test
+@@ -306,10 +282,8 @@ target_link_libraries( kte_documentcursor_test
  kde4_add_unit_test(kte_messageinterface_test TESTNAME kte-messageinterface messagetest.cpp)
  
  target_link_libraries( kte_messageinterface_test

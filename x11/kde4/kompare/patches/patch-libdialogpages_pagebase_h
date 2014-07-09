@@ -1,0 +1,16 @@
+$OpenBSD: patch-libdialogpages_pagebase_h,v 1.1 2014/07/09 20:03:26 zhuk Exp $
+Unbreak build.
+Review: https://git.reviewboard.kde.org/r/119024/
+Committed: 339537ae5ecc7952c716140029564a212e4a9a4b
+--- libdialogpages/pagebase.h.orig	Fri Jun 27 03:04:21 2014
++++ libdialogpages/pagebase.h	Fri Jun 27 03:06:10 2014
+@@ -22,8 +22,7 @@
+ #include <QtCore/QSize>
+ 
+ #include <kvbox.h>
+-
+-#include "kompare.h"
++#include <kompare.h>
+ 
+ class PageBase : public KVBox
+ {

@@ -1,12 +1,12 @@
-$OpenBSD: patch-kcm_serverconfigmodule_cpp,v 1.1 2014/01/31 16:02:57 zhuk Exp $
+$OpenBSD: patch-kcm_serverconfigmodule_cpp,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Allow to choose SQLite driver shipped with Qt itself, it behaves better.
---- kcm/serverconfigmodule.cpp.orig	Fri Jan 31 19:07:00 2014
-+++ kcm/serverconfigmodule.cpp	Fri Jan 31 19:08:14 2014
-@@ -58,6 +58,7 @@ ServerConfigModule::ServerConfigModule( QWidget * pare
-   ui_driver.driverBox->addItem( "Mysql", QVariant( "QMYSQL" ) );
-   ui_driver.driverBox->addItem( "PostgreSQL", QVariant( "QPSQL" ) );
-   ui_driver.driverBox->addItem( "SQLite", QVariant( "QSQLITE3" ) );
-+  ui_driver.driverBox->addItem( "SQLite (original)", QVariant( "QSQLITE" ) );
+--- kcm/serverconfigmodule.cpp.orig	Thu May  8 12:42:54 2014
++++ kcm/serverconfigmodule.cpp	Sun May 18 21:04:54 2014
+@@ -57,6 +57,7 @@ ServerConfigModule::ServerConfigModule( QWidget * pare
+   ui_driver.driverBox->addItem( QLatin1String("Mysql"), QVariant( QLatin1String("QMYSQL") ) );
+   ui_driver.driverBox->addItem( QLatin1String("PostgreSQL"), QVariant( QLatin1String("QPSQL") ) );
+   ui_driver.driverBox->addItem( QLatin1String("SQLite"), QVariant( QLatin1String("QSQLITE3") ) );
++  ui_driver.driverBox->addItem( QLatin1String("SQLite (original)"), QVariant( QLatin1String("QSQLITE") ) );
  
    setButtons( KCModule::Default | KCModule::Apply );
  

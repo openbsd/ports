@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 12:12:22 zhuk Exp $
---- CMakeLists.txt.orig	Fri Sep 14 11:50:36 2012
-+++ CMakeLists.txt	Fri Sep 14 15:21:11 2012
-@@ -14,7 +14,9 @@ find_package(GLIB2)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/07/09 20:03:26 zhuk Exp $
+--- CMakeLists.txt.orig	Sun May  4 11:34:55 2014
++++ CMakeLists.txt	Sun May 18 22:00:09 2014
+@@ -17,7 +17,9 @@ find_package(GLIB2)
  macro_optional_find_package(Canberra)
  macro_log_feature(CANBERRA_FOUND "libcanberra" "libcanberra audio library" "http://0pointer.de/lennart/projects/libcanberra/" FALSE "" "libcanberra is needed for kmix sound feedback")
  

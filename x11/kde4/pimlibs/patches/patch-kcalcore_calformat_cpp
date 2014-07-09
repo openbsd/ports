@@ -1,5 +1,5 @@
-$OpenBSD: patch-kcalcore_calformat_cpp,v 1.3 2014/01/15 19:42:12 zhuk Exp $
-Unbreak build with OpenBSD UUID library specifics.
+$OpenBSD: patch-kcalcore_calformat_cpp,v 1.4 2014/07/09 20:03:30 zhuk Exp $
+Allow UUID library to be found even if not in default search path.
 --- kcalcore/calformat.cpp.orig	Thu Jan  2 23:32:09 2014
 +++ kcalcore/calformat.cpp	Mon Jan 13 16:22:42 2014
 @@ -33,7 +33,7 @@

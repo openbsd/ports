@@ -1,15 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/02/08 21:50:25 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/09 20:03:28 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/ktouch
-lib/kde4/imports/org/kde/ktouch/
-lib/kde4/imports/org/kde/ktouch/graph/
-lib/kde4/imports/org/kde/ktouch/graph/BarGraph.qml
-lib/kde4/imports/org/kde/ktouch/graph/Label.qml
-lib/kde4/imports/org/kde/ktouch/graph/LegendItem.qml
-lib/kde4/imports/org/kde/ktouch/graph/LineGraph.qml
-lib/kde4/imports/org/kde/ktouch/graph/LineLabel.qml
-lib/kde4/imports/org/kde/ktouch/graph/libgraphplugin.so
-lib/kde4/imports/org/kde/ktouch/graph/qmldir
 @man man/man1/ktouch.1
 share/applications/kde4/ktouch.desktop
 share/apps/ktouch/
@@ -29,12 +20,14 @@ share/apps/ktouch/courses/es.dvorak.xml
 share/apps/ktouch/courses/es1.xml
 share/apps/ktouch/courses/es2.xml
 share/apps/ktouch/courses/es3.xml
+share/apps/ktouch/courses/es4.xml
 share/apps/ktouch/courses/fi.xml
 share/apps/ktouch/courses/fr.bepo.xml
 share/apps/ktouch/courses/fr.dvarok.xml
 share/apps/ktouch/courses/fr.xml
 share/apps/ktouch/courses/gb.xml
 share/apps/ktouch/courses/gr.xml
+share/apps/ktouch/courses/ir.xml
 share/apps/ktouch/courses/it.xml
 share/apps/ktouch/courses/lt.std.xml
 share/apps/ktouch/courses/nl1.xml
@@ -51,6 +44,7 @@ share/apps/ktouch/courses/ua.xml
 share/apps/ktouch/courses/us.colemak.xml
 share/apps/ktouch/courses/us.dvorak1.xml
 share/apps/ktouch/courses/us.dvorak2.xml
+share/apps/ktouch/courses/us.workman.xml
 share/apps/ktouch/courses/us.xml
 share/apps/ktouch/data.xml
 share/apps/ktouch/images/
@@ -87,9 +81,11 @@ share/apps/ktouch/keyboardlayouts/hu.xml
 share/apps/ktouch/keyboardlayouts/il.xml
 share/apps/ktouch/keyboardlayouts/in.kan.xml
 share/apps/ktouch/keyboardlayouts/in.tam_unicode.xml
+share/apps/ktouch/keyboardlayouts/ir.xml
 share/apps/ktouch/keyboardlayouts/it.xml
 share/apps/ktouch/keyboardlayouts/latam.xml
 share/apps/ktouch/keyboardlayouts/lt.std.xml
+share/apps/ktouch/keyboardlayouts/nl.xml
 share/apps/ktouch/keyboardlayouts/no.xml
 share/apps/ktouch/keyboardlayouts/pt.xml
 share/apps/ktouch/keyboardlayouts/ru.legacy.xml
@@ -99,9 +95,11 @@ share/apps/ktouch/keyboardlayouts/si.xml
 share/apps/ktouch/keyboardlayouts/sk.qwerty.xml
 share/apps/ktouch/keyboardlayouts/sk.xml
 share/apps/ktouch/keyboardlayouts/tr.f.xml
+share/apps/ktouch/keyboardlayouts/tr.xml
 share/apps/ktouch/keyboardlayouts/ua.xml
 share/apps/ktouch/keyboardlayouts/us.colemak.xml
 share/apps/ktouch/keyboardlayouts/us.dvorak.xml
+share/apps/ktouch/keyboardlayouts/us.workman.xml
 share/apps/ktouch/keyboardlayouts/us.xml
 share/apps/ktouch/qml/
 share/apps/ktouch/qml/AccuracyMeter.qml
@@ -110,20 +108,23 @@ share/apps/ktouch/qml/CharactersPerMinuteMeter.qml
 share/apps/ktouch/qml/CourseDescriptionItem.qml
 share/apps/ktouch/qml/CoursePage.qml
 share/apps/ktouch/qml/CourseSelector.qml
+share/apps/ktouch/qml/CustomLessonSelector.qml
 share/apps/ktouch/qml/ElapsedTimeMeter.qml
 share/apps/ktouch/qml/HomeScreen.qml
 share/apps/ktouch/qml/InfoItem.qml
 share/apps/ktouch/qml/InformationTable.qml
 share/apps/ktouch/qml/InitialProfileForm.qml
+share/apps/ktouch/qml/InlineToolbar.qml
 share/apps/ktouch/qml/KeyItem.qml
 share/apps/ktouch/qml/KeyLabel.qml
 share/apps/ktouch/qml/Keyboard.qml
 share/apps/ktouch/qml/KeyboardLayoutEditor.qml
 share/apps/ktouch/qml/KeyboardUnavailableNotice.qml
-share/apps/ktouch/qml/LearningProgressGraph.qml
+share/apps/ktouch/qml/LearningProgressChart.qml
 share/apps/ktouch/qml/LessonLockedNotice.qml
 share/apps/ktouch/qml/LessonPreview.qml
 share/apps/ktouch/qml/LessonSelector.qml
+share/apps/ktouch/qml/LessonSelectorBase.qml
 share/apps/ktouch/qml/ListItem.qml
 share/apps/ktouch/qml/MessageBox.qml
 share/apps/ktouch/qml/Meter.qml
@@ -154,7 +155,9 @@ share/doc/HTML/en/ktouch/Icon-arrow-up.png
 share/doc/HTML/en/ktouch/Icon-configure.png
 share/doc/HTML/en/ktouch/Icon-dialog-information.png
 share/doc/HTML/en/ktouch/Icon-document-new.png
+share/doc/HTML/en/ktouch/Icon-document-open.png
 share/doc/HTML/en/ktouch/Icon-edit-delete.png
+share/doc/HTML/en/ktouch/Icon-format-justify-fill.png
 share/doc/HTML/en/ktouch/Icon-go-home.png
 share/doc/HTML/en/ktouch/Icon-list-add.png
 share/doc/HTML/en/ktouch/Icon-list-remove.png
@@ -171,6 +174,8 @@ share/doc/HTML/en/ktouch/create_course3.png
 share/doc/HTML/en/ktouch/create_layout1.png
 share/doc/HTML/en/ktouch/create_layout2.png
 share/doc/HTML/en/ktouch/create_layout3.png
+share/doc/HTML/en/ktouch/custom-lessons-edit.png
+share/doc/HTML/en/ktouch/custom-lessons.png
 share/doc/HTML/en/ktouch/home_screen.png
 share/doc/HTML/en/ktouch/index.cache.bz2
 share/doc/HTML/en/ktouch/index.docbook

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:30 zhuk Exp $
 
 COMMENT =	memory and pairs game for KDE
 DISTNAME =	pairs-${MODKDE4_VERSION}
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += lib/qt4/QtXmlPatterns

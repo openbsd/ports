@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2013/12/08 19:13:29 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2014/07/09 20:03:22 zhuk Exp $
 
 CATEGORIES ?=		x11
 MODULES +=		x11/kde4
@@ -10,7 +10,7 @@ MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 .if defined(MODKDE4_USE) && ${MODKDE4_USE:Mgames}
 HOMEPAGE ?=		http://games.kde.org/game.php?game=${DISTNAME:C/-[0-9].*//}
 .else
-HOMEPAGE ?=		https://projects.kde.org/projects
+HOMEPAGE ?=		https://projects.kde.org/${DISTNAME:C/-[0-9].*//}
 .endif
 
 # KDE SC is mostly GPL, or LGPL/BSDL for the central libraries

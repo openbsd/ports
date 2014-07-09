@@ -1,10 +1,10 @@
-$OpenBSD: patch-kcal_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kcal_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kcal/CMakeLists.txt.orig	Wed Nov  6 10:14:02 2013
-+++ kcal/CMakeLists.txt	Wed Nov  6 10:15:19 2013
-@@ -105,12 +105,12 @@ kde4_add_kcfg_files(kcal_LIB_SRCS htmlexportsettings.k
- 
- kde4_add_library(kcal ${LIBRARY_TYPE} ${kcal_LIB_SRCS})
+--- kcal/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kcal/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -106,12 +106,12 @@ kde4_add_kcfg_files(kcal_LIB_SRCS htmlexportsettings.k
+ add_library(kcal ${LIBRARY_TYPE} ${kcal_LIB_SRCS})
+ generate_export_header(kcal)
  
 -target_link_libraries(kcal ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${QT_QTXML_LIBRARY} kabc kpimutils ${LIBICAL_LIBRARIES})
 -target_link_libraries(kcal LINK_INTERFACE_LIBRARIES kabc)
@@ -17,7 +17,7 @@ Fix linking.
  
  set_target_properties(kcal PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
  install(TARGETS kcal EXPORT kdepimlibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
-@@ -124,7 +124,7 @@ set(kcal_local_PART_SRCS resourcelocal_plugin.cpp )
+@@ -125,7 +125,7 @@ set(kcal_local_PART_SRCS resourcelocal_plugin.cpp )
  kde4_add_plugin(kcal_local ${kcal_local_PART_SRCS})
  
  
@@ -26,7 +26,7 @@ Fix linking.
  
  install(TARGETS kcal_local  DESTINATION ${PLUGIN_INSTALL_DIR})
  
-@@ -137,7 +137,7 @@ set(kcal_localdir_PART_SRCS resourcelocaldir_plugin.cp
+@@ -138,7 +138,7 @@ set(kcal_localdir_PART_SRCS resourcelocaldir_plugin.cp
  kde4_add_plugin(kcal_localdir ${kcal_localdir_PART_SRCS})
  
  

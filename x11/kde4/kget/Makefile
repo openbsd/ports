@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/08 18:07:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:25 zhuk Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${MODKDE4_VERSION}
@@ -8,7 +8,7 @@ HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kget
 
 SHARED_LIBS =	kgetcore		51.0 # 4.11
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/khtml
@@ -21,7 +21,7 @@ WANTLIB += assuan gpg-error gpgme++-pthread gpgme-pthread mms
 WANTLIB += qca2 qgpgme soprano
 
 MODULES =	devel/gettext multimedia/phonon
-MODKDE4_USE =	pim
+MODKDE4_USE =	pim workspace
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
@@ -31,8 +31,7 @@ LIB_DEPENDS =	multimedia/libmms \
 		security/qca2 \
 		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
 
 # Not ported yet
 #CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qwerty:Bool=Yes

@@ -1,17 +1,17 @@
-$OpenBSD: patch-kabc_plugins_file_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kabc_plugins_file_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kabc/plugins/file/CMakeLists.txt.orig	Wed Nov  6 09:27:08 2013
-+++ kabc/plugins/file/CMakeLists.txt	Wed Nov  6 09:27:43 2013
-@@ -7,7 +7,7 @@ set(kabc_file_core_SRCS resourcefile.cpp resourcefilec
- 
- kde4_add_library(kabc_file_core ${LIBRARY_TYPE} ${kabc_file_core_SRCS})
+--- kabc/plugins/file/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kabc/plugins/file/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -8,7 +8,7 @@ set(kabc_file_core_SRCS resourcefile.cpp resourcefilec
+ add_library(kabc_file_core ${LIBRARY_TYPE} ${kabc_file_core_SRCS})
+ generate_export_header(kabc_file_core)
  
 -target_link_libraries(kabc_file_core ${KDE4_KIO_LIBS} kabc kresources)
 +target_link_libraries(kabc_file_core kabc kresources ${KDE4_KIO_LIBS})
  
  set_target_properties(
    kabc_file_core PROPERTIES
-@@ -24,11 +24,11 @@ set(kabc_file_SRCS resourcefileplugin.cpp)
+@@ -25,11 +25,11 @@ set(kabc_file_SRCS resourcefileplugin.cpp)
  kde4_add_plugin(kabc_file ${kabc_file_SRCS})
  
  target_link_libraries(kabc_file

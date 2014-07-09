@@ -1,0 +1,11 @@
+$OpenBSD: patch-jovie_CMakeLists_txt,v 1.3 2014/07/09 20:03:24 zhuk Exp $
+Use CMake convention for naming configuration variables.
+--- jovie/CMakeLists.txt.orig	Tue Mar  4 12:32:19 2014
++++ jovie/CMakeLists.txt	Tue Mar  4 12:32:02 2014
+@@ -1,5 +1,5 @@
+ 
+-include_directories( ${SPEECHD_INCLUDE_DIR} )
++include_directories( ${SPEECHD_INCLUDE_DIRS} )
+ 
+ add_definitions(-DKDE_DEFAULT_DEBUG_AREA=2400)
+ 

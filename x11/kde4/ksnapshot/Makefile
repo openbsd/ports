@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/01/20 19:08:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/07/09 20:03:27 zhuk Exp $
 
 COMMENT =	screen capture program for KDE
 DISTNAME =	ksnapshot-${MODKDE4_VERSION}
-REVISION =	0
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += ICE SM X11 Xext Xfixes
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml

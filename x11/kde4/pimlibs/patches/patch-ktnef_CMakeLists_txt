@@ -1,9 +1,9 @@
-$OpenBSD: patch-ktnef_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-ktnef_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- ktnef/CMakeLists.txt.orig	Wed Nov  6 09:23:53 2013
-+++ ktnef/CMakeLists.txt	Wed Nov  6 09:24:15 2013
-@@ -27,9 +27,9 @@ set(ktnef_LIB_SRCS
- kde4_add_library(ktnef ${LIBRARY_TYPE} ${ktnef_LIB_SRCS})
+--- ktnef/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ ktnef/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -44,9 +44,9 @@ add_library(ktnef ${LIBRARY_TYPE} ${ktnef_LIB_SRCS})
+ generate_export_header(ktnef)
  
  if(KDEPIM_NO_KCAL)
 -  target_link_libraries(ktnef ${KDE4_KIO_LIBS} kabc kcalcore kcalutils)

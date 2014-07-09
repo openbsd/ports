@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:41:52 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:24 zhuk Exp $
 @conflict kdegames-<4.10
 bin/kajongg
 bin/kajonggserver
@@ -27,6 +27,8 @@ share/apps/kajongg/config.py
 share/apps/kajongg/config.pyc
 share/apps/kajongg/deferredutil.py
 share/apps/kajongg/deferredutil.pyc
+share/apps/kajongg/dialogs.py
+share/apps/kajongg/dialogs.pyc
 share/apps/kajongg/differ.py
 share/apps/kajongg/differ.pyc
 share/apps/kajongg/game.py
@@ -50,6 +52,14 @@ share/apps/kajongg/kajonggserver.py
 share/apps/kajongg/kajonggui.rc
 share/apps/kajongg/kde.py
 share/apps/kajongg/kde.pyc
+share/apps/kajongg/kdestub.py
+share/apps/kajongg/kdestub.pyc
+share/apps/kajongg/log.py
+share/apps/kajongg/log.pyc
+share/apps/kajongg/login.py
+share/apps/kajongg/login.pyc
+share/apps/kajongg/mainwindow.py
+share/apps/kajongg/mainwindow.pyc
 share/apps/kajongg/meld.py
 share/apps/kajongg/meld.pyc
 share/apps/kajongg/message.py
@@ -58,12 +68,12 @@ share/apps/kajongg/modeltest.py
 share/apps/kajongg/modeltest.pyc
 share/apps/kajongg/move.py
 share/apps/kajongg/move.pyc
+share/apps/kajongg/permutations.py
+share/apps/kajongg/permutations.pyc
 share/apps/kajongg/player.py
 share/apps/kajongg/player.pyc
 share/apps/kajongg/playerlist.py
 share/apps/kajongg/playerlist.pyc
-share/apps/kajongg/playfield.py
-share/apps/kajongg/playfield.pyc
 share/apps/kajongg/predefined.py
 share/apps/kajongg/predefined.pyc
 share/apps/kajongg/qt4reactor.py
@@ -76,8 +86,12 @@ share/apps/kajongg/rulecode.py
 share/apps/kajongg/rulecode.pyc
 share/apps/kajongg/rulesetselector.py
 share/apps/kajongg/rulesetselector.pyc
+share/apps/kajongg/scene.py
+share/apps/kajongg/scene.pyc
 share/apps/kajongg/scoring.py
 share/apps/kajongg/scoring.pyc
+share/apps/kajongg/scoringdialog.py
+share/apps/kajongg/scoringdialog.pyc
 share/apps/kajongg/server.py
 share/apps/kajongg/server.pyc
 share/apps/kajongg/sound.py
@@ -95,10 +109,14 @@ share/apps/kajongg/tilesetselector.pyc
 share/apps/kajongg/tilesetselector.ui
 share/apps/kajongg/tree.py
 share/apps/kajongg/tree.pyc
+share/apps/kajongg/uitile.py
+share/apps/kajongg/uitile.pyc
 share/apps/kajongg/uiwall.py
 share/apps/kajongg/uiwall.pyc
 share/apps/kajongg/util.py
 share/apps/kajongg/util.pyc
+share/apps/kajongg/visible.py
+share/apps/kajongg/visible.pyc
 share/apps/kajongg/voices/
 share/apps/kajongg/voices/female1/
 share/apps/kajongg/voices/female1/COPYRIGHT

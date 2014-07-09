@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2013/12/08 19:13:33 zhuk Exp $
---- src/CMakeLists.txt.ports.orig	Wed Aug 28 21:03:55 2013
-+++ src/CMakeLists.txt	Thu Nov  7 17:10:08 2013
-@@ -91,7 +91,7 @@ if (QTONLY)
+$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2014/07/09 20:03:29 zhuk Exp $
+--- src/CMakeLists.txt.ports.orig	Thu Apr 24 12:03:29 2014
++++ src/CMakeLists.txt	Tue Jun  3 14:57:16 2014
+@@ -96,7 +96,7 @@ if (QTONLY)
    # ce: don't know why this is needed here - on win32 
    # 'O2' is activated by default in release mode
    if(NOT WIN32)
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.2 2013/12/08 19:13:33 zhuk Exp $
    endif(NOT WIN32)
  
    include_directories(
-@@ -99,7 +99,7 @@ if (QTONLY)
+@@ -104,7 +104,7 @@ if (QTONLY)
    )
  else (QTONLY)
    if(NOT WIN32)

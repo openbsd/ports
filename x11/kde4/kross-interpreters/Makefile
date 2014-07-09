@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.8 2014/07/09 20:03:27 zhuk Exp $
 
 COMMENT-main =	KDE bindings for running interpreters
 COMMENT-java =	KDE Java bindings
 DISTNAME =	kross-interpreters-${MODKDE4_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
-REVISION-java =	0
 
 MULTI_PACKAGES =	-main -java
 
@@ -14,7 +13,7 @@ MULTI_PACKAGES =	-main -java
 PSEUDO_FLAVORS =	no_java
 FLAVOR ?=
 
-WANTLIB =  m pthread stdc++
+WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/krosscore
 

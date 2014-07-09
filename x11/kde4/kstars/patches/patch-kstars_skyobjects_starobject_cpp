@@ -1,5 +1,7 @@
-$OpenBSD: patch-kstars_skyobjects_starobject_cpp,v 1.1 2013/12/08 19:13:31 zhuk Exp $
+$OpenBSD: patch-kstars_skyobjects_starobject_cpp,v 1.2 2014/07/09 20:03:27 zhuk Exp $
 Unbreak compilation.
+Review: https://git.reviewboard.kde.org/r/119010/
+Commited: d3c530355f59991e7cc0b0a39485739802ea938b
 --- kstars/skyobjects/starobject.cpp.orig	Wed Aug 28 21:03:16 2013
 +++ kstars/skyobjects/starobject.cpp	Sat Nov  9 00:46:40 2013
 @@ -282,7 +282,7 @@ void StarObject::getIndexCoords( KSNumbers *num, doubl

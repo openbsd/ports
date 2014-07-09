@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.5 2014/01/15 19:42:11 zhuk Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.6 2014/07/09 20:03:28 zhuk Exp $
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/
@@ -213,10 +213,7 @@ share/locale/en_GB/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/en_GB/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/en_GB/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/en_GB/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_next.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -224,7 +221,6 @@ share/locale/en_GB/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/en_GB/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadicontact.mo
@@ -310,7 +306,6 @@ share/locale/en_GB/LC_MESSAGES/katetextfilter.mo
 share/locale/en_GB/LC_MESSAGES/katexmlcheck.mo
 share/locale/en_GB/LC_MESSAGES/katexmltools.mo
 share/locale/en_GB/LC_MESSAGES/katomic.mo
-share/locale/en_GB/LC_MESSAGES/kbattleship.mo
 share/locale/en_GB/LC_MESSAGES/kblackbox.mo
 share/locale/en_GB/LC_MESSAGES/kblankscrn.mo
 share/locale/en_GB/LC_MESSAGES/kblocks.mo
@@ -417,7 +412,6 @@ share/locale/en_GB/LC_MESSAGES/kfile_dds.mo
 share/locale/en_GB/LC_MESSAGES/kfile_drgeo.mo
 share/locale/en_GB/LC_MESSAGES/kfile_exr.mo
 share/locale/en_GB/LC_MESSAGES/kfile_kig.mo
-share/locale/en_GB/LC_MESSAGES/kfile_mail.mo
 share/locale/en_GB/LC_MESSAGES/kfile_pnm.mo
 share/locale/en_GB/LC_MESSAGES/kfile_raw.mo
 share/locale/en_GB/LC_MESSAGES/kfile_rgb.mo
@@ -470,10 +464,13 @@ share/locale/en_GB/LC_MESSAGES/kio_man.mo
 share/locale/en_GB/LC_MESSAGES/kio_mbox.mo
 share/locale/en_GB/LC_MESSAGES/kio_nepomuk.mo
 share/locale/en_GB/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/en_GB/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/en_GB/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/en_GB/LC_MESSAGES/kio_nfs.mo
 share/locale/en_GB/LC_MESSAGES/kio_nntp.mo
 share/locale/en_GB/LC_MESSAGES/kio_perldoc.mo
 share/locale/en_GB/LC_MESSAGES/kio_pop3.mo
+share/locale/en_GB/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/en_GB/LC_MESSAGES/kio_remote.mo
 share/locale/en_GB/LC_MESSAGES/kio_sftp.mo
 share/locale/en_GB/LC_MESSAGES/kio_sieve.mo
@@ -481,7 +478,6 @@ share/locale/en_GB/LC_MESSAGES/kio_smb.mo
 share/locale/en_GB/LC_MESSAGES/kio_smtp.mo
 share/locale/en_GB/LC_MESSAGES/kio_svn.mo
 share/locale/en_GB/LC_MESSAGES/kio_thumbnail.mo
-share/locale/en_GB/LC_MESSAGES/kio_timeline.mo
 share/locale/en_GB/LC_MESSAGES/kio_trash.mo
 share/locale/en_GB/LC_MESSAGES/kio_zeroconf.mo
 share/locale/en_GB/LC_MESSAGES/kioclient.mo
@@ -511,6 +507,7 @@ share/locale/en_GB/LC_MESSAGES/kmix.mo
 share/locale/en_GB/LC_MESSAGES/kmousetool.mo
 share/locale/en_GB/LC_MESSAGES/kmouth.mo
 share/locale/en_GB/LC_MESSAGES/kmplot.mo
+share/locale/en_GB/LC_MESSAGES/knavalbattle.mo
 share/locale/en_GB/LC_MESSAGES/knetattach.mo
 share/locale/en_GB/LC_MESSAGES/knetwalk.mo
 share/locale/en_GB/LC_MESSAGES/knode.mo
@@ -598,6 +595,7 @@ share/locale/en_GB/LC_MESSAGES/kwin.mo
 share/locale/en_GB/LC_MESSAGES/kwin_art_clients.mo
 share/locale/en_GB/LC_MESSAGES/kwin_clients.mo
 share/locale/en_GB/LC_MESSAGES/kwin_effects.mo
+share/locale/en_GB/LC_MESSAGES/kwinshutdown.mo
 share/locale/en_GB/LC_MESSAGES/kwinstartmenu.mo
 share/locale/en_GB/LC_MESSAGES/kwordquiz.mo
 share/locale/en_GB/LC_MESSAGES/kwrite.mo
@@ -630,6 +628,7 @@ share/locale/en_GB/LC_MESSAGES/libkldap.mo
 share/locale/en_GB/LC_MESSAGES/libkleopatra.mo
 share/locale/en_GB/LC_MESSAGES/libkmahjongg.mo
 share/locale/en_GB/LC_MESSAGES/libkmime.mo
+share/locale/en_GB/LC_MESSAGES/libkomparediff2.mo
 share/locale/en_GB/LC_MESSAGES/libkonq.mo
 share/locale/en_GB/LC_MESSAGES/libkpgp.mo
 share/locale/en_GB/LC_MESSAGES/libkpimidentities.mo
@@ -708,6 +707,7 @@ share/locale/en_GB/LC_MESSAGES/phononserver.mo
 share/locale/en_GB/LC_MESSAGES/plasma-desktop.mo
 share/locale/en_GB/LC_MESSAGES/plasma-netbook.mo
 share/locale/en_GB/LC_MESSAGES/plasma-overlay.mo
+share/locale/en_GB/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/en_GB/LC_MESSAGES/plasma-windowed.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_CharSelectApplet.mo

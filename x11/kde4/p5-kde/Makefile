@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/09 20:03:29 zhuk Exp $
 
 COMMENT =	KDE bindings for Perl
 DISTNAME =	perlkde-${MODKDE4_VERSION}
@@ -7,7 +7,7 @@ PKGNAME =	p5-kde-${MODKDE4_VERSION}
 # for perl module
 SHARED_ONLY =	Yes
 
-WANTLIB =  c m perl pthread stdc++ util
+WANTLIB =  c m perl pthread util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokekate

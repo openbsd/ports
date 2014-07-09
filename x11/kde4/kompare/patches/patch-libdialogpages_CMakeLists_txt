@@ -1,0 +1,15 @@
+$OpenBSD: patch-libdialogpages_CMakeLists_txt,v 1.1 2014/07/09 20:03:26 zhuk Exp $
+Unbreak build.
+Review: https://git.reviewboard.kde.org/r/119024/
+Committed: 339537ae5ecc7952c716140029564a212e4a9a4b
+--- libdialogpages/CMakeLists.txt.orig	Fri Jun 27 03:01:51 2014
++++ libdialogpages/CMakeLists.txt	Fri Jun 27 03:02:36 2014
+@@ -12,6 +12,8 @@ set(dialogpages_PART_SRCS
+ 
+ kde4_add_library(komparedialogpages SHARED ${dialogpages_PART_SRCS})
+ 
++include_directories(${LIBKOMPAREDIFF2_INCLUDE_DIR})
++
+ target_link_libraries(komparedialogpages  ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${LIBKOMPAREDIFF2_LIBRARIES})
+ 
+ set_target_properties(komparedialogpages PROPERTIES VERSION ${GENERIC_LIB_VERSION}

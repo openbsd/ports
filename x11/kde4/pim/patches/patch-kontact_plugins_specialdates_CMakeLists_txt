@@ -1,0 +1,27 @@
+$OpenBSD: patch-kontact_plugins_specialdates_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- kontact/plugins/specialdates/CMakeLists.txt.orig	Tue Jul  1 13:01:52 2014
++++ kontact/plugins/specialdates/CMakeLists.txt	Tue Jul  1 13:02:29 2014
+@@ -16,17 +16,17 @@ if(BUILD_korganizer)
+ endif()
+ 
+ target_link_libraries(kontact_specialdatesplugin
++  ${_korganizerprivate_lib}
+   akonadi-calendar
+-  ${KDE4_KDEUI_LIBS}
++  calendarsupport
++  kdepim
+   ${KDEPIMLIBS_KABC_LIBS}
+-  ${KDEPIMLIBS_KCALCORE_LIBS}
+   ${KDEPIMLIBS_KHOLIDAYS_LIBS}
+   ${KDEPIMLIBS_KONTACTINTERFACE_LIBS}
+   ${KDEPIMLIBS_AKONADI_LIBS}
+   ${KDEPIMLIBS_AKONADI_CONTACT_LIBS}
+-  kdepim
+-  calendarsupport
+-  ${_korganizerprivate_lib}
++  ${KDEPIMLIBS_KCALCORE_LIBS}
++  ${KDE4_KDEUI_LIBS}
+ )
+ 
+ ########### next target ###############

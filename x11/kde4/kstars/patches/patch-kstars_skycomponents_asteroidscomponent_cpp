@@ -1,0 +1,24 @@
+$OpenBSD: patch-kstars_skycomponents_asteroidscomponent_cpp,v 1.1 2014/07/09 20:03:27 zhuk Exp $
+Unbreak build.
+Review: https://git.reviewboard.kde.org/r/119010/
+Commited: d3c530355f59991e7cc0b0a39485739802ea938b
+--- kstars/skycomponents/asteroidscomponent.cpp.orig	Sat Jun 28 21:37:28 2014
++++ kstars/skycomponents/asteroidscomponent.cpp	Sun Jun 29 13:35:48 2014
+@@ -27,6 +27,8 @@
+ #include "skyobjects/ksasteroid.h"
+ #include "kstarsdata.h"
+ #include "ksfilereader.h"
++
++#include <cmath>
+ #include <kdebug.h>
+ #include <kglobal.h>
+ #include <kio/job.h>
+@@ -194,7 +196,7 @@ void AsteroidsComponent::draw( SkyPainter *skyp )
+         // FIXME: God help us!
+         KSAsteroid *ast = (KSAsteroid*) so;
+ 
+-        if ( ast->mag() > Options::magLimitAsteroid() || isnan(ast->mag()) != 0)
++        if ( ast->mag() > Options::magLimitAsteroid() || std::isnan(ast->mag()) != 0)
+             continue;
+ 
+         bool drawn = skyp->drawPointSource(ast,ast->mag());

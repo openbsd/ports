@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:22:16 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:31 zhuk Exp $
 @conflict kdesdk-<4.11
 @bin bin/umbrello
 share/applications/kde4/umbrello.desktop
@@ -47,6 +47,7 @@ share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_state.png
 share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_usecase.png
 share/apps/umbrello/layouts/
 share/apps/umbrello/layouts/activity-export.desktop
+share/apps/umbrello/layouts/activity-vertical.desktop
 share/apps/umbrello/layouts/class-export.desktop
 share/apps/umbrello/layouts/class-horizontal.desktop
 share/apps/umbrello/layouts/class-vertical.desktop
@@ -194,6 +195,8 @@ share/apps/umbrello/pics/state-fork.png
 share/apps/umbrello/pics/subsystem.png
 share/apps/umbrello/pics/template.png
 share/apps/umbrello/pics/text.png
+share/apps/umbrello/pics/umbr-coll-message-asynchronous.png
+share/apps/umbrello/pics/umbr-coll-message-synchronous.png
 share/apps/umbrello/pics/umbr-message-asynchronous.png
 share/apps/umbrello/pics/umbr-message-found.png
 share/apps/umbrello/pics/umbr-message-lost.png

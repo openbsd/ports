@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:09:20 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:27 zhuk Exp $
 @conflict kdenetwork-<4.11
 @mode u+s
 @owner root
@@ -53,10 +53,10 @@ share/apps/kppp/Provider/Germany/CityWeb
 share/apps/kppp/Provider/Germany/FH%032Rhein%032Sieg%032%040Informatik%041
 share/apps/kppp/Provider/Germany/MUC%046DE
 share/apps/kppp/Provider/Germany/Netsurf
-share/apps/kppp/Provider/Irland/
-share/apps/kppp/Provider/Irland/.directory
-share/apps/kppp/Provider/Irland/Eircom
-share/apps/kppp/Provider/Irland/IOL
+share/apps/kppp/Provider/Ireland/
+share/apps/kppp/Provider/Ireland/.directory
+share/apps/kppp/Provider/Ireland/Eircom
+share/apps/kppp/Provider/Ireland/IOL
 share/apps/kppp/Provider/Netherlands/
 share/apps/kppp/Provider/Netherlands/.directory
 share/apps/kppp/Provider/Netherlands/12Move
@@ -120,13 +120,13 @@ share/apps/kppp/Provider/Netherlands/Zeelandnet
 share/apps/kppp/Provider/Netherlands/Zon%0322
 share/apps/kppp/Provider/Netherlands/Zon%032Gratis
 share/apps/kppp/Provider/Netherlands/Zon%032Inclusief
-share/apps/kppp/Provider/NewZealand/
-share/apps/kppp/Provider/NewZealand/.directory
-share/apps/kppp/Provider/NewZealand/OrconInternet
-share/apps/kppp/Provider/NewZealand/Paradise
-share/apps/kppp/Provider/NewZealand/Voyager
-share/apps/kppp/Provider/NewZealand/XTRA
-share/apps/kppp/Provider/NewZealand/ihug
+share/apps/kppp/Provider/New_Zealand/
+share/apps/kppp/Provider/New_Zealand/.directory
+share/apps/kppp/Provider/New_Zealand/OrconInternet
+share/apps/kppp/Provider/New_Zealand/Paradise
+share/apps/kppp/Provider/New_Zealand/Voyager
+share/apps/kppp/Provider/New_Zealand/XTRA
+share/apps/kppp/Provider/New_Zealand/ihug
 share/apps/kppp/Provider/Norway/
 share/apps/kppp/Provider/Norway/.directory
 share/apps/kppp/Provider/Norway/BGNett

@@ -1,8 +1,8 @@
-$OpenBSD: patch-part_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+$OpenBSD: patch-part_CMakeLists_txt,v 1.2 2014/07/09 20:03:24 zhuk Exp $
 Fix linking.
---- part/CMakeLists.txt.orig	Mon Jan 13 22:35:55 2014
-+++ part/CMakeLists.txt	Mon Jan 13 22:36:44 2014
-@@ -227,7 +227,7 @@ kde4_add_library (katepartinterfaces ${LIBRARY_TYPE} $
+--- part/CMakeLists.txt.orig	Fri May  9 12:43:33 2014
++++ part/CMakeLists.txt	Wed Jun  4 04:02:31 2014
+@@ -232,7 +232,7 @@ kde4_add_library (katepartinterfaces ${LIBRARY_TYPE} $
  
  target_link_libraries (
    katepartinterfaces ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS}
@@ -11,7 +11,7 @@ Fix linking.
  )
  target_link_libraries(katepartinterfaces LINK_INTERFACE_LIBRARIES "${KDE4_KPARTS_LIBS}" )
  
-@@ -252,8 +252,9 @@ kde4_add_plugin (katepart utils/katefactory.cpp)
+@@ -257,8 +257,9 @@ kde4_add_plugin (katepart utils/katefactory.cpp)
  
  # link the part, use kate part interfaces + kde stuff
  target_link_libraries (katepart

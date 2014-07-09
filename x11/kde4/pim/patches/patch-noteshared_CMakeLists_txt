@@ -1,0 +1,13 @@
+$OpenBSD: patch-noteshared_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- noteshared/CMakeLists.txt.orig	Tue Jul  1 12:47:03 2014
++++ noteshared/CMakeLists.txt	Tue Jul  1 12:47:45 2014
+@@ -63,7 +63,7 @@ kde4_add_kcfg_files(libnoteshared_kcfg_lib_SRCS ${libn
+ kde4_add_library(noteshared ${LIBRARY_TYPE} ${libnoteshared_SRCS} ${libnoteshared_kcfg_lib_SRCS} )
+ 
+ target_link_libraries(noteshared
+-     ${KDEPIMLIBS_AKONADI_LIBS} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDNSSD_LIBS} pimcommon akonadi_next ${KDEPIMLIBS_KMIME_LIBS}
++     akonadi_next pimcommon ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_KMIME_LIBS} ${KDE4_KDNSSD_LIBS} ${QT_QTNETWORK_LIBRARY}
+ )
+ 
+ set_target_properties(noteshared PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})

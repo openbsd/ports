@@ -1,8 +1,8 @@
-$OpenBSD: patch-kcalcore_tests_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kcalcore_tests_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kcalcore/tests/CMakeLists.txt.orig	Tue Nov  5 20:42:55 2013
-+++ kcalcore/tests/CMakeLists.txt	Tue Nov  5 20:43:29 2013
-@@ -7,11 +7,11 @@ macro(macro_unit_tests)
+--- kcalcore/tests/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kcalcore/tests/CMakeLists.txt	Sun May 18 22:02:03 2014
+@@ -7,11 +7,12 @@ macro(macro_unit_tests)
    foreach(_testname ${ARGN})
      kde4_add_unit_test(${_testname} NOGUI ${_testname}.cpp)
      target_link_libraries(${_testname}
@@ -12,10 +12,11 @@ Fix linking.
        ${QT_QTGUI_LIBRARY}
        ${QT_QTTEST_LIBRARY}
 -      kcalcore
++      ${UUID_LIBRARIES}
      )
    endforeach()
  endmacro()
-@@ -20,10 +20,10 @@ macro(macro_exec_tests)
+@@ -20,10 +21,11 @@ macro(macro_exec_tests)
    foreach(_testname ${ARGN})
      kde4_add_executable(${_testname} NOGUI TEST ${_testname}.cpp)
      target_link_libraries(${_testname}
@@ -24,6 +25,7 @@ Fix linking.
        ${QT_QTCORE_LIBRARY}
        ${QT_QTTEST_LIBRARY}
 -      kcalcore
++      ${UUID_LIBRARIES}
      )
    endforeach()
  endmacro()

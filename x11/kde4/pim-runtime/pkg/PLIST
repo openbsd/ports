@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/02/02 19:16:18 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/07/09 20:03:30 zhuk Exp $
 @bin bin/accountwizard
-@bin bin/akonadi2xml
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_davgroupware_resource
 @bin bin/akonadi_facebook_resource
@@ -15,34 +14,28 @@
 @bin bin/akonadi_localbookmarks_resource
 @bin bin/akonadi_maildispatcher_agent
 @bin bin/akonadi_mailtransport_dummy_resource
-@bin bin/akonadi_microblog_resource
+@bin bin/akonadi_migration_agent
 @bin bin/akonadi_mixedmaildir_resource
-@bin bin/akonadi_nepomuk_feeder
-@bin bin/akonadi_nepomuktag_resource
 @bin bin/akonadi_newmailnotifier_agent
 @bin bin/akonadi_nntp_resource
 @bin bin/akonadi_openxchange_resource
 @bin bin/akonadi_pop3_resource
 @bin bin/akonadi_vcarddir_resource
 @bin bin/akonaditray
+@bin bin/gidmigrator
 @bin bin/kaddressbookmigrator
 @bin bin/kjotsmigrator
 @bin bin/kmail-migrator
+@bin bin/knotes-migrator
 @bin bin/kres-migrator
-@bin bin/nepomukpimindexerutility
 lib/kde4/accountwizard_plugin.so
 lib/kde4/akonadi_akonotes_resource.so
 lib/kde4/akonadi_contacts_resource.so
 lib/kde4/akonadi_ical_resource.so
 lib/kde4/akonadi_kalarm_dir_resource.so
 lib/kde4/akonadi_kalarm_resource.so
-lib/kde4/akonadi_knut_resource.so
 lib/kde4/akonadi_maildir_resource.so
 lib/kde4/akonadi_mbox_resource.so
-lib/kde4/akonadi_nepomuk_calendar_feeder.so
-lib/kde4/akonadi_nepomuk_contact_feeder.so
-lib/kde4/akonadi_nepomuk_email_feeder.so
-lib/kde4/akonadi_nepomuk_note_feeder.so
 lib/kde4/akonadi_notes_resource.so
 lib/kde4/akonadi_serializer_addressee.so
 lib/kde4/akonadi_serializer_bookmark.so
@@ -89,18 +82,15 @@ lib/kde4/kcm_akonadi_resources.so
 lib/kde4/kcm_akonadi_server.so
 lib/kde4/kio_akonadi.so
 @lib ${KDE4LIB}/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
-@lib ${KDE4LIB}/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
+@lib ${KDE4LIB}/libfolderarchivesettings.so.${LIBfolderarchivesettings_VERSION}
 @lib ${KDE4LIB}/libkdepim-copy.so.${LIBkdepim-copy_VERSION}
 @lib ${KDE4LIB}/libkmindexreader.so.${LIBkmindexreader_VERSION}
 @lib ${KDE4LIB}/libmaildir.so.${LIBmaildir_VERSION}
 @lib lib/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
-@lib lib/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
+@lib lib/libfolderarchivesettings.so.${LIBfolderarchivesettings_VERSION}
 @lib lib/libkdepim-copy.so.${LIBkdepim-copy_VERSION}
 @lib lib/libkmindexreader.so.${LIBkmindexreader_VERSION}
 @lib lib/libmaildir.so.${LIBmaildir_VERSION}
-lib/libnepomukfeederpluginlib.a
-share/akonadi/
-share/akonadi/agents/
 share/akonadi/agents/akonadinepomukfeederagent.desktop
 share/akonadi/agents/akonotesresource.desktop
 share/akonadi/agents/birthdaysresource.desktop
@@ -118,15 +108,13 @@ share/akonadi/agents/kalarmdirresource.desktop
 share/akonadi/agents/kalarmresource.desktop
 share/akonadi/agents/kcalresource.desktop
 share/akonadi/agents/kdeaccountsresource.desktop
-share/akonadi/agents/knutresource.desktop
 share/akonadi/agents/localbookmarksresource.desktop
 share/akonadi/agents/maildirresource.desktop
 share/akonadi/agents/maildispatcheragent.desktop
 share/akonadi/agents/mboxresource.desktop
-share/akonadi/agents/microblog.desktop
+share/akonadi/agents/migrationagent.desktop
 share/akonadi/agents/mixedmaildirresource.desktop
 share/akonadi/agents/mtdummyresource.desktop
-share/akonadi/agents/nepomuktagresource.desktop
 share/akonadi/agents/newmailnotifieragent.desktop
 share/akonadi/agents/nntpresource.desktop
 share/akonadi/agents/notesresource.desktop
@@ -159,13 +147,12 @@ share/apps/akonadi/accountwizard/maildir/maildirwizard.es
 share/apps/akonadi/accountwizard/maildir/maildirwizard.ui
 share/apps/akonadi/accountwizard/pop3/
 share/apps/akonadi/accountwizard/pop3/pop3wizard.desktop
-share/apps/akonadi/accountwizard/pop3/pop3wizard.js
+share/apps/akonadi/accountwizard/pop3/pop3wizard.es
 share/apps/akonadi/accountwizard/pop3/pop3wizard.ui
 share/apps/akonadi/accountwizard/tine20/
 share/apps/akonadi/accountwizard/tine20/tine20wizard.desktop
 share/apps/akonadi/accountwizard/tine20/tine20wizard.es
 share/apps/akonadi/accountwizard/tine20/tine20wizard.ui
-share/apps/akonadi/akonadi-xml.xsd
 share/apps/akonadi/firstrun/
 share/apps/akonadi/firstrun/defaultaddressbook
 share/apps/akonadi/firstrun/defaultcalendar
@@ -181,15 +168,11 @@ share/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_socialnotification.desktop
 share/apps/akonadi_facebook_resource/
 share/apps/akonadi_facebook_resource/akonadi_facebook_resource.notifyrc
-share/apps/akonadi_knut_resource/
-share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/akonadi_maildispatcher_agent/
 share/apps/akonadi_maildispatcher_agent/akonadi_maildispatcher_agent.notifyrc
 share/apps/akonadi_newmailnotifier_agent/
 share/apps/akonadi_newmailnotifier_agent/akonadi_newmailnotifier_agent.notifyrc
 share/apps/kconf_update/newmailnotifier.upd
-share/apps/nepomukpimindexerutility/
-share/apps/nepomukpimindexerutility/nepomukpimindexerutility.rc
 share/autostart/kaddressbookmigrator.desktop
 share/config/accountwizard.knsrc
 share/config/kmail-migratorrc
@@ -229,11 +212,6 @@ share/kde4/services/kcm_akonadi_resources.desktop
 share/kde4/services/kcm_akonadi_server.desktop
 share/kde4/services/kresources/kabc/akonadi.desktop
 share/kde4/services/kresources/kcal/akonadi.desktop
-share/kde4/services/nepomukcalendarfeeder.desktop
-share/kde4/services/nepomukcontactfeeder.desktop
-share/kde4/services/nepomukmailfeeder.desktop
-share/kde4/services/nepomuknotefeeder.desktop
-share/kde4/servicetypes/akonadinepomukfeeder.desktop
 share/kde4/servicetypes/davgroupwareprovider.desktop
 share/mime/packages/accountwizard-mime.xml
 share/mime/packages/kdepim-mime.xml
@@ -242,7 +220,5 @@ share/mime/packages/kdepim-mime.xml
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 share/mime/packages/x-vnd.akonadi.socialnotification.xml
-share/ontology/kde/aneo.ontology
-share/ontology/kde/aneo.trig
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

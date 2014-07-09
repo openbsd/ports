@@ -1,13 +1,17 @@
-$OpenBSD: patch-cmake_FindReadline_cmake,v 1.1 2013/05/14 09:16:25 zhuk Exp $
+$OpenBSD: patch-cmake_FindReadline_cmake,v 1.2 2014/07/09 20:03:23 zhuk Exp $
 Zap the odd hint path suffix, making it find libreadline from base.
---- cmake/FindReadline.cmake.orig	Thu May  9 21:52:47 2013
-+++ cmake/FindReadline.cmake	Thu May  9 21:56:49 2013
-@@ -3,7 +3,7 @@ if(READLINE_INCLUDE_DIR AND READLINE_LIBRARY)
+Review: https://git.reviewboard.kde.org/r/118957/
+Committed: af69daaa5dc810e6bdfe7da0f7631a6b47cc01ee
+--- cmake/FindReadline.cmake.orig	Sat Feb 15 21:03:35 2014
++++ cmake/FindReadline.cmake	Thu Jun 26 16:44:31 2014
+@@ -2,9 +2,7 @@
+ if(READLINE_INCLUDE_DIR AND READLINE_LIBRARY)
  	set(READLINE_FOUND TRUE)
  else(READLINE_INCLUDE_DIR AND READLINE_LIBRARY)
- 	FIND_PATH(READLINE_INCLUDE_DIR readline/readline.h
+-	FIND_PATH(READLINE_INCLUDE_DIR readline/readline.h
 -		/usr/include/readline
-+		HINTS /usr/include
- 	)
+-	)
++	FIND_PATH(READLINE_INCLUDE_DIR readline/readline.h)
  	
  	FIND_LIBRARY(READLINE_LIBRARY NAMES readline)
+         include(FindPackageHandleStandardArgs)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:19:37 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:27 zhuk Exp $
 @conflict kdegames-<4.10
 @bin bin/kreversi
 share/applications/kde4/kreversi.desktop
@@ -6,7 +6,16 @@ share/apps/kreversi/
 share/apps/kreversi/kreversi.notifyrc
 share/apps/kreversi/kreversiui.rc
 share/apps/kreversi/pics/
+share/apps/kreversi/pics/default_theme.desktop
 share/apps/kreversi/pics/default_theme.svgz
+share/apps/kreversi/qml/
+share/apps/kreversi/qml/Board.qml
+share/apps/kreversi/qml/CanvasItem.qml
+share/apps/kreversi/qml/Cell.qml
+share/apps/kreversi/qml/Chip.qml
+share/apps/kreversi/qml/Popup.qml
+share/apps/kreversi/qml/Table.qml
+share/apps/kreversi/qml/globals.js
 share/apps/kreversi/sounds/
 share/apps/kreversi/sounds/reversi-click.wav
 share/apps/kreversi/sounds/reversi-won.wav

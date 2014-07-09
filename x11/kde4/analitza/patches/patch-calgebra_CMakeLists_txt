@@ -1,17 +1,33 @@
-$OpenBSD: patch-calgebra_CMakeLists_txt,v 1.1.1.1 2013/04/24 11:21:42 zhuk Exp $
---- calgebra/CMakeLists.txt.orig	Wed Oct 17 14:35:23 2012
-+++ calgebra/CMakeLists.txt	Wed Oct 17 14:35:54 2012
-@@ -1,11 +1,11 @@
+$OpenBSD: patch-calgebra_CMakeLists_txt,v 1.2 2014/07/09 20:03:23 zhuk Exp $
+1. OpenBSD's readline doesn't have free_history_entry().
+2. Fix linking, curses library should be linked explicitly.
+Review: https://git.reviewboard.kde.org/r/118959/
+Committed: 04683524c195a5b1a92874980a52de4c246d76e5
+--- calgebra/CMakeLists.txt.orig	Sat Feb 15 21:03:35 2014
++++ calgebra/CMakeLists.txt	Fri Jun 27 02:33:57 2014
+@@ -1,11 +1,23 @@
 -include_directories(${READLINE_INCLUDE_DIR})
-+include_directories(${READLINE_INCLUDE_DIR} ${NCURSES_INCLUDE_DIRS})
++include(CheckFunctionExists)
++include(CMakePushCheckState)
  
++include_directories(${READLINE_INCLUDE_DIR} ${CURSES_INCLUDE_DIR})
++
++# check if we have recent version of Readline
++cmake_push_check_state(RESET)
++set(CMAKE_REQUIRED_LIBRARIES ${READLINE_LIBRARY} ${CURSES_LIBRARIES})
++check_function_exists(free_history_entry HAVE_FREE_HISTORY_ENTRY)
++cmake_pop_check_state()
++if(HAVE_FREE_HISTORY_ENTRY)
++	add_definitions(-DHAVE_FREE_HISTORY_ENTRY)
++endif()
++
  set(calgebra_SRCS
  	main.cpp
  )
  
  kde4_add_executable(calgebra ${calgebra_SRCS})
 -target_link_libraries(calgebra ${QT_QTCORE_LIBRARY} ${READLINE_LIBRARY} analitza)
-+target_link_libraries(calgebra ${QT_QTCORE_LIBRARY} ${READLINE_LIBRARY} ${NCURSES_LIBRARY} analitza)
++target_link_libraries(calgebra ${QT_QTCORE_LIBRARY} ${READLINE_LIBRARY} ${CURSES_LIBRARIES} analitza)
  
  install(TARGETS calgebra ${INSTALL_TARGETS_DEFAULT_ARGS})
  

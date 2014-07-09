@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-id,v 1.1.1.1 2013/04/24 18:23:50 zhuk Exp $
+@comment $OpenBSD: PLIST-id,v 1.2 2014/07/09 20:03:28 zhuk Exp $
 share/locale/id/LC_MESSAGES/ark.mo
 share/locale/id/LC_MESSAGES/attica_kde.mo
 share/locale/id/LC_MESSAGES/audiorename_plugin.mo
@@ -11,6 +11,8 @@ share/locale/id/LC_MESSAGES/htmlsearch.mo
 share/locale/id/LC_MESSAGES/imagerename_plugin.mo
 share/locale/id/LC_MESSAGES/joystick.mo
 share/locale/id/LC_MESSAGES/kaccess.mo
+share/locale/id/LC_MESSAGES/kate.mo
+share/locale/id/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/id/LC_MESSAGES/kblankscrn.mo
 share/locale/id/LC_MESSAGES/kcalc.mo
 share/locale/id/LC_MESSAGES/kcharselect.mo
@@ -22,17 +24,14 @@ share/locale/id/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/id/LC_MESSAGES/kcm_emoticons.mo
 share/locale/id/LC_MESSAGES/kcm_infobase.mo
 share/locale/id/LC_MESSAGES/kcm_infosummary.mo
-share/locale/id/LC_MESSAGES/kcm_krfb.mo
 share/locale/id/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/id/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/id/LC_MESSAGES/kcm_memory.mo
 share/locale/id/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/id/LC_MESSAGES/kcm_pci.mo
 share/locale/id/LC_MESSAGES/kcm_phonon.mo
-share/locale/id/LC_MESSAGES/kcm_phononxine.mo
 share/locale/id/LC_MESSAGES/kcm_platform.mo
 share/locale/id/LC_MESSAGES/kcm_remotecontrol.mo
-share/locale/id/LC_MESSAGES/kcm_solid.mo
 share/locale/id/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/id/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/id/LC_MESSAGES/kcmaccess.mo
@@ -78,7 +77,6 @@ share/locale/id/LC_MESSAGES/kcmstyle.mo
 share/locale/id/LC_MESSAGES/kcmusb.mo
 share/locale/id/LC_MESSAGES/kcmview1394.mo
 share/locale/id/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/id/LC_MESSAGES/kcmxinerama.mo
 share/locale/id/LC_MESSAGES/kde-menu.mo
 share/locale/id/LC_MESSAGES/kdebugdialog.mo
 share/locale/id/LC_MESSAGES/kdecalendarsystems.mo
@@ -90,6 +88,7 @@ share/locale/id/LC_MESSAGES/kdf.mo
 share/locale/id/LC_MESSAGES/kdialog.mo
 share/locale/id/LC_MESSAGES/kdmconfig.mo
 share/locale/id/LC_MESSAGES/kdmgreet.mo
+share/locale/id/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/id/LC_MESSAGES/keditbookmarks.mo
 share/locale/id/LC_MESSAGES/kfile.mo
 share/locale/id/LC_MESSAGES/kfileaudiopreview4.mo
@@ -110,6 +109,7 @@ share/locale/id/LC_MESSAGES/kiconfinder.mo
 share/locale/id/LC_MESSAGES/kinfocenter.mo
 share/locale/id/LC_MESSAGES/kio_applications.mo
 share/locale/id/LC_MESSAGES/kio_archive.mo
+share/locale/id/LC_MESSAGES/kio_audiocd.mo
 share/locale/id/LC_MESSAGES/kio_bookmarks.mo
 share/locale/id/LC_MESSAGES/kio_finger.mo
 share/locale/id/LC_MESSAGES/kio_fish.mo
@@ -118,18 +118,21 @@ share/locale/id/LC_MESSAGES/kio_info.mo
 share/locale/id/LC_MESSAGES/kio_man.mo
 share/locale/id/LC_MESSAGES/kio_nepomuk.mo
 share/locale/id/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/id/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/id/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/id/LC_MESSAGES/kio_nfs.mo
+share/locale/id/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/id/LC_MESSAGES/kio_remote.mo
 share/locale/id/LC_MESSAGES/kio_sftp.mo
 share/locale/id/LC_MESSAGES/kio_smb.mo
 share/locale/id/LC_MESSAGES/kio_thumbnail.mo
-share/locale/id/LC_MESSAGES/kio_timeline.mo
 share/locale/id/LC_MESSAGES/kio_trash.mo
 share/locale/id/LC_MESSAGES/kioclient.mo
 share/locale/id/LC_MESSAGES/kioexec.mo
 share/locale/id/LC_MESSAGES/klipper.mo
 share/locale/id/LC_MESSAGES/kmenuedit.mo
 share/locale/id/LC_MESSAGES/kmimetypefinder.mo
+share/locale/id/LC_MESSAGES/kmix.mo
 share/locale/id/LC_MESSAGES/knetattach.mo
 share/locale/id/LC_MESSAGES/knotify4.mo
 share/locale/id/LC_MESSAGES/konqueror.mo
@@ -142,6 +145,7 @@ share/locale/id/LC_MESSAGES/krdb.mo
 share/locale/id/LC_MESSAGES/kreadconfig.mo
 share/locale/id/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/id/LC_MESSAGES/krunner.mo
+share/locale/id/LC_MESSAGES/kscd.mo
 share/locale/id/LC_MESSAGES/kscreensaver.mo
 share/locale/id/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/id/LC_MESSAGES/kshorturifilter.mo
@@ -152,6 +156,7 @@ share/locale/id/LC_MESSAGES/kstyle_config.mo
 share/locale/id/LC_MESSAGES/ksysguard.mo
 share/locale/id/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/id/LC_MESSAGES/ksystraycmd.mo
+share/locale/id/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/id/LC_MESSAGES/ktimer.mo
 share/locale/id/LC_MESSAGES/ktraderclient.mo
 share/locale/id/LC_MESSAGES/kuiserver.mo
@@ -174,10 +179,11 @@ share/locale/id/LC_MESSAGES/liboktetacore.mo
 share/locale/id/LC_MESSAGES/libphonon.mo
 share/locale/id/LC_MESSAGES/libplasmaclock.mo
 share/locale/id/LC_MESSAGES/libtaskmanager.mo
-share/locale/id/LC_MESSAGES/nepomukbackup.mo
-share/locale/id/LC_MESSAGES/nepomukcontroller.mo
+share/locale/id/LC_MESSAGES/mf_konqplugin.mo
+share/locale/id/LC_MESSAGES/minitoolsplugin.mo
+share/locale/id/LC_MESSAGES/mplayerthumbs.mo
+share/locale/id/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/id/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/id/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/id/LC_MESSAGES/nepomukserver.mo
 share/locale/id/LC_MESSAGES/nepomukservicestub.mo
 share/locale/id/LC_MESSAGES/nepomukstorage.mo
@@ -202,8 +208,8 @@ share/locale/id/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/id/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/id/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/id/LC_MESSAGES/plasma_applet_newspaper.mo
-share/locale/id/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/id/LC_MESSAGES/plasma_applet_notifier.mo
+share/locale/id/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
 share/locale/id/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/id/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/id/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -223,7 +229,6 @@ share/locale/id/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/id/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/id/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/id/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
-share/locale/id/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/id/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/id/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/id/LC_MESSAGES/plasma_engine_metadata.mo
@@ -252,22 +257,21 @@ share/locale/id/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/id/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/id/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/id/LC_MESSAGES/plasma_wallpaper_image.mo
-share/locale/id/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/id/LC_MESSAGES/plasmagenericshell.mo
 share/locale/id/LC_MESSAGES/plasmapkg.mo
-share/locale/id/LC_MESSAGES/plasmawallpaperviewer.mo
-share/locale/id/LC_MESSAGES/plasmoidviewer.mo
 share/locale/id/LC_MESSAGES/powerdevil.mo
-share/locale/id/LC_MESSAGES/printer-applet.mo
 share/locale/id/LC_MESSAGES/processcore.mo
 share/locale/id/LC_MESSAGES/processui.mo
 share/locale/id/LC_MESSAGES/randrmonitor.mo
+share/locale/id/LC_MESSAGES/rellinks.mo
+share/locale/id/LC_MESSAGES/searchbarplugin.mo
 share/locale/id/LC_MESSAGES/solid-hardware.mo
-share/locale/id/LC_MESSAGES/solid-network.mo
-share/locale/id/LC_MESSAGES/solidcontrol.mo
 share/locale/id/LC_MESSAGES/soliduiserver.mo
 share/locale/id/LC_MESSAGES/superkaramba.mo
 share/locale/id/LC_MESSAGES/sweeper.mo
 share/locale/id/LC_MESSAGES/systemsettings.mo
+share/locale/id/LC_MESSAGES/uachangerplugin.mo
 share/locale/id/LC_MESSAGES/useraccount.mo
+share/locale/id/LC_MESSAGES/validatorsplugin.mo
+share/locale/id/LC_MESSAGES/webarchiver.mo
 share/locale/id/entry.desktop

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/09 20:03:24 zhuk Exp $
 
 BROKEN =	requires key dependencies update
 COMMENT =	periodic system of elements for KDE
@@ -9,7 +9,7 @@ DISTNAME =	kalzium-${MODKDE4_VERSION}
 SHARED_LIBS =	science			50.0 # 4.7
 SHARED_LIBS +=	compoundviewer		50.0 # 4.7
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus
 WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml

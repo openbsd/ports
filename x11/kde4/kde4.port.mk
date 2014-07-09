@@ -1,7 +1,7 @@
-# $OpenBSD: kde4.port.mk,v 1.19 2014/06/28 16:45:00 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.20 2014/07/09 20:03:22 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.11.5
+_MODKDE4_STABLE =	4.13.2
 
 # List of currently supported KDE SC versions, except "stable"
 _MODKDE4_OTHERS =
@@ -99,6 +99,9 @@ MODKDE4_RESOURCES ?=	No
 
 .if ${MODKDE4_RESOURCES:L} == "no"
 MODKDE4_USE ?=		runtime
+MODULES +=		gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c++
 .else
 MODKDE4_USE ?=		libs
 .endif

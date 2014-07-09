@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/05/01 22:32:42 zhuk Exp $
---- CMakeLists.txt.orig	Fri May  2 02:26:38 2014
-+++ CMakeLists.txt	Fri May  2 02:28:18 2014
-@@ -31,7 +31,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  ${KDE4_ENABL
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/07/09 20:03:24 zhuk Exp $
+--- CMakeLists.txt.orig	Sun May  4 11:34:47 2014
++++ CMakeLists.txt	Fri Jun 27 03:49:17 2014
+@@ -31,12 +31,12 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  ${KDE4_ENABL
  
  ########### next target ###############
  
@@ -10,3 +10,9 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2014/05/01 22:32:42 zhuk Exp $
  add_definitions(-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS -DQT_STL)
  
  # Look for Ogg Opus support in taglib (not released yet)
+ macro_push_required_vars()
+-set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${TAGLIB_INCLUDES})
++set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES}${TAGLIB_INCLUDES} ${TAGLIB_INCLUDES}/taglib)
+ check_include_file_cxx(opusfile.h TAGLIB_HAS_OPUSFILE)
+ macro_pop_required_vars()
+ 

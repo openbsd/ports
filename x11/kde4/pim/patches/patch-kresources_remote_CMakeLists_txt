@@ -1,0 +1,30 @@
+$OpenBSD: patch-kresources_remote_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- kresources/remote/CMakeLists.txt.orig	Tue Jul  1 12:51:38 2014
++++ kresources/remote/CMakeLists.txt	Tue Jul  1 12:52:24 2014
+@@ -13,7 +13,7 @@ set(kcal_resourceremote_LIB_SRCS resourceremote.cpp re
+ 
+ kde4_add_library(kcal_resourceremote ${LIBRARY_TYPE} ${kcal_resourceremote_LIB_SRCS})
+ 
+-target_link_libraries(kcal_resourceremote  ${KDE4_KDECORE_LIBS} ${KDEPIMLIBS_KCAL_LIBS} kdepim )
++target_link_libraries(kcal_resourceremote  kdepim ${KDEPIMLIBS_KCAL_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ set_target_properties(kcal_resourceremote PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+ install(TARGETS kcal_resourceremote ${INSTALL_TARGETS_DEFAULT_ARGS})
+@@ -29,12 +29,12 @@ kde4_add_plugin(kcal_remote ${kcal_remote_PART_SRCS})
+ 
+ 
+ target_link_libraries(kcal_remote
+-  ${QT_QTGUI_LIBRARY}
+-  ${KDE4_KDECORE_LIBS}
+-  ${KDEPIMLIBS_KCAL_LIBS}
+-  ${KDEPIMLIBS_KRESOURCES_LIBS}
+   kcal_resourceremote
+   kdepim
++  ${KDEPIMLIBS_KCAL_LIBS}
++  ${KDEPIMLIBS_KRESOURCES_LIBS}
++  ${KDE4_KDECORE_LIBS}
++  ${QT_QTGUI_LIBRARY}
+ )
+ 
+ install(TARGETS kcal_remote  DESTINATION ${PLUGIN_INSTALL_DIR})

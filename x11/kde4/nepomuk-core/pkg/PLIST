@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/09 20:03:29 zhuk Exp $
 @conflict kde-runtime-<4.8.80
 bin/nepomuk-simpleresource-rcgen
 @bin bin/nepomuk2-rcgen
 @bin bin/nepomukbackup
+@bin bin/nepomukbaloomigrator
 @bin bin/nepomukcleaner
 @bin bin/nepomukcmd
 @bin bin/nepomukctl
@@ -135,9 +136,9 @@ lib/cmake/NepomukCore/NepomukCoreTargetsWithPrefix.cmake
 lib/kde4/nepomukepubextractor.so
 lib/kde4/nepomukexiv2extractor.so
 lib/kde4/nepomukffmpegextractor.so
-lib/kde4/nepomukmobiextractor.so
 lib/kde4/nepomukodfextractor.so
 lib/kde4/nepomukoffice2007extractor.so
+lib/kde4/nepomukofficeextractor.so
 lib/kde4/nepomukplaintextextractor.so
 lib/kde4/nepomukpopplerextractor.so
 lib/kde4/nepomuktaglibextractor.so
@@ -154,7 +155,7 @@ share/apps/nepomukfilewatch/
 share/apps/nepomukfilewatch/nepomukfilewatch.notifyrc
 share/apps/nepomukstorage/
 share/apps/nepomukstorage/nepomukstorage.notifyrc
-share/autostart/
+share/autostart/nepomukbaloomigrator.desktop
 share/autostart/nepomukserver.desktop
 share/dbus-1/interfaces/org.kde.NepomukServer.xml
 share/dbus-1/interfaces/org.kde.nepomuk.BackupManager.xml
@@ -176,9 +177,9 @@ share/kde4/services/nepomukexiv2extractor.desktop
 share/kde4/services/nepomukffmpegextractor.desktop
 share/kde4/services/nepomukfileindexer.desktop
 share/kde4/services/nepomukfilewatch.desktop
-share/kde4/services/nepomukmobiextractor.desktop
 share/kde4/services/nepomukodfextractor.desktop
 share/kde4/services/nepomukoffice2007extractor.desktop
+share/kde4/services/nepomukofficeextractor.desktop
 share/kde4/services/nepomukontologyloader.desktop
 share/kde4/services/nepomukplaintextextractor.desktop
 share/kde4/services/nepomukpopplerextractor.desktop

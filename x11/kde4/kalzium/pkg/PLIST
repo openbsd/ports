@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:46:42 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:24 zhuk Exp $
 @bin bin/kalzium
 include/kde4/libkdeedu/
 include/kde4/libkdeedu/chemicaldataobject.h
@@ -334,7 +334,6 @@ share/apps/kalzium/icons/hicolor/48x48/
 share/apps/kalzium/icons/hicolor/48x48/actions/
 share/apps/kalzium/icons/hicolor/48x48/actions/calculate.png
 share/apps/kalzium/icons/hicolor/48x48/actions/chemical.png
-share/apps/kalzium/icons/hicolor/48x48/actions/elempic.png
 share/apps/kalzium/icons/hicolor/48x48/actions/energies.png
 share/apps/kalzium/icons/hicolor/48x48/actions/eqchem.png
 share/apps/kalzium/icons/hicolor/48x48/actions/glossary.png
@@ -406,7 +405,6 @@ share/doc/HTML/en/kalzium/infodialog_misc.png
 share/doc/HTML/en/kalzium/infodialog_spectrum.png
 share/doc/HTML/en/kalzium/man-kalzium.1.docbook
 share/doc/HTML/en/kalzium/quick-1.png
-share/doc/HTML/en/kalzium/quick-2.png
 share/doc/HTML/en/kalzium/quick-3.png
 share/doc/HTML/en/kalzium/quick-4.png
 share/doc/HTML/en/kalzium/screenshot-calc-conc.png
@@ -429,7 +427,6 @@ share/doc/HTML/en/kalzium/settings2.png
 share/doc/HTML/en/kalzium/settings3.png
 share/doc/HTML/en/kalzium/settings4.png
 share/doc/HTML/en/kalzium/sidebar1.png
-share/doc/HTML/en/kalzium/sidebar2.png
 share/icons/hicolor/128x128/apps/kalzium.png
 share/icons/hicolor/16x16/apps/kalzium.png
 share/icons/hicolor/22x22/apps/kalzium.png

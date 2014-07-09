@@ -1,8 +1,8 @@
-$OpenBSD: patch-protocols_wlm_CMakeLists_txt,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+$OpenBSD: patch-protocols_wlm_CMakeLists_txt,v 1.2 2014/07/09 20:03:27 zhuk Exp $
 Rework oRTP library detection.
---- protocols/wlm/CMakeLists.txt.orig	Mon Dec  2 17:26:44 2013
-+++ protocols/wlm/CMakeLists.txt	Mon Dec  2 17:27:17 2013
-@@ -55,8 +55,8 @@ set(kopete_wlm_link_LIBS
+--- protocols/wlm/CMakeLists.txt.orig	Thu Apr 17 11:51:13 2014
++++ protocols/wlm/CMakeLists.txt	Fri Jun 27 18:45:14 2014
+@@ -53,8 +53,8 @@ set(kopete_wlm_link_LIBS
  )
  
  if(BUILD_WLM_MEDIASTREAMER)

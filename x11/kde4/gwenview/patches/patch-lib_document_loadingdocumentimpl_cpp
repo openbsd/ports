@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_document_loadingdocumentimpl_cpp,v 1.1 2014/07/09 20:03:24 zhuk Exp $
+Disable libkdcraw usage until crashes are resolved.
+--- lib/document/loadingdocumentimpl.cpp.orig	Sun Jun 29 23:23:24 2014
++++ lib/document/loadingdocumentimpl.cpp	Sun Jun 29 23:23:40 2014
+@@ -190,7 +190,8 @@ struct LoadingDocumentImplPrivate
+         buffer.setBuffer(&mData);
+         buffer.open(QIODevice::ReadOnly);
+ 
+-        if (KDcrawIface::KDcraw::rawFilesList().contains(QString(mFormatHint))) {
++        if (false) {
++        // if (KDcrawIface::KDcraw::rawFilesList().contains(QString(mFormatHint))) {
+             QByteArray previewData;
+ 
+             // if the image is in format supported by dcraw, fetch its embedded preview

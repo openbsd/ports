@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hi,v 1.5 2014/01/15 19:42:11 zhuk Exp $
+@comment $OpenBSD: PLIST-hi,v 1.6 2014/07/09 20:03:28 zhuk Exp $
 share/locale/hi/LC_MESSAGES/akregator.mo
 share/locale/hi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/hi/LC_MESSAGES/amor.mo
@@ -11,6 +11,7 @@ share/locale/hi/LC_MESSAGES/autorefresh.mo
 share/locale/hi/LC_MESSAGES/babelfish.mo
 share/locale/hi/LC_MESSAGES/blinken.mo
 share/locale/hi/LC_MESSAGES/bovo.mo
+share/locale/hi/LC_MESSAGES/calendarsupport.mo
 share/locale/hi/LC_MESSAGES/cervisia.mo
 share/locale/hi/LC_MESSAGES/cvsservice.mo
 share/locale/hi/LC_MESSAGES/dirfilterplugin.mo
@@ -55,7 +56,6 @@ share/locale/hi/LC_MESSAGES/katetextfilter.mo
 share/locale/hi/LC_MESSAGES/katexmlcheck.mo
 share/locale/hi/LC_MESSAGES/katexmltools.mo
 share/locale/hi/LC_MESSAGES/katomic.mo
-share/locale/hi/LC_MESSAGES/kbattleship.mo
 share/locale/hi/LC_MESSAGES/kblackbox.mo
 share/locale/hi/LC_MESSAGES/kblankscrn.mo
 share/locale/hi/LC_MESSAGES/kbounce.mo
@@ -197,6 +197,8 @@ share/locale/hi/LC_MESSAGES/kio_man.mo
 share/locale/hi/LC_MESSAGES/kio_mbox.mo
 share/locale/hi/LC_MESSAGES/kio_nepomuk.mo
 share/locale/hi/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/hi/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/hi/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/hi/LC_MESSAGES/kio_nfs.mo
 share/locale/hi/LC_MESSAGES/kio_nntp.mo
 share/locale/hi/LC_MESSAGES/kio_pop3.mo
@@ -208,7 +210,6 @@ share/locale/hi/LC_MESSAGES/kio_smb.mo
 share/locale/hi/LC_MESSAGES/kio_smtp.mo
 share/locale/hi/LC_MESSAGES/kio_svn.mo
 share/locale/hi/LC_MESSAGES/kio_thumbnail.mo
-share/locale/hi/LC_MESSAGES/kio_timeline.mo
 share/locale/hi/LC_MESSAGES/kio_trash.mo
 share/locale/hi/LC_MESSAGES/kio_zeroconf.mo
 share/locale/hi/LC_MESSAGES/kioclient.mo
@@ -234,6 +235,7 @@ share/locale/hi/LC_MESSAGES/kmix.mo
 share/locale/hi/LC_MESSAGES/kmousetool.mo
 share/locale/hi/LC_MESSAGES/kmouth.mo
 share/locale/hi/LC_MESSAGES/kmplot.mo
+share/locale/hi/LC_MESSAGES/knavalbattle.mo
 share/locale/hi/LC_MESSAGES/knetattach.mo
 share/locale/hi/LC_MESSAGES/knetwalk.mo
 share/locale/hi/LC_MESSAGES/knotes.mo
@@ -327,6 +329,7 @@ share/locale/hi/LC_MESSAGES/libkldap.mo
 share/locale/hi/LC_MESSAGES/libkleopatra.mo
 share/locale/hi/LC_MESSAGES/libkmahjongg.mo
 share/locale/hi/LC_MESSAGES/libkmime.mo
+share/locale/hi/LC_MESSAGES/libkomparediff2.mo
 share/locale/hi/LC_MESSAGES/libkonq.mo
 share/locale/hi/LC_MESSAGES/libkpgp.mo
 share/locale/hi/LC_MESSAGES/libkpimidentities.mo

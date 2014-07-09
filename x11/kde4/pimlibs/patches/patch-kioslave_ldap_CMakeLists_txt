@@ -1,8 +1,8 @@
-$OpenBSD: patch-kioslave_ldap_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kioslave_ldap_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kioslave/ldap/CMakeLists.txt.orig	Wed Nov  6 09:24:42 2013
-+++ kioslave/ldap/CMakeLists.txt	Wed Nov  6 09:24:52 2013
-@@ -3,7 +3,7 @@ set(kio_ldap_PART_SRCS kio_ldap.cpp)
+--- kioslave/ldap/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kioslave/ldap/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -7,7 +7,7 @@ include_directories(
  
  kde4_add_plugin(kio_ldap ${kio_ldap_PART_SRCS})
  

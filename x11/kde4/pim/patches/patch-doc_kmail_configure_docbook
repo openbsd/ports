@@ -1,67 +1,118 @@
-$OpenBSD: patch-doc_kmail_configure_docbook,v 1.1 2014/01/15 19:42:12 zhuk Exp $
+$OpenBSD: patch-doc_kmail_configure_docbook,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Deconflict kde-runtime with kdebase-3.x.
---- doc/kmail/configure.docbook.orig	Wed Jan 15 15:22:58 2014
-+++ doc/kmail/configure.docbook	Wed Jan 15 15:23:20 2014
-@@ -2316,7 +2316,7 @@ Apart from the options presented in the configuration 
- can only be set directly in the &kmail; configuration file or through KIOSK.
-   These so called <quote>hidden</quote> configuration options cannot be changed via
- the normal &kmail; Settings dialog; they must be made by modifying the
--configuration file using a text editor or the <command>kwriteconfig</command>
-+configuration file using a text editor or the <command>kwriteconfig4</command>
- program.
+--- doc/kmail/configure.docbook.orig	Wed May  7 14:01:39 2014
++++ doc/kmail/configure.docbook	Thu May 29 12:16:53 2014
+@@ -2316,10 +2316,10 @@ will be moved to the Trash folder, once the reply has 
+ <para>
+ Apart from the options presented in the configuration dialog, some options can only be set directly in the &kmail; configuration
+ file or through KIOSK (&eg; Input into &konsole;). These so called <quote>hidden</quote> configuration options cannot be changed via the
+-normal &kmail; Settings dialog; they must be made by modifying the configuration file using a text editor or the <command>kwriteconfig</command>
++normal &kmail; Settings dialog; they must be made by modifying the configuration file using a text editor or the <command>kwriteconfig4</command>
+ program. The configuration file is to be written in the format of [Section Name] and the following lines are the variables and their
+ settings. If you are manually editing the configuration file you will need to add the [Section Name] before adding variables.
+-The <command>kwriteconfig</command> will add the section for you as long as you use the <userinput>--group</userinput> switch.
++The <command>kwriteconfig4</command> will add the section for you as long as you use the <userinput>--group</userinput> switch.
  </para>
  
-@@ -2355,7 +2355,7 @@ set that way for practical reasons, to avoid servers r
- generates because they think they are SPAM.
- </para>
  <para>
--<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group MDN --key SendMDNsWithEmptySender true</option></userinput>
-+<prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group MDN --key SendMDNsWithEmptySender true</option></userinput>
+@@ -2349,9 +2349,9 @@ enable this feature, add to the <quote>[MDN]</quote> s
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>SendMDNsWithEmptySender=true</programlisting></listitem>
+-  <listitem><para><command>kwriteconfig</command></para>
++  <listitem><para><command>kwriteconfig4</command></para>
+   <para>
+-<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group MDN --key SendMDNsWithEmptySender true</option></userinput>
++<prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command> <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group MDN --key SendMDNsWithEmptySender true</option></userinput>
  </para>
  </listitem>
- </varlistentry>
-@@ -2372,7 +2372,7 @@ To limit attachments to 20 MB in size, for example, ad
- <programlisting>MaximumAttachmentSize=20
- </programlisting>
- <para>
--<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group Composer --key MaximumAttachmentSize 20</option></userinput>
-+<prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group Composer --key MaximumAttachmentSize 20</option></userinput>
- </para>
- </listitem>
- </varlistentry>
-@@ -2389,7 +2389,7 @@ To enable the feature, add a line reading (under [Gene
- <programlisting>CloseDespiteSystemTray=true
- </programlisting>
+ </itemizedlist>
+@@ -2371,9 +2371,9 @@ To enable the feature, add to the <quote>[General]</qu
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>CloseDespiteSystemTray=true</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
++<listitem><para><command>kwriteconfig4</command></para>
  <para>
 -<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command>
 +<prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command>
- <option>--file <replaceable>/path/to/kmailrc</replaceable> --group General --key CloseDespiteSystemTray true</option></userinput>
- </para>
+ <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group General --key CloseDespiteSystemTray true</option></userinput>
+ </para></listitem>
+ </itemizedlist>
+@@ -2393,8 +2393,8 @@ To enable this feature, add to the <quote>[General]</q
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>disregardUmask=true</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
+-<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group General --key disregardUmask true</option></userinput>
++<listitem><para><command>kwriteconfig4</command></para>
++<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command> <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group General --key disregardUmask true</option></userinput>
+ </para></listitem>
+ </itemizedlist>
  </listitem>
-@@ -2407,7 +2407,7 @@ To disable the feature, add a line reading (under [Out
- <programlisting>CheckOutOfOfficeOnStartup=false
- </programlisting>
- <para>
--<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command>
-+<prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command>
- <option>--file <replaceable>/path/to/kmailrc</replaceable> --group OutOfOffice --key CheckOutOfOfficeOnStartup false</option></userinput>
- </para>
+@@ -2410,8 +2410,8 @@ To disable the feature, add to the <quote>[OutOfOffice
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>CheckOutOfOfficeOnStartup=false</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
+-<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command>
++<listitem><para><command>kwriteconfig4</command></para>
++<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command>
+ <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group OutOfOffice --key CheckOutOfOfficeOnStartup false</option></userinput>
+ </para></listitem>
+ </itemizedlist>
+@@ -2428,8 +2428,8 @@ the server you can add to the <quote>[OutOfOffice]</qu
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>AllowOutOfOfficeSettings=false</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
+-<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command>
++<listitem><para><command>kwriteconfig4</command></para>
++<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command>
+ <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group OutOfOffice --key AllowOutOfOfficeSettings false</option></userinput>
+ </para></listitem>
+ </itemizedlist>
+@@ -2446,8 +2446,8 @@ able to change the domain to react to and the react-to
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>AllowOutOfOfficeUploadButNoSettings=true</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
+-<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command>
++<listitem><para><command>kwriteconfig4</command></para>
++<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command>
+ <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group OutOfOffice --key AllowOutOfOfficeUploadButNoSettings true</option></userinput>
+ </para></listitem>
+ </itemizedlist>
+@@ -2465,8 +2465,8 @@ To pre-load this setting with a default value, add to 
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>OutOfOfficeDomain=myMailDomain.test</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
+-<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command>
++<listitem><para><command>kwriteconfig4</command></para>
++<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command>
+ <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group OutOfOffice --key OutOfOfficeDomain myMailDomain.test</option></userinput>
+ </para></listitem>
+ </itemizedlist>
+@@ -2482,8 +2482,8 @@ behavior, add to the [OutOfOffice] section:</para>
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>OutOfOfficeReactToSpam=true</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
+-<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command>
++<listitem><para><command>kwriteconfig4</command></para>
++<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command>
+ <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group OutOfOffice --key OutOfOfficeReactToSpam true</option></userinput>
+ </para></listitem>
+ </itemizedlist>
+@@ -2500,8 +2500,8 @@ To enable this feature, add to the <quote>[Reader]</qu
+ <itemizedlist>
+ <listitem><para>Configuration file:</para>
+ <programlisting>ShowUserAgent=true</programlisting></listitem>
+-<listitem><para><command>kwriteconfig</command></para>
+-<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group Reader --key ShowUserAgent true</option></userinput>
++<listitem><para><command>kwriteconfig4</command></para>
++<para><prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command> <option>--file <replaceable>/path/to/kmail2rc</replaceable> --group Reader --key ShowUserAgent true</option></userinput>
+ </para></listitem>
+ </itemizedlist>
  </listitem>
-@@ -2495,7 +2495,7 @@ To enable this feature, add a line reading (under [Gen
- <programlisting>disregardUmask=true
- </programlisting>
- <para>
--<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group General --key disregardUmask true</option></userinput>
-+<prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group General --key disregardUmask true</option></userinput>
- </para>
- </listitem>
- </varlistentry>
-@@ -2523,7 +2523,7 @@ To enable this feature, add a line reading (under [Rea
- <programlisting>ShowUserAgent=true
- </programlisting>
- <para>
--<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group Reader --key ShowUserAgent true</option></userinput>
-+<prompt>&percnt;</prompt> <userinput><command>kwriteconfig4</command> <option>--file <replaceable>/path/to/kmailrc</replaceable> --group Reader --key ShowUserAgent true</option></userinput>
- </para>
- </listitem>
- </varlistentry>

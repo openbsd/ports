@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/07/09 20:03:25 zhuk Exp $
+--- CMakeLists.txt.orig	Sat Jun 28 21:32:58 2014
++++ CMakeLists.txt	Sat Jun 28 21:32:44 2014
+@@ -17,6 +17,10 @@ endif()
+ 
+ find_package( KdepimLibs REQUIRED ) 
+ 
++# KDE PIM devs reject adding Boost stuff to KdepimLibs interface
++find_package( Boost REQUIRED )
++include_directories( ${Boost_INCLUDE_DIRS} )
++
+ add_subdirectory( icons )
+ add_subdirectory( doc )
+ include_directories( ${KDE4_INCLUDES} ${KDEPIMLIBS_INCLUDE_DIR} )

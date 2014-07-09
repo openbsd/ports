@@ -1,7 +1,12 @@
-$OpenBSD: patch-cmake_FindSpeechd_cmake,v 1.4 2013/07/04 00:44:38 zhuk Exp $
---- cmake/FindSpeechd.cmake.orig	Tue May 28 23:30:51 2013
-+++ cmake/FindSpeechd.cmake	Fri Jun  7 00:45:28 2013
-@@ -1,15 +1,35 @@
+$OpenBSD: patch-cmake_FindSpeechd_cmake,v 1.5 2014/07/09 20:03:24 zhuk Exp $
+Allow to find speechd both when it require "speech-dispatcher/" prefix in
+include lines, and when it doesn't. Also, switch to CMake convention for
+naming configuration variables.
+
+NB: keep synced with the same patch in kaccessible.
+--- cmake/FindSpeechd.cmake.orig	Thu Jan  2 23:33:57 2014
++++ cmake/FindSpeechd.cmake	Tue Mar  4 12:31:05 2014
+@@ -1,17 +1,40 @@
  # find speech-dispatcher library and header if available
  # Copyright (c) 2009, Jeremy Whiting <jeremy@scitools.com>
  # Copyright (c) 2011, Raphael Kubo da Costa <kubito@gmail.com>
@@ -11,7 +16,7 @@ $OpenBSD: patch-cmake_FindSpeechd_cmake,v 1.4 2013/07/04 00:44:38 zhuk Exp $
 -#  SPEECHD_FOUND, If false, speechd was not found
  #
 +# This module defines:
-+#  SPEECHD_INCLUDE_DIR	     Directory where to find libspeechd.h.
++#  SPEECHD_INCLUDE_DIRS	     Directories with speechd header files.
 +#  SPEECHD_LIBRARIES         The libraries needed to link against speechd.
 +#  SPEECHD_FOUND             If false, speechd was not found.
 +#  SPEECHD_USES_INC_PREFIX   True if speechd wants <speechd-dispatcher/foo.h>
@@ -23,10 +28,11 @@ $OpenBSD: patch-cmake_FindSpeechd_cmake,v 1.4 2013/07/04 00:44:38 zhuk Exp $
 -find_path(SPEECHD_INCLUDE_DIR libspeechd.h PATH_SUFFIXES speech-dispatcher)
 +# Some versions of speech-dispatcher force <speech-dispatcher/foo.h> scheme,
 +# and some force <foo.h> scheme. This hack allows us to support both.
-+
+ 
+-find_library(SPEECHD_LIBRARIES NAMES speechd)
 +include(CheckIncludeFiles)
 +include(CMakePushCheckState)
-+
+ 
 +find_path(SPEECHD_INCLUDE_DIR speech-dispatcher/libspeechd.h)
 +if(SPEECHD_INCLUDE_DIR)
 +  cmake_push_check_state()
@@ -39,6 +45,12 @@ $OpenBSD: patch-cmake_FindSpeechd_cmake,v 1.4 2013/07/04 00:44:38 zhuk Exp $
 +  endif(SPEECHD_USES_INC_PREFIX)
 +  cmake_pop_check_state()
 +endif(SPEECHD_INCLUDE_DIR)
- 
- find_library(SPEECHD_LIBRARIES NAMES speechd)
- 
++
++find_library(SPEECHD_LIBRARY NAMES speechd)
++
++set(SPEECHD_INCLUDE_DIRS ${SPEECHD_INCLUDE_DIR})
++set(SPEECHD_LIBRARIES ${SPEECHD_LIBRARY})
++
+ include(FindPackageHandleStandardArgs)
+-find_package_handle_standard_args(Speechd REQUIRED_VARS SPEECHD_INCLUDE_DIR SPEECHD_LIBRARIES)
++find_package_handle_standard_args(Speechd REQUIRED_VARS SPEECHD_INCLUDE_DIRS SPEECHD_LIBRARIES)

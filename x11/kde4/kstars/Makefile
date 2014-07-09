@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/10 20:27:25 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:27 zhuk Exp $
 
 COMMENT =	planetarium simulator for KDE
 DISTNAME =	kstars-${MODKDE4_VERSION}
-REVISION =	0
 
 # Crashed after following actions:
 #   1. Enable OpenGL;
@@ -20,18 +19,16 @@ WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdeui ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/knewstuff3
-WANTLIB += cfitsio wcs
+WANTLIB += cfitsio qjson wcs
 
 # base GCC miscompiles (at least) one object file, Clang fails to compile
-MODULES =		gcc4 lang/python
+MODULES =		lang/python
 MODPY_BUILDDEP =	No
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
 
 LIB_DEPENDS = 	astro/wcslib \
 		math/cfitsio
 
-BUILD_DEPENDS =	math/eigen2 \
+BUILD_DEPENDS =	math/eigen3 \
 		x11/xplanet
 
 RUN_DEPENDS =	devel/desktop-file-utils \

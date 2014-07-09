@@ -1,0 +1,30 @@
+$OpenBSD: patch-knode_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- knode/CMakeLists.txt.orig	Tue Jul  1 13:04:31 2014
++++ knode/CMakeLists.txt	Tue Jul  1 13:05:59 2014
+@@ -109,14 +109,20 @@ kde4_add_kcfg_files(knodecommon_LIB_SRCS settings_base
+ kde4_add_library(knodecommon ${LIBRARY_TYPE} ${knodecommon_LIB_SRCS})
+ 
+ target_link_libraries(knodecommon
+-  ${KDEPIMLIBS_KMIME_LIBS} ${KDE4_KCMUTILS_LIBS} ${KDE4_KIO_LIBS}
+-  ${KDE4_KDE3SUPPORT_LIBS} ${KDEPIMLIBS_KABC_LIBS} ${KDE4_KHTML_LIBS}
+-  ${KDEPIMLIBS_KPIMUTILS_LIBS} ${KDEPIMLIBS_MAILTRANSPORT_LIBS}
+-  ${KDEPIMLIBS_KONTACTINTERFACE_LIBS}
+   kleo
+-  kdepim kpgp
+   messagecomposer
+   messageviewer
++  kdepim
++  kpgp
++  ${KDEPIMLIBS_KPIMUTILS_LIBS}
++  ${KDEPIMLIBS_MAILTRANSPORT_LIBS}
++  ${KDEPIMLIBS_KONTACTINTERFACE_LIBS}
++  ${KDEPIMLIBS_KABC_LIBS}
++  ${KDEPIMLIBS_KMIME_LIBS}
++  ${KDE4_KDE3SUPPORT_LIBS}
++  ${KDE4_KHTML_LIBS}
++  ${KDE4_KCMUTILS_LIBS}
++  ${KDE4_KIO_LIBS}
+ )
+ 
+ target_link_libraries(knodecommon LINK_INTERFACE_LIBRARIES ${KDE4_KCMUTILS_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KDE3SUPPORT_LIBS})

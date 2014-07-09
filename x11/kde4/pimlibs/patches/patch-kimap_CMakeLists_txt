@@ -1,13 +1,13 @@
-$OpenBSD: patch-kimap_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kimap_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kimap/CMakeLists.txt.orig	Wed Nov  6 10:46:47 2013
-+++ kimap/CMakeLists.txt	Wed Nov  6 10:47:06 2013
-@@ -52,7 +52,7 @@ set(kimap_LIB_SRCS
- 
- kde4_add_library(kimap ${LIBRARY_TYPE} ${kimap_LIB_SRCS})
+--- kimap/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kimap/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -55,7 +55,7 @@ set(kimap_LIB_SRCS
+ add_library(kimap ${LIBRARY_TYPE} ${kimap_LIB_SRCS})
+ generate_export_header(kimap)
  
 -target_link_libraries(kimap ${KDE4_KDECORE_LIBS} ${QT_QTNETWORK_LIBRARY} kmime  ${SASL2_LIBRARIES})
 +target_link_libraries(kimap kmime ${KDE4_KDECORE_LIBS} ${QT_QTNETWORK_LIBRARY} ${SASL2_LIBRARIES})
  
- include_directories( ${CMAKE_SOURCE_DIR}/kioslave ${SASL2_INCLUDE_DIR} ${Boost_INCLUDE_DIR} )
- 
+ include_directories(
+   ${CMAKE_SOURCE_DIR}/kioslave

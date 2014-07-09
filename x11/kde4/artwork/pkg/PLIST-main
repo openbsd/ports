@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/10/28 12:16:22 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/07/09 20:03:23 zhuk Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/artwork
 @bin bin/kbanner.kss
@@ -529,8 +529,6 @@ share/kde4/services/ScreenSavers/xmatrix.desktop
 share/kde4/services/ScreenSavers/xrayswarm.desktop
 share/kde4/services/ScreenSavers/xspirograph.desktop
 share/kde4/services/ScreenSavers/zoom.desktop
-share/sounds/KDE_Logout_new.wav
-share/sounds/KDE_Startup_new.wav
 share/wallpapers/Aghi/
 share/wallpapers/Aghi/contents/
 share/wallpapers/Aghi/contents/images/

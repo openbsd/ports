@@ -1,25 +1,27 @@
-$OpenBSD: patch-mailtransport_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-mailtransport_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- mailtransport/CMakeLists.txt.orig	Wed Nov  6 09:22:32 2013
-+++ mailtransport/CMakeLists.txt	Wed Nov  6 09:23:36 2013
-@@ -80,9 +80,9 @@ endif()
- kde4_add_kcfg_files(mailtransport_lib_srcs transportbase.kcfgc)
+--- mailtransport/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ mailtransport/CMakeLists.txt	Sun May 18 20:24:32 2014
+@@ -91,10 +91,11 @@ kde4_add_kcfg_files(mailtransport_lib_srcs transportba
  
- kde4_add_library(mailtransport ${LIBRARY_TYPE} ${mailtransport_lib_srcs})
+ add_library(mailtransport ${LIBRARY_TYPE} ${mailtransport_lib_srcs})
+ generate_export_header(mailtransport)
 -target_link_libraries(mailtransport ${KDE4_KIO_LIBS} akonadi-kde akonadi-kmime kmime)
-+target_link_libraries(mailtransport kmime akonadi-kmime akonadi-kde ${KDE4_KIO_LIBS} )
++target_link_libraries(mailtransport kmime akonadi-kmime akonadi-kde)
  if(MAILTRANSPORT_INPROCESS_SMTP)
 -  target_link_libraries(mailtransport ${SASL2_LIBRARIES} kpimutils)
 +  target_link_libraries(mailtransport kpimutils ${SASL2_LIBRARIES})
  endif()
++target_link_libraries(mailtransport ${KDE4_KIO_LIBS})
  
  set_target_properties(mailtransport PROPERTIES
-@@ -97,7 +97,7 @@ install(FILES mailtransport.kcfg DESTINATION ${KCFG_IN
- if(NOT WINCE)
-   set(mailtransport_kcm_srcs configmodule.cpp)
-   kde4_add_plugin(kcm_mailtransport ${mailtransport_kcm_srcs})
--  target_link_libraries(kcm_mailtransport ${KDE4_KDEUI_LIBS} mailtransport)
-+  target_link_libraries(kcm_mailtransport mailtransport ${KDE4_KDEUI_LIBS})
+   VERSION ${GENERIC_LIB_VERSION}
+@@ -106,7 +107,7 @@ install(FILES mailtransport.kcfg DESTINATION ${KCFG_IN
  
-   install(TARGETS kcm_mailtransport DESTINATION ${PLUGIN_INSTALL_DIR})
-   install(FILES kcm_mailtransport.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+ set(mailtransport_kcm_srcs configmodule.cpp)
+ kde4_add_plugin(kcm_mailtransport ${mailtransport_kcm_srcs})
+-target_link_libraries(kcm_mailtransport ${KDE4_KDEUI_LIBS} mailtransport)
++target_link_libraries(kcm_mailtransport mailtransport ${KDE4_KDEUI_LIBS})
+ 
+ install(TARGETS kcm_mailtransport DESTINATION ${PLUGIN_INSTALL_DIR})
+ install(FILES kcm_mailtransport.desktop DESTINATION ${SERVICES_INSTALL_DIR})

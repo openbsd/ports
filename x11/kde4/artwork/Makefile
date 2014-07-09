@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/01/20 19:08:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/09 20:03:23 zhuk Exp $
 
 COMMENT-main =		KDE graphics, styles and screensavers
 COMMENT-emoticons =	KDE emoticons
@@ -12,14 +12,13 @@ PKGNAME-nuvola =	nuvola-icon-theme-${MODKDE4_VERSION}
 PKG_ARCH-emoticons =	*
 PKG_ARCH-mono =		*
 PKG_ARCH-nuvola =	*
-REVISION-main =		0
 
 MODKDE4_USE =		workspace
 
 WANTLIB-emoticons =
 WANTLIB-mono =
 WANTLIB-nuvola =
-WANTLIB-main =  ${WANTLIB} c m pthread stdc++
+WANTLIB-main =  ${WANTLIB} c m pthread
 WANTLIB-main += GL GLU ICE SM X11 Xext Xt
 WANTLIB-main += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB-main += lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml

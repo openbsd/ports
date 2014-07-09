@@ -1,16 +1,19 @@
-$OpenBSD: patch-calgebra_main_cpp,v 1.1.1.1 2013/04/24 11:21:42 zhuk Exp $
---- calgebra/main.cpp.orig	Thu Nov 17 22:00:47 2011
-+++ calgebra/main.cpp	Fri Jun 29 16:06:51 2012
-@@ -152,7 +152,13 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-calgebra_main_cpp,v 1.2 2014/07/09 20:03:23 zhuk Exp $
+OpenBSD's readline doesn't have free_history_entry().
+Review: https://git.reviewboard.kde.org/r/118959/
+Committed: 04683524c195a5b1a92874980a52de4c246d76e5
+--- calgebra/main.cpp.orig	Sat Feb 15 21:03:35 2014
++++ calgebra/main.cpp	Thu Jun 26 16:22:26 2014
+@@ -151,8 +151,12 @@ int main(int argc, char *argv[])
+ 	
  	for(int i=0; i<history_get_history_state()->length; i++) {
  		HIST_ENTRY *he = remove_history(i);
- // 		free(he->line);
-+#if defined(__OpenBSD__)
-+		// very old lib!
+-// 		free(he->line);
++#ifdef HAVE_FREE_HISTORY_ENTRY
+ 		free_history_entry(he);
++#else
 +		free(he->line);
 +		free(he);
-+#else
- 		free_history_entry(he);
 +#endif
  	}
  	qDebug("\nExit.");

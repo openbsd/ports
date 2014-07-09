@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_backends_python2_python2extensions_cpp,v 1.1 2014/07/09 20:03:23 zhuk Exp $
+Unbreak build.
+--- src/backends/python2/python2extensions.cpp.orig	Thu Jun 26 19:08:58 2014
++++ src/backends/python2/python2extensions.cpp	Thu Jun 26 19:12:18 2014
+@@ -69,7 +69,7 @@ QString Python2VariableManagementExtension::removeVari
+ QString Python2VariableManagementExtension::clearVariables()
+ {
+     QString delVariablesPythonSession = "for keyPythonBackend in dir():\n"                                 \
+-                                        "    if (not 'PythonBackend' in keyPythonBackend)\ "               \
++                                        "    if (not 'PythonBackend' in keyPythonBackend) "                \
+                                         "and (not '__' in keyPythonBackend):\n"                            \
+                                         "        del(globals()[keyPythonBackend])\n"                       \
+                                         "del(keyPythonBackend)\n";
+@@ -81,8 +81,8 @@ QString Python2VariableManagementExtension::saveVariab
+     QString classSavePythonSession = "import shelve\n"                                                               \
+                                      "shelvePythonBackend = shelve.open('%1', 'n')\n"                                \
+                                      "for keyPythonBackend in dir():\n"                                              \
+-                                     "    if (not 'PythonBackend' in keyPythonBackend)\ "                            \
+-                                     "and (not '__' in keyPythonBackend)\ "                                          \
++                                     "    if (not 'PythonBackend' in keyPythonBackend) "                             \
++                                     "and (not '__' in keyPythonBackend) "                                           \
+                                      "and (not '<module ' in unicode(globals()[keyPythonBackend])):\n"               \
+                                      "        shelvePythonBackend[keyPythonBackend] = globals()[keyPythonBackend]\n" \
+                                      "shelvePythonBackend.close()\n"                                                 \

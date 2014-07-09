@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:31 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
@@ -26,7 +26,7 @@ SHARED_LIBS +=	smokesoprano		51.0 # 3.0
 SHARED_LIBS +=	smokesopranoclient	51.0 # 3.0
 SHARED_LIBS +=	smokesopranoserver	51.0 # 3.0
 
-WANTLIB =  m pthread stdc++
+WANTLIB =  m pthread
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
@@ -35,7 +35,7 @@ WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
 WANTLIB += ${KDE4LIB}/kfile ${KDE4LIB}/khtml ${KDE4LIB}/kidletime
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/knewstuff2
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils
-WANTLIB += ${KDE4LIB}/ktexteditor ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukcore
+WANTLIB += ${KDE4LIB}/ktexteditor ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukquery ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/okularcore ${KDE4LIB}/phonon_s ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokeqtcore ${KDE4LIB}/smokeqtdbus

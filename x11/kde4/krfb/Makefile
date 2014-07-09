@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/08 18:11:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:27 zhuk Exp $
 
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${MODKDE4_VERSION}
@@ -8,7 +8,7 @@ HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/krfb
 
 SHARED_LIBS =	krfbprivate		51.0
 
-WANTLIB =  c m pthread stdc++ z
+WANTLIB =  c m pthread z
 WANTLIB += X11 Xdamage Xext Xtst
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml

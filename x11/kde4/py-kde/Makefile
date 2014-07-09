@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:30 zhuk Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
@@ -11,7 +11,7 @@ MODULES =	lang/python
 # /usr/local/include/kconfig.h:387: warning: 'virtual const KConfigGroup KConfig::groupImpl(const QByteArray&) const' was hidden
 # /usr/ports/pobj/py-kde-4.9.0/build-i386/sip/kdecore/sipkdecorepart6.cpp:19561: warning:   by 'virtual KConfigGroup sipKConfig::groupImpl(const QByteArray&)'
 
-WANTLIB =  m pthread stdc++
+WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kdnssd

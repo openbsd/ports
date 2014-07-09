@@ -1,8 +1,8 @@
-$OpenBSD: patch-addons_kate_symbolviewer_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+$OpenBSD: patch-addons_kate_symbolviewer_CMakeLists_txt,v 1.2 2014/07/09 20:03:24 zhuk Exp $
 Fix linking.
---- addons/kate/symbolviewer/CMakeLists.txt.orig	Mon Jan 13 23:22:27 2014
-+++ addons/kate/symbolviewer/CMakeLists.txt	Mon Jan 13 23:22:42 2014
-@@ -13,7 +13,7 @@ kde4_add_plugin(katesymbolviewerplugin ${katesymbolvie
+--- addons/kate/symbolviewer/CMakeLists.txt.orig	Fri May  9 12:43:33 2014
++++ addons/kate/symbolviewer/CMakeLists.txt	Wed Jun  4 04:02:31 2014
+@@ -8,7 +8,7 @@ kde4_add_plugin(katesymbolviewerplugin ${katesymbolvie
  
  
  

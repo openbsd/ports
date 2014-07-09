@@ -1,19 +1,13 @@
-$OpenBSD: patch-ruby_CMakeLists_txt,v 1.1 2013/12/08 19:13:31 zhuk Exp $
---- ruby/CMakeLists.txt.orig	Tue Oct 15 09:55:59 2013
-+++ ruby/CMakeLists.txt	Tue Oct 15 09:58:15 2013
-@@ -1,14 +1,17 @@
--find_package(Ruby 1.9 QUIET)
-+find_package(Ruby 2.0 QUIET)
-+if (NOT RUBY_FOUND)
-+    find_package(Ruby 1.9 QUIET)
-+endif (NOT RUBY_FOUND)
+$OpenBSD: patch-ruby_CMakeLists_txt,v 1.2 2014/07/09 20:03:27 zhuk Exp $
+--- ruby/CMakeLists.txt.orig	Sat Apr 12 14:21:47 2014
++++ ruby/CMakeLists.txt	Sat Jun 28 00:58:41 2014
+@@ -1,11 +1,14 @@
+ find_package(Ruby 1.9 QUIET)
++if(NOT RUBY_FOUND)
++	find_package(Ruby 2.0 QUIET)
++endif()
  
--if( RUBY_VERSION VERSION_GREATER "1.10" )
--    message(STATUS "Found Ruby: ${RUBY_EXECUTABLE} (found version \"${RUBY_VERSION}\") but only 1.9.x supported")
-+if( RUBY_VERSION VERSION_GREATER "2.0" OR RUBY_VERSION VERSION_LESS "1.9" )
-+    message(STATUS "Found Ruby: ${RUBY_EXECUTABLE} (found version \"${RUBY_VERSION}\") but only 1.9.x and 2.0.x are supported")
-     set(RUBY_FOUND False)
- else()
+ if(RUBY_FOUND)
      message(STATUS "Found Ruby: ${RUBY_EXECUTABLE} (found version \"${RUBY_VERSION}\")")
  endif()
  

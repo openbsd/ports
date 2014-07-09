@@ -1,0 +1,16 @@
+$OpenBSD: patch-komparepart_kompare_part_h,v 1.1 2014/07/09 20:03:26 zhuk Exp $
+Unbreak build.
+Review: https://git.reviewboard.kde.org/r/119024/
+Committed: 339537ae5ecc7952c716140029564a212e4a9a4b
+--- komparepart/kompare_part.h.orig	Fri Jun 27 03:04:21 2014
++++ komparepart/kompare_part.h	Fri Jun 27 03:05:23 2014
+@@ -23,8 +23,7 @@
+ #include <kparts/factory.h>
+ #include <kparts/part.h>
+ #include <QVariantList>
+-
+-#include "kompare.h"
++#include <kompare.h>
+ 
+ #include "kompareinterface.h"
+ 

@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:23 zhuk Exp $
 
 COMMENT =	KDE math features
 DISTNAME =	analitza-${MODKDE4_VERSION}
 
-SHARED_LIBS =	analitza		51.0	# 4.7
-SHARED_LIBS +=	analitzagui		51.0	# 4.7
-SHARED_LIBS +=	analitzaplot		51.0	# 4.10
+SHARED_LIBS =	analitza		51.1	# 4.7
+SHARED_LIBS +=	analitzagui		51.1	# 4.7
+SHARED_LIBS +=	analitzaplot		51.1	# 4.10
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += GL GLU
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui
-WANTLIB += ncurses readline
+WANTLIB += curses form readline
 
-CONFIGURE_ARGS=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
-
-post-extract:
-	cp ${FILESDIR}/FindNcurses.cmake ${WRKSRC}/cmake/
+#CONFIGURE_ARGS=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

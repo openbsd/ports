@@ -1,0 +1,172 @@
+$OpenBSD: patch-kabc_tests_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- kabc/tests/CMakeLists.txt.orig	Sun May 18 20:54:31 2014
++++ kabc/tests/CMakeLists.txt	Sun May 18 20:57:19 2014
+@@ -8,7 +8,7 @@ set(addresstest_SRCS addresstest.cpp)
+ 
+ kde4_add_unit_test(addresstest TESTNAME kabc-addresstest ${addresstest_SRCS})
+ 
+-target_link_libraries(addresstest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(addresstest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -17,7 +17,7 @@ set(addresseetest_SRCS addresseetest.cpp)
+ 
+ kde4_add_unit_test(addresseetest TESTNAME kabc-addresseetest ${addresseetest_SRCS})
+ 
+-target_link_libraries(addresseetest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(addresseetest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -26,7 +26,7 @@ set(geotest_SRCS geotest.cpp)
+ 
+ kde4_add_unit_test(geotest TESTNAME kabc-geotest ${geotest_SRCS})
+ 
+-target_link_libraries(geotest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(geotest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -35,7 +35,7 @@ set(keytest_SRCS keytest.cpp)
+ 
+ kde4_add_unit_test(keytest TESTNAME kabc-keytest ${keytest_SRCS})
+ 
+-target_link_libraries(keytest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(keytest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -44,7 +44,7 @@ set(phonenumbertest_SRCS phonenumbertest.cpp)
+ 
+ kde4_add_unit_test(phonenumbertest TESTNAME kabc-phonenumbertest ${phonenumbertest_SRCS})
+ 
+-target_link_libraries(phonenumbertest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(phonenumbertest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -53,7 +53,7 @@ set(picturetest_SRCS picturetest.cpp)
+ 
+ kde4_add_unit_test(picturetest TESTNAME kabc-picturetest ${picturetest_SRCS})
+ 
+-target_link_libraries(picturetest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(picturetest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -62,7 +62,7 @@ set(secrecytest_SRCS secrecytest.cpp)
+ 
+ kde4_add_unit_test(secrecytest TESTNAME kabc-secrecytest ${secrecytest_SRCS})
+ 
+-target_link_libraries(secrecytest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(secrecytest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -71,7 +71,7 @@ set(soundtest_SRCS soundtest.cpp)
+ 
+ kde4_add_unit_test(soundtest TESTNAME kabc-soundtest ${soundtest_SRCS})
+ 
+-target_link_libraries(soundtest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(soundtest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -80,7 +80,7 @@ set(timezonetest_SRCS timezonetest.cpp)
+ 
+ kde4_add_unit_test(timezonetest TESTNAME kabc-timezonetest ${timezonetest_SRCS})
+ 
+-target_link_libraries(timezonetest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(timezonetest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -90,7 +90,7 @@ set(testlock_SRCS testlock.cpp)
+ 
+ kde4_add_executable(testlock TEST ${testlock_SRCS})
+ 
+-target_link_libraries(testlock ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} kabc ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(testlock kabc ${KDE4_KIO_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -99,7 +99,7 @@ set(testkabc_SRCS testkabc.cpp)
+ 
+ kde4_add_executable(testkabc TEST ${testkabc_SRCS})
+ 
+-target_link_libraries(testkabc ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${KDE4_KDEUI_LIBS})
++target_link_libraries(testkabc kabc ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${QT_QTTEST_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -108,7 +108,7 @@ set(testkabcdlg_SRCS testkabcdlg.cpp)
+ 
+ kde4_add_executable(testkabcdlg TEST ${testkabcdlg_SRCS})
+ 
+-target_link_libraries(testkabcdlg ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${KDE4_KDEUI_LIBS})
++target_link_libraries(testkabcdlg kabc ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${QT_QTTEST_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -120,7 +120,7 @@ if (UNIX)
+ 
+    kde4_add_executable(bigread TEST ${bigread_SRCS})
+ 
+-   target_link_libraries(bigread ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} kabc kabc_file_core )
++   target_link_libraries(bigread kabc kabc_file_core ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ endif()
+ 
+@@ -134,7 +134,7 @@ if (UNIX)
+ 
+    kde4_add_executable(bigwrite TEST ${bigwrite_SRCS})
+ 
+-   target_link_libraries(bigwrite ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} kabc kabc_file_core )
++   target_link_libraries(bigwrite kabc kabc_file_core ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ endif()
+ endif()
+@@ -147,7 +147,7 @@ endif()
+ 
+ #kde4_add_unit_test(testaddresseelist TESTNAME kabc-testaddresseelist ${testaddresseelist_SRCS})
+ 
+-#target_link_libraries(testaddresseelist ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY})
++#target_link_libraries(testaddresseelist kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -157,7 +157,7 @@ set(kabcargl_SRCS kabcargl.cpp)
+ 
+ kde4_add_executable(kabcargl TEST ${kabcargl_SRCS})
+ 
+-target_link_libraries(kabcargl ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${KDE4_KDEUI_LIBS} )
++target_link_libraries(kabcargl kabc ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -166,7 +166,7 @@ set(testaddresslineedit_SRCS testaddresslineedit.cpp)
+ 
+ kde4_add_executable(testaddresslineedit TEST ${testaddresslineedit_SRCS})
+ 
+-target_link_libraries(testaddresslineedit ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY} ${KDE4_KDEUI_LIBS})
++target_link_libraries(testaddresslineedit kabc ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})
+ endif()
+ 
+ ########### next target ###############
+@@ -176,7 +176,7 @@ set(contactgrouptest_SRCS contactgrouptest.cpp)
+ 
+ kde4_add_unit_test(contactgrouptest TESTNAME kabc-contactgrouptest ${contactgrouptest_SRCS})
+ 
+-target_link_libraries(contactgrouptest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY})
++target_link_libraries(contactgrouptest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -184,4 +184,4 @@ set(vcarddragtest_SRCS vcarddragtest.cpp)
+ 
+ kde4_add_unit_test(vcarddragtest TESTNAME kabc-vcarddragtest ${vcarddragtest_SRCS})
+ 
+-target_link_libraries(vcarddragtest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY})
++target_link_libraries(vcarddragtest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})

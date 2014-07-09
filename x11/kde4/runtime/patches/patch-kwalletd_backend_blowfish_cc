@@ -1,0 +1,109 @@
+$OpenBSD: patch-kwalletd_backend_blowfish_cc,v 1.1 2014/07/09 20:03:31 zhuk Exp $
+Unbreak compilation.
+--- kwalletd/backend/blowfish.cc.orig	Wed Jun  4 00:11:19 2014
++++ kwalletd/backend/blowfish.cc	Wed Jun  4 00:16:10 2014
+@@ -45,10 +45,10 @@ BlowFish::BlowFish() {
+ bool BlowFish::init() {
+ 	// Initialize the sboxes
+ 	for (int i = 0; i < 256; i++) {
+-		_S[0][i] = ks0[i];
+-		_S[1][i] = ks1[i];
+-		_S[2][i] = ks2[i];
+-		_S[3][i] = ks3[i];
++		S[0][i] = ks0[i];
++		S[1][i] = ks1[i];
++		S[2][i] = ks2[i];
++		S[3][i] = ks3[i];
+ 	}
+ 
+ 	uint32_t datal = 0;
+@@ -66,20 +66,20 @@ bool BlowFish::init() {
+ 				j = 0;
+ 			}
+ 		}
+-		_P[i] = P[i] ^ data;
++		P[i] = Pt[i] ^ data;
+ 	}
+ 
+ 	for (int i = 0; i < 18; i += 2) {
+ 		encipher(&datal, &datar);
+-		_P[i] = datal;
+-		_P[i+1] = datar;
++		P[i] = datal;
++		P[i+1] = datar;
+ 	}
+ 
+ 	for (int j = 0; j < 4; j++) {
+ 		for (int i = 0; i < 256; i += 2) {
+ 			encipher(&datal, &datar);
+-			_S[j][i] = datal;
+-			_S[j][i+1] = datar;
++			S[j][i] = datal;
++			S[j][i+1] = datar;
+ 		}
+ 	}
+ 
+@@ -87,8 +87,8 @@ bool BlowFish::init() {
+ 	//     check to see if the key is weak and return error if so
+ 	for (int i = 0; i < 255; i++) {
+ 		for (int j = i + 1; j < 256; j++) {
+-			if ((_S[0][i] == _S[0][j]) || (_S[1][i] == _S[1][j]) ||
+-					(_S[2][i] == _S[2][j]) || (_S[3][i] == _S[3][j])) {
++			if ((S[0][i] == S[0][j]) || (S[1][i] == S[1][j]) ||
++					(S[2][i] == S[2][j]) || (S[3][i] == S[3][j])) {
+ 				return false;
+ 			}
+ 		}
+@@ -206,9 +206,9 @@ uint32_t BlowFish::F(uint32_t x) {
+ 	x >>= 8;
+ 	a = x & 0x000000ff;
+ 
+-	y = _S[0][a] + _S[1][b];
+-	y ^= _S[2][c];
+-	y += _S[3][d];
++	y = S[0][a] + S[1][b];
++	y ^= S[2][c];
++	y += S[3][d];
+ 
+ 	return y;
+ }
+@@ -218,7 +218,7 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr) {
+ 	uint32_t Xl = *xl, Xr = *xr, temp;
+ 
+ 	for (int i = 0; i < 16; ++i) {
+-		Xl ^= _P[i];
++		Xl ^= P[i];
+ 		Xr ^= F(Xl);
+ 		// Exchange
+ 		temp = Xl; Xl = Xr; Xr = temp;
+@@ -227,8 +227,8 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr) {
+ 	// Exchange
+ 	temp = Xl; Xl = Xr; Xr = temp;
+ 
+-	Xr ^= _P[16];
+-	Xl ^= _P[17];
++	Xr ^= P[16];
++	Xl ^= P[17];
+ 
+ 	*xl = Xl;
+ 	*xr = Xr;
+@@ -239,7 +239,7 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr) {
+ 	uint32_t Xl = *xl, Xr = *xr, temp;
+ 
+ 	for (int i = 17; i > 1; --i) {
+-		Xl ^= _P[i];
++		Xl ^= P[i];
+ 		Xr ^= F(Xl);
+ 		// Exchange
+ 		temp = Xl; Xl = Xr; Xr = temp;
+@@ -248,8 +248,8 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr) {
+ 	// Exchange
+ 	temp = Xl; Xl = Xr; Xr = temp;
+ 
+-	Xr ^= _P[1];
+-	Xl ^= _P[0];
++	Xr ^= P[1];
++	Xl ^= P[0];
+ 
+ 	*xl = Xl;
+ 	*xr = Xr;

@@ -1,8 +1,8 @@
-$OpenBSD: patch-kabc_plugins_ldapkio_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kabc_plugins_ldapkio_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kabc/plugins/ldapkio/CMakeLists.txt.orig	Wed Nov  6 10:20:44 2013
-+++ kabc/plugins/ldapkio/CMakeLists.txt	Wed Nov  6 10:20:58 2013
-@@ -7,7 +7,7 @@ set(kabc_ldapkio_SRCS resourceldapkioplugin.cpp resour
+--- kabc/plugins/ldapkio/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kabc/plugins/ldapkio/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -10,7 +10,7 @@ set(kabc_ldapkio_SRCS resourceldapkioplugin.cpp resour
  
  kde4_add_plugin(kabc_ldapkio ${kabc_ldapkio_SRCS})
  

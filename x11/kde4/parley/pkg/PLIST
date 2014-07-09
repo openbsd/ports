@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/09 20:03:30 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/parley
 lib/kde4/plasma_applet_parley.so
@@ -229,6 +229,7 @@ share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_003.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_004.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_005.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_006.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_006b.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_007.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_008.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_009.png

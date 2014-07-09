@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_pate_src_version_checker_h,v 1.1 2014/07/09 20:03:24 zhuk Exp $
+--- addons/kate/pate/src/version_checker.h.orig	Thu Jul  3 21:54:01 2014
++++ addons/kate/pate/src/version_checker.h	Thu Jul  3 21:54:15 2014
+@@ -50,6 +50,9 @@ class version (public)
+     {
+     }
+ 
++#undef major
++#undef minor
++
+     int major() const
+     {
+         return m_major;

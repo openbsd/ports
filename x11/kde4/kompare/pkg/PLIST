@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:08:20 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:26 zhuk Exp $
 @conflict kdesdk-<4.11
 @bin bin/kompare
 include/kde4/kompare/
@@ -6,10 +6,8 @@ include/kde4/kompare/kompareinterface.h
 lib/kde4/komparenavtreepart.so
 lib/kde4/komparepart.so
 @lib ${KDE4LIB}/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
-@lib ${KDE4LIB}/libkomparediff2.so.${LIBkomparediff2_VERSION}
 @lib ${KDE4LIB}/libkompareinterface.so.${LIBkompareinterface_VERSION}
 @lib lib/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
-@lib lib/libkomparediff2.so.${LIBkomparediff2_VERSION}
 @lib lib/libkompareinterface.so.${LIBkompareinterface_VERSION}
 share/applications/kde4/kompare.desktop
 share/apps/kompare/

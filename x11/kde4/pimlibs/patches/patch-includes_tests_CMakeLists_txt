@@ -1,20 +1,8 @@
-$OpenBSD: patch-includes_tests_CMakeLists_txt,v 1.3 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-includes_tests_CMakeLists_txt,v 1.4 2014/07/09 20:03:30 zhuk Exp $
 Unbreak building tests.
---- includes/tests/CMakeLists.txt.orig	Wed Aug 28 21:06:13 2013
-+++ includes/tests/CMakeLists.txt	Tue Nov  5 19:27:28 2013
-@@ -21,8 +21,10 @@ macro(add_includes _dir)
- endmacro()
- 
- include_directories(
--  # HACK: akonadi/calendar has a generated header. We need to go up 3 directories level
-+  # HACK: akonadi/calendar and kcalutils have generated headers. So we
-+  # need to go up 3/2 directories level.
-   ${CMAKE_BINARY_DIR}/akonadi/calendar/tests
-+  ${CMAKE_BINARY_DIR}/kcalutils/tests
-   ${CMAKE_SOURCE_DIR}/kabc
-   ${CMAKE_BINARY_DIR}/kabc
-   ${CMAKE_SOURCE_DIR}/kcalutils
-@@ -60,7 +62,7 @@ kde4_add_executable( headertest header_compile.cpp )
+--- includes/tests/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ includes/tests/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -89,7 +89,7 @@ kde4_add_executable( headertest header_compile.cpp )
  target_link_libraries( headertest ${QT_QTCORE_LIBRARY} )
  add_dependencies( headertest akonadi-calendar ) # ensure calendarsettings.h is generated in parallel builds
  add_dependencies( headertest kabc ) # ensure addressee.h is generated in parallel builds

@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/09 20:03:26 zhuk Exp $
 @conflict kdegames-<4.10
 @bin bin/knetwalk
 share/applications/kde4/knetwalk.desktop
 share/apps/knetwalk/
 share/apps/knetwalk/knetwalkui.rc
+share/apps/knetwalk/qml/
+share/apps/knetwalk/qml/Cable.qml
+share/apps/knetwalk/qml/CanvasItem.qml
+share/apps/knetwalk/qml/Cell.qml
+share/apps/knetwalk/qml/logic.js
+share/apps/knetwalk/qml/main.qml
 share/apps/knetwalk/sounds/
 share/apps/knetwalk/sounds/click.wav
 share/apps/knetwalk/sounds/connect.wav

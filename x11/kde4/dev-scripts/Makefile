@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/04/29 08:54:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/09 20:03:23 zhuk Exp $
 
 COMMENT =	KDE development helper scripts
 DISTNAME =	kde-dev-scripts-${MODKDE4_VERSION}
@@ -10,7 +10,6 @@ MODULES =		perl lang/python
 MODKDE4_USE =		libs
 MODKDE4_RESOURCES =	Yes
 MODPY_BUILD_DEP =	No
-REVISION =		1
 
 MODPERL_ADJ_FILES = \
 	colorcvs \

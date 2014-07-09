@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:27 zhuk Exp $
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}
 
-WANTLIB =  c m pthread stdc++ ${MODRUBY_WANTLIB}
+WANTLIB =  c m pthread ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime

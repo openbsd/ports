@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2014/04/30 09:31:20 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2014/07/09 20:03:31 zhuk Exp $
 
 COMMENT =	KDE workspace
-MODKDE4_VERSION =	4.11.9
+MODKDE4_VERSION =	4.11.10
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/4.12.5/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/4.13.2/src/}
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -85,10 +84,8 @@ WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg png
 WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
 WANTLIB += usb xml2 xmms
 
-MODULES =	devel/gettext multimedia/phonon lang/python lang/ruby gcc4
+MODULES =	devel/gettext multimedia/phonon lang/python lang/ruby
 MODKDE4_USE =	pim
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
 
 MODRUBY_REV =		1.9
 MODRUBY_BUILDDEP =	No

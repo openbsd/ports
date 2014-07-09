@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/12/15 09:31:21 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/07/09 20:03:28 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4,<4.9.0p2
 @conflict libkdcraw-<0.1.9p6
@@ -23,9 +23,7 @@ include/kde4/libkdcraw/version.h
 share/apps/cmake/modules/FindKdcraw.cmake
 share/apps/libkdcraw/
 share/apps/libkdcraw/profiles/
-share/apps/libkdcraw/profiles/adobergb.icm
-share/apps/libkdcraw/profiles/applergb.icm
+share/apps/libkdcraw/profiles/compatibleWithAdobeRGB1998.icc
 share/apps/libkdcraw/profiles/prophoto.icm
 share/apps/libkdcraw/profiles/srgb-d65.icm
-share/apps/libkdcraw/profiles/srgb.icm
 share/apps/libkdcraw/profiles/widegamut.icm

@@ -1,8 +1,8 @@
-$OpenBSD: patch-addons_kate_pate_src_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+$OpenBSD: patch-addons_kate_pate_src_CMakeLists_txt,v 1.2 2014/07/09 20:03:24 zhuk Exp $
 Fix linking.
---- addons/kate/pate/src/CMakeLists.txt.orig	Mon Jan 13 22:34:51 2014
-+++ addons/kate/pate/src/CMakeLists.txt	Mon Jan 13 22:35:12 2014
-@@ -30,10 +30,11 @@ kde4_add_plugin(katepateplugin ${sources})
+--- addons/kate/pate/src/CMakeLists.txt.orig	Fri May  9 12:43:33 2014
++++ addons/kate/pate/src/CMakeLists.txt	Wed Jun  4 04:03:17 2014
+@@ -43,10 +43,10 @@ kde4_add_plugin(katepateplugin ${sources})
  
  target_link_libraries(
      katepateplugin
@@ -10,9 +10,8 @@ Fix linking.
      ${KDE4_KDEUI_LIBS}
 -    ${PYTHON_LIBRARY}
      ${QT_QTWEBKIT_LIBRARY}
--    kateinterfaces)
+-    kateinterfaces
 +    ${PYTHON_LIBRARY}
-+    )
+   )
  
  install(TARGETS katepateplugin DESTINATION ${PLUGIN_INSTALL_DIR})
- install(FILES pate.desktop DESTINATION ${SERVICES_INSTALL_DIR})

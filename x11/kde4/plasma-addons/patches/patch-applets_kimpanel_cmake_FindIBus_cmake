@@ -1,4 +1,5 @@
-$OpenBSD: patch-applets_kimpanel_cmake_FindIBus_cmake,v 1.1.1.1 2013/04/24 18:40:19 zhuk Exp $
+$OpenBSD: patch-applets_kimpanel_cmake_FindIBus_cmake,v 1.2 2014/07/09 20:03:30 zhuk Exp $
+Review: https://git.reviewboard.kde.org/r/119025/
 --- applets/kimpanel/cmake/FindIBus.cmake.orig	Tue Feb  7 02:25:11 2012
 +++ applets/kimpanel/cmake/FindIBus.cmake	Tue Feb  7 05:09:13 2012
 @@ -26,7 +26,7 @@ else (IBUS_LIBRARIES AND IBUS_INCLUDE_DIR)

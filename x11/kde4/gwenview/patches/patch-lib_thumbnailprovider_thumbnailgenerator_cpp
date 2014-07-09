@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_thumbnailprovider_thumbnailgenerator_cpp,v 1.1 2014/07/09 20:03:24 zhuk Exp $
+Disable libkdcraw usage until crashes are resolved.
+--- lib/thumbnailprovider/thumbnailgenerator.cpp.orig	Sun Jun 29 23:24:06 2014
++++ lib/thumbnailprovider/thumbnailgenerator.cpp	Sun Jun 29 23:24:30 2014
+@@ -73,7 +73,8 @@ bool ThumbnailContext::load(const QString &pixPath, in
+     int previewRatio = 1;
+ 
+     // raw images deserve special treatment
+-    if (KDcrawIface::KDcraw::rawFilesList().contains(QString(formatHint))) {
++    if (false) {
++    // if (KDcrawIface::KDcraw::rawFilesList().contains(QString(formatHint))) {
+         // use KDCraw to extract the preview
+         bool ret = KDcrawIface::KDcraw::loadEmbeddedPreview(data, pixPath);
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/08 19:13:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/09 20:03:25 zhuk Exp $
 
 COMMENT =	GoldRunner clone for KDE
 DISTNAME =	kgoldrunner-${MODKDE4_VERSION}
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdegamesprivate ${KDE4LIB}/kdeui

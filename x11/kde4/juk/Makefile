@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2014/04/29 09:39:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:24 zhuk Exp $
 
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${MODKDE4_VERSION}
-REVISION =	2
 
 CATEGORIES =	audio
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui ${KDE4LIB}/khtml

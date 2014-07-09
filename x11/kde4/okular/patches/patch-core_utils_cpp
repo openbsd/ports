@@ -1,0 +1,14 @@
+$OpenBSD: patch-core_utils_cpp,v 1.1 2014/07/09 20:03:29 zhuk Exp $
+Use right include for abs(int).
+Review: https://git.reviewboard.kde.org/r/118950/
+--- core/utils.cpp.orig	Thu Jun 26 03:17:09 2014
++++ core/utils.cpp	Thu Jun 26 03:22:33 2014
+@@ -16,7 +16,7 @@
+ #include <QDesktopWidget>
+ #include <QImage>
+ #include <QIODevice>
+-#include <cmath>
++#include <cstdlib>
+ 
+ #ifdef Q_WS_X11
+   #include "config-okular.h"

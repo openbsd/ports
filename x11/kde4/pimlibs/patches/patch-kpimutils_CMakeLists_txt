@@ -1,17 +1,13 @@
-$OpenBSD: patch-kpimutils_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kpimutils_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
 Fix linking.
---- kpimutils/CMakeLists.txt.orig	Wed Nov  6 10:17:12 2013
-+++ kpimutils/CMakeLists.txt	Wed Nov  6 10:17:53 2013
-@@ -25,10 +25,10 @@ endif()
- 
- kde4_add_library(kpimutils ${LIBRARY_TYPE} ${kpimutils_LIB_SRCS})
+--- kpimutils/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kpimutils/CMakeLists.txt	Sun May 18 20:25:12 2014
+@@ -26,7 +26,7 @@ set(kpimutils_LIB_SRCS
+ add_library(kpimutils ${LIBRARY_TYPE} ${kpimutils_LIB_SRCS})
+ generate_export_header(kpimutils)
  
 -target_link_libraries(kpimutils ${KDE4_KDEUI_LIBS} ${KDE4_KEMOTICONS_LIBS} kmime)
 +target_link_libraries(kpimutils kmime ${KDE4_KEMOTICONS_LIBS} ${KDE4_KDEUI_LIBS})
  
- if(WINCE)
--  target_link_libraries(kpimutils ${WCECOMPAT_LIBRARIES} ${KDE4_SOLID_LIBS} toolhelp)
-+  target_link_libraries(kpimutils toolhelp ${WCECOMPAT_LIBRARIES} ${KDE4_SOLID_LIBS})
- endif()
- 
  set_target_properties(kpimutils PROPERTIES
+   VERSION ${GENERIC_LIB_VERSION}

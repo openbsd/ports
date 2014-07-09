@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/08 19:13:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2014/07/09 20:03:31 zhuk Exp $
 
 COMMENT =	web development tools for KDE
 DISTNAME =	kdewebdev-${MODKDE4_VERSION}
@@ -7,7 +7,7 @@ SHARED_LIBS =	klinkstatuscommon	51.0
 SHARED_LIBS +=	kommandercore		51.0
 SHARED_LIBS +=	kommanderwidgets	51.0
 
-WANTLIB =  c m pthread stdc++ z
+WANTLIB =  c m pthread z
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui

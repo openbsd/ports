@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/08 19:13:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/09 20:03:26 zhuk Exp $
 
 COMMENT =	Mah Jongg solitare board game for KDE
 DISTNAME =	kmahjongg-${MODKDE4_VERSION}
 
 MODKDE4_USE =	games
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdegamesprivate ${KDE4LIB}/kdeui ${KDE4LIB}/kio

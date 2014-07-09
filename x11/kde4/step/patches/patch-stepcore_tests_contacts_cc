@@ -1,21 +1,7 @@
-$OpenBSD: patch-stepcore_tests_contacts_cc,v 1.1.1.1 2013/04/24 19:06:28 zhuk Exp $
+$OpenBSD: patch-stepcore_tests_contacts_cc,v 1.2 2014/07/09 20:03:31 zhuk Exp $
+Review: https://git.reviewboard.kde.org/r/119026/
 --- stepcore_tests/contacts.cc.orig	Tue Oct 11 05:47:23 2011
 +++ stepcore_tests/contacts.cc	Tue Oct 11 06:00:36 2011
-@@ -15,12 +15,12 @@
-    along with StepCore; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- */
-+#include <cmath>
-+#include <stepcore/types.h>
- #include "maintest.h"
- 
- #include <stepcore/collisionsolver.h>
- #include <stepcore/rigidbody.h>
--#include <stepcore/types.h>
--#include <cmath>
- 
- class CollisionSolver: public StepCore::GJKCollisionSolver
- {
 @@ -67,7 +67,7 @@ void MainTest::testCollisionDetection_data()
      QTest::newRow("vertex-edge-2")
              << vertexes << StepCore::Vector2d(0,0) << 0.0
