@@ -1,13 +1,20 @@
-$OpenBSD: patch-src_net_common_ircthread_cpp,v 1.2 2013/03/10 01:35:33 brad Exp $
---- src/net/common/ircthread.cpp.orig	Tue Jan  1 10:23:55 2013
-+++ src/net/common/ircthread.cpp	Sat Mar  9 20:26:42 2013
-@@ -32,7 +32,8 @@
+$OpenBSD: patch-src_net_common_ircthread_cpp,v 1.3 2014/07/09 09:40:49 ajacoutot Exp $
+--- src/net/common/ircthread.cpp.orig	Fri Jan 10 22:18:20 2014
++++ src/net/common/ircthread.cpp	Wed Jul  9 11:16:58 2014
+@@ -32,14 +32,14 @@
  #include <net/socket_helper.h>
  #include <net/ircthread.h>
  #include <net/socket_msg.h>
 -#include <libircclient/libircclient.h>
 +#include <libircclient.h>
+ 
+ // We need to do the following to handle different versions of libircclient.
+ // Sadly, libircclient doesn't have actual definitions for its versions in its headers.
+ // However, we can use a definition that appeared in the same version we need
+ // to check for. Hacky, but hey, it works.
+ #ifdef LIBIRC_OPTION_SSL_NO_VERIFY
+-#include <libircclient/libirc_rfcnumeric.h>
 +#include <libirc_rfcnumeric.h>
+ #endif
+ 
  #include <boost/algorithm/string/predicate.hpp>
- #include <queue>
- #include <sstream>

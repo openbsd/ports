@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/08 01:40:16 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/07/09 09:40:49 ajacoutot Exp $
 @bin bin/pokerth
 @bin bin/pokerth_server
 share/applications/pokerth.desktop
@@ -9,7 +9,6 @@ share/pokerth/data/
 share/pokerth/data/data-copyright.txt
 share/pokerth/data/fonts/
 share/pokerth/data/fonts/DejaVuSans-Bold.ttf
-share/pokerth/data/fonts/n019003l.pfb
 share/pokerth/data/gfx/
 share/pokerth/data/gfx/avatars/
 share/pokerth/data/gfx/avatars/default/
@@ -421,6 +420,7 @@ share/pokerth/data/gfx/gui/table/default_800x480/table_dark.png
 share/pokerth/data/gfx/gui/table/default_800x480/toolboxbg.png
 share/pokerth/data/misc/
 share/pokerth/data/misc/agpl.html
+share/pokerth/data/misc/third_party_libs.txt
 share/pokerth/data/sounds/
 share/pokerth/data/sounds/default/
 share/pokerth/data/sounds/default/allin.wav
@@ -447,6 +447,8 @@ share/pokerth/data/translations/pokerth_dk.qm
 share/pokerth/data/translations/pokerth_es.qm
 share/pokerth/data/translations/pokerth_fi.qm
 share/pokerth/data/translations/pokerth_fr.qm
+share/pokerth/data/translations/pokerth_gd.qm
+share/pokerth/data/translations/pokerth_gl.qm
 share/pokerth/data/translations/pokerth_gr.qm
 share/pokerth/data/translations/pokerth_hu.qm
 share/pokerth/data/translations/pokerth_it.qm
@@ -462,6 +464,7 @@ share/pokerth/data/translations/pokerth_sk.qm
 share/pokerth/data/translations/pokerth_sv.qm
 share/pokerth/data/translations/pokerth_ta.qm
 share/pokerth/data/translations/pokerth_tr.qm
+share/pokerth/data/translations/pokerth_vi.qm
 share/pokerth/data/translations/pokerth_zhcn.qm
 share/pokerth/data/translations/qt_ar.qm
 share/pokerth/data/translations/qt_cs.qm
