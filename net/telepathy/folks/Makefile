@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2014/06/24 11:45:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2014/07/09 18:27:57 jasper Exp $
 
 COMMENT=		people aggregation library
 
@@ -47,12 +47,7 @@ CONFIGURE_ARGS += 	--disable-ofono-backend
 CONFIGURE_ARGS +=	--disable-bluez-backend
 
 # https://git.gnome.org/browse/folks/commit/Makefile.am?id=8ebe13c457660de380521874a006425083151741
-CONFIGURE_ARGS += --disable-fatal-warnings
-
-# XXX our pkg-config(1) does not behave properly
-# g-ir-scanner <...> --include=Folks-0.6
-# Package folks was not found in the pkg-config search path
-MAKE_ENV=	PKG_CONFIG_PATH=${WRKBUILD}/folks
+CONFIGURE_ARGS += 	--disable-fatal-warnings
 
 post-install:
 	rm ${PREFIX}/lib/folks/${API_V}/backends/*/*.{a,la}
