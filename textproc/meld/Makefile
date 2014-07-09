@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/05/18 15:33:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/07/09 15:09:27 ajacoutot Exp $
 
 COMMENT=	graphical diff and merge tool
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=	x11/dbus-python \
 
 NO_TEST=	yes
 
+# don't inherit python configure
 CONFIGURE_STYLE=none
 
 MAKE_ENV=	PYTHON=${MODPY_BIN}
