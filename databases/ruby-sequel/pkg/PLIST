@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/01/14 01:06:18 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/07/09 17:13:49 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -100,11 +100,17 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.8.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.9.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.0.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.1.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.10.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.11.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.12.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.2.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.3.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.4.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.5.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.6.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.7.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.8.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.9.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/schema_modification.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/security.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/sharding.rdoc
@@ -219,6 +225,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/features.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/graph.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/misc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/mutation.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/placeholder_literalizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/prepared_statements.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/query.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/dataset/sql.rb
@@ -233,6 +240,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/connection_validator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/constraint_validations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/core_extensions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/core_refinements.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/current_datetime_timestamp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/date_arithmetic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/empty_array_ignore_nulls.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/error_sql.rb
@@ -346,6 +354,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/touch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/tree.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/typecast_on_load.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/unlimited_update.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/update_or_create.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/update_primary_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/validation_class_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/validation_helpers.rb
@@ -374,6 +383,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/core/deprecated_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core/expression_filters_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core/mock_adapter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core/object_graph_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/core/placeholder_literalizer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core/schema_generator_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core/schema_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core/spec_helper.rb
@@ -398,6 +408,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/connection_validator_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/constraint_validations_plugin_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/constraint_validations_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/core_refinements_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/current_datetime_timestamp_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/dataset_associations_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/date_arithmetic_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/defaults_setter_spec.rb
@@ -485,6 +496,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/touch_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/tree_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/typecast_on_load_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/unlimited_update_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/update_or_create_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/update_primary_key_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/validation_class_methods_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/validation_helpers_spec.rb
