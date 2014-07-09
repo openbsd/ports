@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/06/01 21:05:28 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/07/09 14:31:10 robert Exp $
 @pkgpath devel/boehm-gc
 include/gc/
 include/gc.h
 include/gc/cord.h
 include/gc/gc.h
 include/gc/gc_allocator.h
-include/gc/gc_amiga_redirects.h
 include/gc/gc_backptr.h
 include/gc/gc_config_macros.h
 include/gc/gc_cpp.h
+include/gc/gc_disclaim.h
 include/gc/gc_gcj.h
 include/gc/gc_inline.h
 include/gc/gc_mark.h
@@ -16,8 +16,8 @@ include/gc/gc_pthread_redirects.h
 include/gc/gc_tiny_fl.h
 include/gc/gc_typed.h
 include/gc/gc_version.h
+include/gc/javaxfc.h
 include/gc/leak_detector.h
-include/gc/new_gc_alloc.h
 include/gc/weakpointer.h
 include/gc_cpp.h
 lib/libcord.a
@@ -42,17 +42,14 @@ lib/pkgconfig/bdw-gc.pc
 @man man/man3/GC_set_warn_proc.3
 @man man/man3/gc.3
 share/gc/
-share/gc/README
+share/gc/AUTHORS
 share/gc/README.DGUX386
 share/gc/README.Mac
-share/gc/README.MacOSX
 share/gc/README.OS2
 share/gc/README.amiga
 share/gc/README.arm.cross
 share/gc/README.autoconf
-share/gc/README.changes
 share/gc/README.cmake
-share/gc/README.contributors
 share/gc/README.cords
 share/gc/README.darwin
 share/gc/README.dj
@@ -61,14 +58,16 @@ share/gc/README.ews4800
 share/gc/README.hp
 share/gc/README.linux
 share/gc/README.macros
+share/gc/README.md
 share/gc/README.rs6000
 share/gc/README.sgi
 share/gc/README.solaris2
+share/gc/README.symbian
 share/gc/README.uts
 share/gc/README.win32
 share/gc/README.win64
-share/gc/barrett_diagram
 share/gc/debugging.html
+share/gc/finalization.html
 @comment share/gc/gc.man
 share/gc/gcdescr.html
 share/gc/gcinterface.html

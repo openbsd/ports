@@ -1,2 +1,4 @@
-SHA256 (gc-7.2d.tar.gz) = 2f4K6GUNQ3RqSL+zlMqwGjGfOAnO4Z+OvRaqmFtRHF4=
-SIZE (gc-7.2d.tar.gz) = 1263064
+SHA256 (gc-7.4.2.tar.gz) = YzIK18RUYOSkDgP1qkxok3g/IaFkFsMoK5lPkzMSr6I=
+SHA256 (libatomic_ops-7.4.0.tar.gz) = KHXMwpJU0zddq5xZMMQt80LxSPjNfGRmIdvwP4wdW1o=
+SIZE (gc-7.4.2.tar.gz) = 1082597
+SIZE (libatomic_ops-7.4.0.tar.gz) = 455143
