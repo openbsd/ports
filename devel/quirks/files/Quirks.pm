@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.158 2014/07/08 20:23:28 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.159 2014/07/09 20:30:58 zhuk Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -350,6 +350,8 @@ my $stem_extensions = {
 	'nagios-plugins-ldap' => 'monitoring-plugins-ldap',
 	'nagios-plugins-mysql' => 'monitoring-plugins-mysql',
 	'nagios-plugins-pgsql' => 'monitoring-plugins-pgsql',
+	'kdnssd' => 'zeroconf-ioslave',
+	'kwallet' => 'kwalletmanager',
 };
 
 # reasons for obsolete packages
