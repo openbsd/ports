@@ -1,0 +1,20 @@
+$OpenBSD: patch-argparse_c,v 1.1 2014/07/09 10:45:16 sthen Exp $
+--- argparse.c.orig	Fri Apr  5 19:23:25 2002
++++ argparse.c	Wed Jul  9 11:39:14 2014
+@@ -29,6 +29,7 @@ static char rcsid[] = "$Id: argparse.c,v 1.14 2002/04/
+ #undef	NO_AEXTERN
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include <pwd.h>
+ 
+@@ -60,8 +61,6 @@ ArgParse(argc, argv)
+ 	int argc;
+ 	char *argv[];
+ {
+-	extern int atoi();
+-	extern char *calloc();
+ 	struct passwd *pp;
+ 	struct stat st;
+ 	int argcnt = argc;	/* saved so ALLOC() knows max mem to allocate */

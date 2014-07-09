@@ -1,7 +1,15 @@
-$OpenBSD: patch-machdep_nbsd-44_c,v 1.3 2012/12/18 21:38:12 sthen Exp $
---- machdep/nbsd-44.c.orig	Sun Apr  7 20:35:21 2002
-+++ machdep/nbsd-44.c	Thu Dec  6 15:28:10 2012
-@@ -172,6 +172,7 @@ REAL_REGEX_FUNCS
+$OpenBSD: patch-machdep_nbsd-44_c,v 1.4 2014/07/09 10:45:16 sthen Exp $
+--- machdep/nbsd-44.c.orig	Mon Apr  8 03:35:21 2002
++++ machdep/nbsd-44.c	Wed Jul  9 11:42:01 2014
+@@ -36,6 +36,7 @@ static char rcsid[] = "$Id: nbsd-44.c,v 1.6 2002/04/05
+ #include <signal.h>
+ #include <stdlib.h>
+ #include <ctype.h>
++#include <errno.h>
+ 
+ #include <sys/resource.h>
+ 
+@@ -172,6 +173,7 @@ REAL_REGEX_FUNCS
   * Now, set up everything we need to write a GetProc() routine.
   */
  
@@ -9,7 +17,7 @@ $OpenBSD: patch-machdep_nbsd-44_c,v 1.3 2012/12/18 21:38:12 sthen Exp $
  #include <sys/user.h>
  #include <sys/sysctl.h>
  
-@@ -210,6 +211,28 @@ static	int	pidmapsiz = sizeof(pidmap) / sizeof(pidmap[
+@@ -210,6 +212,28 @@ static	int	pidmapsiz = sizeof(pidmap) / sizeof(pidmap[
  #define	_PROC_UID(p)	(p)->ki_uid
  #endif
  #endif	/* __FreeBSD__ */

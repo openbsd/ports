@@ -1,0 +1,11 @@
+$OpenBSD: patch-main_c,v 1.1 2014/07/09 10:45:16 sthen Exp $
+--- main.c.orig	Wed Jul  9 11:38:39 2014
++++ main.c	Wed Jul  9 11:38:51 2014
+@@ -44,6 +44,7 @@ const char *CopyrightVersion = "%s %s\n\nCopyright (c)
+ #include "conf.h"
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <errno.h>
+ #include <pwd.h>
+ 
