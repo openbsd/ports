@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_facter_util_partitions_rb,v 1.1 2014/07/09 16:27:19 jasper Exp $
+
+Add 'partitions' fact for OpenBSD.
+
+--- lib/facter/util/partitions.rb.orig	Wed Jul  9 16:48:36 2014
++++ lib/facter/util/partitions.rb	Wed Jul  9 16:48:42 2014
+@@ -1,8 +1,10 @@
+ require 'facter/util/partitions/linux'
++require 'facter/util/partitions/openbsd'
+ 
+ module Facter::Util::Partitions
+   IMPLEMENTATIONS = {
+-    'Linux' => Linux
++    'Linux'   => Linux,
++    'OpenBSD' => OpenBSD,
+   }
+ 
+   module NoImplementation

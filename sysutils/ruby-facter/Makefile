@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2014/06/25 22:00:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2014/07/09 16:27:19 jasper Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
 VERSION=	2.1.0
-
+REVISION=	0
 DISTNAME=	facter-${VERSION}
 CATEGORIES=	sysutils
 

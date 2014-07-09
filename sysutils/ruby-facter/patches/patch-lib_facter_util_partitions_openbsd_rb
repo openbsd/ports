@@ -1,0 +1,42 @@
+$OpenBSD: patch-lib_facter_util_partitions_openbsd_rb,v 1.1 2014/07/09 16:27:19 jasper Exp $
+
+Add 'partitions' fact for OpenBSD.
+
+--- lib/facter/util/partitions/openbsd.rb.orig	Wed Jul  9 17:07:42 2014
++++ lib/facter/util/partitions/openbsd.rb	Wed Jul  9 17:08:05 2014
+@@ -0,0 +1,35 @@
++module Facter::Util::Partitions
++  module OpenBSD
++    def self.list
++      Facter::Core::Execution.exec('df').scan(/\/dev\/(\S+)/).flatten
++    end
++
++    # On OpenBSD partitions don't have a UUID; disks have DUID but that's not
++    # compatible.
++    def self.uuid(partition)
++      nil
++    end
++
++    def self.mount(partition)
++      scan_mount(/\/dev\/#{partition}\son\s(\S+)/)
++    end
++
++    # Reported size is in 1K blocks
++    def self.size(partition)
++      scan_df(/\/dev\/#{partition}\s+(\S+)/)
++    end
++
++    def self.filesystem(partition)
++      scan_mount(/\/dev\/#{partition}\son\s\S+\stype\s(\S+)/)
++    end
++
++    private
++    def self.scan_mount(scan_regex)
++      Facter::Core::Execution.exec('mount').scan(scan_regex).flatten.first
++    end
++
++    def self.scan_df(scan_regex)
++      Facter::Core::Execution.exec('df -k').scan(scan_regex).flatten.first
++    end
++  end
++end

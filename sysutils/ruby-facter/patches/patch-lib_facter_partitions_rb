@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_facter_partitions_rb,v 1.1 2014/07/09 16:27:19 jasper Exp $
+
+Add 'partitions' fact for OpenBSD.
+
+--- lib/facter/partitions.rb.orig	Wed Jul  9 16:48:07 2014
++++ lib/facter/partitions.rb	Wed Jul  9 16:48:30 2014
+@@ -7,7 +7,7 @@
+ #   Parse the contents of /sys/block/<device>/size to receive the size (multiplying by 512 to correct for blocks-to-bytes)
+ #
+ # Caveats:
+-#   Only supports Linux 2.6+ at this time, due to the reliance on sysfs
++#   For Linux only 2.6+ is supported at this time, due to the reliance on sysfs
+ #
+ # Author: Chris Portman <chris@portman.net.au>
+ 
