@@ -1,17 +1,17 @@
-$OpenBSD: patch-mono_utils_mono_semaphore_c,v 1.1 2012/04/13 11:51:49 robert Exp $
---- mono/utils/mono-semaphore.c.orig	Wed Apr 11 13:11:10 2012
-+++ mono/utils/mono-semaphore.c	Wed Apr 11 13:11:29 2012
-@@ -22,9 +22,6 @@
- #  ifdef USE_MACH_SEMA
- #    define TIMESPEC mach_timespec_t
- #    define WAIT_BLOCK(a,b) semaphore_timedwait (*(a), *(b))
+$OpenBSD: patch-mono_utils_mono-semaphore_c,v 1.1 2014/07/09 11:39:17 robert Exp $
+--- mono/utils/mono-semaphore.c.orig	Tue Jul  8 10:34:38 2014
++++ mono/utils/mono-semaphore.c	Tue Jul  8 10:35:10 2014
+@@ -25,9 +25,6 @@
+ #  elif defined(__native_client__) && defined(USE_NEWLIB)
+ #    define TIMESPEC struct timespec
+ #    define WAIT_BLOCK(a, b) sem_trywait(a)
 -#  elif defined(__OpenBSD__)
 -#    define TIMESPEC struct timespec
 -#    define WAIT_BLOCK(a) sem_trywait(a)
  #  else
  #    define TIMESPEC struct timespec
  #    define WAIT_BLOCK(a,b) sem_timedwait (a, b)
-@@ -37,9 +34,6 @@ mono_sem_timedwait (MonoSemType *sem, guint32 timeout_
+@@ -43,9 +40,6 @@ mono_sem_timedwait (MonoSemType *sem, guint32 timeout_
  	TIMESPEC ts, copy;
  	struct timeval t;
  	int res = 0;
@@ -21,7 +21,7 @@ $OpenBSD: patch-mono_utils_mono_semaphore_c,v 1.1 2012/04/13 11:51:49 robert Exp
  
  #ifndef USE_MACH_SEMA
  	if (timeout_ms == 0)
-@@ -59,19 +53,6 @@ mono_sem_timedwait (MonoSemType *sem, guint32 timeout_
+@@ -65,19 +59,6 @@ mono_sem_timedwait (MonoSemType *sem, guint32 timeout_
  		ts.tv_nsec -= NSEC_PER_SEC;
  		ts.tv_sec++;
  	}
@@ -41,7 +41,7 @@ $OpenBSD: patch-mono_utils_mono_semaphore_c,v 1.1 2012/04/13 11:51:49 robert Exp
  	copy = ts;
  	while ((res = WAIT_BLOCK (sem, &ts)) == -1 && errno == EINTR) {
  		struct timeval current;
-@@ -98,7 +79,6 @@ mono_sem_timedwait (MonoSemType *sem, guint32 timeout_
+@@ -104,7 +85,6 @@ mono_sem_timedwait (MonoSemType *sem, guint32 timeout_
  			ts.tv_nsec = 0;
  		}
  	}

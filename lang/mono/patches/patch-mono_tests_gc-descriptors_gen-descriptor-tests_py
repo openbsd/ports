@@ -1,0 +1,9 @@
+$OpenBSD: patch-mono_tests_gc-descriptors_gen-descriptor-tests_py,v 1.1 2014/07/09 11:39:17 robert Exp $
+--- mono/tests/gc-descriptors/gen-descriptor-tests.py.orig	Tue Jul  8 16:07:18 2014
++++ mono/tests/gc-descriptors/gen-descriptor-tests.py	Tue Jul  8 16:14:22 2014
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/local/bin/python2.7
+ 
+ from optparse import OptionParser
+ 

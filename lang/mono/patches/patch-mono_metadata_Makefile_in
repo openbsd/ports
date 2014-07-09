@@ -1,0 +1,105 @@
+$OpenBSD: patch-mono_metadata_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
+--- mono/metadata/Makefile.in.orig	Mon Mar 31 22:27:02 2014
++++ mono/metadata/Makefile.in	Tue Jul  8 14:39:43 2014
+@@ -55,9 +55,9 @@ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+ @SHARED_MONO_TRUE@@SUPPORT_BOEHM_TRUE@bin_PROGRAMS = pedump$(EXEEXT)
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@noinst_PROGRAMS = test-sgen-qsort$(EXEEXT) \
++@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@noinst_PROGRAMS = \
+ @HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	test-gc-memfuncs$(EXEEXT)
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@TESTS = test-sgen-qsort$(EXEEXT) \
++@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@TESTS = \
+ @HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	test-gc-memfuncs$(EXEEXT)
+ subdir = mono/metadata
+ DIST_COMMON = $(libmonoruntimeinclude_HEADERS) $(srcdir)/Makefile.am \
+@@ -582,20 +582,6 @@ test_gc_memfuncs_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(test_gc_memfuncs_CFLAGS) $(CFLAGS) \
+ 	$(test_gc_memfuncs_LDFLAGS) $(LDFLAGS) -o $@
+-am__test_sgen_qsort_SOURCES_DIST = test-sgen-qsort.c
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@am_test_sgen_qsort_OBJECTS = test_sgen_qsort-test-sgen-qsort.$(OBJEXT)
+-test_sgen_qsort_OBJECTS = $(am_test_sgen_qsort_OBJECTS)
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@test_sgen_qsort_DEPENDENCIES =  \
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	libmonoruntimesgen.la \
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	../io-layer/libwapi.la \
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	../utils/libmonoutils.la \
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	$(am__DEPENDENCIES_1) \
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	$(am__DEPENDENCIES_1) \
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	$(am__DEPENDENCIES_1)
+-test_sgen_qsort_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+-	$(test_sgen_qsort_CFLAGS) $(CFLAGS) $(test_sgen_qsort_LDFLAGS) \
+-	$(LDFLAGS) -o $@
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -622,14 +608,13 @@ SOURCES = $(libmonoruntime_static_la_SOURCES) \
+ 	$(libmonoruntime_la_SOURCES) \
+ 	$(libmonoruntimesgen_static_la_SOURCES) \
+ 	$(libmonoruntimesgen_la_SOURCES) $(pedump_SOURCES) \
+-	$(test_gc_memfuncs_SOURCES) $(test_sgen_qsort_SOURCES)
++	$(test_gc_memfuncs_SOURCES)
+ DIST_SOURCES = $(am__libmonoruntime_static_la_SOURCES_DIST) \
+ 	$(am__libmonoruntime_la_SOURCES_DIST) \
+ 	$(am__libmonoruntimesgen_static_la_SOURCES_DIST) \
+ 	$(am__libmonoruntimesgen_la_SOURCES_DIST) \
+ 	$(am__pedump_SOURCES_DIST) \
+-	$(am__test_gc_memfuncs_SOURCES_DIST) \
+-	$(am__test_sgen_qsort_SOURCES_DIST)
++	$(am__test_gc_memfuncs_SOURCES_DIST)
+ am__can_run_installinfo = \
+   case $$AM_UPDATE_INFO_DIR in \
+     n|no|NO) false;; \
+@@ -1128,12 +1113,6 @@ libmonoruntimeinclude_HEADERS = \
+ EXTRA_DIST = make-bundle.pl sample-bundle $(win32_sources) $(unix_sources) $(null_sources) runtime.h \
+ 		tpool-poll.c tpool-epoll.c tpool-kqueue.c Makefile.am.in
+ 
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@test_sgen_qsort_SOURCES = test-sgen-qsort.c
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@test_sgen_qsort_CFLAGS = $(SGEN_DEFINES)
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@test_sgen_qsort_LDADD = libmonoruntimesgen.la ../io-layer/libwapi.la ../utils/libmonoutils.la \
+-@HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@	$(LIBGC_LIBS) $(GLIB_LIBS) -lm $(LIBICONV)
+-
+-@HOST_WIN32_FALSE@@PLATFORM_DARWIN_TRUE@@SUPPORT_BOEHM_TRUE@test_sgen_qsort_LDFLAGS = -framework CoreFoundation -framework Foundation
+ @HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@test_gc_memfuncs_SOURCES = test-gc-memfuncs.c
+ @HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@test_gc_memfuncs_CFLAGS = $(SGEN_DEFINES)
+ @HOST_WIN32_FALSE@@SUPPORT_BOEHM_TRUE@test_gc_memfuncs_LDADD = libmonoruntimesgen.la ../io-layer/libwapi.la ../utils/libmonoutils.la \
+@@ -1252,9 +1231,6 @@ pedump$(EXEEXT): $(pedump_OBJECTS) $(pedump_DEPENDENCI
+ test-gc-memfuncs$(EXEEXT): $(test_gc_memfuncs_OBJECTS) $(test_gc_memfuncs_DEPENDENCIES) $(EXTRA_test_gc_memfuncs_DEPENDENCIES) 
+ 	@rm -f test-gc-memfuncs$(EXEEXT)
+ 	$(AM_V_CCLD)$(test_gc_memfuncs_LINK) $(test_gc_memfuncs_OBJECTS) $(test_gc_memfuncs_LDADD) $(LIBS)
+-test-sgen-qsort$(EXEEXT): $(test_sgen_qsort_OBJECTS) $(test_sgen_qsort_DEPENDENCIES) $(EXTRA_test_sgen_qsort_DEPENDENCIES) 
+-	@rm -f test-sgen-qsort$(EXEEXT)
+-	$(AM_V_CCLD)$(test_sgen_qsort_LINK) $(test_sgen_qsort_OBJECTS) $(test_sgen_qsort_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+@@ -1554,7 +1530,6 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmonoruntimesgen_static_la-verify.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pedump.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test_gc_memfuncs-test-gc-memfuncs.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test_sgen_qsort-test-sgen-qsort.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+@@ -3623,20 +3598,6 @@ test_gc_memfuncs-test-gc-memfuncs.obj: test-gc-memfunc
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='test-gc-memfuncs.c' object='test_gc_memfuncs-test-gc-memfuncs.obj' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_gc_memfuncs_CFLAGS) $(CFLAGS) -c -o test_gc_memfuncs-test-gc-memfuncs.obj `if test -f 'test-gc-memfuncs.c'; then $(CYGPATH_W) 'test-gc-memfuncs.c'; else $(CYGPATH_W) '$(srcdir)/test-gc-memfuncs.c'; fi`
+-
+-test_sgen_qsort-test-sgen-qsort.o: test-sgen-qsort.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sgen_qsort_CFLAGS) $(CFLAGS) -MT test_sgen_qsort-test-sgen-qsort.o -MD -MP -MF $(DEPDIR)/test_sgen_qsort-test-sgen-qsort.Tpo -c -o test_sgen_qsort-test-sgen-qsort.o `test -f 'test-sgen-qsort.c' || echo '$(srcdir)/'`test-sgen-qsort.c
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/test_sgen_qsort-test-sgen-qsort.Tpo $(DEPDIR)/test_sgen_qsort-test-sgen-qsort.Po
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='test-sgen-qsort.c' object='test_sgen_qsort-test-sgen-qsort.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sgen_qsort_CFLAGS) $(CFLAGS) -c -o test_sgen_qsort-test-sgen-qsort.o `test -f 'test-sgen-qsort.c' || echo '$(srcdir)/'`test-sgen-qsort.c
+-
+-test_sgen_qsort-test-sgen-qsort.obj: test-sgen-qsort.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sgen_qsort_CFLAGS) $(CFLAGS) -MT test_sgen_qsort-test-sgen-qsort.obj -MD -MP -MF $(DEPDIR)/test_sgen_qsort-test-sgen-qsort.Tpo -c -o test_sgen_qsort-test-sgen-qsort.obj `if test -f 'test-sgen-qsort.c'; then $(CYGPATH_W) 'test-sgen-qsort.c'; else $(CYGPATH_W) '$(srcdir)/test-sgen-qsort.c'; fi`
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/test_sgen_qsort-test-sgen-qsort.Tpo $(DEPDIR)/test_sgen_qsort-test-sgen-qsort.Po
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='test-sgen-qsort.c' object='test_sgen_qsort-test-sgen-qsort.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sgen_qsort_CFLAGS) $(CFLAGS) -c -o test_sgen_qsort-test-sgen-qsort.obj `if test -f 'test-sgen-qsort.c'; then $(CYGPATH_W) 'test-sgen-qsort.c'; else $(CYGPATH_W) '$(srcdir)/test-sgen-qsort.c'; fi`
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo

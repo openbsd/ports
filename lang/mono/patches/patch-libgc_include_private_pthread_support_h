@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgc_include_private_pthread_support_h,v 1.1 2014/07/09 11:39:17 robert Exp $
+--- libgc/include/private/pthread_support.h.orig	Tue Jul  8 11:54:51 2014
++++ libgc/include/private/pthread_support.h	Tue Jul  8 11:55:08 2014
+@@ -8,8 +8,6 @@
+      
+ #if defined(GC_DARWIN_THREADS)
+ # include "private/darwin_stop_world.h"
+-#elif defined(GC_OPENBSD_THREADS)
+-# include "private/openbsd_stop_world.h"
+ #else
+ # include "private/pthread_stop_world.h"
+ #endif

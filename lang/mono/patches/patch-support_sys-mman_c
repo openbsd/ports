@@ -1,0 +1,20 @@
+$OpenBSD: patch-support_sys-mman_c,v 1.1 2014/07/09 11:39:17 robert Exp $
+--- support/sys-mman.c.orig	Tue Jul  8 13:07:33 2014
++++ support/sys-mman.c	Tue Jul  8 13:10:35 2014
+@@ -9,13 +9,15 @@
+ 
+ #include <config.h>
+ 
++#if !defined(__OpenBSD__)
+ #define _XOPEN_SOURCE 600
++#endif
+ 
+ #ifdef PLATFORM_MACOSX
+ /* For mincore () */
+ #define _DARWIN_C_SOURCE
+ #endif
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ /* For mincore () */
+ #define __BSD_VISIBLE 1
+ #endif

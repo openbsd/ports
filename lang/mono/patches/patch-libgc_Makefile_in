@@ -1,0 +1,56 @@
+$OpenBSD: patch-libgc_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
+--- libgc/Makefile.in.orig	Tue Jul  8 11:53:47 2014
++++ libgc/Makefile.in	Tue Jul  8 11:54:08 2014
+@@ -91,7 +91,7 @@ am__libmonogc_static_la_SOURCES_DIST = allchblk.c allo
+ 	ptr_chck.c real_malloc.c reclaim.c solaris_pthreads.c \
+ 	solaris_threads.c specific.c stubborn.c typd_mlc.c backgraph.c \
+ 	win32_threads.c pthread_support.c pthread_stop_world.c \
+-	darwin_stop_world.c openbsd_stop_world.c mach_dep.c \
++	darwin_stop_world.c mach_dep.c \
+ 	powerpc_darwin_mach_dep.s ia64_save_regs_in_stack.s
+ @POWERPC_DARWIN_FALSE@@TARGET_IA64_TRUE@am__objects_1 = ia64_save_regs_in_stack.lo
+ @POWERPC_DARWIN_TRUE@am__objects_1 = powerpc_darwin_mach_dep.lo
+@@ -103,7 +103,7 @@ am__objects_2 = allchblk.lo alloc.lo blacklst.lo check
+ 	solaris_threads.lo specific.lo stubborn.lo typd_mlc.lo \
+ 	backgraph.lo win32_threads.lo pthread_support.lo \
+ 	pthread_stop_world.lo darwin_stop_world.lo \
+-	openbsd_stop_world.lo mach_dep.lo $(am__objects_1)
++	mach_dep.lo $(am__objects_1)
+ am_libmonogc_static_la_OBJECTS = $(am__objects_2)
+ libmonogc_static_la_OBJECTS = $(am_libmonogc_static_la_OBJECTS)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -120,7 +120,7 @@ am__libmonogc_la_SOURCES_DIST = allchblk.c alloc.c bla
+ 	ptr_chck.c real_malloc.c reclaim.c solaris_pthreads.c \
+ 	solaris_threads.c specific.c stubborn.c typd_mlc.c backgraph.c \
+ 	win32_threads.c pthread_support.c pthread_stop_world.c \
+-	darwin_stop_world.c openbsd_stop_world.c mach_dep.c \
++	darwin_stop_world.c mach_dep.c \
+ 	powerpc_darwin_mach_dep.s ia64_save_regs_in_stack.s
+ am_libmonogc_la_OBJECTS = allchblk.lo alloc.lo blacklst.lo \
+ 	checksums.lo dbg_mlc.lo dyn_load.lo finalize.lo gc_dlopen.lo \
+@@ -130,7 +130,7 @@ am_libmonogc_la_OBJECTS = allchblk.lo alloc.lo blackls
+ 	solaris_threads.lo specific.lo stubborn.lo typd_mlc.lo \
+ 	backgraph.lo win32_threads.lo pthread_support.lo \
+ 	pthread_stop_world.lo darwin_stop_world.lo \
+-	openbsd_stop_world.lo mach_dep.lo $(am__objects_1)
++	mach_dep.lo $(am__objects_1)
+ libmonogc_la_OBJECTS = $(am_libmonogc_la_OBJECTS)
+ libmonogc_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+@@ -410,7 +410,7 @@ obj_map.c os_dep.c pcr_interface.c ptr_chck.c real_mal
+ solaris_pthreads.c solaris_threads.c specific.c stubborn.c typd_mlc.c \
+ backgraph.c win32_threads.c \
+ pthread_support.c pthread_stop_world.c darwin_stop_world.c \
+-openbsd_stop_world.c mach_dep.c $(asm_libgc_sources)
++mach_dep.c $(asm_libgc_sources)
+ 
+ 
+ # Include THREADDLLIBS here to ensure that the correct versions of
+@@ -575,7 +575,6 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/misc.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/new_hblk.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/obj_map.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/openbsd_stop_world.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/os_dep.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pcr_interface.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pthread_stop_world.Plo@am__quote@

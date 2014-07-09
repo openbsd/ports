@@ -1,9 +1,12 @@
-$OpenBSD: patch-runtime_mono-wrapper_in,v 1.4 2010/10/15 16:21:07 robert Exp $
---- runtime/mono-wrapper.in.orig	Tue Oct  5 21:59:29 2010
-+++ runtime/mono-wrapper.in	Wed Oct 13 18:39:27 2010
-@@ -4,4 +4,4 @@ MONO_CFG_DIR='@mono_cfg_dir@'
+$OpenBSD: patch-runtime_mono-wrapper_in,v 1.5 2014/07/09 11:39:17 robert Exp $
+--- runtime/mono-wrapper.in.orig	Wed Feb 19 19:48:46 2014
++++ runtime/mono-wrapper.in	Tue Jul  8 10:25:55 2014
+@@ -4,7 +4,7 @@ MONO_CFG_DIR='@mono_cfg_dir@'
  PATH="$r/runtime/_tmpinst/bin:$PATH"
  MONO_SHARED_DIR=$r/runtime
  export MONO_CFG_DIR MONO_SHARED_DIR PATH
--exec "$r/libtool" --mode=execute "$r/@mono_runtime@" --config "@mono_cfg_dir@/mono/config" "$@"
+-if [ -n "@nacl_self_host@" ]; then
 +exec "${LIBTOOL}" --mode=execute "$r/@mono_runtime@" --config "@mono_cfg_dir@/mono/config" "$@"
+   case "$@" in
+     # gacutil.exe and mdoc.exe require filesystem functionality not
+     # exposed in NaCl.

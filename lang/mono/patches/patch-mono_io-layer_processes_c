@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_io-layer_processes_c,v 1.4 2012/04/13 11:51:49 robert Exp $
---- mono/io-layer/processes.c.orig	Mon Dec 19 22:10:24 2011
-+++ mono/io-layer/processes.c	Tue Mar 20 22:40:11 2012
-@@ -1530,13 +1530,13 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
+$OpenBSD: patch-mono_io-layer_processes_c,v 1.5 2014/07/09 11:39:17 robert Exp $
+--- mono/io-layer/processes.c.orig	Tue Jul  8 11:28:17 2014
++++ mono/io-layer/processes.c	Tue Jul  8 11:28:22 2014
+@@ -1350,13 +1350,13 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
  	gboolean done;
  	size_t proclength, size;
  #if defined(__OpenBSD__)
@@ -18,7 +18,7 @@ $OpenBSD: patch-mono_io-layer_processes_c,v 1.4 2012/04/13 11:51:49 robert Exp $
  	name[5] = 0;
  #else
  	struct kinfo_proc *result;
-@@ -1564,7 +1564,7 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
+@@ -1384,7 +1384,7 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
  				return FALSE;
  
  #if defined(__OpenBSD__)
@@ -27,7 +27,7 @@ $OpenBSD: patch-mono_io-layer_processes_c,v 1.4 2012/04/13 11:51:49 robert Exp $
  #endif
  
  			err = sysctl ((int *) name, size, result, &proclength, NULL, 0);
-@@ -1585,7 +1585,7 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
+@@ -1407,7 +1407,7 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
  	}	
  
  #if defined(__OpenBSD__)
@@ -36,13 +36,18 @@ $OpenBSD: patch-mono_io-layer_processes_c,v 1.4 2012/04/13 11:51:49 robert Exp $
  #else
  	count = proclength / sizeof(struct kinfo_proc);
  #endif
-@@ -2343,13 +2343,13 @@ static gchar *get_process_name_from_proc (pid_t pid)
- #elif defined(__OpenBSD__)
+@@ -2122,7 +2122,7 @@ static gchar *get_process_name_from_proc (pid_t pid)
+ #if defined(__OpenBSD__)
  	int mib [6];
  	size_t size;
 -	struct kinfo_proc2 *pi;
 +	struct kinfo_proc *pi;
- 
+ #elif defined(PLATFORM_MACOSX)
+ #if !(!defined (__mono_ppc__) && defined (TARGET_OSX))
+ 	size_t size;
+@@ -2179,10 +2179,10 @@ static gchar *get_process_name_from_proc (pid_t pid)
+ #endif
+ #elif defined(__OpenBSD__)
  	mib [0] = CTL_KERN;
 -	mib [1] = KERN_PROC2;
 +	mib [1] = KERN_PROC;
@@ -53,7 +58,7 @@ $OpenBSD: patch-mono_io-layer_processes_c,v 1.4 2012/04/13 11:51:49 robert Exp $
  	mib [5] = 0;
  
  retry:
-@@ -2359,10 +2359,10 @@ retry:
+@@ -2192,10 +2192,10 @@ retry:
  	if ((pi = malloc(size)) == NULL)
  		return(ret);
  

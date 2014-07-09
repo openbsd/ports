@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgc_pthread_stop_world_c,v 1.1 2014/07/09 11:39:17 robert Exp $
+--- libgc/pthread_stop_world.c.orig	Tue Jul  8 12:28:52 2014
++++ libgc/pthread_stop_world.c	Tue Jul  8 12:28:56 2014
+@@ -2,8 +2,7 @@
+ 
+ #if defined(GC_PTHREADS) && !defined(GC_SOLARIS_THREADS) \
+      && !defined(GC_IRIX_THREADS) && !defined(GC_WIN32_THREADS) \
+-     && !defined(GC_DARWIN_THREADS) && !defined(GC_AIX_THREADS) \
+-     && !defined(GC_OPENBSD_THREADS)
++     && !defined(GC_DARWIN_THREADS) && !defined(GC_AIX_THREADS)
+ 
+ #include <signal.h>
+ #include <semaphore.h>

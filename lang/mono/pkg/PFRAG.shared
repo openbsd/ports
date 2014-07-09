@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2011/03/02 08:37:51 robert Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2014/07/09 11:39:17 robert Exp $
 lib/libMonoPosixHelper.so
 lib/libMonoSupportW.so
 lib/libikvm-native.so
@@ -7,4 +7,4 @@ lib/libikvm-native.so
 @lib lib/libmono-profiler-cov.so.${LIBmono-profiler-cov_VERSION}
 @lib lib/libmono-profiler-iomap.so.${LIBmono-profiler-iomap_VERSION}
 @lib lib/libmono-profiler-log.so.${LIBmono-profiler-log_VERSION}
-@lib lib/libmonosgen-2.0.so.${LIBmonosgen-2.0_VERSION}
+@lib lib/libmonoboehm-2.0.so.${LIBmonoboehm-2.0_VERSION}

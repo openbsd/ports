@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.80 2013/12/04 21:31:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2014/07/09 11:39:16 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
-DISTNAME=	mono-2.10.9
-REVISION=	3
+DISTNAME=	mono-3.4.0
 
 CATEGORIES=	lang devel
 
 SHARED_LIBS +=  mono-2.0		1.0	# .0.0
+SHARED_LIBS +=  monoboehm-2.0           1.0     # .0.0
 SHARED_LIBS +=  mono-profiler-iomap	0.0	# .0.0
-SHARED_LIBS +=  monosgen-2.0		0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
 SHARED_LIBS +=  mono-profiler-log	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-cov	1.0	# .0.0
@@ -28,6 +27,7 @@ MASTER_SITES=	http://download.mono-project.com/sources/mono/ \
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/mono \
+		lang/python \
 		converters/libiconv
 
 MODMONO_DEPS=	No
@@ -38,18 +38,21 @@ USE_GROFF =	Yes
 SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
+		lang/gawk \
+		shells/bash \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	x11/libgdiplus
-LIB_DEPENDS=	devel/boehm-gc
-WANTLIB +=	gc
 
-AUTOCONF_VERSION=2.68
+TEST_DEPENDS=	lang/python/${MODPY_VERSION}
+
+AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_header_execinfo_h=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gc=boehm \
+		--with-gc=included \
+		--with-sgen=no \
 		--enable-quiet-build=no \
 		--disable-shared-handles
 
@@ -62,19 +65,6 @@ DLLMAP_FILES=	mcs/class/Managed.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
 		mcs/class/Mono.Cairo/Samples/gtk/OldAndBusted.cs \
 		data/config
 
-BASH_SCRIPTS=	mcs/class/Mono.WebBrowser/build-csproj2k5 \
-		mcs/class/Managed.Windows.Forms/build-csproj \
-		mcs/class/Managed.Windows.Forms/build-csproj2k5 \
-		mcs/class/Mono.Cairo/Samples/x11/compile.sh \
-		mcs/class/Mono.Cairo/Samples/gtk/compile.sh \
-		mcs/class/Mono.Cairo/Samples/win32/compile.sh \
-		mcs/class/Mono.Cairo/Samples/png/compile.sh \
-		mcs/tools/tinderbox/tinderbox.sh \
-		scripts/mono-find-requires.in \
-		scripts/mono-find-provides.in \
-		scripts/mono-test-install \
-		mono/arch/arm/dpiops.sh
-
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 post-patch:
@@ -85,12 +75,15 @@ post-patch:
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \
 		${WRKSRC}/runtime/monodis-wrapper.in
-	for i in ${BASH_SCRIPTS}; do \
-		perl -pi -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/$${i}; \
-	done
 	perl -pi -e 's,^prefix=.*,prefix=\@prefix\@,g;' \
 		-e 's,^exec_prefix=.*,exec_prefix=\@prefix\@,g' \
 		${WRKSRC}/data/*.pc.in
+	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+		mono/tests/gc-descriptors/gen-descriptor-tests.py
+
+
+	@ln -fs /usr/local/bin/bash ${WRKDIR}/bin/bash
+	@ln -fs /usr/local/bin/gawk ${WRKDIR}/bin/gawk
 
 # Force using the internal mcs compiler
 pre-build:
