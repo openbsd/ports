@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/03/26 07:26:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2014/07/09 16:49:35 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ CATEGORIES=	x11
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 HOMEPAGE=	http://slim.berlios.de/
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=slim/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=slim.berlios/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

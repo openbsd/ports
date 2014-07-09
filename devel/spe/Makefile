@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/17 03:27:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2014/07/09 16:49:35 jasper Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://pythonide.stani.be/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=python/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python.berlios/}
 
 WRKDIST=	${WRKDIR}/spe-$V.h
 

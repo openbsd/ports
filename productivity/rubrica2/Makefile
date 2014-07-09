@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.20 2013/09/27 17:49:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/09 16:49:35 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.7
-REVISION=	8
+REVISION=	9
 EPOCH=		0
 
 CATEGORIES=	productivity x11
 
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://rubrica.berlios.de
-
 SHARED_LIBS +=  ral                  0.0      # .1.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=rubrica/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rubrica.berlios/}
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/09 16:49:35 jasper Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
 DISTNAME=		gimmix-0.5.7.1
-REVISION=		3
+REVISION=		4
 CATEGORIES=		audio x11
-
-HOMEPAGE=		http://gimmix.berlios.de/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +18,7 @@ WANTLIB += xml2 z gthread-2.0 pthread xcb-render
 WANTLIB += pthread-stubs xcb crypto ssl curl idn
 WANTLIB += mpd nxml tag tag_c glade-2.0 GL Xxf86vm drm ffi xcb-shm
 
-MASTER_SITES=		${MASTER_SITE_BERLIOS:=gimmix/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimmix.berlios/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext textproc/intltool

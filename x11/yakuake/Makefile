@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/12/22 19:24:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2014/07/09 16:49:35 jasper Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://yakuake.kde.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=yakuake/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yakuake.berlios/}
 
 WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam
 WANTLIB += fontconfig freetype idn m png pthread stdc++ util xcb z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/07/09 09:24:47 kirby Exp $
+# $OpenBSD: Makefile,v 1.59 2014/07/09 16:49:35 jasper Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -22,7 +22,8 @@ HOMEPAGE=		http://www.catb.org/gpsd/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gpsd.berlios/} \
+			${MASTER_SITE_SAVANNAH:=gpsd/}
 
 MODULES +=		lang/python lang/php
 MODPHP_BUILDDEP=	No
