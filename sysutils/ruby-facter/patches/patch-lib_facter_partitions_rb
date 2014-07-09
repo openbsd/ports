@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_facter_partitions_rb,v 1.1 2014/07/09 16:27:19 jasper Exp $
+$OpenBSD: patch-lib_facter_partitions_rb,v 1.2 2014/07/09 17:30:55 jasper Exp $
 
-Add 'partitions' fact for OpenBSD.
+From 832af388fa3e0bd265194a40d820000cf0d043fb Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 9 Jul 2014 16:52:27 +0200
+Subject: [PATCH] (FACT-621) Add OpenBSD support for 'partitions' fact.
 
 --- lib/facter/partitions.rb.orig	Wed Jul  9 16:48:07 2014
 +++ lib/facter/partitions.rb	Wed Jul  9 16:48:30 2014
