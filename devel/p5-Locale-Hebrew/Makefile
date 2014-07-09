@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/06/14 23:24:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/09 09:54:13 ajacoutot Exp $
 COMMENT=	bidirectional Hebrew support
 
 MODULES=	cpan
-DISTNAME=	Locale-Hebrew-1.04
-REVISION=	4
+DISTNAME=	Locale-Hebrew-1.05
 CATEGORIES=	devel
 SHARED_ONLY=	yes
 
