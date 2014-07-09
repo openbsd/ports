@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.7 2013/04/28 16:40:42 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.8 2014/07/09 17:07:38 ajacoutot Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -9,11 +9,8 @@ USE_GMAKE ?=		Yes
 SUBST_VARS +=		VERSION
 
 # If no configure style is set, then assume "rebar"
-.if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE} == ""
+.if ${CONFIGURE_STYLE} == ""
 CONFIGURE_STYLE =	rebar
-.endif
-
-.if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE:L} == "rebar"
 MODERL_BUILD_DEPENDS +=	devel/rebar
 REBAR_BIN ?=		${LOCALBASE}/bin/rebar
 
