@@ -1,0 +1,12 @@
+$OpenBSD: patch-libalkimia_CMakeLists_txt,v 1.1.1.1 2014/07/09 13:07:23 zhuk Exp $
+--- libalkimia/CMakeLists.txt.orig	Wed Oct  2 02:58:50 2013
++++ libalkimia/CMakeLists.txt	Wed Oct  2 02:59:04 2013
+@@ -37,7 +37,7 @@ find_package(KDE4 REQUIRED)
+ find_package(GMP REQUIRED)
+ 
+ include(KDE4Defaults)
+-include_directories(${QDBUS_INCLUDE_DIRS} ${KDE4_INCLUDES})
++include_directories(${QDBUS_INCLUDE_DIRS} ${KDE4_INCLUDES} ${GMP_INCLUDE_DIR})
+ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS} -DMAKE_ALK_LIB)
+ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+ 

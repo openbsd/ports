@@ -1,0 +1,3 @@
+libalkimia is a library with common classes and functionality used
+by finance applications for the KDE SC. Currently it supports a
+common class to represent monetary values with arbitrary precision.
