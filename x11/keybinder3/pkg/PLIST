@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 20:52:58 bcallah Exp $
+include/keybinder-3.0/
+include/keybinder-3.0/keybinder.h
+lib/girepository-1.0/
+lib/girepository-1.0/Keybinder-3.0.typelib
+@lib lib/libkeybinder-3.0.so.${LIBkeybinder-3.0_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/keybinder-3.0.pc
+share/gir-1.0/
+share/gir-1.0/Keybinder-3.0.gir
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/keybinder-3.0/
+share/gtk-doc/html/keybinder-3.0/annotation-glossary.html
+share/gtk-doc/html/keybinder-3.0/api-index-full.html
+share/gtk-doc/html/keybinder-3.0/ch01.html
+share/gtk-doc/html/keybinder-3.0/deprecated-api-index.html
+share/gtk-doc/html/keybinder-3.0/home.png
+share/gtk-doc/html/keybinder-3.0/index.html
+share/gtk-doc/html/keybinder-3.0/index.sgml
+share/gtk-doc/html/keybinder-3.0/keybinder-3.0.devhelp2
+share/gtk-doc/html/keybinder-3.0/keybinder-keybinder.html
+share/gtk-doc/html/keybinder-3.0/left.png
+share/gtk-doc/html/keybinder-3.0/object-tree.html
+share/gtk-doc/html/keybinder-3.0/right.png
+share/gtk-doc/html/keybinder-3.0/style.css
+share/gtk-doc/html/keybinder-3.0/up.png

@@ -1,0 +1,2 @@
+Keybinder3 is a library for registering global keyboard shortcuts.
+It works with GTK+3-based applications using the X Window System.
