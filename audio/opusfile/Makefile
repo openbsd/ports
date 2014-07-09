@@ -1,11 +1,11 @@
 # $OpenBSD $
 
 COMMENT =		high-level decoding and seeking API for Opus files
-DISTNAME =		opusfile-0.5
+DISTNAME =		opusfile-0.6
 CATEGORIES =		audio
 
-SHARED_LIBS +=		opusfile                  0.0 # 3.0
-SHARED_LIBS +=		opusurl                   0.0 # 3.0
+SHARED_LIBS +=		opusfile                  0.0 # 3.1
+SHARED_LIBS +=		opusurl                   0.0 # 3.1
 
 HOMEPAGE =		http://opus-codec.org/
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
