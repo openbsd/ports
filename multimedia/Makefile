@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2014/06/13 20:49:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2014/07/09 10:55:12 zhuk Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -56,6 +56,7 @@
      SUBDIR += p5-Storable-AMF
      SUBDIR += phonon
      SUBDIR += phonon-backend
+     SUBDIR += qt-gstreamer
      SUBDIR += regionset
      SUBDIR += schroedinger
      SUBDIR += shrip
