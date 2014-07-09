@@ -1,4 +1,4 @@
-# $OpenBSD: BinaryScan.pm,v 1.4 2011/12/01 11:11:23 espie Exp $
+# $OpenBSD: BinaryScan.pm,v 1.5 2014/07/09 11:26:11 espie Exp $
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -110,6 +110,17 @@ sub retrieve_and_scan_binary
 	$n =~ s/^\/*//;
 
 	$self->scan_binary($item, $fullname, $n);
+}
+
+sub finish_retrieve_and_scan
+{
+	my ($self, $item, $o) = @_;
+	$o->{name} = $item->fullname;
+	$o->create;
+	my $n = $item->fullname;
+	$n =~ s/^\/*//;
+
+	$self->scan_binary($item, File::Spec->canonpath($item->fullname), $n);
 }
 
 sub dont_scan

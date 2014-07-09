@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.32 2013/02/07 08:19:54 zhuk Exp $
+# $OpenBSD: check-lib-depends,v 1.33 2014/07/09 11:26:11 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -87,6 +87,10 @@ sub depwalk
 {
 }
 
+sub find_binaries
+{
+}
+
 package OpenBSD::PackingElement::Wantlib;
 sub register_libs
 {
@@ -120,6 +124,16 @@ sub scan_binaries_for_libs
 {
 	my ($item, $state) = @_;
 
+	if (my $fullname = $item->is_binary) {
+		$state->{scanner}->retrieve_and_scan_binary($item, $fullname);
+	} else {
+		$state->{scanner}->dont_scan($item);
+	}
+}
+
+sub is_binary
+{
+	my $item = shift;
 	my $fullname = File::Spec->canonpath($item->fullname);
 
 	my $linux_bin = 0;
@@ -127,9 +141,17 @@ sub scan_binaries_for_libs
 		$linux_bin = 1;
 	}
 	if ($linux_bin || $item->{symlink} || $item->{link}) {
-		$state->{scanner}->dont_scan($item);
+		return 0;
 	} else {
-		$state->{scanner}->retrieve_and_scan_binary($item, $fullname);
+		return $fullname;
+	}
+}
+
+sub find_binaries
+{
+	my ($item, $h) = @_;
+	if ($item->is_binary) {
+		$h->{$item->name} = $item;
 	}
 }
 
@@ -376,6 +398,26 @@ sub scan_package
 	$state->{scanner}->finish_scanning;
 }
 
+sub scan_true_package
+{
+	my ($self, $state, $plist, $source) = @_;
+	$state->{scanner}->set_source($source);
+	my $h = {};
+	$plist->find_binaries($h);
+	while (my $o = $source->next) {
+		my $item = $h->{$o->name};
+		if (defined $item) {
+			delete $h->{$o->name};
+			$state->{scanner}->finish_retrieve_and_scan(
+			    $item, $o);
+		}
+	}
+	if (keys %$h != 0) {
+		$state->fatal("Not all files accounted for");
+	}
+	$state->{scanner}->finish_scanning;
+}
+
 sub analyze 
 {
 	my ($self, $state, $plist) = @_;
@@ -436,7 +478,7 @@ sub do_pkg
 	$state->set_context($plist);
 	my $temp = OpenBSD::Temp->dir;
 	$state->{dump} = OpenBSD::DumpRecorder->new;
-	$self->scan_package($state, $plist,
+	$self->scan_true_package($state, $plist,
 	    OpenBSD::PkgFileSource->new($true_package, $temp));
 	$self->analyze($state, $plist);
 	$true_package->close;

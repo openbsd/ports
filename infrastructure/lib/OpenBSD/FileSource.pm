@@ -1,4 +1,4 @@
-# $OpenBSD: FileSource.pm,v 1.2 2011/11/27 11:29:33 espie Exp $
+# $OpenBSD: FileSource.pm,v 1.3 2014/07/09 11:26:11 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -70,6 +70,16 @@ sub prepare_to_extract
 	}
 	$o->{name} = $item->fullname;
 	$o->{destdir} = $self->{location};
+	return $o;
+}
+
+sub next
+{
+	my $self = shift;
+	my $o = $self->{handle}->next;
+	if (defined $o) {
+		$o->{destdir} = $self->{location};
+	}
 	return $o;
 }
 
