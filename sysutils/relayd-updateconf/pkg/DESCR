@@ -1,0 +1,2 @@
+Updates the configuration file /etc/relayd.conf of OpenBSD's relayd
+daemon from the syntax in OpenBSD 5.5 to the syntax used in OpenBSD 5.6. 
