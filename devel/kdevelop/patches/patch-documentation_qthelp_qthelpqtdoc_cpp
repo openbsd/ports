@@ -1,0 +1,16 @@
+$OpenBSD: patch-documentation_qthelp_qthelpqtdoc_cpp,v 1.1.1.1 2014/07/09 11:30:28 zhuk Exp $
+--- documentation/qthelp/qthelpqtdoc.cpp.orig	Sat Dec  7 22:51:45 2013
++++ documentation/qthelp/qthelpqtdoc.cpp	Tue Jan 21 18:56:42 2014
+@@ -39,9 +39,10 @@ QtHelpQtDoc::QtHelpQtDoc(QObject *parent, const QVaria
+ void QtHelpQtDoc::registerDocumentations()
+ {
+     QStringList qmakes;
+-    qmakes << KStandardDirs::findExe("qmake")
++    qmakes << KStandardDirs::findExe("qmake4")
+            << KStandardDirs::findExe("qmake-qt4")
+-           << KStandardDirs::findExe("qmake-qt5");
++           << KStandardDirs::findExe("qmake-qt5")
++           << KStandardDirs::findExe("qmake");
+     if(!qmakes.isEmpty()) {
+         KProcess *p = new KProcess;
+         p->setOutputChannelMode(KProcess::MergedChannels);

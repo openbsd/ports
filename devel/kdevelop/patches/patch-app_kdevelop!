@@ -1,0 +1,46 @@
+$OpenBSD: patch-app_kdevelop!,v 1.1.1.1 2014/07/09 11:30:28 zhuk Exp $
+Make it more portable and error-prone.
+--- app/kdevelop!.orig	Sat Dec  7 22:51:45 2013
++++ app/kdevelop!	Tue Jan 21 21:02:30 2014
+@@ -18,17 +18,14 @@
+ # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ # Boston, MA 02110-1301, USA.
+ 
+-export KDEV_BASEDIR=$(dirname $0)
++export KDEV_BASEDIR=$(dirname "$0")
+ export APPLICATION=KDevelop
+ 
+ if ! [ "$KDEV_ATTACHED_PID" ]; then
+-    ARGS=""
+-    if ! [ "$@" ]; then
+-        ARGS="-pss"
+-    else
+-        ARGS="$@"
++    if [ $# -eq 0 ]; then
++        set -- -pss
+     fi
+-    export KDEV_ATTACHED_PID=$($KDEV_BASEDIR/kdevelop $ARGS --pid)
++    export KDEV_ATTACHED_PID=$("$KDEV_BASEDIR"/kdevelop "$@" --pid)
+ fi
+ 
+ if ! [ "$KDEV_ATTACHED_PID" ]; then
+@@ -38,16 +35,16 @@ fi
+ 
+ # Make sure we didn't capture garbage instead of the pid (must be 1 word only)
+ # note: keep compatible on FreeBSD: https://bugs.kde.org/show_bug.cgi?id=311186
+-if [ "$(echo $KDEV_ATTACHED_PID | wc -w | sed 's/ //g')" != 1 ]; then
++if [ 1 -ne "$(echo $KDEV_ATTACHED_PID | wc -w | sed 's/ //g')" ]; then
+     echo "Error: Got no valid pid."
+     exit 6
+ fi
+ 
+-if ! [ "$(which qdbus)" ]; then
++if [ -z "$(command -v qdbus)" ]; then
+     echo "Error: The qdbus utility is missing."
+     exit 7
+ fi
+ 
+ export KDEV_DBUS_ID="org.kdevelop.kdevelop-$KDEV_ATTACHED_PID"
+ 
+-bash --init-file $KDEV_BASEDIR/kdevplatform_shell_environment.sh -i
++env ENV="$KDEV_BASEDIR/kdevplatform_shell_environment.sh" ksh -i
