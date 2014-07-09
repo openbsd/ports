@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 19:49:08 zhuk Exp $
+include/kde4/baloo/filemetadataconfigwidget.h
+include/kde4/baloo/filemetadatawidget.h
+include/kde4/baloo/tagwidget.h
+include/kde4/baloo/widgets_export.h
+lib/cmake/BalooWidgets/
+lib/cmake/BalooWidgets/BalooWidgetsConfig.cmake
+lib/cmake/BalooWidgets/BalooWidgetsConfigVersion.cmake
+lib/cmake/BalooWidgets/BalooWidgetsTargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/BalooWidgets/BalooWidgetsTargetsWithPrefix.cmake
+@lib ${KDE4LIB}/libbaloowidgets.so.${LIBbaloowidgets_VERSION}
+@lib lib/libbaloowidgets.so.${LIBbaloowidgets_VERSION}
