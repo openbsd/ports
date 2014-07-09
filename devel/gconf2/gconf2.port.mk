@@ -1,4 +1,4 @@
-# $OpenBSD: gconf2.port.mk,v 1.7 2011/05/06 06:43:43 ajacoutot Exp $
+# $OpenBSD: gconf2.port.mk,v 1.8 2014/07/09 16:49:41 ajacoutot Exp $
 
 MODGCONF2_WANTLIB =	gconf-2
 MODGCONF2_LIB_DEPENDS =	devel/gconf2
@@ -21,7 +21,9 @@ BUILD_DEPENDS +=	${MODGCONF2_BUILD_DEPENDS}
 .if defined(MODGCONF2_SCHEMAS_DIR)
 SCHEMAS_INSTDIR =	share/schemas/${MODGCONF2_SCHEMAS_DIR:L}
 SUBST_VARS +=		SCHEMAS_INSTDIR
+.   if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 CONFIGURE_ARGS +=	--with-gconf-schema-file-dir=${LOCALBASE}/${SCHEMAS_INSTDIR}
+.   endif
 .endif
 
 MODGCONF2_post-patch +=	ln -s /usr/bin/true ${WRKDIR}/bin/gconftool-2

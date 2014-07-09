@@ -1,4 +1,4 @@
-# $OpenBSD: dconf.port.mk,v 1.4 2011/11/11 11:39:13 espie Exp $
+# $OpenBSD: dconf.port.mk,v 1.5 2014/07/09 16:49:41 ajacoutot Exp $
 
 # This module is used by ports installing gsettings schemas under
 #     PREFIX/share/glib-2.0/schemas/
@@ -15,4 +15,6 @@ MODDCONF_RUN_DEPENDS=	devel/glib2 \
 BUILD_DEPENDS +=	${MODDCONF_BUILD_DEPENDS}
 RUN_DEPENDS +=		${MODDCONF_RUN_DEPENDS}
 
+.if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 CONFIGURE_ARGS +=	--disable-schemas-compile
+.endif
