@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1.1.1 2014/07/09 16:09:35 zhuk Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If you want to get quotes updates, install the p5-Finance-Quote and
+p5-Crypt-SSLeay packages.
+
+Encryption feature isn't finished and doesn't work - KMyMoney can't request
+passphrase. If you accidentally ended up in encrypting the only data you have,
+just decrypt it manually with gnupg. The decrypted file will be a normal
+KMyMoney database file, only uncompressed. See more details in KMyMoney
+documentation.

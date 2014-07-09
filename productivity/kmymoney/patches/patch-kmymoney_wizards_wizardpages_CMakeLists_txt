@@ -1,0 +1,11 @@
+$OpenBSD: patch-kmymoney_wizards_wizardpages_CMakeLists_txt,v 1.1.1.1 2014/07/09 16:09:35 zhuk Exp $
+Unbreak compilation.
+REVIEW: https://git.reviewboard.kde.org/r/119197/
+--- kmymoney/wizards/wizardpages/CMakeLists.txt.orig	Fri Nov  8 19:39:40 2013
++++ kmymoney/wizards/wizardpages/CMakeLists.txt	Fri Nov  8 19:40:35 2013
+@@ -18,3 +18,5 @@ ADD_CUSTOM_TARGET(generate_wizardpages_ui_srcs DEPENDS
+ KDE4_ADD_LIBRARY(wizardpages STATIC
+   ${libwizardpages_a_SOURCES} ${wizardpages_ui_srcs})
+ 
++ADD_DEPENDENCIES(wizardpages dialogs)
++
