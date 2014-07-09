@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.85 2014/04/08 17:25:35 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.86 2014/07/09 13:55:19 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -9,10 +9,12 @@ HOMEPAGE?=		https://wiki.gnome.org/
 MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX?=		.tar.xz
 CATEGORIES+=		x11/gnome
+.    if ${NO_BUILD:L} == "no"
+MODULES+=		textproc/intltool
+.    endif
 .endif
 
 .if ${NO_BUILD:L} == "no"
-MODULES+=		textproc/intltool
 .   if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE:Mgnu}
         CONFIGURE_ARGS += ${CONFIGURE_SHARED}
       # https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
