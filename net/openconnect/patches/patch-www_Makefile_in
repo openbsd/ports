@@ -1,0 +1,16 @@
+$OpenBSD: patch-www_Makefile_in,v 1.3 2014/07/09 10:28:49 sthen Exp $
+
+Avoid GNU-only syntax. $? works here for both GNU and BSD make.
+
+Signed-off-by: Stuart Henderson <sthen@openbsd.org>
+--- www/Makefile.in.orig	Wed Jul  9 11:14:04 2014
++++ www/Makefile.in	Wed Jul  9 11:20:16 2014
+@@ -733,7 +733,7 @@ $(top_builddir)/openconnect.8: $(top_srcdir)/openconne
+ # If this command line ever changes significantly, so should the
+ # corresponding autoconf check.
+ openconnect.8.inc: $(top_builddir)/openconnect.8
+-	$(GROFF) -t -K UTF-8 -mandoc -Txhtml $< > $@.html.tmp
++	$(GROFF) -t -K UTF-8 -mandoc -Txhtml $? > $@.html.tmp
+ 	sed -e '1,/<body>/d' -e '/<\/body>/,$$d' $@.html.tmp > $@.tmp
+ 	rm -f $@.html.tmp
+ 	mv $@.tmp $@
