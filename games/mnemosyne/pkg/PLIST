@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/05/08 16:21:16 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/07/09 13:36:24 bcallah Exp $
 bin/mnemosyne
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -247,6 +247,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade1.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade2.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade2.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade3.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/upgrade3.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/utils.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/

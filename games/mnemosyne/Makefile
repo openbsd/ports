@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2014/05/08 16:21:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.25 2014/07/09 13:36:24 bcallah Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION=2.3
+MODPY_EGG_VERSION=2.3.1
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
@@ -31,7 +31,7 @@ RUN_DEPENDS=	x11/py-qt4 \
 
 NO_TEST=	Yes
 
-MODPY_ADJ_FILES =	${WRKSRC}/mnemosyne/pyqt_ui/mnemosyne
+MODPY_ADJ_FILES=	mnemosyne/pyqt_ui/mnemosyne
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
