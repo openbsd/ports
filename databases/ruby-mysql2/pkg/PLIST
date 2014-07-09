@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/07/09 17:13:07 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
@@ -20,12 +20,14 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/configuration.yml.example
 ${GEM_LIB}/gems/${DISTNAME}/spec/em/
 ${GEM_LIB}/gems/${DISTNAME}/spec/em/em_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/my.cnf.example
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/client_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/result_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rcov.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/test_data
 ${GEM_LIB}/gems/${DISTNAME}/support/
 ${GEM_LIB}/gems/${DISTNAME}/support/mysql_enc_to_ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/support/ruby_enc_to_mysql.rb
