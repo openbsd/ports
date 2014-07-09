@@ -1,0 +1,256 @@
+$OpenBSD: patch-util_kdevplatform_shell_environment_sh,v 1.1.1.1 2014/07/09 11:29:15 zhuk Exp $
+Make it more portable and error-prone.
+REVIEW: https://git.reviewboard.kde.org/r/119192/
+--- util/kdevplatform_shell_environment.sh.orig	Sat Jul 27 18:30:36 2013
++++ util/kdevplatform_shell_environment.sh	Sat Jul 27 20:11:16 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This file is part of KDevelop
+ # Copyright 2011 David Nolden <david.nolden.kdevelop@art-master.de>
+@@ -18,20 +18,24 @@
+ # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ # Boston, MA 02110-1301, USA.
+ 
+-if [ -e ~/.bashrc ]; then
+-    # Since this runs as a replacement for the init-file, we need to chain in the 'real' bash-rc
+-    source ~/.bashrc
++# NOTE: While this script is more or less portable, it uses exclamation
++# mark in function names, which goes beyond the SUS/POSIX specs. This is
++# known to break with dash (Debian shell) at least.
++
++if [ -n "$KDEV_REAL_ENV ]; then
++    # Since this runs as a replacement for the init-file, we need to chain in the 'real' one
++    . "$KDEV_REAL_ENV"
+ fi
+ 
+-if ! [ "$APPLICATION_HOST" ]; then
++if [ -z "$APPLICATION_HOST" ]; then
+     export APPLICATION_HOST=$(hostname)
+ fi
+ 
+-if ! [ "$KDEV_SHELL_ENVIRONMENT_ID" ]; then
++if [ -z "$KDEV_SHELL_ENVIRONMENT_ID" ]; then
+     export KDEV_SHELL_ENVIRONMENT_ID="default"
+ fi
+ 
+-if ! [ "$KDEV_DBUS_ID" ]; then
++if [ -z "$KDEV_DBUS_ID" ]; then
+     echo "The required environment variable KDEV_DBUS_ID is not set. This variable defines the dbus id of the application instance instance which is supposed to be attached."
+     exit 5
+ fi
+@@ -47,9 +51,9 @@ if ! [ -e "$KDEV_BASEDIR/kdev_dbus_socket_transformer"
+ fi
+ 
+ # Takes a list of tools, and prints a warning of one of them is not available in the path
+-function checkToolsInPath {
+-    for TOOL in $@; do
+-        if ! [ "$(which $TOOL 2> /dev/null)" ]; then
++checkToolsInPath() {
++    for TOOL in "$@"; do
++        if [ -z "$(command -v $TOOL 2> /dev/null)" ]; then
+             echo "The utility $TOOL is not in your path, the shell integration will not work properly."
+         fi
+     done
+@@ -58,33 +62,33 @@ function checkToolsInPath {
+ # Check if all required tools are there (on the host machine)
+ checkToolsInPath sed qdbus ls cut dirname mktemp basename readlink hostname
+ 
+-if ! [ "$KDEV_SSH_FORWARD_CHAIN" ]; then
++if [ -n "$KDEV_SSH_FORWARD_CHAIN" ]; then
+     # Check for additional utilities that are required on the client machine
+     checkToolsInPath kioclient
+ fi
+ 
+ # Queries the session name from the running application instance
+-function getSessionName {
+-    echo "$(qdbus $KDEV_DBUS_ID /kdevelop/SessionController org.kdevelop.kdevelop.KDevelop.SessionController.sessionName)"
++getSessionName() {
++    echo "$(qdbus \"$KDEV_DBUS_ID\" /kdevelop/SessionController org.kdevelop.kdevelop.KDevelop.SessionController.sessionName)"
+ }
+ 
+-function getSessionDir {
+-    echo "$(qdbus $KDEV_DBUS_ID /kdevelop/SessionController org.kdevelop.kdevelop.KDevelop.SessionController.sessionDir)"
++getSessionDir() {
++    echo "$(qdbus \"$KDEV_DBUS_ID\" /kdevelop/SessionController org.kdevelop.kdevelop.KDevelop.SessionController.sessionDir)"
+ }
+ 
+-function getCurrentShellEnvPath {
+-    local ENV_ID=$KDEV_SHELL_ENVIRONMENT_ID
+-    if [ "$1" ]; then
+-        ENV_ID=$1
++getCurrentShellEnvPath() {
++    local ENV_ID="$KDEV_SHELL_ENVIRONMENT_ID"
++    if [ -n "$1" ]; then
++        ENV_ID="$1"
+     fi
+ 
+     echo "$(getSessionDir)/${ENV_ID}.sh"
+ }
+ 
+-function help! {
++help! () {
+     echo "You are controlling the $APPLICATION session '$(getSessionName)'"
+     echo ""
+-    if [ "$1" == "" ]; then
++    if [ "X$1" = X ]; then
+     echo "Standard commands:"
+     echo "raise!                                 - Raise the window."
+     echo "sync!                                  - Synchronize the working directory with the currently open document. See \"help! sync\""
+@@ -104,7 +108,7 @@ function help! {
+     echo "Most commands can be abbreviated by the first character(s), eg. r! instead of raise!, and se! instead of search!."
+     fi
+ 
+-    if [ "$1" == "open" ]; then
++    if [ X"$1" = "Xopen" ]; then
+     echo "Extended opening:"
+     echo "The open! command can also be used to open files in specific tool-view configurations, by adding split-separators:"
+     echo "- Files around the / separator will be arranged horizontally by split-view."
+@@ -123,7 +127,7 @@ function help! {
+     echo "Short forms: o! = open!, eo! = eopen!, c! = create!"
+     fi
+ 
+-    if [ "$1" == "sync" ]; then
++    if [ "X$1" = "Xsync" ]; then
+     echo "Extended syncing:"
+     echo "sync!    [[project-name]]           - If no project-name is given, then the sync! command synchronizes to the currently active document."
+     echo "                                      If no document is active, then it synchronizes to the currently selected item in the project tree-view."
+@@ -137,7 +141,7 @@ function help! {
+     echo "Short forms: s! = sync!, ss! = syncsel!, p! = project!, b! = bdir!"
+     fi
+ 
+-    if [ "$1" == "remote" ]; then
++    if [ "X$1" = "Xremote" ]; then
+     echo "Extended remote commands:"
+     echo "ssh!  [ssh arguments]                  - Connect to a remote host via ssh, keeping the control-connection alive."
+     echo "                                       - The whole dbus environment is forwarded, KDevelop needs to be installed on both sides."
+@@ -152,7 +156,7 @@ function help! {
+     echo "Short forms: e! = exec!, ce! = cexec!, cth! = copytohost!, ctc! = copytoclient!"
+     fi
+ 
+-    if [ "$1" == "env" ]; then
++    if [ "X$1" = "Xenv" ]; then
+       echo "Environment management:"
+       echo "The environment can be used to store session-specific macros and generally manipulate the shell environment"
+       echo "for embedded shell sessions. The environment is sourced into the shell when the shell is initialized, and"
+@@ -170,86 +174,86 @@ function help! {
+ 
+ # Short versions of the commands:
+ 
+-function r! {
+-    raise! $@
++r! () {
++    raise! "$@"
+ }
+ 
+-function s! {
+-    sync! $@
++s! () {
++    sync! "$@"
+ }
+ 
+-function ss! {
++ss! () {
+     syncsel!
+ }
+ 
+-function syncsel! {
++syncsel! () {
+     sync! '[selection]'
+ }
+ 
+-function p! {
+-    if [ "$@" ]; then
+-        s! $@
++p! () {
++    if [ $# -gt 0 ]; then
++        s! "$@"
+     fi
+     project!
+ }
+ 
+ function b! {
+-    if [ "$@" ]; then
+-        s! $@
++    if [ $# -gt 0 ]; then
++        s! "$@"
+     fi
+     bdir!
+ }
+ 
+ function o! {
+-    open! $@
++    open! "$@"
+ }
+ 
+ function eo! {
+-    eopen! $@
++    eopen! "$@"
+ }
+ 
+ function e! {
+-    exec! $@
++    exec! "$@"
+ }
+ 
+ function ce! {
+-    cexec! $@
++    cexec! "$@"
+ }
+ 
+ function c! {
+-    create! $@
++    create! "$@"
+ }
+ 
+ function se! {
+-    search! $@
++    search! "$@"
+ }
+ 
+ function ds! {
+-    dsearch! $@
++    dsearch! "$@"
+ }
+ 
+ function h! {
+-    help! $@
++    help! "$@"
+ }
+ 
+ function cth! {
+-    copytohost! $@
++    copytohost! "$@"
+ }
+ 
+ function ctc! {
+-    copytoclient! $@
++    copytoclient! "$@"
+ }
+ 
+ function sev! {
+-    setenv! $@
++    setenv! "$@"
+ }
+ 
+ function ee! {
+-    editenv! $@
++    editenv! "$@"
+ }
+ 
+ function shev! {
+-    showenv! $@
++    showenv! "$@"
+ }
+ 
+ # Internals:
+@@ -800,6 +804,6 @@ PS1="!$PS1"
+ 
+ echo "You are controlling the $APPLICATION session '$(getSessionName)'. Type help! for more information."
+ 
+-if [ "$KDEV_WORKING_DIR" ]; then
+-    cd $KDEV_WORKING_DIR
++if [ -n "$KDEV_WORKING_DIR" ]; then
++    cd -- "$KDEV_WORKING_DIR"
+ fi

@@ -1,0 +1,12 @@
+$OpenBSD: patch-KDevPlatformConfig_cmake_in,v 1.1.1.1 2014/07/09 11:29:15 zhuk Exp $
+--- KDevPlatformConfig.cmake.in.orig	Sat Dec  7 22:45:38 2013
++++ KDevPlatformConfig.cmake.in	Mon Jan 20 12:15:44 2014
+@@ -28,7 +28,7 @@ if(NOT WIN32)
+ # This is needed on non-win32 platforms, as lib-install-dir might be in a 
+ # totally different prefix than include-install-dir. So instead hardcode the
+ # absolute path during buildtime
+-set( KDEVPLATFORM_INCLUDE_DIR "@INCLUDE_INSTALL_DIR@/kdevplatform" )
++set( KDEVPLATFORM_INCLUDE_DIR "@KDE4_INCLUDE_INSTALL_DIR@/kdevplatform" )
+ 
+ else(NOT WIN32)
+ 

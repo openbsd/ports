@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_modules_KDevPlatformMacros_cmake,v 1.1.1.1 2014/07/09 11:29:15 zhuk Exp $
+Can't use "$" matching here because (G)Make interprets it sooner or later.
+--- cmake/modules/KDevPlatformMacros.cmake.orig	Thu May 30 00:51:33 2013
++++ cmake/modules/KDevPlatformMacros.cmake	Wed Jul 24 13:42:16 2013
+@@ -56,7 +56,8 @@ macro(kdevplatform_create_template_archive _templateNa
+     else(WIN32)
+         add_custom_command(OUTPUT ${_template}
+             COMMAND tar ARGS -c -C ${CMAKE_CURRENT_SOURCE_DIR}/${_templateName}
+-                --exclude .kdev_ignore --exclude .svn
++                -s "@^\\(.*/\\)*\\.kdev_ignore@@"
++                -s "@^\\(.*/\\)*\\.svn@@"
+                 -j -f ${_template} .
+             DEPENDS ${_deps}
+         )

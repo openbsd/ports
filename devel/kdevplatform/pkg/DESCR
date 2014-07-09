@@ -1,0 +1,4 @@
+KDevPlatform is a free, open source set of libraries that can be
+used as a foundation for IDE-like programs. It is programing-language
+independent, and is planned to be used by programs like: KDevelop,
+Quanta, Kile, KTechLab ... etc.
