@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 12:57:57 zhuk Exp $
-COMMENT =	resource constrained project scheduling
+# $OpenBSD: Makefile,v 1.2 2014/07/09 14:56:53 landry Exp $
+COMMENT =	library for resource constrained project scheduling
 CATEGORIES =	productivity
 DISTNAME =	librcps-0.3
 HOMEPAGE =	http://www.librcps.org/
