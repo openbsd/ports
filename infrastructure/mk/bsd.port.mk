@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1266 2014/06/05 10:06:09 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1267 2014/07/09 10:27:11 robert Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -779,7 +779,19 @@ _WRKDIRS += ${WRKOBJDIR_MFS}/${_WRKDIR_STEM}
 WRKDIR ?= ${.CURDIR}/${OLD_WRKDIR_NAME}
 .endif
 
+# github related variables
+GH_TAGNAME ?=
+GH_COMMIT ?=
+GH_ACCOUNT ?=
+GH_PROJECT ?=
+
+.if !empty(GH_TAGNAME)
+WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
+.elif !empty(GH_COMMIT)
+WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
+.else
 WRKDIST ?= ${WRKDIR}/${DISTNAME}
+.endif
 
 WRKSRC ?= ${WRKDIST}
 
@@ -1127,8 +1139,19 @@ MASTER_SITE_OVERRIDE ?= No
 .include "${PORTSDIR}/infrastructure/templates/network.conf.template"
 .endif
 
+.if !empty(GH_ACCOUNT) && !empty(GH_PROJECT)
+.  if ${GH_TAGNAME} == master
+ERRORS += "Fatal: using master as GH_TAGNAME is invalid"
+.  endif
+MASTER_SITES_GITHUB += \
+	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME:S/$/\//}
+
+MASTER_SITES ?= ${MASTER_SITES_GITHUB}
+.else
 # Empty declarations to avoid "variable XXX is recursive" errors
 MASTER_SITES ?=
+.endif
+
 # I guess we're in the master distribution business! :)  As we gain mirror
 # sites for distfiles, add them to this list.
 .if ${MASTER_SITE_OVERRIDE:L} == "no"
@@ -1173,7 +1196,11 @@ _CDROM_OVERRIDE =:
 
 EXTRACT_SUFX ?= .tar.gz
 
+.if !empty(GH_COMMIT)
+DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}}
+.else
 DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 _FILES=
 .for v in DISTFILES PATCHFILES SUPDISTFILES
