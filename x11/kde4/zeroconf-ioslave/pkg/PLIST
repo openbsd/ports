@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 19:54:11 zhuk Exp $
+@conflict kdenetwork-<4.11
+@conflict kdnssd-*
+@pkgpath x11/kde4/kdnssd
+lib/kde4/kded_dnssdwatcher.so
+lib/kde4/kio_zeroconf.so
+share/apps/remoteview/
+share/apps/remoteview/zeroconf.desktop
+share/dbus-1/interfaces/org.kde.kdnssd.xml
+share/kde4/services/kded/dnssdwatcher.desktop
+share/kde4/services/zeroconf.protocol
