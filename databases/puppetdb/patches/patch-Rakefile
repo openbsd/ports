@@ -1,13 +1,13 @@
-$OpenBSD: patch-Rakefile,v 1.6 2014/05/07 10:59:53 jasper Exp $
+$OpenBSD: patch-Rakefile,v 1.7 2014/07/09 08:31:51 jasper Exp $
 
 - Change various configuration variables to what they would be like when
   PuppetDB has been _installed_, as these variables are used in other scripts.
   The installer has been modified in tasks/install.rake
 - Set OpenBSD's Ruby site dir.
 
---- Rakefile.orig	Thu May  1 09:34:35 2014
-+++ Rakefile	Thu May  1 09:37:13 2014
-@@ -85,20 +85,20 @@ else
+--- Rakefile.orig	Mon Jul  7 19:37:05 2014
++++ Rakefile	Wed Jul  9 10:20:57 2014
+@@ -85,24 +85,24 @@ else
        else
          "/usr/share/puppetdb"
        end
@@ -16,7 +16,7 @@ $OpenBSD: patch-Rakefile,v 1.6 2014/05/07 10:59:53 jasper Exp $
 -    @lib_dir = "/var/lib/puppetdb"
 +    @etc_dir = "${SYSCONFDIR}/puppetdb"
 +    @config_dir = "${SYSCONFDIR}/puppetdb/conf.d"
-+    @lib_dir = "${VARBASE}/db/puppetdb"
++    @lib_dir = "${VARBASE}/db//puppetdb"
      @libexec_dir = case @osfamily
        when /openbsd/
 -        "/usr/local/libexec/puppetdb"
@@ -28,14 +28,18 @@ $OpenBSD: patch-Rakefile,v 1.6 2014/05/07 10:59:53 jasper Exp $
        end
 -    @link = "/usr/share/puppetdb"
 -    @name = "puppetdb"
--    @sbin_dir = "/usr/sbin"
 +    @link = "share/puppetdb"
 +    @name = "_puppetdb"
-+    @sbin_dir = "sbin"
+     @sbin_dir = case @osfamily
+       when /archlinux/
+         "/usr/bin"
+       else
+-        "/usr/sbin"
++        "sbin"
+       end
  end
  
- @initscriptname = "/etc/init.d/#{@name}"
-@@ -123,7 +123,7 @@ case @osfamily
+@@ -128,7 +128,7 @@ case @osfamily
    when /suse/
      @plibdir = @pe ? PE_SITELIBDIR : (%x(ruby -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']").chomp)
    when /openbsd/
