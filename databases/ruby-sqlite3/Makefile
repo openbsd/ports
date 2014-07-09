@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2014/01/15 02:13:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.33 2014/07/09 17:13:26 jeremy Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
-VERSION=	1.3.8
+VERSION=	1.3.9
 DISTNAME=	sqlite3-${VERSION}
-REVISION=	1
 CATEGORIES=	databases
 
 
