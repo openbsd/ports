@@ -1,59 +1,28 @@
-$OpenBSD: patch-gadgets_Makefile,v 1.1.1.1 2007/09/06 19:46:01 merdely Exp $
---- gadgets/Makefile.orig	Wed Sep  5 17:28:21 2007
-+++ gadgets/Makefile	Wed Sep  5 17:31:27 2007
-@@ -16,30 +16,21 @@ options:
- 	@echo "LD       = ${LD}"
- 
- .c.o:
--	@echo CC $<
--	@${CC} -c ${CFLAGS} $<
-+	${CC} -c ${CFLAGS} $<
- 
- ${OBJ}: config.mk
- 
+$OpenBSD: patch-gadgets_Makefile,v 1.2 2014/07/09 14:34:54 robert Exp $
+--- gadgets/Makefile.orig	Sun Jul  6 11:19:45 2014
++++ gadgets/Makefile	Sun Jul  6 11:20:05 2014
+@@ -24,24 +24,20 @@ ${OBJ}: dbar.h config.mk
  dbar: ${OBJ}
--	@echo LD $@
--	@${LD} -o $@ dbar.o ${LDFLAGS}
+ 	@echo LD $@
+ 	@${LD} -o $@ dbar-main.o dbar.o ${LDFLAGS}
 -	@strip $@
-+	${LD} -o $@ dbar.o ${LDFLAGS}
  
  gdbar: ${OBJ}
--	@echo LD $@
--	@${LD} -o $@ gdbar.o ${LDFLAGS} -L${X11LIB} -lX11
+ 	@echo LD $@
+ #	@${LD} -o $@ gdbar.o dbar.o ${LDFLAGS} -L${X11LIB} -lX11
+ 	@${LD} -o $@ gdbar.o dbar.o ${LDFLAGS}
 -	@strip $@
-+	${LD} -o $@ gdbar.o ${LDFLAGS} -L${X11LIB} -lX11
  
  gcpubar: ${OBJ}
--	@echo LD $@
--	@${LD} -o $@ gcpubar.o ${LDFLAGS} -L${X11LIB}
+ 	@echo LD $@
+ #	@${LD} -o $@ gcpubar.o dbar.o ${LDFLAGS} -L${X11LIB}
+ 	@${LD} -o $@ gcpubar.o dbar.o ${LDFLAGS}
 -	@strip $@
-+	${LD} -o $@ gcpubar.o ${LDFLAGS} -L${X11LIB}
  
  textwidth: ${OBJ}
--	@echo LD $@
--	@${LD} -o $@ textwidth.o ${LDFLAGS} -L${X11LIB} -lX11
+ 	@echo LD $@
+ 	@${LD} -o $@ textwidth.o ${LDFLAGS} -L${X11LIB} -lX11
 -	@strip $@
-+	${LD} -o $@ textwidth.o ${LDFLAGS} -L${X11LIB} -lX11
  
  clean:
  	@echo cleaning
-@@ -49,16 +40,9 @@ clean:
- 	@rm -f ${OBJ} textwidth
- 
- install: all
--	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
--	@mkdir -p ${DESTDIR}${PREFIX}/bin
--	@cp -f dbar ${DESTDIR}${PREFIX}/bin
--	@chmod 755 ${DESTDIR}${PREFIX}/bin/dbar
--	@cp -f gdbar ${DESTDIR}${PREFIX}/bin
--	@chmod 755 ${DESTDIR}${PREFIX}/bin/gdbar
--	@cp -f gcpubar ${DESTDIR}${PREFIX}/bin
--	@chmod 755 ${DESTDIR}${PREFIX}/bin/gcpubar
--	@cp -f textwidth ${DESTDIR}${PREFIX}/bin
--	@chmod 755 ${DESTDIR}${PREFIX}/bin/textwidth
-+	${BSD_INSTALL_PROGRAM_DIR} ${DESTDIR}${PREFIX}/bin
-+	${BSD_INSTALL_PROGRAM} dbar gdbar gcpubar textwidth \
-+		${DESTDIR}${PREFIX}/bin
- 
- uninstall:
- 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin

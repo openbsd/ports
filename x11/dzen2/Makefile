@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/09 14:34:54 robert Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
 
-V=			0.8.5
+V=			0.9.5
 DISTNAME=		dzen2-$V
 PKGNAME-main=		${DISTNAME}
 PKGNAME-gadgets=	dzen2-gadgets-$V
 CATEGORIES=		x11
-REVISION-gadgets =	0
 
-HOMEPAGE=		http://gotmor.googlepages.com/dzen
+HOMEPAGE=		https://github.com/robm/dzen
 MAINTAINER=		Dmitri Alenitchev <dma@dma.org.ru>
 
 MULTI_PACKAGES=		-main -gadgets
@@ -20,7 +19,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB-main=		X11 c Xinerama Xpm
 WANTLIB-gadgets=	X11 c
 
-MASTER_SITES=		http://gotmor.googlepages.com/
+GH_COMMIT=		488ab66019f475e35e067646621827c18a879ba1
+GH_ACCOUNT=		robm
+GH_PROJECT=		dzen
 
 RUN_DEPENDS-gadgets=	x11/dzen2
 

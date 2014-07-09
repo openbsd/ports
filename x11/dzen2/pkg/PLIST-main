@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/09/06 19:46:01 merdely Exp $
-bin/dzen2
+@comment $OpenBSD: PLIST-main,v 1.2 2014/07/09 14:34:54 robert Exp $
+@bin bin/dzen2
 share/doc/dzen2/
 share/doc/dzen2/CREDITS
 share/doc/dzen2/LICENSE

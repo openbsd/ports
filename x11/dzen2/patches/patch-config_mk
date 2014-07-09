@@ -1,0 +1,21 @@
+$OpenBSD: patch-config_mk,v 1.1 2014/07/09 14:34:54 robert Exp $
+--- config.mk.orig	Mon Sep 23 11:57:39 2013
++++ config.mk	Sun Jul  6 11:23:19 2014
+@@ -34,13 +34,13 @@ INCS = -I. -I/usr/include -I${X11INC}
+ 
+ 
+ ## Option 4: With Xinerama and XPM
+-#LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lXinerama -lXpm
+-#CFLAGS = -Wall -Os ${INCS} -DVERSION=\"${VERSION}\" -DDZEN_XINERAMA -DDZEN_XPM
++LIBS = -L${X11LIB} -lX11 -lXinerama -lXpm
++CFLAGS = -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\" -DDZEN_XINERAMA -DDZEN_XPM
+ 
+ 
+ ## Option 5: With XFT
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 `pkg-config --libs xft`
+-CFLAGS = -Wall -Os ${INCS} -DVERSION=\"${VERSION}\" -DDZEN_XFT `pkg-config --cflags xft`
++#LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 `pkg-config --libs xft`
++#CFLAGS = -Wall -Os ${INCS} -DVERSION=\"${VERSION}\" -DDZEN_XFT `pkg-config --cflags xft`
+ 
+ 
+ ## Option 6: With XPM and XFT

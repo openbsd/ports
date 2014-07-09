@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-gadgets,v 1.1.1.1 2007/09/06 19:46:01 merdely Exp $
-bin/dbar
-bin/gcpubar
-bin/gdbar
+@comment $OpenBSD: PLIST-gadgets,v 1.2 2014/07/09 14:34:54 robert Exp $
+@bin bin/dbar
+@bin bin/gcpubar
+@bin bin/gdbar
 bin/kittscanner.sh
 bin/noisyalert.sh
-bin/textwidth
+@bin bin/textwidth
 share/doc/dzen2/README.dbar
 share/doc/dzen2/README.gcpubar
 share/doc/dzen2/README.gdbar
