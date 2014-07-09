@@ -1,0 +1,19 @@
+$OpenBSD: patch-Mono_Addins_Gui_Mono_Addins_Gui_csproj,v 1.1 2014/07/09 13:46:35 robert Exp $
+--- Mono.Addins.Gui/Mono.Addins.Gui.csproj.orig	Tue Jul  8 18:39:01 2014
++++ Mono.Addins.Gui/Mono.Addins.Gui.csproj	Tue Jul  8 18:39:10 2014
+@@ -52,7 +52,7 @@
+     </Reference>
+     <Reference Include="System" />
+     <Reference Include="Mono.Posix" />
+-    <Reference Include="Mono.Cairo" />
++    <Reference Include="Mono.Cairo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+     <Reference Include="System.Core" />
+   </ItemGroup>
+   <ItemGroup>
+@@ -181,4 +181,4 @@
+       </Properties>
+     </MonoDevelop>
+   </ProjectExtensions>
+-</Project>
+\ No newline at end of file
++</Project>
