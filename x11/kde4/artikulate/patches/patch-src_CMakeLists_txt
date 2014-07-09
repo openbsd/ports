@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2014/07/09 19:46:50 zhuk Exp $
+Unbreak build.
+--- src/CMakeLists.txt.orig	Thu Jun 26 17:42:25 2014
++++ src/CMakeLists.txt	Thu Jun 26 17:46:58 2014
+@@ -35,9 +35,11 @@ message("----------------------------------")
+ message("Building following recording backends:")
+ if (QTGSTREAMER_FOUND)
+     message("  * QtGStreamer recording backend")
++    include_directories(${QTGSTREAMER_INCLUDES})
+ endif(QTGSTREAMER_FOUND)
+ if (QTMOBILITY_FOUND)
+     message("  * QtMultimedia recording backend (default)")
++    include_directories(${QTMOBILITY_INCLUDE_DIRS})
+ endif(QTMOBILITY_FOUND)
+ if (NOT QTGSTREAMER_FOUND AND NOT QTMOBILITY_FOUND)
+     message(FATAL_ERROR "No recording backend built: either QtGStreamer or QtMultimedia are required.")
