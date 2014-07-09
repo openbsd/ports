@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/08 15:33:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
@@ -21,6 +21,8 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 LIB_DEPENDS=		devel/gobject-introspection \
 			devel/libgit2/libgit2>=0.21.0
+
+USE_GMAKE=		Yes
 
 WANTLIB += crypto ffi gio-2.0 girepository-1.0 git2 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 m pcre pthread ssh2 ssl z

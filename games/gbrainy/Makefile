@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
@@ -20,6 +20,8 @@ EXTRACT_SUFX=	.tar.gz
 
 MODULES=	lang/mono \
 		x11/gnome
+
+USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	devel/mono-addins \
 		shells/bash \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -31,6 +31,8 @@ LIB_DEPENDS=		devel/libsoup \
 #RUN_DEPENDS=		security/wpa_supplicant
 
 MODGNOME_TOOLS +=	desktop-file-utils
+
+USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-dbus-service-user=_geoclue

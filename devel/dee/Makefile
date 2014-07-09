@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT=		library for Model-View-Controller type across DBus
 
@@ -23,6 +23,8 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 MODGNOME_TOOLS += gobject-introspection vala
+
+USE_GMAKE=	Yes
 
 LIB_DEPENDS=	devel/glib2 \
 		textproc/icu4c

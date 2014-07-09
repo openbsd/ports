@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
@@ -34,6 +34,8 @@ MODULES =		devel/gettext \
 			lang/python \
 			textproc/intltool \
 			x11/gnome
+
+USE_GMAKE =		Yes
 
 MODGNOME_TOOLS +=	gobject-introspection vala
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -35,6 +35,8 @@ MODULES =	devel/gettext \
 MODGNOME_TOOLS += desktop-file-utils yelp
 
 BUILD_DEPENDS =	devel/m4
+
+USE_GMAKE=	Yes
 
 LIB_DEPENDS =	devel/gsl>=1.6 \
 		x11/gnome/libgnomecanvas \

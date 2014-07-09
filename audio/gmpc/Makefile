@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT=		GNOME music player client
 
@@ -28,6 +28,8 @@ WANTLIB=		ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 MASTER_SITES=		http://www.musicpd.org/download/gmpc/${VERSION}/
 
 MODULES=		devel/gettext textproc/intltool x11/gnome
+
+USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 

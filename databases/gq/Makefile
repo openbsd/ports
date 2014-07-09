@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT=	GTK-based LDAP client
 
@@ -30,6 +30,8 @@ LIB_DEPENDS=	databases/openldap \
 		x11/gnome/libgnome-keyring
 
 MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
+
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-browser-dnd

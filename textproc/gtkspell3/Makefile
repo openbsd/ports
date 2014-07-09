@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT=	gtk+3 spelling checker
 
@@ -35,6 +35,8 @@ MODGNOME_TOOLS=	gobject-introspection vala
 
 BUILD_DEPENDS=	devel/iso-codes
 RUN_DEPENDS=	devel/iso-codes
+
+USE_GMAKE=	Yes
 
 LIB_DEPENDS=	textproc/enchant \
 		x11/gtk+3

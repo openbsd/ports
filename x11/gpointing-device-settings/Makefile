@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/07/09 17:43:52 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -29,6 +29,8 @@ MODULES =		devel/gconf2 \
 			devel/gettext \
 			textproc/intltool \
 			x11/gnome
+
+USE_GMAKE =		Yes
 
 MODGNOME_TOOLS +=	desktop-file-utils
 

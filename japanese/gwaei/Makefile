@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/07/09 13:55:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/07/09 17:43:52 ajacoutot Exp $
 
 COMMENT =	japanese-english dictionary program
 
@@ -29,6 +29,8 @@ MODULES =	devel/dconf \
 		devel/gettext \
 		textproc/intltool \
 		x11/gnome
+
+USE_GMAKE=	Yes
 
 RUN_DEPENDS =	fonts/ja-kanjistrokeorders-ttf \
 		textproc/docbook
