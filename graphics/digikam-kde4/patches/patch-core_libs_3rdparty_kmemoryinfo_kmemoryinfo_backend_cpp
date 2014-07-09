@@ -1,0 +1,32 @@
+$OpenBSD: patch-core_libs_3rdparty_kmemoryinfo_kmemoryinfo_backend_cpp,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+Unbreak compilation.
+--- core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp.orig	Thu Jun 26 01:57:14 2014
++++ core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	Wed Jul  9 20:38:55 2014
+@@ -50,6 +50,7 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemor
+     return 1;
+ }
+ 
++#include <QtGlobal>
+ 
+ #ifdef Q_OS_SOLARIS
+ #include <unistd.h>
+@@ -71,9 +72,9 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemor
+ #endif
+ #if defined(Q_OS_OPENBSD)
+ #include <sys/param.h>
+-#include <sys/types.h>
+ #include <sys/sysctl.h>
+-#include <sys/unistd.h>
++#include <sys/vmmeter.h>
++#include <unistd.h>
+ #endif
+ #ifdef Q_OS_HPUX
+ #include <sys/param.h>
+@@ -152,7 +153,6 @@ struct uvmexp* sg_get_uvmexp()
+     int                  mib[2];
+     size_t               size = sizeof(struct uvmexp);
+     static struct uvmexp uvm;
+-    struct uvmexp*       new;
+ 
+     mib[0] = CTL_VM;
+     mib[1] = VM_UVMEXP;

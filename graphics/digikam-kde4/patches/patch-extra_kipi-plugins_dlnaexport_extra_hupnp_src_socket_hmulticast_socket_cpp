@@ -1,0 +1,17 @@
+$OpenBSD: patch-extra_kipi-plugins_dlnaexport_extra_hupnp_src_socket_hmulticast_socket_cpp,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+--- extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp.orig	Tue Jul  2 23:27:13 2013
++++ extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp	Thu Jul 25 20:02:16 2013
+@@ -25,10 +25,10 @@
+ #ifdef Q_OS_WIN
+ #include <winsock2.h>
+ #include <ws2tcpip.h>
+-#elif defined(Q_OS_SYMBIAN) || defined(Q_OS_FREEBSD)
+-#include <netinet/in.h>
+-#include <sys/socket.h>
+ #else
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 

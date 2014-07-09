@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-mediawiki,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+include/kde4/libmediawiki/
+include/kde4/libmediawiki/edit.h
+include/kde4/libmediawiki/generalinfo.h
+include/kde4/libmediawiki/image.h
+include/kde4/libmediawiki/imageinfo.h
+include/kde4/libmediawiki/job.h
+include/kde4/libmediawiki/login.h
+include/kde4/libmediawiki/logout.h
+include/kde4/libmediawiki/mediawiki.h
+include/kde4/libmediawiki/mediawiki_export.h
+include/kde4/libmediawiki/page.h
+include/kde4/libmediawiki/parse.h
+include/kde4/libmediawiki/protection.h
+include/kde4/libmediawiki/queryimageinfo.h
+include/kde4/libmediawiki/queryimages.h
+include/kde4/libmediawiki/queryinfo.h
+include/kde4/libmediawiki/queryrevision.h
+include/kde4/libmediawiki/querysiteinfogeneral.h
+include/kde4/libmediawiki/querysiteinfousergroups.h
+include/kde4/libmediawiki/revision.h
+include/kde4/libmediawiki/upload.h
+include/kde4/libmediawiki/usergroup.h
+include/kde4/libmediawiki/version.h
+lib/pkgconfig/libmediawiki.pc
+@lib lib/libmediawiki.so.${LIBmediawiki_VERSION}
+share/apps/cmake/modules/FindMediawiki.cmake

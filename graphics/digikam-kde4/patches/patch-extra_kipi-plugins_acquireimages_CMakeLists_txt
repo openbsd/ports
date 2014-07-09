@@ -1,0 +1,9 @@
+$OpenBSD: patch-extra_kipi-plugins_acquireimages_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+--- extra/kipi-plugins/acquireimages/CMakeLists.txt.orig	Sun Sep 11 17:03:29 2011
++++ extra/kipi-plugins/acquireimages/CMakeLists.txt	Sun Sep 11 17:03:51 2011
+@@ -1,4 +1,4 @@
+-INCLUDE_DIRECTORIES(${KSANE_INCLUDE_DIR})
++INCLUDE_DIRECTORIES(${KSANE_INCLUDE_DIR} ${PNG_INCLUDE_DIR})
+ 
+ # =======================================================
+ # Common source code

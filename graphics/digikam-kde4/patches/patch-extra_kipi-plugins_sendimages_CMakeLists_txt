@@ -1,0 +1,10 @@
+$OpenBSD: patch-extra_kipi-plugins_sendimages_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+--- extra/kipi-plugins/sendimages/CMakeLists.txt.orig	Mon Jun  4 22:38:54 2012
++++ extra/kipi-plugins/sendimages/CMakeLists.txt	Sat Jun 30 01:42:57 2012
+@@ -1,4 +1,6 @@
+ 
++INCLUDE_DIRECTORIES(${PNG_INCLUDE_DIR})
++
+ SET(kipiplugin_sendimages_PART_SRCS plugin_sendimages.cpp 
+                                     sendimagesdialog.cpp 
+                                     myimagelist.cpp

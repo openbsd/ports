@@ -1,0 +1,20 @@
+$OpenBSD: patch-core_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+1. Avoid extra library dependencies.
+2. Avoid picking up exceptions from Boost, unbreaking compilation.
+--- core/CMakeLists.txt.orig	Thu Jun 26 01:57:33 2014
++++ core/CMakeLists.txt	Wed Jul  9 21:04:26 2014
+@@ -175,12 +175,12 @@ FIND_PACKAGE(Boost) # 1.36.0)
+ # add our FindOpenCV.cmake to the search path and search again.
+ 
+ MESSAGE(STATUS "First try at finding OpenCV...")
+-FIND_PACKAGE(OpenCV)
++FIND_PACKAGE(OpenCV COMPONENTS core highgui)
+ 
+ IF (NOT OpenCV_LIBRARIES AND NOT OpenCV_LIBS)
+   MESSAGE(STATUS "Could not find OpenCV normally, trying internal FindOpenCV.cmake")
+    SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/modules_opencv)
+-  FIND_PACKAGE(OpenCV REQUIRED)
++  FIND_PACKAGE(OpenCV REQUIRED COMPONENTS core highgui)
+ ELSE (NOT OpenCV_LIBRARIES AND NOT OpenCV_LIBS)
+   MESSAGE(STATUS "Great, found OpenCV on the first try.")
+ ENDIF (NOT OpenCV_LIBRARIES AND NOT OpenCV_LIBS)

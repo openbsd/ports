@@ -1,0 +1,11 @@
+$OpenBSD: patch-extra_kipi-plugins_tests_multithreading_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+--- extra/kipi-plugins/tests/multithreading/CMakeLists.txt.orig	Wed Jan 18 01:44:26 2012
++++ extra/kipi-plugins/tests/multithreading/CMakeLists.txt	Wed Jan 18 01:45:01 2012
+@@ -27,6 +27,7 @@ IF(THREADWEAVER_FOUND)
+ 
+     INCLUDE_DIRECTORIES(${KDE4_INCLUDES}
+                         ${JPEG_INCLUDE_DIR}
++                        ${PNG_INCLUDE_DIR}
+                         ${QT_INCLUDE_DIR}
+                         ${QT_QTCORE_INCLUDE_DIR}
+                         ${CMAKE_CURRENT_SOURCE_DIR}/../../jpeglossless/plugin

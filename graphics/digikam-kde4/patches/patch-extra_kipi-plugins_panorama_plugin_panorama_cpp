@@ -1,0 +1,12 @@
+$OpenBSD: patch-extra_kipi-plugins_panorama_plugin_panorama_cpp,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+--- extra/kipi-plugins/panorama/plugin/panorama.cpp.orig	Tue Sep 18 15:06:07 2012
++++ extra/kipi-plugins/panorama/plugin/panorama.cpp	Tue Sep 18 15:06:21 2012
+@@ -39,7 +39,7 @@
+ #include "kpversion.h"
+ #include "kpmetadata.h"
+ #include "aboutdata.h"
+-#include "manager/manager.h"
++#include "manager.h"
+ 
+ using namespace KIPIPanoramaPlugin;
+ using namespace KIPIPlugins;

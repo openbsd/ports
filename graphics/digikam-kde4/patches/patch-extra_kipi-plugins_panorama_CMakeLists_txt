@@ -1,0 +1,12 @@
+$OpenBSD: patch-extra_kipi-plugins_panorama_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+--- extra/kipi-plugins/panorama/CMakeLists.txt.orig	Thu Feb  7 03:52:04 2013
++++ extra/kipi-plugins/panorama/CMakeLists.txt	Tue Feb 12 01:41:59 2013
+@@ -1,6 +1,7 @@
+ ADD_SUBDIRECTORY(icons)
+ 
+-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/importwizard
++INCLUDE_DIRECTORIES(${PNG_INCLUDE_DIR}
++                    ${CMAKE_CURRENT_SOURCE_DIR}/importwizard
+                     ${CMAKE_CURRENT_SOURCE_DIR}/manager
+                     ${CMAKE_CURRENT_SOURCE_DIR}/plugin
+                     ${CMAKE_CURRENT_SOURCE_DIR}/ptoparser

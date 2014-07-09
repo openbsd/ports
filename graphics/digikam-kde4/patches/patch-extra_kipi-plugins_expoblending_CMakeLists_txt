@@ -1,0 +1,12 @@
+$OpenBSD: patch-extra_kipi-plugins_expoblending_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+--- extra/kipi-plugins/expoblending/CMakeLists.txt.orig	Sun Sep 11 06:25:01 2011
++++ extra/kipi-plugins/expoblending/CMakeLists.txt	Sun Sep 11 06:24:54 2011
+@@ -1,6 +1,7 @@
+ SUBDIRS(icons)
+ 
+-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/importwizard
++INCLUDE_DIRECTORIES(${PNG_INCLUDE_DIR}
++                    ${CMAKE_CURRENT_SOURCE_DIR}/importwizard
+                     ${CMAKE_CURRENT_SOURCE_DIR}/blendingdlg
+                     ${CMAKE_CURRENT_SOURCE_DIR}/manager
+                     ${CMAKE_CURRENT_SOURCE_DIR}/plugin
