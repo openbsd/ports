@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-manpages,v 1.3 2010/10/27 09:04:37 espie Exp $
+# $OpenBSD: check-manpages,v 1.4 2014/07/09 11:39:24 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -43,14 +43,18 @@ $state->progress->for_list("Scanning packages", \@ARGV,
 	return unless $true_package;
 	my $dir = $true_package->info;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	my $h = {};
 	for my $item (@{$plist->{items}}) {
 		next unless $item->IsFile;
 		my $n = $item->fullname;
 		if ($n =~ m,/man/(?:man.*?|cat.*?)/,) {
-			my $file;
-			do {
-				$file = $true_package->next;
-			} while ($file->{name} ne $item->{name});
+			$h->{$item->{name}} = $item;
+		}
+	}
+	while (my $file = $true_package->next) {
+		my $item = $h->{$file->{name}};
+		if (defined $item) {
+			my $n = $item->fullname;
 			$file->{name} = $n;
 			$n =~ m,^(.*/man)/(?:man.*?|cat.?)/,;
 			$mandirs{"$extract_dir$1"} = 1;
