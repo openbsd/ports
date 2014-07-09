@@ -1,0 +1,83 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 19:48:32 zhuk Exp $
+@conflict kde-runtime-<4.13
+@bin bin/akonadi_baloo_indexer
+@bin bin/baloo_file
+@bin bin/baloo_file_cleaner
+@bin bin/baloo_file_extractor
+@bin bin/balooctl
+@bin bin/baloosearch
+@bin bin/balooshow
+include/kde4/baloo/
+include/kde4/baloo/core_export.h
+include/kde4/baloo/file.h
+include/kde4/baloo/file_export.h
+include/kde4/baloo/filefetchjob.h
+include/kde4/baloo/filemodifyjob.h
+include/kde4/baloo/filemonitor.h
+include/kde4/baloo/indexerconfig.h
+include/kde4/baloo/pim/
+include/kde4/baloo/pim/contactcompleter.h
+include/kde4/baloo/pim/contactquery.h
+include/kde4/baloo/pim/emailquery.h
+include/kde4/baloo/pim/notequery.h
+include/kde4/baloo/pim/pim_export.h
+include/kde4/baloo/pim/query.h
+include/kde4/baloo/pim/resultiterator.h
+include/kde4/baloo/query.h
+include/kde4/baloo/queryrunnable.h
+include/kde4/baloo/result.h
+include/kde4/baloo/resultiterator.h
+include/kde4/baloo/searchstore.h
+include/kde4/baloo/taglistjob.h
+include/kde4/baloo/term.h
+lib/cmake/Baloo/
+lib/cmake/Baloo/BalooConfig.cmake
+lib/cmake/Baloo/BalooConfigVersion.cmake
+lib/cmake/Baloo/BalooTargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/Baloo/BalooTargetsWithPrefix.cmake
+lib/kde4/akonadi/
+lib/kde4/akonadi/akonadi_baloo_searchplugin.so
+lib/kde4/akonadi/akonadibaloosearchplugin.desktop
+lib/kde4/baloo_calendarsearchstore.so
+lib/kde4/baloo_contactsearchstore.so
+lib/kde4/baloo_emailsearchstore.so
+lib/kde4/baloo_filesearchstore.so
+lib/kde4/baloo_notesearchstore.so
+lib/kde4/kcm_baloofile.so
+lib/kde4/kio_baloosearch.so
+lib/kde4/kio_tags.so
+lib/kde4/kio_timeline.so
+lib/kde4/krunner_baloosearchrunner.so
+@lib ${KDE4LIB}/libbaloocore.so.${LIBbaloocore_VERSION}
+@lib ${KDE4LIB}/libbaloofiles.so.${LIBbaloofiles_VERSION}
+@lib ${KDE4LIB}/libbaloopim.so.${LIBbaloopim_VERSION}
+@lib ${KDE4LIB}/libbalooxapian.so.${LIBbalooxapian_VERSION}
+@lib lib/libbaloocore.so.${LIBbaloocore_VERSION}
+@lib lib/libbaloofiles.so.${LIBbaloofiles_VERSION}
+@lib lib/libbaloopim.so.${LIBbaloopim_VERSION}
+@lib lib/libbalooxapian.so.${LIBbalooxapian_VERSION}
+@bin libexec/kde_baloo_filewatch_raiselimit
+share/akonadi/
+share/akonadi/agents/
+share/akonadi/agents/akonadibalooindexingagent.desktop
+share/autostart/
+share/autostart/baloo_file.desktop
+share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
+share/dbus-1/system-services/org.kde.baloo.filewatch.service
+share/examples/dbus-1/system.d/org.kde.baloo.filewatch.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.baloo.filewatch.conf
+share/icons/hicolor/128x128/apps/baloo.png
+share/kde4/services/baloo_calendarsearchstore.desktop
+share/kde4/services/baloo_contactsearchstore.desktop
+share/kde4/services/baloo_emailsearchstore.desktop
+share/kde4/services/baloo_filesearchstore.desktop
+share/kde4/services/baloo_notesearchstore.desktop
+share/kde4/services/baloosearch.protocol
+share/kde4/services/kcm_baloofile.desktop
+share/kde4/services/plasma-runner-baloosearch.desktop
+share/kde4/services/tags.protocol
+share/kde4/services/timeline.protocol
+share/kde4/servicetypes/baloosearchstore.desktop
+share/polkit-1/actions/org.kde.baloo.filewatch.policy
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_xapian_xapiandatabase_cpp,v 1.1.1.1 2014/07/09 19:48:32 zhuk Exp $
+Avoid using malloc_trim() if it's not supported by OS.
+--- src/xapian/xapiandatabase.cpp.orig	Wed Jun  4 11:50:08 2014
++++ src/xapian/xapiandatabase.cpp	Tue Jul  1 16:01:48 2014
+@@ -140,7 +140,7 @@ void XapianDatabase::commit()
+     m_docsToAdd.clear();
+     m_docsToRemove.clear();
+ 
+-#ifdef __GNUC__
++#ifdef HAVE_MALLOC_TRIM
+     malloc_trim(0);
+ #endif
+ }

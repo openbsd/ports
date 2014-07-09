@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_file_lib_xattrdetector_cpp,v 1.1.1.1 2014/07/09 19:48:32 zhuk Exp $
+No extended file attributes support on OpenBSD.
+--- src/file/lib/xattrdetector.cpp.orig	Tue May 27 12:17:48 2014
++++ src/file/lib/xattrdetector.cpp	Tue May 27 12:18:06 2014
+@@ -101,7 +101,7 @@ XattrDetector::~XattrDetector()
+ 
+ bool XattrDetector::isSupported(const QString& path)
+ {
+-#ifdef Q_OS_WIN
++#if defined(Q_OS_WIN) || defined(Q_OS_OPENBSD)
+     return false;
+ #endif
+     if (!d->m_initialized)

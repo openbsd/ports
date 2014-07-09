@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xapian_CMakeLists_txt,v 1.1.1.1 2014/07/09 19:48:32 zhuk Exp $
+Avoid using malloc_trim() if it's not supported by OS.
+--- src/xapian/CMakeLists.txt.orig	Tue May 27 12:26:19 2014
++++ src/xapian/CMakeLists.txt	Tue May 27 12:26:08 2014
+@@ -1,4 +1,7 @@
+ add_definitions(${KDE4_ENABLE_EXCEPTIONS})
++if (HAVE_MALLOC_TRIM)
++  add_definitions(-DHAVE_MALLOC_TRIM)
++endif ()
+ 
+ set(XAPIAN_SRCS
+     xapiansearchstore.cpp
