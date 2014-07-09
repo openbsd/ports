@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/03 12:37:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/09 11:32:09 ajacoutot Exp $
 
 COMMENT =		AppData tools
 
 DISTNAME =		appdata-tools-0.1.7
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		misc
 
@@ -13,9 +13,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://people.freedesktop.org/~hughsient/releases/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/gettext \
-			x11/gnome
-
 WANTLIB += c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pcre png pthread soup-2.4 sqlite3 xml2
 WANTLIB += z
@@ -23,7 +20,7 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=	docbook
+MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS =		devel/libsoup \
 			graphics/gdk-pixbuf2
