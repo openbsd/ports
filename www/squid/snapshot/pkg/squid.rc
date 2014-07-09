@@ -1,8 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: squid.rc,v 1.1 2013/11/15 19:09:17 sthen Exp $
+# $OpenBSD: squid.rc,v 1.2 2014/07/09 14:19:58 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/squid"
+daemon_timeout="31"
 
 . /etc/rc.d/rc.subr
 
