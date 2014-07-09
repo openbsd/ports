@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_encoder_ogg_CMakeLists_txt,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- plugins/encoder/ogg/CMakeLists.txt.orig	Mon Feb  4 14:43:57 2013
++++ plugins/encoder/ogg/CMakeLists.txt	Mon Feb  4 14:44:36 2013
+@@ -1,3 +1,5 @@
++include_directories(${VORBIS_INCLUDE_DIR})
++
+ set(k3boggvorbisencoder_PART_SRCS
+   k3boggvorbisencoder.cpp)
+ kde4_add_plugin(k3boggvorbisencoder
+@@ -5,7 +7,7 @@ kde4_add_plugin(k3boggvorbisencoder
+ target_link_libraries(k3boggvorbisencoder
+   ${KDE4_KDECORE_LIBS}
+   k3b k3bdevice
+-  ${OGGVORBIS_LIBRARIES})
++  ${VORBIS_LIBRARIES})
+ 
+ set(kcm_k3boggvorbisencoder_PART_SRCS
+   k3boggvorbisencoderconfigwidget.cpp)
+@@ -16,7 +18,7 @@ kde4_add_plugin(kcm_k3boggvorbisencoder
+ target_link_libraries(kcm_k3boggvorbisencoder
+   ${KDE4_KDEUI_LIBS}
+   k3b k3bdevice
+-  ${OGGVORBIS_LIBRARIES})
++  ${VORBIS_LIBRARIES})
+ 
+ install(TARGETS k3boggvorbisencoder kcm_k3boggvorbisencoder
+   DESTINATION ${PLUGIN_INSTALL_DIR} )

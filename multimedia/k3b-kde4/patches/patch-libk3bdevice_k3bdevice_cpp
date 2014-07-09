@@ -1,0 +1,97 @@
+$OpenBSD: patch-libk3bdevice_k3bdevice_cpp,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- libk3bdevice/k3bdevice.cpp.orig	Sat Jan 19 19:40:37 2013
++++ libk3bdevice/k3bdevice.cpp	Sat Jan 19 20:02:21 2013
+@@ -69,28 +69,27 @@ typedef unsigned char u8;
+ #define CD_FRAMESIZE_RAW 2352
+ #endif
+ 
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ #include <sys/cdio.h>
+ #endif
+ 
++#if defined(Q_OS_OPENBSD)
++#include <sys/dkio.h>
++#endif
++
+ #ifdef HAVE_RESMGR
+ extern "C" {
+ #include <resmgr.h>
+ }
+ #endif
+ 
+-#ifdef Q_OS_FREEBSD
+-#define HANDLE_DEFAULT_VALUE 0
+-#endif
+-#ifdef Q_OS_WIN32
++#if defined(Q_OS_WIN32)
+ #define HANDLE_DEFAULT_VALUE INVALID_HANDLE_VALUE
+-#endif
+-#ifdef Q_OS_LINUX
++#elif defined(Q_OS_FREEBSD)
++#define HANDLE_DEFAULT_VALUE 0
++#else
+ #define HANDLE_DEFAULT_VALUE -1
+ #endif
+-#ifdef Q_OS_NETBSD
+-#define HANDLE_DEFAULT_VALUE -1
+-#endif
+ 
+ //
+ // Very evil hacking: force the speed values to be acurate
+@@ -165,7 +164,7 @@ K3b::Device::Device::Handle K3b::Device::openDevice( c
+ #endif
+ 
+ 
+-#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ K3b::Device::Device::Handle K3b::Device::openDevice( const char* name, bool write )
+ {
+     K3b::Device::Device::Handle fd = HANDLE_DEFAULT_VALUE;
+@@ -1631,7 +1630,7 @@ bool K3b::Device::Device::block( bool b ) const
+     usageUnlock();
+     if ( success )
+         return success;
+-#elif defined(Q_OS_NETBSD)
++#elif defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     bool success = false;
+     bool needToClose = !isOpen();
+     int arg = b ? 1 : 0;
+@@ -1679,14 +1678,18 @@ bool K3b::Device::Device::rewritable() const
+ 
+ bool K3b::Device::Device::eject() const
+ {
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     bool success = false;
+     bool needToClose = !isOpen();
+     int arg = 0;
+ 
+     usageLock();
+     if( open() ) {
++// #if defined(Q_OS_NETBSD)
+         if ( ::ioctl( d->deviceHandle, DIOCEJECT, &arg ) >= 0)
++// #else // e.g., Q_OS_OPENBSD
++//         if ( ::ioctl( d->deviceHandle, CDIOCEJECT, &arg ) >= 0)
++// #endif
+             success = true;
+         if( needToClose )
+             close();
+@@ -1724,7 +1727,7 @@ bool K3b::Device::Device::eject() const
+ 
+ bool K3b::Device::Device::load() const
+ {
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     bool success = false;
+     bool needToClose = !isOpen();
+     int arg = 0;
+@@ -3768,7 +3771,7 @@ QByteArray K3b::Device::Device::mediaId( int mediaType
+ // int K3b::Device::Device::ioctl( int request, ... ) const
+ // {
+ //     int r = -1;
+-// #if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD)
++// #if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ //     d->mutex.lock();
+ 
+ //     va_list ap;

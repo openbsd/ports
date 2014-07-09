@@ -1,0 +1,23 @@
+$OpenBSD: patch-plugins_project_audiometainforenamer_k3baudiometainforenamerplugin_cpp,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+FindTaglib.cmake from kdelibs finds ${LOCALBASE}/include/taglib, not ${LOCALBASE}/include.
+--- plugins/project/audiometainforenamer/k3baudiometainforenamerplugin.cpp.orig	Mon Feb  4 14:52:27 2013
++++ plugins/project/audiometainforenamer/k3baudiometainforenamerplugin.cpp	Mon Feb  4 14:51:58 2013
+@@ -47,12 +47,12 @@
+ #include <QTreeWidget>
+ #include <QVBoxLayout>
+ 
+-#include <taglib/tag.h>
+-#include <taglib/fileref.h>
+-#include <taglib/audioproperties.h>
+-#include <taglib/mpegfile.h>
+-#include <taglib/vorbisfile.h>
+-#include <taglib/oggflacfile.h>
++#include <tag.h>
++#include <fileref.h>
++#include <audioproperties.h>
++#include <mpegfile.h>
++#include <vorbisfile.h>
++#include <oggflacfile.h>
+ 
+ 
+ K3B_EXPORT_PLUGIN( k3baudiometainforenamerplugin, K3bAudioMetainfoRenamerPlugin )

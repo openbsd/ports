@@ -1,0 +1,17 @@
+$OpenBSD: patch-libk3b_core_k3bglobals_cpp,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- libk3b/core/k3bglobals.cpp.orig	Sat Jan 19 21:38:56 2013
++++ libk3b/core/k3bglobals.cpp	Sat Jan 19 21:41:29 2013
+@@ -49,7 +49,12 @@
+ #include <cmath>
+ #include <sys/utsname.h>
+ 
+-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
++#if defined(__OpenBSD__)
++#  include <sys/endian.h>
++#  define bswap_16(x) swap16(x)
++#  define bswap_32(x) swap32(x)
++#  define bswap_64(x) swap64(x)
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
+ #  include <sys/param.h>
+ #  include <sys/mount.h>
+ #  include <sys/endian.h>

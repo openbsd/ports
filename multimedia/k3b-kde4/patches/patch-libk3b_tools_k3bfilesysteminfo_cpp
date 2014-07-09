@@ -1,0 +1,15 @@
+$OpenBSD: patch-libk3b_tools_k3bfilesysteminfo_cpp,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- libk3b/tools/k3bfilesysteminfo.cpp.orig	Sat Jan 19 21:42:52 2013
++++ libk3b/tools/k3bfilesysteminfo.cpp	Sat Jan 19 22:10:48 2013
+@@ -24,9 +24,10 @@
+ 
+ #include <kdebug.h>
+ 
+-#ifdef Q_OS_FREEBSD
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+ #include <sys/param.h>
+ #include <sys/mount.h>
++#define f_type			f_fsid.val[0]
+ #endif
+ #ifdef HAVE_SYS_STATVFS_H
+ #  include <sys/statvfs.h>

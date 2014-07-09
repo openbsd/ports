@@ -1,0 +1,74 @@
+$OpenBSD: patch-cmake_modules_FindMuse_cmake,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- cmake/modules/FindMuse.cmake.orig	Sat Jan 19 19:23:53 2013
++++ cmake/modules/FindMuse.cmake	Sat Jan 19 19:38:44 2013
+@@ -1,48 +1,42 @@
+-# - Try to find Lame
++# - Try to find Musepack
+ # Once done this will define
+ #
+ #  MUSE_FOUND - system has Muse
+ #  MUSE_INCLUDE_DIR - the Muse include directory
+ #  MUSE_LIBRARIES - Link these to use Muse
+-#  MUSE_DEFINITIONS - Compiler switches required for using Muse
++#  MPC_HEADER_FILE - File specification for #include directive
++#  MPC_OLD_API - True if using old Muse API
+ # Redistribution and use is allowed according to the terms of the BSD license.
+ # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+ #
+ 
+-if( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES )
++if( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES AND MPC_HEADER_FILE AND MPC_OLD_API )
+     # in cache already
+     set(MUSE_FIND_QUIETLY TRUE)
+-endif( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES )
++endif( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES AND MPC_HEADER_FILE AND MPC_OLD_API )
+ 
+-include(CheckIncludeFiles)
+-check_include_files(mpc/mpcdec.h HAVE_MPC_MPCDEC_H)
+-check_include_files(mpcdec/mpcdec.h HAVE_MPCDEC_MPCDEC_H)
+-check_include_files(musepack/musepack.h HAVE_MUSEPACK_MUSEPACK_H)
++find_path( _MUSE_INCLUDE_DIR_NEW mpc/mpcdec.h )
++find_path( _MUSE_INCLUDE_DIR_OLD mpcdec/mpcdec.h )
++find_path( _MUSE_INCLUDE_DIR_OLD_MPACK musepack/musepack.h )
+ 
+-if( HAVE_MPC_MPCDEC_H )
+-    find_path( MUSE_INCLUDE_DIR mpc/mpcdec.h )
++find_path( MUSE_INCLUDE_DIR mpc/mpcdec.h )
++if( _MUSE_INCLUDE_DIR_NEW )
++    set( MUSE_INCLUDE_DIR ${_MUSE_INCLUDE_DIR_NEW} )
++    set( MPC_HEADER_FILE "<mpc/mpcdec.h>" )
++    set( MPC_OLD_API 0)
+     find_library( MUSE_LIBRARIES NAMES mpcdec )
++elseif( _MUSE_INCLUDE_DIR_OLD )
++    set( MUSE_INCLUDE_DIR ${_MUSE_INCLUDE_DIR_OLD} )
+     set( MPC_HEADER_FILE "<mpc/mpcdec.h>" )
+-elseif( HAVE_MPCDEC_MPCDEC_H )
+-    find_path( MUSE_INCLUDE_DIR mpcdec/mpcdec.h )
++    set( MPC_OLD_API 1)
+     find_library( MUSE_LIBRARIES NAMES mpcdec )
+-    set( MPC_HEADER_FILE "<mpcdec/mpcdec.h>" )
++elseif( _MUSE_INCLUDE_DIR_OLD_MPACK )
++    set( MUSE_INCLUDE_DIR ${_MUSE_INCLUDE_DIR_OLD_MPACK} )
++    set( MPC_HEADER_FILE "<musepack/musepack.h>" )
+     set( MPC_OLD_API 1)
+-elseif( HAVE_MUSEPACK_MUSEPACK_H )
+-    find_path( MUSE_INCLUDE_DIR musepack/musepack.h )
+     find_library( MUSE_LIBRARIES NAMES musepack )
+-    set( MPC_HEADER_FILE "<musepack/musepack.h>" )
+-    set( MPC_OLD_API 1 )
+-endif( HAVE_MPC_MPCDEC_H )
++endif( _MUSE_INCLUDE_DIR_NEW )
+ 
+-if( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES )
+-    set( MUSE_FOUND TRUE )
+-else( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES )
+-    set( MUSE_FOUND FALSE )
+-endif( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES )
+-
+ include(FindPackageHandleStandardArgs)
+-find_package_handle_standard_args(MUSE DEFAULT_MSG MUSE_INCLUDE_DIR MUSE_LIBRARIES MPC_HEADER_FILE )
+-
+-# show the MUSE_INCLUDE_DIR and MUSE_LIBRARIES variables only in the advanced view
+-mark_as_advanced(MUSE_INCLUDE_DIR MUSE_LIBRARIES )
++find_package_handle_standard_args(MUSE DEFAULT_MSG MUSE_INCLUDE_DIR MUSE_LIBRARIES )
++mark_as_advanced(MUSE_INCLUDE_DIR MUSE_LIBRARIES MPC_HEADER_FILE MPC_OLD_API )

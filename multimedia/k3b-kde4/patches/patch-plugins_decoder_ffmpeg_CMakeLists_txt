@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_decoder_ffmpeg_CMakeLists_txt,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- plugins/decoder/ffmpeg/CMakeLists.txt.orig	Mon Feb  4 13:54:41 2013
++++ plugins/decoder/ffmpeg/CMakeLists.txt	Mon Feb  4 13:55:31 2013
+@@ -16,6 +16,7 @@ set(k3bffmpegdecoder_PART_SRCS k3bffmpegdecoder.cpp k3
+ 
+ kde4_add_plugin(k3bffmpegdecoder ${k3bffmpegdecoder_PART_SRCS})
+ 
++include_directories(${FFMPEG_INCLUDE_DIRS})
+ target_link_libraries(k3bffmpegdecoder k3bdevice  ${KDE4_KDEUI_LIBS} k3b ${FFMPEG_LIBRARIES} )
+ 
+ install(TARGETS k3bffmpegdecoder DESTINATION ${PLUGIN_INSTALL_DIR} )

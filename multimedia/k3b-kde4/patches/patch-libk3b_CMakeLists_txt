@@ -1,0 +1,20 @@
+$OpenBSD: patch-libk3b_CMakeLists_txt,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- libk3b/CMakeLists.txt.orig	Sat Jan 19 22:15:31 2013
++++ libk3b/CMakeLists.txt	Sat Jan 19 22:20:55 2013
+@@ -7,6 +7,7 @@ include_directories(
+   ${CMAKE_CURRENT_BINARY_DIR}/tools
+   ${CMAKE_CURRENT_BINARY_DIR}/projects
+   ${CMAKE_CURRENT_BINARY_DIR}/jobs
++  ${SAMPLERATE_INCLUDE_DIR}
+   )
+ 
+ set(CMAKE_REQUIRED_LIBRARIES m)
+@@ -232,7 +233,7 @@ target_link_libraries(k3b
+   k3bdevice
+ )
+ if(NOT WIN32)
+-	target_link_libraries(k3b dl)
++	target_link_libraries(k3b ${CMAKE_DL_LIBS})
+ else(NOT WIN32)
+ 	target_link_libraries(k3b uuid ole32)
+ endif(NOT WIN32)

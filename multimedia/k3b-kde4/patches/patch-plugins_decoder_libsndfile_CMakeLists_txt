@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_decoder_libsndfile_CMakeLists_txt,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- plugins/decoder/libsndfile/CMakeLists.txt.orig	Mon Feb  4 14:42:45 2013
++++ plugins/decoder/libsndfile/CMakeLists.txt	Mon Feb  4 14:43:07 2013
+@@ -2,6 +2,7 @@
+ 
+ set(k3blibsndfiledecoder_PART_SRCS k3blibsndfiledecoder.cpp )
+ 
++include_directories(${SNDFILE_INCLUDE_DIR})
+ kde4_add_plugin(k3blibsndfiledecoder ${k3blibsndfiledecoder_PART_SRCS})
+ 
+ target_link_libraries(k3blibsndfiledecoder k3bdevice k3b ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${SNDFILE_LIBRARIES} )

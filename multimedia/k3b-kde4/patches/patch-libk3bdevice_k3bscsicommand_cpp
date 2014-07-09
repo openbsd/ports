@@ -1,0 +1,12 @@
+$OpenBSD: patch-libk3bdevice_k3bscsicommand_cpp,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- libk3bdevice/k3bscsicommand.cpp.orig	Sat Jan 19 20:04:41 2013
++++ libk3bdevice/k3bscsicommand.cpp	Sat Jan 19 20:04:58 2013
+@@ -185,7 +185,7 @@ void K3b::Device::ScsiCommand::debugError( int command
+ #ifdef Q_OS_FREEBSD
+ #include "k3bscsicommand_bsd.cpp"
+ #endif
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ #include "k3bscsicommand_netbsd.cpp"
+ #endif
+ #ifdef Q_OS_WIN32

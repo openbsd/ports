@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_encoder_lame_CMakeLists_txt,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- plugins/encoder/lame/CMakeLists.txt.orig	Mon Feb  4 14:45:17 2013
++++ plugins/encoder/lame/CMakeLists.txt	Mon Feb  4 14:46:39 2013
+@@ -1,3 +1,5 @@
++include_directories(${LAME_INCLUDE_DIR})
++
+ # KCM
+ set(k3blameencoderconfig_PART_SRCS
+   k3blameencoderconfigwidget.cpp
+@@ -26,7 +28,7 @@ kde4_add_plugin(k3blameencoder
+ target_link_libraries(k3blameencoder
+   ${KDE4_KDECORE_LIBS}
+   k3b k3bdevice
+-  mp3lame)
++  ${LAME_LIBRARIES})
+ 
+ install(TARGETS
+   k3blameencoder kcm_k3blameencoder

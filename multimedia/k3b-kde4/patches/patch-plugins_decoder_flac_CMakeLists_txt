@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_decoder_flac_CMakeLists_txt,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+--- plugins/decoder/flac/CMakeLists.txt.orig	Mon Feb  4 14:05:40 2013
++++ plugins/decoder/flac/CMakeLists.txt	Mon Feb  4 14:07:07 2013
+@@ -19,6 +19,7 @@ configure_file(config-flac.h.cmake ${CMAKE_CURRENT_BIN
+ 
+ set(k3bflacdecoder_PART_SRCS k3bflacdecoder.cpp )
+ 
++include_directories(${FLAC_INCLUDE_DIR} ${FLAC++_INCLUDE_DIR})
+ kde4_add_plugin(k3bflacdecoder ${k3bflacdecoder_PART_SRCS})
+ 
+ target_link_libraries(k3bflacdecoder
