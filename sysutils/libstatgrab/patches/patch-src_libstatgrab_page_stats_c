@@ -1,11 +1,18 @@
-$OpenBSD: patch-src_libstatgrab_page_stats_c,v 1.1 2014/07/08 10:15:39 sthen Exp $
---- src/libstatgrab/page_stats.c.orig	Tue Jul  8 11:09:57 2014
-+++ src/libstatgrab/page_stats.c	Tue Jul  8 11:10:56 2014
-@@ -43,6 +43,7 @@
+$OpenBSD: patch-src_libstatgrab_page_stats_c,v 1.2 2014/07/09 11:23:34 sthen Exp $
+--- src/libstatgrab/page_stats.c.orig	Sat Sep 24 07:29:22 2005
++++ src/libstatgrab/page_stats.c	Wed Jul  9 05:21:40 2014
+@@ -43,6 +43,14 @@
  #endif
  #if defined(NETBSD) || defined(OPENBSD)
  #include <sys/param.h>
 +#include <sys/sysctl.h>
++
++#if defined(OPENBSD)
++#include <sys/mutex.h>
++/* XXX until uvm gets cleaned up */
++typedef int boolean_t;
++#endif
++
  #include <uvm/uvm.h>
  #endif
  #ifdef WIN32
