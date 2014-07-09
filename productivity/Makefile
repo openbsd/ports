@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/07/09 14:56:53 landry Exp $
+# $OpenBSD: Makefile,v 1.63 2014/07/09 16:10:15 zhuk Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -20,7 +20,9 @@
      SUBDIR += gtg
      SUBDIR += homebank
      SUBDIR += impressive
+     SUBDIR += kmymoney
      SUBDIR += ledger
+     SUBDIR += libalkimia
      SUBDIR += libgcal
      SUBDIR += libkfbapi
      SUBDIR += libkgapi
