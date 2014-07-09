@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/05/12 15:27:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2014/07/09 13:55:59 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-0.2.10
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  osinfo-1.0           0.0      # .2.10
 
@@ -22,6 +22,7 @@ WANTLIB += pthread xml2 xslt z
 MASTER_SITES=		https://fedorahosted.org/releases/l/i/libosinfo/
 
 MODULES=		devel/gettext \
+			textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS +=	gobject-introspection vala

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2014/04/21 16:13:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2014/07/09 13:55:59 ajacoutot Exp $
 
 COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.3.4
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	databases sysutils
 
@@ -22,6 +22,7 @@ WANTLIB += ssl xml2 z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqclient/}
 
 MODULES=	devel/gettext \
+		textproc/intltool \
 		x11/gnome
 
 LIB_DEPENDS=	databases/openldap \

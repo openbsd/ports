@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/03 12:37:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/07/09 13:55:59 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		tool for setting pointing devices
 
 DISTNAME =		gpointing-device-settings-1.5.1
 CATEGORIES =		x11 sysutils
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=  gpds                      0.0 # 1.0
 
@@ -27,6 +27,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE_JP:=gsynaptics/45812/}
 
 MODULES =		devel/gconf2 \
 			devel/gettext \
+			textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS +=	desktop-file-utils

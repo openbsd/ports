@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2014/07/09 13:51:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/07/09 13:55:59 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
 DISTNAME=	gbrainy-2.2.3
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	games
 
@@ -22,6 +23,7 @@ MODULES=	lang/mono \
 
 BUILD_DEPENDS=	devel/mono-addins \
 		shells/bash \
+		textproc/intltool \
 		x11/gnome/mono-gnome \
 		x11/gnome/librsvg
 

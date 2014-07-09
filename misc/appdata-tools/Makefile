@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 11:32:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/09 13:55:59 ajacoutot Exp $
 
 COMMENT =		AppData tools
 
 DISTNAME =		appdata-tools-0.1.7
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		misc
 
@@ -18,6 +18,7 @@ WANTLIB += gthread-2.0 m pcre png pthread soup-2.4 sqlite3 xml2
 WANTLIB += z
 
 MODULES=		devel/gettext \
+			textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook
