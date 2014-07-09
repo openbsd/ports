@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.87 2014/07/09 17:05:34 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.88 2014/07/09 17:45:51 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -11,11 +11,8 @@ EXTRACT_SUFX?=		.tar.xz
 CATEGORIES+=		x11/gnome
 .    if ${NO_BUILD:L} == "no"
 MODULES+=		textproc/intltool
-.    endif
-.endif
-
-.if ${NO_BUILD:L} == "no"
 USE_GMAKE?=		Yes
+.    endif
 .endif
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
