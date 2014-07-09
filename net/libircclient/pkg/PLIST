@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/22 16:25:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/09 09:16:20 ajacoutot Exp $
 include/libirc_errors.h
 include/libirc_events.h
 include/libirc_options.h
 include/libirc_rfcnumeric.h
 include/libircclient.h
-lib/libircclient.a
 @lib lib/libircclient.so.${LIBircclient_VERSION}
