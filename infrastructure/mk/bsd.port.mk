@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1267 2014/07/09 10:27:11 robert Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1268 2014/07/09 10:28:42 robert Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -82,7 +82,7 @@ CLEANDEPENDS ?= No
 USE_SYSTRACE ?= No
 BULK ?= Auto
 RECURSIVE_FETCH_LIST ?= No
-WRKDIR_LINKNAME ?= 
+WRKDIR_LINKNAME ?=
 _FETCH_MAKEFILE ?= /dev/stdout
 
 .if ${USE_SYSTRACE:L} == "yes"
@@ -111,9 +111,9 @@ DPB_PROPERTIES ?=
 # All variables relevant to the port's description
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
 	SUBPACKAGE FLAVOR BUILD_PACKAGES DPB_PROPERTIES \
-	MULTI_PACKAGES 
+	MULTI_PACKAGES
 # and stuff needing to be MULTI_PACKAGE'd
-_ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE 
+_ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE
 _ALL_VARIABLES_PER_ARCH =
 
 
@@ -213,7 +213,7 @@ PKG_DELETE ?= /usr/sbin/pkg_delete
 
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS} ${SIGNING_PARAMETERS}
-_PKG_ADD_LOCAL = PKG_PATH=${_PKG_REPO} ${_PKG_ADD} 
+_PKG_ADD_LOCAL = PKG_PATH=${_PKG_REPO} ${_PKG_ADD}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
 
 SIGNING_PARAMETERS ?=
@@ -576,7 +576,7 @@ _PKG_ARGS += -DUSE_GROFF=1
 PKGNAME ?= ${DISTNAME}
 FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
-_DEPENDENCY_STACK ?= 
+_DEPENDENCY_STACK ?=
 
 .if ${MULTI_PACKAGES} == "-"
 # XXX "parse" FULLPKGNAME: is there a flavor after the version number
@@ -817,7 +817,7 @@ ALL_TARGET ?= all
 FAKE_TARGET ?= ${INSTALL_TARGET}
 
 TEST_TARGET ?= test
-TEST_FLAGS ?= 
+TEST_FLAGS ?=
 ALL_TEST_FLAGS = ${MAKE_FLAGS} ${TEST_FLAGS}
 TEST_LOGFILE ?= ${WRKDIR}/test.log
 TEST_LOG ?= | tee ${TEST_LOGFILE}
@@ -1057,7 +1057,7 @@ DESCR ?= ${PKGDIR}/DESCR
 ${_v}- = ${${_v}}
 .    endif
 .  endfor
-.else 
+.else
 .  for _S in ${MULTI_PACKAGES}
 PLIST${_S} ?= ${PKGDIR}/PLIST${_S}
 
@@ -1350,7 +1350,7 @@ CONFIGURE_SHARED ?= --enable-shared
 .endif
 
 FETCH_MANUALLY ?= No
-MISSING_FILES = 
+MISSING_FILES =
 .if ${FETCH_MANUALLY:L} != "no"
 .  for _F in ${CHECKSUMFILES}
 .    if !exists(${DISTDIR}/${_F})
@@ -1403,7 +1403,7 @@ IGNORE += "is marked as broken for ${ARCH}: ${BROKEN-${ARCH}:Q}"
 .  if ${MACHINE_ARCH} != ${ARCH} && defined(BROKEN-${MACHINE_ARCH})
 IGNORE += "is marked as broken for ${MACHINE_ARCH}: ${BROKEN-${MACHINE_ARCH}:Q}"
 .  endif
-.  if defined(BROKEN) 
+.  if defined(BROKEN)
 IGNORE += "is marked as broken: ${BROKEN:Q}"
 .  endif
 .endif
@@ -1414,7 +1414,7 @@ IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of
 IGNORE_IS_FATAL ?= "No"
 # XXX even if subpackage is invalid, define this, so that errors come out
 # from ERRORS and not make internals.
-IGNORE${SUBPACKAGE} ?= 
+IGNORE${SUBPACKAGE} ?=
 .if (!empty(IGNORE${SUBPACKAGE}) || defined(_EXTRA_IGNORE)) && ${IGNORE_IS_FATAL:L} == "yes"
 ERRORS += "Fatal: can't build"
 ERRORS += ${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}
@@ -1428,7 +1428,7 @@ _DEPENDS_TARGET ?= install
 
 # Various dependency styles
 _resolve_lib = LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-			${_PERLSCRIPT}/resolve-lib 
+			${_PERLSCRIPT}/resolve-lib
 
 .if ${NO_SHARED_LIBS:L} == "yes"
 _resolve_lib += -noshared
@@ -1446,7 +1446,7 @@ _check_error = || true
 _pkg_wantlib_args = wantlib-args
 _check_msg = Error
 # let diff error out
-_check_error = 
+_check_error =
 .endif
 wantlib_args ?= port-wantlib-args
 lib_depends_args ?= lib-depends-args
@@ -1824,7 +1824,7 @@ _register_plist =:
 _register_plist = mkdir -p ${PLIST_DB:S/:/ /g} && ${_PERLSCRIPT}/register-plist ${PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
-_check_lib_depends = ${_CHECK_LIB_DEPENDS} 
+_check_lib_depends = ${_CHECK_LIB_DEPENDS}
 .else
 _check_lib_depends =:
 .endif
@@ -2466,11 +2466,11 @@ unlock:
 subpackage:
 	@${_DO_LOCK}; (${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-subpackage)
 
-_internal-package: 
+_internal-package:
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-package-only
 # XXX loop needed for M to work
 .for p in ${PKGPATH}
-.  if ${BULK_$p:L} == "yes" 
+.  if ${BULK_$p:L} == "yes"
 	@${_MAKE} ${_BULK_COOKIE}
 .  elif ${BULK_$p:L} == "auto"
 .    if !empty(_DEPENDENCY_STACK)
@@ -3150,7 +3150,7 @@ all-lib-depends-args:
 		echo "-P $$pkgpath:$$pkg:$$default"; \
 	done
 
-# - remove lib-depends-args if we're only scanning for common dirs in 
+# - remove lib-depends-args if we're only scanning for common dirs in
 # update-plist and we're not shared only
 # - zap wantlib-args when we're only solving for @depends in pkg_create(1).
 no-lib-depends-args no-wantlib-args:
