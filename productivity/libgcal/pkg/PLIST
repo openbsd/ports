@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 10:51:26 zhuk Exp $
+include/libgcal/
+include/libgcal/atom_parser.h
+include/libgcal/gcal.h
+include/libgcal/gcal_parser.h
+include/libgcal/gcal_status.h
+include/libgcal/gcalendar.h
+include/libgcal/gcont.h
+include/libgcal/gcontact.h
+include/libgcal/internal_gcal.h
+include/libgcal/xml_aux.h
+lib/libgcal.a
+lib/libgcal.la
+@lib lib/libgcal.so.${LIBgcal_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libgcal.pc

@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_atom_parser_c,v 1.1.1.1 2014/07/09 10:51:26 zhuk Exp $
+BUG: https://code.google.com/p/libgcal/issues/detail?id=95
+--- src/atom_parser.c.orig	Fri Jan 24 15:26:28 2014
++++ src/atom_parser.c	Fri Jan 24 15:45:30 2014
+@@ -235,7 +235,7 @@ static int extract_and_check_multi(xmlDoc *doc, char *
+ {
+ 	xmlXPathObject *xpath_obj;
+ 	xmlNodeSet *node;
+-	xmlChar *tmp;
++	xmlChar *tmp, *tmp2;
+ 	int result = -1;
+ 	int i;
+ 
+@@ -265,11 +265,11 @@ static int extract_and_check_multi(xmlDoc *doc, char *
+ 		goto exit;
+ 	}
+ 
+-	*values = (char **)malloc(node->nodeNr * sizeof(char*));
++	*values = calloc(node->nodeNr, sizeof(char*));
+ 	if (attr2)
+-		*types = (char **)malloc(node->nodeNr * sizeof(char*));
++		*types = calloc(node->nodeNr, sizeof(char*));
+ 	if (attr3)
+-		*protocols = (char **)malloc(node->nodeNr * sizeof(char*));
++		*protocols = calloc(node->nodeNr, sizeof(char*));
+ 
+ 	for (i = 0; i < node->nodeNr; i++) {
+ 		if (getContent)
+@@ -282,7 +282,8 @@ static int extract_and_check_multi(xmlDoc *doc, char *
+ 		if (attr2) {
+ 			if (xmlHasProp(node->nodeTab[i], attr2)) {
+ 				tmp = xmlGetProp(node->nodeTab[i], attr2);
+-				(*types)[i] = strdup(strchr(tmp,'#') + 1);
++				tmp2 = strchr(tmp,'#');
++				(*types)[i] = strdup(tmp2 ? tmp2 : "");
+ 				xmlFree(tmp);
+ 			}
+ 			else
+@@ -292,7 +293,8 @@ static int extract_and_check_multi(xmlDoc *doc, char *
+ 		if (attr3) {
+ 			if (xmlHasProp(node->nodeTab[i], attr3)) {
+ 				tmp = xmlGetProp(node->nodeTab[i], attr3);
+-				(*protocols)[i] = strdup(strchr(tmp,'#') + 1);
++				tmp2 = strchr(tmp,'#');
++				(*protocols)[i] = strdup(tmp2 ? tmp2 : "");
+ 				xmlFree(tmp);
+ 			}
+ 			else
+@@ -323,7 +325,7 @@ static int extract_and_check_multisub(xmlDoc *doc, cha
+ 	xmlXPathObject *xpath_obj;
+ 	xmlNodeSet *node;
+ 	xmlNode *child, *cur_node;
+-	xmlChar *tmp;
++	xmlChar *tmp, *tmp2;
+ 	struct gcal_structured_subvalues *tempval;
+ 	int result = -1;
+ 	int i;
+@@ -383,7 +385,8 @@ static int extract_and_check_multisub(xmlDoc *doc, cha
+ 		if (attr1) {
+ 			if (xmlHasProp(node->nodeTab[i], attr1)) {
+ 				tmp = xmlGetProp(node->nodeTab[i], attr1);
+-				(*types)[i] = strdup(strchr(tmp,'#') + 1);
++				tmp2 = strchr(tmp,'#');
++				(*types)[i] = strdup(tmp2 ? tmp2 : "");
+ 				xmlFree(tmp);
+ 			} else
+ 				(*types)[i] = strdup("");
