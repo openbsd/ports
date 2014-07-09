@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_QGlib_CMakeLists_txt,v 1.1.1.1 2014/07/09 10:41:13 zhuk Exp $
+Avoid forcing specific library version.
+--- src/QGlib/CMakeLists.txt.orig	Thu Jun 26 17:21:51 2014
++++ src/QGlib/CMakeLists.txt	Thu Jun 26 17:22:28 2014
+@@ -46,9 +46,7 @@ run_codegen("QGlib" "${QtGLib_CODEGEN_INCLUDES}" "${Qt
+ 
+ # Build and link QtGLib
+ add_library(${QTGLIB_LIBRARY} ${SHARED_OR_STATIC} ${QtGLib_SRCS})
+-set_target_properties(${QTGLIB_LIBRARY} PROPERTIES OUTPUT_NAME ${QTGLIB_LIBRARY}-${QTGLIB_API_VERSION}
+-                                          SOVERSION ${QTGLIB_SOVERSION}
+-                                            VERSION ${QTGSTREAMER_VERSION})
++set_target_properties(${QTGLIB_LIBRARY} PROPERTIES OUTPUT_NAME ${QTGLIB_LIBRARY}-${QTGLIB_API_VERSION})
+ target_link_libraries(${QTGLIB_LIBRARY} LINK_PRIVATE ${GOBJECT_LIBRARIES})
+ qt4or5_use_modules(${QTGLIB_LIBRARY} LINK_PUBLIC Core)
+ 
