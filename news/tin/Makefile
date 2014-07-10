@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/29 16:41:36 giovanni Exp $
+# $OpenBSD: Makefile,v 1.45 2014/07/10 08:18:37 giovanni Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.2
-PATCHLEVEL=	0
+PATCHLEVEL=	1
 CATEGORIES=	news
 
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/news/tin-unoff/ \
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--with-screen=ncurses \
 			--with-pcre=${LOCALBASE} \
 			--with-libdir=${PREFIX}/lib/news \
-			--with-spooldir=/var/spool/news \
+			--with-spooldir=${VARBASE}/spool/news \
 			--enable-break-long-lines \
 			--enable-ipv6 \
 			--without-x
