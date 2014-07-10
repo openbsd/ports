@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/02/16 18:17:49 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.24 2014/07/10 20:42:28 naddy Exp $
 bin/autopoint
 @bin bin/envsubst
 @bin bin/gettext
@@ -35,12 +34,17 @@ lib/gettext/project-id
 lib/gettext/user-email
 lib/libasprintf.a
 lib/libasprintf.la
+@lib lib/libasprintf.so.${LIBasprintf_VERSION}
 lib/libgettextlib.la
+@lib lib/libgettextlib.so.${LIBgettextlib_VERSION}
 lib/libgettextpo.a
 lib/libgettextpo.la
+@lib lib/libgettextpo.so.${LIBgettextpo_VERSION}
 lib/libgettextsrc.la
+@lib lib/libgettextsrc.so.${LIBgettextsrc_VERSION}
 lib/libintl.a
 lib/libintl.la
+@lib lib/libintl.so.${LIBintl_VERSION}
 @man man/man1/autopoint.1
 @man man/man1/envsubst.1
 @man man/man1/gettext.1
@@ -73,6 +77,7 @@ lib/libintl.la
 @man man/man3/textdomain.3
 share/aclocal/
 share/aclocal/codeset.m4
+share/aclocal/extern-inline.m4
 share/aclocal/fcntl-o.m4
 share/aclocal/gettext.m4
 share/aclocal/glibc2.m4
@@ -176,6 +181,7 @@ share/doc/gettext/examples/hello-c++-gnome/po/nb.po
 share/doc/gettext/examples/hello-c++-gnome/po/nl.po
 share/doc/gettext/examples/hello-c++-gnome/po/pl.po
 share/doc/gettext/examples/hello-c++-gnome/po/pt.po
+share/doc/gettext/examples/hello-c++-gnome/po/pt_BR.po
 share/doc/gettext/examples/hello-c++-gnome/po/ro.po
 share/doc/gettext/examples/hello-c++-gnome/po/ru.po
 share/doc/gettext/examples/hello-c++-gnome/po/sk.po
@@ -256,6 +262,7 @@ share/doc/gettext/examples/hello-c++-kde/po/nb.po
 share/doc/gettext/examples/hello-c++-kde/po/nl.po
 share/doc/gettext/examples/hello-c++-kde/po/pl.po
 share/doc/gettext/examples/hello-c++-kde/po/pt.po
+share/doc/gettext/examples/hello-c++-kde/po/pt_BR.po
 share/doc/gettext/examples/hello-c++-kde/po/ro.po
 share/doc/gettext/examples/hello-c++-kde/po/ru.po
 share/doc/gettext/examples/hello-c++-kde/po/sk.po
@@ -309,6 +316,7 @@ share/doc/gettext/examples/hello-c++-qt/po/nb.po
 share/doc/gettext/examples/hello-c++-qt/po/nl.po
 share/doc/gettext/examples/hello-c++-qt/po/pl.po
 share/doc/gettext/examples/hello-c++-qt/po/pt.po
+share/doc/gettext/examples/hello-c++-qt/po/pt_BR.po
 share/doc/gettext/examples/hello-c++-qt/po/ro.po
 share/doc/gettext/examples/hello-c++-qt/po/ru.po
 share/doc/gettext/examples/hello-c++-qt/po/sk.po
@@ -361,6 +369,7 @@ share/doc/gettext/examples/hello-c++-wxwidgets/po/nb.po
 share/doc/gettext/examples/hello-c++-wxwidgets/po/nl.po
 share/doc/gettext/examples/hello-c++-wxwidgets/po/pl.po
 share/doc/gettext/examples/hello-c++-wxwidgets/po/pt.po
+share/doc/gettext/examples/hello-c++-wxwidgets/po/pt_BR.po
 share/doc/gettext/examples/hello-c++-wxwidgets/po/ro.po
 share/doc/gettext/examples/hello-c++-wxwidgets/po/ru.po
 share/doc/gettext/examples/hello-c++-wxwidgets/po/sk.po
@@ -412,6 +421,7 @@ share/doc/gettext/examples/hello-c++/po/nb.po
 share/doc/gettext/examples/hello-c++/po/nl.po
 share/doc/gettext/examples/hello-c++/po/pl.po
 share/doc/gettext/examples/hello-c++/po/pt.po
+share/doc/gettext/examples/hello-c++/po/pt_BR.po
 share/doc/gettext/examples/hello-c++/po/ro.po
 share/doc/gettext/examples/hello-c++/po/ru.po
 share/doc/gettext/examples/hello-c++/po/sk.po
@@ -467,6 +477,7 @@ share/doc/gettext/examples/hello-c-gnome/po/nb.po
 share/doc/gettext/examples/hello-c-gnome/po/nl.po
 share/doc/gettext/examples/hello-c-gnome/po/pl.po
 share/doc/gettext/examples/hello-c-gnome/po/pt.po
+share/doc/gettext/examples/hello-c-gnome/po/pt_BR.po
 share/doc/gettext/examples/hello-c-gnome/po/ro.po
 share/doc/gettext/examples/hello-c-gnome/po/ru.po
 share/doc/gettext/examples/hello-c-gnome/po/sk.po
@@ -479,6 +490,63 @@ share/doc/gettext/examples/hello-c-gnome/po/vi.po
 share/doc/gettext/examples/hello-c-gnome/po/zh_CN.po
 share/doc/gettext/examples/hello-c-gnome/po/zh_HK.po
 share/doc/gettext/examples/hello-c-gnome/po/zh_TW.po
+share/doc/gettext/examples/hello-c-gnome3/
+share/doc/gettext/examples/hello-c-gnome3/INSTALL
+share/doc/gettext/examples/hello-c-gnome3/Makefile.am
+share/doc/gettext/examples/hello-c-gnome3/autoclean.sh
+share/doc/gettext/examples/hello-c-gnome3/autogen.sh
+share/doc/gettext/examples/hello-c-gnome3/configure.ac
+share/doc/gettext/examples/hello-c-gnome3/hello.c
+share/doc/gettext/examples/hello-c-gnome3/hello.desktop.in.in
+share/doc/gettext/examples/hello-c-gnome3/hello.gresource.xml
+share/doc/gettext/examples/hello-c-gnome3/hello.gschema.xml
+share/doc/gettext/examples/hello-c-gnome3/hello.ui
+share/doc/gettext/examples/hello-c-gnome3/m4/
+share/doc/gettext/examples/hello-c-gnome3/m4/Makefile.am
+share/doc/gettext/examples/hello-c-gnome3/po/
+share/doc/gettext/examples/hello-c-gnome3/po/LINGUAS
+share/doc/gettext/examples/hello-c-gnome3/po/Makevars
+share/doc/gettext/examples/hello-c-gnome3/po/POTFILES.in
+share/doc/gettext/examples/hello-c-gnome3/po/af.po
+share/doc/gettext/examples/hello-c-gnome3/po/ast.po
+share/doc/gettext/examples/hello-c-gnome3/po/bg.po
+share/doc/gettext/examples/hello-c-gnome3/po/ca.po
+share/doc/gettext/examples/hello-c-gnome3/po/cs.po
+share/doc/gettext/examples/hello-c-gnome3/po/da.po
+share/doc/gettext/examples/hello-c-gnome3/po/de.po
+share/doc/gettext/examples/hello-c-gnome3/po/el.po
+share/doc/gettext/examples/hello-c-gnome3/po/eo.po
+share/doc/gettext/examples/hello-c-gnome3/po/es.po
+share/doc/gettext/examples/hello-c-gnome3/po/fi.po
+share/doc/gettext/examples/hello-c-gnome3/po/fr.po
+share/doc/gettext/examples/hello-c-gnome3/po/ga.po
+share/doc/gettext/examples/hello-c-gnome3/po/gl.po
+share/doc/gettext/examples/hello-c-gnome3/po/hr.po
+share/doc/gettext/examples/hello-c-gnome3/po/hu.po
+share/doc/gettext/examples/hello-c-gnome3/po/id.po
+share/doc/gettext/examples/hello-c-gnome3/po/it.po
+share/doc/gettext/examples/hello-c-gnome3/po/ja.po
+share/doc/gettext/examples/hello-c-gnome3/po/ky.po
+share/doc/gettext/examples/hello-c-gnome3/po/lv.po
+share/doc/gettext/examples/hello-c-gnome3/po/ms.po
+share/doc/gettext/examples/hello-c-gnome3/po/mt.po
+share/doc/gettext/examples/hello-c-gnome3/po/nb.po
+share/doc/gettext/examples/hello-c-gnome3/po/nl.po
+share/doc/gettext/examples/hello-c-gnome3/po/pl.po
+share/doc/gettext/examples/hello-c-gnome3/po/pt.po
+share/doc/gettext/examples/hello-c-gnome3/po/pt_BR.po
+share/doc/gettext/examples/hello-c-gnome3/po/ro.po
+share/doc/gettext/examples/hello-c-gnome3/po/ru.po
+share/doc/gettext/examples/hello-c-gnome3/po/sk.po
+share/doc/gettext/examples/hello-c-gnome3/po/sl.po
+share/doc/gettext/examples/hello-c-gnome3/po/sr.po
+share/doc/gettext/examples/hello-c-gnome3/po/sv.po
+share/doc/gettext/examples/hello-c-gnome3/po/tr.po
+share/doc/gettext/examples/hello-c-gnome3/po/uk.po
+share/doc/gettext/examples/hello-c-gnome3/po/vi.po
+share/doc/gettext/examples/hello-c-gnome3/po/zh_CN.po
+share/doc/gettext/examples/hello-c-gnome3/po/zh_HK.po
+share/doc/gettext/examples/hello-c-gnome3/po/zh_TW.po
 share/doc/gettext/examples/hello-c/INSTALL
 share/doc/gettext/examples/hello-c/Makefile.am
 share/doc/gettext/examples/hello-c/autoclean.sh
@@ -518,6 +586,7 @@ share/doc/gettext/examples/hello-c/po/nb.po
 share/doc/gettext/examples/hello-c/po/nl.po
 share/doc/gettext/examples/hello-c/po/pl.po
 share/doc/gettext/examples/hello-c/po/pt.po
+share/doc/gettext/examples/hello-c/po/pt_BR.po
 share/doc/gettext/examples/hello-c/po/ro.po
 share/doc/gettext/examples/hello-c/po/ru.po
 share/doc/gettext/examples/hello-c/po/sk.po
@@ -569,6 +638,7 @@ share/doc/gettext/examples/hello-clisp/po/nb.po
 share/doc/gettext/examples/hello-clisp/po/nl.po
 share/doc/gettext/examples/hello-clisp/po/pl.po
 share/doc/gettext/examples/hello-clisp/po/pt.po
+share/doc/gettext/examples/hello-clisp/po/pt_BR.po
 share/doc/gettext/examples/hello-clisp/po/ro.po
 share/doc/gettext/examples/hello-clisp/po/ru.po
 share/doc/gettext/examples/hello-clisp/po/sk.po
@@ -623,6 +693,7 @@ share/doc/gettext/examples/hello-csharp-forms/po/nb.po
 share/doc/gettext/examples/hello-csharp-forms/po/nl.po
 share/doc/gettext/examples/hello-csharp-forms/po/pl.po
 share/doc/gettext/examples/hello-csharp-forms/po/pt.po
+share/doc/gettext/examples/hello-csharp-forms/po/pt_BR.po
 share/doc/gettext/examples/hello-csharp-forms/po/ro.po
 share/doc/gettext/examples/hello-csharp-forms/po/ru.po
 share/doc/gettext/examples/hello-csharp-forms/po/sk.po
@@ -673,6 +744,7 @@ share/doc/gettext/examples/hello-csharp/po/nb.po
 share/doc/gettext/examples/hello-csharp/po/nl.po
 share/doc/gettext/examples/hello-csharp/po/pl.po
 share/doc/gettext/examples/hello-csharp/po/pt.po
+share/doc/gettext/examples/hello-csharp/po/pt_BR.po
 share/doc/gettext/examples/hello-csharp/po/ro.po
 share/doc/gettext/examples/hello-csharp/po/ru.po
 share/doc/gettext/examples/hello-csharp/po/sk.po
@@ -724,6 +796,7 @@ share/doc/gettext/examples/hello-gawk/po/nb.po
 share/doc/gettext/examples/hello-gawk/po/nl.po
 share/doc/gettext/examples/hello-gawk/po/pl.po
 share/doc/gettext/examples/hello-gawk/po/pt.po
+share/doc/gettext/examples/hello-gawk/po/pt_BR.po
 share/doc/gettext/examples/hello-gawk/po/ro.po
 share/doc/gettext/examples/hello-gawk/po/ru.po
 share/doc/gettext/examples/hello-gawk/po/sk.po
@@ -775,6 +848,7 @@ share/doc/gettext/examples/hello-guile/po/nb.po
 share/doc/gettext/examples/hello-guile/po/nl.po
 share/doc/gettext/examples/hello-guile/po/pl.po
 share/doc/gettext/examples/hello-guile/po/pt.po
+share/doc/gettext/examples/hello-guile/po/pt_BR.po
 share/doc/gettext/examples/hello-guile/po/ro.po
 share/doc/gettext/examples/hello-guile/po/ru.po
 share/doc/gettext/examples/hello-guile/po/sk.po
@@ -830,6 +904,7 @@ share/doc/gettext/examples/hello-java-awt/po/nb.po
 share/doc/gettext/examples/hello-java-awt/po/nl.po
 share/doc/gettext/examples/hello-java-awt/po/pl.po
 share/doc/gettext/examples/hello-java-awt/po/pt.po
+share/doc/gettext/examples/hello-java-awt/po/pt_BR.po
 share/doc/gettext/examples/hello-java-awt/po/ro.po
 share/doc/gettext/examples/hello-java-awt/po/ru.po
 share/doc/gettext/examples/hello-java-awt/po/sk.po
@@ -884,6 +959,7 @@ share/doc/gettext/examples/hello-java-qtjambi/po/nb.po
 share/doc/gettext/examples/hello-java-qtjambi/po/nl.po
 share/doc/gettext/examples/hello-java-qtjambi/po/pl.po
 share/doc/gettext/examples/hello-java-qtjambi/po/pt.po
+share/doc/gettext/examples/hello-java-qtjambi/po/pt_BR.po
 share/doc/gettext/examples/hello-java-qtjambi/po/ro.po
 share/doc/gettext/examples/hello-java-qtjambi/po/ru.po
 share/doc/gettext/examples/hello-java-qtjambi/po/sk.po
@@ -938,6 +1014,7 @@ share/doc/gettext/examples/hello-java-swing/po/nb.po
 share/doc/gettext/examples/hello-java-swing/po/nl.po
 share/doc/gettext/examples/hello-java-swing/po/pl.po
 share/doc/gettext/examples/hello-java-swing/po/pt.po
+share/doc/gettext/examples/hello-java-swing/po/pt_BR.po
 share/doc/gettext/examples/hello-java-swing/po/ro.po
 share/doc/gettext/examples/hello-java-swing/po/ru.po
 share/doc/gettext/examples/hello-java-swing/po/sk.po
@@ -988,6 +1065,7 @@ share/doc/gettext/examples/hello-java/po/nb.po
 share/doc/gettext/examples/hello-java/po/nl.po
 share/doc/gettext/examples/hello-java/po/pl.po
 share/doc/gettext/examples/hello-java/po/pt.po
+share/doc/gettext/examples/hello-java/po/pt_BR.po
 share/doc/gettext/examples/hello-java/po/ro.po
 share/doc/gettext/examples/hello-java/po/ru.po
 share/doc/gettext/examples/hello-java/po/sk.po
@@ -1039,6 +1117,7 @@ share/doc/gettext/examples/hello-librep/po/nb.po
 share/doc/gettext/examples/hello-librep/po/nl.po
 share/doc/gettext/examples/hello-librep/po/pl.po
 share/doc/gettext/examples/hello-librep/po/pt.po
+share/doc/gettext/examples/hello-librep/po/pt_BR.po
 share/doc/gettext/examples/hello-librep/po/ro.po
 share/doc/gettext/examples/hello-librep/po/ru.po
 share/doc/gettext/examples/hello-librep/po/sk.po
@@ -1095,6 +1174,7 @@ share/doc/gettext/examples/hello-objc-gnome/po/nb.po
 share/doc/gettext/examples/hello-objc-gnome/po/nl.po
 share/doc/gettext/examples/hello-objc-gnome/po/pl.po
 share/doc/gettext/examples/hello-objc-gnome/po/pt.po
+share/doc/gettext/examples/hello-objc-gnome/po/pt_BR.po
 share/doc/gettext/examples/hello-objc-gnome/po/ro.po
 share/doc/gettext/examples/hello-objc-gnome/po/ru.po
 share/doc/gettext/examples/hello-objc-gnome/po/sk.po
@@ -1149,6 +1229,7 @@ share/doc/gettext/examples/hello-objc-gnustep/po/nb.po
 share/doc/gettext/examples/hello-objc-gnustep/po/nl.po
 share/doc/gettext/examples/hello-objc-gnustep/po/pl.po
 share/doc/gettext/examples/hello-objc-gnustep/po/pt.po
+share/doc/gettext/examples/hello-objc-gnustep/po/pt_BR.po
 share/doc/gettext/examples/hello-objc-gnustep/po/ro.po
 share/doc/gettext/examples/hello-objc-gnustep/po/ru.po
 share/doc/gettext/examples/hello-objc-gnustep/po/sk.po
@@ -1200,6 +1281,7 @@ share/doc/gettext/examples/hello-objc/po/nb.po
 share/doc/gettext/examples/hello-objc/po/nl.po
 share/doc/gettext/examples/hello-objc/po/pl.po
 share/doc/gettext/examples/hello-objc/po/pt.po
+share/doc/gettext/examples/hello-objc/po/pt_BR.po
 share/doc/gettext/examples/hello-objc/po/ro.po
 share/doc/gettext/examples/hello-objc/po/ru.po
 share/doc/gettext/examples/hello-objc/po/sk.po
@@ -1252,6 +1334,7 @@ share/doc/gettext/examples/hello-pascal/po/nb.po
 share/doc/gettext/examples/hello-pascal/po/nl.po
 share/doc/gettext/examples/hello-pascal/po/pl.po
 share/doc/gettext/examples/hello-pascal/po/pt.po
+share/doc/gettext/examples/hello-pascal/po/pt_BR.po
 share/doc/gettext/examples/hello-pascal/po/ro.po
 share/doc/gettext/examples/hello-pascal/po/ru.po
 share/doc/gettext/examples/hello-pascal/po/sk.po
@@ -1304,6 +1387,7 @@ share/doc/gettext/examples/hello-perl/po/nb.po
 share/doc/gettext/examples/hello-perl/po/nl.po
 share/doc/gettext/examples/hello-perl/po/pl.po
 share/doc/gettext/examples/hello-perl/po/pt.po
+share/doc/gettext/examples/hello-perl/po/pt_BR.po
 share/doc/gettext/examples/hello-perl/po/ro.po
 share/doc/gettext/examples/hello-perl/po/ru.po
 share/doc/gettext/examples/hello-perl/po/sk.po
@@ -1356,6 +1440,7 @@ share/doc/gettext/examples/hello-php/po/nb.po
 share/doc/gettext/examples/hello-php/po/nl.po
 share/doc/gettext/examples/hello-php/po/pl.po
 share/doc/gettext/examples/hello-php/po/pt.po
+share/doc/gettext/examples/hello-php/po/pt_BR.po
 share/doc/gettext/examples/hello-php/po/ro.po
 share/doc/gettext/examples/hello-php/po/ru.po
 share/doc/gettext/examples/hello-php/po/sk.po
@@ -1407,6 +1492,7 @@ share/doc/gettext/examples/hello-python/po/nb.po
 share/doc/gettext/examples/hello-python/po/nl.po
 share/doc/gettext/examples/hello-python/po/pl.po
 share/doc/gettext/examples/hello-python/po/pt.po
+share/doc/gettext/examples/hello-python/po/pt_BR.po
 share/doc/gettext/examples/hello-python/po/ro.po
 share/doc/gettext/examples/hello-python/po/ru.po
 share/doc/gettext/examples/hello-python/po/sk.po
@@ -1458,6 +1544,7 @@ share/doc/gettext/examples/hello-sh/po/nb.po
 share/doc/gettext/examples/hello-sh/po/nl.po
 share/doc/gettext/examples/hello-sh/po/pl.po
 share/doc/gettext/examples/hello-sh/po/pt.po
+share/doc/gettext/examples/hello-sh/po/pt_BR.po
 share/doc/gettext/examples/hello-sh/po/ro.po
 share/doc/gettext/examples/hello-sh/po/ru.po
 share/doc/gettext/examples/hello-sh/po/sk.po
@@ -1509,6 +1596,7 @@ share/doc/gettext/examples/hello-smalltalk/po/nb.po
 share/doc/gettext/examples/hello-smalltalk/po/nl.po
 share/doc/gettext/examples/hello-smalltalk/po/pl.po
 share/doc/gettext/examples/hello-smalltalk/po/pt.po
+share/doc/gettext/examples/hello-smalltalk/po/pt_BR.po
 share/doc/gettext/examples/hello-smalltalk/po/ro.po
 share/doc/gettext/examples/hello-smalltalk/po/ru.po
 share/doc/gettext/examples/hello-smalltalk/po/sk.po
@@ -1561,6 +1649,7 @@ share/doc/gettext/examples/hello-tcl-tk/po/nb.po
 share/doc/gettext/examples/hello-tcl-tk/po/nl.po
 share/doc/gettext/examples/hello-tcl-tk/po/pl.po
 share/doc/gettext/examples/hello-tcl-tk/po/pt.po
+share/doc/gettext/examples/hello-tcl-tk/po/pt_BR.po
 share/doc/gettext/examples/hello-tcl-tk/po/ro.po
 share/doc/gettext/examples/hello-tcl-tk/po/ru.po
 share/doc/gettext/examples/hello-tcl-tk/po/sk.po
@@ -1611,6 +1700,7 @@ share/doc/gettext/examples/hello-tcl/po/nb.po
 share/doc/gettext/examples/hello-tcl/po/nl.po
 share/doc/gettext/examples/hello-tcl/po/pl.po
 share/doc/gettext/examples/hello-tcl/po/pt.po
+share/doc/gettext/examples/hello-tcl/po/pt_BR.po
 share/doc/gettext/examples/hello-tcl/po/ro.po
 share/doc/gettext/examples/hello-tcl/po/ru.po
 share/doc/gettext/examples/hello-tcl/po/sk.po
@@ -1662,6 +1752,7 @@ share/doc/gettext/examples/hello-ycp/po/nb.po
 share/doc/gettext/examples/hello-ycp/po/nl.po
 share/doc/gettext/examples/hello-ycp/po/pl.po
 share/doc/gettext/examples/hello-ycp/po/pt.po
+share/doc/gettext/examples/hello-ycp/po/pt_BR.po
 share/doc/gettext/examples/hello-ycp/po/ro.po
 share/doc/gettext/examples/hello-ycp/po/ru.po
 share/doc/gettext/examples/hello-ycp/po/sk.po
@@ -1751,7 +1842,7 @@ share/emacs/site-lisp/po-mode.el
 share/emacs/site-lisp/start-po.el
 share/gettext/
 share/gettext/ABOUT-NLS
-share/gettext/archive.dir.tar.gz
+share/gettext/archive.dir.tar.xz
 share/gettext/config.rpath
 share/gettext/gettext.h
 share/gettext/intl/
@@ -1819,6 +1910,7 @@ share/gettext/intl/vasnwprintf.h
 share/gettext/intl/verify.h
 share/gettext/intl/version.c
 share/gettext/intl/wprintf-parse.h
+share/gettext/intl/xsize.c
 share/gettext/intl/xsize.h
 share/gettext/javaversion.class
 share/gettext/msgunfmt.tcl
@@ -1932,6 +2024,7 @@ share/locale/hr/LC_MESSAGES/
 share/locale/hr/LC_MESSAGES/gettext-runtime.mo
 share/locale/hu/
 share/locale/hu/LC_MESSAGES/
+share/locale/hu/LC_MESSAGES/gettext-runtime.mo
 share/locale/id/
 share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/gettext-runtime.mo

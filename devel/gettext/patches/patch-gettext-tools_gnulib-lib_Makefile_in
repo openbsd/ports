@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.4 2013/01/21 22:08:52 naddy Exp $
---- gettext-tools/gnulib-lib/Makefile.in.orig	Tue Dec 25 06:33:32 2012
-+++ gettext-tools/gnulib-lib/Makefile.in	Wed Jan 16 23:00:46 2013
-@@ -2091,7 +2091,7 @@ EXTRA_libgettextlib_la_SOURCES = acl_entries.c atexit.
+$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.5 2014/07/10 20:42:28 naddy Exp $
+--- gettext-tools/gnulib-lib/Makefile.in.orig	Tue Jun 10 07:42:48 2014
++++ gettext-tools/gnulib-lib/Makefile.in	Tue Jul  8 23:49:09 2014
+@@ -2145,7 +2145,7 @@ EXTRA_libgettextlib_la_SOURCES = atexit.c canonicalize
  #libgettextlib_la_LDFLAGS += $(LTLIBUNISTRING) @LTLIBINTL@ @LTLIBICONV@ @LIB_ACL@
  libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(LIB_ACL) \
  	$(LTLIBICONV) $(LTLIBINTL) $(LTLIBTHREAD) $(LTLIBUNISTRING) \
@@ -9,4 +9,4 @@ $OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.4 2013/01/21 22:08:52 n
 +	$(OPENMP_CFLAGS) @INTL_MACOSX_LIBS@ \
  	$(am__append_3) $(am__append_12)
  
- # Specify that libgettextlib should installed in $(libdir).
+ # Use this preprocessor expression to decide whether #include_next works.

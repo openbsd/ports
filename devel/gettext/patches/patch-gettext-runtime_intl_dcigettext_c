@@ -1,6 +1,6 @@
-$OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.6 2013/01/21 22:08:52 naddy Exp $
---- gettext-runtime/intl/dcigettext.c.orig	Tue Dec  4 07:28:58 2012
-+++ gettext-runtime/intl/dcigettext.c	Wed Jan 16 23:06:10 2013
+$OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.7 2014/07/10 20:42:28 naddy Exp $
+--- gettext-runtime/intl/dcigettext.c.orig	Tue Apr 15 03:52:10 2014
++++ gettext-runtime/intl/dcigettext.c	Tue Jul  8 23:49:09 2014
 @@ -505,6 +505,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
    const char *localename;
  #endif
@@ -57,7 +57,7 @@ $OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.6 2013/01/21 22:08:52 nadd
  
    /* Creating working area.  */
    single_locale = (char *) alloca (strlen (categoryvalue) + 1);
-@@ -767,13 +772,17 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -772,13 +777,17 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  		  /* Create a new entry and add it to the search tree.  */
  		  size_t msgid_len;
  		  size_t size;
@@ -76,7 +76,7 @@ $OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.6 2013/01/21 22:08:52 nadd
  #endif
  		  newp = (struct known_translation_t *) malloc (size);
  		  if (newp != NULL)
-@@ -789,7 +798,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -794,7 +803,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  		      memcpy (new_domainname, domainname, domainname_len + 1);
  #ifdef HAVE_PER_THREAD_LOCALE
  		      new_localename = new_domainname + domainname_len + 1;

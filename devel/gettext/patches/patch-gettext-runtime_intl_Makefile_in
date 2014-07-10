@@ -1,12 +1,13 @@
-$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.7 2013/03/27 16:37:09 naddy Exp $
---- gettext-runtime/intl/Makefile.in.orig	Tue Dec 25 06:16:50 2012
-+++ gettext-runtime/intl/Makefile.in	Fri Jan 18 18:39:38 2013
-@@ -456,7 +456,7 @@ install-data: all
+$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.8 2014/07/10 20:42:28 naddy Exp $
+--- gettext-runtime/intl/Makefile.in.orig	Thu Apr 24 10:57:40 2014
++++ gettext-runtime/intl/Makefile.in	Wed Jul  9 11:12:52 2014
+@@ -460,8 +460,7 @@ install-data: all
+ 	if test "$(PACKAGE)" = "gettext-tools"; then \
  	  $(mkdir_p) $(DESTDIR)$(gettextsrcdir); \
  	  $(INSTALL_DATA) VERSION $(DESTDIR)$(gettextsrcdir)/VERSION; \
- 	  $(INSTALL_DATA) ChangeLog.inst $(DESTDIR)$(gettextsrcdir)/ChangeLog; \
--	  dists="COPYING.LIB-2.0 COPYING.LIB-2.1 $(DISTFILES.common)"; \
-+	  dists="COPYING.LIB $(DISTFILES.common)"; \
+-	  $(INSTALL_DATA) ChangeLog.inst $(DESTDIR)$(gettextsrcdir)/ChangeLog; \
+-	  dists="COPYING.LIB $(DISTFILES.common)"; \
++	  dists="COPYING.LIB ChangeLog $(DISTFILES.common)"; \
  	  for file in $$dists; do \
  	    $(INSTALL_DATA) $(srcdir)/$$file \
  			    $(DESTDIR)$(gettextsrcdir)/$$file; \

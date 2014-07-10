@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.5 2013/01/21 22:08:52 naddy Exp $
---- gettext-tools/src/Makefile.in.orig	Tue Dec 25 06:33:34 2012
-+++ gettext-tools/src/Makefile.in	Wed Jan 16 23:06:10 2013
-@@ -1869,7 +1869,7 @@ urlget_SOURCES = urlget.c
+$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.6 2014/07/10 20:42:28 naddy Exp $
+--- gettext-tools/src/Makefile.in.orig	Tue Jun 10 07:42:50 2014
++++ gettext-tools/src/Makefile.in	Tue Jul  8 23:49:09 2014
+@@ -2004,7 +2004,7 @@ urlget_SOURCES = urlget.c
  # Need @LTLIBINTL@ because many source files use gettext().
  # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
  # use iconv().
@@ -9,4 +9,4 @@ $OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.5 2013/01/21 22:08:52 naddy Ex
 +libgettextsrc_la_LDFLAGS = \
  	../gnulib-lib/libgettextlib.la $(LTLIBUNISTRING) @LTLIBINTL@ \
  	@LTLIBICONV@ -lc -no-undefined $(am__append_2)
- 
+ libgettextsrc_la_CPPFLAGS = $(AM_CPPFLAGS) $(am__append_3)

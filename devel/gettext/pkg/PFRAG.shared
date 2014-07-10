@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2013/02/16 18:17:49 sthen Exp $
-@lib lib/libasprintf.so.${LIBasprintf_VERSION}
-@lib lib/libgettextlib.so.${LIBgettextlib_VERSION}
-@lib lib/libgettextpo.so.${LIBgettextpo_VERSION}
-@lib lib/libgettextsrc.so.${LIBgettextsrc_VERSION}
-@lib lib/libintl.so.${LIBintl_VERSION}
