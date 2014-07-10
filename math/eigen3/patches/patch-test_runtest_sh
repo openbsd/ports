@@ -1,0 +1,9 @@
+$OpenBSD: patch-test_runtest_sh,v 1.1.1.1 2014/07/10 08:59:52 zhuk Exp $
+--- test/runtest.sh.orig	Mon Jun 28 11:45:25 2010
++++ test/runtest.sh	Mon Jun 28 11:45:30 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#! /bin/sh
+ 
+ black='\E[30m'
+ red='\E[31m'

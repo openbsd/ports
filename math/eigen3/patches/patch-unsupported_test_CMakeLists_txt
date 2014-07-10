@@ -1,0 +1,27 @@
+$OpenBSD: patch-unsupported_test_CMakeLists_txt,v 1.1.1.1 2014/07/10 08:59:52 zhuk Exp $
+Allow tests to build.
+--- unsupported/test/CMakeLists.txt.orig	Wed Feb 26 16:35:18 2014
++++ unsupported/test/CMakeLists.txt	Thu Jul 10 10:38:58 2014
+@@ -75,6 +75,7 @@ if(NOT EIGEN_TEST_NO_OPENGL)
+   if(OPENGL_FOUND AND GLUT_FOUND AND GLEW_FOUND)
+     ei_add_property(EIGEN_TESTED_BACKENDS "OpenGL, ")
+     set(EIGEN_GL_LIB ${GLUT_LIBRARIES} ${GLEW_LIBRARIES})
++    include_directories(${OPENGL_INCLUDE_DIR} ${GLUT_INCLUDE_DIR} ${GLEW_INCLUDE_DIRS})
+     ei_add_test(openglsupport  "" "${EIGEN_GL_LIB}" )
+   else()
+     ei_add_property(EIGEN_MISSING_BACKENDS "OpenGL, ")
+@@ -83,9 +84,13 @@ else()
+     ei_add_property(EIGEN_MISSING_BACKENDS "OpenGL, ")
+ endif()
+ 
++find_package(SuperLU)
++if(SUPERLU_FOUND)
++  ei_add_test(kronecker_product)
++endif()
++
+ ei_add_test(polynomialsolver)
+ ei_add_test(polynomialutils)
+-ei_add_test(kronecker_product)
+ ei_add_test(splines)
+ ei_add_test(gmres)
+ ei_add_test(minres)

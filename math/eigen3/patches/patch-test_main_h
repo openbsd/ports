@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_main_h,v 1.1.1.1 2014/07/10 08:59:52 zhuk Exp $
+This test fails, and we actually DO provide min() and max() correctly,
+so disable it.
+--- test/main.h.orig	Wed Oct 23 04:05:35 2013
++++ test/main.h	Wed Oct 23 04:06:14 2013
+@@ -24,8 +24,8 @@
+ #include <deque>
+ #include <queue>
+ 
+-#define min(A,B) please_protect_your_min_with_parentheses
+-#define max(A,B) please_protect_your_max_with_parentheses
++// #define min(A,B) please_protect_your_min_with_parentheses
++// #define max(A,B) please_protect_your_max_with_parentheses
+ 
+ #define FORBIDDEN_IDENTIFIER (this_identifier_is_forbidden_to_avoid_clashes) this_identifier_is_forbidden_to_avoid_clashes
+ // B0 is defined in POSIX header termios.h
