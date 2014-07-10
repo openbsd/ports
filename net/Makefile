@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.850 2014/06/24 09:22:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.851 2014/07/10 07:37:46 zhuk Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -172,6 +172,7 @@
      SUBDIR += kismet
      SUBDIR += kissd
      SUBDIR += ktorrent
+     SUBDIR += ktorrent-kde4
      SUBDIR += ladvd
      SUBDIR += ldistfp
      SUBDIR += ldns
