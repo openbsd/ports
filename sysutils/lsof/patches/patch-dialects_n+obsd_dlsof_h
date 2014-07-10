@@ -1,8 +1,8 @@
-$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.6 2014/06/26 22:06:36 zhuk Exp $
+$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.7 2014/07/10 14:39:58 sthen Exp $
 1. Unbreak build.
 2. Add support for tmpfs.
---- dialects/n+obsd/dlsof.h.orig	Wed Mar 29 01:54:15 2006
-+++ dialects/n+obsd/dlsof.h	Fri Jun 27 01:11:41 2014
+--- dialects/n+obsd/dlsof.h.orig	Tue Mar 28 14:54:15 2006
++++ dialects/n+obsd/dlsof.h	Thu Jul 10 08:38:12 2014
 @@ -150,6 +150,7 @@ struct uio;	/* dummy for function prototype in <sys/bu
  struct nameidata;	/* to satisfy a function prototype in msdosfsmount.h */
  #include <msdosfs/msdosfsmount.h>
@@ -11,22 +11,27 @@ $OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.6 2014/06/26 22:06:36 zhuk Exp $
  #include <msdosfs/direntry.h>
  #include <msdosfs/denode.h>
  # endif	/* defined(HASMSDOSFS) */
-@@ -416,8 +417,7 @@ struct vop_advlock_args;
+@@ -416,8 +417,11 @@ struct vop_advlock_args;
  
  # if	defined(UVM)
  #  if	defined(OPENBSDV)
 -#define	_UVM_UVM_FAULT_I_H_	1		/* avoid OpenBSD's
 -						/* <uvm/uvm_fault_i.h */
++/* XXX until uvm gets cleaned up */
++#include <sys/mutex.h>
++typedef int boolean_t;
++
 +#define	_UVM_UVM_FAULT_I_H_	1	/* avoid OpenBSD's <uvm/uvm_fault_i.h> */
  #  endif	/* defined(OPENBSDV) */
  #define	FALSE	0
  #define	TRUE	1
-@@ -580,5 +580,9 @@ struct sfile {
+@@ -580,5 +584,10 @@ struct sfile {
  #define	NCACHE_NODEID	nc_vpid		/* node ID in NCACHE */
  #  endif	/* defined(HASNCVPID) */
  # endif  /* defined(HASNCACHE) */
 +
 +#define	_KERNEL
++#include <sys/namei.h>
 +#include <tmpfs/tmpfs.h>
 +#undef	_KERNEL
  
