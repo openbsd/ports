@@ -1,16 +1,12 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/01/27 14:56:43 kirby Exp $
---- CMakeLists.txt.orig	Sun Jun  3 19:56:20 2012
-+++ CMakeLists.txt	Mon Jul 16 01:25:51 2012
-@@ -281,12 +281,6 @@ else (AUTOMATED_BUILD_SYSTEM)
-  
-   add_dependencies(AboutFile Debug Release MinSizeRel RelWithDebInfo)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/07/10 08:27:49 kirby Exp $
+--- CMakeLists.txt.orig	Wed Jul  9 03:04:12 2014
++++ CMakeLists.txt	Wed Jul  9 03:04:34 2014
+@@ -348,7 +348,7 @@ install (FILES LICENSE.txt DESTINATION "${LICENCEDIR}"
+ install (FILES "${CMAKE_BINARY_DIR}/AboutThisBuild.txt" DESTINATION "${CREDITSDIR}")
+ install (FILES RELEASE_NOTES.txt DESTINATION "${CREDITSDIR}" OPTIONAL)
+ if (UNIX)
+-  install (FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man1")
++  install (FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
+ endif (UNIX)
  
--  if (HG_CMD STREQUAL HG_CMD-NOTFOUND)
--    message(FATAL_ERROR "hg command not found!")
--  else (HG_CMD STREQUAL HG_CMD-NOTFOUND)
--    message(STATUS "hg command found: ${HG_CMD}")
--  endif (HG_CMD STREQUAL HG_CMD-NOTFOUND)
--
- endif (AUTOMATED_BUILD_SYSTEM)
- 
- 
+ add_subdirectory (rtexif)

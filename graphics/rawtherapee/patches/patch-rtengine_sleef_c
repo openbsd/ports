@@ -1,0 +1,15 @@
+$OpenBSD: patch-rtengine_sleef_c,v 1.1 2014/07/10 08:27:49 kirby Exp $
+
+Unbreak build on 32-bit archs.
+
+--- rtengine/sleef.c.orig	Tue Jul  8 16:04:08 2014
++++ rtengine/sleef.c	Tue Jul  8 16:04:17 2014
+@@ -789,7 +789,7 @@ __inline double xsqrt(double d) { // max error : 0.5 u
+   }
+ 
+   // http://en.wikipedia.org/wiki/Fast_inverse_square_root
+-  double x = longBitsToDouble(0x5fe6ec85e7de30da - (doubleToRawLongBits(d + 1e-320) >> 1));
++  double x = longBitsToDouble(0x5fe6ec85e7de30daULL - (doubleToRawLongBits(d + 1e-320) >> 1));
+ 
+   x = x * (1.5 - 0.5 * d * x * x);
+   x = x * (1.5 - 0.5 * d * x * x);

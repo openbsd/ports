@@ -1,11 +1,11 @@
-$OpenBSD: patch-rtengine_CMakeLists_txt,v 1.1 2013/07/10 15:10:28 dcoppa Exp $
+$OpenBSD: patch-rtengine_CMakeLists_txt,v 1.2 2014/07/10 08:27:49 kirby Exp $
 
 Fix dependencies to please Ninja.
 
---- rtengine/CMakeLists.txt.orig	Wed Jul 10 16:42:43 2013
-+++ rtengine/CMakeLists.txt	Wed Jul 10 16:42:46 2013
-@@ -20,6 +20,8 @@ set (RTENGINESOURCEFILES safegtk.cc colortemp.cc curve
-     )
+--- rtengine/CMakeLists.txt.orig	Wed May 21 17:06:28 2014
++++ rtengine/CMakeLists.txt	Tue May 27 11:05:02 2014
+@@ -27,6 +27,8 @@ set (RTENGINESOURCEFILES safegtk.cc colortemp.cc curve
+ include_directories (BEFORE "${CMAKE_CURRENT_BINARY_DIR}")
  
  add_library (rtengine ${RTENGINESOURCEFILES})
 +add_dependencies (rtengine AboutFile)

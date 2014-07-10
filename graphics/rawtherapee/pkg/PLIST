@@ -1,38 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/08/20 22:05:56 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/10 08:27:49 kirby Exp $
 @bin bin/rawtherapee
+@man man/man1/rawtherapee.1
 share/applications/rawtherapee.desktop
 share/doc/rawtherapee/
 share/doc/rawtherapee/AUTHORS.txt
 share/doc/rawtherapee/AboutThisBuild.txt
 share/doc/rawtherapee/LICENSE.txt
 share/doc/rawtherapee/RELEASE_NOTES.txt
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/rawtherapee.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/rawtherapee.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/rawtherapee.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/rawtherapee.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/rawtherapee.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/rawtherapee.png
 share/rawtherapee/
+share/rawtherapee/camconst.json
 share/rawtherapee/dcpprofiles/
 share/rawtherapee/dcpprofiles/Canon EOS 20D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 400D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 40D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 450D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 550D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 5D Mark III.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 5D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS 7D.dcp
 share/rawtherapee/dcpprofiles/Canon EOS D60.dcp
@@ -42,6 +31,9 @@ share/rawtherapee/dcpprofiles/Canon EOS Rebel T2i.dcp
 share/rawtherapee/dcpprofiles/Canon EOS-1D Mark III.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot G10.dcp
 share/rawtherapee/dcpprofiles/Canon PowerShot G12.dcp
+share/rawtherapee/dcpprofiles/Canon PowerShot S110.dcp
+share/rawtherapee/dcpprofiles/Fujifilm FinePix S9500.dcp
+share/rawtherapee/dcpprofiles/Leaf Aptus 75.dcp
 share/rawtherapee/dcpprofiles/Nikon D200.dcp
 share/rawtherapee/dcpprofiles/Nikon D300.dcp
 share/rawtherapee/dcpprofiles/Nikon D3000.dcp
@@ -51,15 +43,24 @@ share/rawtherapee/dcpprofiles/Nikon D50.dcp
 share/rawtherapee/dcpprofiles/Nikon D5100.dcp
 share/rawtherapee/dcpprofiles/Nikon D700.dcp
 share/rawtherapee/dcpprofiles/Nikon D7000.dcp
+share/rawtherapee/dcpprofiles/Nikon D800.dcp
 share/rawtherapee/dcpprofiles/Olympus E-1.dcp
+share/rawtherapee/dcpprofiles/Olympus E-510.dcp
+share/rawtherapee/dcpprofiles/Olympus E-520.dcp
+share/rawtherapee/dcpprofiles/Olympus E-M5.dcp
 share/rawtherapee/dcpprofiles/Olympus E-P2.dcp
+share/rawtherapee/dcpprofiles/Olympus XZ-1.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ150.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ35.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-FZ38.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-G1.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-G3.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-G5.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-GH1.dcp
 share/rawtherapee/dcpprofiles/Panasonic DMC-GH2.dcp
+share/rawtherapee/dcpprofiles/Pentax K-5 II.dcp
+share/rawtherapee/dcpprofiles/Pentax K-5.dcp
+share/rawtherapee/dcpprofiles/Pentax K-r.dcp
 share/rawtherapee/dcpprofiles/Pentax K10D.dcp
 share/rawtherapee/dcpprofiles/Pentax K200D.dcp
 share/rawtherapee/dcpprofiles/Sony DSLR-A700.dcp
@@ -105,22 +106,39 @@ share/rawtherapee/iccprofiles/output/RT_sRGB.icm
 share/rawtherapee/iccprofiles/output/RT_sRGB_g10.icm
 share/rawtherapee/iccprofiles/output/RT_sRGB_gBT709.icm
 share/rawtherapee/images/
+share/rawtherapee/images/Chanmixer-B.png
 share/rawtherapee/images/Chanmixer-BB.png
 share/rawtherapee/images/Chanmixer-BG.png
 share/rawtherapee/images/Chanmixer-BR.png
+share/rawtherapee/images/Chanmixer-C.png
+share/rawtherapee/images/Chanmixer-G.png
 share/rawtherapee/images/Chanmixer-GB.png
 share/rawtherapee/images/Chanmixer-GG.png
 share/rawtherapee/images/Chanmixer-GR.png
+share/rawtherapee/images/Chanmixer-M.png
+share/rawtherapee/images/Chanmixer-O.png
+share/rawtherapee/images/Chanmixer-P.png
+share/rawtherapee/images/Chanmixer-R.png
 share/rawtherapee/images/Chanmixer-RB.png
 share/rawtherapee/images/Chanmixer-RG.png
 share/rawtherapee/images/Chanmixer-RR.png
+share/rawtherapee/images/Chanmixer-Y.png
 share/rawtherapee/images/Dark/
-share/rawtherapee/images/Dark/.gtk-undo-ltr-small.png
-share/rawtherapee/images/Dark/.gtk-undo-ltr.png
-share/rawtherapee/images/Dark/.gtk-undo-rtl-small.png
-share/rawtherapee/images/Dark/.gtk-undo-rtl.png
 share/rawtherapee/images/Dark/actions/
+share/rawtherapee/images/Dark/actions/Chanmixer-Bgamma.png
+share/rawtherapee/images/Dark/actions/Chanmixer-Ggamma.png
+share/rawtherapee/images/Dark/actions/Chanmixer-Rgamma.png
 share/rawtherapee/images/Dark/actions/PanelEnding.png
+share/rawtherapee/images/Dark/actions/ajd-ca-blue1.png
+share/rawtherapee/images/Dark/actions/ajd-ca-blue2.png
+share/rawtherapee/images/Dark/actions/ajd-ca-red1.png
+share/rawtherapee/images/Dark/actions/ajd-ca-red2.png
+share/rawtherapee/images/Dark/actions/ajd-wb-bluered1.png
+share/rawtherapee/images/Dark/actions/ajd-wb-bluered2.png
+share/rawtherapee/images/Dark/actions/ajd-wb-green1.png
+share/rawtherapee/images/Dark/actions/ajd-wb-green2.png
+share/rawtherapee/images/Dark/actions/ajd-wb-temp1.png
+share/rawtherapee/images/Dark/actions/ajd-wb-temp2.png
 share/rawtherapee/images/Dark/actions/beforeafter.png
 share/rawtherapee/images/Dark/actions/cglabel0.png
 share/rawtherapee/images/Dark/actions/cglabel1.png
@@ -149,6 +167,8 @@ share/rawtherapee/images/Dark/actions/curveType-spline.png
 share/rawtherapee/images/Dark/actions/detail.png
 share/rawtherapee/images/Dark/actions/distorsion.png
 share/rawtherapee/images/Dark/actions/distortion-auto.png
+share/rawtherapee/images/Dark/actions/distortion-barrel.png
+share/rawtherapee/images/Dark/actions/distortion-pincushion.png
 share/rawtherapee/images/Dark/actions/document-open-recent.png
 share/rawtherapee/images/Dark/actions/document-open.png
 share/rawtherapee/images/Dark/actions/edit-copy.png
@@ -159,6 +179,7 @@ share/rawtherapee/images/Dark/actions/edited.png
 share/rawtherapee/images/Dark/actions/editedg-small.png
 share/rawtherapee/images/Dark/actions/editednot-small.png
 share/rawtherapee/images/Dark/actions/editednotg-small.png
+share/rawtherapee/images/Dark/actions/editmodehand.png
 share/rawtherapee/images/Dark/actions/exposure.png
 share/rawtherapee/images/Dark/actions/filter.png
 share/rawtherapee/images/Dark/actions/filterclear.png
@@ -190,14 +211,21 @@ share/rawtherapee/images/Dark/actions/gtk-undo-rtl-small.png
 share/rawtherapee/images/Dark/actions/gtk-undo-rtl.png
 share/rawtherapee/images/Dark/actions/gtk-undoall-ltr.png
 share/rawtherapee/images/Dark/actions/gtk-undoall-rtl.png
+share/rawtherapee/images/Dark/actions/gtk-zoom-100-small.png
 share/rawtherapee/images/Dark/actions/gtk-zoom-100.png
 share/rawtherapee/images/Dark/actions/gtk-zoom-fit.png
+share/rawtherapee/images/Dark/actions/gtk-zoom-in-small.png
 share/rawtherapee/images/Dark/actions/gtk-zoom-in.png
+share/rawtherapee/images/Dark/actions/gtk-zoom-out-small.png
 share/rawtherapee/images/Dark/actions/gtk-zoom-out.png
 share/rawtherapee/images/Dark/actions/histBar.png
 share/rawtherapee/images/Dark/actions/histBarg.png
 share/rawtherapee/images/Dark/actions/histBlue.png
 share/rawtherapee/images/Dark/actions/histBlueg.png
+share/rawtherapee/images/Dark/actions/histChro.png
+share/rawtherapee/images/Dark/actions/histChrog.png
+share/rawtherapee/images/Dark/actions/histFull.png
+share/rawtherapee/images/Dark/actions/histFullg.png
 share/rawtherapee/images/Dark/actions/histGreen.png
 share/rawtherapee/images/Dark/actions/histGreeng.png
 share/rawtherapee/images/Dark/actions/histRaw.png
@@ -216,15 +244,28 @@ share/rawtherapee/images/Dark/actions/lock-off.png
 share/rawtherapee/images/Dark/actions/lock-on.png
 share/rawtherapee/images/Dark/actions/media-usb.png
 share/rawtherapee/images/Dark/actions/meta.png
+share/rawtherapee/images/Dark/actions/nav-next.png
+share/rawtherapee/images/Dark/actions/nav-prev.png
+share/rawtherapee/images/Dark/actions/nav-sync.png
 share/rawtherapee/images/Dark/actions/new-detail-window.png
 share/rawtherapee/images/Dark/actions/openhand.png
 share/rawtherapee/images/Dark/actions/panel-to-bottom.png
 share/rawtherapee/images/Dark/actions/panel-to-left.png
 share/rawtherapee/images/Dark/actions/panel-to-right.png
 share/rawtherapee/images/Dark/actions/panel-to-top.png
+share/rawtherapee/images/Dark/actions/perspective-h1.png
+share/rawtherapee/images/Dark/actions/perspective-h2.png
+share/rawtherapee/images/Dark/actions/perspective-v1.png
+share/rawtherapee/images/Dark/actions/perspective-v2.png
 share/rawtherapee/images/Dark/actions/popuparrow.png
 share/rawtherapee/images/Dark/actions/previewmodeB-off.png
 share/rawtherapee/images/Dark/actions/previewmodeB-on.png
+share/rawtherapee/images/Dark/actions/previewmodeBC0-off.png
+share/rawtherapee/images/Dark/actions/previewmodeBC0-on.png
+share/rawtherapee/images/Dark/actions/previewmodeBC1-off.png
+share/rawtherapee/images/Dark/actions/previewmodeBC1-on.png
+share/rawtherapee/images/Dark/actions/previewmodeBC2-off.png
+share/rawtherapee/images/Dark/actions/previewmodeBC2-on.png
 share/rawtherapee/images/Dark/actions/previewmodeF-off.png
 share/rawtherapee/images/Dark/actions/previewmodeF-on.png
 share/rawtherapee/images/Dark/actions/previewmodeG-off.png
@@ -237,12 +278,22 @@ share/rawtherapee/images/Dark/actions/processing-pause.png
 share/rawtherapee/images/Dark/actions/processing-play.png
 share/rawtherapee/images/Dark/actions/processing-thumbnail.png
 share/rawtherapee/images/Dark/actions/processing.png
+share/rawtherapee/images/Dark/actions/profile-filled.png
+share/rawtherapee/images/Dark/actions/profile-partial.png
 share/rawtherapee/images/Dark/actions/rated.png
 share/rawtherapee/images/Dark/actions/ratednot.png
 share/rawtherapee/images/Dark/actions/ratednotg.png
 share/rawtherapee/images/Dark/actions/raw.png
 share/rawtherapee/images/Dark/actions/refresh-red.png
 share/rawtherapee/images/Dark/actions/refresh-white.png
+share/rawtherapee/images/Dark/actions/rotate-left-1.png
+share/rawtherapee/images/Dark/actions/rotate-left-2.png
+share/rawtherapee/images/Dark/actions/rotate-left-3.png
+share/rawtherapee/images/Dark/actions/rotate-left.png
+share/rawtherapee/images/Dark/actions/rotate-right-1.png
+share/rawtherapee/images/Dark/actions/rotate-right-2.png
+share/rawtherapee/images/Dark/actions/rotate-right-3.png
+share/rawtherapee/images/Dark/actions/rotate-right.png
 share/rawtherapee/images/Dark/actions/rtwindow.png
 share/rawtherapee/images/Dark/actions/stock-flip-horizontal.png
 share/rawtherapee/images/Dark/actions/stock-flip-vertical.png
@@ -274,6 +325,8 @@ share/rawtherapee/images/Dark/actions/wb-led.png
 share/rawtherapee/images/Dark/actions/wb-shade.png
 share/rawtherapee/images/Dark/actions/wb-sun.png
 share/rawtherapee/images/Dark/actions/wb-tungsten.png
+share/rawtherapee/images/Dark/actions/wb-water.png
+share/rawtherapee/images/Dark/actions/zoom-100-identifier.png
 share/rawtherapee/images/Dark/devices/
 share/rawtherapee/images/Dark/devices/computer.png
 share/rawtherapee/images/Dark/devices/drive-harddisk.png
@@ -293,12 +346,21 @@ share/rawtherapee/images/Dark/places/gtk-directory.png
 share/rawtherapee/images/Dark/places/user-desktop.png
 share/rawtherapee/images/Dark/places/user-home.png
 share/rawtherapee/images/Light/
-share/rawtherapee/images/Light/.gtk-undo-ltr-small.png
-share/rawtherapee/images/Light/.gtk-undo-ltr.png
-share/rawtherapee/images/Light/.gtk-undo-rtl-small.png
-share/rawtherapee/images/Light/.gtk-undo-rtl.png
 share/rawtherapee/images/Light/actions/
+share/rawtherapee/images/Light/actions/Chanmixer-Bgamma.png
+share/rawtherapee/images/Light/actions/Chanmixer-Ggamma.png
+share/rawtherapee/images/Light/actions/Chanmixer-Rgamma.png
 share/rawtherapee/images/Light/actions/PanelEnding.png
+share/rawtherapee/images/Light/actions/ajd-ca-blue1.png
+share/rawtherapee/images/Light/actions/ajd-ca-blue2.png
+share/rawtherapee/images/Light/actions/ajd-ca-red1.png
+share/rawtherapee/images/Light/actions/ajd-ca-red2.png
+share/rawtherapee/images/Light/actions/ajd-wb-bluered1.png
+share/rawtherapee/images/Light/actions/ajd-wb-bluered2.png
+share/rawtherapee/images/Light/actions/ajd-wb-green1.png
+share/rawtherapee/images/Light/actions/ajd-wb-green2.png
+share/rawtherapee/images/Light/actions/ajd-wb-temp1.png
+share/rawtherapee/images/Light/actions/ajd-wb-temp2.png
 share/rawtherapee/images/Light/actions/beforeafter.png
 share/rawtherapee/images/Light/actions/cglabel0.png
 share/rawtherapee/images/Light/actions/cglabel1.png
@@ -327,6 +389,8 @@ share/rawtherapee/images/Light/actions/curveType-spline.png
 share/rawtherapee/images/Light/actions/detail.png
 share/rawtherapee/images/Light/actions/distorsion.png
 share/rawtherapee/images/Light/actions/distortion-auto.png
+share/rawtherapee/images/Light/actions/distortion-barrel.png
+share/rawtherapee/images/Light/actions/distortion-pincushion.png
 share/rawtherapee/images/Light/actions/document-open-recent.png
 share/rawtherapee/images/Light/actions/document-open.png
 share/rawtherapee/images/Light/actions/edit-copy.png
@@ -337,6 +401,7 @@ share/rawtherapee/images/Light/actions/edited.png
 share/rawtherapee/images/Light/actions/editedg-small.png
 share/rawtherapee/images/Light/actions/editednot-small.png
 share/rawtherapee/images/Light/actions/editednotg-small.png
+share/rawtherapee/images/Light/actions/editmodehand.png
 share/rawtherapee/images/Light/actions/exposure.png
 share/rawtherapee/images/Light/actions/filter.png
 share/rawtherapee/images/Light/actions/filterclear.png
@@ -368,14 +433,21 @@ share/rawtherapee/images/Light/actions/gtk-undo-rtl-small.png
 share/rawtherapee/images/Light/actions/gtk-undo-rtl.png
 share/rawtherapee/images/Light/actions/gtk-undoall-ltr.png
 share/rawtherapee/images/Light/actions/gtk-undoall-rtl.png
+share/rawtherapee/images/Light/actions/gtk-zoom-100-small.png
 share/rawtherapee/images/Light/actions/gtk-zoom-100.png
 share/rawtherapee/images/Light/actions/gtk-zoom-fit.png
+share/rawtherapee/images/Light/actions/gtk-zoom-in-small.png
 share/rawtherapee/images/Light/actions/gtk-zoom-in.png
+share/rawtherapee/images/Light/actions/gtk-zoom-out-small.png
 share/rawtherapee/images/Light/actions/gtk-zoom-out.png
 share/rawtherapee/images/Light/actions/histBar.png
 share/rawtherapee/images/Light/actions/histBarg.png
 share/rawtherapee/images/Light/actions/histBlue.png
 share/rawtherapee/images/Light/actions/histBlueg.png
+share/rawtherapee/images/Light/actions/histChro.png
+share/rawtherapee/images/Light/actions/histChrog.png
+share/rawtherapee/images/Light/actions/histFull.png
+share/rawtherapee/images/Light/actions/histFullg.png
 share/rawtherapee/images/Light/actions/histGreen.png
 share/rawtherapee/images/Light/actions/histGreeng.png
 share/rawtherapee/images/Light/actions/histRaw.png
@@ -394,15 +466,28 @@ share/rawtherapee/images/Light/actions/lock-off.png
 share/rawtherapee/images/Light/actions/lock-on.png
 share/rawtherapee/images/Light/actions/media-usb.png
 share/rawtherapee/images/Light/actions/meta.png
+share/rawtherapee/images/Light/actions/nav-next.png
+share/rawtherapee/images/Light/actions/nav-prev.png
+share/rawtherapee/images/Light/actions/nav-sync.png
 share/rawtherapee/images/Light/actions/new-detail-window.png
 share/rawtherapee/images/Light/actions/openhand.png
 share/rawtherapee/images/Light/actions/panel-to-bottom.png
 share/rawtherapee/images/Light/actions/panel-to-left.png
 share/rawtherapee/images/Light/actions/panel-to-right.png
 share/rawtherapee/images/Light/actions/panel-to-top.png
+share/rawtherapee/images/Light/actions/perspective-h1.png
+share/rawtherapee/images/Light/actions/perspective-h2.png
+share/rawtherapee/images/Light/actions/perspective-v1.png
+share/rawtherapee/images/Light/actions/perspective-v2.png
 share/rawtherapee/images/Light/actions/popuparrow.png
 share/rawtherapee/images/Light/actions/previewmodeB-off.png
 share/rawtherapee/images/Light/actions/previewmodeB-on.png
+share/rawtherapee/images/Light/actions/previewmodeBC0-off.png
+share/rawtherapee/images/Light/actions/previewmodeBC0-on.png
+share/rawtherapee/images/Light/actions/previewmodeBC1-off.png
+share/rawtherapee/images/Light/actions/previewmodeBC1-on.png
+share/rawtherapee/images/Light/actions/previewmodeBC2-off.png
+share/rawtherapee/images/Light/actions/previewmodeBC2-on.png
 share/rawtherapee/images/Light/actions/previewmodeF-off.png
 share/rawtherapee/images/Light/actions/previewmodeF-on.png
 share/rawtherapee/images/Light/actions/previewmodeG-off.png
@@ -415,12 +500,22 @@ share/rawtherapee/images/Light/actions/processing-pause.png
 share/rawtherapee/images/Light/actions/processing-play.png
 share/rawtherapee/images/Light/actions/processing-thumbnail.png
 share/rawtherapee/images/Light/actions/processing.png
+share/rawtherapee/images/Light/actions/profile-filled.png
+share/rawtherapee/images/Light/actions/profile-partial.png
 share/rawtherapee/images/Light/actions/rated.png
 share/rawtherapee/images/Light/actions/ratednot.png
 share/rawtherapee/images/Light/actions/ratednotg.png
 share/rawtherapee/images/Light/actions/raw.png
 share/rawtherapee/images/Light/actions/refresh-red.png
 share/rawtherapee/images/Light/actions/refresh-white.png
+share/rawtherapee/images/Light/actions/rotate-left-1.png
+share/rawtherapee/images/Light/actions/rotate-left-2.png
+share/rawtherapee/images/Light/actions/rotate-left-3.png
+share/rawtherapee/images/Light/actions/rotate-left.png
+share/rawtherapee/images/Light/actions/rotate-right-1.png
+share/rawtherapee/images/Light/actions/rotate-right-2.png
+share/rawtherapee/images/Light/actions/rotate-right-3.png
+share/rawtherapee/images/Light/actions/rotate-right.png
 share/rawtherapee/images/Light/actions/rtwindow.png
 share/rawtherapee/images/Light/actions/stock-flip-horizontal.png
 share/rawtherapee/images/Light/actions/stock-flip-vertical.png
@@ -452,6 +547,8 @@ share/rawtherapee/images/Light/actions/wb-led.png
 share/rawtherapee/images/Light/actions/wb-shade.png
 share/rawtherapee/images/Light/actions/wb-sun.png
 share/rawtherapee/images/Light/actions/wb-tungsten.png
+share/rawtherapee/images/Light/actions/wb-water.png
+share/rawtherapee/images/Light/actions/zoom-100-identifier.png
 share/rawtherapee/images/Light/devices/
 share/rawtherapee/images/Light/devices/computer.png
 share/rawtherapee/images/Light/devices/drive-harddisk.png
@@ -547,6 +644,10 @@ share/rawtherapee/images/lock-on.png
 share/rawtherapee/images/logoicon-wind.png
 share/rawtherapee/images/media-usb.png
 share/rawtherapee/images/meta.png
+share/rawtherapee/images/move-1D-h.png
+share/rawtherapee/images/move-1D-v.png
+share/rawtherapee/images/move-2D.png
+share/rawtherapee/images/move-rotate.png
 share/rawtherapee/images/network.png
 share/rawtherapee/images/nocolorlabel.png
 share/rawtherapee/images/notrated.png
@@ -598,13 +699,14 @@ share/rawtherapee/languages/Chinese (Traditional)
 share/rawtherapee/languages/Czech
 share/rawtherapee/languages/Dansk
 share/rawtherapee/languages/Deutsch
-share/rawtherapee/languages/English
+share/rawtherapee/languages/English (UK)
+share/rawtherapee/languages/English (US)
 share/rawtherapee/languages/Espanol
 share/rawtherapee/languages/Euskara
 share/rawtherapee/languages/Francais
 share/rawtherapee/languages/Greek
 share/rawtherapee/languages/Hebrew
-share/rawtherapee/languages/Italian
+share/rawtherapee/languages/Italiano
 share/rawtherapee/languages/Japanese
 share/rawtherapee/languages/LICENSE
 share/rawtherapee/languages/Latvian
@@ -625,19 +727,75 @@ share/rawtherapee/languages/Turkish
 share/rawtherapee/languages/default
 share/rawtherapee/options
 share/rawtherapee/profiles/
-share/rawtherapee/profiles/BW-1.pp3
-share/rawtherapee/profiles/BW-2.pp3
-share/rawtherapee/profiles/BW-3.pp3
-share/rawtherapee/profiles/BW-4.pp3
-share/rawtherapee/profiles/Default-ISO-High.pp3
-share/rawtherapee/profiles/Default-ISO-Medium.pp3
+share/rawtherapee/profiles/BW/
+share/rawtherapee/profiles/BW/BW 1.pp3
+share/rawtherapee/profiles/BW/BW 2.pp3
+share/rawtherapee/profiles/BW/BW 3.pp3
+share/rawtherapee/profiles/BW/BW 4.pp3
+share/rawtherapee/profiles/Default ISO High.pp3
+share/rawtherapee/profiles/Default ISO Medium.pp3
 share/rawtherapee/profiles/Default.pp3
-share/rawtherapee/profiles/Highkey-1.pp3
-share/rawtherapee/profiles/Natural-1.pp3
-share/rawtherapee/profiles/Natural-2.pp3
-share/rawtherapee/profiles/Neutral.pp3
-share/rawtherapee/profiles/Punchy-1.pp3
-share/rawtherapee/profiles/Punchy-2.pp3
+share/rawtherapee/profiles/Faded/
+share/rawtherapee/profiles/Faded/Faded Amber 1 TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Amber 1 TM.pp3
+share/rawtherapee/profiles/Faded/Faded Amber 1.pp3
+share/rawtherapee/profiles/Faded/Faded Blue 1 TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Blue 1 TM.pp3
+share/rawtherapee/profiles/Faded/Faded Blue 1.pp3
+share/rawtherapee/profiles/Faded/Faded Blue Pink TM.pp3
+share/rawtherapee/profiles/Faded/Faded Blue Pink.pp3
+share/rawtherapee/profiles/Faded/Faded Chocolate 1 TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Chocolate 2 TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Golden 1.pp3
+share/rawtherapee/profiles/Faded/Faded Golden 2.pp3
+share/rawtherapee/profiles/Faded/Faded Green 1 TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Green 1 TM.pp3
+share/rawtherapee/profiles/Faded/Faded Green 1.pp3
+share/rawtherapee/profiles/Faded/Faded Green 2.pp3
+share/rawtherapee/profiles/Faded/Faded Green 3.pp3
+share/rawtherapee/profiles/Faded/Faded Neutral TM.pp3
+share/rawtherapee/profiles/Faded/Faded Neutral.pp3
+share/rawtherapee/profiles/Faded/Faded Purple 1 TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Purple 1 TM.pp3
+share/rawtherapee/profiles/Faded/Faded Purple 1.pp3
+share/rawtherapee/profiles/Faded/Faded Purple 2 TM.pp3
+share/rawtherapee/profiles/Faded/Faded Purple 2.pp3
+share/rawtherapee/profiles/Faded/Faded Teal Orange TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Teal Orange TM.pp3
+share/rawtherapee/profiles/Faded/Faded Teal Orange.pp3
+share/rawtherapee/profiles/Faded/Faded Warm 1 TM Bright.pp3
+share/rawtherapee/profiles/Faded/Faded Warm 1 TM.pp3
+share/rawtherapee/profiles/Faded/Faded Warm 1.pp3
+share/rawtherapee/profiles/Faded/Faded Warm 2.pp3
+share/rawtherapee/profiles/Faded/Faded Warm 3.pp3
+share/rawtherapee/profiles/Generic/
+share/rawtherapee/profiles/Generic/Deep Shadows.pp3
+share/rawtherapee/profiles/Generic/Equilibrated.pp3
+share/rawtherapee/profiles/Generic/High-Key.pp3
+share/rawtherapee/profiles/Generic/Natural 1.pp3
+share/rawtherapee/profiles/Generic/Natural 2.pp3
+share/rawtherapee/profiles/Generic/Punchy 1.pp3
+share/rawtherapee/profiles/Generic/Punchy 2.pp3
+share/rawtherapee/profiles/Pop/
+share/rawtherapee/profiles/Pop/Pop 1.pp3
+share/rawtherapee/profiles/Pop/Pop 2 L.pp3
+share/rawtherapee/profiles/Pop/Pop 3 Skin.pp3
+share/rawtherapee/profiles/Pop/Pop 4 BW.pp3
+share/rawtherapee/profiles/Portrait/
+share/rawtherapee/profiles/Portrait/Portrait Lejto.pp3
+share/rawtherapee/profiles/Portrait/Portrait Smooth.pp3
+share/rawtherapee/profiles/Skintones/
+share/rawtherapee/profiles/Skintones/Skintones - Natural TM.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Natural.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Pale TM Bright.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Pale TM.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Pale.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Soft Texture.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Strong Texture.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Studio TM.pp3
+share/rawtherapee/profiles/Skintones/Skintones - Studio.pp3
+share/rawtherapee/profiles/Skintones/Skintones - StudioBase 1 TM.pp3
+share/rawtherapee/profiles/Skintones/Skintones - StudioBase 1.pp3
 share/rawtherapee/sounds/
 share/rawtherapee/sounds/BatchComplete.wav
 share/rawtherapee/sounds/Empty.wav
@@ -649,6 +807,12 @@ share/rawtherapee/themes/17-Gray-Red.gtkrc
 share/rawtherapee/themes/17-Gray-Red.iconset
 share/rawtherapee/themes/21-Gray-Gray.gtkrc
 share/rawtherapee/themes/21-Gray-Gray.iconset
+share/rawtherapee/themes/21-Gray-Orange.gtkrc
+share/rawtherapee/themes/21-Gray-Orange.iconset
+share/rawtherapee/themes/21-Gray-Purple.gtkrc
+share/rawtherapee/themes/21-Gray-Purple.iconset
+share/rawtherapee/themes/21-Gray-Red.gtkrc
+share/rawtherapee/themes/21-Gray-Red.iconset
 share/rawtherapee/themes/25-Gray-Gray.gtkrc
 share/rawtherapee/themes/25-Gray-Gray.iconset
 share/rawtherapee/themes/25-Gray-Purple.gtkrc
@@ -662,8 +826,7 @@ share/rawtherapee/themes/37-Gray-Red.iconset
 share/rawtherapee/themes/63-Gray-Cyan.gtkrc
 share/rawtherapee/themes/63-Gray-Cyan.iconset
 share/rawtherapee/themes/92-Beige-DarkCyan.gtkrc
-share/rawtherapee/themes/Default.gtkrc
-share/rawtherapee/themes/Default.iconset
+share/rawtherapee/themes/92-Beige-DarkCyan.iconset
 share/rawtherapee/themes/gray_textured/
 share/rawtherapee/themes/gray_textured/arrow-down-ins.png
 share/rawtherapee/themes/gray_textured/arrow-down-pre.png

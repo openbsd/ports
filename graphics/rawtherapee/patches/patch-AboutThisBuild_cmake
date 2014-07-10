@@ -1,13 +1,13 @@
-$OpenBSD: patch-AboutThisBuild_cmake,v 1.1.1.1 2013/01/27 14:56:43 kirby Exp $
---- AboutThisBuild.cmake.orig	Thu Jan 24 20:12:49 2013
-+++ AboutThisBuild.cmake	Thu Jan 24 20:13:13 2013
-@@ -8,8 +8,7 @@ elseif (APPLE)
-   find_file(HG_CMD hg)
-   set (SHELL "/bin/bash")
- else (WIN32) # Linux
--  find_file(HG_CMD hg)
--  set (SHELL "/bin/bash")
-+  set (SHELL "/bin/sh")
- endif (WIN32)
+$OpenBSD: patch-AboutThisBuild_cmake,v 1.2 2014/07/10 08:27:49 kirby Exp $
+--- AboutThisBuild.cmake.orig	Wed May 21 17:06:28 2014
++++ AboutThisBuild.cmake	Wed May 28 14:30:23 2014
+@@ -11,8 +11,7 @@ if (REL_INFO_FILE STREQUAL REL_INFO_FILE-NOTFOUND)
+     find_file(HG_CMD hg)
+     set (SHELL "/bin/bash")
+   else (WIN32) # Linux
+-    find_file(HG_CMD hg)
+-    set (SHELL "/bin/bash")
++    set (SHELL "/bin/sh")
+   endif (WIN32)
  
- # the hg command is looked for again, at build time
+   # Fail if Mercurial is not installed

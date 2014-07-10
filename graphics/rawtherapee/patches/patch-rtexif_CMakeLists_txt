@@ -1,0 +1,13 @@
+$OpenBSD: patch-rtexif_CMakeLists_txt,v 1.1 2014/07/10 08:27:49 kirby Exp $
+
+Fix dependencies to please Ninja.
+
+--- rtexif/CMakeLists.txt.orig	Tue Jul  8 19:39:13 2014
++++ rtexif/CMakeLists.txt	Tue Jul  8 19:40:06 2014
+@@ -1,5 +1,6 @@
+ add_library (rtexif rtexif.cc stdattribs.cc nikonattribs.cc canonattribs.cc
+     pentaxattribs.cc fujiattribs.cc sonyminoltaattribs.cc olympusattribs.cc kodakattribs.cc)
++add_dependencies (rtexif AboutFile)
+ 
+ IF (WIN32)
+     set_target_properties (rtexif PROPERTIES COMPILE_FLAGS " -ffast-math -fexpensive-optimizations")
