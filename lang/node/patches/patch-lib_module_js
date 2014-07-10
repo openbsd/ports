@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_module_js,v 1.2 2013/05/24 13:43:41 abieber Exp $
---- lib/module.js.orig	Sun May 19 10:45:34 2013
-+++ lib/module.js	Sun May 19 10:46:08 2013
+$OpenBSD: patch-lib_module_js,v 1.3 2014/07/10 19:53:30 landry Exp $
+--- lib/module.js.orig	Fri May  2 02:47:47 2014
++++ lib/module.js	Thu Jul 10 16:15:20 2014
 @@ -510,6 +510,8 @@ Module._initPaths = function() {
  
    var paths = [path.resolve(process.execPath, '..', '..', 'lib', 'node')];
