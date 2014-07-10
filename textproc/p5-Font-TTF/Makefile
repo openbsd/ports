@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2014/07/10 13:36:58 ajacoutot Exp $
 
 COMMENT=	perl module for TrueType font hacking
 
 MODULES=	cpan
-DISTNAME=	Font-TTF-0.48
+DISTNAME=	Font-TTF-1.04
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-pre-configure:
-	@rm ${WRKSRC}/lib/Font/TTF/*.orig
+TEST_DEPENDS=	devel/p5-IO-String
 
 .include <bsd.port.mk>

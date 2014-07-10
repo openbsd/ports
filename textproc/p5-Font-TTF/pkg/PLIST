@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/05/24 20:52:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/07/10 13:36:58 ajacoutot Exp $
 ${P5SITE}/Font/
 ${P5SITE}/Font/TTF/
 ${P5SITE}/Font/TTF.pm
@@ -6,7 +6,7 @@ ${P5SITE}/Font/TTF/AATKern.pm
 ${P5SITE}/Font/TTF/AATutils.pm
 ${P5SITE}/Font/TTF/Anchor.pm
 ${P5SITE}/Font/TTF/Bsln.pm
-${P5SITE}/Font/TTF/Changes
+${P5SITE}/Font/TTF/Changes_old.txt
 ${P5SITE}/Font/TTF/Cmap.pm
 ${P5SITE}/Font/TTF/Coverage.pm
 ${P5SITE}/Font/TTF/Cvt_.pm
@@ -17,12 +17,18 @@ ${P5SITE}/Font/TTF/EBDT.pm
 ${P5SITE}/Font/TTF/EBLC.pm
 ${P5SITE}/Font/TTF/Fdsc.pm
 ${P5SITE}/Font/TTF/Feat.pm
+${P5SITE}/Font/TTF/Features/
+${P5SITE}/Font/TTF/Features/Cvar.pm
+${P5SITE}/Font/TTF/Features/Size.pm
+${P5SITE}/Font/TTF/Features/Sset.pm
 ${P5SITE}/Font/TTF/Fmtx.pm
 ${P5SITE}/Font/TTF/Font.pm
 ${P5SITE}/Font/TTF/Fpgm.pm
 ${P5SITE}/Font/TTF/GDEF.pm
 ${P5SITE}/Font/TTF/GPOS.pm
 ${P5SITE}/Font/TTF/GSUB.pm
+${P5SITE}/Font/TTF/Glat.pm
+${P5SITE}/Font/TTF/Gloc.pm
 ${P5SITE}/Font/TTF/Glyf.pm
 ${P5SITE}/Font/TTF/Glyph.pm
 ${P5SITE}/Font/TTF/GrFeat.pm
@@ -61,6 +67,7 @@ ${P5SITE}/Font/TTF/Post.pm
 ${P5SITE}/Font/TTF/Prep.pm
 ${P5SITE}/Font/TTF/Prop.pm
 ${P5SITE}/Font/TTF/Segarr.pm
+${P5SITE}/Font/TTF/Silf.pm
 ${P5SITE}/Font/TTF/Sill.pm
 ${P5SITE}/Font/TTF/Table.pm
 ${P5SITE}/Font/TTF/Ttc.pm
@@ -70,6 +77,10 @@ ${P5SITE}/Font/TTF/Utils.pm
 ${P5SITE}/Font/TTF/Vhea.pm
 ${P5SITE}/Font/TTF/Vmtx.pm
 ${P5SITE}/Font/TTF/Win32.pm
+${P5SITE}/Font/TTF/Woff/
+${P5SITE}/Font/TTF/Woff.pm
+${P5SITE}/Font/TTF/Woff/MetaData.pm
+${P5SITE}/Font/TTF/Woff/PrivateData.pm
 ${P5SITE}/Font/TTF/XMLparse.pm
 ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF.3p
@@ -80,18 +91,24 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::Cmap.3p
 @man man/man3p/Font::TTF::Coverage.3p
 @man man/man3p/Font::TTF::Cvt_.3p
+@man man/man3p/Font::TTF::DSIG.3p
 @man man/man3p/Font::TTF::Delta.3p
 @man man/man3p/Font::TTF::Dumper.3p
 @man man/man3p/Font::TTF::EBDT.3p
 @man man/man3p/Font::TTF::EBLC.3p
 @man man/man3p/Font::TTF::Fdsc.3p
 @man man/man3p/Font::TTF::Feat.3p
+@man man/man3p/Font::TTF::Features::Cvar.3p
+@man man/man3p/Font::TTF::Features::Size.3p
+@man man/man3p/Font::TTF::Features::Sset.3p
 @man man/man3p/Font::TTF::Fmtx.3p
 @man man/man3p/Font::TTF::Font.3p
 @man man/man3p/Font::TTF::Fpgm.3p
 @man man/man3p/Font::TTF::GDEF.3p
 @man man/man3p/Font::TTF::GPOS.3p
 @man man/man3p/Font::TTF::GSUB.3p
+@man man/man3p/Font::TTF::Glat.3p
+@man man/man3p/Font::TTF::Gloc.3p
 @man man/man3p/Font::TTF::Glyf.3p
 @man man/man3p/Font::TTF::Glyph.3p
 @man man/man3p/Font::TTF::GrFeat.3p
@@ -128,11 +145,18 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::Prep.3p
 @man man/man3p/Font::TTF::Prop.3p
 @man man/man3p/Font::TTF::Segarr.3p
+@man man/man3p/Font::TTF::Silf.3p
 @man man/man3p/Font::TTF::Sill.3p
 @man man/man3p/Font::TTF::Table.3p
 @man man/man3p/Font::TTF::Ttc.3p
 @man man/man3p/Font::TTF::Ttopen.3p
+@man man/man3p/Font::TTF::Useall.3p
 @man man/man3p/Font::TTF::Utils.3p
 @man man/man3p/Font::TTF::Vhea.3p
 @man man/man3p/Font::TTF::Vmtx.3p
+@man man/man3p/Font::TTF::Win32.3p
+@man man/man3p/Font::TTF::Woff.3p
+@man man/man3p/Font::TTF::Woff::MetaData.3p
+@man man/man3p/Font::TTF::Woff::PrivateData.3p
 @man man/man3p/Font::TTF::XMLparse.3p
+@man man/man3p/ttfmod.3p
