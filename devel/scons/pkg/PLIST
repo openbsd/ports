@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/07/05 20:09:59 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/07/10 05:04:46 bentley Exp $
 bin/scons
 bin/scons-${VERSION}
 bin/scons-time
@@ -121,6 +121,8 @@ lib/scons-${VERSION}/SCons/Tool/BitKeeper.py
 lib/scons-${VERSION}/SCons/Tool/BitKeeper.pyc
 lib/scons-${VERSION}/SCons/Tool/CVS.py
 lib/scons-${VERSION}/SCons/Tool/CVS.pyc
+lib/scons-${VERSION}/SCons/Tool/DCommon.py
+lib/scons-${VERSION}/SCons/Tool/DCommon.pyc
 lib/scons-${VERSION}/SCons/Tool/FortranCommon.py
 lib/scons-${VERSION}/SCons/Tool/FortranCommon.pyc
 lib/scons-${VERSION}/SCons/Tool/GettextCommon.py
@@ -176,10 +178,15 @@ lib/scons-${VERSION}/SCons/Tool/cc.py
 lib/scons-${VERSION}/SCons/Tool/cc.pyc
 lib/scons-${VERSION}/SCons/Tool/cvf.py
 lib/scons-${VERSION}/SCons/Tool/cvf.pyc
+lib/scons-${VERSION}/SCons/Tool/cyglink.py
+lib/scons-${VERSION}/SCons/Tool/cyglink.pyc
 lib/scons-${VERSION}/SCons/Tool/default.py
 lib/scons-${VERSION}/SCons/Tool/default.pyc
 lib/scons-${VERSION}/SCons/Tool/dmd.py
 lib/scons-${VERSION}/SCons/Tool/dmd.pyc
+lib/scons-${VERSION}/SCons/Tool/docbook/
+lib/scons-${VERSION}/SCons/Tool/docbook/__init__.py
+lib/scons-${VERSION}/SCons/Tool/docbook/__init__.pyc
 lib/scons-${VERSION}/SCons/Tool/dvi.py
 lib/scons-${VERSION}/SCons/Tool/dvi.pyc
 lib/scons-${VERSION}/SCons/Tool/dvipdf.py
@@ -206,6 +213,8 @@ lib/scons-${VERSION}/SCons/Tool/gas.py
 lib/scons-${VERSION}/SCons/Tool/gas.pyc
 lib/scons-${VERSION}/SCons/Tool/gcc.py
 lib/scons-${VERSION}/SCons/Tool/gcc.pyc
+lib/scons-${VERSION}/SCons/Tool/gdc.py
+lib/scons-${VERSION}/SCons/Tool/gdc.pyc
 lib/scons-${VERSION}/SCons/Tool/gettext.py
 lib/scons-${VERSION}/SCons/Tool/gettext.pyc
 lib/scons-${VERSION}/SCons/Tool/gfortran.py
@@ -246,6 +255,8 @@ lib/scons-${VERSION}/SCons/Tool/javah.py
 lib/scons-${VERSION}/SCons/Tool/javah.pyc
 lib/scons-${VERSION}/SCons/Tool/latex.py
 lib/scons-${VERSION}/SCons/Tool/latex.pyc
+lib/scons-${VERSION}/SCons/Tool/ldc.py
+lib/scons-${VERSION}/SCons/Tool/ldc.pyc
 lib/scons-${VERSION}/SCons/Tool/lex.py
 lib/scons-${VERSION}/SCons/Tool/lex.pyc
 lib/scons-${VERSION}/SCons/Tool/link.py
