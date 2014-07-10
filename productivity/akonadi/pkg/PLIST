@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/30 18:51:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/10 14:05:00 zhuk Exp $
 @pkgpath x11/kde4/akonadi
 @bin bin/akonadi_agent_launcher
 @bin bin/akonadi_agent_server
@@ -9,6 +9,7 @@
 @bin bin/asapcat
 include/kde4/
 include/kde4/akonadi/
+include/kde4/akonadi/abstractsearchplugin.h
 include/kde4/akonadi/private/
 include/kde4/akonadi/private/akonadiprotocolinternals_export.h
 include/kde4/akonadi/private/capabilities_p.h
@@ -16,6 +17,7 @@ include/kde4/akonadi/private/imapparser_p.h
 include/kde4/akonadi/private/imapset_p.h
 include/kde4/akonadi/private/notificationmessage_p.h
 include/kde4/akonadi/private/notificationmessagev2_p.h
+include/kde4/akonadi/private/notificationmessagev3_p.h
 include/kde4/akonadi/private/protocol_p.h
 include/kde4/akonadi/private/xdgbasedirs_p.h
 lib/cmake/
@@ -32,6 +34,7 @@ share/config/akonadi/
 share/config/akonadi/mysql-global-mobile.conf
 share/config/akonadi/mysql-global.conf
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Search.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml

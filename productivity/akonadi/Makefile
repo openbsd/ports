@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/10 08:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/07/10 14:05:00 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
-DISTNAME =	akonadi-1.11.0
+DISTNAME =	akonadi-1.12.1
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
-REVISION =	1
 
-SHARED_LIBS = 	akonadiprotocolinternals 2.0	# 1.0
+SHARED_LIBS = 	akonadiprotocolinternals 3.0	# 1.0
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/akonadi/src/}
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
 WANTLIB += boost_program_options-mt sqlite3 soprano
