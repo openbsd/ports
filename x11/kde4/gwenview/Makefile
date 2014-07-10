@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/10 09:10:13 zhuk Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	gwenviewlib               51.0 # 4.7
 
@@ -34,5 +35,13 @@ LIB_DEPENDS = 	databases/soprano>=${MIN_SOPRANO_VERSION} \
 		${MODKDE4_DEP_DIR}/libkdcraw>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/libkipi>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/baloo>=${MODKDE4_DEP_VERSION}
+
+.include <bsd.port.arch.mk>
+
+.if ${ARCH} == "i386"
+CONFIGURE_ENV =                CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
+.else
+CONFIGURE_ENV =                CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=1"
+.endif
 
 .include <bsd.port.mk>
