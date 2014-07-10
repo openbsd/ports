@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.80 2013/11/15 15:37:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2014/07/10 07:40:35 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
-DISTNAME=		xscreensaver-5.23
+DISTNAME=		xscreensaver-5.29
 
 CATEGORIES=		x11
 
@@ -45,28 +45,21 @@ CONFIGURE_ARGS=		--with-hackdir="${PREFIX}/libexec/xscreensaver" \
 			--with-x-app-defaults="${PREFIX}/lib/X11/app-defaults" \
 			--without-pam
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
-# Create desktop files from xscreensaver xml files for use by
-# freedesktop compliant screensavers.
-post-extract:
-	cp ${FILESDIR}/migrate-xscreensaver-config.sh ${WRKSRC}/hacks/config
-	cp ${FILESDIR}/xscreensaver-config.xsl ${WRKSRC}/hacks/config
+FAKE_FLAGS=		install_prefix=${WRKINST}
 
 pre-configure:
 	perl -pi -e 's,gnome-open,xdg-open,g' ${WRKSRC}/configure
 
 post-install:
-# remove conflict on games/circuit, misc/deco
-	for i in circuit deco ; do \
-		mv ${PREFIX}/man/man6/$${i}.6 ${PREFIX}/man/man6/x$${i}.6 ; \
-		mv ${PREFIX}/libexec/xscreensaver/$${i} \
-			${PREFIX}/libexec/xscreensaver/x$${i} && \
-		mv ${PREFIX}/share/xscreensaver/config/$${i}.xml \
-			${PREFIX}/share/xscreensaver/config/x$${i}.xml && \
-		mv ${WRKSRC}/hacks/config/$${i}.xml \
-			${WRKSRC}/hacks/config/x$${i}.xml ; done
+# remove conflict on misc/deco
+	mv ${PREFIX}/man/man6/deco.6 ${PREFIX}/man/man6/xscrensaver-deco.6
+
+# create dot.desktop files from xscreensaver xml files for use
+# by freedesktop compliant screensavers
+	cp ${FILESDIR}/migrate-xscreensaver-config.sh ${WRKSRC}/hacks/config
+	cp ${FILESDIR}/xscreensaver-config.xsl ${WRKSRC}/hacks/config
 	cd ${WRKSRC}/hacks/config && \
 		for i in ${WRKSRC}/hacks/config/*.xml; do \
 			/bin/sh migrate-xscreensaver-config.sh $${i} ; done

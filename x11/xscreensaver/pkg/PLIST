@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2013/11/15 15:37:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.33 2014/07/10 07:40:36 ajacoutot Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -47,6 +47,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/carousel
 @bin libexec/xscreensaver/ccurve
 @bin libexec/xscreensaver/celtic
+@bin libexec/xscreensaver/circuit
 @bin libexec/xscreensaver/cloudlife
 @bin libexec/xscreensaver/companioncube
 @bin libexec/xscreensaver/compass
@@ -61,6 +62,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/cynosure
 @bin libexec/xscreensaver/dangerball
 @bin libexec/xscreensaver/decayscreen
+@bin libexec/xscreensaver/deco
 @bin libexec/xscreensaver/deluxe
 @bin libexec/xscreensaver/demon
 @bin libexec/xscreensaver/discrete
@@ -162,6 +164,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/polytopes
 @bin libexec/xscreensaver/pong
 @bin libexec/xscreensaver/popsquares
+@bin libexec/xscreensaver/projectiveplane
 @bin libexec/xscreensaver/providence
 @bin libexec/xscreensaver/pulsar
 @bin libexec/xscreensaver/pyro
@@ -198,6 +201,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/surfaces
 @bin libexec/xscreensaver/swirl
 @bin libexec/xscreensaver/tangram
+@bin libexec/xscreensaver/tessellimage
 @bin libexec/xscreensaver/thornbird
 @bin libexec/xscreensaver/timetunnel
 @bin libexec/xscreensaver/topblock
@@ -215,8 +219,6 @@ libexec/xscreensaver/webcollage
 @bin libexec/xscreensaver/whirlwindwarp
 @bin libexec/xscreensaver/wormhole
 @bin libexec/xscreensaver/xanalogtv
-@bin libexec/xscreensaver/xcircuit
-@bin libexec/xscreensaver/xdeco
 @bin libexec/xscreensaver/xflame
 @bin libexec/xscreensaver/xjack
 @bin libexec/xscreensaver/xlyap
@@ -260,6 +262,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/carousel.6
 @man man/man6/ccurve.6
 @man man/man6/celtic.6
+@man man/man6/circuit.6
 @man man/man6/cloudlife.6
 @man man/man6/companioncube.6
 @man man/man6/compass.6
@@ -373,6 +376,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/polyominoes.6
 @man man/man6/polytopes.6
 @man man/man6/pong.6
+@man man/man6/projectiveplane.6
 @man man/man6/providence.6
 @man man/man6/pulsar.6
 @man man/man6/pyro.6
@@ -409,6 +413,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/surfaces.6
 @man man/man6/swirl.6
 @man man/man6/tangram.6
+@man man/man6/tessellimage.6
 @man man/man6/thornbird.6
 @man man/man6/timetunnel.6
 @man man/man6/topblock.6
@@ -425,14 +430,13 @@ libexec/xscreensaver/webcollage
 @man man/man6/whirlwindwarp.6
 @man man/man6/wormhole.6
 @man man/man6/xanalogtv.6
-@man man/man6/xcircuit.6
-@man man/man6/xdeco.6
 @man man/man6/xflame.6
 @man man/man6/xjack.6
 @man man/man6/xlyap.6
 @man man/man6/xmatrix.6
 @man man/man6/xrayswarm.6
 @man man/man6/xscreensaver-gl-helper.6
+@man man/man6/xscrensaver-deco.6
 @man man/man6/xspirograph.6
 @man man/man6/zoom.6
 share/applications/screensavers/
@@ -467,6 +471,7 @@ share/applications/screensavers/cage.desktop
 share/applications/screensavers/carousel.desktop
 share/applications/screensavers/ccurve.desktop
 share/applications/screensavers/celtic.desktop
+share/applications/screensavers/circuit.desktop
 share/applications/screensavers/cloudlife.desktop
 share/applications/screensavers/companioncube.desktop
 share/applications/screensavers/compass.desktop
@@ -482,6 +487,7 @@ share/applications/screensavers/cwaves.desktop
 share/applications/screensavers/cynosure.desktop
 share/applications/screensavers/dangerball.desktop
 share/applications/screensavers/decayscreen.desktop
+share/applications/screensavers/deco.desktop
 share/applications/screensavers/deluxe.desktop
 share/applications/screensavers/demon.desktop
 share/applications/screensavers/discrete.desktop
@@ -595,6 +601,7 @@ share/applications/screensavers/polyominoes.desktop
 share/applications/screensavers/polytopes.desktop
 share/applications/screensavers/pong.desktop
 share/applications/screensavers/popsquares.desktop
+share/applications/screensavers/projectiveplane.desktop
 share/applications/screensavers/providence.desktop
 share/applications/screensavers/pulsar.desktop
 share/applications/screensavers/pyro.desktop
@@ -636,6 +643,7 @@ share/applications/screensavers/surfaces.desktop
 share/applications/screensavers/swirl.desktop
 share/applications/screensavers/t3d.desktop
 share/applications/screensavers/tangram.desktop
+share/applications/screensavers/tessellimage.desktop
 share/applications/screensavers/thornbird.desktop
 share/applications/screensavers/timetunnel.desktop
 share/applications/screensavers/topblock.desktop
@@ -655,8 +663,6 @@ share/applications/screensavers/whirlygig.desktop
 share/applications/screensavers/worm.desktop
 share/applications/screensavers/wormhole.desktop
 share/applications/screensavers/xanalogtv.desktop
-share/applications/screensavers/xcircuit.desktop
-share/applications/screensavers/xdeco.desktop
 share/applications/screensavers/xflame.desktop
 share/applications/screensavers/xjack.desktop
 share/applications/screensavers/xlyap.desktop
@@ -724,6 +730,7 @@ share/xscreensaver/config/cage.xml
 share/xscreensaver/config/carousel.xml
 share/xscreensaver/config/ccurve.xml
 share/xscreensaver/config/celtic.xml
+share/xscreensaver/config/circuit.xml
 share/xscreensaver/config/cloudlife.xml
 share/xscreensaver/config/companioncube.xml
 share/xscreensaver/config/compass.xml
@@ -738,6 +745,7 @@ share/xscreensaver/config/cwaves.xml
 share/xscreensaver/config/cynosure.xml
 share/xscreensaver/config/dangerball.xml
 share/xscreensaver/config/decayscreen.xml
+share/xscreensaver/config/deco.xml
 share/xscreensaver/config/deluxe.xml
 share/xscreensaver/config/demon.xml
 share/xscreensaver/config/discrete.xml
@@ -838,6 +846,7 @@ share/xscreensaver/config/polyominoes.xml
 share/xscreensaver/config/polytopes.xml
 share/xscreensaver/config/pong.xml
 share/xscreensaver/config/popsquares.xml
+share/xscreensaver/config/projectiveplane.xml
 share/xscreensaver/config/providence.xml
 share/xscreensaver/config/pulsar.xml
 share/xscreensaver/config/pyro.xml
@@ -874,6 +883,7 @@ share/xscreensaver/config/superquadrics.xml
 share/xscreensaver/config/surfaces.xml
 share/xscreensaver/config/swirl.xml
 share/xscreensaver/config/tangram.xml
+share/xscreensaver/config/tessellimage.xml
 share/xscreensaver/config/thornbird.xml
 share/xscreensaver/config/timetunnel.xml
 share/xscreensaver/config/topblock.xml
@@ -890,8 +900,6 @@ share/xscreensaver/config/webcollage.xml
 share/xscreensaver/config/whirlwindwarp.xml
 share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
-share/xscreensaver/config/xcircuit.xml
-share/xscreensaver/config/xdeco.xml
 share/xscreensaver/config/xflame.xml
 share/xscreensaver/config/xjack.xml
 share/xscreensaver/config/xlyap.xml

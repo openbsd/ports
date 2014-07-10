@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: migrate-xscreensaver-config.sh,v 1.1 2008/11/29 11:29:07 ajacoutot Exp $
+# $OpenBSD: migrate-xscreensaver-config.sh,v 1.2 2014/07/10 07:40:36 ajacoutot Exp $
 #
 # script originally from gnome-screensavers sources
 
@@ -35,4 +35,4 @@ for FILE in $FILES; do
     ${CMD} -o ${outfile} ${XSL} ${FILE}
 done
 
- exit 0
+exit 0
