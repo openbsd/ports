@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/05/12 01:34:55 abieber Exp $
+# $OpenBSD: Makefile,v 1.30 2014/07/10 19:54:57 landry Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	V8 JavaScript for clients and servers
 
 NODE_VERSION=	v0.10.28
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}

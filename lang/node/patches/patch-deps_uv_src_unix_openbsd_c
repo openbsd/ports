@@ -1,0 +1,47 @@
+$OpenBSD: patch-deps_uv_src_unix_openbsd_c,v 1.1 2014/07/10 19:54:57 landry Exp $
+--- deps/uv/src/unix/openbsd.c.orig	Fri May  2 02:47:47 2014
++++ deps/uv/src/unix/openbsd.c	Thu Jul 10 21:11:18 2014
+@@ -174,29 +174,26 @@ uv_err_t uv_get_process_title(char* buffer, size_t siz
+ 
+ 
+ uv_err_t uv_resident_set_memory(size_t* rss) {
+-  kvm_t *kd = NULL;
++
+   struct kinfo_proc *kinfo = NULL;
+-  pid_t pid;
+-  int nprocs, max_size = sizeof(struct kinfo_proc);
+   size_t page_size = getpagesize();
++  size_t size = sizeof(struct kinfo_proc);
+ 
+-  pid = getpid();
++  int mib[6];
+ 
+-  kd = kvm_open(NULL, _PATH_MEM, NULL, O_RDONLY, "kvm_open");
+-  if (kd == NULL) goto error;
+-
+-  kinfo = kvm_getprocs(kd, KERN_PROC_PID, pid, max_size, &nprocs);
+-  if (kinfo == NULL) goto error;
+-
++  mib[0] = CTL_KERN;
++  mib[1] = KERN_PROC;
++  mib[2] = KERN_PROC_PID;
++  mib[3] = getpid();
++  mib[4] = sizeof(struct kinfo_proc);
++  mib[5] = 1;
++  kinfo = malloc(size);
++  if (sysctl(mib, 6, kinfo, &size, NULL, 0) < 0) {
++    return uv__new_sys_error(errno);
++  }
+   *rss = kinfo->p_vm_rssize * page_size;
+-
+-  kvm_close(kd);
+-
++  free(kinfo);
+   return uv_ok_;
+-
+-error:
+-  if (kd) kvm_close(kd);
+-  return uv__new_sys_error(errno);
+ }
+ 
+ 
