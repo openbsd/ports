@@ -1,0 +1,41 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/07/10 13:09:53 bentley Exp $
+Don't build with -O3 -ggdb3 -msse2 -nopie.
+--- configure.orig	Fri Mar 14 02:08:18 2014
++++ configure	Fri Mar 14 02:11:12 2014
+@@ -5583,9 +5583,9 @@ $as_echo "${sxe_check_flag}" >&6; }
+ 	debugflags=""
+ 	## gdb
+ 	if test "$sxe_cv_c_flag__ggdb3" = "yes"; then
+-		debugflags="$debugflags -ggdb3"
++		:
+ 	elif test "$sxe_cv_c_flag__ggdb" = "yes"; then
+-		debugflags="$debugflags -ggdb"
++		:
+ 	fi
+ 	## stabs
+ 	if test "$sxe_cv_c_flag__gstabs3" = "yes"; then
+@@ -7649,8 +7649,6 @@ $as_echo_n "checking for preferred warning flags... " 
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: ${warnflags}" >&5
+ $as_echo "${warnflags}" >&6; }
+ 
+-		optiflags="-O3"
+-
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -ipo256" >&5
+ $as_echo_n "checking whether C compiler accepts -ipo256... " >&6; }
+ 
+@@ -7801,7 +7799,6 @@ fi
+ $as_echo "${sxe_check_flag}" >&6; }
+ 	if test "${sxe_check_flag}" = "yes"; then
+ 		:
+-		featflags="$featflags -nopie"
+ 	else
+ 		:
+ 
+@@ -7851,7 +7848,6 @@ $as_echo "${sxe_check_flag}" >&6; }
+ 	if test "${sxe_check_flag}" = "yes"; then
+ 		:
+ 				## sse2 is the cure
+-		featflags="$featflags -msse2"
+ 	else
+ 		:
+ 				## oh bugger

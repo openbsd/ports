@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/10 13:09:53 bentley Exp $
+@bin bin/dadd
+@bin bin/dconv
+@bin bin/ddiff
+@bin bin/dgrep
+@bin bin/dround
+@bin bin/dseq
+@bin bin/dtest
+@bin bin/strptime
+include/dateutils/
+include/dateutils/boops.h
+include/dateutils/date-core-strpf.h
+include/dateutils/date-core.h
+include/dateutils/dt-core-strpf.h
+include/dateutils/dt-core-tz-glue.h
+include/dateutils/dt-core.h
+include/dateutils/generics.h
+include/dateutils/leaps.h
+include/dateutils/leapseconds.def
+include/dateutils/nifty.h
+include/dateutils/strops.h
+include/dateutils/time-core-strpf.h
+include/dateutils/time-core.h
+include/dateutils/token.h
+include/dateutils/tzraw.h
+@info info/dateutils.info
+lib/libdut.a
+lib/pkgconfig/
+lib/pkgconfig/libdut.pc
+@man man/man1/dadd.1
+@man man/man1/dateutils.1
+@man man/man1/dconv.1
+@man man/man1/ddiff.1
+@man man/man1/dgrep.1
+@man man/man1/dround.1
+@man man/man1/dseq.1
+@man man/man1/dtest.1
+@man man/man1/strptime.1
+share/doc/dateutils/
+share/doc/dateutils/README.md
