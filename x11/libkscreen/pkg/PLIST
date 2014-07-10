@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/10 09:00:47 zhuk Exp $
+include/kde4/kscreen/
+include/kde4/kscreen/config.h
+include/kde4/kscreen/configmonitor.h
+include/kde4/kscreen/edid.h
+include/kde4/kscreen/kscreen_export.h
+include/kde4/kscreen/mode.h
+include/kde4/kscreen/output.h
+include/kde4/kscreen/screen.h
+lib/cmake/LibKScreen/
+lib/cmake/LibKScreen/LibKScreenConfig.cmake
+lib/cmake/LibKScreen/LibKScreenConfigVersion.cmake
+lib/cmake/LibKScreen/LibKScreenTargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/LibKScreen/LibKScreenTargetsWithPrefix.cmake
+lib/kde4/plugins/kscreen/
+lib/kde4/plugins/kscreen/KSC_Fake.so
+lib/kde4/plugins/kscreen/KSC_XRandR.so
+lib/kde4/plugins/kscreen/KSC_XRandR11.so
+@lib lib/libkscreen.so.${LIBkscreen_VERSION}
+lib/pkgconfig/kscreen.pc
