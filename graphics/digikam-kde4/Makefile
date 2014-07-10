@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/10 08:06:40 zhuk Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -22,6 +22,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
+REVISION-main =		0
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -215,6 +216,12 @@ CONFIGURE_ARGS +=	-DENABLE_ADVANCEDDEBUGMSG:Bool=Yes
 .endif
 
 TEST_IS_INTERACTIVE =	X11
+
+.include <bsd.port.arch.mk>
+
+.if ${ARCH} != "i386"
+CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=1"
+.endif
 
 post-extract:
 	# use our Kexiv2Config.cmake instead

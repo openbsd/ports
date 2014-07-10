@@ -1,0 +1,20 @@
+$OpenBSD: patch-core_libs_dmetadata_dmetadata_cpp,v 1.1 2014/07/10 08:06:40 zhuk Exp $
+XXX Avoid crashes until libkdcraw/ld.so issues are resolved.
+--- core/libs/dmetadata/dmetadata.cpp.orig	Thu Jul 10 09:56:15 2014
++++ core/libs/dmetadata/dmetadata.cpp	Thu Jul 10 10:00:31 2014
+@@ -132,6 +132,7 @@ bool DMetadata::applyChanges() const
+ 
+ bool DMetadata::loadUsingDcraw(const QString& filePath) const
+ {
++#if OPENBSD_LIBKDCRAW_NO_CRASH
+     DcrawInfoContainer identify;
+ 
+     if (KDcraw::rawFileIdentify(identify, filePath))
+@@ -191,6 +192,7 @@ bool DMetadata::loadUsingDcraw(const QString& filePath
+ 
+         return true;
+     }
++#endif
+ 
+     return false;
+ }

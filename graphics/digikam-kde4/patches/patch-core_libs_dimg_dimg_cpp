@@ -1,0 +1,53 @@
+$OpenBSD: patch-core_libs_dimg_dimg_cpp,v 1.1 2014/07/10 08:06:40 zhuk Exp $
+XXX Avoid crashes until libkdcraw/ld.so issues are resolved.
+--- core/libs/dimg/dimg.cpp.orig	Thu Jul 10 09:47:57 2014
++++ core/libs/dimg/dimg.cpp	Thu Jul 10 09:50:07 2014
+@@ -735,7 +735,9 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+         return NONE;
+     }
+ 
++#if OPENBSD_LIBKDCRAW_CRASH
+     QString rawFilesExt(KDcrawIface::KDcraw::rawFiles());
++#endif
+     QString ext = fileInfo.suffix().toUpper();
+ 
+     if (!ext.isEmpty())
+@@ -752,10 +754,12 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+         {
+             return TIFF;
+         }
++#if OPENBSD_LIBKDCRAW_CRASH
+         else if (rawFilesExt.toUpper().contains(ext))
+         {
+             return RAW;
+         }
++#endif
+ 
+         if (ext == QString("JP2") || ext == QString("JPX") || // JPEG2000 file format
+             ext == QString("JPC") || ext == QString("J2K") || // JPEG2000 code stream
+@@ -792,7 +796,9 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+ 
+     fclose(f);
+ 
++#if OPENBSD_LIBKDCRAW_CRASH
+     KDcrawIface::DcrawInfoContainer dcrawIdentify;
++#endif
+     uchar jpegID[2]    = { 0xFF, 0xD8 };
+     uchar tiffBigID[2] = { 0x4D, 0x4D };
+     uchar tiffLilID[2] = { 0x49, 0x49 };
+@@ -829,6 +835,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+         if (file)
+             fclose(file);
+     }
++#if OPENBSD_LIBKDCRAW_CRASH
+     else if (KDcrawIface::KDcraw::rawFileIdentify(dcrawIdentify, filePath)
+              && dcrawIdentify.isDecodable)
+     {
+@@ -837,6 +844,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+         // formats using TIFF header.
+         return RAW;
+     }
++#endif
+     else if (memcmp(&header, &tiffBigID, 2) == 0 ||  // TIFF file ?
+              memcmp(&header, &tiffLilID, 2) == 0)
+     {
