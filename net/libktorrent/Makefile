@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/15 19:42:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/10 10:24:59 zhuk Exp $
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
 V =		1.3.1
 DISTNAME =	libktorrent-$V
-HOMEPAGE =	http://ktorrent.org/
-REVISION =	4
+HOMEPAGE =	http://ktorrent.pwsp.net/
+REVISION =	6
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -14,7 +14,7 @@ SHARED_LIBS =	ktorrent	0.0
 # GPLv2+
 PERMIT_PACKAGE_CDROM =          Yes
 
-WANTLIB =  m pthread stdc++
+WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += lib/qt4/QtNetwork
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid
