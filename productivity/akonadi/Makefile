@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/31 16:37:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/10 08:06:04 espie Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
 DISTNAME =	akonadi-1.11.0
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS = 	akonadiprotocolinternals 2.0	# 1.0
 
