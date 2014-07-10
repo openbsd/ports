@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2013/04/27 15:44:21 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ support         1529/tcp                # GNATS
 support         stream  tcp     nowait  _gnats	${TRUEPREFIX}/libexec/gnats/gnatsd	gnatsd
 
 inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(5):
+following line needs to be added to rc.conf.local(8):
 inetd_flags=
 
 3. Edit the config files in ${TRUEPREFIX}/share/gnats/gnats-db/gnats-adm

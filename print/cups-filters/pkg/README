@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/03/09 21:45:36 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ The cups-browsed(8) daemon can be used to browse Bonjour broadcasts of
 remote printers and create/remove local raw queues pointing to these
 printers. This requires the avahi-daemon(8) to be running first. To
 start it at boot time, the following line can be added to
-rc.conf.local(5):
+rc.conf.local(8):
 
     pkg_scripts="${pkg_scripts} avahi_daemon cups_browsed"
 

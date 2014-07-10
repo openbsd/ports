@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.28 2014/04/01 18:02:58 ajacoutot Exp $
+$OpenBSD: README-main,v 1.29 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -49,7 +49,7 @@ Rendezvous) in GNOME. Several applications can optionally benefit from
 it (e.g. the "Network" shortcut in nautilus(1)) while some others
 will not work at all without it (e.g. seahorse-sharing(1)).
 
-To make use of it, rc.conf.local(5) needs to contain the following line:
+To make use of it, rc.conf.local(8) needs to contain the following line:
     multicast_host=YES
 and "avahi_daemon" needs to be added to the "pkg_scripts" variable
 _after_ "dbus_daemon".

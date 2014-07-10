@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ been installed:
     ${TRUEPREFIX}/sbin/dhclient-adsuck
 
 Provided that adsuck(1) is installed and adsuck_flags is not set to "NO"
-in rc.conf.local(5), this script will prevent from using
+in rc.conf.local(8), this script will prevent from using
 /etc/resolv.conf to resolve non-blacklisted entries but use
 /var/adsuck/files/resolv.conf instead.
 For a proper use you need to add this line to /etc/dhclient.conf:

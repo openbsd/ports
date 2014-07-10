@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/09/24 15:34:48 landry Exp $
+$OpenBSD: README,v 1.2 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,5 +12,5 @@ line like the following to /etc/inetd.conf:
 127.0.0.1:6667    stream  tcp     nowait _minbif ${TRUEPREFIX}/bin/minbif minbif ${SYSCONFDIR}/minbif/minbif.conf
 
 inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(5):
+following line needs to be added to rc.conf.local(8):
 inetd_flags=

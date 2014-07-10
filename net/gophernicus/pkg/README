@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/04/27 15:44:21 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,7 +16,7 @@ Replace "hostname" with the system's hostname, this should be valid
 and resolvable as it is used to construct links.
 
 inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(5):
+following line needs to be added to rc.conf.local(8):
 inetd_flags=
 
 By default Gophernicus serves documents from /var/gopher and will

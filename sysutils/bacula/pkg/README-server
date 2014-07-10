@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.10 2014/06/13 13:34:38 ajacoutot Exp $
+$OpenBSD: README-server,v 1.11 2014/07/10 13:09:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -74,6 +74,6 @@ rw mode by the "_bacula-sd" user (and/or the "_bacula" group).
 be accessible in rw mode by the "_bacula-sd" user (and/or the "_bacula"
 group); alternatively the "_bacula-sd" user can be added to the
 "operator" group instead.
-e.g. for an autochanger, add the following lines in rc.conf.local(5)
+e.g. for an autochanger, add the following lines in rc.conf.local(8)
 chgrp _bacula /dev/ch0
 chgrp _bacula /dev/nrst0

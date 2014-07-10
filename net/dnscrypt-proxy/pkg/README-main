@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2014/04/25 17:11:26 sthen Exp $
+$OpenBSD: README-main,v 1.3 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ Both can safely run on the same host.
 
 A list of non-OpenDNS resolvers providing DNSCrypt service is available
 at ${TRUEPREFIX}/share/dnscrypt-proxy/dnscrypt-resolvers.csv, and can be
-selected by using an rc.conf.local(5) line like the following:
+selected by using an rc.conf.local(8) line like the following:
 
 dnscrypt_proxy_flags="-R dnscrypt.eu-nl"
 

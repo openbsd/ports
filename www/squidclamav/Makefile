@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/31 13:04:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/10 13:09:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clamd-based virus scanner for c-icap
+REVISION=	0
 
 DISTNAME=	squidclamav-6.11
 

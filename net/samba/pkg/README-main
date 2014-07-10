@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2013/04/27 15:44:21 ajacoutot Exp $
+$OpenBSD: README-main,v 1.9 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,7 +25,7 @@ port 901.
    ...
 
 inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(5):
+following line needs to be added to rc.conf.local(8):
 inetd_flags=
 
 Install the samba-docs package and see documentation files in

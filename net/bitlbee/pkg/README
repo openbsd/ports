@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2013/04/27 15:44:21 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ To enable bitlbee, add a line such as the following to /etc/inetd.conf:
 127.0.0.1:6667    stream  tcp     nowait _bitlbee ${TRUEPREFIX}/sbin/bitlbee bitlbee
 
 inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(5):
+following line needs to be added to rc.conf.local(8):
 inetd_flags=
 
 If a libpurple flavored bitlbee port was previously used, be aware that

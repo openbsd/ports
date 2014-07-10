@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/11/06 13:07:43 sthen Exp $
+$OpenBSD: README,v 1.2 2014/07/10 13:09:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,7 +14,7 @@ To enable it, edit ${SYSCONFDIR}/c-icap/c-icap.conf and add this line:
 Review the other settings in c-icap's configuration file and
 ${SYSCONFDIR}/squidclamav.conf and make any changes needed (in particular
 check the clamd socket location matches clamd's configuration).
-When happy, start c-icap (and add to "pkg_scripts" in rc.conf.local(5)
+When happy, start c-icap (and add to "pkg_scripts" in rc.conf.local(8)
 if wanted):
 
 	/etc/rc.d/c_icap start

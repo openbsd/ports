@@ -1,4 +1,4 @@
-$OpenBSD: README-imap,v 1.1 2013/10/17 09:08:14 ajacoutot Exp $
+$OpenBSD: README-imap,v 1.2 2014/07/10 13:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,7 +23,7 @@ To use SSL as default transport you need to add the lines below to
   imaps   stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
 
 inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(5):
+following line needs to be added to rc.conf.local(8):
 inetd_flags=
 
 You also need to install your certificates to
