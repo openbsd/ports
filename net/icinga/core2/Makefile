@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/09 15:06:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/10 11:14:20 rpe Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -50,6 +50,7 @@ WANTLIB += boost_thread-mt crypto execinfo m pthread ssl stdc++
 GH_ACCOUNT =		Icinga
 GH_PROJECT =		icinga2
 GH_TAGNAME =		v$V
+GH_COMMIT =		30384a4340011723869969e76a3dd2801786cf2e
 
 MODULES =		devel/cmake
 
