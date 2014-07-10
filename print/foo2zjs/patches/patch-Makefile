@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.28 2014/03/09 21:53:29 ajacoutot Exp $
---- Makefile.orig	Sat Mar  1 21:51:27 2014
-+++ Makefile	Sat Mar  8 13:20:23 2014
+$OpenBSD: patch-Makefile,v 1.29 2014/07/10 09:47:21 ajacoutot Exp $
+--- Makefile.orig	Sun Jun  1 13:07:42 2014
++++ Makefile	Thu Jul 10 11:41:50 2014
 @@ -16,11 +16,6 @@ SYSNAME := $(shell uname -n)
  # No version number yet...
  VERSION=0.0
@@ -84,7 +84,7 @@ $OpenBSD: patch-Makefile,v 1.28 2014/03/09 21:53:29 ajacoutot Exp $
  	    install-man install-doc
  	#
  	# If you use CUPS, then restart the spooler:
-@@ -658,11 +646,6 @@ install-prog:
+@@ -660,11 +648,6 @@ install-prog:
  	$(INSTALL) -d $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma.ps $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma-lookup.ps $(SHAREZJS)/
@@ -96,7 +96,7 @@ $OpenBSD: patch-Makefile,v 1.28 2014/03/09 21:53:29 ajacoutot Exp $
  
  install-foo:
  	#
-@@ -681,24 +664,14 @@ install-foo:
+@@ -683,24 +666,14 @@ install-foo:
  	#
  	# Install current database files
  	#
@@ -123,7 +123,7 @@ $OpenBSD: patch-Makefile,v 1.28 2014/03/09 21:53:29 ajacoutot Exp $
  	#
  	# Clear foomatic cache and rebuild database if needed
  	#
-@@ -834,8 +807,8 @@ install-extra:
+@@ -836,8 +809,8 @@ install-extra:
  	    fi; \
  	done
  
@@ -134,7 +134,7 @@ $OpenBSD: patch-Makefile,v 1.28 2014/03/09 21:53:29 ajacoutot Exp $
  MACMODEL=/Library/Printers/PPDs/Contents/Resources
  PPD=$(DESTDIR)/usr/share/ppd
  VARPPD=/var/lp/ppd
-@@ -843,43 +816,8 @@ install-ppd:
+@@ -845,43 +818,8 @@ install-ppd:
  	#
  	# Install PPD files for CUPS
  	#
@@ -180,7 +180,7 @@ $OpenBSD: patch-Makefile,v 1.28 2014/03/09 21:53:29 ajacoutot Exp $
  	    rm -f $(LOCALMODEL)/KonicaMinolta*; \
  	    cd PPD; \
  	    for ppd in *.ppd; do \
-@@ -1511,11 +1449,8 @@ install-doc: doc
+@@ -1513,11 +1451,8 @@ install-doc: doc
  	#
  	$(INSTALL) -d -m 755 $(DOCDIR)
  	$(INSTALL) -c -m 644 manual.pdf $(DOCDIR)
