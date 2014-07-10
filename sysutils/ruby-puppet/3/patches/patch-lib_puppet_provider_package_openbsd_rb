@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.20 2014/06/11 18:24:05 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.21 2014/07/10 14:22:49 jasper Exp $
 
 From 3637c48d97e4ed9fddbad883cc1cce571270e187 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -10,8 +10,8 @@ From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Tue, 22 Apr 2014 00:40:25 +0200
 Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_options given
 
---- lib/puppet/provider/package/openbsd.rb.orig	Thu May 15 01:10:29 2014
-+++ lib/puppet/provider/package/openbsd.rb	Thu May 15 21:07:14 2014
+--- lib/puppet/provider/package/openbsd.rb.orig	Mon Jun  9 23:08:19 2014
++++ lib/puppet/provider/package/openbsd.rb	Thu Jul 10 15:18:54 2014
 @@ -4,7 +4,9 @@ require 'puppet/provider/package'
  Puppet::Type.type(:package).provide :openbsd, :parent => Puppet::Provider::Package do
    desc "OpenBSD's form of `pkg_add` support."
@@ -50,23 +50,23 @@ Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_opt
 +      query = @resource[:name]
 +    end
 +
-+    output = Puppet::Util.withenv(e_vars) {pkginfo "-Q", query}
++    output = Puppet::Util.withenv(e_vars) {pkginfo "-Q", query}.split('\n')
 +
 +    if output.nil? or output.size == 0
-+      debug "Failed to query for #{resource[:name]}"
++      debug "Failed to query for #{query}"
 +      return properties[:ensure]
 +    else
 +      # Remove all fuzzy matches first.
-+      output = output.split.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
-+      debug "pkg_info -Q for #{resource[:name]}: #{output}"
++      output = output.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join.chomp
++      debug "pkg_info -Q for #{query}: #{output}"
 +    end
 +
-+    if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*) \(installed\)$/
++    if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*?)\s+\(installed\)$/
 +      debug "Package is already the latest available"
 +      return properties[:ensure]
 +    else
-+      match = /^(.*)-(\d[^-]*)[-]?(\w*)$/.match(output)
-+      debug "Latest available for #{resource[:name]}: #{match[2]}"
++      match = /(^#{resource[:name]})-(\d[^-]*)[-]?(\w*)/.match(output)
++      debug "Latest available for #{query}: #{match[2]}"
 +      if properties[:ensure].to_sym == :absent
 +        return match[2]
 +      end
