@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/16 07:09:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/10 11:06:15 rpe Exp $
 
-GH_VER =	0.3.18
+GH_ACCOUNT =	pithos
+GH_PROJECT =	pithos
+GH_TAGNAME =	0.3.18
+GH_COMMIT =	077021008f0f90204fcbd6201e7612d9394737d7
+
 COMMENT =	Pandora client for GNOME
-DISTNAME =	pithos-${GH_VER}
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 REVISION =	1
-DISTFILES =	${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://pithos.github.io/
@@ -13,8 +16,6 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Github page says GPLv3+
 # But the code says GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =	https://github.com/pithos/pithos/archive/
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

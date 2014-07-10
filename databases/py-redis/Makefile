@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.26 2014/01/27 09:14:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2014/07/10 11:06:15 rpe Exp $
 
 COMMENT =		Python interface to Redis
 
 MODPY_EGG_VERSION =	2.9.1
-DISTNAME =		redis-py-${MODPY_EGG_VERSION}
+
+GH_ACCOUNT =		andymccurdy
+GH_PROJECT =		redis-py
+GH_TAGNAME =		${MODPY_EGG_VERSION}
+GH_COMMIT =		91a0b8b13b46bd8ea99b61823860ce9c8c3b67f6
+
+DISTNAME =		${GH_PROJECT}-${MODPY_EGG_VERSION}
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/andymccurdy/redis-py/
-MASTER_SITES =		${HOMEPAGE}archive/
-DISTFILES =		${DISTNAME}{${MODPY_EGG_VERSION}}${EXTRACT_SUFX}
 
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 

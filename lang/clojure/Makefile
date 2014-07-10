@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.23 2014/07/10 11:06:15 rpe Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
-VER =			1.6.0
-DISTNAME =		clojure-${VER}
+GH_ACCOUNT =		clojure
+GH_PROJECT =		clojure
+GH_TAGNAME =		${GH_PROJECT}-1.6.0
+GH_COMMIT =		d6baf6e1fb6e2b9ab3e3a459de5ab1d4381938aa
+DISTNAME =		${GH_TAGNAME}
 REVISION =		1
 
 PKG_ARCH =		*
@@ -16,9 +19,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Eclipse Public License EPL 1.0
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		https://github.com/clojure/clojure/archive/
-DISTFILES=		${DISTNAME}{clojure-${VER}}${EXTRACT_SUFX}
 
 MODULES =		java
 MODJAVA_VER =		1.6+

@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2014/04/26 14:36:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/10 11:06:15 rpe Exp $
 
 COMMENT =		read-eval-print loop for PHP
 
 V =			1.0.8
-DISTNAME =		boris-$V
 REVISION =		0
-DISTFILES =		${DISTNAME}{v$V}${EXTRACT_SUFX}
-WRKDIST =		${WRKDIR}/boris-$V
+
+GH_ACCOUNT =		d11wtq
+GH_PROJECT =		boris
+GH_TAGNAME =		v$V
+GH_COMMIT =		125dd4e5752639af7678a22ea597115646d89c6e
+
+DISTNAME =		${GH_PROJECT}-$V
 
 CATEGORIES =		devel
 
@@ -14,8 +18,6 @@ HOMEPAGE =		https://github.com/d11wtq/boris
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		https://github.com/d11wtq/boris/archive/
 
 MODULES =		lang/php
 RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-pcntl \

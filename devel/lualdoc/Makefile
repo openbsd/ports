@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2014/01/29 08:04:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/10 11:06:15 rpe Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
-GH_VER =	1.4.2
-DISTNAME =	LDoc-${GH_VER}
-PKGNAME =	lualdoc-${GH_VER}
+GH_ACCOUNT =	stevedonovan
+GH_PROJECT =	ldoc
+GH_TAGNAME =	1.4.2
+GH_COMMIT =	511dfe7df01f92da03c639c5f56495c0c31b6e2b
+DISTNAME =	LDoc-${GH_TAGNAME}
+PKGNAME =	lualdoc-${GH_TAGNAME}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://stevedonovan.github.io/ldoc/
@@ -15,9 +18,6 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 PERMIT_PACKAGE_CDROM =Yes
 
 MODULES =	lang/lua
-
-MASTER_SITES =	https://github.com/stevedonovan/ldoc/archive/
-DISTFILES=	${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 MODLUA_RUN_DEPENDS =	devel/lua-penlight
 

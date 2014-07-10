@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/25 14:35:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/10 11:06:15 rpe Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
 
-GH_VER =	2.4.4
-DISTNAME =	lwt-${GH_VER}
+GH_ACCOUNT =	ocsigen
+GH_PROJECT =	lwt
+GH_TAGNAME =	2.4.4
+GH_COMMIT =	c6280535eb754b70f75a26fbfd406b7d492f8608
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	https://github.com/ocsigen/lwt/archive/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
 
 HOMEPAGE =	http://ocsigen.org/lwt/
 

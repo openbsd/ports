@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2014/05/22 14:05:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/10 11:06:15 rpe Exp $
 
 COMMENT=		Erlang build tool
 
-GH_VER=			2.3.0
-PROJECT=		rebar
-DISTNAME=		${PROJECT}-${GH_VER}
+GH_ACCOUNT=		rebar
+GH_PROJECT=		rebar
+GH_TAGNAME=		2.3.0
+GH_COMMIT=		0fa0ff4f17bb180dc57147ba0bc31dde1377a899
+DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES=		devel lang/erlang
 
@@ -12,9 +14,6 @@ HOMEPAGE=		https://github.com/rebar/rebar
 
 # APLv2
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://github.com/rebar/${PROJECT}/archive/
-DISTFILES=		${DISTNAME}{${GH_VER}${EXTRACT_SUFX}}
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		lang/erlang
