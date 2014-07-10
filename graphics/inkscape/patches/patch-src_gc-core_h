@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gc-core_h,v 1.1 2014/07/10 10:19:45 robert Exp $
+--- src/gc-core.h.orig	Tue Feb 14 04:22:17 2012
++++ src/gc-core.h	Thu Jul 10 11:14:45 2014
+@@ -57,7 +57,7 @@ struct Ops {
+                                            CleanupFunc *old_func,
+                                            void **old_data);
+     int (*general_register_disappearing_link)(void **p_ptr,
+-                                              void *base);
++                                              const void *base);
+     int (*unregister_disappearing_link)(void **p_ptr);
+     std::size_t (*get_heap_size)();
+     std::size_t (*get_free_bytes)();
