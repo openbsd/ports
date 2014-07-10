@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1268 2014/07/09 10:28:42 robert Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1269 2014/07/10 23:19:55 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -786,7 +786,7 @@ GH_ACCOUNT ?=
 GH_PROJECT ?=
 
 .if !empty(GH_TAGNAME)
-WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
+WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 .elif !empty(GH_COMMIT)
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
 .else
