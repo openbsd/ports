@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/01 23:16:42 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/10 01:36:51 bcallah Exp $
 bin/nfoview
 lib/python${MODPY_VERSION}/site-packages/nfoview/
 lib/python${MODPY_VERSION}/site-packages/nfoview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -9,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}about.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}deco.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
@@ -26,7 +25,6 @@ lib/python${MODPY_VERSION}/site-packages/nfoview/about.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/actions.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/builder.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/config.py
-lib/python${MODPY_VERSION}/site-packages/nfoview/deco.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/errors.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/export.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/i18n.py
