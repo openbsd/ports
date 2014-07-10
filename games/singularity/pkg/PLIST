@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/01/15 12:43:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/10 11:17:31 ajacoutot Exp $
 bin/singularity
 share/doc/singularity/
 share/doc/singularity/Attribution-ShareAlike 3.0.html
@@ -147,11 +147,23 @@ share/singularity/data/techs_fr_FR.dat
 share/singularity/data/techs_it_IT.dat
 share/singularity/data/techs_sv_SE.dat
 share/singularity/music/
+share/singularity/music/A New Journey.ogg
+share/singularity/music/Aberrations.ogg
 share/singularity/music/Advanced Simulacra.ogg
 share/singularity/music/Awakening.ogg
 share/singularity/music/By-Product.ogg
 share/singularity/music/Coherence.ogg
 share/singularity/music/Deprecation.ogg
+share/singularity/music/Enemy Unknown.ogg
 share/singularity/music/Inevitable.ogg
 share/singularity/music/Media Threat.ogg
+share/singularity/music/Nebula.ogg
+share/singularity/music/Orbital Elevator.ogg
+share/singularity/music/Through Space.ogg
+share/singularity/music/endgame-singularity-music-README.txt
+share/singularity/music/lose/
+share/singularity/music/lose/Chimes They Fade.ogg
+share/singularity/music/lose/March Thee to Dis.ogg
+share/singularity/music/win/
+share/singularity/music/win/Apex Aleph.ogg
 share/singularity/singularity.py

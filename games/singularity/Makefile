@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/07 21:31:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2014/07/10 11:17:31 ajacoutot Exp $
 
 COMMENT=	simulation of a true AI
 
 MODPY_EGG_VERSION= 0.30
-MUSIC_V=	006
-V=		${MODPY_EGG_VERSION}b
+MUSIC_V=	007
+V=		${MODPY_EGG_VERSION}c
 DISTNAME=	singularity-${V}-src
 PKGNAME=	singularity-${V}
-REVISION =	1
 
 CATEGORIES=	games
 
@@ -38,9 +37,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/singularity
 	cp -R ${WRKSRC}/code/ ${PREFIX}/share/singularity/
 	cp -R ${WRKSRC}/data/ ${PREFIX}/share/singularity/
+	rm ${PREFIX}/share/singularity/code/graphics/g.py.orig
 	mv ${PREFIX}/share/singularity/data/*.html \
 		${PREFIX}/share/doc/singularity/
-	${INSTALL_DATA} ${WRKDIR}/endgame-singularity-music-${MUSIC_V}/music/*.ogg \
+	cp -R ${WRKDIR}/endgame-singularity-music-${MUSIC_V}/* \
 		${PREFIX}/share/singularity/music
 	${INSTALL_DATA} ${WRKSRC}/singularity.py ${PREFIX}/share/singularity/
 	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
