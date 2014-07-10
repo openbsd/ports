@@ -1,26 +1,24 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/07/10 12:07:06 ajacoutot Exp $
 
-COMMENT=	skiing simulation game
+COMMENT=		skiing simulation game
 
-DISTNAME=	ski-6.7
-REVISION=	2
-CATEGORIES=	games
+DISTNAME=		ski-6.8
+CATEGORIES=		games
 
-HOMEPAGE=	http://catb.org/~esr/ski/
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=		http://catb.org/~esr/ski/
+MASTER_SITES=		http://catb.org/~esr/ski/
 
-MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
+MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	lang/python
+MODULES=		lang/python
 
-USE_GROFF =	Yes
-NO_TEST=	Yes
+MODPY_ADJ_FILES=	ski
 
-do-build:
-	perl -pi -e "s,^#!/usr/bin/env python,#!${MODPY_BIN}," ${WRKSRC}/ski
+NO_BUILD=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ski ${PREFIX}/bin
