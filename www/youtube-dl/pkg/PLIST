@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2014/06/21 08:47:06 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.42 2014/07/10 13:01:13 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -435,6 +435,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sohu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sohu.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundgasm.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundgasm.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southparkstudios.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southparkstudios.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/space.py
