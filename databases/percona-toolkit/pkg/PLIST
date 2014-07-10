@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/11/14 09:01:11 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/07/10 20:02:41 giovanni Exp $
 @pkgpath databases/maatkit
-bin/pt-agent
 bin/pt-align
 bin/pt-archiver
 @comment bin/pt-collect
@@ -36,7 +35,6 @@ bin/pt-variable-advisor
 bin/pt-visual-explain
 @comment @man man/man1/pt-collect.1
 @man man/man1/percona-toolkit.1
-@man man/man1/pt-agent.1
 @man man/man1/pt-align.1
 @man man/man1/pt-archiver.1
 @man man/man1/pt-config-diff.1
