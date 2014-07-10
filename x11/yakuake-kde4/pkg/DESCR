@@ -1,0 +1,7 @@
+Yakuake is a drop-down terminal emulator based on Konsole technology.
+Features:
+  * Smoothly rolls down from the top of your screen
+  * Tabbed interface
+  * Configurable dimensions and animation speed
+  * Skinnable
+  * Sophisticated DCOP / D-Bus interface
