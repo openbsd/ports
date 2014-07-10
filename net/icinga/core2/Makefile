@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/07/10 11:14:20 rpe Exp $
+# $OpenBSD: Makefile,v 1.12 2014/07/10 12:58:31 ajacoutot Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -36,6 +36,8 @@ DISTNAME =	icinga2-$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-mysql-$V
 PKGNAME-pgsql =	icinga2-pgsql-$V
+
+REVISION-main=	0
 
 HOMEPAGE =	https://www.icinga.org/icinga2/
 

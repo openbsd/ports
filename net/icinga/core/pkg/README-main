@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.21 2014/05/29 00:19:54 sthen Exp $
+$OpenBSD: README-main,v 1.22 2014/07/10 12:58:31 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,7 +22,7 @@ This will parse all configuration files and warn about any problems
 which have been identified.
 
 To enable automatic startup on boot for icinga, add it to pkg_scripts
-in ${BASESYSCONFDIR}/rc.conf.local, for example:
+in /etc/rc.conf.local, for example:
 
    pkg_scripts="${pkg_scripts} icinga"
 
@@ -139,7 +139,7 @@ icinga-cgi" or "pkg_add icinga-web").
    ${TRUEPREFIX}/share/examples/icinga/db/README
 
    2.2) Enable the ido2db daemon. Add it to the pkg_scripts line
-   in ${BASESYSCONFDIR}/rc.conf.local before icinga, for example:
+   in /etc/rc.conf.local before icinga, for example:
 
       pkg_scripts="${pkg_scripts} ido2db icinga"
 

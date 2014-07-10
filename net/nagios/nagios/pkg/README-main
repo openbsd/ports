@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2013/11/07 10:31:38 rpe Exp $
+$OpenBSD: README-main,v 1.3 2014/07/10 12:58:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,7 +21,7 @@ This will parse all configuration files and warn about any problems
 which have been identified.
 
 To enable automatic startup on boot for nagios, add it to pkg_scripts
-in ${SYSCONFDIR}/rc.conf.local, for example:
+in /etc/rc.conf.local, for example:
 
    pkg_scripts="${pkg_scripts} nagios"
 
