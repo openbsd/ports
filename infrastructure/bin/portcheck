@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.83 2014/07/08 09:48:07 zhuk Exp $
+# $OpenBSD: portcheck,v 1.84 2014/07/10 09:57:13 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1170,6 +1170,7 @@ check_plist() {
 #   * devel/gettext and converters/libiconv MODULES are not forgotten.
 #   * lib/qt[34]/, lib/kde/ and lib/kde4/ prefixes not missing where
 #     applicable.
+#   * stdc++ doesn't get into WANTLIB when gcc4.port.mk is used.
 check_wantlib() {
 	local portref="$1"; shift
 	local modules="$1"; shift
@@ -1185,12 +1186,14 @@ check_wantlib() {
 	local kde3_module=false
 	local kde4_module=false
 	local phonon_module=false
+	local gcc4_module=false
 
 	local v
 
 	for v in $modules; do case $v in
-		devel/gettext)		gettext_module=true;;
 		converters/libiconv)	iconv_module=true;;
+		devel/gettext)		gettext_module=true;;
+		gcc4)			gcc4_module=true;;
 		multimedia/phonon)	phonon_module=true;;
 		x11/qt3)		qt3_module=true;;
 		x11/qt4)		qt4_module=true;;
@@ -1243,6 +1246,13 @@ check_wantlib() {
 				    "in MODULES (check other libs, too!)"
 			fi
 			;;
+		stdc++?(?('>')=+([0-9])))
+			if $gcc4_module; then
+				err "$portref$v in WANTLIB when gcc4 is" \
+				    "in MODULES; run port-lib-depends-check" \
+				    "and if stdc++ is still there, check" \
+				    "actual build thoroughly, it's broken"
+			fi
 	esac; done
 
 	if $intl_wantlib && ! $gettext_module; then
