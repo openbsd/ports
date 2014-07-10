@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.69 2014/06/11 02:42:33 bentley Exp $
+# $OpenBSD: Makefile.template,v 1.70 2014/07/10 12:31:20 sthen Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -71,6 +71,14 @@ CATEGORIES =		???
 MASTER_SITES =		???
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
+
+# for github, use these instead of MASTER_SITES
+# specify the COMMIT as well as the TAG in case upstream slide the tag.
+#GH_ACCOUNT =		username
+#GH_PROJECT =		project
+#GH_TAGNAME =		1.0
+#GH_COMMIT =		abab123456789abacafeabab123123b1e4ble4bl
+
 # if more master sites are needed...
 #MASTER_SITES0 =
 # ...
