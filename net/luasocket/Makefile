@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2013/11/25 16:12:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2014/07/10 11:06:37 rpe Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network support for the lua language
-GH_VER=		v3.0-rc1
-DISTNAME=	luasocket-${GH_VER:S/v//}
+V=		3.0-rc1
+GH_ACCOUNT=	diegonehab
+GH_PROJECT=	luasocket
+GH_TAGNAME=	v$V
+GH_COMMIT=	22cd5833fcc0e272f26004a79c8545e959ba406b
+DISTNAME=	${GH_PROJECT}-$V
 PKGNAME=	${DISTNAME:S/-rc/rc/}
 CATEGORIES=	net
-
-MASTER_SITES=	https://github.com/diegonehab/luasocket/archive/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
 
 HOMEPAGE=	http://w3.impa.br/~diego/software/luasocket/
 

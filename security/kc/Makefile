@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/24 12:56:19 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/10 11:06:37 rpe Exp $
 
 COMMENT =	console based password storing application
 
-GH_VER =	2.3.2
-PROJECT =	kc
-DISTNAME =	${PROJECT}-${GH_VER}
+GH_ACCOUNT =	levaidaniel
+GH_PROJECT =	kc
+GH_TAGNAME =	2.3.2
+GH_COMMIT =	49915a19a0eabf279400667cd14d254159dc3a4f
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
+
 CATEGORIES =	security
 
 HOMEPAGE =	http://github.com/levaidaniel/${PROJECT}
-MASTER_SITES =	https://github.com/levaidaniel/${PROJECT}/archive/
-
-DISTFILES =	${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 

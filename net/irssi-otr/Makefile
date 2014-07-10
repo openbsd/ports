@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/21 15:48:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/10 11:06:37 rpe Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	OTR (off the record) encryption support for irssi
 
-GH_VER =	1.0.0
+V =		1.0.0
+GH_ACCOUNT =	cryptodotis
+GH_PROJECT =	irssi-otr
+GH_TAGNAME =	v$V
+GH_COMMIT =	d7a88b6697951727a2fa34b7d3d3543b0e5a2ecc
 REVISION =	0
-DISTNAME =	irssi-otr-${GH_VER}
+DISTNAME =	${GH_PROJECT}-$V
 
 CATEGORIES =	net security
 
@@ -20,9 +24,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c gcrypt gpg-error otr pthread
 
 MODULES =	devel/gettext
-
-MASTER_SITES =	${HOMEPAGE}/archive/
-DISTFILES =	${DISTNAME}{v${GH_VER}}${EXTRACT_SUFX}
 
 BUILD_DEPENDS =	net/irssi>=0.8.15p5 \
 		devel/libtool \

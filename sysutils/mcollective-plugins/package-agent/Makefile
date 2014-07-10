@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/17 18:27:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/10 11:06:37 rpe Exp $
 
 COMMENT=		MCollective agent to manage Packages
 
-GH_VER=			4.3.0
-DISTNAME=		mcollective-package-agent-${GH_VER}
-
-MASTER_SITES=		https://github.com/puppetlabs/mcollective-package-agent/archive/
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
+GH_ACCOUNT=		puppetlabs
+GH_PROJECT=		mcollective-package-agent
+GH_TAGNAME=		4.3.0
+GH_COMMIT=		d022550d92cd80789750bad8db40e30aadba4f89
+DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 
 MCO_SUBDIRS=		agent application util
 

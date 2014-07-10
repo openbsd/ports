@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/02 16:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/10 11:06:37 rpe Exp $
 
 COMMENT=	scan a network for SSL certificates
 
-DISTNAME=	sslScanner-0.20121102
+GH_ACCOUNT=	mikecardwell
+GH_PROJECT=	sslScanner
+GH_COMMIT=	9817f13088122d5d25e5c57c03955cf8bd5dc32a
+DISTNAME=	${GH_PROJECT}-0.20121102
 REVISION=	0
-
-G=		9817f13088122d5d25e5c57c03955cf8bd5dc32a
-DISTFILES=	${DISTNAME}{$G}.tar.gz
-WRKDIST=	${WRKDIR}/sslScanner-$G
 
 CATEGORIES=	security www
 

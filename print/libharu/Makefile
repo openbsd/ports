@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/19 15:50:07 jturner Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/10 11:06:37 rpe Exp $
 
 COMMENT =	PDF creation library
 
 VERSION =	2_3_0
-DISTNAME =	libharu-${VERSION:S/_/./g}
-DISTFILES =	${DISTNAME}{RELEASE_${VERSION}}.tar.gz
+GH_ACCOUNT =	libharu
+GH_PROJECT =	libharu
+GH_TAGNAME =	RELEASE_${VERSION}
+GH_COMMIT =	4ae1d5f4c84459f130bf1b1ef4c5c330af8eca5d
+DISTNAME =	${GH_PROJECT}-${VERSION:S/_/./g}
 SHARED_LIBS=	hpdf 0.1 #2.3
 CATEGORIES =	print
 
@@ -13,9 +16,6 @@ HOMEPAGE =	http://libharu.org/
 # ZLIB/PNG
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://github.com/libharu/libharu/archive/
-
-WRKDIST =	${WRKDIR}/libharu-${DISTNAME}
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14
 

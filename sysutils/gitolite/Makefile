@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/05 20:38:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/10 11:06:37 rpe Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		secure hosting of Git repositories
 
-GH_VER=			v3.6
-DISTNAME=		gitolite-${GH_VER:S/v//}
+V=			3.6
+GH_ACCOUNT=		sitaramc
+GH_PROJECT=		gitolite
+GH_TAGNAME=		v$V
+GH_COMMIT=		522cc1fc1af530ef9c82e01d89f11022adf4b355
+DISTNAME=		${GH_PROJECT}-$V
 CATEGORIES=		sysutils devel
 
 HOMEPAGE=		https://github.com/sitaramc/gitolite/
@@ -14,9 +18,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://github.com/sitaramc/gitolite/archive/
-DISTFILES=		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 RUN_DEPENDS=		devel/git
 
