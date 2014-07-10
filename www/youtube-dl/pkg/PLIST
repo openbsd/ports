@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2014/07/10 13:01:13 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.43 2014/07/10 13:04:28 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -41,6 +41,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/addanime.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/addanime.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftonbladet.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftonbladet.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/allocine.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/allocine.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/anitube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/anitube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aol.py
@@ -145,6 +147,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dreisat.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dreisat.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dropbox.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dropbox.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/drtv.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/drtv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ebaumsworld.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ebaumsworld.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ehow.py
@@ -303,6 +307,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mooshare.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mooshare.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/morningstar.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/morningstar.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/motherless.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/motherless.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/motorsport.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/motorsport.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/moviezine.py
@@ -355,6 +361,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nowness.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nowness.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nowvideo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nowvideo.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/npo.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/npo.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nrk.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nrk.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ntv.py
