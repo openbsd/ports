@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2014/03/23 18:50:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.117 2014/07/10 09:02:33 zhuk Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -19,6 +19,7 @@
      SUBDIR += ecm
      SUBDIR += eigen
      SUBDIR += eigen2
+     SUBDIR += eigen3
      SUBDIR += fann
      SUBDIR += fftw
      SUBDIR += fftw3
