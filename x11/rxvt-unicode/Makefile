@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2014/05/21 12:48:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2014/07/10 20:27:43 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.20
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -31,6 +31,7 @@ CONFIGURE_ARGS =	--enable-256-color \
 			--enable-perl \
 			--enable-pixbuf \
 			--enable-startup-notification \
+			--enable-unicode3 \
 			--enable-utmp \
 			--enable-wtmp
 CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include" \
