@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 08:42:12 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/10 19:50:26 zhuk Exp $
 lib/kde4/plugins/
-lib/kde4/plugins/phonon_backend/
-lib/kde4/plugins/phonon_backend/phonon_vlc.so
+lib/kde4/plugins/phonon_s_backend/
+lib/kde4/plugins/phonon_s_backend/phonon_vlc.so
+share/kde4/
 share/kde4/services/
 share/kde4/services/phononbackends/
 share/kde4/services/phononbackends/vlc.desktop

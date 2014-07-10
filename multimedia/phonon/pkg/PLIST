@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/04/29 08:40:02 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/10 19:50:26 zhuk Exp $
 include/kde4/
 include/kde4/KDE/
 include/kde4/KDE/Phonon/
@@ -163,26 +163,26 @@ include/kde4/phonon/videowidgetinterface.h
 include/kde4/phonon/volumefadereffect.h
 include/kde4/phonon/volumefaderinterface.h
 include/kde4/phonon/volumeslider.h
-lib/cmake/phonon/
-lib/cmake/phonon/PhononConfig.cmake
-lib/cmake/phonon/PhononConfigVersion.cmake
-lib/cmake/phonon/PhononTargets${MODKDE4_CMAKE_PREFIX}.cmake
-lib/cmake/phonon/PhononTargets.cmake
+lib/cmake/phonon_s/
+lib/cmake/phonon_s/PhononConfig.cmake
+lib/cmake/phonon_s/PhononConfigVersion.cmake
+lib/cmake/phonon_s/PhononTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/phonon_s/PhononTargets.cmake
 lib/kde4/
 ${KDE4LIB}/
 @lib ${KDE4LIB}/libphonon_s.so.${LIBphonon_s_VERSION}
-@lib ${KDE4LIB}/libphononexperimental.so.${LIBphononexperimental_VERSION}
+@lib ${KDE4LIB}/libphonon_sexperimental.so.${LIBphonon_sexperimental_VERSION}
 @lib lib/libphonon_s.so.${LIBphonon_s_VERSION}
-@lib lib/libphononexperimental.so.${LIBphononexperimental_VERSION}
-lib/pkgconfig/phonon.pc
-@comment lib/qt4/mkspecs/modules/qt_phonon.pri
+@lib lib/libphonon_sexperimental.so.${LIBphonon_sexperimental_VERSION}
+lib/pkgconfig/phonon_s.pc
+lib/qt4/mkspecs/modules/qt_phonon_s.pri
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
-share/phonon/
-share/phonon/buildsystem/
-share/phonon/buildsystem/COPYING-CMAKE-SCRIPTS
-share/phonon/buildsystem/FindPhononInternal.cmake
-share/phonon/buildsystem/MacroEnsureVersion.cmake
-share/phonon/buildsystem/MacroLogFeature.cmake
-share/phonon/buildsystem/MacroOptionalFindPackage.cmake
-share/phonon/buildsystem/PhononMacros.cmake
-share/phonon/buildsystem/cmake_uninstall.cmake.in
+share/phonon_s/
+share/phonon_s/buildsystem/
+share/phonon_s/buildsystem/COPYING-CMAKE-SCRIPTS
+share/phonon_s/buildsystem/FindPhononInternal.cmake
+share/phonon_s/buildsystem/MacroEnsureVersion.cmake
+share/phonon_s/buildsystem/MacroLogFeature.cmake
+share/phonon_s/buildsystem/MacroOptionalFindPackage.cmake
+share/phonon_s/buildsystem/PhononMacros.cmake
+share/phonon_s/buildsystem/cmake_uninstall.cmake.in

@@ -1,13 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 08:42:12 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/07/10 19:50:26 zhuk Exp $
 Force using more strict rules, to avoid potential problems
 with CMake module names clashing.
---- CMakeLists.txt.orig	Sat Jul 30 19:49:26 2011
-+++ CMakeLists.txt	Mon Feb  6 02:00:22 2012
+--- CMakeLists.txt.orig	Fri Dec  6 14:23:05 2013
++++ CMakeLists.txt	Wed May 14 21:49:59 2014
 @@ -1,6 +1,6 @@
  project(PhononVLC)
  
 -cmake_minimum_required(VERSION 2.6.2 FATAL_ERROR)
 +cmake_minimum_required(VERSION 2.8.7 FATAL_ERROR)
- set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
  
  # Phonon

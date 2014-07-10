@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2014/07/10 19:50:26 zhuk Exp $
+Rename library to avoid clashing with Qt4's one.
+--- CMakeLists.txt.orig	Wed May 14 11:37:06 2014
++++ CMakeLists.txt	Wed May 14 11:37:30 2014
+@@ -24,7 +24,7 @@ set(PHONON_LIB_MINOR_VERSION "7") # Only change on bin
+ set(PHONON_LIB_PATCH_VERSION "1") # Bump whenever you feel like it :P
+ set(PHONON_LIB_VERSION "${PHONON_LIB_MAJOR_VERSION}.${PHONON_LIB_MINOR_VERSION}.${PHONON_LIB_PATCH_VERSION}")
+ set(PHONON_LIB_SOVERSION ${PHONON_LIB_MAJOR_VERSION})
+-set(PHONON_LIB_SONAME phonon)
++set(PHONON_LIB_SONAME phonon_s)
+ set(PHONON_LIB_SONAME_CAMEL Phonon)
+ 
+ if(PHONON_BUILD_PHONON4QT5)

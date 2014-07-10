@@ -1,19 +1,23 @@
-$OpenBSD: patch-cmake_FindPhononInternal_cmake,v 1.1 2013/04/24 08:53:37 zhuk Exp $
+$OpenBSD: patch-cmake_FindPhononInternal_cmake,v 1.2 2014/07/10 19:50:26 zhuk Exp $
 Allow paths to be overriden.
---- cmake/FindPhononInternal.cmake.orig	Thu Nov 15 15:47:01 2012
-+++ cmake/FindPhononInternal.cmake	Thu Nov 15 15:46:55 2012
-@@ -90,10 +90,10 @@ set(CMAKE_MODULE_PATH ${_phonon_cmake_module_path_back
+--- cmake/FindPhononInternal.cmake.orig	Fri Dec  6 14:22:44 2013
++++ cmake/FindPhononInternal.cmake	Wed May 14 12:20:09 2014
+@@ -171,13 +171,13 @@ set(CMAKE_MODULE_PATH ${_phonon_cmake_module_path_back
  
- set(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
+ include(GNUInstallDirs)
  
 -set(SHARE_INSTALL_PREFIX        "share")  #              CACHE PATH "Base directory for files which go to share/")
 -set(INCLUDE_INSTALL_DIR         "include" ) #           CACHE PATH "The subdirectory to the header prefix")
++set(SHARE_INSTALL_PREFIX        "share"            CACHE PATH "Base directory for files which go to share/")
++set(INCLUDE_INSTALL_DIR         "include"          CACHE PATH "The subdirectory to the header prefix")
+ if (PHONON_BUILD_PHONON4QT5)
+-    set(INCLUDE_INSTALL_DIR         "include/${PHONON_LIB_SONAME}" ) #           CACHE PATH "The subdirectory to the header prefix")
++    set(INCLUDE_INSTALL_DIR         "include/${PHONON_LIB_SONAME}"       CACHE PATH "The subdirectory to the header prefix")
+ endif (PHONON_BUILD_PHONON4QT5)
 -set(BIN_INSTALL_DIR             "bin"     ) #         CACHE PATH "The install dir for executables (default ${EXEC_INSTALL_PREFIX}/bin)")
--set(LIB_INSTALL_DIR             "lib${LIB_SUFFIX}" ) #  CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is ${EXEC_INSTALL_PREFIX}/lib${LIB_SUFFIX})")
-+set(SHARE_INSTALL_PREFIX        "share"              CACHE PATH "Base directory for files which go to share/")
-+set(INCLUDE_INSTALL_DIR         "include"            CACHE PATH "The subdirectory to the header prefix")
+-set(LIB_INSTALL_DIR             "${CMAKE_INSTALL_LIBDIR}" ) #  CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed"
 +set(BIN_INSTALL_DIR             "bin"              CACHE PATH "The install dir for executables (default ${EXEC_INSTALL_PREFIX}/bin)")
-+set(LIB_INSTALL_DIR             "lib${LIB_SUFFIX}"   CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is ${EXEC_INSTALL_PREFIX}/lib${LIB_SUFFIX})")
++set(LIB_INSTALL_DIR             "${CMAKE_INSTALL_LIBDIR}"   CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed")
  set(PLUGIN_INSTALL_DIR          "${LIB_INSTALL_DIR}/kde4"                   CACHE PATH "The subdirectory relative to the install prefix where plugins will be installed (default is ${LIB_INSTALL_DIR}/kde4)")
- set(ICON_INSTALL_DIR            "${SHARE_INSTALL_PREFIX}/icons"             CACHE PATH "The icon install dir (default ${SHARE_INSTALL_PREFIX}/share/icons/)")
- set(SERVICES_INSTALL_DIR        "${SHARE_INSTALL_PREFIX}/kde4/services"     CACHE PATH "The install dir for service (desktop, protocol, ...) files")
+ if (PHONON_BUILD_PHONON4QT5)
+     set(PLUGIN_INSTALL_DIR          "${LIB_INSTALL_DIR}/qt5"                   CACHE PATH "The subdirectory relative to the install prefix where plugins will be installed (default is ${LIB_INSTALL_DIR}/qt5)" FORCE)

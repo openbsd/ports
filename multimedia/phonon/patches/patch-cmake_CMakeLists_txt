@@ -1,21 +1,17 @@
-$OpenBSD: patch-cmake_CMakeLists_txt,v 1.1 2013/04/24 08:53:37 zhuk Exp $
+$OpenBSD: patch-cmake_CMakeLists_txt,v 1.2 2014/07/10 19:50:26 zhuk Exp $
 Skip installing files we already have in either CMake base
 installation or somewhere else.
---- cmake/CMakeLists.txt.orig	Sun Feb  5 21:07:55 2012
-+++ cmake/CMakeLists.txt	Sun Feb  5 21:08:35 2012
-@@ -1,15 +1,9 @@
+--- cmake/CMakeLists.txt.orig	Fri Dec  6 14:22:44 2013
++++ cmake/CMakeLists.txt	Wed May 14 12:19:12 2014
+@@ -1,11 +1,8 @@
  install(FILES cmake_uninstall.cmake.in
                COPYING-CMAKE-SCRIPTS
 -              FindAutomoc4.cmake
 -              FindPackageHandleStandardArgs.cmake
                FindPhononInternal.cmake
-               PhononMacros.cmake
--              FindQt4.cmake
                MacroEnsureVersion.cmake
                MacroLogFeature.cmake
                MacroOptionalFindPackage.cmake
 -              MacroPushRequiredVars.cmake
                PhononMacros.cmake
--              Qt4ConfigDependentSettings.cmake
--              Qt4Macros.cmake
          DESTINATION ${BUILDSYSTEM_INSTALL_DIR})
