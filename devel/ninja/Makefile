@@ -1,8 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/10 20:13:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/10 23:20:42 sthen Exp $
 
 COMMENT =		small build system with a focus on speed
-GH_VER =		v1.4.0
-DISTNAME =		ninja-${GH_VER:S/v//}
+
+V =			1.4.0
+GH_ACCOUNT =		martine
+GH_PROJECT =		ninja
+GH_TAGNAME =		v$V
+GH_COMMIT =		63d5b1013cafb2db95687cf446eb5bb68cf6a27a
+DISTNAME =		${GH_PROJECT}-$V
+
 CATEGORIES =		devel
 HOMEPAGE =		http://martine.github.io/ninja/
 MAINTAINER =		Matthew Dempsky <matthew@dempsky.org>
@@ -12,9 +18,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # c>=68.1 needed for ppoll
 WANTLIB =		c>=68.1 m stdc++
-
-MASTER_SITES =		https://github.com/martine/ninja/archive/
-DISTFILES =		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 MODULES =		lang/python
 
