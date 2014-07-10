@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_configure_in,v 1.1 2014/07/10 23:54:15 jturner Exp $
+--- src/configure.in.orig	Thu Jul 10 19:00:21 2014
++++ src/configure.in	Thu Jul 10 19:01:59 2014
+@@ -526,10 +526,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+ 	AC_MSG_RESULT(yes)
+       else
+ 	AC_MSG_RESULT(no)
+-	AC_MSG_CHECKING(if lua.h can be found in $vi_cv_path_lua_pfx/include/lua$vi_cv_version_lua)
+-	if test -f $vi_cv_path_lua_pfx/include/lua$vi_cv_version_lua/lua.h; then
++	AC_MSG_CHECKING(if lua.h can be found in $vi_cv_path_lua_pfx/include/lua-$vi_cv_version_lua)
++	if test -f $vi_cv_path_lua_pfx/include/lua-$vi_cv_version_lua/lua.h; then
+ 	  AC_MSG_RESULT(yes)
+-	  LUA_INC=/lua$vi_cv_version_lua
++	  LUA_INC=/lua-$vi_cv_version_lua
+ 	else
+ 	  AC_MSG_RESULT(no)
+ 	  vi_cv_path_lua_pfx=
+@@ -554,9 +554,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+     else
+       if test "X$LUA_INC" != "X"; then
+ 	dnl Test alternate location using version
+-	LUA_LIBS="-L${vi_cv_path_lua_pfx}/lib -llua$vi_cv_version_lua"
++	LUA_LIBS="-L${vi_cv_path_lua_pfx}/lib -llua$vi_cv_version_lua -lm"
+       else
+-	LUA_LIBS="-L${vi_cv_path_lua_pfx}/lib -llua"
++	LUA_LIBS="-L${vi_cv_path_lua_pfx}/lib -llua -lm"
+       fi
+     fi
+     if test "$enable_luainterp" = "dynamic"; then

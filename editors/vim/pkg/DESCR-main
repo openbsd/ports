@@ -17,6 +17,7 @@ Flavors:
 	motif	   - build using the Motif toolkit;
 	athena	   - build using the Athena toolkit;
 	no_x11	   - build without X11 support;
+	lua	   - build with Lua support;
 	perl	   - build with Perl support;
 	python	   - build with Python support;
 	python3	   - build with Python3 support;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2014/06/03 11:33:07 rpointel Exp $
+# $OpenBSD: Makefile,v 1.137 2014/07/10 23:54:15 jturner Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -7,7 +7,7 @@ VERSION=	7.4.135
 DISTNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
-REVISION-main=	1
+REVISION-main=	2
 P=		vim${VERSION:R:S/.//}
 CATEGORIES=	editors
 # Upstream's normal distribution (http://ftp.vim.org/pub/vim/unix/) consists
@@ -34,7 +34,7 @@ MULTI_PACKAGES=	-main -lang
 FULLPKGNAME-lang= vim-lang-${VERSION}
 FULLPKGPATH-lang= ${PKGPATH},-lang
 
-FLAVORS=	huge gtk2 athena motif no_x11 perl python python3 ruby
+FLAVORS=	huge gtk2 athena motif no_x11 lua perl python python3 ruby
 FLAVOR?=	gtk2
 
 CONFIGURE_STYLE=gnu
@@ -44,8 +44,20 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 		--enable-multibyte \
 		--enable-cscope
 
+AUTOCONF_VERSION= 2.65
+BUILD_DEPENDS= ${MODGNU_AUTOCONF_DEPENDS}
+
 .if ${FLAVOR:Mhuge}
 CONFIGURE_ARGS+= --with-features=huge
+.endif
+
+.if ${FLAVOR:Mlua}
+MODULES+=	lang/lua
+MODLUA_VERSION=	5.1
+CONFIGURE_ENV+=	vi_cv_path_plain_lua=${MODLUA_BIN}
+CONFIGURE_ARGS+= --enable-luainterp --with-lua-prefix=${LOCALBASE}
+LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
+WANTLIB+=	m ${MODLUA_WANTLIB}
 .endif
 
 .if ${FLAVOR:Mperl}
@@ -139,10 +151,8 @@ MODULES+=		devel/gettext
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
 
-# don't try to regenerate the configure script. Works around the fact that
-# auto/configure.in is newer than auto/configure.
 post-patch:
-	touch ${WRKBUILD}/auto/configure
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 
 post-configure:
 	touch ${WRKBUILD}/auto/config.mk
