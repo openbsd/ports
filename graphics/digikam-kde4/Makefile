@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/10 08:06:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/10 08:53:36 zhuk Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -219,7 +219,9 @@ TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.arch.mk>
 
-.if ${ARCH} != "i386"
+.if ${ARCH} == "i386"
+CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
+.else
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=1"
 .endif
 
