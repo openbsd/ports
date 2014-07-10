@@ -1,0 +1,11 @@
+$OpenBSD: patch-platform_OpenBSD_sm_mem_c,v 1.1 2014/07/10 10:21:41 sthen Exp $
+--- platform/OpenBSD/sm_mem.c.orig	Thu Jul 10 04:20:00 2014
++++ platform/OpenBSD/sm_mem.c	Thu Jul 10 04:20:54 2014
+@@ -37,6 +37,7 @@
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <sys/swap.h>
++#include <sys/vmmeter.h>
+ 
+ #include <unistd.h>
+ #include <stdlib.h>
