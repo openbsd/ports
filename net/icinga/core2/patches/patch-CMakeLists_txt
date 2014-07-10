@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/06/25 11:14:50 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2014/07/10 15:01:17 sthen Exp $
 
 FindBacktrace.cmake - in cmake 3 /
 http://www.openbsd.org/cgi-bin/cvsweb/ports/devel/cmake/files/FindBacktrace.cmake
 
---- CMakeLists.txt.orig	Mon Jun 16 08:02:43 2014
-+++ CMakeLists.txt	Tue Jun 24 16:42:48 2014
-@@ -110,13 +110,11 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/Bin/${C
+--- CMakeLists.txt.orig	Thu Jul 10 11:08:28 2014
++++ CMakeLists.txt	Thu Jul 10 15:10:54 2014
+@@ -111,13 +111,11 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/Bin/${C
  include(CheckFunctionExists)
  include(CheckLibraryExists)
  check_function_exists(vfork HAVE_VFORK)

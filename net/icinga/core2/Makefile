@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/10 12:58:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/10 15:01:17 sthen Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -23,21 +23,17 @@
 # for OpenBSD hier it *ought* to use var/db/icinga2 rather than var/lib/icinga2
 # but this is rather an intrusive change in the code..
 
-# 3. intermittent segfaults at startup (~50% of the time or so?)
-
 SHARED_ONLY =	Yes
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.0.0
+V =		2.0.1
 DISTNAME =	icinga2-$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-mysql-$V
 PKGNAME-pgsql =	icinga2-pgsql-$V
-
-REVISION-main=	0
 
 HOMEPAGE =	https://www.icinga.org/icinga2/
 
@@ -52,7 +48,8 @@ WANTLIB += boost_thread-mt crypto execinfo m pthread ssl stdc++
 GH_ACCOUNT =		Icinga
 GH_PROJECT =		icinga2
 GH_TAGNAME =		v$V
-GH_COMMIT =		30384a4340011723869969e76a3dd2801786cf2e
+GH_COMMIT =		b80c3b2df420bfb0a5830ecd51750c2d247b4e20
+WRKDIST =		${WRKDIR}/${DISTNAME}
 
 MODULES =		devel/cmake
 
@@ -67,7 +64,7 @@ MULTI_PACKAGES =	-main -mysql -pgsql
 WANTLIB-main +=		${WANTLIB} c
 RUN_DEPENDS-main =	net/nagios/plugins
 
-WANTLIB-mysql +=	${WANTLIB} mysqlclient
+WANTLIB-mysql +=	${WANTLIB} mysqlclient_r
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} databases/mysql
 RUN_DEPENDS-mysql =	${BASE_PKGPATH},-main
 
