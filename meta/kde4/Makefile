@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/10 08:19:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/10 08:30:33 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -20,7 +20,8 @@ PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
 PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
 PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
 
-REVISION-accessiblity =	0
+REVISION-accessiblity =	1
+REVISION-edu =		0
 REVISION-minimal =	2
 REVISION-main =		3
 REVISION-network =	1
@@ -40,7 +41,6 @@ MULTI_PACKAGES +=	-admin -network -sdk -toys
 # be needed, probably, when we'll decide to drop KDE3.
 
 KDE4-accessibility = \
-	${MODKDE4_DEP_DIR}/artikulate	\
 	${MODKDE4_DEP_DIR}/jovie	\
 	${MODKDE4_DEP_DIR}/kaccessible	\
 	${MODKDE4_DEP_DIR}/kmag		\
@@ -65,6 +65,7 @@ KDE4-bindings = \
 	${MODKDE4_DEP_DIR}/kimono
 
 KDE4-edu = \
+	${MODKDE4_DEP_DIR}/artikulate	\
 	${MODKDE4_DEP_DIR}/blinken	\
 	${MODKDE4_DEP_DIR}/cantor	\
 	${MODKDE4_DEP_DIR}/analitza	\
