@@ -1,0 +1,38 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCFastISel_cpp,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r204155
+Fix PR19144: Incorrect offset generated for int-to-fp conversion at -O0.
+
+When converting a signed 32-bit integer to double-precision floating point on
+hardware without a lfiwax instruction, we have to instead use a lfd followed
+by fcfid.  We were erroneously offsetting the address by 4 bytes in
+preparation for either a lfiwax or lfiwzx when generating the lfd.  This fixes
+that silly error.
+
+This was not caught in the test suite since the conversion tests were run with
+-mcpu=pwr7, which implies availability of lfiwax.  I've added another test
+case for older hardware that checks the code we expect in the absence of
+lfiwax and other flavors of fcfid.  There are fewer tests in this test case
+because we punt to DAG selection in more cases on older hardware.  (We must
+generate complex fiddly sequences in those cases, and there is marginal
+benefit in duplicating that logic in fast-isel.)
+
+--- lib/Target/PowerPC/PPCFastISel.cpp.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/PowerPC/PPCFastISel.cpp	Sat Jun 14 04:07:38 2014
+@@ -898,11 +898,13 @@ unsigned PPCFastISel::PPCMoveToFPReg(MVT SrcVT, unsign
+   unsigned LoadOpc = PPC::LFD;
+ 
+   if (SrcVT == MVT::i32) {
+-    Addr.Offset = 4;
+-    if (!IsSigned)
++    if (!IsSigned) {
+       LoadOpc = PPC::LFIWZX;
+-    else if (PPCSubTarget.hasLFIWAX())
++      Addr.Offset = 4;
++    } else if (PPCSubTarget.hasLFIWAX()) {
+       LoadOpc = PPC::LFIWAX;
++      Addr.Offset = 4;
++    }
+   }
+ 
+   const TargetRegisterClass *RC = &PPC::F8RCRegClass;

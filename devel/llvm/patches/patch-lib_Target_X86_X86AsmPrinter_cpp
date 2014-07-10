@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_Target_X86_X86AsmPrinter_cpp,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r205067
+Fix printing of register operands with q modifier.
+
+Emit 32-bit register names instead of 64-bit register names if the target does
+not have 64-bit general purpose registers.
+
+--- lib/Target/X86/X86AsmPrinter.cpp.orig	Sun Mar  2 21:57:40 2014
++++ lib/Target/X86/X86AsmPrinter.cpp	Sat Jun 14 05:56:09 2014
+@@ -365,9 +365,11 @@ static bool printAsmMRegister(X86AsmPrinter &P, const 
+   case 'k': // Print SImode register
+     Reg = getX86SubSuperRegister(Reg, MVT::i32);
+     break;
+-  case 'q': // Print DImode register
+-    // FIXME: gcc will actually print e instead of r for 32-bit.
+-    Reg = getX86SubSuperRegister(Reg, MVT::i64);
++  case 'q':
++    // Print 64-bit register names if 64-bit integer registers are available.
++    // Otherwise, print 32-bit register names.
++    MVT::SimpleValueType Ty = P.getSubtarget().is64Bit() ? MVT::i64 : MVT::i32;
++    Reg = getX86SubSuperRegister(Reg, Ty);
+     break;
+   }
+ 

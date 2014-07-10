@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCRegisterInfo_td,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r205630
+Add a full condition code register to make the "cc" clobber work
+
+gcc inline asm supports specifying "cc" as a clobber of all condition
+registers. Add just enough modeling of the full register to make this work.
+Fixed PR19326.
+
+--- lib/Target/PowerPC/PPCRegisterInfo.td.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/PowerPC/PPCRegisterInfo.td	Sat Jun 14 04:13:52 2014
+@@ -144,6 +144,13 @@ def CR6 : CR<6, "cr6", [CR6LT, CR6GT, CR6EQ, CR6UN]>, 
+ def CR7 : CR<7, "cr7", [CR7LT, CR7GT, CR7EQ, CR7UN]>, DwarfRegNum<[75, 75]>;
+ }
+ 
++// The full condition-code register. This is not modeled fully, but defined
++// here primarily, for compatibility with gcc, to allow the inline asm "cc"
++// clobber specification to work.
++def CC : PPCReg<"cc">, DwarfRegAlias<CR0> {
++  let Aliases = [CR0, CR1, CR2, CR3, CR4, CR5, CR6, CR7];
++}
++
+ // Link register
+ def LR  : SPR<8, "lr">, DwarfRegNum<[-2, 65]>;
+ //let Aliases = [LR] in
+@@ -233,3 +240,8 @@ def VRSAVERC : RegisterClass<"PPC", [i32], 32, (add VR
+ def CARRYRC : RegisterClass<"PPC", [i32], 32, (add CARRY)> {
+   let CopyCost = -1;
+ }
++
++def CCRC : RegisterClass<"PPC", [i32], 32, (add CC)> {
++  let isAllocatable = 0;
++}
++

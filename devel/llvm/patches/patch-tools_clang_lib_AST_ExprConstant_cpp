@@ -1,0 +1,57 @@
+$OpenBSD: patch-tools_clang_lib_AST_ExprConstant_cpp,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r203025
+PR19010: Make sure we initialize (empty) indirect base class subobjects when
+evaluating trivial default initialization of a literal class type.
+
+--- tools/clang/lib/AST/ExprConstant.cpp.orig	Sun Mar  2 22:03:41 2014
++++ tools/clang/lib/AST/ExprConstant.cpp	Sat Jun 14 03:37:45 2014
+@@ -5117,16 +5117,15 @@ bool RecordExprEvaluator::VisitCXXConstructExpr(const 
+     if (!Result.isUninit())
+       return true;
+ 
+-    if (ZeroInit)
+-      return ZeroInitialization(E);
+-
+-    const CXXRecordDecl *RD = FD->getParent();
+-    if (RD->isUnion())
+-      Result = APValue((FieldDecl*)0);
+-    else
+-      Result = APValue(APValue::UninitStruct(), RD->getNumBases(),
+-                       std::distance(RD->field_begin(), RD->field_end()));
+-    return true;
++    // We can get here in two different ways:
++    //  1) We're performing value-initialization, and should zero-initialize
++    //     the object, or
++    //  2) We're performing default-initialization of an object with a trivial
++    //     constexpr default constructor, in which case we should start the
++    //     lifetimes of all the base subobjects (there can be no data member
++    //     subobjects in this case) per [basic.life]p1.
++    // Either way, ZeroInitialization is appropriate.
++    return ZeroInitialization(E);
+   }
+ 
+   const FunctionDecl *Definition = 0;
+@@ -5606,19 +5605,9 @@ bool ArrayExprEvaluator::VisitCXXConstructExpr(const C
+     if (HadZeroInit)
+       return true;
+ 
+-    if (ZeroInit) {
+-      ImplicitValueInitExpr VIE(Type);
+-      return EvaluateInPlace(*Value, Info, Subobject, &VIE);
+-    }
+-
+-    const CXXRecordDecl *RD = FD->getParent();
+-    if (RD->isUnion())
+-      *Value = APValue((FieldDecl*)0);
+-    else
+-      *Value =
+-          APValue(APValue::UninitStruct(), RD->getNumBases(),
+-                  std::distance(RD->field_begin(), RD->field_end()));
+-    return true;
++    // See RecordExprEvaluator::VisitCXXConstructExpr for explanation.
++    ImplicitValueInitExpr VIE(Type);
++    return EvaluateInPlace(*Value, Info, Subobject, &VIE);
+   }
+ 
+   const FunctionDecl *Definition = 0;

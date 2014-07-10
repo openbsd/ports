@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_Target_R600_R600Instructions_td,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r203818
+R600: LDS instructions shouldn't implicitly define OQAP
+
+LDS instructions are pseudo instructions which model
+the OQAP defs and uses within a single instruction.
+
+--- lib/Target/R600/R600Instructions.td.orig	Sat Jun 14 03:48:50 2014
++++ lib/Target/R600/R600Instructions.td	Sat Jun 14 03:50:30 2014
+@@ -1648,7 +1648,6 @@ class R600_LDS_1A <bits<6> lds_op, string name, list<d
+   let src2 = 0;
+   let src2_rel = 0;
+ 
+-  let Defs = [OQAP];
+   let usesCustomInserter = 1;
+   let LDS_1A = 1;
+   let DisableEncoding = "$dst";
+@@ -1684,7 +1683,6 @@ class R600_LDS_1A1D_RET <bits<6> lds_op, string name, 
+   let BaseOp = name;
+   let usesCustomInserter = 1;
+   let DisableEncoding = "$dst";
+-  let Defs = [OQAP];
+ }
+ 
+ class R600_LDS_1A2D <bits<6> lds_op, string name, list<dag> pattern> :

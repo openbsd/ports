@@ -1,0 +1,43 @@
+$OpenBSD: patch-lib_CodeGen_SelectionDAG_ScheduleDAGSDNodes_cpp,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r205738
+Put a limit on ScheduleDAGSDNodes::ClusterNeighboringLoads to avoid blowing up compile time.
+
+Fixes PR16365 - Extremely slow compilation in -O1 and -O2.
+
+The SD scheduler has a quadratic implementation of load clustering
+which absolutely blows up compile time for large blocks with constant
+pool loads. The MI scheduler has a better implementation of load
+clustering. However, we have not done the work yet to completely
+eliminate the SD scheduler. Some benchmarks still seem to benefit from
+early load clustering, although maybe by chance.
+
+As an intermediate term fix, I just put a nice limit on the number of
+DAG users to search before finding a match. With this limit there are no
+binary differences in the LLVM test suite, and the PR16365 test case
+does not suffer any compile time impact from this routine.
+
+--- lib/CodeGen/SelectionDAG/ScheduleDAGSDNodes.cpp.orig	Sun Mar  2 21:57:42 2014
++++ lib/CodeGen/SelectionDAG/ScheduleDAGSDNodes.cpp	Sat Jun 14 04:01:39 2014
+@@ -219,8 +219,11 @@ void ScheduleDAGSDNodes::ClusterNeighboringLoads(SDNod
+   DenseMap<long long, SDNode*> O2SMap;  // Map from offset to SDNode.
+   bool Cluster = false;
+   SDNode *Base = Node;
++  // This algorithm requires a reasonably low use count before finding a match
++  // to avoid uselessly blowing up compile time in large blocks.
++  unsigned UseCount = 0;
+   for (SDNode::use_iterator I = Chain->use_begin(), E = Chain->use_end();
+-       I != E; ++I) {
++       I != E && UseCount < 100; ++I, ++UseCount) {
+     SDNode *User = *I;
+     if (User == Node || !Visited.insert(User))
+       continue;
+@@ -237,6 +240,8 @@ void ScheduleDAGSDNodes::ClusterNeighboringLoads(SDNod
+     if (Offset2 < Offset1)
+       Base = User;
+     Cluster = true;
++    // Reset UseCount to allow more matches.
++    UseCount = 0;
+   }
+ 
+   if (!Cluster)

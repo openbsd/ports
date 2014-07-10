@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCCTRLoops_cpp,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r208501
+On PPC32, 128-bit shifts might be runtime calls
+
+The counter-loops formation pass needs to know what operations might be
+function calls (because they can't appear in counter-based loops). On PPC32,
+128-bit shifts might be runtime calls (even though you can't use __int128 on
+PPC32, it seems that SROA might form them).
+
+Fixes PR19709.
+
+--- lib/Target/PowerPC/PPCCTRLoops.cpp.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/PowerPC/PPCCTRLoops.cpp	Sat Jun 14 04:38:11 2014
+@@ -370,6 +370,14 @@ bool PPCCTRLoops::mightUseCTR(const Triple &TT, BasicB
+                 J->getOpcode() == Instruction::URem ||
+                 J->getOpcode() == Instruction::SRem)) {
+       return true;
++    } else if (TT.isArch32Bit() &&
++               isLargeIntegerTy(false, J->getType()->getScalarType()) &&
++               (J->getOpcode() == Instruction::Shl ||
++                J->getOpcode() == Instruction::AShr ||
++                J->getOpcode() == Instruction::LShr)) {
++      // Only on PPC32, for 128-bit integers (specifically not 64-bit
++      // integers), these might be runtime calls.
++      return true;
+     } else if (isa<IndirectBrInst>(J) || isa<InvokeInst>(J)) {
+       // On PowerPC, indirect jumps use the counter register.
+       return true;

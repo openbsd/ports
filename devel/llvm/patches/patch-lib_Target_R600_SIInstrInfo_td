@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_Target_R600_SIInstrInfo_td,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r203281
+R600/SI: Using SGPRs is illegal for instructions that read carry-out
+from VCC
+
+--- lib/Target/R600/SIInstrInfo.td.orig	Sat Jun 14 03:42:53 2014
++++ lib/Target/R600/SIInstrInfo.td	Sat Jun 14 03:44:40 2014
+@@ -298,10 +298,10 @@ multiclass VOP2_64 <bits<6> op, string opName, list<da
+   : VOP2_Helper <op, VReg_64, VSrc_64, opName, pattern, revOp>;
+ 
+ multiclass VOP2b_32 <bits<6> op, string opName, list<dag> pattern,
+-                     string revOp = opName> {
++                     RegisterClass src0_rc, string revOp = opName> {
+ 
+   def _e32 : VOP2 <
+-    op, (outs VReg_32:$dst), (ins VSrc_32:$src0, VReg_32:$src1),
++    op, (outs VReg_32:$dst), (ins src0_rc:$src0, VReg_32:$src1),
+     opName#"_e32 $dst, $src0, $src1", pattern
+   >, VOP <opName>, VOP2_REV<revOp#"_e32", !eq(revOp, opName)>;
+ 

@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_Target_R600_AMDGPUCallingConv_td,v 1.1 2014/07/10 22:46:37 brad Exp $
+
+r207990
+R600/SI: allow 5 more input SGPRs to a shader
+
+Our OpenGL driver needs 22 SGPRs (16 user SGPRs + 6 streamout non-user SGPRs).
+
+--- lib/Target/R600/AMDGPUCallingConv.td.orig	Sun Mar  2 21:57:40 2014
++++ lib/Target/R600/AMDGPUCallingConv.td	Sat Jun 14 04:35:50 2014
+@@ -20,7 +20,7 @@ def CC_SI : CallingConv<[
+   CCIfInReg<CCIfType<[f32, i32] , CCAssignToReg<[
+     SGPR0, SGPR1, SGPR2, SGPR3, SGPR4, SGPR5, SGPR6, SGPR7,
+     SGPR8, SGPR9, SGPR10, SGPR11, SGPR12, SGPR13, SGPR14, SGPR15,
+-    SGPR16
++    SGPR16, SGPR17, SGPR18, SGPR19, SGPR20, SGPR21
+   ]>>>,
+ 
+   CCIfInReg<CCIfType<[i64] , CCAssignToRegWithShadow<
