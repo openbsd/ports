@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2014/07/10 20:42:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2014/07/10 22:41:11 naddy Exp $
 
 COMMENT=	GNU gettext
 
 DISTNAME=	gettext-0.19.1
+REVISION=	0
 SHARED_LIBS +=  intl                 6.0      # 9.2
 SHARED_LIBS +=  asprintf             1.1      # unknown
 SHARED_LIBS +=  gettextlib           4.0      # unknown
@@ -53,8 +54,5 @@ post-install:
 	for l in ${EXTRA_LOCALES}; do \
 		${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$$l/LC_MESSAGES; \
 	done
-# A makefile race can lead to libgettextlib.a and libgettextsrc.a
-# not being removed as intended when building with MAKE_JOBS > 1.
-	@rm -f ${PREFIX}/lib/libgettextlib.a ${PREFIX}/lib/libgettextsrc.a
 
 .include <bsd.port.mk>

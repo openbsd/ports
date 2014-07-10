@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/07/10 20:42:28 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/07/10 22:41:11 naddy Exp $
 bin/autopoint
 @bin bin/envsubst
 @bin bin/gettext
@@ -35,11 +35,13 @@ lib/gettext/user-email
 lib/libasprintf.a
 lib/libasprintf.la
 @lib lib/libasprintf.so.${LIBasprintf_VERSION}
+lib/libgettextlib.a
 lib/libgettextlib.la
 @lib lib/libgettextlib.so.${LIBgettextlib_VERSION}
 lib/libgettextpo.a
 lib/libgettextpo.la
 @lib lib/libgettextpo.so.${LIBgettextpo_VERSION}
+lib/libgettextsrc.a
 lib/libgettextsrc.la
 @lib lib/libgettextsrc.so.${LIBgettextsrc_VERSION}
 lib/libintl.a
