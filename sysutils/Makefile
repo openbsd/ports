@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.318 2014/07/09 14:01:13 benno Exp $
+# $OpenBSD: Makefile,v 1.319 2014/07/10 13:11:11 bentley Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -33,6 +33,7 @@
      SUBDIR += curlftpfs
      SUBDIR += cyphertite
      SUBDIR += d-feet
+     SUBDIR += dateutils
      SUBDIR += dcfldd
      SUBDIR += dcled
      SUBDIR += ddrescue
