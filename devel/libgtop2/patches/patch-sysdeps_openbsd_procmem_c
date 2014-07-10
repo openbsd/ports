@@ -1,0 +1,14 @@
+$OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.6 2014/07/10 10:26:47 sthen Exp $
+--- sysdeps/openbsd/procmem.c.orig	Thu Jul 10 04:18:01 2014
++++ sysdeps/openbsd/procmem.c	Thu Jul 10 04:23:15 2014
+@@ -38,6 +38,10 @@
+ 
+ #include <sys/ucred.h>
+ #include <sys/sysctl.h>
++
++/* XXX until uvm gets cleaned up */
++#include <sys/mutex.h>
++typedef int boolean_t;
+ #include <uvm/uvm.h>
+ 
+ /* Fixme ... */
