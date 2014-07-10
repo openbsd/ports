@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/07/09 20:03:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2014/07/10 19:55:27 zhuk Exp $
 
 COMMENT =	web development tools for KDE
 DISTNAME =	kdewebdev-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	klinkstatuscommon	51.0
 SHARED_LIBS +=	kommandercore		51.0
