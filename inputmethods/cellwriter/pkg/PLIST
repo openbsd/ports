@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/10 08:30:01 bentley Exp $
+@bin bin/cellwriter
+@man man/man1/cellwriter.1
+share/applications/cellwriter.desktop
+share/cellwriter/
+share/cellwriter/profile
+share/cellwriter/wordfreq
+share/icons/hicolor/scalable/apps/cellwriter.svg
+share/pixmaps/
+share/pixmaps/cellwriter.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

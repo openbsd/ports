@@ -1,0 +1,5 @@
+CellWriter is a grid-entry natural handwriting input panel. As you write
+characters into the cells, your writing is instantly recognized at the
+character level. When you press 'Enter' on the panel, the input you
+entered is sent to the currently focused application as if typed on the
+keyboard.
