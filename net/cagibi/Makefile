@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/22 17:53:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/10 13:00:13 espie Exp $
 
 CATEGORIES =	net
 COMMENT =	SSDP cache/proxy daemon for KDE
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/cagibi
 DISTNAME =	cagibi-0.2.0
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/cagibi/}
 EXTRACT_SUFX =	.tar.bz2
