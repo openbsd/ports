@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.664 2014/06/24 21:48:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.665 2014/07/10 12:37:06 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -137,7 +137,6 @@
      SUBDIR += mongrel2
      SUBDIR += mono-xsp
      SUBDIR += mozilla-firefox
-     SUBDIR += mozilla-sync
      SUBDIR += mozplugger
      SUBDIR += netsurf
      SUBDIR += newsbeuter
