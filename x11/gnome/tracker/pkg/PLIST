@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2014/05/09 09:16:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2014/07/10 14:18:52 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -279,7 +279,6 @@ share/tracker/extract-rules/90-gstreamer-audio-generic.rule
 share/tracker/extract-rules/90-gstreamer-image-generic.rule
 share/tracker/extract-rules/90-gstreamer-video-generic.rule
 share/tracker/extract-rules/90-text-generic.rule
-share/tracker/icons/
 share/tracker/languages/
 share/tracker/languages/stopwords.da
 share/tracker/languages/stopwords.de

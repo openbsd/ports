@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2014/05/09 09:16:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2014/07/10 14:18:52 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -8,7 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		1.0.1
+GNOME_VERSION=		1.0.2
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -77,7 +77,7 @@ LIB_DEPENDS=		audio/libcue \
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
 
-MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection vala
+MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection vala
 MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 MODPY_BUILDDEP=		No
