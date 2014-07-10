@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.21 2014/07/10 14:22:49 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.22 2014/07/10 22:13:09 jasper Exp $
 
 From 3637c48d97e4ed9fddbad883cc1cce571270e187 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -11,7 +11,7 @@ Date: Tue, 22 Apr 2014 00:40:25 +0200
 Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_options given
 
 --- lib/puppet/provider/package/openbsd.rb.orig	Mon Jun  9 23:08:19 2014
-+++ lib/puppet/provider/package/openbsd.rb	Thu Jul 10 15:18:54 2014
++++ lib/puppet/provider/package/openbsd.rb	Thu Jul 10 16:23:31 2014
 @@ -4,7 +4,9 @@ require 'puppet/provider/package'
  Puppet::Type.type(:package).provide :openbsd, :parent => Puppet::Provider::Package do
    desc "OpenBSD's form of `pkg_add` support."
@@ -31,7 +31,7 @@ Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_opt
  
    def self.instances
      packages = []
-@@ -54,6 +57,59 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -54,6 +57,60 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      [command(:pkginfo), "-a"]
    end
  
@@ -57,15 +57,16 @@ Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_opt
 +      return properties[:ensure]
 +    else
 +      # Remove all fuzzy matches first.
-+      output = output.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join.chomp
++      output = output.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/}.join.chomp
 +      debug "pkg_info -Q for #{query}: #{output}"
 +    end
 +
-+    if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*?)\s+\(installed\)$/
++    if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)(-#{resource[:flavor]})? \(installed\)$/
 +      debug "Package is already the latest available"
 +      return properties[:ensure]
 +    else
-+      match = /(^#{resource[:name]})-(\d[^-]*)[-]?(\w*)/.match(output)
++      # Flavors need a little nudge in the right direction
++      match = /(^#{resource[:name]})-(\d[^-]*)[-]?(\w*)(-#{resource[:flavor]})?/.match(output)
 +      debug "Latest available for #{query}: #{match[2]}"
 +      if properties[:ensure].to_sym == :absent
 +        return match[2]
@@ -91,7 +92,7 @@ Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_opt
    def parse_pkgconf
      unless @resource[:source]
        if Puppet::FileSystem.exist?("/etc/pkg.conf")
-@@ -80,14 +136,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -80,14 +137,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      end
    end
  
@@ -119,7 +120,7 @@ Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_opt
      else
        e_vars = {}
        full_name = @resource[:source]
-@@ -96,13 +163,17 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -96,16 +164,19 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      cmd << install_options
      cmd << full_name
  
@@ -138,7 +139,10 @@ Subject: [PATCH] (PUP-2311) OpenBSD uninstall broken when multiple uninstall_opt
 +      regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
        master_version = 0
        version = -1
- 
+-
+       process.each_line do |line|
+         if match = regex.match(line.split[0])
+           # now we return the first version, unless ensure is latest
 @@ -142,7 +213,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
