@@ -1,7 +1,0 @@
-TACACS+ requires root privileges to start up properly. After the
-initialization, it will drop privileges to a less-privileged
-user/group called '_tacacs'.
-
-Please edit /etc/services and add the following entry:
-
-tacacs+	49/tcp
