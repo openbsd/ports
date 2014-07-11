@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/06/14 22:11:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2014/07/11 21:58:14 dcoppa Exp $
 
 COMMENT =	client library for the Redis key-value store
 
-VERSION =	3.0.7
+VERSION =	3.1.0
 EPOCH =		0
 DISTNAME =	redis-${VERSION}
 CATEGORIES =	databases
