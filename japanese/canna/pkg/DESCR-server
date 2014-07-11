@@ -1,7 +1,5 @@
 Canna is a Kana-Kanji conversion engine.
 This package holds the server and related utility.
 
-Update /etc/services to get the canna service recognized.
-
 cannaserver is started as daemon. This package needs
 the Canna dictionaries (cannadict package) to be functional.
