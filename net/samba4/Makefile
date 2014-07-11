@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/06/30 23:25:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/11 22:08:27 giovanni Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.0.19
@@ -179,15 +179,15 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--docdir=${PREFIX}/share/doc \
 			--mandir=${PREFIX}/man \
 			--localedir=${PREFIX}/share/locale \
-			--localstatedir=/var \
+			--localstatedir=${BASELOCALSTATEDIR} \
 			--private-libraries="NONE" \
-			--sharedstatedir=/var \
+			--sharedstatedir=${VARBASE} \
 			--sysconfdir=${SYSCONFDIR} \
 			--with-configdir=${SYSCONFDIR}/samba \
-			--with-statedir=/var/samba \
-			--with-privatedir=/var/samba/private \
-			--with-lockdir=/var/run/samba \
-			--with-privileged-socket-dir=/var/samba \
+			--with-statedir=${VARBASE}/samba \
+			--with-privatedir=${VARBASE}/samba/private \
+			--with-lockdir=${VARBASE}/run/samba \
+			--with-privileged-socket-dir=${VARBASE}/samba \
 			--with-perl-arch-install-dir=${PREFIX}/${P5ARCH} \
 			--with-perl-lib-install-dir=${PREFIX}/${P5SITE} \
 			--enable-selftest \
