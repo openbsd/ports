@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2014/02/17 06:53:37 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/11 18:35:27 pascal Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT-main =		DVD ripper/converter
 COMMENT-dvdcpy =	copy selected info from DVD
 
-V =			1.0.0
+V =			1.0.1
 DISTNAME =		ogmrip-$V
 PKGNAME-main =		ogmrip-$V
 PKGNAME-dvdcpy =	dvdcpy-$V
-
-REVISION-main=		3
-REVISION-dvdcpy=	1
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0
