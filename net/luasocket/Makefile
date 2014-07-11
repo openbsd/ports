@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/07/11 07:42:10 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2014/07/11 08:54:57 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,6 @@ GH_TAGNAME=	v$V
 GH_COMMIT=	22cd5833fcc0e272f26004a79c8545e959ba406b
 DISTNAME=	${GH_PROJECT}-$V
 PKGNAME=	${DISTNAME:S/-rc/rc/}
-WRKDIST =	${WRKDIR}/${DISTNAME}
 CATEGORIES=	net
 
 HOMEPAGE=	http://w3.impa.br/~diego/software/luasocket/
