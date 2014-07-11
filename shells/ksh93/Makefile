@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/01 09:07:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/11 20:55:40 pascal Exp $
 
 BROKEN-mips64 =		libast is not built
 
@@ -7,6 +7,7 @@ COMMENT =		AT&T Korn Shell
 V =			2012-08-01
 DISTNAME =		ast-ksh.${V}
 PKGNAME =		ksh93-${V:S/-//g}
+REVISION =		0
 
 CATEGORIES =		shells
 

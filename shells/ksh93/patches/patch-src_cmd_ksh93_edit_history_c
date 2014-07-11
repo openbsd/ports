@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cmd_ksh93_edit_history_c,v 1.1 2014/07/11 20:55:40 pascal Exp $
+--- src/cmd/ksh93/edit/history.c.orig	Fri Jul 11 10:03:31 2014
++++ src/cmd/ksh93/edit/history.c	Fri Jul 11 10:04:59 2014
+@@ -834,7 +834,7 @@ static int hist_write(Sfio_t *iop,const void *buff,reg
+ 	if(hp->auditfp)
+ 	{
+ 		time_t	t=time((time_t*)0);
+-		sfprintf(hp->auditfp,"%u;%u;%s;%*s%c",sh_isoption(SH_PRIVILEGED)?shgd->euserid:shgd->userid,t,hp->tty,size,buff,0);
++		sfprintf(hp->auditfp,"%u;%llu;%s;%*s%c",sh_isoption(SH_PRIVILEGED)?shgd->euserid:shgd->userid,t,hp->tty,size,buff,0);
+ 		sfsync(hp->auditfp);
+ 	}
+ #endif	/* SHOPT_AUDIT */
