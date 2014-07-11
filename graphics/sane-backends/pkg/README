@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2014/07/10 13:09:06 ajacoutot Exp $
+$OpenBSD: README,v 1.13 2014/07/11 16:59:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -52,11 +52,3 @@ NETWORK
 =======
 By default, the saned(8) daemon runs as _saned, so you need to allow the
 _saned user access to the scanner device node.
-If you're planning on using the SANE network daemon (saned) with
-inetd(8) as opposed to starting it standalone from the provided rc.d(8)
-script, add the following line in /etc/services:
-sane-port	6566/tcp	saned	# SANE network scanner daemon
-
-inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(8):
-inetd_flags=
