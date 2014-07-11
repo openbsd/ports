@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/11/11 21:25:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2014/07/11 10:37:55 zhuk Exp $
 
 COMMENT=	search engine library
 
 V=		1.2.15
 DISTNAME=	xapian-core-${V}
+REVISION=	0
 
 SHARED_LIBS +=  xapian	3.1	# .28.2
 
@@ -20,10 +21,13 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 LIB_DEPENDS=	sysutils/e2fsprogs>=1.42.7
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		LIBxapian_VERSION=${LIBxapian_VERSION}
+
+AUTOCONF_VERSION=	2.68
 
 .include <bsd.port.arch.mk>
 # amd64-capable CPUs all have SSE

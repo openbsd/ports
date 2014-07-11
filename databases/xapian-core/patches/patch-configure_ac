@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_ac,v 1.1 2014/07/11 10:37:55 zhuk Exp $
+--- configure.ac.orig	Tue May 27 12:30:02 2014
++++ configure.ac	Tue May 27 12:30:17 2014
+@@ -1237,6 +1237,7 @@ dnl **************************
+ dnl * Build the output files *
+ dnl **************************
+ 
++AC_SUBST(LIBxapian_VERSION)
+ AC_CONFIG_FILES([
+  Makefile
+  tests/Makefile
