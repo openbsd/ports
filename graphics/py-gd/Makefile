@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/07/10 11:06:15 rpe Exp $
+# $OpenBSD: Makefile,v 1.22 2014/07/11 07:40:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,7 @@ GH_COMMIT=	b8939e7864501dcf1bb9262d9559d298886b5950
 DISTNAME=	${GH_PROJECT}-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L:S/module//}
 CATEGORIES=	graphics
+WRKDIST =	${WRKDIR}/${DISTNAME}
 
 HOMEPAGE=	http://newcenturycomputers.net/projects/gdmodule.html
 
