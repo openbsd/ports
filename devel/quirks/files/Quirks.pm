@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.159 2014/07/09 20:30:58 zhuk Exp $
+# $OpenBSD: Quirks.pm,v 1.160 2014/07/11 13:46:36 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -26,14 +26,14 @@ package OpenBSD::Quirks;
 sub new
 {
 	my ($class, $version) = @_;
-	if ($version == 1) {
-		return OpenBSD::Quirks1->new;
+	if ($version == 1 || $version == 2) {
+		return OpenBSD::Quirks2->new;
 	} else {
 		return undef;
 	}
 }
 
-package OpenBSD::Quirks1;
+package OpenBSD::Quirks2;
 use Config;
 sub new
 {
@@ -494,6 +494,27 @@ sub tweak_search
 		} else {
 			$l->[0]->add_stem($extra);
 		}
+	}
+}
+
+# list of
+#   cat/path => badspec
+my $cve = { 
+	# for testing
+	# 'archivers/arc' => 'arc-<6',
+};
+
+# ->check_security($path)
+#	return an insecure specification for the matching path
+#	e.g., you should update.
+
+sub check_security
+{
+	my ($self, $path) = @_;
+	if (defined $cve->{$path}) {
+		return $cve->{$path};
+	} else {
+		return undef;
 	}
 }
 
