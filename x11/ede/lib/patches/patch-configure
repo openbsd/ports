@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
---- configure.orig	Fri May 18 14:51:11 2012
-+++ configure	Fri May 25 17:42:08 2012
-@@ -2189,7 +2189,7 @@ ac_config_headers="$ac_config_headers edelib/_conf.h:e
+$OpenBSD: patch-configure,v 1.2 2014/07/11 21:39:04 pascal Exp $
+--- configure.orig	Sat Jun 21 23:24:17 2014
++++ configure	Fri Jul 11 18:46:15 2014
+@@ -2211,7 +2211,7 @@ ac_config_headers="$ac_config_headers config.h:config.
  EDELIB_MAJOR_VERSION=2
- EDELIB_MINOR_VERSION=0
+ EDELIB_MINOR_VERSION=1
  EDELIB_PATCH_VERSION=0
 -EDELIB_API_VERSION=$PACKAGE_VERSION
 +EDELIB_API_VERSION=$API_VER
  
  user_cflags="$CFLAGS"
  user_cxxflags="$CXXFLAGS"
-@@ -4249,7 +4249,6 @@ int
+@@ -4311,7 +4311,6 @@ int
  main ()
  {
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  		int d = daylight;
  
    ;
-@@ -5670,12 +5669,7 @@ $as_echo "$DBUS_CFLAGS" >&6; }
+@@ -5506,12 +5505,7 @@ $as_echo "$DBUS_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking DBUS_LIBS" >&5
  $as_echo_n "checking DBUS_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic

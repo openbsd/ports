@@ -1,8 +1,8 @@
-$OpenBSD: patch-ede-panel_applets_cpu-monitor_CpuMonitor_cpp,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
---- ede-panel/applets/cpu-monitor/CpuMonitor.cpp.orig	Fri May 18 14:51:27 2012
-+++ ede-panel/applets/cpu-monitor/CpuMonitor.cpp	Wed Jul 10 17:49:45 2013
-@@ -30,7 +30,7 @@
- # include <kstat.h>
+$OpenBSD: patch-ede-panel_applets_cpu-monitor_CpuMonitor_cpp,v 1.2 2014/07/11 21:39:04 pascal Exp $
+--- ede-panel/applets/cpu-monitor/CpuMonitor.cpp.orig	Sat Jun 21 23:24:21 2014
++++ ede-panel/applets/cpu-monitor/CpuMonitor.cpp	Fri Jul 11 19:07:04 2014
+@@ -36,7 +36,7 @@
+ # include <string.h> /* strncmp */
  #endif
  
 -#ifdef __FreeBSD__
@@ -10,8 +10,8 @@ $OpenBSD: patch-ede-panel_applets_cpu-monitor_CpuMonitor_cpp,v 1.1.1.1 2013/07/1
  # include <sys/param.h>
  # include <sys/sysctl.h>
  # if __FreeBSD_version < 500101
-@@ -44,7 +44,7 @@
- #include "Applet.h"
+@@ -49,7 +49,7 @@
+ 
  #include "CpuMonitor.h"
  
 -#ifdef __FreeBSD__
@@ -19,7 +19,7 @@ $OpenBSD: patch-ede-panel_applets_cpu-monitor_CpuMonitor_cpp,v 1.1.1.1 2013/07/1
  
  /* The part ripped from top... */
  /*
-@@ -477,15 +477,18 @@ void CPUMonitor::get_cpu_info() {
+@@ -481,15 +481,18 @@ void CPUMonitor::get_cpu_info() {
  
  #endif /* have_kstat_h */
  

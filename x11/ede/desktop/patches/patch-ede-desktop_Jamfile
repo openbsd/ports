@@ -1,10 +1,10 @@
-$OpenBSD: patch-ede-desktop_Jamfile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
---- ede-desktop/Jamfile.orig	Fri May 25 18:48:51 2012
-+++ ede-desktop/Jamfile	Fri May 25 18:49:02 2012
-@@ -22,5 +22,5 @@ SOURCE = ede-desktop.cpp 
- ObjectC++Flags $(SOURCE) : $(EDELIB_DBUS_INCLUDE) ;
+$OpenBSD: patch-ede-desktop_Jamfile,v 1.2 2014/07/11 21:39:04 pascal Exp $
+--- ede-desktop/Jamfile.orig	Sat Jun 21 23:24:22 2014
++++ ede-desktop/Jamfile	Fri Jul 11 19:07:53 2014
+@@ -31,4 +31,4 @@ SOURCE = ede-desktop.cpp 
  
+ ObjectC++Flags $(SOURCE) : $(EDELIB_DBUS_INCLUDE) ;
  EdeProgram  ede-desktop : $(SOURCE) ;
--LinkAgainst ede-desktop : $(EDELIB_DBUS_LIB) ;
-+LinkAgainst ede-desktop : $(EDELIB_DBUS_LIB) $(PTHREAD_LIBS) ;
- TranslationStrings locale : $(SOURCE) ;
+-LinkAgainst ede-desktop : $(EDELIB_DBUS_LIB) $(XSHAPE_LIBS) ;
+\ No newline at end of file
++LinkAgainst ede-desktop : $(EDELIB_DBUS_LIB) $(XSHAPE_LIBS) $(PTHREAD_LIBS) ;

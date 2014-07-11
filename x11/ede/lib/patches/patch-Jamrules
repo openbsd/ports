@@ -1,6 +1,6 @@
-$OpenBSD: patch-Jamrules,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
---- Jamrules.orig	Fri May 18 14:51:03 2012
-+++ Jamrules	Sat Jul 13 12:37:08 2013
+$OpenBSD: patch-Jamrules,v 1.2 2014/07/11 21:39:04 pascal Exp $
+--- Jamrules.orig	Sat Jun 21 23:24:06 2014
++++ Jamrules	Fri Jul 11 18:46:15 2014
 @@ -69,7 +69,7 @@ EDELIB_DBUS      = edelib_dbus ;
  EDELIB_DBUS_NAME = libedelib_dbus ;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Jamrules,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
  # Haiku jam have builtin LocalClean and LocalDepends
  if ! $(INVOCATION_SUBDIR_SET) {
-@@ -207,7 +207,7 @@ rule SharedLibraryFromObjects
+@@ -208,7 +208,7 @@ rule SharedLibraryFromObjects
  		LINKFLAGS on $(_l) = -h $(_l_so) -G [ on $(_l) return $(LINKFLAGS) ] ;
  	} else {
  		# let linker knows we are making shared library by adding -shared and -Wl,-soname libname.so flags
@@ -19,7 +19,7 @@ $OpenBSD: patch-Jamrules,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  	}
  
  	# make it
-@@ -360,22 +360,6 @@ rule InstallSharedLibrary
+@@ -361,22 +361,6 @@ rule InstallSharedLibrary
  
  	# install .la file
  	MakeInstallPrivate $(dir) : $(2:S=$(SUFLA_SHARED)) ;

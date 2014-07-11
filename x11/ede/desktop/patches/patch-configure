@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
---- configure.orig	Fri May 18 14:52:16 2012
-+++ configure	Fri May 25 18:33:02 2012
-@@ -5087,12 +5087,7 @@ $as_echo "$COMPOSITE_CFLAGS" >&6; }
+$OpenBSD: patch-configure,v 1.2 2014/07/11 21:39:04 pascal Exp $
+--- configure.orig	Sat Jun 21 23:24:54 2014
++++ configure	Fri Jul 11 19:07:04 2014
+@@ -5171,12 +5171,7 @@ $as_echo "$COMPOSITE_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking COMPOSITE_LIBS" >&5
  $as_echo_n "checking COMPOSITE_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              COMPOSITE_VERSION=`$PKG_CONFIG --modversion "xcomposite, xdamage, xext"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $COMPOSITE_LIBS" >&5
-@@ -5324,12 +5319,7 @@ $as_echo "$LIBSTARTUP_NOTIFICATION_CFLAGS" >&6; }
+@@ -5408,12 +5403,7 @@ $as_echo "$LIBSTARTUP_NOTIFICATION_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking LIBSTARTUP_NOTIFICATION_LIBS" >&5
  $as_echo_n "checking LIBSTARTUP_NOTIFICATION_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              LIBSTARTUP_NOTIFICATION_VERSION=`$PKG_CONFIG --modversion "libstartup-notification-1.0"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBSTARTUP_NOTIFICATION_LIBS" >&5
-@@ -5449,12 +5439,7 @@ $as_echo "$EDELIB_CFLAGS" >&6; }
+@@ -5531,12 +5521,7 @@ $as_echo "$EDELIB_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_LIBS" >&5
  $as_echo_n "checking EDELIB_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -43,7 +43,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              EDELIB_VERSION=`$PKG_CONFIG --modversion "edelib"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_LIBS" >&5
-@@ -5563,12 +5548,7 @@ $as_echo "$EDELIB_GUI_CFLAGS" >&6; }
+@@ -5645,12 +5630,7 @@ $as_echo "$EDELIB_GUI_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_GUI_LIBS" >&5
  $as_echo_n "checking EDELIB_GUI_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -57,7 +57,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              EDELIB_GUI_VERSION=`$PKG_CONFIG --modversion "edelib-gui"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_GUI_LIBS" >&5
-@@ -5677,12 +5657,7 @@ $as_echo "$EDELIB_GUI_NO_IMAGES_CFLAGS" >&6; }
+@@ -5759,12 +5739,7 @@ $as_echo "$EDELIB_GUI_NO_IMAGES_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_GUI_NO_IMAGES_LIBS" >&5
  $as_echo_n "checking EDELIB_GUI_NO_IMAGES_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -71,7 +71,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              EDELIB_GUI_NO_IMAGES_VERSION=`$PKG_CONFIG --modversion "edelib-gui-no-images"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_GUI_NO_IMAGES_LIBS" >&5
-@@ -5791,12 +5766,7 @@ $as_echo "$EDELIB_DBUS_CFLAGS" >&6; }
+@@ -5873,12 +5848,7 @@ $as_echo "$EDELIB_DBUS_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_DBUS_LIBS" >&5
  $as_echo_n "checking EDELIB_DBUS_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -85,7 +85,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              EDELIB_DBUS_VERSION=`$PKG_CONFIG --modversion "edelib-dbus"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_DBUS_LIBS" >&5
-@@ -6764,8 +6734,6 @@ else
+@@ -6904,8 +6874,6 @@ else
  		LIBICONV="-L$iconv_path/lib -liconv"
  		INCICONV="-I$iconv_path/include"
  
@@ -94,7 +94,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  	fi
  fi
  
-@@ -6904,12 +6872,7 @@ $as_echo "$xft_CFLAGS" >&6; }
+@@ -7044,12 +7012,7 @@ $as_echo "$xft_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking xft_LIBS" >&5
  $as_echo_n "checking xft_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -108,7 +108,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              xft_VERSION=`$PKG_CONFIG --modversion "xft >= 2.0.0"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $xft_LIBS" >&5
-@@ -7035,12 +6998,7 @@ $as_echo "$xrandr_CFLAGS" >&6; }
+@@ -7175,12 +7138,7 @@ $as_echo "$xrandr_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking xrandr_LIBS" >&5
  $as_echo_n "checking xrandr_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
@@ -122,7 +122,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
  
              xrandr_VERSION=`$PKG_CONFIG --modversion "xrandr >= 1.2.0"`
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: $xrandr_LIBS" >&5
-@@ -7642,12 +7600,7 @@ $as_echo "$libpng_CFLAGS" >&6; }
+@@ -7782,12 +7740,7 @@ $as_echo "$libpng_CFLAGS" >&6; }
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking libpng_LIBS" >&5
  $as_echo_n "checking libpng_LIBS... " >&6; }
              ## don't use --libs since that can do evil things like add -Wl,--export-dynamic

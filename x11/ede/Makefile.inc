@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2013/07/14 00:36:30 pascal Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/07/11 21:39:04 pascal Exp $
 
-V =		2.0
-FULL_V =	2.0.0
+V =		2.1
+FULL_V =	2.1.0
 CATEGORIES =	x11
 HOMEPAGE =	http://equinox-project.org
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>

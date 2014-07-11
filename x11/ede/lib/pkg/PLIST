@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/11 21:39:04 pascal Exp $
 bin/edelib-catchsegv
 bin/edelib-convert-icontheme
-@bin bin/edelib-dbus-introspect
+@bin bin/edelib-dbus-explorer
 bin/edelib-mk-indextheme
 @bin bin/edelib-script
 @bin bin/edelib-update-font-cache
@@ -40,6 +40,7 @@ include/edelib/MenuBar.h
 include/edelib/MenuBase.h
 include/edelib/MenuButton.h
 include/edelib/MenuItem.h
+include/edelib/MenuTooltip.h
 include/edelib/MessageBox.h
 include/edelib/MimeType.h
 include/edelib/Missing.h
@@ -64,15 +65,12 @@ include/edelib/ThemeLoader.h
 include/edelib/TiXml.h
 include/edelib/Util.h
 include/edelib/Version.h
-include/edelib/Version.h.in
 include/edelib/Window.h
 include/edelib/WindowUtils.h
 include/edelib/WindowXid.h
 include/edelib/XSettingsClient.h
 include/edelib/XSettingsCommon.h
 include/edelib/XSettingsManager.h
-include/edelib/_conf.h
-include/edelib/_conf.h.in
 include/edelib/edelib-config.h
 include/edelib/edelib-global.h
 include/edelib/for-each-macro.h
@@ -134,6 +132,7 @@ share/doc/edelib-${FULL_V}/html/MenuBar_8h_source.html
 share/doc/edelib-${FULL_V}/html/MenuBase_8h_source.html
 share/doc/edelib-${FULL_V}/html/MenuButton_8h_source.html
 share/doc/edelib-${FULL_V}/html/MenuItem_8h_source.html
+share/doc/edelib-${FULL_V}/html/MenuTooltip_8h_source.html
 share/doc/edelib-${FULL_V}/html/MessageBox_8h_source.html
 share/doc/edelib-${FULL_V}/html/MimeType_8h_source.html
 share/doc/edelib-${FULL_V}/html/Missing_8h_source.html
@@ -164,7 +163,6 @@ share/doc/edelib-${FULL_V}/html/Window_8h_source.html
 share/doc/edelib-${FULL_V}/html/XSettingsClient_8h_source.html
 share/doc/edelib-${FULL_V}/html/XSettingsCommon_8h_source.html
 share/doc/edelib-${FULL_V}/html/XSettingsManager_8h_source.html
-share/doc/edelib-${FULL_V}/html/__conf_8h_source.html
 share/doc/edelib-${FULL_V}/html/annotated.html
 share/doc/edelib-${FULL_V}/html/bc_s.png
 share/doc/edelib-${FULL_V}/html/bdwn.png
@@ -259,6 +257,8 @@ share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuBase.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuButton-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuButton.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuButton.png
+share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuTooltip-members.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuTooltip.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MessageBox-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MessageBox.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MessageBox.png
@@ -469,3 +469,6 @@ share/doc/edelib-${FULL_V}/html/themeintro.html
 share/doc/edelib-${FULL_V}/html/themelanguage.html
 share/doc/edelib-${FULL_V}/html/themelayout.html
 share/doc/edelib-${FULL_V}/html/todo.html
+share/edelib/
+share/edelib/colors/
+share/edelib/colors/rgb.txt

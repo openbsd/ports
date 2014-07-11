@@ -1,0 +1,11 @@
+$OpenBSD: patch-ede-panel_Jamfile,v 1.1 2014/07/11 21:39:04 pascal Exp $
+--- ede-panel/Jamfile.orig	Fri Jul 11 19:13:53 2014
++++ ede-panel/Jamfile	Fri Jul 11 19:14:01 2014
+@@ -11,7 +11,6 @@
+ SubDir TOP ede-panel ;
+ 
+ EdeProgram  ede-panel : Hider.cpp Panel.cpp AppletManager.cpp ede-panel.cpp ;
+-LinkAgainst ede-panel : -ldl ;
+ #ObjectC++Flags Panel.cpp : -DEDE_PANEL_LOCAL_APPLETS ;
+ 
+ if $(OS) != "SOLARIS" {
