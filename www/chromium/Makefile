@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2014/06/12 14:22:07 robert Exp $
+# $OpenBSD: Makefile,v 1.176 2014/07/11 07:39:58 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -7,6 +7,7 @@ COMMENT=		Chromium browser
 
 V=			35.0.1916.155
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -16,17 +17,12 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
 
-# The proprietary flavor compiles and enables patented codecs like H.264
-FLAVORS=	proprietary debug
+FLAVORS=		debug
 FLAVOR?=
 
 # BSD-like
-.if ${FLAVOR:Mproprietary}
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP =	Yes
-.else
-PERMIT_PACKAGE_CDROM=	Yes
-.endif
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 
@@ -130,12 +126,9 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 # please get your own set of keys. It's free!
 GYP_DEFS+=	-Dgoogle_api_key='AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI' \
 		-Dgoogle_default_client_id='451220141585.apps.googleusercontent.com' \
-		-Dgoogle_default_client_secret='nQcDyaBvDyCeDrsRqKIWSHJn'
-
-.if ${FLAVOR:Mproprietary}
-GYP_DEFS+=	-Dffmpeg_branding=Chrome \
+		-Dgoogle_default_client_secret='nQcDyaBvDyCeDrsRqKIWSHJn' \
+		-Dffmpeg_branding=Chrome \
 		-Dproprietary_codecs=1
-.endif
 
 .if ${FLAVOR:Mdebug}
 GYP_DEFS+=	-Dremove_webcore_debug_symbols=1
@@ -150,9 +143,6 @@ pre-configure:
 .for _arch in x64 ia32
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
-
-	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/linux/${_arch}/libavutil \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/openbsd/${_arch}/libavutil
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio
 	@cp ${FILESDIR}/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
