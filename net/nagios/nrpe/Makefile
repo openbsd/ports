@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/04/21 10:28:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2014/07/11 20:08:23 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
 DISTNAME=	nrpe-2.15
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -17,7 +17,7 @@ WANTLIB=		c crypto ssl
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
-RUN_DEPENDS=	net/nagios/plugins
+RUN_DEPENDS=	net/monitoring-plugins
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libexecdir=${LOCALBASE}/libexec/nagios \

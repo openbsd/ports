@@ -5,4 +5,6 @@ send_nsca	- This is the client program that is used to send service
 		  check information from a remote machine to the nsca daemon
 		  on the central machine that runs Nagios.
 
-Please note: it is recommended that NCSA-ng is used for new installations.
+Please note: this package is only provided for compatibility with existing
+NSCA setups and is NOT RECOMMENDED for new installations which should use
+the NSCA-ng software/protocol instead.

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2014/07/10 12:58:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2014/07/11 20:08:23 sthen Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
 V=		4.0.1
-REVISION-main=	1
+REVISION-main=	2
 REVISION-web=	1
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
@@ -24,7 +24,7 @@ MODULES=	lang/php
 
 BUILD_DEPENDS=	graphics/gd
 LIB_DEPENDS=	devel/libtool,-ltdl
-RUN_DEPENDS-main= net/nagios/plugins
+RUN_DEPENDS-main= net/monitoring-plugins
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/nagios
 
