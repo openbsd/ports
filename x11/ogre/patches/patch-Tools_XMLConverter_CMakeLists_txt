@@ -1,12 +1,12 @@
-$OpenBSD: patch-Tools_XMLConverter_CMakeLists_txt,v 1.3 2013/07/09 10:58:00 pascal Exp $
---- Tools/XMLConverter/CMakeLists.txt.orig	Tue Jul  9 12:21:54 2013
-+++ Tools/XMLConverter/CMakeLists.txt	Tue Jul  9 12:22:04 2013
-@@ -27,7 +27,7 @@ set(SOURCE_FILES 
-   src/tinyxmlparser.cpp
- )
+$OpenBSD: patch-Tools_XMLConverter_CMakeLists_txt,v 1.4 2014/07/11 21:20:31 pascal Exp $
+--- Tools/XMLConverter/CMakeLists.txt.orig	Sun Dec  1 18:28:12 2013
++++ Tools/XMLConverter/CMakeLists.txt	Sun Mar 23 13:38:07 2014
+@@ -37,7 +37,7 @@ if(NOT TINYXML_FOUND)
+   set(TINYXML_LIBRARIES "")
+ endif(NOT TINYXML_FOUND)
  
--include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-+include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include ${TINYXML_INCLUDE_DIR})
++include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/include ${TINYXML_INCLUDE_DIR})
  add_definitions(-DTIXML_USE_STL)
  ogre_add_executable(OgreXMLConverter ${HEADER_FILES} ${SOURCE_FILES})
- target_link_libraries(OgreXMLConverter ${OGRE_LIBRARIES})
+ target_link_libraries(OgreXMLConverter ${OGRE_LIBRARIES} ${TINYXML_LIBRARIES})

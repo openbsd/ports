@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/06/03 18:50:06 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/07/11 21:20:31 pascal Exp $
 @bin bin/OgreMeshUpgrader
 @bin bin/OgreXMLConverter
 include/OGRE/
 include/OGRE/ExampleApplication.h
 include/OGRE/ExampleFrameListener.h
 include/OGRE/ExampleLoadingBar.h
-include/OGRE/FileSystemLayer.h
 include/OGRE/GLX/
+include/OGRE/GLX/GLX_backdrop.h
 include/OGRE/GLX/OgreConfigDialogImp.h
 include/OGRE/GLX/OgreErrorDialogImp.h
 include/OGRE/GLX/OgreTimerImp.h
+include/OGRE/InputContext.h
 include/OGRE/Ogre.h
 include/OGRE/OgreAlignedAllocator.h
 include/OGRE/OgreAnimable.h
@@ -20,7 +21,8 @@ include/OGRE/OgreAny.h
 include/OGRE/OgreArchive.h
 include/OGRE/OgreArchiveFactory.h
 include/OGRE/OgreArchiveManager.h
-include/OGRE/OgreAtomicWrappers.h
+include/OGRE/OgreAtomicObject.h
+include/OGRE/OgreAtomicScalar.h
 include/OGRE/OgreAutoParamDataSource.h
 include/OGRE/OgreAxisAlignedBox.h
 include/OGRE/OgreBillboard.h
@@ -30,7 +32,6 @@ include/OGRE/OgreBillboardSet.h
 include/OGRE/OgreBitwise.h
 include/OGRE/OgreBlendMode.h
 include/OGRE/OgreBone.h
-include/OGRE/OgreBorderPanelOverlayElement.h
 include/OGRE/OgreBuildSettings.h
 include/OGRE/OgreCamera.h
 include/OGRE/OgreCodec.h
@@ -55,6 +56,9 @@ include/OGRE/OgreCustomCompositionPass.h
 include/OGRE/OgreDDSCodec.h
 include/OGRE/OgreDataStream.h
 include/OGRE/OgreDefaultHardwareBufferManager.h
+include/OGRE/OgreDefaultWorkQueue.h
+include/OGRE/OgreDefaultWorkQueueStandard.h
+include/OGRE/OgreDefaultWorkQueueTBB.h
 include/OGRE/OgreDeflate.h
 include/OGRE/OgreDepthBuffer.h
 include/OGRE/OgreDistanceLodStrategy.h
@@ -69,8 +73,7 @@ include/OGRE/OgreExternalTextureSource.h
 include/OGRE/OgreExternalTextureSourceManager.h
 include/OGRE/OgreFactoryObj.h
 include/OGRE/OgreFileSystem.h
-include/OGRE/OgreFont.h
-include/OGRE/OgreFontManager.h
+include/OGRE/OgreFileSystemLayer.h
 include/OGRE/OgreFrameListener.h
 include/OGRE/OgreFreeImageCodec.h
 include/OGRE/OgreFrustum.h
@@ -80,9 +83,11 @@ include/OGRE/OgreGpuProgramParams.h
 include/OGRE/OgreGpuProgramUsage.h
 include/OGRE/OgreHardwareBuffer.h
 include/OGRE/OgreHardwareBufferManager.h
+include/OGRE/OgreHardwareCounterBuffer.h
 include/OGRE/OgreHardwareIndexBuffer.h
 include/OGRE/OgreHardwareOcclusionQuery.h
 include/OGRE/OgreHardwarePixelBuffer.h
+include/OGRE/OgreHardwareUniformBuffer.h
 include/OGRE/OgreHardwareVertexBuffer.h
 include/OGRE/OgreHeaderPrefix.h
 include/OGRE/OgreHeaderSuffix.h
@@ -90,6 +95,7 @@ include/OGRE/OgreHighLevelGpuProgram.h
 include/OGRE/OgreHighLevelGpuProgramManager.h
 include/OGRE/OgreImage.h
 include/OGRE/OgreImageCodec.h
+include/OGRE/OgreImageResampler.h
 include/OGRE/OgreInstanceBatch.h
 include/OGRE/OgreInstanceBatchHW.h
 include/OGRE/OgreInstanceBatchHW_VTF.h
@@ -103,6 +109,7 @@ include/OGRE/OgreIteratorWrapper.h
 include/OGRE/OgreIteratorWrappers.h
 include/OGRE/OgreKeyFrame.h
 include/OGRE/OgreLight.h
+include/OGRE/OgreLodConfig.h
 include/OGRE/OgreLodListener.h
 include/OGRE/OgreLodStrategy.h
 include/OGRE/OgreLodStrategyManager.h
@@ -129,16 +136,10 @@ include/OGRE/OgreMeshSerializer.h
 include/OGRE/OgreMeshSerializerImpl.h
 include/OGRE/OgreMovableObject.h
 include/OGRE/OgreMovablePlane.h
+include/OGRE/OgreNameGenerator.h
 include/OGRE/OgreNode.h
 include/OGRE/OgreNumerics.h
 include/OGRE/OgreOptimisedUtil.h
-include/OGRE/OgreOverlay.h
-include/OGRE/OgreOverlayContainer.h
-include/OGRE/OgreOverlayElement.h
-include/OGRE/OgreOverlayElementCommands.h
-include/OGRE/OgreOverlayElementFactory.h
-include/OGRE/OgreOverlayManager.h
-include/OGRE/OgrePanelOverlayElement.h
 include/OGRE/OgreParticle.h
 include/OGRE/OgreParticleAffector.h
 include/OGRE/OgreParticleAffectorFactory.h
@@ -146,15 +147,16 @@ include/OGRE/OgreParticleEmitter.h
 include/OGRE/OgreParticleEmitterCommands.h
 include/OGRE/OgreParticleEmitterFactory.h
 include/OGRE/OgreParticleIterator.h
-include/OGRE/OgreParticleScriptCompiler.h
 include/OGRE/OgreParticleSystem.h
 include/OGRE/OgreParticleSystemManager.h
 include/OGRE/OgreParticleSystemRenderer.h
 include/OGRE/OgrePass.h
 include/OGRE/OgrePatchMesh.h
 include/OGRE/OgrePatchSurface.h
+include/OGRE/OgrePixelConversions.h
 include/OGRE/OgrePixelCountLodStrategy.h
 include/OGRE/OgrePixelFormat.h
+include/OGRE/OgrePixelFormatDescriptions.h
 include/OGRE/OgrePlane.h
 include/OGRE/OgrePlaneBoundedVolume.h
 include/OGRE/OgrePlatform.h
@@ -166,11 +168,11 @@ include/OGRE/OgrePredefinedControllers.h
 include/OGRE/OgrePrefabFactory.h
 include/OGRE/OgrePrerequisites.h
 include/OGRE/OgreProfiler.h
-include/OGRE/OgreProgressiveMesh.h
+include/OGRE/OgreProgressiveMeshGenerator.h
 include/OGRE/OgreQuaternion.h
+include/OGRE/OgreQueuedProgressiveMeshGenerator.h
 include/OGRE/OgreRadixSort.h
 include/OGRE/OgreRay.h
-include/OGRE/OgreRectangle.h
 include/OGRE/OgreRectangle2D.h
 include/OGRE/OgreRenderObjectListener.h
 include/OGRE/OgreRenderOperation.h
@@ -195,6 +197,7 @@ include/OGRE/OgreResourceManager.h
 include/OGRE/OgreRibbonTrail.h
 include/OGRE/OgreRoot.h
 include/OGRE/OgreRotationalSpline.h
+include/OGRE/OgreSIMDHelper.h
 include/OGRE/OgreSceneManager.h
 include/OGRE/OgreSceneManagerEnumerator.h
 include/OGRE/OgreSceneNode.h
@@ -241,10 +244,18 @@ include/OGRE/OgreSubMesh.h
 include/OGRE/OgreTagPoint.h
 include/OGRE/OgreTangentSpaceCalc.h
 include/OGRE/OgreTechnique.h
-include/OGRE/OgreTextAreaOverlayElement.h
 include/OGRE/OgreTexture.h
 include/OGRE/OgreTextureManager.h
 include/OGRE/OgreTextureUnitState.h
+include/OGRE/OgreThreadDefines.h
+include/OGRE/OgreThreadDefinesBoost.h
+include/OGRE/OgreThreadDefinesNone.h
+include/OGRE/OgreThreadDefinesPoco.h
+include/OGRE/OgreThreadDefinesTBB.h
+include/OGRE/OgreThreadHeaders.h
+include/OGRE/OgreThreadHeadersBoost.h
+include/OGRE/OgreThreadHeadersPoco.h
+include/OGRE/OgreThreadHeadersTBB.h
 include/OGRE/OgreTimer.h
 include/OGRE/OgreUTFString.h
 include/OGRE/OgreUnifiedHighLevelGpuProgram.h
@@ -259,6 +270,21 @@ include/OGRE/OgreWindowEventUtilities.h
 include/OGRE/OgreWireBoundingBox.h
 include/OGRE/OgreWorkQueue.h
 include/OGRE/OgreZip.h
+include/OGRE/Overlay/
+include/OGRE/Overlay/OgreBorderPanelOverlayElement.h
+include/OGRE/Overlay/OgreFont.h
+include/OGRE/Overlay/OgreFontManager.h
+include/OGRE/Overlay/OgreOverlay.h
+include/OGRE/Overlay/OgreOverlayContainer.h
+include/OGRE/Overlay/OgreOverlayElement.h
+include/OGRE/Overlay/OgreOverlayElementCommands.h
+include/OGRE/Overlay/OgreOverlayElementFactory.h
+include/OGRE/Overlay/OgreOverlayManager.h
+include/OGRE/Overlay/OgreOverlayPrerequisites.h
+include/OGRE/Overlay/OgreOverlayProfileSessionListener.h
+include/OGRE/Overlay/OgreOverlaySystem.h
+include/OGRE/Overlay/OgrePanelOverlayElement.h
+include/OGRE/Overlay/OgreTextAreaOverlayElement.h
 include/OGRE/Paging/
 include/OGRE/Paging/OgreGrid2DPageStrategy.h
 include/OGRE/Paging/OgreGrid3DPageStrategy.h
@@ -370,6 +396,7 @@ include/OGRE/RTShaderSystem/OgreShaderExLinearSkinning.h
 include/OGRE/RTShaderSystem/OgreShaderExNormalMapLighting.h
 include/OGRE/RTShaderSystem/OgreShaderExPerPixelLighting.h
 include/OGRE/RTShaderSystem/OgreShaderExTextureAtlasSampler.h
+include/OGRE/RTShaderSystem/OgreShaderExTriplanarTexturing.h
 include/OGRE/RTShaderSystem/OgreShaderFFPColour.h
 include/OGRE/RTShaderSystem/OgreShaderFFPFog.h
 include/OGRE/RTShaderSystem/OgreShaderFFPLighting.h
@@ -431,6 +458,8 @@ include/OGRE/RenderSystems/GL/OgreGLHardwareIndexBuffer.h
 include/OGRE/RenderSystems/GL/OgreGLHardwareOcclusionQuery.h
 include/OGRE/RenderSystems/GL/OgreGLHardwarePixelBuffer.h
 include/OGRE/RenderSystems/GL/OgreGLHardwareVertexBuffer.h
+include/OGRE/RenderSystems/GL/OgreGLNullStateCacheManagerImp.h
+include/OGRE/RenderSystems/GL/OgreGLNullUniformCacheImp.h
 include/OGRE/RenderSystems/GL/OgreGLPBRenderTexture.h
 include/OGRE/RenderSystems/GL/OgreGLPBuffer.h
 include/OGRE/RenderSystems/GL/OgreGLPixelFormat.h
@@ -446,9 +475,31 @@ include/OGRE/RenderSystems/GL/OgreGLSLLinkProgramManager.h
 include/OGRE/RenderSystems/GL/OgreGLSLPreprocessor.h
 include/OGRE/RenderSystems/GL/OgreGLSLProgram.h
 include/OGRE/RenderSystems/GL/OgreGLSLProgramFactory.h
+include/OGRE/RenderSystems/GL/OgreGLStateCacheManager.h
 include/OGRE/RenderSystems/GL/OgreGLSupport.h
 include/OGRE/RenderSystems/GL/OgreGLTexture.h
 include/OGRE/RenderSystems/GL/OgreGLTextureManager.h
+include/OGRE/RenderSystems/GL/OgreGLUniformCache.h
+include/OGRE/RenderSystems/GL/OgreSDLGLSupport.h
+include/OGRE/RenderSystems/GL/OgreSDLPrerequisites.h
+include/OGRE/RenderSystems/GL/OgreSDLWindow.h
+include/OGRE/RenderSystems/GL/_ps1.0_parser.h
+include/OGRE/RenderSystems/GL/_rc1.0_parser.h
+include/OGRE/RenderSystems/GL/_ts1.0_parser.h
+include/OGRE/RenderSystems/GL/_vs1.0_parser.h
+include/OGRE/RenderSystems/GL/macro.h
+include/OGRE/RenderSystems/GL/nvparse.h
+include/OGRE/RenderSystems/GL/nvparse_errors.h
+include/OGRE/RenderSystems/GL/nvparse_externs.h
+include/OGRE/RenderSystems/GL/ps1.0_program.h
+include/OGRE/RenderSystems/GL/rc1.0_combiners.h
+include/OGRE/RenderSystems/GL/rc1.0_final.h
+include/OGRE/RenderSystems/GL/rc1.0_general.h
+include/OGRE/RenderSystems/GL/rc1.0_register.h
+include/OGRE/RenderSystems/GL/ts1.0_inst.h
+include/OGRE/RenderSystems/GL/ts1.0_inst_list.h
+include/OGRE/RenderSystems/GL/vs1.0_inst.h
+include/OGRE/RenderSystems/GL/vs1.0_inst_list.h
 include/OGRE/Sample.h
 include/OGRE/SampleContext.h
 include/OGRE/SamplePlugin.h
@@ -457,8 +508,10 @@ include/OGRE/SdkSample.h
 include/OGRE/SdkTrays.h
 include/OGRE/Terrain/
 include/OGRE/Terrain/OgreTerrain.h
+include/OGRE/Terrain/OgreTerrainAutoUpdateLod.h
 include/OGRE/Terrain/OgreTerrainGroup.h
 include/OGRE/Terrain/OgreTerrainLayerBlendMap.h
+include/OGRE/Terrain/OgreTerrainLodManager.h
 include/OGRE/Terrain/OgreTerrainMaterialGenerator.h
 include/OGRE/Terrain/OgreTerrainMaterialGeneratorA.h
 include/OGRE/Terrain/OgreTerrainPagedWorldSection.h
@@ -468,10 +521,34 @@ include/OGRE/Terrain/OgreTerrainQuadTreeNode.h
 include/OGRE/Threading/
 include/OGRE/Threading/OgreDefaultWorkQueue.h
 include/OGRE/Threading/OgreDefaultWorkQueueStandard.h
+include/OGRE/Threading/OgreDefaultWorkQueueTBB.h
 include/OGRE/Threading/OgreThreadDefines.h
 include/OGRE/Threading/OgreThreadDefinesBoost.h
+include/OGRE/Threading/OgreThreadDefinesNone.h
+include/OGRE/Threading/OgreThreadDefinesPoco.h
+include/OGRE/Threading/OgreThreadDefinesTBB.h
 include/OGRE/Threading/OgreThreadHeaders.h
 include/OGRE/Threading/OgreThreadHeadersBoost.h
+include/OGRE/Threading/OgreThreadHeadersPoco.h
+include/OGRE/Threading/OgreThreadHeadersTBB.h
+include/OGRE/Volume/
+include/OGRE/Volume/OgreVolumeCSGSource.h
+include/OGRE/Volume/OgreVolumeCacheSource.h
+include/OGRE/Volume/OgreVolumeChunk.h
+include/OGRE/Volume/OgreVolumeChunkHandler.h
+include/OGRE/Volume/OgreVolumeDualGridGenerator.h
+include/OGRE/Volume/OgreVolumeGridSource.h
+include/OGRE/Volume/OgreVolumeHalfFloatGridSource.h
+include/OGRE/Volume/OgreVolumeIsoSurface.h
+include/OGRE/Volume/OgreVolumeIsoSurfaceMC.h
+include/OGRE/Volume/OgreVolumeIsoSurfaceTablesMC.h
+include/OGRE/Volume/OgreVolumeMeshBuilder.h
+include/OGRE/Volume/OgreVolumeOctreeNode.h
+include/OGRE/Volume/OgreVolumeOctreeNodeSplitPolicy.h
+include/OGRE/Volume/OgreVolumePrerequisites.h
+include/OGRE/Volume/OgreVolumeSimplexNoise.h
+include/OGRE/Volume/OgreVolumeSource.h
+include/OGRE/Volume/OgreVolumeTextureSource.h
 include/OGRE/asm_math.h
 lib/OGRE/
 lib/OGRE/Plugin_BSPSceneManager.so
@@ -492,15 +569,19 @@ lib/OGRE/cmake/OgreGetVersion.cmake
 lib/OGRE/cmake/PrecompiledHeader.cmake
 lib/OGRE/cmake/PreprocessorUtils.cmake
 @lib lib/libOgreMain.so.${LIBOgreMain_VERSION}
+@lib lib/libOgreOverlay.so.${LIBOgreOverlay_VERSION}
 @lib lib/libOgrePaging.so.${LIBOgrePaging_VERSION}
 @lib lib/libOgreProperty.so.${LIBOgreProperty_VERSION}
 @lib lib/libOgreRTShaderSystem.so.${LIBOgreRTShaderSystem_VERSION}
 @lib lib/libOgreTerrain.so.${LIBOgreTerrain_VERSION}
+@lib lib/libOgreVolume.so.${LIBOgreVolume_VERSION}
+lib/pkgconfig/OGRE-Overlay.pc
 lib/pkgconfig/OGRE-PCZ.pc
 lib/pkgconfig/OGRE-Paging.pc
 lib/pkgconfig/OGRE-Property.pc
 lib/pkgconfig/OGRE-RTShaderSystem.pc
 lib/pkgconfig/OGRE-Terrain.pc
+lib/pkgconfig/OGRE-Volume.pc
 lib/pkgconfig/OGRE.pc
 share/examples/OGRE/
 @sample ${SYSCONFDIR}/OGRE/

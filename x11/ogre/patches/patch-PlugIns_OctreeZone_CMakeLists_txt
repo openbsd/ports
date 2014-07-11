@@ -1,13 +1,15 @@
-$OpenBSD: patch-PlugIns_OctreeZone_CMakeLists_txt,v 1.3 2013/06/03 18:50:06 pascal Exp $
+$OpenBSD: patch-PlugIns_OctreeZone_CMakeLists_txt,v 1.4 2014/07/11 21:20:31 pascal Exp $
 
 Shared modules cannot be linked into another target
 
---- PlugIns/OctreeZone/CMakeLists.txt.orig	Fri May 25 21:48:44 2012
-+++ PlugIns/OctreeZone/CMakeLists.txt	Thu Oct 11 21:03:38 2012
-@@ -17,6 +17,22 @@ set (HEADER_FILES
- )
+--- PlugIns/OctreeZone/CMakeLists.txt.orig	Sun Dec  1 18:28:12 2013
++++ PlugIns/OctreeZone/CMakeLists.txt	Sun Mar 23 14:09:43 2014
+@@ -10,25 +10,34 @@
+ # Configure OctreeZone SceneManager build
  
- set (SOURCE_FILES
+ file(GLOB HEADER_FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
+-file(GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
++file(GLOB SOURCE_FILES
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgreAntiPortal.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgreCapsule.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgreDefaultZone.cpp
@@ -24,10 +26,10 @@ Shared modules cannot be linked into another target
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePortal.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgrePortalBase.cpp
 +  ${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/src/OgreSegment.cpp
-   src/OgreOctreeZone.cpp
-   src/OgreOctreeZoneDll.cpp
-   src/OgreOctreeZoneOctree.cpp
-@@ -28,18 +44,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../PCZ
++  "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../PCZSceneManager/include)
  add_definitions(-D_USRDLL)
  
  ogre_add_library(Plugin_OctreeZone ${OGRE_LIB_TYPE} ${HEADER_FILES} ${SOURCE_FILES})
@@ -46,4 +48,4 @@ Shared modules cannot be linked into another target
 -  )
  endif ()
  
- if (APPLE AND NOT OGRE_BUILD_PLATFORM_APPLE_IOS)
+ ogre_config_framework(Plugin_OctreeZone)

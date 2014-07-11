@@ -1,14 +1,14 @@
-$OpenBSD: patch-Samples_CMakeLists_txt,v 1.1 2012/10/07 09:37:46 dcoppa Exp $
+$OpenBSD: patch-Samples_CMakeLists_txt,v 1.2 2014/07/11 21:20:31 pascal Exp $
 
 Samples are shared modules, not shared libraries
 
---- Samples/CMakeLists.txt.orig	Wed Oct  3 20:37:25 2012
-+++ Samples/CMakeLists.txt	Wed Oct  3 23:14:14 2012
+--- Samples/CMakeLists.txt.orig	Sun Dec  1 18:28:12 2013
++++ Samples/CMakeLists.txt	Sun Mar 23 13:37:32 2014
 @@ -1,5 +1,7 @@
  # Configure Samples build
  
 +set(OGRE_LIB_TYPE MODULE)
 +
- if (OGRE_BUILD_SAMPLES AND NOT OIS_FOUND)
+ if (OGRE_BUILD_SAMPLES AND NOT OIS_FOUND AND NOT ((OGRE_BUILD_PLATFORM_WINRT OR OGRE_BUILD_PLATFORM_WINDOWS_PHONE) AND OIS_INCLUDE_DIRS))
    message(STATUS "Could not find dependency: OIS")
    message(STATUS "Skipping samples build")

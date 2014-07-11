@@ -1,9 +1,9 @@
-$OpenBSD: patch-RenderSystems_CMakeLists_txt,v 1.1 2012/10/07 09:37:46 dcoppa Exp $
+$OpenBSD: patch-RenderSystems_CMakeLists_txt,v 1.2 2014/07/11 21:20:31 pascal Exp $
 
 RenderSystems are shared modules, not shared libraries
 
---- RenderSystems/CMakeLists.txt.orig	Wed Oct  3 20:37:09 2012
-+++ RenderSystems/CMakeLists.txt	Wed Oct  3 23:14:05 2012
+--- RenderSystems/CMakeLists.txt.orig	Sun Dec  1 18:28:12 2013
++++ RenderSystems/CMakeLists.txt	Sun Mar 23 13:31:15 2014
 @@ -9,6 +9,8 @@
  
  # Configure RenderSystem build
@@ -11,5 +11,5 @@ RenderSystems are shared modules, not shared libraries
 +set(OGRE_LIB_TYPE MODULE)
 +
  if (OGRE_BUILD_RENDERSYSTEM_D3D9)
-   if (NOT DirectX_FOUND)
+   if (NOT DirectX9_FOUND)
      MESSAGE(STATUS "Could not find dependency: DirectX")

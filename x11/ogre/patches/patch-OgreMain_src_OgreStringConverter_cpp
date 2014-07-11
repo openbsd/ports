@@ -1,7 +1,7 @@
-$OpenBSD: patch-OgreMain_src_OgreStringConverter_cpp,v 1.2 2013/06/03 18:50:06 pascal Exp $
---- OgreMain/src/OgreStringConverter.cpp.orig	Fri May 25 21:48:44 2012
-+++ OgreMain/src/OgreStringConverter.cpp	Sat May 26 18:43:38 2012
-@@ -62,7 +62,7 @@ namespace Ogre {
+$OpenBSD: patch-OgreMain_src_OgreStringConverter_cpp,v 1.3 2014/07/11 21:20:31 pascal Exp $
+--- OgreMain/src/OgreStringConverter.cpp.orig	Sun Dec  1 18:28:12 2013
++++ OgreMain/src/OgreStringConverter.cpp	Sun Mar 23 13:31:15 2014
+@@ -98,7 +98,7 @@ namespace Ogre {
          return stream.str();
      }
      //-----------------------------------------------------------------------
