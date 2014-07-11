@@ -1,8 +1,0 @@
-IMP is a powerful web-based IMAP4/POP3 client.  It is built on top
-of the Horde Application Framework, and features state of the art
-MIME handling, per-user preferences, folder navigation, searching,
-and an uncluttered user interface.
-
-To complete the installation, be sure that Horde is configured and
-working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL and enter
-Mail server details in ${PREFIX}/${INSTDIR}/config/servers.php

@@ -1,8 +1,0 @@
-The Horde Project is a group of developers who write Web applications
-using the Horde Application Framework, itself a product of the
-Project.
-
-The Horde Application Framework is written in PHP, and provides the
-common tools a Web application requires: classes for dealing with
-preferences, compression, browser detection, connection tracking,
-MIME, and more.

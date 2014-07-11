@@ -1,9 +1,0 @@
-Ingo is an email filter rules manager. It integrates nicely with
-IMP and supports the following drivers:
-
-    * Sieve (using timsieved)
-    * procmail (using VFS FTP driver)
-    * IMAP client-side filtering
-
-To complete the installation, be sure that Horde and IMP are configured
-and working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL
