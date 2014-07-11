@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/10 11:06:37 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/11 07:34:23 espie Exp $
 
 COMMENT =	console based password storing application
 
@@ -10,7 +10,7 @@ DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://github.com/levaidaniel/${PROJECT}
+HOMEPAGE =	http://github.com/levaidaniel/${GH_PROJECT}
 
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
