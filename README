@@ -1,8 +1,8 @@
 Documentation for the ports tree: ports(7), packages(7), mirroring-ports(7),
 library-specs(7), bsd.port.mk(5), bsd.port.arch.mk(5), port-modules(5).
 
-dpb(1) (manpage under ${PORTSDIR}/man) for bulk builds.
+dpb(1) (manpage under ${PORTSDIR}/infrastructure/man) for bulk builds.
 
 See also the OpenBSD Porter's Handbook http://www.openbsd.org/faq/ports/
 
-$OpenBSD: README,v 1.20 2011/11/15 18:33:16 espie Exp $
+$OpenBSD: README,v 1.21 2014/07/11 10:38:01 ajacoutot Exp $
