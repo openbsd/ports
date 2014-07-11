@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/07/11 21:25:23 kirby Exp $
+# $OpenBSD: Makefile,v 1.41 2014/07/11 22:17:08 sthen Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -7,7 +7,7 @@ SHARED_ONLY =		Yes
 COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2013.0.0
-REVISION = 		0
+REVISION =		0
 EXTRACT_SUFX =		.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -47,14 +47,14 @@ WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
-BUILD_DEPENDS = 	devel/swig>=2
+BUILD_DEPENDS =		devel/swig>=2
 RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/enblend-enfuse \
 			graphics/p5-Image-ExifTool \
 			misc/shared-mime-info \
 			x11/gtk+2,-guic \
 			devel/gmake # yes, really a RUN_DEPENDS
-RUN_DEPENDS += 		x11/py-wxPython # required for launching python scripts
+RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 
 LIB_DEPENDS =		devel/boost \
 			graphics/exiv2>=0.12 \
@@ -75,20 +75,17 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
 			-DBUILD_HSI=ON
 NO_TEST =		Yes
 
-MODPY_ADJ_FILES = 	src/hugin_script_interface/hpi.py \
+MODPY_ADJ_FILES =	src/hugin_script_interface/hpi.py \
 			src/hugin_script_interface/plugins/shooting_pattern.py \
 			src/hugin_script_interface/plugins/woa.py \
 			src/hugin_script_interface/plugins/crop_cp.py \
 			src/hugin_script_interface/plugins/top_five.py \
-			src/hugin_script_interface/plugins-dev/plugin_skeleton.py \
-			src/hugin_script_interface/plugins-dev/dual_use.py
-
-
-post-extract:
-	@rm ${WRKSRC}/CMakeModules/FindPNG.cmake
-	@rm ${WRKSRC}/CMakeModules/FindGLEW.cmake
+			src/hugin_script_interface/plugins-dev/dual_use.py \
+			src/hugin_script_interface/plugins-dev/plugin_skeleton.py
 
 pre-patch:
+	rm ${WRKSRC}/CMakeModules/FindPNG.cmake
+	rm ${WRKSRC}/CMakeModules/FindGLEW.cmake
 	find ${WRKSRC} -name '*.orig' | xargs rm
 	cd ${WRKSRC}/CMakeModules; perl -i -pe 's/\r$$//' `find . -type f` \
 	    ../src/CMakeLists.txt
