@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-dbi,v 1.1 2013/11/02 15:48:12 rpe Exp $
-@bin libexec/nagios/check_dbi

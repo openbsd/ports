@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-mysql,v 1.5 2008/10/26 15:02:16 sthen Exp $
-@bin libexec/nagios/check_mysql
-@bin libexec/nagios/check_mysql_query

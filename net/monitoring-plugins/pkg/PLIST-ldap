@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1 2014/07/11 20:08:04 sthen Exp $
+@pkgpath net/nagios/plugins,-ldap
+@bin libexec/nagios/check_ldap
+libexec/nagios/check_ldaps

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-snmp,v 1.4 2008/10/26 15:02:16 sthen Exp $
+@comment $OpenBSD: PLIST-snmp,v 1.1 2014/07/11 20:08:04 sthen Exp $
+@pkgpath net/nagios/plugins,-snmp
 libexec/nagios/check_breeze
 @bin libexec/nagios/check_hpjd
 libexec/nagios/check_ifoperstatus

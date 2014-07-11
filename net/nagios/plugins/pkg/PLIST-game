@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-game,v 1.4 2008/10/26 15:02:16 sthen Exp $
-@bin libexec/nagios/check_game

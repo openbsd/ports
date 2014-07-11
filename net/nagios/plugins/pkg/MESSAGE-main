@@ -1,4 +1,0 @@
-The check_dhcp and check_icmp plugins need to run with superuser
-privileges. For security reasons they are not installed suid root
-by default. If you want to use them, you have to either change
-their mode manually or use systrace's privilege elevation feature.

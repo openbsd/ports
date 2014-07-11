@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.2 2013/06/17 19:28:36 ajacoutot Exp $
---- configure.in.orig	Wed Jun 27 18:32:47 2012
-+++ configure.in	Thu Jun 28 23:04:19 2012
-@@ -211,13 +211,13 @@ AC_ARG_WITH(pgsql,
+$OpenBSD: patch-configure_ac,v 1.1 2014/07/11 20:08:04 sthen Exp $
+--- configure.ac.orig	Tue Jun 24 14:10:09 2014
++++ configure.ac	Wed Jun 25 20:29:20 2014
+@@ -209,13 +209,13 @@ AC_ARG_WITH(pgsql,
  	ACX_HELP_STRING([--with-pgsql=DIR],
  		[sets path to pgsql installation]),
  	PGSQL=$withval,)
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure_in,v 1.2 2013/06/17 19:28:36 ajacoutot Exp $
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
      AC_CHECK_HEADERS(pgsql/libpq-fe.h)
      AC_CHECK_HEADERS(postgresql/libpq-fe.h)
-@@ -229,8 +229,8 @@ if test "$ac_cv_lib_crypt_main" = "yes" -a "x$PGSQL" !
+@@ -227,8 +227,8 @@ if test "$ac_cv_lib_crypt_main" = "yes" -a "x$PGSQL" !
        PGLIBS="-lpq -lcrypt"
        PGINCLUDE="-I/usr/include/pgsql"
      elif test  "$ac_cv_header_postgresql_libpq_fe_h" = "yes"; then
