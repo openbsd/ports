@@ -1,0 +1,12 @@
+$OpenBSD: patch-intern_cycles_util_CMakeLists_txt,v 1.4 2014/07/11 11:48:58 pascal Exp $
+--- intern/cycles/util/CMakeLists.txt.orig	Fri Jul 11 13:32:45 2014
++++ intern/cycles/util/CMakeLists.txt	Fri Jul 11 13:38:44 2014
+@@ -70,6 +70,8 @@ set(SRC_HEADERS
+ 	util_xml.h
+ )
+ 
++remove_definitions(-DWITH_KERNEL_SSE2 -DWITH_KERNEL_SSE3)
++
+ include_directories(${INC})
+ include_directories(SYSTEM ${INC_SYS})
+ 
