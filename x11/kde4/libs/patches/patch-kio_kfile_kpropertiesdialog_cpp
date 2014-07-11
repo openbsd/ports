@@ -1,8 +1,8 @@
-$OpenBSD: patch-kio_kfile_kpropertiesdialog_cpp,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+$OpenBSD: patch-kio_kfile_kpropertiesdialog_cpp,v 1.2 2014/07/11 11:13:10 zhuk Exp $
 Deconflict kde-runtime with kdebase-3.x.
---- kio/kfile/kpropertiesdialog.cpp.orig	Fri Dec 27 14:38:53 2013
-+++ kio/kfile/kpropertiesdialog.cpp	Fri Dec 27 14:39:37 2013
-@@ -1149,7 +1149,7 @@ void KFilePropsPlugin::slotEditFileType()
+--- kio/kfile/kpropertiesdialog.cpp.orig	Sun Jun  8 15:41:32 2014
++++ kio/kfile/kpropertiesdialog.cpp	Fri Jul 11 09:12:20 2014
+@@ -1142,7 +1142,7 @@ void KFilePropsPlugin::slotEditFileType()
      }  else {
          mime = d->mimeType;
      }

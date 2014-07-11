@@ -1,6 +1,6 @@
-$OpenBSD: patch-solid_solid_managerbase_cpp,v 1.1 2014/04/30 09:31:20 zhuk Exp $
---- solid/solid/managerbase.cpp.orig   Mon Mar 31 17:31:17 2014
-+++ solid/solid/managerbase.cpp        Mon Mar 31 17:33:52 2014
+$OpenBSD: patch-solid_solid_managerbase_cpp,v 1.2 2014/07/11 11:13:10 zhuk Exp $
+--- solid/solid/managerbase.cpp.orig	Sun Jun  8 15:41:32 2014
++++ solid/solid/managerbase.cpp	Fri Jul 11 09:12:21 2014
 @@ -80,7 +80,11 @@ void Solid::ManagerBasePrivate::loadBackends()
  #        elif defined(Q_WS_WIN) && !defined(_WIN32_WCE)
              m_backends << new Solid::Backends::Win::WinDeviceManager(0);
@@ -10,6 +10,6 @@ $OpenBSD: patch-solid_solid_managerbase_cpp,v 1.1 2014/04/30 09:31:20 zhuk Exp $
 +#           else
              m_backends << new Solid::Backends::Hal::HalManager(0);
 +#           endif
-
+ 
  #        elif defined(Q_OS_LINUX)
              bool solidHalLegacyEnabled

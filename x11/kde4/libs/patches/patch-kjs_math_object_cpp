@@ -1,8 +1,8 @@
-$OpenBSD: patch-kjs_math_object_cpp,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+$OpenBSD: patch-kjs_math_object_cpp,v 1.5 2014/07/11 11:13:10 zhuk Exp $
 More correct implementation of random() & Co., using arc4random().
---- kjs/math_object.cpp.orig	Wed Oct 16 15:52:18 2013
-+++ kjs/math_object.cpp	Wed Oct 16 16:04:57 2013
-@@ -109,7 +109,9 @@ JSValue *MathObjectImp::getValueProperty(ExecState *, 
+--- kjs/math_object.cpp.orig	Sun Jun  8 15:41:32 2014
++++ kjs/math_object.cpp	Fri Jul 11 09:12:21 2014
+@@ -138,7 +138,9 @@ JSValue *MathObjectImp::getValueProperty(ExecState *, 
  
  // ------------------------------ MathObjectImp --------------------------------
  
@@ -12,7 +12,7 @@ More correct implementation of random() & Co., using arc4random().
  
  MathFuncImp::MathFuncImp(ExecState* exec, int i, int l, const Identifier& name)
    : InternalFunctionImp(static_cast<FunctionPrototype*>(exec->lexicalInterpreter()->builtinFunctionPrototype()), name)
-@@ -199,11 +201,15 @@ JSValue *MathFuncImp::callAsFunction(ExecState *exec, 
+@@ -228,11 +230,15 @@ JSValue *MathFuncImp::callAsFunction(ExecState *exec, 
        result = ::pow(arg, arg2);
      break;
    case MathObjectImp::Random:

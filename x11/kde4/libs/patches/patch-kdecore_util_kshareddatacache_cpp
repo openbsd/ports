@@ -1,8 +1,8 @@
-$OpenBSD: patch-kdecore_util_kshareddatacache_cpp,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+$OpenBSD: patch-kdecore_util_kshareddatacache_cpp,v 1.2 2014/07/11 11:13:10 zhuk Exp $
 More correct implementation of random() & Co., using arc4random().
---- kdecore/util/kshareddatacache.cpp.orig	Wed Aug 28 20:57:06 2013
-+++ kdecore/util/kshareddatacache.cpp	Tue Nov  5 11:05:21 2013
-@@ -451,19 +451,13 @@ struct SharedMemory
+--- kdecore/util/kshareddatacache.cpp.orig	Sun Jun  8 15:41:32 2014
++++ kdecore/util/kshareddatacache.cpp	Fri Jul 11 09:12:19 2014
+@@ -449,19 +449,13 @@ struct SharedMemory
              return false;
          }
  
@@ -23,7 +23,7 @@ More correct implementation of random() & Co., using arc4random().
          // These must be updated to make some of our auxiliary functions
          // work right since their values will be based on the cache size.
          cacheSize = _cacheSize;
-@@ -1178,9 +1172,8 @@ class KSharedDataCache::Private
+@@ -1180,9 +1174,8 @@ class KSharedDataCache::Private
  
          m_expectedType = shm->shmLock.type;
          m_lock = QSharedPointer<KSDCLock>(createLockFromId(m_expectedType, shm->shmLock));
@@ -34,7 +34,7 @@ More correct implementation of random() & Co., using arc4random().
              kError(ksdcArea()) << "Unable to setup shared cache lock, although it worked when created.";
              detachFromSharedMemory();
          }
-@@ -1500,7 +1493,7 @@ bool KSharedDataCache::insert(const QString &key, cons
+@@ -1474,7 +1467,7 @@ bool KSharedDataCache::insert(const QString &key, cons
          }
          else if (loadFactor > startCullPoint) {
              const int tripWireValue = RAND_MAX * (loadFactor - startCullPoint) / (mustCullPoint - startCullPoint);
