@@ -1,23 +1,25 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/25 12:43:11 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2014/07/11 11:20:32 ajacoutot Exp $
 
-COMMENT =		free OpenGl billard game
+COMMENT =		OpenGL billard game
 
 DISTNAME =		foobillard-3.0a
+REVISION =		0
 
 CATEGORIES =		games x11
 HOMEPAGE =		http://foobillard.sourceforge.net/
 
-# GPLv2 only
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += GL GLU ICE SDL SM Xaw Xi c freetype m png pthread z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=foobillard/}
 
-WANTLIB =		GL GLU ICE SM Xaw Xi c freetype m pthread z png SDL
 LIB_DEPENDS =		graphics/png \
 			devel/sdl
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	automake
-CFLAGS += 		-DNO_NV_BUMPREF
+CONFIGURE_STYLE =	gnu
+CFLAGS = 		-DNO_NV_BUMPREF
 
 .include <bsd.port.mk>
