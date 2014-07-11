@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/11 09:58:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/11 11:17:18 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	library for accessing Facebook services
 V =		1.0
 DISTNAME =	libkfbapi-$V
-REVISION =	3
+REVISION =	4
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkfbapi/$V/src/}
@@ -14,7 +14,7 @@ SHARED_LIBS =   kfbapi			0.0
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =  m pthread stdc++
+WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcalcore ${KDE4LIB}/kdeui
