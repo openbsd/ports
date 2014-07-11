@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/19 20:57:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/11 09:17:48 giovanni Exp $
 
 COMMENT =	family-neutral IP socket supporting both IPv4 and IPv6
 
-DISTNAME =	IO-Socket-IP-0.26
+DISTNAME =	IO-Socket-IP-0.31
 
 CATEGORIES =	net
 
