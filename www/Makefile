@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.666 2014/07/11 00:02:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.667 2014/07/11 07:40:18 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -31,7 +31,6 @@
      SUBDIR += cherokee
      SUBDIR += chive
      SUBDIR += chromium
-     SUBDIR += chromium,proprietary
      SUBDIR += clearsilver
      SUBDIR += cntlm
      SUBDIR += conkeror
