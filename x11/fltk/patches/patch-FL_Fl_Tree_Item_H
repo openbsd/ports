@@ -1,0 +1,12 @@
+$OpenBSD: patch-FL_Fl_Tree_Item_H,v 1.1 2014/07/11 20:57:31 pascal Exp $
+--- FL/Fl_Tree_Item.H.orig	Fri Jul 11 18:56:57 2014
++++ FL/Fl_Tree_Item.H	Fri Jul 11 18:57:03 2014
+@@ -61,7 +61,7 @@ class FL_EXPORT Fl_Tree_Item {
+     OPEN                = 1<<0,		///> item is open
+     VISIBLE             = 1<<1,		///> item is visible
+     ACTIVE              = 1<<2,		///> item is active
+-    SELECTED            = 1<<3,		///> item is selected
++    SELECTED            = 1<<3		///> item is selected
+   };
+ #if FLTK_ABI_VERSION >= 10301
+   // NEW
