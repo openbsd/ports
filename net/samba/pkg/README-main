@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.9 2014/07/10 13:09:06 ajacoutot Exp $
+$OpenBSD: README-main,v 1.10 2014/07/11 16:20:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,12 +16,6 @@ port 901.
 
    ...
    swat  stream  tcp  nowait.400  root  ${TRUEPREFIX}/libexec/swat  swat
-   ...
-
-3. add the following entry to /etc/services:
-
-   ...
-   swat            901/tcp                 # samba admin service
    ...
 
 inetd(8) must be reloaded (or started). To enable it at boot, the
