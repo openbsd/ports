@@ -1,0 +1,43 @@
+$OpenBSD: patch-lib_Target_Sparc_Sparc_td,v 1.1 2014/07/11 01:05:24 brad Exp $
+
+Sync up the SPARC backend up to commit r203424.
+
+--- lib/Target/Sparc/Sparc.td.orig	Sun Jun 15 02:52:51 2014
++++ lib/Target/Sparc/Sparc.td	Sun Jun 15 02:57:59 2014
+@@ -29,6 +29,12 @@ def FeatureV8Deprecated
+ def FeatureVIS
+   : SubtargetFeature<"vis", "IsVIS", "true",
+                      "Enable UltraSPARC Visual Instruction Set extensions">;
++def FeatureVIS2
++  : SubtargetFeature<"vis2", "IsVIS2", "true",
++                     "Enable Visual Instruction Set extensions II">;
++def FeatureVIS3
++  : SubtargetFeature<"vis3", "IsVIS3", "true",
++                     "Enable Visual Instruction Set extensions III">;
+ 
+ def FeatureHardQuad
+   : SubtargetFeature<"hard-quad-float", "HasHardQuad", "true",
+@@ -69,12 +75,17 @@ def : Proc<"sparclite86x",    []>;
+ def : Proc<"sparclet",        []>;
+ def : Proc<"tsc701",          []>;
+ def : Proc<"v9",              [FeatureV9]>;
+-def : Proc<"ultrasparc",      [FeatureV9, FeatureV8Deprecated]>;
+-def : Proc<"ultrasparc3",     [FeatureV9, FeatureV8Deprecated]>;
+-def : Proc<"niagara",         [FeatureV9, FeatureV8Deprecated]>;
+-def : Proc<"niagara2",        [FeatureV9, FeatureV8Deprecated, UsePopc]>;
+-def : Proc<"niagara3",        [FeatureV9, FeatureV8Deprecated, UsePopc]>;
+-def : Proc<"niagara4",        [FeatureV9, FeatureV8Deprecated, UsePopc]>;
++def : Proc<"ultrasparc",      [FeatureV9, FeatureV8Deprecated, FeatureVIS]>;
++def : Proc<"ultrasparc3",     [FeatureV9, FeatureV8Deprecated, FeatureVIS,
++                               FeatureVIS2]>;
++def : Proc<"niagara",         [FeatureV9, FeatureV8Deprecated, FeatureVIS,
++                               FeatureVIS2]>;
++def : Proc<"niagara2",        [FeatureV9, FeatureV8Deprecated, UsePopc,
++                               FeatureVIS, FeatureVIS2]>;
++def : Proc<"niagara3",        [FeatureV9, FeatureV8Deprecated, UsePopc,
++                               FeatureVIS, FeatureVIS2]>;
++def : Proc<"niagara4",        [FeatureV9, FeatureV8Deprecated, UsePopc,
++                               FeatureVIS, FeatureVIS2, FeatureVIS3]>;
+ 
+ 
+ //===----------------------------------------------------------------------===//

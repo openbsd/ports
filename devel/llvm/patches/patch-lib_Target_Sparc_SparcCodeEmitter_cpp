@@ -1,0 +1,36 @@
+$OpenBSD: patch-lib_Target_Sparc_SparcCodeEmitter_cpp,v 1.1 2014/07/11 01:05:24 brad Exp $
+
+Sync up the SPARC backend up to commit r203424.
+
+--- lib/Target/Sparc/SparcCodeEmitter.cpp.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/SparcCodeEmitter.cpp	Sun Jun 15 04:00:05 2014
+@@ -76,6 +76,10 @@ class SparcCodeEmitter : public MachineFunctionPass { 
+                                 unsigned) const;
+   unsigned getBranchTargetOpValue(const MachineInstr &MI,
+                                   unsigned) const;
++  unsigned getBranchPredTargetOpValue(const MachineInstr &MI,
++                                      unsigned) const;
++  unsigned getBranchOnRegTargetOpValue(const MachineInstr &MI,
++                                       unsigned) const;
+ 
+   void emitWord(unsigned Word);
+ 
+@@ -194,6 +198,18 @@ unsigned SparcCodeEmitter::getCallTargetOpValue(const 
+ 
+ unsigned SparcCodeEmitter::getBranchTargetOpValue(const MachineInstr &MI,
+                                                   unsigned opIdx) const {
++  const MachineOperand MO = MI.getOperand(opIdx);
++  return getMachineOpValue(MI, MO);
++}
++
++unsigned SparcCodeEmitter::getBranchPredTargetOpValue(const MachineInstr &MI,
++                                                      unsigned opIdx) const {
++  const MachineOperand MO = MI.getOperand(opIdx);
++  return getMachineOpValue(MI, MO);
++}
++
++unsigned SparcCodeEmitter::getBranchOnRegTargetOpValue(const MachineInstr &MI,
++                                                       unsigned opIdx) const {
+   const MachineOperand MO = MI.getOperand(opIdx);
+   return getMachineOpValue(MI, MO);
+ }

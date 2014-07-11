@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_Sparc_MCTargetDesc_SparcFixupKinds_h,v 1.1 2014/07/11 01:05:24 brad Exp $
+
+Sync up the SPARC backend up to commit r203424.
+
+--- lib/Target/Sparc/MCTargetDesc/SparcFixupKinds.h.orig	Sun Jun 15 02:50:50 2014
++++ lib/Target/Sparc/MCTargetDesc/SparcFixupKinds.h	Sun Jun 15 03:01:26 2014
+@@ -26,6 +26,10 @@ namespace llvm {
+       /// branches on icc/xcc
+       fixup_sparc_br19,
+ 
++      /// fixup_sparc_bpr  - 16-bit fixup for bpr
++      fixup_sparc_br16_2,
++      fixup_sparc_br16_14,
++
+       /// fixup_sparc_hi22  - 22-bit fixup corresponding to %hi(foo)
+       /// for sethi
+       fixup_sparc_hi22,

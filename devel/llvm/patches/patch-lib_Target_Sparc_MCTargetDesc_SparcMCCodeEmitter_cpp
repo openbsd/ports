@@ -1,0 +1,63 @@
+$OpenBSD: patch-lib_Target_Sparc_MCTargetDesc_SparcMCCodeEmitter_cpp,v 1.1 2014/07/11 01:05:24 brad Exp $
+
+Sync up the SPARC backend up to commit r203424.
+
+--- lib/Target/Sparc/MCTargetDesc/SparcMCCodeEmitter.cpp.orig	Sun Jun 15 02:44:51 2014
++++ lib/Target/Sparc/MCTargetDesc/SparcMCCodeEmitter.cpp	Sun Jun 15 03:01:21 2014
+@@ -61,6 +61,12 @@ class SparcMCCodeEmitter : public MCCodeEmitter { (pub
+   unsigned getBranchTargetOpValue(const MCInst &MI, unsigned OpNo,
+                              SmallVectorImpl<MCFixup> &Fixups,
+                              const MCSubtargetInfo &STI) const;
++  unsigned getBranchPredTargetOpValue(const MCInst &MI, unsigned OpNo,
++                                      SmallVectorImpl<MCFixup> &Fixups,
++                                      const MCSubtargetInfo &STI) const;
++  unsigned getBranchOnRegTargetOpValue(const MCInst &MI, unsigned OpNo,
++                                       SmallVectorImpl<MCFixup> &Fixups,
++                                       const MCSubtargetInfo &STI) const;
+ 
+ };
+ } // end anonymous namespace
+@@ -173,13 +179,39 @@ getBranchTargetOpValue(const MCInst &MI, unsigned OpNo
+   if (MO.isReg() || MO.isImm())
+     return getMachineOpValue(MI, MO, Fixups, STI);
+ 
+-  Sparc::Fixups fixup = Sparc::fixup_sparc_br22;
+-  if (MI.getOpcode() == SP::BPXCC)
+-    fixup = Sparc::fixup_sparc_br19;
++  Fixups.push_back(MCFixup::Create(0, MO.getExpr(),
++                                   (MCFixupKind)Sparc::fixup_sparc_br22));
++  return 0;
++}
+ 
++unsigned SparcMCCodeEmitter::
++getBranchPredTargetOpValue(const MCInst &MI, unsigned OpNo,
++                           SmallVectorImpl<MCFixup> &Fixups,
++                           const MCSubtargetInfo &STI) const {
++  const MCOperand &MO = MI.getOperand(OpNo);
++  if (MO.isReg() || MO.isImm())
++    return getMachineOpValue(MI, MO, Fixups, STI);
++
+   Fixups.push_back(MCFixup::Create(0, MO.getExpr(),
+-                                   (MCFixupKind)fixup));
++                                   (MCFixupKind)Sparc::fixup_sparc_br19));
+   return 0;
+ }
++unsigned SparcMCCodeEmitter::
++getBranchOnRegTargetOpValue(const MCInst &MI, unsigned OpNo,
++                           SmallVectorImpl<MCFixup> &Fixups,
++                           const MCSubtargetInfo &STI) const {
++  const MCOperand &MO = MI.getOperand(OpNo);
++  if (MO.isReg() || MO.isImm())
++    return getMachineOpValue(MI, MO, Fixups, STI);
++
++  Fixups.push_back(MCFixup::Create(0, MO.getExpr(),
++                                   (MCFixupKind)Sparc::fixup_sparc_br16_2));
++  Fixups.push_back(MCFixup::Create(0, MO.getExpr(),
++                                   (MCFixupKind)Sparc::fixup_sparc_br16_14));
++
++  return 0;
++}
++
++
+ 
+ #include "SparcGenMCCodeEmitter.inc"

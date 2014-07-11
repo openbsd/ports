@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_Target_Sparc_MCTargetDesc_SparcMCTargetDesc_cpp,v 1.1 2014/07/11 01:05:24 brad Exp $
+
+Sync up the SPARC backend up to commit r203424.
+
+--- lib/Target/Sparc/MCTargetDesc/SparcMCTargetDesc.cpp.orig	Sun Jun 15 02:48:45 2014
++++ lib/Target/Sparc/MCTargetDesc/SparcMCTargetDesc.cpp	Sun Jun 15 03:01:21 2014
+@@ -67,6 +67,9 @@ static MCRegisterInfo *createSparcMCRegisterInfo(Strin
+ static MCSubtargetInfo *createSparcMCSubtargetInfo(StringRef TT, StringRef CPU,
+                                                    StringRef FS) {
+   MCSubtargetInfo *X = new MCSubtargetInfo();
++  Triple TheTriple(TT);
++  if (CPU.empty())
++    CPU = (TheTriple.getArch() == Triple::sparcv9) ? "v9" : "v8";
+   InitSparcMCSubtargetInfo(X, TT, CPU, FS);
+   return X;
+ }
+@@ -150,7 +153,7 @@ static MCInstPrinter *createSparcMCInstPrinter(const T
+                                               const MCInstrInfo &MII,
+                                               const MCRegisterInfo &MRI,
+                                               const MCSubtargetInfo &STI) {
+-  return new SparcInstPrinter(MAI, MII, MRI);
++  return new SparcInstPrinter(MAI, MII, MRI, STI);
+ }
+ 
+ extern "C" void LLVMInitializeSparcTargetMC() {
