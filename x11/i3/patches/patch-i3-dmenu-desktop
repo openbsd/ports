@@ -1,7 +1,14 @@
-$OpenBSD: patch-i3-dmenu-desktop,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
---- i3-dmenu-desktop.orig	Wed Aug  7 20:50:24 2013
-+++ i3-dmenu-desktop	Mon Aug 12 15:19:02 2013
-@@ -103,7 +103,7 @@ $xdg_data_home = $ENV{HOME} . '/.local/share' if
+$OpenBSD: patch-i3-dmenu-desktop,v 1.4 2014/07/11 15:49:58 dcoppa Exp $
+
+commit 9b0ec8b2ae56e3a66487ac420eca236f64aa4c4c
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Fri Jul 11 09:51:05 2014 +0200
+
+Bugfix: i3-dmenu-desktop: quote path
+
+--- i3-dmenu-desktop.orig	Sun Jun 15 19:12:43 2014
++++ i3-dmenu-desktop	Fri Jul 11 16:49:32 2014
+@@ -107,7 +107,7 @@ $xdg_data_home = $ENV{HOME} . '/.local/share' if
      ! -d $xdg_data_home;
  
  my $xdg_data_dirs = $ENV{XDG_DATA_DIRS};
@@ -10,7 +17,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
      !defined($xdg_data_dirs) ||
      $xdg_data_dirs eq '';
  
-@@ -205,12 +205,12 @@ for my $file (values %desktops) {
+@@ -209,12 +209,12 @@ for my $file (values %desktops) {
  #     'evince.desktop' => {
  #         'Exec' => 'evince %U',
  #         'Name' => 'Dokumentenbetrachter',
@@ -25,7 +32,16 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
  #       }
  #   };
  
-@@ -415,7 +415,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
+@@ -410,7 +410,7 @@ $exec =~ s/%k/$location/g;
+ $exec =~ s/%%/%/g;
+ 
+ if (exists($app->{Path}) && $app->{Path} ne '') {
+-    $exec = 'cd ' . $app->{Path} . ' && ' . $exec;
++    $exec = 'cd ' . quote($app->{Path}) . ' && ' . $exec;
+ }
+ 
+ my $nosn = '';
+@@ -420,7 +420,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
      # we need to create a temporary script that contains the full command line
      # as the syntax for starting commands with arguments varies from terminal
      # emulator to terminal emulator.
@@ -34,7 +50,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
      my ($fh, $filename) = tempfile();
      binmode($fh, ':utf8');
      say $fh <<EOT;
-@@ -426,7 +426,7 @@ EOT
+@@ -431,7 +431,7 @@ EOT
      close($fh);
      chmod 0755, $filename;
  
@@ -43,7 +59,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
  } else {
      # i3 executes applications by passing the argument to i3’s “exec” command
      # as-is to $SHELL -c. The i3 parser supports quoted strings: When a string
-@@ -467,7 +467,7 @@ notifications.
+@@ -472,7 +472,7 @@ notifications.
  
  The .desktop files are searched in $XDG_DATA_HOME/applications (by default
  $HOME/.local/share/applications) and in the "applications" subdirectory of each
@@ -52,7 +68,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
  
  Files with the same name in $XDG_DATA_HOME/applications take precedence over
  files in $XDG_DATA_DIRS, so that you can overwrite parts of the system-wide
-@@ -481,7 +481,7 @@ file respectively) by appending it to the name of the 
+@@ -486,7 +486,7 @@ file respectively) by appending it to the name of the 
  want to launch "GNU Emacs 24" with the patch /tmp/foobar.txt, you would type
  "emacs", press TAB, type " /tmp/foobar.txt" and press ENTER.
  

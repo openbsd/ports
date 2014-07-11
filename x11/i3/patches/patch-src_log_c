@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_log_c,v 1.8 2014/01/24 10:08:38 dcoppa Exp $
+$OpenBSD: patch-src_log_c,v 1.9 2014/07/11 15:49:58 dcoppa Exp $
 
 OpenBSD lacks pthread_condattr_setpshared()
 
---- src/log.c.orig	Sun Dec 22 21:12:41 2013
-+++ src/log.c	Fri Jan 10 16:48:15 2014
+--- src/log.c.orig	Sun Jun 15 19:12:43 2014 
++++ src/log.c		Wed Jul  2 19:43:03 2014 
 @@ -20,7 +20,9 @@
  #include <sys/mman.h>
  #include <sys/stat.h>
@@ -11,23 +11,23 @@ OpenBSD lacks pthread_condattr_setpshared()
 +#if !defined(__OpenBSD__)
  #include <pthread.h>
 +#endif
- #if defined(__APPLE__)
- #include <sys/types.h>
- #include <sys/sysctl.h>
+ 
+ #include "util.h"
+ #include "log.h"
 @@ -154,11 +156,13 @@ void open_logbuffer(void) {
  
-         header = (i3_shmlog_header*)logbuffer;
+     header = (i3_shmlog_header *)logbuffer;
  
 +#if !defined(__OpenBSD__)
-         pthread_condattr_t cond_attr;
-         pthread_condattr_init(&cond_attr);
-         if (pthread_condattr_setpshared(&cond_attr, PTHREAD_PROCESS_SHARED) != 0)
-             fprintf(stderr, "pthread_condattr_setpshared() failed, i3-dump-log -f will not work!\n");
-         pthread_cond_init(&(header->condvar), &cond_attr);
+     pthread_condattr_t cond_attr;
+     pthread_condattr_init(&cond_attr);
+     if (pthread_condattr_setpshared(&cond_attr, PTHREAD_PROCESS_SHARED) != 0)
+         fprintf(stderr, "pthread_condattr_setpshared() failed, i3-dump-log -f will not work!\n");
+     pthread_cond_init(&(header->condvar), &cond_attr);
 +#endif
  
-         logwalk = logbuffer + sizeof(i3_shmlog_header);
-         loglastwrap = logbuffer + logbuffer_size;
+     logwalk = logbuffer + sizeof(i3_shmlog_header);
+     loglastwrap = logbuffer + logbuffer_size;
 @@ -264,8 +268,10 @@ static void vlog(const bool print, const char *fmt, va
  
          store_log_markers();

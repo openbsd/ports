@@ -1,11 +1,11 @@
-$OpenBSD: patch-i3_config_keycodes,v 1.10 2012/12/13 12:10:13 dcoppa Exp $
+$OpenBSD: patch-i3_config_keycodes,v 1.11 2014/07/11 15:49:58 dcoppa Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
 
---- i3.config.keycodes.orig	Wed Dec 12 00:08:17 2012
-+++ i3.config.keycodes	Thu Dec 13 10:10:49 2012
-@@ -23,13 +23,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
+--- i3.config.keycodes.orig	Sun Jun 15 19:12:43 2014 
++++ i3.config.keycodes		Wed Jul  2 19:48:19 2014 
+@@ -26,13 +26,13 @@ font pango:DejaVu Sans Mono 8
  floating_modifier $mod
  
  # start a terminal
@@ -21,7 +21,7 @@ different between Linux and OpenBSD.
  # There also is the (new) i3-dmenu-desktop which only displays applications
  # shipping a .desktop file. It is a wrapper around dmenu, so you need that
  # installed.
-@@ -42,10 +42,10 @@ bindcode $mod+46 focus up
+@@ -45,10 +45,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  
  # alternatively, you can use the cursor keys:
@@ -36,7 +36,7 @@ different between Linux and OpenBSD.
  
  # move focused window
  bindcode $mod+Shift+44 move left
-@@ -54,10 +54,10 @@ bindcode $mod+Shift+46 move up
+@@ -57,10 +57,10 @@ bindcode $mod+Shift+46 move up
  bindcode $mod+Shift+47 move right
  
  # alternatively, you can use the cursor keys:
@@ -51,7 +51,7 @@ different between Linux and OpenBSD.
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -130,10 +130,10 @@ mode "resize" {
+@@ -133,10 +133,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys

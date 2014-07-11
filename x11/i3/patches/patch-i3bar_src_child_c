@@ -1,0 +1,19 @@
+$OpenBSD: patch-i3bar_src_child_c,v 1.8 2014/07/11 15:49:58 dcoppa Exp $
+
+commit 686a40e384a65bf267426dec76cdcf8819ea9a1a
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Fri Jul 11 00:32:42 2014 +0200
+
+Bugfix: render bars after the first chunk of JSON
+
+--- i3bar/src/child.c.orig	Sun Jun 15 19:12:43 2014
++++ i3bar/src/child.c	Fri Jul 11 16:49:11 2014
+@@ -371,7 +371,7 @@ void stdin_io_first_line_cb(struct ev_loop *loop, ev_i
+         if (config.hide_on_modifier) {
+             stop_child();
+         }
+-        read_json_input(buffer + consumed, rec - consumed);
++        draw_bars(read_json_input(buffer + consumed, rec - consumed));
+     } else {
+         /* In case of plaintext, we just add a single block and change its
+          * full_text pointer later. */

@@ -1,19 +1,15 @@
-$OpenBSD: patch-src_ipc_c,v 1.12 2014/03/12 12:34:27 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.13 2014/07/11 15:49:58 dcoppa Exp $
 
 Add missing header
 
-commit a16dfdb15e2767d9753d45982b189de6edfdf70b
-Author: Tony Crisci <tony@dubstepdish.com>
-Date:   Fri Mar 7 23:56:25 2014 -0500
+commit c159fc4197ad06d603ba404add501ac02d76c64f
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Fri Jun 27 09:04:51 2014 +0200
 
-Bugfix: ipc_receive_message reply leak
+Bugfix: create the directory for storing the restart state
 
-The function ipc_recv_message in libi3 allocates memory to the location
-of the `message` reply in src/ipc_receive_message.c with malloc and must
-be freed.
-
---- src/ipc.c.orig	Thu Jan 23 22:52:24 2014
-+++ src/ipc.c	Wed Mar 12 13:16:56 2014
+--- src/ipc.c.orig	Sun Jun 15 19:12:43 2014
++++ src/ipc.c	Fri Jul 11 16:39:36 2014
 @@ -12,6 +12,7 @@
  #include "all.h"
  #include "yajl_utils.h"
@@ -22,39 +18,12 @@ be freed.
  #include <sys/socket.h>
  #include <sys/un.h>
  #include <fcntl.h>
-@@ -833,14 +834,16 @@ handler_t handlers[8] = {
- static void ipc_receive_message(EV_P_ struct ev_io *w, int revents) {
-     uint32_t message_type;
-     uint32_t message_length;
--    uint8_t *message;
-+    uint8_t *message = NULL;
- 
-     int ret = ipc_recv_message(w->fd, &message_type, &message_length, &message);
-     /* EOF or other error */
-     if (ret < 0) {
-         /* Was this a spurious read? See ev(3) */
--        if (ret == -1 && errno == EAGAIN)
-+        if (ret == -1 && errno == EAGAIN) {
-+            FREE(message);
-             return;
-+        }
- 
-         /* If not, there was some kind of error. We don’t bother
-          * and close the connection */
-@@ -863,6 +866,7 @@ static void ipc_receive_message(EV_P_ struct ev_io *w,
- 
-         ev_io_stop(EV_A_ w);
-         free(w);
-+        FREE(message);
- 
-         DLOG("IPC: client disconnected\n");
-         return;
-@@ -874,6 +878,8 @@ static void ipc_receive_message(EV_P_ struct ev_io *w,
-         handler_t h = handlers[message_type];
-         h(w->fd, message, 0, message_length, message_type);
-     }
-+
-+    FREE(message);
- }
- 
- /*
+@@ -41,7 +42,7 @@ static void set_nonblock(int sockfd) {
+  * Emulates mkdir -p (creates any missing folders)
+  *
+  */
+-static bool mkdirp(const char *path) {
++bool mkdirp(const char *path) {
+     if (mkdir(path, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH) == 0)
+         return true;
+     if (errno != ENOENT) {

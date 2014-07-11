@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bindings_c,v 1.1 2014/07/11 15:49:58 dcoppa Exp $
+--- src/bindings.c.orig	Fri Jul 11 17:32:04 2014
++++ src/bindings.c	Fri Jul 11 17:32:34 2014
+@@ -397,7 +397,7 @@ CommandResult *run_binding(Binding *bind) {
+ 
+     if (result->parse_error) {
+         char *pageraction;
+-        sasprintf(&pageraction, "i3-sensible-pager \"%s\"\n", errorfilename);
++        sasprintf(&pageraction, "/usr/bin/less \"%s\"\n", errorfilename);
+         char *argv[] = {
+             NULL, /* will be replaced by the executable path */
+             "-f",

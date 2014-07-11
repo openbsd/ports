@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_i3_1,v 1.6 2013/06/02 11:24:06 dcoppa Exp $
---- man/i3.1.orig	Mon Mar 18 22:43:47 2013
-+++ man/i3.1	Thu May 23 11:36:28 2013
+$OpenBSD: patch-man_i3_1,v 1.7 2014/07/11 15:49:58 dcoppa Exp $
+--- man/i3.1.orig	Sun Jun 15 19:12:54 2014
++++ man/i3.1	Thu Jul  3 21:06:32 2014
 @@ -240,7 +240,7 @@ When starting, i3 looks for configuration files in the
  .sp -1
  .IP "  2." 4.2
@@ -19,7 +19,7 @@ $OpenBSD: patch-man_i3_1,v 1.6 2013/06/02 11:24:06 dcoppa Exp $
  .RE
  .sp
  You can specify a custom path using the \-c option\&.
-@@ -282,13 +282,13 @@ font \-misc\-fixed\-medium\-r\-normal\-\-13\-120\-75\-
+@@ -291,13 +291,13 @@ font pango:DejaVu Sans Mono 8
  floating_modifier Mod1
  
  # start a terminal
@@ -35,7 +35,7 @@ $OpenBSD: patch-man_i3_1,v 1.6 2013/06/02 11:24:06 dcoppa Exp $
  
  # change focus
  bindsym Mod1+j focus left
-@@ -407,7 +407,7 @@ ulimit \-c unlimited
+@@ -416,7 +416,7 @@ ulimit \-c unlimited
  
  # Start i3 and log to ~/\&.i3/logfile
  echo "Starting at $(date)" >> ~/\&.i3/logfile

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.85 2014/04/15 10:31:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.86 2014/07/11 15:49:58 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.7.2
-REVISION =	6
+DISTNAME =	i3-4.8
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -30,7 +29,8 @@ LIB_DEPENDS =	devel/libev \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/dmenu \
-		x11/i3status
+		x11/i3status \
+		x11/p5-AnyEvent-I3
 
 USE_GMAKE =	Yes
 

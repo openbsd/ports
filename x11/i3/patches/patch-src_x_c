@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_x_c,v 1.16 2014/07/11 15:49:58 dcoppa Exp $
+
+commit 1f9057bc4b0b7695589fbba88bee2b33ae47f169
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Sat Jun 28 13:04:52 2014 +0200
+
+Revert "Disable render-time pointer warps if asked"
+
+This reverts commit b109b1b20dd51401dc929407453d3acdd8ff5566.
+
+Turns out the change in behavior was unexpected by a number of users, so
+let's revert it and make those users that want this behavior configure
+it explicitly.
+
+--- src/x.c.orig	Sun Jun 15 19:12:43 2014
++++ src/x.c	Fri Jul 11 16:48:41 2014
+@@ -1140,8 +1140,7 @@ void x_set_i3_atoms(void) {
+  *
+  */
+ void x_set_warp_to(Rect *rect) {
+-    if (!config.disable_focus_follows_mouse &&
+-        config.mouse_warping != POINTER_WARPING_NONE)
++    if (config.mouse_warping != POINTER_WARPING_NONE)
+         warp_to = rect;
+ }
+ 

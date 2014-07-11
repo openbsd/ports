@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_startup_c,v 1.4 2014/01/11 16:04:43 dcoppa Exp $
+$OpenBSD: patch-src_startup_c,v 1.5 2014/07/11 15:49:58 dcoppa Exp $
 
 On OpenBSD, time_t is long long.
 
---- src/startup.c.orig	Sun Dec 22 21:12:41 2013
-+++ src/startup.c	Fri Jan 10 16:31:33 2014
-@@ -105,8 +105,8 @@ static int _prune_startup_sequences(void) {
+--- src/startup.c.orig	Sun Jun 15 19:12:43 2014 
++++ src/startup.c	Wed Jul  2 20:42:22 2014 
+@@ -103,8 +103,8 @@ static int _prune_startup_sequences(void) {
   */
  void startup_sequence_delete(struct Startup_Sequence *sequence) {
      assert(sequence != NULL);

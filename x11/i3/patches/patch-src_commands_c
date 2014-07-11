@@ -1,19 +1,14 @@
-$OpenBSD: patch-src_commands_c,v 1.10 2014/03/18 12:12:05 dcoppa Exp $
+$OpenBSD: patch-src_commands_c,v 1.11 2014/07/11 15:49:58 dcoppa Exp $
 
-commit a6a6c9b6d9d47ef1ccbff5ac5d4fe17f9666f29f
-Author: Tony Crisci <tony@dubstepdish.com>
-Date:   Fri Mar 14 22:59:08 2014 -0400
+commit c159fc4197ad06d603ba404add501ac02d76c64f
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Fri Jun 27 09:04:51 2014 +0200
 
-Bugfix: don't try to resize docks by command
+Bugfix: create the directory for storing the restart state
 
-cmd_resize does not implement a method to resize dock clients.
-
-A command like `[instance=".*"] resize grow width 160 px or 16 ppt`
-when a dock client matched would crash i3.
-
---- src/commands.c.orig	Thu Jan 23 22:52:24 2014
-+++ src/commands.c	Tue Mar 18 13:05:59 2014
-@@ -194,7 +194,7 @@ void cmd_MIGRATION_start_nagbar(void) {
+--- src/commands.c.orig	Sun Jun 15 19:12:43 2014
++++ src/commands.c	Fri Jul 11 16:39:36 2014
+@@ -201,7 +201,7 @@ void cmd_MIGRATION_start_nagbar(void) {
      /* child */
      if (migration_pid == 0) {
          char *pageraction;
@@ -22,16 +17,18 @@ when a dock client matched would crash i3.
          char *argv[] = {
              NULL, /* will be replaced by the executable path */
              "-t",
-@@ -779,6 +779,12 @@ void cmd_resize(I3_CMD, char *way, char *direction, ch
+@@ -1685,13 +1685,10 @@ void cmd_reload(I3_CMD) {
+ void cmd_restart(I3_CMD) {
+     LOG("restarting i3\n");
+     ipc_shutdown();
++    unlink(config.ipc_socket_path);
+     /* We need to call this manually since atexit handlers don’t get called
+      * when exec()ing */
+     purge_zerobyte_logfile();
+-    /* The unlink call is intentionally after the purge_zerobyte_logfile() so
+-     * that the latter does not remove the directory yet. We need to store the
+-     * restart layout state in there. */
+-    unlink(config.ipc_socket_path);
+     i3_restart(false);
  
-     owindow *current;
-     TAILQ_FOREACH(current, &owindows, owindows) {
-+        /* Don't handle dock windows (issue #1201) */
-+        if (current->con->window->dock) {
-+            DLOG("This is a dock window. Not resizing (con = %p)\n)", current->con);
-+            continue;
-+        }
-+
-         Con *floating_con;
-         if ((floating_con = con_inside_floating(current->con))) {
-             cmd_resize_floating(current_match, cmd_output, way, direction, floating_con, px);
+     // XXX: default reply for now, make this a better reply

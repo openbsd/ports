@@ -1,10 +1,10 @@
-$OpenBSD: patch-libi3_get_exe_path_c,v 1.1 2014/01/11 16:04:43 dcoppa Exp $
---- libi3/get_exe_path.c.orig	Fri Jan 10 18:23:37 2014
-+++ libi3/get_exe_path.c	Fri Jan 10 18:31:19 2014
-@@ -97,5 +97,5 @@ char *get_exe_path(const char *argv0) {
- 	free(tmp);
+$OpenBSD: patch-libi3_get_exe_path_c,v 1.2 2014/07/11 15:49:58 dcoppa Exp $
+--- libi3/get_exe_path.c.orig	Sun Jun 15 19:12:43 2014
++++ libi3/get_exe_path.c	Thu Jul  3 21:06:32 2014
+@@ -96,5 +96,5 @@ char *get_exe_path(const char *argv0) {
+     free(tmp);
  
- 	/* Last resort: maybe it’s in /usr/bin? */
--	return sstrdup("/usr/bin/i3-nagbar");
-+	return sstrdup("${TRUEPREFIX}/bin/i3-nagbar");
+     /* Last resort: maybe it’s in /usr/bin? */
+-    return sstrdup("/usr/bin/i3-nagbar");
++    return sstrdup("${TRUEPREFIX}/bin/i3-nagbar");
  }

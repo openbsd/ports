@@ -1,7 +1,7 @@
-$OpenBSD: patch-i3_config,v 1.14 2012/12/13 12:10:13 dcoppa Exp $
---- i3.config.orig	Thu Dec 13 10:02:05 2012
-+++ i3.config	Thu Dec 13 10:03:44 2012
-@@ -22,13 +22,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
+$OpenBSD: patch-i3_config,v 1.15 2014/07/11 15:49:58 dcoppa Exp $
+--- i3.config.orig	Sun Jun 15 19:12:43 2014
++++ i3.config	Thu Jul  3 21:06:32 2014
+@@ -32,13 +32,13 @@ set $right semicolon
  floating_modifier Mod1
  
  # start a terminal

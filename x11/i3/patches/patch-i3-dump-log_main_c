@@ -1,23 +1,23 @@
-$OpenBSD: patch-i3-dump-log_main_c,v 1.1 2013/06/02 11:24:06 dcoppa Exp $
+$OpenBSD: patch-i3-dump-log_main_c,v 1.2 2014/07/11 15:49:58 dcoppa Exp $
 
 OpenBSD lacks pthread_condattr_setpshared()
 
---- i3-dump-log/main.c.orig	Mon Mar 18 22:43:36 2013
-+++ i3-dump-log/main.c	Sun Jun  2 12:28:54 2013
+--- i3-dump-log/main.c.orig	Sun Jun 15 19:12:43 2014
++++ i3-dump-log/main.c	Thu Jul  3 21:06:31 2014
 @@ -28,8 +28,12 @@
  #include "shmlog.h"
  #include <i3/ipc.h>
  
 +#if !defined(__OpenBSD__)
  static uint32_t offset_next_write,
-                 wrap_count;
+     wrap_count;
 +#else
 +static uint32_t wrap_count;
 +#endif
  
  static i3_shmlog_header *header;
  static char *logbuffer,
-@@ -62,18 +66,28 @@ static void print_till_end(void) {
+@@ -62,17 +66,28 @@ static void print_till_end(void) {
  
  int main(int argc, char *argv[]) {
      int o, option_index = 0;
@@ -35,19 +35,19 @@ OpenBSD lacks pthread_condattr_setpshared()
          {"follow", no_argument, 0, 'f'},
 +#endif
          {"help", no_argument, 0, 'h'},
-         {0, 0, 0, 0}
-     };
+-        {0, 0, 0, 0}};
++        {0, 0, 0, 0}
++    };
  
--    char *options_string = "s:vfVh";
 +#if !defined(__OpenBSD__)
-+    char *options_string = "vfVh";
+     char *options_string = "s:vfVh";
 +#else
 +    char *options_string = "vVh";
 +#endif
  
      while ((o = getopt_long(argc, argv, options_string, long_options, &option_index)) != -1) {
          if (o == 'v') {
-@@ -81,11 +95,17 @@ int main(int argc, char *argv[]) {
+@@ -80,11 +95,17 @@ int main(int argc, char *argv[]) {
              return 0;
          } else if (o == 'V') {
              verbose = true;
@@ -66,7 +66,7 @@ OpenBSD lacks pthread_condattr_setpshared()
              return 0;
          }
      }
-@@ -167,6 +187,7 @@ int main(int argc, char *argv[]) {
+@@ -166,6 +187,7 @@ int main(int argc, char *argv[]) {
      walk = logbuffer + sizeof(i3_shmlog_header);
      print_till_end();
  
@@ -74,7 +74,7 @@ OpenBSD lacks pthread_condattr_setpshared()
      if (follow) {
          /* Since pthread_cond_wait() expects a mutex, we need to provide one.
           * To not lock i3 (that’s bad, mhkay?) we just define one outside of
-@@ -182,6 +203,7 @@ int main(int argc, char *argv[]) {
+@@ -181,6 +203,7 @@ int main(int argc, char *argv[]) {
              }
          }
      }

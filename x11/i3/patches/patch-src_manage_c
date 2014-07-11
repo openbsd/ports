@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_manage_c,v 1.15 2014/07/11 15:49:58 dcoppa Exp $
+
+commit 7afe9cc78b4d22dfd5a0c5866382a0e001ea38b6
+Author: Tony Crisci <tony@dubstepdish.com>
+Date:   Fri Jun 27 21:20:12 2014 -0400
+
+Explicitly set current border width when BS_PIXEL
+
+When a window becomes managed, if the config specifies a pixel border
+style, explicitly set the current border width so it does not change
+when the container changes from tiling to floating.
+
+commit 1d100d6e168d13752e79918f2410ccc7c492d700
+Author: Tony Crisci <tony@dubstepdish.com>
+Date:   Mon Jun 23 17:25:23 2014 -0400
+
+Bugfix: don't focus unmapped container on manage
+
+A window may become unmapped on manage when an assignment command unmaps
+the window, such as moving it to the scratchpad or killing it.
+
+This can cause i3 focus to be an unmapped window and different than X
+focus which can lead to complications
+
+--- src/manage.c.orig	Sun Jun 15 19:12:43 2014
++++ src/manage.c	Fri Jul 11 16:48:23 2014
+@@ -450,6 +450,12 @@ void manage_window(xcb_window_t window, xcb_get_window
+         }
+     }
+ 
++    if (nc->border_style == BS_PIXEL) {
++        /* if the border style is BS_PIXEL, explicitly set the border width of
++         * the new container */
++        nc->current_border_width = (want_floating ? config.default_floating_border_width : config.default_border_width);
++    }
++
+     /* to avoid getting an UnmapNotify event due to reparenting, we temporarily
+      * declare no interest in any state change event of this window */
+     values[0] = XCB_NONE;
+@@ -505,7 +511,7 @@ void manage_window(xcb_window_t window, xcb_get_window
+ 
+     /* Defer setting focus after the 'new' event has been sent to ensure the
+      * proper window event sequence. */
+-    if (set_focus) {
++    if (set_focus && nc->mapped) {
+         DLOG("Now setting focus.\n");
+         con_focus(nc);
+     }
