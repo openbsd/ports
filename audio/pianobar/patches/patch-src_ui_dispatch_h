@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_ui_dispatch_h,v 1.1 2014/07/11 16:18:55 dcoppa Exp $
+
+commit 4cd701c94150ed57b8492490dfea983fd9792f73
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date:   Fri Jun 20 22:25:56 2014 +0200
+
+act_debug's scope is DC_SONG
+
+Fixes segfault reported in #461.
+
+--- src/ui_dispatch.h.orig	Sun Jun  8 15:26:29 2014
++++ src/ui_dispatch.h	Fri Jul 11 18:11:14 2014
+@@ -84,7 +84,7 @@ static const BarUiDispatchAction_t dispatchActions[BAR
+ 				"upcoming songs", "act_upcoming"},
+ 		{'x', BAR_DC_STATION, BarUiActSelectQuickMix, "select quickmix stations",
+ 				"act_stationselectquickmix"},
+-		{'$', BAR_DC_GLOBAL, BarUiActDebug, NULL, "act_debug"},
++		{'$', BAR_DC_SONG, BarUiActDebug, NULL, "act_debug"},
+ 		{'b', BAR_DC_SONG, BarUiActBookmark, "bookmark song/artist",
+ 				"act_bookmark"},
+ 		{'(', BAR_DC_GLOBAL, BarUiActVolDown, "decrease volume",

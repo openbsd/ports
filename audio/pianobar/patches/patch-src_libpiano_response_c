@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_libpiano_response_c,v 1.7 2014/07/11 16:18:55 dcoppa Exp $
+
+commit 597b2ec46a3708d50ab9620d5bb4fdbd19cf8a6c
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date:   Sat Jun 21 12:30:41 2014 +0200
+
+piano: Fix segfault in GET_STATION_INFO response parser
+
+Pandora added two new integer values to the feedback object, which
+breaks the assumption that all values are arrays. Since we know the
+names of the interesting keys (thumbsUp and thumbsDown) just use them
+instead of iterating over all available keys.
+
+--- src/libpiano/response.c.orig	Sun Jun  8 15:26:29 2014
++++ src/libpiano/response.c	Fri Jul 11 18:11:16 2014
+@@ -568,7 +568,14 @@ PianoReturn_t PianoResponse (PianoHandle_t *ph, PianoR
+ 			json_object *feedback = json_object_object_get (result,
+ 					"feedback");
+ 			if (feedback != NULL) {
+-				json_object_object_foreach (feedback, key, val) {
++				static const char * const keys[] = {"thumbsUp", "thumbsDown"};
++				for (size_t i = 0; i < sizeof (keys)/sizeof (*keys); i++) {
++					json_object * const val = json_object_object_get (feedback,
++							keys[i]);
++					if (val == NULL) {
++						continue;
++					}
++					assert (json_object_is_type (val, json_type_array));
+ 					for (int i = 0; i < json_object_array_length (val); i++) {
+ 						json_object *s = json_object_array_get_idx (val, i);
+ 						PianoSong_t *feedbackSong;
