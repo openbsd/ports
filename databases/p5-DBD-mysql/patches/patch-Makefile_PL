@@ -1,19 +1,19 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2003/12/30 20:41:29 wilfried Exp $
---- Makefile.PL.orig	Tue Apr 30 00:42:17 2002
-+++ Makefile.PL	Wed Apr  2 15:41:39 2003
-@@ -46,15 +46,6 @@ foreach my $key (sort { $a cmp $b} keys 
+$OpenBSD: patch-Makefile_PL,v 1.2 2014/07/11 14:11:12 giovanni Exp $
+--- Makefile.PL.orig	Thu Jul 10 21:43:40 2014
++++ Makefile.PL	Thu Jul 10 21:44:05 2014
+@@ -175,15 +175,6 @@ for my $key (sort { $a cmp $b} keys %$opt)
  	 $key, $source->{$key}, $opt->{$key})
  }
  
 -print <<"MSG";
 -
 -To change these settings, see 'perl Makefile.PL --help' and
--'perldoc INSTALL'.
+-'perldoc DBD::mysql::INSTALL'.
 -
 -MSG
 -
 -sleep 5;
 -
  eval { require File::Spec };
- my $fileName = $@ ?
-   "t/mysql.mtest" : File::Spec->catfile("t", "mysql.mtest");
+ my $dsn= '';
+ if (exists $opt->{'ps-protocol'}) {
