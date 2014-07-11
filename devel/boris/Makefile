@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/10 14:13:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/11 08:26:53 jasper Exp $
 
 COMMENT =		read-eval-print loop for PHP
 
@@ -27,8 +27,6 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 SUBST_VARS +=		MODPHP_BIN
-
-WRKDIST =		${WRKDIR}/boris-${V}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/boris ${PREFIX}/lib/boris
