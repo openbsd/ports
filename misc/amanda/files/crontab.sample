@@ -1,6 +1,0 @@
-# $OpenBSD: crontab.sample,v 1.4 2005/06/15 21:49:35 db Exp $
-#
-# Here is a sample crontab file for the operator user
-#
-0 16 * * 1-5 @LOCALBASE@/sbin/amcheck -m your_config
-45 0 * * 2-6 @LOCALBASE@/sbin/amdump your_config

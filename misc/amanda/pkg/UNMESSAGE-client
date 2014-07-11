@@ -1,6 +1,0 @@
-Remove AMANDA entries (amanda, amandaidx, amidxtape) from
-/etc/inetd.conf and remove inetd_flags from rc.conf.local(5)
-if inetd(8) is not needed anymore.
-
-gpg flavor only:
-Do not forget to remove the GPG keyrings from your system.
