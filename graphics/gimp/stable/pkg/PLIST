@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2013/09/12 17:19:51 okan Exp $
+@comment $OpenBSD: PLIST,v 1.35 2014/07/11 17:02:00 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 bin/gimp
 @bin bin/gimp-2.8
@@ -494,6 +494,8 @@ lib/pkgconfig/gimpui-2.0.pc
 @man man/man5/gimprc-2.8.5
 @man man/man5/gimprc.5
 share/aclocal/gimp-2.0.m4
+share/appdata/
+share/appdata/gimp.appdata.xml
 share/applications/gimp.desktop
 share/examples/gimp/
 share/examples/gimp/2.0/
@@ -626,6 +628,7 @@ share/gimp/2.0/dynamics/Basic/Pen-Generic.gdyn
 share/gimp/2.0/dynamics/Basic/Pencil-Generic.gdyn
 share/gimp/2.0/dynamics/Basic/Pencil-Shader.gdyn
 share/gimp/2.0/dynamics/Basic/Pressure-Opacity.gdyn
+share/gimp/2.0/dynamics/Color-From-Gradient.gdyn
 share/gimp/2.0/dynamics/Dynamics-Off.gdyn
 share/gimp/2.0/dynamics/FX/
 share/gimp/2.0/dynamics/FX/Confetti.gdyn
@@ -1200,6 +1203,7 @@ share/gimp/2.0/tool-presets/FX/Glow-Lights.gtp
 share/gimp/2.0/tool-presets/FX/Smooth-Clone.gtp
 share/gimp/2.0/tool-presets/FX/Vignette.gtp
 share/gimp/2.0/tool-presets/Paint/
+share/gimp/2.0/tool-presets/Paint/Airbrush-Color-From-Gradient.gtp
 share/gimp/2.0/tool-presets/Paint/Airbrush.gtp
 share/gimp/2.0/tool-presets/Paint/Basic-Knife.gtp
 share/gimp/2.0/tool-presets/Paint/Basic-Round-Detail.gtp
@@ -1207,6 +1211,8 @@ share/gimp/2.0/tool-presets/Paint/Basic-Round.gtp
 share/gimp/2.0/tool-presets/Paint/Bristles.gtp
 share/gimp/2.0/tool-presets/Paint/Eraser-Hard.gtp
 share/gimp/2.0/tool-presets/Paint/Noise.gtp
+share/gimp/2.0/tool-presets/Paint/Paintbrush-Color-From-Gradient.gtp
+share/gimp/2.0/tool-presets/Paint/Pencil-Color-From-Gradient.gtp
 share/gimp/2.0/tool-presets/Paint/Smudge-Rough.gtp
 share/gimp/2.0/tool-presets/Paint/Smudge-Soft.gtp
 share/gimp/2.0/tool-presets/Paint/Soft-Oil.gtp

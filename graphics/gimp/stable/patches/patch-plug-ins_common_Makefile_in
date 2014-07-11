@@ -1,7 +1,7 @@
-$OpenBSD: patch-plug-ins_common_Makefile_in,v 1.2 2012/10/02 13:10:44 giovanni Exp $
---- plug-ins/common/Makefile.in.orig	Wed May  2 04:56:41 2012
-+++ plug-ins/common/Makefile.in	Wed Sep 26 20:42:58 2012
-@@ -115,7 +115,7 @@ EXTRA_PROGRAMS = file-aa$(EXEEXT) file-jp2-load$(EXEEX
+$OpenBSD: patch-plug-ins_common_Makefile_in,v 1.3 2014/07/11 17:02:00 giovanni Exp $
+--- plug-ins/common/Makefile.in.orig	Thu Nov 28 19:23:49 2013
++++ plug-ins/common/Makefile.in	Fri Jul 11 15:46:41 2014
+@@ -142,7 +142,7 @@ EXTRA_PROGRAMS = file-aa$(EXEEXT) file-jp2-load$(EXEEX
  	file-psp$(EXEEXT) file-svg$(EXEEXT) file-tiff-load$(EXEEXT) \
  	file-tiff-save$(EXEEXT) file-wmf$(EXEEXT) file-xmc$(EXEEXT) \
  	file-xpm$(EXEEXT) lcms$(EXEEXT) mail$(EXEEXT) \
@@ -9,4 +9,4 @@ $OpenBSD: patch-plug-ins_common_Makefile_in,v 1.2 2012/10/02 13:10:44 giovanni E
 +	screenshot$(EXEEXT)
  subdir = plug-ins/common
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+ am__aclocal_m4_deps = $(top_srcdir)/m4macros/gtk-doc.m4 \

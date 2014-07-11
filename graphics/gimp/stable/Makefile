@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2014/04/30 14:01:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.98 2014/07/11 17:02:00 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
-DISTNAME=	gimp-2.8.4
-REVISION=	7
+DISTNAME=	gimp-2.8.10
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -21,7 +20,7 @@ CATEGORIES=	graphics
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 	
 DIR=		gimp/v2.8
-MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
+MASTER_SITES=	http://download.gimp.org/pub/${DIR}/ \
 		ftp://ftp.sunet.se/pub/gnu/${DIR}/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/pub/${DIR}/
 

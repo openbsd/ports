@@ -1,13 +1,13 @@
-$OpenBSD: patch-plug-ins_common_file-xwd_c,v 1.3 2013/12/15 19:54:00 jasper Exp $
+$OpenBSD: patch-plug-ins_common_file-xwd_c,v 1.4 2014/07/11 17:02:00 giovanni Exp $
 
 Security fix for CVE-2013-1978
 gimp: XWD plugin color map heap-based buffer overflow
 
 Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c60c1e60d7f78caf4
 
---- plug-ins/common/file-xwd.c.orig	Thu Nov  8 00:19:16 2012
-+++ plug-ins/common/file-xwd.c	Fri Dec  6 23:07:16 2013
-@@ -422,9 +422,9 @@ static gint32
+--- plug-ins/common/file-xwd.c.orig	Sun Nov 10 16:37:53 2013
++++ plug-ins/common/file-xwd.c	Fri Jul 11 15:46:41 2014
+@@ -424,9 +424,9 @@ static gint32
  load_image (const gchar  *filename,
              GError      **error)
  {
@@ -19,7 +19,7 @@ Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c
    L_XWDFILEHEADER  xwdhdr;
    L_XWDCOLOR      *xwdcolmap = NULL;
  
-@@ -434,7 +434,7 @@ load_image (const gchar  *filename,
+@@ -436,7 +436,7 @@ load_image (const gchar  *filename,
        g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
                     _("Could not open '%s' for reading: %s"),
                     gimp_filename_to_utf8 (filename), g_strerror (errno));
@@ -28,7 +28,7 @@ Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c
      }
  
    read_xwd_header (ifp, &xwdhdr);
-@@ -443,8 +443,7 @@ load_image (const gchar  *filename,
+@@ -445,8 +445,7 @@ load_image (const gchar  *filename,
        g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED,
                     _("Could not read XWD header from '%s'"),
                     gimp_filename_to_utf8 (filename));
@@ -38,7 +38,7 @@ Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c
      }
  
  #ifdef XWD_COL_WAIT_DEBUG
-@@ -461,6 +460,13 @@ load_image (const gchar  *filename,
+@@ -463,6 +462,13 @@ load_image (const gchar  *filename,
  
    if (xwdhdr.l_colormap_entries > 0)
      {
@@ -52,7 +52,7 @@ Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c
        xwdcolmap = g_new (L_XWDCOLOR, xwdhdr.l_colormap_entries);
  
        read_xwd_cols (ifp, &xwdhdr, xwdcolmap);
-@@ -480,9 +486,7 @@ load_image (const gchar  *filename,
+@@ -482,9 +488,7 @@ load_image (const gchar  *filename,
        if (xwdhdr.l_file_version != 7)
          {
            g_message (_("Can't read color entries"));
@@ -63,7 +63,7 @@ Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c
          }
      }
  
-@@ -490,9 +494,7 @@ load_image (const gchar  *filename,
+@@ -492,9 +496,7 @@ load_image (const gchar  *filename,
      {
        g_message (_("'%s':\nNo image width specified"),
                   gimp_filename_to_utf8 (filename));
@@ -74,7 +74,7 @@ Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c
      }
  
    if (xwdhdr.l_pixmap_width > GIMP_MAX_IMAGE_SIZE
-@@ -500,27 +502,21 @@ load_image (const gchar  *filename,
+@@ -502,27 +504,21 @@ load_image (const gchar  *filename,
      {
        g_message (_("'%s':\nImage width is larger than GIMP can handle"),
                   gimp_filename_to_utf8 (filename));
@@ -105,7 +105,7 @@ Patch from https://git.gnome.org/browse/gimp/commit/?id=23f685931e5f000dd033a45c
      }
  
    gimp_progress_init_printf (_("Opening '%s'"),
-@@ -569,17 +565,23 @@ load_image (const gchar  *filename,
+@@ -571,17 +567,23 @@ load_image (const gchar  *filename,
      }
    gimp_progress_update (1.0);
  
