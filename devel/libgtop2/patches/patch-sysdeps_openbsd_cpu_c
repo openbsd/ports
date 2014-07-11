@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_openbsd_cpu_c,v 1.4 2014/07/11 16:57:55 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_cpu_c,v 1.5 2014/07/11 16:58:50 robert Exp $
 --- sysdeps/openbsd/cpu.c.orig	Mon Apr 28 23:09:24 2014
-+++ sysdeps/openbsd/cpu.c	Fri Jul 11 18:51:34 2014
++++ sysdeps/openbsd/cpu.c	Fri Jul 11 18:58:37 2014
 @@ -26,18 +26,22 @@
  
  #include <glibtop_suid.h>
@@ -73,7 +73,7 @@ $OpenBSD: patch-sysdeps_openbsd_cpu_c,v 1.4 2014/07/11 16:57:55 robert Exp $
  		glibtop_warn_io_r (server, "sysctl (kern.clockrate)");
  		return;
  	}
-@@ -87,15 +94,57 @@ glibtop_get_cpu_s (glibtop *server, glibtop_cpu *buf)
+@@ -87,15 +94,55 @@ glibtop_get_cpu_s (glibtop *server, glibtop_cpu *buf)
  	buf->sys = cpts [CP_SYS];
  	/* set idle time */
  	buf->idle = cpts [CP_IDLE];
@@ -102,10 +102,8 @@ $OpenBSD: patch-sysdeps_openbsd_cpu_c,v 1.4 2014/07/11 16:57:55 robert Exp $
 +	for (i = 0; i < ncpu; i++) {
 +		mib_cptime_s[2] = i;
 +		cp_times = g_malloc (length);
-+		if (sysctl (mib_cptime_s, 3, cp_times, &length, NULL, 0) < 0) {
++		if (sysctl (mib_cptime_s, 3, cp_times, &length, NULL, 0) < 0)
 +			free(cp_times);
-+			printf("%d FAIL\n", i);
-+		}
 +
 +		if (cp_times) {
 +			buf->xcpu_user[i] = cp_times[CP_USER];
