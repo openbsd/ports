@@ -1,12 +1,24 @@
-$OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.1.1.1 2014/07/09 16:40:41 zhuk Exp $
+$OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.2 2014/07/11 21:02:05 zhuk Exp $
 Fixed compilation with new FFMPEG.
 Upstream commits:
   2f845b34badb614882b7e38ac38b00041ac2832d
   6f34e14b28d2f9103151c6ba08b3bb40448ffe46
 (last one via Debian)
---- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	Sat Jan 15 23:47:29 2011
-+++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Mon Jan 20 14:52:50 2014
-@@ -88,7 +88,11 @@ bool K3bFFMpegFile::open()
+--- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	Sat Jan 15 21:47:29 2011
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Fri Jul 11 20:24:07 2014
+@@ -33,6 +33,11 @@ extern "C" {
+ #endif
+ }
+ 
++// XXX avcodec_decode_audio3() will deprecate soon, too...
++#ifndef AVCODEC_MAX_AUDIO_FRAME_SIZE
++#define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
++#endif
++
+ #include <string.h>
+ 
+ #include <klocale.h>
+@@ -88,7 +93,11 @@ bool K3bFFMpegFile::open()
      close();
  
      // open the file
@@ -18,7 +30,7 @@ Upstream commits:
      if( err < 0 ) {
          kDebug() << "(K3bFFMpegFile) unable to open " << m_filename << " with error " << err;
          return false;
-@@ -109,7 +113,13 @@ bool K3bFFMpegFile::open()
+@@ -109,7 +118,13 @@ bool K3bFFMpegFile::open()
  #else
      ::AVCodecContext* codecContext =  d->formatContext->streams[0]->codec;
  #endif
@@ -33,7 +45,19 @@ Upstream commits:
          kDebug() << "(K3bFFMpegFile) not a simple audio stream: " << m_filename;
          return false;
      }
-@@ -137,7 +147,11 @@ bool K3bFFMpegFile::open()
+@@ -123,7 +138,11 @@ bool K3bFFMpegFile::open()
+ 
+     // open the codec on our context
+     kDebug() << "(K3bFFMpegFile) found codec for " << m_filename;
++#if LIBAVCODEC_VERSION_MAJOR >= 55
++    if( ::avcodec_open2( codecContext, d->codec, NULL ) < 0 ) {
++#else
+     if( ::avcodec_open( codecContext, d->codec ) < 0 ) {
++#endif
+         kDebug() << "(K3bFFMpegDecoderFactory) could not open codec.";
+         return false;
+     }
+@@ -137,7 +156,11 @@ bool K3bFFMpegFile::open()
      }
  
      // dump some debugging info
@@ -45,7 +69,7 @@ Upstream commits:
  
      return true;
  }
-@@ -225,8 +239,11 @@ QString K3bFFMpegFile::typeComment() const
+@@ -225,8 +248,11 @@ QString K3bFFMpegFile::typeComment() const
  QString K3bFFMpegFile::title() const
  {
      // FIXME: is this UTF8 or something??
@@ -59,7 +83,7 @@ Upstream commits:
      else
          return QString();
  }
-@@ -235,8 +252,11 @@ QString K3bFFMpegFile::title() const
+@@ -235,8 +261,11 @@ QString K3bFFMpegFile::title() const
  QString K3bFFMpegFile::author() const
  {
      // FIXME: is this UTF8 or something??
@@ -73,7 +97,7 @@ Upstream commits:
      else
          return QString();
  }
-@@ -245,8 +265,11 @@ QString K3bFFMpegFile::author() const
+@@ -245,8 +274,11 @@ QString K3bFFMpegFile::author() const
  QString K3bFFMpegFile::comment() const
  {
      // FIXME: is this UTF8 or something??
@@ -87,7 +111,7 @@ Upstream commits:
      else
          return QString();
  }
-@@ -309,8 +332,13 @@ int K3bFFMpegFile::fillOutputBuffer()
+@@ -309,8 +341,13 @@ int K3bFFMpegFile::fillOutputBuffer()
  #if LIBAVCODEC_VERSION_MAJOR < 52
          int len = ::avcodec_decode_audio(
  #else
@@ -101,7 +125,7 @@ Upstream commits:
  #ifdef FFMPEG_BUILD_PRE_4629
              &d->formatContext->streams[0]->codec,
  #else
-@@ -318,7 +346,11 @@ int K3bFFMpegFile::fillOutputBuffer()
+@@ -318,7 +355,11 @@ int K3bFFMpegFile::fillOutputBuffer()
  #endif
              (short*)d->alignedOutputBuffer,
              &d->outputBufferSize,
