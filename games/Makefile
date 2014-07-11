@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2014/06/08 02:54:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.293 2014/07/11 15:13:57 bentley Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -173,6 +173,7 @@
      SUBDIR += quake2
      SUBDIR += redeclipse
      SUBDIR += renpy
+     SUBDIR += residualvm
      SUBDIR += rftg
      SUBDIR += ri-li
      SUBDIR += roadfighter
