@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_simu_simuv3_car_cpp,v 1.1.1.1 2013/08/23 11:16:26 pascal Exp $
---- src/modules/simu/simuv3/car.cpp.orig	Tue Jul 30 00:51:48 2013
-+++ src/modules/simu/simuv3/car.cpp	Tue Jul 30 00:53:05 2013
-@@ -365,9 +365,9 @@ SimCarUpdateSpeed(tCar *car)
+$OpenBSD: patch-src_modules_simu_simuv3_car_cpp,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- src/modules/simu/simuv3/car.cpp.orig	Wed Jun 18 16:20:35 2014
++++ src/modules/simu/simuv3/car.cpp	Fri Jul 11 14:32:00 2014
+@@ -362,9 +362,9 @@ SimCarUpdateSpeed(tCar *car)
          car->carElt->_fuelInstant = (tdble)((1.0-alpha)*car->carElt->_fuelInstant + alpha*fi);
      }
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_modules_simu_simuv3_car_cpp,v 1.1.1.1 2013/08/23 11:16:26 pa
          car->DynGCg.acc.x = car->DynGCg.acc.y =car->DynGCg.acc.z =
              car->DynGC.acc.x = car->DynGC.acc.y =car->DynGC.acc.z = 0.0;;
          car->DynGCg.acc.z = -9.81f;
-@@ -398,9 +398,9 @@ SimCarUpdateSpeed(tCar *car)
+@@ -395,9 +395,9 @@ SimCarUpdateSpeed(tCar *car)
      car->DynGC.vel.y = updated.y;
      car->DynGC.vel.z = updated.z;
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-src_modules_simu_simuv3_car_cpp,v 1.1.1.1 2013/08/23 11:16:26 pa
          car->rot_acc[0] = car->rot_acc[1] = car->rot_acc[2] = 0.0;
      }
     
-@@ -478,10 +478,10 @@ SimCarUpdatePos(tCar *car)
+@@ -475,10 +475,10 @@ SimCarUpdatePos(tCar *car)
      vx = car->DynGCg.vel.x;
      vy = car->DynGCg.vel.y;
      vz = car->DynGCg.vel.z;
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_modules_simu_simuv3_car_cpp,v 1.1.1.1 2013/08/23 11:16:26 pa
          ) {
          car->DynGCg.vel.x = car->DynGCg.vel.y= car->DynGCg.vel.z = 
              car->DynGC.vel.x = car->DynGC.vel.y= car->DynGC.vel.z = 
-@@ -801,7 +801,7 @@ void SimCarAddAngularVelocity (tCar* car)
+@@ -798,7 +798,7 @@ void SimCarAddAngularVelocity (tCar* car)
      sgVec3 new_position;
      int i;
      for (/*int*/ i=0; i<4; i++) {

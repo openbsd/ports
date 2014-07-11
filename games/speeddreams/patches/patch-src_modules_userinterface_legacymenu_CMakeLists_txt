@@ -1,11 +1,14 @@
-$OpenBSD: patch-src_modules_userinterface_legacymenu_CMakeLists_txt,v 1.1.1.1 2013/08/23 11:16:27 pascal Exp $
---- src/modules/userinterface/legacymenu/CMakeLists.txt.orig	Fri Aug 23 03:56:10 2013
-+++ src/modules/userinterface/legacymenu/CMakeLists.txt	Fri Aug 23 03:56:26 2013
-@@ -70,6 +70,7 @@ ADD_LIBRARY(legacymenu SHARED ${LEGACYMENU_SOURCES})
+$OpenBSD: patch-src_modules_userinterface_legacymenu_CMakeLists_txt,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- src/modules/userinterface/legacymenu/CMakeLists.txt.orig	Fri Jul 11 16:16:01 2014
++++ src/modules/userinterface/legacymenu/CMakeLists.txt	Fri Jul 11 16:16:09 2014
+@@ -56,6 +56,10 @@ ADD_PLIB_INCLUDEDIR()
+ ADD_SDL_INCLUDEDIR()
+ ADD_ENET_INCLUDEDIR()
  
- IF(UNIX)
-     SET_TARGET_PROPERTIES(legacymenu PROPERTIES PREFIX "")
++IF(UNIX)
 +    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
- ENDIF(UNIX)
- 
++ENDIF(UNIX)
++
  IF(WIN32)
+     # DLL export stuff under Windows (to avoid .def file)
+     ADD_DEFINITIONS(-DLEGACYMENU_DLL)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tools_xmlversion_CMakeLists_txt,v 1.1.1.1 2013/08/23 11:16:27 pascal Exp $
---- src/tools/xmlversion/CMakeLists.txt.orig	Tue Jul 30 00:33:16 2013
-+++ src/tools/xmlversion/CMakeLists.txt	Tue Jul 30 00:33:43 2013
-@@ -21,7 +21,7 @@ ELSE(CMAKE_SKIP_RPATH OR CMAKE_SKIP_BUILD_RPATH)
+$OpenBSD: patch-src_tools_xmlversion_CMakeLists_txt,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- src/tools/xmlversion/CMakeLists.txt.orig	Wed Jun 18 16:20:25 2014
++++ src/tools/xmlversion/CMakeLists.txt	Fri Jul 11 14:32:00 2014
+@@ -20,7 +20,7 @@ ELSE(CMAKE_SKIP_RPATH OR CMAKE_SKIP_BUILD_RPATH)
  ENDIF(CMAKE_SKIP_RPATH OR CMAKE_SKIP_BUILD_RPATH)
  
  IF(UNIX)
@@ -9,4 +9,4 @@ $OpenBSD: patch-src_tools_xmlversion_CMakeLists_txt,v 1.1.1.1 2013/08/23 11:16:2
 +  TARGET_LINK_LIBRARIES(xmlversion)
  ENDIF(UNIX)
  
- GET_TARGET_PROPERTY(XMLVERSION_BUILDLOC xmlversion LOCATION)
+ # Note: we don't install xmlversion, as it's a only a build-time tool.

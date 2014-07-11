@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tools_trackgen_CMakeLists_txt,v 1.1.1.1 2013/08/23 11:16:27 pascal Exp $
---- src/tools/trackgen/CMakeLists.txt.orig	Fri Aug 23 03:54:25 2013
-+++ src/tools/trackgen/CMakeLists.txt	Fri Aug 23 03:54:47 2013
-@@ -37,6 +37,7 @@ ADD_DL_LIBRARY(${_TARGET_NAME})
+$OpenBSD: patch-src_tools_trackgen_CMakeLists_txt,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- src/tools/trackgen/CMakeLists.txt.orig	Wed Jun 18 16:20:25 2014
++++ src/tools/trackgen/CMakeLists.txt	Fri Jul 11 14:32:00 2014
+@@ -45,6 +45,7 @@ ENDIF(MINGW)
  
  IF(UNIX)
      SD_INSTALL_FILES(MAN man6 PREFIX ${SOURCE_DIR}/doc/man FILES ${_TARGET_NAME}.6)

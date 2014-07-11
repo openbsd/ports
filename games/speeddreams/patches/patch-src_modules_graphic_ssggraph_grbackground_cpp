@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_modules_graphic_ssggraph_grbackground_cpp,v 1.1 2014/07/11 15:10:39 pascal Exp $
+--- src/modules/graphic/ssggraph/grbackground.cpp.orig	Fri Jul 11 16:44:38 2014
++++ src/modules/graphic/ssggraph/grbackground.cpp	Fri Jul 11 16:44:42 2014
+@@ -1,4 +1,4 @@
+-﻿/***************************************************************************
++/***************************************************************************
+ 
+     file                 : grbackground.cpp
+     created              : Thu Nov 25 21:09:40 CEST 2010

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_tools_nfsperf_CMakeLists_txt,v 1.1.1.1 2013/08/23 11:16:27 pascal Exp $
---- src/tools/nfsperf/CMakeLists.txt.orig	Tue Jul 30 00:56:47 2013
-+++ src/tools/nfsperf/CMakeLists.txt	Tue Jul 30 00:56:53 2013
-@@ -17,7 +17,7 @@ ADD_EXECUTABLE(${_TARGET_NAME} ${NFSPERF_SOURCES})
- ADD_SDLIB_LIBRARY(${_TARGET_NAME} tgf txml)
+$OpenBSD: patch-src_tools_nfsperf_CMakeLists_txt,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- src/tools/nfsperf/CMakeLists.txt.orig	Wed Jun 18 16:20:25 2014
++++ src/tools/nfsperf/CMakeLists.txt	Fri Jul 11 14:32:00 2014
+@@ -17,7 +17,7 @@ SD_ADD_EXECUTABLE(${_TARGET_NAME} ${NFSPERF_SOURCES})
+ ADD_SDLIB_LIBRARY(${_TARGET_NAME} portability tgf txml) # txml ignored if OPTION_3RDPARTY_EXPAT
  
  IF(UNIX)
 -    TARGET_LINK_LIBRARIES(${_TARGET_NAME} dl)

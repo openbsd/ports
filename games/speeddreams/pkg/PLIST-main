@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/08/23 11:16:15 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/07/11 15:10:39 pascal Exp $
 @bin bin/sd2-accc
-@bin bin/sd2-menuview
 @bin bin/sd2-nfs2ac
 @bin bin/sd2-nfsperf
 @bin bin/sd2-trackgen
@@ -16,6 +15,7 @@ include/speed-dreams-2/3D/Tuple4.h
 include/speed-dreams-2/3D/Vector.h
 include/speed-dreams-2/SOLID/
 include/speed-dreams-2/SOLID/solid.h
+include/speed-dreams-2/camera.h
 include/speed-dreams-2/car.h
 include/speed-dreams-2/cars.h
 include/speed-dreams-2/drivers.h
@@ -46,7 +46,6 @@ include/speed-dreams-2/osspec.h
 include/speed-dreams-2/playerpref.h
 include/speed-dreams-2/portability.h
 include/speed-dreams-2/race.h
-include/speed-dreams-2/raceinit.h
 include/speed-dreams-2/raceman.h
 include/speed-dreams-2/racemanagers.h
 include/speed-dreams-2/replay.h
@@ -59,31 +58,55 @@ include/speed-dreams-2/tgf.hpp
 include/speed-dreams-2/tgfclient.h
 include/speed-dreams-2/tgfdata.h
 include/speed-dreams-2/tmath/
+include/speed-dreams-2/tmath/SGCMath.h
+include/speed-dreams-2/tmath/SGGeoc.h
+include/speed-dreams-2/tmath/SGGeod.h
+include/speed-dreams-2/tmath/SGGeodesy.h
+include/speed-dreams-2/tmath/SGLimits.h
+include/speed-dreams-2/tmath/SGMath.h
+include/speed-dreams-2/tmath/SGMathFwd.h
+include/speed-dreams-2/tmath/SGMatrix.h
+include/speed-dreams-2/tmath/SGMisc.h
+include/speed-dreams-2/tmath/SGQuat.h
+include/speed-dreams-2/tmath/SGVec3.h
+include/speed-dreams-2/tmath/SGVec4.h
+include/speed-dreams-2/tmath/constants.h
 include/speed-dreams-2/tmath/linalg_t.h
+include/speed-dreams-2/tmath/point3d.h
+include/speed-dreams-2/tmath/sg_geodesy.h
+include/speed-dreams-2/tmath/sg_random.h
+include/speed-dreams-2/tmath/sg_types.h
 include/speed-dreams-2/tmath/straight2_t.h
 include/speed-dreams-2/tmath/v2_t.h
 include/speed-dreams-2/tmath/v3_t.h
 include/speed-dreams-2/tmath/v4_t.h
+include/speed-dreams-2/tmath/vector.h
 include/speed-dreams-2/track.h
 include/speed-dreams-2/tracks.h
-include/speed-dreams-2/xml.h
-include/speed-dreams-2/xmlparse.h
 lib/speed-dreams-2/
 lib/speed-dreams-2/drivers/
 lib/speed-dreams-2/drivers/human/
 lib/speed-dreams-2/drivers/human/human.so
 lib/speed-dreams-2/drivers/kilo2008/
 lib/speed-dreams-2/drivers/kilo2008/kilo2008.so
+lib/speed-dreams-2/drivers/networkhuman/
+lib/speed-dreams-2/drivers/networkhuman/networkhuman.so
 lib/speed-dreams-2/drivers/simplix/
 lib/speed-dreams-2/drivers/simplix/simplix.so
 lib/speed-dreams-2/drivers/simplix_36GP/
 lib/speed-dreams-2/drivers/simplix_36GP/simplix_36GP.so
+lib/speed-dreams-2/drivers/simplix_lp1/
+lib/speed-dreams-2/drivers/simplix_lp1/simplix_lp1.so
 lib/speed-dreams-2/drivers/simplix_ls1/
 lib/speed-dreams-2/drivers/simplix_ls1/simplix_ls1.so
 lib/speed-dreams-2/drivers/simplix_ls2/
 lib/speed-dreams-2/drivers/simplix_ls2/simplix_ls2.so
 lib/speed-dreams-2/drivers/simplix_mp5/
 lib/speed-dreams-2/drivers/simplix_mp5/simplix_mp5.so
+lib/speed-dreams-2/drivers/simplix_mpa1/
+lib/speed-dreams-2/drivers/simplix_mpa1/simplix_mpa1.so
+lib/speed-dreams-2/drivers/simplix_ref/
+lib/speed-dreams-2/drivers/simplix_ref/simplix_ref.so
 lib/speed-dreams-2/drivers/simplix_sc/
 lib/speed-dreams-2/drivers/simplix_sc/simplix_sc.so
 lib/speed-dreams-2/drivers/simplix_trb1/
@@ -92,10 +115,14 @@ lib/speed-dreams-2/drivers/usr/
 lib/speed-dreams-2/drivers/usr/usr.so
 lib/speed-dreams-2/drivers/usr_36GP/
 lib/speed-dreams-2/drivers/usr_36GP/usr_36GP.so
+lib/speed-dreams-2/drivers/usr_lp1/
+lib/speed-dreams-2/drivers/usr_lp1/usr_lp1.so
 lib/speed-dreams-2/drivers/usr_ls1/
 lib/speed-dreams-2/drivers/usr_ls1/usr_ls1.so
 lib/speed-dreams-2/drivers/usr_ls2/
 lib/speed-dreams-2/drivers/usr_ls2/usr_ls2.so
+lib/speed-dreams-2/drivers/usr_mpa1/
+lib/speed-dreams-2/drivers/usr_mpa1/usr_mpa1.so
 lib/speed-dreams-2/drivers/usr_rs/
 lib/speed-dreams-2/drivers/usr_rs/usr_rs.so
 lib/speed-dreams-2/drivers/usr_sc/
@@ -105,28 +132,29 @@ lib/speed-dreams-2/drivers/usr_trb1/usr_trb1.so
 lib/speed-dreams-2/lib/
 lib/speed-dreams-2/lib/liblearning.so
 lib/speed-dreams-2/lib/libnetworking.so
-lib/speed-dreams-2/lib/libraceengine.so
+lib/speed-dreams-2/lib/libportability.so
 lib/speed-dreams-2/lib/librobottools.so
 lib/speed-dreams-2/lib/libtgf.so
 lib/speed-dreams-2/lib/libtgfclient.so
 lib/speed-dreams-2/lib/libtgfdata.so
-lib/speed-dreams-2/lib/libtxml.so
 lib/speed-dreams-2/modules/
 lib/speed-dreams-2/modules/graphic/
 lib/speed-dreams-2/modules/graphic/ssggraph.so
+lib/speed-dreams-2/modules/racing/
+lib/speed-dreams-2/modules/racing/standardgame.so
 lib/speed-dreams-2/modules/simu/
 lib/speed-dreams-2/modules/simu/simuv2.1.so
-lib/speed-dreams-2/modules/simu/simuv2.so
-lib/speed-dreams-2/modules/simu/simuv3.so
+lib/speed-dreams-2/modules/simu/simuv4.so
+lib/speed-dreams-2/modules/sound/
+lib/speed-dreams-2/modules/sound/snddefault.so
 lib/speed-dreams-2/modules/telemetry/
-lib/speed-dreams-2/modules/telemetry/telemetry.so
+lib/speed-dreams-2/modules/telemetry/telemetryv1.so
 lib/speed-dreams-2/modules/track/
-lib/speed-dreams-2/modules/track/track.so
+lib/speed-dreams-2/modules/track/trackv1.so
 lib/speed-dreams-2/modules/userinterface/
 lib/speed-dreams-2/modules/userinterface/legacymenu.so
 lib/speed-dreams-2/modules/userinterface/textonly.so
 @man man/man6/sd2-accc.6
-@man man/man6/sd2-menuview.6
 @man man/man6/sd2-nfs2ac.6
 @man man/man6/sd2-nfsperf.6
 @man man/man6/sd2-trackgen.6

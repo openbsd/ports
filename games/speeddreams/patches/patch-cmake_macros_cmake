@@ -1,7 +1,7 @@
-$OpenBSD: patch-cmake_macros_cmake,v 1.1.1.1 2013/08/23 11:16:26 pascal Exp $
---- cmake/macros.cmake.orig	Sun Feb 26 14:01:00 2012
-+++ cmake/macros.cmake	Tue Jul 30 01:14:07 2013
-@@ -82,22 +82,18 @@ MARK_AS_ADVANCED(SD_TOOLS_EXECPREFIX)
+$OpenBSD: patch-cmake_macros_cmake,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- cmake/macros.cmake.orig	Wed Jun 18 16:19:18 2014
++++ cmake/macros.cmake	Fri Jul 11 14:32:00 2014
+@@ -81,22 +81,18 @@ MARK_AS_ADVANCED(SD_TOOLS_EXECPREFIX)
  
  # Determine the default value of the data, bin and lib (and man) folders.
  IF(IN_SOURCETREE)

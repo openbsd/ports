@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tools_accc_ac3dload_cpp,v 1.1 2014/07/11 15:10:39 pascal Exp $
+--- src/tools/accc/ac3dload.cpp.orig	Fri Jul 11 14:50:39 2014
++++ src/tools/accc/ac3dload.cpp	Fri Jul 11 14:50:54 2014
+@@ -576,7 +576,7 @@ int computeNorm(point_t * pv1, point_t *pv2, point_t *
+     norm->y = (p3 * q1 - q3 * p1) / dd;
+     norm->z = (p1 * q2 - q1 * p2) / dd;
+ 
+-    if (isnan(norm->x) || isnan(norm->y) || isnan(norm->z))
++    if (std::isnan(norm->x) || std::isnan(norm->y) || std::isnan(norm->z))
+     {
+         norm->x = 0;
+         norm->y = 1.0;

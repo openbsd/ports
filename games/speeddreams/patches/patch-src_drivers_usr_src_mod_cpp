@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_drivers_usr_src_mod_cpp,v 1.1 2014/07/11 15:10:39 pascal Exp $
+--- src/drivers/usr/src/mod.cpp.orig	Fri Jul 11 16:38:05 2014
++++ src/drivers/usr/src/mod.cpp	Fri Jul 11 16:38:24 2014
+@@ -1,4 +1,4 @@
+-﻿/***************************************************************************
++/***************************************************************************
+ 
+     file                 : mod.cpp
+     created              : Wed May 14 19:53:00 CET 2003

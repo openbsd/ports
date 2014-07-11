@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_modules_simu_simuv4_simu_cpp,v 1.1 2014/07/11 15:10:39 pascal Exp $
+--- src/modules/simu/simuv4/simu.cpp.orig	Fri Jul 11 16:43:39 2014
++++ src/modules/simu/simuv4/simu.cpp	Fri Jul 11 16:43:39 2014
+@@ -57,29 +57,29 @@ ctrlCheck(tCar *car)
+ 
+     /* sanity check */
+ #ifndef WIN32
+-    if (isnan(car->ctrl->accelCmd) || isinf(car->ctrl->accelCmd)) car->ctrl->accelCmd = 0;
+-    if (isnan(car->ctrl->brakeCmd) || isinf(car->ctrl->brakeCmd)) car->ctrl->brakeCmd = 0;
+-    if (isnan(car->ctrl->clutchCmd) || isinf(car->ctrl->clutchCmd)) car->ctrl->clutchCmd = 0;
+-    if (isnan(car->ctrl->steer) || isinf(car->ctrl->steer)) car->ctrl->steer = 0;
+-    if (isnan(car->ctrl->gear) || isinf(car->ctrl->gear)) car->ctrl->gear = 0;
+-	if (isnan(car->ctrl->wingFrontCmd) || isinf(car->ctrl->wingFrontCmd)) car->ctrl->wingFrontCmd = 0;
+-	if (isnan(car->ctrl->wingRearCmd) || isinf(car->ctrl->wingRearCmd)) car->ctrl->wingRearCmd = 0;
+-	if (isnan(car->ctrl->brakeFrontLeftCmd) || isinf(car->ctrl->brakeFrontLeftCmd)) car->ctrl->brakeFrontLeftCmd = 0;
+-	if (isnan(car->ctrl->brakeFrontRightCmd) || isinf(car->ctrl->brakeFrontRightCmd)) car->ctrl->brakeFrontRightCmd = 0;
+-	if (isnan(car->ctrl->brakeRearLeftCmd) || isinf(car->ctrl->brakeRearLeftCmd)) car->ctrl->brakeRearLeftCmd = 0;
+-	if (isnan(car->ctrl->brakeRearRightCmd) || isinf(car->ctrl->brakeRearRightCmd)) car->ctrl->brakeRearRightCmd = 0;
++    if (std::isnan(car->ctrl->accelCmd) || std::isinf(car->ctrl->accelCmd)) car->ctrl->accelCmd = 0;
++    if (std::isnan(car->ctrl->brakeCmd) || std::isinf(car->ctrl->brakeCmd)) car->ctrl->brakeCmd = 0;
++    if (std::isnan(car->ctrl->clutchCmd) || std::isinf(car->ctrl->clutchCmd)) car->ctrl->clutchCmd = 0;
++    if (std::isnan(car->ctrl->steer) || std::isinf(car->ctrl->steer)) car->ctrl->steer = 0;
++    if (std::isnan(car->ctrl->gear) || std::isinf(car->ctrl->gear)) car->ctrl->gear = 0;
++	if (std::isnan(car->ctrl->wingFrontCmd) || std::isinf(car->ctrl->wingFrontCmd)) car->ctrl->wingFrontCmd = 0;
++	if (std::isnan(car->ctrl->wingRearCmd) || std::isinf(car->ctrl->wingRearCmd)) car->ctrl->wingRearCmd = 0;
++	if (std::isnan(car->ctrl->brakeFrontLeftCmd) || std::isinf(car->ctrl->brakeFrontLeftCmd)) car->ctrl->brakeFrontLeftCmd = 0;
++	if (std::isnan(car->ctrl->brakeFrontRightCmd) || std::isinf(car->ctrl->brakeFrontRightCmd)) car->ctrl->brakeFrontRightCmd = 0;
++	if (std::isnan(car->ctrl->brakeRearLeftCmd) || std::isinf(car->ctrl->brakeRearLeftCmd)) car->ctrl->brakeRearLeftCmd = 0;
++	if (std::isnan(car->ctrl->brakeRearRightCmd) || std::isinf(car->ctrl->brakeRearRightCmd)) car->ctrl->brakeRearRightCmd = 0;
+ #else
+-	if (isnan(car->ctrl->accelCmd)) car->ctrl->accelCmd = 0;
+-    if (isnan(car->ctrl->brakeCmd)) car->ctrl->brakeCmd = 0;
+-    if (isnan(car->ctrl->clutchCmd)) car->ctrl->clutchCmd = 0;
+-    if (isnan(car->ctrl->steer)) car->ctrl->steer = 0;
+-    if (isnan(car->ctrl->gear)) car->ctrl->gear = 0;
+-	if (isnan(car->ctrl->wingFrontCmd)) car->ctrl->wingFrontCmd = 0;
+-	if (isnan(car->ctrl->wingRearCmd)) car->ctrl->wingRearCmd = 0;
+-	if (isnan(car->ctrl->brakeFrontLeftCmd)) car->ctrl->brakeFrontLeftCmd = 0;
+-	if (isnan(car->ctrl->brakeFrontRightCmd)) car->ctrl->brakeFrontRightCmd = 0;
+-	if (isnan(car->ctrl->brakeRearLeftCmd)) car->ctrl->brakeRearLeftCmd = 0;
+-	if (isnan(car->ctrl->brakeRearRightCmd)) car->ctrl->brakeRearRightCmd = 0;
++	if (std::isnan(car->ctrl->accelCmd)) car->ctrl->accelCmd = 0;
++    if (std::isnan(car->ctrl->brakeCmd)) car->ctrl->brakeCmd = 0;
++    if (std::isnan(car->ctrl->clutchCmd)) car->ctrl->clutchCmd = 0;
++    if (std::isnan(car->ctrl->steer)) car->ctrl->steer = 0;
++    if (std::isnan(car->ctrl->gear)) car->ctrl->gear = 0;
++	if (std::isnan(car->ctrl->wingFrontCmd)) car->ctrl->wingFrontCmd = 0;
++	if (std::isnan(car->ctrl->wingRearCmd)) car->ctrl->wingRearCmd = 0;
++	if (std::isnan(car->ctrl->brakeFrontLeftCmd)) car->ctrl->brakeFrontLeftCmd = 0;
++	if (std::isnan(car->ctrl->brakeFrontRightCmd)) car->ctrl->brakeFrontRightCmd = 0;
++	if (std::isnan(car->ctrl->brakeRearLeftCmd)) car->ctrl->brakeRearLeftCmd = 0;
++	if (std::isnan(car->ctrl->brakeRearRightCmd)) car->ctrl->brakeRearRightCmd = 0;
+ #endif
+ 
+     /* When the car is broken try to send it on the track side */
