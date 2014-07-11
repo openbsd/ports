@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.530 2014/07/10 09:02:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.531 2014/07/11 15:49:13 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -176,6 +176,7 @@
      SUBDIR += openmotif
      SUBDIR += oroborus
      SUBDIR += osd_clock
+     SUBDIR += p5-AnyEvent-I3
      SUBDIR += p5-Clipboard
      SUBDIR += p5-Gtk2
      SUBDIR += p5-Gtk2-Ex-FormFactory
