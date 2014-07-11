@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2013/08/20 22:05:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.43 2014/07/11 12:59:55 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME =	geany-1.23
-REVISION =	1
+DISTNAME =	geany-1.24.1
 
 CATEGORIES=	devel
 
@@ -23,7 +22,6 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig \
