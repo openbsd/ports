@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/11 07:34:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/11 13:33:29 sthen Exp $
 
 COMMENT =	console based password storing application
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	levaidaniel
 GH_PROJECT =	kc
 GH_TAGNAME =	2.3.2
 GH_COMMIT =	49915a19a0eabf279400667cd14d254159dc3a4f
+REVISION =	0
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	security
