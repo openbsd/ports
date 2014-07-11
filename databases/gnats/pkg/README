@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2014/07/10 13:09:06 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2014/07/11 16:17:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,11 +6,7 @@ $OpenBSD: README,v 1.6 2014/07/10 13:09:06 ajacoutot Exp $
 
 Post-installation steps
 =======================
-1. Add the following to /etc/services:
-
-support         1529/tcp                # GNATS
-
-2. Add the following to /etc/inetd.conf:
+1. Add the following to /etc/inetd.conf:
 
 support         stream  tcp     nowait  _gnats	${TRUEPREFIX}/libexec/gnats/gnatsd	gnatsd
 
@@ -18,13 +14,13 @@ inetd(8) must be reloaded (or started). To enable it at boot, the
 following line needs to be added to rc.conf.local(8):
 inetd_flags=
 
-3. Edit the config files in ${TRUEPREFIX}/share/gnats/gnats-db/gnats-adm
+2. Edit the config files in ${TRUEPREFIX}/share/gnats/gnats-db/gnats-adm
    (see the GNATS info documentation and online HTML documentation)
    to your liking, then run (as root):
 
 	su -m _gnats -c '${TRUEPREFIX}/libexec/gnats/mkcat --directory=${TRUEPREFIX}/share/gnats/gnats-db'
 
-4. As root, do
+3. As root, do
 
 	crontab -e -u _gnats
 
@@ -32,7 +28,7 @@ inetd_flags=
 
 0,10,20,30,40,50 * * * * ${TRUEPREFIX}/libexec/gnats/queue-pr --run
 
-5. Add the following lines to /etc/mail/aliases and run 'newaliases':
+4. Add the following lines to /etc/mail/aliases and run 'newaliases':
 
 # GNATS support
 gnats-admin: root
@@ -42,7 +38,7 @@ monkey-gnats: bugs
    where 'monkey' is replaced with the configured value of GNATS_SITE in
    ${TRUEPREFIX}/share/gnats/gnats-db/gnats-adm/config.
 
-6. If you want to run gnatsweb, add
+5. If you want to run gnatsweb, add
 
 127.0.0.1:view:
 
