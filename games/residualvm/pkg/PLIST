@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/11 15:07:13 bentley Exp $
+@bin bin/residualvm
+@man man/man6/residualvm.6
+share/doc/residualvm/
+share/doc/residualvm/AUTHORS
+share/doc/residualvm/COPYING
+share/doc/residualvm/COPYING.BSD
+share/doc/residualvm/COPYING.FREEFONT
+share/doc/residualvm/COPYING.LGPL
+share/doc/residualvm/COPYRIGHT
+share/doc/residualvm/KNOWN_BUGS
+share/doc/residualvm/NEWS
+share/doc/residualvm/README
+share/pixmaps/
+share/pixmaps/residualvm.xpm
+share/residualvm/
+share/residualvm/modern.zip
+share/residualvm/residualvm-grim-patch.lab

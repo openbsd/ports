@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/07/11 15:07:13 bentley Exp $
+Freetype's headers conflict with -pedantic.
+--- configure.orig	Sat Feb  9 13:38:56 2013
++++ configure	Fri Jul 11 02:11:40 2014
+@@ -1601,7 +1601,7 @@ fi;
+ # However, some platforms use GNU extensions in system header files, so
+ # for these we must not use -pedantic.
+ case $_host_os in
+-android | gamecube | psp | wii | webos)
++android | gamecube | psp | wii | webos | openbsd*)
+ 	;;
+ *)
+ 	# ICC does not support pedantic, while GCC and clang do.
