@@ -1,0 +1,15 @@
+$OpenBSD: patch-Lib_test_test_ssl_py,v 1.1 2014/07/11 06:59:43 rpointel Exp $
+
+No RAND_egd on OpenBSD.
+
+--- Lib/test/test_ssl.py.orig	Fri Jul  4 17:30:14 2014
++++ Lib/test/test_ssl.py	Fri Jul  4 17:31:09 2014
+@@ -96,8 +96,6 @@ class BasicSocketTests(unittest.TestCase):
+             sys.stdout.write("\n RAND_status is %d (%s)\n"
+                              % (v, (v and "sufficient randomness") or
+                                 "insufficient randomness"))
+-        self.assertRaises(TypeError, ssl.RAND_egd, 1)
+-        self.assertRaises(TypeError, ssl.RAND_egd, 'foo', 1)
+         ssl.RAND_add("this is a random string", 75.0)
+ 
+     def test_parse_cert(self):

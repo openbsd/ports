@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2014/06/07 14:46:46 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2014/07/11 06:59:43 rpointel Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -405,9 +405,6 @@ lib/python2.7/ctypes/test/test_checkretval.pyo
 lib/python2.7/ctypes/test/test_delattr.py
 lib/python2.7/ctypes/test/test_delattr.pyc
 lib/python2.7/ctypes/test/test_delattr.pyo
-lib/python2.7/ctypes/test/test_errcheck.py
-lib/python2.7/ctypes/test/test_errcheck.pyc
-lib/python2.7/ctypes/test/test_errcheck.pyo
 lib/python2.7/ctypes/test/test_errno.py
 lib/python2.7/ctypes/test/test_errno.pyc
 lib/python2.7/ctypes/test/test_errno.pyo
@@ -429,9 +426,6 @@ lib/python2.7/ctypes/test/test_incomplete.pyo
 lib/python2.7/ctypes/test/test_init.py
 lib/python2.7/ctypes/test/test_init.pyc
 lib/python2.7/ctypes/test/test_init.pyo
-lib/python2.7/ctypes/test/test_integers.py
-lib/python2.7/ctypes/test/test_integers.pyc
-lib/python2.7/ctypes/test/test_integers.pyo
 lib/python2.7/ctypes/test/test_internals.py
 lib/python2.7/ctypes/test/test_internals.pyc
 lib/python2.7/ctypes/test/test_internals.pyo
@@ -1542,7 +1536,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.7-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.8-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1606,9 +1600,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.7.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.8.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.7.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.8.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo

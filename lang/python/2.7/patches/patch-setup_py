@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
---- setup.py.orig	Sun Nov 10 08:36:41 2013
-+++ setup.py	Mon Nov 11 15:28:54 2013
+$OpenBSD: patch-setup_py,v 1.9 2014/07/11 06:59:43 rpointel Exp $
+--- setup.py.orig	Mon Jun 30 04:05:48 2014
++++ setup.py	Wed Jul  9 11:41:16 2014
 @@ -35,6 +35,11 @@ COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig
  # This global variable is used to hold the list of modules to be disabled.
  disabled_module_list = []
@@ -24,7 +24,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
          if cross_compiling:
              self.add_gcc_paths()
          self.add_multiarch_paths()
-@@ -762,6 +767,8 @@ class PyBuildExt(build_ext):
+@@ -764,6 +769,8 @@ class PyBuildExt(build_ext):
                                                       'termcap'):
                  readline_libs.append('termcap')
              exts.append( Extension('readline', ['readline.c'],
@@ -33,7 +33,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
                                     library_dirs=['/usr/lib/termcap'],
                                     extra_link_args=readline_extra_link_args,
                                     libraries=readline_libs) )
-@@ -898,7 +905,7 @@ class PyBuildExt(build_ext):
+@@ -900,7 +907,7 @@ class PyBuildExt(build_ext):
                  # BerkeleyDB 4.6.x is not stable on many architectures.
                  arch = platform_machine()
                  if arch not in ('i386', 'i486', 'i586', 'i686',
@@ -42,7 +42,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
                      return False
              return True
  
-@@ -968,6 +975,7 @@ class PyBuildExt(build_ext):
+@@ -970,6 +977,7 @@ class PyBuildExt(build_ext):
                  std_variants.append(os.path.join(dn, "db3.%d"%x))
  
          db_inc_paths = std_variants + db_inc_paths
@@ -50,7 +50,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
          db_inc_paths = [p for p in db_inc_paths if os.path.exists(p)]
  
          db_ver_inc_map = {}
-@@ -1031,6 +1039,7 @@ class PyBuildExt(build_ext):
+@@ -1033,6 +1041,7 @@ class PyBuildExt(build_ext):
                      db_incdir.replace("include", 'lib64'),
                      db_incdir.replace("include", 'lib'),
                  ]
@@ -58,7 +58,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
  
                  if host_platform != 'darwin':
                      db_dirs_to_check = filter(os.path.isdir, db_dirs_to_check)
-@@ -1053,6 +1062,7 @@ class PyBuildExt(build_ext):
+@@ -1055,6 +1064,7 @@ class PyBuildExt(build_ext):
                  # symlink to more general names?
                  for dblib in (('db-%d.%d' % db_ver),
                                ('db%d%d' % db_ver),
@@ -66,7 +66,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
                                ('db%d' % db_ver[0])):
                      dblib_file = self.compiler.find_library_file(
                                      db_dirs_to_check + lib_dirs, dblib )
-@@ -1211,7 +1221,7 @@ class PyBuildExt(build_ext):
+@@ -1212,7 +1222,7 @@ class PyBuildExt(build_ext):
                  sysroot = macosx_sdk_root()
                  f = os.path.join(sysroot, f[1:])
  
@@ -75,7 +75,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1600,6 +1610,9 @@ class PyBuildExt(build_ext):
+@@ -1606,6 +1616,9 @@ class PyBuildExt(build_ext):
                          'freebsd7', 'freebsd8')
              or host_platform.startswith("gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
@@ -85,7 +85,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
          else:
              missing.append('ossaudiodev')
  
-@@ -1812,7 +1825,7 @@ class PyBuildExt(build_ext):
+@@ -1818,7 +1831,7 @@ class PyBuildExt(build_ext):
          # For 8.4a2, the X11 headers are not included. Rather than include a
          # complicated search, this is a hard-coded path. It could bail out
          # if X11 libs are not found...
@@ -94,7 +94,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
          frameworks = ['-framework', 'Tcl', '-framework', 'Tk']
  
          # All existing framework builds of Tcl/Tk don't support 64-bit
-@@ -1867,8 +1880,7 @@ class PyBuildExt(build_ext):
+@@ -1873,8 +1886,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
@@ -104,7 +104,7 @@ $OpenBSD: patch-setup_py,v 1.8 2014/01/09 18:03:35 fgsch Exp $
              tklib = self.compiler.find_library_file(lib_dirs,
                                                          'tk' + version)
              tcllib = self.compiler.find_library_file(lib_dirs,
-@@ -1911,17 +1923,9 @@ class PyBuildExt(build_ext):
+@@ -1917,17 +1929,9 @@ class PyBuildExt(build_ext):
          if host_platform == 'sunos5':
              include_dirs.append('/usr/openwin/include')
              added_lib_dirs.append('/usr/openwin/lib')

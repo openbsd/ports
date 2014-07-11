@@ -1,0 +1,47 @@
+$OpenBSD: patch-Lib_test_test_file2k_py,v 1.1 2014/07/11 06:59:43 rpointel Exp $
+
+No /dev/full on OpenBSD (http://bugs.python.org/issue21934).
+
+--- Lib/test/test_file2k.py.orig	Sat May 31 14:58:39 2014
++++ Lib/test/test_file2k.py	Sat Jul  5 08:37:49 2014
+@@ -4,6 +4,7 @@ import unittest
+ import itertools
+ import select
+ import signal
++import stat
+ import subprocess
+ import time
+ from array import array
+@@ -424,17 +425,21 @@ class OtherFileTests(unittest.TestCase):
+ 
+     @unittest.skipUnless(os.name == 'posix', 'test requires a posix system.')
+     def test_write_full(self):
+-        # Issue #17976
+-        try:
+-            f = open('/dev/full', 'w', 1)
+-        except IOError:
+-            self.skipTest("requires '/dev/full'")
+-        try:
+-            with self.assertRaises(IOError):
+-                f.write('hello')
+-                f.write('\n')
+-        finally:
+-            f.close()
++        # OpenBSD does not have a /dev/full character device.
++        if os.path.exists('/dev/full'):
++            if stat.S_ISCHR(os.stat('/dev/full').st_mode):
++                # Issue #17976
++                f = open('/dev/full', 'w', 1)
++                try:
++                    with self.assertRaises(IOError):
++                        f.write('hello')
++                        f.write('\n')
++                finally:
++                    f.close()
++            else:
++                self.skipTest("'/dev/full' must be a character device")
++        else:
++             self.skipTest("requires '/dev/full'")
+ 
+ class FileSubclassTests(unittest.TestCase):
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.2 2014/06/07 14:46:46 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.3 2014/07/11 06:59:43 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=2.7,<2.8
 @comment bin/idle
@@ -200,6 +200,12 @@ lib/python2.7/idlelib/idle_test/mock_idle.pyo
 lib/python2.7/idlelib/idle_test/mock_tk.py
 lib/python2.7/idlelib/idle_test/mock_tk.pyc
 lib/python2.7/idlelib/idle_test/mock_tk.pyo
+lib/python2.7/idlelib/idle_test/test_autocomplete.py
+lib/python2.7/idlelib/idle_test/test_autocomplete.pyc
+lib/python2.7/idlelib/idle_test/test_autocomplete.pyo
+lib/python2.7/idlelib/idle_test/test_autoexpand.py
+lib/python2.7/idlelib/idle_test/test_autoexpand.pyc
+lib/python2.7/idlelib/idle_test/test_autoexpand.pyo
 lib/python2.7/idlelib/idle_test/test_calltips.py
 lib/python2.7/idlelib/idle_test/test_calltips.pyc
 lib/python2.7/idlelib/idle_test/test_calltips.pyo
@@ -215,9 +221,15 @@ lib/python2.7/idlelib/idle_test/test_formatparagraph.pyo
 lib/python2.7/idlelib/idle_test/test_grep.py
 lib/python2.7/idlelib/idle_test/test_grep.pyc
 lib/python2.7/idlelib/idle_test/test_grep.pyo
+lib/python2.7/idlelib/idle_test/test_hyperparser.py
+lib/python2.7/idlelib/idle_test/test_hyperparser.pyc
+lib/python2.7/idlelib/idle_test/test_hyperparser.pyo
 lib/python2.7/idlelib/idle_test/test_idlehistory.py
 lib/python2.7/idlelib/idle_test/test_idlehistory.pyc
 lib/python2.7/idlelib/idle_test/test_idlehistory.pyo
+lib/python2.7/idlelib/idle_test/test_parenmatch.py
+lib/python2.7/idlelib/idle_test/test_parenmatch.pyc
+lib/python2.7/idlelib/idle_test/test_parenmatch.pyo
 lib/python2.7/idlelib/idle_test/test_pathbrowser.py
 lib/python2.7/idlelib/idle_test/test_pathbrowser.pyc
 lib/python2.7/idlelib/idle_test/test_pathbrowser.pyo
@@ -230,6 +242,9 @@ lib/python2.7/idlelib/idle_test/test_searchengine.pyo
 lib/python2.7/idlelib/idle_test/test_text.py
 lib/python2.7/idlelib/idle_test/test_text.pyc
 lib/python2.7/idlelib/idle_test/test_text.pyo
+lib/python2.7/idlelib/idle_test/test_textview.py
+lib/python2.7/idlelib/idle_test/test_textview.pyc
+lib/python2.7/idlelib/idle_test/test_textview.pyo
 lib/python2.7/idlelib/idle_test/test_warning.py
 lib/python2.7/idlelib/idle_test/test_warning.pyc
 lib/python2.7/idlelib/idle_test/test_warning.pyo

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules__ssl_c,v 1.1 2014/04/19 12:43:47 espie Exp $
---- Modules/_ssl.c.orig	Sat Apr 19 05:09:46 2014
-+++ Modules/_ssl.c	Sat Apr 19 05:10:51 2014
-@@ -1598,32 +1598,6 @@ Returns 1 if the OpenSSL PRNG has been seeded with eno
+$OpenBSD: patch-Modules__ssl_c,v 1.2 2014/07/11 06:59:43 rpointel Exp $
+--- Modules/_ssl.c.orig	Mon Jun 30 04:05:42 2014
++++ Modules/_ssl.c	Wed Jul  9 11:41:16 2014
+@@ -1601,32 +1601,6 @@ Returns 1 if the OpenSSL PRNG has been seeded with eno
  It is necessary to seed the PRNG with RAND_add() on some platforms before\n\
  using the ssl() function.");
  
@@ -34,7 +34,7 @@ $OpenBSD: patch-Modules__ssl_c,v 1.1 2014/04/19 12:43:47 espie Exp $
  #endif /* HAVE_OPENSSL_RAND */
  
  
-@@ -1637,8 +1611,6 @@ static PyMethodDef PySSL_methods[] = {
+@@ -1640,8 +1614,6 @@ static PyMethodDef PySSL_methods[] = {
  #ifdef HAVE_OPENSSL_RAND
      {"RAND_add",            PySSL_RAND_add, METH_VARARGS,
       PySSL_RAND_add_doc},

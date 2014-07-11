@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.7 2014/06/07 14:46:46 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.8 2014/07/11 06:59:43 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -1279,6 +1279,9 @@ lib/python2.7/test/test_softspace.pyo
 lib/python2.7/test/test_sort.py
 lib/python2.7/test/test_sort.pyc
 lib/python2.7/test/test_sort.pyo
+lib/python2.7/test/test_spwd.py
+lib/python2.7/test/test_spwd.pyc
+lib/python2.7/test/test_spwd.pyo
 lib/python2.7/test/test_sqlite.py
 lib/python2.7/test/test_sqlite.pyc
 lib/python2.7/test/test_sqlite.pyo
