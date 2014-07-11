@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/08/07 09:14:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2014/07/11 09:10:27 robert Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -10,6 +10,8 @@ V =		13.5.1
 DISTNAME =	ecl-$V
 SHARED_LIBS +=	ecl	3.0
 SHARED_ONLY =	Yes
+
+REVISION =	0
 
 HOMEPAGE =	http://ecls.sourceforge.net/
 SUBST_VARS =	V
@@ -42,6 +44,7 @@ CONFIGURE_ARGS +=	--with-debug-cflags=-g
 .endif
 
 BUILD_DEPENDS += devel/boehm-gc,-atomic
+RUN_DEPENDS +=	${BUILD_DEPENDS}
 
 LIB_DEPENDS +=	devel/gmp \
 		devel/boehm-gc \
