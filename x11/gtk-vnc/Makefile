@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2014/04/21 12:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2014/07/11 08:07:03 ajacoutot Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
 GNOME_VERSION=		0.5.3
-REVISION=		1
+REVISION=		2
 
 PKGNAME=		${DISTNAME}
 
@@ -33,7 +33,7 @@ LIB_DEPENDS=		security/gnutls \
 			security/libgcrypt \
 			x11/gtk+3
 
-MODGNOME_TOOLS += gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-examples \
@@ -44,5 +44,7 @@ CONFIGURE_ARGS=		--without-examples \
 
 # python bindings are gtk+2 only
 CONFIGURE_ARGS +=	--without-python
+
+MAKE_FLAGS=		NO_UNDEFINED_FLAGS=
 
 .include <bsd.port.mk>
