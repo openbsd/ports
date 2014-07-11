@@ -1,11 +1,20 @@
-$OpenBSD: patch-sqlgrey,v 1.1 2014/05/30 13:22:57 giovanni Exp $
---- sqlgrey.orig	Thu May 29 00:59:30 2014
-+++ sqlgrey	Thu May 29 00:59:45 2014
-@@ -30,6 +30,7 @@ use Pod::Usage;
+$OpenBSD: patch-sqlgrey,v 1.2 2014/07/11 05:59:24 giovanni Exp $
+--- sqlgrey.orig	Mon Feb 13 17:54:08 2012
++++ sqlgrey	Thu Jun 26 10:01:05 2014
+@@ -32,6 +32,7 @@ use Pod::Usage;
  use Getopt::Long 2.25 qw(:config posix_default no_ignore_case);
  use Net::Server::Multiplex;
  use DBI;
 +use DBIx::DBCluster;
+ use Math::BigInt;
  
  use POSIX ':sys_wait_h';
- 
+@@ -2475,7 +2476,7 @@ sub read_conffile($)
+         s/\s+$//;       # no trailing white
+         next unless length;     # anything left ?
+         my ($var, $value) = split(/\s*=\s*/, $_, 2);
+-        $dflt{$var} = $value || 1;
++        $dflt{$var} = $value || undef;
+     }
+     close CONF
+ 	or die "Couldn't close config file $config_file\n";
