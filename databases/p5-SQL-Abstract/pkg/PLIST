@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/10 12:02:24 jasper Exp $
-bin/format-sql
+@comment $OpenBSD: PLIST,v 1.5 2014/07/11 12:42:48 afresh1 Exp $
 ${P5SITE}/DBIx/
 ${P5SITE}/DBIx/Class/
 ${P5SITE}/DBIx/Class/Storage/
