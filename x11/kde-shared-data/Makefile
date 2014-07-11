@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/10 08:23:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/11 17:37:55 zhuk Exp $
 
 COMMENT =	common run-time components for KDE3 and KDE4
 CATEGORIES =	x11 x11/kde3
@@ -12,23 +12,14 @@ MODKDE4_FIX_GETTEXT =	No
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-# first one should be the ${MODKDE4_VERSION}
-MODKDE4_VERSION =	4.13.2
-ALL_KDE4_VERSIONS =	${MODKDE4_VERSION}
 KDE3_VERSION =		3.5.10
 
 DISTFILES =		kdebase-${KDE3_VERSION}.tar.bz2 \
 			kde-runtime-${MODKDE4_VERSION}.tar.xz:0
 
-_i =	0
-.for _v in ${ALL_KDE4_VERSIONS}
-SUPDISTFILES +=		kde-runtime-${_v}.tar.xz:${_i}
-MASTER_SITES${_i} =	${MASTER_SITE_KDE:=stable/${_v}/src/}
-_i !=	echo $$((${_i} + 1))
-.endfor
-
 DIST_SUBDIR =		kde
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/${KDE3_VERSION}/src/}
+MASTER_SITES0 =		${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/}
 
 BUILD_DEPENDS =
 LIB_DEPENDS =
