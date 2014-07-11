@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_memory_c,v 1.1 2014/07/11 00:12:15 sthen Exp $
+--- src/memory.c.orig	Thu Jul 10 07:50:50 2014
++++ src/memory.c	Thu Jul 10 07:52:54 2014
+@@ -30,6 +30,7 @@
+ #ifdef HAVE_SYS_SYSCTL_H
+ # include <sys/sysctl.h>
+ #endif
++#include <sys/vmmeter.h>
+ 
+ #ifdef HAVE_MACH_KERN_RETURN_H
+ # include <mach/kern_return.h>
