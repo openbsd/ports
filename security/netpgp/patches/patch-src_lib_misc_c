@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_lib_misc_c,v 1.1.1.1 2013/03/09 16:02:24 pascal Exp $
---- src/lib/misc.c.orig	Thu Nov  4 07:45:28 2010
-+++ src/lib/misc.c	Thu Aug  2 14:52:01 2012
-@@ -436,7 +436,7 @@ hash_bignum(__ops_hash_t *hash, BIGNUM *bignum)
+$OpenBSD: patch-src_lib_misc_c,v 1.2 2014/07/11 22:41:03 pascal Exp $
+--- src/lib/misc.c.orig	Mon Mar  5 03:20:18 2012
++++ src/lib/misc.c	Sat Jul 12 00:27:33 2014
+@@ -437,7 +437,7 @@ hash_bignum(pgp_hash_t *hash, BIGNUM *bignum)
  		(void) fprintf(stderr, "hash_bignum: bad size\n");
  		return 0;
  	}

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/09 16:02:24 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/11 22:41:03 pascal Exp $
 @bin bin/netpgp
 @bin bin/netpgpkeys
-@bin bin/netpgpverify
 include/netpgp.h
 lib/libmj.a
 lib/libmj.la
@@ -11,6 +10,5 @@ lib/libnetpgp.la
 @lib lib/libnetpgp.so.${LIBnetpgp_VERSION}
 @man man/man1/netpgp.1
 @man man/man1/netpgpkeys.1
-@man man/man1/netpgpverify.1
 @man man/man3/libmj.3
 @man man/man3/libnetpgp.3

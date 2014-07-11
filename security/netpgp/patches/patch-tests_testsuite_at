@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_testsuite_at,v 1.1 2014/07/11 22:41:03 pascal Exp $
+--- tests/testsuite.at.orig	Sat Jul 12 00:36:53 2014
++++ tests/testsuite.at	Sat Jul 12 00:37:00 2014
+@@ -2,7 +2,7 @@
+ 
+ AT_INIT([netpgp])
+ 
+-AT_TESTED([netpgp netpgpverify])
++AT_TESTED([netpgp])
+ 
+ m4_include([userid.at])
+ 

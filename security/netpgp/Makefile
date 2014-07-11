@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/11 22:41:03 pascal Exp $
 
 COMMENT =		BSD-licensed PGP implementation
 
-DISTNAME =		netpgp-20101107
+DISTNAME =		netpgp-20140220
 
-SHARED_LIBS +=		mj                        0.0 # 0.0
-SHARED_LIBS +=		netpgp                    0.0 # 0.0
+SHARED_LIBS +=		mj                        1.0 # 0.0
+SHARED_LIBS +=		netpgp                    1.0 # 0.0
 
 CATEGORIES =		security
 
