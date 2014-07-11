@@ -1,0 +1,37 @@
+$OpenBSD: patch-sysdeps_openbsd_open_c,v 1.6 2014/07/11 16:57:55 robert Exp $
+--- sysdeps/openbsd/open.c.orig	Mon Apr 28 23:09:24 2014
++++ sysdeps/openbsd/open.c	Fri Jul 11 18:56:55 2014
+@@ -23,6 +23,8 @@
+ #include <sys/types.h>
+ #include <glibtop.h>
+ #include <glibtop/open.h>
++#include <glibtop/cpu.h>
++#include <glibtop/error.h>
+ 
+ #include <glibtop_private.h>
+ 
+@@ -32,5 +34,24 @@ glibtop_open_s (glibtop *server, const char *program_n
+ 		const unsigned long features,
+ 		const unsigned flags)
+ {
++	int ncpus = 1;
++	int mib[2] = { CTL_HW, HW_NCPU };
++	size_t len;
++
++	len = sizeof(ncpus);
++	if (sysctl(mib, 2, &ncpus, &len, NULL, 0) != 0)
++		printf("Couldn't determine hw.ncpu.\n");
++
++	server->real_ncpu = ncpus - 1;
++	server->ncpu = MIN(GLIBTOP_NCPU - 1, server->real_ncpu);
++
+ 	server->os_version_code = OpenBSD;
++
++	if (server->real_ncpu != server->ncpu) {
++		glibtop_warn_r(server,
++			"This machine has %d CPUs, "
++			"%d are being monitored.",
++			server->real_ncpu + 1,
++			server->ncpu + 1);
++	}
+ }
