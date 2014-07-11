@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/01/14 04:20:20 kirby Exp $
+# $OpenBSD: Makefile,v 1.40 2014/07/11 21:25:23 kirby Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -7,6 +7,7 @@ SHARED_ONLY =		Yes
 COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2013.0.0
+REVISION = 		0
 EXTRACT_SUFX =		.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -22,6 +23,7 @@ SHARED_LIBS +=  huginvigraimpex           1.0
 SHARED_LIBS +=  icpfindlib                1.0
 SHARED_LIBS +=  localfeatures             1.0
 SHARED_LIBS +=  makefilelib               1.0
+SHARED_LIBS +=  hugin_python_interface    0.0
 
 CATEGORIES =		graphics x11
 
@@ -41,15 +43,18 @@ WANTLIB += jpeg lensfun m pano13>=2.0 png pthread stdc++ tiff
 WANTLIB += wx_base>=3 wx_base_net>=3 wx_base_xml>=3
 WANTLIB += wx_gtk2_adv>=3 wx_gtk2_aui>=3 wx_gtk2_core>=3
 WANTLIB += wx_gtk2_gl>=3 wx_gtk2_html>=3 wx_gtk2_xrc>=3 z
+WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
+BUILD_DEPENDS = 	devel/swig>=2
 RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/enblend-enfuse \
 			graphics/p5-Image-ExifTool \
 			misc/shared-mime-info \
 			x11/gtk+2,-guic \
 			devel/gmake # yes, really a RUN_DEPENDS
+RUN_DEPENDS += 		x11/py-wxPython # required for launching python scripts
 
 LIB_DEPENDS =		devel/boost \
 			graphics/exiv2>=0.12 \
@@ -64,19 +69,32 @@ LIB_DEPENDS =		devel/boost \
 			graphics/tiff \
 			x11/wxWidgets>=2.8.12p7
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake devel/gettext lang/python
 CONFIGURE_ENV =		MANDIR=man
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release \
-			-DBUILD_HSI=OFF
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
+			-DBUILD_HSI=ON
 NO_TEST =		Yes
+
+MODPY_ADJ_FILES = 	src/hugin_script_interface/hpi.py \
+			src/hugin_script_interface/plugins/shooting_pattern.py \
+			src/hugin_script_interface/plugins/woa.py \
+			src/hugin_script_interface/plugins/crop_cp.py \
+			src/hugin_script_interface/plugins/top_five.py \
+			src/hugin_script_interface/plugins-dev/plugin_skeleton.py \
+			src/hugin_script_interface/plugins-dev/dual_use.py
+
+
+post-extract:
+	@rm ${WRKSRC}/CMakeModules/FindPNG.cmake
+	@rm ${WRKSRC}/CMakeModules/FindGLEW.cmake
 
 pre-patch:
 	find ${WRKSRC} -name '*.orig' | xargs rm
 	cd ${WRKSRC}/CMakeModules; perl -i -pe 's/\r$$//' `find . -type f` \
 	    ../src/CMakeLists.txt
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeModules/FindPNG.cmake \
-	    ${WRKSRC}/CMakeModules/FindGLEW.cmake
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages
 
 .include <bsd.port.mk>

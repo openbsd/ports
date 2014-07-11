@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/01/14 04:20:20 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/07/11 21:25:23 kirby Exp $
 @bin bin/PTBatcher
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
@@ -32,6 +32,7 @@ bin/autopano-noop.sh
 lib/hugin/
 @lib lib/hugin/libceleste.so.${LIBceleste_VERSION}
 @lib lib/hugin/libflann_cpp.so.${LIBflann_cpp_VERSION}
+@lib lib/hugin/libhugin_python_interface.so.${LIBhugin_python_interface_VERSION}
 @lib lib/hugin/libhuginbase.so.${LIBhuginbase_VERSION}
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
 @lib lib/hugin/libhuginlines.so.${LIBhuginlines_VERSION}
@@ -39,6 +40,11 @@ lib/hugin/
 @lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
 @lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
 @lib lib/hugin/libmakefilelib.so.${LIBmakefilelib_VERSION}
+lib/python${MODPY_VERSION}/site-packages/_hsi.so
+lib/python${MODPY_VERSION}/site-packages/hpi.py
+lib/python${MODPY_VERSION}/site-packages/hpi.pyc
+lib/python${MODPY_VERSION}/site-packages/hsi.py
+lib/python${MODPY_VERSION}/site-packages/hsi.pyc
 @man man/man1/PTBatcher.1
 @man man/man1/PTBatcherGUI.1
 @man man/man1/align_image_stack.1
@@ -78,6 +84,15 @@ share/hugin/Makefile.equirect.mk
 share/hugin/data/
 share/hugin/data/celeste.model
 share/hugin/data/default.setting
+share/hugin/data/plugins/
+share/hugin/data/plugins-templates/
+share/hugin/data/plugins-templates/dual_use.py
+share/hugin/data/plugins-templates/plugin_skeleton.py
+share/hugin/data/plugins/README_woa.txt
+share/hugin/data/plugins/crop_cp.py
+share/hugin/data/plugins/shooting_pattern.py
+share/hugin/data/plugins/top_five.py
+share/hugin/data/plugins/woa.py
 share/hugin/xrc/
 share/hugin/xrc/about.xrc
 share/hugin/xrc/batch_frame.xrc
