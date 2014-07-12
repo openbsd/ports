@@ -1,0 +1,22 @@
+$OpenBSD: patch-tools_lint,v 1.1 2014/07/12 07:19:56 zhuk Exp $
+Unbreak tests.
+--- tools/lint.orig	Fri Jul 11 17:40:03 2014
++++ tools/lint	Fri Jul 11 17:41:43 2014
+@@ -18,7 +18,7 @@ EOF
+ 
+ # This version must be at the top of the Debian changelog.
+ check_debian_changelog() {
+-	if ! head -n1 debian/changelog | grep -q "^libpqxx ($PQXXVERSION\\>"
++	if ! head -n1 debian/changelog | grep -q "^libpqxx ($PQXXVERSION[^[:digit:]]"
+ 	then
+ 		cat <<EOF >&2
+ Version $PQXXVERSION is not at the top of debian/changelog.
+@@ -42,7 +42,7 @@ count_includes() {
+ # Any file that includes compiler-internal-pre.hxx must also include
+ # compiler-internal-post.hxx, and vice versa.
+ check_compiler_internal_headers() {
+-	TEMPDIR="`mktemp --tmpdir -d pqxx-pre-release-check.XXXX`"
++	TEMPDIR="`mktemp -t -d pqxx-pre-release-check.XXXXXX`"
+ 	if test -z "$TEMPDIR"
+ 	then
+ 		cat <<EOF >&2
