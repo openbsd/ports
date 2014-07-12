@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2014/05/16 01:34:50 brad Exp $
+# $OpenBSD: Makefile,v 1.238 2014/07/12 22:01:53 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,6 +15,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
@@ -28,9 +29,8 @@ PERMIT_PACKAGE_FTP =		Yes
 WANTLIB =	EGL GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
 		crypto dv dvdnavmini dvdread enca fontconfig freetype \
-		fribidi jpeg m mng mp3lame ncurses ogg>=5 opus png postproc \
-		pthread SDL sndio speex stdc++ swscale gif util x264>=5 \
-		xvidcore z
+		fribidi jpeg m mng mp3lame ncurses png postproc pthread \
+		SDL sndio stdc++ swscale gif util x264>=5 xvidcore z
 
 # we use a snapshot
 MASTER_SITES =	http://comstyle.com/source/
@@ -45,10 +45,7 @@ LIB_DEPENDS =	graphics/png \
 		graphics/giflib \
 		graphics/ffmpeg>=${FFMPEG_V} \
 		audio/cdparanoia>=3.a9.8 \
-		audio/speex \
-		audio/libogg \
 		audio/lame \
-		audio/opus \
 		multimedia/libbluray \
 		multimedia/libdv \
 		devel/fribidi \
@@ -153,17 +150,16 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-faad \
 		--disable-theora \
 		--disable-pulse \
-		--disable-relocatable
+		--disable-relocatable \
+		--disable-speex \
+		--disable-libopus \
+		--disable-libvorbis
 
-# internal tremor, external tremor, external libvorbis all conflict
-# we choose libvorbis to enable encoding to vorbis
-CONFIGURE_ARGS += --disable-tremor
 .if ${MACHINE_ARCH:Marm}
-# ... except on arm, which has no floating point hardware
-CONFIGURE_ARGS += --disable-libvorbis
+WANTLIB +=	ogg vorbisidec
+LIB_DEPENDS +=	audio/tremor
 .else
-LIB_DEPENDS +=	audio/libvorbis
-WANTLIB +=	vorbisenc vorbis
+CONFIGURE_ARGS += --disable-tremor
 .endif
 
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
