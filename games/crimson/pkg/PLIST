@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/12/22 16:28:00 ajacoutot Exp $
-bin/bi2cf
-bin/cfed
-bin/comet
-bin/crimson
+@comment $OpenBSD: PLIST,v 1.13 2014/07/12 12:06:49 kirby Exp $
+@bin bin/bi2cf
+@bin bin/cfed
+@bin bin/comet
+@bin bin/crimson
 @man man/man6/bi2cf.6
 @man man/man6/cfed.6
 @man man/man6/comet.6
 @man man/man6/crimson.6
-share/applications/
 share/applications/crimson.desktop
 share/crimson/
 share/crimson/Bepa-Roman.ttf
@@ -46,6 +45,7 @@ share/crimson/locale/it.dat
 share/crimson/locale/pl.dat
 share/crimson/locale/sk.dat
 share/crimson/locale/sr.dat
+share/crimson/locale/tr.dat
 share/crimson/music/
 share/crimson/music/default.mid
 share/crimson/sound/
