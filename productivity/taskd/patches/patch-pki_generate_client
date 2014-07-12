@@ -1,0 +1,39 @@
+$OpenBSD: patch-pki_generate_client,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+--- pki/generate.client.orig	Fri Jun 20 22:26:36 2014
++++ pki/generate.client	Fri Jun 20 22:00:23 2014
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ NAME=client
+ if [ $# -gt 0 ] ; then
+@@ -6,23 +6,26 @@ if [ $# -gt 0 ] ; then
+ fi
+ 
+ # Take the correct binary to create the certificates
+-CERTTOOL=$(which gnutls-certtool || which certtool)
++CERTTOOL=$(which certtool)
+ if [[ -z "${CERTTOOL}" ]]
+ then
+   echo "ERROR: No certtool found" >&2
+   exit 1
+ fi
+ 
++. ./vars
++
+ # Create a client key.
+ ${CERTTOOL} \
+   --generate-privkey \
++  --bits=$bits \
+   --outfile ${NAME}.key.pem
+ 
+ # Sign a client cert with the key.
+ chmod 600 ${NAME}.key.pem
+ cat <<EOF >client.info
+-organization = Göteborg Bit Factory
+-cn = Göteborg Bit Factory
++organization = $organization
++cn = $cn
+ tls_www_client
+ encryption_key
+ signing_key

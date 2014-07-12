@@ -1,0 +1,132 @@
+$OpenBSD: README,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Generate certificates
+=====================
+Before starting taskd you need to generate certificates for it to use.
+The procedure is described at
+http://taskwarrior.org/docs/server_configure.html but has been somewhat
+simplified on OpenBSD:
+
+Generate certificate files
+--------------------------
+In ${PREFIX}/share/examples/taskd/pki/ is a set of scripts that can be
+used to generate necessary files. Copy that directory somewhere safe and
+adjust vars to your liking.
+generate.server will automatically generate certificate with the
+hostname and IPs of machine it is ran on, adjust the vars file to
+override this.
+Once you're satisfied with settings, run:
+
+  $ ./generate
+
+
+Copy certificates in place
+--------------------------
+Copy resulting certificates into taskd's directory:
+
+  $ sudo cp {client,server}.{cert,key}.pem server.crl.pem ca.cert.pem \
+      /var/taskd
+  $ sudo chown -R _taskd:_taskd /var/taskd
+
+
+Running taskd
+=============
+taskd by default listens on all interfaces on port 53589. You can change
+this with a command like:
+
+  $ sudo -u _taskd taskd config --force server \
+        localhost:12345 --data /var/taskd
+
+To enable automatic startup on boot for taskd, add it to pkg_scripts
+in ${BASESYSCONFDIR}/rc.conf.local, for example:
+
+   pkg_scripts="${pkg_scripts} taskd"
+
+To start taskd, reboot or start it manually:
+
+   $ sudo /etc/rc.d/taskd start
+
+
+Adding users
+============
+As described at http://taskwarrior.org/docs/server_user.html
+
+For most operations here you'll either have to
+
+  $ export TASKDDATA=/var/taskd
+
+and run commands with sudo -E to pass that variable to taskd, or run
+taskd with '--data /var/taskd' appended to it's options. Both examples
+below.
+
+Create organization and user
+----------------------------
+First you need to create an organization to put user(s) into:
+
+  $ sudo -u _taskd taskd add org Public --data /var/taskd
+  Created organization 'Public'
+
+
+Then you can proceed with creating a user:
+
+  $ sudo -E -u _taskd taskd add user 'Public' 'First Last'
+  New user key: cf31f287-ee9e-43a8-843e-e8bbd5de4294
+  Created user 'First Last' for organization 'Public'
+
+
+Create user certificate
+-----------------------
+Go again to the directory where you copied the pki scripts, and run:
+
+  $ ./generate.client first_last
+
+This will generate a new key and cert, named first_last.cert.pem and
+first_last.key.pem. It is not important that 'first_last' was used here,
+just that it is something unique, and valid for use in a file name.
+
+
+Configure taskwarrior
+=====================
+As described at http://taskwarrior.org/docs/server_taskwarrior.html
+
+You will need following information from above processes:
+  CA ca.cert.pem
+  Client certificate: first_last.cert.pem
+  Client key: first_last.key.pem
+  User key (yours will be different): cf31f287-ee9e-43a8-843e-e8bbd5de4294
+  Organization: Public
+  Account name: First Last
+  Server:port host.domain:53589
+
+  $ cp first_last.cert.pem ~/.task
+  $ cp first_last.key.pem  ~/.task
+  $ cp ca.cert.pem         ~/.task
+  $ task config taskd.certificate ~/.task/first_last.cert.pem
+  $ task config taskd.key         ~/.task/first_last.key.pem
+  $ task config taskd.ca          ~/.task/ca.cert.pem
+  $ task config taskd.server      host.domain:53589
+  $ task config taskd.credentials 'Public/First Last/cf31f287-ee9e-43a8-843e-e8bbd5de4294'
+
+
+Syncing Taskwarrior
+===================
+As described at http://taskwarrior.org/docs/server_sync.html
+
+First time sync is special, and needs to be done only once:
+
+  $ task sync init
+  Please confirm that you wish to upload all your pending tasks to the
+  Task Server (yes/no) yes
+  Syncing with host.domain:53589
+  Sync successful.  2 changes uploaded.
+
+
+Afterwards you simply run:
+
+  $ task sync
+  Syncing with :
+  Sync successful.  1 changes uploaded.

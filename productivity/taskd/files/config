@@ -1,0 +1,17 @@
+confirmation=1
+extensions=${TRUEPREFIX}/libexec/taskd
+log=/var/log/taskd/taskd.log
+log=/var/log/taskd/taskd.log
+pid.file=/var/run/taskd/taskd.pid
+queue.size=10
+request.limit=1048576
+root=/var/taskd
+server=*:53589
+verbose=1
+client.cert=/var/taskd/client.cert.pem
+client.key=/var/taskd/client.key.pem
+server.cert=/var/taskd/server.cert.pem
+server.key=/var/taskd/server.key.pem
+server.crl=/var/taskd/server.crl.pem
+ca.cert=/var/taskd/ca.cert.pem
+client.allow=^task [2-9]

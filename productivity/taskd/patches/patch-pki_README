@@ -1,0 +1,12 @@
+$OpenBSD: patch-pki_README,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+--- pki/README.orig	Fri Jun 20 22:26:36 2014
++++ pki/README	Fri Jun 20 22:27:24 2014
+@@ -21,7 +21,7 @@ and cert will not be trusted by anyone, for good reaso
+ 
+ Note, you can inspect any cert with the command:
+ 
+-  $ gnutls-certtool -i --infile $CERT
++  $ certtool -i --infile $CERT
+ 
+ There is a 'generate' script here that will perform the above steps.  Take a
+ look at it to see the individual steps it takes to generate the proper set of

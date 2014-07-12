@@ -1,0 +1,41 @@
+$OpenBSD: patch-pki_generate_ca,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+--- pki/generate.ca.orig	Fri Jun 20 22:26:36 2014
++++ pki/generate.ca	Fri Jun 20 21:59:50 2014
+@@ -1,27 +1,30 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Take the correct binary to create the certificates
+-CERTTOOL=$(which gnutls-certtool || which certtool)
++CERTTOOL=$(which certtool)
+ if [[ -z "${CERTTOOL}" ]]
+ then
+   echo "ERROR: No certtool found" >&2
+   exit 1
+ fi
+ 
++. ./vars
++
+ # Create a CA key.
+ ${CERTTOOL} \
+   --generate-privkey \
++  --bits=$bits \
+   --outfile ca.key.pem
+ 
+ chmod 600 ca.key.pem
+ 
+ # Sign a CA cert.
+ cat <<EOF >ca.info
+-organization = Göteborg Bit Factory
+-cn = Göteborg Bit Factory
+-country = SE
+-state = Västra Götaland
+-locality = Göteborg
++organization = $organization
++cn = $cn
++country = $country
++state = $state
++locality = $locality
+ ca
+ cert_signing_key
+ EOF

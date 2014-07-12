@@ -1,0 +1,21 @@
+$OpenBSD: patch-pki_generate_crl,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+--- pki/generate.crl.orig	Fri Jun 20 22:26:36 2014
++++ pki/generate.crl	Fri Jun 20 22:00:47 2014
+@@ -1,12 +1,14 @@
+-#!/bin/bash
++#!/bin/sh
+ 
++. ./vars
++
+ # CRL - Certificate Revocation List
+ cat <<EOF >crl.info
+-expiration_days = 365
++expiration_days = $expiration_days
+ EOF
+ 
+ # Take the correct binary to create the certificates
+-CERTTOOL=$(which gnutls-certtool || which certtool)
++CERTTOOL=$(which certtool)
+ if [[ -z "${CERTTOOL}" ]]
+ then
+   echo "ERROR: No certtool found" >&2

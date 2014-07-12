@@ -1,0 +1,9 @@
+$OpenBSD: patch-pki_generate,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+--- pki/generate.orig	Fri Jun 20 22:26:36 2014
++++ pki/generate	Fri Jun 20 21:52:57 2014
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # For a public or production server, purchase a cert from a known CA, and skip
+ # the next step.
