@@ -1,4 +1,4 @@
-$OpenBSD: README-minimal,v 1.3 2014/01/23 18:52:23 zhuk Exp $
+$OpenBSD: README-minimal,v 1.4 2014/07/12 11:25:44 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,10 +16,7 @@ KDE4 SC.
 Starting KDE4
 ==============
 Before running startkde4(1), a system-wide D-Bus daemon needs to be
-running ("dbus_daemon" needs to be added to the "pkg_scripts" variable
-in rc.conf.local(8)):
-
-  # echo 'pkg_scripts="$pkg_scripts dbus_daemon"' >>/etc/rc.conf.local
+running (add "dbus_daemon" to the "pkg_scripts" line in /etc/rc.conf.local).
 
 Then the following line should be added:
 
@@ -67,8 +64,5 @@ mDNS/DNS-SD support
 The avahi-daemon(8) daemon provides Zeroconf support (aka. Bonjour /
 Rendezvous) in KDE.
 
-To make use of it multicasting should be enabled, and "avahi_daemon"
-needs to be added to the "pkg_scripts" variable _after_ "dbus_daemon":
-
-  # echo 'multicast_host=YES' >>/etc/rc.conf.local
-  # echo 'pkg_scripts="$pkg_scripts dbus_daemon avahi_daemon"' >>/etc/rc.conf.local
+To make use of it, edit /etc/rc.conf.local to include "multicast_host=YES"
+and add "avahi_daemon" to the "pkg_scripts" line _after_ "dbus_daemon".
