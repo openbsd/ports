@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/11/01 14:54:49 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2014/07/12 16:37:05 espie Exp $
 
 # NOTE for FLAVOR=src
 # - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
@@ -16,63 +16,37 @@ COMMENT =		database of packages for use with locate(1)
 
 # locate data is NOT MI, unfortunately
 # PKG_ARCH = ${ARCH}....
-DISTNAME =		pkglocatedb-0.6
-REVISION =		1
+DISTNAME =		pkglocatedb-1.0
 DISTFILES =
 
 CATEGORIES =		databases
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-FLAVORS = src
-FLAVOR ?=
-
-.if ${FLAVOR:Msrc}
-ARGS = -u -C -s ${BSDSRCDIR} -x ${XSRCDIR}
 USE_X11 = Yes
-.  include <bsd.own.mk>
-PKGLOCATEDB_WANTANONCVS ?= No
-.  if ${PKGLOCATEDB_WANTANONCVS:L} == "yes"
-PKGLOCATEDB_CVSROOT ?= anoncvs@anoncvs1.ca.openbsd.org:/cvs
-
-BSDSRCDIR = ${WRKDIR}/src
-XSRCDIR = ${WRKDIR}/xenocara
-post-extract:
-	cd ${WRKDIR} && cvs -d ${PKGLOCATEDB_CVSROOT} co src/distrib/sets/lists
-	cd ${WRKDIR} && cvs -d ${PKGLOCATEDB_CVSROOT} co xenocara/distrib/sets/lists
-
-.  else
-BSDSRCDIR ?= /usr/src
-XSRCDIR ?= /usr/xenocara
-
-post-extract:
-	if ! test -d ${BSDSRCDIR}/distrib/sets/lists; then \
-		echo 1>&2 "set SRCDIR to a valid src dir"; \
-		exit 1; \
-	fi
-	if ! test -d ${XSRCDIR}/distrib/sets/lists; then \
-		echo 1>&2 "set XSRCDIR to a valid xenocara dir"; \
-		exit 1; \
-	fi
-.  endif
-
-# we depend on the other flavor for the build
-BUILD_DEPENDS = databases/pkglocatedb
-do-build:
-
-.else
 BUILD_DEPENDS =	databases/sqlports,-list
 
-ARGS = -a -p ${PORTSDIR}
+ARGS = -u -a -p ${PORTSDIR}
 
+SRCDB = /usr/lib/locate/src.db
+XDB = ${X11BASE}/lib/locate/xorg.db
+
+post-extract:
+	@status=0; if !  test -f ${SRCDB}; then \
+		echo "Error ${SRCDB} missing"; \
+		status=1; \
+	fi; \
+	if !  test -f ${XDB}; then \
+		echo "Error ${XDB} missing"; \
+		status=1;\
+	fi; \
+	exit $${status}
 
 do-build: 
 	@if test -s ${WRKBUILD}/ouch; then \
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
-
-.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/pkglocatedb ${PREFIX}/share
@@ -88,11 +62,7 @@ NO_TEST =		Yes
 # XXX cheat a bit to avoid having two makefiles
 do-build: ${WRKBUILD}/pkglocatedb
 
-.if ${FLAVOR:Msrc}
 ${WRKBUILD}/pkglocatedb:
-	${LOCALBASE}/bin/pkg_locate : | \
-		${SUDO} pkg_mklocatedb ${ARGS} >$@.tmp && mv $@.tmp $@
-.else
-${WRKBUILD}/pkglocatedb:
-	unset REPORT_PROBLEM; SUBDIRLIST=${LOCALBASE}/share/sqlports.list REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
-.endif
+	unset REPORT_PROBLEM; 
+	locate -d ${SRCDB} -d ${XDB} : | \
+	SUBDIRLIST=${LOCALBASE}/share/sqlports.list REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@

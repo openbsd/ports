@@ -2,6 +2,3 @@ Database of files from all packages in the ports tree, including names
 of the packages containing them. This is in a format suitable for use with
 locate(1), for instance through the convenience script 
 ${PREFIX}/bin/pkg_locate
-
-Flavor: 
-- src: also includes information from src and X sets
