@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:24:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/12 15:35:53 giovanni Exp $
+@comment ${P5ARCH}/auto/BerkeleyDB/BerkeleyDB.bs
+@comment ${P5ARCH}/mkconsts.pl
+@comment ${P5ARCH}/scan.pl
 ${P5ARCH}/
 ${P5ARCH}/BerkeleyDB/
 ${P5ARCH}/BerkeleyDB.pm
@@ -7,9 +10,5 @@ ${P5ARCH}/BerkeleyDB/Btree.pm
 ${P5ARCH}/BerkeleyDB/Hash.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/BerkeleyDB/
-@comment ${P5ARCH}/auto/BerkeleyDB/BerkeleyDB.bs
 ${P5ARCH}/auto/BerkeleyDB/BerkeleyDB.so
-${P5ARCH}/auto/BerkeleyDB/autosplit.ix
-@comment ${P5ARCH}/mkconsts.pl
-@comment ${P5ARCH}/scan.pl
 @man man/man3p/BerkeleyDB.3p

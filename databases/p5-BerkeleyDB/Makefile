@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/06/14 23:24:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2014/07/12 15:35:53 giovanni Exp $
 
 COMMENT=		Berkeley DB module
 SHARED_ONLY=		Yes
 
-DISTNAME=		BerkeleyDB-0.51
-REVISION=		1
+DISTNAME=		BerkeleyDB-0.54
 CATEGORIES=		databases
 MODULES=		cpan
 
