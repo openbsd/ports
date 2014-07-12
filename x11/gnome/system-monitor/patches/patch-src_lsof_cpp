@@ -1,0 +1,119 @@
+$OpenBSD: patch-src_lsof_cpp,v 1.3 2014/07/12 20:03:09 robert Exp $
+--- src/lsof.cpp.orig	Sat Jul 12 22:02:07 2014
++++ src/lsof.cpp	Sat Jul 12 22:02:18 2014
+@@ -103,20 +103,6 @@ namespace
+         }
+ 
+ 
+-        void clear_results()
+-        {
+-            gtk_list_store_clear(this->model);
+-            gtk_label_set_text(this->count, "");
+-        }
+-
+-
+-        void clear()
+-        {
+-            this->clear_results();
+-            gtk_entry_set_text(this->entry, "");
+-        }
+-
+-
+         void display_regex_error(const Glib::RegexError& error)
+         {
+             char * msg = g_strdup_printf ("<b>%s</b>\n%s\n%s",
+@@ -137,8 +123,14 @@ namespace
+ 
+         void update_count(unsigned count)
+         {
+-            string s = static_cast<std::ostringstream&>(std::ostringstream() << count).str();
+-            gtk_label_set_text(this->count, s.c_str());
++            gchar *title;
++            if (this->pattern().length() == 0) {
++                title = g_strdup_printf (ngettext("%d open file", "%d open files", count), count);
++            } else {
++                title = g_strdup_printf (ngettext("%d matching open file", "%d matching open files", count), count);
++            }
++            gtk_window_set_title(this->window, title);
++            g_free (title);
+         }
+ 
+ 
+@@ -153,9 +145,7 @@ namespace
+             typedef std::set<string> MatchSet;
+             typedef MatchSet::const_iterator iterator;
+ 
+-            this->clear_results();
+-
+-
++            gtk_list_store_clear(this->model);
+             try {
+                 Lsof lsof(this->pattern(), this->case_insensitive);
+ 
+@@ -188,24 +178,12 @@ namespace
+         }
+ 
+ 
+-        static void search_button_clicked(GtkButton *, gpointer data)
++        static void search_changed(GtkSearchEntry *, gpointer data)
+         {
+             static_cast<GUI*>(data)->search();
+         }
+ 
+ 
+-        static void search_entry_activate(GtkEntry *, gpointer data)
+-        {
+-            static_cast<GUI*>(data)->search();
+-        }
+-
+-
+-        static void clear_button_clicked(GtkButton *, gpointer data)
+-        {
+-            static_cast<GUI*>(data)->clear();
+-        }
+-
+-
+         static void close_button_clicked(GtkButton *, gpointer data)
+         {
+             GUI *gui = static_cast<GUI*>(data);
+@@ -308,12 +286,8 @@ void procman_lsof(GsmApplication *app)
+     gtk_window_set_transient_for(GTK_WINDOW(dialog), GTK_WINDOW(app->main_window));
+ 
+     GtkWidget *entry =  GTK_WIDGET (gtk_builder_get_object (builder, "entry"));
+-    GtkWidget *search_button =  GTK_WIDGET (gtk_builder_get_object (builder, "search_button"));
+-    GtkWidget *clear_button =  GTK_WIDGET (gtk_builder_get_object (builder, "clear_button"));
+ 
+     GtkWidget *case_button =  GTK_WIDGET (gtk_builder_get_object (builder, "case_button"));
+-    GtkWidget *count_label =  GTK_WIDGET (gtk_builder_get_object (builder, "count_label"));
+-    GtkWidget *close_button =  GTK_WIDGET (gtk_builder_get_object (builder, "close_button"));
+ 
+     // Scrolled TreeView
+     GtkWidget *scrolled = GTK_WIDGET (gtk_builder_get_object (builder, "scrolled"));
+@@ -325,16 +299,10 @@ void procman_lsof(GsmApplication *app)
+     gui->model = model;
+     gui->window = GTK_WINDOW(dialog);
+     gui->entry = GTK_ENTRY(entry);
+-    gui->count = GTK_LABEL(count_label);
++    gui->case_insensitive = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON (case_button));
+ 
+-    g_signal_connect(G_OBJECT(entry), "activate",
+-                     G_CALLBACK(GUI::search_entry_activate), gui);
+-    g_signal_connect(G_OBJECT(clear_button), "clicked",
+-                     G_CALLBACK(GUI::clear_button_clicked), gui);
+-    g_signal_connect(G_OBJECT(search_button), "clicked",
+-                     G_CALLBACK(GUI::search_button_clicked), gui);
+-    g_signal_connect(G_OBJECT(close_button), "clicked",
+-                     G_CALLBACK(GUI::close_button_clicked), gui);
++    g_signal_connect(G_OBJECT(entry), "search-changed",
++                     G_CALLBACK(GUI::search_changed), gui);
+     g_signal_connect(G_OBJECT(case_button), "toggled",
+                      G_CALLBACK(GUI::case_button_toggled), gui);
+     g_signal_connect(G_OBJECT(dialog), "delete-event",
+@@ -343,6 +311,7 @@ void procman_lsof(GsmApplication *app)
+     gtk_builder_connect_signals (builder, NULL);
+ 
+     gtk_widget_show_all(dialog);
++    gui->search ();
+     
+     g_object_unref (G_OBJECT (builder));
+ }
