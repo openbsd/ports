@@ -1,0 +1,8 @@
+MySQL Utilities provides a collection of command-line utilities
+that are used for maintaining and administering MySQL servers,
+including:
+- Admin Utilities (Clone, Copy, Compare, Diff, Export, Import,
+User Management)
+- Replication Utilities (Setup, Configuration, Verification)
+- General Utilities (Disk Usage, Redundant Indexes, Manage Meta
+& Audit Data)

@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2014/07/12 12:27:38 giovanni Exp $
+--- setup.py.orig	Fri May 23 19:48:06 2014
++++ setup.py	Sat Jul 12 12:25:14 2014
+@@ -343,7 +343,7 @@ class install_data(_install_data):
+         elif os.name == 'nt':
+             install_sysconfdir = os.path.join(install_dir, 'etc')
+         else:
+-            install_sysconfdir = '/etc'
++            install_sysconfdir = '${PREFIX}/share/examples'
+ 
+         # Go over all entries in data_files and process it if needed
+         new_data_files = []
+@@ -376,7 +376,7 @@ class install_data(_install_data):
+                     filename = os.path.splitext(filename)[0]
+                     config.write(open(filename, "w"))
+                     # change directory 'fabric'to mysql 
+-                directory = os.path.join(install_sysconfdir, 'mysql')
++                directory = os.path.join(install_sysconfdir, 'mysql-utilities')
+                 data_files.append((directory, filename))
+             new_data_files.extend(data_files)
+ 
