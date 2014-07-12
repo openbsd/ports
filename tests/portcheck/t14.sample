@@ -1,0 +1,1 @@
+in -foo: stdc++ in WANTLIB when gcc4 is in MODULES; run port-lib-depends-check and if stdc++ is still there, check actual build thoroughly, it's broken
