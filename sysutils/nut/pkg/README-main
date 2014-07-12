@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2012/11/08 21:59:01 sthen Exp $
+$OpenBSD: README-main,v 1.4 2014/07/12 14:55:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,12 +13,12 @@ by various computers may communicate with a central upsd, and a whole
 network may run upsmon to allow for shutdown).
 
 On OpenBSD, daemons from packages are usually started by adding to the
-pkg_scripts variable in /etc/rc.conf.local. For NUT, machines running
+pkg_scripts line in /etc/rc.conf.local. For NUT, machines running
 upsd or the hardware driver should include "upsd" in this line, and all
 machines should include "upsmon". Where you run both, upsd should
 be started first. For example you could use this line:
 
-	pkg_scripts="upsd upsmon [...any other daemons...]"
+	pkg_scripts=upsd upsmon [...any other daemons...]
 
 Network devices
 ---------------
