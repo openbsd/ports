@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.29 2013/10/04 13:15:41 dcoppa Exp $
+@comment $OpenBSD: PLIST-html,v 1.30 2014/07/12 11:10:14 dcoppa Exp $
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
 share/doc/qt4/html/abstractwidgets.html
@@ -231,8 +231,8 @@ share/doc/qt4/html/declarative-cppextensions-networkaccessmanagerfactory-network
 share/doc/qt4/html/declarative-cppextensions-networkaccessmanagerfactory-networkaccessmanagerfactory-qrc.html
 share/doc/qt4/html/declarative-cppextensions-networkaccessmanagerfactory-qml-networkaccessmanagerfactory-view-qml.html
 share/doc/qt4/html/declarative-cppextensions-networkaccessmanagerfactory.html
-share/doc/qt4/html/declarative-cppextensions-plugins-com-nokia-timeexample-clock-qml.html
-share/doc/qt4/html/declarative-cppextensions-plugins-com-nokia-timeexample-qmldir.html
+share/doc/qt4/html/declarative-cppextensions-plugins-org-qtproject-timeexample-clock-qml.html
+share/doc/qt4/html/declarative-cppextensions-plugins-org-qtproject-timeexample-qmldir.html
 share/doc/qt4/html/declarative-cppextensions-plugins-plugin-cpp.html
 share/doc/qt4/html/declarative-cppextensions-plugins-plugins-pro.html
 share/doc/qt4/html/declarative-cppextensions-plugins-plugins-qml.html

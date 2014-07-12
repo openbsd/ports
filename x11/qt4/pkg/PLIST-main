@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2013/10/04 13:15:41 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2014/07/12 11:10:14 dcoppa Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 @pkgpath x11/qt4,-sqlite
@@ -194,6 +194,7 @@ include/X11/qt4/Qt/qatomic_generic.h
 include/X11/qt4/Qt/qatomic_i386.h
 include/X11/qt4/Qt/qatomic_ia64.h
 include/X11/qt4/Qt/qatomic_integrity.h
+include/X11/qt4/Qt/qatomic_m68k.h
 include/X11/qt4/Qt/qatomic_macosx.h
 include/X11/qt4/Qt/qatomic_mips.h
 include/X11/qt4/Qt/qatomic_parisc.h
@@ -1412,6 +1413,7 @@ include/X11/qt4/QtCore/qatomic_generic.h
 include/X11/qt4/QtCore/qatomic_i386.h
 include/X11/qt4/QtCore/qatomic_ia64.h
 include/X11/qt4/QtCore/qatomic_integrity.h
+include/X11/qt4/QtCore/qatomic_m68k.h
 include/X11/qt4/QtCore/qatomic_macosx.h
 include/X11/qt4/QtCore/qatomic_mips.h
 include/X11/qt4/QtCore/qatomic_parisc.h
@@ -3804,6 +3806,11 @@ lib/qt4/mkspecs/unsupported/linux-scratchbox2-g++/
 lib/qt4/mkspecs/unsupported/linux-scratchbox2-g++/qmake.conf
 lib/qt4/mkspecs/unsupported/linux-scratchbox2-g++/qplatformdefs.h
 lib/qt4/mkspecs/unsupported/macx-clang/
+lib/qt4/mkspecs/unsupported/macx-clang-libc++/
+lib/qt4/mkspecs/unsupported/macx-clang-libc++/Info.plist.app
+lib/qt4/mkspecs/unsupported/macx-clang-libc++/Info.plist.lib
+lib/qt4/mkspecs/unsupported/macx-clang-libc++/qmake.conf
+lib/qt4/mkspecs/unsupported/macx-clang-libc++/qplatformdefs.h
 lib/qt4/mkspecs/unsupported/macx-clang/Info.plist.app
 lib/qt4/mkspecs/unsupported/macx-clang/Info.plist.lib
 lib/qt4/mkspecs/unsupported/macx-clang/qmake.conf
@@ -3902,6 +3909,9 @@ lib/qt4/mkspecs/win32-msvc2010/qplatformdefs.h
 lib/qt4/mkspecs/win32-msvc2012/
 lib/qt4/mkspecs/win32-msvc2012/qmake.conf
 lib/qt4/mkspecs/win32-msvc2012/qplatformdefs.h
+lib/qt4/mkspecs/win32-msvc2013/
+lib/qt4/mkspecs/win32-msvc2013/qmake.conf
+lib/qt4/mkspecs/win32-msvc2013/qplatformdefs.h
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/default_post.prf
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/qmake.conf
@@ -4100,6 +4110,7 @@ lib/qt4/translations/
 lib/qt4/translations/assistant_cs.qm
 lib/qt4/translations/assistant_da.qm
 lib/qt4/translations/assistant_de.qm
+lib/qt4/translations/assistant_eu.qm
 lib/qt4/translations/assistant_fr.qm
 lib/qt4/translations/assistant_hu.qm
 lib/qt4/translations/assistant_ja.qm
@@ -4124,6 +4135,7 @@ lib/qt4/translations/designer_zh_CN.qm
 lib/qt4/translations/designer_zh_TW.qm
 lib/qt4/translations/linguist_cs.qm
 lib/qt4/translations/linguist_de.qm
+lib/qt4/translations/linguist_eu.qm
 lib/qt4/translations/linguist_fr.qm
 lib/qt4/translations/linguist_hu.qm
 lib/qt4/translations/linguist_ja.qm
@@ -4139,6 +4151,7 @@ lib/qt4/translations/qt_cs.qm
 lib/qt4/translations/qt_da.qm
 lib/qt4/translations/qt_de.qm
 lib/qt4/translations/qt_es.qm
+lib/qt4/translations/qt_eu.qm
 lib/qt4/translations/qt_fa.qm
 lib/qt4/translations/qt_fr.qm
 lib/qt4/translations/qt_gl.qm
@@ -4146,6 +4159,7 @@ lib/qt4/translations/qt_he.qm
 lib/qt4/translations/qt_help_cs.qm
 lib/qt4/translations/qt_help_da.qm
 lib/qt4/translations/qt_help_de.qm
+lib/qt4/translations/qt_help_eu.qm
 lib/qt4/translations/qt_help_fr.qm
 lib/qt4/translations/qt_help_gl.qm
 lib/qt4/translations/qt_help_hu.qm
@@ -4170,6 +4184,8 @@ lib/qt4/translations/qt_sv.qm
 lib/qt4/translations/qt_uk.qm
 lib/qt4/translations/qt_zh_CN.qm
 lib/qt4/translations/qt_zh_TW.qm
+lib/qt4/translations/qtconfig_eu.qm
+lib/qt4/translations/qtconfig_he.qm
 lib/qt4/translations/qtconfig_hu.qm
 lib/qt4/translations/qtconfig_ja.qm
 lib/qt4/translations/qtconfig_ko.qm
@@ -4179,6 +4195,8 @@ lib/qt4/translations/qtconfig_sl.qm
 lib/qt4/translations/qtconfig_uk.qm
 lib/qt4/translations/qtconfig_zh_CN.qm
 lib/qt4/translations/qtconfig_zh_TW.qm
+lib/qt4/translations/qtscript_eu.qm
+lib/qt4/translations/qvfb_eu.qm
 lib/qt4/translations/qvfb_hu.qm
 lib/qt4/translations/qvfb_ja.qm
 lib/qt4/translations/qvfb_ko.qm

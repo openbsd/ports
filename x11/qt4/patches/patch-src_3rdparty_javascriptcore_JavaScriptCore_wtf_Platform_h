@@ -1,22 +1,40 @@
-$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.7 2013/10/04 13:15:40 dcoppa Exp $
---- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Fri Jun  7 07:16:58 2013
-+++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Fri Sep 27 10:10:55 2013
-@@ -142,6 +142,30 @@
- #endif
- #endif
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.8 2014/07/12 11:10:14 dcoppa Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Tue May 13 11:54:48 2014
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Tue May 13 11:59:49 2014
+@@ -333,27 +333,32 @@
  
-+/* CPU(MIPS) and CPU(MIPS64) */
+ #endif /* ARM */
+ 
++#if CPU(ARM) || CPU(MIPS) || CPU(SH4) || CPU(MIPS64) || CPU(SPARC64)
++#define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
++#endif
++
+ /* CPU(MIPS) - MIPS, any version */
+-#if (defined(mips) || defined(__mips__) || defined(MIPS) || defined(_MIPS_))
 +#if (defined(mips) || defined(__mips__) || defined(MIPS) || defined(_MIPS_) || defined(__mips64__))
 +#if defined(_ABIO32)
-+#define WTF_CPU_MIPS 1
+ #define WTF_CPU_MIPS 1
+-#include <sgidefs.h>
 +#endif
+ #if defined(__MIPSEB__)
+ #define WTF_CPU_BIG_ENDIAN 1
+ #endif
+-/* CPU(MIPS64) - MIPS 64-bit both BIG and LITTLE endian */
+-#if defined(_MIPS_SIM_ABI64) && (_MIPS_SIM == _MIPS_SIM_ABI64)
 +#if defined(__mips64__)
-+#define WTF_CPU_MIPS64 1
+ #define WTF_CPU_MIPS64 1
 +#define USE_SYSTEM_MALLOC 1
-+#endif
-+#if defined(__MIPSEB__)
-+#define WTF_CPU_BIG_ENDIAN 1
-+#endif
+ #endif
+-
+-/* CPU(MIPSN32) - MIPS N32 ABI both BIG and LITTLE endian */
+-#if defined(_MIPS_SIM_ABIN32) && (_MIPS_SIM == _MIPS_SIM_ABIN32)
+-#define WTF_CPU_MIPSN32 1
+-#endif
+-
+-/* CPU(MIPS32) - MIPS O32 ABI both BIG and LITTLE endian */
+-#if defined(_MIPS_SIM_ABI32) && (_MIPS_SIM == _MIPS_SIM_ABI32)
+-#define WTF_CPU_MIPS32 1
+-#endif
 +#define WTF_MIPS_PIC (defined __PIC__)
 +#define WTF_MIPS_ARCH __mips
 +#define WTF_MIPS_ISA(v) (defined WTF_MIPS_ARCH && WTF_MIPS_ARCH == v)
@@ -27,29 +45,15 @@ $OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.7 
 +#define WTF_MIPS_FP64 (defined __mips_fpr && __mips_fpr == 64)
 +/* MIPS requires allocators to use aligned memory */
 +#define WTF_USE_ARENA_ALLOC_ALIGNMENT_INTEGER 1
-+#endif /* MIPS */
-+
- /* CPU(HPPA) - a.k.a. PA-RISC */
- #if defined(__hppa) || defined(__hppa__)
- #define WTF_CPU_HPPA 1
-@@ -325,8 +349,10 @@
+ #endif /* __mips__ */
  
- #endif /* ARM */
  
-+#if CPU(ARM) || CPU(MIPS) || CPU(SH4) || CPU(MIPS64) || CPU(SPARC64)
-+#define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
-+#endif
- 
--
- /* ==== OS() - underlying operating system; only to be used for mandated low-level services like 
-    virtual memory, not to choose a GUI toolkit ==== */
- 
-@@ -873,7 +899,7 @@
+@@ -903,7 +908,7 @@
  #endif
  
  #if !defined(WTF_USE_JSVALUE64) && !defined(WTF_USE_JSVALUE32) && !defined(WTF_USE_JSVALUE32_64)
--#if (CPU(X86_64) && (OS(UNIX) || OS(WINDOWS) || OS(SOLARIS) || OS(HPUX))) || (CPU(IA64) && !CPU(IA64_32)) || CPU(ALPHA) || CPU(AIX64) || CPU(SPARC64)
-+#if (CPU(X86_64) && (OS(UNIX) || OS(WINDOWS) || OS(SOLARIS) || OS(HPUX) || OS(OPENBSD))) || (CPU(IA64) && !CPU(IA64_32)) || CPU(ALPHA) || CPU(AIX64) || CPU(SPARC64) || CPU(MIPS64)
+-#if (CPU(X86_64) && (OS(UNIX) || OS(WINDOWS) || OS(SOLARIS) || OS(HPUX))) || (CPU(IA64) && !CPU(IA64_32)) || CPU(ALPHA) || CPU(AIX64) || CPU(SPARC64) || CPU(MIPS64) || CPU(AARCH64)
++#if (CPU(X86_64) && (OS(UNIX) || OS(WINDOWS) || OS(SOLARIS) || OS(HPUX) || OS(OPENBSD))) || (CPU(IA64) && !CPU(IA64_32)) || CPU(ALPHA) || CPU(AIX64) || CPU(SPARC64) || CPU(MIPS64) || CPU(AARCH64)
  #define WTF_USE_JSVALUE64 1
  #elif CPU(ARM) || CPU(PPC64)
  #define WTF_USE_JSVALUE32 1

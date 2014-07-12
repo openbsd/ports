@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Threading_h,v 1.3 2012/06/14 09:38:35 espie Exp $
---- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Threading.h.orig	Thu Apr 26 21:46:22 2012
-+++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Threading.h	Sun Jun 10 13:25:08 2012
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Threading_h,v 1.4 2014/07/12 11:10:14 dcoppa Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Threading.h.orig	Thu Apr 10 20:37:12 2014
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Threading.h	Tue May 13 11:25:32 2014
 @@ -247,7 +247,7 @@ inline int atomicDecrement(int volatile* addend) { ret
  inline int atomicIncrement(int volatile* addend) { return (int) atomic_add_value((unsigned volatile*)addend, 1); }
  inline int atomicDecrement(int volatile* addend) { return (int) atomic_sub_value((unsigned volatile*)addend, 1); }
@@ -9,4 +9,4 @@ $OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Threading_h,v 1.3
 +#elif COMPILER(GCC) && !CPU(SPARC64) && !OS(SYMBIAN) && !OS(OPENBSD) // sizeof(_Atomic_word) != sizeof(int) on sparc64 gcc
  #define WTF_USE_LOCKFREE_THREADSAFESHARED 1
  
- inline int atomicIncrement(int volatile* addend) { return __gnu_cxx::__exchange_and_add(addend, 1) + 1; }
+ inline int atomicIncrement(int volatile* addend) { return __sync_add_and_fetch(addend, 1); }

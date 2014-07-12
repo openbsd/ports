@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.29 2013/10/04 13:15:41 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.30 2014/07/12 11:10:14 dcoppa Exp $
 @conflict qt4-<=4.2.2
 bin/pixeltool
 bin/qtdemo
@@ -1122,17 +1122,17 @@ lib/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/qml/netwo
 lib/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/qml/networkaccessmanagerfactory/view.qml
 lib/qt4/examples/declarative/cppextensions/plugins/
 lib/qt4/examples/declarative/cppextensions/plugins/README
-lib/qt4/examples/declarative/cppextensions/plugins/com/
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/Clock.qml
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/center.png
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/clock.png
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/hour.png
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/minute.png
-lib/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/qmldir
 lib/qt4/examples/declarative/cppextensions/plugins/libqmlqwidgetsplugin.so
+lib/qt4/examples/declarative/cppextensions/plugins/org/
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/Clock.qml
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/center.png
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/clock.png
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/hour.png
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/libqmlqtimeexampleplugin.so
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/minute.png
+lib/qt4/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/qmldir
 lib/qt4/examples/declarative/cppextensions/plugins/plugin.cpp
 lib/qt4/examples/declarative/cppextensions/plugins/plugins.pro
 lib/qt4/examples/declarative/cppextensions/plugins/plugins.qml

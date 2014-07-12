@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.25 2013/10/04 13:15:40 dcoppa Exp $
---- configure.orig	Fri Jun  7 07:16:41 2013
-+++ configure	Fri Sep 27 10:10:55 2013
+$OpenBSD: patch-configure,v 1.26 2014/07/12 11:10:14 dcoppa Exp $
+--- configure.orig	Thu Apr 10 20:37:08 2014
++++ configure	Tue May 13 11:25:23 2014
 @@ -917,7 +917,7 @@ CFG_SILENT=no
  CFG_GRAPHICS_SYSTEM=default
  CFG_RUNTIME_SYSTEM=
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.25 2013/10/04 13:15:40 dcoppa Exp $
              else
                  OPT_VERBOSE=yes
              fi
-@@ -4958,7 +4958,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
+@@ -4965,7 +4965,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
          EXTRA_OBJS=
          EXTRA_SRCS=
          EXTRA_CFLAGS="\$(QMAKE_CFLAGS)"
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.25 2013/10/04 13:15:40 dcoppa Exp $
          EXTRA_LFLAGS="\$(QMAKE_LFLAGS)"
  
          if [ "$PLATFORM" = "irix-cc" ] || [ "$PLATFORM" = "irix-cc-64" ]; then
-@@ -5058,7 +5058,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
+@@ -5074,7 +5074,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
      done
  
      QMAKE_BUILD_ERROR=no

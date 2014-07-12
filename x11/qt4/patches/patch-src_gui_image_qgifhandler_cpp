@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_gui_image_qgifhandler_cpp,v 1.1 2014/07/12 11:10:14 dcoppa Exp $
+
+Don't crash on broken GIF images
+
+Broken GIF images could set invalid width and height
+values inside the image, leading to Qt creating a null
+QImage for it. In that case we need to abort decoding
+the image and return an error.
+
+Initial patch by Rich Moore.
+
+Backport of Id82a4036f478bd6e49c402d6598f57e7e5bb5e1e from Qt 5
+
+Task-number: QTBUG-38367
+Change-Id: I0680740018aaa8356d267b7af3f01fac3697312a
+Security-advisory: CVE-2014-0190
+
+--- src/gui/image/qgifhandler.cpp.orig	Thu Apr 10 20:37:12 2014
++++ src/gui/image/qgifhandler.cpp	Tue May 13 11:25:53 2014
+@@ -359,6 +359,13 @@ int QGIFFormat::decode(QImage *image, const uchar *buf
+                     memset(bits, 0, image->byteCount());
+                 }
+ 
++                // Check if the previous attempt to create the image failed. If it
++                // did then the image is broken and we should give up.
++                if (image->isNull()) {
++                    state = Error;
++                    return -1;
++                }
++
+                 disposePrevious(image);
+                 disposed = false;
+ 
