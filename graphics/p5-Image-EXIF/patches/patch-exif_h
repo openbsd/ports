@@ -1,6 +1,6 @@
-$OpenBSD: patch-exif_h,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
---- exif.h.orig	2004-05-03 11:06:45.000000000 -0700
-+++ exif.h	2004-05-03 11:07:29.000000000 -0700
+$OpenBSD: patch-exif_h,v 1.2 2014/07/12 18:36:53 giovanni Exp $
+--- exif.h.orig	Fri May 11 19:03:30 2012
++++ exif.h	Sat Jul 12 19:34:34 2014
 @@ -46,6 +46,8 @@
  
  #include <sys/types.h>
@@ -9,4 +9,4 @@ $OpenBSD: patch-exif_h,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
 +#define PROPSTR_SIZE 32
  
  /*
-  * XXX Only checking for Solaris & Windows now.  Other platforms will
+  * XXX Only checking for Solaris, HP, & Windows now.  Other platforms will

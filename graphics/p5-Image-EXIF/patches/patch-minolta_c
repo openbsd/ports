@@ -1,7 +1,7 @@
-$OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
---- minolta.c.orig	2004-05-03 11:35:20.000000000 -0700
-+++ minolta.c	2004-05-03 11:56:00.000000000 -0700
-@@ -484,10 +484,10 @@ minolta_cprop(struct exifprop *prop, uns
+$OpenBSD: patch-minolta_c,v 1.3 2014/07/12 18:36:53 giovanni Exp $
+--- minolta.c.orig	Fri May 11 19:03:30 2012
++++ minolta.c	Sat Jul 12 19:40:37 2014
+@@ -484,10 +484,10 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  			aprop->str = valbuf;
  			valbuf = NULL;
  			if (aprop->value != 6)
@@ -14,7 +14,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			break;
  
  		/* Camera model (saved for 7Hi stupidity). */
-@@ -501,7 +501,7 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -501,7 +501,7 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  		case 18:
  			aprop->str = valbuf;
  			valbuf = NULL;
@@ -23,7 +23,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			    (double)aprop->value / 256);
  			break;
  
-@@ -512,7 +512,7 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -512,7 +512,7 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  		case 30:
  			aprop->str = valbuf;
  			valbuf = NULL;
@@ -32,7 +32,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			    (double)aprop->value / 256);
  			break;
  
-@@ -523,7 +523,7 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -523,7 +523,7 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  			valbuf = NULL;
  			v = (u_int16_t)(pow(2, ((double)aprop->value / 8) -
  			    1) * (double)3.125);
@@ -41,7 +41,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			break;
  
  		/* Aperture and max aperture. */
-@@ -533,7 +533,7 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -533,7 +533,7 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  			aprop->str = valbuf;
  			valbuf = NULL;
  			d = pow(2, ((double)aprop->value / 16) - 0.5);
@@ -50,7 +50,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			break;
  
  		/* Exposure time. */
-@@ -546,9 +546,9 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -546,9 +546,9 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  
  			/* 1 sec limit. */
  			if (aprop->value < 56)
@@ -62,7 +62,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  				    (unsigned int)d);
  #if 0
  			/*
-@@ -568,9 +568,9 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -568,9 +568,9 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  			aprop->str = valbuf;
  			valbuf = NULL;
  			if (!aprop->value)
@@ -74,7 +74,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  				    (float)(aprop->value / (float)1000));
  			aprop->value /= 100;
  			break;
-@@ -587,7 +587,7 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -587,7 +587,7 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  			aprop->str = valbuf;
  			valbuf = NULL;
  			byte4exif(aprop->value, buf, LITTLE);
@@ -83,7 +83,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			    buf[0], buf[1], buf[3] << 8 | buf[2]);
  			break;
  
-@@ -597,7 +597,7 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -597,7 +597,7 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  			aprop->str = valbuf;
  			valbuf = NULL;
  			byte4exif(aprop->value, buf, LITTLE);
@@ -92,7 +92,7 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			    buf[2], buf[1], buf[0]);
  			break;
  
-@@ -631,9 +631,9 @@ minolta_cprop(struct exifprop *prop, uns
+@@ -631,9 +631,9 @@ minolta_cprop(struct exifprop *prop, unsigned char *of
  			valbuf = NULL;
  			aprop->value -= 3;
  			if (aprop->value)
@@ -104,12 +104,12 @@ $OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  			break;
  
  		/* Scene. */
-@@ -663,7 +663,7 @@ minolta_naval(struct exifprop *props, st
+@@ -663,7 +663,7 @@ minolta_naval(struct exifprop *props, struct exiftag *
  	free(prop->str);
  	prop->str = NULL;
  	exifstralloc(&prop->str, strlen(na) + 1);
 -	strcpy(prop->str, na);
 +	strlcpy(prop->str, na, (strlen(na) + 1));
- 	prop->lvl = ED_BAD;
+ 	if (!(prop->lvl & ED_UNK))
+ 		prop->lvl = ED_VRB;
  }
- 

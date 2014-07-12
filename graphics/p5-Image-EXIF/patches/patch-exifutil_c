@@ -1,7 +1,7 @@
-$OpenBSD: patch-exifutil_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
---- exifutil.c.orig	2004-05-03 11:34:15.000000000 -0700
-+++ exifutil.c	2004-05-03 11:35:12.000000000 -0700
-@@ -165,7 +165,7 @@ finddescr(struct descrip *table, u_int16
+$OpenBSD: patch-exifutil_c,v 1.2 2014/07/12 18:36:53 giovanni Exp $
+--- exifutil.c.orig	Fri May 11 19:03:30 2012
++++ exifutil.c	Sat Jul 12 19:34:34 2014
+@@ -219,7 +219,7 @@ finddescr(struct descrip *table, u_int16_t val)
  	for (i = 0; table[i].val != -1 && table[i].val != val; i++);
  	if (!(c = (char *)malloc(strlen(table[i].descr) + 1)))
  		exifdie((const char *)strerror(errno));

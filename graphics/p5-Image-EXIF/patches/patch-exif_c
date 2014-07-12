@@ -1,7 +1,7 @@
-$OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
---- exif.c.orig	2004-01-14 14:12:54.000000000 -0800
-+++ exif.c	2004-05-03 11:44:51.000000000 -0700
-@@ -257,8 +257,7 @@ postprop(struct exifprop *prop, struct e
+$OpenBSD: patch-exif_c,v 1.2 2014/07/12 18:36:53 giovanni Exp $
+--- exif.c.orig	Fri May 11 19:03:30 2012
++++ exif.c	Sat Jul 12 19:39:39 2014
+@@ -283,8 +283,7 @@ postprop(struct exifprop *prop, struct exiftags *t)
  		}
  		val = exif4byte(t->md.btiff + prop->value, o) /
  		    exif4byte(t->md.btiff + prop->value + 4, o);
@@ -11,7 +11,7 @@ $OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		break;
  
  	/*
-@@ -272,14 +271,13 @@ postprop(struct exifprop *prop, struct e
+@@ -298,14 +297,13 @@ postprop(struct exifprop *prop, struct exiftags *t)
  		    (float)exif4sbyte(t->md.btiff + prop->value + 4, o);
  		if (isnan(fval)) fval = 0;
  		/* 1 / (2^speed) */
@@ -28,7 +28,7 @@ $OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		if (prop->tag == EXIF_T_EXPOSURE)
  			prop->override = EXIF_T_SHUTTER;
  		break;
-@@ -288,8 +286,7 @@ postprop(struct exifprop *prop, struct e
+@@ -314,8 +312,7 @@ postprop(struct exifprop *prop, struct exiftags *t)
  		fval = (float)exif4byte(t->md.btiff + prop->value, o) /
  		    (float)exif4byte(t->md.btiff + prop->value + 4, o);
  		if (isnan(fval)) fval = 0;
@@ -38,7 +38,7 @@ $OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		break;
  
  	case EXIF_T_LAPERTURE:
-@@ -298,36 +295,34 @@ postprop(struct exifprop *prop, struct e
+@@ -324,36 +321,34 @@ postprop(struct exifprop *prop, struct exiftags *t)
  		    (float)exif4byte(t->md.btiff + prop->value + 4, o);
  		if (isnan(fval)) fval = 0;
  		/* sqrt(2)^aperture */
@@ -81,7 +81,7 @@ $OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		break;
  
  	/* Flash consists of a number of bits, which expanded with v2.2. */
-@@ -344,15 +339,14 @@ postprop(struct exifprop *prop, struct e
+@@ -384,15 +379,14 @@ postprop(struct exifprop *prop, struct exiftags *t)
  		fval = (float)exif4byte(t->md.btiff + prop->value, o) /
  		    (float)exif4byte(t->md.btiff + prop->value + 4, o);
  		if (isnan(fval)) fval = 0;
@@ -99,7 +99,7 @@ $OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		else if (exif4byte(t->md.btiff + prop->value, o) !=
  		    exif4byte(t->md.btiff + prop->value + 4, o))
  			break;
-@@ -361,7 +355,7 @@ postprop(struct exifprop *prop, struct e
+@@ -401,7 +395,7 @@ postprop(struct exifprop *prop, struct exiftags *t)
  
  	case EXIF_T_FOCALLEN35:
  		exifstralloc(&prop->str, 16);
@@ -108,16 +108,16 @@ $OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		break;
  
  	/*
-@@ -502,7 +496,7 @@ parsetag(struct exifprop *prop, struct i
- 		t->exifmin = (short)atoi(buf + 2);
- 		buf[2] = '\0';
+@@ -566,7 +560,7 @@ parsetag(struct exifprop *prop, struct ifd *dir, struc
  		t->exifmaj = (short)atoi(buf);
--		snprintf(prop->str, 7, "%d.%d", t->exifmaj, t->exifmin);
-+		snprintf(prop->str, 8, "%d.%d", t->exifmaj, t->exifmin);
+ 
+ 		exifstralloc(&prop->str, 8);
+-		snprintf(prop->str, 7, "%d.%02d", t->exifmaj, t->exifmin);
++		snprintf(prop->str, 8, "%d.%02d", t->exifmaj, t->exifmin);
  		break;
  
  	/* Process a maker note. */
-@@ -599,7 +593,7 @@ parsetag(struct exifprop *prop, struct i
+@@ -680,7 +674,7 @@ parsetag(struct exifprop *prop, struct ifd *dir, struc
  			while (d > c && isspace((int)*(d - 1))) --d;
  
  			exifstralloc(&prop->str, d - c + 1);
@@ -126,20 +126,20 @@ $OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  			prop->lvl = prop->str[0] ? ED_IMG : ED_VRB;
  			return;
  		}
-@@ -627,8 +621,8 @@ parsetag(struct exifprop *prop, struct i
- 	    (prop->value + prop->count <=
- 	    (u_int32_t)(dir->md.etiff - btiff))) {
- 		exifstralloc(&prop->str, prop->count + 1);
--		strncpy(prop->str, (const char *)(btiff + prop->value),
--		    prop->count);
-+		strlcpy(prop->str, (const char *)(btiff + prop->value),
-+		    (prop->count + 1));
+@@ -714,8 +708,8 @@ parsetag(struct exifprop *prop, struct ifd *dir, struc
+ 		/* Sanity check the offset. */
+ 		if (!offsanity(prop, 1, dir)) {
+ 			exifstralloc(&prop->str, prop->count + 1);
+-			strncpy(prop->str, (const char *)(btiff + prop->value),
+-			    prop->count);
++			strlcpy(prop->str, (const char *)(btiff + prop->value),
++			    prop->count + 1);
+ 		}
  		return;
  	}
- 
-@@ -641,7 +635,7 @@ parsetag(struct exifprop *prop, struct i
- 	    (prop->value + prop->count * 8 <=
- 	    (u_int32_t)(dir->md.etiff - btiff))) {
+@@ -730,7 +724,7 @@ parsetag(struct exifprop *prop, struct ifd *dir, struc
+ 	if ((prop->type == TIFF_RTNL || prop->type == TIFF_SRTNL) &&
+ 	    !offsanity(prop, 8, dir)) {
  
 -		exifstralloc(&prop->str, 32);
 +		exifstralloc(&prop->str, PROPSTR_SIZE);

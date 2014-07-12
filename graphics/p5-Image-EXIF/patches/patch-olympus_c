@@ -1,8 +1,8 @@
-$OpenBSD: patch-olympus_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
---- olympus.c.orig	2004-05-03 11:49:52.000000000 -0700
-+++ olympus.c	2004-05-03 11:58:11.000000000 -0700
-@@ -144,16 +144,16 @@ olympus_prop(struct exifprop *prop, stru
- 		b = exif4byte(t->md.btiff + prop->value + 4, t->md.order);
+$OpenBSD: patch-olympus_c,v 1.3 2014/07/12 18:36:53 giovanni Exp $
+--- olympus.c.orig	Fri May 11 19:03:30 2012
++++ olympus.c	Sat Jul 12 19:34:34 2014
+@@ -144,16 +144,16 @@ olympus_prop(struct exifprop *prop, struct exiftags *t
+ 		b = exif4byte(t->mkrmd.btiff + prop->value + 4, t->mkrmd.order);
  
  		if (a == b)
 -			snprintf(prop->str, 31, "None");

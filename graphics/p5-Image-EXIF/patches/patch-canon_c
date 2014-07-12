@@ -1,7 +1,7 @@
-$OpenBSD: patch-canon_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
---- canon.c.orig	2004-05-03 11:31:28.000000000 -0700
-+++ canon.c	2004-05-03 11:56:30.000000000 -0700
-@@ -775,14 +775,14 @@ canon_prop01(struct exifprop *aprop, str
+$OpenBSD: patch-canon_c,v 1.3 2014/07/12 18:36:53 giovanni Exp $
+--- canon.c.orig	Fri May 11 19:03:30 2012
++++ canon.c	Sat Jul 12 19:43:53 2014
+@@ -943,14 +943,14 @@ canon_prop01(struct exifprop *aprop, struct exifprop *
  	switch (aprop->tag) {
  	case 2:
  		aprop->lvl = v ? ED_IMG : ED_VRB;
@@ -13,13 +13,13 @@ $OpenBSD: patch-canon_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  	case 5:
  		/* Change "Single" to "Timed" if #2 > 0. */
  
- 		if (!v && exif2byte(off + 2 * 2, o))
+ 		if (!v && exif2byte(off + 2 * 2, t->mkrmd.order))
 -			strcpy(aprop->str, "Timed");
 +			strlcpy(aprop->str, "Timed", PROPSTR_SIZE);
  		break;
  	case 12:
  		aprop->lvl = v ? ED_IMG : ED_VRB;
-@@ -793,8 +793,8 @@ canon_prop01(struct exifprop *aprop, str
+@@ -961,8 +961,8 @@ canon_prop01(struct exifprop *aprop, struct exifprop *
  		 */
  
  		if (v == 3 && prop->count >= 37) {
@@ -27,10 +27,21 @@ $OpenBSD: patch-canon_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
 -			snprintf(aprop->str, 31, "x%.1f", 2 *
 +			exifstralloc(&aprop->str, PROPSTR_SIZE);
 +			snprintf(aprop->str, PROPSTR_SIZE, "x%.1f", 2 *
- 			    (float)exif2byte(off + 37 * 2, o) /
- 			    (float)exif2byte(off + 36 * 2, o));
+ 			    (float)exif2byte(off + 37 * 2, t->mkrmd.order) /
+ 			    (float)exif2byte(off + 36 * 2, t->mkrmd.order));
  		} else
-@@ -857,8 +857,8 @@ canon_propA0(struct exifprop *aprop, str
+@@ -1010,8 +1010,8 @@ canon_prop04(struct exifprop *aprop, struct exifprop *
+ 	switch (aprop->tag) {
+ 	case 6:
+ 		/* Calculate sensor speed (ISO units). */
+-		exifstralloc(&aprop->str, 32);
+-		snprintf(aprop->str, 31, "%d", (int)(exp(calcev(NULL, 0, v) *
++		exifstralloc(&aprop->str, PROPSTR_SIZE);
++		snprintf(aprop->str, PROPSTR_SIZE, "%d", (int)(exp(calcev(NULL, 0, v) *
+ 		    log(2)) * 100.0 / 32.0 + 0.5));
+ 		break;
+ 		
+@@ -1087,8 +1087,8 @@ canon_propA0(struct exifprop *aprop, struct exifprop *
  
  	switch (aprop->tag) {
  	case 9:
@@ -41,7 +52,7 @@ $OpenBSD: patch-canon_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  		break;
  	default:
  		return (FALSE);
-@@ -917,8 +917,8 @@ canon_subval(struct exifprop *prop, stru
+@@ -1147,8 +1147,8 @@ canon_subval(struct exifprop *prop, struct exiftags *t
  		if (valfun && !valfun(aprop, prop, off, t)) {
  			if (aprop->lvl != ED_UNK)
  				continue;
@@ -52,7 +63,7 @@ $OpenBSD: patch-canon_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  		}
  	}
  
-@@ -1040,14 +1040,14 @@ canon_prop(struct exifprop *prop, struct
+@@ -1271,14 +1271,14 @@ canon_prop(struct exifprop *prop, struct exiftags *t)
  			tmpprop = childprop(prop);
  			tmpprop->name = "CanonLensSz";
  			tmpprop->descr = "Lens Size";
@@ -70,14 +81,3 @@ $OpenBSD: patch-canon_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
  				    (float)flmin / (float)flunit,
  				    (float)flmax / (float)flunit);
  				tmpprop->lvl = ED_PAS;
-@@ -1075,8 +1075,8 @@ canon_prop(struct exifprop *prop, struct
- 	/* Image number. */
- 
- 	case 0x0008:
--		exifstralloc(&prop->str, 32);
--		snprintf(prop->str, 31, "%03d-%04d", prop->value / 10000,
-+		exifstralloc(&prop->str, PROPSTR_SIZE);
-+		snprintf(prop->str, PROPSTR_SIZE, "%03d-%04d", prop->value / 10000,
- 		    prop->value % 10000);
- 		break;
- 

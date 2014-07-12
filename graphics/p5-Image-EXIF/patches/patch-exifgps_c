@@ -1,7 +1,7 @@
-$OpenBSD: patch-exifgps_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
---- exifgps.c.orig	2004-05-03 11:15:53.000000000 -0700
-+++ exifgps.c	2004-05-03 11:46:31.000000000 -0700
-@@ -252,7 +252,7 @@ gpsprop(struct exifprop *prop, struct ex
+$OpenBSD: patch-exifgps_c,v 1.2 2014/07/12 18:36:53 giovanni Exp $
+--- exifgps.c.orig	Fri May 11 19:03:30 2012
++++ exifgps.c	Sat Jul 12 19:34:34 2014
+@@ -253,7 +253,7 @@ gpsprop(struct exifprop *prop, struct exiftags *t)
  
  		free(prop->str);
  		prop->str = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-exifgps_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  
  		/* Figure out the reference prefix. */
  
-@@ -279,13 +279,13 @@ gpsprop(struct exifprop *prop, struct ex
+@@ -280,13 +280,13 @@ gpsprop(struct exifprop *prop, struct exiftags *t)
  		n = exif4byte(t->md.btiff + prop->value + i * 8, o);
  		d = exif4byte(t->md.btiff + prop->value + 4 + i * 8, o);
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-exifgps_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  				    (int)log10((double)d));
  		}
  
-@@ -297,14 +297,14 @@ gpsprop(struct exifprop *prop, struct ex
+@@ -298,14 +298,14 @@ gpsprop(struct exifprop *prop, struct exiftags *t)
  
  		if (!n || !d) {			/* Punt. */
  			min = 0.0;
@@ -45,7 +45,7 @@ $OpenBSD: patch-exifgps_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		}
  
  		/*
-@@ -317,18 +317,18 @@ gpsprop(struct exifprop *prop, struct ex
+@@ -318,18 +318,18 @@ gpsprop(struct exifprop *prop, struct exiftags *t)
  		d = exif4byte(t->md.btiff + prop->value + 4 + i * 8, o);
  
  		if (!n || !d) {			/* Assume no seconds. */
@@ -69,7 +69,7 @@ $OpenBSD: patch-exifgps_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		    tmpprop->str : "", deg, DEGREE, min, sec);
  		break;
  
-@@ -351,8 +351,7 @@ gpsprop(struct exifprop *prop, struct ex
+@@ -352,8 +352,7 @@ gpsprop(struct exifprop *prop, struct exiftags *t)
  
  		/* Should already have a 32-byte buffer from parsetag(). */
  
@@ -79,7 +79,7 @@ $OpenBSD: patch-exifgps_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  		break;
  
  	/* Time. */
-@@ -368,13 +367,13 @@ gpsprop(struct exifprop *prop, struct ex
+@@ -369,13 +368,13 @@ gpsprop(struct exifprop *prop, struct exiftags *t)
  			if (!d) break;
  
  			if (!i)
