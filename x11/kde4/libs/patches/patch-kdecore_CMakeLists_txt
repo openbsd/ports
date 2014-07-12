@@ -1,8 +1,22 @@
-$OpenBSD: patch-kdecore_CMakeLists_txt,v 1.2 2013/12/08 19:13:32 zhuk Exp $
-Add some CMake checks, prodding upstream slowly.
---- kdecore/CMakeLists.txt.orig	Wed Aug 28 20:57:06 2013
-+++ kdecore/CMakeLists.txt	Tue Nov  5 11:05:21 2013
-@@ -38,6 +38,11 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/compr
+$OpenBSD: patch-kdecore_CMakeLists_txt,v 1.3 2014/07/12 16:38:10 zhuk Exp $
+Add some CMake checks, prodding upstream slowly. Includes libinotify support.
+--- kdecore/CMakeLists.txt.orig	Sun Jun  8 15:41:32 2014
++++ kdecore/CMakeLists.txt	Fri Jul 11 13:09:06 2014
+@@ -11,11 +11,10 @@ configure_file(util/kdeversion.h.cmake ${CMAKE_CURRENT
+ 
+ # Configure checks for kdirwatch
+ macro_optional_find_package(FAM)
++macro_optional_find_package(Inotify)
+ macro_bool_to_01(FAM_FOUND HAVE_FAM)
++macro_bool_to_01(Inotify_FOUND HAVE_INOTIFY)
+ 
+-check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
+-macro_bool_to_01(SYS_INOTIFY_H_FOUND HAVE_SYS_INOTIFY_H)
+-
+ # Generate io/config-kdirwatch.h
+ configure_file(io/config-kdirwatch.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/io/config-kdirwatch.h )
+ 
+@@ -38,6 +37,11 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/compr
  include(auth/ConfigureChecks.cmake)
  include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/auth/ )
  
@@ -14,7 +28,40 @@ Add some CMake checks, prodding upstream slowly.
  # Configure a small file to tell BackendsManager what to use
  configure_file(auth/BackendsConfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/BackendsConfig.h)
  
-@@ -453,7 +458,7 @@ set_target_properties(kdecore PROPERTIES
+@@ -417,20 +421,28 @@ if(WINCE)
+   target_link_libraries(kdecore ${WCECOMPAT_LIBRARIES} Ceshell.lib)
+ endif(WINCE)
+ 
+-set(SYS_INOTIFY_H_FOUND 0)
+-if(SYS_INOTIFY_H_FOUND)
++if(Inotify_FOUND)
++   include_directories(${Inotify_INCLUDE_DIRS})
++   target_link_libraries(kdecore ${Inotify_LIBRARIES})
++
++   set_package_properties(Inotify PROPERTIES DESCRIPTION "File alteration notification support in kernel"
++                          URL "http://en.wikipedia.org/wiki/Inotify"
++                          TYPE OPTIONAL
++                          PURPOSE "Provides file alteration notification facilities using in-kernel support."
++                         )
++
+    set_package_properties(FAM PROPERTIES DESCRIPTION "File alteration notification support via a separate service"
+                           URL "http://oss.sgi.com/projects/fam"
+                           TYPE OPTIONAL
+                           PURPOSE "You have file alteration notification support built into your kernel, however you might consider installing FAM as it also supports NFS."
+                          )
+-else(SYS_INOTIFY_H_FOUND)
++else(Inotify_FOUND)
+    set_package_properties(FAM PROPERTIES DESCRIPTION "File alteration notification support via a separate service"
+                           URL "http://oss.sgi.com/projects/fam"
+                           TYPE OPTIONAL
+                           PURPOSE "Provides file alteration notification facilities using a separate service."
+                          )
+-endif(SYS_INOTIFY_H_FOUND)
++endif(Inotify_FOUND)
+ 
+ if(FAM_FOUND)
+    include_directories(${FAM_INCLUDE_DIR})
+@@ -453,7 +465,7 @@ set_target_properties(kdecore PROPERTIES
                                VERSION ${KDE_NON_GENERIC_LIB_VERSION}
                                SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION}
                       )

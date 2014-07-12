@@ -1,0 +1,30 @@
+$OpenBSD: patch-kdecore_io_kdirwatch_p_h,v 1.1 2014/07/12 16:38:10 zhuk Exp $
+--- kdecore/io/kdirwatch_p.h.orig	Fri Jul 11 13:31:03 2014
++++ kdecore/io/kdirwatch_p.h	Fri Jul 11 13:31:31 2014
+@@ -48,7 +48,7 @@ class QSocketNotifier;
+ #include <fam.h>
+ #endif
+ 
+-#ifdef HAVE_SYS_INOTIFY_H
++#ifdef HAVE_INOTIFY
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/inotify.h>
+@@ -177,7 +177,7 @@ class KDirWatchPrivate : public QObject (public)
+     FAMRequest fr;
+ #endif
+ 
+-#ifdef HAVE_SYS_INOTIFY_H
++#ifdef HAVE_INOTIFY
+     int wd;
+     // Creation and Deletion of files happens infrequently, so
+     // can safely be reported as they occur.  File changes i.e. those that emity "dirty()" can
+@@ -253,7 +253,7 @@ public Q_SLOTS: (public)
+   bool useFAM(Entry*);
+ #endif
+ 
+-#ifdef HAVE_SYS_INOTIFY_H
++#ifdef HAVE_INOTIFY
+   QSocketNotifier *mSn;
+   bool supports_inotify;
+   int m_inotify_fd;

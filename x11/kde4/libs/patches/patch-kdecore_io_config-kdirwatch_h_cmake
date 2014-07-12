@@ -1,0 +1,9 @@
+$OpenBSD: patch-kdecore_io_config-kdirwatch_h_cmake,v 1.1 2014/07/12 16:38:10 zhuk Exp $
+Allow inotify to be detected correctly.
+--- kdecore/io/config-kdirwatch.h.cmake.orig	Fri Jul 11 11:38:29 2014
++++ kdecore/io/config-kdirwatch.h.cmake	Fri Jul 11 11:38:49 2014
+@@ -1,3 +1,2 @@
+ #cmakedefine HAVE_FAM 1
+-
+-#cmakedefine HAVE_SYS_INOTIFY_H 1
++#cmakedefine HAVE_INOTIFY 1

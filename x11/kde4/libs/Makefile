@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2014/07/10 19:55:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.56 2014/07/12 16:38:10 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -11,7 +11,7 @@ PKGNAME-langlist =	kde4-langlist-${MODKDE4_VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs->=4
-REVISION-main =		0
+REVISION-main =		1
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -75,7 +75,7 @@ WANTLIB-main += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB-main += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB-main += aspell attica bz2 dbusmenu-qt enchant exslt fam
-WANTLIB-main += gif jasper jpeg lzma pcre pcreposix
+WANTLIB-main += gif lib/inotify/inotify jasper jpeg lzma pcre pcreposix
 WANTLIB-main += png polkit-qt-core-1 qca2 soprano sopranoclient
 WANTLIB-main += streamanalyzer streams xml2 xslt
 
@@ -113,6 +113,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			archivers/xz \
 			databases/soprano>=${MIN_SOPRANO_VERSION} \
 			databases/strigi \
+			devel/libinotify \
 			devel/pcre \
 			graphics/giflib \
 			graphics/jasper \
@@ -140,6 +141,9 @@ CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
 			-DKDE4_AUTH_BACKEND_NAME:String="PolkitQt-1" \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE
 
+# New CMake modules, to be pushed upstream (KDE or CMake)
+NEW_CMAKE_MODULES =	FindInotify
+
 # Reimplemented CMake modules, because previous were totally broken
 REWR_CMAKE_MODULES =	FindKexiv2 FindXine FindXKB FindPolkitQt
 
@@ -155,7 +159,7 @@ TEST_DEPENDS =		${BUILD_PKGPATH} \
 			${MODKDE4_DEP_DIR}/konsole>=${MODKDE4_DEP_VERSION}
 
 post-extract:
-.for M in ${REWR_CMAKE_MODULES}
+.for M in ${NEW_CMAKE_MODULES} ${REWR_CMAKE_MODULES}
 	cp ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
 .for M in ${WRAP_CMAKE_MODULES}
