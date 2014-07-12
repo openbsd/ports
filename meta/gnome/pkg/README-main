@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.29 2014/07/10 13:09:06 ajacoutot Exp $
+$OpenBSD: README-main,v 1.30 2014/07/12 13:41:47 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,8 +21,7 @@ Starting GNOME
 DBus
 ----
 Before running gnome-session(1), a system-wide D-Bus daemon needs to be
-running ("dbus_daemon" needs to be added to the "pkg_scripts" variable
-in rc.conf.local(8)).
+running ("dbus_daemon" must be added to "pkg_scripts" in rc.conf.local(8)).
 
 GDM
 ---
@@ -51,11 +50,10 @@ will not work at all without it (e.g. seahorse-sharing(1)).
 
 To make use of it, rc.conf.local(8) needs to contain the following line:
     multicast_host=YES
-and "avahi_daemon" needs to be added to the "pkg_scripts" variable
-_after_ "dbus_daemon".
+and "avahi_daemon" must be added to "pkg_scripts" _after_ "dbus_daemon".
 
 Cheat sheet
 ===========
 # echo 'multicast_host=YES' >>/etc/rc.conf.local
-# echo 'pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"' >>/etc/rc.conf.local
+# echo 'pkg_scripts=dbus_daemon avahi_daemon gdm' >>/etc/rc.conf.local
 # reboot

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2014/07/10 13:09:07 ajacoutot Exp $
+$OpenBSD: README,v 1.13 2014/07/12 13:41:47 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -111,7 +111,7 @@ The nginx(8) daemon installed from packages(7) is started by the
 "enginx" rc.d(8) script and obviously puppet_dashboard must be
 disabled (the workers must be enabled though).
 Here's a sample rc.conf.local(8) extract:
-pkg_scripts="${pkg_scripts} enginx puppet_dashboard_workers"
+pkg_scripts=enginx puppet_dashboard_workers
 
 Going further
 =============

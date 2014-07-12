@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.11 2014/07/10 13:09:06 ajacoutot Exp $
+$OpenBSD: README-main,v 1.12 2014/07/12 13:41:47 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -59,11 +59,10 @@ the avahi daemon.
 
 On the client side, "avahi-daemon" (from the avahi package) and
 "cups-browsed" (from the cups-filters package) must be running by
-adding "avahi_daemon" and "cups_browsed" to the pkg_scripts variable in
-rc.conf.local(8).
+adding "avahi_daemon" and "cups_browsed" to pkg_scripts in rc.conf.local(8).
 
 One the server side, "avahi-daemon" must be running by adding
-"avahi_daemon" to the pkg_scripts variable in rc.conf.local(8). Then
+"avahi_daemon" to pkg_scripts in rc.conf.local(8). Then
 printer sharing can be activated using the CUPS web interface or running
 the following commands as root or a member of the wheel group:
     cupsctl --share-printers
