@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1270 2014/07/12 17:35:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1271 2014/07/12 19:22:34 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1307,6 +1307,9 @@ PATCH_CASES += *) \
 
 # Documentation
 MAINTAINER ?= The OpenBSD ports mailing-list <ports@openbsd.org>
+.if empty(MAINTAINER)
+ERRORS += "Fatal: defining MAINTAINER to empty is an error"
+.endif
 
 .if !defined(CATEGORIES)
 ERRORS += "Fatal: CATEGORIES is mandatory."
