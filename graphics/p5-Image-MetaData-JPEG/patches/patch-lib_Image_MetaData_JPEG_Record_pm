@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Image_MetaData_JPEG_Record_pm,v 1.1 2014/07/12 19:20:06 giovanni Exp $
+--- lib/Image/MetaData/JPEG/Record.pm.orig	Sat Jul 12 20:49:37 2014
++++ lib/Image/MetaData/JPEG/Record.pm	Sat Jul 12 20:51:05 2014
+@@ -100,8 +100,10 @@ sub new {
+     # is set to $current and the length test will never fail).
+     $expected = $count ? $count : $current if $expected == 0;
+     # Throw an error if the supplied memory area is incorrectly sized
+-    $this->die("Incorrect size (expected $expected, found $current)")
+-	if ($current != $expected);
++    if (defined $current && defined $expected) {
++    	$this->die("Incorrect size (expected $expected, found $current)")
++		if ($current != $expected);
++    }
+     # get a reference to the internal value list
+     my $tokens = $this->{values};
+     # read the type length (used only for integers and rationals)
