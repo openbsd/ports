@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_interface_file_utils_cpp,v 1.1 2014/07/12 12:42:55 giovanni Exp $
+--- src/interface/file_utils.cpp.orig	Thu May  1 21:29:19 2014
++++ src/interface/file_utils.cpp	Fri Jul 11 12:06:55 2014
+@@ -6,8 +6,8 @@
+ #ifdef __WXMSW__
+ #include <wx/dynlib.h> // Used by GetDownloadDir
+ #else
++#include <glob.h>
+ #include <wx/textfile.h>
+-#include <wordexp.h>
+ #endif //__WXMSW__
+ 
+ wxString GetAsURL(const wxString& dir)
+@@ -334,12 +334,12 @@ wxString ShellUnescape( wxString const& path )
+ 
+ 	const wxWX2MBbuf buf = path.mb_str();
+ 	if( buf && *buf ) {
+-		wordexp_t p;
+-		int res = wordexp( buf, &p, WRDE_NOCMD );
+-		if( !res && p.we_wordc == 1 && p.we_wordv ) {
+-			ret = wxString(p.we_wordv[0], wxConvLocal);
++		glob_t p;
++		int res = glob( buf, GLOB_ERR, NULL, &p );
++		if( !res && p.gl_pathc == 1 && p.gl_pathv ) {
++			ret = wxString(p.gl_pathv[0], wxConvLocal);
+ 		}
+-		wordfree(&p);
++		globfree(&p);
+ 	}
+ 	return ret;
+ }

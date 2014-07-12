@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/03/14 23:52:25 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/07/12 12:42:55 giovanni Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
@@ -44,6 +44,7 @@ share/filezilla/resources/16x16/sort_up_light.png
 share/filezilla/resources/16x16/speedlimits.png
 share/filezilla/resources/16x16/symlink.png
 share/filezilla/resources/16x16/synchronize.png
+share/filezilla/resources/16x16/throbber.gif
 share/filezilla/resources/16x16/unknown.png
 share/filezilla/resources/16x16/upload.png
 share/filezilla/resources/16x16/uploadadd.png
@@ -186,7 +187,6 @@ share/filezilla/resources/cyril/16x16/upload.png
 share/filezilla/resources/cyril/16x16/uploadadd.png
 share/filezilla/resources/cyril/theme.xml
 share/filezilla/resources/defaultfilters.xml
-share/filezilla/resources/dialogs.xrc
 share/filezilla/resources/down.png
 share/filezilla/resources/dropdown.png
 share/filezilla/resources/finished.wav
@@ -287,7 +287,6 @@ share/filezilla/resources/lone/48x48/synchronize.png
 share/filezilla/resources/lone/48x48/upload.png
 share/filezilla/resources/lone/48x48/uploadadd.png
 share/filezilla/resources/lone/theme.xml
-share/filezilla/resources/menus.xrc
 share/filezilla/resources/minimal/
 share/filezilla/resources/minimal/16x16/
 share/filezilla/resources/minimal/16x16/ascii.png
@@ -325,7 +324,6 @@ share/filezilla/resources/minimal/16x16/uploadadd.png
 share/filezilla/resources/minimal/32x32/
 share/filezilla/resources/minimal/32x32/file.png
 share/filezilla/resources/minimal/theme.xml
-share/filezilla/resources/netconfwizard.xrc
 share/filezilla/resources/opencrystal/
 share/filezilla/resources/opencrystal/16x16/
 share/filezilla/resources/opencrystal/16x16/ascii.png
@@ -429,8 +427,6 @@ share/filezilla/resources/opencrystal/48x48/synchronize.png
 share/filezilla/resources/opencrystal/48x48/upload.png
 share/filezilla/resources/opencrystal/48x48/uploadadd.png
 share/filezilla/resources/opencrystal/theme.xml
-share/filezilla/resources/quickconnectbar.xrc
-share/filezilla/resources/settings.xrc
 share/filezilla/resources/tango/
 share/filezilla/resources/tango/16x16/
 share/filezilla/resources/tango/16x16/ascii.png
@@ -521,8 +517,16 @@ share/filezilla/resources/tango/48x48/upload.png
 share/filezilla/resources/tango/48x48/uploadadd.png
 share/filezilla/resources/tango/theme.xml
 share/filezilla/resources/theme.xml
-share/filezilla/resources/toolbar.xrc
 share/filezilla/resources/up.png
+share/filezilla/resources/xrc/
+share/filezilla/resources/xrc/dialogs.xrc
+share/filezilla/resources/xrc/inputdialog.xrc
+share/filezilla/resources/xrc/menus.xrc
+share/filezilla/resources/xrc/netconfwizard.xrc
+share/filezilla/resources/xrc/quickconnectbar.xrc
+share/filezilla/resources/xrc/settings.xrc
+share/filezilla/resources/xrc/toolbar.xrc
+share/filezilla/resources/xrc/update.xrc
 share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
 share/icons/hicolor/48x48/apps/filezilla.png
