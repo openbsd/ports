@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/12 01:25:55 sthen Exp $
 
 COMMENT =	minimalistic console file manager
 
-MODPY_EGG_VERSION = 1.5.4
-REVISION =	0
+MODPY_EGG_VERSION = 1.6.1
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils misc
 
 HOMEPAGE =	http://www.nongnu.org/ranger/
-
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	 Yes
@@ -22,7 +19,8 @@ MODULES =	lang/python
 RUN_DEPENDS =	archivers/libarchive \
 		textproc/py-chardet
 
-TEST_DEPENDS=devel/gmake
+TEST_DEPENDS =	devel/gmake \
+		sysutils/ggrep
 
 do-test:
 	cd ${WRKSRC}; PYTHON=${MODPY_BIN} gmake test

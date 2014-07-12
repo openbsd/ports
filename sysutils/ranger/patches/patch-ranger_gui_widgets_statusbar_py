@@ -1,0 +1,12 @@
+$OpenBSD: patch-ranger_gui_widgets_statusbar_py,v 1.1 2014/07/12 01:25:55 sthen Exp $
+--- ranger/gui/widgets/statusbar.py.orig	Sat Jul 12 02:19:51 2014
++++ ranger/gui/widgets/statusbar.py	Sat Jul 12 02:20:04 2014
+@@ -305,7 +305,7 @@ class StatusBar(Widget):
+ 
+ def get_free_space(path):
+     stat = os.statvfs(path)
+-    return stat.f_bavail * stat.f_bsize
++    return stat.f_bavail * stat.f_frsize
+ 
+ class Message(object):
+     elapse = None

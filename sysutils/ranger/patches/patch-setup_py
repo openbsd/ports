@@ -1,12 +1,21 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2012/07/09 09:20:58 sthen Exp $
---- setup.py.orig	Mon Nov  7 13:24:07 2011
-+++ setup.py	Mon Nov  7 13:24:17 2011
-@@ -28,7 +28,7 @@ if __name__ == '__main__':
- 		license=ranger.__license__,
- 		url='http://savannah.nongnu.org/projects/ranger',
- 		scripts=['ranger/data/ranger'],
--		data_files=[('share/man/man1', ['doc/ranger.1'])],
-+		data_files=[('man/man1', ['doc/ranger.1'])],
- 		package_data={'ranger': ['data/*', 'defaults/rc.conf']},
- 		packages=('ranger',
- 		          'ranger.api',
+$OpenBSD: patch-setup_py,v 1.2 2014/07/12 01:25:55 sthen Exp $
+--- setup.py.orig	Fri May 24 19:45:13 2013
++++ setup.py	Sat Jul 12 02:20:49 2014
+@@ -22,7 +22,7 @@ if __name__ == '__main__':
+         url='http://ranger.nongnu.org',
+         scripts=['scripts/ranger', 'scripts/rifle'],
+         data_files=[
+-            ('share/man/man1',
++            ('man/man1',
+                 ['doc/ranger.1',
+                  'doc/rifle.1']),
+             ('share/doc/ranger',
+@@ -34,7 +34,7 @@ if __name__ == '__main__':
+                 _findall('doc/config/colorschemes')),
+             ('share/doc/ranger/config', _findall('doc/config')),
+             ('share/doc/ranger/tools', _findall('doc/tools')),
+-            ('share/doc/ranger/examples', _findall('doc/examples')),
++            ('share/examples/ranger', _findall('doc/examples')),
+         ],
+         package_data={'ranger': ['data/*', 'config/rc.conf',
+             'config/rifle.conf']},

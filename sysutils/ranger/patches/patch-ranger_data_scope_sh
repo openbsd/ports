@@ -1,24 +1,22 @@
-$OpenBSD: patch-ranger_data_scope_sh,v 1.1.1.1 2012/07/09 09:20:58 sthen Exp $
+$OpenBSD: patch-ranger_data_scope_sh,v 1.2 2014/07/12 01:25:55 sthen Exp $
 
 Meant to use atool (not ported yet), but bsdtar copes with many of these
 archives directly so use that instead.
 
---- ranger/data/scope.sh.orig	Thu May  3 18:47:39 2012
-+++ ranger/data/scope.sh	Mon Jul  9 00:06:14 2012
+--- ranger/data/scope.sh.orig	Fri May 24 19:45:13 2013
++++ ranger/data/scope.sh	Sat Jul 12 02:22:43 2014
 @@ -1,4 +1,4 @@
--#!/bin/bash
+-#!/usr/bin/env sh
 +#!/bin/ksh
  # ranger supports enhanced previews.  If the option "use_preview_script"
  # is set to True and this file exists, this script will be called and its
  # output is displayed in ranger.  ANSI color codes are supported.
-@@ -38,8 +38,8 @@ case "$extension" in
- 	# Archive extensions:
- 	7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
- 	rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
--		als "$path" | head -n $maxln
--		success && exit 0 || acat "$path" | head -n $maxln && exit 3
-+		bsdtar tf "$path" | head -n $maxln
-+		success && exit 0 || gzcat "$path" | head -n $maxln && exit 3
- 		exit 1;;
- 	# PDF documents:
- 	pdf)
+@@ -46,7 +46,7 @@ case "$extension" in
+     # Archive extensions:
+     7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
+     rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
+-        try als "$path" && { dump | trim; exit 0; }
++        try bsdtar "$path" && { dump | trim; exit 0; }
+         try acat "$path" && { dump | trim; exit 3; }
+         try bsdtar -lf "$path" && { dump | trim; exit 0; }
+         exit 1;;

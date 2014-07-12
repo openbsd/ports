@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2014/07/12 01:25:55 sthen Exp $
+--- Makefile.orig	Sat Jul 12 02:18:06 2014
++++ Makefile	Sat Jul 12 02:19:31 2014
+@@ -60,7 +60,7 @@ doc: cleandoc
+ 	find . -name \*.html -exec sed -i 's|'$(CWD)'|../..|g' -- {} \;
+ 
+ test:
+-	@for FILE in $(shell grep -IHm 1 doctest -r ranger | cut -d: -f1); do \
++	@for FILE in $(shell ggrep -IHm 1 doctest -r ranger | cut -d: -f1); do \
+ 		echo "Testing $$FILE..."; \
+ 		RANGER_DOCTEST=1 PYTHONPATH=".:"$$PYTHONPATH ${PYTHON} $$FILE; \
+ 	done
