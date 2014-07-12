@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_ssl_ssl_engine_vars_c,v 1.1 2014/07/12 14:11:32 pascal Exp $
+--- modules/ssl/ssl_engine_vars.c.orig	Sat Jul 12 15:29:38 2014
++++ modules/ssl/ssl_engine_vars.c	Sat Jul 12 15:27:49 2014
+@@ -832,7 +832,7 @@ static char *ssl_var_lookup_ssl_compress_meth(SSL *ssl
+ {
+     char *result = "NULL";
+ #ifdef OPENSSL_VERSION_NUMBER
+-#if (OPENSSL_VERSION_NUMBER >= 0x00908000)
++#if (OPENSSL_VERSION_NUMBER >= 0x00908000) && !defined(OPENSSL_NO_COMP)
+     SSL_SESSION *pSession = SSL_get_session(ssl);
+ 
+     if (pSession) {
