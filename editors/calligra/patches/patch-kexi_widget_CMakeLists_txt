@@ -1,0 +1,13 @@
+$OpenBSD: patch-kexi_widget_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+Unbreak build.
+--- kexi/widget/CMakeLists.txt.orig	Sun Oct 20 21:40:21 2013
++++ kexi/widget/CMakeLists.txt	Sun Oct 20 21:54:12 2013
+@@ -10,7 +10,7 @@ ENDIF(KEXI_MOBILE)
+ 
+ add_definitions(-DKDE_DEFAULT_DEBUG_AREA=44023)
+ 
+-include_directories( ${CMAKE_SOURCE_DIR}/kexi ${CMAKE_SOURCE_DIR}/kexi/widget/tableview ${CMAKE_SOURCE_DIR}/kexi/core ${KOMAIN_INCLUDES} ${CMAKE_SOURCE_DIR}/libs ${KDE4_INCLUDES}  ${CMAKE_SOURCE_DIR}/kexi/kexidb )
++include_directories( ${CMAKE_SOURCE_DIR}/kexi ${CMAKE_SOURCE_DIR}/kexi/widget/tableview ${CMAKE_SOURCE_DIR}/kexi/core ${KOMAIN_INCLUDES} ${CMAKE_SOURCE_DIR}/libs ${KDE4_INCLUDES}  ${CMAKE_SOURCE_DIR}/kexi/kexidb ${CMAKE_SOURCE_DIR}/kexi/kexiutils )
+ 
+ 
+ ########### next target ###############

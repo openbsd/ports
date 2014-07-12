@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_db_drivers_sqlite_icu_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+Unbreak build.
+--- libs/db/drivers/sqlite/icu/CMakeLists.txt.orig	Thu Jan  9 18:22:40 2014
++++ libs/db/drivers/sqlite/icu/CMakeLists.txt	Thu Jan  9 18:23:03 2014
+@@ -1,5 +1,7 @@
+ add_library(kexidb_sqlite3_icu SHARED icu.c)
+ 
++include_directories(${ICU_INCLUDE_DIR})
++
+ target_link_libraries(kexidb_sqlite3_icu
+                       ${SQLITE_LIBRARIES}
+                       ${ICU_LIBRARIES}

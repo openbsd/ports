@@ -1,0 +1,13 @@
+$OpenBSD: patch-stage_part_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+Unbreak build.
+--- stage/part/CMakeLists.txt.orig	Fri Jul 11 18:09:42 2014
++++ stage/part/CMakeLists.txt	Fri Jul 11 18:10:18 2014
+@@ -12,6 +12,8 @@ if (!WIN32) ## Disable tests in Windows whilst they br
+ endif(!WIN32)
+ add_subdirectory(tools)
+ 
++add_definitions(-DBOOST_NO_EXCEPTIONS)
++
+ ### calligrastageprivate ###
+ set( calligrastageprivate_LIB_SRCS
+      KPrFactory.cpp

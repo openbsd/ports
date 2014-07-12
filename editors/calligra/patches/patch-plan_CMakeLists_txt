@@ -1,0 +1,13 @@
+$OpenBSD: patch-plan_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+--- plan/CMakeLists.txt.orig	Sat Jul 12 09:21:33 2014
++++ plan/CMakeLists.txt	Sat Jul 12 09:22:17 2014
+@@ -4,6 +4,9 @@ project(kplato)
+ # set kplato debug area
+ add_definitions( -DKDE_DEFAULT_DEBUG_AREA=42000 )
+ 
++# avoid build failure inside boost
++add_definitions( -DBOOST_NO_EXCEPTIONS )
++
+ if(KDE4_BUILD_TESTS)
+     # only with this definition will the KPLATO_TEST_EXPORT macro do something
+     add_definitions(-DCOMPILING_TESTS)

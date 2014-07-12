@@ -1,0 +1,13 @@
+$OpenBSD: patch-kexi_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+Upstream bug?
+--- kexi/CMakeLists.txt.orig	Mon Mar 24 15:38:42 2014
++++ kexi/CMakeLists.txt	Sun May  4 13:19:27 2014
+@@ -88,7 +88,7 @@ set (PQXX_MAX_VERSION "5.0.0")
+ macro_optional_find_package(PostgreSQL)
+ macro_log_feature(POSTGRESQL_FOUND "libpq" "C application programmer's interface to PostgreSQL" "http://www.postgresql.org" FALSE "" "Required by Kexi PostgreSQL driver")
+ 
+-pkg_check_modules (PQXX libpqxx)
++macro_optional_find_package (Pqxx)
+ 
+ IF (POSTGRESQL_FOUND AND PQXX_FOUND)
+    IF (PQXX_VERSION VERSION_GREATER PQXX_MIN_VERSION AND PQXX_VERSION VERSION_LESS PQXX_MAX_VERSION)

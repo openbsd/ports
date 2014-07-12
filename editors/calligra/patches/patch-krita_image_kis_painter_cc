@@ -1,0 +1,21 @@
+$OpenBSD: patch-krita_image_kis_painter_cc,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+--- krita/image/kis_painter.cc.orig	Sun Mar  2 15:46:08 2014
++++ krita/image/kis_painter.cc	Wed Mar  5 21:20:39 2014
+@@ -1393,7 +1393,7 @@ void KisPainter::drawLine(const QPointF& start, const 
+     int dstX = x2-x1;
+     int dstY = y2-y1;
+ 
+-    qreal _C = dstX*y1 - dstY*x1;
++    qreal uniC = dstX*y1 - dstY*x1;
+     qreal projectionDenominator = 1.0 / (pow((double)dstX, 2) + pow((double)dstY, 2));
+ 
+     qreal subPixel;
+@@ -1439,7 +1439,7 @@ void KisPainter::drawLine(const QPointF& start, const 
+                 AA_ = qMin( sqrt( pow((double)x - X1_, 2) + pow((double)y - Y1_, 2) ),
+                             sqrt( pow((double)x - X2_, 2) + pow((double)y - Y2_, 2) ));
+             }else{
+-                AA_ = qAbs(dstY*x - dstX*y + _C) * denominator;
++                AA_ = qAbs(dstY*x - dstX*y + uniC) * denominator;
+             }
+ 
+             if (AA_>halfWidth) {

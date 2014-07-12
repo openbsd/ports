@@ -1,0 +1,11 @@
+$OpenBSD: patch-plan_plugins_filters_icalendar_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+--- plan/plugins/filters/icalendar/CMakeLists.txt.orig	Sat Jan  7 07:25:03 2012
++++ plan/plugins/filters/icalendar/CMakeLists.txt	Fri Jan 20 01:47:14 2012
+@@ -1,6 +1,6 @@
+ 
+ ##TODO revision?
+-find_library(LIBKCAL_LIBRARY libkcal.so)
++find_library(LIBKCAL_LIBRARY kcal)
+ if(LIBKCAL_LIBRARY)
+     set(HAVE_LIBKCAL 1)
+ endif(LIBKCAL_LIBRARY)

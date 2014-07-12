@@ -1,0 +1,13 @@
+$OpenBSD: patch-plan_plugins_schedulers_tj_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+XXX allow to build
+--- plan/plugins/schedulers/tj/CMakeLists.txt.orig	Thu Dec 26 13:04:14 2013
++++ plan/plugins/schedulers/tj/CMakeLists.txt	Thu Dec 26 13:04:40 2013
+@@ -3,7 +3,7 @@ set(LIBTJ_INCLUDE_DIR taskjuggler)
+ include_directories( ${LIBTJ_INCLUDE_DIR} ${KOODF_INCLUDES} ${CMAKE_SOURCE_DIR}/plan/libs/kernel ${KDE4_INCLUDES} )
+ 
+ #add_subdirectory( taskjuggler )
+-add_subdirectory( tests )
++#add_subdirectory( tests )
+ 
+ SET ( TJScheduler_SRCS
+     PlanTJPlugin.cpp
