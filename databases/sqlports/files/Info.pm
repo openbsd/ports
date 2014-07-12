@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.12 2013/11/25 14:13:33 sthen Exp $
+# $OpenBSD: Info.pm,v 1.13 2014/07/12 17:35:32 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -43,6 +43,10 @@ our $vars = {
     EPOCH => 'AnyVar',
     FLAVORS => 'FlavorsVar',
     FULLPKGNAME => 'FullpkgnameVar',
+    GH_ACCOUNT => 'DefinedVar',
+    GH_COMMIT => 'DefinedVar',
+    GH_PROJECT => 'DefinedVar',
+    GH_TAGNAME => 'DefinedVar',
     HOMEPAGE => 'AnyVar',
     IGNORE => 'DefinedVar',
     IS_INTERACTIVE => 'AnyVar',

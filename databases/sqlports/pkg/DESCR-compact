@@ -30,6 +30,7 @@ stored in specialized tables, e.g.,:
     EPOCH
     FLAVORS 
     FULLPKGNAME
+    GH_*
     HOMEPAGE 
     IS_INTERACTIVE 
     MAINTAINER

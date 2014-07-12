@@ -21,6 +21,7 @@ holds all the information retrieved through various variables, e.g.,:
     EPOCH
     FLAVORS 
     FULLPKGNAME
+    GH_*
     HOMEPAGE 
     IS_INTERACTIVE 
     MAINTAINER
