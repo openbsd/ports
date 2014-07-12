@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/04 18:41:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/12 22:01:06 pascal Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8
@@ -54,6 +54,9 @@ EXAMPLEDIRS =		01.HelloWorld 02.Quake3Map 03.CustomSceneNode \
 			16.Quake3MapShader 17.HelloWorld_Mobile 18.SplitScreen \
 			19.MouseAndJoystick 20.ManagedLights 21.Quake3Explorer \
 			22.MaterialViewer 23.SMeshHandling Demo
+
+post-extract:
+	perl -pi -e 's/\$$Date: 2014/07/12 22:01:06 ${WRKSRC}/glext.h
 
 pre-patch:
 	@perl -pi -e 's/\015//g' ${WRKSRC}/*.{cpp,h} ${WRKSRC}/Makefile \

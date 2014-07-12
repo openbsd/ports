@@ -1,8 +1,8 @@
-$OpenBSD: patch-source_Irrlicht_glext_h,v 1.1 2014/07/12 16:57:33 pascal Exp $
+$OpenBSD: patch-source_Irrlicht_glext_h,v 1.2 2014/07/12 22:01:06 pascal Exp $
 http://sourceforge.net/p/irrlicht/code/4810/tree//branches/releases/1.8/source/Irrlicht/glext.h?diff=51745e4d271846344f1af49c:4809
---- source/Irrlicht/glext.h.orig	Sat Jul 12 18:48:32 2014
-+++ source/Irrlicht/glext.h	Sat Jul 12 18:49:34 2014
-@@ -1,11488 +1,11052 @@
+--- source/Irrlicht/glext.h.orig	Sat Jul 12 23:56:16 2014
++++ source/Irrlicht/glext.h	Sat Jul 12 23:58:09 2014
+@@ -1,11488 +1,11051 @@
 -#ifndef __glext_h_
 -#define __glext_h_
 -
@@ -34,7 +34,7 @@ http://sourceforge.net/p/irrlicht/code/4810/tree//branches/releases/1.8/source/I
 -*/
 -
 -/* Header file version number, required by OpenGL ABI for Linux */
--/* glext.h last updated $Date: 2014/07/12 16:57:33 $ */
+-/* glext.h last updated 2011-08-08 00:34:29 -0700 (Mon, 08 Aug 2011) $ */
 -/* Current version at http://www.opengl.org/registry/ */
 -#define GL_GLEXT_VERSION 72
 -/* Function declaration macros - to move into glplatform.h */
@@ -11526,7 +11526,6 @@ http://sourceforge.net/p/irrlicht/code/4810/tree//branches/releases/1.8/source/I
 +** used to make the header, and the header can be found at
 +**   http://www.opengl.org/registry/
 +**
-+** Khronos $Revision: 1.1 $ on $Date: 2014/07/12 16:57:33 $
 +*/
 +
 +#if defined(_WIN32) && !defined(APIENTRY) && !defined(__CYGWIN__) && !defined(__SCITECH_SNAP__)
