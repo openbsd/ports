@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/24 09:08:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/12 20:34:36 sthen Exp $
+include/ereadline/
 include/ereadline/readline/
 include/ereadline/readline/chardefs.h
 include/ereadline/readline/history.h
