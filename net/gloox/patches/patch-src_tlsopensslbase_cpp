@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_tlsopensslbase_cpp,v 1.1 2014/07/12 17:51:25 pascal Exp $
+--- src/tlsopensslbase.cpp.orig	Sat Jul 12 16:15:48 2014
++++ src/tlsopensslbase.cpp	Sat Jul 12 16:17:23 2014
+@@ -50,7 +50,9 @@ namespace gloox
+     if( m_initLib )
+       SSL_library_init();
+ 
++#ifndef OPENSSL_NO_COMP
+     SSL_COMP_add_compression_method( 193, COMP_zlib() );
++#endif
+ 
+     OpenSSL_add_all_algorithms();
+ 
