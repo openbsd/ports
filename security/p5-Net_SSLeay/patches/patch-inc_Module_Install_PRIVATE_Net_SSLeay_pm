@@ -1,0 +1,25 @@
+$OpenBSD: patch-inc_Module_Install_PRIVATE_Net_SSLeay_pm,v 1.1 2014/07/12 21:52:25 bluhm Exp $
+--- inc/Module/Install/PRIVATE/Net/SSLeay.pm.orig	Tue Apr  1 08:08:37 2014
++++ inc/Module/Install/PRIVATE/Net/SSLeay.pm	Sat Jul 12 15:08:02 2014
+@@ -229,7 +229,11 @@ sub check_openssl_version {
+         chomp $output;
+         close $pipe;
+ 
+-        unless ( ($major, $minor, $letter) = $output =~ /^OpenSSL\s+(\d+\.\d+)\.(\d+)([a-z]?)/ ) {
++	if ( ($major, $minor, $letter) = $output =~ /^OpenSSL\s+(\d+\.\d+)\.(\d+)([a-z]?)/ ) {
++	    print "*** Found OpenSSL-${major}.${minor}${letter} installed in $prefix\n";
++	} elsif ( ($major, $minor) = $output =~ /^LibreSSL\s+(\d+\.\d+)/ ) {
++	    print "*** Found LibreSSL-${major}.${minor} installed in $prefix\n";
++	} else {
+             die <<EOM
+ *** OpenSSL version test failed
+     (`$output' has been returned)
+@@ -238,8 +242,6 @@ sub check_openssl_version {
+ EOM
+         }
+     }
+-
+-    print "*** Found OpenSSL-${major}.${minor}${letter} installed in $prefix\n";
+ 
+     if ($major < 0.9 || ($major == 0.9 && $minor < 3)) {
+         print <<EOM;
