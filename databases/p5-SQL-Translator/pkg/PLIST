@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/03/10 22:52:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/12 12:36:10 afresh1 Exp $
 bin/sqlt
 bin/sqlt-diagram
 bin/sqlt-diff
 bin/sqlt-diff-old
 bin/sqlt-dumper
 bin/sqlt-graph
-${P5SITE}/SQL/
 ${P5SITE}/SQL/Translator/
 ${P5SITE}/SQL/Translator.pm
 ${P5SITE}/SQL/Translator/Diff.pm
@@ -13,6 +12,14 @@ ${P5SITE}/SQL/Translator/Filter/
 ${P5SITE}/SQL/Translator/Filter/DefaultExtra.pm
 ${P5SITE}/SQL/Translator/Filter/Globals.pm
 ${P5SITE}/SQL/Translator/Filter/Names.pm
+${P5SITE}/SQL/Translator/Generator/
+${P5SITE}/SQL/Translator/Generator/DDL/
+${P5SITE}/SQL/Translator/Generator/DDL/PostgreSQL.pm
+${P5SITE}/SQL/Translator/Generator/DDL/SQLServer.pm
+${P5SITE}/SQL/Translator/Generator/DDL/SQLite.pm
+${P5SITE}/SQL/Translator/Generator/Role/
+${P5SITE}/SQL/Translator/Generator/Role/DDL.pm
+${P5SITE}/SQL/Translator/Generator/Role/Quote.pm
 ${P5SITE}/SQL/Translator/Manual.pod
 ${P5SITE}/SQL/Translator/Parser/
 ${P5SITE}/SQL/Translator/Parser.pm
@@ -30,6 +37,7 @@ ${P5SITE}/SQL/Translator/Parser/DBI/SQLServer.pm
 ${P5SITE}/SQL/Translator/Parser/DBI/SQLite.pm
 ${P5SITE}/SQL/Translator/Parser/DBI/Sybase.pm
 ${P5SITE}/SQL/Translator/Parser/Excel.pm
+${P5SITE}/SQL/Translator/Parser/JSON.pm
 ${P5SITE}/SQL/Translator/Parser/MySQL.pm
 ${P5SITE}/SQL/Translator/Parser/Oracle.pm
 ${P5SITE}/SQL/Translator/Parser/PostgreSQL.pm
@@ -51,6 +59,7 @@ ${P5SITE}/SQL/Translator/Producer/Diagram.pm
 ${P5SITE}/SQL/Translator/Producer/Dumper.pm
 ${P5SITE}/SQL/Translator/Producer/GraphViz.pm
 ${P5SITE}/SQL/Translator/Producer/HTML.pm
+${P5SITE}/SQL/Translator/Producer/JSON.pm
 ${P5SITE}/SQL/Translator/Producer/Latex.pm
 ${P5SITE}/SQL/Translator/Producer/MySQL.pm
 ${P5SITE}/SQL/Translator/Producer/Oracle.pm
@@ -68,24 +77,26 @@ ${P5SITE}/SQL/Translator/Producer/XML/
 ${P5SITE}/SQL/Translator/Producer/XML.pm
 ${P5SITE}/SQL/Translator/Producer/XML/SQLFairy.pm
 ${P5SITE}/SQL/Translator/Producer/YAML.pm
+${P5SITE}/SQL/Translator/Role/
+${P5SITE}/SQL/Translator/Role/BuildArgs.pm
+${P5SITE}/SQL/Translator/Role/Debug.pm
+${P5SITE}/SQL/Translator/Role/Error.pm
+${P5SITE}/SQL/Translator/Role/ListAttr.pm
 ${P5SITE}/SQL/Translator/Schema/
 ${P5SITE}/SQL/Translator/Schema.pm
 ${P5SITE}/SQL/Translator/Schema/Constants.pm
 ${P5SITE}/SQL/Translator/Schema/Constraint.pm
 ${P5SITE}/SQL/Translator/Schema/Field.pm
-${P5SITE}/SQL/Translator/Schema/Graph/
-${P5SITE}/SQL/Translator/Schema/Graph.pm
-${P5SITE}/SQL/Translator/Schema/Graph/CompoundEdge.pm
-${P5SITE}/SQL/Translator/Schema/Graph/Edge.pm
-${P5SITE}/SQL/Translator/Schema/Graph/HyperEdge.pm
-${P5SITE}/SQL/Translator/Schema/Graph/Node.pm
-${P5SITE}/SQL/Translator/Schema/Graph/Port.pm
 ${P5SITE}/SQL/Translator/Schema/Index.pm
 ${P5SITE}/SQL/Translator/Schema/Object.pm
 ${P5SITE}/SQL/Translator/Schema/Procedure.pm
+${P5SITE}/SQL/Translator/Schema/Role/
+${P5SITE}/SQL/Translator/Schema/Role/Compare.pm
+${P5SITE}/SQL/Translator/Schema/Role/Extra.pm
 ${P5SITE}/SQL/Translator/Schema/Table.pm
 ${P5SITE}/SQL/Translator/Schema/Trigger.pm
 ${P5SITE}/SQL/Translator/Schema/View.pm
+${P5SITE}/SQL/Translator/Types.pm
 ${P5SITE}/SQL/Translator/Utils.pm
 ${P5SITE}/Test/SQL/
 ${P5SITE}/Test/SQL/Translator.pm
@@ -99,8 +110,12 @@ ${P5SITE}/auto/share/dist/SQL-Translator/DiaUml/uml-class-all.tt2
 ${P5SITE}/auto/share/dist/SQL-Translator/DiaUml/uml-class-end.tt2
 ${P5SITE}/auto/share/dist/SQL-Translator/DiaUml/uml-class-start.tt2
 ${P5SITE}/auto/share/dist/SQL-Translator/DiaUml/uml-class.tt2
-${P5SITE}/auto/share/dist/SQL-Translator/Grammar/
-${P5SITE}/auto/share/dist/SQL-Translator/Grammar/DB2.gra
+${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/
+${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/
+${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/
+${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/
+${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/SQLT/
+${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/SQLT/README
 @man man/man1/sqlt-diagram.1
 @man man/man1/sqlt-diff-old.1
 @man man/man1/sqlt-diff.1
@@ -112,9 +127,15 @@ ${P5SITE}/auto/share/dist/SQL-Translator/Grammar/DB2.gra
 @man man/man3p/SQL::Translator::Filter::DefaultExtra.3p
 @man man/man3p/SQL::Translator::Filter::Globals.3p
 @man man/man3p/SQL::Translator::Filter::Names.3p
+@man man/man3p/SQL::Translator::Generator::DDL::PostgreSQL.3p
+@man man/man3p/SQL::Translator::Generator::DDL::SQLServer.3p
+@man man/man3p/SQL::Translator::Generator::DDL::SQLite.3p
+@man man/man3p/SQL::Translator::Generator::Role::DDL.3p
+@man man/man3p/SQL::Translator::Generator::Role::Quote.3p
 @man man/man3p/SQL::Translator::Manual.3p
 @man man/man3p/SQL::Translator::Parser.3p
 @man man/man3p/SQL::Translator::Parser::Access.3p
+@man man/man3p/SQL::Translator::Parser::DB2.3p
 @man man/man3p/SQL::Translator::Parser::DBI.3p
 @man man/man3p/SQL::Translator::Parser::DBI::DB2.3p
 @man man/man3p/SQL::Translator::Parser::DBI::MySQL.3p
@@ -124,6 +145,7 @@ ${P5SITE}/auto/share/dist/SQL-Translator/Grammar/DB2.gra
 @man man/man3p/SQL::Translator::Parser::DBI::SQLite.3p
 @man man/man3p/SQL::Translator::Parser::DBI::Sybase.3p
 @man man/man3p/SQL::Translator::Parser::Excel.3p
+@man man/man3p/SQL::Translator::Parser::JSON.3p
 @man man/man3p/SQL::Translator::Parser::MySQL.3p
 @man man/man3p/SQL::Translator::Parser::Oracle.3p
 @man man/man3p/SQL::Translator::Parser::PostgreSQL.3p
@@ -143,6 +165,7 @@ ${P5SITE}/auto/share/dist/SQL-Translator/Grammar/DB2.gra
 @man man/man3p/SQL::Translator::Producer::Dumper.3p
 @man man/man3p/SQL::Translator::Producer::GraphViz.3p
 @man man/man3p/SQL::Translator::Producer::HTML.3p
+@man man/man3p/SQL::Translator::Producer::JSON.3p
 @man man/man3p/SQL::Translator::Producer::Latex.3p
 @man man/man3p/SQL::Translator::Producer::MySQL.3p
 @man man/man3p/SQL::Translator::Producer::Oracle.3p
@@ -158,6 +181,9 @@ ${P5SITE}/auto/share/dist/SQL-Translator/Grammar/DB2.gra
 @man man/man3p/SQL::Translator::Producer::XML.3p
 @man man/man3p/SQL::Translator::Producer::XML::SQLFairy.3p
 @man man/man3p/SQL::Translator::Producer::YAML.3p
+@man man/man3p/SQL::Translator::Role::BuildArgs.3p
+@man man/man3p/SQL::Translator::Role::Error.3p
+@man man/man3p/SQL::Translator::Role::ListAttr.3p
 @man man/man3p/SQL::Translator::Schema.3p
 @man man/man3p/SQL::Translator::Schema::Constants.3p
 @man man/man3p/SQL::Translator::Schema::Constraint.3p
@@ -165,8 +191,11 @@ ${P5SITE}/auto/share/dist/SQL-Translator/Grammar/DB2.gra
 @man man/man3p/SQL::Translator::Schema::Index.3p
 @man man/man3p/SQL::Translator::Schema::Object.3p
 @man man/man3p/SQL::Translator::Schema::Procedure.3p
+@man man/man3p/SQL::Translator::Schema::Role::Compare.3p
+@man man/man3p/SQL::Translator::Schema::Role::Extra.3p
 @man man/man3p/SQL::Translator::Schema::Table.3p
 @man man/man3p/SQL::Translator::Schema::Trigger.3p
 @man man/man3p/SQL::Translator::Schema::View.3p
+@man man/man3p/SQL::Translator::Types.3p
 @man man/man3p/SQL::Translator::Utils.3p
 @man man/man3p/Test::SQL::Translator.3p
