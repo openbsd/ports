@@ -1,7 +1,7 @@
-$OpenBSD: patch-deps_hiredis_Makefile,v 1.5 2013/12/03 06:50:17 dcoppa Exp $
---- deps/hiredis/Makefile.orig	Mon Dec  2 16:07:46 2013
-+++ deps/hiredis/Makefile	Tue Dec  3 07:51:33 2013
-@@ -12,9 +12,9 @@ HIREDIS_MINOR=10
+$OpenBSD: patch-deps_hiredis_Makefile,v 1.6 2014/07/12 09:53:57 dcoppa Exp $
+--- deps/hiredis/Makefile.orig	Mon Jun 23 16:56:18 2014
++++ deps/hiredis/Makefile	Sat Jul 12 11:06:45 2014
+@@ -25,9 +25,9 @@ export REDIS_TEST_CONFIG
  
  # Fallback to gcc when $CC is not in $PATH.
  CC:=$(shell sh -c 'type $(CC) >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
@@ -13,7 +13,7 @@ $OpenBSD: patch-deps_hiredis_Makefile,v 1.5 2013/12/03 06:50:17 dcoppa Exp $
  REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG) $(ARCH)
  REAL_LDFLAGS=$(LDFLAGS) $(ARCH)
  
-@@ -116,8 +116,12 @@ endif
+@@ -134,8 +134,12 @@ endif
  
  INSTALL?= cp -a
  
