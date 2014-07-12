@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/12 20:07:51 giovanni Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Without/
+${P5SITE}/Test/Without/Module.pm
+@man man/man3p/Test::Without::Module.3p
