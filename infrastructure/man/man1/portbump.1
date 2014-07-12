@@ -1,0 +1,115 @@
+.\"     $OpenBSD: portbump.1,v 1.1 2014/07/12 19:34:08 zhuk Exp $
+.\"
+.\" Copyright (c) 2014 Vadim Zhukov
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: July 12 2014 $
+.Dt PORTBUMP 1
+.Os
+.Sh NAME
+.Nm portbump
+.Nd tweaks port revisions and library versions
+.Sh SYNOPSIS
+.Nm
+.Op Fl Mmnrv
+.Op Ar portref ...
+.Pp
+.Nm
+.Op Fl Mmnrv
+.Op Fl o Ar file
+.Op Ar portref
+.Sh DESCRIPTION
+.Nm
+is used to increase
+.Ev REVISION
+and
+.Ev SHARED_LIBS
+values in
+.Ox
+ports.
+It also can remove
+.Ev REVISION
+marks.
+.Pp
+.Ar portref
+has the same syntax as
+.Ev FULLPKGPATH
+port variable, see
+.Xr bsd.port.mk 5 .
+Actually, you can feed a list of pkgpaths as parameters; flavor
+information will be ignored.
+.Nm
+doesn't care about actual subdirectory portion of
+.Ar portref ,
+so you can freely pass
+.Sq . ,
+.Sq ../foo
+or anything else like this.
+.Pp
+If subpackage is not specified in port reference, then all subpackages
+of a port will be processed.
+If no port references are given, the port in current directory will
+be processed.
+.Pp
+The following options are available:
+.Bl -tag -width Ds
+.It Fl d
+Delete all REVISION marks in
+.Pa Makefile .
+Mutally exclusive with
+.Fl r .
+.It Fl M
+Increment by one major component of all
+.Ev SHARED_LIBS ,
+resetting minor one to zero if needed.
+Mutally exclusive with
+.Fl m .
+.It Fl m
+Increment by one minor component of all
+.Ev SHARED_LIBS .
+Mutally exclusive with
+.Fl M .
+.It Fl n
+Do not replace
+.Pa Makefile
+but save modified version in the
+.Pa Makefile.bump
+instead.
+.It Fl o Ar file
+Send modified Makefile contents to a given file instead of creating
+.Pa Makefile.bump
+in port's directory.
+This could be only used if not more than one port is specified;
+multiple subpackages of a single port could be specified, though.
+.It Fl r
+Increment
+.Ev REVISION
+values for all subpackages, or only for given ones.
+This is a default mode of operation, unless
+.Fl M
+or
+.Fl m
+flag is specified.
+The
+.Fl r
+flag could be combined explicitly with either of those two, though.
+Mutally exclusive with
+.Fl d .
+.It Fl v
+Enable printing of diagnostic messages to stdandard error output.
+.El
+.Sh HISTORY
+.Nm
+first appeared in
+.Ox 5.6 .

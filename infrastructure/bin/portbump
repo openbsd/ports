@@ -1,0 +1,406 @@
+#!/usr/bin/perl
+
+package Util;
+use strict;
+use warnings;
+
+# prints hash in compact form, for debugging purposes
+sub phash {
+	my $h = shift;
+	"{ ".join (", ", map {
+		$_."=>".(ref($h->{$_}) eq 'HASH' ? phash($h->{$_}) : $h->{$_})
+	} (sort keys %{$h})) . " }";
+}
+
+sub spc_per_tab { 8 }
+
+sub expand_tabs {
+	my $line = shift;
+	while ($line =~ /\t/) {
+		my $pos = $-[0] + spc_per_tab - 1;
+		$pos -= $pos % spc_per_tab;
+		$line = $` . (' ' x (($pos - $-[0]) || spc_per_tab)) . $';
+	}
+	return $line;
+}
+
+#################################################################
+
+package PortHandler;
+use strict;
+use warnings;
+
+sub new {
+	my ($class, $dir) = (shift, shift);
+	my $self = { dir => $dir, shlibs => {}, verbose => 0 };
+
+	#
+	# Get actual information about subpackages (including their
+	# REVISIONs) and shared libraries.
+	#
+	open (my $dumpvars, '-|', "make", "SUBDIR=$dir", "dump-vars") or
+		die "cannot run make dump-vars";
+	while (<$dumpvars>) {
+		chomp;
+		next unless /^[^,]*(?:,-([^.]+))?\.([^=.]+)=(.*)$/;
+		my ($subpkg, $var, $value) = ($1, $2, $3);
+		$subpkg //= "";
+
+		if ($var eq "MULTI_PACKAGES") {
+			$self->{mpkgs} = { map { $_ => 1 } split(/\s+/, $value) };
+		} elsif ($var eq "SHARED_LIBS") {
+			# perhaps direct " = split (...)" would be enough?
+			$self->{shlibs} = { %{$self->{shlibs}}, split(/\s+/, $value) };
+		}
+	}
+	close $dumpvars;
+
+	if (scalar(keys %{$self->{mpkgs}}) == 1 and exists($self->{mpkgs}->{"-"})) {
+		$self->{mpkgs} = { "" => 1 };
+	}
+
+	return bless($self, $class);
+}
+
+sub verbose {
+	my $self = shift;
+	my $rv = $self->{verbose};
+	$self->{verbose} = $_[0] if defined $_[0];
+	return $rv;
+}
+
+# Formats and returns string of "var = value" with whitespace adjustment
+# done like in the sample given line.
+sub _adj_whitespace {
+	my ($self, $var, $value, $wssample) = @_;
+	
+	unless (defined($wssample) and
+	        $wssample =~ /^( *)([A-Za-z0-9_-]+)(\s*)[\+\?\!]*=(\s*)/) {
+		return "$var =\t$value";
+	}
+
+	my $start_ws = $1 // "";
+	my $before_eq_ws = $3 // "";
+	my $after_eq_ws = $4 // "";
+	my $svalue_pos = $+[4];
+
+	my $line = $start_ws.$var.$before_eq_ws."=";
+	my $line_exp = Util::expand_tabs($line);
+	my $wssample_exp = Util::expand_tabs($wssample);
+	my $svalue_pos_exp = $svalue_pos +
+	    (length($wssample_exp) - length($wssample));
+
+	my $elen = length($line_exp);
+
+	if ($elen > $svalue_pos_exp) {
+		# too long anyway, just add a tab and be done with it
+		$line .= "\t";
+	} elsif ($elen < $svalue_pos_exp) {
+		if ($after_eq_ws =~ /^\t*$/) {
+			# tab-based separation
+			while ($elen < $svalue_pos_exp) {
+				my $n_spc_to_add = ($svalue_pos_exp - $elen);
+				$n_spc_to_add %= Util::spc_per_tab;
+				$n_spc_to_add ||= Util::spc_per_tab;
+				$elen += $n_spc_to_add;
+				$line .= "\t";
+			}
+		} else {
+			# space-based separation
+			$line .= ' ' x ($svalue_pos_exp - length($line_exp));
+		}
+	}
+	return $line.$value;
+}
+
+sub _is_mpkg_port {
+	my $self = shift;
+	return 1 if scalar(keys %{$self->{mpkgs}}) != 1;
+	my $k = each %{$self->{mpkgs}};
+	return 1 if $k ne "";
+	return 0;
+}
+
+sub _add_new_revs {
+	my ($self, $out, $lineno, $bumppkgs) = (shift, shift, shift, shift);
+
+	# Note: $lineno is the input file's line number, not output's one.
+
+	if ($self->{maxrevsin}->{count} > 1) {
+		return 0 unless $lineno == $self->{maxrevsin}->{blockend};
+	}
+	if ($self->{has_global_rev}) {
+		return 0 unless $self->_is_mpkg_port;
+	}
+
+	my $nchanges = 0;
+	for my $subpkg(sort keys %{$bumppkgs}) {
+		if ($self->{maxrevsin}->{count} > 1 or
+		    $lineno == $self->{newrevplace}->{$subpkg}->{blockend}) {
+			my $line = $self->_adj_whitespace(
+			    "REVISION" . $subpkg,
+			    "0",
+			    $self->{newrevplace}->{$subpkg}->{wssample});
+			print $out $line, "\n";
+			$nchanges++;
+		}
+	}
+	return $nchanges;
+}
+
+#
+# Parse makefile, searching for places where new REVISION marks
+# should be added, and with what whitespace.
+#
+sub parse_for_revisions {
+	my ($self, $in) = (shift, shift);
+
+	# subpkg => {
+	#   line => number of line where subpackage is mentioned
+	#   wssample => a line from block to look for whitespace sample in
+	#   blockend => block ending line number
+	# }
+	$self->{newrevplace} = {};
+
+	$self->{maxrevsin} = { blockend => 0, count => 0 };
+	my $revsincurblock = 0;
+	my ($block1begin, $block1end) = (0, 0);
+
+	my @mentionedsubpkgs;
+	$self->{has_global_rev} = 0;
+	while (<$in>) {
+		if (/^ *REVISION(\s*)[\+\?\!]*=/) {
+			$self->{has_global_rev} = 1;
+		}
+
+		if (/^ *(V|DISTNAME|(?:FULL)?PKGNAME|REVISION)(-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/) {
+			my $var = $1;
+			my $subpkg = $2 // "";
+			$self->{newrevplace}->{$subpkg} //= {};
+			$self->{newrevplace}->{$subpkg}->{line} = $in->input_line_number();
+			$self->{newrevplace}->{$subpkg}->{wssample} = $_;
+			delete $self->{newrevplace}->{$subpkg}->{blockend};
+			push(@mentionedsubpkgs, $subpkg);
+			if ($var eq "REVISION") {
+				if (++$revsincurblock > $self->{maxrevsin}->{count}) {
+					$self->{maxrevsin}->{blockend} = 0;
+					$self->{maxrevsin}->{count} = $revsincurblock;
+				}
+			}
+			$block1begin = $in->input_line_number() if !$block1begin;
+		} elsif (/^\s*$/) {
+			for my $subpkg(@mentionedsubpkgs) {
+				$self->{newrevplace}->{$subpkg}->{blockend} = $in->input_line_number();
+			}
+			$self->{maxrevsin}->{blockend} = $in->input_line_number()
+			    if $self->{maxrevsin}->{blockend} == 0;
+			@mentionedsubpkgs = ();
+			$revsincurblock = 0;
+
+			$block1end = $in->input_line_number()
+			    if $block1begin && !$block1end;
+		} elsif (!/^ *(\#|BROKEN|COMES_WITH|IGNORE|NOT_FOR_ARCHS|ONLY_FOR_ARCHS|SHARED_ONLY)/) {
+			$block1begin = $in->input_line_number() if !$block1begin;
+		}
+	}
+	for my $subpkg(@mentionedsubpkgs) {
+		$self->{newrevplace}->{$subpkg}->{blockend} = $in->input_line_number();
+	}
+	if ($self->{maxrevsin}->{blockend} == 0) {
+		$self->{maxrevsin}->{blockend} = $block1end ? $block1end :
+		    $in->input_line_number();
+	}
+}
+
+sub update {
+	my ($self, $in, $out, $bumppkgs, $removerevs) = @_;
+
+	my $defbumped = 0;
+	my $shlib_block = 0;
+	my $nchanges = 0;
+	while (<$in>) {
+		chomp;
+
+		if ($shlib_block or /^ *SHARED_LIBS/) {
+			my $shline = $_;
+			$shlib_block or $shline =~ s/^ *SHARED_LIBS\s*\+?=\s*//;
+			$shlib_block = $shline =~ s/\\$//;
+			# XXX will misbehave after "<...> # \"
+			$shline =~ s/\s*#.*//;
+			#$shline =~ s/\s*$//;
+			$shline =~ s/^\s*//;
+			# XXX will break in "libfoo 0.0 libbar" case
+			my %lineshlibs = split(/\s+/, $shline);
+			for my $lib (keys %lineshlibs) {
+				# Some ports define SHARED_LIBS in
+				# subpackage-dependant way, i.e.,
+				# add them only if the corresponding
+				# subpackage should be built.
+				my $v = $self->{shlibs}->{$lib} // next;
+				printf STDERR "%-30s: changing shared library ".
+				    "%s version to %s\n",
+				    $self->{dir}, $lib, $v
+				    if $self->{verbose};
+				$nchanges++ if $_ =~ s/($lib\s+)[0-9]+\.[0-9]+/$1$v/g;
+			}
+		} elsif (/^ *REVISION(-[a-zA-Z0-9_]+)?.*=\s*([0-9]*)$/) {
+			my $subpkg = $1 // "";
+			if ($removerevs) {
+				$nchanges++;
+				next;
+			} elsif (!defined($bumppkgs)) {
+				print $out "$_\n";
+				next;
+			} elsif (exists $bumppkgs->{$subpkg} or
+			    ($subpkg eq "" and scalar(keys %{$self->{mpkgs}}) ==
+			     scalar(keys %{$bumppkgs}))) {
+				my $rev = $2 // -1;
+				my $newrev = $rev + 1;
+				printf STDERR "%-30s: changing %s to %d\n",
+				    $self->{dir}, $_, $newrev
+				    if $self->{verbose};
+				$nchanges++ if s/[0-9]*$/$newrev/;
+				delete $bumppkgs->{$subpkg};
+				$defbumped = 1 if $subpkg eq "";
+			}
+		}
+
+		$nchanges += $self->_add_new_revs($out, $in->input_line_number(), $bumppkgs)
+		    unless $defbumped;
+
+		print $out "$_\n";
+	}
+	return $nchanges;
+}
+
+#################################################################
+
+package main;
+use strict;
+use warnings;
+use v5.14;
+
+use Getopt::Std;
+$Getopt::Std::STANDARD_HELP_VERSION = 1;
+
+sub usage {
+	print join("\n", @_)."\n" if scalar @_;
+	print STDERR "usage: portbump [-dMmrnv] [dir] ...\n";
+	print STDERR "       portbump [-dMmrnov] [dir]\n";
+	exit 1;
+}
+
+our ($opt_d, $opt_M, $opt_m, $opt_n, $opt_o, $opt_r, $opt_v) =
+    (0, 0, 0, 0, undef, undef, 0);
+getopts('dMmno:rv') or usage;
+
+$opt_d && $opt_r and usage "cannot mix -d and -r options";
+$opt_m && $opt_M and usage "cannot mix -M and -m options";
+!$opt_M && !$opt_m && !$opt_d && !defined($opt_r) and $opt_r = 1;
+
+my %allpkgs;     # dir => { subpkg => 1, ... };
+
+my %newrevplace;     
+
+scalar(@ARGV) or @ARGV = (".");
+for (@ARGV) {
+	# zap any FLAVOR information to make it easier to feed from of sqlports
+	s/,+[^,-]*/,/g;
+
+	# XXX handle "-" subpackage case?
+	if (/^(.*),(-.+)$/) {
+		my $subdir = $1 || ".";
+		if (defined $allpkgs{$subdir}) {
+			if (scalar($allpkgs{$subdir}) == 0) {
+				die "mixed non-subpackaged and subpackaged for $subdir";
+			} elsif (exists $allpkgs{$subdir}->{$2}) {
+				# XXX maybe just ignore?
+				$opt_v and print STDERR "double bump of \"$_\" requested, ignoring";
+			}
+		} else {
+			$allpkgs{$subdir} = {};
+		}
+		$allpkgs{$subdir}->{$2} = 1;
+	} else {
+		if (defined $allpkgs{$_}) {
+			die "mixed non-subpackaged and subpackaged for $_";
+		}
+		$allpkgs{$_} = {};
+	}
+}
+
+if (defined($opt_o) and scalar(keys %allpkgs) > 1) {
+	usage "cannot use -o if more than one port is being processed";
+}
+
+if ($opt_v) {
+	print STDERR "port directories to visit:\n";
+	for my $dir (keys %allpkgs) {
+		print STDERR "\t$dir\n";
+	}
+}
+
+for my $dir (keys %allpkgs) {
+	my $port = PortHandler->new($dir);
+	$port->verbose(1) if $opt_v;
+
+	#
+	# Bump library versions, if requested.
+	#
+
+	if ($opt_M or $opt_m) {
+		for my $lib (keys %{$port->{shlibs}}) {
+			my ($major, $minor) = split(/\./, $port->{shlibs}->{$lib});
+			if ($opt_M) {
+				$major++;
+				$minor = 0;
+			} else {
+				$minor++;
+			}
+			$port->{shlibs}->{$lib} = "${major}.${minor}";
+		}
+	}
+
+	#
+	# Read port information, choose what subpackages to bump.
+	#
+
+	open (my $in, '<', "$dir/Makefile") or
+		die "cannot open input file $dir/Makefile";
+
+	$port->parse_for_revisions($in);
+
+	my $bumppkgs;
+	if (!$opt_r) {
+		$bumppkgs = undef;
+	} elsif (scalar(keys %{$allpkgs{$dir}}) != 0) {
+		for my $subpkg (keys %{$allpkgs{$dir}}) {
+			next if exists $port->{mpkgs}->{$subpkg};
+			die "there is no $dir,$subpkg package";
+		}
+		$bumppkgs = $allpkgs{$dir};
+	} else {
+		$bumppkgs = $port->{mpkgs};
+	}
+
+	#
+	# Actual update process.
+	#
+
+	open (my $out, '>', $opt_o // "$dir/Makefile.bump") or
+		die "cannot open output file $dir/Makefile.bump";
+	seek($in, 0, 0);
+	$in->input_line_number(0);
+	my $nchanges = $port->update($in, $out, $bumppkgs, $opt_d);
+	close($in);
+	close($out);
+	if (!defined $opt_o) {
+		if (!$nchanges) {
+			print STDERR "nothing to do in $dir\n" if $opt_v;
+			unlink "$dir/Makefile.bump";
+		} elsif (!$opt_n) {
+			rename("$dir/Makefile.bump", "$dir/Makefile") or
+			    die "cannot move $dir/Makefile.bump to $dir/Makefile"
+		}
+	}
+}
