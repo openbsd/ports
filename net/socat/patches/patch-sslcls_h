@@ -1,6 +1,6 @@
-$OpenBSD: patch-sslcls_h,v 1.1 2014/04/24 15:17:08 sthen Exp $
---- sslcls.h.orig	Sun Jun 23 07:16:48 2013
-+++ sslcls.h	Sat Apr 19 15:41:54 2014
+$OpenBSD: patch-sslcls_h,v 1.2 2014/07/12 14:30:20 pascal Exp $
+--- sslcls.h.orig	Sun Jun 23 08:16:48 2013
++++ sslcls.h	Sat Jul 12 15:59:58 2014
 @@ -41,7 +41,6 @@ X509 *sycSSL_get_peer_certificate(SSL *ssl);
  int sycSSL_shutdown(SSL *ssl);
  void sycSSL_CTX_free(SSL_CTX *ctx);
@@ -9,6 +9,15 @@ $OpenBSD: patch-sslcls_h,v 1.1 2014/04/24 15:17:08 sthen Exp $
  
  DH *sycPEM_read_bio_DHparams(BIO *bp, DH **x, pem_password_cb *cb, void *u);
  
+@@ -49,7 +48,7 @@ BIO *sycBIO_new_file(const char *filename, const char 
+ 
+ int sycFIPS_mode_set(int onoff);
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x00908000L
++#if (OPENSSL_VERSION_NUMBER >= 0x00908000L) && !defined(OPENSSL_NO_COMP)
+ const COMP_METHOD *sycSSL_get_current_compression(SSL *ssl);
+ const COMP_METHOD *sycSSL_get_current_expansion(SSL *ssl);
+ const char *sycSSL_COMP_get_name(const COMP_METHOD *comp);
 @@ -92,7 +91,6 @@ const char *sycSSL_COMP_get_name(const COMP_METHOD *co
  #define sycSSL_shutdown(s) SSL_shutdown(s)
  #define sycSSL_CTX_free(c) SSL_CTX_free(c)

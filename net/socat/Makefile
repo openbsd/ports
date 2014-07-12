@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2014/04/24 15:17:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/07/12 14:30:20 pascal Exp $
 
 COMMENT=	relay for bidirectional data transfer
 
 DISTNAME=	socat-1.7.2.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.dest-unreach.org/socat/

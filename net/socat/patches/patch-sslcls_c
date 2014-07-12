@@ -1,6 +1,6 @@
-$OpenBSD: patch-sslcls_c,v 1.1 2014/04/24 15:17:08 sthen Exp $
---- sslcls.c.orig	Sat Feb  8 19:23:33 2014
-+++ sslcls.c	Sat Apr 19 15:41:07 2014
+$OpenBSD: patch-sslcls_c,v 1.2 2014/07/12 14:30:20 pascal Exp $
+--- sslcls.c.orig	Sat Feb  8 20:23:33 2014
++++ sslcls.c	Sat Jul 12 16:01:25 2014
 @@ -275,14 +275,6 @@ void sycSSL_free(SSL *ssl) {
     return;
  }
@@ -16,3 +16,12 @@ $OpenBSD: patch-sslcls_c,v 1.1 2014/04/24 15:17:08 sthen Exp $
  DH *sycPEM_read_bio_DHparams(BIO *bp, DH **x, pem_password_cb *cb, void *u) {
     DH *result;
     Debug4("PEM_read_bio_DHparams(%p, %p, %p, %p)",
+@@ -319,7 +311,7 @@ int sycFIPS_mode_set(int onoff) {
+ }
+ #endif /* WITH_FIPS */
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x00908000L
++#if (OPENSSL_VERSION_NUMBER >= 0x00908000L) && !defined(OPENSSL_NO_COMP)
+ const COMP_METHOD *sycSSL_get_current_compression(SSL *ssl) {
+    const COMP_METHOD *result;
+    Debug1("SSL_get_current_compression(%p)", ssl);
