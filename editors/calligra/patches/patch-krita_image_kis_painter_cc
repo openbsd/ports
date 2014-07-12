@@ -1,4 +1,5 @@
-$OpenBSD: patch-krita_image_kis_painter_cc,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+$OpenBSD: patch-krita_image_kis_painter_cc,v 1.2 2014/07/12 13:06:22 zhuk Exp $
+REVIEW: https://git.reviewboard.kde.org/r/119244/
 --- krita/image/kis_painter.cc.orig	Sun Mar  2 15:46:08 2014
 +++ krita/image/kis_painter.cc	Wed Mar  5 21:20:39 2014
 @@ -1393,7 +1393,7 @@ void KisPainter::drawLine(const QPointF& start, const 
