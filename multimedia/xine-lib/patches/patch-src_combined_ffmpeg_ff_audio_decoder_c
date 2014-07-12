@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_audio_decoder_c,v 1.8 2014/07/12 21:55:35 brad Exp $
+
+Enable parser for AC3, DTS, AAC.
+
+--- src/combined/ffmpeg/ff_audio_decoder.c.orig	Wed Feb 26 10:49:10 2014
++++ src/combined/ffmpeg/ff_audio_decoder.c	Thu Jun 12 05:12:13 2014
+@@ -196,14 +196,17 @@ static void ff_audio_init_codec(ff_audio_decoder_t *th
+   this->context->codec_type  = this->codec->type;
+   this->context->codec_tag   = _x_stream_info_get(this->stream, XINE_STREAM_INFO_AUDIO_FOURCC);
+ 
+-  /* Use parser for EAC3, AAC LATM and MPEG.
++  /* Use parser for AC3, EAC3, DTS, AAC, AAC LATM and MPEG.
+    * Fixes:
+    *  - DVB streams where multiple AAC LATM frames are packed to single PES
+    *  - DVB streams where MPEG audio frames do not follow PES packet boundaries
+    */
+ #if AVPARSE > 1
+-  if (codec_type == BUF_AUDIO_AAC_LATM ||
++  if (codec_type == BUF_AUDIO_AAC ||
++      codec_type == BUF_AUDIO_AAC_LATM ||
++      codec_type == BUF_AUDIO_A52 ||
+       codec_type == BUF_AUDIO_EAC3 ||
++      codec_type == BUF_AUDIO_DTS ||
+       codec_type == BUF_AUDIO_MPEG) {
+ 
+     xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
