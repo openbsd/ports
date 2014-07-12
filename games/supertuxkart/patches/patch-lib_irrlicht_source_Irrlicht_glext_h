@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 pascal Exp $
---- lib/irrlicht/source/Irrlicht/glext.h.orig	Sat Jul 12 22:46:01 2014
-+++ lib/irrlicht/source/Irrlicht/glext.h	Sat Jul 12 22:46:27 2014
+$OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.2 2014/07/12 22:01:20 pascal Exp $
+--- lib/irrlicht/source/Irrlicht/glext.h.orig	Sat Jul 12 23:53:00 2014
++++ lib/irrlicht/source/Irrlicht/glext.h	Sat Jul 12 23:55:51 2014
 @@ -1,13 +1,13 @@
  #ifndef __glext_h_
 -#define __glext_h_
@@ -31,25 +31,16 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  ** THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  ** EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  ** MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-@@ -27,15 +27,19 @@ extern "C" {
- ** TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+@@ -28,14 +28,11 @@ extern "C" {
  ** MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
  */
-+/*
-+** This header is generated from the Khronos OpenGL / OpenGL ES XML
-+** API Registry. The current version of the Registry, generator scripts
-+** used to make the header, and the header can be found at
-+**   http://www.opengl.org/registry/
-+**
-+** Khronos $Revision: 1.1 $ on $Date: 2014/07/12 21:00:41 $
-+*/
  
 -/* Header file version number, required by OpenGL ABI for Linux */
--/* glext.h last updated $Date: 2014/07/12 21:00:41 $ */
+-/* glext.h last updated 2011-08-08 00:34:29 -0700 (Mon, 08 Aug 2011) $ */
 -/* Current version at http://www.opengl.org/registry/ */
 -#define GL_GLEXT_VERSION 72
 -/* Function declaration macros - to move into glplatform.h */
--
+ 
  #if defined(_WIN32) && !defined(APIENTRY) && !defined(__CYGWIN__) && !defined(__SCITECH_SNAP__)
 +#ifndef WIN32_LEAN_AND_MEAN
  #define WIN32_LEAN_AND_MEAN 1
@@ -57,7 +48,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #include <windows.h>
  #endif
  
-@@ -49,9 +53,20 @@ extern "C" {
+@@ -49,9 +46,20 @@ extern "C" {
  #define GLAPI extern
  #endif
  
@@ -79,7 +70,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_UNSIGNED_BYTE_3_3_2            0x8032
  #define GL_UNSIGNED_SHORT_4_4_4_4         0x8033
  #define GL_UNSIGNED_SHORT_5_5_5_1         0x8034
-@@ -88,98 +103,25 @@ extern "C" {
+@@ -88,98 +96,25 @@ extern "C" {
  #define GL_SMOOTH_LINE_WIDTH_RANGE        0x0B22
  #define GL_SMOOTH_LINE_WIDTH_GRANULARITY  0x0B23
  #define GL_ALIASED_LINE_WIDTH_RANGE       0x846E
@@ -189,7 +180,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_TEXTURE0                       0x84C0
  #define GL_TEXTURE1                       0x84C1
  #define GL_TEXTURE2                       0x84C2
-@@ -239,9 +181,6 @@ extern "C" {
+@@ -239,9 +174,6 @@ extern "C" {
  #define GL_NUM_COMPRESSED_TEXTURE_FORMATS 0x86A2
  #define GL_COMPRESSED_TEXTURE_FORMATS     0x86A3
  #define GL_CLAMP_TO_BORDER                0x812D
@@ -199,7 +190,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_CLIENT_ACTIVE_TEXTURE          0x84E1
  #define GL_MAX_TEXTURE_UNITS              0x84E2
  #define GL_TRANSPOSE_MODELVIEW_MATRIX     0x84E3
-@@ -279,9 +218,104 @@ extern "C" {
+@@ -279,9 +211,104 @@ extern "C" {
  #define GL_PREVIOUS                       0x8578
  #define GL_DOT3_RGB                       0x86AE
  #define GL_DOT3_RGBA                      0x86AF
@@ -304,7 +295,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_BLEND_DST_RGB                  0x80C8
  #define GL_BLEND_SRC_RGB                  0x80C9
  #define GL_BLEND_DST_ALPHA                0x80CA
-@@ -298,9 +332,6 @@ extern "C" {
+@@ -298,9 +325,6 @@ extern "C" {
  #define GL_TEXTURE_DEPTH_SIZE             0x884A
  #define GL_TEXTURE_COMPARE_MODE           0x884C
  #define GL_TEXTURE_COMPARE_FUNC           0x884D
@@ -314,7 +305,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_POINT_SIZE_MIN                 0x8126
  #define GL_POINT_SIZE_MAX                 0x8127
  #define GL_POINT_DISTANCE_ATTENUATION     0x8129
-@@ -324,9 +355,118 @@ extern "C" {
+@@ -324,9 +348,118 @@ extern "C" {
  #define GL_TEXTURE_FILTER_CONTROL         0x8500
  #define GL_DEPTH_TEXTURE_MODE             0x884B
  #define GL_COMPARE_R_TO_TEXTURE           0x884E
@@ -433,7 +424,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_BUFFER_SIZE                    0x8764
  #define GL_BUFFER_USAGE                   0x8765
  #define GL_QUERY_COUNTER_BITS             0x8864
-@@ -354,9 +494,7 @@ extern "C" {
+@@ -354,9 +487,7 @@ extern "C" {
  #define GL_DYNAMIC_READ                   0x88E9
  #define GL_DYNAMIC_COPY                   0x88EA
  #define GL_SAMPLES_PASSED                 0x8914
@@ -444,7 +435,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_VERTEX_ARRAY_BUFFER_BINDING    0x8896
  #define GL_NORMAL_ARRAY_BUFFER_BINDING    0x8897
  #define GL_COLOR_ARRAY_BUFFER_BINDING     0x8898
-@@ -378,11 +516,52 @@ extern "C" {
+@@ -378,11 +509,52 @@ extern "C" {
  #define GL_SRC1_RGB                       0x8581
  #define GL_SRC2_RGB                       0x8582
  #define GL_SRC0_ALPHA                     0x8588
@@ -498,7 +489,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_BLEND_EQUATION_RGB             0x8009
  #define GL_VERTEX_ATTRIB_ARRAY_ENABLED    0x8622
  #define GL_VERTEX_ATTRIB_ARRAY_SIZE       0x8623
-@@ -463,16 +642,202 @@ extern "C" {
+@@ -463,16 +635,202 @@ extern "C" {
  #define GL_STENCIL_BACK_REF               0x8CA3
  #define GL_STENCIL_BACK_VALUE_MASK        0x8CA4
  #define GL_STENCIL_BACK_WRITEMASK         0x8CA5
@@ -704,7 +695,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_PIXEL_PACK_BUFFER              0x88EB
  #define GL_PIXEL_UNPACK_BUFFER            0x88EC
  #define GL_PIXEL_PACK_BUFFER_BINDING      0x88ED
-@@ -489,9 +854,6 @@ extern "C" {
+@@ -489,9 +847,6 @@ extern "C" {
  #define GL_SRGB8_ALPHA8                   0x8C43
  #define GL_COMPRESSED_SRGB                0x8C48
  #define GL_COMPRESSED_SRGB_ALPHA          0x8C49
@@ -714,7 +705,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_CURRENT_RASTER_SECONDARY_COLOR 0x845F
  #define GL_SLUMINANCE_ALPHA               0x8C44
  #define GL_SLUMINANCE8_ALPHA8             0x8C45
-@@ -499,9 +861,25 @@ extern "C" {
+@@ -499,9 +854,25 @@ extern "C" {
  #define GL_SLUMINANCE8                    0x8C47
  #define GL_COMPRESSED_SLUMINANCE          0x8C4A
  #define GL_COMPRESSED_SLUMINANCE_ALPHA    0x8C4B
@@ -740,7 +731,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_COMPARE_REF_TO_TEXTURE         0x884E
  #define GL_CLIP_DISTANCE0                 0x3000
  #define GL_CLIP_DISTANCE1                 0x3001
-@@ -516,11 +894,9 @@ extern "C" {
+@@ -516,11 +887,9 @@ extern "C" {
  #define GL_MINOR_VERSION                  0x821C
  #define GL_NUM_EXTENSIONS                 0x821D
  #define GL_CONTEXT_FLAGS                  0x821E
@@ -753,7 +744,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_RGBA32F                        0x8814
  #define GL_RGB32F                         0x8815
  #define GL_RGBA16F                        0x881A
-@@ -604,1072 +980,9 @@ extern "C" {
+@@ -604,1072 +973,9 @@ extern "C" {
  #define GL_BUFFER_ACCESS_FLAGS            0x911F
  #define GL_BUFFER_MAP_LENGTH              0x9120
  #define GL_BUFFER_MAP_OFFSET              0x9121
@@ -1826,7 +1817,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_INVALID_FRAMEBUFFER_OPERATION  0x0506
  #define GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING 0x8210
  #define GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE 0x8211
-@@ -1694,7 +1007,7 @@ extern "C" {
+@@ -1694,7 +1000,7 @@ extern "C" {
  #define GL_TEXTURE_DEPTH_TYPE             0x8C16
  #define GL_UNSIGNED_NORMALIZED            0x8C17
  #define GL_FRAMEBUFFER_BINDING            0x8CA6
@@ -1835,7 +1826,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_RENDERBUFFER_BINDING           0x8CA7
  #define GL_READ_FRAMEBUFFER               0x8CA8
  #define GL_DRAW_FRAMEBUFFER               0x8CA9
-@@ -1747,74 +1060,21 @@ extern "C" {
+@@ -1747,74 +1053,21 @@ extern "C" {
  #define GL_RENDERBUFFER_STENCIL_SIZE      0x8D55
  #define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE 0x8D56
  #define GL_MAX_SAMPLES                    0x8D57
@@ -1910,7 +1901,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_RG                             0x8227
  #define GL_RG_INTEGER                     0x8228
  #define GL_R8                             0x8229
-@@ -1837,25 +1097,222 @@ extern "C" {
+@@ -1837,25 +1090,222 @@ extern "C" {
  #define GL_RG16UI                         0x823A
  #define GL_RG32I                          0x823B
  #define GL_RG32UI                         0x823C
@@ -2139,7 +2130,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS 0x8A33
  #define GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT 0x8A34
  #define GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH 0x8A35
-@@ -1874,45 +1331,106 @@ extern "C" {
+@@ -1874,45 +1324,106 @@ extern "C" {
  #define GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS  0x8A42
  #define GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES 0x8A43
  #define GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER 0x8A44
@@ -2273,7 +2264,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_MAX_SERVER_WAIT_TIMEOUT        0x9111
  #define GL_OBJECT_TYPE                    0x9112
  #define GL_SYNC_CONDITION                 0x9113
-@@ -1926,11 +1444,8 @@ extern "C" {
+@@ -1926,11 +1437,8 @@ extern "C" {
  #define GL_TIMEOUT_EXPIRED                0x911B
  #define GL_CONDITION_SATISFIED            0x911C
  #define GL_WAIT_FAILED                    0x911D
@@ -2286,7 +2277,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_SAMPLE_POSITION                0x8E50
  #define GL_SAMPLE_MASK                    0x8E51
  #define GL_SAMPLE_MASK_VALUE              0x8E52
-@@ -1952,111 +1467,207 @@ extern "C" {
+@@ -1952,111 +1460,207 @@ extern "C" {
  #define GL_MAX_COLOR_TEXTURE_SAMPLES      0x910E
  #define GL_MAX_DEPTH_TEXTURE_SAMPLES      0x910F
  #define GL_MAX_INTEGER_SAMPLES            0x9110
@@ -2573,7 +2564,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_DOUBLE_VEC2                    0x8FFC
  #define GL_DOUBLE_VEC3                    0x8FFD
  #define GL_DOUBLE_VEC4                    0x8FFE
-@@ -2069,9 +1680,6 @@ extern "C" {
+@@ -2069,9 +1673,6 @@ extern "C" {
  #define GL_DOUBLE_MAT3x4                  0x8F4C
  #define GL_DOUBLE_MAT4x2                  0x8F4D
  #define GL_DOUBLE_MAT4x3                  0x8F4E
@@ -2583,7 +2574,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_ACTIVE_SUBROUTINES             0x8DE5
  #define GL_ACTIVE_SUBROUTINE_UNIFORMS     0x8DE6
  #define GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS 0x8E47
-@@ -2081,11 +1689,6 @@ extern "C" {
+@@ -2081,11 +1682,6 @@ extern "C" {
  #define GL_MAX_SUBROUTINE_UNIFORM_LOCATIONS 0x8DE8
  #define GL_NUM_COMPATIBLE_SUBROUTINES     0x8E4A
  #define GL_COMPATIBLE_SUBROUTINES         0x8E4B
@@ -2595,7 +2586,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_PATCHES                        0x000E
  #define GL_PATCH_VERTICES                 0x8E72
  #define GL_PATCH_DEFAULT_INNER_LEVEL      0x8E73
-@@ -2095,14 +1698,9 @@ extern "C" {
+@@ -2095,14 +1691,9 @@ extern "C" {
  #define GL_TESS_GEN_SPACING               0x8E77
  #define GL_TESS_GEN_VERTEX_ORDER          0x8E78
  #define GL_TESS_GEN_POINT_MODE            0x8E79
@@ -2610,7 +2601,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_MAX_PATCH_VERTICES             0x8E7D
  #define GL_MAX_TESS_GEN_LEVEL             0x8E7E
  #define GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS 0x8E7F
-@@ -2123,27 +1721,109 @@ extern "C" {
+@@ -2123,27 +1714,109 @@ extern "C" {
  #define GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER 0x84F1
  #define GL_TESS_EVALUATION_SHADER         0x8E87
  #define GL_TESS_CONTROL_SHADER            0x8E88
@@ -2734,7 +2725,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_FIXED                          0x140C
  #define GL_IMPLEMENTATION_COLOR_READ_TYPE 0x8B9A
  #define GL_IMPLEMENTATION_COLOR_READ_FORMAT 0x8B9B
-@@ -2154,20 +1834,16 @@ extern "C" {
+@@ -2154,20 +1827,16 @@ extern "C" {
  #define GL_MEDIUM_INT                     0x8DF4
  #define GL_HIGH_INT                       0x8DF5
  #define GL_SHADER_COMPILER                0x8DFA
@@ -2757,7 +2748,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_VERTEX_SHADER_BIT              0x00000001
  #define GL_FRAGMENT_SHADER_BIT            0x00000002
  #define GL_GEOMETRY_SHADER_BIT            0x00000004
-@@ -2177,97 +1853,194 @@ extern "C" {
+@@ -2177,97 +1846,194 @@ extern "C" {
  #define GL_PROGRAM_SEPARABLE              0x8258
  #define GL_ACTIVE_PROGRAM                 0x8259
  #define GL_PROGRAM_PIPELINE_BINDING       0x825A
@@ -3035,7 +3026,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_UNPACK_COMPRESSED_BLOCK_WIDTH  0x9127
  #define GL_UNPACK_COMPRESSED_BLOCK_HEIGHT 0x9128
  #define GL_UNPACK_COMPRESSED_BLOCK_DEPTH  0x9129
-@@ -2276,20 +2049,8 @@ extern "C" {
+@@ -2276,20 +2042,8 @@ extern "C" {
  #define GL_PACK_COMPRESSED_BLOCK_HEIGHT   0x912C
  #define GL_PACK_COMPRESSED_BLOCK_DEPTH    0x912D
  #define GL_PACK_COMPRESSED_BLOCK_SIZE     0x912E
@@ -3056,7 +3047,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_ATOMIC_COUNTER_BUFFER          0x92C0
  #define GL_ATOMIC_COUNTER_BUFFER_BINDING  0x92C1
  #define GL_ATOMIC_COUNTER_BUFFER_START    0x92C2
-@@ -2319,9 +2080,6 @@ extern "C" {
+@@ -2319,9 +2073,6 @@ extern "C" {
  #define GL_ACTIVE_ATOMIC_COUNTER_BUFFERS  0x92D9
  #define GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX 0x92DA
  #define GL_UNSIGNED_INT_ATOMIC_COUNTER    0x92DB
@@ -3066,7 +3057,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT 0x00000001
  #define GL_ELEMENT_ARRAY_BARRIER_BIT      0x00000002
  #define GL_UNIFORM_BARRIER_BIT            0x00000004
-@@ -2386,1494 +2144,3084 @@ extern "C" {
+@@ -2386,1494 +2137,3084 @@ extern "C" {
  #define GL_MAX_GEOMETRY_IMAGE_UNIFORMS    0x90CD
  #define GL_MAX_FRAGMENT_IMAGE_UNIFORMS    0x90CE
  #define GL_MAX_COMBINED_IMAGE_UNIFORMS    0x90CF
@@ -7406,7 +7397,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_BUMP_ROT_MATRIX_ATI            0x8775
  #define GL_BUMP_ROT_MATRIX_SIZE_ATI       0x8776
  #define GL_BUMP_NUM_TEX_UNITS_ATI         0x8777
-@@ -3882,9 +5230,20 @@ extern "C" {
+@@ -3882,9 +5223,20 @@ extern "C" {
  #define GL_DU8DV8_ATI                     0x877A
  #define GL_BUMP_ENVMAP_ATI                0x877B
  #define GL_BUMP_TARGET_ATI                0x877C
@@ -7427,7 +7418,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_FRAGMENT_SHADER_ATI            0x8920
  #define GL_REG_0_ATI                      0x8921
  #define GL_REG_1_ATI                      0x8922
-@@ -3989,9 +5348,63 @@ extern "C" {
+@@ -3989,9 +5341,63 @@ extern "C" {
  #define GL_COMP_BIT_ATI                   0x00000002
  #define GL_NEGATE_BIT_ATI                 0x00000004
  #define GL_BIAS_BIT_ATI                   0x00000008
@@ -7491,7 +7482,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_PN_TRIANGLES_ATI               0x87F0
  #define GL_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI 0x87F1
  #define GL_PN_TRIANGLES_POINT_MODE_ATI    0x87F2
-@@ -4001,9 +5414,64 @@ extern "C" {
+@@ -4001,9 +5407,64 @@ extern "C" {
  #define GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI 0x87F6
  #define GL_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI 0x87F7
  #define GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI 0x87F8
@@ -7556,7 +7547,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_STATIC_ATI                     0x8760
  #define GL_DYNAMIC_ATI                    0x8761
  #define GL_PRESERVE_ATI                   0x8762
-@@ -4012,122 +5480,48 @@ extern "C" {
+@@ -4012,122 +5473,48 @@ extern "C" {
  #define GL_OBJECT_BUFFER_USAGE_ATI        0x8765
  #define GL_ARRAY_OBJECT_BUFFER_ATI        0x8766
  #define GL_ARRAY_OBJECT_OFFSET_ATI        0x8767
@@ -7716,7 +7707,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_MAX_VERTEX_STREAMS_ATI         0x876B
  #define GL_VERTEX_STREAM0_ATI             0x876C
  #define GL_VERTEX_STREAM1_ATI             0x876D
-@@ -4138,291 +5532,1014 @@ extern "C" {
+@@ -4138,291 +5525,1014 @@ extern "C" {
  #define GL_VERTEX_STREAM6_ATI             0x8772
  #define GL_VERTEX_STREAM7_ATI             0x8773
  #define GL_VERTEX_SOURCE_ATI              0x8774
@@ -8960,7 +8951,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_INVALID_FRAMEBUFFER_OPERATION_EXT 0x0506
  #define GL_MAX_RENDERBUFFER_SIZE_EXT      0x84E8
  #define GL_FRAMEBUFFER_BINDING_EXT        0x8CA6
-@@ -4474,134 +6591,91 @@ extern "C" {
+@@ -4474,134 +6584,91 @@ extern "C" {
  #define GL_RENDERBUFFER_ALPHA_SIZE_EXT    0x8D53
  #define GL_RENDERBUFFER_DEPTH_SIZE_EXT    0x8D54
  #define GL_RENDERBUFFER_STENCIL_SIZE_EXT  0x8D55
@@ -9162,7 +9153,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_SAMPLER_1D_ARRAY_EXT           0x8DC0
  #define GL_SAMPLER_2D_ARRAY_EXT           0x8DC1
  #define GL_SAMPLER_BUFFER_EXT             0x8DC2
-@@ -4627,481 +6701,369 @@ extern "C" {
+@@ -4627,481 +6694,369 @@ extern "C" {
  #define GL_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT 0x8DD6
  #define GL_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT 0x8DD7
  #define GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT 0x8DD8
@@ -9961,7 +9952,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #define GL_MAX_IMAGE_UNITS_EXT            0x8F38
  #define GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS_EXT 0x8F39
  #define GL_IMAGE_BINDING_NAME_EXT         0x8F3A
-@@ -5157,2765 +7119,327 @@ extern "C" {
+@@ -5157,2765 +7112,327 @@ extern "C" {
  #define GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT 0x00000800
  #define GL_ATOMIC_COUNTER_BARRIER_BIT_EXT 0x00001000
  #define GL_ALL_BARRIER_BITS_EXT           0xFFFFFFFF
@@ -13006,7 +12997,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #ifdef GL_GLEXT_PROTOTYPES
  GLAPI GLboolean APIENTRY glAreTexturesResidentEXT (GLsizei n, const GLuint *textures, GLboolean *residences);
  GLAPI void APIENTRY glBindTextureEXT (GLenum target, GLuint texture);
-@@ -7923,259 +7447,507 @@ GLAPI void APIENTRY glDeleteTexturesEXT (GLsizei n, co
+@@ -7923,259 +7440,507 @@ GLAPI void APIENTRY glDeleteTexturesEXT (GLsizei n, co
  GLAPI void APIENTRY glGenTexturesEXT (GLsizei n, GLuint *textures);
  GLAPI GLboolean APIENTRY glIsTextureEXT (GLuint texture);
  GLAPI void APIENTRY glPrioritizeTexturesEXT (GLsizei n, const GLuint *textures, const GLclampf *priorities);
@@ -13724,7 +13715,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #ifdef GL_GLEXT_PROTOTYPES
  GLAPI void APIENTRY glImageTransformParameteriHP (GLenum target, GLenum pname, GLint param);
  GLAPI void APIENTRY glImageTransformParameterfHP (GLenum target, GLenum pname, GLfloat param);
-@@ -8183,717 +7955,204 @@ GLAPI void APIENTRY glImageTransformParameterivHP (GLe
+@@ -8183,717 +7948,204 @@ GLAPI void APIENTRY glImageTransformParameterivHP (GLe
  GLAPI void APIENTRY glImageTransformParameterfvHP (GLenum target, GLenum pname, const GLfloat *params);
  GLAPI void APIENTRY glGetImageTransformParameterivHP (GLenum target, GLenum pname, GLint *params);
  GLAPI void APIENTRY glGetImageTransformParameterfvHP (GLenum target, GLenum pname, GLfloat *params);
@@ -14594,7 +14585,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #ifdef GL_GLEXT_PROTOTYPES
  GLAPI void APIENTRY glWindowPos2dMESA (GLdouble x, GLdouble y);
  GLAPI void APIENTRY glWindowPos2dvMESA (const GLdouble *v);
-@@ -8919,871 +8178,613 @@ GLAPI void APIENTRY glWindowPos4iMESA (GLint x, GLint 
+@@ -8919,871 +8171,613 @@ GLAPI void APIENTRY glWindowPos4iMESA (GLint x, GLint 
  GLAPI void APIENTRY glWindowPos4ivMESA (const GLint *v);
  GLAPI void APIENTRY glWindowPos4sMESA (GLshort x, GLshort y, GLshort z, GLshort w);
  GLAPI void APIENTRY glWindowPos4svMESA (const GLshort *v);
@@ -15998,7 +15989,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #ifdef GL_GLEXT_PROTOTYPES
  GLAPI void APIENTRY glVertex2hNV (GLhalfNV x, GLhalfNV y);
  GLAPI void APIENTRY glVertex2hvNV (const GLhalfNV *v);
-@@ -9831,343 +8832,1193 @@ GLAPI void APIENTRY glVertexAttribs1hvNV (GLuint index
+@@ -9831,343 +8825,1193 @@ GLAPI void APIENTRY glVertexAttribs1hvNV (GLuint index
  GLAPI void APIENTRY glVertexAttribs2hvNV (GLuint index, GLsizei n, const GLhalfNV *v);
  GLAPI void APIENTRY glVertexAttribs3hvNV (GLuint index, GLsizei n, const GLhalfNV *v);
  GLAPI void APIENTRY glVertexAttribs4hvNV (GLuint index, GLsizei n, const GLhalfNV *v);
@@ -17460,7 +17451,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_glext_h,v 1.1 2014/07/12 21:00:41 p
  #ifdef GL_GLEXT_PROTOTYPES
  GLAPI void APIENTRY glVertexAttribI1iEXT (GLuint index, GLint x);
  GLAPI void APIENTRY glVertexAttribI2iEXT (GLuint index, GLint x, GLint y);
-@@ -10189,1297 +10040,1010 @@ GLAPI void APIENTRY glVertexAttribI4bvEXT (GLuint inde
+@@ -10189,1297 +10033,1010 @@ GLAPI void APIENTRY glVertexAttribI4bvEXT (GLuint inde
  GLAPI void APIENTRY glVertexAttribI4svEXT (GLuint index, const GLshort *v);
  GLAPI void APIENTRY glVertexAttribI4ubvEXT (GLuint index, const GLubyte *v);
  GLAPI void APIENTRY glVertexAttribI4usvEXT (GLuint index, const GLushort *v);
