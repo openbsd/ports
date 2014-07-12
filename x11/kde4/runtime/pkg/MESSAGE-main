@@ -1,6 +1,7 @@
-KDE apps actively use shared memory. So you'll need to tweak shared
-memory-related values like that:
+KDE apps actively use shared memory and open many file descriptors.
+So you'll need to tweak sysctl values like that:
 
   sysctl kern.shminfo.shmall=51200 kern.shminfo.shmmni=1024
+  sysctl kern.maxfiles=20000
 
 Remember to save those values in /etc/sysctl.conf after successful testing.
