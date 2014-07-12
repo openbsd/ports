@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/07 10:34:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/12 23:32:55 sthen Exp $
+
+BROKEN=	requires TLS PSK ciphersuites, not supported by libressl
 
 COMMENT-main=	server to accept passive check results for Nagios/Icinga
 COMMENT-client=	client to send passive check results to Nagios/Icinga
