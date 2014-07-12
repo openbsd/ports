@@ -1,34 +1,32 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.16 2013/03/28 20:24:53 sthen Exp $
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.17 2014/07/12 01:32:13 sthen Exp $
 
 - more useful defaults
 - create /var/run/asterisk with sane ownership/perms
 
---- contrib/scripts/safe_asterisk.orig	Tue Jan 22 18:57:06 2013
-+++ contrib/scripts/safe_asterisk	Tue Jan 22 22:36:09 2013
-@@ -6,22 +6,23 @@ ASTVARRUNDIR=__ASTERISK_VARRUN_DIR__
- ASTVARLOGDIR=__ASTERISK_LOG_DIR__
+--- contrib/scripts/safe_asterisk.orig	Mon Jun  9 12:57:09 2014
++++ contrib/scripts/safe_asterisk	Fri Jul 11 23:38:20 2014
+@@ -5,21 +5,22 @@ ASTVARRUNDIR="__ASTERISK_VARRUN_DIR__"
+ ASTVARLOGDIR="__ASTERISK_LOG_DIR__"
  
- CLIARGS="$*"					# Grab any args passed to safe_asterisk
--TTY=9						# TTY (if you want one) for Asterisk to run on
--CONSOLE=yes					# Whether or not you want a console
-+TTY=						# TTY (if you want one) for Asterisk to run on
-+CONSOLE=no					# Whether or not you want a console
- #NOTIFY=root@localhost.localdomain		# Who to notify about crashes
--NOTIFY=${NOTIFY:-}				# Who to notify about crashes
-+NOTIFY=${NOTIFY:-root}			# Who to notify about crashes
- #EXEC=/path/to/somescript			# Run this command if Asterisk crashes
- #LOGFILE=${ASTVARLOGDIR}/safe_asterisk.log	# Where to place the normal logfile (disabled if blank)
--SYSLOG=${SYSLOG:-}				# Which syslog facility to use (disabled if blank)
-+SYSLOG=${SYSLOG:-daemon}		# Which syslog facility to use (disabled if blank)
- MACHINE=`hostname`				# To specify which machine has crashed when getting the mail
- DUMPDROP=${DUMPDROP:-/tmp}
- RUNDIR=${RUNDIR:-/tmp}
+ CLIARGS="$*"			# Grab any args passed to safe_asterisk
+-TTY=9				# TTY (if you want one) for Asterisk to run on
+-CONSOLE=yes			# Whether or not you want a console
+-#NOTIFY=root@localhost		# Who to notify about crashes
++TTY=				# TTY (if you want one) for Asterisk to run on
++CONSOLE=no			# Whether or not you want a console
++NOTIFY=root			# Who to notify about crashes
+ #EXEC=/path/to/somescript	# Run this command if Asterisk crashes
+ #LOGFILE="${ASTVARLOGDIR}/safe_asterisk.log"	# Where to place the normal logfile (disabled if blank)
+-#SYSLOG=local0			# Which syslog facility to use (disabled if blank)
++SYSLOG=daemon			# Which syslog facility to use (disabled if blank)
+ MACHINE=`hostname`		# To specify which machine has crashed when getting the mail
+ DUMPDROP="${DUMPDROP:-/tmp}"
+ RUNDIR="${RUNDIR:-/tmp}"
  SLEEPSECS=4
- ASTPIDFILE=${ASTVARRUNDIR}/asterisk.pid
+ ASTPIDFILE="${ASTVARRUNDIR}/asterisk.pid"
 +VARRUNOWNER="_asterisk:wheel"  # chown __ASTERISK_VARRUN_DIR__ if it's created.
  
--# comment this line out to have this script _not_ kill all mpg123 processes when
-+# uncomment this line to have this script kill all mpg123 processes when
+ # comment this line out to have this script _not_ kill all mpg123 processes when
  # asterisk exits
 -KILLALLMPG123=1
 +# KILLALLMPG123=1
@@ -54,7 +52,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.16 2013/03/28 20:24:53 sthen E
 +
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
- VERSION=`${ASTSBINDIR}/asterisk -nrx 'core show version' 2>/dev/null`
+ VERSION=`"${ASTSBINDIR}/asterisk" -nrx 'core show version' 2>/dev/null`
 @@ -75,7 +89,7 @@ else
  			fi
  		fi
@@ -75,5 +73,5 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.16 2013/03/28 20:24:53 sthen E
 +		ulimit -n $MAXFILES
 +	fi
  
- 	if test ! -d ${ASTVARRUNDIR} ; then
- 		mkdir -p ${ASTVARRUNDIR}
+ 	if test ! -d "${ASTVARRUNDIR}"; then
+ 		mkdir -p "${ASTVARRUNDIR}"
