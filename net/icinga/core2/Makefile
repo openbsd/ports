@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/10 15:01:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/07/12 11:22:10 sthen Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -62,7 +62,7 @@ RUN_DEPENDS =           ${BASE_PKGPATH},-main
 MULTI_PACKAGES =	-main -mysql -pgsql
 
 WANTLIB-main +=		${WANTLIB} c
-RUN_DEPENDS-main =	net/nagios/plugins
+RUN_DEPENDS-main =	net/monitoring-plugins
 
 WANTLIB-mysql +=	${WANTLIB} mysqlclient_r
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} databases/mysql

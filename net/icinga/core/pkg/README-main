@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.22 2014/07/10 12:58:31 ajacoutot Exp $
+$OpenBSD: README-main,v 1.23 2014/07/12 11:22:10 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,10 +21,8 @@ You may check your configuration file format before starting Icinga:
 This will parse all configuration files and warn about any problems
 which have been identified.
 
-To enable automatic startup on boot for icinga, add it to pkg_scripts
-in /etc/rc.conf.local, for example:
-
-   pkg_scripts="${pkg_scripts} icinga"
+To enable automatic startup on boot for icinga, add it to the pkg_scripts
+line in /etc/rc.conf.local.
 
 To start icinga, reboot or start it manually:
 
@@ -138,10 +136,8 @@ icinga-cgi" or "pkg_add icinga-web").
    2.1) Setup the icinga database. For details see:
    ${TRUEPREFIX}/share/examples/icinga/db/README
 
-   2.2) Enable the ido2db daemon. Add it to the pkg_scripts line
-   in /etc/rc.conf.local before icinga, for example:
-
-      pkg_scripts="${pkg_scripts} ido2db icinga"
+   2.2) Enable the ido2db daemon. Add "ido2db" to the pkg_scripts line
+   in /etc/rc.conf.local _before_ icinga.
 
    Afterwards, you can start it by rebooting, or manually:
 
@@ -197,11 +193,10 @@ Moving from Nagios
 ==================
 
 The configuration format is compatible with Nagios.  If you'd like
-to move across with minimal changes, you can point Icinga at your
-existing configuration files:
+to move across with minimal changes, you can point Icinga at your existing
+configuration files by adding the following to /etc/rc.conf.local:
 
-	echo 'icinga_flags="-d ${BASESYSCONFDIR}/nagios/nagios.cfg"' >> /etc/rc.conf.local
-	echo 'pkg_scripts="${pkg_scripts} icinga' >> /etc/rc.conf.local
+	icinga_flags="-d ${BASESYSCONFDIR}/nagios/nagios.cfg"
 
 You will need to merge the settings between Nagios' and Icinga's cgi.cfg
 files. sdiff(1), as used by sysmerge(8), can help with this. main_config_file
