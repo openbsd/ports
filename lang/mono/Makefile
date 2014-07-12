@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2014/07/09 11:39:16 robert Exp $
+# $OpenBSD: Makefile,v 1.82 2014/07/12 16:24:20 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -50,6 +50,11 @@ CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_header_execinfo_h=no
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ENV+=	CFLAGS="-march=i586"
+.endif
+
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gc=included \
 		--with-sgen=no \

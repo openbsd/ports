@@ -1,0 +1,8 @@
+$OpenBSD: patch-mcs_tools_xbuild_targets_Microsoft_Portable_Common_targets,v 1.1 2014/07/12 16:24:20 robert Exp $
+--- mcs/tools/xbuild/targets/Microsoft.Portable.Common.targets.orig	Sat Jul 12 18:09:42 2014
++++ mcs/tools/xbuild/targets/Microsoft.Portable.Common.targets	Sat Jul 12 18:09:44 2014
+@@ -0,0 +1,4 @@
++<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++	<Import Project="..\Microsoft.Portable.Core.props" />
++	<Import Project="..\Microsoft.Portable.Core.targets" />
++</Project>
