@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/07/22 19:57:20 sthen Exp $
+$OpenBSD: README,v 1.4 2014/07/12 11:25:00 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -56,9 +56,7 @@ To activate this package, you must do the following for sendmail:
         echo -n ' sm-mta-queue'; /usr/sbin/sendmail -q30s -L sm-mta-queue
   fi
 
-4. Add the following to /etc/rc.conf.local:
-
-  pkg_scripts="${pkg_scripts} mailscanner"
+4. Add "mailscanner" to your pkg_scripts line in /etc/rc.conf.local.
 
 5. Add the following to root's crontab:
 

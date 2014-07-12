@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/02/06 17:27:13 sthen Exp $
+$OpenBSD: README,v 1.2 2014/07/12 11:25:00 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,10 +17,8 @@ wpa_supplicant, so ap_scan=0 should be set in ${SYSCONFDIR}/wpa_supplicant.conf.
 
 Starting wpa_supplicant at boot time
 ====================================
-An rc.d(8) script is provided to start wpa_supplicant, so you can add the
-usual line to /etc/rc.conf.local:
-
-pkg_scripts="${pkg_scripts} wpa_supplicant"
+An rc.d(8) script is provided, so you can add "wpa_supplicant" to the
+pkg_scripts line in /etc/rc.conf.local.
 
 The interface name must be given on the command line - this is preset to
 "athn0" in the rc.d script. To use an alternative interface, do _not_

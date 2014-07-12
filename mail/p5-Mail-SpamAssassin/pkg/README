@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/07/12 11:25:00 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,10 +12,8 @@ Configuration
 You can use spamassassin in many ways. Larger installations might use
 it in combination with smtp-vilter, MailScanner or amavisd-new (all are
 available in packages). A common method for a simple setup is to use
-the spamc/spamd combination with procmail. To configure this, start
-spamassassin from pkg_scripts as usual in /etc/rc.conf.local:
-
-pkg_scripts="${pkg_scripts} spamassassin"
+the spamc/spamd combination with procmail. To configure this, add
+"spamassassin" to your "pkg_scripts" line in /etc/rc.conf.local.
 
 (Use "${RCDIR}/spamassassin start" to start the daemon right away).
 

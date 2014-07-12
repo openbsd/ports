@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/05/01 21:09:23 sthen Exp $
+$OpenBSD: README,v 1.2 2014/07/12 11:25:00 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,9 +31,8 @@ Bootstrap the server, using its own IP address:
 
     # cf-agent --bootstrap --policy-server <own IP>
 
-To start the services at boot, add the following to /etc/rc.conf.local:
-
-    pkg_scripts="${pkg_scripts} cf_serverd cfengine"
+To start the services at boot, add "cf_serverd cfengine" to the pkg_scripts
+line in /etc/rc.conf.local.
 
 Configuring client machines
 ===========================
@@ -49,9 +48,8 @@ Bootstrap the client:
     # cf-agent --bootstrap --policy-server <hub IP>
 
 For normal operation, cf-execd(8) and cf-monitord(8) should be running -
-to configure this at boot, add the following line to /etc/rc.conf.local:
-
-    pkg_scripts="${pkg_scripts} cfengine"
+to configure this at boot, add "cfengine" to the pkg_scripts line in
+/etc/rc.conf.local.
 
 Resource limits
 ===============

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2013/11/07 07:08:59 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2014/07/12 11:25:00 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -24,9 +24,7 @@ Post-installation
 =================
 
 To arrange for the standalone Jenkins server to run automatically
-on reboot, add "jenkins" to "pkg_scripts" in /etc/rc.conf.local, e.g.:
-
-pkg_scripts="${pkg_scripts} jenkins"
+on reboot, add "jenkins" to your pkg_scripts" line in /etc/rc.conf.local.
 
 NOTE: This script runs Jenkins on port 8000, not 8080, since most
 Java application servers run on port 8080. By default we disable
