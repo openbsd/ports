@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2014/07/13 08:17:14 giovanni Exp $
 
 COMMENT=	perl module for an IMAP Client API
 
-DISTNAME=	Mail-IMAPClient-3.32
+DISTNAME=	Mail-IMAPClient-3.35
 CATEGORIES=	mail
 
 # Perl
