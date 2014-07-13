@@ -1,0 +1,14 @@
+$OpenBSD: patch-examples_font_c,v 1.1 2014/07/13 15:10:33 espie Exp $
+--- examples/font.c.orig	Sun Jul 13 17:02:02 2014
++++ examples/font.c	Sun Jul 13 17:02:56 2014
+@@ -15,6 +15,10 @@
+ #if !defined(__KERNEL__)
+ #   if defined(HAVE_ENDIAN_H)
+ #      include <endian.h>
++#        if !defined(__BYTE_ORDER)
++#          define __BYTE_ORDER BYTE_ORDER
++#          define __BIG_ENDIAN BIG_ENDIAN
++#        endif
+ #   endif
+ 
+ #   include <stdio.h>

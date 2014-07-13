@@ -1,0 +1,14 @@
+$OpenBSD: patch-caca_dither_c,v 1.1 2014/07/13 15:10:33 espie Exp $
+--- caca/dither.c.orig	Sun Jul 13 16:35:01 2014
++++ caca/dither.c	Sun Jul 13 16:36:06 2014
+@@ -19,6 +19,10 @@
+ #if !defined(__KERNEL__)
+ #   if defined(HAVE_ENDIAN_H)
+ #       include <endian.h>
++#     if !defined(__BYTE_ORDER)
++#       define __BYTE_ORDER BYTE_ORDER
++#       define __BIG_ENDIAN BIG_ENDIAN
++#     endif
+ #   endif
+ #   include <stdio.h>
+ #   include <stdlib.h>
