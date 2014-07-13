@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/07/01 05:12:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/07/13 08:01:46 giovanni Exp $
 @bin bin/pcmanfm
+include/pcmanfm-modules.h
 @man man/man1/pcmanfm.1
 share/applications/pcmanfm-desktop-pref.desktop
 share/applications/pcmanfm.desktop
@@ -15,6 +16,7 @@ share/pcmanfm/
 share/pcmanfm/ui/
 share/pcmanfm/ui/about.ui
 share/pcmanfm/ui/autorun.ui
+share/pcmanfm/ui/connect.ui
 share/pcmanfm/ui/desktop-pref.ui
 share/pcmanfm/ui/pref.ui
 @exec %D/bin/update-desktop-database

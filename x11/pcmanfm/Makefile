@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2013/07/01 05:12:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/07/13 08:01:46 giovanni Exp $
 
 COMMENT=	fast and lightweight file manager
 
-DISTNAME=	pcmanfm-1.1.0
+DISTNAME=	pcmanfm-1.2.0
+EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	x11
 
@@ -26,7 +27,8 @@ RUN_DEPENDS=	devel/desktop-file-utils
 MODULES=	devel/gettext \
 		textproc/intltool
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
+MAKE_FLAGS=	XGETTEXT=${LOCALBASE}/bin/xgettext
 
 FAKE_FLAGS=     sysconfdir=${PREFIX}/share/examples/pcmanfm
 
