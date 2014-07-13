@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/12 22:01:20 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/13 15:47:08 pascal Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
@@ -46,6 +46,6 @@ WRKDIST =		${WRKDIR}/SuperTuxKart-${V}
 NO_TEST =		Yes
 
 post-extract:
-	perl -pi -e 's/\$$Date: 2014/07/12 22:01:20 ${WRKSRC}/lib/irrlicht/source/Irrlicht/glext.h
+	perl -pi -e 's/Date: //' ${WRKSRC}/lib/irrlicht/source/Irrlicht/glext.h
 
 .include <bsd.port.mk>
