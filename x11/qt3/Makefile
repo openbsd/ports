@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2013/11/25 14:16:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2014/07/13 09:03:15 armani Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -40,7 +40,7 @@ QT_PLUGINS=		plugins-${LIBqt-mt_VERSION:R}
 VERSION=	3.8
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+MASTER_SITES=	http://download.qt-project.org/archive/qt/3/
 
 # Old official site
 #MASTER_SITES0=	http://freedesktop.org/~daisuke/
