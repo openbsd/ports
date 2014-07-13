@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_dcc_transfersend_cpp,v 1.1.1.1 2014/07/13 09:24:16 zhuk Exp $
+This is what's really supposed to be here.
+NB: Check other network writes.
+REVIEW: https://git.reviewboard.kde.org/r/119256/
+--- src/dcc/transfersend.cpp.orig	Mon Jan 20 03:00:38 2014
++++ src/dcc/transfersend.cpp	Mon Jan 20 03:02:48 2014
+@@ -503,7 +503,7 @@ namespace Konversation
+             while (m_sendSocket->bytesAvailable() >= 4)
+             {
+                 m_sendSocket->read((char*)&pos, 4);
+-                pos = intel(pos);
++                pos = ntohl(pos);
+ 
+                 //kDebug() << pos  << "/" << m_fileSize;
+                 if (pos == m_fileSize)

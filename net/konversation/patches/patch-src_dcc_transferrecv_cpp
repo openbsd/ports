@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_dcc_transferrecv_cpp,v 1.1.1.1 2014/07/13 09:24:16 zhuk Exp $
+This is what's really supposed to be here.
+NB: Check other network reads.
+REVIEW: https://git.reviewboard.kde.org/r/119256/
+--- src/dcc/transferrecv.cpp.orig	Mon Jan 20 03:00:43 2014
++++ src/dcc/transferrecv.cpp	Mon Jan 20 03:02:51 2014
+@@ -768,7 +768,7 @@ namespace Konversation
+             //except for old mIRC versions, but they couldn't send or receive files over 4GB anyway.
+             //Note: The resume and filesize are set via dcc send command and can be over 4GB
+ 
+-            quint32 pos = intel((quint32)m_transferringPosition);
++            quint32 pos = htonl((quint32)m_transferringPosition);
+ 
+             m_recvSocket->write((char*)&pos, 4);
+             if (m_transferringPosition == (KIO::fileoffset_t)m_fileSize)
