@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/05/07 02:23:54 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/13 05:29:25 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-export
 @lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
@@ -109,13 +109,16 @@ share/icons/hicolor/128x128/apps/birdfont.png
 share/icons/hicolor/48x48/apps/birdfont.png
 share/locale/de/LC_MESSAGES/birdfont.mo
 share/locale/el/LC_MESSAGES/birdfont.mo
+share/locale/es/LC_MESSAGES/birdfont.mo
 share/locale/fa/LC_MESSAGES/birdfont.mo
 share/locale/fr/LC_MESSAGES/birdfont.mo
 share/locale/he/LC_MESSAGES/birdfont.mo
 share/locale/it/LC_MESSAGES/birdfont.mo
 share/locale/ja/LC_MESSAGES/birdfont.mo
+share/locale/nb/LC_MESSAGES/birdfont.mo
 share/locale/nl/LC_MESSAGES/birdfont.mo
 share/locale/oc/LC_MESSAGES/birdfont.mo
+share/locale/pl/LC_MESSAGES/birdfont.mo
 share/locale/pt/LC_MESSAGES/birdfont.mo
 share/locale/pt_BR/LC_MESSAGES/birdfont.mo
 share/locale/ru/LC_MESSAGES/birdfont.mo
@@ -123,6 +126,7 @@ share/locale/sk/LC_MESSAGES/birdfont.mo
 share/locale/sr/LC_MESSAGES/birdfont.mo
 share/locale/sv/LC_MESSAGES/birdfont.mo
 share/locale/tr/LC_MESSAGES/birdfont.mo
+share/locale/uk/LC_MESSAGES/birdfont.mo
 share/locale/zh_CN/LC_MESSAGES/birdfont.mo
 share/mime/packages/birdfont.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
