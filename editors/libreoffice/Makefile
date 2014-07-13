@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2014/06/20 10:49:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2014/07/13 08:28:24 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -341,8 +341,7 @@ NCPU=		1
 CONFIGURE_ARGS+=--with-parallelism=${NCPU}
 
 .if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS+=--enable-debug \
-		--enable-symbols
+CONFIGURE_ARGS+=--enable-debug
 .endif
 
 MAKE_ENV+=	PYTHON="${MODPY_BIN}" verbose=f
