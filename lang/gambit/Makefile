@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/10 22:16:19 juanfra Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/13 08:59:41 armani Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,13 @@ COMMENT=	complete, efficient and reliable implementation of Scheme
 BROKEN-hppa =	cc: Internal error: Illegal instruction
 
 V=		4.7.2
-REVISION=	0
+REVISION=	1
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 
 CATEGORIES=	lang
 
-HOMEPAGE=	gambitscheme.org/
+HOMEPAGE=	http://gambitscheme.org/
 
 # LGPLv2.1 / Apachev2.0
 PERMIT_PACKAGE_CDROM=	Yes
