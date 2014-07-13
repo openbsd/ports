@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/13 08:58:35 pascal Exp $
+${P5SITE}/Language/
+${P5SITE}/Language/Ook.pm
+@man man/man3p/Language::Ook.3p
