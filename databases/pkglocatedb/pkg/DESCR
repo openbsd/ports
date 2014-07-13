@@ -2,3 +2,8 @@ Database of files from all packages in the ports tree, including names
 of the packages containing them. This is in a format suitable for use with
 locate(1), for instance through the convenience script 
 ${PREFIX}/bin/pkg_locate
+
+The files from src and X are now in
+/usr/lib/locate/src.db
+and
+${X11BASE}/lib/locate/xorg.db

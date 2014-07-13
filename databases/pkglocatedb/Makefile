@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/07/12 16:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2014/07/13 16:52:37 espie Exp $
 
 # NOTE for FLAVOR=src
 # - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
@@ -16,31 +16,16 @@ COMMENT =		database of packages for use with locate(1)
 
 # locate data is NOT MI, unfortunately
 # PKG_ARCH = ${ARCH}....
-DISTNAME =		pkglocatedb-1.0
+DISTNAME =		pkglocatedb-1.1
 DISTFILES =
 
 CATEGORIES =		databases
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-USE_X11 = Yes
 BUILD_DEPENDS =	databases/sqlports,-list
 
-ARGS = -u -a -p ${PORTSDIR}
-
-SRCDB = /usr/lib/locate/src.db
-XDB = ${X11BASE}/lib/locate/xorg.db
-
-post-extract:
-	@status=0; if !  test -f ${SRCDB}; then \
-		echo "Error ${SRCDB} missing"; \
-		status=1; \
-	fi; \
-	if !  test -f ${XDB}; then \
-		echo "Error ${XDB} missing"; \
-		status=1;\
-	fi; \
-	exit $${status}
+ARGS = -a -p ${PORTSDIR}
 
 do-build: 
 	@if test -s ${WRKBUILD}/ouch; then \
@@ -63,6 +48,5 @@ NO_TEST =		Yes
 do-build: ${WRKBUILD}/pkglocatedb
 
 ${WRKBUILD}/pkglocatedb:
-	unset REPORT_PROBLEM; 
-	locate -d ${SRCDB} -d ${XDB} : | \
+	unset REPORT_PROBLEM; \
 	SUBDIRLIST=${LOCALBASE}/share/sqlports.list REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
