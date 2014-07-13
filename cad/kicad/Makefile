@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/12/12 20:21:45 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/13 13:03:20 armani Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -10,11 +10,12 @@ PKGNAME=	kicad-${V:S/-//g}
 PKGNAME-main=	kicad-${V:S/-//g}
 PKGNAME-docs=	kicad-docs-${V:S/-//g}
 
-REVISION-main=	2
+REVISION-main=	3
+REVISION-doc=	0
 
 CATEGORIES=	cad
 
-HOMEPAGE=	http://kicad.sourceforge.net/
+HOMEPAGE=	http://www.kicad-pcb.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
