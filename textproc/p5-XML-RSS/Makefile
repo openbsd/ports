@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2014/07/13 08:56:56 giovanni Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
-DISTNAME=	XML-RSS-1.49
+DISTNAME=	XML-RSS-1.55
 CATEGORIES=	textproc
 
 # perl
@@ -20,9 +20,10 @@ RUN_DEPENDS=	devel/p5-DateTime \
 		textproc/p5-XML-Parser>=2.23  \
 		www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=devel/p5-Test-Differences \
+TEST_DEPENDS=	devel/p5-Test-Differences \
 		devel/p5-Test-Manifest>=0.9 \
-		devel/p5-Test-Pod-Coverage
+		devel/p5-Test-Pod-Coverage \
+		devel/p5-Test-TrailingSpace
 
 MODCPAN_EXAMPLES=	Yes
 
