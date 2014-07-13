@@ -1,24 +1,14 @@
-$OpenBSD: patch-src_combined_ffmpeg_xine_audio_list,v 1.2 2014/07/12 21:55:35 brad Exp $
+$OpenBSD: patch-src_combined_ffmpeg_xine_audio_list,v 1.3 2014/07/13 17:02:59 brad Exp $
 
-Enable Opus, AC3 and DTS decoder.
+Enable Opus decoder.
 
 --- src/combined/ffmpeg/xine_audio.list.orig	Wed Feb 26 10:49:10 2014
-+++ src/combined/ffmpeg/xine_audio.list	Fri Jun  6 19:54:13 2014
-@@ -41,14 +41,16 @@ FLVADPCM		ADPCM_SWF		Flash ADPCM
- WAVPACK			WAVPACK			WavPack
- AMR_NB			AMR_NB			AMR narrow band
- AMR_WB			AMR_WB			AMR wide band
-+A52			AC3			AC-3
- EAC3			EAC3			E-AC-3
- AAC			AAC			MPEG4
++++ src/combined/ffmpeg/xine_audio.list	Sat Jul 12 20:15:14 2014
+@@ -46,6 +46,7 @@ AAC			AAC			MPEG4
  AAC_LATM		AAC_LATM		AAC LATM
  ADPCM_G726		ADPCM_G726		ADPCM G726
  QCLP			QCELP			QualComm Purevoice
 +OPUS			OPUS			Opus Audio
-+DTS			DTS			DTS
  
  # disabled codecs (ref. configure.ac)
--!			AC3
- !			ADPCM_ADX
- !			ADPCM_G726
- !			DSICINAUDIO
+ !			AC3

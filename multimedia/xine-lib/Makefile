@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2014/07/12 21:55:35 brad Exp $
+# $OpenBSD: Makefile,v 1.115 2014/07/13 17:02:59 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS=	xine	31.0
 
@@ -21,18 +21,22 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW avcodec \
-		avformat avutil bluray c cdio dvdnav dvdread expat fontconfig \
-		freetype iso9660 jpeg m mad modplug mpcdec mng ogg postproc \
-		pthread pthread-stubs sndio speex theora usbhid vcdinfo vorbis \
-		vpx>=5 wavpack xcb-shape xcb-shm xcb-xv xcb xdg-basedir xml2 z
+WANTLIB=	FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW a52 avcodec \
+		avformat avutil bluray c cdio dca dvdnav dvdread expat faad \
+		fontconfig freetype iso9660 jpeg m mad modplug mpcdec mng ogg \
+		postproc pthread pthread-stubs sndio speex theora usbhid vcdinfo \
+		vorbis vpx>=5 wavpack xcb-shape xcb-shm xcb-xv xcb xdg-basedir \
+		xml2 z
 
 XINEAPI_REV=	2.4
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	audio/flac \
+LIB_DEPENDS=	audio/faad \
+		audio/flac \
+		audio/liba52 \
 		audio/libcdio \
+		audio/libdca \
 		audio/libmad \
 		audio/libmodplug \
 		audio/libogg \
@@ -62,10 +66,7 @@ USE_LIBTOOL=	gnu
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-CONFIGURE_ARGS+=--disable-a52dec \
-		--disable-aalib \
-		--disable-dts \
-		--disable-faad \
+CONFIGURE_ARGS+=--disable-aalib \
 		--disable-gdkpixbuf \
 		--disable-gnomevfs \
 		--disable-optimizations \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/07/12 21:55:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/07/13 17:02:59 brad Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -70,8 +70,11 @@ lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_visualizations.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_file.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_none.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_sndio.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_a52.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_bitplane.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_dts.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_dvaudio.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_faad.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_ff.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_gsm610.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_libjpeg.so
