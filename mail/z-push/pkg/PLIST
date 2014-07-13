@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/11/01 14:02:50 robert Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/07/13 08:39:41 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -180,6 +180,7 @@ z-push/lib/wbxml/wbxmlencoder.php
 z-push/lib/webservice/
 z-push/lib/webservice/webservice.php
 z-push/lib/webservice/webservicedevice.php
+z-push/lib/webservice/webserviceusers.php
 z-push/tools/
 z-push/tools/migrate-2.0.x-2.1.0.php
 z-push/version.php

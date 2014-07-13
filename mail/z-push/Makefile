@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2014/05/30 13:20:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2014/07/13 08:39:41 robert Exp $
 
 COMMENT=	ActiveSync protocol implementation
 
-V=		2.1.1
-DISTNAME=	z-push-${V}-1788
+V=		2.1.3
+DISTNAME=	z-push-${V}-1892
 PKGNAME=	z-push-${V}
-REVISION=	0
 
 CATEGORIES=	mail www
 
@@ -16,7 +15,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # AGPLv3 (GNU Affero Public License)
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://zarafa-deutschland.de/z-push-download/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
+MASTER_SITES=	http://download.z-push.org/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
