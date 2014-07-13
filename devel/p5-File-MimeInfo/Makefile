@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/24 08:41:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/13 21:59:15 giovanni Exp $
 
 COMMENT=		determine file types
 
-DISTNAME=		File-MimeInfo-0.22
+DISTNAME=		File-MimeInfo-0.26
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
