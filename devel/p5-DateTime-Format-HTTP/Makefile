@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/13 21:39:51 giovanni Exp $
 
 COMMENT= 	DateTime::Format extension to HTTP formats
 
 MODULES=	cpan 
-DISTNAME=	DateTime-Format-HTTP-0.40
+DISTNAME=	DateTime-Format-HTTP-0.42
 CATEGORIES=	devel www
 
 # perl
