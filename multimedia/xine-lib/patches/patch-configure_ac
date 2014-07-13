@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.18 2013/11/30 22:13:37 brad Exp $
---- configure.ac.orig	Fri Sep 20 09:04:44 2013
-+++ configure.ac	Wed Nov 20 16:57:34 2013
-@@ -811,9 +811,7 @@ AC_ARG_ENABLE([optimizations],
+$OpenBSD: patch-configure_ac,v 1.19 2014/07/13 20:03:51 brad Exp $
+--- configure.ac.orig	Thu May 29 07:11:59 2014
++++ configure.ac	Sun Jul 13 13:05:53 2014
+@@ -819,9 +819,7 @@ AC_ARG_ENABLE([optimizations],
                [AS_HELP_STRING([--disable-optimizations], [Don't try to guess what optimization to enable])],
                [], [test x"$enable_debug" != x"no" && enable_optimizations="no"])
  AM_CONDITIONAL([DISABLE_OPTIMIZATIONS], [test x"$enable_optimizations" = x"no"])
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2013/11/30 22:13:37 brad Exp $
      dnl For multi-pass compilation: never when cross-compiling
      if test x"$cross_compiling" != x"yes"; then
          if test x"$GCC" = x"yes"; then
-@@ -837,7 +835,7 @@ AC_SUBST(O3_CFLAGS)
+@@ -845,7 +843,7 @@ AC_SUBST(O3_CFLAGS)
  AC_SUBST(PASS1_CFLAGS)
  AC_SUBST(PASS2_CFLAGS)
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2013/11/30 22:13:37 brad Exp $
  AC_SUBST(DEFAULT_OCFLAGS)
  
  if test x"$arch_x86" != x"no" && test x"$enable_macosx_universal" = x"no"; then
-@@ -989,9 +987,9 @@ t q
+@@ -997,9 +995,9 @@ t q
  b
  :q
  q"
