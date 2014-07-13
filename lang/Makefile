@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2014/06/02 19:47:04 juanfra Exp $
+# $OpenBSD: Makefile,v 1.162 2014/07/13 08:59:18 pascal Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -71,6 +71,7 @@
      SUBDIR += oo2c
      SUBDIR += open-cobol
      SUBDIR += otcl
+     SUBDIR += p5-Language-Ook
      SUBDIR += parrot
      SUBDIR += pcc
      SUBDIR += pfe
