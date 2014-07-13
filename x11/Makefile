@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.532 2014/07/13 08:20:49 matthieu Exp $
+# $OpenBSD: Makefile,v 1.533 2014/07/13 12:30:47 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -256,6 +256,7 @@
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
      SUBDIR += tellico
+     SUBDIR += tellico-kde4
      SUBDIR += terminator
      SUBDIR += thewidgetfactory
      SUBDIR += tilda
