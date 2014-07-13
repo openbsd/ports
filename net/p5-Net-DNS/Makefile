@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2014/06/20 16:53:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.50 2014/07/13 00:41:59 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		module to interface the DNS resolver
 
-DISTNAME =		Net-DNS-0.77
+DISTNAME =		Net-DNS-0.78
 
 CATEGORIES =		net
 
@@ -23,6 +23,6 @@ TEST_DEPENDS =		devel/p5-Test-Pod \
 			net/p5-IO-Socket-INET6 \
 			security/p5-Digest-BubbleBabble
 
-CONFIGURE_ARGS =	--online-tests
+CONFIGURE_ARGS =	--noonline-tests
 
 .include <bsd.port.mk>
