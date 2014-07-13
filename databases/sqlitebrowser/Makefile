@@ -1,31 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/07/13 15:43:05 landry Exp $
 
 COMMENT=	graphical interface to sqlite databases
-DISTNAME=	sqlitebrowser-1.3
-REVISION=	7
-DISTFILES=	${DISTNAME}-src.tar.gz
-WRKDIST=	${WRKDIR}/sqlitebrowser
+DISTNAME =	sqlb-3.2.0
+PKGNAME =	sqlitebrowser-3.2.0
+MASTER_SITES =	https://github.com/sqlitebrowser/sqlitebrowser/archive/
+
 CATEGORIES=	databases x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqlitebrowser/}
-HOMEPAGE=	http://sqlitebrowser.sourceforge.net/
+HOMEPAGE=	http://sqlitebrowser.org/
+WRKDIST  =	${WRKDIR}/sqlitebrowser-${DISTNAME}
 
-MODULES=	x11/qt3
-NO_TEST=	Yes
+MODULES=	x11/qt4 devel/cmake
 
-WANTLIB=	Xext m X11 c pthread stdc++ sqlite3
-
-# Special: files are macintosh encoded.
-post-extract:
-	find ${WRKDIST} -type d -name images -prune -o -type f -print|xargs perl -pi.bak -e 's/\cM/\cJ/g';
-	find ${WRKDIST} -type f -name \*.bak -print|xargs rm
-
-do-configure:
-	cd ${WRKDIST} && qmake sqlitedbbrowser.pro
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/sqlitebrowser/sqlitebrowser ${PREFIX}/bin
-
-# Public domain
+# MPLv2/GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
+WANTLIB += QtGui QtNetwork c m pthread sqlite3 stdc++
 
 .include <bsd.port.mk>
