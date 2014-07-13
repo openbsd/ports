@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_krb5_krb5_h,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+
+cleanup 1 << 31 idioms
+
+--- lib/krb5/krb5.h.orig	Sun Dec  9 23:06:44 2012
++++ lib/krb5/krb5.h	Thu Apr 24 14:14:21 2014
+@@ -412,7 +412,7 @@ typedef union {
+ #define KDC_OPT_RENEWABLE_OK		(1 << 27)
+ #define KDC_OPT_ENC_TKT_IN_SKEY		(1 << 28)
+ #define KDC_OPT_RENEW			(1 << 30)
+-#define KDC_OPT_VALIDATE		(1 << 31)
++#define KDC_OPT_VALIDATE		(1U << 31)
+ 
+ typedef union {
+     KDCOptions b;

@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_gssapi_spnego_external_c,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+
+http://repo.or.cz/w/heimdal.git/blobdiff/5f29169afce289a60805126b7a5a730c1b5ff65e..617f4b7bd589f0c86ebd654fd9bfe4e755b9e3d3:/lib/gssapi/spnego/external.c
+(prevents unlocking an already unlocked or non-existent mutex)
+
+--- lib/gssapi/spnego/external.c.orig	Sun Dec  9 23:06:44 2012
++++ lib/gssapi/spnego/external.c	Tue May 13 11:05:29 2014
+@@ -84,7 +84,7 @@ static gssapi_mech_interface_desc spnego_mech = {
+     _gss_spnego_init_sec_context,
+     _gss_spnego_accept_sec_context,
+     _gss_spnego_process_context_token,
+-    _gss_spnego_internal_delete_sec_context,
++    _gss_spnego_delete_sec_context,
+     _gss_spnego_context_time,
+     _gss_spnego_get_mic,
+     _gss_spnego_verify_mic,

@@ -1,0 +1,32 @@
+$OpenBSD: patch-lib_hcrypto_test_rsa_c,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+
+%ld / (long)tv_sec -> %lld / (long long)tv_sec
+
+--- lib/hcrypto/test_rsa.c.orig	Sun Dec  9 23:06:44 2012
++++ lib/hcrypto/test_rsa.c	Thu Apr 24 14:11:04 2014
+@@ -268,9 +268,9 @@ main(int argc, char **argv)
+ 	gettimeofday(&tv2, NULL);
+ 	timevalsub(&tv2, &tv1);
+ 
+-	printf("time %lu.%06lu\n",
+-	       (unsigned long)tv2.tv_sec,
+-	       (unsigned long)tv2.tv_usec);
++	printf("time %lld.%06ld\n",
++	       (long long)tv2.tv_sec,
++	       tv2.tv_usec);
+ 
+ 	BN_free(e);
+ 	ENGINE_finish(engine);
+@@ -310,9 +310,9 @@ main(int argc, char **argv)
+ 
+ 	timevalsub(&tv2, &tv1);
+ 
+-	printf("time %lu.%06lu\n",
+-	       (unsigned long)tv2.tv_sec,
+-	       (unsigned long)tv2.tv_usec);
++	printf("time %lld.%06ld\n",
++	       (long long)tv2.tv_sec,
++	       tv2.tv_usec);
+ 
+ 	RSA_free(rsa);
+ 	ENGINE_finish(engine);

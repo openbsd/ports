@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_ipc_server_c,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+--- lib/ipc/server.c.orig	Thu Apr 24 13:55:44 2014
++++ lib/ipc/server.c	Thu Apr 24 13:56:02 2014
+@@ -528,7 +528,11 @@ update_client_creds(struct client *c)
+ #ifdef SO_PEERCRED
+     /* Linux */
+     {
++#ifndef __OpenBSD__
+ 	struct ucred pc;
++#else
++	struct sockpeercred pc;
++#endif
+ 	socklen_t pclen = sizeof(pc);
+ 
+ 	if (getsockopt(c->fd, SOL_SOCKET, SO_PEERCRED, (void *)&pc, &pclen) == 0) {

@@ -1,0 +1,146 @@
+@comment $OpenBSD: PLIST-libs,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+heimdal/
+heimdal/bin/
+heimdal/bin/krb5-config
+heimdal/include/
+heimdal/include/asn1-common.h
+heimdal/include/asn1_err.h
+heimdal/include/base64.h
+heimdal/include/cms_asn1.h
+heimdal/include/crmf_asn1.h
+heimdal/include/der-private.h
+heimdal/include/der-protos.h
+heimdal/include/der.h
+heimdal/include/digest_asn1.h
+heimdal/include/getarg.h
+heimdal/include/gssapi/
+heimdal/include/gssapi.h
+heimdal/include/gssapi/gkrb5_err.h
+heimdal/include/gssapi/gssapi.h
+heimdal/include/gssapi/gssapi_krb5.h
+heimdal/include/gssapi/gssapi_ntlm.h
+heimdal/include/gssapi/gssapi_oid.h
+heimdal/include/gssapi/gssapi_spnego.h
+heimdal/include/hdb-protos.h
+heimdal/include/hdb.h
+heimdal/include/hdb_asn1.h
+heimdal/include/hdb_err.h
+heimdal/include/heim-ipc.h
+heimdal/include/heim_asn1.h
+heimdal/include/heim_err.h
+heimdal/include/heimbase.h
+heimdal/include/heimntlm-protos.h
+heimdal/include/heimntlm.h
+heimdal/include/hex.h
+heimdal/include/hx509-protos.h
+heimdal/include/hx509.h
+heimdal/include/hx509_err.h
+heimdal/include/k524_err.h
+heimdal/include/kadm5/
+heimdal/include/kadm5/admin.h
+heimdal/include/kadm5/kadm5-private.h
+heimdal/include/kadm5/kadm5-protos.h
+heimdal/include/kadm5/kadm5-pwcheck.h
+heimdal/include/kadm5/kadm5_err.h
+heimdal/include/kadm5/private.h
+heimdal/include/kafs.h
+heimdal/include/kdc-protos.h
+heimdal/include/kdc.h
+heimdal/include/krb5/
+heimdal/include/krb5-private.h
+heimdal/include/krb5-protos.h
+heimdal/include/krb5-types.h
+heimdal/include/krb5.h
+heimdal/include/krb5/ccache_plugin.h
+heimdal/include/krb5/locate_plugin.h
+heimdal/include/krb5/send_to_kdc_plugin.h
+heimdal/include/krb5/windc_plugin.h
+heimdal/include/krb5_asn1.h
+heimdal/include/krb5_ccapi.h
+heimdal/include/krb5_err.h
+heimdal/include/kx509_asn1.h
+heimdal/include/ntlm_err.h
+heimdal/include/ocsp_asn1.h
+heimdal/include/parse_bytes.h
+heimdal/include/parse_time.h
+heimdal/include/parse_units.h
+heimdal/include/pkcs10_asn1.h
+heimdal/include/pkcs12_asn1.h
+heimdal/include/pkcs8_asn1.h
+heimdal/include/pkcs9_asn1.h
+heimdal/include/pkinit_asn1.h
+heimdal/include/resolve.h
+heimdal/include/rfc2459_asn1.h
+heimdal/include/roken/
+heimdal/include/roken-common.h
+heimdal/include/roken.h
+heimdal/include/roken/vis.h
+heimdal/include/rtbl.h
+heimdal/include/sl.h
+heimdal/include/wind.h
+heimdal/include/wind_err.h
+heimdal/include/xdbm.h
+heimdal/lib/
+heimdal/lib/libasn1.a
+heimdal/lib/libasn1.la
+@lib heimdal/lib/libasn1.so.${LIBasn1_VERSION}
+heimdal/lib/libgssapi.a
+heimdal/lib/libgssapi.la
+@lib heimdal/lib/libgssapi.so.${LIBgssapi_VERSION}
+heimdal/lib/libhdb.a
+heimdal/lib/libhdb.la
+@lib heimdal/lib/libhdb.so.${LIBhdb_VERSION}
+heimdal/lib/libheimbase.a
+heimdal/lib/libheimbase.la
+@lib heimdal/lib/libheimbase.so.${LIBheimbase_VERSION}
+heimdal/lib/libheimedit.a
+heimdal/lib/libheimedit.la
+@lib heimdal/lib/libheimedit.so.${LIBheimedit_VERSION}
+heimdal/lib/libheimntlm.a
+heimdal/lib/libheimntlm.la
+@lib heimdal/lib/libheimntlm.so.${LIBheimntlm_VERSION}
+heimdal/lib/libheimsqlite.a
+heimdal/lib/libheimsqlite.la
+@lib heimdal/lib/libheimsqlite.so.${LIBheimsqlite_VERSION}
+heimdal/lib/libhx509.a
+heimdal/lib/libhx509.la
+@lib heimdal/lib/libhx509.so.${LIBhx509_VERSION}
+heimdal/lib/libkadm5clnt.a
+heimdal/lib/libkadm5clnt.la
+@lib heimdal/lib/libkadm5clnt.so.${LIBkadm5clnt_VERSION}
+heimdal/lib/libkadm5srv.a
+heimdal/lib/libkadm5srv.la
+@lib heimdal/lib/libkadm5srv.so.${LIBkadm5srv_VERSION}
+heimdal/lib/libkafs.a
+heimdal/lib/libkafs.la
+@lib heimdal/lib/libkafs.so.${LIBkafs_VERSION}
+heimdal/lib/libkdc.a
+heimdal/lib/libkdc.la
+@lib heimdal/lib/libkdc.so.${LIBkdc_VERSION}
+heimdal/lib/libkrb5.a
+heimdal/lib/libkrb5.la
+@lib heimdal/lib/libkrb5.so.${LIBkrb5_VERSION}
+heimdal/lib/libroken.a
+heimdal/lib/libroken.la
+@lib heimdal/lib/libroken.so.${LIBroken_VERSION}
+heimdal/lib/libsl.a
+heimdal/lib/libsl.la
+@lib heimdal/lib/libsl.so.${LIBsl_VERSION}
+heimdal/lib/libwind.a
+heimdal/lib/libwind.la
+@lib heimdal/lib/libwind.so.${LIBwind_VERSION}
+heimdal/lib/pkgconfig/
+heimdal/lib/pkgconfig/heimdal-gssapi.pc
+heimdal/lib/windc.a
+heimdal/lib/windc.la
+heimdal/lib/windc.so.0.0
+heimdal/libexec/
+heimdal/libexec/heimdal/
+@bin heimdal/libexec/heimdal/asn1_compile
+@bin heimdal/libexec/heimdal/asn1_print
+@bin heimdal/libexec/heimdal/slc
+@man man/man1/krb5-config.1
+share/examples/heimdal/
+@sample ${SYSCONFDIR}/
+share/examples/heimdal/krb5.conf
+@sample ${SYSCONFDIR}/krb5.conf

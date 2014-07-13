@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: kpasswdd.rc,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/heimdal/libexec/kpasswdd"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

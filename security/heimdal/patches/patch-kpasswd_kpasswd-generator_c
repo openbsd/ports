@@ -1,0 +1,40 @@
+$OpenBSD: patch-kpasswd_kpasswd-generator_c,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+
+Use HAVE_ARC4RANDOM and choose to call arc4random() instead of srand()
+and rand() and friends.
+
+--- kpasswd/kpasswd-generator.c.orig	Sun Dec  9 23:06:44 2012
++++ kpasswd/kpasswd-generator.c	Thu Apr 24 14:52:14 2014
+@@ -78,7 +78,7 @@ generate_requests (const char *filename, unsigned nreq
+ {
+     krb5_context context;
+     krb5_error_code ret;
+-    int i;
++    int i, rnd;
+     char **words;
+     unsigned nwords;
+ 
+@@ -89,7 +89,12 @@ generate_requests (const char *filename, unsigned nreq
+     nwords = read_words (filename, &words);
+ 
+     for (i = 0; i < nreq; ++i) {
+-	char *name = words[rand() % nwords];
++#ifdef HAVE_ARC4RANDOM
++	rnd = arc4random();
++#else
++	rnd = rand();
++#endif
++	char *name = words[rnd % nwords];
+ 	krb5_get_init_creds_opt *opt;
+ 	krb5_creds cred;
+ 	krb5_principal principal;
+@@ -198,7 +203,9 @@ main(int argc, char **argv)
+ 
+     if (argc != 2)
+ 	usage (1);
++#ifndef HAVE_ARC4RANDOM
+     srand (0);
++#endif
+     nreq = strtol (argv[1], &end, 0);
+     if (argv[1] == end || *end != '\0')
+ 	usage (1);

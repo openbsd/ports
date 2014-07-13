@@ -1,0 +1,4 @@
+Heimdal is an implementation of Kerberos 5 (and some more stuff) largely
+written in Sweden.
+
+This package provides the Heimdal Kerberos C functions documentation.

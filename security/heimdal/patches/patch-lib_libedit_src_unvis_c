@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_libedit_src_unvis_c,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+--- lib/libedit/src/unvis.c.orig	Thu Apr 24 13:50:55 2014
++++ lib/libedit/src/unvis.c	Thu Apr 24 13:51:01 2014
+@@ -46,8 +46,10 @@ __RCSID("$NetBSD: unvis.c,v 1.32 2010/11/27 21:22:11 c
+ #include <stdio.h>
+ #include <vis.h>
+ 
++#if !defined(__OpenBSD__)
+ #ifdef __weak_alias
+ __weak_alias(strunvis,_strunvis)
++#endif
+ #endif
+ 
+ #if !HAVE_VIS

@@ -1,0 +1,16 @@
+$OpenBSD: patch-kuser_kswitch_1,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+--- kuser/kswitch.1.orig	Thu Apr 24 14:18:45 2014
++++ kuser/kswitch.1	Thu Apr 24 14:19:52 2014
+@@ -29,9 +29,9 @@
+ .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ .\" SUCH DAMAGE.
+ .\"
+-.Dd Augusti 25, 2009
+-.Dt KSWITCH SECTION
+-.Os OPERATING_SYSTEM
++.Dd August 25, 2009
++.Dt KSWITCH 1
++.Os HEIMDAL
+ .Sh NAME
+ .Nm kswitch
+ .Nd switch between default credential caches

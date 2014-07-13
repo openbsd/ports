@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_roken_rand_c,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+
+Use HAVE_ARC4RANDOM and choose to call arc4random() instead of srand()
+and rand() and friends.
+
+--- lib/roken/rand.c.orig	Sun Dec  9 23:06:44 2012
++++ lib/roken/rand.c	Thu Apr 24 14:15:56 2014
+@@ -31,13 +31,14 @@
+  * SUCH DAMAGE.
+  */
+ 
++#include <config.h>
+ #include "roken.h"
+ 
+ void ROKEN_LIB_FUNCTION
+ rk_random_init(void)
+ {
+ #if defined(HAVE_ARC4RANDOM)
+-    arc4random_stir();
++    /* do nothing */
+ #elif defined(HAVE_SRANDOMDEV)
+     srandomdev();
+ #elif defined(HAVE_RANDOM)

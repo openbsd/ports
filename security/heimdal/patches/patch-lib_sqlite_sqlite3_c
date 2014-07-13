@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_sqlite_sqlite3_c,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+
+Use HAVE_ARC4RANDOM and choose to call arc4random() instead of srand()
+and rand() and friends.
+
+--- lib/sqlite/sqlite3.c.orig	Sun Dec  9 23:06:44 2012
++++ lib/sqlite/sqlite3.c	Thu Apr 24 14:16:00 2014
+@@ -27259,7 +27259,11 @@ static int afpLock(sqlite3_file *id, int eFileLock){
+     mask = (sizeof(long)==8) ? LARGEST_INT64 : 0x7fffffff;
+     /* Now get the read-lock SHARED_LOCK */
+     /* note that the quality of the randomness doesn't matter that much */
++#ifdef HAVE_ARC4RANDOM
++    lk = arc4random();
++#else
+     lk = random(); 
++#endif
+     pInode->sharedByte = (lk & mask)%(SHARED_SIZE - 1);
+     lrc1 = afpSetLock(context->dbPath, pFile, 
+           SHARED_FIRST+pInode->sharedByte, 1, 1);

@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_libedit_src_vis_c,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+--- lib/libedit/src/vis.c.orig	Thu Apr 24 13:51:29 2014
++++ lib/libedit/src/vis.c	Thu Apr 24 13:51:44 2014
+@@ -67,6 +67,7 @@ __RCSID("$NetBSD: vis.c,v 1.41 2009/11/23 10:08:47 plu
+ #include <vis.h>
+ #include <stdlib.h>
+ 
++#if !defined(__OpenBSD__)
+ #ifdef __weak_alias
+ __weak_alias(strsvis,_strsvis)
+ __weak_alias(strsvisx,_strsvisx)
+@@ -74,6 +75,7 @@ __weak_alias(strvis,_strvis)
+ __weak_alias(strvisx,_strvisx)
+ __weak_alias(svis,_svis)
+ __weak_alias(vis,_vis)
++#endif
+ #endif
+ 
+ #if !HAVE_VIS || !HAVE_SVIS

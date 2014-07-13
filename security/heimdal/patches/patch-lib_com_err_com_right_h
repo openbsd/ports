@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_com_err_com_right_h,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+
+https://github.com/heimdal/heimdal/commit/db85d0998e4a000ed684e62b9fbfcb484adc9ebd
+
+--- lib/com_err/com_right.h.orig	Thu Apr 24 14:02:02 2014
++++ lib/com_err/com_right.h	Thu Apr 24 14:02:35 2014
+@@ -58,6 +58,7 @@
+ 
+ #ifdef __STDC__
+ #include <stdarg.h>
++#include <stddef.h>
+ #endif
+ 
+ struct error_table {

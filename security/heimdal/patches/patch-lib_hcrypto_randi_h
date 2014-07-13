@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_hcrypto_randi_h,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+
+Make it build with LibreSSL.
+
+--- lib/hcrypto/randi.h.orig	Sun Dec  9 23:06:44 2012
++++ lib/hcrypto/randi.h	Thu Apr 24 14:34:01 2014
+@@ -40,7 +40,6 @@
+ 
+ extern const RAND_METHOD hc_rand_fortuna_method;
+ extern const RAND_METHOD hc_rand_unix_method;
+-extern const RAND_METHOD hc_rand_egd_method;
+ extern const RAND_METHOD hc_rand_timer_method;
+ extern const RAND_METHOD hc_rand_w32crypto_method;
+ 

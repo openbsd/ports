@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: ipropd_master.rc,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/heimdal/libexec/ipropd-master --detach"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
