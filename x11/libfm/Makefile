@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/01 05:09:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/13 07:55:59 giovanni Exp $
 
 COMMENT=	library providing file related widgets for pcmanfm
 
-DISTNAME=	libfm-1.1.0
+DISTNAME=	libfm-1.2.0
+EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	x11 devel
 
 SHARED_LIBS+=	fm-gtk	0.0 # 1.0
 SHARED_LIBS+=	fm	0.0 # 1.0
+SHARED_LIBS+=	fm-extra	0.0 # 4.0
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
 

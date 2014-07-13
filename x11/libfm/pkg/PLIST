@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/01 05:09:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/13 07:55:59 giovanni Exp $
 @bin bin/libfm-pref-apps
+@bin bin/lxshortcut
 include/libfm
 include/libfm-1.0/
 include/libfm-1.0/fm-actions.h
@@ -21,6 +22,7 @@ include/libfm-1.0/fm-dnd-auto-scroll.h
 include/libfm-1.0/fm-dnd-dest.h
 include/libfm-1.0/fm-dnd-src.h
 include/libfm-1.0/fm-dummy-monitor.h
+include/libfm-1.0/fm-extra.h
 include/libfm-1.0/fm-file-info-job.h
 include/libfm-1.0/fm-file-info.h
 include/libfm-1.0/fm-file-launcher.h
@@ -31,6 +33,7 @@ include/libfm-1.0/fm-file-ops-job-xfer.h
 include/libfm-1.0/fm-file-ops-job.h
 include/libfm-1.0/fm-file-properties.h
 include/libfm-1.0/fm-file.h
+include/libfm-1.0/fm-folder-config.h
 include/libfm-1.0/fm-folder-model.h
 include/libfm-1.0/fm-folder-view.h
 include/libfm-1.0/fm-folder.h
@@ -43,7 +46,9 @@ include/libfm-1.0/fm-icon.h
 include/libfm-1.0/fm-job.h
 include/libfm-1.0/fm-list.h
 include/libfm-1.0/fm-marshal.h
+include/libfm-1.0/fm-menu-tool-item.h
 include/libfm-1.0/fm-mime-type.h
+include/libfm-1.0/fm-module.h
 include/libfm-1.0/fm-monitor.h
 include/libfm-1.0/fm-nav-history.h
 include/libfm-1.0/fm-path-bar.h
@@ -52,27 +57,46 @@ include/libfm-1.0/fm-path.h
 include/libfm-1.0/fm-places-model.h
 include/libfm-1.0/fm-places-view.h
 include/libfm-1.0/fm-progress-dlg.h
+include/libfm-1.0/fm-seal.h
 include/libfm-1.0/fm-side-pane.h
 include/libfm-1.0/fm-simple-job.h
 include/libfm-1.0/fm-sortable.h
 include/libfm-1.0/fm-standard-view.h
 include/libfm-1.0/fm-tab-label.h
+include/libfm-1.0/fm-templates.h
+include/libfm-1.0/fm-terminal.h
+include/libfm-1.0/fm-thumbnail-loader.h
 include/libfm-1.0/fm-thumbnail.h
 include/libfm-1.0/fm-thumbnailer.h
 include/libfm-1.0/fm-utils.h
+include/libfm-1.0/fm-version.h
+include/libfm-1.0/fm-xml-file.h
 include/libfm-1.0/fm.h
+lib/libfm/
+lib/libfm-extra.a
+lib/libfm-extra.la
+@lib lib/libfm-extra.so.${LIBfm-extra_VERSION}
 lib/libfm-gtk.a
 lib/libfm-gtk.la
 @lib lib/libfm-gtk.so.${LIBfm-gtk_VERSION}
 lib/libfm.a
 lib/libfm.la
 @lib lib/libfm.so.${LIBfm_VERSION}
+lib/libfm/modules/
+lib/libfm/modules/gtk-fileprop-x-desktop.so
+lib/libfm/modules/gtk-fileprop-x-shortcut.so
+lib/libfm/modules/gtk-menu-actions.so
+lib/libfm/modules/gtk-menu-trash.so
+lib/libfm/modules/vfs-menu.so
+lib/libfm/modules/vfs-search.so
 lib/pkgconfig/
 lib/pkgconfig/libfm-gtk.pc
 lib/pkgconfig/libfm-gtk3.pc
 lib/pkgconfig/libfm.pc
 @man man/man1/libfm-pref-apps.1
+@man man/man1/lxshortcut.1
 share/applications/libfm-pref-apps.desktop
+share/applications/lxshortcut.desktop
 share/examples/libfm/
 share/examples/libfm/xdg/
 @sample ${SYSCONFDIR}/xdg/
@@ -80,13 +104,16 @@ share/examples/libfm/xdg/libfm/
 @sample ${SYSCONFDIR}/xdg/libfm/
 share/examples/libfm/xdg/libfm/libfm.conf
 @sample ${SYSCONFDIR}/xdg/libfm/libfm.conf
-share/examples/libfm/xdg/libfm/pref-apps.conf
-@sample ${SYSCONFDIR}/xdg/libfm/pref-apps.conf
 share/libfm/
 share/libfm/archivers.list
+share/libfm/images/
+share/libfm/images/folder.png
+share/libfm/images/unknown.png
+share/libfm/terminals.list
 share/libfm/ui/
 share/libfm/ui/app-chooser.ui
 share/libfm/ui/ask-rename.ui
+share/libfm/ui/choose-icon.ui
 share/libfm/ui/exec-file.ui
 share/libfm/ui/file-prop.ui
 share/libfm/ui/filesearch.ui
