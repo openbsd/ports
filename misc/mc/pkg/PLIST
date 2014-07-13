@@ -1,9 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/01/02 07:18:46 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/07/13 09:07:50 robert Exp $
+@pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
 bin/mcedit
 bin/mcview
 libexec/mc/
+libexec/mc/ext.d/
+libexec/mc/ext.d/archive.sh
+libexec/mc/ext.d/doc.sh
+libexec/mc/ext.d/image.sh
+libexec/mc/ext.d/misc.sh
+libexec/mc/ext.d/package.sh
+libexec/mc/ext.d/sound.sh
+libexec/mc/ext.d/text.sh
+libexec/mc/ext.d/video.sh
+libexec/mc/ext.d/web.sh
 libexec/mc/extfs.d/
 libexec/mc/extfs.d/README
 libexec/mc/extfs.d/README.extfs
@@ -37,6 +48,7 @@ libexec/mc/extfs.d/uc1541
 libexec/mc/extfs.d/ucab
 libexec/mc/extfs.d/uha
 libexec/mc/extfs.d/ulha
+libexec/mc/extfs.d/ulib
 libexec/mc/extfs.d/urar
 libexec/mc/extfs.d/uzip
 libexec/mc/extfs.d/uzoo
@@ -86,19 +98,16 @@ share/examples/mc/
 @sample ${SYSCONFDIR}/mc/
 share/examples/mc/edit.indent.rc
 @sample ${SYSCONFDIR}/mc/edit.indent.rc
-share/examples/mc/edit.spell.rc
-@sample ${SYSCONFDIR}/mc/edit.spell.rc
-@sample ${SYSCONFDIR}/mc/extfs/
 share/examples/mc/filehighlight.ini
 @sample ${SYSCONFDIR}/mc/filehighlight.ini
+share/examples/mc/mc.default.keymap
+@sample ${SYSCONFDIR}/mc/mc.default.keymap
+share/examples/mc/mc.emacs.keymap
+@sample ${SYSCONFDIR}/mc/mc.emacs.keymap
 share/examples/mc/mc.ext
 @sample ${SYSCONFDIR}/mc/mc.ext
 share/examples/mc/mc.keymap
 @sample ${SYSCONFDIR}/mc/mc.keymap
-share/examples/mc/mc.keymap.default
-@sample ${SYSCONFDIR}/mc/mc.keymap.default
-share/examples/mc/mc.keymap.emacs
-@sample ${SYSCONFDIR}/mc/mc.keymap.emacs
 share/examples/mc/mc.menu
 @sample ${SYSCONFDIR}/mc/mc.menu
 share/examples/mc/mc.menu.sr
@@ -120,6 +129,9 @@ share/locale/de_CH/
 share/locale/de_CH/LC_MESSAGES/
 share/locale/de_CH/LC_MESSAGES/mc.mo
 share/locale/el/LC_MESSAGES/mc.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/mc.mo
 share/locale/eo/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
 share/locale/et/LC_MESSAGES/mc.mo
@@ -140,13 +152,13 @@ share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/mc.mo
 share/locale/id/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
-share/locale/it_IT/
-share/locale/it_IT/LC_MESSAGES/
-share/locale/it_IT/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/mc.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/mc.mo
 share/locale/ko/LC_MESSAGES/mc.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
@@ -169,6 +181,9 @@ share/locale/sv/LC_MESSAGES/mc.mo
 share/locale/sv_SE/
 share/locale/sv_SE/LC_MESSAGES/
 share/locale/sv_SE/LC_MESSAGES/mc.mo
+share/locale/szl/
+share/locale/szl/LC_MESSAGES/
+share/locale/szl/LC_MESSAGES/mc.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/mc.mo
@@ -200,16 +215,51 @@ share/mc/help/mc.hlp.ru
 share/mc/help/mc.hlp.sr
 share/mc/hints/
 share/mc/hints/mc.hint
+share/mc/hints/mc.hint.az
+share/mc/hints/mc.hint.be
+share/mc/hints/mc.hint.bg
+share/mc/hints/mc.hint.ca
 share/mc/hints/mc.hint.cs
+share/mc/hints/mc.hint.da
+share/mc/hints/mc.hint.de
+share/mc/hints/mc.hint.de_CH
+share/mc/hints/mc.hint.el
+share/mc/hints/mc.hint.en_GB
+share/mc/hints/mc.hint.eo
 share/mc/hints/mc.hint.es
+share/mc/hints/mc.hint.et
+share/mc/hints/mc.hint.eu
+share/mc/hints/mc.hint.fa
+share/mc/hints/mc.hint.fi
+share/mc/hints/mc.hint.fr
+share/mc/hints/mc.hint.gl
+share/mc/hints/mc.hint.hr
 share/mc/hints/mc.hint.hu
+share/mc/hints/mc.hint.ia
+share/mc/hints/mc.hint.id
 share/mc/hints/mc.hint.it
+share/mc/hints/mc.hint.it_IT
+share/mc/hints/mc.hint.ja
+share/mc/hints/mc.hint.ka
+share/mc/hints/mc.hint.kk
+share/mc/hints/mc.hint.ko
+share/mc/hints/mc.hint.lt
 share/mc/hints/mc.hint.nl
 share/mc/hints/mc.hint.pl
+share/mc/hints/mc.hint.pt
+share/mc/hints/mc.hint.pt_BR
+share/mc/hints/mc.hint.ro
 share/mc/hints/mc.hint.ru
+share/mc/hints/mc.hint.sk
+share/mc/hints/mc.hint.sl
 share/mc/hints/mc.hint.sr
+share/mc/hints/mc.hint.sv
+share/mc/hints/mc.hint.sv_SE
+share/mc/hints/mc.hint.szl
+share/mc/hints/mc.hint.tr
 share/mc/hints/mc.hint.uk
 share/mc/hints/mc.hint.zh
+share/mc/hints/mc.hint.zh_CN
 share/mc/mc.charsets
 share/mc/mc.lib
 share/mc/skins/
@@ -220,6 +270,14 @@ share/mc/skins/double-lines.ini
 share/mc/skins/featured.ini
 share/mc/skins/gotar.ini
 share/mc/skins/mc46.ini
+share/mc/skins/modarcon16-defbg.ini
+share/mc/skins/modarcon16.ini
+share/mc/skins/modarcon16root-defbg.ini
+share/mc/skins/modarcon16root.ini
+share/mc/skins/modarin256-defbg.ini
+share/mc/skins/modarin256.ini
+share/mc/skins/modarin256root-defbg.ini
+share/mc/skins/modarin256root.ini
 share/mc/skins/nicedark.ini
 share/mc/skins/sand256.ini
 share/mc/skins/xoria256.ini
@@ -258,10 +316,12 @@ share/mc/syntax/html.syntax
 share/mc/syntax/idl.syntax
 share/mc/syntax/ini.syntax
 share/mc/syntax/j.syntax
+share/mc/syntax/jal.syntax
 share/mc/syntax/java.syntax
 share/mc/syntax/js.syntax
 share/mc/syntax/latex.syntax
 share/mc/syntax/lisp.syntax
+share/mc/syntax/lkr.syntax
 share/mc/syntax/lsm.syntax
 share/mc/syntax/lua.syntax
 share/mc/syntax/m4.syntax

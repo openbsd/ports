@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure,v 1.9 2013/01/02 07:18:46 shadchin Exp $
---- configure.orig	Fri Dec 28 15:27:29 2012
-+++ configure	Tue Jan  1 23:52:16 2013
-@@ -22952,7 +22952,7 @@ done
+$OpenBSD: patch-configure,v 1.10 2014/07/13 09:07:50 robert Exp $
+--- configure.orig	Tue Apr  1 13:45:50 2014
++++ configure	Sun Jul 13 10:58:43 2014
+@@ -15693,7 +15693,7 @@ if ${ac_cv_lib_slang_SLang_init_tty+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lslang  $LIBS"
++LIBS="-lslang -ltermcap  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -24514,7 +24514,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -10,7 +19,7 @@ $OpenBSD: patch-configure,v 1.9 2013/01/02 07:18:46 shadchin Exp $
    ;;
  esac
  fi
-@@ -22993,7 +22993,7 @@ done
+@@ -24555,7 +24555,7 @@ done
    done
  IFS=$as_save_IFS
  
