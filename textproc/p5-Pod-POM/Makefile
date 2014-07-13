@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/07/13 00:04:56 jasper Exp $
 
 COMMENT=	convert Pod documents into a simple object model form
 
 MODULES=	cpan
-DISTNAME=	Pod-POM-0.27
-REVISION=	0
+DISTNAME=	Pod-POM-0.29
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 
