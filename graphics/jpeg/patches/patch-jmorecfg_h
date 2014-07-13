@@ -1,16 +1,16 @@
-$OpenBSD: patch-jmorecfg_h,v 1.1 2013/04/20 21:25:29 naddy Exp $
+$OpenBSD: patch-jmorecfg_h,v 1.2 2014/07/13 13:20:43 naddy Exp $
 
 Restore assumptions about boolean/TRUE/FALSE to those of jpeg 8.
 
---- jmorecfg.h.orig	Wed Aug  8 16:23:20 2012
-+++ jmorecfg.h	Sat Apr 20 23:16:23 2013
-@@ -252,15 +252,14 @@ typedef void noreturn_t;
-  * Defining HAVE_BOOLEAN before including jpeglib.h should make it work.
+--- jmorecfg.h.orig	Tue Sep 17 09:20:20 2013
++++ jmorecfg.h	Wed Jul  9 17:20:38 2014
+@@ -304,18 +304,13 @@ typedef void noreturn_t;
   */
  
--#ifdef HAVE_BOOLEAN
-+#ifndef HAVE_BOOLEAN
-+typedef int boolean;
+ #ifndef HAVE_BOOLEAN
+-#if defined FALSE || defined TRUE || defined QGLOBAL_H
+-/* Qt3 defines FALSE and TRUE as "const" variables in qglobal.h */
+ typedef int boolean;
 +#endif
  #ifndef FALSE			/* in case these macros already exist */
  #define FALSE	0		/* values of boolean */
@@ -20,6 +20,7 @@ Restore assumptions about boolean/TRUE/FALSE to those of jpeg 8.
 -#endif
 -#else
 -typedef enum { FALSE = 0, TRUE = 1 } boolean;
+-#endif
  #endif
  
  

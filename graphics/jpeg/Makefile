@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2013/04/20 21:25:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2014/07/13 13:20:43 naddy Exp $
 
 COMMENT=	IJG's JPEG compression utilities#'
 
-V=		9
+V=		9a
 DISTNAME=	jpeg-$V
-REVISION=	0
-SHARED_LIBS=	jpeg	66.0	# 9.0
+SHARED_LIBS=	jpeg	67.0	# 10.0
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
 HOMEPAGE=	http://www.ijg.org/
