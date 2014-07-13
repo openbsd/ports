@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2014/04/13 01:01:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2014/07/13 00:03:23 jasper Exp $
 
 COMMENT =	module for reading .ini-style configuration files
 
 MODULES =	cpan
-DISTNAME =	Config-IniFiles-2.71
+DISTNAME =	Config-IniFiles-2.83
 CATEGORIES =	devel
 
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
