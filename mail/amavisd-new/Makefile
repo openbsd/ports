@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/07/14 08:53:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.36 2014/07/14 08:56:30 giovanni Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
@@ -8,7 +8,7 @@ CATEGORIES=		mail security
 HOMEPAGE=		http://www.amavis.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
-# GPLv2
+# BSD / GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE} \
