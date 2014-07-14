@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_WebKit2_Platform_IPC_Connection_h,v 1.1 2014/03/27 22:03:48 landry Exp $
+$OpenBSD: patch-Source_WebKit2_Platform_IPC_Connection_h,v 1.2 2014/07/14 21:13:31 ajacoutot Exp $
 https://bugs.webkit.org/show_bug.cgi?id=130837
---- Source/WebKit2/Platform/IPC/Connection.h.orig	Thu Mar 27 14:18:17 2014
-+++ Source/WebKit2/Platform/IPC/Connection.h	Thu Mar 27 14:20:13 2014
-@@ -211,7 +211,11 @@ class Connection : public ThreadSafeRefCounted<Connect
+--- Source/WebKit2/Platform/IPC/Connection.h.orig	Fri Jul  4 11:06:55 2014
++++ Source/WebKit2/Platform/IPC/Connection.h	Mon Jul 14 19:31:35 2014
+@@ -216,7 +216,11 @@ class Connection : public ThreadSafeRefCounted<Connect
  
      Client* m_client;
      bool m_isServer;
