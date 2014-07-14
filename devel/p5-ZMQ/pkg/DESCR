@@ -1,0 +1,2 @@
+ZMQ is a Perl-ish wrapper for libzmq. It uses ZMQ::LibZMQ2 or
+ZMQ::LibZMQ3.

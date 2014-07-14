@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/14 08:41:19 giovanni Exp $
+${P5SITE}/ZMQ.pm
+${P5SITE}/ZMQ/Context.pm
+${P5SITE}/ZMQ/Message.pm
+${P5SITE}/ZMQ/Poller.pm
+${P5SITE}/ZMQ/Serializer.pm
+${P5SITE}/ZMQ/Socket.pm
+@man man/man3p/ZMQ.3p
+@man man/man3p/ZMQ::Context.3p
+@man man/man3p/ZMQ::Message.3p
+@man man/man3p/ZMQ::Poller.3p
+@man man/man3p/ZMQ::Serializer.3p
+@man man/man3p/ZMQ::Socket.3p
