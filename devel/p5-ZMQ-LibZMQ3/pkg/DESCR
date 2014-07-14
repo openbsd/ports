@@ -1,0 +1,2 @@
+The ZMQ::LibZMQ3 module is a wrapper of the 0MQ message passing
+library for Perl. It's a thin wrapper around the C API.

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/14 08:39:21 giovanni Exp $
+${P5ARCH}/
+${P5ARCH}/ZMQ/
+${P5ARCH}/ZMQ/LibZMQ3.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/ZMQ/
+${P5ARCH}/auto/ZMQ/LibZMQ3/
+@comment ${P5ARCH}/auto/ZMQ/LibZMQ3/LibZMQ3.bs
+${P5ARCH}/auto/ZMQ/LibZMQ3/LibZMQ3.so
+@man man/man3p/ZMQ::LibZMQ3.3p
