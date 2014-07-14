@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_modules_kino_endian_types_h,v 1.1.1.1 2014/07/14 09:15:12 zhuk Exp $
+--- src/modules/kino/endian_types.h.orig	Wed Jan 23 23:51:43 2013
++++ src/modules/kino/endian_types.h	Thu Jan 24 00:24:49 2013
+@@ -27,8 +27,10 @@
+ #ifndef _ENDIAN_TYPES_H
+ #define _ENDIAN_TYPES_H
+ 
++#include <sys/types.h>
++
+ /* Needed for BYTE_ORDER and BIG/LITTLE_ENDIAN macros. */
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #ifndef _BSD_SOURCE
+ # define _BSD_SOURCE
+ # include <endian.h>
+@@ -40,9 +42,12 @@
+ # include <sys/endian.h>
+ #endif /* !defined(__FreeBSD__) && !defined(__NetBSD__) */
+ 
+-#include <sys/types.h>
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #include <byteswap.h>
++#elif defined(__OpenBSD__)
++#define bswap_16(x) swap16(x)
++#define bswap_32(x) swap32(x)
++#define bswap_64(x) swap64(x)
+ #else
+ #define bswap_16(x) bswap16(x)
+ #define bswap_32(x) bswap32(x)

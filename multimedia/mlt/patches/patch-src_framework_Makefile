@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_framework_Makefile,v 1.1.1.1 2014/07/14 09:15:12 zhuk Exp $
+--- src/framework/Makefile.orig	Sun Jun 29 22:23:17 2014
++++ src/framework/Makefile	Wed Jul  9 09:43:49 2014
+@@ -1,7 +1,6 @@
+ include ../../config.mak
+ include config.mak
+ 
+-NAME = libmlt$(LIBSUF)
+ TARGET = $(NAME).$(version)
+ 
+ ifeq ($(targetos), Darwin)
+@@ -13,6 +12,9 @@ else ifeq ($(targetos), MinGW)
+ NAME = libmlt$(LIBSUF)
+ TARGET = libmlt-$(soversion)$(LIBSUF)
+ SHFLAGS += -Wl,--output-def,libmlt.def
++else ifeq ($(targetos), OpenBSD)
++LIBmlt_VERSION ?= $(soversion)
++TARGET = libmlt$(LIBSUF).$(LIBmlt_VERSION)
+ else
+ NAME = libmlt$(LIBSUF)
+ TARGET = $(NAME).$(version)
+@@ -94,10 +96,12 @@ all:	$(TARGET)
+ 
+ $(TARGET): $(OBJS)
+ 		$(CC) $(SHFLAGS) -o $@ $(OBJS) $(LDFLAGS)
++ifdef NAME
+ 		ln -sf $(TARGET) $(NAME)
+-		if [ "$(targetos)" != "MinGW" ]; then \
+-			ln -sf $(TARGET) $(SONAME) ; \
+-		fi
++endif
++ifdef SONAME
++		ln -sf $(TARGET) $(SONAME)
++endif
+ 
+ depend:	$(SRCS)
+ 	$(CC) -MM $(CFLAGS) $^ 1>.depend
+@@ -114,6 +118,8 @@ install:
+ 		install -m 755 $(TARGET) $(DESTDIR)$(prefix) ; \
+ 		install -m 755 $(TARGET) $(DESTDIR)$(libdir)/libmlt.dll ; \
+ 		install -m 644 libmlt.def $(DESTDIR)$(libdir) ; \
++	elif [ "$(targetos)" = "OpenBSD" ]; then \
++		install -m 444 $(TARGET) $(DESTDIR)$(libdir) ; \
+ 	else \
+ 		install -m 755 $(TARGET) $(DESTDIR)$(libdir) ; \
+ 		ln -sf $(TARGET) $(DESTDIR)$(libdir)/$(SONAME) ; \

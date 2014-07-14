@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/07/14 09:15:12 zhuk Exp $
+--- configure.orig	Sun Jun 29 22:23:17 2014
++++ configure	Wed Jul  9 09:43:49 2014
+@@ -122,6 +122,11 @@ build_config()
+ 		echo "RDYNAMIC=-rdynamic"
+ 		echo "LDFLAGS+=-Wl,--no-undefined -Wl,--as-needed"
+ 		;;
++		OpenBSD)
++		echo "SHFLAGS=-shared"
++		echo "RDYNAMIC=-rdynamic"
++		echo "LDFLAGS+=-Wl,--as-needed"
++		;;
+ 		MinGW)
+ 		[ "$optimisations" = "true" ] &&
+ 			echo "OPTIMISATIONS+=-ffast-math"

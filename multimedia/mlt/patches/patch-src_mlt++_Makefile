@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_mlt++_Makefile,v 1.1.1.1 2014/07/14 09:15:12 zhuk Exp $
+--- src/mlt++/Makefile.orig	Sun Jun 29 22:23:17 2014
++++ src/mlt++/Makefile	Wed Jul  9 09:43:49 2014
+@@ -12,6 +12,10 @@ NAME = libmlt++$(LIBSUF)
+ TARGET = libmlt++-$(soversion)$(LIBSUF)
+ CXXFLAGS += -DMLTPP_EXPORTS
+ LIBFLAGS += -Wl,--output-def,libmlt++.def
++else ifeq ($(targetos), OpenBSD)
++LIBmlt++_VERSION ?= $(soversion)
++TARGET = libmlt++$(LIBSUF).$(LIBmlt++_VERSION)
++LIBFLAGS += -Wl,-shared
+ else
+ NAME = libmlt++$(LIBSUF)
+ TARGET = $(NAME).$(version)
+@@ -56,10 +60,12 @@ all:		$(TARGET)
+ 
+ $(TARGET):	$(OBJS)
+ 	$(CXX) $(LIBFLAGS) -o $@ $(OBJS) $(LDFLAGS)
++ifdef NAME
+ 	ln -sf $(TARGET) $(NAME)
+-	if [ "$(targetos)" != "MinGW" ]; then \
+-		ln -sf $(TARGET) $(SONAME) ; \
+-	fi
++endif
++ifdef SONAME
++	ln -sf $(TARGET) $(SONAME)
++endif
+ 
+ depend:	$(SRCS)
+ 	$(CXX) -MM $(CXXFLAGS) $^ 1>.depend
+@@ -75,6 +81,8 @@ install:
+ 		$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(prefix) ; \
+ 		$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(libdir)/libmlt++.dll ; \
+ 		$(INSTALL) -m 644 libmlt++.def $(DESTDIR)$(libdir) ; \
++	elif [ "$(targetos)" = "OpenBSD" ]; then \
++		$(INSTALL) -m 444 $(TARGET) $(DESTDIR)$(libdir) ; \
+ 	else \
+ 		$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(libdir) ; \
+ 		ln -sf $(TARGET) $(DESTDIR)$(libdir)/$(SONAME) ; \
