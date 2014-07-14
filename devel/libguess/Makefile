@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/14 07:33:21 armani Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,11 +6,13 @@ COMMENT =		high-speed character set detection library
 
 DISTNAME =		libguess-1.1
 
+REVISION =		0
+
 SHARED_LIBS =		guess		0.0	# 1.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://www.atheme.org/project/libguess
+HOMEPAGE =		http://www.atheme.org/projects/libguess.html
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
