@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2013/10/22 11:34:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.36 2014/07/14 09:17:57 zhuk Exp $
 
 COMMENT=	video player for KDE
 
 VERSION=	0.8.8
 DISTNAME=	kaffeine-${VERSION}
-REVISION=	13
+REVISION=	14
 CATEGORIES=	multimedia x11 x11/kde
 MASTER_SITES=	http://hftom.free.fr/ \
 		${MASTER_SITE_SOURCEFORGE:=kaffeine/}

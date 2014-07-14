@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2014/07/09 16:41:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.79 2014/07/14 09:17:57 zhuk Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -21,6 +21,7 @@
      SUBDIR += k3b
      SUBDIR += k3b-kde4
      SUBDIR += kaffeine
+     SUBDIR += kdenlive
      SUBDIR += kguitar
      SUBDIR += libaacs
      SUBDIR += libass
@@ -45,6 +46,7 @@
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
      SUBDIR += mkvtoolnix,no_x11
+     SUBDIR += mlt
      SUBDIR += moovida
      SUBDIR += mpgtx
      SUBDIR += oggconvert
