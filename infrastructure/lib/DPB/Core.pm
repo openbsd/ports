@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.72 2014/03/15 09:51:27 espie Exp $
+# $OpenBSD: Core.pm,v 1.73 2014/07/14 17:54:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -946,6 +946,10 @@ sub exec
 	if ($self->{sudo}) {
 		unshift(@argv, OpenBSD::Paths->sudo, "-E");
 	}
+	if (-t STDIN) {
+		close(STDIN);
+		open STDIN, '</dev/null';
+	}
 	exec {$argv[0]} @argv;
 }
 
@@ -995,6 +999,10 @@ our @ISA = qw(DPB::Shell::Chroot);
 sub _run
 {
 	my ($self, @argv) = @_;
+	if (-t STDIN) {
+		close(STDIN);
+		open STDIN, '</dev/null';
+	}
 	exec {$argv[0]} @argv;
 }
 
