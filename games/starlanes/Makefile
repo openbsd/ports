@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2014/07/14 10:03:33 kirby Exp $
 
 COMMENT=	classic space-age stock trading game
 
@@ -6,7 +6,7 @@ DISTNAME=	starlanes-1.2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/strategy/}
 
-# License: GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	YES
 WANTLIB=		c curses
 
