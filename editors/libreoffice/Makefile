@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2014/07/13 08:28:24 robert Exp $
+# $OpenBSD: Makefile,v 1.117 2014/07/14 21:31:05 zhuk Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -334,7 +334,7 @@ PARALLEL_BUILD = No
 .if defined(MAKE_JOBS)
 NCPU=		${MAKE_JOBS}
 .elif ${FLAVOR:Mparallel}
-NCPU=		$$(expr $$(sysctl hw.ncpu + 1))
+NCPU!=		echo $$((`sysctl -n hw.ncpu` + 1))
 .else
 NCPU=		1
 .endif
