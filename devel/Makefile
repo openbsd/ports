@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1235 2014/07/12 20:09:28 giovanni Exp $
+# $OpenBSD: Makefile,v 1.1236 2014/07/14 08:43:47 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1094,6 +1094,9 @@
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-YAML-Tiny
      SUBDIR += p5-YAML-XS
+     SUBDIR += p5-ZMQ
+     SUBDIR += p5-ZMQ-Constants
+     SUBDIR += p5-ZMQ-LibZMQ3
      SUBDIR += p5-accessors
      SUBDIR += p5-aliased
      SUBDIR += p5-autobox
