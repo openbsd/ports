@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2014/05/30 13:14:08 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2014/07/14 08:02:07 ajacoutot Exp $
 @option no-default-conflict
 @conflict php->=5.3,<5.4
 @conflict php5-core->=5.2
@@ -7,15 +7,12 @@
 @conflict php5-pdo_sqlite->=5.2
 @pkgpath lang/php/5.3
 @pkgpath lang/php/5.3,-pdo_sqlite
-@exec install -d ${SYSCONFDIR}/php-${PV}/
-@exec install -d ${SYSCONFDIR}/php-${PV}.sample/
+@extraunexec rm -f ${SYSCONFDIR}/php-${PV}/php-${PV}.sample/*
 !%%no_suhosin%%
 @mode 1700
 @owner www
 @group www
 @sample /var/www/tmp/
-@extraunexec rm -fr ${SYSCONFDIR}/php-${PV}/
-@unexec-delete rm -fr ${SYSCONFDIR}/php-${PV}.sample/
 @mode
 @owner
 @group
@@ -29,8 +26,8 @@ lib/php-${PV}/modules/
 @man man/man1/php-config-${PV}.1
 @man man/man1/phpize-${PV}.1
 share/examples/php-${PV}/
-share/examples/php-${PV}/php.conf
 @sample /var/www/conf/modules.sample/
+share/examples/php-${PV}/php.conf
 @sample /var/www/conf/modules.sample/php-${PV}.conf
 share/examples/php-${PV}/php.ini-development
 share/examples/php-${PV}/php.ini-production
@@ -370,3 +367,5 @@ share/php-${PV}/include/main/streams/php_stream_userspace.h
 share/php-${PV}/include/main/streams/php_streams_int.h
 share/php-${PV}/include/main/win32_internal_function_disabled.h
 share/php-${PV}/include/main/win95nt.h
+@sample ${SYSCONFDIR}/php-${PV}/
+@sample ${SYSCONFDIR}/php-${PV}.sample/
