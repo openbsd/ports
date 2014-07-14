@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.228 2014/06/27 00:09:29 sthen Exp $
+$OpenBSD: user.list,v 1.229 2014/07/14 08:36:41 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -243,3 +243,4 @@ id  user		group		port options
 732 _unifi		_unifi		net/unifi
 733 _pop3d		_pop3d		mail/pop3d
 734 			_icingacmd	net/icinga
+735 			_wireshark	net/wireshark
