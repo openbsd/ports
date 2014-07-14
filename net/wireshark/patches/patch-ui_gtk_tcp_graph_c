@@ -1,0 +1,13 @@
+$OpenBSD: patch-ui_gtk_tcp_graph_c,v 1.1.1.1 2014/07/14 08:44:51 landry Exp $
+
+GTK+2 left over GTK+3 3.4 ignore deprecation from 3.0
+--- ui/gtk/tcp_graph.c.orig	Mon Apr 22 19:04:27 2013
++++ ui/gtk/tcp_graph.c	Wed Sep  4 15:39:55 2013
+@@ -35,6 +35,7 @@
+ #if GTK_CHECK_VERSION(3,0,0)
+ # include <gdk/gdkkeysyms-compat.h>
+ #endif
++#define GDK_DISABLE_DEPRECATION_WARNINGS
+ 
+ #include <epan/packet.h>
+ #include <epan/ipproto.h>

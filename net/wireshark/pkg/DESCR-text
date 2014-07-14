@@ -1,0 +1,4 @@
+Wireshark is a network capture tool and protocol analyzer, including
+decoders for very many common and less-common protocols. This package
+contains all non-GUI parts of Wireshark; for the GUI, install the
+"wireshark" package.

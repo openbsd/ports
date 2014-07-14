@@ -1,0 +1,279 @@
+@comment $OpenBSD: PLIST-text,v 1.1.1.1 2014/07/14 08:44:51 landry Exp $
+@newgroup _wireshark:735
+@bin bin/capinfos
+@bin bin/dftest
+@mode 4550
+@group _wireshark
+bin/dumpcap
+@mode
+@group
+@bin bin/editcap
+@bin bin/mergecap
+@bin bin/randpkt
+@bin bin/rawshark
+@bin bin/reordercap
+@bin bin/text2pcap
+@bin bin/tshark
+lib/libwireshark.la
+@lib lib/libwireshark.so.${LIBwireshark_VERSION}
+lib/libwiretap.la
+@lib lib/libwiretap.so.${LIBwiretap_VERSION}
+lib/libwsutil.la
+@lib lib/libwsutil.so.${LIBwsutil_VERSION}
+lib/wireshark/
+lib/wireshark/plugins/
+lib/wireshark/plugins/${WVER}/
+lib/wireshark/plugins/${WVER}/asn1.so
+lib/wireshark/plugins/${WVER}/docsis.so
+lib/wireshark/plugins/${WVER}/ethercat.so
+lib/wireshark/plugins/${WVER}/gryphon.so
+lib/wireshark/plugins/${WVER}/irda.so
+lib/wireshark/plugins/${WVER}/m2m.so
+lib/wireshark/plugins/${WVER}/mate.so
+lib/wireshark/plugins/${WVER}/opcua.so
+lib/wireshark/plugins/${WVER}/profinet.so
+lib/wireshark/plugins/${WVER}/stats_tree.so
+lib/wireshark/plugins/${WVER}/unistim.so
+lib/wireshark/plugins/${WVER}/wimax.so
+lib/wireshark/plugins/${WVER}/wimaxasncp.so
+lib/wireshark/plugins/${WVER}/wimaxmacphy.so
+@man man/man1/capinfos.1
+@man man/man1/dftest.1
+@man man/man1/dumpcap.1
+@man man/man1/editcap.1
+@man man/man1/mergecap.1
+@man man/man1/randpkt.1
+@man man/man1/rawshark.1
+@man man/man1/reordercap.1
+@man man/man1/text2pcap.1
+@man man/man1/tshark.1
+@man man/man4/wireshark-filter.4
+share/wireshark/
+share/wireshark/AUTHORS-SHORT
+share/wireshark/COPYING
+share/wireshark/capinfos.html
+share/wireshark/cfilters
+share/wireshark/colorfilters
+share/wireshark/console.lua
+share/wireshark/dfilters
+share/wireshark/dftest.html
+share/wireshark/diameter/
+share/wireshark/diameter/AlcatelLucent.xml
+share/wireshark/diameter/ChinaTelecom.xml
+share/wireshark/diameter/Cisco.xml
+share/wireshark/diameter/Ericsson.xml
+share/wireshark/diameter/Nokia.xml
+share/wireshark/diameter/NokiaSiemensNetworks.xml
+share/wireshark/diameter/SKT.xml
+share/wireshark/diameter/TGPPGmb.xml
+share/wireshark/diameter/TGPPRx.xml
+share/wireshark/diameter/TGPPS9.xml
+share/wireshark/diameter/TGPPSh.xml
+share/wireshark/diameter/Vodafone.xml
+share/wireshark/diameter/chargecontrol.xml
+share/wireshark/diameter/dictionary.dtd
+share/wireshark/diameter/dictionary.xml
+share/wireshark/diameter/eap.xml
+share/wireshark/diameter/etsie2e4.xml
+share/wireshark/diameter/gqpolicy.xml
+share/wireshark/diameter/imscxdx.xml
+share/wireshark/diameter/mobileipv4.xml
+share/wireshark/diameter/mobileipv6.xml
+share/wireshark/diameter/nasreq.xml
+share/wireshark/diameter/sip.xml
+share/wireshark/diameter/sunping.xml
+share/wireshark/dtd_gen.lua
+share/wireshark/dtds/
+share/wireshark/dtds/dc.dtd
+share/wireshark/dtds/itunes.dtd
+share/wireshark/dtds/mscml.dtd
+share/wireshark/dtds/pocsettings.dtd
+share/wireshark/dtds/presence.dtd
+share/wireshark/dtds/reginfo.dtd
+share/wireshark/dtds/rlmi.dtd
+share/wireshark/dtds/rss.dtd
+share/wireshark/dtds/smil.dtd
+share/wireshark/dtds/watcherinfo.dtd
+share/wireshark/dtds/xcap-caps.dtd
+share/wireshark/dtds/xcap-error.dtd
+share/wireshark/dumpcap.html
+share/wireshark/editcap.html
+share/wireshark/help/
+share/wireshark/help/capture_filters.txt
+share/wireshark/help/capturing.txt
+share/wireshark/help/display_filters.txt
+share/wireshark/help/faq.txt
+share/wireshark/help/getting_started.txt
+share/wireshark/help/overview.txt
+share/wireshark/help/toc
+share/wireshark/init.lua
+share/wireshark/ipmap.html
+share/wireshark/manuf
+share/wireshark/mergecap.html
+share/wireshark/pdml2html.xsl
+share/wireshark/profiles/
+share/wireshark/profiles/Bluetooth/
+share/wireshark/profiles/Bluetooth/colorfilters
+share/wireshark/profiles/Classic/
+share/wireshark/profiles/Classic/colorfilters
+share/wireshark/radius/
+share/wireshark/radius/README.radius_dictionary
+share/wireshark/radius/custom.includes
+share/wireshark/radius/dictionary
+share/wireshark/radius/dictionary.3com
+share/wireshark/radius/dictionary.3gpp
+share/wireshark/radius/dictionary.3gpp2
+share/wireshark/radius/dictionary.acc
+share/wireshark/radius/dictionary.acme
+share/wireshark/radius/dictionary.airespace
+share/wireshark/radius/dictionary.alcatel
+share/wireshark/radius/dictionary.alcatel-lucent.xylan
+share/wireshark/radius/dictionary.alcatel.esam
+share/wireshark/radius/dictionary.alcatel.sr
+share/wireshark/radius/dictionary.alteon
+share/wireshark/radius/dictionary.altiga
+share/wireshark/radius/dictionary.alvarion
+share/wireshark/radius/dictionary.apc
+share/wireshark/radius/dictionary.aptis
+share/wireshark/radius/dictionary.aruba
+share/wireshark/radius/dictionary.ascend
+share/wireshark/radius/dictionary.asn
+share/wireshark/radius/dictionary.audiocodes
+share/wireshark/radius/dictionary.avaya
+share/wireshark/radius/dictionary.azaire
+share/wireshark/radius/dictionary.bay
+share/wireshark/radius/dictionary.bintec
+share/wireshark/radius/dictionary.bristol
+share/wireshark/radius/dictionary.cablelabs
+share/wireshark/radius/dictionary.cabletron
+share/wireshark/radius/dictionary.chillispot
+share/wireshark/radius/dictionary.cisco
+share/wireshark/radius/dictionary.cisco.bbsm
+share/wireshark/radius/dictionary.cisco.vpn3000
+share/wireshark/radius/dictionary.cisco.vpn5000
+share/wireshark/radius/dictionary.clavister
+share/wireshark/radius/dictionary.colubris
+share/wireshark/radius/dictionary.columbia_university
+share/wireshark/radius/dictionary.compat
+share/wireshark/radius/dictionary.cosine
+share/wireshark/radius/dictionary.dhcp
+share/wireshark/radius/dictionary.digium
+share/wireshark/radius/dictionary.eltex
+share/wireshark/radius/dictionary.epygi
+share/wireshark/radius/dictionary.ericsson
+share/wireshark/radius/dictionary.erx
+share/wireshark/radius/dictionary.extreme
+share/wireshark/radius/dictionary.fortinet
+share/wireshark/radius/dictionary.foundry
+share/wireshark/radius/dictionary.freeradius
+share/wireshark/radius/dictionary.freeradius.internal
+share/wireshark/radius/dictionary.freeswitch
+share/wireshark/radius/dictionary.gandalf
+share/wireshark/radius/dictionary.garderos
+share/wireshark/radius/dictionary.gemtek
+share/wireshark/radius/dictionary.h3c
+share/wireshark/radius/dictionary.hp
+share/wireshark/radius/dictionary.huawei
+share/wireshark/radius/dictionary.iea
+share/wireshark/radius/dictionary.infonet
+share/wireshark/radius/dictionary.ipunplugged
+share/wireshark/radius/dictionary.issanni
+share/wireshark/radius/dictionary.itk
+share/wireshark/radius/dictionary.jradius
+share/wireshark/radius/dictionary.juniper
+share/wireshark/radius/dictionary.karlnet
+share/wireshark/radius/dictionary.lancom
+share/wireshark/radius/dictionary.livingston
+share/wireshark/radius/dictionary.localweb
+share/wireshark/radius/dictionary.lucent
+share/wireshark/radius/dictionary.manzara
+share/wireshark/radius/dictionary.merit
+share/wireshark/radius/dictionary.microsoft
+share/wireshark/radius/dictionary.mikrotik
+share/wireshark/radius/dictionary.motorola
+share/wireshark/radius/dictionary.motorola.wimax
+share/wireshark/radius/dictionary.navini
+share/wireshark/radius/dictionary.netscreen
+share/wireshark/radius/dictionary.networkphysics
+share/wireshark/radius/dictionary.nexans
+share/wireshark/radius/dictionary.nokia
+share/wireshark/radius/dictionary.nokia.conflict
+share/wireshark/radius/dictionary.nomadix
+share/wireshark/radius/dictionary.nortel
+share/wireshark/radius/dictionary.ntua
+share/wireshark/radius/dictionary.openser
+share/wireshark/radius/dictionary.packeteer
+share/wireshark/radius/dictionary.patton
+share/wireshark/radius/dictionary.propel
+share/wireshark/radius/dictionary.prosoft
+share/wireshark/radius/dictionary.quiconnect
+share/wireshark/radius/dictionary.quintum
+share/wireshark/radius/dictionary.redback
+share/wireshark/radius/dictionary.redcreek
+share/wireshark/radius/dictionary.rfc2865
+share/wireshark/radius/dictionary.rfc2866
+share/wireshark/radius/dictionary.rfc2867
+share/wireshark/radius/dictionary.rfc2868
+share/wireshark/radius/dictionary.rfc2869
+share/wireshark/radius/dictionary.rfc3162
+share/wireshark/radius/dictionary.rfc3576
+share/wireshark/radius/dictionary.rfc3580
+share/wireshark/radius/dictionary.rfc4072
+share/wireshark/radius/dictionary.rfc4372
+share/wireshark/radius/dictionary.rfc4603
+share/wireshark/radius/dictionary.rfc4675
+share/wireshark/radius/dictionary.rfc4679
+share/wireshark/radius/dictionary.rfc4818
+share/wireshark/radius/dictionary.rfc4849
+share/wireshark/radius/dictionary.rfc5090
+share/wireshark/radius/dictionary.rfc5176
+share/wireshark/radius/dictionary.rfc5447
+share/wireshark/radius/dictionary.rfc5580
+share/wireshark/radius/dictionary.rfc5607
+share/wireshark/radius/dictionary.rfc5904
+share/wireshark/radius/dictionary.rfc6519
+share/wireshark/radius/dictionary.rfc6572
+share/wireshark/radius/dictionary.riverstone
+share/wireshark/radius/dictionary.roaringpenguin
+share/wireshark/radius/dictionary.shasta
+share/wireshark/radius/dictionary.shiva
+share/wireshark/radius/dictionary.slipstream
+share/wireshark/radius/dictionary.sofaware
+share/wireshark/radius/dictionary.sonicwall
+share/wireshark/radius/dictionary.springtide
+share/wireshark/radius/dictionary.starent
+share/wireshark/radius/dictionary.t_systems_nova
+share/wireshark/radius/dictionary.telebit
+share/wireshark/radius/dictionary.telkom
+share/wireshark/radius/dictionary.trapeze
+share/wireshark/radius/dictionary.tropos
+share/wireshark/radius/dictionary.ukerna
+share/wireshark/radius/dictionary.unix
+share/wireshark/radius/dictionary.usr
+share/wireshark/radius/dictionary.utstarcom
+share/wireshark/radius/dictionary.valemount
+share/wireshark/radius/dictionary.versanet
+share/wireshark/radius/dictionary.vqp
+share/wireshark/radius/dictionary.walabi
+share/wireshark/radius/dictionary.waverider
+share/wireshark/radius/dictionary.wichorus
+share/wireshark/radius/dictionary.wimax
+share/wireshark/radius/dictionary.wimax.wichorus
+share/wireshark/radius/dictionary.wispr
+share/wireshark/radius/dictionary.xedia
+share/wireshark/radius/dictionary.zyxel
+share/wireshark/randpkt.html
+share/wireshark/rawshark.html
+share/wireshark/reordercap.html
+share/wireshark/services
+share/wireshark/smi_modules
+share/wireshark/text2pcap.html
+share/wireshark/tpncp/
+share/wireshark/tpncp/tpncp.dat
+share/wireshark/tshark.html
+share/wireshark/wimaxasncp/
+share/wireshark/wimaxasncp/dictionary.dtd
+share/wireshark/wimaxasncp/dictionary.xml
+share/wireshark/wireshark-filter.html
+share/wireshark/wireshark.html
+share/wireshark/ws.css

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/07/14 08:44:51 landry Exp $
+@bin bin/wireshark
+@man man/man1/wireshark.1
+share/doc/pkg-readmes/${FULLPKGNAME}

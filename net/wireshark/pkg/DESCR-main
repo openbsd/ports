@@ -1,0 +1,5 @@
+Wireshark is a network capture tool and protocol analyzer, including
+decoders for very many common and less-common protocols. This package
+contains the main program providing the graphical user interface;
+all other parts are in the tshark package which may be installed
+separately if using the software on a system without X.

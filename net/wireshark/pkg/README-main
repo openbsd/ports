@@ -1,0 +1,21 @@
+$OpenBSD: README-main,v 1.1.1.1 2014/07/14 08:44:51 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Packet dissectors (here in Wireshark, and in other programs such as tcpdump)
+have a long history of security problems. In wireshark, these are isolated
+from the packet capture code (which must have root privileges) by using a
+separate program, dumpcap, to run the capture.
+
+${TRUEPREFIX}/bin/dumpcap has been installed setuid root, with read/execute
+access granted only to users in the _wireshark group. For normal interactive
+use of wireshark, add your username to this group:
+
+  usermod -G _wireshark username
+
+If you will only run wireshark offline on files captured using tcpdump -w,
+this step is not necessary.
+
+DO NOT RUN WIRESHARK AS ROOT.
