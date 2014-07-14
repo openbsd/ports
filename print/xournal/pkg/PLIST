@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/12/31 09:00:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/14 20:17:17 edd Exp $
 @bin bin/xournal
 share/applications/xournal.desktop
 share/doc/xournal/
@@ -14,8 +14,12 @@ share/locale/de/LC_MESSAGES/xournal.mo
 share/locale/es/LC_MESSAGES/xournal.mo
 share/locale/fr/LC_MESSAGES/xournal.mo
 share/locale/it/LC_MESSAGES/xournal.mo
+share/locale/ja/LC_MESSAGES/xournal.mo
 share/locale/nl/LC_MESSAGES/xournal.mo
+share/locale/pl/LC_MESSAGES/xournal.mo
 share/locale/pt_BR/LC_MESSAGES/xournal.mo
+share/locale/zh_CN/LC_MESSAGES/xournal.mo
+share/locale/zh_TW/LC_MESSAGES/xournal.mo
 share/mime/packages/xournal.xml
 share/mimelnk/
 share/mimelnk/application/

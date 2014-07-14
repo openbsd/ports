@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/12/31 08:43:14 bentley Exp $
---- Makefile.in.orig	Tue May 22 15:46:07 2012
-+++ Makefile.in	Mon Dec 24 21:26:33 2012
-@@ -748,7 +748,7 @@ desktop-install:
+$OpenBSD: patch-Makefile_in,v 1.2 2014/07/14 20:17:17 edd Exp $
+--- Makefile.in.orig	Sun Jun 29 07:53:20 2014
++++ Makefile.in	Tue Jul  8 16:24:52 2014
+@@ -820,7 +820,7 @@ desktop-install:
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mime/packages; \
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/applications; \
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/12/31 08:43:14 bentley Exp $
  	$(INSTALL_DATA) $(srcdir)/pixmaps/xournal.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
  	$(INSTALL_DATA) $(srcdir)/pixmaps/xoj.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
  	if test ! -e $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg; then \
-@@ -756,7 +756,7 @@ desktop-install:
+@@ -828,7 +828,7 @@ desktop-install:
  	fi; \
  	$(INSTALL_DATA) $(srcdir)/xournal.xml $(DESTDIR)$$desktopdir/mime/packages; \
  	$(INSTALL_DATA) $(srcdir)/xournal.desktop $(DESTDIR)$$desktopdir/applications; \
