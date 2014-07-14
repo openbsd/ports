@@ -1,0 +1,6 @@
+dhcpcd is a DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client.
+It will listen for new interfaces and carrier signals from the kernel
+so it can quickly configure each interface as it appears.
+
+dhcpcd has a powerful DHCP expression engine which makes it easy
+to decode future RFC DHCP options, or handroll your own.

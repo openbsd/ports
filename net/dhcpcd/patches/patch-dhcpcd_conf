@@ -1,0 +1,17 @@
+$OpenBSD: patch-dhcpcd_conf,v 1.1.1.1 2014/07/14 15:50:55 sthen Exp $
+
+Disable NTP by default.
+
+--- dhcpcd.conf.orig	Tue Jul  8 11:13:12 2014
++++ dhcpcd.conf	Mon Jul 14 15:59:19 2014
+@@ -21,8 +21,8 @@
+ # A list of options to request from the DHCP server.
+ option domain_name_servers, domain_name, domain_search, host_name
+ option classless_static_routes
+-# Most distributions have NTP support.
+-option ntp_servers
++# Most distributions have NTP support, disabled by default on OpenBSD.
++#option ntp_servers
+ # Respect the network MTU.
+ # Some interface drivers reset when changing the MTU so disabled by default.
+ #option interface_mtu
