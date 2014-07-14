@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1271 2014/07/12 19:22:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1272 2014/07/14 08:21:00 zhuk Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -817,15 +817,17 @@ ALL_TARGET ?= all
 FAKE_TARGET ?= ${INSTALL_TARGET}
 
 TEST_TARGET ?= test
-TEST_FLAGS ?=
+TEST_FLAGS ?= 
+TEST_ENV ?=
 ALL_TEST_FLAGS = ${MAKE_FLAGS} ${TEST_FLAGS}
+ALL_TEST_ENV = ${MAKE_ENV} ${TEST_ENV}
 TEST_LOGFILE ?= ${WRKDIR}/test.log
 TEST_LOG ?= | tee ${TEST_LOGFILE}
 IS_INTERACTIVE ?= No
 TEST_IS_INTERACTIVE ?= No
 
 .if ${TEST_IS_INTERACTIVE:L} == "x11"
-TEST_FLAGS += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+TEST_ENV += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 XAUTHORITY ?= ${HOME}/.Xauthority
 .endif
 
@@ -2754,7 +2756,7 @@ ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 .  else
 # What TEST normally does:
 	@cd ${WRKBUILD} && exec 3>&1 && exit `exec 4>&1 1>&3; \
-		(exec; set +e; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		(exec; set +e; ${SETENV} ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
 		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}; \
 		echo $$? >&4) 2>&1 ${TEST_LOG}`
 # End of TEST
