@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/14 08:44:51 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/14 08:54:29 landry Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
@@ -46,6 +46,8 @@ MASTER_SITES =	http://www.wireshark.org/download/src/all-versions/ \
 
 SUBST_VARS =	WVER
 
+BUILD_DEPENDS +=	devel/xdg-utils
+RUN_DEPENDS +=		devel/xdg-utils
 LIB_DEPENDS =
 
 LIB_DEPENDS-text =	${LIB_DEPENDS} \
