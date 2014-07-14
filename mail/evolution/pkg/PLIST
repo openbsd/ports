@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2014/06/09 09:12:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2014/07/14 08:48:43 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -237,6 +237,7 @@ include/evolution-${EVO_VERSION}/e-util/e-source-selector.h
 include/evolution-${EVO_VERSION}/e-util/e-source-util.h
 include/evolution-${EVO_VERSION}/e-util/e-spell-entry.h
 include/evolution-${EVO_VERSION}/e-util/e-spell-text-view.h
+include/evolution-${EVO_VERSION}/e-util/e-spinner.h
 include/evolution-${EVO_VERSION}/e-util/e-stock-request.h
 include/evolution-${EVO_VERSION}/e-util/e-table-click-to-add.h
 include/evolution-${EVO_VERSION}/e-util/e-table-col-dnd.h
@@ -944,6 +945,7 @@ share/evolution/${EVO_VERSION}/icons/hicolor/scalable/apps/im-yahoo.svg
 share/evolution/${EVO_VERSION}/images/
 share/evolution/${EVO_VERSION}/images/minus.png
 share/evolution/${EVO_VERSION}/images/plus.png
+share/evolution/${EVO_VERSION}/images/working.png
 share/evolution/${EVO_VERSION}/images/world_map-960.png
 share/evolution/${EVO_VERSION}/memotypes.xml
 share/evolution/${EVO_VERSION}/searchtypes.xml
