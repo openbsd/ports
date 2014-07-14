@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.853 2014/07/14 08:45:29 landry Exp $
+# $OpenBSD: Makefile,v 1.854 2014/07/14 15:51:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -62,6 +62,7 @@
      SUBDIR += dclib
      SUBDIR += ddclient
      SUBDIR += dhcdrop
+     SUBDIR += dhcpcd
      SUBDIR += dhcping
      SUBDIR += dictd
      SUBDIR += dlint
