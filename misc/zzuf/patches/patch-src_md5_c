@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_md5_c,v 1.1 2014/07/14 08:07:37 espie Exp $
+--- src/md5.c.orig	Mon Jul 14 09:43:54 2014
++++ src/md5.c	Mon Jul 14 09:44:40 2014
+@@ -24,6 +24,10 @@
+ #endif
+ #if defined HAVE_ENDIAN_H
+ #   include <endian.h>
++#      if !defined(__BYTE_ORDER)
++#         define __BYTE_ORDER BYTE_ORDER
++#         define __LITTLE_ENDIAN LITTLE_ENDIAN
++#      endif
+ #endif
+ #include <string.h>
+ #include <stdlib.h>
