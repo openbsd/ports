@@ -195,6 +195,7 @@
 	native-sendmsg: sockaddr match "${TMPDIR}" then permit
 	native-sendmsg: sockaddr match "${WRKDIR}" then permit
 	native-sendmsg: sockaddr match "/<non-existent filename>: *" then deny[enoent]
+	native-sendsyslog: permit
 	native-sendto: permit
 	native-setegid: permit
 	native-setgid: permit
