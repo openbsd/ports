@@ -1,0 +1,4 @@
+Perl module with ZMQ constants.
+This module is now separate from ZMQ main code, and lists the
+constants statically. You can also specify which set of constants
+to pull in depending on the zmq version.
