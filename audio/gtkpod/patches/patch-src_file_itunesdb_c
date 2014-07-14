@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_file_itunesdb_c,v 1.6 2011/10/18 18:57:15 sthen Exp $
---- src/file_itunesdb.c.orig	Sat Jan 17 22:52:32 2009
-+++ src/file_itunesdb.c	Thu Feb 26 23:12:27 2009
-@@ -905,8 +905,11 @@ iTunesDB *gp_load_ipod (iTunesDB *itdb)
+$OpenBSD: patch-src_file_itunesdb_c,v 1.7 2014/07/14 07:49:54 espie Exp $
+--- src/file_itunesdb.c.orig	Mon Jul  5 23:18:23 2010
++++ src/file_itunesdb.c	Mon Jul 14 09:48:32 2014
+@@ -909,8 +909,11 @@ iTunesDB *gp_load_ipod (iTunesDB *itdb)
  			ok_to_load = FALSE;
  		}
      }

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2011/11/15 15:43:52 mpi Exp $
---- src/Makefile.in	Sun Nov 13 17:32:12 2011
-+++ src/Makefile.in	Sun Nov 13 17:33:08 2011
-@@ -282,7 +282,7 @@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2014/07/14 07:49:54 espie Exp $
+--- src/Makefile.in.orig	Tue Aug 10 21:42:48 2010
++++ src/Makefile.in	Mon Jul 14 09:48:32 2014
+@@ -282,7 +282,7 @@ gtkpod_SOURCES = \
      rb_rating_helper.c rb_rating_helper.h \
      rb_cell_renderer_rating.c rb_cell_renderer_rating.h
  

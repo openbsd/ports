@@ -1,18 +1,7 @@
-$OpenBSD: patch-src_mp4file_c,v 1.1 2011/11/15 15:43:52 mpi Exp $
---- src/mp4file.c	Sun Nov 13 17:27:50 2011
-+++ src/mp4file.c	Sun Nov 13 17:47:00 2011
-@@ -35,6 +35,10 @@
- #  include <endian.h> /* for be32toh () */
- #endif
- 
-+#ifdef __OpenBSD__
-+#define be32toh	betoh32
-+#endif
-+
- #include "charset.h"
- #include "itdb.h"
- #include "misc.h"
-@@ -375,11 +379,11 @@
+$OpenBSD: patch-src_mp4file_c,v 1.2 2014/07/14 07:49:54 espie Exp $
+--- src/mp4file.c.orig	Mon Apr 26 21:30:52 2010
++++ src/mp4file.c	Mon Jul 14 09:48:57 2014
+@@ -375,11 +375,11 @@ static MP4TagsFree_t MP4TagsFreeFunc = NULL;
      
  void mp4_init()
  {
