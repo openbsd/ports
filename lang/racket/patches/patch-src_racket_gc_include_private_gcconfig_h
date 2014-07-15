@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:16 juanfra Exp $
+$OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.2 2014/07/15 15:32:41 juanfra Exp $
 --- src/racket/gc/include/private/gcconfig.h.orig	Thu Apr 17 21:58:42 2014
-+++ src/racket/gc/include/private/gcconfig.h	Sat Jul 12 22:18:27 2014
++++ src/racket/gc/include/private/gcconfig.h	Tue Jul 15 16:22:11 2014
 @@ -815,19 +815,14 @@
  #   ifdef OPENBSD
  #     define OS_TYPE "OPENBSD"
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 -#       define STACKBOTTOM USRSTACK
 -#     endif
 +#     include <machine/vmparam.h> /* define USRSTACK */
-+#     define STACKBOTTOM USRSTACK
++#     define STACKBOTTOM ((ptr_t) USRSTACK)
        extern int __data_start[];
  #     define DATASTART ((ptr_t)(__data_start))
        extern char _end[];
@@ -36,7 +36,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 -#       define STACKBOTTOM USRSTACK
 -#     endif
 +#     include <machine/vmparam.h> /* define USRSTACK */
-+#     define STACKBOTTOM USRSTACK
++#     define STACKBOTTOM ((ptr_t) USRSTACK)
        extern int __data_start[];
  #     define DATASTART ((ptr_t)(__data_start))
        extern char _end[];
@@ -67,7 +67,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 -#   endif
 +#     define OS_TYPE "OPENBSD"
 +#     include <machine/vmparam.h> /* define USRSTACK */
-+#     define STACKBOTTOM USRSTACK
++#     define STACKBOTTOM ((ptr_t) USRSTACK)
 +      extern int __data_start[];
 +#     define DATASTART ((ptr_t)(__data_start))
 +      extern char _end[];
@@ -77,7 +77,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  #   ifdef FREEBSD
  #	define OS_TYPE "FREEBSD"
  #	ifndef GC_FREEBSD_THREADS
-@@ -1470,21 +1455,17 @@
+@@ -1470,21 +1455,18 @@
  #     endif /* _ELF_ */
  #  endif
  #  ifdef OPENBSD
@@ -97,10 +97,11 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 -#       define DYNAMIC_LOADING
 -#  endif
 +#    define OS_TYPE "OPENBSD"
++#    define ELF_CLASS ELFCLASS64 /* We only supports 64bits on MIPS */
 +#    define CPP_WORDSZ _MIPS_SZPTR
 +#    define ALIGNMENT (_MIPS_SZPTR/8)
 +#    include <machine/vmparam.h> /* define USRSTACK */
-+#    define STACKBOTTOM USRSTACK
++#    define STACKBOTTOM ((ptr_t) USRSTACK)
 +     extern int _fdata[];
 +#    define DATASTART ((ptr_t)(_fdata))
 +     extern char _end[];
@@ -110,7 +111,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  #  if defined(NONSTOP)
  #    define CPP_WORDSZ 32
  #    define OS_TYPE "NONSTOP"
-@@ -1555,20 +1536,15 @@
+@@ -1555,20 +1537,15 @@
  #     define DATAEND (&_end)
  #   endif /* LINUX */
  #  ifdef OPENBSD
@@ -130,7 +131,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 -#  endif
 +#    define OS_TYPE "OPENBSD"
 +#    include <machine/vmparam.h> /* define USRSTACK */
-+#    define STACKBOTTOM USRSTACK
++#    define STACKBOTTOM ((ptr_t) USRSTACK)
 +     extern int __data_start[];
 +#    define DATASTART ((ptr_t)(__data_start))
 +     extern char _end[];
@@ -140,7 +141,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  # endif /* HP_PA */
  
  # ifdef ALPHA
-@@ -1585,21 +1561,16 @@
+@@ -1585,21 +1562,16 @@
  #       define DYNAMIC_LOADING
  #   endif
  #   ifdef OPENBSD
@@ -162,7 +163,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 +#     define OS_TYPE "OPENBSD"
 +#     define ELF_CLASS ELFCLASS64
 +#     include <machine/vmparam.h> /* define USRSTACK */
-+#     define STACKBOTTOM USRSTACK
++#     define STACKBOTTOM ((ptr_t) USRSTACK)
 +      extern int __data_start[];
 +#     define DATASTART ((ptr_t)(__data_start))
 +      extern char _end[];
@@ -172,7 +173,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  #   ifdef FREEBSD
  #	define OS_TYPE "FREEBSD"
  /* MPROTECT_VDB is not yet supported at all on FreeBSD/alpha. */
-@@ -1869,19 +1840,14 @@
+@@ -1869,19 +1841,14 @@
  #   ifdef OPENBSD
  #     define ALIGNMENT 4
  #     define OS_TYPE "OPENBSD"
@@ -190,7 +191,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 -#       define DYNAMIC_LOADING
 -#   endif
 +#     include <machine/vmparam.h> /* define USRSTACK */
-+#     define STACKBOTTOM USRSTACK
++#     define STACKBOTTOM ((ptr_t) USRSTACK)
 +      extern int __data_start[];
 +#     define DATASTART ((ptr_t)(__data_start))
 +      extern char _end[];
@@ -200,7 +201,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  #   ifdef NOSYS
        /* __data_start is usually defined in the target linker script.  */
        extern int __data_start[];
-@@ -1926,20 +1892,15 @@
+@@ -1926,20 +1893,15 @@
  #      define DYNAMIC_LOADING
  #   endif
  #   ifdef OPENBSD
@@ -220,7 +221,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 -#   endif
 +#     define OS_TYPE "OPENBSD"
 +#     include <machine/vmparam.h> /* define USRSTACK */
-+#     define STACKBOTTOM USRSTACK
++#     define STACKBOTTOM ((ptr_t) USRSTACK)
 +      extern int __data_start[];
 +#     define DATASTART ((ptr_t)(__data_start))
 +      extern char _end[];
@@ -230,7 +231,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  # endif
   
  # ifdef SH4
-@@ -1973,22 +1934,17 @@
+@@ -1973,22 +1935,17 @@
  #     define HBLKSIZE 4096
  #   endif
  #   ifdef OPENBSD
@@ -247,7 +248,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
 +#     define OS_TYPE "OPENBSD"
 +#     define ELF_CLASS ELFCLASS64
 +#     include <machine/vmparam.h> /* define USRSTACK */
-+#     define STACKBOTTOM USRSTACK
++#     define STACKBOTTOM ((ptr_t) USRSTACK)
 +      extern int __data_start[];
  /* PLTSCHEME: commented out these two: */
  /*#       define DATASTART ((ptr_t)(__data_start)) */
@@ -261,7 +262,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  #   define CACHE_LINE_SIZE 64
  #   ifdef LINUX
  #	define OS_TYPE "LINUX"
-@@ -2077,6 +2033,7 @@
+@@ -2077,6 +2034,7 @@
  #   if defined(NETBSD) || defined(OPENBSD)
  #       ifdef NETBSD
  #	    define OS_TYPE "NETBSD"
@@ -269,7 +270,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  #       endif
  #       ifdef OPENBSD
  #	    define OS_TYPE "OPENBSD"
-@@ -2084,7 +2041,6 @@
+@@ -2084,7 +2042,6 @@
  #	ifdef __ELF__
  #	    define DYNAMIC_LOADING
  #	endif
@@ -277,7 +278,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  	extern char etext[];
  #	define SEARCH_FOR_DATA_START
  #   endif
-@@ -2143,7 +2099,7 @@
+@@ -2143,7 +2100,7 @@
  #	endif
  #       define DATAEND  /* not needed */
  #   endif
@@ -286,7 +287,7 @@ $OpenBSD: patch-src_racket_gc_include_private_gcconfig_h,v 1.1 2014/07/15 00:13:
  
  #if defined(LINUX_STACKBOTTOM) && defined(NO_PROC_STAT) \
      && !defined(USE_LIBC_PRIVATES)
-@@ -2204,7 +2160,8 @@
+@@ -2204,7 +2161,8 @@
  #   define DATAEND (end)
  # endif
  
