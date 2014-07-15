@@ -17,6 +17,8 @@
 	    info
 	    ..
 	    lib
+		pkgconfig
+		..
 		X11
 		    app-defaults
 		    ..
