@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/15 18:08:18 giovanni Exp $
+${P5SITE}/Dir/
+${P5SITE}/Dir/Self.pm
+@man man/man3p/Dir::Self.3p
