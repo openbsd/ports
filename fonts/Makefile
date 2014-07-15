@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/05/17 17:21:43 juanfra Exp $
+# $OpenBSD: Makefile,v 1.16 2014/07/15 02:04:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += acrofonts
@@ -39,6 +39,7 @@
      SUBDIR += mftrace
      SUBDIR += msttcorefonts
      SUBDIR += pkfonts
+     SUBDIR += powerline-fonts
      SUBDIR += roboto-fonts
      SUBDIR += ru-pscyr
      SUBDIR += ru-ptsans
