@@ -1,0 +1,13 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2014/07/15 22:23:16 sthen Exp $
+lib/eopenssl/engines/lib4758cca.so
+lib/eopenssl/engines/libaep.so
+lib/eopenssl/engines/libatalla.so
+lib/eopenssl/engines/libcapi.so
+lib/eopenssl/engines/libchil.so
+lib/eopenssl/engines/libcswift.so
+lib/eopenssl/engines/libgmp.so
+lib/eopenssl/engines/libgost.so
+lib/eopenssl/engines/libnuron.so
+lib/eopenssl/engines/libpadlock.so
+lib/eopenssl/engines/libsureware.so
+lib/eopenssl/engines/libubsec.so
