@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/02/06 06:32:55 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2014/07/15 11:46:25 ajacoutot Exp $
 @pkgpath sysutils/apcupsd,snmp
 @group bin
 @man man/man5/apcupsd.conf.5
@@ -22,7 +22,6 @@ share/doc/apcupsd/COPYING
 share/doc/apcupsd/COPYRIGHT
 share/doc/apcupsd/DISCLAIMER
 share/doc/apcupsd/README.openbsd
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/apcupsd/
 share/examples/apcupsd/etc/
 @sample ${SYSCONFDIR}/
