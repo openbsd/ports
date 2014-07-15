@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2014/06/22 10:59:37 juanfra Exp $
+# $OpenBSD: Makefile,v 1.15 2014/07/15 00:13:16 juanfra Exp $
 
 BROKEN-hppa =		segfault while racket compiles XFORMS (at xsrc)
 BROKEN-mips64el =	sigbus while racket compiles XFORMS (at xsrc)
+BROKEN-powerpc =	racket builds but does not pass the tests (with or without JIT)
 
 SHARED_ONLY =		Yes
-ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el
+ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
 V =			6.0.1
-REVISION =		0
+REVISION =		1
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-builtpkgs
 
