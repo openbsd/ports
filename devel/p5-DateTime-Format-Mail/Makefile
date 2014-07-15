@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/13 21:50:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/15 11:42:45 sthen Exp $
 
-COMMENT= 	parsesr Email dates into DateTime
+COMMENT=	convert between DateTime and email (RFC2822/822) formats
 
-MODULES=	cpan 
+MODULES=	cpan
 DISTNAME=	DateTime-Format-Mail-0.401
+EPOCH=		0
 CATEGORIES=	devel converters
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE=perl
+CONFIGURE_STYLE= perl
 
 RUN_DEPENDS=	devel/p5-DateTime \
 		devel/p5-Params-Validate
