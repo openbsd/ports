@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2014/07/14 09:17:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.30 2014/07/15 08:56:20 espie Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 
 DISTNAME =		k3b-1.0.4
-REVISION=		21
+REVISION=		22
 CATEGORIES =		multimedia
 
 SHARED_LIBS =		k3b	0.0	# 3.0
