@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2012/08/23 17:51:22 ajacoutot Exp $
---- configure.orig	Thu Feb  2 21:24:20 2012
-+++ configure	Fri Mar 30 21:27:25 2012
-@@ -6261,7 +6261,7 @@ $as_echo "#define _GNU_SOURCE 1" >>confdefs.h
+$OpenBSD: patch-configure,v 1.5 2014/07/15 18:17:06 giovanni Exp $
+--- configure.orig	Sun May 11 09:38:24 2014
++++ configure	Mon Jul 14 00:10:07 2014
+@@ -6368,7 +6368,7 @@ $as_echo "#define _GNU_SOURCE 1" >>confdefs.h
  elif test "$GCC" = "yes"
  then
    GCC_VERSION=`$CC -dumpversion`

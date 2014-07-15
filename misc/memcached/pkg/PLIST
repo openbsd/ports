@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/25 14:37:28 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/07/15 18:17:06 giovanni Exp $
 @newgroup _memcached:637
 @newuser _memcached:637:_memcached:daemon:memcache daemon:/var/empty:/sbin/nologin
 @bin bin/memcached
@@ -8,4 +8,5 @@ include/memcached/protocol_binary.h
 share/doc/memcached/
 share/doc/memcached/protocol.txt
 share/doc/memcached/readme.txt
+share/doc/memcached/threads.txt
 @rcscript ${RCDIR}/memcached

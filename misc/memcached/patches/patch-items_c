@@ -1,13 +1,13 @@
-$OpenBSD: patch-items_c,v 1.6 2014/01/05 13:32:43 jasper Exp $
+$OpenBSD: patch-items_c,v 1.7 2014/07/15 18:17:06 giovanni Exp $
 
 printf format string fix for long long time_t
 
 and fix buffer-overrun when logging keys (CVE-2013-0179)
 https://github.com/memcached/memcached/commit/fbe823d9a61b5149cd6e3b5e17bd28dd3b8dd760
 
---- items.c.orig       Mon Jul 30 22:23:37 2012
-+++ items.c	Thu Jan  2 17:02:16 2014
-@@ -389,9 +389,9 @@ char *do_item_cachedump(const unsigned int slabs_clsid
+--- items.c.orig	Fri May  2 00:10:56 2014
++++ items.c	Mon Jul 14 00:10:07 2014
+@@ -410,9 +410,9 @@ char *do_item_cachedump(const unsigned int slabs_clsid
          /* Copy the key since it may not be null-terminated in the struct */
          strncpy(key_temp, ITEM_key(it), it->nkey);
          key_temp[it->nkey] = 0x00; /* terminate */
@@ -19,23 +19,3 @@ https://github.com/memcached/memcached/commit/fbe823d9a61b5149cd6e3b5e17bd28dd3b
          if (bufcurr + len + 6 > memlimit)  /* 6 is END\r\n\0 */
              break;
          memcpy(buffer + bufcurr, temp, len);
-@@ -510,9 +510,17 @@ item *do_item_get(const char *key, const size_t nkey, 
- 
-     if (settings.verbose > 2) {
-         if (it == NULL) {
--            fprintf(stderr, "> NOT FOUND %s", key);
-+            int ii;
-+            fprintf(stderr, "> NOT FOUND ");
-+            for (ii = 0; ii < nkey; ++ii) {
-+                fprintf(stderr, "%c", key[ii]);
-+            }
-         } else {
--            fprintf(stderr, "> FOUND KEY %s", ITEM_key(it));
-+            int ii;
-+            fprintf(stderr, "> FOUND KEY ");
-+            for (ii = 0; ii < it->nkey; ++ii) {
-+                fprintf(stderr, "%c", ITEM_key(it)[ii]);
-+            }
-             was_found++;
-         }
-     }

@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.24 2014/01/05 13:32:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2014/07/15 18:17:06 giovanni Exp $
 
 COMMENT=	distributed memory object caching system
 
-DISTNAME=	memcached-1.4.14
-REVISION=	1
+DISTNAME=	memcached-1.4.20
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.memcached.org/
+
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c event pthread
 
-MASTER_SITES=		https://memcached.googlecode.com/files/
-MASTER_SITES0=		${HOMEPAGE}/dist/
+MASTER_SITES=		http://memcached.org/files/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libevent=/usr \
 			--disable-coverage \
 			--disable-docs
 TEST_TARGET=		test
+TEST_DEPENDS=		devel/p5-Test-MockSleep
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/memcached
