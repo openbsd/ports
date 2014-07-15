@@ -1,0 +1,5 @@
+Test::MockSleep overrides perl's sleep call. A call to sleep will
+not really sleep.
+
+It also provides a facility to check how many seconds a program
+would have slept.

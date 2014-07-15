@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/15 18:10:00 giovanni Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/MockSleep.pm
+@man man/man3p/Test::MockSleep.3p
