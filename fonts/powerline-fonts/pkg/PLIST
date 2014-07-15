@@ -1,0 +1,84 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/15 02:03:48 sthen Exp $
+lib/X11/fonts/
+lib/X11/fonts/powerline/
+@fontdir lib/X11/fonts/powerline/AnonymousPro/
+lib/X11/fonts/powerline/AnonymousPro/Anonymice Powerline Bold Italic.ttf
+lib/X11/fonts/powerline/AnonymousPro/Anonymice Powerline Bold.ttf
+lib/X11/fonts/powerline/AnonymousPro/Anonymice Powerline Italic.ttf
+lib/X11/fonts/powerline/AnonymousPro/Anonymice Powerline.ttf
+lib/X11/fonts/powerline/AnonymousPro/LICENSE.txt
+lib/X11/fonts/powerline/AnonymousPro/README.rst
+@fontdir lib/X11/fonts/powerline/DejaVuSansMono/
+lib/X11/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono Bold Oblique for Powerline.ttf
+lib/X11/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono Bold for Powerline.ttf
+lib/X11/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono Oblique for Powerline.ttf
+lib/X11/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono for Powerline.ttf
+lib/X11/fonts/powerline/DejaVuSansMono/LICENSE.txt
+lib/X11/fonts/powerline/DejaVuSansMono/README.rst
+@fontdir lib/X11/fonts/powerline/DroidSansMono/
+lib/X11/fonts/powerline/DroidSansMono/Droid Sans Mono for Powerline.otf
+lib/X11/fonts/powerline/DroidSansMono/LICENSE.txt
+lib/X11/fonts/powerline/DroidSansMono/README.rst
+@fontdir lib/X11/fonts/powerline/Inconsolata/
+lib/X11/fonts/powerline/Inconsolata/Inconsolata for Powerline.otf
+lib/X11/fonts/powerline/Inconsolata/LICENSE.txt
+lib/X11/fonts/powerline/Inconsolata/README.rst
+@fontdir lib/X11/fonts/powerline/InconsolataDz/
+lib/X11/fonts/powerline/InconsolataDz/Inconsolata-dz for Powerline.otf
+lib/X11/fonts/powerline/InconsolataDz/LICENSE.txt
+lib/X11/fonts/powerline/InconsolataDz/README.rst
+@fontdir lib/X11/fonts/powerline/LiberationMono/
+lib/X11/fonts/powerline/LiberationMono/LICENSE.txt
+lib/X11/fonts/powerline/LiberationMono/Literation Mono Powerline Bold Italic.ttf
+lib/X11/fonts/powerline/LiberationMono/Literation Mono Powerline Bold.ttf
+lib/X11/fonts/powerline/LiberationMono/Literation Mono Powerline Italic.ttf
+lib/X11/fonts/powerline/LiberationMono/Literation Mono Powerline.ttf
+lib/X11/fonts/powerline/LiberationMono/README.rst
+@fontdir lib/X11/fonts/powerline/Meslo/
+lib/X11/fonts/powerline/Meslo/LICENSE.txt
+lib/X11/fonts/powerline/Meslo/Meslo LG L DZ Regular for Powerline.otf
+lib/X11/fonts/powerline/Meslo/Meslo LG L Regular for Powerline.otf
+lib/X11/fonts/powerline/Meslo/Meslo LG M DZ Regular for Powerline.otf
+lib/X11/fonts/powerline/Meslo/Meslo LG M Regular for Powerline.otf
+lib/X11/fonts/powerline/Meslo/Meslo LG S DZ Regular for Powerline.otf
+lib/X11/fonts/powerline/Meslo/Meslo LG S Regular for Powerline.otf
+lib/X11/fonts/powerline/Meslo/README.rst
+lib/X11/fonts/powerline/README.rst
+@fontdir lib/X11/fonts/powerline/SourceCodePro/
+lib/X11/fonts/powerline/SourceCodePro/LICENSE.txt
+lib/X11/fonts/powerline/SourceCodePro/README.rst
+lib/X11/fonts/powerline/SourceCodePro/Sauce Code Powerline Black.otf
+lib/X11/fonts/powerline/SourceCodePro/Sauce Code Powerline Bold.otf
+lib/X11/fonts/powerline/SourceCodePro/Sauce Code Powerline ExtraLight.otf
+lib/X11/fonts/powerline/SourceCodePro/Sauce Code Powerline Light.otf
+lib/X11/fonts/powerline/SourceCodePro/Sauce Code Powerline Medium.otf
+lib/X11/fonts/powerline/SourceCodePro/Sauce Code Powerline Regular.otf
+lib/X11/fonts/powerline/SourceCodePro/Sauce Code Powerline Semibold.otf
+@fontdir lib/X11/fonts/powerline/Terminus/
+lib/X11/fonts/powerline/Terminus/LICENSE.txt
+lib/X11/fonts/powerline/Terminus/README.rst
+lib/X11/fonts/powerline/Terminus/ter-powerline-x12b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x12n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x14b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x14n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x16b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x16n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x18b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x18n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x20b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x20n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x22b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x22n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x24b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x24n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x28b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x28n.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x32b.pcf.gz
+lib/X11/fonts/powerline/Terminus/ter-powerline-x32n.pcf.gz
+lib/X11/fonts/powerline/UbuntuMono/
+lib/X11/fonts/powerline/UbuntuMono/LICENCE.txt
+lib/X11/fonts/powerline/UbuntuMono/README.rst
+lib/X11/fonts/powerline/UbuntuMono/Ubuntu Mono derivative Powerline Bold Italic.ttf
+lib/X11/fonts/powerline/UbuntuMono/Ubuntu Mono derivative Powerline Bold.ttf
+lib/X11/fonts/powerline/UbuntuMono/Ubuntu Mono derivative Powerline Italic.ttf
+lib/X11/fonts/powerline/UbuntuMono/Ubuntu Mono derivative Powerline.ttf

@@ -1,0 +1,14 @@
+Powerline is a statusline plugin for vim, and provides statuslines and
+prompts for several other applications, including zsh, bash, tmux,
+IPython, Awesome and Qtile.
+
+Powerline uses several special glyphs to get the arrow effect and some
+custom symbols for developers. This requires that you either have a
+symbol font or a patched font on your system. Your terminal emulator
+must also support either patched fonts or fontconfig for Powerline to
+work properly.
+
+This package contains a number of fonts which are derived from standard
+fonts (Anonymous Pro, DejaVu Sans Mono, Droid Sans Mono, Inconsolata,
+Inconsolata-dz, Liberation Mono, Meslo, Source Code Pro, Terminus,
+Ubuntu Mono) by patching them to add these glyphs.
