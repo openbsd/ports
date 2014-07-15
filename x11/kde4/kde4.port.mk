@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.20 2014/07/09 20:03:22 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.21 2014/07/15 18:06:00 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.13.2
@@ -51,13 +51,15 @@ ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
 EXTRACT_SUFX ?=		.tar.xz
 
 .if "${NO_BUILD:L}" != "yes"
-MODULES +=		devel/cmake
-SEPARATE_BUILD ?=	flavored
-
 # CONFIGURE_STYLE needs separate handling because it is set to empty
 # string in bsd.port.mk initially.
 .   if "${CONFIGURE_STYLE}" == ""
 CONFIGURE_STYLE =	cmake
+.   endif
+
+.   if ${CONFIGURE_STYLE:Mcmake}
+MODULES +=		devel/cmake
+SEPARATE_BUILD ?=	flavored
 .   endif
 .endif
 
