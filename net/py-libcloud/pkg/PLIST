@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/27 09:58:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/15 15:34:15 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -91,12 +91,16 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gridspot.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/gridspot.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/hostvirtual.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/hostvirtual.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/hpcloud.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/hpcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ibm_sce.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ibm_sce.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ikoula.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ikoula.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/joyent.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/joyent.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/kili.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/kili.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ktucloud.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ktucloud.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/libvirt_driver.py
@@ -151,6 +155,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/dummy.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/dummy.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/gandi.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/gandi.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/google.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/google.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/hostvirtual.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/hostvirtual.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/linode.py
