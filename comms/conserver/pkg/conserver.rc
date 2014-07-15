@@ -1,10 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: conserver.rc,v 1.5 2011/12/17 22:01:12 sthen Exp $
+# $OpenBSD: conserver.rc,v 1.6 2014/07/15 13:47:26 benno Exp $
 
 daemon="${TRUEPREFIX}/sbin/conserver -d"
 daemon_flags="-n"
+daemon_user="_conserver"
 
 . /etc/rc.d/rc.subr
+
+rc_pre() {
+	install -d -o _conserver /var/run/conserver
+}
 
 rc_cmd $1

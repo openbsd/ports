@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/11/08 09:58:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/07/15 13:47:26 benno Exp $
+@newgroup _conserver:736
+@newuser _conserver:736:_conserver:daemon:Serial console server:/nonexistent:/sbin/nologin
 @bin bin/console
 @man man/man1/console.1
 @man man/man5/conserver.cf.5
@@ -11,5 +13,7 @@ share/examples/conserver/conserver.cf
 @sample ${SYSCONFDIR}/conserver.cf
 share/examples/conserver/conserver.passwd
 @sample ${SYSCONFDIR}/conserver.passwd
+share/examples/conserver/console.cf
+@sample ${SYSCONFDIR}/console.cf
 @extraunexec rm -rf /var/consoles
 @rcscript ${RCDIR}/conserver
