@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2014/05/22 09:48:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2014/07/15 22:09:59 sebastia Exp $
 
 COMMENT =	GNUstep battery monitor
+ONLY_FOR_ARCHS =	${APM_ARCHS}
 
 DISTNAME =	batmon-0.7
 REVISION =	1
