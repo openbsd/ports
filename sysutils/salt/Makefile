@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2014/07/11 08:55:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/07/15 15:49:37 ajacoutot Exp $
 
 # optional dependencies
-# https://github.com/saltstack/salt/blob/develop/doc/conf.py#L37
+# https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
 # libvirt-python
 # py-GitPython
 # py-django
