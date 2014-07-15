@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/07/08 09:55:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/07/15 23:33:48 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -2160,6 +2160,8 @@ lib/calibre/calibre/gui2/tweak_book/main.py
 lib/calibre/calibre/gui2/tweak_book/main.pyc
 lib/calibre/calibre/gui2/tweak_book/manage_fonts.py
 lib/calibre/calibre/gui2/tweak_book/manage_fonts.pyc
+lib/calibre/calibre/gui2/tweak_book/plugin.py
+lib/calibre/calibre/gui2/tweak_book/plugin.pyc
 lib/calibre/calibre/gui2/tweak_book/polish.py
 lib/calibre/calibre/gui2/tweak_book/polish.pyc
 lib/calibre/calibre/gui2/tweak_book/preferences.py
@@ -2945,9 +2947,8 @@ share/applications/calibre-ebook-edit.desktop
 share/applications/calibre-ebook-viewer.desktop
 share/applications/calibre-gui.desktop
 share/applications/calibre-lrfviewer.desktop
-share/bash_completion.d/
+share/bash-completion/completions/calibre
 @sample ${SYSCONFDIR}/bash_completion.d/
-share/bash_completion.d/calibre
 @sample ${SYSCONFDIR}/bash_completion.d/calibre
 share/calibre/
 share/calibre/builtin_recipes.xml
@@ -3284,7 +3285,10 @@ share/calibre/localization/pykakasi/kanwadict2.pickle
 share/calibre/localization/stats.pickle
 share/calibre/metadata_sqlite.sql
 share/calibre/mime.types
-share/calibre/quick_start.epub
+share/calibre/quick_start/
+share/calibre/quick_start/deu.epub
+share/calibre/quick_start/eng.epub
+share/calibre/quick_start/fra.epub
 share/calibre/recipes/
 share/calibre/recipes/10minutos.recipe
 share/calibre/recipes/180.recipe

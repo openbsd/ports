@@ -1,25 +1,15 @@
-$OpenBSD: patch-src_calibre_linux_py,v 1.4 2014/03/19 02:15:46 sthen Exp $
+$OpenBSD: patch-src_calibre_linux_py,v 1.5 2014/07/15 23:33:48 sthen Exp $
 
 - skip uninstaller parts
-- correct path for bash completion samples
 
---- src/calibre/linux.py.orig	Fri Mar 14 04:21:05 2014
-+++ src/calibre/linux.py	Wed Mar 19 00:37:52 2014
-@@ -8,7 +8,7 @@ from subprocess import check_call
- from functools import partial
- 
- from calibre import __appname__, prints, guess_type
--from calibre.constants import islinux, isnetbsd, isbsd
-+from calibre.constants import islinux, isnetbsd, isopenbsd, isbsd
- from calibre.customize.ui import all_input_formats
- from calibre.ptempfile import TemporaryDirectory
- from calibre import CurrentDir
-@@ -495,19 +495,7 @@ class PostInstall:
+--- src/calibre/linux.py.orig	Fri Jul 11 03:19:43 2014
++++ src/calibre/linux.py	Mon Jul 14 13:24:14 2014
+@@ -644,18 +644,6 @@ class PostInstall:
              self.setup_completion()
          if islinux or isbsd:
              self.setup_desktop_integration()
 -        self.create_uninstaller()
- 
+-
 -        from calibre.utils.config import config_dir
 -        if os.path.exists(config_dir):
 -            os.chdir(config_dir)
@@ -30,16 +20,6 @@ $OpenBSD: patch-src_calibre_linux_py,v 1.4 2014/03/19 02:15:46 sthen Exp $
 -                        shutil.rmtree(f) if os.path.isdir(f) else os.unlink(f)
 -                if os.stat(config_dir).st_uid == 0:
 -                    os.rmdir(config_dir)
--
+ 
          if warn is None and self.warnings:
              self.info('\n\nThere were %d warnings\n'%len(self.warnings))
-             for args, kwargs in self.warnings:
-@@ -561,7 +549,7 @@ class PostInstall:
-             if os.path.exists(bc):
-                 f = os.path.join(bc, 'calibre')
-             else:
--                if isnetbsd:
-+                if isnetbsd or isopenbsd:
-                     f = os.path.join(self.opts.staging_root, 'share/bash_completion.d/calibre')
-                 else:
-                     f = os.path.join(self.opts.staging_etc, 'bash_completion.d/calibre')
