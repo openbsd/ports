@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.160 2014/07/11 13:46:36 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.161 2014/07/15 10:07:16 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -500,8 +500,7 @@ sub tweak_search
 # list of
 #   cat/path => badspec
 my $cve = { 
-	# for testing
-	# 'archivers/arc' => 'arc-<6',
+	'print/cups,-main' => 'cups-<1.7.4',
 };
 
 # ->check_security($path)
