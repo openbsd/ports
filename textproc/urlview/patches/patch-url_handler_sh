@@ -1,6 +1,6 @@
-$OpenBSD: patch-url_handler_sh,v 1.1.1.1 2000/08/13 00:06:21 naddy Exp $
+$OpenBSD: patch-url_handler_sh,v 1.2 2014/07/16 14:35:37 ajacoutot Exp $
 --- url_handler.sh.orig	Tue Jul  4 12:14:30 2000
-+++ url_handler.sh	Sat Aug 12 02:38:24 2000
++++ url_handler.sh	Wed Jul 16 16:25:22 2014
 @@ -1,4 +1,4 @@
 -#! /bin/bash
 +#!/bin/sh
@@ -16,11 +16,11 @@ $OpenBSD: patch-url_handler_sh,v 1.1.1.1 2000/08/13 00:06:21 naddy Exp $
 -mailto_prgs="/usr/bin/mutt:VT /usr/bin/elm:VT /usr/bin/pine:VT /usr/bin/mail:VT"
 -gopher_prgs="/usr/bin/lynx:XT /usr/bin/gopher:XT"
 -ftp_prgs="/usr/bin/lynx:XT /usr/bin/ncftp:XT"
-+https_prgs="/usr/bin/lynx:XT /usr/local/bin/netscape:XW"
-+http_prgs="/usr/local/bin/links:XT /usr/bin/lynx:XT /usr/local/bin/netscape:XW"
-+mailto_prgs="/usr/local/bin/mutt:VT /usr/local/bin/pine:VT /usr/bin/mail:VT"
-+gopher_prgs="/usr/bin/lynx:XT /usr/local/bin/gopher:XT"
-+ftp_prgs="/usr/local/bin/ncftp:XT /usr/bin/lynx:XT /usr/bin/ftp:VT"
++https_prgs="${LOCALBASE}/bin/xdg-open:XT ${LOCALBASE}/bin/xdg-open:XW"
++http_prgs="${LOCALBASE}/bin/xdg-open:XT ${LOCALBASE}/bin/xdg-open:XW"
++mailto_prgs="${LOCALBASE}/bin/xdg-email:VT /usr/bin/mail:VT ${LOCALBASE}/bin/xdg-email:XW"
++gopher_prgs="/usr/local/bin/gopher:XT"
++ftp_prgs="/usr/bin/ftp:VT"
  
  # Program used as an xterm (if it doesn't support -T you'll need to change
  # the command line in getprg)
