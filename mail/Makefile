@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2014/07/08 20:23:28 jca Exp $
+# $OpenBSD: Makefile,v 1.311 2014/07/16 12:10:29 jca Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -166,6 +166,7 @@
      SUBDIR += pgpsendmail
      SUBDIR += pine-pgp-filters
      SUBDIR += pop3d
+     SUBDIR += popa3d
      SUBDIR += popclient
      SUBDIR += poppassd
      SUBDIR += poppy
