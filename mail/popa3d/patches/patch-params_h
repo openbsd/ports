@@ -1,0 +1,52 @@
+$OpenBSD: patch-params_h,v 1.1.1.1 2014/07/16 12:02:30 jca Exp $
+--- params.h.orig	Sun Mar  5 14:18:32 2006
++++ params.h	Wed Jul 16 00:41:44 2014
+@@ -13,7 +13,7 @@
+ /*
+  * Are we going to be a standalone server or start via an inetd clone?
+  */
+-#define POP_STANDALONE			0
++#define POP_STANDALONE			1
+ 
+ #if POP_STANDALONE
+ 
+@@ -103,7 +103,7 @@
+  * A pseudo-user to run as before authentication.  The user and its UID
+  * must not be used for any other purpose.
+  */
+-#define POP_USER			POP_SERVER
++#define POP_USER			"_popa3d"
+ 
+ /*
+  * An empty directory to chroot to before authentication.  The directory
+@@ -154,8 +154,8 @@
+  *
+  * Note that there's no built-in password aging support.
+  */
+-#define AUTH_PASSWD			0
+-#define AUTH_SHADOW			1
++#define AUTH_PASSWD			1
++#define AUTH_SHADOW			0
+ #define AUTH_PAM			0
+ #define AUTH_PAM_USERPASS		0
+ #define USE_LIBPAM_USERPASS		0
+@@ -173,7 +173,7 @@
+  * it harder (but still far from impossible, on most systems) to check
+  * for valid usernames.  Adjust it for your crypt(3).
+  */
+-#define AUTH_DUMMY_SALT			"xx"
++#define AUTH_DUMMY_SALT			"$2a$06$"
+ 
+ #endif
+ 
+@@ -208,8 +208,8 @@
+  *
+  * *BSDs use flock(2), others typically use fcntl(2).
+  */
+-#define LOCK_FCNTL			1
+-#define LOCK_FLOCK			0
++#define LOCK_FCNTL			0
++#define LOCK_FLOCK			1
+ 
+ /*
+  * How do we talk to syslogd?  These should be fine for most systems.

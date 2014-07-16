@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: popa3d.rc,v 1.1.1.1 2014/07/16 12:02:30 jca Exp $
+
+daemon="${PREFIX}/libexec/popa3d -D"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

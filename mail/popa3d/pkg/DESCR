@@ -1,0 +1,13 @@
+popa3d is a tiny POP3 daemon. Goals are, in order:
+
+1. Security (to the extent that is possible with POP3 at all, of course).
+2. Reliability (again, as limited by the mailbox format and the protocol).
+3. RFC compliance (slightly relaxed to work with real-world POP3 clients).
+4. Performance (limited by the more important goals, above).
+
+popa3d can be run from inetd, or as a stand-alone server.
+Note that it does not itself provide SSL support, but may be wrapped
+with relayd or stunnel.
+
+popa3d only uses flock(2) for locking and may not be safe on NFS
+or with mail systems that only use lock files.

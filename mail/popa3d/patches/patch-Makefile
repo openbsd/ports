@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/07/16 12:02:30 jca Exp $
+--- Makefile.orig	Sun Mar  5 11:36:54 2006
++++ Makefile	Wed Jul 16 00:12:50 2014
+@@ -34,7 +34,7 @@ OBJS = \
+ 	startup.o \
+ 	standalone.o \
+ 	virtual.o \
+-	auth_passwd.o auth_shadow.o auth_pam.o \
++	auth_passwd.o \
+ 	pop_root.o pop_auth.o pop_trans.o \
+ 	protocol.o database.o mailbox.o \
+ 	misc.o \
