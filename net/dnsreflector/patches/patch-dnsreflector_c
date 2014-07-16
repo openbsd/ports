@@ -1,0 +1,14 @@
+$OpenBSD: patch-dnsreflector_c,v 1.1 2014/07/16 12:36:27 jca Exp $
+--- dnsreflector.c.orig	Wed Jul 16 13:54:57 2014
++++ dnsreflector.c	Wed Jul 16 13:55:17 2014
+@@ -183,9 +183,7 @@ main(int argc, char *argv[])
+ 		fatal("Unable to daemonize: %s", strerror(errno));
+ 
+ 	/* Find less privileged user */
+-	pw = getpwnam("dnsrefle");
+-	if (!pw)
+-		pw = getpwnam("nobody");
++	pw = getpwnam("_dnsreflector");
+ 	if (!pw)
+ 		fatal("No unprivileged user found");
+ 
