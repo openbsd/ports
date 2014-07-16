@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.6 2013/11/04 21:50:09 brad Exp $
---- configure.ac.orig	Sat Sep 26 16:34:14 2009
-+++ configure.ac	Sun Aug 21 01:54:37 2011
-@@ -97,9 +97,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
+$OpenBSD: patch-configure_ac,v 1.7 2014/07/16 21:17:04 brad Exp $
+--- configure.ac.orig	Tue May  6 06:28:33 2014
++++ configure.ac	Wed Jul 16 12:21:01 2014
+@@ -100,9 +100,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
  AM_CONDITIONAL(SILC_POWERPC, test x$cpu_ppc = xtrue)
  AM_CONDITIONAL(SILC_IA64, test x$cpu_ia64 = xtrue)
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2013/11/04 21:50:09 brad Exp $
  AC_PROG_CC
  AC_C_INLINE
  AC_C_CONST
-@@ -471,59 +468,9 @@ fi
+@@ -485,59 +482,9 @@ fi
  ## Compiler and compiler flag checks
  ##
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2013/11/04 21:50:09 brad Exp $
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion
  # when compiling sha1 with optimizations on UltraSPARC.
-@@ -579,55 +526,6 @@ AC_DEFINE_UNQUOTED([SILC_DOCDIR], "$DOCDIR", [SILC_DOC
+@@ -593,55 +540,6 @@ AC_DEFINE_UNQUOTED([SILC_DOCDIR], "$DOCDIR", [SILC_DOC
  compile_libs=true
  LIBSUBDIR=lib
  
@@ -129,7 +129,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2013/11/04 21:50:09 brad Exp $
  # SOCKS4 support checking
  #
  SAVE_LIBS="$LIBS"
-@@ -1291,7 +1189,7 @@ fi
+@@ -1311,7 +1209,7 @@ fi
  
  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fno-regmove)
  if test x$summary_debug = xno -a x$want_cc_optimizations = xtrue; then
@@ -138,7 +138,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2013/11/04 21:50:09 brad Exp $
  fi
  
  AC_SUBST(SILC_CRYPTO_CFLAGS)
-@@ -1327,7 +1225,6 @@ if test x$compile_libs = xtrue; then
+@@ -1347,7 +1245,6 @@ if test x$compile_libs = xtrue; then
  AC_MSG_NOTICE([configuring math library])
  
  if test x$want_cc_optimizations = xtrue; then

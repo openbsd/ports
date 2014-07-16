@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example_silcd_conf_in,v 1.9 2008/10/26 18:12:11 sthen Exp $
---- doc/example_silcd.conf.in.orig	Sat Oct 25 14:59:17 2008
-+++ doc/example_silcd.conf.in	Sun Oct 26 11:10:26 2008
+$OpenBSD: patch-doc_example_silcd_conf_in,v 1.10 2014/07/16 21:17:04 brad Exp $
+--- doc/example_silcd.conf.in.orig	Mon May  5 01:30:11 2014
++++ doc/example_silcd.conf.in	Wed Jul 16 12:24:55 2014
 @@ -22,7 +22,7 @@
  # Include global algorithms from the "silcalgs.conf" file.  This file defines
  # ciphers, hash functions, HMACs and PKCS algorithms that can be used.
@@ -10,44 +10,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.9 2008/10/26 18:12:11 sthen Exp $
  
  #
  # General configuration options
-@@ -186,7 +186,7 @@ ServerInfo {
- 	#
- 	# Server name (FQDN)
- 	#
--	hostname = "lassi.kuo.fi.ssh.com";
-+	hostname = "localhost";
- 
- 	#
- 	# Primary listener.  Specify the IP address and the port to bind
-@@ -194,7 +194,7 @@ ServerInfo {
- 	# if the server is behind NAT.
- 	#
- 	Primary {
--		ip = "10.2.1.6";
-+		ip = "127.0.0.1";
- 		# public_ip = "11.1.1.1";
- 		port = 706;
- 	};
-@@ -215,37 +215,37 @@ ServerInfo {
- 	#
- 	# Geographic location
- 	#
--	Location = "Kuopio, Finland";
-+	Location = "Earth";
- 
- 	#
- 	# Full admin name
- 	#
--	Admin = "Foo T. Bar";
-+	Admin = "Admin";
- 
- 	#
- 	# Admin's email address
- 	#
--	AdminEmail = "foo-admin@bar.com";
-+	AdminEmail = "root@127.0.0.1";
- 
- 	#
+@@ -231,21 +231,21 @@ ServerInfo {
  	# Run SILC server as specific user and group.  The server must be
  	# initially run as root.
  	#
@@ -74,68 +37,3 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.9 2008/10/26 18:12:11 sthen Exp $
  
  	#
  	# Pid file
-@@ -458,10 +458,10 @@ Client {
- # required.
- #
- Admin {
--	Host = "10.2.1.199";
--	User = "priikone";
--	Nick = "pekka";
--	Passphrase = "verysecret";
-+	Host = "127.0.0.1";
-+	User = "admin";
-+	Nick = "admin";
-+	Passphrase = "admin";
- 	# PublicKey = "/path/to/the/public.pub";
- };
- 
-@@ -484,13 +484,13 @@ Admin {
- # to true.  For normal connections set it false.  If it is set to true then
- # your server will be backup router.
- #
--ServerConnection {
--	Host = "10.2.1.7";
--	Passphrase = "verysecret";
--	#PublicKey = "/path/to/the/public.pub";
--	Params = "normal";
--	Backup = false;
--};
-+#ServerConnection {
-+#	Host = "10.2.1.7";
-+#	Passphrase = "verysecret";
-+#	#PublicKey = "/path/to/the/public.pub";
-+#	Params = "normal";
-+#	Backup = false;
-+#};
- 
- #
- # Configured router connections
-@@ -520,17 +520,17 @@ ServerConnection {
- # backup router is in our cell then set the "BackupLocal" option to true.
- # If the backup router is in other cell then set it to false.
- #
--RouterConnection {
--	Host = "10.2.1.100";
--	Port = 706;
--	Passphrase = "verysecret";
--	#PublicKey = "/path/to/the/public.pub";
--	Params = "normal";
--	Initiator = true;
--	#BackupHost = "10.2.1.6";
--	#BackupPort = 706;
--	#BackupLocal = true;
--};
-+#RouterConnection {
-+#	Host = "10.2.1.100";
-+#	Port = 706;
-+#	Passphrase = "verysecret";
-+#	#PublicKey = "/path/to/the/public.pub";
-+#	Params = "normal";
-+#	Initiator = true;
-+#	#BackupHost = "10.2.1.6";
-+#	#BackupPort = 706;
-+#	#BackupLocal = true;
-+#};
- 
- #
- # Denied connections

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2013/11/04 21:50:09 brad Exp $
+# $OpenBSD: Makefile,v 1.70 2014/07/16 21:17:04 brad Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
-DISTNAME=	silc-server-1.1.18
-REVISION=	4
+DISTNAME=	silc-server-1.1.19
 CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.silcnet.org/
 
@@ -12,12 +13,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c pthread
 
-MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
-		ftp://ftp.silcnet.org/silc/server/sources/ \
-		ftp://ftp.no.silcnet.org/pub/silc/server/sources/ \
-		http://the.wiretapped.net/security/network-security/silc/server/sources/
+WANTLIB=	c pthread
 
 MODULES=	converters/libiconv
 
@@ -37,7 +34,7 @@ SUBST_VARS=	CONFDIR
 
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.63
+AUTOCONF_VERSION= 2.69
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+=	ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
 .endif

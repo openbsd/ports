@@ -1,7 +1,7 @@
-$OpenBSD: patch-apps_silcd_Makefile_in,v 1.7 2010/05/17 22:53:37 sthen Exp $
---- apps/silcd/Makefile.in.orig	Sat Sep 26 21:34:14 2009
-+++ apps/silcd/Makefile.in	Mon May 17 09:21:59 2010
-@@ -586,7 +586,6 @@ install-dirs-server:
+$OpenBSD: patch-apps_silcd_Makefile_in,v 1.8 2014/07/16 21:17:04 brad Exp $
+--- apps/silcd/Makefile.in.orig	Tue May  6 06:28:34 2014
++++ apps/silcd/Makefile.in	Wed Jul 16 12:21:01 2014
+@@ -736,7 +736,6 @@ install-dirs-server:
  	-mkdir -p $(mandir)/man8
  
  doc-install-server:
@@ -9,7 +9,7 @@ $OpenBSD: patch-apps_silcd_Makefile_in,v 1.7 2010/05/17 22:53:37 sthen Exp $
  	-@if test -f $(top_srcdir)/doc/silcd.8 ; then \
  	 $(INSTALL_DATA) $(top_srcdir)/doc/silcd.8 $(mandir)/man8; \
  	fi
-@@ -604,8 +603,8 @@ etc-install-server:
+@@ -754,8 +753,8 @@ etc-install-server:
  	fi
  
  examples-install:
@@ -20,7 +20,7 @@ $OpenBSD: patch-apps_silcd_Makefile_in,v 1.7 2010/05/17 22:53:37 sthen Exp $
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -613,11 +612,8 @@ generate-server-key:
+@@ -763,11 +762,8 @@ generate-server-key:
  	fi
  
  install-data-hook: 		\
