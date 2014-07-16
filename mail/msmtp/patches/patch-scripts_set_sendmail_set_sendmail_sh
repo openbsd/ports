@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_set_sendmail_set_sendmail_sh,v 1.1 2008/10/19 20:35:01 jasper Exp $
+$OpenBSD: patch-scripts_set_sendmail_set_sendmail_sh,v 1.2 2014/07/16 12:14:17 ajacoutot Exp $
 --- scripts/set_sendmail/set_sendmail.sh.orig	Mon Jul 28 00:22:50 2008
 +++ scripts/set_sendmail/set_sendmail.sh	Wed Oct 15 03:15:06 2008
 @@ -1,4 +1,4 @@
@@ -54,17 +54,6 @@ $OpenBSD: patch-scripts_set_sendmail_set_sendmail_sh,v 1.1 2008/10/19 20:35:01 j
 +function get_domainname
  {
      debug "Getting domain name"
- 
-@@ -113,8 +108,8 @@ function get_domainname()
-     # Get ip address
-     #ipaddr=$(/sbin/ifconfig | grep 'inet addr:' | grep -v '127.0.0.1' | \
-     #    	cut -d: -f2 | awk '{ print $1}')
--    #ipaddr=$(w3m -dump whatismyip.org)
--    ipaddr=$(wget -qO- http://whatismyip.org)
-+    ipaddr=$(lynx -dump whatismyip.org)
-+    #ipaddr=$(wget -qO- http://whatismyip.org)
-     debug "Got IP address '$ipaddr'"
-     [[ -z $ipaddr ]] && return
  
 @@ -126,7 +121,7 @@ function get_domainname()
      debug "Got domain name '$domainname'"

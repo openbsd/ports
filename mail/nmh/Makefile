@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/06/18 05:51:47 pascal Exp $
+# $OpenBSD: Makefile,v 1.39 2014/07/16 12:14:17 ajacoutot Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -6,6 +6,7 @@ DISTNAME=		nmh-1.6
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
 HOMEPAGE=		http://www.nongnu.org/nmh/
+REVISION=		0
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +25,8 @@ CONFIGURE_ARGS=		--libdir='$${exec_prefix}/libexec' \
 MODULES =		converters/libiconv
 # needed for replyfilter
 RUN_DEPENDS=		mail/p5-MIME-tools \
-			textproc/par
+			textproc/par \
+			www/w3m
 
 FLAVORS=		sasl
 FLAVOR?=
