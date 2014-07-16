@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_support_apachectl,v 1.1 2014/07/16 14:41:20 sthen Exp $
+--- src/support/apachectl.orig	Wed Jul 16 15:30:14 2014
++++ src/support/apachectl	Wed Jul 16 15:30:43 2014
+@@ -30,7 +30,7 @@ HTTPD='/usr/local/apache/src/httpd'
+ # a command that outputs a formatted text version of the HTML at the
+ # url given on the command line.  Designed for lynx, however other
+ # programs may work.  
+-LYNX="lynx -dump"
++LYNX="dump_html"
+ #
+ # the URL to your server's mod_status status page.  If you do not
+ # have one, then status and fullstatus will not work.
+@@ -38,6 +38,10 @@ STATUSURL="http://localhost/server-status"
+ #
+ # --------------------                              --------------------
+ # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
++
++dump_html() {
++	ftp -Vo- "$1" | sed 's,<[^>]*>,,g'
++}
+ 
+ ERROR=0
+ ARGV="$@"

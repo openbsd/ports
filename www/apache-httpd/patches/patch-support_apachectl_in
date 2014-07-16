@@ -1,7 +1,27 @@
-$OpenBSD: patch-support_apachectl_in,v 1.2 2007/03/25 17:40:55 deanna Exp $
---- support/apachectl.in.orig	Tue Jul 11 23:38:44 2006
-+++ support/apachectl.in	Sun Mar 25 13:21:04 2007
-@@ -82,8 +82,8 @@ start|stop|restart|graceful|graceful-stop)
+$OpenBSD: patch-support_apachectl_in,v 1.3 2014/07/16 14:41:20 sthen Exp $
+--- support/apachectl.in.orig	Wed Jul 12 04:38:44 2006
++++ support/apachectl.in	Wed Jul 16 15:25:38 2014
+@@ -51,7 +51,7 @@ fi
+ # a command that outputs a formatted text version of the HTML at the
+ # url given on the command line.  Designed for lynx, however other
+ # programs may work.  
+-LYNX="@LYNX_PATH@ -dump"
++LYNX="dump_html"
+ #
+ # the URL to your server's mod_status status page.  If you do not
+ # have one, then status and fullstatus will not work.
+@@ -65,6 +65,10 @@ ULIMIT_MAX_FILES="@APACHECTL_ULIMIT@"
+ # --------------------                              --------------------
+ # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+ 
++dump_html() {
++	ftp -Vo- "$1" | sed 's,<[^>]*>,,g'
++}
++
+ # Set the maximum number of file descriptors allowed per child process.
+ if [ "x$ULIMIT_MAX_FILES" != "x" ] ; then
+     $ULIMIT_MAX_FILES
+@@ -82,8 +86,8 @@ start|stop|restart|graceful|graceful-stop)
      ;;
  startssl|sslstart|start-SSL)
      echo The startssl option is no longer supported.
