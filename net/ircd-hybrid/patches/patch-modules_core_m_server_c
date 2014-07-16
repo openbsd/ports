@@ -1,0 +1,53 @@
+$OpenBSD: patch-modules_core_m_server_c,v 1.1 2014/07/16 12:31:29 pascal Exp $
+--- modules/core/m_server.c.orig	Sat Jul 12 16:13:24 2014
++++ modules/core/m_server.c	Sat Jul 12 16:38:38 2014
+@@ -260,7 +260,7 @@ server_estab(struct Client *client_p)
+   const char *inpath;
+   static char inpath_ip[HOSTLEN * 2 + USERLEN + 6];
+   dlink_node *ptr;
+-#ifdef HAVE_LIBCRYPTO
++#if defined(HAVE_LIBCRYPTO) && !defined(OPENSSL_NO_COMP)
+   const COMP_METHOD *compression = NULL, *expansion = NULL;
+ #endif
+ 
+@@ -369,26 +369,40 @@ server_estab(struct Client *client_p)
+ #ifdef HAVE_LIBCRYPTO
+   if (client_p->localClient->fd.ssl)
+   {
++#ifndef OPENSSL_NO_COMP
+     compression = SSL_get_current_compression(client_p->localClient->fd.ssl);
+     expansion   = SSL_get_current_expansion(client_p->localClient->fd.ssl);
++#endif
+ 
+     sendto_realops_flags(UMODE_ALL, L_ADMIN, SEND_NOTICE,
+                          "Link with %s established: [SSL: %s, Compression/Expansion method: %s/%s] (Capabilities: %s)",
+                          inpath_ip, ssl_get_cipher(client_p->localClient->fd.ssl),
++#ifndef OPENSSL_NO_COMP
+                          compression ? SSL_COMP_get_name(compression) : "NONE",
+                          expansion ? SSL_COMP_get_name(expansion) : "NONE",
++#else
++			 "NONE", "NONE",
++#endif
+                          show_capabilities(client_p));
+     /* Now show the masked hostname/IP to opers */
+     sendto_realops_flags(UMODE_ALL, L_OPER, SEND_NOTICE,
+                          "Link with %s established: [SSL: %s, Compression/Expansion method: %s/%s] (Capabilities: %s)",
+                          inpath, ssl_get_cipher(client_p->localClient->fd.ssl),
++#ifndef OPENSSL_NO_COMP
+                          compression ? SSL_COMP_get_name(compression) : "NONE",
+                          expansion ? SSL_COMP_get_name(expansion) : "NONE",
++#else
++			 "NONE", "NONE",
++#endif
+                          show_capabilities(client_p));
+     ilog(LOG_TYPE_IRCD, "Link with %s established: [SSL: %s, Compression/Expansion method: %s/%s] (Capabilities: %s)",
+          inpath_ip, ssl_get_cipher(client_p->localClient->fd.ssl),
++#ifndef OPENSSL_NO_COMP
+          compression ? SSL_COMP_get_name(compression) : "NONE",
+          expansion ? SSL_COMP_get_name(expansion) : "NONE",
++#else
++	 "NONE", "NONE",
++#endif
+          show_capabilities(client_p));
+   }
+   else
