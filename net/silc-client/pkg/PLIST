@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/01/11 02:03:55 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/07/16 16:15:32 brad Exp $
 @bin bin/silc
 @man man/man1/silc.1
 share/doc/silc/
@@ -9,9 +9,10 @@ share/doc/silc/FAQ
 @comment share/doc/silc/INSTALL
 share/doc/silc/README
 share/doc/silc/README.PLUGIN
-@comment share/doc/silc/TODO
+share/doc/silc/faq.html
 share/doc/silc/formats.txt
 share/doc/silc/manual.txt
+share/doc/silc/perl.txt
 share/doc/silc/signals.txt
 share/doc/silc/special_vars.txt
 share/doc/silc/startup-HOWTO.html
@@ -123,6 +124,7 @@ share/silc/scripts/msg-event.pl
 share/silc/scripts/quitmsg.pl
 share/silc/scripts/redirect.pl
 share/silc/scripts/scriptassist.pl
+share/silc/scripts/silc-mime.pl
 share/silc/scripts/silc.pl
 share/silc/scripts/splitlong.pl
 share/silc/scripts/usercount.pl

@@ -1,30 +1,24 @@
-# $OpenBSD: Makefile,v 1.71 2013/11/04 21:50:22 brad Exp $
+# $OpenBSD: Makefile,v 1.72 2014/07/16 16:15:32 brad Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
-DISTNAME=	silc-client-1.1.8
-REVISION=	9
+DISTNAME=	silc-client-1.1.11
 CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
+EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://www.silcnet.org/
+HOMEPAGE=	http://silcnet.org/client.html
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ncurses pcre pthread
 
-MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
-		ftp://ftp.silcnet.org/silc/client/sources/ \
-		http://www.planetmirror.com/pub/silcnet/client/sources/ \
-		http://munitions.vipul.net/software/mirrors/silc/client/sources/ \
-		ftp://ftp.no.silcnet.org/pub/silc/client/sources/ \
-		http://the.wiretapped.net/security/network-security/silc/client/sources/ \
-		ftp://ftp.wiretapped.net/pub/security/network-security/silc/client/sources/
+WANTLIB=	c crypto glib-2.0>=1000 gmodule-2.0>=1000 ncurses pcre pthread \
+		ssl
 
 MODULES=	devel/gettext
 LIB_DEPENDS+=	devel/glib2
-WANTLIB +=	glib-2.0>=1000 gmodule-2.0>=1000
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+= devel/yasm
@@ -38,12 +32,11 @@ SUBST_VARS=	CONFDIR
 USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.63
+AUTOCONF_VERSION= 2.69
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
 .endif
-CONFIGURE_ARGS+= --enable-ipv6 \
-		 --docdir=${PREFIX}/share/doc/silc \
+CONFIGURE_ARGS+= --docdir=${PREFIX}/share/doc/silc \
 		 --sysconfdir=${CONFDIR} \
 		 --with-helpdir=${PREFIX}/share/silc/help \
 		 --with-iconv=${LOCALBASE} \
