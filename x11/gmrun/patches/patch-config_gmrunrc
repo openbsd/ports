@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_gmrunrc,v 1.1.1.1 2007/07/29 18:47:29 kili Exp $
+$OpenBSD: patch-config_gmrunrc,v 1.2 2014/07/16 08:31:16 ajacoutot Exp $
 --- config/gmrunrc.orig	Fri Jun 20 09:18:58 2003
 +++ config/gmrunrc	Sun Jul 29 20:13:06 2007
 @@ -3,7 +3,7 @@
@@ -16,15 +16,15 @@ $OpenBSD: patch-config_gmrunrc,v 1.1.1.1 2007/07/29 18:47:29 kili Exp $
  #     like "man:printf" --> %s will get replaced with "printf"
 -URL_http = mozilla -remote "openURL(%u, new-window)"
 -URL_mailto = mozilla -remote "mailto(%s)"
-+URL_http = ${TermExec} lynx "%u"
-+URL_mailto = ${TermExec} mail "%s"
++URL_http = xdg-open "%u"
++URL_mailto = xdg-email "%s"
  URL_man = ${TermExec} 'man %s'
  URL_info = ${TermExec} 'info %s'
  URL_pd = ${TermExec} 'perldoc %s'
 -URL_file = nautilus %s
 -URL_readme = ${TermExec} 'less /usr/doc/%s/README'
 -URL_info = ${TermExec} 'info %s'
-+URL_file = ${TermExec} lynx "%u"
++URL_file = xdg-open "%u"
 +URL_readme = ${TermExec} 'less /usr/local/share/doc/%s/README'
  URL_sh = sh -c '%s'
  
