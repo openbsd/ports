@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2014/07/16 16:13:35 brad Exp $
+
+File missing from the dist tarball.
+
+--- doc/Makefile.in.orig	Sat Jul 12 20:50:56 2014
++++ doc/Makefile.in	Sat Jul 12 20:51:08 2014
+@@ -582,7 +582,6 @@ doc-install:
+ 	-$(INSTALL_DATA) $(top_srcdir)/CREDITS $(docdir)/
+ 	-$(INSTALL_DATA) $(top_srcdir)/README $(docdir)/
+ 	-$(INSTALL_DATA) $(top_srcdir)/README.MACOSX $(docdir)/
+-	-$(INSTALL_DATA) $(top_srcdir)/README.PLUGIN $(docdir)/
+ 	-$(INSTALL_DATA) $(top_srcdir)/INSTALL $(docdir)/
+ 
+ install-data-hook:	doc-install

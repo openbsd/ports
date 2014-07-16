@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/01/10 01:30:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/07/16 16:13:35 brad Exp $
 @conflict silc-client-<=1.0.1
 include/silc/
 include/silc/client.h
@@ -94,9 +94,10 @@ include/silc/tma_class.h
 include/silc/tma_superclass.h
 lib/libsilc.a
 lib/libsilc.la
+@lib lib/libsilc.so.${LIBsilc_VERSION}
 lib/libsilcclient.a
 lib/libsilcclient.la
-%%SHARED%%
+@lib lib/libsilcclient.so.${LIBsilcclient_VERSION}
 lib/modules/
 lib/pkgconfig/
 lib/pkgconfig/silc.pc
@@ -1101,6 +1102,7 @@ share/doc/silc/toolkit/silcpacket-silc_packet_stream_add_remote.html
 share/doc/silc/toolkit/silcpacket-silc_packet_stream_create.html
 share/doc/silc/toolkit/silcpacket-silc_packet_stream_destroy.html
 share/doc/silc/toolkit/silcpacket-silc_packet_stream_get_stream.html
+share/doc/silc/toolkit/silcpacket-silc_packet_stream_inject.html
 share/doc/silc/toolkit/silcpacket-silc_packet_stream_is_udp.html
 share/doc/silc/toolkit/silcpacket-silc_packet_stream_is_valid.html
 share/doc/silc/toolkit/silcpacket-silc_packet_stream_link.html
