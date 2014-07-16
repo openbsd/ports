@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/02 08:49:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/16 13:45:01 sthen Exp $
 include/sodium/
 include/sodium.h
 include/sodium/core.h
@@ -57,7 +57,6 @@ include/sodium/version.h
 lib/libsodium.a
 lib/libsodium.la
 @lib lib/libsodium.so.${LIBsodium_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libsodium.pc
 share/doc/libsodium/
 share/doc/libsodium/README.markdown
