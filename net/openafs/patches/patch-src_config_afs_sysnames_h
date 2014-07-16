@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_config_afs_sysnames_h,v 1.17 2014/01/12 14:58:30 naddy Exp $
+$OpenBSD: patch-src_config_afs_sysnames_h,v 1.18 2014/07/16 14:42:49 naddy Exp $
 diff -u src/config/afs_sysnames.h.orig src/config/afs_sysnames.h
 --- src/config/afs_sysnames.h.orig	Tue Jan 15 06:14:02 2008
-+++ src/config/afs_sysnames.h	Sat Jan 11 16:23:52 2014
-@@ -241,6 +241,20 @@
++++ src/config/afs_sysnames.h	Wed Jul 16 16:41:29 2014
+@@ -241,6 +241,21 @@
  #define SYS_NAME_ID_i386_obsd39		2608
  #define SYS_NAME_ID_i386_obsd40         2609
  #define SYS_NAME_ID_i386_obsd41         2610
@@ -20,6 +20,7 @@ diff -u src/config/afs_sysnames.h.orig src/config/afs_sysnames.h
 +#define SYS_NAME_ID_i386_obsd53         2622
 +#define SYS_NAME_ID_i386_obsd54         2623
 +#define SYS_NAME_ID_i386_obsd55         2624
++#define SYS_NAME_ID_i386_obsd56         2625
  
  #define SYS_NAME_ID_amd64_linux2        2700
  #define SYS_NAME_ID_amd64_linux22       2701
