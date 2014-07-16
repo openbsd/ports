@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.9 2014/06/16 23:14:15 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.10 2014/07/16 22:16:54 brad Exp $
 
 r209432
 Use stack protector strong by default on OpenBSD
@@ -6,9 +6,12 @@ Use stack protector strong by default on OpenBSD
 r211075
 Use the integrated assembler by default on OpenBSD/powerpc
 
+r213105
+Use the integrated assembler by default on OpenBSD/sparc
+
 --- tools/clang/lib/Driver/ToolChains.h.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/ToolChains.h	Fri Apr 18 17:14:52 2014
-@@ -538,7 +538,13 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
++++ tools/clang/lib/Driver/ToolChains.h	Fri Jul 11 22:45:01 2014
+@@ -538,7 +538,15 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    virtual bool isPIEDefault() const { return true; }
  
    virtual unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const {
@@ -17,7 +20,9 @@ Use the integrated assembler by default on OpenBSD/powerpc
 +  }
 +
 +  virtual bool IsIntegratedAssemblerDefault() const {
-+    if (getTriple().getArch() == llvm::Triple::ppc)
++    if (getTriple().getArch() == llvm::Triple::ppc ||
++        getTriple().getArch() == llvm::Triple::sparc ||
++        getTriple().getArch() == llvm::Triple::sparcv9)
 +      return true;
 +    return Generic_ELF::IsIntegratedAssemblerDefault();
    }

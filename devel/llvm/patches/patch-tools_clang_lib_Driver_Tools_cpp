@@ -1,4 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.21 2014/07/10 19:26:48 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.22 2014/07/16 22:16:54 brad Exp $
+
+r212838
+Handle SPARC float command line parameters for SPARCv9.
 
 r211624
 Use appropriate default PIE settings for OpenBSD.
@@ -10,8 +13,25 @@ r209479
 Don't reduce the stack protector level given -fstack-protector.
 
 --- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/Tools.cpp	Wed Jun 18 23:14:53 2014
-@@ -2261,6 +2261,27 @@ void Clang::ConstructJob(Compilation &C, const JobActi
++++ tools/clang/lib/Driver/Tools.cpp	Wed Jul 16 16:00:01 2014
+@@ -1165,7 +1165,7 @@ void Clang::AddSparcTargetArgs(const ArgList &Args,
+                              ArgStringList &CmdArgs) const {
+   const Driver &D = getToolChain().getDriver();
+ 
+-  // Select the float ABI as determined by -msoft-float, -mhard-float, and
++  // Select the float ABI as determined by -msoft-float and -mhard-float.
+   StringRef FloatABI;
+   if (Arg *A = Args.getLastArg(options::OPT_msoft_float,
+                                options::OPT_mhard_float)) {
+@@ -1486,6 +1486,7 @@ static void getTargetFeatures(const Driver &D, const l
+     getPPCTargetFeatures(Args, Features);
+     break;
+   case llvm::Triple::sparc:
++  case llvm::Triple::sparcv9:
+     getSparcTargetFeatures(Args, Features);
+     break;
+   case llvm::Triple::aarch64:
+@@ -2261,6 +2262,27 @@ void Clang::ConstructJob(Compilation &C, const JobActi
      }
    }
  
@@ -39,7 +59,15 @@ Don't reduce the stack protector level given -fstack-protector.
    // For the PIC and PIE flag options, this logic is different from the
    // legacy logic in very old versions of GCC, as that logic was just
    // a bug no one had ever fixed. This logic is both more rational and
-@@ -2696,8 +2717,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -2631,6 +2653,7 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+     break;
+ 
+   case llvm::Triple::sparc:
++  case llvm::Triple::sparcv9:
+     AddSparcTargetArgs(Args, CmdArgs);
+     break;
+ 
+@@ -2696,8 +2719,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        // FIXME: we should support specifying dwarf version with
        // -gline-tables-only.
        CmdArgs.push_back("-gline-tables-only");
@@ -52,7 +80,7 @@ Don't reduce the stack protector level given -fstack-protector.
          CmdArgs.push_back("-gdwarf-2");
      } else if (A->getOption().matches(options::OPT_gdwarf_2))
        CmdArgs.push_back("-gdwarf-2");
-@@ -2707,8 +2730,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -2707,8 +2732,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        CmdArgs.push_back("-gdwarf-4");
      else if (!A->getOption().matches(options::OPT_g0) &&
               !A->getOption().matches(options::OPT_ggdb0)) {
@@ -65,7 +93,7 @@ Don't reduce the stack protector level given -fstack-protector.
          CmdArgs.push_back("-gdwarf-2");
        else
          CmdArgs.push_back("-g");
-@@ -3197,9 +3222,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3197,9 +3224,10 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                 options::OPT_fstack_protector_all,
                                 options::OPT_fstack_protector_strong,
                                 options::OPT_fstack_protector)) {
@@ -79,7 +107,7 @@ Don't reduce the stack protector level given -fstack-protector.
        StackProtectorLevel = LangOptions::SSPStrong;
      else if (A->getOption().matches(options::OPT_fstack_protector_all))
        StackProtectorLevel = LangOptions::SSPReq;
-@@ -5743,6 +5769,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+@@ -5743,6 +5771,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
                                         "/4.2.1"));
  
    Args.AddAllArgs(CmdArgs, options::OPT_L);
