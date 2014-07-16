@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/16 08:41:41 ajacoutot Exp $
 
 COMMENT=	front-end for converting XML files to various formats
 
-DISTNAME=	xmlto-0.0.25
+DISTNAME=	xmlto-0.0.26
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	textproc
 
@@ -15,20 +15,24 @@ WANTLIB += c
 
 MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/
 
-RUN_DEPENDS=	shells/bash \
-		misc/gnugetopt \
-		textproc/docbook-xsl
+RUN_DEPENDS=	misc/gnugetopt \
+		print/libpaper \
+		shells/bash \
+		textproc/docbook-xsl \
+		www/w3m
+
 BUILD_DEPENDS=	misc/gnugetopt
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-webbrowser=lynx
+
+# so that we do not need more BUILD_DEPENDS
 CONFIGURE_ENV=  BASH=${LOCALBASE}/bin/bash \
 		DBLATEX=${LOCALBASE}/bin/dblatex \
 		FIND=/usr/bin/find \
 		GETOPT=${LOCALBASE}/bin/gnugetopt \
 		GREP=/usr/bin/grep \
 		LINKS=${LOCALBASE}/bin/links \
-		LYNX=/usr/bin/lynx \
+		LYNX=${LOCALBASE}/bin/lynx \
 		PAPERCONF=${LOCALBASE}/bin/paperconf \
 		PDFXMLTEX=${LOCALBASE}/bin/pdfxmltex \
 		TAIL=/usr/bin/tail \
