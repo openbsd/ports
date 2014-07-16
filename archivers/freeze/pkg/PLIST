@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/06/02 20:46:15 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/07/16 12:44:22 zhuk Exp $
+@conflict multimedia/mlt
 @bin bin/fcat
 @bin bin/freeze
 @bin bin/melt
