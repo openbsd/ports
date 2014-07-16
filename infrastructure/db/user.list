@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.230 2014/07/15 13:47:26 benno Exp $
+$OpenBSD: user.list,v 1.231 2014/07/16 12:09:01 jca Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -245,3 +245,4 @@ id  user		group		port options
 734 			_icingacmd	net/icinga
 735 			_wireshark	net/wireshark
 736 _conserver		_conserver	comms/conserver
+737 _popa3d		_popa3d		mail/popa3d
