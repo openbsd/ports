@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/16 12:44:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/17 08:30:58 zhuk Exp $
 
 SHARED_ONLY =		Yes
 COMMENT-main =		multimedia transformations framework
@@ -8,6 +8,7 @@ DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
 REVISION-main =		0
+REVISION-gpl2 =		0
 
 # XXX versions should be kept in sync together
 SHARED_LIBS =		mlt		0.0

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/07/16 12:44:22 zhuk Exp $
-@conflict archivers/freeze
+@comment $OpenBSD: PLIST-main,v 1.3 2014/07/17 08:30:58 zhuk Exp $
+@conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
 include/mlt++/
