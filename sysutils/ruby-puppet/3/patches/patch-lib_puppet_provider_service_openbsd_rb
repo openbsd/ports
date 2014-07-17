@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.13 2014/06/19 12:28:34 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.14 2014/07/17 07:03:52 jasper Exp $
 
 * https://github.com/puppetlabs/puppet/pull/2557
 - Do not unconditionally alphabetically sort the list of pkg_scripts
@@ -9,9 +9,20 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.13 2014/06/19 12:28:3
 - Use a faster way of determining if something is in base, instead of checking
   something is from packages with pkg_info.
 
+* Adjust to new rc.conf.local layout
+
 --- lib/puppet/provider/service/openbsd.rb.orig	Mon Jun  9 23:08:19 2014
-+++ lib/puppet/provider/service/openbsd.rb	Fri Jun 20 00:25:27 2014
-@@ -171,8 +171,10 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
++++ lib/puppet/provider/service/openbsd.rb	Tue Jul 15 14:37:43 2014
+@@ -86,7 +86,7 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+         # output of `puppet resource service` a bit more correct.
+         if flagline = rcconf_contents.find {|l| l =~ /^#{rcname}_flags/ }
+           flag = parse_rc_line(flagline)
+-          unless flag == "NO"
++          unless flag == 'NO'
+             @flag_hash[rcname.to_sym] ||= flag
+           end
+         end
+@@ -171,16 +171,18 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
        content.reject! {|l| l.nil? }
      end
  
@@ -19,11 +30,30 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.13 2014/06/19 12:28:3
 -      append = resource[:name] + '_flags=""'
 +    if flags.nil? or flags.size == 0
 +      if in_base?
-+        append = resource[:name] + '_flags=""'
++        append = resource[:name] + '_flags='
 +      end
      else
-       append = resource[:name] + '_flags="' + flags + '"'
+-      append = resource[:name] + '_flags="' + flags + '"'
++      append = resource[:name] + '_flags=' + flags + ''
      end
+ 
+     if content.find {|l| l =~ /#{resource[:name]}_flags/ }.nil?
+       content << append
+     else
+-      content.map {|l| l.gsub!(/^#{resource[:name]}_flags="(.*)?"(.*)?$/, append) }
++      content.map {|l| l.gsub!(/^#{resource[:name]}_flags=(.*)?(.*)?$/, append) }
+     end
+     content
+   end
+@@ -195,7 +197,7 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+   def pkg_scripts
+     current = load_rcconf_local_array()
+     if scripts = current.find{|l| l =~ /^pkg_scripts/ }
+-      if match = scripts.match(/^pkg_scripts="(.*)?"(.*)?$/)
++      if match = scripts.match(/^pkg_scripts=(.*)?(.*)?$/)
+         match[1].split(' ')
+       else
+         []
 @@ -208,7 +210,7 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
    # return the array with the current resource added
    # @api private
@@ -33,6 +63,15 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.13 2014/06/19 12:28:3
    end
  
    # return the array without the current resource
+@@ -228,7 +230,7 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+       content.reject! {|l| l.nil? }
+     end
+ 
+-    scripts_line = 'pkg_scripts="' + scripts.join(' ') + '"'
++    scripts_line = 'pkg_scripts=' + scripts.join(' ') + ''
+ 
+     if content.find {|l| l =~ /^pkg_scripts/ }.nil?
+       content << scripts_line
 @@ -243,12 +245,11 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
      content
    end
