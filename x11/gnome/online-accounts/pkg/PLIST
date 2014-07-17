@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/03/27 08:22:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/07/17 07:16:44 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -29,7 +29,7 @@ lib/libgoa-backend-1.0.la
 lib/pkgconfig/
 lib/pkgconfig/goa-1.0.pc
 lib/pkgconfig/goa-backend-1.0.pc
-@bin libexec/goa-daemon
+libexec/goa-daemon
 @man man/man8/goa-daemon.8
 share/dbus-1/
 share/dbus-1/services/
