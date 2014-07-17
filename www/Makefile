@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.667 2014/07/11 07:40:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.668 2014/07/17 12:16:20 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -103,6 +103,7 @@
      SUBDIR += links+,no_x11
      SUBDIR += llgal
      SUBDIR += luakit
+     SUBDIR += lynx
      SUBDIR += man2web
      SUBDIR += mhonarc
      SUBDIR += midori
