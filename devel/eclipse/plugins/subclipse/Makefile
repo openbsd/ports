@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/17 12:38:34 ajacoutot Exp $
 
 COMMENT=		SubVersion plug-in for Eclipse IDE
 
@@ -23,6 +23,7 @@ MASTER_SITES=		http://subclipse.tigris.org/files/documents/906/37653/
 # on doing a redirection loop if you don't handle cookes, which default
 # FETCH_CMD does not.
 FETCH_CMD=		lynx -accept_all_cookies -source >${DISTDIR}/$$f
+BUILD_DEPENDS+=		www/lynx
 
 # Distfile is an Update Site download, unpack features jar manually, 
 # still tar plugins over into ${PREFIX}
