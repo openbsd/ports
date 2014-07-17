@@ -1,7 +1,7 @@
-$OpenBSD: patch-core_libs_3rdparty_kmemoryinfo_kmemoryinfo_backend_cpp,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+$OpenBSD: patch-core_libs_3rdparty_kmemoryinfo_kmemoryinfo_backend_cpp,v 1.2 2014/07/17 11:25:34 espie Exp $
 Unbreak compilation.
 --- core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp.orig	Thu Jun 26 01:57:14 2014
-+++ core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	Wed Jul  9 20:38:55 2014
++++ core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	Thu Jul 17 13:24:42 2014
 @@ -50,6 +50,7 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemor
      return 1;
  }
@@ -30,3 +30,15 @@ Unbreak compilation.
  
      mib[0] = CTL_VM;
      mib[1] = VM_UVMEXP;
+@@ -538,7 +538,11 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoDat
+ #if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ #include <sys/param.h>
+ #include <sys/time.h>
++#if defined(Q_OS_OPENBSD)
++#include <uvm/uvm_extern.h>
++#else
+ #include <uvm/uvm.h>
++#endif
+ #include <unistd.h>
+ #endif
+ #ifdef Q_OS_HPUX
