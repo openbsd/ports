@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_lib_Makefile,v 1.7 2011/11/22 16:22:27 jasper Exp $
---- src/lib/Makefile.orig	Mon Jun 20 16:57:14 2011
-+++ src/lib/Makefile	Tue Nov 22 17:22:06 2011
+$OpenBSD: patch-src_lib_Makefile,v 1.8 2014/07/17 00:20:51 sthen Exp $
+--- src/lib/Makefile.orig	Mon Apr 28 20:13:08 2014
++++ src/lib/Makefile	Wed Jul  9 00:39:27 2014
 @@ -41,7 +41,7 @@ TARGET		= $(LIBPREFIX)freeradius-radius
  all: $(TARGET).la
  
  $(TARGET).la: $(LT_OBJS)
--	$(LIBTOOL) --mode=link $(CC) -release $(RADIUSD_VERSION) \
-+	$(LIBTOOL) --mode=link $(CC) \
+-	$(LIBTOOL) --mode=link --tag=CC $(CC) -release $(RADIUSD_VERSION) \
++	$(LIBTOOL) --mode=link --tag=CC $(CC) \
  	$(LDFLAGS) $(LINK_MODE) -o $@ -rpath $(libdir) $^
  
  $(LT_OBJS): $(INCLUDES)

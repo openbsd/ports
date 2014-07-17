@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.6 2008/09/21 15:39:14 rui Exp $
---- Makefile.orig	Fri Sep  5 14:27:57 2008
-+++ Makefile	Fri Sep 19 17:43:02 2008
-@@ -44,14 +44,6 @@ tests:
+$OpenBSD: patch-Makefile,v 1.7 2014/07/17 00:20:51 sthen Exp $
+--- Makefile.orig	Mon Apr 28 20:13:08 2014
++++ Makefile	Wed Jul  9 00:38:52 2014
+@@ -45,14 +45,6 @@ test:
  #
  export DESTDIR := $(R)
  install:
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile,v 1.6 2008/09/21 15:39:14 rui Exp $
  	$(INSTALL) -d -m 755	$(R)$(dictdir)
  	for i in 1 5 8; do \
  		$(INSTALL) -d -m 755	$(R)$(mandir)/man$$i; \
-@@ -65,7 +57,6 @@ install:
+@@ -66,7 +58,6 @@ install:
  	for i in dictionary*; do \
  		$(INSTALL) -m 644 $$i $(R)$(dictdir); \
  	done

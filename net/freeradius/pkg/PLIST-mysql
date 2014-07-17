@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.5 2014/01/24 21:30:36 landry Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.6 2014/07/17 00:20:51 sthen Exp $
 @conflict freeradius-server-<2.1.8
 lib/freeradius/rlm_sql_mysql.so
 share/examples/freeradius/sql/mysql/
@@ -29,4 +29,3 @@ share/examples/freeradius/sql/ndb/
 share/examples/freeradius/sql/ndb/README
 share/examples/freeradius/sql/ndb/admin.sql
 share/examples/freeradius/sql/ndb/schema.sql
-@mode

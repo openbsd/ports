@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.4 2014/01/24 21:30:36 landry Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.5 2014/07/17 00:20:51 sthen Exp $
 @conflict freeradius-<2.1.8
 lib/freeradius/rlm_sql_postgresql.so
 share/doc/freeradius/examples/postgresql_update_radacct_group_trigger.sql
@@ -20,4 +20,3 @@ share/examples/freeradius/sql/postgresql/schema.sql
 share/examples/freeradius/sql/postgresql/update_radacct_group_trigger.sql
 share/examples/freeradius/sql/postgresql/voip-postpaid.conf
 @sample ${SYSCONFDIR}/raddb/sql/postgresql/voip-postpaid.conf
-@mode

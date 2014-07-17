@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2014/04/21 13:09:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2014/07/17 00:20:51 sthen Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -23,6 +23,7 @@ bin/radzap
 @bin bin/smbencrypt
 include/freeradius/
 include/freeradius/autoconf.h
+include/freeradius/base64.h
 include/freeradius/conf.h
 include/freeradius/conffile.h
 include/freeradius/detail.h
@@ -47,6 +48,7 @@ include/freeradius/realms.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
+include/freeradius/threads.h
 include/freeradius/token.h
 include/freeradius/udpfromto.h
 include/freeradius/vmps.h
@@ -102,7 +104,7 @@ lib/freeradius/rlm_wimax.so
 lib/libfreeradius-eap.a
 lib/libfreeradius-eap.la
 @lib lib/libfreeradius-eap.so.${LIBfreeradius-eap_VERSION}
-lib/libfreeradius-radius-${V}.la
+lib/libfreeradius-radius-020205.la
 lib/libfreeradius-radius.a
 lib/libfreeradius-radius.la
 @lib lib/libfreeradius-radius.so.${LIBfreeradius-radius_VERSION}
@@ -249,6 +251,12 @@ share/doc/freeradius/rfc/rfc5607.txt
 share/doc/freeradius/rfc/rfc5904.txt
 share/doc/freeradius/rfc/rfc5997.txt
 share/doc/freeradius/rfc/rfc6158.txt
+share/doc/freeradius/rfc/rfc6519.txt
+share/doc/freeradius/rfc/rfc6572.txt
+share/doc/freeradius/rfc/rfc6677.txt
+share/doc/freeradius/rfc/rfc6911.txt
+share/doc/freeradius/rfc/rfc6929.txt
+share/doc/freeradius/rfc/rfc6930.txt
 share/doc/freeradius/rlm_dbm
 share/doc/freeradius/rlm_eap
 share/doc/freeradius/rlm_expiration
@@ -423,6 +431,8 @@ share/examples/freeradius/modules/unix
 @sample ${SYSCONFDIR}/raddb/modules/unix
 share/examples/freeradius/modules/wimax
 @sample ${SYSCONFDIR}/raddb/modules/wimax
+share/examples/freeradius/panic.gdb
+@sample ${SYSCONFDIR}/raddb/panic.gdb
 share/examples/freeradius/policy.conf
 @sample ${SYSCONFDIR}/raddb/policy.conf
 share/examples/freeradius/policy.txt
@@ -501,6 +511,7 @@ share/examples/freeradius/templates.conf
 share/examples/freeradius/users
 @sample ${SYSCONFDIR}/raddb/users
 @mode
+@group
 share/freeradius/
 share/freeradius/dictionary
 share/freeradius/dictionary.3com
@@ -508,8 +519,10 @@ share/freeradius/dictionary.3gpp
 share/freeradius/dictionary.3gpp2
 share/freeradius/dictionary.acc
 share/freeradius/dictionary.acme
+share/freeradius/dictionary.aerohive
 share/freeradius/dictionary.airespace
 share/freeradius/dictionary.alcatel
+share/freeradius/dictionary.alcatel-lucent.aaa
 share/freeradius/dictionary.alcatel.esam
 share/freeradius/dictionary.alcatel.sr
 share/freeradius/dictionary.alteon
@@ -527,6 +540,9 @@ share/freeradius/dictionary.azaire
 share/freeradius/dictionary.bay
 share/freeradius/dictionary.bintec
 share/freeradius/dictionary.bristol
+share/freeradius/dictionary.broadsoft
+share/freeradius/dictionary.brocade
+share/freeradius/dictionary.bskyb
 share/freeradius/dictionary.bt
 share/freeradius/dictionary.cablelabs
 share/freeradius/dictionary.cabletron
@@ -541,14 +557,18 @@ share/freeradius/dictionary.colubris
 share/freeradius/dictionary.columbia_university
 share/freeradius/dictionary.compat
 share/freeradius/dictionary.cosine
+share/freeradius/dictionary.dante
 share/freeradius/dictionary.dhcp
 share/freeradius/dictionary.digium
+share/freeradius/dictionary.dlink
+share/freeradius/dictionary.efficientip
 share/freeradius/dictionary.eltex
 share/freeradius/dictionary.epygi
 share/freeradius/dictionary.ericsson
 share/freeradius/dictionary.erx
 share/freeradius/dictionary.extreme
 share/freeradius/dictionary.f5
+share/freeradius/dictionary.fdxtended
 share/freeradius/dictionary.fortinet
 share/freeradius/dictionary.foundry
 share/freeradius/dictionary.freeradius
@@ -568,12 +588,14 @@ share/freeradius/dictionary.itk
 share/freeradius/dictionary.jradius
 share/freeradius/dictionary.juniper
 share/freeradius/dictionary.karlnet
+share/freeradius/dictionary.kineto
 share/freeradius/dictionary.lancom
 share/freeradius/dictionary.livingston
 share/freeradius/dictionary.localweb
 share/freeradius/dictionary.lucent
 share/freeradius/dictionary.manzara
 share/freeradius/dictionary.merit
+share/freeradius/dictionary.meru
 share/freeradius/dictionary.microsoft
 share/freeradius/dictionary.mikrotik
 share/freeradius/dictionary.motorola
@@ -594,6 +616,7 @@ share/freeradius/dictionary.paloalto
 share/freeradius/dictionary.patton
 share/freeradius/dictionary.propel
 share/freeradius/dictionary.prosoft
+share/freeradius/dictionary.proxim
 share/freeradius/dictionary.purewave
 share/freeradius/dictionary.quiconnect
 share/freeradius/dictionary.quintum
@@ -620,8 +643,14 @@ share/freeradius/dictionary.rfc5447
 share/freeradius/dictionary.rfc5580
 share/freeradius/dictionary.rfc5607
 share/freeradius/dictionary.rfc5904
+share/freeradius/dictionary.rfc6519
+share/freeradius/dictionary.rfc6572
+share/freeradius/dictionary.rfc6677
+share/freeradius/dictionary.rfc6911
+share/freeradius/dictionary.rfc6930
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
+share/freeradius/dictionary.sg
 share/freeradius/dictionary.shasta
 share/freeradius/dictionary.shiva
 share/freeradius/dictionary.siemens
@@ -654,6 +683,8 @@ share/freeradius/dictionary.wimax.wichorus
 share/freeradius/dictionary.wispr
 share/freeradius/dictionary.xedia
 share/freeradius/dictionary.xylan
+share/freeradius/dictionary.zeus
+share/freeradius/dictionary.zte
 share/freeradius/dictionary.zyxel
 @owner _freeradius
 @sample /var/log/radius/
