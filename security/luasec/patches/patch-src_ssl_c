@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ssl_c,v 1.1 2014/07/17 21:06:16 sthen Exp $
+--- src/ssl.c.orig	Mon Jul 14 22:58:19 2014
++++ src/ssl.c	Mon Jul 14 23:01:06 2014
+@@ -401,7 +401,11 @@ static int meth_want(lua_State *L)
+  */
+ static int meth_compression(lua_State *L)
+ {
++#ifdef OPENSSL_NO_COMP
++  const void *comp;
++#else
+   const COMP_METHOD *comp;
++#endif
+   p_ssl ssl = (p_ssl)luaL_checkudata(L, 1, "SSL:Connection");
+   if (ssl->state != LSEC_STATE_CONNECTED) {
+     lua_pushnil(L);
