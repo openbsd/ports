@@ -1,9 +1,9 @@
-$OpenBSD: patch-qca-ossl_cpp,v 1.2 2012/06/28 18:57:29 jasper Exp $
+$OpenBSD: patch-qca-ossl_cpp,v 1.3 2014/07/17 08:36:55 espie Exp $
 
 Allow building against OpenSSL without MD2 or SSLv2 support.
 
---- qca-ossl.cpp.orig	Tue Dec 11 01:34:57 2007
-+++ qca-ossl.cpp	Thu Jun 28 01:12:24 2012
+--- qca-ossl.cpp.orig	Tue Dec 11 07:34:57 2007
++++ qca-ossl.cpp	Thu Jul 17 10:18:40 2014
 @@ -1771,8 +1771,10 @@ class RSAKey : public RSAContext (public)
  			md = EVP_sha1();
  		else if(alg == EMSA3_MD5)
@@ -74,6 +74,15 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  		case TLS::SSL_v3:
  			ctx = SSL_CTX_new(SSLv3_client_method());
  			break;
+@@ -5538,7 +5550,7 @@ class MyTLSContext : public TLSContext (public)
+ 	{
+ 		SessionInfo sessInfo;
+ 
+-		sessInfo.isCompressed = (0 != ssl->session->compress_meth);
++		sessInfo.isCompressed = false;
+ 
+ 		if (ssl->version == TLS1_VERSION)
+ 			sessInfo.version = TLS::TLS_v1;
 @@ -6582,7 +6594,9 @@ static QStringList all_hash_types()
  	list += "sha1";
  	list += "sha0";
