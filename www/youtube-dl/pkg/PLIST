@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2014/07/12 11:56:11 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.45 2014/07/17 08:44:37 sthen Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -177,6 +177,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/faz.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/faz.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fc2.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fc2.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/firedrive.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/firedrive.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/firstpost.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/firstpost.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/firsttv.py
@@ -409,6 +411,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rbmaradio.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rbmaradio.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redtube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redtube.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/reverbnation.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/reverbnation.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ringtv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ringtv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ro220.py
@@ -425,6 +429,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rts.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rts.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtve.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtve.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ruhd.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ruhd.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutv.py
@@ -451,8 +457,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundgasm.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundgasm.pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southparkstudios.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southparkstudios.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southpark.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southpark.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/space.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/space.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spankwire.py
