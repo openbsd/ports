@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/07/16 12:44:22 zhuk Exp $
-@conflict multimedia/mlt
+@comment $OpenBSD: PLIST,v 1.8 2014/07/17 08:29:04 zhuk Exp $
 @bin bin/fcat
 @bin bin/freeze
-@bin bin/melt
+@comment @bin bin/melt
 @bin bin/statist
 @bin bin/unfreeze
 @man man/man1/fcat.1
 @man man/man1/freeze.1
-@man man/man1/melt.1
+@comment @man man/man1/melt.1
 @man man/man1/statist.1
 @man man/man1/unfreeze.1
