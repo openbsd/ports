@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/10/01 21:21:17 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/07/17 15:59:43 ajacoutot Exp $
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -178,6 +178,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 share/locale/ar/LC_MESSAGES/ibus10.mo
 share/locale/as/LC_MESSAGES/ibus10.mo
 share/locale/bg/LC_MESSAGES/ibus10.mo
+share/locale/bn/LC_MESSAGES/ibus10.mo
 share/locale/bn_IN/LC_MESSAGES/ibus10.mo
 share/locale/ca/LC_MESSAGES/ibus10.mo
 share/locale/da/LC_MESSAGES/ibus10.mo

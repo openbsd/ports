@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.3 2013/10/01 21:21:17 fgsch Exp $
---- tools/Makefile.in.orig	Fri Sep 20 04:17:27 2013
-+++ tools/Makefile.in	Sat Sep 28 20:02:51 2013
+$OpenBSD: patch-tools_Makefile_in,v 1.4 2014/07/17 15:59:43 ajacoutot Exp $
+--- tools/Makefile.in.orig	Tue Jan 14 05:00:23 2014
++++ tools/Makefile.in	Fri Jul 11 12:54:18 2014
 @@ -489,7 +489,6 @@ AM_CFLAGS = \
  	-DG_LOG_DOMAIN=\"IBUS\" \
  	-DIBUS_DISABLE_DEPRECATED \
@@ -9,15 +9,6 @@ $OpenBSD: patch-tools_Makefile_in,v 1.3 2013/10/01 21:21:17 fgsch Exp $
  	-Wno-unused-function \
  	$(NULL)
  
-@@ -526,7 +525,7 @@ bash_completiondir = @datadir@/bash-completion/complet
- man_one_in_files = ibus.1.in
- man_one_files = $(man_one_in_files:.1.in=.1)
- man_one_DATA = $(man_one_files:.1=.1.gz) 
--man_onedir = $(datadir)/man/man1
-+man_onedir = $(mandir)/man1
- EXTRA_DIST = \
- 	$(man_one_in_files) \
- 	ibus.bash \
 @@ -689,9 +688,9 @@ uninstall-bash_completionDATA:
  	@list='$(bash_completion_DATA)'; test -n "$(bash_completiondir)" || list=; \
  	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
