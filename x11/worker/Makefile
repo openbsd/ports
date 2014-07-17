@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/12 16:33:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/17 13:24:13 ajacoutot Exp $
 
 COMMENT =	Midnight Commander like file manager for X
 DISTNAME =	worker-3.4.1
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://www.boomerangsworld.de/
-
-MAINTAINER =	Eivind Nicolay Evensen <eivinde@terraplane.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
