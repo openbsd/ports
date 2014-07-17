@@ -1,7 +1,7 @@
-# $OpenBSD: gnustep.port.mk,v 1.22 2014/05/22 09:48:56 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.23 2014/07/17 17:35:50 sebastia Exp $
 
 # until tested on others
-ONLY_FOR_ARCHS ?=	i386 amd64 macppc
+ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
 
 SHARED_ONLY =	Yes
 
