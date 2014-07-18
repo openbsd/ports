@@ -1,20 +1,26 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/09 04:45:21 gsoares Exp $
+# $OpenBSD: Makefile,v 1.12 2014/07/18 01:23:04 gsoares Exp $
 
 COMMENT=		minimalist IRC client
 
 DISTNAME=		ii-1.7
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
+
+# adds ssl encryption support
+# patch from http://tools.suckless.org/ii/patches
+PATCHFILES+=		${DISTNAME}-ssl.diff:0
+PATCH_DIST_STRIP=	-p1
 
 HOMEPAGE=		http://tools.suckless.org/ii
 MASTER_SITES=		http://dl.suckless.org/tools/
+MASTER_SITES0=		${HOMEPAGE}/patches/
 
-MAINTAINER=		Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c
+WANTLIB=		c crypto ssl
 
 NO_TEST=		Yes
 
