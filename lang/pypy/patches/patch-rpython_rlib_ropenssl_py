@@ -1,7 +1,7 @@
-$OpenBSD: patch-rpython_rlib_ropenssl_py,v 1.1 2014/04/24 21:44:07 sthen Exp $
---- rpython/rlib/ropenssl.py.orig	Thu Apr 24 16:23:04 2014
-+++ rpython/rlib/ropenssl.py	Thu Apr 24 16:23:10 2014
-@@ -187,7 +187,6 @@ ssl_external('CRYPTO_set_id_callback',
+$OpenBSD: patch-rpython_rlib_ropenssl_py,v 1.2 2014/07/18 08:48:37 edd Exp $
+--- rpython/rlib/ropenssl.py.orig	Fri Jun  6 11:43:02 2014
++++ rpython/rlib/ropenssl.py	Sun Jul 13 16:43:47 2014
+@@ -200,7 +200,6 @@ ssl_external('CRYPTO_set_id_callback',
  if HAVE_OPENSSL_RAND:
      ssl_external('RAND_add', [rffi.CCHARP, rffi.INT, rffi.DOUBLE], lltype.Void)
      ssl_external('RAND_status', [], rffi.INT)

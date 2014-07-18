@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/12/04 21:56:21 edd Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/18 08:48:37 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -12,7 +12,7 @@ COMMENT =		fast implementation of the Python language
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
-V =			2.2.1
+V =			2.3.1
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
@@ -27,7 +27,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # PyPy is MIT; the Python libs it comes with have the same license as Python
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		bz2 c crypto curses expat ffi m ncurses panel
+WANTLIB +=		bz2 c crypto curses expat ffi gdbm m ncurses panel
 WANTLIB +=		pthread sqlite3 ssl ${MODTCL_LIB} ${MODTK_LIB} util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
@@ -51,8 +51,11 @@ MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c
 
 USE_GMAKE =		Yes
-BUILD_DEPENDS =		textproc/py-sphinx ${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
+BUILD_DEPENDS =		textproc/py-sphinx \
+			databases/gdbm \
+			${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
+			databases/gdbm
 
 WRKDIST =		${WRKDIR}/pypy-${V}-src
 
@@ -75,7 +78,7 @@ pre-configure:
 
 # When updating the port, see pypy/tool/release/package.py and check for
 # new modules which require a cffi cache.
-CFFI_CACHES =	_sqlite3, _curses, syslog, _tkinter
+CFFI_CACHES =	_sqlite3, _curses, syslog, _tkinter, gdbm
 
 do-build:
 .if ${FLAVOR:Mno_bootstrap}
@@ -109,8 +112,9 @@ do-install:
 	# make cffi cache
 	# this will generate various __pycache__ directories in lib_pypy.
 	# and it puts absolute paths in there too, yay...
-	${PREFIX}/pypy/bin/pypy -c 'import ${CFFI_CACHES}'
-	# but it contains absolute paths, so we fox that:
+	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include \
+		${PREFIX}/pypy/bin/pypy -c 'import ${CFFI_CACHES}'
+	# but it contains absolute paths, so we fix that:
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
 	mv ${PREFIX}/pypy/lib_pypy/__pycache__/${PREFIX}/pypy/* \
 		${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
@@ -122,6 +126,8 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
+	# remove patch orig files so they dont appear in the plist
+	find ${PREFIX} -name '*.py.orig' | xargs rm
 
 PYPY_PKG = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
 

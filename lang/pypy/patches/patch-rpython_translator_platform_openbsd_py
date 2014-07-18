@@ -1,15 +1,10 @@
-$OpenBSD: patch-rpython_translator_platform_openbsd_py,v 1.3 2013/12/04 21:56:21 edd Exp $
+$OpenBSD: patch-rpython_translator_platform_openbsd_py,v 1.4 2014/07/18 08:48:37 edd Exp $
 
-Fixes the order of CFLAGS and LDFLAGS.
-https://bitbucket.org/pypy/pypy/pull-request/153
+No -O3 in ports builds.
 
--O3 not allowed in ports builds.
-
-Remove libcompat.a linkage.
-
---- rpython/translator/platform/openbsd.py.orig	Fri Nov 15 19:44:50 2013
-+++ rpython/translator/platform/openbsd.py	Mon Dec  2 14:57:42 2013
-@@ -9,11 +9,11 @@ class OpenBSD(BSD):
+--- rpython/translator/platform/openbsd.py.orig	Sun Jul 13 16:44:39 2014
++++ rpython/translator/platform/openbsd.py	Sun Jul 13 16:45:46 2014
+@@ -9,7 +9,7 @@ class OpenBSD(BSD):
      name = "openbsd"
  
      link_flags = os.environ.get("LDFLAGS", "").split() + ['-pthread']
@@ -18,8 +13,3 @@ Remove libcompat.a linkage.
               ] + os.environ.get("CFLAGS", "").split()
  
      def _libs(self, libraries):
--        libraries=set(libraries + ("intl", "iconv", "compat"))
-+        libraries=set(libraries + ("intl", "iconv"))
-         return ['-l%s' % lib for lib in libraries if lib not in ["crypt", "dl", "rt"]]
- 
- class OpenBSD_64(OpenBSD):
