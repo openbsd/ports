@@ -221,6 +221,8 @@
 	    	    uk_UA.KOI8-U
 		    ..
 		..
+		pkgconfig
+		..
 		skel
 		..
 	    ..
