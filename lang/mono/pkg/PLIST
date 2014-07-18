@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/07/09 11:39:17 robert Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/07/18 16:01:33 ajacoutot Exp $
 %%SHARED%%
 bin/al
 bin/al2
@@ -129,16 +129,22 @@ lib/libikvm-native.a
 lib/libikvm-native.la
 lib/libmono-2.0.a
 lib/libmono-2.0.la
+@lib lib/libmono-2.0.so.${LIBmono-2.0_VERSION}
 lib/libmono-profiler-aot.a
 lib/libmono-profiler-aot.la
+@lib lib/libmono-profiler-aot.so.${LIBmono-profiler-aot_VERSION}
 lib/libmono-profiler-cov.a
 lib/libmono-profiler-cov.la
+@lib lib/libmono-profiler-cov.so.${LIBmono-profiler-cov_VERSION}
 lib/libmono-profiler-iomap.a
 lib/libmono-profiler-iomap.la
+@lib lib/libmono-profiler-iomap.so.${LIBmono-profiler-iomap_VERSION}
 lib/libmono-profiler-log.a
 lib/libmono-profiler-log.la
+@lib lib/libmono-profiler-log.so.${LIBmono-profiler-log_VERSION}
 lib/libmonoboehm-2.0.a
 lib/libmonoboehm-2.0.la
+@lib lib/libmonoboehm-2.0.so.${LIBmonoboehm-2.0_VERSION}
 lib/mono/
 lib/mono-source-libs/
 lib/mono-source-libs/Options.cs
