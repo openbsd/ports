@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	www devel
 
 HOMEPAGE=	http://www.mono-project.com/ASP.NET
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/xsp/
+MASTER_SITES=	http://origin-download.mono-project.com/sources/xsp/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

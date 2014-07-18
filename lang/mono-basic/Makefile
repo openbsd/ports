@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/18 13:44:30 ajacoutot Exp $
 
 COMMENT=	Visual Basic .NET support for Mono
 DISTNAME=	mono-basic-2.10
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	lang
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono-basic/
+MASTER_SITES=	http://origin-download.mono-project.com/sources/mono-basic/
 
 HOMEPAGE=	http://www.mono-project.com/Visual_Basic
 

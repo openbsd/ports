@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/07/18 13:44:30 ajacoutot Exp $
 
 COMMENT=	.NET language binding for the GTK+2 toolkit
 
@@ -18,8 +18,7 @@ HOMEPAGE=	http://mono-project.com/GtkSharp
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/gtk-sharp2${MAJOR}/ \
-		http://ftp.novell.com/pub/mono/sources/gtk-sharp2${MAJOR}/
+MASTER_SITES=	http://origin-download.mono-project.com/sources/gtk-sharp2${MAJOR}/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
