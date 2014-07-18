@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/03/09 22:13:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/07/18 09:26:52 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -10,7 +10,6 @@ bin/gtkdoc-mktmpl
 bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
-bin/gtkdoc-scanobj
 bin/gtkdocize
 share/aclocal/gtk-doc.m4
 share/gtk-doc/data/
