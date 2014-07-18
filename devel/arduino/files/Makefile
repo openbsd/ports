@@ -1,4 +1,4 @@
-# $OpenBSD: BSDmakefile,v 1.8 2014/06/19 20:55:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.1 2014/07/18 11:12:13 edd Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
@@ -32,7 +32,7 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: BSDmakefile,v 1.8 2014/06/19 20:55:02 sthen Exp $
+# $Id: Makefile,v 1.1 2014/07/18 11:12:13 edd Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
 
@@ -87,7 +87,7 @@ FORMAT = ihex
 
 
 # Name of this Makefile (used for "make depend").
-MAKEFILE = BSDmakefile
+MAKEFILE = Makefile
 
 # Debugging format.
 # Native formats for AVR-GCC's -g are stabs [default], or dwarf-2.

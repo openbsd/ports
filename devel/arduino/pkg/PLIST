@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/12/05 13:14:52 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/18 11:12:13 edd Exp $
 bin/arduinoboot
 bin/arduinoproject
 share/arduino/
@@ -1285,5 +1285,5 @@ share/examples/arduino/10.StarterKit/p15_HackingButtons/p15_HackingButtons.ino
 share/examples/arduino/2.Digital/
 share/examples/arduino/ArduinoISP/
 share/examples/arduino/ArduinoISP/ArduinoISP.ino
-share/examples/arduino/BSDmakefile
+share/examples/arduino/Makefile
 share/examples/arduino/template.ino

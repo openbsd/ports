@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/04/24 06:37:32 jasper Exp $
+$OpenBSD: README,v 1.3 2014/07/18 11:12:13 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,7 +19,7 @@ Typical Usage
 * `make upload` flashes the program to your arduino.
 
 Before you can upload your programs, you should review the AVRdude
-variables in the BSDmakefile. Different arduino models require different
+variables in the Makefile. Different arduino models require different
 parameters; pay particular attention to UPLOAD_RATE and
 AVRDUDE_PROGRAMMER.
 
