@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/07/18 08:17:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2014/07/18 08:24:58 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -27,8 +27,8 @@ MULTI_PACKAGES +=	-main -minimal -games
 # after KDE 4.11
 MULTI_PACKAGES +=	-admin -network -sdk -toys
 
-# not ready
-#MULTI_PACKAGES +=	-extras
+# stuff outside KDE SC
+MULTI_PACKAGES +=	-extras
 
 # Specialization packages. Separate to be able to easily
 # convert them into proper packages in the future - will
@@ -228,12 +228,16 @@ RUN_DEPENDS-main = \
 	${MODKDE4_DEP_DIR}/workspace
 
 RUN_DEPENDS-extras = \
+	devel/kdevelop			\
+	editors/calligra		\
 	editors/kile-kde4		\
 	graphics/digikam-kde4,-main	\
 	graphics/digikam-kde4,-kipi	\
 	multimedia/k3b-kde4		\
 	multimedia/kdenlive		\
+	productivity/kmymoney		\
 	net/ktorrent-kde4		\
+	x11/tellico-kde4		\
 	x11/yakuake-kde4
 
 MODULES =		x11/kde4
