@@ -1,14 +1,27 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2014/07/18 19:56:53 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2014/07/18 21:17:31 sthen Exp $
 
-- install(1) has no -T option
-- use $(srcdir) because of SEPARATE_BUILD
+From 4b720691c45e1a803bdcc01567ac1ec52da62740 Mon Sep 17 00:00:00 2001
+From: Fabian Raetz <fabian.raetz@gmail.com>
+Date: Fri, 18 Jul 2014 13:50:05 -0700
+Subject: [PATCH] Fix install_desktop_files non-portability and add
+ out-of-tree support.
 
-https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=10292
+Prepend $(srcdir)/ to the sources in install commands, and get rid of
+the -T flag, as it's GNU coreutils install-specific; some versions of
+install don't support -T at all, and FreeBSD's install has a -T flag
+that takes an argument and has a completely different meaning.
 
---- Makefile.in.orig	Thu Jun 12 23:08:29 2014
-+++ Makefile.in	Fri Jul 18 19:38:46 2014
-@@ -4207,17 +4207,17 @@ patch-bzip2: distdir
+--- Makefile.in.orig	Thu Jun 12 22:08:29 2014
++++ Makefile.in	Fri Jul 18 22:17:04 2014
+@@ -4205,19 +4205,24 @@ patch-bzip2: distdir
+ # Yes, that violate's autofoo's principle of relocatability.
+ # What we (probably) should do is check `pkg-config --variable=prefix gtk+-2.0` to know where
  # to install this stuff...
++#
++# Do not use the -T flag to the install command, as it's not portable.
++# Some versions of install don't support a -T flag at all, and the
++# FreeBSD install command has a -T flag that takes an argument and
++# that has completely different semantics.
  install_desktop_files:
  	mkdir -p $(DESTDIR)/usr/share/{mime/packages,applications}
 -	install -m 644 -T wireshark-mime-package.xml $(DESTDIR)/usr/share/mime/packages/wireshark.xml
