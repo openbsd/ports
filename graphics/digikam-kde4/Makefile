@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/07/10 08:53:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/18 04:40:58 espie Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -223,6 +223,10 @@ TEST_IS_INTERACTIVE =	X11
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
 .else
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=1"
+.endif
+
+.if ${ARCH} == "amd64"
+BUILD_DEPENDS += graphics/opencv,-java
 .endif
 
 post-extract:
