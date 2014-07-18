@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hu,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-hu,v 1.7 2014/07/18 08:17:11 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/hu.xml
@@ -164,6 +164,7 @@ share/doc/HTML/hu/kteatime/common
 share/doc/HTML/hu/kteatime/index.cache.bz2
 share/doc/HTML/hu/kteatime/index.docbook
 share/locale/hu/LC_MESSAGES/accountwizard.mo
+share/locale/hu/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/hu/LC_MESSAGES/accountwizard_ical.mo
 share/locale/hu/LC_MESSAGES/accountwizard_imap.mo
 share/locale/hu/LC_MESSAGES/accountwizard_kolab.mo

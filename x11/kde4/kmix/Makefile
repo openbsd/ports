@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/11 12:18:37 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/18 08:17:10 zhuk Exp $
 COMMENT =	KDE audio mixer
 CATEGORIES =	audio
 DISTNAME =	kmix-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml

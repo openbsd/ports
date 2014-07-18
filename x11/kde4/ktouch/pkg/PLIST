@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/07/18 08:17:11 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/ktouch
 @man man/man1/ktouch.1
@@ -109,6 +109,7 @@ share/apps/ktouch/qml/CourseDescriptionItem.qml
 share/apps/ktouch/qml/CoursePage.qml
 share/apps/ktouch/qml/CourseSelector.qml
 share/apps/ktouch/qml/CustomLessonSelector.qml
+share/apps/ktouch/qml/DetailedRadioButton.qml
 share/apps/ktouch/qml/ElapsedTimeMeter.qml
 share/apps/ktouch/qml/HomeScreen.qml
 share/apps/ktouch/qml/InfoItem.qml

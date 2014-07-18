@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.7 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-fr,v 1.8 2014/07/18 08:17:11 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/fr.xml
@@ -30,6 +30,14 @@ share/apps/kvtml/fr/maison.kvtml
 share/apps/kvtml/fr/medium.kvtml
 share/doc/HTML/
 share/doc/HTML/fr/
+share/doc/HTML/fr/PolicyKit-kde/
+share/doc/HTML/fr/PolicyKit-kde/authorization.docbook
+share/doc/HTML/fr/PolicyKit-kde/authorizationagent.docbook
+share/doc/HTML/fr/PolicyKit-kde/common
+share/doc/HTML/fr/PolicyKit-kde/howitworks.docbook
+share/doc/HTML/fr/PolicyKit-kde/index.cache.bz2
+share/doc/HTML/fr/PolicyKit-kde/index.docbook
+share/doc/HTML/fr/PolicyKit-kde/introduction.docbook
 share/doc/HTML/fr/akonadi_notes_agent/
 share/doc/HTML/fr/akonadi_notes_agent/common
 share/doc/HTML/fr/akonadi_notes_agent/index.cache.bz2
@@ -1286,6 +1294,7 @@ share/doc/HTML/fr/kontact/todo-list-sidebar-icon.png
 share/doc/HTML/fr/kopete/
 share/doc/HTML/fr/kopete/chatstyle.docbook
 share/doc/HTML/fr/kopete/common
+share/doc/HTML/fr/kopete/icq.docbook
 share/doc/HTML/fr/kopete/index.cache.bz2
 share/doc/HTML/fr/kopete/index.docbook
 share/doc/HTML/fr/kopete/menus.docbook
@@ -1662,6 +1671,10 @@ share/doc/HTML/fr/step/examples.docbook
 share/doc/HTML/fr/step/index.cache.bz2
 share/doc/HTML/fr/step/index.docbook
 share/doc/HTML/fr/step/tutorials.docbook
+share/doc/HTML/fr/sweeper/
+share/doc/HTML/fr/sweeper/common
+share/doc/HTML/fr/sweeper/index.cache.bz2
+share/doc/HTML/fr/sweeper/index.docbook
 share/doc/HTML/fr/systemsettings/
 share/doc/HTML/fr/systemsettings/common
 share/doc/HTML/fr/systemsettings/index.cache.bz2
@@ -2377,6 +2390,7 @@ share/locale/fr/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
+share/locale/fr/LC_MESSAGES/plasma_runner_baloosearchrunner.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_calculatorrunner.mo

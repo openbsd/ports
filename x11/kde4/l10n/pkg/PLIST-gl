@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gl,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-gl,v 1.7 2014/07/18 08:17:11 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/gl.txt
@@ -529,6 +529,7 @@ share/doc/HTML/gl/umbrello/other_features.docbook
 share/doc/HTML/gl/umbrello/uml_basics.docbook
 share/doc/HTML/gl/umbrello/working_with_umbrello.docbook
 share/locale/gl/LC_MESSAGES/accountwizard.mo
+share/locale/gl/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/gl/LC_MESSAGES/accountwizard_ical.mo
 share/locale/gl/LC_MESSAGES/accountwizard_imap.mo
 share/locale/gl/LC_MESSAGES/accountwizard_kolab.mo
@@ -568,6 +569,7 @@ share/locale/gl/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_next.mo
 share/locale/gl/LC_MESSAGES/akonadi_nntp_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_sendlater_agent.mo
@@ -994,6 +996,7 @@ share/locale/gl/LC_MESSAGES/libakonadi-xml.mo
 share/locale/gl/LC_MESSAGES/libakonadi.mo
 share/locale/gl/LC_MESSAGES/libcomposereditorng.mo
 share/locale/gl/LC_MESSAGES/libeventviews.mo
+share/locale/gl/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/gl/LC_MESSAGES/libgrantleetheme.mo
 share/locale/gl/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/gl/LC_MESSAGES/libincidenceeditors.mo
@@ -1286,11 +1289,13 @@ share/locale/gl/LC_MESSAGES/rocs.mo
 share/locale/gl/LC_MESSAGES/rocscore.mo
 share/locale/gl/LC_MESSAGES/rocsvisualeditor.mo
 share/locale/gl/LC_MESSAGES/searchbarplugin.mo
+share/locale/gl/LC_MESSAGES/sieveeditor.mo
 share/locale/gl/LC_MESSAGES/solid-hardware.mo
 share/locale/gl/LC_MESSAGES/solid_qt.mo
 share/locale/gl/LC_MESSAGES/soliduiserver.mo
 share/locale/gl/LC_MESSAGES/step.mo
 share/locale/gl/LC_MESSAGES/step_qt.mo
+share/locale/gl/LC_MESSAGES/storageservicemanager.mo
 share/locale/gl/LC_MESSAGES/strigila_diff.mo
 share/locale/gl/LC_MESSAGES/superkaramba.mo
 share/locale/gl/LC_MESSAGES/svgpart.mo

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/10 19:55:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/18 08:17:13 zhuk Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -22,6 +21,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS = 	devel/gsl \
 		math/libqalculate
 
-CONFIGURE_ARGS =	-DSTEPCORE_TESTS:Bool=True
+#CONFIGURE_ARGS =	-DSTEPCORE_TESTS:Bool=True
 
 .include <bsd.port.mk>

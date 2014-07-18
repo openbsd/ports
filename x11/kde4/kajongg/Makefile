@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/18 08:17:08 zhuk Exp $
 
 COMMENT =	Mah Jongg four players board game for KDE
 DISTNAME =	kajongg-${MODKDE4_VERSION}
@@ -8,7 +8,8 @@ MODULES =	lang/python
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/py-kde
 
-RUN_DEPENDS =	devel/desktop-file-utils \
+RUN_DEPENDS =	audio/vorbis-tools \
+		devel/desktop-file-utils \
 		devel/py-twisted/core \
 		x11/gtk+2,-guic \
 		${MODKDE4_DEP_DIR}/libkmahjongg>=${MODKDE4_VERSION} \

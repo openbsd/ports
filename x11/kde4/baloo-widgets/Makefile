@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 19:49:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/18 08:17:08 zhuk Exp $
 
 COMMENT =	Baloo-based KDE Plasma widgets
 DISTNAME =	baloo-widgets-${MODKDE4_VERSION}
@@ -6,7 +6,7 @@ DISTNAME =	baloo-widgets-${MODKDE4_VERSION}
 CATEGORIES =	devel
 HOMEPAGE =	https://projects.kde.org/projects/kde/kdelibs/baloo-widgets
 
-SHARED_LIBS =	baloowidgets		0.0
+SHARED_LIBS =	baloowidgets		0.1
 
 WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

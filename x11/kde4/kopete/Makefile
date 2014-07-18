@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/10 19:55:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/18 08:17:10 zhuk Exp $
 
 COMMENT-main =		multi-protocol instant messenger for KDE
 COMMENT-sounds =	notification sounds for Kopete
@@ -6,7 +6,6 @@ DISTNAME =		kopete-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-sounds =	kde4-kopete-sounds-${MODKDE4_VERSION}
 PKG_ARCH-sounds =	*
-REVISION-main =		0
 
 CATEGORIES =	network
 HOMEPAGE =	http://kopete.kde.org/

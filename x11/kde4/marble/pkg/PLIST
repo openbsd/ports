@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/07/09 20:03:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/07/18 08:17:12 zhuk Exp $
 @bin bin/marble
 @bin bin/marble-mobile
 @bin bin/marble-qt
@@ -150,6 +150,7 @@ include/marble/geodata_export.h
 include/marble/global.h
 include/marble/marble_export.h
 lib/kde4/libmarble_part.so
+@lib ${KDE4LIB}/libastro.so.${LIBastro_VERSION}
 @lib ${KDE4LIB}/libmarblewidget.so.${LIBmarblewidget_VERSION}
 lib/kde4/plasma_applet_worldclock.so
 lib/kde4/plasma_runner_marble.so

@@ -1,7 +1,7 @@
-$OpenBSD: patch-console_calendarjanitor_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+$OpenBSD: patch-console_calendarjanitor_CMakeLists_txt,v 1.2 2014/07/18 08:17:13 zhuk Exp $
 Fix linking.
---- console/calendarjanitor/CMakeLists.txt.orig	Tue Jul  1 12:55:16 2014
-+++ console/calendarjanitor/CMakeLists.txt	Tue Jul  1 12:55:44 2014
+--- console/calendarjanitor/CMakeLists.txt.orig	Wed Jul  9 14:18:50 2014
++++ console/calendarjanitor/CMakeLists.txt	Sun Jul 13 14:21:28 2014
 @@ -29,11 +29,12 @@ kde4_add_app_icon(calendarjanitor_SRCS "${KDE4_ICON_DI
  kde4_add_executable(calendarjanitor NOGUI ${calendarjanitor_SRCS})
  

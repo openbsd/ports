@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/09 20:03:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/18 08:17:13 zhuk Exp $
 
 COMMENT =	jigsaw puzzle game for KDE
 DISTNAME =	palapeli-${MODKDE4_VERSION}
@@ -13,9 +13,9 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/kio
 # Does not link to libkdegames but uses data from the latter package.
 MODKDE4_USE =	games
 
-LIB_DEPENDS =	math/qhull
-
+# configure check for qvoronoi doesn't affect anything
 RUN_DEPENDS =	devel/desktop-file-utils \
+		math/qhull \
 		misc/shared-mime-info \
 		x11/gtk+2,-guic
 

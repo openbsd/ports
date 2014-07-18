@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2014/07/09 20:03:22 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2014/07/18 08:17:07 zhuk Exp $
 
 CATEGORIES ?=		x11
 MODULES +=		x11/kde4
@@ -25,8 +25,10 @@ CONFIGURE_STYLE =	cmake
 
 MODKDE4_LIB_LINKS =	Yes
 
-MIN_AKONADI_VERSION =	1.10.3
+MIN_AKONADI_VERSION =	1.12.1
 MIN_SOPRANO_VERSION =	2.9.4
 
 # Only needed for l10n
 MODKDE4_FIX_GETTEXT ?=  No
+
+MODKDE4_FLAVOR =	kde4133

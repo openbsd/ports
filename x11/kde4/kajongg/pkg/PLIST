@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:24 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/18 08:17:08 zhuk Exp $
 @conflict kdegames-<4.10
 bin/kajongg
 bin/kajonggserver
@@ -25,6 +25,8 @@ share/apps/kajongg/common.py
 share/apps/kajongg/common.pyc
 share/apps/kajongg/config.py
 share/apps/kajongg/config.pyc
+share/apps/kajongg/configdialog.py
+share/apps/kajongg/configdialog.pyc
 share/apps/kajongg/deferredutil.py
 share/apps/kajongg/deferredutil.pyc
 share/apps/kajongg/dialogs.py
@@ -76,8 +78,16 @@ share/apps/kajongg/playerlist.py
 share/apps/kajongg/playerlist.pyc
 share/apps/kajongg/predefined.py
 share/apps/kajongg/predefined.pyc
+share/apps/kajongg/qstring.py
+share/apps/kajongg/qstring.pyc
+share/apps/kajongg/qt.py
+share/apps/kajongg/qt.pyc
+share/apps/kajongg/qt4.py
+share/apps/kajongg/qt4.pyc
 share/apps/kajongg/qt4reactor.py
 share/apps/kajongg/qt4reactor.pyc
+share/apps/kajongg/qt5.py
+share/apps/kajongg/qt5.pyc
 share/apps/kajongg/query.py
 share/apps/kajongg/query.pyc
 share/apps/kajongg/rule.py

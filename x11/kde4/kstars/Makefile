@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/18 08:17:11 zhuk Exp $
 
 COMMENT =	planetarium simulator for KDE
 DISTNAME =	kstars-${MODKDE4_VERSION}
@@ -34,6 +34,10 @@ BUILD_DEPENDS =	math/eigen3 \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic \
 		x11/xplanet
+
+# not ported
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_AstrometryNet=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Indy=Yes
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/kstars/skycomponents/supernovaecomponent.cpp

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/10 19:55:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/07/18 08:17:13 zhuk Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	0
 
-SHARED_LIBS =	lancelot-datamodels		51.0 # 1.7
-SHARED_LIBS +=	lancelot			51.0 # 1.9
-SHARED_LIBS +=	plasma_groupingcontainment	51.0 # 4.7
-SHARED_LIBS +=	plasmacomicprovidercore		51.0 # 1.0
-SHARED_LIBS +=	plasmapotdprovidercore		51.0 # 1.0
-SHARED_LIBS +=	plasmaweather			51.0 # 4.7
-SHARED_LIBS +=	rtm				51.0 # 4.7
+SHARED_LIBS =	lancelot-datamodels		51.1 # 1.7
+SHARED_LIBS +=	lancelot			51.1 # 1.9
+SHARED_LIBS +=	plasma_groupingcontainment	51.1 # 4.7
+SHARED_LIBS +=	plasmacomicprovidercore		51.1 # 1.0
+SHARED_LIBS +=	plasmapotdprovidercore		51.1 # 1.0
+SHARED_LIBS +=	plasmaweather			51.1 # 4.7
+SHARED_LIBS +=	rtm				51.1 # 4.7
 
 WANTLIB =  c m pthread
 WANTLIB += ICE SM X11 Xext Xrender Xtst
@@ -27,7 +26,7 @@ WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kprintutils
 WANTLIB += ${KDE4LIB}/kresources
 WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/kunitconversion ${KDE4LIB}/kutils
 WANTLIB += ${KDE4LIB}/kworkspace ${KDE4LIB}/marblewidget ${KDE4LIB}/nepomuk
-WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/plasmaclock ${KDE4LIB}/solid
 WANTLIB += ${KDE4LIB}/taskmanager
 WANTLIB += ${KDE4LIB}/threadweaver ${KDE4LIB}/weather_ion
@@ -56,7 +55,6 @@ LIB_DEPENDS =	devel/qjson \
 		x11/dbusmenu-qt \
 		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/marble>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		x11/qwt
 
 .include <bsd.port.mk>

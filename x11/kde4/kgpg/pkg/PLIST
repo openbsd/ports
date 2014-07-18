@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/18 08:17:09 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/kgpg
+share/appdata/
+share/appdata/kgpg.appdata.xml
 share/applications/kde4/kgpg.desktop
 share/apps/kgpg/
 share/apps/kgpg/icons/

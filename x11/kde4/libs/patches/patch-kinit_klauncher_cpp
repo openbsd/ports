@@ -1,8 +1,8 @@
-$OpenBSD: patch-kinit_klauncher_cpp,v 1.2 2013/12/08 19:13:32 zhuk Exp $
+$OpenBSD: patch-kinit_klauncher_cpp,v 1.3 2014/07/18 08:17:12 zhuk Exp $
 Allow libexec item to be found.
---- kinit/klauncher.cpp.orig	Fri Nov  1 19:45:56 2013
-+++ kinit/klauncher.cpp	Tue Nov  5 11:05:21 2013
-@@ -1187,7 +1187,7 @@ KLauncher::requestSlave(const QString &protocol,
+--- kinit/klauncher.cpp.orig	Fri Jul 11 08:42:13 2014
++++ kinit/klauncher.cpp	Sat Jul 12 13:36:21 2014
+@@ -1196,7 +1196,7 @@ KLauncher::requestSlave(const QString &protocol,
  #ifndef USE_KPROCESS_FOR_KIOSLAVES // otherwise we've already done this
         KLibrary lib(name, KGlobal::mainComponent());
         arg_list.prepend(lib.fileName());

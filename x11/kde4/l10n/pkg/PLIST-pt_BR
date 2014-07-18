@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt_BR,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-pt_BR,v 1.7 2014/07/18 08:17:11 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/pt_BR.xml
@@ -167,6 +167,10 @@ share/doc/HTML/pt_BR/ark/common
 share/doc/HTML/pt_BR/ark/index.cache.bz2
 share/doc/HTML/pt_BR/ark/index.docbook
 share/doc/HTML/pt_BR/ark/man-ark.1.docbook
+share/doc/HTML/pt_BR/artikulate/
+share/doc/HTML/pt_BR/artikulate/common
+share/doc/HTML/pt_BR/artikulate/index.cache.bz2
+share/doc/HTML/pt_BR/artikulate/index.docbook
 share/doc/HTML/pt_BR/blinken/
 share/doc/HTML/pt_BR/blinken/blinken1.png
 share/doc/HTML/pt_BR/blinken/blinken2.png

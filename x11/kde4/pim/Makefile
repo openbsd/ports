@@ -1,58 +1,57 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/10 19:55:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2014/07/18 08:17:13 zhuk Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-${MODKDE4_VERSION}
-REVISION =	0
 
-SHARED_LIBS =	akonadi_next			52.0
-SHARED_LIBS +=	akregatorinterfaces		52.0
-SHARED_LIBS +=	kaddressbookprivate		52.0
-SHARED_LIBS +=	kcal_resourceblog		52.0
-SHARED_LIBS +=	kleo				52.0
-SHARED_LIBS +=	kontactprivate			52.0
-SHARED_LIBS +=	korganizer_core			52.0
-SHARED_LIBS +=	korganizerprivate		52.0
-SHARED_LIBS +=	messagecore			52.0
-SHARED_LIBS +=	messagelist			52.0
-SHARED_LIBS +=	messageviewer			52.0
-SHARED_LIBS +=	akregatorprivate		52.0
-SHARED_LIBS +=	kcal_resourceremote		52.0
-SHARED_LIBS +=	kdepim				52.0
-SHARED_LIBS +=	kmailprivate			52.0
-SHARED_LIBS +=	knodecommon			52.0
-SHARED_LIBS +=	korganizer_interfaces		52.0
-SHARED_LIBS +=	kpgp				52.0
-SHARED_LIBS +=	ksieve				52.0
+SHARED_LIBS =	akonadi_next			52.1
+SHARED_LIBS +=	akregatorinterfaces		52.1
+SHARED_LIBS +=	kaddressbookprivate		52.1
+SHARED_LIBS +=	kcal_resourceblog		52.1
+SHARED_LIBS +=	kleo				52.1
+SHARED_LIBS +=	kontactprivate			52.1
+SHARED_LIBS +=	korganizer_core			52.1
+SHARED_LIBS +=	korganizerprivate		52.1
+SHARED_LIBS +=	messagecore			52.1
+SHARED_LIBS +=	messagelist			52.1
+SHARED_LIBS +=	messageviewer			52.1
+SHARED_LIBS +=	akregatorprivate		52.1
+SHARED_LIBS +=	kcal_resourceremote		52.1
+SHARED_LIBS +=	kdepim				52.1
+SHARED_LIBS +=	kmailprivate			52.1
+SHARED_LIBS +=	knodecommon			52.1
+SHARED_LIBS +=	korganizer_interfaces		52.1
+SHARED_LIBS +=	kpgp				52.1
+SHARED_LIBS +=	ksieve				52.1
 
-SHARED_LIBS +=  calendarsupport           52.0 # 4.7
-SHARED_LIBS +=  eventviews                52.0 # 4.7
-SHARED_LIBS +=  incidenceeditorsng        52.0 # 4.7
-SHARED_LIBS +=  incidenceeditorsngmobile  52.0 # 4.7
-SHARED_LIBS +=  kdepimdbusinterfaces      52.0 # 4.7
+SHARED_LIBS +=  calendarsupport           52.1 # 4.7
+SHARED_LIBS +=  eventviews                52.1 # 4.7
+SHARED_LIBS +=  incidenceeditorsng        52.1 # 4.7
+SHARED_LIBS +=  incidenceeditorsngmobile  52.1 # 4.7
+SHARED_LIBS +=  kdepimdbusinterfaces      52.1 # 4.7
 #SHARED_LIBS +=  kdepimmobileui            51.0 # 4.7
-SHARED_LIBS +=  kdgantt2                  52.0 # 0.1
-SHARED_LIBS +=  kleopatraclientcore       52.0 # 0.3
-SHARED_LIBS +=  kleopatraclientgui        52.0 # 0.3
-SHARED_LIBS +=  kmanagesieve              52.0 # 4.7
-SHARED_LIBS +=  ksieveui                  52.0 # 4.7
-SHARED_LIBS +=  mailcommon                52.0 # 4.7
-SHARED_LIBS +=  mailimporter              52.0 # 4.9
-SHARED_LIBS +=  messagecomposer           52.0 # 4.7
-SHARED_LIBS +=  templateparser            52.0 # 4.7
+SHARED_LIBS +=  kdgantt2                  52.1 # 0.1
+SHARED_LIBS +=  kleopatraclientcore       52.1 # 0.3
+SHARED_LIBS +=  kleopatraclientgui        52.1 # 0.3
+SHARED_LIBS +=  kmanagesieve              52.1 # 4.7
+SHARED_LIBS +=  ksieveui                  52.1 # 4.7
+SHARED_LIBS +=  mailcommon                52.1 # 4.7
+SHARED_LIBS +=  mailimporter              52.1 # 4.9
+SHARED_LIBS +=  messagecomposer           52.1 # 4.7
+SHARED_LIBS +=  templateparser            52.1 # 4.7
 
-SHARED_LIBS +=	pimcommon                 52.0 # 4.10
+SHARED_LIBS +=	pimcommon                 52.1 # 4.10
 
-SHARED_LIBS +=  composereditorng          1.0 # 4.11
+SHARED_LIBS +=  composereditorng          1.1 # 4.11
 #SHARED_LIBS +=  grammar                   0.0 # 4.11
 #SHARED_LIBS +=  pimactivity               0.0 # 4.11
-SHARED_LIBS +=  sendlater                 1.0 # 4.11
+SHARED_LIBS +=  sendlater                 1.1 # 4.11
 
-SHARED_LIBS +=  grantleetheme             0.0 # 4.13
-SHARED_LIBS +=  grantleethemeeditor       0.0 # 4.13
-SHARED_LIBS +=  kaddressbookgrantlee      0.0 # 4.13
-SHARED_LIBS +=  kdepimmobileui            0.0 # 4.13
-SHARED_LIBS +=  knotesprivate             0.0 # 4.13
-SHARED_LIBS +=  noteshared                0.0 # 4.13
+SHARED_LIBS +=  grantleetheme             0.1 # 4.13
+SHARED_LIBS +=  grantleethemeeditor       0.1 # 4.13
+SHARED_LIBS +=  kaddressbookgrantlee      0.1 # 4.13
+SHARED_LIBS +=  kdepimmobileui            0.1 # 4.13
+SHARED_LIBS +=  knotesprivate             0.1 # 4.13
+SHARED_LIBS +=  noteshared                0.1 # 4.13
 
 MODKDE4_USE =	pim
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/07/09 20:03:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/07/18 08:17:14 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @newgroup _kdm:730
@@ -416,7 +416,7 @@ lib/strigi/strigita_font.so
 @bin libexec/fontinst_helper
 libexec/fontinst_x11
 @mode 6555
-libexec/kcheckpass
+@bin libexec/kcheckpass
 @mode
 @bin libexec/kcmdatetimehelper
 @bin libexec/kcmkdmhelper

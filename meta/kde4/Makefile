@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/12 11:25:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/07/18 08:17:07 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -19,12 +19,6 @@ PKGNAME-games =		kdegames-${MODKDE4_VERSION}
 PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
 PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
 PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
-
-REVISION-accessiblity =	1
-REVISION-edu =		0
-REVISION-minimal =	3
-REVISION-main =		3
-REVISION-network =	1
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
