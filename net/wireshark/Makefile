@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/18 20:21:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/18 21:31:53 sthen Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 
 WVER =		1.10.8
-REVISION-main =	1
+REVISION =	2
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
@@ -26,9 +26,10 @@ USE_GMAKE =	Yes
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODLUA_VERSION =	5.2
+MODLUA_VERSION = 5.2
 MODULES =	lang/lua
 MODLUA_SA =	Yes
+MODLUA_RUNDEP =	No
 
 WANTLIB +=	c glib-2.0 m pcap pthread z
 
@@ -42,32 +43,31 @@ WANTLIB-main +=	gdk-3 gtk-3
 
 MULTI_PACKAGES =	-text -main
 
-MASTER_SITES =	http://www.wireshark.org/download/src/all-versions/ \
-		http://www.wireshark.org/download/automated/src/
+MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
+			http://www.wireshark.org/download/automated/src/
 
-SUBST_VARS =	WVER
+SUBST_VARS =		WVER
 
 BUILD_DEPENDS =		devel/xdg-utils
-RUN_DEPENDS =		devel/xdg-utils
-
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
+			devel/xdg-utils \
 			misc/shared-mime-info \
 			x11/gtk+2,-guic
 
 LIB_DEPENDS-text =	${LIB_DEPENDS} \
-		${MODLUA_LIB_DEPENDS} \
-		devel/glib2 \
-		net/libcares \
-		net/libsmi \
-		net/GeoIP  \
-		security/gnutls \
-		security/libgcrypt
+			${MODLUA_LIB_DEPENDS} \
+			devel/glib2 \
+			net/libcares \
+			net/libsmi \
+			net/GeoIP  \
+			security/gnutls \
+			security/libgcrypt
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-		tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
-		x11/gtk+3 \
-		audio/portaudio-svn
+			tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
+			x11/gtk+3 \
+			audio/portaudio-svn
 
 LIBTOOL_FLAGS +=	--tag=disable-static
 
@@ -75,16 +75,16 @@ CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-		--with-dumpcap-group=_wireshark \
-		--enable-setuid-install \
-		--with-gtk3=yes \
-		--with-ssl
+			--with-dumpcap-group=_wireshark \
+			--enable-setuid-install \
+			--with-gtk3=yes \
+			--with-ssl
 
 CONFIGURE_ENV =	CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0 -I${LOCALBASE}/include/lua-${MODLUA_VERSION}"
 
 NO_TEST =	Yes
 
-INSTALL_TARGET =	install install_desktop_files
+INSTALL_TARGET = install install_desktop_files
 
 post-install:
 	@find ${PREFIX}/lib/wireshark -name '*.la' -print0 | xargs -r0 rm
