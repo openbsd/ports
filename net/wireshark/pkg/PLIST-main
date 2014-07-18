@@ -1,4 +1,52 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/07/14 08:44:51 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/07/18 19:56:53 sthen Exp $
 @bin bin/wireshark
 @man man/man1/wireshark.1
+share/applications/
+share/applications/wireshark.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/wireshark.png
+share/icons/hicolor/128x128/mimetypes/
+share/icons/hicolor/128x128/mimetypes/application-wireshark-doc.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/wireshark.png
+share/icons/hicolor/16x16/mimetypes/
+share/icons/hicolor/16x16/mimetypes/application-wireshark-doc.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/wireshark.png
+share/icons/hicolor/24x24/mimetypes/
+share/icons/hicolor/24x24/mimetypes/application-wireshark-doc.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/wireshark.png
+share/icons/hicolor/256x256/mimetypes/
+share/icons/hicolor/256x256/mimetypes/application-wireshark-doc.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/wireshark.png
+share/icons/hicolor/32x32/mimetypes/
+share/icons/hicolor/32x32/mimetypes/application-wireshark-doc.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/wireshark.png
+share/icons/hicolor/48x48/mimetypes/
+share/icons/hicolor/48x48/mimetypes/application-wireshark-doc.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/wireshark.png
+share/icons/hicolor/64x64/mimetypes/
+share/icons/hicolor/64x64/mimetypes/application-wireshark-doc.png
+share/mime/
+share/mime/packages/
+share/mime/packages/wireshark.xml
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/14 08:54:29 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/18 19:56:53 sthen Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 
 WVER =		1.10.8
+REVISION-main =	0
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
@@ -48,6 +49,9 @@ SUBST_VARS =	WVER
 
 BUILD_DEPENDS +=	devel/xdg-utils
 RUN_DEPENDS +=		devel/xdg-utils
+RUN_DEPENDS-main +=	devel/desktop-file-utils \
+			misc/shared-mime-info \
+			x11/gtk+2,-guic
 LIB_DEPENDS =
 
 LIB_DEPENDS-text =	${LIB_DEPENDS} \
@@ -79,7 +83,10 @@ CONFIGURE_ENV =	CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0 -I${LOCALBA
 
 NO_TEST =	Yes
 
+INSTALL_TARGET =	install install_desktop_files
+
 post-install:
 	@find ${PREFIX}/lib/wireshark -name '*.la' -print0 | xargs -r0 rm
+	mv ${WRKINST}/usr/share/{applications,icons,mime} ${PREFIX}/share
 
 .include <bsd.port.mk>

@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2014/07/18 19:56:53 sthen Exp $
+
+- install(1) has no -T option
+- use $(srcdir) because of SEPARATE_BUILD
+
+https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=10292
+
+--- Makefile.in.orig	Thu Jun 12 23:08:29 2014
++++ Makefile.in	Fri Jul 18 19:38:46 2014
+@@ -4207,17 +4207,17 @@ patch-bzip2: distdir
+ # to install this stuff...
+ install_desktop_files:
+ 	mkdir -p $(DESTDIR)/usr/share/{mime/packages,applications}
+-	install -m 644 -T wireshark-mime-package.xml $(DESTDIR)/usr/share/mime/packages/wireshark.xml
++	install -m 644 $(srcdir)/wireshark-mime-package.xml $(DESTDIR)/usr/share/mime/packages/wireshark.xml
+ 	if test x$(DESKTOP_FILE_INSTALL) != x ; then \
+-		$(DESKTOP_FILE_INSTALL) --dir $(DESTDIR)/usr/share/applications wireshark.desktop; \
++		$(DESKTOP_FILE_INSTALL) --dir $(DESTDIR)/usr/share/applications $(srcdir)/wireshark.desktop; \
+ 	else \
+-		install -m 644 -T wireshark.desktop $(DESTDIR)/usr/share/applications/wireshark.desktop; \
++		install -m 644 $(srcdir)/wireshark.desktop $(DESTDIR)/usr/share/applications/wireshark.desktop; \
+ 	fi
+ 	for size in 16 24 32 48 64 128 256; \
+ 	do \
+ 		mkdir -p $(DESTDIR)/usr/share/icons/hicolor/$${size}x$${size}/{apps,mimetypes} ; \
+-		install -m 644 image/wsicon$${size}.png  $(DESTDIR)/usr/share/icons/hicolor/$${size}x$${size}/apps/wireshark.png ; \
+-		install -m 644 -T image/WiresharkDoc-$${size}.png  $(DESTDIR)/usr/share/icons/hicolor/$${size}x$${size}/mimetypes/application-wireshark-doc.png ; \
++		install -m 644 $(srcdir)/image/wsicon$${size}.png  $(DESTDIR)/usr/share/icons/hicolor/$${size}x$${size}/apps/wireshark.png ; \
++		install -m 644 $(srcdir)/image/WiresharkDoc-$${size}.png  $(DESTDIR)/usr/share/icons/hicolor/$${size}x$${size}/mimetypes/application-wireshark-doc.png ; \
+ 	done
+ 	@echo "Don't forget to run \"update-desktop-database\" and \"update-mime-database /usr/share/mime\""
+ 
