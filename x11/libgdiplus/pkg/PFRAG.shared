@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/10/15 10:46:07 robert Exp $
-@lib lib/libgdiplus.so.${LIBgdiplus_VERSION}

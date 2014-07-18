@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_gifcodec_c,v 1.1 2013/09/25 07:58:50 sthen Exp $
+$OpenBSD: patch-src_gifcodec_c,v 1.2 2014/07/18 16:00:28 ajacoutot Exp $
 
 giflib 5.0+
 http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patches/patch-src_gifcodec.c?rev=1.2
 
---- src/gifcodec.c.orig	Thu Jan 13 15:28:19 2011
-+++ src/gifcodec.c	Thu Sep 19 06:38:40 2013
+--- src/gifcodec.c.orig	Fri Dec  2 18:23:12 2011
++++ src/gifcodec.c	Fri Jul 18 15:30:15 2014
 @@ -39,8 +39,12 @@ GUID gdip_gif_image_format_guid = {0xb96b3cb0U, 0x0728
  
  #include "gifcodec.h"
@@ -71,7 +71,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patche
  	}
  	
  	if (gif == NULL) {
-@@ -662,9 +684,17 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
+@@ -661,9 +683,17 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
  	}
  
  	if (from_file) {
@@ -89,7 +89,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patche
  	}
  		
  	if (!fp) {
-@@ -703,7 +733,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
+@@ -702,7 +732,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
  					goto error; 
  				}
  
@@ -101,7 +101,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patche
  
  				pixbuf = GdipAlloc(pixbuf_size);
  				if (pixbuf == NULL) {
-@@ -794,7 +828,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
+@@ -793,7 +827,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
  				pixbuf = pixbuf_org;
  			} else {
  				cmap_size = 256;
@@ -113,7 +113,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patche
  
  				red = GdipAlloc(pixbuf_size);
  				green = GdipAlloc(pixbuf_size);
-@@ -825,13 +863,21 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
+@@ -824,13 +862,21 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
  						v += 4;
  					}
  				}
@@ -135,7 +135,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patche
  			cmap->ColorCount = 1 << cmap->BitsPerPixel;
  
  			if ((frame == 0) && (k == 0)) {
-@@ -849,8 +895,15 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
+@@ -848,8 +894,15 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
  						Buffer[0] = 1;
  						Buffer[1] = ptr[0];
  						Buffer[2] = ptr[1];
@@ -151,7 +151,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patche
  					}
  				}
  
-@@ -902,7 +955,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
+@@ -901,7 +954,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
  				pixbuf += bitmap_data->width;
  			}
  
@@ -163,7 +163,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/graphics/libgdiplus/patche
  			if (red != NULL) {
  				GdipFree (red);
  			}
-@@ -930,7 +987,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
+@@ -929,7 +986,11 @@ gdip_save_gif_image (void *stream, GpImage *image, BOO
  
  error:
  	if (cmap != NULL) {

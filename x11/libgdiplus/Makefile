@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/25 07:58:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2014/07/18 16:00:28 ajacoutot Exp $
 
 COMMENT=	GDI+ comptible API
 
-DISTNAME=	libgdiplus-2.10
-REVISION=	1
+DISTNAME=	libgdiplus-2.10.9
 
 CATEGORIES=	x11 devel
 
-SHARED_LIBS +=	gdiplus	1.0	# .0.0
+SHARED_LIBS +=	gdiplus	2.0	# .0.0
 
 HOMEPAGE=	http://www.mono-project.com/Libgdiplus
 
@@ -22,7 +21,7 @@ WANTLIB += harfbuzz jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs tiff xcb xcb-render
 WANTLIB += xcb-shm z
 
-MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/libgdiplus/
+MASTER_SITES=	http://download.mono-project.com/sources/libgdiplus/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
