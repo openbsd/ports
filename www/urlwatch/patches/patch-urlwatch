@@ -1,12 +1,12 @@
-$OpenBSD: patch-urlwatch,v 1.1.1.1 2013/10/02 07:55:56 sthen Exp $
---- urlwatch.orig	Wed Oct  2 00:21:32 2013
-+++ urlwatch	Wed Oct  2 00:21:34 2013
-@@ -61,7 +61,7 @@ hooks_py = os.path.join(scripts_dir, 'hooks.py')
+$OpenBSD: patch-urlwatch,v 1.2 2014/07/18 14:11:42 sthen Exp $
+--- urlwatch.orig	Wed Jan 29 18:40:36 2014
++++ urlwatch	Fri Jul 18 14:33:55 2014
+@@ -66,7 +66,7 @@ hooks_py = os.path.join(scripts_dir, 'hooks.py')
  
  if bindir == 'bin':
-     # Assume we are installed in system
+     # Installed system-wide
 -    examples_dir = os.path.join(prefix, 'share', pkgname, 'examples')
 +    examples_dir = os.path.join(prefix, 'share', 'examples', pkgname)
  else:
      # Assume we are not yet installed
-     examples_dir = os.path.join(prefix, bindir, 'examples')
+     sys.path.insert(0, os.path.join(prefix, bindir, 'lib'))

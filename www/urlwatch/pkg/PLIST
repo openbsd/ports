@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/02 07:55:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/18 14:11:42 sthen Exp $
 bin/urlwatch
 lib/python${MODPY_VERSION}/site-packages/urlwatch/
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/urlwatch/html2txt.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/html2txt.pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/ical2txt.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/ical2txt.pyc
+lib/python${MODPY_VERSION}/site-packages/urlwatch/mailer.py
+lib/python${MODPY_VERSION}/site-packages/urlwatch/mailer.pyc
 @man man/man1/urlwatch.1
 share/examples/urlwatch/
 share/examples/urlwatch/hooks.py.example
