@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2014/07/18 19:56:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/18 20:21:07 ajacoutot Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 
 WVER =		1.10.8
-REVISION-main =	0
+REVISION-main =	1
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
@@ -47,12 +47,13 @@ MASTER_SITES =	http://www.wireshark.org/download/src/all-versions/ \
 
 SUBST_VARS =	WVER
 
-BUILD_DEPENDS +=	devel/xdg-utils
-RUN_DEPENDS +=		devel/xdg-utils
-RUN_DEPENDS-main +=	devel/desktop-file-utils \
+BUILD_DEPENDS =		devel/xdg-utils
+RUN_DEPENDS =		devel/xdg-utils
+
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+2,-guic
-LIB_DEPENDS =
 
 LIB_DEPENDS-text =	${LIB_DEPENDS} \
 		${MODLUA_LIB_DEPENDS} \
