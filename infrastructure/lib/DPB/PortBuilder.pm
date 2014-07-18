@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.61 2014/03/09 20:11:33 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.62 2014/07/18 07:02:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -208,18 +208,20 @@ sub build
 	my $log = $self->logger->make_logs($v);
 	open my $fh, ">>", $log or die "can't open $log: $!";
 	my $memsize = $self->{sizer}->build_in_memory($fh, $core, $v);
+	my $meminfo;
 
 	if ($memsize) {
 		print $lock "mem=$memsize\n";
-		print $fh ">>> Building in memory under ";
+		$meminfo = " in memory";
 		$core->{inmem} = $memsize;
 	} else {
-		print $fh ">>> Building under ";
+		$meminfo = "";
 		$core->{inmem} = 0;
 	}
 	if ($v->{info}->has_property('tag')) {
 		print $lock "tag=".$v->{info}->has_property('tag')."\n";
 	}
+	print $fh ">>> Building on ", $core->hostname, $meminfo, " under ";
 	$v->quick_dump($fh);
 
 	my $job;
