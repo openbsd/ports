@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/07/09 20:03:23 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/07/18 08:08:29 zhuk Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/artwork
 @bin bin/kbanner.kss
@@ -365,6 +365,7 @@ share/kde4/services/ScreenSavers/cage.desktop
 share/kde4/services/ScreenSavers/carousel.desktop
 share/kde4/services/ScreenSavers/ccurve.desktop
 share/kde4/services/ScreenSavers/celtic.desktop
+share/kde4/services/ScreenSavers/circuit.desktop
 share/kde4/services/ScreenSavers/cloudlife.desktop
 share/kde4/services/ScreenSavers/compass.desktop
 share/kde4/services/ScreenSavers/coral.desktop
@@ -378,6 +379,7 @@ share/kde4/services/ScreenSavers/cwaves.desktop
 share/kde4/services/ScreenSavers/cynosure.desktop
 share/kde4/services/ScreenSavers/dangerball.desktop
 share/kde4/services/ScreenSavers/decayscreen.desktop
+share/kde4/services/ScreenSavers/deco.desktop
 share/kde4/services/ScreenSavers/deluxe.desktop
 share/kde4/services/ScreenSavers/demon.desktop
 share/kde4/services/ScreenSavers/discrete.desktop

@@ -1,11 +1,11 @@
-$OpenBSD: patch-cmake_modules_FindXscreensaver_cmake,v 1.5 2014/04/29 08:57:44 zhuk Exp $
+$OpenBSD: patch-cmake_modules_FindXscreensaver_cmake,v 1.6 2014/07/18 08:08:29 zhuk Exp $
 --- cmake/modules/FindXscreensaver.cmake.orig	Thu Jan  2 23:44:58 2014
 +++ cmake/modules/FindXscreensaver.cmake	Fri Feb 28 22:04:53 2014
 @@ -5,6 +5,8 @@
  # Redistribution and use is allowed according to the terms of the BSD license.
  # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
  
-+set(XSCREENSAVER_CHECK_ITEM xdeco CACHE STRING "screen saver to check existence of")
++set(XSCREENSAVER_CHECK_ITEM zoom CACHE STRING "screen saver to check existence of")
 +
  if (NOT XSCREENSAVER_FOUND)
    set(xscreensaver_alldirs)
