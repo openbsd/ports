@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2014/07/18 08:17:07 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2014/07/18 08:20:55 zhuk Exp $
 
 CATEGORIES ?=		x11
 MODULES +=		x11/kde4
@@ -30,5 +30,3 @@ MIN_SOPRANO_VERSION =	2.9.4
 
 # Only needed for l10n
 MODKDE4_FIX_GETTEXT ?=  No
-
-MODKDE4_FLAVOR =	kde4133
