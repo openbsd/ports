@@ -1,0 +1,13 @@
+$OpenBSD: patch-languages_cpp_CMakeLists_txt,v 1.1 2014/07/19 11:54:45 zhuk Exp $
+--- languages/cpp/CMakeLists.txt.orig	Sat Jul 19 01:00:03 2014
++++ languages/cpp/CMakeLists.txt	Sat Jul 19 01:00:12 2014
+@@ -88,6 +88,9 @@ target_link_libraries(kdevcpplanguagesupport
+     ${KDE4_KTEXTEDITOR_LIBS}
+ )
+ 
++# XXX should be done directly in KDE4Macros.cmake instead?
++add_dependencies(kdevcpplanguagesupport ${CMAKE_CURRENT_BINARY_DIR}/ui_custom_include_paths.h)
++
+ install(TARGETS kdevcpplanguagesupport DESTINATION ${PLUGIN_INSTALL_DIR})
+ 
+ 
