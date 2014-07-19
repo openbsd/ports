@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/19 09:19:53 zhuk Exp $
 
 COMMENT =	KDE math features
 DISTNAME =	analitza-${MODKDE4_VERSION}
@@ -13,7 +13,5 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui
 WANTLIB += curses form readline
-
-#CONFIGURE_ARGS=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
