@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2014/04/08 12:22:48 sthen Exp $
+$OpenBSD: README-main,v 1.3 2014/07/19 22:36:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -36,7 +36,7 @@ squid:\
 	:tc=daemon:
 
 When started by rc.d(8) (i.e. via pkg_scripts in rc.conf.local or from
-"/etc/rc.d/squid start") the appropriately-named login class is used
+"${RCDIR}/squid start") the appropriately-named login class is used
 automatically.
 
 If you are using /etc/login.conf.db (not usually recommended) then be

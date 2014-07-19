@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2014/07/12 14:55:40 ajacoutot Exp $
+$OpenBSD: README-main,v 1.5 2014/07/19 22:36:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -72,8 +72,8 @@ Starting the daemons
 --------------------
 To start the daemons without rebooting you can use:
 
-	# /etc/rc.d/upsd start
-	# /etc/rc.d/upsmon start
+	# ${RCDIR}/upsd start
+	# ${RCDIR}/upsmon start
 
 It is recommended that you test a full cycle of rebooting, checking
 that the daemons are running correctly ("upsc <upsname>" will display

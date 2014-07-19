@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2014/07/09 14:19:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/07/19 22:36:13 ajacoutot Exp $
 
 D=		20140626-r13480
 V=		3.5pre${D:C/-.*//}
 DISTNAME=	squid-3.HEAD-$D
 EXTRACT_SUFX=	.tar.bz2
 REVISION=	0
+REVISION-main=	1
 
 # future versions will be requiring c++11 support, so let's build
 # the devel version in squid/snapshot with a newer compiler to get

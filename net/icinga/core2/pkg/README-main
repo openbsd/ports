@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2014/07/12 11:22:10 sthen Exp $
+$OpenBSD: README-main,v 1.5 2014/07/19 22:36:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -38,7 +38,7 @@ line in /etc/rc.conf.local.
 
 To start icinga2, reboot or start it manually:
 
-   $ sudo /etc/rc.d/icinga2 start
+   $ sudo ${RCDIR}/icinga2 start
 
 
 Chroot Considerations
@@ -129,12 +129,12 @@ in their own packages; one or both must be installed separately
 
    Afterwards, you can start it by rebooting, or manually:
 
-      $ sudo /etc/rc.d/ido2db start
+      $ sudo ${RCDIR}/ido2db start
 
    2.3) Enable the "broker_module=${TRUEPREFIX}/lib/idomod.so ..." line in
    ${SYSCONFDIR}/icinga.cfg and restart icinga:
 
-      $ sudo /etc/rc.d/icinga restart
+      $ sudo ${RCDIR}/icinga restart
 
    Now you should see in the icinga logfile, that icinga is storing
    information in the db.
