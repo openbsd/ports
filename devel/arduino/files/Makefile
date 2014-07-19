@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2014/07/18 11:12:13 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/19 11:34:11 edd Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
 # Adapted for BSD make(1) by Seth Wright (seth@crosse.org)
 # Adapted for OpenBSD ports by Chris Kuethe (ckuethe@openbsd.org)
+# Later maintained by the OpenBSD ports team (ports@openbsd.org)
 #
 # This makefile allows you to build sketches from the command line
 # without the Arduino environment (or Java).
@@ -32,31 +33,49 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: Makefile,v 1.1 2014/07/18 11:12:13 edd Exp $
+# $Id: Makefile,v 1.2 2014/07/19 11:34:11 edd Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
+
+# Target options.
+#
+# You will need to specify the following options to compile and upload
+# code to your Arduino board:
+#
+# UPLOAD_RATE: baud rate for programming.
+# PORT: device to program over.
+# AVRDUDE_PROGRAMMER: Kind of programming interface.
+# MCU: AVR CPU on the board. See avrdude config file for possible values.
+# F_CPU: CPU frequency. Usually 16000000.
+# VARIANT: Arduino peripheral configuration, one of:
+#          {eightanaloginputs, leonardo, mega, micro, standard}
+
+# Below are some known working hardware configurations. If you find other
+# working configurations, please feed them back to the OpenBSD porting team.
 
 ## you might use this for newer boards like the UNO
 UPLOAD_RATE = 115200
 PORT = /dev/cuaU0
 AVRDUDE_PROGRAMMER = arduino
+MCU = atmega328p
+F_CPU = 16000000
+VARIANT = standard
 
 ## for an arduino mega
 #UPLOAD_RATE = 57600
-#MCU = atmega1280
+#PORT = /dev/cuaU0
 #AVRDUDE_PROGRAMMER = arduino
+#MCU = atmega1280
+#F_CPU = 16000000
+#VARIANT = mega
 
 ## or this for an older arduino
 #UPLOAD_RATE = 19200
 #PORT = /dev/cuaU0
 #AVRDUDE_PROGRAMMER = stk500
-
-## or this, if you have a usbtiny ISP
-#PORT = usb
-#AVRDUDE_PROGRAMMER = usbtiny
-
-MCU = atmega328p
-F_CPU = 16000000
+#MCU = atmega328p
+#F_CPU = 16000000
+#VARIANT = standard
 
 # If your sketch uses any libraries, list them here, eg.
 # LIBRARIES=EEPROM LiquidCrystal Wire
@@ -68,10 +87,6 @@ F_CPU = 16000000
 # To use the SD library:
 # LIBRARIES=SD File utility/SdFile utility/SdVolume utility/Sd2Card
 LIBRARIES=
-
-# Arduino variant, one of: "eightanaloginputs", "leonardo", "mega",
-# "micro" or "standard".
-VARIANT = standard
 
 ############################################################################
 # Below here nothing should be changed...
