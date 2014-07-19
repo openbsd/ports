@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: find-plist-issues,v 1.10 2010/06/30 11:11:19 espie Exp $
+# $OpenBSD: find-plist-issues,v 1.11 2014/07/19 07:04:42 ajacoutot Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -344,7 +344,6 @@ my $ui = OpenBSD::State->new('find-plist-issues');
 $ui->usage_is('[-vCDf] [-d plist_dir] [pkgname ...]');
 $ui->do_options(sub { getopts('d:vCDf'); });
 
-OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
 OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
 OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/BSD.x11.dist');
 $mtree->{'/usr/local/lib/X11'} = 1;

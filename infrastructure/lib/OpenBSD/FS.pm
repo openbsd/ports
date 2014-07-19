@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.2 2014/03/24 15:18:17 afresh1 Exp $
+# $OpenBSD: FS.pm,v 1.3 2014/07/19 07:04:42 ajacoutot Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -297,7 +297,6 @@ sub get_files
 	$destdir = shift;
 	my $files = scan_destdir();
 	my $mtree = {};
-	OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
 	OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
 	OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/BSD.x11.dist');
 	$mtree->{'/usr/local/lib/X11'} = 1;

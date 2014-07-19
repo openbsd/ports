@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.4 2013/01/11 21:21:32 rpe Exp $
+# $OpenBSD: check-common-dirs,v 1.5 2014/07/19 07:04:42 ajacoutot Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -160,7 +160,6 @@ if (@ARGV==0) {
 my $db = {};
 my $mtree = {};
 
-OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
 OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
 OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/BSD.x11.dist');
 $mtree->{'/usr/local/lib/X11'} = 1;
