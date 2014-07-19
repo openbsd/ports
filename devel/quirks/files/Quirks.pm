@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.161 2014/07/15 10:07:16 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.162 2014/07/19 09:00:51 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -499,8 +499,9 @@ sub tweak_search
 
 # list of
 #   cat/path => badspec
-my $cve = { 
+my $cve = {
 	'print/cups,-main' => 'cups-<1.7.4',
+	'sysutils/mcollective' => 'mcollective-<2.5.3',
 };
 
 # ->check_security($path)

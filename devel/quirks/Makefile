@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.155 2014/07/15 10:07:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2014/07/19 09:00:51 jasper Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-2.1
+PKGNAME =	quirks-2.2
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERLDIR =	${PREFIX}/libdata/perl5/site_perl
 
 do-build:
-	@perl -c ${FILESDIR}/Quirks.pm 
+	@perl -c ${FILESDIR}/Quirks.pm
 	# warning for $File::Find::name is normal
 	@perl -c ${FILESDIR}/Quirks/texlive.pm
 
