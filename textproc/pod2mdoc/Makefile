@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/11 15:16:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/19 01:15:01 bentley Exp $
 
 COMMENT =		convert POD data to mdoc input
 
-DISTNAME =		pod2mdoc-0.0.12
+DISTNAME =		pod2mdoc-0.0.13
 
 CATEGORIES =		textproc
 
