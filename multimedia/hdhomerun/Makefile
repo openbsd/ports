@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/07/19 21:09:18 sthen Exp $
 
+V=		20140604
 COMMENT=	HDHomeRun Config CLI utility & firmware
-FW=		hdhomerun_atsc_firmware_20110323.bin \
-		hdhomerun_dvbt_firmware_20110323.bin \
-		hdhomerun_tech_atsc_firmware_20110323.bin \
-		hdhomerun3_atsc_firmware_20110323.bin \
-		hdhomerun3_dvbt_firmware_20110323.bin \
-		hdhomerun3_dvbtc_firmware_20110323.bin
-SRC=		libhdhomerun_20110323.tgz
+FW=		hdhomerun_atsc_firmware_$V.bin \
+		hdhomerun_dvbt_firmware_$V.bin \
+		hdhomerun3_atsc_firmware_$V.bin \
+		hdhomerun3_dvbt_firmware_$V.bin \
+		hdhomerun3_dvbtc_firmware_$V.bin \
+		hdhomerun3_cablecard_firmware_$V.bin \
+		hdhomerun3_dvbc_firmware_$V.bin \
+		hdhomerun4_atsc_firmware_$V.bin \
+		hdhomeruntc_atsc_firmware_$V.bin
+SRC=		libhdhomerun_$V.tgz
 DISTFILES=	${FW} ${SRC}
 EXTRACT_ONLY=	${SRC}
-PKGNAME=	hdhomerun-20110323
-REVISION=	0
+PKGNAME=	hdhomerun-$V
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.silicondust.com/hdhomerun/
 
@@ -25,6 +28,7 @@ NO_TEST=	Yes
 USE_GMAKE=	Yes
 WANTLIB=	c pthread
 WRKDIST=	${WRKDIR}/libhdhomerun
+SUBST_VARS+=	V
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/hdhomerun_config ${PREFIX}/bin

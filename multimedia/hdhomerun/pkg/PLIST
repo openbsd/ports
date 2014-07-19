@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/04/16 23:04:11 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/07/19 21:09:19 sthen Exp $
 @bin bin/hdhomerun_config
 share/hdhomerun/
-share/hdhomerun/hdhomerun3_atsc_firmware_20110323.bin
-share/hdhomerun/hdhomerun3_dvbt_firmware_20110323.bin
-share/hdhomerun/hdhomerun3_dvbtc_firmware_20110323.bin
-share/hdhomerun/hdhomerun_atsc_firmware_20110323.bin
-share/hdhomerun/hdhomerun_dvbt_firmware_20110323.bin
-share/hdhomerun/hdhomerun_tech_atsc_firmware_20110323.bin
+share/hdhomerun/hdhomerun3_atsc_firmware_${V}.bin
+share/hdhomerun/hdhomerun3_cablecard_firmware_${V}.bin
+share/hdhomerun/hdhomerun3_dvbc_firmware_${V}.bin
+share/hdhomerun/hdhomerun3_dvbt_firmware_${V}.bin
+share/hdhomerun/hdhomerun3_dvbtc_firmware_${V}.bin
+share/hdhomerun/hdhomerun4_atsc_firmware_${V}.bin
+share/hdhomerun/hdhomerun_atsc_firmware_${V}.bin
+share/hdhomerun/hdhomerun_dvbt_firmware_${V}.bin
+share/hdhomerun/hdhomeruntc_atsc_firmware_${V}.bin
