@@ -45,7 +45,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# Files to ignore during prepare and megre stages in addition to git ones
+# Files to ignore during prepare and megre stages in addition to VCS ones
 IGNORE_FILES="*.port.mk $MY_NAME STATUS"
 
 # File containing list of KDE packages in order they should be built
@@ -65,7 +65,7 @@ kde_port_dir() {
 		echo "$1 is not a valid KDE version (X.Y.Z)" >&2
 		exit 1
 	fi
-	echo "kde$1" | sed -e 's/\.//g'
+	echo "kde$1" | tr -d '.'
 }
 
 # List all ports (subdirectories) in current directory.
@@ -280,16 +280,14 @@ prepare() {
 	local T=`mktemp -u "$MI".XXXXXXXXXXX`
 	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
-	local MSPATCH OSTABLE=1 NSTABLE=1
-	is_stable_ver $CUR_KDE_PORT_VER || OSTABLE=0
-	is_stable_ver $NEW_KDE_PORT_VER || NSTABLE=0
+	local MSPATCH OSTABLE=stable NSTABLE=stable
+	is_stable_ver $CUR_KDE_PORT_VER || OSTABLE=unstable
+	is_stable_ver $NEW_KDE_PORT_VER || NSTABLE=unstable
 
-	if [[ $OSTABLE -eq $NSTABLE ]]; then
+	if [[ $OSTABLE = $NSTABLE ]]; then
 		MSPATCH=cat
-	elif [[ $OSTABLE -eq 0 ]]; then
-		MSPATCH="sed /MASTER_SITES/s@unstable/@stable/@"
 	else
-		MSPATCH="sed /MASTER_SITES/s@stable/@unstable/@"
+		MSPATCH="sed /MASTER_SITES/s@${OSTABLE}/@${NSTABLE}/@"
 	fi
 	awk "
 /^MODKDE4_FLAVOR[[:space:]]*:?=/ {
@@ -308,7 +306,6 @@ prepare() {
 
 	if ! grep -q ^MODKDE4_FLAVOR "$T"; then
 		# MODKDE4_FLAVOR could be missing
-		echo >>"$T"
 		echo "MODKDE4_FLAVOR =	$NEW_KDE_PORT_DIR" >>"$T"
 	fi
 
@@ -321,6 +318,14 @@ prepare() {
 		mv "$T" $NEW_KDE_PORT_DIR/Makefile
 	fi
 	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
+
+	set -x
+	echo '==> adjusting the kde-shared-data port' >&2
+	perl -ni.pre-$NEW_KDE_PORT_DIR -e "print; if (/^\\s*MASTER_SITES0/) {
+		print \"DISTFILES +=	kde-runtime-${NEW_KDE_PORT_VER}.tar.xz:1\\n\";
+		print \"MASTER_SITES1 =	\\\${MASTER_SITE_KDE:=${NSTABLE}/${NEW_KDE_PORT_VER}/src/}\\n\";
+		}" kde-shared-data/Makefile
+	set +x
 
 	echo "==> creating STATUS" >&2
 	for P in $LOCAL_PORTS `list_l10n_ports_dirs`; do
@@ -415,9 +420,15 @@ new_port() {
 
 merge_back() {
 	test $# -eq 0 || usage
+
 	# Avoid erroring out here, we'll print a nicer message below.
 	local SKDEV=`cd libs && make show=_MODKDE4_STABLE || true`
 	local KDEV=`cd libs && make show=MODKDE4_VERSION || true`
+
+	if [ -e STATUS ] && egrep -v 'PACKAGED$' STATUS; then
+		echo "Not all KDE SC $KDEV stuff looks like packaged" >&2
+		exit 2
+	fi
 
 	if [ -f kde4.port.mk -o X"`cd .. && basename $(pwd)`" != Xx11 -o \
 	     X"$KDEV" = X ]; then
@@ -425,48 +436,26 @@ merge_back() {
 		exit 2
 	fi
 
-	local SKPD=kde4
-	local KPD=$(kde_port_dir $KDEV)
+	local SKDED=$(kde_port_dir $SKDEV)
+	local KDED=$(kde_port_dir $KDEV)
+	if [ -e ../$SKDED ]; then
+		echo "The x11/$SKDED directory already exists" >&2
+		exit 2
+	fi
+
 	cd ..
-	T=`mktemp -t kdepatch.XXXXXXXX`
-	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
-
-	SKVERLINE="`egrep -n ^_MODKDE4_STABLE ${SKPD}/kde4.port.mk | head -1`"
-
-	cat >$T <<EOF
-Here is a summary patch to be applied, please review. Note that STATUS files
-are missing in the diff to make it smaller, they will be handled automatically.
-
-If you proceed and NOT abort, commit message editor will appear, two times:
-
-  * First time for merging new directory into x11/kde4;
-  * Second time for removing old directory.
-
-To abort, just press ^C and then quit pager.
-
-And do not worry, it's distributed VCS and you always can go back. Because you
-have already commited all your work, didn't you?
-
---- ${SKPD}/kde4.port.mk
-+++ ${SKPD}/kde4.port.mk
-@@ -${SKVERLINE%%:*},1 +${SKVERLINE%%:*},1 @@
--${SKVERLINE#*:}
-+_MODKDE4_STABLE =	${KDEV}
-EOF
-	diff -urNp -I '^MODKDE4_FLAVOR[[:space:]]*=' -X ../.gitignore \
-	    `diff_ignore_opts` $SKPD $KPD \
-	    | sed -e "s@^+++ ${KPD}/@+++ ${SKPD}/@" >>$T
-	${PAGER:-more} <$T
-
-	patch -C -E -p0 <$T
-	patch -E -p0 <$T
-	rm $T
-	rm $SKPD/STATUS
-	mv $KPD/STATUS $SKPD/
-	git add $SKPD
-	git commit -m "Merge KDE $KDEV from testing directory." -e -- $SKPD
-	rm -R $KPD
-	git commit -m "Remove KDE $KDEV testing directory." -e -- $KPD
+	echo '==> patching Makefile.inc' >&2
+	perl -ni -e 'm@^ *MODKDE4_FLAVOR@ or print' ${KDED}/Makefile.inc
+	echo '==> moving directories' >&2
+	mv kde4 $SKDED
+	mv $KDED kde4
+	echo '==> adjusting the kde-shared-data port' >&2
+	perl -ni -e "
+m@^ *DISTFILES\\s*\\+=\\s*kde-runtime-${KDED}\.@ or
+m@^ *MASTER_SITES[1-9]\\s*=.*/${KDEV}/@ or
+m@^ REVISION\\s*=@ or
+print" kde-shared-data/Makefile
+	(cd kde-shared-data && make makesum)
 }
 
 run_job() {
