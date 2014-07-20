@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/23 13:17:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/20 12:48:39 jasper Exp $
 @bin bin/srec_cat
 @bin bin/srec_cmp
 @bin bin/srec_info
@@ -7,6 +7,7 @@ include/srecord/adler16.h
 include/srecord/adler32.h
 include/srecord/crc16.h
 include/srecord/crc32.h
+include/srecord/defcon.h
 include/srecord/endian.h
 include/srecord/fletcher16.h
 include/srecord/fletcher32.h
@@ -29,7 +30,7 @@ include/srecord/input/file/fastload.h
 include/srecord/input/file/formatted_binary.h
 include/srecord/input/file/four_packed_code.h
 include/srecord/input/file/intel.h
-include/srecord/input/file/intel16.h
+include/srecord/input/file/logisim.h
 include/srecord/input/file/mif.h
 include/srecord/input/file/mips_flash.h
 include/srecord/input/file/mos_tech.h
@@ -123,6 +124,7 @@ include/srecord/output/file/four_packed_code.h
 include/srecord/output/file/hexdump.h
 include/srecord/output/file/intel.h
 include/srecord/output/file/intel16.h
+include/srecord/output/file/logisim.h
 include/srecord/output/file/mif.h
 include/srecord/output/file/mips_flash.h
 include/srecord/output/file/mos_tech.h
@@ -151,10 +153,10 @@ include/srecord/quit/normal.h
 include/srecord/quit/prefix.h
 include/srecord/record.h
 include/srecord/srecord.h
+include/srecord/string.h
 lib/libsrecord.a
 lib/libsrecord.la
 @lib lib/libsrecord.so.${LIBsrecord_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/srecord.pc
 @man man/man1/srec_cat.1
 @man man/man1/srec_cmp.1
@@ -181,6 +183,7 @@ lib/pkgconfig/srecord.pc
 @man man/man5/srec_idt.5
 @man man/man5/srec_intel.5
 @man man/man5/srec_intel16.5
+@man man/man5/srec_logisim.5
 @man man/man5/srec_mem.5
 @man man/man5/srec_mif.5
 @man man/man5/srec_mips_flash.5
