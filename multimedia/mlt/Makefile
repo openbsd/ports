@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/07/17 08:30:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/07/20 09:17:46 zhuk Exp $
 
 SHARED_ONLY =		Yes
 COMMENT-main =		multimedia transformations framework
@@ -39,10 +39,11 @@ EXTRACT_SUFX =		.tar.gz
 MULTI_PACKAGES =	-main -gpl2
 
 MODULES =		x11/kde4
-MODKDE4_USE =		libs
+MODKDE4_USE =
 
 BUILD_DEPENDS =		audio/ladspa \
-			textproc/libxml>=2.5
+			textproc/libxml>=2.5 \
+			${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
 
 RUN_DEPENDS-main =	audio/ladspa \
 			x11/gtk+2,-guic
