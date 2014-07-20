@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_faildiff_test,v 1.1 2014/07/20 20:40:25 landry Exp $
+--- test/faildiff.test.orig	Mon Jun  2 16:31:00 2014
++++ test/faildiff.test	Mon Jun  2 16:32:18 2014
+@@ -13,7 +13,7 @@ What happens when diff fails because of a permission e
+ 	$ chmod -r test.txt
+ 
+ 	$ quilt refresh
+-	> diff: test.txt: Permission denied
++	>~ .*diff: test\.txt: Permission denied
+ 	> Diff failed on file 'test.txt', aborting
+ 	$ echo %{?}
+ 	> 1

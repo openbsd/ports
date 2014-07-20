@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2014/01/09 14:55:42 jca Exp $
---- Makefile.in.orig	Sun Dec  8 10:40:42 2013
-+++ Makefile.in	Mon Dec 30 18:40:55 2013
+$OpenBSD: patch-Makefile_in,v 1.3 2014/07/20 20:40:25 landry Exp $
+--- Makefile.in.orig	Wed May  7 13:41:15 2014
++++ Makefile.in	Tue Jun  3 13:11:41 2014
 @@ -13,7 +13,7 @@ docdir :=	@docdir@
  mandir :=	@mandir@
  localedir :=	$(datadir)/locale
@@ -10,12 +10,34 @@ $OpenBSD: patch-Makefile_in,v 1.2 2014/01/09 14:55:42 jca Exp $
  
  INSTALL :=	@INSTALL@
  POD2MAN :=	@POD2MAN@
-@@ -42,6 +42,8 @@ MSGCAT :=	@MSGCAT@
+@@ -42,7 +42,6 @@ MSGCAT :=	@MSGCAT@
  DIFFSTAT :=	@DIFFSTAT@
  RPMBUILD :=	@RPMBUILD@
  SENDMAIL :=	@SENDMAIL@
-+CP :=		@CP@
-+MD5SUM :=	@MD5SUM@
+-CP :=		@CP@
+ MD5SUM :=	@MD5SUM@
  
  USE_NLS :=	@USE_NLS@
- STAT_HARDLINK := @STAT_HARDLINK@
+@@ -122,8 +121,10 @@ GIT_DESC :=	$(shell ./git-desc | sed -e 's:^v::')
+ 
+ TESTS :=	$(filter-out test/patch-wrapper.test,$(wildcard test/*.test))
+ ifneq ($(PATCH_WRAPPER),)
++ifneq ($(PATCH_WRAPPER), no)
+ TESTS +=	test/patch-wrapper.test
+ endif
++endif
+ DIRT +=		test/.depend $(wildcard test/.*.ok)
+ 
+ # Settings for running the uninstalled version of quilt in the source tree:
+@@ -316,9 +317,11 @@ install-main :: scripts
+ 	$(INSTALL) -m 644 quilt/scripts/patchfns quilt/scripts/utilfns	\
+ 		   $(BUILD_ROOT)$(datadir)/$(PACKAGE)/scripts
+ ifneq ($(PATCH_WRAPPER),)
++ifneq ($(PATCH_WRAPPER), no)
+ 	$(INSTALL) -d $(BUILD_ROOT)$(datadir)/$(PACKAGE)/wrapper
+ 	$(INSTALL) -m 755 bin/patch-wrapper				\
+ 		   $(BUILD_ROOT)$(datadir)/$(PACKAGE)/wrapper/patch
++endif
+ endif
+ 
+ 	$(INSTALL) -d $(BUILD_ROOT)$(docdir)/

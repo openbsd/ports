@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/09 14:55:42 jca Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/20 20:40:25 landry Exp $
 bin/guards
 bin/quilt
 @man man/man1/guards.1
@@ -70,5 +70,3 @@ share/quilt/snapshot
 share/quilt/top
 share/quilt/unapplied
 share/quilt/upgrade
-share/quilt/wrapper/
-share/quilt/wrapper/patch
