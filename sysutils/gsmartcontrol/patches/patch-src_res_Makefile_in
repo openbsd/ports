@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_res_Makefile_in,v 1.1 2014/07/20 14:29:34 pascal Exp $
+
+Work around .cpp suffix rules.  These rules are not actually needed as the files
+are distributed with the tarball.  Upstream workaround of setting SUFFIXES=
+earlier in the Makefile only works with GNU make.
+
+--- src/res/Makefile.in.orig	Sun Jul 20 13:10:41 2014
++++ src/res/Makefile.in	Sun Jul 20 13:11:00 2014
+@@ -517,9 +517,6 @@ uninstall-am:
+ mostlyclean-local:
+ 	rm -f *.glade.cpp *.ui.cpp *.tmp_ui *.txt.cpp
+ 
+-# This lists the actual makefile rules for each target.
+-@RES_TARGETS@
+-
+ # # List all local resource files here. Note: noinst_DATA doesn't put them into distribution (why?)
+ # EXTRA_DIST = gsc_about_dialog.glade gsc_executor_log_window.glade \
+ # 	gsc_help_window.glade gsc_info_window.glade gsc_main_window.glade \
