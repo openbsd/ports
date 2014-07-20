@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_condition_variable_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- third_party/webrtc/system_wrappers/source/condition_variable.cc.orig.port	Thu Jul 17 13:31:58 2014
++++ third_party/webrtc/system_wrappers/source/condition_variable.cc	Thu Jul 17 13:34:08 2014
+@@ -19,6 +19,8 @@
+ #include "webrtc/system_wrappers/source/condition_variable_posix.h"
+ #endif
+ 
++#include <stddef.h>
++
+ namespace webrtc {
+ 
+ ConditionVariableWrapper* ConditionVariableWrapper::CreateConditionVariable() {

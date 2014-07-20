@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_net_cookie_store_util_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/net/cookie_store_util.cc.orig.port	Sat Jul 19 11:17:49 2014
++++ chrome/browser/net/cookie_store_util.cc	Sat Jul 19 11:29:49 2014
+@@ -99,7 +99,7 @@ net::CookieMonsterDelegate* CreateCookieDelegate(Profi
+       new ChromeCookieMonsterDelegate(profile));
+ }
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ namespace {
+ 
+ // Use the operating system's mechanisms to encrypt cookies before writing

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.13 2014/05/24 15:27:34 robert Exp $
---- content/content_common.gypi.orig.port	Wed May 14 21:22:09 2014
-+++ content/content_common.gypi	Thu May 22 21:42:27 2014
-@@ -544,6 +544,23 @@
+$OpenBSD: patch-content_content_common_gypi,v 1.14 2014/07/20 17:22:34 robert Exp $
+--- content/content_common.gypi.orig.port	Thu Jul 17 12:51:38 2014
++++ content/content_common.gypi	Thu Jul 17 12:52:18 2014
+@@ -559,6 +559,23 @@
          'content.gyp:common_aidl',
        ],
      }],
@@ -22,6 +22,6 @@ $OpenBSD: patch-content_content_common_gypi,v 1.13 2014/05/24 15:27:34 robert Ex
 +        'common/sandbox_linux/sandbox_linux.h',
 +      ],
 +    }],
-     ['toolkit_uses_gtk == 1', {
+     ['use_pango == 1', {
        'dependencies': [
-         '../build/linux/system.gyp:gtk',
+         '../build/linux/system.gyp:pangocairo',

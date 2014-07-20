@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/ui/startup/bad_flags_prompt.cc.orig.port	Sat Jul 19 03:27:25 2014
++++ chrome/browser/ui/startup/bad_flags_prompt.cc	Sat Jul 19 03:29:16 2014
+@@ -67,7 +67,7 @@ void ShowBadFlagsPrompt(Browser* browser) {
+     // This flag gives extensions more powers.
+     extensions::switches::kExtensionsOnChromeURLs,
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+     // Speech dispatcher is buggy, it can crash and it can make Chrome freeze.
+     // http://crbug.com/327295
+     switches::kEnableSpeechDispatcher,

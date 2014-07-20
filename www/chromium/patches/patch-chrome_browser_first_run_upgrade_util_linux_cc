@@ -1,0 +1,19 @@
+$OpenBSD: patch-chrome_browser_first_run_upgrade_util_linux_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/first_run/upgrade_util_linux.cc.orig.port	Fri Jul 18 03:43:53 2014
++++ chrome/browser/first_run/upgrade_util_linux.cc	Fri Jul 18 23:47:00 2014
+@@ -23,10 +23,15 @@ double saved_last_modified_time_of_exe = 0;
+ namespace upgrade_util {
+ 
+ bool RelaunchChromeBrowser(const CommandLine& command_line) {
++#if !defined(OS_BSD)
+   base::LaunchOptions options;
+   // Don't set NO_NEW_PRIVS on the relaunched browser process.
+   options.allow_new_privs = true;
+   return base::LaunchProcess(command_line, options, NULL);
++#else
++  NOTIMPLEMENTED();
++  return false;
++#endif
+ }
+ 
+ bool IsUpdatePendingRestart() {

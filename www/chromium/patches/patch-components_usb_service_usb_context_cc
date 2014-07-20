@@ -1,0 +1,13 @@
+$OpenBSD: patch-components_usb_service_usb_context_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- components/usb_service/usb_context.cc.orig.port	Thu Jul 17 12:43:17 2014
++++ components/usb_service/usb_context.cc	Thu Jul 17 12:43:27 2014
+@@ -45,7 +45,9 @@ UsbContext::UsbEventHandler::~UsbEventHandler() {
+   running_ = false;
+   // Spreading running_ to the UsbEventHandler thread.
+   base::subtle::MemoryBarrier();
++#if !defined(OS_BSD)
+   libusb_interrupt_handle_event(context_);
++#endif
+   base::PlatformThread::Join(thread_handle_);
+ }
+ 

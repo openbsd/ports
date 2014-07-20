@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_app_list_views_app_list_item_view_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/app_list/views/app_list_item_view.cc.orig.port	Sat Jul 19 05:41:40 2014
++++ ui/app_list/views/app_list_item_view.cc	Sat Jul 19 05:46:16 2014
+@@ -43,7 +43,7 @@ const int kProgressBarHorizontalPadding = 12;
+ 
+ // The font is different on each platform. The font size is adjusted on some
+ // platforms to keep a consistent look.
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ // Reducing the font size by 2 makes it the same as the Windows font size.
+ const int kFontSizeDelta = -2;
+ #else

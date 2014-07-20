@@ -1,0 +1,13 @@
+$OpenBSD: patch-chrome_browser_platform_util_linux_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/platform_util_linux.cc.orig.port	Fri Jul 18 03:49:32 2014
++++ chrome/browser/platform_util_linux.cc	Fri Jul 18 03:49:55 2014
+@@ -22,7 +22,9 @@ void XDGUtil(const std::string& util, const std::strin
+   argv.push_back(arg);
+ 
+   base::LaunchOptions options;
++#if !defined(OS_BSD)
+   options.allow_new_privs = true;
++#endif
+   // xdg-open can fall back on mailcap which eventually might plumb through
+   // to a command that needs a terminal.  Set the environment variable telling
+   // it that we definitely don't have a terminal available and that it should

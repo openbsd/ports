@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_timestamp_extrapolator_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- third_party/webrtc/system_wrappers/source/timestamp_extrapolator.cc.orig.port	Thu Jul 17 13:41:47 2014
++++ third_party/webrtc/system_wrappers/source/timestamp_extrapolator.cc	Thu Jul 17 13:41:56 2014
+@@ -12,6 +12,8 @@
+ 
+ #include <algorithm>
+ 
++#undef _P
++
+ namespace webrtc {
+ 
+ TimestampExtrapolator::TimestampExtrapolator(int64_t start_ms)

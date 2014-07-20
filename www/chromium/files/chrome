@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.9 2012/05/17 08:52:59 robert Exp $
+# $OpenBSD: chrome,v 1.10 2014/07/20 17:22:33 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -34,4 +34,6 @@ if [ -h ${HOME}/.config/chromium/SingletonLock ]; then
 	fi
 fi
 
-exec "${TRUEPREFIX}/chrome/chrome" "${@}"
+[ -z ${LANG} ] && _l=en_US.UTF-8 || _l=${LANG}
+
+LANG=${_l} exec "/usr/local/chrome/chrome" "${@}"

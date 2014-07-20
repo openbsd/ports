@@ -1,0 +1,48 @@
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.3 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/renderer_preferences_util.cc.orig.port	Sat Jul 19 03:32:36 2014
++++ chrome/browser/renderer_preferences_util.cc	Sat Jul 19 03:42:24 2014
+@@ -10,7 +10,7 @@
+ #include "content/public/common/renderer_preferences.h"
+ #include "third_party/skia/include/core/SkColor.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_ANDROID)
+ #include "ui/gfx/font_render_params_linux.h"
+ #endif
+ 
+@@ -23,7 +23,7 @@
+ #include "ui/views/controls/textfield/textfield.h"
+ #endif
+ 
+-#if defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ #include "chrome/browser/themes/theme_service.h"
+ #include "chrome/browser/themes/theme_service_factory.h"
+ #include "ui/views/linux_ui/linux_ui.h"
+@@ -33,7 +33,7 @@ namespace renderer_preferences_util {
+ 
+ namespace {
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_ANDROID)
+ content::RendererPreferencesHintingEnum GetRendererPreferencesHintingEnum(
+     gfx::FontRenderParams::Hinting hinting) {
+   switch (hinting) {
+@@ -137,7 +137,7 @@ void UpdateFromSystemSettings(
+   prefs->caret_blink_interval = views::Textfield::GetCaretBlinkMs() / 1000.0;
+ #endif
+ 
+-#if defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   views::LinuxUI* linux_ui = views::LinuxUI::instance();
+   if (linux_ui) {
+     if (ThemeServiceFactory::GetForProfile(profile)->UsingNativeTheme()) {
+@@ -159,7 +159,7 @@ void UpdateFromSystemSettings(
+   }
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_ANDROID)
+   const gfx::FontRenderParams& params = gfx::GetDefaultWebKitFontRenderParams();
+   prefs->should_antialias_text = params.antialiasing;
+   prefs->use_subpixel_positioning = params.subpixel_positioning;

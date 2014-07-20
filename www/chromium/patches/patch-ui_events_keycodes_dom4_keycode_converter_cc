@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_events_keycodes_dom4_keycode_converter_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/events/keycodes/dom4/keycode_converter.cc.orig.port	Sat Jul 19 11:17:49 2014
++++ ui/events/keycodes/dom4/keycode_converter.cc	Sun Jul 20 03:14:03 2014
+@@ -10,7 +10,7 @@ namespace {
+ 
+ #if defined(OS_WIN)
+ #define USB_KEYMAP(usb, xkb, win, mac, code) {usb, win, code}
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+ #define USB_KEYMAP(usb, xkb, win, mac, code) {usb, xkb, code}
+ #elif defined(OS_MACOSX)
+ #define USB_KEYMAP(usb, xkb, win, mac, code) {usb, mac, code}

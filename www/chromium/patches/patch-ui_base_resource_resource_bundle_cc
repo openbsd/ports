@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.4 2014/07/20 17:22:34 robert Exp $
+--- ui/base/resource/resource_bundle.cc.orig.port	Sat Jul 19 11:17:49 2014
++++ ui/base/resource/resource_bundle.cc	Sun Jul 20 03:14:29 2014
+@@ -562,7 +562,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
+ #elif defined(OS_CHROMEOS)
+   // TODO(oshima): Include 200P only if the device support 200P
+   supported_scale_factors.push_back(SCALE_FACTOR_200P);
+-#elif defined(OS_LINUX) && defined(ENABLE_HIDPI)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && defined(ENABLE_HIDPI)
+   supported_scale_factors.push_back(SCALE_FACTOR_200P);
+ #elif defined(OS_WIN)
+   bool default_to_100P = true;

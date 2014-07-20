@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_events_event_switches_h,v 1.2 2014/03/11 14:52:01 robert Exp $
---- ui/events/event_switches.h.orig.port	Fri Feb 21 23:40:34 2014
-+++ ui/events/event_switches.h	Fri Feb 21 23:59:26 2014
-@@ -16,7 +16,7 @@ EVENTS_BASE_EXPORT extern const char kTouchEventsAuto[
- EVENTS_BASE_EXPORT extern const char kTouchEventsEnabled[];
+$OpenBSD: patch-ui_events_event_switches_h,v 1.3 2014/07/20 17:22:34 robert Exp $
+--- ui/events/event_switches.h.orig.port	Tue Jul 15 13:02:14 2014
++++ ui/events/event_switches.h	Thu Jul 17 12:25:32 2014
+@@ -17,7 +17,7 @@ EVENTS_BASE_EXPORT extern const char kTouchEventsEnabl
  EVENTS_BASE_EXPORT extern const char kTouchEventsDisabled[];
+ EVENTS_BASE_EXPORT extern const char kUseUnifiedGestureDetector[];
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

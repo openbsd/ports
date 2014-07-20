@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_gfx_font_render_params_linux_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/gfx/font_render_params_linux.cc.orig.port	Sat Jul 19 05:58:51 2014
++++ ui/gfx/font_render_params_linux.cc	Sat Jul 19 05:59:54 2014
+@@ -11,7 +11,7 @@
+ 
+ #include <fontconfig/fontconfig.h>
+ 
+-#if defined(OS_LINUX) && defined(USE_AURA) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_AURA) && !defined(OS_CHROMEOS)
+ #include "ui/gfx/linux_font_delegate.h"
+ #endif
+ 
+@@ -70,7 +70,7 @@ void LoadDefaults(FontRenderParams* params, bool rende
+       params->subpixel_rendering = FontRenderParams::SUBPIXEL_RENDERING_NONE;
+   }
+ 
+-#if defined(OS_LINUX) && defined(USE_AURA) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_AURA) && !defined(OS_CHROMEOS)
+   const LinuxFontDelegate* delegate = LinuxFontDelegate::instance();
+   if (delegate) {
+     params->antialiasing = delegate->UseAntialiasing();

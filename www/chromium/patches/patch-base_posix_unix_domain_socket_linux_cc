@@ -1,0 +1,44 @@
+$OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- base/posix/unix_domain_socket_linux.cc.orig.port	Thu Jul 17 13:43:05 2014
++++ base/posix/unix_domain_socket_linux.cc	Sat Jul 19 00:33:21 2014
+@@ -7,6 +7,8 @@
+ #include <errno.h>
+ #include <sys/socket.h>
+ #include <sys/uio.h>
++#include <sys/param.h>
++#include <sys/ucred.h>
+ #include <unistd.h>
+ 
+ #include <vector>
+@@ -32,11 +34,13 @@ static bool CreateSocketPair(base::ScopedFD* one, base
+   return true;
+ }
+ 
++#if !defined(OS_BSD)
+ // static
+ bool UnixDomainSocket::EnableReceiveProcessId(int fd) {
+   const int enable = 1;
+   return setsockopt(fd, SOL_SOCKET, SO_PASSCRED, &enable, sizeof(enable)) == 0;
+ }
++#endif
+ 
+ // static
+ bool UnixDomainSocket::SendMsg(int fd,
+@@ -99,6 +103,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+                                            int flags,
+                                            ScopedVector<base::ScopedFD>* fds,
+                                            base::ProcessId* out_pid) {
++#if !defined(OS_BSD)
+   fds->clear();
+ 
+   struct msghdr msg = {};
+@@ -157,6 +162,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+   }
+ 
+   return r;
++#else
++  return -1;
++#endif
+ }
+ 
+ // static

@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_message_center_views_message_center_view_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/message_center/views/message_center_view.cc.orig.port	Sat Jul 19 11:17:49 2014
++++ ui/message_center/views/message_center_view.cc	Sat Jul 19 11:44:46 2014
+@@ -46,7 +46,7 @@ namespace message_center {
+ namespace {
+ 
+ const SkColor kNoNotificationsTextColor = SkColorSetRGB(0xb4, 0xb4, 0xb4);
+-#if defined(OS_LINUX) && defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(OS_CHROMEOS)
+ const SkColor kTransparentColor = SkColorSetARGB(0, 0, 0, 0);
+ #endif
+ const int kAnimateClearingNextNotificationDelayMS = 40;
+@@ -78,7 +78,7 @@ NoNotificationMessageView::NoNotificationMessageView()
+   label_->SetEnabledColor(kNoNotificationsTextColor);
+   // Set transparent background to ensure that subpixel rendering
+   // is disabled. See crbug.com/169056
+-#if defined(OS_LINUX) && defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(OS_CHROMEOS)
+   label_->SetBackgroundColor(kTransparentColor);
+ #endif
+   AddChildView(label_);

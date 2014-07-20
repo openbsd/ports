@@ -1,11 +1,11 @@
-$OpenBSD: patch-net_base_net_util_cc,v 1.7 2013/04/03 08:19:10 robert Exp $
---- net/base/net_util.cc.orig.port	Fri Mar 22 02:13:23 2013
-+++ net/base/net_util.cc	Tue Apr  2 21:05:17 2013
-@@ -20,6 +20,7 @@
- #if !defined(OS_ANDROID)
- #include <ifaddrs.h>
- #endif
-+#include <sys/socket.h>
- #include <net/if.h>
+$OpenBSD: patch-net_base_net_util_cc,v 1.8 2014/07/20 17:22:34 robert Exp $
+--- net/base/net_util.cc.orig.port	Thu Jul 17 12:53:00 2014
++++ net/base/net_util.cc	Thu Jul 17 12:53:13 2014
+@@ -23,6 +23,7 @@
  #include <netdb.h>
  #include <netinet/in.h>
+ #include <unistd.h>
++#include <sys/socket.h>
+ #if !defined(OS_NACL)
+ #include <net/if.h>
+ #if !defined(OS_ANDROID)

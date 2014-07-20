@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_resources_ui_resources_grd,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/resources/ui_resources.grd.orig.port	Sun Jul 20 07:17:41 2014
++++ ui/resources/ui_resources.grd	Sun Jul 20 07:21:16 2014
+@@ -39,7 +39,7 @@
+         <structure type="chrome_scaled_image" name="IDR_APP_TOP_LEFT" file="app_top_left.png" />
+         <structure type="chrome_scaled_image" name="IDR_APP_TOP_RIGHT" file="app_top_right.png" />
+       </if>
+-      <if expr="is_linux and use_aura">
++      <if expr="(is_linux or is_bsd) and use_aura">
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_ALIAS" file="common/pointers/alias_big.png" />
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_CELL" file="common/pointers/cell_big.png" />
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_COL_RESIZE" file="common/pointers/sb_h_double_arrow_big.png" />

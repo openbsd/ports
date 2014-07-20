@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_events_event_switches_cc,v 1.1 2014/03/11 14:52:01 robert Exp $
---- ui/events/event_switches.cc.orig.port	Mon Feb 24 07:20:51 2014
-+++ ui/events/event_switches.cc	Mon Feb 24 07:20:57 2014
-@@ -20,7 +20,7 @@ const char kTouchEventsEnabled[] = "enabled";
- //   disabled: touch events are disabled.
- const char kTouchEventsDisabled[] = "disabled";
+$OpenBSD: patch-ui_events_event_switches_cc,v 1.2 2014/07/20 17:22:34 robert Exp $
+--- ui/events/event_switches.cc.orig.port	Tue Jul 15 13:02:14 2014
++++ ui/events/event_switches.cc	Thu Jul 17 12:25:32 2014
+@@ -22,7 +22,7 @@ const char kTouchEventsDisabled[] = "disabled";
+ // Use the unified gesture detector, instead of the aura gesture detector.
+ const char kUseUnifiedGestureDetector[] = "use-unified-gesture-detector";
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

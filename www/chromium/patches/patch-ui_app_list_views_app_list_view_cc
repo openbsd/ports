@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_app_list_views_app_list_view_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/app_list/views/app_list_view.cc.orig.port	Sat Jul 19 11:17:49 2014
++++ ui/app_list/views/app_list_view.cc	Sat Jul 19 11:43:47 2014
+@@ -73,7 +73,7 @@ bool SupportsShadow() {
+           switches::kDisableDwmComposition)) {
+     return false;
+   }
+-#elif defined(OS_LINUX) && !defined(USE_ASH)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && !defined(USE_ASH)
+   // Shadows are not supported on (non-ChromeOS) Linux.
+   return false;
+ #endif
+@@ -353,7 +353,7 @@ void AppListView::OnBeforeBubbleWidgetInit(
+   // the taskbar for these versions of Windows.
+   if (base::win::GetVersion() >= base::win::VERSION_WIN7)
+     params->force_show_in_taskbar = true;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   // Set up a custom WM_CLASS for the app launcher window. This allows task
+   // switchers in X11 environments to distinguish it from main browser windows.
+   params->wm_class_name = kAppListWMClass;

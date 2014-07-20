@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_toolbar_toolbar_view_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- chrome/browser/ui/views/toolbar/toolbar_view.cc.orig.port	Sat Jul 19 03:50:45 2014
++++ chrome/browser/ui/views/toolbar/toolbar_view.cc	Sat Jul 19 03:51:00 2014
+@@ -403,7 +403,7 @@ void ToolbarView::OnMenuButtonClicked(views::View* sou
+   bool use_new_menu = false;
+   bool supports_new_separators = false;
+   // TODO: remove this.
+-#if !defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if (!defined(OS_LINUX) && !defined(OS_BSD)) || defined(OS_CHROMEOS)
+   supports_new_separators =
+       GetNativeTheme() == ui::NativeThemeAura::instance();
+   use_new_menu = supports_new_separators;

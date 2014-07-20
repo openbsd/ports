@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig.port	Thu Jul 17 14:50:33 2014
++++ chrome/browser/ui/startup/startup_browser_creator.cc	Fri Jul 18 03:51:01 2014
+@@ -554,8 +554,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+   }
+ #endif
+ 
++#if 0 /* XXX */
+ #if defined(TOOLKIT_VIEWS) && defined(USE_X11)
+   ui::TouchFactory::SetTouchDeviceListFromCommandLine();
++#endif
+ #endif
+ 
+   if (!process_startup &&

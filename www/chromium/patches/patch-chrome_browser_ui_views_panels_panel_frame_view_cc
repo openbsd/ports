@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_panels_panel_frame_view_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- chrome/browser/ui/views/panels/panel_frame_view.cc.orig.port	Sat Jul 19 03:27:25 2014
++++ chrome/browser/ui/views/panels/panel_frame_view.cc	Sat Jul 19 03:31:10 2014
+@@ -574,7 +574,7 @@ bool PanelFrameView::OnMousePressed(const ui::MouseEve
+ }
+ 
+ bool PanelFrameView::OnMouseDragged(const ui::MouseEvent& event) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // Converting the mouse location to screen coordinates returns an incorrect
+   // location while the panel is moving. See crbug.com/353393 for more details.
+   // TODO(pkotwicz): Fix conversion to screen coordinates

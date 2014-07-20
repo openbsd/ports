@@ -1,7 +1,7 @@
-$OpenBSD: patch-v8_src_globals_h,v 1.4 2014/05/24 15:27:34 robert Exp $
---- v8/src/globals.h.orig.port	Wed May 14 21:24:53 2014
-+++ v8/src/globals.h	Thu May 22 21:42:27 2014
-@@ -204,7 +204,7 @@ typedef byte* Address;
+$OpenBSD: patch-v8_src_globals_h,v 1.5 2014/07/20 17:22:34 robert Exp $
+--- v8/src/globals.h.orig.port	Tue Jul 15 13:05:20 2014
++++ v8/src/globals.h	Thu Jul 17 12:25:32 2014
+@@ -187,7 +187,7 @@ typedef byte* Address;
  # define V8_INTPTR_C(x)   (x ## LL)
  # define V8_PTR_PREFIX    "I64"
  #elif V8_HOST_ARCH_64_BIT

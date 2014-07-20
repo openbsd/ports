@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.2 2013/09/29 19:04:06 robert Exp $
---- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig.port	Sun Sep 22 16:31:42 2013
-+++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Sun Sep 22 16:33:53 2013
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.3 2014/07/20 17:22:34 robert Exp $
+--- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig.port	Sun Jul 20 05:29:12 2014
++++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Sun Jul 20 05:29:15 2014
 @@ -51,12 +51,16 @@
  #include <string.h>  // strncpy
  #include <unistd.h>

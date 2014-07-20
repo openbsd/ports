@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- chrome/browser/ui/views/apps/chrome_native_app_window_views.cc.orig.port	Sat Jul 19 03:27:25 2014
++++ chrome/browser/ui/views/apps/chrome_native_app_window_views.cc	Sat Jul 19 03:30:01 2014
+@@ -28,7 +28,7 @@
+ #include "ui/wm/core/easy_resize_window_targeter.h"
+ #include "ui/wm/core/shadow_types.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "chrome/browser/shell_integration_linux.h"
+ #endif
+ 
+@@ -219,7 +219,7 @@ void ChromeNativeAppWindowViews::InitializeDefaultWind
+     init_params.opacity = views::Widget::InitParams::TRANSLUCENT_WINDOW;
+   init_params.keep_on_top = create_params.always_on_top;
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // Set up a custom WM_CLASS for app windows. This allows task switchers in
+   // X11 environments to distinguish them from main browser windows.
+   init_params.wm_class_name = web_app::GetWMClassFromAppName(app_name);
+@@ -553,7 +553,7 @@ views::NonClientFrameView* ChromeNativeAppWindowViews:
+     return custom_frame_view;
+   }
+ #endif
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // Linux always uses the non standard frame view because the OS draws the
+   // frame (if a frame is needed).
+   return CreateNonStandardAppFrame();

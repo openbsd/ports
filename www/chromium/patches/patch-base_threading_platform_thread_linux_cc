@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.2 2013/12/12 10:43:18 robert Exp $
---- base/threading/platform_thread_linux.cc.orig.port	Thu Dec  5 15:33:08 2013
-+++ base/threading/platform_thread_linux.cc	Thu Dec  5 15:33:32 2013
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.3 2014/07/20 17:22:33 robert Exp $
+--- base/threading/platform_thread_linux.cc.orig.port	Tue Jul 15 13:01:13 2014
++++ base/threading/platform_thread_linux.cc	Thu Jul 17 12:25:31 2014
 @@ -16,7 +16,9 @@
  #include "base/tracked_objects.h"
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.2 2013/12/12 10:43:1
  #include <sys/resource.h>
  #include <sys/syscall.h>
  #include <sys/time.h>
-@@ -48,7 +50,7 @@ void PlatformThread::SetName(const char* name) {
+@@ -50,7 +52,7 @@ void PlatformThread::SetName(const char* name) {
    ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
    tracked_objects::ThreadData::InitializeThreadContext(name);
  

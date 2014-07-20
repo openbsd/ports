@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.4 2014/05/24 15:27:34 robert Exp $
---- chrome/common/extensions/api/api.gyp.orig.port	Wed May 14 21:23:02 2014
-+++ chrome/common/extensions/api/api.gyp	Thu May 22 21:42:27 2014
-@@ -173,6 +173,11 @@
+$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.5 2014/07/20 17:22:34 robert Exp $
+--- chrome/common/extensions/api/api.gyp.orig.port	Tue Jul 15 13:01:37 2014
++++ chrome/common/extensions/api/api.gyp	Thu Jul 17 12:25:31 2014
+@@ -174,6 +174,11 @@
                'cast_streaming_udp_transport.idl',
              ],
            }],

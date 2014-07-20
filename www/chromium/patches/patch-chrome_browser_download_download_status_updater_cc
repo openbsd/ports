@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/download/download_status_updater.cc.orig.port	Sat Jul 19 03:32:36 2014
++++ chrome/browser/download/download_status_updater.cc	Sat Jul 19 03:33:37 2014
+@@ -9,7 +9,7 @@
+ #include "base/logging.h"
+ #include "base/stl_util.h"
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ #include "ui/views/linux_ui/linux_ui.h"
+ #endif
+ 
+@@ -136,7 +136,7 @@ void DownloadStatusUpdater::OnDownloadUpdated(
+ #if defined(OS_ANDROID) || (defined(USE_AURA) && !defined(OS_WIN))
+ void DownloadStatusUpdater::UpdateAppIconDownloadProgress(
+     content::DownloadItem* download) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   const views::LinuxUI* linux_ui = views::LinuxUI::instance();
+   if (linux_ui) {
+     float progress = 0;

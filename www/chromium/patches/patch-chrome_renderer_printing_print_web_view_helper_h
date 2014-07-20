@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_printing_print_web_view_helper_h,v 1.7 2014/05/24 15:27:34 robert Exp $
---- chrome/renderer/printing/print_web_view_helper.h.orig.port	Wed May 14 21:22:30 2014
-+++ chrome/renderer/printing/print_web_view_helper.h	Thu May 22 21:42:27 2014
-@@ -200,7 +200,7 @@ class PrintWebViewHelper
+$OpenBSD: patch-chrome_renderer_printing_print_web_view_helper_h,v 1.8 2014/07/20 17:22:34 robert Exp $
+--- chrome/renderer/printing/print_web_view_helper.h.orig.port	Tue Jul 15 13:01:14 2014
++++ chrome/renderer/printing/print_web_view_helper.h	Thu Jul 17 12:25:31 2014
+@@ -201,7 +201,7 @@ class PrintWebViewHelper
    void FinishFramePrinting();
  
    // Prints the page listed in |params|.

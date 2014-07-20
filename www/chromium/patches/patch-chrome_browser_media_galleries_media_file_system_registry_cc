@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.5 2014/05/24 15:27:34 robert Exp $
---- chrome/browser/media_galleries/media_file_system_registry.cc.orig.port	Wed May 14 21:23:23 2014
-+++ chrome/browser/media_galleries/media_file_system_registry.cc	Thu May 22 21:42:27 2014
-@@ -635,7 +635,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI
+$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.6 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/media_galleries/media_file_system_registry.cc.orig.port	Thu Jul 17 12:40:02 2014
++++ chrome/browser/media_galleries/media_file_system_registry.cc	Thu Jul 17 12:40:54 2014
+@@ -724,7 +724,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI
  // Constructor in 'private' section because depends on private class definition.
  MediaFileSystemRegistry::MediaFileSystemRegistry()
-     : file_system_context_(new MediaFileSystemContextImpl(this)) {
+     : file_system_context_(new MediaFileSystemContextImpl) {
 -  StorageMonitor::GetInstance()->AddObserver(this);
 +  /*
 +   * This conditional is needed for shutdown.  Destructors

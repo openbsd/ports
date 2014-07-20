@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.24 2014/05/24 15:27:34 robert Exp $
---- content/content_browser.gypi.orig.port	Wed May 14 21:22:09 2014
-+++ content/content_browser.gypi	Thu May 22 21:42:27 2014
-@@ -1654,9 +1654,22 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.25 2014/07/20 17:22:34 robert Exp $
+--- content/content_browser.gypi.orig.port	Tue Jul 15 13:02:51 2014
++++ content/content_browser.gypi	Fri Jul 18 03:28:43 2014
+@@ -1652,9 +1652,26 @@
        ],
      }],
      ['os_bsd==1', {
@@ -19,14 +19,18 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.24 2014/05/24 15:27:34 robert E
 +        'browser/gamepad/gamepad_platform_data_fetcher_linux.cc',
 +        'browser/geolocation/wifi_data_provider_linux.cc',
 +        'browser/udev_linux.cc',
++        'browser/renderer_host/sandbox_ipc_linux.cc',
++        'browser/renderer_host/sandbox_ipc_linux.h',
++        'browser/renderer_host/render_sandbox_host_linux.cc',
++        'browser/renderer_host/render_sandbox_host_linux.h',
        ],
 +      'dependencies': [
 +        '../build/linux/system.gyp:dbus',
 +      ],
      }],
-     ['use_aura!=1 and OS!="android"', {
-       'sources!': [
-@@ -1737,7 +1750,7 @@
+     ['use_aura==1', {
+       'dependencies': [
+@@ -1717,7 +1734,7 @@
          'browser/geolocation/empty_wifi_data_provider.cc',
        ],
      }],

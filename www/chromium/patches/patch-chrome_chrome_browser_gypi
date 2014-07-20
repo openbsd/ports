@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.28 2014/05/24 15:27:34 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Wed May 14 21:23:27 2014
-+++ chrome/chrome_browser.gypi	Thu May 22 21:42:27 2014
-@@ -3025,7 +3025,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.29 2014/07/20 17:22:34 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Tue Jul 15 13:02:11 2014
++++ chrome/chrome_browser.gypi	Fri Jul 18 23:44:53 2014
+@@ -2921,7 +2921,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.28 2014/05/24 15:27:34 robert Exp
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3166,7 +3166,7 @@
+@@ -3044,7 +3044,7 @@
              '../build/linux/system.gyp:xscrnsaver',
            ],
          }],
@@ -19,17 +19,26 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.28 2014/05/24 15:27:34 robert Exp
            'sources': [
              'app/chrome_breakpad_client.cc',
              'app/chrome_breakpad_client.h',
-@@ -3432,6 +3432,13 @@
-             ['exclude', '^browser/sync/glue/theme_'],
-             ['exclude', '^browser/usb/'],
+@@ -3278,6 +3278,13 @@
              ['exclude', '^third_party/mozilla_security_manager/'],
-+          ],
-+        }],
+           ],
+         }],
 +        ['os_bsd==1', {
 +          'sources/': [
 +            ['exclude', '^browser/chrome_browser_main_linux.cc'],
 +            ['exclude', '^browser/chrome_browser_main_linux.h'],
 +            ['exclude', '^browser/media_galleries/linux/'],
++          ],
++        }],
+         ['OS=="mac"', {
+           'dependencies': [
+             '../third_party/google_toolbox_for_mac/google_toolbox_for_mac.gyp:google_toolbox_for_mac',
+@@ -3387,7 +3394,7 @@
+             }],
            ],
          }],
-         ['OS=="mac"', {
+-        ['OS=="linux"', {
++        ['OS=="linux" or os_bsd==1', {
+           'conditions': [
+             ['use_aura==1', {
+               'dependencies': [

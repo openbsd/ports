@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_panels_panel_manager_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/ui/panels/panel_manager.cc.orig.port	Sat Jul 19 03:50:19 2014
++++ chrome/browser/ui/panels/panel_manager.cc	Sat Jul 19 03:50:35 2014
+@@ -137,7 +137,7 @@ bool PanelManager::ShouldUsePanels(const std::string& 
+ // static
+ bool PanelManager::IsPanelStackingEnabled() {
+   // Stacked panel mode is not supported in linux-aura.
+-#if defined(OS_LINUX) && !defined(TOOLKIT_GTK)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(TOOLKIT_GTK)
+   return false;
+ #else
+   return true;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_udp_udp_socket_libevent_cc,v 1.2 2014/04/17 16:27:53 robert Exp $
---- net/udp/udp_socket_libevent.cc.orig.port	Wed Apr  2 21:03:39 2014
-+++ net/udp/udp_socket_libevent.cc	Sat Apr 12 09:40:41 2014
+$OpenBSD: patch-net_udp_udp_socket_libevent_cc,v 1.3 2014/07/20 17:22:34 robert Exp $
+--- net/udp/udp_socket_libevent.cc.orig.port	Tue Jul 15 13:02:58 2014
++++ net/udp/udp_socket_libevent.cc	Thu Jul 17 12:25:31 2014
 @@ -36,7 +36,7 @@ const int kBindRetries = 10;
  const int kPortStart = 1024;
  const int kPortEnd = 65535;
@@ -10,7 +10,7 @@ $OpenBSD: patch-net_udp_udp_socket_libevent_cc,v 1.2 2014/04/17 16:27:53 robert 
  
  // Returns IPv4 address in network order.
  int GetIPv4AddressFromIndex(int socket, uint32 index, uint32* address){
-@@ -569,7 +569,7 @@ int UDPSocketLibevent::SetSocketOptions() {
+@@ -571,7 +571,7 @@ int UDPSocketLibevent::SetSocketOptions() {
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -19,7 +19,7 @@ $OpenBSD: patch-net_udp_udp_socket_libevent_cc,v 1.2 2014/04/17 16:27:53 robert 
          ip_mreqn mreq;
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
-@@ -644,7 +644,7 @@ int UDPSocketLibevent::JoinGroup(const IPAddressNumber
+@@ -646,7 +646,7 @@ int UDPSocketLibevent::JoinGroup(const IPAddressNumber
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  

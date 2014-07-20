@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_common_gpu_gpu_memory_manager_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- content/common/gpu/gpu_memory_manager.cc.orig.port	Sat Jul 19 05:41:40 2014
++++ content/common/gpu/gpu_memory_manager.cc	Sat Jul 19 05:44:00 2014
+@@ -73,7 +73,7 @@ GpuMemoryManager::GpuMemoryManager(
+   // the platform is unstable when under memory pressure.
+   // http://crbug.com/145600 (Linux)
+   // http://crbug.com/141377 (Mac)
+-#if defined(OS_MACOSX) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_MACOSX) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   priority_cutoff_ = MemoryAllocation::CUTOFF_ALLOW_NICE_TO_HAVE;
+ #endif
+ 

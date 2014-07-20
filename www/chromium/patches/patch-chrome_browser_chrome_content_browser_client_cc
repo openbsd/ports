@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2014/05/24 15:27:34 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed May 14 21:23:27 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Thu May 22 21:42:27 2014
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Tue Jul 15 13:01:31 2014
++++ chrome/browser/chrome_content_browser_client.cc	Thu Jul 17 12:25:31 2014
 @@ -183,7 +183,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2014/05/2
  #include "base/debug/leak_annotations.h"
  #include "base/linux_util.h"
  #include "components/breakpad/app/breakpad_linux.h"
-@@ -501,7 +501,7 @@ void FillFontFamilyMap(const PrefService* prefs,
+@@ -492,7 +492,7 @@ void FillFontFamilyMap(const PrefService* prefs,
    }
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2014/05/2
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1471,7 +1471,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
+@@ -1459,7 +1459,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
  
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      CommandLine* command_line, int child_process_id) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2014/05/2
    if (breakpad::IsCrashReporterEnabled()) {
      std::string enable_crash_reporter;
      GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
-@@ -2622,7 +2622,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2563,7 +2563,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
  #endif
  }
  

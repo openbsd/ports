@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_app_list_app_list_constants_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/app_list/app_list_constants.cc.orig.port	Fri Jul 18 03:49:07 2014
++++ ui/app_list/app_list_constants.cc	Fri Jul 18 03:49:14 2014
+@@ -81,7 +81,7 @@ const size_t kMaxFolderNameChars = 40;
+ const ui::ResourceBundle::FontStyle kItemTextFontStyle =
+     ui::ResourceBundle::SmallBoldFont;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(GOOGLE_CHROME_BUILD)
+ const char kAppListWMClass[] = "chrome_app_list";
+ #else  // CHROMIUM_BUILD

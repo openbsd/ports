@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.7 2014/07/20 17:22:33 robert Exp $
+--- chrome/app/generated_resources.grd.orig.port	Thu Jul 17 12:38:23 2014
++++ chrome/app/generated_resources.grd	Thu Jul 17 12:39:03 2014
+@@ -623,7 +623,7 @@ Psst! Incognito mode <ph name="SHORTCUT_KEY">$1<ex>(Ct
+ 
+       <!-- content area context menus. Android does not use it -->
+       <if expr="not is_android">
+-        <if expr="is_macosx or is_linux">
++        <if expr="is_macosx or is_linux or is_bsd">
+             <message name="IDS_CONTENT_CONTEXT_LOOK_UP_IN_DICTIONARY" desc="The name of the 'Look Up in Dictionary' item in the content area context menu.  To translate, launch /Applications/TextEdit.app in an appropriately localized version of OS X, right-click on the text entry area and use the translation from there.">
+               Look Up in Dictionary
+             </message>

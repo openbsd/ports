@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/views/window/dialog_delegate.cc.orig.port	Sat Jul 19 05:41:40 2014
++++ ui/views/window/dialog_delegate.cc	Sat Jul 19 05:50:29 2014
+@@ -34,7 +34,7 @@ Widget* DialogDelegate::CreateDialogWidget(DialogDeleg
+     params.opacity = Widget::InitParams::TRANSLUCENT_WINDOW;
+     params.remove_standard_frame = true;
+   }
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // Dialogs on Linux always have custom frames.
+   params.remove_standard_frame = true;
+ #endif

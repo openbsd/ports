@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_layout_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc.orig.port	Sat Jul 19 03:27:25 2014
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc	Sat Jul 19 03:30:48 2014
+@@ -81,7 +81,7 @@ const int kTabstripTopShadowThickness = 3;
+ // is no avatar icon.
+ const int kTabStripIndent = -6;
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ // Default extra space between the top of the frame and the top of the window
+ // caption buttons.
+ const int kExtraCaption = 2;

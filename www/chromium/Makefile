@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.176 2014/07/11 07:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2014/07/20 17:22:33 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			35.0.1916.155
+V=			36.0.1985.125
 DISTNAME=		chromium-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -38,22 +37,24 @@ PATCHORIG=	.orig.port
 WANTLIB += X11 Xext Xfixes Xrender Xss c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
-WANTLIB += plc4 png pthread smime3 speex
+WANTLIB += m pango-1.0 pangocairo-1.0
+WANTLIB += png pthread speex
 WANTLIB += xml2 xslt
-WANTLIB += atk-1.0 usb-1.0 sndio
+WANTLIB += usb-1.0 sndio
 WANTLIB += Xcomposite
 WANTLIB += stdc++
 WANTLIB += Xi Xtst
 WANTLIB += icui18n icuuc
 WANTLIB += Xdamage
+WANTLIB += Xcursor Xrandr gio-2.0
+WANTLIB += jpeg nspr4 nss3 nssutil3 plc4 smime3
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
+		graphics/libexif \
 		x11/gnome/libgnome-keyring \
 		x11/gtk+2,-guic
 BUILD_DEPENDS=	archivers/bzip2 \
-		audio/pulseaudio \
 		devel/gperf \
 		devel/bison \
 		devel/flex \
@@ -108,13 +109,14 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_icu=1 \
 		-Ddisable_nacl=1 \
 		-Dlinux_breakpad=0 \
-		-Dlinux_use_tcmalloc=0 \
+		-Duse_allocator=none \
 		-Dlinux_strip_binary=0 \
 		-Dlinux_use_heapchecker=0 \
 		-Denable_webrtc=0 \
 		-Denable_one_click_signin=1 \
 		-Duse_kerberos=0 \
 		-Duse_sndio=1 \
+		-Duse_aura=1 \
 		-Dclang=1 \
 		-Dclang_use_chrome_plugins=0 \
 		-Dwerror= \
@@ -166,7 +168,7 @@ do-install:
 	chmod ${BINMODE} ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 
-.for p in chrome_100_percent content_resources resources
+.for p in chrome_100_percent content_resources keyboard_resources resources
 	${INSTALL_DATA} ${BUILDDIR}/${p}.pak ${PREFIX}/chrome
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales

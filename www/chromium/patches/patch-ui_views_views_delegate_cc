@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_views_delegate_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- ui/views/views_delegate.cc.orig.port	Sat Jul 19 00:54:00 2014
++++ ui/views/views_delegate.cc	Sat Jul 19 00:54:13 2014
+@@ -50,7 +50,7 @@ HICON ViewsDelegate::GetDefaultWindowIcon() const {
+ bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
+   return false;
+ }
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ gfx::ImageSkia* ViewsDelegate::GetDefaultWindowIcon() const {
+   return NULL;
+ }

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.11 2014/05/24 15:27:34 robert Exp $
---- chrome/common/chrome_switches.h.orig.port	Wed May 14 21:23:08 2014
-+++ chrome/common/chrome_switches.h	Thu May 22 21:42:27 2014
-@@ -406,7 +406,7 @@ extern const char kOpenAsh[];
+$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.12 2014/07/20 17:22:34 robert Exp $
+--- chrome/common/chrome_switches.h.orig.port	Tue Jul 15 13:01:37 2014
++++ chrome/common/chrome_switches.h	Thu Jul 17 12:25:31 2014
+@@ -386,7 +386,7 @@ extern const char kOpenAsh[];
  extern const char kPasswordStore[];
  #endif
  

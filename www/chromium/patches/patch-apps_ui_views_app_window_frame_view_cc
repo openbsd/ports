@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- apps/ui/views/app_window_frame_view.cc.orig.port	Sat Jul 19 05:41:40 2014
++++ apps/ui/views/app_window_frame_view.cc	Sat Jul 19 05:42:40 2014
+@@ -133,7 +133,7 @@ gfx::Rect AppWindowFrameView::GetBoundsForClientView()
+ gfx::Rect AppWindowFrameView::GetWindowBoundsForClientBounds(
+     const gfx::Rect& client_bounds) const {
+   gfx::Rect window_bounds = client_bounds;
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // Get the difference between the widget's client area bounds and window
+   // bounds, and grow |window_bounds| by that amount.
+   gfx::Insets native_frame_insets =

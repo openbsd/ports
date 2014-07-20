@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.1 2014/07/20 17:22:34 robert Exp $
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig.port	Fri Jul 18 23:32:12 2014
++++ chrome/browser/ui/views/chrome_views_delegate.h	Fri Jul 18 23:32:23 2014
+@@ -36,7 +36,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+ #if defined(OS_WIN)
+   virtual HICON GetDefaultWindowIcon() const OVERRIDE;
+   virtual bool IsWindowInMetro(gfx::NativeWindow window) const OVERRIDE;
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   virtual gfx::ImageSkia* GetDefaultWindowIcon() const OVERRIDE;
+ #endif
+ #if defined(USE_ASH)
+@@ -48,7 +48,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+   virtual void OnBeforeWidgetInit(
+       views::Widget::InitParams* params,
+       views::internal::NativeWidgetDelegate* delegate) OVERRIDE;
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   virtual bool WindowManagerProvidesTitleBar(bool maximized) OVERRIDE;
+ #endif
+ #if defined(OS_WIN)

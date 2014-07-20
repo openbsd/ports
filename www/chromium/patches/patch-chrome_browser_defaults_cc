@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_defaults_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/defaults.cc.orig.port	Sat Jul 19 03:32:36 2014
++++ chrome/browser/defaults.cc	Sat Jul 19 03:33:29 2014
+@@ -49,7 +49,7 @@ const bool kSyncAutoStarts = false;
+ const bool kShowOtherBrowsersInAboutMemory = true;
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ const bool kScrollEventChangesTab = true;
+ #else
+ const bool kScrollEventChangesTab = false;

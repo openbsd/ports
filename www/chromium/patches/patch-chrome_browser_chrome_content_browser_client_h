@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.5 2014/05/24 15:27:34 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Wed May 14 21:23:27 2014
-+++ chrome/browser/chrome_content_browser_client.h	Thu May 22 21:42:27 2014
-@@ -267,7 +267,7 @@ class ChromeContentBrowserClient : public content::Con
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.6 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Tue Jul 15 13:01:31 2014
++++ chrome/browser/chrome_content_browser_client.h	Thu Jul 17 12:25:31 2014
+@@ -260,7 +260,7 @@ class ChromeContentBrowserClient : public content::Con
        const base::FilePath& storage_partition_path,
        ScopedVector<fileapi::FileSystemBackend>* additional_backends) OVERRIDE;
  

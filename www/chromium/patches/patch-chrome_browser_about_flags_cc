@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.11 2014/07/20 17:22:33 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Sat Jul 19 05:58:51 2014
++++ chrome/browser/about_flags.cc	Sat Jul 19 11:25:20 2014
+@@ -1482,7 +1482,7 @@ const Experiment kExperiments[] = {
+     SINGLE_VALUE_TYPE(switches::kResetAppListInstallState)
+   },
+ #if defined(ENABLE_APP_LIST)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   {
+     // This is compiled out on non-Linux platforms because otherwise it would be
+     // visible on Win/Mac/CrOS but not on Linux GTK, which would be confusing.

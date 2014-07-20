@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.28 2014/05/24 15:27:34 robert Exp $
---- media/media.gyp.orig.port	Thu May 22 21:50:36 2014
-+++ media/media.gyp	Fri May 23 18:24:55 2014
+$OpenBSD: patch-media_media_gyp,v 1.29 2014/07/20 17:22:34 robert Exp $
+--- media/media.gyp.orig.port	Tue Jul 15 13:02:23 2014
++++ media/media.gyp	Thu Jul 17 12:25:31 2014
 @@ -22,7 +22,7 @@
          'media_use_libvpx%': 1,
        }],
@@ -21,7 +21,7 @@ $OpenBSD: patch-media_media_gyp,v 1.28 2014/05/24 15:27:34 robert Exp $
          ],
        }, {
          'use_alsa%': 0,
-@@ -163,6 +167,8 @@
+@@ -164,6 +168,8 @@
          'audio/pulse/pulse_input.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
@@ -30,7 +30,7 @@ $OpenBSD: patch-media_media_gyp,v 1.28 2014/05/24 15:27:34 robert Exp $
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
          'audio/sample_rates.cc',
-@@ -622,6 +628,24 @@
+@@ -637,6 +643,24 @@
              'formats/webm/chromeos/webm_encoder.h',
            ],
          }],
@@ -55,7 +55,7 @@ $OpenBSD: patch-media_media_gyp,v 1.28 2014/05/24 15:27:34 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -643,7 +667,7 @@
+@@ -658,7 +682,7 @@
              'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
@@ -64,7 +64,7 @@ $OpenBSD: patch-media_media_gyp,v 1.28 2014/05/24 15:27:34 robert Exp $
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -894,7 +918,7 @@
+@@ -917,7 +941,7 @@
              'base/simd/convert_yuv_to_rgb_x86.cc',
            ],
          }],
@@ -73,21 +73,21 @@ $OpenBSD: patch-media_media_gyp,v 1.28 2014/05/24 15:27:34 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1082,7 +1106,7 @@
+@@ -1110,7 +1134,7 @@
              'USE_PULSEAUDIO',
            ],
          }],
 -        ['os_posix==1 and OS!="mac"', {
 +        ['os_posix==1 and OS!="mac" and OS!="openbsd"', {
            'conditions': [
-             # TODO(dmikurube): Kill linux_use_tcmalloc. http://crbug.com/345554
-             ['(use_allocator!="none" and use_allocator!="see_use_tcmalloc") or (use_allocator=="see_use_tcmalloc" and linux_use_tcmalloc==1)', {
-@@ -1687,7 +1711,7 @@
+             ['use_allocator!="none"', {
+               'dependencies': [
+@@ -1704,7 +1728,7 @@
              'filters/pipeline_integration_test_base.cc',
            ],
            'conditions': [
 -            ['os_posix==1 and OS!="mac"', {
 +            ['os_posix==1 and OS!="mac" and OS!="openbsd"', {
                'conditions': [
-                 # TODO(dmikurube): Kill linux_use_tcmalloc. http://crbug.com/345554
-                 ['(use_allocator!="none" and use_allocator!="see_use_tcmalloc") or (use_allocator=="see_use_tcmalloc" and linux_use_tcmalloc==1)', {
+                 ['use_allocator!="none"', {
+                   'dependencies': [
