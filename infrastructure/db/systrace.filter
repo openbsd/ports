@@ -41,7 +41,6 @@
 	native-compat_43_ogetpagesize: permit
 	native-compat_43_olseek: permit
 	native-connect: sockaddr eq "family(0)" then permit
-	native-connect: sockaddr match "/dev/log" then permit
 	native-connect: sockaddr match "/tmp" then permit
 	native-connect: sockaddr match "/var/tmp" then permit
 	native-connect: sockaddr match "${TMPDIR}" then permit
