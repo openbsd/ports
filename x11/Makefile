@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.533 2014/07/13 12:30:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.534 2014/07/20 20:43:00 landry Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -98,6 +98,7 @@
      SUBDIR += gtk2-rezlooks-engine
      SUBDIR += gtk2-theme-switch
      SUBDIR += gtk2mm
+     SUBDIR += gtk3-oxygen-engine
      SUBDIR += gtk3-unico-engine
      SUBDIR += gtk3mm
      SUBDIR += gtkdatabox
