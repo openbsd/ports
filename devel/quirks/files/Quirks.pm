@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.162 2014/07/19 09:00:51 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.163 2014/07/21 20:12:13 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -502,6 +502,9 @@ sub tweak_search
 my $cve = {
 	'print/cups,-main' => 'cups-<1.7.4',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
+	'net/transmission,-main' => 'transmission-<2.84',
+	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
+	'net/transmission,-qt' => 'transmission-qt-<2.84',
 };
 
 # ->check_security($path)
