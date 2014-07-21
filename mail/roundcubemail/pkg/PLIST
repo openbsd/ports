@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2014/05/11 13:29:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.37 2014/07/21 07:58:28 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -89,17 +89,13 @@ roundcubemail/bin/
 roundcubemail/bin/cleandb.sh
 roundcubemail/bin/cssshrink.sh
 roundcubemail/bin/decrypt.sh
-roundcubemail/bin/exportgettext.sh
 roundcubemail/bin/gc.sh
-roundcubemail/bin/importgettext.sh
 roundcubemail/bin/indexcontacts.sh
 roundcubemail/bin/installto.sh
 roundcubemail/bin/jsshrink.sh
 roundcubemail/bin/moduserprefs.sh
 roundcubemail/bin/msgexport.sh
 roundcubemail/bin/msgimport.sh
-roundcubemail/bin/package2composer.sh
-roundcubemail/bin/transifexpull.sh
 roundcubemail/bin/update.sh
 roundcubemail/bin/updatecss.sh
 roundcubemail/bin/updatedb.sh
@@ -3024,9 +3020,11 @@ roundcubemail/program/localization/da_DK/
 roundcubemail/program/localization/da_DK/labels.inc
 roundcubemail/program/localization/da_DK/messages.inc
 roundcubemail/program/localization/de_CH/
+roundcubemail/program/localization/de_CH/csv2vcard.inc
 roundcubemail/program/localization/de_CH/labels.inc
 roundcubemail/program/localization/de_CH/messages.inc
 roundcubemail/program/localization/de_DE/
+roundcubemail/program/localization/de_DE/csv2vcard.inc
 roundcubemail/program/localization/de_DE/labels.inc
 roundcubemail/program/localization/de_DE/messages.inc
 roundcubemail/program/localization/el_GR/
@@ -3279,7 +3277,6 @@ roundcubemail/program/steps/mail/show.inc
 roundcubemail/program/steps/mail/viewsource.inc
 roundcubemail/program/steps/settings/
 roundcubemail/program/steps/settings/about.inc
-roundcubemail/program/steps/settings/delete_identity.inc
 roundcubemail/program/steps/settings/edit_folder.inc
 roundcubemail/program/steps/settings/edit_identity.inc
 roundcubemail/program/steps/settings/edit_prefs.inc
