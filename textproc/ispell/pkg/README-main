@@ -1,0 +1,13 @@
+$OpenBSD: README-main,v 1.1 2014/07/21 17:19:02 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+This package has installed the American and British dictionaries.
+Default dictionary has been set to `british' but can be changed using:
+    ${PREFIX}/bin/ispell-config
+
+Dictionary packages for other languages are also available.
+See the output of:
+    pkg_info -Q ispell

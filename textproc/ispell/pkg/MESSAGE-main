@@ -1,6 +1,0 @@
-This package has installed the American and British dictionaries.
-Dictionary packages for other languages are available.
-
-Default dictionary has been set to `british'.
-
-You can change it using ${PREFIX}/bin/ispell-config

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/05/11 07:45:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/07/21 17:19:02 ajacoutot Exp $
 @pkgpath textproc/ispell
 @unexec-delete rm -f ${PREFIX}/lib/ispell/default.aff
 @unexec-delete rm -f ${PREFIX}/lib/ispell/default.hash
@@ -24,4 +24,5 @@ lib/ispell/britishxlg.hash
 @man man/man1/tryaffix.1
 @man man/man4/english.4
 @man man/man4/ispell.4
-@exec test -e ${PREFIX}/lib/ispell/default.aff || %D/bin/ispell-config 2
+share/doc/pkg-readmes/${FULLPKGNAME}
+@exec test -e %D/lib/ispell/default.aff || %D/bin/ispell-config 2 >/dev/null
