@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/18 13:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/07/21 10:36:36 ajacoutot Exp $
 
 COMMENT=	Visual Basic .NET support for Mono
 DISTNAME=	mono-basic-2.10
@@ -16,18 +16,8 @@ USE_GMAKE=	Yes
 MODULES=	lang/mono
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS+=--prefix="${TRUEPREFIX}"
+CONFIGURE_ARGS=	--prefix="${TRUEPREFIX}"
 
 TEST_TARGET=	test
-
-pre-build:
-	@echo ""; \
-	echo "*** WARNING: you may have to increase your limits to build this ports".; \
-	echo "*** See the man page for your shell and look for the 'limit' or"; \
-	echo "*** 'ulimit' command. You may also want to see the login.conf(5)"; \
-	echo "*** manual page. Some examples are:"; \
-	echo "***       csh(1) and tcsh(1): limit openfiles <amount of file descriptors>"; \
-	echo "***       ksh(1), zsh(1) and bash(1): ulimit -n <amount of file descriptors>"; \
-	echo ""
 
 .include <bsd.port.mk>

@@ -1,9 +1,0 @@
-$OpenBSD: patch-vbnc_vbnc_setversion_sh,v 1.1 2010/10/15 16:25:14 robert Exp $
---- vbnc/vbnc/setversion.sh.orig	Wed Oct 13 20:43:00 2010
-+++ vbnc/vbnc/setversion.sh	Wed Oct 13 20:43:38 2010
-@@ -1,4 +1,4 @@
--#!/bin/bash -ex
-+#!/usr/local/bin/bash -ex
- 
- VERSION_VB=$1
- VERSION_TMP=version.tmp
