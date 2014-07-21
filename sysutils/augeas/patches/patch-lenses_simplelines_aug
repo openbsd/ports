@@ -1,13 +1,16 @@
-$OpenBSD: patch-lenses_simplelines_aug,v 1.1 2013/04/15 20:31:23 jasper Exp $
+$OpenBSD: patch-lenses_simplelines_aug,v 1.2 2014/07/21 14:12:35 jasper Exp $
 
-Parse hostname.if(5) files.
+- Parse hostname.if(5) files
+- rc.conf* are not shell scripts anymore.
 
---- lenses/simplelines.aug.orig	Mon Apr 15 22:27:24 2013
-+++ lenses/simplelines.aug	Mon Apr 15 22:27:27 2013
-@@ -43,5 +43,6 @@ let filter = incl "/etc/at.allow"
+--- lenses/simplelines.aug.orig	Fri Nov  2 16:20:11 2012
++++ lenses/simplelines.aug	Tue Jul 22 02:05:54 2014
+@@ -43,5 +43,8 @@ let filter = incl "/etc/at.allow"
             . incl "/etc/cron.d/cron.deny"
             . incl "/etc/default/grub_installdevice"
             . incl "/etc/pam.d/allow.pamlist"
 +           . incl "/etc/hostname.*"
++           . incl "/etc/rc.conf"
++           . incl "/etc/rc.conf.local"
  
  let xfm = transform lns filter
