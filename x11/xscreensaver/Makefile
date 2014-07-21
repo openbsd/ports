@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2014/07/10 07:40:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2014/07/21 20:11:37 zhuk Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
@@ -7,6 +7,9 @@ DISTNAME=		xscreensaver-5.29
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
+
+# After updating this port, remember to make update-plist in
+# x11/kde/artwork and x11/kde4/artwork, too.
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
