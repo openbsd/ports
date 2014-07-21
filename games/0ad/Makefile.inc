@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2014/07/21 01:24:06 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/07/21 01:34:17 bentley Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
-
-BROKEN-i386 =		base doesn't build due to asm problems
 
 CATEGORIES = 		games
 
