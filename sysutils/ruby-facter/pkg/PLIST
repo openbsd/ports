@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/06/25 22:00:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/07/21 15:51:16 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -102,6 +102,7 @@ ${MODRUBY_SITEDIR}/facter/util/parser.rb
 ${MODRUBY_SITEDIR}/facter/util/partitions/
 ${MODRUBY_SITEDIR}/facter/util/partitions.rb
 ${MODRUBY_SITEDIR}/facter/util/partitions/linux.rb
+${MODRUBY_SITEDIR}/facter/util/partitions/openbsd.rb
 ${MODRUBY_SITEDIR}/facter/util/plist/
 ${MODRUBY_SITEDIR}/facter/util/plist.rb
 ${MODRUBY_SITEDIR}/facter/util/plist/generator.rb
