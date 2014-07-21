@@ -1,0 +1,37 @@
+$OpenBSD: patch-libraries_source_fcollada_src_Makefile,v 1.1.1.1 2014/07/21 01:24:06 bentley Exp $
+--- libraries/source/fcollada/src/Makefile.orig.port	Sun Oct 27 22:06:15 2013
++++ libraries/source/fcollada/src/Makefile	Sun Jul 13 11:18:39 2014
+@@ -10,7 +10,7 @@ endif
+ CXX ?= g++
+ CXXFLAGS += -fvisibility=hidden -W -Wall -Wno-unused-parameter -Wno-unused-function $(OS_DEFINE) $(PIC_FLAGS) $(CPPFLAGS)
+ CXXFLAGS_DEBUG := -O0 -g -D_DEBUG -DRETAIL
+-CXXFLAGS_RELEASE := -O1 -DNDEBUG -DRETAIL
++CXXFLAGS_RELEASE := -DNDEBUG -DRETAIL
+ # (-O2 with gcc 4.3 causes linker errors when using this library, for unknown reasons, so stick with -O1 until gcc >4.3 is typical.)
+ CXXFLAGS_TEST := -O0 -g -D_DEBUG
+ LIBS += `pkg-config libxml-2.0 --libs`
+@@ -225,7 +225,7 @@ OBJECTS_RELEASE = $(addprefix output/release/,$(SOURCE
+ OBJECTS_TEST = $(addprefix output/test/,$(SOURCE:.cpp=.o) $(TEST_SOURCE:.cpp=.o))
+ OBJECTS_ALL = $(OBJECTS_DEBUG) $(OBJECTS_RELEASE) $(OBJECTS_TEST)
+ 
+-all: output_dirs output/libFColladaSD.a output/libFColladaSR.a install
++all: output_dirs output/libFColladaSR.a install
+ 
+ output_dirs:
+ 	bash -c 'mkdir -p output/{debug,release,test}/{FCollada/{FCDocument,FMath,FUtils,FColladaTest/{FCTestAssetManagement,FCTestExportImport,FCTestXRef}},FColladaPlugins/FArchiveXML}'
+@@ -245,8 +245,7 @@ output/libFColladaSR.a: $(OBJECTS_RELEASE)
+ output/FColladaTest: $(OBJECTS_TEST)
+ 	$(CXX) -o $@ $(LDFLAGS) $(OBJECTS_TEST) $(LIBS)
+ 
+-install: output/libFColladaSD.a output/libFColladaSR.a
+-	cp output/libFColladaSD.a ../lib/libFColladaSD.a
++install: output/libFColladaSR.a
+ 	cp output/libFColladaSR.a ../lib/libFColladaSR.a
+ 
+ dfile = $(@:.o=.d)
+@@ -273,5 +272,3 @@ clean:
+ 	rm -rf output
+ 
+ -include $(OBJECTS_ALL:.o=.P)
+-
+-.SILENT:

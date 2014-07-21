@@ -1,0 +1,13 @@
+$OpenBSD: patch-build_workspaces_update-workspaces_sh,v 1.1.1.1 2014/07/21 01:24:06 bentley Exp $
+Don't build bundled libraries during configure.
+--- build/workspaces/update-workspaces.sh.orig.port	Sun Apr 20 13:17:32 2014
++++ build/workspaces/update-workspaces.sh	Mon May 19 01:28:21 2014
+@@ -80,7 +80,7 @@ if [ "`uname -s`" != "Darwin" ]; then
+   echo
+ 
+   # Build/update bundled external libraries
+-  (cd ../../libraries/source/fcollada/src && ${MAKE} ${JOBS}) || die "FCollada build failed"
++#  (cd ../../libraries/source/fcollada/src && ${MAKE} ${JOBS}) || die "FCollada build failed"
+   echo
+   if [ "$with_system_mozjs24" = "false" ]; then
+     (cd ../../libraries/source/spidermonkey && MAKE=${MAKE} JOBS=${JOBS} ./build.sh) || die "SpiderMonkey build failed"
