@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/17 12:15:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/21 07:18:07 landry Exp $
 
 V =		2.8.9
 PL =		1
+REVISION =	0
 COMMENT =	console Internet browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}

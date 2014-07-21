@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/07/17 12:15:21 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/07/21 07:18:07 landry Exp $
 @bin bin/lynx
 @man man/man1/lynx.1
 share/doc/lynx/
@@ -127,3 +127,4 @@ share/examples/lynx/
 share/examples/lynx/lynx.cfg
 @sample ${SYSCONFDIR}/lynx.cfg
 share/examples/lynx/lynx.lss
+@sample ${SYSCONFDIR}/lynx.lss
