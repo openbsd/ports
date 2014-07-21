@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2014/06/22 19:50:59 edd Exp $
+# $OpenBSD: Makefile,v 1.29 2014/07/21 08:59:10 jasper Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	2.1.0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://ipython.org/
@@ -54,15 +55,8 @@ post-build:
 # be installed into, we still have to do it manually for some reason.
 APPS_DIR = 	${PREFIX}/share/applications/
 DOCS_DIR =	${PREFIX}/share/doc/ipython/
-# XXX XXX XXX
-# The old ipython-0.11 port installed share/examples/ipython as a regular
-# file. This of course was incorrect. Since there is a bug in the package
-# tools that prevents files from being replaced by directories during an
-# upgrade, we must install the examples elsewhere to avoid the clash.
-# Once the pkg tools bug is fixed, we can use the normal examples path
-# (currently commented). Also be sure to update the setupbase.py patch.
-#EXAMPLES_DIR =	${PREFIX}/share/examples/ipython/
-EXAMPLES_DIR =	${PREFIX}/share/examples/ipython-examples/
+EXAMPLES_DIR =	${PREFIX}/share/examples/ipython/
+
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
 	${INSTALL_DATA_DIR} ${APPS_DIR}
