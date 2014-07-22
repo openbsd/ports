@@ -1,9 +1,14 @@
-$OpenBSD: patch-src_nrpe_c,v 1.8 2014/04/18 11:33:41 sthen Exp $
+$OpenBSD: patch-src_nrpe_c,v 1.9 2014/07/22 08:55:45 jca Exp $
 
-http://seclists.org/fulldisclosure/2014/Apr/240 plus \r suggested on oss-sec
+- http://seclists.org/fulldisclosure/2014/Apr/240 plus \r suggested on oss-sec
+- fix reading of non-blocking sockets
+- don't remove the pidfile when accept(2) or getpeername(2) fail.
+  Author: Hiren Patel
+  From: http://comments.gmane.org/gmane.network.nagios.devel/6774
+  Bug-Ubuntu: https://launchpad.net/bugs/1126890
 
---- src/nrpe.c.orig	Fri Sep  6 16:27:13 2013
-+++ src/nrpe.c	Fri Apr 18 12:29:57 2014
+--- src/nrpe.c.orig	Fri Sep  6 17:27:13 2013
++++ src/nrpe.c	Tue Jul 22 00:52:20 2014
 @@ -30,6 +30,8 @@
  #include "utils.h"
  #include "acl.h"
@@ -47,3 +52,21 @@ http://seclists.org/fulldisclosure/2014/Apr/240 plus \r suggested on oss-sec
  
  				/* fix for HP-UX 11.0 - just retry */
  				if(errno==ENOBUFS)
+@@ -998,7 +1006,7 @@ void wait_for_connections(void){
+ 						/* close socket prioer to exiting */
+ 						close(sock);
+ 			
+-						return;
++						exit(STATE_CRITICAL);
+ 						}
+ 
+ 					/* handle signals */
+@@ -1022,7 +1030,7 @@ void wait_for_connections(void){
+ 				        /* close socket prior to exiting */
+ 						close(new_sd);
+ 
+-						return;
++						exit(STATE_CRITICAL);
+ 						}
+ 
+ 					/* is this is a blessed machine? */
