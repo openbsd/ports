@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.163 2014/07/21 20:12:13 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.164 2014/07/22 09:03:59 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -505,6 +505,7 @@ my $cve = {
 	'net/transmission,-main' => 'transmission-<2.84',
 	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
 	'net/transmission,-qt' => 'transmission-qt-<2.84',
+	'www/bozohttpd' => 'bozohttpd-<20130711p0',
 };
 
 # ->check_security($path)
