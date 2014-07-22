@@ -1,2 +1,0 @@
-Unbound is an implementation of a recursive DNS resolver, that does caching
-and DNSSEC validation.

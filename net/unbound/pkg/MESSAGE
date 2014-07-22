@@ -1,5 +1,0 @@
-You should add:
-
-    syslogd_flags="${syslogd_flags} -a /var/unbound/dev/log"
-
-to /etc/rc.conf.local to create a syslog socket in the unbound chroot.
