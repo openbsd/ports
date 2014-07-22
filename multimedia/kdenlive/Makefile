@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/14 09:16:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/22 18:56:39 zhuk Exp $
 
 COMMENT =		non-linear video editor for KDE
 VERSION =		0.9.8
 DISTNAME =		kdenlive-${VERSION}
 CATEGORIES =		multimedia
+REVISION =		0
 
 HOMEPAGE =		http://www.kdenlive.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -31,7 +32,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
 LIB_DEPENDS =		devel/qjson \
-			multimedia/mlt,-main
+			multimedia/mlt,-main \
+			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
 
