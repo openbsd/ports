@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2012/01/24 08:03:52 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2014/07/22 10:55:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -46,7 +46,10 @@ Note that jackd will use sndiod's block size as its period size. For
 instance:
 
   - stop sndiod(8) using rc.d(8)
-  - set sndiod_flags="-b 1024 -z 512" in /etc/rc.conf.local(8)
+  - add the following to /etc/rc.conf.local(8):
+
+    sndiod_flags=-b 1024 -z 512
+
   - start sndiod(8)
   - start jackd:
 

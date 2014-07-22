@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/27 10:15:13 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/07/22 10:55:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ mountpoints will be placed:
 Enable hotplugd at boot time:
 
 
-# echo "hotplugd_flags=\"\"" >> /etc/rc.conf.local
+# echo hotplugd_flags= >> /etc/rc.conf.local
 
 
 Edit the /etc/hotplug/attach script (remember to set the executable

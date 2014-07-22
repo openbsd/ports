@@ -1,4 +1,4 @@
-$Id: README,v 1.1 2013/10/15 01:18:01 william Exp $
+$Id: README,v 1.2 2014/07/22 10:55:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ Because of the chroot(), all paths given to rbldnsd are relative to
 to the chroot path (${VARBASE}/rbldnsd).  Thus, with this line in
 /etc/rc.conf.local:
 
-rbldnsd_flags="-b 127.0.0.1/53 rbl.invalid:ip4tset:/etc/rbl.invalid.zone"
+rbldnsd_flags=-b 127.0.0.1/53 rbl.invalid:ip4tset:/etc/rbl.invalid.zone
 
 rbldnsd will load the "rbl.invalid" zone from 
 ${VARBASE}/rbldnsd/etc/rbl.invalid.zone and do any processing in

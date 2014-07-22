@@ -1,7 +1,6 @@
 To jail fcgi-cgi within /var/www, add an entry like this to rc.conf.local:
 
-        fcgi_cgi_flags="-a 127.0.0.1 -p 9001 -u www -U www \
-            -c /var/www -- ${TRUEPREFIX}/bin/fcgi-cgi"
+        fcgi_cgi_flags=-a 127.0.0.1 -p 9001 -u www -U www -c /var/www -- ${TRUEPREFIX}/bin/fcgi-cgi
 
 Obviously you will need to ensure that everything necessary for your CGI
 application is installed within the chroot jail.

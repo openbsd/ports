@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/05/30 10:28:17 kirby Exp $
+# $OpenBSD: Makefile,v 1.40 2014/07/22 10:55:40 ajacoutot Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -8,6 +8,8 @@ DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
+
+REVISION-server=	0
 
 HOMEPAGE =	http://munin-monitoring.org/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=munin/}

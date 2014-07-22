@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/10/14 22:31:58 sthen Exp $
+$OpenBSD: README,v 1.2 2014/07/22 10:55:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,4 +10,4 @@ localhost. If using NAT, the internal interface might be a better choice
 than the egress; to use alternative settings, override the defaults in
 rc.conf.local e.g.:
 
-darkstat_flags="-i em2 -b 127.0.0.1 --syslog"
+darkstat_flags=-i em2 -b 127.0.0.1 --syslog

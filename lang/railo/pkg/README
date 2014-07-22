@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2014/05/31 13:42:15 sthen Exp $
+$OpenBSD: README,v 1.7 2014/07/22 10:55:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -65,7 +65,7 @@ Starting the service and online configuration
 
 - Add the Java agent to Tomcat's command-line flags:
 
-tomcat_flags="-server -javaagent:var/tomcat/lib/railo-inst.jar"
+tomcat_flags=-server -javaagent:var/tomcat/lib/railo-inst.jar
 
 Any other JVM options can be added as necessary (for example, those
 options to adjust Java memory use, enable JMXRemote, etc).

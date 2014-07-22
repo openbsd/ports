@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/07/22 10:55:40 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		low latency sound server
 V =			0.121.3
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		audio
 
 SHARED_LIBS +=		jack		0.0	# 0.28

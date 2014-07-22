@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/06/17 13:25:31 sthen Exp $
+$OpenBSD: README,v 1.2 2014/07/22 10:55:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,12 +9,12 @@ rc.conf.local(8) to listen on a network interface as a minimum.
 
 For example:
 
-	softflowd_flags="-i em0"
+	softflowd_flags=-i em0
 		This would cause softflowd(8) to listen on interface
 		em0 and to run in statistics gathering mode only (i.e.
 		no NetFlow data export).
 
-	softflowd_flags="-i fxp0 -n 10.1.0.2:4432"
+	softflowd_flags=-i fxp0 -n 10.1.0.2:4432
 		This would cause softflowd(8) to listen on interface
 		fxp0 and to export NetFlow v.5 datagrams on flow expiry
 		to a flow collector running on 10.1.0.2 port 4432.

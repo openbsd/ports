@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.4 2014/03/25 08:42:25 kirby Exp $
+$OpenBSD: README-server,v 1.5 2014/07/22 10:55:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,8 +20,6 @@ newsyslog.conf fragment:
 
 Optionally you may want to use rrdcached to reduce disk I/O. Here is a sample
 /etc/rc.conf.local part:
-rrdcached_flags="-b /var/db/munin -l unix:/var/run/munin/rrdcached.sock \
--j /var/db/munin/journal -p /var/run/munin/rrdcached.pid \
--m 0660 -s _munin -w 1800 -z 1800 -f 3600 -F"
-rrdcached_user="_munin"
+rrdcached_flags=-b /var/db/munin -l unix:/var/run/munin/rrdcached.sock -j /var/db/munin/journal -p /var/run/munin/rrdcached.pid -m 0660 -s _munin -w 1800 -z 1800 -f 3600 -F
+rrdcached_user=_munin
 Add www user to _munin group to grant write permissions on rrdcached socket.

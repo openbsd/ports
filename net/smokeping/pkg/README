@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/01/06 07:54:13 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/07/22 10:55:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -36,7 +36,8 @@ within /var/www are accessible; this doesn't work with smokeping's
 CGI scripts (at least without major work copying large parts of
 Perl and Smokeping into the chroot jail). Simpler options are:
 
-- Disable chroot by setting httpd_flags="-u" in /etc/rc.conf.local
+- Disable chroot by setting the following in /etc/rc.conf.local:
+    httpd_flags=-u
 
 - Create static HTML and images rather than allowing them to be
 viewed/zoomed; do this by running 'smokeping --static=/path/to/html-dir'

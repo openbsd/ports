@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/24 21:45:16 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/22 10:55:40 ajacoutot Exp $
 
 COMMENT =			network discovery tool
 
 DISTNAME =			nedi-bsd-1.0.8
 PKGNAME =			nedi-1.0.8
-REVISION =			5
+REVISION =			6
 EXTRACT_SUFX =			.tgz
 CATEGORIES =			net
 

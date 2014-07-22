@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2014/07/22 10:55:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,7 +22,7 @@ To get started with Trac, you can use the built-in webserver.
 Configure the daemon flags in /etc/rc.conf.local with a suitable port
 and path if the defaults (/var/www/trac and port 8085) are not suitable:
 
-tracd_flags="-p 8085 </path/to/projectenv>"
+tracd_flags=-p 8085 </path/to/projectenv>
 
 And start the daemon:
 

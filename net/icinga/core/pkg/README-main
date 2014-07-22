@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.24 2014/07/19 22:36:13 ajacoutot Exp $
+$OpenBSD: README-main,v 1.25 2014/07/22 10:55:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -196,7 +196,7 @@ The configuration format is compatible with Nagios.  If you'd like
 to move across with minimal changes, you can point Icinga at your existing
 configuration files by adding the following to /etc/rc.conf.local:
 
-	icinga_flags="-d ${BASESYSCONFDIR}/nagios/nagios.cfg"
+	icinga_flags=-d ${BASESYSCONFDIR}/nagios/nagios.cfg
 
 You will need to merge the settings between Nagios' and Icinga's cgi.cfg
 files. sdiff(1), as used by sysmerge(8), can help with this. main_config_file

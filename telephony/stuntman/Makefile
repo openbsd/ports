@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/12 11:25:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/22 10:55:41 ajacoutot Exp $
 
 COMMENT =	STUN server implementing RFCs 5389, 5769, and 5780
 NOT_FOR_ARCHS = hppa mips64 mips64el sparc64 # atomic ops
 
 VERSION =	1.2.5
-REVISION =	0
+REVISION =	1
 DISTNAME =	stunserver-${VERSION}
 PKGNAME =	stuntman-${VERSION}
 CATEGORIES =	telephony net

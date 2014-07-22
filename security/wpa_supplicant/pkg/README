@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2014/07/12 11:25:00 sthen Exp $
+$OpenBSD: README,v 1.3 2014/07/22 10:55:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -27,7 +27,7 @@ modify the ${RCDIR}/wpa_supplicant script, but instead change this in
 following examples:
 
 # 802.11 wireless
-wpa_supplicant_flags="-c ${SYSCONFDIR}/wpa_supplicant.conf -D openbsd -i ral0"
+wpa_supplicant_flags=-c ${SYSCONFDIR}/wpa_supplicant.conf -D openbsd -i ral0
 
 # wired
-wpa_supplicant_flags="-c ${SYSCONFDIR}/wpa_supplicant.conf -D wired -i em0"
+wpa_supplicant_flags=-c ${SYSCONFDIR}/wpa_supplicant.conf -D wired -i em0

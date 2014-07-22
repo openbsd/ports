@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2014/07/12 11:25:00 sthen Exp $
+$OpenBSD: README,v 1.3 2014/07/22 10:55:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,5 +9,5 @@ on reboot, add "stunserver" to the pkg_scripts line in /etc/rc.conf.local.
 
 NOTE: This script runs stunserver(1) with default options.
 
-If you want to add or change default options for stunserver(1) you can add
-line stunserver_flags="..." into /etc/rc.conf.local(8).
+If you want to add or change default options for stunserver(1) you can
+add "stunserver_flags=..." into /etc/rc.conf.local(8).

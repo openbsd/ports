@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/07/12 11:25:00 sthen Exp $
+$OpenBSD: README,v 1.5 2014/07/22 10:55:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -47,7 +47,7 @@ To activate this package, you must do the following for sendmail:
 
 2. Put the following line in /etc/rc.conf.local:
 
-	sendmail_flags="-L sm-mta -bd -OQueueDirectory=/var/spool/mqueue.in"
+	sendmail_flags=-L sm-mta -bd -OQueueDirectory=/var/spool/mqueue.in
 
 3. Add the following to /etc/rc.local:
 
