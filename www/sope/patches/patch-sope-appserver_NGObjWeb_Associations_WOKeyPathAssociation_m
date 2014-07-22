@@ -1,0 +1,140 @@
+$OpenBSD: patch-sope-appserver_NGObjWeb_Associations_WOKeyPathAssociation_m,v 1.1 2014/07/22 18:46:43 sebastia Exp $
+
+fix for bug: http://www.sogo.nu/bugs/view.php?id=2814
+and few other compiler warnings
+
+--- sope-appserver/NGObjWeb/Associations/WOKeyPathAssociation.m.orig	Thu Jun  5 19:40:06 2014
++++ sope-appserver/NGObjWeb/Associations/WOKeyPathAssociation.m	Thu Jun 12 20:40:32 2014
+@@ -109,6 +109,8 @@ typedef union {
+   unsigned char  (*ucmethod)(id, SEL);
+   int            (*imethod) (id, SEL);
+   unsigned int   (*uimethod)(id, SEL);
++  long		 (*lmethod) (id, SEL);
++  unsigned long	 (*ulmethod) (id, SEL);
+   long long      (*llmethod) (id, SEL);
+   unsigned long long (*ullmethod)(id, SEL);
+   short          (*smethod) (id, SEL);
+@@ -125,6 +127,8 @@ typedef union {
+   void (*ucmethod) (id, SEL, unsigned char);
+   void (*imethod)  (id, SEL, int);
+   void (*uimethod) (id, SEL, unsigned int);
++  void (*lmethod)  (id, SEL, long);
++  void (*ulmethod) (id, SEL, unsigned long);
+   void (*llmethod) (id, SEL, long long);
+   void (*ullmethod) (id, SEL, unsigned long long);
+   void (*smethod)  (id, SEL, short);
+@@ -156,6 +160,8 @@ typedef union {
+   const char     *cstr;
+   int            sint;
+   unsigned int   uint;
++  long           longt;
++  unsigned long  ulongt;
+   long long      llong;
+   unsigned long long ullong;
+   short          ss;
+@@ -559,6 +565,13 @@ static WOReturnValueHolder _getComponentValue(WOKeyPat
+             retValue.uint = info->access.uimethod(object, info->extra.sel.get);
+             break;
+ 
++          case _C_LNG:
++            retValue.longt = info->access.lmethod(object, info->extra.sel.get);
++            break;
++          case _C_ULNG:
++            retValue.ulongt = info->access.ulmethod(object, info->extra.sel.get);
++            break;
++
+           case _C_LNG_LNG:
+             retValue.llong = info->access.llmethod(object, info->extra.sel.get);
+             break;
+@@ -665,6 +678,12 @@ static inline id _objectify(unsigned char _type, WORet
+     case _C_UINT:
+       result = uintNumObj(_value->uint);
+       break;
++    case _C_LNG:
++      result = [NumberClass numberWithLong:_value->longt];
++      break;
++    case _C_ULNG:
++      result = [NumberClass numberWithUnsignedLong:_value->ulongt];
++      break;
+     case _C_LNG_LNG:
+       result = [NumberClass numberWithLongLong:_value->llong];
+       break;
+@@ -852,6 +871,13 @@ static BOOL _setValue(WOKeyPathAssociation *self, id _
+             sm.uimethod(object, setSel, [_value unsignedIntValue]);
+             break;
+ 
++          case _C_LNG:
++            sm.lmethod(object, setSel, [_value longValue]);
++            break;
++          case _C_ULNG:
++            sm.ulmethod(object, setSel, [_value unsignedLongValue]);
++            break;
++
+           case _C_LNG_LNG:
+             sm.llmethod(object, setSel, [_value longLongValue]);
+             break;
+@@ -1049,7 +1075,7 @@ static BOOL _setValue(WOKeyPathAssociation *self, id _
+             break;
+           }
+           case _C_UCHR: {
+-            if ((_value < 0) || (_value > 255))
++            if (_value > 255)
+               [self errorWithFormat:
+ 		      @"value (%i) out of range for uchar!", _value];
+             sm.ucmethod(_wo, setSel, (unsigned char)_value);
+@@ -1063,6 +1089,14 @@ static BOOL _setValue(WOKeyPathAssociation *self, id _
+             sm.uimethod(_wo, setSel, (unsigned int)_value);
+             break;
+           }
++          case _C_LNG: {
++            sm.lmethod(_wo, setSel, (long)_value);
++            break;
++          }
++          case _C_ULNG: {
++            sm.ulmethod(_wo, setSel, (unsigned long)_value);
++            break;
++          }
+           case _C_LNG_LNG: {
+             sm.llmethod(_wo, setSel, (long long)_value);
+             break;
+@@ -1187,6 +1221,14 @@ static BOOL _setValue(WOKeyPathAssociation *self, id _
+             sm.uimethod(_wo, setSel, (unsigned int)_value);
+             break;
+           }
++          case _C_LNG: {
++            sm.lmethod(_wo, setSel, (long)_value);
++            break;
++          }
++          case _C_ULNG: {
++            sm.ulmethod(_wo, setSel, (unsigned long)_value);
++            break;
++          }
+           case _C_LNG_LNG: {
+             sm.llmethod(_wo, setSel, (long long)_value);
+             break;
+@@ -1299,6 +1341,12 @@ static BOOL _setValue(WOKeyPathAssociation *self, id _
+             sm.uimethod(_wo, setSel, (unsigned int)_value);
+             break;
+           }
++          case _C_LNG:
++            sm.lmethod(_wo, setSel, (long)_value);
++            break;
++          case _C_ULNG:
++            sm.ulmethod(_wo, setSel, (unsigned long)_value);
++            break;
+           case _C_LNG_LNG:
+             sm.llmethod(_wo, setSel, (long long)_value);
+             break;
+@@ -1397,10 +1445,10 @@ static BOOL _setValue(WOKeyPathAssociation *self, id _
+       return [StringClass stringWithFormat:@"%d", retValue.sint];
+     case _C_ULNG_LNG:
+       if (IS_NUMSTR(retValue.ullong)) return numStrings[retValue.ullong];
+-      return [StringClass stringWithFormat:@"%ull", retValue.ullong];
++      return [StringClass stringWithFormat:@"%llu", retValue.ullong];
+     case _C_LNG_LNG:
+       if (IS_NUMSTR(retValue.llong)) return numStrings[retValue.llong];
+-      return [StringClass stringWithFormat:@"%ll", retValue.llong];
++      return [StringClass stringWithFormat:@"%lli", retValue.llong];
+     case _C_UCHR:
+       if (IS_UNUMSTR(retValue.c)) return numStrings[retValue.c];
+       return [StringClass stringWithFormat:@"%d", (int)retValue.c];
