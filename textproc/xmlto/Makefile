@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/16 08:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/07/22 17:19:04 ajacoutot Exp $
 
 COMMENT=	front-end for converting XML files to various formats
 
 DISTNAME=	xmlto-0.0.26
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://fedorahosted.org/xmlto/
 
@@ -19,11 +20,12 @@ RUN_DEPENDS=	misc/gnugetopt \
 		print/libpaper \
 		shells/bash \
 		textproc/docbook-xsl \
-		www/w3m
+		www/lynx
 
 BUILD_DEPENDS=	misc/gnugetopt
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--with-webbrowser=lynx
 
 # so that we do not need more BUILD_DEPENDS
 CONFIGURE_ENV=  BASH=${LOCALBASE}/bin/bash \
