@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/12 08:29:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2014/07/22 13:03:27 rpointel Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-# XXX: upstream's tagging mismatch
-DISTNAME =	minitube-1.2.6
-PKGNAME =	minitube-2.1.6
+DISTNAME =	minitube-2.2
 
 CATEGORIES =	www multimedia
 
