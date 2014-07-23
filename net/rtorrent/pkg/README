@@ -1,13 +1,10 @@
-$OpenBSD: README,v 1.3 2011/10/11 15:09:51 naddy Exp $
+$OpenBSD: README,v 1.4 2014/07/23 00:44:55 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Note that rTorrent has hash performance issues on BSD systems.  
-Please refer to these links for further information:
-
-* http://libtorrent.rakshasa.no/wiki/RTorrentPerformanceTuning
+Note that rTorrent has hash performance issues on BSD systems.
 
 An example configuration file has been installed in
 ${TRUEPREFIX}/share/examples/rtorrent.  It may serve as a starting point
