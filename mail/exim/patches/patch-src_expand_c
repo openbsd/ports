@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_expand_c,v 1.2 2014/05/28 14:23:27 sthen Exp $
---- src/expand.c.orig	Mon May 26 20:14:16 2014
-+++ src/expand.c	Wed May 28 14:54:48 2014
-@@ -884,8 +884,7 @@ vaguely_random_number(int max)
+$OpenBSD: patch-src_expand_c,v 1.3 2014/07/23 10:36:24 sthen Exp $
+--- src/expand.c.orig	Mon Jul 21 15:28:07 2014
++++ src/expand.c	Tue Jul 22 21:03:13 2014
+@@ -912,8 +912,7 @@ vaguely_random_number(int max)
  
  #ifdef HAVE_ARC4RANDOM
        /* cryptographically strong randomness, common on *BSD platforms, not
