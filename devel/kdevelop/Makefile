@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 11:30:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/07/23 10:50:43 zhuk Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
@@ -6,6 +6,7 @@ KDEV_V =	4.6.0
 KDEVPLAT_V =	1.6.0
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
+REVISION =	0
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
@@ -18,7 +19,7 @@ DIST_SUBDIR =	kde
 # GPLv2+, LGPLv2.1+, GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtHelp lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
