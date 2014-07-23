@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2014/07/18 12:36:29 jsg Exp $
+# $OpenBSD: Makefile,v 1.24 2014/07/23 09:50:22 sthen Exp $
 
 COMMENT =		C/C++ static checker
 
 DISTNAME =		cppcheck-1.65
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -10,14 +11,15 @@ HOMEPAGE =		http://cppcheck.sourceforge.net/
 
 MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m pcre
+WANTLIB =		c execinfo m pcre
 
 BUILD_DEPENDS =		textproc/docbook-xsl
 
-LIB_DEPENDS =		devel/pcre
+LIB_DEPENDS =		devel/pcre \
+			devel/libexecinfo
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
@@ -28,7 +30,7 @@ TEST_TARGET =		test
 MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build CFGDIR=${PREFIX}/share/cppcheck/cfg \
 			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -Ilib -I${PREFIX}/include" \
-			LDFLAGS="-L${PREFIX}/lib -lpcre"
+			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo"
 
 MODULES =		lang/python gcc4
 MODGCC4_LANGS =		c++
