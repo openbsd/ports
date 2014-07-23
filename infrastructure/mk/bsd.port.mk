@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1272 2014/07/14 08:21:00 zhuk Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1273 2014/07/23 10:19:08 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1514,8 +1514,8 @@ ${_v}_DEPENDS${_s} := ${${_v}_DEPENDS${_s}:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM
 .endfor
 
 
-_BUILDLIB_DEPENDS = ${LIB_DEPENDS}
-_BUILDWANTLIB = ${WANTLIB}
+_BUILDLIB_DEPENDS = 
+_BUILDWANTLIB = 
 # strip inter-multi-packages dependencies during building
 .for _path in ${PKGPATH:S,^mystuff/,,}
 .  for _s in ${BUILD_PACKAGES}
