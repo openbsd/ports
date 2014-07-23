@@ -1,12 +1,15 @@
-$OpenBSD: patch-extra_kipi-plugins_common_libkipiplugins_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+$OpenBSD: patch-extra_kipi-plugins_common_libkipiplugins_CMakeLists_txt,v 1.2 2014/07/23 10:17:40 zhuk Exp $
 Missing dependency, fails in parallel build.
 --- extra/kipi-plugins/common/libkipiplugins/CMakeLists.txt.orig	Thu Jun 26 03:56:54 2014
-+++ extra/kipi-plugins/common/libkipiplugins/CMakeLists.txt	Mon Jun 30 23:05:16 2014
-@@ -45,6 +45,8 @@ TARGET_LINK_LIBRARIES(kipiplugins
++++ extra/kipi-plugins/common/libkipiplugins/CMakeLists.txt	Wed Jul 23 13:56:07 2014
+@@ -45,6 +45,11 @@ TARGET_LINK_LIBRARIES(kipiplugins
                        ${KIPI_LIBRARIES}
                       )
  
-+ADD_DEPENDENCIES(kipiplugins digikam-gitversion)
++SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_SOURCE_DIR}/tools/kpversion.cpp
++                      PROPERTIES
++                      OBJECT_DEPENDS digikam-gitversion
++                     )
 +
  SET_TARGET_PROPERTIES(kipiplugins PROPERTIES VERSION ${KIPIPLUGINS_LIB_SO_VERSION_STRING} SOVERSION ${KIPIPLUGINS_LIB_SO_VERSION_STRING})
  
