@@ -1,0 +1,51 @@
+$OpenBSD: patch-t_basic_t,v 1.1 2014/07/23 20:06:13 naddy Exp $
+# CVE-2013-7329
+# https://github.com/markstos/CGI--Application/pull/15
+--- t/basic.t.orig	Fri Jun 17 03:05:14 2011
++++ t/basic.t	Thu Jun  5 12:35:32 2014
+@@ -1,6 +1,6 @@
+ 
+ use strict;
+-use Test::More tests => 110;
++use Test::More tests => 112;
+ 
+ BEGIN{use_ok('CGI::Application');}
+ 
+@@ -28,7 +28,7 @@ sub response_like {
+ }
+ 
+ # Instantiate CGI::Application
+-# run() CGI::Application object.	Expect header + output dump_html()
++# run() CGI::Application object.	Expect header + output no_runmodes()
+ {
+ 	my $app = CGI::Application->new();
+ 	isa_ok($app, 'CGI::Application');
+@@ -39,9 +39,27 @@ sub response_like {
+ 	response_like(
+ 		$app,
+ 		qr{^Content-Type: text/html},
+-		qr/Query Environment:/,
++		qr/Error - No runmodes specified./,
+ 		'base class response',
+ 	);
++}
++
++# Instantiate CGI::Application
++# run() CGI::Application sub-class.
++# Expect header + output dump_html()
++{
++
++	my $app = TestApp->new();
++	$app->query(CGI->new({'test_rm' => 'dump_htm'}));
++       
++	response_like(
++		$app,
++		qr{^Content-Type: text/html},
++		qr/Query Environment:/,
++		'dump_html class response'
++
++	);
++
+ }
+ 
+ # Instantiate CGI::Application sub-class.

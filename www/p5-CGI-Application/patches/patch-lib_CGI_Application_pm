@@ -1,0 +1,52 @@
+$OpenBSD: patch-lib_CGI_Application_pm,v 1.1 2014/07/23 20:06:13 naddy Exp $
+# CVE-2013-7329
+# https://github.com/markstos/CGI--Application/pull/15
+--- lib/CGI/Application.pm.orig	Fri Jun 17 03:05:14 2011
++++ lib/CGI/Application.pm	Thu Jun  5 12:29:53 2014
+@@ -359,6 +359,27 @@ sub dump_html {
+ }
+ 
+ 
++sub no_runmodes {
++
++       my $self   = shift;
++       my $query  = $self->query();
++       
++       # If no runmodes specified by app return error message 
++       my $current_runmode = $self->get_current_runmode();
++       my $query_params = $query->Dump;
++       
++       my $output = qq{
++               <h2>Error - No runmodes specified.</h2>
++               <p>Runmode called: $current_runmode"</p>
++               <p>Query paramaters:</p> $query_params
++               <p>Your application has not specified any runmodes.</p>
++               <p>Please read the <a href="http://search.cpan.org/~markstos/CGI-Appli
++               cation/">CGI::Application</a> documentation.</p>
++       };
++       return $output;
++}
++
++
+ sub header_add {
+ 	my $self = shift;
+ 	return $self->_header_props_update(\@_,add=>1);
+@@ -513,7 +534,7 @@ sub run_modes {
+ 	my (@data) = (@_);
+ 
+ 	# First use?  Create new __RUN_MODES!
+-    $self->{__RUN_MODES} = { 'start' => 'dump_html' } unless (exists($self->{__RUN_MODES}));
++    $self->{__RUN_MODES} = { 'start' => 'no_runmodes' } unless (exists($self->{__RUN_MODES}));
+ 
+ 	my $rr_m = $self->{__RUN_MODES};
+ 
+@@ -1653,7 +1674,8 @@ Useful for outputting to STDERR.
+ The dump_html() method is a debugging function which will return
+ a chunk of text which contains all the environment and web form
+ data of the request, formatted nicely for human readability via
+-a web browser.  Useful for outputting to a browser.
++a web browser.  Useful for outputting to a browser. Please consider
++the security implications of using this in production code.
+ 
+ =head3 error_mode()
+ 

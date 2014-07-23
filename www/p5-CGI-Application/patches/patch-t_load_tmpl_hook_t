@@ -1,0 +1,14 @@
+$OpenBSD: patch-t_load_tmpl_hook_t,v 1.1 2014/07/23 20:06:13 naddy Exp $
+# CVE-2013-7329
+# https://github.com/markstos/CGI--Application/pull/15
+--- t/load_tmpl_hook.t.orig	Fri Jun 17 03:05:14 2011
++++ t/load_tmpl_hook.t	Thu Jun  5 12:26:56 2014
+@@ -8,7 +8,7 @@ $ENV{CGI_APP_RETURN_ONLY} = 1;
+ my $app = CGI::Application->new();
+ my $out = $app->run;
+ 
+-like($out, qr/start/, "normal app output contains start");
++like($out, qr/Error - No runmodes specified/, "normal app output contains start");
+ unlike($out, qr/load_tmpl_hook/, "normal app output doesn't contain load_tmpl_hook");
+ 
+  {

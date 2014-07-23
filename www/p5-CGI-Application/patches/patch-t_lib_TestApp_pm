@@ -1,0 +1,13 @@
+$OpenBSD: patch-t_lib_TestApp_pm,v 1.1 2014/07/23 20:06:13 naddy Exp $
+# CVE-2013-7329
+# https://github.com/markstos/CGI--Application/pull/15
+--- t/lib/TestApp.pm.orig	Fri Jun 17 03:05:14 2011
++++ t/lib/TestApp.pm	Thu Jun  5 12:26:56 2014
+@@ -27,6 +27,7 @@ sub setup {
+  		'header_props_before_header_add'		=> \&header_props_before_header_add,
+  		'header_add_after_header_props'		=> \&header_add_after_header_props,
+ 
++    'dump_htm'    => 'dump_html',
+     'dump_txt'    => 'dump',
+ 		'eval_test'		=> 'eval_test',
+ 	);
