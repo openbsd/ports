@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/07/23 09:01:24 ajacoutot Exp $
 bin/pdfmod
 lib/pdfmod/
 lib/pdfmod/Hyena.Gui.dll
@@ -15,6 +15,8 @@ lib/pdfmod/poppler-sharp.dll
 lib/pdfmod/poppler-sharp.dll.config
 lib/pdfmod/poppler-sharp.dll.mdb
 share/applications/pdfmod.desktop
+share/gnome/
+share/gnome/help/
 share/gnome/help/pdfmod/
 share/gnome/help/pdfmod/C/
 share/gnome/help/pdfmod/C/pdfmod.xml
@@ -40,23 +42,11 @@ share/gnome/help/pdfmod/sv/
 share/gnome/help/pdfmod/sv/pdfmod.xml
 share/gnome/help/pdfmod/zh_CN/
 share/gnome/help/pdfmod/zh_CN/pdfmod.xml
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/pdfmod.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/pdfmod.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/pdfmod.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/pdfmod.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/pdfmod.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/pdfmod.svg
 share/locale/bn_IN/LC_MESSAGES/pdfmod.mo
 share/locale/ca/LC_MESSAGES/pdfmod.mo
