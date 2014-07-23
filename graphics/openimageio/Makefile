@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/04/02 09:56:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/23 08:38:51 pascal Exp $
 
 SHARED_ONLY =		Yes
 
@@ -42,7 +42,8 @@ LIB_DEPENDS =		devel/boost \
 			graphics/opencolorio
 
 CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages" \
-			-DNOTHREADS=ON
+			-DNOTHREADS=ON \
+			-DUSE_OPENCV=OFF
 
 CFLAGS +=		-pthread
 WRKDIST =		${WRKDIR}/oiio-Release-$V
