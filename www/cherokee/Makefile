@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2014/04/21 13:03:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2014/07/23 20:14:07 jca Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-streaming = cherokee-streaming-${VERSION}
 
 REVISION-main =		3
 REVISION-geoip =	2
-REVISION-ldap =		5
+REVISION-ldap =		6
 REVISION-mysql =	4
 REVISION-streaming =	3
 

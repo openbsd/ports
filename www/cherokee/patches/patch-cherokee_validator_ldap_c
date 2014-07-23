@@ -1,0 +1,14 @@
+$OpenBSD: patch-cherokee_validator_ldap_c,v 1.1 2014/07/23 20:14:07 jca Exp $
+Fix for CVE-2014-4668.
+--- cherokee/validator_ldap.c.orig	Tue Jul 22 12:40:31 2014
++++ cherokee/validator_ldap.c	Tue Jul 22 12:41:11 2014
+@@ -331,7 +331,8 @@ cherokee_validator_ldap_check (cherokee_validator_ldap
+ 	/* Sanity checks
+ 	 */
+ 	if ((conn->validator == NULL) ||
+-	    cherokee_buffer_is_empty (&conn->validator->user))
++	    cherokee_buffer_is_empty (&conn->validator->user) ||
++	    cherokee_buffer_is_empty (&conn->validator->passwd))
+ 		return ret_error;
+ 
+ 	size = cherokee_buffer_cnt_cspn (&conn->validator->user, 0, "*()");
