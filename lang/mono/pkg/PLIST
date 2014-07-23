@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/07/18 16:01:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/07/23 09:54:14 ajacoutot Exp $
 %%SHARED%%
 bin/al
 bin/al2
@@ -1781,7 +1781,9 @@ share/examples/mono/2.0/web.config
 share/examples/mono/4.0/
 @sample ${SYSCONFDIR}/mono/4.0/
 share/examples/mono/4.0/Browsers/
+@sample ${SYSCONFDIR}/mono/4.0/Browsers/
 share/examples/mono/4.0/Browsers/Compat.browser
+@sample ${SYSCONFDIR}/mono/4.0/Browsers/Compat.browser
 share/examples/mono/4.0/DefaultWsdlHelpGenerator.aspx
 @sample ${SYSCONFDIR}/mono/4.0/DefaultWsdlHelpGenerator.aspx
 share/examples/mono/4.0/machine.config
@@ -1791,12 +1793,19 @@ share/examples/mono/4.0/settings.map
 share/examples/mono/4.0/web.config
 @sample ${SYSCONFDIR}/mono/4.0/web.config
 share/examples/mono/4.5/
+@sample ${SYSCONFDIR}/mono/4.5/
 share/examples/mono/4.5/Browsers/
+@sample ${SYSCONFDIR}/mono/4.5/Browsers/
 share/examples/mono/4.5/Browsers/Compat.browser
+@sample ${SYSCONFDIR}/mono/4.5/Browsers/Compat.browser
 share/examples/mono/4.5/DefaultWsdlHelpGenerator.aspx
+@sample ${SYSCONFDIR}/mono/4.5/DefaultWsdlHelpGenerator.aspx
 share/examples/mono/4.5/machine.config
+@sample ${SYSCONFDIR}/mono/4.5/machine.config
 share/examples/mono/4.5/settings.map
+@sample ${SYSCONFDIR}/mono/4.5/settings.map
 share/examples/mono/4.5/web.config
+@sample ${SYSCONFDIR}/mono/4.5/web.config
 share/examples/mono/browscap.ini
 @sample ${SYSCONFDIR}/mono/browscap.ini
 share/examples/mono/config
