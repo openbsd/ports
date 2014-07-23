@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.84 2014/07/10 09:57:13 zhuk Exp $
+# $OpenBSD: portcheck,v 1.85 2014/07/23 22:11:20 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -512,7 +512,7 @@ check_port_dir() {
 	local multi_packages pkgpath_this pseudo_flavor pseudo_flavors
 	local shared_libs subst_cmd
 	local perm_pkg_cdrom perm_pkg_ftp perm_dist_ftp
-	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS FULLPKGNAME"
+	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS"
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVOR PSEUDO_FLAVORS"
 	local show_items="$show_items SHARED_LIBS SUBST_CMD"
@@ -526,7 +526,6 @@ check_port_dir() {
 	read -pr distfiles &&
 	read -pr flavor &&
 	read -pr flavors &&
-	read -pr fullpkgname &&
 	read -pr master_sites &&
 	read -pr multi_packages &&
 	read -pr pkgpath_this &&
@@ -571,7 +570,7 @@ check_port_dir() {
 	$existing_port || check_shlibs_versions "$dir" $shared_libs
 
 	for _s in $multi_packages; do
-		sub_checks "$dir" "$_s" "$fullpkgname" "${check_flavors[@]}"
+		sub_checks "$dir" "$_s" "${check_flavors[@]}"
 	done
 
 	pkgpath=${pkgpath:-"$pkgpath_this"}
@@ -660,7 +659,6 @@ sub_checks() {
 
 	local dir=$1; shift
 	local subpkg=$1; shift
-	local fullpkgname=$1; shift
 	local flavor
 	for flavor in "$@"; do
 		# avoid extra noise
@@ -674,14 +672,16 @@ sub_checks() {
 			export SUBPACKAGE="$subpkg" FLAVOR="$flavor"
 
 			local wantlib_var=WANTLIB${subpkg%-}
-			local vars="COMMENT$subpkg MODULES"
+			local vars="COMMENT$subpkg FULLPKGNAME$subpkg"
+			vars="$vars MODULES"
 			vars="$vars PKG_ARCH$subpkg $wantlib_var"
 			vars="$vars PERMIT_PACKAGE_CDROM${subpkg%-}"
 			vars="$vars PERMIT_PACKAGE_FTP${subpkg%-}"
 			make "${make_args[@]}" show="$vars" | {
-				local comment modules pkg_arch wantlib
-				local perm_pkg_cdrom perm_pkg_ftp
+				local comment fullpkgname modules pkg_arch
+				local wantlib perm_pkg_cdrom perm_pkg_ftp
 				read -r comment
+				read -r fullpkgname
 				read -r modules
 				read -r pkg_arch
 				read -r wantlib
