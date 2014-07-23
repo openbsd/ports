@@ -1,19 +1,22 @@
-$OpenBSD: patch-extra_libkface_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+$OpenBSD: patch-extra_libkface_CMakeLists_txt,v 1.2 2014/07/23 23:31:53 zhuk Exp $
 Avoid extra library dependencies.
+REVIEW: https://git.reviewboard.kde.org/r/119414/
 --- extra/libkface/CMakeLists.txt.orig	Thu Jun 26 03:57:02 2014
-+++ extra/libkface/CMakeLists.txt	Mon Jun 30 23:03:31 2014
-@@ -54,12 +54,12 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CUR
++++ extra/libkface/CMakeLists.txt	Sat Jul 19 21:41:23 2014
+@@ -53,13 +53,14 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CUR
+ # Therefore, first try finding OpenCV using FIND_PACKAGE(OpenCV), and if that fails,
  # add our FindOpenCV.cmake to the search path and search again.
  
++SET(OpenCV_LIBS)
  MESSAGE(STATUS "First try at finding OpenCV...")
 -FIND_PACKAGE(OpenCV)
-+FIND_PACKAGE(OpenCV COMPONENTS core contrib highgui)
++FIND_PACKAGE(OpenCV COMPONENTS core highgui objdetect contrib)
  
  IF (NOT OpenCV_LIBRARIES AND NOT OpenCV_LIBS)
    MESSAGE(STATUS "Could not find OpenCV normally, trying internal FindOpenCV.cmake")
    SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules_opencv)
 -  FIND_PACKAGE(OpenCV REQUIRED)
-+  FIND_PACKAGE(OpenCV REQUIRED COMPONENTS core contrib highgui)
++  FIND_PACKAGE(OpenCV REQUIRED COMPONENTS core highgui objdetect contrib)
  ELSE (NOT OpenCV_LIBRARIES AND NOT OpenCV_LIBS)
    MESSAGE(STATUS "Great, found OpenCV on the first try.")
  ENDIF (NOT OpenCV_LIBRARIES AND NOT OpenCV_LIBS)

@@ -1,13 +1,15 @@
-$OpenBSD: patch-extra_kipi-plugins_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+$OpenBSD: patch-extra_kipi-plugins_CMakeLists_txt,v 1.2 2014/07/23 23:31:53 zhuk Exp $
 Avoid extra library dependencies.
+REVIEW: https://git.reviewboard.kde.org/r/119413/
 --- extra/kipi-plugins/CMakeLists.txt.orig	Thu Jun 26 03:56:54 2014
-+++ extra/kipi-plugins/CMakeLists.txt	Mon Jun 30 23:06:11 2014
-@@ -170,7 +170,7 @@ MACRO_OPTIONAL_FIND_PACKAGE(BISON)                    
++++ extra/kipi-plugins/CMakeLists.txt	Sat Jul 19 21:20:33 2014
+@@ -170,7 +170,8 @@ MACRO_OPTIONAL_FIND_PACKAGE(BISON)                    
  MACRO_OPTIONAL_FIND_PACKAGE(KdepimLibs)                                  # For Calendar (libkcal).
  MACRO_OPTIONAL_FIND_PACKAGE(QCA2)                                        # For Shwup and YandexFotki.
  MACRO_OPTIONAL_FIND_PACKAGE(KSane)                                       # For AcquireImages.
 -MACRO_OPTIONAL_FIND_PACKAGE(OpenCV)                                      # For RemoveRedEyes.
-+MACRO_OPTIONAL_FIND_PACKAGE(OpenCV COMPONENTS core highgui legacy)       # For RemoveRedEyes.
++SET(OpenCV_LIBS)
++FIND_PACKAGE(OpenCV COMPONENTS core highgui objdetect)                   # For RemoveRedEyes.
  MACRO_OPTIONAL_FIND_PACKAGE(QJSON)                                       # For Debian Screenshots Facebook, GoogleDrive, Dropbox and Imgur.
  MACRO_OPTIONAL_FIND_PACKAGE(KGeoMap)                                     # For GPSSync.
  MACRO_OPTIONAL_FIND_PACKAGE(Mediawiki)                                   # For Mediawiki.

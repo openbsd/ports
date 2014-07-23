@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/18 04:40:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/07/23 23:31:53 zhuk Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -22,7 +22,9 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		0
+REVISION-main =		1
+REVISION-kipi =		0
+REVISION-face =		0
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -76,9 +78,7 @@ WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
 WANTLIB-kipi += ${KDE4LIB}/ksane
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
-WANTLIB-kipi += opencv_core opencv_highgui opencv_legacy
-WANTLIB-kipi += opencv_calib3d opencv_features2d opencv_flann
-WANTLIB-kipi += opencv_imgproc opencv_ml opencv_video
+WANTLIB-kipi += opencv_core opencv_highgui opencv_imgproc opencv_objdetect
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
 WANTLIB-kipi += gthread-2.0 jpeg
 WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca2 soprano
@@ -223,10 +223,6 @@ TEST_IS_INTERACTIVE =	X11
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
 .else
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=1"
-.endif
-
-.if ${ARCH} == "amd64"
-BUILD_DEPENDS += graphics/opencv,-java
 .endif
 
 post-extract:

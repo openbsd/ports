@@ -1,0 +1,13 @@
+$OpenBSD: patch-core_tests_imgqsort_detectnoise_CMakeLists_txt,v 1.1 2014/07/23 23:31:53 zhuk Exp $
+Avoid extra library dependencies.
+REVIEW: https://git.reviewboard.kde.org/r/119201/
+--- core/tests/imgqsort/detectnoise/CMakeLists.txt.orig	Sat Jul 19 16:50:13 2014
++++ core/tests/imgqsort/detectnoise/CMakeLists.txt	Sat Jul 19 16:50:40 2014
+@@ -1,5 +1,6 @@
+ cmake_minimum_required(VERSION 2.8)
+ project( DisplayImage )
+-find_package( OpenCV REQUIRED )
++set( OpenCV_LIBS )
++find_package( OpenCV REQUIRED COMPONENTS core imgproc )
+ add_executable( detectnoise detectnoise.cpp )
+ target_link_libraries( detectblur ${OpenCV_LIBS} )
