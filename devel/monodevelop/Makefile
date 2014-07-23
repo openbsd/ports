@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/18 13:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/07/23 10:30:44 ajacoutot Exp $
+
+BROKEN=		needs an update
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.4.2
