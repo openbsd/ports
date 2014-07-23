@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.85 2014/07/23 22:11:20 zhuk Exp $
+# $OpenBSD: portcheck,v 1.86 2014/07/23 22:12:41 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1345,7 +1345,7 @@ check_files_dir() {
 			[[ $F == *.core ]] &&
 				err_coredump_found "$F"
 		done
-		$empty && "there are no files, please remove the $1 directory"
+		$empty && err "there are no files, please remove the $1 directory"
 		! $error
 	} || error=true
 }
