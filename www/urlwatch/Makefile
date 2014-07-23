@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/18 14:11:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/23 13:27:09 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION= 1.16
+REVISION=	0
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
@@ -18,6 +19,7 @@ MODULES=	lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/py-html2text \
 		devel/py-futures \
+		www/lynx \
 		www/py-requests
 
 NO_TEST=	Yes
