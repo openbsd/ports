@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:46 espie Exp $
-bin/tcpcat
-share/doc/tcpcat/
-share/doc/tcpcat/README
