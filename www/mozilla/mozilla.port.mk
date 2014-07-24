@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.70 2014/06/14 12:50:40 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.71 2014/07/24 17:57:42 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -39,7 +39,7 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
 			devel/nspr>=4.10.6 \
-			security/nss>=3.16
+			security/nss>=3.16.2
 
 # bug #736961
 SEPARATE_BUILD =	Yes
@@ -121,6 +121,8 @@ MODMOZ_LIB_DEPENDS +=	x11/gtk+2
 MODMOZ_WANTLIB +=	Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
 			Xrandr gdk-x11-2.0 gtk-x11-2.0
 .endif
+
+PORTHOME =	${WRKSRC}
 
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
