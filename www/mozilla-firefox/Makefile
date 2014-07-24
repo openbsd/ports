@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2014/07/24 18:03:00 landry Exp $
+# $OpenBSD: Makefile,v 1.256 2014/07/24 18:31:03 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -11,7 +11,7 @@ MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
-SO_VERSION =	48.0
+SO_VERSION =	49.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
