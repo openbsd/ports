@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/24 08:47:54 edd Exp $
+
+# http://marc.info/?l=openbsd-ports&m=140587945502296&w=2
+BROKEN =		allocation error starting socket server
 
 COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
