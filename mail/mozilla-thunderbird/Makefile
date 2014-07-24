@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2014/07/24 18:24:03 landry Exp $
+# $OpenBSD: Makefile,v 1.192 2014/07/24 18:32:04 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -19,7 +19,7 @@ HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 
-SO_VERSION =	28.0
+SO_VERSION =	29.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
