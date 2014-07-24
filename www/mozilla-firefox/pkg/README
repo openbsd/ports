@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2013/02/07 18:54:27 landry Exp $
+$OpenBSD: README,v 1.9 2014/07/24 18:03:00 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -47,4 +47,4 @@ Bug reports without that information will be ignored.
 H.264 support
 =============
 Due to licensing reasons, you have to manually install the
-gstreamer-ffmpeg package to play H.264 videos.
+gstreamer1-plugins-libav package to play H.264 videos.

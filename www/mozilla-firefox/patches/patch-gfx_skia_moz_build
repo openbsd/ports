@@ -1,38 +1,20 @@
-$OpenBSD: patch-gfx_skia_moz_build,v 1.1 2014/06/26 13:40:59 sthen Exp $
---- gfx/skia/moz.build.orig	Thu Jun  5 19:15:24 2014
-+++ gfx/skia/moz.build	Mon Jun 23 02:47:22 2014
-@@ -767,7 +767,6 @@ if CONFIG['INTEL_ARCHITECTURE']:
-         'trunk/src/opts/opts_check_SSE2.cpp',
-         'trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp',
-         'trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp',
--        'trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp',
-         'trunk/src/opts/SkBlitRect_opts_SSE2.cpp',
-         'trunk/src/opts/SkBlitRow_opts_SSE2.cpp',
-         'trunk/src/opts/SkBlurImage_opts_SSE2.cpp',
-@@ -775,6 +774,10 @@ if CONFIG['INTEL_ARCHITECTURE']:
-         'trunk/src/opts/SkUtils_opts_SSE2.cpp',
-         'trunk/src/opts/SkXfermode_opts_none.cpp',
-     ]
-+    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
-+        SOURCES += [
-+            'trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp',
-+        ]
- elif CONFIG['CPU_ARCH'] == 'arm' and CONFIG['GNU_CC']:
-     SOURCES += [
-         'trunk/src/opts/SkBitmapProcState_opts_arm.cpp',
-@@ -857,12 +860,14 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
- if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
-     SOURCES['trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += ['-msse2']
-     SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += ['-msse2']
--    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
-     SOURCES['trunk/src/opts/SkBlitRect_opts_SSE2.cpp'].flags += ['-msse2']
-     SOURCES['trunk/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += ['-msse2']
-     SOURCES['trunk/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += ['-msse2']
-     SOURCES['trunk/src/opts/SkMorphology_opts_SSE2.cpp'].flags += ['-msse2']
-     SOURCES['trunk/src/opts/SkUtils_opts_SSE2.cpp'].flags += ['-msse2']
-+
-+    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
-+        SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+$OpenBSD: patch-gfx_skia_moz_build,v 1.2 2014/07/24 18:03:00 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
+--- gfx/skia/moz.build.orig	Tue Jul  8 01:18:37 2014
++++ gfx/skia/moz.build	Thu Jul 10 22:24:44 2014
+@@ -864,6 +864,7 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gtk2',
  
- DEFINES['SKIA_IMPLEMENTATION'] = 1
- DEFINES['GR_IMPLEMENTATION'] = 1
+ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
+     DEFINES['SK_BUILD_SSSE3'] = 1
++    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+ 
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gonk'):
+     DEFINES['SK_FONTHOST_CAIRO_STANDALONE'] = 0
+@@ -878,7 +879,6 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
+ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
+     SOURCES['trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+-    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+     SOURCES['trunk/src/opts/SkBlitRect_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']

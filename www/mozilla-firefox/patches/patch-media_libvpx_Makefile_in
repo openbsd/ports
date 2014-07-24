@@ -1,6 +1,8 @@
-$OpenBSD: patch-media_libvpx_Makefile_in,v 1.4 2014/06/14 13:03:31 landry Exp $
+$OpenBSD: patch-media_libvpx_Makefile_in,v 1.5 2014/07/24 18:03:00 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=982693
+https://hg.mozilla.org/integration/mozilla-inbound/rev/f1eae42835bb
+remove in 33
 
 --- media/libvpx/Makefile.in.orig	Mon May  5 23:55:51 2014
 +++ media/libvpx/Makefile.in	Thu May 15 18:58:08 2014

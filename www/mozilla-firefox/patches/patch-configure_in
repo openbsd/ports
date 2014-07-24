@@ -1,19 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.28 2014/06/14 13:03:31 landry Exp $
-https://bugzilla.mozilla.org/show_bug.cgi?id=991686
-fx31
-chunk2: webapprt gtk3 https://bugzilla.mozilla.org/show_bug.cgi?id=1012447
---- configure.in.orig	Thu May 15 23:21:18 2014
-+++ configure.in	Mon May 19 21:17:40 2014
-@@ -4866,7 +4866,7 @@ dnl ==================================================
- dnl = GNOME component (mozgnome)
- dnl ========================================================
- 
--if test "$MOZ_ENABLE_GTK2"
-+if test "$MOZ_ENABLE_GTK"
- then
-     MOZ_ENABLE_GNOME_COMPONENT=1
- fi
-@@ -6181,7 +6181,7 @@ MOZ_ARG_DISABLE_BOOL(webapp-runtime,
+$OpenBSD: patch-configure_in,v 1.29 2014/07/24 18:03:00 landry Exp $
+webapprt gtk3 https://bugzilla.mozilla.org/show_bug.cgi?id=1012447
+--- configure.in.orig	Thu Jul 17 03:45:08 2014
++++ configure.in	Mon Jul 21 20:44:51 2014
+@@ -6292,7 +6292,7 @@ MOZ_ARG_DISABLE_BOOL(webapp-runtime,
  [  --disable-webapp-runtime  Disable Web App Runtime],
      MOZ_WEBAPP_RUNTIME=,
      MOZ_WEBAPP_RUNTIME=1)
