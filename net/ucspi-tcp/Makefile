@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/12 19:00:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/07/24 17:21:49 zhuk Exp $
 
 COMMENT=	tools for building tcp socket client/servers
 
 DISTNAME=	ucspi-tcp-0.88
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html

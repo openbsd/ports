@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/06/12 19:00:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/07/24 17:21:49 zhuk Exp $
+@conflict freedt-<0.22p2
+@conflict tcpcat-*
 @bin bin/addcr
 @bin bin/argv0
 bin/date@
