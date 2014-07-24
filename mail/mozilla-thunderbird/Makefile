@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.190 2014/06/14 12:53:30 landry Exp $
+# $OpenBSD: Makefile,v 1.191 2014/07/24 18:24:03 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	24.6.0
-MOZILLA_BRANCH =	esr24
+MOZILLA_VERSION =	31.0
+MOZILLA_BRANCH =	esr31
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-2.6.5
-REVISION-lightning =	1
+PKGNAME-lightning =	lightning-3.3
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
@@ -41,11 +40,15 @@ MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha
+MODGCC4_ARCHS =		powerpc sparc64 alpha i386
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	i386 amd64
+MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
+# fix for 982693, apply only on clang archs
+.if ${MACHINE_ARCH:Mamd64}
+MAKE_ENV += VPXHACK="-fno-integrated-as"
+.endif
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
 
@@ -60,6 +63,8 @@ WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
+# relies on pulseaudio for sound and broken at runtime
+CONFIGURE_ARGS +=	--disable-webrtc
 
 # to be able to link when building with clang on i386
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
@@ -70,11 +75,17 @@ ALL_TARGET =	default
 
 MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
 
+GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
+
+# MOZCONFIG is mandatory now even if empty ?
+post-patch:
+	touch ${WRKSRC}/.mozconfig
+
 post-install:
 .for xpi guid in ${GUIDS}
 	${UNZIP} -oq ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}

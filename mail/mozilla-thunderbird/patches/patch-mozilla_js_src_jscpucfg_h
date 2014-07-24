@@ -1,10 +1,10 @@
-$OpenBSD: patch-mozilla_js_src_jscpucfg_h,v 1.4 2014/07/13 22:37:00 landry Exp $
+$OpenBSD: patch-mozilla_js_src_jscpucfg_h,v 1.5 2014/07/24 18:24:03 landry Exp $
 
 Deal with /usr/include/endian.h only providing BYTE_ORDER
 
---- mozilla/js/src/jscpucfg.h.orig	Tue Jun 10 09:47:29 2014
-+++ mozilla/js/src/jscpucfg.h	Sun Jul 13 20:04:16 2014
-@@ -43,16 +43,27 @@
+--- mozilla/js/src/jscpucfg.h.orig	Fri Jul 18 02:05:27 2014
++++ mozilla/js/src/jscpucfg.h	Mon Jul 21 23:10:33 2014
+@@ -39,16 +39,27 @@
  #elif defined(JS_HAVE_ENDIAN_H)
  # include <endian.h>
  

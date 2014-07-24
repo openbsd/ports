@@ -1,0 +1,15 @@
+$OpenBSD: patch-mozilla_media_libvpx_Makefile_in,v 1.1 2014/07/24 18:24:03 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=982693
+
+--- mozilla/media/libvpx/Makefile.in.orig	Fri May  9 12:32:34 2014
++++ mozilla/media/libvpx/Makefile.in	Sat May 10 00:06:53 2014
+@@ -75,7 +75,7 @@ vp8_asm_enc_offsets.s: CFLAGS := -DINLINE_ASM
+ 
+ vp8_asm_enc_offsets.s: $(srcdir)/vp8/encoder/vp8_asm_enc_offsets.c
+ 	$(REPORT_BUILD)
+-	$(CC) -S $(COMPILE_CFLAGS) $(TARGET_LOCAL_INCLUDES) $(_VPATH_SRCS)
++	$(CC) -S $(COMPILE_CFLAGS) $(TARGET_LOCAL_INCLUDES) $(_VPATH_SRCS) $(VPXHACK)
+ 
+ vp8_asm_enc_offsets.asm: vp8_asm_enc_offsets.s
+ 	grep $(OFFSET_PATTERN) $< | sed -e 's/[$$\#]//g' \

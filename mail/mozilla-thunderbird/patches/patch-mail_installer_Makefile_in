@@ -1,7 +1,7 @@
-$OpenBSD: patch-mail_installer_Makefile_in,v 1.6 2013/09/19 13:37:51 landry Exp $
+$OpenBSD: patch-mail_installer_Makefile_in,v 1.7 2014/07/24 18:24:03 landry Exp $
 Don't install the sdk (revert bug #639462)
---- mail/installer/Makefile.in.orig	Wed Aug 28 22:38:06 2013
-+++ mail/installer/Makefile.in	Thu Aug 29 22:34:01 2013
+--- mail/installer/Makefile.in.orig	Wed Mar  5 21:16:31 2014
++++ mail/installer/Makefile.in	Sat Mar  8 12:41:09 2014
 @@ -94,10 +94,6 @@ endif
  
  NON_OMNIJAR_FILES = defaults/messenger/mailViews.dat
@@ -10,6 +10,6 @@ Don't install the sdk (revert bug #639462)
 -INSTALL_SDK = 1
 -endif
 -
- GENERATE_CACHE=1
- 
  include $(MOZILLA_SRCDIR)/toolkit/mozapps/installer/signing.mk
+ include $(MOZILLA_SRCDIR)/toolkit/mozapps/installer/packager.mk
+ 
