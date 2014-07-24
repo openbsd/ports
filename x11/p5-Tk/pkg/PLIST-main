@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/06/14 23:26:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/07/24 16:02:43 zhuk Exp $
 @pkgpath x11/p5-Tk
 bin/gedi
 bin/ptked
@@ -681,8 +681,6 @@ ${P5ARCH}/auto/Tk/updateWidgets.al
 @man man/man3p/Tk::chooseColor.3p
 @man man/man3p/Tk::chooseDirectory.3p
 @man man/man3p/Tk::composite.3p
-@man man/man3p/Tk::demos::widget_lib::slide.3p
-@man man/man3p/Tk::demos::widget_lib::trace2.3p
 @man man/man3p/Tk::event.3p
 @man man/man3p/Tk::exit.3p
 @man man/man3p/Tk::fileevent.3p
