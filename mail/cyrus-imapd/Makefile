@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2014/06/19 08:38:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2014/07/24 17:53:17 jturner Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Cyrus IMAP server
 
 V=		2.4.17
 DISTNAME=	cyrus-imapd-${V}
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	mail
 
@@ -63,7 +63,7 @@ pre-patch:
 	cd ${WRKSRC} && ${PATCH} -s -z .drac -p1 < contrib/drac_auth.patch
 .endif
 
-MAN8=		fetchnews idled master imapd deliver
+MAN8=		fetchnews idled master imapd deliver pop3d
 SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
 		tools/masssievec tools/rehash tools/translatesieve \
 		tools/upgradesieve doc/text/install-upgrade

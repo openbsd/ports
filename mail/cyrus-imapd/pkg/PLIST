@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/06/16 15:08:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/07/24 17:53:17 jturner Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -149,6 +149,7 @@ libexec/cyrus-imapd/
 @man man/man8/cyrus-idled.8
 @man man/man8/cyrus-imapd.8
 @man man/man8/cyrus-master.8
+@man man/man8/cyrus-pop3d.8
 @man man/man8/fud.8
 @man man/man8/ipurge.8
 @man man/man8/lmtpd.8
@@ -156,7 +157,6 @@ libexec/cyrus-imapd/
 @man man/man8/mbpath.8
 @man man/man8/nntpd.8
 @man man/man8/notifyd.8
-@man man/man8/pop3d.8
 @man man/man8/quota.8
 @man man/man8/reconstruct.8
 @man man/man8/rmnews.8

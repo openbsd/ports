@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/06/17 19:30:43 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/07/24 17:53:17 jturner Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,6 +16,7 @@ packages:
     idled(8)     -> cyrus-idled(8)     # conflict with sysutils/idled
     master(8)    -> cyrus-master(8)    # conflict with mail/postfix
     imapd(8)     -> cyrus-imapd(8)     # conflict with mail/courier-imap
+    pop3d(8)     -> cyrus-pop3d(8)     # conflict with mail/pop3d
 
 cyrus-imapd uses the LOG_LOCAL6 syslog facility for logging. This
 package of cyrus-imapd uses idled for IMAP IDLE.
