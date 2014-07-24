@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.167 2014/07/23 20:35:15 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.168 2014/07/24 19:54:59 zhuk Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -360,6 +360,7 @@ my @msg = (
 	"web application with no benefit being packaged", #1
 	"no longer maintained and full of security holes", #2
 	"no longer maintained upstream", #3
+	"superseded by base component", #4
 );
 
 my $obsolete_reason = {
@@ -420,6 +421,7 @@ my $obsolete_reason = {
 	'bonk' => 3,
 	'xmms-bonk' => 3,
 	'mailcrypt' => 0,
+	'tcpcat' => 4,
 };
 
 # ->is_base_system($handle, $state):
