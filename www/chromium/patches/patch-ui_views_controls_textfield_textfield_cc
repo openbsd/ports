@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
---- ui/views/controls/textfield/textfield.cc.orig.port	Sat Jul 19 05:41:40 2014
-+++ ui/views/controls/textfield/textfield.cc	Sat Jul 19 05:50:16 2014
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.2 2014/07/24 08:37:40 robert Exp $
+--- ui/views/controls/textfield/textfield.cc.orig.port	Tue Jul 15 21:02:14 2014
++++ ui/views/controls/textfield/textfield.cc	Thu Jul 24 10:20:01 2014
 @@ -40,7 +40,7 @@
  #include "base/win/win_util.h"
  #endif
@@ -37,6 +37,15 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1 2014/07/20 17:22:
  // Convert a custom text edit |command| to the equivalent views command ID.
  int GetViewsCommand(const ui::TextEditCommandAuraLinux& command, bool rtl) {
    const bool select = command.extend_selection();
+@@ -534,7 +534,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+       OnAfterUserAction();
+     }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+     if (event.IsOnlyMiddleMouseButton()) {
+       if (GetRenderText()->IsPointInSelection(event.location())) {
+         OnBeforeUserAction();
 @@ -594,7 +594,7 @@ void Textfield::OnMouseReleased(const ui::MouseEvent& 
  bool Textfield::OnKeyPressed(const ui::KeyEvent& event) {
    bool handled = controller_ && controller_->HandleKeyEvent(this, event);
