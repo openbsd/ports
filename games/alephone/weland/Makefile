@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/24 13:59:37 landry Exp $
 
 COMMENT =		marathon / alephone map editor
+BROKEN =	because mono
 
 V =			211
 DISTNAME =		weland-r${V}-src
