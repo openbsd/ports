@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.23 2014/04/08 21:05:06 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.24 2014/07/24 09:03:58 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -104,11 +104,11 @@ zabbix/conf.import.php
 zabbix/conf/.htaccess
 zabbix/conf/maintenance.inc.php
 zabbix/conf/zabbix.conf.php.example
-@group www
 @mode 0640
+@group www
 @sample zabbix/conf/zabbix.conf.php
-@group
 @mode
+@group
 zabbix/dashboard.php
 zabbix/dashconf.php
 zabbix/disc_prototypes.php
@@ -479,6 +479,7 @@ zabbix/include/classes/tree/CTree.php
 zabbix/include/classes/validators/
 zabbix/include/classes/validators/CCollectionValidator.php
 zabbix/include/classes/validators/CColorValidator.php
+zabbix/include/classes/validators/CDecimalValidator.php
 zabbix/include/classes/validators/CIdValidator.php
 zabbix/include/classes/validators/CLdapAuthValidator.php
 zabbix/include/classes/validators/CPartialValidatorInterface.php
@@ -812,6 +813,10 @@ zabbix/locale/uk/LC_MESSAGES/
 zabbix/locale/uk/LC_MESSAGES/frontend.mo
 zabbix/locale/uk/LC_MESSAGES/frontend.po
 zabbix/locale/update_po.sh
+zabbix/locale/vi/
+zabbix/locale/vi/LC_MESSAGES/
+zabbix/locale/vi/LC_MESSAGES/frontend.mo
+zabbix/locale/vi/LC_MESSAGES/frontend.po
 zabbix/locale/zh_CN/
 zabbix/locale/zh_CN/LC_MESSAGES/
 zabbix/locale/zh_CN/LC_MESSAGES/frontend.mo
@@ -843,6 +848,7 @@ zabbix/report3.php
 zabbix/report4.php
 zabbix/report5.php
 zabbix/report6.php
+zabbix/robots.txt
 zabbix/screenconf.php
 zabbix/screenedit.php
 zabbix/screens.php
