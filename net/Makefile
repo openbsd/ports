@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.854 2014/07/14 15:51:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.855 2014/07/24 16:03:41 zhuk Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -572,7 +572,6 @@
      SUBDIR += tcl-snmptools
      SUBDIR += tclcurl
      SUBDIR += tcludp
-     SUBDIR += tcpcat
      SUBDIR += tcpdpriv
      SUBDIR += tcpflow
      SUBDIR += tcpreen
