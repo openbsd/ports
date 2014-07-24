@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/01/01 16:16:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/07/24 17:20:46 zhuk Exp $
 @bin bin/anonidentd
-@bin bin/argv0
+@bin bin/fargv0
 @bin bin/dumblog
 @bin bin/envdir
 @bin bin/envuidgid
 bin/mkservice
 @bin bin/ratelimit
-bin/recordio
 @bin bin/setlock
 @bin bin/setuidgid
 @bin bin/softlimit

@@ -14,3 +14,7 @@ Please note that this package is not a drop-in replacement for
 daemontools; the internal state files in service directories are
 different, and the error messages (and a few of the options) aren't
 quite the same.
+
+The recordio script (simple "ratelimit -r" wrapper) was removed
+to avoid conflict with net/ucspi-tcp. For the same reason the argv0
+was renamed to fargv0.
