@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2014/06/14 12:52:04 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2014/07/24 18:09:57 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	24.6.0esr
-MOZILLA_BRANCH =	esr24
+MOZILLA_VERSION =	31.0esr
+MOZILLA_BRANCH =	esr31
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =	0
 
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	0.0
+SO_VERSION =	1.0
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
 
 CATEGORIES =	www
@@ -28,6 +27,10 @@ MODGCC4_ARCHS =		powerpc sparc64 alpha i386
 MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
+# fix for 982693
+.if ${MACHINE_ARCH:Mamd64}
+MAKE_ENV += VPXHACK="-fno-integrated-as"
+.endif
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -42,7 +45,10 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=firefox-esr
 
-CONFIGURE_ARGS +=	--enable-gstreamer
+# relies on pulseaudio for sound and broken at runtime
+CONFIGURE_ARGS +=	--disable-webrtc
+
+CONFIGURE_ARGS +=	--enable-gstreamer=1.0
 
 # libxul doesnt link directly with gst but dlopens it at runtime
 # see content/media/gstreamer/GStreamerLoader.cpp
@@ -50,8 +56,8 @@ CONFIGURE_ARGS +=	--enable-gstreamer
 #WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
 #WANTLIB += gstvideo-0.10 xml2
 
-BUILD_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg
+BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 # needs 3.0.10 when not using gcc
 # CONFIGURE_ARGS += --with-system-ffi

@@ -1,7 +1,7 @@
-$OpenBSD: patch-js_src_jscpucfg_h,v 1.1 2014/07/13 22:37:00 landry Exp $
---- js/src/jscpucfg.h.orig	Tue Jun 10 03:24:15 2014
-+++ js/src/jscpucfg.h	Sun Jul 13 20:01:26 2014
-@@ -43,16 +43,27 @@
+$OpenBSD: patch-js_src_jscpucfg_h,v 1.2 2014/07/24 18:09:57 landry Exp $
+--- js/src/jscpucfg.h.orig	Thu Jul 17 22:36:35 2014
++++ js/src/jscpucfg.h	Wed Jul 23 21:21:55 2014
+@@ -39,16 +39,27 @@
  #elif defined(JS_HAVE_ENDIAN_H)
  # include <endian.h>
  
