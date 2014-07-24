@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.6 2014/06/12 19:00:31 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2014/07/24 18:18:33 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 PKG_ARCH =	*
 
-FV =		24.6.0
+FV =		31.0
 V =		${FV:C/b.$//}
 NAME =		firefox-esr-i18n
 
@@ -22,12 +22,12 @@ MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}esr
 		http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FV}esr/linux-i686/xpi/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}esr/linux-i686/xpi/
 
-LANGUAGES =	ach af ak ar ast be bg bn-BD bn-IN br bs ca cs csb cy da de el en-GB en-US en-ZA eo \
+LANGUAGES =	ach ar ast be bg bn-BD bn-IN br bs ca cs csb cy da de el en-GB en-US en-ZA eo \
 		es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gu-IN he \
 		hi-IN hr hu hy-AM id \
-		is it ja kk km kn ko ku lg lij lt lv mai mk ml mr nb-NO nl nn-NO nso \
+		is it ja kk km kn ko ku lij lt lv mai mk ml mr nb-NO nl nn-NO \
 		or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE \
-		ta-LK ta te th tr uk vi zh-CN zh-TW zu
+		ta te th tr uk vi zh-CN zh-TW zu
 
 BUILD_DEPENDS =	archivers/unzip
 RUN_DEPENDS =	firefox-esr-${FV:S/b/beta/}:www/firefox-esr
