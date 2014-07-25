@@ -30,6 +30,21 @@ package PortHandler;
 use strict;
 use warnings;
 
+# Here is a list of variables that REVISION's are usually placed
+# near to. Update if you see the "can't find a suitable place for
+# REVISION mark" message
+
+my @_REV_NEIGHBORS = qw(
+	DISTNAME
+	GNOME_PROJECT
+	FULLPKGNAME
+	PKGNAME
+	REVISION
+	V
+	VERSION
+);
+my $_rev_neighbors_plain = join('|', @_REV_NEIGHBORS);
+
 sub new {
 	my ($class, $dir) = (shift, shift);
 	my $self = { dir => $dir, shlibs => {}, verbose => 0 };
@@ -173,7 +188,7 @@ sub parse_for_revisions {
 			$self->{has_global_rev} = 1;
 		}
 
-		if (/^ *(V|DISTNAME|(?:FULL)?PKGNAME|REVISION)(-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/) {
+		if (/^ *(${_rev_neighbors_plain})(-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/o) {
 			my $var = $1;
 			my $subpkg = $2 // "";
 			$self->{newrevplace}->{$subpkg} //= {};
