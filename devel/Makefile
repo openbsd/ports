@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1237 2014/07/15 18:12:27 giovanni Exp $
+# $OpenBSD: Makefile,v 1.1238 2014/07/25 09:16:01 zhuk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -973,7 +973,6 @@
      SUBDIR += p5-TAP-Harness-Archive
      SUBDIR += p5-TAP-Harness-JUnit
      SUBDIR += p5-TAP-Harness-Multiple
-     SUBDIR += p5-TAP-Parser
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
      SUBDIR += p5-Term-Encoding
