@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2014/07/25 13:36:55 jsing Exp $
+# $OpenBSD: Makefile,v 1.20 2014/07/25 14:39:41 jsing Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
 VERSION =		1.3
+REVISION =		0
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
