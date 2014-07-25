@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/25 13:21:20 jsing Exp $
+# $OpenBSD: Makefile,v 1.19 2014/07/25 13:36:55 jsing Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
-VERSION =		1.2.1
+VERSION =		1.3
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m pthread
 
-MASTER_SITES =		https://go.googlecode.com/files/
+MASTER_SITES =		http://golang.org/dl/
 
 BUILD_DEPENDS =		shells/bash
 
