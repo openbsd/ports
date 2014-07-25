@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2014/07/21 07:35:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2014/07/25 12:12:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,7 +13,7 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		x11 devel
 

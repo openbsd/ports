@@ -1,6 +1,9 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.24 2014/05/12 16:09:57 ajacoutot Exp $
+$OpenBSD: patch-gtk_Makefile_in,v 1.25 2014/07/25 12:12:54 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=733731 (chunk 2)
+
 --- gtk/Makefile.in.orig	Mon May 12 14:54:24 2014
-+++ gtk/Makefile.in	Mon May 12 17:55:24 2014
++++ gtk/Makefile.in	Fri Jul 25 13:45:23 2014
 @@ -1040,11 +1040,11 @@ INTROSPECTION_COMPILER_ARGS = \
  SUBDIRS = a11y native .
  @HAVE_CLOUDPRINT_FALSE@@HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
@@ -15,3 +18,11 @@ $OpenBSD: patch-gtk_Makefile_in,v 1.24 2014/05/12 16:09:57 ajacoutot Exp $
  @HAVE_CLOUDPRINT_TRUE@@HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups,cloudprint
  AM_CPPFLAGS = \
  	-DG_LOG_DOMAIN=\"Gtk\"				\
+@@ -6209,6 +6209,7 @@ gtkbuiltincache.h: stamp-icons
+ @CROSS_COMPILING_TRUE@@USE_EXTERNAL_ICON_CACHE_FALSE@	$(AM_V_at) $(MAKE) $(AM_MAKEFLAGS) -C native/
+ @CROSS_COMPILING_FALSE@@USE_EXTERNAL_ICON_CACHE_FALSE@	$(AM_V_at) $(MAKE) $(AM_MAKEFLAGS) gtk-update-icon-cache$(EXEEXT)
+ 	$(AM_V_GEN) $(gtk_update_icon_cache_program) --quiet --force --ignore-theme-index		\
++	   --include-image-data	\
+ 	   --source builtin_icons stock-icons > gtkbuiltincache.h.tmp &&        \
+ 	mv gtkbuiltincache.h.tmp gtkbuiltincache.h
+ 
