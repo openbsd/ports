@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/07/09 14:31:10 robert Exp $
+# $OpenBSD: Makefile,v 1.57 2014/07/25 20:24:51 naddy Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -39,9 +39,7 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
-
-AUTOCONF_VERSION= 2.68
-CONFIGURE_STYLE= autoconf no-autoheader
+CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-libatomic-ops=no \
@@ -52,8 +50,10 @@ pre-configure:
 	@perl -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/doc/gc.man
 	@mv ${WRKDIR}/libatomic_ops-${LIBAO_VERSION} ${WRKBUILD}/libatomic_ops
 
-# clean distributed objects and libs and rebuild
 pre-build:
+# no rule to get .lo from .S in subdirectory
+	@ln -s src/sparc_mach_dep.S ${WRKSRC}
+# clean distributed objects and libs and rebuild
 	@cd ${WRKBUILD}/libatomic_ops && ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} clean all
 
