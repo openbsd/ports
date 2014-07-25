@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/23 23:31:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/07/25 15:05:32 zhuk Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -223,6 +223,11 @@ TEST_IS_INTERACTIVE =	X11
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
 .else
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=1"
+.endif
+
+# XXX should fix OpenCV CMake config on Java-enabled archs instead!
+.if ${ARCH} == "amd64"
+BUILD_DEPENDS +=        graphics/opencv,-java
 .endif
 
 post-extract:
