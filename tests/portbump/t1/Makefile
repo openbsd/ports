@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2014/07/12 19:37:29 zhuk Exp $
+# no RCS Id here, please
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 

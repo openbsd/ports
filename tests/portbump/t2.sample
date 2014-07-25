@@ -1,4 +1,4 @@
-# $OpenBSD: t2.sample,v 1.1 2014/07/12 19:37:29 zhuk Exp $
+# no RCS Id here, please
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
