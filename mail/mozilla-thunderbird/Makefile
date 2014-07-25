@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2014/07/24 18:32:04 landry Exp $
+# $OpenBSD: Makefile,v 1.193 2014/07/25 17:26:18 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -14,6 +14,7 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-3.3
 EPOCH-lightning =	0
+REVISION-main =		0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
@@ -65,6 +66,9 @@ WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 CONFIGURE_ARGS +=	--enable-calendar
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
+
+CONFIGURE_ARGS +=	--enable-gstreamer=1.0
+BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
 
 # to be able to link when building with clang on i386
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
