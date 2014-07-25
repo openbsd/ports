@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/26 22:11:43 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/07/25 09:17:16 zhuk Exp $
+@conflict p5-TAP-Parser-*
+@pkgpath devel/p5-TAP-Parser
 bin/prove
 ${P5SITE}/App/
 ${P5SITE}/App/Prove/
