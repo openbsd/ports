@@ -150,8 +150,10 @@ sub _add_new_revs {
 
 	my $nchanges = 0;
 	for my $subpkg(sort keys %{$bumppkgs}) {
+		# if no place found, error will be reported by update()
 		if ($self->{maxrevsin}->{count} > 1 or
-		    $lineno == $self->{newrevplace}->{$subpkg}->{blockend}) {
+		    (defined $self->{newrevplace}->{$subpkg}->{blockend} and
+		     $lineno == $self->{newrevplace}->{$subpkg}->{blockend})) {
 			my $line = $self->_adj_whitespace(
 			    "REVISION" . $subpkg,
 			    "0",
@@ -285,6 +287,14 @@ sub update {
 
 		print $out "$_\n";
 	}
+
+	for my $subpkg(sort keys %{$bumppkgs}) {
+		next if defined $self->{newrevplace}->{$subpkg}->{blockend};
+		print STDERR "can't find a suitable place for ".
+		             "REVISION${subpkg} mark in ".$self->{dir}."\n";
+		exit 2;
+	}
+
 	return $nchanges;
 }
 
