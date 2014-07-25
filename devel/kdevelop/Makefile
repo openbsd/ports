@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/23 10:50:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/07/25 17:45:58 zhuk Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
@@ -52,6 +52,11 @@ RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kate \
 
 LIB_DEPENDS = 	devel/kdevplatform>=${KDEVPLAT_V} \
 		x11/kde4/okteta>=${MODKDE4_DEP_VERSION}
+
+# XXX because OBJECT_DEPENDS doesn't work as it should in
+# the patch-languages_cpp_CMakeLists_txt
+pre-build:
+	@${MODCMAKE_BUILD_TARGET:S,^${ALL_TARGET}$,languages/cpp/ui_custom_include_paths.h,}
 
 # XXX Should those go under ${PREFIX}/lib/?
 post-install:

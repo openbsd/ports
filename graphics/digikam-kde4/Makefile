@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/25 15:05:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/07/25 17:45:58 zhuk Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -233,6 +233,11 @@ BUILD_DEPENDS +=        graphics/opencv,-java
 post-extract:
 	# use our Kexiv2Config.cmake instead
 	rm ${WRKSRC}/cmake/modules/FindKexiv2.cmake
+
+# XXX because OBJECT_DEPENDS doesn't work as it should in
+# the patches/patch-extra_kipi-plugins_common_libkipiplugins_CMakeLists_txt
+pre-build:
+	@${MODCMAKE_BUILD_TARGET:S,^${ALL_TARGET}$,kipiplugins-gitversion,}
 
 post-install:
 	# these are installed by kde-l10n-* packages
