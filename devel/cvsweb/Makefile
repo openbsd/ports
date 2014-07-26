@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2013/11/13 19:53:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2014/07/26 19:38:03 naddy Exp $
 
 COMMENT=	CGI script to browse CVS repository trees
 
 DISTNAME=	cvsweb-2.0.6
-REVISION=	17
+REVISION=	18
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.freebsd.org/projects/cvsweb.html
 
@@ -20,8 +20,6 @@ PKG_ARCH=	*
 PREFIX=		${VARBASE}/www
 CONFDIR=	${PREFIX}/conf
 
-CONFFILES=	cvsweb.conf cvsweb.conf-freebsd cvsweb.conf-netbsd \
-		cvsweb.conf-openbsd cvsweb.conf-ruby
 ICONS=		back.gif dir.gif text.gif \
 		miniback.gif minidir.gif minitext.gif
 
@@ -34,9 +32,7 @@ do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsweb.cgi ${PREFIX}/cgi-bin/cvsweb
 	${INSTALL_DATA_DIR} ${CONFDIR}/cvsweb
-.for file in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${CONFDIR}/cvsweb/${file}.dist
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/cvsweb.conf ${CONFDIR}/cvsweb/cvsweb.conf.dist
 	${INSTALL_DATA_DIR} ${PREFIX}/htdocs/cvsweb/icons
 .for file in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/icons/${file} ${PREFIX}/htdocs/cvsweb/icons/

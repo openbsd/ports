@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/10/29 16:30:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/07/26 19:38:03 naddy Exp $
 cgi-bin/cvsweb
 conf/cvsweb/
-conf/cvsweb/cvsweb.conf-freebsd.dist
-conf/cvsweb/cvsweb.conf-netbsd.dist
-conf/cvsweb/cvsweb.conf-openbsd.dist
-conf/cvsweb/cvsweb.conf-ruby.dist
 conf/cvsweb/cvsweb.conf.dist
 @sample ${CONFDIR}/cvsweb/cvsweb.conf
 htdocs/cvsweb/

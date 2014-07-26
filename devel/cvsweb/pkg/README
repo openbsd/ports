@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.8 2013/11/13 19:53:08 naddy Exp $
+# $OpenBSD: README,v 1.9 2014/07/26 19:38:03 naddy Exp $
 # 
 # +-----------------------------------------------------------------------
 # | Running ${FULLPKGNAME} on OpenBSD
@@ -22,7 +22,7 @@ cd /var/www/usr
 mkdir -p bin lib libdata/perl5 libexec
 
 cd /var/www/usr/libdata/perl5
-mkdir -p File IPC Time warnings `arch -s`-openbsd/5.16.3/auto/Fcntl unicore
+mkdir -p File IPC Time warnings `arch -s`-openbsd/5.18.2/auto/Fcntl unicore
 
 # The "annotate" function requires this empty file:
 #
@@ -64,12 +64,12 @@ cp -p /usr/libdata/perl5/Time/Local.pm ./Time/
 cp -p /usr/libdata/perl5/warnings/register.pm ./warnings/
 cp -p /usr/libdata/perl5/XSLoader.pm .
 
-cd /var/www/usr/libdata/perl5/`arch -s`-openbsd/5.16.3
-cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/{Config,Cwd}.pm .
-cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/Config_{git,heavy}.pl .
-cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/DynaLoader.pm .
-cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/Fcntl.pm .
-cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.16.3/auto/Fcntl/Fcntl.{bs,so} \
+cd /var/www/usr/libdata/perl5/`arch -s`-openbsd/5.18.2
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.18.2/{Config,Cwd}.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.18.2/Config_{git,heavy}.pl .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.18.2/DynaLoader.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.18.2/Fcntl.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/5.18.2/auto/Fcntl/Fcntl.{bs,so} \
     ./auto/Fcntl/
 
 # Editing cvsweb and cvsweb.conf

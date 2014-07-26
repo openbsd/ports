@@ -1,16 +1,17 @@
-$OpenBSD: patch-cvsweb_conf,v 1.12 2013/10/29 16:30:16 naddy Exp $
+$OpenBSD: patch-cvsweb_conf,v 1.13 2014/07/26 19:38:03 naddy Exp $
 --- cvsweb.conf.orig	Mon Sep 23 07:30:17 2002
-+++ cvsweb.conf	Mon Oct 28 23:27:17 2013
-@@ -82,7 +82,7 @@ $cvstreedefault = $CVSrepositories[2 * 0];    # The fi
++++ cvsweb.conf	Sat Jul 26 03:08:50 2014
+@@ -81,8 +81,7 @@ $cvstreedefault = $CVSrepositories[2 * 0];    # The fi
+ ##############
  # Manual gateway
  ##############
- $mancgi =
+-$mancgi =
 -    "http://www.FreeBSD.org/cgi/man.cgi?apropos=0&sektion=%s&query=%s&manpath=FreeBSD+5.0-current&format=html";
-+    "http://www.OpenBSD.org/cgi-bin/man.cgi?apropos=0&sektion=%s&query=%s&manpath=OpenBSD+Current&arch=i386&format=html";
++$mancgi = "http://www.openbsd.org/cgi-bin/man.cgi?&sec=%s&query=%s";
  
  ##############
  # Defaults for UserSettings
-@@ -115,7 +115,6 @@ $mancgi =
+@@ -115,7 +114,6 @@ $mancgi =
  	#   h      Human readable
  	#   u      Unified diff
  	#   c      Context diff
@@ -18,7 +19,7 @@ $OpenBSD: patch-cvsweb_conf,v 1.12 2013/10/29 16:30:16 naddy Exp $
  	"f" => "u",
  
  	# hidecvsroot: Don't show the CVSROOT directory
-@@ -200,7 +199,7 @@ EOT
+@@ -200,7 +198,7 @@ EOT
  # These default icons are coming with apache.
  # If these icons are too large, check out the miniicons in the
  # icons/ directory; they have a width/height of 16/16
@@ -27,7 +28,7 @@ $OpenBSD: patch-cvsweb_conf,v 1.12 2013/10/29 16:30:16 naddy Exp $
  
  # format:             TEXT      ICON-URL              width height
  %ICONS = (
-@@ -290,19 +289,6 @@ $use_descriptions = 0;
+@@ -290,19 +288,6 @@ $use_descriptions = 0;
  # exceed the width of the browser
  $hr_breakable = 1;
  
@@ -47,7 +48,7 @@ $OpenBSD: patch-cvsweb_conf,v 1.12 2013/10/29 16:30:16 naddy Exp $
  # ignore whitespaces for human readable diffs
  # (indendation and stuff ..)
  # ( '-w' option to diff)
-@@ -335,7 +321,7 @@ $inputTextSize = 12;
+@@ -335,7 +320,7 @@ $inputTextSize = 12;
  # cvsweb to guess the correct mime-type on
  # checkout; you can use the mime.types from
  # apache here:
