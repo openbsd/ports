@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/27 17:04:23 rpointel Exp $
-@conflict py-distribute-*
+@comment $OpenBSD: PLIST,v 1.9 2014/07/26 11:26:46 zhuk Exp $
+%%python3%%
+!%%python3%%
 @comment bin/easy_install
 bin/easy_install-${MODPY_VERSION}
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
