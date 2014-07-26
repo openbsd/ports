@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_llvm_Config_config_h_cmake,v 1.1 2014/07/26 09:27:29 pascal Exp $
+
+r213966
+Fix arc4random detection.
+
+--- include/llvm/Config/config.h.cmake.orig	Wed Jul  9 15:45:23 2014
++++ include/llvm/Config/config.h.cmake	Wed Jul  9 15:59:51 2014
+@@ -34,7 +34,7 @@
+ #undef GCC_INSTALL_PREFIX
+ 
+ /* Define to 1 if you have the `arc4random' function. */
+-#cmakedefine HAVE_ARC4RANDOM
++#cmakedefine HAVE_DECL_ARC4RANDOM ${HAVE_DECL_ARC4RANDOM}
+ 
+ /* Define to 1 if you have the `backtrace' function. */
+ #cmakedefine HAVE_BACKTRACE ${HAVE_BACKTRACE}
