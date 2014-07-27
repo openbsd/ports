@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: httpd2.rc,v 1.1 2012/07/18 08:45:42 sthen Exp $
+# $OpenBSD: apache2.rc,v 1.1 2014/07/27 10:51:37 kili Exp $
 
 daemon="${TRUEPREFIX}/sbin/httpd2"
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/04/09 22:11:32 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/07/27 10:51:37 kili Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -1554,4 +1554,4 @@ share/examples/apache2/icons/world2.png
 share/examples/apache2/logs/
 @sample /var/apache2/logs/
 %%ldap%%
-@rcscript ${RCDIR}/httpd2
+@rcscript ${RCDIR}/apache2

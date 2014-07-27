@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/13 17:28:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/07/27 10:51:37 kili Exp $
 %%SHARED%%
 bin/dbmmanage
 @bin bin/htdigest
@@ -248,7 +248,7 @@ share/doc/apache-httpd-openbsd/vhosts/mass.html
 share/doc/apache-httpd-openbsd/vhosts/name-based.html
 share/doc/apache-httpd-openbsd/vhosts/vhosts-in-depth.html
 share/doc/apache-httpd-openbsd/vhosts/virtual-host.html
-@rcscript ${RCDIR}/httpd
+@rcscript ${RCDIR}/apache
 @cwd /var/www
 cgi-bin/
 @mode 000
