@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/07/28 09:49:44 ajacoutot Exp $
 @bin heimdal/bin/gsstool
 @bin heimdal/bin/hxtool
 @bin heimdal/bin/idn-lookup
@@ -39,11 +39,7 @@ heimdal/sbin/
 @man man/man1/klist.1
 @man man/man1/kpasswd.1
 @man man/man1/kswitch.1
-@man man/man1/kx.1
 @man man/man1/pagsh.1
-@man man/man1/rxterm.1
-@man man/man1/tenletxr.1
-@man man/man1/xnlock.1
 @man man/man5/krb5.conf.5
 @man man/man5/mech.5
 @man man/man5/qop.5
@@ -64,7 +60,6 @@ heimdal/sbin/
 @man man/man8/kpasswdd.8
 @man man/man8/kstash.8
 @man man/man8/ktutil.8
-@man man/man8/kxd.8
 @man man/man8/string2key.8
 @man man/man8/verify_krb5_conf.8
 @mode 0700

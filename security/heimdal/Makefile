@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/13 14:10:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/07/28 09:49:44 ajacoutot Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -104,32 +104,25 @@ RM_BIN=			bin/afslog \
 			bin/ftp \
 			bin/login \
 			bin/pfrom \
-			bin/rcp \
-			bin/rsh \
 			bin/su \
-			bin/telnet \
 			libexec/ftpd \
-			libexec/popper \
-			libexec/push \
-			libexec/rshd \
-			libexec/telnetd
+			libexec/push
 
-RM_MAN=			man/man1/afslog.1 \
-			man/man1/ftp.1 \
-			man/man1/login.1 \
-			man/man1/pfrom.1 \
-			man/man1/rcp.1 \
-			man/man1/rsh.1 \
-			man/man1/su.1 \
-			man/man1/rxtelnet.1 \
-			man/man1/telnet.1 \
-			man/man5/ftpusers.5 \
-			man/man5/login.access.5 \
-			man/man8/ftpd.8 \
-			man/man8/popper.8 \
-			man/man8/push.8 \
-			man/man8/rshd.8 \
-			man/man8/telnetd.8
+RM_MAN=			man1/afslog.1 \
+			man1/ftp.1 \
+			man1/kx.1 \
+			man1/login.1 \
+			man1/pfrom.1 \
+			man1/rxterm.1 \
+			man1/su.1 \
+			man1/rxtelnet.1 \
+			man1/tenletxr.1 \
+			man1/xnlock.1 \
+			man5/ftpusers.5 \
+			man5/login.access.5 \
+			man8/ftpd.8 \
+			man8/kxd.8 \
+			man8/push.8
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/heimdal
@@ -143,7 +136,7 @@ post-install:
 	rm ${PREFIX}/heimdal/$i
 .endfor
 .for i in ${RM_MAN}
-	rm ${PREFIX}/$i
+	rm ${PREFIX}/man/$i
 .endfor
 
 .include <bsd.port.mk>

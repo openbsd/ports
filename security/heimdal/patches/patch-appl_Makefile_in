@@ -1,0 +1,20 @@
+$OpenBSD: patch-appl_Makefile_in,v 1.1 2014/07/28 09:49:44 ajacoutot Exp $
+
+http://repo.or.cz/w/heimdal.git/commitdiff/e55b0d0ca5038a8101276a593ffbb6be4c27c8d0
+
+--- appl/Makefile.in.orig	Mon Jul 28 10:18:54 2014
++++ appl/Makefile.in	Mon Jul 28 10:20:19 2014
+@@ -391,13 +391,9 @@ SUBDIRS = \
+ 	  login					\
+ 	  $(dir_otp)				\
+ 	  gssmask				\
+-	  popper				\
+ 	  push					\
+-	  rsh					\
+-	  rcp					\
+ 	  su					\
+ 	  xnlock				\
+-	  telnet				\
+ 	  test					\
+ 	  kx					\
+ 	  kf					\
