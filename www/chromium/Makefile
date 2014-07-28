@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2014/07/24 08:37:40 robert Exp $
+# $OpenBSD: Makefile,v 1.179 2014/07/28 12:33:47 espie Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -87,7 +87,7 @@ BUILDTYPE=	Release
 TEST_TARGET=	base_unittests
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		GYP_GENERATORS=ninja
 
