@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_vteaccess_c,v 1.1 2014/07/30 14:30:54 naddy Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=727587
+
+--- src/vteaccess.c.orig	Wed Jul 30 10:44:12 2014
++++ src/vteaccess.c	Wed Jul 30 10:44:31 2014
+@@ -1067,6 +1067,8 @@ vte_terminal_accessible_get_text(AtkText *text,
+ 	} else {
+ 		/* Map the stopping point. */
+ 		end = g_array_index(priv->snapshot_characters, int, end_offset);
++		if (end > priv->snapshot_text->len)
++			end = priv->snapshot_text->len;
+ 	}
+ 	if (end <= start) {
+ 		ret = g_strdup ("");
