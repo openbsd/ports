@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2014/05/12 09:20:52 brad Exp $
+# $OpenBSD: Makefile,v 1.224 2014/07/30 14:28:24 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
-REVISION-server=	2
+REVISION-server=	3
 REVISION-ldap=		1
 REVISION-mysql=		1
 REVISION-postgresql=	1
