@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.190 2014/06/21 11:09:03 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.191 2014/08/09 19:29:23 jca Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -19,8 +19,7 @@ _MASTER_SITE_OPENBSD ?=	${MASTER_SITE_OPENBSD:=${DIST_SUBDIR}/}
 
 # Default FreeBSD backup site
 _MASTER_SITE_FREEBSD?=	\
-	http://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/ \
-	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
+	http://distcache.FreeBSD.org/ports-distfiles/
 
 # Default NetBSD backup site
 _MASTER_SITE_NETBSD?=	\
@@ -184,12 +183,7 @@ MASTER_SITE_WINDOWMAKER+=	\
 	http://www.windowmaker.info/pub/
 
 MASTER_SITE_FREEBSD_LOCAL+=	\
-	http://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	http://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	http://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/
+	http://distcache.FreeBSD.org/local-distfiles/
 
 MASTER_SITE_PACKETSTORM+=	\
 	http://dl.packetstormsecurity.net/ \
