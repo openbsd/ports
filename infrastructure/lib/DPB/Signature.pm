@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.7 2013/11/17 09:43:09 espie Exp $
+# $OpenBSD: Signature.pm,v 1.8 2014/08/09 21:34:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -68,7 +68,7 @@ sub compare1
 	}
 	for my $k (keys %{$s1->{a}}) {
 		if (!defined $s2->{a}{$k}) {
-			$r .= "$h2 does not have $k.a (from $h1)\n";
+			$r .= "$h2 does not have lib$k.a (from $h1)\n";
 		}
 	}
 	return $r;
@@ -90,7 +90,7 @@ sub print_out
 	}
 	if (defined $self->{a}) {
 		for my $v (sort keys %{$self->{a}}) {
-			print $fh "\t$dir/$v.a\n";
+			print $fh "\t$dir/lib$v.a\n";
 		}
 	}
 }
