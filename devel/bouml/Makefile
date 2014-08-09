@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/09 19:31:22 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2014/08/09 19:39:34 jca Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -8,12 +8,12 @@ DISTNAME=		bouml_$V
 PKGNAME=		bouml-$V
 PKGNAME-main=		bouml-$V
 PKGNAME-docs=		bouml-docs-$V
-REVISION-main =		3
-REVISION-docs=		0
+REVISION-main=		4
+REVISION-docs=		1
 
 CATEGORIES=		devel x11
 
-HOMEPAGE=		http://bouml.free.fr/
+HOMEPAGE=		http://www.bouml.fr/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
