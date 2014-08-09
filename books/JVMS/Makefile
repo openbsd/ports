@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/08/09 21:33:22 espie Exp $
 
 COMMENT =	Sun's official Java VM Specification, 2nd Ed.
 
@@ -27,6 +27,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_LOC}
 	cp -R ${WRKDIST}/* ${INSTALL_LOC}
 	chown -R ${DOCOWN}:${DOCGRP} ${INSTALL_LOC}
-	chmod -R ${DOCMODE} ${INSTALL_LOC}
+	find ${INSTALL_LOC} -type f|xargs chmod ${DOCMODE}
 
 .include <bsd.port.mk>
