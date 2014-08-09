@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/06/25 09:12:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/08/09 19:31:22 jca Exp $
 
 COMMENT =		kevent based inotify
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES = 		http://distcache.freebsd.org/ports-distfiles/
+MASTER_SITES = 		${_MASTER_SITE_FREEBSD}
 WRKDIST =		${WRKDIR}/dmatveev-libinotify-kqueue-d775062
 
 BUILD_DEPENDS =		devel/libtool \
