@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/06/26 20:06:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2014/08/09 08:11:09 espie Exp $
 
 COMMENT=	CVS repository synchronization utility
 
@@ -22,7 +22,8 @@ USE_GMAKE=	Yes
 MAKE_ENV=	CVSYNC_DEFAULT_CONFIG="${SYSCONFDIR}/cvsync.conf" \
 		CVSYNCD_DEFAULT_CONFIG="${SYSCONFDIR}/cvsyncd.conf" \
 		INSTALL_MAN_OPTS="-o ${MANOWN} -g ${MANGRP} -m ${MANMODE}" \
-		INSTALL_BIN_OPTS="-o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${INSTALL_STRIP}"
+		INSTALL_BIN_OPTS="-o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${INSTALL_STRIP}" \
+		INSTALL=install
 
 NO_TEST=	Yes
 EXAMPLESDIR=	${PREFIX}/share/examples/cvsync
