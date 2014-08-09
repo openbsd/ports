@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/29 16:53:57 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.2 2014/08/09 16:59:14 espie Exp $
 --- Makefile.orig	Wed Jul 14 23:48:52 2004
 +++ Makefile	Wed Oct 29 17:40:54 2008
 @@ -2,19 +2,20 @@
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/29 16:53:57 ajacoutot Exp $
  	-DDATAPATH=\"$(DATAPATH)\"
  
  all:	komi
-@@ -24,15 +25,13 @@ clean:
+@@ -24,15 +25,14 @@ clean:
  	-rm *.o
  
  install:
@@ -44,6 +44,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/29 16:53:57 ajacoutot Exp $
 +	${BSD_INSTALL_DATA_DIR} ${DESTDIR}/$(DATAPATH)
 +	cp -R komidata/* ${DESTDIR}/$(DATAPATH)
 +	chmod -R 644 ${DESTDIR}/$(DATAPATH)
++	chmod 755 $(DESTDIR)/$(DATAPATH)
 +	${BSD_INSTALL_PROGRAM_DIR} ${DESTDIR}/$(BINPATH)
 +	${BSD_INSTALL_PROGRAM} komi ${DESTDIR}/$(BINPATH)
 +	${BSD_INSTALL_MAN_DIR} ${DESTDIR}/$(MANPATH)
