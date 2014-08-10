@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_libpeas_engine_c,v 1.2 2014/03/31 11:18:47 jasper Exp $
+$OpenBSD: patch-tests_libpeas_engine_c,v 1.3 2014/08/10 11:59:17 jasper Exp $
 
 Add error messages on OpenBSD to test log hooks
 https://bugzilla.gnome.org/show_bug.cgi?id=727380
 
---- tests/libpeas/engine.c.orig	Mon Mar 31 12:11:42 2014
-+++ tests/libpeas/engine.c	Mon Mar 31 12:15:33 2014
+--- tests/libpeas/engine.c.orig	Fri Aug  1 15:26:46 2014
++++ tests/libpeas/engine.c	Sun Aug 10 13:51:49 2014
 @@ -248,8 +248,12 @@ test_engine_not_loadable_plugin (PeasEngine *engine)
    GError *error = NULL;
    PeasPluginInfo *info;
@@ -18,10 +18,10 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727380
    testing_util_push_log_hook ("Error loading plugin 'not-loadable'");
  
    info = peas_engine_get_plugin_info (engine, "not-loadable");
-@@ -388,6 +392,7 @@ test_engine_nonexistent_loader (PeasEngine *engine)
+@@ -387,6 +391,7 @@ test_engine_nonexistent_loader (PeasEngine *engine)
+   PeasPluginInfo *info;
  
    testing_util_push_log_hook ("Could not load plugin loader 'does-not-exist'*");
-   testing_util_push_log_hook ("Could not find loader 'does-not-exist' for*");
 +  testing_util_push_log_hook ("does-not-existloader: File not found");
  
    info = peas_engine_get_plugin_info (engine, "nonexistent-loader");
