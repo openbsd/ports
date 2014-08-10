@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1275 2014/08/10 09:02:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1276 2014/08/10 11:34:27 jasper Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2560,7 +2560,7 @@ ${_WRKDIR_COOKIE}:
 	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/c++
 .endif
 .if ${FAKE_AS_ROOT:L} == "yes"
-	@ln -sf /usr/sbin/install ${WRKDIR}/bin/install
+	@ln -sf /usr/bin/install ${WRKDIR}/bin/install
 .else
 	@install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
 .endif
