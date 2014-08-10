@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/21 22:19:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/10 19:23:00 sthen Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 
-WVER =		1.10.8
-REVISION =	2
+# XXX "cvs rm -f patches/patch-Makefile_in" when trees are fully unlocked
+
+WVER =		1.10.9
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
