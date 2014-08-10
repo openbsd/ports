@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/10 10:11:47 espie Exp $
 
 COMMENT=		parse LaTeX math expressions into gif images
 
@@ -25,6 +25,6 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	${INSTALL} -o ${BINOWN} ${WRKDIST}/mimetex ${INSTDIR}
+	${INSTALL_PROGRAM} ${WRKDIST}/mimetex ${INSTDIR}
 
 .include <bsd.port.mk>

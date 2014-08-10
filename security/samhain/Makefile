@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/04/29 07:32:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/08/10 10:11:47 espie Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System - documentation
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -72,7 +72,7 @@ post-install:
 .if empty(FLAVOR)
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samhain
 	${INSTALL_DATA} ${WRKSRC}/samhainrc ${PREFIX}/share/examples/samhain/
-	${INSTALL} -c -s -o root -g bin -m 700 \
+	${INSTALL_PROGRAM} -c -m 700 \
 		${WRKSRC}/samhain_setpwd ${PREFIX}/sbin
 .else
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/yule

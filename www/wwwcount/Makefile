@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/10/11 23:51:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2014/08/10 10:11:47 espie Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
@@ -44,7 +44,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/extdgts/extdgts ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wwwcount
 	@cd ${WRKSRC}/docs; cp -RP * ${PREFIX}/share/doc/wwwcount
-	@/usr/sbin/chown -R ${SHAREOWN}:${SHAREGRP} \
+	@chown -R ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/doc/wwwcount
 	@find ${PREFIX}/share/doc/wwwcount -type f -print | \
 		xargs chmod ${SHAREMODE}
