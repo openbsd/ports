@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.86 2014/07/23 22:12:41 zhuk Exp $
+# $OpenBSD: portcheck,v 1.87 2014/08/10 20:39:03 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -710,6 +710,8 @@ sub_checks() {
 					    </dev/null |&
 					check_plist "$portref" "$fullpkgname" \
 					    "$flavor" "${subpkg%-}" "$modules"
+					check_lib_depends "$portref" "$subpkg" \
+					    "$modules" "$wantlib"
 					wait
 				fi
 
@@ -1266,6 +1268,143 @@ check_wantlib() {
 	fi
 
 	! $error
+}
+
+# Checks made:
+#  * Each library mentioned in WANTLIB is accessible either:
+#    a) as a part of base system, in /usr/lib or /usr/X11R6/lib;
+#    b) via LIB_DEPENDS directly, or via deeper dependency of LIB_DEPENDS.
+check_lib_depends() {
+	$debugging && echo "CALLED: check_lib_depends($*)" >&2
+
+	local portref="$1"; shift
+	local subpkg="$1"; shift
+	local modules="$1"; shift
+	local wantlib="$1"; shift
+
+	# The idea as follows: build full list of run-time dependencies, but
+	# without RUN_DEPENDS begin involved.
+	#
+	# Then we look at libs in each pkgpath we got, and strip those
+	# from WANTLIB. We also strip system libraries from /usr/lib
+	# and /usr/X11R6/lib. And all WANTLIBs coming from MODULES are stripped
+	# too, supposing that authors of those MODULES know what they're doing
+	# (without stripping 'em, we'll get many false positives).
+	#
+	# If there are any non-stripped items in WANTLIB, we found a problem.
+	#
+	# XXX those checks do not take actual versions into account!
+
+	# get list of all WANTLIBs coming from MODULES
+	local m modvars=
+	for m in $modules; do
+		m=${m##*/}
+		case $m in
+		python)
+			m=py
+			;;
+		esac
+		m=$(echo "MOD${m}_WANTLIB" | tr a-z A-Z)
+		modvars="$modvars $m"
+	done
+	local l modlibs=
+	make "${make_args[@]}" show="$modvars" </dev/null |&
+	while read -pr l; do
+		modlibs="$modlibs $l"
+	done
+	wait    # make sure process exited before possible return below
+
+	# strip WANTLIBs coming from MODULES
+	local libsleft wl
+	for l in $modlibs; do
+		libsleft=
+		for wl in $wantlib; do
+			if [[ $l != "$wl" ]]; then
+				libsleft="$libsleft $wl"
+			elif $debugging; then
+				echo "WANTLIB ITEM $wl COMES FROM MODULES"
+			fi
+		done
+		[[ -n $libsleft ]] || return 0    # all libs found
+		wantlib=$libsleft
+	done
+
+	# prepare easy-to-use WANTLIB list in $checklibs
+	local wlprefix checklibs=
+	for wl in $wantlib; do
+		wl=${wl%%[><=]*}
+		wlprefix=${wl%/*}
+		[[ $wlprefix == "$wl" ]] && wlprefix=lib
+		wl=${wl##*/}
+		checklibs="$checklibs ${wlprefix}/lib$wl"
+	done
+
+	# strip system libraries
+	local d
+	for d in /usr /usr/X11R6; do
+		for l in $d/lib/lib*.@(so*(.+([0-9]))|a); do
+			libsleft=
+			for wl in $checklibs; do
+				if [[ $l != +(/*)/${wl}.@(so*(.+([0-9]))|a) ]]; then
+					libsleft="$libsleft $wl"
+				elif $debugging; then
+					echo "FOUND WANTLIB ITEM $wl: $l"
+				fi
+			done
+			[[ -n $libsleft ]] || return 0    # all libs found
+			checklibs=$libsleft
+		done
+	done
+
+	# get deep list of LDEPs
+	# XXX won't work on ${NO_SHARED_ARCHS}, anybody cares?
+	local lmake_args="${make_args[@]}"
+	lmake_args[${#lmake_args[@]}]="RUN_DEPENDS="
+	lmake_args[${#lmake_args[@]}]="RUN_DEPENDS$subpkg="
+	# Rely on the fact we're already in the port directory, see sub_checks().
+	# XXX ignoring make errors for now
+	local pure_lib_deps=$(make "${lmake_args[@]}" show-run-depends | sort)
+	[[ -n $pure_lib_deps ]] || return 0
+	# SUBDIR doesn't accept newline-separated values
+	set -A pure_lib_deps -- $pure_lib_deps
+
+	(
+	# strip libraries from ports
+	# TODO cache print-plist-libs output?
+	cd -- /usr/ports    # XXX "$portsdir" fails for openbsd-wip and like
+	unset FLAVOR SUBPACKAGE
+	make "${make_args[@]}" SUBDIR="${pure_lib_deps[*]}" \
+	    print-plist-libs </dev/null 2>/dev/null |&
+	while read -pr l; do
+		case $l in
+		"===> "*)
+			;;
+
+		*)
+			libsleft=
+			for wl in $checklibs; do
+				if [[ $l != +(/*)/${wl}.@(so*(.+([0-9]))|a) ]]; then
+					libsleft="$libsleft $wl"
+				elif $debugging; then
+					echo "FOUND WANTLIB ITEM $wl: $l"
+				fi
+			done
+			[[ -n $libsleft ]] || exit 0    # all libs found
+			checklibs=$libsleft
+			;;
+		esac
+	done
+
+	# prettify list of WANTLIBs left and print it
+	libsleft=
+	for wl in $checklibs; do
+		libsleft="$libsleft ${wl##*/lib}"
+	done
+	err "${portref}the following libraries in WANTLIB${subpkg%-}" \
+	    "look like masked by RUN_DEPENDS${subpkg%-}:$libsleft"
+	wait
+	! $error
+	) || error=true
 }
 
 # Checks made:
