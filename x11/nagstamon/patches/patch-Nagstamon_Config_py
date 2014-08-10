@@ -1,23 +1,23 @@
---- Nagstamon/Config.py.orig	Wed Sep 11 08:53:31 2013
-+++ Nagstamon/Config.py	Wed Sep 11 12:13:34 2013
-@@ -603,15 +603,15 @@ class Config(object):
+--- Nagstamon/Config.py.orig	Mon Jul 28 10:46:23 2014
++++ Nagstamon/Config.py	Mon Jul 28 16:13:32 2014
+@@ -681,15 +681,15 @@ class Config(object):
          else:
              # the Linux settings
-             defaultactions = { "RDP": Action(name="RDP", description="Connect via RDP.",\
--                                    type="command", string="/usr/bin/rdesktop -g 1024x768 $ADDRESS$"),\
-+                                    type="command", string="${LOCALBASE}/bin/rdesktop -g 1024x768 $ADDRESS$"),\
-                                "VNC": Action(name="VNC", description="Connect via VNC.",\
--                                    type="command", string="/usr/bin/vncviewer $ADDRESS$"),\
-+                                    type="command", string="${LOCALBASE}/bin/vncviewer $ADDRESS$"),\
-                                "SSH": Action(name="SSH", description="Connect via SSH.",\
--                                    type="command", string="/usr/bin/gnome-terminal -x ssh root@$ADDRESS$"),\
-+                                    type="command", string="${X11BASE}/bin/xterm -e ssh root@$ADDRESS$"),\
-                                "Telnet": Action(name="Telnet", description="Connect via Telnet.",\
--                                    type="command", string="/usr/bin/gnome-terminal -x telnet root@$ADDRESS$"),\
-+                                    type="command", string="${X11BASE}/bin/xterm -e telnet root@$ADDRESS$"),\
-                                "Update-Linux": Action(name="Update-Linux", description="Run remote update script.",\
--                                    type="command", string="/usr/bin/terminator -x ssh root@$HOST$ update.sh",\
-+                                    type="command", string="${LOCALBASE}/bin/terminator -x ssh root@$HOST$ update.sh",\
-                                     enabled=False)\
+             defaultactions = { "RDP": Action(name="RDP", description="Connect via RDP.",
+-                                    type="command", string="/usr/bin/rdesktop -g 1024x768 $ADDRESS$"),
++                                    type="command", string="${LOCALBASE}/bin/rdesktop -g 1024x768 $ADDRESS$"),
+                                "VNC": Action(name="VNC", description="Connect via VNC.",
+-                                    type="command", string="/usr/bin/vncviewer $ADDRESS$"),
++                                    type="command", string="${LOCALBASE}/bin/vncviewer $ADDRESS$"),
+                                "SSH": Action(name="SSH", description="Connect via SSH.",
+-                                    type="command", string="/usr/bin/gnome-terminal -x ssh root@$ADDRESS$"),
++                                    type="command", string="${X11BASE}/bin/xterm -e ssh root@$ADDRESS$"),
+                                "Telnet": Action(name="Telnet", description="Connect via Telnet.",
+-                                    type="command", string="/usr/bin/gnome-terminal -x telnet root@$ADDRESS$"),
++                                    type="command", string="${X11BASE}/bin/xterm -e telnet root@$ADDRESS$"),
+                                "Update-Linux": Action(name="Update-Linux", description="Run remote update script.",
+-                                    type="command", string="/usr/bin/terminator -x ssh root@$HOST$ update.sh",
++                                    type="command", string="${LOCALBASE}/bin/terminator -x ssh root@$HOST$ update.sh",
+                                     enabled=False)
                                 }
          # OS agnostic actions as examples

@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/11 10:21:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/08/10 08:11:06 ajacoutot Exp $
 bin/nagstamon
-bin/nagstamon.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Actions.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Actions.pyc
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/BeautifulSoup.py
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/BeautifulSoup.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Config.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Config.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Custom.py
@@ -31,8 +28,12 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Opsview.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Opsview.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Thruk.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Thruk.pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Zabbix.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Zabbix.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/op5Monitor.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/op5Monitor.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/
@@ -53,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/menu.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagios.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagios.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.1
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.appdata.xml
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.desktop
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.icns
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.ico
@@ -60,6 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_acknowledged.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_acknowledged.svg
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_appindicator.png
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_appindicator.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_black.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_black.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_darkred.png
@@ -70,6 +74,8 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_error.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_error.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_flapping.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_flapping.svg
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_fresh.png
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_fresh.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_green.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_green.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon_label.png
@@ -97,5 +103,12 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/settings_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/settings_server_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/submit_check_result_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/warning.wav
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/BeautifulSoup.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/BeautifulSoup.pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/__init__.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/zabbix_api.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/zabbix_api.pyc
 lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 @man man/man1/nagstamon.1
