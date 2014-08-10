@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_Files_FFmpeg_SDL_ffmpeg_c,v 1.1 2014/04/27 07:07:28 brad Exp $
+$OpenBSD: patch-Source_Files_FFmpeg_SDL_ffmpeg_c,v 1.2 2014/08/10 21:35:32 brad Exp $
 
 Deal with newer FFmpeg API.
 
---- Source_Files/FFmpeg/SDL_ffmpeg.c.orig	Tue Apr 22 17:30:07 2014
-+++ Source_Files/FFmpeg/SDL_ffmpeg.c	Tue Apr 22 17:32:03 2014
+--- Source_Files/FFmpeg/SDL_ffmpeg.c.orig	Thu Jul  4 20:33:29 2013
++++ Source_Files/FFmpeg/SDL_ffmpeg.c	Sun Aug 10 01:48:35 2014
 @@ -57,6 +57,11 @@ extern "C"
  #endif
  #endif
@@ -16,3 +16,12 @@ Deal with newer FFmpeg API.
  #ifdef __cplusplus
  extern "C"
  {
+@@ -324,7 +329,7 @@ void SDL_ffmpegFree( SDL_ffmpegFile *file )
+     {
+         if ( file->type == SDL_ffmpegInputStream )
+         {
+-            av_close_input_file( file->_ffmpeg );
++            avformat_close_input( &file->_ffmpeg );
+         }
+         else if ( file->type == SDL_ffmpegOutputStream )
+         {
