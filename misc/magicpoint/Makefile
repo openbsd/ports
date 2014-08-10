@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/10/11 20:37:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2014/08/10 07:25:45 espie Exp $
 
 COMMENT=	X11-based presentation tool
 
@@ -38,6 +38,7 @@ NO_TEST=	Yes
 
 post-configure:
 	@cd ${WRKSRC}/contrib/xmindpath && \
+		ac_cv_path_install='install -c' \
 		./configure --prefix='$${DESTDIR}${PREFIX}'
 
 post-build:
@@ -55,7 +56,7 @@ SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		v6-jp.mgp v6.mgp v6header.eps v6header.jpg
 EMACS=	README mgp.el mgp.sty sample.tex ../mgp-mode.el
 
-MAKE_FLAGS+=	CDEBUGFLAGS="${CFLAGS}"
+MAKE_FLAGS +=	CDEBUGFLAGS="${CFLAGS}"
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
 	@cd ${WRKSRC}/contrib/xmindpath && ${MAKE_PROGRAM} install
