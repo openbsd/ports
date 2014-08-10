@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/03/09 22:07:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2014/08/10 10:20:34 espie Exp $
 
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
@@ -19,7 +19,7 @@ CONFIGURE_ARGS +=	--enable-stf
 
 NO_TEST=		Yes
 
-MAKE_FLAGS=		CC="${CC}" SYSCONFDIR="${SYSCONFDIR}"
+MAKE_FLAGS=		CC="${CC}" SYSCONFDIR="${SYSCONFDIR}" INSTALL=install
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/totd
