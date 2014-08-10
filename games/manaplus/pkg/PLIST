@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/06/21 14:58:44 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/08/10 21:31:54 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -24,6 +24,9 @@ share/locale/pl/LC_MESSAGES/manaplus.mo
 share/locale/pt/LC_MESSAGES/manaplus.mo
 share/locale/pt_BR/LC_MESSAGES/manaplus.mo
 share/locale/ru/LC_MESSAGES/manaplus.mo
+share/locale/sv_SE/
+share/locale/sv_SE/LC_MESSAGES/
+share/locale/sv_SE/LC_MESSAGES/manaplus.mo
 share/locale/tr/LC_MESSAGES/manaplus.mo
 share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 share/manaplus/
@@ -59,6 +62,7 @@ share/manaplus/data/graphics/flags/pl.png
 share/manaplus/data/graphics/flags/pt.png
 share/manaplus/data/graphics/flags/pt_BR.png
 share/manaplus/data/graphics/flags/ru.png
+share/manaplus/data/graphics/flags/se.png
 share/manaplus/data/graphics/flags/tr.png
 share/manaplus/data/graphics/gui/
 share/manaplus/data/graphics/gui/browserbox.xml
