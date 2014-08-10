@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/07/03 11:20:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/08/10 07:51:21 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -2531,7 +2531,6 @@ share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-geneweb.svg
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-gramps-package.svg
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-gramps-xml.svg
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-gramps.svg
-share/icons/gramps.png
 share/locale/ar/LC_MESSAGES/gramps.mo
 share/locale/bg/LC_MESSAGES/gramps.mo
 share/locale/ca/LC_MESSAGES/gramps.mo
@@ -2569,6 +2568,8 @@ share/mime-info/
 share/mime-info/gramps.keys
 share/mime-info/gramps.mime
 share/mime/packages/gramps.xml
+share/pixmaps/
+share/pixmaps/gramps.png
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
