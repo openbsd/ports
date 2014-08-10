@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/21 22:33:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/08/10 18:32:22 jasper Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 
-DISTNAME=	virt-viewer-0.6.0
-REVISION=	1
+DISTNAME=	virt-viewer-1.0
 CATEGORIES=	x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -29,7 +28,7 @@ WANTLIB += idn jpeg m nettle opus p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 spice-client-glib-2.0 spice-client-gtk-3.0 spice-controller
 WANTLIB += ssh2 ssl tasn1 util virt xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z soup-2.4 sqlite3
 
 LIB_DEPENDS=	sysutils/libvirt \
 		x11/gtk-vnc \
@@ -49,7 +48,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 .for s in 16 22 24 32 48 256
-	cd ${WRKSRC}/icons/${s}x${s}/ && ${MAKE_ENV} ${MAKE_PROGRAM} install-iconDATA
+	cd ${WRKSRC}/icons/${s}x${s}/ && ${MAKE_ENV} ${MAKE_PROGRAM} install
 .endfor
 	rm -r ${PREFIX}/share/icons/hicolor/apps/
 	${INSTALL_SCRIPT} ${WRKSRC}/data/spice-xpi-client-remote-viewer \
