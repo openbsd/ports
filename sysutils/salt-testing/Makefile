@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/06/17 13:16:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/10 08:09:34 ajacoutot Exp $
 
 COMMENT =		common testing tools used in the Salt Stack projects
 
-MODPY_EGG_VERSION =	2014.4.24
+MODPY_EGG_VERSION =	2014.8.5
 DISTNAME =		SaltTesting-${MODPY_EGG_VERSION}
 PKGNAME =		salt-testing-${MODPY_EGG_VERSION}
 
