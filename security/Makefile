@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.344 2014/07/15 22:23:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.345 2014/08/10 07:44:57 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -56,6 +56,7 @@
      SUBDIR += gpgme
      SUBDIR += gringotts
      SUBDIR += hatchet
+     SUBDIR += heimdal
      SUBDIR += hlfl
      SUBDIR += hs-asn1-data
      SUBDIR += hs-certificate
