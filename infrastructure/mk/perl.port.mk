@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.23 2013/05/24 14:58:45 zhuk Exp $
+# $OpenBSD: perl.port.mk,v 1.24 2014/08/10 08:59:48 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -61,7 +61,7 @@ _MODPERL_preconfig = :
 .endif
 
 MODPERL_pre-fake = \
-	${SUDO} mkdir -p ${WRKINST}`perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
+	${_FAKESUDO} mkdir -p ${WRKINST}`perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 MODPERL_BUILD_TARGET = \
