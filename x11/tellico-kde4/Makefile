@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/13 12:30:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/10 21:02:39 zhuk Exp $
+
+# XXX remove patch-src_gui_CMakeLists_txt on the next update,
+# upstream removed dependency of GUI on tellico-config.h.
 
 COMMENT =	organizer for book/music/video collections for KDE4
 DISTNAME =	tellico-2.3.9
