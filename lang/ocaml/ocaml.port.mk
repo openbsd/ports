@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.25 2013/11/25 14:40:15 dcoppa Exp $
+# $OpenBSD: ocaml.port.mk,v 1.26 2014/08/10 10:13:18 espie Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -41,7 +41,7 @@ MAKE_ENV +=		OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml \
 			OCAMLFIND_COMMANDS="ocamldoc=${MODOCAML_OCAMLDOC}"
 
 MODOCAML_pre-fake = \
-  	${SUDO} ${INSTALL_DATA_DIR} ${WRKINST}${LOCALBASE}/lib/ocaml/stublibs
+  	${_FAKESUDO} ${INSTALL_DATA_DIR} ${WRKINST}${LOCALBASE}/lib/ocaml/stublibs
 
 
 ######################################################################
