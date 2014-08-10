@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.88 2014/08/10 20:41:54 zhuk Exp $
+# $OpenBSD: portcheck,v 1.89 2014/08/10 20:46:04 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -733,11 +733,9 @@ sub_checks() {
 					    "arch-independent package"
 				fi
 
-				check_wantlib "$portref" "$modules" $wantlib ||
-				    error=true
+				check_wantlib "$portref" "$modules" $wantlib
 				check_permit_subpkg "$portref" "$subpkg" \
-				    "$perm_pkg_cdrom" "$perm_pkg_ftp" ||
-				    error=true
+				    "$perm_pkg_cdrom" "$perm_pkg_ftp"
 
 				if $plist_checks; then
 					(make "${make_args[@]}" \
@@ -1302,7 +1300,7 @@ check_wantlib() {
 		err "${portref}missing multimedia/phonon in MODULES"
 	fi
 
-	! $error
+	true
 }
 
 # Checks made:
