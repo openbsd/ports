@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/05/26 06:48:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/08/10 11:06:54 jasper Exp $
 @conflict gupnp-vala-<=0.10.3p0
 @bin bin/gssdp-device-sniffer
 include/gssdp-1.0/
@@ -13,7 +13,6 @@ lib/girepository-1.0/GSSDP-1.0.typelib
 lib/libgssdp-1.0.a
 lib/libgssdp-1.0.la
 @lib lib/libgssdp-1.0.so.${LIBgssdp-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gssdp-1.0.pc
 share/gir-1.0/
 share/gir-1.0/GSSDP-1.0.gir
