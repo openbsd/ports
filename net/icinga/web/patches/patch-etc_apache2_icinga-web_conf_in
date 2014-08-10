@@ -1,12 +1,12 @@
-$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.4 2013/05/07 15:34:47 sthen Exp $
---- etc/apache2/icinga-web.conf.in.orig	Mon Apr 29 18:54:16 2013
-+++ etc/apache2/icinga-web.conf.in	Fri May  3 13:38:52 2013
+$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.5 2014/08/10 11:12:26 jasper Exp $
+--- etc/apache2/icinga-web.conf.in.orig	Thu Mar 13 12:24:09 2014
++++ etc/apache2/icinga-web.conf.in	Thu Aug  7 20:25:17 2014
 @@ -10,9 +10,13 @@
  # Markus Frosch <markus@lazyfrosch.de>
  ###
  
 +<IfModule !mod_rewrite.c>
-+LoadModule rewrite_module      /usr/lib/apache/modules/mod_rewrite.so
++LoadModule rewrite_module      ${LOCALBASE}/lib/apache/modules/mod_rewrite.so
 +</IfModule>
 +
  # Matching for module stylesheet and images
