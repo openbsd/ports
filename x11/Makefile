@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.534 2014/07/20 20:43:00 landry Exp $
+# $OpenBSD: Makefile,v 1.535 2014/08/10 22:19:12 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -161,7 +161,7 @@
      SUBDIR += mrxvt
      SUBDIR += mterm
      SUBDIR += mxconns
-     SUBDIR += nagstamon
+#     SUBDIR += nagstamon
      SUBDIR += neXtaw
      SUBDIR += netwmpager
      SUBDIR += nitrogen
