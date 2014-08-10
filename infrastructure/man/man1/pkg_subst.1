@@ -1,4 +1,4 @@
-.\"	$OpenBSD: pkg_subst.1,v 1.7 2013/04/27 15:43:42 sthen Exp $
+.\"	$OpenBSD: pkg_subst.1,v 1.8 2014/08/10 10:07:10 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 27 2013 $
+.Dd $Mdocdate: August 10 2014 $
 .Dt PKG_SUBST 1
 .Os
 .Sh NAME
@@ -22,7 +22,7 @@
 .Nd substitute variables' values in files
 .Sh SYNOPSIS
 .Nm pkg_subst
-.Op Fl c
+.Op Fl ci
 .Oo Fl D Ar name
 .Ns Oo Ns = Ns Ar value
 .Oc
@@ -70,6 +70,8 @@ to
 .It Fl g Ar group
 Change group of destination file to
 .Ar group .
+.It Fl i
+Ignore changes to group or owner that failed.
 .It Fl m Ar mode
 Change mode of destination file to
 .Ar mode .
