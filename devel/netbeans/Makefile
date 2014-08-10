@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/05/07 15:42:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2014/08/10 10:11:05 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,12 +42,10 @@ do-install:
 	@rm -rf ${NB}/profiler3
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name "*.orig" | xargs rm
-	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-		${FILESDIR}/netbeans \
+	@${SUBST_PROGRAM} ${FILESDIR}/netbeans \
 		${PREFIX}/bin/netbeans
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
-		${FILESDIR}/netbeans.desktop \
+	@${SUBST_DATA} ${FILESDIR}/netbeans.desktop \
 		${PREFIX}/share/applications/netbeans.desktop
 
 .include <bsd.port.mk>
