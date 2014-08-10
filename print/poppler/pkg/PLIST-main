@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2014/04/28 16:48:27 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2014/08/10 07:56:40 ajacoutot Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -164,7 +164,6 @@ lib/libpoppler-glib.la
 lib/libpoppler.a
 lib/libpoppler.la
 @lib lib/libpoppler.so.${LIBpoppler_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/poppler-cairo.pc
 lib/pkgconfig/poppler-cpp.pc
 lib/pkgconfig/poppler-glib.pc
