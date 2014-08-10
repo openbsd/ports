@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/07/15 23:33:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/08/10 19:50:37 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -794,6 +794,8 @@ lib/calibre/calibre/ebooks/mobi/__init__.pyc
 lib/calibre/calibre/ebooks/mobi/debug/
 lib/calibre/calibre/ebooks/mobi/debug/__init__.py
 lib/calibre/calibre/ebooks/mobi/debug/__init__.pyc
+lib/calibre/calibre/ebooks/mobi/debug/containers.py
+lib/calibre/calibre/ebooks/mobi/debug/containers.pyc
 lib/calibre/calibre/ebooks/mobi/debug/headers.py
 lib/calibre/calibre/ebooks/mobi/debug/headers.pyc
 lib/calibre/calibre/ebooks/mobi/debug/index.py
@@ -813,6 +815,8 @@ lib/calibre/calibre/ebooks/mobi/mobiml.pyc
 lib/calibre/calibre/ebooks/mobi/reader/
 lib/calibre/calibre/ebooks/mobi/reader/__init__.py
 lib/calibre/calibre/ebooks/mobi/reader/__init__.pyc
+lib/calibre/calibre/ebooks/mobi/reader/containers.py
+lib/calibre/calibre/ebooks/mobi/reader/containers.pyc
 lib/calibre/calibre/ebooks/mobi/reader/headers.py
 lib/calibre/calibre/ebooks/mobi/reader/headers.pyc
 lib/calibre/calibre/ebooks/mobi/reader/index.py
@@ -2124,6 +2128,8 @@ lib/calibre/calibre/gui2/tweak_book/editor/__init__.py
 lib/calibre/calibre/gui2/tweak_book/editor/__init__.pyc
 lib/calibre/calibre/gui2/tweak_book/editor/canvas.py
 lib/calibre/calibre/gui2/tweak_book/editor/canvas.pyc
+lib/calibre/calibre/gui2/tweak_book/editor/help.py
+lib/calibre/calibre/gui2/tweak_book/editor/help.pyc
 lib/calibre/calibre/gui2/tweak_book/editor/image.py
 lib/calibre/calibre/gui2/tweak_book/editor/image.pyc
 lib/calibre/calibre/gui2/tweak_book/editor/insert_resource.py
@@ -2193,14 +2199,10 @@ lib/calibre/calibre/gui2/viewer/__init__.py
 lib/calibre/calibre/gui2/viewer/__init__.pyc
 lib/calibre/calibre/gui2/viewer/bookmarkmanager.py
 lib/calibre/calibre/gui2/viewer/bookmarkmanager.pyc
-lib/calibre/calibre/gui2/viewer/bookmarkmanager_ui.py
-lib/calibre/calibre/gui2/viewer/bookmarkmanager_ui.pyc
 lib/calibre/calibre/gui2/viewer/config.py
 lib/calibre/calibre/gui2/viewer/config.pyc
 lib/calibre/calibre/gui2/viewer/config_ui.py
 lib/calibre/calibre/gui2/viewer/config_ui.pyc
-lib/calibre/calibre/gui2/viewer/dictionary.py
-lib/calibre/calibre/gui2/viewer/dictionary.pyc
 lib/calibre/calibre/gui2/viewer/documentview.py
 lib/calibre/calibre/gui2/viewer/documentview.pyc
 lib/calibre/calibre/gui2/viewer/flip.py
@@ -2217,8 +2219,6 @@ lib/calibre/calibre/gui2/viewer/keys.py
 lib/calibre/calibre/gui2/viewer/keys.pyc
 lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/main.pyc
-lib/calibre/calibre/gui2/viewer/main_ui.py
-lib/calibre/calibre/gui2/viewer/main_ui.pyc
 lib/calibre/calibre/gui2/viewer/position.py
 lib/calibre/calibre/gui2/viewer/position.pyc
 lib/calibre/calibre/gui2/viewer/printing.py
@@ -2227,6 +2227,8 @@ lib/calibre/calibre/gui2/viewer/table_popup.py
 lib/calibre/calibre/gui2/viewer/table_popup.pyc
 lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/viewer/toc.pyc
+lib/calibre/calibre/gui2/viewer/ui.py
+lib/calibre/calibre/gui2/viewer/ui.pyc
 lib/calibre/calibre/gui2/widgets.py
 lib/calibre/calibre/gui2/widgets.pyc
 lib/calibre/calibre/gui2/widgets2.py
@@ -2406,8 +2408,6 @@ lib/calibre/calibre/utils/config_base.py
 lib/calibre/calibre/utils/config_base.pyc
 lib/calibre/calibre/utils/date.py
 lib/calibre/calibre/utils/date.pyc
-lib/calibre/calibre/utils/dictclient.py
-lib/calibre/calibre/utils/dictclient.pyc
 lib/calibre/calibre/utils/file_associations.py
 lib/calibre/calibre/utils/file_associations.pyc
 lib/calibre/calibre/utils/filenames.py
@@ -3038,6 +3038,13 @@ share/calibre/dictionaries/es-ES/es-ES.aff
 share/calibre/dictionaries/es-ES/es-ES.dic
 share/calibre/dictionaries/es-ES/locales
 share/calibre/ebook-convert-complete.pickle
+share/calibre/editor-help/
+share/calibre/editor-help/css.json
+share/calibre/editor-help/html.json
+share/calibre/editor-help/mathml.json
+share/calibre/editor-help/opf2.json
+share/calibre/editor-help/opf3.json
+share/calibre/editor-help/svg.json
 share/calibre/fonts/
 share/calibre/fonts/calibreSymbols.otf
 share/calibre/fonts/liberation/
@@ -3098,6 +3105,7 @@ share/calibre/images/dialog_warning.png
 share/calibre/images/dictionary.png
 share/calibre/images/diff.png
 share/calibre/images/document-encrypt.png
+share/calibre/images/document-import.png
 share/calibre/images/document-new.png
 share/calibre/images/document_open.png
 share/calibre/images/donate.png
@@ -3118,6 +3126,7 @@ share/calibre/images/eject.png
 share/calibre/images/embed-fonts.png
 share/calibre/images/exec.png
 share/calibre/images/filter.png
+share/calibre/images/folder_saved_search.png
 share/calibre/images/font.png
 share/calibre/images/font_size_larger.png
 share/calibre/images/font_size_smaller.png

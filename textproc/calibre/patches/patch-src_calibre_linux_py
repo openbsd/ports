@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_calibre_linux_py,v 1.5 2014/07/15 23:33:48 sthen Exp $
+$OpenBSD: patch-src_calibre_linux_py,v 1.6 2014/08/10 19:50:37 sthen Exp $
 
 - skip uninstaller parts
 
---- src/calibre/linux.py.orig	Fri Jul 11 03:19:43 2014
-+++ src/calibre/linux.py	Mon Jul 14 13:24:14 2014
-@@ -644,18 +644,6 @@ class PostInstall:
+--- src/calibre/linux.py.orig	Fri Aug  8 04:21:35 2014
++++ src/calibre/linux.py	Sun Aug 10 20:27:19 2014
+@@ -691,18 +691,6 @@ class PostInstall:
              self.setup_completion()
          if islinux or isbsd:
              self.setup_desktop_integration()
