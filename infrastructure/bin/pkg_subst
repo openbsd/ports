@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.2 2013/04/27 15:43:42 sthen Exp $
+# $OpenBSD: pkg_subst,v 1.3 2014/08/10 08:55:30 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -27,15 +27,15 @@ use OpenBSD::IdCache;
 
 my $subst = OpenBSD::Subst->new;
 
-our $opt_c;
+our ($opt_c, $opt_i);
 my ($fuid, $fgid, $fmode);
 my ($uidc, $gidc);
 
 my $ui = OpenBSD::State->new('pkg_subst');
-$ui->usage_is( '[-c] [-Dvar=value ...] [-g group] [-o owner] [file ...]');
+$ui->usage_is( '[-ci] [-Dvar=value ...] [-g group] [-o owner] [file ...]');
 $ui->do_options(
     sub {
-	getopts('D:g:m:o:ch',
+	getopts('D:g:m:o:chi',
 	    {'D' =>
 		    sub {
 			    $subst->parse_option(shift);
@@ -91,7 +91,7 @@ while (my $src = shift) {
 	}
 	my $r2 = chmod $mode & 07777, $fh;
 	if (defined $fuid || defined $fgid || $< == 0) {
-		if ($r1 == 0) {
+		if ($r1 == 0 && !$opt_i) {
 			die "chown on $dest failed";
 		}
 		if ($r2 == 0) {
