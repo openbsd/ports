@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1274 2014/08/10 08:59:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1275 2014/08/10 09:02:21 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1054,9 +1054,9 @@ SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
 .if ${FAKE_AS_ROOT:L} == "no"
 SUBST_CMD += -i
 .endif
-SUBST_PROGRAM = ${SUBST_CMD} ${_BINOWNGRP} -m ${BINMODE}
-SUBST_DATA = ${SUBST_CMD} ${_SHAREOWNGRP} -m ${SHAREMODE}
-SUBST_MAN = ${SUBST_CMD} ${_MANOWNGRP} -m ${MANMODE}
+SUBST_PROGRAM = ${SUBST_CMD} -c ${_BINOWNGRP} -m ${BINMODE}
+SUBST_DATA = ${SUBST_CMD} -c ${_SHAREOWNGRP} -m ${SHAREMODE}
+SUBST_MAN = ${SUBST_CMD} -c ${_MANOWNGRP} -m ${MANMODE}
 
 # XXX
 .if ${MULTI_PACKAGES} == "-"
