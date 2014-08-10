@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/05/29 14:08:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2014/08/10 21:50:41 jca Exp $
 @bin bin/lftp
 bin/lftpget
 @comment lib/charset.alias
@@ -28,6 +28,7 @@ share/locale/ko/LC_MESSAGES/lftp.mo
 share/locale/pl/LC_MESSAGES/lftp.mo
 share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
+share/locale/uk/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
 share/locale/zh_HK/LC_MESSAGES/lftp.mo
 share/locale/zh_TW/LC_MESSAGES/lftp.mo
