@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.87 2014/08/10 20:39:03 zhuk Exp $
+# $OpenBSD: portcheck,v 1.88 2014/08/10 20:41:54 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -168,6 +168,40 @@ if $rootrun; then
 	cd -- "$portsdir"
 	echo "scanning ports under the $portsdir" >&2
 fi
+
+############################################################
+# Support for SKIPDIR, STARTDIR and STARTAFTER, see ports(7)
+#
+
+SKIPDIR=${SKIPDIR:-}
+STARTDIR=${STARTDIR:-}
+STARTAFTER=${STARTAFTER:-}
+if [[ -n $STARTAFTER ]]; then
+	STARTDIR=$STARTAFTER
+	SKIPDIR="$SKIPDIR $STARTAFTER"
+fi
+
+path_parts_count() {
+	(IFS=/; set -- $1; echo $#)
+}
+
+# true if directory given should be skipped based on STARTDIR
+# and/or SKIPDIR variable
+skip_dir() {
+	$rootrun || return 1
+	local dir=$(readlink -f "$1")
+	dir=${dir##$portsdir*(/)}
+	local startpartscount=$(path_parts_count "$STARTDIR")
+	local dirpartscount=$(path_parts_count "$dir")
+	if ((dirpartscount >= startpartscount)); then
+		[[ -n $STARTDIR && $dir < $STARTDIR ]] && return 0
+	fi
+	local d
+	for d in $SKIPDIR; do
+		[[ $d == "$dir" ]] && return 0
+	done
+	return 1
+}
 
 ############################################################
 # Check and fail routines
@@ -410,6 +444,7 @@ check_port_dir() {
 	$debugging && echo "CALLED: check_port_dir($*)" >&2
 
 	local dir=$1; shift
+	skip_dir "$dir" && return
 	local distinfo_lives_upper pkg_lives_upper plist_lives_upper
 	for opt; do
 		# looks unsafe but we do not pass anything except
