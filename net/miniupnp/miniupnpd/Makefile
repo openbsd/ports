@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	UPnP IGD client lightweight library
 
@@ -14,8 +14,7 @@ FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man8
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${MANMODE} \
-		-c ${WRKBUILD}/miniupnpd.8 \
+	${SUBST_DATA} ${WRKBUILD}/miniupnpd.8 \
 			${PREFIX}/man/man8/miniupnpd.8
 
 .include <bsd.port.mk>

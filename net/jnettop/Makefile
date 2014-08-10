@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	capture network traffic, display streams sorted by bandwidth
 
@@ -30,7 +30,7 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/man/man8/jnettop.8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jnettop
 	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/jnettop/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${WRKSRC}/.jnettop \
+	${SUBST_DATA} ${WRKSRC}/.jnettop \
 	    ${PREFIX}/share/doc/jnettop/dot.jnettop
 
 .include <bsd.port.mk>

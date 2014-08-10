@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/23 18:16:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/10 09:58:05 espie Exp $
 
 COMMENT =	free Colonization clone
 DISTNAME =	freecol-0.10.7
@@ -24,8 +24,7 @@ NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/freecol
 
 do-install:
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
-		-c ${FILESDIR}/freecol ${PREFIX}/bin/freecol
+	${SUBST_PROGRAM} ${FILESDIR}/freecol ${PREFIX}/bin/freecol
 	${INSTALL_DATA_DIR} ${PREFIX}/share/freecol
 	${INSTALL_DATA} ${WRKSRC}/{FreeCol.jar,freecol.xpm} ${PREFIX}/share/freecol
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/freecol

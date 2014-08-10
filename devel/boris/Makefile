@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/11 08:26:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/10 09:58:05 espie Exp $
 
 COMMENT =		read-eval-print loop for PHP
 
@@ -32,7 +32,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/boris ${PREFIX}/lib/boris
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README.md} ${PREFIX}/share/doc/boris
 	cp -r ${WRKSRC}/lib/* ${PREFIX}/lib/boris
-	${SUBST_CMD} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
-	    ${WRKSRC}/bin/boris ${PREFIX}/bin/boris
+	${SUBST_PROGRAM} ${WRKSRC}/bin/boris ${PREFIX}/bin/boris
 
 .include <bsd.port.mk>

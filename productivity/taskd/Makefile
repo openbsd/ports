@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/10 09:58:06 espie Exp $
 
 COMMENT =	lightweight server providing access to task data
 
@@ -34,7 +34,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/taskd/pki/
 	${INSTALL_SCRIPT} ${WRKSRC}/pki/!(*.orig) \
 		${PREFIX}/share/examples/taskd/pki/
-	${SUBST_CMD} -c -o root -g bin -m 444 ${FILESDIR}/config \
+	${SUBST_DATA} ${FILESDIR}/config \
 		${PREFIX}/share/examples/taskd/config
 	${INSTALL_DATA} ${FILESDIR}/vars.dist ${PREFIX}/share/examples/taskd/pki/
 

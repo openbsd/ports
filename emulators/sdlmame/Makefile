@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/05/14 23:32:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.40 2014/08/10 09:58:05 espie Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -90,7 +90,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/sdlmame
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sdlmame
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mame.ini \
+	${SUBST_DATA} ${FILESDIR}/mame.ini \
 	    ${PREFIX}/share/examples/sdlmame/mame.ini
 	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/sdlmame
 

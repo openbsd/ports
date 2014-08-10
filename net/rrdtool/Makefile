@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2014/08/10 09:58:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -111,8 +111,7 @@ post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} CHANGES CONTRIBUTORS COPYRIGHT \
 	    NEWS README ${PREFIX}/share/doc/rrdtool
 	rm -r ${PREFIX}/share/doc/rrdtool/txt
-	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-	    ${FILESDIR}/rrdtool-chroot.sh \
+	${SUBST_PROGRAM} ${FILESDIR}/rrdtool-chroot.sh \
 	    ${PREFIX}/share/examples/rrdtool/rrdtool-chroot
 	rm -rf ${PREFIX}/share/doc/rrdtool/html
 

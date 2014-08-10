@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/05/07 15:42:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/10 09:58:05 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,19 +40,14 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${IJ}
 	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${IJ}
-	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
-		${FILESDIR}/idea \
-		${PREFIX}/bin/idea
+	@${SUBST_PROGRAM} ${FILESDIR}/idea ${PREFIX}/bin/idea
 	@chmod ${BINMODE} ${PREFIX}/bin/idea
 	@ln -s ${TRUEPREFIX}/bin/idea ${PREFIX}/bin/intellij
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
 	${INSTALL_DATA} ${WRKDIST}/lib/icon.png ${IJ}/idea.png
-	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
-		${FILESDIR}/intellij.desktop \
-		${PREFIX}/share/applications/intellij.desktop
-	@chmod ${SHAREMODE} \
+	@${SUBST_DATA} ${FILESDIR}/intellij.desktop \
 		${PREFIX}/share/applications/intellij.desktop
 
 .include <bsd.port.mk>

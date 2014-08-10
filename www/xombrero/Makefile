@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/07/14 19:06:02 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.13 2014/08/10 09:58:07 espie Exp $
 
 COMMENT=		vi-like minimalists web browser
 DISTNAME=		xombrero-1.6.3
@@ -44,8 +44,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/xombrero.conf ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/favorites ${EXAMPLEDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/playflash.sh ${EXAMPLEDIR}
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-		-c ${WRKSRC}/xombrero.desktop \
+	${SUBST_DATA} ${WRKSRC}/xombrero.desktop \
 		${PREFIX}/share/applications/xombrero.desktop
 
 .include <bsd.port.mk>

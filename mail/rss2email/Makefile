@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/26 16:23:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	get news from RSS feeds in email
 
@@ -33,7 +33,6 @@ do-install:
 	    ${PREFIX}/share/examples/rss2email/
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 	    ${WRKINST}/${MODPY_SITEPKG}/rss2email.py
-	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-	    ${FILESDIR}/r2e ${PREFIX}/bin/r2e
+	${SUBST_PROGRAM} ${FILESDIR}/r2e ${PREFIX}/bin/r2e
 
 .include <bsd.port.mk>

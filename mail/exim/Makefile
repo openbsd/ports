@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2014/07/23 10:36:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2014/08/10 09:58:05 espie Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -106,8 +106,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/README.SIEVE ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/filter.txt ${PREFIX}/share/doc/exim
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-	    ${FILESDIR}/mailer.conf.exim \
+	${SUBST_DATA} ${FILESDIR}/mailer.conf.exim \
 	    ${PREFIX}/share/doc/exim/mailer.conf.exim
 	${INSTALL_SCRIPT} ${FILESDIR}/exim-enable ${FILESDIR}/exim-disable \
 	    ${PREFIX}/sbin

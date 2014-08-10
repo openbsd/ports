@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/10 09:58:06 espie Exp $
 
 COMMENT =	UPnP media server
 
@@ -42,7 +42,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${WRKSRC}/src -I${LOCALBASE}/include" \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mediatomb/
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} ${FILESDIR}/config.xml \
+	${SUBST_DATA} ${FILESDIR}/config.xml \
 		${PREFIX}/share/examples/mediatomb/config.xml
 
 .include <bsd.port.mk>

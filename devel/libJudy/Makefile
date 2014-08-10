@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/12 21:17:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/08/10 09:58:05 espie Exp $
 
 COMMENT=		general purpose dynamic array
 
@@ -25,7 +25,6 @@ EXAMPLESDIR=		${PREFIX}/share/examples/libJudy
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/src/apps/demo; tar cf - * | tar xf - -C ${EXAMPLESDIR}
-	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-	    -c ${WRKSRC}/src/apps/demo/run_demo ${EXAMPLESDIR}/run_demo
+	@${SUBST_DATA} ${WRKSRC}/src/apps/demo/run_demo ${EXAMPLESDIR}/run_demo
 
 .include <bsd.port.mk>

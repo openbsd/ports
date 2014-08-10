@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2014/04/21 12:12:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -120,7 +120,7 @@ post-install:
 .if ${FLAVOR:Mldap}
 	${INSTALL_DATA} ${WRKSRC}/saslauthd/LDAP_SASLAUTHD \
 		${PREFIX}/share/doc/cyrus-sasl
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/saslauthd.conf \
+	${SUBST_DATA} ${FILESDIR}/saslauthd.conf \
 		${PREFIX}/share/examples/cyrus-sasl/saslauthd.conf
 .endif
 

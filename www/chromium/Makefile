@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2014/07/28 12:33:47 espie Exp $
+# $OpenBSD: Makefile,v 1.180 2014/08/10 09:58:06 espie Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -164,9 +164,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome
 	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/chrome
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
-		${FILESDIR}/chrome ${PREFIX}/bin/chrome
-	chmod ${BINMODE} ${PREFIX}/bin/chrome
+	${SUBST_PROGRAM} ${FILESDIR}/chrome ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 
 .for p in chrome_100_percent content_resources keyboard_resources resources

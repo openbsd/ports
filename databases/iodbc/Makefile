@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/03/26 14:12:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2014/08/10 09:58:04 espie Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -54,7 +54,7 @@ WANTLIB-admin += xcb xcb-render xcb-shm z
 EXDIR=${PREFIX}/share/examples/iodbc/
 post-install:
 	${INSTALL_DATA_DIR} ${EXDIR}
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+	${SUBST_DATA} \
 	    ${WRKSRC}/etc/odbc.ini.sample ${EXDIR}/odbc.ini.sample \
 	    ${WRKSRC}/etc/odbcinst.ini.sample ${EXDIR}/odbcinst.ini.sample
 	rm -f ${PREFIX}/man/man1/iodbctestw.1

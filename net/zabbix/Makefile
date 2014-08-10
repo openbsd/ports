@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2014/07/24 09:03:58 robert Exp $
+# $OpenBSD: Makefile,v 1.101 2014/08/10 09:58:06 espie Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -110,12 +110,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zabbix
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/modules.sample
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${FILESDIR}/zabbix.conf \
+	${SUBST_DATA} ${FILESDIR}/zabbix.conf \
 		${DESTDIR}${PREFIX-web}/conf/modules.sample/zabbix.conf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${FILESDIR}/zabbix.ini \
+	${SUBST_DATA} ${FILESDIR}/zabbix.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}/zabbix.ini
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/schema
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data

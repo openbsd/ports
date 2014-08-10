@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2014/04/06 17:03:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
@@ -36,7 +36,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/get_iplayer/plugins
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m 644 -c \
+	${SUBST_DATA} -m 644 \
 	   ${FILESDIR}/options.sample ${PREFIX}/share/get_iplayer/options.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/get_iplayer ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/plugins/* \

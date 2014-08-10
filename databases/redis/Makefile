@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2014/07/12 09:53:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.68 2014/08/10 09:58:04 espie Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.8.12
@@ -43,11 +43,9 @@ pre-configure:
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/redis-sentinel ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
-		${WRKSRC}/redis.conf \
+	${SUBST_DATA} ${WRKSRC}/redis.conf \
 			${PREFIX}/share/examples/redis/redis.conf
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
-		${WRKSRC}/sentinel.conf \
+	${SUBST_DATA} ${WRKSRC}/sentinel.conf \
 			${PREFIX}/share/examples/redis/sentinel.conf
 
 .include <bsd.port.mk>

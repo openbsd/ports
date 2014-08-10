@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/26 16:00:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/10 09:58:04 espie Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -36,14 +36,13 @@ do-configure:
 		${LOCALBASE}/bin/qmake4 -o Makefile phoenix.pro
 
 do-install:
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-		${FILESDIR}/fritzing.sh ${PREFIX}/bin/fritzing
+	${SUBST_PROGRAM} ${FILESDIR}/fritzing.sh ${PREFIX}/bin/fritzing
 	${INSTALL_PROGRAM} ${WRKSRC}/Fritzing ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fritzing/
 	cd ${WRKSRC}; tar cf - bins help parts pdb resources sketches tools translations | \
 		tar xf - -C ${PREFIX}/share/fritzing/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/fritzing.desktop \
+	${SUBST_DATA} ${FILESDIR}/fritzing.desktop \
 		${PREFIX}/share/applications/fritzing.desktop
 
 .include <bsd.port.mk>

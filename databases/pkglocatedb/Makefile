@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/07/13 16:52:37 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2014/08/10 09:58:04 espie Exp $
 
 # NOTE for FLAVOR=src
 # - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
@@ -36,8 +36,7 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/pkglocatedb ${PREFIX}/share
 	${INSTALL_MAN} ${FILESDIR}/pkg_locate.1 ${PREFIX}/man/man1
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-		${FILESDIR}/pkglocate ${PREFIX}/bin/pkg_locate
+	${SUBST_PROGRAM} ${FILESDIR}/pkglocate ${PREFIX}/bin/pkg_locate
 	ln -s ${TRUEPREFIX}/bin/pkg_locate ${PREFIX}/bin/pkglocate
 
 NO_TEST =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/10 16:54:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/10 09:58:05 espie Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
@@ -36,7 +36,7 @@ do-install:
 		${MODLUA_DATADIR}/ldoc/html/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${MODLUA_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.md ${MODLUA_DOCDIR}
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${BINMODE} \
-		-c ${WRKSRC}/ldoc.lua ${PREFIX}/bin/ldoc${MODLUA_DEP_VERSION}
+	${SUBST_PROGRAM} \
+		${WRKSRC}/ldoc.lua ${PREFIX}/bin/ldoc${MODLUA_DEP_VERSION}
 
 .include <bsd.port.mk>

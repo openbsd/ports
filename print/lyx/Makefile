@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2014/02/03 17:56:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.69 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -58,7 +58,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/lyx.desktop \
+	${SUBST_DATA} ${FILESDIR}/lyx.desktop \
 		${PREFIX}/share/applications/lyx.desktop
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/04 10:00:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/10 09:58:05 espie Exp $
 
 COMMENT=		Visual Tcl development environment
 
@@ -30,8 +30,7 @@ do-install:
 	     ${WRKSRC}/demo ${PREFIX}/lib/vtcl
 	cp -R ${WRKSRC}/sample ${PREFIX}/share/examples/vtcl
 	cp -R ${WRKSRC}/doc ${PREFIX}/share/doc/vtcl
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-	    ${FILESDIR}/vtcl ${PREFIX}/bin/vtcl
+	${SUBST_PROGRAM} ${FILESDIR}/vtcl ${PREFIX}/bin/vtcl
 
 NO_TEST=		Yes
 

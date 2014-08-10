@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2014/07/11 15:49:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.87 2014/08/10 09:58:07 espie Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
@@ -61,14 +61,11 @@ post-configure:
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/man/*.1 ${PREFIX}/man/man1/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${MANMODE} \
-		-c ${WRKBUILD}/man/i3-config-wizard.1 \
+	${SUBST_MAN} ${WRKBUILD}/man/i3-config-wizard.1 \
 			${PREFIX}/man/man1/i3-config-wizard.1
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${MANMODE} \
-		-c ${WRKBUILD}/man/i3-dmenu-desktop.1 \
+	${SUBST_MAN} ${WRKBUILD}/man/i3-dmenu-desktop.1 \
 			${PREFIX}/man/man1/i3-dmenu-desktop.1
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${MANMODE} \
-		-c ${WRKBUILD}/man/i3.1 ${PREFIX}/man/man1/i3.1
+	${SUBST_MAN} ${WRKBUILD}/man/i3.1 ${PREFIX}/man/man1/i3.1
 	@rm ${PREFIX}/man/man1/i3-sensible*.1
 
 .include <bsd.port.mk>

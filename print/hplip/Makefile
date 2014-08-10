@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2014/06/17 08:51:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2014/08/10 09:58:06 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -183,7 +183,7 @@ pre-configure:
 		${WRKSRC}/logcapture.py
 
 post-install:
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/hplip.state \
+	${SUBST_DATA} ${FILESDIR}/hplip.state \
 		${PREFIX}/share/examples/hplip/db/hplip.state
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/hplip

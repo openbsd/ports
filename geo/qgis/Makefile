@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/11/08 22:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2014/08/10 09:58:05 espie Exp $
 
 BROKEN-powerpc=	doesn't build, assembler error: operand out of range
 
@@ -67,8 +67,7 @@ pre-configure:
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}
 		ln ${PREFIX}/share/{qgis/images/icons,pixmaps}/qgis-icon.png
-		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
-			${WRKSRC}/debian/qgis.desktop \
+		${SUBST_DATA} ${WRKSRC}/debian/qgis.desktop \
 			${PREFIX}/share/applications/qgis.desktop
 
 .include <bsd.port.mk>

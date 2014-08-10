@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/26 10:17:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2014/08/10 09:58:06 espie Exp $
 
 COMMENT =	simple CalDAV calendar server
 
@@ -31,7 +31,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/radicale
 	cd ${WRKSRC}; ${INSTALL_DATA} COPYING NEWS.rst README \
 	    ${PREFIX}/share/doc/radicale/
-	${SUBST_CMD} -g ${SHAREGRP} -o ${SHAREOWN} -c ${WRKSRC}/config \
+	${SUBST_DATA} ${WRKSRC}/config \
 	    ${PREFIX}/share/examples/radicale/config
 	${INSTALL_DATA} ${WRKSRC}/logging \
 	    ${PREFIX}/share/examples/radicale/logging

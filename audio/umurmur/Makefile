@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/25 22:03:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2014/08/10 09:58:04 espie Exp $
 
 COMMENT =		minimalistic Mumble server
 
@@ -31,13 +31,11 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/umurmur
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-		-c ${WRKBUILD}/umurmur.conf.example \
+	${SUBST_DATA} ${WRKBUILD}/umurmur.conf.example \
 		${PREFIX}/share/examples/umurmur/umurmur.conf
 	${INSTALL_MAN} ${FILESDIR}/umurmurd.1 \
 		${PREFIX}/man/man1/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-		-c ${FILESDIR}/umurmur.conf.1 \
+	${SUBST_MAN} ${FILESDIR}/umurmur.conf.1 \
 			${PREFIX}/man/man1/umurmur.conf.1
 
 .include <bsd.port.mk>

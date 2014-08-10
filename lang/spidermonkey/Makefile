@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/12/09 16:31:59 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2014/08/10 09:58:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -66,7 +66,7 @@ post-install:
 	# There is a mozilla-js.pc in the tarball, but it's not initialized
 	# as part of the build. This file is based on that.
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mozilla-js.pc \
+	${SUBST_DATA} ${FILESDIR}/mozilla-js.pc \
 		${PREFIX}/lib/pkgconfig/mozilla-js.pc
 
 .include <bsd.port.mk>

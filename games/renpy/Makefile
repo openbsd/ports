@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/01/01 06:43:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2014/08/10 09:58:05 espie Exp $
 
 COMMENT =		visual novel engine
 
@@ -42,7 +42,6 @@ pre-install:
 	cp -r launcher renpy templates the_question tutorial LICENSE.txt \
 		${PREFIX}/share/renpy
 	${INSTALL_SCRIPT} ${WRKDIST}/renpy.py ${PREFIX}/share/renpy
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-		${FILESDIR}/renpy ${PREFIX}/bin/renpy
+	${SUBST_PROGRAM} ${FILESDIR}/renpy ${PREFIX}/bin/renpy
 
 .include <bsd.port.mk>

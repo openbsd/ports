@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/01/11 18:53:34 edd Exp $
+# $OpenBSD: Makefile,v 1.14 2014/08/10 09:58:06 espie Exp $
 
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
 DISTNAME =		dblatex-0.3
@@ -32,7 +32,6 @@ post-extract:
 
 post-install:
 	@rm -r ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/contrib
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-	    -c ${FILESDIR}/dblatex ${PREFIX}/bin/dblatex
+	${SUBST_PROGRAM} ${FILESDIR}/dblatex ${PREFIX}/bin/dblatex
 
 .include <bsd.port.mk>

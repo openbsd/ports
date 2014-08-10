@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/08/07 21:31:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2014/08/10 09:58:04 espie Exp $
 
 COMMENT =	Python library for working with CouchDB
 
@@ -38,8 +38,7 @@ post-install:
 	    pax -rw * ${PREFIX}/share/doc/py-couchdb
 	rm -rf ${PREFIX}/share/doc/py-couchdb/_sources
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/examples/py-couchdb
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-	    -c ${FILESDIR}/python.ini \
+	${SUBST_DATA} ${FILESDIR}/python.ini \
 	    ${PREFIX}/share/examples/py-couchdb/python.ini
 
 do-test:

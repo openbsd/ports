@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	mail anomalies in the system logfiles to the administrator
 
@@ -21,7 +21,7 @@ DTR=		10-savelog 20-logrotate 30-logrotate-dateext
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${PREFIX}/bin/logtail
-	${SUBST_CMD} -c -o root -g wheel ${WRKSRC}/src/logtail2 ${PREFIX}/bin/logtail2
+	${SUBST_PROGRAM} ${WRKSRC}/src/logtail2 ${PREFIX}/bin/logtail2
 	${INSTALL_DATA_DIR} ${PREFIX}/share/logtail/detectrotate
 .for i in ${DTR}
 	${INSTALL_SCRIPT} ${WRKSRC}/src/detectrotate/${i}.dtr \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/04/11 17:44:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.48 2014/08/10 09:58:06 espie Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -45,7 +45,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${FILESDIR}/dillo.xpm ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/dillo.desktop \
+	@${SUBST_DATA} ${FILESDIR}/dillo.desktop \
 		${PREFIX}/share/applications/dillo.desktop
 
 .include <bsd.port.mk>

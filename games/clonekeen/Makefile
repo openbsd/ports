@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/10 09:58:05 espie Exp $
 
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
@@ -33,7 +33,6 @@ do-install:
 	cp -r ${WRKSRC}/bin ${PREFIX}/share/clonekeen
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/clonekeen
 	${INSTALL_PROGRAM} ${WRKBUILD}/keen ${PREFIX}/share/clonekeen
-	${SUBST_CMD} -c -o root -g bin ${FILESDIR}/keen ${PREFIX}/bin/keen
-	chmod 755 ${PREFIX}/bin/keen
+	${SUBST_PROGRAM} ${FILESDIR}/keen ${PREFIX}/bin/keen
 
 .include <bsd.port.mk>

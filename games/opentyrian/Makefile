@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/24 09:08:55 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/10 09:58:05 espie Exp $
 
 V =			2.1.20130907
 COMMENT =		port of the DOS shoot-em-up Tyrian
@@ -25,8 +25,7 @@ MAKE_FLAGS =		CC="${CC}" \
 WRKDIST =		${WRKDIR}/opentyrian-${V}
 
 do-install:
-	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${FILESDIR}/opentyrian ${PREFIX}/bin/opentyrian
+	${SUBST_PROGRAM} ${FILESDIR}/opentyrian ${PREFIX}/bin/opentyrian
 	${INSTALL_DATA_DIR} ${PREFIX}/share/opentyrian
 	${INSTALL_PROGRAM} ${WRKSRC}/opentyrian ${PREFIX}/share/opentyrian/opentyrian
 

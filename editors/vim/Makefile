@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2014/07/10 23:54:15 jturner Exp $
+# $OpenBSD: Makefile,v 1.138 2014/08/10 09:58:05 espie Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -163,8 +163,7 @@ post-install:
 
 .if ! ${FLAVOR:Mno_x11}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} -c \
-		${FILESDIR}/gvim.desktop \
+	${SUBST_DATA} ${FILESDIR}/gvim.desktop \
 		${PREFIX}/share/applications/gvim.desktop
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKDIST}/runtime/vim48x48.png ${PREFIX}/share/pixmaps/vim.png

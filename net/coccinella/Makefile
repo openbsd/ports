@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2014/08/10 09:58:06 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -52,9 +52,8 @@ do-install:
 	rm ${PREFIX}/lib/coccinella/lib/Init.tcl.* \
 		${PREFIX}/lib/coccinella/show_own_jid.patch
 	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${PREFIX}/lib/coccinella
-	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} ${FILESDIR}/coccinella \
+	${SUBST_PROGRAM} ${FILESDIR}/coccinella \
 				${PREFIX}/bin/coccinella
-	chmod 755 ${PREFIX}/bin/coccinella
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinella
 	cd ${WRKSRC} && ${INSTALL_DATA} README.txt READMEs/README-xmpp \
 		READMEs/README-sounds \

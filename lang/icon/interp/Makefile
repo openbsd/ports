@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/11/03 14:32:21 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2014/08/10 09:58:05 espie Exp $
 
 COMMENT-main =		programming language with generators, X11 and more
 COMMENT-main-no_x11 =	programming language with generators
@@ -61,8 +61,7 @@ post-build:
 # with the package. Ludicrous to get through a ftp connexion for such
 # a small file...
 do-install:
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-		${FILESDIR}/icont.template ${PREFIX}/bin/icont
+	${SUBST_PROGRAM} ${FILESDIR}/icont.template ${PREFIX}/bin/icont
 	${INSTALL_DATA_DIR} ${WRKINST}${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/icont ${WRKINST}${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconx ${PREFIX}/bin

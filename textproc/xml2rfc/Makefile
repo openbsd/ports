@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/04 09:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
@@ -21,8 +21,7 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-install:
-	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-	    ${FILESDIR}/xml2rfc ${PREFIX}/bin/xml2rfc
+	@${SUBST_PROGRAM} ${FILESDIR}/xml2rfc ${PREFIX}/bin/xml2rfc
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/xml2rfc
 	@${INSTALL_DATA} ${WRKSRC}/xml2rfc.tcl ${PREFIX}/share/xml2rfc
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xml2rfc

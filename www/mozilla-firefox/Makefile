@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2014/07/24 18:31:03 landry Exp $
+# $OpenBSD: Makefile,v 1.257 2014/08/10 09:58:07 espie Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -63,17 +63,17 @@ RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 MOZILLA_AUTOCONF_DIRS +=	js/src
 
 post-install:
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mozilla-firefox.1 \
+	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
 		${PREFIX}/man/man1/mozilla-firefox.1
 	cd ${PREFIX}/man/man1/ && ln -sf mozilla-firefox.1 firefox.1
 	cd ${PREFIX}/bin/ && ln -sf firefox mozilla-firefox
 	# install prefs
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/all-openbsd.js \
+	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 	# install icon for desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/10 09:58:06 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -82,8 +82,6 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/rocrail/symbols/control/* ${PREFIX}/share/rocrail/symbols/control
 	${INSTALL_DATA} ${WRKBUILD}/stylesheets/* ${PREFIX}/share/rocrail/stylesheets
 	${INSTALL_DATA} ${WRKBUILD}/rocrail/package/images/* ${PREFIX}/share/rocrail/images
-	${SUBST_CMD} -c -g ${BINGRP} -o ${BINOWN} \
-		${FILESDIR}/rocview.sh ${PREFIX}/bin/rocview.sh
-	chmod 755 ${PREFIX}/bin/rocview.sh
+	${SUBST_PROGRAM} ${FILESDIR}/rocview.sh ${PREFIX}/bin/rocview.sh
 
 .include <bsd.port.mk>

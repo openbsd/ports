@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/07/10 11:17:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/08/10 09:58:05 espie Exp $
 
 COMMENT=	simulation of a true AI
 
@@ -43,7 +43,7 @@ do-install:
 	cp -R ${WRKDIR}/endgame-singularity-music-${MUSIC_V}/* \
 		${PREFIX}/share/singularity/music
 	${INSTALL_DATA} ${WRKSRC}/singularity.py ${PREFIX}/share/singularity/
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
+	${SUBST_PROGRAM} \
 		${FILESDIR}/singularity ${PREFIX}/bin/singularity
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/singularity
 

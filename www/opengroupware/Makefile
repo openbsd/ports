@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/05/22 09:50:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2014/08/10 09:58:07 espie Exp $
 
 COMMENT = 	web based groupware server
 
@@ -93,7 +93,7 @@ post-build:
 post-install:
 	mkdir -p ${PREFIX}/share/examples/opengroupware
 .for F in ${EXAMPLE_FILES}
-	${SUBST_CMD} -g ${SHAREGRP} -o ${SHAREOWN} -c \
+	${SUBST_DATA} \
 		${FILESDIR}/${F} ${PREFIX}/share/examples/opengroupware/${F}
 .endfor
 	${MODAPACHE_INSTALL}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/05/14 23:11:41 bcallah Exp $
+# $OpenBSD: Makefile,v 1.34 2014/08/10 09:58:05 espie Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -86,7 +86,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/sdlmess
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sdlmess
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mess.ini \
+	${SUBST_DATA} ${FILESDIR}/mess.ini \
 	    ${PREFIX}/share/examples/sdlmess/mess.ini
 	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/sdlmess
 

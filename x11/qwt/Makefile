@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.14 2014/08/10 09:58:07 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -42,8 +42,7 @@ do-configure:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/* ${PREFIX}/man/man3/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qwt
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${FILESDIR}/Makefile.examples \
+	${SUBST_DATA} ${FILESDIR}/Makefile.examples \
 		${PREFIX}/share/examples/qwt/Makefile
 	${INSTALL_DATA} ${WRKSRC}/examples/examples.pri \
 		${PREFIX}/share/examples/qwt/

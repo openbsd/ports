@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/30 13:20:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=	web-based MySQL management
 
@@ -34,7 +34,7 @@ WRKDIST=	${WRKDIR}/chive
 do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
 	cd ${WRKSRC} && pax -rw * ${WRKINST}${INSTDIR}
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-	    -c ${FILESDIR}/chive.conf ${WRKINST}${INSTDIR}/chive.conf.default
+	${SUBST_DATA} \
+	    ${FILESDIR}/chive.conf ${WRKINST}${INSTDIR}/chive.conf.default
 
 .include <bsd.port.mk>

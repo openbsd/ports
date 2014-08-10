@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/10 09:58:06 espie Exp $
 
 COMMENT=		open source alternative to Microsoft Project
 
@@ -27,10 +27,8 @@ NO_TEST=	Yes
 PKG_ARCH=       *
 
 do-install:
-	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
-		${FILESDIR}/projectlibre \
+	@${SUBST_PROGRAM} ${FILESDIR}/projectlibre \
 		${PREFIX}/bin/projectlibre
-	chmod +x ${PREFIX}/bin/projectlibre
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/projectlibre/lib/
 	${INSTALL_DATA} ${WRKSRC}/projectlibre.jar ${PREFIX}/lib/projectlibre/
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib/projectlibre/lib/

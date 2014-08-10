@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/10 09:58:05 espie Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 
@@ -37,8 +37,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${ABCL_HOME}
 	${INSTALL_DATA} ${WRKSRC}/dist/abcl.jar ${ABCL_HOME}
 	${INSTALL_DATA} ${WRKSRC}/dist/abcl-contrib.jar ${ABCL_HOME}
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c -m 0755 \
-		${FILESDIR}/abcl ${PREFIX}/bin/abcl
+	${SUBST_PROGRAM} ${FILESDIR}/abcl ${PREFIX}/bin/abcl
 	cd ${WRKDIST} && tar -cf - src | tar -C ${ABCL_HOME} -xf -
 	chown -R ${SHAREOWN}:${SHAREGRP} ${ABCL_HOME}/src
 	${INSTALL_DATA} ${FILESDIR}/abcl_completions ${ABCL_HOME}
