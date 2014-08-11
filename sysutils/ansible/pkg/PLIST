@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/05/12 20:17:16 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/08/11 20:56:15 rpe Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-galaxy
@@ -45,8 +45,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/inventory/script.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/
 lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/group_vars.py
-lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/group_vars.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/noop.py
+lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/noop.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_common.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_common.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/
@@ -66,6 +66,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/rax.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/rax.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/redhat.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/redhat.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/splitter.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/splitter.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/urls.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/urls.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/
@@ -140,6 +142,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/param
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/paramiko_ssh.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/ssh.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/ssh.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/winrm.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/winrm.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/filter_plugins/__init__.pyc
@@ -196,6 +200,17 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/poller.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/poller.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/return_data.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/return_data.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/csh.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/csh.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/fish.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/fish.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/powershell.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/powershell.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/sh.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/shell_plugins/sh.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/__init__.pyc
@@ -230,6 +245,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/vault.pyc
 @man man/man1/ansible.1
 share/ansible/
 share/ansible/cloud/
+share/ansible/cloud/azure
 share/ansible/cloud/cloudformation
 share/ansible/cloud/digital_ocean
 share/ansible/cloud/digital_ocean_domain
@@ -284,8 +300,11 @@ share/ansible/cloud/rax_files
 share/ansible/cloud/rax_files_objects
 share/ansible/cloud/rax_identity
 share/ansible/cloud/rax_keypair
+share/ansible/cloud/rax_meta
 share/ansible/cloud/rax_network
 share/ansible/cloud/rax_queue
+share/ansible/cloud/rax_scaling_group
+share/ansible/cloud/rax_scaling_policy
 share/ansible/cloud/rds
 share/ansible/cloud/rds_param_group
 share/ansible/cloud/rds_subnet_group
@@ -347,6 +366,7 @@ share/ansible/monitoring/newrelic_deployment
 share/ansible/monitoring/pagerduty
 share/ansible/monitoring/pingdom
 share/ansible/monitoring/rollbar_deployment
+share/ansible/monitoring/stackdriver
 share/ansible/net_infrastructure/
 share/ansible/net_infrastructure/arista_interface
 share/ansible/net_infrastructure/arista_l2interface
@@ -381,7 +401,6 @@ share/ansible/notification/nexmo
 share/ansible/notification/osx_say
 share/ansible/notification/slack
 share/ansible/notification/sns
-share/ansible/notification/stackdriver
 share/ansible/notification/twilio
 share/ansible/notification/typetalk
 share/ansible/packaging/
@@ -471,6 +490,25 @@ share/ansible/web_infrastructure/htpasswd
 share/ansible/web_infrastructure/jboss
 share/ansible/web_infrastructure/jira
 share/ansible/web_infrastructure/supervisorctl
+share/ansible/windows/
+share/ansible/windows/setup.ps1
+share/ansible/windows/slurp.ps1
+share/ansible/windows/win_feature
+share/ansible/windows/win_feature.ps1
+share/ansible/windows/win_get_url
+share/ansible/windows/win_get_url.ps1
+share/ansible/windows/win_group
+share/ansible/windows/win_group.ps1
+share/ansible/windows/win_msi
+share/ansible/windows/win_msi.ps1
+share/ansible/windows/win_ping
+share/ansible/windows/win_ping.ps1
+share/ansible/windows/win_service
+share/ansible/windows/win_service.ps1
+share/ansible/windows/win_stat
+share/ansible/windows/win_stat.ps1
+share/ansible/windows/win_user
+share/ansible/windows/win_user.ps1
 share/doc/ansible/
 share/doc/ansible/COPYING
 share/doc/ansible/README.md
