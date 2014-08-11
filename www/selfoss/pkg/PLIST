@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/10 22:56:27 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/08/11 21:03:03 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
@@ -242,7 +242,6 @@ selfoss/public/images/twitter.png
 selfoss/public/images/unread.png
 selfoss/public/images/unstarred.png
 selfoss/public/js/
-selfoss/public/js/color-by-brightness.js
 selfoss/public/js/jquery-1.8.3.min.js
 selfoss/public/js/jquery-ui-1.10.0.custom.js
 selfoss/public/js/jquery.hotkeys.js
@@ -264,6 +263,7 @@ selfoss/public/lang/cs.ini
 selfoss/public/lang/de.ini
 selfoss/public/lang/en.ini
 selfoss/public/lang/es.ini
+selfoss/public/lang/et.ini
 selfoss/public/lang/fi.ini
 selfoss/public/lang/fr.ini
 selfoss/public/lang/hu.ini
@@ -299,9 +299,11 @@ selfoss/spouts/rss/golem.php
 selfoss/spouts/rss/heise.php
 selfoss/spouts/rss/images.php
 selfoss/spouts/rss/instapaper.php
+selfoss/spouts/rss/lightreading.php
 selfoss/spouts/rss/mmospy.php
 selfoss/spouts/rss/prolinux.php
 selfoss/spouts/rss/readability.php
+selfoss/spouts/rss/teltarif.php
 selfoss/spouts/spout.php
 selfoss/spouts/tumblr/
 selfoss/spouts/tumblr/user.php

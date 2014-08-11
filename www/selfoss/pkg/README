@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/05/03 23:16:22 rpe Exp $
+$OpenBSD: README,v 1.2 2014/08/11 21:03:03 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,6 +13,9 @@ It can be accessed by pointing you browser to:
 
 Post-installation instructions
 ==============================
+For nginx configuration examples see:
+	https://github.com/SSilence/selfoss/wiki/nginx-configuration
+
 With Apache, AllowOverride settings on the ${INSTDIR} directory,
 the headers_module and the rewrite_module are required.
 
@@ -56,3 +59,5 @@ the installation part of the documentation on http://selfoss.aditu.de/.
 You can run the update process from a cronjob:
 */5	*	*	*	*	ftp -Vo /dev/null http://<hostname>/selfoss/update
 
+If you use authentication, you might set "allow_public_update_access=1"
+and limit access to that url to localhost in your webserver config.
