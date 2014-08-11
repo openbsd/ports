@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1276 2014/08/10 11:34:27 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1277 2014/08/11 11:34:42 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2864,14 +2864,14 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@if test -e ${PKGDIR}/README; then \
 		r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
 		echo "Installing ${PKGDIR}/README as $$r"; \
-		${_FAKESUDO} ${SUBST_CMD} ${_SHAREOWNGRP} -c ${PKGDIR}/README $$r; \
+		${_FAKESUDO} ${SUBST_CMD} ${_SHAREOWNGRP} -m ${SHAREMODE} -c ${PKGDIR}/README $$r; \
 	fi
 .else
 .  for _s in ${MULTI_PACKAGES}
 	@if test -e ${PKGDIR}/README${_s}; then \
 		r=${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
 		echo "Installing ${PKGDIR}/README${_s} as $$r"; \
-		${_FAKESUDO} ${SUBST_CMD${_s}} ${_SHAREOWNGRP} -c ${PKGDIR}/README${_s} $$r; \
+		${_FAKESUDO} ${SUBST_CMD${_s}} ${_SHAREOWNGRP} -m ${SHAREMODE} -c ${PKGDIR}/README${_s} $$r; \
 	fi
 .  endfor
 .endif
@@ -2880,8 +2880,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 		if test X"$$i" != "X*.rc"; then \
 			r=${WRKINST}${RCDIR}/$${i%.rc}; \
 			echo "Installing ${PKGDIR}/$$i as $$r"; \
-			${_FAKESUDO} ${SUBST_CMD} ${_BINOWNGRP} -c $$i $$r; \
-			${_FAKESUDO} chmod ${BINMODE} $$r; \
+			${_FAKESUDO} ${SUBST_CMD} ${_BINOWNGRP} -m ${BINMODE} -c $$i $$r; \
 		fi; \
 	done
 
