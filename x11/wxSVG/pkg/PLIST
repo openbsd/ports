@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/27 07:30:34 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/08/11 06:55:51 brad Exp $
 @bin bin/svgview
 include/wxSVG/
 include/wxSVG/Animated.h
@@ -193,5 +193,4 @@ include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.la
 @lib lib/libwxsvg.so.${LIBwxsvg_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libwxsvg.pc
