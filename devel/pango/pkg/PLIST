@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/04/01 13:21:45 ajacoutot Exp $
-@exec-update rm -f ${SYSCONFDIR}/pango/pango.modules
+@comment $OpenBSD: PLIST,v 1.35 2014/08/11 14:02:08 ajacoutot Exp $
 @unexec-delete rm -f %D/lib/pango/1.8.0/modules.cache
 @bin bin/pango-querymodules
 @bin bin/pango-view
