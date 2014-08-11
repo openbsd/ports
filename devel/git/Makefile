@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.113 2014/05/21 08:39:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.114 2014/08/11 16:49:31 pascal Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		1.9.3
+V =		2.0.4
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -24,7 +24,13 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES =		https://www.kernel.org/pub/software/scm/git/
 
-MODULES =		devel/gettext x11/tk
+MODULES =		devel/gettext x11/tk lang/python
+
+MODPY_BUILDDEP =	No
+MODPY_RUNDEP =		No
+MODPY_ADJ_FILES =	contrib/hooks/multimail/git_multimail.py \
+			contrib/hooks/multimail/migrate-mailhook-config \
+			contrib/hooks/multimail/post-receive
 
 BUILD_DEPENDS =		devel/p5-Error
 
@@ -102,6 +108,11 @@ post-install:
 		pax -rw . ${PREFIX}/man
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
 		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/share/git-core/templates/hooks/multimail
+.for f in git_multimail.py migrate-mailhook-config post-receive
+	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/multimail/$f \
+		${PREFIX}/share/git-core/templates/hooks/multimail
+.endfor
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
 	cd ${WRKBUILD}/gitweb && \
 		${MAKE_ENV} ${MAKE_PROGRAM} gitwebdir=${TRUEPREFIX}/share/gitweb install
