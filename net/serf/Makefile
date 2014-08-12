@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2014/04/21 12:47:04 stsp Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/12 11:01:44 stsp Exp $
 
 COMMENT =		high performance HTTP client library
-DISTNAME =		serf-1.3.4
-REVISION =		1
+DISTNAME =		serf-1.3.7
 SHARED_LIBS = 		serf-1                    1.0 # 1.3.0
 CATEGORIES =		net
 HOMEPAGE =		https://code.google.com/p/serf/
