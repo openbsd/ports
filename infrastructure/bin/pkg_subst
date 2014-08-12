@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.3 2014/08/10 08:55:30 espie Exp $
+# $OpenBSD: pkg_subst,v 1.4 2014/08/12 07:59:34 zhuk Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -32,7 +32,7 @@ my ($fuid, $fgid, $fmode);
 my ($uidc, $gidc);
 
 my $ui = OpenBSD::State->new('pkg_subst');
-$ui->usage_is( '[-ci] [-Dvar=value ...] [-g group] [-o owner] [file ...]');
+$ui->usage_is( '[-ci] [-Dvar=value ...] [-g group] [-m mode] [-o owner] [file ...]');
 $ui->do_options(
     sub {
 	getopts('D:g:m:o:chi',
