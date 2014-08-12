@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/04/05 05:42:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/12 01:31:39 zhuk Exp $
 
 COMMENT =	manual tiling window manager
 DISTNAME =	herbstluftwm-0.6.2
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://herbstluftwm.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -35,7 +36,7 @@ FAKE_FLAGS =	SYSCONFDIR="${BASEDIR}" \
 NO_TEST =	Yes
 
 post-patch:
-	perl -pi -e "s,^#!/bin/bash,#!/usr/bin/env bash,g" \
+	perl -pi -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash," \
 		`grep -Rl /bin/bash ${WRKSRC}/*`
 
 .include <bsd.port.mk>
