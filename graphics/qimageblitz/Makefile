@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/10 07:37:32 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/12 00:15:43 zhuk Exp $
 
 CATEGORIES =	graphics
 COMMENT =	KDE image effects
 DISTNAME =	qimageblitz-0.0.6
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =          Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/qimageblitz/}
 
-WANTLIB =  c lib/qt4/QtGui m pthread stdc++
+WANTLIB =  c lib/qt4/QtGui m pthread
 
 MODULES =	x11/kde4
 MODKDE4_USE =
