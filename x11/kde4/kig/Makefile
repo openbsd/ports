@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/09 20:03:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/08/12 01:08:31 zhuk Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread ${MODPY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -14,9 +15,8 @@ WANTLIB += boost_python-mt soprano
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	devel/boost
-RUN_DEPENDS =	devel/boost \
-		devel/desktop-file-utils \
+LIB_DEPENDS =	devel/boost
+RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 post-patch:
