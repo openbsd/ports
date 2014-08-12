@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.91 2014/08/12 00:37:44 zhuk Exp $
+# $OpenBSD: portcheck,v 1.92 2014/08/12 01:44:08 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -856,7 +856,7 @@ check_plist() {
 		"@comment "*)
 			# ignore
 			;;
-		share/icons/*/*/*|share/icons/*/@(index.theme|iconrc?(-png)|default.kde4))
+		share/icons/*/*/*|share/icons/*/@(index.theme|iconrc?(-png)))
 			# Themes have at least two levels in depth.
 			#
 			# We match directories by purpose, this helps to catch
@@ -884,6 +884,8 @@ check_plist() {
 			app=${app%%.*}
 			err "${portref}installs icon ${l##*/} in ${l%/*}, it" \
 			    "should likely go in share/pixmaps/ instead"
+			;;
+		share/icons/default.*)
 			;;
 		share/icons/*)
 			app=${l#share/icons/}
