@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2014/05/13 16:32:05 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.28 2014/08/12 14:04:14 kirby Exp $
 @pkgpath www/wordpress-mu
 wordpress/
 wordpress/index.php
@@ -443,6 +443,7 @@ wordpress/wp-content/
 wordpress/wp-content/index.php
 wordpress/wp-content/plugins/
 wordpress/wp-content/plugins/akismet/
+wordpress/wp-content/plugins/akismet/.htaccess
 wordpress/wp-content/plugins/akismet/_inc/
 wordpress/wp-content/plugins/akismet/_inc/akismet.css
 wordpress/wp-content/plugins/akismet/_inc/akismet.js
