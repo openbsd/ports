@@ -1,4 +1,4 @@
-.\"     $OpenBSD: portbump.1,v 1.1 2014/07/12 19:34:08 zhuk Exp $
+.\"     $OpenBSD: portbump.1,v 1.2 2014/08/12 00:53:38 zhuk Exp $
 .\"
 .\" Copyright (c) 2014 Vadim Zhukov
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 12 2014 $
+.Dd $Mdocdate: August 12 2014 $
 .Dt PORTBUMP 1
 .Os
 .Sh NAME
@@ -31,7 +31,7 @@
 .Op Ar portref
 .Sh DESCRIPTION
 .Nm
-is used to increase
+is used to increase ('bump')
 .Ev REVISION
 and
 .Ev SHARED_LIBS
@@ -62,10 +62,22 @@ of a port will be processed.
 If no port references are given, the port in current directory will
 be processed.
 .Pp
+Default mode of operation is increasing
+.Ev REVISION
+mark values (
+.Fl r ) .
+Operations on
+.Ev REVISION
+marks and on
+.Ev SHARED_LIBS
+could be combined by explicit specifying corresponding flags, see below.
+.Pp
 The following options are available:
 .Bl -tag -width Ds
 .It Fl d
-Delete all REVISION marks in
+Delete all
+.Ev REVISION
+marks in
 .Pa Makefile .
 Mutally exclusive with
 .Fl r .
@@ -96,14 +108,6 @@ multiple subpackages of a single port could be specified, though.
 Increment
 .Ev REVISION
 values for all subpackages, or only for given ones.
-This is a default mode of operation, unless
-.Fl M
-or
-.Fl m
-flag is specified.
-The
-.Fl r
-flag could be combined explicitly with either of those two, though.
 Mutally exclusive with
 .Fl d .
 .It Fl v
