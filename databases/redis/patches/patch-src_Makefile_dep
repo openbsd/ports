@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_dep,v 1.5 2014/04/29 08:45:28 dcoppa Exp $
---- src/Makefile.dep.orig	Tue Apr 22 10:14:57 2014
-+++ src/Makefile.dep	Tue Apr 29 10:27:08 2014
-@@ -5,58 +5,58 @@ ae_evport.o: ae_evport.c
+$OpenBSD: patch-src_Makefile_dep,v 1.6 2014/08/12 10:09:56 dcoppa Exp $
+--- src/Makefile.dep.orig	Mon Jul 14 17:48:14 2014
++++ src/Makefile.dep	Tue Aug 12 11:52:20 2014
+@@ -5,65 +5,65 @@ ae_evport.o: ae_evport.c
  ae_kqueue.o: ae_kqueue.c
  ae_select.o: ae_select.c
  anet.o: anet.c fmacros.h anet.h
@@ -9,41 +9,49 @@ $OpenBSD: patch-src_Makefile_dep,v 1.5 2014/04/29 08:45:28 dcoppa Exp $
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +aof.o: aof.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h bio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   bio.h
 -bio.o: bio.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +bio.o: bio.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h bio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   bio.h
 -bitops.o: bitops.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +bitops.o: bitops.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -config.o: config.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +config.o: config.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
  crc64.o: crc64.c
 -db.o: db.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +db.o: db.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -debug.o: debug.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +debug.o: debug.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h sha1.h crc64.h bio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   sha1.h crc64.h bio.h
  dict.o: dict.c fmacros.h dict.h zmalloc.h redisassert.h
  endianconv.o: endianconv.c
  hyperloglog.o: hyperloglog.c redis.h fmacros.h config.h \
-- ../deps/lua/src/lua.h ../deps/lua/src/luaconf.h ae.h sds.h dict.h \
-+ ae.h sds.h dict.h \
-  adlist.h zmalloc.h anet.h ziplist.h intset.h version.h util.h rdb.h \
-  rio.h
+-  ../deps/lua/src/lua.h ../deps/lua/src/luaconf.h ae.h sds.h dict.h \
++  ae.h sds.h dict.h \
+   adlist.h zmalloc.h anet.h ziplist.h intset.h version.h util.h \
+   latency.h sparkline.h rdb.h rio.h
  intset.o: intset.c intset.h zmalloc.h endianconv.h config.h
+-latency.o: latency.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
+-  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
++latency.o: latency.c redis.h fmacros.h config.h \
++  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
  lzf_c.o: lzf_c.c lzfP.h
  lzf_d.o: lzf_d.c lzfP.h
  memtest.o: memtest.c config.h
@@ -51,42 +59,43 @@ $OpenBSD: patch-src_Makefile_dep,v 1.5 2014/04/29 08:45:28 dcoppa Exp $
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +migrate.o: migrate.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h endianconv.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   endianconv.h
 -multi.o: multi.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +multi.o: multi.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
  networking.o: networking.c redis.h fmacros.h config.h \
 -  ../deps/lua/src/lua.h ../deps/lua/src/luaconf.h ae.h sds.h dict.h \
 +  ae.h sds.h dict.h \
-   adlist.h zmalloc.h anet.h ziplist.h intset.h version.h util.h rdb.h \
-   rio.h
+   adlist.h zmalloc.h anet.h ziplist.h intset.h version.h util.h \
+   latency.h sparkline.h rdb.h rio.h
 -notify.o: notify.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +notify.o: notify.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -object.o: object.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +object.o: object.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
  pqsort.o: pqsort.c
 -pubsub.o: pubsub.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +pubsub.o: pubsub.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
  rand.o: rand.c
 -rdb.o: rdb.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +rdb.o: rdb.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h lzf.h zipmap.h \
-   endianconv.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   lzf.h zipmap.h endianconv.h
  redis-benchmark.o: redis-benchmark.c fmacros.h ae.h \
-@@ -65,52 +65,51 @@ redis-check-aof.o: redis-check-aof.c fmacros.h config.
+@@ -72,58 +72,58 @@ redis-check-aof.o: redis-check-aof.c fmacros.h config.
  redis-check-dump.o: redis-check-dump.c lzf.h crc64.h
  redis-cli.o: redis-cli.c fmacros.h version.h ../deps/hiredis/hiredis.h \
    sds.h zmalloc.h ../deps/linenoise/linenoise.h help.h anet.h ae.h
@@ -94,31 +103,32 @@ $OpenBSD: patch-src_Makefile_dep,v 1.5 2014/04/29 08:45:28 dcoppa Exp $
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +redis.o: redis.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h slowlog.h bio.h \
-   asciilogo.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   slowlog.h bio.h asciilogo.h
  release.o: release.c release.h version.h crc64.h
  replication.o: replication.c redis.h fmacros.h config.h \
 -  ../deps/lua/src/lua.h ../deps/lua/src/luaconf.h ae.h sds.h dict.h \
 +  ae.h sds.h dict.h \
-   adlist.h zmalloc.h anet.h ziplist.h intset.h version.h util.h rdb.h \
-   rio.h
+   adlist.h zmalloc.h anet.h ziplist.h intset.h version.h util.h \
+   latency.h sparkline.h rdb.h rio.h
  rio.o: rio.c fmacros.h rio.h sds.h util.h crc64.h config.h redis.h \
 -  ../deps/lua/src/lua.h ../deps/lua/src/luaconf.h ae.h dict.h adlist.h \
 +  ae.h dict.h adlist.h \
-   zmalloc.h anet.h ziplist.h intset.h version.h rdb.h
+   zmalloc.h anet.h ziplist.h intset.h version.h latency.h sparkline.h \
+   rdb.h
 -scripting.o: scripting.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
--  ziplist.h intset.h version.h util.h rdb.h rio.h sha1.h rand.h \
--  ../deps/lua/src/lauxlib.h ../deps/lua/src/lualib.h
 +scripting.o: scripting.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-+  ziplist.h intset.h version.h util.h rdb.h rio.h sha1.h rand.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+-  sha1.h rand.h ../deps/lua/src/lauxlib.h ../deps/lua/src/lualib.h
++  sha1.h rand.h
  sds.o: sds.c sds.h zmalloc.h
 -sentinel.o: sentinel.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +sentinel.o: sentinel.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h \
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
    ../deps/hiredis/hiredis.h ../deps/hiredis/async.h
  setproctitle.o: setproctitle.c
  sha1.o: sha1.c sha1.h config.h
@@ -126,41 +136,48 @@ $OpenBSD: patch-src_Makefile_dep,v 1.5 2014/04/29 08:45:28 dcoppa Exp $
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +slowlog.o: slowlog.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h slowlog.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   slowlog.h
 -sort.o: sort.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +sort.o: sort.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h pqsort.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h \
+   pqsort.h
+-sparkline.o: sparkline.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
+-  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
++sparkline.o: sparkline.c redis.h fmacros.h config.h \
++  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -syncio.o: syncio.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +syncio.o: syncio.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -t_hash.o: t_hash.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +t_hash.o: t_hash.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -t_list.o: t_list.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +t_list.o: t_list.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -t_set.o: t_set.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +t_set.o: t_set.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -t_string.o: t_string.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +t_string.o: t_string.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
 -t_zset.o: t_zset.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +t_zset.o: t_zset.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
-   ziplist.h intset.h version.h util.h rdb.h rio.h
+   ziplist.h intset.h version.h util.h latency.h sparkline.h rdb.h rio.h
  util.o: util.c fmacros.h util.h sds.h
  ziplist.o: ziplist.c zmalloc.h util.h sds.h ziplist.h endianconv.h \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_redis_h,v 1.2 2014/02/04 12:20:46 dcoppa Exp $
---- src/redis.h.orig	Tue Feb  4 11:17:21 2014
-+++ src/redis.h	Tue Feb  4 13:06:37 2014
-@@ -97,7 +97,7 @@
+$OpenBSD: patch-src_redis_h,v 1.3 2014/08/12 10:09:56 dcoppa Exp $
+--- src/redis.h.orig	Mon Jul 14 17:48:14 2014
++++ src/redis.h	Tue Aug 12 11:49:22 2014
+@@ -101,7 +101,7 @@ typedef long long mstime_t; /* millisecond time type. 
  #define REDIS_DEFAULT_REPL_BACKLOG_TIME_LIMIT (60*60)  /* 1 hour */
  #define REDIS_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
  #define REDIS_BGSAVE_RETRY_DELAY 5 /* Wait a few secs before trying again. */
