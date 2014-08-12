@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/09 20:03:24 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/08/12 00:41:00 zhuk Exp $
 include/kde4/qmobipocket/
 include/kde4/qmobipocket/mobipocket.h
 include/kde4/qmobipocket/qfilestream.h
@@ -10,5 +10,3 @@ lib/kde4/mobithumbnail.so
 @lib lib/libqmobipocket.so.${LIBqmobipocket_VERSION}
 lib/strigi/strigila_mobi.so
 share/kde4/services/mobithumbnail.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/09 20:03:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/08/12 00:41:00 zhuk Exp $
 
 COMMENT =	KDE mobipocket plugins for Strigi, Okular and thumbnails
 DISTNAME =	kdegraphics-mobipocket-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	qmobipocket	0.0
 
@@ -10,8 +11,6 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio
 WANTLIB += streamanalyzer streams
-
-RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	databases/strigi
 
