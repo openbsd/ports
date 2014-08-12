@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/08/12 12:44:48 jca Exp $
 
 COMMENT=	tools for building unix domain socket client/servers
 
 DISTNAME=		ucspi-unix-0.34
-REVISION=		0
+REVISION=		1
 CATEGORIES=     	net
 
-HOMEPAGE=		http://em.ca/~bruceg/ucspi-unix/
+HOMEPAGE=		http://untroubled.org/ucspi-unix/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
