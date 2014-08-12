@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/30 03:22:48 lteo Exp $
+# $OpenBSD: Makefile,v 1.10 2014/08/12 03:00:16 lteo Exp $
 
 COMMENT =	data acquisition library for snort
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =		pcap
 
-MASTER_SITES =		http://www.snort.org/dl/snort-current/
+MASTER_SITES =		https://www.snort.org/downloads/snort/
 
 
 SEPARATE_BUILD =	Yes
