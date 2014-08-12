@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.89 2014/08/10 20:46:04 zhuk Exp $
+# $OpenBSD: portcheck,v 1.90 2014/08/12 00:30:35 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1671,15 +1671,15 @@ check_pkg_dir() {
 check_hardcoded() {
 	$debugging && echo "CALLED: check_hardcoded($*)" >&2
 
-	perl -n -e 'BEGIN { $ec=1; }
-		    if (m,/usr/local\b,o) { $ec=0; close ARGV; }
+	perl -n -e 'BEGIN { $ec=0; }
+		    if (m,/usr/local\b,o) { $ec=1; close ARGV; }
 		    if (m,/var((?:/+[^/\s]+)*)(?:\s.*)?$,o) {
 			unless ($1 =~ m,^/+(?:log|run|tmp),o) {
-			    $ec=0; close ARGV;
+			    $ec=1; close ARGV;
 			}
 		    }
 		    END { $? = $ec; }' \
-		"$1" && err "hardcoded paths detected in $1, consider using" \
+		"$1" || err "hardcoded paths detected in $1, consider using" \
 		    "SUBST_VARS and TRUEPREFIX/LOCALBASE/LOCALSTATEDIR/VARBASE"
 }
 
