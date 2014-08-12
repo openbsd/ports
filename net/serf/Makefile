@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/12 11:01:44 stsp Exp $
+# $OpenBSD: Makefile,v 1.8 2014/08/12 11:02:50 stsp Exp $
 
 COMMENT =		high performance HTTP client library
 DISTNAME =		serf-1.3.7
@@ -22,6 +22,7 @@ MODSCONS_ENV=	CC="${CC}" \
 		DEBUG=0 \
 		APR=${LOCALBASE}/bin/apr-1-config \
 		APU=${LOCALBASE}/bin/apu-1-config
+TEST_TARGET = 	check
 
 # XXX scons doesn't support x.y library versioning scheme, only x.y.z
 post-patch:
