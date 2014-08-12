@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/09 20:03:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/08/12 01:03:51 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	KDE bindings for .NET
 DISTNAME =	kimono-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kimono			51.0 # 2.0
 SHARED_LIBS +=	akonadi-sharp		51.0
@@ -46,6 +47,7 @@ RUN_DEPENDS =		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 
 LIB_DEPENDS =		databases/soprano>=${MIN_SOPRANO_VERSION} \
 			devel/boehm-gc \
+			lang/mono \
 			${MODKDE4_DEP_DIR}/qyoto>=${MODKDE4_DEP_VERSION} \
 			${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
