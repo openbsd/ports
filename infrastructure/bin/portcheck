@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.90 2014/08/12 00:30:35 zhuk Exp $
+# $OpenBSD: portcheck,v 1.91 2014/08/12 00:37:44 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -160,8 +160,11 @@ EOE
 	exit 2
 fi
 
-# This way we can run all checks even on cvs.openbsd.org
-set -A make_args -- MASTER_SITE_OPENBSD= \
+# This way we can run all checks even on cvs.openbsd.org and/or
+# when SKIPDIR framework is used
+set -A make_args -- \
+	SKIPDIR= STARTAFTER= STARTDIR= \
+	MASTER_SITE_OPENBSD= \
 	PORTSDIR_PATH="$portsdir:$(cd /usr/ports && make -V PORTSDIR_PATH || true)"
 
 if $rootrun; then
