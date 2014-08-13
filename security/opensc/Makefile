@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2014/08/13 06:18:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2014/08/13 11:22:39 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	set of libraries and utilities to access smart cards
 
 DISTNAME=	opensc-0.14.0
+REVISION=	0
 CATEGORIES=	security
 
 SHARED_LIBS +=  opensc 3.0	# 3.0
