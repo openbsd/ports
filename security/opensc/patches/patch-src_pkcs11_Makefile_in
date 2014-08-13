@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pkcs11_Makefile_in,v 1.1 2013/06/07 13:27:58 dcoppa Exp $
+$OpenBSD: patch-src_pkcs11_Makefile_in,v 1.2 2014/08/13 06:18:47 dcoppa Exp $
 
 Do not install shared modules under ${PREFIX}/lib/ and avoid the
 nasty symlink dance
@@ -6,9 +6,9 @@ nasty symlink dance
 Use --tag=disable-static to disable libtool static archives for
 modules
 
---- src/pkcs11/Makefile.in.orig	Tue Dec  4 15:43:58 2012
-+++ src/pkcs11/Makefile.in	Thu Jun  6 10:28:53 2013
-@@ -74,7 +74,7 @@ am__nobase_list = $(am__nobase_strip_setup); \
+--- src/pkcs11/Makefile.in.orig	Mon Jun 30 20:38:01 2014
++++ src/pkcs11/Makefile.in	Wed Aug 13 07:42:08 2014
+@@ -77,7 +77,7 @@ am__nobase_list = $(am__nobase_strip_setup); \
  am__base_list = \
    sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
    sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
@@ -17,7 +17,7 @@ modules
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  am__DEPENDENCIES_2 = $(top_builddir)/src/libopensc/libopensc.la \
-@@ -190,6 +190,7 @@ LIBOBJS = @LIBOBJS@
+@@ -212,6 +212,7 @@ LIBOBJS = @LIBOBJS@
  LIBRARY_BITNESS = @LIBRARY_BITNESS@
  LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
@@ -25,8 +25,8 @@ modules
  LIPO = @LIPO@
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
-@@ -385,25 +386,25 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
- $(am__aclocal_m4_deps):
+@@ -423,25 +424,25 @@ versioninfo-pkcs11-spy.rc: $(top_builddir)/config.stat
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
  install-libLTLIBRARIES: $(lib_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
 -	test -z "$(libdir)" || $(MKDIR_P) "$(DESTDIR)$(libdir)"
@@ -58,9 +58,9 @@ modules
  	done
  
  clean-libLTLIBRARIES:
-@@ -424,9 +425,9 @@ $(top_builddir)/win32/versioninfo.lo:  \
- 	$(top_builddir)/win32/$(am__dirstamp) \
- 	$(top_builddir)/win32/$(DEPDIR)/$(am__dirstamp)
+@@ -455,9 +456,9 @@ clean-libLTLIBRARIES:
+ onepin-opensc-pkcs11.la: $(onepin_opensc_pkcs11_la_OBJECTS) $(onepin_opensc_pkcs11_la_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(onepin_opensc_pkcs11_la_LINK) -rpath $(libdir) $(onepin_opensc_pkcs11_la_OBJECTS) $(onepin_opensc_pkcs11_la_LIBADD) $(LIBS)
  opensc-pkcs11.la: $(opensc_pkcs11_la_OBJECTS) $(opensc_pkcs11_la_DEPENDENCIES) 
 -	$(AM_V_CCLD)$(opensc_pkcs11_la_LINK) -rpath $(libdir) $(opensc_pkcs11_la_OBJECTS) $(opensc_pkcs11_la_LIBADD) $(LIBS)
 +	$(AM_V_CCLD)$(opensc_pkcs11_la_LINK) -rpath $(pkcs11dir) $(opensc_pkcs11_la_OBJECTS) $(opensc_pkcs11_la_LIBADD) $(LIBS)
@@ -70,7 +70,7 @@ modules
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -566,7 +567,7 @@ check-am: all-am
+@@ -693,7 +694,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(LTLIBRARIES) $(SCRIPTS)
  installdirs:
@@ -79,7 +79,7 @@ modules
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -628,7 +629,6 @@ install-dvi-am:
+@@ -753,7 +754,6 @@ install-dvi-am:
  
  install-exec-am: install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)
@@ -87,7 +87,7 @@ modules
  install-html: install-html-am
  
  install-html-am:
-@@ -676,7 +676,7 @@ uninstall-am: uninstall-libLTLIBRARIES
+@@ -801,7 +801,7 @@ uninstall-am: uninstall-libLTLIBRARIES
  	distclean-compile distclean-generic distclean-libtool \
  	distclean-tags distdir dvi dvi-am html html-am info info-am \
  	install install-am install-data install-data-am install-dvi \
@@ -96,7 +96,7 @@ modules
  	install-html install-html-am install-info install-info-am \
  	install-libLTLIBRARIES install-man install-pdf install-pdf-am \
  	install-ps install-ps-am install-strip installcheck \
-@@ -700,18 +700,6 @@ pkcs11-jar: jar-dir
+@@ -825,18 +825,6 @@ pkcs11-jar: jar-dir
  	cp opensc_pkcs11_install.js jar-dir
  	signtool -Z"opensc-pkcs11.jar" -i"opensc_pkcs11_install.js" \
  		 -k"testcert" jar-dir
@@ -108,7 +108,7 @@ modules
 -@WIN32_TRUE@	done
 -@WIN32_FALSE@install-exec-hook:
 -@WIN32_FALSE@	$(MKDIR_P) "$(DESTDIR)$(pkcs11dir)"
--@WIN32_FALSE@	for l in opensc-pkcs11$(PKCS11_SUFFIX) pkcs11-spy$(PKCS11_SUFFIX); do \
+-@WIN32_FALSE@	for l in opensc-pkcs11$(PKCS11_SUFFIX) onepin-opensc-pkcs11$(PKCS11_SUFFIX) pkcs11-spy$(PKCS11_SUFFIX); do \
 -@WIN32_FALSE@		rm -f "$(DESTDIR)$(pkcs11dir)/$$l"; \
 -@WIN32_FALSE@		$(LN_S) ../$$l "$(DESTDIR)$(pkcs11dir)/$$l"; \
 -@WIN32_FALSE@	done

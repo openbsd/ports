@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tests_Makefile_in,v 1.1 2013/08/20 14:28:48 dcoppa Exp $
---- src/tests/Makefile.in.orig	Tue Aug 20 15:56:20 2013
-+++ src/tests/Makefile.in	Tue Aug 20 15:57:20 2013
-@@ -211,7 +211,8 @@ LIBRARY_BITNESS = @LIBRARY_BITNESS@
+$OpenBSD: patch-src_tests_Makefile_in,v 1.2 2014/08/13 06:18:47 dcoppa Exp $
+--- src/tests/Makefile.in.orig	Mon Jun 30 20:38:01 2014
++++ src/tests/Makefile.in	Wed Aug 13 07:34:28 2014
+@@ -212,7 +212,8 @@ LIBRARY_BITNESS = @LIBRARY_BITNESS@
  LIBS = \
  	$(top_builddir)/src/libopensc/libopensc.la \
  	$(top_builddir)/src/common/libscdl.la \
