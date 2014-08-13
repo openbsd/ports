@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.232 2014/07/16 12:31:15 jca Exp $
+$OpenBSD: user.list,v 1.233 2014/08/13 08:43:36 sebastia Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -247,3 +247,4 @@ id  user		group		port options
 736 _conserver		_conserver	comms/conserver
 737 _popa3d		_popa3d		mail/popa3d
 738 _dnsreflector	_dnsreflector	net/dnsreflector
+739 _puppetboard			www/puppetboard
