@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/07/18 12:36:30 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/08/13 15:13:33 jsg Exp $
 @bin bin/cppcheck
 @man man/man1/cppcheck.1
 share/cppcheck/
 share/cppcheck/cfg/
+share/cppcheck/cfg/avr.cfg
 share/cppcheck/cfg/gtk.cfg
 share/cppcheck/cfg/posix.cfg
 share/cppcheck/cfg/qt.cfg
