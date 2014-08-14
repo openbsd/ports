@@ -1,0 +1,221 @@
+$OpenBSD: patch-libgit2-glib_ggit-blob-output-stream_c,v 1.1 2014/08/14 06:42:16 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=734010
+
+--- libgit2-glib/ggit-blob-output-stream.c.orig	Sun Feb  9 21:35:38 2014
++++ libgit2-glib/ggit-blob-output-stream.c	Thu Jul 31 00:14:49 2014
+@@ -36,9 +36,6 @@ struct _GgitBlobOutputStreamPrivate
+ 	GMutex mutex;
+ 	GCond cond;
+ 
+-	GMutex reply_mutex;
+-	GCond reply_cond;
+-
+ 	gssize written;
+ 
+ 	const gchar *writebuf;
+@@ -47,8 +44,13 @@ struct _GgitBlobOutputStreamPrivate
+ 	gint ret;
+ 	GgitOId *oid;
+ 
+-	guint closing : 1;
+-	guint cancelled : 1;
++	/*
++	 * IDLE -> stream's thread is waiting for data
++	 * SENDING -> have data, outside thread is waiting for result
++	 * CANCELLED -> cancelled, stream's thread to exit and set error result
++	 * CLOSED -> closed by outside thread or error, exit and set result
++	 */
++	enum { IDLE, SENDING, CANCELLED, CLOSED } state;
+ };
+ 
+ G_DEFINE_TYPE (GgitBlobOutputStream, ggit_blob_output_stream, G_TYPE_OUTPUT_STREAM)
+@@ -68,17 +70,20 @@ ggit_blob_output_stream_close (GOutputStream  *object,
+ 
+ 	if (g_cancellable_set_error_if_cancelled (cancellable, error))
+ 	{
++		g_mutex_lock (&stream->priv->mutex);
++		if (stream->priv->state != CANCELLED)
++		{
++			stream->priv->state = CANCELLED;
++			g_cond_signal (&stream->priv->cond);
++		}
++		g_mutex_unlock (&stream->priv->mutex);
+ 		return FALSE;
+ 	}
+ 
+ 	g_mutex_lock (&stream->priv->mutex);
+-	stream->priv->closing = TRUE;
+-
++	stream->priv->state = CLOSED;
+ 	g_cond_signal (&stream->priv->cond);
+-	g_mutex_lock (&stream->priv->reply_mutex);
+ 	g_mutex_unlock (&stream->priv->mutex);
+-	g_cond_wait (&stream->priv->reply_cond, &stream->priv->reply_mutex);
+-	g_mutex_unlock (&stream->priv->reply_mutex);
+ 
+ 	g_thread_join (stream->priv->thread);
+ 	return TRUE;
+@@ -105,38 +110,54 @@ ggit_blob_output_stream_write (GOutputStream  *object,
+                                GError        **error)
+ {
+ 	GgitBlobOutputStream *stream = GGIT_BLOB_OUTPUT_STREAM (object);
++	gssize written;
+ 
+-	if (stream->priv->closing)
++	g_mutex_lock (&stream->priv->mutex);
++
++	while (stream->priv->state == SENDING)
+ 	{
++		g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
++	}
++
++	if (stream->priv->state == CLOSED)
++	{
++		g_mutex_unlock (&stream->priv->mutex);
+ 		return 0;
+ 	}
+ 
+-	g_mutex_lock (&stream->priv->mutex);
+-
+ 	if (g_cancellable_is_cancelled (cancellable))
+ 	{
+-		stream->priv->cancelled = TRUE;
++		stream->priv->state = CANCELLED;
+ 	}
+ 
+-	stream->priv->writebuf = buffer;
+-	stream->priv->bufsize = count;
+-	stream->priv->written = 0;
++	if (stream->priv->state == IDLE)
++	{
++		stream->priv->writebuf = buffer;
++		stream->priv->bufsize = count;
++		stream->priv->written = 0;
++		stream->priv->state = SENDING;
++	}
+ 
+ 	g_cond_signal (&stream->priv->cond);
+ 
+-	g_mutex_lock (&stream->priv->reply_mutex);
+-	g_mutex_unlock (&stream->priv->mutex);
++	while (stream->priv->state == SENDING)
++	{
++		g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
++	}
+ 
+-	g_cond_wait (&stream->priv->reply_cond, &stream->priv->reply_mutex);
+-	g_mutex_unlock (&stream->priv->reply_mutex);
+-
+-	if (stream->priv->cancelled)
++	if (stream->priv->state == CANCELLED)
+ 	{
+ 		g_cancellable_set_error_if_cancelled (cancellable, error);
+-		return -1;
++		written = -1;
+ 	}
++	else
++	{
++		written = stream->priv->written;
++	}
+ 
+-	return stream->priv->written;
++	g_mutex_unlock (&stream->priv->mutex);
++
++	return written;
+ }
+ 
+ static void
+@@ -151,9 +172,6 @@ ggit_blob_output_stream_finalize (GObject *object)
+ 	g_mutex_clear (&stream->priv->mutex);
+ 	g_cond_clear (&stream->priv->cond);
+ 
+-	g_mutex_clear (&stream->priv->reply_mutex);
+-	g_cond_clear (&stream->priv->reply_cond);
+-
+ 	if (stream->priv->oid)
+ 	{
+ 		ggit_oid_free (stream->priv->oid);
+@@ -233,18 +251,26 @@ blob_chunk_cb (char   *content,
+ 	GgitBlobOutputStream *stream = payload;
+ 	int written = 0;
+ 
+-	g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
++	g_mutex_lock (&stream->priv->mutex);
++	while (stream->priv->state == IDLE)
++	{
++		g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
++	}
+ 
+-	if (stream->priv->closing)
++	if (stream->priv->state == CLOSED)
+ 	{
++		g_mutex_unlock (&stream->priv->mutex);
+ 		return 0;
+ 	}
+ 
+-	if (stream->priv->cancelled)
++	if (stream->priv->state == CANCELLED)
+ 	{
++		g_mutex_unlock (&stream->priv->mutex);
+ 		return -1;
+ 	}
+ 
++	/* state must be SENDING */
++
+ 	if (stream->priv->bufsize > maxlen)
+ 	{
+ 		stream->priv->written = maxlen;
+@@ -260,9 +286,9 @@ blob_chunk_cb (char   *content,
+ 		written = stream->priv->written;
+ 	}
+ 
+-	g_mutex_lock (&stream->priv->reply_mutex);
+-	g_cond_signal (&stream->priv->reply_cond);
+-	g_mutex_unlock (&stream->priv->reply_mutex);
++	stream->priv->state = IDLE;
++	g_cond_signal (&stream->priv->cond);
++	g_mutex_unlock (&stream->priv->mutex);
+ 
+ 	return written;
+ }
+@@ -280,23 +306,22 @@ chunk_blob_in_thread (gpointer data)
+ 	                                  blob_chunk_cb,
+ 	                                  data);
+ 
++	g_mutex_lock (&stream->priv->mutex);
+ 	stream->priv->ret = ret;
+-	stream->priv->closing = TRUE;
+ 
+ 	if (ret == GIT_OK)
+ 	{
++		stream->priv->state = CLOSED;
+ 		stream->priv->oid = _ggit_oid_wrap (&oid);
+ 	}
+ 	else
+ 	{
+-		stream->priv->cancelled = TRUE;
++		stream->priv->state = CANCELLED;
+ 	}
+ 
+-	g_mutex_lock (&stream->priv->reply_mutex);
+-	g_cond_signal (&stream->priv->reply_cond);
++	g_cond_signal (&stream->priv->cond);
+ 
+ 	g_mutex_unlock (&stream->priv->mutex);
+-	g_mutex_unlock (&stream->priv->reply_mutex);
+ 
+ 	return NULL;
+ }
+@@ -309,10 +334,7 @@ ggit_blob_output_stream_init (GgitBlobOutputStream *se
+ 	g_mutex_init (&self->priv->mutex);
+ 	g_cond_init (&self->priv->cond);
+ 
+-	g_mutex_init (&self->priv->reply_mutex);
+-	g_cond_init (&self->priv->reply_cond);
+-
+-	g_mutex_lock (&self->priv->mutex);
++	self->priv->state = IDLE;
+ 
+ 	self->priv->thread = g_thread_new ("ggit-blob-output-stream",
+ 	                                   chunk_blob_in_thread,
