@@ -5,17 +5,19 @@ See rc.subr(8) for more information.
 -----------------------------------8<-----------------------------------
 #!/bin/sh
 #
-# $OpenBSD: rc.template,v 1.5 2011/03/10 13:46:59 ajacoutot Exp $
+# $OpenBSD: rc.template,v 1.6 2014/08/14 19:54:10 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/foobar"
 #daemon_flags=""
 #daemon_user="root"
+#daemon_timeout="30"
 
 . /etc/rc.d/rc.subr
 
 #pexp="${daemon}${daemon_flags:+ ${daemon_flags}}"
 #rc_bg= # (undefined)
 #rc_reload= # (undefined)
+#rc_usercheck=YES
 
 #rc_pre() {
 #}
@@ -25,7 +27,7 @@ daemon="${TRUEPREFIX}/bin/foobar"
 #}
 
 #rc_check() {
-#	pkill -0 -f "^${pexp}"
+#	pgrep -q -f "^${pexp}"
 #}
 
 #rc_reload() {
