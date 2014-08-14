@@ -1,0 +1,24 @@
+$OpenBSD: patch-shared_akcrash_cpp,v 1.1 2014/08/14 23:05:57 zhuk Exp $
+Use standard CMake module instead of rolling own logic, unbreaks build.
+REVIEW: https://git.reviewboard.kde.org/r/119630/
+--- shared/akcrash.cpp.orig	Tue Aug  5 21:18:59 2014
++++ shared/akcrash.cpp	Tue Aug  5 21:19:36 2014
+@@ -33,16 +33,13 @@
+ #ifdef HAVE_UNISTD_H
+ # include <unistd.h>
+ #endif
+-#ifdef HAVE_EXECINFO_H
+-# include <execinfo.h>
+-#endif
+ 
+ QString akBacktrace()
+ {
+   QString s;
+ 
+-/* FIXME: is there an equivalent for darwin, *BSD, or windows? */
+-#ifdef HAVE_EXECINFO_H
++/* FIXME: is there an equivalent for windows? */
++#if Backtrace_FOUND
+   void *trace[256];
+   int n = backtrace( trace, 256 );
+   if ( !n ) {

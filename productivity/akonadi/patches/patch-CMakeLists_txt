@@ -1,7 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2014/07/10 14:05:00 zhuk Exp $
-Does not require C++0x, actually.
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/08/14 23:05:57 zhuk Exp $
+1. Use original SQLite driver instead of "tweaked" one,
+   unbreaks runtime.
+2. Use standard CMake module instead of rolling own logic,
+   unbreaks build.
+   REVIEW: https://git.reviewboard.kde.org/r/119630/
 --- CMakeLists.txt.orig	Tue Apr  8 01:02:16 2014
-+++ CMakeLists.txt	Wed May 14 11:22:41 2014
++++ CMakeLists.txt	Wed Aug  6 01:31:15 2014
 @@ -75,7 +75,7 @@ endif()
  macro(SET_DEFAULT_DB_BACKEND)
      set(_backend ${ARGV0})
@@ -11,3 +15,23 @@ Does not require C++0x, actually.
          set(AKONADI_BUILD_QSQLITE TRUE)
      else()
          if("${_backend}" STREQUAL "POSTGRES")
+@@ -245,15 +245,10 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_F
+ 
+ set(AKONADI_SYSTEM_LIBS)
+ 
+-check_include_files(execinfo.h HAVE_EXECINFO_H)
+-if(HAVE_EXECINFO_H)
+-  check_function_exists(backtrace BACKTRACE_IN_LIBC)
+-  if(NOT BACKTRACE_IN_LIBC)
+-    find_library(EXECINFO_LIBRARY NAMES execinfo)
+-    if(EXECINFO_LIBRARY)
+-      set(AKONADI_SYSTEM_LIBS ${AKONADI_SYSTEM_LIBS} ${EXECINFO_LIBRARY})
+-    endif()
+-  endif()
++find_package(Backtrace)
++if(Backtrace_FOUND)
++  include_directories(${Backtrace_INCLUDE_DIRS})
++  set(AKONADI_SYSTEM_LIBS ${AKONADI_SYSTEM_LIBS} ${Backtrace_LIBRARIES})
+ endif()
+ 
+ check_include_files(unistd.h HAVE_UNISTD_H)

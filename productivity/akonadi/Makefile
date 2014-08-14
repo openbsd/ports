@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/10 14:05:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/08/14 23:05:57 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
@@ -13,7 +13,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/akonadi/src/}
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
-WANTLIB += boost_program_options-mt sqlite3 soprano
+WANTLIB += boost_program_options-mt execinfo sqlite3 soprano
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -30,7 +30,8 @@ BUILD_DEPENDS =		databases/mysql,-server \
 RUN_DEPENDS =		misc/shared-mime-info
 
 LIB_DEPENDS =		databases/soprano>=2.9.0 \
-			devel/boost
+			devel/boost \
+			devel/libexecinfo
 
 # XXX (buggy) dbconfigtest fails due to SQLITE being default,
 # and it doesn't worth to fix
