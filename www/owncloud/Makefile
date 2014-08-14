@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.71 2014/06/29 17:08:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2014/08/14 06:55:42 ajacoutot Exp $
 
 COMMENT=	easy and universal access to shared and/or personal files
 
-V=		6.0.4
+V=		7.0.1
 DISTNAME=	owncloud-${V}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -34,7 +34,8 @@ WRKDIST=	${WRKDIR}/owncloud
 PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/owncloud
 TINSTDIR=	${TRUEPREFIX}/owncloud
-SUBST_VARS=	INSTDIR TINSTDIR MODPHP_BIN
+VR=		${V:R}
+SUBST_VARS=	INSTDIR TINSTDIR MODPHP_BIN VR
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \

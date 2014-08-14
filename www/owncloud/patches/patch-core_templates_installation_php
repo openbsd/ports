@@ -1,0 +1,14 @@
+$OpenBSD: patch-core_templates_installation_php,v 1.1 2014/08/14 06:55:42 ajacoutot Exp $
+--- core/templates/installation.php.orig	Tue Jul 22 22:00:14 2014
++++ core/templates/installation.php	Wed Jul 23 18:21:01 2014
+@@ -78,8 +78,8 @@
+ 		<div id="datadirContent">
+ 			<label for="directory"><?php p($l->t( 'Data folder' )); ?></label>
+ 			<input type="text" name="directory" id="directory"
+-				placeholder="<?php p(OC::$SERVERROOT.'/data'); ?>"
+-				value="<?php p($_['directory']); ?>"
++				placeholder="<?php p('/owncloud-data'); ?>"
++				value="<?php p('/owncloud-data'); ?>"
+ 				autocomplete="off" autocapitalize="off" autocorrect="off" />
+ 		</div>
+ 	</fieldset>

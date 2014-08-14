@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.28 2014/06/24 08:49:14 ajacoutot Exp $
+$OpenBSD: README,v 1.29 2014/08/14 06:55:42 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ It should point to the root directory of the HTTP server. e.g.
     # ln -s ../owncloud /var/www/htdocs/owncloud
 
 Official installation intructions are available at:
-    http://doc.owncloud.org/server/6.0/admin_manual/installation/installation_source.html
+    http://doc.owncloud.org/server/${VR}/admin_manual/installation/installation_source.html
 
 Post-installation instructions
 ==============================
@@ -130,7 +130,7 @@ installation and create a new admin user.
 Updating
 ========
 Before updating to a new release, read:
-    http://doc.owncloud.org/server/6.0/admin_manual/maintenance/update.html
+    http://doc.owncloud.org/server/${VR}/admin_manual/maintenance/update.html
 
 When using a PostgreSQL or MySQL, the corresponding MDB2 php package
 must be installed to properly upgrade the database:

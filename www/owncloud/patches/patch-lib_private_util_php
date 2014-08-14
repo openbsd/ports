@@ -1,12 +1,21 @@
-$OpenBSD: patch-lib_private_util_php,v 1.3 2014/06/29 17:08:56 ajacoutot Exp $
---- lib/private/util.php.orig	Tue Jun 24 17:10:43 2014
-+++ lib/private/util.php	Sun Jun 29 19:00:48 2014
-@@ -292,7 +292,7 @@ class OC_Util {
- 	 */
+$OpenBSD: patch-lib_private_util_php,v 1.4 2014/08/14 06:55:42 ajacoutot Exp $
+--- lib/private/util.php.orig	Mon Aug  4 15:47:08 2014
++++ lib/private/util.php	Wed Aug  6 08:56:49 2014
+@@ -391,7 +391,7 @@ class OC_Util {
  	public static function checkServer() {
+ 		$l = OC_L10N::get('lib');
  		$errors = array();
 -		$CONFIG_DATADIRECTORY = OC_Config::getValue('datadirectory', OC::$SERVERROOT . '/data');
-+		$CONFIG_DATADIRECTORY = OC_Config::getValue('datadirectory', '/owncloud-data' );
++		$CONFIG_DATADIRECTORY = OC_Config::getValue('datadirectory', '/owncloud-data');
  
- 		if (!\OC::needUpgrade() && OC_Config::getValue('installed', false)) {
+ 		if (!self::needUpgrade() && OC_Config::getValue('installed', false)) {
  			// this check needs to be done every time
+@@ -994,7 +994,7 @@ class OC_Util {
+ 		$testContent = 'testcontent';
+ 
+ 		// creating a test file
+-		$testFile = OC_Config::getValue( "datadirectory", OC::$SERVERROOT."/data" ).'/'.$fileName;
++		$testFile = OC_Config::getValue( "datadirectory", '/owncloud-data' ).'/'.$fileName;
+ 
+ 		if(file_exists($testFile)) {// already running this test, possible recursive call
+ 			return false;

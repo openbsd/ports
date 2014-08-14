@@ -1,6 +1,6 @@
-$OpenBSD: patch-apps_updater_appinfo_info_xml,v 1.1 2013/04/03 17:40:48 robert Exp $
---- apps/updater/appinfo/info.xml.orig	Sun Mar 17 10:13:41 2013
-+++ apps/updater/appinfo/info.xml	Sun Mar 17 10:13:48 2013
+$OpenBSD: patch-apps_updater_appinfo_info_xml,v 1.2 2014/08/14 06:55:42 ajacoutot Exp $
+--- apps/updater/appinfo/info.xml.orig	Tue Jul 22 22:01:13 2014
++++ apps/updater/appinfo/info.xml	Wed Jul 23 17:11:42 2014
 @@ -7,7 +7,6 @@
  	<licence>AGPL</licence>
  	<author>Victor Dubiniuk</author>
@@ -8,4 +8,4 @@ $OpenBSD: patch-apps_updater_appinfo_info_xml,v 1.1 2013/04/03 17:40:48 robert E
 -	<default_enable/>
  	<require>4.93</require>
  		<types></types>
- </info>
+ 	<ocsid>166059</ocsid>
