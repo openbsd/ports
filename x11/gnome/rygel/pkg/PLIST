@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/04/01 13:21:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/08/14 06:28:32 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
@@ -60,6 +60,7 @@ share/gtk-doc/html/librygel-core/RygelLogHandler.html
 share/gtk-doc/html/librygel-core/RygelMediaDevice.html
 share/gtk-doc/html/librygel-core/RygelMetaConfig.html
 share/gtk-doc/html/librygel-core/RygelPlugin.html
+share/gtk-doc/html/librygel-core/RygelPluginInformation.html
 share/gtk-doc/html/librygel-core/RygelPluginLoader.html
 share/gtk-doc/html/librygel-core/RygelRecursiveModuleLoader.html
 share/gtk-doc/html/librygel-core/RygelResourceInfo.html
