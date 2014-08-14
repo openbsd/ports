@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_modules_rtp_rtp_c,v 1.2 2014/08/14 06:56:55 ajacoutot Exp $
+
+From 26b9d22dd24c17eb118d0205bf7b02b75d435e3c Mon Sep 17 00:00:00 2001
+From: "Alexander E. Patrakov" <patrakov@gmail.com>
+Date: Thu, 5 Jun 2014 22:29:25 +0600
+Subject: rtp-recv: fix crash on empty UDP packets (CVE-2014-3970)
+
+--- src/modules/rtp/rtp.c.orig	Thu Jan 23 19:57:55 2014
++++ src/modules/rtp/rtp.c	Thu Aug  7 14:47:42 2014
+@@ -182,8 +182,29 @@ int pa_rtp_recv(pa_rtp_context *c, pa_memchunk *chunk,
+         goto fail;
+     }
+ 
+-    if (size <= 0)
+-        return 0;
++    if (size <= 0) {
++        /* size can be 0 due to any of the following reasons:
++         *
++         * 1. Somebody sent us a perfectly valid zero-length UDP packet.
++         * 2. Somebody sent us a UDP packet with a bad CRC.
++         *
++         * It is unknown whether size can actually be less than zero.
++         *
++         * In the first case, the packet has to be read out, otherwise the
++         * kernel will tell us again and again about it, thus preventing
++         * reception of any further packets. So let's just read it out
++         * now and discard it later, when comparing the number of bytes
++         * received (0) with the number of bytes wanted (1, see below).
++         *
++         * In the second case, recvmsg() will fail, thus allowing us to
++         * return the error.
++         *
++         * Just to avoid passing zero-sized memchunks and NULL pointers to
++         * recvmsg(), let's force allocation of at least one byte by setting
++         * size to 1.
++         */
++        size = 1;
++    }
+ 
+     if (c->memchunk.length < (unsigned) size) {
+         size_t l;
