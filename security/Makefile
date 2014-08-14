@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.346 2014/08/14 14:37:37 henning Exp $
+# $OpenBSD: Makefile,v 1.347 2014/08/14 20:00:22 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -227,11 +227,13 @@
      SUBDIR += py-ecdsa
      SUBDIR += py-gnupg
      SUBDIR += py-keyczar
+     SUBDIR += py-keyring
      SUBDIR += py-openssl
      SUBDIR += py-paramiko
      SUBDIR += py-passlib
      SUBDIR += py-passlib,python3
      SUBDIR += py-pefile
+     SUBDIR += py-secretstorage
      SUBDIR += py-sslwrapper
      SUBDIR += qca
      SUBDIR += qca2
