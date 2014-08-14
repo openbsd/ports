@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2014/04/19 09:44:11 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2014/08/14 06:52:59 ajacoutot Exp $
 
 stop building when an error occurs, rather than just keep on with the
 next subdir..
 
---- Makefile.in.orig	Wed Apr  2 18:32:30 2014
-+++ Makefile.in	Tue Apr  8 16:26:01 2014
+--- Makefile.in.orig	Tue Jul 29 18:31:22 2014
++++ Makefile.in	Thu Jul 31 16:14:57 2014
 @@ -41,18 +41,18 @@ LIBTOOL_DEPS = @LIBTOOL_DEPS@
  #-------------------------------------------------------------------------
  
@@ -13,7 +13,7 @@ next subdir..
 +	@set -e; for I in ${all_subdirs}; \
  	  do (cd $$I; echo "==>Entering directory `pwd`"; \
  	      $(MAKE) DESTDIR=$(DESTDIR) $@ || (echo ""; echo ""; echo "  ====== Error in `pwd` ======"; \
- 			    echo ""; echo ""; exit 1;)); \
+ 			    echo ""; echo ""; false ) || false) || exit 1; \
  	done
  
  depend:
@@ -26,7 +26,7 @@ next subdir..
 +	@set -e; for I in ${fd_subdirs}; \
  	  do (cd $$I; echo "==>Entering directory `pwd`"; \
  	      $(MAKE) DESTDIR=$(DESTDIR) all || (echo ""; echo ""; echo "   ====== Error in `pwd` ======"; \
- 			    echo ""; echo ""; exit 1;)); \
+ 			    echo ""; echo ""; false ) || false) || exit 1; \
 @@ -106,12 +106,6 @@ installdirs:
  	-if test ! -d $(DESTDIR)$(working_dir) ; then \
  	   $(MKDIR) $(DESTDIR)$(working_dir); \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.9 2014/06/13 15:31:21 ajacoutot Exp $
---- src/dird/bacula-dir.conf.in.orig	Sat Mar 29 09:00:03 2014
-+++ src/dird/bacula-dir.conf.in	Fri Apr  4 22:12:13 2014
-@@ -180,8 +181,8 @@ Client {
+$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.10 2014/08/14 06:52:59 ajacoutot Exp $
+--- src/dird/bacula-dir.conf.in.orig	Tue Jul 29 18:31:22 2014
++++ src/dird/bacula-dir.conf.in	Thu Jul 31 16:12:28 2014
+@@ -180,8 +180,8 @@ Client {
  #  You should change Name, Address, and Password before using
  #
  #Client {

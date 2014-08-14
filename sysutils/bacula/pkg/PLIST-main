@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2014/04/19 09:44:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2014/08/14 06:52:59 ajacoutot Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
@@ -40,16 +40,13 @@ share/examples/bacula/
 @mode 770
 @owner _bacula
 @sample ${LOCALSTATEDIR}/
-@mode
+@mode 640
 @owner
 @group
-@mode 640
 share/examples/bacula/bacula-fd.conf
 @group _bacula
 @sample ${SYSCONFDIR}/bacula-fd.conf
-@mode
 @group
-@mode 640
 share/examples/bacula/bconsole.conf
 @group _bacula
 @sample ${SYSCONFDIR}/bconsole.conf
