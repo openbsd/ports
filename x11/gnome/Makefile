@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2014/04/19 18:06:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.235 2014/08/14 20:03:00 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -73,6 +73,7 @@
      SUBDIR += mutter
      SUBDIR += nautilus
      SUBDIR += nautilus-sendto
+     SUBDIR += ocrfeeder
      SUBDIR += online-accounts
      SUBDIR += online-miners
      SUBDIR += orca
