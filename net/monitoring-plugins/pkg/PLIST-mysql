@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-mysql,v 1.1 2014/07/11 20:08:04 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.2 2014/08/14 15:49:38 sthen Exp $
+@conflict nagios-plugins-mysql-*
 @pkgpath net/nagios/plugins,-mysql
 @bin libexec/nagios/check_mysql
 @bin libexec/nagios/check_mysql_query
