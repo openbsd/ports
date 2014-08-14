@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_CodeGen_SelectionDAG_LegalizeTypes_h,v 1.1 2014/08/14 01:08:09 brad Exp $
+
+r211435
+Legalizer: Add support for splitting insert_subvectors.
+
+We handle this by spilling the whole thing to the stack and doing the
+insertion as a store.
+
+PR19492. This happens in real code because the vectorizer creates v2i128 when AVX is
+enabled.
+
+--- lib/CodeGen/SelectionDAG/LegalizeTypes.h.orig	Thu Jul 17 01:03:52 2014
++++ lib/CodeGen/SelectionDAG/LegalizeTypes.h	Thu Jul 17 01:04:56 2014
+@@ -570,6 +570,7 @@ class LLVM_LIBRARY_VISIBILITY DAGTypeLegalizer { (priv
+   void SplitVecRes_BUILD_VECTOR(SDNode *N, SDValue &Lo, SDValue &Hi);
+   void SplitVecRes_CONCAT_VECTORS(SDNode *N, SDValue &Lo, SDValue &Hi);
+   void SplitVecRes_EXTRACT_SUBVECTOR(SDNode *N, SDValue &Lo, SDValue &Hi);
++  void SplitVecRes_INSERT_SUBVECTOR(SDNode *N, SDValue &Lo, SDValue &Hi);
+   void SplitVecRes_FPOWI(SDNode *N, SDValue &Lo, SDValue &Hi);
+   void SplitVecRes_INSERT_VECTOR_ELT(SDNode *N, SDValue &Lo, SDValue &Hi);
+   void SplitVecRes_LOAD(LoadSDNode *N, SDValue &Lo, SDValue &Hi);
