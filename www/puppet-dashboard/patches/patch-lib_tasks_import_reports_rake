@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_tasks_import_reports_rake,v 1.1 2014/08/14 10:16:08 sebastia Exp $
+
+look into the right directory when importing old
+reports from before the installation.
+
+--- lib/tasks/import_reports.rake.orig	Tue Aug 12 23:03:03 2014
++++ lib/tasks/import_reports.rake	Tue Aug 12 23:03:17 2014
+@@ -1,6 +1,6 @@
+ require "#{RAILS_ROOT}/lib/progress_bar"
+ namespace :reports do
+-  DEFAULT_DIR = '/var/lib/puppet/reports'
++  DEFAULT_DIR = '/var/puppet/reports'
+   DEFAULT_URL = 'http://localhost:3000/reports/upload'
+ 
+   desc "Import stored YAML reports from your puppet report directory (or $REPORT_DIR)"
