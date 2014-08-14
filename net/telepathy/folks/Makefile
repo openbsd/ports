@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2014/07/09 18:27:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2014/08/14 07:15:52 jasper Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.9.7.1
+GNOME_VERSION=		0.9.8
 # MODULE_VERSION in config.h
 API_V=			42
 
