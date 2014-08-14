@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/15 12:24:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/14 20:06:05 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += core
+    SUBDIR += mm
     SUBDIR += plugins-base
     SUBDIR += plugins-good
     SUBDIR += plugins-libav
