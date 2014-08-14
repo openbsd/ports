@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.116 2014/04/25 20:59:43 brad Exp $
+# $OpenBSD: Makefile,v 1.117 2014/08/14 01:05:03 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.0.0
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -65,6 +66,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-bsd-user \
 		--disable-libiscsi \
 		--disable-libusb \
+		--disable-lzo \
 		--disable-smartcard-nss \
 		--disable-spice \
 		--disable-uuid \

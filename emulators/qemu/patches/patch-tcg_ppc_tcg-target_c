@@ -1,0 +1,15 @@
+$OpenBSD: patch-tcg_ppc_tcg-target_c,v 1.1 2014/08/14 01:05:03 brad Exp $
+--- tcg/ppc/tcg-target.c.orig	Fri Jul  4 18:29:45 2014
++++ tcg/ppc/tcg-target.c	Fri Jul  4 18:32:59 2014
+@@ -2717,4 +2717,11 @@ static void __attribute__((constructor)) tcg_cache_ini
+     dcache_bsize = cacheline;
+     icache_bsize = cacheline;
+ }
++
++#elif defined(__OpenBSD__)
++static void __attribute__((constructor)) tcg_cache_init(void)
++{
++    dcache_bsize = 32;
++    icache_bsize = 32;
++}
+ #endif

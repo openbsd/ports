@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2014/04/25 20:59:43 brad Exp $
+@comment $OpenBSD: PLIST,v 1.30 2014/08/14 01:05:03 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -139,6 +139,7 @@ share/qemu/s390-zipl.rom
 share/qemu/sgabios.bin
 share/qemu/slof.bin
 share/qemu/spapr-rtas.bin
+share/qemu/u-boot.e500
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios-qxl.bin
 share/qemu/vgabios-stdvga.bin
