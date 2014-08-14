@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/08/14 20:02:28 ajacoutot Exp $
+--- configure.orig	Tue Aug 12 11:20:20 2014
++++ configure	Tue Aug 12 11:20:37 2014
+@@ -3249,7 +3249,7 @@ $as_echo "no" >&6; }
+     PYTHON_NAME=`basename $PYTHON`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking $PYTHON_NAME module: gobject" >&5
+ $as_echo_n "checking $PYTHON_NAME module: gobject... " >&6; }
+-	$PYTHON -c "import imp; imp.find_module(\"gobject\")" 2>/dev/null
++	$PYTHON -c "import imp; imp.find_module(\"gi\")" 2>/dev/null
+ 	if test $? -eq 0;
+ 	then
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5

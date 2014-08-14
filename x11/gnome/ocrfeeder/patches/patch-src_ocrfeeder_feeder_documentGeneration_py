@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ocrfeeder_feeder_documentGeneration_py,v 1.1.1.1 2014/08/14 20:02:28 ajacoutot Exp $
+
+XXX TypeError: decoding Unicode is not supported
+
+--- src/ocrfeeder/feeder/documentGeneration.py.orig	Wed Aug  6 17:15:15 2014
++++ src/ocrfeeder/feeder/documentGeneration.py	Wed Aug  6 17:15:23 2014
+@@ -248,7 +248,7 @@ class OdtGenerator(DocumentGenerator):
+         self.document.automaticstyles.addElement(frame_style_rotated)
+ 
+     def addText(self, data_box):
+-        text = unicode(data_box.getText(), 'utf-8')
++        text = unicode(data_box.getText().encode('utf-8'), 'utf-8')
+         frame_style = Style(name='FrameStyle', family = 'graphic')
+         debug('Angle: ', data_box.text_data.angle)
+         angle = data_box.text_data.angle

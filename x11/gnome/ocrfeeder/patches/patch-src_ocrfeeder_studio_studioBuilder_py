@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ocrfeeder_studio_studioBuilder_py,v 1.1.1.1 2014/08/14 20:02:28 ajacoutot Exp $
+
+Prevent unlocking a non-exsitent mutex.
+(http://www.pygtk.org/docs/pygtk/gdk-functions.html#function-gdk--threads-enter)
+
+--- src/ocrfeeder/studio/studioBuilder.py.orig	Tue Aug 12 11:21:43 2014
++++ src/ocrfeeder/studio/studioBuilder.py	Tue Aug 12 11:21:57 2014
+@@ -160,7 +160,6 @@ class Studio:
+             self.warnNoOCREngines()
+ 
+     def run(self):
+-        Gdk.threads_init()
+         Gtk.main()
+ 
+     def addImage(self, widget):

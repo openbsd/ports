@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_ocrfeeder_util_constants_py_in,v 1.1.1.1 2014/08/14 20:02:28 ajacoutot Exp $
+--- src/ocrfeeder/util/constants.py.in.orig	Wed Aug  6 17:57:28 2014
++++ src/ocrfeeder/util/constants.py.in	Wed Aug  6 17:57:41 2014
+@@ -93,4 +93,4 @@ OCRFEEDER_SPELLCHECKER_UI = os.path.join(RESOURCES_DIR
+ OCRFEEDER_MENUBAR_UI = os.path.join(RESOURCES_DIR, 'menubar.ui')
+ 
+ # ISO-codes location
+-ISO_CODES_PATH = '/usr/share/xml/iso-codes/'
++ISO_CODES_PATH = '${LOCALBASE}/share/xml/iso-codes/'
