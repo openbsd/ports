@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2014/05/16 01:34:50 brad Exp $
+@comment $OpenBSD: PLIST,v 1.29 2014/08/14 08:20:27 brad Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -7,6 +7,7 @@
 include/libavcodec/
 include/libavcodec/avcodec.h
 include/libavcodec/avfft.h
+include/libavcodec/dv_profile.h
 include/libavcodec/dxva2.h
 include/libavcodec/old_codec_ids.h
 include/libavcodec/vaapi.h
@@ -52,6 +53,7 @@ include/libavutil/common.h
 include/libavutil/cpu.h
 include/libavutil/crc.h
 include/libavutil/dict.h
+include/libavutil/display.h
 include/libavutil/downmix_info.h
 include/libavutil/error.h
 include/libavutil/eval.h
@@ -59,6 +61,7 @@ include/libavutil/ffversion.h
 include/libavutil/fifo.h
 include/libavutil/file.h
 include/libavutil/frame.h
+include/libavutil/hash.h
 include/libavutil/hmac.h
 include/libavutil/imgutils.h
 include/libavutil/intfloat.h
@@ -76,14 +79,17 @@ include/libavutil/old_pix_fmts.h
 include/libavutil/opt.h
 include/libavutil/parseutils.h
 include/libavutil/pixdesc.h
+include/libavutil/pixelutils.h
 include/libavutil/pixfmt.h
 include/libavutil/random_seed.h
 include/libavutil/rational.h
+include/libavutil/replaygain.h
 include/libavutil/ripemd.h
 include/libavutil/samplefmt.h
 include/libavutil/sha.h
 include/libavutil/sha512.h
 include/libavutil/stereo3d.h
+include/libavutil/threadmessage.h
 include/libavutil/time.h
 include/libavutil/timecode.h
 include/libavutil/timestamp.h
@@ -116,7 +122,6 @@ lib/libswresample.a
 @lib lib/libswresample.so.${LIBswresample_VERSION}
 lib/libswscale.a
 @lib lib/libswscale.so.${LIBswscale_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libavcodec.pc
 lib/pkgconfig/libavdevice.pc
 lib/pkgconfig/libavfilter.pc
@@ -189,8 +194,8 @@ share/ffmpeg/
 share/ffmpeg/examples/
 share/ffmpeg/examples/Makefile
 share/ffmpeg/examples/README
-share/ffmpeg/examples/avcodec.c
 share/ffmpeg/examples/avio_reading.c
+share/ffmpeg/examples/decoding_encoding.c
 share/ffmpeg/examples/demuxing_decoding.c
 share/ffmpeg/examples/filter_audio.c
 share/ffmpeg/examples/filtering_audio.c
@@ -201,11 +206,10 @@ share/ffmpeg/examples/remuxing.c
 share/ffmpeg/examples/resampling_audio.c
 share/ffmpeg/examples/scaling_video.c
 share/ffmpeg/examples/transcode_aac.c
+share/ffmpeg/examples/transcoding.c
 share/ffmpeg/ffprobe.xsd
 share/ffmpeg/libvpx-1080p.ffpreset
 share/ffmpeg/libvpx-1080p50_60.ffpreset
 share/ffmpeg/libvpx-360p.ffpreset
 share/ffmpeg/libvpx-720p.ffpreset
 share/ffmpeg/libvpx-720p50_60.ffpreset
-share/ffmpeg/libx264-ipod320.ffpreset
-share/ffmpeg/libx264-ipod640.ffpreset

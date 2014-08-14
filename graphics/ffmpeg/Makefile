@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.104 2014/07/25 20:37:58 brad Exp $
+# $OpenBSD: Makefile,v 1.105 2014/08/14 08:20:27 brad Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20140412
+V=		20140810
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		20.0 \
-		avdevice	8.0 \
-		avfilter	6.0 \
-		avformat	18.0 \
-		avresample	0.1 \
-		avutil		11.2 \
-		postproc	15.2 \
-		swresample	0.2 \
-		swscale		5.2
+SHARED_LIBS=	avcodec		21.0 \
+		avdevice	9.0 \
+		avfilter	7.0 \
+		avformat	19.0 \
+		avresample	1.0 \
+		avutil		12.0 \
+		postproc	16.0 \
+		swresample	1.0 \
+		swscale		6.0
 
 HOMEPAGE=	http://ffmpeg.org/
 
@@ -133,10 +132,10 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBpostproc_LINKFLAGS="" \
 		LIBswresample_LINKFLAGS="" \
 		LIBswscale_LINKFLAGS="" \
-		LIBavcodec_REQUIRES="libavutil opus schroedinger-1.0 speex theoraenc vpx x264" \
-		LIBavdevice_REQUIRES="libavcodec libavfilter libavformat libavutil" \
+		LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264" \
+		LIBavdevice_REQUIRES="libavcodec libavfilter libavformat libavutil libpostproc libswresample libswscale" \
 		LIBavfilter_REQUIRES="libavcodec libavformat libavresample libavutil libpostproc libswresample libswscale" \
-		LIBavformat_REQUIRES="libavcodec libavutil" \
+		LIBavformat_REQUIRES="libavcodec libavutil libswresample" \
 		LIBavresample_REQUIRES="libavutil" \
 		LIBavutil_REQUIRES="" \
 		LIBpostproc_REQUIRES="libavutil" \
@@ -157,10 +156,10 @@ VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 MAKE_ENV=	V=1
 
 MAKE_FLAGS=	${VERSION_FLAGS} \
-		LIBavcodec_EXTRALIBS="-lavutil ${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="-lavcodec -lavfilter -lavformat -lavutil ${LIBavdevice_EXTRALIBS}" \
+		LIBavcodec_EXTRALIBS="-lavutil -lswresample ${LIBavcodec_EXTRALIBS}" \
+		LIBavdevice_EXTRALIBS="-lavcodec -lavfilter -lavformat -lavutil -lpostproc -lswresample -lswscale ${LIBavdevice_EXTRALIBS}" \
 		LIBavfilter_EXTRALIBS="-lavcodec -lavformat -lavresample -lavutil -lpostproc -lswresample -lswscale ${LIBavfilter_EXTRALIBS}" \
-		LIBavformat_EXTRALIBS="-lavcodec -lavutil ${LIBavformat_EXTRALIBS}" \
+		LIBavformat_EXTRALIBS="-lavcodec -lavutil -lswresample ${LIBavformat_EXTRALIBS}" \
 		LIBavresample_EXTRALIBS="-lavutil ${LIBavresample_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 		LIBpostproc_EXTRALIBS="-lavutil ${LIBpostproc_EXTRALIBS}" \
@@ -177,9 +176,6 @@ ALL_TARGET=	all tools/qt-faststart
 TEST_TARGET=	check
 
 HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
-
-post-extract:
-	@rm ${WRKSRC}/VERSION
 
 pre-configure:
 	@mkdir -p ${WRKTMP}

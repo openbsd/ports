@@ -1,6 +1,6 @@
-$OpenBSD: patch-version_sh,v 1.7 2014/05/16 01:34:50 brad Exp $
---- version.sh.orig	Tue Mar 11 01:57:36 2014
-+++ version.sh	Tue Mar 11 02:39:44 2014
+$OpenBSD: patch-version_sh,v 1.8 2014/08/14 08:20:27 brad Exp $
+--- version.sh.orig	Fri Aug  1 19:24:21 2014
++++ version.sh	Fri Aug  1 19:28:08 2014
 @@ -2,6 +2,9 @@
  
  # Usage: version.sh <ffmpeg-root-dir> <output-version.h> <extra-version>
@@ -10,4 +10,4 @@ $OpenBSD: patch-version_sh,v 1.7 2014/05/16 01:34:50 brad Exp $
 +
  # check for git short hash
  if ! test "$revision"; then
-     revision=$(cd "$1" && git describe --tags --match N 2> /dev/null)
+     if (cd "$1" && grep git RELEASE 2> /dev/null >/dev/null) ; then

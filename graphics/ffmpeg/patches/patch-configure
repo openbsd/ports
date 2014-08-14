@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure,v 1.39 2014/05/16 01:34:50 brad Exp $
---- configure.orig	Mon Mar 24 23:08:28 2014
-+++ configure	Mon Mar 24 23:12:38 2014
-@@ -1606,7 +1606,6 @@ HAVE_LIST="
+$OpenBSD: patch-configure,v 1.40 2014/08/14 08:20:27 brad Exp $
+--- configure.orig	Sun Aug 10 21:09:03 2014
++++ configure	Sun Aug 10 21:15:16 2014
+@@ -1630,7 +1630,6 @@ HEADERS_LIST="
+     mach_mach_time_h
+     machine_ioctl_bt848_h
      machine_ioctl_meteor_h
-     machine_rw_barrier
-     makeinfo
 -    malloc_h
-     MapViewOfFile
-     memalign
-     MemoryBarrier
-@@ -3723,7 +3722,7 @@ case $target_os in
+     openjpeg_1_5_openjpeg_h
+     OpenGL_gl3_h
+     poll_h
+@@ -3970,7 +3969,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
          SHFLAGS='-shared'
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.39 2014/05/16 01:34:50 brad Exp $
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4054,7 +4053,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -4301,7 +4300,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -27,23 +27,26 @@ $OpenBSD: patch-configure,v 1.39 2014/05/16 01:34:50 brad Exp $
  
  enable_weak_pic() {
      disabled pic && return
-@@ -4695,7 +4694,6 @@ check_disable_warning -Wno-pointer-sign
+@@ -5026,7 +5025,6 @@ check_disable_warning -Wno-pointer-sign
  check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
- enabled rpath && add_ldflags -Wl,-rpath=$libdir
+ enabled rpath && add_ldflags -Wl,-rpath,$libdir
 -test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
  
  # add some strip flags
  # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -5245,6 +5243,7 @@ pkgconfig_generate(){
+@@ -5645,8 +5643,8 @@ pkgconfig_generate(){
+     comment=$2
      version=$3
      libs=$4
-     requires=$5
+-    requires=$(map 'lib_version $v' $(eval echo \$${name#lib}_deps))
+-    requires=${requires%, }
++    requires=$5
 +    linkflags=$6
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -5259,7 +5258,7 @@ Version: $version
+@@ -5661,7 +5659,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -52,19 +55,11 @@ $OpenBSD: patch-configure,v 1.39 2014/05/16 01:34:50 brad Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -5295,12 +5294,12 @@ lavfi_libs=${lavfi_libs%, }
- lavd_libs="libavformat${build_suffix} = $LIBAVFORMAT_VERSION"
- enabled lavfi_indev && prepend lavd_libs "libavfilter${build_suffix} = $LIBAVFILTER_VERSION,"
- 
--pkgconfig_generate libavutil     "FFmpeg utility library"               "$LIBAVUTIL_VERSION"     "$LIBM"
--pkgconfig_generate libavcodec    "FFmpeg codec library"                 "$LIBAVCODEC_VERSION"    "$extralibs" "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
--pkgconfig_generate libavformat   "FFmpeg container format library"      "$LIBAVFORMAT_VERSION"   "$extralibs" "libavcodec${build_suffix} = $LIBAVCODEC_VERSION"
--pkgconfig_generate libavdevice   "FFmpeg device handling library"       "$LIBAVDEVICE_VERSION"   "$extralibs" "$lavd_libs"
--pkgconfig_generate libavfilter   "FFmpeg audio/video filtering library" "$LIBAVFILTER_VERSION"   "$extralibs" "$lavfi_libs"
--pkgconfig_generate libpostproc   "FFmpeg postprocessing library"        "$LIBPOSTPROC_VERSION"   ""           "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
--pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$extralibs" "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
--pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBM"      "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
--pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM"      "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
+@@ -5694,3 +5692,13 @@ pkgconfig_generate libpostproc   "FFmpeg postprocessin
+ pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBM"
+ pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBM"
+ pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM"
++
 +pkgconfig_generate libavutil     "FFmpeg utility library"               "$LIBAVUTIL_VERSION"     "$LIBavutil_EXTRALIBS"     "$LIBavutil_REQUIRES"     "$LIBavutil_LINKFLAGS"
 +pkgconfig_generate libavcodec    "FFmpeg codec library"                 "$LIBAVCODEC_VERSION"    "$LIBavcodec_EXTRALIBS"    "$LIBavcodec_REQUIRES"    "$LIBavcodec_LINKFLAGS"
 +pkgconfig_generate libavformat   "FFmpeg container format library"      "$LIBAVFORMAT_VERSION"   "$LIBavformat_EXTRALIBS"   "$LIBavformat_REQUIRES"   "$LIBavformat_LINKFLAGS"
