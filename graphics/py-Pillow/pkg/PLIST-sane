@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-sane,v 1.1 2014/08/14 07:04:22 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/_sane.so
+lib/python${MODPY_VERSION}/site-packages/pysane-2.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/sane.py
+lib/python${MODPY_VERSION}/site-packages/sane.pyc

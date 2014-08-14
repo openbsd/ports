@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/06 21:10:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2014/08/14 07:04:22 ajacoutot Exp $
 @conflict py-Imaging-*
-@pkgpath graphics/py-Imaging
+@pkgpath graphics/py-Pillow
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-docs[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-examples[,python2.4][,python2.5][,python2.6][,python2.7]

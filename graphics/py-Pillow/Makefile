@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/06 21:10:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2014/08/14 07:04:22 ajacoutot Exp $
 
-COMMENT=		Python Imaging Library (fork)
+COMMENT-main=		Python Imaging Library (fork)
+COMMENT-sane=		Python SANE module
 
 MODPY_EGG_VERSION=	2.4.0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
+PKGNAME-main=		py-${DISTNAME}
+PKGNAME-sane=		py-sane-${MODPY_EGG_VERSION}
 CATEGORIES=		graphics
+
+REVISION-main=		0
 
 HOMEPAGE=		https://github.com/python-imaging/Pillow
 
@@ -13,21 +17,31 @@ HOMEPAGE=		https://github.com/python-imaging/Pillow
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE_CDROM=   Yes
 
+MULTI_PACKAGES=		-main -sane
+
 MASTER_SITES=		${MASTER_SITE_PYPI:=P/Pillow/}
 EXTRACT_SUFX=		.zip
 
-WANTLIB=		freetype jpeg lcms2 pthread tiff webp z \
+WANTLIB-main=		freetype jpeg lcms2 pthread tiff webp z \
+			webpdemux webpmux \
 			${MODPY_WANTLIB} ${MODTK_WANTLIB}
+
+WANTLIB-sane=		pthread sane ${MODPY_WANTLIB}
 
 MODULES=		lang/python \
 			x11/tk
 
 # ${MODPY_TKINTER_DEPENDS} appends ,tkinter to devel/setuptools too.
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		lang/python/${MODPY_VERSION},-tkinter
-LIB_DEPENDS=		graphics/lcms2 \
+BUILD_DEPENDS=		lang/python/${MODPY_VERSION},-tkinter
+RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
+			lang/python/${MODPY_VERSION},-tkinter
+LIB_DEPENDS-main=	graphics/lcms2 \
 			graphics/libwebp \
 			${MODTK_LIB_DEPENDS}
+
+RUN_DEPENDS-sane=	${BASE_PKGPATH},-main
+LIB_DEPENDS-sane=	${MODPY_LIB_DEPENDS} \
+			graphics/sane-backends
 
 MODPY_SETUPTOOLS=	Yes
 
@@ -35,7 +49,15 @@ INCL_DIR=		${PREFIX}/include/python${MODPY_VERSION}
 
 MODPY_ADJ_FILES=	Scripts/*.py
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/Sane/setup.py
+
+post-build:
+	cd ${WRKSRC}/Sane && ${MODPY_BIN} setup.py build
+
 post-install:
+	cd ${WRKSRC}/Sane && \
+		${MODPY_BIN} setup.py install --skip-build --root ${WRKINST}
 	for s in ${WRKSRC}/Scripts/*.py; do \
 		${INSTALL_SCRIPT} $$s ${PREFIX}/bin/`basename $$s .py`; \
 	done

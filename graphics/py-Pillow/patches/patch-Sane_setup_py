@@ -1,0 +1,15 @@
+$OpenBSD: patch-Sane_setup_py,v 1.1 2014/08/14 07:04:22 ajacoutot Exp $
+--- Sane/setup.py.orig	Wed Aug  6 16:04:10 2014
++++ Sane/setup.py	Wed Aug  6 16:04:31 2014
+@@ -11,9 +11,9 @@ except ImportError:
+     pass
+ 
+ sane = Extension('_sane',
+-                 include_dirs = [PIL_IMAGING_DIR],
++                 include_dirs = [PIL_IMAGING_DIR, '${LOCALBASE}/include'],
+                  libraries = ['sane'],
+-                 library_dirs = [PIL_IMAGING_DIR],
++                 library_dirs = [PIL_IMAGING_DIR, '${LOCALBASE}/lib'],
+                  define_macros = defs,
+                  sources = ['_sane.c'])
+ 
