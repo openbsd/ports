@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/14 19:57:49 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/SecretStorage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/secretstorage/
+lib/python${MODPY_VERSION}/site-packages/secretstorage/__init__.py
+lib/python${MODPY_VERSION}/site-packages/secretstorage/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/collection.py
+lib/python${MODPY_VERSION}/site-packages/secretstorage/collection.pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/defines.py
+lib/python${MODPY_VERSION}/site-packages/secretstorage/defines.pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/dhcrypto.py
+lib/python${MODPY_VERSION}/site-packages/secretstorage/dhcrypto.pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/secretstorage/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/item.py
+lib/python${MODPY_VERSION}/site-packages/secretstorage/item.pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/util.py
+lib/python${MODPY_VERSION}/site-packages/secretstorage/util.pyc
