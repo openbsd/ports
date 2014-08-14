@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_pulse_util_c,v 1.6 2014/08/14 12:57:09 ajacoutot Exp $
+
+Implement pa_get_binary_name().
+
+--- src/pulse/util.c.orig	Tue Jan 21 14:39:57 2014
++++ src/pulse/util.c	Thu Aug 14 14:24:07 2014
+@@ -54,6 +54,11 @@
+ #include <sys/sysctl.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <libgen.h>
++#include <sys/sysctl.h>
++#endif
++
+ #include <pulse/xmalloc.h>
+ #include <pulse/timeval.h>
+ 
+@@ -244,6 +249,25 @@ char *pa_get_binary_name(char *s, size_t l) {
+         /* fall thru */
+     }
+ #endif /* OS_IS_DARWIN */
++
++#ifdef __OpenBSD__
++    {
++        int mib[] = { CTL_KERN, KERN_PROC_ARGS, getpid(), KERN_PROC_ARGV };
++        size_t len;
++        char **buf;
++
++        sysctl(mib, 4, NULL, &len, NULL, 0);
++        buf = (char **) pa_xmalloc(len);
++
++        if (sysctl(mib, 4, buf, &len, NULL, 0) == 0) {
++            pa_strlcpy(s, basename(*buf), l);
++            pa_xfree(buf);
++            return s;
++        }
++
++        /* fall thru */
++    }
++#endif /* __OpenBSD__ */
+ 
+     errno = ENOENT;
+     return NULL;
