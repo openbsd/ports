@@ -1,0 +1,13 @@
+$OpenBSD: patch-Python_configure_py,v 1.1 2014/08/14 22:35:00 zhuk Exp $
+Use actual found qmake binary path instead of hardcoded one.
+--- Python/configure.py.orig	Fri Aug  1 13:05:13 2014
++++ Python/configure.py	Fri Aug  1 13:05:57 2014
+@@ -635,7 +635,7 @@ def generate_code(target_config, opts):
+     # Generate the Makefile.
+     inform("Creating the Makefile for the Qsci module...")
+ 
+-    qmake_args = ['qmake']
++    qmake_args = [target_config.qmake]
+     if target_config.qmake_spec != '':
+         qmake_args.append('-spec')
+         qmake_args.append(target_config.qmake_spec)

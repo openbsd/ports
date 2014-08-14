@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/10 22:23:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/14 22:35:00 zhuk Exp $
 
 COMMENT =	Python binding for the Scintilla source code editor
 
@@ -29,16 +29,12 @@ WRKSRC =	${WRKDIST}/Python
 
 NO_TEST =	Yes
 
-# do not use ./setup.py to build
-CONFIGURE_STYLE = no
-
+CONFIGURE_STYLE = simple
+CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS = --qmake=${LOCALBASE}/bin/qmake4 \
 		--qsci-libdir=${LOCALBASE}/lib \
 		--pyqt-sipdir=${LOCALBASE}/share/sip
 
 MAKE_ENV =	INSTALL_ROOT="${WRKINST}"
-
-do-configure:
-	@cd ${WRKSRC} && ${MODPY_BIN} ${WRKSRC}/configure.py ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>
