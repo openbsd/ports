@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/12 14:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/08/14 15:38:34 sthen Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
 
 VERSION=	2.9.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	nsca-${VERSION}
 PKGNAME-main=	nsca-${VERSION}
 PKGNAME-client=	nsca-client-${VERSION}
@@ -28,9 +28,9 @@ CONFIGURE_ARGS=		--with-nsca-user=_nagios \
 
 MULTI_PACKAGES=		-main -client
 
-TEST_DEPENDS=	devel/p5-Clone \
+TEST_DEPENDS=		devel/p5-Clone \
 			devel/p5-Parallel-Forker
-RUN_DEPENDS-main=	net/nagios/nagios
+RUN_DEPENDS-main=	icinga-*|nagios-*:net/nagios/nagios
 
 post-extract:
 	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' src/nsca.c src/send_nsca.c
