@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/06 21:10:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2014/08/14 07:06:00 ajacoutot Exp $
 
 BROKEN = fails at runtime "python2.7 in free(): error: modified chunk-pointer 0x..."
 
@@ -6,7 +6,7 @@ V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		games x11
 

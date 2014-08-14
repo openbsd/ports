@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/07/09 13:36:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.26 2014/08/14 07:06:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODPY_EGG_VERSION=2.3.1
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
+REVISION=	0
 
 HOMEPAGE=	http://www.mnemosyne-proj.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
