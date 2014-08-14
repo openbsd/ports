@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/03/09 19:49:21 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/08/14 07:50:24 pascal Exp $
 @conflict libbfd-*
 @bin bin/egdb
 include/ansidecl.h
@@ -34,6 +34,7 @@ share/gdb/python/gdb/command/frame_filters.py
 share/gdb/python/gdb/command/pretty_printers.py
 share/gdb/python/gdb/command/prompt.py
 share/gdb/python/gdb/command/type_printers.py
+share/gdb/python/gdb/command/xmethods.py
 share/gdb/python/gdb/frames.py
 share/gdb/python/gdb/function/
 share/gdb/python/gdb/function/__init__.py
@@ -41,6 +42,7 @@ share/gdb/python/gdb/function/strfns.py
 share/gdb/python/gdb/printing.py
 share/gdb/python/gdb/prompt.py
 share/gdb/python/gdb/types.py
+share/gdb/python/gdb/xmethod.py
 share/gdb/syscalls/
 share/gdb/syscalls/amd64-linux.xml
 share/gdb/syscalls/arm-linux.xml
@@ -51,6 +53,8 @@ share/gdb/syscalls/mips-n64-linux.xml
 share/gdb/syscalls/mips-o32-linux.xml
 share/gdb/syscalls/ppc-linux.xml
 share/gdb/syscalls/ppc64-linux.xml
+share/gdb/syscalls/s390-linux.xml
+share/gdb/syscalls/s390x-linux.xml
 share/gdb/syscalls/sparc-linux.xml
 share/gdb/syscalls/sparc64-linux.xml
 share/gdb/system-gdbinit/

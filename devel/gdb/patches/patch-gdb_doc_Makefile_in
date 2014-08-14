@@ -1,6 +1,6 @@
-$OpenBSD: patch-gdb_doc_Makefile_in,v 1.1 2014/03/09 19:49:21 pascal Exp $
---- gdb/doc/Makefile.in.orig	Wed Jan  8 10:23:36 2014
-+++ gdb/doc/Makefile.in	Fri Feb  7 19:23:45 2014
+$OpenBSD: patch-gdb_doc_Makefile_in,v 1.2 2014/08/14 07:50:24 pascal Exp $
+--- gdb/doc/Makefile.in.orig	Wed Jun 11 18:34:41 2014
++++ gdb/doc/Makefile.in	Tue Jul 29 20:27:50 2014
 @@ -29,6 +29,7 @@ htmldir = @htmldir@
  mandir = @mandir@
  man1dir = $(mandir)/man1
@@ -9,7 +9,7 @@ $OpenBSD: patch-gdb_doc_Makefile_in,v 1.1 2014/03/09 19:49:21 pascal Exp $
  
  SHELL = @SHELL@
  
-@@ -266,7 +267,8 @@ install-man1: $(MAN1S)
+@@ -308,7 +309,8 @@ install-man1: $(MAN1S)
  	    continue; \
  	  fi; \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
@@ -19,7 +19,7 @@ $OpenBSD: patch-gdb_doc_Makefile_in,v 1.1 2014/03/09 19:49:21 pascal Exp $
  	  echo " $(INSTALL_DATA) '$$d$$p' '$(DESTDIR)$(man1dir)/$$f'"; \
  	  $(INSTALL_DATA) "$$d$$p" "$(DESTDIR)$(man1dir)/$$f"; \
  	done
-@@ -275,7 +277,8 @@ install-man5: $(MAN5S)
+@@ -317,7 +319,8 @@ install-man5: $(MAN5S)
  	test -z "$(man5dir)" || $(mkinstalldirs) "$(DESTDIR)$(man5dir)"
  	@list='$(MAN5S)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \

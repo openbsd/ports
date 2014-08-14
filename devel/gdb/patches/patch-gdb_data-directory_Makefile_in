@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.4 2014/03/09 19:49:21 pascal Exp $
---- gdb/data-directory/Makefile.in.orig	Fri Feb  7 18:52:56 2014
-+++ gdb/data-directory/Makefile.in	Fri Feb  7 18:54:32 2014
-@@ -121,7 +121,7 @@ stamp-syscalls: Makefile $(SYSCALLS_FILES)
+$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.5 2014/08/14 07:50:24 pascal Exp $
+--- gdb/data-directory/Makefile.in.orig	Tue Jul 29 14:30:04 2014
++++ gdb/data-directory/Makefile.in	Tue Jul 29 20:32:54 2014
+@@ -166,7 +166,7 @@ stamp-syscalls: Makefile $(SYSCALLS_FILES)
  	for file in $$files ; do \
  	  f=$(SYSCALLS_SRCDIR)/$$file ; \
  	  if test -f $$f ; then \
@@ -10,18 +10,18 @@ $OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.4 2014/03/09 19:49:21 pascal 
  	  fi ; \
  	done
  	touch $@
-@@ -162,8 +162,8 @@ stamp-python: Makefile $(PYTHON_FILES)
- 	files='$(PYTHON_FILES)' ; \
- 	for file in $$files ; do \
- 	  dir=`echo "$$file" | sed 's,/[^/]*$$,,'` ; \
--	  $(INSTALL_DIR) ./$(PYTHON_DIR)/$$dir ; \
--	  $(INSTALL_DATA) $(PYTHON_SRCDIR)/$$file ./$(PYTHON_DIR)/$$dir ; \
-+	  mkdir -p ./$(PYTHON_DIR)/$$dir ; \
-+	  cp $(PYTHON_SRCDIR)/$$file ./$(PYTHON_DIR)/$$dir ; \
- 	done
+@@ -208,8 +208,8 @@ stamp-python: Makefile $(PYTHON_FILES)
+ 	if test "x$$files" != x ; then \
+ 	  for file in $$files ; do \
+ 	    dir=`echo "$$file" | sed 's,/[^/]*$$,,'` ; \
+-	    $(INSTALL_DIR) ./$(PYTHON_DIR)/$$dir ; \
+-	    $(INSTALL_DATA) $(PYTHON_SRCDIR)/$$file ./$(PYTHON_DIR)/$$dir ; \
++	    mkdir -p ./$(PYTHON_DIR)/$$dir ; \
++	    cp $(PYTHON_SRCDIR)/$$file ./$(PYTHON_DIR)/$$dir ; \
+ 	  done ; \
+ 	fi
  	touch $@
- 
-@@ -201,7 +201,7 @@ stamp-system-gdbinit: Makefile $(SYSTEM_GDBINIT_FILES)
+@@ -302,7 +302,7 @@ stamp-system-gdbinit: Makefile $(SYSTEM_GDBINIT_FILES)
  	for file in $$files ; do \
  	  f=$(SYSTEM_GDBINIT_SRCDIR)/$$file ; \
  	  if test -f $$f ; then \
