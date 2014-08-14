@@ -1,0 +1,12 @@
+$OpenBSD: patch-t_02reload_t,v 1.1.1.1 2014/08/14 14:36:49 henning Exp $
+--- t/02reload.t.orig	Wed Aug 13 12:47:45 2014
++++ t/02reload.t	Wed Aug 13 12:47:53 2014
+@@ -12,7 +12,7 @@ if (!$pid) {
+     exec "$ENV{CLAMD_PATH}/clamd -c clamav.conf";
+     die "clamd failed to start: $!";
+ }
+-for (1..10) {
++for (1..60) {
+   last if (-e "clamsock");
+   if (kill(0 => $pid) == 0) {
+     die "clamd appears to have died";

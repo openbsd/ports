@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/14 14:36:49 henning Exp $
+${P5SITE}/File/
+${P5SITE}/File/Scan/
+${P5SITE}/File/Scan/ClamAV.pm
+@man man/man3p/File::Scan::ClamAV.3p

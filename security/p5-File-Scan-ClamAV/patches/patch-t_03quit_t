@@ -1,0 +1,12 @@
+$OpenBSD: patch-t_03quit_t,v 1.1.1.1 2014/08/14 14:36:49 henning Exp $
+--- t/03quit.t.orig	Wed Aug 13 12:47:45 2014
++++ t/03quit.t	Wed Aug 13 12:47:55 2014
+@@ -17,7 +17,7 @@ if (!$pid) {
+     die "clamd failed to start: $!";
+ }
+ 
+-for (1..10) {
++for (1..60) {
+   last if (-e "clamsock");
+   if (kill(0 => $pid) == 0) {
+     die "clamd appears to have died";

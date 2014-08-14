@@ -1,0 +1,3 @@
+This module provides a simplified perl interface onto a local clam anti-virus
+scanner, allowing you to do fast virus scans on files on your local hard drive,
+or streamed data.
