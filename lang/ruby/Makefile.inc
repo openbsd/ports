@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2014/01/08 18:31:03 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2014/08/14 17:04:12 naddy Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -26,3 +26,4 @@ CONFIGURE_ENV +=	PREFIX="${PREFIX}" \
 REV ?=			${VERSION:R}
 SUB ?=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
 SUBST_VARS +=		SUB REV
+FAKE_AS_ROOT = always-wrap

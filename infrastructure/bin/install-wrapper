@@ -1,0 +1,26 @@
+#! /usr/bin/perl
+
+use strict;
+use warnings;
+use Getopt::Std;
+
+my %opts;
+getopts('bCcdpSsB:f:g:m:o:', \%opts);
+
+for my $s (qw(b C c d p S s)) {
+	if ($opts{$s}) {
+		unshift(@ARGV, "-$s");
+	}
+}
+
+if ($opts{m}) {
+	my $mode = $opts{m};
+	if ($mode eq '444' || $mode eq '0444') {
+		$mode = '644';
+	} elsif ($mode eq '555' || $mode eq '0555') {
+		$mode = '755';
+	}
+	unshift(@ARGV, '-m', $mode);
+}
+
+exec {'/usr/bin/install'} ('install', @ARGV);
