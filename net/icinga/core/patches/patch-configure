@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.13 2014/08/11 18:34:59 sthen Exp $
+$OpenBSD: patch-configure,v 1.14 2014/08/14 09:00:06 sthen Exp $
 
 merged patches; cannot add new files to cvs until unlock
 
@@ -49,14 +49,3 @@ merged patches; cannot add new files to cvs until unlock
  				found_ssl=yes
  			        break
  			fi
---- base/logging.c.orig	Mon Jul 28 23:13:36 2014
-+++ base/logging.c	Mon Jul 28 23:12:30 2014
-@@ -306,7 +306,7 @@ int write_to_log_with_host_service(char *buffer, unsig
- 	strip(buffer);
- 
- 	/* write the buffer to the log file */
--	fprintf(fp, "[%lu] %s\n", log_time, buffer);
-+	fprintf(fp, "[%lld] %s\n", (long long)log_time, buffer);
- 	fflush(fp);
- 
- #ifdef USE_EVENT_BROKER
