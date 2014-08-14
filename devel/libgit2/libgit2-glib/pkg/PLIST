@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/08/14 06:42:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/08/14 08:26:10 ajacoutot Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-blame-options.h
@@ -129,3 +129,7 @@ share/gtk-doc/html/libgit2-glib-1.0/rn01.html
 share/gtk-doc/html/libgit2-glib-1.0/style.css
 share/gtk-doc/html/libgit2-glib-1.0/up-insensitive.png
 share/gtk-doc/html/libgit2-glib-1.0/up.png
+share/vala/
+share/vala/vapi/
+share/vala/vapi/ggit-1.0.deps
+share/vala/vapi/ggit-1.0.vapi
