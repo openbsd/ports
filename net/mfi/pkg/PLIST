@@ -1,0 +1,128 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/14 07:00:25 jasper Exp $
+@newgroup _mfi:733
+@newuser _mfi:733:_mfi:daemon:mfi user:/usr/local/share/mfi:/sbin/nologin
+@owner _mfi
+share/mfi/
+@owner
+share/mfi/bin/
+share/mfi/bin/mongod
+@extraunexec rm -rf %D/share/mfi/conf/*
+@owner _mfi
+share/mfi/conf/
+share/mfi/conf/catalina.policy
+share/mfi/conf/catalina.properties
+share/mfi/conf/context.xml
+share/mfi/conf/server.xml
+share/mfi/conf/tomcat-users.xml
+share/mfi/conf/web.xml
+share/mfi/data/
+share/mfi/data/system.properties
+share/mfi/dl/
+share/mfi/dl/firmware/
+share/mfi/dl/firmware/IWD1U/
+share/mfi/dl/firmware/IWD1U/${FW_VER}/
+share/mfi/dl/firmware/IWD1U/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/IWO2U/
+share/mfi/dl/firmware/IWO2U/${FW_VER}/
+share/mfi/dl/firmware/IWO2U/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/M2M/
+share/mfi/dl/firmware/M2M/${FW_VER}/
+share/mfi/dl/firmware/M2M/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/M2S/
+share/mfi/dl/firmware/M2S/${FW_VER}/
+share/mfi/dl/firmware/M2S/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/P1E/
+share/mfi/dl/firmware/P1E/${FW_VER}/
+share/mfi/dl/firmware/P1E/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/P1U/
+share/mfi/dl/firmware/P1U/${FW_VER}/
+share/mfi/dl/firmware/P1U/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/P3E/
+share/mfi/dl/firmware/P3E/${FW_VER}/
+share/mfi/dl/firmware/P3E/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/P3U/
+share/mfi/dl/firmware/P3U/${FW_VER}/
+share/mfi/dl/firmware/P3U/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/P6E/
+share/mfi/dl/firmware/P6E/${FW_VER}/
+share/mfi/dl/firmware/P6E/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/P8U/
+share/mfi/dl/firmware/P8U/${FW_VER}/
+share/mfi/dl/firmware/P8U/${FW_VER}/firmware.bin
+share/mfi/dl/firmware/bundles.json
+@owner
+share/mfi/lib/
+share/mfi/lib/MRJAdapter.jar
+share/mfi/lib/ace.jar
+share/mfi/lib/SunriseSunsetCalculator-1.0-SNAPSHOT.jar
+share/mfi/lib/annotations-api.jar
+share/mfi/lib/asm.jar
+share/mfi/lib/bootstrap.jar
+share/mfi/lib/catalina-ant.jar
+share/mfi/lib/catalina-ha.jar
+share/mfi/lib/catalina-tribes.jar
+share/mfi/lib/catalina.jar
+share/mfi/lib/cglib.jar
+share/mfi/lib/commons-beanutils.jar
+share/mfi/lib/commons-codec-1.4.jar
+share/mfi/lib/commons-collections.jar
+share/mfi/lib/commons-daemon.jar
+share/mfi/lib/commons-digester.jar
+share/mfi/lib/commons-httpclient-3.1.jar
+share/mfi/lib/commons-io-2.1.jar
+share/mfi/lib/commons-lang.jar
+share/mfi/lib/commons-logging.jar
+share/mfi/lib/commons-net-3.0.1.jar
+share/mfi/lib/dom4j.jar
+share/mfi/lib/ecj-3.7.2.jar
+share/mfi/lib/el-api.jar
+share/mfi/lib/jasper-el.jar
+share/mfi/lib/jasper-jdt.jar
+share/mfi/lib/jasper.jar
+share/mfi/lib/javassist.jar
+share/mfi/lib/jsch-0.1.45.jar
+share/mfi/lib/json_simple-1.1.jar
+share/mfi/lib/jsp-api.jar
+share/mfi/lib/jstl.jar
+share/mfi/lib/jstun-0.7.3.jar
+share/mfi/lib/jul-log4j-bridge.jar
+share/mfi/lib/log4j.jar
+share/mfi/lib/mail.jar
+share/mfi/lib/mongo-java-driver-2.11.3.jar
+share/mfi/lib/org.springframework.config.java-1.0.0.M4.jar
+share/mfi/lib/servlet-api.jar
+share/mfi/lib/slf4j-api.jar
+share/mfi/lib/slf4j-log4j12.jar
+share/mfi/lib/spring-aop-2.5.6.jar
+share/mfi/lib/spring-beans-2.5.6.jar
+share/mfi/lib/spring-context-2.5.6.jar
+share/mfi/lib/spring-context-support-2.5.6.jar
+share/mfi/lib/spring-core-2.5.6.jar
+share/mfi/lib/spring-web-2.5.6.jar
+share/mfi/lib/sshj-0.2.3.jar
+share/mfi/lib/sshj-0.3.1.jar
+share/mfi/lib/standard.jar
+share/mfi/lib/tomcat-api.jar
+share/mfi/lib/tomcat-coyote.jar
+share/mfi/lib/tomcat-dbcp.jar
+share/mfi/lib/tomcat-i18n-es.jar
+share/mfi/lib/tomcat-i18n-fr.jar
+share/mfi/lib/tomcat-i18n-ja.jar
+share/mfi/lib/tomcat-jdbc.jar
+share/mfi/lib/tomcat-juli-adapters.jar
+share/mfi/lib/tomcat-juli.jar
+share/mfi/lib/tomcat-util.jar
+share/mfi/logs
+@owner _mfi
+@sample /var/log/mfi/
+@owner
+share/mfi/readme_mFi.txt
+@owner _mfi
+share/mfi/webapps/
+share/mfi/webapps/ROOT.war
+@owner
+@exec-update rm -rf %D/share/mfi/webapps/ROOT
+@extraunexec rm -rf %D/share/mfi/{dl,data,run,work,conf}
+@extraunexec rm -rf %D/share/mfi/webapps/*
+@extraunexec rm -rf /var/log/mfi
+@rcscript ${RCDIR}/mfi

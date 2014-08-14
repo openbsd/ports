@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $OpenBSD: mfi.rc,v 1.1.1.1 2014/08/14 07:00:25 jasper Exp $
+
+daemon="${TRUEPREFIX}/share/mfi/lib/ace.jar"
+daemon_user="_mfi"
+
+. /etc/rc.d/rc.subr
+
+java="$(${LOCALBASE}/bin/javaPathHelper -c mfi)"
+pexp="${java} -jar ${daemon} start"
+
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "${java} -jar ${daemon} start" &
+}
+
+rc_stop() {
+	${rcexec} "${java} -jar ${daemon} stop"
+}
+
+rc_cmd $1

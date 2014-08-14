@@ -1,0 +1,3 @@
+This package contains controller software for Ubiquiti mFi automation
+controllers.  This is version 2.x which is still in beta, but provides
+support for newer devices.
