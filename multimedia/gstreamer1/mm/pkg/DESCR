@@ -1,0 +1,3 @@
+gstreamermm provides C++ bindings for the GStreamer streaming multimedia
+library. With gstreamermm it is possible to develop applications that
+work with multimedia in C++.
