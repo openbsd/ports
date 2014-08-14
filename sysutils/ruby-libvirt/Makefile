@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/15 02:13:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/14 07:15:22 jasper Exp $
 
 COMMENT=	Ruby bindings for libvirt
 
-DISTNAME=	ruby-libvirt-0.4.0
+DISTNAME=	ruby-libvirt-0.5.2
 PKGNAME=	${DISTNAME:S/ruby-//}
-REVISION =	3
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://libvirt.org/ruby/
@@ -21,7 +20,5 @@ WANTLIB += c m pthread virt virt-qemu ${MODRUBY_WANTLIB}
 LIB_DEPENDS=	sysutils/libvirt
 
 CONFIGURE_STYLE=ruby gem ext
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
