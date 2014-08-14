@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2014/07/19 22:36:13 ajacoutot Exp $
+$OpenBSD: README-main,v 1.6 2014/08/14 06:54:24 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -74,6 +74,9 @@ To start the daemons without rebooting you can use:
 
 	# ${RCDIR}/upsd start
 	# ${RCDIR}/upsmon start
+
+NUT documentation refers to a nut.conf file; this can be ignored, it is
+only used with their System V init scripts, and not OpenBSD's rc scripts.
 
 It is recommended that you test a full cycle of rebooting, checking
 that the daemons are running correctly ("upsc <upsname>" will display

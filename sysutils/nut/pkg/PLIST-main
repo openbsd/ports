@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2014/04/21 11:41:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2014/08/14 06:54:24 ajacoutot Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -206,10 +206,7 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/nut/
 @sample ${SYSCONFDIR}/
 @comment share/examples/nut/hosts.conf.sample
-@owner ${NUT_USER}
 share/examples/nut/nut.conf.sample
-@sample ${SYSCONFDIR}/nut.conf
-@owner
 share/examples/nut/nut.service
 @sample ${BASESYSCONFDIR}/avahi/
 @sample ${BASESYSCONFDIR}/avahi/services/
