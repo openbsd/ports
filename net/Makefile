@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.856 2014/08/14 07:01:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.857 2014/08/15 12:14:05 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -13,16 +13,16 @@
      SUBDIR += amsn
      SUBDIR += amule
      SUBDIR += angst
-     SUBDIR += apache-activemq
      SUBDIR += ap-utils
+     SUBDIR += apache-activemq
      SUBDIR += argus
      SUBDIR += argus-clients
+     SUBDIR += arm
      SUBDIR += arp-scan
      SUBDIR += arpcatch
      SUBDIR += arpd
      SUBDIR += arping
      SUBDIR += arpwatch
-     SUBDIR += arm
      SUBDIR += avahi,
      SUBDIR += axel
      SUBDIR += balance
@@ -31,8 +31,8 @@
      SUBDIR += bird
      SUBDIR += bird,v6
      SUBDIR += bitlbee
-     SUBDIR += bitlbee,otr
      SUBDIR += bitlbee,libpurple
+     SUBDIR += bitlbee,otr
      SUBDIR += bitlbee,otr,libpurple
      SUBDIR += bnc
      SUBDIR += bro
@@ -359,8 +359,8 @@
      SUBDIR += p5-Net-SFTP-Foreign
      SUBDIR += p5-Net-SMTP-SSL
      SUBDIR += p5-Net-SMTP-TLS-ButMaintained
-     SUBDIR += p5-Net-SMTP_auth
      SUBDIR += p5-Net-SMTPS
+     SUBDIR += p5-Net-SMTP_auth
      SUBDIR += p5-Net-SNMP
      SUBDIR += p5-Net-SNPP
      SUBDIR += p5-Net-SSH
@@ -524,6 +524,9 @@
      SUBDIR += ruby-eventmachine,ruby21
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-macaddr,ruby18
+     SUBDIR += ruby-mfi,ruby19
+     SUBDIR += ruby-mfi,ruby20
+     SUBDIR += ruby-mfi,ruby21
      SUBDIR += ruby-minion
      SUBDIR += ruby-msgpack,ruby19
      SUBDIR += ruby-msgpack,ruby20
