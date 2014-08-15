@@ -1,12 +1,12 @@
-$OpenBSD: patch-libgfortran_m4_eoshift3_m4,v 1.1 2014/08/15 08:19:30 pascal Exp $
+$OpenBSD: patch-libgfortran_m4_eoshift3_m4,v 1.2 2014/08/15 22:07:43 kili Exp $
 --- libgfortran/m4/eoshift3.m4.orig	Thu Aug 14 14:21:13 2014
 +++ libgfortran/m4/eoshift3.m4	Thu Aug 14 14:21:36 2014
 @@ -90,7 +90,7 @@ eoshift3 (gfc_array_char * const restrict ret, 
      {
        int i;
  
--      ret->base_addr = xmallocarray (arraysize, size);
-+      ret->base_addr = xmalloc (size * arraysize);
+-      ret->base_addr = xmalloc (size * arraysize);
++      ret->base_addr = xmallocarray (arraysize, size);
        ret->offset = 0;
        ret->dtype = array->dtype;
        for (i = 0; i < GFC_DESCRIPTOR_RANK (array); i++)
@@ -14,10 +14,10 @@ $OpenBSD: patch-libgfortran_m4_eoshift3_m4,v 1.1 2014/08/15 08:19:30 pascal Exp 
  	  GFC_DIMENSION_SET(ret->dim[i], 0, ub, str);
  
          }
--      /* xmallocarray allocates a single byte for zero size.  */
--      ret->base_addr = xmallocarray (arraysize, size);
-+      /* xmalloc allocates a single byte for zero size.  */
-+      ret->base_addr = xmalloc (size * arraysize);
+-      /* xmalloc allocates a single byte for zero size.  */
+-      ret->base_addr = xmalloc (size * arraysize);
++      /* xmallocarray allocates a single byte for zero size.  */
++      ret->base_addr = xmallocarray (arraysize, size);
  
      }
    else if (unlikely (compile_options.bounds_check))

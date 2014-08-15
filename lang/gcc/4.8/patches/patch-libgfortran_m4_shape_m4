@@ -1,12 +1,12 @@
-$OpenBSD: patch-libgfortran_m4_shape_m4,v 1.1 2014/08/15 08:19:30 pascal Exp $
+$OpenBSD: patch-libgfortran_m4_shape_m4,v 1.2 2014/08/15 22:07:43 kili Exp $
 --- libgfortran/m4/shape.m4.orig	Thu Aug 14 14:21:14 2014
 +++ libgfortran/m4/shape.m4	Thu Aug 14 14:21:37 2014
 @@ -50,7 +50,7 @@ shape_'rtype_kind` ('rtype` * const restrict ret, 
      {
        GFC_DIMENSION_SET(ret->dim[0], 0, rank - 1, 1);
        ret->offset = 0;
--      ret->base_addr = xmallocarray (rank, sizeof ('rtype_name`));
-+      ret->base_addr = xmalloc (sizeof ('rtype_name`) * rank);
+-      ret->base_addr = xmalloc (sizeof ('rtype_name`) * rank);
++      ret->base_addr = xmallocarray (rank, sizeof ('rtype_name`));
      }
  
    stride = GFC_DESCRIPTOR_STRIDE(ret,0);
