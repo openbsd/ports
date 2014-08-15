@@ -1,0 +1,15 @@
+$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.15 2014/08/15 09:27:28 ajacoutot Exp $
+
+XXX cook a better fix + push upstream
+
+--- panels/user-accounts/Makefile.in.orig	Fri Aug 15 10:16:02 2014
++++ panels/user-accounts/Makefile.in	Fri Aug 15 10:16:09 2014
+@@ -546,7 +546,7 @@ libuser_accounts_la_SOURCES = \
+ 	$(BUILT_SOURCES)
+ 
+ libuser_accounts_la_LIBADD = $(PANEL_LIBS) $(USER_ACCOUNTS_PANEL_LIBS) \
+-	$(builddir)/../common/liblanguage.la -lpwquality -lcrypt -lm \
++	$(builddir)/../common/liblanguage.la -lpwquality -lm \
+ 	$(am__append_2)
+ resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/user-accounts.gresource.xml)
+ frob_account_dialog_SOURCES = \
