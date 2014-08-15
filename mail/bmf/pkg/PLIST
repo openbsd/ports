@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/09/07 08:13:20 aanriot Exp $
-bin/bmf
-bin/bmfconv
+@comment $OpenBSD: PLIST,v 1.5 2014/08/15 00:50:22 jturner Exp $
+@bin bin/bmf
+@bin bin/bmfconv
 @man man/man1/bmf.1
 @man man/man1/bmfconv.1
 share/doc/bmf/
