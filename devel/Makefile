@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1238 2014/07/25 09:16:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.1239 2014/08/15 07:24:07 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1358,6 +1358,7 @@
      SUBDIR += ruby-prof,ruby19
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
+     SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rb-gsl,ruby19
      SUBDIR += ruby-rcov,ruby18
      SUBDIR += ruby-rcov,ruby19
