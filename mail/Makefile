@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2014/07/16 12:10:29 jca Exp $
+# $OpenBSD: Makefile,v 1.312 2014/08/15 12:24:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -94,12 +94,11 @@
      SUBDIR += mozilla-thunderbird
      SUBDIR += msmtp
      SUBDIR += mutt
-     SUBDIR += mutt,sasl
-     SUBDIR += mutt,slang
      SUBDIR += mutt,compressed,sidebar
      SUBDIR += mutt,compressed,sidebar,sasl
      SUBDIR += mutt,compressed,sidebar,sasl,slang
-     SUBDIR += s-nail
+     SUBDIR += mutt,sasl
+     SUBDIR += mutt,slang
      SUBDIR += nmh
      SUBDIR += nmh,sasl
      SUBDIR += nmzmail
@@ -192,6 +191,7 @@
      SUBDIR += ruby-mailfactory
      SUBDIR += ruby-mime
      SUBDIR += ruby-mime-types
+     SUBDIR += s-nail
      SUBDIR += sieve-connect
      SUBDIR += signify
      SUBDIR += sma

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2014/08/14 20:00:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.348 2014/08/15 12:24:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -189,8 +189,8 @@
      SUBDIR += p5-MD5
      SUBDIR += p5-Module-Signature
      SUBDIR += p5-Mozilla-CA-Fake
-     SUBDIR += p5-Net-SSLGlue
      SUBDIR += p5-Net-SSL-ExpireDate
+     SUBDIR += p5-Net-SSLGlue
      SUBDIR += p5-Net_SSLeay
      SUBDIR += p5-PGP-Sign
      SUBDIR += p5-PGP-Sign,pgp
@@ -236,10 +236,10 @@
      SUBDIR += py-secretstorage
      SUBDIR += py-sslwrapper
      SUBDIR += qca
-     SUBDIR += qca2
      SUBDIR += qca-gnupg
      SUBDIR += qca-ossl
      SUBDIR += qca-tls
+     SUBDIR += qca2
      SUBDIR += qoauth
      SUBDIR += radiusniff
      SUBDIR += rarcrack

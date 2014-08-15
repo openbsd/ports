@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2014/07/13 08:59:18 pascal Exp $
+# $OpenBSD: Makefile,v 1.163 2014/08/15 12:24:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -22,9 +22,9 @@
      SUBDIR += feldspar
      SUBDIR += fpc
      SUBDIR += freehdl
+     SUBDIR += g77
      SUBDIR += gambit
      SUBDIR += gawk
-     SUBDIR += g77
      SUBDIR += gcc
      SUBDIR += gforth
      SUBDIR += gfortran
@@ -32,22 +32,22 @@
      SUBDIR += go
      SUBDIR += gprolog
      SUBDIR += guile
+     SUBDIR += hs-HsParrot
      SUBDIR += hs-haskell-src
      SUBDIR += hs-haskell-src-exts
-     SUBDIR += hs-HsParrot
      SUBDIR += hs-syntactic
      SUBDIR += hugs
-     SUBDIR += io
      SUBDIR += icon
      SUBDIR += intel2gas
+     SUBDIR += io
      SUBDIR += iverilog
      SUBDIR += jamvm
      SUBDIR += jikes
      SUBDIR += jimtcl
      SUBDIR += jruby
      SUBDIR += kawa
-     SUBDIR += libv8
      SUBDIR += librep
+     SUBDIR += libv8
      SUBDIR += lua
      SUBDIR += luajit
      SUBDIR += luajit,lua52

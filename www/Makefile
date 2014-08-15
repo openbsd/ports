@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.668 2014/07/17 12:16:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.669 2014/08/15 12:24:47 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -61,8 +61,8 @@
      SUBDIR += gtkhtml4
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
-     SUBDIR += haserl,static
      SUBDIR += haserl,no_lua,static
+     SUBDIR += haserl,static
      SUBDIR += havp
      SUBDIR += hiawatha
      SUBDIR += hs-cgi
@@ -75,9 +75,9 @@
      SUBDIR += hs-snap-loader-dynamic
      SUBDIR += hs-snap-loader-static
      SUBDIR += hs-snap-server
-     SUBDIR += hs-webkit
      SUBDIR += hs-wai
      SUBDIR += hs-warp
+     SUBDIR += hs-webkit
      SUBDIR += hs-xhtml-combinators
      SUBDIR += http_load
      SUBDIR += http_ping
@@ -329,8 +329,8 @@
      SUBDIR += p5-WWW-Shorten-Bitly
      SUBDIR += p5-WWW-Shorten-Googl
      SUBDIR += p5-WWW-Tumblr
-     SUBDIR += p5-WWW-YouTube-Download
      SUBDIR += p5-WWW-Wikipedia
+     SUBDIR += p5-WWW-YouTube-Download
      SUBDIR += p5-Weather-Com
      SUBDIR += p5-WebService-Audioscrobbler
      SUBDIR += p5-WebService-MusicBrainz
@@ -413,10 +413,10 @@
      SUBDIR += py-tornado
      SUBDIR += py-turbogears
      SUBDIR += py-urlgrabber
+     SUBDIR += py-webdav
      SUBDIR += py-weberror
      SUBDIR += py-webhelpers
      SUBDIR += py-webkitgtk
-     SUBDIR += py-webdav
      SUBDIR += py-webob
      SUBDIR += py-webpy
      SUBDIR += py-webtest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.536 2014/08/14 20:03:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.537 2014/08/15 12:24:47 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -33,10 +33,10 @@
      SUBDIR += dbus
      SUBDIR += dbus-glib
      SUBDIR += dbus-intf
-     SUBDIR += dbusmenu-qt
      SUBDIR += dbus-python
      SUBDIR += dbus-python,python3
      SUBDIR += dbus-tcl
+     SUBDIR += dbusmenu-qt
      SUBDIR += dclock
      SUBDIR += dmenu
      SUBDIR += driconf
@@ -187,9 +187,9 @@
      SUBDIR += p5-Gtk2-ImageView
      SUBDIR += p5-Tk
      SUBDIR += p5-Tk-ProgressBar-Mac
-     SUBDIR += p5-Tk-TableMatrix
      SUBDIR += p5-Tk-Splash
      SUBDIR += p5-Tk-Stderr
+     SUBDIR += p5-Tk-TableMatrix
      SUBDIR += p5-Wx
      SUBDIR += p5-X-Osd
      SUBDIR += p5-X11-Protocol
@@ -274,8 +274,8 @@
      SUBDIR += treewm
      SUBDIR += tvtwm
      SUBDIR += type1inst
-     SUBDIR += uwm
      SUBDIR += unclutter
+     SUBDIR += uwm
      SUBDIR += vdesk
      SUBDIR += viewfax
      SUBDIR += virt-viewer

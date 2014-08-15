@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.415 2014/07/03 11:17:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.416 2014/08/15 12:24:47 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -64,8 +64,8 @@
      SUBDIR += hs-libxml-sax
      SUBDIR += hs-polyparse
      SUBDIR += hs-tagsoup
-     SUBDIR += hs-xml-types
      SUBDIR += hs-xml
+     SUBDIR += hs-xml-types
      SUBDIR += hs-xmlhtml
      SUBDIR += html
      SUBDIR += hunspell
@@ -216,8 +216,8 @@
      SUBDIR += p5-Text-Diff
      SUBDIR += p5-Text-Diff-HTML
      SUBDIR += p5-Text-DoubleMetaphone
-     SUBDIR += p5-Text-German
      SUBDIR += p5-Text-Format
+     SUBDIR += p5-Text-German
      SUBDIR += p5-Text-Glob
      SUBDIR += p5-Text-LevenshteinXS
      SUBDIR += p5-Text-Markdown
@@ -336,16 +336,16 @@
      SUBDIR += ruby-ascii85
      SUBDIR += ruby-builder
      SUBDIR += ruby-classifier
-     SUBDIR += ruby-fastercsv,ruby18
-     SUBDIR += ruby-fastri,ruby18
-     SUBDIR += ruby-fast_xs,ruby18
-     SUBDIR += ruby-fast_xs,ruby19
-     SUBDIR += ruby-fast_xs,ruby20
-     SUBDIR += ruby-fast_xs,ruby21
      SUBDIR += ruby-fast-stemmer,ruby18
      SUBDIR += ruby-fast-stemmer,ruby19
      SUBDIR += ruby-fast-stemmer,ruby20
      SUBDIR += ruby-fast-stemmer,ruby21
+     SUBDIR += ruby-fast_xs,ruby18
+     SUBDIR += ruby-fast_xs,ruby19
+     SUBDIR += ruby-fast_xs,ruby20
+     SUBDIR += ruby-fast_xs,ruby21
+     SUBDIR += ruby-fastercsv,ruby18
+     SUBDIR += ruby-fastri,ruby18
      SUBDIR += ruby-gyoku,ruby19
      SUBDIR += ruby-gyoku,ruby20
      SUBDIR += ruby-gyoku,ruby21

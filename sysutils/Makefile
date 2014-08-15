@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.319 2014/07/10 13:11:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.320 2014/08/15 12:24:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
      SUBDIR += anacron
      SUBDIR += ansible
      SUBDIR += apachetop
-     SUBDIR += apcupsd
      SUBDIR += apcd
+     SUBDIR += apcupsd
      SUBDIR += augeas
      SUBDIR += autossh
      SUBDIR += backuppc
@@ -80,8 +80,8 @@
      SUBDIR += knutclient
      SUBDIR += krename
      SUBDIR += ktsuss
-     SUBDIR += libretto-config
      SUBDIR += librelp
+     SUBDIR += libretto-config
      SUBDIR += libstatgrab
      SUBDIR += libvirt
      SUBDIR += libvirt-python
