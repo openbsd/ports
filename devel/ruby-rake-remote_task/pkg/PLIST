@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/15 07:21:53 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.txt
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/rake/
+${GEM_LIB}/gems/${DISTNAME}/lib/rake/remote_task.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rake/test_case.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_rake_remote_task.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
