@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2014/03/15 13:12:56 edd Exp $
+# $OpenBSD: Makefile,v 1.74 2014/08/15 12:19:13 jasper Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -14,10 +14,10 @@
     SUBDIR += fceux
     SUBDIR += fedora
     SUBDIR += frodo
-    SUBDIR += fuse
-    SUBDIR += fuse-utils
     SUBDIR += fs-uae
     SUBDIR += fs-uae-launcher
+    SUBDIR += fuse
+    SUBDIR += fuse-utils
     SUBDIR += gambatte
     SUBDIR += gns3
     SUBDIR += gnusim8085
@@ -26,8 +26,8 @@
     SUBDIR += mupen64plus
     SUBDIR += nestopia
     SUBDIR += openmsx
-    SUBDIR += qemu
     SUBDIR += pcsxr
+    SUBDIR += qemu
     SUBDIR += redhat
     SUBDIR += sdlmame
     SUBDIR += sdlmess
@@ -39,9 +39,9 @@
     SUBDIR += uae
     SUBDIR += vbam
     SUBDIR += x48
-    SUBDIR += xnp2
     SUBDIR += xcopilot
     SUBDIR += xhomer
+    SUBDIR += xnp2
     SUBDIR += yabause
     SUBDIR += zsnes
 

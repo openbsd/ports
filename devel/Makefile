@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1239 2014/08/15 07:24:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.1240 2014/08/15 12:19:13 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -212,8 +212,8 @@
      SUBDIR += hs-directory-tree
      SUBDIR += hs-distributive
      SUBDIR += hs-dlist
-     SUBDIR += hs-enumerator
      SUBDIR += hs-either
+     SUBDIR += hs-enumerator
      SUBDIR += hs-errors
      SUBDIR += hs-extensible-exceptions
      SUBDIR += hs-failure
@@ -479,13 +479,13 @@
      SUBDIR += ocaml-camomile
      SUBDIR += ocaml-curses
      SUBDIR += ocaml-extlib
+     SUBDIR += ocaml-lambda-term
      SUBDIR += ocaml-lwt
      SUBDIR += ocaml-mlgmp
      SUBDIR += ocaml-net
      SUBDIR += ocaml-net,pcre
      SUBDIR += ocaml-pcre
      SUBDIR += ocaml-react
-     SUBDIR += ocaml-lambda-term
      SUBDIR += ocaml-zed
      SUBDIR += ode
      SUBDIR += ois
@@ -1005,8 +1005,8 @@
      SUBDIR += p5-Test-File
      SUBDIR += p5-Test-File-Contents
      SUBDIR += p5-Test-Group
-     SUBDIR += p5-Test-Harness
      SUBDIR += p5-Test-HTML-Tidy
+     SUBDIR += p5-Test-Harness
      SUBDIR += p5-Test-Inline
      SUBDIR += p5-Test-Inter
      SUBDIR += p5-Test-JSON
@@ -1040,13 +1040,13 @@
      SUBDIR += p5-Test-TrailingSpace
      SUBDIR += p5-Test-Trap
      SUBDIR += p5-Test-URI
-     SUBDIR += p5-Test-Without-Module
      SUBDIR += p5-Test-Unit
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
      SUBDIR += p5-Test-Warnings
      SUBDIR += p5-Test-Weaken
+     SUBDIR += p5-Test-Without-Module
      SUBDIR += p5-Test-YAML-Valid
      SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Text-FixEOL
@@ -1106,8 +1106,8 @@
      SUBDIR += p5-common-sense
      SUBDIR += p5-enum
      SUBDIR += p5-indirect
-     SUBDIR += p5-libintl
      SUBDIR += p5-lib-abs
+     SUBDIR += p5-libintl
      SUBDIR += p5-namespace-autoclean
      SUBDIR += p5-namespace-clean
      SUBDIR += p5-prefork
@@ -1145,8 +1145,8 @@
      SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
-     SUBDIR += py-argh
      SUBDIR += py-argcomplete
+     SUBDIR += py-argh
      SUBDIR += py-asn1
      SUBDIR += py-async
      SUBDIR += py-babel
@@ -1285,12 +1285,12 @@
      SUBDIR += rebar
      SUBDIR += remake
      SUBDIR += rlog
+     SUBDIR += ruby-abstract
+     SUBDIR += ruby-arrayfields
      SUBDIR += ruby-atomic,ruby18
      SUBDIR += ruby-atomic,ruby19
      SUBDIR += ruby-atomic,ruby20
      SUBDIR += ruby-atomic,ruby21
-     SUBDIR += ruby-abstract
-     SUBDIR += ruby-arrayfields
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
      SUBDIR += ruby-bundler,ruby18
@@ -1391,9 +1391,9 @@
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop
-     SUBDIR += ruby-uuidtools
      SUBDIR += ruby-uuid
      SUBDIR += ruby-uuid,ruby18
+     SUBDIR += ruby-uuidtools
      SUBDIR += ruby-yajl,ruby19
      SUBDIR += ruby-yajl,ruby20
      SUBDIR += ruby-yajl,ruby21

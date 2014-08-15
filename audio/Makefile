@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2014/07/06 17:29:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.336 2014/08/15 12:19:13 jasper Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -54,10 +54,10 @@
      SUBDIR += generaluser-gs-soundfont
      SUBDIR += gimmix
      SUBDIR += glyr
-     SUBDIR += gogglesmm
      SUBDIR += gmpc
      SUBDIR += gmpc-plugins
      SUBDIR += gnomad2
+     SUBDIR += gogglesmm
      SUBDIR += gogo
      SUBDIR += gqmpeg
      SUBDIR += grip
@@ -185,8 +185,8 @@
      SUBDIR += pms
      SUBDIR += portaudio-svn
      SUBDIR += potamus
-     SUBDIR += pulseaudio
      SUBDIR += puddletag
+     SUBDIR += pulseaudio
      SUBDIR += py-acoustid
      SUBDIR += py-ao
      SUBDIR += py-audio

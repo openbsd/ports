@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2014/07/21 01:24:40 bentley Exp $
+# $OpenBSD: Makefile,v 1.295 2014/08/15 12:19:13 jasper Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -67,9 +67,9 @@
      SUBDIR += eboard
      SUBDIR += eboard-extras
      SUBDIR += eduke32
-     SUBDIR += eliot
      SUBDIR += egoboo
      SUBDIR += einstein
+     SUBDIR += eliot
      SUBDIR += enigma
      SUBDIR += extremetuxracer
      SUBDIR += f1spirit
