@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/08/15 07:24:10 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.txt
@@ -16,17 +17,15 @@ ${GEM_LIB}/gems/${DISTNAME}/doco/migration.txt
 ${GEM_LIB}/gems/${DISTNAME}/doco/perforce.txt
 ${GEM_LIB}/gems/${DISTNAME}/doco/variables.txt
 ${GEM_LIB}/gems/${DISTNAME}/lib/
-${GEM_LIB}/gems/${DISTNAME}/lib/rake_remote_task.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/vlad/
 ${GEM_LIB}/gems/${DISTNAME}/lib/vlad.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/vlad/apache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/vlad/core.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/vlad/maintenance.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/vlad/passenger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/vlad/rails.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/vlad/subversion.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/vlad_test_case.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/test_rake_remote_task.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_vlad.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_vlad_subversion.rb
 ${GEM_LIB}/gems/${DISTNAME}/vladdemo.sh
