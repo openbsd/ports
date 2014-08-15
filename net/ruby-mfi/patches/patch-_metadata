@@ -1,0 +1,16 @@
+$OpenBSD: patch-_metadata,v 1.1.1.1 2014/08/15 12:09:41 jasper Exp $
+
+Fix dependency name
+https://github.com/dansimpson/mfi/pull/1
+
+--- .metadata.orig	Thu Aug 14 12:47:03 2014
++++ .metadata	Thu Aug 14 12:47:20 2014
+@@ -11,7 +11,7 @@ cert_chain: []
+ date: 2013-11-02 00:00:00.000000000 Z
+ dependencies:
+ - !ruby/object:Gem::Dependency
+-  name: ssh
++  name: net-ssh
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+     - - '>='
