@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/05/13 06:06:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/08/15 09:28:17 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.12.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,11 +23,12 @@ WANTLIB += jpeg json-glib-1.0 m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1 pthread
 WANTLIB += pthread-stubs pwquality rest-0.7 secret-1 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ telepathy-glib webkitgtk-3.0
-WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z gbm
 
-MODULES=		x11/gnome \
-			devel/dconf \
-			devel/gettext
+MODULES=		devel/dconf \
+			devel/gettext \
+			security/heimdal \
+			x11/gnome
 
 LIB_DEPENDS=		inputmethods/ibus \
 			security/libpwquality \
@@ -49,10 +51,5 @@ AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-initial-setup
-
-# https://bugzilla.gnome.org/show_bug.cgi?id=728879
-# (upstream will _not_ accept --disable-kerberos patches)
-pre-configure:
-	ln -sf /usr/bin/true ${WRKDIR}/bin/krb5-config
 
 .include <bsd.port.mk>

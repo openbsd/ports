@@ -1,0 +1,25 @@
+$OpenBSD: patch-gnome-initial-setup_pages_account_um-realm-manager_c,v 1.4 2014/08/15 09:28:17 ajacoutot Exp $
+
+XXX rework and push upstream
+
+--- gnome-initial-setup/pages/account/um-realm-manager.c.orig	Mon Mar 10 05:47:29 2014
++++ gnome-initial-setup/pages/account/um-realm-manager.c	Fri Aug 15 11:11:04 2014
+@@ -23,7 +23,7 @@
+ 
+ #include "um-realm-manager.h"
+ 
+-#include <krb5/krb5.h>
++#include <krb5.h>
+ 
+ #include <glib.h>
+ #include <glib/gi18n.h>
+@@ -702,9 +702,6 @@ login_perform_kinit (krb5_context k5,
+         }
+ 
+         code = krb5_get_init_creds_opt_alloc (k5, &opts);
+-        g_return_val_if_fail (code == 0, code);
+-
+-        code = krb5_get_init_creds_opt_set_out_ccache (k5, opts, ccache);
+         g_return_val_if_fail (code == 0, code);
+ 
+         code = krb5_get_init_creds_password (k5, &creds, principal,
