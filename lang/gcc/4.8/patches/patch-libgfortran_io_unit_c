@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_io_unit_c,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/io/unit.c.orig	Sun Apr 13 00:52:10 2014
++++ libgfortran/io/unit.c	Thu Aug 14 14:21:41 2014
+@@ -455,7 +455,7 @@ get_internal_unit (st_parameter_dt *dtp)
+     {
+       iunit->rank = GFC_DESCRIPTOR_RANK (dtp->internal_unit_desc);
+       iunit->ls = (array_loop_spec *)
+-	xmalloc (iunit->rank * sizeof (array_loop_spec));
++	xmallocarray (iunit->rank, sizeof (array_loop_spec));
+       dtp->internal_unit_len *=
+ 	init_loop_spec (dtp->internal_unit_desc, iunit->ls, &start_record);
+ 

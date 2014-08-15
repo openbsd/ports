@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgfortran_m4_unpack_m4,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/m4/unpack.m4.orig	Thu Aug 14 14:21:17 2014
++++ libgfortran/m4/unpack.m4	Thu Aug 14 14:21:40 2014
+@@ -100,7 +100,7 @@ unpack0_'rtype_code` ('rtype` *ret, const 'rtype` *vec
+ 	  rs *= extent[n];
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmallocarray (rs, sizeof ('rtype_name`));
++      ret->base_addr = xmalloc (rs * sizeof ('rtype_name`));
+     }
+   else
+     {
+@@ -245,7 +245,7 @@ unpack1_'rtype_code` ('rtype` *ret, const 'rtype` *vec
+ 	  rs *= extent[n];
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmallocarray (rs, sizeof ('rtype_name`));
++      ret->base_addr = xmalloc (rs * sizeof ('rtype_name`));
+     }
+   else
+     {

@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgfortran_generated_unpack_c8_c,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/generated/unpack_c8.c.orig	Mon Jan 14 19:20:58 2013
++++ libgfortran/generated/unpack_c8.c	Thu Aug 14 14:21:40 2014
+@@ -99,7 +99,7 @@ unpack0_c8 (gfc_array_c8 *ret, const gfc_array_c8 *vec
+ 	  rs *= extent[n];
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmalloc (rs * sizeof (GFC_COMPLEX_8));
++      ret->base_addr = xmallocarray (rs, sizeof (GFC_COMPLEX_8));
+     }
+   else
+     {
+@@ -244,7 +244,7 @@ unpack1_c8 (gfc_array_c8 *ret, const gfc_array_c8 *vec
+ 	  rs *= extent[n];
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmalloc (rs * sizeof (GFC_COMPLEX_8));
++      ret->base_addr = xmallocarray (rs, sizeof (GFC_COMPLEX_8));
+     }
+   else
+     {

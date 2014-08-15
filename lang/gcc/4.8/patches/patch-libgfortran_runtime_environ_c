@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_runtime_environ_c,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/runtime/environ.c.orig	Mon Jan 14 19:20:58 2013
++++ libgfortran/runtime/environ.c	Thu Aug 14 14:21:40 2014
+@@ -833,7 +833,7 @@ void init_unformatted (variable * v)
+     }
+   else
+     {
+-      elist = xmalloc (unit_count * sizeof (exception_t));
++      elist = xmallocarray (unit_count, sizeof (exception_t));
+       do_count = 0;
+       p = val;
+       do_parse ();

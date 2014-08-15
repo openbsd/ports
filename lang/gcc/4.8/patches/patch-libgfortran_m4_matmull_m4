@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_m4_matmull_m4,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/m4/matmull.m4.orig	Thu Aug 14 14:21:15 2014
++++ libgfortran/m4/matmull.m4	Thu Aug 14 14:21:39 2014
+@@ -89,7 +89,7 @@ matmul_'rtype_code` ('rtype` * const restrict retarray
+         }
+           
+       retarray->base_addr
+-	= xmallocarray (size0 ((array_t *) retarray), sizeof ('rtype_name`));
++	= xmalloc (sizeof ('rtype_name`) * size0 ((array_t *) retarray));
+       retarray->offset = 0;
+     }
+     else if (unlikely (compile_options.bounds_check))

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_intrinsics_transpose_generic_c,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/intrinsics/transpose_generic.c.orig	Mon Jan 14 19:20:58 2013
++++ libgfortran/intrinsics/transpose_generic.c	Thu Aug 14 14:21:40 2014
+@@ -60,7 +60,7 @@ transpose_internal (gfc_array_char *ret, gfc_array_cha
+       GFC_DIMENSION_SET(ret->dim[1], 0, GFC_DESCRIPTOR_EXTENT(source,0) - 1,
+ 			GFC_DESCRIPTOR_EXTENT(source, 1));
+ 
+-      ret->base_addr = xmalloc (size * size0 ((array_t*)ret));
++      ret->base_addr = xmallocarray (size0 ((array_t*)ret), size);
+       ret->offset = 0;
+     }
+   else if (unlikely (compile_options.bounds_check))

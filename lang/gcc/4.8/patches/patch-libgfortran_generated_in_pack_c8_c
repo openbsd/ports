@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_generated_in_pack_c8_c,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/generated/in_pack_c8.c.orig	Mon Jan 14 19:20:58 2013
++++ libgfortran/generated/in_pack_c8.c	Thu Aug 14 14:21:41 2014
+@@ -76,7 +76,7 @@ internal_pack_c8 (gfc_array_c8 * source)
+     return source->base_addr;
+ 
+   /* Allocate storage for the destination.  */
+-  destptr = (GFC_COMPLEX_8 *)xmalloc (ssize * sizeof (GFC_COMPLEX_8));
++  destptr = xmallocarray (ssize, sizeof (GFC_COMPLEX_8));
+   dest = destptr;
+   src = source->base_addr;
+   stride0 = stride[0];

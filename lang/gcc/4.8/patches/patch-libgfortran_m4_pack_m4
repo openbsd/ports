@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgfortran_m4_pack_m4,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/m4/pack.m4.orig	Thu Aug 14 14:21:09 2014
++++ libgfortran/m4/pack.m4	Thu Aug 14 14:21:33 2014
+@@ -168,8 +168,8 @@ pack_'rtype_code` ('rtype` *ret, const 'rtype` *array,
+ 
+ 	  ret->offset = 0;
+ 
+-	  /* xmallocarray allocates a single byte for zero size.  */
+-	  ret->base_addr = xmallocarray (total, sizeof ('rtype_name`));
++	  /* xmalloc allocates a single byte for zero size.  */
++	  ret->base_addr = xmalloc (sizeof ('rtype_name`) * total);
+ 
+ 	  if (total == 0)
+ 	    return;

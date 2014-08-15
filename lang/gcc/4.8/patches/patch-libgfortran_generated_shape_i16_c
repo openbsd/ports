@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_generated_shape_i16_c,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/generated/shape_i16.c.orig	Mon Jan 14 19:20:58 2013
++++ libgfortran/generated/shape_i16.c	Thu Aug 14 14:21:40 2014
+@@ -49,7 +49,7 @@ shape_16 (gfc_array_i16 * const restrict ret, 
+     {
+       GFC_DIMENSION_SET(ret->dim[0], 0, rank - 1, 1);
+       ret->offset = 0;
+-      ret->base_addr = xmalloc (sizeof (GFC_INTEGER_16) * rank);
++      ret->base_addr = xmallocarray (rank, sizeof (GFC_INTEGER_16));
+     }
+ 
+   stride = GFC_DESCRIPTOR_STRIDE(ret,0);

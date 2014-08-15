@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_m4_in_pack_m4,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/m4/in_pack.m4.orig	Thu Aug 14 14:21:07 2014
++++ libgfortran/m4/in_pack.m4	Thu Aug 14 14:21:32 2014
+@@ -79,7 +79,7 @@ internal_pack_'rtype_ccode` ('rtype` * source)
+     return source->base_addr;
+ 
+   /* Allocate storage for the destination.  */
+-  destptr = xmallocarray (ssize, sizeof ('rtype_name`));
++  destptr = ('rtype_name` *)xmalloc (ssize * sizeof ('rtype_name`));
+   dest = destptr;
+   src = source->base_addr;
+   stride0 = stride[0];

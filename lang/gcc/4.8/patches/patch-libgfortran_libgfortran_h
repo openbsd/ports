@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgfortran_libgfortran_h,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/libgfortran.h.orig	Mon Jan 14 19:20:58 2013
++++ libgfortran/libgfortran.h	Thu Aug 14 14:21:41 2014
+@@ -751,6 +751,9 @@ internal_proto(set_fpu);
+ extern void *xmalloc (size_t) __attribute__ ((malloc));
+ internal_proto(xmalloc);
+ 
++extern void *xmallocarray (size_t, size_t) __attribute__ ((malloc));
++internal_proto(xmallocarray);
++
+ extern void *xcalloc (size_t, size_t) __attribute__ ((malloc));
+ internal_proto(xcalloc);
+ 

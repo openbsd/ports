@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgfortran_m4_transpose_m4,v 1.1 2014/08/15 08:19:30 pascal Exp $
+--- libgfortran/m4/transpose.m4.orig	Thu Aug 14 14:21:11 2014
++++ libgfortran/m4/transpose.m4	Thu Aug 14 14:21:34 2014
+@@ -61,8 +61,7 @@ transpose_'rtype_code` ('rtype` * const restrict ret, 
+       GFC_DIMENSION_SET(ret->dim[1], 0, GFC_DESCRIPTOR_EXTENT(source,0) - 1,
+ 			GFC_DESCRIPTOR_EXTENT(source, 1));
+ 
+-      ret->base_addr = xmallocarray (size0 ((array_t *) ret), 
+-                                     sizeof ('rtype_name`));
++      ret->base_addr = xmalloc (sizeof ('rtype_name`) * size0 ((array_t *) ret));
+       ret->offset = 0;
+     } else if (unlikely (compile_options.bounds_check))
+     {
