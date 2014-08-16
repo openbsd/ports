@@ -1,0 +1,24 @@
+$OpenBSD: patch-include_filenames_h,v 1.1 2014/08/16 11:14:05 chrisz Exp $
+
+Our libiberty does not have filename_cmp(), but since it would simply
+call strcmp(), use a macro when building gdb and most of all libbfd.
+
+Fixes linking against libbfd with our system libiberty.
+
+--- include/filenames.h.orig	Wed Jun 11 18:34:41 2014
++++ include/filenames.h	Sat Aug 16 12:34:25 2014
+@@ -80,11 +80,10 @@ extern "C" {
+   (IS_DIR_SEPARATOR_1 (dos_based, (f)[0])		 \
+    || HAS_DRIVE_SPEC_1 (dos_based, f))
+ 
+-extern int filename_cmp (const char *s1, const char *s2);
+-#define FILENAME_CMP(s1, s2)	filename_cmp(s1, s2)
++#define FILENAME_CMP(s1, s2)		strcmp(s1, s2)
++#define filename_cmp(s1, s2)		strcmp(s1, s2)
+ 
+-extern int filename_ncmp (const char *s1, const char *s2,
+-			  size_t n);
++#define filename_ncmp(s1, s2, n)	strncmp(s1, s2, n)
+ 
+ extern hashval_t filename_hash (const void *s);
+ 
