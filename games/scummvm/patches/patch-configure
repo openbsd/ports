@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.13 2013/07/07 02:46:26 jsg Exp $
---- configure.orig	Mon May 27 06:21:47 2013
-+++ configure	Sun Jul  7 00:14:14 2013
-@@ -1762,21 +1762,6 @@ if test "$_use_cxx11" = "yes" ; then
+$OpenBSD: patch-configure,v 1.14 2014/08/17 06:08:05 jsg Exp $
+--- configure.orig	Tue Jul 22 15:17:11 2014
++++ configure	Tue Jul 22 15:21:25 2014
+@@ -1814,22 +1814,6 @@ if test "$_use_cxx11" = "yes" ; then
  fi
  echo $_use_cxx11
  
@@ -10,12 +10,13 @@ $OpenBSD: patch-configure,v 1.13 2013/07/07 02:46:26 jsg Exp $
 -# However, some platforms use GNU extensions in system header files, so
 -# for these we must not use -pedantic.
 -case $_host_os in
--android | gamecube | psp | wii | webos)
+-android | gamecube | psp | tizen | wii | webos)
 -	;;
 -*)
 -	# ICC does not support pedantic, while GCC and clang do.
 -	if test "$have_icc" = no ; then
--		CXXFLAGS="$CXXFLAGS -pedantic"
+-		# We *do* want the 'long long' extension.
+-		CXXFLAGS="$CXXFLAGS -pedantic -Wno-long-long"
 -	fi
 -	;;
 -esac
@@ -23,12 +24,23 @@ $OpenBSD: patch-configure,v 1.13 2013/07/07 02:46:26 jsg Exp $
  # If possible, we want to use -Wglobal-constructors
  # However, not all compilers support that, so check whether the active one does.
  echocheck "whether -Wglobal-constructors work"
-@@ -3278,9 +3263,9 @@ EOF
+@@ -3460,18 +3444,16 @@ if test "$_flac" = auto ; then
+ int main(void) { return FLAC__STREAM_SYNC_LEN >> 30; /* guaranteed to be 0 */ }
+ EOF
+ 	if test "$_vorbis" = yes ; then
+-		cc_check $FLAC_CFLAGS $FLAC_LIBS $OGG_CFLAGS $OGG_LIBS \
+-			-lFLAC -logg && _flac=yes
++		cc_check `pkg-config --cflags --libs flac ogg` && _flac=yes
+ 	else
+-		cc_check $FLAC_CFLAGS $FLAC_LIBS \
+-			-lFLAC && _flac=yes
++		cc_check `pkg-config --cflags --libs flac` && _flac=yes
+ 	fi
  fi
  if test "$_flac" = yes ; then
  	if test "$_vorbis" = yes ; then
 -		LIBS="$LIBS $FLAC_LIBS $OGG_LIBS -lFLAC -logg"
-+		LIBS="$LIBS `pkg-config --libs flac` -logg"
++		LIBS="$LIBS `pkg-config --libs flac ogg`"
  	else
 -		LIBS="$LIBS $FLAC_LIBS -lFLAC"
 +		LIBS="$LIBS `pkg-config --libs flac`"

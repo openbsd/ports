@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_common,v 1.7 2012/08/04 15:58:37 jsg Exp $
---- Makefile.common.orig	Thu May 31 20:39:11 2012
-+++ Makefile.common	Tue Jul 31 12:41:37 2012
-@@ -160,29 +160,6 @@ VER_MINOR = $(shell echo $(VERSION) | cut -d. -f 2)
+$OpenBSD: patch-Makefile_common,v 1.8 2014/08/17 06:08:05 jsg Exp $
+--- Makefile.common.orig	Tue Jul 22 15:15:04 2014
++++ Makefile.common	Tue Jul 22 15:15:22 2014
+@@ -165,29 +165,6 @@ VER_MINOR = $(shell echo $(VERSION) | cut -d. -f 2)
  VER_PATCH = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c1)
  VER_EXTRA = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c2-)
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile_common,v 1.7 2012/08/04 15:58:37 jsg Exp $
 -# Are there uncommitted changes? (describe --dirty is only available since 1.6.6)
 -VER_DIRTY := $(shell cd $(srcdir); git update-index --refresh --unmerged 1>/dev/null 2>&1; git diff-index --quiet HEAD || echo "-dirty")
 -# Get the working copy base revision
--VER_REV := $(shell cd $(srcdir); git describe --match desc/\* | cut -d '-' -f 2-)$(VER_DIRTY)
+-VER_REV := $(shell cd $(srcdir); git describe --long --match desc/\* | cut -d '-' -f 2-)$(VER_DIRTY)
 -endif
 -else
 -GITROOT := git://github.com/scummvm/scummvm.git
