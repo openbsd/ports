@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/13 05:29:25 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/08/17 12:04:42 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-export
+@bin bin/birdfont-import
 @lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
 @man man/man1/birdfont-export.1
+@man man/man1/birdfont-import.1
 @man man/man1/birdfont.1
 share/applications/birdfont.desktop
 share/birdfont/
@@ -25,7 +27,7 @@ share/birdfont/icons/create_line.png
 share/birdfont/icons/cubic_points.png
 share/birdfont/icons/custom_character_set.png
 share/birdfont/icons/cut_background.png
-share/birdfont/icons/delay_circle.png
+share/birdfont/icons/delete_button.png
 share/birdfont/icons/delete_menu_item.png
 share/birdfont/icons/delete_selected_glyph.png
 share/birdfont/icons/double_points.png
@@ -38,9 +40,11 @@ share/birdfont/icons/flip_horizontal.png
 share/birdfont/icons/flip_vertical.png
 share/birdfont/icons/full_glyph.png
 share/birdfont/icons/generate_html_document.png
+share/birdfont/icons/height.png
 share/birdfont/icons/help_lines.png
 share/birdfont/icons/info_icon.png
 share/birdfont/icons/insert_background.png
+share/birdfont/icons/insert_last_glyph.png
 share/birdfont/icons/insert_point_on_path.png
 share/birdfont/icons/kerning_class.png
 share/birdfont/icons/kerning_text_input.png
@@ -65,12 +69,15 @@ share/birdfont/icons/rectangle.png
 share/birdfont/icons/resize.png
 share/birdfont/icons/resize_handle.png
 share/birdfont/icons/reverse_path.png
+share/birdfont/icons/rotation.png
+share/birdfont/icons/select_all.png
 share/birdfont/icons/selected_edit_point.png
 share/birdfont/icons/selected_edit_point_cubic.png
 share/birdfont/icons/selected_edit_point_handle.png
 share/birdfont/icons/show_all_line_handles.png
 share/birdfont/icons/show_background.png
 share/birdfont/icons/show_xheight_helplines.png
+share/birdfont/icons/side_bearings.png
 share/birdfont/icons/slow_test.png
 share/birdfont/icons/spin_button.png
 share/birdfont/icons/symmetric.png
@@ -91,12 +98,16 @@ share/birdfont/icons/tool_button_selected.png
 share/birdfont/icons/tool_button_selected_active.png
 share/birdfont/icons/track.png
 share/birdfont/icons/ttf_units.png
+share/birdfont/icons/undo_tool.png
 share/birdfont/icons/union_paths.png
 share/birdfont/icons/update_webview.png
 share/birdfont/icons/utf_8.png
 share/birdfont/icons/version.png
 share/birdfont/icons/view_result.png
+share/birdfont/icons/width.png
 share/birdfont/icons/window_icon.png
+share/birdfont/icons/x_coordinate.png
+share/birdfont/icons/y_coordinate.png
 share/birdfont/icons/zoom_1_1.png
 share/birdfont/icons/zoom_background_image.png
 share/birdfont/icons/zoom_boundaries.png
@@ -129,6 +140,8 @@ share/locale/tr/LC_MESSAGES/birdfont.mo
 share/locale/uk/LC_MESSAGES/birdfont.mo
 share/locale/zh_CN/LC_MESSAGES/birdfont.mo
 share/mime/packages/birdfont.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
