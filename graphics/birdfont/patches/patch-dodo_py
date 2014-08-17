@@ -1,10 +1,10 @@
-$OpenBSD: patch-dodo_py,v 1.3 2014/03/26 12:57:18 jasper Exp $
+$OpenBSD: patch-dodo_py,v 1.4 2014/08/17 12:08:50 bcallah Exp $
 
 glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
 
---- dodo.py.orig	Sat Mar 22 16:52:01 2014
-+++ dodo.py	Wed Mar 26 10:36:57 2014
-@@ -74,12 +74,11 @@ def task_pkg_flags():
+--- dodo.py.orig	Fri Aug 15 11:04:53 2014
++++ dodo.py	Sun Aug 17 08:05:27 2014
+@@ -76,12 +76,11 @@ def task_pkg_flags():
  
  
  valac_options = [
