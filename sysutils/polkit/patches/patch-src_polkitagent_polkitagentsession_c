@@ -1,0 +1,100 @@
+$OpenBSD: patch-src_polkitagent_polkitagentsession_c,v 1.1 2014/08/17 06:47:39 ajacoutot Exp $
+
+From 7650ad1e08ab13bdb461783c4995d186d9392840 Mon Sep 17 00:00:00 2001
+From: Rui Matos <tiagomatos@gmail.com>
+Date: Thu, 6 Feb 2014 18:41:18 +0100
+Subject: PolkitAgentSession: fix race between child and io watches
+
+--- src/polkitagent/polkitagentsession.c.orig	Mon Apr 29 19:28:57 2013
++++ src/polkitagent/polkitagentsession.c	Sun Aug 17 08:40:32 2014
+@@ -92,7 +92,6 @@ struct _PolkitAgentSession
+   int child_stdout;
+   GPid child_pid;
+ 
+-  GSource *child_watch_source;
+   GSource *child_stdout_watch_source;
+   GIOChannel *child_stdout_channel;
+ 
+@@ -377,13 +376,6 @@ kill_helper (PolkitAgentSession *session)
+       session->child_pid = 0;
+     }
+ 
+-  if (session->child_watch_source != NULL)
+-    {
+-      g_source_destroy (session->child_watch_source);
+-      g_source_unref (session->child_watch_source);
+-      session->child_watch_source = NULL;
+-    }
+-
+   if (session->child_stdout_watch_source != NULL)
+     {
+       g_source_destroy (session->child_stdout_watch_source);
+@@ -429,26 +421,6 @@ complete_session (PolkitAgentSession *session,
+     }
+ }
+ 
+-static void
+-child_watch_func (GPid     pid,
+-                  gint     status,
+-                  gpointer user_data)
+-{
+-  PolkitAgentSession *session = POLKIT_AGENT_SESSION (user_data);
+-
+-  if (G_UNLIKELY (_show_debug ()))
+-    {
+-      g_print ("PolkitAgentSession: in child_watch_func for pid %d (WIFEXITED=%d WEXITSTATUS=%d)\n",
+-               (gint) pid,
+-               WIFEXITED(status),
+-               WEXITSTATUS(status));
+-    }
+-
+-  /* kill all the watches we have set up, except for the child since it has exited already */
+-  session->child_pid = 0;
+-  complete_session (session, FALSE);
+-}
+-
+ static gboolean
+ io_watch_have_data (GIOChannel    *channel,
+                     GIOCondition   condition,
+@@ -475,10 +447,13 @@ io_watch_have_data (GIOChannel    *channel,
+                           NULL,
+                           NULL,
+                           &error);
+-  if (error != NULL)
++  if (error != NULL || line == NULL)
+     {
+-      g_warning ("Error reading line from helper: %s", error->message);
+-      g_error_free (error);
++      /* In case we get just G_IO_HUP, line is NULL but error is
++         unset.*/
++      g_warning ("Error reading line from helper: %s",
++                 error ? error->message : "nothing to read");
++      g_clear_error (&error);
+ 
+       complete_session (session, FALSE);
+       goto out;
+@@ -540,6 +515,9 @@ io_watch_have_data (GIOChannel    *channel,
+   g_free (line);
+   g_free (unescaped);
+ 
++  if (condition & (G_IO_ERR | G_IO_HUP))
++    complete_session (session, FALSE);
++
+   /* keep the IOChannel around */
+   return TRUE;
+ }
+@@ -650,12 +628,9 @@ polkit_agent_session_initiate (PolkitAgentSession *ses
+   if (G_UNLIKELY (_show_debug ()))
+     g_print ("PolkitAgentSession: spawned helper with pid %d\n", (gint) session->child_pid);
+ 
+-  session->child_watch_source = g_child_watch_source_new (session->child_pid);
+-  g_source_set_callback (session->child_watch_source, (GSourceFunc) child_watch_func, session, NULL);
+-  g_source_attach (session->child_watch_source, g_main_context_get_thread_default ());
+-
+   session->child_stdout_channel = g_io_channel_unix_new (session->child_stdout);
+-  session->child_stdout_watch_source = g_io_create_watch (session->child_stdout_channel, G_IO_IN);
++  session->child_stdout_watch_source = g_io_create_watch (session->child_stdout_channel,
++                                                          G_IO_IN | G_IO_ERR | G_IO_HUP);
+   g_source_set_callback (session->child_stdout_watch_source, (GSourceFunc) io_watch_have_data, session, NULL);
+   g_source_attach (session->child_stdout_watch_source, g_main_context_get_thread_default ());
+ 
