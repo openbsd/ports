@@ -1,0 +1,25 @@
+$OpenBSD: patch-i3bar_src_xcb_c,v 1.16 2014/08/18 08:46:27 dcoppa Exp $
+
+commit 4699c714b33afb1c264f3d19911b880267165b94
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Thu Jul 24 10:09:53 2014 +0200
+
+Bugfix: add a sync call to i3bar to confirm reparents before exiting
+
+Without this call, sometimes the tray icon windows are reparented into
+i3's container around the i3bar window, i.e. into the next remaining
+window in the window hierarchy. Since i3 then closes that container
+(since the i3bar window itself was closed), the tray window will also
+get closed. In general, this weird interaction (getting reparented and
+then closed) is not well received by tray icon providers).
+
+--- i3bar/src/xcb.c.orig	Sun Jun 15 19:12:43 2014
++++ i3bar/src/xcb.c	Mon Aug 18 10:17:08 2014
+@@ -1290,6 +1290,7 @@ void clean_xcb(void) {
+     FREE(outputs);
+ 
+     xcb_flush(xcb_connection);
++    xcb_aux_sync(xcb_connection);
+     xcb_disconnect(xcb_connection);
+ 
+     ev_check_stop(main_loop, xcb_chk);

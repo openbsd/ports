@@ -1,4 +1,13 @@
-$OpenBSD: patch-src_x_c,v 1.16 2014/07/11 15:49:58 dcoppa Exp $
+$OpenBSD: patch-src_x_c,v 1.17 2014/08/18 08:46:27 dcoppa Exp $
+
+commit 56c284af8e281d9d5657e55b3edb7f7c673fc747
+Author: Tony Crisci <tony@dubstepdish.com>
+Date:   Tue Jun 24 17:27:01 2014 -0400
+
+Bugfix: missed case for decoration rerender
+
+Rerender the decoration when the container requires a pixmap and does
+not have one.
 
 commit 1f9057bc4b0b7695589fbba88bee2b33ae47f169
 Author: Michael Stapelberg <michael@stapelberg.de>
@@ -13,8 +22,53 @@ let's revert it and make those users that want this behavior configure
 it explicitly.
 
 --- src/x.c.orig	Sun Jun 15 19:12:43 2014
-+++ src/x.c	Fri Jul 11 16:48:41 2014
-@@ -1140,8 +1140,7 @@ void x_set_i3_atoms(void) {
++++ src/x.c	Mon Aug 18 10:04:39 2014
+@@ -659,10 +659,18 @@ void x_push_node(Con *con) {
+              con, con->window->id, con->ignore_unmap);
+     }
+ 
++    /* The pixmap of a borderless leaf container will not be used except
++     * for the titlebar in a stack or tabs (issue #1013). */
++    bool is_pixmap_needed = (con->border_style != BS_NONE ||
++                             !con_is_leaf(con) ||
++                             con->parent->layout == L_STACKED ||
++                             con->parent->layout == L_TABBED);
++
+     bool fake_notify = false;
+-    /* Set new position if rect changed (and if height > 0) */
+-    if (memcmp(&(state->rect), &rect, sizeof(Rect)) != 0 &&
+-        rect.height > 0) {
++    /* Set new position if rect changed (and if height > 0) or if the pixmap
++     * needs to be recreated */
++    if ((is_pixmap_needed && con->pixmap == XCB_NONE) || (memcmp(&(state->rect), &rect, sizeof(Rect)) != 0 &&
++                                                          rect.height > 0)) {
+         /* We first create the new pixmap, then render to it, set it as the
+          * background and only afterwards change the window size. This reduces
+          * flickering. */
+@@ -673,13 +681,6 @@ void x_push_node(Con *con) {
+          * (height == 0) or when it is not needed. */
+         bool has_rect_changed = (state->rect.width != rect.width || state->rect.height != rect.height);
+ 
+-        /* The pixmap of a borderless leaf container will not be used except
+-         * for the titlebar in a stack or tabs (issue #1013). */
+-        bool is_pixmap_needed = (con->border_style != BS_NONE ||
+-                                 !con_is_leaf(con) ||
+-                                 con->parent->layout == L_STACKED ||
+-                                 con->parent->layout == L_TABBED);
+-
+         /* Check if the container has an unneeded pixmap left over from
+          * previously having a border or titlebar. */
+         if (!is_pixmap_needed && con->pixmap != XCB_NONE) {
+@@ -687,7 +688,7 @@ void x_push_node(Con *con) {
+             con->pixmap = XCB_NONE;
+         }
+ 
+-        if (has_rect_changed && is_pixmap_needed) {
++        if (is_pixmap_needed && (has_rect_changed || con->pixmap == XCB_NONE)) {
+             if (con->pixmap == 0) {
+                 con->pixmap = xcb_generate_id(conn);
+                 con->pm_gc = xcb_generate_id(conn);
+@@ -1140,8 +1141,7 @@ void x_set_i3_atoms(void) {
   *
   */
  void x_set_warp_to(Rect *rect) {

@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_commands_c,v 1.11 2014/07/11 15:49:58 dcoppa Exp $
+$OpenBSD: patch-src_commands_c,v 1.12 2014/08/18 08:46:27 dcoppa Exp $
+
+commit 679a5de8cfb9211afb1a1dd882e53bd672084754
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Tue Jul 15 10:15:04 2014 +0200
+
+Bugfix: properly restore workspace containers
 
 commit c159fc4197ad06d603ba404add501ac02d76c64f
 Author: Michael Stapelberg <michael@stapelberg.de>
@@ -7,7 +13,7 @@ Date:   Fri Jun 27 09:04:51 2014 +0200
 Bugfix: create the directory for storing the restart state
 
 --- src/commands.c.orig	Sun Jun 15 19:12:43 2014
-+++ src/commands.c	Fri Jul 11 16:39:36 2014
++++ src/commands.c	Mon Aug 18 08:25:05 2014
 @@ -201,7 +201,7 @@ void cmd_MIGRATION_start_nagbar(void) {
      /* child */
      if (migration_pid == 0) {
@@ -17,7 +23,53 @@ Bugfix: create the directory for storing the restart state
          char *argv[] = {
              NULL, /* will be replaced by the executable path */
              "-t",
-@@ -1685,13 +1685,10 @@ void cmd_reload(I3_CMD) {
+@@ -882,15 +882,27 @@ void cmd_nop(I3_CMD, char *comment) {
+  */
+ void cmd_append_layout(I3_CMD, char *path) {
+     LOG("Appending layout \"%s\"\n", path);
++
++    json_content_t content = json_determine_content(path);
++    LOG("JSON content = %d\n", content);
++    if (content == JSON_CONTENT_UNKNOWN) {
++        ELOG("Could not determine the contents of \"%s\", not loading.\n", path);
++        ysuccess(false);
++        return;
++    }
++
+     Con *parent = focused;
+-    /* We need to append the layout to a split container, since a leaf
+-     * container must not have any children (by definition).
+-     * Note that we explicitly check for workspaces, since they are okay for
+-     * this purpose, but con_accepts_window() returns false for workspaces. */
+-    while (parent->type != CT_WORKSPACE && !con_accepts_window(parent))
+-        parent = parent->parent;
+-    DLOG("Appending to parent=%p instead of focused=%p\n",
+-         parent, focused);
++    if (content == JSON_CONTENT_WORKSPACE) {
++        parent = output_get_content(con_get_output(parent));
++    } else {
++        /* We need to append the layout to a split container, since a leaf
++         * container must not have any children (by definition).
++         * Note that we explicitly check for workspaces, since they are okay for
++         * this purpose, but con_accepts_window() returns false for workspaces. */
++        while (parent->type != CT_WORKSPACE && !con_accepts_window(parent))
++            parent = parent->parent;
++    }
++    DLOG("Appending to parent=%p instead of focused=%p\n", parent, focused);
+     char *errormsg = NULL;
+     tree_append_json(parent, path, &errormsg);
+     if (errormsg != NULL) {
+@@ -914,6 +926,9 @@ void cmd_append_layout(I3_CMD, char *path) {
+ 
+     restore_open_placeholder_windows(parent);
+ 
++    if (content == JSON_CONTENT_WORKSPACE)
++        ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"restored\"}");
++
+     cmd_output->needs_tree_render = true;
+ }
+ 
+@@ -1685,13 +1700,10 @@ void cmd_reload(I3_CMD) {
  void cmd_restart(I3_CMD) {
      LOG("restarting i3\n");
      ipc_shutdown();

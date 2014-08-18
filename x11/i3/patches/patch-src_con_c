@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_con_c,v 1.14 2014/08/18 08:46:27 dcoppa Exp $
+
+commit fc886315342b3a2292ad0c08394b6bb452663bb1
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Fri Aug 8 20:15:59 2014 +0200
+
+Bugfix: don't set focus in con_set_layout() on invisible workspaces
+
+--- src/con.c.orig	Sun Jun 15 19:12:43 2014
++++ src/con.c	Mon Aug 18 10:22:24 2014
+@@ -1263,8 +1263,14 @@ void con_set_layout(Con *con, layout_t layout) {
+             new->layout = layout;
+             new->last_split_layout = con->last_split_layout;
+ 
++            /* Save the container that was focused before we move containers
++             * around, but only if the container is visible (otherwise focus
++             * will be restored properly automatically when switching). */
+             Con *old_focused = TAILQ_FIRST(&(con->focus_head));
+             if (old_focused == TAILQ_END(&(con->focus_head)))
++                old_focused = NULL;
++            if (old_focused != NULL &&
++                !workspace_is_visible(con_get_workspace(old_focused)))
+                 old_focused = NULL;
+ 
+             /* 3: move the existing cons of this workspace below the new con */
