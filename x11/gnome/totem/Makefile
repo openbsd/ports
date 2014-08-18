@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.124 2014/05/15 19:22:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2014/08/18 17:41:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.12.1
-REVISION=		0
+GNOME_VERSION=		3.12.2
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
