@@ -1,0 +1,35 @@
+$OpenBSD: patch-systray_c,v 1.4 2014/08/18 10:34:02 dcoppa Exp $
+
+commit a250dcdbe12a3afa6ffa9fbb26f8c48c7e9cc049
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun May 11 17:21:57 2014 +0200
+
+systray: Small consistency fixes
+
+Use lua's *integer instead of *number functions, because we are dealing with
+integers. That is, "numbers which do not have a fractional part".
+
+--- systray.c.orig	Fri Apr 11 11:07:10 2014
++++ systray.c	Mon Aug 18 12:26:29 2014
+@@ -329,9 +329,9 @@ luaA_systray(lua_State *L)
+     {
+         size_t bg_len;
+         drawin_t *w = luaA_checkudata(L, 1, &drawin_class);
+-        int x = luaL_checknumber(L, 2);
+-        int y = luaL_checknumber(L, 3);
+-        int base_size = luaL_checknumber(L, 4);
++        int x = luaL_checkinteger(L, 2);
++        int y = luaL_checkinteger(L, 3);
++        int base_size = luaL_checkinteger(L, 4);
+         bool horiz = lua_toboolean(L, 5);
+         const char *bg = luaL_checklstring(L, 6, &bg_len);
+         bool revers = lua_toboolean(L, 7);
+@@ -375,7 +375,7 @@ luaA_systray(lua_State *L)
+                              globalconf.systray.window);
+     }
+ 
+-    lua_pushnumber(L, globalconf.embedded.len);
++    lua_pushinteger(L, globalconf.embedded.len);
+     luaA_object_push(L, globalconf.systray.parent);
+     return 2;
+ }

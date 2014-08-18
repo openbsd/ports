@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_wibox_widget_systray_lua_in,v 1.1 2014/08/18 10:34:02 dcoppa Exp $
+
+commit 3dd0c442a031f174000950981154139879933ab0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun May 11 17:24:01 2014 +0200
+
+wibox.widget.systray: Special case the empty systray
+
+Otherwise we could end up with negative size for the systray.
+
+--- lib/wibox/widget/systray.lua.in.orig	Fri Apr 11 11:07:10 2014
++++ lib/wibox/widget/systray.lua.in	Mon Aug 18 12:13:12 2014
+@@ -46,6 +46,9 @@ end
+ function systray:fit(width, height)
+     local num_entries = capi.awesome.systray()
+     local base = base_size
++    if num_entries == 0 then
++        return 0, 0
++    end
+     if base == nil then
+         if width < height then
+             base = width

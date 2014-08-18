@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_awful_widget_taglist_lua_in,v 1.1 2014/08/18 10:34:02 dcoppa Exp $
+
+commit aedcd90d4da41132303636ba15170b6a43cc231f
+Author: Jason Yan <tailofthesun@gmail.com>
+Date:   Fri May 9 00:18:46 2014 -0700
+
+Fix check against clients in taglist.
+
+--- lib/awful/widget/taglist.lua.in.orig	Fri Apr 11 11:07:10 2014
++++ lib/awful/widget/taglist.lua.in	Mon Aug 18 12:08:03 2014
+@@ -51,6 +51,7 @@ function taglist.taglist_label(t, args)
+     local icon
+     local bg_resize = false
+     local is_selected = false
++    local cls = t:clients()
+     if t.selected then
+         bg_color = bg_focus
+         fg_color = fg_focus
+@@ -69,11 +70,10 @@ function taglist.taglist_label(t, args)
+             end
+         end
+     end
+-    if t:clients() == 0 and t.selected and taglist_squares_sel_empty then
++    if #cls == 0 and t.selected and taglist_squares_sel_empty then
+         bg_image = taglist_squares_sel_empty
+         bg_resize = taglist_squares_resize == "true"
+     elseif not is_selected then
+-        local cls = t:clients()
+         if #cls > 0 then
+             if taglist_squares_unsel then
+                 bg_image = taglist_squares_unsel

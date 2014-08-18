@@ -1,6 +1,6 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.13 2014/04/15 10:32:36 dcoppa Exp $
---- awesomeConfig.cmake.orig	Sat Oct 12 18:48:49 2013
-+++ awesomeConfig.cmake	Tue Apr 15 11:42:58 2014
+$OpenBSD: patch-awesomeConfig_cmake,v 1.14 2014/08/18 10:34:02 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Fri Apr 11 11:07:10 2014
++++ awesomeConfig.cmake	Mon Aug 18 12:06:33 2014
 @@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
  option(GENERATE_DOC "generate API documentation" ON)
  
@@ -19,7 +19,17 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.13 2014/04/15 10:32:36 dcoppa Exp $
  # }}}
  
  # {{{ Endianness
-@@ -53,19 +52,15 @@ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
+@@ -43,9 +42,6 @@ macro(a_find_program var prg req)
+     endif()
+ endmacro()
+ 
+-a_find_program(CAT_EXECUTABLE cat TRUE)
+-a_find_program(LN_EXECUTABLE ln TRUE)
+-a_find_program(GREP_EXECUTABLE grep TRUE)
+ a_find_program(GIT_EXECUTABLE git FALSE)
+ a_find_program(HOSTNAME_EXECUTABLE hostname FALSE)
+ # programs needed for man pages
+@@ -53,19 +49,15 @@ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
  a_find_program(XMLTO_EXECUTABLE xmlto FALSE)
  a_find_program(GZIP_EXECUTABLE gzip FALSE)
  # lua documentation
@@ -42,7 +52,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.13 2014/04/15 10:32:36 dcoppa Exp $
  # }}}
  
  # {{{ Check if documentation can be build
-@@ -189,7 +184,7 @@ else()
+@@ -189,7 +181,7 @@ else()
  endif()
  
  # Error check
@@ -51,7 +61,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.13 2014/04/15 10:32:36 dcoppa Exp $
      message(FATAL_ERROR "lua library not found")
  endif()
  
-@@ -257,7 +252,7 @@ endif()
+@@ -257,7 +249,7 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()
