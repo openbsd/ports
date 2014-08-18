@@ -1,0 +1,15 @@
+$OpenBSD: patch-libgfortran_io_transfer_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/io/transfer.c.orig	Fri Mar 21 23:19:44 2014
++++ libgfortran/io/transfer.c	Thu Aug 14 16:54:01 2014
+@@ -3786,9 +3786,9 @@ st_set_nml_var (st_parameter_dt *dtp, void * var_addr,
+   if (nml->var_rank > 0)
+     {
+       nml->dim = (descriptor_dimension*)
+-		   xmalloc (nml->var_rank * sizeof (descriptor_dimension));
++	xmallocarray (nml->var_rank, sizeof (descriptor_dimension));
+       nml->ls = (array_loop_spec*)
+-		  xmalloc (nml->var_rank * sizeof (array_loop_spec));
++	xmallocarray (nml->var_rank, sizeof (array_loop_spec));
+     }
+   else
+     {

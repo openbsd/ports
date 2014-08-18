@@ -1,0 +1,30 @@
+$OpenBSD: patch-libgfortran_m4_iforeach_m4,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/m4/iforeach.m4.orig	Mon Mar 26 17:16:05 2012
++++ libgfortran/m4/iforeach.m4	Thu Aug 14 16:53:59 2014
+@@ -30,7 +30,7 @@ name`'rtype_qual`_'atype_code (rtype * const restrict 
+       GFC_DIMENSION_SET(retarray->dim[0], 0, rank-1, 1);
+       retarray->dtype = (retarray->dtype & ~GFC_DTYPE_RANK_MASK) | 1;
+       retarray->offset = 0;
+-      retarray->base_addr = xmalloc (sizeof (rtype_name) * rank);
++      retarray->base_addr = xmallocarray (rank, sizeof (rtype_name));
+     }
+   else
+     {
+@@ -133,7 +133,7 @@ void
+       GFC_DIMENSION_SET(retarray->dim[0], 0, rank - 1, 1);
+       retarray->dtype = (retarray->dtype & ~GFC_DTYPE_RANK_MASK) | 1;
+       retarray->offset = 0;
+-      retarray->base_addr = xmalloc (sizeof (rtype_name) * rank);
++      retarray->base_addr = xmallocarray (rank, sizeof (rtype_name));
+     }
+   else
+     {
+@@ -264,7 +264,7 @@ void
+       GFC_DIMENSION_SET(retarray->dim[0], 0, rank-1, 1);
+       retarray->dtype = (retarray->dtype & ~GFC_DTYPE_RANK_MASK) | 1;
+       retarray->offset = 0;
+-      retarray->base_addr = xmalloc (sizeof (rtype_name) * rank);
++      retarray->base_addr = xmallocarray (rank, sizeof (rtype_name));
+     }
+   else if (unlikely (compile_options.bounds_check))
+     {

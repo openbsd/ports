@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_runtime_in_pack_generic_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/runtime/in_pack_generic.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/runtime/in_pack_generic.c	Thu Aug 14 16:53:59 2014
+@@ -180,7 +180,7 @@ internal_pack (gfc_array_char * source)
+     return source->base_addr;
+ 
+    /* Allocate storage for the destination.  */
+-  destptr = xmalloc (ssize * size);
++  destptr = xmallocarray (ssize, size);
+   dest = (char *)destptr;
+   src = source->base_addr;
+   stride0 = stride[0] * size;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_generated_in_pack_r4_c,v 1.1 2014/08/18 07:42:11 pascal Exp $
+--- libgfortran/generated/in_pack_r4.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/in_pack_r4.c	Thu Aug 14 16:54:00 2014
+@@ -76,7 +76,7 @@ internal_pack_r4 (gfc_array_r4 * source)
+     return source->base_addr;
+ 
+   /* Allocate storage for the destination.  */
+-  destptr = (GFC_REAL_4 *)xmalloc (ssize * sizeof (GFC_REAL_4));
++  destptr = xmallocarray (ssize, sizeof (GFC_REAL_4));
+   dest = destptr;
+   src = source->base_addr;
+   stride0 = stride[0];

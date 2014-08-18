@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_intrinsics_unpack_generic_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/intrinsics/unpack_generic.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/intrinsics/unpack_generic.c	Thu Aug 14 16:54:00 2014
+@@ -125,7 +125,7 @@ unpack_internal (gfc_array_char *ret, const gfc_array_
+ 	  rs *= extent[n];
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmalloc (rs * size);
++      ret->base_addr = xmallocarray (rs, size);
+     }
+   else
+     {

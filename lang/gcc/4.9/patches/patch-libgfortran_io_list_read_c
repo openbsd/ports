@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_io_list_read_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/io/list_read.c.orig	Mon Jul  7 05:35:09 2014
++++ libgfortran/io/list_read.c	Thu Aug 14 16:54:01 2014
+@@ -2407,7 +2407,7 @@ nml_touch_nodes (namelist_info * nl)
+ {
+   index_type len = strlen (nl->var_name) + 1;
+   int dim;
+-  char * ext_name = (char*)xmalloc (len + 1);
++  char * ext_name = xmalloc (len + 1);
+   memcpy (ext_name, nl->var_name, len-1);
+   memcpy (ext_name + len - 1, "%", 2);
+   for (nl = nl->next; nl; nl = nl->next)

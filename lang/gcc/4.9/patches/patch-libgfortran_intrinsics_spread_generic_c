@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgfortran_intrinsics_spread_generic_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/intrinsics/spread_generic.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/intrinsics/spread_generic.c	Thu Aug 14 16:54:00 2014
+@@ -100,7 +100,7 @@ spread_internal (gfc_array_char *ret, const gfc_array_
+ 	  GFC_DIMENSION_SET(ret->dim[n], 0, ub, stride);
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmalloc (rs * size);
++      ret->base_addr = xmallocarray (rs, size);
+ 
+       if (rs <= 0)
+ 	return;
+@@ -245,7 +245,7 @@ spread_internal_scalar (gfc_array_char *ret, const cha
+ 
+   if (ret->base_addr == NULL)
+     {
+-      ret->base_addr = xmalloc (ncopies * size);
++      ret->base_addr = xmallocarray (ncopies, size);
+       ret->offset = 0;
+       GFC_DIMENSION_SET(ret->dim[0], 0, ncopies - 1, 1);
+     }

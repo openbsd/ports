@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgfortran_runtime_convert_char_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/runtime/convert_char.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/runtime/convert_char.c	Thu Aug 14 16:53:59 2014
+@@ -44,7 +44,7 @@ convert_char1_to_char4 (gfc_char4_t **dst, gfc_charlen
+   gfc_charlen_type i, l;
+ 
+   l = len > 0 ? len : 0;
+-  *dst = xmalloc ((l + 1) * sizeof (gfc_char4_t));
++  *dst = xmallocarray ((l + 1), sizeof (gfc_char4_t));
+ 
+   for (i = 0; i < l; i++)
+     (*dst)[i] = src[i];
+@@ -60,7 +60,7 @@ convert_char4_to_char1 (unsigned char **dst, gfc_charl
+   gfc_charlen_type i, l;
+ 
+   l = len > 0 ? len : 0;
+-  *dst = xmalloc ((l + 1) * sizeof (unsigned char));
++  *dst = xmalloc (l + 1);
+ 
+   for (i = 0; i < l; i++)
+     (*dst)[i] = src[i];

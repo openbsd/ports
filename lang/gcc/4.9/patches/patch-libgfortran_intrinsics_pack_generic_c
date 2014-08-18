@@ -1,0 +1,23 @@
+$OpenBSD: patch-libgfortran_intrinsics_pack_generic_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/intrinsics/pack_generic.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/intrinsics/pack_generic.c	Thu Aug 14 16:54:00 2014
+@@ -152,8 +152,8 @@ pack_internal (gfc_array_char *ret, const gfc_array_ch
+ 	  GFC_DIMENSION_SET(ret->dim[0], 0, total-1, 1);
+ 
+ 	  ret->offset = 0;
+-	  /* xmalloc allocates a single byte for zero size.  */
+-	  ret->base_addr = xmalloc (size * total);
++	  /* xmallocarray allocates a single byte for zero size.  */
++	  ret->base_addr = xmallocarray (total, size);
+ 
+ 	  if (total == 0)
+ 	    return;      /* In this case, nothing remains to be done.  */
+@@ -519,7 +519,7 @@ pack_s_internal (gfc_array_char *ret, const gfc_array_
+ 
+       ret->offset = 0;
+ 
+-      ret->base_addr = xmalloc (size * total);
++      ret->base_addr = xmallocarray (total, size);
+ 
+       if (total == 0)
+ 	return;

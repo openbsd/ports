@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgfortran_generated_pack_i16_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/generated/pack_i16.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/pack_i16.c	Thu Aug 14 16:54:01 2014
+@@ -167,8 +167,8 @@ pack_i16 (gfc_array_i16 *ret, const gfc_array_i16 *arr
+ 
+ 	  ret->offset = 0;
+ 
+-	  /* xmalloc allocates a single byte for zero size.  */
+-	  ret->base_addr = xmalloc (sizeof (GFC_INTEGER_16) * total);
++	  /* xmallocarray allocates a single byte for zero size.  */
++	  ret->base_addr = xmallocarray (total, sizeof (GFC_INTEGER_16));
+ 
+ 	  if (total == 0)
+ 	    return;

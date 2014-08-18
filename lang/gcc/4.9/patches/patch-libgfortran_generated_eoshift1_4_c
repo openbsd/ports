@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgfortran_generated_eoshift1_4_c,v 1.1 2014/08/18 07:42:11 pascal Exp $
+--- libgfortran/generated/eoshift1_4.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/eoshift1_4.c	Thu Aug 14 16:54:01 2014
+@@ -105,8 +105,8 @@ eoshift1 (gfc_array_char * const restrict ret, 
+ 	  GFC_DIMENSION_SET(ret->dim[i], 0, ub, str);
+ 
+         }
+-      /* xmalloc allocates a single byte for zero size.  */
+-      ret->base_addr = xmalloc (size * arraysize);
++      /* xmallocarray allocates a single byte for zero size.  */
++      ret->base_addr = xmallocarray (arraysize, size);
+ 
+     }
+   else if (unlikely (compile_options.bounds_check))

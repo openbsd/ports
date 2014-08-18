@@ -1,0 +1,23 @@
+$OpenBSD: patch-libgfortran_generated_spread_i8_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/generated/spread_i8.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/spread_i8.c	Thu Aug 14 16:54:01 2014
+@@ -101,8 +101,8 @@ spread_i8 (gfc_array_i8 *ret, const gfc_array_i8 *sour
+ 	}
+       ret->offset = 0;
+ 
+-      /* xmalloc allocates a single byte for zero size.  */
+-      ret->base_addr = xmalloc (rs * sizeof(GFC_INTEGER_8));
++      /* xmallocarray allocates a single byte for zero size.  */
++      ret->base_addr = xmallocarray (rs, sizeof(GFC_INTEGER_8));
+       if (rs <= 0)
+         return;
+     }
+@@ -244,7 +244,7 @@ spread_scalar_i8 (gfc_array_i8 *ret, const GFC_INTEGER
+ 
+   if (ret->base_addr == NULL)
+     {
+-      ret->base_addr = xmalloc (ncopies * sizeof (GFC_INTEGER_8));
++      ret->base_addr = xmallocarray (ncopies, sizeof (GFC_INTEGER_8));
+       ret->offset = 0;
+       GFC_DIMENSION_SET(ret->dim[0], 0, ncopies - 1, 1);
+     }

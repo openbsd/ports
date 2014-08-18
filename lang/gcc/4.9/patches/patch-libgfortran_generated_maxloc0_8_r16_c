@@ -1,0 +1,30 @@
+$OpenBSD: patch-libgfortran_generated_maxloc0_8_r16_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/generated/maxloc0_8_r16.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/maxloc0_8_r16.c	Thu Aug 14 16:54:01 2014
+@@ -58,7 +58,7 @@ maxloc0_8_r16 (gfc_array_i8 * const restrict retarray,
+       GFC_DIMENSION_SET(retarray->dim[0], 0, rank-1, 1);
+       retarray->dtype = (retarray->dtype & ~GFC_DTYPE_RANK_MASK) | 1;
+       retarray->offset = 0;
+-      retarray->base_addr = xmalloc (sizeof (GFC_INTEGER_8) * rank);
++      retarray->base_addr = xmallocarray (rank, sizeof (GFC_INTEGER_8));
+     }
+   else
+     {
+@@ -199,7 +199,7 @@ mmaxloc0_8_r16 (gfc_array_i8 * const restrict retarray
+       GFC_DIMENSION_SET(retarray->dim[0], 0, rank - 1, 1);
+       retarray->dtype = (retarray->dtype & ~GFC_DTYPE_RANK_MASK) | 1;
+       retarray->offset = 0;
+-      retarray->base_addr = xmalloc (sizeof (GFC_INTEGER_8) * rank);
++      retarray->base_addr = xmallocarray (rank, sizeof (GFC_INTEGER_8));
+     }
+   else
+     {
+@@ -367,7 +367,7 @@ smaxloc0_8_r16 (gfc_array_i8 * const restrict retarray
+       GFC_DIMENSION_SET(retarray->dim[0], 0, rank-1, 1);
+       retarray->dtype = (retarray->dtype & ~GFC_DTYPE_RANK_MASK) | 1;
+       retarray->offset = 0;
+-      retarray->base_addr = xmalloc (sizeof (GFC_INTEGER_8) * rank);
++      retarray->base_addr = xmallocarray (rank, sizeof (GFC_INTEGER_8));
+     }
+   else if (unlikely (compile_options.bounds_check))
+     {

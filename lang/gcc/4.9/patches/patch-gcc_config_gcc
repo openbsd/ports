@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
---- gcc/config.gcc.orig	Wed Mar 12 11:13:07 2014
-+++ gcc/config.gcc	Wed Jun 11 21:06:18 2014
+$OpenBSD: patch-gcc_config_gcc,v 1.2 2014/08/18 07:42:11 pascal Exp $
+--- gcc/config.gcc.orig	Mon Jun 16 10:15:35 2014
++++ gcc/config.gcc	Wed Jul 16 18:37:32 2014
 @@ -771,6 +771,14 @@ case ${target} in
        default_use_cxa_atexit=yes
        ;;
@@ -68,7 +68,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
  mips*-*-netbsd*)			# NetBSD/mips, either endian.
  	target_cpu_default="MASK_ABICALLS"
  	tm_file="elfos.h ${tm_file} mips/elf.h netbsd.h netbsd-elf.h mips/netbsd.h"
-@@ -2168,11 +2191,12 @@ picochip-*)
+@@ -2167,11 +2190,12 @@ picochip-*)
  	use_gcc_stdint=wrap
  	tmake_file="picochip/t-picochip t-pnt16-warn"
          ;;
@@ -86,7 +86,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
  powerpc-*-darwin*)
  	extra_options="${extra_options} rs6000/darwin.opt"
  	case ${target} in
-@@ -2733,6 +2757,7 @@ sparc64-*-netbsd*)
+@@ -2732,6 +2756,7 @@ sparc64-*-netbsd*)
  	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
  	;;
  sparc64-*-openbsd*)
@@ -94,7 +94,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
  	tm_file="sparc/openbsd1-64.h ${tm_file} dbxelf.h elfos.h sparc/sysv4.h sparc/sp64-elf.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h sparc/openbsd64.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -2923,6 +2948,12 @@ case ${target} in
+@@ -2922,6 +2947,12 @@ case ${target} in
      else
        arch=i386
      fi

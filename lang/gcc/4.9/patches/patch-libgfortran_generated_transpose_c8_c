@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgfortran_generated_transpose_c8_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/generated/transpose_c8.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/transpose_c8.c	Thu Aug 14 16:54:00 2014
+@@ -60,7 +60,8 @@ transpose_c8 (gfc_array_c8 * const restrict ret, 
+       GFC_DIMENSION_SET(ret->dim[1], 0, GFC_DESCRIPTOR_EXTENT(source,0) - 1,
+ 			GFC_DESCRIPTOR_EXTENT(source, 1));
+ 
+-      ret->base_addr = xmalloc (sizeof (GFC_COMPLEX_8) * size0 ((array_t *) ret));
++      ret->base_addr = xmallocarray (size0 ((array_t *) ret), 
++                                     sizeof (GFC_COMPLEX_8));
+       ret->offset = 0;
+     } else if (unlikely (compile_options.bounds_check))
+     {

@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgfortran_io_write_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/io/write.c.orig	Tue Mar  4 05:33:40 2014
++++ libgfortran/io/write.c	Thu Aug 14 16:54:01 2014
+@@ -1864,7 +1864,7 @@ nml_write_obj (st_parameter_dt *dtp, namelist_info * o
+ 	      base_var_name_len = base ? strlen (base->var_name) : 0;
+ 	      ext_name_len = base_name_len + base_var_name_len 
+ 		+ strlen (obj->var_name) + obj->var_rank * NML_DIGITS + 1;
+-	      ext_name = (char*)xmalloc (ext_name_len);
++	      ext_name = xmalloc (ext_name_len);
+ 
+ 	      memcpy (ext_name, base_name, base_name_len);
+ 	      clen = strlen (obj->var_name + base_var_name_len);
+@@ -1893,7 +1893,7 @@ nml_write_obj (st_parameter_dt *dtp, namelist_info * o
+ 	      /* Now obj_name.  */
+ 
+ 	      obj_name_len = strlen (obj->var_name) + 1;
+-	      obj_name = xmalloc (obj_name_len+1);
++	      obj_name = xmalloc (obj_name_len + 1);
+ 	      memcpy (obj_name, obj->var_name, obj_name_len-1);
+ 	      memcpy (obj_name + obj_name_len-1, "%", 2);
+ 

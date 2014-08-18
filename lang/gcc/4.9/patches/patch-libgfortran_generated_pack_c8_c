@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgfortran_generated_pack_c8_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/generated/pack_c8.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/pack_c8.c	Thu Aug 14 16:54:00 2014
+@@ -167,8 +167,8 @@ pack_c8 (gfc_array_c8 *ret, const gfc_array_c8 *array,
+ 
+ 	  ret->offset = 0;
+ 
+-	  /* xmalloc allocates a single byte for zero size.  */
+-	  ret->base_addr = xmalloc (sizeof (GFC_COMPLEX_8) * total);
++	  /* xmallocarray allocates a single byte for zero size.  */
++	  ret->base_addr = xmallocarray (total, sizeof (GFC_COMPLEX_8));
+ 
+ 	  if (total == 0)
+ 	    return;

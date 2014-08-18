@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgfortran_intrinsics_eoshift0_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/intrinsics/eoshift0.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/intrinsics/eoshift0.c	Thu Aug 14 16:54:00 2014
+@@ -86,8 +86,8 @@ eoshift0 (gfc_array_char * ret, const gfc_array_char *
+ 
+         }
+ 
+-      /* xmalloc allocates a single byte for zero size.  */
+-      ret->base_addr = xmalloc (size * arraysize);
++      /* xmallocarray allocates a single byte for zero size.  */
++      ret->base_addr = xmallocarray (arraysize, size);
+     }
+   else if (unlikely (compile_options.bounds_check))
+     {

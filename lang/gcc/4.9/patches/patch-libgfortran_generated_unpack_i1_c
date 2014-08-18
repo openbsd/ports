@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgfortran_generated_unpack_i1_c,v 1.1 2014/08/18 07:42:12 pascal Exp $
+--- libgfortran/generated/unpack_i1.c.orig	Thu Jan  2 23:25:45 2014
++++ libgfortran/generated/unpack_i1.c	Thu Aug 14 16:54:00 2014
+@@ -99,7 +99,7 @@ unpack0_i1 (gfc_array_i1 *ret, const gfc_array_i1 *vec
+ 	  rs *= extent[n];
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmalloc (rs * sizeof (GFC_INTEGER_1));
++      ret->base_addr = xmallocarray (rs, sizeof (GFC_INTEGER_1));
+     }
+   else
+     {
+@@ -244,7 +244,7 @@ unpack1_i1 (gfc_array_i1 *ret, const gfc_array_i1 *vec
+ 	  rs *= extent[n];
+ 	}
+       ret->offset = 0;
+-      ret->base_addr = xmalloc (rs * sizeof (GFC_INTEGER_1));
++      ret->base_addr = xmallocarray (rs, sizeof (GFC_INTEGER_1));
+     }
+   else
+     {
