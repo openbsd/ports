@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2014/04/18 20:51:48 sthen Exp $
-
-BROKEN-sparc64=	problems with mpi_mul_hlp() (also tested with gcc4.8)
+# $OpenBSD: Makefile,v 1.3 2014/08/18 20:50:28 jca Exp $
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
-DISTNAME=	polarssl-1.3.6
-REVISION=	0
+DISTNAME=	polarssl-1.3.8
 EXTRACT_SUFX=	-gpl.tgz
 
-SHARED_LIBS +=	polarssl                  0.0 # 1.3
+# check SOVERSION
+SHARED_LIBS +=	polarssl                  1.0
 
 CATEGORIES=	security
 

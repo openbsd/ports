@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/04/19 14:40:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/08/18 20:50:29 jca Exp $
 include/polarssl/
 include/polarssl/aes.h
 include/polarssl/aesni.h
@@ -10,7 +10,9 @@ include/polarssl/bignum.h
 include/polarssl/blowfish.h
 include/polarssl/bn_mul.h
 include/polarssl/camellia.h
+include/polarssl/ccm.h
 include/polarssl/certs.h
+include/polarssl/check_config.h
 include/polarssl/cipher.h
 include/polarssl/cipher_wrap.h
 include/polarssl/compat-1.2.h
