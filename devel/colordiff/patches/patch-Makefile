@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/08/18 17:32:40 edd Exp $
+--- Makefile.orig	Wed Oct 17 21:14:35 2012
++++ Makefile	Sun Aug 17 21:37:32 2014
+@@ -1,6 +1,6 @@
+-INSTALL_DIR=/usr/local/bin
+-MAN_DIR=/usr/local/man/man1
+-ETC_DIR=/etc
++INSTALL_DIR=${TRUEPREFIX}/bin
++MAN_DIR=${TRUEPREFIX}/man/man1
++ETC_DIR=${SYSCONFDIR}
+ VERSION=$(shell egrep '^my .version' colordiff.pl |cut -f 2 -d "'")
+ DIST_FILES=COPYING INSTALL Makefile README \
+ 	colordiff.pl colordiffrc colordiffrc-lightbg cdiff.sh BUGS CHANGES colordiff.1 \
+@@ -27,8 +27,8 @@ install:
+ 	if [ ! -f ${DESTDIR}${INSTALL_DIR}/cdiff ] ; then \
+ 	  install cdiff.sh ${DESTDIR}${INSTALL_DIR}/cdiff; \
+ 	fi
+-	install -Dm 644 colordiff.1 ${DESTDIR}${MAN_DIR}/colordiff.1
+-	install -Dm 644 cdiff.1 ${DESTDIR}${MAN_DIR}/cdiff.1
++	install -m 644 colordiff.1 ${DESTDIR}${MAN_DIR}/colordiff.1
++	install -m 644 cdiff.1 ${DESTDIR}${MAN_DIR}/cdiff.1
+ 	if [ -f ${DESTDIR}${ETC_DIR}/colordiffrc ]; then \
+ 	  mv -f ${DESTDIR}${ETC_DIR}/colordiffrc \
+ 	    ${DESTDIR}${ETC_DIR}/colordiffrc.old; \
+@@ -36,7 +36,7 @@ install:
+ 	  install -d ${DESTDIR}${ETC_DIR}; \
+ 	fi
+ 	cp colordiffrc ${DESTDIR}${ETC_DIR}/colordiffrc
+-	-chown root.root ${DESTDIR}${ETC_DIR}/colordiffrc
++	-chown root.wheel ${DESTDIR}${ETC_DIR}/colordiffrc
+ 	chmod 644 ${DESTDIR}${ETC_DIR}/colordiffrc
+ 
+ uninstall:

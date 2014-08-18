@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/18 17:32:40 edd Exp $
+bin/cdiff
+bin/colordiff
+@man man/man1/cdiff.1
+@man man/man1/colordiff.1
+share/examples/colordiff/
+share/examples/colordiff/colordiffrc
+@sample ${SYSCONFDIR}/colordiffrc
+share/examples/colordiff/colordiffrc-lightbg
