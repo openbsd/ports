@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1241 2014/08/18 17:34:03 edd Exp $
+# $OpenBSD: Makefile,v 1.1242 2014/08/18 21:23:51 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -665,6 +665,7 @@
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Declare-Constraints-Simple
      SUBDIR += p5-Devel-Caller
+     SUBDIR += p5-Devel-CheckBin
      SUBDIR += p5-Devel-Cover
      SUBDIR += p5-Devel-Cover-Report-Clover
      SUBDIR += p5-Devel-Cycle
