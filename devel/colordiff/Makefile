@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/18 17:59:58 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/18 18:25:22 jca Exp $
 
 COMMENT =		colorized diff tool
 DISTNAME =		colordiff-1.0.13
@@ -6,7 +6,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://www.colordiff.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
