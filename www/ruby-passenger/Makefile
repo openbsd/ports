@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2014/06/24 21:43:02 jeremy Exp $
+# $OpenBSD: Makefile,v 1.34 2014/08/18 06:53:07 landry Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
+BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
 
 PASS_VERSION =		4.0.44
 NGINX_VERSION =		1.4.7
