@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2013/06/09 10:25:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/08/18 19:01:59 landry Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
+BROKEN-alpha=	gnokii-sms.c:577: internal compiler error: in extract_insn, at recog.c:2077
 
 DISTNAME=	gnokii-0.6.14
 REVISION=	17
