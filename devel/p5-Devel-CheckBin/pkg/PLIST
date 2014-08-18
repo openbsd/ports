@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/18 21:21:45 bluhm Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/CheckBin.pm
+@man man/man3p/Devel::CheckBin.3p
