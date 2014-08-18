@@ -1,116 +1,59 @@
-$OpenBSD: patch-src_Game_cpp,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+$OpenBSD: patch-src_Game_cpp,v 1.2 2014/08/18 09:30:52 edd Exp $
 
 Additional construction yard and factory keybindings.
 From upstream: 319cb3491ffbdfb9763fd8c3b9a71319d5595dec
 
---- src/Game.cpp.orig	Tue Feb 26 02:49:37 2013
-+++ src/Game.cpp	Mon May 26 08:43:56 2014
-@@ -922,8 +922,6 @@ void Game::doInput()
+Fog of war performance fix.
+from upstream: a141e80fa4b5d374b34037d74526f09b09a93581
+
+--- src/Game.cpp.orig	Sun Aug 17 20:38:30 2014
++++ src/Game.cpp	Sun Aug 17 20:40:32 2014
+@@ -17,7 +17,7 @@
+ 
+ #include <Game.h>
+ 
+-#include <globals.h>
++#include <globals.h>
+ #include <config.h>
+ 
+ #include <FileClasses/FileManager.h>
+@@ -446,6 +446,9 @@ void Game::drawScreen()
+ //////////////////////////////draw unexplored/shade
+ 
+ 	if(debug == false) {
++        SDL_Surface** hiddenFogSurf = pGFXManager->getObjPic(ObjPic_Terrain_HiddenFog);
++        SDL_LockSurface(hiddenFogSurf[currentZoomlevel]);
++
+ 	    int zoomedTileSize = world2zoomedWorld(TILESIZE);
+ 		for(int x = screenborder->getTopLeftTile().x - 1; x <= screenborder->getBottomRightTile().x + 1; x++) {
+ 			for (int y = screenborder->getTopLeftTile().y - 1; y <= screenborder->getBottomRightTile().y + 1; y++) {
+@@ -481,20 +484,17 @@ void Game::drawScreen()
+                                 SDL_Rect mini = {0, 0, 1, 1};
+                                 SDL_Rect drawLoc = {drawLocation.x, drawLocation.y, 0, 0};
+ 
+-                                SDL_Surface** hiddenSurf = pGFXManager->getObjPic(ObjPic_Terrain_Hidden);
+                                 SDL_Surface* fogSurf = pGFXManager->getTransparent40Surface();
+ 
+-                                SDL_LockSurface(hiddenSurf[currentZoomlevel]);
+                                 for(int i=0;i<zoomedTileSize; i++) {
+                                     for(int j=0;j<zoomedTileSize; j++) {
+-                                        if(getPixel(hiddenSurf[currentZoomlevel],source.x+i,source.y+j) == 12) {
++                                        if(getPixel(hiddenFogSurf[currentZoomlevel],source.x+i,source.y+j) == 12) {
+                                             drawLoc.x = drawLocation.x + i;
+                                             drawLoc.y = drawLocation.y + j;
+                                             SDL_BlitSurface(fogSurf,&mini,screen,&drawLoc);
+                                         }
+                                     }
                                  }
+-                                SDL_UnlockSurface(hiddenSurf[currentZoomlevel]);
                              }
-                         }
--
--                        pInterface->updateObjectInterface();
-                     }
+ 						}
+ 					} else {
+@@ -516,6 +516,7 @@ void Game::drawScreen()
+ 				}
+ 			}
+ 		}
++		SDL_UnlockSurface(hiddenFogSurf[currentZoomlevel]);
+ 	}
  
-                     selectionMode = false;
-@@ -2039,7 +2037,6 @@ void Game::handleKeyInput(SDL_KeyboardEvent& keyboardE
-                 currentGame->selectionChanged();
-                 currentCursorMode = CursorMode_Normal;
-             }
--            pInterface->updateObjectInterface();
-         } break;
- 
-         case SDLK_1:
-@@ -2092,8 +2089,6 @@ void Game::handleKeyInput(SDL_KeyboardEvent& keyboardE
-                     currentGame->selectionChanged();
-                 }
- 
--                pInterface->updateObjectInterface();
--
-                 if(bEverythingWasSelected && (groupList.empty() == false)) {
-                     // we center around the newly selected units/structures
-                     screenborder->setNewScreenCenter(averagePosition*TILESIZE);
-@@ -2216,6 +2211,25 @@ void Game::handleKeyInput(SDL_KeyboardEvent& keyboardE
-             }
-         } break;
- 
-+        case SDLK_h: {
-+            // select next construction yard
-+            std::set<Uint32> itemIDs;
-+            itemIDs.insert(Structure_ConstructionYard);
-+            selectNextStructureOfType(itemIDs);
-+        } break;
-+
-+        case SDLK_f: {
-+            // select next factory
-+            std::set<Uint32> itemIDs;
-+            itemIDs.insert(Structure_Barracks);
-+            itemIDs.insert(Structure_WOR);
-+            itemIDs.insert(Structure_LightFactory);
-+            itemIDs.insert(Structure_HeavyFactory);
-+            itemIDs.insert(Structure_HighTechFactory);
-+            itemIDs.insert(Structure_StarPort);
-+            selectNextStructureOfType(itemIDs);
-+        } break;
-+
-         case SDLK_p: {
-             if(SDL_GetModState() & KMOD_CTRL) {
-                 // fall through to SDLK_PRINT
-@@ -2504,5 +2518,56 @@ bool Game::handleSelectedObjectsActionClick(int xPos, 
-         return true;
-     } else {
-         return false;
-+    }
-+}
-+
-+void Game::selectNextStructureOfType(const std::set<Uint32>& itemIDs) {
-+    bool bSelectNext = true;
-+
-+    if(selectedList.size() == 1) {
-+        ObjectBase* pObject = getObjectManager().getObject(*selectedList.begin());
-+        if((pObject != NULL) && (itemIDs.count(pObject->getItemID()) == 1)) {
-+            bSelectNext = false;
-+        }
-+    }
-+
-+    StructureBase* pStructure2Select = NULL;
-+
-+    for(RobustList<StructureBase*>::const_iterator iter = structureList.begin(); iter != structureList.end(); ++iter) {
-+        StructureBase* pStructure = *iter;
-+
-+        if(bSelectNext) {
-+            if( (itemIDs.count(pStructure->getItemID()) == 1) && (pStructure->getOwner() == pLocalHouse) ) {
-+                pStructure2Select = pStructure;
-+                break;
-+            }
-+        } else {
-+            if(selectedList.size() == 1 && pStructure->isSelected()) {
-+                bSelectNext = true;
-+            }
-+        }
-+    }
-+
-+    if(pStructure2Select == NULL) {
-+        // start over at the beginning
-+        for(RobustList<StructureBase*>::const_iterator iter = structureList.begin(); iter != structureList.end(); ++iter) {
-+            StructureBase* pStructure = *iter;
-+            if( (itemIDs.count(pStructure->getItemID()) == 1) && (pStructure->getOwner() == pLocalHouse) && !pStructure->isSelected() ) {
-+                pStructure2Select = pStructure;
-+                break;
-+            }
-+        }
-+    }
-+
-+    if(pStructure2Select != NULL) {
-+        unselectAll(selectedList);
-+        selectedList.clear();
-+
-+        pStructure2Select->setSelected(true);
-+        selectedList.insert(pStructure2Select->getObjectID());
-+        currentGame->selectionChanged();
-+
-+        // we center around the newly selected construction yard
-+        screenborder->setNewScreenCenter(pStructure2Select->getLocation()*TILESIZE);
-     }
- }
+ /////////////draw placement position

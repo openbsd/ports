@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_FileClasses_GFXManager_cpp,v 1.1 2014/08/18 09:30:52 edd Exp $
+
+Fog of war performance fix.
+from upstream: a141e80fa4b5d374b34037d74526f09b09a93581
+
+--- src/FileClasses/GFXManager.cpp.orig	Sun Feb 24 18:34:09 2013
++++ src/FileClasses/GFXManager.cpp	Sun Aug 17 20:40:32 2014
+@@ -413,6 +413,10 @@ GFXManager::GFXManager() {
+     objPic[ObjPic_Terrain_Hidden][HOUSE_HARKONNEN][1] = Scaler::defaultDoubleTiledSurface(objPic[ObjPic_Terrain_Hidden][HOUSE_HARKONNEN][0], 16, 1, false);
+     objPic[ObjPic_Terrain_Hidden][HOUSE_HARKONNEN][2] = Scaler::defaultTripleTiledSurface(objPic[ObjPic_Terrain_Hidden][HOUSE_HARKONNEN][0], 16, 1, false);
+ 
++	objPic[ObjPic_Terrain_HiddenFog][HOUSE_HARKONNEN][0] = icon->getPictureRow(108,123);
++    objPic[ObjPic_Terrain_HiddenFog][HOUSE_HARKONNEN][1] = Scaler::defaultDoubleTiledSurface(objPic[ObjPic_Terrain_HiddenFog][HOUSE_HARKONNEN][0], 16, 1, false);
++    objPic[ObjPic_Terrain_HiddenFog][HOUSE_HARKONNEN][2] = Scaler::defaultTripleTiledSurface(objPic[ObjPic_Terrain_HiddenFog][HOUSE_HARKONNEN][0], 16, 1, false);
++
+ 	objPic[ObjPic_Terrain_Tracks][HOUSE_HARKONNEN][0] = icon->getPictureRow(25,32);
+     objPic[ObjPic_Terrain_Tracks][HOUSE_HARKONNEN][1] = Scaler::defaultDoubleTiledSurface(objPic[ObjPic_Terrain_Tracks][HOUSE_HARKONNEN][0], 8, 1, false);
+     objPic[ObjPic_Terrain_Tracks][HOUSE_HARKONNEN][2] = Scaler::defaultTripleTiledSurface(objPic[ObjPic_Terrain_Tracks][HOUSE_HARKONNEN][0], 8, 1, false);

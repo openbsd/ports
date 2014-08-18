@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_FileClasses_GFXManager_h,v 1.1 2014/08/18 09:30:52 edd Exp $
+
+Fog of war performance fix.
+from upstream: a141e80fa4b5d374b34037d74526f09b09a93581
+
+--- include/FileClasses/GFXManager.h.orig	Tue Jan  1 23:49:57 2013
++++ include/FileClasses/GFXManager.h	Sun Aug 17 20:40:32 2014
+@@ -102,6 +102,7 @@ typedef enum {
+ 	ObjPic_RockDamage,
+ 	ObjPic_SandDamage,
+ 	ObjPic_Terrain_Hidden,
++	ObjPic_Terrain_HiddenFog,
+ 	ObjPic_Terrain_Tracks,
+ 	ObjPic_Star,
+ 	NUM_OBJPICS
