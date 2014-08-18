@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/05/13 06:40:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/08/18 18:13:13 ajacoutot Exp $
 share/help/
 share/help/C/
 share/help/C/accessibility-devel-guide/
@@ -158,7 +158,6 @@ share/help/C/gnome-devel-demos/media/combobox.png
 share/help/C/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/C/gnome-devel-demos/media/dialog.png
 share/help/C/gnome-devel-demos/media/entry.png
-share/help/C/gnome-devel-demos/media/fedora.png
 share/help/C/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/C/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/C/gnome-devel-demos/media/fontchooserwidget.png
@@ -191,7 +190,6 @@ share/help/C/gnome-devel-demos/media/menubar_choices.png
 share/help/C/gnome-devel-demos/media/menubutton.png
 share/help/C/gnome-devel-demos/media/message-board.ogv
 share/help/C/gnome-devel-demos/media/messagedialog.png
-share/help/C/gnome-devel-demos/media/opensuse.png
 share/help/C/gnome-devel-demos/media/paned.png
 share/help/C/gnome-devel-demos/media/photo-wall-focused.png
 share/help/C/gnome-devel-demos/media/photo-wall.png
@@ -224,7 +222,6 @@ share/help/C/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/C/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/C/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/C/gnome-devel-demos/media/treeview_treestore.png
-share/help/C/gnome-devel-demos/media/ubuntu.png
 share/help/C/gnome-devel-demos/media/weatherAppJs.png
 share/help/C/gnome-devel-demos/media/window.png
 share/help/C/gnome-devel-demos/menubar.c.page
@@ -936,7 +933,6 @@ share/help/ca/gnome-devel-demos/media/combobox.png
 share/help/ca/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/ca/gnome-devel-demos/media/dialog.png
 share/help/ca/gnome-devel-demos/media/entry.png
-share/help/ca/gnome-devel-demos/media/fedora.png
 share/help/ca/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/ca/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/ca/gnome-devel-demos/media/fontchooserwidget.png
@@ -969,7 +965,6 @@ share/help/ca/gnome-devel-demos/media/menubar_choices.png
 share/help/ca/gnome-devel-demos/media/menubutton.png
 share/help/ca/gnome-devel-demos/media/message-board.ogv
 share/help/ca/gnome-devel-demos/media/messagedialog.png
-share/help/ca/gnome-devel-demos/media/opensuse.png
 share/help/ca/gnome-devel-demos/media/paned.png
 share/help/ca/gnome-devel-demos/media/photo-wall-focused.png
 share/help/ca/gnome-devel-demos/media/photo-wall.png
@@ -1002,7 +997,6 @@ share/help/ca/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/ca/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/ca/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/ca/gnome-devel-demos/media/treeview_treestore.png
-share/help/ca/gnome-devel-demos/media/ubuntu.png
 share/help/ca/gnome-devel-demos/media/weatherAppJs.png
 share/help/ca/gnome-devel-demos/media/window.png
 share/help/ca/gnome-devel-demos/menubar.c.page
@@ -1601,7 +1595,6 @@ share/help/de/gnome-devel-demos/media/combobox.png
 share/help/de/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/de/gnome-devel-demos/media/dialog.png
 share/help/de/gnome-devel-demos/media/entry.png
-share/help/de/gnome-devel-demos/media/fedora.png
 share/help/de/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/de/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/de/gnome-devel-demos/media/fontchooserwidget.png
@@ -1634,7 +1627,6 @@ share/help/de/gnome-devel-demos/media/menubar_choices.png
 share/help/de/gnome-devel-demos/media/menubutton.png
 share/help/de/gnome-devel-demos/media/message-board.ogv
 share/help/de/gnome-devel-demos/media/messagedialog.png
-share/help/de/gnome-devel-demos/media/opensuse.png
 share/help/de/gnome-devel-demos/media/paned.png
 share/help/de/gnome-devel-demos/media/photo-wall-focused.png
 share/help/de/gnome-devel-demos/media/photo-wall.png
@@ -1667,7 +1659,6 @@ share/help/de/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/de/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/de/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/de/gnome-devel-demos/media/treeview_treestore.png
-share/help/de/gnome-devel-demos/media/ubuntu.png
 share/help/de/gnome-devel-demos/media/weatherAppJs.png
 share/help/de/gnome-devel-demos/media/window.png
 share/help/de/gnome-devel-demos/menubar.c.page
@@ -2393,7 +2384,6 @@ share/help/el/gnome-devel-demos/media/combobox.png
 share/help/el/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/el/gnome-devel-demos/media/dialog.png
 share/help/el/gnome-devel-demos/media/entry.png
-share/help/el/gnome-devel-demos/media/fedora.png
 share/help/el/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/el/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/el/gnome-devel-demos/media/fontchooserwidget.png
@@ -2426,7 +2416,6 @@ share/help/el/gnome-devel-demos/media/menubar_choices.png
 share/help/el/gnome-devel-demos/media/menubutton.png
 share/help/el/gnome-devel-demos/media/message-board.ogv
 share/help/el/gnome-devel-demos/media/messagedialog.png
-share/help/el/gnome-devel-demos/media/opensuse.png
 share/help/el/gnome-devel-demos/media/paned.png
 share/help/el/gnome-devel-demos/media/photo-wall-focused.png
 share/help/el/gnome-devel-demos/media/photo-wall.png
@@ -2459,7 +2448,6 @@ share/help/el/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/el/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/el/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/el/gnome-devel-demos/media/treeview_treestore.png
-share/help/el/gnome-devel-demos/media/ubuntu.png
 share/help/el/gnome-devel-demos/media/weatherAppJs.png
 share/help/el/gnome-devel-demos/media/window.png
 share/help/el/gnome-devel-demos/menubar.c.page
@@ -3185,7 +3173,6 @@ share/help/es/gnome-devel-demos/media/combobox.png
 share/help/es/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/es/gnome-devel-demos/media/dialog.png
 share/help/es/gnome-devel-demos/media/entry.png
-share/help/es/gnome-devel-demos/media/fedora.png
 share/help/es/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/es/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/es/gnome-devel-demos/media/fontchooserwidget.png
@@ -3218,7 +3205,6 @@ share/help/es/gnome-devel-demos/media/menubar_choices.png
 share/help/es/gnome-devel-demos/media/menubutton.png
 share/help/es/gnome-devel-demos/media/message-board.ogv
 share/help/es/gnome-devel-demos/media/messagedialog.png
-share/help/es/gnome-devel-demos/media/opensuse.png
 share/help/es/gnome-devel-demos/media/paned.png
 share/help/es/gnome-devel-demos/media/photo-wall-focused.png
 share/help/es/gnome-devel-demos/media/photo-wall.png
@@ -3251,7 +3237,6 @@ share/help/es/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/es/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/es/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/es/gnome-devel-demos/media/treeview_treestore.png
-share/help/es/gnome-devel-demos/media/ubuntu.png
 share/help/es/gnome-devel-demos/media/weatherAppJs.png
 share/help/es/gnome-devel-demos/media/window.png
 share/help/es/gnome-devel-demos/menubar.c.page
@@ -3977,7 +3962,6 @@ share/help/fr/gnome-devel-demos/media/combobox.png
 share/help/fr/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/fr/gnome-devel-demos/media/dialog.png
 share/help/fr/gnome-devel-demos/media/entry.png
-share/help/fr/gnome-devel-demos/media/fedora.png
 share/help/fr/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/fr/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/fr/gnome-devel-demos/media/fontchooserwidget.png
@@ -4010,7 +3994,6 @@ share/help/fr/gnome-devel-demos/media/menubar_choices.png
 share/help/fr/gnome-devel-demos/media/menubutton.png
 share/help/fr/gnome-devel-demos/media/message-board.ogv
 share/help/fr/gnome-devel-demos/media/messagedialog.png
-share/help/fr/gnome-devel-demos/media/opensuse.png
 share/help/fr/gnome-devel-demos/media/paned.png
 share/help/fr/gnome-devel-demos/media/photo-wall-focused.png
 share/help/fr/gnome-devel-demos/media/photo-wall.png
@@ -4043,7 +4026,6 @@ share/help/fr/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/fr/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/fr/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/fr/gnome-devel-demos/media/treeview_treestore.png
-share/help/fr/gnome-devel-demos/media/ubuntu.png
 share/help/fr/gnome-devel-demos/media/weatherAppJs.png
 share/help/fr/gnome-devel-demos/media/window.png
 share/help/fr/gnome-devel-demos/menubar.c.page
@@ -4748,7 +4730,6 @@ share/help/gl/gnome-devel-demos/media/combobox.png
 share/help/gl/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/gl/gnome-devel-demos/media/dialog.png
 share/help/gl/gnome-devel-demos/media/entry.png
-share/help/gl/gnome-devel-demos/media/fedora.png
 share/help/gl/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/gl/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/gl/gnome-devel-demos/media/fontchooserwidget.png
@@ -4781,7 +4762,6 @@ share/help/gl/gnome-devel-demos/media/menubar_choices.png
 share/help/gl/gnome-devel-demos/media/menubutton.png
 share/help/gl/gnome-devel-demos/media/message-board.ogv
 share/help/gl/gnome-devel-demos/media/messagedialog.png
-share/help/gl/gnome-devel-demos/media/opensuse.png
 share/help/gl/gnome-devel-demos/media/paned.png
 share/help/gl/gnome-devel-demos/media/photo-wall-focused.png
 share/help/gl/gnome-devel-demos/media/photo-wall.png
@@ -4814,7 +4794,6 @@ share/help/gl/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/gl/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/gl/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/gl/gnome-devel-demos/media/treeview_treestore.png
-share/help/gl/gnome-devel-demos/media/ubuntu.png
 share/help/gl/gnome-devel-demos/media/weatherAppJs.png
 share/help/gl/gnome-devel-demos/media/window.png
 share/help/gl/gnome-devel-demos/menubar.c.page
@@ -5780,7 +5759,6 @@ share/help/pt_BR/gnome-devel-demos/media/combobox.png
 share/help/pt_BR/gnome-devel-demos/media/combobox_multicolumn.png
 share/help/pt_BR/gnome-devel-demos/media/dialog.png
 share/help/pt_BR/gnome-devel-demos/media/entry.png
-share/help/pt_BR/gnome-devel-demos/media/fedora.png
 share/help/pt_BR/gnome-devel-demos/media/filechooserdialog_menu.png
 share/help/pt_BR/gnome-devel-demos/media/filechooserdialog_save.png
 share/help/pt_BR/gnome-devel-demos/media/fontchooserwidget.png
@@ -5813,7 +5791,6 @@ share/help/pt_BR/gnome-devel-demos/media/menubar_choices.png
 share/help/pt_BR/gnome-devel-demos/media/menubutton.png
 share/help/pt_BR/gnome-devel-demos/media/message-board.ogv
 share/help/pt_BR/gnome-devel-demos/media/messagedialog.png
-share/help/pt_BR/gnome-devel-demos/media/opensuse.png
 share/help/pt_BR/gnome-devel-demos/media/paned.png
 share/help/pt_BR/gnome-devel-demos/media/photo-wall-focused.png
 share/help/pt_BR/gnome-devel-demos/media/photo-wall.png
@@ -5846,7 +5823,6 @@ share/help/pt_BR/gnome-devel-demos/media/treeview_cellrenderertoggle.png
 share/help/pt_BR/gnome-devel-demos/media/treeview_simple_liststore.png
 share/help/pt_BR/gnome-devel-demos/media/treeview_simple_liststore_penguins.png
 share/help/pt_BR/gnome-devel-demos/media/treeview_treestore.png
-share/help/pt_BR/gnome-devel-demos/media/ubuntu.png
 share/help/pt_BR/gnome-devel-demos/media/weatherAppJs.png
 share/help/pt_BR/gnome-devel-demos/media/window.png
 share/help/pt_BR/gnome-devel-demos/menubar.c.page
