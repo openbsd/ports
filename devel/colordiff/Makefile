@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/18 17:32:40 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/18 17:59:58 jca Exp $
 
 COMMENT =		colorized diff tool
 DISTNAME =		colordiff-1.0.13
@@ -15,6 +15,7 @@ MODULES =		perl
 
 # No need, docs come pre-rendered.
 NO_BUILD =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
