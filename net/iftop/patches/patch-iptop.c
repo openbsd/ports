@@ -1,6 +1,6 @@
-$OpenBSD: patch-iptop.c,v 1.4 2014/08/19 21:19:00 sthen Exp $
---- iftop.c.orig	Wed Jan  1 15:20:10 2014
-+++ iftop.c	Tue Jan 14 00:51:01 2014
+$OpenBSD: patch-iptop.c,v 1.5 2014/08/19 22:38:33 jca Exp $
+--- iftop.c.orig	Sun Jan 19 21:21:19 2014
++++ iftop.c	Wed Aug 20 00:35:21 2014
 @@ -28,6 +28,8 @@
  #include <string.h>
  #include <unistd.h>
@@ -10,6 +10,15 @@ $OpenBSD: patch-iptop.c,v 1.4 2014/08/19 21:19:00 sthen Exp $
  
  #include "iftop.h"
  #include "addr_hash.h"
+@@ -713,7 +715,7 @@ void packet_init() {
+     if(have_hw_addr) {
+       fprintf(stderr, "MAC address is:");
+       for (i = 0; i < 6; ++i)
+-	fprintf(stderr, "%c%02x", i ? ':' : ' ', (unsigned int)if_hw_addr[i]);
++	fprintf(stderr, "%c%02x", i ? ':' : ' ', if_hw_addr[i] & 0xff);
+       fprintf(stderr, "\n");
+     }
+     
 @@ -768,7 +770,7 @@ void packet_init() {
      else {
          fprintf(stderr, "Unsupported datalink type: %d\n"
