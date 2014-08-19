@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2014/08/19 05:53:59 landry Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
+BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 
 DISTNAME =		vbam-1.8.0.1054-src
 PKGNAME =		${DISTNAME:S/-src//}
