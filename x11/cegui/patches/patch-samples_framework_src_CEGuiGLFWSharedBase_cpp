@@ -1,0 +1,12 @@
+$OpenBSD: patch-samples_framework_src_CEGuiGLFWSharedBase_cpp,v 1.1.1.1 2014/08/19 22:35:01 pascal Exp $
+--- samples_framework/src/CEGuiGLFWSharedBase.cpp.orig.port	Mon Jul  7 09:06:18 2014
++++ samples_framework/src/CEGuiGLFWSharedBase.cpp	Sat Jul 12 22:00:56 2014
+@@ -24,7 +24,7 @@ author:     Paul D Turner
+ *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *   OTHER DEALINGS IN THE SOFTWARE.
+ ***************************************************************************/
+-#if defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__HAIKU__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__HAIKU__)
+ # include <unistd.h>
+ #endif
+ 

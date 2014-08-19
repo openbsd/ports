@@ -1,0 +1,12 @@
+$OpenBSD: patch-cegui_src_SimpleTimer_cpp,v 1.1.1.1 2014/08/19 22:35:01 pascal Exp $
+--- cegui/src/SimpleTimer.cpp.orig.port	Mon Jul  7 09:06:18 2014
++++ cegui/src/SimpleTimer.cpp	Sat Jul 12 22:00:56 2014
+@@ -33,7 +33,7 @@ double CEGUI::SimpleTimer::currentTime()
+     return timeGetTime() / 1000.0;
+ }
+ 
+-#elif defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__HAIKU__) || defined(__CYGWIN__) || defined(__MINGW32__)
++#elif defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__HAIKU__) || defined(__CYGWIN__) || defined(__MINGW32__)
+ #include <sys/time.h>
+ double CEGUI::SimpleTimer::currentTime()
+ {
