@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_setting_c,v 1.1.1.1 2014/08/19 22:52:41 bcallah Exp $
+--- src/setting.c.orig	Mon Aug 18 19:13:15 2014
++++ src/setting.c	Mon Aug 18 19:13:50 2014
+@@ -125,7 +125,7 @@ void setting_init()
+     setting_add("completion-fg-active", TYPE_COLOR, &"#ffffff", input_color, &vb.style.comp_fg[VB_COMP_ACTIVE]);
+     setting_add("completion-bg-normal", TYPE_COLOR, &"#656565", input_color, &vb.style.comp_bg[VB_COMP_NORMAL]);
+     setting_add("completion-bg-active", TYPE_COLOR, &"#777777", input_color, &vb.style.comp_bg[VB_COMP_ACTIVE]);
+-    setting_add("ca-bundle", TYPE_CHAR, &"/etc/ssl/certs/ca-certificates.crt", ca_bundle, NULL);
++    setting_add("ca-bundle", TYPE_CHAR, &"/etc/ssl/cert.pem", ca_bundle, NULL);
+     setting_add("home-page", TYPE_CHAR, &SETTING_HOME_PAGE, NULL, NULL);
+     i = 1000;
+     setting_add("hint-timeout", TYPE_INTEGER, &i, NULL, NULL);

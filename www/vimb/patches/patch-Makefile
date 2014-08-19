@@ -1,0 +1,45 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/08/19 22:52:41 bcallah Exp $
+
+Make verbose.
+
+--- Makefile.orig	Sun Jul 20 10:14:53 2014
++++ Makefile	Sun Aug 10 18:51:52 2014
+@@ -53,32 +53,26 @@ $(DOBJ): src/config.h config.mk
+ $(LOBJ): src/config.h config.mk
+ 
+ $(TARGET): $(OBJ)
+-	@echo "$(CC) $@"
+-	@$(CC) $(OBJ) -o $@ $(LDFLAGS)
++	$(CC) $(OBJ) -o $@ $(LDFLAGS)
+ 
+ $(DTARGET): $(DOBJ)
+-	@echo "$(CC) $@"
+-	@$(CC) $(DOBJ) -o $@ $(DLDFLAGS)
++	$(CC) $(DOBJ) -o $@ $(DLDFLAGS)
+ 
+ $(LIBTARGET): $(LOBJ)
+-	@echo "$(CC) $@"
+-	@$(CC) -shared ${LOBJ} -o $@ $(LDFLAGS)
++	$(CC) -shared ${LOBJ} -o $@ $(LDFLAGS)
+ 
+ src/config.h:
+ 	@echo create $@ from src/config.def.h
+ 	@cp src/config.def.h $@
+ 
+ %.o: %.c %.h
+-	@echo "${CC} $@"
+-	@$(CC) $(CFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ %.do: %.c %.h
+-	@echo "${CC} $@"
+-	@$(CC) $(DFLAGS) -c -o $@ $<
++	$(CC) $(DFLAGS) -c -o $@ $<
+ 
+ %.lo: %.c %.h
+-	@echo "${CC} $@"
+-	@$(CC) -DTESTLIB $(DFLAGS) -fPIC -c -o $@ $<
++	$(CC) -DTESTLIB $(DFLAGS) -fPIC -c -o $@ $<
+ 
+ -include $(DEPS)
+ 
