@@ -1,0 +1,3 @@
+A small, expressive ORM, written in Python. Supports SQLite, MySQL and
+PostgreSQL as backends. For the latter two you'll need to install
+corresponding packages.
