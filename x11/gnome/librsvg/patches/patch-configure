@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.16 2013/10/15 07:40:42 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.17 2014/08/19 06:39:48 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653323
 
---- configure.orig	Tue Oct 15 09:11:58 2013
-+++ configure	Tue Oct 15 09:12:34 2013
-@@ -13733,6 +13733,8 @@ fi
+--- configure.orig	Wed Jun 18 19:54:56 2014
++++ configure	Tue Aug 19 08:21:32 2014
+@@ -13836,6 +13836,8 @@ fi
  
  GTK3_BINARY_VERSION=
  
