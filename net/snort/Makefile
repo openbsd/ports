@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2014/06/04 03:17:12 lteo Exp $
+# $OpenBSD: Makefile,v 1.87 2014/08/19 04:22:53 lteo Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
-VERSION =		2.9.6.1
+VERSION =		2.9.6.2
 DISTNAME =		snort-${VERSION}
-REVISION =		0
 
 CATEGORIES =		net security
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c crypto daq dnet m pcap pcre pthread z
 
-MASTER_SITES =		http://www.snort.org/dl/snort-current/
+MASTER_SITES =		https://www.snort.org/downloads/snort/
 
 USE_GROFF =		Yes
 
