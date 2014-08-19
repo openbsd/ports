@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/10 19:23:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/08/19 05:35:58 landry Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
-
-# XXX "cvs rm -f patches/patch-Makefile_in" when trees are fully unlocked
+BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 WVER =		1.10.9
 DISTNAME =	wireshark-${WVER}
