@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.58 2014/08/11 16:49:31 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.59 2014/08/19 19:44:39 pascal Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -166,6 +166,7 @@ libexec/git/git-submodule
 @bin libexec/git/git-upload-archive
 @bin libexec/git/git-upload-pack
 @bin libexec/git/git-var
+@bin libexec/git/git-verify-commit
 @bin libexec/git/git-verify-pack
 @bin libexec/git/git-verify-tag
 libexec/git/git-web--browse
@@ -182,6 +183,7 @@ libexec/git/mergetools/ecmerge
 libexec/git/mergetools/emerge
 libexec/git/mergetools/gvimdiff
 libexec/git/mergetools/gvimdiff2
+libexec/git/mergetools/gvimdiff3
 libexec/git/mergetools/kdiff3
 libexec/git/mergetools/kompare
 libexec/git/mergetools/meld
@@ -191,6 +193,7 @@ libexec/git/mergetools/tkdiff
 libexec/git/mergetools/tortoisemerge
 libexec/git/mergetools/vimdiff
 libexec/git/mergetools/vimdiff2
+libexec/git/mergetools/vimdiff3
 libexec/git/mergetools/xxdiff
 @man man/man1/git-add.1
 @man man/man1/git-am.1
@@ -329,6 +332,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-upload-archive.1
 @man man/man1/git-upload-pack.1
 @man man/man1/git-var.1
+@man man/man1/git-verify-commit.1
 @man man/man1/git-verify-pack.1
 @man man/man1/git-verify-tag.1
 @man man/man1/git-web--browse.1

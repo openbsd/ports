@@ -1,16 +1,17 @@
-$OpenBSD: patch-t_test-lib_sh,v 1.2 2014/03/10 20:56:53 pascal Exp $
+$OpenBSD: patch-t_test-lib_sh,v 1.3 2014/08/19 19:44:39 pascal Exp $
 
 Force usage of GNU tar in the test suite: 't5004-archive-corner-cases.sh'
 wants it badly.
 
---- t/test-lib.sh.orig	Fri Feb 14 22:57:09 2014
-+++ t/test-lib.sh	Sun Feb 16 18:13:37 2014
-@@ -51,6 +51,10 @@ fi
+--- t/test-lib.sh.orig	Sat Aug 16 00:26:55 2014
++++ t/test-lib.sh	Tue Aug 19 14:43:36 2014
+@@ -51,6 +51,11 @@ fi
  . "$GIT_BUILD_DIR"/GIT-BUILD-OPTIONS
  export PERL_PATH SHELL_PATH
  
 +if [ -n "${TEST_TAR}" ]; then
-+	export TAR=${TEST_TAR}
++	TAR=${TEST_TAR}
++	export TAR
 +fi
 +
  # if --tee was passed, write the output not only to the terminal, but

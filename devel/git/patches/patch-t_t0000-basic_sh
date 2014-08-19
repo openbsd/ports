@@ -1,7 +1,7 @@
-$OpenBSD: patch-t_t0000-basic_sh,v 1.7 2014/03/10 20:56:53 pascal Exp $
---- t/t0000-basic.sh.orig	Fri Feb 14 22:57:09 2014
-+++ t/t0000-basic.sh	Sun Feb 16 18:13:37 2014
-@@ -626,7 +626,7 @@ test_expect_success 'update-index D/F conflict' '
+$OpenBSD: patch-t_t0000-basic_sh,v 1.8 2014/08/19 19:44:39 pascal Exp $
+--- t/t0000-basic.sh.orig	Sat Aug 16 00:26:55 2014
++++ t/t0000-basic.sh	Tue Aug 19 14:09:04 2014
+@@ -1043,7 +1043,7 @@ test_expect_success 'update-index D/F conflict' '
  	test $numpath0 = 1
  '
  
