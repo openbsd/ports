@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/26 18:03:31 juanfra Exp $
+# $OpenBSD: Makefile,v 1.18 2014/08/19 22:51:20 juanfra Exp $
 
 BROKEN-hppa =		segfault while racket compiles XFORMS (at xsrc)
 BROKEN-mips64el =	sigbus while racket compiles XFORMS (at xsrc)
@@ -9,15 +9,14 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.0.1
-REVISION =		3
+V =			6.1
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-builtpkgs
 
 # Each new version of racket is incompatible with the previous one.
 # Increase always the major number.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/9872
-SHARED_LIBS +=		racket3m	2.0 # 6.0.1
+SHARED_LIBS +=		racket3m	3.0 # 6.1
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -31,6 +30,7 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://www.eecs.northwestern.edu/racket/${V}/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
 			http://racket.infogroep.be/${V}/ \
+			http://pre-release.racket-lang.org/installers/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://pre.racket-lang.org/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/ \

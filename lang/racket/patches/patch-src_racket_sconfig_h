@@ -1,34 +1,16 @@
-$OpenBSD: patch-src_racket_sconfig_h,v 1.6 2014/07/15 00:13:16 juanfra Exp $
---- src/racket/sconfig.h.orig	Thu Apr 17 21:58:42 2014
-+++ src/racket/sconfig.h	Mon Jul 14 22:39:35 2014
-@@ -313,12 +313,24 @@
-   /************** x86/OpenBSD with gcc ****************/
-               /* Thanks to Bengt Kleberg */
- 
--#if defined(__OpenBSD__) && (defined(__i386__) || defined(i386) || defined(__x86_64__))
-+#if defined(__OpenBSD__)
- 
- # if defined(__x86_64__)
- #  define SCHEME_PLATFORM_LIBRARY_SUBPATH "x86_64-openbsd"
--# else
-+# elif defined(__i386__) || defined(i386)
- #  define SCHEME_PLATFORM_LIBRARY_SUBPATH "i386-openbsd"
-+# elif defined(__mips64__)
-+#  if defined(__MIPSEL__)
-+#   define SCHEME_PLATFORM_LIBRARY_SUBPATH "mips64el-openbsd"
-+#  else
-+#   define SCHEME_PLATFORM_LIBRARY_SUBPATH "mips64-openbsd"
-+#  endif
+$OpenBSD: patch-src_racket_sconfig_h,v 1.7 2014/08/19 22:51:20 juanfra Exp $
+--- src/racket/sconfig.h.orig	Thu Jul 17 19:37:10 2014
++++ src/racket/sconfig.h	Sat Jul 19 21:50:27 2014
+@@ -327,6 +327,8 @@
+ #  else
+ #   define SCHEME_PLATFORM_LIBRARY_SUBPATH "mips64-openbsd"
+ #  endif
 +# elif defined(__powerpc__)
 +#  define SCHEME_PLATFORM_LIBRARY_SUBPATH "ppc-openbsd"
-+# elif defined(__hppa__)
-+#  define SCHEME_PLATFORM_LIBRARY_SUBPATH "hppa-openbsd"
-+# else
-+#  error Unported platform.
- # endif
- 
- # include "uconfig.h"
-@@ -331,9 +343,7 @@
+ # elif defined(__hppa__)
+ #  define SCHEME_PLATFORM_LIBRARY_SUBPATH "hppa-openbsd"
+ # else
+@@ -343,9 +345,7 @@
  # undef UNIX_STACK_MAXIMUM
  # define UNIX_STACK_MAXIMUM 4194304
  
@@ -38,7 +20,7 @@ $OpenBSD: patch-src_racket_sconfig_h,v 1.6 2014/07/15 00:13:16 juanfra Exp $
  
  # define USE_DLOPEN_GLOBAL_BY_DEFAULT
  
-@@ -348,17 +358,15 @@
+@@ -360,15 +360,15 @@
  # define USE_TM_GMTOFF_FIELD
  # define USE_TM_ZONE_FIELD
  
@@ -50,8 +32,6 @@ $OpenBSD: patch-src_racket_sconfig_h,v 1.6 2014/07/15 00:13:16 juanfra Exp $
 -# define MZ_USE_JIT_I386
 -# define MZ_JIT_USE_MPROTECT
 -# define MZ_TRY_EXTFLONUMS
--#else
--# error Unported platform.
 -#endif
 +# if defined(__x86_64__)
 +#  define MZ_USE_JIT_X86_64
@@ -64,23 +44,4 @@ $OpenBSD: patch-src_racket_sconfig_h,v 1.6 2014/07/15 00:13:16 juanfra Exp $
 +# endif
  
  # define FLAGS_ALREADY_SET
- 
-@@ -428,7 +436,7 @@
-   /************** SGI/IRIX with SGI cc ****************/
- 
- #if  (defined(mips) || defined(__mips)) \
--     && !(defined(ultrix) || defined(__ultrix) || defined(linux))
-+     && !(defined(ultrix) || defined(__ultrix) || defined(linux) || defined(__OpenBSD__))
- 
- # define SCHEME_PLATFORM_LIBRARY_SUBPATH "mips-irix"
- 
-@@ -472,7 +480,8 @@
- 
-   /************** ALPHA/OSF1 with gcc ****************/
- 
--# if (defined(__alpha) || defined(__alpha__)) && !defined(linux) && !defined(__NetBSD__)
-+# if (defined(__alpha) || defined(__alpha__)) \
-+    && !defined(linux) && !defined(__NetBSD__) && !defined(__OpenBSD__)
- 
- # define SCHEME_PLATFORM_LIBRARY_SUBPATH "alpha-osf1"
  
