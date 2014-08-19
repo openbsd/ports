@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2014/08/15 12:19:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.296 2014/08/19 22:44:44 pascal Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -207,6 +207,7 @@
      SUBDIR += sudognu
      SUBDIR += sudoku
      SUBDIR += sudoku-solver
+     SUBDIR += sumwars
      SUBDIR += supertux
      SUBDIR += supertuxkart
      SUBDIR += taxipilot
