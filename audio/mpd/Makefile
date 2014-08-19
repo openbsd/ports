@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2014/06/06 14:53:37 jturner Exp $
+# $OpenBSD: Makefile,v 1.60 2014/08/19 06:39:05 landry Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.18.11
@@ -18,7 +18,7 @@ WANTLIB =		FLAC ao audiofile avcodec avformat avutil c \
 MASTER_SITES =		http://www.musicpd.org/download/mpd/stable/
 
 MODULES =		devel/gettext gcc4
-MODGCC4_ARCHS =		i386 amd64 powerpc sparc64
+MODGCC4_ARCHS =		i386 amd64 powerpc sparc64 alpha
 MODGCC4_LANGS =		c++
 
 LIB_DEPENDS =		devel/libaudiofile \
