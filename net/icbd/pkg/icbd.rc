@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: icbd.rc,v 1.1.1.1 2014/08/19 05:54:37 pascal Exp $
+
+daemon="${TRUEPREFIX}/sbin/icbd"
+
+. /etc/rc.d/rc.subr
+
+pexp="icbd: icbd.*"
+rc_reload=NO
+
+rc_cmd $1

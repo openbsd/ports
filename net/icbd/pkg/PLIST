@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/19 05:54:37 pascal Exp $
+@newgroup _icbd:740
+@newuser _icbd:740:740:daemon:icbd:/var/icbd:/sbin/nologin
+@man man/man8/icbd.8
+@bin sbin/icbd
+@sample /var/icbd/
+@rcscript ${RCDIR}/icbd
