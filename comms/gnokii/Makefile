@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.37 2014/08/18 19:01:59 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2014/08/19 05:33:47 landry Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
-BROKEN-alpha=	gnokii-sms.c:577: internal compiler error: in extract_insn, at recog.c:2077
 
 DISTNAME=	gnokii-0.6.14
 REVISION=	17
@@ -28,6 +27,9 @@ MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+.if ${MACHINE_ARCH} == "alpha"
+CONFIGURE_ENV +=	CFLAGS=-fno-stack-protector
+.endif
 CONFIGURE_ARGS=		--enable-security \
 			--disable-debug \
 			--disable-xdebug \
