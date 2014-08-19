@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2014/05/06 04:19:55 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2014/08/19 05:51:58 landry Exp $
 
 COMMENT=	Google VP8/VP9 video codec
+BROKEN-hppa =	build stuck on vp9/vp9_cx_iface.c
 
 V=		1.3.0
 DISTNAME=	libvpx-v${V}
