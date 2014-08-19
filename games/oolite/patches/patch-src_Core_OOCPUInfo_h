@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Core_OOCPUInfo_h,v 1.1 2014/08/19 06:21:48 landry Exp $
+alpha is LE
+--- src/Core/OOCPUInfo.h.orig	Mon Aug 18 23:45:42 2014
++++ src/Core/OOCPUInfo.h	Mon Aug 18 23:46:09 2014
+@@ -55,7 +55,7 @@ unsigned OOCPUCount(void);
+ 
+ 
+ #if !defined(OOLITE_BIG_ENDIAN) && !defined(OOLITE_LITTLE_ENDIAN)
+-#if defined(__i386__) || defined(__amd64__) || defined(__x86_64__)
++#if defined(__i386__) || defined(__amd64__) || defined(__x86_64__) || defined(__alpha__)
+ #define OOLITE_LITTLE_ENDIAN	1
+ #endif
+ 

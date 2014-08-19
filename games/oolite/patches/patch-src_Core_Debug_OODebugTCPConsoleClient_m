@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Core_Debug_OODebugTCPConsoleClient_m,v 1.3 2012/06/26 13:41:12 jasper Exp $
---- src/Core/Debug/OODebugTCPConsoleClient.m.orig	Sun Aug 30 13:40:23 2009
-+++ src/Core/Debug/OODebugTCPConsoleClient.m	Fri Jan 14 13:22:16 2011
-@@ -157,7 +159,7 @@ OOINLINE BOOL StatusIsSendable(OOTCPClientConnectionSt
+$OpenBSD: patch-src_Core_Debug_OODebugTCPConsoleClient_m,v 1.4 2014/08/19 06:21:48 landry Exp $
+--- src/Core/Debug/OODebugTCPConsoleClient.m.orig	Sun Aug 30 05:40:23 2009
++++ src/Core/Debug/OODebugTCPConsoleClient.m	Mon Aug 18 18:28:09 2014
+@@ -157,7 +157,7 @@ OOINLINE BOOL StatusIsSendable(OOTCPClientConnectionSt
  			// Attempt to connect
  			parameters = [NSDictionary dictionaryWithObjectsAndKeys:
  							[NSNumber numberWithUnsignedInt:kOOTCPProtocolVersion_1_1_0], kOOTCPProtocolVersion,
