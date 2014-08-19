@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/08/19 22:40:34 pascal Exp $
+--- CMakeLists.txt.orig	Sun Mar 18 13:32:49 2012
++++ CMakeLists.txt	Sun Mar 18 13:33:07 2012
+@@ -125,10 +125,6 @@ IF(WIN32)
+   SET(CMAKE_MODULE_PATH "$ENV{OGRE_HOME}/CMake/;${CMAKE_MODULE_PATH}")
+ ENDIF(WIN32)
+ 
+-IF(UNIX)
+-  SET(CMAKE_MODULE_PATH "/usr/local/lib/OGRE/cmake/;${CMAKE_MODULE_PATH}")
+-ENDIF(UNIX)
+-
+ SET(CMAKE_DEBUG_POSTFIX "_d")
+ 
+ if(NOT CMAKE_INSTALL_PREFIX)
