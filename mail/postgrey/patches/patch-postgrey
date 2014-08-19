@@ -1,4 +1,4 @@
-# $OpenBSD: patch-postgrey,v 1.5 2013/11/12 22:24:57 sthen Exp $
+# $OpenBSD: patch-postgrey,v 1.6 2014/08/19 13:54:56 giovanni Exp $
 
 default path/uid/gid changes, plus untaint for Perl 5.18
 
@@ -7,20 +7,20 @@ From: Yasuhiro KIMURA <yasu@utahime.org>
 Date: Sat, 17 Aug 2013 22:05:27 +0900
 Subject: [PATCH] Make postgrey work with Perl 5.18
 
---- postgrey.orig	Wed May  4 21:54:15 2011
-+++ postgrey	Tue Nov 12 22:21:49 2013
+--- postgrey.orig	Wed Jun 11 15:13:50 2014
++++ postgrey	Sat Jul 12 17:18:21 2014
 @@ -23,7 +23,7 @@ use vars qw(@ISA);
  @ISA = qw(Net::Server::Multiplex);
  
- my $VERSION = '1.34';
+ my $VERSION = '1.35';
 -my $DEFAULT_DBDIR = '/var/spool/postfix/postgrey';
 +my $DEFAULT_DBDIR = '/var/db/postgrey';
  my $CONFIG_DIR = '/etc/postfix';
  
  sub cidr_parse($)
-@@ -557,6 +557,16 @@ sub main()
-     if($opt{dbdir}) {
-         $opt{dbdir} =~ /^(.*)$/; $opt{dbdir} = $1;
+@@ -551,6 +551,16 @@ sub main()
+                 "       followed by 'h' for hours ('6h' for example).\n";
+         }
      }
 +    # untaint what is given on --pidfile. It is not security sensitive since
 +    # it is provided by the admin
@@ -33,10 +33,10 @@ Subject: [PATCH] Make postgrey work with Perl 5.18
 +        $opt{inet} =~ /^(.*)$/; $opt{inet} = $1;
 +    }
  
-     # determine proper "logsock" for Sys::Syslog
-     my $syslog_logsock;
-@@ -585,8 +595,8 @@ sub main()
-             commandline      => [ $0, @ARGV_saved ],
+     # untaint what is given on --dbdir. It is not security sensitive since
+     # it is provided by the admin
+@@ -595,8 +605,8 @@ sub main()
+             commandline      => [ 'postgrey', @ARGV_saved ],
              port             => [ $opt{inet} ? $opt{inet} : $opt{unix}."|unix" ],
              proto            => $opt{inet} ? 'tcp' : 'unix',
 -            user             => $opt{user} || 'postgrey',
@@ -46,7 +46,7 @@ Subject: [PATCH] Make postgrey work with Perl 5.18
              dbdir            => $opt{dbdir} || $DEFAULT_DBDIR,
              setsid           => $opt{daemonize} ? 1 : undef,
              pid_file         => $opt{daemonize} ? $opt{pidfile} : undef,
-@@ -794,9 +804,9 @@ B<postgrey> [I<options>...]
+@@ -804,9 +814,9 @@ B<postgrey> [I<options>...]
   -i, --inet=[HOST:]PORT  listen on PORT, localhost if HOST is not specified
   -d, --daemonize         run in the background
       --pidfile=PATH      put daemon pid into this file
