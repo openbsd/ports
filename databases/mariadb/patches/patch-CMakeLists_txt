@@ -1,0 +1,20 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/08/19 16:42:40 brad Exp $
+
+Fix the build when using WITHOUT_SERVER.
+
+https://mariadb.atlassian.net/browse/MDEV-6562
+
+--- CMakeLists.txt.orig	Mon Aug 11 20:05:34 2014
++++ CMakeLists.txt	Mon Aug 11 20:08:21 2014
+@@ -466,7 +466,10 @@ ENDIF()
+ ADD_SUBDIRECTORY(packaging/solaris)
+ 
+ IF(NOT CMAKE_CROSSCOMPILING)
+-  SET(EXPORTED comp_err comp_sql factorial gen_lex_hash)
++  SET(EXPORTED comp_err comp_sql factorial)
++  IF(NOT WITHOUT_SERVER)
++    SET(EXPORTED ${EXPORTED} gen_lex_hash)
++  ENDIF()
+   # minimal target to build only binaries for export
+   ADD_CUSTOM_TARGET(import_executables DEPENDS ${EXPORTED})
+   EXPORT(TARGETS ${EXPORTED} FILE ${CMAKE_BINARY_DIR}/import_executables.cmake)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.10 2014/06/19 23:04:42 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.11 2014/08/19 16:42:40 brad Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -72,6 +72,7 @@ include/mysql/private/item_cmpfunc.h
 include/mysql/private/item_create.h
 include/mysql/private/item_func.h
 include/mysql/private/item_geofunc.h
+include/mysql/private/item_inetfunc.h
 include/mysql/private/item_row.h
 include/mysql/private/item_strfunc.h
 include/mysql/private/item_subselect.h
@@ -246,6 +247,11 @@ lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/sql_errlog.so
 @bin libexec/mysqld
+@man man/man1/aria_chk.1
+@man man/man1/aria_dump_log.1
+@man man/man1/aria_ftdump.1
+@man man/man1/aria_pack.1
+@man man/man1/aria_read_log.1
 @man man/man1/innochecksum.1
 @man man/man1/my_print_defaults.1
 @man man/man1/myisam_ftdump.1
