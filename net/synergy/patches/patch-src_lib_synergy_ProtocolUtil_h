@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_lib_synergy_ProtocolUtil_h,v 1.1 2014/08/20 07:20:10 landry Exp $
+--- src/lib/synergy/ProtocolUtil.h.orig	Wed Aug 20 00:54:08 2014
++++ src/lib/synergy/ProtocolUtil.h	Wed Aug 20 01:01:59 2014
+@@ -52,6 +52,7 @@ class CProtocolUtil { (public)
+ 	*/
+ 	static void			writef(synergy::IStream*,
+ 							const char* fmt, ...);
++	static void			writef(void*, const char* fmt, va_list);
+ 
+ 	//! Read formatted data
+ 	/*!
+@@ -79,7 +80,6 @@ class CProtocolUtil { (public)
+ 							const char* fmt, va_list);
+ 
+ 	static UInt32		getLength(const char* fmt, va_list);
+-	static void			writef(void*, const char* fmt, va_list);
+ 	static UInt32		eatLength(const char** fmt);
+ 	static void			read(synergy::IStream*, void*, UInt32);
+ };

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_lib_server_ClientProxy1_4_cpp,v 1.1 2014/08/20 07:20:10 landry Exp $
+--- src/lib/server/ClientProxy1_4.cpp.orig	Fri Feb 28 05:36:45 2014
++++ src/lib/server/ClientProxy1_4.cpp	Wed Aug 20 01:01:34 2014
+@@ -83,7 +83,11 @@ CClientProxy1_4::cryptoIv()
+ 	CString data(reinterpret_cast<const char*>(iv), CRYPTO_IV_SIZE);
+ 
+ 	LOG((CLOG_DEBUG2 "send crypto iv change to \"%s\"", getName().c_str()));
++#if defined(__mips64__) || defined(__sparc64__) || defined(__hppa__)
++	CProtocolUtil::writef(static_cast<void*>(getStream()), static_cast<const char*>(kMsgDCryptoIv), &data);
++#else
+ 	CProtocolUtil::writef(getStream(), kMsgDCryptoIv, &data);
++#endif
+ 	
+ 	// change IV only after we've sent the current IV, otherwise
+ 	// the client won't be able to decrypt the new IV.
