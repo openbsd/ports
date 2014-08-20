@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/11 05:16:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2014/08/20 12:20:26 armani Exp $
 
 COMMENT =		accurate Nintendo Entertainment System emulator
 
 DISTNAME =		nestopia-1.45
 
+REVISION =		0
+
 CATEGORIES =		emulators
 
-HOMEPAGE =		http://0ldsk00l.ca/nestopia.html
+HOMEPAGE =		http://0ldsk00l.ca/nestopia/
 
 MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
