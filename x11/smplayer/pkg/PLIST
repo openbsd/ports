@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/03/24 18:20:19 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/08/20 16:24:11 gonzalo Exp $
 @bin bin/smplayer
 @man man/man1/smplayer.1
 share/applications/smplayer.desktop
@@ -58,7 +58,9 @@ share/smplayer/
 share/smplayer/input.conf
 share/smplayer/shortcuts/
 share/smplayer/shortcuts/default.keys
+share/smplayer/shortcuts/euskara.keys
 share/smplayer/translations/
+share/smplayer/translations/smplayer_ar.qm
 share/smplayer/translations/smplayer_ar_SY.qm
 share/smplayer/translations/smplayer_bg.qm
 share/smplayer/translations/smplayer_ca.qm
@@ -66,6 +68,7 @@ share/smplayer/translations/smplayer_cs.qm
 share/smplayer/translations/smplayer_da.qm
 share/smplayer/translations/smplayer_de.qm
 share/smplayer/translations/smplayer_el_GR.qm
+share/smplayer/translations/smplayer_en_GB.qm
 share/smplayer/translations/smplayer_en_US.qm
 share/smplayer/translations/smplayer_es.qm
 share/smplayer/translations/smplayer_et.qm
@@ -76,6 +79,7 @@ share/smplayer/translations/smplayer_gl.qm
 share/smplayer/translations/smplayer_he_IL.qm
 share/smplayer/translations/smplayer_hr.qm
 share/smplayer/translations/smplayer_hu.qm
+share/smplayer/translations/smplayer_id.qm
 share/smplayer/translations/smplayer_it.qm
 share/smplayer/translations/smplayer_ja.qm
 share/smplayer/translations/smplayer_ka.qm
@@ -85,6 +89,7 @@ share/smplayer/translations/smplayer_lt.qm
 share/smplayer/translations/smplayer_mk.qm
 share/smplayer/translations/smplayer_ms_MY.qm
 share/smplayer/translations/smplayer_nl.qm
+share/smplayer/translations/smplayer_nn_NO.qm
 share/smplayer/translations/smplayer_pl.qm
 share/smplayer/translations/smplayer_pt.qm
 share/smplayer/translations/smplayer_pt_BR.qm
@@ -97,6 +102,7 @@ share/smplayer/translations/smplayer_sv.qm
 share/smplayer/translations/smplayer_th.qm
 share/smplayer/translations/smplayer_tr.qm
 share/smplayer/translations/smplayer_uk_UA.qm
+share/smplayer/translations/smplayer_uz.qm
 share/smplayer/translations/smplayer_vi_VN.qm
 share/smplayer/translations/smplayer_zh_CN.qm
 share/smplayer/translations/smplayer_zh_TW.qm
