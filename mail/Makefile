@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.312 2014/08/15 12:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.313 2014/08/20 06:34:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -13,6 +13,7 @@
      SUBDIR += avenger
      SUBDIR += avenger,sasl2
      SUBDIR += bmf
+     SUBDIR += bmf,mysql
      SUBDIR += bogofilter
      SUBDIR += bogofilter,db4
      SUBDIR += bogofilter,qdbm
