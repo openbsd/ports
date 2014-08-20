@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/03 13:53:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/08/20 07:18:25 ajacoutot Exp $
 
 COMMENT=	cryptographic library
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c gmp
 
-MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
-		ftp://ftp.lysator.liu.se/pub/security/lsh/
+MASTER_SITES=	${MASTER_SITE_GNU:=nettle/}
 
 BUILD_DEPENDS=	devel/m4
 
