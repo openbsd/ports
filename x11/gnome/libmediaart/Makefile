@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/04/02 09:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/20 07:38:45 ajacoutot Exp $
 
 COMMENT=		media art extraction and cache management library
 
 GNOME_PROJECT=		libmediaart
-GNOME_VERSION=		0.4.0
+GNOME_VERSION=		0.6.0
 
-SHARED_LIBS +=  mediaart-1.0         0.0      # 396.4
+SHARED_LIBS +=  mediaart-1.0         1.0      # 600.0
 
 CATEGORIES=		multimedia
 
@@ -18,7 +18,8 @@ WANTLIB += m pcre png pthread z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS += gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
+
 LIB_DEPENDS=		graphics/gdk-pixbuf2
 
 .include <bsd.port.mk>
