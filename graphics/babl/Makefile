@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/01 14:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/20 07:28:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,9 +19,7 @@ HOMEPAGE=	http://gegl.org/babl/
 # GPLv3/LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.gimp.org/pub/babl/${V:R}/ \
-		ftp://ftp.sunet.se/pub/gnu/babl/${V:R}/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/pub/babl/${V:R}/
+MASTER_SITES=	http://download.gimp.org/pub/babl/${V:R}/
 
 WANTLIB=	m
 
