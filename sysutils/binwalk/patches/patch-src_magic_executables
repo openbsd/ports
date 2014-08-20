@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_magic_executables,v 1.1 2014/08/20 00:29:15 sthen Exp $
+--- src/magic/executables.orig	Wed Aug 20 01:23:12 2014
++++ src/magic/executables	Wed Aug 20 01:23:27 2014
+@@ -367,7 +367,7 @@
+ 0       string          bFLT            BFLT executable
+ >4	belong		<1		invalid
+ >4	belong		>4		invalid
+->4      belong          x               version %ld, 
++>4      belong          x               version %d, 
+ >4      belong          4
+ >8	belong		x		code offset: 0x%.8X, 
+ >12	belong		x		data segment starts at: 0x%.8X, 

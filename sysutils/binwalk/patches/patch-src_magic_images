@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_magic_images,v 1.1 2014/08/20 00:29:15 sthen Exp $
+--- src/magic/images.orig	Wed Aug 20 01:24:13 2014
++++ src/magic/images	Wed Aug 20 01:24:24 2014
+@@ -11,8 +11,8 @@
+ # 137 P N G \r \n ^Z \n [4-byte length] H E A D [HEAD data] [HEAD crc] ...
+ #
+ 0       string          \x89PNG\x0d\x0a\x1a\x0a         PNG image
+->16     belong          x               \b, %ld x
+->20     belong          x               %ld,
++>16     belong          x               \b, %d x
++>20     belong          x               %d,
+ >24     byte            x               %d-bit
+ >25     byte            0               grayscale,
+ >25     byte            2               \b/color RGB,
+@@ -27,8 +27,8 @@
+ 0       string          GIF8            GIF image data
+ >4      string          7a              \b, version "8%s",
+ >4      string          9a              \b, version "8%s",
+->6      leshort         >0              %hd x
+->8      leshort         >0              %hd
++>6      leshort         >0              %d x
++>8      leshort         >0              %d
+ #>10    byte            &0x80           color mapped,
+ #>10    byte&0x07       =0x00           2 colors
+ #>10    byte&0x07       =0x01           4 colors
