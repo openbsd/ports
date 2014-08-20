@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_app_qgisapp_cpp,v 1.3 2012/11/01 07:25:36 landry Exp $
+$OpenBSD: patch-src_app_qgisapp_cpp,v 1.4 2014/08/20 08:54:45 landry Exp $
 Fix paths to docs
---- src/app/qgisapp.cpp.orig	Wed Feb 22 21:48:14 2012
-+++ src/app/qgisapp.cpp	Wed Oct 31 11:09:36 2012
-@@ -855,7 +855,7 @@ void QgisApp::createActions()
+--- src/app/qgisapp.cpp.orig	Fri Jun 27 14:00:08 2014
++++ src/app/qgisapp.cpp	Tue Jul  1 08:53:16 2014
+@@ -1247,7 +1247,7 @@ void QgisApp::createActions()
    mActionQgisHomePage->setShortcut( QString() );
  #endif
  
@@ -11,7 +11,7 @@ Fix paths to docs
  
    connect( mActionHelpContents, SIGNAL( triggered() ), this, SLOT( helpContents() ) );
    connect( mActionHelpAPI, SIGNAL( triggered() ), this, SLOT( apiDocumentation() ) );
-@@ -4880,7 +4880,7 @@ void QgisApp::helpContents()
+@@ -7496,7 +7496,7 @@ void QgisApp::helpContents()
  
  void QgisApp::apiDocumentation()
  {
@@ -20,7 +20,7 @@ Fix paths to docs
    {
      openURL( "api/index.html" );
    }
-@@ -4900,7 +4900,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
+@@ -7521,7 +7521,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
    // open help in user browser
    if ( useQgisDocDirectory )
    {

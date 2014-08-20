@@ -1,16 +1,34 @@
-$OpenBSD: patch-src_core_CMakeLists_txt,v 1.5 2011/07/07 20:34:27 landry Exp $
---- src/core/CMakeLists.txt.orig	Sun Jun  5 13:59:48 2011
-+++ src/core/CMakeLists.txt	Mon Jun 27 15:28:09 2011
-@@ -339,9 +339,9 @@ ENDIF(APPLE)
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.6 2014/08/20 08:54:45 landry Exp $
+chunk 1/2: dont call bison to generate the parser, and build the pregenerated file instead
+--- src/core/CMakeLists.txt.orig	Fri Jun 27 14:00:08 2014
++++ src/core/CMakeLists.txt	Mon Aug 18 13:32:26 2014
+@@ -74,6 +74,7 @@ SET(QGIS_CORE_SRCS
+   qgsdistancearea.cpp
+   qgserror.cpp
+   qgsexpression.cpp
++  qgsexpressionparser.cpp
+   qgsexpression_texts.cpp
+   qgsfeature.cpp
+   qgsfeatureiterator.cpp
+@@ -317,7 +318,7 @@ ENDIF (WITH_INTERNAL_SPATIALITE)
+ 
+ ADD_FLEX_FILES(QGIS_CORE_SRCS qgsexpressionlexer.ll)
+ 
+-ADD_BISON_FILES(QGIS_CORE_SRCS qgsexpressionparser.yy)
++#ADD_BISON_FILES(QGIS_CORE_SRCS qgsexpressionparser.yy)
+ 
+ SET(QGIS_CORE_MOC_HDRS
+ 
+@@ -715,9 +716,9 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND)
  TARGET_LINK_LIBRARIES(qgis_core
-   ${QT_QTMAIN_LIBRARY} 
-   ${QT_QTXML_LIBRARY} 
--  ${QT_QTCORE_LIBRARY} 
--  ${QT_QTGUI_LIBRARY} 
--  ${QT_QTNETWORK_LIBRARY} 
+   ${QT_QTMAIN_LIBRARY}
+   ${QT_QTXML_LIBRARY}
+-  ${QT_QTCORE_LIBRARY}
+-  ${QT_QTGUI_LIBRARY}
+-  ${QT_QTNETWORK_LIBRARY}
 +  ${QT_QTCORE_LIBRARY} ${QT_QTCORE_LIB_DEPENDENCIES}
 +  ${QT_QTGUI_LIBRARY} ${QT_QTGUI_LIB_DEPENDENCIES}
 +  ${QT_QTNETWORK_LIBRARY} ${QT_QTNETWORK_LIB_DEPENDENCIES}
-   ${QT_QTSVG_LIBRARY} 
+   ${QT_QTSVG_LIBRARY}
+   ${QT_QTWEBKIT_LIBRARY}
  
-   ${PROJ_LIBRARY}

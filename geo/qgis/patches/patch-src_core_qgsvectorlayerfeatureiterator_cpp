@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_core_qgsvectorlayerfeatureiterator_cpp,v 1.1 2014/08/20 08:54:45 landry Exp $
+
+http://osgeo-org.1560.x6.nabble.com/Compiling-QGIS-2-4-with-GCC-4-4-debian-squeeze-td5146777.html
+http://hub.qgis.org/issues/10762
+
+--- src/core/qgsvectorlayerfeatureiterator.cpp.orig	Tue Jul  1 09:06:45 2014
++++ src/core/qgsvectorlayerfeatureiterator.cpp	Tue Jul  1 09:06:56 2014
+@@ -84,7 +84,7 @@ QgsFeatureIterator QgsVectorLayerFeatureSource::getFea
+ 
+ 
+ QgsVectorLayerFeatureIterator::QgsVectorLayerFeatureIterator( QgsVectorLayerFeatureSource* source, bool ownSource, const QgsFeatureRequest& request )
+-    : QgsAbstractFeatureIteratorFromSource( source, ownSource, request )
++    : QgsAbstractFeatureIteratorFromSource<QgsVectorLayerFeatureSource>( source, ownSource, request )
+     , mEditGeometrySimplifier( 0 )
+ {
+ 

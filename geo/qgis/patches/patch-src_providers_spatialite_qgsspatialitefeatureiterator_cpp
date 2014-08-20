@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_providers_spatialite_qgsspatialitefeatureiterator_cpp,v 1.1 2014/08/20 08:54:45 landry Exp $
+http://hub.qgis.org/issues/10762
+--- src/providers/spatialite/qgsspatialitefeatureiterator.cpp.orig	Tue Jul  1 09:51:31 2014
++++ src/providers/spatialite/qgsspatialitefeatureiterator.cpp	Tue Jul  1 09:51:43 2014
+@@ -24,7 +24,7 @@
+ 
+ 
+ QgsSpatiaLiteFeatureIterator::QgsSpatiaLiteFeatureIterator( QgsSpatiaLiteFeatureSource* source, bool ownSource, const QgsFeatureRequest& request )
+-    : QgsAbstractFeatureIteratorFromSource( source, ownSource, request )
++    : QgsAbstractFeatureIteratorFromSource<QgsSpatiaLiteFeatureSource>( source, ownSource, request )
+     , sqliteStatement( NULL )
+ {
+ 

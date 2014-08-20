@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_providers_mssql_qgsmssqlfeatureiterator_cpp,v 1.1 2014/08/20 08:54:45 landry Exp $
+http://hub.qgis.org/issues/10762
+--- src/providers/mssql/qgsmssqlfeatureiterator.cpp.orig	Tue Jul  1 09:50:31 2014
++++ src/providers/mssql/qgsmssqlfeatureiterator.cpp	Tue Jul  1 09:50:42 2014
+@@ -25,7 +25,7 @@
+ 
+ 
+ QgsMssqlFeatureIterator::QgsMssqlFeatureIterator( QgsMssqlFeatureSource* source, bool ownSource, const QgsFeatureRequest& request )
+-    : QgsAbstractFeatureIteratorFromSource( source, ownSource, request )
++    : QgsAbstractFeatureIteratorFromSource<QgsMssqlFeatureSource>( source, ownSource, request )
+ {
+   mClosed = false;
+   mQuery = NULL;

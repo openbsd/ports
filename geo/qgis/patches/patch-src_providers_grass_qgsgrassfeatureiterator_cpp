@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_providers_grass_qgsgrassfeatureiterator_cpp,v 1.1 2014/08/20 08:54:45 landry Exp $
+
+http://hub.qgis.org/issues/10762
+
+--- src/providers/grass/qgsgrassfeatureiterator.cpp.orig	Tue Jul  1 09:50:01 2014
++++ src/providers/grass/qgsgrassfeatureiterator.cpp	Tue Jul  1 09:50:23 2014
+@@ -67,7 +67,7 @@ QMutex QgsGrassFeatureIterator::sMutex;
+ 
+ 
+ QgsGrassFeatureIterator::QgsGrassFeatureIterator( QgsGrassFeatureSource* source, bool ownSource, const QgsFeatureRequest& request )
+-    : QgsAbstractFeatureIteratorFromSource( source, ownSource, request )
++    : QgsAbstractFeatureIteratorFromSource<QgsGrassFeatureSource>( source, ownSource, request )
+ {
+   sMutex.lock();
+ 

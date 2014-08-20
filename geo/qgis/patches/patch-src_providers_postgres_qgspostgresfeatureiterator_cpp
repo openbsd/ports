@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_providers_postgres_qgspostgresfeatureiterator_cpp,v 1.1 2014/08/20 08:54:45 landry Exp $
+http://hub.qgis.org/issues/10762
+--- src/providers/postgres/qgspostgresfeatureiterator.cpp.orig	Tue Jul  1 09:51:09 2014
++++ src/providers/postgres/qgspostgresfeatureiterator.cpp	Tue Jul  1 09:51:24 2014
+@@ -27,7 +27,7 @@ const int QgsPostgresFeatureIterator::sFeatureQueueSiz
+ 
+ 
+ QgsPostgresFeatureIterator::QgsPostgresFeatureIterator( QgsPostgresFeatureSource* source, bool ownSource, const QgsFeatureRequest& request )
+-    : QgsAbstractFeatureIteratorFromSource( source, ownSource, request )
++    : QgsAbstractFeatureIteratorFromSource<QgsPostgresFeatureSource>( source, ownSource, request )
+     , mFeatureQueueSize( sFeatureQueueSize )
+ {
+   mConn = QgsPostgresConnPool::instance()->acquireConnection( mSource->mConnInfo );

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_providers_delimitedtext_qgsdelimitedtextfeatureiterator_cpp,v 1.1 2014/08/20 08:54:45 landry Exp $
+http://osgeo-org.1560.x6.nabble.com/Compiling-QGIS-2-4-with-GCC-4-4-debian-squeeze-td5146777.html
+http://hub.qgis.org/issues/10762
+--- src/providers/delimitedtext/qgsdelimitedtextfeatureiterator.cpp.orig	Tue Jul  1 09:47:48 2014
++++ src/providers/delimitedtext/qgsdelimitedtextfeatureiterator.cpp	Tue Jul  1 09:48:05 2014
+@@ -26,7 +26,7 @@
+ #include <QTextStream>
+ 
+ QgsDelimitedTextFeatureIterator::QgsDelimitedTextFeatureIterator( QgsDelimitedTextFeatureSource* source, bool ownSource, const QgsFeatureRequest& request )
+-    : QgsAbstractFeatureIteratorFromSource( source, ownSource, request )
++    : QgsAbstractFeatureIteratorFromSource<QgsDelimitedTextFeatureSource>( source, ownSource, request )
+ {
+ 
+   // Determine mode to use based on request...

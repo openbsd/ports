@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_providers_oracle_qgsoraclefeatureiterator_cpp,v 1.1 2014/08/20 08:54:45 landry Exp $
+http://hub.qgis.org/issues/10762
+--- src/providers/oracle/qgsoraclefeatureiterator.cpp.orig	Tue Jul  1 09:50:51 2014
++++ src/providers/oracle/qgsoraclefeatureiterator.cpp	Tue Jul  1 09:51:02 2014
+@@ -23,7 +23,7 @@
+ #include <QObject>
+ 
+ QgsOracleFeatureIterator::QgsOracleFeatureIterator( QgsOracleFeatureSource* source, bool ownSource, const QgsFeatureRequest &request )
+-    : QgsAbstractFeatureIteratorFromSource( source, ownSource, request )
++    : QgsAbstractFeatureIteratorFromSource<QgsOracleFeatureSource>( source, ownSource, request )
+     , mRewind( false )
+ {
+   mConnection = QgsOracleConn::connectDb( mSource->mUri.connectionInfo() );
