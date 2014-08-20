@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_libtracker-extract_tracker-extract-info_h,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+
+From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Mon, 28 Jul 2014 18:23:57 +0200
+Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
+
+--- src/libtracker-extract/tracker-extract-info.h.orig	Mon Feb 24 15:39:06 2014
++++ src/libtracker-extract/tracker-extract-info.h	Wed Aug 20 08:49:29 2014
+@@ -29,6 +29,10 @@
+ #include <libtracker-sparql/tracker-sparql.h>
+ #include <gio/gio.h>
+ 
++#ifdef HAVE_LIBMEDIAART
++#include <libmediaart/mediaart.h>
++#endif
++
+ G_BEGIN_DECLS
+ 
+ typedef struct _TrackerExtractInfo TrackerExtractInfo;
+@@ -49,6 +53,14 @@ TrackerSparqlBuilder *tracker_extract_info_get_metadat
+ const gchar *         tracker_extract_info_get_where_clause       (TrackerExtractInfo *info);
+ void                  tracker_extract_info_set_where_clause       (TrackerExtractInfo *info,
+                                                                    const gchar        *where);
++
++#ifdef HAVE_LIBMEDIAART
++
++MediaArtProcess *     tracker_extract_info_get_media_art_process  (TrackerExtractInfo *info);
++void                  tracker_extract_info_set_media_art_process  (TrackerExtractInfo *info,
++                                                                   MediaArtProcess    *media_art_process);
++
++#endif /* HAVE_LIBMEDIAART */
+ 
+ G_END_DECLS
+ 

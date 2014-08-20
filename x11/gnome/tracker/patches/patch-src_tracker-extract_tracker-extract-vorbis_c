@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-vorbis_c,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+
+From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Mon, 28 Jul 2014 18:23:57 +0200
+Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
+
+--- src/tracker-extract/tracker-extract-vorbis.c.orig	Wed May 28 10:47:09 2014
++++ src/tracker-extract/tracker-extract-vorbis.c	Wed Aug 20 08:49:29 2014
+@@ -514,16 +514,31 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
+ 	}
+ 
+ #ifdef HAVE_LIBMEDIAART
+-	{
+-		gchar *uri = g_file_get_uri (file);
+-		media_art_process (NULL,
+-		                   0,
+-		                   NULL,
+-		                   MEDIA_ART_ALBUM,
+-		                   vd.album_artist ? vd.album_artist : vd.artist,
+-		                   vd.album,
+-		                   uri);
+-		g_free (uri);
++	if ((vd.album_artist || vd.artist) || vd.album) {
++		MediaArtProcess *media_art_process;
++		GError *error = NULL;
++		gboolean success;
++
++		media_art_process = tracker_extract_info_get_media_art_process (info);
++
++		success = media_art_process_file (media_art_process,
++		                                  MEDIA_ART_ALBUM,
++		                                  MEDIA_ART_PROCESS_FLAGS_NONE,
++		                                  file,
++		                                  vd.album_artist ? vd.album_artist : vd.artist,
++		                                  vd.album,
++		                                  &error);
++
++		if (!success || error) {
++			gchar *uri;
++
++			uri = g_file_get_uri (file);
++			g_warning ("Could not process media art for '%s', %s",
++			           uri,
++			           error ? error->message : "No error given");
++			g_free (uri);
++			g_clear_error (&error);
++		}
+ 	}
+ #endif
+ 

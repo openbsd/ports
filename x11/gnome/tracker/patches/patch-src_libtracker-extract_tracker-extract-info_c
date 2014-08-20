@@ -1,0 +1,90 @@
+$OpenBSD: patch-src_libtracker-extract_tracker-extract-info_c,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+
+From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Mon, 28 Jul 2014 18:23:57 +0200
+Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
+
+--- src/libtracker-extract/tracker-extract-info.c.orig	Mon Feb 24 15:39:06 2014
++++ src/libtracker-extract/tracker-extract-info.c	Wed Aug 20 08:49:29 2014
+@@ -19,6 +19,8 @@
+  * Author: Carlos Garnacho <carlos@lanedo.com>
+  */
+ 
++#include "config.h"
++
+ #include "tracker-extract-info.h"
+ 
+ /**
+@@ -46,6 +48,10 @@ struct _TrackerExtractInfo
+ 	gchar *mimetype;
+ 	gchar *graph;
+ 
++#ifdef HAVE_LIBMEDIAART
++	MediaArtProcess *media_art_process;
++#endif
++
+ 	gint ref_count;
+ };
+ 
+@@ -84,6 +90,10 @@ tracker_extract_info_new (GFile       *file,
+ 
+         info->where_clause = NULL;
+ 
++#ifdef HAVE_LIBMEDIAART
++        info->media_art_process = NULL;
++#endif
++
+ 	info->ref_count = 1;
+ 
+ 	return info;
+@@ -294,3 +304,49 @@ tracker_extract_info_set_where_clause (TrackerExtractI
+ 	g_free (info->where_clause);
+ 	info->where_clause = g_strdup (where);
+ }
++
++#ifdef HAVE_LIBMEDIAART
++
++/**
++ * tracker_extract_info_get_media_art_process:
++ * @info: a #TrackerExtractInfo
++ *
++ * Returns the #MediaArtProcess object that can be used to retrieve
++ * and store media art caches found in extracted content.
++ *
++ * Returns: (transfer none): The #MediaArtProcess. This object should
++ * not be unreferenced.
++ *
++ * Since: 1.2
++ **/
++MediaArtProcess *
++tracker_extract_info_get_media_art_process (TrackerExtractInfo *info)
++{
++	g_return_if_fail (info != NULL);
++	return info->media_art_process;
++}
++
++/**
++ * tracker_extract_info_set_media_art_process:
++ * @info: a #TrackerExtractInfo
++ * @media_art_process: a #MediaArtProcess.
++ *
++ * Use @media_art_process for caching and looking up media art.
++ *
++ * Since: 1.2
++ **/
++void
++tracker_extract_info_set_media_art_process (TrackerExtractInfo *info,
++                                            MediaArtProcess    *media_art_process)
++{
++	g_return_if_fail (info != NULL);
++	g_return_if_fail (MEDIA_ART_IS_PROCESS (media_art_process));
++
++	if (info->media_art_process) {
++		g_object_unref (info->media_art_process);
++	}
++
++	info->media_art_process = g_object_ref (media_art_process);
++}
++
++#endif /* HAVE_LIBMEDIAART */

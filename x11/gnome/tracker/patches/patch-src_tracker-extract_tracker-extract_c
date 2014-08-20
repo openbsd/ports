@@ -1,0 +1,85 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract_c,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+
+From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Mon, 28 Jul 2014 18:23:57 +0200
+Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
+
+--- src/tracker-extract/tracker-extract.c.orig	Wed May 28 10:47:09 2014
++++ src/tracker-extract/tracker-extract.c	Wed Aug 20 08:49:29 2014
+@@ -73,6 +73,10 @@ typedef struct {
+ 	gchar *force_module;
+ 
+ 	gint unhandled_count;
++
++#ifdef HAVE_LIBMEDIAART
++	MediaArtProcess *media_art_process;
++#endif
+ } TrackerExtractPrivate;
+ 
+ typedef struct {
+@@ -131,6 +135,17 @@ tracker_extract_init (TrackerExtract *object)
+ 	priv->thread_pool = g_thread_pool_new ((GFunc) get_metadata,
+ 	                                       NULL, 10, TRUE, NULL);
+ 
++#ifdef HAVE_LIBMEDIAART
++	GError *error = NULL;
++
++	priv->media_art_process = media_art_process_new (&error);
++	if (!priv->media_art_process || error) {
++		g_warning ("Could not initialize media art, %s",
++		           error ? error->message : _("No error given"));
++		g_error_free (error);
++	}
++#endif
++
+ 	g_mutex_init (&priv->task_mutex);
+ }
+ 
+@@ -152,6 +167,12 @@ tracker_extract_finalize (GObject *object)
+ 
+ 	g_hash_table_destroy (priv->statistics_data);
+ 
++#ifdef HAVE_LIBMEDIAART
++	if (priv->media_art_process) {
++		g_object_unref (priv->media_art_process);
++	}
++#endif
++
+ 	g_mutex_clear (&priv->task_mutex);
+ 
+ 	G_OBJECT_CLASS (tracker_extract_parent_class)->finalize (object);
+@@ -280,6 +301,10 @@ get_file_metadata (TrackerExtractTask  *task,
+ 	info = tracker_extract_info_new (file, task->mimetype, task->graph);
+ 	g_object_unref (file);
+ 
++#ifdef HAVE_LIBMEDIAART
++	tracker_extract_info_set_media_art_process (info, tracker_extract_get_media_art_process (task->extract));
++#endif
++
+ 	if (task->mimetype && *task->mimetype) {
+ 		/* We know the mime */
+ 		mime_used = g_strdup (task->mimetype);
+@@ -719,6 +744,22 @@ tracker_extract_file (TrackerExtract      *extract,
+ 	/* Task takes a ref and if this fails, we want to unref anyway */
+ 	g_object_unref (res);
+ }
++
++#ifdef HAVE_LIBMEDIAART
++
++MediaArtProcess *
++tracker_extract_get_media_art_process (TrackerExtract *extract)
++{
++	TrackerExtractPrivate *priv;
++
++	g_return_val_if_fail (TRACKER_IS_EXTRACT (extract), NULL);
++
++	priv = TRACKER_EXTRACT_GET_PRIVATE (extract);
++
++	return priv->media_art_process;
++}
++
++#endif
+ 
+ void
+ tracker_extract_get_metadata_by_cmdline (TrackerExtract *object,

@@ -1,0 +1,142 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-gstreamer_c,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+
+From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Mon, 28 Jul 2014 18:23:57 +0200
+Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
+
+--- src/tracker-extract/tracker-extract-gstreamer.c.orig	Mon Jun  9 11:35:48 2014
++++ src/tracker-extract/tracker-extract-gstreamer.c	Wed Aug 20 08:49:29 2014
+@@ -1558,18 +1558,27 @@ discoverer_init_and_run (MetadataExtractor *extractor,
+ 
+ static void
+ tracker_extract_gstreamer (const gchar          *uri,
+-                           TrackerSparqlBuilder *preupdate,
+-                           TrackerSparqlBuilder *postupdate,
+-                           TrackerSparqlBuilder *metadata,
++                           TrackerExtractInfo   *info,
+                            ExtractMime           type,
+                            const gchar          *graph)
+ {
++	TrackerSparqlBuilder *metadata, *preupdate, *postupdate;
+ 	MetadataExtractor *extractor;
+ 	GstBuffer *buffer;
+ 	gchar *cue_sheet;
+ 	gboolean success;
+ 
++#ifdef HAVE_LIBMEDIAART
++	MediaArtProcess *media_art_process;
++#endif
++
+ 	g_return_if_fail (uri);
++
++	graph = tracker_extract_info_get_graph (info);
++	metadata = tracker_extract_info_get_metadata_builder (info);
++	preupdate = tracker_extract_info_get_preupdate_builder (info);
++	postupdate = tracker_extract_info_get_postupdate_builder (info);
++
+ 	g_return_if_fail (metadata);
+ 
+ 	gst_init (NULL, NULL);
+@@ -1579,6 +1588,7 @@ tracker_extract_gstreamer (const gchar          *uri,
+ 	extractor->tagcache = gst_tag_list_new_empty ();
+ 
+ #ifdef HAVE_LIBMEDIAART
++	media_art_process = tracker_extract_info_get_media_art_process (info);
+ 	extractor->media_art_type = MEDIA_ART_NONE;
+ #endif
+ 
+@@ -1608,13 +1618,36 @@ tracker_extract_gstreamer (const gchar          *uri,
+ 
+ #ifdef HAVE_LIBMEDIAART
+ 		if (extractor->media_art_type != MEDIA_ART_NONE) {
+-			media_art_process (extractor->media_art_buffer,
+-			                   extractor->media_art_buffer_size,
+-			                   extractor->media_art_buffer_mime,
+-			                   extractor->media_art_type,
+-			                   extractor->media_art_artist,
+-			                   extractor->media_art_title,
+-			                   uri);
++			GError *error = NULL;
++			gboolean success = TRUE;
++
++			if (extractor->media_art_buffer) {
++				success = media_art_process_buffer (media_art_process,
++				                                    extractor->media_art_type,
++				                                    MEDIA_ART_PROCESS_FLAGS_NONE,
++				                                    tracker_extract_info_get_file (info),
++				                                    extractor->media_art_buffer,
++				                                    extractor->media_art_buffer_size,
++				                                    extractor->media_art_buffer_mime,
++				                                    extractor->media_art_artist,
++				                                    extractor->media_art_title,
++				                                    &error);
++			} else {
++				success = media_art_process_file (media_art_process,
++				                                  extractor->media_art_type,
++				                                  MEDIA_ART_PROCESS_FLAGS_NONE,
++				                                  tracker_extract_info_get_file (info),
++				                                  extractor->media_art_artist,
++				                                  extractor->media_art_title,
++				                                  &error);
++			}
++
++			if (!success || error) {
++				g_warning ("Could not process media art for '%s', %s",
++				           uri,
++				           error ? error->message : "No error given");
++				g_clear_error (&error);
++			}
+ 		}
+ #endif
+ 	}
+@@ -1646,40 +1679,35 @@ tracker_extract_gstreamer (const gchar          *uri,
+ G_MODULE_EXPORT gboolean
+ tracker_extract_get_metadata (TrackerExtractInfo *info)
+ {
+-	TrackerSparqlBuilder *metadata, *preupdate, *postupdate;
+-	const gchar *mimetype;
+ 	GFile *file;
+ 	gchar *uri;
+ 	const gchar *graph;
++	const gchar *mimetype;
+ 
++	file = tracker_extract_info_get_file (info);
++	uri = g_file_get_uri (file);
+ 	graph = tracker_extract_info_get_graph (info);
+-	metadata = tracker_extract_info_get_metadata_builder (info);
+-	preupdate = tracker_extract_info_get_preupdate_builder (info);
+-	postupdate = tracker_extract_info_get_postupdate_builder (info);
+ 	mimetype = tracker_extract_info_get_mimetype (info);
+ 
+-	file = tracker_extract_info_get_file (info);
+-	uri = g_file_get_uri (file);
+-
+ #if defined(GSTREAMER_BACKEND_GUPNP_DLNA)
+ 	if (g_str_has_prefix (mimetype, "dlna/")) {
+-		tracker_extract_gstreamer (uri, preupdate, postupdate, metadata, EXTRACT_MIME_GUESS, graph);
++		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_GUESS, graph);
+ 	} else
+ #endif /* GSTREAMER_BACKEND_GUPNP_DLNA */
+ 
+ 	if (strcmp (mimetype, "image/svg+xml") == 0) {
+-		tracker_extract_gstreamer (uri, preupdate, postupdate, metadata, EXTRACT_MIME_SVG, graph);
++		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_SVG, graph);
+ 	} else if (strcmp (mimetype, "video/3gpp") == 0 ||
+ 	           strcmp (mimetype, "video/mp4") == 0 ||
+ 	           strcmp (mimetype, "video/x-ms-asf") == 0 ||
+ 	           strcmp (mimetype, "application/vnd.rn-realmedia") == 0) {
+-		tracker_extract_gstreamer (uri, preupdate, postupdate, metadata, EXTRACT_MIME_GUESS, graph);
++		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_GUESS, graph);
+ 	} else if (g_str_has_prefix (mimetype, "audio/")) {
+-		tracker_extract_gstreamer (uri, preupdate, postupdate, metadata, EXTRACT_MIME_AUDIO, graph);
++		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_AUDIO, graph);
+ 	} else if (g_str_has_prefix (mimetype, "video/")) {
+-		tracker_extract_gstreamer (uri, preupdate, postupdate, metadata, EXTRACT_MIME_VIDEO, graph);
++		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_VIDEO, graph);
+ 	} else if (g_str_has_prefix (mimetype, "image/")) {
+-		tracker_extract_gstreamer (uri, preupdate, postupdate, metadata, EXTRACT_MIME_IMAGE, graph);
++		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_IMAGE, graph);
+ 	} else {
+ 		g_free (uri);
+ 		return FALSE;

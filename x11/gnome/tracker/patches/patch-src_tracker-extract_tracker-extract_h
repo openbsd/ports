@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract_h,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+
+From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Mon, 28 Jul 2014 18:23:57 +0200
+Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
+
+--- src/tracker-extract/tracker-extract.h.orig	Wed May 28 10:47:09 2014
++++ src/tracker-extract/tracker-extract.h	Wed Aug 20 08:49:29 2014
+@@ -60,6 +60,11 @@ void            tracker_extract_file                  
+                                                          GAsyncReadyCallback     cb,
+                                                          gpointer                user_data);
+ 
++#ifdef HAVE_LIBMEDIAART
++MediaArtProcess *
++                tracker_extract_get_media_art_process   (TrackerExtract         *extract);
++#endif
++
+ void            tracker_extract_dbus_start              (TrackerExtract         *extract);
+ void            tracker_extract_dbus_stop               (TrackerExtract         *extract);
+ 

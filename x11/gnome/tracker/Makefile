@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2014/07/10 14:18:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2014/08/20 07:39:32 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -9,6 +9,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		1.0.2
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -62,11 +63,11 @@ LIB_DEPENDS=		audio/libcue \
 			misc/libosinfo \
 			multimedia/gstreamer1/plugins-base \
 			print/poppler \
-			sysutils/e2fsprogs>=1.42.7 \
+			sysutils/e2fsprogs \
 			sysutils/upower \
 			textproc/exempi \
 			textproc/icu4c \
-			x11/gnome/libmediaart \
+			x11/gnome/libmediaart>=0.6.0 \
 			x11/gnome/totem-pl-parser
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
@@ -85,6 +86,10 @@ MODPY_RUNDEP=		No
 
 MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
 			utils/data-generators/cc/generate
+
+# XXX libmediaart >=0.6.0; remove at next major upgrade
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ARGS=		--disable-miner-thunderbird \
 			--disable-miner-firefox \
