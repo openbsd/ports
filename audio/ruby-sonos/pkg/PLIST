@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/02/04 16:23:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/08/20 19:26:55 jasper Exp $
 ${GEM_BIN}/sonos${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -29,6 +29,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/endpoint/content_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/endpoint/device.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/endpoint/rendering.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/endpoint/upnp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sonos/features/
+${GEM_LIB}/gems/${DISTNAME}/lib/sonos/features.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sonos/features/voiceover.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/system.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/topology_node.rb
