@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Oct  6 15:43:15 2007
-+++ Makefile	Fri Nov 16 23:48:55 2007
+--- Makefile.orig	Thu May 15 00:19:43 2014
++++ Makefile	Sun Aug 17 20:09:15 2014
 @@ -1,9 +1,8 @@
 -PREFIX = /usr/local
  BINDIR = $(PREFIX)/bin
@@ -12,15 +12,15 @@
  
  # To compile with Unix CC:
  
-@@ -13,7 +12,6 @@ DISK_CACHE_ROOT = /var/cache/polipo
+@@ -12,7 +11,6 @@ DISK_CACHE_ROOT = /var/cache/polipo
+ # To compile with GCC:
  
  # CC = gcc
- # CDEBUGFLAGS = -Os -g -Wall -std=gnu99
--CDEBUGFLAGS = -Os -g -Wall
- # CDEBUGFLAGS = -Os -Wall
- # CDEBUGFLAGS = -g -Wall
+-CDEBUGFLAGS = -Os -g -Wall -fno-strict-aliasing
  
-@@ -63,7 +61,7 @@ FILE_DEFINES = -DLOCAL_ROOT=\"$(LOCAL_ROOT)/\" \
+ # To compile on a pure POSIX system:
+ 
+@@ -60,7 +58,7 @@ FILE_DEFINES = -DLOCAL_ROOT=\"$(LOCAL_ROOT)/\" \
  
  DEFINES = $(FILE_DEFINES) $(PLATFORM_DEFINES)
  
@@ -29,7 +29,7 @@
  
  SRCS = util.c event.c io.c chunk.c atom.c object.c log.c diskcache.c main.c \
         config.c local.c http.c client.c server.c auth.c tunnel.c \
-@@ -89,20 +87,19 @@ all: polipo$(EXE) polipo.info html/index.html localind
+@@ -86,20 +84,19 @@ all: polipo$(EXE) polipo.info html/index.html localind
  install: install.binary install.man
  
  install.binary: all

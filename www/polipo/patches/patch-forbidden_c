@@ -1,7 +1,7 @@
-$OpenBSD: patch-forbidden_c,v 1.1 2009/03/24 16:49:08 naddy Exp $
---- forbidden.c.orig	Tue Mar 24 09:43:44 2009
-+++ forbidden.c	Tue Mar 24 09:44:02 2009
-@@ -190,6 +190,7 @@ parseDomainFile(AtomPtr file,
+$OpenBSD: patch-forbidden_c,v 1.2 2014/08/20 21:15:23 kili Exp $
+--- forbidden.c.orig	Thu May 15 00:19:43 2014
++++ forbidden.c	Sun Aug 17 20:08:12 2014
+@@ -199,6 +199,7 @@ parseDomainFile(AtomPtr file,
                  DomainPtr **domains_return, regex_t **regex_return)
  {
      struct stat ss;
@@ -9,7 +9,7 @@ $OpenBSD: patch-forbidden_c,v 1.1 2009/03/24 16:49:08 naddy Exp $
      int rc;
  
      if(*domains_return) {
-@@ -263,8 +264,6 @@ parseDomainFile(AtomPtr file,
+@@ -272,8 +273,6 @@ parseDomainFile(AtomPtr file,
          free(domains);
          domains = NULL;
      }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/11 20:19:52 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/08/20 21:15:23 kili Exp $
 @newgroup _polipo:548
 @newuser _polipo:548:_polipo:daemon:Polipo Account:/nonexistent:/sbin/nologin
 @bin bin/polipo
@@ -8,7 +8,6 @@ share/doc/polipo/
 share/doc/polipo/doc/
 share/doc/polipo/doc/Access-control.html
 share/doc/polipo/doc/Allowed-ports.html
-share/doc/polipo/doc/Apache.html
 share/doc/polipo/doc/Asynchronous-writing.html
 share/doc/polipo/doc/Background.html
 share/doc/polipo/doc/Browser-configuration.html
@@ -27,12 +26,12 @@ share/doc/polipo/doc/Daemon.html
 share/doc/polipo/doc/Disk-cache.html
 share/doc/polipo/doc/Disk-format.html
 share/doc/polipo/doc/External-redirectors.html
+share/doc/polipo/doc/Forbidden-Tunnels.html
 share/doc/polipo/doc/Forbidden.html
 share/doc/polipo/doc/HTTP-parent-proxies.html
 share/doc/polipo/doc/HTTP-tuning.html
-share/doc/polipo/doc/Harvest-and-Squid.html
+share/doc/polipo/doc/Intermediate-proxies.html
 share/doc/polipo/doc/Internal-forbidden-list.html
-share/doc/polipo/doc/Junkbuster.html
 share/doc/polipo/doc/Latency-and-throughput.html
 share/doc/polipo/doc/Limiting-chunk-usage.html
 share/doc/polipo/doc/Limiting-memory-usage.html
@@ -47,8 +46,6 @@ share/doc/polipo/doc/Network-traffic.html
 share/doc/polipo/doc/Network.html
 share/doc/polipo/doc/OS-usage-limits.html
 share/doc/polipo/doc/Offline-browsing.html
-share/doc/polipo/doc/Oops.html
-share/doc/polipo/doc/Other-HTTP-proxies.html
 share/doc/polipo/doc/PMM.html
 share/doc/polipo/doc/POST-and-PUT.html
 share/doc/polipo/doc/Parent-proxies.html
@@ -57,7 +54,6 @@ share/doc/polipo/doc/Persistent-connections.html
 share/doc/polipo/doc/Pipelining.html
 share/doc/polipo/doc/Polipo-Invocation.html
 share/doc/polipo/doc/Poor-Mans-Multiplexing.html
-share/doc/polipo/doc/Privoxy.html
 share/doc/polipo/doc/Proxies-and-caches.html
 share/doc/polipo/doc/Purging.html
 share/doc/polipo/doc/Running.html
@@ -72,7 +68,6 @@ share/doc/polipo/doc/Tuning-validation.html
 share/doc/polipo/doc/Tunnelling-connections.html
 share/doc/polipo/doc/Tweaking-validation.html
 share/doc/polipo/doc/Variable-index.html
-share/doc/polipo/doc/WWWOFFLE.html
 share/doc/polipo/doc/Web-interface.html
 share/doc/polipo/doc/index.html
 share/doc/polipo/index.html

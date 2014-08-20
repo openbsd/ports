@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 23:51:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/20 21:15:23 kili Exp $
 
 COMMENT=	HTTP caching proxy
 
-DISTNAME=	polipo-1.0.4.1
+DISTNAME=	polipo-1.1.1
 CATEGORIES=	www
-REVISION=	6
 
-HOMEPAGE=	http://www.pps.jussieu.fr/~jch/software/polipo/
+HOMEPAGE=	http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/
 
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
-MASTER_SITES=	http://freehaven.net/~chrisd/polipo/
+MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/polipo/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
