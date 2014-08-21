@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/15 22:23:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/08/21 23:15:57 sthen Exp $
 @bin bin/eopenssl
 include/eopenssl/
 include/eopenssl/openssl/
@@ -958,6 +958,7 @@ lib/eopenssl/man/man3/
 @man lib/eopenssl/man/man3/SSL_CTX_set_session_id_context.3
 @man lib/eopenssl/man/man3/SSL_CTX_set_ssl_version.3
 @man lib/eopenssl/man/man3/SSL_CTX_set_timeout.3
+@man lib/eopenssl/man/man3/SSL_CTX_set_tlsext_ticket_key_cb.3
 @man lib/eopenssl/man/man3/SSL_CTX_set_tmp_dh.3
 @man lib/eopenssl/man/man3/SSL_CTX_set_tmp_dh_callback.3
 @man lib/eopenssl/man/man3/SSL_CTX_set_tmp_rsa.3
