@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/08/21 00:49:16 bentley Exp $
 
 COMMENT =		visual novel engine
 
-V =			6.16.5
-MODPY_EGG_VERSION =	${V}.525
+V =			6.17.7
+MODPY_EGG_VERSION =	${V}.521
 DISTNAME =		renpy-${V}-source
 PKGNAME =		${DISTNAME:S/-source//}
 
@@ -21,7 +21,8 @@ MASTER_SITES =		http://www.renpy.org/dl/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
-BUILD_DEPENDS =		devel/pygame
+BUILD_DEPENDS =		devel/pygame \
+			lang/cython
 RUN_DEPENDS =		devel/pygame \
 			x11/gnome/zenity
 LIB_DEPENDS =		devel/fribidi \
