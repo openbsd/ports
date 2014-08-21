@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.117 2014/08/21 21:59:55 kspillner Exp $
+# $OpenBSD: OpenBSD,v 1.118 2014/08/21 22:31:49 millert Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -33,7 +33,7 @@
 39.47488	-6.371598	"juanfra"	# Juan Francisco Cantero Hurtado
 39.5565		-77.0300	"jdixon"	# Jason Dixon
 39.66138	-104.98088	"guenther"	# Philip Guenther
-40.033779	-105.250051	"millert"	# Todd C. Miller
+40.058746	-105.272934	"millert"	# Todd C. Miller
 40.115		-88.02		"drahn"		# Dale Rahn
 40.4		-79.7		"jaredy"	# Jared Yanovich
 40.552889	-8.333124	"rui"		# Rui Reis
