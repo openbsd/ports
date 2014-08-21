@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/09 09:51:50 jung Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/21 08:04:16 armani Exp $
 
 COMMENT=		simple tar implementation
 
 DISTNAME=		sltar-0.5
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		archivers
 
-HOMEPAGE=		https://github.com/Gottox/sltar	
+HOMEPAGE=		https://github.com/Gottox/sltar
 
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
