@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2014/08/14 07:47:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2014/08/21 07:30:25 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.57
+DISTNAME=	cups-filters-1.0.58
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0

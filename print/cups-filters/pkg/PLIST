@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/08/14 06:52:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/08/21 07:30:25 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -7,6 +7,7 @@ bin/foomatic-rip
 @bin bin/ttfread
 include/cupsfilters/
 include/cupsfilters/colord.h
+include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
 include/cupsfilters/raster.h
