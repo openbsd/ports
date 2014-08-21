@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/21 17:07:56 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/21 21:03:10 jcs Exp $
 
 COMMENT=	utility to automatically hide X11 cursor when typing
 
-V=		1.2
+V=		1.3
 DISTNAME=	v${V}
 DIST_SUBDIR=	xbanish
 PKGNAME=	xbanish-${V}
