@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_names-net_c,v 1.2 2012/07/11 18:17:52 gonzalo Exp $
---- lib/names-net.c.orig	Fri Jan  7 18:04:28 2011
-+++ lib/names-net.c	Fri Jun 29 10:19:48 2012
-@@ -194,7 +194,7 @@ char
+$OpenBSD: patch-lib_names-net_c,v 1.3 2014/08/21 08:02:56 dcoppa Exp $
+--- lib/names-net.c.orig	Mon Apr  1 21:25:47 2013
++++ lib/names-net.c	Thu Aug 14 07:52:15 2014
+@@ -195,7 +195,7 @@ char
        resolver_inited = 1;
        res_init();
      }
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_names-net_c,v 1.2 2012/07/11 18:17:52 gonzalo Exp $
    if (res < 0)
      {
        a->debug("\tfailed, h_errno=%d\n", h_errno);
-@@ -208,7 +208,7 @@ char
+@@ -209,7 +209,7 @@ char
    dns_init_section(&ds, DNS_SEC_ANSWER);
    while (dns_parse_rr(&ds) > 0)
      {
