@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/03/27 12:14:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/08/21 08:18:58 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -36,7 +36,6 @@ lib/girepository-1.0/GtkSource-${MAJOR_VERSION}.typelib
 lib/libgtksourceview-${MAJOR_VERSION}.a
 lib/libgtksourceview-${MAJOR_VERSION}.la
 @lib lib/libgtksourceview-${MAJOR_VERSION}.so.${LIBgtksourceview-3.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gtksourceview-${MAJOR_VERSION}.pc
 share/gir-1.0/
 share/gir-1.0/GtkSource-${MAJOR_VERSION}.gir
