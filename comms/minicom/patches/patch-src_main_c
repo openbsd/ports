@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_c,v 1.4 2013/03/27 12:14:28 gonzalo Exp $
---- src/main.c.orig	Sat Feb 11 10:24:25 2012
-+++ src/main.c	Wed Dec 12 09:06:00 2012
+$OpenBSD: patch-src_main_c,v 1.5 2014/08/21 08:23:00 jasper Exp $
+--- src/main.c.orig	Thu Jun 20 11:09:06 2013
++++ src/main.c	Mon Aug 18 10:05:31 2014
 @@ -23,6 +23,9 @@
  #include <config.h>
  #endif
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_main_c,v 1.4 2013/03/27 12:14:28 gonzalo Exp $
  #include "port.h"
  #include "minicom.h"
  #include "intl.h"
-@@ -304,6 +307,17 @@ nolock:
+@@ -332,6 +335,17 @@ nolock:
  
    /* Set CLOCAL mode */
    m_nohang(portfd);

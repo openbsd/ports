@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2014/01/14 00:38:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2014/08/21 08:23:00 jasper Exp $
 
 COMMENT=		MS-DOS Telix-like serial communication program
 
-DISTNAME=		minicom-2.6.2
-REVISION=		0
+DISTNAME=		minicom-2.7
 CATEGORIES=		comms
 MASTER_SITES=		https://www.alioth.debian.org/frs/download.php/latestfile/3/
 
@@ -18,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c ncurses
 
-COPTS+=			-DHAS_EUID
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"

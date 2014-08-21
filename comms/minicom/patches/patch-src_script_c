@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_script_c,v 1.1 2014/08/21 08:23:00 jasper Exp $
+--- src/script.c.orig	Mon Aug 18 10:06:36 2014
++++ src/script.c	Mon Aug 18 10:07:47 2014
+@@ -32,6 +32,10 @@
+ #include <config.h>
+ #endif
+ 
++#ifdef HAVE_SYS_WAIT_H
++#include <sys/wait.h>
++#endif
++
+ #include <stdarg.h>
+ 
+ #include "port.h"
