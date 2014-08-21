@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-graphics,v 1.1 2014/08/21 20:54:04 chrisz Exp $
+%%native%%
+%%SHARED%%
+lib/ocaml/graphics.cma
+lib/ocaml/graphics.cmi
+lib/ocaml/graphics.mli
+lib/ocaml/graphicsX11.cmi
+lib/ocaml/graphicsX11.mli
+lib/ocaml/libgraphics.a

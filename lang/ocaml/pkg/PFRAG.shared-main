@@ -1,10 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2012/11/30 19:38:09 chrisz Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2014/08/21 20:54:04 chrisz Exp $
 lib/ocaml/libcamlrun_shared.so
 lib/ocaml/stublibs/
 lib/ocaml/stublibs/dllbigarray.so
 lib/ocaml/stublibs/dllcamlstr.so
-lib/ocaml/stublibs/dllgraphics.so
-lib/ocaml/stublibs/dlllabltk.so
 lib/ocaml/stublibs/dllnums.so
 lib/ocaml/stublibs/dllthreads.so
 lib/ocaml/stublibs/dllunix.so

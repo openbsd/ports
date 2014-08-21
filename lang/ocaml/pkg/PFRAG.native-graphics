@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.native-graphics,v 1.1 2014/08/21 20:54:04 chrisz Exp $
+%%dynlink%%
+lib/ocaml/graphics.a
+lib/ocaml/graphics.cmx
+lib/ocaml/graphics.cmxa
+lib/ocaml/graphicsX11.cmx

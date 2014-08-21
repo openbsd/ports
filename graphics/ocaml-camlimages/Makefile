@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/10 18:43:38 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2014/08/21 20:54:04 chrisz Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
@@ -27,6 +27,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/tiff
 BUILD_DEPENDS=	devel/omake \
 		sysutils/findlib \
+		lang/ocaml,-graphics \
 		print/ghostscript/gnu
 
 .include <bsd.port.arch.mk>

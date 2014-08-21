@@ -1,19 +1,27 @@
-# $OpenBSD: Makefile,v 1.63 2013/11/25 14:40:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.64 2014/08/21 20:54:04 chrisz Exp $
 
 NOT_FOR_ARCHS=	hppa
 
-COMMENT =	ML language based on complete class-based objective system
+MULTI_PACKAGES = -camlp4 -graphics -labltk -main
+
+COMMENT-main =	   ML language with complete class-based objective system
+COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
+COMMENT-camlp4 =   OCaml Preprocessor and Pretty-Printer
+COMMENT-labltk =   OCaml TK bindings
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
 # Don't forget to bump version in ocaml.port.mk, too!
 VERSION=4.01.0
+REVISION = 0
 
-DISTNAME =	ocaml-${VERSION}
+PKGNAME-main =		ocaml-${VERSION}
+PKGNAME-graphics =	ocaml-graphics-${VERSION}
+PKGNAME-camlp4 =	ocaml-camlp4-${VERSION}
+PKGNAME-labltk =	ocaml-labltk-${VERSION}
 
-PKGNAME =	ocaml-${VERSION}
 # OCaml has no binary compatibility between releases.
-PKGSPEC =	ocaml-=${VERSION}
+PKGSPEC-main =	ocaml-=${VERSION}
 
 CATEGORIES=	lang
 # Remove last version component ocaml-X.XX.X -> ocaml-X.XX
@@ -21,6 +29,7 @@ BASENAME =	${DISTNAME:C/\.[^.]*$//}
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
+DISTNAME =	ocaml-${VERSION}
 
 HOMEPAGE=	http://www.ocaml.org/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -45,9 +54,14 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS +=	${MODTK_BUILD_DEPENDS} \
 			devel/gdb
-RUN_DEPENDS +=		${MODTK_RUN_DEPENDS}
-LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
-WANTLIB =		X11 c curses iberty m pthread z ${MODTK_WANTLIB}
+RUN_DEPENDS-camlp4 +=	lang/ocaml
+RUN_DEPENDS-graphics +=	lang/ocaml
+RUN_DEPENDS-labltk +=	lang/ocaml ${MODTK_RUN_DEPENDS}
+LIB_DEPENDS-labltk +=	${MODTK_LIB_DEPENDS}
+WANTLIB-main =		c curses m pthread
+WANTLIB-camlp4 =	c m
+WANTLIB-graphics =	X11
+WANTLIB-labltk =	X11 ${MODTK_WANTLIB}
 
 .include <bsd.port.arch.mk>
 

@@ -1,0 +1,4 @@
+The graphics library provides a set of basic portable
+drawing primitives.
+Drawing takes place in a separate window that is created
+when Graphics.open_graph is called.

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.dynlink-native-graphics,v 1.1 2014/08/21 20:54:04 chrisz Exp $
+@bin lib/ocaml/graphics.cmxs
