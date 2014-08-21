@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.116 2014/08/14 19:55:18 bcallah Exp $
+# $OpenBSD: OpenBSD,v 1.117 2014/08/21 21:59:55 kspillner Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -40,6 +40,7 @@
 40.721300	-73.858770	"ray"		# Ray Lai
 41.2839		-81.2242	"bmercer"	# Brandon Mercer
 41.92		-87.70		"jcs"		# joshua stein
+42.2325		-88.1178	"kspillner"	# Kent R. Spillner
 42.2731		-83.782		"aaron"		# Aaron Campbell
 42.436206	-83.896133	"jturner"	# James Turner
 42.49538	-82.89954	"nick"		# Nick Holland
