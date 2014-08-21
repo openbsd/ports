@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/02/07 09:04:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2014/08/21 12:37:27 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -48,7 +48,6 @@ lib/libgnutls.la
 lib/libgnutlsxx.a
 lib/libgnutlsxx.la
 @lib lib/libgnutlsxx.so.${LIBgnutlsxx_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gnutls.pc
 @man man/man1/certtool.1
 @man man/man1/gnutls-cli-debug.1

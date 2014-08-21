@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_x509_rfc2818_hostname_c,v 1.1 2014/08/21 12:37:27 ajacoutot Exp $
+
+rfc2818_hostname.c:107: error: storage size of 'ipv6' isn't known
+
+--- lib/x509/rfc2818_hostname.c.orig	Thu Aug 21 13:51:07 2014
++++ lib/x509/rfc2818_hostname.c	Thu Aug 21 13:49:22 2014
+@@ -25,6 +25,7 @@
+ #include <common.h>
+ #include <gnutls_errors.h>
+ #include <arpa/inet.h>
++#include <netinet/in.h>
+ 
+ static int
+ check_ip(gnutls_x509_crt_t cert, const void *ip, unsigned ip_size)
