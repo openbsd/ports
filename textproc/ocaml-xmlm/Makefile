@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/22 22:21:53 kili Exp $
 
 COMMENT =	streaming XML input/output for OCaml
 CATEGORIES =	textproc
@@ -6,6 +6,7 @@ CATEGORIES =	textproc
 V =		1.1.1
 DISTNAME =	xmlm-${V}
 PKGNAME =	ocaml-${DISTNAME}
+REVISION =	0
 EXTRACT_SUFX =	.tbz
 MASTER_SITES =	http://erratique.ch/software/xmlm/releases/
 

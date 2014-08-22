@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/07 21:31:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/22 22:21:53 kili Exp $
 
 COMMENT=		extended standard library for OCaml
 
 DISTNAME=		extlib-1.5.3
-REVISION=		2
+REVISION=		3
 PKGNAME=		ocaml-${DISTNAME}
 CATEGORIES=		devel
 

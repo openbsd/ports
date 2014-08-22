@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/05 14:38:18 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/22 22:21:53 kili Exp $
 
 COMMENT=		Erlang-style bitstrings for OCaml
 
 DISTNAME=		ocaml-bitstring-2.0.4
+
+REVISION=		0
 
 CATEGORIES=		devel
 
