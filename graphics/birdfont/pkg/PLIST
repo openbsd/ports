@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/08/17 12:04:42 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/08/22 03:15:46 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-export
 @bin bin/birdfont-import
@@ -78,6 +78,7 @@ share/birdfont/icons/show_all_line_handles.png
 share/birdfont/icons/show_background.png
 share/birdfont/icons/show_xheight_helplines.png
 share/birdfont/icons/side_bearings.png
+share/birdfont/icons/skew.png
 share/birdfont/icons/slow_test.png
 share/birdfont/icons/spin_button.png
 share/birdfont/icons/symmetric.png

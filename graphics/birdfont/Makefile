@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2014/08/17 12:04:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/22 03:15:46 bcallah Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-0.46
+DISTNAME =	birdfont-0.47
 CATEGORIES =	graphics print
 
-SHARED_LIBS +=	birdfont			3.0 # 3.0
+SHARED_LIBS +=	birdfont			3.1 # 3.1
 
 HOMEPAGE =	http://birdfont.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -17,7 +17,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c
 WANTLIB += cairo cairo-gobject expat fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-3 harfbuzz javascriptcoregtk-3.0 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs soup-2.4 webkitgtk-3.0 xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
@@ -32,6 +32,7 @@ BUILD_DEPENDS =	devel/py-doit>=0.24 \
 		lang/vala
 
 LIB_DEPENDS =	devel/libgee \
+		devel/libnotify \
 		www/webkit,gtk3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
