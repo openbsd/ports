@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c,v 1.17 2014/08/20 07:39:32 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c,v 1.18 2014/08/22 12:39:41 ajacoutot Exp $
 
 From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
 From: Martyn Russell <martyn@lanedo.com>
 Date: Mon, 28 Jul 2014 18:23:57 +0200
 Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
 
---- src/tracker-extract/tracker-extract-mp3.c.orig	Tue Jun 10 11:37:16 2014
-+++ src/tracker-extract/tracker-extract-mp3.c	Wed Aug 20 08:49:29 2014
-@@ -2490,13 +2490,41 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
+--- src/tracker-extract/tracker-extract-mp3.c.orig	Fri Aug 22 12:55:37 2014
++++ src/tracker-extract/tracker-extract-mp3.c	Fri Aug 22 14:04:18 2014
+@@ -2647,13 +2647,41 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
  	mp3_parse (buffer, buffer_size, audio_offset, uri, metadata, &md);
  
  #ifdef HAVE_LIBMEDIAART

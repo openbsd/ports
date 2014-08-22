@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-gstreamer_c,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-extract_tracker-extract-gstreamer_c,v 1.2 2014/08/22 12:39:41 ajacoutot Exp $
 
 From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
 From: Martyn Russell <martyn@lanedo.com>
 Date: Mon, 28 Jul 2014 18:23:57 +0200
 Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
 
---- src/tracker-extract/tracker-extract-gstreamer.c.orig	Mon Jun  9 11:35:48 2014
-+++ src/tracker-extract/tracker-extract-gstreamer.c	Wed Aug 20 08:49:29 2014
+--- src/tracker-extract/tracker-extract-gstreamer.c.orig	Fri Aug 22 12:55:37 2014
++++ src/tracker-extract/tracker-extract-gstreamer.c	Fri Aug 22 14:26:58 2014
 @@ -1558,18 +1558,27 @@ discoverer_init_and_run (MetadataExtractor *extractor,
  
  static void
@@ -90,7 +90,7 @@ Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
  		}
  #endif
  	}
-@@ -1646,40 +1679,35 @@ tracker_extract_gstreamer (const gchar          *uri,
+@@ -1646,41 +1679,36 @@ tracker_extract_gstreamer (const gchar          *uri,
  G_MODULE_EXPORT gboolean
  tracker_extract_get_metadata (TrackerExtractInfo *info)
  {
@@ -124,7 +124,8 @@ Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
 +		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_SVG, graph);
  	} else if (strcmp (mimetype, "video/3gpp") == 0 ||
  	           strcmp (mimetype, "video/mp4") == 0 ||
- 	           strcmp (mimetype, "video/x-ms-asf") == 0 ||
+                    strcmp (mimetype, "video/x-ms-asf") == 0 ||
+                    strcmp (mimetype, "application/vnd.ms-asf") == 0 ||
  	           strcmp (mimetype, "application/vnd.rn-realmedia") == 0) {
 -		tracker_extract_gstreamer (uri, preupdate, postupdate, metadata, EXTRACT_MIME_GUESS, graph);
 +		tracker_extract_gstreamer (uri, info, EXTRACT_MIME_GUESS, graph);

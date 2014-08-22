@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_tracker-extract_tracker-main_c,v 1.1 2014/08/20 07:39:32 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-extract_tracker-main_c,v 1.2 2014/08/22 12:39:41 ajacoutot Exp $
 
 From a41cef78eb6d5c0a4728f08b4d4bd8f0a8f6ddfb Mon Sep 17 00:00:00 2001
 From: Martyn Russell <martyn@lanedo.com>
 Date: Mon, 28 Jul 2014 18:23:57 +0200
 Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
 
---- src/tracker-extract/tracker-main.c.orig	Wed May 28 10:47:09 2014
-+++ src/tracker-extract/tracker-main.c	Wed Aug 20 08:49:29 2014
-@@ -268,12 +268,6 @@ run_standalone (TrackerConfig *config)
+--- src/tracker-extract/tracker-main.c.orig	Fri Aug 22 12:55:37 2014
++++ src/tracker-extract/tracker-main.c	Fri Aug 22 14:04:18 2014
+@@ -262,12 +262,6 @@ run_standalone (TrackerConfig *config)
  
  	tracker_locale_init ();
  
@@ -20,7 +20,7 @@ Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
  	/* This makes sure we don't steal all the system's resources */
  	initialize_priority_and_scheduling (tracker_config_get_sched_idle (config),
  	                                    tracker_db_manager_get_first_index_done () == FALSE);
-@@ -286,9 +280,6 @@ run_standalone (TrackerConfig *config)
+@@ -280,9 +274,6 @@ run_standalone (TrackerConfig *config)
  	if (!object) {
  		g_object_unref (file);
  		g_free (uri);
@@ -30,7 +30,7 @@ Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
  		tracker_locale_shutdown ();
  		return EXIT_FAILURE;
  	}
-@@ -301,9 +292,6 @@ run_standalone (TrackerConfig *config)
+@@ -295,9 +286,6 @@ run_standalone (TrackerConfig *config)
  	g_object_unref (file);
  	g_free (uri);
  
@@ -40,7 +40,7 @@ Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
  	tracker_locale_shutdown ();
  
  	return EXIT_SUCCESS;
-@@ -410,12 +398,6 @@ main (int argc, char *argv[])
+@@ -404,12 +392,6 @@ main (int argc, char *argv[])
  
  	tracker_locale_init ();
  
@@ -53,7 +53,7 @@ Subject: tracker-extract: Depend on libmediaart 0.5.0 when enabled
  	controller = tracker_extract_controller_new (decorator);
  	tracker_miner_start (TRACKER_MINER (decorator));
  
-@@ -430,9 +412,6 @@ main (int argc, char *argv[])
+@@ -424,9 +406,6 @@ main (int argc, char *argv[])
  	tracker_miner_stop (TRACKER_MINER (decorator));
  
  	/* Shutdown subsystems */

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2014/07/10 14:18:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2014/08/22 12:39:41 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -275,6 +275,7 @@ share/tracker/extract-rules/11-iso.rule
 share/tracker/extract-rules/11-msoffice-xml.rule
 share/tracker/extract-rules/15-gstreamer-guess.rule
 share/tracker/extract-rules/15-playlist.rule
+share/tracker/extract-rules/15-source-code.rule
 share/tracker/extract-rules/90-gstreamer-audio-generic.rule
 share/tracker/extract-rules/90-gstreamer-image-generic.rule
 share/tracker/extract-rules/90-gstreamer-video-generic.rule
