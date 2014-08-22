@@ -107,7 +107,7 @@ def get_disabled():
 
 def get_enabled():
     '''
-    Return what services are set to run on boot
+    Return what services are set to run on boot.
 
     CLI Example:
 
@@ -134,7 +134,7 @@ def start(name):
 
         salt '*' service.start <service name>
     '''
-    cmd = '{0} start {1}'.format(_cmd(), name)
+    cmd = '/etc/rc.d/{0} -f start'.format(name)
     return not __salt__['cmd.retcode'](cmd)
 
 
@@ -162,7 +162,7 @@ def restart(name):
 
         salt '*' service.restart <service name>
     '''
-    cmd = '{0} restart {1}'.format(_cmd(), name)
+    cmd = '/etc/rc.d/{0} -f restart'.format(name)
     return not __salt__['cmd.retcode'](cmd)
 
 
@@ -238,3 +238,32 @@ def disable(name, **kwargs):
     '''
     cmd = '{0} disable {1}'.format(_cmd(), name)
     return not __salt__['cmd.retcode'](cmd)
+
+def enabled(name):
+    '''
+    Return True if the named service is enabled at boot, False otherwise.
+
+    name
+        Service name
+
+    CLI Example:
+
+    .. code-block:: bash
+
+        salt '*' service.enabled <service name>
+    '''
+    cmd = '{0} status {1}'.format(_cmd(), name)
+    return not __salt__['cmd.retcode'](cmd)
+
+def disabled(name):
+    '''
+    Return True if the named service is disabled at boot, False otherwise.
+
+    CLI Example:
+
+    .. code-block:: bash
+
+        salt '*' service.disabled <service name>
+    '''
+    cmd = '{0} status {1}'.format(_cmd(), name)
+    return __salt__['cmd.retcode'](cmd) == 0
