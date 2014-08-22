@@ -1,0 +1,4 @@
+The icoutils are a set of command-line programs for extracting and
+converting images in Microsoft Windows(R) icon and cursor files. These
+files usually have the extension .ico or .cur, but they can also be
+embedded in executables and libraries (.dll-files).
