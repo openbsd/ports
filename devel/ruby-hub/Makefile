@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/14 17:09:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/22 18:43:32 jasper Exp $
 
 COMMENT =		git commandline wrapper for GitHub
 
-DISTNAME =		hub-1.11.1
+DISTNAME =		hub-1.12.2
 CATEGORIES =		devel
 
 HOMEPAGE =		https://hub.github.com/
