@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/01 20:19:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/08/22 20:32:13 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
+@newgroup _bind:741
+@newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
+@extra ${SYSCONFDIR}/rndc.key
+@extra ${LOCALSTATEDIR}/named/etc/rndc.key
 bin/bind9-config
 @bin bin/delv
 @bin bin/dig
@@ -425,6 +429,32 @@ sbin/named-compilezone
 @bin sbin/rndc-confgen
 sbin/tsig-keygen
 share/examples/bind9/
+@sample ${LOCALSTATEDIR}/named/
+@sample ${LOCALSTATEDIR}/named/master/
+@sample ${LOCALSTATEDIR}/named/standard/
+@group _bind
+@mode 750
+@sample ${LOCALSTATEDIR}/named/etc/
+@mode 775
+@sample ${LOCALSTATEDIR}/named/slave/
+@sample ${LOCALSTATEDIR}/named/tmp/
+@mode
+@group
 share/examples/bind9/bind.keys
 @sample ${SYSCONFDIR}/bind.keys
+share/examples/bind9/localhost
+@sample ${LOCALSTATEDIR}/named/standard/localhost
+share/examples/bind9/loopback
+@sample ${LOCALSTATEDIR}/named/standard/loopback
+share/examples/bind9/loopback6.arpa
+@sample ${LOCALSTATEDIR}/named/standard/loopback6.arpa
+share/examples/bind9/named.conf
+@group _bind
+@mode 640
+@sample ${LOCALSTATEDIR}/named/etc/named.conf
+@mode
+share/examples/bind9/root.hint
+@group wheel
+@sample ${LOCALSTATEDIR}/named/etc/root.hint
+@group
 @rcscript ${RCDIR}/isc_named

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/06/11 22:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2014/08/22 20:32:13 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.0-P2
+REVISION=	0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -62,5 +63,9 @@ pre-test:
 
 post-test:
 	cd ${WRKSRC}/bin/tests/system && ${SUDO} ./ifconfig.sh down
+
+post-install:
+	cd ${FILESDIR}; ${INSTALL_DATA} localhost loopback loopback6.arpa \
+	    named.conf root.hint ${PREFIX}/share/examples/bind9/
 
 .include <bsd.port.mk>

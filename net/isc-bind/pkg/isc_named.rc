@@ -1,14 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: isc_named.rc,v 1.2 2013/04/03 20:17:23 sthen Exp $
+# $OpenBSD: isc_named.rc,v 1.3 2014/08/22 20:32:13 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/named"
-daemon_flags="-t ${LOCALSTATEDIR}/named -u named -U 4"
+daemon_flags="-t ${LOCALSTATEDIR}/named -u _bind -U 4"
 
 . /etc/rc.d/rc.subr
 
 rc_pre() {
-	if ! cmp -s /etc/rndc.key ${LOCALSTATEDIR}/named/etc/rndc.key ; then
+	if ! cmp -s ${SYSCONFDIR}/rndc.key ${LOCALSTATEDIR}/named/etc/rndc.key ; then
 		if ${TRUEPREFIX}/sbin/rndc-confgen -a -t ${LOCALSTATEDIR}/named \
 		    >/dev/null 2>&1; then
 			chmod 0640 ${LOCALSTATEDIR}/named/etc/rndc.key \

@@ -1,0 +1,14 @@
+; $OpenBSD: loopback6.arpa,v 1.1 2014/08/22 20:32:13 sthen Exp $
+
+$ORIGIN 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa.
+$TTL 6h
+
+@	IN	SOA	localhost. root.localhost. (
+			1	; serial
+			1h	; refresh
+			30m	; retry
+			7d	; expiration
+			1h )	; minimum
+
+		NS	localhost.
+		PTR	localhost.
