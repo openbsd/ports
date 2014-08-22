@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2014/08/22 20:32:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2014/08/22 20:56:00 sthen Exp $
+
+# XXX should we rename the rc script to either named.rc or isc_bind.rc ?
+# XXX how about also the package now we don't need to distinguish from the
+# XXX version in base?
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
