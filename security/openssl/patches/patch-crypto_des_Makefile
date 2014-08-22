@@ -1,0 +1,13 @@
+$OpenBSD: patch-crypto_des_Makefile,v 1.1 2014/08/22 07:59:54 landry Exp $
+-B is a remnant from system V m4, not implemented in our m4, and a noop in gm4
+--- crypto/des/Makefile.orig	Fri Aug 22 00:55:33 2014
++++ crypto/des/Makefile	Fri Aug 22 00:55:44 2014
+@@ -60,7 +60,7 @@ des: des.o cbc3_enc.o lib
+ 	$(CC) $(CFLAGS) -o des des.o cbc3_enc.o $(LIB)
+ 
+ des_enc-sparc.S:	asm/des_enc.m4
+-	m4 -B 8192 asm/des_enc.m4 > des_enc-sparc.S
++	m4 asm/des_enc.m4 > des_enc-sparc.S
+ 
+ des-586.s:	asm/des-586.pl ../perlasm/x86asm.pl ../perlasm/cbc.pl
+ 	$(PERL) asm/des-586.pl $(PERLASM_SCHEME) $(CFLAGS) > $@
