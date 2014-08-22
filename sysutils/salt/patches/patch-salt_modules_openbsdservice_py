@@ -1,64 +1,18 @@
-$OpenBSD: patch-salt_modules_openbsdservice_py,v 1.1 2014/05/27 10:13:43 ajacoutot Exp $
---- salt/modules/openbsdservice.py.orig	Mon May  5 18:47:41 2014
-+++ salt/modules/openbsdservice.py	Tue May 27 11:54:56 2014
-@@ -5,6 +5,7 @@ The service module for OpenBSD
- 
- # Import python libs
- import os
-+import glob
- 
- # XXX enable/disable support would be nice
- 
-@@ -23,6 +24,52 @@ def __virtual__():
+$OpenBSD: patch-salt_modules_openbsdservice_py,v 1.2 2014/08/22 12:22:09 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/15172
+
+--- salt/modules/openbsdservice.py.orig	Thu Aug 21 18:17:07 2014
++++ salt/modules/openbsdservice.py	Thu Aug 21 18:19:10 2014
+@@ -20,8 +20,10 @@ def __virtual__():
+         krel = map(int, __grains__['kernelrelease'].split('.'))
+         # The -f flag, used to force a script to run even if disabled,
+         # was added after the 5.0 release.
++        # the rcctl(8) command is the prefered way to manage services.
          if krel[0] > 5 or (krel[0] == 5 and krel[1] > 0):
-             return __virtualname__
+-            return __virtualname__
++            if not os.path.exists('/usr/sbin/rcctl'):
++                return __virtualname__
      return False
-+
-+
-+def available(name):
-+    '''
-+    Return True if the named service is available.
-+
-+    CLI Example:
-+
-+    .. code-block:: bash
-+
-+        salt '*' service.available sshd
-+    '''
-+    return name in get_all()
-+
-+
-+def missing(name):
-+    '''
-+    The inverse of service.available.
-+    Return True if the named service is not available.
-+
-+    CLI Example:
-+
-+    .. code-block:: bash
-+
-+        salt '*' service.missing sshd
-+    '''
-+    return not name in get_all()
-+
-+
-+def get_all():
-+    '''
-+    Return all installed services.
-+
-+    CLI Example:
-+
-+    .. code-block:: bash
-+
-+        salt '*' service.get_all
-+    '''
-+    ret = []
-+    lines = glob.glob('/etc/rc.d/*')
-+    for line in lines:
-+        service = line.split('/etc/rc.d/')[1]
-+        if service != 'rc.subr':
-+            ret.append(service)
-+    return sorted(ret)
  
  
- def start(name):
