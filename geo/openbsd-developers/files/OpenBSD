@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.118 2014/08/21 22:31:49 millert Exp $
+# $OpenBSD: OpenBSD,v 1.119 2014/08/22 07:42:56 chrisz Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -85,6 +85,7 @@
 48.191418	16.340723	"rpe"		# Robert Peichaer
 48.2		16.367		"martin"	# Martin Reindl
 48.35		7.46		"couderc"	# Damien Couderc
+48.52526	8.98978		"chrisz"	# Christopher Zimmermann
 48.750		2.317		"saad"		# Saad Kadhi
 48.839722	1.701111	"miod"		# Miod Vallat
 48.85		2.40		"rpointel"	# Remi Pointel
