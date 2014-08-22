@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2014/07/01 02:09:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.37 2014/08/22 02:32:26 bentley Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		1.4.1
+V =		1.4.2
 DISTNAME =	openttd-${V}
 EXTRACT_SUFX=	-source.tar.gz
 GFX_V =		0.5.1
@@ -53,6 +53,7 @@ CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
 			--with-zlib \
 			--without-allegro \
 			--without-libtimidity \
+			--with-midi=/usr/bin/midiplay \
 			--CFLAGS_BUILD="${CFLAGS}" \
 			--disable-strip
 
