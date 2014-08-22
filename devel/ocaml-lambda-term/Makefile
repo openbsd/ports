@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/09 19:50:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2014/08/22 22:49:07 kili Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
 
 # also adapt MASTER_SITES when changing the version!
 DISTNAME =	lambda-term-1.3
-REVISION =	1
+REVISION =	2
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1034/
 

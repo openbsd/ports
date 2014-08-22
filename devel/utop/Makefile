@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/03/09 19:50:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/22 22:49:07 kili Exp $
 
 COMMENT =		enhanced OCaml toplevel
 DISTNAME =		utop-1.5
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		https://forge.ocamlcore.org/projects/utop/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2014/08/22 22:49:07 kili Exp $
 
 # build system needs per-arch tweaks
 ONLY_FOR_ARCHS = amd64 i386 powerpc
@@ -7,7 +7,7 @@ COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
 DISTNAME =	cil-1.5.1
-REVISION =      4
+REVISION =      5
 EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
 
