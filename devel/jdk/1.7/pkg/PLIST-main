@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2014/05/07 15:42:15 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2014/08/22 09:16:05 sthen Exp $
 @pkgpath devel/jdk/1.6,-jdk
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
@@ -751,6 +751,7 @@ ${JDKHOME}/jre/lib/zi/Antarctica/Mawson
 ${JDKHOME}/jre/lib/zi/Antarctica/Palmer
 ${JDKHOME}/jre/lib/zi/Antarctica/Rothera
 ${JDKHOME}/jre/lib/zi/Antarctica/Syowa
+${JDKHOME}/jre/lib/zi/Antarctica/Troll
 ${JDKHOME}/jre/lib/zi/Antarctica/Vostok
 ${JDKHOME}/jre/lib/zi/Asia/
 ${JDKHOME}/jre/lib/zi/Asia/Aden
