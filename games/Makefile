@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.296 2014/08/19 22:44:44 pascal Exp $
+# $OpenBSD: Makefile,v 1.297 2014/08/23 02:58:15 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -170,6 +170,7 @@
      SUBDIR += puzzles
      SUBDIR += qgo
      SUBDIR += qstat
+     SUBDIR += quadrupleback
      SUBDIR += quake
      SUBDIR += quake2
      SUBDIR += redeclipse
