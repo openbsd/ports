@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2014/08/23 02:57:43 bentley Exp $
+--- src/Makefile.in.orig	Thu Mar 14 11:07:38 2013
++++ src/Makefile.in	Thu Mar 14 11:07:46 2013
+@@ -934,8 +934,8 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktope
+ 
+ check: all
+ 	test "`./$(PACKAGE) --version`" = "$(PACKAGE) $(VERSION)"
+-	./$(PACKAGE) --version >& /dev/null
+-	./$(PACKAGE) --help >& /dev/null
++	./$(PACKAGE) --version >/dev/null 2>&1
++	./$(PACKAGE) --help >/dev/null 2>&1
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

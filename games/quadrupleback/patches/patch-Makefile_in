@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/08/23 02:57:43 bentley Exp $
+--- Makefile.in.orig	Thu Aug 21 22:06:20 2014
++++ Makefile.in	Thu Aug 21 22:06:22 2014
+@@ -227,7 +227,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/23 02:57:43 bentley Exp $
+@bin bin/quadrupleback
+share/applications/quadrupleback.desktop
+share/doc/quadrupleback/
+share/doc/quadrupleback/AUTHORS
+share/doc/quadrupleback/COPYING
+share/doc/quadrupleback/INSTALL
+share/doc/quadrupleback/NEWS
+share/doc/quadrupleback/README
+share/doc/quadrupleback/THANKS
+share/doc/quadrupleback/TODO
+share/pixmaps/
+share/pixmaps/quadrupleback.png
+share/quadrupleback/
+share/quadrupleback/fonts/
+share/quadrupleback/fonts/9x18B.fnt
+share/sounds/
+share/sounds/quadrupleback/
+share/sounds/quadrupleback/enemyAppears.wav
+share/sounds/quadrupleback/enemyCaptured.wav
+share/sounds/quadrupleback/enemyTouched.wav
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
