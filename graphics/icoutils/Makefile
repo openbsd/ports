@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/22 22:59:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.1 2014/08/23 10:02:42 sthen Exp $
 
 COMMENT =		extractor and converter for .ico and .cur files
 
