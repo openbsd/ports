@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/08/21 14:41:41 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/08/23 07:02:12 landry Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -1084,13 +1084,9 @@ intellij/plugins/gradle/lib/guava-jdk5-17.0.jar
 intellij/plugins/gradle/lib/jna-3.2.7.jar
 intellij/plugins/gradle/lib/jsr305-1.3.9.jar
 intellij/plugins/gradle/lib/native-platform-0.10.jar
-intellij/plugins/gradle/lib/native-platform-freebsd-amd64-0.10.jar
 intellij/plugins/gradle/lib/native-platform-freebsd-${MACHINE_ARCH}-0.10.jar
-intellij/plugins/gradle/lib/native-platform-linux-amd64-0.10.jar
 intellij/plugins/gradle/lib/native-platform-linux-${MACHINE_ARCH}-0.10.jar
-intellij/plugins/gradle/lib/native-platform-osx-amd64-0.10.jar
 intellij/plugins/gradle/lib/native-platform-osx-${MACHINE_ARCH}-0.10.jar
-intellij/plugins/gradle/lib/native-platform-windows-amd64-0.10.jar
 intellij/plugins/gradle/lib/native-platform-windows-${MACHINE_ARCH}-0.10.jar
 intellij/plugins/gradle/lib/resources_en.jar
 intellij/plugins/gradle/lib/slf4j-api-1.7.5.jar
