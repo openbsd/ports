@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_openssl_openssl_c,v 1.1 2014/04/19 12:06:44 sthen Exp $
---- ext/openssl/openssl.c.orig.port	Sat Apr 19 06:06:02 2014
-+++ ext/openssl/openssl.c	Sat Apr 19 06:06:16 2014
-@@ -914,11 +914,13 @@ static int php_openssl_load_rand_file(const char * fil
+$OpenBSD: patch-ext_openssl_openssl_c,v 1.2 2014/08/23 10:45:51 sthen Exp $
+--- ext/openssl/openssl.c.orig.port	Thu Aug 21 09:45:02 2014
++++ ext/openssl/openssl.c	Fri Aug 22 14:46:19 2014
+@@ -927,11 +927,13 @@ static int php_openssl_load_rand_file(const char * fil
  
  	if (file == NULL) {
  		file = RAND_file_name(buffer, sizeof(buffer));
