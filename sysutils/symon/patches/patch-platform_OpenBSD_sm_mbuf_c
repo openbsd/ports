@@ -1,7 +1,15 @@
-$OpenBSD: patch-platform_OpenBSD_sm_mbuf_c,v 1.5 2014/07/04 22:23:01 sthen Exp $
---- platform/OpenBSD/sm_mbuf.c.orig	Fri Jul  4 22:35:02 2014
-+++ platform/OpenBSD/sm_mbuf.c	Fri Jul  4 22:40:21 2014
-@@ -64,7 +64,7 @@ get_mbuf(char *symon_buf, int maxlen, struct stream *s
+$OpenBSD: patch-platform_OpenBSD_sm_mbuf_c,v 1.6 2014/08/23 09:53:18 landry Exp $
+--- platform/OpenBSD/sm_mbuf.c.orig	Mon Nov  2 11:29:12 2009
++++ platform/OpenBSD/sm_mbuf.c	Sat Aug 23 11:51:53 2014
+@@ -32,6 +32,7 @@
+ #include <sys/mbuf.h>
+ #include <sys/sysctl.h>
+ #include <sys/errno.h>
++#include <sys/pool.h>
+ 
+ #include <errno.h>
+ #include <string.h>
+@@ -64,7 +65,7 @@ get_mbuf(char *symon_buf, int maxlen, struct stream *s
  {
      struct mbstat mbstat;
      int npools;
