@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/23 06:54:18 landry Exp $
 
 COMMENT=	cryptographic framework for the Objective-ML language
 CATEGORIES=	security
 
 DISTNAME=	cryptokit-1.6
-REVISION=	3
+REVISION=	4
 PKGNAME=	ocaml-${DISTNAME}
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/891/
 
