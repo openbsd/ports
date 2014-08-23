@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/08/18 23:07:11 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/08/23 12:09:39 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -161,6 +161,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/twitch.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/twitch.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ustreamtv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ustreamtv.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/vaughnlive.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/vaughnlive.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/veetle.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/veetle.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/vgtv.py
