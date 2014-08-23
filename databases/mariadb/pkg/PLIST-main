@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2014/06/19 23:04:42 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2014/08/23 02:25:34 brad Exp $
 @conflict mysql-client-*
+@conflict mysql-server-*
 @pkgpath databases/mysql,-main
 bin/msql2mysql
 @bin bin/mysql
