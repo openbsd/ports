@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/08/21 14:41:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2014/08/24 17:17:16 zhuk Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ V=			13.1.4b
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
 MAINTAINER=		Vadim Zhukov <persgray@gmail.com>
