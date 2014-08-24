@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/20 21:47:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/08/24 09:03:05 landry Exp $
 include/spatialindex/
 include/spatialindex/LineSegment.h
 include/spatialindex/MVRTree.h
@@ -38,5 +38,4 @@ lib/libspatialindex.la
 lib/libspatialindex_c.a
 lib/libspatialindex_c.la
 @lib lib/libspatialindex_c.so.${LIBspatialindex_c_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libspatialindex.pc
