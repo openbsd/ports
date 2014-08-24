@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/01/16 03:05:51 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/08/24 20:56:06 bcallah Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
@@ -51,6 +51,7 @@ share/doc/liferea/html/help_prefs_headlines_1.6.0.png
 share/doc/liferea/html/help_prefs_proxy_1.6.0.png
 share/doc/liferea/html/help_search_1.6.0.png
 share/doc/liferea/html/help_subscribe_1.6.0.png
+share/doc/liferea/html/help_subscribe_adv_1.6.0.png
 share/doc/liferea/html/help_vfolder_1.6.0.png
 share/doc/liferea/html/newsbin_de.html
 share/doc/liferea/html/newsbin_en.html
