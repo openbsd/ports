@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/08/24 18:05:17 zhuk Exp $
 
 COMMENT=		wm-dockapp; wireless interface monitor
 
 DISTNAME=		wmwlmon-1.0
-REVISION =		0
+REVISION =		1
 CATEGORIES=		sysutils x11 x11/windowmaker
 MASTER_SITES=		http://www.nazgul.ch/dev/
 

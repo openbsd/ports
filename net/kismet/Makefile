@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/03/19 13:28:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2014/08/24 18:05:17 zhuk Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -10,7 +10,7 @@ NOT_FOR_ARCHS=	m88k vax
 
 V=		2008-05-R1
 DISTNAME=	kismet-${V}
-REVISION=	2
+REVISION=	3
 PKGNAME-main=	kismet-${V:S,-,,g}
 PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security

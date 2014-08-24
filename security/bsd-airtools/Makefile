@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/24 21:00:43 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2014/08/24 18:05:17 zhuk Exp $
 
 COMMENT=		wireless auditing suite
 
 DISTNAME=		bsd-airtools-v0.2
 PKGNAME=		bsd-airtools-0.2
-REVISION =		5
+REVISION =		6
 CATEGORIES=    		security net
 EXTRACT_SUFX=           .tgz
 
