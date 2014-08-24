@@ -1,7 +1,15 @@
-$OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
---- stats.c.orig	Sun Feb 10 18:36:49 2013
-+++ stats.c	Sat Jul  5 11:01:08 2014
-@@ -83,7 +83,7 @@ static int sflag = 1;
+$OpenBSD: patch-stats_c,v 1.3 2014/08/24 20:29:08 landry Exp $
+--- stats.c.orig	Sun Feb 10 19:36:49 2013
++++ stats.c	Sun Aug 24 22:27:36 2014
+@@ -36,6 +36,7 @@
+ #include <sys/mbuf.h>
+ #include <sys/protosw.h>
+ #include <sys/sysctl.h>
++#include <sys/pool.h>
+ #include <errno.h>
+ 
+ #include <net/route.h>
+@@ -83,7 +84,7 @@ static int sflag = 1;
  typedef int bool;
  
  struct  mbstat mbstat;
@@ -10,7 +18,7 @@ $OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
  
  #ifdef INET6
  char	*inet6name(struct in6_addr *);
-@@ -132,7 +132,7 @@ tcp_stats()
+@@ -132,7 +133,7 @@ tcp_stats()
  	p(tcps_sndprobe, "\t\t%u window probe packet%s\n");
  	p(tcps_sndwinup, "\t\t%u window update packet%s\n");
  	p(tcps_sndctrl, "\t\t%u control packet%s\n");
@@ -19,7 +27,7 @@ $OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
  	p(tcps_rcvtotal, "\t%u packet%s received\n");
  	p2(tcps_rcvackpack, tcps_rcvackbyte, "\t\t%u ack%s (for %qd byte%s)\n");
  	p(tcps_rcvdupack, "\t\t%u duplicate ack%s\n");
-@@ -157,7 +157,7 @@ tcp_stats()
+@@ -157,7 +158,7 @@ tcp_stats()
  	p1(tcps_rcvshort, "\t\t%u discarded because packet too short\n");
  	p1(tcps_rcvnosec, "\t\t%u discarded for missing IPsec protection\n");
  	p1(tcps_rcvmemdrop, "\t\t%u discarded due to memory shortage\n");
@@ -28,7 +36,7 @@ $OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
  	p(tcps_rcvbadsig, "\t\t%u bad/missing md5 checksum%s\n");
  	p(tcps_rcvgoodsig, "\t\t%qd good md5 checksum%s\n");
  	p(tcps_connattempt, "\t%u connection request%s\n");
-@@ -249,8 +249,8 @@ udp_stats()
+@@ -249,8 +250,8 @@ udp_stats()
  	p1(udps_badlen, "\t%lu with bad data length field\n");
  	p1(udps_badsum, "\t%lu with bad checksum\n");
  	p1(udps_nosum, "\t%lu with no checksum\n");
@@ -39,7 +47,7 @@ $OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
  	p1(udps_noport, "\t%lu dropped due to no socket\n");
  	p(udps_noportbcast, "\t%lu broadcast/multicast datagram%s dropped due to no socket\n");
  	p1(udps_nosec, "\t%lu dropped due to missing IPsec protection\n");
-@@ -323,8 +323,8 @@ ip_stats()
+@@ -323,8 +324,8 @@ ip_stats()
  	p(ips_toolong, "\t%lu packet%s with ip length > max ip packet size\n");
  	p(ips_nogif, "\t%lu tunneling packet%s that can't find gif\n");
  	p(ips_badaddr, "\t%lu datagram%s with bad address in header\n");
@@ -50,7 +58,7 @@ $OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
  	p(ips_notmember, "\t%lu multicast packet%s which we don't join\n");
  #undef p
  #undef p1
-@@ -788,7 +788,7 @@ mbpr(void)
+@@ -788,7 +789,7 @@ mbpr(void)
  	int totmem, totused, totmbufs, totpct;
  	int i, mib[4], npools, flag = 0;
  	bool seen[256];
@@ -59,7 +67,7 @@ $OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
  	struct mbtypes *mp;
  	size_t size;
  	int page_size = getpagesize();
-@@ -825,7 +825,7 @@ mbpr(void)
+@@ -825,7 +826,7 @@ mbpr(void)
  		mib[1] = KERN_POOL;
  		mib[2] = KERN_POOL_POOL;
  		mib[3] = i;
@@ -68,7 +76,7 @@ $OpenBSD: patch-stats_c,v 1.2 2014/07/05 10:03:05 sthen Exp $
  		if (sysctl(mib, 4, &pool, &size, NULL, 0) < 0) {
  			if (errno == ENOENT)
  				continue;
-@@ -843,12 +843,12 @@ mbpr(void)
+@@ -843,12 +844,12 @@ mbpr(void)
  		}
  
  		if (!strncmp(name, "mbpl", strlen("mbpl"))) {
