@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/24 09:50:17 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/24 13:25:55 kili Exp $
 
 COMMENT =		clone of Doubleback, an intruder circling game
 
 DISTNAME =		quadrupleback-0.1.0
+REVISION =		0
 
 CATEGORIES =		games
 
