@@ -21,6 +21,8 @@ SHA256 (bash/bash43-019) = p6kUdSKAFdZ2yvqG0teqnF0hOapRSFtrvev9+88NLSM=
 SHA256 (bash/bash43-020) = yl6G2H8XgShkH+kfLwlIdbjB6y3p4NLpFU9dXMAzbJg=
 SHA256 (bash/bash43-021) = QUOfBog+a9EcWR2dXprgivvCq9S5NeHSRLCBAAdlIKk=
 SHA256 (bash/bash43-022) = /U1Hu5XGWGP2NMRwbGXh47rk7oRgxyBFwKBhhokGGog=
+SHA256 (bash/bash43-023) = msJQxzl6j1PbyE3+eQ0qQY+/H+CQvOzjm0pchKLTANQ=
+SHA256 (bash/bash43-024) = O1BYgqCmCQZn11gk/JGVJM1EzDvYndCLfE5iLT+WD2w=
 SIZE (bash/bash-4.3.tar.gz) = 7955839
 SIZE (bash/bash43-001) = 1617
 SIZE (bash/bash43-002) = 1594
@@ -44,3 +46,5 @@ SIZE (bash/bash43-019) = 2610
 SIZE (bash/bash43-020) = 2777
 SIZE (bash/bash43-021) = 1623
 SIZE (bash/bash43-022) = 1782
+SIZE (bash/bash43-023) = 3414
+SIZE (bash/bash43-024) = 1909
