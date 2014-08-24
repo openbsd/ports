@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/08/11 20:56:15 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/08/24 08:46:42 rpe Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-galaxy
@@ -62,6 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/gce.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/gce.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/known_hosts.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/known_hosts.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/powershell.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/rax.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/rax.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/redhat.py
