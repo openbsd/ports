@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.89 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.90 2014/08/25 09:43:10 brad Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -34,6 +34,8 @@ MAKE_CCARGS+=	-DDEF_DATA_DIR=\"/var/postfix\"
 MAKE_CCARGS+=	-DHAS_SQLITE
 MAKE_CCARGS+=	-DUSE_TLS
 MAKE_CCARGS+=	-DUSE_SASL_AUTH
+# no UTF-8 support for now
+MAKE_CCARGS+=	-DNO_EAI
 MAKE_AUXLIBS+=	-lssl -lcrypto -lsqlite3 -pthread
 
 WANTLIB=	c crypto pcre pthread sqlite3 ssl
