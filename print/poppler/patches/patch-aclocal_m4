@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.7 2014/05/28 19:45:54 kili Exp $
---- aclocal.m4.orig	Fri May 23 20:10:53 2014
-+++ aclocal.m4	Tue May 27 20:35:49 2014
-@@ -2370,6 +2370,7 @@ m4_include([m4/define-dir.m4])
+$OpenBSD: patch-aclocal_m4,v 1.8 2014/08/25 19:19:42 ajacoutot Exp $
+--- aclocal.m4.orig	Thu Aug 21 20:08:58 2014
++++ aclocal.m4	Mon Aug 25 18:34:07 2014
+@@ -2371,6 +2371,7 @@ m4_include([m4/define-dir.m4])
  m4_include([m4/gtk-doc.m4])
  m4_include([m4/iconv.m4])
  m4_include([m4/introspection.m4])
