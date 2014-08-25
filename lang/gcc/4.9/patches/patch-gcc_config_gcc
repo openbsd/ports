@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.2 2014/08/18 07:42:11 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.3 2014/08/25 09:57:04 tobiasu Exp $
 --- gcc/config.gcc.orig	Mon Jun 16 10:15:35 2014
-+++ gcc/config.gcc	Wed Jul 16 18:37:32 2014
++++ gcc/config.gcc	Thu Aug 21 14:20:04 2014
 @@ -771,6 +771,14 @@ case ${target} in
        default_use_cxa_atexit=yes
        ;;
@@ -86,15 +86,28 @@ $OpenBSD: patch-gcc_config_gcc,v 1.2 2014/08/18 07:42:11 pascal Exp $
  powerpc-*-darwin*)
  	extra_options="${extra_options} rs6000/darwin.opt"
  	case ${target} in
-@@ -2732,6 +2756,7 @@ sparc64-*-netbsd*)
+@@ -2731,11 +2755,19 @@ sparc64-*-netbsd*)
+ 	extra_options="${extra_options} sparc/long-double-switch.opt"
  	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
  	;;
++sparc-*-openbsd*)
++	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h sparc/sysv4.h sparc/openbsd.h"
++	extra_options="${extra_options} openbsd.opt"
++	gas=yes
++	gnu_ld=yes
++	with_cpu=v7
++	tmake_file="${tmake_file} sparc/t-sparc"
++	;;
  sparc64-*-openbsd*)
 +	tm_defines="${tm_defines} PIE_DEFAULT=2"
  	tm_file="sparc/openbsd1-64.h ${tm_file} dbxelf.h elfos.h sparc/sysv4.h sparc/sp64-elf.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h sparc/openbsd64.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -2922,6 +2947,12 @@ case ${target} in
+-	extra_options="${extra_options}"
+ 	gas=yes gnu_ld=yes
+ 	with_cpu=ultrasparc
+ 	tmake_file="${tmake_file} sparc/t-sparc"
+@@ -2922,6 +2954,12 @@ case ${target} in
      else
        arch=i386
      fi
