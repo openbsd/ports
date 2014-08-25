@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2014/08/14 07:04:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/25 20:15:28 landry Exp $
 
 COMMENT-main=		Python Imaging Library (fork)
 COMMENT-sane=		Python SANE module
 
-MODPY_EGG_VERSION=	2.4.0
+MODPY_EGG_VERSION=	2.5.3
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME-main=		py-${DISTNAME}
 PKGNAME-sane=		py-sane-${MODPY_EGG_VERSION}
 CATEGORIES=		graphics
-
-REVISION-main=		0
 
 HOMEPAGE=		https://github.com/python-imaging/Pillow
 
@@ -33,8 +31,11 @@ MODULES=		lang/python \
 
 # ${MODPY_TKINTER_DEPENDS} appends ,tkinter to devel/setuptools too.
 BUILD_DEPENDS=		lang/python/${MODPY_VERSION},-tkinter
+TEST_DEPENDS=		${BUILD_PKGPATH}
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			lang/python/${MODPY_VERSION},-tkinter
+
+# Enable JPEG2000 support via openjpeg?
 LIB_DEPENDS-main=	graphics/lcms2 \
 			graphics/libwebp \
 			${MODTK_LIB_DEPENDS}
@@ -65,6 +66,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libImaging/{ImPlatform,Imaging}.h ${INCL_DIR}
 
 do-test:
-	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py
+	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py --installed
 
 .include <bsd.port.mk>

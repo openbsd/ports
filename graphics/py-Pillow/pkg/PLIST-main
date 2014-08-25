@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2014/08/14 07:04:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/08/25 20:15:28 landry Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
@@ -20,8 +20,6 @@ bin/viewer
 include/python${MODPY_VERSION}/ImPlatform.h
 include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
-lib/python${MODPY_VERSION}/site-packages/PIL/ArgImagePlugin.py
-lib/python${MODPY_VERSION}/site-packages/PIL/ArgImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/BmpImagePlugin.py
@@ -94,6 +92,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImageMath.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageMath.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageMode.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageMode.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageMorph.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageMorph.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageOps.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageOps.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImagePalette.py
@@ -193,12 +193,11 @@ lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_util.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_webp.so
-lib/python${MODPY_VERSION}/site-packages/PIL/tests.py
-lib/python${MODPY_VERSION}/site-packages/PIL/tests.pyc
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
