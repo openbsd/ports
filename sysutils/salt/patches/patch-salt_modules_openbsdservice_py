@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_openbsdservice_py,v 1.2 2014/08/22 12:22:09 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_openbsdservice_py,v 1.3 2014/08/25 22:05:14 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15172
+https://github.com/saltstack/salt/commit/ea2be8bc7813ba2e2ddd05913783887513516c8c
 
 --- salt/modules/openbsdservice.py.orig	Thu Aug 21 18:17:07 2014
 +++ salt/modules/openbsdservice.py	Thu Aug 21 18:19:10 2014
