@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_bytes_Makefile,v 1.1 2014/08/25 15:20:19 chrisz Exp $
+
+from upstream:
+We can't use ocamlfind because it may not yet be installed.
+Also respect PREFIX.
+
+--- src/bytes/Makefile.orig	Fri Aug  1 14:02:25 2014
++++ src/bytes/Makefile	Mon Aug 25 14:17:54 2014
+@@ -19,9 +19,20 @@ opt:
+ 	$(OCAMLBUILD) $$files
+ 
+ install: all
++	mkdir -p "$(prefix)$(OCAML_SITELIB)/bytes"
++	cd _build/ && cp ../META $(BYTE_FILES) "$(prefix)$(OCAML_SITELIB)/bytes"
++	cd _build/ && for f in $(NATIVE_FILES) $(NATIVE_FILES_DYNLINK); do if [ -f "$$f" ]; then cp $$f "$(prefix)$(OCAML_SITELIB)/bytes"; fi; done
++
++uninstall: 
++	rm -rf "$(prefix)$(OCAML_SITELIB)/bytes"
++
++# install-self and uninstall-self use ocamlfind already. This is a bit
++# questionable here.
++
++install-self: all
+ 	cd _build/ && ocamlfind install bytes ../META $(BYTE_FILES) -optional $(NATIVE_FILES) $(NATIVE_FILES_DYNLINK)
+ 
+-uninstall:
++uninstall-self:
+ 	ocamlfind remove bytes
+ 
+ clean:
