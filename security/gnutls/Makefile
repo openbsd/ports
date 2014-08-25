@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.102 2014/08/21 12:37:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2014/08/25 16:27:56 ajacoutot Exp $
 # rfc2818_hostname.c:107: error: storage size of 'ipv6' isn't known
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.2.16
+V=		3.2.17
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               41.4     # 58.5
+SHARED_LIBS +=  gnutls               41.4     # 58.8
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-xssl          0.0      # 0.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2

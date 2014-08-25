@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libopts_autoopts_h,v 1.1 2014/08/25 16:27:57 ajacoutot Exp $
+
+autoopts.h:35:25: error: stdnoreturn.h: No such file or directory
+In file included from libopts.c:13:
+proto.h:101: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+<...>
+
+--- src/libopts/autoopts.h.orig	Mon Aug 25 18:15:08 2014
++++ src/libopts/autoopts.h	Mon Aug 25 18:15:23 2014
+@@ -32,7 +32,7 @@
+ 
+ #ifndef AUTOGEN_AUTOOPTS_H
+ #define AUTOGEN_AUTOOPTS_H
+-#include <stdnoreturn.h>
++#define noreturn __attribute__((__noreturn__))
+ 
+ #define AO_NAME_LIMIT           127
+ #define AO_NAME_SIZE            ((size_t)(AO_NAME_LIMIT + 1))
