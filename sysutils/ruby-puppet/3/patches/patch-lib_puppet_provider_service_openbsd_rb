@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.15 2014/08/25 08:00:37 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.16 2014/08/25 08:09:57 jasper Exp $
 
 * Rewrite using rcctl(8)
 
@@ -31,7 +31,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.15 2014/08/25 08:00:3
  
    def restartcmd
 -    (@resource[:hasrestart] == :true) && [self.initscript, "-f", :restart]
-+    [command(:rcctl), 'f', :restart, @resource[:name]]
++    [command(:rcctl), '-f', :restart, @resource[:name]]
    end
  
    def statuscmd
