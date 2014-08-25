@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/09 19:25:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/25 14:07:49 jasper Exp $
 
 COMMENT =		flexible communications framework, Qt bindings
 DISTNAME =		telepathy-qt-0.9.3
@@ -23,7 +23,6 @@ MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/gobject-introspection \
 			textproc/libxslt
-
 LIB_DEPENDS =		net/telepathy/telepathy-farstream \
 			net/telepathy/telepathy-glib
 

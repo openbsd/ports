@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/10/04 07:40:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2014/08/25 14:07:49 jasper Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -11,6 +11,7 @@ WANTLIB += gobject-2.0 pcre pthread telepathy-glib z
 
 MODULES=		devel/gettext \
 			lang/python
+
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \

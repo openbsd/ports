@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/08/25 13:45:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2014/08/25 14:07:49 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -11,14 +11,16 @@ HOMEPAGE=	${HOMEPAGE_TP:=Logger}
 MASTER_SITES=	${MASTER_SITES_TP:=telepathy-logger/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext \
-		lang/python \
-		textproc/intltool \
-		devel/dconf
-
 WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 m pcre pthread sqlite3 telepathy-glib xml2
 WANTLIB += z
+
+MODULES=	devel/dconf \
+		devel/gettext \
+		lang/python \
+		textproc/intltool
+
+MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection \
 		devel/py-twisted/words \
@@ -28,7 +30,6 @@ LIB_DEPENDS=	net/telepathy/telepathy-glib \
 		x11/dbus-glib
 
 MODGCONF2_SCHEMAS_DIR=	telepathy-logger
-MODPY_RUNDEP=		No
 
 TEST_IS_INTERACTIVE=x11
 
