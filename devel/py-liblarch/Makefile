@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/09 13:28:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/08/25 15:17:24 kirby Exp $
 
 COMMENT=		python library to easily handle data structure
 
-MODPY_EGG_VERSION=	2.1.0
+GH_ACCOUNT=		liblarch
+GH_PROJECT=		liblarch
+GH_TAGNAME=		v2.1.0
+GH_COMMIT=		76d6490a3f077194c445d05da39231e6b90088a0
+MODPY_EGG_VERSION=	${GH_TAGNAME:S/v//}
 DISTNAME=		liblarch-${MODPY_EGG_VERSION}
 PKGNAME=		py-liblarch-${MODPY_EGG_VERSION}
 
@@ -12,9 +16,6 @@ HOMEPAGE=		https://wiki.gnome.org/Projects/liblarch
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://github.com/liblarch/liblarch/archive/
-DISTFILES=		v${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 
 MODULES=		lang/python
 
