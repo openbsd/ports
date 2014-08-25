@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/18 17:01:11 jung Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/25 15:15:29 kirby Exp $
 
 COMMENT =	simple (or small or suckless) X Image Viewer
 
-V=		1.1.1
-DISTNAME=	v${V}
-DIST_SUBDIR=	sxiv
-PKGNAME=	sxiv-${V}
+GH_PROJECT=	sxiv
+GH_ACCOUNT=	muennich
+GH_TAGNAME=	v1.1.1
+DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://github.com/muennich/sxiv
 
 MAINTAINER =	Matthew Via <via@matthewvia.info>
-
-MASTER_SITES=	${HOMEPAGE}/archive/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
