@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/08/14 07:15:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/08/25 07:48:06 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -27,7 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/interface.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/interface.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/interface.o
-${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/mkmf.log
+@comment ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/network.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/network.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/network.o
