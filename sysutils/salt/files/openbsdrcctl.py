@@ -5,7 +5,6 @@ The rcctl service module for OpenBSD
 
 # Import python libs
 import os
-import glob
 import re
 
 # Import salt libs
@@ -26,7 +25,7 @@ def __virtual__():
     rcctl(8) is only available on OpenBSD.
     '''
     if __grains__['os'] == 'OpenBSD' and os.path.exists('/usr/sbin/rcctl'):
-            return __virtualname__
+        return __virtualname__
     return False
 
 
@@ -134,7 +133,7 @@ def start(name):
 
         salt '*' service.start <service name>
     '''
-    cmd = '/etc/rc.d/{0} -f start'.format(name)
+    cmd = '{0} -f start {1}'.format(_cmd(), name)
     return not __salt__['cmd.retcode'](cmd)
 
 
@@ -162,7 +161,7 @@ def restart(name):
 
         salt '*' service.restart <service name>
     '''
-    cmd = '/etc/rc.d/{0} -f restart'.format(name)
+    cmd = '{0} -f restart {1}'.format(_cmd(), name)
     return not __salt__['cmd.retcode'](cmd)
 
 
@@ -193,6 +192,7 @@ def status(name, sig=None):
     '''
     if sig:
         return bool(__salt__['status.pid'](sig))
+
     cmd = '{0} check {1}'.format(_cmd(), name)
     return not __salt__['cmd.retcode'](cmd)
 
@@ -213,10 +213,9 @@ def enable(name, **kwargs):
         salt '*' service.enable <service name>
         salt '*' service.enable <service name> flags=<flags>
     '''
-    if not available(name):
-        return False
-
-    flags = kwargs.get('flags', __salt__['config.option']('service.flags', default=''))
+    flags = kwargs.get('flags', \
+                       __salt__['config.option']('service.flags', \
+                       default=''))
 
     if not flags:
         cmd = '{0} enable {1}'.format(_cmd(), name)
@@ -239,6 +238,21 @@ def disable(name, **kwargs):
     cmd = '{0} disable {1}'.format(_cmd(), name)
     return not __salt__['cmd.retcode'](cmd)
 
+
+def disabled(name):
+    '''
+    Return True if the named service is disabled at boot, False otherwise.
+
+    CLI Example:
+
+    .. code-block:: bash
+
+        salt '*' service.disabled <service name>
+    '''
+    cmd = '{0} status {1}'.format(_cmd(), name)
+    return not __salt__['cmd.retcode'](cmd) == 0
+
+
 def enabled(name):
     '''
     Return True if the named service is enabled at boot, False otherwise.
@@ -254,16 +268,3 @@ def enabled(name):
     '''
     cmd = '{0} status {1}'.format(_cmd(), name)
     return not __salt__['cmd.retcode'](cmd)
-
-def disabled(name):
-    '''
-    Return True if the named service is disabled at boot, False otherwise.
-
-    CLI Example:
-
-    .. code-block:: bash
-
-        salt '*' service.disabled <service name>
-    '''
-    cmd = '{0} status {1}'.format(_cmd(), name)
-    return __salt__['cmd.retcode'](cmd) == 0
