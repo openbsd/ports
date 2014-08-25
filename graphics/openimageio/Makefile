@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/23 08:38:51 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/25 16:18:07 kirby Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		library for reading and writing images
 
+GH_ACCOUNT = 		OpenImageIO
+GH_PROJECT = 		oiio
 V =			1.3.12
-DISTNAME =		Release-$V
-PKGNAME =		openimageio-${V}
+GH_TAGNAME =		Release-$V
+GH_COMMIT = 		e7b18284770ea51d6d63d7caa4d93c7820620e19
+DISTNAME =		openimageio-${V}
 
 SHARED_LIBS +=		OpenImageIO	2.0 # 1.0
 
@@ -24,9 +27,6 @@ WANTLIB += QtGui QtOpenGL SM X11 Xext boost_filesystem-mt boost_python-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += freetype gif jpeg m openjpeg png pthread ${MODPY_WANTLIB}
 WANTLIB += ssl stdc++ tiff webp z
-
-MASTER_SITES =		https://github.com/OpenImageIO/oiio/archive/
-DIST_SUBDIR =		openimageio
 
 MODULES =		devel/cmake \
 			lang/python \
