@@ -1,8 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2014/07/03 07:54:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/08/25 15:39:38 kirby Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
-DISTNAME=		osm-gps-map-1.0.1
+GH_ACCOUNT = 		nzjrs
+GH_PROJECT = 		osm-gps-map
+GH_TAGNAME = 		1.0.1
+GH_COMMIT = 		6e866d61819df62dfc4962806639a0c25c87ae87
+DISTNAME=		osm-gps-map-${GH_TAGNAME}
+
 CATEGORIES=		geo x11
 
 SHARED_LIBS +=  osmgpsmap-1.0             0.0 # 0.0
@@ -19,10 +24,6 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 xcb xcb-render xcb-shm xml2 z
-
-# 1.0.1.tar.gz
-#MASTER_SITES=		https://github.com/nzjrs/osm-gps-map/archive/
-MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES=		devel/gettext
 
