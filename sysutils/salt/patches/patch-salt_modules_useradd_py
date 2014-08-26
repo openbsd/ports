@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_useradd_py,v 1.1 2014/08/26 16:28:43 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_useradd_py,v 1.2 2014/08/26 21:41:43 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15284
+https://github.com/saltstack/salt/commit/9feb62718a19420054313898b78d36263fb6db7f
 
 --- salt/modules/useradd.py.orig	Fri Aug  1 20:38:41 2014
 +++ salt/modules/useradd.py	Tue Aug 26 17:18:01 2014
