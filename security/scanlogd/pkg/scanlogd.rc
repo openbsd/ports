@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: scanlogd.rc,v 1.1 2014/08/26 15:51:14 kirby Exp $
+
+daemon="${TRUEPREFIX}/sbin/scanlogd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

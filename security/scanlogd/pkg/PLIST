@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/23 10:10:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/08/26 15:51:14 kirby Exp $
 @newgroup _scanlogd:514
 @newuser _scanlogd:514:_scanlogd:daemon:scanlogd:/nonexistent:/sbin/nologin
 @man man/man8/scanlogd.8
 @bin sbin/scanlogd
+@rcscript ${RCDIR}/scanlogd
