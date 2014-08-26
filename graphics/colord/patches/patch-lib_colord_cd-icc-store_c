@@ -1,19 +1,19 @@
-$OpenBSD: patch-lib_colord_cd-icc-store_c,v 1.1 2014/04/11 10:48:17 ajacoutot Exp $
+$OpenBSD: patch-lib_colord_cd-icc-store_c,v 1.2 2014/08/26 07:18:13 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- lib/colord/cd-icc-store.c.orig	Thu Feb 13 20:22:12 2014
-+++ lib/colord/cd-icc-store.c	Fri Apr 11 11:47:28 2014
-@@ -210,7 +210,7 @@ cd_icc_store_add_icc (CdIccStore *store, GFile *file, 
+--- lib/colord/cd-icc-store.c.orig	Wed Jun  4 10:43:15 2014
++++ lib/colord/cd-icc-store.c	Tue Aug 26 09:07:08 2014
+@@ -203,7 +203,7 @@ cd_icc_store_add_icc (CdIccStore *store, GFile *file, 
  	icc = cd_icc_new ();
  	filename = g_file_get_path (file);
  	if (store->priv->cache != NULL) {
 -		if (g_str_has_prefix (filename, "/usr/share/color/icc/colord/")) {
-+		if (g_str_has_prefix (filename, "${LOCALBASE}/share/color/icc/colord/")) {
++		if (g_str_has_prefix (filename, "${PREFIX}/share/color/icc/colord/")) {
+ 			_cleanup_free_ gchar *cache_key = NULL;
  			cache_key = g_build_filename ("/org/freedesktop/colord",
  						      "profiles",
- 						      filename + 28,
-@@ -655,11 +655,11 @@ cd_icc_store_search_kind (CdIccStore *store,
+@@ -613,11 +613,11 @@ cd_icc_store_search_kind (CdIccStore *store,
  		break;
  	case CD_ICC_STORE_SEARCH_KIND_MACHINE:
  		g_ptr_array_add (locations, g_strdup (CD_SYSTEM_PROFILES_DIR));
@@ -23,7 +23,7 @@ $OpenBSD: patch-lib_colord_cd-icc-store_c,v 1.1 2014/04/11 10:48:17 ajacoutot Ex
  	case CD_ICC_STORE_SEARCH_KIND_SYSTEM:
  		g_ptr_array_add (locations, g_strdup ("/usr/share/color/icc"));
 -		g_ptr_array_add (locations, g_strdup ("/usr/local/share/color/icc"));
-+		g_ptr_array_add (locations, g_strdup ("${LOCALBASE}/share/color/icc"));
++		g_ptr_array_add (locations, g_strdup ("${PREFIX}/share/color/icc"));
  		g_ptr_array_add (locations, g_strdup ("/Library/ColorSync/Profiles/Displays"));
  		break;
  	default:
