@@ -1,0 +1,32 @@
+$OpenBSD: patch-plugins_filetemplates_CMakeLists_txt,v 1.1 2014/08/26 23:01:52 zhuk Exp $
+Fix missing UI files dependencies when building test program.
+--- plugins/filetemplates/CMakeLists.txt.orig	Wed Aug 27 02:54:14 2014
++++ plugins/filetemplates/CMakeLists.txt	Wed Aug 27 02:56:06 2014
+@@ -15,6 +15,7 @@ set(kdevfiletemplates_PART_SRCS
+     testcasespage.cpp
+ )
+ 
++# on change, update ${test_srcs} one below, too
+ kde4_add_ui_files(kdevfiletemplates_PART_SRCS
+     templatepreviewtoolview.ui
+     ui/classmembers.ui
+@@ -80,6 +81,19 @@ main.cpp
+     templateoptionspage.cpp
+     templateselectionpage.cpp
+     testcasespage.cpp
++)
++
++# same as with kdevfiletemplates_PART_SRCS, should be in synce
++kde4_add_ui_files(test_srcs
++    templatepreviewtoolview.ui
++    ui/classmembers.ui
++    ui/classoptions.ui
++    ui/licensechooser.ui
++    ui/newclass.ui
++    ui/outputlocation.ui
++    ui/overridevirtuals.ui
++    ui/templateselection.ui
++    ui/testcases.ui
+ )
+ 
+ kde4_add_executable(testfiletemplates ${test_srcs})
