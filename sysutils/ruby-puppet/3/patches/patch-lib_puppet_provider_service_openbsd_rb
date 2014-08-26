@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.16 2014/08/25 08:09:57 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.17 2014/08/26 09:29:51 jasper Exp $
 
 * Rewrite using rcctl(8)
 
 --- lib/puppet/provider/service/openbsd.rb.orig	Mon Jun  9 23:08:19 2014
-+++ lib/puppet/provider/service/openbsd.rb	Mon Aug 25 09:38:37 2014
++++ lib/puppet/provider/service/openbsd.rb	Tue Aug 26 11:29:05 2014
 @@ -2,340 +2,89 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    desc "Provider for OpenBSD's rc.d daemon control scripts"
@@ -31,7 +31,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.16 2014/08/25 08:09:5
  
    def restartcmd
 -    (@resource[:hasrestart] == :true) && [self.initscript, "-f", :restart]
-+    [command(:rcctl), '-f', :restart, @resource[:name]]
++    (@resource[:hasrestart] == :true) && [command(:rcctl), '-f', :restart, @resource[:name]]
    end
  
    def statuscmd
