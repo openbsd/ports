@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.121 2014/07/14 21:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2014/08/26 21:31:03 ajacoutot Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.4.4
+V =		2.4.5
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
@@ -79,7 +79,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		EGL X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg m harfbuzz-icu \
-		Xxf86vm dbus-1 dbus-glib-1 drm geoclue \
+		Xxf86vm dbus-1 dbus-glib-1 drm geoclue gbm \
 		gstaudio-1.0 gstfft-1.0 gdk_pixbuf-2.0 orc-0.4 \
 		gstreamer-1.0 gstbase-1.0 gstvideo-1.0 gstapp-1.0 gstpbutils-1.0 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
@@ -123,7 +123,7 @@ WANTLIB +=	atk-bridge-2.0 atspi
 
 WEBKIT_API_VERSION =	3.0
 GTK_API_VERSION =	3.0
-SHARED_LIBS += webkit2gtk-${WEBKIT_API_VERSION}		1.0 # 34.0
+SHARED_LIBS += webkit2gtk-${WEBKIT_API_VERSION}		1.0 # 35.8
 .else
 # only works with gtk+3
 CONFIGURE_ARGS+=	--disable-webkit2
@@ -131,8 +131,8 @@ WEBKIT_API_VERSION =	1.0
 GTK_API_VERSION =	2.0
 .endif
 
-SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.4
-SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.2
+SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.3
+SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.11
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp ${WRKSRC}/configure

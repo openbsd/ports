@@ -1,12 +1,11 @@
-$OpenBSD: patch-Source_WTF_wtf_dtoa_utils_h,v 1.3 2014/03/25 06:25:45 landry Exp $
---- Source/WTF/wtf/dtoa/utils.h.orig	Tue Jan 21 15:06:51 2014
-+++ Source/WTF/wtf/dtoa/utils.h	Fri Feb 14 22:54:18 2014
-@@ -49,7 +49,7 @@
- defined(__ARMEL__) || \
+$OpenBSD: patch-Source_WTF_wtf_dtoa_utils_h,v 1.4 2014/08/26 21:31:03 ajacoutot Exp $
+--- Source/WTF/wtf/dtoa/utils.h.orig	Mon Aug 25 13:27:53 2014
++++ Source/WTF/wtf/dtoa/utils.h	Tue Aug 26 13:54:25 2014
+@@ -50,6 +50,7 @@ defined(__ARMEL__) || \
  defined(_MIPS_ARCH_MIPS32R2)
  #define DOUBLE_CONVERSION_CORRECT_DOUBLE_OPERATIONS 1
--#elif CPU(MIPS) || CPU(PPC) || CPU(PPC64) || OS(WINCE) || CPU(SH4) || CPU(S390) || CPU(S390X) || CPU(IA64) || CPU(ALPHA) || CPU(ARM64) || CPU(HPPA)
-+#elif CPU(MIPS) || CPU(PPC) || CPU(PPC64) || OS(WINCE) || CPU(SH4) || CPU(S390) || CPU(S390X) || CPU(IA64) || CPU(ALPHA) || CPU(ARM64) || CPU(HPPA) || CPU(MIPS64) || CPU(SPARC64)
+ #elif CPU(MIPS) || CPU(PPC) || CPU(PPC64) || CPU(PPC64LE) || OS(WINCE) || CPU(SH4) || CPU(S390) || CPU(S390X) || CPU(IA64) || CPU(ALPHA) || CPU(ARM64) || CPU(HPPA)
++#elif CPU(MIPS) || CPU(PPC) || CPU(PPC64) || CPU(PPC64LE) || OS(WINCE) || CPU(SH4) || CPU(S390) || CPU(S390X) || CPU(IA64) || CPU(ALPHA) || CPU(ARM64) || CPU(HPPA) || CPU(MIPS64) || CPU(SPARC64)
  #define DOUBLE_CONVERSION_CORRECT_DOUBLE_OPERATIONS 1
  #elif defined(_M_IX86) || defined(__i386__)
  #if defined(_WIN32)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.4 2014/03/25 06:25:45 landry Exp $
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.5 2014/08/26 21:31:03 ajacoutot Exp $
 
 Add defines for sparc64/mips64.
 Disable yarr jit on anything not having a jit
@@ -22,8 +22,8 @@ last chunk needed to build on ppc/sparc64, otherwise yarr jit and
 assembler is enabled (because of llint cloop) but there's no asm
 for those
 
---- Source/WTF/wtf/Platform.h.orig	Mon Mar  3 09:11:49 2014
-+++ Source/WTF/wtf/Platform.h	Sat Mar  8 22:59:04 2014
+--- Source/WTF/wtf/Platform.h.orig	Mon Aug 25 14:50:32 2014
++++ Source/WTF/wtf/Platform.h	Tue Aug 26 13:55:22 2014
 @@ -71,6 +71,12 @@
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
@@ -54,7 +54,7 @@ for those
  #if defined(__MIPSEB__)
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
-@@ -313,7 +324,7 @@
+@@ -327,7 +338,7 @@
  
  #endif /* ARM */
  
@@ -63,16 +63,18 @@ for those
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -641,6 +652,8 @@
-     || CPU(ALPHA) \
+@@ -656,7 +667,9 @@
      || CPU(ARM64) \
      || CPU(S390X) \
+     || CPU(PPC64) \
+-    || CPU(PPC64LE)
++    || CPU(PPC64LE) \
 +    || CPU(SPARC64) \
-+    || CPU(MIPS64) \
-     || CPU(PPC64)
++    || CPU(MIPS64)
  #define WTF_USE_JSVALUE64 1
  #else
-@@ -708,7 +721,7 @@
+ #define WTF_USE_JSVALUE32_64 1
+@@ -723,7 +736,7 @@
     low-level interpreter. */
  #if !defined(ENABLE_LLINT) \
      && ENABLE(JIT) \
@@ -81,7 +83,7 @@ for those
      && (PLATFORM(MAC) || PLATFORM(IOS) || PLATFORM(GTK)) \
      && (CPU(X86) || CPU(X86_64) || CPU(ARM_THUMB2) || CPU(ARM_TRADITIONAL) || CPU(ARM64) || CPU(MIPS) || CPU(SH4))
  #define ENABLE_LLINT 1
-@@ -716,7 +729,7 @@
+@@ -731,7 +744,7 @@
  
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT) && !COMPILER(MSVC)
  /* Enable the DFG JIT on X86 and X86_64.  Only tested on Mac, GNU/Linux and FreeBSD. */
@@ -90,7 +92,7 @@ for those
  #define ENABLE_DFG_JIT 1
  #endif
  /* Enable the DFG JIT on ARMv7.  Only tested on iOS and Qt/GTK+ Linux. */
-@@ -807,7 +820,7 @@
+@@ -822,7 +835,7 @@
  #define ENABLE_REGEXP_TRACING 0
  
  /* Yet Another Regex Runtime - turned on by default for JIT enabled ports. */
