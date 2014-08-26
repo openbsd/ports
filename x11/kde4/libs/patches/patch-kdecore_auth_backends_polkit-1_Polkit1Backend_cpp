@@ -1,0 +1,38 @@
+$OpenBSD: patch-kdecore_auth_backends_polkit-1_Polkit1Backend_cpp,v 1.2 2014/08/26 23:14:27 zhuk Exp $
+Fix for auth race condition.
+REVIEW: https://git.reviewboard.kde.org/r/119323/
+--- kdecore/auth/backends/polkit-1/Polkit1Backend.cpp.orig	Thu Jan  2 23:26:51 2014
++++ kdecore/auth/backends/polkit-1/Polkit1Backend.cpp	Thu Aug  7 18:08:58 2014
+@@ -144,7 +144,7 @@ void Polkit1Backend::setupAction(const QString &action
+ 
+ Action::AuthStatus Polkit1Backend::actionStatus(const QString &action)
+ {
+-    PolkitQt1::UnixProcessSubject subject(QCoreApplication::applicationPid());
++    PolkitQt1::SystemBusNameSubject subject(QString::fromUtf8(callerID()));
+     PolkitQt1::Authority::Result r = PolkitQt1::Authority::instance()->checkAuthorizationSync(action, subject,
+                                                                                               PolkitQt1::Authority::None);
+     switch (r) {
+@@ -160,21 +160,12 @@ Action::AuthStatus Polkit1Backend::actionStatus(const 
+ 
+ QByteArray Polkit1Backend::callerID() const
+ {
+-    QByteArray a;
+-    QDataStream s(&a, QIODevice::WriteOnly);
+-    s << QCoreApplication::applicationPid();
+-
+-    return a;
++    return QDBusConnection::systemBus().baseService().toUtf8();
+ }
+ 
+ bool Polkit1Backend::isCallerAuthorized(const QString &action, QByteArray callerID)
+ {
+-    QDataStream s(&callerID, QIODevice::ReadOnly);
+-    qint64 pid;
+-
+-    s >> pid;
+-
+-    PolkitQt1::UnixProcessSubject subject(pid);
++    PolkitQt1::SystemBusNameSubject subject(QString::fromUtf8(callerID));
+     PolkitQt1::Authority *authority = PolkitQt1::Authority::instance();
+ 
+     PolkitResultEventLoop e;
