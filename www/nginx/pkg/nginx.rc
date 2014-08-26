@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: enginx.rc,v 1.1 2012/09/11 16:01:45 sthen Exp $
+# $OpenBSD: nginx.rc,v 1.10 2014/08/26 19:43:59 robert Exp $
 
 daemon="${TRUEPREFIX}/sbin/nginx"
 

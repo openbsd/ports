@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/09/11 16:01:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/08/26 19:43:59 robert Exp $
 %%passenger%%
 !%%passenger%%
 @man man/man8/nginx.8
@@ -26,4 +26,4 @@ share/nginx/nginx.conf
 share/nginx/scgi_params
 share/nginx/uwsgi_params
 share/nginx/win-utf
-@rcscript ${RCDIR}/enginx
+@rcscript ${RCDIR}/nginx

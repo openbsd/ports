@@ -1,0 +1,144 @@
+$OpenBSD: patch-conf_nginx_conf,v 1.7 2014/08/26 19:43:59 robert Exp $
+--- conf/nginx.conf.orig	Tue Aug  5 13:13:06 2014
++++ conf/nginx.conf	Sat Aug 23 13:24:52 2014
+@@ -1,30 +1,33 @@
++# Take note of http://wiki.nginx.org/Pitfalls
+ 
+-#user  nobody;
++#user  www;
+ worker_processes  1;
+ 
+ #error_log  logs/error.log;
+ #error_log  logs/error.log  notice;
+ #error_log  logs/error.log  info;
++#error_log  syslog:server=unix:/dev/log,severity=notice;
+ 
+ #pid        logs/nginx.pid;
+ 
+-
++worker_rlimit_nofile 1024;
+ events {
+-    worker_connections  1024;
++    worker_connections  800;
+ }
+ 
+ 
+ http {
+     include       mime.types;
+     default_type  application/octet-stream;
++    index         index.html index.htm;
+ 
+     #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+     #                  '$status $body_bytes_sent "$http_referer" '
+     #                  '"$http_user_agent" "$http_x_forwarded_for"';
+ 
+     #access_log  logs/access.log  main;
++    #access_log  syslog:server=unix:/dev/log,severity=notice main;
+ 
+-    sendfile        on;
+     #tcp_nopush     on;
+ 
+     #keepalive_timeout  0;
+@@ -32,41 +35,49 @@ http {
+ 
+     #gzip  on;
+ 
++    server_tokens off;
++
+     server {
+         listen       80;
++        listen       [::]:80;
+         server_name  localhost;
++        root         /var/www/htdocs;
+ 
+         #charset koi8-r;
+ 
+         #access_log  logs/host.access.log  main;
+ 
+-        location / {
+-            root   html;
+-            index  index.html index.htm;
+-        }
+-
+         #error_page  404              /404.html;
+ 
+         # redirect server error pages to the static page /50x.html
+         #
+         error_page   500 502 503 504  /50x.html;
+         location = /50x.html {
+-            root   html;
++            root  /var/www/htdocs;
+         }
+ 
++        # FastCGI to CGI wrapper server
++        #
++        #location /cgi-bin/ {
++        #    fastcgi_pass   unix:run/slowcgi.sock;
++        #    fastcgi_split_path_info ^(/cgi-bin/[^/]+)(.*);
++        #    fastcgi_param  PATH_INFO $fastcgi_path_info;
++        #    include        fastcgi_params;
++        #}
++
+         # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+         #
+         #location ~ \.php$ {
+         #    proxy_pass   http://127.0.0.1;
+         #}
+ 
+-        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
++        # pass the PHP scripts to FastCGI server listening on unix socket
+         #
+         #location ~ \.php$ {
+-        #    root           html;
+-        #    fastcgi_pass   127.0.0.1:9000;
++        #    try_files      $uri $uri/ =404;
++        #    fastcgi_pass   unix:run/php-fpm.sock;
+         #    fastcgi_index  index.php;
+-        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
++        #    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+         #    include        fastcgi_params;
+         #}
+ 
+@@ -85,33 +96,26 @@ http {
+     #    listen       8000;
+     #    listen       somename:8080;
+     #    server_name  somename  alias  another.alias;
+-
+-    #    location / {
+-    #        root   html;
+-    #        index  index.html index.htm;
+-    #    }
++    #    root         /var/www/htdocs;
+     #}
+ 
+ 
+     # HTTPS server
+     #
+     #server {
+-    #    listen       443 ssl;
++    #    listen       443;
+     #    server_name  localhost;
++    #    root         /var/www/htdocs;
+ 
+-    #    ssl_certificate      cert.pem;
+-    #    ssl_certificate_key  cert.key;
++    #    ssl                  on;
++    #    ssl_certificate      /etc/ssl/server.crt;
++    #    ssl_certificate_key  /etc/ssl/private/server.key;
+ 
+-    #    ssl_session_cache    shared:SSL:1m;
+     #    ssl_session_timeout  5m;
++    #    ssl_session_cache    shared:SSL:1m;
+ 
+-    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+-    #    ssl_prefer_server_ciphers  on;
+-
+-    #    location / {
+-    #        root   html;
+-    #        index  index.html index.htm;
+-    #    }
++    #    ssl_ciphers  HIGH:!aNULL:!MD5:!RC4;
++    #    ssl_prefer_server_ciphers   on;
+     #}
+ 
+ }

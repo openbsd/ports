@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/09/11 16:01:45 sthen Exp $
+$OpenBSD: README,v 1.1 2014/08/26 19:43:59 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,7 +16,7 @@ should instead use the ${RCDIR}/enginx script.
 Documentation for nginx can be found on the wiki:
     http://wiki.nginx.org/
 
-Each of the available FLAVORs has more documentation available at their 
+Each of the available FLAVORs has more documentation available at their
 respective homepages:
 
     lua:	https://github.com/chaoslawful/lua-nginx-module
