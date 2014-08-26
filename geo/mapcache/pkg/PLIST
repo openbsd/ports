@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/26 18:38:49 landry Exp $
+@cwd /var/www/
+@bin cgi-bin/mapcache
+conf/mapcache.xml
+@cwd ${LOCALBASE}
+@bin bin/mapcache.fcgi
+@bin bin/mapcache_seed
+@lib lib/libmapcache.so.${LIBmapcache_VERSION}
+@rcscript ${RCDIR}/mapcache
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

@@ -1,0 +1,43 @@
+# $OpenBSD: README,v 1.1.1.1 2014/08/26 18:38:49 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If you plan to use mapcache CGI with a chrooted web server, make sure to
+copy the libs needed by mapcache binary from ${LOCALBASE}/lib. If you
+copy them keeping the same directory hierarchy (with lib, local/lib and
+X11R6/lib, you need to make sure there's a ld.so.hints file inside the
+chroot pointing to those dirs. You can do all this with:
+# mkdir -p /var/www/usr/{libexec,{,local,X11R6}/lib}
+# ldd /var/www/cgi-bin/mapcache  | awk '/lib/ { print $7 }' | while read f ; do cp $f /var/www/$f ; done
+
+# cp /sbin/ldconfig /var/www \
+	&& mkdir -p /var/www/var/run \
+	&& chroot /var/www ./ldconfig /usr/lib /usr/local/lib /usr/X11R6/lib \
+	&& rm /var/www/ldconfig
+
+You also need to ensure mapcache can write to its cache directory, /tmp
+in the chroot by default:
+
+# install -d -o www /var/www/tmp
+
+If you would like to use FastCGI with nginx from base, use the provided rc.d(8)
+script and add the following lines to your nginx.conf:
+
+location /cgi-bin/mapcache {
+	fastcgi_pass  unix:run/mapcache.sock;
+	fastcgi_split_path_info ^(/cgi-bin/mapcache)(.*)$;
+	fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+	fastcgi_param PATH_INFO $fastcgi_path_info;
+	include fastcgi_params;
+}
+
+You also need to set the path to the mapcache configuration file via a
+login.conf class:
+
+mapcache:\
+	:setenv=MAPCACHE_CONFIG_FILE=conf/mapcache.xml:\
+	:tc=daemon:
+
+and then visit http://localhost/cgi-bin/mapcache/demo.
