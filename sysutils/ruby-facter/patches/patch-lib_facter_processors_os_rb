@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_facter_processors_os_rb,v 1.1 2014/08/26 07:38:36 jasper Exp $
+
+https://github.com/puppetlabs/facter/pull/771
+
+--- lib/facter/processors/os.rb.orig	Tue Aug 26 09:37:21 2014
++++ lib/facter/processors/os.rb	Tue Aug 26 09:37:36 2014
+@@ -177,6 +177,10 @@ module Facter
+       def get_physical_processor_count
+         Facter::Util::POSIX.sysctl("hw.ncpufound").to_i
+       end
++
++      def get_processor_speed
++        Facter::Util::POSIX.sysctl("hw.cpuspeed").to_i
++      end
+     end
+ 
+     class SunOS < Base
