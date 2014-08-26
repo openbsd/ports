@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.17 2014/08/26 09:29:51 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:27 jasper Exp $
 
 * Rewrite using rcctl(8)
+  https://github.com/puppetlabs/puppet/pull/3017
 
 --- lib/puppet/provider/service/openbsd.rb.orig	Mon Jun  9 23:08:19 2014
 +++ lib/puppet/provider/service/openbsd.rb	Tue Aug 26 11:29:05 2014
