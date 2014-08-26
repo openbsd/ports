@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/08/26 19:03:35 landry Exp $
 
 COMMENT =	store rasters coverages within spatialite
 PROJECT =	librasterlite
-DISTNAME =	${PROJECT}-1.1f
+DISTNAME =	${PROJECT}-1.1g
 SHARED_LIBS =	rasterlite 0.0 #2.0
 
 # breaks build if static is disabled
@@ -13,6 +13,10 @@ LIB_DEPENDS +=	geo/spatialite/libspatialite \
 		devel/geotiff
 
 WANTLIB += c freexl geos geos_c geotiff jpeg m png proj pthread
-WANTLIB += spatialite sqlite3 stdc++ tiff z
+WANTLIB += spatialite sqlite3 stdc++ tiff z xml2
+
+# 1 test fails
+#ERROR: jpeg50 reference image mismatch at offset 717
+#FAIL: check_rastergen
 
 .include <bsd.port.mk>
