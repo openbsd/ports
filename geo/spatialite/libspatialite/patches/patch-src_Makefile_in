@@ -1,12 +1,24 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
---- src/Makefile.in.orig	Sun Mar 10 15:29:28 2013
-+++ src/Makefile.in	Sun Mar 10 15:29:37 2013
-@@ -52,7 +52,7 @@ POST_UNINSTALL = :
+$OpenBSD: patch-src_Makefile_in,v 1.2 2014/08/26 19:02:03 landry Exp $
+--- src/Makefile.in.orig	Fri Jul 25 12:36:10 2014
++++ src/Makefile.in	Sun Aug 24 22:00:14 2014
+@@ -79,9 +79,9 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
  @ANDROID_TRUE@@MINGW_FALSE@am__append_1 = -ldl
 -@ANDROID_FALSE@@MINGW_FALSE@am__append_2 = -lpthread -ldl
 +@ANDROID_FALSE@@MINGW_FALSE@am__append_2 = -lpthread
+ @ANDROID_TRUE@@MINGW_FALSE@am__append_3 = -ldl
+-@ANDROID_FALSE@@MINGW_FALSE@am__append_4 = -lpthread -ldl
++@ANDROID_FALSE@@MINGW_FALSE@am__append_4 = -lpthread
  subdir = src
- DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp
+@@ -429,7 +429,7 @@ mod_spatialite_la_LIBADD = ./gaiaaux/gaiaaux.la ./gaia
+ mod_spatialite_la_CPPFLAGS = @CFLAGS@ -I$(top_srcdir)/src/headers -I. \
+ 	-DLOADABLE_EXTENSION
+ mod_spatialite_la_LIBTOOLFLAGS = --tag=disable-static
+-@ANDROID_FALSE@@MINGW_FALSE@mod_spatialite_la_LDFLAGS = -module -version-info 7:0:0
++@ANDROID_FALSE@@MINGW_FALSE@mod_spatialite_la_LDFLAGS = -module -avoid-version
+ @ANDROID_TRUE@@MINGW_FALSE@mod_spatialite_la_LDFLAGS = -module -version-info 7:0:0
+ @MINGW_TRUE@mod_spatialite_la_LDFLAGS = -module -avoid-version -no-undefined
+ MOSTLYCLEANFILES = *.gcna *.gcno *.gcda
