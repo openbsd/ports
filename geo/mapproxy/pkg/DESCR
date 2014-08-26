@@ -1,0 +1,6 @@
+MapProxy is an open source proxy for geospatial data. It caches, accelerates and
+transforms data from existing map services and serves any desktop or web GIS
+client. It supports WMS-C, TMS and WMTS protocols.
+
+MapProxy is a tile cache, but also offers many new and innovative features like
+full support for WMS clients.

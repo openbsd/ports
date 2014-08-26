@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_cfg,v 1.1.1.1 2014/08/26 18:47:04 landry Exp $
+--- setup.cfg.orig	Wed Jul  9 16:35:23 2014
++++ setup.cfg	Tue Aug 26 20:40:09 2014
+@@ -6,4 +6,5 @@ with-doctest = 1
+ 
+ [egg_info]
+ #tag_build = .dev
+-tag_date = true
+\ No newline at end of file
++#tag_date = true
++
