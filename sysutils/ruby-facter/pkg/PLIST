@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/07/21 15:51:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/08/26 07:03:31 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -29,6 +29,7 @@ ${MODRUBY_SITEDIR}/facter/fqdn.rb
 ${MODRUBY_SITEDIR}/facter/gce/
 ${MODRUBY_SITEDIR}/facter/gce.rb
 ${MODRUBY_SITEDIR}/facter/gce/metadata.rb
+${MODRUBY_SITEDIR}/facter/gid.rb
 ${MODRUBY_SITEDIR}/facter/hardwareisa.rb
 ${MODRUBY_SITEDIR}/facter/hardwaremodel.rb
 ${MODRUBY_SITEDIR}/facter/hostname.rb
@@ -47,6 +48,7 @@ ${MODRUBY_SITEDIR}/facter/lsbdistdescription.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistid.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbmajdistrelease.rb
+${MODRUBY_SITEDIR}/facter/lsbminordistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbrelease.rb
 ${MODRUBY_SITEDIR}/facter/macaddress.rb
 ${MODRUBY_SITEDIR}/facter/macosx.rb
@@ -54,20 +56,34 @@ ${MODRUBY_SITEDIR}/facter/manufacturer.rb
 ${MODRUBY_SITEDIR}/facter/memory.rb
 ${MODRUBY_SITEDIR}/facter/netmask.rb
 ${MODRUBY_SITEDIR}/facter/network.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/
 ${MODRUBY_SITEDIR}/facter/operatingsystem.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/base.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/cumuluslinux.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/implementation.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/linux.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/sunos.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/vmkernel.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/windows.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystemmajrelease.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystemrelease.rb
+${MODRUBY_SITEDIR}/facter/os.rb
 ${MODRUBY_SITEDIR}/facter/osfamily.rb
 ${MODRUBY_SITEDIR}/facter/partitions.rb
 ${MODRUBY_SITEDIR}/facter/path.rb
 ${MODRUBY_SITEDIR}/facter/physicalprocessorcount.rb
 ${MODRUBY_SITEDIR}/facter/processor.rb
+${MODRUBY_SITEDIR}/facter/processors/
+${MODRUBY_SITEDIR}/facter/processors.rb
+${MODRUBY_SITEDIR}/facter/processors/os.rb
 ${MODRUBY_SITEDIR}/facter/ps.rb
 ${MODRUBY_SITEDIR}/facter/puppetversion.rb
+${MODRUBY_SITEDIR}/facter/rackspace.rb
 ${MODRUBY_SITEDIR}/facter/rubysitedir.rb
 ${MODRUBY_SITEDIR}/facter/rubyversion.rb
 ${MODRUBY_SITEDIR}/facter/selinux.rb
 ${MODRUBY_SITEDIR}/facter/ssh.rb
+${MODRUBY_SITEDIR}/facter/system_uptime.rb
 ${MODRUBY_SITEDIR}/facter/timezone.rb
 ${MODRUBY_SITEDIR}/facter/uniqueid.rb
 ${MODRUBY_SITEDIR}/facter/uptime.rb
