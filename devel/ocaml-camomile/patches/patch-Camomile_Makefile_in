@@ -1,0 +1,32 @@
+$OpenBSD: patch-Camomile_Makefile_in,v 1.1 2014/08/27 07:47:47 chrisz Exp $
+
+Upstream bug:
+https://github.com/yoriyuki/Camomile/commit/5492be77bf6534e7b24f829bd35f020fa9d3b0ad
+
+--- Camomile/Makefile.in.orig	Mon Aug 25 18:59:20 2014
++++ Camomile/Makefile.in	Mon Aug 25 18:57:54 2014
+@@ -70,7 +70,7 @@ OFLAGS =  $(OOPTIONS) $(INCLUDES)
+ # Generic targets
+ #################
+ 
+-all : byte $(OCAMLBEST) opt unidata unimaps charmap_data locale_data
++all : byte $(OCAMLBEST) unidata unimaps charmap_data locale_data
+ 
+ # Build the library
+ ###################
+@@ -396,6 +396,7 @@ install-without-ocamlfind:
+ 	if [ -f camomileLibrary.cmx ]; then cp -f camomileLibrary.cmx '$(OCAMLLIB)'; fi
+ 	if [ -f camomileLibrary.cma ]; then cp -f camomileLibrary.cma '$(OCAMLLIB)'; fi
+ 	if [ -f camomileLibrary.cmxa ]; then cp -f camomileLibrary.cmxa '$(OCAMLLIB)'; fi
++	if [ -f camomileLibrary.a ]; then cp -f camomileLibrary.a '$(OCAMLLIB)'; fi
+ 	if [ -f camomileLibraryDefault.cmx ]; then cp -f camomileLibraryDefault.cmx '$(OCAMLLIB)'; fi
+ 	if [ -f camomileLibraryDyn.cmx ]; then cp -f camomileLibraryDyn.cmx '$(OCAMLLIB)'; fi
+ 	if [ -f camomile.cma ]; then cp -f camomile.cma '$(OCAMLLIB)'; fi
+@@ -407,6 +408,7 @@ install-with-ocamlfind:
+ 	if [ -f camomileLibrary.cmx ]; then files=camomileLibrary.cmx; fi && \
+ 	if [ -f camomileLibrary.cma ]; then files="camomileLibrary.cma $$files"; fi && \
+ 	if [ -f camomileLibrary.cmxa ]; then files="camomileLibrary.cmxa $$files"; fi && \
++	if [ -f camomileLibrary.a ]; then files="camomileLibrary.a $$files"; fi && \
+ 	if [ -f camomileLibraryDefault.cmx ]; then files="camomileLibraryDefault.cmx $$files"; fi && \
+ 	if [ -f camomileLibraryDyn.cmx ]; then files="camomileLibraryDyn.cmx $$files"; fi && \
+ 	if [ -f camomile.cma ]; then files="camomile.cma $$files"; fi&& \

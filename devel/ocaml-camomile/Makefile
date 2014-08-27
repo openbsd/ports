@@ -1,34 +1,45 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/22 22:21:53 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/27 07:47:47 chrisz Exp $
 
 COMMENT =	unicode library for objective caml
 
 CATEGORIES =	devel
 
-V =		0.8.3
-REVISION =	2
+V =		0.8.5
+GH_ACCOUNT =	yoriyuki
+GH_PROJECT =	Camomile
+GH_TAGNAME =	rel-${V}
+GH_COMMIT =	07415d3049eaad11914523468904ee117db149e3
 DISTNAME =	camomile-${V}
-PKGNAME =	ocaml-camomile-${V}
-EXTRACT_SUFX =	.tar.bz2
+WRKSRC =	${WRKDIST}/Camomile
+PKGNAME =	ocaml-${DISTNAME}
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=camomile/}
+HOMEPAGE =	https://github.com/yoriyuki/Camomile
 
-HOMEPAGE =	http://camomile.sourceforge.net/
-
-MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
+MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPL >= 2
 PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib lang/ocaml,-camlp4
 
-CONFIGURE_STYLE = gnu dest
+CONFIGURE_STYLE =	gnu dest autoconf no-autoheader
+AUTOCONF_VERSION =	2.69
 
 NO_TEST =	Yes
 USE_GMAKE =	Yes
 
+# don't want to port cppo - use cpp as cppo substitute
+CONFIGURE_ENV =	CPPO="cpp -P"
+
 ALL_TARGET =	all dochtml
+
+post-extract:
+	touch ${WRKSRC}/.depend
+	# for cpp remove indentation before preprocessor directives.
+	echo '1;$$s/^ *#/#/\nwq' |ed -s ${WRKSRC}/camomileLibrary.mlp
+	echo '1;$$s/^ *#/#/\nwq' |ed -s ${WRKSRC}/camomileLibrary.mlip
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml

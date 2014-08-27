@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/18 22:13:17 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/08/27 07:47:47 chrisz Exp $
 %%native%%
 lib/ocaml/camomile/
 lib/ocaml/camomile/META
@@ -998,6 +998,7 @@ share/doc/camomile/html/CamomileLibrary.CharEncoding.Interface.uchar_output_chan
 share/doc/camomile/html/CamomileLibrary.CharEncoding.html
 share/doc/camomile/html/CamomileLibrary.ConfigInt.Type.html
 share/doc/camomile/html/CamomileLibrary.ConfigInt.html
+share/doc/camomile/html/CamomileLibrary.DefaultConfig.html
 share/doc/camomile/html/CamomileLibrary.Locale.html
 share/doc/camomile/html/CamomileLibrary.Make.html
 share/doc/camomile/html/CamomileLibrary.OOChannel.channel_of_stream-c.html
@@ -1178,6 +1179,7 @@ share/doc/camomile/html/type_CamomileLibrary.CharEncoding.Interface.uchar_output
 share/doc/camomile/html/type_CamomileLibrary.CharEncoding.html
 share/doc/camomile/html/type_CamomileLibrary.ConfigInt.Type.html
 share/doc/camomile/html/type_CamomileLibrary.ConfigInt.html
+share/doc/camomile/html/type_CamomileLibrary.DefaultConfig.html
 share/doc/camomile/html/type_CamomileLibrary.Locale.html
 share/doc/camomile/html/type_CamomileLibrary.Make.html
 share/doc/camomile/html/type_CamomileLibrary.OOChannel.channel_of_stream.html
