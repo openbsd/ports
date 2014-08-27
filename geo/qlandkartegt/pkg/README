@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.2 2014/08/27 09:35:14 kirby Exp $
+
 qlandkarte accesses USB GPS devices via the ugen device driver. A scan
 is performed by successively opening ugen device nodes (starting with
 ugen0) until either your GPS device is found or until the ugen devices
