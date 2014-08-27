@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/08/26 19:00:31 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2014/08/27 08:28:29 landry Exp $
 
 BROKEN-hppa =	undefined reference to `std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
 COMMENT=	2d geometry and topology engine
@@ -24,7 +24,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-pic
 
 post-build:
-	cd $(WRKSRC)/doc && ${MAKE_PROGRAM} doxygen-html
+	cd $(WRKSRC)/doc && env DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC} ${MAKE_PROGRAM} doxygen-html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/geos/html
