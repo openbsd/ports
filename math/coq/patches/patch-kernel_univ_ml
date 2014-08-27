@@ -1,0 +1,16 @@
+$OpenBSD: patch-kernel_univ_ml,v 1.1 2014/08/27 09:44:59 daniel Exp $
+
+Backport fix for new string syntax in OCaml 4.02 comments:
+commit a3beca520724057a010a4b972b43d12bcf09f27e
+
+--- kernel/univ.ml.orig	Tue Aug 26 23:39:35 2014
++++ kernel/univ.ml	Tue Aug 26 23:40:14 2014
+@@ -226,7 +226,7 @@ let reprleq g arcu =
+ 
+ 
+ (* between : UniverseLevel.t -> canonical_arc -> canonical_arc list *)
+-(* between u v = {w|u<=w<=v, w canonical}          *)
++(* between u v = { w | u<=w<=v, w canonical }          *)
+ (* between is the most costly operation *)
+ 
+ let between g arcu arcv =
