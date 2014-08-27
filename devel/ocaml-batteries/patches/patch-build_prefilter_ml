@@ -1,0 +1,39 @@
+$OpenBSD: patch-build_prefilter_ml,v 1.1 2014/08/27 07:54:22 chrisz Exp $
+
+from upstream: support comparison operator for prefilter on version
+needed for backwards compatibility with ocaml < 4.2
+
+--- build/prefilter.ml.orig	Fri Jan 17 20:28:42 2014
++++ build/prefilter.ml	Wed Aug 20 11:50:45 2014
+@@ -3,23 +3,21 @@ let (major, minor) =
+     "%d.%d." (fun j n -> (j, n))
+ 
+ let filter_cookie_re =
+-  Str.regexp "^##V\\([^#]+\\)##"
++  Str.regexp "^##V\\([<>]?=?\\)\\([^#]+\\)##"
+ let version_re =
+   Str.regexp "\\([0-9]+\\)\\(\\.\\([0-9]+\\)\\)?"
+ 
+-let maybe f x = try Some (f x) with _ -> None
+-
+ let process_line line =
+   if Str.string_match filter_cookie_re line 0 then begin
+-    let ver_string = Str.matched_group 1 line in
++    let cmp = match Str.matched_group 1 line with
++    | "<" -> (<) | ">" -> (>) | "=" -> (=)
++    | "<=" -> (<=) | ">=" -> (>=) | _ -> (>=)
++    in
++    let ver_string = Str.matched_group 2 line in
+     assert (Str.string_match version_re ver_string 0) ;
+     let ver_maj = int_of_string (Str.matched_group 1 ver_string) in
+-    let pass = match maybe (Str.matched_group 3) ver_string with
+-    | None -> ver_maj <= major
+-    | Some ver_min ->
+-      let ver_min = int_of_string ver_min in
+-      ver_maj <= major && ver_min <= minor
+-    in
++    let ver_min = try int_of_string (Str.matched_group 3 ver_string) with _ -> 0 in
++    let pass = cmp (major*100+minor) (ver_maj*100+ver_min) in
+     if pass then Str.replace_first filter_cookie_re "" line
+     else ""
+   end else line

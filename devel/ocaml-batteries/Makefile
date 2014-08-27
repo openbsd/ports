@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2014/08/22 22:21:53 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/27 07:54:22 chrisz Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
 
-V =		2.1.0
+V =		2.2.0
 GH_ACCOUNT =	ocaml-batteries-team
 GH_PROJECT =	batteries-included
 GH_TAGNAME =	v$V
-GH_COMMIT =	7613438a4e8425fc51b16f21faaccdebc7ea76ce
+GH_COMMIT =	9370680ef30e225e50c76fc05654a897d79ee79d
 DISTNAME =	${GH_PROJECT}-$V
 PKGNAME =	ocaml-batteries-$V
 REVISION =	0

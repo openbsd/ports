@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/11/25 14:35:26 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/08/27 07:54:22 chrisz Exp $
 %%native%%
 lib/ocaml/batteries/
 lib/ocaml/batteries/META
@@ -175,6 +175,7 @@ lib/ocaml/batteries/batteries.cma
 lib/ocaml/batteries/batteries.cmi
 lib/ocaml/batteries/batteriesConfig.cmi
 lib/ocaml/batteries/batteriesConfig.cmo
+lib/ocaml/batteries/batteriesExceptionless.cmi
 lib/ocaml/batteries/batteriesHelp.cmi
 lib/ocaml/batteries/batteriesHelp.cmo
 lib/ocaml/batteries/batteriesHelp.mli
@@ -312,6 +313,8 @@ share/doc/ocaml-batteries/html/api/BatInt.Safe_int.Compare.html
 share/doc/ocaml-batteries/html/api/BatInt.Safe_int.Infix.html
 share/doc/ocaml-batteries/html/api/BatInt.Safe_int.html
 share/doc/ocaml-batteries/html/api/BatInt.html
+share/doc/ocaml-batteries/html/api/BatInt32.Compare.html
+share/doc/ocaml-batteries/html/api/BatInt32.Infix.html
 share/doc/ocaml-batteries/html/api/BatInt32.html
 share/doc/ocaml-batteries/html/api/BatInt64.Compare.html
 share/doc/ocaml-batteries/html/api/BatInt64.Infix.html
@@ -609,6 +612,26 @@ share/doc/ocaml-batteries/html/api/Batteries.Uref.html
 share/doc/ocaml-batteries/html/api/Batteries.Vect.html
 share/doc/ocaml-batteries/html/api/Batteries.html
 share/doc/ocaml-batteries/html/api/BatteriesConfig.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Array.Cap.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Array.Labels.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Array.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Enum.Labels.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Enum.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Hashtbl.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.LazyList.Labels.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.LazyList.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.List.Labels.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.List.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Map.PMap.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Map.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Queue.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Seq.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Splay.Map.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Splay.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.Stack.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.String.Cap.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.String.html
+share/doc/ocaml-batteries/html/api/BatteriesExceptionless.html
 share/doc/ocaml-batteries/html/api/BatteriesPrint.IntSet.html
 share/doc/ocaml-batteries/html/api/BatteriesPrint.StringSet.html
 share/doc/ocaml-batteries/html/api/BatteriesPrint.TextSet.html
@@ -771,6 +794,8 @@ share/doc/ocaml-batteries/html/api/type_BatInt.Safe_int.Compare.html
 share/doc/ocaml-batteries/html/api/type_BatInt.Safe_int.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatInt.Safe_int.html
 share/doc/ocaml-batteries/html/api/type_BatInt.html
+share/doc/ocaml-batteries/html/api/type_BatInt32.Compare.html
+share/doc/ocaml-batteries/html/api/type_BatInt32.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatInt32.html
 share/doc/ocaml-batteries/html/api/type_BatInt64.Compare.html
 share/doc/ocaml-batteries/html/api/type_BatInt64.Infix.html
@@ -1068,6 +1093,26 @@ share/doc/ocaml-batteries/html/api/type_Batteries.Uref.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Vect.html
 share/doc/ocaml-batteries/html/api/type_Batteries.html
 share/doc/ocaml-batteries/html/api/type_BatteriesConfig.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Array.Cap.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Array.Labels.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Array.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Enum.Labels.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Enum.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Hashtbl.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.LazyList.Labels.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.LazyList.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.List.Labels.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.List.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Map.PMap.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Map.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Queue.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Seq.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Splay.Map.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Splay.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.Stack.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.String.Cap.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.String.html
+share/doc/ocaml-batteries/html/api/type_BatteriesExceptionless.html
 share/doc/ocaml-batteries/html/api/type_BatteriesPrint.IntSet.html
 share/doc/ocaml-batteries/html/api/type_BatteriesPrint.StringSet.html
 share/doc/ocaml-batteries/html/api/type_BatteriesPrint.TextSet.html
