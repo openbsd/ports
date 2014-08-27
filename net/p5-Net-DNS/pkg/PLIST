@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/06/14 23:25:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/08/27 18:07:55 brad Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
@@ -44,6 +44,7 @@ ${P5ARCH}/Net/DNS/RR/NAPTR.pm
 ${P5ARCH}/Net/DNS/RR/NID.pm
 ${P5ARCH}/Net/DNS/RR/NS.pm
 ${P5ARCH}/Net/DNS/RR/NULL.pm
+${P5ARCH}/Net/DNS/RR/OPENPGPKEY.pm
 ${P5ARCH}/Net/DNS/RR/OPT.pm
 ${P5ARCH}/Net/DNS/RR/PTR.pm
 ${P5ARCH}/Net/DNS/RR/PX.pm
@@ -64,6 +65,7 @@ ${P5ARCH}/Net/DNS/Resolver/Base.pm
 ${P5ARCH}/Net/DNS/Resolver/MSWin32.pm
 ${P5ARCH}/Net/DNS/Resolver/Recurse.pm
 ${P5ARCH}/Net/DNS/Resolver/UNIX.pm
+${P5ARCH}/Net/DNS/Resolver/android.pm
 ${P5ARCH}/Net/DNS/Resolver/cygwin.pm
 ${P5ARCH}/Net/DNS/Resolver/os2.pm
 ${P5ARCH}/Net/DNS/Text.pm
@@ -115,6 +117,7 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::NID.3p
 @man man/man3p/Net::DNS::RR::NS.3p
 @man man/man3p/Net::DNS::RR::NULL.3p
+@man man/man3p/Net::DNS::RR::OPENPGPKEY.3p
 @man man/man3p/Net::DNS::RR::OPT.3p
 @man man/man3p/Net::DNS::RR::PTR.3p
 @man man/man3p/Net::DNS::RR::PX.3p
@@ -134,6 +137,7 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::Resolver::MSWin32.3p
 @man man/man3p/Net::DNS::Resolver::Recurse.3p
 @man man/man3p/Net::DNS::Resolver::UNIX.3p
+@man man/man3p/Net::DNS::Resolver::android.3p
 @man man/man3p/Net::DNS::Resolver::cygwin.3p
 @man man/man3p/Net::DNS::Resolver::os2.3p
 @man man/man3p/Net::DNS::Text.3p
