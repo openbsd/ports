@@ -1,0 +1,15 @@
+$OpenBSD: patch-salt_modules_disk_py,v 1.1 2014/08/27 10:26:59 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/15305
+
+--- salt/modules/disk.py.orig	Fri Aug  1 20:38:41 2014
++++ salt/modules/disk.py	Wed Aug 27 09:05:35 2014
+@@ -53,7 +53,7 @@ def usage(args=None):
+         salt '*' disk.usage
+     '''
+     flags = _clean_flags(args, 'disk.usage')
+-    if not os.path.isfile('/etc/mtab'):
++    if not os.path.isfile('/etc/mtab') and __grains__['kernel'] == 'Linux':
+         log.warn('df cannot run without /etc/mtab')
+         if __grains__.get('virtual_subtype') == 'LXC':
+             log.warn('df command failed and LXC detected. If you are running '

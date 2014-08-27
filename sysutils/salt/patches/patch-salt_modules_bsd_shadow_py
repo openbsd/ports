@@ -1,0 +1,24 @@
+$OpenBSD: patch-salt_modules_bsd_shadow_py,v 1.1 2014/08/27 10:26:59 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/15306
+
+--- salt/modules/bsd_shadow.py.orig	Tue Jun 17 21:18:30 2014
++++ salt/modules/bsd_shadow.py	Wed Aug 27 09:41:10 2014
+@@ -50,10 +50,14 @@ def info(name):
+             'name': '',
+             'passwd': ''}
+ 
+-    # Get password aging info on FreeBSD
+-    # TODO: Implement this for NetBSD, OpenBSD
++    cmd = ""
+     if __salt__['cmd.has_exec']('pw'):
+-        cmd = 'pw user show {0} | cut -f6,7 -d:'.format(name)
++        cmd = 'pw user show {0}'.format(name)
++    elif __grains__['kernel'] in ('NetBSD', 'OpenBSD'):
++        cmd = 'grep "^{0}:" /etc/master.passwd'.format(name)
++
++    if cmd:
++        cmd += '| cut -f6,7 -d:'
+         try:
+             change, expire = __salt__['cmd.run_all'](cmd)['stdout'].split(':')
+         except ValueError:
