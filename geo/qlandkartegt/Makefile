@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/08/27 09:02:26 kirby Exp $
 
 COMMENT =	garmin gps map management tool
 
 DISTNAME =	qlandkartegt-1.7.5
+REVISION =	0
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://www.qlandkarte.org/
@@ -18,7 +19,6 @@ WANTLIB +=	exif QtDBus QtGui QtNetwork QtOpenGL QtSql QtXml QtCore proj
 WANTLIB +=	QtWebKit QtXmlPatterns phonon jpeg dmtx QtScript
 BUILD_DEPENDS +=	geo/gpsbabel
 LIB_DEPENDS +=	devel/proj \
-		x11/qt4 \
 		graphics/libdmtx \
 		graphics/libexif \
 		geo/gdal \
