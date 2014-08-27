@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/03/28 15:35:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.23 2014/08/27 01:36:16 gsoares Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
-DISTNAME=	grep-2.18
+DISTNAME=	grep-2.20
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	https://www.gnu.org/software/grep/grep.html

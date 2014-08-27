@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/03 21:47:33 gsoares Exp $
-@bin bin/gegrep
-@bin bin/gfgrep
+@comment $OpenBSD: PLIST,v 1.7 2014/08/27 01:36:16 gsoares Exp $
+bin/gegrep
+bin/gfgrep
 @bin bin/ggrep
 @info info/grep.info
 @comment lib/charset.alias
