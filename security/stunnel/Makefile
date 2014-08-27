@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2014/08/22 02:22:25 gsoares Exp $
+# $OpenBSD: Makefile,v 1.74 2014/08/27 06:58:00 ajacoutot Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 DISTNAME=	stunnel-5.03
 CATEGORIES=	security
+REVISION=	0
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 

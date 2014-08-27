@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/27 11:44:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/27 06:58:00 ajacoutot Exp $
 
 COMMENT=	GUI to manage a certification authority
 
 DISTNAME=	tinyca2-0.7.5
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 
 HOMEPAGE=	http://tinyca.sm-zone.net/

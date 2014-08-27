@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_confdef_pm,v 1.3 2013/08/10 10:11:41 landry Exp $
+$OpenBSD: patch-src_lib_confdef_pm,v 1.4 2014/08/27 06:58:00 ajacoutot Exp $
 --- src/lib/confdef.pm.orig	Fri Jul 27 10:29:52 2012
 +++ src/lib/confdef.pm	Tue Aug  6 22:55:20 2013
 @@ -47,7 +47,7 @@ our @params = (
@@ -24,7 +24,7 @@ $OpenBSD: patch-src_lib_confdef_pm,v 1.3 2013/08/10 10:11:41 landry Exp $
      {
          name   => 'openssl',
 -        sample => '/usr/bin/ssl',
-+        sample => '/usr/sbin/openssl',
++        sample => '/usr/bin/openssl',
          query  => 'Path to OpenSSL',
          file   => 'sympa.conf',
          edit   => '1',

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: new_voice,v 1.1 2010/03/21 11:04:29 ajacoutot Exp $
+# $OpenBSD: new_voice,v 1.2 2014/08/27 06:58:00 ajacoutot Exp $
 
 extension="wav"
 contenttype="audio/x-wav"
@@ -31,7 +31,7 @@ echo Content-Type: $contenttype\; name=\"$pagefn\" >> $tempfn
 echo Content-Transfer-Encoding: base64 >> $tempfn
 echo Content-Disposition: attachment\; filename=\"$pagefn\" >> $tempfn
 echo "" >> $tempfn
-cat $outputfn | /usr/sbin/openssl base64 >> $tempfn
+cat $outputfn | openssl base64 >> $tempfn
 
 rm -f $outputfn
 

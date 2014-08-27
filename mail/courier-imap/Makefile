@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2014/06/05 20:45:35 giovanni Exp $
+# $OpenBSD: Makefile,v 1.95 2014/08/27 06:58:00 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -8,6 +8,7 @@ DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
+REVISION-main=		0
 
 CATEGORIES=		mail
 
@@ -32,7 +33,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="-I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
-			OPENSSL=/usr/sbin/openssl \
+			OPENSSL=/usr/bin/openssl \
 			ac_cv_lib_db_dbopen=no \
 			ac_cv_lib_db_db_env_create=no
 

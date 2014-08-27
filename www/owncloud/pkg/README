@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.29 2014/08/14 06:55:42 ajacoutot Exp $
+$OpenBSD: README,v 1.30 2014/08/27 06:58:00 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -171,10 +171,10 @@ openssl(1)
 The openssl binary and dependent libraries must be installed in the
 chroot. As root:
     mkdir /var/www/etc
-    mkdir -p /var/www/usr/{lib,libexec,sbin}
-    cp /usr/sbin/openssl /var/www/usr/sbin/
+    mkdir -p /var/www/usr/{bin,lib,libexec}
+    cp /usr/bin/openssl /var/www/usr/bin/
     cp /etc/ssl/openssl.cnf /var/www/etc/ssl/openssl.cnf # edit accordingly
-    for i in $(ldd /usr/sbin/openssl | grep 'lib/' | awk '{ print $7 }'); do
+    for i in $(ldd /usr/bin/openssl | grep 'lib/' | awk '{ print $7 }'); do
     > cp -p $i /var/www$i
     > done
 
