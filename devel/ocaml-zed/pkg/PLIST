@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/19 00:10:48 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/08/27 08:05:17 chrisz Exp $
 %%native%%
 lib/ocaml/zed/
 lib/ocaml/zed/META
@@ -20,8 +20,9 @@ lib/ocaml/zed/zed_rope.mli
 lib/ocaml/zed/zed_utf8.cmi
 lib/ocaml/zed/zed_utf8.mli
 share/doc/ocaml-zed/
-share/doc/ocaml-zed/CHANGES
+share/doc/ocaml-zed/CHANGES.md
 share/doc/ocaml-zed/LICENSE
+share/doc/ocaml-zed/README.md
 share/doc/ocaml-zed/api/
 share/doc/ocaml-zed/api/Zed_cursor.html
 share/doc/ocaml-zed/api/Zed_edit.html

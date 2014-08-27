@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/27 08:05:17 chrisz Exp $
 
 COMMENT =	abstract engine for text edition
 CATEGORIES =	devel
 
-DISTNAME =	zed-1.2
+GH_ACCOUNT =	diml
+GH_PROJECT =	zed
+GH_TAGNAME =	1.3
+GH_COMMIT =	b8da01e8a4493d2182c0379b16aa8511c6264f01
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	ocaml-${DISTNAME}
-REVISION =	2
-MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/944/
 
-HOMEPAGE =	http://forge.ocamlcore.org/projects/zed/
+HOMEPAGE =	https://github.com/diml/zed/
 
 # BSD3
 PERMIT_PACKAGE_CDROM =		Yes
@@ -21,7 +23,9 @@ RUN_DEPENDS =	lang/ocaml devel/ocaml-camomile
 CONFIGURE_STYLE =	oasis
 
 post-install:
-	${INSTALL_DATA} ${WRKDIST}/{LICENSE,CHANGES} ${PREFIX}/share/doc/ocaml-zed/
+	${INSTALL_DATA} \
+		${WRKDIST}/{LICENSE,CHANGES.md,README.md} \
+		${PREFIX}/share/doc/ocaml-zed/
 
 
 .include <bsd.port.mk>

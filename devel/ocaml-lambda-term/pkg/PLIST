@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/03/09 19:50:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/08/27 08:05:17 chrisz Exp $
 %%SHARED%%
 %%native%%
 @bin bin/lambda-term-actions
@@ -44,8 +44,9 @@ lib/ocaml/lambda-term/liblambda-term_stubs.a
 @man man/man1/lambda-term-actions.1
 @man man/man5/lambda-term-inputrc.5
 share/doc/ocaml-lambda-term/
-share/doc/ocaml-lambda-term/CHANGES
+share/doc/ocaml-lambda-term/CHANGES.md
 share/doc/ocaml-lambda-term/LICENSE
+share/doc/ocaml-lambda-term/README.md
 share/doc/ocaml-lambda-term/api/
 share/doc/ocaml-lambda-term/api/LTerm.html
 share/doc/ocaml-lambda-term/api/LTerm_draw.html

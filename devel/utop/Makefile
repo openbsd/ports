@@ -1,27 +1,30 @@
-# $OpenBSD: Makefile,v 1.3 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2014/08/27 08:05:17 chrisz Exp $
 
-COMMENT =		enhanced OCaml toplevel
-DISTNAME =		utop-1.5
-REVISION =		1
-CATEGORIES =		devel
+COMMENT =	enhanced OCaml toplevel
+CATEGORIES =	devel
 
-HOMEPAGE =		https://forge.ocamlcore.org/projects/utop/
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
+V =		1.14
+GH_ACCOUNT =	diml
+GH_PROJECT =	utop
+GH_TAGNAME =	${V}
+GH_COMMIT =	af110d2742bc01ff7a898019676fa44e515043aa
+DISTNAME =	${GH_PROJECT}-$V
+
+HOMEPAGE =	https://github.com/diml/utop
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		https://forge.ocamlcore.org/frs/download.php/1169/
 
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS +=	--enable-tests
 
 MODULES =		lang/ocaml
 RUN_DEPENDS =		devel/ocaml-lambda-term
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib lang/ocaml,-camlp4
 
 # silence a warning
-pre-build:
+post-extract:
 	# already shipped by the OCaml package
 	rm ${WRKBUILD}/src/lib/errors.mli
 

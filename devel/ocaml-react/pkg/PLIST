@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/18 23:13:53 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/08/27 08:05:17 chrisz Exp $
 %%native%%
 lib/ocaml/react/
 lib/ocaml/react/META
@@ -6,9 +6,10 @@ lib/ocaml/react/react.cma
 lib/ocaml/react/react.cmi
 lib/ocaml/react/react.mli
 share/doc/ocaml-react/
-share/doc/ocaml-react/CHANGES
-share/doc/ocaml-react/README
+share/doc/ocaml-react/CHANGES.md
+share/doc/ocaml-react/README.md
 share/doc/ocaml-react/api/
+share/doc/ocaml-react/api/React.E.Option.html
 share/doc/ocaml-react/api/React.E.html
 share/doc/ocaml-react/api/React.S.Bool.html
 share/doc/ocaml-react/api/React.S.Compare.html
@@ -16,6 +17,7 @@ share/doc/ocaml-react/api/React.S.EqType.html
 share/doc/ocaml-react/api/React.S.Float.html
 share/doc/ocaml-react/api/React.S.Int.html
 share/doc/ocaml-react/api/React.S.Make.html
+share/doc/ocaml-react/api/React.S.Option.html
 share/doc/ocaml-react/api/React.S.Pair.html
 share/doc/ocaml-react/api/React.S.S.html
 share/doc/ocaml-react/api/React.S.Special.Sb.html
@@ -23,6 +25,7 @@ share/doc/ocaml-react/api/React.S.Special.Sf.html
 share/doc/ocaml-react/api/React.S.Special.Si.html
 share/doc/ocaml-react/api/React.S.Special.html
 share/doc/ocaml-react/api/React.S.html
+share/doc/ocaml-react/api/React.Step.html
 share/doc/ocaml-react/api/React.html
 share/doc/ocaml-react/api/api.odocl
 share/doc/ocaml-react/api/index.html
@@ -36,6 +39,7 @@ share/doc/ocaml-react/api/index_modules.html
 share/doc/ocaml-react/api/index_types.html
 share/doc/ocaml-react/api/index_values.html
 share/doc/ocaml-react/api/style.css
+share/doc/ocaml-react/api/type_React.E.Option.html
 share/doc/ocaml-react/api/type_React.E.html
 share/doc/ocaml-react/api/type_React.S.Bool.html
 share/doc/ocaml-react/api/type_React.S.Compare.html
@@ -43,6 +47,7 @@ share/doc/ocaml-react/api/type_React.S.EqType.html
 share/doc/ocaml-react/api/type_React.S.Float.html
 share/doc/ocaml-react/api/type_React.S.Int.html
 share/doc/ocaml-react/api/type_React.S.Make.html
+share/doc/ocaml-react/api/type_React.S.Option.html
 share/doc/ocaml-react/api/type_React.S.Pair.html
 share/doc/ocaml-react/api/type_React.S.S.html
 share/doc/ocaml-react/api/type_React.S.Special.Sb.html
@@ -50,4 +55,5 @@ share/doc/ocaml-react/api/type_React.S.Special.Sf.html
 share/doc/ocaml-react/api/type_React.S.Special.Si.html
 share/doc/ocaml-react/api/type_React.S.Special.html
 share/doc/ocaml-react/api/type_React.S.html
+share/doc/ocaml-react/api/type_React.Step.html
 share/doc/ocaml-react/api/type_React.html

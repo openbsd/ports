@@ -1,7 +1,10 @@
-$OpenBSD: patch-setup_ml,v 1.3 2013/11/25 14:35:26 dcoppa Exp $
---- setup.ml.orig	Thu Dec 27 13:30:01 2012
-+++ setup.ml	Thu Nov 14 16:05:18 2013
-@@ -5748,7 +5748,7 @@ let setup_t =
+$OpenBSD: patch-setup_ml,v 1.4 2014/08/27 08:05:17 chrisz Exp $
+
+use gmake
+
+--- setup.ml.orig	Wed Aug 20 17:18:31 2014
++++ setup.ml	Wed Aug 20 17:18:43 2014
+@@ -6725,7 +6725,7 @@ let setup_t =
                   CustomPlugin.cmd_main =
                     [
                        (OASISExpr.EBool true,
@@ -9,8 +12,8 @@ $OpenBSD: patch-setup_ml,v 1.3 2013/11/25 14:35:26 dcoppa Exp $
 +                        ("gmake", ["-C"; "manual"; "manual.pdf"]))
                     ];
                   cmd_clean = [(OASISExpr.EBool true, None)];
-                  cmd_distclean = [(OASISExpr.EBool true, None)];
-@@ -5801,7 +5801,7 @@ let setup_t =
+                  cmd_distclean = [(OASISExpr.EBool true, None)]
+@@ -6780,7 +6780,7 @@ let setup_t =
                   CustomPlugin.cmd_main =
                     [
                        (OASISExpr.EBool true,
@@ -18,8 +21,8 @@ $OpenBSD: patch-setup_ml,v 1.3 2013/11/25 14:35:26 dcoppa Exp $
 +                        ("gmake", ["-C"; "manual"; "manual.pdf"]))
                     ];
                   cmd_clean = [(OASISExpr.EBool true, None)];
-                  cmd_distclean = [(OASISExpr.EBool true, None)];
-@@ -5852,7 +5852,7 @@ let setup_t =
+                  cmd_distclean = [(OASISExpr.EBool true, None)]
+@@ -6833,7 +6833,7 @@ let setup_t =
                   CustomPlugin.cmd_main =
                     [
                        (OASISExpr.EBool true,
@@ -27,4 +30,4 @@ $OpenBSD: patch-setup_ml,v 1.3 2013/11/25 14:35:26 dcoppa Exp $
 +                        ("gmake", ["-C"; "manual"; "manual.pdf"]))
                     ];
                   cmd_clean = [(OASISExpr.EBool true, None)];
-                  cmd_distclean = [(OASISExpr.EBool true, None)];
+                  cmd_distclean = [(OASISExpr.EBool true, None)]

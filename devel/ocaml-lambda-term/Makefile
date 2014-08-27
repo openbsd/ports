@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/27 08:05:17 chrisz Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
 
-# also adapt MASTER_SITES when changing the version!
-DISTNAME =	lambda-term-1.3
-REVISION =	2
+V =		1.6
+DISTNAME =	lambda-term-1.6
+GH_ACCOUNT =	diml
+GH_PROJECT =	lambda-term
+GH_TAGNAME =	$V
+GH_COMMIT =	3f31956c450f450fc265f98107242373824cded1
+DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1034/
 
-HOMEPAGE =	http://forge.ocamlcore.org/projects/lambda-term
+HOMEPAGE =	https://github.com/diml/lambda-term
 
 
 # BSD3
@@ -19,7 +22,7 @@ WANTLIB =	c ev m pthread charset
 
 MODULES =	lang/ocaml converters/libiconv
 
-BUILD_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
+BUILD_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed lang/ocaml,-camlp4
 RUN_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
 LIB_DEPENDS =	devel/libev
 
@@ -31,7 +34,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} \
-		${WRKDIST}/{LICENSE,CHANGES} \
+		${WRKDIST}/{LICENSE,CHANGES.md,README.md} \
 		${PREFIX}/share/doc/ocaml-lambda-term/
 	gunzip ${PREFIX}/man/*/*.gz
 
