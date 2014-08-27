@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.58 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.59 2014/08/27 09:45:39 chrisz Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.1.4
-REVISION=	1
+DISTNAME =	mldonkey-3.1.5
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -36,7 +35,7 @@ CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include' \
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml devel/gettext
-BUILD_DEPENDS =	x11/lablgtk2
+BUILD_DEPENDS =	lang/ocaml,-camlp4 x11/lablgtk2
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/libmagic \
 		graphics/gd \

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_utils_net_terminal_ml,v 1.1 2014/08/27 09:45:39 chrisz Exp $
+
+Fix string literal in comment for OCaml 4.02
+
+--- src/utils/net/terminal.ml.orig	Wed Aug 20 14:20:03 2014
++++ src/utils/net/terminal.ml	Wed Aug 20 14:19:22 2014
+@@ -185,7 +185,7 @@ module Output = struct
+   let canal = List.assoc chan !chanmap in
+   etat.chan <- Some (chan, canal);
+   info (sprintf "connecte au canal '%s'" chan);
+-  (* {| canal ALL } *)
++  (* { | canal ALL } *)
+        with Not_found -> (* pas encore de recepteur pour ce canal *)
+   try (* on en cree un *)
+     let serveur = nsrecord.get_loc chan in
