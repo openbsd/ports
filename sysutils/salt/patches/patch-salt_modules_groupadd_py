@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_groupadd_py,v 1.1 2014/08/27 10:26:59 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_groupadd_py,v 1.2 2014/08/28 06:32:56 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15307
+https://github.com/saltstack/salt/commit/7f302190ebe517b8e18f836e20fa535e7ea37b96
 
 --- salt/modules/groupadd.py.orig	Fri Aug  1 20:38:41 2014
 +++ salt/modules/groupadd.py	Wed Aug 27 12:20:56 2014

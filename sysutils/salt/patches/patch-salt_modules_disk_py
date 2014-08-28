@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_disk_py,v 1.1 2014/08/27 10:26:59 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_disk_py,v 1.2 2014/08/28 06:32:56 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15305
+https://github.com/saltstack/salt/commit/015fc5121466dd8dad3f6116bd3d1bf373761ac6
 
 --- salt/modules/disk.py.orig	Fri Aug  1 20:38:41 2014
 +++ salt/modules/disk.py	Wed Aug 27 09:05:35 2014
