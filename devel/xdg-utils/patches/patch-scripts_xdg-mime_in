@@ -1,0 +1,13 @@
+$OpenBSD: patch-scripts_xdg-mime_in,v 1.1 2014/08/28 10:26:21 ajacoutot Exp $
+--- scripts/xdg-mime.in.orig	Thu Aug 28 11:47:45 2014
++++ scripts/xdg-mime.in	Thu Aug 28 11:48:30 2014
+@@ -380,6 +380,9 @@ defapp_generic()
+        for prefix in "$XDG_MENU_PREFIX" ""; do
+           DEBUG 2 "Checking $x/applications/${prefix}defaults.list and $x/applications/${prefix}mimeinfo.cache"
+           trader_result=`grep "$MIME=" $x/applications/${prefix}defaults.list $x/applications/${prefix}mimeinfo.cache 2> /dev/null | cut -d '=' -f 2 | cut -d ';' -f 1`
++       if [ -z "$trader_result" ] ; then
++          trader_result=`grep "$MIME=" $x/applications/mimeinfo.cache  2> /dev/null | cut -d '=' -f 2 | cut -d ';' -f 1`
++       fi
+           if [ -n "$trader_result" ] ; then
+               echo $trader_result
+               exit_success

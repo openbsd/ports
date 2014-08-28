@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_xdg-screensaver_in,v 1.1 2014/08/28 10:26:21 ajacoutot Exp $
+--- scripts/xdg-screensaver.in.orig	Thu Aug 28 12:00:25 2014
++++ scripts/xdg-screensaver.in	Thu Aug 28 12:00:25 2014
+@@ -27,7 +27,7 @@ _USAGE
+ #@xdg-utils-common@
+ 
+ # Check if we can use "mv -T"
+-if mv -T ... ... 2>&1 | grep '\.\.\.' > /dev/null ; then
++if false ; then
+    # We can securely move files in /tmp with mv -T
+    DEBUG 1 "mv -T available"
+    MV="mv -T"

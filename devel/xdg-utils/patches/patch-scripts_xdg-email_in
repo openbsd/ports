@@ -1,0 +1,21 @@
+$OpenBSD: patch-scripts_xdg-email_in,v 1.1 2014/08/28 10:26:21 ajacoutot Exp $
+--- scripts/xdg-email.in.orig	Thu Aug 28 11:44:28 2014
++++ scripts/xdg-email.in	Thu Aug 28 11:45:23 2014
+@@ -243,7 +243,7 @@ LC_ALL="$ORIG_LC_ALL"
+ 
+ options=
+ mailto=
+-utf8="iconv -t utf8"
++utf8="iconv -t UTF-8"
+ while [ $# -gt 0 ] ; do
+     parm="$1"
+     shift
+@@ -380,7 +380,7 @@ fi
+ if [ x"$BROWSER" = x"" ]; then
+     BROWSER=links2:elinks:links:lynx:w3m
+     if [ -n "$DISPLAY" ]; then
+-        BROWSER=x-www-browser:firefox:seamonkey:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
++        BROWSER=x-www-browser:firefox:chrome:seamonkey:mozilla:epiphany:midori:konqueror:opera:chromium-browser:google-chrome:$BROWSER
+     fi
+ fi
+ 

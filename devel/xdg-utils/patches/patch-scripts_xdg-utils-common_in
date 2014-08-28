@@ -1,0 +1,23 @@
+$OpenBSD: patch-scripts_xdg-utils-common_in,v 1.1 2014/08/28 10:26:21 ajacoutot Exp $
+
+Make xdg-open work with toad(8) under KDE4.
+
+--- scripts/xdg-utils-common.in.orig	Thu Aug 28 12:18:06 2014
++++ scripts/xdg-utils-common.in	Thu Aug 28 12:18:29 2014
+@@ -227,7 +227,7 @@ check_common_commands()
+             ;;
+ 
+             --version)
+-            echo "@NAME@ 1.1.0 rc1"
++            echo "@NAME@ 1.1.0 rc2"
+             exit_success
+             ;;
+         esac
+@@ -280,6 +280,7 @@ detectDE()
+     if [ x"$DE" = x"" ]; then
+       # classic fallbacks
+       if [ x"$KDE_FULL_SESSION" != x"" ]; then DE=kde;
++      elif `dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.GetNameOwner string:org.kde.KWin > /dev/null 2>&1` ; then DE=kde;
+       elif [ x"$GNOME_DESKTOP_SESSION_ID" != x"" ]; then DE=gnome;
+       elif [ x"$MATE_DESKTOP_SESSION_ID" != x"" ]; then DE=mate;
+       elif `dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.GetNameOwner string:org.gnome.SessionManager > /dev/null 2>&1` ; then DE=gnome;

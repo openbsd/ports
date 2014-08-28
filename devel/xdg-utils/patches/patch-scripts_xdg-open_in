@@ -1,0 +1,24 @@
+$OpenBSD: patch-scripts_xdg-open_in,v 1.1 2014/08/28 10:26:21 ajacoutot Exp $
+
+Fix sed(1) usage (i.e. !GNU sed).
+
+--- scripts/xdg-open.in.orig	Thu Aug 28 12:24:07 2014
++++ scripts/xdg-open.in	Thu Aug 28 12:24:24 2014
+@@ -228,7 +228,7 @@ DEBUG 3 "$xdg_user_dir:$xdg_system_dirs"
+ 
+ open_generic_xdg_file_mime()
+ {
+-    filetype=`xdg-mime query filetype "$1" | sed "s/;.*//"`
++    filetype=`xdg-mime query filetype "$1" | sed "s/[ ;].*//"`
+     open_generic_xdg_mime "$1" "$filetype"
+ }
+ 
+@@ -373,7 +373,7 @@ esac
+ if [ x"$BROWSER" = x"" ]; then
+     BROWSER=links2:elinks:links:lynx:w3m
+     if [ -n "$DISPLAY" ]; then
+-        BROWSER=x-www-browser:firefox:seamonkey:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
++        BROWSER=x-www-browser:firefox:chrome:seamonkey:mozilla:epiphany:midori:konqueror:opera:chromium-browser:google-chrome:$BROWSER
+     fi
+ fi
+ 
