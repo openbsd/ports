@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.12 2014/07/12 13:41:47 ajacoutot Exp $
+$OpenBSD: README-main,v 1.13 2014/08/28 17:51:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,10 +13,13 @@ Alternatively, adding and/or configuring CUPS printers can be done with
 lpadmin(8) (the foomatic tools may be needed as well, to create the
 corresponding PPD file see below).
 
-Available printer drivers are available as separate packages. The
-Foomatic framework provides most of them (see the foomatic-db-engine
-package documentation for more information and creating PPD files;
+Printer drivers are available as separate packages. The Foomatic
+framework provides most of them (see the foomatic-db-engine package
+documentation for more information and creating PPD files;
 ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
+
+Printer backends are also available as packages.
+e.g. cups-bjnp, hpcups/hplip, ptouch-driver, splix...
 
 To be able to use CUPS printers from GTK+3 applications, the gtk+3-cups
 package needs to be installed.

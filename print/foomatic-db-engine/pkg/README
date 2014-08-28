@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2014/01/30 11:39:04 ajacoutot Exp $
+$OpenBSD: README,v 1.10 2014/08/28 17:51:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ particular package, can be generated using the foomatic-ppdfile(1)
 command.
 Drivers availability depends on which Foomatic DB package are installed
 on the system:
-e.g. (non-exhaustive list) foomatic-db, hpijs, foo2zjs, gutenprint...
+e.g. foomatic-db, hpijs, foo2zjs, gutenprint...
 
 PPD generation example for a Samsung ML-2850D
 =============================================
