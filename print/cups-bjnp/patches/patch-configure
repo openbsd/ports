@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/08/28 19:02:19 ajacoutot Exp $
+--- configure.orig	Wed Jan 22 16:56:43 2014
++++ configure	Thu Aug 28 17:03:41 2014
+@@ -3997,7 +3997,7 @@ done
+ IFS=$ac_save_IFS
+ 
+ 
+-for ac_func in ftime \
++for ac_func in gettimeofday \
+                getaddrinfo \
+                getnameinfo \
+                gethostname \
+@@ -4912,7 +4912,6 @@ for ac_header in string.h \
+                  netinet/in.h \
+                  sys/socket.h \
+                  sys/time.h \
+-                 sys/timeb.h \
+                  wchar.h \
+                  cups/cups.h \
+ 		 cups/backend.h \

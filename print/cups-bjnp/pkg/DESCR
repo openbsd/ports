@@ -1,0 +1,3 @@
+cups-bjnp is a CUPS backend for Canon USB over IP protocol which adds
+functionality to some Canon printers to connect and print over the
+network.
