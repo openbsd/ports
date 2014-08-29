@@ -1,0 +1,97 @@
+$OpenBSD: patch-salt_states_user_py,v 1.1 2014/08/29 15:58:32 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/15385
+
+--- salt/states/user.py.orig	Fri Aug  1 20:38:41 2014
++++ salt/states/user.py	Fri Aug 29 16:58:36 2014
+@@ -57,7 +57,8 @@ def _changes(name,
+              fullname='',
+              roomnumber='',
+              workphone='',
+-             homephone=''):
++             homephone='',
++             loginclass=None):
+     '''
+     Return a dict of the changes required for a user if the user is present,
+     otherwise return False.
+@@ -119,6 +120,12 @@ def _changes(name,
+     if 'user.chhomephone' in __salt__:
+         if homephone is not None and lusr['homephone'] != homephone:
+             change['homephone'] = homephone
++    # OpenBSD login class
++    if __grains__['kernel'] == 'OpenBSD':
++        if not loginclass:
++            loginclass = '""'
++        if __salt__['user.get_loginclass'](name)['loginclass'] != loginclass:
++            change['loginclass'] = loginclass
+ 
+     return change
+ 
+@@ -140,7 +147,8 @@ def present(name,
+             fullname=None,
+             roomnumber=None,
+             workphone=None,
+-            homephone=None):
++            homephone=None,
++            loginclass=None):
+     '''
+     Ensure that the named user is present with the specified properties
+ 
+@@ -277,7 +285,8 @@ def present(name,
+                        fullname,
+                        roomnumber,
+                        workphone,
+-                       homephone)
++                       homephone,
++                       loginclass)
+ 
+     if changes:
+         if __opts__['test']:
+@@ -290,6 +299,8 @@ def present(name,
+         # The user is present
+         if 'shadow.info' in __salt__:
+             lshad = __salt__['shadow.info'](name)
++        if __grains__['kernel'] == 'OpenBSD':
++            lcpre = __salt__['user.get_loginclass'](name)
+         pre = __salt__['user.info'](name)
+         for key, val in changes.items():
+             if key == 'passwd':
+@@ -307,6 +318,8 @@ def present(name,
+         if 'shadow.info' in __salt__:
+             if lshad['passwd'] != password:
+                 spost = __salt__['shadow.info'](name)
++        if __grains__['kernel'] == 'OpenBSD':
++            lcpost = __salt__['user.get_loginclass'](name)
+         # See if anything changed
+         for key in post:
+             if post[key] != pre[key]:
+@@ -315,6 +328,9 @@ def present(name,
+             for key in spost:
+                 if lshad[key] != spost[key]:
+                     ret['changes'][key] = spost[key]
++        if __grains__['kernel'] == 'OpenBSD':
++            if lcpost['loginclass'] != lcpre['loginclass']:
++                ret['changes']['loginclass'] = lcpost['loginclass']
+         if ret['changes']:
+             ret['comment'] = 'Updated user {0}'.format(name)
+         changes = _changes(name,
+@@ -330,7 +346,8 @@ def present(name,
+                            fullname,
+                            roomnumber,
+                            workphone,
+-                           homephone)
++                           homephone,
++                           loginclass)
+ 
+         if changes:
+             ret['comment'] = 'These values could not be changed: {0}'.format(
+@@ -361,7 +378,8 @@ def present(name,
+                                 roomnumber=roomnumber,
+                                 workphone=workphone,
+                                 homephone=homephone,
+-                                createhome=createhome):
++                                createhome=createhome,
++                                loginclass=loginclass):
+             ret['comment'] = 'New user {0} created'.format(name)
+             ret['changes'] = __salt__['user.info'](name)
+             if all((password, 'shadow.info' in __salt__)):
