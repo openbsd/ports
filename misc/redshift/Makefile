@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/13 18:11:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/29 22:07:38 ajacoutot Exp $
 
 COMMENT=		automatic color temperature adjustment
 
-V=			1.8
+V=			1.9.1
 DISTNAME=		redshift-${V}
-EXTRACT_SUFX=		.tar.bz2
+
+GH_PROJECT=		redshift
+GH_ACCOUNT=		jonls
+DISTFILES=		v${V}${EXTRACT_SUFX}
 
 CATEGORIES=		misc graphics
 
@@ -13,27 +16,36 @@ HOMEPAGE=		http://jonls.dk/redshift/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xxf86vm c dbus-1 dbus-glib-1 gconf-2 geoclue glib-2.0
+WANTLIB += X11 Xxf86vm c dbus-1 dbus-glib-1 drm geoclue glib-2.0
 WANTLIB += gobject-2.0 m pthread xcb xcb-randr xml2
-
-MASTER_SITES=		http://launchpad.net/redshift/trunk/${V:C/^([0-9]+\.[0-9]+).*/\1/}/+download/
 
 MODULES=		devel/gettext \
 			lang/python
 
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_ADJ_FILES=	src/redshift-gtk/redshift-gtk.in
+
+LIB_DEPENDS=		geo/geoclue
+
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/py-gtk2 \
-			devel/py-xdg \
+			devel/py-xdg${MODPY_FLAVOR} \
 			x11/gtk+2,-guic
 
-LIB_DEPENDS=		devel/gconf2 \
-			geo/geoclue
+# pygobject GTK3 introspection (not provided by indirect dependencies)
+RUN_DEPENDS +=		x11/gtk+3
 
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-gui
 
-MODPY_ADJ_FILES=	src/redshift-gtk/redshift-gtk
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.14
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
 
 .include <bsd.port.mk>

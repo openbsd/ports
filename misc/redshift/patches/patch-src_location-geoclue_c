@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_location-geoclue_c,v 1.1 2014/08/29 22:07:38 ajacoutot Exp $
+--- src/location-geoclue.c.orig	Sun Apr 20 19:55:26 2014
++++ src/location-geoclue.c	Fri Aug 29 23:51:06 2014
+@@ -36,8 +36,8 @@
+ # define _(s) s
+ #endif
+ 
+-#define DEFAULT_PROVIDER "org.freedesktop.Geoclue.Providers.UbuntuGeoIP"
+-#define DEFAULT_PROVIDER_PATH "/org/freedesktop/Geoclue/Providers/UbuntuGeoIP"
++#define DEFAULT_PROVIDER "org.freedesktop.Geoclue.Providers.Hostip"
++#define DEFAULT_PROVIDER_PATH "/org/freedesktop/Geoclue/Providers/Hostip"
+ 
+ int
+ location_geoclue_init(location_geoclue_state_t *state)

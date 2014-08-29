@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gamma-drm_c,v 1.1 2014/08/29 22:07:38 ajacoutot Exp $
+--- src/gamma-drm.c.orig	Fri Aug 29 23:37:37 2014
++++ src/gamma-drm.c	Fri Aug 29 23:37:43 2014
+@@ -21,7 +21,6 @@
+ #include <stdlib.h>
+ #include <stdint.h>
+ #include <string.h>
+-#include <alloca.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>

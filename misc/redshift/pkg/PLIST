@@ -1,42 +1,52 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/13 18:11:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/08/29 22:07:38 ajacoutot Exp $
 @bin bin/redshift
 bin/redshift-gtk
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/__init__.py
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}defs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}defs.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}statusicon.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}statusicon.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/defs.py
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/defs.pyc
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/defs.pyo
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/statusicon.py
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/statusicon.pyc
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/statusicon.pyo
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.py
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.pyo
 @man man/man1/redshift.1
 share/applications/redshift-gtk.desktop
 share/icons/hicolor/scalable/apps/redshift-status-off.svg
 share/icons/hicolor/scalable/apps/redshift-status-on.svg
 share/icons/hicolor/scalable/apps/redshift.svg
 share/locale/ar/LC_MESSAGES/redshift.mo
+share/locale/bg/LC_MESSAGES/redshift.mo
 share/locale/ca/LC_MESSAGES/redshift.mo
 share/locale/cs/LC_MESSAGES/redshift.mo
 share/locale/da/LC_MESSAGES/redshift.mo
 share/locale/de/LC_MESSAGES/redshift.mo
+share/locale/el/LC_MESSAGES/redshift.mo
 share/locale/es/LC_MESSAGES/redshift.mo
+share/locale/et/LC_MESSAGES/redshift.mo
 share/locale/eu/LC_MESSAGES/redshift.mo
 share/locale/fi/LC_MESSAGES/redshift.mo
 share/locale/fr/LC_MESSAGES/redshift.mo
 share/locale/gl/LC_MESSAGES/redshift.mo
 share/locale/he/LC_MESSAGES/redshift.mo
+share/locale/hi/LC_MESSAGES/redshift.mo
+share/locale/hr/LC_MESSAGES/redshift.mo
 share/locale/it/LC_MESSAGES/redshift.mo
+share/locale/ja/LC_MESSAGES/redshift.mo
 share/locale/ka/LC_MESSAGES/redshift.mo
 share/locale/lt/LC_MESSAGES/redshift.mo
+share/locale/nb/LC_MESSAGES/redshift.mo
 share/locale/nl/LC_MESSAGES/redshift.mo
 share/locale/pl/LC_MESSAGES/redshift.mo
+share/locale/pt/LC_MESSAGES/redshift.mo
 share/locale/pt_BR/LC_MESSAGES/redshift.mo
 share/locale/ru/LC_MESSAGES/redshift.mo
+share/locale/sv/LC_MESSAGES/redshift.mo
 share/locale/zh_CN/LC_MESSAGES/redshift.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
