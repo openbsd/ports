@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2014/08/14 06:55:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2014/08/29 16:19:16 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -1615,9 +1615,9 @@ owncloud/3rdparty/rackspace/php-opencloud/README.md
 owncloud/3rdparty/rackspace/php-opencloud/composer.json
 owncloud/3rdparty/rackspace/php-opencloud/docs/
 owncloud/3rdparty/rackspace/php-opencloud/docs/changelog/
-owncloud/3rdparty/rackspace/php-opencloud/docs/changelog/1.7.0.md
+owncloud/3rdparty/rackspace/php-opencloud/docs/changelog/1.${VR}.md
 owncloud/3rdparty/rackspace/php-opencloud/docs/changelog/1.9.0.md
-owncloud/3rdparty/rackspace/php-opencloud/docs/changelog/Upgrading to 1.7.0.md
+owncloud/3rdparty/rackspace/php-opencloud/docs/changelog/Upgrading to 1.${VR}.md
 owncloud/3rdparty/rackspace/php-opencloud/docs/generate.sh
 owncloud/3rdparty/rackspace/php-opencloud/docs/getting-started-openstack.md
 owncloud/3rdparty/rackspace/php-opencloud/docs/getting-started.md
@@ -3209,17 +3209,16 @@ owncloud/apps/activity/l10n/hu_HU.php
 owncloud/apps/activity/l10n/hy.php
 owncloud/apps/activity/l10n/ia.php
 owncloud/apps/activity/l10n/id.php
+owncloud/apps/activity/l10n/io.php
 owncloud/apps/activity/l10n/is.php
 owncloud/apps/activity/l10n/it.php
 owncloud/apps/activity/l10n/ja.php
-owncloud/apps/activity/l10n/ja_JP.php
 owncloud/apps/activity/l10n/jv.php
 owncloud/apps/activity/l10n/ka_GE.php
 owncloud/apps/activity/l10n/km.php
 owncloud/apps/activity/l10n/kn.php
 owncloud/apps/activity/l10n/ko.php
 owncloud/apps/activity/l10n/ku_IQ.php
-owncloud/apps/activity/l10n/l10n.pl
 owncloud/apps/activity/l10n/lb.php
 owncloud/apps/activity/l10n/lt_LT.php
 owncloud/apps/activity/l10n/lv.php
@@ -7421,6 +7420,7 @@ owncloud/apps/files_sharing/tests/api.php
 owncloud/apps/files_sharing/tests/base.php
 owncloud/apps/files_sharing/tests/cache.php
 owncloud/apps/files_sharing/tests/externalstorage.php
+owncloud/apps/files_sharing/tests/helper.php
 owncloud/apps/files_sharing/tests/js/
 owncloud/apps/files_sharing/tests/js/appSpec.js
 owncloud/apps/files_sharing/tests/js/shareSpec.js
@@ -9331,6 +9331,7 @@ owncloud/core/doc/admin/_images/100000000000061E0000006BCF9ECC0B.png
 owncloud/core/doc/admin/_images/100000000000062A0000005F61A18950.png
 owncloud/core/doc/admin/_images/1000000000000631000000E19D116AA0.png
 owncloud/core/doc/admin/_images/100000000000063F00000090AAE1FA4A.png
+owncloud/core/doc/admin/_images/create_public_share.png
 owncloud/core/doc/admin/_images/install-wizard-advanced.png
 owncloud/core/doc/admin/_images/install-wizard.png
 owncloud/core/doc/admin/_images/ldap-advanced-1-connection.png
@@ -9554,10 +9555,10 @@ owncloud/core/doc/user/_images/oc_filesweb_new.png
 owncloud/core/doc/user/_images/oc_main_web.png
 owncloud/core/doc/user/_images/oc_main_web_labelled.png
 owncloud/core/doc/user/_images/oc_personal_settings_dropdown.png
+owncloud/core/doc/user/_images/oc_personal_settings_dropdown1.png
 owncloud/core/doc/user/_images/oc_personal_settings_window.png
 owncloud/core/doc/user/_images/oc_share_expiration_calendar.png
 owncloud/core/doc/user/_images/oc_share_with_options.png
-owncloud/core/doc/user/_images/oc_user_preferences.png
 owncloud/core/doc/user/_images/osx_webdav1.png
 owncloud/core/doc/user/_images/osx_webdav2.png
 owncloud/core/doc/user/_images/password_change.png
@@ -10106,6 +10107,7 @@ owncloud/core/templates/mail.php
 owncloud/core/templates/message.html
 owncloud/core/templates/singleuser.user.php
 owncloud/core/templates/tags.html
+owncloud/core/templates/untrustedDomain.php
 owncloud/core/templates/update.admin.php
 owncloud/core/templates/update.user.php
 owncloud/cron.php
@@ -11903,6 +11905,7 @@ owncloud/lib/private/migration/content.php
 owncloud/lib/private/migration/provider.php
 owncloud/lib/private/mimetypes.list.php
 owncloud/lib/private/navigationmanager.php
+owncloud/lib/private/needsupdateexception.php
 owncloud/lib/private/notsquareexception.php
 owncloud/lib/private/ocs/
 owncloud/lib/private/ocs.php
@@ -11944,6 +11947,7 @@ owncloud/lib/private/search/result/file.php
 owncloud/lib/private/search/result/folder.php
 owncloud/lib/private/search/result/image.php
 owncloud/lib/private/server.php
+owncloud/lib/private/serviceunavailableexception.php
 owncloud/lib/private/session/
 owncloud/lib/private/session/internal.php
 owncloud/lib/private/session/memory.php
@@ -12062,6 +12066,8 @@ owncloud/lib/public/iconfig.php
 owncloud/lib/public/icontainer.php
 owncloud/lib/public/idb.php
 owncloud/lib/public/idbconnection.php
+owncloud/lib/public/igroup.php
+owncloud/lib/public/igroupmanager.php
 owncloud/lib/public/ihelper.php
 owncloud/lib/public/il10n.php
 owncloud/lib/public/ilogger.php

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_private_util_php,v 1.4 2014/08/14 06:55:42 ajacoutot Exp $
---- lib/private/util.php.orig	Mon Aug  4 15:47:08 2014
-+++ lib/private/util.php	Wed Aug  6 08:56:49 2014
-@@ -391,7 +391,7 @@ class OC_Util {
+$OpenBSD: patch-lib_private_util_php,v 1.5 2014/08/29 16:19:16 ajacoutot Exp $
+--- lib/private/util.php.orig	Tue Aug 26 12:18:39 2014
++++ lib/private/util.php	Fri Aug 29 18:09:46 2014
+@@ -394,7 +394,7 @@ class OC_Util {
  	public static function checkServer() {
  		$l = OC_L10N::get('lib');
  		$errors = array();
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_private_util_php,v 1.4 2014/08/14 06:55:42 ajacoutot Exp $
  
  		if (!self::needUpgrade() && OC_Config::getValue('installed', false)) {
  			// this check needs to be done every time
-@@ -994,7 +994,7 @@ class OC_Util {
+@@ -997,7 +997,7 @@ class OC_Util {
  		$testContent = 'testcontent';
  
  		// creating a test file
