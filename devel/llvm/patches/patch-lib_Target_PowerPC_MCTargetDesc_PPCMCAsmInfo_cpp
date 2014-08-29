@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_PowerPC_MCTargetDesc_PPCMCAsmInfo_cpp,v 1.1 2014/08/29 14:28:32 brad Exp $
+
+r202967
+Enable integrated assembler on OpenBSD/PPC32 by default, too. 
+
+--- lib/Target/PowerPC/MCTargetDesc/PPCMCAsmInfo.cpp.orig	Fri Aug 29 08:52:52 2014
++++ lib/Target/PowerPC/MCTargetDesc/PPCMCAsmInfo.cpp	Fri Aug 29 08:54:51 2014
+@@ -75,7 +75,8 @@ PPCLinuxMCAsmInfo::PPCLinuxMCAsmInfo(bool is64Bit, con
+   AssemblerDialect = 1;           // New-Style mnemonics.
+ 
+   if (T.getOS() == llvm::Triple::FreeBSD ||
+-      (T.getOS() == llvm::Triple::NetBSD && !is64Bit))
++      (T.getOS() == llvm::Triple::NetBSD && !is64Bit) ||
++      (T.getOS() == llvm::Triple::OpenBSD && !is64Bit))
+     UseIntegratedAssembler = true;
+ }
+ 

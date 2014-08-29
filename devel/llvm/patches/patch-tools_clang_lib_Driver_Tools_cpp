@@ -1,6 +1,9 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.22 2014/07/16 22:16:54 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.23 2014/08/29 14:28:32 brad Exp $
 
 r212838
+Handle SPARC float command line parameters for SPARCv9.
+
+r216029
 Handle SPARC float command line parameters for SPARCv9.
 
 r211624
@@ -13,7 +16,16 @@ r209479
 Don't reduce the stack protector level given -fstack-protector.
 
 --- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/Tools.cpp	Wed Jul 16 16:00:01 2014
++++ tools/clang/lib/Driver/Tools.cpp	Thu Aug  7 19:57:25 2014
+@@ -1150,7 +1150,7 @@ static std::string getR600TargetGPU(const ArgList &Arg
+ }
+ 
+ static void getSparcTargetFeatures(const ArgList &Args,
+-                                   std::vector<const char *> Features) {
++                                   std::vector<const char *> &Features) {
+   bool SoftFloatABI = true;
+   if (Arg *A =
+           Args.getLastArg(options::OPT_msoft_float, options::OPT_mhard_float)) {
 @@ -1165,7 +1165,7 @@ void Clang::AddSparcTargetArgs(const ArgList &Args,
                               ArgStringList &CmdArgs) const {
    const Driver &D = getToolChain().getDriver();

@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_Sparc_MCTargetDesc_SparcMCAsmInfo_cpp,v 1.1 2014/08/29 14:28:32 brad Exp $
+
+r212771
+Use the integrated assembler by default on OpenBSD.
+
+--- lib/Target/Sparc/MCTargetDesc/SparcMCAsmInfo.cpp.orig	Fri Aug 29 08:55:16 2014
++++ lib/Target/Sparc/MCTargetDesc/SparcMCAsmInfo.cpp	Fri Aug 29 08:55:48 2014
+@@ -43,7 +43,8 @@ SparcELFMCAsmInfo::SparcELFMCAsmInfo(StringRef TT) {
+   SunStyleELFSectionSwitchSyntax = true;
+   UsesELFSectionDirectiveForBSS = true;
+ 
+-  if (TheTriple.getOS() == llvm::Triple::Solaris)
++  if (TheTriple.getOS() == llvm::Triple::Solaris ||
++      TheTriple.getOS() == llvm::Triple::OpenBSD)
+     UseIntegratedAssembler = true;
+ }
+ 
