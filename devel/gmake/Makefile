@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2014/08/29 13:24:29 chrisz Exp $
 
 COMMENT=	GNU make
 
@@ -20,7 +20,7 @@ WANTLIB=	c
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --program-prefix="g"
+CONFIGURE_ARGS= --program-prefix="g" --without-guile
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
