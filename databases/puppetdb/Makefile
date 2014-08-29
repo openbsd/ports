@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/07/09 14:24:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/29 10:51:39 sebastia Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -7,7 +7,7 @@ V=		2.1.0
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-terminus-$V
-REVISION-main=	0
+REVISION-main=	1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
@@ -60,7 +60,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/ext/files/puppetdb.env ${PREFIX}/libexec/puppetdb/
 .for c in config.ini database.ini jetty.ini repl.ini
-	cat ${WRKSRC}/ext/files/$c >> ${PREFIX}/share/examples/puppetdb/puppetdb.ini
+	 ${INSTALL_DATA} ${WRKSRC}/ext/files/$c ${PREFIX}/share/examples/puppetdb/
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/ext/files/logback.xml \
 		${PREFIX}/share/examples/puppetdb/

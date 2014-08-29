@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2014/05/07 10:59:53 jasper Exp $
+$OpenBSD: README-main,v 1.5 2014/08/29 10:51:39 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,9 +13,7 @@ PuppetDB comes with a web frontend which reports various metric at:
 Setting up SSL
 --------------
 In order for the PuppetDB to communicate with the Puppet Master you will need
-to setup SSL. First create an empty jetty.ini:
-
-    touch ${SYSCONFDIR}/puppetdb/conf.d/jetty.ini
+to setup SSL.
 
 As the Puppet Master need not to run on the same host as PuppetDB we will
 assume your configuration is stored in ${SYSCONFDIR}/puppet/ on
@@ -31,9 +29,10 @@ ${SYSCONFDIR}/puppetdb/ssl/ (relative to ${SYSCONFDIR}/puppet/):
 Now run to finalize the setup:
 
     ${LOCALBASE}/libexec/puppetdb/puppetdb-ssl-setup
+    # puppetdb ssl-setup -f
 
-You may need to merge ${SYSCONFDIR}/puppetdb/conf.d/jetty.ini into
-${SYSCONFDIR}/puppetdb/conf.d/puppetdb.ini
+Assuming the Puppet Master runs on the same host as PuppetDB, you only have to do
+the final step.
 
 Configuring the Puppet Master
 -----------------------------
@@ -67,4 +66,13 @@ PuppetDB terminus
 If the Puppet Master is running OpenBSD, you will need to install the PuppetDB
 terminus plugin:
 
-    pkg_add puppetdb-terminus
+    # pkg_add puppetdb-terminus
+
+Upgrade from puppetdb-2.1.0p0
+-----------------------------
+With puppetdb-2.1.0p1 the single ${SYSCONFDIR}/puppetdb/conf.d/puppetdb.ini file was
+split into multiple .ini files. There are now config.ini, database.ini, jetty.ini and
+repl.ini. The config.ini contains the [global] and [command-processing] sections,
+the other .ini files contain the respective sections from the puppetdb.ini with
+the same names. You have to update those new files matching your old configuration
+from the puppetdb.ini and afterward you have to delete the puppetdb.ini.

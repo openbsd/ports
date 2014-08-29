@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/05/07 10:59:53 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2014/08/29 10:51:39 sebastia Exp $
 @newgroup _puppetdb:719
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/puppetdb/*
@@ -16,8 +16,14 @@ share/examples/puppetdb/
 @sample ${SYSCONFDIR}/puppetdb/conf.d/
 share/examples/puppetdb/logback.xml
 @sample ${SYSCONFDIR}/puppetdb/logback.xml
-share/examples/puppetdb/puppetdb.ini
-@sample ${SYSCONFDIR}/puppetdb/conf.d/puppetdb.ini
+share/examples/puppetdb/config.ini
+@sample ${SYSCONFDIR}/puppetdb/conf.d/config.ini
+share/examples/puppetdb/database.ini
+@sample ${SYSCONFDIR}/puppetdb/conf.d/database.ini
+share/examples/puppetdb/jetty.ini
+@sample ${SYSCONFDIR}/puppetdb/conf.d/jetty.ini
+share/examples/puppetdb/repl.ini
+@sample ${SYSCONFDIR}/puppetdb/conf.d/repl.ini
 share/puppetdb/
 share/puppetdb/db
 share/puppetdb/mq
