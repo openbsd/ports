@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CWptDB_cpp,v 1.1 2014/08/29 12:01:41 sebastia Exp $
+
+fix crash on aborting waypoint creation
+from upstream r3984
+
+--- src/CWptDB.cpp.orig	Thu Aug 28 12:05:40 2014
++++ src/CWptDB.cpp	Thu Aug 28 12:06:10 2014
+@@ -307,7 +307,7 @@ CWpt * CWptDB::newWpt(float lon, float lat, float ele,
+         CDlgEditWpt dlg(*wpt,theMainWindow->getCanvas());
+         if(dlg.exec() == QDialog::Rejected)
+         {
+-            delete wpt;
++	    wpt->deleteLater();
+             return 0;
+         }
+     }

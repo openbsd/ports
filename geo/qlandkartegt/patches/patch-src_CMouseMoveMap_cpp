@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_CMouseMoveMap_cpp,v 1.1 2014/08/29 12:01:41 sebastia Exp $
+
+fix crash deleting a waypoint via right mouse button
+from upstream r3982
+
+--- src/CMouseMoveMap.cpp.orig	Thu Aug 28 11:56:09 2014
++++ src/CMouseMoveMap.cpp	Thu Aug 28 11:56:29 2014
+@@ -421,6 +421,9 @@ void CMouseMoveMap::slotDeleteWpt()
+ 
+     CWpt * selWpt = selWpts.first().wpt;
+     QString key = selWpt->getKey();
++
++    selWpts.clear();
++
+     CWptDB::self().delWpt(key);
+ }
+ 

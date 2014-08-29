@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/08/27 12:50:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/08/29 12:01:41 sebastia Exp $
 @pkgpath geo/qlandkarte
 @bin bin/cache2gtiff
 @bin bin/map2gcm
@@ -14,7 +14,6 @@ share/qlandkartegt/
 share/qlandkartegt/translations/
 share/qlandkartegt/translations/qlandkartegt_cs.qm
 share/qlandkartegt/translations/qlandkartegt_de.qm
-share/qlandkartegt/translations/qlandkartegt_en.qm
 share/qlandkartegt/translations/qlandkartegt_es_ES.qm
 share/qlandkartegt/translations/qlandkartegt_fr.qm
 share/qlandkartegt/translations/qlandkartegt_it_IT.qm

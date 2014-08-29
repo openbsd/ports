@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/27 12:50:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/08/29 12:01:41 sebastia Exp $
 
 COMMENT =	garmin gps map management tool
 
-DISTNAME =	qlandkartegt-1.7.5
-REVISION =	3
+DISTNAME =	qlandkartegt-1.7.7
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://www.qlandkarte.org/
@@ -26,5 +25,12 @@ LIB_DEPENDS +=	devel/proj \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		geo/garmindev \
 		geo/gpsbabel
+
+CONFIGURE_ARGS = -DCMAKE_BUILD_TYPE=Release
+
+post-extract:
+	@find ${WRKDIST} -name *.orig -exec rm {} \;
+	@rm ${WRKSRC}/cmake/Modules/FindGDAL.cmake
+	@rm ${WRKSRC}/cmake/Modules/FindJPEG.cmake
 
 .include <bsd.port.mk>

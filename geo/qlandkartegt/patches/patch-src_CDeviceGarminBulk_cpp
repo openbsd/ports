@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_CDeviceGarminBulk_cpp,v 1.1 2014/08/29 12:01:41 sebastia Exp $
+
+do not build failing experimental feature
+
+--- src/CDeviceGarminBulk.cpp.orig	Thu Aug 28 00:21:21 2014
++++ src/CDeviceGarminBulk.cpp	Thu Aug 28 00:22:01 2014
+@@ -37,11 +37,9 @@
+ CDeviceGarminBulk::CDeviceGarminBulk(QObject * parent)
+ : IDevice("Garmin Mass Storage", parent)
+ {
+-    deviceWatcher = new QDeviceWatcher(this);
+     connect(deviceWatcher, SIGNAL(deviceAdded(QString)), SLOT(slotDevice(QString)));
+     connect(deviceWatcher, SIGNAL(deviceChanged(QString)), SLOT(slotDevice(QString)));
+     connect(deviceWatcher, SIGNAL(deviceRemoved(QString)), SLOT(slotDevice(QString)));
+-    deviceWatcher->start();
+ 
+     qDebug() << "***************************************CDeviceGarminBulk";
+ }

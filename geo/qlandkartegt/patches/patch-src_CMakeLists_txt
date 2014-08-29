@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2014/08/29 12:01:41 sebastia Exp $
+
+fix includes for OpenGL
+do not build failing experimental feature
+
+--- src/CMakeLists.txt.orig	Wed Aug 27 23:36:56 2014
++++ src/CMakeLists.txt	Thu Aug 28 00:19:29 2014
+@@ -672,7 +672,7 @@ endif(UNIX)
+ set(qlandkarte_include_dirs
+   ${CMAKE_BINARY_DIR}
+   ${CMAKE_CURRENT_BINARY_DIR}
+-  ${OPENGL_INCLUDE_DIRS}
++  ${OPENGL_INCLUDE_DIR}
+   ${GDAL_INCLUDE_DIRS}
+   ${PROJ_INCLUDE_DIRS}
+   ${QT_QTXML_INCLUDE_DIR}
+@@ -800,7 +800,6 @@ set(qlandkarte_link_libs
+     ${GPSD_LIBRARIES}
+     qzip
+     qtexthtmlexporter
+-    qdevicewatcher
+     getopt
+     ${QTSOAP_LIBRARIES}
+     ${PROFILING_LIBRARIES}
