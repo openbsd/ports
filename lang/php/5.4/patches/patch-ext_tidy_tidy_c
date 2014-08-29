@@ -1,12 +1,13 @@
-$OpenBSD: patch-ext_tidy_tidy_c,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
+$OpenBSD: patch-ext_tidy_tidy_c,v 1.2 2014/08/29 06:56:48 dlg Exp $
 --- ext/tidy/tidy.c.orig.port	Wed Jul  3 08:10:53 2013
 +++ ext/tidy/tidy.c	Sat Jul 27 18:39:50 2013
-@@ -30,7 +30,7 @@
+@@ -30,7 +30,8 @@
  #include "php_ini.h"
  #include "ext/standard/info.h"
  
 -#include "tidy.h"
 +#include "tidyp.h"
++#define tidyReleaseDate() tidyVersion()
  #include "buffio.h"
  
  /* compatibility with older versions of libtidy */
