@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/24 09:58:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/08/29 21:09:01 ajacoutot Exp $
 @bin bin/osinfo-db-validate
 @bin bin/osinfo-detect
 @bin bin/osinfo-install-script
@@ -44,12 +44,12 @@ include/libosinfo-1.0/osinfo/osinfo_resources.h
 include/libosinfo-1.0/osinfo/osinfo_resourceslist.h
 include/libosinfo-1.0/osinfo/osinfo_tree.h
 include/libosinfo-1.0/osinfo/osinfo_treelist.h
+include/libosinfo-1.0/osinfo/osinfo_version.h
 lib/girepository-1.0/
 lib/girepository-1.0/Libosinfo-1.0.typelib
 lib/libosinfo-1.0.a
 lib/libosinfo-1.0.la
 @lib lib/libosinfo-1.0.so.${LIBosinfo-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libosinfo-1.0.pc
 @man man/man1/osinfo-db-validate.1
 @man man/man1/osinfo-detect.1
@@ -60,23 +60,37 @@ share/gir-1.0/Libosinfo-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/Libosinfo/
+share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-enum-types.html
+share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-version.html
 share/gtk-doc/html/Libosinfo/Libosinfo.devhelp2
+share/gtk-doc/html/Libosinfo/OsinfoAvatarFormat.html
+share/gtk-doc/html/Libosinfo/OsinfoDatamap.html
+share/gtk-doc/html/Libosinfo/OsinfoDatamapList.html
 share/gtk-doc/html/Libosinfo/OsinfoDb.html
 share/gtk-doc/html/Libosinfo/OsinfoDeployment.html
 share/gtk-doc/html/Libosinfo/OsinfoDeploymentList.html
 share/gtk-doc/html/Libosinfo/OsinfoDevice.html
+share/gtk-doc/html/Libosinfo/OsinfoDeviceDriver.html
+share/gtk-doc/html/Libosinfo/OsinfoDeviceDriverList.html
 share/gtk-doc/html/Libosinfo/OsinfoDeviceLink.html
 share/gtk-doc/html/Libosinfo/OsinfoDeviceLinkFilter.html
 share/gtk-doc/html/Libosinfo/OsinfoDeviceLinkList.html
 share/gtk-doc/html/Libosinfo/OsinfoDeviceList.html
 share/gtk-doc/html/Libosinfo/OsinfoEntity.html
 share/gtk-doc/html/Libosinfo/OsinfoFilter.html
+share/gtk-doc/html/Libosinfo/OsinfoInstallConfig.html
+share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParam.html
+share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParamList.html
+share/gtk-doc/html/Libosinfo/OsinfoInstallScript.html
+share/gtk-doc/html/Libosinfo/OsinfoInstallScriptList.html
 share/gtk-doc/html/Libosinfo/OsinfoList.html
 share/gtk-doc/html/Libosinfo/OsinfoLoader.html
 share/gtk-doc/html/Libosinfo/OsinfoMedia.html
 share/gtk-doc/html/Libosinfo/OsinfoMediaList.html
 share/gtk-doc/html/Libosinfo/OsinfoOs.html
 share/gtk-doc/html/Libosinfo/OsinfoOsList.html
+share/gtk-doc/html/Libosinfo/OsinfoOsVariant.html
+share/gtk-doc/html/Libosinfo/OsinfoOsVariantList.html
 share/gtk-doc/html/Libosinfo/OsinfoPlatform.html
 share/gtk-doc/html/Libosinfo/OsinfoPlatformList.html
 share/gtk-doc/html/Libosinfo/OsinfoProduct.html
@@ -84,9 +98,12 @@ share/gtk-doc/html/Libosinfo/OsinfoProductFilter.html
 share/gtk-doc/html/Libosinfo/OsinfoProductList.html
 share/gtk-doc/html/Libosinfo/OsinfoResources.html
 share/gtk-doc/html/Libosinfo/OsinfoResourcesList.html
+share/gtk-doc/html/Libosinfo/OsinfoTree.html
+share/gtk-doc/html/Libosinfo/OsinfoTreeList.html
 share/gtk-doc/html/Libosinfo/annotation-glossary.html
 share/gtk-doc/html/Libosinfo/api-index-full.html
 share/gtk-doc/html/Libosinfo/ch01.html
+share/gtk-doc/html/Libosinfo/depr-index.html
 share/gtk-doc/html/Libosinfo/home.png
 share/gtk-doc/html/Libosinfo/index.html
 share/gtk-doc/html/Libosinfo/index.sgml

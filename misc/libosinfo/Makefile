@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/09 17:43:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/08/29 21:09:01 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
-DISTNAME=		libosinfo-0.2.10
-REVISION=		3
+DISTNAME=		libosinfo-0.2.11
 
-SHARED_LIBS +=  osinfo-1.0           0.0      # .2.10
+SHARED_LIBS +=  osinfo-1.0           0.0      # 2.11
 
 CATEGORIES=		misc devel
 
@@ -25,7 +24,7 @@ MODULES=		devel/gettext \
 			textproc/intltool \
 			x11/gnome
 
-MODGNOME_TOOLS +=	gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
 USE_GMAKE=		Yes
 
