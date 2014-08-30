@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/28 10:30:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/08/30 10:32:58 ajacoutot Exp $
 
 COMMENT=	monitoring and reporting tool for bacula(8)
 
-DISTNAME=	bacula-web-6.0.0
+DISTNAME=	bacula-web-6.0.1
 EXTRACT_SUFX=	.tgz
-REVISION=	4
 
 CATEGORIES=	www sysutils
 
@@ -28,6 +27,11 @@ PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/bacula-web
 TINSTDIR=	${TRUEPREFIX}/bacula-web
 SUBST_VARS=	INSTDIR TINSTDIR
+
+do-extract:
+	mkdir ${WRKDIST} && \
+		cd ${WRKDIST} && \
+		${GZIP_CMD} -dc ${FULLDISTDIR}/${DISTFILES} | ${TAR} xf -
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}

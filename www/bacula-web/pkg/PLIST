@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/03/22 08:16:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/08/30 10:32:58 ajacoutot Exp $
 @extraunexec rm -rf %D/bacula-web/application/view/cache/*
 bacula-web/
 bacula-web/DOCS/
 bacula-web/DOCS/COPYING
 bacula-web/DOCS/Changelog
 bacula-web/DOCS/INSTALL
-bacula-web/DOCS/README
+bacula-web/README
 bacula-web/application/
 bacula-web/application/config/
 bacula-web/application/config/.htaccess
