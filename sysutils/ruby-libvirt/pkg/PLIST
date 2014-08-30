@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/08/25 07:48:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/08/30 14:16:02 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -8,7 +8,7 @@ ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/
-${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/.RUBYARCHDIR.time
+@comment ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/.RUBYARCHDIR.time
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/_libvirt.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/_libvirt.o
