@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/11 23:51:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/30 13:17:48 ajacoutot Exp $
 
 COMMENT=	english-russian keyboard switcher for X11
 
 DISTNAME=	xruskb-1.15.4
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/
 
@@ -37,7 +37,7 @@ post-install:
 		${PREFIX}/share/doc/xruskb/xrus.doc
 	${INSTALL_DATA} ${WRKSRC}/xrus.doc-koi8 ${PREFIX}/share/doc/xruskb
 	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/xruskb
-	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${PREFIX}/share/xruskb
+	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${PREFIX}/lib/X11/app-defaults/Xrus
 	${INSTALL_DATA} ${WRKSRC}/Xrus.wmaker ${PREFIX}/share/xruskb
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/04 19:02:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/08/30 13:17:48 ajacoutot Exp $
 @pkgpath russian/xruskb,
 @pkgpath russian/xruskb,motif
 @pkgpath russian/xrusbd,lesstif
 @bin bin/xrus
 @bin bin/xrusmodmap
+lib/X11/app-defaults/Xrus
 @man man/man1/xrus.1
 share/doc/xruskb/
 share/doc/xruskb/README
@@ -13,8 +14,6 @@ share/doc/xruskb/xrus.doc-koi8
 share/xruskb/
 share/xruskb/DocumentL.xpm
 share/xruskb/DocumentY.xpm
-share/xruskb/Xrus.ad
-@sample /etc/X11/app-defaults/Xrus
 share/xruskb/Xrus.wmaker
 share/xruskb/hebrew-iso8.xmm
 share/xruskb/hebrew.xmm
