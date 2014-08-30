@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/08/30 21:34:02 jasper Exp $
 
 COMMENT=	strip cascading style sheets from webpages
 
-DISTNAME=	decss
-PKGNAME=	decss-0.0.6
+DISTNAME=	decss-0.07
 CATEGORIES=	www
 
 MASTER_SITES=   ${HOMEPAGE}
@@ -14,8 +13,6 @@ MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=   Yes
-
-WRKDIST=	${WRKDIR}/source
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
