@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/30 21:54:08 jasper Exp $
 
 COMMENT=	chinese big5/gb truetype fonts
 
@@ -10,8 +10,6 @@ CATEGORIES=     fonts chinese x11
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
-
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

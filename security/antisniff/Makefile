@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/08/30 21:54:08 jasper Exp $
 
 COMMENT=	promiscuous mode interface detector
 
@@ -11,8 +11,6 @@ PERMIT_PACKAGE_CDROM=	commercial software
 PERMIT_PACKAGE_FTP=	commercial software
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c kvm pcap
-
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 WRKDIST=	${WRKDIR}/anti_sniff
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/11 23:49:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2014/08/30 21:54:08 jasper Exp $
 #
 
 COMMENT=	watch what you are doing -- are you hostile
@@ -12,8 +12,6 @@ CATEGORIES=	games
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread-stubs xcb
-
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 CONFIGURE_STYLE=imake noman
 

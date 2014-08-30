@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/30 21:54:08 jasper Exp $
 
 COMMENT=	3d tetris
 
@@ -11,8 +11,6 @@ EXTRACT_SUFX=	.tar.Z
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 WRKBUILD=	${WRKDIST}/spatial
 PIECEFILE=${PREFIX}/share/spatial/spatial.shp

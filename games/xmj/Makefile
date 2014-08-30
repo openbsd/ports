@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2014/08/30 21:54:08 jasper Exp $
 
 COMMENT=	Mahjongg game for X11
 
@@ -6,8 +6,6 @@ DISTNAME=       xmj
 PKGNAME=	xmj-1.0
 REVISION =	2
 CATEGORIES=	games
-
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

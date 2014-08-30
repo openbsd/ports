@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/08/30 21:54:07 jasper Exp $
 # Original from: Stephane Peter <megastep@megastep.org>
 
 COMMENT=	script generating a self-extractible .tgz from a directory
@@ -12,8 +12,6 @@ HOMEPAGE=		http://www.megastep.org/makeself/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		${MASTER_SITE_BACKUP}
 
 EXTRACT_ONLY=
 EXTRACT_SUFX=		.gz.sh

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2014/08/30 21:54:08 jasper Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
@@ -18,12 +18,11 @@ MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 # PSF/ZPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_BACKUP}
 DISTFILES=		PyProtocols-${VERSION}a0dev_r${REV}${EXTRACT_SUFX}
 
 MODULES=		lang/python
 RUN_DEPENDS=		devel/py-decoratortools
-TEST_DEPENDS=	devel/py-decoratortools
+TEST_DEPENDS=		devel/py-decoratortools
 
 MODPY_SETUPTOOLS=	Yes
 

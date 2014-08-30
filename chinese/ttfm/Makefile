@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2014/08/30 21:54:07 jasper Exp $
 
 COMMENT=	big5/gb enhanced truetype font manager
 
@@ -12,8 +12,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c freetype z
-
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS='${CFLAGS} `freetype-config --cflags`'
 

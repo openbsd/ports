@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/04/16 11:36:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2014/08/30 21:54:08 jasper Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -8,7 +8,6 @@ PKGNAME=	l0phtcrack-2.52
 REVISION=	1
 CATEGORIES=	security
 
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 DISTFILES=	lcsrc.zip readsmb.c
 EXTRACT_ONLY=	lcsrc.zip
 DIST_SUBDIR=	l0phtcrack

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2014/08/30 21:54:08 jasper Exp $
 
 COMMENT=	classic BSD4.4 cat-and-mouse
 
@@ -6,7 +6,6 @@ DISTNAME=	xneko
 PKGNAME=	xneko-4.4
 REVISION =	1
 CATEGORIES=	x11 games
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	.tar
 
 # Public domain - written in Japanese
