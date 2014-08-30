@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/08/30 12:48:08 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/__init__.pyc
@@ -46,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/tax.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/tests/scenario_account_reconciliation.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/tests/test_account.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/tests/test_account.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account/third_party_balance.odt

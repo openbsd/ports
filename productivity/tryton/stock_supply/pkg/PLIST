@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/08/30 12:48:09 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/__init__.pyc
@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/shipment.x
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/scenario_stock_internal_supply.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/test_stock_supply.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tests/test_stock_supply.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_supply/tryton.cfg

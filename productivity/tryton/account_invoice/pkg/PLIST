@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/08/30 12:48:09 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/__init__.pyc
@@ -30,6 +30,9 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/payment
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/scenario_invoice.rst
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/scenario_invoice_alternate_currency.rst
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/scenario_invoice_supplier.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/test_account_invoice.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/test_account_invoice.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tryton.cfg

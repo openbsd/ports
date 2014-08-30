@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/10/28 07:29:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/08/30 12:48:08 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/__init__.pyc
@@ -27,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/purchase.
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/tests/scenario_account_asset.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/tests/test_account_asset.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/tests/test_account_asset.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_asset/tryton.cfg
