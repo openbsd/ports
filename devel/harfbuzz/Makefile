@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2014/08/10 08:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/08/30 09:20:42 ajacoutot Exp $
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			0.9.34
+V=			0.9.35
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             4.5      # 934.0
-SHARED_LIBS +=  harfbuzz-icu         0.2      # 934.0
+SHARED_LIBS +=  harfbuzz             5.0      # 935.0
+SHARED_LIBS +=  harfbuzz-icu         0.2      # 935.0
 
 CATEGORIES=		devel graphics textproc
 
