@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/09/18 20:53:15 edd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/08/30 16:34:33 edd Exp $
 lib/python${MODPY_VERSION}/site-packages/py/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSI
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/py/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/__metainfo.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}__metainfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_apipkg.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_apipkg.py
 lib/python${MODPY_VERSION}/site-packages/py/_builtin.py
 lib/python${MODPY_VERSION}/site-packages/py/_code/
 lib/python${MODPY_VERSION}/site-packages/py/_code/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}_assertionnew.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}_assertionold.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_error.py
 lib/python${MODPY_VERSION}/site-packages/py/_iniconfig.py
 lib/python${MODPY_VERSION}/site-packages/py/_io/
 lib/python${MODPY_VERSION}/site-packages/py/_io/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}saferepr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_io/saferepr.py
 lib/python${MODPY_VERSION}/site-packages/py/_io/terminalwriter.py
 lib/python${MODPY_VERSION}/site-packages/py/_log/
 lib/python${MODPY_VERSION}/site-packages/py/_log/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}warning.${MODPY_PYC_MAGIC_TAG}pyc
@@ -56,7 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_log/log.py
 lib/python${MODPY_VERSION}/site-packages/py/_log/warning.py
 lib/python${MODPY_VERSION}/site-packages/py/_path/
 lib/python${MODPY_VERSION}/site-packages/py/_path/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}cacheutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_path/svnurl.py
 lib/python${MODPY_VERSION}/site-packages/py/_path/svnwc.py
 lib/python${MODPY_VERSION}/site-packages/py/_process/
 lib/python${MODPY_VERSION}/site-packages/py/_process/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}cmdexec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}forkedfunc.${MODPY_PYC_MAGIC_TAG}pyc
