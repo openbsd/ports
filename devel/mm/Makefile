@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2014/08/30 20:24:31 jasper Exp $
 
 # XXX This will panic any vax
 NOT_FOR_ARCHS=	vax
@@ -10,7 +10,8 @@ REVISION =	0
 SHARED_LIBS=	mm 13.21
 
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
+MASTER_SITES=	http://distfiles.nl/ \
+		ftp://ftp.ossp.org/pkg/lib/mm/
 
 HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/
 
