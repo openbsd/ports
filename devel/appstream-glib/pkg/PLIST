@@ -1,0 +1,82 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/30 12:29:07 ajacoutot Exp $
+@bin bin/appstream-builder
+@bin bin/appstream-util
+include/libappstream-builder/
+include/libappstream-builder/appstream-builder.h
+include/libappstream-builder/asb-app.h
+include/libappstream-glib/
+include/libappstream-glib/appstream-glib.h
+include/libappstream-glib/as-app.h
+include/libappstream-glib/as-enums.h
+include/libappstream-glib/as-image.h
+include/libappstream-glib/as-node.h
+include/libappstream-glib/as-problem.h
+include/libappstream-glib/as-provide.h
+include/libappstream-glib/as-release.h
+include/libappstream-glib/as-screenshot.h
+include/libappstream-glib/as-store.h
+include/libappstream-glib/as-tag.h
+include/libappstream-glib/as-utils.h
+include/libappstream-glib/as-version.h
+lib/asb-plugins/
+lib/asb-plugins/libasb_plugin_absorb.so
+lib/asb-plugins/libasb_plugin_appdata.so
+lib/asb-plugins/libasb_plugin_blacklist.so
+lib/asb-plugins/libasb_plugin_dbus.so
+lib/asb-plugins/libasb_plugin_desktop.so
+lib/asb-plugins/libasb_plugin_font.so
+lib/asb-plugins/libasb_plugin_gettext.so
+lib/asb-plugins/libasb_plugin_gir.so
+lib/asb-plugins/libasb_plugin_gresource.so
+lib/asb-plugins/libasb_plugin_gstreamer.so
+lib/asb-plugins/libasb_plugin_hardcoded.so
+lib/asb-plugins/libasb_plugin_ibus_sql.so
+lib/asb-plugins/libasb_plugin_ibus_xml.so
+lib/asb-plugins/libasb_plugin_kde_notifyrc.so
+lib/asb-plugins/libasb_plugin_kde_services.so
+lib/asb-plugins/libasb_plugin_metainfo.so
+lib/asb-plugins/libasb_plugin_nm.so
+lib/libappstream-builder.a
+lib/libappstream-builder.la
+@lib lib/libappstream-builder.so.${LIBappstream-builder_VERSION}
+lib/libappstream-glib.a
+lib/libappstream-glib.la
+@lib lib/libappstream-glib.so.${LIBappstream-glib_VERSION}
+lib/pkgconfig/appstream-builder.pc
+lib/pkgconfig/appstream-glib.pc
+@man man/man1/appstream-builder.1
+@man man/man1/appstream-util.1
+share/aclocal/appstream-xml.m4
+share/bash-completion/completions/appstream-builder
+share/bash-completion/completions/appstream-util
+share/gtk-doc/html/appstream-glib/
+share/gtk-doc/html/appstream-glib/AsApp.html
+share/gtk-doc/html/appstream-glib/AsImage.html
+share/gtk-doc/html/appstream-glib/AsProblem.html
+share/gtk-doc/html/appstream-glib/AsProvide.html
+share/gtk-doc/html/appstream-glib/AsRelease.html
+share/gtk-doc/html/appstream-glib/AsScreenshot.html
+share/gtk-doc/html/appstream-glib/AsStore.html
+share/gtk-doc/html/appstream-glib/annotation-glossary.html
+share/gtk-doc/html/appstream-glib/appstream-glib-as-enums.html
+share/gtk-doc/html/appstream-glib/appstream-glib-as-node.html
+share/gtk-doc/html/appstream-glib/appstream-glib-as-tag.html
+share/gtk-doc/html/appstream-glib/appstream-glib-as-utils.html
+share/gtk-doc/html/appstream-glib/appstream-glib-as-version.html
+share/gtk-doc/html/appstream-glib/appstream-glib.devhelp2
+share/gtk-doc/html/appstream-glib/home.png
+share/gtk-doc/html/appstream-glib/index.html
+share/gtk-doc/html/appstream-glib/index.sgml
+share/gtk-doc/html/appstream-glib/left-insensitive.png
+share/gtk-doc/html/appstream-glib/left.png
+share/gtk-doc/html/appstream-glib/libappstream-glib.html
+share/gtk-doc/html/appstream-glib/right-insensitive.png
+share/gtk-doc/html/appstream-glib/right.png
+share/gtk-doc/html/appstream-glib/style.css
+share/gtk-doc/html/appstream-glib/up-insensitive.png
+share/gtk-doc/html/appstream-glib/up.png
+share/installed-tests/
+share/installed-tests/appstream-glib/
+share/installed-tests/appstream-glib/appdata-validate.test
+share/installed-tests/appstream-glib/destdir-check.test
+share/locale/ru/LC_MESSAGES/appstream-glib.mo

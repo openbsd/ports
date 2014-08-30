@@ -1,0 +1,12 @@
+This library provides GObjects and helper methods to make it easy to
+read and write AppStream metadata. It also provides a simple DOM
+implementation that makes it easy to edit nodes and convert to and from
+the standardized XML representation.
+
+What this library allows you to do:
+
+ * Read and write compressed AppStream XML files
+ * Add and search for applications in an application store
+ * Get screenshot image data and release announcements
+ * Easily retrieve the best application data for the current locale
+ * Efficiently interface with more heavy-weight parsers like expat
