@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/28 13:10:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/08/30 09:02:23 ajacoutot Exp $
 include/polkit-qt-1/
 include/polkit-qt-1/PolkitQt1/
 include/polkit-qt-1/PolkitQt1/ActionDescription
@@ -31,6 +31,8 @@ lib/cmake/
 lib/cmake/PolkitQt-1/
 lib/cmake/PolkitQt-1/PolkitQt-1Config.cmake
 lib/cmake/PolkitQt-1/PolkitQt-1ConfigVersion.cmake
+lib/cmake/PolkitQt-1/PolkitQt-1Targets-noconfig.cmake
+lib/cmake/PolkitQt-1/PolkitQt-1Targets.cmake
 @lib lib/libpolkit-qt-agent-1.so.${LIBpolkit-qt-agent-1_VERSION}
 @lib lib/libpolkit-qt-core-1.so.${LIBpolkit-qt-core-1_VERSION}
 @lib lib/libpolkit-qt-gui-1.so.${LIBpolkit-qt-gui-1_VERSION}

@@ -1,16 +1,16 @@
-$OpenBSD: patch-PolkitQt-1Config_cmake_in,v 1.1 2011/10/04 06:07:46 ajacoutot Exp $
---- PolkitQt-1Config.cmake.in.orig	Tue Oct  4 05:42:32 2011
-+++ PolkitQt-1Config.cmake.in	Tue Oct  4 05:44:47 2011
-@@ -33,9 +33,9 @@ elseif(APPLE)
-   set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/libpolkit-qt-agent-1.dylib")
-   set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/libpolkit-qt-gui-1.dylib")
+$OpenBSD: patch-PolkitQt-1Config_cmake_in,v 1.2 2014/08/30 09:02:23 ajacoutot Exp $
+--- PolkitQt-1Config.cmake.in.orig	Thu Jul 10 10:37:25 2014
++++ PolkitQt-1Config.cmake.in	Sat Aug 30 10:51:42 2014
+@@ -42,9 +42,9 @@ elseif(APPLE)
+   set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_AGENT_PCNAME@.dylib")
+   set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_GUI_PCNAME@.dylib")
  else()
--  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/libpolkit-qt-core-1.so")
--  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/libpolkit-qt-agent-1.so")
--  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/libpolkit-qt-gui-1.so")
-+  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/libpolkit-qt-core-1.so.${LIBpolkit-qt-core-1_VERSION}")
-+  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/libpolkit-qt-agent-1.so.${LIBpolkit-qt-agent-1_VERSION}")
-+  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/libpolkit-qt-gui-1.so.${LIBpolkit-qt-gui-1_VERSION}")
+-  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_CORE_PCNAME@.so")
+-  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_AGENT_PCNAME@.so")
+-  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_GUI_PCNAME@.so")
++  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_CORE_PCNAME@.so.${LIBpolkit-qt-core-1_VERSION}")
++  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_AGENT_PCNAME@.so.${LIBpolkit-qt-agent-1_VERSION}")
++  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/lib@POLKITQT-1_GUI_PCNAME@.so.${LIBpolkit-qt-gui-1_VERSION}")
  endif()
  
- set(POLKITQT-1_LIBRARIES ${POLKITQT-1_GUI_LIBRARY} ${POLKITQT-1_CORE_LIBRARY} ${POLKITQT-1_AGENT_LIBRARY})
+ ########## The PolkitQt-1 libraries ##########
