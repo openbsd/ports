@@ -1,0 +1,18 @@
+$OpenBSD: patch-link-grammar_structures_h,v 1.1 2014/08/30 12:33:56 ajacoutot Exp $
+
+-std=c99 does not guarantee alloca() (it's stripped from stdlib.h on
+OpenBSD when -std=c99 is used)
+
+--- link-grammar/structures.h.orig	Sat Aug 30 14:14:00 2014
++++ link-grammar/structures.h	Sat Aug 30 14:15:35 2014
+@@ -14,6 +14,10 @@
+ #ifndef _STRUCTURES_H_
+ #define _STRUCTURES_H_
+ 
++#ifndef alloca
++#define alloca(x)	__builtin_alloca(x)
++#endif
++
+ #include "api-types.h"
+ #include "api-structures.h"
+ #include "dict-structures.h"  /* For Exp, Exp_list */
