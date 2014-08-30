@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.30 2014/07/12 13:41:47 ajacoutot Exp $
+$OpenBSD: README-main,v 1.31 2014/08/30 13:29:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -54,6 +54,6 @@ and "avahi_daemon" must be added to "pkg_scripts" _after_ "dbus_daemon".
 
 Cheat sheet
 ===========
-# echo 'multicast_host=YES' >>/etc/rc.conf.local
-# echo 'pkg_scripts=dbus_daemon avahi_daemon gdm' >>/etc/rc.conf.local
+# rcctl enable multicast_host
+# for i in dbus_daemon avahi_daemon gdm; do rcctl enable $i; done
 # reboot
