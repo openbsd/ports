@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/19 13:07:13 nigel Exp $
+# $OpenBSD: Makefile,v 1.13 2014/08/30 07:30:58 ajacoutot Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 
-DISTNAME=	tuxpaint-config-0.0.12
+DISTNAME=	tuxpaint-config-0.0.13
 CATEGORIES=	games graphics
-
-REVISION=	1
 
 HOMEPAGE=	http://www.tuxpaint.org/
 
@@ -25,7 +23,6 @@ LIB_DEPENDS=	x11/fltk \
 RUN_DEPENDS=	games/tuxpaint
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR} CXX=${CXX}
 
