@@ -1,6 +1,6 @@
-$OpenBSD: patch-nagelfar_tcl,v 1.1.1.1 2012/08/09 04:53:10 stu Exp $
---- nagelfar.tcl.orig	Sun Nov 27 20:09:25 2011
-+++ nagelfar.tcl	Sun Nov 27 20:10:54 2011
+$OpenBSD: patch-nagelfar_tcl,v 1.2 2014/08/30 17:16:47 stu Exp $
+--- nagelfar.tcl.orig	Fri Jan  4 17:05:06 2013
++++ nagelfar.tcl	Sat Aug 30 03:34:20 2014
 @@ -46,15 +46,15 @@ while {[file type $tmplink] == "link"} {
  unset tmplink
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-nagelfar_tcl,v 1.1.1.1 2012/08/09 04:53:10 stu Exp $
 +set docDir	${PREFIX}/share/doc/nagelfar
  set libDir     $thisDir/lib
   
- # Search where the script is to be able to place e.g. ctext there.
+ # Search where the script is, to be able to place e.g. ctext there.
  if {[info exists ::starkit::topdir]} {
      lappend auto_path [file dirname [file normalize $::starkit::topdir]]
  } else {
@@ -20,3 +20,14 @@ $OpenBSD: patch-nagelfar_tcl,v 1.1.1.1 2012/08/09 04:53:10 stu Exp $
  }
  #----------------------------------------------------------------------
  #  Nagelfar, a syntax checker for Tcl.
+@@ -5768,6 +5768,10 @@ proc PluginSearchPath {} {
+     lappend dirs [file join $::thisDir .. .. plugins]
+     lappend dirs [file join $::thisDir .. plugins]
+     return $dirs
++}
++
++proc PluginSearchPath {} {
++    return [list . ./nagelfar_plugins ~/nagelfar_plugins]
+ }
+ 
+ # Locate plugin source

@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/09 04:53:10 stu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/08/30 17:16:47 stu Exp $
 bin/nagelfar
 lib/tcl/modules/${MODTK_VERSION}/textSearch-0.3.tm
 libdata/nagelfar/
+libdata/nagelfar/packagedb/
+libdata/nagelfar/packagedb/inifiledb.tcl
+libdata/nagelfar/packagedb/registrydb.tcl
+libdata/nagelfar/packagedb/snitdb.tcl
+libdata/nagelfar/packagedb/tkdnddb.tcl
+libdata/nagelfar/packagedb/vfs_mk4db.tcl
 libdata/nagelfar/syntaxbuild.tcl
 libdata/nagelfar/syntaxdb.tcl
 libdata/nagelfar/syntaxdb84.tcl
@@ -13,6 +19,7 @@ share/doc/nagelfar/call-by-name.txt
 share/doc/nagelfar/codecoverage.txt
 share/doc/nagelfar/inlinecomments.txt
 share/doc/nagelfar/messages.txt
+share/doc/nagelfar/plugins.txt
 share/doc/nagelfar/syntaxdatabases.txt
 share/doc/nagelfar/syntaxtokens.txt
 share/doc/textsearch/

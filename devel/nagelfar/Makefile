@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/23 21:05:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/08/30 17:16:47 stu Exp $
 
 COMMENT =	syntax analysis tool for Tcl
 
-DISTNAME =	nagelfar1112
-PKGNAME =	nagelfar-1.1.12
-REVISION =	1
+DISTNAME =	nagelfar12
+PKGNAME =	nagelfar-1.2
 CATEGORIES =	devel
+HOMEPAGE =	http://nagelfar.sourceforge.net/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv2 (Nagelfar)
 # BSD (textSearch)
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nagelfar.berlios/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nagelfar/}
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
@@ -21,6 +21,7 @@ PKG_ARCH =	*
 
 NF_LIB_DIR =	${PREFIX}/libdata/nagelfar
 NF_DOC_DIR =	${PREFIX}/share/doc/nagelfar
+NF_PDB_DIR =	${NF_LIB_DIR}/packagedb
 TS_SRC_DIR =	${WRKSRC}/lib/textsearch
 TS_DOC_DIR =	${PREFIX}/share/doc/textsearch
 TS_EXA_DIR =	${PREFIX}/share/examples/textsearch
@@ -33,11 +34,12 @@ do-configure:
 	@${SUBST_CMD} ${TS_SRC_DIR}/examples/demo.tcl
 
 do-install:
-	${INSTALL_DATA_DIR} ${NF_LIB_DIR} ${NF_DOC_DIR}
+	${INSTALL_DATA_DIR} ${NF_LIB_DIR} ${NF_DOC_DIR} ${NF_PDB_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/nagelfar.tcl ${PREFIX}/bin/nagelfar
 	${INSTALL_DATA} ${WRKSRC}/syntax*.tcl ${NF_LIB_DIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${NF_DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${NF_DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/packagedb/*.tcl ${NF_PDB_DIR}
 	${INSTALL_DATA_DIR} ${TS_DOC_DIR} ${TS_EXA_DIR} ${MOD_DIR}
 	${INSTALL_DATA} ${TS_SRC_DIR}/tcl/textsearch.tcl ${MOD_DIR}/textSearch-0.3.tm
 	${INSTALL_DATA} ${TS_SRC_DIR}/doc/readme.txt ${TS_DOC_DIR}
