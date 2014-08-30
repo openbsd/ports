@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2014/08/29 10:51:39 sebastia Exp $
+$OpenBSD: README-main,v 1.6 2014/08/30 14:07:45 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -75,4 +75,5 @@ split into multiple .ini files. There are now config.ini, database.ini, jetty.in
 repl.ini. The config.ini contains the [global] and [command-processing] sections,
 the other .ini files contain the respective sections from the puppetdb.ini with
 the same names. You have to update those new files matching your old configuration
-from the puppetdb.ini and afterward you have to delete the puppetdb.ini.
+from the puppetdb.ini and afterwards you have to delete the
+puppetdb.ini file before restarting puppetdb.
