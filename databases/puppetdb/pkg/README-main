@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2014/08/30 14:07:45 jasper Exp $
+$OpenBSD: README-main,v 1.7 2014/08/30 14:16:07 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -33,6 +33,23 @@ Now run to finalize the setup:
 
 Assuming the Puppet Master runs on the same host as PuppetDB, you only have to do
 the final step.
+
+PostgreSQL indexes
+------------------
+When using the PostgreSQL database, it is strongly recommended to
+create the pg_trgm indexes for the PuppetDB database. This extension
+can be installed with:
+
+    # pkg_add postgresql-contrib
+
+Then run the following command as the database super-user on the PuppetDB
+database:
+
+    puppetdb=# CREATE EXTENSION pg_trgm;
+
+And restart puppetdb:
+
+    # rcctl restart puppetdb
 
 Configuring the Puppet Master
 -----------------------------
