@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/05/04 17:33:34 stu Exp $
+# $OpenBSD: Makefile,v 1.14 2014/08/30 17:19:39 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
@@ -60,7 +60,7 @@ do-install:
 # "-namespaces 1" enables namespace tests
 # "set no(exec) 1; set no(compileCSharp) 1" is needed to work around Mono bugs
 do-test:
-	${SETENV} ${MAKE_ENV} ${ALL_TEST_FLAGS} \
+	${SETENV} ${ALL_TEST_ENV} ${ALL_TEST_FLAGS} \
 	${LOCALBASE}/bin/mono ${WRKSRC}/bin/EagleShell.exe \
 	-namespaces 1 \
 	-preInitialize 'set no(exec) 1; set no(compileCSharp) 1; set test_log {}' \
