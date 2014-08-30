@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/04/16 10:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/08/30 07:22:56 ajacoutot Exp $
 
 COMMENT=	accounts management library for GLib applications
 
-DISTNAME=	libaccounts-glib-1.8
-REVISION=	1
+DISTNAME=	libaccounts-glib-1.16
 
-SHARED_LIBS +=	accounts-glib        0.0      # 1.3
+SHARED_LIBS +=	accounts-glib        1.0      # 1.3
 
 CATEGORIES=	net
 
@@ -17,28 +16,28 @@ HOMEPAGE=	https://accounts-sso.googlecode.com/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=Yes
 
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pcre
+WANTLIB += pthread sqlite3 xml2 z
+
 MASTER_SITES=	${HOMEPAGE}/files/
 
 MODULES=	devel/gettext \
-		lang/python
+		lang/python \
+		x11/gnome
 
-WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pcre pthread
-WANTLIB += sqlite3 xml2 z ffi
-
-BUILD_DEPENDS=	devel/gobject-introspection \
-		devel/py-gobject3 \
-		lang/vala \
-		textproc/docbook-xsl
+BUILD_DEPENDS=	devel/py-gobject3
 RUN_DEPENDS=	devel/py-gobject3
 LIB_DEPENDS=	textproc/libxml
-TEST_DEPENDS=	devel/check
+
+MODGNOME_TOOLS=	docbook gobject-introspection
 
 USE_GMAKE=Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-introspection
+CONFIGURE_ARGS=	--disable-gcov \
+		--disable-tests
 
-TEST_IS_INTERACTIVE=x11
+# XXX check if still needed at next update
+CONFIGURE_ENV+=	HAVE_GCOV_FALSE='\#'
 
 .include <bsd.port.mk>

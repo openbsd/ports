@@ -1,0 +1,15 @@
+$OpenBSD: patch-libaccounts-glib_ag-provider_c,v 1.1 2014/08/30 07:22:56 ajacoutot Exp $
+
+http://pkgs.fedoraproject.org/cgit/libaccounts-glib.git/tree/libaccounts-glib-1.16-build-with-werror.patch
+
+--- libaccounts-glib/ag-provider.c.orig	Sat Aug 30 09:14:55 2014
++++ libaccounts-glib/ag-provider.c	Sat Aug 30 09:15:02 2014
+@@ -441,7 +441,7 @@ ag_provider_get_plugin_name (AgProvider *provider)
+ gboolean
+ ag_provider_get_single_account (AgProvider *provider)
+ {
+-    g_return_val_if_fail (provider != NULL, NULL);
++    g_return_val_if_fail (provider != NULL, FALSE);
+     return provider->single_account;
+ }
+ 
