@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/03/18 08:40:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/08/30 09:37:27 ajacoutot Exp $
 %%SHARED%%
 bin/gphoto2-config
 bin/gphoto2-port-config
@@ -33,7 +33,6 @@ lib/libgphoto2_port.a
 lib/libgphoto2_port.la
 @lib lib/libgphoto2_port.so.${LIBgphoto2_port_VERSION}
 lib/libgphoto2_port/0.10.0/
-lib/pkgconfig/
 lib/pkgconfig/libgphoto2.pc
 lib/pkgconfig/libgphoto2_port.pc
 @man man/man3/libgphoto2.3
