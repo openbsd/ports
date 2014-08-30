@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/11/14 09:43:09 stu Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/08/30 17:32:34 stu Exp $
 @conflict mentry-*
 @conflict wcb-*
 @pkgpath devel/mentry
@@ -122,6 +122,7 @@ lib/tcl/plotchart/plotpack.tcl
 lib/tcl/plotchart/plotpriv.tcl
 lib/tcl/plotchart/plotscada.tcl
 lib/tcl/plotchart/plotspecial.tcl
+lib/tcl/plotchart/plotstatustimeline.tcl
 lib/tcl/plotchart/plottable.tcl
 lib/tcl/plotchart/scaling.tcl
 lib/tcl/plotchart/xyplot.tcl
@@ -177,6 +178,7 @@ lib/tcl/wcb/scripts/wcbEntry.tcl
 lib/tcl/wcb/scripts/wcbListbox.tcl
 lib/tcl/wcb/scripts/wcbTablelist.tcl
 lib/tcl/wcb/scripts/wcbText.tcl
+lib/tcl/wcb/scripts/wcbTreeview.tcl
 lib/tcl/wcb/wcb.tcl
 lib/tcl/widget/
 lib/tcl/widget/arrowb.tcl
@@ -264,6 +266,7 @@ share/doc/mentry/mentryThemes.html
 share/doc/mentry/mentryWidget.html
 share/doc/mentry/phonenumber.png
 share/doc/mentry/phonenumber_tile.png
+share/doc/mentry/stylesheet.css
 share/doc/mentry/wcbRef.html
 share/doc/tablelist/
 share/doc/tablelist/CHANGES.txt
@@ -295,6 +298,7 @@ share/doc/tablelist/plastik.png
 share/doc/tablelist/plastique.png
 share/doc/tablelist/radiance.png
 share/doc/tablelist/styles.png
+share/doc/tablelist/stylesheet.css
 share/doc/tablelist/tablelist.html
 share/doc/tablelist/tablelistBWidget.html
 share/doc/tablelist/tablelistBinding.html
@@ -325,6 +329,7 @@ share/doc/wcb/entrytest.png
 share/doc/wcb/index.html
 share/doc/wcb/listboxtest1.png
 share/doc/wcb/listboxtest2.png
+share/doc/wcb/stylesheet.css
 share/doc/wcb/texttest1.png
 share/doc/wcb/texttest2.png
 share/doc/wcb/wcb.html
@@ -383,6 +388,7 @@ share/examples/tklib/plotchart/plotdemos14.tcl
 share/examples/tklib/plotchart/plotdemos15.tcl
 share/examples/tklib/plotchart/plotdemos16.tcl
 share/examples/tklib/plotchart/plotdemos17.tcl
+share/examples/tklib/plotchart/plotdemos18.tcl
 share/examples/tklib/plotchart/plotdemos2.tcl
 share/examples/tklib/plotchart/plotdemos3.tcl
 share/examples/tklib/plotchart/plotdemos4.tcl
