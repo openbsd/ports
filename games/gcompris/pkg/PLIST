@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/06/02 12:31:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/08/30 08:33:39 ajacoutot Exp $
 @bin bin/gcompris
 @bin bin/gcompris-gnuchess
 lib/gcompris/
@@ -44,6 +44,8 @@ lib/gcompris/libtarget.so
 lib/gcompris/libtraffic.so
 lib/gcompris/libwordprocessor.so
 lib/gcompris/libwordsgame.so
+share/appdata/
+share/appdata/gcompris.appdata.xml
 share/applications/gcompris-edit.desktop
 share/applications/gcompris.desktop
 share/gcompris/
@@ -1144,8 +1146,6 @@ share/gcompris/boards/foot.svg
 share/gcompris/boards/france_region.svg
 share/gcompris/boards/fun.svg
 share/gcompris/boards/fun.xml
-share/gcompris/boards/gcompris/
-share/gcompris/boards/gcompris/mimetypes/
 share/gcompris/boards/geo_country/
 share/gcompris/boards/geo_country.xml
 share/gcompris/boards/geo_country/argentina/
@@ -2065,7 +2065,6 @@ share/gcompris/boards/geography/southamerica/south_america.png
 share/gcompris/boards/geography/southamerica/suriname.png
 share/gcompris/boards/geography/southamerica/uruguay.png
 share/gcompris/boards/geography/southamerica/venezuela.png
-share/gcompris/boards/geography_country/
 share/gcompris/boards/geometry.svg
 share/gcompris/boards/geometry.xml
 share/gcompris/boards/gletters/
@@ -3719,7 +3718,6 @@ share/gcompris/boards/memory_tux.svg
 share/gcompris/boards/memory_tux.xml
 share/gcompris/boards/memory_wordnumber.xml
 share/gcompris/boards/menu.xml
-share/gcompris/boards/mimetypes/
 share/gcompris/boards/mining/
 share/gcompris/boards/mining.svg
 share/gcompris/boards/mining.xml
@@ -13973,7 +13971,6 @@ share/gcompris/boards/voices/sk/geography/venezuela.ogg
 share/gcompris/boards/voices/sk/geography/western_sahara.ogg
 share/gcompris/boards/voices/sk/geography/zambia.ogg
 share/gcompris/boards/voices/sk/geography/zimbabwe.ogg
-share/gcompris/boards/voices/sk/intro/
 share/gcompris/boards/voices/sk/misc/
 share/gcompris/boards/voices/sk/misc/about.ogg
 share/gcompris/boards/voices/sk/misc/awesome.ogg
