@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/15 00:53:51 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2014/08/31 14:21:12 jturner Exp $
 
 COMMENT =		create and verify cryptographic signatures
 
-VERSION =		1.1.1
+VERSION =		2.1.0
 DISTNAME =		reop-${VERSION}
 CATEGORIES =		security sysutils
 
@@ -16,7 +16,7 @@ EXTRACT_SUFX =		.tgz
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c sodium util
-LIB_DEPENDS =		security/libsodium>=0.6.1
+LIB_DEPENDS =		security/libsodium>=0.7.0
 
 ALL_TARGET =		reop
 MAKE_FLAGS =		CC="${CC}" \
