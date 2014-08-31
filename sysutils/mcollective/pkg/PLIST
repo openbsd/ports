@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/05/21 11:22:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/08/31 14:56:51 jasper Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -260,11 +260,15 @@ libexec/mcollective/mcollective/application/rpc.rb
 libexec/mcollective/mcollective/audit/
 libexec/mcollective/mcollective/audit/logfile.rb
 libexec/mcollective/mcollective/connector/
+libexec/mcollective/mcollective/connector/activemq.ddl
 libexec/mcollective/mcollective/connector/activemq.rb
 libexec/mcollective/mcollective/connector/rabbitmq.rb
+libexec/mcollective/mcollective/connector/rabbitmq.ddl
 libexec/mcollective/mcollective/data/
 libexec/mcollective/mcollective/data/agent_data.ddl
 libexec/mcollective/mcollective/data/agent_data.rb
+libexec/mcollective/mcollective/data/fact_data.ddl
+libexec/mcollective/mcollective/data/fact_data.rb
 libexec/mcollective/mcollective/data/fstat_data.ddl
 libexec/mcollective/mcollective/data/fstat_data.rb
 libexec/mcollective/mcollective/discovery/
@@ -323,6 +327,8 @@ ${MODRUBY_RELEXAMPLEDIR}-mcollective/client.cfg
 @mode 0640
 @sample ${SYSCONFDIR}/mcollective/client.cfg
 @mode
+${MODRUBY_RELEXAMPLEDIR}-mcollective/data-help.erb
+${MODRUBY_RELEXAMPLEDIR}-mcollective/discovery-help.erb
 ${MODRUBY_RELEXAMPLEDIR}-mcollective/facts.yaml
 @sample ${SYSCONFDIR}/mcollective/facts.yaml
 ${MODRUBY_RELEXAMPLEDIR}-mcollective/plugin.d/
