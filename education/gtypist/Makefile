@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/17 00:23:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.31 2014/08/31 19:24:45 naddy Exp $
 
 COMMENT=	interactive typing tutor
 
-DISTNAME=	gtypist-2.9.4
+DISTNAME=	gtypist-2.9.5
 CATEGORIES=	education
 HOMEPAGE=	https://www.gnu.org/software/gtypist/
 
@@ -12,6 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gtypist/}
+EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	c ncursesw
 MODULES=	devel/gettext
