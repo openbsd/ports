@@ -1,0 +1,12 @@
+$OpenBSD: patch-uget-gtk_UgSetting_c,v 1.1.1.1 2014/08/31 02:06:36 bcallah Exp $
+--- uget-gtk/UgSetting.c.orig	Tue Jun 24 00:37:31 2014
++++ uget-gtk/UgSetting.c	Tue Jun 24 00:38:02 2014
+@@ -512,7 +512,7 @@ void	ug_setting_init (UgSetting* setting)
+ 	setting->plugin.aria2.enable = FALSE;
+ 	setting->plugin.aria2.launch = TRUE;
+ 	setting->plugin.aria2.shutdown = TRUE;
+-	setting->plugin.aria2.path = g_strdup ("aria2c");
++	setting->plugin.aria2.path = g_strdup ("${TRUEPREFIX}/bin/aria2c");
+ 	setting->plugin.aria2.args = g_strdup ("--enable-rpc=true -D --check-certificate=false");
+ 	setting->plugin.aria2.uri  = g_strdup ("http://localhost:6800/rpc");
+ 

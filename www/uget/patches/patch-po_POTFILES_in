@@ -1,0 +1,14 @@
+$OpenBSD: patch-po_POTFILES_in,v 1.1.1.1 2014/08/31 02:06:36 bcallah Exp $
+
+Fix 'make test'
+
+--- po/POTFILES.in.orig	Tue Jun 24 00:32:05 2014
++++ po/POTFILES.in	Tue Jun 24 00:32:12 2014
+@@ -16,6 +16,7 @@ uglib/UgRunning.c
+ uglib/UgStdio.c
+ uglib/UgUri.c
+ uglib/UgUtils.c
++uglib/pwmd.c
+ uget-gtk/UgApp-gtk.c
+ uget-gtk/UgApp-gtk-aria2.c
+ uget-gtk/UgApp-gtk-callback.c
