@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/27 14:55:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/08/31 17:46:12 jasper Exp $
 include/spice-1/
 include/spice-1/spice/
 include/spice-1/spice/barrier.h
@@ -17,5 +17,4 @@ include/spice-1/spice/stats.h
 include/spice-1/spice/types.h
 include/spice-1/spice/vd_agent.h
 include/spice-1/spice/vdi_dev.h
-share/pkgconfig/
 share/pkgconfig/spice-protocol.pc
