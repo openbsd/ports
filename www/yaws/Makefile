@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/18 07:53:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2014/08/31 14:54:01 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
 
-VERSION=		1.96
+VERSION=		1.98
 DISTNAME=		yaws-${VERSION}
 PKGNAME-main=		yaws-${VERSION}
 PKGNAME-web=		yaws-web-${VERSION}

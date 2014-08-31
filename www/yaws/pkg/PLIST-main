@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/10/30 20:29:21 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/08/31 14:54:01 jasper Exp $
 %%SHARED%%
 bin/yaws
-lib/pkgconfig/
 lib/pkgconfig/yaws.pc
 lib/yaws/
 lib/yaws/ebin/
@@ -18,13 +17,12 @@ lib/yaws/ebin/yaws.beam
 lib/yaws/ebin/yaws_api.beam
 lib/yaws/ebin/yaws_app.beam
 lib/yaws/ebin/yaws_appmod_cgi.beam
+lib/yaws/ebin/yaws_appmod_dav.beam
 lib/yaws/ebin/yaws_appmod_fcgi.beam
 lib/yaws/ebin/yaws_cgi.beam
 lib/yaws/ebin/yaws_compile.beam
 lib/yaws/ebin/yaws_config.beam
 lib/yaws/ebin/yaws_ctl.beam
-lib/yaws/ebin/yaws_dav.beam
-lib/yaws/ebin/yaws_davlock.beam
 lib/yaws/ebin/yaws_debug.beam
 lib/yaws/ebin/yaws_dime.beam
 lib/yaws/ebin/yaws_exhtml.beam
@@ -41,6 +39,7 @@ lib/yaws/ebin/yaws_pam.beam
 lib/yaws/ebin/yaws_revproxy.beam
 lib/yaws/ebin/yaws_rpc.beam
 lib/yaws/ebin/yaws_rss.beam
+lib/yaws/ebin/yaws_runmod_lock.beam
 lib/yaws/ebin/yaws_sendfile.beam
 lib/yaws/ebin/yaws_server.beam
 lib/yaws/ebin/yaws_session_server.beam
@@ -68,6 +67,7 @@ lib/yaws/include/wsdl11soap12.hrl
 lib/yaws/include/yaws.hrl
 lib/yaws/include/yaws_api.hrl
 lib/yaws/include/yaws_dav.hrl
+lib/yaws/include/yaws_lock.hrl
 lib/yaws/include/yaws_soap.hrl
 lib/yaws/priv/
 lib/yaws/priv/envelope.xsd
@@ -97,4 +97,4 @@ share/examples/yaws/yaws-key.pem
 share/examples/yaws/yaws.conf
 @sample ${SYSCONFDIR}/yaws/yaws.conf
 @sample /var/log/yaws/
-@rcscript ${RCDIR}/yaws
+@rcscript ${RCDIR}/yaws/
