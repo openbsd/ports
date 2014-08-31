@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/10/26 16:15:31 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/08/31 17:03:33 shadchin Exp $
 @bin bin/texmaker
 share/applications/texmaker.desktop
 share/pixmaps/
@@ -94,6 +94,7 @@ share/texmaker/texmaker_sr.qm
 share/texmaker/texmaker_uk.qm
 share/texmaker/texmaker_zh_CN.qm
 share/texmaker/texmaker_zh_TW.qm
+share/texmaker/titlecase.tms
 share/texmaker/usermanual_en.html
 share/texmaker/usermanual_fr.html
 share/texmaker/usermanual_hu.html

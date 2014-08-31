@@ -1,0 +1,11 @@
+$OpenBSD: patch-texmakerapp_cpp,v 1.1 2014/08/31 17:03:33 shadchin Exp $
+--- texmakerapp.cpp.orig	Wed Jan  1 16:07:14 2014
++++ texmakerapp.cpp	Sat Jul 19 19:44:13 2014
+@@ -87,6 +87,7 @@ pixmap.load(":/images/splash.png");
+ QSplashScreen *splash = new QSplashScreen(pixmap);
+ splash->resize(400,166);
+ splash->show();
++splash->repaint();
+ ReadSettings();
+ makeTranslation(language);
+ QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/fonts/DejaVuSansCondensed.ttf"));
