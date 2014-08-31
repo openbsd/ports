@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/08/31 15:51:49 stu Exp $
 
 COMMENT =	learn Tcl interactively
 
-DISTNAME =	tcltutor-30b6
+DISTNAME =	tcltutor-30b7
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://www.msen.com/~clif/TclTutor.html
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -11,14 +11,14 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://www.msen.com/~clif/
-DISTFILES =	tcltutor30b6.tgz
+DISTFILES =	tcltutor30b7.tgz
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
 NO_TEST =	Yes
-WRKDIST =	${WRKDIR}/TclTutor
 PKG_ARCH =	*
-REVISION =	0
+WRKDIST =	${WRKDIR}/TclTutor
+
 SUBST_VARS +=	TT_LIB_DIR TT_LSN_DIR
 
 TT_LIB_DIR =	${PREFIX}/libdata/tcltutor

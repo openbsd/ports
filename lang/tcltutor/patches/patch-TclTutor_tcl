@@ -1,6 +1,6 @@
-$OpenBSD: patch-TclTutor_tcl,v 1.4 2011/11/07 03:06:48 stu Exp $
---- TclTutor.tcl.orig	Sat Jan  8 08:35:46 2011
-+++ TclTutor.tcl	Fri Nov  4 20:58:15 2011
+$OpenBSD: patch-TclTutor_tcl,v 1.5 2014/08/31 15:51:49 stu Exp $
+--- TclTutor.tcl.orig	Thu Mar 20 10:27:20 2014
++++ TclTutor.tcl	Sun Aug 31 11:15:44 2014
 @@ -1,8 +1,8 @@
 -package provide app-tcltutor 1.0
  #!/bin/sh 
@@ -40,7 +40,7 @@ $OpenBSD: patch-TclTutor_tcl,v 1.4 2011/11/07 03:06:48 stu Exp $
          if {$Tutor(logUsage)} {
             $mbf.file add command -label "Disable activity log" -command {set Tutor(logUsage) 0}
           } else {
-@@ -1134,6 +1134,7 @@ proc SetFontSize {} {
+@@ -1154,6 +1154,7 @@ proc SetFontSize {} {
  proc logUsage {str} {
      global Tutor
      
@@ -48,7 +48,7 @@ $OpenBSD: patch-TclTutor_tcl,v 1.4 2011/11/07 03:06:48 stu Exp $
      if {$Tutor(logUsage) == 0} {return}
  
      if {[string match $Tutor(logFile) ""]} {
-@@ -1160,6 +1161,7 @@ proc logUsage {str} {
+@@ -1180,6 +1181,7 @@ proc logUsage {str} {
  # 
  proc mailLog {} {
    global Tutor tcl_platform
