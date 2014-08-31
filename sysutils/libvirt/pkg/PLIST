@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/06/11 08:27:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/08/31 12:27:15 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -18,6 +18,8 @@ lib/libvirt-qemu.la
 lib/libvirt.a
 lib/libvirt.la
 @lib lib/libvirt.so.${LIBvirt_VERSION}
+lib/pkgconfig/libvirt-lxc.pc
+lib/pkgconfig/libvirt-qemu.pc
 lib/pkgconfig/libvirt.pc
 libexec/libvirt-guests.sh
 @man man/man1/virsh.1
@@ -77,6 +79,7 @@ share/doc/libvirt/html/footer_pattern.png
 share/doc/libvirt/html/format.html
 share/doc/libvirt/html/formatcaps.html
 share/doc/libvirt/html/formatdomain.html
+share/doc/libvirt/html/formatdomaincaps.html
 share/doc/libvirt/html/formatnetwork.html
 share/doc/libvirt/html/formatnode.html
 share/doc/libvirt/html/formatnwfilter.html
@@ -170,6 +173,7 @@ share/libvirt/schemas/
 share/libvirt/schemas/basictypes.rng
 share/libvirt/schemas/capability.rng
 share/libvirt/schemas/domain.rng
+share/libvirt/schemas/domaincaps.rng
 share/libvirt/schemas/domaincommon.rng
 share/libvirt/schemas/domainsnapshot.rng
 share/libvirt/schemas/interface.rng
