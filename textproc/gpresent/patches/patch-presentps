@@ -1,0 +1,23 @@
+$OpenBSD: patch-presentps,v 1.1.1.1 2014/08/31 17:28:35 schwarze Exp $
+Prevent document corruption when including EPS files.
+--- presentps.orig	Thu Feb 26 10:35:49 2004
++++ presentps	Fri Aug 29 20:26:23 2014
+@@ -393,8 +393,17 @@ foreach (@pre){
+ while (<>) {
+     $pageln = $nextln;
+     @page = ();
++    my $embedded = 0;
+     while (<>) {
+-	if (/^EEND /) {
++	if (/^%%BeginDocument:/) {
++	    $embedded++;
++	    push @page, $_;
++	} elsif ($embedded) {
++	    if (/^%%EndDocument/) {
++		$embedded--;
++	    }
++	    push @page, $_;
++	} elsif (/^EEND /) {
+ 	    push @page, "EEND\n";
+ 	    s/^EEND //;
+ 	    redo;

@@ -1,0 +1,3 @@
+The gpresent and piclink groff macros and the presentps PostScript
+postprocessor support the creation of PDF presentations.  Without
+using the PAUSE macro, the macros can also be used to make slides.

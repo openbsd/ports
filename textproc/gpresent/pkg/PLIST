@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/31 17:28:35 schwarze Exp $
+bin/presentps
+@man man/man1/presentps.1
+@man man/man7/groff_piclink.7
+@man man/man7/groff_present.7
+share/examples/gpresent/
+share/examples/gpresent/demo.pdf
+share/examples/gpresent/demo.rof
+share/examples/gpresent/piclink.pdf
+share/examples/gpresent/piclink.rof
+share/examples/gpresent/sidebar.pdf
+share/examples/gpresent/sidebar.rof
+share/groff/site-tmac/piclink.tmac
+share/groff/site-tmac/present.tmac
