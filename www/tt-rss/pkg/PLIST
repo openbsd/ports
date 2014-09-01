@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/04/30 21:52:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/09/01 20:07:26 landry Exp $
 tt-rss/
 tt-rss/LICENSE
 tt-rss/README.md
@@ -2278,7 +2278,6 @@ tt-rss/lib/scriptaculous/
 tt-rss/lib/scriptaculous/controls.js
 tt-rss/lib/scriptaculous/effects.js
 tt-rss/lib/scriptaculous/scriptaculous.js
-tt-rss/lib/sphinxapi.php
 tt-rss/lib/timezones.txt
 tt-rss/lib/xsl_mop-up.js
 tt-rss/locale/
@@ -2291,14 +2290,26 @@ tt-rss/locale/cs_CZ/
 tt-rss/locale/cs_CZ/LC_MESSAGES/
 tt-rss/locale/cs_CZ/LC_MESSAGES/messages.mo
 tt-rss/locale/cs_CZ/LC_MESSAGES/messages.po
+tt-rss/locale/da_DA/
+tt-rss/locale/da_DA/LC_MESSAGES/
+tt-rss/locale/da_DA/LC_MESSAGES/messages.mo
+tt-rss/locale/da_DA/LC_MESSAGES/messages.po
 tt-rss/locale/de_DE/
 tt-rss/locale/de_DE/LC_MESSAGES/
 tt-rss/locale/de_DE/LC_MESSAGES/messages.mo
 tt-rss/locale/de_DE/LC_MESSAGES/messages.po
+tt-rss/locale/el_GR/
+tt-rss/locale/el_GR/LC_MESSAGES/
+tt-rss/locale/el_GR/LC_MESSAGES/messages.mo
+tt-rss/locale/el_GR/LC_MESSAGES/messages.po
 tt-rss/locale/es_ES/
 tt-rss/locale/es_ES/LC_MESSAGES/
 tt-rss/locale/es_ES/LC_MESSAGES/messages.mo
 tt-rss/locale/es_ES/LC_MESSAGES/messages.po
+tt-rss/locale/es_LA/
+tt-rss/locale/es_LA/LC_MESSAGES/
+tt-rss/locale/es_LA/LC_MESSAGES/messages.mo
+tt-rss/locale/es_LA/LC_MESSAGES/messages.po
 tt-rss/locale/fi_FI/
 tt-rss/locale/fi_FI/LC_MESSAGES/
 tt-rss/locale/fi_FI/LC_MESSAGES/messages.mo
@@ -2343,6 +2354,10 @@ tt-rss/locale/pt_BR/
 tt-rss/locale/pt_BR/LC_MESSAGES/
 tt-rss/locale/pt_BR/LC_MESSAGES/messages.mo
 tt-rss/locale/pt_BR/LC_MESSAGES/messages.po
+tt-rss/locale/pt_PT/
+tt-rss/locale/pt_PT/LC_MESSAGES/
+tt-rss/locale/pt_PT/LC_MESSAGES/messages.mo
+tt-rss/locale/pt_PT/LC_MESSAGES/messages.po
 tt-rss/locale/ru_RU/
 tt-rss/locale/ru_RU/LC_MESSAGES/
 tt-rss/locale/ru_RU/LC_MESSAGES/messages.mo
@@ -2385,6 +2400,8 @@ tt-rss/plugins/af_comics/filters/af_comics_twp.php
 tt-rss/plugins/af_comics/init.php
 tt-rss/plugins/af_fsckportal/
 tt-rss/plugins/af_fsckportal/init.php
+tt-rss/plugins/af_habr/
+tt-rss/plugins/af_habr/init.php
 tt-rss/plugins/af_natgeo/
 tt-rss/plugins/af_natgeo/init.php
 tt-rss/plugins/af_redditimgur/
@@ -2446,6 +2463,9 @@ tt-rss/plugins/note/note.png
 tt-rss/plugins/nsfw/
 tt-rss/plugins/nsfw/init.js
 tt-rss/plugins/nsfw/init.php
+tt-rss/plugins/search_sphinx/
+tt-rss/plugins/search_sphinx/init.php
+tt-rss/plugins/search_sphinx/sphinxapi.php
 tt-rss/plugins/share/
 tt-rss/plugins/share/init.php
 tt-rss/plugins/share/notshared.png
@@ -2501,6 +2521,8 @@ tt-rss/schema/versions/mysql/121.sql
 tt-rss/schema/versions/mysql/122.sql
 tt-rss/schema/versions/mysql/123.sql
 tt-rss/schema/versions/mysql/124.sql
+tt-rss/schema/versions/mysql/125.sql
+tt-rss/schema/versions/mysql/126.sql
 tt-rss/schema/versions/mysql/13.sql
 tt-rss/schema/versions/mysql/14.sql
 tt-rss/schema/versions/mysql/15.sql
@@ -2624,6 +2646,8 @@ tt-rss/schema/versions/pgsql/121.sql
 tt-rss/schema/versions/pgsql/122.sql
 tt-rss/schema/versions/pgsql/123.sql
 tt-rss/schema/versions/pgsql/124.sql
+tt-rss/schema/versions/pgsql/125.sql
+tt-rss/schema/versions/pgsql/126.sql
 tt-rss/schema/versions/pgsql/13.sql
 tt-rss/schema/versions/pgsql/14.sql
 tt-rss/schema/versions/pgsql/15.sql
