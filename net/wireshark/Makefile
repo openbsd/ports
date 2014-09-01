@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/08/19 05:35:58 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2014/09/01 09:28:41 landry Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
+BROKEN-powerpc =	relocation overflows
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 WVER =		1.10.9
