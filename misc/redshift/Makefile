@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/29 22:07:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/09/01 15:11:11 ajacoutot Exp $
 
 COMMENT=		automatic color temperature adjustment
 
@@ -41,6 +41,8 @@ CONFIGURE_ARGS=		--enable-gui
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
 	cd ${WRKSRC} && \
