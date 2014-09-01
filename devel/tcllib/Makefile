@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.21 2014/02/09 12:27:05 stu Exp $
+# $OpenBSD: Makefile,v 1.22 2014/09/01 03:15:22 stu Exp $
 
 COMMENT =	Tcl Standard Library
 
-DISTNAME =	tcllib-1.15pl0
+DISTNAME =	tcllib-1.16pl0
 CATEGORIES =	devel lang/tcl
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =	1
 
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
 
-# Fossil checkin 504cc3a9f31bdf671388f1e995ef621595ca66b7
+# Fossil checkin 2014/08/29 98f00771aefb6f3b61c458444a0b54a6b298e187
 MASTER_SITES =	http://mirror.arieslabs.com/openbsd/
 MODULES =	lang/tcl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
@@ -35,7 +34,7 @@ do-install:
 
 # Define TEST_MODULES to restrict to a subset of regression tests.
 do-test:
-	${SETENV} ${MAKE_ENV} ${TEST_FLAGS} \
+	${SETENV} ${ALL_TEST_ENV} ${ALL_TEST_FLAGS} \
 	${MODTCL_BIN} ${WRKSRC}/sak.tcl test run -v ${TEST_MODULES}
 
 .include <bsd.port.mk>

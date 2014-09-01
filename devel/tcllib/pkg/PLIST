@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/02/09 12:27:05 stu Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/09/01 03:15:22 stu Exp $
 bin/dtplite
 lib/tcl/aes/
 lib/tcl/aes/aes.tcl
@@ -289,7 +289,9 @@ lib/tcl/jpeg/jpeg.tcl
 lib/tcl/jpeg/pkgIndex.tcl
 lib/tcl/json/
 lib/tcl/json/json.tcl
+lib/tcl/json/json_tcl.tcl
 lib/tcl/json/json_write.tcl
+lib/tcl/json/jsonc.tcl
 lib/tcl/json/pkgIndex.tcl
 lib/tcl/lambda/
 lib/tcl/lambda/lambda.tcl
@@ -348,6 +350,7 @@ lib/tcl/math/qcomplex.tcl
 lib/tcl/math/rational_funcs.tcl
 lib/tcl/math/romannumerals.tcl
 lib/tcl/math/special.tcl
+lib/tcl/math/stat_kernel.tcl
 lib/tcl/math/statistics.tcl
 lib/tcl/math/symdiff.tcl
 lib/tcl/math/tclIndex
@@ -473,6 +476,7 @@ lib/tcl/pt/paths.tcl
 lib/tcl/pt/pkgIndex.tcl
 lib/tcl/pt/pt_astree.tcl
 lib/tcl/pt/pt_cparam_config_critcl.tcl
+lib/tcl/pt/pt_cparam_config_tea.tcl
 lib/tcl/pt/pt_parse_peg.tcl
 lib/tcl/pt/pt_parse_peg_c.tcl
 lib/tcl/pt/pt_parse_peg_tcl.tcl
@@ -505,6 +509,25 @@ lib/tcl/pt/pt_rdengine_oo.tcl
 lib/tcl/pt/pt_rdengine_tcl.tcl
 lib/tcl/pt/pt_tclparam_config_snit.tcl
 lib/tcl/pt/pt_tclparam_config_tcloo.tcl
+lib/tcl/pt/pt_util.tcl
+lib/tcl/pt/rde_critcl/
+lib/tcl/pt/rde_critcl/m.c
+lib/tcl/pt/rde_critcl/m.h
+lib/tcl/pt/rde_critcl/ms.c
+lib/tcl/pt/rde_critcl/ms.h
+lib/tcl/pt/rde_critcl/ot.c
+lib/tcl/pt/rde_critcl/ot.h
+lib/tcl/pt/rde_critcl/p.c
+lib/tcl/pt/rde_critcl/p.h
+lib/tcl/pt/rde_critcl/pInt.h
+lib/tcl/pt/rde_critcl/param.c
+lib/tcl/pt/rde_critcl/param.h
+lib/tcl/pt/rde_critcl/stack.c
+lib/tcl/pt/rde_critcl/stack.h
+lib/tcl/pt/rde_critcl/tc.c
+lib/tcl/pt/rde_critcl/tc.h
+lib/tcl/pt/rde_critcl/util.c
+lib/tcl/pt/rde_critcl/util.h
 lib/tcl/pt/text_write.tcl
 lib/tcl/rc4/
 lib/tcl/rc4/pkgIndex.tcl
@@ -528,6 +551,7 @@ lib/tcl/sasl/gtoken.tcl
 lib/tcl/sasl/ntlm.tcl
 lib/tcl/sasl/pkgIndex.tcl
 lib/tcl/sasl/sasl.tcl
+lib/tcl/sasl/scram.tcl
 lib/tcl/sha1/
 lib/tcl/sha1/pkgIndex.tcl
 lib/tcl/sha1/sha1.tcl
@@ -796,7 +820,6 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/comm_wire.n
 @man man/mann/connect.n
 @man man/mann/constants.n
-@man man/mann/container.n
 @man man/mann/control.n
 @man man/mann/copyops.n
 @man man/mann/core.n
@@ -846,14 +869,8 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/ean13.n
 @man man/mann/events.n
 @man man/mann/expander.n
-@man man/mann/export.n
 @man man/mann/export_docidx.n
 @man man/mann/export_doctoc.n
-@man man/mann/export_html.n
-@man man/mann/export_json.n
-@man man/mann/export_nroff.n
-@man man/mann/export_text.n
-@man man/mann/export_wiki.n
 @man man/mann/fa.n
 @man man/mann/facade.n
 @man man/mann/faop.n
@@ -870,6 +887,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/graph.n
 @man man/mann/graph1.n
 @man man/mann/graphops.n
+@man man/mann/gtoken.n
 @man man/mann/halfpipe.n
 @man man/mann/hex.n
 @man man/mann/hook.n
@@ -880,16 +898,29 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/iban.n
 @man man/mann/ident.n
 @man man/mann/identity.n
+@man man/mann/idx_container.n
+@man man/mann/idx_export.n
+@man man/mann/idx_export_html.n
+@man man/mann/idx_export_json.n
+@man man/mann/idx_export_nroff.n
+@man man/mann/idx_export_text.n
+@man man/mann/idx_export_wiki.n
+@man man/mann/idx_import.n
+@man man/mann/idx_import_json.n
+@man man/mann/idx_introduction.n
+@man man/mann/idx_msgcat_c.n
+@man man/mann/idx_msgcat_de.n
+@man man/mann/idx_msgcat_en.n
+@man man/mann/idx_msgcat_fr.n
+@man man/mann/idx_parse.n
+@man man/mann/idx_structure.n
 @man man/mann/imap4.n
 @man man/mann/imei.n
 @man man/mann/imenu.n
-@man man/mann/import.n
 @man man/mann/import_docidx.n
 @man man/mann/import_doctoc.n
-@man man/mann/import_json.n
 @man man/mann/ini.n
 @man man/mann/interpolate.n
-@man man/mann/introduction.n
 @man man/mann/ipager.n
 @man man/mann/irc.n
 @man man/mann/isbn.n
@@ -933,10 +964,6 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/mimetypes.n
 @man man/mann/montecarlo.n
 @man man/mann/mpexpand.n
-@man man/mann/msgcat_c.n
-@man man/mann/msgcat_de.n
-@man man/mann/msgcat_en.n
-@man man/mann/msgcat_fr.n
 @man man/mann/multi.n
 @man man/mann/multiop.n
 @man man/mann/multiplexer.n
@@ -954,6 +981,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/nnslog.n
 @man man/mann/nntp.n
 @man man/mann/nroff_manmacros.n
+@man man/mann/ntlm.n
 @man man/mann/ntp_time.n
 @man man/mann/nullzero.n
 @man man/mann/numtheory.n
@@ -969,10 +997,10 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/page_util_norm_peg.n
 @man man/mann/page_util_peg.n
 @man man/mann/page_util_quote.n
-@man man/mann/parse.n
 @man man/mann/peg.n
 @man man/mann/peg_interp.n
 @man man/mann/picoirc.n
+@man man/mann/pkg_dtplite.n
 @man man/mann/pki.n
 @man man/mann/pluginmgr.n
 @man man/mann/png.n
@@ -987,10 +1015,12 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/pt.n
 @man man/mann/pt_astree.n
 @man man/mann/pt_cparam_config_critcl.n
+@man man/mann/pt_cparam_config_tea.n
 @man man/mann/pt_from_api.n
 @man man/mann/pt_introduction.n
 @man man/mann/pt_json_language.n
 @man man/mann/pt_param.n
+@man man/mann/pt_parse_peg.n
 @man man/mann/pt_parser_api.n
 @man man/mann/pt_peg_container.n
 @man man/mann/pt_peg_container_peg.n
@@ -1008,6 +1038,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/pt_peg_interp.n
 @man man/mann/pt_peg_introduction.n
 @man man/mann/pt_peg_language.n
+@man man/mann/pt_peg_op.n
 @man man/mann/pt_peg_to_container.n
 @man man/mann/pt_peg_to_cparam.n
 @man man/mann/pt_peg_to_json.n
@@ -1022,6 +1053,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/pt_tclparam_config_snit.n
 @man man/mann/pt_tclparam_config_tcloo.n
 @man man/mann/pt_to_api.n
+@man man/mann/pt_util.n
 @man man/mann/qcomplex.n
 @man man/mann/queue.n
 @man man/mann/randseed.n
@@ -1042,6 +1074,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/rot.n
 @man man/mann/rtcore.n
 @man man/mann/sasl.n
+@man man/mann/scram.n
 @man man/mann/sha1.n
 @man man/mann/sha256.n
 @man man/mann/simulation_random.n
@@ -1063,12 +1096,14 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/struct_set.n
 @man man/mann/struct_tree.n
 @man man/mann/struct_tree1.n
-@man man/mann/structure.n
 @man man/mann/sum.n
+@man man/mann/switched.n
 @man man/mann/symdiff.n
 @man man/mann/tabify.n
 @man man/mann/tar.n
 @man man/mann/tcl_parse.n
+@man man/mann/tcldes.n
+@man man/mann/tcldesjr.n
 @man man/mann/tcldocstrip.n
 @man man/mann/tcllib.n
 @man man/mann/tcllib_coroutine.n
@@ -1100,6 +1135,22 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/tie.n
 @man man/mann/tie_std.n
 @man man/mann/tiff.n
+@man man/mann/toc_container.n
+@man man/mann/toc_export.n
+@man man/mann/toc_export_html.n
+@man man/mann/toc_export_json.n
+@man man/mann/toc_export_nroff.n
+@man man/mann/toc_export_text.n
+@man man/mann/toc_export_wiki.n
+@man man/mann/toc_import.n
+@man man/mann/toc_import_json.n
+@man man/mann/toc_introduction.n
+@man man/mann/toc_msgcat_c.n
+@man man/mann/toc_msgcat_de.n
+@man man/mann/toc_msgcat_en.n
+@man man/mann/toc_msgcat_fr.n
+@man man/mann/toc_parse.n
+@man man/mann/toc_structure.n
 @man man/mann/token.n
 @man man/mann/token_shell.n
 @man man/mann/tqueue.n
@@ -1120,6 +1171,10 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/uuid.n
 @man man/mann/valtype_common.n
 @man man/mann/verhoeff.n
+@man man/mann/vt_base64.n
+@man man/mann/vt_counter.n
+@man man/mann/vt_crc32.n
+@man man/mann/vt_otp.n
 @man man/mann/websocket.n
 @man man/mann/wip.n
 @man man/mann/xsxp.n
