@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/09 19:50:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/01 13:07:51 chrisz Exp $
 %%native%%
 bin/utop
 bin/utop-full
@@ -15,7 +15,6 @@ lib/ocaml/utop/utop.cma
 @man man/man1/utop-full.1
 @man man/man1/utop.1
 @man man/man5/utoprc.5
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/utop/
 share/doc/utop/CHANGES.md
 share/doc/utop/LICENSE
@@ -28,6 +27,7 @@ share/doc/utop/api/index_attributes.html
 share/doc/utop/api/index_class_types.html
 share/doc/utop/api/index_classes.html
 share/doc/utop/api/index_exceptions.html
+share/doc/utop/api/index_extensions.html
 share/doc/utop/api/index_methods.html
 share/doc/utop/api/index_module_types.html
 share/doc/utop/api/index_modules.html
