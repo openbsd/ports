@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/01 09:28:41 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/01 16:36:04 pascal Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
-BROKEN-powerpc =	relocation overflows
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 WVER =		1.10.9
@@ -83,6 +82,10 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-ssl
 
 CONFIGURE_ENV =	CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0 -I${LOCALBASE}/include/lua-${MODLUA_VERSION}"
+
+.if ${MACHINE_ARCH:Mpowerpc}
+CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
+.endif
 
 NO_TEST =	Yes
 
