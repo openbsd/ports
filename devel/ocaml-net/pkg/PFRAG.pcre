@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.pcre,v 1.1 2012/08/18 22:19:21 avsm Exp $
-lib/ocaml/netstring-pcre/
-lib/ocaml/netstring-pcre/META
-lib/ocaml/netstring-pcre/netstring-pcre.cma
-lib/ocaml/netstring-pcre/netstring_pcre.cmi
-lib/ocaml/netstring-pcre/netstring_pcre.mli

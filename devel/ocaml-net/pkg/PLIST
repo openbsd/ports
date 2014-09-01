@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/11/25 14:35:26 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/01 13:03:39 chrisz Exp $
 %%SHARED%%
 %%native%%
 @bin bin/netplex-admin
@@ -197,6 +197,11 @@ lib/ocaml/netshm/netshm_data.mli
 lib/ocaml/netshm/netshm_hashtbl.cmi
 lib/ocaml/netshm/netshm_hashtbl.mli
 lib/ocaml/netstring/
+lib/ocaml/netstring-pcre/
+lib/ocaml/netstring-pcre/META
+lib/ocaml/netstring-pcre/netstring-pcre.cma
+lib/ocaml/netstring-pcre/netstring_pcre.cmi
+lib/ocaml/netstring-pcre/netstring_pcre.mli
 lib/ocaml/netstring/META
 lib/ocaml/netstring/cmapf.adobe_standard_encoding.netdb
 lib/ocaml/netstring/cmapf.adobe_symbol_encoding.netdb
@@ -396,7 +401,6 @@ lib/ocaml/netstring/xdr.cmi
 lib/ocaml/netstring/xdr.mli
 lib/ocaml/netstring/xdr_mstring.cmi
 lib/ocaml/netstring/xdr_mstring.mli
-%%pcre%%
 lib/ocaml/netsys/
 lib/ocaml/netsys/META
 lib/ocaml/netsys/libnetsys.a
@@ -478,7 +482,6 @@ lib/ocaml/rpc-generator/rename.cmi
 lib/ocaml/rpc-generator/rpc_generator.cma
 lib/ocaml/rpc-generator/rpcgen-packlist
 lib/ocaml/rpc-generator/syntax.cmi
-lib/ocaml/rpc-generator/test_aux.mli
 lib/ocaml/rpc/META
 lib/ocaml/rpc/rpc.cma
 lib/ocaml/rpc/rpc.cmi

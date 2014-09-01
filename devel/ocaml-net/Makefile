@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/08/22 22:21:53 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/01 13:03:39 chrisz Exp $
 
 COMMENT =	the Ocamlnet internet protocol foundation library
 CATEGORIES =	devel www mail
 
-V =		3.7.3
+V =		3.7.5
 DISTNAME =	ocamlnet-${V}
 PKGNAME =	ocaml-net-${V}
-REVISION =	0
 
 MASTER_SITES =	http://download.camlcity.org/download/
 HOMEPAGE =	http://projects.camlcity.org/projects/ocamlnet.html
@@ -14,26 +13,18 @@ HOMEPAGE =	http://projects.camlcity.org/projects/ocamlnet.html
 MAINTAINER =	Christopher Zimmermann <madroach@zakweb.de>
 
 # Mostly zlib/png, http server module is GPL
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	lang/ocaml
-
-FLAVORS =	pcre
-FLAVOR ?=
+MODULES =		lang/ocaml
 
 BUILD_DEPENDS =		sysutils/findlib
 WANTLIB =		c curses m pthread
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	-with-nethttpd
+CONFIGURE_ARGS =	-with-nethttpd -enable-pcre
 
-.if ${FLAVOR:Mpcre}
 RUN_DEPENDS +=		devel/ocaml-pcre
 BUILD_DEPENDS +=	devel/ocaml-pcre
-WANTLIB +=		pcre
-
-CONFIGURE_ARGS +=	-enable-pcre
-.endif
 
 NO_TEST =	Yes
 USE_GMAKE =	Yes
