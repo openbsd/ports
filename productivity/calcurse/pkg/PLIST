@@ -1,14 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/04/03 15:48:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/09/01 16:31:57 ajacoutot Exp $
 @bin bin/calcurse
 bin/calcurse-upgrade
 @man man/man1/calcurse.1
 share/doc/calcurse/
-share/doc/calcurse/AUTHORS
-share/doc/calcurse/NEWS
-share/doc/calcurse/TODO
+share/doc/calcurse/add.txt
+share/doc/calcurse/config.txt
+share/doc/calcurse/copy-paste.txt
+share/doc/calcurse/credits.txt
+share/doc/calcurse/delete.txt
+share/doc/calcurse/displacement.txt
+share/doc/calcurse/edit.txt
+share/doc/calcurse/enote.txt
+share/doc/calcurse/export.txt
+share/doc/calcurse/flag.txt
+share/doc/calcurse/general.txt
+share/doc/calcurse/goto.txt
+share/doc/calcurse/import.txt
+share/doc/calcurse/intro.txt
 share/doc/calcurse/manual.html
 share/doc/calcurse/manual.txt
+share/doc/calcurse/other.txt
+share/doc/calcurse/pipe.txt
+share/doc/calcurse/priority.txt
+share/doc/calcurse/repeat.txt
+share/doc/calcurse/save.txt
 share/doc/calcurse/submitting-patches.html
+share/doc/calcurse/tab.txt
+share/doc/calcurse/view.txt
+share/doc/calcurse/vnote.txt
 share/locale/de/LC_MESSAGES/calcurse.mo
 share/locale/en/LC_MESSAGES/calcurse.mo
 share/locale/es/LC_MESSAGES/calcurse.mo
