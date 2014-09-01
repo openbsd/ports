@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/04/01 16:31:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/01 10:15:31 ajacoutot Exp $
 include/gstreamer-${VERSION}/gst/gl/
 include/gstreamer-${VERSION}/gst/gl/gstglbuffer.h
 include/gstreamer-${VERSION}/gst/gl/gstgldisplay.h
@@ -7,6 +7,7 @@ include/gstreamer-${VERSION}/gst/gl/gstglfilter.h
 include/gstreamer-${VERSION}/gst/gl/gstglmixer.h
 include/gstreamer-${VERSION}/gst/gl/gstglmixerpad.h
 include/gstreamer-${VERSION}/gst/gl/gstglshader.h
+include/gstreamer-${VERSION}/gst/gl/gstglshadervariables.h
 include/gstreamer-${VERSION}/gst/gl/gstglwindow.h
 lib/gstreamer-${VERSION}/libgstopengl.so
 lib/libgstgl-${VERSION}.a
@@ -16,7 +17,6 @@ lib/pkgconfig/gstreamer-gl-${VERSION}.pc
 share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/
 share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/api-index.html
 share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/ch01.html
-share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/gst-plugins-gl-libs-${VERSION}.devhelp
 share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/gst-plugins-gl-libs-${VERSION}.devhelp2
 share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/gst-plugins-gl-libs-gettext.html
 share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/gst-plugins-gl-libs-gst-i18n-plugin.html
@@ -35,7 +35,6 @@ share/gtk-doc/html/gst-plugins-gl-libs-${VERSION}/up.png
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/ch01.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/ch02.html
-share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-${VERSION}.devhelp
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-${VERSION}.devhelp2
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glbumper.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glcolorscale.html
@@ -49,8 +48,10 @@ share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glfi
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glfilterglass.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glfilterlaplacian.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glfilterreflectedscreen.html
+share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glfiltershader.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glfiltersobel.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glimagesink.html
+share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glmosaic.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-gloverlay.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-gltestsrc.html
 share/gtk-doc/html/gst-plugins-gl-plugins-${VERSION}/gst-plugins-gl-plugins-glupload.html
