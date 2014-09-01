@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/08/30 16:56:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/09/01 21:30:39 jasper Exp $
 share/locale/
 share/locale/af/
 share/locale/af/LC_MESSAGES/
@@ -409,6 +409,7 @@ share/locale/pl/LC_MESSAGES/iso_3166_2.mo
 share/locale/pl/LC_MESSAGES/iso_4217.mo
 share/locale/pl/LC_MESSAGES/iso_639.mo
 share/locale/pl/LC_MESSAGES/iso_639_3.mo
+share/locale/pl/LC_MESSAGES/iso_639_5.mo
 share/locale/ps/
 share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/iso_3166.mo
