@@ -1,0 +1,11 @@
+$OpenBSD: patch-filter_c,v 1.1 2014/09/02 19:17:01 naddy Exp $
+--- filter.c.orig	Thu May 25 07:11:41 2000
++++ filter.c	Tue Sep  2 21:02:44 2014
+@@ -25,6 +25,7 @@
+ 
+ static FILE* filt_wr;
+ static FILE* filt_rd;
++#define pipe2 mypipe2
+ static int pipe1[2], pipe2[2];
+ static int filter_restarting;
+ static int need_to_filter = 0;

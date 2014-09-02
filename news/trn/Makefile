@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/06/18 14:23:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/02 19:17:01 naddy Exp $
 
 COMMENT=	threaded newsreader
 
@@ -9,7 +9,7 @@ MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
 V=77
 DISTNAME=	trn-4.0-test$V
 PKGNAME=	trn-4.0.$V
-REVISION=	1
+REVISION=	2
 
 PERMIT_PACKAGE_FTP=Yes
 # Technically, we could put trn on CD-Rom, provided we include the distfile
