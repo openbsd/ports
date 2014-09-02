@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 09:25:28 landry Exp $
+@bin bin/LibreWMS
+share/applications/LibreWMS.desktop
+share/pixmaps/
+share/pixmaps/LibreWMS.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
