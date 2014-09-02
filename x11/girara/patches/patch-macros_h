@@ -1,0 +1,20 @@
+$OpenBSD: patch-macros_h,v 1.1.1.1 2014/09/02 13:22:32 landry Exp $
+--- macros.h.orig	Tue Aug 26 23:00:26 2014
++++ macros.h	Tue Aug 26 23:01:12 2014
+@@ -59,14 +59,11 @@
+ #endif
+ 
+ #ifndef GIRARA_IGNORE_DEPRECATED
+-# define GIRARA_IGNORE_DEPRECATED \
+-    GIRARA_DO_PRAGMA(GCC diagnostic push) \
+-    GIRARA_DO_PRAGMA(GCC diagnostic ignored "-Wdeprecated-declarations")
++# define GIRARA_IGNORE_DEPRECATED
+ #endif
+ 
+ #ifndef GIRARA_UNIGNORE
+-# define GIRARA_UNIGNORE \
+-    GIRARA_DO_PRAGMA(GCC diagnostic pop)
++# define GIRARA_UNIGNORE
+ #endif
+ 
+ #endif

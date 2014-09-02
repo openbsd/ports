@@ -1,0 +1,44 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/02 13:22:32 landry Exp $
+
+Don't symlink libs. Create libs with a correct soname.
+
+--- Makefile.orig	Wed Jun 25 11:58:52 2014
++++ Makefile	Tue Aug 26 22:56:23 2014
+@@ -88,7 +88,7 @@ lib${PROJECT}.a: ${OBJECTS}
+ 
+ lib${PROJECT}.so.${SOVERSION}: ${OBJECTS}
+ 	$(call colorecho,LD,$@)
+-	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOMAJOR} -shared ${LDFLAGS} -o $@ ${OBJECTS} ${LIBS}
++	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOVERSION} -shared ${LDFLAGS} -o $@ ${OBJECTS} ${LIBS}
+ 
+ clean:
+ 	$(QUIET)rm -rf \
+@@ -124,7 +124,7 @@ lib${PROJECT}-debug.a: ${DOBJECTS}
+ 
+ lib${PROJECT}-debug.so.${SOVERSION}: ${DOBJECTS}
+ 	$(call colorecho,LD,$@)
+-	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOMAJOR} -shared ${LDFLAGS} -o $@ ${DOBJECTS} ${LIBS}
++	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOVERSION} -shared ${LDFLAGS} -o $@ ${DOBJECTS} ${LIBS}
+ 
+ debug: options ${PROJECT}-debug
+ 
+@@ -172,10 +172,6 @@ install-shared: shared
+ 	$(call colorecho,INSTALL,"Install shared library")
+ 	$(QUIET)mkdir -m 755 -p ${DESTDIR}${LIBDIR}
+ 	$(QUIET)install -m 644 lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
+-	$(QUIET)ln -sf lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so.${SOMAJOR} || \
+-		echo "Failed to create lib${PROJECT}.so.${SOMAJOR}. Please check if it exists and points to the correct version of lib${PROJECT}.so."
+-	$(QUIET)ln -sf lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so || \
+-		echo "Failed to create lib${PROJECT}.so. Please check if it exists and points to the correct version of lib${PROJECT}.so."
+ 
+ install: options po install-static install-shared install-headers
+ 		$(QUIET)${MAKE} -C po install
+@@ -191,7 +187,7 @@ install-headers: version.h ${PROJECT}.pc
+ uninstall: uninstall-headers
+ 	$(call colorecho,UNINSTALL,"Remove library files")
+ 	$(QUIET)rm -f ${LIBDIR}/lib${PROJECT}.a ${LIBDIR}/lib${PROJECT}.so.${SOVERSION} \
+-		${LIBDIR}/lib${PROJECT}.so.${SOMAJOR} ${LIBDIR}/lib${PROJECT}.so
++		${LIBDIR}/lib${PROJECT}.so.${SOVERSION} ${LIBDIR}/lib${PROJECT}.so
+ 	$(QUIET)${MAKE} -C po uninstall
+ 
+ uninstall-headers:

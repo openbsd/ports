@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 13:22:32 landry Exp $
+include/girara/
+include/girara/callbacks.h
+include/girara/commands.h
+include/girara/completion.h
+include/girara/config.h
+include/girara/css-definitions.h
+include/girara/datastructures.h
+include/girara/girara.h
+include/girara/input-history.h
+include/girara/macros.h
+include/girara/session.h
+include/girara/settings.h
+include/girara/shortcuts.h
+include/girara/statusbar.h
+include/girara/tabs.h
+include/girara/template.h
+include/girara/types.h
+include/girara/utils.h
+include/girara/version.h
+lib/libgirara-gtk3.a
+@lib lib/libgirara-gtk3.so.${LIBgirara-gtk3_VERSION}
+lib/pkgconfig/girara-gtk3.pc
+share/locale/de/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/el/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/eo/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/es/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/fr/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/he/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/it/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/pl/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/pt_BR/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/ru/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/tr/LC_MESSAGES/libgirara-gtk3-1.mo
