@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2014/09/02 09:24:23 landry Exp $
+--- src/Makefile.in.orig	Sun Aug 24 22:46:18 2014
++++ src/Makefile.in	Sun Aug 24 22:46:30 2014
+@@ -388,7 +388,7 @@ mod_rasterlite2_la_LIBADD = @LIBPNG_LIBS@ @LIBWEBP_LIB
+ mod_rasterlite2_la_CPPFLAGS = @CFLAGS@ -I$(top_srcdir)/headers -I. \
+ 	-DLOADABLE_EXTENSION
+ mod_rasterlite2_la_LIBTOOLFLAGS = --tag=disable-static
+-@MINGW_FALSE@mod_rasterlite2_la_LDFLAGS = -module -version-info 1:0:0
++@MINGW_FALSE@mod_rasterlite2_la_LDFLAGS = -module -avoid-version
+ @MINGW_TRUE@mod_rasterlite2_la_LDFLAGS = -module -avoid-version -no-undefined
+ MOSTLYCLEANFILES = *.gcna *.gcno *.gcda
+ all: all-am

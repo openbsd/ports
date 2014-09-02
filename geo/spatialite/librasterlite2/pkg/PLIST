@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 09:24:23 landry Exp $
+@bin bin/rl2tool
+@bin bin/wmslite
+include/rasterlite2/
+include/rasterlite2/rasterlite2.h
+include/rasterlite2/rl2graphics.h
+include/rasterlite2/rl2svg.h
+include/rasterlite2/rl2tiff.h
+include/rasterlite2/rl2wms.h
+include/rasterlite2/sqlite.h
+lib/librasterlite2.la
+@lib lib/librasterlite2.so.${LIBrasterlite2_VERSION}
+@comment lib/mod_rasterlite2.la
+lib/mod_rasterlite2.so
+lib/pkgconfig/rasterlite2.pc
