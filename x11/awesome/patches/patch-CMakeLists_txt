@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.15 2013/05/22 15:05:50 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.16 2014/09/02 10:52:43 dcoppa Exp $
 
 These auto-generated (db2man.xsl) manpages contain a mixture of ISO
 latin-1 characters and numerical HTML entities that neither mandoc
@@ -6,8 +6,8 @@ nor groff can fully understand: do not install them.
 
 Fix usage of -export-dynamic
 
---- CMakeLists.txt.orig	Mon Apr  1 13:44:46 2013
-+++ CMakeLists.txt	Tue May 21 07:33:13 2013
+--- CMakeLists.txt.orig	Fri Apr 11 11:07:10 2014
++++ CMakeLists.txt	Tue Sep  2 12:28:04 2014
 @@ -79,7 +79,6 @@ set(AWE_MAN_SRCS
      ${SOURCE_DIR}/manpages/awesome.1.txt
      ${SOURCE_DIR}/manpages/awesome-client.1.txt
@@ -31,7 +31,7 @@ Fix usage of -export-dynamic
  endif()
  
  target_link_libraries(${PROJECT_AWE_NAME}
-@@ -103,10 +102,6 @@ target_link_libraries(${PROJECT_AWE_NAME}
+@@ -103,10 +102,7 @@ target_link_libraries(${PROJECT_AWE_NAME}
      ${AWESOME_REQUIRED_LDFLAGS}
      ${AWESOME_OPTIONAL_LDFLAGS})
  
@@ -39,10 +39,11 @@ Fix usage of -export-dynamic
 -add_custom_target(lgi-check ALL
 -    COMMAND ${SOURCE_DIR}/build-utils/lgi-check.sh)
 -
++# {{{ Generated sources
  # atoms
  file(MAKE_DIRECTORY ${BUILD_DIR}/common)
  add_custom_command(
-@@ -155,68 +150,45 @@ if(GENERATE_MANPAGES)
+@@ -155,68 +151,45 @@ if(GENERATE_MANPAGES)
      if(NOT BUILD_DIR STREQUAL SOURCE_DIR)
          file(MAKE_DIRECTORY ${BUILD_DIR}/manpages)
      endif()
@@ -144,7 +145,7 @@ Fix usage of -export-dynamic
      endforeach()
  
      add_custom_target(man ALL DEPENDS ${MAN_FILES})
-@@ -304,13 +276,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
+@@ -304,13 +277,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
  install(FILES ${AWE_CONF_FILE_DEFAULT} DESTINATION ${AWESOME_SYSCONFDIR}
          RENAME ${AWE_CONF_FILE})
  if(GENERATE_MANPAGES)

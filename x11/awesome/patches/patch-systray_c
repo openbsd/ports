@@ -1,4 +1,31 @@
-$OpenBSD: patch-systray_c,v 1.4 2014/08/18 10:34:02 dcoppa Exp $
+$OpenBSD: patch-systray_c,v 1.5 2014/09/02 10:52:43 dcoppa Exp $
+
+commit 9846a3274abe2569f342bb68af9b290799a8617e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 20 11:40:50 2014 +0200
+
+systray: Only intern the atom once
+
+Let's just save the systray atom and keep it around. Why should we redo this
+every time this atom is needed?
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e21119023473fb45a11beb838d935b1c53cb550d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 20 11:47:47 2014 +0200
+
+systray: Only register/unregister when needed
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit aec8e2944a220f8cb46f37826acd88506af5b243
+Author: memeplex <carlosjosepita@gmail.com>
+Date:   Mon Aug 18 02:32:11 2014 -0300
+
+Fix for FS#1293
+
+FS#1293 - Systray won't show with margin layout
 
 commit a250dcdbe12a3afa6ffa9fbb26f8c48c7e9cc049
 Author: Uli Schlachter <psychon@znc.in>
@@ -10,8 +37,133 @@ Use lua's *integer instead of *number functions, because we are dealing with
 integers. That is, "numbers which do not have a fractional part".
 
 --- systray.c.orig	Fri Apr 11 11:07:10 2014
-+++ systray.c	Mon Aug 18 12:26:29 2014
-@@ -329,9 +329,9 @@ luaA_systray(lua_State *L)
++++ systray.c	Tue Sep  2 12:21:42 2014
+@@ -39,6 +39,9 @@
+ void
+ systray_init(void)
+ {
++    xcb_intern_atom_cookie_t atom_systray_q;
++    xcb_intern_atom_reply_t *atom_systray_r;
++    char *atom_name;
+     xcb_screen_t *xscreen = globalconf.screen;
+ 
+     globalconf.systray.window = xcb_generate_id(globalconf.connection);
+@@ -48,6 +51,22 @@ systray_init(void)
+                       -1, -1, 1, 1, 0,
+                       XCB_COPY_FROM_PARENT, xscreen->root_visual,
+                       0, NULL);
++
++    atom_name = xcb_atom_name_by_screen("_NET_SYSTEM_TRAY", globalconf.default_screen);
++    if(!atom_name)
++        fatal("error getting systray atom name");
++
++    atom_systray_q = xcb_intern_atom_unchecked(globalconf.connection, false,
++                                               a_strlen(atom_name), atom_name);
++
++    p_delete(&atom_name);
++
++    atom_systray_r = xcb_intern_atom_reply(globalconf.connection, atom_systray_q, NULL);
++    if(!atom_systray_r)
++        fatal("error getting systray atom");
++
++    globalconf.systray.atom = atom_systray_r->atom;
++    p_delete(&atom_systray_r);
+ }
+ 
+ /** Register systray in X.
+@@ -57,23 +76,12 @@ systray_register(void)
+ {
+     xcb_client_message_event_t ev;
+     xcb_screen_t *xscreen = globalconf.screen;
+-    char *atom_name;
+-    xcb_intern_atom_cookie_t atom_systray_q;
+-    xcb_intern_atom_reply_t *atom_systray_r;
+-    xcb_atom_t atom_systray;
+ 
+-    /* Send requests */
+-    if(!(atom_name = xcb_atom_name_by_screen("_NET_SYSTEM_TRAY", globalconf.default_screen)))
+-    {
+-        warn("error getting systray atom");
++    if(globalconf.systray.registered)
+         return;
+-    }
+ 
+-    atom_systray_q = xcb_intern_atom_unchecked(globalconf.connection, false,
+-                                               a_strlen(atom_name), atom_name);
++    globalconf.systray.registered = true;
+ 
+-    p_delete(&atom_name);
+-
+     /* Fill event */
+     p_clear(&ev, 1);
+     ev.response_type = XCB_CLIENT_MESSAGE;
+@@ -81,22 +89,13 @@ systray_register(void)
+     ev.format = 32;
+     ev.type = MANAGER;
+     ev.data.data32[0] = XCB_CURRENT_TIME;
++    ev.data.data32[1] = globalconf.systray.atom;
+     ev.data.data32[2] = globalconf.systray.window;
+     ev.data.data32[3] = ev.data.data32[4] = 0;
+ 
+-    if(!(atom_systray_r = xcb_intern_atom_reply(globalconf.connection, atom_systray_q, NULL)))
+-    {
+-        warn("error getting systray atom");
+-        return;
+-    }
+-
+-    ev.data.data32[1] = atom_systray = atom_systray_r->atom;
+-
+-    p_delete(&atom_systray_r);
+-
+     xcb_set_selection_owner(globalconf.connection,
+                             globalconf.systray.window,
+-                            atom_systray,
++                            globalconf.systray.atom,
+                             XCB_CURRENT_TIME);
+ 
+     xcb_send_event(globalconf.connection, false, xscreen->root, 0xFFFFFF, (char *) &ev);
+@@ -107,31 +106,16 @@ systray_register(void)
+ void
+ systray_cleanup(void)
+ {
+-    xcb_intern_atom_reply_t *atom_systray_r;
+-    char *atom_name;
+-
+-    if(!(atom_name = xcb_atom_name_by_screen("_NET_SYSTEM_TRAY", globalconf.default_screen))
+-       || !(atom_systray_r = xcb_intern_atom_reply(globalconf.connection,
+-                                                   xcb_intern_atom_unchecked(globalconf.connection,
+-                                                                             false,
+-                                                                             a_strlen(atom_name),
+-                                                                             atom_name),
+-                                                   NULL)))
+-    {
+-        warn("error getting systray atom");
+-        p_delete(&atom_name);
++    if(!globalconf.systray.registered)
+         return;
+-    }
+ 
+-    p_delete(&atom_name);
++    globalconf.systray.registered = false;
+ 
+     xcb_set_selection_owner(globalconf.connection,
+                             XCB_NONE,
+-                            atom_systray_r->atom,
++                            globalconf.systray.atom,
+                             XCB_CURRENT_TIME);
+ 
+-    p_delete(&atom_systray_r);
+-
+     xcb_unmap_window(globalconf.connection,
+                      globalconf.systray.window);
+ }
+@@ -325,13 +309,15 @@ systray_update(int base_size, bool horizontal, bool re
+ int
+ luaA_systray(lua_State *L)
+ {
++    systray_register();
++
+     if(lua_gettop(L) != 0)
      {
          size_t bg_len;
          drawin_t *w = luaA_checkudata(L, 1, &drawin_class);
@@ -24,7 +176,17 @@ integers. That is, "numbers which do not have a fractional part".
          bool horiz = lua_toboolean(L, 5);
          const char *bg = luaL_checklstring(L, 6, &bg_len);
          bool revers = lua_toboolean(L, 7);
-@@ -375,7 +375,7 @@ luaA_systray(lua_State *L)
+@@ -345,9 +331,6 @@ luaA_systray(lua_State *L)
+                                          XCB_CW_BACK_PIXEL, config_back);
+         }
+ 
+-        if(globalconf.systray.parent == NULL)
+-            systray_register();
+-
+         if(globalconf.systray.parent != w)
+             xcb_reparent_window(globalconf.connection,
+                                 globalconf.systray.window,
+@@ -375,7 +358,7 @@ luaA_systray(lua_State *L)
                               globalconf.systray.window);
      }
  

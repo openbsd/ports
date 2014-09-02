@@ -1,12 +1,28 @@
-$OpenBSD: patch-lib_menubar_menu_gen_lua_in,v 1.3 2014/04/15 11:16:04 dcoppa Exp $
---- lib/menubar/menu_gen.lua.in.orig	Tue Apr 15 12:56:12 2014
-+++ lib/menubar/menu_gen.lua.in	Tue Apr 15 12:56:50 2014
-@@ -19,7 +19,7 @@ local menu_gen = {}
+$OpenBSD: patch-lib_menubar_menu_gen_lua_in,v 1.4 2014/09/02 10:52:43 dcoppa Exp $
+
+commit a74b3fccaadace51c188768811b7b9e1fc37b904
+Author: Sindre Foring Devik <sindre.devik@gmail.com>
+Date:   Mon Jun 30 15:08:43 2014 +0200
+
+FS#1278 - Menubar should check all standard directories
+Added local desktop directory to list of directories parsed by menubar
+by using the XDG specification
+
+--- lib/menubar/menu_gen.lua.in.orig	Fri Apr 11 11:07:10 2014
++++ lib/menubar/menu_gen.lua.in	Tue Sep  2 11:59:59 2014
+@@ -17,9 +17,14 @@ local menu_gen = {}
  
+ -- Options section
+ 
++local data_dir = os.getenv("XDG_DATA_HOME")
++if not data_dir then
++    data_dir = os.getenv("HOME") .. '/.local/share/'
++end
++
  --- Specifies all directories where menubar should look for .desktop
  -- files. The search is not recursive.
 -menu_gen.all_menu_dirs = { '/usr/share/applications/', '/usr/local/share/applications/' }
-+menu_gen.all_menu_dirs = "${LOCALBASE}/share/applications/"
++menu_gen.all_menu_dirs = { data_dir .. 'applications/', '${LOCALBASE}/share/applications/' }
  
  --- Specify the mapping of .desktop Categories section to the
  -- categories in the menubar. If "use" flag is set to false then any of

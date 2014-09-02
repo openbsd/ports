@@ -1,4 +1,13 @@
-$OpenBSD: patch-lib_awful_widget_taglist_lua_in,v 1.1 2014/08/18 10:34:02 dcoppa Exp $
+$OpenBSD: patch-lib_awful_widget_taglist_lua_in,v 1.2 2014/09/02 10:52:43 dcoppa Exp $
+
+commit 7a812fe28d624349e930203863753415f8d8ea49
+Author: Evzen <actionless.loveless@gmail.com>
+Date:   Fri Jun 13 13:36:30 2014 +0200
+
+fix(lib.awful.taglist): multiple tag selection
+
+multiple tag selection wasn't highlighting properly when *_occupied
+is set in theme table
 
 commit aedcd90d4da41132303636ba15170b6a43cc231f
 Author: Jason Yan <tailofthesun@gmail.com>
@@ -7,16 +16,20 @@ Date:   Fri May 9 00:18:46 2014 -0700
 Fix check against clients in taglist.
 
 --- lib/awful/widget/taglist.lua.in.orig	Fri Apr 11 11:07:10 2014
-+++ lib/awful/widget/taglist.lua.in	Mon Aug 18 12:08:03 2014
-@@ -51,6 +51,7 @@ function taglist.taglist_label(t, args)
++++ lib/awful/widget/taglist.lua.in	Tue Sep  2 12:31:20 2014
+@@ -51,10 +51,7 @@ function taglist.taglist_label(t, args)
      local icon
      local bg_resize = false
      local is_selected = false
+-    if t.selected then
+-        bg_color = bg_focus
+-        fg_color = fg_focus
+-    end
 +    local cls = t:clients()
-     if t.selected then
-         bg_color = bg_focus
-         fg_color = fg_focus
-@@ -69,11 +70,10 @@ function taglist.taglist_label(t, args)
+     if sel then
+         if taglist_squares_sel then
+             -- Check that the selected clients is tagged with 't'.
+@@ -69,11 +66,10 @@ function taglist.taglist_label(t, args)
              end
          end
      end
@@ -29,3 +42,14 @@ Fix check against clients in taglist.
          if #cls > 0 then
              if taglist_squares_unsel then
                  bg_image = taglist_squares_unsel
+@@ -96,6 +92,10 @@ function taglist.taglist_label(t, args)
+                 break
+             end
+         end
++    end
++    if t.selected then
++        bg_color = bg_focus
++        fg_color = fg_focus
+     end
+     if not tag.getproperty(t, "icon_only") then
+         if fg_color then
