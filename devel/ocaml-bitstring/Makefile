@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/22 22:21:53 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/02 09:24:44 chrisz Exp $
 
 COMMENT=		Erlang-style bitstrings for OCaml
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 MASTER_SITES=		https://bitstring.googlecode.com/files/
 
 MODULES=		lang/ocaml
-BUILD_DEPENDS=		sysutils/findlib
+BUILD_DEPENDS=		sysutils/findlib lang/ocaml-camlp4
 
 .include <bsd.port.arch.mk>
 .if ! ${PROPERTIES:Mocaml_native}

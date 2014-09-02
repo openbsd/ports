@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2014/09/02 09:24:45 chrisz Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
@@ -21,7 +21,7 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		gtksourceview-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 rsvg-2 xml2 z
 
-BUILD_DEPENDS =	sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib lang/ocaml-camlp4
 
 LIB_DEPENDS =	x11/gtk+2 \
 		devel/libglade2 \

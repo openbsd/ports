@@ -1,7 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.3 2014/08/25 15:20:19 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.4 2014/09/02 09:24:45 chrisz Exp $
 %%dynlink%%
-lib/ocaml/bytes/bytes.a
-lib/ocaml/bytes/bytes.cmx
-lib/ocaml/bytes/bytes.cmxa
 lib/ocaml/findlib/findlib.a
 lib/ocaml/findlib/findlib.cmxa

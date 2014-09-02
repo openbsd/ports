@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/01 13:03:39 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/02 09:24:44 chrisz Exp $
 
 COMMENT =	the Ocamlnet internet protocol foundation library
 CATEGORIES =	devel www mail
@@ -24,7 +24,7 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	-with-nethttpd -enable-pcre
 
 RUN_DEPENDS +=		devel/ocaml-pcre
-BUILD_DEPENDS +=	devel/ocaml-pcre
+BUILD_DEPENDS +=	devel/ocaml-pcre lang/ocaml-camlp4
 
 NO_TEST =	Yes
 USE_GMAKE =	Yes

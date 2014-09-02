@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.27 2014/08/21 20:54:04 chrisz Exp $
+# $OpenBSD: ocaml.port.mk,v 1.28 2014/09/02 09:24:44 chrisz Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -36,7 +36,7 @@ PKG_ARGS+=-Ddynlink=0
 .endif
 
 RUN_DEPENDS +=		lang/ocaml
-BUILD_DEPENDS +=	lang/ocaml lang/ocaml,-camlp4
+BUILD_DEPENDS +=	lang/ocaml
 MAKE_ENV +=		OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml \
 			OCAMLFIND_COMMANDS="ocamldoc=${MODOCAML_OCAMLDOC}"
 

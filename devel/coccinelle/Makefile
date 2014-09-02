@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2014/09/02 09:24:44 chrisz Exp $
 
 SHARED_ONLY =	Yes
 
@@ -25,7 +25,7 @@ MASTER_SITES = ${HOMEPAGE}distrib/
 MODULES =		lang/ocaml \
 			lang/python
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS} lang/ocaml-camlp4
 RUN_DEPENDS =		devel/ocaml-pcre \
 			sysutils/findlib \
 			sysutils/ggrep \

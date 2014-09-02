@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/27 08:05:17 chrisz Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/02 09:24:44 chrisz Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
@@ -22,7 +22,7 @@ WANTLIB =	c ev m pthread charset
 
 MODULES =	lang/ocaml converters/libiconv
 
-BUILD_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed lang/ocaml,-camlp4
+BUILD_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed lang/ocaml-camlp4
 RUN_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
 LIB_DEPENDS =	devel/libev
 

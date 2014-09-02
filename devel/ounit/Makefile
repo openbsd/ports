@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/02 09:24:44 chrisz Exp $
 
 COMMENT =	unit test framework for OCaml
 CATEGORIES =	devel
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =		lang/ocaml
 
-BUILD_DEPENDS +=	sysutils/findlib
+BUILD_DEPENDS +=	sysutils/findlib lang/ocaml-camlp4
 
 CONFIGURE_STYLE =	oasis
 

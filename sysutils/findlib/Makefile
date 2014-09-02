@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2014/08/25 15:20:19 chrisz Exp $
+# $OpenBSD: Makefile,v 1.29 2014/09/02 09:24:44 chrisz Exp $
 
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
 DISTNAME=	findlib-1.5.2
+REVISION=	0
+
 MASTER_SITES=	http://download.camlcity.org/download/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -15,11 +17,10 @@ MODULES+=		x11/tk
 
 WANTLIB +=		c m
 RUN_DEPENDS +=		lang/ocaml
-BUILD_DEPENDS +=	lang/ocaml lang/ocaml,-labltk lang/ocaml,-camlp4
+BUILD_DEPENDS +=	lang/ocaml
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	-with-toolbox \
-		-no-custom \
+CONFIGURE_ARGS= -no-custom \
 		-sitelib "/usr/local/lib/ocaml" \
 		-config ${SYSCONFDIR}/findlib.conf
 

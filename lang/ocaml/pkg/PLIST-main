@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2014/08/21 20:54:04 chrisz Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/09/02 09:24:44 chrisz Exp $
 %%native%%
 %%SHARED%%
 bin/ocaml
@@ -39,6 +39,12 @@ lib/ocaml/bigarray.mli
 lib/ocaml/buffer.cmi
 lib/ocaml/buffer.ml
 lib/ocaml/buffer.mli
+lib/ocaml/bytes.cmi
+lib/ocaml/bytes.ml
+lib/ocaml/bytes.mli
+lib/ocaml/bytesLabels.cmi
+lib/ocaml/bytesLabels.ml
+lib/ocaml/bytesLabels.mli
 lib/ocaml/callback.cmi
 lib/ocaml/callback.ml
 lib/ocaml/callback.mli
@@ -60,8 +66,15 @@ lib/ocaml/caml/signals.h
 lib/ocaml/caml/socketaddr.h
 lib/ocaml/caml/threads.h
 lib/ocaml/caml/unixsupport.h
+lib/ocaml/caml/version.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
+lib/ocaml/camlinternalFormat.cmi
+lib/ocaml/camlinternalFormat.ml
+lib/ocaml/camlinternalFormat.mli
+lib/ocaml/camlinternalFormatBasics.cmi
+lib/ocaml/camlinternalFormatBasics.ml
+lib/ocaml/camlinternalFormatBasics.mli
 lib/ocaml/camlinternalLazy.cmi
 lib/ocaml/camlinternalLazy.ml
 lib/ocaml/camlinternalLazy.mli
@@ -75,7 +88,10 @@ lib/ocaml/char.cmi
 lib/ocaml/char.ml
 lib/ocaml/char.mli
 lib/ocaml/compiler-libs/
+lib/ocaml/compiler-libs/CSE.cmi
+lib/ocaml/compiler-libs/CSEgen.cmi
 lib/ocaml/compiler-libs/annot.cmi
+lib/ocaml/compiler-libs/ast_helper.cmi
 lib/ocaml/compiler-libs/ast_mapper.cmi
 lib/ocaml/compiler-libs/asttypes.cmi
 lib/ocaml/compiler-libs/btype.cmi
@@ -96,6 +112,7 @@ lib/ocaml/compiler-libs/config.cmi
 lib/ocaml/compiler-libs/consistbl.cmi
 lib/ocaml/compiler-libs/ctype.cmi
 lib/ocaml/compiler-libs/datarepr.cmi
+lib/ocaml/compiler-libs/deadcode.cmi
 lib/ocaml/compiler-libs/dll.cmi
 lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/env.cmi
@@ -141,6 +158,7 @@ lib/ocaml/compiler-libs/printtyp.cmi
 lib/ocaml/compiler-libs/printtyped.cmi
 lib/ocaml/compiler-libs/runtimedef.cmi
 lib/ocaml/compiler-libs/simplif.cmi
+lib/ocaml/compiler-libs/strmatch.cmi
 lib/ocaml/compiler-libs/stypes.cmi
 lib/ocaml/compiler-libs/subst.cmi
 lib/ocaml/compiler-libs/switch.cmi
@@ -247,12 +265,9 @@ lib/ocaml/obj.mli
 lib/ocaml/ocamlbuild/
 lib/ocaml/ocamlbuild/ocamlbuild.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_executor.cmi
-lib/ocaml/ocamlbuild/ocamlbuild_executor.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_pack.cmi
 lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmi
-lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmi
-lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmo
 lib/ocaml/ocamlbuild/ocamlbuildlib.cma
 lib/ocaml/ocamldoc/
 lib/ocaml/ocamldoc/custom/
@@ -272,6 +287,7 @@ lib/ocaml/ocamldoc/odoc_dep.cmi
 lib/ocaml/ocamldoc/odoc_dot.cmi
 lib/ocaml/ocamldoc/odoc_env.cmi
 lib/ocaml/ocamldoc/odoc_exception.cmi
+lib/ocaml/ocamldoc/odoc_extension.cmi
 lib/ocaml/ocamldoc/odoc_gen.cmi
 lib/ocaml/ocamldoc/odoc_global.cmi
 lib/ocaml/ocamldoc/odoc_html.cmi
@@ -399,7 +415,6 @@ lib/ocaml/weak.cmi
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 @man man/man1/ocaml.1
-@man man/man1/ocamlbuild.1
 @man man/man1/ocamlc.1
 @man man/man1/ocamlc.opt.1
 @man man/man1/ocamlcp.1
@@ -423,10 +438,15 @@ lib/ocaml/weak.mli
 @man man/man3/Bigarray.Array3.3o
 @man man/man3/Bigarray.Genarray.3o
 @man man/man3/Buffer.3o
+@man man/man3/Bytes.3o
+@man man/man3/BytesLabels.3o
 @man man/man3/Callback.3o
+@man man/man3/CamlinternalFormat.3o
+@man man/man3/CamlinternalFormatBasics.3o
 @man man/man3/CamlinternalLazy.3o
 @man man/man3/CamlinternalMod.3o
 @man man/man3/CamlinternalOO.3o
+@man man/man3/Char.3o
 @man man/man3/Complex.3o
 @man man/man3/Digest.3o
 @man man/man3/Filename.3o
@@ -442,6 +462,7 @@ lib/ocaml/weak.mli
 @man man/man3/Hashtbl.SeededS.3o
 @man man/man3/Int32.3o
 @man man/man3/Int64.3o
+@man man/man3/Lazy.3o
 @man man/man3/Lexing.3o
 @man man/man3/List.3o
 @man man/man3/ListLabels.3o
@@ -474,12 +495,14 @@ lib/ocaml/weak.mli
 @man man/man3/Pervasives.3o
 @man man/man3/Pervasives.LargeFile.3o
 @man man/man3/Printexc.3o
+@man man/man3/Printexc.Slot.3o
 @man man/man3/Printf.3o
 @man man/man3/Queue.3o
 @man man/man3/Random.3o
 @man man/man3/Random.State.3o
 @man man/man3/Scanf.3o
 @man man/man3/Scanf.Scanning.3o
+@man man/man3/Set.3o
 @man man/man3/Set.Make.3o
 @man man/man3/Set.OrderedType.3o
 @man man/man3/Set.S.3o
@@ -487,10 +510,12 @@ lib/ocaml/weak.mli
 @man man/man3/Stack.3o
 @man man/man3/StdLabels.3o
 @man man/man3/StdLabels.Array.3o
+@man man/man3/StdLabels.Bytes.3o
 @man man/man3/StdLabels.List.3o
 @man man/man3/StdLabels.String.3o
 @man man/man3/Str.3o
 @man man/man3/Stream.3o
+@man man/man3/String.3o
 @man man/man3/StringLabels.3o
 @man man/man3/Sys.3o
 @man man/man3/Unix.3o
@@ -541,7 +566,11 @@ share/doc/ocaml/html/libref/Bigarray.Array3.html
 share/doc/ocaml/html/libref/Bigarray.Genarray.html
 share/doc/ocaml/html/libref/Bigarray.html
 share/doc/ocaml/html/libref/Buffer.html
+share/doc/ocaml/html/libref/Bytes.html
+share/doc/ocaml/html/libref/BytesLabels.html
 share/doc/ocaml/html/libref/Callback.html
+share/doc/ocaml/html/libref/CamlinternalFormat.html
+share/doc/ocaml/html/libref/CamlinternalFormatBasics.html
 share/doc/ocaml/html/libref/CamlinternalLazy.html
 share/doc/ocaml/html/libref/CamlinternalMod.html
 share/doc/ocaml/html/libref/CamlinternalOO.html
@@ -599,6 +628,7 @@ share/doc/ocaml/html/libref/Oo.html
 share/doc/ocaml/html/libref/Parsing.html
 share/doc/ocaml/html/libref/Pervasives.LargeFile.html
 share/doc/ocaml/html/libref/Pervasives.html
+share/doc/ocaml/html/libref/Printexc.Slot.html
 share/doc/ocaml/html/libref/Printexc.html
 share/doc/ocaml/html/libref/Printf.html
 share/doc/ocaml/html/libref/Queue.html
@@ -614,6 +644,7 @@ share/doc/ocaml/html/libref/Set.html
 share/doc/ocaml/html/libref/Sort.html
 share/doc/ocaml/html/libref/Stack.html
 share/doc/ocaml/html/libref/StdLabels.Array.html
+share/doc/ocaml/html/libref/StdLabels.Bytes.html
 share/doc/ocaml/html/libref/StdLabels.List.html
 share/doc/ocaml/html/libref/StdLabels.String.html
 share/doc/ocaml/html/libref/StdLabels.html
@@ -624,7 +655,6 @@ share/doc/ocaml/html/libref/StringLabels.html
 share/doc/ocaml/html/libref/Sys.html
 share/doc/ocaml/html/libref/Thread.html
 share/doc/ocaml/html/libref/ThreadUnix.html
-share/doc/ocaml/html/libref/Tk.html
 share/doc/ocaml/html/libref/Unix.LargeFile.html
 share/doc/ocaml/html/libref/Unix.html
 share/doc/ocaml/html/libref/UnixLabels.LargeFile.html
@@ -637,6 +667,7 @@ share/doc/ocaml/html/libref/index_attributes.html
 share/doc/ocaml/html/libref/index_class_types.html
 share/doc/ocaml/html/libref/index_classes.html
 share/doc/ocaml/html/libref/index_exceptions.html
+share/doc/ocaml/html/libref/index_extensions.html
 share/doc/ocaml/html/libref/index_methods.html
 share/doc/ocaml/html/libref/index_module_types.html
 share/doc/ocaml/html/libref/index_modules.html
@@ -654,7 +685,11 @@ share/doc/ocaml/html/libref/type_Bigarray.Array3.html
 share/doc/ocaml/html/libref/type_Bigarray.Genarray.html
 share/doc/ocaml/html/libref/type_Bigarray.html
 share/doc/ocaml/html/libref/type_Buffer.html
+share/doc/ocaml/html/libref/type_Bytes.html
+share/doc/ocaml/html/libref/type_BytesLabels.html
 share/doc/ocaml/html/libref/type_Callback.html
+share/doc/ocaml/html/libref/type_CamlinternalFormat.html
+share/doc/ocaml/html/libref/type_CamlinternalFormatBasics.html
 share/doc/ocaml/html/libref/type_CamlinternalLazy.html
 share/doc/ocaml/html/libref/type_CamlinternalMod.html
 share/doc/ocaml/html/libref/type_CamlinternalOO.html
@@ -712,6 +747,7 @@ share/doc/ocaml/html/libref/type_Oo.html
 share/doc/ocaml/html/libref/type_Parsing.html
 share/doc/ocaml/html/libref/type_Pervasives.LargeFile.html
 share/doc/ocaml/html/libref/type_Pervasives.html
+share/doc/ocaml/html/libref/type_Printexc.Slot.html
 share/doc/ocaml/html/libref/type_Printexc.html
 share/doc/ocaml/html/libref/type_Printf.html
 share/doc/ocaml/html/libref/type_Queue.html
@@ -727,6 +763,7 @@ share/doc/ocaml/html/libref/type_Set.html
 share/doc/ocaml/html/libref/type_Sort.html
 share/doc/ocaml/html/libref/type_Stack.html
 share/doc/ocaml/html/libref/type_StdLabels.Array.html
+share/doc/ocaml/html/libref/type_StdLabels.Bytes.html
 share/doc/ocaml/html/libref/type_StdLabels.List.html
 share/doc/ocaml/html/libref/type_StdLabels.String.html
 share/doc/ocaml/html/libref/type_StdLabels.html
@@ -737,7 +774,6 @@ share/doc/ocaml/html/libref/type_StringLabels.html
 share/doc/ocaml/html/libref/type_Sys.html
 share/doc/ocaml/html/libref/type_Thread.html
 share/doc/ocaml/html/libref/type_ThreadUnix.html
-share/doc/ocaml/html/libref/type_Tk.html
 share/doc/ocaml/html/libref/type_Unix.LargeFile.html
 share/doc/ocaml/html/libref/type_Unix.html
 share/doc/ocaml/html/libref/type_UnixLabels.LargeFile.html
@@ -749,7 +785,7 @@ share/doc/ocaml/html/libstr.html
 share/doc/ocaml/html/libthreads.html
 share/doc/ocaml/html/libunix.html
 share/doc/ocaml/html/manual001.html
-share/doc/ocaml/html/manual044.html
+share/doc/ocaml/html/manual043.html
 share/doc/ocaml/html/modtypes.html
 share/doc/ocaml/html/moduleexamples.html
 share/doc/ocaml/html/modules.html

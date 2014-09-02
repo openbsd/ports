@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2014/09/02 09:24:44 chrisz Exp $
 
 COMMENT=		curses calendar front-end to remind
 
@@ -21,7 +21,7 @@ MODULES=		lang/ocaml
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} lang/ocaml-camlp4
 RUN_DEPENDS=		misc/remind
 
 NO_TEST=		Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native-main,v 1.1 2014/08/21 20:54:04 chrisz Exp $
+@comment $OpenBSD: PFRAG.native-main,v 1.2 2014/09/02 09:24:44 chrisz Exp $
 %%dynlink%%
 @bin bin/ocamlbuild.native
 @bin bin/ocamlc.opt
@@ -21,8 +21,16 @@ lib/ocaml/bigarray.cmx
 lib/ocaml/bigarray.cmxa
 lib/ocaml/buffer.cmx
 lib/ocaml/buffer.p.cmx
+lib/ocaml/bytes.cmx
+lib/ocaml/bytes.p.cmx
+lib/ocaml/bytesLabels.cmx
+lib/ocaml/bytesLabels.p.cmx
 lib/ocaml/callback.cmx
 lib/ocaml/callback.p.cmx
+lib/ocaml/camlinternalFormat.cmx
+lib/ocaml/camlinternalFormat.p.cmx
+lib/ocaml/camlinternalFormatBasics.cmx
+lib/ocaml/camlinternalFormatBasics.p.cmx
 lib/ocaml/camlinternalLazy.cmx
 lib/ocaml/camlinternalLazy.p.cmx
 lib/ocaml/camlinternalMod.cmx
@@ -128,7 +136,9 @@ lib/ocaml/ocamlbuild/ocamlbuild.cmx
 lib/ocaml/ocamlbuild/ocamlbuild.o
 lib/ocaml/ocamlbuild/ocamlbuild_executor.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_executor.o
+lib/ocaml/ocamlbuild/ocamlbuild_pack.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmx
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.o
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
 lib/ocaml/ocamlbuild/ocamlbuildlib.a

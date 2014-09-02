@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/08/25 15:20:19 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/09/02 09:24:45 chrisz Exp $
 %%native%%
 @bin bin/ocamlfind
-bin/safe_camlp4
 lib/ocaml/bigarray/
 lib/ocaml/bigarray/META
 lib/ocaml/bytes/
 lib/ocaml/bytes/META
-lib/ocaml/bytes/bytes.cma
-lib/ocaml/bytes/bytes.cmi
-lib/ocaml/camlp4/
-lib/ocaml/camlp4/META
 lib/ocaml/compiler-libs/META
 lib/ocaml/dynlink/
 lib/ocaml/dynlink/META
@@ -25,14 +20,10 @@ lib/ocaml/findlib/fl_metascanner.mli
 lib/ocaml/findlib/fl_metatoken.cmi
 lib/ocaml/findlib/fl_package_base.cmi
 lib/ocaml/findlib/fl_package_base.mli
-lib/ocaml/findlib/make_wizard
-lib/ocaml/findlib/make_wizard.pattern
 lib/ocaml/findlib/topfind.cmi
 lib/ocaml/findlib/topfind.mli
 lib/ocaml/graphics/
 lib/ocaml/graphics/META
-lib/ocaml/labltk/
-lib/ocaml/labltk/META
 lib/ocaml/num/
 lib/ocaml/num-top/
 lib/ocaml/num-top/META

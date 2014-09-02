@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/08/27 08:05:17 chrisz Exp $
+# $OpenBSD: Makefile,v 1.14 2014/09/02 09:24:44 chrisz Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
@@ -22,7 +22,7 @@ MODULES =	lang/ocaml \
 MYDEPENDS =	devel/ocaml-react \
 		textproc/ocaml-text \
 		security/ocaml-ssl
-BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib lang/ocaml,-camlp4
+BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib lang/ocaml-camlp4
 RUN_DEPENDS =	${MYDEPENDS}
 LIB_DEPENDS =	devel/glib2 devel/libev
 WANTLIB =	glib-2.0 ev pthread
