@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2014/07/24 18:11:14 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2014/09/02 16:37:24 landry Exp $
 
 # XXX remember to bump www/conkeror because it has a symlink pointing to lib/xulrunner-${MOZILLA_VER}
-MOZILLA_VERSION =	24.7.0esr
+MOZILLA_VERSION =	24.8.0esr
 MOZILLA_BRANCH =	esr24
 MOZILLA_PROJECT =	xulrunner
 MOZILLA_DIST =		firefox
