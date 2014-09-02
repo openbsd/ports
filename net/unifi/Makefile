@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/06/22 11:16:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/02 12:35:30 espie Exp $
 
 COMMENT=	Ubiquiti uniFi wireless controller
 
@@ -6,6 +6,7 @@ DISTFILES=	unifi-$V{UniFi.unix}.zip
 V=		3.2.1
 FW_VER=		3.2.1.2601
 PKGNAME=	unifi-$V
+REVISION =	0
 
 CATEGORIES=	net
 
@@ -40,6 +41,7 @@ do-install:
 	ln -fs ${LOCALBASE}/bin/mongod ${INSTDIR}/bin/mongod
 	ln -s /var/log/unifi ${INSTDIR}/logs
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	chmod -R ${SHAREMODE} ${INSTDIR}
+	find ${INSTDIR} -type f|xargs chmod ${SHAREMODE}
+	find ${INSTDIR} -type d|xargs chmod ${DIRMODE}
 
 .include <bsd.port.mk>
