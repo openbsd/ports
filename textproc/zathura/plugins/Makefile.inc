@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2014/09/02 13:32:54 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/09/02 13:42:47 landry Exp $
 
 CATEGORIES ?=		textproc x11
 MASTER_SITES ?=		https://pwmt.org/projects/zathura/plugins/download/
@@ -10,7 +10,7 @@ PERMIT_DISTFILES_CDROM ?=Yes
 PERMIT_DISTFILES_FTP ?=	Yes
 
 RUN_DEPENDS ?=	devel/desktop-file-utils
-LIB_DEPENDS ?=	x11/girara
+LIB_DEPENDS +=	x11/girara
 BUILD_DEPENDS ?=	textproc/zathura/core
 
 MAKE_FLAGS ?=	VERBOSE=1 \
