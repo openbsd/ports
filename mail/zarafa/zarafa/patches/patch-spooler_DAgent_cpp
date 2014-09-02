@@ -1,6 +1,6 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.23 2014/04/07 13:46:06 robert Exp $
---- spooler/DAgent.cpp.orig	Mon Mar 31 13:45:38 2014
-+++ spooler/DAgent.cpp	Sun Apr  6 20:54:38 2014
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.24 2014/09/02 11:09:38 robert Exp $
+--- spooler/DAgent.cpp.orig	Sun Aug 24 12:27:06 2014
++++ spooler/DAgent.cpp	Mon Sep  1 20:07:29 2014
 @@ -97,6 +97,11 @@
  #include <sys/mman.h>
  #include <pwd.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.23 2014/04/07 13:46:06 robert Exp $
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -1488,12 +1493,21 @@ HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LPMDB lpM
+@@ -1488,12 +1493,18 @@ HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LPMDB lpM
  		goto exit;
  
  	{
@@ -25,26 +25,14 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.23 2014/04/07 13:46:06 robert Exp $
  		localtime_r(&now, &local);
 +#ifndef __OpenBSD__
  		strftime_l(szHeader, PATH_MAX, "\nDate: %a, %d %b %Y %T %z", &local, timelocale);
+ 		freelocale(timelocale);
 +#else
 +		strftime(szHeader, PATH_MAX, "\nDate: %a, %d %b %Y %T %z", &local);
-+#endif
-+
-+#ifndef __OpenBSD__
- 		freelocale(timelocale);
 +#endif
  	}
  	if (WriteOrLogError(fd, szHeader, strlen(szHeader)) != hrSuccess)
  		goto exit;
-@@ -3462,7 +3476,7 @@ int main(int argc, char *argv[]) {
- 
- 	DeliveryArgs sDeliveryArgs;
- 	sDeliveryArgs.strPath = "";
--	sDeliveryArgs.strAutorespond = "/usr/bin/zarafa-autorespond";
-+	sDeliveryArgs.strAutorespond = "/usr/local/bin/zarafa-autorespond";
- 	sDeliveryArgs.bCreateFolder = false;
- 	sDeliveryArgs.strDeliveryFolder.clear();
- 	sDeliveryArgs.szPathSeperator = '\\';
-@@ -3527,10 +3541,10 @@ int main(int argc, char *argv[]) {
+@@ -3527,10 +3538,10 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },
@@ -55,6 +43,6 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.23 2014/04/07 13:46:06 robert Exp $
 -		{ "plugin_manager_path", "/usr/share/zarafa-dagent/python" },
 +		{ "plugin_path", "/var/db/zarafa/dagent/plugins" },
 +		{ "plugin_manager_path", "/usr/local/share/zarafa-dagent/python" },
+ 		{ "default_charset", "iso-8859-15" },
  		{ "set_rule_headers", "yes", CONFIGSETTING_RELOADABLE },
  		{ "no_double_forward", "no", CONFIGSETTING_RELOADABLE },
- 		{ NULL, NULL },

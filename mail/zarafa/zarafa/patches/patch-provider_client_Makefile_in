@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_client_Makefile_in,v 1.21 2014/07/03 06:14:40 robert Exp $
---- provider/client/Makefile.in.orig	Wed Jul  2 17:30:27 2014
-+++ provider/client/Makefile.in	Wed Jul  2 17:30:39 2014
-@@ -379,7 +379,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
+$OpenBSD: patch-provider_client_Makefile_in,v 1.22 2014/09/02 11:09:38 robert Exp $
+--- provider/client/Makefile.in.orig	Sun Aug 24 11:53:44 2014
++++ provider/client/Makefile.in	Mon Sep  1 18:00:46 2014
+@@ -409,7 +409,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/libfreebusy \
  	-I${top_srcdir}/common -I${top_srcdir}/zarafa-libsync \
  	$(am__append_1)

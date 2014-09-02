@@ -1,7 +1,7 @@
-$OpenBSD: patch-libfreebusy_Makefile_in,v 1.18 2014/07/03 06:14:40 robert Exp $
---- libfreebusy/Makefile.in.orig	Fri May 23 15:04:03 2014
-+++ libfreebusy/Makefile.in	Wed Jul  2 17:28:25 2014
-@@ -326,7 +326,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
+$OpenBSD: patch-libfreebusy_Makefile_in,v 1.19 2014/09/02 11:09:38 robert Exp $
+--- libfreebusy/Makefile.in.orig	Sun Aug 24 11:53:44 2014
++++ libfreebusy/Makefile.in	Mon Sep  1 18:00:46 2014
+@@ -356,7 +356,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
  	-I${top_srcdir}/common
  
  libfreebusy_la_includedir = $(includedir)/libfreebusy

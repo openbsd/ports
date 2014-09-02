@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.31 2014/07/03 06:14:40 robert Exp $
---- configure.orig	Fri May 23 15:04:01 2014
-+++ configure	Wed Jul  2 17:28:25 2014
-@@ -19062,68 +19062,6 @@ rm -f core conftest.err conftest.$ac_objext \
+$OpenBSD: patch-configure,v 1.32 2014/09/02 11:09:38 robert Exp $
+--- configure.orig	Mon Sep  1 18:01:58 2014
++++ configure	Mon Sep  1 18:02:31 2014
+@@ -19764,68 +19764,6 @@ rm -f core conftest.err conftest.$ac_objext \
  
  LIBS=$LIBS_system
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.31 2014/07/03 06:14:40 robert Exp $
 -$as_echo "no" >&6; }
 -	  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for crypt in -lcrypt" >&5
 -$as_echo_n "checking for crypt in -lcrypt... " >&6; }
--if test "${ac_cv_lib_crypt_crypt+set}" = set; then :
+-if ${ac_cv_lib_crypt_crypt+:} false; then :
 -  $as_echo_n "(cached) " >&6
 -else
 -  ac_check_lib_save_LIBS=$LIBS
@@ -55,7 +55,7 @@ $OpenBSD: patch-configure,v 1.31 2014/07/03 06:14:40 robert Exp $
 -fi
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_crypt_crypt" >&5
 -$as_echo "$ac_cv_lib_crypt_crypt" >&6; }
--if test "x$ac_cv_lib_crypt_crypt" = x""yes; then :
+-if test "x$ac_cv_lib_crypt_crypt" = xyes; then :
 -  CRYPT_LIBS="-lcrypt"
 -else
 -  as_fn_error $? "required library libcrypt missing or unusable" "$LINENO" 5
@@ -70,7 +70,7 @@ $OpenBSD: patch-configure,v 1.31 2014/07/03 06:14:40 robert Exp $
  # Only specific links with uuid and dl, clients only with crypto and ssl for ssl connections
  SSL_LIBS=
  # TODO: version of ssl check??
-@@ -19134,7 +19072,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then 
+@@ -19836,7 +19774,7 @@ if ${ac_cv_lib_ssl_SSL_accept+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

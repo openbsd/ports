@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.19 2014/04/07 13:46:06 robert Exp $
---- installer/linux/server.cfg.orig	Mon Feb  3 11:31:18 2014
-+++ installer/linux/server.cfg	Mon Feb  3 11:33:18 2014
-@@ -42,16 +42,16 @@ local_admin_users	= root
+$OpenBSD: patch-installer_linux_server_cfg,v 1.20 2014/09/02 11:09:38 robert Exp $
+--- installer/linux/server.cfg.orig	Sun Aug 24 11:52:55 2014
++++ installer/linux/server.cfg	Mon Sep  1 18:00:46 2014
+@@ -46,16 +46,16 @@ owner_auto_full_access = true
  system_email_address	= postmaster@localhost
  
  # drop privileges and run the process as this user
@@ -21,7 +21,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.19 2014/04/07 13:46:06 robert Exp
  
  # create memory coredumps upon crash in the running_path directory
  coredump_enabled = yes
-@@ -62,7 +62,7 @@ coredump_enabled = yes
+@@ -66,7 +66,7 @@ coredump_enabled = yes
  session_timeout		= 300
  
  # Socket to connect to license server
@@ -30,7 +30,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.19 2014/04/07 13:46:06 robert Exp
  
  # Time (in seconds) to wait for a connection to the license server before 
  # terminating the request.
-@@ -127,7 +127,7 @@ mysql_database		= zarafa
+@@ -131,7 +131,7 @@ mysql_database		= zarafa
  attachment_storage	= files 
  
  # When attachment_storage is 'files', use this path to store the files
@@ -39,7 +39,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.19 2014/04/07 13:46:06 robert Exp
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -143,22 +143,22 @@ server_ssl_enabled	= no
+@@ -147,22 +147,22 @@ server_ssl_enabled	= no
  server_ssl_port		= 237
  
  # Required Server certificate, contains the certificate and the private key parts
@@ -66,7 +66,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.19 2014/04/07 13:46:06 robert Exp
  
  ##############################################################
  # THREAD SETTINGS
-@@ -287,23 +287,24 @@ companyquota_warn      = 0
+@@ -291,23 +291,24 @@ companyquota_warn      = 0
  # Name of the plugin that handles users
  # Required, default = db
  # Values: ldap, unix, db, ldapms (available in enterprise license)
@@ -99,7 +99,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.19 2014/04/07 13:46:06 robert Exp
  
  # Set this option to 'yes' to skip the creation and deletion of new users
  # The action will be logged, so you can see if your changes to the plugin
-@@ -360,7 +361,7 @@ client_update_enabled = false
+@@ -364,7 +365,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

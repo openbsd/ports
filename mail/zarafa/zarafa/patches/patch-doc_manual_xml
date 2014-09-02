@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
---- doc/manual.xml.orig	Fri May 23 15:01:13 2014
-+++ doc/manual.xml	Wed Jul  2 17:28:25 2014
+$OpenBSD: patch-doc_manual_xml,v 1.38 2014/09/02 11:09:38 robert Exp $
+--- doc/manual.xml.orig	Sun Aug 24 11:52:05 2014
++++ doc/manual.xml	Mon Sep  1 18:00:45 2014
 @@ -888,9 +888,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
@@ -12,7 +12,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-dagent.pid</replaceable>
-@@ -1415,11 +1413,6 @@
+@@ -1428,11 +1426,6 @@
  		  <replaceable>/path/to/server.cfg</replaceable>
  		</para>
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -1528,6 +1521,9 @@
+@@ -1541,6 +1534,9 @@
  		located in /usr/share/zarafa, called ssl-certificate.sh. Enter
  		the following commands to create a certificate for the Zarafa
  		server.
@@ -34,7 +34,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  		</para>
  		<para>
  		  <command>
-@@ -3713,9 +3709,7 @@
+@@ -3726,9 +3722,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -45,7 +45,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-server.pid</replaceable>
-@@ -6931,13 +6925,8 @@
+@@ -6944,13 +6938,8 @@
  		</para>
  
  		<para>The spooler process will keep running and watching the
@@ -61,7 +61,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -7118,9 +7107,7 @@
+@@ -7131,9 +7120,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -72,7 +72,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-spooler.pid</replaceable>
-@@ -7626,13 +7613,7 @@
+@@ -7639,13 +7626,7 @@
  
  		<para><command>zarafa-gateway</command></para>
  
@@ -87,7 +87,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -8322,14 +8303,8 @@
+@@ -8335,14 +8316,8 @@
  
  		<para>The monitor checks user mailbox sizes. The monitor sends
  		a quota email when the warning quota limit is reached. When
@@ -103,7 +103,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -8481,9 +8456,7 @@
+@@ -8494,9 +8469,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -114,7 +114,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  			  </para>
  			  <para>Default value: /var/run/zarafa-monitor.pid
  			  </para>
-@@ -9794,13 +9767,7 @@
+@@ -9807,13 +9780,7 @@
  
  		<para><command>zarafa-ical</command></para>
  
@@ -129,7 +129,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -9983,9 +9950,7 @@
+@@ -9996,9 +9963,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -140,7 +140,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-ical.pid</replaceable>
-@@ -10334,13 +10299,7 @@
+@@ -10347,13 +10312,7 @@
  
  		<para><command>zarafa-licensed</command></para>
  
@@ -155,7 +155,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -10510,9 +10469,7 @@
+@@ -10523,9 +10482,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -166,7 +166,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-licensed.pid</replaceable>
-@@ -11323,13 +11280,6 @@
+@@ -11336,13 +11293,6 @@
  		  <option>-c</option>
  		  <replaceable>/path/to/search.cfg</replaceable>
  		</para>
@@ -180,7 +180,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.37 2014/07/03 06:14:40 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -11460,9 +11410,7 @@
+@@ -11473,9 +11423,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>

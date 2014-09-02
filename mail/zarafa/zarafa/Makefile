@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2014/07/03 06:14:40 robert Exp $
+# $OpenBSD: Makefile,v 1.167 2014/09/02 11:09:38 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -219,7 +219,6 @@ post-install:
 		man/man5/zarafa-ldapms.cfg.5 \
 		man/man5/zarafa-msr.cfg.5 \
 		man/man5/zarafa-backup.cfg.5
-	rmdir ${PREFIX}/share/examples/zarafa/report-ca
 	rmdir ${WRKINST}/var/lib/zarafa/{dagent,spooler}/plugins
 	rmdir ${WRKINST}/var/lib/zarafa/{dagent,spooler}
 	rmdir ${WRKINST}/var/lib/zarafa/report

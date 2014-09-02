@@ -1,6 +1,6 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.27 2014/04/07 13:46:06 robert Exp $
---- provider/server/ECServer.cpp.orig	Thu Jan 30 13:41:34 2014
-+++ provider/server/ECServer.cpp	Mon Feb  3 11:25:37 2014
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.28 2014/09/02 11:09:38 robert Exp $
+--- provider/server/ECServer.cpp.orig	Sun Aug 24 12:27:09 2014
++++ provider/server/ECServer.cpp	Mon Sep  1 18:00:46 2014
 @@ -90,6 +90,10 @@
  #include "unicode/uclean.h"
  #endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.27 2014/04/07 13:46:06 robert E
  #ifdef _DEBUG
  #define new DEBUG_NEW
  #undef THIS_FILE
-@@ -935,7 +939,7 @@ int running_server(char *szName, const char *szConfig,
+@@ -933,7 +937,7 @@ int running_server(char *szName, const char *szConfig,
  		{ "mysql_config_file",			"/etc/zarafa/my.cnf" },
  #endif
  		{ "attachment_storage",			"database" },
@@ -21,7 +21,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.27 2014/04/07 13:46:06 robert E
  		{ "attachment_compression",		"6" },
  
  		// Log options
-@@ -1008,7 +1012,7 @@ int running_server(char *szName, const char *szConfig,
+@@ -1006,7 +1010,7 @@ int running_server(char *szName, const char *szConfig,
  
  		{ "client_update_enabled",	"no" },
  		{ "client_update_log_level", "1", CONFIGSETTING_RELOADABLE },
@@ -30,7 +30,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.27 2014/04/07 13:46:06 robert E
  		{ "client_update_log_path",	"/var/log/zarafa/autoupdate", CONFIGSETTING_RELOADABLE },
  		{ "index_services_enabled", "", CONFIGSETTING_UNUSED },
  		{ "index_services_path",    "", CONFIGSETTING_UNUSED },
-@@ -1037,10 +1041,14 @@ int running_server(char *szName, const char *szConfig,
+@@ -1036,10 +1040,14 @@ int running_server(char *szName, const char *szConfig,
  		{ NULL, NULL },
  	};
  
