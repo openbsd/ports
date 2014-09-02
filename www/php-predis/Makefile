@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2014/01/22 11:30:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2014/09/02 09:24:09 dcoppa Exp $
 
 COMMENT =		PHP client library for the Redis key-value database
 
-DISTNAME =		Predis-0.8.5
+DISTNAME =		Predis-1.0.0
 PKGNAME =		${DISTNAME:S/^P/php-p/}
 CATEGORIES =		www databases
 
@@ -27,8 +27,8 @@ INSTDIR =		${PREFIX}/pear/lib/
 SUBST_VARS =		INSTDIR
 
 do-install:
-	${INSTALL_DATA_DIR} ${INSTDIR}
-	cp -Rp ${WRKSRC}/lib/Predis ${INSTDIR}
+	${INSTALL_DATA_DIR} ${INSTDIR}Predis
+	cp -Rp ${WRKSRC}/src/* ${INSTDIR}Predis/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
