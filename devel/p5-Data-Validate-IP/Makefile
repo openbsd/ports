@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/23 23:04:21 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/02 22:59:37 bluhm Exp $
 
 COMMENT =		ipv4 and ipv6 validation methods
 
-DISTNAME =		Data-Validate-IP-0.23
+DISTNAME =		Data-Validate-IP-0.24
 
 CATEGORIES =		devel
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
 BUILD_DEPENDS =		devel/p5-Test-Requires
-RUN_DEPENDS =		net/p5-NetAddr-IP
+RUN_DEPENDS =		net/p5-NetAddr-IP>=4
 TEST_DEPENDS =		devel/p5-Test-Requires \
 			devel/p5-Test-Taint
 
