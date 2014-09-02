@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2014/09/02 09:33:53 espie Exp $
 
 COMMENT=	sdl port of xkobo
 DISTNAME=	KoboDeluxe-0.5.1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}download/
-REVISION=	0
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.bz2
 

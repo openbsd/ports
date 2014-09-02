@@ -1,0 +1,11 @@
+$OpenBSD: patch-enemies_h,v 1.1 2014/09/02 09:33:53 espie Exp $
+--- enemies.h.orig	Tue Sep  2 11:24:48 2014
++++ enemies.h	Tue Sep  2 11:25:10 2014
+@@ -72,6 +72,7 @@ extern const enemy_kind bombdeto;
+ extern const enemy_kind cannon;
+ extern const enemy_kind pipe1;
+ extern const enemy_kind core;
++#define pipe2 mypipe2
+ extern const enemy_kind pipe2;
+ extern const enemy_kind rock;
+ extern const enemy_kind ring;
