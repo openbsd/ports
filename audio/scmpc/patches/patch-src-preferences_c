@@ -1,8 +1,8 @@
-$OpenBSD: patch-src-preferences_c,v 1.4 2011/05/15 14:56:50 jasper Exp $
---- src/preferences.c.orig	Mon Apr 25 19:10:27 2011
-+++ src/preferences.c	Mon Apr 25 19:10:34 2011
-@@ -161,7 +161,7 @@ static gint parse_config_file(void)
- 		CFG_INT_CB("log_level", ERROR, CFGF_NONE, &cf_log_level),
+$OpenBSD: patch-src-preferences_c,v 1.5 2014/09/02 19:46:53 landry Exp $
+--- src/preferences.c.orig	Mon Mar  4 09:16:18 2013
++++ src/preferences.c	Tue Sep  2 21:41:21 2014
+@@ -180,7 +180,7 @@ static gboolean parse_config_file(void)
+ 				&cf_log_level),
  		CFG_STR("log_file", "/var/log/scmpc.log", CFGF_NONE),
  		CFG_STR("pid_file", "/var/run/scmpc.pid", CFGF_NONE),
 -		CFG_STR("cache_file", "/var/lib/scmpc/scmpc.cache", CFGF_NONE),
