@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/02/21 22:34:19 sthen Exp $
-@bin bin/zathura
-@man man/man1/zathura.1
-@man man/man5/zathurarc.5
-share/applications/zathura.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
