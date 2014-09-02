@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2014/09/02 14:28:20 jasper Exp $
-
-PORTSCOUT =		limitw:1,even
+# $OpenBSD: Makefile.inc,v 1.14 2014/09/02 14:39:37 jasper Exp $
 
 DIST_SUBDIR =		gnome
 
