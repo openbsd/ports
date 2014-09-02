@@ -1,0 +1,15 @@
+$OpenBSD: patch-salt_modules_postgres_py,v 1.1 2014/09/02 08:41:43 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/15426
+
+--- salt/modules/postgres.py.orig	Tue Sep  2 10:35:29 2014
++++ salt/modules/postgres.py	Tue Sep  2 10:35:54 2014
+@@ -76,6 +76,8 @@ def _run_psql(cmd, runas=None, password=None, host=Non
+         if not host or host.startswith('/'):
+             if 'FreeBSD' in __grains__['os_family']:
+                 runas = 'pgsql'
++            if 'OpenBSD' in __grains__['os_family']:
++                runas = '_postgresql'
+             else:
+                 runas = 'postgres'
+ 
