@@ -1,6 +1,6 @@
-$OpenBSD: patch-sslsplit_1,v 1.1.1.1 2013/11/28 16:49:10 sthen Exp $
---- sslsplit.1.orig	Tue Jul  2 15:06:16 2013
-+++ sslsplit.1	Thu Nov 28 15:49:43 2013
+$OpenBSD: patch-sslsplit_1,v 1.2 2014/09/02 19:45:53 sthen Exp $
+--- sslsplit.1.orig	Wed Jan 15 18:07:07 2014
++++ sslsplit.1	Tue Sep  2 20:39:50 2014
 @@ -231,7 +231,7 @@ Drop privileges after opening sockets and files by set
  effective and stored user IDs to \fIuser\fP and loading the appropriate
  primary and ancillary groups.  If \fB-u\fP is not given, SSLsplit will drop
@@ -10,48 +10,7 @@ $OpenBSD: patch-sslsplit_1,v 1.1.1.1 2013/11/28 16:49:10 sthen Exp $
  and \fB-S\fP is not used.
  .TP
  .B \-V
-@@ -291,26 +291,29 @@ than the NAT rules redirecting the actual connections.
- SSLsplit currently supports the following NAT engines:
- .TP
- .B pf
--OpenBSD packet filter (pf), also available on FreeBSD and NetBSD.
--Fully supported, including IPv6.
-+OpenBSD packet filter (pf), using NAT redirects (rdr-to), also available
-+on FreeBSD and NetBSD.
-+Fully supported, including IPv6, but note that divert sockets (divert-to)
-+are preferred (see the ipfw NAT engine).
- Assuming inbound interface \fBem0\fP:
- .LP
- .RS
- .nf
--\fBrdr pass on em0 proto tcp from 2001:db8::/64 to any port  80 \\
--         ->       ::1 port 10080\fP
--\fBrdr pass on em0 proto tcp from 2001:db8::/64 to any port 443 \\
--         ->       ::1 port 10443\fP
--\fBrdr pass on em0 proto tcp from  192.0.2.0/24 to any port  80 \\
--         -> 127.0.0.1 port 10080\fP
--\fBrdr pass on em0 proto tcp from  192.0.2.0/24 to any port 443 \\
--         -> 127.0.0.1 port 10443\fP
-+\fBpass in quick on em0 proto tcp from 2001:db8::/64 to any port  80 \\
-+         rdr-to       ::1 port 10080\fP
-+\fBpass in quick on em0 proto tcp from 2001:db8::/64 to any port 443 \\
-+         rdr-to       ::1 port 10443\fP
-+\fBpass in quick on em0 proto tcp from  192.0.2.0/24 to any port  80 \\
-+         rdr-to 127.0.0.1 port 10080\fP
-+\fBpass in quick on em0 proto tcp from  192.0.2.0/24 to any port 443 \\
-+         rdr-to 127.0.0.1 port 10443\fP
- .fi
- .RE
- .TP
- .B ipfw
- FreeBSD IP firewall (IPFW), also available on Mac OS X.
--Fully supported on FreeBSD, including IPv6.
-+Also OpenBSD packet filter (pf), using divert-to.
-+Fully supported on FreeBSD and OpenBSD, including IPv6.
- Only supports IPv4 on Mac OS X due to the ancient version of IPFW included.
- .LP
- .RS
-@@ -319,6 +322,19 @@ Only supports IPv4 on Mac OS X due to the ancient vers
+@@ -337,6 +337,19 @@ First in IPFW, then in pf \fBdivert-to\fP syntax:
  \fBipfw add fwd       ::1,10443 tcp from 2001:db8::/64 to any 443\fP
  \fBipfw add fwd 127.0.0.1,10080 tcp from 192.0.2.0/24  to any  80\fP
  \fBipfw add fwd 127.0.0.1,10443 tcp from 192.0.2.0/24  to any 443\fP
@@ -70,4 +29,4 @@ $OpenBSD: patch-sslsplit_1,v 1.1.1.1 2013/11/28 16:49:10 sthen Exp $
 +         divert-to 127.0.0.1 port 10443\fP
  .fi
  .RE
- .TP
+ .LP
