@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.18 2014/08/12 10:09:56 dcoppa Exp $
---- src/Makefile.orig	Wed Mar  5 14:42:50 2014
-+++ src/Makefile	Wed Mar 12 12:58:14 2014
+$OpenBSD: patch-src_Makefile,v 1.19 2014/09/02 08:11:46 dcoppa Exp $
+--- src/Makefile.orig	Mon Sep  1 17:00:38 2014
++++ src/Makefile	Tue Sep  2 10:05:30 2014
 @@ -14,8 +14,8 @@
  
  release_hdr := $(shell sh -c './mkreleasehdr.sh')
@@ -21,16 +21,16 @@ $OpenBSD: patch-src_Makefile,v 1.18 2014/08/12 10:09:56 dcoppa Exp $
  
  ifeq ($(uname_S),SunOS)
  	# SunOS
-@@ -70,7 +70,7 @@ endif
+@@ -76,7 +76,7 @@ endif
  endif
- 
+ endif
  # Include paths to dependencies
 -FINAL_CFLAGS+= -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src
 +FINAL_CFLAGS+= -I../deps/hiredis -I../deps/linenoise -I${MODLUA_INCL_DIR}
  
  ifeq ($(MALLOC),tcmalloc)
  	FINAL_CFLAGS+= -DUSE_TCMALLOC
-@@ -92,6 +92,10 @@ REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
+@@ -98,6 +98,10 @@ REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
  REDIS_LD=$(QUIET_LINK)$(CC) $(FINAL_LDFLAGS)
  REDIS_INSTALL=$(QUIET_INSTALL)$(INSTALL)
  
@@ -41,7 +41,7 @@ $OpenBSD: patch-src_Makefile,v 1.18 2014/08/12 10:09:56 dcoppa Exp $
  CCCOLOR="\033[34m"
  LINKCOLOR="\033[34;1m"
  SRCCOLOR="\033[33m"
-@@ -107,7 +111,7 @@ endif
+@@ -113,7 +117,7 @@ endif
  
  REDIS_SERVER_NAME=redis-server
  REDIS_SENTINEL_NAME=redis-sentinel
@@ -50,7 +50,7 @@ $OpenBSD: patch-src_Makefile,v 1.18 2014/08/12 10:09:56 dcoppa Exp $
  REDIS_CLI_NAME=redis-cli
  REDIS_CLI_OBJ=anet.o sds.o adlist.o redis-cli.o zmalloc.o release.o anet.o ae.o crc64.o
  REDIS_BENCHMARK_NAME=redis-benchmark
-@@ -162,7 +166,7 @@ endif
+@@ -168,7 +172,7 @@ endif
  
  # redis-server
  $(REDIS_SERVER_NAME): $(REDIS_SERVER_OBJ)
@@ -59,7 +59,7 @@ $OpenBSD: patch-src_Makefile,v 1.18 2014/08/12 10:09:56 dcoppa Exp $
  
  # redis-sentinel
  $(REDIS_SENTINEL_NAME): $(REDIS_SERVER_NAME)
-@@ -202,7 +206,7 @@ distclean: clean
+@@ -208,7 +212,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME)
@@ -68,7 +68,7 @@ $OpenBSD: patch-src_Makefile,v 1.18 2014/08/12 10:09:56 dcoppa Exp $
  
  test-sentinel: $(REDIS_SENTINEL_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -239,7 +243,7 @@ src/help.h:
+@@ -245,7 +249,7 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all

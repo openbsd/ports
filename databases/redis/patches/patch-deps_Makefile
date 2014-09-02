@@ -1,7 +1,7 @@
-$OpenBSD: patch-deps_Makefile,v 1.5 2013/11/29 08:32:24 dcoppa Exp $
---- deps/Makefile.orig	Wed Nov 27 15:21:52 2013
-+++ deps/Makefile	Wed Nov 27 15:23:07 2013
-@@ -35,43 +35,25 @@ endif
+$OpenBSD: patch-deps_Makefile,v 1.6 2014/09/02 08:11:46 dcoppa Exp $
+--- deps/Makefile.orig	Tue Sep  2 10:06:01 2014
++++ deps/Makefile	Tue Sep  2 10:07:06 2014
+@@ -35,48 +35,25 @@ endif
  distclean:
  	-(cd hiredis && $(MAKE) clean) > /dev/null || true
  	-(cd linenoise && $(MAKE) clean) > /dev/null || true
@@ -30,10 +30,15 @@ $OpenBSD: patch-deps_Makefile,v 1.5 2013/11/29 08:32:24 dcoppa Exp $
 -
 -LUA_CFLAGS+= -O2 -Wall -DLUA_ANSI $(CFLAGS)
 -LUA_LDFLAGS+= $(LDFLAGS)
+-# lua's Makefile defines AR="ar rcu", which is unusual, and makes it more
+-# challenging to cross-compile lua (and redis).  These defines make it easier
+-# to fit redis into cross-compilation environments, which typically set AR.
+-AR=ar
+-ARFLAGS=rcu
 -
 -lua: .make-prerequisites
 -	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
--	cd lua/src && $(MAKE) all CFLAGS="$(LUA_CFLAGS)" MYLDFLAGS="$(LUA_LDFLAGS)"
+-	cd lua/src && $(MAKE) all CFLAGS="$(LUA_CFLAGS)" MYLDFLAGS="$(LUA_LDFLAGS)" AR="$(AR) $(ARFLAGS)"
 -
 -.PHONY: lua
 -

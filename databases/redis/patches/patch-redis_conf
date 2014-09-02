@@ -1,6 +1,6 @@
-$OpenBSD: patch-redis_conf,v 1.11 2014/02/04 12:20:46 dcoppa Exp $
---- redis.conf.orig	Tue Feb  4 11:17:21 2014
-+++ redis.conf	Tue Feb  4 13:06:36 2014
+$OpenBSD: patch-redis_conf,v 1.12 2014/09/02 08:11:46 dcoppa Exp $
+--- redis.conf.orig	Mon Sep  1 17:00:38 2014
++++ redis.conf	Tue Sep  2 10:05:30 2014
 @@ -33,12 +33,13 @@
  ################################ GENERAL  #####################################
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-redis_conf,v 1.11 2014/02/04 12:20:46 dcoppa Exp $
  
  ################################# REPLICATION #################################
  
-@@ -336,7 +337,7 @@ slave-priority 100
+@@ -345,7 +346,7 @@ slave-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
