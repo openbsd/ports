@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2014/08/14 17:04:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.190 2014/09/02 12:56:35 espie Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -16,7 +16,7 @@ PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
-FAKE_AS_ROOT =	always-wrap
+#FAKE_AS_ROOT =	always-wrap
 
 REVISION=		0
 
