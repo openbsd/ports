@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.20 2014/06/06 10:13:05 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.21 2014/09/02 08:01:29 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -843,6 +843,8 @@ webapps/docs/api/org/apache/coyote/Adapter.html
 webapps/docs/api/org/apache/coyote/AsyncContextCallback.html
 webapps/docs/api/org/apache/coyote/AsyncStateMachine.html
 webapps/docs/api/org/apache/coyote/Constants.html
+webapps/docs/api/org/apache/coyote/ContainerThreadMarker.html
+webapps/docs/api/org/apache/coyote/ErrorState.html
 webapps/docs/api/org/apache/coyote/InputBuffer.html
 webapps/docs/api/org/apache/coyote/OutputBuffer.html
 webapps/docs/api/org/apache/coyote/Processor.html
@@ -1671,6 +1673,7 @@ webapps/docs/api/org/apache/tomcat/util/http/mapper/Mapper.MapElement.html
 webapps/docs/api/org/apache/tomcat/util/http/mapper/Mapper.Wrapper.html
 webapps/docs/api/org/apache/tomcat/util/http/mapper/Mapper.html
 webapps/docs/api/org/apache/tomcat/util/http/mapper/MappingData.html
+webapps/docs/api/org/apache/tomcat/util/http/mapper/WrapperMappingInfo.html
 webapps/docs/api/org/apache/tomcat/util/http/mapper/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/mapper/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/mapper/package-tree.html
@@ -2476,6 +2479,8 @@ webapps/examples/WEB-INF/classes/sessions/
 webapps/examples/WEB-INF/classes/sessions/DummyCart.class
 webapps/examples/WEB-INF/classes/sessions/DummyCart.java
 webapps/examples/WEB-INF/classes/util/
+webapps/examples/WEB-INF/classes/util/CookieFilter.class
+webapps/examples/WEB-INF/classes/util/CookieFilter.java
 webapps/examples/WEB-INF/classes/util/HTMLFilter.class
 webapps/examples/WEB-INF/classes/util/HTMLFilter.java
 webapps/examples/WEB-INF/classes/validators/

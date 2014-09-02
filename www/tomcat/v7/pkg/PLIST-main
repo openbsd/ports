@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2014/04/15 13:49:24 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2014/09/02 08:01:29 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/tomcat/v7
 @newgroup _tomcat:526
@@ -94,7 +94,7 @@ tomcat/lib/catalina-ant.jar
 tomcat/lib/catalina-ha.jar
 tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
-tomcat/lib/ecj-P20140317-1600.jar
+tomcat/lib/ecj-4.4.jar
 tomcat/lib/el-api.jar
 tomcat/lib/jasper-el.jar
 tomcat/lib/jasper.jar
