@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_postgres_py,v 1.1 2014/09/02 08:41:43 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_postgres_py,v 1.2 2014/09/02 17:18:55 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15426
+https://github.com/saltstack/salt/commit/0342964b5b4978d771108ecbbf128b40632af089
 
 --- salt/modules/postgres.py.orig	Tue Sep  2 10:35:29 2014
 +++ salt/modules/postgres.py	Tue Sep  2 10:35:54 2014

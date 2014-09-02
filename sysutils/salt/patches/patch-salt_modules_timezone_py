@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_timezone_py,v 1.2 2014/09/02 13:30:13 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_timezone_py,v 1.3 2014/09/02 17:18:55 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15427
+https://github.com/saltstack/salt/commit/cd29e5982962c4a9db675496c2a74a61487e3f38
 
 --- salt/modules/timezone.py.orig	Fri Aug  1 20:38:41 2014
 +++ salt/modules/timezone.py	Tue Sep  2 11:07:49 2014

@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_network_py,v 1.1 2014/09/02 14:01:51 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_network_py,v 1.2 2014/09/02 17:18:55 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15430
+https://github.com/saltstack/salt/commit/294ea72d9419e69f3f613e951a7cfd5f4840c66f
 
 --- salt/modules/network.py.orig	Fri Aug  1 20:38:41 2014
 +++ salt/modules/network.py	Tue Sep  2 15:52:59 2014

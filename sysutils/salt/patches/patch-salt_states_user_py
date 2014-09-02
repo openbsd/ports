@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_states_user_py,v 1.1 2014/08/29 15:58:32 ajacoutot Exp $
+$OpenBSD: patch-salt_states_user_py,v 1.2 2014/09/02 17:18:55 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15385
+https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c98
 
 --- salt/states/user.py.orig	Fri Aug  1 20:38:41 2014
 +++ salt/states/user.py	Fri Aug 29 16:58:36 2014

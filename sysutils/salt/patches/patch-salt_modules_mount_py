@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_mount_py,v 1.2 2014/09/02 13:30:13 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_mount_py,v 1.3 2014/09/02 17:18:55 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/15419
+https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527ba
 
 --- salt/modules/mount.py.orig	Fri Aug  1 20:38:41 2014
 +++ salt/modules/mount.py	Mon Sep  1 16:49:33 2014

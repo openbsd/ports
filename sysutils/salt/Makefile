@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/09/02 14:01:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/09/02 17:18:55 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -48,7 +48,7 @@ TEST_DEPENDS =		devel/py-pip \
 pre-configure:
 	perl -pi -e 's,share/man,man,g' ${WRKSRC}/setup.py
 # https://github.com/saltstack/salt/commit/ea2be8bc7813ba2e2ddd05913783887513516c8c
-# https://github.com/saltstack/salt/pull/15403
+# https://github.com/saltstack/salt/commit/81857ea0743f2fd475789044a11310eec7a6d4fc
 	cp ${FILESDIR}/openbsdrcctl.py ${WRKSRC}/salt/modules/
 # https://github.com/saltstack/salt/commit/edcea17892bc8f6c4eec8441db366878ee2cd2bd
 	cp ${FILESDIR}/openbsd_sysctl.py ${WRKSRC}/salt/modules/
