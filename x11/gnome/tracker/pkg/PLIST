@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2014/08/22 12:39:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2014/09/02 15:36:27 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -203,6 +203,7 @@ share/icons/hicolor/32x32/apps/tracker.png
 share/icons/hicolor/48x48/apps/tracker.png
 share/icons/hicolor/scalable/apps/tracker.svg
 share/locale/ar/LC_MESSAGES/tracker.mo
+share/locale/as/LC_MESSAGES/tracker.mo
 share/locale/be@latin/LC_MESSAGES/tracker.mo
 share/locale/ca/LC_MESSAGES/tracker.mo
 share/locale/ca@valencia/LC_MESSAGES/tracker.mo
