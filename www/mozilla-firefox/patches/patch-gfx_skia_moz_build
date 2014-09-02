@@ -1,8 +1,8 @@
-$OpenBSD: patch-gfx_skia_moz_build,v 1.2 2014/07/24 18:03:00 landry Exp $
+$OpenBSD: patch-gfx_skia_moz_build,v 1.3 2014/09/02 16:43:04 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
---- gfx/skia/moz.build.orig	Tue Jul  8 01:18:37 2014
-+++ gfx/skia/moz.build	Thu Jul 10 22:24:44 2014
-@@ -864,6 +864,7 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gtk2',
+--- gfx/skia/moz.build.orig	Wed Jul 23 05:13:04 2014
++++ gfx/skia/moz.build	Thu Jul 24 20:47:22 2014
+@@ -866,6 +866,7 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gtk2',
  
  if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
      DEFINES['SK_BUILD_SSSE3'] = 1
@@ -10,7 +10,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
  
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gonk'):
      DEFINES['SK_FONTHOST_CAIRO_STANDALONE'] = 0
-@@ -878,7 +879,6 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
+@@ -880,7 +881,6 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
  if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
      SOURCES['trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
      SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
