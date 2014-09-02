@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/02 12:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/02 15:04:59 ajacoutot Exp $
 
 COMMENT=		ports tree version scanner
 
 # git clone c17d10110f taken from https://github.com/jasperla/portscout/
 DISTNAME=		portscout-0.8.1.1
 CATEGORIES=		misc
+REVISION=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -32,7 +33,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/portscout.conf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/portscout.pl ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/portscout.pl ${PREFIX}/bin/portscout
 	${INSTALL_DATA_DIR} ${PREFIX}/share/portscout/{sql,templates}/
 	${INSTALL_DATA} ${WRKSRC}/templates/*.html \
 		${PREFIX}/share/portscout/templates/

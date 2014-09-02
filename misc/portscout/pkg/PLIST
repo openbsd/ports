@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 12:31:47 jasper Exp $
-bin/portscout.pl
+@comment $OpenBSD: PLIST,v 1.2 2014/09/02 15:04:59 ajacoutot Exp $
+bin/portscout
 ${P5SITE}/Portscout/
 ${P5SITE}/Portscout.pm
 ${P5SITE}/Portscout/API.pm
@@ -27,7 +27,9 @@ share/doc/portscout/UPDATING
 share/doc/portscout/portscout-portconfig.txt
 share/examples/portscout/
 share/examples/portscout/portscout.conf
+@mode 0640
 @sample ${SYSCONFDIR}/portscout.conf
+@mode
 share/portscout/
 share/portscout/sql/
 share/portscout/sql/mysql_init.sql
