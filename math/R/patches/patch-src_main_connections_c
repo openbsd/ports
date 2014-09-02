@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_connections_c,v 1.13 2014/05/20 11:02:12 dcoppa Exp $
---- src/main/connections.c.orig	Tue May 20 10:07:58 2014
-+++ src/main/connections.c	Tue May 20 10:10:23 2014
-@@ -2902,7 +2902,7 @@ static int text_vfprintf(Rconnection con, const char *
+$OpenBSD: patch-src_main_connections_c,v 1.14 2014/09/02 14:55:37 dcoppa Exp $
+--- src/main/connections.c.orig	Sat Jun 14 00:15:13 2014
++++ src/main/connections.c	Sat Jun 14 16:14:58 2014
+@@ -2901,7 +2901,7 @@ static int text_vfprintf(Rconnection con, const char *
  	b = R_alloc(res + already + 1, sizeof(char));
  	strcpy(b, this->lastline);
  	p = b + already;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_main_connections_c,v 1.13 2014/05/20 11:02:12 dcoppa Exp $
      } else if(res < 0) { /* just a failure indication */
  #define NBUFSIZE (already + 100*BUFSIZE)
  	vmax = vmaxget();
-@@ -5163,7 +5163,8 @@ static Rboolean gzcon_open(Rconnection con)
+@@ -5162,7 +5162,8 @@ static Rboolean gzcon_open(Rconnection con)
  
      if(con->canread) {
  	/* read header */

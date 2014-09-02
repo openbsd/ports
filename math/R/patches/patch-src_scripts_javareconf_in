@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_scripts_javareconf_in,v 1.2 2014/05/20 11:02:12 dcoppa Exp $
---- src/scripts/javareconf.in.orig	Fri May  2 11:53:06 2014
-+++ src/scripts/javareconf.in	Fri May  2 11:55:35 2014
+$OpenBSD: patch-src_scripts_javareconf_in,v 1.3 2014/09/02 14:55:37 dcoppa Exp $
+--- src/scripts/javareconf.in.orig	Mon May 19 00:15:04 2014
++++ src/scripts/javareconf.in	Sat Jun 14 16:14:58 2014
 @@ -6,7 +6,7 @@ fi
  ## pick up configure-time settings
  . "${R_HOME}/etc${R_ARCH}/javaconf"
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_scripts_javareconf_in,v 1.2 2014/05/20 11:02:12 dcoppa Exp $
 +SHLIB_EXT=`${R_HOME}/bin/R CMD config SHLIB_EXT`
  tools_classpath=${R_SHARE_DIR}/java
  
- revision='$Rev: 63871 $'
+ revision='$Rev: 65645 $'
 @@ -218,30 +218,18 @@ if test "${JAVA_LIBS}" = "~autodetect~"; then
  	LD_LIBRARY_PATH=
  	export LD_LIBRARY_PATH

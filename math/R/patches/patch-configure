@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.19 2014/05/20 11:02:12 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.20 2014/09/02 14:55:37 dcoppa Exp $
 
 Use GNU readline instead of our base readline
 
@@ -8,9 +8,9 @@ Fix "--export-dynamic" linker flag
 
 Fix linking with external libintl
 
---- configure.orig	Fri May  2 11:10:27 2014
-+++ configure	Fri May  2 11:20:00 2014
-@@ -20899,12 +20899,12 @@ done
+--- configure.orig	Sat Jun 14 00:16:52 2014
++++ configure	Sat Jun 14 16:14:57 2014
+@@ -20900,12 +20900,12 @@ done
    ## don't use the cached value as we need to rebuild LIBS
    unset ac_cv_lib_readline_rl_callback_read_char
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_callback_read_char in -lreadline" >&5
@@ -25,7 +25,7 @@ Fix linking with external libintl
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -20939,7 +20939,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
+@@ -20940,7 +20940,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
  #define HAVE_LIBREADLINE 1
  _ACEOF
  
@@ -34,7 +34,7 @@ Fix linking with external libintl
  
  fi
  
-@@ -21066,13 +21066,13 @@ fi
+@@ -21067,13 +21067,13 @@ fi
  
  fi
  
@@ -51,7 +51,7 @@ Fix linking with external libintl
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21107,7 +21107,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
+@@ -21108,7 +21108,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
  #define HAVE_LIBREADLINE 1
  _ACEOF
  
@@ -60,7 +60,7 @@ Fix linking with external libintl
  
  fi
  
-@@ -26240,7 +26240,7 @@ if test "${GCC}" = yes; then
+@@ -26241,7 +26241,7 @@ if test "${GCC}" = yes; then
  ## has 32k and so can use -fpic.
  ## However, although the gcc docs do not mention it, it seems s390/s390x
  ## also supports and needs -fPIC
@@ -69,7 +69,7 @@ Fix linking with external libintl
        cpicflags="-fPIC"
        ;;
      *)
-@@ -26251,7 +26251,7 @@ if test "${GCC}" = yes; then
+@@ -26252,7 +26252,7 @@ if test "${GCC}" = yes; then
  fi
  if test "${G77}" = yes; then
    case "${host_cpu}" in
@@ -78,7 +78,7 @@ Fix linking with external libintl
        fpicflags="-fPIC"
        ;;
      *)
-@@ -26261,7 +26261,7 @@ if test "${G77}" = yes; then
+@@ -26262,7 +26262,7 @@ if test "${G77}" = yes; then
  fi
  if test "${GXX}" = yes; then
    case "${host_cpu}" in
@@ -87,7 +87,7 @@ Fix linking with external libintl
        cxxpicflags="-fPIC"
        ;;
      *)
-@@ -26517,7 +26517,7 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
+@@ -26518,7 +26518,7 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
    openbsd*)
      ## looks like ${wl} is not defined here.  Perhaps in libtool code?
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
@@ -96,7 +96,7 @@ Fix linking with external libintl
        shlib_ldflags="-shared -fPIC"
      fi
      ;;
-@@ -26720,13 +26720,6 @@ case "${host_os}" in
+@@ -26721,13 +26721,6 @@ case "${host_os}" in
        LAPACK_LDFLAGS="+s"
      fi
      ;;
@@ -110,7 +110,7 @@ Fix linking with external libintl
  esac
  
  if test -z "${DYLIB_LD}"; then
-@@ -38731,7 +38724,7 @@ fi
+@@ -38736,7 +38729,7 @@ fi
  ## use this to pick out gfortran (even though it is unreliable).
  if test "${ac_cv_fc_compiler_gnu}" = yes; then
    case "${host_cpu}" in
@@ -119,7 +119,7 @@ Fix linking with external libintl
        fcpicflags="-fPIC"
        ;;
      *)
-@@ -42485,7 +42478,7 @@ else
+@@ -42490,7 +42483,7 @@ else
    gt_save_CPPFLAGS="$CPPFLAGS"
              CPPFLAGS="$CPPFLAGS $INCINTL"
              gt_save_LIBS="$LIBS"
@@ -128,7 +128,7 @@ Fix linking with external libintl
                          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <libintl.h>
-@@ -42642,8 +42635,8 @@ $as_echo "$gt_source" >&6; }
+@@ -42647,8 +42640,8 @@ $as_echo "$gt_source" >&6; }
        if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libintl" >&5
  $as_echo_n "checking how to link with libintl... " >&6; }

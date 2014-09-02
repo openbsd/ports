@@ -1,19 +1,28 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2014/05/20 11:02:12 dcoppa Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2014/09/02 14:55:37 dcoppa Exp $
 
 Do not build PDF versions of the R manuals
 
---- Makefile.in.orig	Thu Mar 13 00:02:06 2014
-+++ Makefile.in	Tue May 20 10:42:46 2014
-@@ -121,7 +121,7 @@ svnonly:
+--- Makefile.in.orig	Wed May 21 00:15:03 2014
++++ Makefile.in	Tue Sep  2 16:24:02 2014
+@@ -80,8 +80,6 @@ vignettes: stamp-recommended
+ ## This needs packages built, hence 'R' dependence on 'javaconf'
+ ## javareconf gets remade often.
+ stamp-java : etc/javaconf $(srcdir)/src/scripts/javareconf.in
+-	@$(ECHO) "configuring Java ..."
+-	@-bin/R CMD javareconf
+ 	@touch stamp-java
+ 
+ javaconf: R
+@@ -121,7 +119,7 @@ svnonly:
  	  fi \
  	fi
  
--libR_la = lib/libR$(DYLIB_EXT)
-+libR_la = lib/libR.so.$(LIBR_VERSION)
+-@WANT_R_STATIC_FALSE@libR_la = libR$(DYLIB_EXT)
++@WANT_R_STATIC_FALSE@libR_la = libR.so.$(LIBR_VERSION)
+ @WANT_R_STATIC_TRUE@libR_la = libR.a
  install-libR:
- 	@if test -f $(libR_la); then $(MAKE) install-libR-exists; fi
- install-libR-exists:
-@@ -213,13 +213,6 @@ distdir: $(DISTFILES) vignettes
+ 	@if test -f lib$(R_ARCH)/$(libR_la); then $(MAKE) install-libR-exists; fi
+@@ -216,13 +214,6 @@ distdir: $(DISTFILES) vignettes
  	  cp library/$${d}/doc/*.pdf $(distdir)/src/library/$${d}/inst/doc; \
  	done
  	@(cd $(distdir); tools/link-recommended)

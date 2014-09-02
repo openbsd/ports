@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/05/20 11:02:12 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/09/02 14:55:37 dcoppa Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -570,6 +570,7 @@ lib/R/library/Matrix/html/rcond.html
 lib/R/library/Matrix/html/rep2abI.html
 lib/R/library/Matrix/html/replValue-class.html
 lib/R/library/Matrix/html/rleDiff-class.html
+lib/R/library/Matrix/html/rsparsematrix.html
 lib/R/library/Matrix/html/solve-methods.html
 lib/R/library/Matrix/html/spMatrix.html
 lib/R/library/Matrix/html/sparse.model.matrix.html
@@ -2273,6 +2274,7 @@ lib/R/library/mgcv/help/mgcv.rdx
 lib/R/library/mgcv/help/paths.rds
 lib/R/library/mgcv/html/
 lib/R/library/mgcv/html/00Index.html
+lib/R/library/mgcv/html/Beta.html
 lib/R/library/mgcv/html/Predict.matrix.cr.smooth.html
 lib/R/library/mgcv/html/Predict.matrix.html
 lib/R/library/mgcv/html/Predict.matrix.soap.film.html
@@ -2286,8 +2288,10 @@ lib/R/library/mgcv/html/cSplineDes.html
 lib/R/library/mgcv/html/choose.k.html
 lib/R/library/mgcv/html/columb.html
 lib/R/library/mgcv/html/concurvity.html
+lib/R/library/mgcv/html/coxph.html
 lib/R/library/mgcv/html/exclude.too.far.html
 lib/R/library/mgcv/html/extract.lme.cov.html
+lib/R/library/mgcv/html/family.mgcv.html
 lib/R/library/mgcv/html/fix.family.link.html
 lib/R/library/mgcv/html/fixDependence.html
 lib/R/library/mgcv/html/formXtViX.html
@@ -2309,6 +2313,7 @@ lib/R/library/mgcv/html/gam2objective.html
 lib/R/library/mgcv/html/gamObject.html
 lib/R/library/mgcv/html/gamSim.html
 lib/R/library/mgcv/html/gamm.html
+lib/R/library/mgcv/html/gaulss.html
 lib/R/library/mgcv/html/get.var.html
 lib/R/library/mgcv/html/in.out.html
 lib/R/library/mgcv/html/inSide.html
@@ -2327,11 +2332,13 @@ lib/R/library/mgcv/html/mgcv-parallel.html
 lib/R/library/mgcv/html/model.matrix.gam.html
 lib/R/library/mgcv/html/mono.con.html
 lib/R/library/mgcv/html/mroot.html
+lib/R/library/mgcv/html/mvn.html
 lib/R/library/mgcv/html/negbin.html
 lib/R/library/mgcv/html/new.name.html
 lib/R/library/mgcv/html/notExp.html
 lib/R/library/mgcv/html/notExp2.html
 lib/R/library/mgcv/html/null.space.dimension.html
+lib/R/library/mgcv/html/ocat.html
 lib/R/library/mgcv/html/pcls.html
 lib/R/library/mgcv/html/pdIdnot.html
 lib/R/library/mgcv/html/pdTens.html
@@ -2348,6 +2355,7 @@ lib/R/library/mgcv/html/random.effects.html
 lib/R/library/mgcv/html/residuals.gam.html
 lib/R/library/mgcv/html/rig.html
 lib/R/library/mgcv/html/s.html
+lib/R/library/mgcv/html/scat.html
 lib/R/library/mgcv/html/slanczos.html
 lib/R/library/mgcv/html/smooth.construct.ad.smooth.spec.html
 lib/R/library/mgcv/html/smooth.construct.cr.smooth.spec.html
@@ -2374,6 +2382,8 @@ lib/R/library/mgcv/html/tensor.prod.model.matrix.html
 lib/R/library/mgcv/html/uniquecombs.html
 lib/R/library/mgcv/html/vcov.gam.html
 lib/R/library/mgcv/html/vis.gam.html
+lib/R/library/mgcv/html/ziP.html
+lib/R/library/mgcv/html/ziplss.html
 lib/R/library/mgcv/libs/
 lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/nlme/
