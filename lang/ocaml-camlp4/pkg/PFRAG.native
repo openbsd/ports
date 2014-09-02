@@ -1,0 +1,75 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/09/02 08:47:36 chrisz Exp $
+@bin bin/camlp4o.opt
+@bin bin/camlp4of.opt
+@bin bin/camlp4oof.opt
+@bin bin/camlp4orf.opt
+@bin bin/camlp4r.opt
+@bin bin/camlp4rf.opt
+lib/ocaml/camlp4/Camlp4Bin.cmx
+lib/ocaml/camlp4/Camlp4Bin.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4AstLifter.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4AstLifter.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4ExceptionTracer.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4ExceptionTracer.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4FoldGenerator.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4FoldGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4LocationStripper.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4LocationStripper.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MapGenerator.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MapGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MetaGenerator.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MetaGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4AstLoader.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4AstLoader.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4DebugParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4DebugParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4GrammarParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4GrammarParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4ListComprehension.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4ListComprehension.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4MacroParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4MacroParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlOriginalQuotationExpander.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlOriginalQuotationExpander.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParserParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParserParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlReloadedParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlReloadedParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParserParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParserParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedQuotationExpander.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedQuotationExpander.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationCommon.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationCommon.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationExpander.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationExpander.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AstDumper.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AstDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AutoPrinter.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AutoPrinter.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4NullDumper.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4NullDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlAstDumper.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlAstDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlPrinter.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlPrinter.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlRevisedPrinter.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlRevisedPrinter.o
+lib/ocaml/camlp4/Camlp4Top/Rprint.cmx
+lib/ocaml/camlp4/Camlp4Top/Rprint.o
+lib/ocaml/camlp4/Camlp4Top/Top.cmx
+lib/ocaml/camlp4/Camlp4Top/Top.o
+lib/ocaml/camlp4/camlp4fulllib.a
+lib/ocaml/camlp4/camlp4fulllib.cmxa
+lib/ocaml/camlp4/camlp4lib.a
+lib/ocaml/camlp4/camlp4lib.cmxa
+lib/ocaml/camlp4/camlp4prof.cmx
+lib/ocaml/camlp4/camlp4prof.o
