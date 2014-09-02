@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_cpat_6,v 1.1.1.1 2014/09/02 19:48:39 bcallah Exp $
+--- doc/cpat.6.orig	Tue Aug 19 20:24:00 2014
++++ doc/cpat.6	Tue Aug 19 20:24:15 2014
+@@ -1,7 +1,7 @@
+ .\" Process this file with
+ .\" groff -man -Tascii foo.1
+ .\"
+-.TH CPAT 1 "3 MAR 2006" GAMES "User Manuals"
++.TH CPAT 6 "3 MAR 2006" GAMES "User Manuals"
+ .SH NAME
+ cpat \- a curses-based solitaire game
+ .SH SYNOPSIS
