@@ -1,0 +1,12 @@
+$OpenBSD: patch-portscout_conf,v 1.1.1.1 2014/09/02 12:31:47 jasper Exp $
+--- portscout.conf.orig	Tue Sep  2 13:22:24 2014
++++ portscout.conf	Tue Sep  2 13:22:55 2014
+@@ -51,7 +51,7 @@ ports dir        = /usr/ports          		# Ports root 
+ 
+ html data dir    = %(wwwdir)/portscout 		# Where to put generated HTML
+ 
+-templates dir    = /home/jasper/portscout/templates # Where HTML templates are kept
++templates dir    = ${PREFIX}/share/portscout/templates # Where HTML templates are kept
+ 
+ #-- Limit Processing ----------------------------------------------------------
+ 
