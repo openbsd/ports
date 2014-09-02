@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1277 2014/08/11 11:34:42 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1278 2014/09/02 14:26:39 jasper Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -135,7 +135,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
-	PKG_ARCH GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME 
+	PKG_ARCH GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME PORTSCOUT
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -146,6 +146,7 @@ _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
 # special purpose user settings
 PATCH_CHECK_ONLY ?= No
 REFETCH ?= false
+PORTSCOUT ?=
 
 # Constants used by the ports tree
 
