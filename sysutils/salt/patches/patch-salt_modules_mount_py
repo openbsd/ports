@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_modules_mount_py,v 1.1 2014/09/01 14:56:12 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_mount_py,v 1.2 2014/09/02 13:30:13 ajacoutot Exp $
 
 https://github.com/saltstack/salt/pull/15419
 
@@ -20,7 +20,7 @@ https://github.com/saltstack/salt/pull/15419
 +        ret[comps[3]] = {'device': comps[0],
 +                         'fstype': comps[5],
 +                         'opts': parens[1].split(", "),
-+                         'major': str(nod[4].replace(",", "")),
++                         'major': str(nod[4].strip(",")),
 +                         'minor': str(nod[5]),
 +                         'device_uuid': parens[0]}
 +    return ret
