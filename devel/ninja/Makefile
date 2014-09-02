@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/10 23:20:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/02 07:50:44 dcoppa Exp $
 
 COMMENT =		small build system with a focus on speed
 
-V =			1.4.0
+V =			1.5.1
 GH_ACCOUNT =		martine
 GH_PROJECT =		ninja
 GH_TAGNAME =		v$V
-GH_COMMIT =		63d5b1013cafb2db95687cf446eb5bb68cf6a27a
+GH_COMMIT =		85e13c163d0129216fb382df6a53d11393c4c0c2
 DISTNAME =		${GH_PROJECT}-$V
 
 CATEGORIES =		devel
