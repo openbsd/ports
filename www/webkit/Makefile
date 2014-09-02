@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.122 2014/08/26 21:31:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2014/09/02 14:28:20 jasper Exp $
+
+PORTSCOUT =	limitw:1,even
 
 COMMENT =	open source web browser engine for Gtk+
 

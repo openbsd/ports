@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.12 2013/09/28 09:06:58 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2014/09/02 14:28:20 jasper Exp $
 
-DIST_SUBDIR=		gnome
+PORTSCOUT =		limitw:1,even
+
+DIST_SUBDIR =		gnome
 
 MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
