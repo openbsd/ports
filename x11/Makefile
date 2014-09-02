@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.539 2014/08/30 13:18:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.540 2014/09/02 13:23:30 landry Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -73,6 +73,7 @@
      SUBDIR += gcolor2
      SUBDIR += gentoo
      SUBDIR += gigolo
+     SUBDIR += girara
      SUBDIR += gmrun
      SUBDIR += gmtk
      SUBDIR += gnome
