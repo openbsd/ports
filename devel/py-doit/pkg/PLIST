@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/05/06 23:50:24 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/02 11:16:49 bcallah Exp $
 bin/doit
 lib/python${MODPY_VERSION}/site-packages/doit/
-lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/doit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/doit/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/__main__.py
@@ -26,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/doit/cmd_help.py
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_help.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_ignore.py
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_ignore.pyc
+lib/python${MODPY_VERSION}/site-packages/doit/cmd_info.py
+lib/python${MODPY_VERSION}/site-packages/doit/cmd_info.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_list.py
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_list.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_run.py
