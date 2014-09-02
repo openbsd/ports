@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_colors_c,v 1.2 2011/09/17 13:30:15 jasper Exp $
+$OpenBSD: patch-src_colors_c,v 1.3 2014/09/02 08:44:16 dcoppa Exp $
 "Fix" screen corruption in ncmpc. Colors and attributes can not be mixed.
 Colors are in the low 8 bit, mask them in the appropriate places. 
---- src/colors.c.orig	Sun Jul 24 03:15:09 2011
-+++ src/colors.c	Sat Sep 17 11:16:49 2011
-@@ -88,7 +88,7 @@ colors_update_pair(enum color id)
- 
+--- src/colors.c.orig	Tue Sep  2 10:38:51 2014
++++ src/colors.c	Tue Sep  2 10:39:26 2014
+@@ -85,7 +85,7 @@ colors_update_pair(enum color id)
+ {
  	assert(id > 0 && id < COLOR_END);
  
--	fg = colors[id].color;
-+	fg = colors[id].color & 0xff;
- 	bg = colors[COLOR_BACKGROUND].color;
+-	int fg = colors[id].color;
++	int fg = colors[id].color & 0xff;
+ 	int bg = colors[COLOR_BACKGROUND].color;
  
  	/* If color == COLOR_NONE (negative),
-@@ -275,7 +275,7 @@ colors_use(WINDOW *w, enum color id)
+@@ -270,7 +270,7 @@ colors_use(WINDOW *w, enum color id)
  	if (options.enable_colors) {
  		/* color mode */
  		if ((int)attrs != entry->color || (short)id != pair)
