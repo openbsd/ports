@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_player_c,v 1.16 2014/09/02 08:56:23 dcoppa Exp $
+
+Fix volume control with newer FFmpeg
+
+--- src/player.c.orig	Tue Sep  2 10:52:59 2014
++++ src/player.c	Tue Sep  2 10:53:42 2014
+@@ -36,7 +36,7 @@ THE SOFTWARE.
+  * ffmpeg and libav */
+ #include <libavfilter/version.h>
+ /* ffmpeg >=2.2 */
+-#if LIBAVFILTER_VERSION_MAJOR == 4 && \
++#if LIBAVFILTER_VERSION_MAJOR >= 4 && \
+ 		LIBAVFILTER_VERSION_MICRO >= 100
+ #define HAVE_AVFILTER_GRAPH_SEND_COMMAND
+ #endif
