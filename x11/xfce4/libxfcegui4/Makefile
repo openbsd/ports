@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/04/14 19:52:45 matthieu Exp $
+# $OpenBSD: Makefile,v 1.44 2014/09/02 06:08:00 ajacoutot Exp $
 
 COMMENT=	Xfce4 widget library
 
@@ -23,7 +23,14 @@ LIB_DEPENDS=	x11/xfce4/libxfce4util>=4.8.0 \
 		devel/libglade2
 
 # libxfcegui4 is deprecated, no point in integrating into glade UI
-CONFIGURE_ARGS =	--disable-gladeui
+CONFIGURE_ARGS =	--disable-gladeui \
+			--disable-gtk-doc
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+		ac_cv_path_GTKDOC_REBASE="" \
+		ac_cv_path_GTKDOC_MKPDF=""
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
