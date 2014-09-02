@@ -1,4 +1,4 @@
-$OpenBSD: patch-liblwgeom_lwin_geojson_c,v 1.1 2014/04/24 16:21:27 landry Exp $
+$OpenBSD: patch-liblwgeom_lwin_geojson_c,v 1.2 2014/09/02 12:07:46 landry Exp $
 
 json_tokener.h had this at some point, then it got completely removed..
 
@@ -15,8 +15,8 @@ Author: Eric Haszlakiewicz <erh+git@nimenees.com>
 Date:   Sat Mar 22 21:41:24 2014 -0400
 
 Make the json_tokener_errors array local.  It has been deprecated for a while, and json_tokener_error_desc() should be used instead. 
---- liblwgeom/lwin_geojson.c.orig	Thu Feb 28 18:42:49 2013
-+++ liblwgeom/lwin_geojson.c	Thu Apr 24 18:10:55 2014
+--- liblwgeom/lwin_geojson.c.orig	Thu Apr  3 23:53:20 2014
++++ liblwgeom/lwin_geojson.c	Tue Sep  2 13:35:28 2014
 @@ -17,8 +17,8 @@
  
  #ifdef HAVE_LIBJSON
@@ -28,7 +28,7 @@ Make the json_tokener_errors array local.  It has been deprecated for a while, a
  #include <string.h>
  
  static void geojson_lwerror(char *msg, int error_code)
-@@ -512,7 +512,7 @@ lwgeom_from_geojson(const char *geojson, char **srs)
+@@ -510,7 +510,7 @@ lwgeom_from_geojson(const char *geojson, char **srs)
  	if( jstok->err != json_tokener_success)
  	{
  		char err[256];

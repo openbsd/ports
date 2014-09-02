@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2014/04/21 15:20:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/09/02 12:07:46 landry Exp $
 
 SHARED_ONLY=	Yes
 
-V =	2.1.0
+V =	2.1.3
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
-REVISION=	0
 
 HOMEPAGE=	http://www.postgis.org/
 
@@ -21,6 +20,7 @@ WANTLIB=	c geos_c m pq>=5.3 proj xml2 z
 WANTLIB +=	curl expat gdal geos geotiff gif idn
 WANTLIB +=	jasper jpeg json-c png pthread ssl stdc++ tiff
 WANTLIB +=	freexl pcre spatialite sqlite3
+WANTLIB +=	crypto openjp2
 
 MODULES =	devel/gettext
 
@@ -54,7 +54,7 @@ do-test:
 	regdir=$$(mktemp -t -d postgis-regress.XXXXXX) && \
 	LC_CTYPE=C initdb -D $${regdir} && \
 	LD_PRELOAD=libpthread.so pg_ctl -D $${regdir} -o '-p 12341' -l $${regdir}/log start && \
-	cd ${WRKSRC}/regress && PGPORT=12341 ${MAKE_PROGRAM} check && \
+	cd ${WRKSRC}/regress && PGPORT=12341 ${MAKE_PROGRAM} INSTALL=install check && \
 	pg_ctl -D $${regdir} -o '-p 12341'  stop -m fast
 
 .include <bsd.port.mk>
