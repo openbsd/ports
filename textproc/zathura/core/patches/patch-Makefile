@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/02 13:29:57 landry Exp $
+--- Makefile.orig	Tue Jun 24 22:31:41 2014
++++ Makefile	Tue Aug 26 23:20:25 2014
+@@ -148,7 +148,7 @@ gdb: debug
+ 	$(QUIET)cgdb ${PROJECT}-debug
+ 
+ test: ${OBJECTS}
+-	$(QUIET)make -C tests run
++	$(QUIET)${MAKE} -C tests run
+ 
+ dist: clean build-manpages
+ 	$(QUIET)tar -czf $(TARFILE) --exclude=.gitignore \

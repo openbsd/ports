@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1.1.1 2014/09/02 13:29:57 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+With version 0.1.0, zathura has been rearchitectured to use plugins to
+handle various file types. If you want to view PDF files, you'll need
+to install either zathura-pdf-poppler or zathura-pdf-mupdf. Similarly,
+you can install zathura-cb for comicbook support, zathura-djvu to view
+DJVU files, and zathura-ps to view PostScript files.

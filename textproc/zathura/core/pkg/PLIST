@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 13:29:57 landry Exp $
+@conflict zathura-<=0.0.8.5p1
+@pkgpath textproc/zathura
+@bin bin/zathura
+include/zathura/
+include/zathura/document.h
+include/zathura/links.h
+include/zathura/macros.h
+include/zathura/page.h
+include/zathura/plugin-api.h
+include/zathura/types.h
+include/zathura/version.h
+lib/pkgconfig/zathura.pc
+lib/zathura/
+@man man/man1/zathura.1
+@man man/man5/zathurarc.5
+share/applications/zathura.desktop
+share/dbus-1/
+share/dbus-1/interfaces/
+share/dbus-1/interfaces/org.pwmt.zathura.xml
+share/locale/ca/LC_MESSAGES/zathura.mo
+share/locale/cs/LC_MESSAGES/zathura.mo
+share/locale/de/LC_MESSAGES/zathura.mo
+share/locale/el/LC_MESSAGES/zathura.mo
+share/locale/eo/LC_MESSAGES/zathura.mo
+share/locale/es/LC_MESSAGES/zathura.mo
+share/locale/es_CL/
+share/locale/es_CL/LC_MESSAGES/
+share/locale/es_CL/LC_MESSAGES/zathura.mo
+share/locale/et/LC_MESSAGES/zathura.mo
+share/locale/fr/LC_MESSAGES/zathura.mo
+share/locale/he/LC_MESSAGES/zathura.mo
+share/locale/hr/LC_MESSAGES/zathura.mo
+share/locale/id_ID/
+share/locale/id_ID/LC_MESSAGES/
+share/locale/id_ID/LC_MESSAGES/zathura.mo
+share/locale/it/LC_MESSAGES/zathura.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/zathura.mo
+share/locale/no/LC_MESSAGES/zathura.mo
+share/locale/pl/LC_MESSAGES/zathura.mo
+share/locale/pt_BR/LC_MESSAGES/zathura.mo
+share/locale/ru/LC_MESSAGES/zathura.mo
+share/locale/ta_IN/
+share/locale/ta_IN/LC_MESSAGES/
+share/locale/ta_IN/LC_MESSAGES/zathura.mo
+share/locale/tr/LC_MESSAGES/zathura.mo
+share/locale/uk_UA/
+share/locale/uk_UA/LC_MESSAGES/
+share/locale/uk_UA/LC_MESSAGES/zathura.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
