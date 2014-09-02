@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/10 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/02 16:36:52 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	31.0esr
+MOZILLA_VERSION =	31.1.0esr
 MOZILLA_BRANCH =	esr31
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
+#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	1.0
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
