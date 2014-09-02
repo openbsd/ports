@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/09/02 15:01:12 naddy Exp $
 
 COMMENT=	open source COBOL compiler
 
@@ -26,5 +26,8 @@ CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=  LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4"
+
+# Do not pick up kpathsea/getopt.h from print/texlive/base
+CONFIGURE_ENV+=	ac_cv_header_kpathsea_getopt_h=no
 
 .include <bsd.port.mk>
