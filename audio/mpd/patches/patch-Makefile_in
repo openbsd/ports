@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2014/05/06 10:49:23 dcoppa Exp $
---- Makefile.in.orig	Tue Feb 18 18:39:35 2014
-+++ Makefile.in	Tue Mar 18 22:19:40 2014
-@@ -3209,7 +3209,7 @@ SPARSE_SRC = $(addprefix $(top_srcdir)/,$(filter %.c,$
+$OpenBSD: patch-Makefile_in,v 1.10 2014/09/02 08:33:59 dcoppa Exp $
+--- Makefile.in.orig	Sat Aug 23 14:30:13 2014
++++ Makefile.in	Tue Sep  2 10:27:37 2014
+@@ -3210,7 +3210,7 @@ SPARSE_SRC = $(addprefix $(top_srcdir)/,$(filter %.c,$
  # Documentation
  #
  man_MANS = doc/mpd.1 doc/mpd.conf.5
