@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2014/07/22 10:55:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/09/02 13:04:34 dcoppa Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
-DISTNAME=	wpa_supplicant-2.1
-REVISION=	2
+DISTNAME=	wpa_supplicant-2.2
 CATEGORIES=	security net
 
 HOMEPAGE=	http://hostap.epitest.fi/wpa_supplicant/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
