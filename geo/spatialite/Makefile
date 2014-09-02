@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/20 21:55:28 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/02 09:26:12 landry Exp $
 
      SUBDIR =
      SUBDIR += freexl
@@ -6,6 +6,8 @@
      SUBDIR += gui
      SUBDIR += libgaiagraphics
      SUBDIR += librasterlite
+     SUBDIR += librasterlite2
+     SUBDIR += librewms
      SUBDIR += libspatialite
      SUBDIR += readosm
      SUBDIR += tools
