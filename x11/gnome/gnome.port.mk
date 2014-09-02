@@ -1,14 +1,14 @@
-# $OpenBSD: gnome.port.mk,v 1.89 2014/09/02 14:39:37 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.90 2014/09/02 15:16:26 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
+PORTSCOUT =		limitw:1,even
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE?=		https://wiki.gnome.org/
 MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX?=		.tar.xz
-PORTSCOUT =		limitw:1,even
 CATEGORIES+=		x11/gnome
 .    if ${NO_BUILD:L} == "no"
 MODULES+=		textproc/intltool
