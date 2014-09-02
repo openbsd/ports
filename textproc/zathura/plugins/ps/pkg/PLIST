@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 13:32:54 landry Exp $
+lib/zathura/ps.so
+share/applications/zathura-ps.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
