@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/02 15:12:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/02 17:43:10 ajacoutot Exp $
 
 COMMENT=		ports tree version scanner
 
 # git clone c17d10110f taken from https://github.com/jasperla/portscout/
 DISTNAME=		portscout-0.8.1.1
 CATEGORIES=		misc
-REVISION=		1
+REVISION=		2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
