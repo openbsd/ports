@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/02 15:04:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/02 15:12:22 ajacoutot Exp $
 
 COMMENT=		ports tree version scanner
 
 # git clone c17d10110f taken from https://github.com/jasperla/portscout/
 DISTNAME=		portscout-0.8.1.1
 CATEGORIES=		misc
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -24,6 +24,9 @@ RUN_DEPENDS=		devel/p5-Try-Tiny \
 			textproc/p5-XML-XPath \
 			www/p5-URI \
 			www/p5-libwww
+
+# database
+RUN_DEPENDS +=		p5-DBD-SQLite-*|p5-DBD-Pg-*:databases/p5-DBD-SQLite
 
 PKG_ARCH=		*
 NO_BUILD=		Yes
