@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:42 sthen Exp $
-${P5ARCH}/
+@comment $OpenBSD: PLIST,v 1.3 2014/09/03 07:13:02 benoit Exp $
+@comment ${P5ARCH}/auto/Net/Patricia/Patricia.bs
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/Patricia.pm
-${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/Patricia/
-@comment ${P5ARCH}/auto/Net/Patricia/Patricia.bs
 ${P5ARCH}/auto/Net/Patricia/Patricia.so
 @man man/man3p/Net::Patricia.3p
