@@ -156,6 +156,7 @@
 	native-nanosleep: permit
 	native-pathconf: permit
 	native-pipe: permit
+	native-pipe2: permit
 	native-poll: permit
 	native-ppoll: permit
 	native-pread: permit
