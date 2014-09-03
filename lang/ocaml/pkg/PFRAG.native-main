@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native-main,v 1.2 2014/09/02 09:24:44 chrisz Exp $
+@comment $OpenBSD: PFRAG.native-main,v 1.3 2014/09/03 17:48:19 chrisz Exp $
 %%dynlink%%
 @bin bin/ocamlbuild.native
 @bin bin/ocamlc.opt
@@ -39,6 +39,8 @@ lib/ocaml/camlinternalOO.cmx
 lib/ocaml/camlinternalOO.p.cmx
 lib/ocaml/char.cmx
 lib/ocaml/char.p.cmx
+lib/ocaml/compiler-libs/CSE.cmi
+lib/ocaml/compiler-libs/CSEgen.cmi
 lib/ocaml/compiler-libs/arch.cmi
 lib/ocaml/compiler-libs/asmgen.cmi
 lib/ocaml/compiler-libs/asmlibrarian.cmi
@@ -52,6 +54,7 @@ lib/ocaml/compiler-libs/cmx_format.cmi
 lib/ocaml/compiler-libs/coloring.cmi
 lib/ocaml/compiler-libs/comballoc.cmi
 lib/ocaml/compiler-libs/compilenv.cmi
+lib/ocaml/compiler-libs/deadcode.cmi
 lib/ocaml/compiler-libs/debuginfo.cmi
 lib/ocaml/compiler-libs/emit.cmi
 lib/ocaml/compiler-libs/emitaux.cmi
@@ -88,6 +91,7 @@ lib/ocaml/compiler-libs/selectgen.cmi
 lib/ocaml/compiler-libs/selection.cmi
 lib/ocaml/compiler-libs/spill.cmi
 lib/ocaml/compiler-libs/split.cmi
+lib/ocaml/compiler-libs/strmatch.cmi
 lib/ocaml/complex.cmx
 lib/ocaml/complex.p.cmx
 lib/ocaml/digest.cmx

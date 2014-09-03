@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/09/02 09:24:44 chrisz Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/09/03 17:48:19 chrisz Exp $
 %%native%%
 %%SHARED%%
 bin/ocaml
-bin/ocamlbuild
+@bin bin/ocamlbuild
 bin/ocamlbuild.byte
 bin/ocamlc
 bin/ocamlcp
@@ -88,8 +88,6 @@ lib/ocaml/char.cmi
 lib/ocaml/char.ml
 lib/ocaml/char.mli
 lib/ocaml/compiler-libs/
-lib/ocaml/compiler-libs/CSE.cmi
-lib/ocaml/compiler-libs/CSEgen.cmi
 lib/ocaml/compiler-libs/annot.cmi
 lib/ocaml/compiler-libs/ast_helper.cmi
 lib/ocaml/compiler-libs/ast_mapper.cmi
@@ -112,7 +110,6 @@ lib/ocaml/compiler-libs/config.cmi
 lib/ocaml/compiler-libs/consistbl.cmi
 lib/ocaml/compiler-libs/ctype.cmi
 lib/ocaml/compiler-libs/datarepr.cmi
-lib/ocaml/compiler-libs/deadcode.cmi
 lib/ocaml/compiler-libs/dll.cmi
 lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/env.cmi
@@ -158,7 +155,6 @@ lib/ocaml/compiler-libs/printtyp.cmi
 lib/ocaml/compiler-libs/printtyped.cmi
 lib/ocaml/compiler-libs/runtimedef.cmi
 lib/ocaml/compiler-libs/simplif.cmi
-lib/ocaml/compiler-libs/strmatch.cmi
 lib/ocaml/compiler-libs/stypes.cmi
 lib/ocaml/compiler-libs/subst.cmi
 lib/ocaml/compiler-libs/switch.cmi
