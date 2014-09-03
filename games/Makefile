@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.298 2014/09/02 19:49:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.299 2014/09/03 13:19:57 landry Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -64,6 +64,7 @@
      SUBDIR += dunelegacy
      SUBDIR += dungeon
      SUBDIR += dungeon-crawl
+     SUBDIR += dustrac
      SUBDIR += easyrpg
      SUBDIR += eboard
      SUBDIR += eboard-extras
