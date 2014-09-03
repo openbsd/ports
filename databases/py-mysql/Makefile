@@ -1,37 +1,49 @@
-# $OpenBSD: Makefile,v 1.44 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2014/09/03 13:43:39 benoit Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Python interface to MySQL
 
-MODPY_EGG_VERSION =	1.2.3
+MODPY_EGG_VERSION = 1.2.5
 DISTNAME =	MySQL-python-${MODPY_EGG_VERSION}
 PKGNAME =	py-mysql-${MODPY_EGG_VERSION}
-REVISION =	4
 
 CATEGORIES =	databases
 
-HOMEPAGE =	http://mysql-python.sourceforge.net/
+HOMEPAGE =	https://github.com/farcepest/MySQLdb1
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	crypto m pthread ssl z ${MODPY_WANTLIB}
+EXTRACT_SUFX =	.zip
+
+WANTLIB +=	crypto m pthread ssl z ${MODPY_WANTLIB}
 WANTLIB +=	lib/mysql/mysqlclient_r>=14
 
-MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=mysql-python/}
+MASTER_SITES =	${MASTER_SITE_PYPI:=M/MySQL-python/}
 
 MODULES =	lang/python
+BUILD_DEPENDS =	textproc/py-sphinx
 LIB_DEPENDS =	databases/mysql
 
 NO_TEST =	Yes
 
 MODPY_SETUPTOOLS = Yes
 
+post-extract:
+	chmod -R go-w ${WRKSRC}
+
+DOCSRC =	${WRKSRC}/doc
+
+post-build:
+	cd ${DOCSRC} && ${LOCALBASE}/bin/sphinx-build -N . _build/html
+
+DOCS =		${PREFIX}/share/doc/py-mysql
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-mysql
-	${INSTALL_DATA} ${WRKBUILD}/doc/*.txt ${PREFIX}/share/doc/py-mysql/
+	${INSTALL_DATA_DIR} ${DOCS}
+	cd ${DOCSRC}/_build/html && pax -rw * ${DOCS}
 
 .include <bsd.port.mk>
