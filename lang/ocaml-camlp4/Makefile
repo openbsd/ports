@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/02 08:47:36 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/03 10:22:03 chrisz Exp $
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang
 
 V =		4.02.0
+REVISION =	0
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	camlp4
 GH_TAGNAME =	${V}
@@ -39,9 +40,9 @@ INSTALL_TARGET =	install install-META
 
 
 pre-install:
+	echo PKGDIR=${PREFIX}/lib/ocaml >>${WRKSRC}/config.sh
 	echo LIBDIR=${PREFIX}/lib/ocaml >>${WRKSRC}/config.sh
 	echo BINDIR=${PREFIX}/bin >>${WRKSRC}/config.sh
-	echo PKGDIR=${PREFIX}/lib/ocaml/camlp4 >>${WRKSRC}/config.sh
 
 
 .include <bsd.port.mk>

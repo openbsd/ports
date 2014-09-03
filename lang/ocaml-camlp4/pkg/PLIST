@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 08:47:36 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/03 10:22:03 chrisz Exp $
 %%native%%
 bin/camlp4
 bin/camlp4boot
@@ -81,8 +81,7 @@ lib/ocaml/camlp4/Camlp4Top/Rprint.cmo
 lib/ocaml/camlp4/Camlp4Top/Top.cmi
 lib/ocaml/camlp4/Camlp4Top/Top.cmo
 lib/ocaml/camlp4/Camlp4_config.cmi
-lib/ocaml/camlp4/camlp4/
-lib/ocaml/camlp4/camlp4/META
+lib/ocaml/camlp4/META
 lib/ocaml/camlp4/camlp4fulllib.cma
 lib/ocaml/camlp4/camlp4lib.cma
 lib/ocaml/camlp4/camlp4o.cma
