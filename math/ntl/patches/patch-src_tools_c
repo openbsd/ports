@@ -1,20 +1,21 @@
-$OpenBSD: patch-src_tools_c,v 1.3 2014/03/15 09:13:13 benoit Exp $
---- src/tools.c.orig	Fri Aug 14 14:53:11 2009
-+++ src/tools.c	Sun Oct 24 10:56:43 2010
-@@ -13,13 +13,42 @@ void _ntl_abort_cxx_callback(void)
- }
+$OpenBSD: patch-src_tools_c,v 1.4 2014/09/03 09:46:46 benoit Exp $
+--- src/tools.c.orig	Fri Aug 22 05:06:47 2014
++++ src/tools.c	Mon Aug 25 09:01:51 2014
+@@ -6,6 +6,7 @@
  
+ #include <NTL/new.h>
  
 +#include <cstdio>
-+
- NTL_START_IMPL
  
- void (*ErrorCallback)() = 0;
+ void _ntl_abort_cxx_callback()
+ {
+@@ -17,9 +18,34 @@
  
+ NTL_THREAD_LOCAL void (*ErrorCallback)() = 0;
  
 +/*
 +   The following code differs from vanilla NTL 5.4.2.
-+
+ 
 +   We add a SetErrorCallbackFunction(). This sets a global callback function _function_,
 +   which gets called with parameter _context_ and an error message string whenever Error()
 +   gets called.
@@ -35,12 +36,11 @@ $OpenBSD: patch-src_tools_c,v 1.3 2014/03/15 09:13:13 benoit Exp $
 +   ErrorCallbackContext = context;
 +}
 +
-+
  void Error(const char *s)
  {
 +   if (ErrorCallbackFunction != NULL)
 +      ErrorCallbackFunction(s, ErrorCallbackContext);
-+
++      
     cerr << s << "\n";
     _ntl_abort();
  }
