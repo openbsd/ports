@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1278 2014/09/02 14:26:39 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1279 2014/09/03 09:05:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -926,8 +926,11 @@ _INSTALL_WRAPPER = ${PORTSDIR}/infrastructure/bin/install-wrapper
 
 .if ${FAKE_AS_ROOT:L:Malways-wrap}
 _INSTALL = ${_PERLSCRIPT}/install-wrapper
-.endif
+.elif ${FAKE_AS_ROOT:L:Mno}
 _INSTALL ?= ${WRKDIR}/bin/install
+.else
+_INSTALL ?= /usr/bin/install
+.endif
 
 # A few aliases for *-install targets
 INSTALL_PROGRAM = \
@@ -2560,9 +2563,7 @@ ${_WRKDIR_COOKIE}:
 	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/cc
 	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/c++
 .endif
-.if ${FAKE_AS_ROOT:L} == "yes"
-	@ln -sf /usr/bin/install ${WRKDIR}/bin/install
-.else
+.if ${FAKE_AS_ROOT:L} != "yes"
 	@install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
 .endif
 .if !empty(WRKDIR_LINKNAME)
@@ -2829,7 +2830,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .endif
 	@cat ${MTREE_FILE}| \
 		${_FAKESUDO} /usr/sbin/mtree -U -e -d -p ${WRKINST} >/dev/null
-.if ${FAKE_AS_ROOT:L} == "no"
+.if ${FAKE_AS_ROOT:L} != "yes"
 	@ln -sf /bin/echo ${WRKDIR}/bin/chown
 	@ln -sf /bin/echo ${WRKDIR}/bin/chgrp
 	@install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
