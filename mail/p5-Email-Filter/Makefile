@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/09/03 12:51:49 benoit Exp $
 
 COMMENT = 	library for creating easy email filters
 
-DISTNAME =	Email-Filter-1.032
+DISTNAME =	Email-Filter-1.034
 CATEGORIES =	mail
 
 HOMEPAGE =	http://emailproject.perl.org/
