@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2014/08/21 10:38:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2014/09/03 09:55:19 ajacoutot Exp $
+
+PORTSCOUT=	limitw:1,even
+SHARED_ONLY =	Yes
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
-SHARED_ONLY =	Yes
 
 DISTNAME=	p11-kit-0.20.4
 
