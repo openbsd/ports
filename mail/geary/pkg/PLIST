@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/07/02 19:10:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/09/03 06:23:10 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -58,6 +58,7 @@ share/geary/ui/account_cannot_remove.glade
 share/geary/ui/account_list.glade
 share/geary/ui/account_spinner.glade
 share/geary/ui/app_menu.interface
+share/geary/ui/certificate_warning_dialog.glade
 share/geary/ui/composer.glade
 share/geary/ui/composer_accelerators.ui
 share/geary/ui/find_bar.glade
