@@ -1,2 +1,4 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2012/08/18 22:26:12 avsm Exp $
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2014/09/03 07:41:10 chrisz Exp $
 @bin lib/ocaml/oUnit/oUnit.cmxs
+@bin lib/ocaml/oUnit/oUnitAdvanced.cmxs
+@bin lib/ocaml/oUnit/oUnitThreads.cmxs

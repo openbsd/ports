@@ -1,6 +1,35 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2012/08/18 22:26:12 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.3 2014/09/03 07:41:10 chrisz Exp $
 %%dynlink%%
 lib/ocaml/oUnit/oUnit.a
 lib/ocaml/oUnit/oUnit.cmx
 lib/ocaml/oUnit/oUnit.cmxa
+lib/ocaml/oUnit/oUnit2.cmx
+lib/ocaml/oUnit/oUnitAdvanced.a
+lib/ocaml/oUnit/oUnitAdvanced.cmxa
+lib/ocaml/oUnit/oUnitAssert.cmx
+lib/ocaml/oUnit/oUnitBracket.cmx
+lib/ocaml/oUnit/oUnitCache.cmx
+lib/ocaml/oUnit/oUnitCheckEnv.cmx
+lib/ocaml/oUnit/oUnitChooser.cmx
+lib/ocaml/oUnit/oUnitConf.cmx
+lib/ocaml/oUnit/oUnitCore.cmx
 lib/ocaml/oUnit/oUnitDiff.cmx
+lib/ocaml/oUnit/oUnitLogger.cmx
+lib/ocaml/oUnit/oUnitLoggerHTML.cmx
+lib/ocaml/oUnit/oUnitLoggerHTMLData.cmx
+lib/ocaml/oUnit/oUnitLoggerJUnit.cmx
+lib/ocaml/oUnit/oUnitLoggerStd.cmx
+lib/ocaml/oUnit/oUnitPlugin.cmx
+lib/ocaml/oUnit/oUnitPropList.cmx
+lib/ocaml/oUnit/oUnitResultSummary.cmx
+lib/ocaml/oUnit/oUnitRunner.cmx
+lib/ocaml/oUnit/oUnitRunnerProcesses.cmx
+lib/ocaml/oUnit/oUnitRunnerThreads.cmx
+lib/ocaml/oUnit/oUnitShared.cmx
+lib/ocaml/oUnit/oUnitState.cmx
+lib/ocaml/oUnit/oUnitTest.cmx
+lib/ocaml/oUnit/oUnitTestData.cmx
+lib/ocaml/oUnit/oUnitThreads.a
+lib/ocaml/oUnit/oUnitThreads.cmx
+lib/ocaml/oUnit/oUnitThreads.cmxa
+lib/ocaml/oUnit/oUnitUtils.cmx
