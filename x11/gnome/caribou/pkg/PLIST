@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/04/01 13:21:46 ajacoutot Exp $
-@bin bin/caribou
+@comment $OpenBSD: PLIST,v 1.10 2014/09/03 14:57:14 ajacoutot Exp $
 bin/caribou-preferences
 include/libcaribou/
 include/libcaribou/caribou.h
@@ -51,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/caribou/settings/settings_manager.py
 lib/python${MODPY_VERSION}/site-packages/caribou/settings/settings_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/caribou/settings/settings_manager.pyo
 libexec/antler-keyboard
+@bin libexec/caribou
 share/antler/
 share/antler/dark-key-border.svg
 share/antler/style.css
@@ -65,6 +65,7 @@ share/caribou/layouts/touch/ara.xml
 share/caribou/layouts/touch/il.xml
 share/caribou/layouts/touch/us.xml
 share/dbus-1/services/org.gnome.Caribou.Antler.service
+share/dbus-1/services/org.gnome.Caribou.Daemon.service
 share/examples/caribou/
 share/examples/caribou/xdg/
 @sample ${SYSCONFDIR}/xdg/
