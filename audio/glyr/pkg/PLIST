@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/11 14:59:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/03 19:23:54 jasper Exp $
 @bin bin/glyrc
 include/glyr/
 include/glyr/cache.h
@@ -8,5 +8,4 @@ include/glyr/misc.h
 include/glyr/testing.h
 include/glyr/types.h
 @lib lib/libglyr.so.${LIBglyr_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libglyr.pc
