@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/09/02 17:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2014/09/03 08:53:49 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -42,7 +42,13 @@ RUN_DEPENDS =		net/py-msgpack \
 
 # for tests
 PORTHOME =		${WRKDIST}
-TEST_DEPENDS =		devel/py-pip \
+TEST_DEPENDS =		databases/py-mysql \
+			devel/git \
+			devel/py-pip \
+			devel/py-virtualenv \
+			devel/subversion \
+			net/py-libcloud \
+			net/rabbitmq \
 			sysutils/salt-testing
 
 pre-configure:
@@ -58,7 +64,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/!(*.orig) \
 		${PREFIX}/share/examples/salt/
 
-# FAILED (total=815, skipped=186, passed=590, failures=31, errors=8)
+# FAILED (total=817, skipped=99, passed=684, failures=26, errors=8)
 do-test:
 	ln -sf ${LOCALBASE}/bin/pip-${MODPY_VERSION} ${WRKDIR}/bin/pip
 	@${MODPY_TEST_TARGET}
