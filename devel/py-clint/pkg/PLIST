@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/08 10:27:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/03 11:19:33 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/clint/
-lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/clint/__init__.py
 lib/python${MODPY_VERSION}/site-packages/clint/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/clint/arguments.py
@@ -44,6 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/clint/textui/formatters.py
 lib/python${MODPY_VERSION}/site-packages/clint/textui/formatters.pyc
 lib/python${MODPY_VERSION}/site-packages/clint/textui/progress.py
 lib/python${MODPY_VERSION}/site-packages/clint/textui/progress.pyc
+lib/python${MODPY_VERSION}/site-packages/clint/textui/prompt.py
+lib/python${MODPY_VERSION}/site-packages/clint/textui/prompt.pyc
 lib/python${MODPY_VERSION}/site-packages/clint/utils.py
 lib/python${MODPY_VERSION}/site-packages/clint/utils.pyc
 share/doc/clint/
