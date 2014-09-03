@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/11 07:56:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/09/03 11:11:27 jasper Exp $
 include/rest-0.7/
 include/rest-0.7/rest/
 include/rest-0.7/rest-extras/
@@ -28,7 +28,6 @@ lib/librest-0.7.la
 lib/librest-extras-0.7.a
 lib/librest-extras-0.7.la
 @lib lib/librest-extras-0.7.so.${LIBrest-extras-0.7_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/rest-0.7.pc
 lib/pkgconfig/rest-extras-0.7.pc
 share/gir-1.0/
