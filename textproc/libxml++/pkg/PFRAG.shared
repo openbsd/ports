@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/03/22 08:08:47 ajacoutot Exp $
-@lib lib/libxml++-2.6.so.${LIBxml++-2.6_VERSION}
