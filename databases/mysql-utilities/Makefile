@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/12 12:27:38 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/03 16:28:30 giovanni Exp $
 
 COMMENT =	MySQL management utilities
 
-MODPY_EGG_VERSION = 1.4.3
+MODPY_EGG_VERSION = 1.4.4
 DISTNAME =	mysql-utilities-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 MASTER_SITES =	${MASTER_SITE_MYSQL:=Downloads/MySQLGUITools/}
