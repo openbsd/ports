@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/03 12:12:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/03 19:24:36 jasper Exp $
 
 COMMENT=		ports tree version scanner
 
-# git clone cf5e2968 taken from https://github.com/jasperla/portscout/
-DISTNAME=		portscout-0.8.1.2
+# git clone 415049e taken from https://github.com/jasperla/portscout/
+DISTNAME=		portscout-0.8.1.3
 CATEGORIES=		misc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -22,6 +22,7 @@ RUN_DEPENDS=		devel/p5-Try-Tiny \
 			sysutils/p5-Proc-Queue \
 			textproc/p5-XML-XPath \
 			www/p5-URI \
+			www/p5-XML-Feed \
 			www/p5-libwww
 
 # database

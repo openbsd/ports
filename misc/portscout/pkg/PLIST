@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/03 05:57:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/03 19:24:36 jasper Exp $
 bin/portscout
 ${P5SITE}/Portscout/
 ${P5SITE}/Portscout.pm
@@ -17,6 +17,7 @@ ${P5SITE}/Portscout/SQL/SQLite.pm
 ${P5SITE}/Portscout/SQL/mysql.pm
 ${P5SITE}/Portscout/SiteHandler/
 ${P5SITE}/Portscout/SiteHandler.pm
+${P5SITE}/Portscout/SiteHandler/GitHub.pm
 ${P5SITE}/Portscout/SiteHandler/SourceForge.pm
 ${P5SITE}/Portscout/Template.pm
 ${P5SITE}/Portscout/Util.pm
