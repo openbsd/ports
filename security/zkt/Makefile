@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/03 08:54:41 sthen Exp $
 
 COMMENT=	DNSsec Zone Key Tool
 
 DISTNAME=	zkt-1.1.0
+REVISION=	0
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.hznet.de/dns/zkt/
@@ -14,10 +15,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c ncurses
 
+RUN_DEPENDS=	net/isc-bind
+BUILD_DEPENDS=	net/isc-bind
 MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-configpath=/var/named/etc
+CONFIGURE_ARGS+=	--enable-configpath=/var/named/etc \
+			--enable-bind_util_path=${LOCALBASE}/sbin
 
 NO_TEST=		Yes
 
