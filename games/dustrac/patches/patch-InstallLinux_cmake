@@ -1,0 +1,15 @@
+$OpenBSD: patch-InstallLinux_cmake,v 1.1.1.1 2014/09/03 13:19:00 landry Exp $
+cmake doesnt try to find the desktop files in ${CMAKE_BINARY_DIR}
+--- InstallLinux.cmake.orig	Mon Jan 27 20:16:19 2014
++++ InstallLinux.cmake	Mon Jan 27 20:16:24 2014
+@@ -69,8 +69,8 @@ function(setup_install_targets BIN_PATH DATA_PATH DOC_
+ 
+     if(ReleaseBuild)
+         # Install .desktop files
+-        install(FILES dustrac-game.desktop DESTINATION share/applications)
+-        install(FILES dustrac-editor.desktop DESTINATION share/applications)
++        install(FILES ${CMAKE_BINARY_DIR}/dustrac-game.desktop DESTINATION share/applications)
++        install(FILES ${CMAKE_BINARY_DIR}/dustrac-editor.desktop DESTINATION share/applications)
+ 
+         # Install icons
+         install(FILES data/icons/dustrac-game.png DESTINATION share/pixmaps)
