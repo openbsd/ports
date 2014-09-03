@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2014/08/14 08:20:27 brad Exp $
+# $OpenBSD: Makefile,v 1.240 2014/09/03 06:43:28 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
-V =			20140412
+V =			20140824
 FFMPEG_V =		20140810
 
 SUBST_VARS += 		PREFIX CONFDIR
@@ -15,7 +15,6 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		1
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
@@ -26,7 +25,7 @@ HOMEPAGE =		http://www.mplayerhq.hu/
 PERMIT_PACKAGE_CDROM =		patents
 PERMIT_PACKAGE_FTP =		Yes
 
-WANTLIB =	EGL GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
+WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
 		crypto dv dvdnavmini dvdread enca fontconfig freetype \
 		fribidi jpeg m mng mp3lame ncurses png postproc pthread \

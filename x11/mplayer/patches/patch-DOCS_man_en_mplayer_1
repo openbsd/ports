@@ -1,6 +1,6 @@
-$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.10 2014/05/16 01:34:50 brad Exp $
---- DOCS/man/en/mplayer.1.orig	Wed Feb 26 23:29:38 2014
-+++ DOCS/man/en/mplayer.1	Wed Feb 26 23:31:29 2014
+$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.11 2014/09/03 06:43:28 brad Exp $
+--- DOCS/man/en/mplayer.1.orig	Thu Aug 14 04:26:57 2014
++++ DOCS/man/en/mplayer.1	Thu Aug 14 04:32:10 2014
 @@ -1546,7 +1546,7 @@ May be negative.
  .
  .TP
@@ -10,7 +10,7 @@ $OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.10 2014/05/16 01:34:50 brad Exp $
  .
  .TP
  .B \-channels <number> (also see \-af channels)
-@@ -12313,11 +12313,11 @@ mplayer \-vo zr2 \-vf scale=352:288,zrmjpeg file.avi
+@@ -12315,11 +12315,11 @@ mplayer \-vo zr2 \-vf scale=352:288,zrmjpeg file.avi
  .PP
  .B Play DTS-CD with passthrough:
  .nf
