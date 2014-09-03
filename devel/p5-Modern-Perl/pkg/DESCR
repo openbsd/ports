@@ -1,0 +1,23 @@
+Modern Perl programs use several modules to enable additional features of Perl
+and of the CPAN. Instead of copying and pasting all of these use lines, instead
+write only one:
+
+    use Modern::Perl;
+
+This enables the strict and warnings pragmas, as well as all of the features
+available in Perl 5.10. It also enables C3 method resolution order as
+documented in perldoc mro and loads IO::File and IO::Handle so that you may
+call methods on filehandles. In the future, it may include additional core
+modules and pragmas.
+
+Because so much of this module's behavior uses lexically scoped pragmas, you
+may disable these pragmas within an inner scope with:
+
+    no Modern::Perl;
+
+See http://www.modernperlbooks.com/mt/2009/01/toward-a-modernperl.html for more
+information, http://www.modernperlbooks.com/ for further discussion of Modern
+Perl and its implications, and http://onyxneon.com/books/modern_perl/index.html
+for a freely-downloadable Modern Perl tutorial.
+
+See http://search.cpan.org/dist/Modern-Perl/lib/Modern/Perl.pm for more details.
