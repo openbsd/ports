@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/25 16:15:22 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/03 11:17:59 pascal Exp $
 
 COMMENT =		color management library
 
@@ -7,6 +7,7 @@ GH_PROJECT = 		OpenColorIO
 GH_TAGNAME = 		v1.0.9
 GH_COMMIT =		2b12063e22dbdbff927b5a59d04fe1e30e90c1fe
 DISTNAME =		opencolorio-${GH_TAGNAME:S/v//}
+REVISION =		0
 
 SHARED_LIBS +=  OpenColorIO               0.0 # 1.0
 
