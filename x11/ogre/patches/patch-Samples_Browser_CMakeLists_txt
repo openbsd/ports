@@ -1,0 +1,15 @@
+$OpenBSD: patch-Samples_Browser_CMakeLists_txt,v 1.3 2014/09/03 12:03:51 dcoppa Exp $
+
+unbreak build with cmake-3.0.x
+
+--- Samples/Browser/CMakeLists.txt.orig	Wed Sep  3 13:24:15 2014
++++ Samples/Browser/CMakeLists.txt	Wed Sep  3 13:24:34 2014
+@@ -339,7 +339,7 @@ if (APPLE)
+ 
+     foreach(FWK ${FRAMEWORKS})
+ 	add_custom_command(TARGET SampleBrowser POST_BUILD
+-        COMMAND ARGS if [ -d ${OGRE_BINARY_DIR}/lib/${OGRE_OSX_BUILD_CONFIGURATION}/${FWK}.framework ]\; then ln -s -f ${OGRE_BINARY_DIR}/lib/${OGRE_OSX_BUILD_CONFIGURATION}/${FWK}.framework ${OGRE_SAMPLE_CONTENTS_PATH}/Frameworks/${FWK}.framework\; fi
++        COMMAND ARGS "if [ -d ${OGRE_BINARY_DIR}/lib/${OGRE_OSX_BUILD_CONFIGURATION}/${FWK}.framework ]\; then ln -s -f ${OGRE_BINARY_DIR}/lib/${OGRE_OSX_BUILD_CONFIGURATION}/${FWK}.framework ${OGRE_SAMPLE_CONTENTS_PATH}/Frameworks/${FWK}.framework\; fi"
+ 		)
+     endforeach(FWK)
+ 
