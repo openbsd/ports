@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/08/20 15:28:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/09/03 09:28:13 jasper Exp $
 @bin bin/wnck-urgency-monitor3
 @bin bin/wnckprop3
 include/libwnck-3.0/
@@ -21,7 +21,6 @@ lib/girepository-1.0/Wnck-3.0.typelib
 lib/libwnck-3.a
 lib/libwnck-3.la
 @lib lib/libwnck-3.so.${LIBwnck-3_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libwnck-3.0.pc
 share/gir-1.0/
 share/gir-1.0/Wnck-3.0.gir
@@ -57,6 +56,7 @@ share/gtk-doc/html/libwnck-3.0/ix11.html
 share/gtk-doc/html/libwnck-3.0/ix12.html
 share/gtk-doc/html/libwnck-3.0/ix13.html
 share/gtk-doc/html/libwnck-3.0/ix14.html
+share/gtk-doc/html/libwnck-3.0/left-insensitive.png
 share/gtk-doc/html/libwnck-3.0/left.png
 share/gtk-doc/html/libwnck-3.0/libwnck-3.0.devhelp2
 share/gtk-doc/html/libwnck-3.0/libwnck-Icons-Functions.html
@@ -65,8 +65,10 @@ share/gtk-doc/html/libwnck-3.0/libwnck-Resource-Usage-of-X-Clients.html
 share/gtk-doc/html/libwnck-3.0/libwnck-Version-Information.html
 share/gtk-doc/html/libwnck-3.0/libwnck-Window-Action-Menu.html
 share/gtk-doc/html/libwnck-3.0/overview.html
+share/gtk-doc/html/libwnck-3.0/right-insensitive.png
 share/gtk-doc/html/libwnck-3.0/right.png
 share/gtk-doc/html/libwnck-3.0/style.css
+share/gtk-doc/html/libwnck-3.0/up-insensitive.png
 share/gtk-doc/html/libwnck-3.0/up.png
 share/gtk-doc/html/libwnck-3.0/utils.html
 share/gtk-doc/html/libwnck-3.0/widgets.html
@@ -141,6 +143,9 @@ share/locale/fy/
 share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/libwnck-3.0.mo
 share/locale/ga/LC_MESSAGES/libwnck-3.0.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/libwnck-3.0.mo
 share/locale/gl/LC_MESSAGES/libwnck-3.0.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
