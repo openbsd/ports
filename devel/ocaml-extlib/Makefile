@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/08/22 22:21:53 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/04 07:43:56 chrisz Exp $
 
 COMMENT=		extended standard library for OCaml
 
-DISTNAME=		extlib-1.5.3
-REVISION=		3
+DISTNAME=		extlib-1.6.1
 PKGNAME=		ocaml-${DISTNAME}
 CATEGORIES=		devel
 
@@ -17,6 +16,8 @@ MASTER_SITES=		${HOMEPAGE}/files/
 MODULES=		lang/ocaml
 
 BUILD_DEPENDS=		sysutils/findlib
+
+USE_GMAKE =		Yes
 
 NO_TEST=		Yes
 

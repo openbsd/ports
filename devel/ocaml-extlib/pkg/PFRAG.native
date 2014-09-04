@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2012/11/06 20:52:49 jasper Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2014/09/04 07:43:56 chrisz Exp $
 %%dynlink%%
 lib/ocaml/extlib/IO.cmx
 lib/ocaml/extlib/base64.cmx
@@ -9,6 +9,7 @@ lib/ocaml/extlib/enum.cmx
 lib/ocaml/extlib/extArray.cmx
 lib/ocaml/extlib/extHashtbl.cmx
 lib/ocaml/extlib/extLib.a
+lib/ocaml/extlib/extLib.cmx
 lib/ocaml/extlib/extLib.cmxa
 lib/ocaml/extlib/extList.cmx
 lib/ocaml/extlib/extString.cmx

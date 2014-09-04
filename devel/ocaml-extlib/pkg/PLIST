@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/28 23:21:02 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/04 07:43:56 chrisz Exp $
 %%native%%
 lib/ocaml/extlib/
 lib/ocaml/extlib/IO.cmi
@@ -55,6 +55,11 @@ share/doc/ocaml-extlib/html/ExtArray.Array.html
 share/doc/ocaml-extlib/html/ExtArray.html
 share/doc/ocaml-extlib/html/ExtHashtbl.Hashtbl.html
 share/doc/ocaml-extlib/html/ExtHashtbl.html
+share/doc/ocaml-extlib/html/ExtLib.Array.html
+share/doc/ocaml-extlib/html/ExtLib.Hashtbl.html
+share/doc/ocaml-extlib/html/ExtLib.List.html
+share/doc/ocaml-extlib/html/ExtLib.String.html
+share/doc/ocaml-extlib/html/ExtLib.html
 share/doc/ocaml-extlib/html/ExtList.List.html
 share/doc/ocaml-extlib/html/ExtList.html
 share/doc/ocaml-extlib/html/ExtString.String.html
@@ -85,6 +90,7 @@ share/doc/ocaml-extlib/html/index_attributes.html
 share/doc/ocaml-extlib/html/index_class_types.html
 share/doc/ocaml-extlib/html/index_classes.html
 share/doc/ocaml-extlib/html/index_exceptions.html
+share/doc/ocaml-extlib/html/index_extensions.html
 share/doc/ocaml-extlib/html/index_methods.html
 share/doc/ocaml-extlib/html/index_module_types.html
 share/doc/ocaml-extlib/html/index_modules.html
@@ -100,6 +106,11 @@ share/doc/ocaml-extlib/html/type_ExtArray.Array.html
 share/doc/ocaml-extlib/html/type_ExtArray.html
 share/doc/ocaml-extlib/html/type_ExtHashtbl.Hashtbl.html
 share/doc/ocaml-extlib/html/type_ExtHashtbl.html
+share/doc/ocaml-extlib/html/type_ExtLib.Array.html
+share/doc/ocaml-extlib/html/type_ExtLib.Hashtbl.html
+share/doc/ocaml-extlib/html/type_ExtLib.List.html
+share/doc/ocaml-extlib/html/type_ExtLib.String.html
+share/doc/ocaml-extlib/html/type_ExtLib.html
 share/doc/ocaml-extlib/html/type_ExtList.List.html
 share/doc/ocaml-extlib/html/type_ExtList.html
 share/doc/ocaml-extlib/html/type_ExtString.String.html
