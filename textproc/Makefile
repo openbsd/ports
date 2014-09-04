@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.417 2014/08/31 17:52:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.418 2014/09/04 07:05:42 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -51,6 +51,7 @@
      SUBDIR += hevea
      SUBDIR += hgrep
      SUBDIR += highlight
+     SUBDIR += html-xml-utils
      SUBDIR += hs-HaXml
      SUBDIR += hs-attoparsec
      SUBDIR += hs-attoparsec-enumerator
