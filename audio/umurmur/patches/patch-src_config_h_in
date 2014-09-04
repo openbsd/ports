@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_config_h_in,v 1.1 2014/09/04 12:33:27 dcoppa Exp $
+--- src/config.h.in.orig	Thu Sep  4 11:23:36 2014
++++ src/config.h.in	Thu Sep  4 11:25:44 2014
+@@ -4,6 +4,6 @@
+ #cmakedefine USE_POLARSSL
+ #cmakedefine USE_POLARSSL_TESTCERT
+ #cmakedefine USE_POLARSSL_HAVEGE
+-#define DEFAULT_CONFIG "${CMAKE_INSTALL_PREFIX}/etc/umurmur.conf"
++#define DEFAULT_CONFIG "${SYSCONFDIR}/umurmur/umurmur.conf"
+ 
+ #endif // CONFIG_H

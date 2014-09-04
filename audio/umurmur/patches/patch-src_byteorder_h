@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_byteorder_h,v 1.1 2014/09/04 12:33:27 dcoppa Exp $
+
+Skip linuxism to fix build on LP64 archs that aren't amd64
+
+--- src/byteorder.h.orig	Thu Sep  4 12:25:02 2014
++++ src/byteorder.h	Thu Sep  4 12:26:07 2014
+@@ -55,9 +55,11 @@ typedef uint64_t subblock;
+ #define SWAPPED(x) (x)
+ #elif defined( __x86_64__)
+ #define SWAPPED(x) ({register uint64_t __out, __in = (x); __asm__("bswap %q0" : "=r"(__out) : "0"(__in)); __out;})
+-#else
++#elif defined(LINUX)
+ #include <byteswap.h>
+ #define SWAPPED(x) bswap_64(x)
++#else
++#define SWAPPED(x) htobe64(x)
+ #endif // defined(BYTE_ORDER_BIG_ENDIAN)
+ #else
+ #define BLOCKSIZE 4

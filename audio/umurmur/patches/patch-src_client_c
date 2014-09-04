@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_client_c,v 1.5 2013/10/04 08:25:09 dcoppa Exp $
---- src/client.c.orig	Sun Jun  9 20:56:17 2013
-+++ src/client.c	Tue Oct  1 14:29:00 2013
+$OpenBSD: patch-src_client_c,v 1.6 2014/09/04 12:33:27 dcoppa Exp $
+--- src/client.c.orig	Fri Aug  8 08:37:03 2014
++++ src/client.c	Thu Sep  4 11:17:58 2014
 @@ -28,6 +28,7 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
+    */
 +#include <sys/types.h>
  #include <sys/poll.h>
  #include <sys/socket.h>
  #include <fcntl.h>
-@@ -201,7 +202,7 @@ void Client_token_free(client_t *client)
+@@ -203,7 +204,7 @@ void Client_token_free(client_t *client)
  void recheckCodecVersions(client_t *connectingClient)
  {
  	client_t *client_itr = NULL;
@@ -18,15 +18,7 @@ $OpenBSD: patch-src_client_c,v 1.5 2013/10/04 08:25:09 dcoppa Exp $
  	int users = 0, opus = 0;
  	message_t *sendmsg;
  	struct dlist codec_list, *itr, *save;
-@@ -613,6 +614,7 @@ int Client_send_message_ver(client_t *client, message_
- 		return Client_send_message(client, msg);
- 	else
- 		Msg_free(msg);
-+	return 0;
- }
- 
- int Client_send_message(client_t *client, message_t *msg)
-@@ -680,7 +682,7 @@ void Client_textmessage(client_t *client, char *text)
+@@ -681,7 +682,7 @@ void Client_textmessage(client_t *client, char *text)
  	sendmsg->payload.textMessage->message = message;
  	sendmsg->payload.textMessage->n_tree_id = 1;
  	sendmsg->payload.textMessage->tree_id = tree_id;

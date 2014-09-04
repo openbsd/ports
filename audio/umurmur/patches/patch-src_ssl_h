@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ssl_h,v 1.1 2014/05/23 12:25:32 sthen Exp $
---- src/ssl.h.orig	Fri May 23 13:24:22 2014
-+++ src/ssl.h	Fri May 23 13:24:43 2014
-@@ -36,6 +36,8 @@
- #include <config.h>
- #endif
+$OpenBSD: patch-src_ssl_h,v 1.2 2014/09/04 12:33:27 dcoppa Exp $
+--- src/ssl.h.orig	Fri Aug  8 08:37:03 2014
++++ src/ssl.h	Thu Sep  4 11:16:15 2014
+@@ -34,6 +34,8 @@
+ 
+ #include "config.h"
  
 +#include <string.h>
 +

@@ -1,0 +1,45 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/09/04 12:33:27 dcoppa Exp $
+--- CMakeLists.txt.orig	Fri Aug  8 08:37:03 2014
++++ CMakeLists.txt	Thu Sep  4 13:10:18 2014
+@@ -47,18 +47,13 @@ elseif("${SSL}" STREQUAL "gnutls")
+   endif(GNUTLS_FOUND)
+ endif("${SSL}" STREQUAL "openssl")
+ 
+-check_library_exists(rt clock_gettime "time.h" HAVE_CLOCK_GETTIME_RT)
++check_function_exists(clock_gettime HAVE_CLOCK_GETTIME)
+ 
+-if(NOT HAVE_CLOCK_GETTIME_RT)
+-  check_function_exists(clock_gettime HAVE_CLOCK_GETTIME)
+-  if(NOT HAVE_CLOCK_GETTIME)
+-    check_library_exists(c clock_get_time "mach/time.h" HAVE_CLOCK_GET_TIME)
+-    if(NOT HAVE_CLOCK_GET_TIME)
+-      message(FATAL_ERROR "Didn't find clock_gettime() or clock_get_time!")
+-    endif()
++if(NOT HAVE_CLOCK_GETTIME)
++  check_library_exists(c clock_get_time "mach/time.h" HAVE_CLOCK_GET_TIME)
++  if(NOT HAVE_CLOCK_GET_TIME)
++    message(FATAL_ERROR "Didn't find clock_gettime() or clock_get_time!")
+   endif()
+-else()
+-  set(LIBRT rt)
+ endif()
+ 
+ set(SOURCE "")
+@@ -67,15 +62,14 @@ add_subdirectory(src)
+ configure_file(src/config.h.in ${CMAKE_SOURCE_DIR}/src/config.h)
+ 
+ include_directories(${LIBCONFIG_INCLUDE_DIR} ${PROTOBUFC_INCLUDE_DIR} ${SSLIMP_INCLUDE_DIR})
+-link_directories(${LIBCONFIG_LIB_DIR} ${PROTOBUFC_LIB_DIR} ${SSLIMP_LIB_DIR})
+ 
+ add_executable(umurmurd ${SOURCE})
+ install(TARGETS umurmurd RUNTIME DESTINATION "bin")
+ 
+ find_path(OLD_CONFIG_FILE NAMES "umurmur.conf" PATHS ${CMAKE_INSTALL_PREFIX} PATH_SUFFIXES "etc")
+ if(NOT OLD_CONFIG_FILE)
+-  install(FILES "umurmur.conf.example" DESTINATION "etc" RENAME "umurmur.conf")
++  install(FILES "umurmur.conf.example" DESTINATION "share/examples/umurmur" RENAME "umurmur.conf")
+ endif(NOT OLD_CONFIG_FILE)
+ 
+ add_definitions(${SSLIMP_CFLAGS})
+-target_link_libraries(umurmurd ${LIBCONFIG_LIBRARIES} ${PROTOBUFC_LIBRARIES} ${SSLIMP_LIBRARIES} ${LIBRT})
++target_link_libraries(umurmurd ${LIBCONFIG_LIBRARIES} ${PROTOBUFC_LIBRARIES} ${SSLIMP_LIBRARIES})

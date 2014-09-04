@@ -1,31 +1,31 @@
-$OpenBSD: patch-src_conf_c,v 1.6 2014/01/17 10:18:42 dcoppa Exp $
---- src/conf.c.orig	Wed Jan  1 22:40:30 2014
-+++ src/conf.c	Fri Jan 17 11:15:54 2014
+$OpenBSD: patch-src_conf_c,v 1.7 2014/09/04 12:33:27 dcoppa Exp $
+--- src/conf.c.orig	Thu Sep  4 11:23:40 2014
++++ src/conf.c	Thu Sep  4 11:24:42 2014
 @@ -89,23 +89,23 @@ const char *getStrConf(param_t param)
- 	case CERTIFICATE:
- 		setting = config_lookup(&configuration, "certificate");
- 		if (!setting)
--			return "/etc/umurmur/certificate.crt";
-+			return "${SYSCONFDIR}/umurmur/certificate.crt";
- 		else {
- 			if ((strsetting = config_setting_get_string(setting)) != NULL)
- 				return strsetting;
- 			else
+ 		case CERTIFICATE:
+ 			setting = config_lookup(&configuration, "certificate");
+ 			if (!setting)
 -				return "/etc/umurmur/certificate.crt";
 +				return "${SYSCONFDIR}/umurmur/certificate.crt";
- 		}
- 		break;
- 	case KEY:
- 		setting = config_lookup(&configuration, "private_key");
- 		if (!setting)
--			return "/etc/umurmur/private_key.key";
-+			return "${SYSCONFDIR}/umurmur/private_key.key";
- 		else {
- 			if ((strsetting = config_setting_get_string(setting)) != NULL)
- 				return strsetting;
- 			else
+ 			else {
+ 				if ((strsetting = config_setting_get_string(setting)) != NULL)
+ 					return strsetting;
+ 				else
+-					return "/etc/umurmur/certificate.crt";
++					return "${SYSCONFDIR}/umurmur/certificate.crt";
+ 			}
+ 			break;
+ 		case KEY:
+ 			setting = config_lookup(&configuration, "private_key");
+ 			if (!setting)
 -				return "/etc/umurmur/private_key.key";
 +				return "${SYSCONFDIR}/umurmur/private_key.key";
- 		}
- 		break;
- 	case CAPATH:
+ 			else {
+ 				if ((strsetting = config_setting_get_string(setting)) != NULL)
+ 					return strsetting;
+ 				else
+-					return "/etc/umurmur/private_key.key";
++					return "${SYSCONFDIR}/umurmur/private_key.key";
+ 			}
+ 			break;
+ 		case CAPATH:

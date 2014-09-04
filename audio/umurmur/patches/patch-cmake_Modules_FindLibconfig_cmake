@@ -1,0 +1,17 @@
+$OpenBSD: patch-cmake_Modules_FindLibconfig_cmake,v 1.1 2014/09/04 12:33:27 dcoppa Exp $
+--- cmake/Modules/FindLibconfig.cmake.orig	Fri Aug  8 08:37:03 2014
++++ cmake/Modules/FindLibconfig.cmake	Thu Sep  4 13:27:02 2014
+@@ -1,10 +1,6 @@
+ include(FindPackageHandleStandardArgs)
+ 
+-find_path(LIBCONFIG_INCLUDE_DIR NAMES "libconfig.h" PATHS /usr/pkg /usr/local /usr PATH_SUFFIXES "include")
+-find_path(LIBCONFIG_LIB_DIR NAMES "libconfig.so" "libconfig.dylib" PATHS /usr/pkg /usr/local /usr PATH_SUFFIXES "lib" "lib/${CMAKE_LIBRARY_ARCHITECTURE}")
++find_path(LIBCONFIG_INCLUDE_DIR NAMES "libconfig.h")
++find_library(LIBCONFIG_LIBRARIES NAMES "config")
+ 
+-if(LIBCONFIG_INCLUDE_DIR AND LIBCONFIG_LIB_DIR)
+-  set(LIBCONFIG_LIBRARIES config)
+-endif(LIBCONFIG_INCLUDE_DIR AND LIBCONFIG_LIB_DIR)
+-
+-find_package_handle_standard_args(Libconfig DEFAULT LIBCONFIG_INCLUDE_DIR LIBCONFIG_LIBRARIES LIBCONFIG_LIB_DIR)
++find_package_handle_standard_args(Libconfig REQUIRED_VARS LIBCONFIG_INCLUDE_DIR LIBCONFIG_LIBRARIES)
