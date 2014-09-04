@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.60 2013/09/28 08:50:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2014/09/04 09:36:47 jasper Exp $
+
+PORTSCOUT+=		limit:^3
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"

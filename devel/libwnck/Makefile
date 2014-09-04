@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.60 2014/04/14 19:50:09 matthieu Exp $
+# $OpenBSD: Makefile,v 1.61 2014/09/04 09:36:47 jasper Exp $
+
+PORTSCOUT+=		limit:^2
 
 COMMENT=		window navigator construction kit
 
