@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/22 20:51:43 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/04 21:41:43 rpe Exp $
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -25,19 +25,6 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/Engine.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/Engine.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/Err.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/Err.pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/PublicKey.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/PublicKey.pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/PublicKeyRing.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/PublicKeyRing.pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/RSA.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/RSA.pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/__init__.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/constants.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/constants.pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/packet.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/PGP/packet.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/RC4.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/RC4.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/RSA.py
