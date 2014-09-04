@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/19 10:13:45 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/04 21:28:56 zhuk Exp $
 COMMENT =		RTP (RFC3550) library
-DISTNAME =		ortp-0.22.0
-REVISION =		2
+DISTNAME =		ortp-0.23.0
 
-SHARED_LIBS =		ortp		0.0
+SHARED_LIBS =		ortp		1.0
 
 CATEGORIES =		net multimedia
 HOMEPAGE =		http://www.linphone.org/eng/documentation/dev/ortp.html
@@ -27,8 +26,13 @@ AUTOCONF_VERSION =	2.68
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-zrtp \
 			--enable-ssl-hmac \
-			--enable-tests \
 			--with-srtp=${LOCALBASE}
+
+# the test being disabled is needed for PolarSSL only
+CONFIGURE_ARGS +=	--enable-broken-srtp
+
+# no support for AI_V4MAPPED yet
+CONFIGURE_ENV =		CFLAGS="${CFLAGS} -DAI_V4MAPPED=0"
 
 post-install:
 	rm -Rf ${PREFIX}/share/doc/ortp

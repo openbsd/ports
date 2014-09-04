@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ortp_srtp_c,v 1.1 2014/09/04 21:28:56 zhuk Exp $
+This disables ability to re-send events. If such functionality is
+really needed, the security/libsrtp should be updated (from Git,
+probably: https://github.com/cisco/libsrtp/).
+--- src/ortp_srtp.c.orig	Fri Sep  5 01:06:00 2014
++++ src/ortp_srtp.c	Fri Sep  5 01:06:10 2014
+@@ -306,7 +306,6 @@ srtp_t ortp_srtp_create_configure_session(enum ortp_sr
+ 		
+ 		memset(&policy, 0, sizeof(srtp_policy_t));
+ 		
+-		policy.allow_repeat_tx=1; /*this is necessary to allow telephone-event to be sent 3 times for end of dtmf packet.*/
+ 		outgoing_ssrc.type = ssrc_specific;
+ 		outgoing_ssrc.value = ssrc;
+ 		

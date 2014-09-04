@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/11 09:23:09 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/04 21:28:56 zhuk Exp $
 include/ortp/
 include/ortp/b64.h
 include/ortp/event.h
@@ -21,7 +21,6 @@ include/ortp/zrtp.h
 lib/libortp.a
 lib/libortp.la
 @lib lib/libortp.so.${LIBortp_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/ortp.pc
 share/doc/ortp/
 share/doc/ortp/html/
@@ -32,10 +31,10 @@ share/doc/ortp/html/bc_s.png
 share/doc/ortp/html/bdwn.png
 share/doc/ortp/html/classes.html
 share/doc/ortp/html/closed.png
-share/doc/ortp/html/dir_16eeb95da744a96f9e15e860953064bf.html
-share/doc/ortp/html/dir_576279b7f6e932dc8f6458419aebfb0c.html
-share/doc/ortp/html/dir_61fd887450a8709f7e423cc16e9905b0.html
-share/doc/ortp/html/dir_b2e05bd817db116bd6a53e476ec497c6.html
+share/doc/ortp/html/dir_1a4b54bfab6e4cdf47fbfffc8df9db91.html
+share/doc/ortp/html/dir_38de505ae827f27e0beaf6f2bb7592fd.html
+share/doc/ortp/html/dir_54c07869e09dd228c7196b102b00a635.html
+share/doc/ortp/html/dir_630edbb1b139ecc51a553253b3fc5870.html
 share/doc/ortp/html/doxygen.css
 share/doc/ortp/html/doxygen.png
 share/doc/ortp/html/dynsections.js
