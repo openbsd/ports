@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/04 07:43:56 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/04 19:44:09 chrisz Exp $
 
 COMMENT=		extended standard library for OCaml
 
@@ -15,7 +15,8 @@ MASTER_SITES=		${HOMEPAGE}/files/
 
 MODULES=		lang/ocaml
 
-BUILD_DEPENDS=		sysutils/findlib
+BUILD_DEPENDS=		sysutils/findlib \
+			lang/ocaml-camlp4
 
 USE_GMAKE =		Yes
 
