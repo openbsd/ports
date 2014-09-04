@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/28 09:49:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/09/04 08:20:16 ajacoutot Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -10,6 +10,8 @@ DISTNAME=		heimdal-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-devel-docs=	heimdal-devel-docs-${V}
 PKGNAME-libs=		heimdal-libs-${V}
+
+REVISION-main=		0
 
 CATEGORIES=		security net
 
@@ -90,6 +92,9 @@ CONFIGURE_ENV +=	ac_cv_funclib_db_create=no \
 			ac_cv_header_db3_db_h=no \
 			ac_cv_header_db4_db_h=no \
 			ac_cv_header_db5_db_h=no
+
+# do not pick-up libexecinfo if installed
+CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
 
 # install bins, libs and includes under a non-default PATH/PREFIX
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/heimdal/bin \
