@@ -1,21 +1,18 @@
-$OpenBSD: patch-src_tuxpaint_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+$OpenBSD: patch-src_tuxpaint_c,v 1.2 2014/09/04 11:56:52 ajacoutot Exp $
 
-Fix build with png-1.5.
+64-bit time_t
 
---- src/tuxpaint.c.orig	Tue Jul  5 16:58:39 2011
-+++ src/tuxpaint.c	Tue Jul  5 17:01:44 2011
-@@ -12898,12 +12898,8 @@ static int do_png_save(FILE * fi, const char *const fn
-       {
- 	png_init_io(png_ptr, fi);
+--- src/tuxpaint.c.orig	Thu Sep  4 13:54:51 2014
++++ src/tuxpaint.c	Thu Sep  4 13:54:29 2014
+@@ -12976,9 +12976,9 @@ static void set_chunk_data(unsigned char **chunk_data,
  
--	info_ptr->width = surf->w;
--	info_ptr->height = surf->h;
--	info_ptr->bit_depth = 8;
--	info_ptr->color_type = PNG_COLOR_TYPE_RGB;
--	info_ptr->interlace_type = 1;
--	info_ptr->valid = 0;	/* will be updated by various png_set_FOO() functions */
-+	png_set_IHDR(png_ptr, info_ptr, surf->w, surf->h, 8, PNG_COLOR_TYPE_RGB,
-+ 		     1, PNG_COMPRESSION_TYPE_BASE, PNG_FILTER_TYPE_BASE);
+   strcat(headers, "Tuxpaint\n");
+   strcat(headers, "Tuxpaint_" VER_VERSION "\n");
+-  sprintf(line, "%d%s", uncompressed_size, "\n");
++  sprintf(line, "%lld%s", uncompressed_size, "\n");
+   strcat(headers, line);
+-  sprintf(line, "%d%s", dataLen, "\n");
++  sprintf(line, "%lld%s", dataLen, "\n");
+   strcat(headers, line);
  
- 	png_set_sRGB_gAMA_and_cHRM(png_ptr, info_ptr,
- 				   PNG_sRGB_INTENT_PERCEPTUAL);
+   headersLen = strlen(headers);

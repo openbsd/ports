@@ -1,16 +1,25 @@
-$OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
---- Makefile.orig	Wed Apr 29 07:18:57 2009
-+++ Makefile	Thu Dec 17 16:33:11 2009
-@@ -94,7 +94,7 @@ windows_PREFIX:=/usr/local
- osx_PREFIX:=/usr/local
- beos_PREFIX:=/boot/apps/Games/TuxPaint
+$OpenBSD: patch-Makefile,v 1.7 2014/09/04 11:56:52 ajacoutot Exp $
+--- Makefile.orig	Tue Aug 19 09:28:33 2014
++++ Makefile	Thu Sep  4 13:43:47 2014
+@@ -37,7 +37,7 @@ STDC_LIB:=-lstdc++.r4
+ endif
+ else
+ OS:=linux
+-GPERF:=/usr/bin/gperf
++GPERF:=${LOCALBASE}/bin/gperf
+ endif
+ endif
+ endif
+@@ -110,7 +110,7 @@ osx_PREFIX:=/usr/local
+ 
+ beos_PREFIX=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
  linux_PREFIX:=/usr/local
 -PREFIX:=$($(OS)_PREFIX)
 +PREFIX:=${TRUEPREFIX}
  
- 
  # Root directory to place files when creating packages.
-@@ -125,24 +125,20 @@ MAGIC_PREFIX:=$(DESTDIR)$(PREFIX)/lib/tuxpaint/plugins
+ # PKG_ROOT is the old name for this, and should be undefined.
+@@ -143,19 +143,15 @@ MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib/tuxpaint/plugins
  
  # Docs and man page:
  DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
@@ -21,6 +30,8 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
 +MAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
 +DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
  
+ # BASH tab-completion file:
+ COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
  
  # 'System-wide' Config file:
 -ifeq ($(PREFIX),/usr)
@@ -30,6 +41,9 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
 -endif
 +CONFDIR=${SYSCONFDIR}/tuxpaint
  
+ ifeq ($(SYSNAME),Haiku)
+   CONFDIR:=$(shell finddir B_USER_SETTINGS_DIRECTORY)/TuxPaint
+@@ -164,9 +160,9 @@ endif
  # Icons and launchers:
  ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
  X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
@@ -42,7 +56,7 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  
  # Maemo flag
  MAEMOFLAG:=
-@@ -202,8 +198,9 @@ endif
+@@ -225,8 +221,9 @@ endif
  # The entire set of CFLAGS:
  
  #-ffast-math
@@ -51,13 +65,14 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
 +#OPTFLAGS:=-O2
 +CFLAGS:=-I${LOCALBASE}/include \
 +	$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
- 	$(call comptest,-fvisibility=hidden,) \
+ 	$(if $(filter windows,$(OS)),,$(call comptest,-fvisibility=hidden,)) \
  	-Wcast-align -Wredundant-decls \
  	-Wbad-function-cast -Wwrite-strings \
-@@ -236,19 +233,6 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CUR
+@@ -259,20 +256,6 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CUR
  #
  .PHONY: all
  all:	tuxpaint translations magic-plugins tp-magic-config
+-# thumb-starters
 -	@echo
 -	@echo "--------------------------------------------------------------"
 -	@echo
@@ -74,24 +89,11 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  
  .PHONY: releaseclean
  releaseclean:
-@@ -303,7 +287,10 @@ MOFILES:=$(patsubst src/po/%.po,trans/%.mo,$(POFILES))
- INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
- 
- $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
--	install -D -m 644 $< $@
-+	@cd trans ; \
-+	    for i in `ls *.mo` ; do \
-+	        ${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/locale/`basename $$i .mo`/LC_MESSAGES && \
-+	        ${BSD_INSTALL_DATA} $$i $(DESTDIR)$(PREFIX)/share/locale/`basename $$i .mo`/LC_MESSAGES/tuxpaint.mo ; done
- 
- .PHONY: uninstall-i18n
- uninstall-i18n:
-@@ -405,24 +392,7 @@ install:	install-bin install-data install-man install-
- 		install-magic-plugin-dev \
- 		install-icon install-gettext install-im install-importscript \
- 		install-default-config install-example-stamps \
--		install-example-starters \
--		$(ARCH_INSTALL)
+@@ -451,23 +434,6 @@ install:	install-bin install-data install-man install-
+ 		install-bash-completion \
+ 		install-osk \
+ 		$(ARCH_INSTALL)
+-#install-thumb-starters
 -	@echo
 -	@echo "--------------------------------------------------------------"
 -	@echo
@@ -108,11 +110,10 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
 -	@echo
 -	@echo "Enjoy!"
 -	@echo
-+		install-example-starters
  
  .PHONY: install-magic-plugins
  install-magic-plugins:
-@@ -556,9 +526,8 @@ uninstall:	uninstall-i18n
+@@ -609,9 +575,8 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -122,9 +123,9 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/examples/tuxpaint
 +	${BSD_INSTALL_DATA} src/tuxpaint.conf $(DESTDIR)$(PREFIX)/share/examples/tuxpaint
  
- 
- # Install example stamps
-@@ -566,7 +535,7 @@ install-default-config:
+ # Install BASH completion file:
+ .PHONY: install-bash-completion
+@@ -628,7 +593,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -133,19 +134,19 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -575,7 +544,10 @@ STARTERS:=$(wildcard starters/*.*)
- INSTALLED_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(STARTERS))
+@@ -675,7 +640,10 @@ $(THUMB_STARTERS):
+ 	fi
  
- $(INSTALLED_STARTERS): $(DATA_PREFIX)/%: %
--	install -D -m 644 $< $@
+ $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
+-	@install -D -m 644 $< $@
 +	@cd starters ; \
 +	    ${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/tuxpaint/starters ; \
 +	    for i in `ls *.*` ; do \
-+	        ${BSD_INSTALL_DATA} $$i $(DESTDIR)$(PREFIX)/share/tuxpaint/starters ; done
++	   ${BSD_INSTALL_DATA} $$i $(DESTDIR)$(PREFIX)/share/tuxpaint/starters ; done
  
- # Install example starters
- .PHONY: install-example-starters
-@@ -684,12 +656,9 @@ install-kde-icons:
+ .PHONY: echo-thumb-starters
+ echo-thumb-starters:
+@@ -817,12 +785,9 @@ install-kde-icons:
  install-icon:
  	@echo
  	@echo "...Installing launcher icon graphics..."
@@ -161,19 +162,19 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  
  
  # Install the program:
-@@ -697,9 +666,8 @@ install-icon:
+@@ -830,9 +795,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
 -	@install -d $(BIN_PREFIX)
--	@cp tuxpaint $(BIN_PREFIX)
+-	@cp tuxpaint$(EXE_EXT) $(BIN_PREFIX)
 -	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 +	${BSD_INSTALL_DATA_DIR} $(BIN_PREFIX)
 +	${BSD_INSTALL_PROGRAM} tuxpaint $(BIN_PREFIX)
  
  # Install the required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -765,8 +733,7 @@ install-dlls:
+@@ -909,8 +873,7 @@ install-haiku:
  install-importscript:
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -183,7 +184,7 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  
  
  # Install the data (sound, graphics, fonts):
-@@ -774,12 +741,14 @@ install-importscript:
+@@ -918,12 +881,14 @@ install-importscript:
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -200,7 +201,7 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -790,7 +759,7 @@ install-data:
+@@ -943,7 +908,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -209,7 +210,7 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  	@cp -R docs/* $(DOC_PREFIX)
  	@cp -R magic/magic-docs $(DOC_PREFIX)
  	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
-@@ -802,25 +771,13 @@ install-man:
+@@ -955,25 +920,13 @@ install-man:
  	@echo
  	@echo "...Installing man pages..."
  	@# man1 directory...
@@ -239,21 +240,23 @@ $OpenBSD: patch-Makefile,v 1.6 2011/04/16 17:53:54 sthen Exp $
  
  
  
-@@ -834,7 +791,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/curso
+@@ -987,7 +940,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/curso
  	@echo "...Linking Tux Paint..."
- 	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
  		-o tuxpaint $^ \
 -		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
 +		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS) $(PAPER_LIB) -lpaper
  	@$(RSRC_CMD)
  	@$(MIMESET_CMD)
  
-@@ -997,7 +954,7 @@ linux_PLUGIN_LIBS:=
+@@ -1178,8 +1131,8 @@ linux_PLUGIN_LIBS:=
  PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
  
  #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
 -MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
-+MAGIC_CFLAGS:=-g3 $(OPTFLAGS) -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
- SHARED_FLAGS:=-shared -fpic
+-SHARED_FLAGS:=-shared -fpic -Wl,--warn-shared-textrel
++MAGIC_CFLAGS:=-g3 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ -I${LOCALBASE}/include
++SHARED_FLAGS:=-shared -fpic
  
  MAGIC_C:=$(wildcard magic/src/*.c)
+ MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))

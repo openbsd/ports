@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_manpage_tuxpaint_1,v 1.4 2009/12/17 17:10:34 ajacoutot Exp $
---- src/manpage/tuxpaint.1.orig	Wed Jun  3 08:04:28 2009
-+++ src/manpage/tuxpaint.1	Thu Dec 17 16:33:11 2009
-@@ -717,7 +717,7 @@ Display a lists of all supported languages.
+$OpenBSD: patch-src_manpage_tuxpaint_1,v 1.5 2014/09/04 11:56:52 ajacoutot Exp $
+--- src/manpage/tuxpaint.1.orig	Tue Aug  5 19:06:49 2014
++++ src/manpage/tuxpaint.1	Thu Sep  4 12:43:20 2014
+@@ -893,7 +893,7 @@ Display a lists of all supported languages.
  .TP 8
  .B \-\-nosysconfig
  With this option, \fITux Paint\fP will not attempt to read the
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_manpage_tuxpaint_1,v 1.4 2009/12/17 17:10:34 ajacoutot Exp $
  
  .TP 8
  .B \-\-nolockfile
-@@ -745,7 +745,7 @@ to determine langauge to use, if \fIsetlocale(3)\fP re
+@@ -921,7 +921,7 @@ to determine language to use, if \fIsetlocale(3)\fP re
  
  .SH FILES
  .TP 8
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_manpage_tuxpaint_1,v 1.4 2009/12/17 17:10:34 ajacoutot Exp $
  System-wide configuration file.  It is read first
  (unless the \fI\-\-nosysconfig\fP option was given on the command-line).
  .RS
-@@ -975,4 +975,4 @@ Huang Zuzhen.
+@@ -1184,4 +1184,4 @@ Huang Zuzhen.
  .BR krita (1),
  .BR gcompris (1)
  .PP
