@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.66 2014/09/04 15:56:26 chrisz Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -11,6 +11,7 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 # Do check that the ports that depend on it still work, or repair them. 
 # Don't forget to bump version in ocaml.port.mk, too!
 VERSION=4.02.0
+REVISION=0
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
