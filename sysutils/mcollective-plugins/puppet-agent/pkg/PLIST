@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/24 09:19:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/04 09:52:09 jasper Exp $
 libexec/mcollective/mcollective/agent/puppet.ddl
 libexec/mcollective/mcollective/agent/puppet.rb
 libexec/mcollective/mcollective/aggregate/boolean_summary.ddl
@@ -11,15 +11,10 @@ libexec/mcollective/mcollective/data/resource_data.rb
 libexec/mcollective/mcollective/util/
 libexec/mcollective/mcollective/util/puppet_agent_mgr/
 libexec/mcollective/mcollective/util/puppet_agent_mgr.rb
-libexec/mcollective/mcollective/util/puppet_agent_mgr/common.rb
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v2/
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v2/manager.rb
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v2/unix.rb
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v2/windows.rb
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v3/
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v3/manager.rb
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v3/unix.rb
-libexec/mcollective/mcollective/util/puppet_agent_mgr/v3/windows.rb
+libexec/mcollective/mcollective/util/puppet_agent_mgr/mgr_v2.rb
+libexec/mcollective/mcollective/util/puppet_agent_mgr/mgr_v3.rb
+libexec/mcollective/mcollective/util/puppet_agent_mgr/mgr_windows.rb
+libexec/mcollective/mcollective/util/puppet_server_address_validation.rb
 libexec/mcollective/mcollective/util/puppetrunner.rb
 libexec/mcollective/mcollective/validator/puppet_resource_validator.ddl
 libexec/mcollective/mcollective/validator/puppet_resource_validator.rb
