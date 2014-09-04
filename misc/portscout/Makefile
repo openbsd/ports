@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/03 19:24:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/04 18:38:04 jasper Exp $
 
 COMMENT=		ports tree version scanner
 
-# git clone 415049e taken from https://github.com/jasperla/portscout/
-DISTNAME=		portscout-0.8.1.3
+# git clone 702b8944 taken from https://github.com/jasperla/portscout/
+DISTNAME=		portscout-0.8.1.4
 CATEGORIES=		misc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -17,10 +17,12 @@ MASTER_SITES=		http://distfiles.nl/
 
 MODULES=		perl
 
-RUN_DEPENDS=		devel/p5-Try-Tiny \
+RUN_DEPENDS=		converters/p5-JSON \
+			devel/p5-Try-Tiny \
 			mail/p5-MIME-Lite \
 			sysutils/p5-Proc-Queue \
 			textproc/p5-XML-XPath \
+			www/p5-HTML-Parser \
 			www/p5-URI \
 			www/p5-XML-Feed \
 			www/p5-libwww
