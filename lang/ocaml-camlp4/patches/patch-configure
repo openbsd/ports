@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/09/04 16:46:37 chrisz Exp $
+
+fix bytecode only building. Already included upstream.
+
+--- configure.orig	Thu Sep  4 18:35:17 2014
++++ configure	Thu Sep  4 18:35:40 2014
+@@ -45,6 +45,12 @@ LIBDIR="${LIBDIR:-$standard_library}"
+ BINDIR="${BINDIR:-`dirname $OCAMLC`}"
+ PKGDIR="${PKGDIR:-$standard_library/camlp4}"
+ 
++if [ -x "`which ocamlopt`" ]; then
++ OB_FLAGS=""
++else
++ OB_FLAGS="-byte-plugin"
++fi
++
+ cat >> config.sh <<EOF
+ A="$ext_lib"
+ O="$ext_obj"
+@@ -52,4 +58,5 @@ EXE="$ext_exe"
+ LIBDIR="$LIBDIR"
+ BINDIR="$BINDIR"
+ PKGDIR="$PKGDIR"
++OB_FLAGS=$OB_FLAGS
+ EOF

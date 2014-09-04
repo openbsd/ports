@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/04 16:46:37 chrisz Exp $
+
+fix bytecode only building. Already included upstream.
+
+--- Makefile.orig	Thu Sep  4 18:35:01 2014
++++ Makefile	Thu Sep  4 18:35:04 2014
+@@ -1,6 +1,8 @@
+ OB := ocamlbuild -classic-display -no-ocamlfind
+ -include config.sh
+ 
++OB += $(OB_FLAGS)
++
+ .PHONY: default
+ default: byte
+ 
