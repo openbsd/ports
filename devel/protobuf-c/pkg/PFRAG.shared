@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/07/08 08:58:02 dcoppa Exp $
-@lib lib/libprotobuf-c.so.${LIBprotobuf-c_VERSION}

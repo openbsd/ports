@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2014/09/04 12:32:45 dcoppa Exp $
+--- Makefile.am.orig	Tue Aug  5 20:35:02 2014
++++ Makefile.am	Thu Sep  4 10:48:13 2014
+@@ -185,26 +185,9 @@ EXTRA_DIST += \
+ CLEANFILES += $(BUILT_SOURCES)
+ 
+ dist-hook:
+-	rm -vf `find $(top_distdir) -name '*.pb-c.[ch]' -o -name '*.pb.cc' -o -name '*.pb.h'`
++	rm -f `find $(top_distdir) -name '*.pb-c.[ch]' -o -name '*.pb.cc' -o -name '*.pb.h'`
+ 
+ install-data-hook:
+ 	$(MKDIR_P) $(DESTDIR)$(includedir)/google/protobuf-c
+-	cd $(DESTDIR)$(includedir)/google/protobuf-c && rm -vf protobuf-c.h
++	cd $(DESTDIR)$(includedir)/google/protobuf-c && rm -f protobuf-c.h
+ 	cd $(DESTDIR)$(includedir)/google/protobuf-c && $(LN_S) ../../protobuf-c/protobuf-c.h protobuf-c.h
+-
+-#
+-# documentation
+-#
+-
+-if HAVE_DOXYGEN
+-stamp-html: $(DOXYGEN_INPUT_FILES) $(top_builddir)/Doxyfile $(top_srcdir)/DoxygenLayout.xml $(include_HEADERS) $(nobase_include_HEADERS)
+-	$(AM_V_GEN) $(DOXYGEN)
+-	@touch $@
+-html-local: stamp-html
+-
+-clean-local:
+-	rm -rf $(top_builddir)/html $(top_builddir)/stamp-html
+-endif
+-
+-EXTRA_DIST += Doxyfile.in
+-EXTRA_DIST += DoxygenLayout.xml

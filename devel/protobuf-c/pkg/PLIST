@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/08 08:58:02 dcoppa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/09/04 12:32:45 dcoppa Exp $
 @bin bin/protoc-c
 include/google/
 include/google/protobuf-c/
-include/google/protobuf-c/protobuf-c-dispatch.h
-include/google/protobuf-c/protobuf-c-private.h
-include/google/protobuf-c/protobuf-c-rpc.h
 include/google/protobuf-c/protobuf-c.h
+include/protobuf-c/
+include/protobuf-c/protobuf-c.h
 lib/libprotobuf-c.a
 lib/libprotobuf-c.la
-lib/pkgconfig/
+@lib lib/libprotobuf-c.so.${LIBprotobuf-c_VERSION}
 lib/pkgconfig/libprotobuf-c.pc
