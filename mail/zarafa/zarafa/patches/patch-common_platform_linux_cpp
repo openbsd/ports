@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.4 2010/06/30 02:46:48 ajacoutot Exp $
---- common/platform.linux.cpp.orig	Mon May 31 19:28:57 2010
-+++ common/platform.linux.cpp	Mon Jun 14 09:16:43 2010
+$OpenBSD: patch-common_platform_linux_cpp,v 1.5 2014/09/04 20:30:45 robert Exp $
+--- common/platform.linux.cpp.orig	Sun Aug 24 12:27:07 2014
++++ common/platform.linux.cpp	Thu Sep  4 22:29:31 2014
 @@ -70,7 +70,7 @@
  #define ICONV_CONST const
  #elif OPENBSD
@@ -10,3 +10,26 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.4 2010/06/30 02:46:48 ajacoutot Ex
  #else
  // linux
  #define ICONV_CONST
+@@ -96,22 +96,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
+ 		return MAPI_E_INVALID_PARAMETER;
+ 
+ #if HAVE_UUID_CREATE
+-#ifdef OPENBSD
+-	uuid_t *g = NULL;
+-	void *vp = NULL;
+-	size_t n = 0;
+-	// error codes are not checked!
+-	uuid_create(&g);
+-	uuid_make(g, UUID_MAKE_V1);
+-	uuid_export(g, UUID_FMT_BIN, &vp, &n);
+-	memcpy(pNewGUID, &vp, UUID_LEN_BIN);
+-	uuid_destroy(g);
+-#else
+ 	uuid_t g;
+ 	uint32_t uid_ret;
+ 	uuid_create(&g, &uid_ret);
+ 	memcpy(pNewGUID, &g, sizeof(g));
+-#endif // OPENBSD
+ #else
+ 	uuid_t g;
+ 	uuid_generate(g);
