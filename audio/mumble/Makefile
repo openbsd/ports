@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/06/20 05:46:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/04 14:35:47 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		low-latency voice chat client
 
-DISTNAME =		mumble-1.2.7
+DISTNAME =		mumble-1.2.8
 
 CATEGORIES =		audio
 
@@ -67,8 +67,12 @@ ALL_TARGET =		release
 NO_TEST =		Yes
 
 do-configure:
-	cd ${WRKSRC} && QTDIR=${WRKDIR}/bin \
+	cd ${WRKSRC}/ && QTDIR=${WRKDIR}/bin \
 		${LOCALBASE}/bin/qmake4 ${QMAKE_ARGS}
+
+pre-build:
+	cd ${WRKSRC}/src/mumble/ && QTDIR=${WRKDIR}/bin \
+		${LOCALBASE}/bin/lrelease4 *.ts
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/release/mumble \
