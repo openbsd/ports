@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_CMakeLists_txt,v 1.1.1.1 2014/09/04 05:37:41 brad Exp $
+--- source/CMakeLists.txt.orig	Thu Aug 21 17:49:02 2014
++++ source/CMakeLists.txt	Sun Aug 31 10:30:23 2014
+@@ -55,9 +55,9 @@ endif()
+ 
+ if(UNIX)
+     SET(PLATFORM_LIBS pthread)
+-    if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++    if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+         SET(PLATFORM_LIBS ${PLATFORM_LIBS} rt)
+-    endif(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++    endif(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ endif(UNIX)
+ 
+ # Compiler detection
