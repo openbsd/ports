@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2014/09/04 09:36:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2014/09/05 14:06:33 ajacoutot Exp $
 
-PORTSCOUT+=	limit:^2
+PORTSCOUT=	limit:^2\.28
 
 COMMENT=	Python bindings for glib2 gobject (deprecated)
 
