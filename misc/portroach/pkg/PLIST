@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/05 14:36:47 jasper Exp $
+@pkgpath misc/portscout
+bin/portroach
+${P5SITE}/Portroach/
+${P5SITE}/Portroach.pm
+${P5SITE}/Portroach/API.pm
+${P5SITE}/Portroach/Config.pm
+${P5SITE}/Portroach/Const.pm
+${P5SITE}/Portroach/DataSrc/
+${P5SITE}/Portroach/DataSrc.pm
+${P5SITE}/Portroach/DataSrc/Ports.pm
+${P5SITE}/Portroach/Make.pm
+${P5SITE}/Portroach/SQL/
+${P5SITE}/Portroach/SQL.pm
+${P5SITE}/Portroach/SQL/Pg.pm
+${P5SITE}/Portroach/SQL/SQLite.pm
+${P5SITE}/Portroach/SQL/mysql.pm
+${P5SITE}/Portroach/SiteHandler/
+${P5SITE}/Portroach/SiteHandler.pm
+${P5SITE}/Portroach/SiteHandler/CPAN.pm
+${P5SITE}/Portroach/SiteHandler/GitHub.pm
+${P5SITE}/Portroach/SiteHandler/Hackage.pm
+${P5SITE}/Portroach/SiteHandler/RubyGems.pm
+${P5SITE}/Portroach/SiteHandler/SourceForge.pm
+${P5SITE}/Portroach/Template.pm
+${P5SITE}/Portroach/Util.pm
+@man man/man1/portroach.1
+share/doc/portroach/
+share/doc/portroach/README.md
+share/doc/portroach/portroach-portconfig.txt
+share/examples/portroach/
+share/examples/portroach/portroach.conf.dist
+@mode 0640
+@sample ${SYSCONFDIR}/portroach.conf
+@mode
+share/portroach/
+share/portroach/sql/
+share/portroach/sql/mysql_init.sql
+share/portroach/sql/pgsql_destroy.sql
+share/portroach/sql/pgsql_init.sql
+share/portroach/sql/sqlite_destroy.sql
+share/portroach/sql/sqlite_init.sql
+share/portroach/templates/
+share/portroach/templates/assets/
+share/portroach/templates/assets/portroach.js
+share/portroach/templates/index.html
+share/portroach/templates/maintainer.html
+share/portroach/templates/reminder.mail
+share/portroach/templates/restricted-ports.html

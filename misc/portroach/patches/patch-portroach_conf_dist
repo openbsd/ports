@@ -1,0 +1,21 @@
+$OpenBSD: patch-portroach_conf_dist,v 1.1.1.1 2014/09/05 14:36:47 jasper Exp $
+--- portroach.conf.dist.orig	Fri Sep  5 15:56:15 2014
++++ portroach.conf.dist	Fri Sep  5 16:23:58 2014
+@@ -42,7 +42,7 @@ ports dir        = /usr/ports          		# Ports root 
+ 
+ html data dir    = %(wwwdir)/portroach 		# Where to put generated HTML
+ 
+-templates dir    = /usr/local/share/portroach/templates # Where HTML templates are kept
++templates dir    = ${PREFIX}/share/portroach/templates # Where HTML templates are kept
+ 
+ #-- Limit Processing ----------------------------------------------------------
+ 
+@@ -74,7 +74,7 @@ indexfile enable    = true   				# Use INDEX if needed
+ # The sender address will have the local hostname attached if it
+ # is a bare username.
+ 
+-mail enable      = false
++mail enable      = true
+ 
+ mail from        = portroach 				# Sender address
+ mail subject     = OpenBSD ports you maintain which are out of date
