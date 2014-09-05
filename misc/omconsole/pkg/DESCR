@@ -1,3 +1,0 @@
-The omconsole utility connects to the secondary port of the FTDI R2232
-chip on the OpenMoko debug board to provide access to the serial
-console of the phone for debugging purposes.
