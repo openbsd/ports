@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/15 12:08:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.30 2014/09/05 09:50:18 dcoppa Exp $
 
 COMMENT =		minimalistic text based status bar
 
-DISTNAME =		xmobar-0.20.1
+DISTNAME =		xmobar-0.21
 CATEGORIES =		x11
 HOMEPAGE =		http://projects.haskell.org/xmobar
 
