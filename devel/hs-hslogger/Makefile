@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2014/01/17 14:54:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2014/09/05 09:48:13 dcoppa Exp $
 
 COMMENT =		versatile logging framework
 
-DISTNAME =		hslogger-1.2.3
+DISTNAME =		hslogger-1.2.4
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/hslogger/wiki
 
