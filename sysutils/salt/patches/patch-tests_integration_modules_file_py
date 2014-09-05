@@ -1,0 +1,33 @@
+$OpenBSD: patch-tests_integration_modules_file_py,v 1.1 2014/09/05 08:27:20 ajacoutot Exp $
+
+https://github.com/saltstack/salt/commit/1ef276575fa6f95767c70e90b7f77bfdfcc5a045
+
+--- tests/integration/modules/file.py.orig	Thu Sep  4 09:39:18 2014
++++ tests/integration/modules/file.py	Thu Sep  4 09:40:49 2014
+@@ -58,7 +58,7 @@ class FileModuleTest(integration.ModuleCase):
+         user = getpass.getuser()
+         if sys.platform == 'darwin':
+             group = 'staff'
+-        elif sys.platform.startswith(('linux', 'freebsd')):
++        elif sys.platform.startswith(('linux', 'freebsd', 'openbsd')):
+             group = grp.getgrgid(pwd.getpwuid(os.getuid()).pw_gid).gr_name
+         ret = self.run_function('file.chown', arg=[self.myfile, user, group])
+         self.assertIsNone(ret)
+@@ -86,7 +86,7 @@ class FileModuleTest(integration.ModuleCase):
+         user = getpass.getuser()
+         if sys.platform == 'darwin':
+             group = 'staff'
+-        elif sys.platform.startswith(('linux', 'freebsd')):
++        elif sys.platform.startswith(('linux', 'freebsd', 'openbsd')):
+             group = grp.getgrgid(pwd.getpwuid(os.getuid()).pw_gid).gr_name
+         ret = self.run_function('file.chown',
+                                 arg=['/tmp/nosuchfile', user, group])
+@@ -106,7 +106,7 @@ class FileModuleTest(integration.ModuleCase):
+     def test_chgrp(self):
+         if sys.platform == 'darwin':
+             group = 'everyone'
+-        elif sys.platform.startswith(('linux', 'freebsd')):
++        elif sys.platform.startswith(('linux', 'freebsd', 'openbsd')):
+             group = grp.getgrgid(pwd.getpwuid(os.getuid()).pw_gid).gr_name
+         ret = self.run_function('file.chgrp', arg=[self.myfile, group])
+         self.assertIsNone(ret)

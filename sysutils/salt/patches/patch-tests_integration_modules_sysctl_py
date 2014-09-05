@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_integration_modules_sysctl_py,v 1.1 2014/09/05 08:27:20 ajacoutot Exp $
+
+https://github.com/saltstack/salt/commit/1ef276575fa6f95767c70e90b7f77bfdfcc5a045
+
+--- tests/integration/modules/sysctl.py.orig	Thu Sep  4 09:39:28 2014
++++ tests/integration/modules/sysctl.py	Thu Sep  4 09:44:11 2014
+@@ -37,6 +37,14 @@ class SysctlModuleTest(integration.ModuleCase):
+                            1,
+                            'Multiline value was parsed wrong')
+ 
++    @skipIf(not sys.platform.startswith('openbsd'), 'OpenBSD specific')
++    def test_show_openbsd(self):
++        ret = self.run_function('sysctl.show')
++        self.assertIn('kern.ostype', ret, 'kern.ostype absent')
++        self.assertEqual(
++            ret.get('kern.ostype'), 'OpenBSD', 'Incorrect kern.ostype'
++        )
++
+     @skipIf(not sys.platform.startswith('darwin'), 'Darwin (OS X) specific')
+     def test_show_darwin(self):
+         ret = self.run_function('sysctl.show')

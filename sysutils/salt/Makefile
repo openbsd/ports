@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/09/03 09:11:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/09/05 08:27:20 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -18,7 +18,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2014.1.10
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		14
+REVISION =		15
 
 CATEGORIES =		sysutils net devel
 
@@ -55,6 +55,7 @@ pre-configure:
 	perl -pi -e 's,share/man,man,g' ${WRKSRC}/setup.py
 # https://github.com/saltstack/salt/commit/ea2be8bc7813ba2e2ddd05913783887513516c8c
 # https://github.com/saltstack/salt/commit/81857ea0743f2fd475789044a11310eec7a6d4fc
+# https://github.com/saltstack/salt/commit/3737b08e0d201ab33949f1fc5bc930e0ba2b6fee
 	cp ${FILESDIR}/openbsdrcctl.py ${WRKSRC}/salt/modules/
 # https://github.com/saltstack/salt/commit/edcea17892bc8f6c4eec8441db366878ee2cd2bd
 	cp ${FILESDIR}/openbsd_sysctl.py ${WRKSRC}/salt/modules/
@@ -66,7 +67,7 @@ post-install:
 
 # FAILED (total=817, skipped=99, passed=684, failures=26, errors=8)
 do-test:
-	ln -sf ${LOCALBASE}/bin/pip-${MODPY_VERSION} ${WRKDIR}/bin/pip
-	@${MODPY_TEST_TARGET}
+	cd ${WRKSRC} && \
+		${MODPY_BIN} tests/runtests.py -v
 
 .include <bsd.port.mk>

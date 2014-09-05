@@ -1,0 +1,33 @@
+$OpenBSD: patch-tests_integration_modules_cmdmod_py,v 1.1 2014/09/05 08:27:20 ajacoutot Exp $
+
+https://github.com/saltstack/salt/commit/1ef276575fa6f95767c70e90b7f77bfdfcc5a045
+
+--- tests/integration/modules/cmdmod.py.orig	Thu Sep  4 09:39:12 2014
++++ tests/integration/modules/cmdmod.py	Thu Sep  4 09:40:22 2014
+@@ -75,7 +75,7 @@ class CMDModuleTest(integration.ModuleCase):
+         from salt.modules import cmdmod
+ 
+         cmdmod.__grains__ = {'os': 'darwin'}
+-        if sys.platform.startswith('freebsd'):
++        if sys.platform.startswith(('freebsd', 'openbsd')):
+             shell = '/bin/sh'
+         else:
+             shell = '/bin/bash'
+@@ -107,7 +107,7 @@ class CMDModuleTest(integration.ModuleCase):
+         '''
+         cmd.run_stderr
+         '''
+-        if sys.platform.startswith('freebsd'):
++        if sys.platform.startswith(('freebsd', 'openbsd')):
+             shell = '/bin/sh'
+         else:
+             shell = '/bin/bash'
+@@ -124,7 +124,7 @@ class CMDModuleTest(integration.ModuleCase):
+         '''
+         from salt._compat import string_types
+ 
+-        if sys.platform.startswith('freebsd'):
++        if sys.platform.startswith(('freebsd', 'openbsd')):
+             shell = '/bin/sh'
+         else:
+             shell = '/bin/bash'

@@ -1,0 +1,42 @@
+$OpenBSD: patch-tests_unit_utils_find_test_py,v 1.1 2014/09/05 08:27:20 ajacoutot Exp $
+
+https://github.com/saltstack/salt/commit/1ef276575fa6f95767c70e90b7f77bfdfcc5a045
+
+--- tests/unit/utils/find_test.py.orig	Thu Sep  4 09:39:34 2014
++++ tests/unit/utils/find_test.py	Thu Sep  4 09:41:17 2014
+@@ -229,7 +229,7 @@ class TestFind(TestCase):
+             ValueError, salt.utils.find.GroupOption, 'group', 'notexist'
+         )
+ 
+-        if sys.platform.startswith(('darwin', 'freebsd')):
++        if sys.platform.startswith(('darwin', 'freebsd', 'openbsd')):
+             group_name = 'wheel'
+         else:
+             group_name = 'root'
+@@ -238,7 +238,7 @@ class TestFind(TestCase):
+ 
+     @skipIf(sys.platform.startswith('win'), 'No /dev/null on Windows')
+     def test_group_option_match(self):
+-        if sys.platform.startswith(('darwin', 'freebsd')):
++        if sys.platform.startswith(('darwin', 'freebsd', 'openbsd')):
+             group_name = 'wheel'
+         else:
+             group_name = 'root'
+@@ -414,7 +414,7 @@ class TestPrintOption(TestCase):
+     @skipIf(sys.platform.startswith('Windows'), "no /dev/null on windows")
+     def test_print_group(self):
+         option = salt.utils.find.PrintOption('print', 'group')
+-        if sys.platform.startswith(('darwin', 'freebsd')):
++        if sys.platform.startswith(('darwin', 'freebsd', 'openbsd')):
+             group_name = 'wheel'
+         else:
+             group_name = 'root'
+@@ -508,7 +508,7 @@ class TestFinder(TestCase):
+             str(finder.criteria[0].__class__)[-13:-2], 'OwnerOption'
+         )
+ 
+-        if sys.platform.startswith(('darwin', 'freebsd')):
++        if sys.platform.startswith(('darwin', 'freebsd', 'openbsd')):
+             group_name = 'wheel'
+         else:
+             group_name = 'root'

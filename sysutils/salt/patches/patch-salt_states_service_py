@@ -1,0 +1,15 @@
+$OpenBSD: patch-salt_states_service_py,v 1.1 2014/09/05 08:27:20 ajacoutot Exp $
+
+https://github.com/saltstack/salt/commit/3c2d2feaf85eed754c5f5c52cd6ea836bc75d834
+
+--- salt/states/service.py.orig	Fri Aug  1 20:38:41 2014
++++ salt/states/service.py	Wed Sep  3 13:52:25 2014
+@@ -84,7 +84,7 @@ def _enable(name, started, result=True, **kwargs):
+             return ret
+ 
+     # Service can be enabled
+-    if __salt__['service.enabled'](name):
++    if __salt__['service.enabled'](name, **kwargs):
+         # Service is enabled
+         if started is True:
+             ret['changes'][name] = True
