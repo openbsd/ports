@@ -1,15 +1,19 @@
-$OpenBSD: patch-source_CMakeLists_txt,v 1.1.1.1 2014/09/04 05:37:41 brad Exp $
+$OpenBSD: patch-source_CMakeLists_txt,v 1.2 2014/09/05 15:29:41 brad Exp $
+
+https://bitbucket.org/multicoreware/x265/commits/139d6b2a1b19
+
 --- source/CMakeLists.txt.orig	Thu Aug 21 17:49:02 2014
-+++ source/CMakeLists.txt	Sun Aug 31 10:30:23 2014
-@@ -55,9 +55,9 @@ endif()
++++ source/CMakeLists.txt	Thu Sep  4 13:07:00 2014
+@@ -55,9 +55,10 @@ endif()
  
  if(UNIX)
      SET(PLATFORM_LIBS pthread)
 -    if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-+    if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++    find_library(LIBRT rt)
++    if(LIBRT)
          SET(PLATFORM_LIBS ${PLATFORM_LIBS} rt)
 -    endif(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-+    endif(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++    endif()
  endif(UNIX)
  
  # Compiler detection

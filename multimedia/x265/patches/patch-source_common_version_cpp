@@ -1,4 +1,7 @@
-$OpenBSD: patch-source_common_version_cpp,v 1.1.1.1 2014/09/04 05:37:41 brad Exp $
+$OpenBSD: patch-source_common_version_cpp,v 1.2 2014/09/05 15:29:41 brad Exp $
+
+https://bitbucket.org/multicoreware/x265/commits/821c2eef4d52
+
 --- source/common/version.cpp.orig	Thu Aug 21 17:49:02 2014
 +++ source/common/version.cpp	Sun Aug 31 12:44:20 2014
 @@ -63,6 +63,8 @@
