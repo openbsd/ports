@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.104 2014/04/02 09:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.105 2014/09/05 17:39:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		technical diagrams drawing tool
 
 GNOME_PROJECT=		dia
-GNOME_VERSION=		0.97.2
-REVISION=		11
+GNOME_VERSION=		0.97.3
 
 CATEGORIES=		graphics
 
@@ -44,7 +43,7 @@ CONFIGURE_ARGS=		--without-hardbooks \
 
 post-install:
 	mv ${PREFIX}/share/man/fr ${PREFIX}/man
-	rmdir ${PREFIX}/share/man/ ${PREFIX}/share/oaf/
+	rmdir ${PREFIX}/share/man
 	rm ${PREFIX}/lib/dia/*.{a,la}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2013/12/07 09:18:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2014/09/05 17:39:03 ajacoutot Exp $
 @pkgpath graphics/dia,gnome
 @bin bin/dia
 lib/dia/
@@ -1674,7 +1674,6 @@ share/dia/sheets/Misc.sheet
 share/dia/sheets/Pneumatic.sheet
 share/dia/sheets/SADT.sheet
 share/dia/sheets/SDL.sheet
-share/dia/sheets/SISSI/
 share/dia/sheets/UML/
 share/dia/sheets/UML.sheet
 share/dia/sheets/UML/aggregation.png
@@ -1793,6 +1792,7 @@ share/locale/sr/LC_MESSAGES/dia.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/dia.mo
+share/locale/sr@latin/LC_MESSAGES/dia.mo
 share/locale/sv/LC_MESSAGES/dia.mo
 share/locale/ta/LC_MESSAGES/dia.mo
 share/locale/th/LC_MESSAGES/dia.mo
