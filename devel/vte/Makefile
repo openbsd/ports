@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.115 2014/09/03 19:42:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2014/09/05 14:45:02 jasper Exp $
 
-PORTSCOUT +=		limit:^0\.2
+PORTROACH +=		limit:^0\.2
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte

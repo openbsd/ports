@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2014/09/04 09:36:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2014/09/05 14:45:02 jasper Exp $
 
-PORTSCOUT+=	limit:^2
+PORTROACH+=	limit:^2
 
 COMMENT=	gtk+2 spelling checker
 DISTNAME=	gtkspell-2.0.16

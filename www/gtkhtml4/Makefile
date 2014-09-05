@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2014/09/04 09:36:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/09/05 14:45:02 jasper Exp $
 
-PORTSCOUT+=		limit:^4
+PORTROACH+=		limit:^4
 
 SHARED_ONLY=		Yes
 

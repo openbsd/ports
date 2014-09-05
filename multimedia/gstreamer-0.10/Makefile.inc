@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2014/09/05 06:29:12 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2014/09/05 14:45:02 jasper Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core          base library
@@ -15,7 +15,7 @@
 # support for most video codecs is provided by
 #     gstreamer-plugins-ffmpeg
 
-PORTSCOUT=		limit:^0\.10
+PORTROACH=		limit:^0\.10
 SHARED_ONLY=		Yes
 
 CATEGORIES ?=		multimedia devel

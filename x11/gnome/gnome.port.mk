@@ -1,9 +1,9 @@
-# $OpenBSD: gnome.port.mk,v 1.92 2014/09/03 19:42:16 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.93 2014/09/05 14:45:02 jasper Exp $
 #
 # Module for GNOME related ports
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
-PORTSCOUT+=		limitw:1,even
+PORTROACH+=		limitw:1,even
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE?=		https://wiki.gnome.org/

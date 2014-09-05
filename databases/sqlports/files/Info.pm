@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.14 2014/09/02 14:26:39 jasper Exp $
+# $OpenBSD: Info.pm,v 1.15 2014/09/05 14:45:02 jasper Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -76,7 +76,7 @@ our $vars = {
     PKGSPEC => 'AnyVar',
     PREFIX => 'PrefixKeyVar',
     PKG_ARCH => 'ArchKeyVar',
-    PORTSCOUT => 'DefinedVar',
+    PORTROACH => 'DefinedVar',
     PSEUDO_FLAVOR => 'AnyVar',
     PSEUDO_FLAVORS => 'PseudoFlavorsVar',
     TEST_DEPENDS => 'TestDependsVar',

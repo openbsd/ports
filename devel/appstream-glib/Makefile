@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/03 14:00:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/05 14:45:02 jasper Exp $
 
-PORTSCOUT=		limitw:1,even
+PORTROACH=		limitw:1,even
 SHARED_ONLY=		Yes
 
 COMMENT=		library for AppStream metadata

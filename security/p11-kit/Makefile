@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2014/09/03 09:55:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2014/09/05 14:45:02 jasper Exp $
 
-PORTSCOUT=	limitw:1,even
+PORTROACH=	limitw:1,even
 SHARED_ONLY =	Yes
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
