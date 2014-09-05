@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2014/09/02 12:32:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.167 2014/09/05 14:39:08 jasper Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -76,7 +76,7 @@
      SUBDIR += pdmenu
      SUBDIR += pfm
      SUBDIR += plan
-     SUBDIR += portscout
+     SUBDIR += portroach
      SUBDIR += py-imdb
      SUBDIR += py-memcached
      SUBDIR += pymissile
