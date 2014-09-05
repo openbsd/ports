@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/08/23 12:09:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/09/05 22:11:38 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -83,6 +83,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ard_live.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ard_live.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ard_mediathek.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ard_mediathek.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/artetv.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/artetv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/azubutv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/azubutv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/bambuser.py
@@ -91,6 +93,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/beattv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/beattv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/chaturbate.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/chaturbate.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_jwplayer.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_jwplayer.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_swf.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_swf.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/connectcast.py
@@ -147,6 +151,10 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/picarto.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/picarto.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/rtve.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/rtve.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/seemeplay.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/seemeplay.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/speedrunslive.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/speedrunslive.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/stream.py
