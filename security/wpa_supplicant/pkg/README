@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2014/07/22 10:55:41 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2014/09/05 13:18:41 dcoppa Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ Configure your interface in the normal way using ifconfig(8) commands
 or via /etc/hostname.<iface>. You must explicitly set 802.1x mode; it is
 also recommended that the BSSID is configured explicitly, e.g.:
 
-# ifconfig rsu0 nwid humppa bssid 11:22:33:44:55:66 wpa wpaakms 802.1x up
+# ifconfig athn0 nwid humppa bssid 11:22:33:44:55:66 wpa wpaakms 802.1x up
 
 Access-point scanning is not currently supported by the OpenBSD code in
 wpa_supplicant, so ap_scan=0 should be set in ${SYSCONFDIR}/wpa_supplicant.conf.

@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_rsn_supp_wpa_c,v 1.1 2014/09/05 13:18:41 dcoppa Exp $
+
+commit b7c61c9d4e968e7254112631a9f6a1a1f8ef6f7f
+Author: Jouni Malinen <j@w1.fi>
+Date:   Sat Jun 14 00:20:04 2014 +0300
+
+Fix validation of EAPOL-Key length with AES key wrap
+
+The additional eight octet field was removed from keydatalen without
+proper validation of the Key Data Length field. It would have been
+possible for an invalid EAPOL-Key frame to be processed in a way that
+ends up reading beyond the buffer. In theory, this could have also
+resulted in writing beyond the EAPOL-Key frame buffer, but that is
+unlikely to be feasible due to the AES key wrap validation step on
+arbitrary memory contents.
+
+Signed-off-by: Jouni Malinen <j@w1.fi>
+
+--- src/rsn_supp/wpa.c.orig	Wed Jun  4 15:26:14 2014
++++ src/rsn_supp/wpa.c	Fri Sep  5 14:33:27 2014
+@@ -1501,7 +1501,7 @@ static int wpa_supplicant_decrypt_key_data(struct wpa_
+ 		   ver == WPA_KEY_INFO_TYPE_AES_128_CMAC ||
+ 		   sm->key_mgmt == WPA_KEY_MGMT_OSEN) {
+ 		u8 *buf;
+-		if (keydatalen % 8) {
++		if (keydatalen < 8 || keydatalen % 8) {
+ 			wpa_msg(sm->ctx->msg_ctx, MSG_WARNING,
+ 				"WPA: Unsupported AES-WRAP len %d",
+ 				keydatalen);
