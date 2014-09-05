@@ -1,7 +1,25 @@
-$OpenBSD: patch-src_formisc_c,v 1.1 2012/03/17 10:47:19 sthen Exp $
---- src/formisc.c.orig	Sat Mar 17 10:43:03 2012
-+++ src/formisc.c	Sat Mar 17 10:43:20 2012
-@@ -115,7 +115,7 @@ void loadchar(c)const int c;		      /* append one char
+$OpenBSD: patch-src_formisc_c,v 1.2 2014/09/05 13:52:19 sthen Exp $
+
+Hunk #1: CVE-2014-3618, heap overflow in formail when parsing addresses
+with unbalanced quotes.
+
+--- src/formisc.c.orig	Fri Jun 29 03:20:45 2001
++++ src/formisc.c	Thu Sep  4 16:15:48 2014
+@@ -84,12 +84,11 @@ normal:	   *target++= *start++;
+ 	case '"':*target++=delim='"';start++;
+       }
+      ;{ int i;
+-	do
++	while(*start)
+ 	   if((i= *target++= *start++)==delim)	 /* corresponding delimiter? */
+ 	      break;
+ 	   else if(i=='\\'&&*start)		    /* skip quoted character */
+ 	      *target++= *start++;
+-	while(*start);						/* anything? */
+       }
+      hitspc=2;
+    }
+@@ -115,7 +114,7 @@ void loadchar(c)const int c;		      /* append one char
    buf[buffilled++]=c;
  }
  
