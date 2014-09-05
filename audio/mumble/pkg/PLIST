@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/01 10:28:43 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/05 08:22:04 dcoppa Exp $
 @bin bin/mumble
 lib/mumble/
 lib/mumble/liblink.so
@@ -6,6 +6,23 @@ lib/mumble/libmanual.so
 @man man/man1/mumble.1
 share/applications/mumble.desktop
 share/icons/hicolor/scalable/apps/mumble.svg
+share/mumble/
+share/mumble/locale/
+share/mumble/locale/mumble_cs.qm
+share/mumble/locale/mumble_da.qm
+share/mumble/locale/mumble_de.qm
+share/mumble/locale/mumble_en.qm
+share/mumble/locale/mumble_es.qm
+share/mumble/locale/mumble_fr.qm
+share/mumble/locale/mumble_it.qm
+share/mumble/locale/mumble_ja.qm
+share/mumble/locale/mumble_pl.qm
+share/mumble/locale/mumble_pt_BR.qm
+share/mumble/locale/mumble_ru.qm
+share/mumble/locale/mumble_sv.qm
+share/mumble/locale/mumble_tr.qm
+share/mumble/locale/mumble_zh_CN.qm
+share/mumble/locale/mumble_zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

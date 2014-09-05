@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mumble_main_cpp,v 1.1 2014/09/05 08:22:04 dcoppa Exp $
+
+Fix loading of translation files
+
+--- src/mumble/main.cpp.orig	Fri Sep  5 09:30:12 2014
++++ src/mumble/main.cpp	Fri Sep  5 09:39:53 2014
+@@ -330,7 +330,8 @@ int main(int argc, char **argv) {
+ 		a.installTranslator(&translator);
+ 
+ 	QTranslator loctranslator;
+-	if (loctranslator.load(QLatin1String("mumble_") + locale, a.applicationDirPath()))
++	QString localeDir = QLatin1String(MUMTEXT(LOCALE_PATH));
++	if (loctranslator.load(QLatin1String("mumble_") + locale, localeDir))
+ 		a.installTranslator(&loctranslator);
+ 
+ 	QTranslator qttranslator;

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/04 14:35:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/05 08:22:04 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		low-latency voice chat client
 
 DISTNAME =		mumble-1.2.8
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -60,6 +61,7 @@ QMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			CONFIG+=no-update \
 			CONFIG+=packaged \
 			CONFIG+=release \
+			DEFINES+="LOCALE_PATH=${PREFIX}/share/mumble/locale" \
 			DEFINES+="PLUGIN_PATH=${PREFIX}/lib/mumble"
 
 ALL_TARGET =		release
@@ -80,6 +82,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/mumble
 	${INSTALL_DATA} ${WRKBUILD}/release/plugins/lib*.so \
 		${PREFIX}/lib/mumble/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mumble/locale
+	${INSTALL_DATA} ${WRKBUILD}/src/mumble/*.qm \
+		${PREFIX}/share/mumble/locale/
 	${INSTALL_MAN} ${WRKBUILD}/man/mumble.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/icons/hicolor/scalable/apps
