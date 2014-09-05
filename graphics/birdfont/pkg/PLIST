@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/08/22 03:15:46 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/09/05 01:54:15 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-export
 @bin bin/birdfont-import
@@ -16,11 +16,15 @@ share/birdfont/icons/active_selected_edit_point.png
 share/birdfont/icons/active_selected_edit_point_cubic.png
 share/birdfont/icons/add_background_image.png
 share/birdfont/icons/add_new_grid.png
+share/birdfont/icons/auto_trace_resolution.png
+share/birdfont/icons/auto_trace_simplify.png
+share/birdfont/icons/autotrace.png
 share/birdfont/icons/available_characters.png
 share/birdfont/icons/background_help_lines.png
 share/birdfont/icons/cancel_save.png
 share/birdfont/icons/circle.png
 share/birdfont/icons/close_paths.png
+share/birdfont/icons/contrast_threshold.png
 share/birdfont/icons/convert_point.png
 share/birdfont/icons/corner.png
 share/birdfont/icons/create_line.png
@@ -42,6 +46,7 @@ share/birdfont/icons/full_glyph.png
 share/birdfont/icons/generate_html_document.png
 share/birdfont/icons/height.png
 share/birdfont/icons/help_lines.png
+share/birdfont/icons/high_contrast_background.png
 share/birdfont/icons/info_icon.png
 share/birdfont/icons/insert_background.png
 share/birdfont/icons/insert_last_glyph.png
@@ -70,6 +75,7 @@ share/birdfont/icons/resize.png
 share/birdfont/icons/resize_handle.png
 share/birdfont/icons/reverse_path.png
 share/birdfont/icons/rotation.png
+share/birdfont/icons/scale_background.png
 share/birdfont/icons/select_all.png
 share/birdfont/icons/selected_edit_point.png
 share/birdfont/icons/selected_edit_point_cubic.png
