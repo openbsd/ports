@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1247 2014/09/03 10:08:47 landry Exp $
+# $OpenBSD: Makefile,v 1.1248 2014/09/06 11:53:05 armani Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -72,7 +72,6 @@
      SUBDIR += cppunit
      SUBDIR += cryptopp
      SUBDIR += cscope
-     SUBDIR += ctm
      SUBDIR += cunit
      SUBDIR += cutils
      SUBDIR += cvs20hg
