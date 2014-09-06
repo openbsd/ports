@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/10/22 13:52:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/06 07:24:37 jasper Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -14,17 +14,25 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/bin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/checkplugin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/checks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/configuration.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/data.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/token.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches/string_percent.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches/string_prepend.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/optparser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_classes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_comments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_conditionals.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_documentation.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_nodes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_resources.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_strings.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_variables.rb
@@ -38,12 +46,15 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/fail.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/warning.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/bin_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/configuration_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/ignore_overrides_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer/token_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/lexer_spec.rb
@@ -51,7 +62,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/autoloader_layout_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/class_inherits_from_params_class_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/class_parameter_defaults_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/inherits_across_namespaces_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/names_containing_dash_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/nested_classes_or_defines_spec.rb
@@ -66,6 +76,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_conditionals/case_wit
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_conditionals/selector_inside_resource_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_documentation/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_documentation/documentation_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_nodes/
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_nodes/unquoted_node_name_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_resources/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_resources/duplicate_params_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_resources/ensure_first_param_spec.rb
@@ -76,6 +88,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_resources/unquoted_re
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/double_quoted_strings_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/only_variable_string_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/puppet_url_without_modules_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/quoted_booleans_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/single_quote_string_with_variables_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/variables_not_enclosed_spec.rb
