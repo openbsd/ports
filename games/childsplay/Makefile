@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2014/07/06 09:09:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/09/06 07:25:29 ajacoutot Exp $
 
 COMMENT=	collection of educational activities for young children
 
-DISTNAME=	childsplay-2.6.3
+DISTNAME=	childsplay-2.6.4
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	games education
