@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/06 07:03:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/06 09:18:56 ajacoutot Exp $
+
+SHARED_ONLY =		Yes
 
 COMMENT =		2D animation software
 
@@ -31,25 +33,24 @@ LIB_DEPENDS =		archivers/xz \
 			devel/libtool,-ltdl \
 			devel/pango \
 			graphics/ImageMagick \
-			graphics/djvulibre \
-			graphics/ilmbase \
-			graphics/jasper \
-			graphics/jbigkit \
-			graphics/lcms2 \
-			graphics/libwmf \
 			graphics/libmng \
 			graphics/openexr \
-			graphics/tiff \
-			math/fftw3 \
 			textproc/libxml++
 
 # .libs/libsynfig.so.0.0: undefined reference to `lt_libltdlc_LTX_preloaded_symbols'
 USE_LIBTOOL=		gnu
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--without-included-ltdl
+
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/synfig
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/src/synfig/main.cpp
+
+post-install:
+	rm ${PREFIX}/lib/synfig/modules/*.{a,la}
 
 .include <bsd.port.mk>
