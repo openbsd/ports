@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.169 2014/07/25 09:17:16 zhuk Exp $
+# $OpenBSD: Quirks.pm,v 1.170 2014/09/06 11:55:47 armani Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -353,6 +353,7 @@ my $stem_extensions = {
 	'kdnssd' => 'zeroconf-ioslave',
 	'kwallet' => 'kwalletmanager',
 	'p5-TAP-Parser' => 'p5-Test-Harness',
+	'qlandkarte' => 'qlandkartegt',
 };
 
 # reasons for obsolete packages
@@ -423,6 +424,7 @@ my $obsolete_reason = {
 	'xmms-bonk' => 3,
 	'mailcrypt' => 0,
 	'tcpcat' => 4,
+	'ctm' => 3,
 };
 
 # ->is_base_system($handle, $state):
