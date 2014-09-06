@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/26 23:55:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/06 07:20:30 jasper Exp $
 
 COMMENT=		simple, blog aware, static site generator
 
 DISTNAME=		jekyll-1.1.0
-REVISION =		0
+REVISION =		1
 CATEGORIES=		www
 
 HOMEPAGE=		http://jekyllrb.com/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
