@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/12/21 10:28:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/06 07:58:16 jasper Exp $
 
 COMMENT=		framework for Model Driven Software Development
 
-DISTNAME=		rgen-0.6.6
+DISTNAME=		rgen-0.7.0
 CATEGORIES=		devel textproc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
