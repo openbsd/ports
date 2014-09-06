@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/05 14:36:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/06 14:48:00 jasper Exp $
 @pkgpath misc/portscout
 bin/portroach
 ${P5SITE}/Portroach/
@@ -20,6 +20,7 @@ ${P5SITE}/Portroach/SiteHandler.pm
 ${P5SITE}/Portroach/SiteHandler/CPAN.pm
 ${P5SITE}/Portroach/SiteHandler/GitHub.pm
 ${P5SITE}/Portroach/SiteHandler/Hackage.pm
+${P5SITE}/Portroach/SiteHandler/NPM.pm
 ${P5SITE}/Portroach/SiteHandler/RubyGems.pm
 ${P5SITE}/Portroach/SiteHandler/SourceForge.pm
 ${P5SITE}/Portroach/Template.pm
@@ -41,9 +42,17 @@ share/portroach/sql/pgsql_init.sql
 share/portroach/sql/sqlite_destroy.sql
 share/portroach/sql/sqlite_init.sql
 share/portroach/templates/
-share/portroach/templates/assets/
-share/portroach/templates/assets/portroach.js
-share/portroach/templates/index.html
-share/portroach/templates/maintainer.html
+share/portroach/templates/dynamic/
+share/portroach/templates/dynamic/assets/
+share/portroach/templates/dynamic/assets/angular.min.js
+share/portroach/templates/dynamic/assets/app.js
+share/portroach/templates/dynamic/index.html
+share/portroach/templates/dynamic/maintainer.html
+share/portroach/templates/dynamic/restricted-ports.html
 share/portroach/templates/reminder.mail
-share/portroach/templates/restricted-ports.html
+share/portroach/templates/static/
+share/portroach/templates/static/assets/
+share/portroach/templates/static/assets/portroach.js
+share/portroach/templates/static/index.html
+share/portroach/templates/static/maintainer.html
+share/portroach/templates/static/restricted-ports.html
