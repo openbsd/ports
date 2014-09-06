@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/06 09:23:00 jsg Exp $
+# $OpenBSD: Makefile,v 1.6 2014/09/06 13:06:27 jsg Exp $
 
 COMMENT =		YAML parser and emitter in C++
 DISTNAME =		yaml-cpp-0.5.1
@@ -16,7 +16,7 @@ WANTLIB += m stdc++
 
 BUILD_DEPENDS =		devel/boost
 
-MASTER_SITES =		https://code.google.com/p/yaml-cpp/
+MASTER_SITES =		http://yaml-cpp.googlecode.com/files/
 
 MODULES =		devel/cmake
 
