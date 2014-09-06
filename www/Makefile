@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.672 2014/08/31 02:07:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.673 2014/09/06 08:48:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -35,6 +35,7 @@
      SUBDIR += cntlm
      SUBDIR += conkeror
      SUBDIR += cronolog
+     SUBDIR += darkhttpd
      SUBDIR += dansguardian
      SUBDIR += decss
      SUBDIR += dillo
