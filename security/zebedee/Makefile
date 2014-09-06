@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/11 23:50:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2014/09/06 07:09:34 benoit Exp $
 
 COMMENT=	portable, encrypted, compressed tunnel
 
-DISTNAME=	zebedee-2.4.1A
-REVISION=	1
+DISTNAME =	zebedee-2.5.3
 CATEGORIES=	security net
 
 HOMEPAGE=	http://www.winton.org.uk/zebedee/
