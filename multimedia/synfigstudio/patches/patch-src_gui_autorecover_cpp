@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gui_autorecover_cpp,v 1.1.1.1 2014/09/06 07:05:10 bentley Exp $
+--- src/gui/autorecover.cpp.orig	Fri Jul 18 18:22:13 2014
++++ src/gui/autorecover.cpp	Fri Jul 18 18:22:20 2014
+@@ -35,6 +35,7 @@
+ #ifdef HAVE_SYS_ERRNO_H
+ #include <sys/errno.h>
+ #endif
++#include <errno.h>
+ //#include <unistd.h>
+ #include "app.h"
+ #include <synfig/savecanvas.h>

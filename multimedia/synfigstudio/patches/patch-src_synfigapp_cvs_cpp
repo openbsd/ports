@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_synfigapp_cvs_cpp,v 1.1.1.1 2014/09/06 07:05:10 bentley Exp $
+--- src/synfigapp/cvs.cpp.orig	Fri Jul 18 15:08:28 2014
++++ src/synfigapp/cvs.cpp	Fri Jul 18 15:08:49 2014
+@@ -62,7 +62,7 @@ using namespace synfigapp;
+ #define HAVE_STRPTIME
+ #endif
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ time_t _daylight_() { time_t t(time(0)); return localtime(&t)->tm_gmtoff; }
+ #define daylight _daylight_()
+ #endif
