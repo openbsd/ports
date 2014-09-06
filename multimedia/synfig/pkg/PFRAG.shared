@@ -1,0 +1,22 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2014/09/06 07:03:52 bentley Exp $
+lib/synfig/modules/liblyr_freetype.so
+lib/synfig/modules/liblyr_std.so
+lib/synfig/modules/libmod_bmp.so
+lib/synfig/modules/libmod_dv.so
+lib/synfig/modules/libmod_example.so
+lib/synfig/modules/libmod_ffmpeg.so
+lib/synfig/modules/libmod_filter.so
+lib/synfig/modules/libmod_geometry.so
+lib/synfig/modules/libmod_gif.so
+lib/synfig/modules/libmod_gradient.so
+lib/synfig/modules/libmod_imagemagick.so
+lib/synfig/modules/libmod_jpeg.so
+lib/synfig/modules/libmod_magickpp.so
+lib/synfig/modules/libmod_mng.so
+lib/synfig/modules/libmod_noise.so
+lib/synfig/modules/libmod_openexr.so
+lib/synfig/modules/libmod_particle.so
+lib/synfig/modules/libmod_png.so
+lib/synfig/modules/libmod_ppm.so
+lib/synfig/modules/libmod_svg.so
+lib/synfig/modules/libmod_yuv420p.so

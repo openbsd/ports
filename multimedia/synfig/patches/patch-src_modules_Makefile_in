@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_modules_Makefile_in,v 1.1.1.1 2014/09/06 07:03:52 bentley Exp $
+--- src/modules/Makefile.in.orig	Fri Jul 18 12:05:52 2014
++++ src/modules/Makefile.in	Fri Jul 18 12:06:03 2014
+@@ -341,7 +341,7 @@ srcdir = @srcdir@
+ subdirs = @subdirs@
+ synfigincludedir = @synfigincludedir@
+ sys_symbol_underscore = @sys_symbol_underscore@
+-sysconfdir = @sysconfdir@
++sysconfdir = @prefix@/share/examples/synfig
+ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_synfig_main_cpp,v 1.1.1.1 2014/09/06 07:03:52 bentley Exp $
+--- src/synfig/main.cpp.orig	Fri Jul 18 13:25:34 2014
++++ src/synfig/main.cpp	Fri Jul 18 13:25:35 2014
+@@ -433,6 +433,10 @@ synfig::get_binary_path(const String &fallback_path)
+ 	
+ 	free(path);
+ 
++#elif defined(__OpenBSD__)
++
++	result = String("${PREFIX}/bin/synfig");
++
+ #elif defined(__APPLE__)
+ 	
+ 	uint32_t buf_size = MAXPATHLEN;
