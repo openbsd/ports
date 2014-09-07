@@ -1,10 +1,16 @@
-@comment $OpenBSD: PLIST-lang,v 1.9 2013/10/04 08:44:03 sthen Exp $
+@comment $OpenBSD: PLIST-lang,v 1.10 2014/09/07 19:24:48 chrisz Exp $
 @conflict vim-<7.4
 man/fr/
 man/fr.ISO8859-1/
 man/fr.ISO8859-1/man1/
+@man man/fr.ISO8859-1/man1/eview.1
 @man man/fr.ISO8859-1/man1/evim.1
 @man man/fr.ISO8859-1/man1/ex.1
+@man man/fr.ISO8859-1/man1/gview.1
+@man man/fr.ISO8859-1/man1/gvim.1
+@man man/fr.ISO8859-1/man1/gvimdiff.1
+@man man/fr.ISO8859-1/man1/rgview.1
+@man man/fr.ISO8859-1/man1/rgvim.1
 @man man/fr.ISO8859-1/man1/rview.1
 @man man/fr.ISO8859-1/man1/rvim.1
 @man man/fr.ISO8859-1/man1/view.1
@@ -14,8 +20,14 @@ man/fr.ISO8859-1/man1/
 @man man/fr.ISO8859-1/man1/xxd.1
 man/fr.UTF-8/
 man/fr.UTF-8/man1/
+@man man/fr.UTF-8/man1/eview.1
 @man man/fr.UTF-8/man1/evim.1
 @man man/fr.UTF-8/man1/ex.1
+@man man/fr.UTF-8/man1/gview.1
+@man man/fr.UTF-8/man1/gvim.1
+@man man/fr.UTF-8/man1/gvimdiff.1
+@man man/fr.UTF-8/man1/rgview.1
+@man man/fr.UTF-8/man1/rgvim.1
 @man man/fr.UTF-8/man1/rview.1
 @man man/fr.UTF-8/man1/rvim.1
 @man man/fr.UTF-8/man1/view.1
@@ -24,8 +36,14 @@ man/fr.UTF-8/man1/
 @man man/fr.UTF-8/man1/vimtutor.1
 @man man/fr.UTF-8/man1/xxd.1
 man/fr/man1/
+@man man/fr/man1/eview.1
 @man man/fr/man1/evim.1
 @man man/fr/man1/ex.1
+@man man/fr/man1/gview.1
+@man man/fr/man1/gvim.1
+@man man/fr/man1/gvimdiff.1
+@man man/fr/man1/rgview.1
+@man man/fr/man1/rgvim.1
 @man man/fr/man1/rview.1
 @man man/fr/man1/rvim.1
 @man man/fr/man1/view.1
@@ -33,10 +51,17 @@ man/fr/man1/
 @man man/fr/man1/vimdiff.1
 @man man/fr/man1/vimtutor.1
 @man man/fr/man1/xxd.1
+man/it/
 man/it.ISO8859-1/
 man/it.ISO8859-1/man1/
+@man man/it.ISO8859-1/man1/eview.1
 @man man/it.ISO8859-1/man1/evim.1
 @man man/it.ISO8859-1/man1/ex.1
+@man man/it.ISO8859-1/man1/gview.1
+@man man/it.ISO8859-1/man1/gvim.1
+@man man/it.ISO8859-1/man1/gvimdiff.1
+@man man/it.ISO8859-1/man1/rgview.1
+@man man/it.ISO8859-1/man1/rgvim.1
 @man man/it.ISO8859-1/man1/rview.1
 @man man/it.ISO8859-1/man1/rvim.1
 @man man/it.ISO8859-1/man1/view.1
@@ -46,8 +71,14 @@ man/it.ISO8859-1/man1/
 @man man/it.ISO8859-1/man1/xxd.1
 man/it.UTF-8/
 man/it.UTF-8/man1/
+@man man/it.UTF-8/man1/eview.1
 @man man/it.UTF-8/man1/evim.1
 @man man/it.UTF-8/man1/ex.1
+@man man/it.UTF-8/man1/gview.1
+@man man/it.UTF-8/man1/gvim.1
+@man man/it.UTF-8/man1/gvimdiff.1
+@man man/it.UTF-8/man1/rgview.1
+@man man/it.UTF-8/man1/rgvim.1
 @man man/it.UTF-8/man1/rview.1
 @man man/it.UTF-8/man1/rvim.1
 @man man/it.UTF-8/man1/view.1
@@ -55,10 +86,15 @@ man/it.UTF-8/man1/
 @man man/it.UTF-8/man1/vimdiff.1
 @man man/it.UTF-8/man1/vimtutor.1
 @man man/it.UTF-8/man1/xxd.1
-man/it/
 man/it/man1/
+@man man/it/man1/eview.1
 @man man/it/man1/evim.1
 @man man/it/man1/ex.1
+@man man/it/man1/gview.1
+@man man/it/man1/gvim.1
+@man man/it/man1/gvimdiff.1
+@man man/it/man1/rgview.1
+@man man/it/man1/rgvim.1
 @man man/it/man1/rview.1
 @man man/it/man1/rvim.1
 @man man/it/man1/view.1
@@ -66,11 +102,34 @@ man/it/man1/
 @man man/it/man1/vimdiff.1
 @man man/it/man1/vimtutor.1
 @man man/it/man1/xxd.1
+man/ja/
+man/ja/man1/
+@man man/ja/man1/eview.1
+@man man/ja/man1/evim.1
+@man man/ja/man1/ex.1
+@man man/ja/man1/gview.1
+@man man/ja/man1/gvim.1
+@man man/ja/man1/gvimdiff.1
+@man man/ja/man1/rgview.1
+@man man/ja/man1/rgvim.1
+@man man/ja/man1/rview.1
+@man man/ja/man1/rvim.1
+@man man/ja/man1/view.1
+@man man/ja/man1/vim.1
+@man man/ja/man1/vimdiff.1
+@man man/ja/man1/vimtutor.1
+@man man/ja/man1/xxd.1
 man/pl/
 man/pl.ISO8859-2/
 man/pl.ISO8859-2/man1/
+@man man/pl.ISO8859-2/man1/eview.1
 @man man/pl.ISO8859-2/man1/evim.1
 @man man/pl.ISO8859-2/man1/ex.1
+@man man/pl.ISO8859-2/man1/gview.1
+@man man/pl.ISO8859-2/man1/gvim.1
+@man man/pl.ISO8859-2/man1/gvimdiff.1
+@man man/pl.ISO8859-2/man1/rgview.1
+@man man/pl.ISO8859-2/man1/rgvim.1
 @man man/pl.ISO8859-2/man1/rview.1
 @man man/pl.ISO8859-2/man1/rvim.1
 @man man/pl.ISO8859-2/man1/view.1
@@ -80,8 +139,14 @@ man/pl.ISO8859-2/man1/
 @man man/pl.ISO8859-2/man1/xxd.1
 man/pl.UTF-8/
 man/pl.UTF-8/man1/
+@man man/pl.UTF-8/man1/eview.1
 @man man/pl.UTF-8/man1/evim.1
 @man man/pl.UTF-8/man1/ex.1
+@man man/pl.UTF-8/man1/gview.1
+@man man/pl.UTF-8/man1/gvim.1
+@man man/pl.UTF-8/man1/gvimdiff.1
+@man man/pl.UTF-8/man1/rgview.1
+@man man/pl.UTF-8/man1/rgvim.1
 @man man/pl.UTF-8/man1/rview.1
 @man man/pl.UTF-8/man1/rvim.1
 @man man/pl.UTF-8/man1/view.1
@@ -90,8 +155,14 @@ man/pl.UTF-8/man1/
 @man man/pl.UTF-8/man1/vimtutor.1
 @man man/pl.UTF-8/man1/xxd.1
 man/pl/man1/
+@man man/pl/man1/eview.1
 @man man/pl/man1/evim.1
 @man man/pl/man1/ex.1
+@man man/pl/man1/gview.1
+@man man/pl/man1/gvim.1
+@man man/pl/man1/gvimdiff.1
+@man man/pl/man1/rgview.1
+@man man/pl/man1/rgvim.1
 @man man/pl/man1/rview.1
 @man man/pl/man1/rvim.1
 @man man/pl/man1/view.1
@@ -101,8 +172,14 @@ man/pl/man1/
 @man man/pl/man1/xxd.1
 man/ru.KOI8-R/
 man/ru.KOI8-R/man1/
+@man man/ru.KOI8-R/man1/eview.1
 @man man/ru.KOI8-R/man1/evim.1
 @man man/ru.KOI8-R/man1/ex.1
+@man man/ru.KOI8-R/man1/gview.1
+@man man/ru.KOI8-R/man1/gvim.1
+@man man/ru.KOI8-R/man1/gvimdiff.1
+@man man/ru.KOI8-R/man1/rgview.1
+@man man/ru.KOI8-R/man1/rgvim.1
 @man man/ru.KOI8-R/man1/rview.1
 @man man/ru.KOI8-R/man1/rvim.1
 @man man/ru.KOI8-R/man1/view.1
@@ -112,8 +189,14 @@ man/ru.KOI8-R/man1/
 @man man/ru.KOI8-R/man1/xxd.1
 man/ru.UTF-8/
 man/ru.UTF-8/man1/
+@man man/ru.UTF-8/man1/eview.1
 @man man/ru.UTF-8/man1/evim.1
 @man man/ru.UTF-8/man1/ex.1
+@man man/ru.UTF-8/man1/gview.1
+@man man/ru.UTF-8/man1/gvim.1
+@man man/ru.UTF-8/man1/gvimdiff.1
+@man man/ru.UTF-8/man1/rgview.1
+@man man/ru.UTF-8/man1/rgvim.1
 @man man/ru.UTF-8/man1/rview.1
 @man man/ru.UTF-8/man1/rvim.1
 @man man/ru.UTF-8/man1/view.1
@@ -121,7 +204,6 @@ man/ru.UTF-8/man1/
 @man man/ru.UTF-8/man1/vimdiff.1
 @man man/ru.UTF-8/man1/vimtutor.1
 @man man/ru.UTF-8/man1/xxd.1
-share/vim/${P}/lang/README.txt
 share/vim/${P}/lang/af/
 share/vim/${P}/lang/af/LC_MESSAGES/
 share/vim/${P}/lang/af/LC_MESSAGES/vim.mo
@@ -400,10 +482,10 @@ share/vim/${P}/tutor/tutor.ko.euc
 share/vim/${P}/tutor/tutor.ko.utf-8
 share/vim/${P}/tutor/tutor.nb
 share/vim/${P}/tutor/tutor.nb.utf-8
-share/vim/${P}/tutor/tutor.no
-share/vim/${P}/tutor/tutor.no.utf-8
 share/vim/${P}/tutor/tutor.nl
 share/vim/${P}/tutor/tutor.nl.utf-8
+share/vim/${P}/tutor/tutor.no
+share/vim/${P}/tutor/tutor.no.utf-8
 share/vim/${P}/tutor/tutor.pl
 share/vim/${P}/tutor/tutor.pl.cp1250
 share/vim/${P}/tutor/tutor.pl.utf-8
@@ -415,6 +497,8 @@ share/vim/${P}/tutor/tutor.ru.utf-8
 share/vim/${P}/tutor/tutor.sk
 share/vim/${P}/tutor/tutor.sk.cp1250
 share/vim/${P}/tutor/tutor.sk.utf-8
+share/vim/${P}/tutor/tutor.sr.cp1250
+share/vim/${P}/tutor/tutor.sr.utf-8
 share/vim/${P}/tutor/tutor.sv
 share/vim/${P}/tutor/tutor.sv.utf-8
 share/vim/${P}/tutor/tutor.tr.iso9

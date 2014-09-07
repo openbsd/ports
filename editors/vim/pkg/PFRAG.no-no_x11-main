@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.5 2013/12/16 10:19:34 edd Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.6 2014/09/07 19:24:48 chrisz Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -8,7 +8,14 @@ bin/gvimtutor
 bin/rgview
 bin/rgvim
 @man man/man1/evim.1
+@man man/man1/eview.1
+@man man/man1/gview.1
+@man man/man1/gvim.1
+@man man/man1/gvimdiff.1
+@man man/man1/rgview.1
+@man man/man1/rgvim.1
 share/applications/gvim.desktop
+share/pixmaps/
 share/pixmaps/vim.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

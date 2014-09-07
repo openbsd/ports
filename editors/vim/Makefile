@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.138 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.139 2014/09/07 19:24:48 chrisz Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-VERSION=	7.4.135
+VERSION=	7.4.430
 DISTNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
-REVISION-main=	2
 P=		vim${VERSION:R:S/.//}
 CATEGORIES=	editors
 # Upstream's normal distribution (http://ftp.vim.org/pub/vim/unix/) consists
@@ -36,6 +35,11 @@ FULLPKGPATH-lang= ${PKGPATH},-lang
 
 FLAVORS=	huge gtk2 athena motif no_x11 lua perl python python3 ruby
 FLAVOR?=	gtk2
+
+.include <bsd.port.arch.mk>
+.if ${FLAVOR:Mno_x11}
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-lang}
+.endif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
@@ -158,8 +162,9 @@ post-configure:
 	touch ${WRKBUILD}/auto/config.mk
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/{doc,syntax}
 	${INSTALL_DATA} ${FILESDIR}/pf.vim ${FILESDIR}/openbsd.vim \
-	    ${PREFIX}/share/vim/${P}/syntax/
+	    ${PREFIX}/share/vim/vimfiles/syntax/
 
 .if ! ${FLAVOR:Mno_x11}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
