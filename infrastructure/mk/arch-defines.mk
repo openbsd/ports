@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.20 2014/03/19 13:28:04 jasper Exp $
+# $OpenBSD: arch-defines.mk,v 1.21 2014/09/07 16:27:24 chrisz Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -26,7 +26,7 @@ GCC3_ARCHS = aviion luna88k m88k vax
 # XXX easier for ports that depend on mono
 MONO_ARCHS = amd64 i386
 LLVM_ARCHS = amd64 i386 powerpc mips64 mips64el sparc sparc64
-OCAML_NATIVE_ARCHS = i386 sparc amd64 powerpc
+OCAML_NATIVE_ARCHS = i386 sparc amd64
 OCAML_NATIVE_DYNLINK_ARCHS = i386 amd64
 
 
