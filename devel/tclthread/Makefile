@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/07 18:50:07 stu Exp $
 
 COMMENT =	thread extension for Tcl
 
-DISTNAME =	thread2.7.0
-PKGNAME =	tclthread-2.7.0
-SHARED_LIBS =	thread270 0.0
+DISTNAME =	thread2.7.1
+PKGNAME =	tclthread-2.7.1
+SHARED_LIBS =	thread271 0.0
 CATEGORIES =	devel
 HOMEPAGE =	http://tcl.sourceforge.net/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -29,7 +29,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--libdir=${MODTCL_TCLDIR} \
 			--mandir=${PREFIX}/man \
-			SHLIB_VERSION=${LIBthread270_VERSION}
+			SHLIB_VERSION=${LIBthread271_VERSION}
 
 TEST_TARGET =	test
 
