@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/19 06:10:37 kevlo Exp $
-${P5SITE}/common/
-${P5SITE}/common/sense.pm
+@comment $OpenBSD: PLIST,v 1.2 2014/09/07 10:55:37 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/common/
+${P5ARCH}/common/sense.pm
+${P5ARCH}/common/sense.pod
 @man man/man3p/common::sense.3p
