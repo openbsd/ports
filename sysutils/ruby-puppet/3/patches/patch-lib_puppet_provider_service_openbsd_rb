@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:27 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:42 jasper Exp $
 
 * Rewrite using rcctl(8)
   https://github.com/puppetlabs/puppet/pull/3017
 
---- lib/puppet/provider/service/openbsd.rb.orig	Mon Jun  9 23:08:19 2014
-+++ lib/puppet/provider/service/openbsd.rb	Tue Aug 26 11:29:05 2014
-@@ -2,340 +2,89 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+--- lib/puppet/provider/service/openbsd.rb.orig	Thu Sep  4 00:22:46 2014
++++ lib/puppet/provider/service/openbsd.rb	Sun Sep  7 20:15:22 2014
+@@ -2,341 +2,89 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    desc "Provider for OpenBSD's rc.d daemon control scripts"
  
@@ -192,11 +192,22 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:2
 -      content.reject! {|l| l.nil? }
 -    end
 -
--    if flags.nil?
--      append = resource[:name] + '_flags=""'
+-    if flags.nil? or flags.size == 0
+-      if in_base?
+-        append = resource[:name] + '_flags=""'
++            instances << new(
++              :name      => match[1],
++              :flags     => match[2],
++              :hasstatus => true,
++            )
++        end
+       end
 -    else
 -      append = resource[:name] + '_flags="' + flags + '"'
--    end
++      instances
++    rescue Puppet::ExecutionFailure
++      return nil
+     end
 -
 -    if content.find {|l| l =~ /#{resource[:name]}_flags/ }.nil?
 -      content << append
@@ -204,8 +215,8 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:2
 -      content.map {|l| l.gsub!(/^#{resource[:name]}_flags="(.*)?"(.*)?$/, append) }
 -    end
 -    content
--  end
--
+   end
+ 
 -  # @api private
 -  def remove_content_flags(content)
 -    content.reject {|l| l =~ /#{resource[:name]}_flags/ }
@@ -220,25 +231,24 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:2
 -        match[1].split(' ')
 -      else
 -        []
-+            instances << new(
-+              :name      => match[1],
-+              :flags     => match[2],
-+              :hasstatus => true,
-+            )
-+        end
-       end
--    else
+-      end
++  def enabled?
++    output = execute([command(:rcctl), "status", @resource[:name]],
++                     :failonfail => false, :combine => false, :squelch => false).chomp
++    if output == 'NO'
++      self.debug("Is disabled")
++      return :false
+     else
 -      []
-+      instances
-+    rescue Puppet::ExecutionFailure
-+      return nil
++      self.debug("Is enabled")
++      return :true
      end
    end
  
 -  # return the array with the current resource added
 -  # @api private
 -  def pkg_scripts_append
--    [pkg_scripts(), resource[:name]].flatten.sort.uniq
+-    [pkg_scripts(), resource[:name]].flatten.uniq
 -  end
 -
 -  # return the array without the current resource
@@ -254,16 +264,13 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:2
 -    unless content.is_a? Array
 -      debug "content must be an array at scripts"
 -      return ""
-+  def enabled?
-+    output = execute([command(:rcctl), "status", @resource[:name]],
-+                     :failonfail => false, :combine => false, :squelch => false).chomp
-+    if output == 'NO'
-+      self.debug("Is disabled")
-+      return :false
++  def enable
++    self.debug("Enabling")
++    if @resource[:flags]
++      rcctl(:enable, @resource[:name], :flags, @resource[:flags])
      else
 -      content.reject! {|l| l.nil? }
-+      self.debug("Is enabled")
-+      return :true
++      rcctl(:enable, @resource[:name])
      end
 -
 -    scripts_line = 'pkg_scripts="' + scripts.join(' ') + '"'
@@ -281,12 +288,11 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:2
 -    content
    end
  
--  # Determine if the rc script is included in base, or if it exists as a result
--  # of a package installation.
+-  # Determine if the rc script is included in base
 -  # @api private
 -  def in_base?
--    system("/usr/sbin/pkg_info -qE /etc/rc.d/#{self.name}> /dev/null")
--    $?.exitstatus == 1
+-    script = File.readlines(self.class.rcconf).find {|s| s =~ /^#{rcvar_name}/ }
+-    !script.nil?
 -  end
 -
 -  # @api private
@@ -302,20 +308,15 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.18 2014/08/26 11:42:2
 -      else
 -        :true
 -      end
-+  def enable
-+    self.debug("Enabling")
-+    if @resource[:flags]
-+      rcctl(:enable, @resource[:name], :flags, @resource[:flags])
-     else
+-    else
 -      if (pkg_scripts().include?(@property_hash[:name]))
 -        :true
 -      else
 -        :false
 -      end
-+      rcctl(:enable, @resource[:name])
-     end
-   end
- 
+-    end
+-  end
+-
 -  def enable
 -    self.debug("Enabling #{self.name}")
 -  end
