@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/05/05 14:03:09 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/09/07 09:07:27 sthen Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -977,6 +977,7 @@ lib/samba/vfs/streams_xattr.so
 lib/samba/vfs/syncops.so
 lib/samba/vfs/time_audit.so
 lib/samba/vfs/xattr_tdb.so
+lib/security/
 lib/security/pam_smbpass.so
 lib/security/pam_winbind.so
 ${P5SITE}/Parse/
