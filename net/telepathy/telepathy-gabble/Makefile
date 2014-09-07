@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2014/05/08 13:41:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2014/09/07 18:24:56 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -16,14 +16,12 @@ MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=		textproc/libxslt
-
-LIB_DEPENDS=		devel/libsoup \
-			net/libnice>=0.1.2 \
-			net/telepathy/telepathy-glib>=0.18.0
-
 # needed for the tests
 BUILD_DEPENDS +=	devel/py-twisted/words \
 			x11/dbus-python
+LIB_DEPENDS=		devel/libsoup \
+			net/libnice>=0.1.2 \
+			net/telepathy/telepathy-glib>=0.18.0
 
 # bin/telepathy-gabble-xmpp-console
 RUN_DEPENDS +=		devel/py-gobject3
