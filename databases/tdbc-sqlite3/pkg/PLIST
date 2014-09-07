@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/07 05:24:08 stu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/07 18:50:54 stu Exp $
 lib/tcl/modules/${MODTCL_VERSION}/tdbc/
-lib/tcl/modules/${MODTCL_VERSION}/tdbc/sqlite3-1.0.0.tm
+lib/tcl/modules/${MODTCL_VERSION}/tdbc/sqlite3-1.0.1.tm
 @man man/mann/tdbc_sqlite3.n
