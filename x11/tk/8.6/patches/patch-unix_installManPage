@@ -1,7 +1,6 @@
-$OpenBSD: patch-unix_installManPage,v 1.4 2013/11/04 16:28:32 stu Exp $
+$OpenBSD: patch-unix_installManPage,v 1.5 2014/09/07 18:49:32 stu Exp $
 
 Don't misrename manpages. Tk bug 3604346.
-Put macros after .TH to prevent them from being redefined. Tcl bug 426679ef7d.
 
 --- unix/installManPage.orig	Tue Sep 17 08:25:13 2013
 +++ unix/installManPage	Mon Nov  4 09:34:45 2013
@@ -14,12 +13,3 @@ Put macros after .TH to prevent them from being redefined. Tcl bug 426679ef7d.
  #                               print the result and exit
  	p;q
      }' $ManPage`
-@@ -104,7 +104,7 @@ for Target in $Names; do
-     rm -f $Dir/$Target $Dir/$Target.*
-     if test -z "$First" ; then
- 	First=$Target
--	sed -e "/man\.macros/r $SrcDir/man.macros" -e "/man\.macros/d" \
-+	sed -e "/man\.macros/d" -e "/\.TH/r $SrcDir/man.macros" \
- 	    $ManPage > $Dir/$First
- 	chmod 444 $Dir/$First
- 	$Gzip $Dir/$First

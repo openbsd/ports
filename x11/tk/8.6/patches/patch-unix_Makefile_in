@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.2 2013/09/22 10:35:45 stu Exp $
---- unix/Makefile.in.orig	Tue Sep  3 13:38:32 2013
-+++ unix/Makefile.in	Sat Sep  7 09:55:16 2013
+$OpenBSD: patch-unix_Makefile_in,v 1.3 2014/09/07 18:49:32 stu Exp $
+--- unix/Makefile.in.orig	Mon Jul 28 11:56:44 2014
++++ unix/Makefile.in	Sun Aug 17 17:01:38 2014
 @@ -558,6 +558,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
@@ -9,7 +9,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2013/09/22 10:35:45 stu Exp $
  	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
-@@ -589,6 +590,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+@@ -593,6 +594,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2013/09/22 10:35:45 stu Exp $
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -740,10 +745,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -740,10 +745,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	    echo "}";\
  	    fi \
  	    ) > "$(PKG_INDEX)"; \
@@ -32,7 +32,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2013/09/22 10:35:45 stu Exp $
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -761,7 +766,7 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -761,7 +766,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig

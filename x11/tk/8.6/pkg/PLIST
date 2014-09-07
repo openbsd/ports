@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/21 19:14:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/09/07 18:49:32 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.6,<8.7
 %%SHARED%%
@@ -21,7 +21,6 @@ include/tk8.6/ttkTheme.h
 lib/libtk86.a
 @lib lib/libtk86.so.${LIBtk86_VERSION}
 lib/libtkstub86.a
-lib/pkgconfig/
 lib/pkgconfig/tk86.pc
 lib/tcl/
 lib/tcl/tk8.6/

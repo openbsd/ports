@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/04 16:28:32 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/07 18:49:32 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-DISTNAME =		tk8.6.1
-PKGNAME =		tk-8.6.1
-REVISION =		1
-SHARED_LIBS =		tk86 0.1
+DISTNAME =		tk8.6.2
+PKGNAME =		tk-8.6.2
+SHARED_LIBS =		tk86 1.1
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -13,11 +12,12 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xext Xft Xss c m pthread tcl86 z
+WANTLIB =		X11 Xext Xft Xss c fontconfig m pthread tcl86 z
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
-LIB_DEPENDS =		tcl->=8.6.1,<8.6.2:lang/tcl/8.6
+LIB_DEPENDS =		tcl->=8.6.2,<8.6.3:lang/tcl/8.6
 
 MAKE_FLAGS +=		TK_LIBRARY='$$(prefix)/lib/tcl/tk$$(VERSION)' \
 			TCL_GENERIC_DIR='$$(GENERIC_DIR)' \
