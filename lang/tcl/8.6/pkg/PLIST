@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/21 19:14:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/09/07 18:49:13 stu Exp $
 @option no-default-conflict
 @conflict tcl->=8.6,<8.7
 %%SHARED%%
@@ -21,7 +21,6 @@ include/tcl8.6/tclUnixPort.h
 lib/libtcl86.a
 @lib lib/libtcl86.so.${LIBtcl86_VERSION}
 lib/libtclstub86.a
-lib/pkgconfig/
 lib/pkgconfig/tcl86.pc
 lib/tcl/
 lib/tcl/modules/
@@ -546,6 +545,7 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_NextHashEntry.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_NotifyChannel.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_NumUtfChars.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_OOInitStubs.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_ObjGetVar2.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_ObjPrintf.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_ObjSetVar2.3
@@ -901,7 +901,7 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/tcl_startOfNextWord.n
 @man lib/tcl/tcl8.6/man/mann/tcl_startOfPreviousWord.n
 @man lib/tcl/tcl8.6/man/mann/tcl_traceCompile.n
-@man lib/tcl/tcl8.6/man/mann/tcl_traceEval.n
+@man lib/tcl/tcl8.6/man/mann/tcl_traceExec.n
 @man lib/tcl/tcl8.6/man/mann/tcl_version.n
 @man lib/tcl/tcl8.6/man/mann/tcl_wordBreakAfter.n
 @man lib/tcl/tcl8.6/man/mann/tcl_wordBreakBefore.n
@@ -930,11 +930,11 @@ lib/tcl/tcl8.6/modules/
 lib/tcl/tcl8.6/modules/8.5/
 lib/tcl/tcl8.6/modules/8.5/msgcat-1.5.2.tm
 lib/tcl/tcl8.6/modules/8.5/platform/
-lib/tcl/tcl8.6/modules/8.5/platform-1.0.12.tm
+lib/tcl/tcl8.6/modules/8.5/platform-1.0.13.tm
 lib/tcl/tcl8.6/modules/8.5/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/8.5/tcltest-2.3.6.tm
+lib/tcl/tcl8.6/modules/8.5/tcltest-2.3.8.tm
 lib/tcl/tcl8.6/modules/8.6/
-lib/tcl/tcl8.6/modules/8.6/http-2.8.7.tm
+lib/tcl/tcl8.6/modules/8.6/http-2.8.8.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg
