@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/07 09:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/09/07 18:50:50 sthen Exp $
 
 COMMENT =	HTML/XML parser that supports invalid markup
 
@@ -14,7 +14,7 @@ MAINTAINER =	frantisek holop <minusf@obiit.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${HOMEPAGE}bsd3/download/3.x/
+MASTER_SITES =	${HOMEPAGE}bs3/download/3.x/
 
 MODULES =	lang/python
 
