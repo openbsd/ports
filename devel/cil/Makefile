@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2014/09/07 16:14:43 chrisz Exp $
 
-# build system needs per-arch tweaks
-ONLY_FOR_ARCHS = amd64 i386 powerpc
+# build system needs per-arch tweaks and is very unfriendly to
+# bytecode-only builds. powerpc nativecode is currently broken.
+ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
