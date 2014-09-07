@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 02:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/07 18:50:32 stu Exp $
 
 COMMENT =	Tcl Database Connectivity
 
-DISTNAME =	tdbc1.0.0
-PKGNAME =	tdbc-1.0.0
-SHARED_LIBS =	tdbc100 0.0
+DISTNAME =	tdbc1.0.1
+PKGNAME =	tdbc-1.0.1
+SHARED_LIBS =	tdbc101 0.0
 CATEGORIES =	databases
 HOMEPAGE =	http://tdbc.tcl.tk/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -29,7 +29,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--includedir=${PREFIX}/include/tdbc \
 			--libdir=${MODTCL_TCLDIR} \
-			SHLIB_VERSION=${LIBtdbc100_VERSION}
+			SHLIB_VERSION=${LIBtdbc101_VERSION}
 
 AUTOCONF_VERSION =	2.59
 TEST_TARGET =	test

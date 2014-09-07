@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/07 05:21:19 stu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/07 18:50:32 stu Exp $
 include/tdbc/
 include/tdbc/tdbc.h
 include/tdbc/tdbcDecls.h
 include/tdbc/tdbcInt.h
 lib/tcl/tdbc/
-@lib lib/tcl/tdbc/libtdbc100.so.${LIBtdbc100_VERSION}
-lib/tcl/tdbc/libtdbcstub100.a
+@lib lib/tcl/tdbc/libtdbc101.so.${LIBtdbc101_VERSION}
+lib/tcl/tdbc/libtdbcstub101.a
 lib/tcl/tdbc/pkgIndex.tcl
 lib/tcl/tdbc/tdbc.tcl
 lib/tcl/tdbc/tdbcConfig.sh
