@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.73 2014/08/14 07:15:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2014/09/07 18:25:01 jasper Exp $
+
+# XXX: PORTROACH set below to override the value from gnome.port.mk
 
 COMMENT=		people aggregation library
 
@@ -53,3 +55,5 @@ post-install:
 	rm ${PREFIX}/lib/folks/${API_V}/backends/*/*.{a,la}
 
 .include <bsd.port.mk>
+
+PORTROACH=	# empty

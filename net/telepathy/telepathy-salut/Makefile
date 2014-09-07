@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/04/23 09:43:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2014/09/07 18:25:01 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -18,9 +18,8 @@ MODULES=		devel/gettext \
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		textproc/libxslt \
-			devel/check
-
+BUILD_DEPENDS=		devel/check \
+			textproc/libxslt
 LIB_DEPENDS=		devel/libsoup \
 			net/avahi \
 			net/telepathy/telepathy-glib \

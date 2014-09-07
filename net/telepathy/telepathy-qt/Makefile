@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/25 14:07:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/07 18:25:01 jasper Exp $
+
+# XXX: PORTROACH set below to override the value from ../Makefile.inc
 
 COMMENT =		flexible communications framework, Qt bindings
 DISTNAME =		telepathy-qt-0.9.3
@@ -36,3 +38,5 @@ pre-configure:
 	@${MODPY_BIN_ADJ} ${WRKSRC}/tools/*.py
 
 .include <bsd.port.mk>
+
+PORTROACH =		# empty
