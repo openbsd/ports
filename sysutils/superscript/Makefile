@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:51:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/09/07 18:11:07 jasper Exp $
 
 COMMENT=	extended script command
 
 DISTNAME=	superscript-0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES=	http://distfiles.nl/
 
 
 WANTLIB=	c util

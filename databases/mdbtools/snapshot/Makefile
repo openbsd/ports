@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/09/07 18:11:07 jasper Exp $
 
 COMMENT-main=		read microsoft Access MDB
 COMMENT-gmdb=		graphical interface to MDB tools
@@ -13,7 +13,7 @@ REVISION-gmdb=		15
 
 CATEGORIES=		databases converters
 HOMEPAGE=		http://mdbtools.sourceforge.net/
-MASTER_SITES=		ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES=		http://distfiles.nl/
 
 # https://github.com/brianb/mdbtools
 #MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=mdbtools/}

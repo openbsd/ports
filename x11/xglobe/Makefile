@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2014/08/21 08:04:16 armani Exp $
+# $OpenBSD: Makefile,v 1.71 2014/09/07 18:11:07 jasper Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -6,7 +6,7 @@ CATEGORIES=	x11 geo
 HOMEPAGE=	http://www.shaderwrangler.com/xglobe/
 #MASTER_SITES=	${HOMEPAGE}
 # Temporary release
-MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES=	http://distfiles.nl/
 DISTNAME=	xglobe-0.5p2
 PKGNAME=	xglobe-0.5
 REVISION=	40
