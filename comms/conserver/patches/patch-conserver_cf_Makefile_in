@@ -1,20 +1,20 @@
-$OpenBSD: patch-conserver_cf_Makefile_in,v 1.2 2005/08/02 07:25:47 pvalchev Exp $
---- conserver.cf/Makefile.in.orig	Tue Feb 10 01:32:28 2004
-+++ conserver.cf/Makefile.in	Sat Jul 30 09:42:34 2005
-@@ -23,11 +23,10 @@ distclean: clean
+$OpenBSD: patch-conserver_cf_Makefile_in,v 1.3 2014/09/08 16:12:11 sthen Exp $
+--- conserver.cf/Makefile.in.orig	Fri Sep 13 23:46:51 2013
++++ conserver.cf/Makefile.in	Tue Sep  2 20:25:45 2014
+@@ -24,11 +24,10 @@ distclean: clean
  	rm -f Makefile
  
  install:
 -	$(MKDIR) $(DESTDIR)$(mandir)/man5
--	$(INSTALL) conserver.cf.man $(DESTDIR)$(mandir)/man5/conserver.cf.5
--	$(INSTALL) conserver.passwd.man $(DESTDIR)$(mandir)/man5/conserver.passwd.5
+-	$(INSTALL) -m 0644 conserver.cf.man $(DESTDIR)$(mandir)/man5/conserver.cf.5
+-	$(INSTALL) -m 0644 conserver.passwd.man $(DESTDIR)$(mandir)/man5/conserver.passwd.5
 -	$(MKDIR) $(DESTDIR)$(exampledir)
 -	$(INSTALL) -m 0644 conserver.cf $(DESTDIR)$(exampledir)
 -	$(INSTALL) -m 0644 conserver.passwd $(DESTDIR)$(exampledir)
-+	$(BSD_INSTALL_MAN) conserver.cf.man $(DESTDIR)$(mandir)/man5/conserver.cf.5
-+	$(BSD_INSTALL_MAN) conserver.passwd.man $(DESTDIR)$(mandir)/man5/conserver.passwd.5
++	$(BSD_INSTALL_MAN) -m 0644 conserver.cf.man $(DESTDIR)$(mandir)/man5/conserver.cf.5
++	$(BSD_INSTALL_MAN) -m 0644 conserver.passwd.man $(DESTDIR)$(mandir)/man5/conserver.passwd.5
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(exampledir)
-+	$(BSD_INSTALL_DATA) conserver.cf $(DESTDIR)$(exampledir)
-+	$(BSD_INSTALL_DATA) conserver.passwd $(DESTDIR)$(exampledir)
++	$(BSD_INSTALL_DATA) -m 0644 conserver.cf $(DESTDIR)$(exampledir)
++	$(BSD_INSTALL_DATA) -m 0644 conserver.passwd $(DESTDIR)$(exampledir)
  
  .PHONY: clean distclean install

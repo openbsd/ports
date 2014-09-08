@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2014/07/15 13:47:26 benno Exp $
+$OpenBSD: README,v 1.4 2014/09/08 16:12:11 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,6 +11,12 @@ to group dialer in /etc/group:
   dialer:*:117:_conserver
 
 This is not necessary if you only use it to log and control access to
-terminal servers over the network.
+terminal servers over the network rather than on local serial ports.
+
+If you have upgraded from a previous version of the OpenBSD package which
+ran as root, you will need to change permissions/ownership on log files to
+ensure that the _conserver user can write to them, e.g.:
+
+  chown _conserver /var/log/conserver /var/log/consoles/*
 
 See more information at http://www.conserver.com/

@@ -1,7 +1,7 @@
-$OpenBSD: patch-conserver_group_c,v 1.3 2008/06/21 11:29:25 sthen Exp $
---- conserver/group.c.orig	Mon Apr  2 19:18:59 2007
-+++ conserver/group.c	Fri Oct 12 12:03:25 2007
-@@ -2505,7 +2505,7 @@ TelOpt(o)
+$OpenBSD: patch-conserver_group_c,v 1.4 2014/09/08 16:12:11 sthen Exp $
+--- conserver/group.c.orig	Fri Apr  4 17:17:10 2014
++++ conserver/group.c	Tue Sep  2 20:24:00 2014
+@@ -2911,7 +2911,7 @@ TelOpt(o)
      if (o < sizeof(telopts) / sizeof(char *))
  	return telopts[o];
      else {
@@ -10,17 +10,3 @@ $OpenBSD: patch-conserver_group_c,v 1.3 2008/06/21 11:29:25 sthen Exp $
  	return opt;
      }
  }
-@@ -3839,11 +3839,9 @@ DoClientRead(pGE, pCLServing)
- 					      "failed]\r\n", -1);
- 				    continue;
- 				}
--				if (TAB3 == (TABDLY & sbuf.c_oflag)) {
--				    sbuf.c_oflag &= ~TABDLY;
--				    sbuf.c_oflag |= TAB0;
-+				if (TAB3 & sbuf.c_oflag) {
-+				    sbuf.c_oflag &= ~TAB3;
- 				} else {
--				    sbuf.c_oflag &= ~TABDLY;
- 				    sbuf.c_oflag |= TAB3;
- 				}
- 				if (-1 ==

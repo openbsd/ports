@@ -1,9 +1,9 @@
-$OpenBSD: patch-conserver_consent_c,v 1.3 2008/06/21 11:29:25 sthen Exp $
---- conserver/consent.c.orig	Mon Apr  9 16:52:28 2007
-+++ conserver/consent.c	Fri Oct 12 11:29:17 2007
-@@ -587,7 +587,8 @@ VirtDev(pCE)
- 	Error("[%s] tcgetattr(0): %s", pCE->server, strerror(errno));
- 	Bye(EX_OSERR);
+$OpenBSD: patch-conserver_consent_c,v 1.4 2014/09/08 16:12:11 sthen Exp $
+--- conserver/consent.c.orig	Fri Apr  4 06:34:13 2014
++++ conserver/consent.c	Tue Sep  2 20:24:00 2014
+@@ -557,7 +557,8 @@ SetupTty(pCE, fd)
+     if (0 != tcgetattr(1, &n_tio)) {
+ 	exit(EX_OSERR);
      }
 -    n_tio.c_iflag &= ~(IGNCR | IUCLC);
 +
@@ -11,7 +11,7 @@ $OpenBSD: patch-conserver_consent_c,v 1.3 2008/06/21 11:29:25 sthen Exp $
      n_tio.c_iflag |= ICRNL;
      if (pCE->ixon == FLAGTRUE)
  	n_tio.c_iflag |= IXON;
-@@ -595,10 +596,8 @@ VirtDev(pCE)
+@@ -565,10 +566,8 @@ SetupTty(pCE, fd)
  	n_tio.c_iflag |= IXANY;
      if (pCE->ixoff == FLAGTRUE)
  	n_tio.c_iflag |= IXOFF;
