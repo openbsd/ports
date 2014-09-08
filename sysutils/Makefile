@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2014/08/15 12:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.321 2014/09/08 22:43:08 jturner Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -86,6 +86,7 @@
      SUBDIR += libvirt
      SUBDIR += libvirt-python
      SUBDIR += logfmon
+     SUBDIR += login_duo
      SUBDIR += login_fingerprint
      SUBDIR += login_ldap
      SUBDIR += login_oath
