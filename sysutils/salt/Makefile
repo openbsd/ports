@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/09/05 08:27:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/09/08 07:56:37 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -33,6 +33,9 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=s/salt/}
 
 MODULES =		lang/python
 
+BUILD_DEPENDS =		textproc/py-yaml \
+			www/py-jinja2
+			
 RUN_DEPENDS =		net/py-msgpack \
 			net/py-zmq \
 			security/py-M2Crypto \
