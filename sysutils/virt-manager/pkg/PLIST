@@ -1,17 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/10 11:19:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/08 08:06:34 jasper Exp $
 bin/virt-clone
 bin/virt-convert
-bin/virt-image
 bin/virt-install
 bin/virt-manager
 bin/virt-xml
 @man man/man1/virt-clone.1
 @man man/man1/virt-convert.1
-@man man/man1/virt-image.1
 @man man/man1/virt-install.1
 @man man/man1/virt-manager.1
 @man man/man1/virt-xml.1
-@man man/man5/virt-image.5
 share/appdata/
 share/appdata/virt-manager.appdata.xml
 share/applications/virt-manager.desktop
@@ -90,6 +87,7 @@ share/virt-manager/icons/hicolor/22x22/devices/device_usb.png
 share/virt-manager/icons/hicolor/24x24/
 share/virt-manager/icons/hicolor/24x24/actions/
 share/virt-manager/icons/hicolor/24x24/actions/icon_console.png
+share/virt-manager/icons/hicolor/24x24/actions/vm_clone_wizard.png
 share/virt-manager/icons/hicolor/24x24/actions/vm_new.png
 share/virt-manager/icons/hicolor/32x32/
 share/virt-manager/icons/hicolor/32x32/actions/
@@ -131,7 +129,6 @@ share/virt-manager/ui/snapshots.ui
 share/virt-manager/ui/storagebrowse.ui
 share/virt-manager/virt-clone
 share/virt-manager/virt-convert
-share/virt-manager/virt-image
 share/virt-manager/virt-install
 share/virt-manager/virt-manager
 share/virt-manager/virt-xml
@@ -173,7 +170,6 @@ share/virt-manager/virtManager/mediacombo.py
 share/virt-manager/virtManager/mediadev.py
 share/virt-manager/virtManager/migrate.py
 share/virt-manager/virtManager/module_trace.py
-share/virt-manager/virtManager/netdev.py
 share/virt-manager/virtManager/netlist.py
 share/virt-manager/virtManager/network.py
 share/virt-manager/virtManager/nodedev.py
@@ -194,7 +190,6 @@ share/virt-manager/virtconv/
 share/virt-manager/virtconv/__init__.py
 share/virt-manager/virtconv/formats.py
 share/virt-manager/virtconv/ovf.py
-share/virt-manager/virtconv/parsers/
 share/virt-manager/virtconv/vmx.py
 share/virt-manager/virtinst/
 share/virt-manager/virtinst/__init__.py
@@ -229,6 +224,7 @@ share/virt-manager/virtinst/domainfeatures.py
 share/virt-manager/virtinst/domainmemorybacking.py
 share/virt-manager/virtinst/domainmemorytune.py
 share/virt-manager/virtinst/domainnumatune.py
+share/virt-manager/virtinst/domainresource.py
 share/virt-manager/virtinst/guest.py
 share/virt-manager/virtinst/hostkeymap.py
 share/virt-manager/virtinst/idmap.py
@@ -246,7 +242,6 @@ share/virt-manager/virtinst/storage.py
 share/virt-manager/virtinst/support.py
 share/virt-manager/virtinst/urlfetcher.py
 share/virt-manager/virtinst/util.py
-share/virt-manager/virtinst/virtimage.py
 share/virt-manager/virtinst/xmlbuilder.py
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

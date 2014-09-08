@@ -1,10 +1,10 @@
-$OpenBSD: patch-virtcli_cliconfig_py,v 1.1.1.1 2014/05/10 11:19:50 jasper Exp $
+$OpenBSD: patch-virtcli_cliconfig_py,v 1.2 2014/09/08 08:06:34 jasper Exp $
 
 Set correct $PREFIX
 
---- virtcli/cliconfig.py.orig	Fri May  9 21:01:50 2014
-+++ virtcli/cliconfig.py	Fri May  9 21:02:05 2014
-@@ -69,7 +69,7 @@ if _usr_version is not None and _usr_version != "":
+--- virtcli/cliconfig.py.orig	Sun Sep  7 22:19:45 2014
++++ virtcli/cliconfig.py	Mon Sep  8 10:06:05 2014
+@@ -75,7 +75,7 @@ if _usr_version is not None and _usr_version != "":
      __version__ = _usr_version
  
  # We should map this into the config somehow but I question if anyone cares
