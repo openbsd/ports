@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/21 11:25:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2014/09/08 07:01:58 ajacoutot Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
-DISTNAME=		neon-0.29.6
-REVISION=		5
-SHARED_LIBS=		neon    29.0 # 29.6
+DISTNAME=		neon-0.30.0
+SHARED_LIBS +=  neon                 29.0     # 30.0
+
 CATEGORIES=		net www devel
 
 HOMEPAGE=		http://www.webdav.org/neon/

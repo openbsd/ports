@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.14 2005/12/30 21:48:20 steven Exp $
-@lib lib/libneon.so.${LIBneon_VERSION}

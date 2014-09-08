@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/05/14 06:26:19 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.12 2014/09/08 07:01:58 ajacoutot Exp $
 bin/neon-config
 include/neon/
 include/neon/ne_207.h
@@ -28,7 +27,7 @@ include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
 lib/libneon.a
 lib/libneon.la
-lib/pkgconfig/
+@lib lib/libneon.so.${LIBneon_VERSION}
 lib/pkgconfig/neon.pc
 @man man/man1/neon-config.1
 @man man/man3/ne_add_request_header.3
@@ -81,6 +80,9 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_session_create.3
 @man man/man3/ne_session_destroy.3
 @man man/man3/ne_session_proxy.3
+@man man/man3/ne_session_socks_proxy.3
+@man man/man3/ne_session_system_proxy.3
+@man man/man3/ne_set_addrlist.3
 @man man/man3/ne_set_connect_timeout.3
 @man man/man3/ne_set_error.3
 @man man/man3/ne_set_proxy_auth.3
@@ -156,6 +158,7 @@ share/doc/neon/html/refi18n.html
 share/doc/neon/html/refiaddr.html
 share/doc/neon/html/refneon.html
 share/doc/neon/html/refopts.html
+share/doc/neon/html/refproxy.html
 share/doc/neon/html/refreq.html
 share/doc/neon/html/refreqbody.html
 share/doc/neon/html/refreqflags.html
