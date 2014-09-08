@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/08 21:12:56 sthen Exp $
 
 COMMENT =	lightweight webkit-based browser with vi-like controls
 
 DISTNAME =	dwb-2014.03.07
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -28,8 +29,8 @@ LIB_DEPENDS =	devel/json-c \
 		x11/gtk+3
 
 MAKE_FLAGS =	GTK=3 \
-		PREFIX="${LOCALBASE}" \
-		MANDIR="${LOCALBASE}/man" \
+		PREFIX="${TRUEPREFIX}" \
+		MANDIR="${TRUEPREFIX}/man" \
 		X11BASE="${X11BASE}"
 
 USE_GMAKE =	Yes
