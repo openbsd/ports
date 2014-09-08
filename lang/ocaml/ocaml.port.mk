@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.28 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: ocaml.port.mk,v 1.29 2014/09/08 05:10:10 chrisz Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -8,8 +8,6 @@
 # PFRAG.native        -- nativecode base files
 # PFRAG.foo-native    -- nativecode files for FLAVOR == foo
 # PFRAG.no-foo-native -- nativecode files for FLAVOR != foo
-
-OCAML_VERSION=4.01.0
 
 .include <bsd.port.arch.mk>
 
