@@ -1,0 +1,17 @@
+$OpenBSD: patch-sysdeps_openbsd_glibtop_machine_h,v 1.4 2014/09/08 07:35:31 jasper Exp $
+
+swap dkstat.h for sched.h
+
+--- sysdeps/openbsd/glibtop_machine.h.orig	Mon Sep  8 09:31:15 2014
++++ sysdeps/openbsd/glibtop_machine.h	Mon Sep  8 09:32:32 2014
+@@ -23,9 +23,9 @@
+ #define __GLIBTOP_MACHINE_H__
+ 
+ #include <sys/param.h>
++#include <sys/sched.h>
+ #include <nlist.h>
+ #include <kvm.h>
+-#include <sys/dkstat.h>
+ #include <time.h>
+ #include <sys/user.h>
+ #include <sys/types.h>
