@@ -1,6 +1,9 @@
-$OpenBSD: patch-sysdeps_openbsd_glibtop_machine_h,v 1.4 2014/09/08 07:35:31 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_glibtop_machine_h,v 1.5 2014/09/08 07:40:29 jasper Exp $
 
-swap dkstat.h for sched.h
+From b7edd1542ec3f024701fffabc52a9f9772707043 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 8 Sep 2014 09:36:07 +0200
+Subject: dkstat.h is going away on OpenBSD, so use sys/sched.h instead for CP_*
 
 --- sysdeps/openbsd/glibtop_machine.h.orig	Mon Sep  8 09:31:15 2014
 +++ sysdeps/openbsd/glibtop_machine.h	Mon Sep  8 09:32:32 2014

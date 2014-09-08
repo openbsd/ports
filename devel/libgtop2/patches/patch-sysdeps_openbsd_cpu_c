@@ -1,4 +1,10 @@
-$OpenBSD: patch-sysdeps_openbsd_cpu_c,v 1.5 2014/07/11 16:58:50 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_cpu_c,v 1.6 2014/09/08 07:40:29 jasper Exp $
+
+From 7326f8816d025a31b9625e9b1776c1bf455f5793 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 1 Sep 2014 15:21:31 +0200
+Subject: Add SMP support for OpenBSD
+
 --- sysdeps/openbsd/cpu.c.orig	Mon Apr 28 23:09:24 2014
 +++ sysdeps/openbsd/cpu.c	Fri Jul 11 18:58:37 2014
 @@ -26,18 +26,22 @@
