@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/18 20:59:13 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/09/08 17:51:09 jca Exp $
 @bin bin/cdb
 include/cdb.h
 lib/libcdb.a
+@lib lib/libcdb.so.${LIBcdb_VERSION}
 @man man/man1/cdb.1
 @man man/man3/cdb.3
 @man man/man5/cdb.5

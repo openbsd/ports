@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_sh,v 1.1.1.1 2012/05/18 20:59:13 sthen Exp $
---- tests.sh.orig	Mon Nov  3 22:08:55 2003
-+++ tests.sh	Sun Apr 20 10:50:58 2008
-@@ -15,7 +15,7 @@ esac
+$OpenBSD: patch-tests_sh,v 1.2 2014/09/08 17:51:09 jca Exp $
+--- tests.sh.orig	Fri May 11 16:16:30 2012
++++ tests.sh	Fri Aug 22 18:39:47 2014
+@@ -14,7 +14,7 @@ esac
  
  do_csum() {
    echo checksum may fail if no md5sum program
@@ -10,12 +10,3 @@ $OpenBSD: patch-tests_sh,v 1.1.1.1 2012/05/18 20:59:13 sthen Exp $
  }
  
  rm -f 1.cdb 1a.cdb
-@@ -106,7 +106,7 @@ echo $?
- 
- echo Handling file size limits
- (
-- ulimit -f 3
-+ ulimit -f 4
-  trap '' 25
-  (
-   for i in 0 1 2 3 4 5 6 7 8 9 ; do

@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 02:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/08 17:51:09 jca Exp $
 
 COMMENT =	creating and reading constant databases
 
-V =		0.77
-REVISION =	0
-DISTNAME =	tinycdb_$V
-PKGNAME =	tinycdb-$V
+DISTNAME =	tinycdb-0.78
 CATEGORIES =	databases
 SHARED_LIBS =	cdb	0.0
 
@@ -19,19 +16,22 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =	c
 
-WRKDIST =	${WRKDIR}/tinycdb-$V
-MAKE_FLAGS +=	sysconfdir="${SYSCONFDIR}" LIBcdb_VERSION="${LIBcdb_VERSION}"
-FAKE_FLAGS +=	${MAKE_FLAGS} prefix="${PREFIX}"
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		SHAREDLIB="libcdb.so.${LIBcdb_VERSION}" \
+		prefix="${PREFIX}" sysconfdir="${SYSCONFDIR}"
 
 .include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mno_shared}
-TEST_TARGET =	tests
+TEST_TARGET =		tests
 .else
 MAKE_FLAGS +=		INSTALLPROG="cdb-shared"
 ALL_TARGET =		all shared
 INSTALL_TARGET =	install install-sharedlib
-TEST_TARGET =	tests-shared
+TEST_TARGET =		tests-shared
 .endif
+
+post-install:
+	rm -f "${PREFIX}/lib/libcdb.so"
 
 .include <bsd.port.mk>

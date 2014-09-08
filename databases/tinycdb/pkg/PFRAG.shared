@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/05/18 20:59:13 sthen Exp $
-@lib lib/libcdb.so.${LIBcdb_VERSION}
