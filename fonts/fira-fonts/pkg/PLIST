@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/06/17 17:47:23 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/08 10:40:12 juanfra Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/fira/
 lib/X11/fonts/fira/FiraMono-Bold.otf
-lib/X11/fonts/fira/FiraMono-Medium.otf
 lib/X11/fonts/fira/FiraMono-Regular.otf
 lib/X11/fonts/fira/FiraSans-Bold.otf
 lib/X11/fonts/fira/FiraSans-BoldItalic.otf
@@ -23,8 +22,6 @@ lib/X11/fonts/fira/FiraSans-HeavyItalic.otf
 lib/X11/fonts/fira/FiraSans-Italic.otf
 lib/X11/fonts/fira/FiraSans-Light.otf
 lib/X11/fonts/fira/FiraSans-LightItalic.otf
-lib/X11/fonts/fira/FiraSans-Medium.otf
-lib/X11/fonts/fira/FiraSans-MediumItalic.otf
 lib/X11/fonts/fira/FiraSans-Regular.otf
 lib/X11/fonts/fira/FiraSans-SemiBold.otf
 lib/X11/fonts/fira/FiraSans-SemiBoldItalic.otf
@@ -36,6 +33,8 @@ lib/X11/fonts/fira/FiraSans-Ultra.otf
 lib/X11/fonts/fira/FiraSans-UltraItalic.otf
 lib/X11/fonts/fira/FiraSans-UltraLight.otf
 lib/X11/fonts/fira/FiraSans-UltraLightItalic.otf
+share/doc/fira-fonts/
+share/doc/fira-fonts/LICENSE
 share/fira-fonts/
 share/fira-fonts/README
 share/fira-fonts/webfonts/
