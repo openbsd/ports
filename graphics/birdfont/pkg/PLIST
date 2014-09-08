@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/09/05 01:54:15 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/09/08 20:20:52 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-export
 @bin bin/birdfont-import
@@ -55,6 +55,7 @@ share/birdfont/icons/kerning_class.png
 share/birdfont/icons/kerning_text_input.png
 share/birdfont/icons/move.png
 share/birdfont/icons/move_background.png
+share/birdfont/icons/move_canvas.png
 share/birdfont/icons/move_layer.png
 share/birdfont/icons/move_point.png
 share/birdfont/icons/new_file.png
