@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2014/08/27 06:58:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2014/09/08 22:36:22 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.5.23
 EPOCH=		0
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -27,7 +27,8 @@ PATCH_DIST_STRIP= -p1
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	databases/qdbm
-BUILD_DEPENDS+=	textproc/docbook-xsl
+BUILD_DEPENDS+=	textproc/docbook-xsl \
+		www/lynx
 
 FLAVORS=	idn sasl sidebar slang mixmaster compressed
 FLAVOR?=
