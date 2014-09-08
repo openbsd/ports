@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2014/09/08 17:44:18 jca Exp $
 
 COMMENT=		highly customizable e-mail to HTML converter
 
-DISTNAME=		MHonArc-2.6.18
+DISTNAME=		MHonArc-2.6.19
 PKGNAME=		${DISTNAME:L}
-REVISION=		0
 CATEGORIES=		www mail
 
 HOMEPAGE=		http://www.mhonarc.org/
 
 MASTER_SITES=		http://www.mhonarc.org/release/MHonArc/tar/ \
-			http://www.nacs.uci.edu/indiv/ehood/tar/ \
-			ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/
+			http://mhonarc.domainunion.de/release/MHonArc/tar/
 
 MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
 
