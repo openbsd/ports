@@ -1,16 +1,16 @@
-$OpenBSD: patch-rijndael_cpp,v 1.2 2013/09/06 13:28:16 naddy Exp $
---- rijndael.cpp.orig	Fri Aug  2 15:30:12 2013
-+++ rijndael.cpp	Thu Aug 29 22:58:10 2013
-@@ -7,6 +7,8 @@
-  ***************************************************************************/
- #include "rar.hpp"
+$OpenBSD: patch-rijndael_cpp,v 1.3 2014/09/08 18:54:30 naddy Exp $
+--- rijndael.cpp.orig	Tue Jun 10 19:14:06 2014
++++ rijndael.cpp	Tue Sep  2 22:58:36 2014
+@@ -11,6 +11,8 @@
+ #include <wmmintrin.h>
+ #endif
  
 +#ifndef OPENSSL_AES
 +
  static byte S[256],S5[256],rcon[30];
  static byte T1[256][4],T2[256][4],T3[256][4],T4[256][4];
  static byte T5[256][4],T6[256][4],T7[256][4],T8[256][4];
-@@ -52,6 +54,7 @@ inline void Copy128(byte *dest,const byte *src)
+@@ -56,6 +58,7 @@ inline void Copy128(byte *dest,const byte *src)
  #endif
  }
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-rijndael_cpp,v 1.2 2013/09/06 13:28:16 naddy Exp $
  
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // API
-@@ -59,13 +62,34 @@ inline void Copy128(byte *dest,const byte *src)
+@@ -63,14 +66,35 @@ inline void Copy128(byte *dest,const byte *src)
  
  Rijndael::Rijndael()
  {
@@ -26,6 +26,7 @@ $OpenBSD: patch-rijndael_cpp,v 1.2 2013/09/06 13:28:16 naddy Exp $
    if (S[0]==0)
      GenerateTables();
 +#endif
+   CBCMode = true; // Always true for RAR.
  }
  
  
@@ -50,10 +51,10 @@ $OpenBSD: patch-rijndael_cpp,v 1.2 2013/09/06 13:28:16 naddy Exp $
 +  EVP_CipherInit_ex(&ctx, cipher, NULL, key, initVector, Encrypt);
 +  EVP_CIPHER_CTX_set_padding(&ctx, 0);
 +#else
-   uint uKeyLenInBytes;
-   switch(keyLen)
-   {
-@@ -95,6 +119,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+ #ifdef USE_SSE
+   // Check SSE here instead of constructor, so if object is a part of some
+   // structure memset'ed before use, this variable is not lost.
+@@ -111,6 +135,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
  
    if(!Encrypt)
      keyEncToDec();
@@ -61,31 +62,35 @@ $OpenBSD: patch-rijndael_cpp,v 1.2 2013/09/06 13:28:16 naddy Exp $
  }
  
  
-@@ -104,6 +129,11 @@ size_t Rijndael::blockDecrypt(const byte *input, size_
-   if (input == 0 || inputLen <= 0)
-     return 0;
+@@ -120,6 +145,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
+   if (inputLen <= 0)
+     return;
  
 +#ifdef OPENSSL_AES
 +  int outLen;
 +  EVP_CipherUpdate(&ctx, outBuffer, &outLen, input, inputLen);
-+  return outLen;
++  return;
 +#else
-   byte block[16], iv[4][4];
-   memcpy(iv,m_initVector,16); 
+   size_t numBlocks=inputLen/16;
+ #ifdef USE_SSE
+   if (AES_NI)
+@@ -182,6 +212,7 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
+   }
  
-@@ -126,9 +156,11 @@ size_t Rijndael::blockDecrypt(const byte *input, size_
    memcpy(m_initVector,iv,16);
-   
-   return 16*numBlocks;
 +#endif // OPENSSL_AES
  }
+ 
+ 
+@@ -218,6 +249,7 @@ void Rijndael::blockDecryptSSE(const byte *input, size
+ #endif
  
  
 +#ifndef OPENSSL_AES
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // ALGORITHM
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -310,6 +342,7 @@ void Rijndael::GenerateTables()
+@@ -358,6 +390,7 @@ void Rijndael::GenerateTables()
    }
  }
  
