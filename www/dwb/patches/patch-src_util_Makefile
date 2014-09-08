@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_util_Makefile,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
+--- src/util/Makefile.orig	Mon Sep  8 20:17:32 2014
++++ src/util/Makefile	Mon Sep  8 20:17:56 2014
+@@ -34,16 +34,14 @@ $(TLDS_H): $(TLDS_IN) $(MKTLDS)
+ 	@./$(MKTLDS) < $(TLDS_IN) > $@
+ 
+ $(MKTLDS): $(MKTLDS_SRC)
+-	@echo $(CC) $< 
+-	@$(CC) -o $@ $< $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
++	$(CC) -o $@ $< $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+ 
+ $(HSTS_PRELOAD): $(HSTS) $(TRANSPORT_SECURITY_CERTS) $(TRANSPORT_SECURITY_JSON)
+ 	@echo gen $(notdir $@)
+ 	@./$(HSTS) > $@
+ 
+ $(HSTS): $(HSTS).c
+-	@echo $(CC) $< 
+-	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $(HSTS) $(HSTS).c $(LDFLAGS)
++	$(CC) $(CFLAGS) $(CPPFLAGS) -o $(HSTS) $(HSTS).c $(LDFLAGS)
+ 
+ clean: 
+ 	$(RM) $(OUTFILES) $(GEN_TOOLS)

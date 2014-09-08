@@ -1,0 +1,27 @@
+$OpenBSD: patch-dwbremote_Makefile,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
+--- dwbremote/Makefile.orig	Fri Mar  7 11:39:43 2014
++++ dwbremote/Makefile	Mon Sep  8 20:18:06 2014
+@@ -14,7 +14,7 @@ CFLAGS += -DCOPYRIGHT=\"$(COPYRIGHT)\"
+ CFLAGS += -DLICENSE=\"$(LICENSE)\"
+ 
+ 
+-LDFLAGS += -lX11
++LDFLAGS += -lX11 -L${X11BASE}/lib
+ 
+ DCFLAGS += -g -O0 -Wall -pedantic -Werror -Wextra -std=c99 
+ DCFLAGS += $(ORIG_CFLAGS)
+@@ -27,12 +27,10 @@ SHARED_OBJ = dwbremote.o
+ all: $(TARGET)
+ 
+ $(TARGET): $(SHARED_OBJ) main.o
+-	@echo $(CC) -o $@
+-	@$(CC) $(OBJ) -o $@ $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
++	$(CC) $(OBJ) -o $@ $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+ 
+ %.o: %.c 
+-	@echo $(CC) $< 
+-	@$(CC) -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
++	$(CC) -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
+ 
+ debug: 
+ 	make CFLAGS="$(DCFLAGS)"

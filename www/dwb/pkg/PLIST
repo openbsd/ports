@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
+@bin bin/dwb
+@bin bin/dwbem
+@bin bin/dwbremote
+@man man/man1/dwb.1
+@man man/man1/dwbem.1
+@man man/man1/dwbremote.1
+@man man/man7/dwb-js.7
+share/applications/
+share/applications/dwb.desktop
+share/dwb/
+share/dwb/extensions/
+share/dwb/extensions/cookies
+share/dwb/extensions/formfiller
+share/dwb/extensions/perdomainsettings
+share/dwb/extensions/requestpolicy
+share/dwb/extensions/unique_tabs
+share/dwb/extensions/userscripts
+share/dwb/html/
+share/dwb/html/error.html
+share/dwb/html/head.html
+share/dwb/html/info.html
+share/dwb/html/keys.html
+share/dwb/html/local.html
+share/dwb/html/settings.html
+share/dwb/scripts/
+share/dwb/scripts/base.js
+share/dwb/scripts/lib/
+share/dwb/scripts/lib/console.js
+share/dwb/scripts/lib/data.js
+share/dwb/scripts/lib/dwb.js
+share/dwb/scripts/lib/enums.js
+share/dwb/scripts/lib/extensions.js
+share/dwb/scripts/lib/io.js
+share/dwb/scripts/lib/net.js
+share/dwb/scripts/lib/signals.js
+share/dwb/scripts/lib/system.js
+share/dwb/scripts/lib/util.js
+share/dwb/scripts/lib/webview.js
+share/pixmaps/
+share/pixmaps/dwb.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

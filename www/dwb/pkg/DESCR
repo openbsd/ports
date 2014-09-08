@@ -1,0 +1,4 @@
+dwb is a lightweight web browser based on the webkit web browser engine and
+the gtk toolkit. dwb is highly customizable and can be easily configured
+through a web interface.
+It is mostly keyboard driven, inspired by firefox's vimperator plugin.

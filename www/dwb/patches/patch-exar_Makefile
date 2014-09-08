@@ -1,0 +1,18 @@
+$OpenBSD: patch-exar_Makefile,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
+--- exar/Makefile.orig	Mon Sep  8 20:18:24 2014
++++ exar/Makefile	Mon Sep  8 20:18:29 2014
+@@ -14,12 +14,10 @@ SHARED_OBJ = exar.o 
+ all: $(SHARED_OBJ)
+ 
+ $(TARGET): $(OBJ)
+-	@echo $(CC) -o $@
+-	@$(CC) $(OBJ) -o $@ $(CFLAGS) $(CPPFLAGS)
++	$(CC) $(OBJ) -o $@ $(CFLAGS) $(CPPFLAGS)
+ 
+ %.o: %.c 
+-	@echo $(CC) $< 
+-	@$(CC) -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
++	$(CC) -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
+ 
+ debug: 
+ 	make CFLAGS="$(DCFLAGS)"

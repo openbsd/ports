@@ -1,0 +1,35 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
+--- config.mk.orig	Fri Mar  7 11:39:43 2014
++++ config.mk	Mon Sep  8 20:27:06 2014
+@@ -146,12 +146,10 @@ BASE_SCRIPT=base.js
+ CFLAGS := $(CFLAGS)
+ CFLAGS += -Wall 
+ CFLAGS += -Werror=format-security 
+-CFLAGS += -pipe
+-CFLAGS += --ansi
++CFLAGS += -Wno-variadic-macros
++CFLAGS += -ansi
+ CFLAGS += -std=c99
+ CFLAGS += -D_POSIX_C_SOURCE='200112L'
+-CFLAGS += -O2
+-CFLAGS += -g
+ CFLAGS += -D_BSD_SOURCE
+ CFLAGS += -D_NETBSD_SOURCE
+ CFLAGS += -D__BSD_VISIBLE
+@@ -159,14 +157,14 @@ CFLAGS += -D__BSD_VISIBLE
+ CFLAGS += $(shell pkg-config --cflags $(LIBS))
+ 
+ ifeq ($(shell pkg-config --exists '$(LIBSOUP) >= 2.38' && echo 1), 1)
+-M4FLAGS += -DWITH_LIBSOUP_2_38=1 -G
++M4FLAGS += -DWITH_LIBSOUP_2_38=1
+ CFLAGS += -DWITH_LIBSOUP_2_38=1
+ endif
+ 
+ ifeq (${DISABLE_HSTS}, 1)
+ CFLAGS += -DDISABLE_HSTS
+ else 
+-M4FLAGS += -DWITH_HSTS=1 -G 
++M4FLAGS += -DWITH_HSTS=1 
+ endif
+ 
+ CFLAGS_OPTIONS := $(CFLAGS)

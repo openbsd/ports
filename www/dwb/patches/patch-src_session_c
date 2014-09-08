@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_session_c,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
+--- src/session.c.orig	Wed Sep  3 22:40:39 2014
++++ src/session.c	Wed Sep  3 22:41:00 2014
+@@ -37,7 +37,7 @@ session_get_groups() 
+ {
+     char **groups = NULL;
+     char *content = util_get_file_content(dwb.files[FILES_SESSION], NULL);
+-    if (content) 
++    if (content && strlen(content))
+     {
+         groups = g_regex_split_simple("^g:", content, G_REGEX_MULTILINE, G_REGEX_MATCH_NOTEMPTY);
+         g_free(content);
