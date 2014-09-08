@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.18 2014/09/08 07:01:13 ajacoutot Exp $
+--- configure.ac.orig	Mon Sep  8 08:53:49 2014
++++ configure.ac	Mon Sep  8 08:54:11 2014
+@@ -1336,7 +1336,7 @@ AG_GST_CHECK_FEATURE(NAS, [nas plug-in], nassink, [
+ dnl *** neon ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_NEON, true)
+ AG_GST_CHECK_FEATURE(NEON, [neon http client plugins], neonhttpsrc, [
+-  PKG_CHECK_MODULES(NEON, neon >= 0.27.0  neon <= 0.29.99, HAVE_NEON="yes", [
++  PKG_CHECK_MODULES(NEON, neon >= 0.27.0  neon <= 0.30.0, HAVE_NEON="yes", [
+     HAVE_NEON="no"
+   ])
+   AC_SUBST(NEON_CFLAGS)
