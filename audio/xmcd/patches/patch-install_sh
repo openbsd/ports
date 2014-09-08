@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_sh,v 1.2 2008/10/28 12:09:05 jasper Exp $
+$OpenBSD: patch-install_sh,v 1.3 2014/09/08 07:33:58 espie Exp $
 --- install.sh.orig	Sat Feb  5 08:26:20 2000
-+++ install.sh	Tue Oct 28 13:06:18 2008
++++ install.sh	Mon Sep  8 09:32:21 2014
 @@ -50,11 +50,11 @@ XMCD_URL=http://metalab.unc.edu/tkan/xmcd/
  DIRPERM=755
  SCRPERM=755
@@ -17,6 +17,15 @@ $OpenBSD: patch-install_sh,v 1.2 2008/10/28 12:09:05 jasper Exp $
  BINGROUP=bin
  XBINOWNER=root
  XBINGROUP=bin
+@@ -597,7 +597,7 @@ $ECHO "\n\t$XMCD_URL"
+ 
+ # Check privilege
+ (id | fgrep 'uid=0(root)') >/dev/null 2>&1
+-if [ $? != 0 ]
++if false
+ then
+ 	$ECHO "\n\nYou should be the super user to install xmcd."
+ 
 @@ -963,80 +963,8 @@ then
  fi
  
