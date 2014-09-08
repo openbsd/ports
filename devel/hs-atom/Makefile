@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/08 17:04:50 jasper Exp $
 
 COMMENT=		DSL for embedded hard realtime applications
 
 DISTNAME=		atom-1.0.9
-REVISION =		2
+REVISION =		3
 CATEGORIES=		devel lang
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM=	Yes

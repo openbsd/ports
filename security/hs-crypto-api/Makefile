@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/08 17:04:51 jasper Exp $
 
 COMMENT=		generic interface for cryptographic operations
 
 DISTNAME=		crypto-api-0.10.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		security net
 
 HOMEPAGE=		http://trac.haskell.org/crypto-api/wiki
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

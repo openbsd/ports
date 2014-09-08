@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/07 21:31:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/08 17:04:51 jasper Exp $
 
 COMMENT=		fractal program with GTK interface
 DISTNAME=		gfract-0.33
-REVISION=		11
+REVISION=		12
 DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math
 
 HOMEPAGE=		https://gfract.googlecode.com/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/04/17 20:51:25 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2014/09/08 17:04:51 jasper Exp $
 
 COMMENT=		module for communicating with MPD servers
 DISTNAME=		Audio-MPD-1.110560
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

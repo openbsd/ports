@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/18 22:07:18 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/08 17:04:50 jasper Exp $
 
 COMMENT=		efficient construction of bytestrings
 
 DISTNAME=		blaze-builder-0.3.1.1
 CATEGORIES=		devel
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+REVISION=		0
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

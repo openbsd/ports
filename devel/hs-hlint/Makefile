@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/09/08 17:04:51 jasper Exp $
 
 COMMENT=		source code suggestions for Haskell
 
 DISTNAME=		hlint-1.8.29
-REVISION=		2
+REVISION=		3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://community.haskell.org/~ndm/hlint/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
