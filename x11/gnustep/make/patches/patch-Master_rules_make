@@ -1,0 +1,23 @@
+$OpenBSD: patch-Master_rules_make,v 1.1 2014/09/08 12:21:42 espie Exp $
+--- Master/rules.make.orig	Mon Sep  8 13:05:02 2014
++++ Master/rules.make	Mon Sep  8 13:05:50 2014
+@@ -115,19 +115,7 @@ internal-all::
+ 
+ after-all::
+ 
+-ifneq ($(GNUSTEP_INSTALLATION_DIR),)
+ internal-check-install-permissions:
+-	@if [ -d "$(GNUSTEP_INSTALLATION_DIR)" \
+-	      -a ! -w "$(GNUSTEP_INSTALLATION_DIR)" ]; then \
+-	  echo "*ERROR*: the software is configured to install itself into $(GNUSTEP_INSTALLATION_DIR)"; \
+-	  echo "but you do not have permissions to write in that directory:";\
+-	  echo "Aborting installation."; \
+-	  echo ""; \
+-	  exit 1; \
+-	fi
+-else
+-internal-check-install-permissions:
+-endif
+ 
+ # By adding an ADDITIONAL_INSTALL_DIRS variable you can request
+ # additional installation directories to be created before the first
