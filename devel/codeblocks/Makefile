@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/07/09 16:49:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/08 07:44:39 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -70,7 +70,7 @@ pre-configure:
 # it impossible to edit them by default
 post-install:
 	find ${PREFIX}/share/codeblocks/templates/ -type f -perm 444 | \
-		xargs chmod 644
+		xargs -r chmod 644
 	rm ${PREFIX}/lib/codeblocks/plugins/*.{a,la}
 
 .include <bsd.port.mk>
