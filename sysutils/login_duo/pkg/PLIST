@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/08 22:42:03 jturner Exp $
+include/duo.h
+include/util.h
+lib/libduo.a
+lib/libduo.la
+@lib lib/libduo.so.${LIBduo_VERSION}
+lib/pkgconfig/libduo.pc
+@group auth
+libexec/auth/
+@mode 4755
+@owner root
+@bin libexec/auth/login_duo
+@mode
+@owner
+@group
+@man man/man3/duo.3
+@man man/man8/login_duo.8
+share/doc/login_duo/
+share/doc/login_duo/AUTHORS
+share/doc/login_duo/CHANGES
+share/doc/login_duo/LICENSE
+share/doc/login_duo/README
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/login_duo/
+@mode 0444
+@owner root
+@group bin
+share/examples/login_duo/login_duo.conf
+@mode 0600
+@owner sshd
+@group wheel
+@sample ${SYSCONFDIR}/login_duo.conf

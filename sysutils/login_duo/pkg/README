@@ -1,0 +1,37 @@
+$OpenBSD: README,v 1.1.1.1 2014/09/08 22:42:03 jturner Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+First steps
+===========
+In order to use Duo Unix for two-factor authentication you have to first
+sign up for an account if you don't already have one.
+https://signup.duosecurity.com/
+
+Then create a new UNIX Integration to get an integration key, secret
+key, and API hostname. (See:
+https://www.duosecurity.com/docs/getting_started)
+
+Once you have this information, edit ${SYSCONFDIR}/login_duo.conf to
+match your keys.
+
+Test login_duo
+==============
+As a regular user, run ${LOCALBASE}/libexec/auth/login_duo. You should
+be provided with an enrollment link. Enroll your phone then run
+${LOCALBASE}/libexec/auth/login_duo again. Once you provide a valid pass
+code you should get a SUCCESS message.
+
+Enable SSH two-factor authentication
+====================================
+To enable two-factor authentication add
+
+ForceCommand ${LOCALBASE}/libexec/auth/login_duo
+
+to your ${SYSCONFDIR}/ssh/sshd_config. Duo Security recommends disabling
+PermitTunnel and AllowTcpForwarding when using two-factor
+authentication.
+
+When finished, restart sshd.

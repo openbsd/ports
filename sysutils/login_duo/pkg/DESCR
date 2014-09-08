@@ -1,0 +1,3 @@
+login_duo provides two-factor authentication for Unix systems. When
+integrated with sshd(8) a challenge is sent to the users cell phone
+before access is granted.
