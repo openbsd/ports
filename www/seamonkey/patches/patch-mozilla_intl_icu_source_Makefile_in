@@ -1,0 +1,13 @@
+$OpenBSD: patch-mozilla_intl_icu_source_Makefile_in,v 1.1 2014/09/09 21:27:17 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=990196
+--- mozilla/intl/icu/source/Makefile.in.orig	Mon Sep  8 20:34:59 2014
++++ mozilla/intl/icu/source/Makefile.in	Mon Sep  8 20:54:30 2014
+@@ -311,7 +311,7 @@ $(top_builddir)/config/pkgdataMakefile:
+ 
+ $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
+ 	-$(RMV) $@
+-	$(INSTALL_SCRIPT) $(top_srcdir)/config/icu-config-top $@
++	install -m 555 $(top_srcdir)/config/icu-config-top $@
+ 	chmod u+w $@
+ 	@echo "# Following from @platform_make_fragment@" >> $@
+ 	LC_ALL=C sed -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@

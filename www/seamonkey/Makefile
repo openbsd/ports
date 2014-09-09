@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.161 2014/08/10 09:58:07 espie Exp $
+# $OpenBSD: Makefile,v 1.162 2014/09/09 21:27:17 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 
-MOZILLA_VERSION =	2.26.1
+MOZILLA_VERSION =	2.29
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-3.1
-REVISION-lightning =	2
+PKGNAME-lightning =	lightning-seamonkey-3.4
 EPOCH-lightning =	0
-REVISION-main =		0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 
-SO_VERSION =	37.0
+SO_VERSION =	38.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -80,6 +78,11 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
+
+# MOZCONFIG is mandatory now even if empty ?
+post-patch:
+	touch ${WRKSRC}/.mozconfig
+
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c,v 1.5 2012/06/11 15:38:33 landry Exp $
---- mozilla/js/src/ctypes/libffi/src/dlmalloc.c.orig	Thu Feb 16 05:25:02 2012
-+++ mozilla/js/src/ctypes/libffi/src/dlmalloc.c	Tue Mar  6 13:23:24 2012
-@@ -2517,7 +2517,6 @@ static int init_mparams(void) {
+$OpenBSD: patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c,v 1.6 2014/09/09 21:27:17 landry Exp $
+--- mozilla/js/src/ctypes/libffi/src/dlmalloc.c.orig	Fri Sep  5 07:36:33 2014
++++ mozilla/js/src/ctypes/libffi/src/dlmalloc.c	Mon Sep  8 20:34:50 2014
+@@ -2520,7 +2520,6 @@ static int init_mparams(void) {
  
  #if (FOOTERS && !INSECURE)
      {
@@ -9,7 +9,7 @@ $OpenBSD: patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c,v 1.5 2012/06/11 15:
        int fd;
        unsigned char buf[sizeof(size_t)];
        /* Try to use /dev/urandom, else fall back on using time */
-@@ -2527,7 +2526,6 @@ static int init_mparams(void) {
+@@ -2530,7 +2529,6 @@ static int init_mparams(void) {
          close(fd);
        }
        else
