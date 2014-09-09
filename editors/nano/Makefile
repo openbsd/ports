@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2014/09/09 11:10:35 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
 DISTNAME=	nano-2.2.6
+REVISION=	0
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
@@ -34,14 +35,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
 	${INSTALL_DATA} ${WRKBUILD}/doc/nanorc.sample \
 	    ${PREFIX}/share/examples/nano
-
-# convenience target for maintainer to regen the syntax highlighting patches
-nanorc-patches: extract
-	cd ${WRKSRC}/doc/syntax; \
-	    for i in *.nanorc; do \
-		mv $$i $$i.orig; \
-		sed -e 's/\\</[[:<:]]/g' -e 's/\\>/[[:>:]]/g' $$i.orig >$$i; \
-		cmp $$i.orig $$i && mv $$i.orig $$i; \
-	    done
 
 .include <bsd.port.mk>
