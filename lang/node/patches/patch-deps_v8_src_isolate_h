@@ -1,0 +1,24 @@
+$OpenBSD: patch-deps_v8_src_isolate_h,v 1.1 2014/09/09 14:01:26 jasper Exp $
+
+Security fix for CVE-2014-5256,
+http://seclists.org/oss-sec/2014/q3/505
+
+--- deps/v8/src/isolate.h.orig	Tue Sep  9 15:10:24 2014
++++ deps/v8/src/isolate.h	Tue Sep  9 15:10:51 2014
+@@ -1392,14 +1392,9 @@ class StackLimitCheck BASE_EMBEDDED {
+  public:
+   explicit StackLimitCheck(Isolate* isolate) : isolate_(isolate) { }
+ 
+-  bool HasOverflowed() const {
++  inline bool HasOverflowed() const {
+     StackGuard* stack_guard = isolate_->stack_guard();
+-    // Stack has overflowed in C++ code only if stack pointer exceeds the C++
+-    // stack guard and the limits are not set to interrupt values.
+-    // TODO(214): Stack overflows are ignored if a interrupt is pending. This
+-    // code should probably always use the initial C++ limit.
+-    return (reinterpret_cast<uintptr_t>(this) < stack_guard->climit()) &&
+-           stack_guard->IsStackOverflow();
++    return reinterpret_cast<uintptr_t>(this) < stack_guard->real_climit();
+   }
+  private:
+   Isolate* isolate_;
