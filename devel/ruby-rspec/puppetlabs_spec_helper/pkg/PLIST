@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/26 13:28:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/09 07:58:11 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.noexec.yaml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.markdown
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/module_spec_helper.rb
@@ -14,4 +19,19 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec/matchers.
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec/puppet_internals.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/puppetlabs_spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/rake_tasks.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetlabs_spec_helper/version.rb
+${GEM_LIB}/gems/${DISTNAME}/puppet_spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/puppetlabs_spec_helper.gemspec
+${GEM_LIB}/gems/${DISTNAME}/puppetlabs_spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/puppet/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/puppet/type/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/puppet/type/spechelper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppetlabs_spec_helper/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppetlabs_spec_helper/puppetlabs_spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppetlabs_spec_helper/puppetlabs_spec/puppet_internals_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/spechelper_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/watchr.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
