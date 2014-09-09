@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/24 13:37:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/09 21:50:48 sthen Exp $
 
 PKG_ARCH =		*
 
-COMMENT =		Nagios plugin to the status of ESX/i hardware
+COMMENT =		Nagios plugin to monitor the status of ESX/i hardware
 
-V =			20130424
+V =			20140319
 DISTNAME =		check_esxi_hardware.py.$V
 PKGNAME =		check_esxi_hardware-$V
 CATEGORIES =		net
@@ -16,7 +16,7 @@ MASTER_SITES =		http://www.claudiokuenzler.com/nagios-plugins/
 
 EXTRACT_SUFX =
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 NO_BUILD =		Yes
