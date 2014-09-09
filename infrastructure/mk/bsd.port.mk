@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1280 2014/09/05 14:45:02 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1281 2014/09/09 09:34:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2819,7 +2819,7 @@ _hook-post-install::
 
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
-	@if [ x`${_FAKESUDO} /bin/sh -c umask` != x022 ]; then \
+	@if [ x`umask 022;${_FAKESUDO} /bin/sh -c umask` != x022 ]; then \
 		echo >&2 "Error: your umask is \"`${_FAKESUDO} /bin/sh -c umask`"\".; \
 		exit 1; \
 	fi
@@ -2851,7 +2851,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_SUDOMAKESYS} do-install ${FAKE_SETUP}
 .else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && exec ${_FAKESUDO} ${_SYSTRACE_CMD} \
+	@cd ${WRKBUILD} && umask 022 && exec ${_FAKESUDO} ${_SYSTRACE_CMD} \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
