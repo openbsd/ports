@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2014/07/13 08:01:46 giovanni Exp $
+# $OpenBSD: Makefile,v 1.31 2014/09/09 21:03:24 sthen Exp $
 
 COMMENT=	fast and lightweight file manager
 
-DISTNAME=	pcmanfm-1.2.0
+DISTNAME=	pcmanfm-1.2.2
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	x11
