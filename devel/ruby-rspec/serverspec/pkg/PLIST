@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/06/12 10:08:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/09 07:31:00 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -69,6 +69,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/mail_alias.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/php_config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/port.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/ppa.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/process.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/routing_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/selinux.rb
@@ -314,6 +315,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/solaris11/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/powershell_command_runner.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ubuntu/
+${GEM_LIB}/gems/${DISTNAME}/spec/ubuntu/ppa_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/windows/
