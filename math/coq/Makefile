@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/08/27 09:44:59 daniel Exp $
+# $OpenBSD: Makefile,v 1.28 2014/09/10 08:36:18 chrisz Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -24,6 +24,7 @@ MASTER_SITES=	http://coq.inria.fr/distrib/V${V}/files/
 
 RUN_DEPENDS=	x11/lablgtk2
 BUILD_DEPENDS=	${RUN_DEPENDS} \
+		lang/ocaml-camlp4 \
 		sysutils/findlib
 
 DESTDIRNAME=	COQINSTALLPREFIX
