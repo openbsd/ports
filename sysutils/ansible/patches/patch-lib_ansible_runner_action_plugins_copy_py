@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_ansible_runner_action_plugins_copy_py,v 1.1 2014/09/10 20:21:43 rpe Exp $
+
+https://github.com/adamchainz/ansible/commit/842a1b976d650b2c3117a6e0ed1329e5d0d62873
+
+'copy' write new line at end of file if 'content' passed without newline
+
+--- lib/ansible/runner/action_plugins/copy.py.orig	Wed Sep 10 21:24:52 2014
++++ lib/ansible/runner/action_plugins/copy.py	Wed Sep 10 21:25:00 2014
+@@ -315,6 +315,8 @@ class ActionModule(object):
+         f = os.fdopen(fd, 'w')
+         try:
+             f.write(content)
++            if not content.endswith('\n'):
++                f.write('\n')
+         except Exception, err:
+             os.remove(content_tempfile)
+             raise Exception(err)
