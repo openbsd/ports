@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/09/06 09:32:21 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/09/10 07:46:51 kirby Exp $
 @bin bin/openxcom
+share/applications/openxcom.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/icons/hicolor/128x128/apps/openxcom.png
+share/icons/hicolor/48x48/apps/openxcom.png
+share/icons/hicolor/scalable/apps/openxcom.svg
 share/openxcom/
 share/openxcom/Language/
 share/openxcom/Language/Font.dat
@@ -124,3 +128,7 @@ share/openxcom/TERRAIN/
 share/openxcom/TERRAIN/FIRES.MCD
 share/openxcom/TERRAIN/INTERC.MCD
 share/openxcom/openxcom.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
