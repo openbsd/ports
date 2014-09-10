@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/10 11:28:06 rpointel Exp $
+@bin bin/foremost
+@man man/man8/foremost.8
+share/examples/foremost.conf
+@sample ${SYSCONFDIR}/foremost.conf
