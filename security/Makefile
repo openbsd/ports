@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.349 2014/09/10 11:21:10 rpointel Exp $
+# $OpenBSD: Makefile,v 1.350 2014/09/10 11:29:08 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -46,6 +46,7 @@
      SUBDIR += encfs
      SUBDIR += erl-bcrypt
      SUBDIR += fcrackzip
+     SUBDIR += foremost
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
