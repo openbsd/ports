@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.34 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2014/09/10 00:07:39 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.19
+DISTNAME=	GraphicsMagick-1.3.20
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
-SHARED_LIBS=	GraphicsMagick		4.1 \
-		GraphicsMagick++	3.0 \
-		GraphicsMagickWand	3.1 \
+SHARED_LIBS=	GraphicsMagick		4.2 \
+		GraphicsMagick++	3.1 \
+		GraphicsMagickWand	3.2 \
 
 HOMEPAGE=	http://www.graphicsmagick.org/
 
@@ -21,9 +20,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # http://www.graphicsmagick.org/www/Copyright.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		ICE SM X11 Xext bz2 c freetype jasper jbig jpeg lcms2 \
-			ltdl lzma m png16 pthread stdc++ tiff webp wmflite-0.2 \
-			xcb xml2 z
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext bz2 c freetype jasper jbig \
+			jpeg lcms2 ltdl lzma m png16 pthread pthread-stubs \
+			stdc++ tiff webp wmflite-0.2 xcb xml2 z
 
 MODULES=		converters/libiconv
 

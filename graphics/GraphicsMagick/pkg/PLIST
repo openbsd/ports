@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/06/14 10:34:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/09/10 00:07:39 brad Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -343,6 +343,7 @@ share/doc/GraphicsMagick/ChangeLog.2009
 share/doc/GraphicsMagick/ChangeLog.2010
 share/doc/GraphicsMagick/ChangeLog.2011
 share/doc/GraphicsMagick/ChangeLog.2012
+share/doc/GraphicsMagick/ChangeLog.2013
 share/doc/GraphicsMagick/Copyright.txt
 share/doc/GraphicsMagick/NEWS.txt
 share/doc/GraphicsMagick/www/
@@ -358,6 +359,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2009.html
 share/doc/GraphicsMagick/www/ChangeLog-2010.html
 share/doc/GraphicsMagick/www/ChangeLog-2011.html
 share/doc/GraphicsMagick/www/ChangeLog-2012.html
+share/doc/GraphicsMagick/www/ChangeLog-2013.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
@@ -459,6 +461,7 @@ share/doc/GraphicsMagick/www/bugs.html
 share/doc/GraphicsMagick/www/color.html
 share/doc/GraphicsMagick/www/compare.html
 share/doc/GraphicsMagick/www/composite.html
+share/doc/GraphicsMagick/www/configure-target-setup.png
 share/doc/GraphicsMagick/www/conjure.html
 share/doc/GraphicsMagick/www/contribute.html
 share/doc/GraphicsMagick/www/convert.html
