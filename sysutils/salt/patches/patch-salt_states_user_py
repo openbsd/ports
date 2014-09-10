@@ -1,20 +1,18 @@
-$OpenBSD: patch-salt_states_user_py,v 1.2 2014/09/02 17:18:55 ajacoutot Exp $
+$OpenBSD: patch-salt_states_user_py,v 1.3 2014/09/10 06:08:42 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c98
 
---- salt/states/user.py.orig	Fri Aug  1 20:38:41 2014
-+++ salt/states/user.py	Fri Aug 29 16:58:36 2014
-@@ -57,7 +57,8 @@ def _changes(name,
-              fullname='',
+--- salt/states/user.py.orig	Tue Sep  9 22:42:17 2014
++++ salt/states/user.py	Wed Sep 10 08:05:20 2014
+@@ -61,6 +61,7 @@ def _changes(name,
               roomnumber='',
               workphone='',
--             homephone=''):
-+             homephone='',
-+             loginclass=None):
-     '''
-     Return a dict of the changes required for a user if the user is present,
-     otherwise return False.
-@@ -119,6 +120,12 @@ def _changes(name,
+              homephone='',
++             loginclass=None,
+              date=0,
+              mindays=0,
+              maxdays=999999,
+@@ -146,6 +147,12 @@ def _changes(name,
      if 'user.chhomephone' in __salt__:
          if homephone is not None and lusr['homephone'] != homephone:
              change['homephone'] = homephone
@@ -27,27 +25,23 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
  
      return change
  
-@@ -140,7 +147,8 @@ def present(name,
-             fullname=None,
+@@ -169,6 +176,7 @@ def present(name,
              roomnumber=None,
              workphone=None,
--            homephone=None):
-+            homephone=None,
-+            loginclass=None):
-     '''
-     Ensure that the named user is present with the specified properties
- 
-@@ -277,7 +285,8 @@ def present(name,
-                        fullname,
+             homephone=None,
++            loginclass=None,
+             date=None,
+             mindays=None,
+             maxdays=None,
+@@ -349,6 +357,7 @@ def present(name,
                         roomnumber,
                         workphone,
--                       homephone)
-+                       homephone,
-+                       loginclass)
- 
-     if changes:
-         if __opts__['test']:
-@@ -290,6 +299,8 @@ def present(name,
+                        homephone,
++                       loginclass,
+                        date,
+                        mindays,
+                        maxdays,
+@@ -367,6 +376,8 @@ def present(name,
          # The user is present
          if 'shadow.info' in __salt__:
              lshad = __salt__['shadow.info'](name)
@@ -55,8 +49,8 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
 +            lcpre = __salt__['user.get_loginclass'](name)
          pre = __salt__['user.info'](name)
          for key, val in changes.items():
-             if key == 'passwd':
-@@ -307,6 +318,8 @@ def present(name,
+             if key == 'passwd' and not empty_password:
+@@ -408,6 +419,8 @@ def present(name,
          if 'shadow.info' in __salt__:
              if lshad['passwd'] != password:
                  spost = __salt__['shadow.info'](name)
@@ -65,7 +59,7 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
          # See if anything changed
          for key in post:
              if post[key] != pre[key]:
-@@ -315,6 +328,9 @@ def present(name,
+@@ -416,6 +429,9 @@ def present(name,
              for key in spost:
                  if lshad[key] != spost[key]:
                      ret['changes'][key] = spost[key]
@@ -75,17 +69,15 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
          if ret['changes']:
              ret['comment'] = 'Updated user {0}'.format(name)
          changes = _changes(name,
-@@ -330,7 +346,8 @@ def present(name,
-                            fullname,
+@@ -434,6 +450,7 @@ def present(name,
                             roomnumber,
                             workphone,
--                           homephone)
-+                           homephone,
-+                           loginclass)
- 
-         if changes:
-             ret['comment'] = 'These values could not be changed: {0}'.format(
-@@ -361,7 +378,8 @@ def present(name,
+                            homephone,
++                           loginclass,
+                            date,
+                            mindays,
+                            maxdays,
+@@ -470,7 +487,8 @@ def present(name,
                                  roomnumber=roomnumber,
                                  workphone=workphone,
                                  homephone=homephone,
@@ -94,4 +86,4 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
 +                                loginclass=loginclass):
              ret['comment'] = 'New user {0} created'.format(name)
              ret['changes'] = __salt__['user.info'](name)
-             if all((password, 'shadow.info' in __salt__)):
+             if 'shadow.info' in __salt__ and not salt.utils.is_windows():
