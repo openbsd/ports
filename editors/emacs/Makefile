@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/01/09 14:53:29 jca Exp $
+# $OpenBSD: Makefile,v 1.45 2014/09/10 19:47:17 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -89,6 +89,7 @@ ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}
+	chmod -s ${PREFIX}/libexec/emacs/${VERSION}/${GCCARCH}/update-game-score
 .if ${FLAVOR:Mno_x11}
 	rm -Rf ${PREFIX}/share/applications/ ${PREFIX}/share/icons/
 .endif
