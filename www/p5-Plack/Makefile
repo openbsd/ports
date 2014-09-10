@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/09/10 06:35:19 jasper Exp $
 
 COMMENT =		interface between perl web frameworks and web servers
 
 MODULES =		cpan
-REVISION =		0
+REVISION =		1
 DISTNAME =		Plack-0.9980
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
