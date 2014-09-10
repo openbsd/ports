@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.45 2014/06/03 11:31:10 rpointel Exp $
+# $OpenBSD: Makefile,v 1.46 2014/09/10 11:58:47 ajacoutot Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
 MODPY_EGG_VERSION=1.7a2
-#DISTNAME=	sonata-${MODPY_EGG_VERSION}
-# git checkout 1d75758caac69c6086f16376ed5b9d9e0fe65efb
-DISTNAME=	sonata-1.7.1.20140328
+# git describe (v1.7a2.r58.g2c533b3)
+DISTNAME=	sonata-${MODPY_EGG_VERSION}258
+EPOCH=		0
+
 CATEGORIES=	audio
 
-REVISION = 0
+GH_COMMIT=	2c533b3a05d05135ff955d7ddae26a8c6f632c80
+GH_ACCOUNT=	multani
+GH_PROJECT=	sonata
 
-HOMEPAGE=	http://sonata.berlios.de/
+HOMEPAGE=	https://github.com/multani/sonata
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=	https://distfiles.bsdfrog.org/
-#MASTER_SITES=	${MASTER_SITE_BERLIOS:=sonata/}
 
 MODULES=	lang/python
 
