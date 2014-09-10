@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_tcl,v 1.4 2014/09/01 03:15:22 stu Exp $
+$OpenBSD: patch-installer_tcl,v 1.5 2014/09/10 23:09:31 stu Exp $
 
 Install everything nicely.
 Generate tcllib.n.
@@ -14,7 +14,7 @@ Generate tcllib.n.
 +    }
 +    log "Installing $src to $dest"
      run file copy -force $src $dest
-+    file attributes $dest -owner root -group bin -permissions 0o444
++    file attributes $dest -permissions 0o444
      return
  }
  
@@ -22,7 +22,7 @@ Generate tcllib.n.
 +    log "Making directory $dest"
      run file mkdir $dest
  
-+    file attributes $dest -owner root -group bin -permissions 0o755
++    file attributes $dest -permissions 0o755
      if {[string equal $pattern *] || !$recurse} {
  	foreach file [glob -nocomplain [file join $src $pattern]] {
  	    set base [file tail $file]
@@ -34,7 +34,7 @@ Generate tcllib.n.
      catch {file delete -force $f}
      puts -nonewline [set of [open $f w]] $text
      close $of
-+    file attributes $f -owner root -group bin -permissions 0o444
++    file attributes $f -permissions 0o444
  }
  
  
@@ -58,7 +58,7 @@ Generate tcllib.n.
 +	if {![file exists $config(app,path)]} {
 +	    log "Making directory $config(app,path)"
 +	    run file mkdir $config(app,path)
-+	    file attributes $config(app,path) -owner root -group bin -permissions 0o755
++	    file attributes $config(app,path) -permissions 0o755
  	}
 +	_exafile $aexe $adst $config(tclsh)
 +	if {[file exists $aexe.man]} {
@@ -141,7 +141,7 @@ Generate tcllib.n.
 +    set f [open $fn w]
 +    puts -nonewline $f [[::doctools::new mp -format nroff] format $mp]
 +    close $f
-+    file attributes $fn -owner root -group bin -permissions 0o444
++    file attributes $fn -permissions 0o444
  }
  
  # --------------------------------------------------------------
