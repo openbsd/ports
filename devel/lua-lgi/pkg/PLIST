@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/08 10:26:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/09/10 08:42:33 jasper Exp $
 lib/lua/${MODLUA_VERSION}/lgi/
 lib/lua/${MODLUA_VERSION}/lgi/corelgi${MODLUA_DEP}.so
 share/examples/${FULLPKGNAME}/
@@ -70,6 +70,7 @@ share/examples/${FULLPKGNAME}/gtkclipboard.lua
 share/examples/${FULLPKGNAME}/gtkhello.lua
 share/examples/${FULLPKGNAME}/gtkpad.lua
 share/examples/${FULLPKGNAME}/gtkterminal.lua
+share/examples/${FULLPKGNAME}/markupthrough.lua
 share/examples/${FULLPKGNAME}/mxwidgets.lua
 share/examples/${FULLPKGNAME}/repobrowser.lua
 share/examples/${FULLPKGNAME}/soupsvr.lua
@@ -85,6 +86,9 @@ share/lua/${MODLUA_VERSION}/lgi/log.lua
 share/lua/${MODLUA_VERSION}/lgi/namespace.lua
 share/lua/${MODLUA_VERSION}/lgi/override/
 share/lua/${MODLUA_VERSION}/lgi/override/Clutter.lua
+share/lua/${MODLUA_VERSION}/lgi/override/GLib-Bytes.lua
+share/lua/${MODLUA_VERSION}/lgi/override/GLib-Error.lua
+share/lua/${MODLUA_VERSION}/lgi/override/GLib-Markup.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Timer.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Variant.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib.lua
@@ -93,6 +97,7 @@ share/lua/${MODLUA_VERSION}/lgi/override/GObject-Object.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GObject-Type.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GObject-Value.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Gdk.lua
+share/lua/${MODLUA_VERSION}/lgi/override/Gio-DBus.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Gio.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Gst.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Gtk.lua

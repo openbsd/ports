@@ -4,4 +4,4 @@ libraries. It allows using GObject-based libraries directly from Lua.
 You will need to manually load the pthread shared libary setting
 "LD_PRELOAD=/usr/lib/libpthread.so" in the environment if you encounter
 any errors like the following:
-"lua51: error loading module 'lgi.corelgilua51' from file ...."
+"lua51: error loading module 'lgi.corelgilua52' from file ...."
