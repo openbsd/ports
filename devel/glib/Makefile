@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.68 2013/11/03 07:52:01 ajacoutot Exp $
-# Uses pthreads
+# $OpenBSD: Makefile,v 1.69 2014/09/10 07:07:25 jasper Exp $
+
+PORTROACH=	limit:^1
 
 COMMENT=	useful routines for C programming
 

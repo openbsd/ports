@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.78 2013/07/13 06:55:17 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2014/09/10 07:07:25 jasper Exp $
+
+PORTROACH=	limit:^1
 
 COMMENT=	General Toolkit for X11 GUI
 
