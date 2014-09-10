@@ -1,0 +1,20 @@
+$OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.1.1.1 2014/09/10 08:30:31 sthen Exp $
+--- third_party/bnlib/Makefile.in.orig	Thu Aug 28 00:48:42 2014
++++ third_party/bnlib/Makefile.in	Thu Aug 28 00:51:24 2014
+@@ -41,12 +41,10 @@ all: $(BNLIB) bntest32.c bntest64.c
+ 
+ # for libzrtp support
+ install: all
+-	test -d /usr/local/include/libzrtp || mkdir /usr/local/include/libzrtp
+-	cp *.h /usr/local/include/libzrtp
+-	cp 'libbn.a' '/usr/local/lib/libbn.a'
+-	chmod 644 /usr/local/lib/libbn.a
+-	chown 0:0 /usr/local/lib/libbn.a
+-	$(RANLIB) '/usr/local/lib/libbn.a'
++	${BSD_INSTALL_DATA_DIR} ${PREFIX}/include/libzrtp ${PREFIX}/lib
++	${BSD_INSTALL_DATA} *.h ${PREFIX}/include/libzrtp
++	${BSD_INSTALL_DATA} libbn.a ${PREFIX}/lib
++	$(RANLIB) ${PREFIX}/lib/libbn.a
+ 
+ # for libzrtp support
+ #check: bntest

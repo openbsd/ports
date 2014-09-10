@@ -1,0 +1,4 @@
+Zfone is VoIP encryption software, designed by Phil Zimmermann of PGP. This
+SDK is suitable for inclusion in software VoIP clients, firmware for hardware
+VoIP phones, VoIP PBX servers, mobile VoIP clients, and SIP border control
+servers. The SDK enables interoperation with the rest of the ZRTP community.

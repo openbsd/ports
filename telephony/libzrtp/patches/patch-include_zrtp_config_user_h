@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_zrtp_config_user_h,v 1.1.1.1 2014/09/10 08:30:31 sthen Exp $
+--- include/zrtp_config_user.h.orig	Thu Aug 28 00:41:34 2014
++++ include/zrtp_config_user.h	Thu Aug 28 00:43:45 2014
+@@ -58,7 +58,7 @@
+ 
+ /** \brief Define Platform manually there */
+ //#undefine ZRTP_PLATFORM
+-
++#define ZRTP_PLATFORM				ZP_BSD
+ 
+ /** \brief Constant to define Big Endian Platform */
+ #define ZBO_BIG_ENDIAN				0x4321
