@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/25 22:38:23 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2014/09/10 05:14:38 landry Exp $
 
 # keep in synch with mozilla.port.mk
 ONLY_FOR_ARCHS =	i386 amd64 powerpc sparc64
 COMMENT-main =		GnuPG extension for Thunderbird
 COMMENT-seamonkey =	GnuPG extension for Seamonkey
 
-DISTNAME =	enigmail-source-5d83c7e111bac392d3d1b8fff0dc25f66d0dd890
-EXTRACT_SUFX =	.zip
-PKGNAME-main =	enigmail-1.6.20140324
-PKGNAME-seamonkey =	enigmail-seamonkey-1.6.20140324
+DISTNAME =	enigmail-1.7.2
+PKGNAME-main =	${PKGNAME}
+PKGNAME-seamonkey =	enigmail-seamonkey-1.7.2
 EPOCH =		0
 HOMEPAGE =	http://www.mozilla-enigmail.org/
-#MASTER_SITES =	http://www.mozilla-enigmail.org/download/source/
-MASTER_SITES =	http://rhaalovely.net/stuff/
+MASTER_SITES =	http://www.mozilla-enigmail.org/download/source/
 
 CATEGORIES =	mail
 MULTI_PACKAGES =	-main -seamonkey
@@ -27,6 +25,7 @@ CONFIGURE_STYLE =	gnu
 
 BUILD_DEPENDS =	archivers/zip
 RUN_DEPENDS =	security/gnupg
+WRKDIST =	${WRKDIR}/enigmail
 
 # needed for the naming of the libsubprocess.so
 # the xpi, and the arch matching within mozilla
