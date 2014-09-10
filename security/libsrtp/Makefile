@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/10 00:02:21 sthen Exp $
 
-COMMENT=	Secure RTP library
+COMMENT=	secure RTP library
 
 DISTNAME=	srtp-1.4.4
+REVISION=	0
 PKGNAME=	lib${DISTNAME}
-CATEGORIES=	security
+CATEGORIES=	security telephony
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	David Hill <dhill@openbsd.org>
