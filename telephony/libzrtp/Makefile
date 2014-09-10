@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/10 08:30:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/10 12:50:32 sthen Exp $
 
 COMMENT =		ZRTP library
 
 DISTNAME =		libzrtp-0.20130317
+REVISION =		0
 CATEGORIES =		telephony security
 
 HOMEPAGE =		https://github.com/traviscross/libzrtp
@@ -20,7 +21,6 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-sqlite
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
 

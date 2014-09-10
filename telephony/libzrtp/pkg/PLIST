@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/10 08:30:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/10 12:50:32 sthen Exp $
 @conflict pgp->=5
 include/libzrtp/
 include/libzrtp/aes.h
@@ -36,12 +36,8 @@ include/libzrtp/sha1.h
 include/libzrtp/sha2.h
 include/libzrtp/sieve.h
 include/libzrtp/zrtp.h
-include/libzrtp/zrtp_b64_decode.h
-include/libzrtp/zrtp_b64_encode.h
 include/libzrtp/zrtp_base.h
 include/libzrtp/zrtp_cache.h
-include/libzrtp/zrtp_cache_db.h
-include/libzrtp/zrtp_cache_db_backend.h
 include/libzrtp/zrtp_cache_file.h
 include/libzrtp/zrtp_config.h
 include/libzrtp/zrtp_config_unix.h
