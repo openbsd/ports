@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/10 11:17:45 rpointel Exp $
+lib/python${MODPY_VERSION}/site-packages/distorm3/
+lib/python${MODPY_VERSION}/site-packages/distorm3-3-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/distorm3/__init__.py
+lib/python${MODPY_VERSION}/site-packages/distorm3/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/distorm3/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/distorm3/libdistorm3.so
+lib/python${MODPY_VERSION}/site-packages/distorm3/sample.py
+lib/python${MODPY_VERSION}/site-packages/distorm3/sample.pyc
+lib/python${MODPY_VERSION}/site-packages/distorm3/sample.pyo
