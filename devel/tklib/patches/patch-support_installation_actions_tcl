@@ -1,4 +1,4 @@
-$OpenBSD: patch-support_installation_actions_tcl,v 1.1 2013/11/14 09:43:09 stu Exp $
+$OpenBSD: patch-support_installation_actions_tcl,v 1.2 2014/09/10 23:10:04 stu Exp $
 
 Retrieve module info from man pages.
 Perform shebang adjustments.
@@ -25,7 +25,7 @@ Perform shebang adjustments.
 +    set f [open $dfn w]
 +    puts -nonewline $f $d
 +    close $f
-+    file attributes $dfn -owner root -group bin -permissions 0o444
++    file attributes $dfn -permissions 0o444
 +}
  
 -proc _manfile {f format ext docdir} { return }
@@ -82,7 +82,7 @@ Perform shebang adjustments.
 +    set f [open $dfn w]
 +    puts $f [join $l \n]
 +    close $f
-+    file attributes $dfn -owner root -group bin -permissions $perms
++    file attributes $dfn -permissions $perms
 +}
 +
 +proc _exa {module srcdir dstdir tclsh} {
@@ -94,7 +94,7 @@ Perform shebang adjustments.
 +    if {![file exists $dstdir]} {
 +	log "Making directory $dstdir"
 +	file mkdir $dstdir
-+	file attributes $dstdir -owner root -group bin -permissions 0o755
++	file attributes $dstdir -permissions 0o755
 +    }
 +    foreach fn [glob -nocomplain -dir [file join $srcdir $actual] *] {
 +	if {[file isdirectory $fn]} {
