@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.170 2014/09/06 11:55:47 armani Exp $
+# $OpenBSD: Quirks.pm,v 1.171 2014/09/10 08:33:10 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -425,6 +425,7 @@ my $obsolete_reason = {
 	'mailcrypt' => 0,
 	'tcpcat' => 4,
 	'ctm' => 3,
+	'papyon' => 3,
 };
 
 # ->is_base_system($handle, $state):
