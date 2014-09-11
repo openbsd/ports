@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.23 2014/09/08 07:44:39 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2014/09/11 14:02:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Code::Blocks C/C++ IDE
 
-V=		10.05
+V=		13.12
 P=		1
-DISTNAME=	codeblocks-${V}-${P}debian-src
+DISTNAME=	codeblocks_${V}-${P}
 PKGNAME=	codeblocks-${V}
-REVISION=	11
 
-EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
 
-SHARED_LIBS +=  codeblocks           0.0      # .0.1
-SHARED_LIBS +=  wxsmithlib           0.0      # .0.1
-SHARED_LIBS +=  wxchartctrl          0.0      # .0.1
-SHARED_LIBS +=  wxflatnotebook       0.0      # .0.1
-SHARED_LIBS +=  wxcustombutton       0.0      # .0.1
+SHARED_LIBS +=  codeblocks           0.1      # 0.1
+SHARED_LIBS +=  wxchartctrl          0.1      # 0.1
+SHARED_LIBS +=  wxflatnotebook       0.1      # 0.1
+SHARED_LIBS +=  wxcustombutton       0.1      # 0.1
+SHARED_LIBS +=  wximagepanel         0.1      # 0.1
+SHARED_LIBS +=  wxspeedbutton        0.1      # 0.1
+SHARED_LIBS +=  wxkwic               0.1      # 0.1
+SHARED_LIBS +=  wxtreelist           0.1      # 0.1
+SHARED_LIBS +=  wxled                0.1      # 0.1
+SHARED_LIBS +=  wxsmithlib           0.1      # 0.1
 
 CATEGORIES=	devel x11
 
@@ -27,50 +30,49 @@ HOMEPAGE=	http://www.codeblocks.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 bz2 c cairo
+WANTLIB += expat ffi fontconfig freetype gamin-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += iodbc jpeg m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hunspell-1.3 iodbc
+WANTLIB += jpeg m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio stdc++
-WANTLIB += tiff usbhid xcb xcb-render xcb-shm z
+WANTLIB += tiff usbhid wx_base wx_base_net wx_base_odbc wx_base_xml
+WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
+WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
+WANTLIB += xcb xcb-render xcb-shm z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks.berlios/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
+
+MODULES=	devel/gettext
 
 BUILD_DEPENDS=	archivers/zip
 
 LIB_DEPENDS=	archivers/bzip2 \
+		sysutils/gamin \
+		textproc/hunspell \
 		x11/wxWidgets
 
-WANTLIB +=	bz2>=10 wx_base>=1 wx_base_net wx_base_odbc wx_base_xml \
-		wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid \
-		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
-
 RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info>=0.21 \
+		misc/shared-mime-info \
 		x11/gtk+2,-guic
 
-MODULES=	devel/gettext
+# XXX <command-line>:0: internal compiler error: Segmentation fault
+MODULES +=	gcc4
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-# XXX lib_finder.cpp:302: error: syntax error before `->' token
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-contrib-plugins=all,-libfinder
-
-post-extract:
-	tar xzf ${WRKDIR}/src/codeblocks_${V}-${P}.tar.gz -C ${WRKDIR}
+		--with-contrib-plugins=all
 
 pre-configure:
-	ln -s /usr/bin/true ${WRKDIR}/bin/svn
 	${SUBST_CMD} ${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp
 
-# template files are copied to HOME with their original mode which makes
-# it impossible to edit them by default
 post-install:
-	find ${PREFIX}/share/codeblocks/templates/ -type f -perm 444 | \
-		xargs -r chmod 644
+	find ${PREFIX}/share/codeblocks -type f -perm 444 \
+		-exec chmod 644 '{}' +
 	rm ${PREFIX}/lib/codeblocks/plugins/*.{a,la}
 
 .include <bsd.port.mk>

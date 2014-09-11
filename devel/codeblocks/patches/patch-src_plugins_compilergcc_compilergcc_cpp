@@ -1,11 +1,10 @@
-$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.2 2010/06/03 16:09:03 ajacoutot Exp $
+$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.3 2014/09/11 14:02:55 ajacoutot Exp $
 
-Don't look for cb_console_runner in WRKINST, always assume it is there and
-installed under PREFIX.
+Always use cb_console_runner from installed PREFIX.
 
---- src/plugins/compilergcc/compilergcc.cpp.orig	Sat May 22 12:11:22 2010
-+++ src/plugins/compilergcc/compilergcc.cpp	Tue Jun  1 19:35:57 2010
-@@ -166,7 +166,7 @@ namespace
+--- src/plugins/compilergcc/compilergcc.cpp.orig	Sun Dec  8 16:00:22 2013
++++ src/plugins/compilergcc/compilergcc.cpp	Thu Sep 11 10:28:18 2014
+@@ -159,7 +159,7 @@ namespace
  {
      PluginRegistrant<CompilerGCC> reg(_T("Compiler"));
  
@@ -14,7 +13,7 @@ installed under PREFIX.
      static const wxString strSLASH(_T("/"));
      static const wxString strSPACE(_T(" "));
      static const wxString strQUOTE(platform::windows ? _T("\"") : _T("'"));
-@@ -1672,8 +1672,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
+@@ -1720,8 +1720,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
      }
      wxString baseDir = ConfigManager::GetExecutableFolder();
  
@@ -24,7 +23,7 @@ installed under PREFIX.
  
      if (!cmd.Replace(_T("$SCRIPT"), exe_filename))
          // if they didn't specify $SCRIPT, append:
-@@ -1781,7 +1780,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -1836,7 +1835,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                          : EscapeSpaces(m_CdRun);
      wxString crunnStr = platform::windows
                          ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
@@ -33,8 +32,8 @@ installed under PREFIX.
      wxString hostapStr = platform::windows
                          ? strQUOTE + target->GetHostApplication() + strQUOTE
                          : EscapeSpaces(target->GetHostApplication());
-@@ -1820,8 +1819,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
-         // should console runner be used?
+@@ -1874,8 +1873,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+ 
          if (target->GetUseConsoleRunner())
          {
 -            if (wxFileExists(baseDir + strSLASH + strCONSOLE_RUNNER))
@@ -42,7 +41,7 @@ installed under PREFIX.
                  command << crunnStr << strSPACE;
  
                  if (!platform::windows)
-@@ -1833,7 +1830,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -1887,7 +1884,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      QuoteStringIfNeeded(strLinkerPath);
                      command << strLinkerPath << strSPACE;
                  }

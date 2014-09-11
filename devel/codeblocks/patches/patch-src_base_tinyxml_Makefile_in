@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_base_tinyxml_Makefile_in,v 1.1 2013/03/17 14:42:21 ajacoutot Exp $
+$OpenBSD: patch-src_base_tinyxml_Makefile_in,v 1.2 2014/09/11 14:02:55 ajacoutot Exp $
 
 Fix build when tinyxml is installed.
 (tinyxml is bundled within codeblocks, so prefer the bundled includes)
 
---- src/base/tinyxml/Makefile.in.orig	Sun Mar 17 15:40:38 2013
-+++ src/base/tinyxml/Makefile.in	Sun Mar 17 15:40:20 2013
-@@ -249,10 +249,10 @@ target_vendor = @target_vendor@
+--- src/base/tinyxml/Makefile.in.orig	Wed Dec 25 22:56:12 2013
++++ src/base/tinyxml/Makefile.in	Thu Sep 11 10:33:25 2014
+@@ -309,10 +309,10 @@ target_vendor = @target_vendor@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--INCLUDES = $(WX_CXXFLAGS) \
+-AM_CPPFLAGS = $(WX_CXXFLAGS) \
 -				-I$(top_srcdir)/src/sdk/wxscintilla/include \
-+INCLUDES = -I$(top_srcdir)/src/sdk/wxscintilla/include \
++AM_CPPFLAGS = -I$(top_srcdir)/src/sdk/wxscintilla/include \
  				-I$(top_srcdir)/src/include \
 -				-I$(top_srcdir)/src/include/tinyxml
 +				-I$(top_srcdir)/src/include/tinyxml \
 +				$(WX_CXXFLAGS)
  
  noinst_LTLIBRARIES = libtinyxml.la
- libtinyxml_la_SOURCES = tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp tinywxuni.cpp
+ libtinyxml_la_SOURCES = tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp tinywxuni.cpp

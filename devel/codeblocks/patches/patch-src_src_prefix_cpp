@@ -1,12 +1,15 @@
-$OpenBSD: patch-src_src_prefix_cpp,v 1.2 2010/06/03 16:09:03 ajacoutot Exp $
---- src/src/prefix.cpp.orig	Sat May 22 12:37:59 2010
-+++ src/src/prefix.cpp	Tue Jun  1 19:33:44 2010
-@@ -230,7 +230,7 @@ br_prepend_prefix (void *symbol, char *path)
+$OpenBSD: patch-src_src_prefix_cpp,v 1.3 2014/09/11 14:02:55 ajacoutot Exp $
+--- src/src/prefix.cpp.orig	Thu Sep 11 14:39:47 2014
++++ src/src/prefix.cpp	Thu Sep 11 14:40:07 2014
+@@ -230,8 +230,10 @@ br_prepend_prefix (void *symbol, char *path)
  #include <pthread.h>
  
  static pthread_key_t br_thread_key;
 -#ifdef __FreeBSD__
-+#if defined __FreeBSD__ || defined __OpenBSD__
++#if defined __FreeBSD__
  static pthread_once_t br_thread_key_once = {0, (pthread_mutex_t)NULL};//PTHREAD_ONCE_INIT;
++#elif defined __OpenBSD__
++static pthread_once_t br_thread_key_once = {PTHREAD_NEEDS_INIT, (pthread_mutex_t)PTHREAD_MUTEX_INITIALIZER};
  #else
  static pthread_once_t br_thread_key_once = PTHREAD_ONCE_INIT;
+ #endif
