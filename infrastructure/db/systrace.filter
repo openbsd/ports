@@ -46,8 +46,9 @@
 	native-connect: sockaddr match "${TMPDIR}" then permit
 	native-connect: sockaddr match "${WRKDIR}" then permit
 	native-connect: sockaddr match "/<non-existent filename>: *" then deny[enoent]
-	native-dup2: permit
 	native-dup: permit
+	native-dup2: permit
+	native-dup3: permit
 	native-execve: true then permit
 	native-exit: permit
 	native-fchdir: permit
