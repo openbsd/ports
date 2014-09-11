@@ -1,0 +1,47 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCMachineFunctionInfo_h,v 1.1 2014/09/11 17:54:13 brad Exp $
+
+r213427
+[PowerPC] 32-bit ELF PIC support
+
+This adds initial support for PPC32 ELF PIC (Position Independent Code; the
+-fPIC variety), thus rectifying a long-standing deficiency in the PowerPC
+backend.
+
+--- lib/Target/PowerPC/PPCMachineFunctionInfo.h.orig	Sun Jul 27 01:37:54 2014
++++ lib/Target/PowerPC/PPCMachineFunctionInfo.h	Sun Jul 27 01:40:18 2014
+@@ -92,6 +92,12 @@ class PPCFunctionInfo : public MachineFunctionInfo {
+   /// 64-bit SVR4 ABI.
+   SmallVector<unsigned, 3> MustSaveCRs;
+ 
++  /// Hold onto our MachineFunction context.
++  MachineFunction &MF;
++
++  /// Whether this uses the PIC Base register or not.
++  bool UsesPICBase;
++
+ public:
+   explicit PPCFunctionInfo(MachineFunction &MF) 
+     : FramePointerSaveIndex(0),
+@@ -109,7 +115,9 @@ class PPCFunctionInfo : public MachineFunctionInfo {
+       VarArgsStackOffset(0),
+       VarArgsNumGPR(0),
+       VarArgsNumFPR(0),
+-      CRSpillFrameIndex(0) {}
++      CRSpillFrameIndex(0),
++      MF(MF),
++      UsesPICBase(0) {}
+ 
+   int getFramePointerSaveIndex() const { return FramePointerSaveIndex; }
+   void setFramePointerSaveIndex(int Idx) { FramePointerSaveIndex = Idx; }
+@@ -170,6 +178,11 @@ class PPCFunctionInfo : public MachineFunctionInfo {
+   const SmallVectorImpl<unsigned> &
+     getMustSaveCRs() const { return MustSaveCRs; }
+   void addMustSaveCR(unsigned Reg) { MustSaveCRs.push_back(Reg); }
++
++  void setUsesPICBase(bool uses) { UsesPICBase = uses; }
++  bool usesPICBase() const { return UsesPICBase; }
++
++  MCSymbol *getPICOffsetSymbol() const;
+ };
+ 
+ } // end of namespace llvm

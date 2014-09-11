@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCSubtarget_h,v 1.1 2014/09/11 17:54:13 brad Exp $
+
+r213427
+[PowerPC] 32-bit ELF PIC support
+
+This adds initial support for PPC32 ELF PIC (Position Independent Code; the
+-fPIC variety), thus rectifying a long-standing deficiency in the PowerPC
+backend.
+
+--- lib/Target/PowerPC/PPCSubtarget.h.orig	Sun Jul 27 01:47:26 2014
++++ lib/Target/PowerPC/PPCSubtarget.h	Sun Jul 27 01:47:59 2014
+@@ -195,6 +195,9 @@ class PPCSubtarget : public PPCGenSubtargetInfo { (pub
+   /// isBGQ - True if this is a BG/Q platform.
+   bool isBGQ() const { return TargetTriple.getVendor() == Triple::BGQ; }
+ 
++  bool isTargetELF() const { return TargetTriple.isOSBinFormatELF(); }
++  bool isTargetMachO() const { return TargetTriple.isOSBinFormatMachO(); }
++
+   bool isDarwinABI() const { return isDarwin(); }
+   bool isSVR4ABI() const { return !isDarwin(); }
+ 

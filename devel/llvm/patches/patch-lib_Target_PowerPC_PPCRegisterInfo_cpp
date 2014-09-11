@@ -1,0 +1,45 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCRegisterInfo_cpp,v 1.1 2014/09/11 17:54:13 brad Exp $
+
+r213427
+[PowerPC] 32-bit ELF PIC support
+
+This adds initial support for PPC32 ELF PIC (Position Independent Code; the
+-fPIC variety), thus rectifying a long-standing deficiency in the PowerPC
+backend.
+
+--- lib/Target/PowerPC/PPCRegisterInfo.cpp.orig	Sun Jul 27 01:40:38 2014
++++ lib/Target/PowerPC/PPCRegisterInfo.cpp	Sun Jul 27 01:45:41 2014
+@@ -199,7 +199,16 @@ BitVector PPCRegisterInfo::getReservedRegs(const Machi
+   if (PPCFI->needsFP(MF))
+     Reserved.set(PPC::R31);
+ 
+-  if (hasBasePointer(MF))
++  if (hasBasePointer(MF)) {
++       if (Subtarget.isSVR4ABI() && !Subtarget.isPPC64() &&
++        MF.getTarget().getRelocationModel() == Reloc::PIC_)
++      Reserved.set(PPC::R29);
++    else
++      Reserved.set(PPC::R30);
++  }
++
++  if (Subtarget.isSVR4ABI() && !Subtarget.isPPC64() &&
++      MF.getTarget().getRelocationModel() == Reloc::PIC_)
+     Reserved.set(PPC::R30);
+ 
+   // Reserve Altivec registers when Altivec is unavailable.
+@@ -822,7 +831,14 @@ unsigned PPCRegisterInfo::getBaseRegister(const Machin
+   if (!hasBasePointer(MF))
+     return getFrameRegister(MF);
+ 
+-  return Subtarget.isPPC64() ? PPC::X30 : PPC::R30;
++  if (Subtarget.isPPC64())
++    return PPC::X30;
++
++  if (Subtarget.isSVR4ABI() &&
++      MF.getTarget().getRelocationModel() == Reloc::PIC_)
++    return PPC::R29;
++
++  return PPC::R30;
+ }
+ 
+ bool PPCRegisterInfo::hasBasePointer(const MachineFunction &MF) const {

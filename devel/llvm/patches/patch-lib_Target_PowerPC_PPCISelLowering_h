@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_h,v 1.1 2014/09/11 17:54:13 brad Exp $
+
+r213960
+[PowerPC] Support TLS on PPC32/ELF
+
+--- lib/Target/PowerPC/PPCISelLowering.h.orig	Sun Jul 27 04:08:54 2014
++++ lib/Target/PowerPC/PPCISelLowering.h	Sun Jul 27 04:09:34 2014
+@@ -187,6 +187,10 @@ namespace llvm {
+       /// on PPC32.
+       PPC32_GOT,
+ 
++      /// GPRC = address of _GLOBAL_OFFSET_TABLE_. Used by general dynamic and
++      /// local dynamic TLS on PPC32.
++      PPC32_PICGOT,
++
+       /// G8RC = ADDIS_GOT_TPREL_HA %X2, Symbol - Used by the initial-exec
+       /// TLS model, produces an ADDIS8 instruction that adds the GOT
+       /// base to sym\@got\@tprel\@ha.

@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCMachineFunctionInfo_cpp,v 1.1 2014/09/11 17:54:13 brad Exp $
+
+r213427
+[PowerPC] 32-bit ELF PIC support
+
+This adds initial support for PPC32 ELF PIC (Position Independent Code; the
+-fPIC variety), thus rectifying a long-standing deficiency in the PowerPC
+backend.
+
+--- lib/Target/PowerPC/PPCMachineFunctionInfo.cpp.orig	Sun Jul 27 01:35:45 2014
++++ lib/Target/PowerPC/PPCMachineFunctionInfo.cpp	Sun Jul 27 01:37:10 2014
+@@ -8,8 +8,16 @@
+ //===----------------------------------------------------------------------===//
+ 
+ #include "PPCMachineFunctionInfo.h"
++#include "llvm/IR/DataLayout.h"
++#include "llvm/MC/MCContext.h"
++#include "llvm/Target/TargetMachine.h"
+ 
+ using namespace llvm;
+ 
+ void PPCFunctionInfo::anchor() { }
+ 
++MCSymbol *PPCFunctionInfo::getPICOffsetSymbol() const {
++  const DataLayout *DL = MF.getTarget().getDataLayout();
++  return MF.getContext().GetOrCreateSymbol(Twine(DL->getPrivateGlobalPrefix())+
++    Twine(MF.getFunctionNumber())+"$poff");
++}

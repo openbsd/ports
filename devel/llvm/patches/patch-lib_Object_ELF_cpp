@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Object_ELF_cpp,v 1.1 2014/09/11 17:54:13 brad Exp $
+
+r213427
+[PowerPC] 32-bit ELF PIC support
+
+This adds initial support for PPC32 ELF PIC (Position Independent Code; the
+-fPIC variety), thus rectifying a long-standing deficiency in the PowerPC
+backend.
+
+--- lib/Object/ELF.cpp.orig	Sun Jul 27 00:02:32 2014
++++ lib/Object/ELF.cpp	Sun Jul 27 00:02:56 2014
+@@ -509,6 +509,7 @@ StringRef getELFRelocationTypeName(uint32_t Machine, u
+       LLVM_ELF_SWITCH_RELOC_TYPE_NAME(R_PPC_GOT16_LO);
+       LLVM_ELF_SWITCH_RELOC_TYPE_NAME(R_PPC_GOT16_HI);
+       LLVM_ELF_SWITCH_RELOC_TYPE_NAME(R_PPC_GOT16_HA);
++      LLVM_ELF_SWITCH_RELOC_TYPE_NAME(R_PPC_PLTREL24);
+       LLVM_ELF_SWITCH_RELOC_TYPE_NAME(R_PPC_REL32);
+       LLVM_ELF_SWITCH_RELOC_TYPE_NAME(R_PPC_TLS);
+       LLVM_ELF_SWITCH_RELOC_TYPE_NAME(R_PPC_DTPMOD32);

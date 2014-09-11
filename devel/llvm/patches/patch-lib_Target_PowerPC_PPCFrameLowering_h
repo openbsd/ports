@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCFrameLowering_h,v 1.1 2014/09/11 17:54:13 brad Exp $
+
+r213427
+[PowerPC] 32-bit ELF PIC support
+
+This adds initial support for PPC32 ELF PIC (Position Independent Code; the
+-fPIC variety), thus rectifying a long-standing deficiency in the PowerPC
+backend.
+
+--- lib/Target/PowerPC/PPCFrameLowering.h.orig	Sun Jul 27 00:40:47 2014
++++ lib/Target/PowerPC/PPCFrameLowering.h	Sun Jul 27 00:42:07 2014
+@@ -96,12 +96,14 @@ class PPCFrameLowering: public TargetFrameLowering { (
+ 
+   /// getBasePointerSaveOffset - Return the previous frame offset to save the
+   /// base pointer.
+-  static unsigned getBasePointerSaveOffset(bool isPPC64, bool isDarwinABI) {
++  static unsigned getBasePointerSaveOffset(bool isPPC64,
++                                           bool isDarwinABI,
++                                           bool isPIC) {
+     if (isDarwinABI)
+       return isPPC64 ? -16U : -8U;
+ 
+     // SVR4 ABI: First slot in the general register save area.
+-    return isPPC64 ? -16U : -8U;
++    return isPPC64 ? -16U : isPIC ? -12U : -8U;
+   }
+ 
+   /// getLinkageSize - Return the size of the PowerPC ABI linkage area.
