@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.100 2014/09/02 19:54:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.101 2014/09/11 18:00:45 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-DISTNAME=	curl-7.37.1
-SHARED_LIBS=	curl                 24.3     # 7.0
+DISTNAME=	curl-7.38.0
+SHARED_LIBS=	curl                 24.4     # 7.0
 CATEGORIES=	net
-MASTER_SITES=	http://curl.haxx.se/download/ \
-		ftp://ftp.sunet.se/pub/www/utilities/curl/
-
 HOMEPAGE=	http://curl.haxx.se/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES=	http://curl.haxx.se/download/ \
+		ftp://ftp.sunet.se/pub/www/utilities/curl/
+EXTRACT_SUFX=	.tar.lzma
+EXTRACT_CASES=	*.tar.lzma) xz -cd ${FULLDISTDIR}/$$archive | ${TAR} xf - ;;
+BUILD_DEPENDS=	archivers/xz
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libidn
