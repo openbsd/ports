@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_core_songloader_cpp,v 1.1 2013/12/12 11:13:39 zhuk Exp $
---- src/core/songloader.cpp.orig	Sun Oct 20 18:59:00 2013
-+++ src/core/songloader.cpp	Sun Oct 20 19:08:05 2013
-@@ -88,7 +88,7 @@ SongLoader::Result SongLoader::Load(const QUrl& url) {
+$OpenBSD: patch-src_core_songloader_cpp,v 1.2 2014/09/11 09:02:13 zhuk Exp $
+--- src/core/songloader.cpp.orig	Wed Apr 23 14:16:44 2014
++++ src/core/songloader.cpp	Thu Sep 11 11:24:16 2014
+@@ -90,7 +90,7 @@ SongLoader::Result SongLoader::Load(const QUrl& url) {
    url_ = url;
  
    if (url_.scheme() == "file") {

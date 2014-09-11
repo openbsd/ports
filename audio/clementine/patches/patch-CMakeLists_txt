@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/12 11:13:39 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/09/11 09:02:13 zhuk Exp $
 1. Force using bundled GTest and GMock, as it's better this way.
 2. Make Clementine use system SHA-2 implementation.
---- CMakeLists.txt.orig	Tue Nov 26 01:16:24 2013
-+++ CMakeLists.txt	Thu Dec 12 12:40:20 2013
+--- CMakeLists.txt.orig	Wed Apr 23 14:16:44 2014
++++ CMakeLists.txt	Thu Sep 11 11:24:16 2014
 @@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.6)
  cmake_policy(SET CMP0011 OLD)
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/12 11:13:39 zhuk Exp $
  include(FindPkgConfig)
  include(cmake/Summary.cmake)
  include(cmake/Version.cmake)
-@@ -380,11 +381,12 @@ if(NOT ECHONEST_INCLUDE_DIRS OR NOT ECHONEST_LIBRARIES
+@@ -366,11 +367,12 @@ if(NOT ECHONEST_INCLUDE_DIRS OR NOT ECHONEST_LIBRARIES
    set(ECHONEST_LIBRARIES echonest)
  endif(NOT ECHONEST_INCLUDE_DIRS OR NOT ECHONEST_LIBRARIES)
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/12 11:13:39 zhuk Exp $
    find_path(GTEST_INCLUDE_DIRS gtest/gtest.h)
    find_library(GTEST_LIBRARIES gtest)
    if(GTEST_INCLUDE_DIRS)
-@@ -395,12 +397,29 @@ endif(GMOCK_INCLUDE_DIRS)
+@@ -381,12 +383,29 @@ endif(GMOCK_INCLUDE_DIRS)
  
  # Use system sha2 if it's available
  find_path(SHA2_INCLUDE_DIRS sha2.h)

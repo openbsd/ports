@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_internet_spotifyblobdownloader_cpp,v 1.1 2014/03/10 20:28:42 landry Exp $
+$OpenBSD: patch-src_internet_spotifyblobdownloader_cpp,v 1.2 2014/09/11 09:02:13 zhuk Exp $
 include unistd.h for symlink()
---- src/internet/spotifyblobdownloader.cpp.orig	Sat Mar  8 12:08:17 2014
-+++ src/internet/spotifyblobdownloader.cpp	Sat Mar  8 12:08:36 2014
-@@ -22,6 +22,7 @@
+--- src/internet/spotifyblobdownloader.cpp.orig	Wed Apr 23 14:16:44 2014
++++ src/internet/spotifyblobdownloader.cpp	Thu Sep 11 11:24:16 2014
+@@ -23,6 +23,7 @@
  #include "core/network.h"
  #include "core/utilities.h"
  

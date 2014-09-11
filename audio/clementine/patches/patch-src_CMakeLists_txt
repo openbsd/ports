@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2014/03/10 20:28:42 landry Exp $
--Wno-unused-private-field -Wno-unknown-warning-option dont exist on gcc 4.8
---- src/CMakeLists.txt.orig	Sat Mar  8 12:08:49 2014
-+++ src/CMakeLists.txt	Sat Mar  8 12:09:19 2014
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2014/09/11 09:02:13 zhuk Exp $
+1. -Wno-unused-private-field -Wno-unknown-warning-option dont exist on gcc 4.8
+2. FIX BUG 4401: No namespaces for DBus interfaces, from upstream.
+--- src/CMakeLists.txt.orig	Wed Apr 23 14:16:44 2014
++++ src/CMakeLists.txt	Thu Sep 11 11:24:32 2014
 @@ -1,6 +1,6 @@
  
  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
@@ -10,3 +11,26 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.1 2014/03/10 20:28:42 landry Exp $
  
  option(BUILD_WERROR "Build with -Werror" ON)
  
+@@ -885,11 +885,6 @@ optional_source(LINUX SOURCES widgets/osd_x11.cpp)
+ if(HAVE_DBUS)
+   file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/dbus)
+ 
+-  # Hack to get it to generate interfaces without namespaces - required
+-  # because otherwise org::freedesktop::UDisks and
+-  # org::freedesktop::UDisks::Device conflict.
+-  list(APPEND QT_DBUSXML2CPP_EXECUTABLE -N)
+-
+   # MPRIS DBUS interfaces
+   qt4_add_dbus_adaptor(SOURCES
+       dbus/org.freedesktop.MediaPlayer.player.xml
+@@ -957,6 +952,10 @@ if(HAVE_DBUS)
+ 
+   # DeviceKit DBUS interfaces
+   if(HAVE_DEVICEKIT)
++    set_source_files_properties(dbus/org.freedesktop.UDisks.xml
++        PROPERTIES NO_NAMESPACE dbus/udisks)
++    set_source_files_properties(dbus/org.freedesktop.UDisks.Device.xml
++        PROPERTIES NO_NAMESPACE dbus/udisksdevice)
+     qt4_add_dbus_interface(SOURCES
+         dbus/org.freedesktop.UDisks.xml
+         dbus/udisks)

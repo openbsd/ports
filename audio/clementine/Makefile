@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.12 2014/06/25 00:29:45 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2014/09/11 09:02:13 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Qt4-based featureful music player
 
-DISTNAME =	clementine-1.2.1
-REVISION =	2
+V =		1.2.3
+PKGNAME =	clementine-${V}
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://clementine-player.org/
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
-MASTER_SITES =	https://clementine-player.googlecode.com/files/
+MASTER_SITES =	https://github.com/clementine-player/Clementine/archive/
+DISTFILES =	${PKGNAME}.tar.gz{${V}.tar.gz}
+WRKDIST =	${WRKDIR}/Clementine-${V}
 
 # GPLv2/LGPLv2/GFDL
 PERMIT_PACKAGE_CDROM =		Yes
@@ -31,7 +33,7 @@ WANTLIB += plist
 
 MODULES =		gcc4 devel/cmake devel/gettext x11/qt4
 MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		${GCC4_ARCHS}
+MODGCC4_ARCHS =		*
 
 BUILD_DEPENDS =		devel/boost \
 			devel/cmake>=2.8.10.2p3 \

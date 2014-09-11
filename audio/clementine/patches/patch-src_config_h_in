@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_config_h_in,v 1.1 2013/12/12 11:13:39 zhuk Exp $
+$OpenBSD: patch-src_config_h_in,v 1.2 2014/09/11 09:02:13 zhuk Exp $
 Make Clementine use system SHA-2 implementation.
---- src/config.h.in.orig	Tue Oct 29 20:57:42 2013
-+++ src/config.h.in	Tue Oct 29 21:12:14 2013
-@@ -49,5 +49,6 @@
+--- src/config.h.in.orig	Wed Apr 23 14:16:44 2014
++++ src/config.h.in	Thu Sep 11 11:24:16 2014
+@@ -48,5 +48,6 @@
+ #cmakedefine USE_INSTALL_PREFIX
  #cmakedefine USE_SYSTEM_PROJECTM
- #cmakedefine USE_STD_UNORDERED_MAP
  #cmakedefine HAVE_LAMBDAS
 +#cmakedefine HAVE_SHA2_UNDERSCORED
  
