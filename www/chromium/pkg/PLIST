@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.36 2014/07/20 17:22:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.37 2014/09/11 19:04:53 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
 @bin chrome/chrome
 chrome/chrome_100_percent.pak
 chrome/content_resources.pak
+chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/libffmpegsumo.so
 chrome/locales/
@@ -113,6 +114,8 @@ chrome/resources/inspector/Images/resourceJSIcon.png
 chrome/resources/inspector/Images/resourcePlainIcon.png
 chrome/resources/inspector/Images/resourcePlainIconSmall.png
 chrome/resources/inspector/Images/resourcesTimeGraphIcon.png
+chrome/resources/inspector/Images/responsiveDesign.png
+chrome/resources/inspector/Images/responsiveDesign_2x.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
 chrome/resources/inspector/Images/sessionStorage.png
@@ -131,17 +134,16 @@ chrome/resources/inspector/Images/thumbVert.png
 chrome/resources/inspector/Images/toolbarItemSelected.png
 chrome/resources/inspector/Images/trackHoriz.png
 chrome/resources/inspector/Images/trackVert.png
-chrome/resources/inspector/Main.js
 chrome/resources/inspector/accelerometer.css
 chrome/resources/inspector/audits/
 chrome/resources/inspector/audits/AuditsPanel.js
 chrome/resources/inspector/auditsPanel.css
 chrome/resources/inspector/breadcrumbList.css
 chrome/resources/inspector/breakpointsList.css
-chrome/resources/inspector/buildSystemOnly.js
 chrome/resources/inspector/canvasProfiler.css
-chrome/resources/inspector/cmdevtools.css
-chrome/resources/inspector/codemirror.css
+chrome/resources/inspector/cm/
+chrome/resources/inspector/cm/cmdevtools.css
+chrome/resources/inspector/cm/codemirror.css
 chrome/resources/inspector/console/
 chrome/resources/inspector/console/ConsolePanel.js
 chrome/resources/inspector/dataGrid.css
@@ -166,6 +168,8 @@ chrome/resources/inspector/inspectorCommon.css
 chrome/resources/inspector/layers/
 chrome/resources/inspector/layers/LayersPanel.js
 chrome/resources/inspector/layersPanel.css
+chrome/resources/inspector/main/
+chrome/resources/inspector/main/Main.js
 chrome/resources/inspector/navigatorView.css
 chrome/resources/inspector/network/
 chrome/resources/inspector/network/NetworkPanel.js
@@ -182,12 +186,15 @@ chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resources/
 chrome/resources/inspector/resources/ResourcesPanel.js
 chrome/resources/inspector/resourcesPanel.css
+chrome/resources/inspector/responsiveDesignView.css
 chrome/resources/inspector/revisionHistory.css
 chrome/resources/inspector/screencastView.css
 chrome/resources/inspector/script_formatter_worker/
 chrome/resources/inspector/script_formatter_worker/ScriptFormatterWorker.js
 chrome/resources/inspector/search/
 chrome/resources/inspector/search/AdvancedSearchView.js
+chrome/resources/inspector/settings/
+chrome/resources/inspector/settings/SettingsScreen.js
 chrome/resources/inspector/sidebarPane.css
 chrome/resources/inspector/source_frame/
 chrome/resources/inspector/source_frame/SourceFrame.js

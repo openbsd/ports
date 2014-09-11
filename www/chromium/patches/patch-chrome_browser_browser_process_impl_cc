@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.10 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/browser_process_impl.cc.orig.port	Tue Jul 15 13:01:31 2014
-+++ chrome/browser/browser_process_impl.cc	Thu Jul 17 12:25:31 2014
-@@ -239,7 +239,7 @@ void BrowserProcessImpl::StartTearDown() {
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.11 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Wed Sep 10 01:47:11 2014
++++ chrome/browser/browser_process_impl.cc	Wed Sep 10 22:05:40 2014
+@@ -248,7 +248,7 @@ void BrowserProcessImpl::StartTearDown() {
  
    ExtensionRendererState::GetInstance()->Shutdown();
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.10 2014/07/20 17:22:3
    media_file_system_registry_.reset();
    // Remove the global instance of the Storage Monitor now. Otherwise the
    // FILE thread would be gone when we try to release it in the dtor and
-@@ -890,7 +890,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -938,7 +938,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
      promo_resource_service_->StartAfterDelay();
    }
  

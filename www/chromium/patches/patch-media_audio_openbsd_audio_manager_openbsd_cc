@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.21 2014/04/17 16:27:53 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Wed Apr  2 21:05:03 2014
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Sat Apr 12 09:40:41 2014
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.22 2014/09/11 19:04:52 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Wed Sep 10 01:47:13 2014
++++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Sep 10 22:05:41 2014
 @@ -4,55 +4,25 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
@@ -61,7 +61,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.21 2014/04/17 1
  }
  
  AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
-@@ -65,19 +35,9 @@ AudioParameters AudioManagerOpenBSD::GetInputStreamPar
+@@ -69,19 +39,9 @@ AudioParameters AudioManagerOpenBSD::GetInputStreamPar
  }
  
  AudioManagerOpenBSD::AudioManagerOpenBSD(AudioLogFactory* audio_log_factory)
@@ -83,7 +83,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.21 2014/04/17 1
  }
  
  AudioManagerOpenBSD::~AudioManagerOpenBSD() {
-@@ -86,7 +46,7 @@ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
+@@ -90,7 +50,7 @@ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
  
  AudioOutputStream* AudioManagerOpenBSD::MakeLinearOutputStream(
      const AudioParameters& params) {
@@ -92,7 +92,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.21 2014/04/17 1
    return MakeOutputStream(params);
  }
  
-@@ -94,20 +54,20 @@ AudioOutputStream* AudioManagerOpenBSD::MakeLowLatency
+@@ -98,20 +58,20 @@ AudioOutputStream* AudioManagerOpenBSD::MakeLowLatency
      const AudioParameters& params,
      const std::string& device_id) {
    DLOG_IF(ERROR, !device_id.empty()) << "Not implemented!";
@@ -116,7 +116,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.21 2014/04/17 1
    NOTIMPLEMENTED();
    return NULL;
  }
-@@ -117,7 +77,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
+@@ -121,7 +81,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
      const AudioParameters& input_params) {
    // TODO(tommi): Support |output_device_id|.
    DLOG_IF(ERROR, !output_device_id.empty()) << "Not implemented!";
@@ -125,7 +125,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.21 2014/04/17 1
  
    ChannelLayout channel_layout = CHANNEL_LAYOUT_STEREO;
    int sample_rate = kDefaultSampleRate;
-@@ -143,15 +103,14 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
+@@ -147,15 +107,14 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
  
  AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
      const AudioParameters& params) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_strip_cc,v 1.6 2014/07/20 17:22:34 robert Exp $
---- chrome/browser/ui/views/tabs/tab_strip.cc.orig.port	Sat Jul 19 03:27:25 2014
-+++ chrome/browser/ui/views/tabs/tab_strip.cc	Sat Jul 19 03:31:26 2014
-@@ -248,7 +248,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, views:
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_strip_cc,v 1.7 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/ui/views/tabs/tab_strip.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/browser/ui/views/tabs/tab_strip.cc	Wed Sep 10 22:05:40 2014
+@@ -278,7 +278,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, views:
      : views::ImageButton(listener),
        tab_strip_(tab_strip),
        destroyed_(NULL) {

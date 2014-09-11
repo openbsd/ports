@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.3 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/renderer_preferences_util.cc.orig.port	Sat Jul 19 03:32:36 2014
-+++ chrome/browser/renderer_preferences_util.cc	Sat Jul 19 03:42:24 2014
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.4 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/renderer_preferences_util.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/browser/renderer_preferences_util.cc	Wed Sep 10 22:05:40 2014
 @@ -10,7 +10,7 @@
  #include "content/public/common/renderer_preferences.h"
  #include "third_party/skia/include/core/SkColor.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.3 2014/07/20 17:
  #include "ui/gfx/font_render_params_linux.h"
  #endif
  
-@@ -23,7 +23,7 @@
+@@ -18,7 +18,7 @@
  #include "ui/views/controls/textfield/textfield.h"
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.3 2014/07/20 17:
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/views/linux_ui/linux_ui.h"
-@@ -33,7 +33,7 @@ namespace renderer_preferences_util {
+@@ -28,7 +28,7 @@ namespace renderer_preferences_util {
  
  namespace {
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.3 2014/07/20 17:
  content::RendererPreferencesHintingEnum GetRendererPreferencesHintingEnum(
      gfx::FontRenderParams::Hinting hinting) {
    switch (hinting) {
-@@ -137,7 +137,7 @@ void UpdateFromSystemSettings(
+@@ -108,7 +108,7 @@ void UpdateFromSystemSettings(
    prefs->caret_blink_interval = views::Textfield::GetCaretBlinkMs() / 1000.0;
  #endif
  
@@ -36,8 +36,8 @@ $OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.3 2014/07/20 17:
 +#if defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
    views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui) {
-     if (ThemeServiceFactory::GetForProfile(profile)->UsingNativeTheme()) {
-@@ -159,7 +159,7 @@ void UpdateFromSystemSettings(
+     if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
+@@ -130,7 +130,7 @@ void UpdateFromSystemSettings(
    }
  #endif
  

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_utility_media_galleries_image_metadata_extractor_cc,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- chrome/utility/media_galleries/image_metadata_extractor.cc.orig.port	Thu Sep 11 13:58:11 2014
++++ chrome/utility/media_galleries/image_metadata_extractor.cc	Thu Sep 11 13:58:14 2014
+@@ -98,7 +98,7 @@ class ExifFunctions {
+     base::FilePath module_path = module_dir.AppendASCII("libexif.so");
+ #else
+     // On Linux-like systems, we use the system libexif.
+-    base::FilePath module_path = base::FilePath().AppendASCII("libexif.so.12");
++    base::FilePath module_path = base::FilePath().AppendASCII("libexif.so");
+ #endif
+ 
+     base::ScopedNativeLibrary lib(base::LoadNativeLibrary(module_path, NULL));

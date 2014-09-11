@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
---- ui/shell_dialogs/select_file_dialog.cc.orig.port	Sat Jul 19 05:58:51 2014
-+++ ui/shell_dialogs/select_file_dialog.cc	Sun Jul 20 02:56:28 2014
+$OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.2 2014/09/11 19:04:53 robert Exp $
+--- ui/shell_dialogs/select_file_dialog.cc.orig.port	Wed Sep 10 22:23:52 2014
++++ ui/shell_dialogs/select_file_dialog.cc	Wed Sep 10 22:24:17 2014
 @@ -20,7 +20,7 @@
  #include "ui/shell_dialogs/select_file_dialog_mac.h"
  #elif defined(OS_ANDROID)
  #include "ui/shell_dialogs/select_file_dialog_android.h"
--#elif defined(USE_AURA) && !defined(USE_ASH) && defined(OS_LINUX)
-+#elif defined(USE_AURA) && !defined(USE_ASH) && (defined(OS_LINUX) || defined(OS_BSD))
+-#elif defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "ui/shell_dialogs/linux_shell_dialog.h"
  #endif
  
@@ -14,8 +14,8 @@ $OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.1 2014/07/20 17:22:34
        return dialog;
    }
  
--#if defined(USE_AURA) && !defined(USE_ASH) && defined(OS_LINUX)
-+#if defined(USE_AURA) && !defined(USE_ASH) && (defined(OS_LINUX) || defined(OS_BSD))
+-#if defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    const ui::LinuxShellDialog* shell_dialogs = ui::LinuxShellDialog::instance();
    if (shell_dialogs)
      return shell_dialogs->CreateSelectFileDialog(listener, policy);

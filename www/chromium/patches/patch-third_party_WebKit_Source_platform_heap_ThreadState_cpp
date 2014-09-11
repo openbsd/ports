@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.1 2014/07/20 17:22:34 robert Exp $
---- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig.port	Thu Jul 17 12:54:09 2014
-+++ third_party/WebKit/Source/platform/heap/ThreadState.cpp	Thu Jul 17 12:54:47 2014
-@@ -45,11 +45,25 @@
- extern "C" void* __libc_stack_end;  // NOLINT
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.2 2014/09/11 19:04:52 robert Exp $
+--- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig.port	Wed Sep 10 02:07:04 2014
++++ third_party/WebKit/Source/platform/heap/ThreadState.cpp	Wed Sep 10 22:05:41 2014
+@@ -50,11 +50,25 @@ extern "C" void* __libc_stack_end;  // NOLINT
+ #include <sanitizer/msan_interface.h>
  #endif
  
 +#if OS(OPENBSD)
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.1 20
      pthread_attr_t attr;
      if (!pthread_getattr_np(pthread_self(), &attr)) {
          void* base;
-@@ -59,6 +73,7 @@ static void* getStackStart()
+@@ -64,6 +78,7 @@ static void* getStackStart()
          pthread_attr_destroy(&attr);
          return reinterpret_cast<Address>(base) + size;
      }

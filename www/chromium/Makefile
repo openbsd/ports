@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.181 2014/08/15 15:59:49 robert Exp $
+# $OpenBSD: Makefile,v 1.182 2014/09/11 19:04:52 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			36.0.1985.143
+V=			37.0.2062.120
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -35,7 +35,7 @@ MODPY_RUNDEP=	No
 PATCHORIG=	.orig.port
 
 WANTLIB += X11 Xext Xfixes Xrender Xss c cairo cups dbus-1 event
-WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
+WANTLIB += execinfo expat fontconfig freetype gconf-2 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0
 WANTLIB += png pthread speex
@@ -44,7 +44,6 @@ WANTLIB += usb-1.0 sndio
 WANTLIB += Xcomposite
 WANTLIB += stdc++
 WANTLIB += Xi Xtst
-WANTLIB += icui18n icuuc
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
 WANTLIB += jpeg nspr4 nss3 nssutil3 plc4 smime3
@@ -68,7 +67,6 @@ LIB_DEPENDS=	devel/libexecinfo \
 		devel/libusb1 \
 		security/nss \
 		devel/gconf2 \
-		textproc/icu4c \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \
@@ -106,7 +104,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
 		-Duse_system_ssl=0 \
-		-Duse_system_icu=1 \
+		-Duse_system_icu=0 \
 		-Ddisable_nacl=1 \
 		-Dlinux_breakpad=0 \
 		-Duse_allocator=none \
@@ -175,10 +173,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
-.for f in libffmpegsumo.so protoc
+.for f in libffmpegsumo.so protoc icudtl.dat mksnapshot
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
-	${INSTALL_DATA} ${BUILDDIR}/mksnapshot.* ${PREFIX}/chrome/mksnapshot
 .for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \

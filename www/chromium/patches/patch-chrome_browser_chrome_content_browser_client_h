@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.6 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Tue Jul 15 13:01:31 2014
-+++ chrome/browser/chrome_content_browser_client.h	Thu Jul 17 12:25:31 2014
-@@ -260,7 +260,7 @@ class ChromeContentBrowserClient : public content::Con
-       const base::FilePath& storage_partition_path,
-       ScopedVector<fileapi::FileSystemBackend>* additional_backends) OVERRIDE;
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.7 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Wed Sep 10 01:47:11 2014
++++ chrome/browser/chrome_content_browser_client.h	Wed Sep 10 22:05:40 2014
+@@ -288,7 +288,7 @@ class ChromeContentBrowserClient : public content::Con
+   virtual net::CookieStore* OverrideCookieStoreForRenderProcess(
+       int render_process_id) OVERRIDE;
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)

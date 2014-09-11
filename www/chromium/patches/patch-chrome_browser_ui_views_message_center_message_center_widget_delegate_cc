@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_message_center_message_center_widget_delegate_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
---- chrome/browser/ui/views/message_center/message_center_widget_delegate.cc.orig.port	Sat Jul 19 11:17:49 2014
-+++ chrome/browser/ui/views/message_center/message_center_widget_delegate.cc	Sat Jul 19 11:31:41 2014
-@@ -95,7 +95,7 @@ void MessageCenterWidgetDelegate::OnWidgetActivationCh
+$OpenBSD: patch-chrome_browser_ui_views_message_center_message_center_widget_delegate_cc,v 1.2 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/ui/views/message_center/message_center_widget_delegate.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/browser/ui/views/message_center/message_center_widget_delegate.cc	Wed Sep 10 22:05:40 2014
+@@ -97,7 +97,7 @@ void MessageCenterWidgetDelegate::OnWidgetActivationCh
    // immediately after the mouse exists from the bubble, which is a really bad
    // experience. Disable hiding until the bug around the focus is fixed.
    // TODO(erg, pkotwicz): fix the activation issue and then remove this ifdef.

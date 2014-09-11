@@ -1,0 +1,12 @@
+$OpenBSD: patch-components_usb_service_usb_error_cc,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- components/usb_service/usb_error.cc.orig.port	Thu Sep 11 10:10:10 2014
++++ components/usb_service/usb_error.cc	Thu Sep 11 10:10:24 2014
+@@ -9,7 +9,7 @@
+ namespace usb_service {
+ 
+ std::string ConvertErrorToString(int errcode) {
+-  return libusb_strerror(static_cast<libusb_error>(errcode));
++  return "";
+ }
+ 
+ }  // namespace usb_service;

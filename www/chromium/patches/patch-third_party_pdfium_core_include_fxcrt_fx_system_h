@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_pdfium_core_include_fxcrt_fx_system_h,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- third_party/pdfium/core/include/fxcrt/fx_system.h.orig.port	Thu Sep 11 10:27:42 2014
++++ third_party/pdfium/core/include/fxcrt/fx_system.h	Thu Sep 11 10:27:42 2014
+@@ -21,7 +21,7 @@
+ #elif defined(_WIN32) || defined(_WIN64)
+ #define _FX_OS_ _FX_WIN32_DESKTOP_
+ #define _FXM_PLATFORM_ _FXM_PLATFORM_WINDOWS_
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__OpenBSD__)
+ #define _FX_OS_ _FX_LINUX_DESKTOP_
+ #define _FXM_PLATFORM_ _FXM_PLATFORM_LINUX_
+ #elif defined(__APPLE__)

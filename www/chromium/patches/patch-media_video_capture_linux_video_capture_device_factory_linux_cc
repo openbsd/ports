@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.7 2014/07/20 17:22:34 robert Exp $
---- media/video/capture/linux/video_capture_device_linux.cc.orig.port	Tue Jul 15 13:02:18 2014
-+++ media/video/capture/linux/video_capture_device_linux.cc	Thu Jul 17 12:25:31 2014
-@@ -174,10 +174,7 @@ void VideoCaptureDevice::GetDeviceSupportedFormats(
+$OpenBSD: patch-media_video_capture_linux_video_capture_device_factory_linux_cc,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- media/video/capture/linux/video_capture_device_factory_linux.cc.orig.port	Wed Sep 10 22:20:43 2014
++++ media/video/capture/linux/video_capture_device_factory_linux.cc	Wed Sep 10 22:21:09 2014
+@@ -141,10 +141,7 @@ void VideoCaptureDeviceFactoryLinux::GetDeviceSupporte
      frame_size.pixel_format = pixel_format.pixelformat;
      while (HANDLE_EINTR(ioctl(fd.get(), VIDIOC_ENUM_FRAMESIZES, &frame_size)) ==
             0) {
@@ -13,7 +13,7 @@ $OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.7 20
          // TODO(mcasas): see http://crbug.com/249953, support these devices.
          NOTIMPLEMENTED();
        } else if (frame_size.type == V4L2_FRMSIZE_TYPE_CONTINUOUS) {
-@@ -186,19 +183,9 @@ void VideoCaptureDevice::GetDeviceSupportedFormats(
+@@ -153,19 +150,9 @@ void VideoCaptureDeviceFactoryLinux::GetDeviceSupporte
        }
        v4l2_frmivalenum frame_interval = {};
        frame_interval.pixel_format = pixel_format.pixelformat;

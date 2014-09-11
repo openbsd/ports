@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libjingle_source_talk_base_cpumonitor_cc,v 1.2 2014/01/18 11:42:04 robert Exp $
---- third_party/libjingle/source/talk/base/cpumonitor.cc.orig.port	Thu Jan 16 12:43:10 2014
-+++ third_party/libjingle/source/talk/base/cpumonitor.cc	Thu Jan 16 12:44:52 2014
-@@ -52,7 +52,7 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_cpumonitor_cc,v 1.3 2014/09/11 19:04:52 robert Exp $
+--- third_party/libjingle/source/talk/base/cpumonitor.cc.orig.port	Wed Sep 10 01:47:33 2014
++++ third_party/libjingle/source/talk/base/cpumonitor.cc	Wed Sep 10 22:05:41 2014
+@@ -53,7 +53,7 @@
  #include <mach/task.h>
  #endif  // defined(IOS) || defined(OSX)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_libjingle_source_talk_base_cpumonitor_cc,v 1.2 2014/
  #include <sys/resource.h>
  #include <errno.h>
  #include <stdio.h>
-@@ -282,6 +282,9 @@ float CpuSampler::GetSystemLoad() {
+@@ -286,6 +286,9 @@ float CpuSampler::GetSystemLoad() {
    const uint64 total_times = cpu_times + idle;
  #endif  // defined(LINUX) || defined(ANDROID)
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-third_party_libjingle_source_talk_base_cpumonitor_cc,v 1.2 2014/
  #if defined(__native_client__)
    // TODO(ryanpetrie): Implement this via PPAPI when it's available.
    const uint64 cpu_times = 0;
-@@ -294,6 +297,7 @@ float CpuSampler::GetSystemLoad() {
+@@ -298,6 +301,7 @@ float CpuSampler::GetSystemLoad() {
                                       &system_.prev_total_times_,
                                       &system_.prev_cpu_times_);
    return system_.prev_load_;
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_libjingle_source_talk_base_cpumonitor_cc,v 1.2 2014/
  }
  
  float CpuSampler::GetProcessLoad() {
-@@ -355,7 +359,7 @@ float CpuSampler::GetProcessLoad() {
+@@ -359,7 +363,7 @@ float CpuSampler::GetProcessLoad() {
        TimeValueTToInt64(task_term_info.system_time));
  #endif  // defined(IOS) || defined(OSX)
  

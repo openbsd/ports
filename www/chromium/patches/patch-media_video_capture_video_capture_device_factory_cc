@@ -1,0 +1,21 @@
+$OpenBSD: patch-media_video_capture_video_capture_device_factory_cc,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- media/video/capture/video_capture_device_factory.cc.orig.port	Thu Sep 11 10:16:14 2014
++++ media/video/capture/video_capture_device_factory.cc	Thu Sep 11 10:16:31 2014
+@@ -11,7 +11,7 @@
+ 
+ #if defined(OS_MACOSX)
+ #include "media/video/capture/mac/video_capture_device_factory_mac.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+ #include "media/video/capture/linux/video_capture_device_factory_linux.h"
+ #elif defined(OS_ANDROID)
+ #include "media/video/capture/android/video_capture_device_factory_android.h"
+@@ -41,7 +41,7 @@ scoped_ptr<VideoCaptureDeviceFactory> VideoCaptureDevi
+ #if defined(OS_MACOSX)
+     return scoped_ptr<VideoCaptureDeviceFactory>(new
+         VideoCaptureDeviceFactoryMac(ui_task_runner));
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD) /* XXXROBERT */
+     return scoped_ptr<VideoCaptureDeviceFactory>(new
+         VideoCaptureDeviceFactoryLinux(ui_task_runner));
+ #elif defined(OS_ANDROID)

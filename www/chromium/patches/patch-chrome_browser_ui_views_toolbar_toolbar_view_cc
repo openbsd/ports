@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_toolbar_toolbar_view_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
---- chrome/browser/ui/views/toolbar/toolbar_view.cc.orig.port	Sat Jul 19 03:50:45 2014
-+++ chrome/browser/ui/views/toolbar/toolbar_view.cc	Sat Jul 19 03:51:00 2014
-@@ -403,7 +403,7 @@ void ToolbarView::OnMenuButtonClicked(views::View* sou
+$OpenBSD: patch-chrome_browser_ui_views_toolbar_toolbar_view_cc,v 1.2 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/ui/views/toolbar/toolbar_view.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/browser/ui/views/toolbar/toolbar_view.cc	Wed Sep 10 22:05:40 2014
+@@ -382,7 +382,7 @@ void ToolbarView::OnMenuButtonClicked(views::View* sou
    bool use_new_menu = false;
    bool supports_new_separators = false;
    // TODO: remove this.

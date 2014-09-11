@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
---- base/posix/unix_domain_socket_linux.cc.orig.port	Thu Jul 17 13:43:05 2014
-+++ base/posix/unix_domain_socket_linux.cc	Sat Jul 19 00:33:21 2014
+$OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.2 2014/09/11 19:04:52 robert Exp $
+--- base/posix/unix_domain_socket_linux.cc.orig.port	Wed Sep 10 01:29:17 2014
++++ base/posix/unix_domain_socket_linux.cc	Wed Sep 10 22:05:40 2014
 @@ -7,6 +7,8 @@
  #include <errno.h>
  #include <sys/socket.h>
@@ -32,7 +32,7 @@ $OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.1 2014/07/20 17:22:33
    fds->clear();
  
    struct msghdr msg = {};
-@@ -157,6 +162,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -163,6 +168,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
    }
  
    return r;

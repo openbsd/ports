@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_base_strings_app_locale_settings_grd,v 1.4 2014/04/17 16:27:53 robert Exp $
---- ui/base/strings/app_locale_settings.grd.orig.port	Tue Apr 15 20:01:57 2014
-+++ ui/base/strings/app_locale_settings.grd	Tue Apr 15 20:02:40 2014
+$OpenBSD: patch-ui_strings_app_locale_settings_grd,v 1.1 2014/09/11 19:04:53 robert Exp $
+--- ui/strings/app_locale_settings.grd.orig.port	Wed Sep 10 22:23:18 2014
++++ ui/strings/app_locale_settings.grd	Wed Sep 10 22:23:47 2014
 @@ -229,7 +229,7 @@
            75%
          </message>

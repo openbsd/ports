@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_pdfium_fpdfsdk_src_jsapi_fxjs_v8_cpp,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp.orig.port	Thu Sep 11 10:27:45 2014
++++ third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp	Thu Sep 11 10:27:45 2014
+@@ -753,12 +753,16 @@ void JS_ValueCopy(v8::Handle<v8::Value>& pTo, v8::Hand
+ 
+ double _getLocalTZA()
+ {
++	struct tm *lt;
+ 	if(!FSDK_IsSandBoxPolicyEnabled(FPDF_POLICY_MACHINETIME_ACCESS))
+ 		return 0;
+ 	time_t t = 0;
+ 	time(&t);
+-	localtime(&t);
++#ifdef __OpenBSD__
++	return (double)(-(lt->tm_gmtoff * 1000));
++#else
+ 	return (double)(-(timezone * 1000));
++#endif
+ }
+ 
+ int _getDaylightSavingTA(double d)

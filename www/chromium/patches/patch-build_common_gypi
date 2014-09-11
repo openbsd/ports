@@ -1,7 +1,16 @@
-$OpenBSD: patch-build_common_gypi,v 1.24 2014/07/20 17:22:33 robert Exp $
---- build/common.gypi.orig.port	Tue Jul 15 13:03:13 2014
-+++ build/common.gypi	Sat Jul 19 01:01:48 2014
-@@ -857,7 +857,7 @@
+$OpenBSD: patch-build_common_gypi,v 1.25 2014/09/11 19:04:52 robert Exp $
+--- build/common.gypi.orig.port	Wed Sep 10 01:47:11 2014
++++ build/common.gypi	Wed Sep 10 22:28:34 2014
+@@ -87,7 +87,7 @@
+ 
+           'conditions': [
+             # ChromeOS and Windows use Aura and Ash.
+-            ['chromeos==1 or OS=="win" or OS=="linux"', {
++            ['chromeos==1 or OS=="win" or OS=="linux" or OS=="openbsd"', {
+               'use_ash%': 1,
+               'use_aura%': 1,
+             }],
+@@ -887,7 +887,7 @@
          # NOTE: The check for disable_nacl==0 and component=="static_library"
          # can't be used here because these variables are not defined yet, but it
          # is still not supported.
@@ -10,16 +19,7 @@ $OpenBSD: patch-build_common_gypi,v 1.24 2014/07/20 17:22:33 robert Exp $
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -896,7 +896,7 @@
-         # except when building Android WebView.
-         # TODO(jshin): Handle 'use_system_icu' on Linux (Chromium).
-         # Set the data reduction proxy origin for Android Webview.
--        ['android_webview_build==0', {
-+        ['android_webview_build==0 and OS!="freebsd" and OS!="openbsd"', {
-           'icu_use_data_file_flag%' : 1,
-           'spdy_proxy_auth_origin%': '',
-           'data_reduction_proxy_probe_url%': '',
-@@ -3177,6 +3177,14 @@
+@@ -3311,6 +3311,14 @@
          ],
        },
      }],
@@ -34,7 +34,7 @@ $OpenBSD: patch-build_common_gypi,v 1.24 2014/07/20 17:22:33 robert Exp $
      ['os_posix==1 and OS!="mac" and OS!="ios"', {
        'target_defaults': {
          # Enable -Werror by default, but put it in a variable so it can
-@@ -5158,8 +5166,8 @@
+@@ -5385,8 +5393,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [

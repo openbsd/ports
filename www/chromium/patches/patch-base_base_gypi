@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_base_gypi,v 1.28 2014/07/20 17:22:33 robert Exp $
---- base/base.gypi.orig.port	Tue Jul 15 13:01:13 2014
-+++ base/base.gypi	Thu Jul 17 12:25:31 2014
-@@ -912,11 +912,15 @@
+$OpenBSD: patch-base_base_gypi,v 1.29 2014/09/11 19:04:52 robert Exp $
+--- base/base.gypi.orig.port	Wed Sep 10 01:47:11 2014
++++ base/base.gypi	Thu Sep 11 01:26:53 2014
+@@ -942,11 +942,17 @@
                'process/memory_stubs.cc',
              ],
              'sources/': [
@@ -15,6 +15,8 @@ $OpenBSD: patch-base_base_gypi,v 1.28 2014/07/20 17:22:33 robert Exp $
                ['exclude', '^sys_info_linux\\.cc$'],
 +              ['exclude', '^process/process_iterator_linux\\.cc$'],
 +              ['exclude', '^process/process_metrics_linux\\.cc$'],
++              ['exclude', '^files/file_path_watcher_fsevents\\.cc$'],
++              ['exclude', '^files/file_path_watcher_fsevents\\.h$'],
              ],
            }],
            # Remove all unnecessary files for build_nexe.py to avoid exceeding

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc.orig.port	Sat Jul 19 03:27:25 2014
-+++ chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc	Sat Jul 19 03:28:30 2014
-@@ -118,7 +118,7 @@ void ChromeBrowserMainExtraPartsAura::PreCreateThreads
+$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_cc,v 1.2 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc	Wed Sep 10 22:05:40 2014
+@@ -131,7 +131,7 @@ void ChromeBrowserMainExtraPartsAura::PreCreateThreads
  }
  
  void ChromeBrowserMainExtraPartsAura::PreProfileInit() {
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_cc,v
    // Now that we have some minimal ui initialized, check to see if we're
    // running as root and bail if we are.
    DetectRunningAsRoot();
-@@ -132,7 +132,7 @@ void ChromeBrowserMainExtraPartsAura::PostMainMessageL
+@@ -145,7 +145,7 @@ void ChromeBrowserMainExtraPartsAura::PostMainMessageL
    // after the metrics service is deleted.
  }
  

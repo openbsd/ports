@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.5 2014/07/20 17:22:34 robert Exp $
---- chrome/common/extensions/api/api.gyp.orig.port	Tue Jul 15 13:01:37 2014
-+++ chrome/common/extensions/api/api.gyp	Thu Jul 17 12:25:31 2014
-@@ -174,6 +174,11 @@
-               'cast_streaming_udp_transport.idl',
+$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.6 2014/09/11 19:04:52 robert Exp $
+--- chrome/common/extensions/api/api.gyp.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/common/extensions/api/api.gyp	Wed Sep 10 22:05:41 2014
+@@ -215,6 +215,11 @@
+               '<@(chromeos_branded_schema_files)',
              ],
            }],
 +          ['enable_webrtc==0', {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.29 2014/07/20 17:22:34 robert Exp $
---- media/media.gyp.orig.port	Tue Jul 15 13:02:23 2014
-+++ media/media.gyp	Thu Jul 17 12:25:31 2014
+$OpenBSD: patch-media_media_gyp,v 1.30 2014/09/11 19:04:52 robert Exp $
+--- media/media.gyp.orig.port	Wed Sep 10 01:47:13 2014
++++ media/media.gyp	Wed Sep 10 22:05:41 2014
 @@ -22,7 +22,7 @@
          'media_use_libvpx%': 1,
        }],
@@ -30,8 +30,8 @@ $OpenBSD: patch-media_media_gyp,v 1.29 2014/07/20 17:22:34 robert Exp $
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
          'audio/sample_rates.cc',
-@@ -637,6 +643,24 @@
-             'formats/webm/chromeos/webm_encoder.h',
+@@ -662,6 +668,24 @@
+             '../third_party/libyuv/libyuv.gyp:libyuv',
            ],
          }],
 +        ['use_sndio == 1', {
@@ -55,7 +55,7 @@ $OpenBSD: patch-media_media_gyp,v 1.29 2014/07/20 17:22:34 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -658,7 +682,7 @@
+@@ -683,7 +707,7 @@
              'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
@@ -64,7 +64,7 @@ $OpenBSD: patch-media_media_gyp,v 1.29 2014/07/20 17:22:34 robert Exp $
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -917,7 +941,7 @@
+@@ -984,7 +1008,7 @@
              'base/simd/convert_yuv_to_rgb_x86.cc',
            ],
          }],
@@ -73,7 +73,7 @@ $OpenBSD: patch-media_media_gyp,v 1.29 2014/07/20 17:22:34 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1110,7 +1134,7 @@
+@@ -1179,7 +1203,7 @@
              'USE_PULSEAUDIO',
            ],
          }],
@@ -82,7 +82,7 @@ $OpenBSD: patch-media_media_gyp,v 1.29 2014/07/20 17:22:34 robert Exp $
            'conditions': [
              ['use_allocator!="none"', {
                'dependencies': [
-@@ -1704,7 +1728,7 @@
+@@ -1731,7 +1755,7 @@
              'filters/pipeline_integration_test_base.cc',
            ],
            'conditions': [

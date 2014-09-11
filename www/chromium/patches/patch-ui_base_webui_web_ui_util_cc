@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
---- ui/base/webui/web_ui_util.cc.orig.port	Sat Jul 19 05:41:40 2014
-+++ ui/base/webui/web_ui_util.cc	Sat Jul 19 05:46:36 2014
-@@ -142,7 +142,7 @@ void SetFontAndTextDirection(base::DictionaryValue* lo
+$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.2 2014/09/11 19:04:53 robert Exp $
+--- ui/base/webui/web_ui_util.cc.orig.port	Wed Sep 10 01:47:14 2014
++++ ui/base/webui/web_ui_util.cc	Wed Sep 10 22:05:41 2014
+@@ -141,7 +141,7 @@ void SetFontAndTextDirection(base::DictionaryValue* lo
  
  // TODO(dnicoara) Remove Ozone check when PlatformFont support is introduced
  // into Ozone: crbug.com/320050

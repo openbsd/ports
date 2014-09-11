@@ -1,0 +1,21 @@
+$OpenBSD: patch-pdf_pdf_gyp,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- pdf/pdf.gyp.orig.port	Thu Sep 11 10:27:37 2014
++++ pdf/pdf.gyp	Thu Sep 11 10:27:37 2014
+@@ -109,7 +109,7 @@
+           # TODO(jschuh): crbug.com/167187 fix size_t to int truncations.
+           'msvs_disabled_warnings': [ 4267, ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'configurations': {
+             'Release_Base': {
+               #'cflags': [ '-fno-weak',],  # get rid of symbols that strip doesn't remove.
+@@ -129,7 +129,7 @@
+   ],
+   'conditions': [
+     # CrOS has a separate step to do this.
+-    ['OS=="linux" and chromeos==0',
++    ['(OS=="linux" or OS=="openbsd") and chromeos==0',
+       { 'targets': [
+         {
+           'target_name': 'pdf_linux_symbols',

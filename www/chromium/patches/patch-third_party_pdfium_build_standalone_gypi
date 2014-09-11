@@ -1,0 +1,28 @@
+$OpenBSD: patch-third_party_pdfium_build_standalone_gypi,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- third_party/pdfium/build/standalone.gypi.orig.port	Thu Sep 11 10:27:45 2014
++++ third_party/pdfium/build/standalone.gypi	Thu Sep 11 10:34:48 2014
+@@ -13,7 +13,7 @@
+       'variables': {
+         'variables': {
+           'conditions': [
+-            ['OS=="linux" or OS=="mac"', {
++            ['OS=="linux" or OS=="mac" or OS=="openbsd"', {
+               # This handles the Unix platforms we generally deal with.
+               # Anything else gets passed through, which probably won't work
+               # very well; such hosts should pass an explicit target_arch
+@@ -110,7 +110,7 @@
+           },
+         },
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="openbsd"', {
+             'cflags': [
+               '-fdata-sections',
+               '-ffunction-sections',
+@@ -250,4 +250,4 @@
+     # See comment in Chromium's common.gypi for why this is needed.
+     'SYMROOT': '<(DEPTH)/xcodebuild',
+   }
+-}
+\ No newline at end of file
++}

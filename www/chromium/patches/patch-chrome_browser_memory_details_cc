@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.20 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/memory_details.cc.orig.port	Tue Jul 15 13:01:31 2014
-+++ chrome/browser/memory_details.cc	Thu Jul 17 12:25:31 2014
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.21 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/memory_details.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/browser/memory_details.cc	Wed Sep 10 22:05:40 2014
 @@ -32,7 +32,7 @@
  #include "grit/generated_resources.h"
  #include "ui/base/l10n/l10n_util.h"
@@ -17,9 +17,9 @@ $OpenBSD: patch-chrome_browser_memory_details_cc,v 1.20 2014/07/20 17:22:33 robe
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
    const pid_t zygote_pid = content::ZygoteHost::GetInstance()->GetPid();
-   const pid_t sandbox_helper_pid =
-       content::ZygoteHost::GetInstance()->GetSandboxHelperPid();
-@@ -336,7 +336,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+ #endif
+ 
+@@ -334,7 +334,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        }
      }
  
@@ -27,4 +27,4 @@ $OpenBSD: patch-chrome_browser_memory_details_cc,v 1.20 2014/07/20 17:22:33 robe
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
      if (process.pid == zygote_pid) {
        process.process_type = content::PROCESS_TYPE_ZYGOTE;
-     } else if (process.pid == sandbox_helper_pid) {
+     }

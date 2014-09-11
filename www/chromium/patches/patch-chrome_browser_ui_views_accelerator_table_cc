@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/ui/views/accelerator_table.cc.orig.port	Sat Jul 19 03:27:25 2014
-+++ chrome/browser/ui/views/accelerator_table.cc	Sat Jul 19 03:29:38 2014
+$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.2 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/ui/views/accelerator_table.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/browser/ui/views/accelerator_table.cc	Wed Sep 10 22:05:40 2014
 @@ -56,7 +56,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
    { ui::VKEY_S, ui::EF_CONTROL_DOWN, IDC_SAVE_PAGE },
    { ui::VKEY_9, ui::EF_CONTROL_DOWN, IDC_SELECT_LAST_TAB },
@@ -19,8 +19,8 @@ $OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.1 2014/07/20 17
    { ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0 },
    { ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0 },
    { ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1 },
-@@ -135,7 +135,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
-   { ui::VKEY_F11, ui::EF_NONE, IDC_FULLSCREEN },
+@@ -136,7 +136,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+   { ui::VKEY_ESCAPE, ui::EF_SHIFT_DOWN, IDC_TASK_MANAGER },
  
    // Platform-specific key maps.
 -#if defined(OS_LINUX)

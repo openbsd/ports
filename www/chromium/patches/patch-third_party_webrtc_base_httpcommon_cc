@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_base_httpcommon_cc,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- third_party/webrtc/base/httpcommon.cc.orig.port	Wed Sep 10 23:59:35 2014
++++ third_party/webrtc/base/httpcommon.cc	Wed Sep 10 23:59:42 2014
+@@ -382,7 +382,7 @@ bool HttpDateToSeconds(const std::string& date, time_t
+     gmt = non_gmt + kTimeZoneOffsets[zindex] * 60 * 60;
+   }
+   // TODO: Android should support timezone, see b/2441195
+-#if defined(WEBRTC_MAC) && !defined(WEBRTC_IOS) || defined(WEBRTC_ANDROID) || defined(BSD)
++#if defined(WEBRTC_MAC) && !defined(WEBRTC_IOS) || defined(WEBRTC_ANDROID) || defined(WEBRTC_BSD)
+   tm *tm_for_timezone = localtime((time_t *)&gmt);
+   *seconds = gmt + tm_for_timezone->tm_gmtoff;
+ #else

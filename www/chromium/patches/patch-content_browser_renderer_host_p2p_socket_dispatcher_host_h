@@ -1,0 +1,24 @@
+$OpenBSD: patch-content_browser_renderer_host_p2p_socket_dispatcher_host_h,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- content/browser/renderer_host/p2p/socket_dispatcher_host.h.orig.port	Thu Sep 11 10:08:18 2014
++++ content/browser/renderer_host/p2p/socket_dispatcher_host.h	Thu Sep 11 10:17:08 2014
+@@ -46,12 +46,6 @@ class P2PSocketDispatcherHost
+   // net::NetworkChangeNotifier::IPAddressObserver interface.
+   virtual void OnIPAddressChanged() OVERRIDE;
+ 
+-  // Starts the RTP packet header dumping. Must be called on the IO thread.
+-  void StartRtpDump(
+-      bool incoming,
+-      bool outgoing,
+-      const RenderProcessHost::WebRtcRtpPacketCallback& packet_callback);
+-
+   // Stops the RTP packet header dumping. Must be Called on the UI thread.
+   void StopRtpDumpOnUIThread(bool incoming, bool outgoing);
+ 
+@@ -109,7 +103,6 @@ class P2PSocketDispatcherHost
+ 
+   bool dump_incoming_rtp_packet_;
+   bool dump_outgoing_rtp_packet_;
+-  RenderProcessHost::WebRtcRtpPacketCallback packet_callback_;
+ 
+   DISALLOW_COPY_AND_ASSIGN(P2PSocketDispatcherHost);
+ };

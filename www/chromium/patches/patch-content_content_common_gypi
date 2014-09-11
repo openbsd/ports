@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.14 2014/07/20 17:22:34 robert Exp $
---- content/content_common.gypi.orig.port	Thu Jul 17 12:51:38 2014
-+++ content/content_common.gypi	Thu Jul 17 12:52:18 2014
-@@ -559,6 +559,23 @@
+$OpenBSD: patch-content_content_common_gypi,v 1.15 2014/09/11 19:04:52 robert Exp $
+--- content/content_common.gypi.orig.port	Wed Sep 10 01:47:13 2014
++++ content/content_common.gypi	Wed Sep 10 22:05:41 2014
+@@ -598,6 +598,23 @@
          'content.gyp:common_aidl',
        ],
      }],

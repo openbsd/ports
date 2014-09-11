@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.7 2014/07/20 17:22:34 robert Exp $
---- chrome/common/pref_names.cc.orig.port	Tue Jul 15 13:01:37 2014
-+++ chrome/common/pref_names.cc	Thu Jul 17 12:25:31 2014
-@@ -923,7 +923,7 @@ const char kAllowDeletingBrowserHistory[] = "history.d
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.8 2014/09/11 19:04:52 robert Exp $
+--- chrome/common/pref_names.cc.orig.port	Wed Sep 10 01:47:12 2014
++++ chrome/common/pref_names.cc	Wed Sep 10 22:05:41 2014
+@@ -957,7 +957,7 @@ const char kAllowDeletingBrowserHistory[] = "history.d
  // Boolean controlling whether SafeSearch is mandatory for Google Web Searches.
  const char kForceSafeSearch[] = "settings.force_safesearch";
  

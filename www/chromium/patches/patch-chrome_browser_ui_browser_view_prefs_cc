@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/ui/browser_view_prefs.cc.orig.port	Sat Jul 19 03:27:25 2014
-+++ chrome/browser/ui/browser_view_prefs.cc	Sat Jul 19 03:28:58 2014
-@@ -8,7 +8,7 @@
+$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.2 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/ui/browser_view_prefs.cc.orig.port	Wed Sep 10 01:29:19 2014
++++ chrome/browser/ui/browser_view_prefs.cc	Wed Sep 10 22:05:40 2014
+@@ -9,7 +9,7 @@
  #include "chrome/common/pref_names.h"
- #include "components/user_prefs/pref_registry_syncable.h"
+ #include "components/pref_registry/pref_registry_syncable.h"
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
  #include "ui/base/x/x11_util.h"
  #endif
  
-@@ -34,7 +34,7 @@ void RegisterBrowserViewLocalPrefs(PrefRegistrySimple*
+@@ -42,7 +42,7 @@ void RegisterBrowserViewLocalPrefs(PrefRegistrySimple*
  void RegisterBrowserViewProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
    bool custom_frame_default = false;

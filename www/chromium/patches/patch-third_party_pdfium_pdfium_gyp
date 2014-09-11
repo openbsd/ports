@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_pdfium_pdfium_gyp,v 1.1 2014/09/11 19:04:52 robert Exp $
+--- third_party/pdfium/pdfium.gyp.orig.port	Thu Sep 11 10:27:45 2014
++++ third_party/pdfium/pdfium.gyp	Thu Sep 11 10:27:45 2014
+@@ -14,7 +14,7 @@
+       ['pdf_use_skia==1', {
+         'defines': ['_SKIA_SUPPORT_'],
+       }],
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="openbsd"', {
+         'cflags!': [
+           '-fno-exceptions',
+         ],

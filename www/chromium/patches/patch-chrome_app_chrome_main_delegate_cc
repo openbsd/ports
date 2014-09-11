@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.14 2014/07/20 17:22:33 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Tue Jul 15 13:02:09 2014
-+++ chrome/app/chrome_main_delegate.cc	Sat Jul 19 11:24:44 2014
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.15 2014/09/11 19:04:52 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig.port	Wed Sep 10 22:08:42 2014
++++ chrome/app/chrome_main_delegate.cc	Thu Sep 11 11:01:55 2014
 @@ -96,11 +96,11 @@
  #include "ui/base/x/x11_util.h"
  #endif
@@ -24,7 +24,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.14 2014/07/20 17:22:33 ro
  base::LazyInstance<chrome::ChromeBreakpadClient>::Leaky
      g_chrome_breakpad_client = LAZY_INSTANCE_INITIALIZER;
  #endif
-@@ -245,7 +245,7 @@ bool SubprocessNeedsResourceBundle(const std::string& 
+@@ -226,7 +226,7 @@ bool SubprocessNeedsResourceBundle(const std::string& 
        // Needed for scrollbar related images.
        process_type == switches::kWorkerProcess ||
  #endif
@@ -33,7 +33,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.14 2014/07/20 17:22:33 ro
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -297,7 +297,7 @@ void HandleHelpSwitches(const CommandLine& command_lin
+@@ -278,7 +278,7 @@ void HandleHelpSwitches(const CommandLine& command_lin
  }
  #endif
  
@@ -42,16 +42,16 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.14 2014/07/20 17:22:33 ro
  void SIGTERMProfilingShutdown(int signal) {
    Profiling::Stop();
    struct sigaction sigact;
-@@ -331,7 +331,7 @@ void InitializeUserDataDir() {
+@@ -312,7 +312,7 @@ void InitializeUserDataDir() {
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
 -#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
++#if defined(OS_LINUX) || defined(OS_BSD) /* XXXROBERT */
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -632,7 +632,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -621,7 +621,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.14 2014/07/20 17:22:33 ro
    breakpad::SetBreakpadClient(g_chrome_breakpad_client.Pointer());
  #endif
  
-@@ -757,7 +757,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -743,7 +743,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  #endif
    }
  
@@ -69,12 +69,12 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.14 2014/07/20 17:22:33 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -854,7 +854,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -840,7 +840,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
    return process_type == switches::kNaClLoaderProcess ||
        process_type == switches::kRelauncherProcess;
  }
 -#elif defined(OS_POSIX) && !defined(OS_ANDROID)
 +#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
- content::ZygoteForkDelegate* ChromeMainDelegate::ZygoteStarting() {
- #if defined(DISABLE_NACL)
-   return NULL;
+ void ChromeMainDelegate::ZygoteStarting(
+     ScopedVector<content::ZygoteForkDelegate>* delegates) {
+ #if !defined(DISABLE_NACL)

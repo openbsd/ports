@@ -1,21 +1,21 @@
-$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
---- ui/base/ime/input_method_factory.cc.orig.port	Sat Jul 19 05:58:51 2014
-+++ ui/base/ime/input_method_factory.cc	Sat Jul 19 06:00:52 2014
-@@ -12,7 +12,7 @@
- #include "base/win/metro.h"
- #include "ui/base/ime/input_method_win.h"
+$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.2 2014/09/11 19:04:53 robert Exp $
+--- ui/base/ime/input_method_factory.cc.orig.port	Wed Sep 10 22:21:52 2014
++++ ui/base/ime/input_method_factory.cc	Wed Sep 10 22:22:19 2014
+@@ -14,7 +14,7 @@
  #include "ui/base/ime/remote_input_method_win.h"
--#elif defined(USE_AURA) && defined(OS_LINUX)
-+#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
+ #elif defined(OS_MACOSX)
+ #include "ui/base/ime/input_method_mac.h"
+-#elif defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "ui/base/ime/input_method_auralinux.h"
  #else
  #include "ui/base/ime/input_method_minimal.h"
-@@ -43,7 +43,7 @@ scoped_ptr<InputMethod> CreateInputMethod(
-   if (IsRemoteInputMethodWinRequired(widget))
-     return CreateRemoteInputMethodWin(delegate);
+@@ -47,7 +47,7 @@ scoped_ptr<InputMethod> CreateInputMethod(
    return scoped_ptr<InputMethod>(new InputMethodWin(delegate, widget));
--#elif defined(USE_AURA) && defined(OS_LINUX)
-+#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
+ #elif defined(OS_MACOSX)
+   return scoped_ptr<InputMethod>(new InputMethodMac(delegate));
+-#elif defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    return scoped_ptr<InputMethod>(new InputMethodAuraLinux(delegate));
  #else
    return scoped_ptr<InputMethod>(new InputMethodMinimal(delegate));

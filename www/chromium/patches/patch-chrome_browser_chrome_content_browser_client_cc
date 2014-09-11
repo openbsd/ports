@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Tue Jul 15 13:01:31 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Thu Jul 17 12:25:31 2014
-@@ -183,7 +183,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.13 2014/09/11 19:04:52 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Sep 10 01:47:11 2014
++++ chrome/browser/chrome_content_browser_client.cc	Wed Sep 10 22:05:40 2014
+@@ -186,7 +186,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  #include "base/debug/leak_annotations.h"
- #include "base/linux_util.h"
  #include "components/breakpad/app/breakpad_linux.h"
-@@ -492,7 +492,7 @@ void FillFontFamilyMap(const PrefService* prefs,
+ #include "components/breakpad/browser/crash_handler_host_linux.h"
+@@ -509,7 +509,7 @@ void FillFontFamilyMap(const PrefService* prefs,
    }
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2014/07/2
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1459,7 +1459,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
+@@ -1533,7 +1533,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
  
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      CommandLine* command_line, int child_process_id) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2014/07/2
    if (breakpad::IsCrashReporterEnabled()) {
      std::string enable_crash_reporter;
      GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
-@@ -2563,7 +2563,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2683,7 +2683,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
  #endif
  }
  

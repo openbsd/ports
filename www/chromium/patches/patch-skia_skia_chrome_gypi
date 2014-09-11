@@ -1,7 +1,7 @@
-$OpenBSD: patch-skia_skia_chrome_gypi,v 1.4 2014/07/20 17:22:34 robert Exp $
---- skia/skia_chrome.gypi.orig.port	Thu Jul 17 13:24:27 2014
-+++ skia/skia_chrome.gypi	Thu Jul 17 13:25:36 2014
-@@ -78,6 +78,11 @@
+$OpenBSD: patch-skia_skia_chrome_gypi,v 1.5 2014/09/11 19:04:52 robert Exp $
+--- skia/skia_chrome.gypi.orig.port	Wed Sep 10 01:47:13 2014
++++ skia/skia_chrome.gypi	Wed Sep 10 22:05:41 2014
+@@ -80,6 +80,11 @@
      'ext/vector_platform_device_skia.h',
    ],
    'conditions': [
