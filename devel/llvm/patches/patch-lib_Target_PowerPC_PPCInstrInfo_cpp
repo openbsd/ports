@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCInstrInfo_cpp,v 1.1 2014/09/11 17:59:51 brad Exp $
+
+r215238
+Provide an implementation of getNoopForMachoTarget for PPC, otherwise
+empty functions will assert in the MC object writer.
+
+--- lib/Target/PowerPC/PPCInstrInfo.cpp.orig	Fri Aug 29 23:39:36 2014
++++ lib/Target/PowerPC/PPCInstrInfo.cpp	Fri Aug 29 23:41:26 2014
+@@ -296,6 +296,11 @@ void PPCInstrInfo::insertNoop(MachineBasicBlock &MBB,
+   BuildMI(MBB, MI, DL, get(Opcode));
+ }
+ 
++/// getNoopForMachoTarget - Return the noop instruction to use for a noop.
++void PPCInstrInfo::getNoopForMachoTarget(MCInst &NopInst) const {
++  NopInst.setOpcode(PPC::NOP);
++}
++
+ // Branch analysis.
+ // Note: If the condition register is set to CTR or CTR8 then this is a
+ // BDNZ (imm == 1) or BDZ (imm == 0) branch.

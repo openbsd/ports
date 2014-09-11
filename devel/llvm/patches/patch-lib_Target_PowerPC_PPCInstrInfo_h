@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_PowerPC_PPCInstrInfo_h,v 1.1 2014/09/11 17:59:51 brad Exp $
+
+r215238
+Provide an implementation of getNoopForMachoTarget for PPC, otherwise
+empty functions will assert in the MC object writer.
+
+--- lib/Target/PowerPC/PPCInstrInfo.h.orig	Fri Aug 29 23:39:27 2014
++++ lib/Target/PowerPC/PPCInstrInfo.h	Fri Aug 29 23:40:50 2014
+@@ -228,6 +228,8 @@ class PPCInstrInfo : public PPCGenInstrInfo { (public)
+   /// instruction may be.  This returns the maximum number of bytes.
+   ///
+   virtual unsigned GetInstSizeInBytes(const MachineInstr *MI) const;
++
++  void getNoopForMachoTarget(MCInst &NopInst) const;
+ };
+ 
+ }
