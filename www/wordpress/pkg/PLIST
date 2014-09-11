@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2014/08/12 14:04:14 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.29 2014/09/11 14:43:05 gonzalo Exp $
 @pkgpath www/wordpress-mu
 wordpress/
 wordpress/index.php
@@ -261,6 +261,7 @@ wordpress/wp-admin/includes/taxonomy.php
 wordpress/wp-admin/includes/template.php
 wordpress/wp-admin/includes/theme-install.php
 wordpress/wp-admin/includes/theme.php
+wordpress/wp-admin/includes/translation-install.php
 wordpress/wp-admin/includes/update-core.php
 wordpress/wp-admin/includes/update.php
 wordpress/wp-admin/includes/upgrade.php
@@ -289,6 +290,8 @@ wordpress/wp-admin/js/dashboard.js
 wordpress/wp-admin/js/dashboard.min.js
 wordpress/wp-admin/js/edit-comments.js
 wordpress/wp-admin/js/edit-comments.min.js
+wordpress/wp-admin/js/editor-expand.js
+wordpress/wp-admin/js/editor-expand.min.js
 wordpress/wp-admin/js/editor.js
 wordpress/wp-admin/js/editor.min.js
 wordpress/wp-admin/js/farbtastic.js
@@ -301,6 +304,8 @@ wordpress/wp-admin/js/inline-edit-post.min.js
 wordpress/wp-admin/js/inline-edit-tax.js
 wordpress/wp-admin/js/inline-edit-tax.min.js
 wordpress/wp-admin/js/iris.min.js
+wordpress/wp-admin/js/language-chooser.js
+wordpress/wp-admin/js/language-chooser.min.js
 wordpress/wp-admin/js/link.js
 wordpress/wp-admin/js/link.min.js
 wordpress/wp-admin/js/media-gallery.js
@@ -560,16 +565,20 @@ wordpress/wp-content/themes/twentythirteen/content.php
 wordpress/wp-content/themes/twentythirteen/css/
 wordpress/wp-content/themes/twentythirteen/css/editor-style.css
 wordpress/wp-content/themes/twentythirteen/css/ie.css
-wordpress/wp-content/themes/twentythirteen/fonts/
-wordpress/wp-content/themes/twentythirteen/fonts/COPYING.txt
-wordpress/wp-content/themes/twentythirteen/fonts/LICENSE.txt
-wordpress/wp-content/themes/twentythirteen/fonts/genericons-regular-webfont.eot
-wordpress/wp-content/themes/twentythirteen/fonts/genericons-regular-webfont.svg
-wordpress/wp-content/themes/twentythirteen/fonts/genericons-regular-webfont.ttf
-wordpress/wp-content/themes/twentythirteen/fonts/genericons-regular-webfont.woff
-wordpress/wp-content/themes/twentythirteen/fonts/genericons.css
 wordpress/wp-content/themes/twentythirteen/footer.php
 wordpress/wp-content/themes/twentythirteen/functions.php
+wordpress/wp-content/themes/twentythirteen/genericons/
+wordpress/wp-content/themes/twentythirteen/genericons/COPYING.txt
+wordpress/wp-content/themes/twentythirteen/genericons/Genericons-Regular.otf
+wordpress/wp-content/themes/twentythirteen/genericons/LICENSE.txt
+wordpress/wp-content/themes/twentythirteen/genericons/README.txt
+wordpress/wp-content/themes/twentythirteen/genericons/example.html
+wordpress/wp-content/themes/twentythirteen/genericons/font/
+wordpress/wp-content/themes/twentythirteen/genericons/font/genericons-regular-webfont.eot
+wordpress/wp-content/themes/twentythirteen/genericons/font/genericons-regular-webfont.svg
+wordpress/wp-content/themes/twentythirteen/genericons/font/genericons-regular-webfont.ttf
+wordpress/wp-content/themes/twentythirteen/genericons/font/genericons-regular-webfont.woff
+wordpress/wp-content/themes/twentythirteen/genericons/genericons.css
 wordpress/wp-content/themes/twentythirteen/header.php
 wordpress/wp-content/themes/twentythirteen/image.php
 wordpress/wp-content/themes/twentythirteen/images/
@@ -752,6 +761,7 @@ wordpress/wp-includes/class-wp-admin-bar.php
 wordpress/wp-includes/class-wp-ajax-response.php
 wordpress/wp-includes/class-wp-customize-control.php
 wordpress/wp-includes/class-wp-customize-manager.php
+wordpress/wp-includes/class-wp-customize-panel.php
 wordpress/wp-includes/class-wp-customize-section.php
 wordpress/wp-includes/class-wp-customize-setting.php
 wordpress/wp-includes/class-wp-customize-widgets.php
@@ -1002,6 +1012,8 @@ wordpress/wp-includes/js/media-audiovideo.js
 wordpress/wp-includes/js/media-audiovideo.min.js
 wordpress/wp-includes/js/media-editor.js
 wordpress/wp-includes/js/media-editor.min.js
+wordpress/wp-includes/js/media-grid.js
+wordpress/wp-includes/js/media-grid.min.js
 wordpress/wp-includes/js/media-models.js
 wordpress/wp-includes/js/media-models.min.js
 wordpress/wp-includes/js/media-views.js
@@ -1058,6 +1070,9 @@ wordpress/wp-includes/js/tinymce/plugins/
 wordpress/wp-includes/js/tinymce/plugins/charmap/
 wordpress/wp-includes/js/tinymce/plugins/charmap/plugin.js
 wordpress/wp-includes/js/tinymce/plugins/charmap/plugin.min.js
+wordpress/wp-includes/js/tinymce/plugins/colorpicker/
+wordpress/wp-includes/js/tinymce/plugins/colorpicker/plugin.js
+wordpress/wp-includes/js/tinymce/plugins/colorpicker/plugin.min.js
 wordpress/wp-includes/js/tinymce/plugins/compat3x/
 wordpress/wp-includes/js/tinymce/plugins/compat3x/css/
 wordpress/wp-includes/js/tinymce/plugins/compat3x/css/dialog.css
@@ -1075,6 +1090,9 @@ wordpress/wp-includes/js/tinymce/plugins/hr/plugin.min.js
 wordpress/wp-includes/js/tinymce/plugins/image/
 wordpress/wp-includes/js/tinymce/plugins/image/plugin.js
 wordpress/wp-includes/js/tinymce/plugins/image/plugin.min.js
+wordpress/wp-includes/js/tinymce/plugins/lists/
+wordpress/wp-includes/js/tinymce/plugins/lists/plugin.js
+wordpress/wp-includes/js/tinymce/plugins/lists/plugin.min.js
 wordpress/wp-includes/js/tinymce/plugins/media/
 wordpress/wp-includes/js/tinymce/plugins/media/moxieplayer.swf
 wordpress/wp-includes/js/tinymce/plugins/media/plugin.js
@@ -1091,6 +1109,9 @@ wordpress/wp-includes/js/tinymce/plugins/textcolor/plugin.min.js
 wordpress/wp-includes/js/tinymce/plugins/wordpress/
 wordpress/wp-includes/js/tinymce/plugins/wordpress/plugin.js
 wordpress/wp-includes/js/tinymce/plugins/wordpress/plugin.min.js
+wordpress/wp-includes/js/tinymce/plugins/wpautoresize/
+wordpress/wp-includes/js/tinymce/plugins/wpautoresize/plugin.js
+wordpress/wp-includes/js/tinymce/plugins/wpautoresize/plugin.min.js
 wordpress/wp-includes/js/tinymce/plugins/wpdialogs/
 wordpress/wp-includes/js/tinymce/plugins/wpdialogs/plugin.js
 wordpress/wp-includes/js/tinymce/plugins/wpdialogs/plugin.min.js
@@ -1226,6 +1247,7 @@ wordpress/wp-includes/rewrite.php
 wordpress/wp-includes/rss-functions.php
 wordpress/wp-includes/rss.php
 wordpress/wp-includes/script-loader.php
+wordpress/wp-includes/session.php
 wordpress/wp-includes/shortcodes.php
 wordpress/wp-includes/taxonomy.php
 wordpress/wp-includes/template-loader.php
