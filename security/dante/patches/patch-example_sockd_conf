@@ -1,6 +1,6 @@
-$OpenBSD: patch-example_sockd_conf,v 1.1 2013/12/12 14:11:36 dcoppa Exp $
---- example/sockd.conf.orig	Wed May 18 13:27:32 2011
-+++ example/sockd.conf	Thu Nov 14 13:58:29 2013
+$OpenBSD: patch-example_sockd_conf,v 1.2 2014/09/11 07:40:07 dcoppa Exp $
+--- example/sockd.conf.orig	Wed Sep  3 16:49:13 2014
++++ example/sockd.conf	Thu Sep 11 09:32:09 2014
 @@ -40,7 +40,7 @@
  
  # the server will log both via syslog, to stdout and to /var/log/sockd.log
@@ -24,5 +24,5 @@ $OpenBSD: patch-example_sockd_conf,v 1.1 2013/12/12 14:11:36 dcoppa Exp $
 +# when running as usual, it will use the unprivileged userid of "_sockd".
 +#user.unprivileged: _sockd
  
- # If you compiled with libwrap support, what userid should it use
- # when executing your libwrap commands?  "libwrap".
+ # If you are not using libwrap, no need for the below line, so leave
+ # it commented.

@@ -1,9 +1,9 @@
-$OpenBSD: patch-example_sockd-basic_conf,v 1.1 2013/12/12 14:11:36 dcoppa Exp $
+$OpenBSD: patch-example_sockd-basic_conf,v 1.2 2014/09/11 07:40:07 dcoppa Exp $
 --- example/sockd-basic.conf.orig	Tue Aug  4 19:22:21 2009
 +++ example/sockd-basic.conf	Thu Nov 14 13:58:04 2013
 @@ -4,8 +4,8 @@
  #external: fxp1
- #method: username none
+ #socksmethod: username none
  #user.privileged: root
 -#user.unprivileged: sockd
 -#logoutput: stderr
