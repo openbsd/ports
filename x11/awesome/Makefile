@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2014/09/02 10:52:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.83 2014/09/11 10:27:17 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
@@ -68,15 +68,15 @@ pre-configure:
 		${WRKSRC}/themes/default/theme.lua.in
 
 post-install:
-	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig} \
-		${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig} \
-		${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/widget/*.orig \
-		${WRKINST}/${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig} \
-		${WRKINST}/${LOCALBASE}/share/awesome/lib/wibox/*.orig \
-		${WRKINST}/${LOCALBASE}/share/awesome/lib/wibox/widget/*.orig \
-		${WRKINST}/${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
+	@rm ${WRKINST}${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig} \
+		${WRKINST}${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig} \
+		${WRKINST}${LOCALBASE}/share/awesome/lib/awful/widget/*.orig \
+		${WRKINST}${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig} \
+		${WRKINST}${LOCALBASE}/share/awesome/lib/wibox/*.orig \
+		${WRKINST}${LOCALBASE}/share/awesome/lib/wibox/widget/*.orig \
+		${WRKINST}${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
-	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua \
+	@mv ${WRKINST}${SYSCONFDIR}/xdg/awesome/rc.lua \
 		${PREFIX}/share/examples/awesome/
 
 .include <bsd.port.mk>

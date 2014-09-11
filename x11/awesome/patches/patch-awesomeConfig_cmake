@@ -1,6 +1,6 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.14 2014/08/18 10:34:02 dcoppa Exp $
+$OpenBSD: patch-awesomeConfig_cmake,v 1.15 2014/09/11 10:27:17 dcoppa Exp $
 --- awesomeConfig.cmake.orig	Fri Apr 11 11:07:10 2014
-+++ awesomeConfig.cmake	Mon Aug 18 12:06:33 2014
++++ awesomeConfig.cmake	Wed Sep  3 10:53:42 2014
 @@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
  option(GENERATE_DOC "generate API documentation" ON)
  
@@ -47,8 +47,8 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.14 2014/08/18 10:34:02 dcoppa Exp $
  include(FindPkgConfig)
 -# lua 5.1
 -include(FindLua51)
-+# lua libraries
-+include(FindLuaLibs)
++# lua
++include(FindLua)
  # }}}
  
  # {{{ Check if documentation can be build
@@ -57,7 +57,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.14 2014/08/18 10:34:02 dcoppa Exp $
  
  # Error check
 -if(NOT LUA51_FOUND AND NOT LUA50_FOUND) # This is a workaround to a cmake bug
-+if(NOT LUALIBS_FOUND)
++if(NOT LUA_FOUND)
      message(FATAL_ERROR "lua library not found")
  endif()
  
