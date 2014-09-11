@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/12/06 14:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2014/09/11 08:47:02 ajacoutot Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc vax sparc sparc64
@@ -6,7 +6,7 @@ BROKEN-$m =	segfaults in longjump return while testing continuations
 .endfor
 
 COMMENT =	scheme r5 interpreter
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 
@@ -56,7 +56,7 @@ FEATURES +=	x
 OPTIONS +=	--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS +=	--linker-options=-L${X11BASE}/lib
 SCM_DATA +=	x11.scm xevent.scm
-WANTLIB +=	X11 pthread-stubs xcb
+WANTLIB +=	X11
 .endif
 
 BUILD_DEPENDS =	devel/slib
@@ -89,7 +89,7 @@ ALL_TARGET =	scmlit
 #CFLAGS+=	-Dunix
 MAKE_FLAGS =	CFLAGS='${CFLAGS}' LD='${CC}'
 MAKE_ENV =	SCHEME_LIBRARY_PATH=${LOCALBASE}/share/slib/
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	simple
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/scm	${PREFIX}/bin
