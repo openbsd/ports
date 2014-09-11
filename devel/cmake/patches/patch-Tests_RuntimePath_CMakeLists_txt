@@ -1,6 +1,6 @@
-$OpenBSD: patch-Tests_RuntimePath_CMakeLists_txt,v 1.1 2013/05/30 08:34:33 dcoppa Exp $
+$OpenBSD: patch-Tests_RuntimePath_CMakeLists_txt,v 1.2 2014/09/11 14:45:13 dcoppa Exp $
 
-Fix probable typo
+Fix typo
 
 --- Tests/RuntimePath/CMakeLists.txt.orig	Wed May 29 16:14:21 2013
 +++ Tests/RuntimePath/CMakeLists.txt	Wed May 29 16:14:31 2013

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindSDL_cmake,v 1.6 2014/09/11 10:24:38 dcoppa Exp $
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.7 2014/09/11 14:45:13 dcoppa Exp $
 
-Fix CMake Warning
+Fix CMake warning
 
 --- Modules/FindSDL.cmake.orig	Thu Jul 31 17:03:56 2014
 +++ Modules/FindSDL.cmake	Wed Sep  3 08:10:09 2014

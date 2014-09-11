@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.13 2014/09/11 10:24:38 dcoppa Exp $
+$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.14 2014/09/11 14:45:13 dcoppa Exp $
 
-Don't spam systrace by attempting to create dirs which already exist.
+Don't spam systrace by attempting to create dirs which already exist
 
 --- Source/kwsys/SystemTools.cxx.orig	Thu Jul 31 17:03:57 2014
 +++ Source/kwsys/SystemTools.cxx	Wed Sep  3 08:10:09 2014

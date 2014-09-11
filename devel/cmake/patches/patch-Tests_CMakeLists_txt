@@ -1,6 +1,6 @@
-$OpenBSD: patch-Tests_CMakeLists_txt,v 1.8 2014/09/11 10:24:38 dcoppa Exp $
+$OpenBSD: patch-Tests_CMakeLists_txt,v 1.9 2014/09/11 14:45:13 dcoppa Exp $
 
-Disable CTestTestUpload test because it requires Internet access.
+Disable CTestTestUpload test because it requires internet access
 
 --- Tests/CMakeLists.txt.orig	Wed Sep  3 08:12:10 2014
 +++ Tests/CMakeLists.txt	Wed Sep  3 08:13:01 2014

@@ -1,6 +1,4 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.13 2014/09/11 10:24:38 dcoppa Exp $
-Note: we always build with Java 1.6 even when 1.6+ requested; "+" is meaningful
-for run-time only.
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.14 2014/09/11 14:45:12 dcoppa Exp $
 --- Modules/FindJNI.cmake.orig	Wed Sep  3 09:13:14 2014
 +++ Modules/FindJNI.cmake	Wed Sep  3 09:28:03 2014
 @@ -35,6 +35,8 @@
