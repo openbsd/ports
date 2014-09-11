@@ -1,0 +1,11 @@
+$OpenBSD: patch-Help_index_rst,v 1.1 2014/09/11 10:24:38 dcoppa Exp $
+--- Help/index.rst.orig	Wed Sep  3 19:47:02 2014
++++ Help/index.rst	Wed Sep  3 19:47:12 2014
+@@ -16,7 +16,6 @@ Interactive Dialogs
+ .. toctree::
+    :maxdepth: 1
+ 
+-   /manual/cmake-gui.1
+    /manual/ccmake.1
+ 
+ Reference Manuals

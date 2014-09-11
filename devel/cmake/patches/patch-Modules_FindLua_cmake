@@ -1,0 +1,56 @@
+$OpenBSD: patch-Modules_FindLua_cmake,v 1.1 2014/09/11 10:24:38 dcoppa Exp $
+--- Modules/FindLua.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/FindLua.cmake	Wed Sep  3 16:44:38 2014
+@@ -50,9 +50,16 @@
+ unset(_lua_include_subdirs)
+ unset(_lua_library_names)
+ 
++set(MODLUA_VERSION $ENV{MODLUA_VERSION})
++set(MODLUA_INCL_DIR $ENV{MODLUA_INCL_DIR})
++
+ # this is a function only to have all the variables inside go away automatically
+ function(set_lua_version_vars)
+-    set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
++    if(MODLUA_VERSION)
++        set(LUA_VERSIONS5 ${MODLUA_VERSION})
++    else()
++        set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
++    endif()
+ 
+     if (Lua_FIND_VERSION_EXACT)
+         if (Lua_FIND_VERSION_COUNT GREATER 1)
+@@ -96,18 +103,22 @@ endfunction(set_lua_version_vars)
+ 
+ set_lua_version_vars()
+ 
+-find_path(LUA_INCLUDE_DIR lua.h
+-  HINTS
+-    ENV LUA_DIR
+-  PATH_SUFFIXES ${_lua_include_subdirs} include/lua include
+-  PATHS
+-  ~/Library/Frameworks
+-  /Library/Frameworks
+-  /sw # Fink
+-  /opt/local # DarwinPorts
+-  /opt/csw # Blastwave
+-  /opt
+-)
++if(MODLUA_INCL_DIR)
++  set(LUA_INCLUDE_DIR "${MODLUA_INCL_DIR}")
++else()
++  find_path(LUA_INCLUDE_DIR lua.h
++    HINTS
++      ENV LUA_DIR
++    PATH_SUFFIXES ${_lua_include_subdirs} include/lua include
++    PATHS
++    ~/Library/Frameworks
++    /Library/Frameworks
++    /sw # Fink
++    /opt/local # DarwinPorts
++    /opt/csw # Blastwave
++    /opt
++  )
++endif()
+ unset(_lua_include_subdirs)
+ 
+ find_library(LUA_LIBRARY

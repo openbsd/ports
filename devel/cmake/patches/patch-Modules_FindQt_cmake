@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindQt_cmake,v 1.4 2013/06/06 12:47:06 dcoppa Exp $
---- Modules/FindQt.cmake.orig	Wed May 15 19:38:12 2013
-+++ Modules/FindQt.cmake	Tue May 28 21:05:47 2013
-@@ -31,6 +31,12 @@
+$OpenBSD: patch-Modules_FindQt_cmake,v 1.5 2014/09/11 10:24:38 dcoppa Exp $
+--- Modules/FindQt.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/FindQt.cmake	Wed Sep  3 08:10:09 2014
+@@ -41,6 +41,12 @@
  #  License text for the above reference.)
  
  # look for signs of qt3 installations
@@ -14,7 +14,7 @@ $OpenBSD: patch-Modules_FindQt_cmake,v 1.4 2013/06/06 12:47:06 dcoppa Exp $
  file(GLOB GLOB_TEMP_VAR /usr/lib*/qt-3*/bin/qmake /usr/lib*/qt3*/bin/qmake)
  if(GLOB_TEMP_VAR)
    set(QT3_INSTALLED TRUE)
-@@ -50,6 +56,12 @@ endif()
+@@ -60,6 +66,12 @@ endif()
  set(GLOB_TEMP_VAR)
  
  # look for qt4 installations

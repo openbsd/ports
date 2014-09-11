@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_Platform_UnixPaths_cmake,v 1.1 2013/05/30 08:34:32 dcoppa Exp $
---- Modules/Platform/UnixPaths.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/Platform/UnixPaths.cmake	Wed May 29 16:02:08 2013
+$OpenBSD: patch-Modules_Platform_UnixPaths_cmake,v 1.2 2014/09/11 10:24:38 dcoppa Exp $
+--- Modules/Platform/UnixPaths.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/Platform/UnixPaths.cmake	Wed Sep  3 08:10:09 2014
 @@ -24,6 +24,19 @@ set(__UNIX_PATHS_INCLUDED 1)
  
  set(UNIX 1)
@@ -21,7 +21,7 @@ $OpenBSD: patch-Modules_Platform_UnixPaths_cmake,v 1.1 2013/05/30 08:34:32 dcopp
  # also add the install directory of the running cmake to the search directories
  # CMAKE_ROOT is CMAKE_INSTALL_PREFIX/share/cmake, so we need to go two levels up
  get_filename_component(_CMAKE_INSTALL_DIR "${CMAKE_ROOT}" PATH)
-@@ -83,6 +96,19 @@ list(APPEND CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES
+@@ -92,6 +105,19 @@ list(APPEND CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES
  list(APPEND CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES
    /usr/include
    )

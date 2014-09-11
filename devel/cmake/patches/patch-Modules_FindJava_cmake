@@ -1,18 +1,18 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.13 2014/05/12 14:47:49 dcoppa Exp $
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.14 2014/09/11 10:24:38 dcoppa Exp $
 Note: we always build with Java 1.6 even when 1.6+ requested; "+" is meaningful
 for run-time only.
---- Modules/FindJava.cmake.orig	Thu Jan 16 18:15:08 2014
-+++ Modules/FindJava.cmake	Mon May 12 16:41:39 2014
-@@ -56,6 +56,8 @@
- # (To distribute this file outside of CMake, substitute the full
- #  License text for the above reference.)
+--- Modules/FindJava.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/FindJava.cmake	Wed Sep  3 08:10:09 2014
+@@ -71,6 +71,8 @@
+ 
+ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindJavaCommon.cmake)
  
 +set(MODJAVA_VER $ENV{MODJAVA_VER})
 +
  # The HINTS option should only be used for values computed from the system.
- set(_JAVA_HINTS
-   "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
-@@ -70,19 +72,22 @@ set(_JAVA_HINTS
+ set(_JAVA_HINTS)
+ if(_JAVA_HOME)
+@@ -88,19 +90,22 @@ list(APPEND _JAVA_HINTS
    )
  # Hard-coded guesses should still go in PATHS. This ensures that the user
  # environment can always override hard guesses.

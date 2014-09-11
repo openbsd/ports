@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.5 2012/11/15 08:43:25 dcoppa Exp $
---- Modules/FindMPEG2.cmake.orig	Tue Nov  6 20:41:36 2012
-+++ Modules/FindMPEG2.cmake	Mon Nov 12 14:02:50 2012
-@@ -21,27 +21,21 @@
+$OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.6 2014/09/11 10:24:38 dcoppa Exp $
+--- Modules/FindMPEG2.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/FindMPEG2.cmake	Wed Sep  3 08:10:09 2014
+@@ -33,27 +33,21 @@
  #  License text for the above reference.)
  
  find_path(MPEG2_INCLUDE_DIR
@@ -33,7 +33,7 @@ $OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.5 2012/11/15 08:43:25 dcoppa Exp $
  
    #some native mpeg2 installations will depend
    #on libSDL, if found, add it in.
-@@ -51,4 +45,4 @@ if(MPEG2_FOUND)
+@@ -63,4 +57,4 @@ if(MPEG2_FOUND)
    endif()
  endif()
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.21 2013/10/14 12:58:03 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Mon Oct  7 17:31:00 2013
-+++ Modules/FindQt4.cmake	Wed Oct  9 09:38:48 2013
-@@ -571,7 +571,12 @@ endfunction()
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.22 2014/09/11 10:24:38 dcoppa Exp $
+--- Modules/FindQt4.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/FindQt4.cmake	Wed Sep  3 08:23:52 2014
+@@ -514,7 +514,12 @@ endfunction()
  
  set(QT4_INSTALLED_VERSION_TOO_OLD FALSE)
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.21 2013/10/14 12:58:03 dcoppa Exp $
  _qt4_find_qmake("${_QT4_QMAKE_NAMES}" QT_QMAKE_EXECUTABLE QTVERSION)
  
  if (QT_QMAKE_EXECUTABLE AND QTVERSION)
-@@ -732,6 +737,8 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -689,6 +694,8 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
  
    # Set QT_INCLUDES
    set( QT_INCLUDES ${QT_MKSPECS_DIR}/default ${QT_INCLUDE_DIR} ${QT_QTCORE_INCLUDE_DIR})
@@ -24,51 +24,27 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.21 2013/10/14 12:58:03 dcoppa Exp $
  
  
    # ask qmake for the documentation directory
-@@ -1157,13 +1164,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
-   endif()
+@@ -1135,17 +1142,17 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+     endif()
+   endmacro()
  
-   find_program(QT_MOC_EXECUTABLE
--    NAMES moc-qt4 moc moc4
-+    NAMES moc4 moc-qt4 moc
-     PATHS ${QT_BINARY_DIR}
-     NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
-     )
+-  _find_qt4_program(QT_MOC_EXECUTABLE Qt4::moc moc-qt4 moc moc4)
+-  _find_qt4_program(QT_UIC_EXECUTABLE Qt4::uic uic-qt4 uic uic4)
++  _find_qt4_program(QT_MOC_EXECUTABLE Qt4::moc moc4 moc-qt4 moc)
++  _find_qt4_program(QT_UIC_EXECUTABLE Qt4::uic uic4 uic-qt4 uic)
+   _find_qt4_program(QT_UIC3_EXECUTABLE Qt4::uic3 uic3)
+   _find_qt4_program(QT_RCC_EXECUTABLE Qt4::rcc rcc)
+   _find_qt4_program(QT_DBUSCPP2XML_EXECUTABLE Qt4::qdbuscpp2xml qdbuscpp2xml)
+   _find_qt4_program(QT_DBUSXML2CPP_EXECUTABLE Qt4::qdbusxml2cpp qdbusxml2cpp)
+-  _find_qt4_program(QT_LUPDATE_EXECUTABLE Qt4::lupdate lupdate-qt4 lupdate lupdate4)
+-  _find_qt4_program(QT_LRELEASE_EXECUTABLE Qt4::lrelease lrelease-qt4 lrelease lrelease4)
++  _find_qt4_program(QT_LUPDATE_EXECUTABLE Qt4::lupdate lupdate4 lupdate-qt4 lupdate)
++  _find_qt4_program(QT_LRELEASE_EXECUTABLE Qt4::lrelease lrelease4 lrelease-qt4 lrelease)
+   _find_qt4_program(QT_QCOLLECTIONGENERATOR_EXECUTABLE Qt4::qcollectiongenerator qcollectiongenerator-qt4 qcollectiongenerator)
+-  _find_qt4_program(QT_DESIGNER_EXECUTABLE Qt4::designer designer-qt4 designer designer4)
+-  _find_qt4_program(QT_LINGUIST_EXECUTABLE Qt4::linguist linguist-qt4 linguist linguist4)
++  _find_qt4_program(QT_DESIGNER_EXECUTABLE Qt4::designer designer4 designer-qt4 designer)
++  _find_qt4_program(QT_LINGUIST_EXECUTABLE Qt4::linguist linguist4 linguist-qt4 linguist)
  
-   find_program(QT_UIC_EXECUTABLE
--    NAMES uic-qt4 uic uic4
-+    NAMES uic4 uic-qt4 uic
-     PATHS ${QT_BINARY_DIR}
-     NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
-     )
-@@ -1193,13 +1200,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
-     )
- 
-   find_program(QT_LUPDATE_EXECUTABLE
--    NAMES lupdate-qt4 lupdate lupdate4
-+    NAMES lupdate4 lupdate-qt4 lupdate
-     PATHS ${QT_BINARY_DIR}
-     NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
-     )
- 
-   find_program(QT_LRELEASE_EXECUTABLE
--    NAMES lrelease-qt4 lrelease lrelease4
-+    NAMES lrelease4 lrelease-qt4 lrelease
-     PATHS ${QT_BINARY_DIR}
-     NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
-     )
-@@ -1211,13 +1218,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
-     )
- 
-   find_program(QT_DESIGNER_EXECUTABLE
--    NAMES designer-qt4 designer designer4
-+    NAMES designer4 designer-qt4 designer
-     PATHS ${QT_BINARY_DIR}
-     NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
-     )
- 
-   find_program(QT_LINGUIST_EXECUTABLE
--    NAMES linguist-qt4 linguist linguist4
-+    NAMES linguist4 linguist-qt4 linguist
-     PATHS ${QT_BINARY_DIR}
-     NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
-     )
+   if (NOT TARGET Qt4::qmake)
+     add_executable(Qt4::qmake IMPORTED)

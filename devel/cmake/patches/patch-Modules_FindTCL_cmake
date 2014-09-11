@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.11 2013/10/14 12:58:03 dcoppa Exp $
---- Modules/FindTCL.cmake.orig	Wed Oct  9 10:09:18 2013
-+++ Modules/FindTCL.cmake	Wed Oct  9 10:09:54 2013
-@@ -48,19 +48,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.12 2014/09/11 10:24:38 dcoppa Exp $
+--- Modules/FindTCL.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/FindTCL.cmake	Wed Sep  3 08:10:09 2014
+@@ -58,19 +58,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
  include(${CMAKE_CURRENT_LIST_DIR}/FindTclsh.cmake)
  include(${CMAKE_CURRENT_LIST_DIR}/FindWish.cmake)
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.11 2013/10/14 12:58:03 dcoppa Exp $
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -75,19 +92,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -85,19 +102,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -92,7 +92,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.11 2013/10/14 12:58:03 dcoppa Exp $
  if(WIN32)
    get_filename_component(
      ActiveTcl_CurrentVersion
-@@ -107,31 +142,47 @@ if(WIN32)
+@@ -117,31 +152,47 @@ if(WIN32)
      )
  endif()
  
@@ -164,7 +164,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.11 2013/10/14 12:58:03 dcoppa Exp $
  
  CMAKE_FIND_FRAMEWORKS(Tcl)
  CMAKE_FIND_FRAMEWORKS(Tk)
-@@ -155,30 +206,46 @@ if(Tk_FRAMEWORKS)
+@@ -165,30 +216,46 @@ if(Tk_FRAMEWORKS)
    endif()
  endif()
  

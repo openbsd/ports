@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_CursesDialog_CMakeLists_txt,v 1.4 2013/10/14 12:58:03 dcoppa Exp $
---- Source/CursesDialog/CMakeLists.txt.orig	Mon Oct  7 17:31:00 2013
-+++ Source/CursesDialog/CMakeLists.txt	Wed Oct  9 09:38:48 2013
-@@ -25,13 +25,15 @@ set( CURSES_SRCS
+$OpenBSD: patch-Source_CursesDialog_CMakeLists_txt,v 1.5 2014/09/11 10:24:38 dcoppa Exp $
+--- Source/CursesDialog/CMakeLists.txt.orig	Thu Jul 31 17:03:56 2014
++++ Source/CursesDialog/CMakeLists.txt	Wed Sep  3 08:10:09 2014
+@@ -26,13 +26,15 @@ set( CURSES_SRCS
                CursesDialog/ccmake
     )
  

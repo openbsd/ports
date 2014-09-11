@@ -1,12 +1,12 @@
-$OpenBSD: patch-Modules_FindSDL_cmake,v 1.5 2013/05/30 08:34:32 dcoppa Exp $
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.6 2014/09/11 10:24:38 dcoppa Exp $
 
 Fix CMake Warning
 
---- Modules/FindSDL.cmake.orig	Tue Nov  6 20:41:36 2012
-+++ Modules/FindSDL.cmake	Wed Nov 14 12:14:32 2012
-@@ -73,6 +73,11 @@ find_path(SDL_INCLUDE_DIR SDL.h
-   PATH_SUFFIXES include/SDL include/SDL12 include/SDL11 include
- )
+--- Modules/FindSDL.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/FindSDL.cmake	Wed Sep  3 08:10:09 2014
+@@ -96,6 +96,11 @@ else()
+   set(VC_LIB_PATH_SUFFIX lib/x86)
+ endif()
  
 +# On OpenBSD SDL depends on libiconv and SDL_stdinc.h includes iconv.h,
 +# which is located in ${LOCALBASE}/include. Append ${LOCALBASE}/include
@@ -16,7 +16,7 @@ Fix CMake Warning
  # SDL-1.1 is the name used by FreeBSD ports...
  # don't confuse it for the version number.
  find_library(SDL_LIBRARY_TEMP
-@@ -83,7 +88,7 @@ find_library(SDL_LIBRARY_TEMP
+@@ -106,7 +111,7 @@ find_library(SDL_LIBRARY_TEMP
  )
  
  if(NOT SDL_BUILDING_LIBRARY)

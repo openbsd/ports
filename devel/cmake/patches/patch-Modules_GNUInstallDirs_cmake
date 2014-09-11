@@ -1,10 +1,10 @@
-$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.1 2012/06/27 19:28:39 dcoppa Exp $
+$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.2 2014/09/11 10:24:38 dcoppa Exp $
 
 Fix INFODIR/MANDIR default path on OpenBSD
 
---- Modules/GNUInstallDirs.cmake.orig	Wed Apr 18 20:10:54 2012
-+++ Modules/GNUInstallDirs.cmake	Tue Jun 26 19:58:52 2012
-@@ -107,6 +107,14 @@ if(NOT DEFINED CMAKE_INSTALL_OLDINCLUDEDIR)
+--- Modules/GNUInstallDirs.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/GNUInstallDirs.cmake	Wed Sep  3 08:10:09 2014
+@@ -178,6 +178,14 @@ if(NOT DEFINED CMAKE_INSTALL_OLDINCLUDEDIR)
    set(CMAKE_INSTALL_OLDINCLUDEDIR "/usr/include" CACHE PATH "C header files for non-gcc (/usr/include)")
  endif()
  
@@ -19,7 +19,7 @@ Fix INFODIR/MANDIR default path on OpenBSD
  if(NOT DEFINED CMAKE_INSTALL_DATAROOTDIR)
    set(CMAKE_INSTALL_DATAROOTDIR "share" CACHE PATH "read-only architecture-independent data root (share)")
  endif()
-@@ -121,19 +129,9 @@ if(NOT CMAKE_INSTALL_DATADIR)
+@@ -192,19 +200,9 @@ if(NOT CMAKE_INSTALL_DATADIR)
    set(CMAKE_INSTALL_DATADIR "${CMAKE_INSTALL_DATAROOTDIR}")
  endif()
  

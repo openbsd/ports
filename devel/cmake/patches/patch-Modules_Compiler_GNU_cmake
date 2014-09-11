@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.6 2013/10/14 12:58:03 dcoppa Exp $
---- Modules/Compiler/GNU.cmake.orig	Mon Oct  7 17:31:00 2013
-+++ Modules/Compiler/GNU.cmake	Wed Oct  9 09:38:48 2013
-@@ -46,8 +46,8 @@ macro(__compiler_gnu lang)
+$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.7 2014/09/11 10:24:38 dcoppa Exp $
+--- Modules/Compiler/GNU.cmake.orig	Thu Jul 31 17:03:56 2014
++++ Modules/Compiler/GNU.cmake	Wed Sep  3 08:10:09 2014
+@@ -47,8 +47,8 @@ macro(__compiler_gnu lang)
    # Initial configuration flags.
    set(CMAKE_${lang}_FLAGS_INIT "")
    set(CMAKE_${lang}_FLAGS_DEBUG_INIT "-g")
