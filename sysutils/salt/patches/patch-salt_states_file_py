@@ -1,0 +1,17 @@
+$OpenBSD: patch-salt_states_file_py,v 1.1 2014/09/11 06:28:41 ajacoutot Exp $
+
+XXX drop when ugrading to >=2014.7.0
+
+--- salt/states/file.py.orig	Tue Sep  9 22:42:17 2014
++++ salt/states/file.py	Thu Sep 11 08:19:54 2014
+@@ -1210,7 +1210,9 @@ def managed(name,
+     # If contents_pillar was used, get the pillar data
+     if contents_pillar:
+         contents = __salt__['pillar.get'](contents_pillar)
+-        # Make sure file ends in newline
++
++    # Make sure file ends in newline
++    if contents:
+         if not contents.endswith('\n'):
+             contents += '\n'
+ 
