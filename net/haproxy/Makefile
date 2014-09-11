@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/12 12:34:52 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.15 2014/09/11 14:47:20 gonzalo Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-1.4.25
+DISTNAME =	haproxy-1.5.3
 CATEGORIES =	net www
 HOMEPAGE =	http://haproxy.1wt.eu/
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =	c pcre pcreposix
 
-MASTER_SITES =	${HOMEPAGE}/download/1.4/src/
+MASTER_SITES =	${HOMEPAGE}/download/1.5/src/
 
 HAPROXYCONF =	${SYSCONFDIR}/haproxy
 HAPROXYSTATE =	/var/haproxy
@@ -20,7 +20,7 @@ HAPROXYGID =	604
 SUBST_VARS =	HAPROXYCONF HAPROXYSTATE \
 		HAPROXYUID HAPROXYGID
 
-MAKE_FILE =	Makefile.bsd
+USE_GMAKE =	Yes
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}"
 
 NO_TEST =	Yes

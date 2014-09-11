@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2014/09/11 14:47:20 gonzalo Exp $
+--- Makefile.orig	Thu Sep  4 12:15:59 2014
++++ Makefile	Thu Sep  4 12:16:16 2014
+@@ -90,7 +90,7 @@ DOCDIR = $(PREFIX)/doc/haproxy
+ # following list (use the default "generic" if uncertain) :
+ #    generic, linux22, linux24, linux24e, linux26, solaris,
+ #    freebsd, openbsd, cygwin, custom, aix51, aix52
+-TARGET =
++TARGET = openbsd
+ 
+ #### TARGET CPU
+ # Use CPU=<cpu_name> to optimize for a particular CPU, among the following

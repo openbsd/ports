@@ -1,13 +1,12 @@
-$OpenBSD: patch-doc_haproxy_1,v 1.2 2014/03/13 08:58:14 dcoppa Exp $
---- doc/haproxy.1.orig	Sat Jun 21 15:59:05 2008
-+++ doc/haproxy.1	Sun Jul 13 01:17:14 2008
-@@ -164,9 +164,7 @@ This signal is intercepted and ignored on systems with
+$OpenBSD: patch-doc_haproxy_1,v 1.3 2014/09/11 14:47:20 gonzalo Exp $
+--- doc/haproxy.1.orig	Fri Jul 25 03:56:07 2014
++++ doc/haproxy.1	Thu Sep  4 12:12:46 2014
+@@ -188,8 +188,7 @@ This signal is intercepted and ignored on systems with
  
  .SH SEE ALSO
  
--A much better documentation can be found in haproxy-en.txt. On debian
--systems, you can find this file in
--/usr/share/doc/haproxy/haproxy-en.txt.gz.
+-A much better documentation can be found in configuration.txt. On Debian
+-systems, you can find this file in /usr/share/doc/haproxy/configuration.txt.gz.
 +More complete documentation can be found in ${TRUEPREFIX}/share/doc/haproxy/configuration.txt.
  
  .SH AUTHOR
