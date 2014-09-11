@@ -1,10 +1,10 @@
-$OpenBSD: patch-opennxApp_cpp,v 1.6 2013/08/22 17:27:51 naddy Exp $
+$OpenBSD: patch-opennxApp_cpp,v 1.7 2014/09/11 21:57:00 jasper Exp $
 
 wxConfigBase does not support long long.
 
---- opennxApp.cpp.orig	Mon Jul 30 20:04:59 2012
-+++ opennxApp.cpp	Sat Aug 17 00:44:22 2013
-@@ -575,7 +575,7 @@ opennxApp::preInit()
+--- opennxApp.cpp.orig	Mon Nov 25 17:08:17 2013
++++ opennxApp.cpp	Thu Sep 11 23:43:08 2014
+@@ -580,7 +580,7 @@ opennxApp::preInit()
          tmp = findExecutable(wxT("cupsd"));
          if (tmp.IsEmpty()) {
              const wxChar* candidates[] = {
@@ -13,7 +13,7 @@ wxConfigBase does not support long long.
                  NULL
              };
              int i;
-@@ -754,9 +754,9 @@ void opennxApp::checkNxSmartCardSupport()
+@@ -759,9 +759,9 @@ void opennxApp::checkNxSmartCardSupport()
  #endif
      if (!fn.FileExists())
          return;

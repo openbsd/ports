@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2012/11/15 10:12:54 jasper Exp $
---- Makefile.in.orig	Sun Aug  5 20:21:13 2012
-+++ Makefile.in	Thu Nov 15 10:37:38 2012
-@@ -2895,24 +2895,24 @@ PulseAudio.cpp: $(PAHEADER)
+$OpenBSD: patch-Makefile_in,v 1.6 2014/09/11 21:57:00 jasper Exp $
+--- Makefile.in.orig	Mon Nov 25 18:58:58 2013
++++ Makefile.in	Thu Sep 11 23:43:08 2014
+@@ -2933,24 +2933,24 @@ PulseAudio.cpp: $(PAHEADER)
  
  install-data-local:
  	$(MAKE) -C po stamp-po install-data-yes
