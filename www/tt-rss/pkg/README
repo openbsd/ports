@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/04/30 21:52:07 landry Exp $
+$OpenBSD: README,v 1.5 2014/09/12 20:38:07 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -33,3 +33,12 @@ as www user from a cronjob:
 
 Finally you can ensure you have a working install by accessing:
 http://<hostname>/tt-rss/
+
+Upgrading
+=========
+
+When upgrading from a previous version, you'll be prompted to run the
+databases updates. If after that, you encounter display issues or
+weird behaviour, first cleanup the caches within tt-rss and reload.
+
+# rm -f ${INSTDIR}/cache/*/*
