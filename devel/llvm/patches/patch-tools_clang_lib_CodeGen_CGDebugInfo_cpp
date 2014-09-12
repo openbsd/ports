@@ -1,0 +1,17 @@
+$OpenBSD: patch-tools_clang_lib_CodeGen_CGDebugInfo_cpp,v 1.1 2014/09/12 12:39:47 brad Exp $
+
+r205331
+Debug info: fix a crash when emitting IndirectFieldDecls, which were previously
+not handled at all.
+
+--- tools/clang/lib/CodeGen/CGDebugInfo.cpp.orig	Thu Sep 11 20:38:24 2014
++++ tools/clang/lib/CodeGen/CGDebugInfo.cpp	Thu Sep 11 20:39:09 2014
+@@ -1258,7 +1258,7 @@ CollectTemplateParams(const TemplateParameterList *TPL
+         V = CGM.GetAddrOfFunction(FD);
+       // Member data pointers have special handling too to compute the fixed
+       // offset within the object.
+-      if (isa<FieldDecl>(D)) {
++      if (isa<FieldDecl>(D) || isa<IndirectFieldDecl>(D)) {
+         // These five lines (& possibly the above member function pointer
+         // handling) might be able to be refactored to use similar code in
+         // CodeGenModule::getMemberPointerConstant
