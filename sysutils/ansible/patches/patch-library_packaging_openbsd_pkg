@@ -1,0 +1,15 @@
+$OpenBSD: patch-library_packaging_openbsd_pkg,v 1.1 2014/09/12 20:46:46 landry Exp $
+--- library/packaging/openbsd_pkg.orig	Fri Sep 12 20:52:17 2014
++++ library/packaging/openbsd_pkg	Fri Sep 12 20:52:25 2014
+@@ -124,9 +124,9 @@ def get_package_state(name, pkg_spec, module):
+ # Function used to make sure a package is present.
+ def package_present(name, installed_state, pkg_spec, module):
+     if module.check_mode:
+-        install_cmd = 'pkg_add -Imn'
++        install_cmd = 'pkg_add -Imnz'
+     else:
+-        install_cmd = 'pkg_add -Im'
++        install_cmd = 'pkg_add -Imz'
+ 
+     if installed_state is False:
+ 
