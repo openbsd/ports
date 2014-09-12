@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/09/11 14:02:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/09/12 07:44:22 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	archivers/zip
+BUILD_DEPENDS=	archivers/zip \
+		devel/boost
 
 LIB_DEPENDS=	archivers/bzip2 \
 		sysutils/gamin \
