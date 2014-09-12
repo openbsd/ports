@@ -1,0 +1,21 @@
+$OpenBSD: patch-Source_cmNinjaTargetGenerator_cxx,v 1.1 2014/09/12 08:36:12 dcoppa Exp $
+
+Use Ninja-1.5's console pool to have visible output during long-running
+tasks which produce status updates on the console (such as test suites)
+
+--- Source/cmNinjaTargetGenerator.cxx.orig	Fri Sep  5 12:04:23 2014
++++ Source/cmNinjaTargetGenerator.cxx	Fri Sep  5 12:05:37 2014
+@@ -441,10 +441,13 @@ cmNinjaTargetGenerator
+   comment << "Rule for compiling " << lang << " files.";
+   cmOStringStream description;
+   description << "Building " << lang << " object $out";
++  cmOStringStream pool;
++  pool << "";
+   this->GetGlobalGenerator()->AddRule(this->LanguageCompilerRule(lang),
+                                       cmdLine,
+                                       description.str(),
+                                       comment.str(),
++                                      pool.str(),
+                                       depfile,
+                                       deptype,
+                                       /*rspfile*/ "",

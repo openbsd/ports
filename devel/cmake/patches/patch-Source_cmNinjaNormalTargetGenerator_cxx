@@ -1,0 +1,31 @@
+$OpenBSD: patch-Source_cmNinjaNormalTargetGenerator_cxx,v 1.1 2014/09/12 08:36:12 dcoppa Exp $
+
+Use Ninja-1.5's console pool to have visible output during long-running
+tasks which produce status updates on the console (such as test suites)
+
+--- Source/cmNinjaNormalTargetGenerator.cxx.orig	Thu Jul 31 17:03:57 2014
++++ Source/cmNinjaNormalTargetGenerator.cxx	Fri Sep  5 12:22:27 2014
+@@ -262,6 +262,7 @@ cmNinjaNormalTargetGenerator
+                                         linkCmd,
+                                         description.str(),
+                                         comment.str(),
++                                        /*pool*/ "",
+                                         /*depfile*/ "",
+                                         /*deptype*/ "",
+                                         rspfile,
+@@ -284,6 +285,7 @@ cmNinjaNormalTargetGenerator
+                                           "Creating executable symlink $out",
+                                           "Rule for creating "
+                                           "executable symlink.",
++                                          /*pool*/ "",
+                                           /*depfile*/ "",
+                                           /*deptype*/ "",
+                                           /*rspfile*/ "",
+@@ -298,6 +300,7 @@ cmNinjaNormalTargetGenerator
+                                           "Creating library symlink $out",
+                                           "Rule for creating "
+                                           "library symlink.",
++                                          /*pool*/ "",
+                                           /*depfile*/ "",
+                                           /*deptype*/ "",
+                                           /*rspfile*/ "",

@@ -1,0 +1,23 @@
+$OpenBSD: patch-Source_cmGlobalNinjaGenerator_h,v 1.1 2014/09/12 08:36:12 dcoppa Exp $
+
+Use Ninja-1.5's console pool to have visible output during long-running
+tasks which produce status updates on the console (such as test suites)
+
+--- Source/cmGlobalNinjaGenerator.h.orig	Fri Sep  5 12:01:46 2014
++++ Source/cmGlobalNinjaGenerator.h	Fri Sep  5 12:02:17 2014
+@@ -120,6 +120,7 @@ class cmGlobalNinjaGenerator : public cmGlobalGenerato
+                         const std::string& command,
+                         const std::string& description,
+                         const std::string& comment,
++                        const std::string& pool,
+                         const std::string& depfile,
+                         const std::string& deptype,
+                         const std::string& rspfile,
+@@ -243,6 +244,7 @@ class cmGlobalNinjaGenerator : public cmGlobalGenerato
+                const std::string& command,
+                const std::string& description,
+                const std::string& comment,
++               const std::string& pool,
+                const std::string& depfile,
+                const std::string& deptype,
+                const std::string& rspfile,

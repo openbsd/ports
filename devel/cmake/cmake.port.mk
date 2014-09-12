@@ -1,6 +1,6 @@
-# $OpenBSD: cmake.port.mk,v 1.23 2014/09/11 10:24:38 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.24 2014/09/12 08:36:12 dcoppa Exp $
 
-BUILD_DEPENDS+=	devel/cmake>=3.0.1
+BUILD_DEPENDS+=	devel/cmake>=3.0.2
 
 .for _n _v in ${SHARED_LIBS}
 CONFIGURE_ENV+=LIB${_n}_VERSION=${_v}
@@ -15,7 +15,7 @@ USE_NINJA = No
 .endif
 
 .if ${USE_NINJA:L} == "yes"
-BUILD_DEPENDS += devel/ninja
+BUILD_DEPENDS += devel/ninja>=1.5.1
 _MODCMAKE_GEN = Ninja
 NINJA ?= ninja
 NINJA_FLAGS ?= -v -j ${MAKE_JOBS}

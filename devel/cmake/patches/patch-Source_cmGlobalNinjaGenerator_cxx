@@ -1,0 +1,85 @@
+$OpenBSD: patch-Source_cmGlobalNinjaGenerator_cxx,v 1.1 2014/09/12 08:36:12 dcoppa Exp $
+
+Use Ninja-1.5's console pool to have visible output during long-running
+tasks which produce status updates on the console (such as test suites)
+
+--- Source/cmGlobalNinjaGenerator.cxx.orig	Thu Jul 31 17:03:57 2014
++++ Source/cmGlobalNinjaGenerator.cxx	Fri Sep  5 16:02:54 2014
+@@ -242,6 +242,7 @@ void cmGlobalNinjaGenerator::AddCustomCommandRule()
+                 "$COMMAND",
+                 "$DESC",
+                 "Rule for running custom commands.",
++                /*pool*/ "console",
+                 /*depfile*/ "",
+                 /*deptype*/ "",
+                 /*rspfile*/ "",
+@@ -297,6 +298,7 @@ cmGlobalNinjaGenerator::AddMacOSXContentRule()
+                 cmd.str(),
+                 "Copying OS X Content $out",
+                 "Rule for copying OS X bundle content file.",
++                /*pool*/ "",
+                 /*depfile*/ "",
+                 /*deptype*/ "",
+                 /*rspfile*/ "",
+@@ -332,6 +334,7 @@ void cmGlobalNinjaGenerator::WriteRule(std::ostream& o
+                                        const std::string& command,
+                                        const std::string& description,
+                                        const std::string& comment,
++                                       const std::string& pool,
+                                        const std::string& depfile,
+                                        const std::string& deptype,
+                                        const std::string& rspfile,
+@@ -362,6 +365,13 @@ void cmGlobalNinjaGenerator::WriteRule(std::ostream& o
+   // Write the rule.
+   os << "rule " << name << "\n";
+ 
++  // Write the pool if any.
++  if(!pool.empty())
++    {
++    cmGlobalNinjaGenerator::Indent(os, 1);
++    os << "pool = " << pool << "\n";
++    }
++
+   // Write the depfile if any.
+   if(!depfile.empty())
+     {
+@@ -586,6 +596,7 @@ void cmGlobalNinjaGenerator::AddRule(const std::string
+                                      const std::string& command,
+                                      const std::string& description,
+                                      const std::string& comment,
++                                     const std::string& pool,
+                                      const std::string& depfile,
+                                      const std::string& deptype,
+                                      const std::string& rspfile,
+@@ -605,6 +616,7 @@ void cmGlobalNinjaGenerator::AddRule(const std::string
+                                     command,
+                                     description,
+                                     comment,
++                                    pool,
+                                     depfile,
+                                     deptype,
+                                     rspfile,
+@@ -1112,6 +1124,7 @@ void cmGlobalNinjaGenerator::WriteTargetRebuildManifes
+             cmd.str(),
+             "Re-running CMake...",
+             "Rule for re-running cmake.",
++            /*pool=*/ "",
+             /*depfile=*/ "",
+             /*deptype=*/ "",
+             /*rspfile=*/ "",
+@@ -1171,6 +1184,7 @@ void cmGlobalNinjaGenerator::WriteTargetClean(std::ost
+             (ninjaCmd() + " -t clean").c_str(),
+             "Cleaning all built files...",
+             "Rule for cleaning all built files.",
++            /*pool=*/ "",
+             /*depfile=*/ "",
+             /*deptype=*/ "",
+             /*rspfile=*/ "",
+@@ -1194,6 +1208,7 @@ void cmGlobalNinjaGenerator::WriteTargetHelp(std::ostr
+             (ninjaCmd() + " -t targets").c_str(),
+             "All primary targets available:",
+             "Rule for printing all primary targets available.",
++            /*pool=*/ "",
+             /*depfile=*/ "",
+             /*deptype=*/ "",
+             /*rspfile=*/ "",

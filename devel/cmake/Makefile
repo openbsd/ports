@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2014/09/11 10:24:38 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.104 2014/09/12 08:36:12 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -10,7 +10,7 @@ CFLAGS +=	-O1 -fno-stack-protector
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
-DISTNAME =	cmake-3.0.1
+DISTNAME =	cmake-3.0.2
 MASTER_SITES =	${HOMEPAGE}files/v3.0/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -23,7 +23,7 @@ WANTLIB =		archive c curl expat form m ncurses \
 
 # XXX: CMake's built-in ELF parser is broken on arm
 .if ${MACHINE_ARCH} != "arm"
-BUILD_DEPENDS =		devel/ninja
+BUILD_DEPENDS =		devel/ninja>=1.5.1
 .endif
 
 BUILD_DEPENDS +=	textproc/py-sphinx>=1.1.3p1
