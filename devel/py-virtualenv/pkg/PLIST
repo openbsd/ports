@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/05/12 10:50:29 edd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/09/12 08:27:43 benoit Exp $
 bin/virtualenv
 bin/virtualenv-${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -13,8 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv.pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-1.5.4-py2.py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-2.2-py2.py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-1.5.6-py2.py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-3.6-py2.py3-none-any.whl
 share/doc/${MODPY_PY_PREFIX}virtualenv/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/index.txt
