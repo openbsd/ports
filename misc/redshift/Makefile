@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2014/09/01 15:11:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/09/12 06:24:01 ajacoutot Exp $
 
 COMMENT=		automatic color temperature adjustment
 
 V=			1.9.1
 DISTNAME=		redshift-${V}
+REVISION=		0
 
 GH_PROJECT=		redshift
 GH_ACCOUNT=		jonls
@@ -28,6 +29,7 @@ MODPY_ADJ_FILES=	src/redshift-gtk/redshift-gtk.in
 LIB_DEPENDS=		geo/geoclue
 
 RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
 			x11/gtk+2,-guic
 
