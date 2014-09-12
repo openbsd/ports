@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2014/07/21 14:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2014/09/12 17:18:44 brad Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -9,6 +9,7 @@ DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
+REVISION=	0
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -72,8 +73,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-shared \
 		--enable-external-natpmp
-# unaligned accesses throughout
-CONFIGURE_ARGS+=--disable-utp
 
 # -I$(top_builddir)/third-party is required, but configure fails to
 # set it if we use external miniupnp libs.
