@@ -1,14 +1,7 @@
-$OpenBSD: patch-Build_PL,v 1.2 2012/06/12 17:46:35 giovanni Exp $
---- Build.PL.orig	Mon Jan 30 09:59:22 2012
-+++ Build.PL	Thu May 31 11:51:59 2012
-@@ -67,13 +67,13 @@ my $build = $class->new(
-         Module::Build       => '0.2805',
-         Test::More          => 0,
-         Net::DNS::Resolver::Programmable
--                            => '0.002001',
-+                            => 0,
-     },
-     script_files        => [
+$OpenBSD: patch-Build_PL,v 1.3 2014/09/12 17:14:12 giovanni Exp $
+--- Build.PL.orig	Mon Jul 22 05:52:32 2013
++++ Build.PL	Fri Sep 12 19:03:24 2014
+@@ -73,7 +73,7 @@ my $build = $class->new(
          'bin/spfquery'
      ],
      install_path        => {
