@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/13 09:34:48 jasper Exp $
 
 COMMENT=		generic readline wrapper for various programs
 
-DISTNAME=		rlwrap-0.37
+DISTNAME=		rlwrap-0.41
 CATEGORIES=		misc
 
 HOMEPAGE=		http://utopia.knoware.nl/~hlub/uck/rlwrap/
