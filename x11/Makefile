@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.540 2014/09/02 13:23:30 landry Exp $
+# $OpenBSD: Makefile,v 1.541 2014/09/13 10:10:54 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -152,6 +152,7 @@
      SUBDIR += libsexy
      SUBDIR += libxdg-basedir
      SUBDIR += lsw
+     SUBDIR += lumina
      SUBDIR += lupe
      SUBDIR += lxrandr
      SUBDIR += menu-cache
