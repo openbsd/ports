@@ -1,67 +1,52 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2013/11/08 20:34:32 juanfra Exp $
-
-ldconfig changes backported from lzlib-1.6-pre1.
-
---- Makefile.in.orig	Sat Sep 14 19:22:37 2013
-+++ Makefile.in	Thu Nov  7 00:38:42 2013
-@@ -7,6 +7,7 @@ INSTALL_DATA = $(INSTALL) -p -m 644
- INSTALL_DIR = $(INSTALL) -d -m 755
- LDCONFIG = /sbin/ldconfig
- SHELL = /bin/sh
-+disable_ldconfig = yes
- 
- objs = carg_parser.o main.o
- 
-@@ -20,14 +21,14 @@ all : $(progname) $(progname_shared)
+$OpenBSD: patch-Makefile_in,v 1.3 2014/09/13 22:12:40 juanfra Exp $
+--- Makefile.in.orig	Fri Apr 25 20:50:01 2014
++++ Makefile.in	Sun Jun 22 15:18:13 2014
+@@ -20,14 +21,14 @@ all : $(progname_static) $(progname_shared)
  lib$(libname).a : lzlib.o
  	$(AR) -rcs $@ $<
  
 -lib$(libname).so.$(pkgversion) : lzlib_sh.o
--	$(CC) -shared -Wl,--soname=lib$(libname).so.$(soversion) -o $@ $<
+-	$(CC) $(CFLAGS) $(LDFLAGS) -fpic -fPIC -shared -Wl,--soname=lib$(libname).so.$(soversion) -o $@ $<
 +lib$(libname).so.$(LIBlz_VERSION) : lzlib_sh.o
-+	$(CC) -shared -fPIC -o $@ $<
++	$(CC) $(CFLAGS) $(LDFLAGS) -fPIC -shared -o $@ $<
  
  $(progname) : $(objs) lib$(libname).a
- 	$(CC) $(LDFLAGS) -o $@ $(objs) lib$(libname).a
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).a
  
 -$(progname)_shared : $(objs) lib$(libname).so.$(pkgversion)
--	$(CC) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(pkgversion)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(pkgversion)
 +$(progname)_shared : $(objs) lib$(libname).so.$(LIBlz_VERSION)
-+	$(CC) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(LIBlz_VERSION)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(LIBlz_VERSION)
  
  $(progname)_profiled : $(objs) lib$(libname).a
- 	$(CC) $(LDFLAGS) -pg -o $@ $(objs) lib$(libname).a
-@@ -45,7 +46,7 @@ main.o : main.c
- 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -pg -o $@ $(objs) lib$(libname).a
+@@ -42,7 +43,7 @@ main.o : main.c
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
  
  lzlib_sh.o : lzlib.c
--	$(CC) -fpic -fPIC $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
-+	$(CC) -fPIC $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+-	$(CC) $(CFLAGS) $(CPPFLAGS) -fpic -fPIC -c -o $@ $<
++	$(CC) $(CFLAGS) $(CPPFLAGS) -fPIC -c -o $@ $<
  
- lzdeps = lzlib.h lzip.h cbuffer.c decoder.h decoder.c encoder.h encoder.c
- 
-@@ -84,7 +85,7 @@ install-bin : all
- 	$(INSTALL_DATA) $(VPATH)/$(libname)lib.h "$(DESTDIR)$(includedir)/$(libname)lib.h"
- 	$(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a"
+ %.o : %.c
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+@@ -86,15 +87,13 @@ install-bin : all
+ 	  $(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a" ; \
+ 	fi
  	if [ -n "$(progname_shared)" ] ; then \
 -	  $(INSTALL_PROGRAM) ./lib$(libname).so.$(pkgversion) "$(DESTDIR)$(libdir)/lib$(libname).so.$(pkgversion)" ; \
 +	  $(INSTALL_PROGRAM) ./lib$(libname).so.$(LIBlz_VERSION) "$(DESTDIR)$(libdir)/lib$(libname).so.$(LIBlz_VERSION)" ; \
  	  if [ -e "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ] ; then \
- 	    rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ; \
  	    run_ldconfig=no ; \
-@@ -93,9 +94,8 @@ install-bin : all
- 	  if [ -e "$(DESTDIR)$(libdir)/lib$(libname).so" ] ; then \
- 	    rm -f "$(DESTDIR)$(libdir)/lib$(libname).so" ; \
+ 	  else run_ldconfig=yes ; \
  	  fi ; \
+ 	  rm -f "$(DESTDIR)$(libdir)/lib$(libname).so" ; \
+ 	  rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ; \
 -	  cd "$(DESTDIR)$(libdir)" && ln -s lib$(libname).so.$(pkgversion) lib$(libname).so ; \
 -	  cd "$(DESTDIR)$(libdir)" && ln -s lib$(libname).so.$(pkgversion) lib$(libname).so.$(soversion) ; \
--	  if [ $${run_ldconfig} = yes ] && [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" ; fi ; \
-+	  if [ "${disable_ldconfig}" != yes ] && [ $${run_ldconfig} = yes ] && \
-+	     [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" || true ; fi ; \
+ 	  if [ "${disable_ldconfig}" != yes ] && [ $${run_ldconfig} = yes ] && \
+ 	     [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" || true ; fi ; \
  	fi
- 
- install-info :
-@@ -124,7 +124,7 @@ uninstall-bin :
+@@ -125,7 +124,7 @@ uninstall-bin :
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).a"
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so"
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)"
