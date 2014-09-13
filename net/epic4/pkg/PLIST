@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2009/04/14 09:37:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.38 2014/09/13 14:05:25 brad Exp $
 bin/epic
 @bin bin/epic-EPIC4-${VERSION}
 @bin libexec/wserv4
@@ -1112,6 +1112,7 @@ share/epic/script/tabkey.th
 share/epic/script/tc
 share/epic/script/time
 share/epic/script/tls
+share/epic/script/unicode
 share/epic/script/urlgrab
 share/epic/script/utime
 share/epic/script/vi-binds
