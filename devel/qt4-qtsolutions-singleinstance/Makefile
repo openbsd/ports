@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/13 10:08:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/13 17:17:30 ajacoutot Exp $
 
 COMMENT=		Qt4 Solutions single application framework
 
 DISTNAME=		qt4-qtsolutions-singleinstance-20110722
 WRKDIST=		${WRKDIR}/qt-solutions-qt-solutions/qtsingleapplication
+REVISION=		0
 
 SHARED_LIBS +=  QtSolutions_SingleApplication-head 0.0 # 1.0
 
