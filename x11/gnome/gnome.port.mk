@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.93 2014/09/05 14:45:02 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.94 2014/09/13 16:29:39 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -28,13 +28,6 @@ USE_GMAKE?=		Yes
      _MODGNOME_ldflags ?= LDFLAGS="-L${LOCALBASE}/lib ${MODGNOME_LDFLAGS}"
      CONFIGURE_ENV += ${_MODGNOME_cppflags} \
                       ${_MODGNOME_ldflags}
-     # If one of these tools is found at configure stage, it might be used, no
-     # matter whether we use --disable-gtk-doc or not.
-.    if !defined(MODGNOME_TOOLS) || defined(MODGNOME_TOOLS) && ! ${MODGNOME_TOOLS:Mgtk-doc}
-         CONFIGURE_ENV += ac_cv_path_GTKDOC_CHECK="" \
-                          ac_cv_path_GTKDOC_REBASE="" \
-                          ac_cv_path_GTKDOC_MKPDF=""
-.    endif
 .endif
 
 # Use MODGNOME_TOOLS to indicate certain tools are needed for building bindings
@@ -48,7 +41,6 @@ USE_GMAKE?=		Yes
 #                       @unexec-delete %D/bin/update-desktop-database
 # * docbook: Build man pages with docbook.
 # * gobject-introspection: Build and enable GObject Introspection data.
-# * gtk-doc: Enable to build the included docs.
 # * gtk-update-icon-cache: Enable if there are icon files under share/icons/.
 #                          Requires the following goo in PLIST (adapt
 #                          $icon-theme accordingly):
@@ -66,12 +58,11 @@ USE_GMAKE?=		Yes
 #         access to the gnome-doc-* tools (legacy);
 #         same goes with yelp-tools which gives us itstool.
 
-MODGNOME_CONFIGURE_ARGS_gtkdoc=--disable-gtk-doc
 MODGNOME_CONFIGURE_ARGS_gi=--disable-introspection
 MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .if defined(MODGNOME_TOOLS)
-_VALID_TOOLS=desktop-file-utils docbook gobject-introspection gtk-doc \
+_VALID_TOOLS=desktop-file-utils docbook gobject-introspection \
     gtk-update-icon-cache shared-mime-info vala yelp
 .   for _t in ${MODGNOME_TOOLS}
 .       if !${_VALID_TOOLS:M${_t}}
@@ -91,11 +82,6 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 .   if ${MODGNOME_TOOLS:Mgobject-introspection}
         MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
         MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.40.0p0
-.   endif
-
-.   if ${MODGNOME_TOOLS:Mgtk-doc}
-        MODGNOME_CONFIGURE_ARGS_gtkdoc=--enable-gtk-doc
-        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc>=1.20p0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-update-icon-cache}
@@ -124,7 +110,6 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_gi} \
-		${MODGNOME_CONFIGURE_ARGS_gtkdoc} \
 		${MODGNOME_CONFIGURE_ARGS_vala}
 .endif
 
