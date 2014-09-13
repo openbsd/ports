@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.171 2014/09/10 08:33:10 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.172 2014/09/13 08:06:11 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -426,6 +426,7 @@ my $obsolete_reason = {
 	'tcpcat' => 4,
 	'ctm' => 3,
 	'papyon' => 3,
+	'bacula-web' => 1,
 };
 
 # ->is_base_system($handle, $state):
