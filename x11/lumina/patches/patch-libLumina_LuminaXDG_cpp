@@ -1,0 +1,39 @@
+$OpenBSD: patch-libLumina_LuminaXDG_cpp,v 1.1.1.1 2014/09/13 10:10:24 ajacoutot Exp $
+--- libLumina/LuminaXDG.cpp.orig	Tue Sep  9 16:09:15 2014
++++ libLumina/LuminaXDG.cpp	Tue Sep  9 16:10:45 2014
+@@ -269,7 +269,7 @@ QIcon LXDG::findIcon(QString iconName, QString fallbac
+     for(int i=0; i<xdd.length(); i++){
+       paths << xdd[i]+"/icons";	    
+     }
+-    #ifdef __FreeBSD__
++    #if defined (__FreeBSD__) || defined (__OpenBSD__)
+     paths << "/usr/local/share/pixmaps";
+     #endif
+     #ifdef __linux__
+@@ -287,7 +287,7 @@ QIcon LXDG::findIcon(QString iconName, QString fallbac
+   //Try to load the icon from /usr/local/share/pixmaps
+   if( ico.isNull() ){
+     //qDebug() << "Could not find icon:" << iconName;
+-    #ifdef __FreeBSD__
++    #if defined (__FreeBSD__) || defined (__OpenBSD__)
+     QDir base("/usr/local/share/pixmaps");
+     #endif
+     #ifdef __linux__
+@@ -295,7 +295,7 @@ QIcon LXDG::findIcon(QString iconName, QString fallbac
+     #endif
+     QStringList matches = base.entryList(QStringList() << "*"+iconName+"*", QDir::Files | QDir::NoDotAndDotDot, QDir::Name);
+     if( !matches.isEmpty() ){
+-      #ifdef __FreeBSD__
++      #if defined (__FreeBSD__) || defined (__OpenBSD__)
+       ico = QIcon("/usr/local/share/pixmaps/"+matches[0]); //just use the first match
+       #endif
+       #ifdef __linux__
+@@ -305,7 +305,7 @@ QIcon LXDG::findIcon(QString iconName, QString fallbac
+       //Fallback on a manual search over the default theme directories (hicolor, then oxygen)
+       if( QDir::searchPaths("fallbackicons").isEmpty() ){
+         //Set the fallback search paths
+-        #ifdef __FreeBSD__
++        #if defined (__FreeBSD__) || defined (__OpenBSD__)
+         QString base = "/usr/local/share/icons/";
+         #endif
+         #ifdef __linux__

@@ -1,0 +1,22 @@
+$OpenBSD: patch-lumina-desktop_SettingsMenu_cpp,v 1.1.1.1 2014/09/13 10:10:24 ajacoutot Exp $
+--- lumina-desktop/SettingsMenu.cpp.orig	Tue Sep  9 15:53:29 2014
++++ lumina-desktop/SettingsMenu.cpp	Tue Sep  9 16:36:23 2014
+@@ -21,11 +21,18 @@ SettingsMenu::SettingsMenu() : QMenu(){
+   #ifdef __FreeBSD__
+   if(QFile::exists("/usr/local/bin/qtconfig-qt4")){
+   #endif
++  #ifdef __OpenBSD__
++  if(QFile::exists("/usr/local/bin/qtconfig4")){
++  #endif
+   #ifdef __linux__
+   if(QFile::exists("/usr/bin/qtconfig-qt4")){
+   #endif
+     act = new QAction( LXDG::findIcon("preferences-desktop-theme",""), tr("Window Theme"), this);
++        #ifndef __OpenBSD__
+ 	act->setWhatsThis("qtconfig-qt4");
++        #else
++	act->setWhatsThis("qtconfig4");
++        #endif
+ 	this->addAction(act);
+   }
+ }
