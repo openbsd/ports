@@ -1,15 +1,6 @@
-$OpenBSD: patch-src_Engine_Zoom_cpp,v 1.1 2014/09/06 09:32:21 jsg Exp $
---- src/Engine/Zoom.cpp.orig	Sat Sep  6 18:31:22 2014
-+++ src/Engine/Zoom.cpp	Sat Sep  6 18:36:09 2014
-@@ -49,7 +49,7 @@
- 
- #ifdef __GNUC__
- #if (__i386__ || __x86_64__)
--#include <cpuid.h>
-+#include "../cpuid.h"
- #endif
- #endif
- 
+$OpenBSD: patch-src_Engine_Zoom_cpp,v 1.2 2014/09/13 08:18:23 jsg Exp $
+--- src/Engine/Zoom.cpp.orig	Sat Jun 14 05:35:59 2014
++++ src/Engine/Zoom.cpp	Sat Sep 13 17:45:37 2014
 @@ -612,7 +612,7 @@ static int zoomSurface2X_SSE2(SDL_Surface *src, SDL_Su
   */
  bool Zoom::haveSSE2()

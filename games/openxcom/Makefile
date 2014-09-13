@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/10 07:46:51 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/13 08:18:23 jsg Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
 COMMENT =		open source reimplementation of the original X-Com
@@ -31,9 +31,6 @@ LIB_DEPENDS =		devel/sdl-gfx \
 CONFIGURE_ARGS =	-DDEV_BUILD=Off
 
 NO_TEST =		Yes
-
-post-extract:
-	cp ${FILESDIR}/cpuid.h ${WRKSRC}/src
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Engine/CrossPlatform.cpp
