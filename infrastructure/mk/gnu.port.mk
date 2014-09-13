@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.53 2013/06/01 18:54:27 ajacoutot Exp $
+# $OpenBSD: gnu.port.mk,v 1.54 2014/09/13 16:28:47 ajacoutot Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -100,6 +100,15 @@ CONFIGURE_ARGS += --localstatedir='${LOCALSTATEDIR}'
 .  endif
 
 CONFIGURE_ARGS += --disable-silent-rules
+# Unless explicitely requested, disable gtk-doc by default.
+.  if !defined(BUILD_DEPENDS) || !${BUILD_DEPENDS:Mtextproc/gtk-doc}
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ARGS += --disable-gtk-doc
+CONFIGURE_ENV += ac_cv_path_GTKDOC_CHECK=""  
+CONFIGURE_ENV += ac_cv_path_GTKDOC_REBASE=""
+CONFIGURE_ENV += ac_cv_path_GTKDOC_MKPDF=""
+.  endif
 .endif
 
 TEST_TARGET ?= check
