@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1281 2014/09/09 09:34:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1282 2014/09/13 15:09:24 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1277,7 +1277,7 @@ EXTRACT_ONLY ?= ${_LIST_DISTFILES}
 .if !empty(EXTRACT_ONLY:M*.zip)
 _USE_ZIP ?= Yes
 .endif
-.if !empty(EXTRACT_ONLY:M*.tar.xz)
+.if !empty(EXTRACT_ONLY:M*.tar.xz) || !empty(EXTRACT_ONLY:M*.tar.lzma)
 _USE_XZ ?= Yes
 .endif
 .if !empty(EXTRACT_ONLY:M*.tar.lz)
@@ -1299,7 +1299,7 @@ _PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This i
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${_USE_XZ:L} != "no"
 BUILD_DEPENDS += archivers/xz
-EXTRACT_CASES += *.tar.xz) \
+EXTRACT_CASES += *.tar.xz|*.tar.lzma) \
 	xzcat ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
 .endif
 .if ${_USE_LZIP:L} != "no"

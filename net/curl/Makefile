@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2014/09/11 18:00:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.102 2014/09/13 15:09:24 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -15,8 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/
 EXTRACT_SUFX=	.tar.lzma
-EXTRACT_CASES=	*.tar.lzma) xz -cd ${FULLDISTDIR}/$$archive | ${TAR} xf - ;;
-BUILD_DEPENDS=	archivers/xz
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libidn
