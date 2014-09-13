@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1248 2014/09/06 11:53:05 armani Exp $
+# $OpenBSD: Makefile,v 1.1249 2014/09/13 10:09:18 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1278,6 +1278,7 @@
      SUBDIR += qjson
      SUBDIR += qt-creator
      SUBDIR += qt4-eventsview
+     SUBDIR += qt4-qtsolutions-singleinstance
      SUBDIR += quilt
      SUBDIR += quirks
      SUBDIR += radare2
