@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/13 18:09:20 brad Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-2.8.5
+REVISION=	0
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
@@ -104,7 +105,7 @@ WANTLIB += qca2 soprano sqlite3 sybdb tiff
 # kexi needs headers in postgresql,{-main,-server}
 # kexi needs all db drivers to be present while building
 BUILD_DEPENDS =	devel/boost \
-		databases/mysql \
+		databases/mariadb \
 		databases/postgresql,-main \
 		databases/postgresql,-server \
 		math/eigen2 \
@@ -113,7 +114,7 @@ BUILD_DEPENDS =	devel/boost \
 # kexi needs all db driver installed to run,
 # assuming sqlite3 is in base...
 
-RUN_DEPENDS =	databases/mysql \
+RUN_DEPENDS =	databases/mariadb \
 		databases/postgresql,-main \
 		databases/postgresql,-server \
 		devel/desktop-file-utils \
@@ -123,7 +124,7 @@ RUN_DEPENDS =	databases/mysql \
 
 LIB_DEPENDS =	databases/freetds \
 		databases/libpqxx>=3,<5 \
-		databases/mysql \
+		databases/mariadb \
 		devel/gsl \
 		graphics/exiv2 \
 		graphics/glew \

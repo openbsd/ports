@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/08/15 20:20:50 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/13 18:09:21 brad Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
 DISTNAME =	akonadi-1.12.1
-REVISION =	0
+REVISION =	1
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
 
 SHARED_LIBS = 	akonadiprotocolinternals 3.0	# 1.0
@@ -24,7 +24,7 @@ MODKDE4_USE =
 
 # We build support for MySQL and PostgreSQL but SQLite
 # is our default now.
-BUILD_DEPENDS =		databases/mysql,-server \
+BUILD_DEPENDS =		databases/mariadb,-server \
 			x11/qt4,-mysql \
 			x11/qt4,-postgresql
 

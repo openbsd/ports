@@ -12,6 +12,9 @@ SUHOSIN_PHPV=	5.3.24
 SUHOSIN_P_V=	0.9.10unofficial
 REVISION=	4
 REVISION-main=	6
+REVISION-pdo_mysql= 5
+REVISION-mysql=	5
+REVISION-mysqli= 5
 REVISION-odbc=	5
 
 SHARED_LIBS  =			\

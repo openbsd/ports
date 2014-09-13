@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/25 17:45:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/13 18:09:21 brad Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -22,7 +22,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		1
+REVISION-main =		2
 REVISION-kipi =		0
 REVISION-face =		0
 
@@ -121,7 +121,7 @@ BUILD_DEPENDS =		devel/bison \
 			devel/boost \
 			devel/doxygen \
 			devel/flex \
-			databases/mysql,-server \
+			databases/mariadb,-server \
 			math/eigen3 \
 			misc/shared-desktop-ontologies
 
@@ -138,7 +138,7 @@ RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
-			databases/mysql,-server \
+			databases/mariadb,-server \
 			misc/shared-desktop-ontologies \
 			x11/gtk+2,-guic
 

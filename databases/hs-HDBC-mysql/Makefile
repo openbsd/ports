@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/08 11:24:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2014/09/13 18:09:20 brad Exp $
 
 COMMENT=		mysql driver for HDBC
 
@@ -18,7 +18,7 @@ MODULES=		lang/ghc
 MODGHC_BUILD=		cabal hackage haddock register
 
 RUN_DEPENDS +=		databases/hs-HDBC>=2.1.0 \
-			databases/mysql \
+			databases/mariadb \
 			devel/hs-mtl
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/07/19 22:36:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/09/13 18:09:21 brad Exp $
 
 # THIS IS A WORK IN PROGRESS, IT IS NOT YET READY FOR USE.
 #
@@ -36,6 +36,7 @@ PKGNAME-mysql =	icinga2-mysql-$V
 PKGNAME-pgsql =	icinga2-pgsql-$V
 
 REVISION-main =	0
+REVISION-mysql = 0
 
 HOMEPAGE =	https://www.icinga.org/icinga2/
 
@@ -67,7 +68,7 @@ WANTLIB-main +=		${WANTLIB} c
 RUN_DEPENDS-main =	net/monitoring-plugins
 
 WANTLIB-mysql +=	${WANTLIB} mysqlclient_r
-LIB_DEPENDS-mysql =	${LIB_DEPENDS} databases/mysql
+LIB_DEPENDS-mysql =	${LIB_DEPENDS} databases/mariadb
 RUN_DEPENDS-mysql =	${BASE_PKGPATH},-main
 
 WANTLIB-pgsql +=	${WANTLIB} pq

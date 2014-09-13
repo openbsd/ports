@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/01 09:07:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/09/13 18:09:20 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		C++ database API
 
 DISTNAME=		deepfryed-dbicpp-v0.6.0
 PKGNAME=		dbic++-0.6.0
-REVISION=		5
+REVISION=		6
 CATEGORIES=		databases
 HOMEPAGE=		https://github.com/deepfryed/dbicpp
 
@@ -26,7 +26,7 @@ MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES =		devel/cmake
 
-LIB_DEPENDS=		databases/mysql \
+LIB_DEPENDS=		databases/mariadb \
 			databases/postgresql \
 			devel/pcre \
 			sysutils/e2fsprogs>=1.42.7

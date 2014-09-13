@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/04/21 23:30:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2014/09/13 18:09:20 brad Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -8,7 +8,7 @@ COMMENT-sqlite3 =	sqlite3 driver for libdbi
 COMMENT-freetds =	freetds driver for libdbi
 DISTNAME =		libdbi-drivers-$V
 PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
-REVISION-main =		3
+REVISION-main =		4
 PKGNAME-pgsql =		libdbi-drivers-pgsql-${V:S/-/./}
 REVISION-pgsql =	3
 PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
@@ -47,7 +47,7 @@ CONFIGURE_ARGS =	--disable-docs \
 			--with-freetds-libdir=${LOCALBASE}/lib
 
 WANTLIB-main =		crypto m ssl z mysqlclient dbi
-LIB_DEPENDS-main =	databases/mysql \
+LIB_DEPENDS-main =	databases/mariadb \
 			databases/libdbi
 RUN_DEPENDS-main =
 

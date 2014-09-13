@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2014/09/04 20:30:45 robert Exp $
+# $OpenBSD: Makefile,v 1.169 2014/09/13 18:09:21 brad Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,7 +7,7 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	mail www productivity
 
@@ -58,7 +58,7 @@ RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		textproc/catdoc
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/kyotocabinet \
-		databases/mysql \
+		databases/mariadb \
 		databases/openldap \
 		devel/boost \
 		devel/libexecinfo \

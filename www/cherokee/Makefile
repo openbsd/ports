@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/07/23 20:14:07 jca Exp $
+# $OpenBSD: Makefile,v 1.50 2014/09/13 18:09:22 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ PKGNAME-streaming = cherokee-streaming-${VERSION}
 REVISION-main =		3
 REVISION-geoip =	2
 REVISION-ldap =		6
-REVISION-mysql =	4
+REVISION-mysql =	5
 REVISION-streaming =	3
 
 SHARED_LIBS =	cherokee-base		0.0 \
@@ -64,8 +64,8 @@ LIB_DEPENDS-ldap =	databases/openldap
 WANTLIB-ldap =		crypto lber-2.4 ldap-2.4 sasl2 ssl
 RUN_DEPENDS-ldap =	${BASE_PKGPATH}
 
-LIB_DEPENDS-mysql =	databases/mysql
-WANTLIB-mysql =		crypto m mysqlclient>=19 ssl z
+LIB_DEPENDS-mysql =	databases/mariadb
+WANTLIB-mysql =		crypto m mysqlclient ssl z
 RUN_DEPENDS-mysql =	${BASE_PKGPATH}
 
 LIB_DEPENDS-streaming =	graphics/ffmpeg>=20121026 \

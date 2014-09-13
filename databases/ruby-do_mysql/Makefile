@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2014/06/19 20:24:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2014/09/13 18:09:20 brad Exp $
 
 COMMENT=		ruby-data_objects driver for MySQL
 
 V=			0.10.14
 DISTNAME=		do_mysql-${V}
+REVISION=		0
 CATEGORIES=		databases
 
 # MIT
@@ -17,7 +18,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		databases/ruby-data_objects,${MODRUBY_FLAVOR}=${V}
 
 WANTLIB=		mysqlclient crypto ssl z
-LIB_DEPENDS=		databases/mysql
+LIB_DEPENDS=		databases/mariadb
 
 # Requires running MySQL database
 TEST_IS_INTERACTIVE = Yes

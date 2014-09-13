@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2014/08/18 18:29:08 landry Exp $
+# $OpenBSD: Makefile,v 1.124 2014/09/13 18:09:22 brad Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,6 +24,8 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
+
+REVISION-mysql =	0
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
@@ -172,7 +174,7 @@ WANTLIB-main =		${commonWANTLIB} jpeg mng \
 RUN_DEPENDS-main +=	textproc/icu4c
 
 LIB_DEPENDS-mysql =	${BUILD_PKGPATH} \
-			databases/mysql
+			databases/mariadb
 WANTLIB-mysql =		${sqlWANTLIB} \
 			crypto ssl z mysqlclient_r
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/07/17 00:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2014/09/13 18:09:21 brad Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.2      # .0.0
@@ -19,6 +19,7 @@ PKGNAME-iodbc=	freeradius-iodbc-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-ldap=	freeradius-ldap-$V
+REVISION-mysql=	0
 
 CATEGORIES=	net security
 
@@ -102,8 +103,8 @@ RUN_DEPENDS-ldap=	#empty
 CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .endif
 
-LIB_DEPENDS-mysql=	databases/mysql
-WANTLIB-mysql=		crypto execinfo ssl m pthread z mysqlclient_r>=16
+LIB_DEPENDS-mysql=	databases/mariadb
+WANTLIB-mysql=		crypto execinfo ssl m pthread z mysqlclient_r
 RUN_DEPENDS-mysql=	#empty
 
 .if ${BUILD_PACKAGES:M-pgsql}

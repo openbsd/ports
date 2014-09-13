@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/04/10 16:01:12 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2014/09/13 18:09:21 brad Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	10
+REVISION =	11
 
 CATEGORIES =	lang
 
@@ -34,7 +34,7 @@ WANTLIB += sndfile sqlite3 theora tiff uuid vorbis xml2 yajl z
 LIB_DEPENDS =	archivers/lzo2 \
 		audio/libsndfile \
 		databases/libdbi \
-		databases/mysql \
+		databases/mariadb \
 		databases/qdbm \
 		devel/atk \
 		devel/gmp \

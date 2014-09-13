@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.100 2014/09/13 18:09:21 brad Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -8,6 +8,7 @@ DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
+REVISION-main =		0
 MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
 			http://ftp.exim.org/pub/exim/exim4/old/ \
 			ftp://ftp.exim.org/pub/exim/exim4/ \
@@ -44,8 +45,8 @@ EXIM_MAKECAT +=		"EXIM_MONITOR=eximon.bin\n"
 EXIM_MAKECAT +=		"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE +=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
-LIB_DEPENDS-main +=	databases/mysql
-WANTLIB-main +=		lib/mysql/mysqlclient>=10
+LIB_DEPENDS-main +=	databases/mariadb
+WANTLIB-main +=		lib/mysql/mysqlclient
 .endif
 
 .if ${FLAVOR:Mpostgresql}

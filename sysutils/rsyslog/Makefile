@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/04/21 23:29:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2014/09/13 18:09:22 brad Exp $
 
 BROKEN-hppa =		lack of atomic ops
 BROKEN-mips64 =		lack of atomic ops
@@ -19,7 +19,7 @@ PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
 
 REVISION-main =		5
-REVISION-mysql =	4
+REVISION-mysql =	5
 REVISION-pgsql =	3
 
 HOMEPAGE =		http://www.rsyslog.com/
@@ -36,7 +36,7 @@ WANTLIB-pgsql +=	crypto pq ssl
 
 LIB_DEPENDS-main =	security/gnutls \
 			sysutils/librelp
-LIB_DEPENDS-mysql =	databases/mysql
+LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	${PKGNAME-main}:${PKGPATH},-main
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	${PKGNAME-main}:${PKGPATH},-main
