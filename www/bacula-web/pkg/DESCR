@@ -1,5 +1,0 @@
-Bacula-Web is a web based tool written in PHP that provides a
-summarized view of the bacula backup infrastructure. It obtain this
-information from the bacula catalog's database.
-This tool provides you informations on the last day jobs status, media
-and pool usage, catalog size usage, etc.
