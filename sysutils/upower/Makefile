@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/09/02 19:23:33 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2014/09/13 16:36:54 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -22,7 +22,6 @@ WANTLIB += pthread
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--enable-introspection \
 			--enable-man-pages \
 			--with-historydir=/var/db/upower \
@@ -31,12 +30,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/upower
 

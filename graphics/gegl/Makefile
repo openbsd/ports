@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/08/20 07:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2014/09/13 16:36:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -75,7 +75,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_prog_RUBY="" \
 		ac_cv_path_DOT="no"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-docs \
 		--without-umfpack \
 		--without-sdl \
@@ -84,12 +83,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--without-graphviz \
 		--without-libv4l \
 		--without-libspiro
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=673580
 #BUILD_DEPENDS += lang/vala \

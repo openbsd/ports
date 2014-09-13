@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/04/29 13:10:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/09/13 16:36:54 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -31,15 +31,8 @@ LIB_DEPENDS =		multimedia/gstreamer1/core \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--with-gstreamer \
 			--without-gstreamer-0.10
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
-			ac_cv_path_GTKDOC_REBASE="" \
-			ac_cv_path_GTKDOC_MKPDF=""
 
 USE_GMAKE =		Yes
 

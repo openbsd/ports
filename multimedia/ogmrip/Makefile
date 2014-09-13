@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/11 18:35:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2014/09/13 16:36:54 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -73,14 +73,7 @@ USE_GMAKE =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-gtk-doc
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
+CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 MODGCONF2_SCHEMAS_DIR =	ogmrip
 

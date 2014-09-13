@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2014/07/11 17:02:00 giovanni Exp $
+# $OpenBSD: Makefile,v 1.99 2014/09/13 16:36:53 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -68,18 +68,11 @@ MODULES=	devel/gettext \
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--enable-gimp-console \
-		--disable-gtk-doc \
-		--disable-gtk-doc-html \
 		--with-libcurl \
 		--without-gvfs \
 		--without-webkit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-				ac_cv_path_GTKDOC_REBASE="" \
-				ac_cv_path_GTKDOC_MKPDF=""
 
 post-install:
 	@rm ${PREFIX}/lib/gimp/2.0/modules/*.{a,la}

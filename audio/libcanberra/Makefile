@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/04/01 14:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2014/09/13 16:36:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -88,20 +88,12 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--disable-gtk-doc-html \
 			--disable-gstreamer \
 			--disable-null \
 			--disable-oss \
 			--disable-pulse \
 			--disable-tdb \
 			--enable-sndio
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 pre-configure:
 	cp ${FILESDIR}/sndio.c ${WRKSRC}/src

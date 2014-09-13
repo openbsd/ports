@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/08/30 09:20:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2014/09/13 16:36:53 ajacoutot Exp $
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
@@ -48,14 +48,7 @@ LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--with-graphite2
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
-			ac_cv_path_GTKDOC_REBASE="" \
-			ac_cv_path_GTKDOC_MKPDF=""
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/check-symbols.sh

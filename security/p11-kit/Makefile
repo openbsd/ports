@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/09/10 06:10:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/09/13 16:36:54 ajacoutot Exp $
 
 PORTROACH=	limitw:1,even
 SHARED_ONLY =	Yes
@@ -31,18 +31,11 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--with-module-path=${PREFIX}/lib/pkcs11 \
 		--with-trust-paths=/etc/ssl/cert.pem
 
 # no translation yet
 CONFIGURE_ARGS += --disable-nls
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 

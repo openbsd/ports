@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2014/08/17 06:47:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -35,7 +35,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-libsystemd-login \
 		--mandir=${PREFIX}/man \
 		--enable-introspection \
@@ -47,12 +46,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # fgetgrent, fgetpwent
 CONFIGURE_ARGS += --disable-test
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No

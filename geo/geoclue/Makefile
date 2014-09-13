@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/13 16:36:53 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -30,16 +30,9 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--disable-gtk \
 			--disable-connman
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

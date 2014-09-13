@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/09/25 18:07:09 landry Exp $
+# $OpenBSD: Makefile,v 1.53 2014/09/13 16:36:53 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
@@ -32,19 +32,10 @@ LIB_DEPENDS=		archivers/lzo2 \
 			graphics/png
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 # needed for firefox
 CONFIGURE_ARGS +=	--enable-tee
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV += CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/cairo.pc.in

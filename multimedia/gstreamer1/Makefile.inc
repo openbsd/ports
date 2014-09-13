@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2014/04/19 17:45:21 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2014/09/13 16:36:53 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -71,14 +71,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-videosrc=v4l2src \
 			--with-default-visualizer=goom \
 			--enable-introspection \
-			--disable-gtk-doc \
 			--disable-valgrind
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 CPPFLAGS +=		-I${LOCALBASE}/include \
 			-I${X11BASE}/include

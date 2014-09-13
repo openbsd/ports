@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/10/24 15:32:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.5.0
@@ -22,12 +22,5 @@ LIB_DEPENDS=	devel/glib2 \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-gtk-doc
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/29 07:45:54 rpe Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=		lightweight Jabber client library
 
@@ -27,15 +27,8 @@ TEST_DEPENDS=	devel/check
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--disable-mono \
 			--with-check=${LOCALBASE} \
 			--with-ssl=openssl
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

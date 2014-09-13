@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/01 05:08:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=	caching mechanism for freedesktop.org compliant menus
 
@@ -22,13 +22,6 @@ LIB_DEPENDS=	devel/glib2
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

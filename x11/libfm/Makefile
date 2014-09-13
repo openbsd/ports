@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/13 07:55:59 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=	library providing file related widgets for pcmanfm
 
@@ -41,14 +41,7 @@ MODULES=	devel/gettext \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libfm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/03/24 12:55:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/09/13 16:36:53 ajacoutot Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -47,18 +47,11 @@ WANTLIB-python += ${WANTLIB} gpod
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-gdk-pixbuf \
 		--enable-pygobject \
-		--disable-gtk-doc \
 		--without-hal \
 		--without-libimobiledevice \
 		--without-mono \
 		--with-python="${MODPY_BIN}" \
 		--localedir=${TRUEPREFIX}/share/locale
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
-			ac_cv_path_GTKDOC_REBASE="" \
-			ac_cv_path_GTKDOC_MKPDF=""
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

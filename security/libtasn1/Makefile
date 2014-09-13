@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/08/25 16:27:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=		Abstract Syntax Notation One structure parser library
 
@@ -19,13 +19,6 @@ WANTLIB += c
 MASTER_SITES=	${MASTER_SITE_GNU:=libtasn1/}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

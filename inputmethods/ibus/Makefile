@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/07/17 15:59:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2014/09/13 16:36:53 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -53,17 +53,10 @@ LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --mandir=${PREFIX}/man \
-		 --disable-gtk-doc-html \
 		 --enable-introspection \
 		 --enable-vala
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 FAKE_FLAGS =	bash_completiondir=${PREFIX}/share/examples/ibus/bash_completion.d \
 		sysconfdir=${PREFIX}/share/examples/ibus

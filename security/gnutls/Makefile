@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2014/08/25 16:27:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2014/09/13 16:36:54 ajacoutot Exp $
 # rfc2818_hostname.c:107: error: storage size of 'ipv6' isn't known
 
 COMMENT=	GNU Transport Layer Security library
@@ -40,7 +40,6 @@ PORTHOME=	${WRKDIR}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-guile \
 		--disable-valgrind-tests \
 		--with-default-trust-store-file=/etc/ssl/cert.pem
@@ -57,12 +56,6 @@ CONFIGURE_ARGS+=--enable-local-libopts
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls

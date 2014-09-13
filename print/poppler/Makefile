@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2014/08/25 19:19:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -94,8 +94,7 @@ WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
-CONFIGURE_ARGS+= --disable-gtk-doc \
-		--enable-xpdf-headers \
+CONFIGURE_ARGS+=--enable-xpdf-headers \
 		--enable-poppler-cpp \
 		--enable-utils \
 		--enable-zlib \
@@ -104,12 +103,6 @@ CONFIGURE_ARGS+= --disable-gtk-doc \
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBJPEG_CFLAGS="-I${LOCALBASE}/include"
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 USE_GMAKE=	Yes
 

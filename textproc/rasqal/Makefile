@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/22 10:22:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=		RDF Query Library for Redland
 DISTNAME=		rasqal-0.9.29
@@ -35,8 +35,7 @@ CONFIGURE_STYLE=	gnu autoconf
 AUTOCONF_VERSION=	2.69
 SEPARATE_BUILD=		Yes
 
-CONFIGURE_ARGS=		--disable-gtk-doc \
-			--with-digest-library=gcrypt \
+CONFIGURE_ARGS=		--with-digest-library=gcrypt \
 			--with-mpfr=${LOCALBASE} \
 			--with-random-approach=random
 

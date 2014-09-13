@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/09/13 05:00:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2014/09/13 16:36:53 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
@@ -50,17 +50,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection \
 		--enable-vala \
-		--disable-gtk-doc \
 		--disable-systemd-login \
 		--disable-udev \
 		--disable-gusb \
 		--with-daemon-user=_colord
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 # disable: takes a huge amount of time/RAM
 CONFIGURE_ARGS += --disable-print-profiles

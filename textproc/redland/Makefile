@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/21 23:28:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/09/13 16:36:54 ajacoutot Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -48,8 +48,7 @@ CONFIGURE_ARGS=	--with-raptor=system \
 		--with-bdb=no \
 		--with-threads=yes \
 		--with-ltdl-include=${LOCALBASE}/include \
-		--with-ltdl-lib=${LOCALBASE}/lib \
-		--disable-gtk-doc
+		--with-ltdl-lib=${LOCALBASE}/lib
 
 LIB_DEPENDS-main=	textproc/raptor \
 			textproc/rasqal \

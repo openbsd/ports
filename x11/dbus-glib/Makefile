@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/03/24 17:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
@@ -31,16 +31,9 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-bash-completion \
-		--disable-gtk-doc \
 		--with-test-socket-dir=${WRKDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 post-install:
 	rm ${WRKINST}/etc/bash_completion.d/dbus-bash-completion.sh

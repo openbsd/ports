@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/18 12:10:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/09/13 16:36:54 ajacoutot Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
@@ -13,15 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	x11/xfce4
 MODXFCE_PURGE_LA =	lib/tumbler-1/plugins lib/tumbler-1/plugins/cache
 
-CONFIGURE_ARGS =	--disable-gtk-doc \
-			--disable-raw-thumbnailer \
+CONFIGURE_ARGS =	--disable-raw-thumbnailer \
 			--disable-gstreamer-thumbnailer
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 # correctly find bindtextdomain
 CONFIGURE_ENV +=	LIBS='-liconv'
