@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.674 2014/09/08 20:01:31 landry Exp $
+# $OpenBSD: Makefile,v 1.675 2014/09/13 08:05:54 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -17,7 +17,6 @@
      SUBDIR += august
      SUBDIR += awl
      SUBDIR += awstats
-     SUBDIR += bacula-web
      SUBDIR += blogsum
      SUBDIR += bluefish
      SUBDIR += bozohttpd
