@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/09/03 10:24:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/09/13 16:23:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	pt	7.0
 
