@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2014/08/15 12:19:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.108 2014/09/14 23:05:41 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -37,6 +37,7 @@
      SUBDIR += ldapvi
      SUBDIR += leafpad
      SUBDIR += libreoffice
+     SUBDIR += moe
      SUBDIR += nano
      SUBDIR += nedit
      SUBDIR += nvi
