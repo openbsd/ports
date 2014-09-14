@@ -1,0 +1,27 @@
+$OpenBSD: patch-lumina-config_lumina-config_pro,v 1.1 2014/09/14 06:58:02 ajacoutot Exp $
+
+https://github.com/pcbsd/lumina/pull/8
+
+--- lumina-config/lumina-config.pro.orig	Fri Aug 22 14:32:03 2014
++++ lumina-config/lumina-config.pro	Sun Sep 14 08:48:57 2014
+@@ -28,6 +28,12 @@ linux-g++-64 {
+   LIBS     += -L../libLumina -lLuminaUtils -lQtSolutions_SingleApplication-head
+ }
+ 
++openbsd-g++4 {
++  LRELEASE = lrelease4
++} else {
++  LRELEASE = lrelease-qt4
++}
++
+ TRANSLATIONS =  i18n/lumina-config_af.ts \
+                 i18n/lumina-config_ar.ts \
+                 i18n/lumina-config_az.ts \
+@@ -92,6 +98,6 @@ TRANSLATIONS =  i18n/lumina-config_af.ts \
+                 i18n/lumina-config_zu.ts
+ 
+ dotrans.path=/usr/local/share/Lumina-DE/i18n/
+-dotrans.extra=cd i18n && lrelease-qt4 -nounfinished *.ts && cp *.qm $(INSTALL_ROOT)/usr/local/share/Lumina-DE/i18n/
++dotrans.extra=cd i18n && $${LRELEASE} -nounfinished *.ts && cp *.qm $(INSTALL_ROOT)/usr/local/share/Lumina-DE/i18n/
+ 
+ INSTALLS += target dotrans

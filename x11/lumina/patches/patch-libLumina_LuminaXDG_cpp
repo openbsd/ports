@@ -1,4 +1,7 @@
-$OpenBSD: patch-libLumina_LuminaXDG_cpp,v 1.1.1.1 2014/09/13 10:10:24 ajacoutot Exp $
+$OpenBSD: patch-libLumina_LuminaXDG_cpp,v 1.2 2014/09/14 06:58:02 ajacoutot Exp $
+
+https://github.com/pcbsd/lumina/commit/9a7351a0199ff91f34e876fedb66c2b4d6121009
+
 --- libLumina/LuminaXDG.cpp.orig	Tue Sep  9 16:09:15 2014
 +++ libLumina/LuminaXDG.cpp	Tue Sep  9 16:10:45 2014
 @@ -269,7 +269,7 @@ QIcon LXDG::findIcon(QString iconName, QString fallbac

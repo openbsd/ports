@@ -1,0 +1,28 @@
+$OpenBSD: patch-lumina-fm_lumina-fm_pro,v 1.1 2014/09/14 06:58:02 ajacoutot Exp $
+
+https://github.com/pcbsd/lumina/pull/8
+
+--- lumina-fm/lumina-fm.pro.orig	Fri Aug 22 22:33:01 2014
++++ lumina-fm/lumina-fm.pro	Sun Sep 14 08:48:57 2014
+@@ -30,6 +30,12 @@ linux-g++-64 {
+   LIBS     += -L../libLumina -lLuminaUtils -lQtSolutions_SingleApplication-head
+ }
+ 
++openbsd-g++4 {
++  LRELEASE = lrelease4
++} else {
++  LRELEASE = lrelease-qt4
++}
++
+ TRANSLATIONS =  i18n/lumina-fm_af.ts \
+                 i18n/lumina-fm_ar.ts \
+                 i18n/lumina-fm_az.ts \
+@@ -94,7 +100,7 @@ TRANSLATIONS =  i18n/lumina-fm_af.ts \
+                 i18n/lumina-fm_zu.ts
+ 
+ dotrans.path=/usr/local/share/Lumina-DE/i18n/
+-dotrans.extra=cd i18n && lrelease-qt4 -nounfinished *.ts && cp *.qm $(INSTALL_ROOT)/usr/local/share/Lumina-DE/i18n/
++dotrans.extra=cd i18n && $${LRELEASE} -nounfinished *.ts && cp *.qm $(INSTALL_ROOT)/usr/local/share/Lumina-DE/i18n/
+ 
+ desktop.files=lumina-fm.desktop
+ desktop.path=/usr/local/share/applications/

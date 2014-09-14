@@ -1,4 +1,7 @@
-$OpenBSD: patch-lumina-config_mainUI_cpp,v 1.1.1.1 2014/09/13 10:10:24 ajacoutot Exp $
+$OpenBSD: patch-lumina-config_mainUI_cpp,v 1.2 2014/09/14 06:58:02 ajacoutot Exp $
+
+https://github.com/pcbsd/lumina/commit/9a7351a0199ff91f34e876fedb66c2b4d6121009
+
 --- lumina-config/mainUI.cpp.orig	Tue Sep  9 15:53:29 2014
 +++ lumina-config/mainUI.cpp	Fri Sep 12 19:40:54 2014
 @@ -224,7 +224,7 @@ void MainUI::setupMenus(){

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/13 10:10:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/14 06:58:02 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
@@ -52,15 +52,13 @@ MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} \
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 pre-configure:
+# https://github.com/pcbsd/lumina/commit/9a7351a0199ff91f34e876fedb66c2b4d6121009
 	cp ${FILESDIR}/LuminaOS-OpenBSD.cpp \
 		${WRKSRC}/libLumina/LuminaOS-OpenBSD.cpp
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/libLumina/LuminaXDG.cpp \
 		${WRKSRC}/lumina-config/mainUI.cpp \
 		${WRKSRC}/lumina-desktop/SettingsMenu.cpp
-.for i in lumina-config lumina-desktop lumina-fm lumina-open lumina-screenshot
-	perl -pi -e 's,lrelease-qt4,lrelease4,g' ${WRKSRC}/$i/$i.pro
-.endfor
 
 do-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4

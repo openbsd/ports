@@ -1,4 +1,7 @@
-$OpenBSD: patch-libLumina_libLumina_pro,v 1.1.1.1 2014/09/13 10:10:24 ajacoutot Exp $
+$OpenBSD: patch-libLumina_libLumina_pro,v 1.2 2014/09/14 06:58:02 ajacoutot Exp $
+
+https://github.com/pcbsd/lumina/commit/9a7351a0199ff91f34e876fedb66c2b4d6121009
+
 --- libLumina/libLumina.pro.orig	Tue Sep  2 19:02:48 2014
 +++ libLumina/libLumina.pro	Fri Sep 12 20:04:46 2014
 @@ -19,7 +19,8 @@ SOURCES	+= LuminaXDG.cpp \
