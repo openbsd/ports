@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/14 09:38:31 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/14 20:38:04 pirofti Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
+REVISION =	0
 
-SHARED_LIBS=	udis86		0.0
+SHARED_LIBS=	udis86		1.0
 
 HOMEPAGE =	http://udis86.sourceforge.net/
 
