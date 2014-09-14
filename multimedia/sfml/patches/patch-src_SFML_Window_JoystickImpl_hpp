@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_SFML_Window_JoystickImpl_hpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- src/SFML/Window/JoystickImpl.hpp.orig	Wed Mar 19 23:35:48 2014
++++ src/SFML/Window/JoystickImpl.hpp	Wed Mar 19 23:36:04 2014
+@@ -79,7 +79,7 @@ struct JoystickState
+ 
+ #if defined(SFML_SYSTEM_WINDOWS)
+     #include <SFML/Window/Win32/JoystickImpl.hpp>
+-#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD)
++#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+     #include <SFML/Window/Linux/JoystickImpl.hpp>
+ #elif defined(SFML_SYSTEM_MACOS)
+     #include <SFML/Window/OSX/JoystickImpl.hpp>

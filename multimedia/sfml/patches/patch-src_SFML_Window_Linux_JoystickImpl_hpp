@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_SFML_Window_Linux_JoystickImpl_hpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- src/SFML/Window/Linux/JoystickImpl.hpp.orig	Thu Mar 20 02:12:52 2014
++++ src/SFML/Window/Linux/JoystickImpl.hpp	Thu Mar 20 02:13:09 2014
+@@ -31,7 +31,7 @@
+ #if defined(SFML_SYSTEM_LINUX)
+     #include <linux/joystick.h>
+     #include <fcntl.h>
+-#elif defined(SFML_SYSTEM_FREEBSD)
++#elif defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+     // #include <sys/joystick.h> ?
+     #define ABS_MAX 1
+ #endif

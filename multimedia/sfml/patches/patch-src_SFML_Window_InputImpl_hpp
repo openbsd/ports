@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_SFML_Window_InputImpl_hpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- src/SFML/Window/InputImpl.hpp.orig	Wed Mar 19 23:35:27 2014
++++ src/SFML/Window/InputImpl.hpp	Wed Mar 19 23:35:40 2014
+@@ -32,7 +32,7 @@
+ 
+ #if defined(SFML_SYSTEM_WINDOWS)
+     #include <SFML/Window/Win32/InputImpl.hpp>
+-#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD)
++#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+     #include <SFML/Window/Linux/InputImpl.hpp>
+ #elif defined(SFML_SYSTEM_MACOS)
+     #include <SFML/Window/OSX/InputImpl.hpp>

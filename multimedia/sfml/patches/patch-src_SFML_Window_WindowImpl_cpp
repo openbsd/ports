@@ -1,0 +1,120 @@
+$OpenBSD: patch-src_SFML_Window_WindowImpl_cpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- src/SFML/Window/WindowImpl.cpp.orig	Thu Mar 20 02:18:17 2014
++++ src/SFML/Window/WindowImpl.cpp	Thu Mar 20 02:23:23 2014
+@@ -27,7 +27,6 @@
+ ////////////////////////////////////////////////////////////
+ #include <SFML/Window/WindowImpl.hpp>
+ #include <SFML/Window/Event.hpp>
+-#include <SFML/Window/JoystickManager.hpp>
+ #include <SFML/System/Sleep.hpp>
+ #include <algorithm>
+ #include <cmath>
+@@ -37,7 +36,7 @@
+     #include <SFML/Window/Win32/WindowImplWin32.hpp>
+     typedef sf::priv::WindowImplWin32 WindowImplType;
+ 
+-#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD)
++#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+ 
+     #include <SFML/Window/Linux/WindowImplX11.hpp>
+     typedef sf::priv::WindowImplX11 WindowImplType;
+@@ -73,9 +72,6 @@ WindowImpl::WindowImpl() :
+ m_joyThreshold(0.1f)
+ {
+     // Get the initial joystick states
+-    JoystickManager::getInstance().update();
+-    for (unsigned int i = 0; i < Joystick::Count; ++i)
+-        m_joyStates[i] = JoystickManager::getInstance().getState(i);
+ }
+ 
+ 
+@@ -89,7 +85,7 @@ WindowImpl::~WindowImpl()
+ ////////////////////////////////////////////////////////////
+ void WindowImpl::setJoystickThreshold(float threshold)
+ {
+-    m_joyThreshold = threshold;
++    // Nothing to do
+ }
+ 
+ 
+@@ -102,7 +98,6 @@ bool WindowImpl::popEvent(Event& event, bool block)
+         if (!block)
+         {
+             // Non-blocking mode: process events and continue
+-            processJoystickEvents();
+             processEvents();
+         }
+         else
+@@ -114,7 +109,6 @@ bool WindowImpl::popEvent(Event& event, bool block)
+             // events (which require polling)
+             while (m_events.empty())
+             {
+-                processJoystickEvents();
+                 processEvents();
+                 sleep(milliseconds(10));
+             }
+@@ -145,64 +139,6 @@ void WindowImpl::pushEvent(const Event& event)
+ void WindowImpl::processJoystickEvents()
+ {
+     // First update the global joystick states
+-    JoystickManager::getInstance().update();
+-
+-    for (unsigned int i = 0; i < Joystick::Count; ++i)
+-    {
+-        // Copy the previous state of the joystick and get the new one
+-        JoystickState previousState = m_joyStates[i];
+-        m_joyStates[i] = JoystickManager::getInstance().getState(i);
+-        JoystickCaps caps = JoystickManager::getInstance().getCapabilities(i);
+-
+-        // Connection state
+-        bool connected = m_joyStates[i].connected;
+-        if (previousState.connected ^ connected)
+-        {
+-            Event event;
+-            event.type = connected ? Event::JoystickConnected : Event::JoystickDisconnected;
+-            event.joystickButton.joystickId = i;
+-            pushEvent(event);
+-        }
+-
+-        if (connected)
+-        {
+-            // Axes
+-            for (unsigned int j = 0; j < Joystick::AxisCount; ++j)
+-            {
+-                if (caps.axes[j])
+-                {
+-                    Joystick::Axis axis = static_cast<Joystick::Axis>(j);
+-                    float prevPos = previousState.axes[axis];
+-                    float currPos = m_joyStates[i].axes[axis];
+-                    if (fabs(currPos - prevPos) >= m_joyThreshold)
+-                    {
+-                        Event event;
+-                        event.type = Event::JoystickMoved;
+-                        event.joystickMove.joystickId = i;
+-                        event.joystickMove.axis = axis;
+-                        event.joystickMove.position = currPos;
+-                        pushEvent(event);
+-                    }
+-                }
+-            }
+-
+-            // Buttons
+-            for (unsigned int j = 0; j < caps.buttonCount; ++j)
+-            {
+-                bool prevPressed = previousState.buttons[j];
+-                bool currPressed = m_joyStates[i].buttons[j];
+-
+-                if (prevPressed ^ currPressed)
+-                {
+-                    Event event;
+-                    event.type = currPressed ? Event::JoystickButtonPressed : Event::JoystickButtonReleased;
+-                    event.joystickButton.joystickId = i;
+-                    event.joystickButton.button = j;
+-                    pushEvent(event);
+-                }
+-            }
+-        }
+-    }
+ }
+ 
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_SFML_System_CMakeLists_txt,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- src/SFML/System/CMakeLists.txt.orig	Wed Mar 19 23:43:18 2014
++++ src/SFML/System/CMakeLists.txt	Wed Mar 19 23:43:31 2014
+@@ -74,7 +74,7 @@ if(UNIX)
+     set(SYSTEM_EXT_LIBS ${SYSTEM_EXT_LIBS} pthread)
+ endif()
+ if(LINUX)
+-    set(SYSTEM_EXT_LIBS ${SYSTEM_EXT_LIBS} rt)
++    set(SYSTEM_EXT_LIBS ${SYSTEM_EXT_LIBS})
+ endif()
+ 
+ # define the sfml-system target

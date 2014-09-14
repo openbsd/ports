@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_SFML_Window_CMakeLists_txt,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- src/SFML/Window/CMakeLists.txt.orig	Thu Mar 20 02:16:11 2014
++++ src/SFML/Window/CMakeLists.txt	Thu Mar 20 02:17:41 2014
+@@ -14,11 +14,11 @@ set(SRC
+     ${INCROOT}/ContextSettings.hpp
+     ${INCROOT}/Event.hpp
+     ${SRCROOT}/InputImpl.hpp
+-    ${INCROOT}/Joystick.hpp
+-    ${SRCROOT}/Joystick.cpp
+-    ${SRCROOT}/JoystickImpl.hpp
+-    ${SRCROOT}/JoystickManager.cpp
+-    ${SRCROOT}/JoystickManager.hpp
++#   ${INCROOT}/Joystick.hpp
++#   ${SRCROOT}/Joystick.cpp
++#   ${SRCROOT}/JoystickImpl.hpp
++#   ${SRCROOT}/JoystickManager.cpp
++#   ${SRCROOT}/JoystickManager.hpp
+     ${INCROOT}/Keyboard.hpp
+     ${SRCROOT}/Keyboard.cpp
+     ${INCROOT}/Mouse.hpp
+@@ -57,8 +57,8 @@ elseif(LINUX)
+         ${SRCROOT}/Linux/GlxContext.hpp
+         ${SRCROOT}/Linux/InputImpl.cpp
+         ${SRCROOT}/Linux/InputImpl.hpp
+-        ${SRCROOT}/Linux/JoystickImpl.cpp
+-        ${SRCROOT}/Linux/JoystickImpl.hpp
++#       ${SRCROOT}/Linux/JoystickImpl.cpp
++#       ${SRCROOT}/Linux/JoystickImpl.hpp
+         ${SRCROOT}/Linux/VideoModeImpl.cpp
+         ${SRCROOT}/Linux/WindowImplX11.cpp
+         ${SRCROOT}/Linux/WindowImplX11.hpp

@@ -1,0 +1,24 @@
+$OpenBSD: patch-include_SFML_Config_hpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- include/SFML/Config.hpp.orig	Wed Mar 19 23:32:08 2014
++++ include/SFML/Config.hpp	Wed Mar 19 23:33:06 2014
+@@ -59,6 +59,11 @@
+     // FreeBSD
+     #define SFML_SYSTEM_FREEBSD
+ 
++#elif defined(__OpenBSD__)
++
++    // OpenBSD
++    #define SFML_SYSTEM_OPENBSD
++
+ #else
+ 
+     // Unsupported system
+@@ -95,7 +100,7 @@
+ 
+         #endif
+ 
+-    #else // Linux, FreeBSD, Mac OS X
++    #else // Linux, FreeBSD, OpenBSD, Mac OS X
+ 
+         #if __GNUC__ >= 4
+ 

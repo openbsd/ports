@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_SFML_Window_WindowHandle_hpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- include/SFML/Window/WindowHandle.hpp.orig	Wed Mar 19 23:34:17 2014
++++ include/SFML/Window/WindowHandle.hpp	Wed Mar 19 23:34:30 2014
+@@ -46,7 +46,7 @@ namespace sf
+     // Window handle is HWND (HWND__*) on Windows
+     typedef HWND__* WindowHandle;
+ 
+-#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD)
++#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+ 
+     // Window handle is Window (unsigned long) on Unix - X11
+     typedef unsigned long WindowHandle;

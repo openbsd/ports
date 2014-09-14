@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_SFML_Window_GlContext_cpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
+--- src/SFML/Window/GlContext.cpp.orig	Wed Mar 19 23:35:03 2014
++++ src/SFML/Window/GlContext.cpp	Wed Mar 19 23:35:20 2014
+@@ -41,7 +41,7 @@
+     #include <SFML/Window/Win32/WglContext.hpp>
+     typedef sf::priv::WglContext ContextType;
+ 
+-#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD)
++#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+ 
+     #include <SFML/Window/Linux/GlxContext.hpp>
+     typedef sf::priv::GlxContext ContextType;
