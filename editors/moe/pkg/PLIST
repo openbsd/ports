@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/14 23:05:05 bcallah Exp $
+@bin bin/moe
+@info info/moe.info
+@man man/man1/moe.1
+share/examples/moe/
+share/examples/moe/moerc
+@sample ${SYSCONFDIR}/moerc

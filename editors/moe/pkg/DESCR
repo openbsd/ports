@@ -1,0 +1,20 @@
+GNU Moe is a powerful, 8-bit clean, console text editor for ISO-8859 and
+ASCII character encodings. It has a modeless, user-friendly interface,
+online help, multiple windows, unlimited undo/redo capability, unlimited
+line length, global search/replace (on all buffers at once), block
+operations, automatic indentation, word wrapping, filename completion,
+directory browser, duplicate removal from prompt histories, delimiter
+matching, etc.
+
+Moe tries to rationalize the keyboard commands. The Alt key is used for
+harmless commands like cursor movements and scrolling. The Control key
+is used for more "dangerous" commands like copying text blocks, deleting
+lines, or exiting. The Tab key is used for filename completion and also
+shows/hides the directory browser when moe asks for a filename to save
+or load. In any case, the unlimited undo/redo capability of moe makes
+very difficult to accidentally cause an irreparable damage to your
+files.
+
+Moe uses the function keys, so that the most frequent commands can be
+issued with only one finger. The function key F1 shows the online help,
+and F10 allows you to change the options.

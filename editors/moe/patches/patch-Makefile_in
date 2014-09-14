@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/09/14 23:05:05 bcallah Exp $
+--- Makefile.in.orig	Sat Sep 13 09:18:44 2014
++++ Makefile.in	Sat Sep 13 09:19:12 2014
+@@ -1,8 +1,8 @@
+ 
+ DISTNAME = $(pkgname)-$(pkgversion)
+ INSTALL = install
+-INSTALL_PROGRAM = $(INSTALL) -m 755
+-INSTALL_DATA = $(INSTALL) -m 644
++INSTALL_PROGRAM = $(INSTALL) -m 555
++INSTALL_DATA = $(INSTALL) -m 444
+ INSTALL_DIR = $(INSTALL) -d -m 755
+ LIBS = -lncurses
+ SHELL = /bin/sh
