@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2013/06/06 13:57:48 ajacoutot Exp $
+$OpenBSD: README,v 1.10 2014/09/14 05:58:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,17 +19,17 @@ DocumentRoot of your web-server:
     # ln -s ../statusnet /var/www/htdocs/statusnet
 (make sure you use a relative symlink since Apache is chrooted)
 
-== MySQL==
+== MariaDB ==
 
-Please add the php-mysql package to enable MySQL support in PHP.
+Please add the php-mysql package to enable MariaDB support in PHP.
 
-Now connect to MySQL and create a user and database for Status.net:
+Now connect to MariaDB and create a user and database for Status.net:
 
 	  mysqladmin -u "adminuser" --password="adminpassword" create statusnet
-	  mysql -u "adminuser" --password="adminpassword" statusnet
-	  mysql> GRANT ALL on statusnet.*
-	      -> TO 'statusnet'@'localhost'
-              -> IDENTIFIED BY 'statusnetpassword';
+	  mysqll -u "adminuser" --password="adminpassword" statusnet
+	  MariaDB [(statusnet)]> GRANT ALL on statusnet.*
+			      -> TO 'statusnet'@'localhost'
+			      -> IDENTIFIED BY 'statusnetpassword';
 
 == PostgreSQL ==
 

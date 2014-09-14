@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.30 2014/08/27 06:58:00 ajacoutot Exp $
+$OpenBSD: README,v 1.31 2014/09/14 05:58:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -84,7 +84,7 @@ For enhanced performance one of these PHP packages can be installed:
 
 Database configuration
 ----------------------
-ownCloud can work with a PostgreSQL, MySQL or SQLite3 database.
+ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database.
 Support for SQLite3 is included with the main php package; to use
 another database, the corresponding package needs to be installed
 *before* setting up ownCloud:
@@ -132,7 +132,7 @@ Updating
 Before updating to a new release, read:
     http://doc.owncloud.org/server/${VR}/admin_manual/maintenance/update.html
 
-When using a PostgreSQL or MySQL, the corresponding MDB2 php package
+When using a PostgreSQL or MariaDB, the corresponding MDB2 php package
 must be installed to properly upgrade the database:
     php-pgsql or php-mysql
 

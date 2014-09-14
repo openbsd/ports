@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2013/06/06 13:57:48 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2014/09/14 05:58:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,21 +11,21 @@ The user running cvechecker(1) must be part of the _cvechecker group:
     # usermod -G _cvechecker <username>
 
 Edit ${SYSCONFDIR}/cvechecker.conf to your particular setup, this is
-especially important when using MySQL as a backend.
+especially important when using MariaDB as a backend.
 
 Database initialization
 -----------------------
-When using MySQL (cvechecker-3.2-mysql), a database and user must be
+When using MariaDB (cvechecker-3.2-mysql), a database and user must be
 setup. This step is not needed when using SQLite.
     $ mysql -uroot -p<password>
-    mysql> CREATE DATABASE cvechecker;
-    mysql> GRANT ALL PRIVILEGES ON `cvechecker` . *
-        -> TO 'cvechecker_rw'@'localhost' IDENTIFIED BY 'password4cvechecker_rw';
-    mysql> QUIT
+    MariaDB [(none)]> CREATE DATABASE cvechecker;
+    MariaDB [(none)]> GRANT ALL PRIVILEGES ON `cvechecker` . *
+                    -> TO 'cvechecker_rw'@'localhost' IDENTIFIED BY 'password4cvechecker_rw';
+    MariaDB [(none)]> QUIT
 
 Then the database initialization is done by running:
     $ cvechecker -i
-(this step is required for both MySQL and SQLite).
+(this step is required for both MariaDB and SQLite).
 
 At last, the CVE data needs to be put into the database:
     $ pullcves pull

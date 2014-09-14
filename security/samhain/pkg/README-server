@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.4 2013/06/06 13:57:48 ajacoutot Exp $
+$OpenBSD: README-server,v 1.5 2014/09/14 05:58:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,17 +7,17 @@ $OpenBSD: README-server,v 1.4 2013/06/06 13:57:48 ajacoutot Exp $
 A manual is available at:
 	http://la-samhna.de/samhain/manual/
 
-MySQL (InnoDB)
-==============
+MariaDB (InnoDB)
+================
 
-Connect to MySQL, and create a user and database for Samhain;
+Connect to MariaDB, and create a user and database for Samhain;
 
     $ mysql -u root -p
-    mysql> create user samhain@localhost identified by 'password';
-    mysql> create database samhain;
-    mysql> grant all privileges on samhain.* to samhain@localhost;
-    mysql> flush privileges;
-    mysql> quit
+    MariaDB [(none)]> create user samhain@localhost identified by 'password';
+    MariaDB [(none)]> create database samhain;
+    MariaDB [(none)]> grant all privileges on samhain.* to samhain@localhost;
+    MariaDB [(none)]> flush privileges;
+    MariaDB [(none)]> quit
 
 Then initialize the database from the files installed in
 ${TRUEPREFIX}/share/examples/yule:

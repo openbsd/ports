@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.11 2014/07/10 13:09:07 ajacoutot Exp $
+$OpenBSD: README-server,v 1.12 2014/09/14 05:58:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,14 +16,14 @@ Setting up the database for the Bacula Director
 ===============================================
 
 In this documentation, it is assumed the PostgreSQL administrator user
-is 'postgres' and the MySQL one is 'root'; adapt accordingly to your
+is 'postgres' and the MariaDB one is 'root'; adapt accordingly to your
 setup.
 Replace 'dbpassword' with the bacula DB user password (configured in
 ${SYSCONFDIR}/bacula-dir.conf).
 
 While SQLite3 may be of interest for quickly testing a setup, it is
 usually not advised to use it in production but rather go for a full
-RDBMS like PostgreSQL or MySQL.
+RDBMS like PostgreSQL or MariaDB.
 
 PostgreSQL
 ----------
@@ -40,8 +40,8 @@ Creating the database and tables:
     $ ./make_bacula_tables -U bacula
     $ ./grant_bacula_privileges -U bacula
 
-MySQL
------
+MariaDB
+-------
 
 Creating the DB, table and bacula user.
     $ cd ${TRUEPREFIX}/libexec/bacula
@@ -51,9 +51,9 @@ Creating the DB, table and bacula user.
 
 Setting up the bacula DB user password.
     $ mysql -u root -p bacula
-    mysql> GRANT ALL PRIVILEGES ON `bacula` . *
+    MariaDB [bacula]> GRANT ALL PRIVILEGES ON `bacula` . *
         -> TO 'bacula'@'localhost' IDENTIFIED BY 'dbpassword';
-    mysql> QUIT
+    MariaDB [bacula]> QUIT
 
 SQLite3
 -------

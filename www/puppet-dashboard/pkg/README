@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.14 2014/08/14 10:16:08 sebastia Exp $
+$OpenBSD: README,v 1.15 2014/09/14 05:58:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,23 +12,23 @@ Configuration is done in:
 Database Configuration
 ======================
 
-Before starting the Dashboard, a MySQL database must be configured in:
+Before starting the Dashboard, a MariaDB database must be configured in:
     ${INSTDIR}/config/database.yml
 
 The following commands can be used to create the database:
     # mysql -uroot -p<password>
-    mysql> CREATE DATABASE dashboard_production CHARACTER SET utf8;
-    mysql> CREATE USER 'dashboard'@'localhost' IDENTIFIED BY 'my_password';
-    mysql> GRANT ALL PRIVILEGES ON dashboard_production.* TO 'dashboard'@'localhost';
-    mysql> EXIT
+    MariaDB [(none)]> CREATE DATABASE dashboard_production CHARACTER SET utf8;
+    MariaDB [(none)]> CREATE USER 'dashboard'@'localhost' IDENTIFIED BY 'my_password';
+    MariaDB [(none)]> GRANT ALL PRIVILEGES ON dashboard_production.* TO 'dashboard'@'localhost';
+    MariaDB [(none)]> EXIT
 
-The MySQL maximum packet size needs to be increased to permit larger
+The MariaDB maximum packet size needs to be increased to permit larger
 rows in the database; ${SYSCONFDIR}/my.cnf must be edited to include:
 max_allowed_packet = 32M
 Then the server must be restarted by running:
     # ${RCDIR}/mysqld restart
 
-Once the database has been setup and MySQL is up and running, the
+Once the database has been setup and MariaDB is up and running, the
 following command must be run to create the tables:
     # cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production db:migrate
 
@@ -67,7 +67,7 @@ be a member of the _puppet group.
 
 Cron Jobs
 ---------
-The MySQL database should be optimized on a montly basis. This can be
+The MariaDB database should be optimized on a montly basis. This can be
 done by adding the following entry to the root's crontab(5):
 0	0	1	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard ${LOCALBASE}/bin/rake${MODRUBY_BINREV} RAILS_ENV=production db:raw:optimize
 
