@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/09/18 17:36:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/09/15 07:17:50 jasper Exp $
 
 ### from upstream, removed at next update
 # +patch-remmina_src_remmina_protocol_widget_c
@@ -15,14 +15,14 @@ PATCHFILES +=		$i.patch:0
 
 SHARED_ONLY?=		Yes
 
-COMMENT=		GTK+2 remote desktop client
+COMMENT=		GTK+3 remote desktop client
 
 V=			1.0.0
 DISTNAME=		Remmina-${V}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/FreeRDP-Remmina-356c033
 
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		x11 net
 
