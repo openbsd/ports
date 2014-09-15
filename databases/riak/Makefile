@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/02/05 11:22:51 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.13 2014/09/15 07:14:21 jmatthew Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-1.4.7
@@ -89,7 +89,7 @@ MAKE_FLAGS =			rel
 WRKCONF = ${WRKSRC}/deps/eleveldb/c_src/snappy-${SNAPPY_V}
 MODGNU_CONFIG_GUESS_DIRS = ${WRKCONF}
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS += --with-pic
+CONFIGURE_ARGS += --with-pic --disable-gtest
 
 WANTLIB = c crypto m ncurses pthread ssl stdc++ util mozjs nspr4
 LIB_DEPENDS = lang/spidermonkey
