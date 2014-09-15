@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/08/30 16:34:33 edd Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/15 19:41:03 edd Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
-MODPY_EGG_VERSION =	1.4.15
-REVISION = 		2
+MODPY_EGG_VERSION =	1.4.23
 DISTNAME=		py-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -25,6 +24,9 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-NO_TEST=		Yes
+TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR}
+
+do-test:
+	cd ${WRKBUILD} && ${LOCALBASE}/bin/py.test testing
 
 .include <bsd.port.mk>
