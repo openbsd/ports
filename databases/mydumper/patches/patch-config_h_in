@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_h_in,v 1.1 2014/09/15 17:10:45 brad Exp $
+
+binlog code now is optional, disabled by default
+
+http://bazaar.launchpad.net/~perconardba/mydumper/0.6/revision/144
+
+--- config.h.in.orig	Tue Feb 25 10:18:05 2014
++++ config.h.in	Sun Sep 14 12:26:03 2014
+@@ -2,5 +2,6 @@
+ #define CONFIG_H
+ 
+ #cmakedefine VERSION "@VERSION@"
++#cmakedefine WITH_BINLOG
+ 
+ #endif
