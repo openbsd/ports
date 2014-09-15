@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/27 07:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/09/15 17:15:13 ajacoutot Exp $
 
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		2.2.11
+GNOME_VERSION=		2.4.0
 GNOME_PROJECT=		libsigc++
 CATEGORIES=		devel
-REVISION=		1
 
-SHARED_LIBS +=  sigc-2.0             2.0      # 0.0
+SHARED_LIBS +=  sigc-2.0             3.0      # 0.0
 
 API_V=			2.0
 SUBST_VARS=		API_V
