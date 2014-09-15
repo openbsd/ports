@@ -1,6 +1,9 @@
-$OpenBSD: patch-Samples_Browser_CMakeLists_txt,v 1.3 2014/09/03 12:03:51 dcoppa Exp $
+$OpenBSD: patch-Samples_Browser_CMakeLists_txt,v 1.4 2014/09/15 09:37:55 dcoppa Exp $
 
-unbreak build with cmake-3.0.x
+changeset:   6573:808a332b5725
+user:        Philip Allgaier <mail@spacegaier.de>
+date:        Mon Sep 08 18:51:46 2014 +0200
+summary:     SampleBrowser CMakeList fix for CMake 3.x (fixes OGRE-419)
 
 --- Samples/Browser/CMakeLists.txt.orig	Wed Sep  3 13:24:15 2014
 +++ Samples/Browser/CMakeLists.txt	Wed Sep  3 13:24:34 2014
