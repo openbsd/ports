@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_PL,v 1.6 2012/09/24 14:33:54 jasper Exp $
---- Makefile.PL.orig	Fri Jun 15 17:46:45 2012
-+++ Makefile.PL	Mon Sep 24 16:33:20 2012
+$OpenBSD: patch-Makefile_PL,v 1.7 2014/09/15 19:51:40 jasper Exp $
+--- Makefile.PL.orig	Mon Sep 15 21:40:55 2014
++++ Makefile.PL	Mon Sep 15 21:41:23 2014
 @@ -28,8 +28,7 @@ else
            "    'perl Makefile.PL -n' to skip installation\n";
      foreach my $prompt (@prompts)
@@ -11,12 +11,3 @@ $OpenBSD: patch-Makefile_PL,v 1.6 2012/09/24 14:33:54 jasper Exp $
        }
    }
  
-@@ -144,7 +143,7 @@ sub add_prereqs_to_mymeta
-     rename $MYYAML, $YAML;
-     if( eval { require JSON; })
-       { my $json= JSON->new()->pretty->canonical;
--        my $meta= $json->decode( slurp( $MYJSON));
-+        my $meta= $json->decode( slurp( $JSON));
-         $meta->{prereqs}= $prereqs;
-         spit( $JSON, $json->encode( $meta));
-         warn "updated prereqs in $JSON\n";

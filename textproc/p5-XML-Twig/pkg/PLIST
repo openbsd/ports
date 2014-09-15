@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/11/25 21:06:58 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/15 19:51:40 jasper Exp $
 bin/xml_grep
 bin/xml_merge
 bin/xml_pp
 bin/xml_spellcheck
 bin/xml_split
-${P5SITE}/XML/
 ${P5SITE}/XML/Twig/
 ${P5SITE}/XML/Twig.pm
 ${P5SITE}/XML/Twig/XPath.pm
