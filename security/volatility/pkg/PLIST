@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/10 11:19:29 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/15 08:31:12 sthen Exp $
 bin/vol.py
 lib/python${MODPY_VERSION}/site-packages/volatility/
 lib/python${MODPY_VERSION}/site-packages/volatility-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -34,8 +34,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/__init__.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/${MACHINE_ARCH}.py
-lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/${MACHINE_ARCH}.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/amd64.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/amd64.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/arm.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/arm.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/addrspaces/crash.py

@@ -3,6 +3,7 @@
 COMMENT =		memory artifact extraction utility framework
 
 MODPY_EGG_VERSION =	2.4
+REVISION =		0
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
