@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86ISelLowering_cpp,v 1.1 2014/07/10 22:46:37 brad Exp $
+$OpenBSD: patch-lib_Target_X86_X86ISelLowering_cpp,v 1.2 2014/09/15 19:24:16 brad Exp $
 
 r203581
 Don't generate 64-bit movd after cmpneqsd in 32-bit mode (PR19059)
@@ -6,8 +6,34 @@ Don't generate 64-bit movd after cmpneqsd in 32-bit mode (PR19059)
 This fixes the bug where we would bitcast the 64-bit floating point result
 of cmpneqsd to a 64-bit integer even on 32-bit targets.
 
---- lib/Target/X86/X86ISelLowering.cpp.orig	Sat Jun 14 04:28:49 2014
-+++ lib/Target/X86/X86ISelLowering.cpp	Sat Jun 14 05:05:03 2014
+r217410
+Set trunc store action to Expand for all X86 targets.
+
+When compiling without SSE2, isTruncStoreLegal(F64, F32) would return Legal, whereas
+with SSE2 it would return Expand. And since the Target doesn't seem to actually
+handle a truncstore for double -> float, it would just output a store of a full
+double in the space for a float hence overwriting other bits on the stack.
+
+--- lib/Target/X86/X86ISelLowering.cpp.orig	Sun Mar  2 21:57:40 2014
++++ lib/Target/X86/X86ISelLowering.cpp	Sun Sep 14 19:09:50 2014
+@@ -301,6 +301,8 @@ void X86TargetLowering::resetOperationActions() {
+   setTruncStoreAction(MVT::i32, MVT::i8 , Expand);
+   setTruncStoreAction(MVT::i16, MVT::i8,  Expand);
+ 
++  setTruncStoreAction(MVT::f64, MVT::f32, Expand);
++
+   // SETOEQ and SETUNE require checking two conditions.
+   setCondCodeAction(ISD::SETOEQ, MVT::f32, Expand);
+   setCondCodeAction(ISD::SETOEQ, MVT::f64, Expand);
+@@ -1012,8 +1014,6 @@ void X86TargetLowering::resetOperationActions() {
+       AddPromotedToType (ISD::SELECT, VT, MVT::v2i64);
+     }
+ 
+-    setTruncStoreAction(MVT::f64, MVT::f32, Expand);
+-
+     // Custom lower v2i64 and v2f64 selects.
+     setOperationAction(ISD::LOAD,               MVT::v2f64, Legal);
+     setOperationAction(ISD::LOAD,               MVT::v2i64, Legal);
 @@ -18052,7 +18052,6 @@ static SDValue CMPEQCombine(SDNode *N, SelectionDAG &D
  
          if ((cc0 == X86::COND_E  && cc1 == X86::COND_NP) ||
