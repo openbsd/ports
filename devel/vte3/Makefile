@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2014/08/10 08:05:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2014/09/15 07:06:29 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		terminal emulation library
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.36.3
 REVISION=		1
+API_V=			2.90
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
@@ -45,6 +46,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 TEST_DEPENDS=		shells/bash
+
+SUBST_VARS +=		API_V
 
 # XXX: https://bugzilla.gnome.org/show_bug.cgi?id=675987
 post-install:
