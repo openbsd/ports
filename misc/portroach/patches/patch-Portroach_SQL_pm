@@ -1,0 +1,12 @@
+$OpenBSD: patch-Portroach_SQL_pm,v 1.1 2014/09/15 08:21:39 jasper Exp $
+--- Portroach/SQL.pm.orig	Sun Sep  7 14:54:20 2014
++++ Portroach/SQL.pm	Mon Sep 15 10:19:39 2014
+@@ -308,7 +308,7 @@ $sql{maildata_select} =
+ $sql{portdata_findnewnew} =
+ 	q(SELECT name,cat,ver,newver
+ 	    FROM portdata
+-	   WHERE lower(maintainer) = lower(?)
++	   WHERE lower(maintainer) LIKE ?
+ 	     AND newver != ver
+ 	     AND newver is not NULL
+ 	     AND moved != true

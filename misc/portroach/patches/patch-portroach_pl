@@ -1,0 +1,12 @@
+$OpenBSD: patch-portroach_pl,v 1.1 2014/09/15 08:21:39 jasper Exp $
+--- portroach.pl.orig	Mon Sep 15 10:20:00 2014
++++ portroach.pl	Mon Sep 15 10:20:02 2014
+@@ -1474,7 +1474,7 @@ sub MailMaintainers
+ 	while (my ($addr) = $sths{maildata_select}->fetchrow_array) {
+ 		my $msg;
+ 		my $ports = 0;
+-		$sths{portdata_findnewnew}->execute($addr);
++		$sths{portdata_findnewnew}->execute("%<${addr}>%");
+ 		$template->applyglobal({maintainer => lc $addr});
+ 
+ 		while (my $port = $sths{portdata_findnewnew}->fetchrow_hashref) {

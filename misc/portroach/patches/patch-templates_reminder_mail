@@ -1,0 +1,12 @@
+$OpenBSD: patch-templates_reminder_mail,v 1.1 2014/09/15 08:21:39 jasper Exp $
+--- templates/reminder.mail.orig	Sun Sep  7 14:54:20 2014
++++ templates/reminder.mail	Mon Sep 15 10:19:26 2014
+@@ -10,7 +10,7 @@ You will not be e-mailed again for any of the port/ver
+ below.
+ 
+ Full details can be found at the following URL:
+-http://beta.inerd.com/portroach/%%(maintainer).html
++http://beta.inerd.com/portroach/
+ 
+ 
+ Port                                            | Current version | New version
