@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_common_gypi,v 1.25 2014/09/11 19:04:52 robert Exp $
+$OpenBSD: patch-build_common_gypi,v 1.26 2014/09/15 06:29:56 robert Exp $
 --- build/common.gypi.orig.port	Wed Sep 10 01:47:11 2014
-+++ build/common.gypi	Wed Sep 10 22:28:34 2014
++++ build/common.gypi	Sat Sep 13 14:21:07 2014
 @@ -87,7 +87,7 @@
  
            'conditions': [
@@ -10,6 +10,15 @@ $OpenBSD: patch-build_common_gypi,v 1.25 2014/09/11 19:04:52 robert Exp $
                'use_ash%': 1,
                'use_aura%': 1,
              }],
+@@ -754,7 +754,7 @@
+ 
+         # Use GPU accelerated cross process image transport by default
+         # on linux builds with the Aura window manager
+-        ['use_aura==1 and OS=="linux"', {
++        ['use_aura==1 and (OS=="linux" or OS=="openbsd")', {
+           'ui_compositor_image_transport%': 1,
+         }, {
+           'ui_compositor_image_transport%': 0,
 @@ -887,7 +887,7 @@
          # NOTE: The check for disable_nacl==0 and component=="static_library"
          # can't be used here because these variables are not defined yet, but it
