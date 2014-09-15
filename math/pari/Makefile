@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/09/15 15:11:35 landry Exp $
 
 COMMENT=	number theory-oriented computer algebra system
 
-DISTNAME=	pari-2.1.6
-REVISION=	2
+DISTNAME=	pari-2.1.7
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	math
 
 HOMEPAGE=	http://pari.math.u-bordeaux.fr/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 c m ncurses readline
 
-MASTER_SITES=		${HOMEPAGE}/pub/pari/unix/
+MASTER_SITES=		http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/2.1/
 
 BUILD_DEPENDS=		print/texlive/base
 

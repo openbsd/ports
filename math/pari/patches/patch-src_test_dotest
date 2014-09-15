@@ -1,0 +1,8 @@
+$OpenBSD: patch-src_test_dotest,v 1.1 2014/09/15 15:11:35 landry Exp $
+--- src/test/dotest.orig	Thu Sep 11 06:39:25 2014
++++ src/test/dotest	Thu Sep 11 06:39:37 2014
+@@ -180,3 +180,4 @@ can safely ignore the above warning.
+ EOT
+ fi
+ fi
++exit 1

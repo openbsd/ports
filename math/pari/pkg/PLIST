@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/08 02:36:12 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/15 15:11:35 landry Exp $
 bin/gp
-bin/gp-2.1
+@bin bin/gp-2.1
 bin/gphelp
 bin/tex2mail
 include/pari/
