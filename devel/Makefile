@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1249 2014/09/13 10:09:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1250 2014/09/16 13:06:09 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1461,6 +1461,7 @@
      SUBDIR += utop
      SUBDIR += uuid
      SUBDIR += vanessa
+     SUBDIR += vim-command-t
      SUBDIR += vim-taglist
      SUBDIR += vtags
      SUBDIR += vtcl
