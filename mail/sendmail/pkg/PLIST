@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/16 19:54:29 jca Exp $
 @newgroup _smmsp:742
 @newuser _smmsp:742:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
 include/libmilter/
 include/libmilter/mfapi.h
 include/libmilter/mfdef.h
 lib/libmilter.a
+@lib lib/libmilter.so.${LIBmilter_VERSION}
 @bin libexec/mail.local
 libexec/sendmail/
 @bin libexec/sendmail/makemap

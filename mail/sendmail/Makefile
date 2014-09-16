@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/16 17:09:31 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/16 19:54:29 jca Exp $
 
 COMMENT =		mother of Mail Transfer Agents
 
 DISTNAME =		sendmail.8.14.9
 PKGNAME =		sendmail-8.14.9
+REVISION =		0
+
+SHARED_LIBS =		milter	4.0
 
 CATEGORIES =		mail
 
@@ -21,8 +24,14 @@ MASTER_SITES =		ftp://ftp.sendmail.org/pub/sendmail/ \
 BUILD_DEPENDS =		textproc/groff
 
 SUBDIRS =		libsmutil libsm libmilter sendmail mail.local mailstats makemap praliases smrsh editmap
+.include <bsd.port.arch.mk>
+.if ! ${PROPERTIES:Mno_shared}
+SUBDIRS +=		libsharedmilter
+.endif
+
 MAKE_FLAGS =		O="${CFLAGS}" \
-			SUBDIRS="${SUBDIRS} cf/cf"
+			SUBDIRS="${SUBDIRS} cf/cf" \
+			MILTER_SOVER="${LIBmilter_VERSION}"
 MAKE_ENV =		M4="/usr/bin/m4"
 FAKE_FLAGS =		SUBDIRS="${SUBDIRS}"
 
@@ -52,6 +61,9 @@ WRKDIST =		${WRKDIR}/${PKGNAME}
 
 post-extract:
 	cp ${FILESDIR}/cf/*.mc ${WRKSRC}/cf/cf
+	cp ${FILESDIR}/sharedlibrary.m4 ${WRKSRC}/devtools/M4/UNIX/
+	cp -R ${WRKSRC}/libmilter ${WRKSRC}/libsharedmilter
+	perl -pi -e 's=`library=`sharedlibrary=' ${WRKSRC}/libsharedmilter/Makefile.m4
 	${SUBST_CMD} -c ${FILESDIR}/site.OS.m4 \
 	    ${WRKSRC}/devtools/Site/site.config.m4
 
