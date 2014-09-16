@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.6 2014/09/16 21:58:26 jasper Exp $
+
+use rcctl(8)
+
+--- lib/specinfra/command/openbsd.rb.orig	Tue Sep 16 23:54:31 2014
++++ lib/specinfra/command/openbsd.rb	Tue Sep 16 23:54:38 2014
+@@ -2,7 +2,7 @@ module SpecInfra
+   module Command
+     class OpenBSD < Base
+       def check_enabled(service, level=3)
+-        "egrep '(#{escape(service)}_flags=|^pkg_scripts=\"(.*)#{escape(service)}(.*)\")' /etc/rc.conf.local | grep -v \=NO"
++        "rcctl status #{escape(service)}"
+       end
+ 
+       def check_file_md5checksum(file, expected)
+@@ -76,7 +76,7 @@ module SpecInfra
+ #      end
+ 
+       def check_running(service)
+-        "/etc/rc.d/#{escape(service)} status"
++        "rcctl check #{escape(service)}"
+       end
+ 
+       def get_mode(file)
