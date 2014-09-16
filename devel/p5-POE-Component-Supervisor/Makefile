@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/24 10:27:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/16 06:52:47 jasper Exp $
 
 COMMENT=		Erlang inspired babysitting
 
-DISTNAME=		POE-Component-Supervisor-0.07
-REVISION=		1
+DISTNAME=		POE-Component-Supervisor-0.08
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -19,12 +18,9 @@ RUN_DEPENDS=		devel/p5-Devel-PartialDump \
 			devel/p5-POE-API-Peek \
 			devel/p5-MooseX-POE \
 			devel/p5-MooseX-LogDispatch \
-			devel/p5-Log-Dispatch-Config-TestLog \
 			devel/p5-Set-Object \
 			devel/p5-Hash-Util-FieldHash-Compat
-TEST_DEPENDS=		devel/p5-Test-use-ok
-
-pre-configure:
-	rm ${WRKSRC}/lib/POE/Component/Supervisor/Handle/Proc.pm.orig
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			devel/p5-Log-Dispatch-Config-TestLog
 
 .include <bsd.port.mk>
