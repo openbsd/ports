@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_openbsd_c,v 1.15 2012/12/18 21:38:12 sthen Exp $
+$OpenBSD: patch-src_openbsd_c,v 1.16 2014/09/16 07:28:09 benoit Exp $
 
 declarations in common.h got changed, but upstream forgot to do the
 corresponding changes into openbsd.c
@@ -7,10 +7,17 @@ Adapt to new OpenBSD kinfo_proc API.
 
 Protect kvm_getprocs and global vars with mutexes.
 
---- src/openbsd.c.orig	Tue Oct  5 15:29:36 2010
-+++ src/openbsd.c	Fri Dec  7 06:11:21 2012
-@@ -32,6 +32,7 @@
+dkstat.h is going away on OpenBSD, so use sys/sched.h instead for CP_*
+
+--- src/openbsd.c.orig	Thu May  3 23:08:27 2012
++++ src/openbsd.c	Tue Sep 16 08:40:12 2014
+@@ -28,10 +28,11 @@
+  *
+  */
+ 
+-#include <sys/dkstat.h>
  #include <sys/param.h>
++#include <sys/sched.h>
  #include <sys/resource.h>
  #include <sys/socket.h>
 +#include <sys/proc.h>
@@ -25,7 +32,7 @@ Protect kvm_getprocs and global vars with mutexes.
  #include <machine/apmvar.h>
  
  #include <net80211/ieee80211.h>
-@@ -81,6 +83,8 @@ size_t len = 0;
+@@ -81,6 +83,8 @@
  int init_kvm = 0;
  int init_sensors = 0;
  
@@ -34,7 +41,7 @@ Protect kvm_getprocs and global vars with mutexes.
  static int kvm_init()
  {
  	if (init_kvm) {
-@@ -140,7 +144,7 @@ int check_mount(char *s)
+@@ -140,7 +144,7 @@
  	return 0;
  }
  
@@ -43,7 +50,7 @@ Protect kvm_getprocs and global vars with mutexes.
  {
  	int mib[2] = { CTL_KERN, KERN_BOOTTIME };
  	struct timeval boottime;
-@@ -155,9 +159,10 @@ void update_uptime()
+@@ -155,9 +159,10 @@
  		NORM_ERR("Could not get uptime");
  		info.uptime = 0;
  	}
@@ -55,7 +62,7 @@ Protect kvm_getprocs and global vars with mutexes.
  {
  	static int mib[2] = { CTL_VM, VM_METER };
  	struct vmtotal vmtotal;
-@@ -194,9 +199,10 @@ void update_meminfo()
+@@ -194,9 +199,10 @@
  		info.swap = 0;
  		info.swapfree = 0;
  	}
@@ -67,7 +74,7 @@ Protect kvm_getprocs and global vars with mutexes.
  {
  	struct net_stat *ns;
  	double delta;
-@@ -207,11 +213,11 @@ void update_net_stats()
+@@ -207,11 +213,11 @@
  	/* get delta */
  	delta = current_update_time - last_update_time;
  	if (delta <= 0.0001) {
@@ -81,7 +88,7 @@ Protect kvm_getprocs and global vars with mutexes.
  	}
  
  	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
-@@ -266,28 +272,36 @@ void update_net_stats()
+@@ -266,28 +272,36 @@
  	}
  
  	freeifaddrs(ifap);
@@ -126,7 +133,7 @@ Protect kvm_getprocs and global vars with mutexes.
  	for (i = 0; i < n_processes; i++) {
  		if (p[i].p_stat == SRUN) {
  			cnt++;
-@@ -295,96 +309,64 @@ void update_running_processes()
+@@ -295,96 +309,64 @@
  	}
  
  	info.run_procs = cnt;
@@ -241,7 +248,7 @@ Protect kvm_getprocs and global vars with mutexes.
  	if (info.cpu_count > 1) {
  		size = CPUSTATES * sizeof(int64_t);
  		for (i = 0; i < info.cpu_count; i++) {
-@@ -426,10 +408,11 @@ void update_cpu_usage()
+@@ -426,10 +408,11 @@
  		oldused[i] = used;
  		oldtotal[i] = total;
  	}
@@ -255,7 +262,7 @@ Protect kvm_getprocs and global vars with mutexes.
  {
  	double v[3];
  
-@@ -438,6 +421,7 @@ void update_load_average()
+@@ -438,6 +421,7 @@
  	info.loadavg[0] = (float) v[0];
  	info.loadavg[1] = (float) v[1];
  	info.loadavg[2] = (float) v[2];
@@ -263,7 +270,7 @@ Protect kvm_getprocs and global vars with mutexes.
  }
  
  #define OBSD_MAX_SENSORS 256
-@@ -606,10 +590,11 @@ char get_freq(char *p_client_buffer, size_t client_buf
+@@ -606,10 +590,11 @@
  	return 1;
  }
  
@@ -276,7 +283,7 @@ Protect kvm_getprocs and global vars with mutexes.
  }
  
  #if 0
-@@ -665,19 +650,11 @@ cleanup:
+@@ -665,19 +650,11 @@
  }
  #endif
  
@@ -298,7 +305,7 @@ Protect kvm_getprocs and global vars with mutexes.
  /* While topless is obviously better, top is also not bad. */
  
  int comparecpu(const void *a, const void *b)
-@@ -708,8 +685,8 @@ int comparemem(const void *a, const void *b)
+@@ -708,8 +685,8 @@
  
  inline void proc_find_top(struct process **cpu, struct process **mem)
  {
@@ -309,7 +316,7 @@ Protect kvm_getprocs and global vars with mutexes.
  	int i, j = 0;
  	struct process *processes;
  	int mib[2];
-@@ -730,9 +707,11 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -730,9 +707,11 @@
  	/* translate bytes into page count */
  	total_pages = usermem / pagesize;
  
@@ -323,7 +330,7 @@ Protect kvm_getprocs and global vars with mutexes.
  	processes = malloc(n_processes * sizeof(struct process));
  
  	for (i = 0; i < n_processes; i++) {
-@@ -740,9 +719,12 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -740,9 +719,12 @@
  			processes[j].pid = p[i].p_pid;
  			processes[j].name = strndup(p[i].p_comm, text_buffer_size);
  			processes[j].amount = 100.0 * p[i].p_pctcpu / FSCALE;
@@ -336,7 +343,7 @@ Protect kvm_getprocs and global vars with mutexes.
  
  	qsort(processes, j - 1, sizeof(struct process), comparemem);
  	for (i = 0; i < 10; i++) {
-@@ -752,6 +734,8 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -752,6 +734,8 @@
  		tmp->pid = processes[i].pid;
  		tmp->amount = processes[i].amount;
  		tmp->name = strndup(processes[i].name, text_buffer_size);
@@ -345,7 +352,7 @@ Protect kvm_getprocs and global vars with mutexes.
  
  		ttmp = mem[i];
  		mem[i] = tmp;
-@@ -769,6 +753,8 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -769,6 +753,8 @@
  		tmp->pid = processes[i].pid;
  		tmp->amount = processes[i].amount;
  		tmp->name = strndup(processes[i].name, text_buffer_size);
@@ -354,7 +361,7 @@ Protect kvm_getprocs and global vars with mutexes.
  
  		ttmp = cpu[i];
  		cpu[i] = tmp;
-@@ -784,7 +770,6 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -784,7 +770,6 @@
  	free(processes);
  }
  
@@ -362,7 +369,7 @@ Protect kvm_getprocs and global vars with mutexes.
  #define	APMDEV		"/dev/apm"
  #define	APM_UNKNOWN	255
  
-@@ -908,7 +893,6 @@ char *get_apm_battery_time()
+@@ -908,7 +893,6 @@
  	return out;
  }
  
@@ -370,7 +377,7 @@ Protect kvm_getprocs and global vars with mutexes.
  
  /* empty stubs so conky links */
  void prepare_update()
-@@ -923,8 +907,4 @@ int get_entropy_avail(unsigned int *val)
+@@ -923,8 +907,4 @@
  int get_entropy_poolsize(unsigned int *val)
  {
  	return 1;
