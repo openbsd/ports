@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/13 08:18:23 jsg Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/16 19:19:24 landry Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
+BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp	
 COMMENT =		open source reimplementation of the original X-Com
 DISTNAME =		openxcom-1.0.0
 REVISION = 		0
