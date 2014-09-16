@@ -1,10 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/07/08 15:34:01 jasper Exp $
-lib/python${MODPY_VERSION}/site-packages/_cffi__x194db310xdd69d84f.so
+@comment $OpenBSD: PLIST,v 1.9 2014/09/16 08:18:07 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/_cffi__x245ec18bx390834cc.so
 lib/python${MODPY_VERSION}/site-packages/_pygit2.so
 lib/python${MODPY_VERSION}/site-packages/pygit2/
-lib/python${MODPY_VERSION}/site-packages/pygit2-0.21.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygit2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/blame.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/blame.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/config.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/config.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/credentials.py
@@ -14,6 +22,12 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/errors.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/ffi.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/ffi.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/index.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/index.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/py2.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/py2.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/py3.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/py3.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/refspec.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/refspec.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/remote.py
@@ -22,5 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/repository.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/repository.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/settings.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/settings.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/utils.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/version.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/version.pyc
