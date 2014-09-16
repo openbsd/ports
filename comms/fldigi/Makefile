@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/05/05 23:04:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/16 16:21:12 sthen Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
-DISTNAME=	fldigi-3.21.81
+DISTNAME=	fldigi-3.21.83
 
 CATEGORIES=	comms hamradio
 
