@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/14 09:12:29 stu Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/16 15:42:36 stu Exp $
 
 COMMENT =	Open On-Chip Debugging
 
 DISTNAME =	openocd-0.6.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 SHARED_LIBS +=  openocd		1.0 # unknown

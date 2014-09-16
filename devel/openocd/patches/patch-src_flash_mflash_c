@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_flash_mflash_c,v 1.1 2014/09/16 15:42:36 stu Exp $
+
+Fix bad bound.
+
+--- src/flash/mflash.c.orig	Fri Sep  5 19:36:35 2014
++++ src/flash/mflash.c	Fri Sep  5 19:43:06 2014
+@@ -1161,7 +1161,7 @@ static void mg_gen_ataid(mg_io_type_drv_info *pSegIdDr
+ 	memset((void *)pSegIdDrvInfo->vendor_uniq_bytes, 0x00, 62);
+ 	/* CFA power mode 1 support in maximum 200mA */
+ 	pSegIdDrvInfo->cfa_pwr_mode                     = 0x0100;
+-	memset((void *)pSegIdDrvInfo->reserved7, 0x00, 190);
++	memset((void *)pSegIdDrvInfo->reserved7, 0x00, 186);
+ }
+ 
+ static int mg_storage_config(void)

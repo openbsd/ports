@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_helper_command_h,v 1.1 2014/09/16 15:42:36 stu Exp $
+--- src/helper/command.h.orig	Sun Oct  7 04:15:54 2012
++++ src/helper/command.h	Fri Sep  5 08:59:17 2014
+@@ -169,7 +169,7 @@ struct command {
+ 	struct command *parent;
+ 	struct command *children;
+ 	command_handler_t handler;
+-	Jim_CmdProc jim_handler;
++	Jim_CmdProc *jim_handler;
+ 	void *jim_handler_data;
+ 	enum command_mode mode;
+ 	struct command *next;
+@@ -205,7 +205,7 @@ char *command_name(struct command *c, char delim);
+ struct command_registration {
+ 	const char *name;
+ 	command_handler_t handler;
+-	Jim_CmdProc jim_handler;
++	Jim_CmdProc *jim_handler;
+ 	void *jim_handler_data;
+ 	enum command_mode mode;
+ 	const char *help;

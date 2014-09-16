@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_helper_command_c,v 1.1 2014/09/16 15:42:36 stu Exp $
+--- src/helper/command.c.orig	Sun Oct  7 04:15:36 2012
++++ src/helper/command.c	Fri Sep  5 09:00:43 2014
+@@ -368,7 +368,7 @@ static int register_command_handler(struct command_con
+ 
+ 	LOG_DEBUG("registering '%s'...", ocd_name);
+ 
+-	Jim_CmdProc func = c->handler ? &script_command : &command_unknown;
++	Jim_CmdProc *func = c->handler ? &script_command : &command_unknown;
+ 	int retval = Jim_CreateCommand(interp, ocd_name, func, c, NULL);
+ 	free((void *)ocd_name);
+ 	if (JIM_OK != retval)
