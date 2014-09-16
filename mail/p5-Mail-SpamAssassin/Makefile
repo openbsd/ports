@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.88 2014/07/12 11:25:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2014/09/16 09:07:03 espie Exp $
 
 COMMENT=		mailfilter to identify and mark spam
+FAKE_AS_ROOT = 		Yes
 
 VER=			3.4.0
 REVISION=		3

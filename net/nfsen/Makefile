@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2013/11/05 17:49:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2014/09/16 09:07:03 espie Exp $
 
 COMMENT=		web-based front end for the nfdump netflow tools
+FAKE_AS_ROOT =		Yes
 
 V=			1.3.6p1
 REVISION=		3
