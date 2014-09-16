@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/16 19:56:10 miod Exp $
+
+# as error: ``operation combines symbols in different segments''
+# (known toolchain problem)
+NOT_FOR_ARCHS=	m88k
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc

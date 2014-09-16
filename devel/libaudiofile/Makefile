@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.48 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2014/09/16 19:56:09 miod Exp $
+
+# -fvisibility
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT=	SGI audiofile library clone
 

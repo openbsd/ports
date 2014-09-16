@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/01 11:56:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/09/16 19:56:09 miod Exp $
 
 # Warning: CELT is experimental software. Neither the API/ABI, nor
 # the bit-stream are stable. Compatibility between different releases
 # (even minor ones) is not preserved.
+
+# invalid use of `restrict'
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =	experimental ultra-low delay audio codec
 

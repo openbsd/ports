@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/09/16 19:56:10 miod Exp $
+
+# no libGL (toolchain issue)
+NOT_FOR_ARCHS=	m88k
 
 COMMENT=		C++ interface for cairo
 

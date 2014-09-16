@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/04 09:07:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/16 19:56:10 miod Exp $
+
+# g++3 chokes on the code
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.2.1

@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/09/16 19:56:10 miod Exp $
+
+# g++3 chokes on the code
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =		memory-efficient hash_map and hash_set C++ classes
 DISTNAME =		sparsehash-2.0.2

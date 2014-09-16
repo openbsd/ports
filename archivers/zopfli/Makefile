@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/07 17:57:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/16 19:56:09 miod Exp $
+
+# __builtin_clz
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =		deflate-compatible compression format
 

@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/15 20:15:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/09/16 19:56:09 miod Exp $
+
+# invalid use of `restrict'
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT=	IETF audio codec
 

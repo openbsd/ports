@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:48:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/16 19:56:09 miod Exp $
+
+# gcc spins compiling d_mos7
+NOT_FOR_ARCHS=		m88k
 
 COMMENT=		Gnu Circuit Analysis Package
 

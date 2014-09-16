@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.74 2014/04/13 18:58:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2014/09/16 19:56:09 miod Exp $
+
+# g++3 chokes on the code
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT=	C++ interface for glib2
 

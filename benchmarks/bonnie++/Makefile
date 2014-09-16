@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/09 20:10:46 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/16 19:56:09 miod Exp $
+
+# -Winit-self
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT=	enhanced performance test of filesystem I/O
 

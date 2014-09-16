@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.48 2014/07/11 20:57:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.49 2014/09/16 19:56:10 miod Exp $
+
+# no libGL (toolchain issue)
+NOT_FOR_ARCHS=	m88k
 
 COMMENT=	Fast-Light Tool Kit
 

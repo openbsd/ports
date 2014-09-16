@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/03 14:50:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/09/16 19:56:10 miod Exp $
+
+# g++3 chokes on the code
+NOT_FOR_ARCHS=	m88k
 
 # avoid segfaults from icupkg compiled and then used during the build
 .if ${MACHINE_ARCH} == "arm"

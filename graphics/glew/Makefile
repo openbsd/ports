@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/11 18:13:20 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/16 19:56:10 miod Exp $
+
+# no libGL (toolchain issue)
+NOT_FOR_ARCHS=	m88k
 
 COMMENT=	GL Extension Wrangler library
 

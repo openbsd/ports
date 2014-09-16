@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2014/09/16 19:56:10 miod Exp $
+
+# no libGL (toolchain issue)
+NOT_FOR_ARCHS= m88k
 
 COMMENT=	cairo bindings for Python
 

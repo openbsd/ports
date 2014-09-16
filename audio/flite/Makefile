@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2014/01/30 13:21:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/09/16 19:56:09 miod Exp $
 
+BROKEN-m88k=	out of memory compiling cmu_us_kal_diphone.c
 BROKEN-mips64=	GCC hangs compiling cmu_us_kal_diphone.c
 BROKEN-mips64el= GCC hangs compiling cmu_us_kal_diphone.c
 

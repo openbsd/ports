@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/02 07:50:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/16 19:56:09 miod Exp $
+
+# as error: ``operation combines symbols in different segments''
+# (known toolchain problem)
+NOT_FOR_ARCHS=		m88k
 
 COMMENT =		small build system with a focus on speed
 

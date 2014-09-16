@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.112 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.113 2014/09/16 19:56:10 miod Exp $
+
+# no libGL (toolchain issue)
+NOT_FOR_ARCHS= m88k
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3

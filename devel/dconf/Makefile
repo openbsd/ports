@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.60 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2014/09/16 19:56:09 miod Exp $
+
+# -fvisibility
+NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 SHARED_ONLY=		Yes
 

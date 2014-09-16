@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/01 09:56:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/16 19:56:09 miod Exp $
+
+# __builtin_clz
+NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =	parallel implementation of gzip utilizing multiple cores
 
