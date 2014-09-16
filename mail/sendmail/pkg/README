@@ -1,0 +1,42 @@
+$OpenBSD: README,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Using sendmail as the default mailer.
+=====================================
+
+Deactivate smtpd
+----------------
+Running smtpd(8) and sendmail at the same time is not supported.  See
+rc.d(8) for how to disable smtpd(8).
+
+Tweaking /etc/mailer.conf
+-------------------------
+Two scripts are provided along with this package.  Run sendmail-enable
+to adjust your mailer.conf(5), and sendmail-disable to revert your
+changes.
+
+Client mail queue ownership
+---------------------------
+This package ensures that /var/spool/clientmqueue is owned by
+_smmsp:_smmsp, mode 0770.  You should verify that your submit.cf
+configuration is not using the default settings (smmsp:smmsp).
+
+Activate the queue runner
+-------------------------
+To process the mails in /var/spool/clientmqueue, the following entry
+should be added to root's crontab(5):
+
+*/30 * * * * ${PREFIX}/libexec/sendmail/sendmail -L sm-msp-queue -Ac -q
+
+This will start the queue runner every 30 minutes.  Adjust according to
+your needs.
+
+Enable sendmail at startup time
+-------------------------------
+Remember to add sendmail to pkg_scripts.
+Suggested daemon flags for a basic, localhost-only setup:
+
+sendmail_flags="-L sm-mta -C/etc/mail/localhost.cf -bd -q30m"

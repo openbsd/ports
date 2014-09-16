@@ -1,0 +1,9 @@
+# $OpenBSD: mailer.conf.sendmail,v 1.1.1.1 2014/09/16 17:09:31 jca Exp $
+#
+sendmail	${TRUEPREFIX}/libexec/sendmail/sendmail
+send-mail	${TRUEPREFIX}/libexec/sendmail/sendmail
+mailq		${TRUEPREFIX}/libexec/sendmail/sendmail
+makemap		${TRUEPREFIX}/libexec/sendmail/makemap
+newaliases	${TRUEPREFIX}/libexec/sendmail/sendmail
+hoststat	${TRUEPREFIX}/libexec/sendmail/sendmail
+purgestat	${TRUEPREFIX}/libexec/sendmail/sendmail

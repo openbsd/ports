@@ -1,0 +1,6 @@
+Sendmail is a flexible Mail Transfer Agent, with many supported
+protocols and powerful SPAM filtering techniques.
+
+FLAVORS:
+	ldap - LDAP routing support
+	sasl - SASL authentication support

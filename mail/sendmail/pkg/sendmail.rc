@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: sendmail.rc,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+
+daemon="${TRUEPREFIX}/libexec/sendmail/sendmail"
+
+. /etc/rc.d/rc.subr
+
+pexp="(sendmail: (accepting|rejecting).*|${daemon}.* -(q[0-9]|bd)*)"
+
+rc_bg=YES
+
+rc_cmd $1

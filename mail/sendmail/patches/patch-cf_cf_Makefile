@@ -1,0 +1,25 @@
+$OpenBSD: patch-cf_cf_Makefile,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+- hook .mc files from the OpenBSD tree
+- don\'t install submit.cf, thanks
+--- cf/cf/Makefile.orig	Tue Jun 14 04:16:34 2005
++++ cf/cf/Makefile	Fri Apr  5 14:31:36 2013
+@@ -51,7 +51,9 @@ BERKELEY=cs-hpux9.cf cs-hpux10.cf cs-osf1.cf cs-solari
+ 	chez.cs.cf huginn.cs.cf mail.cs.cf mail.eecs.cf mailspool.cs.cf \
+ 	python.cs.cf ucbarpa.cf ucbvax.cf vangogh.cs.cf
+ OTHER=	knecht.cf
+-ALL=	submit.cf $(GENERIC) $(OTHER)
++OPENBSD.cf= openbsd-bulk.cf openbsd-lists.cf openbsd-localhost.cf \
++	openbsd-proto.cf openbsd-submit.cf
++ALL=	submit.cf $(GENERIC) $(OTHER) $(OPENBSD.cf)
+ 
+ all: $(ALL)
+ 
+@@ -83,7 +85,7 @@ install-sendmail-cf: $(CF).cf
+ 	$(INSTALL) -c -o $(CFOWN) -g $(CFGRP) -m $(CFMODE) $(CF).cf ${DESTDIR}$(MAILDIR)/sendmail.cf
+ 
+ install-submit-cf: $(SUBMIT).cf
+-	$(INSTALL) -c -o $(CFOWN) -g $(CFGRP) -m $(CFMODE) $(SUBMIT).cf ${DESTDIR}$(MAILDIR)/submit.cf
++#	$(INSTALL) -c -o $(CFOWN) -g $(CFGRP) -m $(CFMODE) $(SUBMIT).cf ${DESTDIR}$(MAILDIR)/submit.cf
+ 
+ depend:
+ 

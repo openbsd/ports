@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $OpenBSD: sendmail-disable,v 1.1.1.1 2014/09/16 17:09:31 jca Exp $
+
+if [ ! -f /etc/mailer.conf.pre-sendmail ]; then
+    echo "can't find /etc/mailer.conf.pre-sendmail, sendmail not disabled" >&2
+    exit 1
+fi
+
+if [ -f /etc/mailer.conf ]; then
+    if mv -f /etc/mailer.conf /etc/mailer.conf.sendmail &&
+	mv -f /etc/mailer.conf.pre-sendmail /etc/mailer.conf; then
+	echo "sendmail mailer.conf disabled, old mailer.conf enabled" >&2
+    else
+	echo "failed to restore old mailer.conf" >&2
+	exit 1
+    fi
+else
+    echo "can't find /etc/mailer.conf, sendmail not disabled" >&2
+    exit 1
+fi
