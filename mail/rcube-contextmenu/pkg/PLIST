@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/04/29 19:34:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/16 11:30:46 sthen Exp $
 roundcubemail/plugins/contextmenu/
 roundcubemail/plugins/contextmenu/CHANGELOG
 roundcubemail/plugins/contextmenu/README.md
 roundcubemail/plugins/contextmenu/composer.json
 roundcubemail/plugins/contextmenu/contextmenu.js
 roundcubemail/plugins/contextmenu/contextmenu.php
-roundcubemail/plugins/contextmenu/jquery.contextmenu.min.js
 roundcubemail/plugins/contextmenu/localization/
 roundcubemail/plugins/contextmenu/localization/ca_ES.inc
 roundcubemail/plugins/contextmenu/localization/cs_CZ.inc
@@ -33,18 +32,12 @@ roundcubemail/plugins/contextmenu/localization/zh_TW.inc
 roundcubemail/plugins/contextmenu/skins/
 roundcubemail/plugins/contextmenu/skins/classic/
 roundcubemail/plugins/contextmenu/skins/classic/contextmenu.css
-roundcubemail/plugins/contextmenu/skins/classic/ie6hacks.css
+roundcubemail/plugins/contextmenu/skins/classic/functions.js
 roundcubemail/plugins/contextmenu/skins/classic/images/
-roundcubemail/plugins/contextmenu/skins/classic/images/contexticons.gif
 roundcubemail/plugins/contextmenu/skins/classic/images/contexticons.png
-roundcubemail/plugins/contextmenu/skins/classic/images/folders.gif
-roundcubemail/plugins/contextmenu/skins/classic/images/folders.png
-roundcubemail/plugins/contextmenu/skins/classic/images/messageactions.gif
 roundcubemail/plugins/contextmenu/skins/classic/images/messageactions.png
 roundcubemail/plugins/contextmenu/skins/larry/
 roundcubemail/plugins/contextmenu/skins/larry/contextmenu.css
-roundcubemail/plugins/contextmenu/skins/larry/ie6hacks.css
+roundcubemail/plugins/contextmenu/skins/larry/functions.js
 roundcubemail/plugins/contextmenu/skins/larry/images/
 roundcubemail/plugins/contextmenu/skins/larry/images/contexticons.png
-roundcubemail/plugins/contextmenu/skins/larry/images/folders.png
-roundcubemail/plugins/contextmenu/skins/larry/images/messageactions.png
