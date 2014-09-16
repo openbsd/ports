@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_print_cpu_usage_c,v 1.5 2014/09/16 19:03:33 espie Exp $
+--- src/print_cpu_usage.c.orig	Tue Sep 16 13:00:15 2014
++++ src/print_cpu_usage.c	Tue Sep 16 13:01:43 2014
+@@ -10,7 +10,11 @@
+ #include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
++#if defined(__OpenBSD__)
++#include <sys/sched.h>
++#else
+ #include <sys/dkstat.h>
++#endif
+ #endif
+ 
+ #if defined(__DragonFly__)
