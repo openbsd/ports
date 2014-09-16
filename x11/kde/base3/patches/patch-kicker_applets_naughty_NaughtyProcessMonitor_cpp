@@ -1,6 +1,15 @@
-$OpenBSD: patch-kicker_applets_naughty_NaughtyProcessMonitor_cpp,v 1.2 2011/07/06 14:51:19 dcoppa Exp $
---- kicker/applets/naughty/NaughtyProcessMonitor.cpp.orig	Mon Oct 10 17:03:59 2005
-+++ kicker/applets/naughty/NaughtyProcessMonitor.cpp	Wed Jul  6 16:08:25 2011
+$OpenBSD: patch-kicker_applets_naughty_NaughtyProcessMonitor_cpp,v 1.3 2014/09/16 20:13:49 espie Exp $
+--- kicker/applets/naughty/NaughtyProcessMonitor.cpp.orig	Mon Oct 10 09:03:59 2005
++++ kicker/applets/naughty/NaughtyProcessMonitor.cpp	Tue Sep 16 14:10:59 2014
+@@ -25,7 +25,7 @@
+ #include <sys/proc.h>
+ #include <sys/sysctl.h>
+ #include <sys/ucred.h>
+-#include <sys/dkstat.h>
++#include <sys/sched.h>
+ #include <stdlib.h>
+ #endif
+ 
 @@ -409,12 +409,12 @@ NaughtyProcessMonitor::pidList() const
    d->cacheLoadMap_.clear () ;
    d->uidMap_.clear () ;
