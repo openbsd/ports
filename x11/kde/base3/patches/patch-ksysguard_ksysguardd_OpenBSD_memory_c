@@ -1,9 +1,12 @@
-$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.2 2014/07/08 10:03:20 sthen Exp $
---- ksysguard/ksysguardd/OpenBSD/memory.c.orig	Mon Oct 10 11:04:31 2005
-+++ ksysguard/ksysguardd/OpenBSD/memory.c	Mon Jul  7 10:30:04 2014
-@@ -24,6 +24,7 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.3 2014/09/16 20:02:35 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/memory.c.orig	Mon Oct 10 09:04:31 2005
++++ ksysguard/ksysguardd/OpenBSD/memory.c	Tue Sep 16 13:56:31 2014
+@@ -22,8 +22,9 @@
+ 
+ #include <sys/param.h>
  #include <sys/sysctl.h>
- #include <sys/dkstat.h>
+-#include <sys/dkstat.h>
++#include <sys/sched.h>
  #include <sys/swap.h>
 +#include <sys/vmmeter.h>
  

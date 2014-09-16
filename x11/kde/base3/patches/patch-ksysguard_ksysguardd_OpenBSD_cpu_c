@@ -1,0 +1,12 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_cpu_c,v 1.1 2014/09/16 20:02:35 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/cpu.c.orig	Tue Sep 16 13:52:43 2014
++++ ksysguard/ksysguardd/OpenBSD/cpu.c	Tue Sep 16 13:53:05 2014
+@@ -20,7 +20,7 @@
+ 
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+-#include <sys/dkstat.h>
++#include <sys/sched.h>
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
