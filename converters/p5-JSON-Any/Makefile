@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/07/12 20:11:24 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/16 14:02:53 jasper Exp $
 
 COMMENT =	wrapper class for the various JSON classes
 
 MODULES =	cpan
-DISTNAME =	JSON-Any-1.34
+DISTNAME =	JSON-Any-1.36
 CATEGORIES =	converters
 
 # Perl
@@ -15,7 +15,9 @@ RUN_DEPENDS =	converters/p5-JSON>=2.21 \
 		devel/p5-YAML-Syck
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS =	devel/p5-Test-Warnings \
+TEST_DEPENDS =	devel/p5-Test-Fatal \
+		devel/p5-Test-Requires \
+		devel/p5-Test-Warnings \
 		devel/p5-Test-Without-Module
 
 .include <bsd.port.mk>
