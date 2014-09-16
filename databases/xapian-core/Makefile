@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/11 10:37:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2014/09/16 12:45:21 sthen Exp $
 
 COMMENT=	search engine library
 
 V=		1.2.15
+PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 REVISION=	0
 
