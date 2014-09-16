@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/18 23:17:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/09/16 19:22:38 landry Exp $
 
 COMMENT=	graphical circuit design and simulation tool
+BROKEN-hppa =	OOM on hicumL2V2p23.core.o
 
 DISTNAME=	qucs-0.0.16
 REVISION=	0
