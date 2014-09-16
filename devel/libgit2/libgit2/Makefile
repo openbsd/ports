@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/07/08 15:33:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/09/16 08:12:27 jasper Exp $
 
 COMMENT=		the Git library, take 2
 
-GH_VER=			v0.21.0
+GH_VER=			v0.21.1
 V=			${GH_VER:S/v//}
 PROJECT=		libgit2
 SHARED_LIBS +=  git2                      5.0 # 0.21
