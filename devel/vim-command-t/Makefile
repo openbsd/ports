@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/16 12:58:58 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/16 13:10:46 jasper Exp $
 
 COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
 DISTNAME =		vim-command-t-${V}
-EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		devel editors
 
