@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/04 09:16:03 mbalmer Exp $
-bin/mp3gain
+@comment $OpenBSD: PLIST,v 1.2 2014/09/16 12:02:05 sthen Exp $
+@bin bin/mp3gain

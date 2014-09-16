@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/10 02:08:20 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/16 12:02:05 sthen Exp $
 
 COMMENT=	audio file volume normalizer
 
-DISTNAME=	mp3gain-1_4_6-src
-PKGNAME=	mp3gain-1.4.6
-REVISION=	0
+DISTNAME=	mp3gain-1_5_2-src
+PKGNAME=	mp3gain-1.5.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3gain/}
 
 HOMEPAGE=	http://mp3gain.sourceforge.net/
 EXTRACT_SUFX=	.zip
 
-# LGPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m
+
+WANTLIB += c m
 
 ALL_TARGET=		all
 USE_GMAKE=		Yes
