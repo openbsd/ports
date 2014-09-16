@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2014/07/12 12:42:55 giovanni Exp $
+# $OpenBSD: Makefile,v 1.38 2014/09/16 19:18:07 landry Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
+BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
 V=		3.8.1
 PKGNAME=	filezilla-$V
