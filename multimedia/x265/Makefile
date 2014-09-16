@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/16 18:13:58 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/16 19:21:21 landry Exp $
 
 COMMENT=	free H.265/HEVC encoder
 BROKEN-powerpc =	undefined reference to `__sync_val_compare_and_swap_8'
+BROKEN-hppa =		undefined reference to `__sync_val_compare_and_swap_8'
+
 
 DISTNAME=	1.3
 PKGNAME=	x265-${DISTNAME}
