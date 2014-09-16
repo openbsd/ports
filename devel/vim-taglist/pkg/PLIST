@@ -1,3 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/29 09:04:53 simon Exp $
-share/vim/${VIMDIR}/doc/taglist.txt
-share/vim/${VIMDIR}/plugin/taglist.vim
+@comment $OpenBSD: PLIST,v 1.3 2014/09/16 12:24:26 chrisz Exp $
+share/vim/vimfiles/
+share/vim/vimfiles/doc/
+share/vim/vimfiles/doc/taglist.txt
+share/vim/vimfiles/doc/vim-taglist.tags
+@comment merge tagfiles of plugin documentation
+@exec-always sort -mo %D/share/vim/vimfiles/doc/tags %D/share/vim/vimfiles/doc/*.tags 2>/dev/null || true
+@comment remove tags, so that the vimfiles dir can be deleted if necessary
+@unexec-delete rm -f %D/share/vim/vimfiles/doc/tags
+@comment if there still is plugin documentation left, recreate tags file
+@unexec-delete sort -mo %D/share/vim/vimfiles/doc/tags %D/share/vim/vimfiles/doc/*.tags 2>/dev/null || true
+share/vim/vimfiles/plugin/
+share/vim/vimfiles/plugin/taglist.vim
