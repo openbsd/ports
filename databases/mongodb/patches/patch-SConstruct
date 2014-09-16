@@ -1,7 +1,7 @@
-$OpenBSD: patch-SConstruct,v 1.3 2013/12/10 17:30:41 joshe Exp $
---- SConstruct.orig	Thu Oct 17 11:37:56 2013
-+++ SConstruct	Mon Oct 28 20:07:16 2013
-@@ -702,7 +702,6 @@ if nix:
+$OpenBSD: patch-SConstruct,v 1.4 2014/09/16 17:28:07 jasper Exp $
+--- SConstruct.orig	Fri Aug  8 22:13:51 2014
++++ SConstruct	Tue Sep 16 16:08:02 2014
+@@ -814,7 +814,6 @@ if nix:
      # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used.
      env.Append( CCFLAGS=["-fPIC",
                           "-fno-strict-aliasing",
@@ -9,25 +9,27 @@ $OpenBSD: patch-SConstruct,v 1.3 2013/12/10 17:30:41 joshe Exp $
                           "-pthread",
                           "-Wall",
                           "-Wsign-compare",
-@@ -716,6 +715,7 @@ if nix:
+@@ -828,6 +827,7 @@ if nix:
  
      env.Append( CPPDEFINES=["_FILE_OFFSET_BITS=64"] )
      env.Append( CXXFLAGS=["-Wnon-virtual-dtor", "-Woverloaded-virtual"] )
 +    env.Append( CXXFLAGS=os.environ['CXXFLAGS'] )
-     env.Append( LINKFLAGS=["-fPIC", "-pthread",  "-rdynamic"] )
-     env.Append( LIBS=[] )
+     env.Append( LINKFLAGS=["-fPIC", "-pthread"] )
  
-@@ -731,10 +731,10 @@ if nix:
+     # SERVER-9761: Ensure early detection of missing symbols in dependent libraries at program
+@@ -859,14 +859,9 @@ if nix:
+         env.Append( CPPDEFINES=["MONGO_GCOV"] )
          env.Append( LINKFLAGS=" -fprofile-arcs -ftest-coverage " )
  
-     if debugBuild:
--        env.Append( CCFLAGS=["-O0", "-fstack-protector"] )
-+        env.Append( CCFLAGS=["-O0", "-fstack-protector", "-ggdb"] )
-         env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
--    else:
+-    if optBuild:
 -        env.Append( CCFLAGS=["-O3"] )
-+    #else:
-+        #env.Append( CCFLAGS=["-O3"] )
- 
-     if debugLogging:
-         env.Append( CPPDEFINES=["_DEBUG"] );
+-    else:
+-        env.Append( CCFLAGS=["-O0"] )
+-
+     if debugBuild:
+         if not optBuild:
+-            env.Append( CCFLAGS=["-fstack-protector"] )
++            env.Append( CCFLAGS=["-fstack-protector", "-ggdb"] )
+             env.Append( LINKFLAGS=["-fstack-protector"] )
+             env.Append( SHLINKFLAGS=["-fstack-protector"] )
+         env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
