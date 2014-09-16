@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1250 2014/09/16 13:06:09 edd Exp $
+# $OpenBSD: Makefile,v 1.1251 2014/09/16 14:23:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1467,7 +1467,6 @@
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += vte3
-     SUBDIR += waf
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake
