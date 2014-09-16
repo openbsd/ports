@@ -1,7 +1,7 @@
-$OpenBSD: patch-iodbc_connect_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
---- iodbc/connect.c.orig	Thu Sep 10 14:04:55 2009
-+++ iodbc/connect.c	Fri Jun  3 12:35:57 2011
-@@ -2598,7 +2598,7 @@ SQLDriverConnect_Internal (
+$OpenBSD: patch-iodbc_connect_c,v 1.2 2014/09/16 15:01:48 sthen Exp $
+--- iodbc/connect.c.orig	Tue Apr 15 12:00:45 2014
++++ iodbc/connect.c	Tue Sep 16 14:29:16 2014
+@@ -2601,7 +2601,7 @@ SQLDriverConnect_Internal (
  	    CFRelease (libname);
  	}
  #else

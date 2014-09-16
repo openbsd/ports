@@ -1,12 +1,12 @@
-$OpenBSD: patch-include_sqltypes_h,v 1.4 2011/06/16 01:29:57 sthen Exp $
---- include/sqltypes.h.orig	Wed Sep  9 21:06:24 2009
-+++ include/sqltypes.h	Fri Jun  3 11:28:05 2011
+$OpenBSD: patch-include_sqltypes_h,v 1.5 2014/09/16 15:01:48 sthen Exp $
+--- include/sqltypes.h.orig	Tue Apr 15 12:00:45 2014
++++ include/sqltypes.h	Tue Sep 16 14:29:16 2014
 @@ -343,7 +343,7 @@ SQL_INTERVAL_STRUCT;
   */
  #if (ODBCVER >= 0x0300)
  
--#if (_MSC_VER >= 900)
-+#if defined(_MSC_VER) && (_MSC_VER >= 900)
+-#if defined(_MSC_VER) && (_MSC_VER >= 900)
++#if (_MSC_VER >= 900)
  #  define ODBCINT64 		__int64
  #endif
  
