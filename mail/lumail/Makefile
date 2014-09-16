@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2014/05/15 01:29:52 jturner Exp $
+# $OpenBSD: Makefile,v 1.19 2014/09/16 23:41:41 jturner Exp $
 
 COMMENT =		console-based e-mail client with Lua scripting support
 
-DISTNAME =		lumail-0.25
+DISTNAME =		lumail-0.26
 CATEGORIES =		mail
 
 MAINTAINER =		James Turner <james@calminferno.net>

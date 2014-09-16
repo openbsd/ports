@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_bindings_cc,v 1.3 2014/05/15 01:29:52 jturner Exp $
+$OpenBSD: patch-src_bindings_cc,v 1.4 2014/09/16 23:41:41 jturner Exp $
 
 Check ${LOCALBASE} for help file.
 
---- src/bindings.cc.orig	Wed May 14 04:01:18 2014
-+++ src/bindings.cc	Wed May 14 21:21:29 2014
+--- src/bindings.cc.orig	Tue Sep 16 13:29:01 2014
++++ src/bindings.cc	Tue Sep 16 18:45:20 2014
 @@ -19,7 +19,7 @@
  
  
@@ -13,7 +13,7 @@ Check ${LOCALBASE} for help file.
  #include <fstream>
  #include <iostream>
  #include <map>
-@@ -719,9 +719,9 @@ int show_help(lua_State * L)
+@@ -724,9 +724,9 @@ int show_help(lua_State * L)
       */
      if (str == NULL)
      {
