@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2014/05/01 08:48:19 edd Exp $
+$OpenBSD: patch-setup_py,v 1.2 2014/09/16 13:15:52 edd Exp $
 
 Fix calls to gmake.
 

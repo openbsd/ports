@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/01 08:48:19 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/16 13:15:53 edd Exp $
 bin/hgview
-lib/python${MODPY_VERSION}/site-packages/hgext/
 lib/python${MODPY_VERSION}/site-packages/hgext/hgview.py
 lib/python${MODPY_VERSION}/site-packages/hgext/hgview.pyc
 lib/python${MODPY_VERSION}/site-packages/hgview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -99,5 +98,5 @@ lib/python${MODPY_VERSION}/site-packages/hgviewlib/qt4/styleditemdelegate.pyc
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/util.py
 lib/python${MODPY_VERSION}/site-packages/hgviewlib/util.pyc
 @man man/man1/hgview.1
-share/hgview/
-share/hgview/description.css
+share/examples/hgview/
+share/examples/hgview/description.css
