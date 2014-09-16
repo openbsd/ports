@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2014/08/20 06:34:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.314 2014/09/16 17:11:29 jca Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -193,6 +193,7 @@
      SUBDIR += ruby-mime
      SUBDIR += ruby-mime-types
      SUBDIR += s-nail
+     SUBDIR += sendmail
      SUBDIR += sieve-connect
      SUBDIR += signify
      SUBDIR += sma
