@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.4 2014/08/10 21:50:41 jca Exp $
+$OpenBSD: patch-configure,v 1.5 2014/09/16 12:35:18 sthen Exp $
 
 Use GNU readline as our base readline lacks add_history_time().
 Fix failing test for libssl, LibreSSL doesn't provide RAND_egd.
 
---- configure.orig	Sun Jul  6 14:15:50 2014
-+++ configure	Fri Aug  8 21:57:44 2014
-@@ -47994,7 +47994,7 @@ if ${lftp_cv_precompiled_readline+:} false; then :
+--- configure.orig	Thu Sep  4 12:29:23 2014
++++ configure	Tue Sep 16 13:21:48 2014
+@@ -48071,7 +48071,7 @@ if ${lftp_cv_precompiled_readline+:} false; then :
  else
  
     old_LIBS="$LIBS"
@@ -14,7 +14,7 @@ Fix failing test for libssl, LibreSSL doesn't provide RAND_egd.
     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  extern int (*rl_getc_function)();
-@@ -48034,7 +48034,7 @@ if test $lftp_cv_precompiled_readline = yes; then
+@@ -48111,7 +48111,7 @@ if test $lftp_cv_precompiled_readline = yes; then
     READLINE_DIR=''
     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
@@ -23,7 +23,7 @@ Fix failing test for libssl, LibreSSL doesn't provide RAND_egd.
     READLINE_DEPEND=''
     COMPILE_READLINE=no
  else
-@@ -48327,7 +48327,7 @@ else
+@@ -48404,7 +48404,7 @@ else
  int
  main ()
  {

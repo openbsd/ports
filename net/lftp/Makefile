@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.98 2014/08/10 21:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.99 2014/09/16 12:35:18 sthen Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.5.3
+DISTNAME=	lftp-4.5.5
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -10,10 +10,11 @@ HOMEPAGE=	http://lftp.yar.ru/
 # GPLv3+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	c crypto curses expat m ereadline ssl stdc++ util z
+WANTLIB=	c crypto curses expat idn m ereadline ssl stdc++ util z
 
 # lftp needs add_history_time()
-LIB_DEPENDS=	devel/readline>=6.1p2
+LIB_DEPENDS=	devel/libidn \
+		devel/readline>=6.1p2 \
 
 MASTER_SITES=	http://lftp.yar.ru/ftp/
 
