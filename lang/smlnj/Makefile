@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2013/12/08 22:24:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/09/16 18:07:41 landry Exp $
 
 ONLY_FOR_ARCHS=i386 powerpc
+BROKEN-powerpc =	/usr/obj/ports/smlnj-110.76//bin/.run/run.ppc-openbsd: undefined symbol ''
 
 COMMENT=	New Jersey Standard ML
 
