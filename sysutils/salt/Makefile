@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/09/13 05:09:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2014/09/16 09:32:12 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -47,6 +47,7 @@ RUN_DEPENDS =		net/py-msgpack \
 PORTHOME =		${WRKDIST}
 TEST_DEPENDS =		databases/py-mysql \
 			devel/git \
+			devel/py-gitpython \
 			devel/py-pip \
 			devel/py-virtualenv \
 			devel/subversion \
