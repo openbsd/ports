@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/23 21:16:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/16 12:08:59 sthen Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
-MODPY_EGG_VERSION= 3.1.1
+MODPY_EGG_VERSION= 3.1.2
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
 
 CATEGORIES=	audio
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE=	http://quodlibet.googlecode.com/
 
