@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/09/07 18:16:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/09/16 06:46:37 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1491,7 +1491,6 @@ ${MODRUBY_SITEDIR}/semver.rb
 @man man/man8/puppet-status.8
 @man man/man8/puppet.8
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/emacs/site-lisp/
 share/emacs/site-lisp/puppet-mode-init.el
 share/emacs/site-lisp/puppet-mode.el
 ${MODRUBY_RELEXAMPLEDIR}-puppet/
