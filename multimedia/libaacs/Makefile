@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/16 18:11:35 landry Exp $
 
 SHARED_ONLY =		Yes
 
+BROKEN-powerpc =	fails to link, undefined refs to free/malloc
 COMMENT =		AACS support library for Blu-ray playback
 
 V =			0.5.0
