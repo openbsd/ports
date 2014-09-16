@@ -1,6 +1,6 @@
-$OpenBSD: patch-m_muttalias_sh_in,v 1.3 2009/08/07 19:43:36 naddy Exp $
---- m_muttalias.sh.in.orig	Sun May 27 10:42:22 2007
-+++ m_muttalias.sh.in	Fri Aug  7 16:12:17 2009
+$OpenBSD: patch-m_muttalias_sh_in,v 1.4 2014/09/16 12:15:23 sthen Exp $
+--- m_muttalias.sh.in.orig	Thu Jun 11 11:56:22 2009
++++ m_muttalias.sh.in	Tue Sep 16 13:04:48 2014
 @@ -34,10 +34,10 @@ m_muttalias_query()
  	if [ -f "$file" ]
  	then
@@ -14,5 +14,5 @@ $OpenBSD: patch-m_muttalias_sh_in,v 1.3 2009/08/07 19:43:36 naddy Exp $
 +		  -e 's/^alias[ 	][ 	]*([^ 	][^ 	]*)[ 	][ 	]*(\\\".*\\\"[^<>()]*|[^<>()]*)<([^<>()]*)>[^<>]*$/\3	\2	alias \1/' \
 +	          -e 's/^alias[ 	][ 	]*([^ 	][^ 	]*)[ 	][ 	]*([^<>()]*)\((\\\".*\\\"[^<>()]*|[^<>()]*)\)[^()<>]*$/\2	\3	alias \1/' \
  		  -e 's/\\\"//g' \
- 	    | grep -va '^alias[ 	][ 	]*[^,][^,]*[ 	][ 	]*[^,]*$'
+ 	    | grep -va '^alias[ 	][ 	]*[^,][^,]*[ 	][ 	]*[^,]*$' || :
  	fi  

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/03/20 13:59:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2014/09/16 12:15:23 sthen Exp $
 
-COMMENT-main =		little brother's database, email address query tools
+COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
 
-VERSION =		0.36
-REVISION-main =		4
-REVISION-ldap =		7
+VERSION =		0.39
 
 DISTNAME =		lbdb_${VERSION}
 PKGNAME-main =		lbdb-${VERSION}
@@ -32,6 +30,7 @@ MASTER_SITES =		http://www.spinnaker.de/debian/
 
 MAKE_ENV =		install_prefix=${WRKINST}
 
+NO_TEST =		Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 
