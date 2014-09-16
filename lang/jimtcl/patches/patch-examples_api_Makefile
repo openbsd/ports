@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_api_Makefile,v 1.1 2014/09/16 15:41:15 stu Exp $
+--- examples.api/Makefile.orig	Wed Sep  3 22:22:49 2014
++++ examples.api/Makefile	Wed Sep  3 22:23:27 2014
+@@ -1,6 +1,6 @@
+ CFLAGS+= -Wall -g
+-CFLAGS+= -I..
+-LDLIBS += -L.. -ljim
++CFLAGS+= -I${LOCALBASE}/include/jim
++LDLIBS += -L${LOCALBASE}/lib -ljim
+ 
+ EXAMPLES=		\
+ 	jim_command	\

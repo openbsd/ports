@@ -1,0 +1,15 @@
+$OpenBSD: patch-initjimsh_tcl,v 1.1 2014/09/16 15:41:15 stu Exp $
+
+Don't include ${LOCALBASE}/bin in the auto_path;
+Jim extensions will never be installed there.
+
+--- initjimsh.tcl.orig	Thu Sep  4 03:08:30 2014
++++ initjimsh.tcl	Thu Sep  4 03:08:39 2014
+@@ -7,7 +7,6 @@ proc _jimsh_init {} {
+ 	# Add to the standard auto_path
+ 	lappend p {*}[split [env JIMLIB {}] $::tcl_platform(pathSeparator)]
+ 	lappend p {*}$::auto_path
+-	lappend p [file dirname [info nameofexecutable]]
+ 	set ::auto_path $p
+ 
+ 	if {$::tcl_interactive && [env HOME {}] ne ""} {

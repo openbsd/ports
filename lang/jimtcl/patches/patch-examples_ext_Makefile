@@ -1,0 +1,30 @@
+$OpenBSD: patch-examples_ext_Makefile,v 1.1 2014/09/16 15:41:15 stu Exp $
+--- examples.ext/Makefile.orig	Thu Sep 11 21:39:06 2014
++++ examples.ext/Makefile	Fri Sep 12 17:41:23 2014
+@@ -9,21 +9,21 @@
+ # Prefer jimsh in the PATH because it is more likely to be built
+ # for the build-host rather than the target.
+ 
+-ifdef NOTEST
++.ifdef NOTEST
+ BUILDOPTS := --notest
+-endif
++.endif
+ 
+-export PATH := $(PATH):..
+ 
+ all: helloworld.so
+ 
+ helloworld.so: helloworld.c
+-	../build-jim-ext -I.. -L.. $(BUILDOPTS) $^
++	${LOCALBASE}/share/examples/jim/build-jim-ext \
++	-I${LOCALBASE}/include/jim $(BUILDOPTS) $>
+ 
+ # Note: Currently we don't attempt to set LD_LIBRARY_PATH or equivalent
+ 
+ test:
+-	JIMLIB=. ../jimsh -e 'package require helloworld; hello'
++	JIMLIB=. jimsh -e 'package require helloworld; hello'
+ 
+ clean:
+ 	rm -f *.o *.so

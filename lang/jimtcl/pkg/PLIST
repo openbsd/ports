@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/11/14 09:11:21 stu Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/16 15:41:16 stu Exp $
 @bin bin/jimsh
 include/jim/
 include/jim/jim-config.h
@@ -11,13 +11,32 @@ lib/jim/
 lib/jim/sqlite3.so
 @lib lib/libjim.so.${LIBjim_VERSION}
 share/doc/jim/
+share/doc/jim/LICENSE
+share/doc/jim/README
 share/doc/jim/README.extensions
+share/doc/jim/README.namespaces
+share/doc/jim/README.oo
+share/doc/jim/README.sqlite
+share/doc/jim/README.utf-8
 share/doc/jim/Tcl.html
 share/examples/jim/
+share/examples/jim/api/
+share/examples/jim/api/Makefile
+share/examples/jim/api/README
+share/examples/jim/api/jim_command.c
+share/examples/jim/api/jim_hello.c
+share/examples/jim/api/jim_list.c
+share/examples/jim/api/jim_obj.c
+share/examples/jim/api/jim_return.c
+share/examples/jim/api/print.tcl
 share/examples/jim/build-jim-ext
 share/examples/jim/client-server.tcl
 share/examples/jim/dns.tcl
 share/examples/jim/dnstest.tcl
+share/examples/jim/ext/
+share/examples/jim/ext/Makefile
+share/examples/jim/ext/README
+share/examples/jim/ext/helloworld.c
 share/examples/jim/jtclsh.tcl
 share/examples/jim/metakit.tcl
 share/examples/jim/ootest.tcl

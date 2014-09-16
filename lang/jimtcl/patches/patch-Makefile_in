@@ -1,63 +1,50 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2013/11/14 09:11:21 stu Exp $
-
-Install everything nicely.
-
---- Makefile.in.orig	Sat Nov  9 00:49:42 2013
-+++ Makefile.in	Sat Nov  9 10:04:48 2013
-@@ -54,6 +54,12 @@ OBJS := _load-static-exts.o jim-subcmd.o jim-interacti
+$OpenBSD: patch-Makefile_in,v 1.5 2014/09/16 15:41:15 stu Exp $
+--- Makefile.in.orig	Thu Aug  7 21:59:27 2014
++++ Makefile.in	Thu Sep  4 00:51:06 2014
+@@ -59,6 +59,7 @@ JIMSH := jimsh@EXEEXT@
+ INSTALL_DATA_DIR ?= mkdir -p
+ INSTALL_DATA ?= cp
+ INSTALL_PROGRAM ?= cp
++INSTALL_SCRIPT ?= cp
+ @endif
  
- JIMSH := jimsh@EXEEXT@
- 
-+@if JIM_INSTALL
-+INSTALL_DATA_DIR ?= mkdir -p
-+INSTALL_DATA ?= cp
-+INSTALL_PROGRAM ?= cp
-+@endif
-+
  all: $(JIMSH) @C_EXT_SHOBJS@
- 
- # Create C extensions from pure Tcl extensions
-@@ -66,8 +72,8 @@ docs: Tcl.html
+@@ -73,8 +74,9 @@ docs: Tcl.html
  
  @if JIM_DOCS
  install-docs: docs
--	mkdir -p $(DESTDIR)$(prefix)/doc/jim
--	cp Tcl.html $(DESTDIR)$(prefix)/doc/jim
+-	$(INSTALL_DATA_DIR) $(DESTDIR)$(prefix)/doc/jim
+-	$(INSTALL_DATA) Tcl.html $(DESTDIR)$(prefix)/doc/jim
 +	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/doc/jim
-+	$(INSTALL_DATA) @srcdir@/README.extensions Tcl.html $(DESTDIR)@datadir@/doc/jim
++	$(INSTALL_DATA) @srcdir@/LICENSE @srcdir@/README Tcl.html $(DESTDIR)@datadir@/doc/jim
++	$(INSTALL_DATA) @srcdir@/README.{extensions,namespaces,oo,sqlite,utf-8} $(DESTDIR)@datadir@/doc/jim
  @else
  install-docs:
  @endif
-@@ -77,20 +83,21 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+@@ -83,17 +85,22 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+ 	$(JIMSH_CC) @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
  
  @if JIM_INSTALL
- install: all @TCL_EXTS@ install-exec install-docs
--	mkdir -p $(DESTDIR)@libdir@/jim
--	cp $(LIBJIM) $(DESTDIR)@libdir@
--	cp @srcdir@/README.extensions @C_EXT_SHOBJS@ $(DESTDIR)@libdir@/jim
--	for i in @TCL_EXTS@; do cp @srcdir@/$$i $(DESTDIR)@libdir@/jim; done
--	mkdir -p $(DESTDIR)@includedir@
--	cp @srcdir@/jim.h @srcdir@/jim-eventloop.h @srcdir@/jim-signal.h \
-+	$(INSTALL_DATA) $(LIBJIM) $(DESTDIR)@libdir@
-+	$(INSTALL_DATA_DIR) $(DESTDIR)@libdir@/jim
+-install: all @TCL_EXTS@ install-exec install-docs
++install: all @TCL_EXTS@ install-exec install-docs install-exas
+ 	$(INSTALL_DATA_DIR) $(DESTDIR)@libdir@/jim
+ 	$(INSTALL_DATA) $(LIBJIM) $(DESTDIR)@libdir@
+-	$(INSTALL_DATA) @srcdir@/README.extensions @C_EXT_SHOBJS@ $(DESTDIR)@libdir@/jim
 +	$(INSTALL_DATA) @C_EXT_SHOBJS@ $(DESTDIR)@libdir@/jim
-+	for i in @TCL_EXTS@; do $(INSTALL_DATA) @srcdir@/$$i $(DESTDIR)@libdir@/jim; done
-+	$(INSTALL_DATA_DIR) $(DESTDIR)@includedir@
-+	$(INSTALL_DATA) @srcdir@/jim.h @srcdir@/jim-eventloop.h @srcdir@/jim-signal.h \
+ 	for i in @TCL_EXTS@; do $(INSTALL_DATA) @srcdir@/$$i $(DESTDIR)@libdir@/jim; done
+ 	$(INSTALL_DATA_DIR) $(DESTDIR)@includedir@
+ 	$(INSTALL_DATA) @srcdir@/jim.h @srcdir@/jim-eventloop.h @srcdir@/jim-signal.h \
  		@srcdir@/jim-subcmd.h @srcdir@/jim-win32compat.h $(DESTDIR)@includedir@
--	cp jim-config.h $(DESTDIR)@includedir@
--	mkdir -p $(DESTDIR)@bindir@
--	cp build-jim-ext $(DESTDIR)@bindir@
-+	$(INSTALL_DATA) jim-config.h $(DESTDIR)@includedir@
-+	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
-+	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/examples/jim
-+	$(INSTALL_DATA) build-jim-ext @srcdir@/examples/* $(DESTDIR)@datadir@/examples/jim
+ 	$(INSTALL_DATA) jim-config.h $(DESTDIR)@includedir@
+-	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
+-	$(INSTALL_DATA) build-jim-ext $(DESTDIR)@bindir@
++
++install-exas:
++	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/examples/jim{,/api,/ext}
++	$(INSTALL_SCRIPT) build-jim-ext         $(DESTDIR)@datadir@/examples/jim
++	$(INSTALL_DATA) @srcdir@/examples/*     $(DESTDIR)@datadir@/examples/jim
++	$(INSTALL_DATA) @srcdir@/examples.api/{README,Makefile,*.c,*.tcl} $(DESTDIR)@datadir@/examples/jim/api
++	$(INSTALL_DATA) @srcdir@/examples.ext/{README,Makefile,*.c} $(DESTDIR)@datadir@/examples/jim/ext
  
  install-exec: all
--	mkdir -p $(DESTDIR)@bindir@
--	cp $(JIMSH) $(DESTDIR)@bindir@
-+	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
-+	$(INSTALL_PROGRAM) $(JIMSH) $(DESTDIR)@bindir@
- 
- uninstall:
- 	rm -f $(DESTDIR)@bindir@/$(JIMSH)
+ 	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
