@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.89 2014/09/16 09:07:03 espie Exp $
+# $OpenBSD: Makefile,v 1.90 2014/09/16 16:24:02 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
-FAKE_AS_ROOT = 		Yes
 
 VER=			3.4.0
 REVISION=		3
@@ -76,8 +75,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin/sql
 	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}
-	pod2man --section=1 ${WRKSRC}/spamc/spamc.pod > \
-		${PREFIX}/man/man1/spamc.1
 	${INSTALL_DATA} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/*.pre \
 		${SAMPLE_CONFDIR}
 .for i in ${DOCS}
