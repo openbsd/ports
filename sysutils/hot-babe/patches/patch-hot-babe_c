@@ -1,7 +1,7 @@
-$OpenBSD: patch-hot-babe_c,v 1.1.1.1 2004/12/25 10:34:14 alek Exp $
---- hot-babe.c.orig	Thu Dec 16 18:38:18 2004
-+++ hot-babe.c	Thu Dec 16 18:42:12 2004
-@@ -19,6 +19,14 @@
+$OpenBSD: patch-hot-babe_c,v 1.2 2014/09/16 18:57:32 espie Exp $
+--- hot-babe.c.orig	Sun Dec  5 15:59:38 2004
++++ hot-babe.c	Tue Sep 16 12:56:16 2014
+@@ -19,6 +19,13 @@
  #include <unistd.h>
  #include <stdlib.h>
  #include <string.h>
@@ -9,14 +9,13 @@ $OpenBSD: patch-hot-babe_c,v 1.1.1.1 2004/12/25 10:34:14 alek Exp $
 +#include <sys/param.h>
 +#include <sys/sched.h>
 +#include <sys/sysctl.h>
-+#include <sys/dkstat.h>
 +#include <fcntl.h>
 +#include <nlist.h>
 +#endif
  #ifdef __FreeBSD__
  #include <sys/time.h>
  #include <sys/resource.h>
-@@ -99,6 +107,13 @@ static int system_cpu(void)
+@@ -99,6 +106,13 @@ static int system_cpu(void)
    long cp_time[CPUSTATES];
    size_t len = sizeof(cp_time);
  #endif
@@ -30,7 +29,7 @@ $OpenBSD: patch-hot-babe_c,v 1.1.1.1 2004/12/25 10:34:14 alek Exp $
  
  #ifdef __linux__
    stat = fopen("/proc/stat", "r");
-@@ -114,6 +129,16 @@ static int system_cpu(void)
+@@ -114,6 +128,16 @@ static int system_cpu(void)
    ad = cp_time[CP_SYS];
    ae = cp_time[CP_IDLE];
  #endif
@@ -47,7 +46,7 @@ $OpenBSD: patch-hot-babe_c,v 1.1.1.1 2004/12/25 10:34:14 alek Exp $
  
  
    /* Find out the CPU load */
-@@ -122,6 +147,10 @@ static int system_cpu(void)
+@@ -122,6 +146,10 @@ static int system_cpu(void)
    load = ab + ad;  /* cpu.user + cpu.sys; */
    if(!bm.noNice) load += ac;
    total = ab + ac + ad + ae;  /* cpu.total; */
