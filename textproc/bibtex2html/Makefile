@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/16 18:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/16 19:26:34 jasper Exp $
 
 COMMENT =		collection of tools for translating from BibTeX to HTML
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c m
 
-MASTER_SITES =		${HOMEPAGAE}
+MASTER_SITES =		http://www.lri.fr/~filliatr/ftp/bibtex2html/
 
 BUILD_DEPENDS =		lang/ocaml \
 			print/texlive/base \
