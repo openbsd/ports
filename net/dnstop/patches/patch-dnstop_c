@@ -1,7 +1,7 @@
-$OpenBSD: patch-dnstop_c,v 1.7 2012/10/05 19:04:46 gonzalo Exp $
---- dnstop.c.orig	Mon Jun 11 17:17:16 2012
-+++ dnstop.c	Thu Oct  4 18:17:07 2012
-@@ -46,6 +46,7 @@ static const char *Version = "20120611";
+$OpenBSD: patch-dnstop_c,v 1.8 2014/09/16 10:32:39 sthen Exp $
+--- dnstop.c.orig	Mon Sep 15 18:54:51 2014
++++ dnstop.c	Tue Sep 16 11:23:38 2014
+@@ -46,6 +46,7 @@ static const char *Version = "20140915";
  #include <netdb.h>
  
  #ifdef HAVE_NET_IF_PPP_H
