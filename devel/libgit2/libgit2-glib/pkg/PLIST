@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/08/14 08:26:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/09/16 08:18:06 jasper Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-blame-options.h
@@ -8,6 +8,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-blob.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch-enumerator.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-checkout-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-cherry-pick-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-clone-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-commit.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config-entry.h
