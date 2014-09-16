@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1282 2014/09/13 15:09:24 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1283 2014/09/16 19:10:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -906,7 +906,7 @@ FULLPKGPATH = ${FULLPKGPATH${SUBPACKAGE}}
 _FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 .endif
 
-FAKE_AS_ROOT ?= Yes
+FAKE_AS_ROOT ?= No
 .if ${FAKE_AS_ROOT:L} == "yes"
 _FAKESUDO = ${SUDO}
 _BINOWNGRP = -o ${BINOWN} -g ${BINGRP}
