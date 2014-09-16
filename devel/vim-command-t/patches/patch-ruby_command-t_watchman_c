@@ -1,0 +1,12 @@
+$OpenBSD: patch-ruby_command-t_watchman_c,v 1.1.1.1 2014/09/16 12:58:58 edd Exp $
+--- ruby/command-t/watchman.c.orig	Sat Jun 28 12:37:46 2014
++++ ruby/command-t/watchman.c	Sat Jun 28 12:37:51 2014
+@@ -34,7 +34,7 @@
+ #endif
+ 
+ #include <fcntl.h>      /* for fcntl() */
+-#include <sys/errno.h>  /* for errno */
++#include <errno.h>  /* for errno */
+ #include <sys/socket.h> /* for recv(), MSG_PEEK */
+ 
+ typedef struct {

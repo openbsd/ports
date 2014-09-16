@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/16 12:58:58 edd Exp $
+share/vim/vimfiles/autoload/
+share/vim/vimfiles/autoload/commandt.vim
+share/vim/vimfiles/doc/command-t.txt
+share/vim/vimfiles/doc/vim-command-t.tags
+share/vim/vimfiles/plugin/
+share/vim/vimfiles/plugin/command-t.vim
+share/vim/vimfiles/ruby/
+share/vim/vimfiles/ruby/command-t/
+share/vim/vimfiles/ruby/command-t/Makefile
+share/vim/vimfiles/ruby/command-t/controller.rb
+share/vim/vimfiles/ruby/command-t/depend
+share/vim/vimfiles/ruby/command-t/ext.so
+share/vim/vimfiles/ruby/command-t/extconf.rb
+share/vim/vimfiles/ruby/command-t/finder/
+share/vim/vimfiles/ruby/command-t/finder.rb
+share/vim/vimfiles/ruby/command-t/finder/buffer_finder.rb
+share/vim/vimfiles/ruby/command-t/finder/file_finder.rb
+share/vim/vimfiles/ruby/command-t/finder/jump_finder.rb
+share/vim/vimfiles/ruby/command-t/finder/mru_buffer_finder.rb
+share/vim/vimfiles/ruby/command-t/finder/tag_finder.rb
+share/vim/vimfiles/ruby/command-t/match_window.rb
+share/vim/vimfiles/ruby/command-t/mkmf.log
+share/vim/vimfiles/ruby/command-t/mru.rb
+share/vim/vimfiles/ruby/command-t/prompt.rb
+share/vim/vimfiles/ruby/command-t/scanner/
+share/vim/vimfiles/ruby/command-t/scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/buffer_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/file_scanner/
+share/vim/vimfiles/ruby/command-t/scanner/file_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/file_scanner/find_file_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/file_scanner/git_file_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/file_scanner/ruby_file_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/file_scanner/watchman_file_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/jump_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/mru_buffer_scanner.rb
+share/vim/vimfiles/ruby/command-t/scanner/tag_scanner.rb
+share/vim/vimfiles/ruby/command-t/settings.rb
+share/vim/vimfiles/ruby/command-t/stub.rb
+share/vim/vimfiles/ruby/command-t/util.rb
+share/vim/vimfiles/ruby/command-t/vim/
+share/vim/vimfiles/ruby/command-t/vim.rb
+share/vim/vimfiles/ruby/command-t/vim/path_utilities.rb
+share/vim/vimfiles/ruby/command-t/vim/screen.rb
+share/vim/vimfiles/ruby/command-t/vim/window.rb
+@exec-always sort -mo %D/share/vim/vimfiles/doc/tags %D/share/vim/vimfiles/doc/*.tags 2>/dev/null || true
+@unexec-delete rm -f %D/share/vim/vimfiles/doc/tags
+@unexec-delete sort -mo %D/share/vim/vimfiles/doc/tags %D/share/vim/vimfiles/doc/*.tags 2>/dev/null || true

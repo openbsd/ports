@@ -1,0 +1,9 @@
+The Command-T plug-in for VIM provides an extremely fast, intuitive
+mechanism for opening files with a minimal number of keystrokes. It's
+named "Command-T" because it is inspired by the "Go to File" window
+bound to Command-T in TextMate.
+
+Files are selected by typing characters that appear in their paths, and
+are ordered by an algorithm which knows that characters that appear in
+certain locations (for example, immediately after a path separator)
+should be given more weight.
