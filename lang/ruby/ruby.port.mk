@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.72 2014/01/15 02:03:17 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.73 2014/09/17 09:39:35 jasper Exp $
 
 # ruby module
 
@@ -131,7 +131,7 @@ MODRUBY_FLAVOR =	rbx
 
 MODRUBY_RAKE_DEPENDS =	
 MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
-MODRUBY_RSPEC2_DEPENDS = devel/ruby-rspec/rspec,${MODRUBY_FLAVOR}>=2.0
+MODRUBY_RSPEC2_DEPENDS = devel/ruby-rspec/2/rspec,${MODRUBY_FLAVOR}>=2.0
 
 # Set the path for the ruby interpreter and the rake and rspec
 # commands used by MODRUBY_TEST and manually in some port
