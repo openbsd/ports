@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmmon_wmmon_c,v 1.8 2014/07/08 10:15:39 sthen Exp $
---- wmmon/wmmon.c.orig	Tue May 19 22:13:16 1998
-+++ wmmon/wmmon.c	Tue Jul  8 11:14:42 2014
+$OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
+--- wmmon/wmmon.c.orig	Tue May 19 15:13:16 1998
++++ wmmon/wmmon.c	Wed Sep 17 08:36:25 2014
 @@ -28,6 +28,10 @@
  	Changes:
  	----
@@ -24,7 +24,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.8 2014/07/08 10:15:39 sthen Exp $
  #include <sys/types.h>
 +#include <sys/proc.h>
 +#include <sys/disk.h>
-+#include <sys/dkstat.h>
++#include <sys/sched.h>
 +#include <sys/malloc.h>
 +#include <sys/swap.h>
 +#include <sys/sysctl.h>
