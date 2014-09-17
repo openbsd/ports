@@ -1,7 +1,7 @@
-$OpenBSD: patch-panel-plugin_memswap_c,v 1.3 2008/02/26 17:33:10 landry Exp $
---- panel-plugin/memswap.c.orig	Wed Jan 17 19:01:09 2007
-+++ panel-plugin/memswap.c	Tue Feb 26 09:52:49 2008
-@@ -405,20 +405,11 @@ gint read_memswap(gulong *mem, gulong *swap, gulong *M
+$OpenBSD: patch-panel-plugin_memswap_c,v 1.4 2014/09/17 14:48:30 espie Exp $
+--- panel-plugin/memswap.c.orig	Wed Apr 18 13:01:19 2012
++++ panel-plugin/memswap.c	Wed Sep 17 03:12:44 2014
+@@ -289,20 +289,11 @@ gint read_memswap(gulong *mem, gulong *swap, gulong *M
  
  #define ARRLEN(X) (sizeof(X)/sizeof(X[0]))
      {

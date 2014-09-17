@@ -1,0 +1,12 @@
+$OpenBSD: patch-panel-plugin_cpu_c,v 1.1 2014/09/17 14:48:30 espie Exp $
+--- panel-plugin/cpu.c.orig	Wed Sep 17 08:44:06 2014
++++ panel-plugin/cpu.c	Wed Sep 17 08:44:39 2014
+@@ -213,7 +213,7 @@ gulong read_cpuload(void)
+ #include <sys/param.h>
+ #include <sys/sched.h>
+ #include <sys/sysctl.h>
+-#include <sys/dkstat.h>
++#include <sys/sched.h>
+ #include <fcntl.h>
+ #include <nlist.h>
+ 
