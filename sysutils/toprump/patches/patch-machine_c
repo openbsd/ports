@@ -1,11 +1,11 @@
-$OpenBSD: patch-machine_c,v 1.4 2014/07/04 12:20:32 sthen Exp $
---- machine.c.orig	Fri Jul  4 12:36:19 2014
-+++ machine.c	Fri Jul  4 12:36:22 2014
+$OpenBSD: patch-machine_c,v 1.5 2014/09/17 14:39:20 espie Exp $
+--- machine.c.orig	Fri May  4 07:24:08 2012
++++ machine.c	Wed Sep 17 08:38:07 2014
 @@ -35,14 +35,16 @@
  
  #include <sys/types.h>
  #include <sys/param.h>
-+#include <sys/dkstat.h>
++#include <sys/sched.h>
 +#include <sys/mount.h>
 +#include <sys/proc.h>
 +#include <sys/swap.h>
