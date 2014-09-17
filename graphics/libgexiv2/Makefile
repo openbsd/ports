@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/04/26 05:42:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/09/17 05:42:46 ajacoutot Exp $
 
 COMMENT=	GObject wrapper around exiv2
 
-GNOME_VERSION=	0.10.1
+GNOME_VERSION=	0.10.2
 GNOME_PROJECT=	gexiv2
 PKGNAME=	lib${DISTNAME}
 
