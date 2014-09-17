@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2014/09/16 09:07:03 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2014/09/17 10:11:08 sthen Exp $
 
 COMMENT=	apache HTTP server
 
 V=		2.2.29
+REVISION=	0
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
-FAKE_AS_ROOT =	Yes
 
 CATEGORIES=	www net
 
@@ -39,7 +39,7 @@ MODULES=		converters/libiconv
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 
-HTTPD_DIR=		/var/apache2
+HTTPD_DIR=		${LOCALSTATEDIR}/apache2
 CONFDIR=		${SYSCONFDIR}/apache2
 SUBST_VARS=		CONFDIR
 
@@ -61,8 +61,8 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--enable-suexec \
 			--with-suexec-caller=_apache2 \
 			--with-suexec-bin=${TRUEPREFIX}/sbin/suexec2 \
-			--with-suexec-logfile=/var/log/suexec2_log \
-			--with-pcre=${LOCALBASE} 
+			--with-suexec-logfile=${LOCALSTATEDIR}/log/suexec2_log \
+			--with-pcre=${LOCALBASE}
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
