@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_galois_desktop_in,v 1.1 2014/09/17 20:32:11 landry Exp $
+--- misc/galois.desktop.in.orig	Wed Sep 17 22:19:58 2014
++++ misc/galois.desktop.in	Wed Sep 17 22:20:06 2014
+@@ -17,7 +17,7 @@
+ # @configure_input@
+ 
+ [Desktop Entry]
+-Exec=@prefix@/games/galois
++Exec=@prefix@/bin/galois
+ Terminal=false
+ Type=Application
+ Categories=GNOME;GTK;Game;BlocksGame;
