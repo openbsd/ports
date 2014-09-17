@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.39 2014/02/09 13:32:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2014/09/17 00:46:13 daniel Exp $
 
 COMMENT=		fast array and numeric programming library for Python
-BROKEN-m88k=		lacks cpu information
 
-MODPY_EGG_VERSION=	1.6.0
+MODPY_EGG_VERSION=	1.8.2
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		4
+
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numpy.scipy.org/
+
+MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,10 +22,13 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
 MODULES=		lang/python \
 			fortran
 
+FLAVORS=		python3
+FLAVOR?=
+
 MODPY_SETUPTOOLS=	Yes
 MODPY_SETUP=		setupegg.py
 
-TEST_DEPENDS=	devel/py-nose
+TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
 
 MODFORTRAN_COMPILER =	g77
 

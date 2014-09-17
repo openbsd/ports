@@ -1,13 +1,13 @@
-$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.2 2011/05/27 10:06:12 eric Exp $
+$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.3 2014/09/17 00:46:13 daniel Exp $
 
 py-numpy only checks for expl to determine whether extended-precision
 support is present.  since we don't have it yet;  it implements
 it's own.  however, on alpha, powerpc, it declared functions with
 types that conflict with C99 (double for *l), therefore failed.
 
---- numpy/core/include/numpy/npy_common.h.orig	Mon Apr  4 18:33:33 2011
-+++ numpy/core/include/numpy/npy_common.h	Wed May 18 10:57:17 2011
-@@ -72,14 +72,8 @@ typedef unsigned char npy_bool;
+--- numpy/core/include/numpy/npy_common.h.orig	Sun Mar  2 09:04:27 2014
++++ numpy/core/include/numpy/npy_common.h	Wed Mar 12 06:00:39 2014
+@@ -255,14 +255,8 @@ typedef unsigned char npy_bool;
  #define NPY_FALSE 0
  #define NPY_TRUE 1
  

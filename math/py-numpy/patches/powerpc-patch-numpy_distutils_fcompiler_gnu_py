@@ -1,7 +1,7 @@
-$OpenBSD: powerpc-patch-numpy_distutils_fcompiler_gnu_py,v 1.2 2011/05/27 10:06:12 eric Exp $
---- numpy/distutils/fcompiler/gnu.py.orig	Thu May  5 22:41:53 2011
-+++ numpy/distutils/fcompiler/gnu.py	Wed May 18 12:22:16 2011
-@@ -199,7 +199,8 @@ class GnuFCompiler(FCompiler):
+$OpenBSD: powerpc-patch-numpy_distutils_fcompiler_gnu_py,v 1.3 2014/09/17 00:46:13 daniel Exp $
+--- numpy/distutils/fcompiler/gnu.py.orig	Tue Aug  5 14:04:18 2014
++++ numpy/distutils/fcompiler/gnu.py	Tue Sep  2 01:49:40 2014
+@@ -201,7 +201,8 @@ class GnuFCompiler(FCompiler):
              opt = ['-O2']
          else:
              opt = ['-O3']
