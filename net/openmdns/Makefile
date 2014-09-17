@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/22 10:55:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/09/17 15:43:59 gonzalo Exp $
 
 COMMENT =		MDNS/DNS-SD daemon
 
-DISTNAME =		openmdns-0.5
-REVISION =		5
+DISTNAME =		openmdns-0.6
 CATEGORIES =		net
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
@@ -17,6 +16,8 @@ MASTER_SITES =		http://www.haesbaert.org/openmdns/releases/ \
 			http://x61.com.ar/mirrors/openmdns/
 
 WANTLIB +=		c event util
+
+WRKDIST =		${WRKDIR}/mdnsd
 
 MAKE_FLAGS =		BINDIR="${TRUEPREFIX}/bin" \
 			MANDIR="${TRUEPREFIX}/man/man"
