@@ -1,0 +1,3 @@
+RSpec::Support provides common functionality to RSpec::Core,
+RSpec::Expectations and RSpec::Mocks. It is considered suitable for
+internal use only at this time.

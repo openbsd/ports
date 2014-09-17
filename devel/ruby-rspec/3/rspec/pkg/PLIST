@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/17 17:59:00 jasper Exp $
+@conflict ${MODRUBY_PREFIX}-rspec->=2.0.0,<3.1.0
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/License.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/version.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
