@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2014/07/10 09:02:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.118 2014/09/17 06:42:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -97,6 +97,7 @@
      SUBDIR += py-Numeric
      SUBDIR += py-gnuplot
      SUBDIR += py-numpy
+     SUBDIR += py-numpy,python3
      SUBDIR += py-probstat
      SUBDIR += py-scipy
      SUBDIR += py-sympy
