@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/16 19:54:29 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/17 09:11:52 ajacoutot Exp $
 
-COMMENT =		mother of Mail Transfer Agents
+COMMENT-main =		mother of Mail Transfer Agents
+COMMENT-libmilter =	mail filter support library for sendmail
 
-DISTNAME =		sendmail.8.14.9
-PKGNAME =		sendmail-8.14.9
-REVISION =		0
+V=			8.14.9
+DISTNAME =		sendmail.${V}
+PKGNAME-main =		sendmail-${V}
+PKGNAME-libmilter =	libmilter-${V}
+FULLPKGNAME-libmilter =	libmilter-${V}
+FULLPKGPATH-libmilter =	mail/sendmail,-libmilter
+
+REVISION-main =		1
 
 SHARED_LIBS =		milter	4.0
 
@@ -15,7 +21,10 @@ HOMEPAGE =		http://www.sendmail.org/
 # Sendmail License / BSD3 / BSD4 / Public Domain / CDDL (contrib/ directory)
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto ssl
+MULTI_PACKAGES =	-main -libmilter
+
+WANTLIB-main =		c crypto ssl
+WANTLIB-libmilter =	pthread
 
 MASTER_SITES =		ftp://ftp.sendmail.org/pub/sendmail/ \
 			ftp://ftp.bit.nl/mirror/sendmail/ \
@@ -46,18 +55,18 @@ SUBST_VARS +=		LOCALBASE WANT_LDAP WANT_LOCALBASE WANT_SMTP_AUTH
 .if ${FLAVOR:Mldap}
 WANT_LDAP =		Yes
 WANT_LOCALBASE =	Yes
-WANTLIB +=		ldap lber-2.4
-LIB_DEPENDS +=		databases/openldap,-main
+WANTLIB-main +=		ldap lber-2.4
+LIB_DEPENDS-main +=	databases/openldap,-main
 .endif
 
 .if ${FLAVOR:Msasl}
 WANT_SMTP_AUTH =	Yes
 WANT_LOCALBASE =	Yes
-WANTLIB +=		sasl2
-LIB_DEPENDS +=		security/cyrus-sasl2
+WANTLIB-main +=		sasl2
+LIB_DEPENDS-main +=	security/cyrus-sasl2
 .endif
 
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =		${WRKDIR}/sendmail-${V}
 
 post-extract:
 	cp ${FILESDIR}/cf/*.mc ${WRKSRC}/cf/cf

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+$OpenBSD: README-main,v 1.1 2014/09/17 09:11:53 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -37,6 +37,7 @@ your needs.
 Enable sendmail at startup time
 -------------------------------
 Remember to add sendmail to pkg_scripts.
-Suggested daemon flags for a basic, localhost-only setup:
+# rcctl enable sendmail
 
-sendmail_flags="-L sm-mta -C/etc/mail/localhost.cf -bd -q30m"
+Suggested daemon flags for a basic, localhost-only setup:
+# rcctl enable sendmail flags -L sm-mta -C/etc/mail/localhost.cf -bd -q30m
