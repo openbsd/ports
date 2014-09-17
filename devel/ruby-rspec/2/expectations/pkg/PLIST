@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/17 09:36:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/17 11:27:13 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec-expectations-<2.14.5p0
+@conflict ${MODRUBY_PREFIX}-rspec-expectations->=3.0.0
 @pkgpath devel/ruby-rspec/expectations,ruby18
 @pkgpath devel/ruby-rspec/expectations,ruby19
 @pkgpath devel/ruby-rspec/expectations,ruby20
