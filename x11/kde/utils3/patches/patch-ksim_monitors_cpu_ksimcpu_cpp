@@ -1,0 +1,12 @@
+$OpenBSD: patch-ksim_monitors_cpu_ksimcpu_cpp,v 1.3 2014/09/17 06:26:03 espie Exp $
+--- ksim/monitors/cpu/ksimcpu.cpp.orig	Tue Sep 16 23:41:10 2014
++++ ksim/monitors/cpu/ksimcpu.cpp	Tue Sep 16 23:41:43 2014
+@@ -57,7 +57,7 @@
+ #include <sys/resource.h>
+ #endif
+ #else
+-#include <sys/dkstat.h>
++#include <sys/sched.h>
+ #endif
+ #include <sys/sysctl.h>
+ #include <string.h>
