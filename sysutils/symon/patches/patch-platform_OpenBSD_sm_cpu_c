@@ -1,0 +1,11 @@
+$OpenBSD: patch-platform_OpenBSD_sm_cpu_c,v 1.4 2014/09/17 05:28:40 espie Exp $
+--- platform/OpenBSD/sm_cpu.c.orig	Wed Sep 17 07:25:50 2014
++++ platform/OpenBSD/sm_cpu.c	Wed Sep 17 07:26:04 2014
+@@ -39,7 +39,6 @@
+ 
+ #include "conf.h"
+ 
+-#include <sys/dkstat.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-platform_OpenBSD_platform_h,v 1.4 2014/09/17 05:28:40 espie Exp $
+--- platform/OpenBSD/platform.h.orig	Wed Sep 17 07:23:52 2014
++++ platform/OpenBSD/platform.h	Wed Sep 17 07:25:14 2014
+@@ -3,10 +3,10 @@
+ 
+ #include "conf.h"
+ 
+-#include <sys/dkstat.h>
+ #include <sys/queue.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <sys/sched.h>
+ #include <sys/syslimits.h>
+ #include <net/if.h>
+ 
