@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.6 2014/09/16 21:58:26 jasper Exp $
+$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.7 2014/09/17 06:19:48 jasper Exp $
 
-use rcctl(8)
+From de5bb690d462211bb9210ab3ad671dba0929644e Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 17 Sep 2014 00:00:59 +0200
+Subject: [PATCH] use rcctl(8) when dealing with services on OpenBSD
 
 --- lib/specinfra/command/openbsd.rb.orig	Tue Sep 16 23:54:31 2014
 +++ lib/specinfra/command/openbsd.rb	Tue Sep 16 23:54:38 2014
