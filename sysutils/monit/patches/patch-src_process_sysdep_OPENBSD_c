@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_process_sysdep_OPENBSD_c,v 1.3 2014/07/08 10:15:38 sthen Exp $
---- src/process/sysdep_OPENBSD.c.orig	Tue Jul  8 11:06:49 2014
-+++ src/process/sysdep_OPENBSD.c	Tue Jul  8 11:08:23 2014
+$OpenBSD: patch-src_process_sysdep_OPENBSD_c,v 1.4 2014/09/17 14:42:52 espie Exp $
+--- src/process/sysdep_OPENBSD.c.orig	Mon May 12 09:51:19 2014
++++ src/process/sysdep_OPENBSD.c	Wed Sep 17 08:41:37 2014
 @@ -45,6 +45,10 @@
  #include <sys/proc.h>
  #endif
@@ -12,3 +12,14 @@ $OpenBSD: patch-src_process_sysdep_OPENBSD_c,v 1.3 2014/07/08 10:15:38 sthen Exp
  #ifdef HAVE_KVM_H
  #include <kvm.h>
  #endif
+@@ -57,9 +61,7 @@
+ #include <sys/sysctl.h>
+ #endif
+ 
+-#ifdef HAVE_SYS_DKSTAT_H
+-#include <sys/dkstat.h>
+-#endif
++#include <sys/sched.h>
+ 
+ #include "monit.h"
+ #include "process.h"
