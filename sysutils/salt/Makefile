@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2014/09/16 09:32:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2014/09/17 11:50:27 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -71,6 +71,7 @@ post-install:
 		${PREFIX}/share/examples/salt/
 
 # FAILED (total=817, skipped=99, passed=684, failures=26, errors=8)
+# https://github.com/saltstack/salt/issues/15864
 do-test:
 	cd ${WRKSRC} && \
 		${MODPY_BIN} tests/runtests.py -v
