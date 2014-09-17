@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/08/23 02:25:34 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2014/09/17 15:56:50 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
+EPOCH=		0
 VERSION=	10.0.13
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
