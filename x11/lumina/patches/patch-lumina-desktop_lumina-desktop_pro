@@ -1,6 +1,6 @@
-$OpenBSD: patch-lumina-desktop_lumina-desktop_pro,v 1.1 2014/09/14 06:58:02 ajacoutot Exp $
+$OpenBSD: patch-lumina-desktop_lumina-desktop_pro,v 1.2 2014/09/17 11:52:00 ajacoutot Exp $
 
-https://github.com/pcbsd/lumina/pull/8
+https://github.com/pcbsd/lumina/commit/87f394794f153124507284adec8bf0ba3357021e
 
 --- lumina-desktop/lumina-desktop.pro.orig	Thu Sep  4 18:14:31 2014
 +++ lumina-desktop/lumina-desktop.pro	Sun Sep 14 08:48:57 2014

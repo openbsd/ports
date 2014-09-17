@@ -1,6 +1,6 @@
-$OpenBSD: patch-lumina-screenshot_lumina-screenshot_pro,v 1.1 2014/09/14 06:58:02 ajacoutot Exp $
+$OpenBSD: patch-lumina-screenshot_lumina-screenshot_pro,v 1.2 2014/09/17 11:52:00 ajacoutot Exp $
 
-https://github.com/pcbsd/lumina/pull/8
+https://github.com/pcbsd/lumina/commit/87f394794f153124507284adec8bf0ba3357021e
 
 --- lumina-screenshot/lumina-screenshot.pro.orig	Tue Aug 26 19:52:19 2014
 +++ lumina-screenshot/lumina-screenshot.pro	Sun Sep 14 08:48:57 2014

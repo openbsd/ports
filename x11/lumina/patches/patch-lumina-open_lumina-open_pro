@@ -1,6 +1,6 @@
-$OpenBSD: patch-lumina-open_lumina-open_pro,v 1.1 2014/09/14 06:58:02 ajacoutot Exp $
+$OpenBSD: patch-lumina-open_lumina-open_pro,v 1.2 2014/09/17 11:52:00 ajacoutot Exp $
 
-https://github.com/pcbsd/lumina/pull/8
+https://github.com/pcbsd/lumina/commit/87f394794f153124507284adec8bf0ba3357021e
 
 --- lumina-open/lumina-open.pro.orig	Wed Apr 23 22:35:33 2014
 +++ lumina-open/lumina-open.pro	Sun Sep 14 08:48:57 2014
