@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.92 2014/06/26 15:36:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2014/09/17 07:52:42 jca Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.98.4
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -25,6 +25,7 @@ BUILD_DEPENDS=		devel/check \
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/libtool,-ltdl \
+			mail/sendmail \
 			net/curl \
 			textproc/libxml
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2014/07/08 15:55:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/09/17 07:52:42 jca Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
 DISTNAME=	mimedefang-2.75
+REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mimedefang.org/
@@ -21,6 +22,7 @@ RUN_DEPENDS=	archivers/p5-Archive-Zip \
 		www/p5-HTML-Parser \
 		sysutils/p5-Unix-Syslog
 BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS=	mail/sendmail
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-user=_mdefang \
