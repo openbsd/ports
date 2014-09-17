@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
+$OpenBSD: patch-install_pl,v 1.6 2014/09/17 09:20:01 sthen Exp $
 --- install.pl.orig	Mon Jan 23 16:36:02 2012
-+++ install.pl	Fri May  3 10:43:46 2013
++++ install.pl	Wed Sep 17 10:18:50 2014
 @@ -165,14 +165,14 @@ sub VerifyUser {
  	if ( !defined $gid_name ) {
  		die "Group '$user_gid' not found on this system\n";
@@ -22,7 +22,15 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  
  } # End of VerifyUser
  
-@@ -592,11 +592,11 @@ sub CopyAllFiles {
+@@ -584,7 +584,6 @@ sub CopyAllFiles {
+ 	$CopyRecursive::UID 	 = 0;
+ 	$CopyRecursive::GID 	 = $www_gid;
+ 	$CopyRecursive::MODE 	 = 0755;
+-	unlink "$NfConf::BINDIR/nfsen.rc";
+ 	CopyRecursive::dircopy("bin", "$NfConf::INSTPREFIX$NfConf::BINDIR");
+ 	CopyRecursive::dircopy("libexec", "$NfConf::INSTPREFIX$NfConf::LIBEXECDIR");
+ 	$CopyRecursive::MODE 	 = 0644;
+@@ -592,11 +591,11 @@ sub CopyAllFiles {
  	CopyRecursive::dircopy("plugins/backend",  "$NfConf::INSTPREFIX$NfConf::BACKEND_PLUGINDIR");
  	CopyRecursive::dircopy("plugins/frontend", "$NfConf::INSTPREFIX$NfConf::FRONTEND_PLUGINDIR");
  
@@ -36,7 +44,7 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  	}
  	print "\n";
  
-@@ -615,7 +615,7 @@ sub Cleanup {
+@@ -615,7 +614,7 @@ sub Cleanup {
  					);
  
  	foreach my $file ( @OldFiles ) {
@@ -45,7 +53,7 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  	}
  
  } # End of Cleanup
-@@ -629,8 +629,13 @@ sub Cleanup {
+@@ -629,8 +628,13 @@ sub Cleanup {
  $| = 1;
  
  my $ConfigFile = shift @ARGV;
@@ -60,7 +68,7 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  # Load the required NfSen modules 
  unshift @INC, "libexec";
  print "Check for required Perl modules: ";
-@@ -639,7 +644,6 @@ eval {
+@@ -639,7 +643,6 @@ eval {
  	require RRDs; 			import RRDs;
  	require Mail::Header;	import Mail::Header;
  	require Mail::Internet;	import Mail::Internet;
@@ -68,7 +76,16 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  };
  if ( $@ ) {
  	print "Failed\nRequired nfsen modules not found\n";
-@@ -701,7 +705,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
+@@ -651,7 +654,7 @@ if ( $@ ) {
+ 
+ # need to run as root
+ if ( !NfSen::root_process() ) {
+-	die "nfsen setup wants to run as root\n";
++	print "Warning: nfsen setup should normally be run as root\n";
+ }
+ 
+ # need a config file
+@@ -701,7 +704,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
  
  # Get Perl
  # Put this into a NfConf variable, so we can use the standard Patch Procedure
@@ -78,7 +95,7 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  $NfConf::INSTPREFIX = $ENV{'INSTPREFIX'};
  if ( defined $NfConf::INSTPREFIX ) {
  	if ( ! $NfConf::INSTPREFIX =~ /\/$/ ) {
-@@ -715,7 +720,10 @@ if ( defined $NfConf::INSTPREFIX ) {
+@@ -715,7 +719,10 @@ if ( defined $NfConf::INSTPREFIX ) {
  
  my ($nfsen_uid, $www_gid ) = VerifyConfig();
  my $nfsen_run = 0;
@@ -89,7 +106,7 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  # test for two files of old layout
  my $need_rrdlayout_upgrade = -f "$NfConf::PROFILESTATDIR/live/flows.rrd" && -f "$NfConf::PROFILESTATDIR/live/packets_other.rrd";
  
-@@ -765,10 +773,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
+@@ -765,10 +772,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
  		}
  	}
  }
@@ -104,7 +121,7 @@ $OpenBSD: patch-install_pl,v 1.5 2013/05/03 09:49:01 sthen Exp $
  Cleanup();
  SetupEnv($nfsen_uid, $www_gid);
  
-@@ -809,14 +821,17 @@ $$$hints{'version'} 		= $nfsen_version;
+@@ -809,14 +820,17 @@ $$$hints{'version'} 		= $nfsen_version;
  $$$hints{'installed'} 		= time();
  NfSen::StoreHints();
  chown $nfsen_uid, $www_gid, "$NfConf::INSTPREFIX$NfConf::PROFILESTATDIR/hints" || die "Can't chown hints db: $!\n";
