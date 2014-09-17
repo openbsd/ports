@@ -1,4 +1,9 @@
-$OpenBSD: patch-Makefile_bsd-wrapper,v 1.1.1.1 2014/03/13 17:28:04 sthen Exp $
+$OpenBSD: patch-Makefile_bsd-wrapper,v 1.2 2014/09/17 09:04:38 sthen Exp $
+
+Last hunk: patch to install CGIs as mode 700, so that pkg_create run as
+non-root is able to add them to the package. They are still installed with
+mode 000 by pkg_add because the PLIST has an "@mode 000" marker.
+
 --- Makefile.bsd-wrapper.orig	Thu Mar 13 01:50:02 2014
 +++ Makefile.bsd-wrapper	Thu Mar 13 01:52:23 2014
 @@ -28,15 +28,15 @@ LNDIR=	/usr/bin/lndir
@@ -20,3 +25,12 @@ $OpenBSD: patch-Makefile_bsd-wrapper,v 1.1.1.1 2014/03/13 17:28:04 sthen Exp $
  HTTPD_INCLUDEDIR=	${HTTPD_EXEC_PREFIX}/lib/apache/include
  HTTPD_RUNDIR=		${HTTPD_PREFIX}/logs
  HTTPD_LOGDIR=		${HTTPD_PREFIX}/logs
+@@ -767,7 +767,7 @@ distribution:
+ 		j=`dirname $$i`; \
+ 		${INSTALL} -d -g ${BINGRP} -m 755 ${DESTDIR}${HTTPD_PREFIX}/$$j/; \
+ 		echo "Installing ${DESTDIR}${HTTPD_PREFIX}/$$i"; \
+-		${INSTALL} ${INSTALL_COPY} -g ${BINGRP} -m 000 \
++		${INSTALL} ${INSTALL_COPY} -g ${BINGRP} -m 700 \
+ 		    ${.OBJDIR}/$$i ${DESTDIR}${HTTPD_PREFIX}/$$j/; \
+ 	done
+ 	@-for i in ${ICONFILES}; do \
