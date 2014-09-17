@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2014/09/17 07:52:42 jca Exp $
+# $OpenBSD: Makefile,v 1.40 2014/09/17 09:13:12 ajacoutot Exp $
 
 COMMENT=	DKIM milter
 
 DISTNAME=	dkim-milter-2.8.3
-REVISION=	4
+REVISION=	5
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dkim-milter/
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=		Yes
 
 WANTLIB=	c crypto milter pthread ssl
 
-LIB_DEPENDS=	mail/sendmail
+LIB_DEPENDS=	mail/sendmail,-libmilter
 
 EXAMPLESDIR=	share/examples/dkim-milter
 

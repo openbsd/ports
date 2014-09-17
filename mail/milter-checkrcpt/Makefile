@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/17 07:52:42 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/17 09:13:12 ajacoutot Exp $
 
 COMMENT=	sendmail milter plugin for recipient checking
 
 DISTNAME=	milter-checkrcpt-0.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c milter pthread
 
-LIB_DEPENDS=	mail/sendmail
+LIB_DEPENDS=	mail/sendmail,-libmilter
 
 NO_TEST=	Yes
 

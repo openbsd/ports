@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/17 07:52:42 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2014/09/17 09:13:12 ajacoutot Exp $
 
 COMMENT=	greylist milter
 
 DISTNAME=	milter-greylist-4.2.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=		Yes
 WANTLIB=	c pthread milter spf2
 
 LIB_DEPENDS=	mail/libspf2 \
-		mail/sendmail
+		mail/sendmail,-libmilter
 
 BUILD_DEPENDS=	devel/bison
 
