@@ -1,10 +1,10 @@
-$OpenBSD: patch-bus_config-parser_c,v 1.1 2014/01/24 10:43:16 ajacoutot Exp $
+$OpenBSD: patch-bus_config-parser_c,v 1.2 2014/09/17 05:49:15 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- bus/config-parser.c.orig	Wed Jan 22 12:09:18 2014
-+++ bus/config-parser.c	Wed Jan 22 12:09:28 2014
-@@ -3483,7 +3483,7 @@ static const char *test_system_service_dir_matches[] =
+--- bus/config-parser.c.orig	Mon Sep 15 13:29:28 2014
++++ bus/config-parser.c	Wed Sep 17 07:40:27 2014
+@@ -3495,7 +3495,7 @@ static const char *test_system_service_dir_matches[] =
  #endif
           DBUS_DATADIR"/dbus-1/system-services",
  #ifdef DBUS_UNIX
