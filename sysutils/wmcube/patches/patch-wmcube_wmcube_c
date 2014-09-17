@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmcube_wmcube_c,v 1.3 2001/08/28 14:08:57 wilfried Exp $
+$OpenBSD: patch-wmcube_wmcube_c,v 1.4 2014/09/17 14:34:39 espie Exp $
 --- wmcube/wmcube.c.orig	Mon Oct 23 22:11:47 2000
-+++ wmcube/wmcube.c	Tue Aug 28 14:37:36 2001
++++ wmcube/wmcube.c	Wed Sep 17 16:33:06 2014
 @@ -858,6 +858,10 @@ void print_help() {
  	printf("  -n  : exclude \"nice\" processes. (default OFF)\n");
  #endif
@@ -45,7 +45,7 @@ $OpenBSD: patch-wmcube_wmcube_c,v 1.3 2001/08/28 14:08:57 wilfried Exp $
  #elif defined OPENBSD
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
-+#include <sys/dkstat.h>
++#include <sys/sched.h>
  
  int init_calc_cpu()
  {
