@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/16 19:56:09 miod Exp $
+# $OpenBSD: Makefile,v 1.13 2014/09/17 11:58:31 sthen Exp $
 
 # as error: ``operation combines symbols in different segments''
-# (known toolchain problem)
+# (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
+# and devel/cmake/cmake.port.mk.
 NOT_FOR_ARCHS=		m88k
 
 COMMENT =		small build system with a focus on speed
