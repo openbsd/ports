@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2014/09/12 08:36:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.105 2014/09/17 11:57:17 sthen Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -22,7 +22,7 @@ WANTLIB =		archive c curl expat form m ncurses \
 			stdc++ z
 
 # XXX: CMake's built-in ELF parser is broken on arm
-.if ${MACHINE_ARCH} != "arm"
+.if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "m88k"
 BUILD_DEPENDS =		devel/ninja>=1.5.1
 .endif
 
