@@ -1,28 +1,14 @@
-The Mutt Mail User Agent
-
-This is a nifty e-mail client that includes excellent PGP hooks.
-Other features include:
-
-- color support
-- message threading
-- MIME support (including RFC2047 support for encoded headers)
-- IMAP (also over SSL) and POP3 support
-- support for multiple mailbox formats (mbox, MMDF, MH, maildir)
-- highly customizable, including key bindings
-- searches using regular expression
-- Delivery Status Notification (DSN) support
-- PGP/MIME (RFC2015)
-- small and efficient
-- Maildir/IMAP/POP3 header caching support
+Mutt is a small but very powerful text-based mail client for Unix-like
+operating systems. Features include support for multiple mailbox formats
+(including IMAP, POP3, mbox, MMDF, MH, Maildir), MIME/RFC2047, message
+threading, encryption and signing with PGP/GPG and S/MIME, and many
+operations can use regular expressions. It's highly customizable with
+many options for colours, key bindings, display formats etc.
 
 Flavors:
 	sasl	   - build with SASL authentication support
-	slang	   - build using the S-Lang library for screen handling
+	slang	   - use S-Lang instead of curses for screen handling
 	compressed - build with compressed folder support
 		     (see: http://www.spinnaker.de/mutt/compressed/)
-	mixmaster  - build with anonymous remailing support
-	idn	   - build with internationalized domain name support
 	sidebar	   - adds a sidebar that has a folder list
 		     (see: http://thomer.com/mutt/)
-
-This is the development version of mutt.

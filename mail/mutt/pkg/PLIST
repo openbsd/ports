@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/05/13 14:27:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/09/17 12:50:38 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
-@pkgpath mail/mutt/snapshot[,hcache]${FLAVOR_COMMA}
+@pkgpath mail/mutt/snapshot[,hcache][,idn]${FLAVOR_COMMA}
+@pkgpath mail/mutt/[,idn]${FLAVOR_COMMA}
 bin/flea
 @bin bin/mutt
 @bin bin/mutt_dotlock

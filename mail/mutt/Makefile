@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2014/09/08 22:36:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2014/09/17 12:50:38 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.5.23
 EPOCH=		0
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -14,7 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+=	c crypto qdbm>=14 ssl z
+WANTLIB+=	c crypto idn qdbm>=14 ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/} \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -26,11 +26,12 @@ PATCH_DIST_STRIP= -p1
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	databases/qdbm
+LIB_DEPENDS=	databases/qdbm \
+		devel/libidn
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 
-FLAVORS=	idn sasl sidebar slang mixmaster compressed
+FLAVORS=	sasl sidebar slang compressed
 FLAVOR?=
 
 AUTOCONF_VERSION= 2.65
@@ -46,6 +47,7 @@ CONFIGURE_ARGS+= --enable-external_dotlock \
 		--disable-fcntl \
 		--enable-flock \
 		--enable-hcache \
+		--with-idn \
 		--enable-imap \
 		--enable-pop \
 		--enable-smtp \
@@ -69,19 +71,6 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}
 LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
-.endif
-
-.if ${FLAVOR:Midn}
-CONFIGURE_ARGS+= --with-idn
-LIB_DEPENDS+=	devel/libidn
-WANTLIB+=	idn>=16
-.else
-CONFIGURE_ARGS+= --without-idn
-.endif
-
-.if ${FLAVOR:Mmixmaster}
-CONFIGURE_ARGS+= --with-mixmaster="${LOCALBASE}/sbin/mixmaster"
-RUN_DEPENDS+=	mail/mixmaster
 .endif
 
 .if ${FLAVOR:Mslang}
