@@ -1,0 +1,22 @@
+$OpenBSD: patch-apps_haartraining_CMakeLists_txt,v 1.1 2014/09/18 16:30:00 zhuk Exp $
+Fix linking.
+--- apps/haartraining/CMakeLists.txt.orig	Thu Sep 18 20:22:12 2014
++++ apps/haartraining/CMakeLists.txt	Thu Sep 18 20:24:53 2014
+@@ -14,8 +14,6 @@ if(WIN32)
+   link_directories(${CMAKE_CURRENT_BINARY_DIR})
+ endif()
+ 
+-link_libraries(${OPENCV_HAARTRAINING_DEPS} opencv_haartraining_engine)
+-
+ # -----------------------------------------------------------
+ #  Library
+ # -----------------------------------------------------------
+@@ -38,6 +36,8 @@ set_target_properties(opencv_haartraining_engine PROPE
+                       RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+                       INSTALL_NAME_DIR lib
+                      )
++
++target_link_libraries(opencv_haartraining_engine ${OPENCV_HAARTRAINING_DEPS})
+ 
+ # -----------------------------------------------------------
+ #  haartraining
