@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2014/09/17 09:11:53 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2014/09/18 14:41:05 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,8 +9,8 @@ Using sendmail as the default mailer.
 
 Deactivate smtpd
 ----------------
-Running smtpd(8) and sendmail at the same time is not supported.  See
-rc.d(8) for how to disable smtpd(8).
+Running smtpd(8) and sendmail at the same time is not supported:
+# rcctl disable smtpd
 
 Tweaking /etc/mailer.conf
 -------------------------
@@ -36,7 +36,7 @@ your needs.
 
 Enable sendmail at startup time
 -------------------------------
-Remember to add sendmail to pkg_scripts.
+Remember to add sendmail to pkg_scripts:
 # rcctl enable sendmail
 
 Suggested daemon flags for a basic, localhost-only setup:
