@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/09/18 08:10:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2014/09/18 11:04:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,8 +28,8 @@ MODULES=		devel/gettext \
 # needed for demos/scrapbook
 BUILD_DEPENDS=		x11/gtk+3
 
-BUILD_DEPENDS=		net/libuhttpmock
-TEST_DEPENDS=		net/libuhttpmock
+BUILD_DEPENDS=		net/uhttpmock
+TEST_DEPENDS=		net/uhttpmock
 
 LIB_DEPENDS=		devel/libsoup \
 			net/liboauth \
