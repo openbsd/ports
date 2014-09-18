@@ -1,9 +1,15 @@
-$OpenBSD: patch-src_cmd_auxstats_OpenBSD_c,v 1.1 2013/11/25 22:18:43 sthen Exp $
---- src/cmd/auxstats/OpenBSD.c.orig	Mon Nov 25 15:08:55 2013
-+++ src/cmd/auxstats/OpenBSD.c	Mon Nov 25 15:09:01 2013
-@@ -8,6 +8,7 @@
+$OpenBSD: patch-src_cmd_auxstats_OpenBSD_c,v 1.2 2014/09/18 15:22:46 naddy Exp $
+--- src/cmd/auxstats/OpenBSD.c.orig	Sun Oct 21 16:08:57 2012
++++ src/cmd/auxstats/OpenBSD.c	Thu Sep 18 17:15:38 2014
+@@ -3,11 +3,12 @@
+ #include <nlist.h>
+ #include <sys/types.h>
+ #include <sys/param.h>
++#include <sys/sched.h>
+ #include <sys/socket.h>
+ #include <sys/sysctl.h>
  #include <sys/time.h>
- #include <sys/dkstat.h>
+-#include <sys/dkstat.h>
  #include <net/if.h>
 +#include <net/if_var.h>
  #include <machine/apmvar.h>
