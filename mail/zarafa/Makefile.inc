@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.32 2014/09/02 11:09:38 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2014/09/18 16:12:39 robert Exp $
 
 SHARED_ONLY=	Yes
 
 V?=		7.1.11
 BUILD?=		45875
-DISTNAME?=	zcp-${V}
+DISTNAME?=	zcp-${V}-unofficial
 
 CATEGORIES+=	mail
 
@@ -18,4 +18,5 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 DIST_SUBDIR?=	zarafa
-MASTER_SITES?=	http://download.zarafa.com/community/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/${V}-${BUILD}/sourcecode/
+MASTER_SITES?=	http://nerd.hu/distfiles/ \
+		http://download.zarafa.com/community/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/${V}-${BUILD}/sourcecode/
