@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2014/09/02 09:24:45 chrisz Exp $
+# $OpenBSD: Makefile,v 1.32 2014/09/18 10:51:46 dcoppa Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
-V =		2.18.0
+V =		2.18.2
 DISTNAME =	lablgtk-$V
 PKGNAME =	lablgtk2-$V
-REVISION =	3
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	http://lablgtk.forge.ocamlcore.org/
-MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/1261/
+MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/1456/
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
@@ -53,6 +52,7 @@ post-install:
 		${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/lablgtk2
 		${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib/lablgtk2
 		${INSTALL_DATA} ${WRKSRC}/META ${PREFIX}/lib/ocaml/site-lib/lablgtk2
+		chmod 0555 ${PREFIX}/bin/*
 		rm -f ${PREFIX}/lib/ocaml/stublibs/*.so.owner
 
 .include <bsd.port.mk>

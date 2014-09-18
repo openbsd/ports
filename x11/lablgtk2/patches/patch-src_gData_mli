@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_gData_mli,v 1.1 2011/04/18 05:30:12 dcoppa Exp $
+$OpenBSD: patch-src_gData_mli,v 1.2 2014/09/18 10:51:46 dcoppa Exp $
 
 Fix for "adjustment with non-zero page size" warning messages with
 newer gtk+2
 
---- src/gData.mli.orig	Sat Apr 16 20:42:26 2011
-+++ src/gData.mli	Sat Apr 16 20:44:58 2011
-@@ -62,7 +62,7 @@ class adjustment : Gtk.adjustment obj ->
+--- src/gData.mli.orig	Thu Sep 18 08:47:06 2014
++++ src/gData.mli	Thu Sep 18 11:24:43 2014
+@@ -74,7 +74,7 @@ class adjustment : Gtk.adjustment obj ->
      @param upper default value is [100.]
      @param step_incr default value is [1.]
      @param page_incr default value is [10.]
