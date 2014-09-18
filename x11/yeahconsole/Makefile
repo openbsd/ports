@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/09 01:43:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/18 15:15:23 kspillner Exp $
 
 COMMENT =	terminal wrapper for creating drop-down consoles
 
 DISTNAME =	yeahconsole-0.3.4
+REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://phrat.de/yeahtools.html
-MAINTAINER =	Kent R. Spillner <kspillner@acm.org>
+MAINTAINER =	Kent R. Spillner <kspillner@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
