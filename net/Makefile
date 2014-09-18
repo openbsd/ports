@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.859 2014/09/10 08:31:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.860 2014/09/18 07:42:22 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -610,6 +610,7 @@
      SUBDIR += ucspi-unix
      SUBDIR += udns
      SUBDIR += udptunnel
+     SUBDIR += uhttpmock
      SUBDIR += unifi
      SUBDIR += unison
      SUBDIR += unworkable
