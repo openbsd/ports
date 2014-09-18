@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/16 13:10:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/18 09:25:13 chrisz Exp $
 
 COMMENT =		fast, intuitive file opening in VIM
 
@@ -25,7 +25,6 @@ MODRUBY_REV =		1.8
 MODULES =		lang/ruby
 
 RUN_DEPENDS =		vim-*-ruby:editors/vim,no_x11,ruby
-BUILD_DEPENDS =		${RUN_DEPENDS}
 
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/.vim
