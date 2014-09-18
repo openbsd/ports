@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/05 22:56:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/18 07:14:12 sthen Exp $
 
 COMMENT=		GNU patch
 
-VERSION=		2.7
+VERSION=		2.7.1
 DISTNAME=		patch-${VERSION}
 PKGNAME=		gpatch-${VERSION}
-REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		https://www.gnu.org/software/patch/
