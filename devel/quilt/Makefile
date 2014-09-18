@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/20 20:40:25 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/18 15:14:47 kspillner Exp $
 
 COMMENT=		manage large numbers of patches
 
 DISTNAME=		quilt-0.63
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
-MAINTAINER=		Kent R. Spillner <kspillner@acm.org>
+MAINTAINER=		Kent R. Spillner <kspillner@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
