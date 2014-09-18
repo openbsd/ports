@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.4 2014/05/23 20:26:44 sthen Exp $
---- setup.py.orig	Thu Mar  6 10:27:39 2014
-+++ setup.py	Fri May 23 21:23:10 2014
-@@ -161,7 +161,7 @@ class coverage_cmd(Command):
+$OpenBSD: patch-setup_py,v 1.5 2014/09/18 07:15:15 sthen Exp $
+--- setup.py.orig	Tue Aug 12 22:18:04 2014
++++ setup.py	Wed Sep 17 23:53:37 2014
+@@ -195,7 +195,7 @@ class coverage_cmd(Command):
  
  
  if os.name == "posix":
