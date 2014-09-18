@@ -1,0 +1,68 @@
+$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.1 2014/09/18 20:19:27 brad Exp $
+
+r217801
+Fix a lot of confusion around inserting nops on empty functions.
+
+On MachO, and MachO only, we cannot have a truly empty function since that
+breaks the linker logic for atomizing the section.
+
+When we are emitting a frame pointer, the presence of an unreachable will
+create a cfi instruction pointing past the last instruction. This is perfectly
+fine. The FDE information encodes the pc range it applies to. If some tool
+cannot handle this, we should explicitly say which bug we are working around
+and only work around it when it is actually relevant (not for ELF for example).
+
+Given the unreachable we could omit the .cfi_def_cfa_register, but then
+again, we could also omit the entire function prologue if we wanted to.
+
+r217899
+Add back a fallback case for targets that do not or cannot implement getNoopForMachoTarget().
+
+--- lib/CodeGen/AsmPrinter/AsmPrinter.cpp.orig	Sun Mar  2 21:57:42 2014
++++ lib/CodeGen/AsmPrinter/AsmPrinter.cpp	Tue Sep 16 22:33:35 2014
+@@ -739,14 +739,12 @@ void AsmPrinter::EmitFunctionBody() {
+ 
+   // Print out code for the function.
+   bool HasAnyRealCode = false;
+-  const MachineInstr *LastMI = 0;
+   for (MachineFunction::const_iterator I = MF->begin(), E = MF->end();
+        I != E; ++I) {
+     // Print a label for the basic block.
+     EmitBasicBlockStart(I);
+     for (MachineBasicBlock::const_iterator II = I->begin(), IE = I->end();
+          II != IE; ++II) {
+-      LastMI = II;
+ 
+       // Print the assembly for the instruction.
+       if (!II->isLabel() && !II->isImplicitDef() && !II->isKill() &&
+@@ -807,24 +805,18 @@ void AsmPrinter::EmitFunctionBody() {
+     }
+   }
+ 
+-  // If the last instruction was a prolog label, then we have a situation where
+-  // we emitted a prolog but no function body. This results in the ending prolog
+-  // label equaling the end of function label and an invalid "row" in the
+-  // FDE. We need to emit a noop in this situation so that the FDE's rows are
+-  // valid.
+-  bool RequiresNoop = LastMI && LastMI->isPrologLabel();
+-
+   // If the function is empty and the object file uses .subsections_via_symbols,
+   // then we need to emit *something* to the function body to prevent the
+   // labels from collapsing together.  Just emit a noop.
+-  if ((MAI->hasSubsectionsViaSymbols() && !HasAnyRealCode) || RequiresNoop) {
++  if ((MAI->hasSubsectionsViaSymbols() && !HasAnyRealCode)) {
+     MCInst Noop;
+     TM.getInstrInfo()->getNoopForMachoTarget(Noop);
+-    if (Noop.getOpcode()) {
+-      OutStreamer.AddComment("avoids zero-length function");
++    OutStreamer.AddComment("avoids zero-length function");
++
++    // Targets can opt-out of emitting the noop here by leaving the opcode
++    // unspecified.
++    if (Noop.getOpcode())
+       OutStreamer.EmitInstruction(Noop, getSubtargetInfo());
+-    } else  // Target not mc-ized yet.
+-      OutStreamer.EmitRawText(StringRef("\tnop\n"));
+   }
+ 
+   const Function *F = MF->getFunction();

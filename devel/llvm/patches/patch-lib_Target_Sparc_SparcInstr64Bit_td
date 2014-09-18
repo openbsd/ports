@@ -1,9 +1,12 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstr64Bit_td,v 1.1 2014/07/11 01:05:24 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstr64Bit_td,v 1.2 2014/09/18 20:19:27 brad Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
---- lib/Target/Sparc/SparcInstr64Bit.td.orig	Sun Jun 15 02:45:38 2014
-+++ lib/Target/Sparc/SparcInstr64Bit.td	Sun Jun 15 02:57:59 2014
+r208965
+Sparc: disable printing on longer "brX,pt" aliases
+
+--- lib/Target/Sparc/SparcInstr64Bit.td.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/SparcInstr64Bit.td	Mon Sep 15 15:26:21 2014
 @@ -235,7 +235,8 @@ def UDIVXri : F3_2<2, 0b001101,
  let Predicates = [Is64Bit] in {
  
@@ -90,9 +93,9 @@ Sync up the SPARC backend up to commit r203424.
 +
 +multiclass bpr_alias<string OpcStr, Instruction NAPT, Instruction APT> {
 +  def : InstAlias<!strconcat(OpcStr, ",pt $rs1, $imm16"),
-+                  (NAPT I64Regs:$rs1, bprtarget16:$imm16)>;
++                  (NAPT I64Regs:$rs1, bprtarget16:$imm16), 0>;
 +  def : InstAlias<!strconcat(OpcStr, ",a,pt $rs1, $imm16"),
-+                  (APT I64Regs:$rs1, bprtarget16:$imm16)>;
++                  (APT I64Regs:$rs1, bprtarget16:$imm16), 0>;
 +}
 +
 +defm BPZ   : BranchOnReg<0b001, "brz">;

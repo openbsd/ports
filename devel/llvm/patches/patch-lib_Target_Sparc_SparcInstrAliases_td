@@ -1,9 +1,15 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrAliases_td,v 1.1 2014/07/11 01:05:24 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrAliases_td,v 1.2 2014/09/18 20:19:27 brad Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
---- lib/Target/Sparc/SparcInstrAliases.td.orig	Sun Jun 15 02:45:48 2014
-+++ lib/Target/Sparc/SparcInstrAliases.td	Sun Jun 15 02:57:59 2014
+r208966
+Sparc: disable printing of jmp/call aliases (C++ does it)
+
+These aliases are handled entirely in C++ and only having TableGen InstAliases
+for some of them was confusing LLVM.
+
+--- lib/Target/Sparc/SparcInstrAliases.td.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/SparcInstrAliases.td	Mon Sep 15 15:27:10 2014
 @@ -13,32 +13,53 @@
  // Instruction aliases for conditional moves.
  
@@ -253,7 +259,7 @@ Sync up the SPARC backend up to commit r203424.
  defm : fp_cond_alias<"u",     0b0111>;
  defm : fp_cond_alias<"g",     0b0110>;
  defm : fp_cond_alias<"ug",    0b0101>;
-@@ -118,7 +278,6 @@ defm : fp_cond_alias<"le",    0b1101>;
+@@ -118,16 +278,15 @@ defm : fp_cond_alias<"le",    0b1101>;
  defm : fp_cond_alias<"ule",   0b1110>;
  defm : fp_cond_alias<"o",     0b1111>;
  
@@ -261,6 +267,19 @@ Sync up the SPARC backend up to commit r203424.
  // Instruction aliases for JMPL.
  
  // jmp addr -> jmpl addr, %g0
+-def : InstAlias<"jmp $addr", (JMPLrr G0, MEMrr:$addr)>;
+-def : InstAlias<"jmp $addr", (JMPLri G0, MEMri:$addr)>;
++def : InstAlias<"jmp $addr", (JMPLrr G0, MEMrr:$addr), 0>;
++def : InstAlias<"jmp $addr", (JMPLri G0, MEMri:$addr), 0>;
+ 
+ // call addr -> jmpl addr, %o7
+-def : InstAlias<"call $addr", (JMPLrr O7, MEMrr:$addr)>;
+-def : InstAlias<"call $addr", (JMPLri O7, MEMri:$addr)>;
++def : InstAlias<"call $addr", (JMPLrr O7, MEMrr:$addr), 0>;
++def : InstAlias<"call $addr", (JMPLri O7, MEMri:$addr), 0>;
+ 
+ // retl -> RETL 8
+ def : InstAlias<"retl", (RETL 8)>;
 @@ -140,3 +299,27 @@ def : InstAlias<"mov $rs2, $rd", (ORrr IntRegs:$rd, G0
  
  // mov simm13, rd -> or %g0, simm13, rd

@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib_CodeGen_TargetInstrInfo_cpp,v 1.1 2014/09/18 20:19:27 brad Exp $
+
+r217801
+Fix a lot of confusion around inserting nops on empty functions.
+
+On MachO, and MachO only, we cannot have a truly empty function since that
+breaks the linker logic for atomizing the section.
+
+When we are emitting a frame pointer, the presence of an unreachable will
+create a cfi instruction pointing past the last instruction. This is perfectly
+fine. The FDE information encodes the pc range it applies to. If some tool
+cannot handle this, we should explicitly say which bug we are working around
+and only work around it when it is actually relevant (not for ELF for example).
+
+Given the unreachable we could omit the .cfi_def_cfa_register, but then
+again, we could also omit the entire function prologue if we wanted to.
+
+--- lib/CodeGen/TargetInstrInfo.cpp.orig	Mon Sep 15 16:04:07 2014
++++ lib/CodeGen/TargetInstrInfo.cpp	Mon Sep 15 16:04:33 2014
+@@ -368,6 +368,10 @@ static const TargetRegisterClass *canFoldCopy(const Ma
+   return 0;
+ }
+ 
++void TargetInstrInfo::getNoopForMachoTarget(MCInst &NopInst) const {
++  llvm_unreachable("Not a MachO target");
++}
++
+ bool TargetInstrInfo::
+ canFoldMemoryOperand(const MachineInstr *MI,
+                      const SmallVectorImpl<unsigned> &Ops) const {
