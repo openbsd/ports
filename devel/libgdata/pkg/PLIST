@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/04/01 13:21:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/09/18 08:10:40 jasper Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -82,6 +82,15 @@ include/libgdata/gdata/services/documents/gdata-documents-service.h
 include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h
 include/libgdata/gdata/services/documents/gdata-documents-text.h
 include/libgdata/gdata/services/documents/gdata-documents-upload-query.h
+include/libgdata/gdata/services/freebase/
+include/libgdata/gdata/services/freebase/gdata-freebase-enums.h
+include/libgdata/gdata/services/freebase/gdata-freebase-query.h
+include/libgdata/gdata/services/freebase/gdata-freebase-result.h
+include/libgdata/gdata/services/freebase/gdata-freebase-search-query.h
+include/libgdata/gdata/services/freebase/gdata-freebase-search-result.h
+include/libgdata/gdata/services/freebase/gdata-freebase-service.h
+include/libgdata/gdata/services/freebase/gdata-freebase-topic-query.h
+include/libgdata/gdata/services/freebase/gdata-freebase-topic-result.h
 include/libgdata/gdata/services/picasaweb/
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-album.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-comment.h
@@ -91,6 +100,11 @@ include/libgdata/gdata/services/picasaweb/gdata-picasaweb-file.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-query.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-service.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-user.h
+include/libgdata/gdata/services/tasks/
+include/libgdata/gdata/services/tasks/gdata-tasks-query.h
+include/libgdata/gdata/services/tasks/gdata-tasks-service.h
+include/libgdata/gdata/services/tasks/gdata-tasks-task.h
+include/libgdata/gdata/services/tasks/gdata-tasks-tasklist.h
 include/libgdata/gdata/services/youtube/
 include/libgdata/gdata/services/youtube/gdata-youtube-category.h
 include/libgdata/gdata/services/youtube/gdata-youtube-comment.h
@@ -145,6 +159,13 @@ share/gtk-doc/html/gdata/GDataDocumentsUploadQuery.html
 share/gtk-doc/html/gdata/GDataDownloadStream.html
 share/gtk-doc/html/gdata/GDataEntry.html
 share/gtk-doc/html/gdata/GDataFeed.html
+share/gtk-doc/html/gdata/GDataFreebaseQuery.html
+share/gtk-doc/html/gdata/GDataFreebaseResult.html
+share/gtk-doc/html/gdata/GDataFreebaseSearchQuery.html
+share/gtk-doc/html/gdata/GDataFreebaseSearchResult.html
+share/gtk-doc/html/gdata/GDataFreebaseService.html
+share/gtk-doc/html/gdata/GDataFreebaseTopicQuery.html
+share/gtk-doc/html/gdata/GDataFreebaseTopicResult.html
 share/gtk-doc/html/gdata/GDataGContactCalendar.html
 share/gtk-doc/html/gdata/GDataGContactEvent.html
 share/gtk-doc/html/gdata/GDataGContactExternalID.html
@@ -180,6 +201,10 @@ share/gtk-doc/html/gdata/GDataPicasaWebService.html
 share/gtk-doc/html/gdata/GDataPicasaWebUser.html
 share/gtk-doc/html/gdata/GDataQuery.html
 share/gtk-doc/html/gdata/GDataService.html
+share/gtk-doc/html/gdata/GDataTasksQuery.html
+share/gtk-doc/html/gdata/GDataTasksService.html
+share/gtk-doc/html/gdata/GDataTasksTask.html
+share/gtk-doc/html/gdata/GDataTasksTasklist.html
 share/gtk-doc/html/gdata/GDataUploadStream.html
 share/gtk-doc/html/gdata/GDataYouTubeCategory.html
 share/gtk-doc/html/gdata/GDataYouTubeComment.html
@@ -210,6 +235,8 @@ share/gtk-doc/html/gdata/ch14.html
 share/gtk-doc/html/gdata/ch15.html
 share/gtk-doc/html/gdata/ch16.html
 share/gtk-doc/html/gdata/ch17.html
+share/gtk-doc/html/gdata/ch18.html
+share/gtk-doc/html/gdata/ch19.html
 share/gtk-doc/html/gdata/data-flow.png
 share/gtk-doc/html/gdata/gdata-GData-Types.html
 share/gtk-doc/html/gdata/gdata-Version-Information.html
@@ -235,6 +262,9 @@ share/gtk-doc/html/gdata/ix15.html
 share/gtk-doc/html/gdata/ix16.html
 share/gtk-doc/html/gdata/ix17.html
 share/gtk-doc/html/gdata/ix18.html
+share/gtk-doc/html/gdata/ix19.html
+share/gtk-doc/html/gdata/ix20.html
+share/gtk-doc/html/gdata/ix21.html
 share/gtk-doc/html/gdata/left-insensitive.png
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
