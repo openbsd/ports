@@ -1,21 +1,11 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/06/22 14:43:13 jasper Exp $
---- configure.orig	Tue May  8 04:17:44 2007
-+++ configure	Thu Jun 14 02:01:51 2007
-@@ -1682,8 +1682,6 @@ fi
+$OpenBSD: patch-configure,v 1.2 2014/09/18 07:26:38 sthen Exp $
+--- configure.orig	Thu Sep 18 08:11:24 2014
++++ configure	Thu Sep 18 08:12:06 2014
+@@ -1710,7 +1710,6 @@ fi
  
  
  
 -   PYTHON=""
--
- # Check whether --with-python-23 was given.
- if test "${with_python_23+set}" = set; then
-   withval=$with_python_23; force23=1
-@@ -1738,7 +1736,7 @@ fi
- done
- 
-    else
--        for ac_prog in python python2 python2.3
-+        for ac_prog in python python2 python2.3 python2.4 python2.5
- do
-   # Extract the first word of "$ac_prog", so it can be a program name with args.
- set dummy $ac_prog; ac_word=$2
+    for python in python python2 python2.5; do
+               unset ac_cv_path_PYTHON
+        for ac_prog in $python
