@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2014/09/16 09:07:03 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/09/18 13:26:43 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast and stable PHP opcode cacher
 
 VERSION=	3.1.0
+REVISION=	0
 DISTNAME=	xcache-${VERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${VERSION}/
-FAKE_AS_ROOT =	Yes
 
 HOMEPAGE=	http://xcache.lighttpd.net/
 
@@ -58,7 +58,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
 	cd ${WRKSRC}/htdocs && cp -R * ${WRKINST}${WEBROOT}/xcache
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${WEBROOT}/xcache/*
-	chmod -R ${SHAREMODE} ${WRKINST}${WEBROOT}/xcache/*
+	find ${WRKINST}${WEBROOT}/xcache -type f -print0 | \
+		xargs -0 chmod ${SHAREMODE}
 	${INSTALL_DATA} ${WRKSRC}/xcache.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}
 
