@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/01 11:39:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/19 16:42:28 sthen Exp $
 share/vpnc-scripts/
 share/vpnc-scripts/COPYING
 share/vpnc-scripts/vpnc-script
+@mode 555
 @sample ${SYSCONFDIR}/vpnc-script
+@mode
 share/vpnc-scripts/vpnc-script-ptrtd
 share/vpnc-scripts/vpnc-script-sshd
