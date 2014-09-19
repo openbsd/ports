@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/12/02 19:36:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/09/19 20:36:01 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rvmrc
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/README.txt
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/assets/
@@ -42,6 +49,7 @@ ${GEM_LIB}/gems/${DISTNAME}/assets/plastik/
 ${GEM_LIB}/gems/${DISTNAME}/assets/plastik/blue.png
 ${GEM_LIB}/gems/${DISTNAME}/assets/plastik/green.png
 ${GEM_LIB}/gems/${DISTNAME}/assets/plastik/red.png
+${GEM_LIB}/gems/${DISTNAME}/gruff.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/init.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/
@@ -63,6 +71,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/mini/side_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/net.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/photo_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/pie.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/gruff/scatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/scene.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/side_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/side_stacked_bar.rb
@@ -70,6 +79,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/spider.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/stacked_area.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/stacked_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/stacked_mixin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/gruff/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/rails_generators/
 ${GEM_LIB}/gems/${DISTNAME}/rails_generators/gruff/
 ${GEM_LIB}/gems/${DISTNAME}/rails_generators/gruff/gruff_generator.rb
@@ -92,6 +102,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_mini_side_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_net.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_photo.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pie.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_scatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_scene.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_side_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_sidestacked_bar.rb
