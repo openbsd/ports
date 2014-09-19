@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/02 13:32:54 landry Exp $
-
-# XXX build fails finding struct pdf_xref
-# Turns out our mupdf is too new
+# $OpenBSD: Makefile,v 1.2 2014/09/19 04:36:00 landry Exp $
 
 V =		0.2.6
+REVISION =	0
 COMMENT =	mupdf pdf plugin for zathura
 DISTNAME =	zathura-pdf-mupdf-${V}
 
