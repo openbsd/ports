@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/08 23:24:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/19 20:47:21 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/History.txt
-${GEM_LIB}/gems/${DISTNAME}/Install.txt
-${GEM_LIB}/gems/${DISTNAME}/Licence.txt
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
+${GEM_LIB}/gems/${DISTNAME}/.hoerc
+${GEM_LIB}/gems/${DISTNAME}/Contributing.rdoc
+${GEM_LIB}/gems/${DISTNAME}/History.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Licence.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/Readme.txt
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/color/
 ${GEM_LIB}/gems/${DISTNAME}/lib/color.rb
@@ -24,10 +26,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/color/rgb-colors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/color/rgb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/color/rgb/metallic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/color/yiq.rb
-${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/test_adobecolor.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_all.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_cmyk.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_color.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_css.rb
