@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2014/09/14 23:05:41 bcallah Exp $
+# $OpenBSD: Makefile,v 1.109 2014/09/19 22:23:49 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -35,6 +35,7 @@
      SUBDIR += kile-kde4
      SUBDIR += kxmleditor
      SUBDIR += ldapvi
+     SUBDIR += le
      SUBDIR += leafpad
      SUBDIR += libreoffice
      SUBDIR += moe
