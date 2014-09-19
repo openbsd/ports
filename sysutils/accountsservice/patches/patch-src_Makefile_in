@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.13 2014/05/09 12:59:50 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.14 2014/09/19 06:20:36 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- src/Makefile.in.orig	Thu Mar 20 19:52:50 2014
-+++ src/Makefile.in	Fri May  9 14:26:08 2014
-@@ -402,8 +402,8 @@ SUBDIRS = . libaccountsservice
+--- src/Makefile.in.orig	Thu Sep 18 16:53:27 2014
++++ src/Makefile.in	Fri Sep 19 08:09:16 2014
+@@ -403,8 +403,8 @@ SUBDIRS = . libaccountsservice
  INCLUDES = \
  	-DLOCALSTATEDIR=\""$(localstatedir)"\" \
  	-DDATADIR=\""$(datadir)"\" \
