@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/22 08:16:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/19 12:31:52 ajacoutot Exp $
 
 COMMENT=	web-based VirtualBox front-end
 
@@ -6,11 +6,13 @@ V=		4.3-1
 DISTNAME=	phpvirtualbox-${V}
 PKGNAME=	phpvirtualbox-${V:S/-/./}
 EXTRACT_SUFX=	.zip
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	http://sourceforge.net/projects/phpvirtualbox/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
