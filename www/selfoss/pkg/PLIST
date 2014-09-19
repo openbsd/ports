@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/08/11 21:03:03 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/09/19 16:08:26 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
@@ -41,9 +41,6 @@ selfoss/data/cache/
 selfoss/data/cache/.htaccess
 @mode 775
 selfoss/data/favicons/
-@mode 755
-selfoss/data/favicons/.htaccess
-@mode 775
 selfoss/data/logs/
 @mode 755
 selfoss/data/logs/.htaccess
@@ -53,8 +50,6 @@ selfoss/data/sqlite/
 selfoss/data/sqlite/.htaccess
 @mode 775
 selfoss/data/thumbnails/
-@mode 755
-selfoss/data/thumbnails/.htaccess
 @mode
 @group
 selfoss/defaults.ini
@@ -75,7 +70,9 @@ selfoss/libs/
 selfoss/libs/CssMin.php
 selfoss/libs/FeedWriter/
 selfoss/libs/FeedWriter/FeedItem.php
+selfoss/libs/FeedWriter/FeedTypes.php
 selfoss/libs/FeedWriter/FeedWriter.php
+selfoss/libs/FeedWriter/RSS2FeedWriter.php
 selfoss/libs/JSMin.php
 selfoss/libs/SimplePie.php
 selfoss/libs/WideImage/
@@ -179,6 +176,7 @@ selfoss/public/
 selfoss/public/apple-touch-icon.png
 selfoss/public/css/
 selfoss/public/css/fonts.css
+selfoss/public/css/jquery.fancybox.css
 selfoss/public/css/jquery.mCustomScrollbar.css
 selfoss/public/css/reset.css
 selfoss/public/css/spectrum.css
@@ -214,10 +212,14 @@ selfoss/public/images/ajax-loader-big.gif
 selfoss/public/images/ajax-loader.gif
 selfoss/public/images/arrow-down.png
 selfoss/public/images/bg.gif
+selfoss/public/images/blank.gif
 selfoss/public/images/close.png
 selfoss/public/images/delicious.png
 selfoss/public/images/entry-bg.png
 selfoss/public/images/facebook.png
+selfoss/public/images/fancybox_loading.gif
+selfoss/public/images/fancybox_overlay.png
+selfoss/public/images/fancybox_sprite.png
 selfoss/public/images/googleplus.png
 selfoss/public/images/logo.png
 selfoss/public/images/mCSB_buttons.png
@@ -229,6 +231,7 @@ selfoss/public/images/nav-logout.png
 selfoss/public/images/nav-mobile-bg.png
 selfoss/public/images/nav-mobile-logo.png
 selfoss/public/images/nav-mobile-settings.png
+selfoss/public/images/nav-refresh.png
 selfoss/public/images/nav-sources.png
 selfoss/public/images/open.png
 selfoss/public/images/pocket.png
@@ -241,12 +244,14 @@ selfoss/public/images/starred.png
 selfoss/public/images/twitter.png
 selfoss/public/images/unread.png
 selfoss/public/images/unstarred.png
+selfoss/public/images/wallabag.png
 selfoss/public/js/
-selfoss/public/js/jquery-1.8.3.min.js
-selfoss/public/js/jquery-ui-1.10.0.custom.js
+selfoss/public/js/jquery-2.1.1.min.js
+selfoss/public/js/jquery-ui.js
+selfoss/public/js/jquery.fancybox.pack.js
 selfoss/public/js/jquery.hotkeys.js
 selfoss/public/js/jquery.mCustomScrollbar.min.js
-selfoss/public/js/jquery.mousewheel.js
+selfoss/public/js/jquery.mousewheel.min.js
 selfoss/public/js/lazy-image-loader.js
 selfoss/public/js/selfoss-base.js
 selfoss/public/js/selfoss-events-entries.js

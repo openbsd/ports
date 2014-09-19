@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2014/08/11 21:03:03 rpe Exp $
+$OpenBSD: README,v 1.3 2014/09/19 16:08:26 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -33,6 +33,9 @@ following methods:
 
     3. ${PREFIX}/conf/modules.sample/selfoss.conf
     php_admin_value allow_url_fopen 1
+
+    4. ${SYSCONFDIR}/nginx/nginx.conf
+    fastcgi_param PHP_VALUE "allow_url_fopen=on";
 
 
 Activate user/password login
