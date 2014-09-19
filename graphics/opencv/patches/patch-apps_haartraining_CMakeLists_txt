@@ -1,7 +1,7 @@
-$OpenBSD: patch-apps_haartraining_CMakeLists_txt,v 1.1 2014/09/18 16:30:00 zhuk Exp $
+$OpenBSD: patch-apps_haartraining_CMakeLists_txt,v 1.2 2014/09/19 22:35:51 zhuk Exp $
 Fix linking.
---- apps/haartraining/CMakeLists.txt.orig	Thu Sep 18 20:22:12 2014
-+++ apps/haartraining/CMakeLists.txt	Thu Sep 18 20:24:53 2014
+--- apps/haartraining/CMakeLists.txt.orig	Fri Apr 11 14:15:26 2014
++++ apps/haartraining/CMakeLists.txt	Sat Sep 20 01:51:33 2014
 @@ -14,8 +14,6 @@ if(WIN32)
    link_directories(${CMAKE_CURRENT_BINARY_DIR})
  endif()
@@ -11,12 +11,36 @@ Fix linking.
  # -----------------------------------------------------------
  #  Library
  # -----------------------------------------------------------
-@@ -38,6 +36,8 @@ set_target_properties(opencv_haartraining_engine PROPE
-                       RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+@@ -39,6 +37,8 @@ set_target_properties(opencv_haartraining_engine PROPE
                        INSTALL_NAME_DIR lib
                       )
-+
-+target_link_libraries(opencv_haartraining_engine ${OPENCV_HAARTRAINING_DEPS})
  
++target_link_libraries(opencv_haartraining_engine ${OPENCV_HAARTRAINING_DEPS})
++
  # -----------------------------------------------------------
  #  haartraining
+ # -----------------------------------------------------------
+@@ -47,6 +47,7 @@ add_executable(opencv_haartraining cvhaartraining.h ha
+ set_target_properties(opencv_haartraining PROPERTIES
+                       DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+                       OUTPUT_NAME "opencv_haartraining")
++target_link_libraries(opencv_haartraining opencv_haartraining_engine)
+ 
+ # -----------------------------------------------------------
+ #  createsamples
+@@ -56,6 +57,7 @@ add_executable(opencv_createsamples cvhaartraining.h c
+ set_target_properties(opencv_createsamples PROPERTIES
+                       DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+                       OUTPUT_NAME "opencv_createsamples")
++target_link_libraries(opencv_createsamples opencv_haartraining_engine)
+ 
+ # -----------------------------------------------------------
+ #  performance
+@@ -64,6 +66,7 @@ add_executable(opencv_performance performance.cpp)
+ set_target_properties(opencv_performance PROPERTIES
+                       DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+                       OUTPUT_NAME "opencv_performance")
++target_link_libraries(opencv_performance opencv_haartraining_engine)
+ 
+ # -----------------------------------------------------------
+ #  Install part
