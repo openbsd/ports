@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/09/19 01:44:46 brad Exp $
 
 COMMENT=	ISO MPEG-4 compliant video codec
 
-DISTNAME=	xvidcore-1.3.2
-REVISION=	2
+DISTNAME=	xvidcore-1.3.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
+EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	xvidcore	4.3
+SHARED_LIBS=	xvidcore	4.4
 
 HOMEPAGE=	http://www.xvid.org/
 

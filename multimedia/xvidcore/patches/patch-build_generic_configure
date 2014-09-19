@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_generic_configure,v 1.8 2012/08/27 09:34:43 jasper Exp $
---- build/generic/configure.orig	Mon May 23 06:22:01 2011
-+++ build/generic/configure	Thu Aug 16 20:29:44 2012
-@@ -2243,8 +2243,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+$OpenBSD: patch-build_generic_configure,v 1.9 2014/09/19 01:44:46 brad Exp $
+--- build/generic/configure.orig	Tue Apr  8 16:41:05 2014
++++ build/generic/configure	Tue Sep  2 16:41:41 2014
+@@ -2269,8 +2269,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  
@@ -10,16 +10,16 @@ $OpenBSD: patch-build_generic_configure,v 1.8 2012/08/27 09:34:43 jasper Exp $
  
  minimum_yasm_major_version=1
  minimum_nasm_minor_version=0
-@@ -4333,7 +4331,7 @@ $as_echo "ok" >&6; }
- $as_echo "ok" >&6; }
- 	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
+@@ -4379,7 +4377,7 @@ $as_echo "ok" >&6; }
  	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
+ 	SO_API_MAJOR_LINK="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR)"
+ 	SO_LINK="libxvidcore.\$(SHARED_EXTENSION)"
 -	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -lc -lm"
 +	SPECIFIC_LDFLAGS="-shared -fPIC -lm"
  	SPECIFIC_CFLAGS="-fPIC"
  	;;
       [cC][yY][gG][wW][iI][nN]*|mingw32*|mks*)
-@@ -4597,7 +4595,7 @@ $as_echo "macho32" >&6; }
+@@ -4651,7 +4649,7 @@ $as_echo "macho32" >&6; }
  
         AS="$chosen_asm_prog"
         ASSEMBLY_EXTENSION="asm"

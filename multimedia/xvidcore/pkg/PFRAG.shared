@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/08 22:12:38 jakemsr Exp $
-@lib lib/libxvidcore.so.${LIBxvidcore_VERSION}

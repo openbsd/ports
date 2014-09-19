@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_generic_Makefile,v 1.4 2011/08/30 18:53:24 jasper Exp $
---- build/generic/Makefile.orig	Thu May 19 04:27:26 2011
-+++ build/generic/Makefile	Wed Jun 15 14:46:05 2011
+$OpenBSD: patch-build_generic_Makefile,v 1.5 2014/09/19 01:44:46 brad Exp $
+--- build/generic/Makefile.orig	Tue Apr  8 16:41:05 2014
++++ build/generic/Makefile	Tue Sep  2 16:44:15 2014
 @@ -46,6 +46,7 @@ include platform.inc
  endif
  
@@ -36,3 +36,12 @@ $OpenBSD: patch-build_generic_Makefile,v 1.4 2011/08/30 18:53:24 jasper Exp $
  
  #-----------------------------------------------------------------------------
  # Shared Library
+@@ -134,7 +135,7 @@ $(SHARED_LIB): $(BUILD_DIR) $(OBJECTS)
+ 	@echo "  L: $(@F)"
+ 	@$(INSTALL) -m 644 libxvidcore.def $(BUILD_DIR)/libxvidcore.def
+ 	@$(INSTALL) -m 644 libxvidcore.ld $(BUILD_DIR)/libxvidcore.ld
+-	@cd $(BUILD_DIR) && $(CC) $(LDFLAGS) $(OBJECTS) -o $(PRE_SHARED_LIB) $(SPECIFIC_LDFLAGS)
++	cd $(BUILD_DIR) && $(CC) $(LDFLAGS) $(OBJECTS) -o $(PRE_SHARED_LIB) $(SPECIFIC_LDFLAGS)
+ 
+ #-----------------------------------------------------------------------------
+ # Installation
