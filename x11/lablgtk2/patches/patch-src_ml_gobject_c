@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ml_gobject_c,v 1.1 2014/09/19 12:52:02 chrisz Exp $
+
+Fix segfault in unison. Val_unit is an unboxed integer, which is not zero.
+Use the apropriate macro for checking whether ret has been initialized.
+
+--- src/ml_gobject.c.orig	Fri Sep 19 14:36:30 2014
++++ src/ml_gobject.c	Fri Sep 19 14:40:49 2014
+@@ -671,7 +671,7 @@ CAMLprim value ml_g_signal_emit_by_name (value obj, va
+                       query.param_types[i] & ~G_SIGNAL_TYPE_STATIC_SCOPE);
+         g_value_set_mlvariant (&iparams[i+1], Field(params,i));
+     }
+-    g_signal_emitv (iparams, signal_id, detail, (ret ? GValue_val(ret) : 0));
++    g_signal_emitv (iparams, signal_id, detail, (Is_block(ret) ? GValue_val(ret) : 0));
+     for (i = 0; i < query.n_params + 1; i++)
+         g_value_unset (iparams + i);
+     free (iparams);

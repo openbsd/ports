@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2014/09/18 10:51:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2014/09/19 12:52:02 chrisz Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
 V =		2.18.2
+REVISION =	0
 DISTNAME =	lablgtk-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
