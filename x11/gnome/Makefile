@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2014/08/14 20:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.236 2014/09/19 07:51:53 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -82,6 +82,7 @@
      SUBDIR += polari
      SUBDIR += power-manager
      SUBDIR += py-atspi
+     SUBDIR += quadrapassel
      SUBDIR += rygel
      SUBDIR += screenshot
      SUBDIR += seahorse
