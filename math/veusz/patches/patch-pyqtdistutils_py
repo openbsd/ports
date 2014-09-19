@@ -1,0 +1,13 @@
+$OpenBSD: patch-pyqtdistutils_py,v 1.1 2014/09/19 23:12:19 bcallah Exp $
+--- pyqtdistutils.py.orig	Fri Sep 19 19:03:46 2014
++++ pyqtdistutils.py	Fri Sep 19 19:04:25 2014
+@@ -34,8 +34,7 @@ except:
+     import PyQt4.pyqtconfig
+     SIP_FLAGS = PyQt4.pyqtconfig.Configuration().pyqt_sip_flags
+ 
+-PYQT_SIP_DIR = os.path.join(
+-    sipconfig.Configuration().default_sip_dir, 'PyQt4')
++PYQT_SIP_DIR = sipconfig.Configuration().default_sip_dir
+ 
+ SIP_BIN = sipconfig.Configuration().sip_bin
+ SIP_INC_DIR = sipconfig.Configuration().sip_inc_dir
