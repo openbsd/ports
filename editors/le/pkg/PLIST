@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/19 22:23:29 bcallah Exp $
+@bin bin/le
+@comment lib/charset.alias
+@man man/man1/le.1
+share/le/
+share/le/colors-black
+share/le/colors-blue
+share/le/colors-defbg
+share/le/colors-green
+share/le/colors-white
+share/le/help
+share/le/keymap-emacs
+share/le/le.hlp
+share/le/mainmenu
+share/le/mainmenu-ru
+share/le/syntax
+share/le/syntax.d/
+share/le/syntax.d/ada
+share/le/syntax.d/as
+share/le/syntax.d/awk
+share/le/syntax.d/c++-comment
+share/le/syntax.d/c-comment
+share/le/syntax.d/c-literal
+share/le/syntax.d/cpp
+share/le/syntax.d/eiffel
+share/le/syntax.d/fvwm2
+share/le/syntax.d/gema
+share/le/syntax.d/golang
+share/le/syntax.d/haskell
+share/le/syntax.d/html
+share/le/syntax.d/java
+share/le/syntax.d/javascript
+share/le/syntax.d/logrotate-conf
+share/le/syntax.d/lout
+share/le/syntax.d/make-file
+share/le/syntax.d/metafont
+share/le/syntax.d/named-conf
+share/le/syntax.d/ocaml
+share/le/syntax.d/pascal
+share/le/syntax.d/perl
+share/le/syntax.d/php
+share/le/syntax.d/python
+share/le/syntax.d/sather
+share/le/syntax.d/shell
+share/le/syntax.d/snmp-mib
+share/le/syntax.d/sql
+share/le/syntax.d/tcl
+share/le/syntax.d/tex
+share/le/syntax.d/texinfo
+share/le/syntax.d/txt2tags
+share/le/syntax.d/verilog

@@ -1,0 +1,6 @@
+LE - text editor utilizing curses library for screen output. Here are
+its features: various operations with stream and rectangular blocks,
+search and replace with full regular expressions, text formatting,
+undelete/uninsert, hex editing, tunable key sequences, tunable colors,
+tunable syntax highlighting, mouse support via ncurses. Can use mmap to
+edit very large files or even devices.
