@@ -1,0 +1,24 @@
+$OpenBSD: patch-tests_xzgrep_expected_output,v 1.1 2014/09/19 20:58:39 naddy Exp $
+
+OpenBSD grep and GNU grep interpret the combination -l -q differently.
+
+--- tests/xzgrep_expected_output.orig	Sun Sep 14 18:17:20 2014
++++ tests/xzgrep_expected_output	Fri Sep 19 21:34:41 2014
+@@ -4,7 +4,9 @@ xzgrep_test_1.xz:in voluptate velit esse cillum dolore
+ xzgrep_test_2.xz:Hello
+ retval 0
+ => xzgrep -l el <=
++(standard input)
+ xzgrep_test_1.xz
++(standard input)
+ xzgrep_test_2.xz
+ retval 0
+ => xzgrep -h el <=
+@@ -21,6 +23,7 @@ retval 0
+ xzgrep_test_2.xz:Hello
+ retval 0
+ => xzgrep -l Hello <=
++(standard input)
+ xzgrep_test_2.xz
+ retval 0
+ => xzgrep -h Hello <=

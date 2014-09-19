@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/07 11:50:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/09/19 20:58:39 naddy Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
 bin/lzcat
@@ -43,7 +43,6 @@ include/lzma/vli.h
 lib/liblzma.a
 lib/liblzma.la
 @lib lib/liblzma.so.${LIBlzma_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/liblzma.pc
 @man man/man1/lzcat.1
 @man man/man1/lzcmp.1
@@ -69,13 +68,13 @@ lib/pkgconfig/liblzma.pc
 @man man/man1/xzless.1
 @man man/man1/xzmore.1
 share/doc/xz/
-@comment share/doc/xz/AUTHORS
+share/doc/xz/AUTHORS
 share/doc/xz/COPYING
-@comment share/doc/xz/COPYING.GPLv2
-@comment share/doc/xz/NEWS
-@comment share/doc/xz/README
-@comment share/doc/xz/THANKS
-@comment share/doc/xz/TODO
+share/doc/xz/COPYING.GPLv2
+share/doc/xz/NEWS
+share/doc/xz/README
+share/doc/xz/THANKS
+share/doc/xz/TODO
 share/doc/xz/examples/
 share/doc/xz/examples/00_README.txt
 share/doc/xz/examples/01_compress_easy.c
