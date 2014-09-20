@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.55 2014/06/12 22:39:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.56 2014/09/20 20:37:44 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -367,6 +367,7 @@ lib/asterisk/modules/res_timing_pthread.so
 lib/asterisk/modules/res_xmpp.so
 @comment lib/libasteriskssl.so
 @lib lib/libasteriskssl.so.${LIBasteriskssl_VERSION}
+lib/pkgconfig/asterisk.pc
 @man man/man8/astdb2bdb.8
 @man man/man8/astdb2sqlite3.8
 @man man/man8/asterisk.8
