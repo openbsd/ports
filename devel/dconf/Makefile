@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2014/09/16 19:56:09 miod Exp $
+# $OpenBSD: Makefile,v 1.62 2014/09/20 06:34:53 ajacoutot Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -9,12 +9,10 @@ COMMENT-main=		configuration backend system
 COMMENT-editor=		graphical dconf(1) editor
 
 GNOME_PROJECT=		dconf
-GNOME_VERSION=		0.20.0
+GNOME_VERSION=		0.22.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-editor=		dconf-editor-${GNOME_VERSION}
-
-REVISION-main=		0
 
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 SHARED_LIBS +=		dconf-dbus-1 1.0 # 1.0.0
@@ -45,7 +43,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache vala
+MODGNOME_TOOLS=		desktop-file-utils docbook gtk-update-icon-cache vala
 
 RUN_DEPENDS-main=	# empty
 LIB_DEPENDS-main=	devel/glib2 \
