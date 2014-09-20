@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.234 2014/04/20 21:18:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.235 2014/09/20 16:23:45 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.40.0
+GNOME_VERSION=		2.40.1
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		7
 
 CATEGORIES=		devel
 
@@ -13,11 +12,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  glib-2.0             4000.0   # 4000.0
-SHARED_LIBS +=  gmodule-2.0          4000.0   # 4000.0
-SHARED_LIBS +=  gthread-2.0          4000.0   # 4000.0
-SHARED_LIBS +=  gobject-2.0          4000.0   # 4000.0
-SHARED_LIBS +=  gio-2.0              4000.0   # 4000.0
+SHARED_LIBS +=  glib-2.0             4000.0   # 4001.0
+SHARED_LIBS +=  gmodule-2.0          4000.0   # 4001.0
+SHARED_LIBS +=  gthread-2.0          4000.0   # 4001.0
+SHARED_LIBS +=  gobject-2.0          4000.0   # 4001.0
+SHARED_LIBS +=  gio-2.0              4000.0   # 4001.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,7 +50,7 @@ CONFIGURE_ARGS=		--enable-static \
 PATCH_LIST=	patch-* gcc3-*
 .endif
 
-# XXX rm at next release; patch-configure_ac, patch-gobject_Makefile_in
+# XXX rm at next major release; patch-configure_ac
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
