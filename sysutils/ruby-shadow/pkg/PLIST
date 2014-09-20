@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/08/10 11:37:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/20 21:07:20 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 @comment ${GEM_LIB}/gems/${DISTNAME}/.RUBYARCHDIR.time
@@ -11,14 +11,11 @@ ${GEM_LIB}/gems/${DISTNAME}/README.euc
 ${GEM_LIB}/gems/${DISTNAME}/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/shadow.so
-${GEM_LIB}/gems/${DISTNAME}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/pwd/
 ${GEM_LIB}/gems/${DISTNAME}/pwd/depend
 ${GEM_LIB}/gems/${DISTNAME}/pwd/shadow.c
 ${GEM_LIB}/gems/${DISTNAME}/ruby-shadow.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/shadow/
-${GEM_LIB}/gems/${DISTNAME}/shadow.o
-${GEM_LIB}/gems/${DISTNAME}/shadow.so
 ${GEM_LIB}/gems/${DISTNAME}/shadow/depend
 ${GEM_LIB}/gems/${DISTNAME}/shadow/shadow.c
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
