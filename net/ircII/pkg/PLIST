@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/01/19 03:04:39 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/09/20 18:40:27 naddy Exp $
 @bin bin/ircII
 bin/ircbug
 @bin bin/ircflush
@@ -324,7 +324,6 @@ share/ircII/help/rbind
 share/ircII/help/redirect
 share/ircII/help/rehash
 share/ircII/help/restart
-share/ircII/help/rules
 share/ircII/help/save
 share/ircII/help/say
 share/ircII/help/send
@@ -424,6 +423,10 @@ share/ircII/help/set/show_numerics
 share/ircII/help/set/show_stars
 share/ircII/help/set/show_status_all
 share/ircII/help/set/show_who_hopcount
+share/ircII/help/set/ssl_ca_chain_file
+share/ircII/help/set/ssl_ca_file
+share/ircII/help/set/ssl_ca_path
+share/ircII/help/set/ssl_ca_private_key_file
 share/ircII/help/set/star_prefix
 share/ircII/help/set/status_away
 share/ircII/help/set/status_channel

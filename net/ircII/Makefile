@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2014/01/19 03:04:39 pascal Exp $
+# $OpenBSD: Makefile,v 1.43 2014/09/20 18:40:27 naddy Exp $
 
 COMMENT=	Internet Relay Chat client
 
-VERSION=	20131230
+VERSION=	20140831
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
 CATEGORIES=	net
@@ -19,7 +19,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c termcap
+WANTLIB=	c crypto ssl termcap
 
 FAKE_FLAGS=	INSTALL_IRC_NAME="ircII" \
 		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
@@ -27,7 +27,8 @@ FAKE_FLAGS=	INSTALL_IRC_NAME="ircII" \
 MODULES =	converters/libiconv
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	IRCLIB='$${datadir}/ircII' CPPFLAGS="-I${LOCALBASE}/include" LIBS="-liconv"
+CONFIGURE_ENV=	IRCLIB='$${datarootdir}/ircII' \
+		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-liconv"
 
 NO_TEST=	Yes
 

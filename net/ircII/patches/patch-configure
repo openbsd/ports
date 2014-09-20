@@ -1,13 +1,32 @@
-$OpenBSD: patch-configure,v 1.1 2014/01/19 03:04:39 pascal Exp $
---- configure.orig	Mon Dec 30 17:42:37 2013
-+++ configure	Fri Jan 17 18:54:23 2014
-@@ -2322,6 +2322,9 @@ else
- /* System header to define __stub macros and hopefully few prototypes,
-     which can conflict with char iconv_open(); below.  */
- #include <assert.h>
+$OpenBSD: patch-configure,v 1.2 2014/09/20 18:40:27 naddy Exp $
+--- configure.orig	Wed Aug  6 21:01:22 2014
++++ configure	Sat Sep 20 17:27:22 2014
+@@ -1741,6 +1741,10 @@ else
+ 
+ #undef $2
+ 
 +#ifdef __OpenBSD__
 +#define iconv_open libiconv_open
 +#endif
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
-     builtin and then its argument prototype would still apply.  */
++
+ /* Override any GCC internal prototype to avoid an error.
+    Use char because int might match the return type of a GCC
+    builtin and then its argument prototype would still apply.  */
+@@ -4529,14 +4533,14 @@ ssl_libs=""
+ ssl_cflags=""
+ if test "x$checkopenssl" != xno; then
+   if test "x$ssl_path" = x; then
+-    ssl_libs="-lcrypto -lssl"
++    ssl_libs="-lssl -lcrypto"
+   else
+     if test -d "$ssl_path"; then
+       if test -d "$ssl_path/lib"; then
+-        ssl_libs="-L$ssl_path/lib -lcrypto -lssl"
++        ssl_libs="-L$ssl_path/lib -lssl -lcrypto"
+ 	ssl_cflags="-I$ssl_path/include"
+       else
+-        ssl_libs="-L$ssl_path -lcrypto -lssl"
++        ssl_libs="-L$ssl_path -lssl -lcrypto"
+ 	ssl_cflags="-I$ssl_path/../include"
+       fi
+     fi

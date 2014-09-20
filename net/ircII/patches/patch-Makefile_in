@@ -1,12 +1,21 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2014/01/19 03:04:39 pascal Exp $
---- Makefile.in.orig	Fri Jan 17 18:58:52 2014
-+++ Makefile.in	Fri Jan 17 18:59:05 2014
-@@ -81,7 +81,7 @@ LIBS = @LIBS@
+$OpenBSD: patch-Makefile_in,v 1.2 2014/09/20 18:40:27 naddy Exp $
+--- Makefile.in.orig	Mon Aug 25 21:24:49 2014
++++ Makefile.in	Sat Sep 20 17:14:53 2014
+@@ -64,7 +64,7 @@ datarootdir = $(DESTDIR)@datarootdir@
+ libdir = $(DESTDIR)@libdir@
+ libexecdir = $(DESTDIR)@libexecdir@
+ # @mandir@ tends to be $datarootdir which already has $DESTDIR.
+-mandir = @mandir@/man1
++mandir = $(DESTDIR)@mandir@/man1
+ 
+ # Where the ircII binary will be installed.
+ # 'make install' will compile and install the program
+@@ -82,7 +82,7 @@ LIBS = @LIBS@
  
  # Set this to -g if you want to be able to debug the client, otherwise
  # use -O to have the compiler do some optimization instead.
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ @CPPFLAGS@
+-CFLAGS = @CFLAGS@ @DEBUGFLAGS@ @WARNINGFLAGS@ @ERRORFLAGS@
++CFLAGS = @CFLAGS@ @CPPFLAGS@ @DEBUGFLAGS@ @WARNINGFLAGS@ @ERRORFLAGS@
  
  # Set this to -s if you want the binary to be stripped.
  LDFLAGS = @LDFLAGS@

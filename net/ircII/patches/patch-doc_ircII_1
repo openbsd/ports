@@ -1,111 +1,69 @@
-$OpenBSD: patch-doc_ircII_1,v 1.7 2014/01/19 03:04:39 pascal Exp $
---- doc/ircII.1.orig	Mon Dec 30 17:42:37 2013
-+++ doc/ircII.1	Fri Jan 17 14:09:51 2014
-@@ -3,7 +3,7 @@
- .SH NAME
- ircII \- interface to the Internet Relay Chat system
- .SH SYNOPSIS
--.B irc
-+.B ircII
- .RB [ \-c
- .IR chan ]
- .RB [ \-p
-@@ -67,7 +67,7 @@ Load the .ircrc file before connection to a server, no
- .B \-f
- Use flow control (^S and ^Q) to stop/start the display.
- Normally these are both bound to other functions within
--.IR irc .
-+.IR ircII .
- This switch is ignored if the
- .B \ -d
- switch is used.
-@@ -117,7 +117,7 @@ default: the username).
- .TP
- .I server
- Set the list of servers with which
--.B irc
-+.B ircII
- will try to connect upon startup.
- This list is also used by the program's
- .B /server
-@@ -149,9 +149,9 @@ is taken to be the Server Group for this server entry.
- .TP
- .BI \-a
- This adds the normal
--.B irc
-+.B ircII
- server list to the command line list of
--.B irc
-+.B ircII
- servers.
- .TP
- .BI \-v
-@@ -161,7 +161,7 @@ and exit.
- .TP
- .BI \-q
- Start up
--.B irc
-+.B ircII
- quickly -- don't load the IRCRC file.
- .TP
- .BI \-h " hostname"
-@@ -215,32 +215,32 @@ need to have a leading slash character '/'.
- This allows predefinition of aliases and other features.
- .SH EXAMPLES
- .TP
--.B "irc -c #users -p 5555"
-+.B "ircII -c #users -p 5555"
- Connect
- .I IRC
- to port number 5555 of the default host and enter on channel #users.
- .TP
--.B "irc Mermaid"
-+.B "ircII Mermaid"
- Use the nickname "Mermaid".
- .TP
--.B "irc Mermaid server1:5000 server2::passwd server3"
-+.B "ircII Mermaid server1:5000 server2::passwd server3"
- Use the nickname "Mermaid" and the modified server list.
- .TP
--.B "irc piglet3 :ln:irc1.lamenet.org :ln:irc1.lamenet.org"
-+.B "ircII piglet3 :ln:irc1.lamenet.org :ln:irc1.lamenet.org"
- Use the nickname "piglet3", initially connecting to irc.au.lamenet.org,
- with also irc.us.lamenet.org added to the server list, both having a
- server group name "ln".
- .TP
--.B "irc oink ICB/www.icb.net"
-+.B "ircII oink ICB/www.icb.net"
- Use the nick "oink" making an ICB connection to www.icb.net.
- .TP
--.B "irc -d"
-+.B "ircII -d"
- Use dumb mode.
- .TP
--.B "irc -f"
-+.B "ircII -f"
- Allow use of ^S/^Q to stop/start screen display.
- .TP
--.B "irc -e elisa"
-+.B "ircII -e elisa"
- Interface
- .I IRC
- with a program called
-@@ -250,7 +250,7 @@ with a program called
- .br
- .B "setenv IRCNAME ""The one and only :)"""
- .TP
--.B irc
-+.B ircII
- Set the username (if not specified elsewhere) to "Mermaid".
- The user's name (when provided inside parentheses in response to a
- WHOIS command) is set to "The one and only :)".
-@@ -347,9 +347,6 @@ The initial list of servers if none are provided on th
- .B ircII.motd
- Message of the day.
+$OpenBSD: patch-doc_ircII_1,v 1.8 2014/09/20 18:40:27 naddy Exp $
+--- doc/ircII.1.orig	Mon Aug 25 21:24:49 2014
++++ doc/ircII.1	Sat Sep 20 01:53:42 2014
+@@ -6,7 +6,7 @@
+ .Nm ircII
+ .Nd interface to the Internet Relay Chat system
+ .Sh SYNOPSIS
+-.Nm irc
++.Nm ircII
+ .Op Fl abdFfqrSsTtv
+ .Op Fl c Ar chan
+ .Op Fl D Ar level
+@@ -317,37 +317,37 @@ Message of the day.
  This file is displayed only once each time it is changed.
--.SH "SEE ALSO"
--irc(1),
--ircd(8)
- .SH BUGS
- Please notify the current developer of the software of any bugs in
- current versions.
+ .El
+ .Sh EXAMPLES
+-.Dl irc -c #users -p 5555
++.Dl ircII -c #users -p 5555
+ Connect IRC to port number 5555 of the default host and enter on channel #users.
+-.Dl irc Mermaid
++.Dl ircII Mermaid
+ Use the nickname
+ .Dq Mermaid .
+-.Dl irc Mermaid server1:5000 server2::passwd server3
++.Dl ircII Mermaid server1:5000 server2::passwd server3
+ Use the nickname
+ .Dq Mermaid
+ and the modified server list.
+-.Dl irc piglet3 :ln:irc1.lamenet.org :ln:irc.us.lamenet.org
++.Dl ircII piglet3 :ln:irc1.lamenet.org :ln:irc.us.lamenet.org
+ Use the nickname
+ .Dq piglet3 ,
+ initially connecting to irc.au.lamenet.org,
+ with also irc.us.lamenet.org added to the server list, both having a
+ server group name
+ .Dq ln .
+-.Dl irc oink ICB/www.icb.net
++.Dl ircII oink ICB/www.icb.net
+ Use the nick
+ .Dq oink
+ making an ICB connection to www.icb.net.
+-.Dl irc -d
++.Dl ircII -d
+ Use dumb mode.
+-.Dl irc -f
++.Dl ircII -f
+ Allow use of ^S/^Q to stop/start screen display.
+-.Dl irc -e elisa
++.Dl ircII -e elisa
+ Interface IRC with a program called
+ .Dq elisa .
+ .Bd -literal -offset indent
+ setenv IRCNICK Mermaid
+ setenv IRCNAME \"The one and only :)\"
+-irc
++ircII
+ .Ed
+ Set the username (if not specified elsewhere) to
+ .Dq Mermaid .
+@@ -373,9 +373,6 @@ Drops
+ .Nm
+ back to the command line.
+ .El
+-.Sh SEE ALSO
+-.Xr irc 1 ,
+-.Xr ircd 8
+ .Sh AUTHORS
+ .An -nosplit
+ Program written by
