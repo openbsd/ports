@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.14 2014/03/19 07:44:04 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.15 2014/09/20 06:10:21 ajacoutot Exp $
 
 remove gudev requirement
 
---- Makefile.orig	Tue Mar 18 22:50:19 2014
-+++ Makefile	Wed Mar 19 07:57:12 2014
+--- Makefile.orig	Fri Sep 19 20:28:48 2014
++++ Makefile	Sat Sep 20 07:44:57 2014
 @@ -261,7 +261,6 @@ EXT_PKGS = \
  	gstreamer-base-1.0 \
  	gstreamer-pbutils-1.0 \
@@ -31,7 +31,7 @@ remove gudev requirement
  endif
  ifndef DISABLE_ICON_UPDATE
  	-gtk-update-icon-cache -t -f $(DESTDIR)$(PREFIX)/share/icons/hicolor || :
-@@ -722,9 +720,9 @@ pkgcheck:
+@@ -720,9 +718,9 @@ pkgcheck:
  .PHONY: valacheck
  valacheck:
  	@ $(VALAC) --version >/dev/null 2>/dev/null || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  No valac found in path or $$VALAC.'; exit 1 )
