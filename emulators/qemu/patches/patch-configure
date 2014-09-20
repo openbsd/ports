@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.42 2014/08/14 01:05:03 brad Exp $
---- configure.orig	Tue Jul 15 17:49:14 2014
-+++ configure	Wed Jul 16 14:19:59 2014
-@@ -3990,8 +3990,6 @@ fi
+$OpenBSD: patch-configure,v 1.43 2014/09/20 03:03:19 brad Exp $
+--- configure.orig	Wed Sep 10 15:44:03 2014
++++ configure	Sun Sep 14 13:30:08 2014
+@@ -3991,8 +3991,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
