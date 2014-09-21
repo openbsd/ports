@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/09/17 09:13:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2014/09/21 16:47:45 sthen Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
@@ -33,6 +33,7 @@ LIB_DEPENDS+=	databases/openldap
 WANTLIB += ldap_r lber
 .endif
 
+CFLAGS+=	-I${LOCALBASE}/include
 FAKE_FLAGS=	BINDIR=${PREFIX}/sbin \
 		LIBDIR=${PREFIX}/lib/smtp-vilter \
 		MANDIR=${PREFIX}/man/man \
