@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.15 2014/09/14 05:58:07 ajacoutot Exp $
+$OpenBSD: README,v 1.16 2014/09/21 16:29:56 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -30,7 +30,7 @@ Then the server must be restarted by running:
 
 Once the database has been setup and MariaDB is up and running, the
 following command must be run to create the tables:
-    # cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production db:migrate
+    # cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} LD_PRELOAD=libpthread.so RAILS_ENV=production db:migrate
 
 Puppet Configuration
 ====================
@@ -69,18 +69,18 @@ Cron Jobs
 ---------
 The MariaDB database should be optimized on a montly basis. This can be
 done by adding the following entry to the root's crontab(5):
-0	0	1	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard ${LOCALBASE}/bin/rake${MODRUBY_BINREV} RAILS_ENV=production db:raw:optimize
+0	0	1	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard ${LOCALBASE}/bin/rake${MODRUBY_BINREV} LD_PRELOAD=libpthread.so RAILS_ENV=production db:raw:optimize
 
 Over time, old reports will start to accumulate which can slow down the
 Dashboard. Adding the following line to the root's crontab(5) will clean
 up reports older than 1 month and will run every night:
-0	0	*	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard ${LOCALBASE}/bin/rake${MODRUBY_BINREV} RAILS_ENV=production reports:prune upto=1 unit=mon
+0	0	*	*	*	cd ${INSTDIR} && sudo -u _puppet-dashboard ${LOCALBASE}/bin/rake${MODRUBY_BINREV} LD_PRELOAD=libpthread.so RAILS_ENV=production reports:prune upto=1 unit=mon
 
 Upgrade
 -------
 After updating the Dashboard to a new release, the following command
 needs to be run to update database schemas:
-    # cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} RAILS_ENV=production db:migrate
+    # cd ${INSTDIR} && sudo -u _puppet-dashboard rake${MODRUBY_BINREV} LD_PRELOAD=libpthread.so RAILS_ENV=production db:migrate
 
 Phusion Passenger Integration (i.e. mod_rails)
 ==============================================
