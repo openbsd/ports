@@ -1,6 +1,6 @@
-$OpenBSD: patch-mysqlcc_pro_in,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
---- mysqlcc.pro.in.orig	2003-12-14 00:10:43.000000000 +0100
-+++ mysqlcc.pro.in	2003-12-26 14:10:30.000000000 +0100
+$OpenBSD: patch-mysqlcc_pro_in,v 1.2 2014/09/21 17:32:41 brad Exp $
+--- mysqlcc.pro.in.orig	Fri Aug 11 16:29:36 2006
++++ mysqlcc.pro.in	Mon Sep 15 11:51:45 2014
 @@ -1,5 +1,5 @@
  TEMPLATE     = app
 -CONFIG       += qt thread
@@ -8,12 +8,14 @@ $OpenBSD: patch-mysqlcc_pro_in,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
  DEFINES      += QT_DLL
  DEFINES      += HAVE_MYSQLCC_CONFIG
  TARGET       = mysqlcc
-@@ -27,7 +27,7 @@ win32 {
+@@ -27,8 +27,8 @@ win32 {
  }
  
  unix {
 -      LIBS        += @MYSQL_LIB@ 
+-      INCLUDEPATH += @MYSQL_INCLUDE@
 +      LIBS        += @MYSQL_LIB@ -lz 
-       INCLUDEPATH += @MYSQL_INCLUDE@
++      INCLUDEPATH += @MYSQL_INCLUDE@ @MYSQL_INCLUDE@/private
        CONFIG      += x11 
        OBJECTS_DIR  = tmp
+ }

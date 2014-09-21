@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2008/09/08 07:48:43 wilfried Exp $
---- configure.orig	Sun Oct  8 22:40:01 2006
-+++ configure	Thu Aug 21 13:39:50 2008
+$OpenBSD: patch-configure,v 1.3 2014/09/21 17:32:41 brad Exp $
+--- configure.orig	Sun Oct  8 16:40:01 2006
++++ configure	Mon Sep 15 11:47:13 2014
 @@ -2457,9 +2457,9 @@ echo "${ECHO_T}" >&6
          for dir in $mysql_lib; do
              if test "x$mysql_found" != "xyes"
@@ -32,77 +32,7 @@ $OpenBSD: patch-configure,v 1.2 2008/09/08 07:48:43 wilfried Exp $
  
                      echo "$as_me:$LINENO: checking for mysql_real_connect in -lmysqlclient" >&5
  echo $ECHO_N "checking for mysql_real_connect in -lmysqlclient... $ECHO_C" >&6
-@@ -3090,51 +3090,7 @@ fi
- 
-                 if test "x$mysql_found" = "xyes"
-                 then
--                   echo "$as_me:$LINENO: checking \"if MySQL Version $dir is >= 4.0.0\"" >&5
--echo $ECHO_N "checking \"if MySQL Version $dir is >= 4.0.0\"... $ECHO_C" >&6
--                   CPPFLAGS="$CPPFLAGS -I$dir"
--                   cat >conftest.$ac_ext <<_ACEOF
--#line $LINENO "configure"
--#include "confdefs.h"
--
--                   #include <mysql_version.h>
--                   #if MYSQL_VERSION_ID < 40000
--                     #error
--                   #endif
--
--_ACEOF
--if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
--  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
--  ac_status=$?
--  egrep -v '^ *\+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } >/dev/null; then
--  if test -s conftest.err; then
--    ac_cpp_err=$ac_c_preproc_warn_flag
--  else
--    ac_cpp_err=
--  fi
--else
--  ac_cpp_err=yes
--fi
--if test -z "$ac_cpp_err"; then
--  mysql_version_ok=yes
--else
--  echo "$as_me: failed program was:" >&5
--  cat conftest.$ac_ext >&5
--  mysql_version_ok=no
--fi
--rm -f conftest.err conftest.$ac_ext
--
--                   if test "x$mysql_version_ok" != "xno"
--                   then
--                      MYSQL_INCLUDE="$dir"
--
--                   fi
--                   echo "$as_me:$LINENO: result: $mysql_version_ok" >&5
--echo "${ECHO_T}$mysql_version_ok" >&6
-+                   MYSQL_INCLUDE="$dir"
-                 fi
-             fi
-         done
-@@ -3146,16 +3102,8 @@ echo "$as_me: error: Could not find mysql.h in '$mysql
-    { (exit 1); exit 1; }; }
-         fi
- 
--        if test "x$mysql_version_ok" != "xyes"
--        then
--           echo "Please upgrade your MySQL installation to version 4.0.0 or higher"
--           echo "If you do have the correct version of MySQL installed somewhere"
--           echo "other than $dir, please specify it as --with-mysql-include= argument"
--           exit 1
--        fi
- 
- 
--
- # Check whether --with-qt or --without-qt was given.
- if test "${with_qt+set}" = set; then
-   withval="$with_qt"
-@@ -3184,7 +3132,7 @@ fi
+@@ -3184,7 +3184,7 @@ fi
  
  echo "$as_me:$LINENO: checking \"if Qt Version in $QTDIR is >= 3.0.5\"" >&5
  echo $ECHO_N "checking \"if Qt Version in $QTDIR is >= 3.0.5\"... $ECHO_C" >&6
@@ -111,7 +41,7 @@ $OpenBSD: patch-configure,v 1.2 2008/09/08 07:48:43 wilfried Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -4078,7 +4026,7 @@ else
+@@ -4078,7 +4078,7 @@ else
  fi
  
  echo "Creating Makefile with qmake"
