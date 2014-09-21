@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.37 2014/08/14 07:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/09/21 16:50:24 sthen Exp $
 
 COMMENT =		ebook management application
 
+# 2.x versions use qt5
 DISTNAME =		calibre-1.48.0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -42,6 +43,7 @@ COMMON_DEPENDS =	databases/py-apsw \
 			textproc/py-cssselect \
 			textproc/py-cssutils>=0.9.9 \
 			textproc/py-lxml>=2.2.8 \
+			textproc/py-xml \
 			www/py-beautifulsoup \
 			www/py-CherryPy \
 			www/py-mechanize \
