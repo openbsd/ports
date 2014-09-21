@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/09/03 06:23:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/09/21 19:00:06 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
 share/appdata/
 share/appdata/geary.appdata.xml
+share/applications/geary-autostart.desktop
 share/applications/geary.desktop
 share/geary/
 share/geary/icons/
 share/geary/icons/archive-symbolic.svg
 share/geary/icons/close-symbolic.svg
+share/geary/icons/detach-symbolic.svg
 share/geary/icons/document-symbolic.svg
 share/geary/icons/edit-symbolic.svg
 share/geary/icons/format-text-remove-symbolic.svg
@@ -49,6 +51,7 @@ share/geary/sql/version-018.sql
 share/geary/sql/version-019.sql
 share/geary/sql/version-020.sql
 share/geary/sql/version-021.sql
+share/geary/sql/version-022.sql
 share/geary/theming/
 share/geary/theming/message-viewer.css
 share/geary/theming/message-viewer.html
