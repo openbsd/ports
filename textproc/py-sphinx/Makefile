@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/20 20:30:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/09/21 16:54:02 sthen Exp $
 
 COMMENT =		python documentation generator
 
 MODPY_EGG_VERSION =	1.2.3
+REVISION =		0
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
 
@@ -18,10 +19,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=S/Sphinx/}
 
 MODULES =		lang/python
-LIB_DEPENDS =		devel/py-babel \
+RUN_DEPENDS =		devel/py-babel \
 			textproc/py-docutils \
 			textproc/py-pygments \
 			www/py-jinja2
+BUILD_DEPENDS =		${RUN_DEPENDS}
 TEST_DEPENDS =		devel/py-mock \
 			devel/py-nose \
 			print/texlive/texmf,-full
