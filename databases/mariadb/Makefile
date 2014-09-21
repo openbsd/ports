@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2014/09/18 21:01:50 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2014/09/21 19:17:22 landry Exp $
 
 SHARED_ONLY=	Yes
 
+BROKEN-powerpc=	rpl_parallel.cc:800: error: 'rli' was not declared in this scope
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
