@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2014/09/16 18:37:57 robert Exp $
+# $OpenBSD: Makefile,v 1.61 2014/09/21 14:00:16 robert Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -67,9 +67,9 @@ DISTFILES+=		${DISTNAME}${EXTRACT_SUFX}
 PATCHFILES+=		nginx_chroot-20140823.patch:2
 PATCH_DIST_STRIP=	-p1
 
-LUAV=			0.8.1
-LUADISTFILES+=		simpl-ngx_devel_kit-v0.2.17-0-gbc97eea.tar.gz:0
-LUADISTFILES+=		lua-nginx-module-${LUAV}.tar.gz:0
+LUAV=			0.9.12
+LUADISTFILES+=		ngx_devel_kit-0.2.19.tar.gz:0
+LUADISTFILES+=		lua-nginx-module-${LUAV}.tar.gz:2
 SUBSTFILES=		conf/nginx.conf
 NAXSIDISTFILES+=	naxsi-0.53-1.tar.gz{0.53-1.tar.gz}:1
 
@@ -81,7 +81,7 @@ WANTLIB+=		m pthread stdc++
 .endif
 
 .if ${FLAVOR:Mlua}
-CONFIGURE_ARGS+=	--add-module=${WRKSRC}/simpl-ngx_devel_kit
+CONFIGURE_ARGS+=	--add-module=${WRKSRC}/ngx_devel_kit
 CONFIGURE_ARGS+=	--add-module=${WRKSRC}/lua-nginx-module
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
 			MODLUA_LIB=${MODLUA_LIB}
@@ -107,7 +107,7 @@ pre-patch:
 .if ${FLAVOR:Mlua}
 pre-patch:
 	cd ${WRKSRC} && \
-	    mv ../simpl-ngx_devel_kit-* simpl-ngx_devel_kit && \
+	    mv ../ngx_devel_kit-* ngx_devel_kit && \
 	    mv ../lua-nginx-module-${LUAV} lua-nginx-module
 
 .endif
