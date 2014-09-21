@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnome-initial-setup_pages_language_cc-language-chooser_c,v 1.1 2014/09/21 13:03:56 ajacoutot Exp $
+--- gnome-initial-setup/pages/language/cc-language-chooser.c.orig	Sun Sep 21 14:25:29 2014
++++ gnome-initial-setup/pages/language/cc-language-chooser.c	Sun Sep 21 14:25:59 2014
+@@ -212,7 +212,7 @@ add_one_language (CcLanguageChooser *chooser,
+ 	GtkWidget *widget;
+ 	gchar *lang;
+ 
+-	if (!g_str_has_suffix (locale_id, "utf8")) {
++	if (!g_str_has_suffix (locale_id, "UTF-8")) {
+ 		return;
+ 	}
+ 

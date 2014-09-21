@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnome-initial-setup_pages_keyboard_cc-common-language_c,v 1.1 2014/09/21 13:03:56 ajacoutot Exp $
+--- gnome-initial-setup/pages/keyboard/cc-common-language.c.orig	Sun Sep 21 14:24:46 2014
++++ gnome-initial-setup/pages/keyboard/cc-common-language.c	Sun Sep 21 14:24:55 2014
+@@ -277,7 +277,7 @@ static void
+ insert_language (GHashTable *ht,
+                  const char *lang)
+ {
+-        char *utf8_variant = g_strconcat (lang, ".utf8", NULL);
++        char *utf8_variant = g_strconcat (lang, ".UTF-8", NULL);
+         insert_language_internal (ht, lang);
+         insert_language_internal (ht, utf8_variant);
+         g_free (utf8_variant);
