@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.74 2014/09/18 07:42:55 jasper Exp $
+# $OpenBSD: ruby.port.mk,v 1.75 2014/09/22 15:21:00 jeremy Exp $
 
 # ruby module
 
@@ -46,9 +46,9 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 2.0.
+# Without a FLAVOR, assume the use of ruby 2.1.
 .    if empty(FLAVOR)
-FLAVOR =		ruby20
+FLAVOR =		ruby21
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
@@ -74,8 +74,8 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 .endif
 
 # The default ruby version to use for non-gem/extconf ports.  Defaults to ruby
-# 2.0 for consistency with the default ruby20 FLAVOR for gem/extconf ports.
-MODRUBY_REV?=		2.0
+# 2.1 for consistency with the default ruby21 FLAVOR for gem/extconf ports.
+MODRUBY_REV?=		2.1
 
 # Because the rbx, jruby, and ruby18 FLAVORs all use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
