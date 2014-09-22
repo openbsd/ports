@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/10/21 19:14:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/09/22 16:54:11 stu Exp $
 @option no-default-conflict
 @conflict tcl->=8.5,<8.6
 %%SHARED%%
@@ -17,6 +17,7 @@ include/tcl8.5/tclUnixPort.h
 lib/libtcl85.a
 @lib lib/libtcl85.so.${LIBtcl85_VERSION}
 lib/libtclstub85.a
+lib/pkgconfig/tcl85.pc
 lib/tcl/
 lib/tcl/modules/
 lib/tcl/modules/8.5/
@@ -808,12 +809,12 @@ lib/tcl/tcl8.5/man/mann/
 @man lib/tcl/tcl8.5/man/mann/while.n
 lib/tcl/tcl8.5/modules/
 lib/tcl/tcl8.5/modules/8.5/
-lib/tcl/tcl8.5/modules/8.5/http-2.7.12.tm
+lib/tcl/tcl8.5/modules/8.5/http-2.7.13.tm
 lib/tcl/tcl8.5/modules/8.5/msgcat-1.5.2.tm
 lib/tcl/tcl8.5/modules/8.5/platform/
-lib/tcl/tcl8.5/modules/8.5/platform-1.0.12.tm
+lib/tcl/tcl8.5/modules/8.5/platform-1.0.13.tm
 lib/tcl/tcl8.5/modules/8.5/platform/shell-1.1.4.tm
-lib/tcl/tcl8.5/modules/8.5/tcltest-2.3.5.tm
+lib/tcl/tcl8.5/modules/8.5/tcltest-2.3.8.tm
 lib/tcl/tcl8.5/msgs/
 lib/tcl/tcl8.5/msgs/af.msg
 lib/tcl/tcl8.5/msgs/af_za.msg

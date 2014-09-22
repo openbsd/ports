@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2014/01/11 12:56:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2014/09/22 16:54:11 stu Exp $
 
 COMMENT =		Tool Command Language
 
-DISTNAME =		tcl8.5.15
-PKGNAME =		tcl-8.5.15
-REVISION =		2
-SHARED_LIBS =		tcl85 1.5
+DISTNAME =		tcl8.5.16
+PKGNAME =		tcl-8.5.16
+SHARED_LIBS =		tcl85 1.6
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -41,14 +40,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			EXTRA_INSTALL="install-private-headers" \
 			SHLIB_VERSION="${LIBtcl85_VERSION}"
 
-FLAVORS =		threaded
-FLAVOR ?=
-
-.if ${FLAVOR:Mthreaded}
-CONFIGURE_ARGS +=	--enable-threads
-WANTLIB +=		pthread
-.endif
-
 .include <bsd.port.arch.mk>
 
 .if ${NO_SHARED_LIBS:L} == "no"
@@ -66,8 +57,8 @@ TESTHOME =		${WRKDIR}/testhome
 # Use TESTFLAGS to control the Tcl tests
 TESTFLAGS =
 
-# XXX Until Tcl bug 2911139 is fixed; bug is in test, not in Tcl.
-TESTFLAGS += -skip http-4.14
+# XXX Until Tcl bug 2911139 is fixed; bug is in tests, not in Tcl.
+TESTFLAGS += -skip 'http-4.14 socket-14.14'
 
 pre-test:
 	mkdir -p ${TESTHOME}
