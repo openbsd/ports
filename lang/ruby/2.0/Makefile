@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/08/22 08:15:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2014/09/22 15:14:48 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -6,7 +6,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		2.0.0
-PATCHLEVEL =		481
+PATCHLEVEL =		576
 RUBYLIBREV =		2.0
 DISTNAME =		ruby-${VERSION}-p${PATCHLEVEL}
 
