@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/21 13:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/22 07:45:24 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.12.1
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
