@@ -1,11 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.7 2014/01/27 09:49:49 dcoppa Exp $
---- setup.py.orig	Mon Jan 27 10:18:15 2014
-+++ setup.py	Mon Jan 27 10:18:55 2014
-@@ -47,9 +47,8 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'py2exe':
+$OpenBSD: patch-setup_py,v 1.8 2014/09/22 09:50:43 dcoppa Exp $
+--- setup.py.orig	Mon Sep 22 11:46:25 2014
++++ setup.py	Mon Sep 22 11:47:32 2014
+@@ -47,10 +47,8 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'py2exe':
      params = py2exe_params
  else:
      files_spec = [
 -        ('etc/bash_completion.d', ['youtube-dl.bash-completion']),
+-        ('etc/fish/completions', ['youtube-dl.fish']),
          ('share/doc/youtube_dl', ['README.txt']),
 -        ('share/man/man1', ['youtube-dl.1'])
 +        ('man/man1', ['youtube-dl.1'])
