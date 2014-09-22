@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/10 20:27:25 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/22 17:23:47 bcallah Exp $
 
-V =		0.6.0
 COMMENT =	free J-RPG game
-DISTNAME =	ValyriaTear-${V}
-PKGNAME =	valyriatear-${V}
-REVISION =	1
+DISTNAME =	valyriatear-${GH_TAGNAME}
 CATEGORIES =	games x11
 
-HOMEPAGE =	http://valyriatear.blogspot.com/
+GH_ACCOUNT =	Bertram25
+GH_PROJECT =	ValyriaTear
+GH_TAGNAME =	1.0.0
+GH_COMMIT =	8b81360c98b02f2140447b29e0c175b3ff028bb2
 
+HOMEPAGE =	http://valyriatear.blogspot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Main game is GPLv2+
@@ -20,8 +21,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c m
 WANTLIB += ogg openal png pthread stdc++ vorbis vorbisfile
 WANTLIB += z ${MODLUA_WANTLIB}
-
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=valyriatear/}
 
 MODULES =	devel/cmake \
 		devel/gettext \
@@ -42,8 +41,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # the use of PCH.
 CONFIGURE_ARGS+= -DUSE_PCH_COMPILATION=Off
 
-WRKDIST =	${WRKDIR}/ValyriaTear-${V}
-WRKSRC =	${WRKDIST}
+WRKDIST =	${WRKDIR}/ValyriaTear-${GH_TAGNAME}
 
 NO_TEST =	Yes
 
