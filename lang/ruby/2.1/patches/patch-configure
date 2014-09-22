@@ -1,13 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2014/01/03 17:51:52 jeremy Exp $
+$OpenBSD: patch-configure,v 1.2 2014/09/22 15:15:41 jeremy Exp $
 
 Fix so name, checking for DOT and DOXYGEN.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
---- configure.orig	Wed Dec 25 07:25:39 2013
-+++ configure	Thu Dec 26 19:20:07 2013
-@@ -20817,7 +20817,7 @@ esac
+Remove invalid shell syntax, fixed upstream in r45715.
+
+--- configure.orig	Thu Sep 18 10:04:39 2014
++++ configure	Fri Sep 19 09:12:21 2014
+@@ -21056,7 +21056,7 @@ esac
    openbsd*|mirbsd*) :
  
  	SOLIBS='$(LIBS)'
@@ -16,7 +18,18 @@ so ports don't have to be bumped when OpenBSD version changes.
  	 ;; #(
    solaris*) :
  
-@@ -21924,7 +21924,10 @@ _ACEOF
+@@ -21538,8 +21538,8 @@ if test x$setjmp_prefix = xsig; then
+ else
+     unset setjmp_sigmask
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: ${setjmp_prefix}setjmp${setjmp_suffix}${setjmp_cast:+($setjmp_cast)}" >&5
+-$as_echo "${setjmp_prefix}setjmp${setjmp_suffix}${setjmp_cast:+($setjmp_cast)}" >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: ${setjmp_prefix}setjmp${setjmp_suffix}" >&5
++$as_echo "${setjmp_prefix}setjmp${setjmp_suffix}" >&6; }
+ cat >>confdefs.h <<_ACEOF
+ #define RUBY_SETJMP(env) ${setjmp_prefix}setjmp${setjmp_suffix}($setjmp_cast(env)${setjmp_sigmask+,0})
+ _ACEOF
+@@ -22300,7 +22300,10 @@ _ACEOF
  _ACEOF
  
  else

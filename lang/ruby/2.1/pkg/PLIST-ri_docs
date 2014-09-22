@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.3 2014/05/12 00:20:41 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.4 2014/09/22 15:15:42 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -828,6 +828,7 @@ share/ri/${RUBYLIBREV}/system/CompositePublisher/upload-i.ri
 share/ri/${RUBYLIBREV}/system/ConditionVariable/
 share/ri/${RUBYLIBREV}/system/ConditionVariable/broadcast-i.ri
 share/ri/${RUBYLIBREV}/system/ConditionVariable/cdesc-ConditionVariable.ri
+share/ri/${RUBYLIBREV}/system/ConditionVariable/marshal_dump-i.ri
 share/ri/${RUBYLIBREV}/system/ConditionVariable/new-c.ri
 share/ri/${RUBYLIBREV}/system/ConditionVariable/signal-i.ri
 share/ri/${RUBYLIBREV}/system/ConditionVariable/wait-i.ri
@@ -8144,6 +8145,7 @@ share/ri/${RUBYLIBREV}/system/Queue/deq-i.ri
 share/ri/${RUBYLIBREV}/system/Queue/empty%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Queue/enq-i.ri
 share/ri/${RUBYLIBREV}/system/Queue/length-i.ri
+share/ri/${RUBYLIBREV}/system/Queue/marshal_dump-i.ri
 share/ri/${RUBYLIBREV}/system/Queue/new-c.ri
 share/ri/${RUBYLIBREV}/system/Queue/num_waiting-i.ri
 share/ri/${RUBYLIBREV}/system/Queue/pop-i.ri
