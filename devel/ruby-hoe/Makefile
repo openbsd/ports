@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/22 15:20:05 jeremy Exp $
 
 COMMENT=	simple rake/rubygems helper for project Rakefiles
 
-DISTNAME=	hoe-2.12.3
-REVISION =	1
+DISTNAME=	hoe-3.12.0
 CATEGORIES=	devel
 
 # MIT
@@ -16,9 +15,6 @@ RUN_DEPENDS=	${MODRUBY_RAKE_DEPENDS}
 
 CONFIGURE_STYLE=ruby gem
 
-# Regress doesn't work in ruby 1.8, because it ships with
-# an old version of rdoc.
-TEST_DEPENDS =	math/graphviz
-MODRUBY_TEST =	rake
+# Tests require minitest > 5.3, which isn't in ports.
 
 .include <bsd.port.mk>

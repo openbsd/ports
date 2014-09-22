@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/11/17 17:29:28 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/09/22 15:20:05 jeremy Exp $
 ${GEM_BIN}/sow${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
-${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/History.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Hoe.pdf
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
-${GEM_LIB}/gems/${DISTNAME}/README.txt
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/sow
@@ -29,7 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/publish.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/racc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/rake.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/rcov.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/hoe/rubyforge.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/rdoc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/signing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/test.rb
 ${GEM_LIB}/gems/${DISTNAME}/template/
@@ -46,6 +46,8 @@ ${GEM_LIB}/gems/${DISTNAME}/template/test/
 ${GEM_LIB}/gems/${DISTNAME}/template/test/test_file_name.rb.erb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hoe.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_hoe_debug.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hoe_gemcutter.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_hoe_publish.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hoe_test.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
