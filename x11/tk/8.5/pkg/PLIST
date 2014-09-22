@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/10/21 19:14:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/09/22 16:55:11 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.5,<8.6
 %%SHARED%%
@@ -21,6 +21,7 @@ include/tk8.5/ttkTheme.h
 lib/libtk85.a
 @lib lib/libtk85.so.${LIBtk85_VERSION}
 lib/libtkstub85.a
+lib/pkgconfig/tk85.pc
 lib/tcl/
 lib/tcl/tk8.5/
 lib/tcl/tk8.5/bgerror.tcl

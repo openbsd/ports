@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.12 2013/09/20 10:10:05 stu Exp $
---- unix/Makefile.in.orig	Fri Aug 30 12:28:24 2013
-+++ unix/Makefile.in	Thu Sep  5 17:46:15 2013
+$OpenBSD: patch-unix_Makefile_in,v 1.13 2014/09/22 16:55:11 stu Exp $
+--- unix/Makefile.in.orig	Wed Jul 23 09:13:57 2014
++++ unix/Makefile.in	Sun Aug 17 15:41:20 2014
 @@ -541,6 +541,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
@@ -9,7 +9,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.12 2013/09/20 10:10:05 stu Exp $
  	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
-@@ -572,6 +573,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+@@ -576,6 +577,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.12 2013/09/20 10:10:05 stu Exp $
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -712,10 +717,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -712,10 +717,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	    echo "}";\
  	    fi \
  	    ) > "$(PKG_INDEX)"; \
@@ -32,7 +32,16 @@ $OpenBSD: patch-unix_Makefile_in,v 1.12 2013/09/20 10:10:05 stu Exp $
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -785,6 +790,7 @@ install-demos:
+@@ -733,7 +738,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+ 	@EXTRA_INSTALL_BINARIES@
+ 	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
+ 	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
+-	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk.pc
++	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk85.pc
+ 
+ install-libraries: libraries
+ 	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
+@@ -788,6 +793,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -40,7 +49,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.12 2013/09/20 10:10:05 stu Exp $
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -792,7 +798,7 @@ install-demos:
+@@ -795,7 +801,7 @@ install-demos:
  	    if test $$i = "square"; then \
  	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
  	    else \

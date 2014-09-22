@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2013/11/05 04:50:38 stu Exp $
+# $OpenBSD: Makefile,v 1.36 2014/09/22 16:55:11 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-DISTNAME =		tk8.5.15
-PKGNAME =		tk-8.5.15
-REVISION =		1
-SHARED_LIBS =		tk85 0.12
+DISTNAME =		tk8.5.16
+PKGNAME =		tk-8.5.16
+SHARED_LIBS =		tk85 0.13
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -13,10 +12,12 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xext Xft Xss c m tcl85
+WANTLIB =		X11 Xext Xft Xss c fontconfig m tcl85
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
+
+LIB_DEPENDS =		tcl-8.5.16:lang/tcl/8.5
 
 MAKE_FLAGS +=		TK_LIBRARY='$$(prefix)/lib/tcl/tk$$(VERSION)' \
 			TCL_GENERIC_DIR='$$(GENERIC_DIR)' \
@@ -45,17 +46,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			EXTRA_INSTALL="install-private-headers" \
 			EXTRA_CC_SWITCHES="-I${LOCALBASE}/include/tcl8.5" \
 			SHLIB_VERSION="${LIBtk85_VERSION}"
-
-FLAVORS =		threaded
-FLAVOR ?=
-
-.if ${FLAVOR:Mthreaded}
-CONFIGURE_ARGS +=	--enable-threads
-WANTLIB +=		pthread
-LIB_DEPENDS +=		tcl->=8.5.15,<8.5.16-threaded:lang/tcl/8.5,threaded
-.else
-LIB_DEPENDS +=		tcl->=8.5.15,<8.5.16-!threaded:lang/tcl/8.5
-.endif
 
 .include <bsd.port.arch.mk>
 
