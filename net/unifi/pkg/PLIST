@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/05/27 19:16:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/22 13:04:00 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 @owner _unifi
@@ -14,6 +14,9 @@ share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
 share/unifi/dl/firmware/BZ2/${FW_VER}/
 share/unifi/dl/firmware/BZ2/${FW_VER}/firmware.bin
+share/unifi/dl/firmware/U2Sv2/
+share/unifi/dl/firmware/U2Sv2/${FW_VER}/
+share/unifi/dl/firmware/U2Sv2/${FW_VER}/firmware.bin
 share/unifi/dl/firmware/U2S48/
 share/unifi/dl/firmware/U2S48/${FW_VER}/
 share/unifi/dl/firmware/U2S48/${FW_VER}/firmware.bin
