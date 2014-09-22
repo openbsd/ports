@@ -1,16 +1,36 @@
-$OpenBSD: patch-src_ml_gobject_c,v 1.1 2014/09/19 12:52:02 chrisz Exp $
+$OpenBSD: patch-src_ml_gobject_c,v 1.2 2014/09/22 11:37:42 chrisz Exp $
 
-Fix segfault in unison. Val_unit is an unboxed integer, which is not zero.
-Use the apropriate macro for checking whether ret has been initialized.
+Upstream commit 60a61fabb5d9836e69130bf7c07eea206fe20928
 
---- src/ml_gobject.c.orig	Fri Sep 19 14:36:30 2014
-+++ src/ml_gobject.c	Fri Sep 19 14:40:49 2014
-@@ -671,7 +671,7 @@ CAMLprim value ml_g_signal_emit_by_name (value obj, va
+2014.09.20 [Jacques]
+  * CAMLparam initializes with Val_unit rather than 0 since ocaml 4.02.
+    Fix a related problem in ml_gobject (Christopher Zimmermann, PR#1425)
+  * Also factorize some code to use Val_option_*
+
+--- src/ml_gobject.c.orig	Thu Sep 18 08:47:06 2014
++++ src/ml_gobject.c	Sat Sep 20 10:58:31 2014
+@@ -643,8 +643,8 @@ ML_2 (g_signal_handler_is_connected, GObject_val, Long
+ ML_2 (g_signal_stop_emission_by_name, GObject_val, String_val, Unit)
+ CAMLprim value ml_g_signal_emit_by_name (value obj, value sig, value params)
+ {
+-    CAMLparam3(obj,sig,params);
+-    CAMLlocal1(ret);
++    value ret = Val_unit;
++    CAMLparam4(obj,sig,params,ret);
+     GObject *instance = GObject_val(obj);
+     GValue *iparams = (GValue*)calloc(1 + Wosize_val(params), sizeof(GValue));
+     GQuark detail = 0;
+@@ -671,11 +671,11 @@ CAMLprim value ml_g_signal_emit_by_name (value obj, va
                        query.param_types[i] & ~G_SIGNAL_TYPE_STATIC_SCOPE);
          g_value_set_mlvariant (&iparams[i+1], Field(params,i));
      }
 -    g_signal_emitv (iparams, signal_id, detail, (ret ? GValue_val(ret) : 0));
-+    g_signal_emitv (iparams, signal_id, detail, (Is_block(ret) ? GValue_val(ret) : 0));
++    g_signal_emitv (iparams, signal_id, detail,
++                    (ret == Val_unit ? 0 : GValue_val(ret)));
      for (i = 0; i < query.n_params + 1; i++)
          g_value_unset (iparams + i);
      free (iparams);
+-    if (!ret) ret = Val_unit;
+     CAMLreturn(ret);
+ }
+ 

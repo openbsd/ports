@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_ml_gtk_c,v 1.1 2014/09/22 11:37:42 chrisz Exp $
+
+Upstream commit 60a61fabb5d9836e69130bf7c07eea206fe20928
+
+2014.09.20 [Jacques]
+  * CAMLparam initializes with Val_unit rather than 0 since ocaml 4.02.
+    Fix a related problem in ml_gobject (Christopher Zimmermann, PR#1425)
+  * Also factorize some code to use Val_option_*
+
+--- src/ml_gtk.c.orig	Thu Sep 18 08:47:06 2014
++++ src/ml_gtk.c	Sat Sep 20 10:58:31 2014
+@@ -402,7 +402,7 @@ CAMLprim value ml_gtk_widget_style_get_property (value
+     pspec = gtk_widget_class_find_style_property
+                (GTK_WIDGET_GET_CLASS (widget), name);
+     if (pspec) {
+-        value ret = ml_g_value_new ();
++        ret = ml_g_value_new ();
+         GValue *gv = GValueptr_val (ret);
+         g_value_init (gv, G_PARAM_SPEC_VALUE_TYPE (pspec));
+         gtk_widget_style_get_property (widget, name, gv);
+@@ -737,8 +737,9 @@ CAMLprim value ml_gtk_file_selection_get_selections (v
+   gchar** selections =
+     gtk_file_selection_get_selections(GtkFileSelection_val(sel));
+   gchar** orig = selections;
+-  CAMLparam0();
+-  CAMLlocal3(ret,prev,next);
++  value ret = Val_unit;
++  CAMLparam1(ret);
++  CAMLlocal2(prev,next);
+   for (prev = (value)((&ret)-1); *selections != NULL; selections++) {
+     next = alloc(2,0);
+     Store_field(prev, 1, next);

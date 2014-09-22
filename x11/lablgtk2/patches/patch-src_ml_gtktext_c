@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_ml_gtktext_c,v 1.1 2014/09/22 11:37:42 chrisz Exp $
+
+Upstream commit 60a61fabb5d9836e69130bf7c07eea206fe20928
+
+2014.09.20 [Jacques]
+  * CAMLparam initializes with Val_unit rather than 0 since ocaml 4.02.
+    Fix a related problem in ml_gobject (Christopher Zimmermann, PR#1425)
+  * Also factorize some code to use Val_option_*
+
+--- src/ml_gtktext.c.orig	Thu Sep 18 08:47:06 2014
++++ src/ml_gtktext.c	Sat Sep 20 10:58:31 2014
+@@ -121,25 +121,9 @@ CAMLprim value ml_gtk_text_iter_assign (value it1, val
+ ML_2(gtk_text_mark_set_visible, GtkTextMark_val, Bool_val, Unit)
+ ML_1(gtk_text_mark_get_visible, GtkTextMark_val, Val_bool)
+ ML_1(gtk_text_mark_get_deleted, GtkTextMark_val, Val_bool)
+-CAMLprim value ml_gtk_text_mark_get_name (value tm)
+-{
+-  CAMLparam1(tm);
+-  CAMLlocal1(res);
+-  const gchar* tmp;
+-  tmp = gtk_text_mark_get_name(GtkTextMark_val(tm));
+-  res = Val_option(tmp,Val_string);
+-  CAMLreturn(res);
+-}
+-CAMLprim value ml_gtk_text_mark_get_buffer (value tm)
+-{
+-  CAMLparam1(tm);
+-  CAMLlocal1(res);
+-  GtkTextBuffer* tmp;
+-  tmp = gtk_text_mark_get_buffer(GtkTextMark_val(tm));
+-  res = Val_option(tmp,Val_GtkTextBuffer);
+-  CAMLreturn(res);
+-}
+-
++ML_1(gtk_text_mark_get_name, GtkTextMark_val, Val_option_string)
++Make_Val_option(GtkTextBuffer)
++ML_1(gtk_text_mark_get_buffer, GtkTextMark_val, Val_option_GtkTextBuffer)
+ ML_1(gtk_text_mark_get_left_gravity, GtkTextMark_val, Val_bool)
+ 
+ /* gtktexttag */
+@@ -157,17 +141,9 @@ ML_1(Wrap_mode_val, (value), Val_int)
+ ML_0(gtk_text_tag_table_new, Val_GtkTextTagTable_new)
+ ML_2(gtk_text_tag_table_add, GtkTextTagTable_val, GtkTextTag_val,Unit)
+ ML_2(gtk_text_tag_table_remove, GtkTextTagTable_val, GtkTextTag_val,Unit)
+-
+-CAMLprim value ml_gtk_text_tag_table_lookup (value tv, value s)
+-{
+-  CAMLparam2(tv,s);
+-  CAMLlocal1(res);
+-  GtkTextTag* tmp;
+-  tmp = gtk_text_tag_table_lookup(GtkTextTagTable_val(tv), String_val(s));
+-  res = Val_option(tmp,Val_GtkTextTag);
+-  CAMLreturn(res);
+-}
+-
++Make_Val_option(GtkTextTag)
++ML_2(gtk_text_tag_table_lookup, GtkTextTagTable_val, String_val,
++     Val_option_GtkTextTag)
+ ML_1(gtk_text_tag_table_get_size, GtkTextTagTable_val, Val_int)
+ 
+ static void tag_foreach_func (GtkTextTag* t, gpointer user_data)
+@@ -625,15 +601,9 @@ CAMLprim value ml_gtk_text_view_window_to_buffer_coord
+   CAMLreturn(res);
+ }
+ 
+-CAMLprim value ml_gtk_text_view_get_window (value tv, value tt)
+-{
+-  CAMLparam2(tv,tt);
+-  CAMLlocal1(res);
+-  GdkWindow* tmp;
+-  tmp = gtk_text_view_get_window(GtkTextView_val(tv), Text_window_type_val(tt));
+-  res = Val_option(tmp,Val_GdkWindow);
+-  CAMLreturn(res);
+-}
++Make_Val_option(GdkWindow)
++ML_2(gtk_text_view_get_window, GtkTextView_val, Text_window_type_val,
++     Val_option_GdkWindow)
+ 
+ ML_2(gtk_text_view_get_window_type,GtkTextView_val,GdkWindow_val,
+      Val_text_window_type)

@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_wrappers_c,v 1.1 2014/09/22 11:37:42 chrisz Exp $
+
+Upstream commit 60a61fabb5d9836e69130bf7c07eea206fe20928
+
+2014.09.20 [Jacques]
+  * CAMLparam initializes with Val_unit rather than 0 since ocaml 4.02.
+    Fix a related problem in ml_gobject (Christopher Zimmermann, PR#1425)
+  * Also factorize some code to use Val_option_*
+
+--- src/wrappers.c.orig	Thu Sep 18 08:47:06 2014
++++ src/wrappers.c	Sat Sep 20 10:58:31 2014
+@@ -61,8 +61,7 @@ CAMLprim value ml_some (value v)
+ value ml_cons (value v, value l)
+ {
+   CAMLparam2(v, l);
+-  CAMLlocal1(cell);
+-  cell = alloc_small(2, Tag_cons);
++  value cell = alloc_small(2, Tag_cons);
+   Field(cell, 0) = v;
+   Field(cell, 1) = l;
+   CAMLreturn(cell);
+@@ -94,6 +93,9 @@ value copy_string_or_null (const char*str)
+ {
+     return copy_string (str ? (char*) str : "");
+ }
++
++value Val_option_string (const char *s)
++{ return Val_option (s, Val_string); }
+ 
+ CAMLprim value *ml_global_root_new (value v)
+ {

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_ml_gtkmenu_c,v 1.1 2014/09/22 11:37:42 chrisz Exp $
+
+Upstream commit 60a61fabb5d9836e69130bf7c07eea206fe20928
+
+2014.09.20 [Jacques]
+  * CAMLparam initializes with Val_unit rather than 0 since ocaml 4.02.
+    Fix a related problem in ml_gobject (Christopher Zimmermann, PR#1425)
+  * Also factorize some code to use Val_option_*
+
+--- src/ml_gtkmenu.c.orig	Thu Sep 18 08:47:06 2014
++++ src/ml_gtkmenu.c	Sat Sep 20 10:58:31 2014
+@@ -62,16 +62,8 @@ ML_0 (gtk_tearoff_menu_item_new, Val_GtkWidget_sink)
+ ML_1 (gtk_menu_item_new_with_label, String_val, Val_GtkWidget_sink)
+ ML_1 (gtk_menu_item_new_with_mnemonic, String_val, Val_GtkWidget_sink)
+ ML_2 (gtk_menu_item_set_submenu, GtkMenuItem_val, GtkWidget_val, Unit)
+-
+-CAMLprim value ml_gtk_menu_item_get_submenu(value sm)
+-{
+-  CAMLparam1(sm);
+-  CAMLlocal1(res);
+-  res = Val_option(gtk_menu_item_get_submenu(GtkMenuItem_val(sm)),
+-		   Val_GtkWidget);
+-  CAMLreturn(res);
+-}
+-
++Make_Val_option(GtkWidget)
++ML_1 (gtk_menu_item_get_submenu, GtkMenuItem_val, Val_option_GtkWidget)
+ ML_1 (gtk_menu_item_remove_submenu, GtkMenuItem_val, Unit)
+ ML_2 (gtk_menu_item_set_accel_path, GtkMenuItem_val, String_val, Unit)
+ ML_1 (gtk_menu_item_activate, GtkMenuItem_val, Unit)
