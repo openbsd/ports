@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/14 06:58:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/23 06:43:54 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
-GITV=		1409847349
+GITV=		1411413020
 DISTNAME=	lumina-${GITV}
-PKGNAME=	lumina-0.6.2.${GITV}
+PKGNAME=	lumina-0.6.3.${GITV}
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/lumina
 
@@ -52,9 +52,6 @@ MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} \
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 pre-configure:
-# https://github.com/pcbsd/lumina/commit/9a7351a0199ff91f34e876fedb66c2b4d6121009
-	cp ${FILESDIR}/LuminaOS-OpenBSD.cpp \
-		${WRKSRC}/libLumina/LuminaOS-OpenBSD.cpp
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/libLumina/LuminaXDG.cpp \
 		${WRKSRC}/lumina-config/mainUI.cpp \
