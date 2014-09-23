@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tcp_listener_cpp,v 1.1 2013/03/08 10:33:28 jasper Exp $
+$OpenBSD: patch-src_tcp_listener_cpp,v 1.2 2014/09/23 12:08:03 ajacoutot Exp $
 
 OpenBSD doesn't define EPROTO (yet), so pick the closest thing.
 
---- src/tcp_listener.cpp.orig	Fri Mar  1 09:33:34 2013
-+++ src/tcp_listener.cpp	Fri Mar  1 09:33:52 2013
-@@ -262,7 +262,7 @@ zmq::fd_t zmq::tcp_listener_t::accept ()
+--- src/tcp_listener.cpp.orig	Wed Nov 13 18:57:50 2013
++++ src/tcp_listener.cpp	Mon Sep 22 14:06:18 2014
+@@ -273,7 +273,7 @@ zmq::fd_t zmq::tcp_listener_t::accept ()
  #else
      if (sock == -1) {
          errno_assert (errno == EAGAIN || errno == EWOULDBLOCK ||

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/08 10:33:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/23 12:08:03 ajacoutot Exp $
+@bin bin/curve_keygen
 include/zmq.h
 include/zmq_utils.h
 lib/libzmq.a
 lib/libzmq.la
 @lib lib/libzmq.so.${LIBzmq_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libzmq.pc
 @man man/man3/zmq_bind.3
 @man man/man3/zmq_close.3
@@ -13,6 +13,8 @@ lib/pkgconfig/libzmq.pc
 @man man/man3/zmq_ctx_get.3
 @man man/man3/zmq_ctx_new.3
 @man man/man3/zmq_ctx_set.3
+@man man/man3/zmq_ctx_term.3
+@man man/man3/zmq_curve_keypair.3
 @man man/man3/zmq_disconnect.3
 @man man/man3/zmq_errno.3
 @man man/man3/zmq_getsockopt.3
@@ -35,6 +37,7 @@ lib/pkgconfig/libzmq.pc
 @man man/man3/zmq_recv.3
 @man man/man3/zmq_recvmsg.3
 @man man/man3/zmq_send.3
+@man man/man3/zmq_send_const.3
 @man man/man3/zmq_sendmsg.3
 @man man/man3/zmq_setsockopt.3
 @man man/man3/zmq_socket.3
@@ -43,9 +46,14 @@ lib/pkgconfig/libzmq.pc
 @man man/man3/zmq_term.3
 @man man/man3/zmq_unbind.3
 @man man/man3/zmq_version.3
+@man man/man3/zmq_z85_decode.3
+@man man/man3/zmq_z85_encode.3
 @man man/man7/zmq.7
+@man man/man7/zmq_curve.7
 @man man/man7/zmq_epgm.7
 @man man/man7/zmq_inproc.7
 @man man/man7/zmq_ipc.7
+@man man/man7/zmq_null.7
 @man man/man7/zmq_pgm.7
+@man man/man7/zmq_plain.7
 @man man/man7/zmq_tcp.7

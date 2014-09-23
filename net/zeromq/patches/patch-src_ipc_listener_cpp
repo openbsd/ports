@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_ipc_listener_cpp,v 1.1 2013/03/08 10:33:28 jasper Exp $
+$OpenBSD: patch-src_ipc_listener_cpp,v 1.2 2014/09/23 12:08:03 ajacoutot Exp $
 
 OpenBSD doesn't define EPROTO (yet), so pick the closest thing.
 
---- src/ipc_listener.cpp.orig	Fri Mar  1 09:31:03 2013
-+++ src/ipc_listener.cpp	Fri Mar  1 09:33:07 2013
-@@ -196,7 +196,7 @@ zmq::fd_t zmq::ipc_listener_t::accept ()
+--- src/ipc_listener.cpp.orig	Wed Nov 13 18:57:50 2013
++++ src/ipc_listener.cpp	Mon Sep 22 14:06:18 2014
+@@ -201,7 +201,7 @@ zmq::fd_t zmq::ipc_listener_t::accept ()
      fd_t sock = ::accept (s, NULL, NULL);
      if (sock == -1) {
          errno_assert (errno == EAGAIN || errno == EWOULDBLOCK ||
