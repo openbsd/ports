@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.65 2014/09/16 09:07:03 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2014/09/23 09:21:51 sthen Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
-FAKE_AS_ROOT =	Yes
 
 VERSION=	2.2.0
 DISTNAME=	facter-${VERSION}
