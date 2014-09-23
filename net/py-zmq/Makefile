@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/07 21:57:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/23 12:08:45 ajacoutot Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
-MODPY_EGG_VERSION =	13.0.0
+MODPY_EGG_VERSION =	14.3.1
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
 
 CATEGORIES =		net devel
 
@@ -21,7 +20,7 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=p/pyzmq/} \
 
 MODULES =		lang/python
 
-LIB_DEPENDS =		net/zeromq>=3.2.2 \
+LIB_DEPENDS =		net/zeromq>=4.0.4 \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =		security/py-paramiko \
 			devel/py-pexpect
