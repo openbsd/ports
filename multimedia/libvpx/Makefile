@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2014/08/19 05:51:58 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2014/09/23 21:38:49 landry Exp $
 
 COMMENT=	Google VP8/VP9 video codec
-BROKEN-hppa =	build stuck on vp9/vp9_cx_iface.c
 
 V=		1.3.0
 DISTNAME=	libvpx-v${V}
@@ -38,7 +37,7 @@ MAKE_FLAGS=	LIBVPX_VERSION=${LIBvpx_VERSION} verbose=yes
 
 # compiler spins at 100% CPU on vp9/vp9_cx_iface.c. using -O1
 # works around the issue.
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64"
 CFLAGS+=	-O1
 .endif
 
