@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_wavpack_wavpack_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
---- plugins/wavpack/wavpack.c.orig	Sat Mar 24 16:09:38 2012
-+++ plugins/wavpack/wavpack.c	Tue May 15 23:44:23 2012
-@@ -38,6 +38,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH D
+$OpenBSD: patch-plugins_wavpack_wavpack_c,v 1.2 2014/09/23 13:44:04 dcoppa Exp $
+--- plugins/wavpack/wavpack.c.orig	Sun Jul 13 11:45:50 2014
++++ plugins/wavpack/wavpack.c	Tue Sep 23 09:40:43 2014
+@@ -38,6 +38,10 @@
  #include <math.h>
  #include "../../deadbeef.h"
  

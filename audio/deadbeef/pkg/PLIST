@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/29 20:43:26 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/09/23 13:44:04 dcoppa Exp $
 @bin bin/deadbeef
 include/deadbeef/
 include/deadbeef/deadbeef.h
@@ -12,12 +12,15 @@ lib/deadbeef/converter.so
 lib/deadbeef/converter_gtk2.so
 lib/deadbeef/convpresets/
 lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
+lib/deadbeef/convpresets/ALAC.txt
 lib/deadbeef/convpresets/FLAC_(compression_level_5).txt
 lib/deadbeef/convpresets/MP3_CBR_320_Kbps_(Lame).txt
 lib/deadbeef/convpresets/MP3_VBR_192Kbps_(Lame).txt
 lib/deadbeef/convpresets/MS_RIFF_WAV.txt
 lib/deadbeef/convpresets/MusePack.txt
+lib/deadbeef/convpresets/Ogg_FLAC.txt
 lib/deadbeef/convpresets/Ogg_Vorbis_(-q_5).txt
+lib/deadbeef/convpresets/Opus.txt
 lib/deadbeef/convpresets/TTA.txt
 lib/deadbeef/convpresets/WavPack.txt
 lib/deadbeef/dca.so

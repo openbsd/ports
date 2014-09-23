@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure_ac,v 1.4 2014/02/07 22:20:13 dcoppa Exp $
---- configure.ac.orig	Sun Feb  2 20:49:04 2014
-+++ configure.ac	Fri Feb  7 09:09:55 2014
-@@ -126,6 +126,7 @@ AC_ARG_ENABLE(alac, [AS_HELP_STRING([--enable-alac    
- AC_ARG_ENABLE(wma, [AS_HELP_STRING([--enable-wma      ], [build WMA plugin (default: auto)])], [enable_wma=$enableval], [enable_wma=yes])
- AC_ARG_ENABLE(pltbrowser, [AS_HELP_STRING([--enable-pltbrowser      ], [build playlist browser gui plugin (default: auto)])], [enable_pltbrowser=$enableval], [enable_pltbrowser=yes])
- AC_ARG_ENABLE(abstract_socket, [AS_HELP_STRING([--enable-abstract-socket      ], [use abstract UNIX socket for IPC (default: disabled)])], [enable_abstract_socket=$enableval], [enable_abstract_socket=no])
-+AC_ARG_ENABLE(sndio, [AS_HELP_STRING([--enable-sndio      ], [enable sndio output plugin (default: enabled)])], [enable_sndio=$enableval], [enable_sndio=yes])
- 
- AS_IF([test "${enable_staticlink}" != "no"], [
-     AC_DEFINE_UNQUOTED([STATICLINK], [1], [Define if building static version])
-@@ -182,8 +183,8 @@ AS_IF([test "${enable_portable}" != "no" -a "${enable_
+$OpenBSD: patch-configure_ac,v 1.5 2014/09/23 13:44:03 dcoppa Exp $
+--- configure.ac.orig	Tue Aug  5 20:01:05 2014
++++ configure.ac	Tue Sep 23 14:32:19 2014
+@@ -82,6 +82,7 @@ AC_ARG_ENABLE(alsa,     [AS_HELP_STRING([--disable-als
+ AC_ARG_ENABLE(oss,      [AS_HELP_STRING([--disable-oss     ], [disable Open Sound System output plugin (default: enabled)])], [enable_oss=$enableval], [enable_oss=yes])
+ AC_ARG_ENABLE(pulse,    [AS_HELP_STRING([--disable-pulse   ], [disable PulseAudio output plugin (default: enabled)])], [enable_pulse=$enableval], [enable_pulse=yes])
+ AC_ARG_ENABLE(coreaudio,[AS_HELP_STRING([--disable-coreaudio], [disable CoreAudio output plugin (default: enabled)])], [enable_coreaudio=$enableval], [enable_coreaudio=yes])
++AC_ARG_ENABLE(sndio,    [AS_HELP_STRING([--disable-sndio   ], [disable sndio output plugin (default: enabled)])], [enable_sndio=$enableval], [enable_sndio=yes])
+ AC_ARG_ENABLE(gtk3,     [AS_HELP_STRING([--disable-gtk3     ], [disable GTK3 version of gtkui plugin (default: enabled)])], [enable_gtk3=$enableval], [enable_gtk3=yes])
+ AC_ARG_ENABLE(gtk2,     [AS_HELP_STRING([--disable-gtk2     ], [disable GTK2 version of gtkui plugin (default: enabled)])], [enable_gtk2=$enableval], [enable_gtk2=yes])
+ AC_ARG_ENABLE(vfs_curl, [AS_HELP_STRING([--disable-vfs-curl], [disable HTTP streaming vfs plugin (default: enabled)])], [enable_vfs_curl=$enableval], [enable_vfs_curl=yes])
+@@ -183,8 +184,8 @@ AS_IF([test "${enable_portable}" != "no" -a "${enable_
      PREFIXFLAGS=" -DLIBDIR=\\\"$libdir\\\" -DPREFIX=\\\"$prefix\\\" -DDOCDIR=\\\"$docdir\\\""
  ])
  
@@ -20,9 +20,26 @@ $OpenBSD: patch-configure_ac,v 1.4 2014/02/07 22:20:13 dcoppa Exp $
  
  AS_IF([test "${enable_staticlink}" != "no"], [
      HAVE_ZLIB=yes
-@@ -324,11 +325,11 @@ AS_IF([test "${enable_vorbis}" != "no"], [
-         VORBIS_LIBS="../../$LIB/lib/libogg.a ../../$LIB/lib/libvorbis.a ../../$LIB/lib/libvorbisenc.a ../../$LIB/lib/libvorbisfile.a"
+@@ -270,6 +271,16 @@ AS_IF([test "${enable_coreaudio}" != "no" -a "${found_
+ 
+ AC_SUBST(COREAUDIO_LIBS)
+ 
++AC_CHECK_HEADER([sndio.h], [found_sndio_h=yes], [found_sndio_h=no])
++
++AS_IF([test "${enable_sndio}" != "no" -a "${found_sndio_h}" != "no"], [
++  AC_DEFINE(HAVE_SNDIO, 1, [Build sndio support])
++  HAVE_SNDIO=yes
++  SNDIO_LIBS="-lsndio"
++])
++
++AC_SUBST(SNDIO_LIBS)
++
+ AS_IF([test "${enable_ffmpeg}" != "no"], [
+     AS_IF([test "${enable_staticlink}" != "no"], [
+         FFMPEG_DEPS_CFLAGS="-I../../$LIB/include"
+@@ -358,11 +369,11 @@ AS_IF([test "${enable_vorbis}" != "no"], [
          AC_SUBST(VORBIS_LIBS)
+         AC_SUBST(VORBIS_CFLAGS)
      ], [
 -        AC_CHECK_LIB([vorbis], [main], [HAVE_VORBIS=yes])
 -        AC_CHECK_LIB([vorbisfile], [main], [HAVE_VORBISFILE=yes])
@@ -35,8 +52,8 @@ $OpenBSD: patch-configure_ac,v 1.4 2014/02/07 22:20:13 dcoppa Exp $
              AC_SUBST(VORBIS_LIBS)
          ])
      ])
-@@ -341,10 +342,10 @@ AS_IF([test "${enable_flac}" != "no"], [
-         FLAC_LIBS="../../$LIB/lib/libFLAC.a ../../$LIB/lib/libogg.a"
+@@ -395,10 +406,10 @@ AS_IF([test "${enable_flac}" != "no"], [
+         AC_SUBST(FLAC_CFLAGS)
          AC_SUBST(FLAC_LIBS)
      ], [
 -        AC_CHECK_LIB([FLAC], [main], [HAVE_FLAC=yes])
@@ -48,45 +65,49 @@ $OpenBSD: patch-configure_ac,v 1.4 2014/02/07 22:20:13 dcoppa Exp $
              AC_SUBST(FLAC_LIBS)
          ])
      ])
-@@ -671,8 +672,12 @@ AS_IF([test "${enable_pltbrowser}" != "no"], [
+@@ -695,7 +706,7 @@ AS_IF([test "${enable_aac}" != "no"], [
+ ])
+ 
+ AS_IF([test "${enable_mms}" != "no"], [
+-    LIBMMS_LIBS=""
++    LIBMMS_LIBS="-lmms"
+     AC_SUBST(LIBMMS_LIBS)
+     HAVE_MMS=yes
+ ])
+@@ -748,7 +759,7 @@ AS_IF([test "${enable_pltbrowser}" != "no"], [
      HAVE_PLTBROWSER=yes
  ])
  
--PLUGINS_DIRS="plugins/libmp4ff plugins/libparser plugins/lastfm plugins/mpgmad plugins/vorbis plugins/flac plugins/wavpack plugins/sndfile plugins/vfs_curl plugins/cdda plugins/gtkui plugins/alsa plugins/ffmpeg plugins/hotkeys plugins/oss plugins/artwork plugins/adplug plugins/ffap plugins/sid plugins/nullout plugins/supereq plugins/vtx plugins/gme plugins/pulse plugins/notify plugins/musepack plugins/wildmidi plugins/tta plugins/dca plugins/aac plugins/mms plugins/shellexec plugins/shellexecui plugins/dsp_libsrc plugins/m3u plugins/vfs_zip plugins/converter plugins/dumb plugins/shn plugins/ao plugins/mono2stereo plugins/alac plugins/wma plugins/pltbrowser plugins/coreaudio"
-+AS_IF([test "${enable_sndio}" != "no"], [
-+    HAVE_SNDIO=yes
-+])
+-PLUGINS_DIRS="plugins/liboggedit plugins/libmp4ff plugins/libparser plugins/lastfm plugins/mpgmad plugins/vorbis plugins/flac plugins/wavpack plugins/sndfile plugins/vfs_curl plugins/cdda plugins/gtkui plugins/alsa plugins/ffmpeg plugins/hotkeys plugins/oss plugins/artwork plugins/adplug plugins/ffap plugins/sid plugins/nullout plugins/supereq plugins/vtx plugins/gme plugins/pulse plugins/notify plugins/musepack plugins/wildmidi plugins/tta plugins/dca plugins/aac plugins/mms plugins/shellexec plugins/shellexecui plugins/dsp_libsrc plugins/m3u plugins/vfs_zip plugins/converter plugins/dumb plugins/shn plugins/ao plugins/mono2stereo plugins/alac plugins/wma plugins/pltbrowser plugins/coreaudio"
++PLUGINS_DIRS="plugins/liboggedit plugins/libparser plugins/lastfm plugins/mpgmad plugins/vorbis plugins/flac plugins/wavpack plugins/sndfile plugins/vfs_curl plugins/cdda plugins/gtkui plugins/alsa plugins/ffmpeg plugins/hotkeys plugins/oss plugins/artwork plugins/adplug plugins/ffap plugins/sid plugins/nullout plugins/supereq plugins/vtx plugins/gme plugins/pulse plugins/notify plugins/musepack plugins/wildmidi plugins/tta plugins/dca plugins/aac plugins/mms plugins/shellexec plugins/shellexecui plugins/dsp_libsrc plugins/m3u plugins/vfs_zip plugins/converter plugins/dumb plugins/shn plugins/ao plugins/mono2stereo plugins/alac plugins/wma plugins/pltbrowser plugins/coreaudio plugins/sndio"
  
-+PLUGINS_DIRS="plugins/libparser plugins/lastfm plugins/mpgmad plugins/vorbis plugins/flac plugins/wavpack plugins/sndfile plugins/vfs_curl plugins/cdda plugins/gtkui plugins/alsa plugins/ffmpeg plugins/hotkeys plugins/oss plugins/artwork plugins/adplug plugins/ffap plugins/sid plugins/nullout plugins/supereq plugins/vtx plugins/gme plugins/pulse plugins/notify plugins/musepack plugins/wildmidi plugins/tta plugins/dca plugins/aac plugins/mms plugins/shellexec plugins/shellexecui plugins/dsp_libsrc plugins/m3u plugins/vfs_zip plugins/converter plugins/dumb plugins/shn plugins/ao plugins/mono2stereo plugins/alac plugins/wma plugins/pltbrowser plugins/coreaudio plugins/sndio"
-+
  AM_CONDITIONAL(APE_USE_YASM, test "x$APE_USE_YASM" = "xyes")
  AM_CONDITIONAL(HAVE_VORBIS, test "x$HAVE_VORBISPLUGIN" = "xyes")
- AM_CONDITIONAL(HAVE_FLAC, test "x$HAVE_FLACPLUGIN" = "xyes")
-@@ -729,6 +734,7 @@ AM_CONDITIONAL(STATICLINK, test "x$STATICLINK" = "xyes
- AM_CONDITIONAL(PORTABLE, test "x$PORTABLE" = "xyes")
- AM_CONDITIONAL(PORTABLE_FULL, test "x$PORTABLE_FULL" = "xyes")
- AM_CONDITIONAL(USE_ABSTRACT_SOCKET_NAME, test "x$USE_ABSTRACT_SOCKET_NAME" = "xyes")
+@@ -762,6 +773,7 @@ AM_CONDITIONAL(HAVE_GTK2, test "x$HAVE_GTK2" = "xyes")
+ AM_CONDITIONAL(HAVE_GTK3, test "x$HAVE_GTK3" = "xyes")
+ AM_CONDITIONAL(HAVE_ALSA, test "x$HAVE_ALSAPLUGIN" = "xyes")
+ AM_CONDITIONAL(HAVE_COREAUDIO, test "x$HAVE_COREAUDIO" = "xyes")
 +AM_CONDITIONAL(HAVE_SNDIO, test "x$HAVE_SNDIO" = "xyes")
- 
- AC_SUBST(PLUGINS_DIRS)
- 
-@@ -800,6 +806,7 @@ PRINT_PLUGIN_INFO([mono2stereo],[mono2stereo DSP plugi
- PRINT_PLUGIN_INFO([alac],[ALAC plugin],[test "x$HAVE_ALAC" = "xyes"])
- PRINT_PLUGIN_INFO([wma],[WMA plugin],[test "x$HAVE_WMA" = "xyes"])
- PRINT_PLUGIN_INFO([pltbrowser],[playlist browser gui plugin],[test "x$HAVE_PLTBROWSER" = "xyes"])
+ AM_CONDITIONAL(HAVE_FFMPEG, test "x$HAVE_FFMPEGPLUGIN" = "xyes")
+ AM_CONDITIONAL(HAVE_PULSE, test "x$HAVE_PULSEPLUGIN" = "xyes")
+ AM_CONDITIONAL(HAVE_ARTWORK, test "x$HAVE_ARTWORK" = "xyes")
+@@ -841,6 +853,7 @@ PRINT_PLUGIN_INFO([alsa],[ALSA output],[test "x$HAVE_A
+ PRINT_PLUGIN_INFO([oss],[oss output plugin],[test "x$HAVE_OSS" = "xyes"])
+ PRINT_PLUGIN_INFO([pulse],[PulseAudio output plugin],[test "x$HAVE_PULSEPLUGIN" = "xyes"])
+ PRINT_PLUGIN_INFO([coreaudio],[CoreAudio output plugin],[test "x$HAVE_COREAUDIO" = "xyes"])
 +PRINT_PLUGIN_INFO([sndio],[sndio output plugin],[test "x$HAVE_SNDIO" = "xyes"])
- 
- echo
- 
-@@ -807,7 +814,6 @@ AC_CONFIG_FILES([
- Makefile
+ PRINT_PLUGIN_INFO([sid],[SID player based on libsidplay2],[test "x$HAVE_SID" = "xyes"])
+ PRINT_PLUGIN_INFO([ffap],[Monkey's audio (APE) decoder],[test "x$HAVE_FFAP" = "xyes"])
+ PRINT_PLUGIN_INFO([lastfm],[last.fm scrobbler],[test "x$HAVE_LASTFM" = "xyes"])
+@@ -888,7 +901,6 @@ Makefile
  pixmaps/Makefile
  icons/Makefile
+ plugins/liboggedit/Makefile
 -plugins/libmp4ff/Makefile
  plugins/libparser/Makefile
  plugins/gme/Makefile
  plugins/alsa/Makefile
-@@ -852,6 +858,7 @@ plugins/alac/Makefile
+@@ -933,6 +945,7 @@ plugins/alac/Makefile
  plugins/wma/Makefile
  plugins/pltbrowser/Makefile
  plugins/coreaudio/Makefile

@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_musepack_musepack_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
---- plugins/musepack/musepack.c.orig	Fri Jun  8 21:59:04 2012
-+++ plugins/musepack/musepack.c	Fri Jun  8 21:59:18 2012
-@@ -21,7 +21,7 @@
+$OpenBSD: patch-plugins_musepack_musepack_c,v 1.2 2014/09/23 13:44:03 dcoppa Exp $
+--- plugins/musepack/musepack.c.orig	Tue Aug  5 19:54:03 2014
++++ plugins/musepack/musepack.c	Tue Sep 23 09:40:43 2014
+@@ -28,7 +28,7 @@
  #include <limits.h>
  #include <unistd.h>
  #include <math.h>
