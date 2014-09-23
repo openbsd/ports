@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_polarssl_include_polarssl_dhm_h,v 1.1 2014/09/23 12:09:40 ajacoutot Exp $
+
+_X is already defined in ctype.h
+
+--- src/polarssl/include/polarssl/dhm.h.orig	Mon Sep 22 15:13:52 2014
++++ src/polarssl/include/polarssl/dhm.h	Mon Sep 22 15:13:44 2014
+@@ -152,7 +152,7 @@ typedef struct
+     mpi RP;     /*!<  cached R^2 mod P  */
+     mpi Vi;     /*!<  blinding value    */
+     mpi Vf;     /*!<  un-blinding value */
+-    mpi _X;     /*!<  previous X        */
++    mpi _PX;     /*!<  previous X        */
+ }
+ dhm_context;
+ 

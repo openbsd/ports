@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/08 10:35:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/09/23 12:09:40 ajacoutot Exp $
 @bin bin/m2sh
 @bin bin/mongrel2
 @bin bin/procer
@@ -8,6 +8,8 @@ lib/mongrel2/config_modules/null.so
 lib/mongrel2/config_modules/zmq.so
 lib/mongrel2/filters/
 lib/mongrel2/filters/null.so
+lib/mongrel2/filters/rewrite.so
+lib/mongrel2/filters/sendfile.so
 share/examples/mongrel2/
 share/examples/mongrel2/.dexy
 share/examples/mongrel2/bbs/
@@ -68,7 +70,9 @@ share/examples/mongrel2/configs/multi.conf
 share/examples/mongrel2/configs/multi_handler.conf
 share/examples/mongrel2/configs/sample.conf
 share/examples/mongrel2/http_0mq/
+share/examples/mongrel2/http_0mq/hello.txt
 share/examples/mongrel2/http_0mq/http.py
+share/examples/mongrel2/http_0mq/sendfile.py
 share/examples/mongrel2/http_0mq/upload.py
 share/examples/mongrel2/http_0mq/xml.py
 share/examples/mongrel2/kegogi/
