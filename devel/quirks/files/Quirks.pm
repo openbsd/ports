@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.174 2014/09/16 14:25:17 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.175 2014/09/23 12:02:40 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -329,7 +329,6 @@ my $stem_extensions = {
 	'foomatic-filters' => 'cups-filters',
 	'faad-xmms' => 'xmms-faad',
 	'p5-MojoX-Renderer-TT' => 'p5-Mojolicious-Plugin-TtRenderer',
-
 # 5.6
 	'p5-Class-MOP' => 'p5-Moose',
 	'libproxy-mozilla' => 'libproxy-webkit',
@@ -350,6 +349,7 @@ my $stem_extensions = {
 	'kdnssd' => 'zeroconf-ioslave',
 	'kwallet' => 'kwalletmanager',
 	'p5-TAP-Parser' => 'p5-Test-Harness',
+# 5.7
 	'qlandkarte' => 'qlandkartegt',
 	'mysql-client' => 'mariadb-client',
 	'mysql-server' => 'mariadb-server',
