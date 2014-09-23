@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/04/19 12:48:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2014/09/23 19:07:27 jeremy Exp $
 
 COMMENT =		high-level IO library for Ruby
 
@@ -14,9 +14,8 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_TEST=	rake
-
-TEST_DEPENDS =	devel/ruby-rdoc,${MODRUBY_FLAVOR}
+MODRUBY_TEST=		testrb
+MODRUBY_TEST_TARGET =	-I lib test/*.rb
 
 post-install:
 	@find ${PREFIX}/${GEM_LIB}/ -type f -name \*.gitignore \
