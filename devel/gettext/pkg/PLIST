@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/07/10 22:41:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.26 2014/09/23 15:16:29 naddy Exp $
 bin/autopoint
 @bin bin/envsubst
 @bin bin/gettext
@@ -1849,7 +1849,6 @@ share/gettext/config.rpath
 share/gettext/gettext.h
 share/gettext/intl/
 share/gettext/intl/COPYING.LIB
-share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
 share/gettext/intl/VERSION
 share/gettext/intl/bindtextdom.c
