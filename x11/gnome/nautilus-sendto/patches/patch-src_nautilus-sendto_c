@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_nautilus-sendto_c,v 1.1 2014/09/23 05:47:46 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=737151
+
+--- src/nautilus-sendto.c.orig	Tue Sep 23 07:37:21 2014
++++ src/nautilus-sendto.c	Tue Sep 23 07:37:37 2014
+@@ -264,7 +264,7 @@ pack_files (GList *file_list)
+ 	tmp_dir = g_strdup_printf ("%s/nautilus-sendto-%s",
+ 				   g_get_tmp_dir (), g_get_user_name ());
+ 	g_mkdir (tmp_dir, 0700);
+-	tmp_work_dir = g_strdup_printf ("%s/nautilus-sendto-%s/%li",
++	tmp_work_dir = g_strdup_printf ("%s/nautilus-sendto-%s/%lld",
+ 					g_get_tmp_dir (), g_get_user_name (),
+ 					time (NULL));
+ 	g_mkdir (tmp_work_dir, 0700);
