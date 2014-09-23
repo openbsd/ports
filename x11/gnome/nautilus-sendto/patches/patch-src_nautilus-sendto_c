@@ -1,15 +1,41 @@
-$OpenBSD: patch-src_nautilus-sendto_c,v 1.1 2014/09/23 05:47:46 ajacoutot Exp $
+$OpenBSD: patch-src_nautilus-sendto_c,v 1.2 2014/09/23 08:39:52 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=737151
+From b8ee7f4055d9f9eb0cae227d20e7b02d2dd40587 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 23 Sep 2014 10:29:10 +0200
+Subject: main: Use g_mkdir_with_parents()
 
---- src/nautilus-sendto.c.orig	Tue Sep 23 07:37:21 2014
-+++ src/nautilus-sendto.c	Tue Sep 23 07:37:37 2014
-@@ -264,7 +264,7 @@ pack_files (GList *file_list)
- 	tmp_dir = g_strdup_printf ("%s/nautilus-sendto-%s",
- 				   g_get_tmp_dir (), g_get_user_name ());
- 	g_mkdir (tmp_dir, 0700);
+From ed05b67f9e2c050906032b5bcc3cb376d5bb1028 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 23 Sep 2014 10:33:18 +0200
+Subject: main: Create temp directories using g_mkdtemp()
+
+--- src/nautilus-sendto.c.orig	Mon May 12 13:55:07 2014
++++ src/nautilus-sendto.c	Tue Sep 23 10:37:48 2014
+@@ -254,21 +254,17 @@ pack_files (GList *file_list)
+ 	const char *filename;
+ 	GList *l;
+ 	GString *cmd, *tmp;
+-	char *pack_type, *tmp_dir, *tmp_work_dir, *packed_file;
++	char *pack_type, *tmp_work_dir, *packed_file;
+ 
+ 	file_roller_cmd = g_find_program_in_path ("file-roller");
+ 	filename = pack_filename_from_names (file_list);
+ 
+ 	g_assert (filename != NULL && *filename != '\0');
+ 
+-	tmp_dir = g_strdup_printf ("%s/nautilus-sendto-%s",
+-				   g_get_tmp_dir (), g_get_user_name ());
+-	g_mkdir (tmp_dir, 0700);
 -	tmp_work_dir = g_strdup_printf ("%s/nautilus-sendto-%s/%li",
-+	tmp_work_dir = g_strdup_printf ("%s/nautilus-sendto-%s/%lld",
- 					g_get_tmp_dir (), g_get_user_name (),
- 					time (NULL));
- 	g_mkdir (tmp_work_dir, 0700);
+-					g_get_tmp_dir (), g_get_user_name (),
+-					time (NULL));
+-	g_mkdir (tmp_work_dir, 0700);
+-	g_free (tmp_dir);
++	tmp_work_dir = g_build_filename (g_get_tmp_dir (),
++					 "nautilus-sendto-XXXXXX",
++					 NULL);
++	tmp_work_dir = g_mkdtemp (tmp_work_dir);
+ 
+ 	pack_type = g_strdup (".zip");
+ 
