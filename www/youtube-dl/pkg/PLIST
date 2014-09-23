@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2014/09/22 09:50:43 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.50 2014/09/23 16:00:46 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -353,6 +353,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/metacafe.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/metacafe.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/metacritic.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/metacritic.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mgoon.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mgoon.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ministrygrid.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ministrygrid.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mit.py
@@ -603,6 +605,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/theplatform.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/theplatform.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/thisav.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/thisav.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/thvideo.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/thvideo.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tinypic.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tinypic.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tlc.py
@@ -737,6 +741,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youku.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youku.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youporn.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youporn.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/yourupload.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/yourupload.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youtube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youtube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/zdf.py
