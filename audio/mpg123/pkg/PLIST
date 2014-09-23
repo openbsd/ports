@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/05/27 21:58:33 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/09/23 14:14:34 naddy Exp $
 %%SHARED%%
 @bin bin/mpg123
 @bin bin/mpg123-id3dump
@@ -8,7 +8,6 @@ include/mpg123.h
 lib/libmpg123.a
 lib/libmpg123.la
 @lib lib/libmpg123.so.${LIBmpg123_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libmpg123.pc
 @man man/man1/mpg123.1
 @man man/man1/out123.1
