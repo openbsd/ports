@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/09/21 19:17:22 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2014/09/23 21:48:28 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,10 @@ BROKEN-powerpc=	rpl_parallel.cc:800: error: 'rli' was not declared in this scope
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
+# archs with atomic ops
+ONLY_FOR_ARCHS-server=	alpha amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS-tests=	${ONLY_FOR_ARCHS-server}
+MULTI_PACKAGES=	-main -server -tests
 
 EPOCH=		0
 VERSION=	10.0.13
@@ -70,15 +74,6 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_SSL=system \
 		-DWITH_LIBEDIT=Off \
 		-DCONNECT_WITH_LIBXML2=Off
-
-MULTI_PACKAGES=	-main
-
-# archs with atomic ops
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc" || \
-    ${MACHINE_ARCH} == "sparc64"
-MULTI_PACKAGES+= -server -tests
-.endif
 
 .include <bsd.port.arch.mk>
 
