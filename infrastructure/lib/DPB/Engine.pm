@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.106 2014/06/14 01:23:48 afresh1 Exp $
+# $OpenBSD: Engine.pm,v 1.107 2014/09/23 18:19:21 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -314,6 +314,55 @@ sub adjust_built
 	return $changes;
 }
 
+sub adjust_depends1
+{
+	my ($self, $v, $has) = @_;
+	$has->{$v} = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
+}
+
+sub adjust_depends2
+{
+	my ($self, $v, $has) = @_;
+	if ($has->{$v} != 0) {
+		if (my $d = $self->should_ignore($v, 'DEPENDS')) {
+			delete $self->{tobuild}{$v};
+		} else {
+			$v->{has} = 2;
+		}
+	} else {
+		# okay, thanks to equiv, some other path was marked
+		# as stub, and obviously we lost our deps
+		if ($v->{info}->is_stub) {
+			$self->log_no_ts('!', $v, 
+			    " equivalent to an ignored path");
+			# just drop it, it's already ignored as
+			# an equivalent path
+			delete $self->{tobuild}{$v};
+			return;
+		}
+		my $has = $has->{$v} + 
+		    $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
+
+		my $has2 = $self->adjust_distfiles($v);
+		# being buildable directly is a priority,
+		# but put the patch/dist/small stuff down the 
+		# line as otherwise we will tend to grab 
+		# patch files first
+		$v->{has} = 2 * ($has != 0) + ($has2 > 1);
+		if ($has + $has2 == 0) {
+			delete $self->{tobuild}{$v};
+			# XXX because of this, not all build_path_list
+			# are considered equal... 
+			if ($self->should_ignore($v, 'RDEPENDS')) {
+				$self->{buildable}->remove($v);
+			} else {
+				$self->{buildable}->add($v);
+				$self->log_no_ts('Q', $v);
+			}
+		} 
+	}
+}
+
 sub adjust_tobuild
 {
 	my $self = shift;
@@ -323,49 +372,11 @@ sub adjust_tobuild
 		# due to pkgname aliases, we may have been built through
 		# another pkgpath.
 		next if $self->{buildable}->is_done_quick($v);
-
-		$has->{$v} = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
+		$self->adjust_depends1($v, $has);
 	}
 
 	for my $v (values %{$self->{tobuild}}) {
-		if ($has->{$v} != 0) {
-			if (my $d = $self->should_ignore($v, 'DEPENDS')) {
-				delete $self->{tobuild}{$v};
-			} else {
-				$v->{has} = 2;
-			}
-		} else {
-			# okay, thanks to equiv, some other path was marked
-			# as stub, and obviously we lost our deps
-			if ($v->{info}->is_stub) {
-				$self->log_no_ts('!', $v, 
-				    " equivalent to an ignored path");
-				# just drop it, it's already ignored as
-				# an equivalent path
-				delete $self->{tobuild}{$v};
-				next;
-			}
-			my $has = $has->{$v} + 
-			    $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
-
-			my $has2 = $self->adjust_distfiles($v);
-			# being buildable directly is a priority,
-			# but put the patch/dist/small stuff down the 
-			# line as otherwise we will tend to grab 
-			# patch files first
-			$v->{has} = 2 * ($has != 0) + ($has2 > 1);
-			if ($has + $has2 == 0) {
-				delete $self->{tobuild}{$v};
-				# XXX because of this, not all build_path_list
-				# are considered equal... 
-				if ($self->should_ignore($v, 'RDEPENDS')) {
-					$self->{buildable}->remove($v);
-				} else {
-					$self->{buildable}->add($v);
-					$self->log_no_ts('Q', $v);
-				}
-			} 
-		}
+		$self->adjust_depends2($v, $has);
 	}
 }
 
@@ -406,21 +417,28 @@ sub new_path
 		$self->{tobuild}{$v} = $v;
 		$self->log('T', $v);
 	}
-	return unless defined $v->{info}{FDEPENDS};
-	for my $f (values %{$v->{info}{FDEPENDS}}) {
-		if ($self->{tofetch}->contains($f) ||
-		    $self->{tofetch}{doing}{$f}) {
-			next;
+	my $notyet = 0;
+	if (defined $v->{info}{FDEPENDS}) {
+		for my $f (values %{$v->{info}{FDEPENDS}}) {
+			if ($self->{tofetch}->contains($f) ||
+			    $self->{tofetch}{doing}{$f}) {
+				next;
+			}
+			if ($self->{tofetch}->is_done($f)) {
+				$v->{info}{distsize} //= 0;
+				$v->{info}{distsize} += $f->{sz};
+				delete $v->{info}{FDEPENDS}{$f};
+				next;
+			}
+			$self->{tofetch}->add($f);
+			$self->log('F', $f);
+			$notyet = 1;
 		}
-		if ($self->{tofetch}->is_done($f)) {
-			$v->{info}{distsize} //= 0;
-			$v->{info}{distsize} += $f->{sz};
-			delete $v->{info}{FDEPENDS}{$f};
-			next;
-		}
-		$self->{tofetch}->add($f);
-		$self->log('F', $f);
 	}
+	return if $notyet;
+	my $has = {};
+	$self->adjust_depends1($v, $has);
+	$self->adjust_depends2($v, $has);
 }
 
 sub requeue
