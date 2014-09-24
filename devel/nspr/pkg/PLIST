@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/12/29 19:58:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/09/24 18:43:39 landry Exp $
 @pkgpath devel/nspr,-main
 bin/compile-et.pl
 bin/nspr-config
@@ -94,7 +94,6 @@ lib/libplc4.a
 @lib lib/libplc4.so.${LIBplc4_VERSION}
 lib/libplds4.a
 @lib lib/libplds4.so.${LIBplds4_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/nspr.pc
 share/aclocal/
 share/aclocal/nspr.m4

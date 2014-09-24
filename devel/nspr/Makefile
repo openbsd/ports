@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2014/06/11 07:58:17 landry Exp $
+# $OpenBSD: Makefile,v 1.54 2014/09/24 18:43:39 landry Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 mips64 mips64el powerpc sparc sparc64 hppa
 SHARED_ONLY =	Yes
 
 COMMENT =		Netscape Portable Runtime
 
-VER=			4.10.6
+VER=			4.10.7
 DISTNAME=		nspr-${VER}
 
 SO_VERSION=		23.1

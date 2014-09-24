@@ -1,7 +1,7 @@
-$OpenBSD: patch-nspr_configure_in,v 1.4 2014/06/11 07:58:17 landry Exp $
---- nspr/configure.in.orig	Thu Jun  5 23:42:08 2014
-+++ nspr/configure.in	Wed Jun 11 07:58:34 2014
-@@ -2149,9 +2149,11 @@ tools are selected during the Xcode/Developer Tools in
+$OpenBSD: patch-nspr_configure_in,v 1.5 2014/09/24 18:43:39 landry Exp $
+--- nspr/configure.in.orig	Tue Aug 12 17:40:57 2014
++++ nspr/configure.in	Wed Sep 24 20:10:47 2014
+@@ -2168,9 +2168,11 @@ tools are selected during the Xcode/Developer Tools in
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
      AC_DEFINE(HAVE_SOCKLEN_T)
