@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2014/09/24 09:38:19 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2014/09/24 09:45:00 jasper Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
@@ -31,11 +31,9 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/facter/util/config.rb \
 		${WRKSRC}/spec/unit/util/config_spec.rb
 
-
 FAKE_FLAGS += HOME=${WRKDIR}/home
 
 do-install:
-	echo $${HOME}
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-facter
 	@cd ${WRKSRC} && \
 		${ALL_FAKE_FLAGS} ${RUBY} install.rb --destdir=${WRKINST}
