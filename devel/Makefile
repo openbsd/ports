@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1252 2014/09/23 22:41:21 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1253 2014/09/24 06:40:44 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1169,7 +1169,6 @@
      SUBDIR += py-dateutil
      SUBDIR += py-decorator
      SUBDIR += py-decoratortools
-     SUBDIR += py-distribute,python3
      SUBDIR += py-distutils-extra
      SUBDIR += py-doit
      SUBDIR += py-dtopt
@@ -1363,7 +1362,7 @@
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-rb-gsl,ruby19
+     SUBDIR += ruby-rb-gsl
      SUBDIR += ruby-rcov,ruby18
      SUBDIR += ruby-rcov,ruby19
      SUBDIR += ruby-rdoc
