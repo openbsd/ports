@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: monit.rc,v 1.2 2012/11/25 13:34:04 ajacoutot Exp $
+# $OpenBSD: monit.rc,v 1.3 2014/09/24 09:30:48 jasper Exp $
 
 daemon="${TRUEPREFIX}/bin/monit"
-daemon_flags="-c ${SYSCONFDIR}/monitrc"
 
 . /etc/rc.d/rc.subr
 
