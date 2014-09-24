@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/09/10 05:14:38 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2014/09/24 20:06:14 landry Exp $
 
 # keep in synch with mozilla.port.mk
 ONLY_FOR_ARCHS =	i386 amd64 powerpc sparc64
@@ -23,7 +23,7 @@ MODPY_RUNDEP =	No
 USE_GMAKE =	Yes
 CONFIGURE_STYLE =	gnu
 
-BUILD_DEPENDS =	archivers/zip
+BUILD_DEPENDS =	archivers/zip archivers/unzip
 RUN_DEPENDS =	security/gnupg
 WRKDIST =	${WRKDIR}/enigmail
 
