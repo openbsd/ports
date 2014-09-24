@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/05 13:50:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/24 18:56:04 jasper Exp $
 ${GEM_BIN}/yard${GEM_BIN_SUFFIX}
 ${GEM_BIN}/yardoc${GEM_BIN_SUFFIX}
 ${GEM_BIN}/yri${GEM_BIN_SUFFIX}
@@ -156,6 +156,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/method_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/mixin_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/module_function_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/module_handler.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/private_class_method_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/private_constant_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/visibility_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/legacy/yield_handler.rb
@@ -164,6 +165,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/method_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/mixin_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/module_function_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/module_handler.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/private_class_method_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/private_constant_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/struct_handler_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/handlers/ruby/visibility_handler.rb
@@ -375,6 +377,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/method_condition_handler_001.
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/method_handler_001.rb.txt
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/mixin_handler_001.rb.txt
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/module_handler_001.rb.txt
+${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/private_class_method_handler_001.rb.txt
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/private_constant_handler_001.rb.txt
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/process_handler_001.rb.txt
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/examples/visibility_handler_001.rb.txt
@@ -387,6 +390,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/method_handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/mixin_handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/module_function_handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/module_handler_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/handlers/private_class_method_handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/private_constant_handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/processor_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/handlers/ruby/
