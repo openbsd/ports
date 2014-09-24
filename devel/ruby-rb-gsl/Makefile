@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/15 02:13:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/24 06:27:41 jasper Exp $
 
 COMMENT =	Ruby interface to GSL
 
-DISTNAME =	gsl-1.14.7
-REVISION =	1
+DISTNAME =	rb-gsl-1.16.0.2
+PKGNAME =	${DISTNAME:S/rb-//}
 CATEGORIES =	devel
-
-HOMEPAGE=	http://rb-gsl.rubyforge.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
