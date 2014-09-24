@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_gsl_vector_complex_c,v 1.1 2014/09/24 22:17:39 jasper Exp $
+
+Fix conflicting types.
+
+--- ext/gsl/vector_complex.c.orig	Wed Sep 24 23:37:48 2014
++++ ext/gsl/vector_complex.c	Wed Sep 24 23:38:35 2014
+@@ -1990,7 +1990,7 @@ static VALUE rb_gsl_vector_complex_zip(int argc, VALUE
+ // Starting with version 1.15, GSL provides a gsl_vector_complex_equal
+ // function, but it only determines absolute equality (i.e. is has no epsilon
+ // argument).
+-static int gsl_vector_complex_equal_eps(const gsl_vector_complex *v1,
++static int gsl_vector_complex_equal_with_eps(const gsl_vector_complex *v1,
+   const gsl_vector_complex *v2, double eps)
+ {
+   gsl_complex z1, z2;
+@@ -2023,7 +2023,7 @@ static VALUE rb_gsl_vector_complex_equal(int argc, VAL
+   Data_Get_Struct(obj, gsl_vector_complex, v1);
+   CHECK_VECTOR_COMPLEX(argv[0]);
+   Data_Get_Struct(argv[0], gsl_vector_complex, v2);
+-  ret = gsl_vector_complex_equal_eps(v1, v2, eps);
++  ret = gsl_vector_complex_equal_with_eps(v1, v2, eps);
+   if (ret == 1) return Qtrue;
+   else return Qfalse;
+ }
