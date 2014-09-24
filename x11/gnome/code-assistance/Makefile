@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/24 09:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/09/24 15:21:58 jeremy Exp $
 
 COMMENT=		code assistance services for GNOME
 
@@ -24,6 +24,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS +=	vala
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODRUBY_REV=		2.1
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/llvm>=${MODCLANG_VERSION} \

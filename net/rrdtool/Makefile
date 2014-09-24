@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2014/09/24 10:21:27 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2014/09/24 15:21:59 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,6 +39,7 @@ PSEUDO_FLAVORS=	no_ruby no_python
 MULTI_PACKAGES= -main -python -ruby -update
 
 MODULES=	devel/gettext lang/python lang/ruby
+MODRUBY_REV=	2.1
 
 CONFIGURE_STYLE= gnu
 CPPFLAGS+=	-I${X11BASE}/include/ \
