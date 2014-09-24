@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/09/06 07:24:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/09/24 06:17:56 jasper Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -47,6 +47,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/fail.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_multiple_block.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_multiple_line.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
