@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.175 2014/09/23 12:02:40 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.176 2014/09/24 06:07:06 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -428,6 +428,8 @@ my $obsolete_reason = {
 	'papyon' => 3,
 	'bacula-web' => 1,
 	'waf' => 0,
+	'ruby-echoe' => 3,
+	'ruby-rubyforge' => 0,
 };
 
 # ->is_base_system($handle, $state):
