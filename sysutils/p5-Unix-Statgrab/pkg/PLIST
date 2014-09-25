@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/25 20:02:31 landry Exp $
 ${P5ARCH}/
 ${P5ARCH}/Unix/
+${P5ARCH}/Unix/Statgrab/
 ${P5ARCH}/Unix/Statgrab.pm
+${P5ARCH}/Unix/Statgrab/ConfigData.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unix/
 ${P5ARCH}/auto/Unix/Statgrab/
@@ -9,3 +11,4 @@ ${P5ARCH}/auto/Unix/Statgrab/
 ${P5ARCH}/auto/Unix/Statgrab/Statgrab.so
 ${P5ARCH}/auto/Unix/Statgrab/autosplit.ix
 @man man/man3p/Unix::Statgrab.3p
+@man man/man3p/Unix::Statgrab::ConfigData.3p
