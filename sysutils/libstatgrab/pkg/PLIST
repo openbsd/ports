@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/01/18 22:03:46 okan Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2014/09/25 20:01:39 landry Exp $
 @bin bin/saidar
 @bin bin/statgrab
 bin/statgrab-make-mrtg-config
@@ -7,28 +6,119 @@ bin/statgrab-make-mrtg-index
 include/statgrab.h
 lib/libstatgrab.a
 lib/libstatgrab.la
-lib/pkgconfig/
+@lib lib/libstatgrab.so.${LIBstatgrab_VERSION}
 lib/pkgconfig/libstatgrab.pc
 @man man/man1/saidar.1
 @man man/man1/statgrab-make-mrtg-config.1
 @man man/man1/statgrab-make-mrtg-index.1
 @man man/man1/statgrab.1
+@man man/man3/libstatgrab.3
+@man man/man3/sg_clear_error.3
+@man man/man3/sg_comp_destroy.3
+@man man/man3/sg_comp_get_tls.3
+@man man/man3/sg_comp_init.3
+@man man/man3/sg_disk_io_compare_name.3
+@man man/man3/sg_disk_io_compare_traffic.3
+@man man/man3/sg_drop_privileges.3
+@man man/man3/sg_free_cpu_stats.3
+@man man/man3/sg_free_disk_io_stats.3
+@man man/man3/sg_free_fs_stats.3
+@man man/man3/sg_free_host_info.3
+@man man/man3/sg_free_load_stats.3
+@man man/man3/sg_free_mem_stats.3
+@man man/man3/sg_free_network_iface_stats.3
+@man man/man3/sg_free_network_io_stats.3
+@man man/man3/sg_free_page_stats.3
+@man man/man3/sg_free_process_count.3
+@man man/man3/sg_free_stats_buf.3
+@man man/man3/sg_free_swap_stats.3
+@man man/man3/sg_free_user_stats.3
+@man man/man3/sg_fs_compare_device_name.3
+@man man/man3/sg_fs_compare_mnt_point.3
 @man man/man3/sg_get_cpu_percents.3
+@man man/man3/sg_get_cpu_percents_of.3
+@man man/man3/sg_get_cpu_percents_r.3
 @man man/man3/sg_get_cpu_stats.3
 @man man/man3/sg_get_cpu_stats_diff.3
+@man man/man3/sg_get_cpu_stats_diff_between.3
+@man man/man3/sg_get_cpu_stats_r.3
 @man man/man3/sg_get_disk_io_stats.3
 @man man/man3/sg_get_disk_io_stats_diff.3
+@man man/man3/sg_get_disk_io_stats_diff_between.3
+@man man/man3/sg_get_disk_io_stats_r.3
+@man man/man3/sg_get_error.3
+@man man/man3/sg_get_error_arg.3
+@man man/man3/sg_get_error_details.3
+@man man/man3/sg_get_error_errno.3
 @man man/man3/sg_get_fs_stats.3
+@man man/man3/sg_get_fs_stats_diff.3
+@man man/man3/sg_get_fs_stats_diff_between.3
+@man man/man3/sg_get_fs_stats_r.3
 @man man/man3/sg_get_host_info.3
+@man man/man3/sg_get_host_info_r.3
 @man man/man3/sg_get_load_stats.3
+@man man/man3/sg_get_load_stats_r.3
 @man man/man3/sg_get_mem_stats.3
+@man man/man3/sg_get_mem_stats_r.3
+@man man/man3/sg_get_nelements.3
 @man man/man3/sg_get_network_iface_stats.3
+@man man/man3/sg_get_network_iface_stats_r.3
 @man man/man3/sg_get_network_io_stats.3
 @man man/man3/sg_get_network_io_stats_diff.3
+@man man/man3/sg_get_network_io_stats_diff_between.3
+@man man/man3/sg_get_network_io_stats_r.3
 @man man/man3/sg_get_page_stats.3
 @man man/man3/sg_get_page_stats_diff.3
+@man man/man3/sg_get_page_stats_diff_between.3
+@man man/man3/sg_get_page_stats_r.3
 @man man/man3/sg_get_process_count.3
+@man man/man3/sg_get_process_count_of.3
+@man man/man3/sg_get_process_count_r.3
 @man man/man3/sg_get_process_stats.3
+@man man/man3/sg_get_process_stats_r.3
 @man man/man3/sg_get_swap_stats.3
+@man man/man3/sg_get_swap_stats_r.3
 @man man/man3/sg_get_user_stats.3
+@man man/man3/sg_get_user_stats_r.3
+@man man/man3/sg_get_valid_filesystems.3
+@man man/man3/sg_global_lock.3
+@man man/man3/sg_global_unlock.3
+@man man/man3/sg_init.3
+@man man/man3/sg_internal-intro.3
+@man man/man3/sg_intro.3
+@man man/man3/sg_lock_mutex.3
+@man man/man3/sg_network_iface_compare_name.3
+@man man/man3/sg_network_io_compare_name.3
+@man man/man3/sg_process_compare_cpu.3
+@man man/man3/sg_process_compare_gid.3
+@man man/man3/sg_process_compare_name.3
+@man man/man3/sg_process_compare_pid.3
+@man man/man3/sg_process_compare_res.3
+@man man/man3/sg_process_compare_size.3
+@man man/man3/sg_process_compare_time.3
+@man man/man3/sg_process_compare_uid.3
+@man man/man3/sg_prove_vector.3
+@man man/man3/sg_set_error.3
+@man man/man3/sg_set_error_with_errno.3
+@man man/man3/sg_set_error_with_errno_code.3
+@man man/man3/sg_set_valid_filesystems.3
+@man man/man3/sg_shutdown.3
+@man man/man3/sg_snapshot.3
+@man man/man3/sg_str_error.3
+@man man/man3/sg_strperror.3
+@man man/man3/sg_unlock_mutex.3
+@man man/man3/sg_vector_clear.3
+@man man/man3/sg_vector_clone.3
+@man man/man3/sg_vector_clone_into.3
+@man man/man3/sg_vector_compute_diff.3
+@man man/man3/sg_vector_create.3
+@man man/man3/sg_vector_free.3
+@man man/man3/sg_vector_resize.3
 @man man/man3/statgrab.3
+share/doc/libstatgrab/
+share/doc/libstatgrab/AUTHORS
+share/doc/libstatgrab/COPYING
+share/doc/libstatgrab/COPYING.LGPL
+share/doc/libstatgrab/NEWS
+share/doc/libstatgrab/PLATFORMS
+share/doc/libstatgrab/README
