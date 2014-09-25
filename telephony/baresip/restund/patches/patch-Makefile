@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+--- Makefile.orig	Thu Sep 25 10:51:23 2014
++++ Makefile	Thu Sep 25 10:51:33 2014
+@@ -79,16 +79,14 @@ all: $(MOD_BINS) $(BIN)
+ 
+ # GPROF requires static linking
+ $(BIN): $(OBJS)
+-	@echo "  LD      $@"
+ ifneq ($(GPROF),)
+-	@$(LD) $(LFLAGS) $(APP_LFLAGS) $^ ../re/libre.a $(LIBS) -o $@
++	$(LD) $(LFLAGS) $(APP_LFLAGS) $^ ../re/libre.a $(LIBS) -o $@
+ else
+-	@$(LD) $(LFLAGS) $(APP_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
++	$(LD) $(LFLAGS) $(APP_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
+ endif
+ 
+ $(BUILD)/%.o: %.c $(BUILD) Makefile $(APP_MK)
+-	@echo "  CC      $@"
+-	@$(CC) $(CFLAGS) -o $@ -c $< $(DFLAGS)
++	$(CC) $(CFLAGS) -o $@ -c $< $(DFLAGS)
+ 
+ $(BUILD): Makefile
+ 	@mkdir -p $(BUILD)/src $(MOD_BLD)

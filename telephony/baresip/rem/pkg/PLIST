@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+include/rem/
+include/rem/rem.h
+include/rem/rem_au.h
+include/rem/rem_aubuf.h
+include/rem/rem_audio.h
+include/rem/rem_aufile.h
+include/rem/rem_aumix.h
+include/rem/rem_auresamp.h
+include/rem/rem_autone.h
+include/rem/rem_dsp.h
+include/rem/rem_fir.h
+include/rem/rem_g711.h
+include/rem/rem_vid.h
+include/rem/rem_vidconv.h
+include/rem/rem_video.h
+include/rem/rem_vidmix.h
+lib/librem.a
+@lib lib/librem.so.${LIBrem_VERSION}

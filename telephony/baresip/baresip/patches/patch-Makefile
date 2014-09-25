@@ -1,0 +1,64 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+--- Makefile.orig	Sat Jun 21 13:36:42 2014
++++ Makefile	Thu Sep 25 10:49:52 2014
+@@ -110,13 +110,8 @@ ifneq ($(LIBREM_PATH),)
+ LIBS	+= -L$(LIBREM_PATH)
+ endif
+ 
+-# Static build: include module linker-flags in binary
+-ifneq ($(STATIC),)
+-LIBS      += $(MOD_LFLAGS)
+-else
+ LIBS      += -L$(SYSROOT)/local/lib
+ MOD_LFLAGS += -L$(SYSROOT)/local/lib
+-endif
+ 
+ LIBS      += -lrem -lm
+ LIBS      += -L$(SYSROOT)/lib
+@@ -141,37 +136,30 @@ Makefile:	mk/*.mk $(MOD_MK) $(LIBRE_MK)
+ 
+ 
+ $(SHARED): $(APP_OBJS)
+-	@echo "  LD      $@"
+-	@$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
++	$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
+ 
+ $(STATICLIB): $(APP_OBJS)
+-	@echo "  AR      $@"
+-	@rm -f $@; $(AR) $(AFLAGS) $@ $^
++	rm -f $@; $(AR) $(AFLAGS) $@ $^
+ ifneq ($(RANLIB),)
+-	@echo "  RANLIB  $@"
+-	@$(RANLIB) $@
++	$(RANLIB) $@
+ endif
+ 
+ # GPROF requires static linking
+ $(BIN):	$(APP_OBJS)
+-	@echo "  LD      $@"
+-ifneq ($(GPROF),)
+-	@$(LD) $(LFLAGS) $(APP_LFLAGS) $^ ../re/libre.a $(LIBS) -o $@
++ifneq ($(STATIC),)
++	$(LD) $(LFLAGS) $(APP_LFLAGS) $^ -lre $(LIBS) $(MOD_LFLAGS) -o $@
+ else
+-	@$(LD) $(LFLAGS) $(APP_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
++	$(LD) $(LFLAGS) $(APP_LFLAGS) $^ -lre $(LIBS) -o $@
+ endif
+ 
+ $(BUILD)/%.o: %.c $(BUILD) Makefile $(APP_MK)
+-	@echo "  CC      $@"
+-	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
+ 
+ $(BUILD)/%.o: %.m $(BUILD) Makefile $(APP_MK)
+-	@echo "  OC      $@"
+-	@$(CC) $(CFLAGS) $(OBJCFLAGS) -c $< -o $@ $(DFLAGS)
++	$(CC) $(CFLAGS) $(OBJCFLAGS) -c $< -o $@ $(DFLAGS)
+ 
+ $(BUILD)/%.o: %.S $(BUILD) Makefile $(APP_MK)
+-	@echo "  AS      $@"
+-	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
+ 
+ $(BUILD): Makefile
+ 	@mkdir -p $(BUILD)/src $(MOD_BLD)

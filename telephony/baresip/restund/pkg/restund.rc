@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: restund.rc,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/restund"
+daemon_user="_restund"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

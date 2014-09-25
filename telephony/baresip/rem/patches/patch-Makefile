@@ -1,0 +1,46 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+--- Makefile.orig	Thu Sep 25 10:50:59 2014
++++ Makefile	Thu Sep 25 10:51:13 2014
+@@ -80,25 +80,21 @@ all: $(SHARED) $(STATIC)
+ 
+ 
+ $(SHARED): $(OBJS)
+-	@echo "  LD      $@"
+-	@$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
++	$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
+ 
+ 
+ $(STATIC): $(OBJS)
+-	@echo "  AR      $@"
+-	@$(AR) $(AFLAGS) $@ $^
++	$(AR) $(AFLAGS) $@ $^
+ ifneq ($(RANLIB),)
+-	@$(RANLIB) $@
++	$(RANLIB) $@
+ endif
+ 
+ $(BUILD)/%.o: src/%.c $(BUILD) Makefile $(MK) $(MODMKS)
+-	@echo "  CC      $@"
+-	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
+ 
+ 
+ $(BUILD)/%.o: src/%.S $(BUILD) Makefile $(MK) $(MODMKS)
+-	@echo "  AS      $@"
+-	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
+ 
+ 
+ $(BUILD): Makefile $(MK) $(MODMKS)
+@@ -127,9 +123,7 @@ uninstall:
+ -include test.d
+ 
+ test.o:	test.c
+-	@echo "  CC      $@"
+-	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
+ 
+ test$(BIN_SUFFIX): test.o $(SHARED) $(STATIC)
+-	@echo "  LD      $@"
+-	@$(LD) $(LFLAGS) $< -L. -lrem -lre $(LIBS) -o $@
++	$(LD) $(LFLAGS) $< -L. -lrem -lre $(LIBS) -o $@

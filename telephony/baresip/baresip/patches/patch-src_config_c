@@ -1,0 +1,97 @@
+$OpenBSD: patch-src_config_c,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+--- src/config.c.orig	Sat Jun 21 14:36:42 2014
++++ src/config.c	Tue Sep  9 21:45:13 2014
+@@ -20,7 +20,7 @@
+ static struct config core_config = {
+ 	/* Input */
+ 	{
+-		"/dev/event0",
++		"/dev/wskbd",
+ 		5555
+ 	},
+ 
+@@ -332,6 +332,8 @@ static const char *default_audio_device(void)
+ 	return "coreaudio,nil";
+ #elif defined (FREEBSD)
+ 	return "oss,/dev/dsp";
++#elif defined (OPENBSD)
++	return "sndio,default";
+ #elif defined (WIN32)
+ 	return "winwave,nil";
+ #elif defined (ANDROID)
+@@ -391,7 +393,7 @@ static int core_config_template(struct re_printf *pf, 
+ 
+ 	err |= re_hprintf(pf,
+ 			  "\n# Core\n"
+-			  "poll_method\t\t%s\t\t# poll, select, epoll ..\n"
++			  "poll_method\t\t%s\t\t# poll, select ..\n"
+ 			  "\n# Input\n"
+ 			  "input_device\t\t/dev/event0\n"
+ 			  "input_port\t\t5555\n"
+@@ -561,21 +563,17 @@ int config_write_template(const char *file, const stru
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "stdio" MOD_EXT "\n");
+ #endif
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cons" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "evdev" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "httpd" MOD_EXT "\n");
+ 
+ 	(void)re_fprintf(f, "\n# Audio codec Modules (in order)\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "opus" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "silk" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "amr" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "g7221" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "g722" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "g726" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "g711" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "gsm" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "l16" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "speex" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "bv32" MOD_EXT "\n");
+ 
+ 	(void)re_fprintf(f, "\n# Audio filter Modules (in encoding order)\n");
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vumeter" MOD_EXT "\n");
+@@ -593,11 +591,12 @@ int config_write_template(const char *file, const stru
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "coreaudio" MOD_EXT "\n");
+ #elif defined (ANDROID)
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "opensles" MOD_EXT "\n");
++#elif defined (OPENBSD)
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "sndio" MOD_EXT "\n");
+ #else
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "oss" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "alsa" MOD_EXT "\n");
+ #endif
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "portaudio" MOD_EXT "\n");
+ 
+ #ifdef USE_VIDEO
+ 
+@@ -629,21 +628,17 @@ int config_write_template(const char *file, const stru
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "avformat" MOD_EXT "\n");
+ #endif
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "x11grab" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cairo" MOD_EXT "\n");
+ 
+ 	(void)re_fprintf(f, "\n# Video display modules\n");
+ #ifdef DARWIN
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "opengl" MOD_EXT "\n");
+ #endif
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "x11" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "sdl2" MOD_EXT "\n");
+ 
+ #endif /* USE_VIDEO */
+ 
+ 	(void)re_fprintf(f,
+-			"\n# Audio/Video source modules\n"
+-			"#module\t\t\t" MOD_PRE "rst" MOD_EXT "\n"
+-			"#module\t\t\t" MOD_PRE "gst" MOD_EXT "\n");
++			"\n# Audio/Video source modules\n");
+ 
+ 	(void)re_fprintf(f, "\n# Media NAT modules\n");
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "stun" MOD_EXT "\n");
+@@ -654,6 +649,7 @@ int config_write_template(const char *file, const stru
+ 	(void)re_fprintf(f, "\n# Media encryption modules\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "srtp" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "dtls_srtp" MOD_EXT "\n");
++	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "zrtp" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "\n");
+ 
+ 	(void)re_fprintf(f, "\n#------------------------------------"

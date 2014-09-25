@@ -1,0 +1,9 @@
+Restund is a modular and flexible STUN and TURN Server, with IPv4 and IPv6
+support. Supported IETF RFCs:
+
+* RFC 5389 - Session Traversal Utilities for NAT (STUN)
+* RFC 5766 - Traversal Using Relays around NAT (TURN): Relay Extensions to
+             Session Traversal Utilities for NAT (STUN)
+* RFC 5780 - NAT Behavior Discovery Using Session Traversal Utilities for
+             NAT (STUN)
+* RFC 6156 - Traversal Using Relays around NAT (TURN) Extension for IPv6
