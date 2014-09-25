@@ -1,29 +1,20 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2014/01/24 20:40:17 landry Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.6 2014/09/25 20:10:13 landry Exp $
 Install config file in examples/
---- src/Makefile.in.orig	Sat Nov 27 11:10:51 2010
-+++ src/Makefile.in	Sun Sep 23 21:17:24 2012
-@@ -37,7 +37,7 @@ build_triplet = @build@
+--- src/Makefile.in.orig	Sun Jan 26 09:09:56 2014
++++ src/Makefile.in	Mon Sep 22 17:27:47 2014
+@@ -36,7 +36,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
  host_triplet = @host@
- @BUILD_WITH_OWN_LIBIPTC_TRUE@am__append_1 = owniptc
- @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_2 = liboconfig
--@BUILD_FEATURE_DAEMON_TRUE@am__append_3 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
-+@BUILD_FEATURE_DAEMON_TRUE@am__append_3 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
+ @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_1 = liboconfig
+-@BUILD_FEATURE_DAEMON_TRUE@am__append_2 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
++@BUILD_FEATURE_DAEMON_TRUE@am__append_2 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
  sbin_PROGRAMS = collectd$(EXEEXT) collectdmon$(EXEEXT)
- bin_PROGRAMS = collectd-nagios$(EXEEXT)
- 
-@@ -57,7 +57,7 @@ bin_PROGRAMS = collectd-nagios$(EXEEXT)
- @BUILD_WITH_LIBSTATGRAB_TRUE@am__append_13 = $(BUILD_WITH_LIBSTATGRAB_CFLAGS)
- @BUILD_WITH_LIBSTATGRAB_TRUE@am__append_14 = $(BUILD_WITH_LIBSTATGRAB_LDFLAGS)
- @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_15 = $(LIBLTDL) liboconfig/liboconfig.la
--@BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_16 = $(LIBLTDL) liboconfig/liboconfig.la
-+@BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_16 = liboconfig/liboconfig.la
- @BUILD_WITH_OWN_LIBOCONFIG_FALSE@am__append_17 = -loconfig
- @BUILD_WITH_LIBSOCKET_TRUE@am__append_18 = -lsocket
- @BUILD_AIX_TRUE@am__append_19 = -lm
-@@ -1836,11 +1836,11 @@ top_build_prefix = @top_build_prefix@
+ bin_PROGRAMS = collectd-nagios$(EXEEXT) collectdctl$(EXEEXT) \
+ 	collectd-tg$(EXEEXT) $(am__EXEEXT_1)
+@@ -2235,11 +2235,11 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- SUBDIRS = libcollectdclient $(am__append_1) $(am__append_2)
+ SUBDIRS = libcollectdclient $(am__append_1)
 -@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall -Werror
 +@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall
  AM_CPPFLAGS = -DPREFIX='"${prefix}"' \
@@ -31,10 +22,10 @@ Install config file in examples/
  	-DLOCALSTATEDIR='"${localstatedir}"' \
 -	-DPKGLOCALSTATEDIR='"${localstatedir}/lib/${PACKAGE_NAME}"' \
 +	-DPKGLOCALSTATEDIR='"${localstatedir}/${PACKAGE_NAME}"' \
- 	$(am__append_3) -DPLUGINDIR='"${pkglibdir}"' \
+ 	$(am__append_2) -DPLUGINDIR='"${pkglibdir}"' \
  	-DPKGDATADIR='"${pkgdatadir}"'
  collectd_SOURCES = collectd.c collectd.h \
-@@ -2187,7 +2187,7 @@ CLEANFILES = $(am__append_250)
+@@ -2655,7 +2655,7 @@ CLEANFILES = $(am__append_449)
  @BUILD_PLUGIN_NOTIFY_DESKTOP_TRUE@notify_desktop_la_LIBADD = $(LIBNOTIFY_LIBS)
  @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_SOURCES = notify_email.c
  @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_LDFLAGS = -module -avoid-version
@@ -42,9 +33,9 @@ Install config file in examples/
 +@BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_LIBADD = -lesmtp -lssl -lcrypto -lpthread
  @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_SOURCES = ntpd.c
  @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_LDFLAGS = -module -avoid-version
- @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_LIBADD = $(am__append_226)
-@@ -4039,13 +4039,8 @@ pinba.pb-c.c pinba.pb-c.h: pinba.proto
- 	protoc-c --c_out $(builddir) pinba.proto
+ @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_LIBADD = $(am__append_254)
+@@ -4856,13 +4856,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+ @HAVE_PROTOC_C_TRUE@	protoc-c -I$(srcdir) --c_out . $(srcdir)/riemann.proto
  
  install-exec-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)

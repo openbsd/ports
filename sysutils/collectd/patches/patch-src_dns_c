@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dns_c,v 1.1 2014/09/25 20:10:13 landry Exp $
+We dont install nor need pcap-bpf.h on openbsd
+--- src/dns.c.orig	Mon Sep 22 17:26:48 2014
++++ src/dns.c	Mon Sep 22 17:26:52 2014
+@@ -33,7 +33,6 @@
+ #include <poll.h>
+ 
+ #include <pcap.h>
+-#include <pcap-bpf.h>
+ 
+ /*
+  * Private data types

@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/01/24 20:40:17 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/09/25 20:10:13 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
+@bin bin/collectd-tg
+@bin bin/collectdctl
 include/collectd/
 include/collectd/client.h
 include/collectd/lcc_features.h
+include/collectd/network.h
+include/collectd/network_buffer.h
 lib/collectd/
 @comment lib/collectd/apache.la
 lib/collectd/apache.so
@@ -64,6 +68,8 @@ lib/collectd/ntpd.so
 lib/collectd/olsrd.so
 @comment lib/collectd/openvpn.la
 lib/collectd/openvpn.so
+@comment lib/collectd/pf.la
+lib/collectd/pf.so
 @comment lib/collectd/powerdns.la
 lib/collectd/powerdns.so
 @comment lib/collectd/swap.la
@@ -74,6 +80,8 @@ lib/collectd/syslog.so
 lib/collectd/table.so
 @comment lib/collectd/tail.la
 lib/collectd/tail.so
+@comment lib/collectd/tail_csv.la
+lib/collectd/tail_csv.so
 @comment lib/collectd/target_notification.la
 lib/collectd/target_notification.so
 @comment lib/collectd/target_replace.la
@@ -82,6 +90,8 @@ lib/collectd/target_replace.so
 lib/collectd/target_scale.so
 @comment lib/collectd/target_set.la
 lib/collectd/target_set.so
+@comment lib/collectd/target_v5upgrade.la
+lib/collectd/target_v5upgrade.so
 @comment lib/collectd/tcpconns.la
 lib/collectd/tcpconns.so
 @comment lib/collectd/teamspeak2.la
@@ -96,22 +106,25 @@ lib/collectd/uptime.so
 lib/collectd/users.so
 @comment lib/collectd/uuid.la
 lib/collectd/uuid.so
+@comment lib/collectd/write_graphite.la
+lib/collectd/write_graphite.so
 @comment lib/collectd/write_http.la
 lib/collectd/write_http.so
 @comment lib/libcollectdclient.la
 @lib lib/libcollectdclient.so.${LIBcollectdclient_VERSION}
 lib/pkgconfig/libcollectdclient.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.18.2/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.18.2/perllocal.pod
 libdata/perl5/site_perl/Collectd/
 libdata/perl5/site_perl/Collectd.pm
 libdata/perl5/site_perl/Collectd/Plugins/
-libdata/perl5/site_perl/Collectd/Plugins/Monitorus.pm
 libdata/perl5/site_perl/Collectd/Plugins/OpenVZ.pm
 libdata/perl5/site_perl/Collectd/Unixsock.pm
 @man man/man1/collectd-nagios.1
+@man man/man1/collectd-tg.1
 @man man/man1/collectd.1
+@man man/man1/collectdctl.1
 @man man/man1/collectdmon.1
 @man man/man3p/Collectd::Unixsock.3p
 @man man/man5/collectd-email.5
@@ -119,6 +132,7 @@ libdata/perl5/site_perl/Collectd/Unixsock.pm
 @man man/man5/collectd-java.5
 @man man/man5/collectd-perl.5
 @man man/man5/collectd-python.5
+@man man/man5/collectd-threshold.5
 @man man/man5/collectd-unixsock.5
 @man man/man5/collectd.conf.5
 @man man/man5/types.db.5
@@ -134,3 +148,6 @@ share/examples/collectd.conf
 @owner _collectd
 @group _collectd
 @sample /var/collectd/
+@owner
+@group
+@rcscript ${RCDIR}/collectd

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2014/09/25 20:10:13 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -6,7 +6,7 @@ COMMENT-pgsql =		collectd postgresql plugin
 COMMENT-rrdtool =	collectd rrdtool plugin
 COMMENT-snmp =		collectd snmp plugin
 
-V =			4.10.2
+V =			5.4.1
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -15,14 +15,8 @@ PKGNAME-rrdtool =	collectd-rrdtool-$V
 PKGNAME-snmp =		collectd-snmp-$V
 CATEGORIES =		sysutils
 
-REVISION-main=		4
-REVISION-mysql =	4
-REVISION-pgsql =	3
-REVISION-rrdtool =	2
-REVISION-snmp =		1
-
 HOMEPAGE =		http://www.collectd.org/
-SHARED_LIBS +=		collectdclient 0.0
+SHARED_LIBS +=		collectdclient 1.0
 SHARED_ONLY =		Yes
 
 # GPLv2
@@ -34,7 +28,7 @@ MODULES =		devel/gettext
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp
 
-WANTLIB-mysql =		crypto m ssl z mysqlclient pthread
+WANTLIB-mysql =		crypto m ssl z mysqlclient_r stdc++ pthread
 LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
@@ -80,10 +74,10 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 			logfile match_empty_counter match_hashed match_regex \
 			match_timediff match_value memcached memory mysql \
 			network nginx ntpd olsrd openvpn postgresql powerdns \
-			rrdtool snmp swap syslog table tail \
+			rrdtool snmp swap syslog table tail tail_csv \
 			target_notification target_replace target_scale \
-			target_set tcpconns teamspeak2 ted unixsock uptime \
-			users uuid write_http
+			target_set target_v5upgrade tcpconns teamspeak2 ted unixsock uptime \
+			users uuid write_http write_graphite pf
 
 .for _plugin in ${ENABLED_PLUGINS}
 CONFIGURE_ARGS += --enable-${_plugin}

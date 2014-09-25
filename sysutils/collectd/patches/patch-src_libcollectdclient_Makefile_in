@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libcollectdclient_Makefile_in,v 1.1 2014/09/25 20:10:13 landry Exp $
+--- src/libcollectdclient/Makefile.in.orig	Mon Sep 22 17:21:37 2014
++++ src/libcollectdclient/Makefile.in	Mon Sep 22 17:21:47 2014
+@@ -386,7 +386,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+-@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall -Werror
++@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall
+ pkginclude_HEADERS = collectd/client.h collectd/network.h collectd/network_buffer.h collectd/lcc_features.h
+ lib_LTLIBRARIES = libcollectdclient.la
+ nodist_pkgconfig_DATA = libcollectdclient.pc

@@ -1,4 +1,0 @@
-First, configure collectd in ${SYSCONFDIR}/collectd.conf,
-Then use the following to start the daemon:
-
-	sudo -u _collectd ${TRUEPREFIX}/sbin/collectd

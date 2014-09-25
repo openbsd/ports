@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_plugin_h,v 1.1 2014/09/25 20:10:13 landry Exp $
+missing include for pthread_t type
+--- src/plugin.h.orig	Mon Sep 22 17:24:30 2014
++++ src/plugin.h	Mon Sep 22 17:26:33 2014
+@@ -22,6 +22,7 @@
+  *   Sebastian Harl <sh at tokkee.org>
+  **/
+ 
++#include <pthread.h>
+ #include "collectd.h"
+ #include "configfile.h"
+ #include "meta_data.h"

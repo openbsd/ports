@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: collectd.rc,v 1.1 2014/09/25 20:10:13 landry Exp $
+
+daemon="${TRUEPREFIX}/sbin/collectd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

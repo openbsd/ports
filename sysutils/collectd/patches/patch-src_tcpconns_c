@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tcpconns_c,v 1.1 2013/12/28 20:44:21 krw Exp $
---- src/tcpconns.c.orig	Fri Dec 27 11:33:41 2013
-+++ src/tcpconns.c	Fri Dec 27 11:37:20 2013
-@@ -659,7 +659,6 @@ static int conn_init (void)
+$OpenBSD: patch-src_tcpconns_c,v 1.2 2014/09/25 20:10:13 landry Exp $
+--- src/tcpconns.c.orig	Sun Jan 26 09:09:14 2014
++++ src/tcpconns.c	Mon Sep 22 16:59:13 2014
+@@ -896,7 +896,6 @@ static int conn_init (void)
  static int conn_read (void)
  {
    struct inpcbtable table;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_tcpconns_c,v 1.1 2013/12/28 20:44:21 krw Exp $
    struct inpcb *next;
    struct inpcb inpcb;
    struct tcpcb tcpcb;
-@@ -672,18 +671,16 @@ static int conn_read (void)
+@@ -909,18 +908,16 @@ static int conn_read (void)
    if (status != 0)
      return (-1);
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-src_tcpconns_c,v 1.1 2013/12/28 20:44:21 krw Exp $
  
      /* Ignore sockets, that are not connected. */
  #ifdef __NetBSD__
-@@ -700,7 +697,7 @@ static int conn_read (void)
+@@ -937,7 +934,7 @@ static int conn_read (void)
  
      kread ((u_long) inpcb.inp_ppcb, &tcpcb, sizeof (tcpcb));
      conn_handle_ports (ntohs(inpcb.inp_lport), ntohs(inpcb.inp_fport), tcpcb.t_state);
