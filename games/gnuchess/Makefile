@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2014/01/28 09:12:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2014/09/25 13:44:56 dcoppa Exp $
 
 COMMENT=	chess program
 
-DISTNAME=	gnuchess-6.1.1
+DISTNAME=	gnuchess-6.1.2
 DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
 
 CATEGORIES=	games
