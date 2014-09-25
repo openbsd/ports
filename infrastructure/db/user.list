@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.235 2014/08/22 19:18:44 sthen Exp $
+$OpenBSD: user.list,v 1.236 2014/09/25 10:05:53 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -250,3 +250,4 @@ id  user		group		port options
 739 _puppetboard			www/puppetboard
 740 _icbd		_icbd		net/icbd
 741 _bind		_bind		net/isc-bind
+742 _restund		_restund	telephony/baresip/restund
