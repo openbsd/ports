@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/30 16:05:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/25 20:04:42 landry Exp $
 
 SHARED_ONLY=		Yes
 
+BROKEN=			doesnt build work with libstatgrab>=0.90
 COMMENT=		libstatgrab bindings for Lua
 
 DISTNAME=		lua-statgrab-0.3.0
