@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.113 2014/06/16 10:22:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2014/09/25 17:33:15 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	6.46
-REVISION-main=		0
+MODPY_EGG_VERSION=	6.47
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
