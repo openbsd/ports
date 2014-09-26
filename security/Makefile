@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.350 2014/09/10 11:29:08 rpointel Exp $
+# $OpenBSD: Makefile,v 1.351 2014/09/26 14:02:16 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -114,6 +114,7 @@
      SUBDIR += luasec
      SUBDIR += luasec,lua52
      SUBDIR += lxnb
+     SUBDIR += lynis
      SUBDIR += mcrypt
      SUBDIR += mhash
      SUBDIR += nbaudit
