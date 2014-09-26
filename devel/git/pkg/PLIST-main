@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.59 2014/08/19 19:44:39 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.60 2014/09/26 13:55:44 dcoppa Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -393,6 +393,7 @@ share/gitweb/static/git-logo.png
 share/gitweb/static/gitweb.css
 share/gitweb/static/gitweb.js
 share/locale/bg/LC_MESSAGES/git.mo
+share/locale/ca/LC_MESSAGES/git.mo
 share/locale/de/LC_MESSAGES/git.mo
 share/locale/fr/LC_MESSAGES/git.mo
 share/locale/is/
