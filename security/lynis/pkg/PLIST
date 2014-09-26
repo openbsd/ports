@@ -1,42 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/26 14:00:34 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/26 14:46:19 ajacoutot Exp $
 bin/lynis
 @man man/man8/lynis.8
+share/doc/lynis/
+share/doc/lynis/CHANGELOG
+share/doc/lynis/CONTRIBUTORS
+share/doc/lynis/FAQ
+share/doc/lynis/INSTALL
+share/doc/lynis/LICENSE
+share/doc/lynis/README
+share/examples/lynis/
+@sample ${SYSCONFDIR}/lynis/
+share/examples/lynis/default.prf
+@sample ${SYSCONFDIR}/lynis/default.prf
 share/lynis/
-share/lynis/CHANGELOG
-share/lynis/CONTRIBUTORS
-share/lynis/FAQ
-share/lynis/INSTALL
-share/lynis/LICENSE
-share/lynis/README
-@mode 600
 share/lynis/db/
+@mode 0600
 share/lynis/db/fileperms.db
 share/lynis/db/hints.db
 share/lynis/db/integrity.db
 share/lynis/db/malware-susp.db
 share/lynis/db/malware.db
 share/lynis/db/sbl.db
-@mode
-share/lynis/default.prf
-@sample ${SYSCONFDIR}/lynis/
-@sample ${SYSCONFDIR}/lynis/default.prf
-@mode 600
-share/lynis/dev/
-share/lynis/dev/README
-share/lynis/dev/TODO
-@mode
-share/lynis/dev/bash_completion.d/
-share/lynis/dev/bash_completion.d/lynis
-@mode 600
-share/lynis/dev/build-lynis.sh
-share/lynis/dev/check-lynis.sh
-share/lynis/dev/files.dat
-@mode
-share/lynis/dev/lynis.spec
-@mode 600
-share/lynis/dev/openbsd/
-share/lynis/dev/openbsd/+CONTENTS
+@mode 0755
 share/lynis/include/
+@mode 0600
 share/lynis/include/binaries
 share/lynis/include/consts
 share/lynis/include/data_upload
@@ -86,6 +73,8 @@ share/lynis/include/tests_time
 share/lynis/include/tests_tooling
 share/lynis/include/tests_virtualization
 share/lynis/include/tests_webservers
+@mode 0755
 share/lynis/plugins/
+@mode 0600
 share/lynis/plugins/README
 share/lynis/plugins/custom_plugin.template

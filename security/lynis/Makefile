@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/26 14:00:34 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/26 14:46:19 ajacoutot Exp $
 
-COMMENT=	Security auditing tool for Unix based systems.
+COMMENT=	security auditing tool
 
 DISTNAME=	lynis-1.6.2
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -26,13 +27,15 @@ post-extract:
 	@perl -pi -e 's,usr/share,usr/local/share,g' \
 		${WRKDIST}/lynis
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/lynis/
-	@cp -r ${WRKDIST}/{dev,plugins,db,include} \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/lynis/
+	@cp -r ${WRKDIST}/{plugins,db,include} \
 		${PREFIX}/share/lynis/
 	cd ${WRKSRC}; ${INSTALL_DATA} CONTRIBUTORS LICENSE \
-		FAQ CHANGELOG README default.prf \
-		INSTALL ${PREFIX}/share/lynis/
+		FAQ CHANGELOG README INSTALL \
+		${PREFIX}/share/doc/lynis/
+	${INSTALL_DATA} ${WRKSRC}/default.prf \
+		${PREFIX}/share/examples/lynis/
 	${INSTALL_MAN} ${WRKSRC}/lynis.8 ${PREFIX}/man/man8/
-	${INSTALL_PROGRAM} ${WRKSRC}/lynis ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/lynis ${PREFIX}/bin/
 
 .include <bsd.port.mk>
