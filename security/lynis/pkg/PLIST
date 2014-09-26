@@ -1,0 +1,91 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/26 14:00:34 gonzalo Exp $
+bin/lynis
+@man man/man8/lynis.8
+share/lynis/
+share/lynis/CHANGELOG
+share/lynis/CONTRIBUTORS
+share/lynis/FAQ
+share/lynis/INSTALL
+share/lynis/LICENSE
+share/lynis/README
+@mode 600
+share/lynis/db/
+share/lynis/db/fileperms.db
+share/lynis/db/hints.db
+share/lynis/db/integrity.db
+share/lynis/db/malware-susp.db
+share/lynis/db/malware.db
+share/lynis/db/sbl.db
+@mode
+share/lynis/default.prf
+@sample ${SYSCONFDIR}/lynis/
+@sample ${SYSCONFDIR}/lynis/default.prf
+@mode 600
+share/lynis/dev/
+share/lynis/dev/README
+share/lynis/dev/TODO
+@mode
+share/lynis/dev/bash_completion.d/
+share/lynis/dev/bash_completion.d/lynis
+@mode 600
+share/lynis/dev/build-lynis.sh
+share/lynis/dev/check-lynis.sh
+share/lynis/dev/files.dat
+@mode
+share/lynis/dev/lynis.spec
+@mode 600
+share/lynis/dev/openbsd/
+share/lynis/dev/openbsd/+CONTENTS
+share/lynis/include/
+share/lynis/include/binaries
+share/lynis/include/consts
+share/lynis/include/data_upload
+share/lynis/include/functions
+share/lynis/include/osdetection
+share/lynis/include/parameters
+share/lynis/include/profiles
+share/lynis/include/report
+share/lynis/include/tests_accounting
+share/lynis/include/tests_authentication
+share/lynis/include/tests_banners
+share/lynis/include/tests_boot_services
+share/lynis/include/tests_crypto
+share/lynis/include/tests_custom.template
+share/lynis/include/tests_databases
+share/lynis/include/tests_file_integrity
+share/lynis/include/tests_file_permissions
+share/lynis/include/tests_filesystems
+share/lynis/include/tests_firewalls
+share/lynis/include/tests_hardening
+share/lynis/include/tests_hardening_tools
+share/lynis/include/tests_homedirs
+share/lynis/include/tests_insecure_services
+share/lynis/include/tests_kernel
+share/lynis/include/tests_kernel_hardening
+share/lynis/include/tests_ldap
+share/lynis/include/tests_logging
+share/lynis/include/tests_mac_frameworks
+share/lynis/include/tests_mail_messaging
+share/lynis/include/tests_malware
+share/lynis/include/tests_memory_processes
+share/lynis/include/tests_nameservices
+share/lynis/include/tests_networking
+share/lynis/include/tests_php
+share/lynis/include/tests_ports_packages
+share/lynis/include/tests_printers_spools
+share/lynis/include/tests_scheduling
+share/lynis/include/tests_shells
+share/lynis/include/tests_snmp
+share/lynis/include/tests_solaris
+share/lynis/include/tests_squid
+share/lynis/include/tests_ssh
+share/lynis/include/tests_storage
+share/lynis/include/tests_storage_nfs
+share/lynis/include/tests_tcpwrappers
+share/lynis/include/tests_time
+share/lynis/include/tests_tooling
+share/lynis/include/tests_virtualization
+share/lynis/include/tests_webservers
+share/lynis/plugins/
+share/lynis/plugins/README
+share/lynis/plugins/custom_plugin.template
