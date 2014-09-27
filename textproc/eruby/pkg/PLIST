@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/09 18:46:18 jeremy Exp $
-@bin bin/eruby
-include/eruby.h
-lib/liberuby.a
-@lib lib/liberuby.so.${LIBeruby_VERSION}
-lib/ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/eruby.so
-@man man/man1/eruby.1
