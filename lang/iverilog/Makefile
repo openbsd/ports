@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/18 17:57:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2014/09/27 17:50:28 jasper Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
-V=			0.9.6
+V=			0.9.7
 DISTNAME=		verilog-$V
 PKGNAME=		iverilog-$V
 CATEGORIES=		lang devel
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.icarus.com/eda/verilog/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		ftp://ftp.icarus.com/pub/eda/verilog/v0.9/
+MASTER_SITES=		ftp://ftp.icarus.com/pub/eda/verilog/v${V:R}/
 
 WANTLIB += c m readline stdc++ termcap z
 
