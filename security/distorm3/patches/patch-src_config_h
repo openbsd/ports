@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_config_h,v 1.1 2014/09/27 16:53:53 miod Exp $
+
+Fix definitions for big-endian platforms.
+
+--- src/config.h.orig	Sun Jul 29 12:18:41 2012
++++ src/config.h	Sat Sep 27 10:18:13 2014
+@@ -144,27 +144,27 @@ along with this program.  If not, see <http://www.gnu.
+  * These functions can read from the stream safely!
+  * Swap endianity of input to little endian.
+  */
+-static _INLINE_ int16_t RSHORT(const uint8_t *s)
++_INLINE_ int16_t RSHORT(const uint8_t *s)
+ {
+ 	return s[0] | (s[1] << 8);
+ }
+-static _INLINE_ uint16_t RUSHORT(const uint8_t *s)
++_INLINE_ uint16_t RUSHORT(const uint8_t *s)
+ {
+ 	return s[0] | (s[1] << 8);
+ }
+-static _INLINE_ int32_t RLONG(const uint8_t *s)
++_INLINE_ int32_t RLONG(const uint8_t *s)
+ {
+ 	return s[0] | (s[1] << 8) | (s[2] << 16) | (s[3] << 24);
+ }
+-static _INLINE_ uint32_t RULONG(const uint8_t *s)
++_INLINE_ uint32_t RULONG(const uint8_t *s)
+ {
+ 	return s[0] | (s[1] << 8) | (s[2] << 16) | (s[3] << 24);
+ }
+-static _INLINE_ int64_t RLLONG(const uint8_t *s)
++_INLINE_ int64_t RLLONG(const uint8_t *s)
+ {
+ 	return s[0] | (s[1] << 8) | (s[2] << 16) | (s[3] << 24) | ((uint64_t)s[4] << 32) | ((uint64_t)s[5] << 40) | ((uint64_t)s[6] << 48) | ((uint64_t)s[7] << 56);
+ }
+-static _INLINE_ uint64_t RULLONG(const uint8_t *s)
++_INLINE_ uint64_t RULLONG(const uint8_t *s)
+ {
+ 	return s[0] | (s[1] << 8) | (s[2] << 16) | (s[3] << 24) | ((uint64_t)s[4] << 32) | ((uint64_t)s[5] << 40) | ((uint64_t)s[6] << 48) | ((uint64_t)s[7] << 56);
+ }

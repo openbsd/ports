@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/27 09:16:54 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/27 16:53:53 miod Exp $
 
 COMMENT =		powerful disassembler library for x86/amd64
-BROKEN-powerpc =	src/config.h:147: error: duplicate 'static'
 
 DISTNAME =		distorm3
 PKGNAME =		${DISTNAME}-3
+REVISION=		0
 
 CATEGORIES =		security
 
