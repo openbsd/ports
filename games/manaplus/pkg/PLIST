@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/08/10 21:31:54 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/09/27 18:44:36 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -383,6 +383,7 @@ share/manaplus/data/themes/golden-delicious/serverslistbox.xml
 share/manaplus/data/themes/golden-delicious/shop.xml
 share/manaplus/data/themes/golden-delicious/shoplistbox.xml
 share/manaplus/data/themes/golden-delicious/skilllistbox.xml
+share/manaplus/data/themes/golden-delicious/skillpopup.xml
 share/manaplus/data/themes/golden-delicious/slider.xml
 share/manaplus/data/themes/golden-delicious/slider_highlighted.xml
 share/manaplus/data/themes/golden-delicious/social.xml
@@ -492,6 +493,7 @@ share/manaplus/data/themes/jewelry/serverslistbox.xml
 share/manaplus/data/themes/jewelry/shop.xml
 share/manaplus/data/themes/jewelry/shoplistbox.xml
 share/manaplus/data/themes/jewelry/skilllistbox.xml
+share/manaplus/data/themes/jewelry/skillpopup.xml
 share/manaplus/data/themes/jewelry/slider.xml
 share/manaplus/data/themes/jewelry/slider_highlighted.xml
 share/manaplus/data/themes/jewelry/social.xml
