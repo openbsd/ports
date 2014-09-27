@@ -1,40 +1,33 @@
-# $OpenBSD: Makefile,v 1.39 2014/07/19 07:10:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/09/27 08:50:32 ajacoutot Exp $
 
-COMMENT=	graphical diff and merge tool
+COMMENT=		graphical diff and merge tool
 
-GNOME_VERSION=	1.8.6
-GNOME_PROJECT=	meld
+GNOME_VERSION=		3.12.0
+GNOME_PROJECT=		meld
 
-CATEGORIES=	textproc x11
+CATEGORIES=		textproc
 
-HOMEPAGE=	http://meld.sourceforge.net/
+HOMEPAGE=		http://meld.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	lang/python \
-		x11/gnome
+MODULES=		devel/dconf \
+			lang/python \
+			x11/gnome
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
+			shared-mime-info yelp
 
 MODPY_ADJ_FILES=	bin/meld
 
-RUN_DEPENDS=	x11/dbus-python \
-		x11/py-gtk2
+RUN_DEPENDS=		devel/py-gobject3 \
+			x11/gtksourceview3
 
-NO_TEST=	yes
+NO_TEST=		yes
 
-# don't inherit python configure
-CONFIGURE_STYLE=none
-
-MAKE_ENV=	PYTHON=${MODPY_BIN}
-MAKE_FLAGS=	libdir=${MODPY_SITEPKG} \
-		localstatedir=${VARBASE}
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/INSTALL
-
-post-install:
-	rmdir ${PREFIX}/share/pixmaps
+do-install:
+	${MODPY_CMD} --no-compile-schemas --no-update-icon-cache \
+		${MODPY_DISTUTILS_INSTALL}
 
 .include <bsd.port.mk>

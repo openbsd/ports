@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1 2014/09/27 08:50:32 ajacoutot Exp $
+--- setup.py.orig	Tue Sep 23 23:25:32 2014
++++ setup.py	Sat Sep 27 10:42:47 2014
+@@ -37,10 +37,10 @@ setup(
+     },
+     scripts=['bin/meld'],
+     data_files=[
+-        ('share/man/man1',
++        ('man/man1',
+          ['meld.1']
+          ),
+-        ('share/doc/meld-' + meld.conf.__version__,
++        ('share/doc/meld',
+          ['COPYING', 'NEWS']
+          ),
+         ('share/meld',
