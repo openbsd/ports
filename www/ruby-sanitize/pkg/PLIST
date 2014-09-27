@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/27 06:45:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/27 16:59:31 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
@@ -17,4 +17,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/transformers/clean_cdata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/transformers/clean_comment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/transformers/clean_element.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/version.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_sanitize.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
