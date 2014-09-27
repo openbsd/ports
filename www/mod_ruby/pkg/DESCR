@@ -1,6 +1,0 @@
-Mod_ruby embeds the Ruby interpreter into the Apache web server,
-allowing Ruby CGI scripts to be executed natively. These scripts will
-start up much faster than without mod_ruby.
-
-You can also extend Apache by mod_ruby. mod_ruby provides Apache API to
-Ruby.

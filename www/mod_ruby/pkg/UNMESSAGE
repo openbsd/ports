@@ -1,8 +1,0 @@
-To completely deinstall this package you need to perform these steps as
-root:
-
-       edit /var/www/conf/httpd.conf
-       remove the line LoadModule ruby_module
-
-Do not do this if you plan on re-installing this package at some future
-time.
