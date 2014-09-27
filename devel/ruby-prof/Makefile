@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/23 18:17:34 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2014/09/27 17:02:29 jeremy Exp $
 
 COMMENT =	fast code profiler for Ruby
 
 DISTNAME =	ruby-${PKGNAME}
-PKGNAME =	prof-0.10.6
-REVISION=	6
+PKGNAME =	prof-0.15.1
 CATEGORIES =	devel
 
-HOMEPAGE =	http://ruby-prof.rubyforge.org/
+HOMEPAGE =	https://github.com/ruby-prof/ruby-prof
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
@@ -18,8 +17,9 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem ext
 
-# 4 failures
-MODRUBY_TEST = rake
-MODRUBY_TEST_TARGET = build test
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+MODRUBY_TEST =	ruby
+MODRUBY_TEST_TARGET =	-rruby_prof -e 'ARGV.each{|f| require 'f'}' \
+				./test/*_test.rb
 
 .include <bsd.port.mk>
