@@ -1,3 +1,0 @@
-home_run is an implementation of ruby's Date/DateTime classes in C, with
-much better performance (20-200x) than the version in the standard
-library, while being almost completely compatible.
