@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/05/30 13:20:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/27 07:48:07 landry Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
 DISTNAME =	davical-1.1.1
-REVISION =	4
+REVISION =	5
 CATEGORIES =	productivity net
 
 HOMEPAGE =	http://www.davical.org/
@@ -31,6 +31,10 @@ RUN_DEPENDS +=	lang/php/${MODPHP_VERSION},-curl \
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
+
+post-patch:
+	# fix sql files to remove quotes from LANGUAGE statements, breaks with pgsql 9.3.
+	cd ${WRKSRC} && grep -rl LANGUAGE dba | xargs perl -pi -e "s/LANGUAGE '(\w+)'/LANGUAGE \1/"
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
