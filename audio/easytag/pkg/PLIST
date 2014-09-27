@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/06/23 06:45:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/09/27 08:59:47 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/appdata/
@@ -49,6 +49,28 @@ share/help/el/easytag/scanner.page
 share/help/el/easytag/starting.page
 share/help/el/easytag/tag-field.page
 share/help/el/easytag/tag.page
+share/help/es/
+share/help/es/easytag/
+share/help/es/easytag/cddb-search.page
+share/help/es/easytag/file-rename.page
+share/help/es/easytag/file-select.page
+share/help/es/easytag/format-specifier.page
+share/help/es/easytag/image-delete.page
+share/help/es/easytag/image-export.page
+share/help/es/easytag/image.page
+share/help/es/easytag/index.page
+share/help/es/easytag/introduction.page
+share/help/es/easytag/keyboard-shortcuts.page
+share/help/es/easytag/legal.xml
+share/help/es/easytag/media/
+share/help/es/easytag/media/icon.png
+share/help/es/easytag/playlist-generate.page
+share/help/es/easytag/problems-id3.page
+share/help/es/easytag/problems-ogg-split.page
+share/help/es/easytag/scanner.page
+share/help/es/easytag/starting.page
+share/help/es/easytag/tag-field.page
+share/help/es/easytag/tag.page
 share/icons/hicolor/128x128/apps/easytag.png
 share/icons/hicolor/16x16/apps/easytag.png
 share/icons/hicolor/22x22/apps/easytag.png
