@@ -1,6 +1,24 @@
-$OpenBSD: patch-tests_bigauto_py,v 1.1 2005/01/28 21:00:28 alek Exp $
---- tests/bigauto.py.orig	Mon Jan 17 21:00:16 2005
-+++ tests/bigauto.py	Mon Jan 17 21:01:43 2005
+$OpenBSD: patch-tests_bigauto_py,v 1.2 2014/09/27 21:46:32 naddy Exp $
+--- tests/bigauto.py.orig	Thu Apr 27 01:16:04 2000
++++ tests/bigauto.py	Sat Sep 27 22:57:00 2014
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env python
+-# Copyright © 1997, 1999, 2000 Progiciels Bourbeau-Pinard inc.
+-# François Pinard <pinard@iro.umontreal.ca>, 1997.
++# Copyright (c) 1997, 1999, 2000 Progiciels Bourbeau-Pinard inc.
++# Francois Pinard <pinard@iro.umontreal.ca>, 1997.
+ 
+ """\
+ Produce statistics from the results of the bigauto check.
+@@ -48,7 +48,7 @@ def create_data(name, recode_options, charset_options)
+         charsets = []
+         for line in os.popen('recode -l').readlines():
+             charset = string.split(line)[0]
+-            if charset[0] in ':/':
++            if charset[0] in ':/' or charset == 'data' or charset == 'tree':
+                 continue
+             charsets.append(charset)
+     # Do the work, calling a subshell once per `before' value.
 @@ -81,16 +81,20 @@ class Report:
          lensep = len(os.linesep)
          line = readline()

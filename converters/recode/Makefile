@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/09/27 21:46:32 naddy Exp $
 
 COMMENT=	convert files between character sets and usages
 
@@ -32,7 +32,6 @@ post-extract:
 	@cd ${WRKSRC}/lib && cp -p error.c ../src
 
 post-test:
-	@cd ${WRKBUILD}/tests && ${MAKE} \
-		PYTHON=${MODPY_BUILD} bigtest
+	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} PYTHON=${MODPY_BIN} bigtest
 
 .include <bsd.port.mk>
