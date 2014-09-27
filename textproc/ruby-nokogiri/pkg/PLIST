@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/01/11 22:51:03 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/09/27 17:00:19 jeremy Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.editorconfig
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.ja.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/C_CODING_STYLE.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.ja.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
@@ -17,6 +20,7 @@ ${GEM_LIB}/gems/${DISTNAME}/Y_U_NO_GEMSPEC.md
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/nokogiri
 ${GEM_LIB}/gems/${DISTNAME}/build_all
+${GEM_LIB}/gems/${DISTNAME}/dependencies.yml
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri.rb
@@ -94,7 +98,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/nokogiri.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/cross_compile.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/nokogiri.org.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
@@ -109,8 +112,10 @@ ${GEM_LIB}/gems/${DISTNAME}/test/files/
 ${GEM_LIB}/gems/${DISTNAME}/test/files/2ch.html
 ${GEM_LIB}/gems/${DISTNAME}/test/files/address_book.rlx
 ${GEM_LIB}/gems/${DISTNAME}/test/files/address_book.xml
+${GEM_LIB}/gems/${DISTNAME}/test/files/atom.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/bar/
 ${GEM_LIB}/gems/${DISTNAME}/test/files/bar/bar.xsd
+${GEM_LIB}/gems/${DISTNAME}/test/files/bogus.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/dont_hurt_em_why.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/encoding.html
 ${GEM_LIB}/gems/${DISTNAME}/test/files/encoding.xhtml
@@ -122,8 +127,15 @@ ${GEM_LIB}/gems/${DISTNAME}/test/files/metacharset.html
 ${GEM_LIB}/gems/${DISTNAME}/test/files/noencoding.html
 ${GEM_LIB}/gems/${DISTNAME}/test/files/po.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/po.xsd
+${GEM_LIB}/gems/${DISTNAME}/test/files/saml/
+${GEM_LIB}/gems/${DISTNAME}/test/files/saml/saml20assertion_schema.xsd
+${GEM_LIB}/gems/${DISTNAME}/test/files/saml/saml20protocol_schema.xsd
+${GEM_LIB}/gems/${DISTNAME}/test/files/saml/xenc_schema.xsd
+${GEM_LIB}/gems/${DISTNAME}/test/files/saml/xmldsig_schema.xsd
 ${GEM_LIB}/gems/${DISTNAME}/test/files/shift_jis.html
 ${GEM_LIB}/gems/${DISTNAME}/test/files/shift_jis.xml
+${GEM_LIB}/gems/${DISTNAME}/test/files/shift_jis_no_charset.html
+${GEM_LIB}/gems/${DISTNAME}/test/files/slow-xpath.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/snuggles.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.dtd
 ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.xml
@@ -149,6 +161,14 @@ ${GEM_LIB}/gems/${DISTNAME}/test/html/test_element_description.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/test_named_characters.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/test_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/test_node_encoding.rb
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/test_additional_namespaces_in_builder_doc.rb
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/test_namespaces_aliased_default.rb
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/test_namespaces_in_builder_doc.rb
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/test_namespaces_in_cloned_doc.rb
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/test_namespaces_in_created_doc.rb
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/test_namespaces_in_parsed_doc.rb
+${GEM_LIB}/gems/${DISTNAME}/test/namespaces/test_namespaces_preservation.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_convert_xpath.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_css_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_encoding_handler.rb

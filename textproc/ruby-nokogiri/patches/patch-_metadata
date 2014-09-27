@@ -1,0 +1,16 @@
+$OpenBSD: patch-_metadata,v 1.1 2014/09/27 17:00:19 jeremy Exp $
+
+Don't runtime depend on mini_portile, it's only need for compiling
+the extension.
+
+--- .metadata.orig	Tue Sep 23 09:06:12 2014
++++ .metadata	Tue Sep 23 09:06:20 2014
+@@ -21,7 +21,7 @@ dependencies:
+     - - '='
+       - !ruby/object:Gem::Version
+         version: 0.6.0
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
