@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/27 07:55:46 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/27 11:25:01 miod Exp $
 
 COMMENT =		ZRTP library
-#error "Libzrtp can't detect byte order: use manual setup in zrtp_config_user.h"
-#error "Can't define byte order for BG AES. Edit zrtp_system.h"
-BROKEN-hppa =		no endianness definition
 
 DISTNAME =		libzrtp-0.20130317
-REVISION =		0
+REVISION =		1
 CATEGORIES =		telephony security
 
 HOMEPAGE =		https://github.com/traviscross/libzrtp
