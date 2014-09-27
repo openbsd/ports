@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/09/22 15:18:45 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/09/27 17:06:25 jeremy Exp $
 ${GEM_BIN}/god
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -14,17 +14,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/events.god
 ${GEM_LIB}/gems/${DISTNAME}/examples/gravatar.god
 ${GEM_LIB}/gems/${DISTNAME}/examples/single.god
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/god/
-${GEM_LIB}/gems/${DISTNAME}/ext/god/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/ext/god/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/god/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/god/kqueue_handler.c
-${GEM_LIB}/gems/${DISTNAME}/ext/god/kqueue_handler.o
-${GEM_LIB}/gems/${DISTNAME}/ext/god/kqueue_handler_ext.so
-${GEM_LIB}/gems/${DISTNAME}/ext/god/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/god/netlink_handler.c
-${GEM_LIB}/gems/${DISTNAME}/ext/god/netlink_handler.o
 ${GEM_LIB}/gems/${DISTNAME}/god.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/ideas/
 ${GEM_LIB}/gems/${DISTNAME}/ideas/execve/
