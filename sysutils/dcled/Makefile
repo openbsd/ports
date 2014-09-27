@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/27 08:00:51 ajacoutot Exp $
 
 COMMENT =	userland driver for Dream Link USB LED Message Board
 
 DISTNAME =	dcled-1.9
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	sysutils
