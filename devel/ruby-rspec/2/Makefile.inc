@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2014/09/17 09:36:54 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/09/27 17:47:54 jasper Exp $
+
+PORTROACH =		limit:^2
 
 CATEGORIES ?=		devel
 
