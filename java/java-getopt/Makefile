@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/27 17:23:45 jasper Exp $
 
 COMMENT=	Java port of GNU getopt family functions
 
-DISTNAME=	java-getopt-1.0.13
-REVISION=	3
+DISTNAME=	java-getopt-1.0.14
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.urbanophile.com/arenn/hacking/download.html
