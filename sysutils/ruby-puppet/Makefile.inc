@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.26 2014/04/17 18:10:28 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2014/09/27 17:08:47 jeremy Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -29,7 +29,6 @@ SUBST_VARS +=	RUBY
 #  sysutils/ruby-shadow
 #  www/puppet-dashboard
 MODULES +=	lang/ruby
-MODRUBY_REV ?=	2.0
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS +=	converters/ruby-json,${MODRUBY_FLAVOR} \

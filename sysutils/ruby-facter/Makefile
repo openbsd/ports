@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2014/09/24 09:45:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2014/09/27 17:08:47 jeremy Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
 VERSION=	2.2.0
 DISTNAME=	facter-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -16,7 +16,6 @@ MASTER_SITES=	https://downloads.puppetlabs.com/facter/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ruby
-MODRUBY_REV=	2.0
 
 NO_BUILD=	Yes
 BUILD_DEPENDS=	lang/ruby/${MODRUBY_REV}
