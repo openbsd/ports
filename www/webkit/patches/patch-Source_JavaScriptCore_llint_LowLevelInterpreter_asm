@@ -1,7 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.3 2014/03/25 06:25:45 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.4 2014/09/28 06:52:14 ajacoutot Exp $
+
 https://bugs.webkit.org/show_bug.cgi?id=103128
 https://bug-103128-attachments.webkit.org/attachment.cgi?id=202076
 Last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
+
 --- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig	Tue Feb  4 17:38:03 2014
 +++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm	Fri Feb 14 22:47:15 2014
 @@ -122,6 +122,12 @@ else

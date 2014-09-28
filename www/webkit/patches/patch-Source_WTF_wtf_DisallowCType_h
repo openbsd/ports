@@ -1,8 +1,10 @@
-$OpenBSD: patch-Source_WTF_wtf_DisallowCType_h,v 1.2 2014/03/25 06:25:45 landry Exp $
+$OpenBSD: patch-Source_WTF_wtf_DisallowCType_h,v 1.3 2014/09/28 06:52:14 ajacoutot Exp $
+
 just, wtf.
 error:
 'isspace_WTF_Please_use_ASCIICType_instead_of_ctype_see_comment_in_ASCIICType_h' 
 was not declared in this scope
+
 --- Source/WTF/wtf/DisallowCType.h.orig	Thu Jan 23 17:49:58 2014
 +++ Source/WTF/wtf/DisallowCType.h	Fri Feb 14 22:53:44 2014
 @@ -41,7 +41,7 @@

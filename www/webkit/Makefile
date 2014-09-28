@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2014/09/05 14:45:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.125 2014/09/28 06:52:14 ajacoutot Exp $
 
 PORTROACH =	limitw:1,even
 
@@ -18,6 +18,9 @@ MASTER_SITES =	${HOMEPAGE}/releases/
 MAINTAINER =	Landry Breuil <landry@openbsd.org> \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
+SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.3
+SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.11
+
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
@@ -34,12 +37,12 @@ MODGCC4_LANGS =		c++
 #MODCLANG_ARCHS =        amd64
 #MODCLANG_LANGS =        c c++
 
-
 MAKE_FILE =		GNUmakefile
 PORTHOME =		${WRKDIST}
 SUBST_VARS =		WEBKIT_API_VERSION GTK_API_VERSION
 
 USE_GMAKE =		Yes
+LIBTOOL_FLAGS =		--tag=disable-static
 
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
@@ -50,17 +53,11 @@ MODGNOME_CPPFLAGS =	-I${X11BASE}/include -DLOG_DISABLED=0
 MODGNOME_LDFLAGS =	-L${X11BASE}/lib -lX11
 MODGNOME_TOOLS +=	gobject-introspection
 
-# XXX TODO switch to cmake ?
 CONFIGURE_STYLE =	gnu
-# breaks because of missing webkit2/ headers dir ?
-#SEPARATE_BUILD =	Yes
-#AR_FLAGS,  cf http://trac.webkit.org/changeset/163954
-
+# AR_FLAGS: cf http://trac.webkit.org/changeset/163954
 CONFIGURE_ENV =	ac_cv_path_FLEX=${LOCALBASE}/bin/gflex \
 		AR_FLAGS="cru" \
 		ac_cv_path_RUBY=${RUBY}
-
-LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_ARGS= --disable-static \
 		--enable-spellcheck \
 		--with-gtk=${GTK_API_VERSION}
@@ -89,15 +86,14 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++ ffi \
 		harfbuzz graphite2 gcrypt gpg-error gsttag-1.0 secret-1 webp
 
-LIB_DEPENDS =	multimedia/gstreamer1/core \
-		multimedia/gstreamer1/plugins-base \
+LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \
 		devel/harfbuzz,-icu \
 		textproc/libxslt \
 		textproc/enchant \
 		geo/geoclue \
 		graphics/libwebp \
-		devel/glib2>=2.36.0 \
-		devel/libsoup>=2.42.0 \
+		devel/glib2 \
+		devel/libsoup \
 		x11/gnome/libsecret
 
 BUILD_DEPENDS =	devel/bison \
@@ -132,9 +128,6 @@ CONFIGURE_ARGS+=	--disable-webkit2
 WEBKIT_API_VERSION =	1.0
 GTK_API_VERSION =	2.0
 .endif
-
-SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.3
-SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.11
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp ${WRKSRC}/configure

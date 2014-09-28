@@ -1,5 +1,7 @@
-$OpenBSD: patch-Source_WebKit2_UIProcess_StatisticsRequest_cpp,v 1.3 2014/03/27 22:03:48 landry Exp $
+$OpenBSD: patch-Source_WebKit2_UIProcess_StatisticsRequest_cpp,v 1.4 2014/09/28 06:52:14 ajacoutot Exp $
+
 https://bugs.webkit.org/show_bug.cgi?id=130837
+
 --- Source/WebKit2/UIProcess/StatisticsRequest.cpp.orig	Thu Mar 27 21:13:49 2014
 +++ Source/WebKit2/UIProcess/StatisticsRequest.cpp	Thu Mar 27 21:14:23 2014
 @@ -44,7 +44,11 @@ StatisticsRequest::~StatisticsRequest()
