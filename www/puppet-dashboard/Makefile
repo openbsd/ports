@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2014/09/21 16:29:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.36 2014/09/28 16:13:07 jeremy Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 DISTNAME=	puppet-dashboard-1.2.23
-REVISION=	12
+REVISION=	13
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	https://github.com/sodabrew/puppet-dashboard/
@@ -20,7 +20,6 @@ MASTER_SITES=	http://puppetlabs.com/downloads/dashboard/
 
 RUN_DEPENDS=	databases/ruby-mysql,${MODRUBY_FLAVOR} \
 		devel/ruby-rake,${MODRUBY_FLAVOR} \
-		devel/ruby-rdoc,${MODRUBY_FLAVOR} \
 		www/ruby-rack,${MODRUBY_FLAVOR} \
 		${MODRUBY_ICONV_DEPENDS}
 
