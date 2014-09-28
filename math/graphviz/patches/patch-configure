@@ -1,9 +1,21 @@
-$OpenBSD: patch-configure,v 1.1 2014/02/06 17:32:27 edd Exp $
+$OpenBSD: patch-configure,v 1.2 2014/09/28 13:44:48 ajacoutot Exp $
+
+Do not pick up guile2 until our devel/swig is also built against lang/guile2.
+(i.e. force guile-1.8 support for now)
 
 Fix regex in guile detection.
 
---- configure.orig2	Mon Feb  3 00:54:59 2014
-+++ configure	Mon Feb  3 00:56:04 2014
+--- configure.orig2	Sun Jan 12 00:15:44 2014
++++ configure	Sun Sep 28 15:30:06 2014
+@@ -21055,7 +21055,7 @@ else
+     if test `$SWIG -help 2>&1 | $EGREP -c '\-guile *- Generate'` = 0; then
+       use_guile="No (swig does not support -guile option)"
+     else
+-      for ac_prog in guile2 guile1.8 guile
++      for ac_prog in guile1.8 guile
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
 @@ -21100,7 +21100,7 @@ done
        if test "x$GUILE" = "x"; then
          use_guile="No (guile not available)"
