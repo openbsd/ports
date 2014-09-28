@@ -1,6 +1,20 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.8 2014/09/11 10:24:38 dcoppa Exp $
---- Source/cmComputeLinkInformation.cxx.orig	Thu Jul 31 17:03:56 2014
-+++ Source/cmComputeLinkInformation.cxx	Wed Sep  3 08:10:09 2014
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.9 2014/09/28 17:06:25 dcoppa Exp $
+
+XXX Temporary workaround for a sporadic segfault which seems to
+result from memory corruption. To be removed when CMake 3.1 will
+be released.
+
+--- Source/cmComputeLinkInformation.cxx.orig	Thu Sep 11 15:24:01 2014
++++ Source/cmComputeLinkInformation.cxx	Fri Sep 26 22:49:55 2014
+@@ -255,7 +255,7 @@ cmComputeLinkInformation
+     ->GetPropertyAsBool("FIND_LIBRARY_USE_OPENBSD_VERSIONING");
+ 
+   // The configuration being linked.
+-  this->Config = config;
++  this->Config = this->Makefile->GetSafeDefinition("CMAKE_BUILD_TYPE");
+ 
+   // Allocate internals.
+   this->OrderLinkerSearchPath =
 @@ -1082,12 +1082,21 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
      }
