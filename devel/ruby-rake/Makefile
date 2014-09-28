@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/05 23:07:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.26 2014/09/28 15:43:32 jeremy Exp $
 
 COMMENT=	ruby make
 
@@ -22,7 +22,6 @@ FLAVORS=	ruby18
 FLAVOR=		ruby18
 
 TEST_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH} \
-		devel/ruby-rcov,${MODRUBY_FLAVOR} \
 		devel/ruby-flexmock,${MODRUBY_FLAVOR} \
 		devel/ruby-minitest,${MODRUBY_FLAVOR}
 MODRUBY_TEST=rake
