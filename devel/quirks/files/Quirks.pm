@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.177 2014/09/26 11:49:03 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.178 2014/09/28 22:44:50 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -431,6 +431,15 @@ my $obsolete_reason = {
 	'ruby-echoe' => 3,
 	'ruby-rubyforge' => 0,
 	'luastatgrab' => 3,
+	'ruby-home_run' => 3,
+	'ruby-parsetree' => 3,
+	'ruby-rdoc' => 3,
+	'ruby-rcov' => 3,
+	'ruby-fastercsv' => 3,
+	'ruby-fastri' => 3,
+	'ruby-mongrel' => 3,
+	'eruby' => 3,
+	'mod_ruby' => 3,
 };
 
 # ->is_base_system($handle, $state):
