@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/09/27 17:08:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/28 16:08:44 jeremy Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -26,7 +26,7 @@ MODJAVA_VER=	1.7+
 
 MULTI_PACKAGES= -main -plugin
 
-RUN_DEPENDS-plugin=sysutils/ruby-puppet/3,${MODRUBY_FLAVOR}>=3.5.1
+RUN_DEPENDS-plugin=sysutils/ruby-puppet/3>=3.5.1
 
 RUN_DEPENDS-main=${BASE_PKGPATH},-plugin \
 		${MODJAVA_RUN_DEPENDS} \
