@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2014/05/24 06:42:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2014/09/28 14:11:14 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		2.6.3
-DOC_VERSION = 		2.6.3
+GNOME_VERSION =		2.6.4
 EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS +=  gnc-qof              2.0      # 1.4
@@ -22,13 +21,15 @@ CATEGORIES =		productivity
 
 HOMEPAGE =		http://www.gnucash.org/
 
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt art_lgpl_2 atk-1.0 bz2
 WANTLIB += c cairo dbi dbus-1 dbus-glib-1 enchant expat ffi fontconfig
-WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += freetype gailutil gbm gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
 WANTLIB += gnomecanvas-2 gobject-2.0 goffice-0.8 gpg-error graphite2
 WANTLIB += gsf-1 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
@@ -43,16 +44,16 @@ WANTLIB += xml2 xslt z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			gnucash-docs-${DOC_VERSION}.tar.gz
+			gnucash-docs-${GNOME_VERSION}.tar.gz
 
 MODULES =		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
 
-BUILD_DEPENDS=		databases/libdbi-drivers,-sqlite3
-RUN_DEPENDS=		databases/libdbi-drivers,-sqlite3
+BUILD_DEPENDS =		databases/libdbi-drivers,-sqlite3
+RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3
 
 LIB_DEPENDS =		databases/libdbi \
 			devel/goffice08 \
@@ -65,6 +66,9 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd \
 			--with-xdg-data-dirs=${LOCALBASE}/share
 
+# do not pick-up guile2
+CONFIGURE_ENV +=	GUILE_EFFECTIVE_VERSION=1.8
+
 # --disable-ofx until libofx/libsp is fixed to work with .so
 CONFIGURE_ARGS +=	--disable-doxygen \
 			--disable-ofx
@@ -72,7 +76,7 @@ CONFIGURE_ARGS +=	--disable-doxygen \
 MODGNOME_CPPFLAGS =	-I${X11BASE}/include
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/
-DOC_DIR =		${WRKDIR}/gnucash-docs-${DOC_VERSION}
+DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION}
 
 post-configure:
 	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
