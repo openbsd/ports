@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2014/01/15 02:13:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/09/28 15:56:45 jeremy Exp $
 
 COMMENT =	ruby SQLite3 embedded database library
 
 DISTNAME =	amalgalite-1.1.2
 CATEGORIES =	databases
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://copiousfreetime.rubyforge.org/amalgalite/
 
@@ -21,8 +21,7 @@ CONFIGURE_ARGS = --with-cflags="-O1"
 .endif
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/ruby-arrayfields,${MODRUBY_FLAVOR}>=4.7.4,<4.8 \
-			textproc/ruby-fastercsv,${MODRUBY_FLAVOR}>=1.5.4,<1.6
+RUN_DEPENDS =		devel/ruby-arrayfields,${MODRUBY_FLAVOR}>=4.7.4,<4.8
 
 AMALGALITE_SO_DIR =	amalgalite/${MODRUBY_REV}
 SUBST_VARS +=		AMALGALITE_SO_DIR

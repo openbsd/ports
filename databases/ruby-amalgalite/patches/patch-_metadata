@@ -1,0 +1,16 @@
+$OpenBSD: patch-_metadata,v 1.1 2014/09/28 15:56:45 jeremy Exp $
+
+Make fastercsv a development requirement, since it is only needed on
+ruby 1.8.
+
+--- .metadata.orig	Sun Sep 28 08:51:21 2014
++++ .metadata	Sun Sep 28 08:51:36 2014
+@@ -48,7 +48,7 @@ dependencies: 
+         - 5
+         - 4
+         version: 1.5.4
+-  type: :runtime
++  type: :development
+   version_requirements: *id002
+ - !ruby/object:Gem::Dependency 
+   name: rake
