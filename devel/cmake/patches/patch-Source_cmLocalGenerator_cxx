@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_cmLocalGenerator_cxx,v 1.1 2014/09/28 18:15:41 dcoppa Exp $
+
+Use GetSafeDefinition so that a missing definition is treated as
+an empty string (adapted from upstream git commit
+c491cb1eb4030d70e7a04bcda5021ebd0e5ca88d)
+
+--- Source/cmLocalGenerator.cxx.orig	Sun Sep 28 19:30:20 2014
++++ Source/cmLocalGenerator.cxx	Sun Sep 28 19:32:10 2014
+@@ -1793,7 +1793,7 @@ void cmLocalGenerator::OutputLinkLibraries(std::string
+                                            bool relink)
+ {
+   cmOStringStream fout;
+-  const char* config = this->Makefile->GetDefinition("CMAKE_BUILD_TYPE");
++  const char* config = this->Makefile->GetSafeDefinition("CMAKE_BUILD_TYPE");
+   cmComputeLinkInformation* pcli = tgt.Target->GetLinkInformation(config);
+   if(!pcli)
+     {
