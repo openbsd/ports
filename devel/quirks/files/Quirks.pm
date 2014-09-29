@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.178 2014/09/28 22:44:50 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.179 2014/09/29 07:04:39 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -257,7 +257,6 @@ my $stem_extensions = {
 	'php5-mapscript' => 'php-mapscript',
 	'libusb' => 'libusb-compat',
 	'pecl-pcntl' => 'php-pcntl',
-	'distribute' => 'py3-distribute',
 	'aspell6-ar' => 'aspell-ar',
 	'aspell6-bg' => 'aspell-bg',
 	'aspell6-ca' => 'aspell-ca',
@@ -354,6 +353,7 @@ my $stem_extensions = {
 	'mysql-client' => 'mariadb-client',
 	'mysql-server' => 'mariadb-server',
 	'mysql-tests' => 'mariadb-tests',
+	'py3-distribute' => 'py3-setuptools',
 };
 
 # reasons for obsolete packages
@@ -440,6 +440,7 @@ my $obsolete_reason = {
 	'ruby-mongrel' => 3,
 	'eruby' => 3,
 	'mod_ruby' => 3,
+	'py3-distribute' => 3,
 };
 
 # ->is_base_system($handle, $state):

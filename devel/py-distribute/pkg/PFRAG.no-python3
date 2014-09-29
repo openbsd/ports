@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.no-python3,v 1.2 2011/12/16 08:19:36 ajacoutot Exp $
-@conflict py-setuptools-*
