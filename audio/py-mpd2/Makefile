@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/03 19:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/29 07:02:02 jasper Exp $
 
 COMMENT =		Python client interface for MPD
 
 MODPY_EGG_VERSION =	0.5.3
 DISTNAME =		python-mpd2-${MODPY_EGG_VERSION}
 PKGNAME =		py-mpd2-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		audio
 

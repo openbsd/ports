@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/06/03 11:35:12 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/29 07:02:03 jasper Exp $
 
 COMMENT =		Python module providing a password hashing framework
 
 MODPY_EGG_VERSION =	1.6.2
-REVISION =		1
+REVISION =		2
 DISTNAME =		passlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-passlib-${MODPY_EGG_VERSION}
 

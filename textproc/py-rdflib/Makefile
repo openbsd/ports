@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/03 11:35:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/29 07:02:03 jasper Exp $
 
 PKG_ARCH =	*
 
@@ -7,7 +7,7 @@ COMMENT=	library to manipulate RDF data
 MODPY_EGG_VERSION=	3.2.2
 DISTNAME =		rdflib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES=	textproc
 

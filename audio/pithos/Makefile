@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/24 02:38:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2014/09/29 07:02:02 jasper Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
@@ -7,6 +7,7 @@ GH_COMMIT =	8a1942e92dde225c8f3677cc199a159a8a67a291
 
 COMMENT =	Pandora client for GNOME
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
+REVISION =	0
 CATEGORIES =	audio x11
 SUBST_VARS +=	GH_TAGNAME
 
