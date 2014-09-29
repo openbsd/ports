@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2014/09/25 07:49:55 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.52 2014/09/29 13:51:25 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -251,6 +251,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/generic.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/generic.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/godtube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/godtube.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/golem.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/golem.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/googleplus.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/googleplus.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/googlesearch.py
@@ -263,6 +265,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/grooveshark.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/grooveshark.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hark.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hark.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/heise.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/heise.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/helsinki.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/helsinki.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hentaistigma.py
@@ -451,6 +455,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nuvid.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nuvid.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nytimes.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nytimes.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/oktoberfesttv.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/oktoberfesttv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ooyala.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ooyala.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/orf.py
@@ -463,6 +469,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pbs.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pbs.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/played.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/played.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playfm.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playfm.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playvid.py
@@ -563,6 +571,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spiegeltv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spiegeltv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spike.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spike.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sport5.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sport5.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sportdeutschland.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sportdeutschland.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/stanfordoc.py
@@ -737,6 +747,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/xvideos.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/xvideos.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/yahoo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/yahoo.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ynet.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ynet.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youjizz.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youjizz.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/youku.py
