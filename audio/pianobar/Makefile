@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2014/09/02 08:56:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.65 2014/09/29 09:26:00 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2014.06.08
-REVISION =	0
+DISTNAME =	pianobar-2014.09.28
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -15,7 +14,7 @@ HOMEPAGE =	http://6xq.net/projects/pianobar/
 
 MASTER_SITES =	${HOMEPAGE}
 
-SHARED_LIBS =	piano	6.0	# 0.0.0
+SHARED_LIBS =	piano	7.0	# 0.0.0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
