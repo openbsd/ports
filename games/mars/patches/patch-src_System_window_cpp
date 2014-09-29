@@ -1,0 +1,81 @@
+$OpenBSD: patch-src_System_window_cpp,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
+
+No joystick support in SFML on OpenBSD.
+
+Use sf::Shader::bind() correctly after latest update of SFML's API.
+From:
+https://github.com/kenkeiras/M.A.R.S./commit/a97d0d6a19b5b43e3c53081e36f1f1747b6674e6
+but not merged in main tree.
+
+--- src/System/window.cpp.orig	Fri Jun 29 10:43:13 2012
++++ src/System/window.cpp	Sun Sep 14 21:22:58 2014
+@@ -131,26 +131,6 @@ namespace window {
+                     if (menus::visible() && event.mouseButton.button == sf::Mouse::Left)
+                         menus::mouseLeft(false);
+                 }
+-                else if (event.type == sf::Event::JoystickButtonPressed) {
+-                    if (timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
+-                        if (!menus::visible())
+-                            controllers::singleKeyEvent(Key(event.joystickButton.joystickId, event.joystickButton.button));
+-                        menus::keyEvent(true, Key(event.joystickButton.joystickId, event.joystickButton.button));
+-                        joyButtonTimer_ = timer::realTotalTime();
+-                    }
+-                }
+-                else if (event.type == sf::Event::JoystickButtonReleased)
+-                    menus::keyEvent(false, Key(event.joystickButton.joystickId, event.joystickButton.button));
+-                else if (event.type == sf::Event::JoystickMoved) {
+-                    Key key(event.joystickMove.joystickId, event.joystickMove.axis, event.joystickMove.position);
+-                    if (key.strength_ >= 95 && timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
+-                        if (!menus::visible())
+-                            controllers::singleKeyEvent(key);
+-                        if(key.strength_ >= 95)
+-                            menus::keyEvent(true, key);
+-                        joyButtonTimer_ = timer::realTotalTime();
+-                    }
+-                }
+                 else if (event.type == sf::Event::MouseWheelMoved) {
+                     if (menus::visible())
+                         menus::mouseWheelMoved(Vector2f(event.mouseWheel.x - (window_.getSize().x - viewPort_.x_)/2, event.mouseWheel.y - (window_.getSize().y - viewPort_.y_)/2), event.mouseWheel.delta);
+@@ -307,13 +287,11 @@ namespace window {
+         window_.setActive(true);
+         glEnable(GL_TEXTURE_2D);
+ 
+-        if (shader)
+-            shader->bind();
++        sf::Shader::bind(shader);
+ 
+         window_.draw(toBeDrawn, states);
+ 
+-        if (shader)
+-            shader->unbind();
++        sf::Shader::bind(NULL);
+ 
+         window_.popGLStates();
+         glPopMatrix();
+@@ -327,17 +305,6 @@ namespace window {
+                     return 100;
+                 break;
+ 
+-            case Key::kJoyButton:
+-                if (sf::Joystick::isButtonPressed(key.joyID_, key.code_.joyButton_))
+-                    return 100;
+-                break;
+-
+-            case Key::kJoyAxis:
+-                sf::Joystick::Axis tmp(Key::convertToSFML(key.code_.joyAxis_));
+-                int strength(sf::Joystick::getAxisPosition(key.joyID_, tmp));
+-                std::pair<Key::AxisType, int> result(Key::convertFromSFML(tmp,strength));
+-                return result.first == key.code_.joyAxis_ ? result.second : 0;
+-                break;
+         }
+         return 0;
+     }
+@@ -362,7 +329,7 @@ namespace window {
+         std::stringstream filename;
+         filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "." << settings::C_screenShotFormat;
+ 
+-        # ifdef __linux__
++        # ifdef __unix__
+             mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+             if (shot.saveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+                 std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;

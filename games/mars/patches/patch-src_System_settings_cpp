@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_System_settings_cpp,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
+--- src/System/settings.cpp.orig	Sun Sep 14 01:10:06 2014
++++ src/System/settings.cpp	Sun Sep 14 01:11:25 2014
+@@ -228,7 +228,7 @@ namespace settings {
+ 
+     bool load() {
+         // check whether application directory in the home diretory exists, if not create it
+-        # ifdef __linux__
++        # ifdef __unix__
+             std::string home(getenv("HOME"));
+             if (*home.rbegin() != '/') home += '/';
+             mkdir((home + ".marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+@@ -253,7 +253,7 @@ namespace settings {
+             std::cout << "Searching for configuration file... " << std::flush;
+             C_configPath = "./";
+ 
+-            # ifdef __linux__
++            # ifdef __unix__
+                 std::string home(getenv("HOME"));
+                 if (*home.rbegin() != '/') home += '/';
+ 
+@@ -306,7 +306,7 @@ namespace settings {
+             std::cout << "Searching for data files... " << std::flush;
+             C_dataPath = "./data/";
+ 
+-            # ifdef __linux__
++            # ifdef __unix__
+                 if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
+                     success = true;
+                 else if (std::ifstream("/usr/share/marsshooter/locales/English.txt")) {

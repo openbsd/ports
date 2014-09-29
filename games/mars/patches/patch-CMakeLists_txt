@@ -1,0 +1,27 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
+
+Enable Xrandr.
+
+--- CMakeLists.txt.orig	Fri Jun 29 10:43:13 2012
++++ CMakeLists.txt	Sun Sep 14 12:53:27 2014
+@@ -38,9 +38,9 @@ if(APPLE)
+ endif(APPLE)
+ 
+ # Xrandr library needed for unix
+-# if(UNIX)
+-#	find_library(XRANDR_LIBRARY Xrandr)
+-# endif(UNIX)
++if(UNIX)
++	find_library(XRANDR_LIBRARY Xrandr)
++endif(UNIX)
+ 
+ # tag library needed for reading tags of music files
+ 	find_library(TAG_LIBRARY tag)
+@@ -63,7 +63,6 @@ endif(APPLE)
+ #####################################################################
+ 
+ # compile source
+-set(CMAKE_CXX_FLAGS "-s -O2")
+  add_subdirectory(src) 
+  
+ #####################################################################
