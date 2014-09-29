@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.4 2014/09/29 08:25:39 dcoppa Exp $
+$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.5 2014/09/29 08:45:35 dcoppa Exp $
 
 commit d4fdd9c189f85d659f4294f8ec6da3e7e51215ec
 Author: Rolf Eike Beer <eike@sf-mail.de>
@@ -7,7 +7,7 @@ Date:   Tue May 20 18:14:10 2014 +0200
 GNUInstallDirs: use the proper default for info and man paths on OpenBSD
 
 --- Modules/GNUInstallDirs.cmake.orig	Thu Sep 11 15:24:00 2014
-+++ Modules/GNUInstallDirs.cmake	Mon Sep 29 08:29:47 2014
++++ Modules/GNUInstallDirs.cmake	Mon Sep 29 10:37:17 2014
 @@ -192,19 +192,31 @@ if(NOT CMAKE_INSTALL_DATADIR)
    set(CMAKE_INSTALL_DATADIR "${CMAKE_INSTALL_DATAROOTDIR}")
  endif()
@@ -21,7 +21,7 @@ GNUInstallDirs: use the proper default for info and man paths on OpenBSD
 +    set(CMAKE_INSTALL_INFODIR "info")
 +  endif()
 +
-+  if(NOT CMAKE_INSTALL_MANDDIR)
++  if(NOT CMAKE_INSTALL_MANDIR)
 +    set(CMAKE_INSTALL_MANDIR "" CACHE PATH "man documentation (man)")
 +    set(CMAKE_INSTALL_MANDIR "man")
 +  endif()
@@ -31,7 +31,7 @@ GNUInstallDirs: use the proper default for info and man paths on OpenBSD
 +    set(CMAKE_INSTALL_INFODIR "${CMAKE_INSTALL_DATAROOTDIR}/info")
 +  endif()
 +
-+  if(NOT CMAKE_INSTALL_MANDDIR)
++  if(NOT CMAKE_INSTALL_MANDIR)
 +    set(CMAKE_INSTALL_MANDIR "" CACHE PATH "man documentation (DATAROOTDIR/man)")
 +    set(CMAKE_INSTALL_MANDIR "${CMAKE_INSTALL_DATAROOTDIR}/man")
 +  endif()
