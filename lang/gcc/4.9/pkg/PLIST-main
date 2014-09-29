@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/06/26 16:30:20 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/09/29 20:29:29 tobiasu Exp $
 @pkgpath lang/gcc/4.8
 @bin bin/ecpp
 @bin bin/egcc
@@ -256,6 +256,7 @@ lib/libssp_nonshared.la
 %%amd64%%
 %%i386%%
 %%powerpc%%
+%%sparc%%
 %%sparc64%%
 %%ATOMIC%%
 %%CILKRTS%%

@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.sparc-main,v 1.1 2014/09/29 20:29:29 tobiasu Exp $
+lib/gcc/${CONFIG}/${V}/include/tgmath.h
+lib/gcc/${CONFIG}/${V}/include/unwind.h
+lib/gcc/${CONFIG}/${V}/include/visintrin.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/dbxelf.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/initfini-array.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-libpthread.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/sparc/openbsd.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/sparc/sparc-opts.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/sparc/sparc-protos.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/sparc/sparc.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/sparc/sysv4.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/vxworks-dummy.h
