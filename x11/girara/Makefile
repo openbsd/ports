@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/02 13:22:32 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/29 19:57:31 jasper Exp $
 
 COMMENT =	user interface library from pwmt
 DISTNAME =	girara-0.2.2
@@ -31,7 +31,7 @@ FAKE_FLAGS +=	PREFIX=${TRUEPREFIX}
 TEST_TARGET =	test
 TEST_DEPENDS =	devel/check
 TEST_FLAGS +=	QUIET=
-TEST_FLAGS +=	HOME=${HOME}
+TEST_FLAGS +=	HOME=${WRKDIR}
 TEST_IS_INTERACTIVE =X11
 
 .include <bsd.port.mk>
