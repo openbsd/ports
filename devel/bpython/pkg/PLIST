@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/28 08:18:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/09/29 19:43:40 jasper Exp $
 bin/bpython
+bin/bpython-curtsies
 bin/bpython-gtk
 bin/bpython-urwid
 lib/python${MODPY_VERSION}/site-packages/bpdb/
 lib/python${MODPY_VERSION}/site-packages/bpdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpdb/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/bpdb/__main__.py
+lib/python${MODPY_VERSION}/site-packages/bpdb/__main__.pyc
 lib/python${MODPY_VERSION}/site-packages/bpdb/debugger.py
 lib/python${MODPY_VERSION}/site-packages/bpdb/debugger.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/
@@ -29,6 +32,23 @@ lib/python${MODPY_VERSION}/site-packages/bpython/cli.py
 lib/python${MODPY_VERSION}/site-packages/bpython/cli.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/config.py
 lib/python${MODPY_VERSION}/site-packages/bpython/config.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsies.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsies.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/__init__.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/coderunner.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/coderunner.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/interaction.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/interaction.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/manual_readline.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/manual_readline.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/repl.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/repl.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/replpainter.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/replpainter.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/sitefix.py
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/sitefix.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/formatter.py
 lib/python${MODPY_VERSION}/site-packages/bpython/formatter.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/gtk_.py
@@ -66,6 +86,8 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test_inspection.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_inspection.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_keys.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_keys.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/test/test_manual_readline.py
+lib/python${MODPY_VERSION}/site-packages/bpython/test/test_manual_readline.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_pager.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_pager.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_repl.py
@@ -75,8 +97,22 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test_wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/de/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/de/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/de/LC_MESSAGES/bpython.mo
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/es_ES/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/es_ES/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/es_ES/LC_MESSAGES/bpython.mo
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/it_IT/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/it_IT/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/it_IT/LC_MESSAGES/bpython.mo
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/nl_NL/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/nl_NL/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/nl_NL/LC_MESSAGES/bpython.mo
 lib/python${MODPY_VERSION}/site-packages/bpython/urwid.py
 lib/python${MODPY_VERSION}/site-packages/bpython/urwid.pyc
+@man man/man1/bpython.1
+@man man/man5/bpython-config.5
 share/applications/bpython.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
