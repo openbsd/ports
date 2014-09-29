@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/04/28 20:52:13 edd Exp $
+# $OpenBSD: Makefile,v 1.9 2014/09/29 20:15:49 jasper Exp $
 
 COMMENT =		scalable, non-blocking web server
 
@@ -17,7 +17,7 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=t/tornado/}
 
 MODULES =		lang/python
 RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname
-WANTLIB +=		pthread python2.7
+WANTLIB +=		pthread ${MODPY_WANTLIB}
 
 MODPY_SETUPTOOLS =	Yes
 
