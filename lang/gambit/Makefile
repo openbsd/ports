@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/13 08:59:41 armani Exp $
+# $OpenBSD: Makefile,v 1.11 2014/09/29 16:12:51 juanfra Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
-BROKEN-hppa =	cc: Internal error: Illegal instruction
 
 V=		4.7.2
 REVISION=	1
