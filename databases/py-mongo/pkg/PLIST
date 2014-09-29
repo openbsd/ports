@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/03 20:07:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/09/29 19:39:53 jasper Exp $
 %%no_be%%
 lib/python${MODPY_VERSION}/site-packages/bson/
 lib/python${MODPY_VERSION}/site-packages/bson/__init__.py
@@ -21,6 +21,8 @@ lib/python${MODPY_VERSION}/site-packages/bson/objectid.py
 lib/python${MODPY_VERSION}/site-packages/bson/objectid.pyc
 lib/python${MODPY_VERSION}/site-packages/bson/py3compat.py
 lib/python${MODPY_VERSION}/site-packages/bson/py3compat.pyc
+lib/python${MODPY_VERSION}/site-packages/bson/regex.py
+lib/python${MODPY_VERSION}/site-packages/bson/regex.pyc
 lib/python${MODPY_VERSION}/site-packages/bson/son.py
 lib/python${MODPY_VERSION}/site-packages/bson/son.pyc
 lib/python${MODPY_VERSION}/site-packages/bson/timestamp.py
@@ -44,8 +46,12 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/auth.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/auth.pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/bulk.py
+lib/python${MODPY_VERSION}/site-packages/pymongo/bulk.pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/collection.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/collection.pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/command_cursor.py
+lib/python${MODPY_VERSION}/site-packages/pymongo/command_cursor.pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/common.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/common.pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/connection.py
@@ -62,6 +68,8 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/helpers.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/helpers.pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/master_slave_connection.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/master_slave_connection.pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/member.py
+lib/python${MODPY_VERSION}/site-packages/pymongo/member.pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/message.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/message.pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/mongo_client.py
@@ -115,6 +123,7 @@ share/doc/${MODPY_PY_PREFIX}mongo/api/bson/json_util.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/bson/max_key.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/bson/min_key.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/bson/objectid.html
+share/doc/${MODPY_PY_PREFIX}mongo/api/bson/regex.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/bson/son.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/bson/timestamp.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/bson/tz_util.html
@@ -124,7 +133,9 @@ share/doc/${MODPY_PY_PREFIX}mongo/api/gridfs/grid_file.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/gridfs/index.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/index.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/pymongo/
+share/doc/${MODPY_PY_PREFIX}mongo/api/pymongo/bulk.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/pymongo/collection.html
+share/doc/${MODPY_PY_PREFIX}mongo/api/pymongo/command_cursor.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/pymongo/connection.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/pymongo/cursor.html
 share/doc/${MODPY_PY_PREFIX}mongo/api/pymongo/cursor_manager.html
@@ -143,12 +154,15 @@ share/doc/${MODPY_PY_PREFIX}mongo/changelog.html
 share/doc/${MODPY_PY_PREFIX}mongo/contributors.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/
 share/doc/${MODPY_PY_PREFIX}mongo/examples/aggregation.html
+share/doc/${MODPY_PY_PREFIX}mongo/examples/authentication.html
+share/doc/${MODPY_PY_PREFIX}mongo/examples/bulk.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/custom_type.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/geo.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/gevent.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/gridfs.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/high_availability.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/index.html
+share/doc/${MODPY_PY_PREFIX}mongo/examples/mod_wsgi.html
 share/doc/${MODPY_PY_PREFIX}mongo/examples/requests.html
 share/doc/${MODPY_PY_PREFIX}mongo/faq.html
 share/doc/${MODPY_PY_PREFIX}mongo/genindex.html
