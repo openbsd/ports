@@ -1,33 +1,42 @@
-$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.3 2014/09/11 14:45:13 dcoppa Exp $
+$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.4 2014/09/29 08:25:39 dcoppa Exp $
 
-Fix INFODIR/MANDIR default paths on OpenBSD
+commit d4fdd9c189f85d659f4294f8ec6da3e7e51215ec
+Author: Rolf Eike Beer <eike@sf-mail.de>
+Date:   Tue May 20 18:14:10 2014 +0200
 
---- Modules/GNUInstallDirs.cmake.orig	Thu Jul 31 17:03:56 2014
-+++ Modules/GNUInstallDirs.cmake	Wed Sep  3 08:10:09 2014
-@@ -178,6 +178,14 @@ if(NOT DEFINED CMAKE_INSTALL_OLDINCLUDEDIR)
-   set(CMAKE_INSTALL_OLDINCLUDEDIR "/usr/include" CACHE PATH "C header files for non-gcc (/usr/include)")
- endif()
- 
-+if(NOT DEFINED CMAKE_INSTALL_INFODIR)
-+  set(CMAKE_INSTALL_INFODIR "info" CACHE PATH "info documentation (info)")
-+endif()
-+
-+if(NOT DEFINED CMAKE_INSTALL_MANDIR)
-+  set(CMAKE_INSTALL_MANDIR "man" CACHE PATH "man documentation (man)")
-+endif()
-+
- if(NOT DEFINED CMAKE_INSTALL_DATAROOTDIR)
-   set(CMAKE_INSTALL_DATAROOTDIR "share" CACHE PATH "read-only architecture-independent data root (share)")
- endif()
-@@ -192,19 +200,9 @@ if(NOT CMAKE_INSTALL_DATADIR)
+GNUInstallDirs: use the proper default for info and man paths on OpenBSD
+
+--- Modules/GNUInstallDirs.cmake.orig	Thu Sep 11 15:24:00 2014
++++ Modules/GNUInstallDirs.cmake	Mon Sep 29 08:29:47 2014
+@@ -192,19 +192,31 @@ if(NOT CMAKE_INSTALL_DATADIR)
    set(CMAKE_INSTALL_DATADIR "${CMAKE_INSTALL_DATAROOTDIR}")
  endif()
  
 -if(NOT CMAKE_INSTALL_INFODIR)
 -  set(CMAKE_INSTALL_INFODIR "" CACHE PATH "info documentation (DATAROOTDIR/info)")
 -  set(CMAKE_INSTALL_INFODIR "${CMAKE_INSTALL_DATAROOTDIR}/info")
--endif()
--
++if(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++  if(NOT CMAKE_INSTALL_INFODIR)
++    set(CMAKE_INSTALL_INFODIR "" CACHE PATH "info documentation (info)")
++    set(CMAKE_INSTALL_INFODIR "info")
++  endif()
++
++  if(NOT CMAKE_INSTALL_MANDDIR)
++    set(CMAKE_INSTALL_MANDIR "" CACHE PATH "man documentation (man)")
++    set(CMAKE_INSTALL_MANDIR "man")
++  endif()
++else()
++  if(NOT CMAKE_INSTALL_INFODIR)
++    set(CMAKE_INSTALL_INFODIR "" CACHE PATH "info documentation (DATAROOTDIR/info)")
++    set(CMAKE_INSTALL_INFODIR "${CMAKE_INSTALL_DATAROOTDIR}/info")
++  endif()
++
++  if(NOT CMAKE_INSTALL_MANDDIR)
++    set(CMAKE_INSTALL_MANDIR "" CACHE PATH "man documentation (DATAROOTDIR/man)")
++    set(CMAKE_INSTALL_MANDIR "${CMAKE_INSTALL_DATAROOTDIR}/man")
++  endif()
+ endif()
+ 
  if(NOT CMAKE_INSTALL_LOCALEDIR)
    set(CMAKE_INSTALL_LOCALEDIR "" CACHE PATH "locale-dependent data (DATAROOTDIR/locale)")
    set(CMAKE_INSTALL_LOCALEDIR "${CMAKE_INSTALL_DATAROOTDIR}/locale")
