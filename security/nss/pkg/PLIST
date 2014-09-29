@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/11/12 20:43:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/09/29 08:52:31 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -72,6 +72,7 @@ include/nss/pkcs11t.h
 include/nss/pkcs11u.h
 include/nss/pkcs12.h
 include/nss/pkcs12t.h
+include/nss/pkcs1sig.h
 include/nss/pkcs7t.h
 include/nss/portreg.h
 include/nss/preenc.h
