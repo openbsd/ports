@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2014/06/03 20:41:36 zhuk Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2014/09/29 15:09:12 dcoppa Exp $
 share/OpenCV/samples/
 share/OpenCV/samples/c/
 share/OpenCV/samples/c/JCB.png
@@ -620,7 +620,6 @@ share/doc/OpenCV/html/_downloads/creating_widgets.cpp
 share/doc/OpenCV/html/_downloads/discrete_fourier_transform.cpp
 share/doc/OpenCV/html/_downloads/facerec_eigenfaces.cpp
 share/doc/OpenCV/html/_downloads/facerec_fisherfaces.cpp
-share/doc/OpenCV/html/_downloads/facerec_fisherfaces1.cpp
 share/doc/OpenCV/html/_downloads/facerec_lbph.cpp
 share/doc/OpenCV/html/_downloads/facerec_save_load.cpp
 share/doc/OpenCV/html/_downloads/facerec_video.cpp
