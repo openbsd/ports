@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2014/09/02 08:59:43 chrisz Exp $
+# $OpenBSD: Makefile,v 1.165 2014/09/29 09:58:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -32,6 +32,7 @@
      SUBDIR += go
      SUBDIR += gprolog
      SUBDIR += guile
+     SUBDIR += guile2
      SUBDIR += hs-HsParrot
      SUBDIR += hs-haskell-src
      SUBDIR += hs-haskell-src-exts
