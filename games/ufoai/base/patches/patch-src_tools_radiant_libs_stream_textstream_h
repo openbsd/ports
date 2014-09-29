@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_tools_radiant_libs_stream_textstream_h,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+$OpenBSD: patch-src_tools_radiant_libs_stream_textstream_h,v 1.2 2014/09/29 18:23:15 kirby Exp $
+
+Commited upstream ee51106ced2f17bcdd5cf6c706627f41f3f6c175
+
 --- src/tools/radiant/libs/stream/textstream.h.orig	Thu May 19 13:54:02 2011
 +++ src/tools/radiant/libs/stream/textstream.h	Thu May 19 13:55:49 2011
 @@ -46,7 +46,7 @@ inline char* write_unsigned_nonzero_decimal_backward(c

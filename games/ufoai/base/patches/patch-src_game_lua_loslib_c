@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_game_lua_loslib_c,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+$OpenBSD: patch-src_game_lua_loslib_c,v 1.2 2014/09/29 18:23:15 kirby Exp $
 
 XXX: OpenBSD's locale support is very limited. This can probably
 be removed when support for LC_MESSAGES is added.
 
---- src/game/lua/loslib.c.orig	Tue May 17 12:20:40 2011
-+++ src/game/lua/loslib.c	Tue May 17 12:20:59 2011
+--- src/game/lua/loslib.cpp.orig	Thu Jun  5 08:18:39 2014
++++ src/game/lua/loslib.cpp	Tue Jul  1 19:37:31 2014
 @@ -208,7 +208,7 @@ static int os_setlocale (lua_State *L) {
-      "numeric", "time", NULL};
-   const char *l = luaL_optstring(L, 1, NULL);
+      "numeric", "time", nullptr};
+   const char* l = luaL_optstring(L, 1, nullptr);
    int op = luaL_checkoption(L, 2, "all", catnames);
 -  lua_pushstring(L, setlocale(cat[op], l));
 +  lua_pushstring(L, setlocale(cat[0], l));

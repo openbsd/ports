@@ -1,9 +1,9 @@
-$OpenBSD: patch-debian_ufoai_6,v 1.1 2011/05/30 05:29:09 ajacoutot Exp $
+$OpenBSD: patch-debian_ufoai_6,v 1.2 2014/09/29 18:23:15 kirby Exp $
 
 Resolve conflict with lang/rakudo.
 
---- debian/ufoai.6.orig	Sun May 29 16:43:05 2011
-+++ debian/ufoai.6	Sun May 29 16:44:21 2011
+--- debian/ufoai.6.orig	Thu Jun  5 08:18:39 2014
++++ debian/ufoai.6	Tue Jul  1 20:02:55 2014
 @@ -1,17 +1,17 @@
  .TH UFO 6 "January 13, 2008"
  .SH NAME
@@ -26,6 +26,15 @@ Resolve conflict with lang/rakudo.
  
  .SH OPTIONS
  .PP
+@@ -28,7 +28,7 @@ Set this to 1 to start in fullscreen mode\&.
+ Set this to 0 to deactivate GLSL programs\&.
+ 
+ .SH "FILES"
+-All theses files are part of a pk3 file in \fI/usr/share/games/ufoai/base/\fR. You can extract them (pk3 files are just zip files)
++All theses files are part of a pk3 file in \fI/usr/local/share/ufoai/base/\fR. You can extract them (pk3 files are just zip files)
+ and place them in the home directory of the user running the game. Use the path \fI~/.ufoai/<VERSION>/base/\fR to place
+ these files. The files that are not located in the pk3 files have a higher priority than the files that are stored in the pk3
+ files. So you are able to replace any file you want like this. You can also add new maps and other game content to the \fIbase/\fR
 @@ -48,7 +48,7 @@ Commands that are executed when starting the dedicated
  \fBufoded\fR(6)
  

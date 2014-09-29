@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/06/04 18:41:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/29 18:23:15 kirby Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -12,10 +12,11 @@ EXTRACT_SUFX =		.tar.bz2
 MULTI_PACKAGES = 	-main -editor
 
 cWANTLIB += GL SDL c jpeg m ogg png pthread vorbis
-cWANTLIB += vorbisfile z execinfo ${MODGETTEXT_WANTLIB}
+cWANTLIB += z execinfo ${MODGETTEXT_WANTLIB}
+cWANTLIB += ${MODGCC4_CPPWANTLIB}
 
-WANTLIB-main += FLAC SDL_mixer SDL_ttf crypto curl idn
-WANTLIB-main += mikmod smpeg ssl theora xvidcore ${cWANTLIB}
+WANTLIB-main += SDL_mixer SDL_ttf curl mxml theora
+WANTLIB-main += xvidcore ${cWANTLIB}
 
 WANTLIB-editor += GLU ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB-editor += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender
@@ -24,9 +25,11 @@ WANTLIB-editor += gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
 WANTLIB-editor += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-editor += gtk-x11-2.0 gtkglext-x11-1.0 gtksourceview-2.0
 WANTLIB-editor += openal pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-editor += pangox-1.0 stdc++ xml2 ${cWANTLIB}
+WANTLIB-editor += pangox-1.0 vorbisfile xml2 ${cWANTLIB}
 
-MODULES = 		devel/gettext
+MODULES = 		devel/gettext gcc4
+MODGCC4_ARCHS = 	*
+MODGCC4_LANGS =	c++
 
 RUN_DEPENDS = 		games/ufoai/data \
 			devel/desktop-file-utils
@@ -39,7 +42,9 @@ LIB_DEPENDS-main =	devel/libexecinfo \
 			multimedia/libtheora \
 			multimedia/xvidcore \
 			net/curl \
-			${MODGETTEXT_LIB_DEPENDS}
+			textproc/mxml \
+			${MODGETTEXT_LIB_DEPENDS} \
+			${MODGCC4_CPPLIBDEP}
 
 LIB_DEPENDS-editor = 	audio/libvorbis \
 			audio/openal \
@@ -47,7 +52,8 @@ LIB_DEPENDS-editor = 	audio/libvorbis \
 			devel/sdl \
 			x11/gtkglext \
 			x11/gtksourceview \
-			${MODGETTEXT_LIB_DEPENDS}
+			${MODGETTEXT_LIB_DEPENDS} \
+			${MODGCC4_CPPLIBDEP}
 
 USE_GMAKE =		Yes
 MAKE_ENV += 		${CONFIGURE_ENV}
@@ -58,6 +64,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--enable-release \
 			--enable-ufo2map \
 			--enable-uforadiant \
+			--disable-memory \
+			--disable-sdl2 \
 			--disable-testall \
 			--datadir=${PREFIX}/share/ufoai
 

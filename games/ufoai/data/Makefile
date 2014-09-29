@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/18 18:35:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/09/29 18:23:15 kirby Exp $
 
 COMMENT =		UFO:AI data
 
@@ -19,7 +19,7 @@ DATADIR =		${PREFIX}/share/ufoai/base
 
 do-install:
 	${INSTALL_DATA_DIR} ${DATADIR}
-	cd ${DATADIR} && unzip ${WRKDIST}/\*.pk3
+	cd ${DATADIR} && unzip ${WRKDIST}/\*.pk3 || exit 0
 	chown -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	find ${DATADIR} \
 	    -type f -exec chmod ${SHAREMODE} {} + -o \

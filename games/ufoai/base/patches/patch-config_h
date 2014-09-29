@@ -1,0 +1,31 @@
+$OpenBSD: patch-config_h,v 1.1 2014/09/29 18:23:15 kirby Exp $
+
+Commited upstream ee51106ced2f17bcdd5cf6c706627f41f3f6c175
+
+--- config.h.orig	Tue Jul  1 20:24:05 2014
++++ config.h	Tue Jul  1 20:25:06 2014
+@@ -10,6 +10,7 @@
+ #ifndef EMSCRIPTEN
+ #ifndef __IPHONEOS__
+ #ifndef __FREEBSD__
++#ifndef __OPENBSD__
+ #error The target platform was not found.  Please add to config.h.
+ #endif
+ #endif
+@@ -19,6 +20,7 @@
+ #endif
+ #endif
+ #endif
++#endif
+ 
+ #ifdef __LINUX__
+ #include "linux-config.h"
+@@ -53,3 +55,8 @@
+ #ifdef __FREEBSD__
+ #include "freebsd-config.h"
+ #endif
++
++#ifdef __OPENBSD__
++#include "openbsd-config.h"
++#endif
++

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-editor,v 1.3 2013/05/16 10:10:35 kirby Exp $
+@comment $OpenBSD: PLIST-editor,v 1.4 2014/09/29 18:23:15 kirby Exp $
 bin/uforadiant
 @man man/man6/ufo2map.6
 @man man/man6/uforadiant.6
@@ -70,6 +70,7 @@ share/ufoai/radiant/bitmaps/particle_weapon.png
 share/ufoai/radiant/bitmaps/pathfinding.png
 share/ufoai/radiant/bitmaps/redo.png
 share/ufoai/radiant/bitmaps/refresh_models.png
+share/ufoai/radiant/bitmaps/rotation_pivot_origin.png
 share/ufoai/radiant/bitmaps/select_mouseresize.png
 share/ufoai/radiant/bitmaps/select_mouserotate.png
 share/ufoai/radiant/bitmaps/select_mousescale.png
@@ -131,12 +132,18 @@ share/ufoai/radiant/input.xml
 share/ufoai/radiant/menu.xml
 share/ufoai/radiant/prefabs/
 share/ufoai/radiant/prefabs/alien/
+share/ufoai/radiant/prefabs/alien/alien_battery1.jpg
+share/ufoai/radiant/prefabs/alien/alien_battery1.map
 share/ufoai/radiant/prefabs/alien/alien_med1.jpg
 share/ufoai/radiant/prefabs/alien/alien_med1.map
 share/ufoai/radiant/prefabs/alien/alien_med2.jpg
 share/ufoai/radiant/prefabs/alien/alien_med2.map
+share/ufoai/radiant/prefabs/alien/alien_seat1.jpg
+share/ufoai/radiant/prefabs/alien/alien_seat1.map
 share/ufoai/radiant/prefabs/alien/barrel.jpg
 share/ufoai/radiant/prefabs/alien/barrel.map
+share/ufoai/radiant/prefabs/alien/box001.jpg
+share/ufoai/radiant/prefabs/alien/box001.map
 share/ufoai/radiant/prefabs/alien/crate_rec_1.jpg
 share/ufoai/radiant/prefabs/alien/crate_rec_1.map
 share/ufoai/radiant/prefabs/alien/crate_recb_1.jpg
@@ -174,6 +181,8 @@ share/ufoai/radiant/prefabs/cars/puma.jpg
 share/ufoai/radiant/prefabs/cars/puma.map
 share/ufoai/radiant/prefabs/cars/trailer.jpg
 share/ufoai/radiant/prefabs/cars/trailer.map
+share/ufoai/radiant/prefabs/cars/transport.jpg
+share/ufoai/radiant/prefabs/cars/transport.map
 share/ufoai/radiant/prefabs/cars/van.jpg
 share/ufoai/radiant/prefabs/cars/van.map
 share/ufoai/radiant/prefabs/cars/van3.jpg
@@ -183,6 +192,8 @@ share/ufoai/radiant/prefabs/city/blocker.jpg
 share/ufoai/radiant/prefabs/city/blocker.map
 share/ufoai/radiant/prefabs/city/diner.jpg
 share/ufoai/radiant/prefabs/city/diner.map
+share/ufoai/radiant/prefabs/city/fountain01.jpg
+share/ufoai/radiant/prefabs/city/fountain01.map
 share/ufoai/radiant/prefabs/city/garage.jpg
 share/ufoai/radiant/prefabs/city/garage.map
 share/ufoai/radiant/prefabs/city/garages.jpg
@@ -218,6 +229,8 @@ share/ufoai/radiant/prefabs/dropships/drop_firebird.txt
 share/ufoai/radiant/prefabs/dropships/drop_herakles.jpg
 share/ufoai/radiant/prefabs/dropships/drop_herakles.map
 share/ufoai/radiant/prefabs/dropships/drop_herakles.txt
+share/ufoai/radiant/prefabs/dropships/drop_herakles_2.jpg
+share/ufoai/radiant/prefabs/dropships/drop_herakles_2.map
 share/ufoai/radiant/prefabs/dropships/drop_herakles_pod.jpg
 share/ufoai/radiant/prefabs/dropships/drop_herakles_pod.map
 share/ufoai/radiant/prefabs/dropships/drop_raptor.jpg
@@ -307,12 +320,16 @@ share/ufoai/radiant/prefabs/household/living_room/armchair.jpg
 share/ufoai/radiant/prefabs/household/living_room/armchair.map
 share/ufoai/radiant/prefabs/household/living_room/armchair2.jpg
 share/ufoai/radiant/prefabs/household/living_room/armchair2.map
+share/ufoai/radiant/prefabs/household/living_room/armchair2_small.jpg
+share/ufoai/radiant/prefabs/household/living_room/armchair2_small.map
 share/ufoai/radiant/prefabs/household/living_room/armchair3.jpg
 share/ufoai/radiant/prefabs/household/living_room/armchair3.map
 share/ufoai/radiant/prefabs/household/living_room/bench.jpg
 share/ufoai/radiant/prefabs/household/living_room/bench.map
 share/ufoai/radiant/prefabs/household/living_room/bench2.jpg
 share/ufoai/radiant/prefabs/household/living_room/bench2.map
+share/ufoai/radiant/prefabs/household/living_room/bench2_small.jpg
+share/ufoai/radiant/prefabs/household/living_room/bench2_small.map
 share/ufoai/radiant/prefabs/household/living_room/couch.jpg
 share/ufoai/radiant/prefabs/household/living_room/couch.map
 share/ufoai/radiant/prefabs/household/living_room/couch2.jpg
@@ -374,6 +391,8 @@ share/ufoai/radiant/prefabs/machines/generator.jpg
 share/ufoai/radiant/prefabs/machines/generator.map
 share/ufoai/radiant/prefabs/machines/generator_big.jpg
 share/ufoai/radiant/prefabs/machines/generator_big.map
+share/ufoai/radiant/prefabs/machines/minicrane.jpg
+share/ufoai/radiant/prefabs/machines/minicrane.map
 share/ufoai/radiant/prefabs/machines/mixer.jpg
 share/ufoai/radiant/prefabs/machines/mixer.map
 share/ufoai/radiant/prefabs/machines/three_forklifts.jpg
@@ -383,6 +402,8 @@ share/ufoai/radiant/prefabs/machines/workbench.map
 share/ufoai/radiant/prefabs/misc/
 share/ufoai/radiant/prefabs/misc/automat.jpg
 share/ufoai/radiant/prefabs/misc/automat.map
+share/ufoai/radiant/prefabs/misc/barrel.jpg
+share/ufoai/radiant/prefabs/misc/barrel.map
 share/ufoai/radiant/prefabs/misc/barrel1.jpg
 share/ufoai/radiant/prefabs/misc/barrel1.map
 share/ufoai/radiant/prefabs/misc/barrel2.jpg
@@ -431,6 +452,8 @@ share/ufoai/radiant/prefabs/misc/carton4.jpg
 share/ufoai/radiant/prefabs/misc/carton4.map
 share/ufoai/radiant/prefabs/misc/carton5.jpg
 share/ufoai/radiant/prefabs/misc/carton5.map
+share/ufoai/radiant/prefabs/misc/cartwheel.jpg
+share/ufoai/radiant/prefabs/misc/cartwheel.map
 share/ufoai/radiant/prefabs/misc/cash_point.jpg
 share/ufoai/radiant/prefabs/misc/cash_point.map
 share/ufoai/radiant/prefabs/misc/chute.jpg
@@ -447,6 +470,10 @@ share/ufoai/radiant/prefabs/misc/container2.jpg
 share/ufoai/radiant/prefabs/misc/container2.map
 share/ufoai/radiant/prefabs/misc/container2_open.jpg
 share/ufoai/radiant/prefabs/misc/container2_open.map
+share/ufoai/radiant/prefabs/misc/container3.jpg
+share/ufoai/radiant/prefabs/misc/container3.map
+share/ufoai/radiant/prefabs/misc/container3_open.jpg
+share/ufoai/radiant/prefabs/misc/container3_open.map
 share/ufoai/radiant/prefabs/misc/crate1.jpg
 share/ufoai/radiant/prefabs/misc/crate1.map
 share/ufoai/radiant/prefabs/misc/crate2.jpg
@@ -513,6 +540,8 @@ share/ufoai/radiant/prefabs/misc/rack2.jpg
 share/ufoai/radiant/prefabs/misc/rack2.map
 share/ufoai/radiant/prefabs/misc/rack_newspaper.jpg
 share/ufoai/radiant/prefabs/misc/rack_newspaper.map
+share/ufoai/radiant/prefabs/misc/radar.jpg
+share/ufoai/radiant/prefabs/misc/radar.map
 share/ufoai/radiant/prefabs/misc/sawmill.jpg
 share/ufoai/radiant/prefabs/misc/sawmill.map
 share/ufoai/radiant/prefabs/misc/seesaw.jpg
@@ -588,6 +617,8 @@ share/ufoai/radiant/prefabs/misc/sunshade.jpg
 share/ufoai/radiant/prefabs/misc/sunshade.map
 share/ufoai/radiant/prefabs/misc/swing.jpg
 share/ufoai/radiant/prefabs/misc/swing.map
+share/ufoai/radiant/prefabs/misc/switchboard.jpg
+share/ufoai/radiant/prefabs/misc/switchboard.map
 share/ufoai/radiant/prefabs/misc/tabletennistable.jpg
 share/ufoai/radiant/prefabs/misc/tabletennistable.map
 share/ufoai/radiant/prefabs/misc/telephone.jpg
@@ -678,18 +709,40 @@ share/ufoai/radiant/prefabs/trucks/truck_red.map
 share/ufoai/radiant/prefabs/trucks/water_truck.jpg
 share/ufoai/radiant/prefabs/trucks/water_truck.map
 share/ufoai/radiant/prefabs/ufos/
+share/ufoai/radiant/prefabs/ufos/crashed_bomber.jpg
+share/ufoai/radiant/prefabs/ufos/crashed_bomber.map
+share/ufoai/radiant/prefabs/ufos/crashed_corrupter.jpg
+share/ufoai/radiant/prefabs/ufos/crashed_corrupter.map
+share/ufoai/radiant/prefabs/ufos/crashed_fighter.jpg
+share/ufoai/radiant/prefabs/ufos/crashed_fighter.map
+share/ufoai/radiant/prefabs/ufos/crashed_gunboat.jpg
+share/ufoai/radiant/prefabs/ufos/crashed_gunboat.map
+share/ufoai/radiant/prefabs/ufos/crashed_gunboat.mat
+share/ufoai/radiant/prefabs/ufos/crashed_scout/
+share/ufoai/radiant/prefabs/ufos/crashed_scout.jpg
+share/ufoai/radiant/prefabs/ufos/crashed_scout.map
+share/ufoai/radiant/prefabs/ufos/crashed_scout/back_01.jpg
+share/ufoai/radiant/prefabs/ufos/crashed_scout/back_01.map
+share/ufoai/radiant/prefabs/ufos/crashed_scout/back_03.jpg
+share/ufoai/radiant/prefabs/ufos/crashed_scout/back_03.map
 share/ufoai/radiant/prefabs/ufos/ufo_bomber.jpg
 share/ufoai/radiant/prefabs/ufos/ufo_bomber.map
+share/ufoai/radiant/prefabs/ufos/ufo_bomber.mat
 share/ufoai/radiant/prefabs/ufos/ufo_corrupter.jpg
 share/ufoai/radiant/prefabs/ufos/ufo_corrupter.map
 share/ufoai/radiant/prefabs/ufos/ufo_fighter.jpg
 share/ufoai/radiant/prefabs/ufos/ufo_fighter.map
+share/ufoai/radiant/prefabs/ufos/ufo_gunboat.jpg
+share/ufoai/radiant/prefabs/ufos/ufo_gunboat.map
+share/ufoai/radiant/prefabs/ufos/ufo_gunboat.mat
 share/ufoai/radiant/prefabs/ufos/ufo_harvester.jpg
 share/ufoai/radiant/prefabs/ufos/ufo_harvester.map
 share/ufoai/radiant/prefabs/ufos/ufo_scout.jpg
 share/ufoai/radiant/prefabs/ufos/ufo_scout.map
 share/ufoai/radiant/prefabs/ufos/ufo_supply.jpg
 share/ufoai/radiant/prefabs/ufos/ufo_supply.map
+share/ufoai/radiant/prefabs/ufos/ufo_supply_new.jpg
+share/ufoai/radiant/prefabs/ufos/ufo_supply_new.map
 share/ufoai/radiant/prefabs/vegetation/
 share/ufoai/radiant/prefabs/vegetation/cactus2.jpg
 share/ufoai/radiant/prefabs/vegetation/cactus2.map
@@ -713,6 +766,8 @@ share/ufoai/radiant/prefabs/vegetation/fern2a_lrg.jpg
 share/ufoai/radiant/prefabs/vegetation/fern2a_lrg.map
 share/ufoai/radiant/prefabs/vegetation/fir.jpg
 share/ufoai/radiant/prefabs/vegetation/fir.map
+share/ufoai/radiant/prefabs/vegetation/fir2_medium.jpg
+share/ufoai/radiant/prefabs/vegetation/fir2_medium.map
 share/ufoai/radiant/prefabs/vegetation/grass2.jpg
 share/ufoai/radiant/prefabs/vegetation/grass2.map
 share/ufoai/radiant/prefabs/vegetation/grass_dry.jpg
@@ -725,6 +780,8 @@ share/ufoai/radiant/prefabs/vegetation/gumtree3.jpg
 share/ufoai/radiant/prefabs/vegetation/gumtree3.map
 share/ufoai/radiant/prefabs/vegetation/gumtree4.jpg
 share/ufoai/radiant/prefabs/vegetation/gumtree4.map
+share/ufoai/radiant/prefabs/vegetation/palm_a.jpg
+share/ufoai/radiant/prefabs/vegetation/palm_a.map
 share/ufoai/radiant/prefabs/vegetation/palm_plant1.jpg
 share/ufoai/radiant/prefabs/vegetation/palm_plant1.map
 share/ufoai/radiant/prefabs/vegetation/palm_small.jpg
@@ -735,6 +792,8 @@ share/ufoai/radiant/prefabs/vegetation/palm_v1.jpg
 share/ufoai/radiant/prefabs/vegetation/palm_v1.map
 share/ufoai/radiant/prefabs/vegetation/palm_v2.jpg
 share/ufoai/radiant/prefabs/vegetation/palm_v2.map
+share/ufoai/radiant/prefabs/vegetation/pine.jpg
+share/ufoai/radiant/prefabs/vegetation/pine.map
 share/ufoai/radiant/prefabs/vegetation/plant1.jpg
 share/ufoai/radiant/prefabs/vegetation/plant1.map
 share/ufoai/radiant/prefabs/vegetation/plant10.jpg

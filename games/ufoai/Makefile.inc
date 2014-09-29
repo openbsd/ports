@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/08/07 07:47:28 kirby Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2014/09/29 18:23:15 kirby Exp $
 
 # data package is useless without ufoai itself, which can only be
 # built on some arches.
@@ -7,9 +7,9 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 CATEGORIES = 	games
 
-V ?= 		2.4
+V ?= 		2.5
 
-HOMEPAGE = 	http://ufoai.sourceforge.net/
+HOMEPAGE = 	http://ufoai.org/
 
 MAINTAINER = 	Kirill Bychkov <kirby@openbsd.org>
 
