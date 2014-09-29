@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.861 2014/09/27 16:31:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.862 2014/09/29 11:33:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -339,6 +339,7 @@
      SUBDIR += p5-Net-IPv4Addr
      SUBDIR += p5-Net-IPv6Addr
      SUBDIR += p5-Net-IRC
+     SUBDIR += p5-Net-Ident
      SUBDIR += p5-Net-Inspect
      SUBDIR += p5-Net-Jabber
      SUBDIR += p5-Net-MySQL
