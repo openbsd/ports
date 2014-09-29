@@ -1,34 +1,47 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/09/29 08:11:31 dcoppa Exp $
 
 COMMENT =		Python classes providing access to network packets
 
-MODPY_EGG_VERSION =	0.9.6.0
-DISTNAME =		Impacket-${MODPY_EGG_VERSION}
-PKGNAME =		py-impacket-${MODPY_EGG_VERSION}
-REVISION =		3
+MODPY_EGG_VERSION =	0.9.12
+DISTNAME =		impacket-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
-CATEGORIES =   		net
+CATEGORIES =   		net security
 
-HOMEPAGE =		http://oss.coresecurity.com/projects/impacket.html
+HOMEPAGE =		http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Impacket
 
-# Apache
+# Apache modified
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://oss.coresecurity.com/repo/
+MASTER_SITES =		${MASTER_SITE_PYPI:=i/impacket/}
 
 MODULES =		lang/python
 
+MODPY_ADJ_FILES =	impacket/ese.py \
+			impacket/logger.py \
+			impacket/tds.py
+
 # one example also uses python-tkinter, but it's pretty heavy and
 # not required for normal use.
-RUN_DEPENDS =		security/py-crypto \
-			net/py-pcapy
+RUN_DEPENDS =		net/py-pcapy \
+			security/py-crypto>=2.6 \
+			security/py-openssl
 
 NO_TEST =		Yes
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/examples/nmapAnswerMachine.py
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-impacket
-	mv ${PREFIX}/share/doc/Impacket/ ${PREFIX}/share/doc/py-impacket
-	mv ${PREFIX}/bin/*py ${PREFIX}/share/examples/py-impacket
-	mv ${PREFIX}/bin/* ${PREFIX}/share/doc/py-impacket
+	mv ${PREFIX}/bin/*.py ${PREFIX}/share/examples/py-impacket/
+	mv ${PREFIX}/share/doc/impacket ${PREFIX}/share/doc/py-impacket
+# Fix permissions
+	chmod 0444 ${PREFIX}/share/doc/py-impacket/*
+# Add missing shebangs
+.for s in loopchain nmapAnswerMachine os_ident uncrc32
+	perl -pi -e 'print "#!${MODPY_BIN}\n" if $$. == 1' \
+		${PREFIX}/share/examples/py-impacket/${s}.py
+.endfor
 
 .include <bsd.port.mk>
