@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.125 2014/09/28 06:52:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2014/09/29 11:57:54 ajacoutot Exp $
 
-PORTROACH =	limitw:1,even
+PORTROACH =	limit:^2\.4
 
 COMMENT =	open source web browser engine for Gtk+
 
