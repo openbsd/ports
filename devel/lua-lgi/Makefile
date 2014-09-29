@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/09/10 08:42:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/09/29 07:40:07 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=	pavouk
 GH_PROJECT=	lgi
 GH_TAGNAME=	0.8.0
 GH_COMMIT=	051170efd8c176fbea7f16abf690dab176d96864
+REVISION=	0
 
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=	lua-${DISTNAME}
