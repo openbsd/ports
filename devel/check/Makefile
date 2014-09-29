@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/27 06:55:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/09/29 19:58:04 jasper Exp $
 
 COMMENT =	unit test framework for C programs
 
-DISTNAME =	check-0.9.12
+DISTNAME =	check-0.9.14
 SHARED_LIBS +=  check                3.0      # unknown
-REVISION =	0
 
 CATEGORIES =	devel
 

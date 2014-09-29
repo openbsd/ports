@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.5 2014/03/18 09:12:01 ajacoutot Exp $
---- doc/Makefile.in.orig	Tue Jan 21 01:21:13 2014
-+++ doc/Makefile.in	Tue Mar 18 10:06:47 2014
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2014/09/29 19:58:04 jasper Exp $
+--- doc/Makefile.in.orig	Fri Jul 25 15:31:54 2014
++++ doc/Makefile.in	Mon Sep 29 23:48:33 2014
 @@ -211,7 +211,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.5 2014/03/18 09:12:01 ajacoutot Exp $
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -807,47 +807,47 @@ $(srcdir)/check.texi: money.1-2.h.diff \
+@@ -818,47 +818,47 @@ $(srcdir)/check.texi: money.1-2.h.diff \
  # diff returns 1 if there is a difference, but we don't want make to
  # think that means there is an error
  money.1-2.h.diff: $(eg_src)/money.1.h $(eg_src)/money.2.h
