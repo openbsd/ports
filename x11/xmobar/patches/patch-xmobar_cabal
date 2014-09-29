@@ -1,6 +1,6 @@
-$OpenBSD: patch-xmobar_cabal,v 1.11 2014/09/05 09:50:18 dcoppa Exp $
+$OpenBSD: patch-xmobar_cabal,v 1.12 2014/09/29 10:10:45 dcoppa Exp $
 --- xmobar.cabal.orig	Tue Jul  1 18:46:51 2014
-+++ xmobar.cabal	Fri Sep  5 11:06:00 2014
++++ xmobar.cabal	Mon Sep 29 11:57:23 2014
 @@ -88,10 +88,12 @@ executable xmobar
        Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
        Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
@@ -15,3 +15,12 @@ $OpenBSD: patch-xmobar_cabal,v 1.11 2014/09/05 09:50:18 dcoppa Exp $
      extra-libraries: Xrandr
  
      build-depends:
+@@ -141,7 +143,7 @@ executable xmobar
+        cpp-options: -DIWLIB
+ 
+     if flag(with_mpd) || flag(all_extensions)
+-       build-depends: libmpd == 0.8.*
++       build-depends: libmpd == 0.9.*
+        other-modules: Plugins.Monitors.MPD
+        cpp-options: -DLIBMPD
+ 
