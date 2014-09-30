@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_native_linux_opengl_extgl_glx_c,v 1.1.1.1 2014/09/30 17:44:48 abieber Exp $
+--- src/native/linux/opengl/extgl_glx.c.orig	Mon Sep 29 13:38:40 2014
++++ src/native/linux/opengl/extgl_glx.c	Mon Sep 29 13:39:58 2014
+@@ -220,7 +220,11 @@ bool extgl_Open(JNIEnv *env) {
+ 	 *
+ 	 * DRI drivers need this flag to work properly
+ 	 */
++#ifdef __OpenBSD__
++	lib_gl_handle = dlopen("libGL.so", RTLD_LAZY | RTLD_GLOBAL);
++#else
+ 	lib_gl_handle = dlopen("libGL.so.1", RTLD_LAZY | RTLD_GLOBAL);
++#endif
+ 	if (lib_gl_handle == NULL) {
+ 		throwFormattedException(env, "Error loading libGL.so.1: %s", dlerror());
+ 		return false;

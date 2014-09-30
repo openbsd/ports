@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/30 17:44:48 abieber Exp $
+share/lwjgl/
+share/lwjgl/liblwjgl${M_ARCH}.so
+share/lwjgl/lwjgl.jar
+share/lwjgl/lwjgl_util.jar
