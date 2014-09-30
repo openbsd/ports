@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/09/29 15:09:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.30 2014/09/30 17:18:37 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 # XXX no i386 due to often JDK build failures
@@ -15,7 +15,7 @@ DISTNAME =		opencv-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
-REVISION-main =		0
+REVISION-main =		1
 REVISION-docs =		0
 
 HOMEPAGE =		http://www.opencv.org/
@@ -106,6 +106,7 @@ LIB_DEPENDS-java =	${BUILD_PKGPATH},-main
 CONFIGURE_ARGS =	-DBUILD_opencv_nonfree:Bool=On \
 			-DWITH_1394:Bool=Off \
 			-DWITH_CUDA:Bool=Off \
+			-DWITH_EIGEN:Bool=Off \
 			-DWITH_FFMPEG:Bool=On \
 			-DWITH_GSTREAMER:Bool=On \
 			-DWITH_GTK:Bool=On \
