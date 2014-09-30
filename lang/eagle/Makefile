@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2014/08/30 17:19:39 stu Exp $
+# $OpenBSD: Makefile,v 1.15 2014/09/30 20:26:38 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		5217.20046
+P =		5384.19912
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}-beta30
+PKGNAME =	${DISTNAME}-beta31
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -38,9 +38,7 @@ EAGLE_LIB_DIR =	${EAGLE_INS_DIR}/lib/Eagle${V}
 EAGLE_BIN =	${PREFIX}/bin/eagle
 
 # Skip tests that are too timing-sensitive to succeed everywhere
-# Skip tests that use too much memory and/or hang
-EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle delayout.eagle perf*.eagle' \
-		   -skip 'lmap-7.7 lmap-7.8'
+EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle perf*.eagle'
 
 do-install:
 	${INSTALL_DATA_DIR} ${EAGLE_BIN_DIR} ${EAGLE_LIB_DIR}
@@ -56,14 +54,15 @@ do-install:
 	chown ${BINOWN}:${BINGRP} ${EAGLE_BIN}
 	chmod ${BINMODE} ${EAGLE_BIN}
 
-# "set test_log {}" disables logging test results to a file
 # "-namespaces 1" enables namespace tests
+# "set no(bigLists) 1" avoids oom problems
 # "set no(exec) 1; set no(compileCSharp) 1" is needed to work around Mono bugs
+# "set test_log {}" disables logging test results to a file
 do-test:
 	${SETENV} ${ALL_TEST_ENV} ${ALL_TEST_FLAGS} \
 	${LOCALBASE}/bin/mono ${WRKSRC}/bin/EagleShell.exe \
 	-namespaces 1 \
-	-preInitialize 'set no(exec) 1; set no(compileCSharp) 1; set test_log {}' \
+	-preInitialize 'set no(bigLists) 1; set no(exec) 1; set no(compileCSharp) 1; set test_log {}' \
 	-file ${WRKSRC}/Tests/all.eagle \
 	${EAGLE_TEST_FLAGS}
 
