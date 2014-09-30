@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.677 2014/09/27 16:31:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.678 2014/09/30 08:26:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -521,6 +521,7 @@
      SUBDIR += webgui
      SUBDIR += webkit
      SUBDIR += webkit,gtk3
+     SUBDIR += webkitgtk4
      SUBDIR += weblint
      SUBDIR += wml
      SUBDIR += wordpress
