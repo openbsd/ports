@@ -1,0 +1,26 @@
+$OpenBSD: patch-Source_JavaScriptCore_interpreter_JSStack_cpp,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+
+Fix alignment issue (from Fedora).
+
+--- Source/JavaScriptCore/interpreter/JSStack.cpp.orig	Tue Aug 26 09:37:13 2014
++++ Source/JavaScriptCore/interpreter/JSStack.cpp	Mon Sep 29 10:41:42 2014
+@@ -58,7 +58,8 @@ JSStack::JSStack(VM& vm)
+     size_t capacity = Options::maxPerThreadStackUsage();
+     ASSERT(capacity && isPageAligned(capacity));
+ 
+-    m_reservation = PageReservation::reserve(WTF::roundUpToMultipleOf(commitSize, capacity), OSAllocator::JSVMStackPages);
++    size_t commitsize = pageSize();
++    m_reservation = PageReservation::reserve(WTF::roundUpToMultipleOf(commitsize, capacity), OSAllocator::JSVMStackPages);
+     setStackLimit(highAddress());
+     m_commitTop = highAddress();
+     
+@@ -92,7 +93,8 @@ bool JSStack::growSlowCase(Register* newTopOfStack)
+     // have it is still within our budget. If not, we'll fail to grow and
+     // return false.
+     ptrdiff_t delta = reinterpret_cast<char*>(m_commitTop) - reinterpret_cast<char*>(newTopOfStackWithReservedZone);
+-    delta = WTF::roundUpToMultipleOf(commitSize, delta);
++    size_t commitsize = pageSize();
++    delta = WTF::roundUpToMultipleOf(commitsize, delta);
+     Register* newCommitTop = m_commitTop - (delta / sizeof(Register));
+     if (newCommitTop < reservationTop())
+         return false;

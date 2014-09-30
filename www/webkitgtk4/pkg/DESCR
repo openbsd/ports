@@ -1,0 +1,4 @@
+WebKitGTK+ is the GNOME platform port of the WebKit rendering engine.
+Offering WebKit's full functionality through a set of GObject-based
+APIs, it is suitable for projects requiring any kind of web integration,
+from hybrid HTML/CSS applications to full-fledged web browsers.

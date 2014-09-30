@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_WTF_wtf_DisallowCType_h,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+
+'isspace_WTF_Please_use_ASCIICType_instead_of_ctype_see_comment_in_ASCIICType_h' 
+was not declared in this scope
+
+--- Source/WTF/wtf/DisallowCType.h.orig	Tue Aug 26 09:37:14 2014
++++ Source/WTF/wtf/DisallowCType.h	Sun Sep 28 10:14:59 2014
+@@ -40,7 +40,7 @@
+ // are used from wx headers. On GTK+ for Mac many GTK+ files include <libintl.h>
+ // or <glib/gi18n-lib.h>, which in turn include <xlocale/_ctype.h> which uses
+ // isacii(). 
+-#if !(OS(DARWIN) && PLATFORM(GTK)) && !PLATFORM(EFL) && !defined(_LIBCPP_VERSION)
++#if !((OS(OPENBSD) || OS(DARWIN)) && PLATFORM(GTK)) && !PLATFORM(EFL) && !defined(_LIBCPP_VERSION)
+ 
+ #include <ctype.h>
+ 

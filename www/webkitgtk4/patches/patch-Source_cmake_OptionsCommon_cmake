@@ -1,0 +1,19 @@
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+
+Undefined references to libc functions.
+
+--- Source/cmake/OptionsCommon.cmake.orig	Sun Sep 28 12:19:37 2014
++++ Source/cmake/OptionsCommon.cmake	Sun Sep 28 12:20:11 2014
+@@ -54,9 +54,9 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND "${L
+     set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "-Wl,--no-keep-memory ${CMAKE_SHARED_LINKER_FLAGS_DEBUG}")
+ endif ()
+ 
+-if (UNIX AND NOT APPLE)
+-    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
+-endif ()
++#if (UNIX AND NOT APPLE)
++#    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
++#endif ()
+ 
+ # GTK uses the GNU installation directories as defaults.
+ if (NOT PORT STREQUAL "GTK")

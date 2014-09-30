@@ -1,0 +1,18 @@
+$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+
+https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
+
+--- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig	Wed Sep 24 15:37:51 2014
++++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm	Sun Sep 28 10:08:58 2014
+@@ -1112,6 +1112,11 @@ _llint_op_loop_hint:
+     loadp CodeBlock[cfr], t1
+     loadp CodeBlock::m_vm[t1], t1
+     loadb VM::watchdog+Watchdog::m_timerDidFire[t1], t0
++    if FOUR_BYTE_BOOL
++        loadi VM::watchdog+Watchdog::m_timerDidFire[t1], t0
++    else
++        loadb VM::watchdog+Watchdog::m_timerDidFire[t1], t0
++    end
+     btbnz t0, .handleWatchdogTimer
+ .afterWatchdogTimerCheck:
+     checkSwitchToJITForLoop()

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_JavaScriptCore_profiler_ProfileGenerator_cpp,v 1.1.1.1 2014/09/30 08:25:28 ajacoutot Exp $
+
+Source/JavaScriptCore/profiler/ProfileGenerator.cpp:119:24: error: 'isnan' was not declared in this scope
+
+--- Source/JavaScriptCore/profiler/ProfileGenerator.cpp.orig	Sun Sep 28 11:22:26 2014
++++ Source/JavaScriptCore/profiler/ProfileGenerator.cpp	Sun Sep 28 11:26:14 2014
+@@ -38,6 +38,8 @@
+ #include "StackVisitor.h"
+ #include "Tracing.h"
+ 
++#define isnan(x) std::isnan(x)
++
+ namespace JSC {
+ 
+ PassRefPtr<ProfileGenerator> ProfileGenerator::create(ExecState* exec, const String& title, unsigned uid)

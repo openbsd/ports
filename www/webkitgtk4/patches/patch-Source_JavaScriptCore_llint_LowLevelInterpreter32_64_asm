@@ -1,0 +1,19 @@
+$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter32_64_asm,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+
+https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
+
+--- Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm.orig	Wed Sep 24 15:37:51 2014
++++ Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm	Sun Sep 28 10:08:58 2014
+@@ -2068,7 +2068,11 @@ macro getDeBruijnScope(deBruijinIndexOperand, scopeChe
+ 
+     loadp CodeBlock[cfr], t1
+     bineq CodeBlock::m_codeType[t1], FunctionCode, .loop
+-    btbz CodeBlock::m_needsActivation[t1], .loop
++    if FOUR_BYTE_BOOL
++        btiz CodeBlock::m_needsActivation[t1], .loop
++    else
++        btbz CodeBlock::m_needsActivation[t1], .loop
++    end
+ 
+     loadi CodeBlock::m_lexicalEnvironmentRegister[t1], t1
+ 
