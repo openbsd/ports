@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/27 07:57:04 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/30 19:11:48 jasper Exp $
 
 # note about 3rdparty libs: there's another copy of libatomic_ops at
 # devel/boehm-gc which this port will be able to use if that is updated.
 
 SHARED_ONLY =		Yes
 BROKEN-arm =		missing atomic ops
+BROKEN-mips64 =		missing atomic ops
 BROKEN-alpha =		dyncall_callvm.c:66:4: error: #error unsupported platform
 BROKEN-hppa =		dyncall_callvm.c:66:4: error: #error unsupported platform
 
