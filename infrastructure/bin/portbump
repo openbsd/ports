@@ -332,7 +332,9 @@ for (@ARGV) {
 	# zap any FLAVOR information to make it easier to feed from of sqlports
 	s/,+[^,-]*/,/g;
 
-	# XXX handle "-" subpackage case?
+	# Allow simple "-subpkg" instead of ugly ",-subpkg"
+	s/^-/,-/;
+
 	if (/^(.*),(-.+)$/) {
 		my $subdir = $1 || ".";
 		if (defined $allpkgs{$subdir}) {
