@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/08/23 07:09:18 chrisz Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/30 19:28:26 landry Exp $
 
 COMMENT =		an extensible platform for analysis of C software
+#Error: Error while linking /usr/local/lib/ocaml/vmthreads/stdlib.cma(String):
+#Reference to undefined global `Bytes'
+BROKEN-powerpc =	Error while linking /usr/local/lib/ocaml/vmthreads/stdlib.cma
+BROKEN-alpha =		Error while linking /usr/local/lib/ocaml/vmthreads/stdlib.cma
 
 DISTNAME =		frama-c-Neon-20140301
 PKGNAME =		frama-c-1.10
