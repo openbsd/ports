@@ -1,25 +1,15 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.12 2014/09/29 08:25:39 dcoppa Exp $
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.13 2014/09/30 14:24:31 dcoppa Exp $
 --- Modules/Platform/OpenBSD.cmake.orig	Thu Sep 11 15:24:00 2014
-+++ Modules/Platform/OpenBSD.cmake	Mon Sep 29 08:21:49 2014
-@@ -1,5 +1,16 @@
--include(Platform/NetBSD)
-+set(CMAKE_DL_LIBS "")
-+set(CMAKE_C_COMPILE_OPTIONS_PIC "-fPIC")
-+set(CMAKE_C_COMPILE_OPTIONS_PIE "-fPIE")
-+set(CMAKE_SHARED_LIBRARY_C_FLAGS "-fPIC")            # -pic
-+set(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "-shared")       # -shared
-+set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "")         # +s, flag for exe link to use shared lib
-+set(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG "-Wl,-rpath,")       # -rpath
-+set(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG_SEP ":")   # : or empty
-+set(CMAKE_SHARED_LIBRARY_RPATH_LINK_C_FLAG "-Wl,-rpath-link,")
-+set(CMAKE_EXE_EXPORTS_C_FLAG "-Wl,--export-dynamic")
++++ Modules/Platform/OpenBSD.cmake	Tue Sep 30 11:44:17 2014
+@@ -1,5 +1,7 @@
+ include(Platform/NetBSD)
  
-+include(Platform/UnixPaths)
++unset(CMAKE_SHARED_LIBRARY_SONAME_C_FLAG)
 +
  # On OpenBSD, the compile time linker does not share it's configuration with
  # the runtime linker.  This will extract the library search paths from the
  # system's ld.so.hints file which will allow CMake to set the appropriate
-@@ -17,6 +28,22 @@ endif()
+@@ -17,6 +19,22 @@ endif()
  
  set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)
  

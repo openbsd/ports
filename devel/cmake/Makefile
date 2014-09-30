@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/09/29 08:45:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.110 2014/09/30 14:24:31 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-3.0.2
-REVISION =	3
+REVISION =	4
 MASTER_SITES =	${HOMEPAGE}files/v3.0/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
