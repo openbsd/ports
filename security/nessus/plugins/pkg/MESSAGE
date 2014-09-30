@@ -1,9 +1,0 @@
-This port only contains plugins from the GPL Feed, but neither from the
-Direct Feed nor from the Registered Feed.
-
-For mor informations about feeds, see:
-http://www.nessus.org/plugins/index.php?view=feed
-
-Some of the checks performed by nessus rely on external programs like
-hydra, nmap 3.00 or newer, and nikto. You may want to install these
-ports to enable some checks which will otherwise return false negatives.

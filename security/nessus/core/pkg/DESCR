@@ -1,6 +1,0 @@
-Nessus is an open-source vulnerability scanner. It's able to perform
-about one hundred security checks with its plugins, and is working on
-networks to make security enhancements.
-
-Flavors:
-	no_x11 - no X11 frontend

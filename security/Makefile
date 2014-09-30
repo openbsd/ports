@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.352 2014/09/27 16:31:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.353 2014/09/30 16:14:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -118,7 +118,6 @@
      SUBDIR += mcrypt
      SUBDIR += mhash
      SUBDIR += nbaudit
-     SUBDIR += nessus
      SUBDIR += netpgp
      SUBDIR += nfsshell
      SUBDIR += nikto
