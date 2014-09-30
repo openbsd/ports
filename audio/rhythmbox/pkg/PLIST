@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2014/05/25 09:02:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2014/09/30 07:46:36 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -290,6 +290,8 @@ lib/rhythmbox/sample-plugins/sample/sample.plugin
 @bin libexec/rhythmbox-metadata
 @man man/man1/rhythmbox-client.1
 @man man/man1/rhythmbox.1
+share/appdata/
+share/appdata/rhythmbox.appdata.xml
 share/applications/rhythmbox-device.desktop
 share/applications/rhythmbox.desktop
 share/dbus-1/services/org.gnome.Rhythmbox3.service
@@ -815,6 +817,7 @@ share/locale/fa/LC_MESSAGES/rhythmbox.mo
 share/locale/fi/LC_MESSAGES/rhythmbox.mo
 share/locale/fr/LC_MESSAGES/rhythmbox.mo
 share/locale/ga/LC_MESSAGES/rhythmbox.mo
+share/locale/gd/LC_MESSAGES/rhythmbox.mo
 share/locale/gl/LC_MESSAGES/rhythmbox.mo
 share/locale/gu/LC_MESSAGES/rhythmbox.mo
 share/locale/he/LC_MESSAGES/rhythmbox.mo
