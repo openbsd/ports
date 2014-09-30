@@ -1,0 +1,11 @@
+$OpenBSD: patch-filters_Makefile_inc,v 1.1.1.1 2014/09/30 18:17:09 giovanni Exp $
+--- filters/Makefile.inc.orig	Fri Aug  8 15:52:21 2014
++++ filters/Makefile.inc	Fri Aug  8 15:52:46 2014
+@@ -13,6 +13,6 @@ CFLAGS+=	-I${.CURDIR}/../../api
+ DPADD+=		${LIBUTIL} ${LIBEVENT}
+ LDADD+=		${LIBUTIL} ${LIBEVENT}
+ 
+-BINDIR	= /usr/libexec/smtpd
++BINDIR	= ${TRUEPREFIX}/libexec/smtpd
+ 
+ NOMAN	= noman

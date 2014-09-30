@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/09/30 18:17:09 giovanni Exp $
+@comment @bin libexec/smtpd/filter-dkim-signer
+@comment @bin libexec/smtpd/filter-dnsbl
+@comment @bin libexec/smtpd/filter-monkey
+@comment @bin libexec/smtpd/filter-perl
+@comment @bin libexec/smtpd/filter-stub
+@comment @bin libexec/smtpd/filter-trace
+@comment @bin libexec/smtpd/filter-void
+@bin libexec/smtpd/queue-null
+@bin libexec/smtpd/queue-ram
+@comment @bin libexec/smtpd/scheduler-ram
+@comment @bin libexec/smtpd/scheduler-stub
+@comment @bin libexec/smtpd/table-ldap
+@comment @bin libexec/smtpd/table-passwd
+@bin libexec/smtpd/table-socketmap
+@comment @bin libexec/smtpd/table-sqlite
+@bin libexec/smtpd/table-stub

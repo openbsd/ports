@@ -1,0 +1,12 @@
+$OpenBSD: patch-tables_Makefile_inc,v 1.1.1.1 2014/09/30 18:17:09 giovanni Exp $
+--- tables/Makefile.inc.orig	Fri Aug  8 16:00:37 2014
++++ tables/Makefile.inc	Fri Aug  8 16:00:52 2014
+@@ -5,7 +5,7 @@ SRCS+=	dict.c
+ SRCS+=	log.c
+ NOMAN=	noman
+ 
+-BINDIR=	/usr/libexec/smtpd
++BINDIR=	${TRUEPREFIX}/libexec/smtpd
+ 
+ DPADD+=	${LIBUTIL}
+ LDADD+=	-lutil

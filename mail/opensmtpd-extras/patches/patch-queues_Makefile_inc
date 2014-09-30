@@ -1,0 +1,11 @@
+$OpenBSD: patch-queues_Makefile_inc,v 1.1.1.1 2014/09/30 18:17:09 giovanni Exp $
+--- queues/Makefile.inc.orig	Fri Aug  8 15:59:34 2014
++++ queues/Makefile.inc	Fri Aug  8 15:59:49 2014
+@@ -1,6 +1,6 @@
+ .PATH: ${.CURDIR}/../../api
+ 
+-BINDIR=/usr/libexec/smtpd
++BINDIR=${TRUEPREFIX}/libexec/smtpd
+ 
+ SRCS+=	log.c
+ SRCS+=	tree.c

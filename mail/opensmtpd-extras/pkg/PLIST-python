@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2014/09/30 18:17:09 giovanni Exp $
+@comment @bin libexec/smtpd/filter-python
+@bin libexec/smtpd/queue-python
+@comment @bin libexec/smtpd/scheduler-python
+@bin libexec/smtpd/table-python

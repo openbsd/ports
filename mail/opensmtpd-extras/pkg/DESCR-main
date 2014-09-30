@@ -1,0 +1,3 @@
+Extra tools for OpenSMTPD:
+  * Null and RAM-only queues
+  * Stub and socket-based table implementations

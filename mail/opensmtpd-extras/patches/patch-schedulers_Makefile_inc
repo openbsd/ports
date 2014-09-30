@@ -1,0 +1,9 @@
+$OpenBSD: patch-schedulers_Makefile_inc,v 1.1.1.1 2014/09/30 18:17:09 giovanni Exp $
+--- schedulers/Makefile.inc.orig	Fri Aug  8 16:00:08 2014
++++ schedulers/Makefile.inc	Fri Aug  8 16:00:27 2014
+@@ -15,4 +15,4 @@ CFLAGS+=	-Wshadow -Wpointer-arith -Wcast-qual
+ CFLAGS+=	-Wsign-compare -Wbounded
+ #CFLAGS+=	-Werror # during development phase (breaks some archs) 
+ 
+-BINDIR	= /usr/libexec/smtpd
++BINDIR	= ${TRUEPREFIX}/libexec/smtpd
