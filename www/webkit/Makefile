@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.127 2014/09/29 12:14:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2014/09/30 12:18:09 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.4.5
+V =		2.4.6
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
