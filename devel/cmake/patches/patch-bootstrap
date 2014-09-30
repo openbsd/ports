@@ -1,7 +1,7 @@
-$OpenBSD: patch-bootstrap,v 1.5 2014/09/11 10:24:38 dcoppa Exp $
+$OpenBSD: patch-bootstrap,v 1.6 2014/09/30 15:02:32 dcoppa Exp $
 
 Use Ninja to build CMake
-XXX: broken on arm
+XXX: broken on arm and m88k
 
 --- bootstrap.orig	Thu Jul 31 17:03:58 2014
 +++ bootstrap	Wed Sep  3 08:10:09 2014
@@ -10,7 +10,7 @@ XXX: broken on arm
  else
    # Bootstrapping from a standard UNIX prompt.
 -  cmake_bootstrap_generator="Unix Makefiles"
-+  if arch -s | grep ^arm >/dev/null 2>&1; then
++  if arch -s | egrep -q '^arm|^m88k'; then
 +    cmake_bootstrap_generator="Unix Makefiles"
 +  else
 +    cmake_bootstrap_generator="Ninja"

@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.28 2014/09/30 14:24:31 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.29 2014/09/30 15:02:32 dcoppa Exp $
 
 BUILD_DEPENDS+=	devel/cmake>=3.0.2p4
 
@@ -10,6 +10,7 @@ MAKE_ENV+=LIB${_n}_VERSION=${_v}
 USE_NINJA ?= Yes
 
 # XXX: CMake's built-in ELF parser is broken on arm
+# XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "m88k"
 USE_NINJA = No
 .endif

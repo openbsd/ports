@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2014/09/30 14:24:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.111 2014/09/30 15:02:32 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -23,6 +23,7 @@ WANTLIB =		archive c curl expat form m ncurses \
 			stdc++ z
 
 # XXX: CMake's built-in ELF parser is broken on arm
+# XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "m88k"
 BUILD_DEPENDS =		devel/ninja>=1.5.1
 .endif
@@ -69,7 +70,8 @@ pre-configure:
 		${WRKSRC}/Modules/FindTCL.cmake
 
 # XXX: CMake's built-in ELF parser is broken on arm
-.if ${MACHINE_ARCH} != "arm"
+# XXX: Ninja is broken on m88k
+.if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "m88k"
 do-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
 		${MAKE_JOBS} ${ALL_TARGET}
