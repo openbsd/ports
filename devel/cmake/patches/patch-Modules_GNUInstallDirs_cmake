@@ -1,10 +1,19 @@
-$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.5 2014/09/29 08:45:35 dcoppa Exp $
+$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.6 2014/09/30 07:14:49 dcoppa Exp $
 
 commit d4fdd9c189f85d659f4294f8ec6da3e7e51215ec
 Author: Rolf Eike Beer <eike@sf-mail.de>
 Date:   Tue May 20 18:14:10 2014 +0200
 
 GNUInstallDirs: use the proper default for info and man paths on OpenBSD
+
+commit 33f031295c2bb8d652e4d5f8749e50ef24d7adb6
+Author: David Coppa <dcoppa@gmail.com>
+Date:   Mon Sep 29 12:19:12 2014 +0200
+
+Fix typo in Modules/GNUInstallDirs.cmake (#15176)
+
+Commit d4fdd9c189f85d659f4294f8ec6da3e7e51215ec ("GNUInstallDirs: use the
+proper default for info and man paths on OpenBSD") introduced a typo.
 
 --- Modules/GNUInstallDirs.cmake.orig	Thu Sep 11 15:24:00 2014
 +++ Modules/GNUInstallDirs.cmake	Mon Sep 29 10:37:17 2014
