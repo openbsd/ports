@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_utils_common_c,v 1.3 2014/09/30 07:18:48 dcoppa Exp $
+
+commit a8833b84f46626b6fb9e9f277137f26acc72c64e
+Author: Bernhard Walle <bernhard@bwalle.de>
+Date:   Tue Sep 16 21:20:47 2014 +0200
+
+util: Don't use "\e"
+
+'\e' representing ESC (0x1b) is not C standard, it's an GNU extension.
+https://gcc.gnu.org/onlinedocs/gcc/Character-Escapes.html#Character-Escapes
+
+--- src/utils/common.c.orig	Wed Jun  4 15:26:14 2014
++++ src/utils/common.c	Mon Sep 29 16:58:59 2014
+@@ -362,7 +362,7 @@ void printf_encode(char *txt, size_t maxlen, const u8 
+ 			*txt++ = '\\';
+ 			*txt++ = '\\';
+ 			break;
+-		case '\e':
++		case '\033':
+ 			*txt++ = '\\';
+ 			*txt++ = 'e';
+ 			break;
+@@ -427,7 +427,7 @@ size_t printf_decode(u8 *buf, size_t maxlen, const cha
+ 				pos++;
+ 				break;
+ 			case 'e':
+-				buf[len++] = '\e';
++				buf[len++] = '\033';
+ 				pos++;
+ 				break;
+ 			case 'x':
