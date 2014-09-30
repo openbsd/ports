@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/30 18:17:09 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2014/09/30 18:31:45 ajacoutot Exp $
 
 COMMENT-main=	extra tools for OpenSMTPD
 COMMENT-python=	Python bindings for OpenSMTPD
 COMMENT-mysql=	OpenSMTPD authentication support for MySQL
-COMMENT-pgsql=	OpenSMTPD authentication support for Postgreql
+COMMENT-pgsql=	OpenSMTPD authentication support for PostgreSQL
 
 V=		20140909
 DISTNAME=	OpenSMTPD-extras-${V}
@@ -12,6 +12,8 @@ PKGNAME-mysql=	opensmtpd-extras-mysql-${V}
 PKGNAME-pgsql=	opensmtpd-extras-pgsql-${V}
 PKGNAME-python=	opensmtpd-extras-python-${V}
 CATEGORIES=	mail
+
+REVISION-pgsql=	0
 
 HOMEPAGE=	http://www.opensmtpd.org/
 
