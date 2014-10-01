@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/08 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/01 06:42:36 ajacoutot Exp $
 
 COMMENT =	lightweight webkit-based browser with vi-like controls
 
 DISTNAME =	dwb-2014.03.07
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 
@@ -34,5 +34,6 @@ MAKE_FLAGS =	GTK=3 \
 		X11BASE="${X11BASE}"
 
 USE_GMAKE =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

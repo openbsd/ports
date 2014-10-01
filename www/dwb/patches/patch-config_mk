@@ -1,6 +1,9 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
---- config.mk.orig	Fri Mar  7 11:39:43 2014
-+++ config.mk	Mon Sep  8 20:27:06 2014
+$OpenBSD: patch-config_mk,v 1.2 2014/10/01 06:42:36 ajacoutot Exp $
+
+Drop -DGTK_DISABLE_DEPRECATED to build with gtk>=3.14.
+
+--- config.mk.orig	Fri Mar  7 12:39:43 2014
++++ config.mk	Wed Oct  1 08:34:55 2014
 @@ -146,12 +146,10 @@ BASE_SCRIPT=base.js
  CFLAGS := $(CFLAGS)
  CFLAGS += -Wall 
@@ -16,7 +19,7 @@ $OpenBSD: patch-config_mk,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
  CFLAGS += -D_BSD_SOURCE
  CFLAGS += -D_NETBSD_SOURCE
  CFLAGS += -D__BSD_VISIBLE
-@@ -159,14 +157,14 @@ CFLAGS += -D__BSD_VISIBLE
+@@ -159,21 +157,21 @@ CFLAGS += -D__BSD_VISIBLE
  CFLAGS += $(shell pkg-config --cflags $(LIBS))
  
  ifeq ($(shell pkg-config --exists '$(LIBSOUP) >= 2.38' && echo 1), 1)
@@ -33,3 +36,11 @@ $OpenBSD: patch-config_mk,v 1.1.1.1 2014/09/08 20:01:03 landry Exp $
  endif
  
  CFLAGS_OPTIONS := $(CFLAGS)
+ 
+ ifeq (${USEGTK3}, 1) 
+ CPPFLAGS+=-DGTK_DISABLE_SINGLE_INCLUDES
+-CPPFLAGS+=-DGTK_DISABLE_DEPRECATED
++#CPPFLAGS+=-DGTK_DISABLE_DEPRECATED
+ CPPFLAGS+=-DGDK_DISABLE_DEPRECATED
+ CPPFLAGS+=-DGSEAL_ENABLE
+ M4FLAGS += -DWITH_GTK3=1
