@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/30 12:24:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/01 19:36:34 landry Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
@@ -20,7 +20,8 @@ MODPY_SETUPTOOLS=Yes
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-urwid \
 		textproc/py-pygments
-BUILD_DEPENDS=	devel/py-babel
+BUILD_DEPENDS=	devel/py-babel \
+		textproc/py-sphinx
 TEST_DEPENDS=	devel/py-mock \
 		devel/py-twisted/core \
 		${RUN_DEPENDS}
