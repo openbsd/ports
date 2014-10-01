@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/09/30 15:02:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.112 2014/10/01 08:42:32 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -7,14 +7,19 @@ DPB_PROPERTIES =parallel
 CFLAGS +=	-O1 -fno-stack-protector
 .endif
 
-HOMEPAGE =	http://www.cmake.org/
-CATEGORIES =	devel
 COMMENT =	portable build system
-DISTNAME =	cmake-3.0.2
+
+VER =		3.0.2
+DISTNAME =	cmake-${VER}
 REVISION =	4
-MASTER_SITES =	${HOMEPAGE}files/v3.0/
+
+CATEGORIES =	devel
+
+HOMEPAGE =	http://www.cmake.org/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
+
+MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
