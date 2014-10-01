@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/10/01 09:07:57 jasper Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
 DISTNAME=		yenc-0.3
 PKGNAME=		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 CATEGORIES=		news
 
 HOMEPAGE=		http://www.hellanzb.com/
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-WANTLIB=		${MODPY_WANTLIB}
+WANTLIB=		pthread ${MODPY_WANTLIB}
 
-TEST_DEPENDS=	news/py-yenc
+TEST_DEPENDS=		news/py-yenc
 
 CFLAGS+=		-g -O2
 
