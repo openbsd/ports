@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2014/03/26 08:31:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2014/10/01 08:43:07 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @pkgpath x11/gtk+3,-docs
 @unexec-delete rm -f %D/lib/gtk-3.0/3.0.0/immodules.cache
+@bin bin/gtk-encode-symbolic-svg
 @bin bin/gtk-launch
 @bin bin/gtk-query-immodules-3.0
 @bin bin/gtk3-demo
 @bin bin/gtk3-demo-application
+@bin bin/gtk3-icon-browser
 @bin bin/gtk3-widget-factory
 include/gail-3.0/
 include/gail-3.0/libgail-util/
@@ -14,10 +16,11 @@ include/gail-3.0/libgail-util/gailmisc.h
 include/gail-3.0/libgail-util/gailtextutil.h
 include/gtk-3.0/
 include/gtk-3.0/gdk/
+include/gtk-3.0/gdk/deprecated/
+include/gtk-3.0/gdk/deprecated/gdkcolor.h
 include/gtk-3.0/gdk/gdk.h
 include/gtk-3.0/gdk/gdkapplaunchcontext.h
 include/gtk-3.0/gdk/gdkcairo.h
-include/gtk-3.0/gdk/gdkcolor.h
 include/gtk-3.0/gdk/gdkconfig.h
 include/gtk-3.0/gdk/gdkcursor.h
 include/gtk-3.0/gdk/gdkdevice.h
@@ -123,6 +126,8 @@ include/gtk-3.0/gtk/deprecated/
 include/gtk-3.0/gtk/deprecated/gtkaction.h
 include/gtk-3.0/gtk/deprecated/gtkactiongroup.h
 include/gtk-3.0/gtk/deprecated/gtkactivatable.h
+include/gtk-3.0/gtk/deprecated/gtkalignment.h
+include/gtk-3.0/gtk/deprecated/gtkarrow.h
 include/gtk-3.0/gtk/deprecated/gtkcolorsel.h
 include/gtk-3.0/gtk/deprecated/gtkcolorseldialog.h
 include/gtk-3.0/gtk/deprecated/gtkfontsel.h
@@ -137,14 +142,18 @@ include/gtk-3.0/gtk/deprecated/gtkhseparator.h
 include/gtk-3.0/gtk/deprecated/gtkhsv.h
 include/gtk-3.0/gtk/deprecated/gtkiconfactory.h
 include/gtk-3.0/gtk/deprecated/gtkimagemenuitem.h
+include/gtk-3.0/gtk/deprecated/gtkmisc.h
+include/gtk-3.0/gtk/deprecated/gtknumerableicon.h
 include/gtk-3.0/gtk/deprecated/gtkradioaction.h
 include/gtk-3.0/gtk/deprecated/gtkrc.h
 include/gtk-3.0/gtk/deprecated/gtkrecentaction.h
+include/gtk-3.0/gtk/deprecated/gtkstatusicon.h
 include/gtk-3.0/gtk/deprecated/gtkstock.h
 include/gtk-3.0/gtk/deprecated/gtkstyle.h
 include/gtk-3.0/gtk/deprecated/gtksymboliccolor.h
 include/gtk-3.0/gtk/deprecated/gtktable.h
 include/gtk-3.0/gtk/deprecated/gtktearoffmenuitem.h
+include/gtk-3.0/gtk/deprecated/gtkthemingengine.h
 include/gtk-3.0/gtk/deprecated/gtktoggleaction.h
 include/gtk-3.0/gtk/deprecated/gtkuimanager.h
 include/gtk-3.0/gtk/deprecated/gtkvbbox.h
@@ -163,14 +172,12 @@ include/gtk-3.0/gtk/gtkaccessible.h
 include/gtk-3.0/gtk/gtkactionable.h
 include/gtk-3.0/gtk/gtkactionbar.h
 include/gtk-3.0/gtk/gtkadjustment.h
-include/gtk-3.0/gtk/gtkalignment.h
 include/gtk-3.0/gtk/gtkappchooser.h
 include/gtk-3.0/gtk/gtkappchooserbutton.h
 include/gtk-3.0/gtk/gtkappchooserdialog.h
 include/gtk-3.0/gtk/gtkappchooserwidget.h
 include/gtk-3.0/gtk/gtkapplication.h
 include/gtk-3.0/gtk/gtkapplicationwindow.h
-include/gtk-3.0/gtk/gtkarrow.h
 include/gtk-3.0/gtk/gtkaspectframe.h
 include/gtk-3.0/gtk/gtkassistant.h
 include/gtk-3.0/gtk/gtkbbox.h
@@ -220,6 +227,7 @@ include/gtk-3.0/gtk/gtkentrybuffer.h
 include/gtk-3.0/gtk/gtkentrycompletion.h
 include/gtk-3.0/gtk/gtkenums.h
 include/gtk-3.0/gtk/gtkeventbox.h
+include/gtk-3.0/gtk/gtkeventcontroller.h
 include/gtk-3.0/gtk/gtkexpander.h
 include/gtk-3.0/gtk/gtkfilechooser.h
 include/gtk-3.0/gtk/gtkfilechooserbutton.h
@@ -233,6 +241,15 @@ include/gtk-3.0/gtk/gtkfontchooser.h
 include/gtk-3.0/gtk/gtkfontchooserdialog.h
 include/gtk-3.0/gtk/gtkfontchooserwidget.h
 include/gtk-3.0/gtk/gtkframe.h
+include/gtk-3.0/gtk/gtkgesture.h
+include/gtk-3.0/gtk/gtkgesturedrag.h
+include/gtk-3.0/gtk/gtkgesturelongpress.h
+include/gtk-3.0/gtk/gtkgesturemultipress.h
+include/gtk-3.0/gtk/gtkgesturepan.h
+include/gtk-3.0/gtk/gtkgesturerotate.h
+include/gtk-3.0/gtk/gtkgesturesingle.h
+include/gtk-3.0/gtk/gtkgestureswipe.h
+include/gtk-3.0/gtk/gtkgesturezoom.h
 include/gtk-3.0/gtk/gtkgrid.h
 include/gtk-3.0/gtk/gtkheaderbar.h
 include/gtk-3.0/gtk/gtkicontheme.h
@@ -260,11 +277,9 @@ include/gtk-3.0/gtk/gtkmenuitem.h
 include/gtk-3.0/gtk/gtkmenushell.h
 include/gtk-3.0/gtk/gtkmenutoolbutton.h
 include/gtk-3.0/gtk/gtkmessagedialog.h
-include/gtk-3.0/gtk/gtkmisc.h
 include/gtk-3.0/gtk/gtkmodules.h
 include/gtk-3.0/gtk/gtkmountoperation.h
 include/gtk-3.0/gtk/gtknotebook.h
-include/gtk-3.0/gtk/gtknumerableicon.h
 include/gtk-3.0/gtk/gtkoffscreenwindow.h
 include/gtk-3.0/gtk/gtkorientable.h
 include/gtk-3.0/gtk/gtkoverlay.h
@@ -311,7 +326,6 @@ include/gtk-3.0/gtk/gtkspinner.h
 include/gtk-3.0/gtk/gtkstack.h
 include/gtk-3.0/gtk/gtkstackswitcher.h
 include/gtk-3.0/gtk/gtkstatusbar.h
-include/gtk-3.0/gtk/gtkstatusicon.h
 include/gtk-3.0/gtk/gtkstylecontext.h
 include/gtk-3.0/gtk/gtkstyleproperties.h
 include/gtk-3.0/gtk/gtkstyleprovider.h
@@ -328,7 +342,6 @@ include/gtk-3.0/gtk/gtktextmark.h
 include/gtk-3.0/gtk/gtktexttag.h
 include/gtk-3.0/gtk/gtktexttagtable.h
 include/gtk-3.0/gtk/gtktextview.h
-include/gtk-3.0/gtk/gtkthemingengine.h
 include/gtk-3.0/gtk/gtktogglebutton.h
 include/gtk-3.0/gtk/gtktoggletoolbutton.h
 include/gtk-3.0/gtk/gtktoolbar.h
@@ -355,6 +368,7 @@ include/gtk-3.0/gtk/gtkvolumebutton.h
 include/gtk-3.0/gtk/gtkwidget.h
 include/gtk-3.0/gtk/gtkwidgetpath.h
 include/gtk-3.0/gtk/gtkwindow.h
+include/gtk-3.0/gtk/gtkwindowgroup.h
 include/gtk-3.0/gtk/gtkx.h
 include/gtk-3.0/unix-print/
 include/gtk-3.0/unix-print/gtk/
@@ -400,12 +414,17 @@ lib/pkgconfig/gtk+-3.0.pc
 lib/pkgconfig/gtk+-unix-print-3.0.pc
 lib/pkgconfig/gtk+-x11-3.0.pc
 @man man/man1/broadwayd.1
+@man man/man1/gtk-encode-symbolic-svg.1
 @man man/man1/gtk-launch.1
 @man man/man1/gtk-query-immodules-3.0.1
 @comment @man man/man1/gtk-update-icon-cache.1
+@man man/man1/gtk3-demo.1
+@man man/man1/gtk3-icon-browser.1
+@man man/man1/gtk3-widget-factory.1
 share/aclocal/gtk-3.0.m4
 share/applications/
 share/applications/gtk3-demo.desktop
+share/applications/gtk3-icon-browser.desktop
 share/applications/gtk3-widget-factory.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/gtk+3/
@@ -418,6 +437,7 @@ share/gir-1.0/GdkX11-3.0.gir
 share/gir-1.0/Gtk-3.0.gir
 share/glib-2.0/schemas/org.gtk.Demo.gschema.xml
 share/glib-2.0/schemas/org.gtk.Settings.ColorChooser.gschema.xml
+share/glib-2.0/schemas/org.gtk.Settings.Debug.gschema.xml
 share/glib-2.0/schemas/org.gtk.Settings.FileChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.exampleapp.gschema.xml
 share/gtk-3.0/
@@ -450,6 +470,7 @@ share/gtk-doc/html/gdk3/annotation-glossary.html
 share/gtk-doc/html/gdk3/api-index-3-0.html
 share/gtk-doc/html/gdk3/api-index-3-10.html
 share/gtk-doc/html/gdk3/api-index-3-12.html
+share/gtk-doc/html/gdk3/api-index-3-14.html
 share/gtk-doc/html/gdk3/api-index-3-2.html
 share/gtk-doc/html/gdk3/api-index-3-4.html
 share/gtk-doc/html/gdk3/api-index-3-6.html
@@ -537,6 +558,7 @@ share/gtk-doc/html/gdk3/right_ptr.png
 share/gtk-doc/html/gdk3/right_side.png
 share/gtk-doc/html/gdk3/right_tee.png
 share/gtk-doc/html/gdk3/rightbutton.png
+share/gtk-doc/html/gdk3/rn02.html
 share/gtk-doc/html/gdk3/rotated-text.png
 share/gtk-doc/html/gdk3/rtl_logo.png
 share/gtk-doc/html/gdk3/sailboat.png
@@ -575,10 +597,12 @@ share/gtk-doc/html/gtk3/Builder.html
 share/gtk-doc/html/gtk3/ButtonWidgets.html
 share/gtk-doc/html/gtk3/DeprecatedObjects.html
 share/gtk-doc/html/gtk3/DisplayWidgets.html
+share/gtk-doc/html/gtk3/Gestures.html
 share/gtk-doc/html/gtk3/GtkAboutDialog.html
 share/gtk-doc/html/gtk3/GtkAccelLabel.html
 share/gtk-doc/html/gtk3/GtkAccessible.html
 share/gtk-doc/html/gtk3/GtkAction.html
+share/gtk-doc/html/gtk3/GtkActionBar.html
 share/gtk-doc/html/gtk3/GtkActionGroup.html
 share/gtk-doc/html/gtk3/GtkActionable.html
 share/gtk-doc/html/gtk3/GtkActivatable.html
@@ -634,6 +658,7 @@ share/gtk-doc/html/gtk3/GtkEntry.html
 share/gtk-doc/html/gtk3/GtkEntryBuffer.html
 share/gtk-doc/html/gtk3/GtkEntryCompletion.html
 share/gtk-doc/html/gtk3/GtkEventBox.html
+share/gtk-doc/html/gtk3/GtkEventController.html
 share/gtk-doc/html/gtk3/GtkExpander.html
 share/gtk-doc/html/gtk3/GtkFileChooser.html
 share/gtk-doc/html/gtk3/GtkFileChooserButton.html
@@ -649,6 +674,15 @@ share/gtk-doc/html/gtk3/GtkFontChooserWidget.html
 share/gtk-doc/html/gtk3/GtkFontSelection.html
 share/gtk-doc/html/gtk3/GtkFontSelectionDialog.html
 share/gtk-doc/html/gtk3/GtkFrame.html
+share/gtk-doc/html/gtk3/GtkGesture.html
+share/gtk-doc/html/gtk3/GtkGestureDrag.html
+share/gtk-doc/html/gtk3/GtkGestureLongPress.html
+share/gtk-doc/html/gtk3/GtkGestureMultiPress.html
+share/gtk-doc/html/gtk3/GtkGesturePan.html
+share/gtk-doc/html/gtk3/GtkGestureRotate.html
+share/gtk-doc/html/gtk3/GtkGestureSingle.html
+share/gtk-doc/html/gtk3/GtkGestureSwipe.html
+share/gtk-doc/html/gtk3/GtkGestureZoom.html
 share/gtk-doc/html/gtk3/GtkGrid.html
 share/gtk-doc/html/gtk3/GtkHBox.html
 share/gtk-doc/html/gtk3/GtkHButtonBox.html
@@ -792,10 +826,12 @@ share/gtk-doc/html/gtk3/TreeWidgetObjects.html
 share/gtk-doc/html/gtk3/WindowWidgets.html
 share/gtk-doc/html/gtk3/aboutdialog.png
 share/gtk-doc/html/gtk3/accel-label.png
+share/gtk-doc/html/gtk3/action-bar.png
 share/gtk-doc/html/gtk3/annotation-glossary.html
 share/gtk-doc/html/gtk3/api-index-3-0.html
 share/gtk-doc/html/gtk3/api-index-3-10.html
 share/gtk-doc/html/gtk3/api-index-3-12.html
+share/gtk-doc/html/gtk3/api-index-3-14.html
 share/gtk-doc/html/gtk3/api-index-3-2.html
 share/gtk-doc/html/gtk3/api-index-3-4.html
 share/gtk-doc/html/gtk3/api-index-3-6.html
@@ -804,7 +840,6 @@ share/gtk-doc/html/gtk3/api-index-deprecated.html
 share/gtk-doc/html/gtk3/api-index-full.html
 share/gtk-doc/html/gtk3/appchooserbutton.png
 share/gtk-doc/html/gtk3/appchooserdialog.png
-share/gtk-doc/html/gtk3/application-exit.png
 share/gtk-doc/html/gtk3/arrows.png
 share/gtk-doc/html/gtk3/assistant.png
 share/gtk-doc/html/gtk3/background.png
@@ -824,11 +859,12 @@ share/gtk-doc/html/gtk3/ch01s04.html
 share/gtk-doc/html/gtk3/ch01s05.html
 share/gtk-doc/html/gtk3/ch02.html
 share/gtk-doc/html/gtk3/ch03.html
-share/gtk-doc/html/gtk3/ch24s02.html
-share/gtk-doc/html/gtk3/ch26s02.html
-share/gtk-doc/html/gtk3/ch28s02.html
-share/gtk-doc/html/gtk3/ch28s03.html
+share/gtk-doc/html/gtk3/ch25s02.html
+share/gtk-doc/html/gtk3/ch27s02.html
+share/gtk-doc/html/gtk3/ch29s02.html
+share/gtk-doc/html/gtk3/ch29s03.html
 share/gtk-doc/html/gtk3/chap-drawing-model.html
+share/gtk-doc/html/gtk3/chap-input-handling.html
 share/gtk-doc/html/gtk3/check-button.png
 share/gtk-doc/html/gtk3/checklist-gdkeventexpose-region.html
 share/gtk-doc/html/gtk3/checklist-modifiers.html
@@ -839,41 +875,14 @@ share/gtk-doc/html/gtk3/colorchooser.png
 share/gtk-doc/html/gtk3/combo-box-entry.png
 share/gtk-doc/html/gtk3/combo-box-text.png
 share/gtk-doc/html/gtk3/combo-box.png
-share/gtk-doc/html/gtk3/dialog-error.png
-share/gtk-doc/html/gtk3/dialog-information.png
-share/gtk-doc/html/gtk3/dialog-password.png
-share/gtk-doc/html/gtk3/dialog-question.png
-share/gtk-doc/html/gtk3/dialog-warning.png
-share/gtk-doc/html/gtk3/document-new.png
-share/gtk-doc/html/gtk3/document-open.png
-share/gtk-doc/html/gtk3/document-print-preview.png
-share/gtk-doc/html/gtk3/document-print.png
-share/gtk-doc/html/gtk3/document-properties.png
-share/gtk-doc/html/gtk3/document-revert-ltr.png
-share/gtk-doc/html/gtk3/document-revert-rtl.png
-share/gtk-doc/html/gtk3/document-save-as.png
-share/gtk-doc/html/gtk3/document-save.png
 share/gtk-doc/html/gtk3/down-center.png
 share/gtk-doc/html/gtk3/down-end.png
 share/gtk-doc/html/gtk3/down-start.png
 share/gtk-doc/html/gtk3/drawing.png
-share/gtk-doc/html/gtk3/drive-harddisk.png
 share/gtk-doc/html/gtk3/ease-in-out.png
 share/gtk-doc/html/gtk3/ease-in.png
 share/gtk-doc/html/gtk3/ease-out.png
 share/gtk-doc/html/gtk3/ease.png
-share/gtk-doc/html/gtk3/edit-clear.png
-share/gtk-doc/html/gtk3/edit-copy.png
-share/gtk-doc/html/gtk3/edit-cut.png
-share/gtk-doc/html/gtk3/edit-delete.png
-share/gtk-doc/html/gtk3/edit-find-replace.png
-share/gtk-doc/html/gtk3/edit-find.png
-share/gtk-doc/html/gtk3/edit-paste.png
-share/gtk-doc/html/gtk3/edit-redo-ltr.png
-share/gtk-doc/html/gtk3/edit-redo-rtl.png
-share/gtk-doc/html/gtk3/edit-select-all.png
-share/gtk-doc/html/gtk3/edit-undo-ltr.png
-share/gtk-doc/html/gtk3/edit-undo-rtl.png
 share/gtk-doc/html/gtk3/entry.png
 share/gtk-doc/html/gtk3/exampleapp.png
 share/gtk-doc/html/gtk3/expanders.png
@@ -884,21 +893,8 @@ share/gtk-doc/html/gtk3/file-button.png
 share/gtk-doc/html/gtk3/filechooser.png
 share/gtk-doc/html/gtk3/flow-box.png
 share/gtk-doc/html/gtk3/focus.png
-share/gtk-doc/html/gtk3/folder.png
 share/gtk-doc/html/gtk3/font-button.png
 share/gtk-doc/html/gtk3/fontchooser.png
-share/gtk-doc/html/gtk3/format-indent-less-ltr.png
-share/gtk-doc/html/gtk3/format-indent-less-rtl.png
-share/gtk-doc/html/gtk3/format-indent-more-ltr.png
-share/gtk-doc/html/gtk3/format-indent-more-rtl.png
-share/gtk-doc/html/gtk3/format-justify-center.png
-share/gtk-doc/html/gtk3/format-justify-fill.png
-share/gtk-doc/html/gtk3/format-justify-left.png
-share/gtk-doc/html/gtk3/format-justify-right.png
-share/gtk-doc/html/gtk3/format-text-bold.png
-share/gtk-doc/html/gtk3/format-text-italic.png
-share/gtk-doc/html/gtk3/format-text-strikethrough.png
-share/gtk-doc/html/gtk3/format-text-underline.png
 share/gtk-doc/html/gtk3/frame-gap.png
 share/gtk-doc/html/gtk3/frame.png
 share/gtk-doc/html/gtk3/frames.png
@@ -912,42 +908,16 @@ share/gtk-doc/html/gtk3/getting-started-app7.png
 share/gtk-doc/html/gtk3/getting-started-app8.png
 share/gtk-doc/html/gtk3/getting-started-app9.png
 share/gtk-doc/html/gtk3/glossary.html
-share/gtk-doc/html/gtk3/go-bottom.png
-share/gtk-doc/html/gtk3/go-down.png
-share/gtk-doc/html/gtk3/go-first-ltr.png
-share/gtk-doc/html/gtk3/go-first-rtl.png
-share/gtk-doc/html/gtk3/go-home.png
-share/gtk-doc/html/gtk3/go-jump-ltr.png
-share/gtk-doc/html/gtk3/go-jump-rtl.png
-share/gtk-doc/html/gtk3/go-last-ltr.png
-share/gtk-doc/html/gtk3/go-last-rtl.png
-share/gtk-doc/html/gtk3/go-next-ltr.png
-share/gtk-doc/html/gtk3/go-next-rtl.png
-share/gtk-doc/html/gtk3/go-previous-ltr.png
-share/gtk-doc/html/gtk3/go-previous-rtl.png
-share/gtk-doc/html/gtk3/go-top.png
-share/gtk-doc/html/gtk3/go-up.png
 share/gtk-doc/html/gtk3/gradient1.png
 share/gtk-doc/html/gtk3/gradient2.png
 share/gtk-doc/html/gtk3/gradient3.png
 share/gtk-doc/html/gtk3/gradient4.png
 share/gtk-doc/html/gtk3/grid-packing.png
-share/gtk-doc/html/gtk3/gtk-apply.png
 share/gtk-doc/html/gtk3/gtk-broadway.html
 share/gtk-doc/html/gtk3/gtk-building.html
-share/gtk-doc/html/gtk3/gtk-cancel.png
-share/gtk-doc/html/gtk3/gtk-caps-lock-warning.png
-share/gtk-doc/html/gtk3/gtk-color-picker.png
 share/gtk-doc/html/gtk3/gtk-compiling.html
-share/gtk-doc/html/gtk3/gtk-connect.png
-share/gtk-doc/html/gtk3/gtk-convert.png
-share/gtk-doc/html/gtk3/gtk-disconnect.png
-share/gtk-doc/html/gtk3/gtk-dnd-multiple.png
-share/gtk-doc/html/gtk3/gtk-dnd.png
-share/gtk-doc/html/gtk3/gtk-edit.png
-share/gtk-doc/html/gtk3/gtk-font.png
+share/gtk-doc/html/gtk3/gtk-encode-symbolic-svg.html
 share/gtk-doc/html/gtk3/gtk-getting-started.html
-share/gtk-doc/html/gtk3/gtk-index.png
 share/gtk-doc/html/gtk3/gtk-launch.html
 share/gtk-doc/html/gtk3/gtk-migrating-2-to-3.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkGrid.html
@@ -961,27 +931,15 @@ share/gtk-doc/html/gtk3/gtk-migrating-checklist.html
 share/gtk-doc/html/gtk3/gtk-migrating-smclient-GtkApplication.html
 share/gtk-doc/html/gtk3/gtk-migrating-theme-GtkStyleContext-engines.html
 share/gtk-doc/html/gtk3/gtk-migrating-unique-GtkApplication.html
-share/gtk-doc/html/gtk3/gtk-no.png
-share/gtk-doc/html/gtk3/gtk-ok.png
-share/gtk-doc/html/gtk3/gtk-orientation-landscape.png
-share/gtk-doc/html/gtk3/gtk-orientation-portrait.png
-share/gtk-doc/html/gtk3/gtk-orientation-reverse-landscape.png
-share/gtk-doc/html/gtk3/gtk-orientation-reverse-portrait.png
 share/gtk-doc/html/gtk3/gtk-osx.html
-share/gtk-doc/html/gtk3/gtk-page-setup.png
-share/gtk-doc/html/gtk3/gtk-preferences.png
 share/gtk-doc/html/gtk3/gtk-query-immodules-3.0.html
 share/gtk-doc/html/gtk3/gtk-question-index.html
 share/gtk-doc/html/gtk3/gtk-resources.html
 share/gtk-doc/html/gtk3/gtk-running.html
-share/gtk-doc/html/gtk3/gtk-select-color.png
-share/gtk-doc/html/gtk3/gtk-undelete-ltr.png
-share/gtk-doc/html/gtk3/gtk-undelete-rtl.png
 share/gtk-doc/html/gtk3/gtk-update-icon-cache.html
 share/gtk-doc/html/gtk3/gtk-wayland.html
 share/gtk-doc/html/gtk3/gtk-windows.html
 share/gtk-doc/html/gtk3/gtk-x11.html
-share/gtk-doc/html/gtk3/gtk-yes.png
 share/gtk-doc/html/gtk3/gtk.html
 share/gtk-doc/html/gtk3/gtk3-Accelerator-Maps.html
 share/gtk-doc/html/gtk3/gtk3-Bindings.html
@@ -990,7 +948,6 @@ share/gtk-doc/html/gtk3/gtk3-Drag-and-Drop.html
 share/gtk-doc/html/gtk3/gtk3-Feature-Test-Macros.html
 share/gtk-doc/html/gtk3/gtk3-Filesystem-utilities.html
 share/gtk-doc/html/gtk3/gtk3-General.html
-share/gtk-doc/html/gtk3/gtk3-GtkActionBar.html
 share/gtk-doc/html/gtk3/gtk3-GtkGradient.html
 share/gtk-doc/html/gtk3/gtk3-GtkStyleProperties.html
 share/gtk-doc/html/gtk3/gtk3-GtkSymbolicColor.html
@@ -1005,21 +962,22 @@ share/gtk-doc/html/gtk3/gtk3-Standard-Enumerations.html
 share/gtk-doc/html/gtk3/gtk3-Stock-Items.html
 share/gtk-doc/html/gtk3/gtk3-Testing.html
 share/gtk-doc/html/gtk3/gtk3-Themeable-Stock-Images.html
+share/gtk-doc/html/gtk3/gtk3-demo.html
+share/gtk-doc/html/gtk3/gtk3-icon-browser.html
+share/gtk-doc/html/gtk3/gtk3-widget-factory.html
 share/gtk-doc/html/gtk3/gtk3.devhelp2
 share/gtk-doc/html/gtk3/gtkbase.html
 share/gtk-doc/html/gtk3/gtkobjects.html
 share/gtk-doc/html/gtk3/handles.png
 share/gtk-doc/html/gtk3/headerbar.png
 share/gtk-doc/html/gtk3/hello-world.png
-share/gtk-doc/html/gtk3/help-about.png
-share/gtk-doc/html/gtk3/help-contents.png
 share/gtk-doc/html/gtk3/home.png
 share/gtk-doc/html/gtk3/icon-view.png
-share/gtk-doc/html/gtk3/image-missing.png
 share/gtk-doc/html/gtk3/image.png
 share/gtk-doc/html/gtk3/index.html
 share/gtk-doc/html/gtk3/index.sgml
 share/gtk-doc/html/gtk3/info-bar.png
+share/gtk-doc/html/gtk3/inspector.png
 share/gtk-doc/html/gtk3/label.png
 share/gtk-doc/html/gtk3/layout-btlr.png
 share/gtk-doc/html/gtk3/layout-btrl.png
@@ -1037,36 +995,18 @@ share/gtk-doc/html/gtk3/left.png
 share/gtk-doc/html/gtk3/levelbar.png
 share/gtk-doc/html/gtk3/linear.png
 share/gtk-doc/html/gtk3/link-button.png
-share/gtk-doc/html/gtk3/list-add.png
 share/gtk-doc/html/gtk3/list-and-tree.png
 share/gtk-doc/html/gtk3/list-box.png
-share/gtk-doc/html/gtk3/list-remove.png
 share/gtk-doc/html/gtk3/lock-button.png
 share/gtk-doc/html/gtk3/lockbutton-locked.png
 share/gtk-doc/html/gtk3/lockbutton-sorry.png
 share/gtk-doc/html/gtk3/lockbutton-unlocked.png
 share/gtk-doc/html/gtk3/lockbutton.png
-share/gtk-doc/html/gtk3/media-floppy.png
-share/gtk-doc/html/gtk3/media-optical.png
-share/gtk-doc/html/gtk3/media-playback-pause.png
-share/gtk-doc/html/gtk3/media-playback-start-ltr.png
-share/gtk-doc/html/gtk3/media-playback-start-rtl.png
-share/gtk-doc/html/gtk3/media-playback-stop.png
-share/gtk-doc/html/gtk3/media-record.png
-share/gtk-doc/html/gtk3/media-seek-backward-ltr.png
-share/gtk-doc/html/gtk3/media-seek-backward-rtl.png
-share/gtk-doc/html/gtk3/media-seek-forward-ltr.png
-share/gtk-doc/html/gtk3/media-seek-forward-rtl.png
-share/gtk-doc/html/gtk3/media-skip-backward-ltr.png
-share/gtk-doc/html/gtk3/media-skip-backward-rtl.png
-share/gtk-doc/html/gtk3/media-skip-forward-ltr.png
-share/gtk-doc/html/gtk3/media-skip-forward-rtl.png
 share/gtk-doc/html/gtk3/menu-button.png
 share/gtk-doc/html/gtk3/menubar.png
 share/gtk-doc/html/gtk3/messagedialog.png
 share/gtk-doc/html/gtk3/migrating.html
 share/gtk-doc/html/gtk3/multiline-text.png
-share/gtk-doc/html/gtk3/network-idle.png
 share/gtk-doc/html/gtk3/notebook.png
 share/gtk-doc/html/gtk3/numerableicon.png
 share/gtk-doc/html/gtk3/numerableicon2.png
@@ -1076,11 +1016,6 @@ share/gtk-doc/html/gtk3/panes.png
 share/gtk-doc/html/gtk3/placessidebar.png
 share/gtk-doc/html/gtk3/platform-support.html
 share/gtk-doc/html/gtk3/printdialog.png
-share/gtk-doc/html/gtk3/printer-error.png
-share/gtk-doc/html/gtk3/printer-info.png
-share/gtk-doc/html/gtk3/printer-paused.png
-share/gtk-doc/html/gtk3/printer-warning.png
-share/gtk-doc/html/gtk3/process-stop.png
 share/gtk-doc/html/gtk3/progressbar.png
 share/gtk-doc/html/gtk3/pt06.html
 share/gtk-doc/html/gtk3/radio-group.png
@@ -1093,6 +1028,7 @@ share/gtk-doc/html/gtk3/right.png
 share/gtk-doc/html/gtk3/scales.png
 share/gtk-doc/html/gtk3/scrollbar.png
 share/gtk-doc/html/gtk3/scrolledwindow.png
+share/gtk-doc/html/gtk3/search-bar.png
 share/gtk-doc/html/gtk3/search-entry.png
 share/gtk-doc/html/gtk3/separator.png
 share/gtk-doc/html/gtk3/slices.png
@@ -1104,33 +1040,20 @@ share/gtk-doc/html/gtk3/stackswitcher.png
 share/gtk-doc/html/gtk3/statusbar.png
 share/gtk-doc/html/gtk3/style.css
 share/gtk-doc/html/gtk3/switch.png
-share/gtk-doc/html/gtk3/system-run.png
-share/gtk-doc/html/gtk3/text-x-generic.png
 share/gtk-doc/html/gtk3/theming.html
 share/gtk-doc/html/gtk3/toggle-button.png
 share/gtk-doc/html/gtk3/toolbar.png
 share/gtk-doc/html/gtk3/toolpalette.png
-share/gtk-doc/html/gtk3/tools-check-spelling.png
 share/gtk-doc/html/gtk3/tree-view-coordinates.png
 share/gtk-doc/html/gtk3/up-center.png
 share/gtk-doc/html/gtk3/up-end.png
 share/gtk-doc/html/gtk3/up-insensitive.png
 share/gtk-doc/html/gtk3/up-start.png
 share/gtk-doc/html/gtk3/up.png
-share/gtk-doc/html/gtk3/view-fullscreen.png
-share/gtk-doc/html/gtk3/view-refresh.png
-share/gtk-doc/html/gtk3/view-restore.png
-share/gtk-doc/html/gtk3/view-sort-ascending.png
-share/gtk-doc/html/gtk3/view-sort-descending.png
 share/gtk-doc/html/gtk3/volumebutton.png
 share/gtk-doc/html/gtk3/widget-hvalign.png
-share/gtk-doc/html/gtk3/window-close.png
 share/gtk-doc/html/gtk3/window-default.png
 share/gtk-doc/html/gtk3/window.png
-share/gtk-doc/html/gtk3/zoom-fit-best.png
-share/gtk-doc/html/gtk3/zoom-in.png
-share/gtk-doc/html/gtk3/zoom-original.png
-share/gtk-doc/html/gtk3/zoom-out.png
 share/icons/hicolor/16x16/apps/gtk3-demo.png
 share/icons/hicolor/16x16/apps/gtk3-widget-factory.png
 share/icons/hicolor/22x22/apps/gtk3-demo.png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2014/07/25 12:12:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2014/10/01 08:43:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,19 +6,17 @@ COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 
-GNOME_VERSION=		3.12.2
+GNOME_VERSION=		3.14.1
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 
-REVISION-main=		1
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                1200.0   # 1200.0
-SHARED_LIBS +=  gtk-3                1200.0   # 1200.0
+SHARED_LIBS +=  gdk-3                1400.0   # 1400.1
+SHARED_LIBS +=  gtk-3                1400.0   # 1400.1
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -54,7 +52,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps need more icons than the stock ones
 # some apps require symbolic icons with no fallback
 # some apps needs the svg version of the icon
-# (+see settings.ini in post-install)
+# (+see settings.ini in post-install and bin/gtk-encode-symbolic-svg)
 RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic #pulls in gnome-icon-theme+librsvg
 
 WANTLIB-main += ${WANTLIB}
