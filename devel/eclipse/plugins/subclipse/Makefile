@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/17 12:38:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/01 07:39:23 ajacoutot Exp $
 
 COMMENT=		SubVersion plug-in for Eclipse IDE
 
@@ -18,12 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 HOMEPAGE=		http://subclipse.tigris.org/
 
 MASTER_SITES=		http://subclipse.tigris.org/files/documents/906/37653/
-
-# Try to use in-tree lynx since tigris' brain-dead web site insists
-# on doing a redirection loop if you don't handle cookes, which default
-# FETCH_CMD does not.
-FETCH_CMD=		lynx -accept_all_cookies -source >${DISTDIR}/$$f
-BUILD_DEPENDS+=		www/lynx
 
 # Distfile is an Update Site download, unpack features jar manually, 
 # still tar plugins over into ${PREFIX}
