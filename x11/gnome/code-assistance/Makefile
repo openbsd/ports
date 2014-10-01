@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/24 16:16:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/10/01 08:53:49 jasper Exp $
 
 COMMENT=		code assistance services for GNOME
 
 GNOME_PROJECT=		gnome-code-assistance
 GNOME_VERSION=		0.3.1
 
-REVISION = 1
+REVISION =		2
 
 CATEGORIES=		devel
 
@@ -13,7 +13,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += pcre pthread vala-0.24 z
+WANTLIB += pcre pthread vala-0.26 z
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -44,5 +44,9 @@ CONFIGURE_ARGS +=	--disable-go
 # python3 vs. python3.3
 post-extract:
 	perl -pi -e 's,PYTHON_VERSION_MAJOR,PYTHON_VERSION,g' ${WRKSRC}/backends/*/*.in
+
+# XXX: Remove when updating
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.mk>

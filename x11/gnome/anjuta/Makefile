@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2014/04/21 16:08:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2014/10/01 08:53:48 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.12.0
-REVISION=		2
+REVISION=		4
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -32,7 +32,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 secret-1 serf-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
 WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
 WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1
-WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.24
+WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.26
 WANTLIB += vte2_90 webkit2gtk-3.0 webp xcb xcb-render xcb-shm
 WANTLIB += xml2 xslt z
 WANTLIB += ${MODPY_WANTLIB}
@@ -51,7 +51,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion \
 			devel/vte3 \
-			lang/vala \
+			lang/vala>=0.26 \
 			textproc/icu4c \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
@@ -83,5 +83,11 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/anjuta/*.{a,la}
+
+#
+# XXX: Remove after update
+#
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.mk>

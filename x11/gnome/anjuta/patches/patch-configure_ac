@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.16 2014/10/01 08:53:49 jasper Exp $
+
+Recognize vala 0.26
+
+--- configure.ac.orig	Tue Sep 30 01:33:22 2014
++++ configure.ac	Tue Sep 30 01:33:37 2014
+@@ -318,7 +318,7 @@ if test "$user_disabled_vala" = 1; then
+ else
+         AC_MSG_RESULT(no)
+ 	AC_MSG_CHECKING(if libvala is available)
+-	m4_foreach([VERSION], [[0.18], [0.20], [0.22], [0.24]],
++	m4_foreach([VERSION], [[0.18], [0.20], [0.22], [0.24], [0.26]],
+ 		[PKG_CHECK_EXISTS([ libvala-VERSION ],
+ 			 [ valaver="-VERSION" ])
+ 			 ])
