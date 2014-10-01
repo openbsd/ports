@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2014/09/27 20:37:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2014/10/01 06:20:06 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -10,8 +10,9 @@ PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
-		jnr-posix.20130822.tar.gz:1 \
-		${JRUBY_LAUNCHER_GEM}:2
+		jnr-posix-20140930.tar.gz:0 \
+		${JRUBY_LAUNCHER_GEM}:1
+REVISION =	0
 
 HOMEPAGE =	http://www.jruby.org/
 
@@ -22,8 +23,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://jruby.org.s3.amazonaws.com/downloads/${V}/
 MASTER_SITES0 =	http://www.distfiles.nl/
-MASTER_SITES1 =	http://spacehopper.org/mirrors/
-MASTER_SITES2 =	${MASTER_SITE_RUBYGEMS}
+MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
 MODJAVA_VER =	1.7+
