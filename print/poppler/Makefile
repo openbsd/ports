@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2014/09/13 16:36:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2014/10/01 21:44:48 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.26.4
+V=		0.26.5
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
