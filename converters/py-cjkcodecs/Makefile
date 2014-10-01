@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/06/21 11:26:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2014/10/01 08:58:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python unicode codecs for Chinese, Japanese and Korean
 
 DISTNAME=	cjkcodecs-1.1.1
 PKGNAME=	py-${DISTNAME}
-REVISION =	8
+REVISION =	9
 CATEGORIES=	converters
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -19,6 +19,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cjkpython.berlios/}
 NO_TEST=	Yes
 
 MODULES=	lang/python
-WANTLIB=	${MODPY_WANTLIB}
+WANTLIB=	pthread ${MODPY_WANTLIB}
 
 .include <bsd.port.mk>

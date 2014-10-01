@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/22 18:14:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/01 08:58:23 jasper Exp $
 
 COMMENT = 	OpenType to BDF font converter
 CATEGORIES = 	converters fonts
 HOMEPAGE = 	http://www.math.nmsu.edu/~mleisher/Software/otf2bdf/
 DISTNAME = 	otf2bdf-3.1
+REVISION =	0
 MASTER_SITES = 	${HOMEPAGE}
 EXTRACT_SUFX = 	.tgz
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c freetype z
+
 CONFIGURE_STYLE = 	gnu
 
 do-install:

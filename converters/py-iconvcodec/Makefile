@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/21 11:29:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/01 08:58:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	universal unicode codec using iconv for Python
 
 DISTNAME=	iconvcodec-1.1.2
 PKGNAME=	py-${DISTNAME}
-REVISION =	7
+REVISION =	8
 CATEGORIES=	converters
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -22,6 +22,6 @@ NO_TEST=	Yes
 
 MODULES=	lang/python converters/libiconv
 
-WANTLIB=	${MODPY_WANTLIB}
+WANTLIB=	pthread ${MODPY_WANTLIB}
 
 .include <bsd.port.mk>
