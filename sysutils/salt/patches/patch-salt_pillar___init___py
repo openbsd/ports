@@ -1,0 +1,32 @@
+$OpenBSD: patch-salt_pillar___init___py,v 1.1 2014/10/01 13:48:48 ajacoutot Exp $
+
+From edbe6f9d4f454442e09dbdc7bc406a0f2157c68e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@invalid.example.org>
+Date: Sun, 28 Sep 2014 19:18:56 +0200
+Subject: [PATCH] Return pillar data if not external pillar data
+
+--- salt/pillar/__init__.py.orig	Tue Sep  9 22:42:17 2014
++++ salt/pillar/__init__.py	Wed Oct  1 15:47:34 2014
+@@ -480,18 +480,18 @@ class Pillar(object):
+ 
+     def ext_pillar(self, pillar, pillar_dirs):
+         '''
+-        Render the external pillar data
++        Render the external pillar data, and merge with pillar data
+         '''
+         if 'ext_pillar' not in self.opts:
+-            return {}
++            return pillar
+         if not isinstance(self.opts['ext_pillar'], list):
+             log.critical('The "ext_pillar" option is malformed')
+-            return {}
++            return pillar
+         ext = None
+         for run in self.opts['ext_pillar']:
+             if not isinstance(run, dict):
+                 log.critical('The "ext_pillar" option is malformed')
+-                return {}
++                return pillar
+             for key, val in run.items():
+                 if key not in self.ext_pillars:
+                     err = ('Specified ext_pillar interface {0} is '
