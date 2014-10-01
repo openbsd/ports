@@ -1,9 +1,9 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.11 2014/03/26 08:28:15 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.12 2014/10/01 08:39:25 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653555
 
---- gio/gunixmount.c.orig	Thu Mar 20 04:50:45 2014
-+++ gio/gunixmount.c	Tue Mar 25 08:12:54 2014
+--- gio/gunixmount.c.orig	Mon Sep 22 15:42:12 2014
++++ gio/gunixmount.c	Sat Sep 27 13:24:16 2014
 @@ -27,6 +27,12 @@
  #include <sys/wait.h>
  #include <unistd.h>
@@ -17,7 +17,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=653555
  #include <glib.h>
  #include "gsubprocess.h"
  #include "gioenums.h"
-@@ -355,12 +361,20 @@ g_unix_mount_eject (GMount             *mount,
+@@ -358,12 +364,20 @@ g_unix_mount_eject (GMount             *mount,
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
    char *argv[] = {"eject", NULL, NULL};
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2014/09/23 06:15:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2014/10/01 08:39:25 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -333,8 +333,8 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.4002.0-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.4002.0-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.4200.0-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.4200.0-gdb.py
 share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
@@ -508,6 +508,7 @@ share/gtk-doc/html/gio/api-index-2-34.html
 share/gtk-doc/html/gio/api-index-2-36.html
 share/gtk-doc/html/gio/api-index-2-38.html
 share/gtk-doc/html/gio/api-index-2-40.html
+share/gtk-doc/html/gio/api-index-2-42.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -636,6 +637,7 @@ share/gtk-doc/html/glib/api-index-2-36.html
 share/gtk-doc/html/glib/api-index-2-38.html
 share/gtk-doc/html/glib/api-index-2-4.html
 share/gtk-doc/html/glib/api-index-2-40.html
+share/gtk-doc/html/glib/api-index-2-42.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
 share/gtk-doc/html/glib/api-index-deprecated.html
@@ -763,6 +765,8 @@ share/gtk-doc/html/gobject/api-index-2-34.html
 share/gtk-doc/html/gobject/api-index-2-36.html
 share/gtk-doc/html/gobject/api-index-2-38.html
 share/gtk-doc/html/gobject/api-index-2-4.html
+share/gtk-doc/html/gobject/api-index-2-40.html
+share/gtk-doc/html/gobject/api-index-2-42.html
 share/gtk-doc/html/gobject/api-index-2-6.html
 share/gtk-doc/html/gobject/api-index-2-8.html
 share/gtk-doc/html/gobject/api-index-deprecated.html
