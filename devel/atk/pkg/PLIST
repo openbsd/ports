@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/03/26 08:29:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/10/01 08:40:07 ajacoutot Exp $
 include/atk-1.0/
 include/atk-1.0/atk/
 include/atk-1.0/atk/atk-enum-types.h
@@ -40,7 +40,6 @@ lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.a
 lib/libatk-1.0.la
 @lib lib/libatk-1.0.so.${LIBatk-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/atk.pc
 share/gir-1.0/
 share/gir-1.0/Atk-1.0.gir
