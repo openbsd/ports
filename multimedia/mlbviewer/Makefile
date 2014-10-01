@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/01 08:46:06 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/01 09:17:57 ajacoutot Exp $
 
 COMMENT =		collection of tools for MLB.com content and MLB.TV
 
@@ -9,6 +9,7 @@ PKGNAME =		mlbviewer-${Y}.${V}
 CATEGORIES =		multimedia
 HOMEPAGE =		http://sourceforge.net/p/mlbviewer/wiki/Home/
 MAINTAINER =		Peter Hessler <phessler@openbsd.org>
+REVISION =		0
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
