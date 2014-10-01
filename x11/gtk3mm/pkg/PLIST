@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/03/26 08:32:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/10/01 08:43:38 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -98,6 +98,8 @@ include/gtkmm-3.0/gtkmm/cellrenderertoggle.h
 include/gtkmm-3.0/gtkmm/cellview.h
 include/gtkmm-3.0/gtkmm/checkbutton.h
 include/gtkmm-3.0/gtkmm/checkmenuitem.h
+include/gtkmm-3.0/gtkmm/childpropertyproxy.h
+include/gtkmm-3.0/gtkmm/childpropertyproxy_base.h
 include/gtkmm-3.0/gtkmm/clipboard.h
 include/gtkmm-3.0/gtkmm/colorbutton.h
 include/gtkmm-3.0/gtkmm/colorchooser.h
@@ -115,6 +117,7 @@ include/gtkmm-3.0/gtkmm/entrybuffer.h
 include/gtkmm-3.0/gtkmm/entrycompletion.h
 include/gtkmm-3.0/gtkmm/enums.h
 include/gtkmm-3.0/gtkmm/eventbox.h
+include/gtkmm-3.0/gtkmm/eventcontroller.h
 include/gtkmm-3.0/gtkmm/expander.h
 include/gtkmm-3.0/gtkmm/filechooser.h
 include/gtkmm-3.0/gtkmm/filechooserbutton.h
@@ -130,6 +133,15 @@ include/gtkmm-3.0/gtkmm/fontchooserdialog.h
 include/gtkmm-3.0/gtkmm/fontchooserwidget.h
 include/gtkmm-3.0/gtkmm/fontselection.h
 include/gtkmm-3.0/gtkmm/frame.h
+include/gtkmm-3.0/gtkmm/gesture.h
+include/gtkmm-3.0/gtkmm/gesturedrag.h
+include/gtkmm-3.0/gtkmm/gesturelongpress.h
+include/gtkmm-3.0/gtkmm/gesturemultipress.h
+include/gtkmm-3.0/gtkmm/gesturepan.h
+include/gtkmm-3.0/gtkmm/gesturerotate.h
+include/gtkmm-3.0/gtkmm/gesturesingle.h
+include/gtkmm-3.0/gtkmm/gestureswipe.h
+include/gtkmm-3.0/gtkmm/gesturezoom.h
 include/gtkmm-3.0/gtkmm/grid.h
 include/gtkmm-3.0/gtkmm/handlebox.h
 include/gtkmm-3.0/gtkmm/headerbar.h
@@ -157,6 +169,7 @@ include/gtkmm-3.0/gtkmm/listbox.h
 include/gtkmm-3.0/gtkmm/listboxrow.h
 include/gtkmm-3.0/gtkmm/liststore.h
 include/gtkmm-3.0/gtkmm/listviewtext.h
+include/gtkmm-3.0/gtkmm/lockbutton.h
 include/gtkmm-3.0/gtkmm/main.h
 include/gtkmm-3.0/gtkmm/menu.h
 include/gtkmm-3.0/gtkmm/menubar.h
@@ -171,6 +184,7 @@ include/gtkmm-3.0/gtkmm/numerableicon.h
 include/gtkmm-3.0/gtkmm/object.h
 include/gtkmm-3.0/gtkmm/offscreenwindow.h
 include/gtkmm-3.0/gtkmm/orientable.h
+include/gtkmm-3.0/gtkmm/overlay.h
 include/gtkmm-3.0/gtkmm/pagesetup.h
 include/gtkmm-3.0/gtkmm/pagesetupunixdialog.h
 include/gtkmm-3.0/gtkmm/paned.h
@@ -247,6 +261,7 @@ include/gtkmm-3.0/gtkmm/private/entrybuffer_p.h
 include/gtkmm-3.0/gtkmm/private/entrycompletion_p.h
 include/gtkmm-3.0/gtkmm/private/enums_p.h
 include/gtkmm-3.0/gtkmm/private/eventbox_p.h
+include/gtkmm-3.0/gtkmm/private/eventcontroller_p.h
 include/gtkmm-3.0/gtkmm/private/expander_p.h
 include/gtkmm-3.0/gtkmm/private/filechooser_p.h
 include/gtkmm-3.0/gtkmm/private/filechooserbutton_p.h
@@ -262,6 +277,15 @@ include/gtkmm-3.0/gtkmm/private/fontchooserdialog_p.h
 include/gtkmm-3.0/gtkmm/private/fontchooserwidget_p.h
 include/gtkmm-3.0/gtkmm/private/fontselection_p.h
 include/gtkmm-3.0/gtkmm/private/frame_p.h
+include/gtkmm-3.0/gtkmm/private/gesture_p.h
+include/gtkmm-3.0/gtkmm/private/gesturedrag_p.h
+include/gtkmm-3.0/gtkmm/private/gesturelongpress_p.h
+include/gtkmm-3.0/gtkmm/private/gesturemultipress_p.h
+include/gtkmm-3.0/gtkmm/private/gesturepan_p.h
+include/gtkmm-3.0/gtkmm/private/gesturerotate_p.h
+include/gtkmm-3.0/gtkmm/private/gesturesingle_p.h
+include/gtkmm-3.0/gtkmm/private/gestureswipe_p.h
+include/gtkmm-3.0/gtkmm/private/gesturezoom_p.h
 include/gtkmm-3.0/gtkmm/private/grid_p.h
 include/gtkmm-3.0/gtkmm/private/handlebox_p.h
 include/gtkmm-3.0/gtkmm/private/headerbar_p.h
@@ -288,6 +312,7 @@ include/gtkmm-3.0/gtkmm/private/linkbutton_p.h
 include/gtkmm-3.0/gtkmm/private/listbox_p.h
 include/gtkmm-3.0/gtkmm/private/listboxrow_p.h
 include/gtkmm-3.0/gtkmm/private/liststore_p.h
+include/gtkmm-3.0/gtkmm/private/lockbutton_p.h
 include/gtkmm-3.0/gtkmm/private/main_p.h
 include/gtkmm-3.0/gtkmm/private/menu_p.h
 include/gtkmm-3.0/gtkmm/private/menubar_p.h
@@ -302,6 +327,7 @@ include/gtkmm-3.0/gtkmm/private/numerableicon_p.h
 include/gtkmm-3.0/gtkmm/private/object_p.h
 include/gtkmm-3.0/gtkmm/private/offscreenwindow_p.h
 include/gtkmm-3.0/gtkmm/private/orientable_p.h
+include/gtkmm-3.0/gtkmm/private/overlay_p.h
 include/gtkmm-3.0/gtkmm/private/pagesetup_p.h
 include/gtkmm-3.0/gtkmm/private/pagesetupunixdialog_p.h
 include/gtkmm-3.0/gtkmm/private/paned_p.h
@@ -492,6 +518,7 @@ lib/gtkmm-3.0/include/
 lib/gtkmm-3.0/include/gtkmmconfig.h
 lib/gtkmm-3.0/proc/
 lib/gtkmm-3.0/proc/m4/
+lib/gtkmm-3.0/proc/m4/child_property.m4
 lib/gtkmm-3.0/proc/m4/class_gtkobject.m4
 lib/gtkmm-3.0/proc/m4/convert.m4
 lib/gtkmm-3.0/proc/m4/convert_gdk.m4
@@ -503,6 +530,5 @@ lib/libgdkmm-3.0.la
 lib/libgtkmm-3.0.a
 lib/libgtkmm-3.0.la
 @lib lib/libgtkmm-3.0.so.${LIBgtkmm-3.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gdkmm-3.0.pc
 lib/pkgconfig/gtkmm-3.0.pc
