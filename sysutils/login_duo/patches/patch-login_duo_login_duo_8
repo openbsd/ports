@@ -1,6 +1,6 @@
-$OpenBSD: patch-login_duo_login_duo_8,v 1.1.1.1 2014/09/08 22:42:03 jturner Exp $
---- login_duo/login_duo.8.orig	Thu Aug 28 10:02:36 2014
-+++ login_duo/login_duo.8	Thu Aug 28 10:04:47 2014
+$OpenBSD: patch-login_duo_login_duo_8,v 1.2 2014/10/01 02:19:23 jturner Exp $
+--- login_duo/login_duo.8.orig	Thu Sep 25 16:05:15 2014
++++ login_duo/login_duo.8	Tue Sep 30 22:06:31 2014
 @@ -20,7 +20,7 @@ The following options are available:
  .Bl -tag -width ".Cm failmode"
  .It Fl c
@@ -10,7 +10,7 @@ $OpenBSD: patch-login_duo_login_duo_8,v 1.1.1.1 2014/09/08 22:42:03 jturner Exp 
  .It Fl d
  Debug mode; send logs to stderr instead of syslog.
  .It Fl h
-@@ -142,7 +142,7 @@ in 
+@@ -144,7 +144,7 @@ in 
  to capture any SSH remote login (including subsystems, remote
  commands, and interactive login):
  .Bd -literal -offset 8n
@@ -19,7 +19,7 @@ $OpenBSD: patch-login_duo_login_duo_8,v 1.1.1.1 2014/09/08 22:42:03 jturner Exp 
  .Ed
  .Pp
  Similarly, a group of administrators could require two-factor
-@@ -152,9 +152,9 @@ as the forced command for each public key in
+@@ -154,9 +154,9 @@ as the forced command for each public key in
  .Pa ~root/.ssh/authorized_keys :
  .Pp
  .Bd -literal -offset 8n
@@ -31,7 +31,7 @@ $OpenBSD: patch-login_duo_login_duo_8,v 1.1.1.1 2014/09/08 22:42:03 jturner Exp 
  ssh-dss AAAAC3...51R== bob@example.net
  .Ed
  .Pp
-@@ -165,7 +165,7 @@ forced command mechanism and a user-installed (non-set
+@@ -167,7 +167,7 @@ forced command mechanism and a user-installed (non-set
  .Nm .
  .Sh FILES
  .Bl -tag -width ".Cm failmode"
