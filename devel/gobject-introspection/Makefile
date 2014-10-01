@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.79 2014/04/08 17:23:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2014/10/01 08:53:34 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.40.0
+GNOME_VERSION=		1.42.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  girepository-1.0     3.0      # 1.0
+SHARED_LIBS +=  girepository-1.0     3.0      # 1.1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
