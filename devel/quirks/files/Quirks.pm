@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.179 2014/09/29 07:04:39 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.180 2014/10/02 12:44:34 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -441,6 +441,7 @@ my $obsolete_reason = {
 	'eruby' => 3,
 	'mod_ruby' => 3,
 	'py3-distribute' => 3,
+	'raggle' => 3,
 };
 
 # ->is_base_system($handle, $state):
