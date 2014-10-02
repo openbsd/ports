@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/10/02 15:17:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2014/10/02 15:36:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
 GNOME_VERSION=		3.14.0
-REVISION=		0
+REVISION=		1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -42,6 +42,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/default
 	${INSTALL_DATA} ${FILESDIR}/index.theme \
 		${PREFIX}/share/icons/default
+# set the global themes (matches what's directly bundled in gtk+3)
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gtk-2.0
+	${INSTALL_DATA} ${FILESDIR}/gtkrc \
+		${PREFIX}/share/gtk-2.0
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
 
 .include <bsd.port.mk>

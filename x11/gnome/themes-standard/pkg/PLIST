@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.26 2014/10/01 09:46:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2014/10/02 15:36:57 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
+@conflict gtk+2-<2.24.24p0
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 lib/gtk-2.0/2.10.0/engines/libadwaita.so
+share/gtk-2.0/gtkrc
 share/icons/HighContrast/
 share/icons/HighContrast/16x16/
 share/icons/HighContrast/16x16/actions/
