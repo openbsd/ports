@@ -1,21 +1,8 @@
-$OpenBSD: README,v 1.2 2013/06/09 13:42:02 rpe Exp $
+$OpenBSD: README,v 1.3 2014/10/02 08:18:56 pea Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
-
-Dokuwiki has been installed into ${INSTDIR}.
-
-With Apache, AllowOverride settings on the ${INSTDIR} directory,
-and protection for various directories are required.
-
-You can configure this as follows:
-    # ln -sf ${PREFIX}/conf/modules.sample/dokuwiki.conf \
-        ${PREFIX}/conf/modules
-
-You should point this to the DocumentRoot of your web-server:
-    # ln -s ../dokuwiki /var/www/htdocs/dokuwiki
-(make sure you use a relative symlink since Apache is chrooted)
 
 Proceed to complete the installation by opening install.php in your
 browser. If you are upgrading your installation, don't forget to

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2014/05/30 13:20:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/02 08:18:56 pea Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
-VERSION =	2013-12-08
+VERSION =	2014-05-05
 DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
 HOMEPAGE =	http://www.dokuwiki.org/dokuwiki
-REVISION =	0
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
@@ -32,7 +31,6 @@ RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
 
 do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}
-	${SUBST_CMD} -c ${FILESDIR}/dokuwiki.conf ${INSTDIR}/dokuwiki.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
