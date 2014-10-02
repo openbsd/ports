@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/10/01 08:43:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2014/10/02 15:53:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,6 +12,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
@@ -50,10 +52,8 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 
 # convenient dependency to prevent hunting what needs what:
 # some apps need more icons than the stock ones
-# some apps require symbolic icons with no fallback
-# some apps needs the svg version of the icon
-# (+see settings.ini in post-install and bin/gtk-encode-symbolic-svg)
-RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic #pulls in gnome-icon-theme+librsvg
+# some apps needs the svg version of the icon (librsvg pulled in)
+RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c
@@ -102,8 +102,6 @@ BUILD_DEPENDS +=	x11/gtk+2,-guic
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 
 post-install:
-	@printf "[Settings]\ngtk-icon-theme-name = gnome\n" > \
-		${PREFIX}/share/gtk-3.0/settings.ini
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
 	rm ${PREFIX}/lib/gtk-3.0/3.0.0/{printbackends,immodules}/*.{a,la}
 
