@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2014/10/02 15:35:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.195 2014/10/02 19:20:51 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -9,7 +9,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		x11 devel
 
@@ -50,6 +50,8 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 # some apps need more icons than the stock ones
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
+# XXX temporary
+RUN_DEPENDS-main +=	x11/gnome/icon-theme
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
