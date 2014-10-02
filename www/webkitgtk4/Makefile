@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/02 05:38:56 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -13,6 +13,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     0.0 # 18.0
 SHARED_LIBS +=  webkit2gtk-${API}            0.0 # 37.2
@@ -54,28 +55,6 @@ MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	Tools/gtk/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 
-USE_GMAKE =		Yes
-LIBTOOL_FLAGS =		--tag=disable-static
-
-LDFLAGS =		-L${X11BASE}/lib \
-			-Wl,--no-keep-memory
-
-.if ${MACHINE_ARCH} == "powerpc"
-LDFLAGS +=		-Wl,-relax -latomic
-.endif
-
-# XXX needed to have __sync_add_and_fetch_8 on 32-bits
-# what about other 32-bits arches?
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-march=i686
-.endif
-
-CONFIGURE_ARGS =	-DPORT=GTK \
-			-DCMAKE_BUILD_TYPE=Release \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
-			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
-			-DUSE_SYSTEM_MALLOC=ON
-
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
 			devel/gperf \
@@ -93,6 +72,37 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 			x11/gnome/libsecret \
 			x11/gtk+2 \
 			x11/gtk+3
+
+USE_GMAKE =		Yes
+LIBTOOL_FLAGS =		--tag=disable-static
+
+LDFLAGS =		-L${X11BASE}/lib \
+			-Wl,--no-keep-memory
+
+CONFIGURE_ARGS =	-DPORT=GTK \
+			-DCMAKE_BUILD_TYPE=Release \
+			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
+			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
+			-DUSE_SYSTEM_MALLOC=ON
+
+# sync with Source/JavaScriptCore/assembler/MacroAssembler.h
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm" && \
+    ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "mips64" && \
+    ${MACHINE_ARCH} != "mips64el" && ${MACHINE_ARCH} != "sh"
+# #error "The MacroAssembler is not supported on this platform."
+CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
+CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
+.endif
+
+# __atomic_fetch_add_8
+.if ${MACHINE_ARCH} == "powerpc"
+LDFLAGS +=		-Wl,-relax -latomic
+.endif
+
+# __sync_add_and_fetch_8
+.if ${MACHINE_ARCH} == "i386"
+CFLAGS +=		-march=i686
+.endif
 
 post-extract:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
