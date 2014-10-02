@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.24 2014/08/10 10:13:18 espie Exp $
+# $OpenBSD: kde4.port.mk,v 1.25 2014/10/02 23:57:46 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.13.3
@@ -196,13 +196,11 @@ MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/workspace>=4.11,<5
 # See FindKDE4Internal.cmake from kdelibs package for details.
 .if ${CONFIGURE_STYLE:Mcmake}
 .   if ${FLAVOR:Mdebug}
-# No optimization, debug symbols included, qDebug/kDebug enabled
+# -g -O0, qDebug/kDebug enabled
 MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=DebugFull
 MODKDE4_CMAKE_PREFIX =	-debugfull
-COPTS +=		-O0 -ggdb
-CXXOPTS +=		-O0 -ggdb
 .   else
-# Optimization for speed, debug symbols stripped, qDebug/kDebug disabled
+# -O2, qDebug/kDebug disabled
 MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
