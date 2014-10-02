@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_libiconv_c,v 1.1 2014/10/02 21:12:48 naddy Exp $
+
+In the "while (cursor > input_buffer || input_char != EOF)" loop,
+the "cursor" pointer sometimes refers to "input_buffer" and sometimes
+to "output_buffer".  It must refer to "input_buffer" at the start of
+the loop, but the present code forgets to ensure this.
+
+Examples that trigger the problem:
+$ perl -e 'print "\xc3\xa4"x1025' | recode utf8..latin1 | wc -c
+$ perl -e 'print "\xc3\xa4"x2000' | recode utf8..latin1 | wc -c
+
+--- src/libiconv.c.orig	Sat Jul  1 19:13:25 2000
++++ src/libiconv.c	Sat Sep 27 23:47:54 2014
+@@ -195,9 +195,9 @@ wrapped_transform (iconv_t conversion, iconv_t convers
+ 	 memcpy() doesn't do here, because the regions might overlap.
+ 	 memmove() isn't worth it, because we rarely have to move more
+ 	 than 12 bytes.  */
++      cursor = input_buffer;
+       if (input > input_buffer && input_left > 0)
+ 	{
+-	  cursor = input_buffer;
+ 	  do
+ 	    *cursor++ = *input++;
+ 	  while (--input_left > 0);
