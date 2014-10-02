@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2014/10/02 19:24:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.239 2014/10/02 19:49:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -45,6 +45,7 @@
      SUBDIR += gucharmap
      SUBDIR += gvfs,
      SUBDIR += icon-theme
+     SUBDIR += icon-theme-symbolic
      SUBDIR += initial-setup
      SUBDIR += keyring
      SUBDIR += latexila
