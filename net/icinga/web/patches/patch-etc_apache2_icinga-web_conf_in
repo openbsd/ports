@@ -1,8 +1,8 @@
-$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.5 2014/08/10 11:12:26 jasper Exp $
---- etc/apache2/icinga-web.conf.in.orig	Thu Mar 13 12:24:09 2014
-+++ etc/apache2/icinga-web.conf.in	Thu Aug  7 20:25:17 2014
-@@ -10,9 +10,13 @@
- # Markus Frosch <markus@lazyfrosch.de>
+$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.6 2014/10/02 21:05:02 sthen Exp $
+--- etc/apache2/icinga-web.conf.in.orig	Wed Aug 13 11:06:35 2014
++++ etc/apache2/icinga-web.conf.in	Wed Aug 13 13:04:09 2014
+@@ -5,9 +5,13 @@
+ # Copyright (C) 2009-2014 Icinga Development Team (http://www.icinga.org)
  ###
  
 +<IfModule !mod_rewrite.c>

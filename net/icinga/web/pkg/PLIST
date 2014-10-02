@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/03/25 01:26:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/02 21:05:02 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -645,6 +645,8 @@ app/modules/AppKit/lib/js/admin/components/UserSelectionGrid.js
 app/modules/AppKit/lib/js/compatibility/
 app/modules/AppKit/lib/js/compatibility/Object.js
 app/modules/AppKit/lib/js/compatibility/README
+app/modules/AppKit/lib/js/ext-overrides/
+app/modules/AppKit/lib/js/ext-overrides/TreeNodeDontLeak.js
 app/modules/AppKit/lib/js/form/
 app/modules/AppKit/lib/js/form/action/
 app/modules/AppKit/lib/js/form/action/JSONSubmit.js
@@ -1601,6 +1603,7 @@ etc/schema/updates/
 etc/schema/updates/mysql/
 etc/schema/updates/mysql/mysql_v1-0-3_to_v1-2.sql
 etc/schema/updates/mysql/mysql_v1-10-0_to_1-10-1.sql
+etc/schema/updates/mysql/mysql_v1-11_to_1-11-2.sql
 etc/schema/updates/mysql/mysql_v1-2_to_v1-3.sql
 etc/schema/updates/mysql/mysql_v1-3_to_v1-4.sql
 etc/schema/updates/mysql/mysql_v1-4_to_v1-5.sql
@@ -1618,6 +1621,7 @@ etc/schema/updates/mysql/mysql_v1-9-1_to_1-10-0.sql
 etc/schema/updates/oracle/
 etc/schema/updates/oracle/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle/oracle_v1-10-0_to_v1-10-1.sql
+etc/schema/updates/oracle/oracle_v1-11_to_1-11-2.sql
 etc/schema/updates/oracle/oracle_v1-2_to_1-3.sql
 etc/schema/updates/oracle/oracle_v1-3_to_1-4.sql
 etc/schema/updates/oracle/oracle_v1-4_to_v1-5.sql
@@ -1634,6 +1638,7 @@ etc/schema/updates/oracle/oracle_v1-9-1_to_v1-10-0.sql
 etc/schema/updates/pgsql/
 etc/schema/updates/pgsql/pgsql_v1-0-3_to_v1-2.sql
 etc/schema/updates/pgsql/pgsql_v1-10-0_to_v1-10-1.sql
+etc/schema/updates/pgsql/pgsql_v1-11_to_1-11-2.sql
 etc/schema/updates/pgsql/pgsql_v1-2_to_v1-3.sql
 etc/schema/updates/pgsql/pgsql_v1-3_to_1-4.sql
 etc/schema/updates/pgsql/pgsql_v1-4_to_v1-5.sql
