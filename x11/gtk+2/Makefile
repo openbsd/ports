@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2014/06/23 17:32:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2014/10/02 15:35:03 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -8,6 +8,8 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
@@ -46,10 +48,8 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 
 # convenient dependency to prevent hunting what needs what:
 # some apps need more icons than the stock ones
-# some apps require symbolic icons with no fallback
-# some apps needs the svg version of the icon
-# (+see gtkrc in post-install)
-RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic #pulls in gnome-icon-theme+librsvg
+# some apps needs the svg version of the icon (librsvg pulled in)
+RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
@@ -78,8 +78,6 @@ CONFIGURE_ARGS=		--with-xinput=xfree
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
 
 post-install:
-	@echo 'gtk-icon-theme-name = "gnome"' > \
-		${PREFIX}/share/gtk-2.0/gtkrc
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/{engines,immodules,printbackends}/*.{a,la}
 	rm ${PREFIX}/lib/gtk-2.0/modules/*.{a,la}
 
