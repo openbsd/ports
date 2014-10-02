@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/09/09 20:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2014/10/02 10:16:34 zhuk Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -35,7 +35,6 @@ PGDATA =		${WRKDIR}/testdb
 PGDATABASE =		pqxx-test
 TEST_ENV =		PGDATABASE=${PGDATABASE} \
 			PGHOST=${WRKDIR}
-ALL_TEST_ENV =		${MAKE_ENV} ${TEST_ENV}
 
 # Make sure that server is always stopped after starting
 do-test:
