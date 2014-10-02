@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/02 12:33:19 jasper Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 #COMMENT-lua=		Redland librdf Lua Bindings
@@ -7,15 +7,13 @@ COMMENT-python=		Redland librdf Python Bindings
 COMMENT-ruby=		Redland librdf Ruby Bindings
 CATEGORIES=		textproc
 
-V=			1.0.14.1
+V=			1.0.17.1
 DISTNAME=		redland-bindings-$V
 PKGNAME-main=		p5-librdf-$V
 #PKGNAME-lua=		lua-librdf-$V
 PKGNAME-php=		php-librdf-$V
 PKGNAME-python=		py-librdf-$V
 PKGNAME-ruby=		ruby-librdf-$V
-REVISION-php=		0
-REVISION-main=		0
 
 HOMEPAGE=		http://librdf.org/bindings/
 
@@ -43,7 +41,7 @@ MODPY_RUNDEP=		No
 CONFIGURE_ENV+=		PYTHON=${MODPY_BIN}
 LIB_DEPENDS-python=	${LIB_DEPENDS} ${MODPY_LIB_DEPENDS}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
-WANTLIB-python=		${WANTLIB} ${MODPY_WANTLIB} raptor2 rasqal
+WANTLIB-python=		${WANTLIB} raptor2 rasqal
 
 # marked experimental and doesn't build cleanly yet.
 #MODULES+=		lang/lua
@@ -64,7 +62,6 @@ RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}
 
 MODULES+=		lang/ruby
 CONFIGURE_ARGS+=	--with-ruby
-MODRUBY_REV=		1.8
 MODRUBY_RUNDEP=		No
 CONFIGURE_ENV+=		RUBY=${RUBY}
 LIB_DEPENDS-ruby=	${LIB_DEPENDS} ${MODRUBY_LIB_DEPENDS}
