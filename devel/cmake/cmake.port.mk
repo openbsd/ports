@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.29 2014/09/30 15:02:32 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.30 2014/10/02 09:38:04 zhuk Exp $
 
 BUILD_DEPENDS+=	devel/cmake>=3.0.2p4
 
@@ -24,7 +24,7 @@ MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	${NINJA} ${NINJA_FLAGS} ${ALL_TARGET}
 MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	${FAKE_SETUP} ${NINJA} ${NINJA_FLAGS} ${FAKE_TARGET}
-MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} \
 	${NINJA} ${NINJA_FLAGS} ${TEST_FLAGS} ${TEST_TARGET}
 
 .if !target(do-build)
