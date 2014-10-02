@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/02 05:38:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/02 05:46:22 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -55,6 +55,10 @@ MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	Tools/gtk/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 
+NO_TEST =		Yes
+USE_GMAKE =		Yes
+LIBTOOL_FLAGS =		--tag=disable-static
+
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
 			devel/gperf \
@@ -72,9 +76,6 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 			x11/gnome/libsecret \
 			x11/gtk+2 \
 			x11/gtk+3
-
-USE_GMAKE =		Yes
-LIBTOOL_FLAGS =		--tag=disable-static
 
 LDFLAGS =		-L${X11BASE}/lib \
 			-Wl,--no-keep-memory
