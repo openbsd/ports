@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2014/10/01 08:42:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.113 2014/10/02 09:40:16 zhuk Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -86,7 +86,7 @@ do-install:
 		${FAKE_SETUP} ninja -v -j ${MAKE_JOBS} ${FAKE_TARGET}
 
 do-test:
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
+	cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} ninja -v -j \
 		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
 .endif
 
