@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2014/10/02 15:35:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2014/10/02 20:02:20 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
@@ -313,7 +313,6 @@ lib/libgdk-x11-2.0.la
 lib/libgtk-x11-2.0.a
 lib/libgtk-x11-2.0.la
 @lib lib/libgtk-x11-2.0.so.${LIBgtk-x11-2.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gail.pc
 lib/pkgconfig/gdk-2.0.pc
 lib/pkgconfig/gdk-x11-2.0.pc
@@ -386,6 +385,7 @@ share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/toolpalette.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
+share/gtk-2.0/gtkrc
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gail-libgail-util/
