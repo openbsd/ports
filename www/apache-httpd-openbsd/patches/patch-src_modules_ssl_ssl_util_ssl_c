@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_modules_ssl_ssl_util_ssl_c,v 1.1 2014/10/02 17:13:28 sthen Exp $
+
+libressl added a function with this name
+
+--- src/modules/ssl/ssl_util_ssl.c.orig	Thu Oct  2 18:05:55 2014
++++ src/modules/ssl/ssl_util_ssl.c	Thu Oct  2 18:06:13 2014
+@@ -438,7 +438,7 @@ BOOL SSL_load_CrtAndKeyInfo_path(pool *p, STACK_OF(X50
+  * format, possibly followed by a sequence of CA certificates that
+  * should be sent to the peer in the SSL Certificate message.
+  */
+-int SSL_CTX_use_certificate_chain(
++int _SSL_CTX_use_certificate_chain(
+     SSL_CTX *ctx, char *file, int skipfirst, int (*cb)())
+ {
+     BIO *bio;

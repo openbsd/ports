@@ -1,9 +1,9 @@
-$OpenBSD: patch-modules_ssl_ssl_engine_init_c,v 1.1 2014/04/14 19:23:31 sthen Exp $
+$OpenBSD: patch-modules_ssl_ssl_engine_init_c,v 1.2 2014/10/02 17:13:28 sthen Exp $
 
 OpenBSD's libcrypto no longer supports ENGINE_CTRL_CHIL_SET_FORKCHECK
 
---- modules/ssl/ssl_engine_init.c.orig	Mon Apr 14 13:20:57 2014
-+++ modules/ssl/ssl_engine_init.c	Mon Apr 14 13:21:22 2014
+--- modules/ssl/ssl_engine_init.c.orig	Wed Jul 16 07:04:38 2014
++++ modules/ssl/ssl_engine_init.c	Thu Oct  2 18:07:38 2014
 @@ -406,9 +406,11 @@ void ssl_init_Engine(server_rec *s, apr_pool_t *p)
              ssl_die();
          }
@@ -16,3 +16,12 @@ OpenBSD's libcrypto no longer supports ENGINE_CTRL_CHIL_SET_FORKCHECK
  
          if (!ENGINE_set_default(e, ENGINE_METHOD_ALL)) {
              ap_log_error(APLOG_MARK, APLOG_ERR, 0, s,
+@@ -831,7 +833,7 @@ static void ssl_init_ctx_cert_chain(server_rec *s,
+         }
+     }
+ 
+-    n = SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
++    n = _SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
+                                       (char *)chain,
+                                       skip_first, NULL);
+     if (n < 0) {
