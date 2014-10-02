@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2014/10/02 19:25:18 ajacoutot Exp $
-@conflict gnome-icon-theme-extras-*
-@conflict gnome-icon-theme-symbolic-*
-@pkgpath x11/gnome/icon-theme-extras
-@pkgpath x11/gnome/icon-theme-symbolic
+@comment $OpenBSD: PLIST,v 1.49 2014/10/02 19:50:37 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 share/icons/gnome/
 share/icons/gnome/16x16/
