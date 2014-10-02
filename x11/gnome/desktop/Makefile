@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2014/05/13 16:21:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2014/10/02 13:54:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		components for the GNOME desktop
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		3.12.2
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      2.0      # 10.0
 
@@ -32,6 +33,10 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			misc/hwdata
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=674799
+RUN_DEPENDS +=		x11/gnome/backgrounds \
+			x11/gnome/themes-standard
 
 LIB_DEPENDS=		x11/gtk+3
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.241 2014/04/15 13:30:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.242 2014/10/02 13:54:43 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.12.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -43,11 +44,7 @@ RUN_DEPENDS+=	x11/gnome/settings-daemon \
 # use for init errors, gnome-session/gsm-util.c
 RUN_DEPENDS +=	x11/gnome/zenity
 
-# defaults are set in gsettings-desktop-schema (runtime (see NEWS))
-RUN_DEPENDS+=	devel/gsettings-desktop-schemas \
-		fonts/cantarell-fonts \
-		x11/gnome/backgrounds \
-		x11/gnome/themes-standard
+RUN_DEPENDS+=	devel/gsettings-desktop-schemas
 
 MODGNOME_TOOLS=	gtk-update-icon-cache
 
