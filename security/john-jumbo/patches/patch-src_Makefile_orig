@@ -1,11 +1,25 @@
-$OpenBSD: patch-src_Makefile_orig,v 1.1 2014/06/04 13:52:40 sthen Exp $
+$OpenBSD: patch-src_Makefile_orig,v 1.2 2014/10/03 19:59:46 naddy Exp $
 
 Yes, the Makefile we are using really is named Makefile.orig.
 (there's a wip autoconf conversion, but it doesn't build yet).
 
---- src/Makefile.orig.orig.port	Wed Jun  4 12:01:45 2014
-+++ src/Makefile.orig	Wed Jun  4 12:01:59 2014
-@@ -2402,7 +2402,7 @@ endif
+--- src/Makefile.orig.orig.port	Wed Jun  4 09:49:27 2014
++++ src/Makefile.orig	Fri Oct  3 21:27:53 2014
+@@ -1123,11 +1123,9 @@ openbsd-alpha:
+ openbsd-sparc64:
+ 	$(LN) sparc64.h arch.h
+ 	@echo "#define JOHN_BLD" '"'$@'"' > john_build_rule.h
+-	$(MAKE_ORIG) $(PROJ) \
+-		CFLAGS="$(CFLAGS) -m64 -mcpu=ultrasparc" \
+-		LDFLAGS="$(LDFLAGS) -m64"
++	$(MAKE_ORIG) $(PROJ)
+ 	@echo "Failing after this point just means some helper tools did not build:"
+-	$(MAKE_ORIG) $(PROJ_PCAP) CFLAGS="$(CFLAGS) -m64"
++	$(MAKE_ORIG) $(PROJ_PCAP)
+ 	@echo "All done"
+ 
+ openbsd-sparc:
+@@ -2402,7 +2400,7 @@ endif
  
  ../run/cprepair: cprepair.c unicode.c unicode.h options.h misc.h misc.c \
  	memdbg.h memdbg.c
