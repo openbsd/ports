@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_utils_cpp,v 1.2 2013/09/30 08:06:10 dcoppa Exp $
+$OpenBSD: patch-src_utils_cpp,v 1.3 2014/10/03 10:24:42 dcoppa Exp $
 
-Use the gnome icon theme unconditionally: fixes a problem with
+Use the Adwaita icon theme unconditionally: fixes a problem with
 minitube GUI not having icons when executed outside of a Desktop
 Environment
 
@@ -10,7 +10,7 @@ Environment
  #endif
  
  QIcon Utils::themeIcon(const QString &name) {
-+    QIcon::setThemeName("gnome");
++    QIcon::setThemeName("Adwaita");
      if (QIcon::hasThemeIcon(name))
          return QIcon::fromTheme(name);
      else
