@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.133 2014/04/21 12:41:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.134 2014/10/03 23:19:44 sthen Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.39
-REVISION =		1
+DISTNAME =		openldap-2.4.40
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -12,12 +11,13 @@ PKGNAME-server =	${DISTNAME:S/-/-server-/}
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}
 FULLPKGPATH-main =	databases/openldap,-main
 
-SHARED_LIBS +=	lber                 12.0      # .10.5
-SHARED_LIBS +=	ldap                 13.0      # .10.5
-SHARED_LIBS +=	ldap_r               13.0      # .10.5
-SHARED_LIBS +=	lber-2.4             12.0      # .10.5
-SHARED_LIBS +=	ldap-2.4             13.0      # .10.5
-SHARED_LIBS +=	ldap_r-2.4           13.0      # .10.5
+SHARED_LIBS +=	lber                 12.0     # 12.3
+SHARED_LIBS +=	ldap                 13.0     # 12.3
+SHARED_LIBS +=	ldap_r               13.0     # 12.3
+
+SHARED_LIBS +=	lber-2.4             12.0
+SHARED_LIBS +=	ldap-2.4             13.0
+SHARED_LIBS +=	ldap_r-2.4           13.0
 
 CATEGORIES =	databases net
 
@@ -73,13 +73,16 @@ CONFIGURE_ARGS +=	--enable-bdb \
 # MDB assumes UBC; see http://www.openldap.org/pub/hyc/mdm-paper.pdf
 # section 3.1, references 17, 18, and 19.
 #
-CONFIGURE_ARGS +=	--disable-mdb
-#
-# however, note (from Howard Chu): "This requirement can be relaxed in
+# However, note (from Howard Chu): "This requirement can be relaxed in
 # the current version of the library. If you create the environment
 # with the MDB_WRITEMAP option then all reads and writes are performed
 # using mmap, so the file buffer cache is irrelevant. Of course then
 # you lose the protection that the read-only map offers."
+#
+# This is now enabled in the port, but a patch has been added to
+# enforce that MDB_WRITEMAP is used.
+#
+CONFIGURE_ARGS +=	--enable-mdb
 
 .if ${FLAVOR:Maci}
 CONFIGURE_ARGS +=	--enable-aci

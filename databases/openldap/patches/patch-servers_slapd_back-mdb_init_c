@@ -1,0 +1,36 @@
+$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.1 2014/10/03 23:19:44 sthen Exp $
+--- servers/slapd/back-mdb/init.c.orig	Fri Mar 22 10:47:17 2013
++++ servers/slapd/back-mdb/init.c	Fri Mar 22 10:47:36 2013
+@@ -158,6 +158,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
+ 	dbhome = mdb->mi_dbenv_home;
+ #endif
+ 
++#ifdef __OpenBSD__
++	/*
++	 * Enforce that MDB_WRITEMAP is set.
++	 *
++	 * MDB assumes a unified buffer cache.
++	 *
++	 * See http://www.openldap.org/pub/hyc/mdm-paper.pdf section 3.1,
++	 * references 17, 18, and 19.
++	 *
++	 * From Howard Chu: "This requirement can be relaxed in the
++	 * current version of the library. If you create the environment
++	 * with the MDB_WRITEMAP option then all reads and writes are
++	 * performed using mmap, so the file buffer cache is irrelevant.
++	 * Of course then you lose the protection that the read-only
++	 * map offers."
++	 */
++
++	if ( !(flags & MDB_WRITEMAP) ) {
++		Debug( LDAP_DEBUG_ANY,
++			LDAP_XSTRING(mdb_db_open) ": database \"%s\" does not have writemap. "
++			"This is required on systems without unified buffer cache.\n",
++			be->be_suffix[0].bv_val, rc, 0 );
++		goto fail;
++	}
++#endif
++
+ 	Debug( LDAP_DEBUG_TRACE,
+ 		LDAP_XSTRING(mdb_db_open) ": database \"%s\": "
+ 		"dbenv_open(%s).\n",
