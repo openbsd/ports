@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1255 2014/09/27 16:31:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1256 2014/10/03 07:23:40 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1316,13 +1316,11 @@
      SUBDIR += ruby-gem_plugin
      SUBDIR += ruby-gems
      SUBDIR += ruby-gettext
-     SUBDIR += ruby-gir_ffi,ruby20
-     SUBDIR += ruby-gir_ffi,ruby21
+     SUBDIR += ruby-gir_ffi
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
-     SUBDIR += ruby-hub,ruby20
-     SUBDIR += ruby-hub,ruby21
+     SUBDIR += ruby-hub
      SUBDIR += ruby-i18n
      SUBDIR += ruby-indentation
      SUBDIR += ruby-isolate
@@ -1348,8 +1346,7 @@
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rb-gsl
      SUBDIR += ruby-ref
-     SUBDIR += ruby-rgen,ruby20
-     SUBDIR += ruby-rgen,ruby21
+     SUBDIR += ruby-rgen
      SUBDIR += ruby-rr
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
@@ -1364,8 +1361,7 @@
      SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-therubyracer,ruby20
      SUBDIR += ruby-therubyracer,ruby21
-     SUBDIR += ruby-thor,ruby20
-     SUBDIR += ruby-thor,ruby21
+     SUBDIR += ruby-thor
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.679 2014/10/02 12:43:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.680 2014/10/03 07:23:40 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -441,8 +441,7 @@
      SUBDIR += ruby-fcgi,ruby20
      SUBDIR += ruby-fcgi,ruby21
      SUBDIR += ruby-httpclient
-     SUBDIR += ruby-httpi,ruby20
-     SUBDIR += ruby-httpi,ruby21
+     SUBDIR += ruby-httpi
      SUBDIR += ruby-jekyll
      SUBDIR += ruby-mechanize
      SUBDIR += ruby-ntlm,ruby20
@@ -457,8 +456,7 @@
      SUBDIR += ruby-raindrops,ruby21
      SUBDIR += ruby-rest-client
      SUBDIR += ruby-sanitize
-     SUBDIR += ruby-savon,ruby20
-     SUBDIR += ruby-savon,ruby21
+     SUBDIR += ruby-savon
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin,ruby20
      SUBDIR += ruby-thin,ruby21
@@ -466,8 +464,7 @@
      SUBDIR += ruby-unicorn,ruby20
      SUBDIR += ruby-unicorn,ruby21
      SUBDIR += ruby-vegas
-     SUBDIR += ruby-wasabi,ruby20
-     SUBDIR += ruby-wasabi,ruby21
+     SUBDIR += ruby-wasabi
      SUBDIR += ruby-xpath
      SUBDIR += sabredav
      SUBDIR += sarg
