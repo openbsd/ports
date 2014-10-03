@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/02/04 12:27:34 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/10/03 12:47:41 dcoppa Exp $
 bin/wmWeather
-bin/wmweather
+@bin bin/wmweather
 @man man/man1/wmWeather.1
 @man man/man1/wmweather.1
 share/examples/wmweather/
