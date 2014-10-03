@@ -1,0 +1,249 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/03 13:06:33 zhuk Exp $
+@bin bin/htsserver
+@bin bin/httrack
+@bin bin/proxytrack
+bin/webhttrack
+include/httrack/
+include/httrack/config.h
+include/httrack/htsarrays.h
+include/httrack/htsbasenet.h
+include/httrack/htsbauth.h
+include/httrack/htsconfig.h
+include/httrack/htsdefines.h
+include/httrack/htsglobal.h
+include/httrack/htsmodules.h
+include/httrack/htsnet.h
+include/httrack/htsopt.h
+include/httrack/htssafe.h
+include/httrack/htsstrings.h
+include/httrack/htswrap.h
+include/httrack/httrack-library.h
+lib/httrack/
+lib/httrack/libbaselinks.a
+lib/httrack/libbaselinks.la
+@lib lib/httrack/libbaselinks.so.${LIBbaselinks_VERSION}
+lib/httrack/libchangecontent.a
+lib/httrack/libchangecontent.la
+@lib lib/httrack/libchangecontent.so.${LIBchangecontent_VERSION}
+lib/httrack/libcontentfilter.a
+lib/httrack/libcontentfilter.la
+@lib lib/httrack/libcontentfilter.so.${LIBcontentfilter_VERSION}
+lib/httrack/libdisplayheader.a
+lib/httrack/libdisplayheader.la
+@lib lib/httrack/libdisplayheader.so.${LIBdisplayheader_VERSION}
+lib/httrack/libfilename.a
+lib/httrack/libfilename.la
+@lib lib/httrack/libfilename.so.${LIBfilename_VERSION}
+lib/httrack/libfilename2.a
+lib/httrack/libfilename2.la
+@lib lib/httrack/libfilename2.so.${LIBfilename2_VERSION}
+lib/httrack/libfilenameiisbug.a
+lib/httrack/libfilenameiisbug.la
+@lib lib/httrack/libfilenameiisbug.so.${LIBfilenameiisbug_VERSION}
+lib/httrack/liblistlinks.a
+lib/httrack/liblistlinks.la
+@lib lib/httrack/liblistlinks.so.${LIBlistlinks_VERSION}
+lib/httrack/liblog.a
+lib/httrack/liblog.la
+@lib lib/httrack/liblog.so.${LIBlog_VERSION}
+lib/httrack/libsimple.a
+lib/httrack/libsimple.la
+@lib lib/httrack/libsimple.so.${LIBsimple_VERSION}
+lib/libhtsjava.a
+lib/libhtsjava.la
+@lib lib/libhtsjava.so.${LIBhtsjava_VERSION}
+lib/libhttrack.a
+lib/libhttrack.la
+@lib lib/libhttrack.so.${LIBhttrack_VERSION}
+@man man/man1/htsserver.1
+@man man/man1/httrack.1
+@man man/man1/proxytrack.1
+@man man/man1/webhttrack.1
+share/applications/WebHTTrack-Websites.desktop
+share/applications/WebHTTrack.desktop
+share/doc/httrack/
+share/doc/httrack/abuse.html
+share/doc/httrack/addurl.html
+share/doc/httrack/cache.html
+share/doc/httrack/cmddoc.html
+share/doc/httrack/contact.html
+share/doc/httrack/dev.html
+share/doc/httrack/div/
+share/doc/httrack/div/search.sh
+share/doc/httrack/faq.html
+share/doc/httrack/fcguide.html
+share/doc/httrack/filters.html
+share/doc/httrack/greetings.txt
+share/doc/httrack/history.txt
+share/doc/httrack/httrack-doc.html
+share/doc/httrack/httrack.man.html
+share/doc/httrack/images/
+share/doc/httrack/images/bg_rings.gif
+share/doc/httrack/images/header_title_4.gif
+share/doc/httrack/images/screenshot_01.jpg
+share/doc/httrack/images/screenshot_01b.jpg
+share/doc/httrack/img/
+share/doc/httrack/img/addurl1.gif
+share/doc/httrack/img/addurl2.gif
+share/doc/httrack/img/addurl3.gif
+share/doc/httrack/img/addurl4.gif
+share/doc/httrack/img/addurl5.gif
+share/doc/httrack/img/backblue.gif
+share/doc/httrack/img/fade.gif
+share/doc/httrack/img/httrack.gif
+share/doc/httrack/img/snap1_a.gif
+share/doc/httrack/img/snap1_b.gif
+share/doc/httrack/img/snap1_c.gif
+share/doc/httrack/img/snap2_a.gif
+share/doc/httrack/img/snap2_b.gif
+share/doc/httrack/img/snap3_a.gif
+share/doc/httrack/img/snap4_a.gif
+share/doc/httrack/img/snap5_a.gif
+share/doc/httrack/img/snap9.gif
+share/doc/httrack/img/snap9_a.gif
+share/doc/httrack/img/snap9_b.gif
+share/doc/httrack/img/snap9_c.gif
+share/doc/httrack/img/snap9_d.gif
+share/doc/httrack/img/snap9_d2.gif
+share/doc/httrack/img/snap9_d3.gif
+share/doc/httrack/img/snap9_d4.gif
+share/doc/httrack/img/snap9_d5.gif
+share/doc/httrack/img/snap9_d6.gif
+share/doc/httrack/img/snap9_d7.gif
+share/doc/httrack/img/snap9_d8.gif
+share/doc/httrack/img/snap9_e.gif
+share/doc/httrack/img/snap9_f.gif
+share/doc/httrack/img/snap9_g.gif
+share/doc/httrack/img/snap9_g2.gif
+share/doc/httrack/img/snap9_g3.gif
+share/doc/httrack/img/snap9_h.gif
+share/doc/httrack/img/snap9_i.gif
+share/doc/httrack/img/snap9_j.gif
+share/doc/httrack/img/snap9_k.gif
+share/doc/httrack/index.html
+share/doc/httrack/library.html
+share/doc/httrack/license.txt
+share/doc/httrack/options.html
+share/doc/httrack/overview.html
+share/doc/httrack/plug.html
+share/doc/httrack/plug_330.html
+share/doc/httrack/scripting.html
+share/doc/httrack/server/
+share/doc/httrack/server/about.html
+share/doc/httrack/server/addurl.html
+share/doc/httrack/server/error.html
+share/doc/httrack/server/exit.html
+share/doc/httrack/server/file.html
+share/doc/httrack/server/finished.html
+share/doc/httrack/server/help.html
+share/doc/httrack/server/images/
+share/doc/httrack/server/images/bg_rings.gif
+share/doc/httrack/server/images/fade.gif
+share/doc/httrack/server/images/header_title_4.gif
+share/doc/httrack/server/index.html
+share/doc/httrack/server/option1.html
+share/doc/httrack/server/option10.html
+share/doc/httrack/server/option11.html
+share/doc/httrack/server/option2.html
+share/doc/httrack/server/option2b.html
+share/doc/httrack/server/option3.html
+share/doc/httrack/server/option4.html
+share/doc/httrack/server/option5.html
+share/doc/httrack/server/option6.html
+share/doc/httrack/server/option7.html
+share/doc/httrack/server/option8.html
+share/doc/httrack/server/option9.html
+share/doc/httrack/server/refresh.html
+share/doc/httrack/server/sfx/
+share/doc/httrack/server/sfx/finished.wav
+share/doc/httrack/server/sfx/silent.wav
+share/doc/httrack/server/step2.html
+share/doc/httrack/server/step3.html
+share/doc/httrack/server/step4.html
+share/doc/httrack/shelldoc.html
+share/doc/httrack/start.html
+share/doc/httrack/step.html
+share/doc/httrack/step1.html
+share/doc/httrack/step2.html
+share/doc/httrack/step3.html
+share/doc/httrack/step4.html
+share/doc/httrack/step5.html
+share/doc/httrack/step9.html
+share/doc/httrack/step9_opt1.html
+share/doc/httrack/step9_opt10.html
+share/doc/httrack/step9_opt11.html
+share/doc/httrack/step9_opt2.html
+share/doc/httrack/step9_opt3.html
+share/doc/httrack/step9_opt4.html
+share/doc/httrack/step9_opt5.html
+share/doc/httrack/step9_opt6.html
+share/doc/httrack/step9_opt7.html
+share/doc/httrack/step9_opt8.html
+share/doc/httrack/step9_opt9.html
+share/httrack/
+share/httrack/html
+share/httrack/lang/
+share/httrack/lang.def
+share/httrack/lang.indexes
+share/httrack/lang/Bulgarian.txt
+share/httrack/lang/Castellano.txt
+share/httrack/lang/Cesky.txt
+share/httrack/lang/Chinese-BIG5.txt
+share/httrack/lang/Chinese-Simplified.txt
+share/httrack/lang/Croatian.txt
+share/httrack/lang/Dansk.txt
+share/httrack/lang/Deutsch.txt
+share/httrack/lang/Eesti.txt
+share/httrack/lang/English.txt
+share/httrack/lang/Finnish.txt
+share/httrack/lang/Francais.txt
+share/httrack/lang/Greek.txt
+share/httrack/lang/Italiano.txt
+share/httrack/lang/Japanese.txt
+share/httrack/lang/Macedonian.txt
+share/httrack/lang/Magyar.txt
+share/httrack/lang/Nederlands.txt
+share/httrack/lang/Norsk.txt
+share/httrack/lang/Polski.txt
+share/httrack/lang/Portugues-Brasil.txt
+share/httrack/lang/Portugues.txt
+share/httrack/lang/Romanian.txt
+share/httrack/lang/Russian.txt
+share/httrack/lang/Slovak.txt
+share/httrack/lang/Slovenian.txt
+share/httrack/lang/Svenska.txt
+share/httrack/lang/Turkish.txt
+share/httrack/lang/Ukrainian.txt
+share/httrack/libtest/
+share/httrack/libtest/callbacks-example-baselinks.c
+share/httrack/libtest/callbacks-example-changecontent.c
+share/httrack/libtest/callbacks-example-contentfilter.c
+share/httrack/libtest/callbacks-example-displayheader.c
+share/httrack/libtest/callbacks-example-filename.c
+share/httrack/libtest/callbacks-example-filename2.c
+share/httrack/libtest/callbacks-example-filenameiisbug.c
+share/httrack/libtest/callbacks-example-listlinks.c
+share/httrack/libtest/callbacks-example-log.c
+share/httrack/libtest/callbacks-example-simple.c
+share/httrack/libtest/example-main.c
+share/httrack/libtest/example-main.h
+share/httrack/libtest/readme.txt
+share/httrack/templates/
+share/httrack/templates/index-body.html
+share/httrack/templates/index-footer.html
+share/httrack/templates/index-header.html
+share/httrack/templates/topindex-body.html
+share/httrack/templates/topindex-bodycat.html
+share/httrack/templates/topindex-footer.html
+share/httrack/templates/topindex-header.html
+share/icons/hicolor/16x16/apps/httrack.png
+share/icons/hicolor/32x32/apps/httrack.png
+share/icons/hicolor/48x48/apps/httrack.png
+share/pixmaps/
+share/pixmaps/httrack16x16.xpm
+share/pixmaps/httrack32x32.xpm
+share/pixmaps/httrack48x48.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
