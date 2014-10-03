@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/16 19:56:09 miod Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/03 11:58:51 dcoppa Exp $
+
+PORTROACH =	limit:^0\.11\.1
 
 # Warning: CELT is experimental software. Neither the API/ABI, nor
 # the bit-stream are stable. Compatibility between different releases
