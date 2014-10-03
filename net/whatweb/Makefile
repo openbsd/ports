@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/03 07:24:28 jasper Exp $
 
 COMMENT=	web scanner
 
-DISTNAME=	whatweb-0.4.7
+# git clone of b495eda
+DISTNAME=	whatweb-0.4.7.1
 
 CATEGORIES=	net www
 
 HOMEPAGE=	http://www.morningstarsecurity.com/research/whatweb
-MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
+MASTER_SITES=	http://distfiles.nl/
+#		http://www.morningstarsecurity.com/downloads/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ruby
 
-# does not work with 1.9 yet
-MODRUBY_REV=	1.8
+# WIP support for Ruby 1.9/2.0, but no 2.1 yet.
+MODRUBY_REV=	2.0
 
 RUN_DEPENDS=	converters/ruby-json,${MODRUBY_FLAVOR} \
 		${MODRUBY_ICONV_DEPENDS}
