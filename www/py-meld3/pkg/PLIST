@@ -1,25 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/11/01 14:49:15 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/03 23:02:46 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/meld3/
-lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/meld3/__init__.py
-lib/python${MODPY_VERSION}/site-packages/meld3/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/meld3/clearsilverprofile.py
-lib/python${MODPY_VERSION}/site-packages/meld3/clearsilverprofile.pyc
-lib/python${MODPY_VERSION}/site-packages/meld3/example.py
-lib/python${MODPY_VERSION}/site-packages/meld3/example.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/meld3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/${MODPY_PYCACHE}meld3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/${MODPY_PYCACHE}test_meld3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/_compat.py
 lib/python${MODPY_VERSION}/site-packages/meld3/meld3.py
-lib/python${MODPY_VERSION}/site-packages/meld3/meld3.pyc
-lib/python${MODPY_VERSION}/site-packages/meld3/melddiff.py
-lib/python${MODPY_VERSION}/site-packages/meld3/melddiff.pyc
-lib/python${MODPY_VERSION}/site-packages/meld3/meldprofile.py
-lib/python${MODPY_VERSION}/site-packages/meld3/meldprofile.pyc
-lib/python${MODPY_VERSION}/site-packages/meld3/test_getiterator.py
-lib/python${MODPY_VERSION}/site-packages/meld3/test_getiterator.pyc
 lib/python${MODPY_VERSION}/site-packages/meld3/test_meld3.py
-lib/python${MODPY_VERSION}/site-packages/meld3/test_meld3.pyc
-lib/python${MODPY_VERSION}/site-packages/meld3/testclone.py
-lib/python${MODPY_VERSION}/site-packages/meld3/testclone.pyc
-lib/python${MODPY_VERSION}/site-packages/meld3/zptprofile.py
-lib/python${MODPY_VERSION}/site-packages/meld3/zptprofile.pyc
 share/doc/${MODPY_PY_PREFIX}meld3/
 share/doc/${MODPY_PY_PREFIX}meld3/README.txt
