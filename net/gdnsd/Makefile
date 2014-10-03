@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/03 11:33:53 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
+# NB, gdnsd >= 2.0.0 requires __thread support
 GH_ACCOUNT=		blblack
 GH_PROJECT=		gdnsd
 GH_TAGNAME=		v1.11.5
