@@ -1,0 +1,65 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
+@newgroup _gdnsd:743
+@newuser _gdnsd:743:_gdnsd:daemon:gdns user:/var/empty:/sbin/nologin
+@bin bin/gdnsd_geoip_test
+include/gdnsd/
+include/gdnsd/compiler.h
+include/gdnsd/dmn.h
+include/gdnsd/dname.h
+include/gdnsd/log.h
+include/gdnsd/misc.h
+include/gdnsd/mon.h
+include/gdnsd/net.h
+include/gdnsd/paths.h
+include/gdnsd/plugapi.h
+include/gdnsd/plugin.h
+include/gdnsd/stats.h
+include/gdnsd/vscf.h
+lib/gdnsd/
+lib/gdnsd/libgdnsd.so
+lib/gdnsd/plugin_extmon.so
+lib/gdnsd/plugin_geoip.so
+lib/gdnsd/plugin_http_status.so
+lib/gdnsd/plugin_metafo.so
+lib/gdnsd/plugin_multifo.so
+lib/gdnsd/plugin_null.so
+lib/gdnsd/plugin_reflect.so
+lib/gdnsd/plugin_simplefo.so
+lib/gdnsd/plugin_static.so
+lib/gdnsd/plugin_tcp_connect.so
+lib/gdnsd/plugin_weighted.so
+libexec/gdnsd/
+@bin libexec/gdnsd/gdnsd_extmon_helper
+@man man/man1/gdnsd_geoip_test.1
+@man man/man3/gdnsd-plugin-api.3
+@man man/man5/gdnsd.config.5
+@man man/man5/gdnsd.zonefile.5
+@man man/man8/gdnsd-plugin-extmon.8
+@man man/man8/gdnsd-plugin-geoip.8
+@man man/man8/gdnsd-plugin-metafo.8
+@man man/man8/gdnsd-plugin-multifo.8
+@man man/man8/gdnsd-plugin-simplefo.8
+@man man/man8/gdnsd-plugin-weighted.8
+@man man/man8/gdnsd.8
+@bin sbin/gdnsd
+share/doc/gdnsd/
+share/doc/gdnsd/AUTHORS
+share/doc/gdnsd/COPYING
+share/doc/gdnsd/INSTALL
+share/doc/gdnsd/NEWS
+share/doc/gdnsd/README.md
+share/doc/gdnsd/gdnsd-plugin-api.txt
+share/doc/gdnsd/gdnsd-plugin-extmon.txt
+share/doc/gdnsd/gdnsd-plugin-geoip.txt
+share/doc/gdnsd/gdnsd-plugin-metafo.txt
+share/doc/gdnsd/gdnsd-plugin-multifo.txt
+share/doc/gdnsd/gdnsd-plugin-simplefo.txt
+share/doc/gdnsd/gdnsd-plugin-weighted.txt
+share/doc/gdnsd/gdnsd.config.txt
+share/doc/gdnsd/gdnsd.txt
+share/doc/gdnsd/gdnsd.zonefile.txt
+share/doc/gdnsd/gdnsd_geoip_test.txt
+share/doc/gdnsd/gdnsd_manual.txt
+share/examples/gdnsd/
+@sample ${VARBASE}/gdnsd/
+@rcscript ${RCDIR}/gdnsd

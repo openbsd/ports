@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdnsd_conf_c,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
+--- gdnsd/conf.c.orig	Sat Jul 26 06:35:00 2014
++++ gdnsd/conf.c	Sat Jul 26 06:35:10 2014
+@@ -44,7 +44,7 @@
+ static unsigned num_mon_lists = 0;
+ static mon_list_t** mon_lists = NULL;
+ 
+-static const char DEF_USERNAME[] = PACKAGE_NAME;
++static const char DEF_USERNAME[] = "_gdnsd";
+ 
+ // just needs 16-bit rdlen followed by TXT strings with length byte prefixes...
+ static const uint8_t chaos_prefix[] = "\xC0\x0C\x00\x10\x00\x03\x00\x00\x00\x00";

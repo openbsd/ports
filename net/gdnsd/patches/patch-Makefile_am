@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
+--- Makefile.am.orig	Sat Jul 26 02:44:04 2014
++++ Makefile.am	Sat Jul 26 02:44:18 2014
+@@ -44,11 +44,5 @@ else
+ 	$(MKDIR_P) "$(DESTDIR)$(sysconfdir)/gdnsd/geoip";
+ 	$(MKDIR_P) "$(DESTDIR)$(GDNSD_SYSRUNDIR)/gdnsd";
+ endif
+-	@id gdnsd >/dev/null 2>&1; if test $$? -ne 0; then \
+-		echo; \
+-		echo === READ ME ===; \
+-		echo The default user \"gdnsd\" \(for privdrop when executed as root\) does not seem to exist yet!; \
+-		echo; \
+-	fi
+ 
+ include $(top_srcdir)/docs.am

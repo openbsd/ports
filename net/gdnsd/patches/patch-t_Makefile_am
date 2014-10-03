@@ -1,0 +1,17 @@
+$OpenBSD: patch-t_Makefile_am,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
+
+Remove bogus check, not all test depends may be present at configure time.
+
+--- t/Makefile.am.orig	Fri Jul 18 21:10:42 2014
++++ t/Makefile.am	Sat Jul 26 04:08:37 2014
+@@ -9,10 +9,6 @@ precheck:
+ 		echo "*** WARNING *** Testing (or even building!) as the root user is not wise!"; \
+ 		echo "*** WARNING *** If you experience any failures, please retry as a non-root user before reporting..."; \
+ 	fi
+-	@if test "x$(HAVE_TESTSUITE_MODULES)" != x1; then \
+-		echo "Cannot 'make check' or 'make installcheck' without Net::DNS 0.63+ and LWP 5.805+"; \
+-		exit 101; \
+-	fi
+ 	@if [ ! -d $(TESTOUT_DIR) ]; then \
+ 		$(MKDIR_P) $(TESTOUT_DIR); \
+ 	fi

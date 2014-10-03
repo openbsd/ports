@@ -1,0 +1,5 @@
+gdnsd is an Authoritative-only DNS server. The initial g stands for
+Geographic, as gdnsd offers a plugin system for geographic (or other
+sorts of) balancing, redirection, and service-state-conscious failover.
+The plugin system can also do things like weighted address/cname
+records.
