@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2014/09/03 19:29:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/03 14:17:33 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-1.2.8
+DISTNAME=		libvirt-1.2.9
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=  virt-qemu                 0.3 # 1002.5
