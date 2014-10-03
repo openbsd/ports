@@ -1,6 +1,15 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.21 2014/09/11 10:24:38 dcoppa Exp $
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.22 2014/10/03 10:11:45 dcoppa Exp $
 --- Source/cmTarget.cxx.orig	Thu Jul 31 17:03:57 2014
 +++ Source/cmTarget.cxx	Wed Sep  3 08:10:09 2014
+@@ -260,7 +260,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
+     {
+     this->SetPropertyDefault("INSTALL_NAME_DIR", 0);
+     this->SetPropertyDefault("INSTALL_RPATH", "");
+-    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "OFF");
++    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "ON");
+     this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
+     this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");
+     this->SetPropertyDefault("ARCHIVE_OUTPUT_DIRECTORY", 0);
 @@ -3183,6 +3183,7 @@ std::string cmTarget::GetPDBName(const char* config) c
  //----------------------------------------------------------------------------
  bool cmTarget::HasSOName(const char* config) const

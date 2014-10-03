@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.9 2014/09/28 17:06:25 dcoppa Exp $
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.10 2014/10/03 10:11:45 dcoppa Exp $
 
 XXX Temporary workaround for a sporadic segfault which seems to
 result from memory corruption. To be removed when CMake 3.1 will
@@ -15,7 +15,30 @@ be released.
  
    // Allocate internals.
    this->OrderLinkerSearchPath =
-@@ -1082,12 +1082,21 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+@@ -685,10 +685,19 @@ void cmComputeLinkInformation::AddItem(std::string con
+         }
+       else
+         {
+-        // Use the full path given to the library file.
+         this->Depends.push_back(item);
+-        this->AddFullItem(item);
+-        this->AddLibraryRuntimeInfo(item);
++        if(!this->OpenBSD)
++          {
++          // Use the full path given to the library file.
++          this->AddFullItem(item);
++          this->AddLibraryRuntimeInfo(item);
++          }
++        else
++          {
++          std::string file = cmSystemTools::GetFilenameName(item);
++          this->AddUserItem(file, false);
++          this->OrderLinkerSearchPath->AddLinkLibrary(item);
++          }
+         }
+       }
+     else
+@@ -1082,12 +1091,21 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
      }
  
