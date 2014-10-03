@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.21 2014/09/23 21:48:28 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2014/10/03 08:32:53 brad Exp $
 
 SHARED_ONLY=	Yes
 
-BROKEN-powerpc=	rpl_parallel.cc:800: error: 'rli' was not declared in this scope
-COMMENT-main=	multithreaded SQL database (client)
-COMMENT-server=	multithreaded SQL database (server)
-COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha amd64 i386 powerpc sparc64
 ONLY_FOR_ARCHS-tests=	${ONLY_FOR_ARCHS-server}
-MULTI_PACKAGES=	-main -server -tests
 
-EPOCH=		0
-VERSION=	10.0.13
+COMMENT-main=	multithreaded SQL database (client)
+COMMENT-server=	multithreaded SQL database (server)
+COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
+
+VERSION=	10.0.14
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
-REVISION-main=	0
+EPOCH=		0
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
 		http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
@@ -52,7 +50,6 @@ LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v0,<10.1v0
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v0,<10.1v0
 
 USE_GROFF=	Yes
-
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
@@ -70,10 +67,11 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SQLBENCHDIR="share/mysql-bench" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
-		-DWITH_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
+		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
 		-DWITH_SSL=system \
-		-DWITH_LIBEDIT=Off \
 		-DCONNECT_WITH_LIBXML2=Off
+
+MULTI_PACKAGES=	-main -server -tests
 
 .include <bsd.port.arch.mk>
 

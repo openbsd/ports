@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.11 2014/08/19 16:42:40 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.12 2014/10/03 08:32:53 brad Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -281,8 +281,6 @@ share/doc/mysql/COPYING
 share/doc/mysql/COPYING.LESSER
 share/doc/mysql/CREDITS
 share/doc/mysql/EXCEPTIONS-CLIENT
-share/doc/mysql/INFO_BIN
-share/doc/mysql/INFO_SRC
 share/doc/mysql/INSTALL-BINARY
 share/doc/mysql/README
 share/doc/pkg-readmes/${FULLPKGNAME}

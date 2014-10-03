@@ -1,0 +1,17 @@
+$OpenBSD: patch-plugin_auth_socket_auth_socket_c,v 1.1 2014/10/03 08:32:53 brad Exp $
+
+auth_socket plugin fails to buid on OpenBSD with MariaDB 10.0.14.
+
+https://mariadb.atlassian.net/browse/MDEV-6800
+
+--- plugin/auth_socket/auth_socket.c.orig	Sat Sep 27 23:28:24 2014
++++ plugin/auth_socket/auth_socket.c	Sat Sep 27 23:28:38 2014
+@@ -37,7 +37,7 @@
+ 
+ #elif defined HAVE_SOCKPEERCRED
+ #define level SOL_SOCKET
+-#define ucred socketpeercred
++#define ucred sockpeercred
+ 
+ #elif defined HAVE_XUCRED
+ #include <sys/un.h>
