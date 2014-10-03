@@ -1,6 +1,6 @@
-$OpenBSD: patch-platform_build_bsd_ant_build_xml,v 1.1.1.1 2014/09/30 17:44:48 abieber Exp $
---- platform_build/bsd_ant/build.xml.orig	Mon Dec  2 12:50:04 2013
-+++ platform_build/bsd_ant/build.xml	Mon Sep 29 13:37:33 2014
+$OpenBSD: patch-platform_build_bsd_ant_build_xml,v 1.2 2014/10/03 15:30:42 sthen Exp $
+--- platform_build/bsd_ant/build.xml.orig	Mon Dec  2 19:50:04 2013
++++ platform_build/bsd_ant/build.xml	Fri Oct  3 16:29:31 2014
 @@ -4,8 +4,8 @@
  	<property name="native" location="../../src/native"/>
  	<property name="libname32" value="liblwjgl.so"/>
@@ -27,7 +27,7 @@ $OpenBSD: patch-platform_build_bsd_ant_build_xml,v 1.1.1.1 2014/09/30 17:44:48 a
      	<antcall target="compile32"/>
      	<antcall target="compile64"/>
      </target>
-@@ -67,8 +75,10 @@
+@@ -67,9 +75,12 @@
  			<arg line="${cflags32} ${cflags_pthread}"/>
  			<arg value="-I${java.home}/include"/>
  			<arg value="-I${java.home}/include/freebsd"/>
@@ -36,9 +36,11 @@ $OpenBSD: patch-platform_build_bsd_ant_build_xml,v 1.1.1.1 2014/09/30 17:44:48 a
  			<arg value="-I${java.home}/../include/freebsd"/>
 +			<arg value="-I${java.home}/../include/openbsd"/>
  			<arg value="-I/usr/local/include"/>
++			<arg value="-I/usr/X11R6/include"/>
  			<arg value="-I${native}/common"/>
  		    <arg value="-I${native}/common/opengl"/>
-@@ -99,9 +109,12 @@
+ 			<arg value="-I${native}/linux"/>
+@@ -99,9 +110,12 @@
  			<arg line="${cflags64} ${cflags_pthread}"/>
  			<arg value="-I${java.home}/include"/>
  			<arg value="-I${java.home}/include/freebsd"/>
