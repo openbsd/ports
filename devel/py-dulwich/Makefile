@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/25 16:18:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/03 22:51:48 sthen Exp $
 
 COMMENT =	pure Python implementation of Git file formats and protocols
 
 MODPY_EGG_VERSION =	0.9.5
+REVISION =		0
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://samba.org/~jelmer/dulwich/
+
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
