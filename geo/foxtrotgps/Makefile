@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/27 17:49:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/03 08:03:36 ajacoutot Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.1.1
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		geo x11
 
@@ -16,14 +16,14 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto curl dbus-1 dbus-glib-1
-WANTLIB += exif expat ffi fontconfig freetype gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gps gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += idn m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sqlite3 ssl
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += exif expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gps graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz idn
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs sqlite3 ssl xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MODULES = 		devel/gettext \
 			lang/python \
