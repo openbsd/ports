@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.682 2014/10/03 23:03:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.683 2014/10/03 23:07:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -417,7 +417,6 @@
      SUBDIR += py-routes
      SUBDIR += py-tempita
      SUBDIR += py-tornado
-     SUBDIR += py-turbogears
      SUBDIR += py-urlgrabber
      SUBDIR += py-webdav
      SUBDIR += py-weberror
