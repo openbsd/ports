@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/03 13:06:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/03 13:22:47 ajacoutot Exp $
 
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.19
@@ -36,7 +36,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
 SEPARATE_BUILD =	No
-CONFIGURE_STYLE =	gnu autoconf
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-online-unit-tests=no \
 			ICONV_LIBS="-liconv"
