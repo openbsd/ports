@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_ipmi_intf_c,v 1.1 2014/10/03 14:01:29 sthen Exp $
+
+from freebsd ports, r356232
+
+--- src/plugins/ipmi_intf.c.orig	Fri Oct  3 14:57:46 2014
++++ src/plugins/ipmi_intf.c	Fri Oct  3 14:57:55 2014
+@@ -45,6 +45,7 @@
+ #include <ifaddrs.h>
+ #include <unistd.h>
+ #include <netdb.h>
++#define s6_addr16 __u6_addr.__u6_addr16
+ #endif
+ 
+ 
