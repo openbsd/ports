@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/30 17:44:48 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/03 19:24:46 sthen Exp $
+
+BROKEN-i386=	/usr/bin/ld: cannot find -ljawt
 
 COMMENT=	lightweight game library for java
 
