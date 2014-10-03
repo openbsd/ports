@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/09/16 19:56:10 miod Exp $
+# $OpenBSD: Makefile,v 1.38 2014/10/03 06:44:17 ajacoutot Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	m88k
@@ -10,10 +10,10 @@ CFLAGS+=		-O1 -fno-stack-protector
 
 COMMENT=		International Components for Unicode
 
-VERSION=		53.1
+VERSION=		54.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-SO_VERSION=		7.0
+SO_VERSION=		8.0
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor

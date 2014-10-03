@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_config_icu-config-bottom,v 1.7 2013/10/15 13:35:55 ajacoutot Exp $
+$OpenBSD: patch-source_config_icu-config-bottom,v 1.8 2014/10/03 06:44:17 ajacoutot Exp $
 --- source/config/icu-config-bottom.orig	Fri Oct  4 22:50:00 2013
 +++ source/config/icu-config-bottom	Mon Oct 14 17:11:53 2013
 @@ -3,8 +3,8 @@
@@ -12,15 +12,6 @@ $OpenBSD: patch-source_config_icu-config-bottom,v 1.7 2013/10/15 13:35:55 ajacou
  
  #  echo ENABLE RPATH $ENABLE_RPATH and RPATHLDFLAGS=${RPATH_LDFLAGS}
  if [ "x$PKGDATA_MODE" = "x" ]; then
-@@ -47,7 +47,7 @@ allflags()
-     echo "  --ldflags-layout       Print ICU layout engine link directive. Use in addition to --ldflags"
-     echo "  --ldflags-libsonly     Same as --ldflags, but only the -l directives"
-     echo "  --ldflags-searchpath   Print only -L (search path) directive"
--    echo "  --ldflags-system       Print only system libs ICU links with (-lpthread, -lm)"
-+    echo "  --ldflags-system       Print only system libs ICU links with (-pthread, -lm)"
-     echo "  --ldflags-icuio        Print ICU icuio link directive. Use in addition to --ldflags "
-     echo "  --ldflags-obsolete     Print ICU obsolete link directive. Use in addition to --ldflags. (requires icuapps/obsolete to be built and installed.) "
-     echo "  --mandir               Print manpage (man) path"
 @@ -97,7 +97,8 @@ usage()
  ## Check the sanity of current variables
  sanity()

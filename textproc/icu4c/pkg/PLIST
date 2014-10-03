@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/04/03 14:50:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/10/03 06:44:17 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -95,6 +95,7 @@ include/unicode/reldatefmt.h
 include/unicode/rep.h
 include/unicode/resbund.h
 include/unicode/schriter.h
+include/unicode/scientificformathelper.h
 include/unicode/search.h
 include/unicode/selfmt.h
 include/unicode/simpletz.h
@@ -215,7 +216,6 @@ lib/libicutu.a
 @lib lib/libicutu.so.${LIBicutu_VERSION}
 lib/libicuuc.a
 @lib lib/libicuuc.so.${LIBicuuc_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/icu-i18n.pc
 lib/pkgconfig/icu-io.pc
 lib/pkgconfig/icu-le.pc
