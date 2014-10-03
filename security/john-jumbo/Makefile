@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/10 11:06:37 rpe Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/03 13:43:48 sthen Exp $
+
+BROKEN-sparc64 = path.c:49: error: too few arguments to function 'strnzcpy'
 
 COMMENT =		extremely fast password cracker, with community patches
 
