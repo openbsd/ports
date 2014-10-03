@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/24 09:53:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/03 09:53:55 dcoppa Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		mirall-1.4.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		owncloudsync 0.0
 
@@ -16,8 +16,10 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += QtDBus QtGui QtNetwork QtTest QtWebKit QtXml QtXmlPatterns
-WANTLIB += X11 c m ocsync pthread sqlite3 lib/inotify/inotify
+WANTLIB += X11 c lib/inotify/inotify lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtTest lib/qt4/QtWebKit
+WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns m ocsync pthread
+WANTLIB += sqlite3
 
 MASTER_SITES =		http://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.bz2
@@ -30,9 +32,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		devel/libinotify \
 			net/ocsync
 
-CONFIGURE_ARGS +=	-DBUILD_TYPE=Release \
-			-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync \
-			-DINOTIFY_INCLUDE_DIR=${LOCALBASE}/include/inotify
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
+			-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync
 
 NO_TEST =		Yes
 

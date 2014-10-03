@@ -1,20 +1,34 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
---- src/CMakeLists.txt.orig	Mon Oct 21 16:05:25 2013
-+++ src/CMakeLists.txt	Mon Jun 23 16:27:28 2014
-@@ -140,7 +140,7 @@ qt4_wrap_cpp(syncMoc ${libsync_HEADERS})
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2014/10/03 09:53:55 dcoppa Exp $
+--- src/CMakeLists.txt.orig	Mon Oct 21 14:05:25 2013
++++ src/CMakeLists.txt	Tue Sep 30 14:37:30 2014
+@@ -140,7 +140,6 @@ qt4_wrap_cpp(syncMoc ${libsync_HEADERS})
  list(APPEND libsync_LINK_TARGETS
      ${QT_LIBRARIES}
      ${CSYNC_LIBRARY}
 -    dl
-+    ${INOTIFY_LIBRARY}
  )
  
  if(QTKEYCHAIN_FOUND)
-@@ -233,6 +233,7 @@ endif()
- # csync is required.
- include_directories(${CSYNC_INCLUDE_DIR}/csync ${CSYNC_INCLUDE_DIR} ${CSYNC_BUILD_PATH}/src)
- include_directories(${3rdparty_INC})
-+include_directories(${INOTIFY_INCLUDE_DIR})
+@@ -148,6 +147,11 @@ if(QTKEYCHAIN_FOUND)
+     include_directories(${QTKEYCHAIN_INCLUDE_DIR})
+ endif()
  
- qt4_wrap_cpp(mirallMoc ${mirall_HEADERS})
++if(INOTIFY_FOUND)
++    include_directories(${INOTIFY_INCLUDE_DIR})
++    link_directories(${INOTIFY_LIBRARY_DIR})
++endif()
++
+ add_library(${synclib_NAME} SHARED ${libsync_SRCS} ${syncMoc})
+ set_target_properties( ${synclib_NAME}  PROPERTIES
+ 	VERSION ${VERSION}
+@@ -155,6 +159,10 @@ set_target_properties( ${synclib_NAME}  PROPERTIES
+ )
  
+ target_link_libraries(${synclib_NAME} ${libsync_LINK_TARGETS} )
++
++if(INOTIFY_FOUND)
++    target_link_libraries(${synclib_NAME} ${INOTIFY_LIBRARY} )
++endif()
+ 
+ if ( APPLE )
+     target_link_libraries(${synclib_NAME} /System/Library/Frameworks/CoreServices.framework)
