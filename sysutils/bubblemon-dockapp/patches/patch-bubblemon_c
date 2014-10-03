@@ -1,0 +1,60 @@
+$OpenBSD: patch-bubblemon_c,v 1.1 2014/10/03 14:35:42 dcoppa Exp $
+
+Unbreak with GTK+ >= 2.18
+
+--- bubblemon.c.orig	Wed Oct  1 02:37:32 2003
++++ bubblemon.c	Fri Oct  3 15:47:59 2014
+@@ -44,7 +44,7 @@
+  */
+ #define _GNU_SOURCE
+ 
+-#define VERSION "1.41"
++#define VERSION "1.46"
+ 
+ /* general includes */
+ #include <stdio.h>
+@@ -58,6 +58,7 @@
+ #include <gdk/gdk.h>
+ #include <gdk/gdkx.h>
+ #include <X11/Xresource.h>
++#include <gtk/gtk.h>
+ 
+ #include "include/master.xpm"
+ #include "include/bubblemon.h"
+@@ -275,6 +276,7 @@ static void print_usage(void)
+ 
+ int main(int argc, char **argv)
+ {
++    setenv("GDK_NATIVE_WINDOWS", "1", 0);
+     char execute[256];
+     int proximity = 0;
+     int ch;
+@@ -575,7 +577,7 @@ static void make_new_bubblemon_dockapp(void)
+     attri.colormap = gdk_colormap_get_system();
+     attri.wmclass_name = "bubblemon";
+     attri.wmclass_class = "bubblemon";
+-    attri.window_type = GDK_WINDOW_TOPLEVEL;
++    attri.window_type = GDK_WINDOW_CHILD;
+ 
+     bm.iconwin = gdk_window_new(bm.win, &attri,
+ 				GDK_WA_TITLE | GDK_WA_WMCLASS);
+@@ -593,7 +595,6 @@ static void make_new_bubblemon_dockapp(void)
+     wmhints.window_group = win;
+     wmhints.flags =
+ 	StateHint | IconWindowHint | IconPositionHint | WindowGroupHint;
+-    XSetWMHints(GDK_WINDOW_XDISPLAY(bm.win), win, &wmhints);
+ 
+     bm.gc = gdk_gc_new(bm.win);
+ 
+@@ -606,10 +607,8 @@ static void make_new_bubblemon_dockapp(void)
+     gdk_window_set_back_pixmap(bm.iconwin, bm.pixmap, False);
+ 
+     gdk_window_show(bm.win);
+-#ifdef KDE_DOCKAPP
+-    /* makes the dockapp visible inside KDE wm */
++    XSetWMHints(GDK_WINDOW_XDISPLAY(bm.win), win, &wmhints);
+     gdk_window_show(bm.iconwin);
+-#endif
+ 
+     /* We begin with zero bubbles */
+     bm.n_bubbles = 0;

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/03 14:35:42 dcoppa Exp $
 
 COMMENT=		wm-dockapp; display CPU and memory load
 
 DISTNAME=		bubblemon-dockapp-1.46
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		sysutils x11 x11/windowmaker
 
@@ -16,12 +16,11 @@ MASTER_SITES=		${HOMEPAGE}/software/
 
 MODULES=		devel/gettext
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0 GL pthread xcb-render xcb-shm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pthread z
 
 LIB_DEPENDS=		x11/gtk+2
 
