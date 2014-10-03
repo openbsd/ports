@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdnsd.rc,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
+# $OpenBSD: gdnsd.rc,v 1.2 2014/10/03 11:53:23 jasper Exp $
 
 daemon="${PREFIX}/sbin/gdnsd"
 
@@ -11,15 +11,15 @@ rc_start() {
 }
 
 rc_reload() {
-	${rcexec} "${daemon} reload"
+	${daemon} reload
 }
 
 rc_restart() {
-	${rcexec} "${daemon} restart"
+	${daemon} restart
 }
 
 rc_stop() {
-	${rcexec} "${daemon} stop"
+	${daemon} stop
 }
 
 rc_cmd $1
