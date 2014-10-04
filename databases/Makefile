@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.278 2014/10/03 07:23:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.279 2014/10/04 18:33:09 kirby Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -30,6 +30,7 @@
      SUBDIR += libdbi
      SUBDIR += libdbi-drivers
      SUBDIR += libpqxx
+     SUBDIR += libzdb
      SUBDIR += luadbi
      SUBDIR += luadbi,lua52
      SUBDIR += luasqlite3
