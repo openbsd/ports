@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 18:41:57 zhuk Exp $
---- CMakeLists.txt.orig	Sat Feb  9 23:30:33 2013
-+++ CMakeLists.txt	Sat Feb  9 23:30:49 2013
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/10/04 21:07:29 zhuk Exp $
+--- CMakeLists.txt.orig	Sat Jun 21 11:25:00 2014
++++ CMakeLists.txt	Sat Oct  4 23:55:33 2014
 @@ -6,6 +6,7 @@ find_package(KDE4 REQUIRED)
- find_package(CUPS "1.4" REQUIRED)
+ find_package(CUPS "1.5" REQUIRED)
  include (MacroLibrary)
  
 +include_directories(${CUPS_INCLUDE_DIR})
