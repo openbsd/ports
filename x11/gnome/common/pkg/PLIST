@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/09/26 07:53:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/04 15:03:08 jasper Exp $
 bin/gnome-autogen.sh
 bin/gnome-doc-common
 share/aclocal/
+share/aclocal/ax_check_enable_debug.m4
+share/aclocal/ax_code_coverage.m4
 share/aclocal/gnome-code-coverage.m4
 share/aclocal/gnome-common.m4
 share/aclocal/gnome-compiler-flags.m4
 share/doc/gnome-common/
-share/doc/gnome-common/usage.txt
 share/gnome-common/
 share/gnome-common/data/
 share/gnome-common/data/omf.make
