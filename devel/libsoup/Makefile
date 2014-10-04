@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2014/04/24 15:59:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2014/10/04 14:41:12 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
@@ -52,6 +52,10 @@ BUILD_DEPENDS +=	php-${MODPHP_VSPEC}-ap2:lang/php/${MODPHP_VERSION},ap2 \
 CONFIGURE_ENV +=	ac_cv_prog_PHP=${MODPHP_BIN}
 CONFIGURE_ARGS +=	--with-apache-httpd=${LOCALBASE}/sbin/httpd2 \
 			--with-apache-module-dir="${LOCALBASE}/lib/apache2 ${MODPHP_LIBDIR}"
+.else
+CONFIGURE_ENV +=	ac_cv_prog_PHP= \
+			ac_cv_path_APACHE_HTTPD= \
+			ac_cv_path_CURL=
 .endif
 
 .include <bsd.port.mk>
