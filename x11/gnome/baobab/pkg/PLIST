@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/04/14 15:12:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/10/04 14:54:32 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
 share/appdata/
-share/appdata/baobab.appdata.xml
+share/appdata/org.gnome.baobab.appdata.xml
 share/applications/org.gnome.baobab.desktop
 share/dbus-1/
 share/dbus-1/services/
@@ -82,6 +82,18 @@ share/help/es/baobab/scan-file-system.page
 share/help/es/baobab/scan-folder.page
 share/help/es/baobab/scan-home.page
 share/help/es/baobab/scan-remote.page
+share/help/fi/
+share/help/fi/baobab/
+share/help/fi/baobab/index.page
+share/help/fi/baobab/introduction.page
+share/help/fi/baobab/legal.xml
+share/help/fi/baobab/pref-view-chart.page
+share/help/fi/baobab/problem-permissions.page
+share/help/fi/baobab/problem-slow-scan.page
+share/help/fi/baobab/scan-file-system.page
+share/help/fi/baobab/scan-folder.page
+share/help/fi/baobab/scan-home.page
+share/help/fi/baobab/scan-remote.page
 share/help/fr/
 share/help/fr/baobab/
 share/help/fr/baobab/index.page
@@ -215,8 +227,6 @@ share/icons/hicolor/24x24/apps/baobab.png
 share/icons/hicolor/256x256/apps/baobab.png
 share/icons/hicolor/32x32/apps/baobab.png
 share/icons/hicolor/48x48/apps/baobab.png
-share/icons/hicolor/scalable/actions/view-ringschart-symbolic.svg
-share/icons/hicolor/scalable/actions/view-treemap-symbolic.svg
 share/locale/af/LC_MESSAGES/baobab.mo
 share/locale/am/LC_MESSAGES/baobab.mo
 share/locale/an/LC_MESSAGES/baobab.mo
