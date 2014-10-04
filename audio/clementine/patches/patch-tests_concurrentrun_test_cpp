@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_concurrentrun_test_cpp,v 1.1 2014/10/04 22:34:27 zhuk Exp $
+Unbreak tests.
+--- tests/concurrentrun_test.cpp.orig	Sun Oct  5 00:13:58 2014
++++ tests/concurrentrun_test.cpp	Sun Oct  5 01:59:43 2014
+@@ -144,7 +144,8 @@ TEST(ConcurrentRunTest, ConcurrentRunVoidBindFunctionS
+ 
+   A a;
+   int nb = 10;
+-  QFuture<void> future = ConcurrentRun::Run<void>(&threadpool, std::tr1::bind(&A::f, &a, &nb));
++  std::function<void()> fn = std::bind(&A::f, &a, &nb);
++  QFuture<void> future = ConcurrentRun::Run<void>(&threadpool, fn);
+   QFutureWatcher<void> watcher;
+   watcher.setFuture(future);
+   QEventLoop loop;
