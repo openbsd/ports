@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+bin/searpc-codegen.py
+include/searpc-client.h
+include/searpc-server.h
+include/searpc-utils.h
+include/searpc.h
+lib/libsearpc.a
+lib/libsearpc.la
+@lib lib/libsearpc.so.${LIBsearpc_VERSION}
+lib/pkgconfig/libsearpc.pc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/
+lib/python${MODPY_VERSION}/site-packages/pysearpc/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/pysearpc/client.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/client.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/client.pyo
+lib/python${MODPY_VERSION}/site-packages/pysearpc/common.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/common.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/common.pyo
+lib/python${MODPY_VERSION}/site-packages/pysearpc/server.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/server.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/server.pyo

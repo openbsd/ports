@@ -1,0 +1,86 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+@bin bin/ccnet
+@bin bin/ccnet-init
+@bin bin/ccnet-server
+@bin bin/ccnet-servtool
+@bin bin/ccnet-tool
+include/ccnet/
+include/ccnet.h
+include/ccnet/async-rpc-proc.h
+include/ccnet/ccnet-client.h
+include/ccnet/ccnet-object.h
+include/ccnet/ccnet-session-base.h
+include/ccnet/ccnetrpc-transport.h
+include/ccnet/cevent.h
+include/ccnet/invoke-service-proc.h
+include/ccnet/job-mgr.h
+include/ccnet/message.h
+include/ccnet/mqclient-proc.h
+include/ccnet/option.h
+include/ccnet/packet.h
+include/ccnet/peer.h
+include/ccnet/proc-factory.h
+include/ccnet/processor.h
+include/ccnet/rpcserver-proc.h
+include/ccnet/sendcmd-proc.h
+include/ccnet/status-code.h
+include/ccnet/threaded-rpcserver-proc.h
+include/ccnet/timer.h
+include/ccnet/valid-check.h
+lib/libccnet.a
+lib/libccnet.la
+@lib lib/libccnet.so.${LIBccnet_VERSION}
+lib/pkgconfig/libccnet.pc
+lib/python${MODPY_VERSION}/site-packages/ccnet/
+lib/python${MODPY_VERSION}/site-packages/ccnet/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/async_client.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/async_client.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/async_client.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/mqclientproc.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/mqclientproc.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/mqclientproc.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/processor.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/processor.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/processor.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/rpcserverproc.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/rpcserverproc.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/rpcserverproc.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/sendcmdproc.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/sendcmdproc.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/sendcmdproc.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/timer.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/timer.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/async/timer.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/client.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/client.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/client.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/errors.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/errors.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/errors.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/message.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/message.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/message.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/packet.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/packet.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/packet.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/pool.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/pool.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/pool.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/rpc.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/rpc.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/rpc.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/status_code.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/status_code.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/status_code.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/sync_client.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/sync_client.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/sync_client.pyo
+lib/python${MODPY_VERSION}/site-packages/ccnet/utils.py
+lib/python${MODPY_VERSION}/site-packages/ccnet/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/ccnet/utils.pyo

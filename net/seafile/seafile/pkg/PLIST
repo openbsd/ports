@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+bin/seaf-cli
+@bin bin/seaf-daemon
+@bin bin/seafile
+include/seafile/
+include/seafile/monitor-rpc.h
+include/seafile/seafile-object.h
+include/seafile/seafile-rpc.h
+include/seafile/seafile.h
+lib/libseafile.a
+lib/libseafile.la
+@lib lib/libseafile.so.${LIBseafile_VERSION}
+lib/pkgconfig/libseafile.pc
+lib/python${MODPY_VERSION}/site-packages/seafile/
+lib/python${MODPY_VERSION}/site-packages/seafile/__init__.py
+lib/python${MODPY_VERSION}/site-packages/seafile/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/seafile/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.py
+lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.pyc
+lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.pyo
+lib/python${MODPY_VERSION}/site-packages/seaserv/
+lib/python${MODPY_VERSION}/site-packages/seaserv/__init__.py
+lib/python${MODPY_VERSION}/site-packages/seaserv/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/seaserv/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/seaserv/api.py
+lib/python${MODPY_VERSION}/site-packages/seaserv/api.pyc
+lib/python${MODPY_VERSION}/site-packages/seaserv/api.pyo
+lib/python${MODPY_VERSION}/site-packages/seaserv/service.py
+lib/python${MODPY_VERSION}/site-packages/seaserv/service.pyc
+lib/python${MODPY_VERSION}/site-packages/seaserv/service.pyo
+@comment man/man1/ccnet.1
+@man man/man1/seaf-cli.1
+@man man/man1/seaf-daemon.1
+@comment man/man1/seafile-applet.1

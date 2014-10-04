@@ -1,0 +1,3 @@
+Searpc is a simple C language RPC framework based on GObject system.
+Searpc handles the serialization/deserialization part of RPC, the
+transport part is left to users.

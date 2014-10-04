@@ -1,0 +1,56 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+
+COMMENT =		seafile daemon
+
+GH_PROJECT =		seafile
+GH_COMMIT = 		cfbcd85d13c2fafb5e01d862a9536eb5de896114
+PKGNAME = 		${GH_PROJECT}-daemon-${V}
+
+SHARED_LIBS =		seafile 0.0
+
+cWANTLIB += c ccnet event_core event_extra crypto ffi gio-2.0 glib-2.0
+cWANTLIB += gmodule-2.0 gobject-2.0 jansson pcre pthread searpc sqlite3
+cWANTLIB += ssl uuid z ${MODGETTEXT_WANTLIB}
+
+WANTLIB += lib/inotify/inotify ${cWANTLIB}
+
+MODULES =		devel/gettext lang/python
+BUILD_DEPENDS =		devel/libtool \
+			lang/vala \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
+
+RUN_DEPENDS = 		devel/py-simplejson
+LIB_DEPENDS = 		devel/libinotify \
+			net/seafile/ccnet
+
+USE_GMAKE =		Yes
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--disable-fuse \
+			--disable-server
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify"
+
+AUTOCONF_VERSION =	2.61
+AUTOMAKE_VERSION =	1.9
+
+MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py scripts/upgrade/*.py \
+			tests/test-share.py tests/test-transfer.py \
+			tools/seafile-admin app/seaf-cli
+
+post-extract:
+	cd ${WRKSRC} && perl -pi -e 's,-levent ,\@LIBEVENT_LIBS\@ ,g' \
+		controller/Makefile.am \
+		daemon/Makefile.am \
+		fileserver/Makefile.am \
+		fuse/Makefile.am \
+		lib/Makefile.am \
+		server/Makefile.am \
+		server/gc/Makefile.am \
+		tests/Makefile.am
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
+
+.include <bsd.port.mk>

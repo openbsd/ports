@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_Makefile_am,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+--- tools/Makefile.am.orig	Tue Jan 21 16:25:21 2014
++++ tools/Makefile.am	Tue Jan 21 16:25:39 2014
+@@ -5,7 +5,7 @@ bin_PROGRAMS = ccnet-init
+ 
+ ccnet_init_SOURCES = ccnet-init.c
+ 
+-ccnet_init_LDADD = @SSL_LIBS@ @LIB_RESOLV@ @GLIB2_LIBS@ \
++ccnet_init_LDADD = @SSL_LIBS@ @GLIB2_LIBS@ \
+ 	$(top_builddir)/lib/libccnetd.la
+ 
+ ccnet_init_LDFLAGS = @STATIC_COMPILE@ @CONSOLE@ @SERVER_PKG_RPATH@

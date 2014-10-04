@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+@bin bin/seafile-applet
+share/applications/seafile.desktop
+share/icons/hicolor/128x128/apps/seafile.png
+share/icons/hicolor/16x16/apps/seafile.png
+share/icons/hicolor/22x22/apps/seafile.png
+share/icons/hicolor/24x24/apps/seafile.png
+share/icons/hicolor/32x32/apps/seafile.png
+share/icons/hicolor/48x48/apps/seafile.png
+share/icons/hicolor/scalable/apps/seafile.svg
+share/pixmaps/
+share/pixmaps/seafile.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

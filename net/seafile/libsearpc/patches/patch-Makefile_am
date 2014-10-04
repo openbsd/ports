@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+--- Makefile.am.orig	Thu Nov  7 15:32:00 2013
++++ Makefile.am	Thu Nov  7 15:32:31 2013
+@@ -22,7 +22,7 @@ install-data-local:
+ if MACOS
+ 	${SED} -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+ else
+-	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
++	perl -pi -e "s|\(DESTDIR\)||g" $(pcfiles)
+ endif
+ 
+ dist-hook:

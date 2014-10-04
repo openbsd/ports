@@ -1,0 +1,13 @@
+Ccnet is a framework for writing networked applications in C.It
+provides the following basic services:
+ * Peer identification
+ * Connection Management
+ * Service invocation
+ * Message sending
+
+In ccnet network, there are two types of nodes, i.e., client and
+server. Server has the following functions:
+ * User management
+ * Group management
+ * Cluster management
+

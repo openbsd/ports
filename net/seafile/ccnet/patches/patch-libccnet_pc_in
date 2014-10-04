@@ -1,0 +1,9 @@
+$OpenBSD: patch-libccnet_pc_in,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+--- libccnet.pc.in.orig	Wed Apr  2 14:41:23 2014
++++ libccnet.pc.in	Wed Apr  2 14:41:41 2014
+@@ -1,4 +1,4 @@
+-prefix=(DESTDIR)@prefix@
++prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
