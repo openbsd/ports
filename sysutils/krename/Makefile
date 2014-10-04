@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/10/03 21:48:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2014/10/04 14:25:40 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
@@ -20,7 +20,7 @@ CATEGORIES =	sysutils x11 x11/kde
 HOMEPAGE =	http://www.krename.net/
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
-PORTROACH =	limit:^3
+PORTROACH =	limit:^3\.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
