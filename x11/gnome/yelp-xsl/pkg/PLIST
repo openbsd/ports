@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/03/26 13:34:46 ajacoutot Exp $
-share/pkgconfig/
+@comment $OpenBSD: PLIST,v 1.10 2014/10/04 15:20:39 ajacoutot Exp $
 share/pkgconfig/yelp-xsl.pc
 share/yelp-xsl/
 share/yelp-xsl/icons/
