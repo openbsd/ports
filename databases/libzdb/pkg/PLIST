@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/04 18:30:27 kirby Exp $
+include/zdb/
+include/zdb/Connection.h
+include/zdb/ConnectionPool.h
+include/zdb/Exception.h
+include/zdb/PreparedStatement.h
+include/zdb/ResultSet.h
+include/zdb/SQLException.h
+include/zdb/URL.h
+include/zdb/zdb.h
+lib/libzdb.a
+lib/libzdb.la
+@lib lib/libzdb.so.${LIBzdb_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/zdb.pc
