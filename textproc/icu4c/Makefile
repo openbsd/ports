@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.38 2014/10/03 06:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/10/04 07:46:28 ajacoutot Exp $
+
+# XXX re-rolled tarball: drop at next release
+DIST_SUBDIR=		icu4c
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	m88k
@@ -20,6 +23,7 @@ SHARED_LIBS+=		${_lib} ${SO_VERSION}
 SUBST_VARS+=		VERSION
 CATEGORIES=		textproc devel
 DPB_PROPERTIES=		parallel
+REVISION=		0
 
 HOMEPAGE=		http://www.icu-project.org
 
@@ -36,7 +40,6 @@ MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 EXTRACT_SUFX=		.tgz
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
