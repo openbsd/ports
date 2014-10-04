@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/03/26 13:35:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2014/10/04 15:22:00 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
@@ -7,9 +7,9 @@ include/libyelp/yelp-docbook-document.h
 include/libyelp/yelp-document.h
 include/libyelp/yelp-help-list.h
 include/libyelp/yelp-info-document.h
-include/libyelp/yelp-location-entry.h
 include/libyelp/yelp-mallard-document.h
 include/libyelp/yelp-man-document.h
+include/libyelp/yelp-search-entry.h
 include/libyelp/yelp-settings.h
 include/libyelp/yelp-simple-document.h
 include/libyelp/yelp-sqlite-storage.h
@@ -25,7 +25,6 @@ share/applications/yelp.desktop
 share/glib-2.0/schemas/org.gnome.yelp.gschema.xml
 share/gtk-doc/html/libyelp/
 share/gtk-doc/html/libyelp/YelpDocument.html
-share/gtk-doc/html/libyelp/YelpLocationEntry.html
 share/gtk-doc/html/libyelp/YelpSettings.html
 share/gtk-doc/html/libyelp/YelpSimpleDocument.html
 share/gtk-doc/html/libyelp/YelpUri.html
@@ -36,12 +35,15 @@ share/gtk-doc/html/libyelp/ch01s02.html
 share/gtk-doc/html/libyelp/home.png
 share/gtk-doc/html/libyelp/index.html
 share/gtk-doc/html/libyelp/index.sgml
+share/gtk-doc/html/libyelp/left-insensitive.png
 share/gtk-doc/html/libyelp/left.png
 share/gtk-doc/html/libyelp/libyelp-yelp-error.html
 share/gtk-doc/html/libyelp/libyelp.devhelp2
 share/gtk-doc/html/libyelp/object-tree.html
+share/gtk-doc/html/libyelp/right-insensitive.png
 share/gtk-doc/html/libyelp/right.png
 share/gtk-doc/html/libyelp/style.css
+share/gtk-doc/html/libyelp/up-insensitive.png
 share/gtk-doc/html/libyelp/up.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
