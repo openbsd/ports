@@ -45,7 +45,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# Files to ignore during prepare and megre stages in addition to VCS ones
+# Files to ignore during prepare and merge stages in addition to VCS ones
 IGNORE_FILES="*.port.mk $MY_NAME STATUS kde4.pkgpath"
 
 # File containing list of KDE packages in order they should be built
