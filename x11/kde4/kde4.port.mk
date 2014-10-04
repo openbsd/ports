@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.26 2014/10/03 00:01:11 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.27 2014/10/04 12:59:26 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.13.3
@@ -40,6 +40,12 @@ MODKDE4_DEP_DIR =	x11/kde4
 .endif
 
 CATEGORIES +=		${MODKDE4_DEP_DIR}
+
+.if ${MODKDE4_DEP_DIR} != "x11/kde4"
+MODKDE4_MAIN_PKGPATH =	${FULLPKGPATH:S@x11/${MODKDE4_FLAVOR}/@x11/kde4/@}
+SUBST_VARS +=		MODKDE4_MAIN_PKGPATH
+PKG_ARGS +=		-f ${PORTSDIR}/x11/kde4/kde4.pkgpath
+.endif
 
 # Can be set by port to force dependency on particular KDE SC version.
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
