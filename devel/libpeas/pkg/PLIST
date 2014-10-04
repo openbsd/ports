@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/03/31 09:58:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/10/04 19:41:13 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -18,11 +18,13 @@ include/libpeas-1.0/libpeas/peas.h
 lib/girepository-1.0/Peas-1.0.typelib
 lib/girepository-1.0/PeasGtk-1.0.typelib
 lib/libpeas-1.0/
+lib/libpeas-1.0.a
 lib/libpeas-1.0.la
 @lib lib/libpeas-1.0.so.${LIBpeas-1.0_VERSION}
 lib/libpeas-1.0/loaders/
 lib/libpeas-1.0/loaders/libpython3loader.so
 lib/libpeas-1.0/loaders/libpythonloader.so
+lib/libpeas-gtk-1.0.a
 lib/libpeas-gtk-1.0.la
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
 lib/peas-demo/

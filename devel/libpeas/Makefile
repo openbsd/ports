@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.45 2014/08/10 11:59:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2014/10/04 19:41:13 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	1.10.1
+GNOME_VERSION=	1.12.1
 
 CATEGORIES=	devel
 
-SHARED_LIBS +=  peas-1.0             400.1      # 1001.0
-SHARED_LIBS +=  peas-gtk-1.0         400.1      # 1001.0
+SHARED_LIBS +=  peas-1.0             400.1      # 1201.0
+SHARED_LIBS +=  peas-gtk-1.0         400.1      # 1201.0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
