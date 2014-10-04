@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.118 2014/09/17 05:49:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2014/10/04 07:10:17 ajacoutot Exp $
 
-# DPB: not parallel-safe
+PORTROACH=	limitw:1,even
 
 COMMENT=	message bus system
 
