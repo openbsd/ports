@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.864 2014/10/03 11:32:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.865 2014/10/04 18:50:55 kirby Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -541,6 +541,7 @@
      SUBDIR += samba,ldap
      SUBDIR += scamper
      SUBDIR += scapy
+     SUBDIR += seafile
      SUBDIR += sendxmpp
      SUBDIR += serf
      SUBDIR += sharity-light
