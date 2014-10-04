@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/03 19:29:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/04 05:34:46 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	1.2.8
+MODPY_EGG_VERSION =	1.2.9
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
 
