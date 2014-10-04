@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.94 2014/09/13 16:29:39 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.95 2014/10/04 08:52:47 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -76,12 +76,12 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mdocbook}
-        MODGNOME_BUILD_DEPENDS+=textproc/docbook-xsl>=1.68.1p5
+        MODGNOME_BUILD_DEPENDS+=textproc/docbook-xsl
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgobject-introspection}
         MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
-        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.40.0p0
+        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-update-icon-cache}
@@ -95,12 +95,12 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 
 .   if ${MODGNOME_TOOLS:Mvala}
         MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
-        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.24.0p0
+        MODGNOME_BUILD_DEPENDS+=lang/vala
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools>=3.12.0
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10p2
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils
         # automatically try to detect GUI applications
 .       if ${MODGNOME_TOOLS:Mdesktop-file-utils}
             MODGNOME_RUN_DEPENDS+=x11/gnome/yelp
