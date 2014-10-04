@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/09 17:43:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/04 08:41:56 jasper Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.1.9
+VERSION=		2.1.10
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
-REVISION=		1
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -39,7 +38,8 @@ CONFIGURE_ARGS=		--with-dbus-service-user=_geoclue
 
 # disable all components requiring ModemManager
 CONFIGURE_ARGS +=	--disable-3g-source \
-			--disable-modem-gps-source
+			--disable-modem-gps-source \
+			--disable-cdma-source
 
 FAKE_FLAGS=		DBUS_SYS_DIR=${PREFIX}/share/examples/geoclue/dbus-1/system.d \
 			sysconfdir=${PREFIX}/share/examples/geoclue/

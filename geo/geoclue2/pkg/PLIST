@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/29 00:19:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/04 08:41:56 jasper Exp $
 @newgroup _geoclue:731
 @newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
-lib/pkgconfig/
 lib/pkgconfig/geoclue-2.0.pc
 @bin libexec/geoclue
 libexec/geoclue-2.0/
