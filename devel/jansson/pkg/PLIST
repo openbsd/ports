@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/04 18:35:46 kirby Exp $
+include/jansson.h
+include/jansson_config.h
+@lib lib/libjansson.so.${LIBjansson_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/jansson.pc
