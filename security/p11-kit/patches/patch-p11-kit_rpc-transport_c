@@ -1,0 +1,23 @@
+$OpenBSD: patch-p11-kit_rpc-transport_c,v 1.1 2014/10/04 16:46:10 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=84665
+
+--- p11-kit/rpc-transport.c.orig	Sat Oct  4 18:19:19 2014
++++ p11-kit/rpc-transport.c	Sat Oct  4 18:20:07 2014
+@@ -52,6 +52,7 @@
+ #include <fcntl.h>
+ #include <stdint.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #ifdef OS_UNIX
+ #include <sys/socket.h>
+@@ -465,7 +466,7 @@ read_at (int fd,
+ 			status = P11_RPC_EOF;
+ 		} else {
+ 			p11_debug ("error: early truncate");
+-			errn = EPROTO;
++			errn = EIO;
+ 			status = P11_RPC_ERROR;
+ 		}
+ 

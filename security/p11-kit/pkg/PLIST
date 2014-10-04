@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/09/19 06:20:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/10/04 16:46:10 ajacoutot Exp $
 @bin bin/p11-kit
 @bin bin/trust
 include/p11-kit-1/
@@ -9,11 +9,13 @@ include/p11-kit-1/p11-kit/p11-kit.h
 include/p11-kit-1/p11-kit/pin.h
 include/p11-kit-1/p11-kit/pkcs11.h
 include/p11-kit-1/p11-kit/pkcs11x.h
+include/p11-kit-1/p11-kit/remote.h
 include/p11-kit-1/p11-kit/uri.h
 lib/libp11-kit.a
 lib/libp11-kit.la
 @lib lib/libp11-kit.so.${LIBp11-kit_VERSION}
 lib/p11-kit/
+@bin lib/p11-kit/p11-kit-remote
 lib/p11-kit/trust-extract-compat
 lib/pkcs11/
 lib/pkcs11/p11-kit-trust.so
