@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/06/25 09:17:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/10/05 12:17:25 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -152,6 +152,8 @@ share/help/C/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/C/gnome-help/figures/printing-select.png
 share/help/C/gnome-help/figures/shell-activities-classic.png
 share/help/C/gnome-help/figures/shell-activities.png
+share/help/C/gnome-help/figures/shell-appmenu-classic.png
+share/help/C/gnome-help/figures/shell-appmenu-shell.png
 share/help/C/gnome-help/figures/shell-apps-open.png
 share/help/C/gnome-help/figures/shell-appts-classic.png
 share/help/C/gnome-help/figures/shell-appts.png
@@ -234,7 +236,6 @@ share/help/C/gnome-help/mouse.page
 share/help/C/gnome-help/music-cantplay-drm.page
 share/help/C/gnome-help/music-player-ipodtransfer.page
 share/help/C/gnome-help/music-player-newipod.page
-share/help/C/gnome-help/music-player-notrecognized.page
 share/help/C/gnome-help/nautilus-behavior.page
 share/help/C/gnome-help/nautilus-bookmarks-edit.page
 share/help/C/gnome-help/nautilus-connect.page
@@ -305,6 +306,7 @@ share/help/C/gnome-help/power-willnotturnon.page
 share/help/C/gnome-help/power.page
 share/help/C/gnome-help/prefs-display.page
 share/help/C/gnome-help/prefs-language.page
+share/help/C/gnome-help/prefs-sharing.page
 share/help/C/gnome-help/prefs.page
 share/help/C/gnome-help/printing-2sided.page
 share/help/C/gnome-help/printing-booklet-duplex.page
@@ -332,7 +334,6 @@ share/help/C/gnome-help/session-fingerprint.page
 share/help/C/gnome-help/session-formats.page
 share/help/C/gnome-help/session-language.page
 share/help/C/gnome-help/session-screenlocks.page
-share/help/C/gnome-help/settings-sharing.page
 share/help/C/gnome-help/sharing-bluetooth.page
 share/help/C/gnome-help/sharing-desktop.page
 share/help/C/gnome-help/sharing-displayname.page
@@ -387,8 +388,11 @@ share/help/C/gnome-help/wacom-stylus.page
 share/help/C/gnome-help/wacom.page
 share/help/C/system-admin-guide/
 share/help/C/system-admin-guide/appearance.page
+share/help/C/system-admin-guide/dconf-custom-defaults.page
 share/help/C/system-admin-guide/dconf-keyfiles.page
 share/help/C/system-admin-guide/dconf-lockdown.page
+share/help/C/system-admin-guide/dconf-nfs-home.page
+share/help/C/system-admin-guide/dconf-profiles.page
 share/help/C/system-admin-guide/dconf-snippets.xml
 share/help/C/system-admin-guide/dconf.page
 share/help/C/system-admin-guide/desktop-favorite-applications.page
@@ -401,6 +405,7 @@ share/help/C/system-admin-guide/keyboard-layout.page
 share/help/C/system-admin-guide/legal.xml
 share/help/C/system-admin-guide/lockdown-command-line.page
 share/help/C/system-admin-guide/login-automatic.page
+share/help/C/system-admin-guide/login-banner.page
 share/help/C/system-admin-guide/login-enterprise.page
 share/help/C/system-admin-guide/login-fingerprint.page
 share/help/C/system-admin-guide/login-userlist-disable.page
@@ -410,6 +415,7 @@ share/help/C/system-admin-guide/mime-types-application.page
 share/help/C/system-admin-guide/mime-types-custom-user.page
 share/help/C/system-admin-guide/mime-types-custom.page
 share/help/C/system-admin-guide/mime-types.page
+share/help/C/system-admin-guide/network-printer-config.page
 share/help/C/system-admin-guide/session-custom.page
 share/help/C/system-admin-guide/session-user.page
 share/help/C/system-admin-guide/software.page
@@ -565,6 +571,8 @@ share/help/as/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/as/gnome-help/figures/printing-select.png
 share/help/as/gnome-help/figures/shell-activities-classic.png
 share/help/as/gnome-help/figures/shell-activities.png
+share/help/as/gnome-help/figures/shell-appmenu-classic.png
+share/help/as/gnome-help/figures/shell-appmenu-shell.png
 share/help/as/gnome-help/figures/shell-apps-open.png
 share/help/as/gnome-help/figures/shell-appts-classic.png
 share/help/as/gnome-help/figures/shell-appts.png
@@ -647,7 +655,6 @@ share/help/as/gnome-help/mouse.page
 share/help/as/gnome-help/music-cantplay-drm.page
 share/help/as/gnome-help/music-player-ipodtransfer.page
 share/help/as/gnome-help/music-player-newipod.page
-share/help/as/gnome-help/music-player-notrecognized.page
 share/help/as/gnome-help/nautilus-behavior.page
 share/help/as/gnome-help/nautilus-bookmarks-edit.page
 share/help/as/gnome-help/nautilus-connect.page
@@ -718,6 +725,7 @@ share/help/as/gnome-help/power-willnotturnon.page
 share/help/as/gnome-help/power.page
 share/help/as/gnome-help/prefs-display.page
 share/help/as/gnome-help/prefs-language.page
+share/help/as/gnome-help/prefs-sharing.page
 share/help/as/gnome-help/prefs.page
 share/help/as/gnome-help/printing-2sided.page
 share/help/as/gnome-help/printing-booklet-duplex.page
@@ -745,7 +753,6 @@ share/help/as/gnome-help/session-fingerprint.page
 share/help/as/gnome-help/session-formats.page
 share/help/as/gnome-help/session-language.page
 share/help/as/gnome-help/session-screenlocks.page
-share/help/as/gnome-help/settings-sharing.page
 share/help/as/gnome-help/sharing-bluetooth.page
 share/help/as/gnome-help/sharing-desktop.page
 share/help/as/gnome-help/sharing-displayname.page
@@ -948,6 +955,8 @@ share/help/ca/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ca/gnome-help/figures/printing-select.png
 share/help/ca/gnome-help/figures/shell-activities-classic.png
 share/help/ca/gnome-help/figures/shell-activities.png
+share/help/ca/gnome-help/figures/shell-appmenu-classic.png
+share/help/ca/gnome-help/figures/shell-appmenu-shell.png
 share/help/ca/gnome-help/figures/shell-apps-open.png
 share/help/ca/gnome-help/figures/shell-appts-classic.png
 share/help/ca/gnome-help/figures/shell-appts.png
@@ -1030,7 +1039,6 @@ share/help/ca/gnome-help/mouse.page
 share/help/ca/gnome-help/music-cantplay-drm.page
 share/help/ca/gnome-help/music-player-ipodtransfer.page
 share/help/ca/gnome-help/music-player-newipod.page
-share/help/ca/gnome-help/music-player-notrecognized.page
 share/help/ca/gnome-help/nautilus-behavior.page
 share/help/ca/gnome-help/nautilus-bookmarks-edit.page
 share/help/ca/gnome-help/nautilus-connect.page
@@ -1101,6 +1109,7 @@ share/help/ca/gnome-help/power-willnotturnon.page
 share/help/ca/gnome-help/power.page
 share/help/ca/gnome-help/prefs-display.page
 share/help/ca/gnome-help/prefs-language.page
+share/help/ca/gnome-help/prefs-sharing.page
 share/help/ca/gnome-help/prefs.page
 share/help/ca/gnome-help/printing-2sided.page
 share/help/ca/gnome-help/printing-booklet-duplex.page
@@ -1128,7 +1137,6 @@ share/help/ca/gnome-help/session-fingerprint.page
 share/help/ca/gnome-help/session-formats.page
 share/help/ca/gnome-help/session-language.page
 share/help/ca/gnome-help/session-screenlocks.page
-share/help/ca/gnome-help/settings-sharing.page
 share/help/ca/gnome-help/sharing-bluetooth.page
 share/help/ca/gnome-help/sharing-desktop.page
 share/help/ca/gnome-help/sharing-displayname.page
@@ -1331,6 +1339,8 @@ share/help/cs/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/cs/gnome-help/figures/printing-select.png
 share/help/cs/gnome-help/figures/shell-activities-classic.png
 share/help/cs/gnome-help/figures/shell-activities.png
+share/help/cs/gnome-help/figures/shell-appmenu-classic.png
+share/help/cs/gnome-help/figures/shell-appmenu-shell.png
 share/help/cs/gnome-help/figures/shell-apps-open.png
 share/help/cs/gnome-help/figures/shell-appts-classic.png
 share/help/cs/gnome-help/figures/shell-appts.png
@@ -1413,7 +1423,6 @@ share/help/cs/gnome-help/mouse.page
 share/help/cs/gnome-help/music-cantplay-drm.page
 share/help/cs/gnome-help/music-player-ipodtransfer.page
 share/help/cs/gnome-help/music-player-newipod.page
-share/help/cs/gnome-help/music-player-notrecognized.page
 share/help/cs/gnome-help/nautilus-behavior.page
 share/help/cs/gnome-help/nautilus-bookmarks-edit.page
 share/help/cs/gnome-help/nautilus-connect.page
@@ -1484,6 +1493,7 @@ share/help/cs/gnome-help/power-willnotturnon.page
 share/help/cs/gnome-help/power.page
 share/help/cs/gnome-help/prefs-display.page
 share/help/cs/gnome-help/prefs-language.page
+share/help/cs/gnome-help/prefs-sharing.page
 share/help/cs/gnome-help/prefs.page
 share/help/cs/gnome-help/printing-2sided.page
 share/help/cs/gnome-help/printing-booklet-duplex.page
@@ -1511,7 +1521,6 @@ share/help/cs/gnome-help/session-fingerprint.page
 share/help/cs/gnome-help/session-formats.page
 share/help/cs/gnome-help/session-language.page
 share/help/cs/gnome-help/session-screenlocks.page
-share/help/cs/gnome-help/settings-sharing.page
 share/help/cs/gnome-help/sharing-bluetooth.page
 share/help/cs/gnome-help/sharing-desktop.page
 share/help/cs/gnome-help/sharing-displayname.page
@@ -1714,6 +1723,8 @@ share/help/de/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/de/gnome-help/figures/printing-select.png
 share/help/de/gnome-help/figures/shell-activities-classic.png
 share/help/de/gnome-help/figures/shell-activities.png
+share/help/de/gnome-help/figures/shell-appmenu-classic.png
+share/help/de/gnome-help/figures/shell-appmenu-shell.png
 share/help/de/gnome-help/figures/shell-apps-open.png
 share/help/de/gnome-help/figures/shell-appts-classic.png
 share/help/de/gnome-help/figures/shell-appts.png
@@ -1796,7 +1807,6 @@ share/help/de/gnome-help/mouse.page
 share/help/de/gnome-help/music-cantplay-drm.page
 share/help/de/gnome-help/music-player-ipodtransfer.page
 share/help/de/gnome-help/music-player-newipod.page
-share/help/de/gnome-help/music-player-notrecognized.page
 share/help/de/gnome-help/nautilus-behavior.page
 share/help/de/gnome-help/nautilus-bookmarks-edit.page
 share/help/de/gnome-help/nautilus-connect.page
@@ -1867,6 +1877,7 @@ share/help/de/gnome-help/power-willnotturnon.page
 share/help/de/gnome-help/power.page
 share/help/de/gnome-help/prefs-display.page
 share/help/de/gnome-help/prefs-language.page
+share/help/de/gnome-help/prefs-sharing.page
 share/help/de/gnome-help/prefs.page
 share/help/de/gnome-help/printing-2sided.page
 share/help/de/gnome-help/printing-booklet-duplex.page
@@ -1894,7 +1905,6 @@ share/help/de/gnome-help/session-fingerprint.page
 share/help/de/gnome-help/session-formats.page
 share/help/de/gnome-help/session-language.page
 share/help/de/gnome-help/session-screenlocks.page
-share/help/de/gnome-help/settings-sharing.page
 share/help/de/gnome-help/sharing-bluetooth.page
 share/help/de/gnome-help/sharing-desktop.page
 share/help/de/gnome-help/sharing-displayname.page
@@ -2097,6 +2107,8 @@ share/help/el/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/el/gnome-help/figures/printing-select.png
 share/help/el/gnome-help/figures/shell-activities-classic.png
 share/help/el/gnome-help/figures/shell-activities.png
+share/help/el/gnome-help/figures/shell-appmenu-classic.png
+share/help/el/gnome-help/figures/shell-appmenu-shell.png
 share/help/el/gnome-help/figures/shell-apps-open.png
 share/help/el/gnome-help/figures/shell-appts-classic.png
 share/help/el/gnome-help/figures/shell-appts.png
@@ -2179,7 +2191,6 @@ share/help/el/gnome-help/mouse.page
 share/help/el/gnome-help/music-cantplay-drm.page
 share/help/el/gnome-help/music-player-ipodtransfer.page
 share/help/el/gnome-help/music-player-newipod.page
-share/help/el/gnome-help/music-player-notrecognized.page
 share/help/el/gnome-help/nautilus-behavior.page
 share/help/el/gnome-help/nautilus-bookmarks-edit.page
 share/help/el/gnome-help/nautilus-connect.page
@@ -2250,6 +2261,7 @@ share/help/el/gnome-help/power-willnotturnon.page
 share/help/el/gnome-help/power.page
 share/help/el/gnome-help/prefs-display.page
 share/help/el/gnome-help/prefs-language.page
+share/help/el/gnome-help/prefs-sharing.page
 share/help/el/gnome-help/prefs.page
 share/help/el/gnome-help/printing-2sided.page
 share/help/el/gnome-help/printing-booklet-duplex.page
@@ -2277,7 +2289,6 @@ share/help/el/gnome-help/session-fingerprint.page
 share/help/el/gnome-help/session-formats.page
 share/help/el/gnome-help/session-language.page
 share/help/el/gnome-help/session-screenlocks.page
-share/help/el/gnome-help/settings-sharing.page
 share/help/el/gnome-help/sharing-bluetooth.page
 share/help/el/gnome-help/sharing-desktop.page
 share/help/el/gnome-help/sharing-displayname.page
@@ -2480,6 +2491,8 @@ share/help/es/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/es/gnome-help/figures/printing-select.png
 share/help/es/gnome-help/figures/shell-activities-classic.png
 share/help/es/gnome-help/figures/shell-activities.png
+share/help/es/gnome-help/figures/shell-appmenu-classic.png
+share/help/es/gnome-help/figures/shell-appmenu-shell.png
 share/help/es/gnome-help/figures/shell-apps-open.png
 share/help/es/gnome-help/figures/shell-appts-classic.png
 share/help/es/gnome-help/figures/shell-appts.png
@@ -2562,7 +2575,6 @@ share/help/es/gnome-help/mouse.page
 share/help/es/gnome-help/music-cantplay-drm.page
 share/help/es/gnome-help/music-player-ipodtransfer.page
 share/help/es/gnome-help/music-player-newipod.page
-share/help/es/gnome-help/music-player-notrecognized.page
 share/help/es/gnome-help/nautilus-behavior.page
 share/help/es/gnome-help/nautilus-bookmarks-edit.page
 share/help/es/gnome-help/nautilus-connect.page
@@ -2633,6 +2645,7 @@ share/help/es/gnome-help/power-willnotturnon.page
 share/help/es/gnome-help/power.page
 share/help/es/gnome-help/prefs-display.page
 share/help/es/gnome-help/prefs-language.page
+share/help/es/gnome-help/prefs-sharing.page
 share/help/es/gnome-help/prefs.page
 share/help/es/gnome-help/printing-2sided.page
 share/help/es/gnome-help/printing-booklet-duplex.page
@@ -2660,7 +2673,6 @@ share/help/es/gnome-help/session-fingerprint.page
 share/help/es/gnome-help/session-formats.page
 share/help/es/gnome-help/session-language.page
 share/help/es/gnome-help/session-screenlocks.page
-share/help/es/gnome-help/settings-sharing.page
 share/help/es/gnome-help/sharing-bluetooth.page
 share/help/es/gnome-help/sharing-desktop.page
 share/help/es/gnome-help/sharing-displayname.page
@@ -2863,6 +2875,8 @@ share/help/fi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fi/gnome-help/figures/printing-select.png
 share/help/fi/gnome-help/figures/shell-activities-classic.png
 share/help/fi/gnome-help/figures/shell-activities.png
+share/help/fi/gnome-help/figures/shell-appmenu-classic.png
+share/help/fi/gnome-help/figures/shell-appmenu-shell.png
 share/help/fi/gnome-help/figures/shell-apps-open.png
 share/help/fi/gnome-help/figures/shell-appts-classic.png
 share/help/fi/gnome-help/figures/shell-appts.png
@@ -2945,7 +2959,6 @@ share/help/fi/gnome-help/mouse.page
 share/help/fi/gnome-help/music-cantplay-drm.page
 share/help/fi/gnome-help/music-player-ipodtransfer.page
 share/help/fi/gnome-help/music-player-newipod.page
-share/help/fi/gnome-help/music-player-notrecognized.page
 share/help/fi/gnome-help/nautilus-behavior.page
 share/help/fi/gnome-help/nautilus-bookmarks-edit.page
 share/help/fi/gnome-help/nautilus-connect.page
@@ -3016,6 +3029,7 @@ share/help/fi/gnome-help/power-willnotturnon.page
 share/help/fi/gnome-help/power.page
 share/help/fi/gnome-help/prefs-display.page
 share/help/fi/gnome-help/prefs-language.page
+share/help/fi/gnome-help/prefs-sharing.page
 share/help/fi/gnome-help/prefs.page
 share/help/fi/gnome-help/printing-2sided.page
 share/help/fi/gnome-help/printing-booklet-duplex.page
@@ -3043,7 +3057,6 @@ share/help/fi/gnome-help/session-fingerprint.page
 share/help/fi/gnome-help/session-formats.page
 share/help/fi/gnome-help/session-language.page
 share/help/fi/gnome-help/session-screenlocks.page
-share/help/fi/gnome-help/settings-sharing.page
 share/help/fi/gnome-help/sharing-bluetooth.page
 share/help/fi/gnome-help/sharing-desktop.page
 share/help/fi/gnome-help/sharing-displayname.page
@@ -3246,6 +3259,8 @@ share/help/fr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fr/gnome-help/figures/printing-select.png
 share/help/fr/gnome-help/figures/shell-activities-classic.png
 share/help/fr/gnome-help/figures/shell-activities.png
+share/help/fr/gnome-help/figures/shell-appmenu-classic.png
+share/help/fr/gnome-help/figures/shell-appmenu-shell.png
 share/help/fr/gnome-help/figures/shell-apps-open.png
 share/help/fr/gnome-help/figures/shell-appts-classic.png
 share/help/fr/gnome-help/figures/shell-appts.png
@@ -3328,7 +3343,6 @@ share/help/fr/gnome-help/mouse.page
 share/help/fr/gnome-help/music-cantplay-drm.page
 share/help/fr/gnome-help/music-player-ipodtransfer.page
 share/help/fr/gnome-help/music-player-newipod.page
-share/help/fr/gnome-help/music-player-notrecognized.page
 share/help/fr/gnome-help/nautilus-behavior.page
 share/help/fr/gnome-help/nautilus-bookmarks-edit.page
 share/help/fr/gnome-help/nautilus-connect.page
@@ -3399,6 +3413,7 @@ share/help/fr/gnome-help/power-willnotturnon.page
 share/help/fr/gnome-help/power.page
 share/help/fr/gnome-help/prefs-display.page
 share/help/fr/gnome-help/prefs-language.page
+share/help/fr/gnome-help/prefs-sharing.page
 share/help/fr/gnome-help/prefs.page
 share/help/fr/gnome-help/printing-2sided.page
 share/help/fr/gnome-help/printing-booklet-duplex.page
@@ -3426,7 +3441,6 @@ share/help/fr/gnome-help/session-fingerprint.page
 share/help/fr/gnome-help/session-formats.page
 share/help/fr/gnome-help/session-language.page
 share/help/fr/gnome-help/session-screenlocks.page
-share/help/fr/gnome-help/settings-sharing.page
 share/help/fr/gnome-help/sharing-bluetooth.page
 share/help/fr/gnome-help/sharing-desktop.page
 share/help/fr/gnome-help/sharing-displayname.page
@@ -3629,6 +3643,8 @@ share/help/gl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/gl/gnome-help/figures/printing-select.png
 share/help/gl/gnome-help/figures/shell-activities-classic.png
 share/help/gl/gnome-help/figures/shell-activities.png
+share/help/gl/gnome-help/figures/shell-appmenu-classic.png
+share/help/gl/gnome-help/figures/shell-appmenu-shell.png
 share/help/gl/gnome-help/figures/shell-apps-open.png
 share/help/gl/gnome-help/figures/shell-appts-classic.png
 share/help/gl/gnome-help/figures/shell-appts.png
@@ -3711,7 +3727,6 @@ share/help/gl/gnome-help/mouse.page
 share/help/gl/gnome-help/music-cantplay-drm.page
 share/help/gl/gnome-help/music-player-ipodtransfer.page
 share/help/gl/gnome-help/music-player-newipod.page
-share/help/gl/gnome-help/music-player-notrecognized.page
 share/help/gl/gnome-help/nautilus-behavior.page
 share/help/gl/gnome-help/nautilus-bookmarks-edit.page
 share/help/gl/gnome-help/nautilus-connect.page
@@ -3782,6 +3797,7 @@ share/help/gl/gnome-help/power-willnotturnon.page
 share/help/gl/gnome-help/power.page
 share/help/gl/gnome-help/prefs-display.page
 share/help/gl/gnome-help/prefs-language.page
+share/help/gl/gnome-help/prefs-sharing.page
 share/help/gl/gnome-help/prefs.page
 share/help/gl/gnome-help/printing-2sided.page
 share/help/gl/gnome-help/printing-booklet-duplex.page
@@ -3809,7 +3825,6 @@ share/help/gl/gnome-help/session-fingerprint.page
 share/help/gl/gnome-help/session-formats.page
 share/help/gl/gnome-help/session-language.page
 share/help/gl/gnome-help/session-screenlocks.page
-share/help/gl/gnome-help/settings-sharing.page
 share/help/gl/gnome-help/sharing-bluetooth.page
 share/help/gl/gnome-help/sharing-desktop.page
 share/help/gl/gnome-help/sharing-displayname.page
@@ -4012,6 +4027,8 @@ share/help/gu/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/gu/gnome-help/figures/printing-select.png
 share/help/gu/gnome-help/figures/shell-activities-classic.png
 share/help/gu/gnome-help/figures/shell-activities.png
+share/help/gu/gnome-help/figures/shell-appmenu-classic.png
+share/help/gu/gnome-help/figures/shell-appmenu-shell.png
 share/help/gu/gnome-help/figures/shell-apps-open.png
 share/help/gu/gnome-help/figures/shell-appts-classic.png
 share/help/gu/gnome-help/figures/shell-appts.png
@@ -4094,7 +4111,6 @@ share/help/gu/gnome-help/mouse.page
 share/help/gu/gnome-help/music-cantplay-drm.page
 share/help/gu/gnome-help/music-player-ipodtransfer.page
 share/help/gu/gnome-help/music-player-newipod.page
-share/help/gu/gnome-help/music-player-notrecognized.page
 share/help/gu/gnome-help/nautilus-behavior.page
 share/help/gu/gnome-help/nautilus-bookmarks-edit.page
 share/help/gu/gnome-help/nautilus-connect.page
@@ -4165,6 +4181,7 @@ share/help/gu/gnome-help/power-willnotturnon.page
 share/help/gu/gnome-help/power.page
 share/help/gu/gnome-help/prefs-display.page
 share/help/gu/gnome-help/prefs-language.page
+share/help/gu/gnome-help/prefs-sharing.page
 share/help/gu/gnome-help/prefs.page
 share/help/gu/gnome-help/printing-2sided.page
 share/help/gu/gnome-help/printing-booklet-duplex.page
@@ -4192,7 +4209,6 @@ share/help/gu/gnome-help/session-fingerprint.page
 share/help/gu/gnome-help/session-formats.page
 share/help/gu/gnome-help/session-language.page
 share/help/gu/gnome-help/session-screenlocks.page
-share/help/gu/gnome-help/settings-sharing.page
 share/help/gu/gnome-help/sharing-bluetooth.page
 share/help/gu/gnome-help/sharing-desktop.page
 share/help/gu/gnome-help/sharing-displayname.page
@@ -4395,6 +4411,8 @@ share/help/hi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hi/gnome-help/figures/printing-select.png
 share/help/hi/gnome-help/figures/shell-activities-classic.png
 share/help/hi/gnome-help/figures/shell-activities.png
+share/help/hi/gnome-help/figures/shell-appmenu-classic.png
+share/help/hi/gnome-help/figures/shell-appmenu-shell.png
 share/help/hi/gnome-help/figures/shell-apps-open.png
 share/help/hi/gnome-help/figures/shell-appts-classic.png
 share/help/hi/gnome-help/figures/shell-appts.png
@@ -4477,7 +4495,6 @@ share/help/hi/gnome-help/mouse.page
 share/help/hi/gnome-help/music-cantplay-drm.page
 share/help/hi/gnome-help/music-player-ipodtransfer.page
 share/help/hi/gnome-help/music-player-newipod.page
-share/help/hi/gnome-help/music-player-notrecognized.page
 share/help/hi/gnome-help/nautilus-behavior.page
 share/help/hi/gnome-help/nautilus-bookmarks-edit.page
 share/help/hi/gnome-help/nautilus-connect.page
@@ -4548,6 +4565,7 @@ share/help/hi/gnome-help/power-willnotturnon.page
 share/help/hi/gnome-help/power.page
 share/help/hi/gnome-help/prefs-display.page
 share/help/hi/gnome-help/prefs-language.page
+share/help/hi/gnome-help/prefs-sharing.page
 share/help/hi/gnome-help/prefs.page
 share/help/hi/gnome-help/printing-2sided.page
 share/help/hi/gnome-help/printing-booklet-duplex.page
@@ -4575,7 +4593,6 @@ share/help/hi/gnome-help/session-fingerprint.page
 share/help/hi/gnome-help/session-formats.page
 share/help/hi/gnome-help/session-language.page
 share/help/hi/gnome-help/session-screenlocks.page
-share/help/hi/gnome-help/settings-sharing.page
 share/help/hi/gnome-help/sharing-bluetooth.page
 share/help/hi/gnome-help/sharing-desktop.page
 share/help/hi/gnome-help/sharing-displayname.page
@@ -4778,6 +4795,8 @@ share/help/hu/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hu/gnome-help/figures/printing-select.png
 share/help/hu/gnome-help/figures/shell-activities-classic.png
 share/help/hu/gnome-help/figures/shell-activities.png
+share/help/hu/gnome-help/figures/shell-appmenu-classic.png
+share/help/hu/gnome-help/figures/shell-appmenu-shell.png
 share/help/hu/gnome-help/figures/shell-apps-open.png
 share/help/hu/gnome-help/figures/shell-appts-classic.png
 share/help/hu/gnome-help/figures/shell-appts.png
@@ -4860,7 +4879,6 @@ share/help/hu/gnome-help/mouse.page
 share/help/hu/gnome-help/music-cantplay-drm.page
 share/help/hu/gnome-help/music-player-ipodtransfer.page
 share/help/hu/gnome-help/music-player-newipod.page
-share/help/hu/gnome-help/music-player-notrecognized.page
 share/help/hu/gnome-help/nautilus-behavior.page
 share/help/hu/gnome-help/nautilus-bookmarks-edit.page
 share/help/hu/gnome-help/nautilus-connect.page
@@ -4931,6 +4949,7 @@ share/help/hu/gnome-help/power-willnotturnon.page
 share/help/hu/gnome-help/power.page
 share/help/hu/gnome-help/prefs-display.page
 share/help/hu/gnome-help/prefs-language.page
+share/help/hu/gnome-help/prefs-sharing.page
 share/help/hu/gnome-help/prefs.page
 share/help/hu/gnome-help/printing-2sided.page
 share/help/hu/gnome-help/printing-booklet-duplex.page
@@ -4958,7 +4977,6 @@ share/help/hu/gnome-help/session-fingerprint.page
 share/help/hu/gnome-help/session-formats.page
 share/help/hu/gnome-help/session-language.page
 share/help/hu/gnome-help/session-screenlocks.page
-share/help/hu/gnome-help/settings-sharing.page
 share/help/hu/gnome-help/sharing-bluetooth.page
 share/help/hu/gnome-help/sharing-desktop.page
 share/help/hu/gnome-help/sharing-displayname.page
@@ -5161,6 +5179,8 @@ share/help/id/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/id/gnome-help/figures/printing-select.png
 share/help/id/gnome-help/figures/shell-activities-classic.png
 share/help/id/gnome-help/figures/shell-activities.png
+share/help/id/gnome-help/figures/shell-appmenu-classic.png
+share/help/id/gnome-help/figures/shell-appmenu-shell.png
 share/help/id/gnome-help/figures/shell-apps-open.png
 share/help/id/gnome-help/figures/shell-appts-classic.png
 share/help/id/gnome-help/figures/shell-appts.png
@@ -5243,7 +5263,6 @@ share/help/id/gnome-help/mouse.page
 share/help/id/gnome-help/music-cantplay-drm.page
 share/help/id/gnome-help/music-player-ipodtransfer.page
 share/help/id/gnome-help/music-player-newipod.page
-share/help/id/gnome-help/music-player-notrecognized.page
 share/help/id/gnome-help/nautilus-behavior.page
 share/help/id/gnome-help/nautilus-bookmarks-edit.page
 share/help/id/gnome-help/nautilus-connect.page
@@ -5314,6 +5333,7 @@ share/help/id/gnome-help/power-willnotturnon.page
 share/help/id/gnome-help/power.page
 share/help/id/gnome-help/prefs-display.page
 share/help/id/gnome-help/prefs-language.page
+share/help/id/gnome-help/prefs-sharing.page
 share/help/id/gnome-help/prefs.page
 share/help/id/gnome-help/printing-2sided.page
 share/help/id/gnome-help/printing-booklet-duplex.page
@@ -5341,7 +5361,6 @@ share/help/id/gnome-help/session-fingerprint.page
 share/help/id/gnome-help/session-formats.page
 share/help/id/gnome-help/session-language.page
 share/help/id/gnome-help/session-screenlocks.page
-share/help/id/gnome-help/settings-sharing.page
 share/help/id/gnome-help/sharing-bluetooth.page
 share/help/id/gnome-help/sharing-desktop.page
 share/help/id/gnome-help/sharing-displayname.page
@@ -5544,6 +5563,8 @@ share/help/it/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/it/gnome-help/figures/printing-select.png
 share/help/it/gnome-help/figures/shell-activities-classic.png
 share/help/it/gnome-help/figures/shell-activities.png
+share/help/it/gnome-help/figures/shell-appmenu-classic.png
+share/help/it/gnome-help/figures/shell-appmenu-shell.png
 share/help/it/gnome-help/figures/shell-apps-open.png
 share/help/it/gnome-help/figures/shell-appts-classic.png
 share/help/it/gnome-help/figures/shell-appts.png
@@ -5626,7 +5647,6 @@ share/help/it/gnome-help/mouse.page
 share/help/it/gnome-help/music-cantplay-drm.page
 share/help/it/gnome-help/music-player-ipodtransfer.page
 share/help/it/gnome-help/music-player-newipod.page
-share/help/it/gnome-help/music-player-notrecognized.page
 share/help/it/gnome-help/nautilus-behavior.page
 share/help/it/gnome-help/nautilus-bookmarks-edit.page
 share/help/it/gnome-help/nautilus-connect.page
@@ -5697,6 +5717,7 @@ share/help/it/gnome-help/power-willnotturnon.page
 share/help/it/gnome-help/power.page
 share/help/it/gnome-help/prefs-display.page
 share/help/it/gnome-help/prefs-language.page
+share/help/it/gnome-help/prefs-sharing.page
 share/help/it/gnome-help/prefs.page
 share/help/it/gnome-help/printing-2sided.page
 share/help/it/gnome-help/printing-booklet-duplex.page
@@ -5724,7 +5745,6 @@ share/help/it/gnome-help/session-fingerprint.page
 share/help/it/gnome-help/session-formats.page
 share/help/it/gnome-help/session-language.page
 share/help/it/gnome-help/session-screenlocks.page
-share/help/it/gnome-help/settings-sharing.page
 share/help/it/gnome-help/sharing-bluetooth.page
 share/help/it/gnome-help/sharing-desktop.page
 share/help/it/gnome-help/sharing-displayname.page
@@ -5927,6 +5947,8 @@ share/help/ja/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ja/gnome-help/figures/printing-select.png
 share/help/ja/gnome-help/figures/shell-activities-classic.png
 share/help/ja/gnome-help/figures/shell-activities.png
+share/help/ja/gnome-help/figures/shell-appmenu-classic.png
+share/help/ja/gnome-help/figures/shell-appmenu-shell.png
 share/help/ja/gnome-help/figures/shell-apps-open.png
 share/help/ja/gnome-help/figures/shell-appts-classic.png
 share/help/ja/gnome-help/figures/shell-appts.png
@@ -6009,7 +6031,6 @@ share/help/ja/gnome-help/mouse.page
 share/help/ja/gnome-help/music-cantplay-drm.page
 share/help/ja/gnome-help/music-player-ipodtransfer.page
 share/help/ja/gnome-help/music-player-newipod.page
-share/help/ja/gnome-help/music-player-notrecognized.page
 share/help/ja/gnome-help/nautilus-behavior.page
 share/help/ja/gnome-help/nautilus-bookmarks-edit.page
 share/help/ja/gnome-help/nautilus-connect.page
@@ -6080,6 +6101,7 @@ share/help/ja/gnome-help/power-willnotturnon.page
 share/help/ja/gnome-help/power.page
 share/help/ja/gnome-help/prefs-display.page
 share/help/ja/gnome-help/prefs-language.page
+share/help/ja/gnome-help/prefs-sharing.page
 share/help/ja/gnome-help/prefs.page
 share/help/ja/gnome-help/printing-2sided.page
 share/help/ja/gnome-help/printing-booklet-duplex.page
@@ -6107,7 +6129,6 @@ share/help/ja/gnome-help/session-fingerprint.page
 share/help/ja/gnome-help/session-formats.page
 share/help/ja/gnome-help/session-language.page
 share/help/ja/gnome-help/session-screenlocks.page
-share/help/ja/gnome-help/settings-sharing.page
 share/help/ja/gnome-help/sharing-bluetooth.page
 share/help/ja/gnome-help/sharing-desktop.page
 share/help/ja/gnome-help/sharing-displayname.page
@@ -6310,6 +6331,8 @@ share/help/kn/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/kn/gnome-help/figures/printing-select.png
 share/help/kn/gnome-help/figures/shell-activities-classic.png
 share/help/kn/gnome-help/figures/shell-activities.png
+share/help/kn/gnome-help/figures/shell-appmenu-classic.png
+share/help/kn/gnome-help/figures/shell-appmenu-shell.png
 share/help/kn/gnome-help/figures/shell-apps-open.png
 share/help/kn/gnome-help/figures/shell-appts-classic.png
 share/help/kn/gnome-help/figures/shell-appts.png
@@ -6392,7 +6415,6 @@ share/help/kn/gnome-help/mouse.page
 share/help/kn/gnome-help/music-cantplay-drm.page
 share/help/kn/gnome-help/music-player-ipodtransfer.page
 share/help/kn/gnome-help/music-player-newipod.page
-share/help/kn/gnome-help/music-player-notrecognized.page
 share/help/kn/gnome-help/nautilus-behavior.page
 share/help/kn/gnome-help/nautilus-bookmarks-edit.page
 share/help/kn/gnome-help/nautilus-connect.page
@@ -6463,6 +6485,7 @@ share/help/kn/gnome-help/power-willnotturnon.page
 share/help/kn/gnome-help/power.page
 share/help/kn/gnome-help/prefs-display.page
 share/help/kn/gnome-help/prefs-language.page
+share/help/kn/gnome-help/prefs-sharing.page
 share/help/kn/gnome-help/prefs.page
 share/help/kn/gnome-help/printing-2sided.page
 share/help/kn/gnome-help/printing-booklet-duplex.page
@@ -6490,7 +6513,6 @@ share/help/kn/gnome-help/session-fingerprint.page
 share/help/kn/gnome-help/session-formats.page
 share/help/kn/gnome-help/session-language.page
 share/help/kn/gnome-help/session-screenlocks.page
-share/help/kn/gnome-help/settings-sharing.page
 share/help/kn/gnome-help/sharing-bluetooth.page
 share/help/kn/gnome-help/sharing-desktop.page
 share/help/kn/gnome-help/sharing-displayname.page
@@ -6693,6 +6715,8 @@ share/help/lv/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/lv/gnome-help/figures/printing-select.png
 share/help/lv/gnome-help/figures/shell-activities-classic.png
 share/help/lv/gnome-help/figures/shell-activities.png
+share/help/lv/gnome-help/figures/shell-appmenu-classic.png
+share/help/lv/gnome-help/figures/shell-appmenu-shell.png
 share/help/lv/gnome-help/figures/shell-apps-open.png
 share/help/lv/gnome-help/figures/shell-appts-classic.png
 share/help/lv/gnome-help/figures/shell-appts.png
@@ -6775,7 +6799,6 @@ share/help/lv/gnome-help/mouse.page
 share/help/lv/gnome-help/music-cantplay-drm.page
 share/help/lv/gnome-help/music-player-ipodtransfer.page
 share/help/lv/gnome-help/music-player-newipod.page
-share/help/lv/gnome-help/music-player-notrecognized.page
 share/help/lv/gnome-help/nautilus-behavior.page
 share/help/lv/gnome-help/nautilus-bookmarks-edit.page
 share/help/lv/gnome-help/nautilus-connect.page
@@ -6846,6 +6869,7 @@ share/help/lv/gnome-help/power-willnotturnon.page
 share/help/lv/gnome-help/power.page
 share/help/lv/gnome-help/prefs-display.page
 share/help/lv/gnome-help/prefs-language.page
+share/help/lv/gnome-help/prefs-sharing.page
 share/help/lv/gnome-help/prefs.page
 share/help/lv/gnome-help/printing-2sided.page
 share/help/lv/gnome-help/printing-booklet-duplex.page
@@ -6873,7 +6897,6 @@ share/help/lv/gnome-help/session-fingerprint.page
 share/help/lv/gnome-help/session-formats.page
 share/help/lv/gnome-help/session-language.page
 share/help/lv/gnome-help/session-screenlocks.page
-share/help/lv/gnome-help/settings-sharing.page
 share/help/lv/gnome-help/sharing-bluetooth.page
 share/help/lv/gnome-help/sharing-desktop.page
 share/help/lv/gnome-help/sharing-displayname.page
@@ -7076,6 +7099,8 @@ share/help/mr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/mr/gnome-help/figures/printing-select.png
 share/help/mr/gnome-help/figures/shell-activities-classic.png
 share/help/mr/gnome-help/figures/shell-activities.png
+share/help/mr/gnome-help/figures/shell-appmenu-classic.png
+share/help/mr/gnome-help/figures/shell-appmenu-shell.png
 share/help/mr/gnome-help/figures/shell-apps-open.png
 share/help/mr/gnome-help/figures/shell-appts-classic.png
 share/help/mr/gnome-help/figures/shell-appts.png
@@ -7158,7 +7183,6 @@ share/help/mr/gnome-help/mouse.page
 share/help/mr/gnome-help/music-cantplay-drm.page
 share/help/mr/gnome-help/music-player-ipodtransfer.page
 share/help/mr/gnome-help/music-player-newipod.page
-share/help/mr/gnome-help/music-player-notrecognized.page
 share/help/mr/gnome-help/nautilus-behavior.page
 share/help/mr/gnome-help/nautilus-bookmarks-edit.page
 share/help/mr/gnome-help/nautilus-connect.page
@@ -7229,6 +7253,7 @@ share/help/mr/gnome-help/power-willnotturnon.page
 share/help/mr/gnome-help/power.page
 share/help/mr/gnome-help/prefs-display.page
 share/help/mr/gnome-help/prefs-language.page
+share/help/mr/gnome-help/prefs-sharing.page
 share/help/mr/gnome-help/prefs.page
 share/help/mr/gnome-help/printing-2sided.page
 share/help/mr/gnome-help/printing-booklet-duplex.page
@@ -7256,7 +7281,6 @@ share/help/mr/gnome-help/session-fingerprint.page
 share/help/mr/gnome-help/session-formats.page
 share/help/mr/gnome-help/session-language.page
 share/help/mr/gnome-help/session-screenlocks.page
-share/help/mr/gnome-help/settings-sharing.page
 share/help/mr/gnome-help/sharing-bluetooth.page
 share/help/mr/gnome-help/sharing-desktop.page
 share/help/mr/gnome-help/sharing-displayname.page
@@ -7459,6 +7483,8 @@ share/help/nl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/nl/gnome-help/figures/printing-select.png
 share/help/nl/gnome-help/figures/shell-activities-classic.png
 share/help/nl/gnome-help/figures/shell-activities.png
+share/help/nl/gnome-help/figures/shell-appmenu-classic.png
+share/help/nl/gnome-help/figures/shell-appmenu-shell.png
 share/help/nl/gnome-help/figures/shell-apps-open.png
 share/help/nl/gnome-help/figures/shell-appts-classic.png
 share/help/nl/gnome-help/figures/shell-appts.png
@@ -7541,7 +7567,6 @@ share/help/nl/gnome-help/mouse.page
 share/help/nl/gnome-help/music-cantplay-drm.page
 share/help/nl/gnome-help/music-player-ipodtransfer.page
 share/help/nl/gnome-help/music-player-newipod.page
-share/help/nl/gnome-help/music-player-notrecognized.page
 share/help/nl/gnome-help/nautilus-behavior.page
 share/help/nl/gnome-help/nautilus-bookmarks-edit.page
 share/help/nl/gnome-help/nautilus-connect.page
@@ -7612,6 +7637,7 @@ share/help/nl/gnome-help/power-willnotturnon.page
 share/help/nl/gnome-help/power.page
 share/help/nl/gnome-help/prefs-display.page
 share/help/nl/gnome-help/prefs-language.page
+share/help/nl/gnome-help/prefs-sharing.page
 share/help/nl/gnome-help/prefs.page
 share/help/nl/gnome-help/printing-2sided.page
 share/help/nl/gnome-help/printing-booklet-duplex.page
@@ -7639,7 +7665,6 @@ share/help/nl/gnome-help/session-fingerprint.page
 share/help/nl/gnome-help/session-formats.page
 share/help/nl/gnome-help/session-language.page
 share/help/nl/gnome-help/session-screenlocks.page
-share/help/nl/gnome-help/settings-sharing.page
 share/help/nl/gnome-help/sharing-bluetooth.page
 share/help/nl/gnome-help/sharing-desktop.page
 share/help/nl/gnome-help/sharing-displayname.page
@@ -7842,6 +7867,8 @@ share/help/pa/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pa/gnome-help/figures/printing-select.png
 share/help/pa/gnome-help/figures/shell-activities-classic.png
 share/help/pa/gnome-help/figures/shell-activities.png
+share/help/pa/gnome-help/figures/shell-appmenu-classic.png
+share/help/pa/gnome-help/figures/shell-appmenu-shell.png
 share/help/pa/gnome-help/figures/shell-apps-open.png
 share/help/pa/gnome-help/figures/shell-appts-classic.png
 share/help/pa/gnome-help/figures/shell-appts.png
@@ -7924,7 +7951,6 @@ share/help/pa/gnome-help/mouse.page
 share/help/pa/gnome-help/music-cantplay-drm.page
 share/help/pa/gnome-help/music-player-ipodtransfer.page
 share/help/pa/gnome-help/music-player-newipod.page
-share/help/pa/gnome-help/music-player-notrecognized.page
 share/help/pa/gnome-help/nautilus-behavior.page
 share/help/pa/gnome-help/nautilus-bookmarks-edit.page
 share/help/pa/gnome-help/nautilus-connect.page
@@ -7995,6 +8021,7 @@ share/help/pa/gnome-help/power-willnotturnon.page
 share/help/pa/gnome-help/power.page
 share/help/pa/gnome-help/prefs-display.page
 share/help/pa/gnome-help/prefs-language.page
+share/help/pa/gnome-help/prefs-sharing.page
 share/help/pa/gnome-help/prefs.page
 share/help/pa/gnome-help/printing-2sided.page
 share/help/pa/gnome-help/printing-booklet-duplex.page
@@ -8022,7 +8049,6 @@ share/help/pa/gnome-help/session-fingerprint.page
 share/help/pa/gnome-help/session-formats.page
 share/help/pa/gnome-help/session-language.page
 share/help/pa/gnome-help/session-screenlocks.page
-share/help/pa/gnome-help/settings-sharing.page
 share/help/pa/gnome-help/sharing-bluetooth.page
 share/help/pa/gnome-help/sharing-desktop.page
 share/help/pa/gnome-help/sharing-displayname.page
@@ -8225,6 +8251,8 @@ share/help/pt_BR/gnome-help/figures/preferences-desktop-accessibility-symbolic.s
 share/help/pt_BR/gnome-help/figures/printing-select.png
 share/help/pt_BR/gnome-help/figures/shell-activities-classic.png
 share/help/pt_BR/gnome-help/figures/shell-activities.png
+share/help/pt_BR/gnome-help/figures/shell-appmenu-classic.png
+share/help/pt_BR/gnome-help/figures/shell-appmenu-shell.png
 share/help/pt_BR/gnome-help/figures/shell-apps-open.png
 share/help/pt_BR/gnome-help/figures/shell-appts-classic.png
 share/help/pt_BR/gnome-help/figures/shell-appts.png
@@ -8307,7 +8335,6 @@ share/help/pt_BR/gnome-help/mouse.page
 share/help/pt_BR/gnome-help/music-cantplay-drm.page
 share/help/pt_BR/gnome-help/music-player-ipodtransfer.page
 share/help/pt_BR/gnome-help/music-player-newipod.page
-share/help/pt_BR/gnome-help/music-player-notrecognized.page
 share/help/pt_BR/gnome-help/nautilus-behavior.page
 share/help/pt_BR/gnome-help/nautilus-bookmarks-edit.page
 share/help/pt_BR/gnome-help/nautilus-connect.page
@@ -8378,6 +8405,7 @@ share/help/pt_BR/gnome-help/power-willnotturnon.page
 share/help/pt_BR/gnome-help/power.page
 share/help/pt_BR/gnome-help/prefs-display.page
 share/help/pt_BR/gnome-help/prefs-language.page
+share/help/pt_BR/gnome-help/prefs-sharing.page
 share/help/pt_BR/gnome-help/prefs.page
 share/help/pt_BR/gnome-help/printing-2sided.page
 share/help/pt_BR/gnome-help/printing-booklet-duplex.page
@@ -8405,7 +8433,6 @@ share/help/pt_BR/gnome-help/session-fingerprint.page
 share/help/pt_BR/gnome-help/session-formats.page
 share/help/pt_BR/gnome-help/session-language.page
 share/help/pt_BR/gnome-help/session-screenlocks.page
-share/help/pt_BR/gnome-help/settings-sharing.page
 share/help/pt_BR/gnome-help/sharing-bluetooth.page
 share/help/pt_BR/gnome-help/sharing-desktop.page
 share/help/pt_BR/gnome-help/sharing-displayname.page
@@ -8608,6 +8635,8 @@ share/help/ru/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ru/gnome-help/figures/printing-select.png
 share/help/ru/gnome-help/figures/shell-activities-classic.png
 share/help/ru/gnome-help/figures/shell-activities.png
+share/help/ru/gnome-help/figures/shell-appmenu-classic.png
+share/help/ru/gnome-help/figures/shell-appmenu-shell.png
 share/help/ru/gnome-help/figures/shell-apps-open.png
 share/help/ru/gnome-help/figures/shell-appts-classic.png
 share/help/ru/gnome-help/figures/shell-appts.png
@@ -8690,7 +8719,6 @@ share/help/ru/gnome-help/mouse.page
 share/help/ru/gnome-help/music-cantplay-drm.page
 share/help/ru/gnome-help/music-player-ipodtransfer.page
 share/help/ru/gnome-help/music-player-newipod.page
-share/help/ru/gnome-help/music-player-notrecognized.page
 share/help/ru/gnome-help/nautilus-behavior.page
 share/help/ru/gnome-help/nautilus-bookmarks-edit.page
 share/help/ru/gnome-help/nautilus-connect.page
@@ -8761,6 +8789,7 @@ share/help/ru/gnome-help/power-willnotturnon.page
 share/help/ru/gnome-help/power.page
 share/help/ru/gnome-help/prefs-display.page
 share/help/ru/gnome-help/prefs-language.page
+share/help/ru/gnome-help/prefs-sharing.page
 share/help/ru/gnome-help/prefs.page
 share/help/ru/gnome-help/printing-2sided.page
 share/help/ru/gnome-help/printing-booklet-duplex.page
@@ -8788,7 +8817,6 @@ share/help/ru/gnome-help/session-fingerprint.page
 share/help/ru/gnome-help/session-formats.page
 share/help/ru/gnome-help/session-language.page
 share/help/ru/gnome-help/session-screenlocks.page
-share/help/ru/gnome-help/settings-sharing.page
 share/help/ru/gnome-help/sharing-bluetooth.page
 share/help/ru/gnome-help/sharing-desktop.page
 share/help/ru/gnome-help/sharing-displayname.page
@@ -8991,6 +9019,8 @@ share/help/sl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sl/gnome-help/figures/printing-select.png
 share/help/sl/gnome-help/figures/shell-activities-classic.png
 share/help/sl/gnome-help/figures/shell-activities.png
+share/help/sl/gnome-help/figures/shell-appmenu-classic.png
+share/help/sl/gnome-help/figures/shell-appmenu-shell.png
 share/help/sl/gnome-help/figures/shell-apps-open.png
 share/help/sl/gnome-help/figures/shell-appts-classic.png
 share/help/sl/gnome-help/figures/shell-appts.png
@@ -9073,7 +9103,6 @@ share/help/sl/gnome-help/mouse.page
 share/help/sl/gnome-help/music-cantplay-drm.page
 share/help/sl/gnome-help/music-player-ipodtransfer.page
 share/help/sl/gnome-help/music-player-newipod.page
-share/help/sl/gnome-help/music-player-notrecognized.page
 share/help/sl/gnome-help/nautilus-behavior.page
 share/help/sl/gnome-help/nautilus-bookmarks-edit.page
 share/help/sl/gnome-help/nautilus-connect.page
@@ -9144,6 +9173,7 @@ share/help/sl/gnome-help/power-willnotturnon.page
 share/help/sl/gnome-help/power.page
 share/help/sl/gnome-help/prefs-display.page
 share/help/sl/gnome-help/prefs-language.page
+share/help/sl/gnome-help/prefs-sharing.page
 share/help/sl/gnome-help/prefs.page
 share/help/sl/gnome-help/printing-2sided.page
 share/help/sl/gnome-help/printing-booklet-duplex.page
@@ -9171,7 +9201,6 @@ share/help/sl/gnome-help/session-fingerprint.page
 share/help/sl/gnome-help/session-formats.page
 share/help/sl/gnome-help/session-language.page
 share/help/sl/gnome-help/session-screenlocks.page
-share/help/sl/gnome-help/settings-sharing.page
 share/help/sl/gnome-help/sharing-bluetooth.page
 share/help/sl/gnome-help/sharing-desktop.page
 share/help/sl/gnome-help/sharing-displayname.page
@@ -9374,6 +9403,8 @@ share/help/sr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sr/gnome-help/figures/printing-select.png
 share/help/sr/gnome-help/figures/shell-activities-classic.png
 share/help/sr/gnome-help/figures/shell-activities.png
+share/help/sr/gnome-help/figures/shell-appmenu-classic.png
+share/help/sr/gnome-help/figures/shell-appmenu-shell.png
 share/help/sr/gnome-help/figures/shell-apps-open.png
 share/help/sr/gnome-help/figures/shell-appts-classic.png
 share/help/sr/gnome-help/figures/shell-appts.png
@@ -9456,7 +9487,6 @@ share/help/sr/gnome-help/mouse.page
 share/help/sr/gnome-help/music-cantplay-drm.page
 share/help/sr/gnome-help/music-player-ipodtransfer.page
 share/help/sr/gnome-help/music-player-newipod.page
-share/help/sr/gnome-help/music-player-notrecognized.page
 share/help/sr/gnome-help/nautilus-behavior.page
 share/help/sr/gnome-help/nautilus-bookmarks-edit.page
 share/help/sr/gnome-help/nautilus-connect.page
@@ -9527,6 +9557,7 @@ share/help/sr/gnome-help/power-willnotturnon.page
 share/help/sr/gnome-help/power.page
 share/help/sr/gnome-help/prefs-display.page
 share/help/sr/gnome-help/prefs-language.page
+share/help/sr/gnome-help/prefs-sharing.page
 share/help/sr/gnome-help/prefs.page
 share/help/sr/gnome-help/printing-2sided.page
 share/help/sr/gnome-help/printing-booklet-duplex.page
@@ -9554,7 +9585,6 @@ share/help/sr/gnome-help/session-fingerprint.page
 share/help/sr/gnome-help/session-formats.page
 share/help/sr/gnome-help/session-language.page
 share/help/sr/gnome-help/session-screenlocks.page
-share/help/sr/gnome-help/settings-sharing.page
 share/help/sr/gnome-help/sharing-bluetooth.page
 share/help/sr/gnome-help/sharing-desktop.page
 share/help/sr/gnome-help/sharing-displayname.page
@@ -9757,6 +9787,8 @@ share/help/sr@latin/gnome-help/figures/preferences-desktop-accessibility-symboli
 share/help/sr@latin/gnome-help/figures/printing-select.png
 share/help/sr@latin/gnome-help/figures/shell-activities-classic.png
 share/help/sr@latin/gnome-help/figures/shell-activities.png
+share/help/sr@latin/gnome-help/figures/shell-appmenu-classic.png
+share/help/sr@latin/gnome-help/figures/shell-appmenu-shell.png
 share/help/sr@latin/gnome-help/figures/shell-apps-open.png
 share/help/sr@latin/gnome-help/figures/shell-appts-classic.png
 share/help/sr@latin/gnome-help/figures/shell-appts.png
@@ -9839,7 +9871,6 @@ share/help/sr@latin/gnome-help/mouse.page
 share/help/sr@latin/gnome-help/music-cantplay-drm.page
 share/help/sr@latin/gnome-help/music-player-ipodtransfer.page
 share/help/sr@latin/gnome-help/music-player-newipod.page
-share/help/sr@latin/gnome-help/music-player-notrecognized.page
 share/help/sr@latin/gnome-help/nautilus-behavior.page
 share/help/sr@latin/gnome-help/nautilus-bookmarks-edit.page
 share/help/sr@latin/gnome-help/nautilus-connect.page
@@ -9910,6 +9941,7 @@ share/help/sr@latin/gnome-help/power-willnotturnon.page
 share/help/sr@latin/gnome-help/power.page
 share/help/sr@latin/gnome-help/prefs-display.page
 share/help/sr@latin/gnome-help/prefs-language.page
+share/help/sr@latin/gnome-help/prefs-sharing.page
 share/help/sr@latin/gnome-help/prefs.page
 share/help/sr@latin/gnome-help/printing-2sided.page
 share/help/sr@latin/gnome-help/printing-booklet-duplex.page
@@ -9937,7 +9969,6 @@ share/help/sr@latin/gnome-help/session-fingerprint.page
 share/help/sr@latin/gnome-help/session-formats.page
 share/help/sr@latin/gnome-help/session-language.page
 share/help/sr@latin/gnome-help/session-screenlocks.page
-share/help/sr@latin/gnome-help/settings-sharing.page
 share/help/sr@latin/gnome-help/sharing-bluetooth.page
 share/help/sr@latin/gnome-help/sharing-desktop.page
 share/help/sr@latin/gnome-help/sharing-displayname.page
@@ -10140,6 +10171,8 @@ share/help/sv/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sv/gnome-help/figures/printing-select.png
 share/help/sv/gnome-help/figures/shell-activities-classic.png
 share/help/sv/gnome-help/figures/shell-activities.png
+share/help/sv/gnome-help/figures/shell-appmenu-classic.png
+share/help/sv/gnome-help/figures/shell-appmenu-shell.png
 share/help/sv/gnome-help/figures/shell-apps-open.png
 share/help/sv/gnome-help/figures/shell-appts-classic.png
 share/help/sv/gnome-help/figures/shell-appts.png
@@ -10222,7 +10255,6 @@ share/help/sv/gnome-help/mouse.page
 share/help/sv/gnome-help/music-cantplay-drm.page
 share/help/sv/gnome-help/music-player-ipodtransfer.page
 share/help/sv/gnome-help/music-player-newipod.page
-share/help/sv/gnome-help/music-player-notrecognized.page
 share/help/sv/gnome-help/nautilus-behavior.page
 share/help/sv/gnome-help/nautilus-bookmarks-edit.page
 share/help/sv/gnome-help/nautilus-connect.page
@@ -10293,6 +10325,7 @@ share/help/sv/gnome-help/power-willnotturnon.page
 share/help/sv/gnome-help/power.page
 share/help/sv/gnome-help/prefs-display.page
 share/help/sv/gnome-help/prefs-language.page
+share/help/sv/gnome-help/prefs-sharing.page
 share/help/sv/gnome-help/prefs.page
 share/help/sv/gnome-help/printing-2sided.page
 share/help/sv/gnome-help/printing-booklet-duplex.page
@@ -10320,7 +10353,6 @@ share/help/sv/gnome-help/session-fingerprint.page
 share/help/sv/gnome-help/session-formats.page
 share/help/sv/gnome-help/session-language.page
 share/help/sv/gnome-help/session-screenlocks.page
-share/help/sv/gnome-help/settings-sharing.page
 share/help/sv/gnome-help/sharing-bluetooth.page
 share/help/sv/gnome-help/sharing-desktop.page
 share/help/sv/gnome-help/sharing-displayname.page
@@ -10523,6 +10555,8 @@ share/help/ta/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ta/gnome-help/figures/printing-select.png
 share/help/ta/gnome-help/figures/shell-activities-classic.png
 share/help/ta/gnome-help/figures/shell-activities.png
+share/help/ta/gnome-help/figures/shell-appmenu-classic.png
+share/help/ta/gnome-help/figures/shell-appmenu-shell.png
 share/help/ta/gnome-help/figures/shell-apps-open.png
 share/help/ta/gnome-help/figures/shell-appts-classic.png
 share/help/ta/gnome-help/figures/shell-appts.png
@@ -10605,7 +10639,6 @@ share/help/ta/gnome-help/mouse.page
 share/help/ta/gnome-help/music-cantplay-drm.page
 share/help/ta/gnome-help/music-player-ipodtransfer.page
 share/help/ta/gnome-help/music-player-newipod.page
-share/help/ta/gnome-help/music-player-notrecognized.page
 share/help/ta/gnome-help/nautilus-behavior.page
 share/help/ta/gnome-help/nautilus-bookmarks-edit.page
 share/help/ta/gnome-help/nautilus-connect.page
@@ -10676,6 +10709,7 @@ share/help/ta/gnome-help/power-willnotturnon.page
 share/help/ta/gnome-help/power.page
 share/help/ta/gnome-help/prefs-display.page
 share/help/ta/gnome-help/prefs-language.page
+share/help/ta/gnome-help/prefs-sharing.page
 share/help/ta/gnome-help/prefs.page
 share/help/ta/gnome-help/printing-2sided.page
 share/help/ta/gnome-help/printing-booklet-duplex.page
@@ -10703,7 +10737,6 @@ share/help/ta/gnome-help/session-fingerprint.page
 share/help/ta/gnome-help/session-formats.page
 share/help/ta/gnome-help/session-language.page
 share/help/ta/gnome-help/session-screenlocks.page
-share/help/ta/gnome-help/settings-sharing.page
 share/help/ta/gnome-help/sharing-bluetooth.page
 share/help/ta/gnome-help/sharing-desktop.page
 share/help/ta/gnome-help/sharing-displayname.page
@@ -10906,6 +10939,8 @@ share/help/te/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/te/gnome-help/figures/printing-select.png
 share/help/te/gnome-help/figures/shell-activities-classic.png
 share/help/te/gnome-help/figures/shell-activities.png
+share/help/te/gnome-help/figures/shell-appmenu-classic.png
+share/help/te/gnome-help/figures/shell-appmenu-shell.png
 share/help/te/gnome-help/figures/shell-apps-open.png
 share/help/te/gnome-help/figures/shell-appts-classic.png
 share/help/te/gnome-help/figures/shell-appts.png
@@ -10988,7 +11023,6 @@ share/help/te/gnome-help/mouse.page
 share/help/te/gnome-help/music-cantplay-drm.page
 share/help/te/gnome-help/music-player-ipodtransfer.page
 share/help/te/gnome-help/music-player-newipod.page
-share/help/te/gnome-help/music-player-notrecognized.page
 share/help/te/gnome-help/nautilus-behavior.page
 share/help/te/gnome-help/nautilus-bookmarks-edit.page
 share/help/te/gnome-help/nautilus-connect.page
@@ -11059,6 +11093,7 @@ share/help/te/gnome-help/power-willnotturnon.page
 share/help/te/gnome-help/power.page
 share/help/te/gnome-help/prefs-display.page
 share/help/te/gnome-help/prefs-language.page
+share/help/te/gnome-help/prefs-sharing.page
 share/help/te/gnome-help/prefs.page
 share/help/te/gnome-help/printing-2sided.page
 share/help/te/gnome-help/printing-booklet-duplex.page
@@ -11086,7 +11121,6 @@ share/help/te/gnome-help/session-fingerprint.page
 share/help/te/gnome-help/session-formats.page
 share/help/te/gnome-help/session-language.page
 share/help/te/gnome-help/session-screenlocks.page
-share/help/te/gnome-help/settings-sharing.page
 share/help/te/gnome-help/sharing-bluetooth.page
 share/help/te/gnome-help/sharing-desktop.page
 share/help/te/gnome-help/sharing-displayname.page
@@ -11289,6 +11323,8 @@ share/help/vi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/vi/gnome-help/figures/printing-select.png
 share/help/vi/gnome-help/figures/shell-activities-classic.png
 share/help/vi/gnome-help/figures/shell-activities.png
+share/help/vi/gnome-help/figures/shell-appmenu-classic.png
+share/help/vi/gnome-help/figures/shell-appmenu-shell.png
 share/help/vi/gnome-help/figures/shell-apps-open.png
 share/help/vi/gnome-help/figures/shell-appts-classic.png
 share/help/vi/gnome-help/figures/shell-appts.png
@@ -11371,7 +11407,6 @@ share/help/vi/gnome-help/mouse.page
 share/help/vi/gnome-help/music-cantplay-drm.page
 share/help/vi/gnome-help/music-player-ipodtransfer.page
 share/help/vi/gnome-help/music-player-newipod.page
-share/help/vi/gnome-help/music-player-notrecognized.page
 share/help/vi/gnome-help/nautilus-behavior.page
 share/help/vi/gnome-help/nautilus-bookmarks-edit.page
 share/help/vi/gnome-help/nautilus-connect.page
@@ -11442,6 +11477,7 @@ share/help/vi/gnome-help/power-willnotturnon.page
 share/help/vi/gnome-help/power.page
 share/help/vi/gnome-help/prefs-display.page
 share/help/vi/gnome-help/prefs-language.page
+share/help/vi/gnome-help/prefs-sharing.page
 share/help/vi/gnome-help/prefs.page
 share/help/vi/gnome-help/printing-2sided.page
 share/help/vi/gnome-help/printing-booklet-duplex.page
@@ -11469,7 +11505,6 @@ share/help/vi/gnome-help/session-fingerprint.page
 share/help/vi/gnome-help/session-formats.page
 share/help/vi/gnome-help/session-language.page
 share/help/vi/gnome-help/session-screenlocks.page
-share/help/vi/gnome-help/settings-sharing.page
 share/help/vi/gnome-help/sharing-bluetooth.page
 share/help/vi/gnome-help/sharing-desktop.page
 share/help/vi/gnome-help/sharing-displayname.page
@@ -11672,6 +11707,8 @@ share/help/zh_CN/gnome-help/figures/preferences-desktop-accessibility-symbolic.s
 share/help/zh_CN/gnome-help/figures/printing-select.png
 share/help/zh_CN/gnome-help/figures/shell-activities-classic.png
 share/help/zh_CN/gnome-help/figures/shell-activities.png
+share/help/zh_CN/gnome-help/figures/shell-appmenu-classic.png
+share/help/zh_CN/gnome-help/figures/shell-appmenu-shell.png
 share/help/zh_CN/gnome-help/figures/shell-apps-open.png
 share/help/zh_CN/gnome-help/figures/shell-appts-classic.png
 share/help/zh_CN/gnome-help/figures/shell-appts.png
@@ -11754,7 +11791,6 @@ share/help/zh_CN/gnome-help/mouse.page
 share/help/zh_CN/gnome-help/music-cantplay-drm.page
 share/help/zh_CN/gnome-help/music-player-ipodtransfer.page
 share/help/zh_CN/gnome-help/music-player-newipod.page
-share/help/zh_CN/gnome-help/music-player-notrecognized.page
 share/help/zh_CN/gnome-help/nautilus-behavior.page
 share/help/zh_CN/gnome-help/nautilus-bookmarks-edit.page
 share/help/zh_CN/gnome-help/nautilus-connect.page
@@ -11825,6 +11861,7 @@ share/help/zh_CN/gnome-help/power-willnotturnon.page
 share/help/zh_CN/gnome-help/power.page
 share/help/zh_CN/gnome-help/prefs-display.page
 share/help/zh_CN/gnome-help/prefs-language.page
+share/help/zh_CN/gnome-help/prefs-sharing.page
 share/help/zh_CN/gnome-help/prefs.page
 share/help/zh_CN/gnome-help/printing-2sided.page
 share/help/zh_CN/gnome-help/printing-booklet-duplex.page
@@ -11852,7 +11889,6 @@ share/help/zh_CN/gnome-help/session-fingerprint.page
 share/help/zh_CN/gnome-help/session-formats.page
 share/help/zh_CN/gnome-help/session-language.page
 share/help/zh_CN/gnome-help/session-screenlocks.page
-share/help/zh_CN/gnome-help/settings-sharing.page
 share/help/zh_CN/gnome-help/sharing-bluetooth.page
 share/help/zh_CN/gnome-help/sharing-desktop.page
 share/help/zh_CN/gnome-help/sharing-displayname.page
