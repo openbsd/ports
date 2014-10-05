@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.108 2014/05/14 07:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2014/10/05 12:58:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
-GNOME_VERSION=	3.12.2
+GNOME_VERSION=	3.14.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += atspi c cairo cairo-gobject dbus-1 expat ffi fontconfig
-WANTLIB += freetype gck-1 gcr-3 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
+WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext \
 		x11/gnome \
