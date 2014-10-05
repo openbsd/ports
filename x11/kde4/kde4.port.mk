@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.27 2014/10/04 12:59:26 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.28 2014/10/05 19:18:56 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.13.3
@@ -54,7 +54,11 @@ MODKDE4_DEP_VERSION ?=	${MODKDE4_VERSION:R}
 # General options set by module
 SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
+
+GH_COMMIT ?=
+.if empty(GH_COMMIT)
 EXTRACT_SUFX ?=		.tar.xz
+.endif
 
 .if "${NO_BUILD:L}" != "yes"
 # CONFIGURE_STYLE needs separate handling because it is set to empty
