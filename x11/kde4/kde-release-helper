@@ -456,6 +456,16 @@ m@^ *MASTER_SITES[1-9]\\s*=.*/${KDEV}/@ or
 m@^ REVISION\\s*=@ or
 print" kde-shared-data/Makefile
 	(cd kde-shared-data && make makesum)
+
+	echo '==> removing REVISIONs from meta/kde4' >&2
+	local METAKDE=../meta/kde4
+	test -d "$METAKDE" || METAKDE="../$METAKDE"
+	test -d "$METAKDE" || METAKDE="../$METAKDE"
+	test -d "$METAKDE" || {
+		echo "===> meta/kde4 directory wasn't found" >&2
+		return
+	}
+	perl -ni -e "/^ *REVISION/ or print" "$METAKDE/Makefile"
 }
 
 run_job() {
