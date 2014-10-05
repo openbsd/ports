@@ -1,40 +1,52 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/20 17:25:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2014/10/05 21:33:30 jasper Exp $
 
 COMMENT=		terminal emulator for X
 
-DISTNAME=		roxterm-2.0.1
-REVISION=		9
+DISTNAME=		roxterm-2.9.4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
+EXTRACT_SUFX=		.tar.bz2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 expat ffi
-WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += harfbuzz m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs util vte2_90
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
+WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m ncurses pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs vte xcb xcb-render xcb-shm z
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			lang/python
 
-LIB_DEPENDS=		devel/vte3 \
+LIB_DEPENDS=		devel/vte \
 			x11/dbus-glib
 
-BUILD_DEPENDS=		textproc/docbook-xsl \
+BUILD_DEPENDS=		sysutils/py-lockfile \
+			textproc/docbook-xsl \
 			textproc/xmlto
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
-USE_GMAKE=		Yes
+# XXX: Not ported to vte-2.91 yet, so keep using gtk2/vte-0.28
+CONFIGURE_ARGS+=	--disable-gtk3 \
+			--destdir="${DESTDIR}" \
+			--mandir="${PREFIX}/man"
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+NO_TEST=		Yes
+
+do-configure:
+	${MODPY_BIN} ${WRKSRC}/mscript.py configure ${CONFIGURE_ARGS}
+
+do-build:
+	${MODPY_BIN} ${WRKSRC}/mscript.py build
+
+do-install:
+	${MODPY_BIN} ${WRKSRC}/mscript.py install
 
 .include <bsd.port.mk>

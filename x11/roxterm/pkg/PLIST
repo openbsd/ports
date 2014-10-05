@@ -1,24 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/10/05 21:33:30 jasper Exp $
 @bin bin/roxterm
 @bin bin/roxterm-config
 @man man/man1/roxterm-config.1
 @man man/man1/roxterm.1
+share/appdata/
+share/appdata/roxterm.appdata.xml
 share/applications/roxterm.desktop
 share/doc/roxterm/
+share/doc/roxterm/AUTHORS
+share/doc/roxterm/ChangeLog
+share/doc/roxterm/README
 share/doc/roxterm/en/
 share/doc/roxterm/en/guide.html
 share/doc/roxterm/en/index.html
 share/doc/roxterm/en/installation.html
 share/doc/roxterm/en/news.html
 share/doc/roxterm/lib/
-share/doc/roxterm/lib/favicon.ico
 share/doc/roxterm/lib/header.png
 share/doc/roxterm/lib/logo_text.png
+share/doc/roxterm/lib/logo_text_only.png
 share/doc/roxterm/lib/roxterm.css
 share/doc/roxterm/lib/roxterm_ie.css
 share/doc/roxterm/lib/roxterm_logo.png
 share/doc/roxterm/lib/sprites.png
 share/icons/hicolor/scalable/apps/roxterm.svg
+share/locale/es/LC_MESSAGES/roxterm.mo/
+share/locale/es/LC_MESSAGES/roxterm.mo/es.mo
+share/locale/fr/LC_MESSAGES/roxterm.mo/
+share/locale/fr/LC_MESSAGES/roxterm.mo/fr.mo
+share/locale/pt/LC_MESSAGES/roxterm.mo
+share/locale/pt_BR/LC_MESSAGES/roxterm.mo/
+share/locale/pt_BR/LC_MESSAGES/roxterm.mo/pt_BR.mo
+share/locale/ru/LC_MESSAGES/roxterm.mo/
+share/locale/ru/LC_MESSAGES/roxterm.mo/ru.mo
+share/locale/uk/LC_MESSAGES/roxterm.mo/
+share/locale/uk/LC_MESSAGES/roxterm.mo/uk.mo
 share/roxterm/
 share/roxterm/Config/
 share/roxterm/Config/Colours/
