@@ -9,6 +9,6 @@ real-time, sending alerts, performing session sniping, logging packets, or
 dropping sessions/packets when deployed in-line.
 
 Snort has three primary functional modes.  It can be used as a packet sniffer
-like tcpdump(1), a packet logger (useful for network traffic
+like tcpdump(8), a packet logger (useful for network traffic
 debugging, etc), or as a full blown network intrusion detection and prevention
 system.
