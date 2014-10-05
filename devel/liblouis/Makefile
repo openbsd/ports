@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/04 12:05:32 rpointel Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/05 13:53:37 ajacoutot Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
-DISTNAME=	liblouis-2.5.4
+V=		2.6.0
+DISTNAME=	liblouis-${V}
 
-SHARED_LIBS +=  louis                3.0      # 6.0
-
-REVISION = 0
+SHARED_LIBS +=  louis                4.0      # 7.0
 
 CATEGORIES=	devel
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://www.liblouis.org/downloads/
+MASTER_SITES=	https://github.com/liblouis/liblouis/releases/download/v${V}/
 
 MODULES=	lang/python
 
