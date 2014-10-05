@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2014/10/05 10:32:07 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
-DISTNAME =	akonadi-1.12.1
-REVISION =	1
+DISTNAME =	akonadi-1.13.0
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
 
-SHARED_LIBS = 	akonadiprotocolinternals 3.0	# 1.0
+SHARED_LIBS = 	akonadiprotocolinternals 4.0	# 1.0
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/akonadi/src/}
 
-WANTLIB =  c m pthread
+WANTLIB =  c m pthread X11
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
-WANTLIB += boost_program_options-mt execinfo sqlite3 soprano
+WANTLIB += boost_program_options-mt execinfo sqlite3
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -30,8 +29,7 @@ BUILD_DEPENDS =		databases/mariadb,-server \
 
 RUN_DEPENDS =		misc/shared-mime-info
 
-LIB_DEPENDS =		databases/soprano>=2.9.0 \
-			devel/boost \
+LIB_DEPENDS =		devel/boost \
 			devel/libexecinfo
 
 # XXX (buggy) dbconfigtest fails due to SQLITE being default,
