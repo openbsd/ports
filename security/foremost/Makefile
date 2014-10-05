@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/10 11:28:06 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/05 07:55:11 rpointel Exp $
 
 COMMENT =		forensic data recovery program
 
 DISTNAME =		foremost-1.5.7
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -20,6 +21,9 @@ FAKE_FLAGS =		BIN=${WRKINST}${PREFIX}/bin \
 
 post-extract:
 	cd ${WRKSRC} && gunzip foremost.8.gz
+
+pre-configure:
+	perl -pi -e 's,/usr/local/etc,${SYSCONFDIR},' ${WRKSRC}/config.c
 
 NO_TEST =		Yes
 
