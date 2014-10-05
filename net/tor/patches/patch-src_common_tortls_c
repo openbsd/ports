@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_common_tortls_c,v 1.3 2014/07/12 13:57:23 pascal Exp $
---- src/common/tortls.c.orig	Sat Jul 12 15:52:08 2014
-+++ src/common/tortls.c	Sat Jul 12 15:53:06 2014
+$OpenBSD: patch-src_common_tortls_c,v 1.4 2014/10/05 19:29:20 pascal Exp $
+--- src/common/tortls.c.orig	Tue Sep 23 10:41:52 2014
++++ src/common/tortls.c	Mon Oct  6 03:18:38 2014
 @@ -1345,10 +1345,12 @@ tor_tls_context_new(crypto_pk_t *identity, unsigned in
      SSL_CTX_set_options(result->ctx,
                          SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION);
@@ -14,3 +14,53 @@ $OpenBSD: patch-src_common_tortls_c,v 1.3 2014/07/12 13:57:23 pascal Exp $
  #ifdef SSL_MODE_RELEASE_BUFFERS
    SSL_CTX_set_mode(result->ctx, SSL_MODE_RELEASE_BUFFERS);
  #endif
+@@ -1484,27 +1486,35 @@ static int v2_cipher_list_pruned = 0;
+ static void
+ prune_v2_cipher_list(void)
+ {
++  STACK_OF(SSL_CIPHER) *ciphers;
+   uint16_t *inp, *outp;
+-  const SSL_METHOD *m = SSLv23_method();
++  SSL_CTX *ctx;
++  SSL *ssl;
++  int i;
+ 
++  ctx = SSL_CTX_new(SSLv23_method());
++  tor_assert(ctx);
++  ssl = SSL_new(ctx);
++  tor_assert(ssl);
++  ciphers = SSL_get_ciphers(ssl);
++
+   inp = outp = v2_cipher_list;
+   while (*inp) {
+-    unsigned char cipherid[3];
+-    const SSL_CIPHER *cipher;
+-    /* Is there no better way to do this? */
+-    set_uint16(cipherid, htons(*inp));
+-    cipherid[2] = 0; /* If ssl23_get_cipher_by_char finds no cipher starting
+-                      * with a two-byte 'cipherid', it may look for a v2
+-                      * cipher with the appropriate 3 bytes. */
+-    cipher = m->get_cipher_by_char(cipherid);
+-    if (cipher) {
+-      tor_assert((cipher->id & 0xffff) == *inp);
+-      *outp++ = *inp++;
+-    } else {
+-      inp++;
++    for (i = 0; i < sk_SSL_CIPHER_num(ciphers); i++) {
++      const SSL_CIPHER *cipher;
++
++      cipher = sk_SSL_CIPHER_value(ciphers, i);
++      if (SSL_CIPHER_get_id(cipher) == (SSL3_VERSION_MAJOR << 24 | *inp)) {
++        *outp++ = *inp;
++        break;
++      }
+     }
++    *inp++;
+   }
+   *outp = 0;
++
++  SSL_CTX_free(ctx);
++  SSL_free(ssl);
+ 
+   v2_cipher_list_pruned = 1;
+ }
