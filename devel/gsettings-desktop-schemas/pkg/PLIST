@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/03/27 08:03:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/10/05 12:31:09 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -37,6 +37,7 @@ share/glib-2.0/schemas/org.gnome.desktop.thumbnailers.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.wm.keybindings.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.wm.preferences.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.locale.gschema.xml
+share/glib-2.0/schemas/org.gnome.system.location.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
 share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/bg/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -76,13 +77,13 @@ share/locale/sr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sr@latin/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/tg/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/tr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ug/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/uk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_HK/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_TW/LC_MESSAGES/gsettings-desktop-schemas.mo
-share/pkgconfig/
 share/pkgconfig/gsettings-desktop-schemas.pc
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
