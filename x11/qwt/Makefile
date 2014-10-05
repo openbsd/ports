@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/08/10 09:58:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/05 09:49:14 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ DISTNAME =		qwt-5.2.1
 SHARED_LIBS =		qwt 6.0
 CATEGORIES =		x11
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://qwt.sourceforge.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}

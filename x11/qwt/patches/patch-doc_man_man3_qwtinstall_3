@@ -1,0 +1,51 @@
+$OpenBSD: patch-doc_man_man3_qwtinstall_3,v 1.1 2014/10/05 09:49:14 zhuk Exp $
+Fix the manual structure, unbreaking apropos output.
+ISSUE: https://sourceforge.net/p/qwt/patches/48/
+--- doc/man/man3/qwtinstall.3.orig	Sun Apr 11 13:55:11 2010
++++ doc/man/man3/qwtinstall.3	Sun Oct  5 13:38:46 2014
+@@ -1,9 +1,9 @@
+-.TH "qwtinstall" 3 "11 Apr 2010" "Version 5.2.1" "Qwt User's Guide" \" -*- nroff -*-
++.TH "QWTINSTALL" 3 "2010-04-11" "Version 5.2.1" "Qwt User's Guide" \" -*- nroff -*-
+ .ad l
+ .nh
+ .SH NAME
+-qwtinstall \- INSTALL 
+-.PP
++qwtinstall \- INSTALL
++.SH DESCRIPTION
+ .nf
+ Introduction
+ ============
+@@ -49,7 +49,7 @@ make install
+ 
+ If you have installed a shared library it's path has to be known to 
+ the run-time linker of your operating system. On Linux systems read
+-'man ldconfig' ( or google for it ). Another option is to use
++\&'man ldconfig' ( or google for it ). Another option is to use
+ the LD_LIBRARY_PATH (on some systems LIBPATH is used instead, on MacOSX
+ it is called DYLD_LIBRARY_PATH) environment variable.
+ 
+@@ -104,7 +104,7 @@ C) Win32/MinGW Qt4
+ C1) Windows Shell
+ 
+ Start a Windows Shell, where Qt4 is initialized. ( F.e. with
+-'Programs->Qt by Trolltech ...->Qt 4.x.x Command Prompt' ).
++\&'Programs->Qt by Trolltech ...->Qt 4.x.x Command Prompt' ).
+ 
+ qmake qwt.pro
+ make
+@@ -164,7 +164,7 @@ XCode project files instead of makefiles. So you might
+ following:
+ 
+ qmake -spec macx-g++
+-...
++\&...
+ 
+ D) Qtopia Core
+ 
+@@ -183,5 +183,3 @@ not done yet.
+ 
+ Good luck !
+ .fi
+-.PP
+- 
