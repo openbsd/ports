@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.43 2014/10/05 12:54:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.44 2014/10/05 14:27:41 ajacoutot Exp $
 @bin bin/gedit
 bin/gnome-text-editor
-include/gedit3.0.12/
-include/gedit3.0.12/gedit/
-include/gedit3.0.12/gedit/gedit-app-activatable.h
-include/gedit3.0.12/gedit/gedit-app.h
-include/gedit3.0.12/gedit/gedit-commands.h
-include/gedit3.0.12/gedit/gedit-debug.h
-include/gedit3.0.12/gedit/gedit-document.h
-include/gedit3.0.12/gedit/gedit-encodings-combo-box.h
-include/gedit3.0.12/gedit/gedit-menu-extension.h
-include/gedit3.0.12/gedit/gedit-message-bus.h
-include/gedit3.0.12/gedit/gedit-message.h
-include/gedit3.0.12/gedit/gedit-progress-info-bar.h
-include/gedit3.0.12/gedit/gedit-statusbar.h
-include/gedit3.0.12/gedit/gedit-tab.h
-include/gedit3.0.12/gedit/gedit-utils.h
-include/gedit3.0.12/gedit/gedit-view-activatable.h
-include/gedit3.0.12/gedit/gedit-view.h
-include/gedit3.0.12/gedit/gedit-window-activatable.h
-include/gedit3.0.12/gedit/gedit-window.h
+include/gedit-3.12/
+include/gedit-3.12/gedit/
+include/gedit-3.12/gedit/gedit-app-activatable.h
+include/gedit-3.12/gedit/gedit-app.h
+include/gedit-3.12/gedit/gedit-commands.h
+include/gedit-3.12/gedit/gedit-debug.h
+include/gedit-3.12/gedit/gedit-document.h
+include/gedit-3.12/gedit/gedit-encodings-combo-box.h
+include/gedit-3.12/gedit/gedit-menu-extension.h
+include/gedit-3.12/gedit/gedit-message-bus.h
+include/gedit-3.12/gedit/gedit-message.h
+include/gedit-3.12/gedit/gedit-progress-info-bar.h
+include/gedit-3.12/gedit/gedit-statusbar.h
+include/gedit-3.12/gedit/gedit-tab.h
+include/gedit-3.12/gedit/gedit-utils.h
+include/gedit-3.12/gedit/gedit-view-activatable.h
+include/gedit-3.12/gedit/gedit-view.h
+include/gedit-3.12/gedit/gedit-window-activatable.h
+include/gedit-3.12/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
-lib/gedit/girepository-1.0/Gedit3.0.0.typelib
+lib/gedit/girepository-1.0/Gedit-3.0.typelib
 lib/gedit/libgedit.so
 lib/gedit/plugins/
 lib/gedit/plugins/docinfo.plugin
@@ -165,7 +165,7 @@ share/applications/org.gnome.gedit.desktop
 share/dbus-1/services/org.gnome.gedit.service
 share/gedit/
 share/gedit/gir-1.0/
-share/gedit/gir-1.0/Gedit3.0.0.gir
+share/gedit/gir-1.0/Gedit-3.0.gir
 share/gedit/logo/
 share/gedit/logo/gedit-logo.png
 share/gedit/plugins/
@@ -228,7 +228,7 @@ share/gtk-doc/html/gedit/GeditMessageBus.html
 share/gtk-doc/html/gedit/GeditViewActivatable.html
 share/gtk-doc/html/gedit/GeditWindowActivatable.html
 share/gtk-doc/html/gedit/annotation-glossary.html
-share/gtk-doc/html/gedit/api-index3.0-14.html
+share/gtk-doc/html/gedit/api-index-3-14.html
 share/gtk-doc/html/gedit/api-index-deprecated.html
 share/gtk-doc/html/gedit/api-index-full.html
 share/gtk-doc/html/gedit/ch01.html
