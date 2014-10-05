@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/04/16 07:28:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/05 19:52:59 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -28,6 +28,7 @@ lib/mozilla/plugins/libgnome-shell-browser-plugin.so
 share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
+share/applications/gnome-shell-wayland.desktop
 share/applications/gnome-shell.desktop
 share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
@@ -37,6 +38,7 @@ share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
+share/gnome-shell/perf-background.xml
 share/gnome-shell/theme/
 share/gnome-shell/theme/calendar-arrow-left.svg
 share/gnome-shell/theme/calendar-arrow-right.svg
@@ -54,7 +56,6 @@ share/gnome-shell/theme/filter-selected-ltr.svg
 share/gnome-shell/theme/filter-selected-rtl.svg
 share/gnome-shell/theme/gnome-shell.css
 share/gnome-shell/theme/logged-in-indicator.svg
-share/gnome-shell/theme/menu-arrow-symbolic.svg
 share/gnome-shell/theme/message-tray-background.png
 share/gnome-shell/theme/more-results.svg
 share/gnome-shell/theme/noise-texture.png
@@ -84,7 +85,6 @@ share/gtk-doc/html/shell/ShellGenericContainer.html
 share/gtk-doc/html/shell/ShellGlobal.html
 share/gtk-doc/html/shell/ShellGtkEmbed.html
 share/gtk-doc/html/shell/ShellMountOperation.html
-share/gtk-doc/html/shell/ShellNetworkAgent.html
 share/gtk-doc/html/shell/ShellSlicer.html
 share/gtk-doc/html/shell/ShellStack.html
 share/gtk-doc/html/shell/ShellTpClient.html
@@ -204,6 +204,7 @@ share/locale/ml/LC_MESSAGES/gnome-shell.mo
 share/locale/mr/LC_MESSAGES/gnome-shell.mo
 share/locale/ms/LC_MESSAGES/gnome-shell.mo
 share/locale/nb/LC_MESSAGES/gnome-shell.mo
+share/locale/ne/LC_MESSAGES/gnome-shell.mo
 share/locale/nl/LC_MESSAGES/gnome-shell.mo
 share/locale/nn/LC_MESSAGES/gnome-shell.mo
 share/locale/or/LC_MESSAGES/gnome-shell.mo
