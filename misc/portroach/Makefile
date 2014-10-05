@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/05 07:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/10/05 07:47:17 ajacoutot Exp $
 
 COMMENT=		OpenBSD ports tree version scanner
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
 GH_TAGNAME=		1.2.0
 GH_COMMIT=		a7dde4ecf3d7b45e0345b954fa32332bfa0081f6
+REVISION=		0
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=		misc
@@ -44,6 +45,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/portroach/{sql,templates}/
 	cd ${WRKSRC}/templates/ && umask 022 && pax -rw . \
 		${PREFIX}/share/portroach/templates/
+	mv ${PREFIX}/share/portroach/templates/reminder.mail{,.dist}
 	${INSTALL_DATA} ${WRKSRC}/sql/* \
 		${PREFIX}/share/portroach/sql/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/portroach/
