@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/06/02 08:10:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2014/10/05 13:34:40 jasper Exp $
 
 COMMENT=		clutter GStreamer integration library
 
@@ -20,7 +20,7 @@ WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z cogl-path
 
 MODGNOME_TOOLS +=	gobject-introspection
 
-LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
+LIB_DEPENDS=		graphics/clutter/core>=1.18 \
 			multimedia/gstreamer1/plugins-base
 
 post-install:

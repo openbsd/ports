@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2014/10/05 13:34:40 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -20,5 +20,4 @@ MODULES +=		devel/gettext \
 CONFIGURE_STYLE?=	gnu
 
 API_VERSION?=		1.0
-MAJOR?=			1.18
-SUBST_VARS?=		MAJOR API_VERSION
+SUBST_VARS?=		API_VERSION

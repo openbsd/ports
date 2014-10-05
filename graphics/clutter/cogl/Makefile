@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2014/07/08 16:57:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2014/10/05 13:34:40 jasper Exp $
 
 COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
-GNOME_VERSION=		${MAJOR}.2
+GNOME_VERSION=		1.18.2
 
 SHARED_LIBS +=  cogl                 3.0      # 21.0
 SHARED_LIBS +=	cogl-path            0.0      # 21.0
