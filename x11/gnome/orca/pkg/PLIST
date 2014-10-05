@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/04/15 14:21:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/10/05 13:40:23 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -7,10 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}__init__.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}acss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}acss.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}app_gui_prefs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}app_gui_prefs.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}app_prefs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}app_prefs.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}braille.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}chnames.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}chnames.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}cmdnames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}cmdnames.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}colornames.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}colornames.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}common_keyboardmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}common_keyboardmap.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
@@ -130,8 +128,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}tutorialgenerator.
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}where_am_I.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}where_am_I.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/acss.py
-lib/python${MODPY_VERSION}/site-packages/orca/app_gui_prefs.py
-lib/python${MODPY_VERSION}/site-packages/orca/app_prefs.py
 lib/python${MODPY_VERSION}/site-packages/orca/backends/
 lib/python${MODPY_VERSION}/site-packages/orca/backends/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/backends/${MODPY_PYCACHE}/
@@ -149,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/brltablenames.py
 lib/python${MODPY_VERSION}/site-packages/orca/chat.py
 lib/python${MODPY_VERSION}/site-packages/orca/chnames.py
 lib/python${MODPY_VERSION}/site-packages/orca/cmdnames.py
+lib/python${MODPY_VERSION}/site-packages/orca/colornames.py
 lib/python${MODPY_VERSION}/site-packages/orca/common_keyboardmap.py
 lib/python${MODPY_VERSION}/site-packages/orca/debug.py
 lib/python${MODPY_VERSION}/site-packages/orca/desktop_keyboardmap.py
@@ -247,8 +244,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}formatting.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -257,7 +252,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/${MODPY_PYCACHE}spellcheck.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/script_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Thunderbird/spellcheck.py
@@ -531,8 +525,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}formatting.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -542,7 +534,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/braille_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/script_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/structural_navigation.py
@@ -564,7 +555,10 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}/
@@ -580,8 +574,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}keymaps.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -593,7 +585,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/braille_gen
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/keymaps.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/structural_navigation.py
@@ -632,8 +623,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}braille_generator.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}script_settings.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -642,7 +631,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/${MODPY_PYCACHE}structural_navigation.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/braille_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/script_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/WebKitGtk/structural_navigation.py
@@ -659,7 +647,10 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/clutter/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/gtk/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/gtk/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/gtk/${MODPY_PYCACHE}/
