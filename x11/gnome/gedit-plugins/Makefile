@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2014/06/03 11:37:56 rpointel Exp $
+# $OpenBSD: Makefile,v 1.81 2014/10/05 12:54:17 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.12.1
-REVISION=		1
+GNOME_VERSION=		3.14.0
 
 CATEGORIES=		editors
 
@@ -19,7 +18,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gtksourceview-3.0 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += xml2 z sqlite3 zeitgeist-2.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -31,10 +30,11 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/libgit2/libgit2-glib>=0.0.6p0 \
 			devel/vte3 \
-			x11/gnome/gedit \
+			x11/gnome/gedit>=3.14.0 \
 			x11/gnome/gucharmap
 
 LIB_DEPENDS=		devel/libpeas \
+			productivity/zeitgeist>=0.9.14v0 \
 			x11/gtksourceview3
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
@@ -42,7 +42,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/vte3 \
 			x11/dbus-python${MODPY_FLAVOR} \
-			x11/gnome/gedit \
+			x11/gnome/gedit>=3.14.0 \
 			x11/gnome/gucharmap
 
 MODGNOME_TOOLS +=	yelp
