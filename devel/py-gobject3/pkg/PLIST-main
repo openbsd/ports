@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/03/27 08:03:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/10/05 12:00:36 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 @conflict py-gobject-<2.28.6p2v0
 %%python3%%
@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}__init__.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}pyc
@@ -27,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}pygtkcompat.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gi/_constants.py
+lib/python${MODPY_VERSION}/site-packages/gi/_error.py
 lib/python${MODPY_VERSION}/site-packages/gi/_gi.so
 lib/python${MODPY_VERSION}/site-packages/gi/_gi_cairo.so
 lib/python${MODPY_VERSION}/site-packages/gi/_gobject/

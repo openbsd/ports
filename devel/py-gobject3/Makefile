@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2014/07/16 13:19:52 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2014/10/05 12:00:36 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.12.2
+GNOME_VERSION=		3.14.0
 MODPY_EGG_VERSION=	${GNOME_VERSION}
-
-REVISION-main = 1
 
 PKGNAME-main=		py-gobject3-${GNOME_VERSION}
 FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
@@ -25,10 +23,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += X11 Xext Xrender cairo expat ffi fontconfig freetype
-WANTLIB-main += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB-main += gthread-2.0 m pcre pixman-1 png pthread pthread-stubs
-WANTLIB-main += xcb xcb-render xcb-shm z
+WANTLIB-main += X11 Xext Xrender cairo cairo-gobject expat ffi fontconfig
+WANTLIB-main += freetype gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
+WANTLIB-main += gobject-2.0 gthread-2.0 m pcre pixman-1 png pthread
+WANTLIB-main += pthread-stubs xcb xcb-render xcb-shm z
 
 WANTLIB-common += #empty
 
@@ -40,6 +38,10 @@ FLAVOR?=
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
+
+# XXX https://bugzilla.gnome.org/show_bug.cgi?id=737874
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
 
 LIB_DEPENDS-common=	#empty
 RUN_DEPENDS-common=	#empty
