@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/03/27 12:47:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/05 22:07:00 jasper Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyo
@@ -38,6 +38,17 @@ lib/eog/plugins/pythonconsole/console.py
 lib/eog/plugins/send-by-mail.plugin
 lib/eog/plugins/slideshowshuffle.plugin
 lib/eog/plugins/slideshowshuffle.py
+share/appdata/eog-exif-display.metainfo.xml
+share/appdata/eog-export-to-folder.metainfo.xml
+share/appdata/eog-fit-to-width.metainfo.xml
+share/appdata/eog-fullscreenbg.metainfo.xml
+share/appdata/eog-hide-titlebar.metainfo.xml
+share/appdata/eog-light-theme.metainfo.xml
+share/appdata/eog-map.metainfo.xml
+share/appdata/eog-postasa.metainfo.xml
+share/appdata/eog-pythonconsole.metainfo.xml
+share/appdata/eog-send-by-mail.metainfo.xml
+share/appdata/eog-slideshowshuffle.metainfo.xml
 share/eog/plugins/
 share/eog/plugins/export-to-folder/
 share/eog/plugins/export-to-folder/preferences_dialog.ui

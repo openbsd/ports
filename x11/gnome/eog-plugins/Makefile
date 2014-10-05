@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2014/07/02 09:25:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2014/10/05 22:07:00 jasper Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.12.1
-REVISION =		1
+GNOME_VERSION=		3.14.0
 
 CATEGORIES=		graphics
 
@@ -31,6 +30,8 @@ WANTLIB += oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl
 WANTLIB += ssl3 xcb xcb-render xcb-shm xml2 z
+WANTLIB += EGL X11-xcb Xau Xdmcp drm gbm glapi xcb-dri2 xcb-shape
+WANTLIB += xcb-xfixes
 
 LIB_DEPENDS=    	devel/libgdata \
 			devel/libpeas \
