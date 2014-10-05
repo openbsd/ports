@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/09 13:04:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/05 13:17:31 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 include/gdict-1.0/
@@ -19,9 +19,10 @@ include/gdict-1.0/gdict/gdict.h
 lib/libgdict-1.0.a
 lib/libgdict-1.0.la
 @lib lib/libgdict-1.0.so.${LIBgdict-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gdict-1.0.pc
 @man man/man1/gnome-dictionary.1
+share/appdata/
+share/appdata/gnome-dictionary.appdata.xml
 share/applications/gnome-dictionary.desktop
 share/gdict-1.0/
 share/gdict-1.0/sources/
@@ -35,6 +36,7 @@ share/gnome-dictionary/gnome-dictionary-preferences.ui
 share/gnome-dictionary/gnome-dictionary-source.ui
 share/gtk-doc/html/gdict/
 share/gtk-doc/html/gdict/GdictClientContext.html
+share/gtk-doc/html/gdict/GdictContext.html
 share/gtk-doc/html/gdict/GdictDatabaseChooser.html
 share/gtk-doc/html/gdict/GdictDefbox.html
 share/gtk-doc/html/gdict/GdictSource.html
@@ -48,7 +50,6 @@ share/gtk-doc/html/gdict/context-types.html
 share/gtk-doc/html/gdict/context.html
 share/gtk-doc/html/gdict/gdict-Gdict-Utilities.html
 share/gtk-doc/html/gdict/gdict-Gdict-Version-Checking.html
-share/gtk-doc/html/gdict/gdict-GdictContext.html
 share/gtk-doc/html/gdict/gdict-utils.html
 share/gtk-doc/html/gdict/gdict.devhelp2
 share/gtk-doc/html/gdict/gdict.html
@@ -370,6 +371,31 @@ share/help/gl/gnome-dictionary/sources-edit.page
 share/help/gl/gnome-dictionary/sources-select.page
 share/help/gl/gnome-dictionary/sources.page
 share/help/gl/gnome-dictionary/text-copy.page
+share/help/hu/
+share/help/hu/gnome-dictionary/
+share/help/hu/gnome-dictionary/definition.page
+share/help/hu/gnome-dictionary/dictionary-select.page
+share/help/hu/gnome-dictionary/figures/
+share/help/hu/gnome-dictionary/figures/gnome-dictionary-icon.png
+share/help/hu/gnome-dictionary/figures/gnome-dictionary.png
+share/help/hu/gnome-dictionary/find.page
+share/help/hu/gnome-dictionary/index.page
+share/help/hu/gnome-dictionary/introduction.page
+share/help/hu/gnome-dictionary/keyboard-shortcuts.page
+share/help/hu/gnome-dictionary/legal.xml
+share/help/hu/gnome-dictionary/pref.page
+share/help/hu/gnome-dictionary/print-font.page
+share/help/hu/gnome-dictionary/print.page
+share/help/hu/gnome-dictionary/prob-retrieving-definition.page
+share/help/hu/gnome-dictionary/save-definition.page
+share/help/hu/gnome-dictionary/similar-words.page
+share/help/hu/gnome-dictionary/source-add-local.page
+share/help/hu/gnome-dictionary/sources-default.page
+share/help/hu/gnome-dictionary/sources-delete.page
+share/help/hu/gnome-dictionary/sources-edit.page
+share/help/hu/gnome-dictionary/sources-select.page
+share/help/hu/gnome-dictionary/sources.page
+share/help/hu/gnome-dictionary/text-copy.page
 share/help/id/
 share/help/id/gnome-dictionary/
 share/help/id/gnome-dictionary/definition.page
