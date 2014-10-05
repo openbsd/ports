@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2014/03/27 11:41:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2014/10/05 15:51:24 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -25,6 +25,7 @@ lib/gnome-settings-daemon-3.0/libmouse.so
 lib/gnome-settings-daemon-3.0/libpower.so
 lib/gnome-settings-daemon-3.0/libprint-notifications.so
 lib/gnome-settings-daemon-3.0/libscreensaver-proxy.so
+lib/gnome-settings-daemon-3.0/libsharing.so
 lib/gnome-settings-daemon-3.0/libsmartcard.so
 lib/gnome-settings-daemon-3.0/libsound.so
 lib/gnome-settings-daemon-3.0/libxrandr.so
@@ -34,6 +35,7 @@ lib/gnome-settings-daemon-3.0/mouse.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/power.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/screensaver-proxy.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/sharing.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/smartcard.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/xrandr.gnome-settings-plugin
@@ -60,7 +62,6 @@ libexec/gnome-settings-daemon-localeexec
 @bin libexec/gsd-test-xsettings
 @man man/man1/gnome-settings-daemon.1
 share/GConf/gsettings/gnome-settings-daemon.convert
-share/dbus-1/services/org.freedesktop.IBus.service
 share/examples/gnome-settings-daemon/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/xrandr/
@@ -72,7 +73,6 @@ share/examples/gnome-settings-daemon/xdg/autostart/gnome-settings-daemon.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-settings-daemon.desktop
 share/glib-2.0/schemas/10_org.gnome.settings-daemon.peripherals.wacom.gschema.override
 share/glib-2.0/schemas/10_org.gnome.settings-daemon.plugins.orientation.gschema.override
-share/glib-2.0/schemas/10_org.gnome.settings-daemon.plugins.updates.gschema.override
 share/glib-2.0/schemas/org.gnome.settings-daemon.enums.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.wacom.gschema.xml
@@ -85,7 +85,7 @@ share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.media-keys.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.orientation.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.power.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.print-notifications.gschema.xml
-share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.updates.gschema.xml
+share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.sharing.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xrandr.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xsettings.gschema.xml
 share/gnome-settings-daemon/

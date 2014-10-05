@@ -1,5 +1,0 @@
-# $OpenBSD: 10_org.gnome.settings-daemon.plugins.updates.gschema.override,v 1.1 2013/01/18 07:22:27 ajacoutot Exp $
-
-# no updates support on OpenBSD (packagekit)
-[org.gnome.settings-daemon.plugins.updates]
-active=false
