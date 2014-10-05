@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/04 05:38:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/05 17:32:33 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
-DISTNAME=		Sys-Virt-1.2.9
+V=			1.2.9
+DISTNAME=		Sys-Virt-$V
+REVISION=		0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://libvirt.org/
@@ -19,7 +21,7 @@ MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
 
 WANTLIB =		virt
-LIB_DEPENDS=		sysutils/libvirt>=1.2.6
+LIB_DEPENDS=		sysutils/libvirt>=$V
 
 RUN_DEPENDS=		textproc/p5-XML-XPath
 
