@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/27 16:07:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/05 13:24:14 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
@@ -8,6 +8,7 @@ include/speech-dispatcher/libspeechd.h
 include/speech-dispatcher/spd_audio_plugin.h
 include/speech-dispatcher/speechd_types.h
 @info info/spd-say.info
+@info info/speech-dispatcher-cs.info
 @info info/speech-dispatcher.info
 @info info/ssip.info
 lib/libspeechd.a
@@ -16,27 +17,29 @@ lib/libspeechd.la
 lib/pkgconfig/speech-dispatcher.pc
 lib/python${MODPY_VERSION}/site-packages/speechd/
 lib/python${MODPY_VERSION}/site-packages/speechd/__init__.py
-lib/python${MODPY_VERSION}/site-packages/speechd/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/speechd/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/speechd/_test.py
-lib/python${MODPY_VERSION}/site-packages/speechd/_test.pyc
-lib/python${MODPY_VERSION}/site-packages/speechd/_test.pyo
 lib/python${MODPY_VERSION}/site-packages/speechd/client.py
-lib/python${MODPY_VERSION}/site-packages/speechd/client.pyc
-lib/python${MODPY_VERSION}/site-packages/speechd/client.pyo
 lib/python${MODPY_VERSION}/site-packages/speechd/paths.py
-lib/python${MODPY_VERSION}/site-packages/speechd/paths.pyc
-lib/python${MODPY_VERSION}/site-packages/speechd/paths.pyo
 lib/python${MODPY_VERSION}/site-packages/speechd_config/
 lib/python${MODPY_VERSION}/site-packages/speechd_config/__init__.py
-lib/python${MODPY_VERSION}/site-packages/speechd_config/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/speechd_config/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/speechd_config/config.py
-lib/python${MODPY_VERSION}/site-packages/speechd_config/config.pyc
-lib/python${MODPY_VERSION}/site-packages/speechd_config/config.pyo
 lib/python${MODPY_VERSION}/site-packages/speechd_config/paths.py
-lib/python${MODPY_VERSION}/site-packages/speechd_config/paths.pyc
-lib/python${MODPY_VERSION}/site-packages/speechd_config/paths.pyo
 lib/speech-dispatcher/
 lib/speech-dispatcher-modules/
 @bin lib/speech-dispatcher-modules/sd_cicero
@@ -78,6 +81,7 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/ivona.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/ivona.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/llia_phon-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/llia_phon-generic.conf
+share/examples/speech-dispatcher/speech-dispatcher/modules/pico-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/swift-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/swift-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/speechd.conf
@@ -103,5 +107,6 @@ share/speech-dispatcher/conf/modules/flite.conf
 share/speech-dispatcher/conf/modules/ibmtts.conf
 share/speech-dispatcher/conf/modules/ivona.conf
 share/speech-dispatcher/conf/modules/llia_phon-generic.conf
+share/speech-dispatcher/conf/modules/pico-generic.conf
 share/speech-dispatcher/conf/modules/swift-generic.conf
 share/speech-dispatcher/conf/speechd.conf
