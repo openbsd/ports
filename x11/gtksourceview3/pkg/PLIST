@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/08/21 08:18:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/10/05 12:44:43 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -12,6 +12,10 @@ include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcecompletioninfo.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcecompletionitem.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcecompletionproposal.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcecompletionprovider.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceencoding.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcefile.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcefileloader.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcefilesaver.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcegutter.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcegutterrenderer.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcegutterrendererpixbuf.h
@@ -50,6 +54,10 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionItem.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionProposal.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionProvider.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionWords.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceEncoding.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceFile.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceFileLoader.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceFileSaver.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceGutter.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceGutterRenderer.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceGutterRendererPixbuf.html
@@ -70,6 +78,7 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/annotation-glossary.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-0.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-10.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-12.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-14.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-4.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-deprecated.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-full.html
