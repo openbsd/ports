@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_engines_gstenginepipeline_cpp,v 1.1 2014/10/05 00:07:33 zhuk Exp $
+Dirty hack to allow playing files with non-ASCII characters. Source:
+https://github.com/clementine-player/Clementine/issues/2106
+--- src/engines/gstenginepipeline.cpp.orig	Sun Oct  5 03:51:00 2014
++++ src/engines/gstenginepipeline.cpp	Sun Oct  5 03:52:21 2014
+@@ -166,7 +166,9 @@ bool GstEnginePipeline::ReplaceDecodeBin(const QUrl& u
+     InternetModel::Service<SpotifyService>()->server()->StartPlaybackLater(url.toString(), port);
+   } else {
+     new_bin = engine_->CreateElement("uridecodebin");
+-    g_object_set(G_OBJECT(new_bin), "uri", url.toEncoded().constData(), NULL);
++    g_object_set(G_OBJECT(new_bin), "uri",
++      url.toString().toLocal8Bit().toPercentEncoding("!$&'()*+,;=:/?[]@").constData(), NULL);
++
+     CHECKED_GCONNECT(G_OBJECT(new_bin), "drained", &SourceDrainedCallback, this);
+     CHECKED_GCONNECT(G_OBJECT(new_bin), "pad-added", &NewPadCallback, this);
+     CHECKED_GCONNECT(G_OBJECT(new_bin), "notify::source", &SourceSetupCallback, this);
