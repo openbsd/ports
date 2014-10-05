@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/05/14 09:17:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/05 20:06:13 jasper Exp $
 bin/polari
 lib/polari/
 lib/polari/girepository-1.0/
@@ -22,6 +22,7 @@ share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/polari.png
 share/icons/hicolor/scalable/apps/polari.svg
 share/locale/ar/LC_MESSAGES/polari.mo
+share/locale/as/LC_MESSAGES/polari.mo
 share/locale/ca/LC_MESSAGES/polari.mo
 share/locale/ca@valencia/LC_MESSAGES/polari.mo
 share/locale/cs/LC_MESSAGES/polari.mo
@@ -41,16 +42,19 @@ share/locale/ko/LC_MESSAGES/polari.mo
 share/locale/lt/LC_MESSAGES/polari.mo
 share/locale/lv/LC_MESSAGES/polari.mo
 share/locale/nb/LC_MESSAGES/polari.mo
+share/locale/ne/LC_MESSAGES/polari.mo
 share/locale/pa/LC_MESSAGES/polari.mo
 share/locale/pl/LC_MESSAGES/polari.mo
 share/locale/pt/LC_MESSAGES/polari.mo
 share/locale/pt_BR/LC_MESSAGES/polari.mo
+share/locale/ro/LC_MESSAGES/polari.mo
 share/locale/ru/LC_MESSAGES/polari.mo
 share/locale/sk/LC_MESSAGES/polari.mo
 share/locale/sl/LC_MESSAGES/polari.mo
 share/locale/sr/LC_MESSAGES/polari.mo
 share/locale/sr@latin/LC_MESSAGES/polari.mo
 share/locale/te/LC_MESSAGES/polari.mo
+share/locale/tr/LC_MESSAGES/polari.mo
 share/locale/uk/LC_MESSAGES/polari.mo
 share/locale/zh_CN/LC_MESSAGES/polari.mo
 share/locale/zh_HK/LC_MESSAGES/polari.mo
