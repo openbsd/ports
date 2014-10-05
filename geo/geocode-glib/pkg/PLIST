@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/05/13 08:30:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/05 13:07:49 jasper Exp $
 include/geocode-glib-1.0/
 include/geocode-glib-1.0/geocode-glib/
 include/geocode-glib-1.0/geocode-glib/geocode-bounding-box.h
@@ -14,7 +14,6 @@ lib/girepository-1.0/GeocodeGlib-1.0.typelib
 lib/libgeocode-glib.a
 lib/libgeocode-glib.la
 @lib lib/libgeocode-glib.so.${LIBgeocode-glib_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/geocode-glib-1.0.pc
 share/gir-1.0/
 share/gir-1.0/GeocodeGlib-1.0.gir
