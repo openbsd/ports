@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/10/05 18:30:33 jasper Exp $
+
+- pre-generated parser.c is used
+
+--- Makefile.in.orig	Sun Oct  5 20:20:11 2014
++++ Makefile.in	Sun Oct  5 20:20:21 2014
+@@ -2454,8 +2454,6 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
+ 	uninstall-xkbcommonincludeHEADERS
+ 
+ 
+-src/xkbcomp/parser.c: $(top_builddir)/src/$(am__dirstamp) $(top_builddir)/src/xkbcomp/$(am__dirstamp)
+-src/xkbcomp/parser.h: $(top_builddir)/src/$(am__dirstamp) $(top_builddir)/src/xkbcomp/$(am__dirstamp)
+ 
+ # Documentation
+ 

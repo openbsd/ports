@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/05 18:30:33 jasper Exp $
+include/xkbcommon/
+include/xkbcommon/xkbcommon-compat.h
+include/xkbcommon/xkbcommon-keysyms.h
+include/xkbcommon/xkbcommon-names.h
+include/xkbcommon/xkbcommon-x11.h
+include/xkbcommon/xkbcommon.h
+lib/libxkbcommon-x11.a
+lib/libxkbcommon-x11.la
+@lib lib/libxkbcommon-x11.so.${LIBxkbcommon-x11_VERSION}
+lib/libxkbcommon.a
+lib/libxkbcommon.la
+@lib lib/libxkbcommon.so.${LIBxkbcommon_VERSION}
+lib/pkgconfig/xkbcommon-x11.pc
+lib/pkgconfig/xkbcommon.pc
