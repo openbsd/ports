@@ -1,4 +1,4 @@
-$OpenBSD: README-minimal,v 1.4 2014/07/12 11:25:44 sthen Exp $
+$OpenBSD: README-minimal,v 1.5 2014/10/05 01:36:14 zhuk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,6 +15,7 @@ KDE4 SC.
 
 Starting KDE4
 ==============
+
 Before running startkde4(1), a system-wide D-Bus daemon needs to be
 running (add "dbus_daemon" to the "pkg_scripts" line in /etc/rc.conf.local).
 
@@ -24,6 +25,20 @@ Then the following line should be added:
 
 ... in ~/.xinitrc when using startx(1) (console login)
 ... in ~/.xsession when using xdm(1) (X Display Manager login)
+
+
+sudo(8) integration
+===================
+
+By default, sudo(8) doesn't pass environment variables on OpenBSD.  Thus, if you
+want to run KDE applications as a different user via sudo(8), you'll need to add
+the following lines to /etc/sudoers:
+
+  Defaults env_keep +="KDE_FULL_SESSION KDE_SESSION_UID KDE_SESSION_VERSION"
+
+This will ensure that KDE apps (especially, kded) will know that KDE session is
+already running but under another account, and thus avoid enabling desktop-wide
+features (second time), causing havoc.
 
 
 Profile location
