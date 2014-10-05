@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/11/13 07:13:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/10/05 12:36:09 ajacoutot Exp $
 bin/gnome-tweak-tool
 lib/python${MODPY_VERSION}/site-packages/gtweak/
 lib/python${MODPY_VERSION}/site-packages/gtweak/__init__.py
@@ -86,6 +86,7 @@ share/icons/hicolor/256x256/apps/gnome-tweak-tool.png
 share/icons/hicolor/32x32/apps/gnome-tweak-tool.png
 share/icons/hicolor/48x48/apps/gnome-tweak-tool.png
 share/locale/ar/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/as/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/bg/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ca/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-tweak-tool.mo
@@ -112,6 +113,8 @@ share/locale/lt/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/lv/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/my/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/nb/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/ne/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/nl/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pa/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pl/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pt/LC_MESSAGES/gnome-tweak-tool.mo
