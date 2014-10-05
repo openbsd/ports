@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2014/04/01 13:21:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2014/10/05 13:48:00 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -47,6 +47,7 @@ lib/gvfs/libgvfsdaemon.so
 @man man/man1/gvfs-cat.1
 @man man/man1/gvfs-copy.1
 @man man/man1/gvfs-info.1
+@man man/man1/gvfs-less.1
 @man man/man1/gvfs-ls.1
 @man man/man1/gvfs-mime.1
 @man man/man1/gvfs-mkdir.1
