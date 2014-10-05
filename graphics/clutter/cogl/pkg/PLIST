@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/04/01 13:21:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/10/05 17:34:01 jasper Exp $
 @conflict clutter-<1.8.0
 include/cogl/
 include/cogl/cogl/
@@ -25,6 +25,8 @@ include/cogl/cogl/cogl-defines.h
 include/cogl/cogl/cogl-deprecated.h
 include/cogl/cogl/cogl-depth-state.h
 include/cogl/cogl/cogl-display.h
+include/cogl/cogl/cogl-egl-defines.h
+include/cogl/cogl/cogl-egl.h
 include/cogl/cogl/cogl-enum-types.h
 include/cogl/cogl/cogl-error.h
 include/cogl/cogl/cogl-euler.h
@@ -39,6 +41,8 @@ include/cogl/cogl/cogl-glib-source.h
 include/cogl/cogl/cogl-glx.h
 include/cogl/cogl/cogl-index-buffer.h
 include/cogl/cogl/cogl-indices.h
+include/cogl/cogl/cogl-kms-display.h
+include/cogl/cogl/cogl-kms-renderer.h
 include/cogl/cogl/cogl-macros.h
 include/cogl/cogl/cogl-material-compat.h
 include/cogl/cogl/cogl-matrix-stack.h

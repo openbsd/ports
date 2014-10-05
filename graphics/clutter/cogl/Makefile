@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2014/10/05 13:34:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2014/10/05 17:34:01 jasper Exp $
 
 COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
 GNOME_VERSION=		1.18.2
+REVISION=		0
 
 SHARED_LIBS +=  cogl                 3.0      # 21.0
 SHARED_LIBS +=	cogl-path            0.0      # 21.0
@@ -15,6 +16,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += EGL X11-xcb Xau Xdmcp drm gbm glapi xcb-dri2 xcb-shape
+WANTLIB += xcb-xfixes
 
 MODGNOME_TOOLS +=	gobject-introspection
 
@@ -23,7 +26,9 @@ LIB_DEPENDS=		devel/pango \
 
 CONFIGURE_ARGS=		--with-gl-libname=libGL.so \
 			--with-gles1-libname=libGLESv1_CM \
-			--with-gles2-libname=libGLESv2
+			--with-gles2-libname=libGLESv2 \
+			--enable-kms-egl-platform=yes \
+			--enable-xlib-egl-platform=yes
 
 TEST_DEPENDS=		shells/bash
 TEST_IS_INTERACTIVE=	x11
