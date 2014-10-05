@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/10/05 12:54:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2014/10/05 14:42:12 ajacoutot Exp $
 @conflict gedit-<3.14.0
 lib/gedit/plugins/${MODPY_PYCACHE}/
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}pyc
@@ -13,8 +13,6 @@ lib/gedit/plugins/${MODPY_PYCACHE}joinlines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/${MODPY_PYCACHE}joinlines.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/${MODPY_PYCACHE}smartspaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/${MODPY_PYCACHE}smartspaces.${MODPY_PYC_MAGIC_TAG}pyo
-lib/gedit/plugins/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gedit/plugins/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/bookmarks.plugin
 lib/gedit/plugins/bracketcompletion.plugin
 lib/gedit/plugins/bracketcompletion.py
@@ -175,8 +173,6 @@ lib/gedit/plugins/synctex/${MODPY_PYCACHE}synctex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/synctex/${MODPY_PYCACHE}synctex.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/synctex/evince_dbus.py
 lib/gedit/plugins/synctex/synctex.py
-lib/gedit/plugins/terminal.plugin
-lib/gedit/plugins/terminal.py
 lib/gedit/plugins/textsize/
 lib/gedit/plugins/textsize.plugin
 lib/gedit/plugins/textsize/__init__.py
@@ -205,7 +201,6 @@ share/appdata/gedit-joinlines.metainfo.xml
 share/appdata/gedit-multiedit.metainfo.xml
 share/appdata/gedit-smartspaces.metainfo.xml
 share/appdata/gedit-synctex.metainfo.xml
-share/appdata/gedit-terminal.metainfo.xml
 share/appdata/gedit-textsize.metainfo.xml
 share/appdata/gedit-wordcompletion.metainfo.xml
 share/appdata/gedit-zeitgeist.metainfo.xml
@@ -263,7 +258,6 @@ share/gedit/plugins/commander/modules/reload.py
 share/gedit/plugins/commander/modules/set.py
 share/gedit/plugins/commander/modules/shell.py
 share/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
-share/glib-2.0/schemas/org.gnome.gedit.plugins.terminal.gschema.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.wordcompletion.gschema.xml
 share/help/C/gedit/bookmarks.page
 share/help/C/gedit/bracket-comp.page
