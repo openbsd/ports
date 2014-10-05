@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/27 08:33:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/10/05 19:51:56 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-font-viewer
 @bin bin/gnome-thumbnail-font
 share/appdata/
-share/appdata/gnome-font-viewer.appdata.xml
-share/applications/gnome-font-viewer.desktop
+share/appdata/org.gnome.font-viewer.appdata.xml
+share/applications/org.gnome.font-viewer.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.font-viewer.service
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gnome-font-viewer.mo
