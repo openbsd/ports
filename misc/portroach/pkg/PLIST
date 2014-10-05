@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/09/06 14:48:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/05 07:37:23 jasper Exp $
 @pkgpath misc/portscout
 bin/portroach
 ${P5SITE}/Portroach/
@@ -46,6 +46,7 @@ share/portroach/templates/dynamic/
 share/portroach/templates/dynamic/assets/
 share/portroach/templates/dynamic/assets/angular.min.js
 share/portroach/templates/dynamic/assets/app.js
+share/portroach/templates/dynamic/assets/favicon.ico
 share/portroach/templates/dynamic/index.html
 share/portroach/templates/dynamic/maintainer.html
 share/portroach/templates/dynamic/restricted-ports.html
