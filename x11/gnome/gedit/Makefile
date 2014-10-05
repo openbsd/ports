@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.126 2014/10/01 10:45:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2014/10/05 12:54:04 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.12.2
-REVISION=		0
+GNOME_VERSION=		3.14.0
 
 CATEGORIES=		editors
 
@@ -18,8 +17,8 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs sqlite3 stdc++ xcb xcb-render
-WANTLIB += xcb-shm xml2 z zeitgeist-2.0
+WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -31,9 +30,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS=		devel/libpeas>=1.8.0 \
-			productivity/zeitgeist>=0.9.14v0 \
 			textproc/enchant \
-			x11/gtksourceview3>=3.12.0
+			x11/gtksourceview3>=3.14.0
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
