@@ -1,15 +1,10 @@
-$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.15 2014/04/21 17:02:42 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.16 2014/10/05 13:54:46 ajacoutot Exp $
 
 XXX fix+push upstream
 
-From e6ba67b4de48db96a006829e9d326b06c9d4ba9f Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Sat, 19 Apr 2014 00:38:02 +0200
-Subject: build: unbreak on OpenBSD
-
---- libgnome-desktop/Makefile.in.orig	Mon Mar 24 15:31:08 2014
-+++ libgnome-desktop/Makefile.in	Thu Mar 27 09:55:40 2014
-@@ -496,7 +496,7 @@ AM_CPPFLAGS = \
+--- libgnome-desktop/Makefile.in.orig	Mon Sep 22 17:23:33 2014
++++ libgnome-desktop/Makefile.in	Sun Oct  5 15:42:16 2014
+@@ -528,7 +528,7 @@ AM_CPPFLAGS = \
  	-DG_LOG_DOMAIN=\"GnomeDesktop\"				\
  	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale\""	\
  	-DISO_CODES_PREFIX=\""$(ISO_CODES_PREFIX)"\"		\
@@ -18,13 +13,3 @@ Subject: build: unbreak on OpenBSD
  	-DPNP_IDS=\""$(PNP_IDS)"\"				\
  	-DXKB_BASE=\""$(XKB_BASE)"\"				\
  	$(DISABLE_DEPRECATED_CFLAGS)
-@@ -562,8 +562,7 @@ libgnome_desktop_3_la_LIBADD = \
- 	$(XLIB_LIBS)		\
- 	$(LIBM)			\
- 	$(GNOME_DESKTOP_LIBS)	\
--	libgsystem.la           \
--	-lrt
-+	libgsystem.la
- 
- libgnome_desktop_3_la_LDFLAGS = \
- 	-version-info $(LT_VERSION) \
