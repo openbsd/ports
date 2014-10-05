@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/16 07:24:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/10/05 19:52:32 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -16,14 +16,17 @@ include/mutter/meta/gradient.h
 include/mutter/meta/group.h
 include/mutter/meta/keybindings.h
 include/mutter/meta/main.h
+include/mutter/meta/meta-backend.h
 include/mutter/meta/meta-background-actor.h
 include/mutter/meta/meta-background-group.h
+include/mutter/meta/meta-background-image.h
 include/mutter/meta/meta-background.h
 include/mutter/meta/meta-cursor-tracker.h
 include/mutter/meta/meta-idle-monitor.h
 include/mutter/meta/meta-plugin.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-shaped-texture.h
+include/mutter/meta/meta-version.h
 include/mutter/meta/meta-window-actor.h
 include/mutter/meta/prefs.h
 include/mutter/meta/screen.h
@@ -40,21 +43,19 @@ lib/mutter/Meta-3.0.gir
 lib/mutter/Meta-3.0.typelib
 lib/mutter/plugins/
 lib/mutter/plugins/default.so
-lib/pkgconfig/
 lib/pkgconfig/libmutter.pc
-lib/pkgconfig/mutter-plugins.pc
+@bin libexec/mutter-restart-helper
 @man man/man1/mutter.1
 share/GConf/gsettings/mutter-schemas.convert
+share/applications/mutter-wayland.desktop
 share/applications/mutter.desktop
 share/glib-2.0/schemas/org.gnome.mutter.gschema.xml
-share/gnome/
+share/glib-2.0/schemas/org.gnome.mutter.wayland.gschema.xml
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-mutter-navigation.xml
 share/gnome-control-center/keybindings/50-mutter-system.xml
 share/gnome-control-center/keybindings/50-mutter-windows.xml
-share/gnome/wm-properties/
-share/gnome/wm-properties/mutter-wm.desktop
 share/gtk-doc/html/meta/
 share/gtk-doc/html/meta/MetaBackgroundActor.html
 share/gtk-doc/html/meta/MetaBarrier.html

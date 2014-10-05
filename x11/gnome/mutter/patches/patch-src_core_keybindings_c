@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_core_keybindings_c,v 1.1 2014/10/05 19:52:32 jasper Exp $
+
+From 565b9d73d532c7759fce432eb5c397ff535ac0ff Mon Sep 17 00:00:00 2001
+From: Florian Mullner <fmuellner@gnome.org>
+Date: Mon, 22 Sep 2014 15:06:22 +0200
+Subject: keybindings: Do not depend on linux headers for above-tab key
+
+--- src/core/keybindings.c.orig	Sun Oct  5 20:24:55 2014
++++ src/core/keybindings.c	Sun Oct  5 20:34:04 2014
+@@ -40,7 +40,11 @@
+ #include <meta/prefs.h>
+ #include "meta-accel-parse.h"
+ 
++#ifdef __linux__
+ #include <linux/input.h>
++#elif !defined KEY_GRAVE
++#define KEY_GRAVE 0x29 /* assume the use of xf86-input-keyboard */
++#endif
+ 
+ #include "backends/x11/meta-backend-x11.h"
+ #include "x11/window-x11.h"
