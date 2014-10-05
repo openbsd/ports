@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.541 2014/09/13 10:10:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.542 2014/10/05 18:31:53 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -355,6 +355,7 @@
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
      SUBDIR += xgrab
+     SUBDIR += xkbcommon
      SUBDIR += xkbset
      SUBDIR += xkeycaps
      SUBDIR += xloadimage
