@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/05/14 09:26:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/10/05 19:53:28 jasper Exp $
 share/applications/gnome-shell-classic.desktop
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
+share/glib-2.0/schemas/org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.window-list.gschema.xml
 share/gnome-session/sessions/gnome-classic.session
@@ -52,6 +53,11 @@ share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.c
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/placeDisplay.js
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/
+share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/convenience.js
+share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/extension.js
+share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/metadata.json
+share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/convenience.js
 share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/extension.js
@@ -92,6 +98,7 @@ share/locale/af/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/an/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ar/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/as/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ca/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/cs/LC_MESSAGES/gnome-shell-extensions.mo
@@ -110,6 +117,7 @@ share/locale/fur/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/gl/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/gu/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/he/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/hi/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/hu/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/id/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extensions.mo
@@ -121,7 +129,10 @@ share/locale/ko/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/lt/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/lv/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ml/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/mr/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/ms/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/nb/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/ne/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/nl/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pa/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pl/LC_MESSAGES/gnome-shell-extensions.mo
