@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/25 16:40:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/06 16:58:17 sebastia Exp $
 bin/Gemas
 libexec/GNUstep/Gemas.app/
 @bin libexec/GNUstep/Gemas.app/Gemas
@@ -70,4 +70,5 @@ libexec/GNUstep/Gemas.app/Resources/ToolResources/GNUmakefile.postamble
 libexec/GNUstep/Gemas.app/Resources/ToolResources/GNUmakefile.preamble
 libexec/GNUstep/Gemas.app/Resources/ToolResources/main.m
 libexec/GNUstep/Gemas.app/Resources/nonEnglishCharacters.plist
+libexec/GNUstep/Gemas.app/Resources/words.plist
 libexec/GNUstep/Gemas.app/stamp.make
