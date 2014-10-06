@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2014/02/03 10:24:07 dcoppa Exp $
-@conflict jakarta-tomcat-*
-@pkgpath www/tomcat/v6
+@comment $OpenBSD: PLIST-main,v 1.11 2014/10/06 08:02:30 dcoppa Exp $
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*

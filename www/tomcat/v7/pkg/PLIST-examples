@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.21 2014/09/02 08:01:29 dcoppa Exp $
-@conflict jakarta-tomcat-examples-*
-@pkgpath www/jakarta-tomcat/v7,-examples
+@comment $OpenBSD: PLIST-examples,v 1.22 2014/10/06 08:02:31 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
