@@ -1,21 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/09/15 07:06:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/10/06 07:24:33 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
-@bin bin/vte2_90
 include/vte-${API_V}/
 include/vte-${API_V}/vte/
-include/vte-${API_V}/vte/pty.h
-include/vte-${API_V}/vte/reaper.h
 include/vte-${API_V}/vte/vte.h
-include/vte-${API_V}/vte/vteaccess.h
-include/vte-${API_V}/vte/vtedeprecated.h
+include/vte-${API_V}/vte/vteenums.h
+include/vte-${API_V}/vte/vteglobals.h
+include/vte-${API_V}/vte/vtemacros.h
 include/vte-${API_V}/vte/vtepty.h
+include/vte-${API_V}/vte/vteterminal.h
 include/vte-${API_V}/vte/vtetypebuiltins.h
 include/vte-${API_V}/vte/vteversion.h
 lib/girepository-1.0/Vte-${API_V}.typelib
-lib/libvte2_90.a
-lib/libvte2_90.la
-@lib lib/libvte2_90.so.${LIBvte2_90_VERSION}
+lib/libvte-${API_V}.a
+lib/libvte-${API_V}.la
+@lib lib/libvte-${API_V}.so.${LIBvte-2.91_VERSION}
 lib/pkgconfig/vte-${API_V}.pc
 @mode 2555
 @group utmp
@@ -24,9 +23,7 @@ lib/pkgconfig/vte-${API_V}.pc
 @group
 share/gir-1.0/Vte-${API_V}.gir
 share/gtk-doc/html/vte-${API_V}/
-share/gtk-doc/html/vte-${API_V}/VteReaper.html
 share/gtk-doc/html/vte-${API_V}/VteTerminal.html
-share/gtk-doc/html/vte-${API_V}/VteTerminalAccessible.html
 share/gtk-doc/html/vte-${API_V}/annotation-glossary.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-20.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-24.html
@@ -39,11 +36,9 @@ share/gtk-doc/html/vte-${API_V}/api-index-full.html
 share/gtk-doc/html/vte-${API_V}/ch01.html
 share/gtk-doc/html/vte-${API_V}/ch02.html
 share/gtk-doc/html/vte-${API_V}/ch03.html
-share/gtk-doc/html/vte-${API_V}/deprecated-objects.html
 share/gtk-doc/html/vte-${API_V}/home.png
 share/gtk-doc/html/vte-${API_V}/index.html
 share/gtk-doc/html/vte-${API_V}/index.sgml
-share/gtk-doc/html/vte-${API_V}/internal-objects.html
 share/gtk-doc/html/vte-${API_V}/left-insensitive.png
 share/gtk-doc/html/vte-${API_V}/left.png
 share/gtk-doc/html/vte-${API_V}/licence.html
