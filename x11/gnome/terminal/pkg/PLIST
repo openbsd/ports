@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2014/06/24 07:08:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.48 2014/10/06 07:37:02 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -33,6 +33,8 @@ share/help/C/gnome-terminal/pref-custom-exit.page
 share/help/C/gnome-terminal/pref-encoding.page
 share/help/C/gnome-terminal/pref-keyboard-access.page
 share/help/C/gnome-terminal/pref-menubar.page
+share/help/C/gnome-terminal/pref-profile-char-width.page
+share/help/C/gnome-terminal/pref-profile-encoding.page
 share/help/C/gnome-terminal/pref-profiles.page
 share/help/C/gnome-terminal/pref-scrolling.page
 share/help/C/gnome-terminal/pref-tab-window.page
@@ -65,6 +67,8 @@ share/help/cs/gnome-terminal/pref-custom-exit.page
 share/help/cs/gnome-terminal/pref-encoding.page
 share/help/cs/gnome-terminal/pref-keyboard-access.page
 share/help/cs/gnome-terminal/pref-menubar.page
+share/help/cs/gnome-terminal/pref-profile-char-width.page
+share/help/cs/gnome-terminal/pref-profile-encoding.page
 share/help/cs/gnome-terminal/pref-profiles.page
 share/help/cs/gnome-terminal/pref-scrolling.page
 share/help/cs/gnome-terminal/pref-tab-window.page
@@ -97,6 +101,8 @@ share/help/de/gnome-terminal/pref-custom-exit.page
 share/help/de/gnome-terminal/pref-encoding.page
 share/help/de/gnome-terminal/pref-keyboard-access.page
 share/help/de/gnome-terminal/pref-menubar.page
+share/help/de/gnome-terminal/pref-profile-char-width.page
+share/help/de/gnome-terminal/pref-profile-encoding.page
 share/help/de/gnome-terminal/pref-profiles.page
 share/help/de/gnome-terminal/pref-scrolling.page
 share/help/de/gnome-terminal/pref-tab-window.page
@@ -129,6 +135,8 @@ share/help/el/gnome-terminal/pref-custom-exit.page
 share/help/el/gnome-terminal/pref-encoding.page
 share/help/el/gnome-terminal/pref-keyboard-access.page
 share/help/el/gnome-terminal/pref-menubar.page
+share/help/el/gnome-terminal/pref-profile-char-width.page
+share/help/el/gnome-terminal/pref-profile-encoding.page
 share/help/el/gnome-terminal/pref-profiles.page
 share/help/el/gnome-terminal/pref-scrolling.page
 share/help/el/gnome-terminal/pref-tab-window.page
@@ -161,6 +169,8 @@ share/help/es/gnome-terminal/pref-custom-exit.page
 share/help/es/gnome-terminal/pref-encoding.page
 share/help/es/gnome-terminal/pref-keyboard-access.page
 share/help/es/gnome-terminal/pref-menubar.page
+share/help/es/gnome-terminal/pref-profile-char-width.page
+share/help/es/gnome-terminal/pref-profile-encoding.page
 share/help/es/gnome-terminal/pref-profiles.page
 share/help/es/gnome-terminal/pref-scrolling.page
 share/help/es/gnome-terminal/pref-tab-window.page
@@ -172,6 +182,40 @@ share/help/es/gnome-terminal/txt-copy-paste.page
 share/help/es/gnome-terminal/txt-links.page
 share/help/es/gnome-terminal/txt-search.page
 share/help/es/gnome-terminal/txt-select-text.page
+share/help/fi/gnome-terminal/
+share/help/fi/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/fi/gnome-terminal/app-colors.page
+share/help/fi/gnome-terminal/app-cursor.page
+share/help/fi/gnome-terminal/app-fonts.page
+share/help/fi/gnome-terminal/app-fullscreen.page
+share/help/fi/gnome-terminal/app-terminal-sizes.page
+share/help/fi/gnome-terminal/app-zoom.page
+share/help/fi/gnome-terminal/figures/
+share/help/fi/gnome-terminal/gs-execute-commands.page
+share/help/fi/gnome-terminal/gs-tabs.page
+share/help/fi/gnome-terminal/index.page
+share/help/fi/gnome-terminal/introduction.page
+share/help/fi/gnome-terminal/legal.xml
+share/help/fi/gnome-terminal/overview.page
+share/help/fi/gnome-terminal/pref-bell.page
+share/help/fi/gnome-terminal/pref-custom-command.page
+share/help/fi/gnome-terminal/pref-custom-exit.page
+share/help/fi/gnome-terminal/pref-encoding.page
+share/help/fi/gnome-terminal/pref-keyboard-access.page
+share/help/fi/gnome-terminal/pref-menubar.page
+share/help/fi/gnome-terminal/pref-profile-char-width.page
+share/help/fi/gnome-terminal/pref-profile-encoding.page
+share/help/fi/gnome-terminal/pref-profiles.page
+share/help/fi/gnome-terminal/pref-scrolling.page
+share/help/fi/gnome-terminal/pref-tab-window.page
+share/help/fi/gnome-terminal/pref-theme.page
+share/help/fi/gnome-terminal/pref.page
+share/help/fi/gnome-terminal/prob-reset.page
+share/help/fi/gnome-terminal/profile.page
+share/help/fi/gnome-terminal/txt-copy-paste.page
+share/help/fi/gnome-terminal/txt-links.page
+share/help/fi/gnome-terminal/txt-search.page
+share/help/fi/gnome-terminal/txt-select-text.page
 share/help/fr/gnome-terminal/
 share/help/fr/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/fr/gnome-terminal/app-colors.page
@@ -193,6 +237,8 @@ share/help/fr/gnome-terminal/pref-custom-exit.page
 share/help/fr/gnome-terminal/pref-encoding.page
 share/help/fr/gnome-terminal/pref-keyboard-access.page
 share/help/fr/gnome-terminal/pref-menubar.page
+share/help/fr/gnome-terminal/pref-profile-char-width.page
+share/help/fr/gnome-terminal/pref-profile-encoding.page
 share/help/fr/gnome-terminal/pref-profiles.page
 share/help/fr/gnome-terminal/pref-scrolling.page
 share/help/fr/gnome-terminal/pref-tab-window.page
@@ -225,6 +271,8 @@ share/help/gl/gnome-terminal/pref-custom-exit.page
 share/help/gl/gnome-terminal/pref-encoding.page
 share/help/gl/gnome-terminal/pref-keyboard-access.page
 share/help/gl/gnome-terminal/pref-menubar.page
+share/help/gl/gnome-terminal/pref-profile-char-width.page
+share/help/gl/gnome-terminal/pref-profile-encoding.page
 share/help/gl/gnome-terminal/pref-profiles.page
 share/help/gl/gnome-terminal/pref-scrolling.page
 share/help/gl/gnome-terminal/pref-tab-window.page
@@ -257,6 +305,8 @@ share/help/hu/gnome-terminal/pref-custom-exit.page
 share/help/hu/gnome-terminal/pref-encoding.page
 share/help/hu/gnome-terminal/pref-keyboard-access.page
 share/help/hu/gnome-terminal/pref-menubar.page
+share/help/hu/gnome-terminal/pref-profile-char-width.page
+share/help/hu/gnome-terminal/pref-profile-encoding.page
 share/help/hu/gnome-terminal/pref-profiles.page
 share/help/hu/gnome-terminal/pref-scrolling.page
 share/help/hu/gnome-terminal/pref-tab-window.page
@@ -289,6 +339,8 @@ share/help/pt_BR/gnome-terminal/pref-custom-exit.page
 share/help/pt_BR/gnome-terminal/pref-encoding.page
 share/help/pt_BR/gnome-terminal/pref-keyboard-access.page
 share/help/pt_BR/gnome-terminal/pref-menubar.page
+share/help/pt_BR/gnome-terminal/pref-profile-char-width.page
+share/help/pt_BR/gnome-terminal/pref-profile-encoding.page
 share/help/pt_BR/gnome-terminal/pref-profiles.page
 share/help/pt_BR/gnome-terminal/pref-scrolling.page
 share/help/pt_BR/gnome-terminal/pref-tab-window.page
@@ -322,6 +374,8 @@ share/help/ru/gnome-terminal/pref-custom-exit.page
 share/help/ru/gnome-terminal/pref-encoding.page
 share/help/ru/gnome-terminal/pref-keyboard-access.page
 share/help/ru/gnome-terminal/pref-menubar.page
+share/help/ru/gnome-terminal/pref-profile-char-width.page
+share/help/ru/gnome-terminal/pref-profile-encoding.page
 share/help/ru/gnome-terminal/pref-profiles.page
 share/help/ru/gnome-terminal/pref-scrolling.page
 share/help/ru/gnome-terminal/pref-tab-window.page
