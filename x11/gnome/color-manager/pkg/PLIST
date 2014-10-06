@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/07/08 14:37:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/10/06 08:27:06 ajacoutot Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
@@ -78,6 +78,12 @@ share/help/es/gnome-color-manager/color-import-linux.page
 share/help/es/gnome-color-manager/color-import-osx.page
 share/help/es/gnome-color-manager/color-import-windows.page
 share/help/es/gnome-color-manager/legal.xml
+share/help/fi/
+share/help/fi/gnome-color-manager/
+share/help/fi/gnome-color-manager/color-import-linux.page
+share/help/fi/gnome-color-manager/color-import-osx.page
+share/help/fi/gnome-color-manager/color-import-windows.page
+share/help/fi/gnome-color-manager/legal.xml
 share/help/fr/
 share/help/fr/gnome-color-manager/
 share/help/fr/gnome-color-manager/color-import-linux.page
@@ -176,6 +182,7 @@ share/locale/lv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-color-manager.mo
 share/locale/mr/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-color-manager.mo
+share/locale/ne/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nl/LC_MESSAGES/gnome-color-manager.mo
 share/locale/or/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pa/LC_MESSAGES/gnome-color-manager.mo
