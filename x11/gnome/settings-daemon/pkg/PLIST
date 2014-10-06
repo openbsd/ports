@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2014/10/05 15:51:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2014/10/06 11:15:03 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -196,5 +196,3 @@ share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

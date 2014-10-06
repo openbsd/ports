@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2014/10/05 15:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2014/10/06 11:15:03 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -8,6 +8,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.14.0
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -65,7 +66,7 @@ RUN_DEPENDS +=		inputmethods/ibus
 # cyclic dep: gnome-session -> gnome-settings-daemon -> gnome-session
 #RUN_DEPENDS +=		x11/gnome/session
 
-MODGNOME_TOOLS=		desktop-file-utils docbook gtk-update-icon-cache
+MODGNOME_TOOLS=		docbook gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
