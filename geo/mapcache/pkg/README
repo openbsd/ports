@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.1.1.1 2014/08/26 18:38:49 landry Exp $
+# $OpenBSD: README,v 1.2 2014/10/06 08:28:35 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,11 +11,6 @@ X11R6/lib, you need to make sure there's a ld.so.hints file inside the
 chroot pointing to those dirs. You can do all this with:
 # mkdir -p /var/www/usr/{libexec,{,local,X11R6}/lib}
 # ldd /var/www/cgi-bin/mapcache  | awk '/lib/ { print $7 }' | while read f ; do cp $f /var/www/$f ; done
-
-# cp /sbin/ldconfig /var/www \
-	&& mkdir -p /var/www/var/run \
-	&& chroot /var/www ./ldconfig /usr/lib /usr/local/lib /usr/X11R6/lib \
-	&& rm /var/www/ldconfig
 
 You also need to ensure mapcache can write to its cache directory, /tmp
 in the chroot by default:

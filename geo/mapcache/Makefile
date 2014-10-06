@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/26 18:38:49 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/06 08:28:35 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,7 @@ GH_PROJECT =	mapcache
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	${GH_PROJECT}-1.2.1
 SHARED_LIBS +=	mapcache 0.0
+REVISION =	0
 
 CATEGORIES=	geo www
 
