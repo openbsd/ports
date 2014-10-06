@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2014/05/12 13:39:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/10/06 08:30:54 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
-GNOME_VERSION=		3.12.2
+GNOME_VERSION=		3.14.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +21,7 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
 
 LIB_DEPENDS=	sysutils/upower \
 		x11/gtk+3
