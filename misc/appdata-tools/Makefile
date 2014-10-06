@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2014/08/30 12:30:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/06 12:28:14 ajacoutot Exp $
 
 COMMENT =		AppData tools
 
 DISTNAME =		appdata-tools-0.1.8
+REVISION =		0
 
 CATEGORIES =		misc
+
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
