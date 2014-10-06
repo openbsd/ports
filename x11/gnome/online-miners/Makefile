@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/10/06 08:32:24 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
-GNOME_VERSION=		3.12.0
-REVISION=		1
+GNOME_VERSION=		3.14.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
