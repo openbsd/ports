@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_FindVTE_cmake,v 1.1 2014/10/06 07:27:05 jasper Exp $
+
+Adjust to new VTE 2.91 API
+
+--- cmake/FindVTE.cmake.orig	Mon Oct  6 09:05:19 2014
++++ cmake/FindVTE.cmake	Mon Oct  6 09:05:57 2014
+@@ -21,11 +21,9 @@ if(NOT _VTE_VERSION_NUM)
+ 	set(_VTE_LIB_NAME vte)
+ 	set(_VTE_VERSION vte)
+ else()
+-	set(_VTE_LIB_NAME vte${_VTE_VERSION_NUM})
++	set(_VTE_LIB_NAME vte-${_VTE_VERSION_NUM})
+ 	set(_VTE_VERSION vte-${_VTE_VERSION_NUM})
+ endif()
+-
+-string(REPLACE . _ _VTE_LIB_NAME ${_VTE_LIB_NAME})
+ 
+ pkg_check_modules(PC_VTE ${_VTE_VERSION})
+ 

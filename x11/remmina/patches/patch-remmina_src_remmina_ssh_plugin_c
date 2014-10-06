@@ -1,0 +1,37 @@
+$OpenBSD: patch-remmina_src_remmina_ssh_plugin_c,v 1.1 2014/10/06 07:27:05 jasper Exp $
+
+Port to new VTE 2.91 API
+
+--- remmina/src/remmina_ssh_plugin.c.orig	Mon Oct  6 09:06:50 2014
++++ remmina/src/remmina_ssh_plugin.c	Mon Oct  6 09:16:33 2014
+@@ -122,7 +122,7 @@ remmina_plugin_ssh_main_thread (gpointer data)
+ 	THREADS_ENTER
+ 	if (charset && charset[0] != '\0')
+ 	{
+-		vte_terminal_set_encoding (VTE_TERMINAL (gpdata->vte), charset);
++		vte_terminal_set_encoding (VTE_TERMINAL (gpdata->vte), charset, NULL);
+ 	}
+ 	vte_terminal_set_pty (VTE_TERMINAL (gpdata->vte), shell->slave);
+ 	THREADS_LEAVE
+@@ -169,7 +169,11 @@ remmina_plugin_ssh_set_vte_pref (RemminaProtocolWidget
+ 	gpdata = (RemminaPluginSshData*) g_object_get_data (G_OBJECT(gp), "plugin-data");
+ 	if (remmina_pref.vte_font && remmina_pref.vte_font[0])
+ 	{
+-		vte_terminal_set_font_from_string (VTE_TERMINAL (gpdata->vte), remmina_pref.vte_font);
++                PangoFontDescription *desc;
++
++                desc = pango_font_description_from_string(remmina_pref.vte_font);
++                vte_terminal_set_font(VTE_TERMINAL (gpdata->vte), desc);
++                pango_font_description_free(desc);
+ 	}
+ 	vte_terminal_set_allow_bold (VTE_TERMINAL (gpdata->vte), remmina_pref.vte_allow_bold_text);
+ 	if (remmina_pref.vte_lines > 0)
+@@ -205,7 +209,7 @@ remmina_plugin_ssh_init (RemminaProtocolWidget *gp)
+ 
+ 	remmina_plugin_service->protocol_plugin_register_hostkey (gp, vte);
+ 
+-	vscrollbar = gtk_vscrollbar_new (vte_terminal_get_adjustment (VTE_TERMINAL (vte)));
++	vscrollbar = gtk_vscrollbar_new(gtk_scrollable_get_vadjustment(GTK_SCROLLABLE(vte)));
+ 	gtk_widget_show(vscrollbar);
+ 	gtk_box_pack_start (GTK_BOX (hbox), vscrollbar, FALSE, TRUE, 0);
+ }

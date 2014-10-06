@@ -1,0 +1,15 @@
+$OpenBSD: patch-remmina_CMakeLists_txt,v 1.4 2014/10/06 07:27:05 jasper Exp $
+
+Adjust to new VTE 2.91 API
+
+--- remmina/CMakeLists.txt.orig	Mon Oct  6 09:04:29 2014
++++ remmina/CMakeLists.txt	Mon Oct  6 09:04:33 2014
+@@ -120,7 +120,7 @@ if(AVAHI_FOUND)
+ endif()
+ 
+ if(GTK3_FOUND)
+-	set(_VTE_VERSION_NUM 2.90)
++	set(_VTE_VERSION_NUM 2.91)
+ else()
+ 	set(_VTE_VERSION_NUM)
+ endif()

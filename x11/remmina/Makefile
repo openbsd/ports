@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/09/15 07:17:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/06 07:27:05 jasper Exp $
 
 ### from upstream, removed at next update
 # +patch-remmina_src_remmina_protocol_widget_c
@@ -22,7 +22,7 @@ DISTNAME=		Remmina-${V}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/FreeRDP-Remmina-356c033
 
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		x11 net
 
@@ -37,7 +37,7 @@ WANTLIB += ICE SM X11 Xext atk-1.0 c cairo freerdp-channels freerdp-codec
 WANTLIB += freerdp-core freerdp-gdi freerdp-kbd freerdp-rail gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gnutls gobject-2.0 gthread-2.0 gtk-3 jpeg pango-1.0
-WANTLIB += pthread ssh telepathy-glib vte2_90 xkbfile z
+WANTLIB += pthread ssh telepathy-glib vte-2.91 xkbfile z
 
 MASTER_SITES=		https://github.com/downloads/FreeRDP/Remmina/
 
