@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2014/10/06 07:27:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.37 2014/10/06 09:28:21 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -2468,8 +2468,6 @@ share/pixmaps/anjuta/vcs-updated.png
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
