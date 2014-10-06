@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.112 2014/10/05 22:06:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.113 2014/10/06 06:33:27 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.14.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -38,6 +39,6 @@ MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
 
 post-install:
-	rm ${PREFIX}/lib/eog/plugins/*.{a,la}
+	rm ${PREFIX}/lib/eog/{,plugins}/*.{a,la}
 
 .include <bsd.port.mk>
