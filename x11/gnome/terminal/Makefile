@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2014/10/06 07:37:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.125 2014/10/06 12:28:50 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,6 +35,12 @@ LIB_DEPENDS=	devel/gconf2 \
 		x11/gnome/nautilus
 
 MODGNOME_TOOLS += desktop-file-utils yelp
+
+pre-configure:
+# XXX cc1: error: unrecognized command line option
+	perl -pi -e 's,-Wno-unused-but-set-variable,,; \
+		s,-Wno-suggest-attribute=format,,;' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
