@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/07 21:57:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/10/06 22:05:04 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Qt-based C++ library for the Last.fm webservices
-V =		1.0.6
+V =		1.0.9
 DISTNAME =	$V
 PKGNAME =	liblastfm-$V
-REVISION =	0
 CATEGORIES =	audio devel net
 
 HOMEPAGE =	https://github.com/lastfm/liblastfm
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
-SHARED_LIBS =	lastfm			0.0
-SHARED_LIBS +=	lastfm_fingerprint	0.0
+SHARED_LIBS =	lastfm			1.0
+SHARED_LIBS +=	lastfm_fingerprint	1.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
@@ -30,5 +29,10 @@ LIB_DEPENDS =	audio/libsamplerate \
 		math/fftw3,float
 
 MODULES =	devel/cmake x11/qt4
+
+CONFIGURE_ARGS =	-DBUILD_WITH_QT4=On
+
+# network access
+TEST_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>
