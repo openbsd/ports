@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome-initial-setup_pages_region_cc-region-chooser_c,v 1.1 2014/09/22 07:45:24 ajacoutot Exp $
---- gnome-initial-setup/pages/region/cc-region-chooser.c.orig	Mon Sep 22 08:10:29 2014
-+++ gnome-initial-setup/pages/region/cc-region-chooser.c	Mon Sep 22 08:11:03 2014
-@@ -232,7 +232,7 @@ add_one_region (CcRegionChooser *chooser,
+$OpenBSD: patch-gnome-initial-setup_pages_region_cc-region-chooser_c,v 1.2 2014/10/06 10:16:42 ajacoutot Exp $
+--- gnome-initial-setup/pages/region/cc-region-chooser.c.orig	Tue Sep  9 12:51:25 2014
++++ gnome-initial-setup/pages/region/cc-region-chooser.c	Mon Oct  6 11:55:35 2014
+@@ -240,7 +240,7 @@ add_one_region (CcRegionChooser *chooser,
  	gchar *region = NULL;
  	gboolean is_extra;
  	

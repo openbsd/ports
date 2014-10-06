@@ -1,9 +1,9 @@
-$OpenBSD: patch-gnome-initial-setup_pages_language_gis-language-page_c,v 1.1 2014/04/07 10:30:32 ajacoutot Exp $
---- gnome-initial-setup/pages/language/gis-language-page.c.orig	Mon Apr  7 11:02:47 2014
-+++ gnome-initial-setup/pages/language/gis-language-page.c	Mon Apr  7 11:04:45 2014
-@@ -123,15 +123,17 @@ language_changed (CcLanguageChooser  *chooser,
+$OpenBSD: patch-gnome-initial-setup_pages_language_gis-language-page_c,v 1.2 2014/10/06 10:16:42 ajacoutot Exp $
+--- gnome-initial-setup/pages/language/gis-language-page.c.orig	Wed Sep 17 16:50:56 2014
++++ gnome-initial-setup/pages/language/gis-language-page.c	Mon Oct  6 11:55:29 2014
+@@ -122,15 +122,17 @@ language_changed (CcLanguageChooser  *chooser,
+   setlocale (LC_MESSAGES, priv->new_locale_id);
    gtk_widget_set_default_direction (gtk_get_locale_direction ());
-   gis_driver_locale_changed (driver);
  
 -  if (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER) {
 -      if (g_permission_get_allowed (priv->permission)) {
