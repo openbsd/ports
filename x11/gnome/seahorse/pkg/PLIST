@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2014/05/14 07:02:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2014/10/06 09:47:50 ajacoutot Exp $
 @bin bin/seahorse
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
@@ -59,7 +59,6 @@ share/help/C/seahorse/pgp-userid-remove.page
 share/help/C/seahorse/pgp-userid.page
 share/help/C/seahorse/pgp.page
 share/help/C/seahorse/ssh-connect-remote.page
-share/help/C/seahorse/ssh-create-vs-setup.page
 share/help/C/seahorse/ssh-create.page
 share/help/C/seahorse/ssh-export.page
 share/help/C/seahorse/ssh-import.page
@@ -105,7 +104,6 @@ share/help/de/seahorse/pgp-userid-remove.page
 share/help/de/seahorse/pgp-userid.page
 share/help/de/seahorse/pgp.page
 share/help/de/seahorse/ssh-connect-remote.page
-share/help/de/seahorse/ssh-create-vs-setup.page
 share/help/de/seahorse/ssh-create.page
 share/help/de/seahorse/ssh-export.page
 share/help/de/seahorse/ssh-import.page
@@ -151,7 +149,6 @@ share/help/el/seahorse/pgp-userid-remove.page
 share/help/el/seahorse/pgp-userid.page
 share/help/el/seahorse/pgp.page
 share/help/el/seahorse/ssh-connect-remote.page
-share/help/el/seahorse/ssh-create-vs-setup.page
 share/help/el/seahorse/ssh-create.page
 share/help/el/seahorse/ssh-export.page
 share/help/el/seahorse/ssh-import.page
@@ -197,7 +194,6 @@ share/help/es/seahorse/pgp-userid-remove.page
 share/help/es/seahorse/pgp-userid.page
 share/help/es/seahorse/pgp.page
 share/help/es/seahorse/ssh-connect-remote.page
-share/help/es/seahorse/ssh-create-vs-setup.page
 share/help/es/seahorse/ssh-create.page
 share/help/es/seahorse/ssh-export.page
 share/help/es/seahorse/ssh-import.page
@@ -205,6 +201,51 @@ share/help/es/seahorse/ssh.page
 share/help/es/seahorse/subkeys-add.page
 share/help/es/seahorse/subkeys-examine.page
 share/help/es/seahorse/subkeys-revoke.page
+share/help/fr/
+share/help/fr/seahorse/
+share/help/fr/seahorse/glossary.page
+share/help/fr/seahorse/index.page
+share/help/fr/seahorse/introduction.page
+share/help/fr/seahorse/key-servers-add.page
+share/help/fr/seahorse/keyring-change-default.page
+share/help/fr/seahorse/keyring-create.page
+share/help/fr/seahorse/keyring-lock.page
+share/help/fr/seahorse/keyring-unlock.page
+share/help/fr/seahorse/keyring-update-password.page
+share/help/fr/seahorse/keyring.page
+share/help/fr/seahorse/legal.xml
+share/help/fr/seahorse/media/
+share/help/fr/seahorse/media/seahorse.png
+share/help/fr/seahorse/misc-key-backup.page
+share/help/fr/seahorse/misc-key-fingerprint.page
+share/help/fr/seahorse/passwords-stored-create.page
+share/help/fr/seahorse/passwords-view.page
+share/help/fr/seahorse/passwords.page
+share/help/fr/seahorse/pgp-create.page
+share/help/fr/seahorse/pgp-delete.page
+share/help/fr/seahorse/pgp-expiration-change.page
+share/help/fr/seahorse/pgp-expired.page
+share/help/fr/seahorse/pgp-export.page
+share/help/fr/seahorse/pgp-import.page
+share/help/fr/seahorse/pgp-photoid.page
+share/help/fr/seahorse/pgp-publish.page
+share/help/fr/seahorse/pgp-retrieve-remote.page
+share/help/fr/seahorse/pgp-sign.page
+share/help/fr/seahorse/pgp-subkeys.page
+share/help/fr/seahorse/pgp-sync.page
+share/help/fr/seahorse/pgp-userid-add.page
+share/help/fr/seahorse/pgp-userid-primary.page
+share/help/fr/seahorse/pgp-userid-remove.page
+share/help/fr/seahorse/pgp-userid.page
+share/help/fr/seahorse/pgp.page
+share/help/fr/seahorse/ssh-connect-remote.page
+share/help/fr/seahorse/ssh-create.page
+share/help/fr/seahorse/ssh-export.page
+share/help/fr/seahorse/ssh-import.page
+share/help/fr/seahorse/ssh.page
+share/help/fr/seahorse/subkeys-add.page
+share/help/fr/seahorse/subkeys-examine.page
+share/help/fr/seahorse/subkeys-revoke.page
 share/help/ru/
 share/help/ru/seahorse/
 share/help/ru/seahorse/glossary.page
@@ -243,7 +284,6 @@ share/help/ru/seahorse/pgp-userid-remove.page
 share/help/ru/seahorse/pgp-userid.page
 share/help/ru/seahorse/pgp.page
 share/help/ru/seahorse/ssh-connect-remote.page
-share/help/ru/seahorse/ssh-create-vs-setup.page
 share/help/ru/seahorse/ssh-create.page
 share/help/ru/seahorse/ssh-export.page
 share/help/ru/seahorse/ssh-import.page
