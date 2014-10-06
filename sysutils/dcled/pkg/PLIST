@@ -1,2 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/02 08:10:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/06 21:36:32 armani Exp $
 @bin bin/dcled
+share/dcled/
+share/dcled/sga.dlf
+share/dcled/small_inv.dlf
