@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/28 19:33:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/06 11:16:09 ajacoutot Exp $
 bin/sushi
 lib/sushi/
 lib/sushi/girepository-1.0/
@@ -96,3 +96,5 @@ share/sushi/js/viewers/image.js
 share/sushi/js/viewers/text.js
 share/sushi/style/
 share/sushi/style/gtk-style.css
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
