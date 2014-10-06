@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/08 08:06:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/06 07:28:46 jasper Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
 DISTNAME=		virt-manager-1.1.0
+REVISION=		0
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://virt-manager.org/
@@ -20,7 +21,7 @@ MODULES=		devel/dconf \
 
 RUN_DEPENDS=		devel/libvirt-glib \
 			devel/py-gobject3 \
-			devel/vte3 \
+			devel/vte3>=0.38 \
 			misc/libosinfo>=0.2.11 \
 			net/py-ipaddr \
 			sysutils/libvirt-python \
@@ -36,8 +37,8 @@ NO_BUILD=		Yes
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
-MODPY_ADJ_FILES=	virt-clone virt-convert virt-image virt-install \
-			virt-manager virt-xml
+MODPY_ADJ_FILES=	virt-clone virt-convert virt-install virt-manager \
+			virt-xml
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/virtcli/cliconfig.py
