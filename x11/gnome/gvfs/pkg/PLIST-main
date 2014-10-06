@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2014/10/05 13:48:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2014/10/06 10:49:19 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -165,5 +165,3 @@ share/locale/zh_TW/LC_MESSAGES/gvfs.mo
 @unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2014/10/05 13:48:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2014/10/06 10:49:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,6 +12,8 @@ GNOME_VERSION=		1.22.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
+
+REVISION-main=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,7 +43,7 @@ WANTLIB-smb += gcrypt gpg-error secret-1
 WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
-MODGNOME_TOOLS=		desktop-file-utils docbook
+MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \
@@ -89,7 +91,6 @@ CONFIGURE_ARGS +=	--disable-goa
 TEST_DEPENDS=		devel/py-gobject3
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	rm ${PREFIX}/lib/gio/modules/*.{a,la}
 	rm ${PREFIX}/lib/gvfs/*.{a,la}
 
