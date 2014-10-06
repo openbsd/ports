@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/10/05 13:37:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2014/10/06 09:29:39 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		3.14.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=		gweather-3             2.2      # 7.3
 
@@ -28,7 +28,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS= 	gobject-introspection gtk-update-icon-cache vala
+MODGNOME_TOOLS= 	gobject-introspection vala
 LIB_DEPENDS=		geo/geocode-glib \
 			x11/gtk+3
 

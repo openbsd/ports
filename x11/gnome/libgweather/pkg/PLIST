@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/10/05 13:23:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/10/06 09:29:39 ajacoutot Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -279,7 +279,5 @@ share/locale/zh_HK/LC_MESSAGES/libgweather-locations.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-locations.mo
 share/vala/vapi/gweather-3.0.vapi
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
