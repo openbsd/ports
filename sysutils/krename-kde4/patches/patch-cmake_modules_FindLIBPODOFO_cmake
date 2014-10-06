@@ -1,0 +1,13 @@
+$OpenBSD: patch-cmake_modules_FindLIBPODOFO_cmake,v 1.1.1.1 2014/10/06 22:11:27 zhuk Exp $
+Allow podofo to be actually found on OpenBSD.
+--- cmake/modules/FindLIBPODOFO.cmake.orig	Sat Oct  4 02:44:08 2014
++++ cmake/modules/FindLIBPODOFO.cmake	Sat Oct  4 02:44:28 2014
+@@ -23,7 +23,7 @@ ELSE(LIBPODOFO_H)
+ ENDIF(LIBPODOFO_H)
+ 
+ FIND_LIBRARY(LIBPODOFO_LIB
+-	NAMES libpodofo-doc podofo-doc
++	NAMES libpodofo-doc podofo-doc podofo
+ 	PATHS "${LIBPODOFO_DIR}/lib" "${LIBPODOFO_DIR}/src" "${LIBPODOFO_DIR}")
+ IF(LIBPODOFO_LIB)
+     MESSAGE("podofo lib: ${LIBPODOFO_LIB}")

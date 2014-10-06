@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_krenametest_cpp,v 1.1.1.1 2014/10/06 22:11:27 zhuk Exp $
+Fix tests (uninitialized variable).
+--- src/krenametest.cpp.orig	Sat Oct  4 15:51:47 2014
++++ src/krenametest.cpp	Sat Oct  4 15:52:33 2014
+@@ -586,6 +586,7 @@ bool KRenameTest::replaceTest( const QString & token, 
+     strings.find    = replace;
+     strings.replace = with;
+     strings.reg     = regExp;
++    strings.doProcessTokens = 0;
+ 
+     replaceList.append( strings );
+ 

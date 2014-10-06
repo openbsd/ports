@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_batchrenamer_cpp,v 1.1.1.1 2014/10/06 22:11:27 zhuk Exp $
+Use the actually intended version of overloaded method.
+--- src/batchrenamer.cpp.orig	Sat Oct  4 15:43:28 2014
++++ src/batchrenamer.cpp	Sat Oct  4 15:43:39 2014
+@@ -402,7 +402,7 @@ void BatchRenamer::undoFiles( ProgressDialog* p )
+                 break;
+             case eRenameMode_Link:
+                 // In case of link delete created file
+-                job = KIO::file_delete( dstUrl, false );
++                job = KIO::file_delete( dstUrl );
+                 break;
+             case eRenameMode_Copy: // no undo possible
+                 // TODO: Maybe we should delete the created files
