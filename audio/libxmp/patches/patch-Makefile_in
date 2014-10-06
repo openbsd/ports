@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2013/12/19 18:07:31 shadchin Exp $
---- Makefile.in.orig	Mon Sep  2 04:14:50 2013
-+++ Makefile.in	Tue Dec 10 00:02:45 2013
+$OpenBSD: patch-Makefile_in,v 1.3 2014/10/06 01:18:06 bcallah Exp $
+--- Makefile.in.orig	Fri Aug  1 08:54:08 2014
++++ Makefile.in	Sun Oct  5 00:02:41 2014
 @@ -33,7 +33,7 @@ DDIRS		= docs include src loaders prowiz depackers win
  V		= 0
  LIB		= libxmp.a
@@ -9,8 +9,8 @@ $OpenBSD: patch-Makefile_in,v 1.2 2013/12/19 18:07:31 shadchin Exp $
 +SHLIB		= $(SOLIB).$(LIBxmp_VERSION)
  SONAME		= $(SOLIB).$(VERSION_MAJOR)
  DLL		= libxmp.dll
- DYLIB		= libxmp.$(VERSION).dylib
-@@ -93,7 +93,7 @@ lib/$(LIB): $(OBJS)
+ DYLIB		= libxmp.$(VERSION_MAJOR).dylib
+@@ -92,7 +92,7 @@ lib/$(LIB): $(OBJS)
  
  lib/$(SHLIB): $(LOBJS)
  	@mkdir -p lib
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2013/12/19 18:07:31 shadchin Exp $
  	if [ "$(V)" -gt 0 ]; then echo $$CMD; else echo LD $@ ; fi; \
  	eval $$CMD
  	ln -sf $(SHLIB) lib/$(SONAME)
-@@ -144,8 +144,6 @@ install: all
+@@ -141,8 +141,6 @@ install: all
  	@if [ -f lib/$(SHLIB) ]; then \
  		echo "Installing $(SHLIB)..."; \
  		$(INSTALL) -m644 lib/$(SHLIB) $(DESTDIR)$(LIBDIR); \
