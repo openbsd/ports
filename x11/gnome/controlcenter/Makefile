@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2014/08/15 09:27:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2014/10/06 08:27:34 ajacoutot Exp $
 
 # XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -10,8 +10,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.12.1
-REVISION=		2
+GNOME_VERSION=		3.14.0
 
 CATEGORIES=		x11
 
@@ -25,7 +24,7 @@ WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
 WANTLIB += colord-gtk colordprivate crack cups dbus-1 dbus-glib-1
 WANTLIB += enchant execinfo expat ffi fontconfig freetype gcrypt
 WANTLIB += gdbm gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-menu-3 goa-1.0 goa-backend-1.0
+WANTLIB += gmodule-2.0 gnome-desktop-3 goa-1.0 goa-backend-1.0
 WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
@@ -54,7 +53,6 @@ LIB_DEPENDS=		audio/pulseaudio \
 			sysutils/upower \
 			x11/gnome/desktop \
 			x11/gnome/grilo \
-			x11/gnome/menus \
 			x11/gnome/online-accounts
 
 BUILD_DEPENDS=		x11/gnome/settings-daemon \
