@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/01 18:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2014/10/06 08:30:24 ajacoutot Exp $
 
 COMMENT=	GObject based collection library
 
 GNOME_PROJECT=	libgee
-GNOME_VERSION=	0.14.0
+GNOME_VERSION=	0.16.0
 
-SHARED_LIBS +=  gee-0.8              3.0      # 6.0
+SHARED_LIBS +=  gee-0.8              3.1      # 7.0
 
 CATEGORIES=	devel
 
@@ -21,7 +21,7 @@ WANTLIB += z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS += gobject-introspection vala
+MODGNOME_TOOLS=	gobject-introspection vala
 
 LIB_DEPENDS=	devel/glib2
 
