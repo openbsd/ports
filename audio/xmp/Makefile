@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2013/06/19 15:59:12 shadchin Exp $
+# $OpenBSD: Makefile,v 1.54 2014/10/06 01:18:53 bcallah Exp $
 
 COMMENT=		extended module player
 
-DISTNAME=		xmp-4.0.6
+DISTNAME=		xmp-4.0.9
 CATEGORIES=		audio
 
 HOMEPAGE=		http://xmp.sourceforge.net/
