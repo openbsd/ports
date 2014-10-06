@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2014/09/02 15:36:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2014/10/06 08:28:26 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -17,8 +17,10 @@ include/tracker-${TRACKER_VERSION}/libtracker-control/
 include/tracker-${TRACKER_VERSION}/libtracker-control/tracker-control.h
 include/tracker-${TRACKER_VERSION}/libtracker-control/tracker-miner-manager.h
 include/tracker-${TRACKER_VERSION}/libtracker-miner/
+include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-data-provider.h
 include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-decorator-fs.h
 include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-decorator.h
+include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-enumerator.h
 include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-indexing-tree.h
 include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-common.h
 include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-enum-types.h
@@ -49,6 +51,8 @@ lib/pkgconfig/tracker-sparql-${TRACKER_VERSION}.pc
 lib/tracker-${TRACKER_VERSION}/
 lib/tracker-${TRACKER_VERSION}/extract-modules/
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-abw.so
+lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-bmp.so
+lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-dummy.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-dvi.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-epub.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-gif.so
@@ -81,7 +85,9 @@ lib/tracker-${TRACKER_VERSION}/writeback-modules/
 lib/tracker-${TRACKER_VERSION}/writeback-modules/libwriteback-taglib.so
 lib/tracker-${TRACKER_VERSION}/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-extract
+@bin libexec/tracker-miner-apps
 @bin libexec/tracker-miner-fs
+@bin libexec/tracker-miner-user-guides
 @bin libexec/tracker-store
 @bin libexec/tracker-writeback
 @man man/man1/tracker-control.1
@@ -97,11 +103,15 @@ lib/tracker-${TRACKER_VERSION}/writeback-modules/libwriteback-xmp.so
 @man man/man1/tracker-store.1
 @man man/man1/tracker-tag.1
 @man man/man1/tracker-writeback.1
+share/appdata/
+share/appdata/tracker-needle.appdata.xml
+share/appdata/tracker-preferences.appdata.xml
 share/applications/tracker-needle.desktop
 share/applications/tracker-preferences.desktop
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Applications.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
+share/dbus-1/services/org.freedesktop.Tracker1.Miner.Userguides.service
 share/dbus-1/services/org.freedesktop.Tracker1.Writeback.service
 share/dbus-1/services/org.freedesktop.Tracker1.service
 share/examples/meta-tracker/
@@ -110,8 +120,10 @@ share/examples/meta-tracker/xdg/
 share/examples/meta-tracker/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/meta-tracker/xdg/autostart/tracker-extract.desktop
+share/examples/meta-tracker/xdg/autostart/tracker-miner-apps.desktop
 share/examples/meta-tracker/xdg/autostart/tracker-miner-fs.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-fs.desktop
+share/examples/meta-tracker/xdg/autostart/tracker-miner-user-guides.desktop
 share/examples/meta-tracker/xdg/autostart/tracker-store.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-store.desktop
 share/gir-${TRACKER_VERSION}/Tracker-${TRACKER_VERSION}.gir
@@ -142,6 +154,7 @@ share/gtk-doc/html/libtracker-control/style.css
 share/gtk-doc/html/libtracker-control/up-insensitive.png
 share/gtk-doc/html/libtracker-control/up.png
 share/gtk-doc/html/libtracker-miner/
+share/gtk-doc/html/libtracker-miner/TrackerDataProvider.html
 share/gtk-doc/html/libtracker-miner/TrackerDecorator.html
 share/gtk-doc/html/libtracker-miner/TrackerDecoratorFS.html
 share/gtk-doc/html/libtracker-miner/TrackerIndexingTree.html
@@ -152,14 +165,20 @@ share/gtk-doc/html/libtracker-miner/annotation-glossary.html
 share/gtk-doc/html/libtracker-miner/ch02.html
 share/gtk-doc/html/libtracker-miner/ch03.html
 share/gtk-doc/html/libtracker-miner/ch04.html
+share/gtk-doc/html/libtracker-miner/ch05.html
 share/gtk-doc/html/libtracker-miner/home.png
 share/gtk-doc/html/libtracker-miner/index.html
 share/gtk-doc/html/libtracker-miner/index.sgml
 share/gtk-doc/html/libtracker-miner/left-insensitive.png
 share/gtk-doc/html/libtracker-miner/left.png
 share/gtk-doc/html/libtracker-miner/libtracker-miner-Enumerations.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-Media-art-management.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerEnumerator.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerFileDataProvider.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerFileEnumerator.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerThumbnailer.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-reference.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-tracker-miner-common.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner.devhelp2
 share/gtk-doc/html/libtracker-miner/right-insensitive.png
 share/gtk-doc/html/libtracker-miner/right.png
@@ -248,6 +267,7 @@ share/locale/sv/LC_MESSAGES/tracker.mo
 share/locale/te/LC_MESSAGES/tracker.mo
 share/locale/tg/LC_MESSAGES/tracker.mo
 share/locale/th/LC_MESSAGES/tracker.mo
+share/locale/tr/LC_MESSAGES/tracker.mo
 share/locale/uk/LC_MESSAGES/tracker.mo
 share/locale/zh_CN/LC_MESSAGES/tracker.mo
 share/locale/zh_HK/LC_MESSAGES/tracker.mo
@@ -257,7 +277,10 @@ share/tracker-tests/
 share/tracker-tests/01-writeback.py
 share/tracker/extract-rules/
 share/tracker/extract-rules/10-abw.rule
+share/tracker/extract-rules/10-bmp.rule
+share/tracker/extract-rules/10-comics.rule
 share/tracker/extract-rules/10-dvi.rule
+share/tracker/extract-rules/10-ebooks.rule
 share/tracker/extract-rules/10-epub.rule
 share/tracker/extract-rules/10-gif.rule
 share/tracker/extract-rules/10-html.rule
@@ -299,6 +322,7 @@ share/tracker/miners/
 share/tracker/miners/tracker-miner-applications.desktop
 share/tracker/miners/tracker-miner-extract.desktop
 share/tracker/miners/tracker-miner-files.desktop
+share/tracker/miners/tracker-miner-userguides.desktop
 share/tracker/ontologies/
 share/tracker/ontologies/10-xsd.description
 share/tracker/ontologies/10-xsd.ontology
