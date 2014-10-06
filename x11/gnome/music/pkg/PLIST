@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/12 16:27:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/10/06 09:38:23 ajacoutot Exp $
 bin/gnome-music
 lib/gnome-music/
 lib/gnome-music/girepository-1.0/
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/toolbar.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/view.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/window.py
-share/appdata/
+@man man/man1/gnome-music.1
 share/appdata/gnome-music.appdata.xml
 share/applications/gnome-music.desktop
 share/glib-2.0/schemas/org.gnome.Music.gschema.xml
@@ -89,22 +89,6 @@ share/help/cs/gnome-music/playlist-remove-songs.page
 share/help/cs/gnome-music/playlist-repeat.page
 share/help/cs/gnome-music/playlist-shuffle.page
 share/help/cs/gnome-music/search.page
-share/help/de/
-share/help/de/gnome-music/
-share/help/de/gnome-music/figures/
-share/help/de/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
-share/help/de/gnome-music/index.page
-share/help/de/gnome-music/introduction.page
-share/help/de/gnome-music/legal.xml
-share/help/de/gnome-music/play-music.page
-share/help/de/gnome-music/playlist-create-albums.page
-share/help/de/gnome-music/playlist-create-artists.page
-share/help/de/gnome-music/playlist-create-songs.page
-share/help/de/gnome-music/playlist-delete.page
-share/help/de/gnome-music/playlist-remove-songs.page
-share/help/de/gnome-music/playlist-repeat.page
-share/help/de/gnome-music/playlist-shuffle.page
-share/help/de/gnome-music/search.page
 share/help/el/
 share/help/el/gnome-music/
 share/help/el/gnome-music/figures/
@@ -153,6 +137,22 @@ share/help/fr/gnome-music/playlist-remove-songs.page
 share/help/fr/gnome-music/playlist-repeat.page
 share/help/fr/gnome-music/playlist-shuffle.page
 share/help/fr/gnome-music/search.page
+share/help/gl/
+share/help/gl/gnome-music/
+share/help/gl/gnome-music/figures/
+share/help/gl/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/gl/gnome-music/index.page
+share/help/gl/gnome-music/introduction.page
+share/help/gl/gnome-music/legal.xml
+share/help/gl/gnome-music/play-music.page
+share/help/gl/gnome-music/playlist-create-albums.page
+share/help/gl/gnome-music/playlist-create-artists.page
+share/help/gl/gnome-music/playlist-create-songs.page
+share/help/gl/gnome-music/playlist-delete.page
+share/help/gl/gnome-music/playlist-remove-songs.page
+share/help/gl/gnome-music/playlist-repeat.page
+share/help/gl/gnome-music/playlist-shuffle.page
+share/help/gl/gnome-music/search.page
 share/help/hu/
 share/help/hu/gnome-music/
 share/help/hu/gnome-music/figures/
@@ -169,6 +169,22 @@ share/help/hu/gnome-music/playlist-remove-songs.page
 share/help/hu/gnome-music/playlist-repeat.page
 share/help/hu/gnome-music/playlist-shuffle.page
 share/help/hu/gnome-music/search.page
+share/help/ko/
+share/help/ko/gnome-music/
+share/help/ko/gnome-music/figures/
+share/help/ko/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/ko/gnome-music/index.page
+share/help/ko/gnome-music/introduction.page
+share/help/ko/gnome-music/legal.xml
+share/help/ko/gnome-music/play-music.page
+share/help/ko/gnome-music/playlist-create-albums.page
+share/help/ko/gnome-music/playlist-create-artists.page
+share/help/ko/gnome-music/playlist-create-songs.page
+share/help/ko/gnome-music/playlist-delete.page
+share/help/ko/gnome-music/playlist-remove-songs.page
+share/help/ko/gnome-music/playlist-repeat.page
+share/help/ko/gnome-music/playlist-shuffle.page
+share/help/ko/gnome-music/search.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-music/
 share/help/pt_BR/gnome-music/figures/
@@ -185,6 +201,38 @@ share/help/pt_BR/gnome-music/playlist-remove-songs.page
 share/help/pt_BR/gnome-music/playlist-repeat.page
 share/help/pt_BR/gnome-music/playlist-shuffle.page
 share/help/pt_BR/gnome-music/search.page
+share/help/ro/
+share/help/ro/gnome-music/
+share/help/ro/gnome-music/figures/
+share/help/ro/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/ro/gnome-music/index.page
+share/help/ro/gnome-music/introduction.page
+share/help/ro/gnome-music/legal.xml
+share/help/ro/gnome-music/play-music.page
+share/help/ro/gnome-music/playlist-create-albums.page
+share/help/ro/gnome-music/playlist-create-artists.page
+share/help/ro/gnome-music/playlist-create-songs.page
+share/help/ro/gnome-music/playlist-delete.page
+share/help/ro/gnome-music/playlist-remove-songs.page
+share/help/ro/gnome-music/playlist-repeat.page
+share/help/ro/gnome-music/playlist-shuffle.page
+share/help/ro/gnome-music/search.page
+share/icons/HighContrast/
+share/icons/HighContrast/16x16/
+share/icons/HighContrast/16x16/apps/
+share/icons/HighContrast/16x16/apps/gnome-music.png
+share/icons/HighContrast/22x22/
+share/icons/HighContrast/22x22/apps/
+share/icons/HighContrast/22x22/apps/gnome-music.png
+share/icons/HighContrast/256x256/
+share/icons/HighContrast/256x256/apps/
+share/icons/HighContrast/256x256/apps/gnome-music.png
+share/icons/HighContrast/32x32/
+share/icons/HighContrast/32x32/apps/
+share/icons/HighContrast/32x32/apps/gnome-music.png
+share/icons/HighContrast/48x48/
+share/icons/HighContrast/48x48/apps/
+share/icons/HighContrast/48x48/apps/gnome-music.png
 share/icons/hicolor/16x16/apps/gnome-music.png
 share/icons/hicolor/22x22/apps/gnome-music.png
 share/icons/hicolor/256x256/apps/gnome-music.png
@@ -192,6 +240,7 @@ share/icons/hicolor/32x32/apps/gnome-music.png
 share/icons/hicolor/48x48/apps/gnome-music.png
 share/locale/af/LC_MESSAGES/gnome-music.mo
 share/locale/an/LC_MESSAGES/gnome-music.mo
+share/locale/ar/LC_MESSAGES/gnome-music.mo
 share/locale/as/LC_MESSAGES/gnome-music.mo
 share/locale/be/LC_MESSAGES/gnome-music.mo
 share/locale/ca/LC_MESSAGES/gnome-music.mo
@@ -221,11 +270,13 @@ share/locale/lt/LC_MESSAGES/gnome-music.mo
 share/locale/lv/LC_MESSAGES/gnome-music.mo
 share/locale/ml/LC_MESSAGES/gnome-music.mo
 share/locale/nb/LC_MESSAGES/gnome-music.mo
+share/locale/ne/LC_MESSAGES/gnome-music.mo
 share/locale/nl/LC_MESSAGES/gnome-music.mo
 share/locale/pa/LC_MESSAGES/gnome-music.mo
 share/locale/pl/LC_MESSAGES/gnome-music.mo
 share/locale/pt/LC_MESSAGES/gnome-music.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-music.mo
+share/locale/ro/LC_MESSAGES/gnome-music.mo
 share/locale/ru/LC_MESSAGES/gnome-music.mo
 share/locale/sk/LC_MESSAGES/gnome-music.mo
 share/locale/sl/LC_MESSAGES/gnome-music.mo
@@ -241,6 +292,8 @@ share/locale/zh_HK/LC_MESSAGES/gnome-music.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-music.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
