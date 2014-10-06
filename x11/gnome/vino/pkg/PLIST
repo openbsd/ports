@@ -1,18 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/03/27 16:48:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/10/06 09:46:15 ajacoutot Exp $
 @bin libexec/vino-server
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/org.gnome.Vino.convert
+share/applications/vino-server.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Vino.service
-share/examples/vino/
-share/examples/vino/xdg/
-@sample ${SYSCONFDIR}/xdg/
-share/examples/vino/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/vino/xdg/autostart/vino-server.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/vino-server.desktop
 share/glib-2.0/schemas/org.gnome.Vino.enums.xml
 share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
 share/locale/an/LC_MESSAGES/vino.mo
@@ -108,3 +102,5 @@ share/telepathy/clients/
 share/telepathy/clients/Vino.client
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

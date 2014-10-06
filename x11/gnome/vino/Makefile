@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2014/03/27 16:48:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2014/10/06 09:46:15 ajacoutot Exp $
 
 COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
-GNOME_VERSION=		3.12.0
+GNOME_VERSION=		3.14.0
 
 CATEGORIES=		net
 
@@ -24,6 +24,8 @@ WANTLIB += xcb xcb-render xcb-shm z
 MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
+
+MODGNOME_TOOLS=		desktop-file-utils
 
 LIB_DEPENDS=		devel/libnotify \
 			net/avahi \
