@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.4 2014/04/02 11:37:36 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.5 2014/10/06 08:29:49 ajacoutot Exp $
 
 XXX remove dependency on itstool, help files got removed
 (check if this patch is still needed at next update)
 
---- configure.orig	Tue Mar 18 12:12:44 2014
-+++ configure	Wed Apr  2 13:28:10 2014
-@@ -13513,256 +13513,6 @@ HELP_DIR="$with_help_dir"
+--- configure.orig	Mon Oct  6 09:52:20 2014
++++ configure	Mon Oct  6 09:53:26 2014
+@@ -13690,258 +13690,6 @@ HELP_DIR="$with_help_dir"
  
  
  
@@ -167,13 +167,13 @@ XXX remove dependency on itstool, help files got removed
 -
 -EXTRA_DIST ?=
 -EXTRA_DIST += $(_HELP_C_EXTRA) $(_HELP_C_MEDIA)
--EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).stamp)
+-EXTRA_DIST += $(if $(YELP_LC_DIST),$(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).stamp))
 -EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).po)
 -EXTRA_DIST += $(foreach f,$(HELP_MEDIA),$(foreach lc,$(HELP_LINGUAS),$(wildcard $(lc)/$(f))))
 -
 -distdir: distdir-help-files
 -distdir-help-files:
--	@for lc in C $(HELP_LINGUAS); do \
+-	@for lc in C $(if $(YELP_LC_DIST),$(HELP_LINGUAS)) ; do \
 -	  $(MKDIR_P) "$(distdir)/$$lc"; \
 -	  for file in $(HELP_FILES); do \
 -	    if test -f "$$lc/$$file"; then d=./; else d=$(srcdir)/; fi; \
@@ -231,8 +231,10 @@ XXX remove dependency on itstool, help files got removed
 -	      echo "$(INSTALL_DATA) $$d$$lc/$$f $$helpdir$$f"; \
 -	      $(INSTALL_DATA) "$$d$$lc/$$f" "$$helpdir$$f" || exit 1; \
 -	    elif test "x$$lc" != "xC"; then \
--	      echo "$(LN_S) -f $(HELP_DIR)/C/$(HELP_ID)/$$f $$helpdir$$f"; \
--	      $(LN_S) -f "$(HELP_DIR)/C/$(HELP_ID)/$$f" "$$helpdir$$f" || exit 1; \
+-	      if test "x$(YELP_LC_MEDIA_LINKS)" != "x"; then \
+-	        echo "$(LN_S) -f $(HELP_DIR)/C/$(HELP_ID)/$$f $$helpdir$$f"; \
+-	        $(LN_S) -f "$(HELP_DIR)/C/$(HELP_ID)/$$f" "$$helpdir$$f" || exit 1; \
+-	      fi; \
 -	    fi; \
 -	  done; \
 -	done

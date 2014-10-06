@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/11/12 14:09:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/06 08:29:49 ajacoutot Exp $
 lib/nautilus/extensions-3.0/libnautilus-share-extension.so
-@bin libexec/gnome-user-share
+@bin libexec/gnome-user-share-webdav
 share/GConf/gsettings/gnome-user-share.convert
+share/applications/gnome-user-share-webdav.desktop
 share/examples/gnome-user-share/
 share/examples/gnome-user-share/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/gnome-user-share/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/gnome-user-share/xdg/autostart/gnome-user-share-obexpush.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-user-share-obexpush.desktop
-share/examples/gnome-user-share/xdg/autostart/gnome-user-share-webdav.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-user-share-webdav.desktop
 share/glib-2.0/schemas/org.gnome.desktop.file-sharing.gschema.xml
 share/gnome-user-share/
 share/gnome-user-share/dav_groupfile
