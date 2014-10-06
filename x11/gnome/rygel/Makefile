@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.58 2014/08/14 06:28:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2014/10/06 10:58:51 ajacoutot Exp $
 
-TRACKER_VERSION=	1.0
+TRACKER_API=		1.0
 
 SHARED_ONLY=		Yes
 
@@ -31,9 +31,9 @@ WANTLIB += gupnp-dlna-2.0 gupnp-dlna-gst-2.0 harfbuzz icui18n
 WANTLIB += icuuc kvm m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
 WANTLIB += unistring uuid xcb xcb-render xcb-shm xml2 z icudata
-WANTLIB += tracker-sparql-${TRACKER_VERSION}
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
+WANTLIB += tracker-sparql-${TRACKER_API}
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -42,9 +42,9 @@ LIB_DEPENDS=		converters/libunistring \
 			devel/libgee \
 			net/gupnp/av \
 			net/gupnp/dlna \
-			x11/gnome/tracker>=${TRACKER_VERSION}
+			x11/gnome/tracker>=${TRACKER_API}
 
-MODGNOME_TOOLS += 	desktop-file-utils gtk-update-icon-cache vala
+MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/rygel/
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2014/10/06 09:38:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2014/10/06 10:58:51 ajacoutot Exp $
 
-TRACKER_VERSION=	1.0
+TRACKER_API=		1.0
 
 COMMENT=		access, organize and share your photos on GNOME
 
@@ -25,10 +25,10 @@ WANTLIB += nss3 oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += rest-0.7 rsvg-2 smime3 softokn3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ssl3 uuid xcb xcb-render xcb-shm xml2 z
-WANTLIB += tracker-control-${TRACKER_VERSION}
-WANTLIB += tracker-sparql-${TRACKER_VERSION}
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
+WANTLIB += tracker-control-${TRACKER_API}
+WANTLIB += tracker-sparql-${TRACKER_API}
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 
 MODULES=		devel/dconf \
 			devel/gettext \

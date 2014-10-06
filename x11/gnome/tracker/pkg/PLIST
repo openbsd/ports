@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/10/06 08:28:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/10/06 10:58:51 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -12,78 +12,78 @@
 @bin bin/tracker-sparql
 @bin bin/tracker-stats
 @bin bin/tracker-tag
-include/tracker-${TRACKER_VERSION}/
-include/tracker-${TRACKER_VERSION}/libtracker-control/
-include/tracker-${TRACKER_VERSION}/libtracker-control/tracker-control.h
-include/tracker-${TRACKER_VERSION}/libtracker-control/tracker-miner-manager.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-data-provider.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-decorator-fs.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-decorator.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-enumerator.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-indexing-tree.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-common.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-enum-types.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-enums.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-fs.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-object.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner-online.h
-include/tracker-${TRACKER_VERSION}/libtracker-miner/tracker-miner.h
-include/tracker-${TRACKER_VERSION}/libtracker-sparql/
-include/tracker-${TRACKER_VERSION}/libtracker-sparql/tracker-generated.h
-include/tracker-${TRACKER_VERSION}/libtracker-sparql/tracker-sparql.h
-include/tracker-${TRACKER_VERSION}/libtracker-sparql/tracker-version.h
-lib/girepository-${TRACKER_VERSION}/Tracker-${TRACKER_VERSION}.typelib
-lib/girepository-${TRACKER_VERSION}/TrackerControl-${TRACKER_VERSION}.typelib
-lib/girepository-${TRACKER_VERSION}/TrackerMiner-${TRACKER_VERSION}.typelib
-lib/libtracker-control-${TRACKER_VERSION}.a
-lib/libtracker-control-${TRACKER_VERSION}.la
-@lib lib/libtracker-control-${TRACKER_VERSION}.so.${LIBtracker-control-1.0_VERSION}
-lib/libtracker-miner-${TRACKER_VERSION}.a
-lib/libtracker-miner-${TRACKER_VERSION}.la
-@lib lib/libtracker-miner-${TRACKER_VERSION}.so.${LIBtracker-miner-1.0_VERSION}
-lib/libtracker-sparql-${TRACKER_VERSION}.a
-lib/libtracker-sparql-${TRACKER_VERSION}.la
-@lib lib/libtracker-sparql-${TRACKER_VERSION}.so.${LIBtracker-sparql-1.0_VERSION}
-lib/pkgconfig/tracker-control-${TRACKER_VERSION}.pc
-lib/pkgconfig/tracker-miner-${TRACKER_VERSION}.pc
-lib/pkgconfig/tracker-sparql-${TRACKER_VERSION}.pc
-lib/tracker-${TRACKER_VERSION}/
-lib/tracker-${TRACKER_VERSION}/extract-modules/
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-abw.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-bmp.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-dummy.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-dvi.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-epub.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-gif.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-gstreamer.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-html.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-icon.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-iso.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-jpeg.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-mp3.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-msoffice-xml.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-msoffice.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-oasis.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-pdf.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-playlist.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-png.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-ps.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-text.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-tiff.so
-lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-xmp.so
-lib/tracker-${TRACKER_VERSION}/libtracker-common.a
-lib/tracker-${TRACKER_VERSION}/libtracker-common.la
-@lib lib/tracker-${TRACKER_VERSION}/libtracker-common.so.${LIBtracker-common_VERSION}
-lib/tracker-${TRACKER_VERSION}/libtracker-data.a
-lib/tracker-${TRACKER_VERSION}/libtracker-data.la
-@lib lib/tracker-${TRACKER_VERSION}/libtracker-data.so.${LIBtracker-data_VERSION}
-lib/tracker-${TRACKER_VERSION}/libtracker-extract.a
-lib/tracker-${TRACKER_VERSION}/libtracker-extract.la
-@lib lib/tracker-${TRACKER_VERSION}/libtracker-extract.so.${LIBtracker-extract_VERSION}
-lib/tracker-${TRACKER_VERSION}/writeback-modules/
-lib/tracker-${TRACKER_VERSION}/writeback-modules/libwriteback-taglib.so
-lib/tracker-${TRACKER_VERSION}/writeback-modules/libwriteback-xmp.so
+include/tracker-${TRACKER_API}/
+include/tracker-${TRACKER_API}/libtracker-control/
+include/tracker-${TRACKER_API}/libtracker-control/tracker-control.h
+include/tracker-${TRACKER_API}/libtracker-control/tracker-miner-manager.h
+include/tracker-${TRACKER_API}/libtracker-miner/
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-data-provider.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-decorator-fs.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-decorator.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-enumerator.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-indexing-tree.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-common.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-enum-types.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-enums.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-fs.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-object.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-online.h
+include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner.h
+include/tracker-${TRACKER_API}/libtracker-sparql/
+include/tracker-${TRACKER_API}/libtracker-sparql/tracker-generated.h
+include/tracker-${TRACKER_API}/libtracker-sparql/tracker-sparql.h
+include/tracker-${TRACKER_API}/libtracker-sparql/tracker-version.h
+lib/girepository-${TRACKER_API}/Tracker-${TRACKER_API}.typelib
+lib/girepository-${TRACKER_API}/TrackerControl-${TRACKER_API}.typelib
+lib/girepository-${TRACKER_API}/TrackerMiner-${TRACKER_API}.typelib
+lib/libtracker-control-${TRACKER_API}.a
+lib/libtracker-control-${TRACKER_API}.la
+@lib lib/libtracker-control-${TRACKER_API}.so.${LIBtracker-control-1.0_VERSION}
+lib/libtracker-miner-${TRACKER_API}.a
+lib/libtracker-miner-${TRACKER_API}.la
+@lib lib/libtracker-miner-${TRACKER_API}.so.${LIBtracker-miner-1.0_VERSION}
+lib/libtracker-sparql-${TRACKER_API}.a
+lib/libtracker-sparql-${TRACKER_API}.la
+@lib lib/libtracker-sparql-${TRACKER_API}.so.${LIBtracker-sparql-1.0_VERSION}
+lib/pkgconfig/tracker-control-${TRACKER_API}.pc
+lib/pkgconfig/tracker-miner-${TRACKER_API}.pc
+lib/pkgconfig/tracker-sparql-${TRACKER_API}.pc
+lib/tracker-${TRACKER_API}/
+lib/tracker-${TRACKER_API}/extract-modules/
+lib/tracker-${TRACKER_API}/extract-modules/libextract-abw.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-bmp.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-dummy.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-dvi.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-epub.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-gif.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-gstreamer.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-html.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-icon.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-iso.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-jpeg.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-mp3.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-msoffice-xml.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-msoffice.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-oasis.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-pdf.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-playlist.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-png.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-ps.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-text.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-tiff.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-xmp.so
+lib/tracker-${TRACKER_API}/libtracker-common.a
+lib/tracker-${TRACKER_API}/libtracker-common.la
+@lib lib/tracker-${TRACKER_API}/libtracker-common.so.${LIBtracker-common_VERSION}
+lib/tracker-${TRACKER_API}/libtracker-data.a
+lib/tracker-${TRACKER_API}/libtracker-data.la
+@lib lib/tracker-${TRACKER_API}/libtracker-data.so.${LIBtracker-data_VERSION}
+lib/tracker-${TRACKER_API}/libtracker-extract.a
+lib/tracker-${TRACKER_API}/libtracker-extract.la
+@lib lib/tracker-${TRACKER_API}/libtracker-extract.so.${LIBtracker-extract_VERSION}
+lib/tracker-${TRACKER_API}/writeback-modules/
+lib/tracker-${TRACKER_API}/writeback-modules/libwriteback-taglib.so
+lib/tracker-${TRACKER_API}/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-extract
 @bin libexec/tracker-miner-apps
 @bin libexec/tracker-miner-fs
@@ -126,9 +126,9 @@ share/examples/meta-tracker/xdg/autostart/tracker-miner-fs.desktop
 share/examples/meta-tracker/xdg/autostart/tracker-miner-user-guides.desktop
 share/examples/meta-tracker/xdg/autostart/tracker-store.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-store.desktop
-share/gir-${TRACKER_VERSION}/Tracker-${TRACKER_VERSION}.gir
-share/gir-${TRACKER_VERSION}/TrackerControl-${TRACKER_VERSION}.gir
-share/gir-${TRACKER_VERSION}/TrackerMiner-${TRACKER_VERSION}.gir
+share/gir-${TRACKER_API}/Tracker-${TRACKER_API}.gir
+share/gir-${TRACKER_API}/TrackerControl-${TRACKER_API}.gir
+share/gir-${TRACKER_API}/TrackerMiner-${TRACKER_API}.gir
 share/glib-2.0/schemas/org.freedesktop.Tracker.DB.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Extract.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.FTS.gschema.xml
@@ -375,12 +375,12 @@ share/tracker/tracker-resources.xml
 share/tracker/tracker-statistics.xml
 share/tracker/tracker-status.xml
 share/tracker/tracker-writeback.xml
-share/vala/vapi/tracker-control-${TRACKER_VERSION}.deps
-share/vala/vapi/tracker-control-${TRACKER_VERSION}.vapi
-share/vala/vapi/tracker-miner-${TRACKER_VERSION}.deps
-share/vala/vapi/tracker-miner-${TRACKER_VERSION}.vapi
-share/vala/vapi/tracker-sparql-${TRACKER_VERSION}.deps
-share/vala/vapi/tracker-sparql-${TRACKER_VERSION}.vapi
+share/vala/vapi/tracker-control-${TRACKER_API}.deps
+share/vala/vapi/tracker-control-${TRACKER_API}.vapi
+share/vala/vapi/tracker-miner-${TRACKER_API}.deps
+share/vala/vapi/tracker-miner-${TRACKER_API}.vapi
+share/vala/vapi/tracker-sparql-${TRACKER_API}.deps
+share/vala/vapi/tracker-sparql-${TRACKER_API}.vapi
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

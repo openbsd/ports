@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2014/05/13 08:43:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/06 10:58:50 ajacoutot Exp $
 
-TRACKER_VERSION=	1.0
+TRACKER_API=		1.0
 
 COMMENT=		simple note editor
 
@@ -28,19 +28,19 @@ WANTLIB += kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
 WANTLIB += stdc++ uuid webkitgtk-3.0 webp xcb xcb-render xcb-shm
 WANTLIB += xml2 xslt z zeitgeist-2.0 orc-0.4 cogl-path
-WANTLIB += tracker-sparql-${TRACKER_VERSION}
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
+WANTLIB += tracker-sparql-${TRACKER_API}
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
 LIB_DEPENDS=		graphics/clutter/clutter-gtk \
 			productivity/zeitgeist \
 			x11/gnome/online-accounts \
-			x11/gnome/tracker>=${TRACKER_VERSION}
+			x11/gnome/tracker>=${TRACKER_API}
 
 # needs xdg-email
 RUN_DEPENDS=		devel/xdg-utils
 
-MODGNOME_TOOLS +=	desktop-file-utils gtk-update-icon-cache \
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
 
 .include <bsd.port.mk>

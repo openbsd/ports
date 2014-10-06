@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2014/10/06 08:28:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2014/10/06 10:58:51 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -14,15 +14,15 @@ GNOME_VERSION=		1.2.2
 # as meta-tracker.
 PKGNAME=		meta-tracker-${VERSION}
 
-# NOTE: when TRACKER_VERSION changes, increment accordingly and bump:
+# NOTE: when TRACKER_API changes, increment accordingly and bump:
 # x11/gnome/documents
 # x11/gnome/grilo-plugins
 # x11/gnome/nautilus
 # x11/gnome/online-miners
 # x11/gnome/photos
 # x11/gnome/rygel
-TRACKER_VERSION=	1.0
-SUBST_VARS=		TRACKER_VERSION
+TRACKER_API=	1.0
+SUBST_VARS=		TRACKER_API
 
 SHARED_LIBS +=  tracker-common       3.0      # unknown
 SHARED_LIBS +=  tracker-data         3.0      # unknown
@@ -117,8 +117,8 @@ pre-configure:
 		${WRKSRC}/src/tracker-needle/tracker-utils.vala
 
 post-install:
-	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/extract-modules/*.{a,la}
-	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/writeback-modules/*.{a,la}
+	rm ${PREFIX}/lib/tracker-${TRACKER_API}/extract-modules/*.{a,la}
+	rm ${PREFIX}/lib/tracker-${TRACKER_API}/writeback-modules/*.{a,la}
 #	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.{a,la}
 
 do-test:

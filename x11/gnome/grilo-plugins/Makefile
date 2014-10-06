@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2014/08/25 20:39:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2014/10/06 10:58:51 ajacoutot Exp $
 
-TRACKER_VERSION=1.0
+TRACKER_API=	1.0
 
 SHARED_ONLY=	Yes
 
@@ -25,9 +25,9 @@ WANTLIB += grlpls-0.2 gthread-2.0 icudata icui18n icuuc idn json-glib-1.0
 WANTLIB += kvm lzma m mediaart-1.0 nspr4 nss3 oauth p11-kit pcre plc4 plds4
 WANTLIB += png pthread rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ssl3 totem-plparser uuid xml2 z
-WANTLIB += tracker-sparql-${TRACKER_VERSION}
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
+WANTLIB += tracker-sparql-${TRACKER_API}
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -39,7 +39,7 @@ LIB_DEPENDS=	devel/libgdata \
 		x11/gnome/libmediaart \
 		x11/gnome/tracker
 
-MODGNOME_TOOLS +=	yelp
+MODGNOME_TOOLS=	yelp
 
 # XXX: Requires dleyna-connector-dbus
 CONFIGURE_ARGS +=	--disable-dleyna

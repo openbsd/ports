@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.144 2014/10/06 08:29:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2014/10/06 10:58:51 ajacoutot Exp $
 
-TRACKER_VERSION=	1.0
+TRACKER_API=		1.0
 
 COMMENT=		GNOME file manager
 
@@ -23,9 +23,9 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
 WANTLIB += icudata icui18n icuuc kvm sqlite3 uuid
-WANTLIB += tracker-sparql-${TRACKER_VERSION}
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
+WANTLIB += tracker-sparql-${TRACKER_API}
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 
 MODULES=		devel/gettext \
 			x11/gnome \
