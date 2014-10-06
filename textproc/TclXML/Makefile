@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2013/05/16 09:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2014/10/06 17:26:37 sebastia Exp $
 
 COMMENT =	XML parser for Tcl
 
 DISTNAME =	tclxml-3.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tclxml/}
 HOMEPAGE =	http://tclxml.sourceforge.net/
-MAINTAINER =	Sebastian Reitenbach <sebastia@l00-bugdead-prods.de>
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SHARED_LIBS +=	Tclxml32	0.0
 
