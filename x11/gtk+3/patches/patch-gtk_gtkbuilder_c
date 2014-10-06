@@ -1,0 +1,42 @@
+$OpenBSD: patch-gtk_gtkbuilder_c,v 1.1 2014/10/06 16:37:26 ajacoutot Exp $
+
+From 80226ca926c9986dc91686f5682d98f6fc84c748 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Fri, 3 Oct 2014 09:29:45 -0400
+Subject: GtkBuilder: Undo the type name heuristic changes
+
+--- gtk/gtkbuilder.c.orig	Sat Sep 27 05:30:29 2014
++++ gtk/gtkbuilder.c	Mon Oct  6 18:21:33 2014
+@@ -372,23 +372,24 @@ gtk_builder_get_property (GObject    *object,
+  * GtkWindow -> gtk_window_get_type
+  * GtkHBox -> gtk_hbox_get_type
+  * GtkUIManager -> gtk_ui_manager_get_type
+- * GdkRGB -> gdk_rgb_get_type
++ * GWeatherLocation -> gweather_location_get_type
++ *
++ * Keep in sync with testsuite/gtk/typename.c !
+  */
+ static gchar *
+ type_name_mangle (const gchar *name)
+ {
+   GString *symbol_name = g_string_new ("");
+-  int i;
++  gint i;
+ 
+   for (i = 0; name[i] != '\0'; i++)
+     {
+       /* skip if uppercase, first or previous is uppercase */
+-      if ((i > 0 && name[i]  == g_ascii_toupper (name[i]) &&
+-                   (name[i-1] != g_ascii_toupper (name[i-1]) || i == 1)) ||
+-          (i > 2 && name[i]   == g_ascii_toupper (name[i]) &&
+-                    name[i-1] == g_ascii_toupper (name[i-1]) &&
+-                    name[i-2] == g_ascii_toupper (name[i-2]) &&
+-                    name[i+1] != 0 && name[i+1] != g_ascii_toupper (name[i+1])))
++      if ((name[i] == g_ascii_toupper (name[i]) &&
++           i > 0 && name[i-1] != g_ascii_toupper (name[i-1])) ||
++           (i > 2 && name[i]   == g_ascii_toupper (name[i]) &&
++           name[i-1] == g_ascii_toupper (name[i-1]) &&
++           name[i-2] == g_ascii_toupper (name[i-2])))
+         g_string_append_c (symbol_name, '_');
+       g_string_append_c (symbol_name, g_ascii_tolower (name[i]));
+     }
