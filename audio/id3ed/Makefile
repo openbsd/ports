@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 23:48:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/06 12:17:21 armani Exp $
 
 COMMENT=		interactive console id3 tag editor
 
 DISTNAME=		id3ed-1.10.4
-REVISION=		1
-CATEGORIES=     	audio
+REVISION=		2
+CATEGORIES=		audio
 
-HOMEPAGE=		http://users.dakotacom.net/~donut/programs/id3ed.html
+HOMEPAGE=		http://code.fluffytapeworm.com/projects/id3ed/
 
-MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
-
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c curses m readline stdc++
 
-MASTER_SITES=		${HOMEPAGE:S/id3ed.html//:=id3ed/}
+MASTER_SITES=		${HOMEPAGE}
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
