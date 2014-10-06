@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2014/05/13 18:00:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2014/10/06 08:29:14 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -22,22 +22,20 @@ lib/libnautilus-extension.la
 @lib lib/libnautilus-extension.so.${LIBnautilus-extension_VERSION}
 lib/nautilus/
 lib/nautilus/extensions-3.0/
-lib/pkgconfig/
 lib/pkgconfig/libnautilus-extension.pc
 @bin libexec/nautilus-convert-metadata
 @man man/man1/nautilus-connect-server.1
 @man man/man1/nautilus.1
 share/GConf/gsettings/nautilus.convert
 share/appdata/
-share/appdata/nautilus.appdata.xml
+share/appdata/org.gnome.Nautilus.appdata.xml
 share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus-classic.desktop
 share/applications/nautilus-connect-server.desktop
-share/applications/nautilus.desktop
+share/applications/org.gnome.Nautilus.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.FileManager1.service
-share/dbus-1/services/org.gnome.Nautilus.SearchProvider.service
 share/dbus-1/services/org.gnome.Nautilus.service
 share/examples/nautilus/
 share/examples/nautilus/xdg/
@@ -232,9 +230,6 @@ share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/nautilus.mo
 share/mime/packages/nautilus.xml
-share/nautilus/
-share/nautilus/nautilus-extras.placeholder
-share/nautilus/nautilus-suggested.placeholder
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
