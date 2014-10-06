@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/06 08:29:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/06 09:53:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,6 +40,9 @@ CONFIGURE_ARGS=		--with-httpd=${LOCALBASE}/sbin/httpd2 \
 
 # needs gnome-bluetooth
 CONFIGURE_ARGS +=	--disable-bluetooth
+
+# XXX help files got removed but configure checks for itstool(1) anyway
+BUILD_DEPENDS +=	textproc/itstool
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' \
