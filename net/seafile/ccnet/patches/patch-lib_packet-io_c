@@ -1,4 +1,7 @@
-$OpenBSD: patch-lib_packet-io_c,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+$OpenBSD: patch-lib_packet-io_c,v 1.2 2014/10/06 12:34:32 kirby Exp $
+
+evutil.h already included in packet-io.h
+
 --- lib/packet-io.c.orig	Fri Dec 13 13:37:55 2013
 +++ lib/packet-io.c	Fri Dec 13 13:38:15 2013
 @@ -21,7 +21,6 @@

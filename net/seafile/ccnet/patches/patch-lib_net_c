@@ -1,4 +1,7 @@
-$OpenBSD: patch-lib_net_c,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+$OpenBSD: patch-lib_net_c,v 1.2 2014/10/06 12:34:32 kirby Exp $
+
+evutil.h already included in net.h
+
 --- lib/net.c.orig	Tue Jan 21 12:45:00 2014
 +++ lib/net.c	Tue Jan 21 12:46:08 2014
 @@ -32,8 +32,6 @@
