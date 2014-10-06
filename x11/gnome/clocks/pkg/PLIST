@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/03/27 12:53:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/10/06 09:13:12 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/appdata/
 share/appdata/org.gnome.clocks.appdata.xml
 share/applications/org.gnome.clocks.desktop
+share/dbus-1/services/
 share/dbus-1/services/org.gnome.clocks.service
 share/glib-2.0/schemas/org.gnome.clocks.gschema.xml
 share/gnome-clocks/
 share/gnome-clocks/images/
 share/gnome-clocks/images/day.png
 share/gnome-clocks/images/night.png
+share/gnome-shell/
+share/gnome-shell/search-providers/
+share/gnome-shell/search-providers/org.gnome.clocks.search-provider.ini
 share/help/
 share/help/C/
 share/help/C/gnome-clocks/
@@ -85,6 +89,21 @@ share/help/es/gnome-clocks/timer.page
 share/help/es/gnome-clocks/world-add.page
 share/help/es/gnome-clocks/world-check.page
 share/help/es/gnome-clocks/world-remove.page
+share/help/fi/
+share/help/fi/gnome-clocks/
+share/help/fi/gnome-clocks/alarm-add.page
+share/help/fi/gnome-clocks/alarm-edit.page
+share/help/fi/gnome-clocks/alarm-remove.page
+share/help/fi/gnome-clocks/alarm-snooze-stop.page
+share/help/fi/gnome-clocks/figures/
+share/help/fi/gnome-clocks/figures/gnome-clocks.png
+share/help/fi/gnome-clocks/index.page
+share/help/fi/gnome-clocks/legal.xml
+share/help/fi/gnome-clocks/stopwatch.page
+share/help/fi/gnome-clocks/timer.page
+share/help/fi/gnome-clocks/world-add.page
+share/help/fi/gnome-clocks/world-check.page
+share/help/fi/gnome-clocks/world-remove.page
 share/help/fr/
 share/help/fr/gnome-clocks/
 share/help/fr/gnome-clocks/alarm-add.page
@@ -160,6 +179,21 @@ share/help/pt_BR/gnome-clocks/timer.page
 share/help/pt_BR/gnome-clocks/world-add.page
 share/help/pt_BR/gnome-clocks/world-check.page
 share/help/pt_BR/gnome-clocks/world-remove.page
+share/help/ru/
+share/help/ru/gnome-clocks/
+share/help/ru/gnome-clocks/alarm-add.page
+share/help/ru/gnome-clocks/alarm-edit.page
+share/help/ru/gnome-clocks/alarm-remove.page
+share/help/ru/gnome-clocks/alarm-snooze-stop.page
+share/help/ru/gnome-clocks/figures/
+share/help/ru/gnome-clocks/figures/gnome-clocks.png
+share/help/ru/gnome-clocks/index.page
+share/help/ru/gnome-clocks/legal.xml
+share/help/ru/gnome-clocks/stopwatch.page
+share/help/ru/gnome-clocks/timer.page
+share/help/ru/gnome-clocks/world-add.page
+share/help/ru/gnome-clocks/world-check.page
+share/help/ru/gnome-clocks/world-remove.page
 share/icons/HighContrast/
 share/icons/HighContrast/16x16/
 share/icons/HighContrast/16x16/apps/
@@ -190,6 +224,7 @@ share/locale/ar/LC_MESSAGES/gnome-clocks.mo
 share/locale/as/LC_MESSAGES/gnome-clocks.mo
 share/locale/be/LC_MESSAGES/gnome-clocks.mo
 share/locale/bg/LC_MESSAGES/gnome-clocks.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-clocks.mo
 share/locale/cs/LC_MESSAGES/gnome-clocks.mo
@@ -222,12 +257,14 @@ share/locale/lv/LC_MESSAGES/gnome-clocks.mo
 share/locale/ml/LC_MESSAGES/gnome-clocks.mo
 share/locale/mr/LC_MESSAGES/gnome-clocks.mo
 share/locale/nb/LC_MESSAGES/gnome-clocks.mo
+share/locale/ne/LC_MESSAGES/gnome-clocks.mo
 share/locale/nl/LC_MESSAGES/gnome-clocks.mo
 share/locale/or/LC_MESSAGES/gnome-clocks.mo
 share/locale/pa/LC_MESSAGES/gnome-clocks.mo
 share/locale/pl/LC_MESSAGES/gnome-clocks.mo
 share/locale/pt/LC_MESSAGES/gnome-clocks.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-clocks.mo
+share/locale/ro/LC_MESSAGES/gnome-clocks.mo
 share/locale/ru/LC_MESSAGES/gnome-clocks.mo
 share/locale/sk/LC_MESSAGES/gnome-clocks.mo
 share/locale/sl/LC_MESSAGES/gnome-clocks.mo

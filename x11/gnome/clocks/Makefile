@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2014/04/02 09:36:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/10/06 09:13:12 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		3.12.0
+GNOME_VERSION=		3.14.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,7 +33,7 @@ LIB_DEPENDS=		audio/libcanberra \
 BUILD_DEPENDS +=	geo/geoclue2
 RUN_DEPENDS +=		geo/geoclue2
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache vala yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
 pre-configure:
 	perl -pi -e 's,.-Wno-unused-but-set-variable,,' \
