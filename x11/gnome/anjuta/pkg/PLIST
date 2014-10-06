@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2014/04/02 15:37:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.36 2014/10/06 07:27:33 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -583,6 +583,7 @@ share/glib-2.0/schemas/org.gnome.anjuta.plugins.run.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.plugins.sourceview.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.plugins.vala.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.snippets.gschema.xml
+share/glib-2.0/schemas/org.gnome.anjuta.starter.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.symbol-db.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.terminal.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.tools.gschema.xml
@@ -2172,18 +2173,18 @@ share/icons/HighContrast/32x32/apps/anjuta.png
 share/icons/HighContrast/48x48/
 share/icons/HighContrast/48x48/apps/
 share/icons/HighContrast/48x48/apps/anjuta.png
-share/icons/gnome/16x16/mimetypes/application-x-anjuta.png
-share/icons/gnome/22x22/mimetypes/application-x-anjuta.png
-share/icons/gnome/24x24/mimetypes/application-x-anjuta.png
-share/icons/gnome/32x32/mimetypes/application-x-anjuta.png
-share/icons/gnome/48x48/mimetypes/application-x-anjuta.png
-share/icons/gnome/scalable/mimetypes/application-x-anjuta.svg
 share/icons/hicolor/16x16/apps/anjuta.png
+share/icons/hicolor/16x16/mimetypes/application-x-anjuta.png
 share/icons/hicolor/22x22/apps/anjuta.png
+share/icons/hicolor/22x22/mimetypes/application-x-anjuta.png
 share/icons/hicolor/24x24/apps/anjuta.png
+share/icons/hicolor/24x24/mimetypes/application-x-anjuta.png
 share/icons/hicolor/32x32/apps/anjuta.png
+share/icons/hicolor/32x32/mimetypes/application-x-anjuta.png
 share/icons/hicolor/48x48/apps/anjuta.png
+share/icons/hicolor/48x48/mimetypes/application-x-anjuta.png
 share/icons/hicolor/scalable/apps/anjuta.svg
+share/icons/hicolor/scalable/mimetypes/application-x-anjuta.svg
 share/locale/ar/LC_MESSAGES/anjuta.mo
 share/locale/ast/LC_MESSAGES/anjuta.mo
 share/locale/az/LC_MESSAGES/anjuta.mo

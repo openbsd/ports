@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.116 2014/10/01 08:53:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.117 2014/10/06 07:27:33 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.12.0
-REVISION=		4
+GNOME_VERSION=		3.14.0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -27,14 +26,14 @@ WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz
 WANTLIB += harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg m magic ncurses orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += jpeg m magic orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 secret-1 serf-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
 WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
 WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1
 WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.26
-WANTLIB += vte2_90 webkit2gtk-3.0 webp xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z
+WANTLIB += vte-2.91 webkit2gtk-3.0 webp xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z gbm
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/dconf \
@@ -50,7 +49,7 @@ RUN_DEPENDS=		devel/subversion,-gnome-keyring
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion \
-			devel/vte3 \
+			devel/vte3>=0.38 \
 			lang/vala>=0.26 \
 			textproc/icu4c \
 			x11/gnome/devhelp \
@@ -83,11 +82,5 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/anjuta/*.{a,la}
-
-#
-# XXX: Remove after update
-#
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.mk>
