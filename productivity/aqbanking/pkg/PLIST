@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/09 21:03:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/07 13:27:15 henning Exp $
 @bin bin/aqbanking-cli
 bin/aqbanking-config
 @bin bin/aqebics-tool
@@ -77,6 +77,8 @@ include/aqbanking5/aqbanking/jobmodifysto.h
 include/aqbanking5/aqbanking/jobmodifysto_be.h
 include/aqbanking5/aqbanking/jobsepadebitnote.h
 include/aqbanking5/aqbanking/jobsepadebitnote_be.h
+include/aqbanking5/aqbanking/jobsepaflashdebitnote.h
+include/aqbanking5/aqbanking/jobsepagetstandingorders.h
 include/aqbanking5/aqbanking/jobsepatransfer.h
 include/aqbanking5/aqbanking/jobsepatransfer_be.h
 include/aqbanking5/aqbanking/jobsingledebitnote.h
@@ -203,6 +205,10 @@ lib/aqbanking/plugins/34/providers/aqnone.xml
 lib/aqbanking/plugins/34/providers/aqofxconnect.la
 lib/aqbanking/plugins/34/providers/aqofxconnect.so
 lib/aqbanking/plugins/34/providers/aqofxconnect.xml
+lib/cmake/
+lib/cmake/aqbanking-5.5/
+lib/cmake/aqbanking-5.5/aqbanking-config-version.cmake
+lib/cmake/aqbanking-5.5/aqbanking-config.cmake
 lib/libaqbanking.la
 @lib lib/libaqbanking.so.${LIBaqbanking_VERSION}
 lib/libaqbankingpp.la
@@ -315,6 +321,7 @@ share/aqbanking/imexporters/csv/profiles/mijnpostbank.conf
 share/aqbanking/imexporters/csv/profiles/oko.conf
 share/aqbanking/imexporters/csv/profiles/postbankffm.conf
 share/aqbanking/imexporters/csv/profiles/psk.conf
+share/aqbanking/imexporters/csv/profiles/sepadebitnotes.conf
 share/aqbanking/imexporters/csv/profiles/sns.conf
 share/aqbanking/imexporters/csv/profiles/sparda.conf
 share/aqbanking/imexporters/csv/profiles/spk-aachen.conf
@@ -347,11 +354,12 @@ share/aqbanking/imexporters/q43/profiles/
 share/aqbanking/imexporters/q43/profiles/default.conf
 share/aqbanking/imexporters/sepa/
 share/aqbanking/imexporters/sepa/profiles/
+share/aqbanking/imexporters/sepa/profiles/001_001_02.conf
 share/aqbanking/imexporters/sepa/profiles/001_002_03.conf
+share/aqbanking/imexporters/sepa/profiles/001_003_03.conf
 share/aqbanking/imexporters/sepa/profiles/008_001_01.conf
 share/aqbanking/imexporters/sepa/profiles/008_002_02.conf
 share/aqbanking/imexporters/sepa/profiles/008_003_02.conf
-share/aqbanking/imexporters/sepa/profiles/ccm.conf
 share/aqbanking/imexporters/sepa/profiles/default.conf
 share/aqbanking/imexporters/swift/
 share/aqbanking/imexporters/swift/profiles/
