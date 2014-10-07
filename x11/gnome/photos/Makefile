@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2014/10/06 10:58:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/07 08:35:37 ajacoutot Exp $
+
+# XXX should RUN_DEPENDS on dleyna-renderer; not ported (signalfd)
 
 TRACKER_API=		1.0
 
@@ -34,6 +36,8 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+
 LIB_DEPENDS=		graphics/gegl \
 			x11/gnome/desktop \
 			x11/gnome/gfbgraph \
@@ -43,7 +47,5 @@ LIB_DEPENDS=		graphics/gegl \
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
-
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 .include <bsd.port.mk>
