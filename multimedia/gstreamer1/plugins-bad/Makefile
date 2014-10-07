@@ -1,33 +1,37 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/19 17:47:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/10/07 16:05:54 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS +=  gstphotography-1.0      1.0    # 204.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 1.0    # 204.0
-SHARED_LIBS +=  gstcodecparsers-1.0     1.0    # 204.0
-SHARED_LIBS +=  gstinsertbin-1.0        0.0    # 204.0
-SHARED_LIBS +=  gsturidownloader-1.0    0.0    # 204.0
-SHARED_LIBS +=  gstmpegts-1.0           0.0    # 204.0
-SHARED_LIBS +=  gstegl-1.0              0.0    # 204.0
+SHARED_LIBS +=  gstphotography-1.0   1.0      # 403.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 1.0      # 403.0
+SHARED_LIBS +=  gstcodecparsers-1.0  1.0      # 403.0
+SHARED_LIBS +=  gstinsertbin-1.0     0.0      # 403.0
+SHARED_LIBS +=  gsturidownloader-1.0 0.0      # 403.0
+SHARED_LIBS +=  gstmpegts-1.0        0.0      # 403.0
+SHARED_LIBS +=  gstbadbase-1.0       0.0      # 403.0
+SHARED_LIBS +=  gstbadvideo-1.0      0.0      # 403.0
+SHARED_LIBS +=  gstgl-1.0            0.0      # 403.0
 
-WANTLIB += BPM EGL GLESv2 SoundTouch X11 X11-xcb Xau Xdmcp Xext
-WANTLIB += Xrender ass bz2 cairo croco-0.6 drm enca expat ffi
-WANTLIB += fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 harfbuzz hogweed m mms nettle opus orc-0.4
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs rsvg-2 schroedinger-1.0
-WANTLIB += stdc++ tasn1 xcb xcb-dri2 xcb-render xcb-shape xcb-shm
+WANTLIB += BPM EGL GL GLU ICE SM SoundTouch X11 X11-xcb Xau Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xrender Xxf86vm ass bz2 cairo croco-0.6
+WANTLIB += drm enca expat ffi fontconfig freetype fribidi gbm
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0 gstsdp-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz jpeg m
+WANTLIB += mms nettle opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 schroedinger-1.0
+WANTLIB += stdc++ xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-xfixes xml2 z
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 
 MODULES =		devel/dconf
+
+BUILD_DEPENDS=		devel/gobject-introspection
 
 # needed for ${WRKSRC}/tests/
 BUILD_DEPENDS +=	graphics/libexif
