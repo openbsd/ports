@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2014/09/27 16:31:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.325 2014/10/07 08:40:30 zhuk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -79,6 +79,7 @@
      SUBDIR += ipmitool
      SUBDIR += knutclient
      SUBDIR += krename
+     SUBDIR += krename-kde4
      SUBDIR += ktsuss
      SUBDIR += librelp
      SUBDIR += libretto-config
