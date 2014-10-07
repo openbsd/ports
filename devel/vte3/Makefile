@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2014/10/07 15:47:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2014/10/07 15:57:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,7 +43,9 @@ MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC}/gnome-pty-helper
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-gnome-pty-helper
+
+# needed by VTE-based terminals to update login records
+CONFIGURE_ARGS +=	--enable-gnome-pty-helper
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
