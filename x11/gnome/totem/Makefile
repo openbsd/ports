@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.125 2014/08/18 17:41:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2014/10/07 16:54:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.12.2
+GNOME_VERSION=		3.14.0
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -14,20 +14,21 @@ CATEGORIES=		multimedia
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject clutter-1.0 clutter-gst-2.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path dbus-1 expat
-WANTLIB += ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
+WANTLIB += EGL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender archive
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi bz2 c cairo cairo-gobject
+WANTLIB += clutter-1.0 clutter-gst-2.0 clutter-gtk-1.0 cogl cogl-pango
+WANTLIB += cogl-path dbus-1 drm expat ffi fontconfig freetype
+WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += glapi glib-2.0 gmime-2.6 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2 grlpls-0.2
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += json-glib-1.0 lzma m nautilus-extension orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += stdc++ totem-plparser totem-plparser-mini xcb xcb-render
-WANTLIB += xcb-shm xml2 z zeitgeist-2.0
+WANTLIB += totem-plparser xcb xcb-dri2 xcb-render xcb-shape xcb-shm
+WANTLIB += xcb-xfixes xml2 z zeitgeist-2.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -36,7 +37,7 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=	 	devel/gsettings-desktop-schemas \
 			devel/py-gobject3 \
-			multimedia/gstreamer1/plugins-good
+			multimedia/gstreamer1/plugins-good>=1.4.3
 
 # needed for make check
 BUILD_DEPENDS +=	devel/pylint
@@ -74,6 +75,5 @@ pre-configure:
 post-install:
 	rm ${PREFIX}/lib/totem/plugins/*/*.{a,la}
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
-	rm ${PREFIX}/lib/mozilla/plugins/*.{a,la}
 
 .include <bsd.port.mk>

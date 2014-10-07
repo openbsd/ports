@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/04/01 13:21:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/10/07 16:54:45 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -15,13 +15,6 @@ lib/girepository-1.0/Totem-1.0.typelib
 lib/libtotem.a
 lib/libtotem.la
 @lib lib/libtotem.so.${LIBtotem_VERSION}
-lib/mozilla/
-lib/mozilla/plugins/
-lib/mozilla/plugins/libtotem-cone-plugin.so
-lib/mozilla/plugins/libtotem-gmp-plugin.so
-lib/mozilla/plugins/libtotem-mully-plugin.so
-lib/mozilla/plugins/libtotem-narrowspace-plugin.so
-lib/mozilla/plugins/libtotem-vegas-plugin.so
 lib/nautilus/extensions-3.0/libtotem-properties-page.so
 lib/pkgconfig/totem.pc
 lib/totem/
@@ -102,15 +95,15 @@ lib/totem/plugins/zeitgeist-dp/
 lib/totem/plugins/zeitgeist-dp/libtotem-zeitgeist-dp-plugin.so
 lib/totem/plugins/zeitgeist-dp/zeitgeist-dp.plugin
 libexec/totem/
-@bin libexec/totem-plugin-viewer
 libexec/totem/totem-bugreport.py
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1
 share/GConf/gsettings/opensubtitles.convert
 share/GConf/gsettings/pythonconsole.convert
 share/GConf/gsettings/totem.convert
-share/appdata/totem.appdata.xml
-share/applications/totem.desktop
+share/appdata/org.gnome.Totem.appdata.xml
+share/applications/org.gnome.Totem.desktop
+share/dbus-1/services/org.gnome.Totem.service
 share/gir-1.0/Totem-1.0.gir
 share/glib-2.0/schemas/org.gnome.totem.enums.xml
 share/glib-2.0/schemas/org.gnome.totem.gschema.xml
@@ -610,9 +603,6 @@ share/locale/zu/LC_MESSAGES/totem.mo
 share/thumbnailers/totem.thumbnailer
 share/totem/
 share/totem/controls.ui
-share/totem/mozilla-viewer.css
-share/totem/mozilla-viewer.ui
-share/totem/org_gnome_totem_PluginViewer.xml
 share/totem/playlist.ui
 share/totem/preferences.ui
 share/totem/properties.ui
