@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/08/21 19:58:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/10/07 12:51:35 sthen Exp $
 @newgroup _conserver:736
 @newuser _conserver:736:_conserver:daemon:Serial console server:/nonexistent:/sbin/nologin
 @extra /var/log/conserver
@@ -10,18 +10,24 @@
 @man man/man8/conserver.8
 @bin sbin/conserver
 @bin sbin/conserver-convert
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/conserver/
+share/examples/conserver/README
+share/examples/conserver/average-distributed.cf
+share/examples/conserver/average.cf
+share/examples/conserver/basic.cf
 share/examples/conserver/conserver.cf
 @sample ${SYSCONFDIR}/conserver.cf
 share/examples/conserver/conserver.passwd
 @sample ${SYSCONFDIR}/conserver.passwd
 share/examples/conserver/console.cf
 @sample ${SYSCONFDIR}/console.cf
+@mode 755
 @owner _conserver
 @group wheel
-@mode 755
 @sample /var/consoles/
 @mode
 @group
 @owner
+share/examples/conserver/simple.cf
 @rcscript ${RCDIR}/conserver

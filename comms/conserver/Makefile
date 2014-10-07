@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2014/09/08 16:12:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2014/10/07 12:51:35 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
 DISTNAME=	conserver-8.1.20
+REVISION=	0
 CATEGORIES=	comms
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -14,9 +15,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c ssl crypto util
 
-MASTER_SITES=	ftp://ftp.conserver.com/conserver/
+MASTER_SITES=	${HOMEPAGE} \
+		ftp://ftp.conserver.com/conserver/
 
-AUTOCONF_VERSION= 2.59
+AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--with-openssl \
 		--with-pidfile=${LOCALSTATEDIR}/run/conserver/conserver.pid \
@@ -25,6 +27,7 @@ CONFIGURE_ARGS=	--with-openssl \
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/console.cf \
+	    ${WRKSRC}/conserver.cf/samples/* \
 	    ${PREFIX}/share/examples/conserver/
 
 TEST_TARGET=	test
