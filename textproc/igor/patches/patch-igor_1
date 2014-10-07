@@ -1,0 +1,25 @@
+$OpenBSD: patch-igor_1,v 1.1 2014/10/07 19:13:50 schwarze Exp $
+--- igor.1.orig	Tue Oct  7 10:02:06 2014
++++ igor.1	Tue Oct  7 10:13:03 2014
+@@ -97,7 +97,7 @@ When ready for the actual commit, run
+ .Nm
+ without this option to check the date.
+ Equivalent to
+-.Fl abefmrsuw .
++.Fl abefmrsw .
+ .It Fl z
+ Run all applicable non-whitespace
+ .Pq content
+@@ -156,6 +156,12 @@ The Debian project has a list of words at
+ .Li http://anonscm.debian.org/gitweb/?p=lintian/lintian.git;a=blob_plain;f=vendors/debian/ftp-master-auto-reject/data/spelling/corrections;hb=HEAD
+ .It Fl u
+ Identify contractions, which make translation more difficult.
++This test is off by default on
++.Ox
++because
++.Ox
++documentation maintainers regard contractions as a normal feature
++of the English language and see no need to avoid them.
+ .It Fl w
+ Find general whitespace errors, including trailing whitespace at
+ the end of lines, blank lines containing whitespace, and tabs
