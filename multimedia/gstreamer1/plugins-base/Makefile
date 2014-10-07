@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/19 17:46:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/10/07 16:05:11 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS +=  gsttag-1.0           1.0      # 204.0
-SHARED_LIBS +=  gstaudio-1.0         1.0      # 204.0
-SHARED_LIBS +=  gstfft-1.0           1.0      # 204.0
-SHARED_LIBS +=  gstrtp-1.0           1.0      # 204.0
-SHARED_LIBS +=  gstsdp-1.0           1.0      # 204.0
-SHARED_LIBS +=  gstvideo-1.0         1.0      # 204.0
-SHARED_LIBS +=  gstapp-1.0           1.0      # 204.0
-SHARED_LIBS +=  gstrtsp-1.0          1.0      # 204.0
-SHARED_LIBS +=  gstpbutils-1.0       1.0      # 204.0
-SHARED_LIBS +=  gstriff-1.0          1.0      # 204.0
-SHARED_LIBS +=  gstallocators-1.0    0.0      # 204.0
+SHARED_LIBS +=  gsttag-1.0           1.0      # 403.0
+SHARED_LIBS +=  gstaudio-1.0         1.0      # 403.0
+SHARED_LIBS +=  gstfft-1.0           1.0      # 403.0
+SHARED_LIBS +=  gstrtp-1.0           1.0      # 403.0
+SHARED_LIBS +=  gstsdp-1.0           1.0      # 403.0
+SHARED_LIBS +=  gstvideo-1.0         1.0      # 403.0
+SHARED_LIBS +=  gstapp-1.0           1.0      # 403.0
+SHARED_LIBS +=  gstrtsp-1.0          1.0      # 403.0
+SHARED_LIBS +=  gstpbutils-1.0       1.0      # 403.0
+SHARED_LIBS +=  gstriff-1.0          1.0      # 403.0
+SHARED_LIBS +=  gstallocators-1.0    0.0      # 403.0
 
 WANTLIB += ICE SM X11 Xext Xrender Xv c cairo cdda_interface cdda_paranoia
 WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
@@ -27,7 +27,9 @@ WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
-BUILD_DEPENDS=		devel/iso-codes
+BUILD_DEPENDS=		devel/iso-codes \
+			devel/gobject-introspection
+
 RUN_DEPENDS=		devel/iso-codes
 
 # needed for ${WRKSRC}/tests/
@@ -38,7 +40,7 @@ LIB_DEPENDS=		${P}/core=${V} \
 			audio/cdparanoia \
 			audio/libvorbis \
 			audio/tremor \
-			devel/orc>=0.4.18 \
+			devel/orc \
 			devel/pango \
 			multimedia/libtheora
 
@@ -53,7 +55,7 @@ CONFIGURE_STYLE +=	gnu
 AUTOMAKE_VERSION=	1.14
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
-BUILD_DEPENDS +=	devel/libtool # needs needs libtoolize
+BUILD_DEPENDS +=	devel/libtool # libtoolize(1)
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio
