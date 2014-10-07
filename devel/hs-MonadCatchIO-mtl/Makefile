@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/07/18 22:01:48 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2014/10/07 12:59:51 dcoppa Exp $
 
 COMMENT =		monad-transformer version of Control.Exception.catch
 
-DISTNAME =		MonadCatchIO-mtl-0.3.0.5
-REVISION =		2
+DISTNAME =		MonadCatchIO-mtl-0.3.1.0
 CATEGORIES =		devel
 HOMEPAGE =		http://darcsden.com/jcpetruzza/MonadCatchIO-mtl
 
@@ -16,7 +15,8 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		devel/hs-extensible-exceptions \
+RUN_DEPENDS +=		devel/hs-MonadCatchIO-transformers>=0.3.0.0 \
+			devel/hs-extensible-exceptions \
 			devel/hs-mtl
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 

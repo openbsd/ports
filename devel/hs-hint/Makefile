@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/19 06:50:17 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/07 12:59:51 dcoppa Exp $
 
 COMMENT =		Runtime Haskell interpreter (GHC API wrapper)
 
 DISTNAME =		hint-0.3.3.6
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
