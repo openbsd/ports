@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/07 11:48:33 schwarze Exp $
 
 COMMENT =		command line converter from Microsoft docx to ASCII text
-DISTNAME =		docx2txt-1.0
+DISTNAME =		docx2txt-1.4
 CATEGORIES =		textproc
 HOMEPAGE =		http://docx2txt.sourceforge.net/
 MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
@@ -18,5 +18,10 @@ NO_TEST =		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/docx2txt.pl ${PREFIX}/bin/docx2txt
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/docx2txt
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/docx2txt/README
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/docx2txt
+	${INSTALL_DATA} ${WRKSRC}/docx2txt.config \
+		${PREFIX}/share/examples/docx2txt/docx2txt.config
 
 .include <bsd.port.mk>

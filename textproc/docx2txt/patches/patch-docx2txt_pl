@@ -1,12 +1,27 @@
-$OpenBSD: patch-docx2txt_pl,v 1.1.1.1 2011/04/05 15:09:50 schwarze Exp $
---- docx2txt.pl.orig	Sun Oct  4 17:31:04 2009
-+++ docx2txt.pl	Tue Apr  5 16:07:08 2011
-@@ -72,7 +72,7 @@
- # first in current directory and then in the same location as this script.
+$OpenBSD: patch-docx2txt_pl,v 1.2 2014/10/07 11:48:33 schwarze Exp $
+No need to require an absolute path for unzip.
+--- docx2txt.pl.orig	Tue May 13 18:15:32 2014
++++ docx2txt.pl	Tue Oct  7 12:33:43 2014
+@@ -107,7 +107,7 @@
+ # directory/ user configuration directory/ system configuration directory.
  #
  
--our $unzip = '/usr/bin/unzip';	# Windows path like 'C:/path/to/unzip.exe'
-+our $unzip = 'unzip';		# rely on the PATH
- our $newLine = "\n";		# Alternative is "\r\n".
- our $listIndent = "  ";		# Indent nested lists by "\t", " " etc.
- our $lineWidth = 80;		# Line width, used for short line justification.
+-our $config_unzip = '/usr/bin/unzip';	# Windows path like 'C:/path/to/unzip.exe'
++our $config_unzip = 'unzip';		# Windows path like 'C:/path/to/unzip.exe'
+ our $config_unzip_opts = '-p';		# To extract file on standard output
+ 
+ our $config_newLine = "\n";		# Alternative is "\r\n".
+@@ -299,13 +299,6 @@ if (%config) {
+ }
+ 
+ #
+-# Check for unzip utility, before proceeding further.
+-#
+-
+-die "Failed to locate unzip command '$config_unzip'!\n" if ! -f $config_unzip;
+-
+-
+-#
+ # Handle cases where this script reads docx file from STDIN.
+ #
+ 

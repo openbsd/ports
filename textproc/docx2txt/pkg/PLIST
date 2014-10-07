@@ -1,2 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/05 15:09:50 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/07 11:48:33 schwarze Exp $
 bin/docx2txt
+share/doc/docx2txt/
+share/doc/docx2txt/README
+share/examples/docx2txt/
+share/examples/docx2txt/docx2txt.config
