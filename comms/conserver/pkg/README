@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/09/08 16:12:11 sthen Exp $
+$OpenBSD: README,v 1.5 2014/10/07 15:21:42 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -18,5 +18,8 @@ ran as root, you will need to change permissions/ownership on log files to
 ensure that the _conserver user can write to them, e.g.:
 
   chown _conserver /var/log/conserver /var/log/consoles/*
+
+Note that you will probably also want to arrange rotation of the above
+log files (via newsyslog(8) or another method).
 
 See more information at http://www.conserver.com/
