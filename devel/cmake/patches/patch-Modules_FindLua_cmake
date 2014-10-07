@@ -1,7 +1,14 @@
-$OpenBSD: patch-Modules_FindLua_cmake,v 1.1 2014/09/11 10:24:38 dcoppa Exp $
---- Modules/FindLua.cmake.orig	Thu Jul 31 17:03:56 2014
-+++ Modules/FindLua.cmake	Wed Sep  3 16:44:38 2014
-@@ -50,9 +50,16 @@
+$OpenBSD: patch-Modules_FindLua_cmake,v 1.2 2014/10/07 11:12:23 dcoppa Exp $
+
+commit c4a56b9c1c0f17d7562cf7abfceed8315938393e
+Author: Rolf Eike Beer <eike@sf-mail.de>
+Date:   Thu Oct 2 21:41:43 2014 +0200
+
+FindLua: fix wrong version list if EXACT is given
+
+--- Modules/FindLua.cmake.orig	Thu Sep 11 15:24:00 2014
++++ Modules/FindLua.cmake	Tue Oct  7 12:01:25 2014
+@@ -50,13 +50,20 @@
  unset(_lua_include_subdirs)
  unset(_lua_library_names)
  
@@ -19,6 +26,11 @@ $OpenBSD: patch-Modules_FindLua_cmake,v 1.1 2014/09/11 10:24:38 dcoppa Exp $
  
      if (Lua_FIND_VERSION_EXACT)
          if (Lua_FIND_VERSION_COUNT GREATER 1)
+-            set(lua_append_versions ${Lua_FIND_VERSION_MAJOR} ${Lua_FIND_VERSION_MINOR})
++            set(lua_append_versions ${Lua_FIND_VERSION_MAJOR}.${Lua_FIND_VERSION_MINOR})
+         endif ()
+     elseif (Lua_FIND_VERSION)
+         # once there is a different major version supported this should become a loop
 @@ -96,18 +103,22 @@ endfunction(set_lua_version_vars)
  
  set_lua_version_vars()
