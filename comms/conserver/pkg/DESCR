@@ -9,3 +9,9 @@ to the entire cluster.
 This is very handy for remote unattended OpenBSD servers. It can
 send serial break signals (if the driver supports it, cy(4) does not!)
 which is useful for breaking into DDB on hung machines.
+
+Flavors:
+
+net - use network sockets rather than unix domain sockets
+(as was previously the default). This is mainly useful when
+the conserver server is on a separate machine to the client.

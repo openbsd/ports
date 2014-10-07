@@ -1,7 +1,7 @@
-$OpenBSD: patch-conserver_group_c,v 1.4 2014/09/08 16:12:11 sthen Exp $
---- conserver/group.c.orig	Fri Apr  4 17:17:10 2014
-+++ conserver/group.c	Tue Sep  2 20:24:00 2014
-@@ -2911,7 +2911,7 @@ TelOpt(o)
+$OpenBSD: patch-conserver_group_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
+--- conserver/group.c.orig	Sun Apr 20 08:20:56 2014
++++ conserver/group.c	Tue Oct  7 16:49:57 2014
+@@ -2553,7 +2553,7 @@ TelOpt(int o)
      if (o < sizeof(telopts) / sizeof(char *))
  	return telopts[o];
      else {

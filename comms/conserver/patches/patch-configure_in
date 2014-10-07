@@ -1,0 +1,62 @@
+$OpenBSD: patch-configure_in,v 1.4 2014/10/07 22:14:17 sthen Exp $
+--- configure.in.orig	Fri Apr 18 05:55:38 2014
++++ configure.in	Tue Oct  7 21:24:43 2014
+@@ -413,14 +413,14 @@ AC_ARG_WITH(uds,
+ 			    AC_TRY_COMPILE([#include <sys/types.h>
+ 				    #include <sys/socket.h>],
+ 				    [
+-struct ucred u;
++struct sockpeercred u;
+ u.uid = 0;
+ #if !defined(SO_PEERCRED)
+ #error "no SO_PEERCRED defined"
+ #endif
+ 				    ],
+ 				    [AC_MSG_RESULT(yes)
+-				     AC_DEFINE(UDS_CRED_STYPE, ucred, [Defined to UDS credential structure name])
++				     AC_DEFINE(UDS_CRED_STYPE, sockpeercred, [Defined to UDS credential structure name])
+ 				     AC_DEFINE(UDS_CRED_UID, uid, [Defined to UDS credential structure uid field])
+ 				     AC_DEFINE(UDS_CRED_SO, SO_PEERCRED, [Defined to UDS credential socket option])
+ 				     AC_DEFINE(TRUST_UDS_CRED)],
+@@ -428,18 +428,34 @@ u.uid = 0;
+ 					AC_TRY_COMPILE([#include <sys/types.h>
+ 						#include <sys/socket.h>],
+ 						[
++struct ucred u;
++u.euid = 0;
++#if !defined(SO_PEERCRED)
++#error "no SO_PEERCRED defined"
++#endif
++						],
++				    		[AC_MSG_RESULT(yes)
++				     		AC_DEFINE(UDS_CRED_STYPE, ucred, [Defined to UDS credential structure name])
++				     		AC_DEFINE(UDS_CRED_UID, uid, [Defined to UDS credential structure uid field])
++				     		AC_DEFINE(UDS_CRED_SO, SO_PEERCRED, [Defined to UDS credential socket option])
++				     		AC_DEFINE(TRUST_UDS_CRED)],
++						[
++							AC_TRY_COMPILE([#include <sys/types.h>
++								#include <sys/socket.h>],
++								[
+ struct peercred_struct u;
+ u.euid = 0;
+ #if !defined(SO_PEERID)
+ #error "no SO_PEERID defined"
+ #endif
+-						],
+-						[AC_MSG_RESULT(yes)
+-						 AC_DEFINE(UDS_CRED_STYPE, peercred_struct, [Defined to UDS credential structure name])
+-						 AC_DEFINE(UDS_CRED_UID, euid, [Defined to UDS credential structure uid field])
+-						 AC_DEFINE(UDS_CRED_SO, SO_PEERID, [Defined to UDS credential socket option])
+-						 AC_DEFINE(TRUST_UDS_CRED)],
+-						[AC_MSG_RESULT(no)])
++								],
++								[AC_MSG_RESULT(yes)
++								 AC_DEFINE(UDS_CRED_STYPE, peercred_struct, [Defined to UDS credential structure name])
++								 AC_DEFINE(UDS_CRED_UID, euid, [Defined to UDS credential structure uid field])
++								 AC_DEFINE(UDS_CRED_SO, SO_PEERID, [Defined to UDS credential socket option])
++								 AC_DEFINE(TRUST_UDS_CRED)],
++								[AC_MSG_RESULT(no)]),
++						    ])
+ 				    ])
+ 			    ;;
+ 			*)

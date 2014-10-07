@@ -1,9 +1,11 @@
-$OpenBSD: README,v 1.5 2014/10/07 15:21:42 sthen Exp $
+$OpenBSD: README,v 1.6 2014/10/07 22:14:17 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
+Connecting to /dev/cuaXX serial ports
+=====================================
 As installed, conserver is running as user _conserver. If you want to
 use conserver to manage local serial ports, you have to add _conserver
 to group dialer in /etc/group:
@@ -13,13 +15,32 @@ to group dialer in /etc/group:
 This is not necessary if you only use it to log and control access to
 terminal servers over the network rather than on local serial ports.
 
+Port flavours
+=============
+Conserver can be built using different methods to communicate between the
+server ("conserver" process) and clients ("console") - network sockets, and
+unix domain sockets.
+
+The default in OpenBSD packages before 8.2.0 was to communicate using
+network sockets.
+
+Since 8.2.0, the OpenBSD package has switched to using unix domain sockets
+by default; this means that server and client must be on the same machine.
+The old method is still available by installing the "net" flavour of the
+package; you will need to install the "conserver-XX-net" package. If you
+have already installed the standard package, "pkg_delete conserver" and
+then "pkg_add conserver--net".
+
+Other notes
+===========
+Log files (by default, /var/log/conserver and /var/log/consoles/<name>)
+can get large, so you will probably want to arrange rotation, either with
+newsyslog(8) or some other method.
+
+Upgrading from previous OpenBSD packages
+========================================
 If you have upgraded from a previous version of the OpenBSD package which
-ran as root, you will need to change permissions/ownership on log files to
-ensure that the _conserver user can write to them, e.g.:
+ran as root (pre-OpenBSD 5.6), you will need to change permissions/ownership
+on log files to ensure that the _conserver user can write to them, e.g.:
 
   chown _conserver /var/log/conserver /var/log/consoles/*
-
-Note that you will probably also want to arrange rotation of the above
-log files (via newsyslog(8) or another method).
-
-See more information at http://www.conserver.com/

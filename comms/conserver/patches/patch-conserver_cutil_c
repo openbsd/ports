@@ -1,16 +1,16 @@
-$OpenBSD: patch-conserver_cutil_c,v 1.4 2014/09/08 16:12:11 sthen Exp $
---- conserver/cutil.c.orig	Fri Apr  4 17:17:10 2014
-+++ conserver/cutil.c	Tue Sep  2 20:27:36 2014
-@@ -2198,7 +2198,7 @@ ProbeInterfaces(bindAddr)
+$OpenBSD: patch-conserver_cutil_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
+--- conserver/cutil.c.orig	Sun Apr 20 08:17:56 2014
++++ conserver/cutil.c	Tue Oct  7 17:25:07 2014
+@@ -1845,7 +1845,7 @@ ProbeInterfaces(in_addr_t bindAddr)
  {
- #ifdef SIOCGIFCONF
+ # ifdef SIOCGIFCONF
      struct ifconf ifc;
 -    struct ifreq *ifr;
 +    struct ifreq ifr;
- #ifdef SIOCGIFFLAGS
+ #  ifdef SIOCGIFFLAGS
      struct ifreq ifrcopy;
- #endif
-@@ -2267,7 +2267,7 @@ ProbeInterfaces(bindAddr)
+ #  endif
+@@ -1914,7 +1914,7 @@ ProbeInterfaces(in_addr_t bindAddr)
       * than loop through looking for valid interfaces that are up
       * twice, huh?
       */
@@ -19,7 +19,7 @@ $OpenBSD: patch-conserver_cutil_c,v 1.4 2014/09/08 16:12:11 sthen Exp $
      CONDDEBUG((1, "ProbeInterfaces(): ifc_len==%d max_count==%d",
  	       ifc.ifc_len, count));
  
-@@ -2286,17 +2286,18 @@ ProbeInterfaces(bindAddr)
+@@ -1933,17 +1933,17 @@ ProbeInterfaces(in_addr_t bindAddr)
  
      for (m = r = 0; r < ifc.ifc_len;) {
  	struct sockaddr *sa;
@@ -27,42 +27,41 @@ $OpenBSD: patch-conserver_cutil_c,v 1.4 2014/09/08 16:12:11 sthen Exp $
 -	sa = (struct sockaddr *)&ifr->ifr_addr;
 +	memcpy(&ifr, &ifc.ifc_buf[r], sizeof(ifr));
 +	sa = (struct sockaddr *)&ifr.ifr_addr;
-+
  	/* don't use less than a ifreq sized chunk */
 -	if ((ifc.ifc_len - r) < sizeof(*ifr))
 +	if ((ifc.ifc_len - r) < sizeof(ifr))
  	    break;
- #ifdef HAVE_SA_LEN
+ #  ifdef HAVE_SA_LEN
 -	if (sa->sa_len > sizeof(ifr->ifr_ifru))
 -	    r += sizeof(ifr->ifr_name) + sa->sa_len;
 +	if (sa->sa_len > sizeof(ifr.ifr_ifru))
 +	    r += sizeof(ifr.ifr_name) + sa->sa_len;
  	else
- #endif
+ #  endif
 -	    r += sizeof(*ifr);
 +	    r += sizeof(ifr);
  
  	if (sa->sa_family == AF_INET) {
  	    struct sockaddr_in *sin = (struct sockaddr_in *)sa;
-@@ -2317,14 +2318,14 @@ ProbeInterfaces(bindAddr)
+@@ -1964,14 +1964,14 @@ ProbeInterfaces(in_addr_t bindAddr)
  
- #ifdef SIOCGIFFLAGS
+ #  ifdef SIOCGIFFLAGS
  	    /* make sure the interface is up */
 -	    ifrcopy = *ifr;
 +	    memcpy(&ifrcopy, &ifr, sizeof(ifrcopy));
  	    if ((ioctl(sock, SIOCGIFFLAGS, &ifrcopy) == 0) &&
  		((ifrcopy.ifr_flags & IFF_UP) == 0))
  		continue;
- #endif
+ #  endif
  
  	    CONDDEBUG((1, "ProbeInterfaces(): name=%s addr=%s",
 -		       ifr->ifr_name, inet_ntoa(sin->sin_addr)));
 +		       ifr.ifr_name, inet_ntoa(sin->sin_addr)));
  
- #if HAVE_MEMCPY
+ #  if HAVE_MEMCPY
  	    memcpy(&myAddrs[m], &(sin->sin_addr), sizeof(struct in_addr));
-@@ -2333,7 +2334,7 @@ ProbeInterfaces(bindAddr)
- #endif
+@@ -1980,7 +1980,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+ #  endif
  
  	    Verbose("interface address %s (%s)", inet_ntoa(myAddrs[m]),
 -		    ifr->ifr_name);

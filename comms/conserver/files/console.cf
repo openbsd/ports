@@ -1,6 +1,5 @@
-# $OpenBSD: console.cf,v 1.1 2014/07/15 13:47:26 benno Exp $
+# $OpenBSD: console.cf,v 1.2 2014/10/07 22:14:17 sthen Exp $
 
 config * {
-	master localhost;
 	port 3109;
 }
