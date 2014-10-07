@@ -1,21 +1,22 @@
-$OpenBSD: patch-conserver_cf_conserver_cf,v 1.1 2014/10/07 12:51:35 sthen Exp $
---- conserver.cf/conserver.cf.orig	Tue Oct  7 13:46:05 2014
-+++ conserver.cf/conserver.cf	Tue Oct  7 13:49:41 2014
-@@ -14,6 +14,13 @@ default cisco	{ type host; portbase 2000; portinc 1; }
+$OpenBSD: patch-conserver_cf_conserver_cf,v 1.2 2014/10/07 14:05:02 sthen Exp $
+--- conserver.cf/conserver.cf.orig	Thu Mar 11 16:51:23 2004
++++ conserver.cf/conserver.cf	Tue Oct  7 15:03:54 2014
+@@ -14,6 +14,14 @@ default cisco	{ type host; portbase 2000; portinc 1; }
  default xyplex	{ type host; portbase 2000; portinc 100; }
  default iolan	{ type host; portbase 10000; portinc 1; }
  
 +# example using ipmitool to connect to IPMI serial-over-lan
 +# (conserver also has internal support for freeipmi as a build option)
++# command is passed to sh; second "exec" avoids keeping that shell around
 +default ipmitool {
 +        type exec; execsubst %=hs;
-+        exec ipmitool -I lanplus -H % -U ADMIN -P ADMIN sol activate;
++        exec exec ipmitool -I lanplus -H % -U ADMIN -P ADMIN sol activate;
 +}
 +
  ### set up some custom break sequences
  break 4 { string "+\d+\d+"; delay 300; }
  break 5 { string "\033c"; }
-@@ -53,6 +60,9 @@ default ts2.conserver.com { include cisco; host ts2.co
+@@ -53,6 +61,9 @@ default ts2.conserver.com { include cisco; host ts2.co
  
  # and the consoles on ts2.conserver.com
  console ldap1.conserver.com { include ts2.conserver.com; port 7; }
