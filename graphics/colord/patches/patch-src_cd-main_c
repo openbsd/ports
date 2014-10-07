@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cd-main_c,v 1.14 2014/08/26 07:18:13 ajacoutot Exp $
+$OpenBSD: patch-src_cd-main_c,v 1.15 2014/10/07 07:33:30 ajacoutot Exp $
 
 /var/lib -> /var/db
 
 --- src/cd-main.c.orig	Thu Aug  7 22:52:14 2014
-+++ src/cd-main.c	Tue Aug 26 09:04:42 2014
++++ src/cd-main.c	Tue Oct  7 09:18:45 2014
 @@ -1689,8 +1689,8 @@ cd_main_icc_store_added_cb (CdIccStore *icc_store,
  	/* create profile */
  	profile = cd_profile_new ();
@@ -33,3 +33,12 @@ $OpenBSD: patch-src_cd-main_c,v 1.14 2014/08/26 07:18:13 ajacoutot Exp $
  				 &error);
  	if (!ret) {
  		g_warning ("CdMain: failed to load device database: %s",
+@@ -2592,7 +2592,7 @@ main (int argc, char *argv[])
+ 	/* connect to the profile db */
+ 	priv->profile_db = cd_profile_db_new ();
+ 	ret = cd_profile_db_load (priv->profile_db,
+-				  LOCALSTATEDIR "/lib/colord/storage.db",
++				  LOCALSTATEDIR "/db/colord/storage.db",
+ 				  &error);
+ 	if (!ret) {
+ 		g_warning ("CdMain: failed to load profile database: %s",
