@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2014/09/13 16:36:53 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2014/10/07 16:03:09 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -17,7 +17,7 @@
 
 SHARED_ONLY=		Yes
 
-V ?=			1.2.4
+V ?=			1.4.3
 API=			1.0
 SUBST_VARS +=		API
 
@@ -55,9 +55,6 @@ MODPY_RUNDEP=		No
 
 USE_GMAKE ?=		Yes
 AUTOCONF_VERSION ?=	2.69
-
-BUILD_DEPENDS +=	devel/bison \
-			devel/gobject-introspection
 
 CONFIGURE_STYLE ?=	autoconf
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
