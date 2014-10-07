@@ -1,9 +1,18 @@
-$OpenBSD: patch-fishmon_c,v 1.3 2014/10/03 13:28:40 dcoppa Exp $
+$OpenBSD: patch-fishmon_c,v 1.4 2014/10/07 09:10:07 dcoppa Exp $
 
 Unbreak with GTK+ >= 2.18
 
 --- fishmon.c.orig	Thu May 13 01:55:59 2004
-+++ fishmon.c	Fri Oct  3 15:11:09 2014
++++ fishmon.c	Tue Oct  7 10:58:48 2014
+@@ -24,7 +24,7 @@
+  */
+ 
+ #define _GNU_SOURCE
+-#define VERSION "1.23"
++#define VERSION "1.24"
+ 
+ /* general includes */
+ #include <stdio.h>
 @@ -152,6 +152,7 @@ static char month[12][4] = { "JAN", "FEB", "MAR", "APR
  
  int main(int argc, char **argv)
@@ -37,13 +46,71 @@ Unbreak with GTK+ >= 2.18
  
      bm.gc = gdk_gc_new(bm.win);
  
-@@ -692,6 +693,9 @@ static void make_new_fishmon_dockapp(void)
-     gdk_window_set_back_pixmap(bm.iconwin, bm.pixmap, False);
+@@ -693,6 +694,10 @@ static void make_new_fishmon_dockapp(void)
  
      gdk_window_show(bm.win);
-+
-+    XSetWMHints(GDK_WINDOW_XDISPLAY(bm.win), win, &wmhints);
-+    gdk_window_show(bm.iconwin);
  
++    XSetWMHints(GDK_WINDOW_XDISPLAY(bm.win), win, &wmhints);
++
++    gdk_window_show(bm.iconwin);
++
  #undef MASK
  }				/* make_new_fishmon_dockapp */
+ 
+@@ -1019,6 +1024,8 @@ static void check_mail(void)
+ static void parse_options(int argc, char **argv)
+ {
+     static int ch = 0;
++
++#if 0
+     static struct option long_opts[] = {
+ 	{ "h",		no_argument, NULL, 1 },
+ 	{ "help",	no_argument, NULL, 1 },
+@@ -1043,15 +1050,43 @@ static void parse_options(int argc, char **argv)
+ 		break;
+ 	}
+     }
++#else
++     extern char *optarg;
++     extern int optind;
++     extern int optopt;
++     extern int opterr;
++     extern int optreset;
++
++ 	while((ch = getopt(argc, argv, "bchv")) != -1)
++		{
++		switch(ch)
++			{
++			case 'b':
++				broken_wm = 1;
++				break;
++			case 'c':
++				enable_check_mail = 1;
++				break;
++			case 'v':
++				do_version();
++				exit(0);
++			case 'h':
++			default:
++				do_help();
++				exit(1);
++			}
++		} 
++
++#endif
+ }
+ 
+ static void do_help(void)
+ {
+     printf("Usage: wmfishtime [options]\n\n"
+-	   " -h\t--help\t\tshow this message and exit\n"
+-	   " -v\t--version\tshow version and exit\n"
+-	   " -c\t--check-mail\tenables check for new mail\n"
+-	   " -b\t--broken\tactivates broken window manager fix\n\n"
++	   " -h\tshow this message and exit\n"
++	   " -v\tshow version and exit\n"
++	   " -c\tenables check for new mail\n"
++	   " -b\tactivates broken window manager fix\n\n"
+ 	   "Yet Another Waste of CPU Cycles! Dock app clock with\n"
+ 	   "shy fish, bubbles and mail check functionality (disabled by default).\n"
+ 	   "Try out the man page wmfishtime (1x).\n");

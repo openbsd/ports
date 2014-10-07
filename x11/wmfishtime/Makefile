@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2014/10/03 13:28:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.23 2014/10/07 09:10:07 dcoppa Exp $
 
 COMMENT=		wm-dockapp; clock application with clock, date and fish
 
 DISTNAME=		wmfishtime-1.24
+REVISION=		0
 CATEGORIES=     	x11 x11/windowmaker
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
