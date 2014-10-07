@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/03 19:24:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/07 16:25:32 abieber Exp $
 
 BROKEN-i386=	/usr/bin/ld: cannot find -ljawt
 
 COMMENT=	lightweight game library for java
 
 V=		2.9.1
+REVISION=	0
 GH_ACCOUNT=	LWJGL
 GH_PROJECT=	lwjgl
 GH_TAGNAME=	${GH_PROJECT}${V}
