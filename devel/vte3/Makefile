@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/10/06 07:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2014/10/07 15:47:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,9 +31,12 @@ WANTLIB += pthread-stubs util xcb xcb-render xcb-shm z
 MODULES=		devel/gettext \
 			x11/gnome
 
+# src/box_drawing_generate.sh
+BUILD_DEPENDS=		shells/bash
+
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
 MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC} \
