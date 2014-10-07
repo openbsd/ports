@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2014/10/05 19:52:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.98 2014/10/07 06:44:42 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -94,6 +94,11 @@ RUN_DEPENDS +=		inputmethods/ibus \
 			x11/gnome/gdm
 
 CONFIGURE_ARGS=		--disable-systemd
+
+# disable -Werror:
+#     shell-glsl-quad.c:86:35: error: implicit conversion from enumeration type 'ShellSnippetHook'
+#     to different enumeration type 'CoglSnippetHook' [-Werror,-Wenum-conversion]
+CONFIGURE_ARGS +=	--enable-compile-warnings
 
 post-install:
 	rm ${PREFIX}/lib/gnome-shell/*.{a,la}
