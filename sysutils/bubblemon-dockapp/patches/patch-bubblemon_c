@@ -1,9 +1,9 @@
-$OpenBSD: patch-bubblemon_c,v 1.1 2014/10/03 14:35:42 dcoppa Exp $
+$OpenBSD: patch-bubblemon_c,v 1.2 2014/10/07 09:10:54 dcoppa Exp $
 
 Unbreak with GTK+ >= 2.18
 
 --- bubblemon.c.orig	Wed Oct  1 02:37:32 2003
-+++ bubblemon.c	Fri Oct  3 15:47:59 2014
++++ bubblemon.c	Tue Oct  7 11:05:05 2014
 @@ -44,7 +44,7 @@
   */
  #define _GNU_SOURCE
@@ -46,15 +46,65 @@ Unbreak with GTK+ >= 2.18
  
      bm.gc = gdk_gc_new(bm.win);
  
-@@ -606,10 +607,8 @@ static void make_new_bubblemon_dockapp(void)
+@@ -606,10 +607,10 @@ static void make_new_bubblemon_dockapp(void)
      gdk_window_set_back_pixmap(bm.iconwin, bm.pixmap, False);
  
      gdk_window_show(bm.win);
 -#ifdef KDE_DOCKAPP
 -    /* makes the dockapp visible inside KDE wm */
++
 +    XSetWMHints(GDK_WINDOW_XDISPLAY(bm.win), win, &wmhints);
++
      gdk_window_show(bm.iconwin);
 -#endif
  
      /* We begin with zero bubbles */
      bm.n_bubbles = 0;
+@@ -664,7 +665,7 @@ static void bubblemon_update(int proximity)
+     /* y coordinates are counted from here multiplied by 256 */
+     /* to get actual screen coordinate, divide by 256 */
+     buf = bm.bubblebuf;
+-    col = bm.colors;
++    col = (unsigned int *)bm.colors;
+ 
+     waterlevel_max = 0;
+     waterlevel_min = MAKEY(56);
+@@ -957,7 +958,7 @@ static void bubblemon_update(int proximity)
+ static void draw_digit(int srcx, int srcy, int destx, int desty)
+ {
+     int i, j;
+-    char *from, *to;
++    unsigned char *from, *to;
+ 
+     for (j = 0; j < 8; j++) {
+ 	from = mem_screen + 56 * 3 * (srcy + j) + srcx * 3;
+@@ -1005,7 +1006,7 @@ static void draw_history(int num, int size, unsigned i
+ {
+     int pixels_per_byte;
+     int j, k;
+-    int *p;
++    unsigned int *p;
+     int d;
+ 
+     pixels_per_byte = 100;
+@@ -1024,9 +1025,9 @@ static void draw_history(int num, int size, unsigned i
+ 
+ 	for (j = 0; j < size; j++) {
+ 	    if (j < d - 2)
+-		draw_pixel(k, size - j - 1, buf, "\x00\x7d\x71");
++		draw_pixel(k, size - j - 1, buf, (unsigned char *) "\x00\x7d\x71");
+ 	    else if (j < d)
+-		draw_pixel(k, size - j - 1, buf, "\x20\xb6\xae");
++		draw_pixel(k, size - j - 1, buf, (unsigned char *) "\x20\xb6\xae");
+ 	}
+ 	p++;
+     }
+@@ -1034,7 +1035,7 @@ static void draw_history(int num, int size, unsigned i
+     for (j = pixels_per_byte - 100; j > 0; j -= 100) {
+ 	for (k = 0; k < num; k++) {
+ 	    d = ((float) size / pixels_per_byte) * j;
+-	    draw_pixel(k, size - d - 1, buf, "\x71\xe3\x71");
++	    draw_pixel(k, size - d - 1, buf, (unsigned char *) "\x71\xe3\x71");
+ 	}
+     }
+ }
