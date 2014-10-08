@@ -1,9 +1,9 @@
-$OpenBSD: patch-io_hpmud_musb_c,v 1.6 2013/03/08 06:51:46 ajacoutot Exp $
+$OpenBSD: patch-io_hpmud_musb_c,v 1.7 2014/10/08 09:03:00 ajacoutot Exp $
 
 Fix probing HP PS 8250 printer, from FreeBSD.
 
---- io/hpmud/musb.c.orig	Wed Feb 13 17:38:44 2013
-+++ io/hpmud/musb.c	Fri Feb 22 15:05:18 2013
+--- io/hpmud/musb.c.orig	Tue Oct  7 10:55:54 2014
++++ io/hpmud/musb.c	Wed Oct  8 10:32:17 2014
 @@ -25,6 +25,7 @@
  Author: Naga Samrat Chowdary Narla, Sarbeswar Meher
  \*****************************************************************************/
@@ -12,7 +12,7 @@ Fix probing HP PS 8250 printer, from FreeBSD.
  #include "hpmud.h"
  #include "hpmudi.h"
  #include <dlfcn.h>
-@@ -138,8 +139,12 @@ static int get_string_descriptor(libusb_device_handle 
+@@ -139,8 +140,12 @@ static int get_string_descriptor(libusb_device_handle 
  
  		if (ret==0)
  		{
