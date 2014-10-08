@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/06 10:16:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/08 13:30:36 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.14.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,6 +37,9 @@ LIB_DEPENDS=		inputmethods/ibus \
 			x11/gnome/gdm \
 			x11/gnome/libgweather \
 			x11/gnome/online-accounts
+
+BUILD_DEPENDS=		geo/geoclue2
+RUN_DEPENDS=		geo/geoclue2
 
 # gnome-welcome-tour
 RUN_DEPENDS +=		x11/gnome/getting-started-docs \
