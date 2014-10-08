@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/10/07 16:05:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2014/10/08 09:10:50 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -47,6 +47,7 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 CONFIGURE_ARGS=		--disable-cdaudio \
 			--disable-curl \
 			--disable-chromaprint \
+			--disable-cocoa \
 			--disable-decklink \
 			--disable-dts \
 			--disable-faac \
