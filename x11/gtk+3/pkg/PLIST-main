@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2014/10/02 15:53:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2014/10/08 12:15:09 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @pkgpath x11/gtk+3,-docs
 @unexec-delete rm -f %D/lib/gtk-3.0/3.0.0/immodules.cache
@@ -422,7 +422,6 @@ lib/pkgconfig/gtk+-x11-3.0.pc
 @man man/man1/gtk3-icon-browser.1
 @man man/man1/gtk3-widget-factory.1
 share/aclocal/gtk-3.0.m4
-share/applications/
 share/applications/gtk3-demo.desktop
 share/applications/gtk3-icon-browser.desktop
 share/applications/gtk3-widget-factory.desktop
@@ -1317,3 +1316,5 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-query-immodules-3.0 --update-cache
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
