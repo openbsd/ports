@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.355 2014/10/08 02:05:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.356 2014/10/08 11:32:04 henning Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -147,9 +147,10 @@
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-DBIC
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-Htpasswd
      SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
-     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
+     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles 
      SUBDIR += p5-Crypt-Blowfish
      SUBDIR += p5-Crypt-Blowfish_PP
+     SUBDIR += p5-Crypt-CAST5_PP
      SUBDIR += p5-Crypt-CBC
      SUBDIR += p5-Crypt-CipherSaber
      SUBDIR += p5-Crypt-DES
@@ -157,6 +158,8 @@
      SUBDIR += p5-Crypt-DH
      SUBDIR += p5-Crypt-DSA
      SUBDIR += p5-Crypt-GpgME
+     SUBDIR += p5-Crypt-IDEA
+     SUBDIR += p5-Crypt-OpenPGP
      SUBDIR += p5-Crypt-OpenSSL-Bignum
      SUBDIR += p5-Crypt-OpenSSL-DSA
      SUBDIR += p5-Crypt-OpenSSL-RSA
@@ -166,6 +169,7 @@
      SUBDIR += p5-Crypt-Primes
      SUBDIR += p5-Crypt-RC4
      SUBDIR += p5-Crypt-RC5
+     SUBDIR += p5-Crypt-RIPEMD160
      SUBDIR += p5-Crypt-RSA
      SUBDIR += p5-Crypt-Random
      SUBDIR += p5-Crypt-Rijndael
