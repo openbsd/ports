@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/10/07 08:35:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2014/10/08 13:43:01 ajacoutot Exp $
 
 # XXX should RUN_DEPENDS on dleyna-renderer; not ported (signalfd)
 
@@ -8,6 +8,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.14.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -38,7 +39,8 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
-LIB_DEPENDS=		graphics/gegl \
+LIB_DEPENDS=		devel/libgdata \
+			graphics/gegl \
 			x11/gnome/desktop \
 			x11/gnome/gfbgraph \
 			x11/gnome/grilo \
