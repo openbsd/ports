@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.95 2014/10/04 08:52:47 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.96 2014/10/08 12:17:06 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -66,7 +66,7 @@ _VALID_TOOLS=desktop-file-utils docbook gobject-introspection \
     gtk-update-icon-cache shared-mime-info vala yelp
 .   for _t in ${MODGNOME_TOOLS}
 .       if !${_VALID_TOOLS:M${_t}}
-ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})"        
+ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})"
 .       endif
 .   endfor
 
