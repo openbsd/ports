@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2014/10/04 18:33:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.280 2014/10/08 02:05:42 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -194,17 +194,13 @@
      SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby20
      SUBDIR += ruby-amalgalite,ruby21
-     SUBDIR += ruby-bdb
+     SUBDIR += ruby-bdb,ruby20
      SUBDIR += ruby-couchrest
-     SUBDIR += ruby-data_objects,rbx
      SUBDIR += ruby-data_objects
-     SUBDIR += ruby-do_mysql,rbx
      SUBDIR += ruby-do_mysql,ruby20
      SUBDIR += ruby-do_mysql,ruby21
-     SUBDIR += ruby-do_postgres,rbx
      SUBDIR += ruby-do_postgres,ruby20
      SUBDIR += ruby-do_postgres,ruby21
-     SUBDIR += ruby-do_sqlite3,rbx
      SUBDIR += ruby-do_sqlite3,ruby20
      SUBDIR += ruby-do_sqlite3,ruby21
      SUBDIR += ruby-hiera
@@ -216,12 +212,10 @@
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby20
      SUBDIR += ruby-ldap,ruby21
-     SUBDIR += ruby-mysql,rbx
      SUBDIR += ruby-mysql,ruby20
      SUBDIR += ruby-mysql,ruby21
      SUBDIR += ruby-mysql2,ruby20
      SUBDIR += ruby-mysql2,ruby21
-     SUBDIR += ruby-pg,rbx
      SUBDIR += ruby-pg,ruby20
      SUBDIR += ruby-pg,ruby21
      SUBDIR += ruby-redis
@@ -230,7 +224,6 @@
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel_pg,ruby20
      SUBDIR += ruby-sequel_pg,ruby21
-     SUBDIR += ruby-sqlite3,rbx
      SUBDIR += ruby-sqlite3,ruby20
      SUBDIR += ruby-sqlite3,ruby21
      SUBDIR += ruby-swift
@@ -240,7 +233,6 @@
      SUBDIR += ruby-swift-db-postgres,ruby21
      SUBDIR += ruby-swift-db-sqlite3,ruby20
      SUBDIR += ruby-swift-db-sqlite3,ruby21
-     SUBDIR += ruby-tiny_tds,rbx
      SUBDIR += ruby-tiny_tds,ruby20
      SUBDIR += ruby-tiny_tds,ruby21
      SUBDIR += ruby-validatable

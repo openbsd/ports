@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1258 2014/10/04 18:38:10 kirby Exp $
+# $OpenBSD: Makefile,v 1.1259 2014/10/08 02:05:42 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1308,7 +1308,6 @@
      SUBDIR += ruby-deep_merge
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-extlib
-     SUBDIR += ruby-fastthread
      SUBDIR += ruby-ffi,ruby20
      SUBDIR += ruby-ffi,ruby21
      SUBDIR += ruby-ffi-inliner
@@ -1341,10 +1340,13 @@
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
      SUBDIR += ruby-polyglot
+     SUBDIR += ruby-prof,ruby20
+     SUBDIR += ruby-prof,ruby21
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-rb-gsl
+     SUBDIR += ruby-rb-gsl,ruby20
+     SUBDIR += ruby-rb-gsl,ruby21
      SUBDIR += ruby-ref
      SUBDIR += ruby-rgen
      SUBDIR += ruby-rr
