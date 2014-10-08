@@ -1,0 +1,2 @@
+This perl extension is an implementation of the IDEA block cipher algorithm.
+The module implements the Crypt::BlockCipher interface.
