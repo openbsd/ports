@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/05 01:36:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/08 09:15:33 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -19,7 +19,14 @@ PKGNAME-games =		kdegames-${MODKDE4_VERSION}
 PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
 PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
 PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
-REVISION-minimal =	0
+REVISION-minimal =	1
+REVISION-admin =	0
+REVISION-extras =	0
+REVISION-games =	0
+REVISION-main =		0
+REVISION-network =	0
+REVISION-sdk =		0
+REVISION-toys =		0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -30,6 +37,9 @@ MULTI_PACKAGES +=	-admin -network -sdk -toys
 
 # stuff outside KDE SC
 MULTI_PACKAGES +=	-extras
+
+MODKDE4_USE =
+MODKDE4_RESOURCES =	Yes
 
 # Specialization packages. Separate to be able to easily
 # convert them into proper packages in the future - will
