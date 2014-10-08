@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_AU,v 1.3 2014/04/09 00:39:49 sthen Exp $
+@comment $OpenBSD: PLIST-en_AU,v 1.4 2014/10/08 11:20:05 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-en_AU-${MODAS_CODEC}-*
 share/asterisk/
@@ -7,6 +7,7 @@ ${MODAS_INST}/
 ${MODAS_INST}/CHANGES-asterisk-core-en_AU-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/CREDITS-asterisk-core-en_AU-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/LICENSE-asterisk-core-en_AU-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/core-sounds-en_AU.txt-${MODAS_CODEC}
 ${MODAS_INST}/agent-alreadyon.${MODAS_CODEC}
 ${MODAS_INST}/agent-incorrect.${MODAS_CODEC}
 ${MODAS_INST}/agent-loggedoff.${MODAS_CODEC}
@@ -96,7 +97,6 @@ ${MODAS_INST}/confbridge-rest-talk-vol-out.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-there-are.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unlocked.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unmuted.${MODAS_CODEC}
-${MODAS_INST}/core-sounds-en_AU.txt-${MODAS_CODEC}
 ${MODAS_INST}/demo-abouttotry.${MODAS_CODEC}
 ${MODAS_INST}/demo-congrats.${MODAS_CODEC}
 ${MODAS_INST}/demo-echodone.${MODAS_CODEC}
@@ -291,6 +291,7 @@ ${MODAS_INST}/letters/x.${MODAS_CODEC}
 ${MODAS_INST}/letters/y.${MODAS_CODEC}
 ${MODAS_INST}/letters/z.${MODAS_CODEC}
 ${MODAS_INST}/letters/zed.${MODAS_CODEC}
+${MODAS_INST}/lowercase.${MODAS_CODEC}
 ${MODAS_INST}/minutes.${MODAS_CODEC}
 ${MODAS_INST}/pbx-invalid.${MODAS_CODEC}
 ${MODAS_INST}/pbx-invalidpark.${MODAS_CODEC}
@@ -382,6 +383,7 @@ ${MODAS_INST}/tt-monkeys.${MODAS_CODEC}
 ${MODAS_INST}/tt-monkeysintro.${MODAS_CODEC}
 ${MODAS_INST}/tt-somethingwrong.${MODAS_CODEC}
 ${MODAS_INST}/tt-weasels.${MODAS_CODEC}
+${MODAS_INST}/uppercase.${MODAS_CODEC}
 ${MODAS_INST}/vm-Cust1.${MODAS_CODEC}
 ${MODAS_INST}/vm-Cust2.${MODAS_CODEC}
 ${MODAS_INST}/vm-Cust3.${MODAS_CODEC}
@@ -431,6 +433,7 @@ ${MODAS_INST}/vm-message.${MODAS_CODEC}
 ${MODAS_INST}/vm-messages.${MODAS_CODEC}
 ${MODAS_INST}/vm-minutes.${MODAS_CODEC}
 ${MODAS_INST}/vm-mismatch.${MODAS_CODEC}
+${MODAS_INST}/vm-msgforwarded.${MODAS_CODEC}
 ${MODAS_INST}/vm-msginstruct.${MODAS_CODEC}
 ${MODAS_INST}/vm-msgsaved.${MODAS_CODEC}
 ${MODAS_INST}/vm-newpassword.${MODAS_CODEC}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.4 2014/04/09 00:39:49 sthen Exp $
+@comment $OpenBSD: PLIST-fr,v 1.5 2014/10/08 11:20:05 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-fr-${MODAS_CODEC}-*
 share/asterisk/
@@ -7,6 +7,7 @@ ${MODAS_INST}/
 ${MODAS_INST}/CHANGES-asterisk-core-fr-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/CREDITS-asterisk-core-fr-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/LICENSE-asterisk-core-fr-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/core-sounds-fr.txt-${MODAS_CODEC}
 ${MODAS_INST}/agent-alreadyon.${MODAS_CODEC}
 ${MODAS_INST}/agent-incorrect.${MODAS_CODEC}
 ${MODAS_INST}/agent-loggedoff.${MODAS_CODEC}
@@ -102,7 +103,6 @@ ${MODAS_INST}/confbridge-rest-talk-vol-out.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-there-are.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unlocked.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unmuted.${MODAS_CODEC}
-${MODAS_INST}/core-sounds-fr.txt-${MODAS_CODEC}
 ${MODAS_INST}/demo-abouttotry.${MODAS_CODEC}
 ${MODAS_INST}/demo-congrats.${MODAS_CODEC}
 ${MODAS_INST}/demo-echodone.${MODAS_CODEC}
