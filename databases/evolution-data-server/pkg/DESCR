@@ -1,7 +1,7 @@
 The Evolution Data Server package provides a unified backend for
 programs that work with contacts, tasks, and calendar information. It
 was originally developed for Evolution (hence the name), but is now used
-by other packages as well. 
+by other packages as well.
 
 The Evolution Data Server provides a single database for common,
 desktop-wide information, such as a user's address book or calendar

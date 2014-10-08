@@ -1,5 +1,5 @@
 This is a general purpose cryptographic library based on the
-code from GnuPG. It provides functions for all cryptographic 
+code from GnuPG. It provides functions for all cryptographic
 building blocks: symmetric ciphers (AES, DES, Blowfish, CAST5,
 Twofish, Arcfour), hash algorithms (MD4, MD5, RIPE-MD160, SHA-1,
 TIGER-192), MACs (HMAC for all hash algorithms), public key

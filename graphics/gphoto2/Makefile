@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/08/30 09:37:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/10/08 12:06:21 ajacoutot Exp $
 
 COMMENT =	digital camera command-line interface
 CATEGORIES =	graphics
@@ -8,6 +8,7 @@ MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 VERSION =	2.5.5
 DISTNAME =	gphoto2-${VERSION}
 PKGNAME =	gphoto-${VERSION}
+REVISION =	0
 
 HOMEPAGE =	http://gphoto.sourceforge.net/
 
