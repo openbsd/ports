@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/27 17:07:20 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/08 13:46:16 nigel Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,15 +6,13 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		0.4.2
+V=		1.0.1
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
-REVISION-main=	0
 PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
-REVISION-ruby=	0
 PKGNAME-tcl=	weechat-tcl-${V}
 
 CATEGORIES=	net
@@ -35,7 +33,7 @@ WANTLIB-main=	c curl m ncursesw perl pthread util \
 
 WANTLIB-lua=	${MODLUA_WANTLIB}
 WANTLIB-python=	${MODPY_WANTLIB}
-WANTLIB-ruby=	${MODRUBY_WANTLIB}
+WANTLIB-ruby=	${MODRUBY_WANTLIB} gmp m pthread
 WANTLIB-tcl=	${MODTCL_WANTLIB}
 
 MODULES=	devel/cmake \
@@ -55,16 +53,17 @@ LIB_DEPENDS=	security/libgcrypt \
 		net/curl
 
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
-RUN_DEPENDS-lua=	${MODLUA_RUN_DEPENDS}
+RUN_DEPENDS-lua=	net/weechat,-main ${MODLUA_RUN_DEPENDS}
 
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS}
-RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
+RUN_DEPENDS-python=	net/weechat,-main ${MODPY_RUN_DEPENDS}
 
-LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS}
-RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
+LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
+			devel/gmp
+RUN_DEPENDS-ruby=	net/weechat,-main ${MODRUBY_RUN_DEPENDS}
 
 LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
-RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
+RUN_DEPENDS-tcl=	net/weechat,-main ${MODTCL_RUN_DEPENDS}
 
 CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DENABLE_GUILE=no \
@@ -75,11 +74,14 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DHAVE_BACKTRACE=no \
 		-DMANDIR=${PREFIX}/man \
 		-DENABLE_MAN=on \
-		-DCA_FILE=/etc/ssl/cert.pem
+		-DCA_FILE=/etc/ssl/cert.pem \
+		-DTCL_TCLSH=${MODTCL_BIN} \
+		-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
+		-DMODTCL_LIB=${MODTCL_LIB}
 
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat
-	$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_*.en.txt \
+	$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_*.en.asciidoc \
 	    ${PREFIX}/share/doc/weechat/
 
 NO_TEST=	Yes

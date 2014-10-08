@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/11/17 00:05:51 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/10/08 13:46:16 nigel Exp $
 @bin bin/weechat
+bin/weechat-curses
 include/weechat/
 include/weechat/weechat-plugin.h
 lib/pkgconfig/weechat.pc
@@ -7,24 +8,25 @@ lib/weechat/
 lib/weechat/plugins/
 lib/weechat/plugins/alias.so
 lib/weechat/plugins/charset.so
+lib/weechat/plugins/exec.so
 lib/weechat/plugins/fifo.so
 lib/weechat/plugins/irc.so
 lib/weechat/plugins/logger.so
 lib/weechat/plugins/perl.so
 lib/weechat/plugins/relay.so
-lib/weechat/plugins/rmodifier.so
 lib/weechat/plugins/script.so
+lib/weechat/plugins/trigger.so
 lib/weechat/plugins/xfer.so
 @man man/man1/weechat.1
 share/doc/weechat/
-share/doc/weechat/weechat_dev.en.txt
-share/doc/weechat/weechat_faq.en.txt
-share/doc/weechat/weechat_plugin_api.en.txt
-share/doc/weechat/weechat_quickstart.en.txt
-share/doc/weechat/weechat_relay_protocol.en.txt
-share/doc/weechat/weechat_scripting.en.txt
-share/doc/weechat/weechat_tester.en.txt
-share/doc/weechat/weechat_user.en.txt
+share/doc/weechat/weechat_dev.en.asciidoc
+share/doc/weechat/weechat_faq.en.asciidoc
+share/doc/weechat/weechat_plugin_api.en.asciidoc
+share/doc/weechat/weechat_quickstart.en.asciidoc
+share/doc/weechat/weechat_relay_protocol.en.asciidoc
+share/doc/weechat/weechat_scripting.en.asciidoc
+share/doc/weechat/weechat_tester.en.asciidoc
+share/doc/weechat/weechat_user.en.asciidoc
 @comment share/icons/
 @comment share/icons/hicolor/
 @comment share/icons/hicolor/32x32/
