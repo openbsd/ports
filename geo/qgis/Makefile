@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2014/08/20 08:54:45 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2014/10/08 14:36:19 dcoppa Exp $
 
 COMMENT =	desktop geographical information system
 
 SHARED_ONLY =	Yes
 
 DISTNAME =	qgis-2.4.0
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
@@ -37,7 +38,8 @@ BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
 		geo/gdal,-python \
 		databases/py-psycopg2 \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		editors/py-qscintilla
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/proj \
