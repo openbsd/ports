@@ -1,3 +1,3 @@
 If you want to use this package as default pip, as root create a
 symbolic link like so (overwriting any previous default):
-    ln -sf ${PREFIX}/bin/pip-${MODPY_VERSION} ${PREFIX}/bin/pip
+    ln -sf ${PREFIX}/bin/pip${MODPY_VERSION} ${PREFIX}/bin/pip
