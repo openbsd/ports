@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/06 09:38:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/08 13:35:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		3.14.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,11 +31,13 @@ MODPY_ADJ_FILES=	gnome-music.in
 
 LIB_DEPENDS=		x11/gtk+3
 
-BUILD_DEPENDS=		x11/gnome/grilo
+BUILD_DEPENDS=		x11/gnome/grilo \
+			x11/gnome/libmediaart
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/grilo \
+			x11/gnome/libmediaart \
 			x11/gnome/tracker
 
 # sndio(7) support
