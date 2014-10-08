@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/07/10 07:40:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/10/08 12:21:55 dcoppa Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -217,6 +217,7 @@ libexec/xscreensaver/vidwhacker
 libexec/xscreensaver/webcollage
 @bin libexec/xscreensaver/webcollage-helper
 @bin libexec/xscreensaver/whirlwindwarp
+@bin libexec/xscreensaver/winduprobot
 @bin libexec/xscreensaver/wormhole
 @bin libexec/xscreensaver/xanalogtv
 @bin libexec/xscreensaver/xflame
@@ -428,6 +429,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/wander.6
 @man man/man6/webcollage.6
 @man man/man6/whirlwindwarp.6
+@man man/man6/winduprobot.6
 @man man/man6/wormhole.6
 @man man/man6/xanalogtv.6
 @man man/man6/xflame.6
@@ -660,6 +662,7 @@ share/applications/screensavers/wander.desktop
 share/applications/screensavers/webcollage.desktop
 share/applications/screensavers/whirlwindwarp.desktop
 share/applications/screensavers/whirlygig.desktop
+share/applications/screensavers/winduprobot.desktop
 share/applications/screensavers/worm.desktop
 share/applications/screensavers/wormhole.desktop
 share/applications/screensavers/xanalogtv.desktop
@@ -898,6 +901,7 @@ share/xscreensaver/config/voronoi.xml
 share/xscreensaver/config/wander.xml
 share/xscreensaver/config/webcollage.xml
 share/xscreensaver/config/whirlwindwarp.xml
+share/xscreensaver/config/winduprobot.xml
 share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
 share/xscreensaver/config/xflame.xml
