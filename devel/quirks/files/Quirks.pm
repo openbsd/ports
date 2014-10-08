@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.181 2014/10/02 19:52:09 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.182 2014/10/08 02:10:10 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -443,6 +443,7 @@ my $obsolete_reason = {
 	'py3-distribute' => 3,
 	'raggle' => 3,
 	'gnome-icon-theme-extras' => 3,
+	'ruby-fastthread' => 3,
 };
 
 # ->is_base_system($handle, $state):
