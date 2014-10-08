@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/04/01 14:52:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/10/08 12:09:18 ajacoutot Exp $
 @bin bin/mc-tool
 @bin bin/mc-wait-for-name
 include/mission-control-5.5/
@@ -48,3 +48,5 @@ share/gtk-doc/html/mission-control-plugins/object-tree.html
 share/gtk-doc/html/mission-control-plugins/right.png
 share/gtk-doc/html/mission-control-plugins/style.css
 share/gtk-doc/html/mission-control-plugins/up.png
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
