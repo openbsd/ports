@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2014/04/20 10:00:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/10/08 08:44:40 dcoppa Exp $
+
+PORTROACH=		limit:^0\.3a
 
 COMMENT=		wm-dockapp; shows photos and execute commands on that photo
 
