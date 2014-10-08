@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/08 11:28:02 henning Exp $
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/CAST5_PP/
+${P5SITE}/Crypt/CAST5_PP.pm
+${P5SITE}/Crypt/CAST5_PP/Tables.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Crypt/
+${P5SITE}/auto/Crypt/CAST5_PP/
+${P5SITE}/auto/Crypt/CAST5_PP/autosplit.ix
+${P5SITE}/auto/Crypt/CAST5_PP/decrypt.al
+${P5SITE}/auto/Crypt/CAST5_PP/encrypt.al
+${P5SITE}/auto/Crypt/CAST5_PP/init.al
+@man man/man3p/Crypt::CAST5_PP.3p
