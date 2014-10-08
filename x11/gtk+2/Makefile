@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2014/10/02 20:02:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.197 2014/10/08 12:11:51 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -31,8 +31,6 @@ MULTI_PACKAGES=		-main -guic
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
-
-MODPY_BUILDDEP=		No
 
 LIB_DEPENDS=		graphics/gdk-pixbuf2
 RUN_DEPENDS=		x11/hicolor-icon-theme
