@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/09/20 06:34:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2014/10/08 12:32:45 ajacoutot Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -13,6 +13,9 @@ GNOME_VERSION=		0.22.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-editor=		dconf-editor-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-editor=	0
 
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 SHARED_LIBS +=		dconf-dbus-1 1.0 # 1.0.0
@@ -29,7 +32,7 @@ WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 pthread
 
 WANTLIB-main += ${WANTLIB} dbus-1
 
-WANTLIB-editor += ${WANTLIB} ${MODGETTEXT_WANTLIB}
+WANTLIB-editor += ${WANTLIB}
 WANTLIB-editor += atk-1.0 cairo cairo-gobject dconf fontconfig freetype
 WANTLIB-editor += gdk-3 gdk_pixbuf-2.0 gmodule-2.0 gtk-3 m pango-1.0
 WANTLIB-editor += pangocairo-1.0 pangoft2-1.0 xml2 z
@@ -45,12 +48,13 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils docbook gtk-update-icon-cache vala
 
-RUN_DEPENDS-main=	# empty
-LIB_DEPENDS-main=	devel/glib2 \
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			devel/glib2 \
 			x11/dbus
 
 RUN_DEPENDS-editor=	${RUN_DEPENDS}
-LIB_DEPENDS-editor=	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-editor=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION} \
 			x11/gtk+3
 
