@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2014/07/18 08:17:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/08 02:16:34 jeremy Exp $
 
 COMMENT =	web development tools for KDE
 DISTNAME =	kdewebdev-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	klinkstatuscommon	51.0
 SHARED_LIBS +=	kommandercore		51.0
@@ -20,7 +21,6 @@ WANTLIB += ${KDE4LIB}/threadweaver
 WANTLIB += soprano tidyp
 
 MODULES =	multimedia/phonon lang/ruby
-MODRUBY_REV =	1.9
 MODKDE4_USE =	pim
 CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 

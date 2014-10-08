@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/07/11 12:15:53 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/08 02:16:34 jeremy Exp $
 
 BROKEN-hppa =	relocation error
 CATEGORIES =	devel lang/ruby x11/kde4
@@ -31,7 +31,6 @@ MODKDE4_USE =
 # Ruby 1.8 not supported as it requires LD_PRELOAD hacks for pthreads.
 # Remember update @conflict markers in PLIST when changing FLAVORS.
 FLAVORS =		ruby19 ruby20 ruby21
-FLAVOR ?=		ruby20
 MODRUBY_HANDLE_FLAVORS=	Yes
 MODRUBY_ADJ_FILES =	*.rb rbqtapi
 SUBST_VARS =		MODRUBY_FLAVOR
