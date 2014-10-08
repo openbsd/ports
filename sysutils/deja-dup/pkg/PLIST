@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/04/03 09:05:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/10/08 08:23:24 ajacoutot Exp $
 @bin bin/deja-dup
 @bin bin/deja-dup-preferences
 lib/deja-dup/
@@ -18,6 +18,10 @@ man/ast/
 man/ast/man1/
 @man man/ast/man1/deja-dup-preferences.1
 @man man/ast/man1/deja-dup.1
+man/az/
+man/az/man1/
+@man man/az/man1/deja-dup-preferences.1
+@man man/az/man1/deja-dup.1
 man/be/
 man/be/man1/
 @man man/be/man1/deja-dup-preferences.1
@@ -110,6 +114,10 @@ man/fr/
 man/fr/man1/
 @man man/fr/man1/deja-dup-preferences.1
 @man man/fr/man1/deja-dup.1
+man/fr_CA/
+man/fr_CA/man1/
+@man man/fr_CA/man1/deja-dup-preferences.1
+@man man/fr_CA/man1/deja-dup.1
 man/fy/
 man/fy/man1/
 @man man/fy/man1/deja-dup-preferences.1
@@ -923,6 +931,7 @@ share/icons/hicolor/scalable/apps/deja-dup-symbolic.svg
 share/icons/hicolor/scalable/devices/deja-dup-cloud.svg
 share/locale/ar/LC_MESSAGES/deja-dup.mo
 share/locale/ast/LC_MESSAGES/deja-dup.mo
+share/locale/az/LC_MESSAGES/deja-dup.mo
 share/locale/be/LC_MESSAGES/deja-dup.mo
 share/locale/bg/LC_MESSAGES/deja-dup.mo
 share/locale/bn/LC_MESSAGES/deja-dup.mo
@@ -946,6 +955,9 @@ share/locale/fa/LC_MESSAGES/deja-dup.mo
 share/locale/fi/LC_MESSAGES/deja-dup.mo
 share/locale/fo/LC_MESSAGES/deja-dup.mo
 share/locale/fr/LC_MESSAGES/deja-dup.mo
+share/locale/fr_CA/
+share/locale/fr_CA/LC_MESSAGES/
+share/locale/fr_CA/LC_MESSAGES/deja-dup.mo
 share/locale/fy/LC_MESSAGES/deja-dup.mo
 share/locale/gd/LC_MESSAGES/deja-dup.mo
 share/locale/gl/LC_MESSAGES/deja-dup.mo
