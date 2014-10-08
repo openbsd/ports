@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/08/18 06:53:07 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2014/10/08 02:32:43 jeremy Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
@@ -29,7 +29,7 @@ MODULES =		devel/gettext \
 			lang/ruby
 
 FLAVORS =		ruby18 ruby19 ruby20 ruby21
-FLAVOR ?=		ruby20
+FLAVOR ?=		ruby21
 
 # Fix conflict between subpackages when using ruby21 FLAVOR
 .if ${FLAVOR} == ruby21

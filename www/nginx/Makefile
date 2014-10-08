@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/10/05 11:43:53 robert Exp $
+# $OpenBSD: Makefile,v 1.63 2014/10/08 02:32:43 jeremy Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -74,8 +74,11 @@ SUBSTFILES=		conf/nginx.conf
 NAXSIDISTFILES+=	naxsi-0.53-1.tar.gz{0.53-1.tar.gz}:1
 
 .if ${FLAVOR:Mpassenger}
-CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger20/ext/nginx
-BUILD_DEPENDS+=		ruby20-passenger-*:www/ruby-passenger,-main
+MODULES+=		lang/ruby
+MODRUBY_BUILDDEP=	No
+MODRUBY_RUNDEP=		No
+CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/ext/nginx
+BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger,-main
 RUN_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*|ruby20-passenger-*|ruby21-passenger-*:www/ruby-passenger,-main
 WANTLIB+=		m pthread stdc++
 .endif
@@ -85,7 +88,7 @@ CONFIGURE_ARGS+=	--add-module=${WRKSRC}/ngx_devel_kit
 CONFIGURE_ARGS+=	--add-module=${WRKSRC}/lua-nginx-module
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
 			MODLUA_LIB=${MODLUA_LIB}
-MODULES=		lang/lua
+MODULES+=		lang/lua
 WANTLIB+=		${MODLUA_WANTLIB} m
 PATCH_LIST=		patch-* lua-*
 SUBSTFILES+=		lua-nginx-module/config
