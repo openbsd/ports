@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:48:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/08 08:36:37 dcoppa Exp $
 
 COMMENT=		wm-dockapp; audio mixer
 
-DISTNAME=		wmix-3.0
-REVISION=		1
+DISTNAME=		wmix-3.1
 CATEGORIES=		audio x11 x11/windowmaker
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/

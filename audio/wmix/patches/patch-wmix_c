@@ -1,12 +1,36 @@
-$OpenBSD: patch-wmix_c,v 1.1.1.1 2002/01/24 13:47:13 wilfried Exp $
---- wmix.c.orig	Fri May 25 12:55:23 2001
-+++ wmix.c	Thu Jan 24 14:19:24 2002
-@@ -24,7 +24,7 @@
+$OpenBSD: patch-wmix_c,v 1.2 2014/10/08 08:36:37 dcoppa Exp $
+--- wmix.c.orig	Thu May 13 02:30:53 2004
++++ wmix.c	Wed Oct  8 10:29:03 2014
+@@ -24,21 +24,20 @@
  #include <string.h>
  #include <signal.h>
  #include <string.h>
 -#include <getopt.h>
-+/*#include <getopt.h>*/
  #include <unistd.h>
  
  #include <X11/X.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ 
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ 
+ #include "include/common.h"
+ #include "include/mixer.h"
+ #include "include/misc.h"
+ #include "include/ui_x.h"
+ 
+-#define VERSION "3.0"
++#define VERSION "3.1"
+ 
+ static Display *display;
+ static char *display_name = NULL;
+@@ -134,7 +133,7 @@ int main(int argc, char **argv)
+     }
+ 
+     /* handle writing PID file, silently ignore if we can't do it */
+-    pid = calloc(1, strlen(home) + 10);
++    pid = calloc(1, strlen(home) + 11);
+     sprintf(pid, "%s/.wmix.pid", home);
+     fp = fopen(pid, "w");
+     if (fp) {
