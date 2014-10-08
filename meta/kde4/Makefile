@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/10/08 09:15:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/08 09:17:00 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -21,7 +21,7 @@ PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
 PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
 REVISION-minimal =	1
 REVISION-admin =	0
-REVISION-extras =	0
+REVISION-extras =	1
 REVISION-games =	0
 REVISION-main =		0
 REVISION-network =	0
@@ -247,6 +247,7 @@ RUN_DEPENDS-extras = \
 	multimedia/k3b-kde4		\
 	multimedia/kdenlive		\
 	productivity/kmymoney		\
+	sysutils/krename-kde4		\
 	net/ktorrent-kde4		\
 	x11/tellico-kde4		\
 	x11/yakuake-kde4
