@@ -1,7 +1,0 @@
-# $OpenBSD: gtkrc,v 1.1 2014/10/02 15:36:57 ajacoutot Exp $
-
-gtk-theme-name = "Adwaita"
-gtk-icon-theme-name = "Adwaita"
-gtk-cursor-theme-name = "Adwaita"
-gtk-button-images = 0
-gtk-menu-images = 0
