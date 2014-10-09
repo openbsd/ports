@@ -1,16 +1,32 @@
-$OpenBSD: README,v 1.3 2013/03/28 18:24:29 sthen Exp $
+$OpenBSD: README,v 1.4 2014/10/09 13:06:04 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-This port is in early stages, and in general for LNS ("server") use it is
-recommended to use npppd(8) instead, however it is useful if you wish
-to use OpenBSD as an L2TP client (LAC).
+Note that this port is not fully operational. It is useful in some cases,
+but in general for situations supported by npppd(8) from OpenBSD's base
+system (for example LNS "server" use), it is strongly recommended to use
+that option instead.
 
-xl2tpd can be controlled either by using xl2tpd-control, or by writing
-simple commands to a fifo (you may be familiar with this style from
-isakmpd), e.g.:
+As of this time, npppd(8) does not support client-side operations (LAC),
+so this port is useful there.
+
+Basic operation
+===============
+xl2tpd makes a connection via L2TP, but uses pppd(8) to carry out most
+operations; therefore most PPP-related configuration is done via pppd's
+configuration files; for an example of how to configure this, see
+${TRUEPREFIX}/share/examples/xl2tpd/ppp-options.xl2tpd.
+
+You will also need to add the _xl2tpd user to the group 'network' in
+/etc/group in order to allow it to start pppd.
+
+Control mechanisms
+==================
+When xl2tpd is started, it does not automatically connect. Instead it is
+controlled by writing simple commands to a fifo (you may be familiar with
+this style from isakmpd), e.g.: 
 
   echo '[command] [config_name]' > /var/run/xl2tpd/l2tp-control
 
@@ -20,16 +36,93 @@ Where [command] is one of:
   d    disconnect
   r    (disconnect and) remove
 
-You must send the 'c'onnect command to actually bring up a session;
-configuring it and starting the daemon is not sufficient.
+To connect, you must ensure that a free ppp(4) interface is available
+("ifconfig ppp0 up" or "echo up > /etc/hostname.pppo0"), and then you must
+send the 'c'onnect command to actually bring up a session; this does not
+happen automatically.
 
-xl2tpd makes a connection via L2TP, but uses pppd(8) to carry out most
-operations; therefore most PPP-related configuration is done via pppd's
-configuration files; for an example of how to configure this, see
-${TRUEPREFIX}/share/examples/xl2tpd/ppp-options.xl2tpd. You will also need
-to add the _xl2tpd user to the group 'network' in /etc/group in order to
-allow it to start pppd.
+An xl2tpd-control program is also available and you might be able to use
+it as an alternative to the above, but it has some issues.
 
-Also note that a free ppp(4) interface must exist before xl2tpd brings
-up a connection; you could create an /etc/hostname.ppp0 file simply
-containing the word "up".
+L2TP+IPsec
+==========
+To use an IPsec-protected tunnel, as you might want to do if connecting to
+an npppd server, the IPsec tunnel must be configured separately using
+isakmpd(8) - here are sample config sections (adjust $server, $ipsec_psk,
+etc. as necessary, and you may need to adjust the auth/enc/group settings):
+
+- /etc/ipsec.conf
+
+ike dynamic esp transport proto udp from egress to $server port 1701 \
+    main auth "hmac-sha" enc "aes" group modp2048 \
+    quick auth "hmac-sha" enc "aes" \
+    psk $ipsec_psk
+
+- ${SYSCONFDIR}/xl2tpd/xl2tpd.conf:
+
+[global]
+debug avp = yes
+debug network = yes
+debug state = yes
+debug tunnel = yes
+port = 1701
+
+[lac l2tp]
+lns = $server
+ppp debug = yes
+pppoptfile = /etc/ppp/options.l2tp
+
+- /etc/ppp/options.l2tp:
+
+ipcp-accept-local
+ipcp-accept-remote
+noccp
+noauth
+mtu 850
+mru 850
+debug
+lock
+user $username
+netmask 255.255.255.255
+
+- /etc/ppp/chap-secrets:
+
+$username	*	$password		*
+
+Enable/start isakmpd:
+
+# rcctl enable isakmpd flags -Kv
+# rcctl start isakmpd
+# ipsecctl -vf /etc/ipsec.conf
+
+And confirm that the tunnel does actually come up:
+
+# ipsecctl -sa
+FLOWS:
+flow esp in proto udp from $server port l2tp to $me peer $server srcid $myhostname dstid $server/32 type use
+flow esp out proto udp from $me to $server port l2tp peer $server srcid $myhostname dstid $server/32 type require
+
+SAD:
+esp transport from $me to $server spi 0x1037c0f2 auth hmac-sha1 enc aes
+esp transport from $server to $me spi 0x6c3d9e6a auth hmac-sha1 enc aes
+
+If that is successful, you can try to make the L2TP connection:
+
+# ifconfig ppp0 up
+# rcctl start xl2tpd
+# tail -f /var/log/daemon &
+# echo c l2tp > /var/run/xl2tpd/l2tp-control
+
+If all is well, you'll see debug output in the log, and the interface
+should be connected:
+
+# ifconfig ppp
+ppp0: flags=28051<UP,POINTOPOINT,RUNNING,MULTICAST,NOINET6> mtu 850
+	priority: 0
+	groups: ppp
+	inet 172.28.15.223 --> 172.28.15.1 netmask 0xffffffff
+
+Note that these instructions configure things with a restricted MTU as
+there seem to be some problems with fragmented packets (you will see
+various "Protocol-Reject for unsupported protocol" messages in pppd's log).
+Some connection stalling has also been seen under higher loads.

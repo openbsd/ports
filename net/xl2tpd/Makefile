@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/28 18:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/09 13:06:04 sthen Exp $
 
 COMMENT=	l2tp client/server
 
 DISTNAME=	xl2tpd-1.3.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c util
 
 # https://github.com/xelerance/xl2tpd/
-MASTER_SITES=	http://ftp.openswan.org/xl2tpd/ \
-		ftp://ftp.xelerance.com/xl2tpd/
+MASTER_SITES=	http://download.openswan.org/xl2tpd/
 
 FAKE_FLAGS=	DESTDIR= MANDIR=${WRKINST}${PREFIX}/man
 NO_TEST=	Yes
