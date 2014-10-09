@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/05/25 21:38:05 robert Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/09 06:36:47 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -256,6 +256,7 @@ share/doc/rt3/customizing/
 share/doc/rt3/customizing/approvals.pod
 share/doc/rt3/customizing/articles_introduction.pod
 share/doc/rt3/customizing/lifecycles.pod
+share/doc/rt3/customizing/search_result_columns.pod
 share/doc/rt3/customizing/styling_rt.pod
 share/doc/rt3/customizing/templates.pod
 share/doc/rt3/customizing/timezones_in_charts.pod
