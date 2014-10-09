@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/09/14 23:36:12 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/10/09 17:40:00 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export
 @bin bin/birdfont-import
 @lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
+@lib lib/libbirdxml.so.${LIBbirdxml_VERSION}
 @man man/man1/birdfont-autotrace.1
 @man man/man1/birdfont-export.1
 @man man/man1/birdfont-import.1
 @man man/man1/birdfont.1
+share/appdata/
+share/appdata/birdfont.appdata.xml
 share/applications/birdfont.desktop
 share/birdfont/
 share/birdfont/icons/
@@ -53,6 +56,7 @@ share/birdfont/icons/info_icon.png
 share/birdfont/icons/insert_background.png
 share/birdfont/icons/insert_last_glyph.png
 share/birdfont/icons/insert_point_on_path.png
+share/birdfont/icons/insert_unichar.png
 share/birdfont/icons/kerning_class.png
 share/birdfont/icons/kerning_text_input.png
 share/birdfont/icons/move.png
@@ -128,6 +132,7 @@ share/birdfont/layout/
 share/birdfont/layout/birdfont.rc
 share/icons/hicolor/128x128/apps/birdfont.png
 share/icons/hicolor/48x48/apps/birdfont.png
+share/locale/cs/LC_MESSAGES/birdfont.mo
 share/locale/de/LC_MESSAGES/birdfont.mo
 share/locale/el/LC_MESSAGES/birdfont.mo
 share/locale/es/LC_MESSAGES/birdfont.mo

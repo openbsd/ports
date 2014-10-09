@@ -1,10 +1,10 @@
-$OpenBSD: patch-dodo_py,v 1.6 2014/09/14 23:36:12 bcallah Exp $
+$OpenBSD: patch-dodo_py,v 1.7 2014/10/09 17:40:00 bcallah Exp $
 
 glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
 
---- dodo.py.orig	Sat Sep 13 16:54:29 2014
-+++ dodo.py	Sun Sep 14 19:23:15 2014
-@@ -78,12 +78,11 @@ def task_pkg_flags():
+--- dodo.py.orig	Sun Oct  5 16:26:44 2014
++++ dodo.py	Tue Oct  7 19:42:19 2014
+@@ -81,13 +81,12 @@ def task_pkg_flags():
  
  
  valac_options = [
@@ -13,8 +13,18 @@ glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from null
  	'--target-glib=2.34', # see bug 0000004
  	'--define=LINUX'
  	]
--libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version=version.SO_VERSION, pkg_libs=LIBS)
-+libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version='${LIBbirdfont_VERSION}', pkg_libs=LIBS)
+ 
+-libbirdxml = Vala(src='libbirdxml', build='build', library='birdxml', so_version=version.LIBBIRDXML_SO_VERSION, pkg_libs=LIBBIRD_XML_LIBS)
++libbirdxml = Vala(src='libbirdxml', build='build', library='birdxml', so_version='${LIBbirdxml_VERSION}', pkg_libs=LIBBIRD_XML_LIBS)
+ def task_libbirdxml():
+     yield libbirdxml.gen_c(valac_options)
+     yield libbirdxml.gen_o(['-fPIC'])
+@@ -95,7 +94,7 @@ def task_libbirdxml():
+     yield libbirdxml.gen_ln()
+     
+ 
+-libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version=version.SO_VERSION, pkg_libs=LIBS, vala_deps=[libbirdxml])
++libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version='${LIBbirdfont_VERSION}', pkg_libs=LIBS, vala_deps=[libbirdxml])
  def task_libbirdfont():
      yield libbird.gen_c(valac_options)
-     yield libbird.gen_o(['-fPIC', """-D 'GETTEXT_PACKAGE="birdfont"'"""])
+     yield libbird.gen_o(['-fPIC -I./build/', """-D 'GETTEXT_PACKAGE="birdfont"'"""])

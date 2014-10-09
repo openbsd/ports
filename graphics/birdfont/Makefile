@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/14 23:36:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/09 17:40:00 bcallah Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-1.3
+DISTNAME =	birdfont-1.6
 CATEGORIES =	graphics print
 
-SHARED_LIBS +=	birdfont			6.0 # 1.3
+# Both libs must have the same SO number!
+# See scripts/bavala.py (or patches/patch-scripts_bavala_py)
+SHARED_LIBS +=	birdfont			7.0 # 1.6
+SHARED_LIBS +=	birdxml				7.0 # 1.6
 
 HOMEPAGE =	http://birdfont.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,13 +16,13 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c
-WANTLIB += cairo cairo-gobject crypto expat fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 git2 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 harfbuzz javascriptcoregtk-3.0
-WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 ssh2 ssl
-WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 z
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 expat fontconfig freetype
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gtk-3 harfbuzz javascriptcoregtk-3.0 m
+WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs soup-2.4 webkitgtk-3.0 xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	http://birdfont.org/releases/
 
@@ -32,7 +35,6 @@ BUILD_DEPENDS =	devel/py-doit>=0.24 \
 		lang/vala
 
 LIB_DEPENDS =	devel/libgee \
-		devel/libgit2/libgit2 \
 		devel/libnotify \
 		www/webkit,gtk3
 
