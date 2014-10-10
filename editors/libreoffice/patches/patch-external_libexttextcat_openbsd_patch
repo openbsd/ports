@@ -1,0 +1,15 @@
+$OpenBSD: patch-external_libexttextcat_openbsd_patch,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- external/libexttextcat/openbsd.patch.orig.port	Wed Sep  3 06:40:54 2014
++++ external/libexttextcat/openbsd.patch	Mon Sep  8 18:14:24 2014
+@@ -0,0 +1,11 @@
++--- a/a/src/Makefile.in.orig	Mon Sep  8 18:13:10 2014
+++++ b/b/src/Makefile.in	Mon Sep  8 18:13:18 2014
++@@ -80,7 +80,7 @@
++ POST_UNINSTALL = :
++ build_triplet = @build@
++ host_triplet = @host@
++-bin_PROGRAMS = createfp$(EXEEXT)
+++bin_PROGRAMS =
++ check_PROGRAMS = testtextcat$(EXEEXT)
++ subdir = src
++ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \

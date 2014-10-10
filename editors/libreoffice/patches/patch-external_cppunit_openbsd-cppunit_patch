@@ -1,0 +1,15 @@
+$OpenBSD: patch-external_cppunit_openbsd-cppunit_patch,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- external/cppunit/openbsd-cppunit.patch.orig.port	Mon Sep  1 23:27:27 2014
++++ external/cppunit/openbsd-cppunit.patch	Mon Sep  1 23:27:27 2014
+@@ -0,0 +1,11 @@
++--- misc/cppunit-1.13.1/Makefile.in	Tue Jun  4 16:25:03 2013
+++++ misc/build/cppunit-1.13.1/Makefile.in	Tue Jun  4 16:25:11 2013
++@@ -331,7 +331,7 @@
++ top_srcdir = @top_srcdir@
++ AUTOMAKE_OPTIONS = 1.4
++ ACLOCAL_AMFLAGS = -I config
++-SUBDIRS = src include examples doc
+++SUBDIRS = src include doc
++ pkgconfigdatadir = $(libdir)/pkgconfig
++ pkgconfigdata_DATA = cppunit.pc
++ bin_SCRIPTS = cppunit-config

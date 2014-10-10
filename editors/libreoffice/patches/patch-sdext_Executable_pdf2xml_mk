@@ -1,0 +1,13 @@
+$OpenBSD: patch-sdext_Executable_pdf2xml_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- sdext/Executable_pdf2xml.mk.orig.port	Sun Sep 14 16:12:51 2014
++++ sdext/Executable_pdf2xml.mk	Sun Sep 14 16:13:23 2014
+@@ -41,4 +41,9 @@ $(eval $(call gb_Executable_add_exception_objects,pdf2
+     sdext/source/pdfimport/test/pdf2xml \
+ ))
+ 
++$(eval $(call gb_Executable_add_libs,pdf2xml,\
++    -lharfbuzz \
++    -lharfbuzz-icu \
++))
++
+ # vim:set noet sw=4 ts=4:

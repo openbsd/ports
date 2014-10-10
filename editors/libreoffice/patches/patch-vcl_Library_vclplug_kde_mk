@@ -1,8 +1,8 @@
-$OpenBSD: patch-vcl_Library_vclplug_kde_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
---- vcl/Library_vclplug_kde.mk.orig.port	Mon Nov 11 08:36:43 2013
-+++ vcl/Library_vclplug_kde.mk	Mon Nov 11 08:36:51 2013
-@@ -53,6 +53,7 @@ $(eval $(call gb_Library_use_externals,vclplug_kde,\
- 	icule \
+$OpenBSD: patch-vcl_Library_vclplug_kde_mk,v 1.2 2014/10/10 17:13:10 robert Exp $
+--- vcl/Library_vclplug_kde.mk.orig.port	Fri Aug 22 16:22:41 2014
++++ vcl/Library_vclplug_kde.mk	Mon Sep  1 23:26:02 2014
+@@ -52,6 +52,7 @@ $(eval $(call gb_Library_use_externals,vclplug_kde,\
+ 	boost_headers \
  	icuuc \
  	kde \
 +	Xrender \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-sc_source_core_data_types_cxx,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- sc/source/core/data/types.cxx.orig.port	Tue Sep  9 20:44:06 2014
++++ sc/source/core/data/types.cxx	Thu Sep 11 21:13:15 2014
+@@ -7,6 +7,8 @@
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  */
+ 
++#include <cstddef>
++
+ #include "types.hxx"
+ #include "scmatrix.hxx"
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2014/07/14 21:31:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.118 2014/10/10 17:13:10 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,8 +6,9 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		4.1
-VERSION=	4.1.6.2
+BV=		4.3
+VERSION=	4.3.2.2
+DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -16,9 +17,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
-
-REVISION-main=	2
-REVISION-kde=	0
 
 EPOCH=		0
 
@@ -35,6 +33,7 @@ MASTER_SITES0=	http://dev-www.libreoffice.org/src/ \
 		http://download.go-oo.org/extern/ \
 		http://www.numbertext.org/linux/ \
 		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
+MASTER_SITES1=	http://dev-www.libreoffice.org/src/libgltf/
 
 TAR=		${LOCALBASE}/bin/gtar
 EDISTFILES=	libreoffice-${VERSION}.tar.xz
@@ -49,58 +48,64 @@ EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 DISTFILES+=	${EDISTFILES} \
 		0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0 \
 		0279a21fab6f245e85a6f85fea54f511-source-code-font-1.009.tar.gz:0 \
-		0be45d54cc5e1c2e3102e32b8c190346-liberation-fonts-ttf-1.07.1.tar.gz:0 \
+		048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:0 \
+		134d8262145fc793c6af494dcace3e71-liberation-fonts-ttf-1.07.4.tar.gz:0 \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0 \
-		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:0 \
-		1e9ddfe25ac9577da709d7b2ea36f939-source-sans-font-1.036.tar.gz:0 \
 		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:0 \
+		22f8a85daf4a012180322e1f52a7563b-libcmis-0.4.1.tar.gz:0 \
 		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
-		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:0 \
-		625ff5f2f968dd908bca43c9469d6e6b-commons-lang-2.4-src.tar.gz:0 \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \
 		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:0 \
+		368f114c078f94214a308a74c7e991bc-crosextrafonts-20130214.tar.gz:0 \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0 \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0 \
-		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:0 \
 		46e92b68e31e858512b680b3b61dc4c1-mythes-1.2.3.tar.gz:0 \
-		36271d3fa0d9dec1632029b6d7aac925-liblangtag-0.5.1.tar.bz2:0 \
 		5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0 \
+		7681383be6ce489d84c1c74f4e7f9643-liborcus-0.7.0.tar.bz2:0 \
 		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0 \
 		7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0 \
-		ea2acaf140ae40a87a952caa75184f4d-liborcus-0.5.1.tar.bz2:0 \
+		8ab049135b2d15313da5d9f0656894a1-commons-lang3-3.3.1-src.tar.gz:0 \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
-		b85436266b2ac91d351ab5684b181151-libwpg-0.2.2.tar.bz2:0 \
-		08c85a6d6d793daee14e10e22eefdc4b-mdds_0.8.1.tar.bz2:0 \
 		a2f6010987e1c601274ab5d63b72c944-hyphen-2.8.4.tar.gz:0 \
+		a4e565e220b5de082c23995e256e3c12-dejavu-fonts-ttf-2.34.zip:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
-		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
-		2e482c7567908d334785ce7d69ddfff7-commons-codec-1.6-src.tar.gz:0 \
-		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
-		b2371dc7cf4811c9d32146eec913d296-libcmis-0.3.0.tar.gz:0 \
-		c3c1a8ba7452950636e871d25020ce0d-pt-serif-font-1.0000W.tar.gz:0 \
-		46eb0e7f213ad61bd5dee0c494132cb0-libwps-0.2.9.tar.bz2:0 \
-		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
-		dc3d21a3921931096d6e80f6701f6763-libexttextcat-3.4.0.tar.bz2:0 \
-		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
-		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
-		a3dcac551fae5ebbec16e844810828c4-libwpd-0.9.9.tar.bz2:0 \
-		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
-		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz:0 \
-		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
+		aa5ca9d1ed1082890835afab26400a39-mdds_0.10.3.tar.bz2:0 \
 		ac4781e01619be13461bb2d562b94a7b-cppunit-1.13.1.tar.gz:0 \
-		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
-		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		c48827713e93539dc7285f9e86ffbdc5-harfbuzz-0.9.17.tar.bz2:0 \
-		8473296c671b6e3dd8197f4145e0854b-libodfgen-0.0.2.tar.bz2:0 \
-		368f114c078f94214a308a74c7e991bc-crosextrafonts-20130214.tar.gz:0 \
+		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
+		ae330b9493bd4503ac390106ff6060d7-libexttextcat-3.4.3.tar.bz2:0 \
+		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
+		bae83fa5dc7f081768daace6e199adc3-glm-0.9.4.6-libreoffice.zip:0 \
+		c3c1a8ba7452950636e871d25020ce0d-pt-serif-font-1.0000W.tar.gz:0 \
 		c74b7223abe75949b4af367942d96c7a-crosextrafonts-carlito-20130920.tar.gz:0 \
-		libcdr-0.0.14.tar.bz2:0 \
-		libmspub-0.0.6.tar.bz2:0 \
-		libmwaw-0.1.11.tar.bz2:0 \
-		libvisio-0.0.31.tar.bz2:0
+		d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz:0 \
+		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
+		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
+		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
+		e8e197d628436490886d17cffa108fe3-commons-logging-1.1.3-src.tar.gz:0 \
+		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
+		edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0 \
+		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
+		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
+		CoinMP-1.7.6.tgz:0 \
+		graphite2-1.2.4.tgz:0 \
+		harfbuzz-0.9.23.tar.bz2:0 \
+		libabw-0.1.0.tar.bz2:0 \
+		libcdr-0.1.0.tar.bz2:0 \
+		libe-book-0.1.1.tar.bz2:0 \
+		libetonyek-0.1.1.tar.bz2:0 \
+		libfreehand-0.1.0.tar.bz2:0 \
+		libgltf-0.0.1.tar.bz2:1 \
+		libmspub-0.1.1.tar.bz2:0 \
+		libmwaw-0.3.1.tar.bz2:0 \
+		libodfgen-0.1.1.tar.bz2:0 \
+		librevenge-0.0.1.tar.bz2:0 \
+		libvisio-0.1.0.tar.bz2:0 \
+		libwpd-0.10.0.tar.bz2:0 \
+		libwpg-0.3.0.tar.bz2:0 \
+		libwps-0.3.0.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -139,9 +144,11 @@ BUILD_DEPENDS+=	archivers/zip \
 		archivers/gtar \
 		databases/db/v4 \
 		devel/bison \
+		devel/flex \
 		devel/gpatch \
 		devel/gperf \
 		devel/libexecinfo \
+		graphics/glew \
 		shells/bash \
 		archivers/p5-Archive-Zip \
 		misc/findutils \
@@ -166,7 +173,7 @@ MODULES+=	lang/python \
 
 # XXX can't use ${MODPY_DEFAULT_VERSION_3}, it specifically wants 3.3 and
 # will try (and fail) to build its own copy if not available.
-MODPY_VERSION=	3.3
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 
 LIB_DEPENDS-main=x11/gtk+2 \
@@ -187,7 +194,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 
 WANTLIB-main=	estdc++ gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		xslt>=3 curl>=7 neon>=24 pq>=2 \
-		icuuc>=0 icui18n icule \
+		icuuc>=0 icui18n \
 		rdf>=0
 WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
@@ -197,18 +204,20 @@ WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		pthread ssl xml2 z gdk_pixbuf-2.0 \
 		util ${MODGETTEXT_WANTLIB}
 WANTLIB-main+=	hunspell-1.3 gdk_pixbuf_xlib-2.0
-WANTLIB-main+=	idn
 WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	Xt clucene-contribs-lib clucene-core clucene-shared
-WANTLIB-main+=	cups exslt gcrypt gpg-error icudata lcms2
+WANTLIB-main+=	cups exslt gcrypt gpg-error lcms2
 WANTLIB-main+=	nspr4 nss3 plc4 plds4 smime3 softokn3 ssl3
 WANTLIB-main+=	png raptor2
-WANTLIB-main+=	boost_date_time-mt boost_system
+WANTLIB-main+=	boost_date_time-mt
 WANTLIB-main+=	lber ldap
 WANTLIB-main+=	poppler
+WANTLIB-main+=	GLEW
+WANTLIB-main+=	GL GLU boost_iostreams-mt bz2 harfbuzz
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
+			graphics/glew \
 			misc/shared-mime-info \
 			security/nss \
 			textproc/clucene \
@@ -224,7 +233,7 @@ WANTLIB-kde=		${MODQT_WANTLIB} \
 			lib/kde3/kdecore \
 			lib/kde3/kdeui lib/kde3/kio \
 			lib/kde3/kabc
-WANTLIB-kde+=		ICE SM Xext icule icuuc
+WANTLIB-kde+=		ICE SM Xext icuuc
 WANTLIB-kde+=		Xrender
 
 .include <bsd.port.arch.mk>
@@ -247,22 +256,17 @@ NO_TEST=	Yes
 PATCHORIG=	.orig.port
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_SCRIPT=	autogen.sh
+
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.12
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}" \
-		KDEDIR="${LOCALBASE}" \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
-
-MAKE_ENV+=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		NOCONFIGURE=1
+		KDEDIR="${LOCALBASE}"
 
 CONFIGURE_ARGS+=\
+		--disable-collada \
 		--disable-ccache \
 		--disable-dbus \
 		--disable-epm \
@@ -274,6 +278,8 @@ CONFIGURE_ARGS+=\
 		--disable-odk \
 		--disable-opengl \
 		--disable-randr-link \
+		--disable-firebird-sdbc \
+		--disable-liblangtag \
 		--enable-gio \
 		--enable-gstreamer \
 		--enable-kde \
@@ -285,6 +291,7 @@ CONFIGURE_ARGS+=\
 		--with-external-tar=${DISTDIR}/libreoffice \
 		--with-fonts \
 		--with-myspell-dicts \
+		--with-system-glew \
 		--with-system-clucene \
 		--with-system-libxml \
 		--with-system-boost \
@@ -344,7 +351,9 @@ CONFIGURE_ARGS+=--with-parallelism=${NCPU}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-MAKE_ENV+=	PYTHON="${MODPY_BIN}" verbose=f
+MAKE_ENV+=	PYTHON="${MODPY_BIN}" verbose=f \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 .if ${MACHINE_ARCH} == "i386"
 OA=		x86
@@ -356,6 +365,7 @@ SUBST_VARS+=	BV OA
 
 pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
+	@ln -fs /usr/local/bin/gflex ${WRKDIR}/bin/flex
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@ln -fs /usr/local/bin/gpatch ${WRKDIR}/bin/patch
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
@@ -390,7 +400,7 @@ post-install:
 	for _f in `find ${PREFIX}/share/icons/*/*/apps -type f`; \
 		do mv $${_f} `echo $${_f} | sed "s,apps/,apps/libreoffice-,g"`; done
 
-	${INSTALL_DATA} ${WRKSRC}/workdir/unxobsd.pro/CustomTarget/sysui/share/libreoffice/openoffice.org.xml \
+	${INSTALL_DATA} ${WRKSRC}/workdir/CustomTarget/sysui/share/libreoffice/openoffice.org.xml \
 		${PREFIX}/share/mime/packages
 
 # If the -java package does not get build use stub libraries for

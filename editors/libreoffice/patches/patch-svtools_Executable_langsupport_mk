@@ -1,0 +1,13 @@
+$OpenBSD: patch-svtools_Executable_langsupport_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- svtools/Executable_langsupport.mk.orig.port	Sat Sep 13 14:41:30 2014
++++ svtools/Executable_langsupport.mk	Sat Sep 13 14:44:32 2014
+@@ -38,4 +38,9 @@ $(eval $(call gb_Executable_add_exception_objects,lang
+     svtools/langsupport/langsupport \
+ ))
+ 
++$(eval $(call gb_Executable_add_libs,langsupport,\
++    -lharfbuzz \
++    -lharfbuzz-icu \
++))
++
+ # vim: set noet sw=4 ts=4:

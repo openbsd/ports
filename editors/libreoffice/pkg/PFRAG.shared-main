@@ -1,10 +1,20 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.14 2014/05/15 16:21:19 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.15 2014/10/10 17:13:10 robert Exp $
+@bin lib/libreoffice/program/libCbc.so.3
+@bin lib/libreoffice/program/libCbcSolver.so.3
+@bin lib/libreoffice/program/libCgl.so.1
+@bin lib/libreoffice/program/libClp.so.1
+@bin lib/libreoffice/program/libCoinMP.so.1
+@bin lib/libreoffice/program/libCoinUtils.so.3
+@bin lib/libreoffice/program/libOsi.so.1
+@bin lib/libreoffice/program/libOsiClp.so.1
+lib/libreoffice/program/libPresentationMinimizerlo.so
 lib/libreoffice/program/libPresenterScreenlo.so
 lib/libreoffice/program/libabplo.so
 lib/libreoffice/program/libacclo.so
 lib/libreoffice/program/libanalysislo.so
 lib/libreoffice/program/libanimcorelo.so
 lib/libreoffice/program/libavmedialo.so
+lib/libreoffice/program/libavmediaogl.so
 lib/libreoffice/program/libbasctllo.so
 lib/libreoffice/program/libbasebmplo.so
 lib/libreoffice/program/libbasegfxlo.so
@@ -17,6 +27,7 @@ lib/libreoffice/program/libcanvasfactorylo.so
 lib/libreoffice/program/libcanvastoolslo.so
 lib/libreoffice/program/libchartcontrollerlo.so
 lib/libreoffice/program/libchartcorelo.so
+lib/libreoffice/program/libchartopengllo.so
 lib/libreoffice/program/libcmdmaillo.so
 lib/libreoffice/program/libcollator_data.so
 lib/libreoffice/program/libcomphelper.so
@@ -57,15 +68,12 @@ lib/libreoffice/program/libetilo.so
 lib/libreoffice/program/libevtattlo.so
 lib/libreoffice/program/libexplo.so
 lib/libreoffice/program/libexpwraplo.so
-lib/libreoffice/program/libfastsaxlo.so
-lib/libreoffice/program/libfileacc.so
 lib/libreoffice/program/libfilelo.so
 lib/libreoffice/program/libfilterconfiglo.so
 lib/libreoffice/program/libflashlo.so
 lib/libreoffice/program/libflatlo.so
 lib/libreoffice/program/libforlo.so
 lib/libreoffice/program/libforuilo.so
-lib/libreoffice/program/libfpickerlo.so
 lib/libreoffice/program/libfps_officelo.so
 lib/libreoffice/program/libfrmlo.so
 lib/libreoffice/program/libfsstoragelo.so
@@ -76,7 +84,6 @@ lib/libreoffice/program/libfwllo.so
 lib/libreoffice/program/libfwmlo.so
 lib/libreoffice/program/libgraphicfilterlo.so
 lib/libreoffice/program/libguesslanglo.so
-lib/libreoffice/program/libhatchwindowfactorylo.so
 lib/libreoffice/program/libhelplinkerlo.so
 lib/libreoffice/program/libhwplo.so
 lib/libreoffice/program/libhyphenlo.so
@@ -113,16 +120,17 @@ lib/libreoffice/program/libmcnttype.so
 lib/libreoffice/program/libmigrationoo2lo.so
 lib/libreoffice/program/libmigrationoo3lo.so
 lib/libreoffice/program/libmorklo.so
-lib/libreoffice/program/libmozbootstrap.so
+lib/libreoffice/program/libmozbootstraplo.so
 lib/libreoffice/program/libmsfilterlo.so
 lib/libreoffice/program/libmsformslo.so
 lib/libreoffice/program/libmswordlo.so
 lib/libreoffice/program/libmtfrendererlo.so
+@bin lib/libreoffice/program/libmwaw-0.3.so.3
 lib/libreoffice/program/libmysqllo.so
 lib/libreoffice/program/libnpsoplugin.so
-lib/libreoffice/program/libodbcbaselo.so
 lib/libreoffice/program/libodbclo.so
 lib/libreoffice/program/libodfflatxmllo.so
+@bin lib/libreoffice/program/libodfgen-0.1.so.1
 lib/libreoffice/program/liboffacclo.so
 lib/libreoffice/program/libooxlo.so
 lib/libreoffice/program/libpackage2.so
@@ -141,6 +149,7 @@ lib/libreoffice/program/libpyuno.so
 lib/libreoffice/program/libqstart_gtklo.so
 lib/libreoffice/program/librecentfile.so
 lib/libreoffice/program/libreslo.so
+@bin lib/libreoffice/program/librevenge-0.0.so.0
 lib/libreoffice/program/librptlo.so
 lib/libreoffice/program/librptuilo.so
 lib/libreoffice/program/librptxmllo.so
@@ -150,6 +159,7 @@ lib/libreoffice/program/libscdlo.so
 lib/libreoffice/program/libscfiltlo.so
 lib/libreoffice/program/libsclo.so
 lib/libreoffice/program/libscnlo.so
+lib/libreoffice/program/libscopencllo.so
 lib/libreoffice/program/libscriptframe.so
 lib/libreoffice/program/libscuilo.so
 lib/libreoffice/program/libsdbc2.so
@@ -166,11 +176,10 @@ lib/libreoffice/program/libsmlo.so
 lib/libreoffice/program/libsofficeapp.so
 lib/libreoffice/program/libsolverlo.so
 lib/libreoffice/program/libsotlo.so
-lib/libreoffice/program/libspalo.so
 lib/libreoffice/program/libspelllo.so
-lib/libreoffice/program/libspl_unxlo.so
 lib/libreoffice/program/libspllo.so
 lib/libreoffice/program/libsrtrs1.so
+lib/libreoffice/program/libstoragefdlo.so
 lib/libreoffice/program/libstringresourcelo.so
 lib/libreoffice/program/libsvgfilterlo.so
 lib/libreoffice/program/libsvgiolo.so
@@ -188,7 +197,6 @@ lib/libreoffice/program/libtextconversiondlgslo.so
 lib/libreoffice/program/libtextfdlo.so
 lib/libreoffice/program/libtklo.so
 lib/libreoffice/program/libtllo.so
-lib/libreoffice/program/libtvhlp1.so
 lib/libreoffice/program/libucb1.so
 lib/libreoffice/program/libucbhelper.so
 lib/libreoffice/program/libucpchelp1.so
@@ -214,12 +222,17 @@ lib/libreoffice/program/libvbaobjlo.so
 lib/libreoffice/program/libvbaswobjlo.so
 lib/libreoffice/program/libvclcanvaslo.so
 lib/libreoffice/program/libvcllo.so
+lib/libreoffice/program/libvclopengllo.so
 lib/libreoffice/program/libvclplug_genlo.so
 lib/libreoffice/program/libvclplug_gtklo.so
 lib/libreoffice/program/libvclplug_svplo.so
+lib/libreoffice/program/libwpftcalclo.so
 lib/libreoffice/program/libwpftdrawlo.so
+lib/libreoffice/program/libwpftimpresslo.so
 lib/libreoffice/program/libwpftwriterlo.so
+@bin lib/libreoffice/program/libwps-0.3.so.3
 lib/libreoffice/program/libwriterfilterlo.so
+lib/libreoffice/program/libwriterperfectlo.so
 lib/libreoffice/program/libxmlfalo.so
 lib/libreoffice/program/libxmlfdlo.so
 lib/libreoffice/program/libxmlscriptlo.so
@@ -232,16 +245,14 @@ lib/libreoffice/program/libxsltdlglo.so
 lib/libreoffice/program/libxsltfilterlo.so
 lib/libreoffice/program/libxstor.so
 lib/libreoffice/program/pyuno.so
-lib/libreoffice/share/extensions/presentation-minimizer/SunPresentationMinimizer.uno.so
-lib/libreoffice/ure/lib/libacceptorlo.so
 lib/libreoffice/ure/lib/libaffine_uno_uno.so
 lib/libreoffice/ure/lib/libbinaryurplo.so
 lib/libreoffice/ure/lib/libbootstraplo.so
-lib/libreoffice/ure/lib/libconnectorlo.so
 lib/libreoffice/ure/lib/libgcc3_uno.so
 lib/libreoffice/ure/lib/libintrospectionlo.so
 lib/libreoffice/ure/lib/libinvocadaptlo.so
 lib/libreoffice/ure/lib/libinvocationlo.so
+lib/libreoffice/ure/lib/libiolo.so
 lib/libreoffice/ure/lib/libjvmaccesslo.so
 lib/libreoffice/ure/lib/libjvmfwklo.so
 lib/libreoffice/ure/lib/liblog_uno_uno.so
@@ -252,9 +263,6 @@ lib/libreoffice/ure/lib/libreglo.so
 lib/libreoffice/ure/lib/libsal_textenclo.so
 lib/libreoffice/ure/lib/libstocserviceslo.so
 lib/libreoffice/ure/lib/libstorelo.so
-lib/libreoffice/ure/lib/libstreamslo.so
-lib/libreoffice/ure/lib/libtextinstreamlo.so
-lib/libreoffice/ure/lib/libtextoutstreamlo.so
 @bin lib/libreoffice/ure/lib/libuno_cppu.so.3
 @bin lib/libreoffice/ure/lib/libuno_cppuhelpergcc3.so.3
 @bin lib/libreoffice/ure/lib/libuno_purpenvhelpergcc3.so.3

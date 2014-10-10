@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_generic_app_wmadaptor_cxx,v 1.1 2013/08/17 10:19:15 pascal Exp $
---- vcl/unx/generic/app/wmadaptor.cxx.orig.port	Sat Jul 20 16:44:59 2013
-+++ vcl/unx/generic/app/wmadaptor.cxx	Sat Jul 20 16:45:21 2013
-@@ -21,6 +21,7 @@
+$OpenBSD: patch-vcl_unx_generic_app_wmadaptor_cxx,v 1.2 2014/10/10 17:13:10 robert Exp $
+--- vcl/unx/generic/app/wmadaptor.cxx.orig.port	Tue Sep 16 22:10:41 2014
++++ vcl/unx/generic/app/wmadaptor.cxx	Fri Oct  3 19:58:20 2014
+@@ -20,6 +20,7 @@
  #include <string.h>
  #include <stdio.h>
  #include <stdlib.h>

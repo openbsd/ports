@@ -1,6 +1,6 @@
-$OpenBSD: patch-libxmlsec_openbsd_patch,v 1.1 2013/11/12 07:57:23 robert Exp $
---- libxmlsec/openbsd.patch.orig.port	Sun Nov  3 19:41:32 2013
-+++ libxmlsec/openbsd.patch	Sun Nov  3 19:43:23 2013
+$OpenBSD: patch-libxmlsec_openbsd_patch,v 1.2 2014/10/10 17:13:10 robert Exp $
+--- libxmlsec/openbsd.patch.orig.port	Sat Sep 13 15:03:00 2014
++++ libxmlsec/openbsd.patch	Sat Sep 13 15:03:00 2014
 @@ -0,0 +1,158 @@
 +--- misc/xmlsec1-1.2.14/configure.in	2009-09-29 15:55:33.282288142 +0200
 ++++ misc/build/xmlsec1-1.2.14/configure.in	2009-09-29 15:49:39.614223428 +0200

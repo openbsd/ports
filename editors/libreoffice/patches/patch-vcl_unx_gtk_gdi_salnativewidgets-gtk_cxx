@@ -1,8 +1,8 @@
-$OpenBSD: patch-vcl_unx_gtk_gdi_salnativewidgets-gtk_cxx,v 1.6 2013/11/12 07:57:23 robert Exp $
---- vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx.orig.port	Tue Oct 22 19:49:23 2013
-+++ vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx	Sat Nov  2 16:06:36 2013
-@@ -4083,7 +4083,7 @@ void GtkSalGraphics::updateSettings( AllSettings& rSet
-     aStyleSet.SetPreferredSymbolsStyleName( OUString::createFromAscii( pIconThemeName ) );
+$OpenBSD: patch-vcl_unx_gtk_gdi_salnativewidgets-gtk_cxx,v 1.7 2014/10/10 17:13:10 robert Exp $
+--- vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx.orig.port	Tue Sep 16 22:10:41 2014
++++ vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx	Fri Oct  3 19:58:20 2014
+@@ -4034,7 +4034,7 @@ void GtkSalGraphics::updateSettings( AllSettings& rSet
+     aStyleSet.SetPreferredIconTheme( OUString::createFromAscii( pIconThemeName ) );
      g_free( pIconThemeName );
  
 -    aStyleSet.SetToolbarIconSize( STYLE_TOOLBAR_ICONSIZE_LARGE );

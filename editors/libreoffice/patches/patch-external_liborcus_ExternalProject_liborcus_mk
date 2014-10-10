@@ -1,0 +1,13 @@
+$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- external/liborcus/ExternalProject_liborcus.mk.orig.port	Mon Oct  6 08:28:52 2014
++++ external/liborcus/ExternalProject_liborcus.mk	Mon Oct  6 08:30:02 2014
+@@ -38,7 +38,8 @@ ifneq ($(SYSTEM_ZLIB),)
+ liborcus_LIBS+=-lz
+ endif
+ ifneq ($(SYSTEM_BOOST),)
+-liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB)
++liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB) -lpthread
++liborcus_CPPFLAGS += -DBOOST_SYSTEM_NO_DEPRECATED -pthread
+ else
+ liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_system -lboost_iostreams
+ endif

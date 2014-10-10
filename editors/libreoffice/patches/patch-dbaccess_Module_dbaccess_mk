@@ -1,0 +1,42 @@
+$OpenBSD: patch-dbaccess_Module_dbaccess_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- dbaccess/Module_dbaccess.mk.orig.port	Sat Sep 13 14:57:42 2014
++++ dbaccess/Module_dbaccess.mk	Sat Sep 13 15:00:07 2014
+@@ -34,38 +34,6 @@ $(eval $(call gb_Module_add_l10n_targets,dbaccess,\
+ 	UIConfig_dbtdata \
+ ))
+ 
+-ifeq ($(ENABLE_FIREBIRD_SDBC),TRUE)
+-$(eval $(call gb_Module_add_check_targets,dbaccess,\
+-    CppunitTest_dbaccess_firebird_test \
+-))
+-endif
+-
+-$(eval $(call gb_Module_add_check_targets,dbaccess,\
+-	CppunitTest_dbaccess_dialog_save \
+-	CppunitTest_dbaccess_macros_test \
+-))
+-
+-ifeq ($(ENABLE_JAVA),TRUE)
+-$(eval $(call gb_Module_add_check_targets,dbaccess,\
+-    CppunitTest_dbaccess_hsqldb_test \
+-))
+-endif
+-
+-# This runs a suite of peformance tests on embedded firebird and HSQLDB.
+-# Instructions on running the test can be found in qa/unit/embeddedb_performancetest
+-ifeq ($(ENABLE_FIREBIRD_SDBC),TRUE)
+-ifeq ($(ENABLE_JAVA),TRUE)
+-$(eval $(call gb_Module_add_check_targets,dbaccess,\
+-    CppunitTest_dbaccess_embeddeddb_performancetest \
+-))
+-endif
+-endif
+-
+-$(eval $(call gb_Module_add_subsequentcheck_targets,dbaccess,\
+-	JunitTest_dbaccess_complex \
+-    JunitTest_dbaccess_unoapi \
+-))
+-
+ endif
+ 
+ # vim: set noet sw=4 ts=4:

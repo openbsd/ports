@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libmwaw_ExternalPackage_libmwaw_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
+--- external/libmwaw/ExternalPackage_libmwaw.mk.orig.port	Sun Oct  5 23:51:25 2014
++++ external/libmwaw/ExternalPackage_libmwaw.mk	Sun Oct  5 23:51:33 2014
+@@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LI
+ else ifeq ($(OS),WNT)
+ $(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3.dll,src/lib/.libs/libmwaw-0.3.dll))
+ else ifeq ($(filter IOS ANDROID,$(OS)),)
+-$(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3.so.3,src/lib/.libs/libmwaw-0.3.so.3.0.1))
++$(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3.so.3,src/lib/.libs/libmwaw-0.3.so.3.1))
+ endif
+ 
+ # vim: set noet sw=4 ts=4:
