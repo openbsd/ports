@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/10 16:17:27 kirby Exp $
 
 COMMENT=	c++ validating XML parser
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://xerces.apache.org/index.html
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	http://apache.mirrors.crysys.hit.bme.hu/dist/xerces/c/2/sources/
+MASTER_SITES=	http://apache.mirrors.crysys.hit.bme.hu/xerces/c/2/sources/
 
 USE_GMAKE=	Yes
 
