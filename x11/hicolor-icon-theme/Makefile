@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/03/24 10:05:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/10/10 12:52:53 ajacoutot Exp $
 
 COMMENT=		fallback theme of the icon theme specification
 
@@ -6,12 +6,15 @@ COMMENT=		fallback theme of the icon theme specification
 # we cannot run it ourselves because gtk-update-icon-cache depends on
 # hicolor-icon-theme and that would create a dependency loop
 DISTNAME=		hicolor-icon-theme-0.13
+REVISION=		0
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.freedesktop.org/Standards/icon-theme-spec
 
 MASTER_SITES=		http://icon-theme.freedesktop.org/releases/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

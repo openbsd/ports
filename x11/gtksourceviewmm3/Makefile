@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/09/28 08:50:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/10/10 12:52:53 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for gtksourceview3
 
 GNOME_PROJECT=	gtksourceviewmm
 GNOME_VERSION=	3.2.0
 PKGNAME=	${GNOME_PROJECT}3-${GNOME_VERSION}
-REVISION=	2
+REVISION=	3
 
 MAJOR_VERSION=	3.0
 SUBST_VARS+=	MAJOR_VERSION
@@ -13,6 +13,8 @@ SUBST_VARS+=	MAJOR_VERSION
 SHARED_LIBS +=	gtksourceviewmm-3.0    0.0      # .0.0
 
 CATEGORIES=	x11
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

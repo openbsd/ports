@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2014/10/01 08:43:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/10/10 12:52:53 ajacoutot Exp $
 
 COMMENT=	C++ interface for gtk3+
 
 GNOME_PROJECT=	gtkmm
 GNOME_VERSION=	3.14.0
+REVISION=	0
 
 PKGNAME=	gtk3mm-${GNOME_VERSION}
 
@@ -13,6 +14,8 @@ SHARED_LIBS +=  gdkmm-3.0            4.0      # 2.0
 SHARED_LIBS +=  gtkmm-3.0            4.0      # 2.0
 
 HOMEPAGE=	http://www.gtkmm.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

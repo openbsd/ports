@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/09/16 19:56:10 miod Exp $
+# $OpenBSD: Makefile,v 1.26 2014/10/10 12:52:54 ajacoutot Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -6,11 +6,15 @@ NOT_FOR_ARCHS=	m88k
 COMMENT=		C++ interface for cairo
 
 DISTNAME=		cairomm-1.10.0
-REVISION=		1
+REVISION=		2
+
 SHARED_LIBS=		cairomm-1.0	5.0 # .5.0
+
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://cairographics.org/cairomm/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
