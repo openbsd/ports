@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2014/10/09 06:43:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2014/10/10 08:38:56 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -9,7 +9,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		3
+REVISION-main=		4
 
 CATEGORIES=		x11 devel
 
@@ -76,7 +76,6 @@ CONFIGURE_ARGS=		--with-xinput=xfree
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
 
 post-install:
-# set the global themes (matches what's directly bundled in gtk+3)
 	${INSTALL_DATA} ${FILESDIR}/gtkrc \
 		${PREFIX}/share/gtk-2.0
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/{engines,immodules,printbackends}/*.{a,la}
