@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.28 2014/09/13 16:36:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2014/10/10 12:21:52 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
-DISTNAME =	libnice-0.1.6
+DISTNAME =	libnice-0.1.8
 
-SHARED_LIBS +=  nice                 2.2      # 14.0
+SHARED_LIBS +=  nice                 2.3      # 15.0
 
 CATEGORIES =	net
 
 HOMEPAGE =	http://nice.freedesktop.org/
 
-MAINTAINER =	Tom Murphy <openbsd@pertho.net>
+MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1/MPLv1.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,9 +23,11 @@ WANTLIB += gssdp-1.0 gstbase-1.0 gstreamer-1.0 gthread-2.0 gupnp-1.0
 WANTLIB += gupnp-igd-1.0 m pcre pthread soup-2.4 sqlite3 xml2
 WANTLIB += z
 
-MASTER_SITES =		${HOMEPAGE}/releases/
+MASTER_SITES =		http://nice.freedesktop.org/releases/
 
 MODULES =		devel/gettext
+
+BUILD_DEPENDS =		devel/gobject-introspection
 
 LIB_DEPENDS =		multimedia/gstreamer1/core \
 			net/gupnp/igd
@@ -36,8 +39,11 @@ CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
 
 USE_GMAKE =		Yes
 
+# configure sets -Werror
+CFLAGS +=		-Wno-error
+
 post-install:
-	rm ${PREFIX}/lib/gstreamer-1.0/*.a
+	rm ${PREFIX}/lib/gstreamer-1.0/*.{a,la}
 # don't install example binaries
 	rm ${PREFIX}/bin/*-example
 
