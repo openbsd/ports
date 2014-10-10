@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2014/10/06 12:28:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2014/10/10 11:44:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=	devel/gconf2 \
 		sysutils/e2fsprogs>=1.42.7 \
 		x11/gnome/nautilus
 
-MODGNOME_TOOLS += desktop-file-utils yelp
+MODGNOME_TOOLS=	desktop-file-utils vala yelp
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option
