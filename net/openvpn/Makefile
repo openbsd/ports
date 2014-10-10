@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2014/04/18 19:08:12 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2014/10/10 21:07:07 sthen Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-DISTNAME=	openvpn-2.3.2
+DISTNAME=	openvpn-2.3.4
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/

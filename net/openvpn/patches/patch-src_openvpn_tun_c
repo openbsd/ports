@@ -1,16 +1,7 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.2 2013/10/21 09:15:07 bluhm Exp $
---- src/openvpn/tun.c.orig	Wed Mar 20 09:28:14 2013
-+++ src/openvpn/tun.c	Sat Oct 19 15:53:44 2013
-@@ -867,7 +867,7 @@ do_ifconfig (struct tuntap *tt,
-       if (!tun && tt->topology == TOP_SUBNET)
- 	{
- 	  /* Add a network route for the local tun interface */
--	  struct route r;
-+	  struct route_base r;
- 	  CLEAR (r);      
- 	  r.flags = RT_DEFINED | RT_METRIC_DEFINED;
- 	  r.network = tt->local & tt->remote_netmask;
-@@ -911,7 +911,19 @@ do_ifconfig (struct tuntap *tt,
+$OpenBSD: patch-src_openvpn_tun_c,v 1.3 2014/10/10 21:07:07 sthen Exp $
+--- src/openvpn/tun.c.orig	Thu May  1 12:12:22 2014
++++ src/openvpn/tun.c	Tue Jul 29 22:10:23 2014
+@@ -917,7 +917,19 @@ do_ifconfig (struct tuntap *tt,
  			  );
  	}
        else
@@ -31,7 +22,7 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.2 2013/10/21 09:15:07 bluhm Exp $
  			  "%s %s %s netmask %s mtu %d broadcast %s link0",
  			  IFCONFIG_PATH,
  			  actual,
-@@ -920,6 +932,7 @@ do_ifconfig (struct tuntap *tt,
+@@ -926,6 +938,7 @@ do_ifconfig (struct tuntap *tt,
  			  tun_mtu,
  			  ifconfig_broadcast
  			  );
@@ -39,14 +30,15 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.2 2013/10/21 09:15:07 bluhm Exp $
        argv_msg (M_INFO, &argv);
        openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig failed");
        if ( do_ipv6 )
-@@ -939,6 +952,18 @@ do_ifconfig (struct tuntap *tt,
+@@ -944,6 +957,18 @@ do_ifconfig (struct tuntap *tt,
+ 	  add_route_connected_v6_net(tt, es);
  	}
        tt->did_ifconfig = true;
- 
++
 +      /* Add a network route for the local tun interface */
 +      if (!tun && tt->topology == TOP_SUBNET)
 +        {
-+          struct route_base r;
++          struct route_ipv4 r;
 +          CLEAR (r);
 +          r.flags = RT_DEFINED;
 +          r.network = tt->local & tt->remote_netmask;
@@ -54,25 +46,6 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.2 2013/10/21 09:15:07 bluhm Exp $
 +          r.gateway = tt->local;
 +          add_route (&r, tt, 0, NULL, es);
 +        }
-+
+ 
  #elif defined(TARGET_NETBSD)
  
- /* whether or not NetBSD can do IPv6 can be seen by the availability of
-@@ -1064,7 +1089,7 @@ do_ifconfig (struct tuntap *tt,
-       /* Add a network route for the local tun interface */
-       if (!tun && tt->topology == TOP_SUBNET)
- 	{
--	  struct route r;
-+	  struct route_base r;
- 	  CLEAR (r);
- 	  r.flags = RT_DEFINED;
- 	  r.network = tt->local & tt->remote_netmask;
-@@ -1130,7 +1155,7 @@ do_ifconfig (struct tuntap *tt,
- 	/* Add a network route for the local tun interface */
-       if (!tun && tt->topology == TOP_SUBNET)
-         {
--          struct route r;
-+          struct route_base r;
-           CLEAR (r);
-           r.flags = RT_DEFINED;
-           r.network = tt->local & tt->remote_netmask;
