@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/10/02 20:01:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2014/10/10 09:21:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
 GNOME_VERSION=		3.14.0
-REVISION=		2
+REVISION=		3
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,11 +37,16 @@ RUN_DEPENDS +=		fonts/cantarell-fonts \
 			x11/gnome/adwaita-icon-theme
 
 post-install:
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-themes-standard
 # set the global cursor theme (libXcursor)
 # https://bugzilla.gnome.org/show_bug.cgi?id=660353
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/default
 	${INSTALL_DATA} ${FILESDIR}/index.theme \
-		${PREFIX}/share/icons/default
-	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
+		${PREFIX}/share/examples/gnome-themes-standard
+# set the global gtk+2 theme (matches what's directly bundled in gtk+3;
+# /etc/gtk-2.0/gtkrc takes precedence over /usr/local/share/gtk-2.0/gtkrc;
+# sync "gtk-icon-theme-name" with x11/gtk+2/files/gtkrc
+	${INSTALL_DATA} ${FILESDIR}/gtkrc \
+		${PREFIX}/share/examples/gnome-themes-standard
 
 .include <bsd.port.mk>

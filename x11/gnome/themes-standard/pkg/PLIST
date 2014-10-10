@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.28 2014/10/02 20:01:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2014/10/10 09:21:43 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 lib/gtk-2.0/2.10.0/engines/libadwaita.so
+share/examples/gnome-themes-standard/
+share/examples/gnome-themes-standard/gtkrc
+@sample ${SYSCONFDIR}/gtk-2.0/gtkrc
+share/examples/gnome-themes-standard/index.theme
+@sample share/icons/default/
+@sample share/icons/default/index.theme
 share/icons/HighContrast/
 share/icons/HighContrast/16x16/
 share/icons/HighContrast/16x16/actions/
@@ -3132,8 +3138,6 @@ share/icons/HighContrast/scalable/status/weather-showers-scattered.svg
 share/icons/HighContrast/scalable/status/weather-showers.svg
 share/icons/HighContrast/scalable/status/weather-snow.svg
 share/icons/HighContrast/scalable/status/weather-storm.svg
-share/icons/default/
-share/icons/default/index.theme
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
 share/themes/Adwaita/
