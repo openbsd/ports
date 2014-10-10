@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2014/10/10 08:38:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.200 2014/10/10 08:59:25 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -76,6 +76,7 @@ CONFIGURE_ARGS=		--with-xinput=xfree
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
 
 post-install:
+# sync "gtk-icon-theme-name" with x11/gnome/themes-standard/files/gtkrc
 	${INSTALL_DATA} ${FILESDIR}/gtkrc \
 		${PREFIX}/share/gtk-2.0
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/{engines,immodules,printbackends}/*.{a,la}
