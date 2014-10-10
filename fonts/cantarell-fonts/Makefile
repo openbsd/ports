@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2014/10/08 12:06:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/10/10 12:44:40 ajacoutot Exp $
 
 COMMENT=	humanist sans-serif font family
 
 GNOME_VERSION=	0.0.16
 GNOME_PROJECT=	cantarell-fonts
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	fonts x11
 
 HOMEPAGE=	http://abattis.org/cantarell/
 
-MANTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # SIL Open Font License v1.1
 PERMIT_PACKAGE_CDROM=	Yes
