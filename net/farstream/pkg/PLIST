@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/09/10 08:30:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/10/10 12:14:41 ajacoutot Exp $
 @conflict farsight2-*
 @pkgpath net/farsight2
 include/farstream-${API_VERSION}/
@@ -21,23 +21,11 @@ lib/farstream-${API_VERSION}/libmulticast-transmitter.so
 lib/farstream-${API_VERSION}/libnice-transmitter.so
 lib/farstream-${API_VERSION}/librawudp-transmitter.so
 lib/farstream-${API_VERSION}/libshm-transmitter.so
-lib/girepository-1.0/
 lib/girepository-1.0/Farstream-${API_VERSION}.typelib
-lib/gstreamer-1.0/
-lib/gstreamer-1.0/libfsmsnconference.a
-lib/gstreamer-1.0/libfsmsnconference.la
 lib/gstreamer-1.0/libfsmsnconference.so
-lib/gstreamer-1.0/libfsrawconference.a
-lib/gstreamer-1.0/libfsrawconference.la
 lib/gstreamer-1.0/libfsrawconference.so
-lib/gstreamer-1.0/libfsrtcpfilter.a
-lib/gstreamer-1.0/libfsrtcpfilter.la
 lib/gstreamer-1.0/libfsrtcpfilter.so
-lib/gstreamer-1.0/libfsrtpconference.a
-lib/gstreamer-1.0/libfsrtpconference.la
 lib/gstreamer-1.0/libfsrtpconference.so
-lib/gstreamer-1.0/libfsvideoanyrate.a
-lib/gstreamer-1.0/libfsvideoanyrate.la
 lib/gstreamer-1.0/libfsvideoanyrate.so
 lib/libfarstream-${API_VERSION}.a
 lib/libfarstream-${API_VERSION}.la
@@ -50,10 +38,7 @@ share/farstream/${API_VERSION}/fsrawconference/default-element-properties
 share/farstream/${API_VERSION}/fsrtpconference/
 share/farstream/${API_VERSION}/fsrtpconference/default-codec-preferences
 share/farstream/${API_VERSION}/fsrtpconference/default-element-properties
-share/gir-1.0/
 share/gir-1.0/Farstream-${API_VERSION}.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/farstream-libs-${API_VERSION}/
 share/gtk-doc/html/farstream-libs-${API_VERSION}/FsConference.html
 share/gtk-doc/html/farstream-libs-${API_VERSION}/FsElementAddedNotifier.html
