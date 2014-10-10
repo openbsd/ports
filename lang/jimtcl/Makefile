@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/16 15:41:15 stu Exp $
+# $OpenBSD: Makefile,v 1.10 2014/10/10 19:58:21 stu Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		small footprint implementation of Tcl
 
-DISTNAME =		jimtcl-0.75pl1
+DISTNAME =		jimtcl-0.75pl2
 SHARED_LIBS =		jim 2.0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://jim.tcl.tk/
@@ -15,8 +15,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m sqlite3
 
-# Git checkin		2014/09/01 c4d4bf8bc104733db1f5992a27d88fbfca9ba882
-MASTER_SITES =		http://mirror.arieslabs.com/openbsd/
+GH_ACCOUNT =		msteveb
+GH_PROJECT =		jimtcl
+#GH_TAGNAME =		0.75 # Tag lag
+GH_COMMIT =		20e9c4c1decdadcec69e43bd7c14f51996baf94c
 
 MODULES =		lang/tcl
 
