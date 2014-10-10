@@ -1,0 +1,11 @@
+$OpenBSD: patch-motion_c,v 1.1.1.1 2014/10/10 13:32:05 sthen Exp $
+--- motion.c.orig	Wed Sep 10 03:53:41 2014
++++ motion.c	Fri Oct 10 11:37:35 2014
+@@ -25,6 +25,7 @@
+ /* Forward declarations */
+ static int motion_init(struct context *cnt);
+ static void motion_cleanup(struct context *cnt);
++static void setup_signals(struct sigaction *, struct sigaction *);
+ 
+ 
+ /**

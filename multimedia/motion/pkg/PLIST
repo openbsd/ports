@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/10 13:32:05 sthen Exp $
+@newgroup _motion:704
+@newuser _motion:704:_motion:daemon:motion user:/nonexistent:/sbin/nologin
+@bin bin/motion
+@man man/man1/motion.1
+share/doc/motion/
+share/doc/motion/CHANGELOG
+share/doc/motion/COPYING
+share/doc/motion/CREDITS
+share/doc/motion/INSTALL
+share/doc/motion/README
+share/doc/motion/motion_guide.html
+share/examples/motion/
+share/examples/motion/motion-dist.conf
+@sample ${SYSCONFDIR}/motion.conf
+@comment share/examples/motion/motion.init-Debian
+@comment share/examples/motion/motion.init-Fedora
+@comment share/examples/motion/motion.init-FreeBSD.sh
+share/examples/motion/thread1.conf
+share/examples/motion/thread2.conf
+share/examples/motion/thread3.conf
+share/examples/motion/thread4.conf
+@rcscript ${RCDIR}/motion

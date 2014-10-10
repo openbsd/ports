@@ -1,0 +1,15 @@
+Motion is a C program that monitors the video signal from one or
+more V4L2/video(4) cameras or network-based webcams, and is able to
+detect if a significant part of the picture has changed. Or in
+other words, it can detect motion.
+
+Motion is a command line based tool. It has absolutely no graphical
+user interface. Everything is setup either via the command line or
+via a set of configuration files (simple ASCII files that can be
+edited by any ASCII editor).
+
+Motion can output JPEG/PPM images and MPEG video sequences, call
+external programs, log to a database, etc.
+
+Motion hasn't had an official release for some time; at present,
+this package uses the forked code at https://github.com/Mr-Dave/motion/
