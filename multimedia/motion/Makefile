@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/10 13:40:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/10 13:59:25 sthen Exp $
 
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Mr-Dave
 GH_PROJECT=	motion
 GH_COMMIT=	7cfdf13cd63378e45589650f7d20195cb7bf9936
-DISTNAME=	motion-0.20140910
-REVISION=	0
+V=		3.2.12
+DISTNAME=	motion-$V.20140910
 
 CATEGORIES=	multimedia
 
@@ -52,10 +52,17 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 NO_TEST=		Yes
 
+post-extract:
+	printf '#!/bin/sh\necho -n "$V-Git-${GH_COMMIT:C/[0-9a-f]{33}$//}"\n' > ${WRKSRC}/version.sh
+
 pre-configure:
 	perl -pi -e s,/usr/local/etc,${SYSCONFDIR},g \
 		${WRKSRC}/motion-dist.conf.in
-	perl -pi -e s,%GH_COMMIT%,${GH_COMMIT:C/[0-9a-f]{33}$//}, \
-		${WRKSRC}/version.sh
+
+.include <bsd.port.arch.mk>
+
+.if ${ARCH:Mamd64}
+CFLAGS+=		-mfpmath=sse -msse2
+.endif
 
 .include <bsd.port.mk>
