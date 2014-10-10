@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/07/13 06:52:42 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/10/10 07:31:45 ajacoutot Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -114,6 +114,7 @@ ${P5SITE}/Image/ExifTool/Lang/tr.pm
 ${P5SITE}/Image/ExifTool/Lang/zh_cn.pm
 ${P5SITE}/Image/ExifTool/Lang/zh_tw.pm
 ${P5SITE}/Image/ExifTool/Leaf.pm
+${P5SITE}/Image/ExifTool/Lytro.pm
 ${P5SITE}/Image/ExifTool/M2TS.pm
 ${P5SITE}/Image/ExifTool/MIE.pm
 ${P5SITE}/Image/ExifTool/MIEUnits.pod
@@ -144,6 +145,7 @@ ${P5SITE}/Image/ExifTool/PLIST.pm
 ${P5SITE}/Image/ExifTool/PNG.pm
 ${P5SITE}/Image/ExifTool/PPM.pm
 ${P5SITE}/Image/ExifTool/PSP.pm
+${P5SITE}/Image/ExifTool/Palm.pm
 ${P5SITE}/Image/ExifTool/Panasonic.pm
 ${P5SITE}/Image/ExifTool/PanasonicRaw.pm
 ${P5SITE}/Image/ExifTool/Pentax.pm
@@ -274,6 +276,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Lang::zh_cn.3p
 @man man/man3p/Image::ExifTool::Lang::zh_tw.3p
 @man man/man3p/Image::ExifTool::Leaf.3p
+@man man/man3p/Image::ExifTool::Lytro.3p
 @man man/man3p/Image::ExifTool::M2TS.3p
 @man man/man3p/Image::ExifTool::MIE.3p
 @man man/man3p/Image::ExifTool::MIEUnits.3p
@@ -304,6 +307,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::PNG.3p
 @man man/man3p/Image::ExifTool::PPM.3p
 @man man/man3p/Image::ExifTool::PSP.3p
+@man man/man3p/Image::ExifTool::Palm.3p
 @man man/man3p/Image::ExifTool::Panasonic.3p
 @man man/man3p/Image::ExifTool::PanasonicRaw.3p
 @man man/man3p/Image::ExifTool::Pentax.3p
