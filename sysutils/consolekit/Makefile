@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/12/31 16:14:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2014/10/10 12:46:23 ajacoutot Exp $
 
 # NOTE: spam in /var/log/authlog is "expected"
 # http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=678506
@@ -10,7 +10,7 @@ COMMENT=	framework for defining and tracking users
 DISTNAME=	ConsoleKit-0.4.6
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${DISTNAME:L}
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	sysutils	
 
@@ -18,7 +18,7 @@ SHARED_LIBS +=  ck-connector         1.0      # 0.0
 
 HOMEPAGE=	http://www.freedesktop.org/wiki/Software/ConsoleKit
 
-MANTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
