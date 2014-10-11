@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2014/10/10 13:32:05 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2014/10/11 11:56:40 sthen Exp $
 --- configure.ac.orig	Wed Sep 10 03:53:41 2014
-+++ configure.ac	Fri Oct 10 11:41:32 2014
++++ configure.ac	Sat Oct 11 12:54:10 2014
 @@ -37,7 +37,7 @@ if test "${Darwin}" = ""; then
  	AC_MSG_RESULT(no)
  	AC_MSG_CHECKING(for *BSD)
@@ -19,12 +19,17 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2014/10/10 13:32:05 sthen Exp $
  
  AC_CHECK_FUNCS(get_current_dir_name)
  
-@@ -931,7 +931,7 @@ else
+@@ -931,7 +931,12 @@ else
  		[SUPPORTED_V4L2=true],
  		[SUPPORTED_V4L2=false],
  		[#include <sys/time.h>
 -			#include <linux/videodev.h>])
-+			#include <sys/videoio.h>])
++		 	#ifdef HAVE_LINUX_VIDEODEV_H
++			#include <linux/videodev.h>
++			#elif HAVE_SYS_VIDEOIO_H
++			#include <sys/videoio.h>
++			#endif
++		])
  
  	AC_MSG_CHECKING(for V42L support)
  	if test x$SUPPORTED_V4L2 = xtrue; then
