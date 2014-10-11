@@ -1,12 +1,16 @@
-$OpenBSD: patch-video2_c,v 1.1.1.1 2014/10/10 13:32:05 sthen Exp $
+$OpenBSD: patch-video2_c,v 1.2 2014/10/11 12:03:44 sthen Exp $
 --- video2.c.orig	Fri Oct 10 12:47:52 2014
 +++ video2.c	Fri Oct 10 12:48:03 2014
-@@ -179,7 +179,7 @@ typedef struct {
+@@ -179,7 +179,11 @@ typedef struct {
  /**
   * xioctl
   */
 -static int xioctl(int fd, int request, void *arg)
++#ifdef __OpenBSD__
 +static int xioctl(int fd, unsigned long request, void *arg)
++#else
++static int xioctl(int fd, int request, void *arg)
++#endif
  {
      int ret;
  
