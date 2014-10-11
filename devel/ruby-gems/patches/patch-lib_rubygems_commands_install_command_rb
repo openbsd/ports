@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_rubygems_commands_install_command_rb,v 1.5 2014/10/11 19:52:10 jeremy Exp $
+
+Make gem binaries on ruby 1.8 use a 18 suffix, so you can have
+gem binaries for different versions of ruby installed at the same time
+without conflicts.
+
+--- lib/rubygems/commands/install_command.rb.orig	Tue Jul 26 19:04:03 2011
++++ lib/rubygems/commands/install_command.rb	Sun Oct 30 19:10:20 2011
+@@ -21,7 +21,7 @@ class Gem::Commands::InstallCommand < Gem::Command
+     defaults = Gem::DependencyInstaller::DEFAULT_OPTIONS.merge({
+       :generate_rdoc     => true,
+       :generate_ri       => true,
+-      :format_executable => false,
++      :format_executable => true,
+       :version           => Gem::Requirement.default,
+     })
+ 

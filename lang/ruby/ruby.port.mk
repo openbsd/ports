@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.75 2014/09/22 15:21:00 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.76 2014/10/11 19:52:10 jeremy Exp $
 
 # ruby module
 
@@ -77,40 +77,35 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 # 2.1 for consistency with the default ruby21 FLAVOR for gem/extconf ports.
 MODRUBY_REV?=		2.1
 
-# Because the rbx, jruby, and ruby18 FLAVORs all use same binary names but in
+# Because the rbx and jruby FLAVORs use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
 # conflicts since all man files go in the same directory.
-GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
+GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 
 # Use the FLAVOR as the prefix for the package, to avoid conflicts.
 MODRUBY_PKG_PREFIX =	${MODRUBY_FLAVOR}
-
-GEM_BIN_SUFFIX =	
 
 .if ${MODRUBY_REV} == 1.8
 MODRUBY_LIBREV =	1.8
 MODRUBY_BINREV =	18
 MODRUBY_PKG_PREFIX =	ruby
 MODRUBY_FLAVOR =	ruby18
-GEM_MAN_SUFFIX =
+GEM_BIN_SUFFIX =	18
 .elif ${MODRUBY_REV} == 1.9
 MODRUBY_LIBREV =	1.9.1
 MODRUBY_BINREV =	19
 MODRUBY_FLAVOR =	ruby19
 GEM_BIN_SUFFIX =	19
-GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 .elif ${MODRUBY_REV} == 2.0
 MODRUBY_LIBREV =	2.0
 MODRUBY_BINREV =	20
 MODRUBY_FLAVOR =	ruby20
 GEM_BIN_SUFFIX =	20
-GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 .elif ${MODRUBY_REV} == 2.1
 MODRUBY_LIBREV =	2.1
 MODRUBY_BINREV =	21
 MODRUBY_FLAVOR =	ruby21
 GEM_BIN_SUFFIX =	21
-GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 .elif ${MODRUBY_REV} == jruby
 MODRUBY_LIBREV =	1.9
 
@@ -122,11 +117,13 @@ MODRUBY_LIBREV =	1.9
 #.poison MODRUBY_WANTLIB
 
 MODRUBY_FLAVOR =	jruby
+GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
 .elif ${MODRUBY_REV} == rbx
 MODRUBY_LIBREV =	2.1
 #.poison MODRUBY_BINREV
 #.poison MODRUBY_WANTLIB
 MODRUBY_FLAVOR =	rbx
+GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
 .endif
 
 MODRUBY_RAKE_DEPENDS =	
@@ -304,7 +301,7 @@ EXTRACT_SUFX=	.gem
 
 # Require versions that no longer create the .require_paths files.
 .  if ${MODRUBY_REV} == 1.8
-BUILD_DEPENDS+=	devel/ruby-gems>=1.8.10
+BUILD_DEPENDS+=	devel/ruby-gems>=1.8.23p3
 RUN_DEPENDS+=	devel/ruby-gems>=1.3.7p0
 .  elif ${MODRUBY_REV} == 1.9
 BUILD_DEPENDS+=	lang/ruby/1.9>=1.9.3.0
