@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2014/10/11 19:54:46 jeremy Exp $
 
 COMMENT=	install Ruby gems as plugins
 
 DISTNAME=	gem_plugin-0.2.3
-REVISION=	7
+REVISION=	8
 CATEGORIES=	devel
 
 # RubyLicense

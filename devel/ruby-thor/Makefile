@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/18 09:30:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/11 19:54:47 jeremy Exp $
 
 COMMENT =		scripting framework to replace rake/sake/rubigen
 
 DISTNAME =		thor-0.18.1
+REVISION =		0
 
 CATEGORIES =		devel
 

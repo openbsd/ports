@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/10/11 19:54:47 jeremy Exp $
 
 COMMENT=		lexical scanner generator for use with Racc
 
 DISTNAME=		rexical-1.0.5
-REVISION =		0
+REVISION =		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://github.com/tenderlove/rexical

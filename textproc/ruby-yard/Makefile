@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/24 18:56:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/11 19:54:47 jeremy Exp $
 
 COMMENT=	Ruby documentation tool
 
 DISTNAME=	yard-0.8.7.4
+REVISION =	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://yardoc.org/

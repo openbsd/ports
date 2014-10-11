@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/10/08 02:32:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.36 2014/10/11 19:54:47 jeremy Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
@@ -7,6 +7,7 @@ BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
 PASS_VERSION =		4.0.44
 NGINX_VERSION =		1.4.7
 DISTNAME =		passenger-${PASS_VERSION}
+REVISION =		0
 FULLPKGNAME-main =	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 FULLPKGNAME-standalone = ${MODRUBY_PKG_PREFIX}-passenger-standalone-${PASS_VERSION}.${NGINX_VERSION}
 FULLPKGPATH-main =	${BASE_PKGPATH},-main

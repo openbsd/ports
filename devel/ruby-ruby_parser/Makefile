@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/11 19:54:46 jeremy Exp $
 
 COMMENT =	Ruby parser written in pure Ruby
 
 DISTNAME =	ruby_parser-2.3.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # MIT

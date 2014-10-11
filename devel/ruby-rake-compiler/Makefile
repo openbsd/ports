@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/10/11 19:54:46 jeremy Exp $
 
 COMMENT =	build and package Ruby extensions using Rake as glue
 
 DISTNAME =	rake-compiler-0.7.9
-REVISION =	4
+REVISION =	5
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/luislavena/rake-compiler

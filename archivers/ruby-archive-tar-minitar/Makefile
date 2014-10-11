@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/26 23:55:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/10/11 19:54:46 jeremy Exp $
 
 COMMENT =	command-line utility for POSIX tar(1) archive files
 
 DISTNAME =	archive-tar-minitar-0.5.2
-REVISION =	7
+REVISION =	8
 CATEGORIES =	archivers
 
 HOMEPAGE =	http://ruwiki.rubyforge.org/

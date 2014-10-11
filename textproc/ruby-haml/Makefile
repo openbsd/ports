@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2014/10/11 19:54:47 jeremy Exp $
 
 COMMENT=		HTML Abstraction Markup Language for Ruby
 
 DISTNAME=		haml-3.1.7
-REVISION =		0
+REVISION =		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://haml.hamptoncatlin.com/

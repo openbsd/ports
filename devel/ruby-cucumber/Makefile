@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/11 19:54:46 jeremy Exp $
 
 COMMENT =	execute plain-text documents as automated functional tests
 
 DISTNAME =	cucumber-0.3.96
-REVISION =	8
+REVISION =	9
 CATEGORIES =	devel
 
 HOMEPAGE =	http://cukes.info/
