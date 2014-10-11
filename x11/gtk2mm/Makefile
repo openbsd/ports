@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.60 2014/10/10 12:52:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2014/10/11 08:39:34 ajacoutot Exp $
+
+PORTROACH=	limit:^2
 
 COMMENT=	C++ interface for gtk2+
 
