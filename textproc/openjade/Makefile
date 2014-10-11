@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/11 13:27:51 avsm Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
 DISTNAME=	openjade-1.3.3-pre1
 PKGNAME=	openjade-1.3.3pre1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
 
@@ -12,8 +12,6 @@ SHARED_LIBS=	ospgrove 0.0 \
 		ogrove 0.0 \
 		ostyle 0.0 # 0.1
 HOMEPAGE=	http://openjade.sourceforge.net/
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
