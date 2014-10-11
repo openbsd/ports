@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.182 2014/10/08 02:10:10 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.183 2014/10/11 08:17:53 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -533,6 +533,7 @@ my $cve = {
 	'mail/exim' => 'exim-<4.83',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/cherokee,-ldap' => 'cherokee-ldap-<1.2.101p6',
+	'shells/bash' => 'bash-<4.3.27',
 };
 
 # ->check_security($path)
