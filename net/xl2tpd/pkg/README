@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/10/09 13:06:04 sthen Exp $
+$OpenBSD: README,v 1.5 2014/10/11 16:13:36 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -37,7 +37,7 @@ Where [command] is one of:
   r    (disconnect and) remove
 
 To connect, you must ensure that a free ppp(4) interface is available
-("ifconfig ppp0 up" or "echo up > /etc/hostname.pppo0"), and then you must
+("ifconfig ppp0 up" or "echo up > /etc/hostname.ppp0"), and then you must
 send the 'c'onnect command to actually bring up a session; this does not
 happen automatically.
 
