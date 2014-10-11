@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: motion.rc,v 1.1.1.1 2014/10/10 13:32:05 sthen Exp $
+# $OpenBSD: motion.rc,v 1.2 2014/10/11 11:04:20 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/motion"
+daemon="${TRUEPREFIX}/bin/motion -b"
 daemon_user="_motion"
 
 . /etc/rc.d/rc.subr

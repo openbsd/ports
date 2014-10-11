@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/10 15:12:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/11 11:04:20 sthen Exp $
 
 COMMENT=	motion detection software for video
 
@@ -7,7 +7,7 @@ GH_PROJECT=	motion
 GH_COMMIT=	7cfdf13cd63378e45589650f7d20195cb7bf9936
 V=		3.2.12
 DISTNAME=	motion-$V.20140910
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	multimedia
 
