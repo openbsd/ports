@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.16 2014/03/10 09:34:07 espie Exp $
+# $OpenBSD: Init.pm,v 1.17 2014/10/11 09:03:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -179,6 +179,9 @@ sub init_cores
 	my $startup = $state->{startup_script};
 	my $stale = $state->stalelocks;
 	DPB::Core->set_logdir($logger->{logdir});
+	if (values %$init == 0) {
+		$state->fatal("configuration error: no job runner");
+	}
 	for my $core (values %$init) {
 		my $job = DPB::Job::Init->new($logger, $state->{xenocara});
 		$job->add_tasks(DPB::Task::WhoAmI->new);
