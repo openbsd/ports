@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/09/03 09:11:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/10/11 08:42:46 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -993,6 +993,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/conf.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/network.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/rh5_eth.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/rh6_eth.jinja
+lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/rh7_eth.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/rh_ip/route_eth.jinja
 lib/python${MODPY_VERSION}/site-packages/salt/templates/virt/
 lib/python${MODPY_VERSION}/site-packages/salt/templates/virt/libvirt_domain.jinja
