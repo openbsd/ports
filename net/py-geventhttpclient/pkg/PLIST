@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/12 20:45:56 juanfra Exp $
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/__init__.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/_parser.so
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/client.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/client.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/connectionpool.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/connectionpool.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/header.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/header.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/httplib.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/httplib.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/response.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/response.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/url.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/url.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/useragent.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/useragent.pyc
