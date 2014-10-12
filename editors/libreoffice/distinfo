@@ -43,7 +43,6 @@ SHA256 (libreoffice/edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1
 SHA256 (libreoffice/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip) = dcgDWcnONDwgqrijakXLO57nxhz5LBOuRTmdhUQjqbo=
 SHA256 (libreoffice/f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip) = BWQKH2gFsrLX4sucUNuaXLCE48Uqsacc4BUjm0odQ0M=
 SHA256 (libreoffice/graphite2-1.2.4.tgz) = S8PVFoApvMCqAOsslzJp0pQHvieW/1b5yA4Qc2vYsAM=
-SHA256 (libreoffice/harfbuzz-0.9.23.tar.bz2) = Fxq39Y5yQwgqRYL00fIbP0RGKTHqkqaQnTA602FHlMc=
 SHA256 (libreoffice/libabw-0.1.0.tar.bz2) = STgMJOBOjSpIJK3Jsbj1AmrXWbwzVJfgXwmDQSgh+Nk=
 SHA256 (libreoffice/libcdr-0.1.0.tar.bz2) = 72wYDbiOcCT5GpSd1Brq/eDgdACMJZukwfjD7v2kj9A=
 SHA256 (libreoffice/libe-book-0.1.1.tar.bz2) = kDU/xggnozs5HQtj7P5SOSKdSJr5n/bqAU7eOzn6MrU=
@@ -107,7 +106,6 @@ SIZE (libreoffice/edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.0
 SIZE (libreoffice/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip) = 427800
 SIZE (libreoffice/f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip) = 211919
 SIZE (libreoffice/graphite2-1.2.4.tgz) = 6938866
-SIZE (libreoffice/harfbuzz-0.9.23.tar.bz2) = 1027508
 SIZE (libreoffice/libabw-0.1.0.tar.bz2) = 362087
 SIZE (libreoffice/libcdr-0.1.0.tar.bz2) = 659119
 SIZE (libreoffice/libe-book-0.1.1.tar.bz2) = 466712

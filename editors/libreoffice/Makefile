@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2014/10/10 17:13:10 robert Exp $
+# $OpenBSD: Makefile,v 1.119 2014/10/12 17:43:31 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -17,6 +17,8 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
+
+REVISION-main=	0
 
 EPOCH=		0
 
@@ -91,7 +93,6 @@ DISTFILES+=	${EDISTFILES} \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
 		CoinMP-1.7.6.tgz:0 \
 		graphite2-1.2.4.tgz:0 \
-		harfbuzz-0.9.23.tar.bz2:0 \
 		libabw-0.1.0.tar.bz2:0 \
 		libcdr-0.1.0.tar.bz2:0 \
 		libe-book-0.1.1.tar.bz2:0 \
@@ -181,6 +182,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		boost->=1.41.0:devel/boost \
 		databases/openldap \
 		databases/postgresql \
+		devel/harfbuzz,-icu \
 		graphics/lcms2 \
 		${MODGCC4_CPPLIBDEP} \
 		textproc/libxslt \
@@ -213,7 +215,7 @@ WANTLIB-main+=	boost_date_time-mt
 WANTLIB-main+=	lber ldap
 WANTLIB-main+=	poppler
 WANTLIB-main+=	GLEW
-WANTLIB-main+=	GL GLU boost_iostreams-mt bz2 harfbuzz
+WANTLIB-main+=	GL GLU boost_iostreams-mt bz2 harfbuzz harfbuzz-icu
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -291,6 +293,7 @@ CONFIGURE_ARGS+=\
 		--with-external-tar=${DISTDIR}/libreoffice \
 		--with-fonts \
 		--with-myspell-dicts \
+		--with-system-harfbuzz \
 		--with-system-glew \
 		--with-system-clucene \
 		--with-system-libxml \
