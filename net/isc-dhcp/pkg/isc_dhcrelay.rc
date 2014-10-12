@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: isc_dhcrelay.rc,v 1.1 2014/10/12 20:10:16 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/dhcrelay"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

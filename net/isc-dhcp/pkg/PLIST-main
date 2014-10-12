@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2012/01/14 12:43:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/10/12 20:10:16 sthen Exp $
+@newgroup _isc-dhcp:744
+@newuser _isc-dhcp:744:_isc-dhcp:daemon:ISC DHCP user:/nonexistent:/sbin/nologin
 @conflict isc-dhcp-*
 @pkgpath net/isc-dhcp
 @man man/man5/dhcp-eval.5
@@ -12,3 +14,5 @@
 share/examples/isc-dhcp/
 share/examples/isc-dhcp/dhcpd.conf
 @extra /var/db/dhcpd.leases
+@rcscript ${RCDIR}/isc_dhcpd
+@rcscript ${RCDIR}/isc_dhcrelay
