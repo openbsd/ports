@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2014/10/11 08:42:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2014/10/12 08:56:35 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -18,6 +18,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2014.1.12
 DISTNAME =		salt-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -59,6 +60,7 @@ pre-configure:
 # https://github.com/saltstack/salt/commit/ea2be8bc7813ba2e2ddd05913783887513516c8c
 # https://github.com/saltstack/salt/commit/81857ea0743f2fd475789044a11310eec7a6d4fc
 # https://github.com/saltstack/salt/commit/3737b08e0d201ab33949f1fc5bc930e0ba2b6fee
+# https://github.com/saltstack/salt/pull/16582
 	cp ${FILESDIR}/openbsdrcctl.py ${WRKSRC}/salt/modules/
 # https://github.com/saltstack/salt/commit/edcea17892bc8f6c4eec8441db366878ee2cd2bd
 # https://github.com/saltstack/salt/commit/3cc9fcae4362ab9ccd3c6d3ff1d709da9a11743c
