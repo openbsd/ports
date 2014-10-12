@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.183 2014/10/11 08:17:53 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.184 2014/10/12 15:22:46 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -444,6 +444,7 @@ my $obsolete_reason = {
 	'raggle' => 3,
 	'gnome-icon-theme-extras' => 3,
 	'ruby-fastthread' => 3,
+	'dellflash' => 0,
 };
 
 # ->is_base_system($handle, $state):

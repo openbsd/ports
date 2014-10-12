@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.325 2014/10/07 08:40:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.326 2014/10/12 15:22:47 naddy Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -38,7 +38,6 @@
      SUBDIR += dcled
      SUBDIR += ddrescue
      SUBDIR += deja-dup
-     SUBDIR += dellflash
      SUBDIR += detox
      SUBDIR += dfc
      SUBDIR += diskrescue
