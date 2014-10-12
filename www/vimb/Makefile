@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/25 01:38:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/12 13:49:55 bcallah Exp $
 
-V =		2.7
+V =		2.8
 COMMENT =	modal webkit-based browser inspired by vim
 DISTNAME =	vimb-${V}
 CATEGORIES =	www x11
@@ -18,7 +18,7 @@ WANTLIB += pangoft2-1.0 pthread soup-2.4 z
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
 GH_TAGNAME =	${V}
-GH_COMMIT =	cef0999d02ba87c44d8ebc9d69477f7c29fa67f3
+GH_COMMIT =	c64290130e6ae5f009e0d90505051b5ba56ca742
 
 FLAVORS =	gtk3
 FLAVOR ?=
