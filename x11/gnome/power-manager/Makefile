@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2014/10/06 08:30:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/10/12 09:52:01 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
-GNOME_VERSION=		3.14.0
+GNOME_VERSION=		3.14.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
