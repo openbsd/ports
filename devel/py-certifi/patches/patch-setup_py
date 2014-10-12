@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2014/10/12 20:40:39 juanfra Exp $
+--- setup.py.orig	Mon May 19 00:55:33 2014
++++ setup.py	Mon Oct  6 16:10:10 2014
+@@ -24,10 +24,6 @@ setup(
+     packages=[
+         'certifi',
+     ],
+-    package_dir={'certifi': 'certifi'},
+-    package_data={'certifi': ['*.pem']},
+-    # data_files=[('certifi', ['certifi/cacert.pem'])],
+-    include_package_data=True,
+     license='ISC',
+     classifiers=(
+         'Development Status :: 5 - Production/Stable',

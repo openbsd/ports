@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/12 20:40:39 juanfra Exp $
+lib/python${MODPY_VERSION}/site-packages/certifi/
+lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/certifi/__init__.py
+lib/python${MODPY_VERSION}/site-packages/certifi/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/certifi/__main__.py
+lib/python${MODPY_VERSION}/site-packages/certifi/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/certifi/core.py
+lib/python${MODPY_VERSION}/site-packages/certifi/core.pyc

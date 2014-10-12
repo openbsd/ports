@@ -1,0 +1,14 @@
+$OpenBSD: patch-certifi_core_py,v 1.1.1.1 2014/10/12 20:40:39 juanfra Exp $
+--- certifi/core.py.orig	Mon Oct  6 16:01:46 2014
++++ certifi/core.py	Mon Oct  6 16:02:24 2014
+@@ -11,9 +11,7 @@ This module returns the installation location of cacer
+ import os
+ 
+ def where():
+-    f = os.path.split(__file__)[0]
+-
+-    return os.path.join(f, 'cacert.pem')
++    return '${SYSCONFDIR}/ssl/cert.pem'
+ 
+ if __name__ == '__main__':
+     print(where())
