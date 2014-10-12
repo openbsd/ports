@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/10/06 06:34:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/10/12 06:16:19 ajacoutot Exp $
 
 PORTROACH=	limitw:1,even
 
@@ -6,8 +6,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
-DISTNAME=	p11-kit-0.22.0
-REVISION=	0
+DISTNAME=	p11-kit-0.22.1
 
 CATEGORIES=	security
 

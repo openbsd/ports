@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/10/04 16:46:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/12 06:16:19 ajacoutot Exp $
 @bin bin/p11-kit
 @bin bin/trust
 include/p11-kit-1/
@@ -42,6 +42,7 @@ share/gtk-doc/html/p11-kit/gtk-doc.css
 share/gtk-doc/html/p11-kit/home.png
 share/gtk-doc/html/p11-kit/index.html
 share/gtk-doc/html/p11-kit/index.sgml
+share/gtk-doc/html/p11-kit/left-insensitive.png
 share/gtk-doc/html/p11-kit/left.png
 share/gtk-doc/html/p11-kit/p11-kit-Deprecated.html
 share/gtk-doc/html/p11-kit/p11-kit-Future.html
@@ -53,6 +54,7 @@ share/gtk-doc/html/p11-kit/p11-kit.devhelp2
 share/gtk-doc/html/p11-kit/p11-kit.html
 share/gtk-doc/html/p11-kit/pkcs11-conf.html
 share/gtk-doc/html/p11-kit/reference.html
+share/gtk-doc/html/p11-kit/right-insensitive.png
 share/gtk-doc/html/p11-kit/right.png
 share/gtk-doc/html/p11-kit/sharing-managed.html
 share/gtk-doc/html/p11-kit/sharing.html
@@ -63,6 +65,7 @@ share/gtk-doc/html/p11-kit/trust-glib-networking.html
 share/gtk-doc/html/p11-kit/trust-module.html
 share/gtk-doc/html/p11-kit/trust-nss.html
 share/gtk-doc/html/p11-kit/trust.html
+share/gtk-doc/html/p11-kit/up-insensitive.png
 share/gtk-doc/html/p11-kit/up.png
 share/p11-kit/
 share/p11-kit/modules/
