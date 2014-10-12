@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.237 2014/10/03 11:29:34 jasper Exp $
+$OpenBSD: user.list,v 1.238 2014/10/12 20:10:52 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -252,3 +252,4 @@ id  user		group		port options
 741 _bind		_bind		net/isc-bind
 742 _restund		_restund	telephony/baresip/restund
 743 _gdnsd		_gdnsd		net/gdnsd
+744 _isc-dhcp		_isc-dhcp	net/isc-dhcp
