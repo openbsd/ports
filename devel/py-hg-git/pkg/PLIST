@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/25 16:19:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/12 21:00:13 juanfra Exp $
 lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -26,3 +26,5 @@ lib/python${MODPY_VERSION}/site-packages/hggit/overlay.py
 lib/python${MODPY_VERSION}/site-packages/hggit/overlay.pyc
 lib/python${MODPY_VERSION}/site-packages/hggit/util.py
 lib/python${MODPY_VERSION}/site-packages/hggit/util.pyc
+lib/python${MODPY_VERSION}/site-packages/hggit/verify.py
+lib/python${MODPY_VERSION}/site-packages/hggit/verify.pyc
