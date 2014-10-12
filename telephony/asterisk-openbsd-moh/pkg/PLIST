@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/05/27 21:22:29 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/10/12 00:36:33 ian Exp $
 share/asterisk/
 share/asterisk/moh/
 share/asterisk/moh/song30.sln
@@ -27,3 +27,4 @@ share/asterisk/moh/song52.sln
 share/asterisk/moh/song53.sln
 share/asterisk/moh/song54.sln
 share/asterisk/moh/song55.sln
+share/asterisk/moh/song56.sln
