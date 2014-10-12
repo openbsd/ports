@@ -1,0 +1,12 @@
+$OpenBSD: patch-bjnp-io_c,v 1.1 2014/10/12 06:36:20 ajacoutot Exp $
+--- bjnp-io.c.orig	Sat Oct 11 21:21:33 2014
++++ bjnp-io.c	Sat Oct 11 21:21:13 2014
+@@ -161,7 +161,7 @@ bjnp_tcp_connect(printer_t *printer)
+ static printer_t *
+ bjnp_init_printer(printer_t *printer, http_addr_t *addr, const char *user, const char *title)
+ {
+-    uint16_t session_id;
++    int16_t session_id;
+     char host[BJNP_HOST_MAX];
+     int port;
+     char family[BJNP_FAMILY_MAX];
