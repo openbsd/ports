@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/05/01 06:47:51 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/10/12 13:26:16 bcallah Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -77,6 +77,27 @@ share/doc/gxemul/20081103-openbsd-landisk-small.png
 share/doc/gxemul/20081103-openbsd-landisk.png
 share/doc/gxemul/20100205-netbsd-playstation2-small.png
 share/doc/gxemul/20100205-netbsd-playstation2.png
+share/doc/gxemul/20110606-dreamcast-roto-small.png
+share/doc/gxemul/20110606-dreamcast-roto.png
+share/doc/gxemul/20110624-dreamcast-gltest-small.png
+share/doc/gxemul/20110624-dreamcast-gltest.png
+share/doc/gxemul/20110703-dreamcast-gltest-small.png
+share/doc/gxemul/20110703-dreamcast-gltest.png
+share/doc/gxemul/20131109-displayDreamcastMemory-small.png
+share/doc/gxemul/20131109-displayDreamcastMemory.png
+share/doc/gxemul/20131109-openbsd_landisk.png
+share/doc/gxemul/20140802-dreamcast-bios-test1-small.png
+share/doc/gxemul/20140802-dreamcast-bios-test1.png
+share/doc/gxemul/20140802-dreamcast-bios-test2-small.png
+share/doc/gxemul/20140802-dreamcast-bios-test2.png
+share/doc/gxemul/20140802-dreamcast-bios-test3-small.png
+share/doc/gxemul/20140802-dreamcast-bios-test3.png
+share/doc/gxemul/20140803-dreamcast-bios-test4-small.png
+share/doc/gxemul/20140803-dreamcast-bios-test4.png
+share/doc/gxemul/20140803-dreamcast-gltest-small.png
+share/doc/gxemul/20140803-dreamcast-gltest.png
+share/doc/gxemul/20140803-serial-upload-slave-small.png
+share/doc/gxemul/20140803-serial-upload-slave.png
 share/doc/gxemul/RELEASE.html
 share/doc/gxemul/TODO.html
 share/doc/gxemul/configfiles.html
