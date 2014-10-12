@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2014/09/08 07:01:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/10/12 07:13:22 ajacoutot Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
-DISTNAME=		neon-0.30.0
-SHARED_LIBS +=  neon                 29.0     # 30.0
+DISTNAME=		neon-0.30.1
+SHARED_LIBS +=  neon                 29.0     # 30.1
 
 CATEGORIES=		net www devel
 
@@ -32,9 +32,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-ca-bundle=/etc/ssl/cert.pem \
 			--with-ssl=openssl \
 			--with-expat \
-			--with-libproxy \
 			--without-pakchois \
-			--without-gssapi \
 			--enable-nls
 
 post-install:

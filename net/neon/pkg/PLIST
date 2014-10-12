@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/09/08 07:01:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/10/12 07:13:22 ajacoutot Exp $
 bin/neon-config
 include/neon/
 include/neon/ne_207.h
@@ -89,7 +89,6 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_set_read_timeout.3
 @man man/man3/ne_set_request_body_buffer.3
 @man man/man3/ne_set_request_body_fd.3
-@man man/man3/ne_set_request_body_fd64.3
 @man man/man3/ne_set_request_flag.3
 @man man/man3/ne_set_server_auth.3
 @man man/man3/ne_set_session_flag.3
