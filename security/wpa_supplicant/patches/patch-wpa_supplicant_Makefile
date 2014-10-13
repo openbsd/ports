@@ -1,6 +1,22 @@
-$OpenBSD: patch-wpa_supplicant_Makefile,v 1.4 2014/10/11 17:55:50 dcoppa Exp $
+$OpenBSD: patch-wpa_supplicant_Makefile,v 1.5 2014/10/13 07:32:11 dcoppa Exp $
+
+commit 2d4e9c2eb811978a4097b7d249eca3c7e9c510e5
+Author: Jouni Malinen <j@w1.fi>
+Date:   Sun Oct 12 17:03:25 2014 +0300
+
+Include ieee802_11_common.c in wpa_supplicant build unconditionally
+
+This is needed for number of items and it was possible to make a build
+configuration that did not include ieee802_11_common.c while still
+trying to use functions from there. While it would be possible to add
+NEED_80211_COMMON=y to all the cases where this file is needed, the
+extra complexity from this is not really justifiable anymore, so include
+the file unconditionally.
+
+Signed-off-by: Jouni Malinen <j@w1.fi>
+
 --- wpa_supplicant/Makefile.orig	Thu Oct  9 16:41:31 2014
-+++ wpa_supplicant/Makefile	Fri Oct 10 11:02:04 2014
++++ wpa_supplicant/Makefile	Mon Oct 13 09:23:16 2014
 @@ -56,7 +56,7 @@ mkconfig:
  	echo CONFIG_DRIVER_WEXT=y >> .config
  
@@ -24,7 +40,44 @@ $OpenBSD: patch-wpa_supplicant_Makefile,v 1.4 2014/10/11 17:55:50 dcoppa Exp $
  ifdef CONFIG_ELOOP_POLL
  CFLAGS += -DCONFIG_ELOOP_POLL
  endif
-@@ -1391,9 +1384,7 @@ OBJS += sme.o
+@@ -194,7 +187,6 @@ endif
+ ifdef CONFIG_IEEE80211R
+ CFLAGS += -DCONFIG_IEEE80211R
+ OBJS += ../src/rsn_supp/wpa_ft.o
+-NEED_80211_COMMON=y
+ NEED_SHA256=y
+ NEED_AES_OMAC1=y
+ endif
+@@ -264,7 +256,6 @@ OBJS += ../src/utils/bitfield.o
+ CFLAGS += -DCONFIG_P2P
+ NEED_GAS=y
+ NEED_OFFCHANNEL=y
+-NEED_80211_COMMON=y
+ CONFIG_WPS=y
+ CONFIG_AP=y
+ ifdef CONFIG_P2P_STRICT
+@@ -635,7 +626,6 @@ CONFIG_IEEE8021X_EAPOL=y
+ NEED_DH_GROUPS=y
+ NEED_SHA256=y
+ NEED_BASE64=y
+-NEED_80211_COMMON=y
+ NEED_AES_CBC=y
+ NEED_MODEXP=y
+ 
+@@ -757,7 +747,6 @@ OBJS += ../src/pae/ieee802_1x_secy_ops.o
+ endif
+ 
+ ifdef CONFIG_AP
+-NEED_80211_COMMON=y
+ NEED_EAP_COMMON=y
+ NEED_RSN_AUTHENTICATOR=y
+ CFLAGS += -DCONFIG_AP
+@@ -1386,14 +1375,11 @@ OBJS += ../src/utils/base64.o
+ endif
+ 
+ ifdef NEED_SME
+-NEED_80211_COMMON=y
+ OBJS += sme.o
  CFLAGS += -DCONFIG_SME
  endif
  
