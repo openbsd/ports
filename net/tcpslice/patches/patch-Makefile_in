@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2007/07/13 08:16:16 rui Exp $
---- Makefile.in.orig	Thu May 31 19:51:14 2007
-+++ Makefile.in	Thu May 31 19:52:49 2007
-@@ -41,8 +41,8 @@ VPATH = @srcdir@
+$OpenBSD: patch-Makefile_in,v 1.4 2014/10/13 22:06:25 nigel Exp $
+--- Makefile.in.orig	Mon Apr  7 14:09:35 2014
++++ Makefile.in	Fri Oct 10 13:15:24 2014
+@@ -39,8 +39,8 @@ VPATH = @srcdir@
  
  CC = @CC@
  PROG = tcpslice
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2007/07/13 08:16:16 rui Exp $
  DEFS = @DEFS@ @CPPFLAGS@ @V_DEFS@
  
  # Standard CFLAGS
-@@ -61,9 +61,9 @@ INSTALL_DATA = @INSTALL_DATA@
+@@ -59,9 +59,9 @@ INSTALL_DATA = @INSTALL_DATA@
  # Explicitly define compilation rule since SunOS 4's make doesn't like gcc.
  # Also, gcc does not remove the .o before forking 'as', which can be a
  # problem if you don't own the file but can write to the directory.

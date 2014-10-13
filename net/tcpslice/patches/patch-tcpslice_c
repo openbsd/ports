@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
---- tcpslice.c.orig	Thu May 31 19:18:59 2007
-+++ tcpslice.c	Thu May 31 19:20:16 2007
-@@ -101,7 +101,7 @@ extern size_t strlcpy(char *, const char *, size_t);
+$OpenBSD: patch-tcpslice_c,v 1.4 2014/10/13 22:06:25 nigel Exp $
+--- tcpslice.c.orig	Mon Apr  7 14:09:35 2014
++++ tcpslice.c	Fri Oct 10 13:15:24 2014
+@@ -99,7 +99,7 @@ extern size_t strlcpy(char *, const char *, size_t);
  struct state {
  	off_t	start_pos,	/* seek position corresponding to start time */
  		stop_pos;	/* seek position corresponding to stop time */
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
  		file_start_time,	/* time of first pkt in file */
  		file_stop_time,		/* time of last pkt in file */
  		last_pkt_time;		/* time of most recently read pkt */
-@@ -125,18 +125,18 @@ enum stamp_styles timestamp_style = TIMESTAMP_RAW;
+@@ -123,18 +123,18 @@ enum stamp_styles timestamp_style = TIMESTAMP_RAW;
  
  
  int is_timestamp( char *str );
@@ -35,7 +35,7 @@ $OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
  void dump_times(struct state *states, int numfiles);
  __dead void usage(void)__attribute__((volatile));
  
-@@ -161,7 +161,7 @@ main(int argc, char **argv)
+@@ -159,7 +159,7 @@ main(int argc, char **argv)
  	char *start_time_string = 0;
  	char *stop_time_string = 0;
  	const char *write_file_name = "-";	/* default is stdout */
@@ -44,7 +44,7 @@ $OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
  	char ebuf[PCAP_ERRBUF_SIZE];
  	struct state *states;
  
-@@ -306,12 +306,12 @@ int is_timestamp( char *str )
+@@ -304,12 +304,12 @@ int is_timestamp( char *str )
   * containing the specified time.
   */
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
  	time_t usecs = 0;
  	int is_delta = (time_string[0] == '+');
  
-@@ -485,10 +485,10 @@ fill_tm(char *time_string, int is_delta, struct tm *t,
+@@ -483,10 +483,10 @@ fill_tm(char *time_string, int is_delta, struct tm *t,
  
  
  /* Of all the files, what is the lowest start time. */
@@ -73,7 +73,7 @@ $OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
  
  	while (numfiles--) {
  		if (sf_timestamp_less_than(&states->file_start_time, &min_time)) {
-@@ -500,10 +500,10 @@ lowest_start_time(struct state *states, int numfiles)
+@@ -498,10 +498,10 @@ lowest_start_time(struct state *states, int numfiles)
  }
  
  /* Of all the files, what is the latest end time. */
@@ -86,7 +86,7 @@ $OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
  
  	while (numfiles--) {
  		if (sf_timestamp_less_than(&max_time, &states->file_stop_time)) {
-@@ -599,12 +599,12 @@ open_files(char *filenames[], int numfiles)
+@@ -597,12 +597,12 @@ open_files(char *filenames[], int numfiles)
  
  void
  extract_slice(struct state *states, int numfiles, const char *write_file_name,
@@ -102,7 +102,7 @@ $OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
  	int i;
  
  	struct state *last_state;	/* remember the last packet */
-@@ -774,7 +774,7 @@ extract_slice(struct state *states, int numfiles, cons
+@@ -772,7 +772,7 @@ extract_slice(struct state *states, int numfiles, cons
   */
  
  char *

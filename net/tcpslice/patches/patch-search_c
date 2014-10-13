@@ -1,7 +1,7 @@
-$OpenBSD: patch-search_c,v 1.3 2008/06/05 19:43:57 rui Exp $
---- search.c.orig	Sat Aug 19 09:42:43 2006
-+++ search.c	Wed Jun  4 12:14:33 2008
-@@ -306,8 +306,8 @@ find_header( pcap_t *p, u_char *buf, int buf_len,
+$OpenBSD: patch-search_c,v 1.4 2014/10/13 22:06:25 nigel Exp $
+--- search.c.orig	Mon Apr  7 14:09:35 2014
++++ search.c	Fri Oct 10 13:15:24 2014
+@@ -302,8 +302,8 @@ find_header( pcap_t *p, u_char *buf, int buf_len,
   * present in the dump file.
   */
  int
@@ -12,7 +12,7 @@ $OpenBSD: patch-search_c,v 1.3 2008/06/05 19:43:57 rui Exp $
  	{
  	time_t first_time = first_timestamp->tv_sec;
  	off_t len_file;
-@@ -410,7 +410,7 @@ sf_find_end( pcap_t *p, struct timeval *first_timestam
+@@ -406,7 +406,7 @@ sf_find_end( pcap_t *p, struct timeval *first_timestam
  /* Takes two timeval's and returns the difference, tv2 - tv1, as a double. */
  
  static double
@@ -21,7 +21,7 @@ $OpenBSD: patch-search_c,v 1.3 2008/06/05 19:43:57 rui Exp $
  	{
  	double result = (tv2->tv_sec - tv1->tv_sec);
  	result += (tv2->tv_usec - tv1->tv_usec) / 1000000.0;
-@@ -422,7 +422,7 @@ timeval_diff( struct timeval *tv1, struct timeval *tv2
+@@ -418,7 +418,7 @@ timeval_diff( struct timeval *tv1, struct timeval *tv2
  /* Returns true if timestamp t1 is chronologically less than timestamp t2. */
  
  int
@@ -30,7 +30,7 @@ $OpenBSD: patch-search_c,v 1.3 2008/06/05 19:43:57 rui Exp $
  	{
  	return t1->tv_sec < t2->tv_sec ||
  	       (t1->tv_sec == t2->tv_sec &&
-@@ -436,9 +436,9 @@ sf_timestamp_less_than( struct timeval *t1, struct tim
+@@ -432,9 +432,9 @@ sf_timestamp_less_than( struct timeval *t1, struct tim
   */
  
  static off_t
@@ -43,7 +43,7 @@ $OpenBSD: patch-search_c,v 1.3 2008/06/05 19:43:57 rui Exp $
  	{
  	double full_span = timeval_diff( max_time, min_time );
  	double desired_span = timeval_diff( desired_time, min_time );
-@@ -459,7 +459,7 @@ interpolated_position( struct timeval *min_time, off_t
+@@ -455,7 +455,7 @@ interpolated_position( struct timeval *min_time, off_t
   */
  
  static int
@@ -52,7 +52,7 @@ $OpenBSD: patch-search_c,v 1.3 2008/06/05 19:43:57 rui Exp $
  	{
  	struct pcap_pkthdr hdr;
  	const u_char *buf;
-@@ -468,7 +468,7 @@ read_up_to( pcap_t *p, struct timeval *desired_time )
+@@ -464,7 +464,7 @@ read_up_to( pcap_t *p, struct timeval *desired_time )
  
  	for ( ; ; )
  		{
@@ -61,7 +61,7 @@ $OpenBSD: patch-search_c,v 1.3 2008/06/05 19:43:57 rui Exp $
  
  		pos = FTELL( pcap_file( p ) );
  		buf = pcap_next( p, &hdr );
-@@ -516,12 +516,12 @@ read_up_to( pcap_t *p, struct timeval *desired_time )
+@@ -512,12 +512,12 @@ read_up_to( pcap_t *p, struct timeval *desired_time )
  
  int
  sf_find_packet( pcap_t *p,
