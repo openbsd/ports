@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2014/04/21 14:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2014/10/13 09:41:22 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -9,7 +9,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.94
-REVISION=		5
+REVISION=		6
 
 MASTER_SITES0=		https://distfiles.bsdfrog.org/evolution-rss/
 PATCH_DIST_STRIP=	-p1
@@ -38,8 +38,8 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject camel-1.2 db dbus-1 dbus-glib-1
 WANTLIB += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
 WANTLIB += edata-book-1.2 edataserver-1.2 enchant expat ffi fontconfig
-WANTLIB += freetype gailutil-3 gck-1 gcr-3 gcr-base-3 gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += freetype gailutil-3 gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
