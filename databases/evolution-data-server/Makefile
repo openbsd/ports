@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2014/10/08 12:06:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.181 2014/10/13 08:54:59 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.12.6
-REVISION=		0
+GNOME_VERSION=		3.12.7
 
 CATEGORIES=		databases productivity
 
@@ -27,16 +26,16 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += atspi c cairo cairo-gobject crypto curl db dbus-1 expat
-WANTLIB += ffi fontconfig freetype gck-1 gcr-3 gcr-base-3 gcrypt
-WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gthread-2.0
-WANTLIB += gtk-3 gweather-3 harfbuzz ical icalss icalvcal icudata
-WANTLIB += icui18n icuuc idn lber-2.4 ldap-2.4 m nspr4 nss3 nssutil3
-WANTLIB += oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject crypto curl db dbus-1 expat ffi
+WANTLIB += fontconfig freetype gck-1 gcr-base-3 gcr-ui-3 gcrypt
+WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gthread-2.0 gtk-3 gweather-3 harfbuzz ical icalss icalvcal
+WANTLIB += icudata icui18n icuuc idn json-glib-1.0 lber-2.4 ldap-2.4
+WANTLIB += m nspr4 nss3 nssutil3 oauth p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += sasl2 secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl
 WANTLIB += ssl3 stdc++ xcb xcb-render xcb-shm xml2 z
 
