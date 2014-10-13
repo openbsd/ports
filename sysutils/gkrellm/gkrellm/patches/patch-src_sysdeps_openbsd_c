@@ -1,16 +1,15 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.19 2012/04/14 09:27:27 nigel Exp $
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.20 2014/10/13 19:21:43 sthen Exp $
 
 Adapt to new OpenBSD kinfo_proc API.
 
 --- src/sysdeps/openbsd.c.orig	Tue Oct  5 17:31:00 2010
 +++ src/sysdeps/openbsd.c	Sat Apr 14 01:36:30 2012
-@@ -62,85 +62,96 @@ gkrellm_sys_main_cleanup(void)
+@@ -62,85 +62,95 @@ gkrellm_sys_main_cleanup(void)
  /* ===================================================================== */
  /* CPU monitor interface */
  
 -#include <sys/dkstat.h>
 -#include <kvm.h>
-+#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <sys/sched.h>
  
@@ -147,7 +146,7 @@ Adapt to new OpenBSD kinfo_proc API.
     }
  
     if (getloadavg(&avenrun, 1) <= 0)
-@@ -187,7 +198,6 @@ gkrellm_sys_proc_init(void)
+@@ -187,7 +197,6 @@ gkrellm_sys_proc_init(void)
  #include <sys/vmmeter.h>
  #include <sys/sysctl.h>
  #include <uvm/uvm_extern.h>
@@ -155,7 +154,7 @@ Adapt to new OpenBSD kinfo_proc API.
  
  static gulong	swapin,
  				swapout;
-@@ -197,32 +207,22 @@ static guint64	swap_total,
+@@ -197,32 +206,22 @@ static guint64	swap_total,
  void
  gkrellm_sys_mem_read_data(void)
  {
@@ -196,7 +195,7 @@ Adapt to new OpenBSD kinfo_proc API.
     total = (uvmexp.npages - uvmexp.wired) << uvmexp.pageshift;
  
     /* not sure of what must be computed */
-@@ -240,8 +240,8 @@ gkrellm_sys_mem_read_data(void)
+@@ -240,8 +239,8 @@ gkrellm_sys_mem_read_data(void)
     gkrellm_mem_assign_data(total, used, free, shared, buffers, cached);
  
     /* show only the pages located on the disk and not in memory */
@@ -207,7 +206,7 @@ Adapt to new OpenBSD kinfo_proc API.
  
     /* For page in/out operations, uvmexp struct doesn't seem to be reliable */
  
-@@ -271,41 +271,125 @@ gkrellm_sys_mem_init(void)
+@@ -271,41 +270,125 @@ gkrellm_sys_mem_init(void)
  
  
  /* ===================================================================== */
@@ -345,7 +344,7 @@ Adapt to new OpenBSD kinfo_proc API.
  
  #include <machine/apmvar.h>
  #define	APMDEV		"/dev/apm"
-@@ -357,24 +441,10 @@ gkrellm_sys_battery_init()
+@@ -357,24 +440,10 @@ gkrellm_sys_battery_init()
  /* ===================================================================== */
  /* Disk monitor interface */
  
@@ -372,7 +371,7 @@ Adapt to new OpenBSD kinfo_proc API.
  gchar *
  gkrellm_sys_disk_name_from_device(gint device_number, gint unit_number,
  			gint *order)
-@@ -389,68 +459,50 @@ gkrellm_sys_disk_order_from_name(const gchar *name)
+@@ -389,68 +458,50 @@ gkrellm_sys_disk_order_from_name(const gchar *name)
  	}
  
  
