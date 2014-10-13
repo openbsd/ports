@@ -1,17 +1,13 @@
-$OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
+$OpenBSD: patch-defs_h,v 1.2 2014/10/13 19:17:23 sthen Exp $
 --- defs.h.orig	Sat Aug 20 13:44:47 2005
-+++ defs.h	Mon Nov 19 12:56:50 2007
-@@ -40,10 +40,18 @@
++++ defs.h	Mon Oct 13 20:16:16 2014
+@@ -40,10 +40,14 @@
  #include <stdlib.h>
  #include <syslog.h>
  #include <signal.h>
 +#include <string.h>
 +#include <unistd.h>
  
-+//#include <sys/socket.h>
-+//#include <sys/un.h>
-+//#include <sys/time.h>
-+#include <sys/param.h>
 +#include <sys/errno.h>
 +#include <sys/types.h>
  #include <sys/socket.h>
@@ -22,7 +18,7 @@ $OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
  
  #include <net/if.h>
  
-@@ -52,13 +60,32 @@
+@@ -52,13 +56,32 @@
      #include <linux/in.h>
      #include <linux/mroute.h>
  #else
@@ -55,7 +51,7 @@ $OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
  // The default path for the config file...
  #define     IGMPPROXY_CONFIG_FILEPATH     "/etc/igmpproxy.conf"
  #define     ENABLE_DEBUG    1
-@@ -73,8 +100,12 @@
+@@ -73,8 +96,12 @@
  #define MAX_MC_VIFS    32     // !!! check this const in the specific includes
  
  // Useful macros..          
@@ -68,7 +64,7 @@ $OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
  #define VCMC( Vc )  (sizeof( Vc ) / sizeof( (Vc)[ 0 ] ))
  #define VCEP( Vc )  (&(Vc)[ VCMC( Vc ) ])
  
-@@ -126,6 +157,7 @@ extern char LogLastMsg[ 128 ];    // last logged messa
+@@ -126,6 +153,7 @@ extern char LogLastMsg[ 128 ];    // last logged messa
  
  #define	    IF_DEBUG	if(Log2Stderr & LOG_DEBUG)
  
@@ -76,7 +72,7 @@ $OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
  void log( int Serverity, int Errno, const char *FmtSt, ... );
  
  /* ifvc.c
-@@ -196,6 +228,7 @@ void buildIfVc( void );
+@@ -196,6 +224,7 @@ void buildIfVc( void );
  struct IfDesc *getIfByName( const char *IfName );
  struct IfDesc *getIfByIx( unsigned Ix );
  struct IfDesc *getIfByAddress( uint32 Ix );
@@ -84,7 +80,7 @@ $OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
  
  /* mroute-api.c
   */
-@@ -235,7 +268,7 @@ void sendIgmp (uint32, uint32, int, int, uint32,int);
+@@ -235,7 +264,7 @@ void sendIgmp (uint32, uint32, int, int, uint32,int);
  char   *fmtInAdr( char *St, struct in_addr InAdr );
  char   *inetFmt(uint32 addr, char *s);
  char   *inetFmts(uint32 addr, uint32 mask, char *s);
@@ -93,7 +89,7 @@ $OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
  
  /* kern.c
   */
-@@ -264,7 +297,7 @@ int leaveMcGroup( int UdpSock, struct IfDesc *IfDp, ui
+@@ -264,7 +293,7 @@ int leaveMcGroup( int UdpSock, struct IfDesc *IfDp, ui
  void initRouteTable();
  void clearAllRoutes();
  int insertRoute(uint32 group, int ifx);
