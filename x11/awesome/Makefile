@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2014/09/29 11:12:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.86 2014/10/13 09:00:48 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
 DISTNAME=		awesome-3.5.5
-REVISION=		7
+REVISION=		8
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -73,6 +73,7 @@ post-install:
 		${WRKINST}${LOCALBASE}/share/awesome/lib/awful/widget/*.orig \
 		${WRKINST}${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig} \
 		${WRKINST}${LOCALBASE}/share/awesome/lib/wibox/*.orig \
+		${WRKINST}${LOCALBASE}/share/awesome/lib/wibox/layout/*.orig \
 		${WRKINST}${LOCALBASE}/share/awesome/lib/wibox/widget/*.orig \
 		${WRKINST}${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
