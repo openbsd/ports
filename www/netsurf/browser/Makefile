@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2014/06/24 00:03:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2014/10/13 09:29:20 bentley Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.1
+NETSURF_VERSION =	3.2
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
@@ -12,10 +12,10 @@ MODULES =		devel/gettext
 
 BUILD_DEPENDS =		www/p5-HTML-Parser
 LIB_DEPENDS =		www/netsurf/hubbub>=0.3.0 \
-			www/netsurf/libcss>=0.3.0 \
+			www/netsurf/libcss>=0.4.0 \
 			www/netsurf/libnsgif>=0.1.1 \
 			www/netsurf/libnsbmp>=0.1.1 \
-			www/netsurf/libdom>=0.1.0 \
+			www/netsurf/libdom>=0.1.1 \
 			graphics/libwebp \
 			x11/gtk+2 \
 			x11/gnome/librsvg \

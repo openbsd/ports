@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/04/28 09:02:15 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/10/13 09:29:20 bentley Exp $
 @bin bin/netsurf
 share/netsurf/
 share/netsurf/C
+share/netsurf/Messages
 share/netsurf/SearchEngines
 share/netsurf/adblock.css
 share/netsurf/arrow_down_8x32.png
 share/netsurf/ca-bundle.txt
 share/netsurf/cookies.gtk2.ui
-share/netsurf/cookies.gtk3.ui
+share/netsurf/credits.html
 share/netsurf/de/
 share/netsurf/de/Messages
 share/netsurf/de/welcome.html
 share/netsurf/default.css
 share/netsurf/default.ico
 share/netsurf/downloads.gtk2.ui
-share/netsurf/downloads.gtk3.ui
 share/netsurf/en/
 share/netsurf/en/Messages
 share/netsurf/en/credits.html
@@ -25,9 +25,7 @@ share/netsurf/fr/
 share/netsurf/fr/Messages
 share/netsurf/gtkdefault.css
 share/netsurf/history.gtk2.ui
-share/netsurf/history.gtk3.ui
 share/netsurf/hotlist.gtk2.ui
-share/netsurf/hotlist.gtk3.ui
 share/netsurf/icons/
 share/netsurf/icons/arrow-l.png
 share/netsurf/icons/content.png
@@ -45,27 +43,19 @@ share/netsurf/it/welcome.html
 share/netsurf/ja/
 share/netsurf/ja/welcome.html
 share/netsurf/languages
-share/netsurf/license
+share/netsurf/licence.html
 share/netsurf/login.gtk2.ui
-share/netsurf/login.gtk3.ui
 share/netsurf/netsurf-16x16.xpm
 share/netsurf/netsurf.gtk2.ui
-share/netsurf/netsurf.gtk3.ui
 share/netsurf/netsurf.png
 share/netsurf/netsurf.xpm
 share/netsurf/nl/
 share/netsurf/nl/Messages
 share/netsurf/options.gtk2.ui
-share/netsurf/options.gtk3.ui
 share/netsurf/password.gtk2.ui
-share/netsurf/password.gtk3.ui
 share/netsurf/quirks.css
-share/netsurf/source.gtk2.ui
-share/netsurf/source.gtk3.ui
 share/netsurf/ssl.gtk2.ui
-share/netsurf/ssl.gtk3.ui
 share/netsurf/tabcontents.gtk2.ui
-share/netsurf/tabcontents.gtk3.ui
 share/netsurf/themelist
 share/netsurf/themes/
 share/netsurf/themes/Alpha.png
@@ -110,7 +100,7 @@ share/netsurf/throbber/throbber6.png
 share/netsurf/throbber/throbber7.png
 share/netsurf/throbber/throbber8.png
 share/netsurf/toolbar.gtk2.ui
-share/netsurf/toolbar.gtk3.ui
 share/netsurf/toolbarIndices
+share/netsurf/viewdata.gtk2.ui
 share/netsurf/warning.gtk2.ui
-share/netsurf/warning.gtk3.ui
+share/netsurf/welcome.html
