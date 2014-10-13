@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/17 11:32:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/13 12:27:30 ajacoutot Exp $
 
 COMMENT =	library to deal with Japanese kana-to-kanji conversion
 
-DISTNAME =	libskk-1.0.1
+V =		1.0.2
+DISTNAME =	libskk-${V}
 
 SHARED_LIBS =	skk	0.0 # 0.0
 
@@ -13,17 +14,17 @@ HOMEPAGE =	https://github.com/ueno/libskk/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ffi gee gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += c ffi gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += json-glib-1.0 pcre pthread z
 
-MASTER_SITES =	https://bitbucket.org/libskk/libskk/downloads/
+MASTER_SITES =	https://github.com/ueno/libskk/releases/download/${V}/
 
 MODULES =	devel/gettext \
 		textproc/intltool
 BUILD_DEPENDS =	devel/gobject-introspection \
 		lang/vala
 RUN_DEPENDS =	japanese/skk-jisyo
-LIB_DEPENDS =	devel/libgee06 \
+LIB_DEPENDS =	devel/libgee \
 		devel/json-glib
 
 USE_GMAKE =	Yes
