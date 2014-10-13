@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/10 18:18:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/13 15:33:53 ajacoutot Exp $
 @bin bin/gnome-maps
 share/appdata/
 share/appdata/org.gnome.Maps.appdata.xml
@@ -26,6 +26,13 @@ share/gnome-maps/icons/hicolor/22x22/apps/
 share/gnome-maps/icons/hicolor/22x22/apps/user-location.png
 share/gnome-maps/icons/hicolor/32x32/
 share/gnome-maps/icons/hicolor/32x32/apps/
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-continue-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-left-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-right-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpleft-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpright-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-pin.svg
 share/icons/HighContrast/
 share/icons/HighContrast/16x16/

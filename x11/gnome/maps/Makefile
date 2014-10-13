@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/10 18:18:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/13 15:33:53 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.14.1
+GNOME_VERSION=		3.14.1.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
