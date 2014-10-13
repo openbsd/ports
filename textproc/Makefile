@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.421 2014/10/03 07:23:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.422 2014/10/13 00:53:32 yasuoka Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -322,6 +322,7 @@
      SUBDIR += py-rdflib,python3
      SUBDIR += py-rtf
      SUBDIR += py-sphinx
+     SUBDIR += py-sphinx-intl
      SUBDIR += py-unidecode
      SUBDIR += py-vatnumber
      SUBDIR += py-vobject
