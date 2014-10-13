@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/05/12 13:40:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/10/13 08:55:50 ajacoutot Exp $
 include/evolution-data-server/ews/
 include/evolution-data-server/ews/e-ews-connection-utils.h
 include/evolution-data-server/ews/e-ews-connection.h
@@ -24,10 +24,12 @@ lib/evolution-data-server/libewsutils.la
 @lib lib/evolution-data-server/libewsutils.so.${LIBewsutils_VERSION}
 lib/evolution-data-server/registry-modules/module-ews-backend.so
 lib/evolution/${EVO_VERSION}/modules/module-ews-configuration.so
+share/appdata/evolution-ews.metainfo.xml
 share/evolution-data-server/ews/
 share/evolution-data-server/ews/windowsZones.xml
 share/evolution/${EVO_VERSION}/errors/module-ews-configuration.error
 share/locale/as/LC_MESSAGES/evolution-ews.mo
+share/locale/bg/LC_MESSAGES/evolution-ews.mo
 share/locale/ca/LC_MESSAGES/evolution-ews.mo
 share/locale/cs/LC_MESSAGES/evolution-ews.mo
 share/locale/da/LC_MESSAGES/evolution-ews.mo
