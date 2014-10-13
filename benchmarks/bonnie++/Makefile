@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/16 19:56:09 miod Exp $
+# $OpenBSD: Makefile,v 1.11 2014/10/13 19:10:44 sthen Exp $
 
 # -Winit-self
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -6,6 +6,7 @@ NOT_FOR_ARCHS=	${GCC3_ARCHS}
 COMMENT=	enhanced performance test of filesystem I/O
 
 DISTNAME=	bonnie++-1.97
+REVISION=	0
 WRKDIST=	${WRKDIR}/${DISTNAME}.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
@@ -20,7 +21,7 @@ WANTLIB=	c m pthread stdc++
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf dest
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.67
 
 NO_TEST=	Yes
 

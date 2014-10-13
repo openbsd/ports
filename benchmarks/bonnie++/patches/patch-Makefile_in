@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2011/11/13 18:23:24 sthen Exp $
---- Makefile.in.orig	Tue Nov  8 12:42:48 2011
-+++ Makefile.in	Tue Nov  8 12:43:36 2011
+$OpenBSD: patch-Makefile_in,v 1.2 2014/10/13 19:10:44 sthen Exp $
+--- Makefile.in.orig	Tue Dec 30 21:04:25 2008
++++ Makefile.in	Mon Oct 13 20:09:28 2014
 @@ -9,7 +9,7 @@ prefix=@prefix@
  eprefix=@exec_prefix@
  #MORE_WARNINGS=-Weffc++
