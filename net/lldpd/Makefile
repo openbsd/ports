@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/16 16:26:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/13 16:56:28 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
-DISTNAME=	lldpd-0.7.10
+DISTNAME=	lldpd-0.7.11
 
 SHARED_LIBS +=	lldpctl                   0.1 # 7.0
 
@@ -31,6 +31,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-privsep-chroot=/var/run/lldpd
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
+FAKE_FLAGS=		sysconfdir="${PREFIX}/share/examples/lldpd"
 
 .if ${FLAVOR:Msnmp}
 CONFIGURE_ARGS+=	--with-snmp
