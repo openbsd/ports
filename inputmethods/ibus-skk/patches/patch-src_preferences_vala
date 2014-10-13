@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_preferences_vala,v 1.1 2012/10/28 17:48:24 fgsch Exp $
---- src/preferences.vala.orig	Thu Oct 25 01:10:30 2012
-+++ src/preferences.vala	Thu Oct 25 01:10:39 2012
-@@ -75,7 +75,7 @@ public class Preferences : Object {
+$OpenBSD: patch-src_preferences_vala,v 1.2 2014/10/13 12:32:12 ajacoutot Exp $
+--- src/preferences.vala.orig	Wed Aug 13 05:25:10 2014
++++ src/preferences.vala	Sat Oct  4 19:09:15 2014
+@@ -73,7 +73,7 @@ public class Preferences : Object {
              "type=file,file=%s/ibus-skk/user.dict,mode=readwrite".printf (
                  Environment.get_user_config_dir ()));
          dictionaries.add (
