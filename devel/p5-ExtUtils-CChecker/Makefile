@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/26 05:07:50 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/13 13:39:14 jsg Exp $
 
 COMMENT	= 	configure-time utilities for using C headers, etc.
 
 MODULES =	cpan
-DISTNAME =	ExtUtils-CChecker-0.08
+DISTNAME =	ExtUtils-CChecker-0.09
 CATEGORIES =	devel
 
 # perl
