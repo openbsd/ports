@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.13 2014/09/11 19:04:52 robert Exp $
---- chrome/chrome_browser_extensions.gypi.orig.port	Wed Sep 10 01:47:12 2014
-+++ chrome/chrome_browser_extensions.gypi	Wed Sep 10 22:05:40 2014
-@@ -958,6 +958,11 @@
-         'browser/extensions/window_controller_list_observer.h',
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.14 2014/10/13 06:49:19 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Thu Oct  2 19:39:46 2014
++++ chrome/chrome_browser_extensions.gypi	Fri Oct 10 16:10:30 2014
+@@ -1023,6 +1023,11 @@
+         '<@(chrome_browser_extensions_enabled_sources)',
        ],
        'conditions': [
 +        ['os_bsd==1', {
@@ -13,7 +13,7 @@ $OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.13 2014/09/11 19:04:52
          ['chromeos==1', {
            'dependencies': [
              '../build/linux/system.gyp:dbus',
-@@ -1069,7 +1074,7 @@
+@@ -1056,7 +1061,7 @@
              '../ui/keyboard/keyboard.gyp:keyboard_resources',
            ],
          }],

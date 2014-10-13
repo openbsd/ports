@@ -1,0 +1,25 @@
+$OpenBSD: patch-third_party_WebKit_Source_wtf_MathExtras_h,v 1.1 2014/10/13 06:49:19 robert Exp $
+--- third_party/WebKit/Source/wtf/MathExtras.h.orig.port	Sat Oct 11 12:11:08 2014
++++ third_party/WebKit/Source/wtf/MathExtras.h	Sat Oct 11 12:11:18 2014
+@@ -61,21 +61,6 @@ inline double wtf_ceil(double x) { return copysign(cei
+ 
+ #endif
+ 
+-#if OS(OPENBSD)
+-
+-namespace std {
+-
+-#ifndef isfinite
+-inline bool isfinite(double x) { return finite(x); }
+-#endif
+-#ifndef signbit
+-inline bool signbit(double x) { struct ieee_double *p = (struct ieee_double *)&x; return p->dbl_sign; }
+-#endif
+-
+-} // namespace std
+-
+-#endif
+-
+ #if COMPILER(MSVC) && (_MSC_VER < 1800)
+ 
+ // We must not do 'num + 0.5' or 'num - 0.5' because they can cause precision loss.

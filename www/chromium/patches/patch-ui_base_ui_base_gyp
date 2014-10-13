@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_base_ui_base_gyp,v 1.1 2014/07/20 17:22:34 robert Exp $
---- ui/base/ui_base.gyp.orig.port	Sat Jul 19 00:45:04 2014
-+++ ui/base/ui_base.gyp	Sat Jul 19 00:45:38 2014
-@@ -366,7 +366,7 @@
+$OpenBSD: patch-ui_base_ui_base_gyp,v 1.2 2014/10/13 06:49:19 robert Exp $
+--- ui/base/ui_base.gyp.orig.port	Thu Oct  2 19:39:48 2014
++++ ui/base/ui_base.gyp	Fri Oct 10 16:10:31 2014
+@@ -427,7 +427,7 @@
              'x/selection_utils.h',
            ]
          }],

@@ -1,17 +1,17 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.30 2014/09/11 19:04:52 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Wed Sep 10 01:47:12 2014
-+++ chrome/chrome_browser.gypi	Wed Sep 10 22:05:41 2014
-@@ -2979,7 +2979,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.31 2014/10/13 06:49:19 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Fri Oct 10 16:21:18 2014
++++ chrome/chrome_browser.gypi	Fri Oct 10 16:22:13 2014
+@@ -3173,7 +3173,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
 -        ['OS=="linux" and chromeos==0', {
-+        ['(OS=="linux" and chromeos==0) or os_bsd==1', {
++        ['OS=="linux" and chromeos==0 or os_bsd==1', {
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3106,7 +3106,7 @@
-             '../build/linux/system.gyp:xscrnsaver',
+@@ -3230,7 +3230,7 @@
+             }],
            ],
          }],
 -        ['os_posix == 1 and OS != "mac" and OS != "ios"', {
@@ -19,9 +19,9 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.30 2014/09/11 19:04:52 robert Exp
            'sources': [
              'app/chrome_breakpad_client.cc',
              'app/chrome_breakpad_client.h',
-@@ -3365,6 +3365,13 @@
-             ['exclude', '^third_party/mozilla_security_manager/'],
-           ],
+@@ -3313,6 +3313,13 @@
+         }, {  # Non-Android.
+           'sources': [ '<@(chrome_browser_non_android_sources)' ],
          }],
 +        ['os_bsd==1', {
 +          'sources/': [
@@ -33,12 +33,12 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.30 2014/09/11 19:04:52 robert Exp
          ['OS=="mac"', {
            'dependencies': [
              '../third_party/google_toolbox_for_mac/google_toolbox_for_mac.gyp:google_toolbox_for_mac',
-@@ -3465,7 +3472,7 @@
+@@ -3389,7 +3396,7 @@
              }],
            ],
          }],
 -        ['OS=="linux"', {
 +        ['OS=="linux" or os_bsd==1', {
+           'sources': [ '<@(chrome_browser_linux_sources)' ],
            'conditions': [
              ['use_aura==1', {
-               'dependencies': [

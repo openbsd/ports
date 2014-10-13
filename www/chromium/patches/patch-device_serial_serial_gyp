@@ -1,7 +1,7 @@
-$OpenBSD: patch-device_serial_serial_gyp,v 1.2 2014/09/11 19:04:52 robert Exp $
---- device/serial/serial.gyp.orig.port	Wed Sep 10 01:47:13 2014
-+++ device/serial/serial.gyp	Wed Sep 10 22:05:41 2014
-@@ -20,6 +20,12 @@
+$OpenBSD: patch-device_serial_serial_gyp,v 1.3 2014/10/13 06:49:19 robert Exp $
+--- device/serial/serial.gyp.orig.port	Thu Oct  2 19:39:47 2014
++++ device/serial/serial.gyp	Fri Oct 10 16:10:31 2014
+@@ -32,6 +32,12 @@
              '../../build/linux/system.gyp:udev',
            ],
          }],
@@ -12,5 +12,5 @@ $OpenBSD: patch-device_serial_serial_gyp,v 1.2 2014/09/11 19:04:52 robert Exp $
 +          ],
 +        }],
        ],
-       'variables': {
-         'mojom_base_output_dir': 'device/serial',
+       'dependencies': [
+         'device_serial_mojo',

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_events_event_switches_h,v 1.4 2014/09/11 19:04:53 robert Exp $
---- ui/events/event_switches.h.orig.port	Wed Sep 10 01:47:14 2014
-+++ ui/events/event_switches.h	Wed Sep 10 22:05:41 2014
-@@ -20,7 +20,7 @@ EVENTS_BASE_EXPORT extern const char kUnifiedGestureDe
- EVENTS_BASE_EXPORT extern const char kUnifiedGestureDetectorEnabled[];
+$OpenBSD: patch-ui_events_event_switches_h,v 1.5 2014/10/13 06:49:19 robert Exp $
+--- ui/events/event_switches.h.orig.port	Thu Oct  2 19:39:48 2014
++++ ui/events/event_switches.h	Fri Oct 10 16:10:31 2014
+@@ -21,7 +21,7 @@ EVENTS_BASE_EXPORT extern const char kUnifiedGestureDe
  EVENTS_BASE_EXPORT extern const char kUnifiedGestureDetectorDisabled[];
+ EVENTS_BASE_EXPORT extern const char kCompensateForUnstablePinchZoom[];
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.13 2014/09/11 19:04:52 robert Exp $
---- chrome/common/chrome_switches.h.orig.port	Wed Sep 10 01:47:12 2014
-+++ chrome/common/chrome_switches.h	Wed Sep 10 22:05:41 2014
-@@ -378,7 +378,7 @@ extern const char kOpenAsh[];
+$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.14 2014/10/13 06:49:19 robert Exp $
+--- chrome/common/chrome_switches.h.orig.port	Sat Oct 11 15:32:16 2014
++++ chrome/common/chrome_switches.h	Sat Oct 11 15:32:32 2014
+@@ -362,7 +362,7 @@ extern const char kOpenAsh[];
  extern const char kPasswordStore[];
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
- extern const char kEnableSpeechDispatcher[];
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  extern const char kMigrateDataDirForSxS[];
  #endif
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_fullscreen_fullscreen_exit_bubble_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/ui/fullscreen/fullscreen_exit_bubble.cc.orig.port	Sat Jul 19 11:17:49 2014
-+++ chrome/browser/ui/fullscreen/fullscreen_exit_bubble.cc	Sat Jul 19 11:31:00 2014
-@@ -17,7 +17,7 @@
+$OpenBSD: patch-chrome_browser_ui_fullscreen_fullscreen_exit_bubble_cc,v 1.2 2014/10/13 06:49:19 robert Exp $
+--- chrome/browser/ui/fullscreen/fullscreen_exit_bubble.cc.orig.port	Thu Oct  2 19:39:46 2014
++++ chrome/browser/ui/fullscreen/fullscreen_exit_bubble.cc	Fri Oct 10 16:10:30 2014
+@@ -18,7 +18,7 @@
  
  // NOTE(koz): Linux doesn't use the thick shadowed border, so we add padding
  // here.

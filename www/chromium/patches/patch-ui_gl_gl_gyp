@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gl_gl_gyp,v 1.8 2014/09/11 19:04:53 robert Exp $
---- ui/gl/gl.gyp.orig.port	Wed Sep 10 01:47:14 2014
-+++ ui/gl/gl.gyp	Wed Sep 10 22:05:41 2014
-@@ -171,7 +171,7 @@
+$OpenBSD: patch-ui_gl_gl_gyp,v 1.9 2014/10/13 06:49:19 robert Exp $
+--- ui/gl/gl.gyp.orig.port	Thu Oct  2 19:39:48 2014
++++ ui/gl/gl.gyp	Fri Oct 10 16:10:31 2014
+@@ -174,7 +174,7 @@
          },
        ],
        'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_gl_gl_gyp,v 1.8 2014/09/11 19:04:53 robert Exp $
            'sources': [
              'egl_util.cc',
              'egl_util.h',
-@@ -190,7 +190,7 @@
+@@ -195,7 +195,7 @@
              '<(DEPTH)/third_party/khronos',
          ],
          }],

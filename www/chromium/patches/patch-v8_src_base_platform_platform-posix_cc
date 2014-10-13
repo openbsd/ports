@@ -1,0 +1,13 @@
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.1 2014/10/13 06:49:19 robert Exp $
+--- v8/src/base/platform/platform-posix.cc.orig.port	Fri Oct 10 20:04:39 2014
++++ v8/src/base/platform/platform-posix.cc	Fri Oct 10 20:05:31 2014
+@@ -324,7 +324,9 @@ int OS::GetCurrentThreadId() {
+ #if defined(ANDROID)
+   return static_cast<int>(syscall(__NR_gettid));
+ #else
++#ifdef HAVE_SYSCALL_H
+   return static_cast<int>(syscall(SYS_gettid));
++#endif
+ #endif  // defined(ANDROID)
+ }
+ 

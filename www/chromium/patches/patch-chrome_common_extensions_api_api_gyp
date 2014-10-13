@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.6 2014/09/11 19:04:52 robert Exp $
---- chrome/common/extensions/api/api.gyp.orig.port	Wed Sep 10 01:47:12 2014
-+++ chrome/common/extensions/api/api.gyp	Wed Sep 10 22:05:41 2014
-@@ -215,6 +215,11 @@
+$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.7 2014/10/13 06:49:19 robert Exp $
+--- chrome/common/extensions/api/api.gyp.orig.port	Thu Oct  2 19:39:46 2014
++++ chrome/common/extensions/api/api.gyp	Fri Oct 10 16:10:30 2014
+@@ -206,6 +206,11 @@
                '<@(chromeos_branded_schema_files)',
              ],
            }],
@@ -12,4 +12,4 @@ $OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.6 2014/09/11 19:04:52 r
 +          }],
          ],
          'cc_dir': 'chrome/common/extensions/api',
-         'root_namespace': 'extensions::api',
+         'root_namespace': 'extensions::api::%(namespace)s',

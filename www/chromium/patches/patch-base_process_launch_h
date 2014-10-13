@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_process_launch_h,v 1.1 2014/10/13 06:49:19 robert Exp $
+--- base/process/launch.h.orig.port	Sat Oct 11 16:35:37 2014
++++ base/process/launch.h	Sat Oct 11 16:35:45 2014
+@@ -113,7 +113,7 @@ struct BASE_EXPORT LaunchOptions {
+   // will be the same as its pid.
+   bool new_process_group;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // If non-zero, start the process using clone(), using flags as provided.
+   int clone_flags;
+ 

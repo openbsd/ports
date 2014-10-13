@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_tracing_tracing_ui_cc,v 1.1 2014/10/13 06:49:19 robert Exp $
+--- content/browser/tracing/tracing_ui.cc.orig.port	Sat Oct 11 15:25:08 2014
++++ content/browser/tracing/tracing_ui.cc	Sat Oct 11 15:25:27 2014
+@@ -358,6 +358,8 @@ void TracingUI::DoUpload(const base::ListValue* args) 
+   const char product[] = "Chrome_Android";
+ #elif defined(OS_CHROMEOS)
+   const char product[] = "Chrome_ChromeOS";
++#elif defined(OS_OPENBSD)
++  const char product[] = "Chrome_OpenBSD";
+ #else
+ #error Platform not supported.
+ #endif

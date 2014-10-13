@@ -1,12 +1,16 @@
-$OpenBSD: patch-third_party_webrtc_base_stringutils_h,v 1.1 2014/09/11 19:04:53 robert Exp $
---- third_party/webrtc/base/stringutils.h.orig.port	Wed Sep 10 01:47:56 2014
-+++ third_party/webrtc/base/stringutils.h	Thu Sep 11 12:01:08 2014
-@@ -23,11 +23,11 @@
- #endif  // WEBRTC_WIN 
+$OpenBSD: patch-third_party_webrtc_base_stringutils_h,v 1.2 2014/10/13 06:49:19 robert Exp $
+--- third_party/webrtc/base/stringutils.h.orig.port	Thu Oct  2 19:40:33 2014
++++ third_party/webrtc/base/stringutils.h	Fri Oct 10 19:52:11 2014
+@@ -20,14 +20,14 @@
+ #include <malloc.h>
+ #include <wchar.h>
+ #define alloca _alloca
+-#endif  // WEBRTC_WIN 
++#endif  // WEBRTC_WIN
  
  #if defined(WEBRTC_POSIX)
 -#ifdef BSD
-+#ifdef WEBRTC_BSD
++#if defined(WEBRTC_BSD) || defined(BSD)
  #include <stdlib.h>
 -#else  // BSD
 +#else  // WEBRTC_BSD

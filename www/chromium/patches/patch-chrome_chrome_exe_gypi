@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_exe_gypi,v 1.1 2014/09/11 19:04:52 robert Exp $
---- chrome/chrome_exe.gypi.orig.port	Thu Sep 11 10:18:50 2014
-+++ chrome/chrome_exe.gypi	Thu Sep 11 10:52:43 2014
-@@ -428,7 +428,7 @@
+$OpenBSD: patch-chrome_chrome_exe_gypi,v 1.2 2014/10/13 06:49:19 robert Exp $
+--- chrome/chrome_exe.gypi.orig.port	Thu Oct  2 19:39:46 2014
++++ chrome/chrome_exe.gypi	Fri Oct 10 16:10:30 2014
+@@ -431,7 +431,7 @@
                ],
              }], # OS=="linux" and chromeos==0 and linux_dump_symbols==1
              # Android doesn't use pdfium.

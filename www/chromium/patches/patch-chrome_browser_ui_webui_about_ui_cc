@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.22 2014/09/11 19:04:52 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig.port	Wed Sep 10 01:47:12 2014
-+++ chrome/browser/ui/webui/about_ui.cc	Wed Sep 10 22:05:40 2014
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.23 2014/10/13 06:49:19 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig.port	Thu Oct  2 19:39:46 2014
++++ chrome/browser/ui/webui/about_ui.cc	Fri Oct 10 16:10:30 2014
 @@ -66,7 +66,7 @@
  #include "chrome/browser/ui/webui/theme_source.h"
  #endif
@@ -26,7 +26,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.22 2014/09/11 19:04:52 r
  
  // AboutMemoryHandler ----------------------------------------------------------
  
-@@ -1034,7 +1036,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -1036,7 +1038,7 @@ void AboutUIHTMLSource::StartDataRequest(
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          idr).as_string();
  #endif

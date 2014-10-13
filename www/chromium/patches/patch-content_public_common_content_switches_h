@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.1 2014/10/13 06:49:19 robert Exp $
+--- content/public/common/content_switches.h.orig.port	Sat Oct 11 15:56:45 2014
++++ content/public/common/content_switches.h	Sat Oct 11 15:56:56 2014
+@@ -266,7 +266,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
+ CONTENT_EXPORT extern const char kDisableVaapiAcceleratedVideoEncode[];
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ CONTENT_EXPORT extern const char kEnableSpeechDispatcher[];
+ #endif
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_common_gypi,v 1.26 2014/09/15 06:29:56 robert Exp $
---- build/common.gypi.orig.port	Wed Sep 10 01:47:11 2014
-+++ build/common.gypi	Sat Sep 13 14:21:07 2014
-@@ -87,7 +87,7 @@
+$OpenBSD: patch-build_common_gypi,v 1.27 2014/10/13 06:49:19 robert Exp $
+--- build/common.gypi.orig.port	Thu Oct  2 19:39:45 2014
++++ build/common.gypi	Sat Oct 11 09:51:07 2014
+@@ -91,7 +91,7 @@
  
            'conditions': [
              # ChromeOS and Windows use Aura and Ash.
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_common_gypi,v 1.26 2014/09/15 06:29:56 robert Exp $
                'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -754,7 +754,7 @@
+@@ -782,7 +782,7 @@
  
          # Use GPU accelerated cross process image transport by default
          # on linux builds with the Aura window manager
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_common_gypi,v 1.26 2014/09/15 06:29:56 robert Exp $
            'ui_compositor_image_transport%': 1,
          }, {
            'ui_compositor_image_transport%': 0,
-@@ -887,7 +887,7 @@
+@@ -915,7 +915,7 @@
          # NOTE: The check for disable_nacl==0 and component=="static_library"
          # can't be used here because these variables are not defined yet, but it
          # is still not supported.
@@ -28,7 +28,16 @@ $OpenBSD: patch-build_common_gypi,v 1.26 2014/09/15 06:29:56 robert Exp $
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -3311,6 +3311,14 @@
+@@ -931,7 +931,7 @@
+         }, {
+           'use_openmax_dl_fft%': 0,
+         }],
+-        ['OS=="win" or OS=="linux"', {
++        ['OS=="win" or OS=="linux" or OS=="openbsd"', {
+             'enable_mdns%' : 1,
+         }],
+ 
+@@ -3425,6 +3425,14 @@
          ],
        },
      }],
@@ -43,7 +52,7 @@ $OpenBSD: patch-build_common_gypi,v 1.26 2014/09/15 06:29:56 robert Exp $
      ['os_posix==1 and OS!="mac" and OS!="ios"', {
        'target_defaults': {
          # Enable -Werror by default, but put it in a variable so it can
-@@ -5385,8 +5393,8 @@
+@@ -5547,8 +5555,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [

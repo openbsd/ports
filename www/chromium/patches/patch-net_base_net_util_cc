@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_base_net_util_cc,v 1.8 2014/07/20 17:22:34 robert Exp $
---- net/base/net_util.cc.orig.port	Thu Jul 17 12:53:00 2014
-+++ net/base/net_util.cc	Thu Jul 17 12:53:13 2014
-@@ -23,6 +23,7 @@
+$OpenBSD: patch-net_base_net_util_cc,v 1.9 2014/10/13 06:49:19 robert Exp $
+--- net/base/net_util.cc.orig.port	Thu Oct  2 19:39:47 2014
++++ net/base/net_util.cc	Fri Oct 10 16:10:31 2014
+@@ -24,6 +24,7 @@
  #include <netdb.h>
  #include <netinet/in.h>
  #include <unistd.h>
