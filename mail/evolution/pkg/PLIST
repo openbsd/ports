@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2014/07/14 08:48:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2014/10/13 08:55:28 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -603,6 +603,8 @@ libexec/evolution/${EVO_VERSION}/csv2vcard
 @bin libexec/evolution/${EVO_VERSION}/killev
 share/GConf/gsettings/evolution.convert
 share/appdata/
+share/appdata/evolution-bogofilter.metainfo.xml
+share/appdata/evolution-spamassassin.metainfo.xml
 share/appdata/evolution.appdata.xml
 share/applications/evolution.desktop
 share/evolution/
