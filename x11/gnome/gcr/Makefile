@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.42 2014/10/05 12:57:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2014/10/13 11:51:58 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
 GNOME_VERSION=	3.14.0
+REVISION=	0
 
 SHARED_LIBS +=  gck-1                1.1      # 0.0
 SHARED_LIBS +=  gcr-base-3           2.1      # 1.0
 SHARED_LIBS +=  gcr-ui-3             2.1      # 1.0
-SHARED_LIBS +=  gcr-3                2.1      # 1.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -46,10 +46,5 @@ MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No
 pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-
-post-install:
-	grep -q '/libgcr-3.so' ${WRKSRC}/Makefile || exit 1
-	cd ${PREFIX}/lib && \
-		ln -s libgcr-ui-3.so.${LIBgcr-ui-3_VERSION} libgcr-3.so.${LIBgcr-ui-3_VERSION}
 
 .include <bsd.port.mk>
