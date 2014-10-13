@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2014/04/21 11:32:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2014/10/13 09:17:55 ajacoutot Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -84,7 +84,6 @@ LIB_DEPENDS-mjpeg=	${LIB_DEPENDS} \
 			multimedia/mjpegtools
 
 CONFIGURE_ARGS=		--disable-acm \
-			--disable-amrwb \
 			--disable-celt \
 			--disable-cog \
 			--disable-dc1394 \
