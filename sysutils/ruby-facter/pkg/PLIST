@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/08/26 07:03:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/10/13 07:39:06 landry Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -145,6 +145,7 @@ ${MODRUBY_SITEDIR}/facter/zonename.rb
 ${MODRUBY_SITEDIR}/facter/zones.rb
 ${MODRUBY_SITEDIR}/facter/zpool_version.rb
 @man man/man8/facter.8
+@sample ${SYSCONFDIR}/facter/
 @sample ${SYSCONFDIR}/facter/facts.d/
 ${MODRUBY_RELEXAMPLEDIR}-facter/
 ${MODRUBY_RELEXAMPLEDIR}-facter/facter.conf
