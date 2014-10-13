@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/23 18:59:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/13 09:13:31 dcoppa Exp $
 
 COMMENT =	high-performance event loop library
 
-DISTNAME =	libev-4.15
+DISTNAME =	libev-4.19
 CATEGORIES =	devel
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>

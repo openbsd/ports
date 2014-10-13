@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2013/04/23 18:59:53 dcoppa Exp $
---- configure.orig	Fri Mar  1 12:10:34 2013
-+++ configure	Tue Apr 23 08:54:04 2013
-@@ -3708,11 +3708,6 @@ fi
+$OpenBSD: patch-configure,v 1.5 2014/10/13 09:13:31 dcoppa Exp $
+--- configure.orig	Thu Sep 25 08:18:58 2014
++++ configure	Fri Oct 10 16:35:14 2014
+@@ -3879,11 +3879,6 @@ fi
  
  
  
