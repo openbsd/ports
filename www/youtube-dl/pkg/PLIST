@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2014/10/06 07:31:31 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.54 2014/10/14 09:00:29 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -579,6 +579,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spike.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spike.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sport5.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sport5.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sportbox.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sportbox.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sportdeutschland.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sportdeutschland.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/stanfordoc.py
@@ -621,6 +623,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/testurl.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/testurl.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tf1.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tf1.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/theonion.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/theonion.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/theplatform.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/theplatform.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/thesixtyone.py
@@ -725,6 +729,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vuclip.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vuclip.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vulture.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vulture.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/walla.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/walla.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/washingtonpost.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/washingtonpost.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/wat.py
