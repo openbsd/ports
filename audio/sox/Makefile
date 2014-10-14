@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/10/14 15:56:59 schwarze Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -39,7 +39,6 @@ LIB_DEPENDS=			\
 	audio/opencore-amr	\
 	audio/gsm
 
-USE_GROFF=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--datarootdir=${LOCALBASE}      \
