@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.356 2014/10/08 11:32:04 henning Exp $
+# $OpenBSD: Makefile,v 1.357 2014/10/14 11:30:04 henning Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -162,6 +162,7 @@
      SUBDIR += p5-Crypt-OpenPGP
      SUBDIR += p5-Crypt-OpenSSL-Bignum
      SUBDIR += p5-Crypt-OpenSSL-DSA
+     SUBDIR += p5-Crypt-OpenSSL-PKCS10
      SUBDIR += p5-Crypt-OpenSSL-RSA
      SUBDIR += p5-Crypt-OpenSSL-Random
      SUBDIR += p5-Crypt-OpenSSL-X509
