@@ -1,0 +1,22 @@
+$OpenBSD: patch-panels_power_cc-power-panel_c,v 1.1 2014/10/14 08:40:28 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=738509
+
+--- panels/power/cc-power-panel.c.orig	Tue Oct 14 10:21:12 2014
++++ panels/power/cc-power-panel.c	Tue Oct 14 10:22:08 2014
+@@ -1613,6 +1613,7 @@ add_power_saving_section (CcPowerPanel *self)
+                     G_CALLBACK (wifi_switch_changed), self);
+ #endif
+ 
++#ifdef HAVE_BLUETOOTH
+   priv->bt_rfkill = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+ 						   G_DBUS_PROXY_FLAGS_NONE,
+ 						   NULL,
+@@ -1654,6 +1655,7 @@ add_power_saving_section (CcPowerPanel *self)
+       g_signal_connect (G_OBJECT (priv->bt_switch), "notify::active",
+ 			G_CALLBACK (bt_switch_changed), self);
+     }
++#endif
+ 
+   gtk_widget_show_all (widget);
+ }
