@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1261 2014/10/13 12:33:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1262 2014/10/14 13:18:24 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -266,6 +266,7 @@
      SUBDIR += hs-regex-posix
      SUBDIR += hs-resourcet
      SUBDIR += hs-safe
+     SUBDIR += hs-scientific
      SUBDIR += hs-semigroupoids
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
