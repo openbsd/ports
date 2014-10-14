@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.326 2014/10/12 15:22:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.327 2014/10/14 09:46:35 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -153,6 +153,7 @@
      SUBDIR += py-daemon
      SUBDIR += py-lockfile
      SUBDIR += py-metlog
+     SUBDIR += py-statgrab
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
