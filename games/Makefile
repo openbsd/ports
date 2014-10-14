@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2014/09/30 17:46:38 abieber Exp $
+# $OpenBSD: Makefile,v 1.302 2014/10/14 23:11:56 abieber Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -138,6 +138,7 @@
      SUBDIR += meandmyshadow
      SUBDIR += megaglest
      SUBDIR += micropolis
+     SUBDIR += minecraft
      SUBDIR += minetest
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
