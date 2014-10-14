@@ -1,0 +1,11 @@
+Data.Scientific provides a space efficient and arbitrary precision
+scientific number type.
+
+Scientific numbers are represented using scientific notation. It uses a
+coefficient c :: Integer and a base-10 exponent e :: Int (do note that
+since we're using an Int to represent the exponent these numbers aren't
+truly arbitrary precision). A scientific number corresponds to the
+Fractional number: fromInteger c * 10 ^^ e.
+
+The main application of Scientific is to be used as the target of
+parsing arbitrary precision numbers coming from an untrusted source.
