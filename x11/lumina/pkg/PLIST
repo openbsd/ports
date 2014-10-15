@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/13 10:10:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/15 07:30:45 ajacoutot Exp $
 @bin bin/Lumina-DE
 @bin bin/lumina-config
 @bin bin/lumina-fm
 @bin bin/lumina-open
 @bin bin/lumina-screenshot
 include/LuminaOS.h
+include/LuminaThemes.h
 include/LuminaUtils.h
 include/LuminaX11.h
 include/LuminaXDG.h
@@ -12,6 +13,8 @@ include/LuminaXDG.h
 share/Lumina-DE/
 share/Lumina-DE/Login.ogg
 share/Lumina-DE/Logout.ogg
+share/Lumina-DE/colors/
+share/Lumina-DE/colors/SampleColors.qss.colors
 share/Lumina-DE/defaultapps.conf
 share/Lumina-DE/desktop-background.jpg
 share/Lumina-DE/desktopsettings.conf
