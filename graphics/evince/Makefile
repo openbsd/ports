@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2014/10/15 08:50:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2014/10/15 10:12:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,10 @@ GNOME_VERSION=	3.14.1
 PKGNAME-main=	${DISTNAME}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-dvi=		0
+REVISION-nautilus=	0
 
 MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
@@ -31,15 +35,6 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-# -std=c++11 needed
-MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha
-MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c c++
-
-USE_GROFF =	Yes
-
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes gtk-3 pango-1.0
@@ -55,7 +50,7 @@ MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
 
 LIB_DEPENDS=	x11/gtk+3
 
-WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 gailutil-3 \
+WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 \
 		gs gcrypt gpg-error stdc++ secret-1 \
 		jpeg pthread tiff xml2 lcms2 openjpeg \
 		poppler poppler-glib spectre avahi-common \
@@ -87,12 +82,7 @@ RUN_DEPENDS-nautilus=${MODGETTEXT_RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu
 
-# disable -Werror:
-#     warning: argument unused during compilation: '-I .'
-CONFIGURE_ARGS +=       --enable-compile-warnings=no \
-			--enable-cxx-warnings=no
-
-# XXX: Re-enable when it actually builds
+# modern browsers can already display PDF
 CONFIGURE_ARGS +=	--disable-browser-plugin
 
 MODGNOME_CPPFLAGS=${CFLAGS}
