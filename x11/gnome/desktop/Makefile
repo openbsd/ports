@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2014/10/14 15:57:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2014/10/15 11:14:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,6 +34,9 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			misc/hwdata
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=674799
+# gsettings-desktop-schema:
+#     org.gnome.desktop.background.gschema.xml
+#     org.gnome.desktop.interface.gschema.xml
 RUN_DEPENDS +=		x11/gnome/backgrounds \
 			x11/gnome/themes-standard
 
