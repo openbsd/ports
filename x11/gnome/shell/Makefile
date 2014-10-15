@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2014/10/07 06:44:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2014/10/15 08:27:48 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -32,7 +32,6 @@ WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile
 
 MODULES=		devel/dconf \
 			devel/gettext \
-			lang/clang \
 			lang/python \
 			x11/gnome
 
