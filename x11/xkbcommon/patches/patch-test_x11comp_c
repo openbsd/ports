@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_x11comp_c,v 1.1 2014/10/15 18:24:15 jasper Exp $
+
+Remove uncondintionally included linux/input.h,
+which isn't even required on Linux. Based on upstream
+commit e95fb475ebd203b030f17ddf9c55e487d3c929a0
+
+--- test/x11comp.c.orig	Wed Oct 15 20:02:06 2014
++++ test/x11comp.c	Wed Oct 15 20:08:27 2014
+@@ -28,7 +28,6 @@
+ #include <signal.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
+-#include <linux/input.h>
+ 
+ #include "test.h"
+ #include "xkbcommon/xkbcommon-x11.h"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/06 12:29:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/15 18:24:15 jasper Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
@@ -23,9 +23,6 @@ WANTLIB += Xau Xdmcp pthread-stubs xcb xcb-xkb
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--without-doxygen
-
-# XXX: Too many Linuxisms
-NO_TEST=		Yes
 
 # our pre-historic bison has been mummified and put into a museum.
 # so generate parser.c with a fresh young bison that still roams the plains.
