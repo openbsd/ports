@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2014/09/03 10:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2014/10/15 01:32:36 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
-DISTNAME=		get_iplayer-2.86
-REVISION=		0
+DISTNAME=		get_iplayer-2.86.20141013
+GH_ACCOUNT=		dinkypumpkin
+GH_PROJECT=		get_iplayer
+GH_COMMIT=		c1c9c2e28b6f812eda50611f5e76d025b3fb4f7c
 CATEGORIES=		multimedia
 
 # http://git.infradead.org/get_iplayer.git
@@ -14,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES=		ftp://ftp.infradead.org/pub/get_iplayer/
+#MASTER_SITES=		ftp://ftp.infradead.org/pub/get_iplayer/
 
 RUN_DEPENDS=		audio/id3lib \
 			audio/p5-MP3-Tag \
