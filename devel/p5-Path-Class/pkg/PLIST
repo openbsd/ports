@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 17:25:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/15 21:14:22 nigel Exp $
 ${P5SITE}/Path/
 ${P5SITE}/Path/Class/
 ${P5SITE}/Path/Class.pm
@@ -7,4 +7,5 @@ ${P5SITE}/Path/Class/Entity.pm
 ${P5SITE}/Path/Class/File.pm
 @man man/man3p/Path::Class.3p
 @man man/man3p/Path::Class::Dir.3p
+@man man/man3p/Path::Class::Entity.3p
 @man man/man3p/Path::Class::File.3p
