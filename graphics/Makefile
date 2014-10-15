@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.371 2014/09/27 16:31:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.372 2014/10/15 13:29:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -129,6 +129,7 @@
      SUBDIR += libexif-gtk
      SUBDIR += libgexiv2
      SUBDIR += libgphoto2
+     SUBDIR += libgxps
      SUBDIR += libiptcdata
      SUBDIR += libkdcraw
      SUBDIR += libkexif
