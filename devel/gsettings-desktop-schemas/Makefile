@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2014/10/05 12:31:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2014/10/15 16:19:35 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
 GNOME_PROJECT=	gsettings-desktop-schemas
-GNOME_VERSION=	3.14.0
+GNOME_VERSION=	3.14.1
 
 CATEGORIES=	devel
 
