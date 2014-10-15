@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/05 20:06:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/15 09:13:30 jasper Exp $
 bin/polari
 lib/polari/
 lib/polari/girepository-1.0/
@@ -53,6 +53,7 @@ share/locale/sk/LC_MESSAGES/polari.mo
 share/locale/sl/LC_MESSAGES/polari.mo
 share/locale/sr/LC_MESSAGES/polari.mo
 share/locale/sr@latin/LC_MESSAGES/polari.mo
+share/locale/sv/LC_MESSAGES/polari.mo
 share/locale/te/LC_MESSAGES/polari.mo
 share/locale/tr/LC_MESSAGES/polari.mo
 share/locale/uk/LC_MESSAGES/polari.mo
