@@ -1,41 +1,35 @@
-# $OpenBSD: Makefile,v 1.116 2014/10/15 10:12:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2014/10/15 13:12:46 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT-main=	viewer for multiple document formats
-COMMENT-dvi=	evince document viewer backend for dvi documents
-COMMENT-nautilus= evince plugin for nautilus
+COMMENT-main=		viewer for multiple document formats
+COMMENT-dvi=		evince document viewer backend for dvi documents
+COMMENT-nautilus= 	evince plugin for nautilus
 
-GNOME_PROJECT=	evince
-GNOME_VERSION=	3.14.1
+GNOME_PROJECT=		evince
+GNOME_VERSION=		3.14.1
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
-PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
+PKGNAME-main=		${DISTNAME}
+PKGNAME-dvi=		evince-dvi-${GNOME_VERSION}
+PKGNAME-nautilus= 	nautilus-evince-${GNOME_VERSION}
 
 REVISION-main=		0
 REVISION-dvi=		0
 REVISION-nautilus=	0
 
-MAJ_V=		3.0
-SUBST_VARS=	MAJ_V
+MAJ_V=			3.0
+SUBST_VARS=		MAJ_V
 
-CATEGORIES=	graphics print
+CATEGORIES=		graphics print
 
 SHARED_LIBS +=  evdocument3               0.2 # 4.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-
-MODULES=	devel/dconf \
-		devel/gettext \
-		x11/gnome
-
-BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes gtk-3 pango-1.0
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -45,63 +39,73 @@ WANTLIB += xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
 WANTLIB += atk-bridge-2.0 atspi harfbuzz
 WANTLIB += gmodule-2.0 graphite2
 
-MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
-MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
-LIB_DEPENDS=	x11/gtk+3
+MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection yelp
+MODGNOME_TOOLS += 	gtk-update-icon-cache shared-mime-info
 
-WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 \
-		gs gcrypt gpg-error stdc++ secret-1 \
-		jpeg pthread tiff xml2 lcms2 openjpeg \
-		poppler poppler-glib spectre avahi-common \
-		djvulibre
-LIB_DEPENDS-main= print/poppler \
-		print/libspectre \
-		graphics/djvulibre \
-		${LIB_DEPENDS}
-RUN_DEPENDS-main= ${RUN_DEPENDS} \
-		archivers/unrar \
-		archivers/unzip \
-		devel/gsettings-desktop-schemas \
-		print/ghostscript/gnu
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
-WANTLIB-dvi=	${WANTLIB} gs evdocument3 kpathsea spectre ICE SM \
-		jpeg avahi-common dbus-1 pthread
-LIB_DEPENDS-dvi= ${LIB_DEPENDS} \
-		${BASE_PKGPATH} \
-		print/texlive/base \
-		print/libspectre
-RUN_DEPENDS-dvi=${MODGETTEXT_RUN_DEPENDS}
+LIB_DEPENDS=		x11/gtk+3
 
-WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument3 \
-		ICE SM dbus-1 pthread
-LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
-		${LIB_DEPENDS} \
-		x11/gnome/nautilus
-RUN_DEPENDS-nautilus=${MODGETTEXT_RUN_DEPENDS}
+WANTLIB-main += ${WANTLIB} ICE SM c dbus-1 gs gcrypt gpg-error stdc++
+WANTLIB-main += secret-1 jpeg pthread tiff xml2 lcms2 openjpeg poppler
+WANTLIB-main += poppler-glib spectre avahi-common djvulibre
 
-CONFIGURE_STYLE=gnu
+LIB_DEPENDS-main=	print/poppler \
+			print/libspectre \
+			graphics/djvulibre \
+			${LIB_DEPENDS}
+
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			archivers/unrar \
+			archivers/unzip \
+			devel/gsettings-desktop-schemas \
+			print/ghostscript/gnu
+
+WANTLIB-dvi += ${WANTLIB} gs evdocument3 kpathsea spectre ICE SM jpeg
+WANTLIB-dvi += avahi-common dbus-1 pthread
+
+LIB_DEPENDS-dvi=	${LIB_DEPENDS} \
+			${BASE_PKGPATH} \
+			print/texlive/base \
+			print/libspectre
+
+RUN_DEPENDS-dvi=	${MODGETTEXT_RUN_DEPENDS}
+
+WANTLIB-nautilus += ${WANTLIB} gthread-2.0 nautilus-extension evdocument3
+WANTLIB-nautilus += ICE SM dbus-1 pthread
+
+LIB_DEPENDS-nautilus=	${BASE_PKGPATH} \
+			${LIB_DEPENDS} \
+			x11/gnome/nautilus
+
+RUN_DEPENDS-nautilus=	${MODGETTEXT_RUN_DEPENDS}
+
+CONFIGURE_STYLE=	gnu
 
 # modern browsers can already display PDF
 CONFIGURE_ARGS +=	--disable-browser-plugin
 
 MODGNOME_CPPFLAGS=${CFLAGS}
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
-MULTI_PACKAGES=	-main -dvi -nautilus
-PSEUDO_FLAVORS=	no_dvi no_nautilus light
+MULTI_PACKAGES=		-main -dvi -nautilus
+PSEUDO_FLAVORS=		no_dvi no_nautilus light
 FLAVOR?=
 .if ${FLAVOR:Mlight}
-FLAVOR += no_dvi no_nautilus
+FLAVOR +=		no_dvi no_nautilus
 .endif
 
 .include <bsd.port.arch.mk>
 
 .for s in -nautilus -dvi
 .  if ${BUILD_PACKAGES:M$s}
-CONFIGURE_ARGS+= --enable$s
+CONFIGURE_ARGS+=	--enable$s
 .  else
-CONFIGURE_ARGS+= --disable$s
+CONFIGURE_ARGS+=	--disable$s
 .  endif
 .endfor
 
