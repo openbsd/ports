@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/05/13 08:54:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/10/15 13:37:13 jasper Exp $
 @bin bin/gnome-system-monitor
 libexec/gnome-system-monitor/
 @bin libexec/gnome-system-monitor/gsm-kill
@@ -37,6 +37,33 @@ share/help/C/gnome-system-monitor/process-status.page
 share/help/C/gnome-system-monitor/process-update-speed.page
 share/help/C/gnome-system-monitor/solaris-mode.page
 share/help/C/gnome-system-monitor/units.page
+share/help/cs/
+share/help/cs/gnome-system-monitor/
+share/help/cs/gnome-system-monitor/commandline.page
+share/help/cs/gnome-system-monitor/cpu-check.page
+share/help/cs/gnome-system-monitor/cpu-mem-normal.page
+share/help/cs/gnome-system-monitor/cpu-multicore.page
+share/help/cs/gnome-system-monitor/fs-device.page
+share/help/cs/gnome-system-monitor/fs-diskusage.page
+share/help/cs/gnome-system-monitor/fs-info.page
+share/help/cs/gnome-system-monitor/fs-showall.page
+share/help/cs/gnome-system-monitor/index.page
+share/help/cs/gnome-system-monitor/legal.xml
+share/help/cs/gnome-system-monitor/mem-check.page
+share/help/cs/gnome-system-monitor/mem-swap.page
+share/help/cs/gnome-system-monitor/memory-map-use.page
+share/help/cs/gnome-system-monitor/net-bits.page
+share/help/cs/gnome-system-monitor/process-explain.page
+share/help/cs/gnome-system-monitor/process-files.page
+share/help/cs/gnome-system-monitor/process-identify-file.page
+share/help/cs/gnome-system-monitor/process-identify-hog.page
+share/help/cs/gnome-system-monitor/process-kill.page
+share/help/cs/gnome-system-monitor/process-many.page
+share/help/cs/gnome-system-monitor/process-priority-change.page
+share/help/cs/gnome-system-monitor/process-status.page
+share/help/cs/gnome-system-monitor/process-update-speed.page
+share/help/cs/gnome-system-monitor/solaris-mode.page
+share/help/cs/gnome-system-monitor/units.page
 share/help/de/
 share/help/de/gnome-system-monitor/
 share/help/de/gnome-system-monitor/commandline.page
@@ -172,6 +199,33 @@ share/help/hu/gnome-system-monitor/process-status.page
 share/help/hu/gnome-system-monitor/process-update-speed.page
 share/help/hu/gnome-system-monitor/solaris-mode.page
 share/help/hu/gnome-system-monitor/units.page
+share/help/ro/
+share/help/ro/gnome-system-monitor/
+share/help/ro/gnome-system-monitor/commandline.page
+share/help/ro/gnome-system-monitor/cpu-check.page
+share/help/ro/gnome-system-monitor/cpu-mem-normal.page
+share/help/ro/gnome-system-monitor/cpu-multicore.page
+share/help/ro/gnome-system-monitor/fs-device.page
+share/help/ro/gnome-system-monitor/fs-diskusage.page
+share/help/ro/gnome-system-monitor/fs-info.page
+share/help/ro/gnome-system-monitor/fs-showall.page
+share/help/ro/gnome-system-monitor/index.page
+share/help/ro/gnome-system-monitor/legal.xml
+share/help/ro/gnome-system-monitor/mem-check.page
+share/help/ro/gnome-system-monitor/mem-swap.page
+share/help/ro/gnome-system-monitor/memory-map-use.page
+share/help/ro/gnome-system-monitor/net-bits.page
+share/help/ro/gnome-system-monitor/process-explain.page
+share/help/ro/gnome-system-monitor/process-files.page
+share/help/ro/gnome-system-monitor/process-identify-file.page
+share/help/ro/gnome-system-monitor/process-identify-hog.page
+share/help/ro/gnome-system-monitor/process-kill.page
+share/help/ro/gnome-system-monitor/process-many.page
+share/help/ro/gnome-system-monitor/process-priority-change.page
+share/help/ro/gnome-system-monitor/process-status.page
+share/help/ro/gnome-system-monitor/process-update-speed.page
+share/help/ro/gnome-system-monitor/solaris-mode.page
+share/help/ro/gnome-system-monitor/units.page
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/as/LC_MESSAGES/gnome-system-monitor.mo
