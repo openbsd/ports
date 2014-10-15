@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/01 13:21:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/10/15 11:49:47 ajacoutot Exp $
 bin/gnome-documents
 lib/gnome-documents/
 lib/gnome-documents/girepository-1.0/
@@ -6,9 +6,7 @@ lib/gnome-documents/girepository-1.0/Gd-1.0.typelib
 lib/gnome-documents/girepository-1.0/GdPrivate-1.0.typelib
 lib/gnome-documents/libgd.so
 lib/gnome-documents/libgdprivate-1.0.so
-libexec/gnome-documents-service
 @man man/man1/gnome-documents.1
-share/appdata/
 share/appdata/org.gnome.Documents.appdata.xml
 share/applications/org.gnome.Documents.desktop
 share/dbus-1/services/org.gnome.Documents.service
@@ -66,6 +64,7 @@ share/help/C/gnome-documents/print.page
 share/help/C/gnome-documents/prob-no-show.page
 share/help/C/gnome-documents/prob-previews.page
 share/help/C/gnome-documents/search.page
+share/help/C/gnome-documents/view-add.page
 share/help/C/gnome-documents/view.page
 share/help/C/gnome-documents/viewgrid.page
 share/help/as/
@@ -83,6 +82,7 @@ share/help/as/gnome-documents/print.page
 share/help/as/gnome-documents/prob-no-show.page
 share/help/as/gnome-documents/prob-previews.page
 share/help/as/gnome-documents/search.page
+share/help/as/gnome-documents/view-add.page
 share/help/as/gnome-documents/view.page
 share/help/as/gnome-documents/viewgrid.page
 share/help/ca/gnome-documents/
@@ -99,6 +99,7 @@ share/help/ca/gnome-documents/print.page
 share/help/ca/gnome-documents/prob-no-show.page
 share/help/ca/gnome-documents/prob-previews.page
 share/help/ca/gnome-documents/search.page
+share/help/ca/gnome-documents/view-add.page
 share/help/ca/gnome-documents/view.page
 share/help/ca/gnome-documents/viewgrid.page
 share/help/cs/gnome-documents/
@@ -115,6 +116,7 @@ share/help/cs/gnome-documents/print.page
 share/help/cs/gnome-documents/prob-no-show.page
 share/help/cs/gnome-documents/prob-previews.page
 share/help/cs/gnome-documents/search.page
+share/help/cs/gnome-documents/view-add.page
 share/help/cs/gnome-documents/view.page
 share/help/cs/gnome-documents/viewgrid.page
 share/help/de/gnome-documents/
@@ -131,6 +133,7 @@ share/help/de/gnome-documents/print.page
 share/help/de/gnome-documents/prob-no-show.page
 share/help/de/gnome-documents/prob-previews.page
 share/help/de/gnome-documents/search.page
+share/help/de/gnome-documents/view-add.page
 share/help/de/gnome-documents/view.page
 share/help/de/gnome-documents/viewgrid.page
 share/help/el/gnome-documents/
@@ -147,6 +150,7 @@ share/help/el/gnome-documents/print.page
 share/help/el/gnome-documents/prob-no-show.page
 share/help/el/gnome-documents/prob-previews.page
 share/help/el/gnome-documents/search.page
+share/help/el/gnome-documents/view-add.page
 share/help/el/gnome-documents/view.page
 share/help/el/gnome-documents/viewgrid.page
 share/help/es/gnome-documents/
@@ -163,6 +167,7 @@ share/help/es/gnome-documents/print.page
 share/help/es/gnome-documents/prob-no-show.page
 share/help/es/gnome-documents/prob-previews.page
 share/help/es/gnome-documents/search.page
+share/help/es/gnome-documents/view-add.page
 share/help/es/gnome-documents/view.page
 share/help/es/gnome-documents/viewgrid.page
 share/help/fi/gnome-documents/
@@ -179,6 +184,7 @@ share/help/fi/gnome-documents/print.page
 share/help/fi/gnome-documents/prob-no-show.page
 share/help/fi/gnome-documents/prob-previews.page
 share/help/fi/gnome-documents/search.page
+share/help/fi/gnome-documents/view-add.page
 share/help/fi/gnome-documents/view.page
 share/help/fi/gnome-documents/viewgrid.page
 share/help/fr/gnome-documents/
@@ -195,6 +201,7 @@ share/help/fr/gnome-documents/print.page
 share/help/fr/gnome-documents/prob-no-show.page
 share/help/fr/gnome-documents/prob-previews.page
 share/help/fr/gnome-documents/search.page
+share/help/fr/gnome-documents/view-add.page
 share/help/fr/gnome-documents/view.page
 share/help/fr/gnome-documents/viewgrid.page
 share/help/gl/gnome-documents/
@@ -211,6 +218,7 @@ share/help/gl/gnome-documents/print.page
 share/help/gl/gnome-documents/prob-no-show.page
 share/help/gl/gnome-documents/prob-previews.page
 share/help/gl/gnome-documents/search.page
+share/help/gl/gnome-documents/view-add.page
 share/help/gl/gnome-documents/view.page
 share/help/gl/gnome-documents/viewgrid.page
 share/help/gu/
@@ -228,6 +236,7 @@ share/help/gu/gnome-documents/print.page
 share/help/gu/gnome-documents/prob-no-show.page
 share/help/gu/gnome-documents/prob-previews.page
 share/help/gu/gnome-documents/search.page
+share/help/gu/gnome-documents/view-add.page
 share/help/gu/gnome-documents/view.page
 share/help/gu/gnome-documents/viewgrid.page
 share/help/hi/
@@ -245,6 +254,7 @@ share/help/hi/gnome-documents/print.page
 share/help/hi/gnome-documents/prob-no-show.page
 share/help/hi/gnome-documents/prob-previews.page
 share/help/hi/gnome-documents/search.page
+share/help/hi/gnome-documents/view-add.page
 share/help/hi/gnome-documents/view.page
 share/help/hi/gnome-documents/viewgrid.page
 share/help/hu/gnome-documents/
@@ -261,6 +271,7 @@ share/help/hu/gnome-documents/print.page
 share/help/hu/gnome-documents/prob-no-show.page
 share/help/hu/gnome-documents/prob-previews.page
 share/help/hu/gnome-documents/search.page
+share/help/hu/gnome-documents/view-add.page
 share/help/hu/gnome-documents/view.page
 share/help/hu/gnome-documents/viewgrid.page
 share/help/id/gnome-documents/
@@ -277,6 +288,7 @@ share/help/id/gnome-documents/print.page
 share/help/id/gnome-documents/prob-no-show.page
 share/help/id/gnome-documents/prob-previews.page
 share/help/id/gnome-documents/search.page
+share/help/id/gnome-documents/view-add.page
 share/help/id/gnome-documents/view.page
 share/help/id/gnome-documents/viewgrid.page
 share/help/it/gnome-documents/
@@ -293,6 +305,7 @@ share/help/it/gnome-documents/print.page
 share/help/it/gnome-documents/prob-no-show.page
 share/help/it/gnome-documents/prob-previews.page
 share/help/it/gnome-documents/search.page
+share/help/it/gnome-documents/view-add.page
 share/help/it/gnome-documents/view.page
 share/help/it/gnome-documents/viewgrid.page
 share/help/ja/gnome-documents/
@@ -309,6 +322,7 @@ share/help/ja/gnome-documents/print.page
 share/help/ja/gnome-documents/prob-no-show.page
 share/help/ja/gnome-documents/prob-previews.page
 share/help/ja/gnome-documents/search.page
+share/help/ja/gnome-documents/view-add.page
 share/help/ja/gnome-documents/view.page
 share/help/ja/gnome-documents/viewgrid.page
 share/help/kn/
@@ -326,8 +340,26 @@ share/help/kn/gnome-documents/print.page
 share/help/kn/gnome-documents/prob-no-show.page
 share/help/kn/gnome-documents/prob-previews.page
 share/help/kn/gnome-documents/search.page
+share/help/kn/gnome-documents/view-add.page
 share/help/kn/gnome-documents/view.page
 share/help/kn/gnome-documents/viewgrid.page
+share/help/ko/gnome-documents/
+share/help/ko/gnome-documents/collections.page
+share/help/ko/gnome-documents/filter.page
+share/help/ko/gnome-documents/formats.page
+share/help/ko/gnome-documents/index.page
+share/help/ko/gnome-documents/info.page
+share/help/ko/gnome-documents/legal.xml
+share/help/ko/gnome-documents/media/
+share/help/ko/gnome-documents/media/go-down.png
+share/help/ko/gnome-documents/media/icon_gnome-documents.png
+share/help/ko/gnome-documents/print.page
+share/help/ko/gnome-documents/prob-no-show.page
+share/help/ko/gnome-documents/prob-previews.page
+share/help/ko/gnome-documents/search.page
+share/help/ko/gnome-documents/view-add.page
+share/help/ko/gnome-documents/view.page
+share/help/ko/gnome-documents/viewgrid.page
 share/help/lv/gnome-documents/
 share/help/lv/gnome-documents/collections.page
 share/help/lv/gnome-documents/filter.page
@@ -342,6 +374,7 @@ share/help/lv/gnome-documents/print.page
 share/help/lv/gnome-documents/prob-no-show.page
 share/help/lv/gnome-documents/prob-previews.page
 share/help/lv/gnome-documents/search.page
+share/help/lv/gnome-documents/view-add.page
 share/help/lv/gnome-documents/view.page
 share/help/lv/gnome-documents/viewgrid.page
 share/help/mr/
@@ -359,6 +392,7 @@ share/help/mr/gnome-documents/print.page
 share/help/mr/gnome-documents/prob-no-show.page
 share/help/mr/gnome-documents/prob-previews.page
 share/help/mr/gnome-documents/search.page
+share/help/mr/gnome-documents/view-add.page
 share/help/mr/gnome-documents/view.page
 share/help/mr/gnome-documents/viewgrid.page
 share/help/nl/gnome-documents/
@@ -375,6 +409,7 @@ share/help/nl/gnome-documents/print.page
 share/help/nl/gnome-documents/prob-no-show.page
 share/help/nl/gnome-documents/prob-previews.page
 share/help/nl/gnome-documents/search.page
+share/help/nl/gnome-documents/view-add.page
 share/help/nl/gnome-documents/view.page
 share/help/nl/gnome-documents/viewgrid.page
 share/help/pa/gnome-documents/
@@ -391,6 +426,7 @@ share/help/pa/gnome-documents/print.page
 share/help/pa/gnome-documents/prob-no-show.page
 share/help/pa/gnome-documents/prob-previews.page
 share/help/pa/gnome-documents/search.page
+share/help/pa/gnome-documents/view-add.page
 share/help/pa/gnome-documents/view.page
 share/help/pa/gnome-documents/viewgrid.page
 share/help/pt_BR/gnome-documents/
@@ -407,6 +443,7 @@ share/help/pt_BR/gnome-documents/print.page
 share/help/pt_BR/gnome-documents/prob-no-show.page
 share/help/pt_BR/gnome-documents/prob-previews.page
 share/help/pt_BR/gnome-documents/search.page
+share/help/pt_BR/gnome-documents/view-add.page
 share/help/pt_BR/gnome-documents/view.page
 share/help/pt_BR/gnome-documents/viewgrid.page
 share/help/ru/gnome-documents/
@@ -423,6 +460,7 @@ share/help/ru/gnome-documents/print.page
 share/help/ru/gnome-documents/prob-no-show.page
 share/help/ru/gnome-documents/prob-previews.page
 share/help/ru/gnome-documents/search.page
+share/help/ru/gnome-documents/view-add.page
 share/help/ru/gnome-documents/view.page
 share/help/ru/gnome-documents/viewgrid.page
 share/help/sl/gnome-documents/
@@ -439,6 +477,7 @@ share/help/sl/gnome-documents/print.page
 share/help/sl/gnome-documents/prob-no-show.page
 share/help/sl/gnome-documents/prob-previews.page
 share/help/sl/gnome-documents/search.page
+share/help/sl/gnome-documents/view-add.page
 share/help/sl/gnome-documents/view.page
 share/help/sl/gnome-documents/viewgrid.page
 share/help/sr/gnome-documents/
@@ -455,6 +494,7 @@ share/help/sr/gnome-documents/print.page
 share/help/sr/gnome-documents/prob-no-show.page
 share/help/sr/gnome-documents/prob-previews.page
 share/help/sr/gnome-documents/search.page
+share/help/sr/gnome-documents/view-add.page
 share/help/sr/gnome-documents/view.page
 share/help/sr/gnome-documents/viewgrid.page
 share/help/sr@latin/gnome-documents/
@@ -471,6 +511,7 @@ share/help/sr@latin/gnome-documents/print.page
 share/help/sr@latin/gnome-documents/prob-no-show.page
 share/help/sr@latin/gnome-documents/prob-previews.page
 share/help/sr@latin/gnome-documents/search.page
+share/help/sr@latin/gnome-documents/view-add.page
 share/help/sr@latin/gnome-documents/view.page
 share/help/sr@latin/gnome-documents/viewgrid.page
 share/help/sv/gnome-documents/
@@ -487,6 +528,7 @@ share/help/sv/gnome-documents/print.page
 share/help/sv/gnome-documents/prob-no-show.page
 share/help/sv/gnome-documents/prob-previews.page
 share/help/sv/gnome-documents/search.page
+share/help/sv/gnome-documents/view-add.page
 share/help/sv/gnome-documents/view.page
 share/help/sv/gnome-documents/viewgrid.page
 share/help/ta/
@@ -504,6 +546,7 @@ share/help/ta/gnome-documents/print.page
 share/help/ta/gnome-documents/prob-no-show.page
 share/help/ta/gnome-documents/prob-previews.page
 share/help/ta/gnome-documents/search.page
+share/help/ta/gnome-documents/view-add.page
 share/help/ta/gnome-documents/view.page
 share/help/ta/gnome-documents/viewgrid.page
 share/help/te/gnome-documents/
@@ -520,6 +563,7 @@ share/help/te/gnome-documents/print.page
 share/help/te/gnome-documents/prob-no-show.page
 share/help/te/gnome-documents/prob-previews.page
 share/help/te/gnome-documents/search.page
+share/help/te/gnome-documents/view-add.page
 share/help/te/gnome-documents/view.page
 share/help/te/gnome-documents/viewgrid.page
 share/help/vi/gnome-documents/
@@ -536,6 +580,7 @@ share/help/vi/gnome-documents/print.page
 share/help/vi/gnome-documents/prob-no-show.page
 share/help/vi/gnome-documents/prob-previews.page
 share/help/vi/gnome-documents/search.page
+share/help/vi/gnome-documents/view-add.page
 share/help/vi/gnome-documents/view.page
 share/help/vi/gnome-documents/viewgrid.page
 share/help/zh_CN/gnome-documents/
@@ -552,6 +597,7 @@ share/help/zh_CN/gnome-documents/print.page
 share/help/zh_CN/gnome-documents/prob-no-show.page
 share/help/zh_CN/gnome-documents/prob-previews.page
 share/help/zh_CN/gnome-documents/search.page
+share/help/zh_CN/gnome-documents/view-add.page
 share/help/zh_CN/gnome-documents/view.page
 share/help/zh_CN/gnome-documents/viewgrid.page
 share/icons/hicolor/16x16/apps/gnome-documents.png
@@ -599,6 +645,7 @@ share/locale/mk/LC_MESSAGES/gnome-documents.mo
 share/locale/ml/LC_MESSAGES/gnome-documents.mo
 share/locale/mr/LC_MESSAGES/gnome-documents.mo
 share/locale/nb/LC_MESSAGES/gnome-documents.mo
+share/locale/ne/LC_MESSAGES/gnome-documents.mo
 share/locale/nl/LC_MESSAGES/gnome-documents.mo
 share/locale/or/LC_MESSAGES/gnome-documents.mo
 share/locale/pa/LC_MESSAGES/gnome-documents.mo
