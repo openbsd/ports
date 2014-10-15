@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2014/10/15 13:48:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2014/10/15 13:54:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=		3.14.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-dvi=		evince-dvi-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-dvi=		1
 
 MAJ_V=			3.0

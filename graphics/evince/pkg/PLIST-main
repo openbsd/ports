@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2014/10/15 13:48:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2014/10/15 13:54:57 ajacoutot Exp $
 @conflict evince-djvu-*
-@conflict evince-nautilus-*
+@conflict nautilus-evince-*
 @pkgpath graphics/evince
 @pkgpath graphics/evince,-djvu
 @pkgpath graphics/evince,-nautilus
