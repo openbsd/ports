@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.29 2014/03/28 10:05:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2014/10/15 21:22:39 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 lib/epiphany/
-lib/epiphany/3.12/
-lib/epiphany/3.12/web-extensions/
-lib/epiphany/3.12/web-extensions/libephywebextension.so
+lib/epiphany/${MAJOR_V}/
+lib/epiphany/${MAJOR_V}/web-extensions/
+lib/epiphany/${MAJOR_V}/web-extensions/libephywebextension.so
 @bin libexec/epiphany-search-provider
 @man man/man1/epiphany.1
 share/GConf/gsettings/epiphany.convert

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2014/10/13 09:41:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2014/10/15 21:22:39 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	GNOME web browser based on webkit
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.12.1
 REVISION=	0
+MAJOR_V=	${GNOME_VERSION:R}
 
 CATEGORIES=	www
 
@@ -38,12 +39,12 @@ BUILD_DEPENDS=	devel/iso-codes \
 RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
 
-LIB_DEPENDS=	textproc/libxslt \
-		devel/libexecinfo \
+LIB_DEPENDS=	devel/libexecinfo \
 		devel/libnotify \
 		devel/libwnck3 \
 		devel/startup-notification \
 		net/avahi \
+		textproc/libxslt \
 		www/webkit,gtk3 \
 		x11/gnome/desktop \
 		x11/gnome/gcr
@@ -67,7 +68,9 @@ TEST_DEPENDS=		${BASE_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
 PORTHOME=		${WRKDIR}
 
+SUBST_VARS+=		MAJOR_V
+
 post-install:
-	rm ${PREFIX}/lib/epiphany/3.12/web-extensions/*.{a,la}
+	rm ${PREFIX}/lib/epiphany/${MAJOR_V}/web-extensions/*.{a,la}
 
 .include <bsd.port.mk>
