@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.117 2014/10/15 13:12:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2014/10/15 13:48:21 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		viewer for multiple document formats
-COMMENT-dvi=		evince document viewer backend for dvi documents
-COMMENT-nautilus= 	evince plugin for nautilus
+COMMENT-main=		GNOME document viewer
+COMMENT-dvi=		evince dvi backend
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.14.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-dvi=		evince-dvi-${GNOME_VERSION}
-PKGNAME-nautilus= 	nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-dvi=		0
-REVISION-nautilus=	0
+REVISION-main=		1
+REVISION-dvi=		1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -36,28 +33,30 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
-WANTLIB += atk-bridge-2.0 atspi harfbuzz
-WANTLIB += gmodule-2.0 graphite2
+WANTLIB += atk-bridge-2.0 atspi harfbuzz ICE SM gs gmodule-2.0 jpeg
+WANTLIB += graphite2 avahi-common dbus-1 pthread spectre
 
 MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection yelp
-MODGNOME_TOOLS += 	gtk-update-icon-cache shared-mime-info
+MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection yelp
+MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
-LIB_DEPENDS=		x11/gtk+3
+LIB_DEPENDS=		print/libspectre \
+			x11/gtk+3
 
-WANTLIB-main += ${WANTLIB} ICE SM c dbus-1 gs gcrypt gpg-error stdc++
-WANTLIB-main += secret-1 jpeg pthread tiff xml2 lcms2 openjpeg poppler
-WANTLIB-main += poppler-glib spectre avahi-common djvulibre
+WANTLIB-main +=	${WANTLIB} c gnome-desktop-3 gcrypt gpg-error stdc++
+WANTLIB-main +=	secret-1 tiff xml2 lcms2 openjpeg poppler poppler-glib
+WANTLIB-main +=	djvulibre archive bz2 gxps lzma nautilus-extension
 
-LIB_DEPENDS-main=	print/poppler \
-			print/libspectre \
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			print/poppler \
 			graphics/djvulibre \
-			${LIB_DEPENDS}
+			graphics/libgxps \
+			x11/gnome/nautilus
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			archivers/unrar \
@@ -65,56 +64,25 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/gsettings-desktop-schemas \
 			print/ghostscript/gnu
 
-WANTLIB-dvi += ${WANTLIB} gs evdocument3 kpathsea spectre ICE SM jpeg
-WANTLIB-dvi += avahi-common dbus-1 pthread
+WANTLIB-dvi += ${WANTLIB} evdocument3 kpathsea
 
 LIB_DEPENDS-dvi=	${LIB_DEPENDS} \
 			${BASE_PKGPATH} \
-			print/texlive/base \
-			print/libspectre
+			print/texlive/base
 
 RUN_DEPENDS-dvi=	${MODGETTEXT_RUN_DEPENDS}
-
-WANTLIB-nautilus += ${WANTLIB} gthread-2.0 nautilus-extension evdocument3
-WANTLIB-nautilus += ICE SM dbus-1 pthread
-
-LIB_DEPENDS-nautilus=	${BASE_PKGPATH} \
-			${LIB_DEPENDS} \
-			x11/gnome/nautilus
-
-RUN_DEPENDS-nautilus=	${MODGETTEXT_RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
 
 # modern browsers can already display PDF
 CONFIGURE_ARGS +=	--disable-browser-plugin
 
-MODGNOME_CPPFLAGS=${CFLAGS}
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
-MULTI_PACKAGES=		-main -dvi -nautilus
-PSEUDO_FLAVORS=		no_dvi no_nautilus light
-FLAVOR?=
-.if ${FLAVOR:Mlight}
-FLAVOR +=		no_dvi no_nautilus
-.endif
-
-.include <bsd.port.arch.mk>
-
-.for s in -nautilus -dvi
-.  if ${BUILD_PACKAGES:M$s}
-CONFIGURE_ARGS+=	--enable$s
-.  else
-CONFIGURE_ARGS+=	--disable$s
-.  endif
-.endfor
+MULTI_PACKAGES=		-main -dvi
 
 post-install:
-# This will fail if no_nautilus is found in FLAVOR, so make sure we don't
-# do it if it is.
-.if ${BUILD_PACKAGES:M-nautilus}
 	rm ${PREFIX}/lib/nautilus/extensions-${MAJ_V}/*.{a,la}
-.endif
 	rm ${PREFIX}/lib/evince/4/backends/*.{a,la}
 
 .include <bsd.port.mk>
