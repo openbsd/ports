@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2014/09/16 09:09:46 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2014/10/15 02:06:35 jeremy Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -26,4 +26,9 @@ CONFIGURE_ENV +=	PREFIX="${PREFIX}" \
 REV ?=			${VERSION:R}
 SUB ?=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
 SUBST_VARS +=		SUB REV
-FAKE_AS_ROOT = always-wrap
+FILESDIR ?=		${.CURDIR}/../files
+
+post-install:
+	sed 's/INSTALL_ARGS/-c -o ${BINOWN} -g ${BINGRP}/' < \
+		${FILESDIR}/rbconfig_fix.rb >> \
+		${PREFIX}/lib/ruby/${RUBYLIBREV}/${SUB}/rbconfig.rb

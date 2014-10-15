@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.76 2014/10/11 19:52:10 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.77 2014/10/15 02:06:35 jeremy Exp $
 
 # ruby module
 
@@ -293,7 +293,7 @@ LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 
 .if ${CONFIGURE_STYLE:L:Mextconf}
 CONFIGURE_STYLE=	simple
-CONFIGURE_SCRIPT=	${RUBY} extconf.rb
+CONFIGURE_SCRIPT=	${SETENV} ${MAKE_ENV} ${RUBY} extconf.rb
 .elif ${CONFIGURE_STYLE:L:Mgem}
 # All gems should be in the same directory on rubygems.org.
 MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}

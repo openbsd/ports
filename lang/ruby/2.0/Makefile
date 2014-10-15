@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/22 15:14:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/15 02:06:35 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -15,6 +15,7 @@ PKGNAME-main =		ruby-${VERSION}.${PATCHLEVEL}
 PKGNAME-gdbm =		ruby20-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby20-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby20-ri_docs-${VERSION}.${PATCHLEVEL}
+REVISION-main =		0
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
@@ -87,8 +88,6 @@ TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 pre-install:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm
-
-post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
 do-test:

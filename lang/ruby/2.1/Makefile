@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/22 15:15:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/15 02:06:36 jeremy Exp $
 
 BROKEN-hppa =		miniruby abort trap when generating rdoc
 BROKEN-alpha =		miniruby abort trap when generating rdoc
@@ -18,6 +18,7 @@ PKGNAME-main =		ruby-${VERSION}
 PKGNAME-gdbm =		ruby21-gdbm-${VERSION}
 PKGNAME-tk =		ruby21-tk-${VERSION}
 PKGNAME-ri_docs =	ruby21-ri_docs-${VERSION}
+REVISION-main =		0
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
@@ -92,8 +93,6 @@ TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 pre-install:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm
-
-post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
 do-test:
