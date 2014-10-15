@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_backends_native_meta-cursor-renderer-native_c,v 1.1 2014/10/15 13:35:27 jasper Exp $
+$OpenBSD: patch-src_backends_native_meta-cursor-renderer-native_c,v 1.2 2014/10/15 14:11:44 jasper Exp $
 
 Revert 488dd0b402dc8c56a70f995a7456c2ff511a818b,
 while Wayland-specific, it requires Mesa >= 10.3.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=738578
 
 --- src/backends/native/meta-cursor-renderer-native.c.orig	Thu Oct  2 16:29:20 2014
 +++ src/backends/native/meta-cursor-renderer-native.c	Wed Oct 15 13:59:39 2014

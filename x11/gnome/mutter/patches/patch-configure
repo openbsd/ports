@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2014/10/15 13:35:27 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2014/10/15 14:11:44 jasper Exp $
 
 Related to 488dd0b402dc8c56a70f995a7456c2ff511a818b,
 while Wayland-specific, it requires Mesa >= 10.3.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=738578
 
 --- configure.orig	Wed Oct 15 13:56:24 2014
 +++ configure	Wed Oct 15 13:56:44 2014
