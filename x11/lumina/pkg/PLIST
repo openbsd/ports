@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/15 07:30:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/15 14:32:06 ajacoutot Exp $
 @bin bin/Lumina-DE
 @bin bin/lumina-config
 @bin bin/lumina-fm
@@ -330,6 +330,8 @@ share/Lumina-DE/i18n/lumina-screenshot_zh_HK.qm
 share/Lumina-DE/i18n/lumina-screenshot_zh_TW.qm
 share/Lumina-DE/i18n/lumina-screenshot_zu.qm
 share/Lumina-DE/stylesheet.qss
+share/Lumina-DE/themes/
+share/Lumina-DE/themes/Lumina-default.qss.template
 share/applications/lumina-fm.desktop
 share/applications/lumina-screenshot.desktop
 share/pixmaps/Insight-FileManager.png
