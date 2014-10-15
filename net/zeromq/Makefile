@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/23 12:08:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/15 14:28:42 ajacoutot Exp $
 
 # Note: use 'ulimit -n 1024' for regress tests
 
@@ -6,9 +6,9 @@ SHARED_ONLY =		Yes
 
 COMMENT =		open source message queue optimised for performance
 
-DISTNAME =		zeromq-4.0.4
+DISTNAME =		zeromq-4.0.5
 
-SHARED_LIBS +=  zmq                  3.0      # 4.0
+SHARED_LIBS +=  zmq                  4.0      # 4.0
 
 CATEGORIES =		net
 HOMEPAGE =		http://zeromq.org/

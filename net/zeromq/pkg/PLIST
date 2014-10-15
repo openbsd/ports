@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/09/23 12:08:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/15 14:28:42 ajacoutot Exp $
 @bin bin/curve_keygen
 include/zmq.h
 include/zmq_utils.h
@@ -34,6 +34,7 @@ lib/pkgconfig/libzmq.pc
 @man man/man3/zmq_msg_size.3
 @man man/man3/zmq_poll.3
 @man man/man3/zmq_proxy.3
+@man man/man3/zmq_proxy_steerable.3
 @man man/man3/zmq_recv.3
 @man man/man3/zmq_recvmsg.3
 @man man/man3/zmq_send.3
