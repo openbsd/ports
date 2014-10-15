@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2014/10/10 12:14:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/10/15 11:27:17 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		audio/video communications framework
 
-DISTNAME=		farstream-0.2.4
-REVISION=		0
+DISTNAME=		farstream-0.2.6
 
 CATEGORIES=		net devel
 
-SHARED_LIBS +=  farstream-0.2        0.1      # 3.1
+SHARED_LIBS +=  farstream-0.2        1.0      # 3.1
 
 API_VERSION=		0.2
 SUBST_VARS+=		API_VERSION
@@ -33,7 +32,7 @@ WANTLIB += soup-2.4 xml2 z sqlite3
 
 BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
-			net/libnice
+			net/libnice>=0.1.8
 TEST_DEPENDS=		multimedia/gstreamer1/plugins-bad
 
 USE_GMAKE=		Yes

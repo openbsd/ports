@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/10/10 12:14:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/10/15 11:27:17 jasper Exp $
 @conflict farsight2-*
 @pkgpath net/farsight2
 include/farstream-${API_VERSION}/
@@ -24,8 +24,8 @@ lib/farstream-${API_VERSION}/libshm-transmitter.so
 lib/girepository-1.0/Farstream-${API_VERSION}.typelib
 lib/gstreamer-1.0/libfsmsnconference.so
 lib/gstreamer-1.0/libfsrawconference.so
-lib/gstreamer-1.0/libfsrtcpfilter.so
 lib/gstreamer-1.0/libfsrtpconference.so
+lib/gstreamer-1.0/libfsrtpxdata.so
 lib/gstreamer-1.0/libfsvideoanyrate.so
 lib/libfarstream-${API_VERSION}.a
 lib/libfarstream-${API_VERSION}.la
@@ -61,22 +61,27 @@ share/gtk-doc/html/farstream-libs-${API_VERSION}/farstream-libs-Utility-function
 share/gtk-doc/html/farstream-libs-${API_VERSION}/home.png
 share/gtk-doc/html/farstream-libs-${API_VERSION}/index.html
 share/gtk-doc/html/farstream-libs-${API_VERSION}/index.sgml
+share/gtk-doc/html/farstream-libs-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/farstream-libs-${API_VERSION}/left.png
 share/gtk-doc/html/farstream-libs-${API_VERSION}/pt01.html
 share/gtk-doc/html/farstream-libs-${API_VERSION}/pt02.html
+share/gtk-doc/html/farstream-libs-${API_VERSION}/right-insensitive.png
 share/gtk-doc/html/farstream-libs-${API_VERSION}/right.png
 share/gtk-doc/html/farstream-libs-${API_VERSION}/style.css
+share/gtk-doc/html/farstream-libs-${API_VERSION}/up-insensitive.png
 share/gtk-doc/html/farstream-libs-${API_VERSION}/up.png
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsMsnCamSendConference.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsMsnConference.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsMsnParticipant.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsRTPXdataDepay.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsRTPXdataPay.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsRawConference.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsRtpConference.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsRtpParticipant.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsRtpSession.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsRtpStream.html
-share/gtk-doc/html/farstream-plugins-${API_VERSION}/GstVideoanyrate.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/FsVideoanyrate.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/ch01.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/ch02.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/ch03.html
@@ -94,10 +99,13 @@ share/gtk-doc/html/farstream-plugins-${API_VERSION}/farstream-plugins-FsShmStrea
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/home.png
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/index.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/index.sgml
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/left.png
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/pt01.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/pt02.html
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/pt03.html
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/right-insensitive.png
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/right.png
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/style.css
+share/gtk-doc/html/farstream-plugins-${API_VERSION}/up-insensitive.png
 share/gtk-doc/html/farstream-plugins-${API_VERSION}/up.png
