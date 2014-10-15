@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2014/04/01 13:21:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2014/10/15 08:50:23 jasper Exp $
 @conflict evince-djvu-*
 @pkgpath graphics/evince
 @pkgpath graphics/evince,-djvu
@@ -82,6 +82,14 @@ lib/pkgconfig/evince-view-${MAJ_V}.pc
 @bin libexec/evinced
 @man man/man1/evince.1
 share/GConf/gsettings/evince.convert
+share/appdata/
+share/appdata/evince-comicsdocument.metainfo.xml
+share/appdata/evince-djvudocument.metainfo.xml
+share/appdata/evince-dvidocument.metainfo.xml
+share/appdata/evince-pdfdocument.metainfo.xml
+share/appdata/evince-psdocument.metainfo.xml
+share/appdata/evince-tiffdocument.metainfo.xml
+share/appdata/evince.appdata.xml
 share/applications/evince-previewer.desktop
 share/applications/evince.desktop
 share/dbus-1/services/org.gnome.evince.Daemon.service
@@ -153,7 +161,6 @@ share/gtk-doc/html/evince/EggFindBar.html
 share/gtk-doc/html/evince/EvFileMonitor.html
 share/gtk-doc/html/evince/EvHistory.html
 share/gtk-doc/html/evince/EvMessageArea.html
-share/gtk-doc/html/evince/EvOpenRecentAction.html
 share/gtk-doc/html/evince/EvPageAction.html
 share/gtk-doc/html/evince/EvPageActionWidget.html
 share/gtk-doc/html/evince/EvPasswordView.html
@@ -3002,6 +3009,7 @@ share/locale/eu/LC_MESSAGES/evince.mo
 share/locale/fa/LC_MESSAGES/evince.mo
 share/locale/fi/LC_MESSAGES/evince.mo
 share/locale/fr/LC_MESSAGES/evince.mo
+share/locale/fur/LC_MESSAGES/evince.mo
 share/locale/ga/LC_MESSAGES/evince.mo
 share/locale/gd/LC_MESSAGES/evince.mo
 share/locale/gl/LC_MESSAGES/evince.mo

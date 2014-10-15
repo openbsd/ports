@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2014/08/10 11:57:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2014/10/15 08:50:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	3.12.2
+GNOME_VERSION=	3.14.1
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
@@ -27,9 +27,16 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
+MODULES=	devel/dconf \
+		devel/gettext \
+		x11/gnome
+
+# -std=c++11 needed
+MODULES +=		gcc4 lang/clang
+MODGCC4_ARCHS =		powerpc sparc64 alpha
+MODGCC4_LANGS =		c c++
+MODCLANG_ARCHS =	amd64 i386
+MODCLANG_LANGS =	c c++
 
 USE_GROFF =	Yes
 
@@ -79,6 +86,14 @@ LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 RUN_DEPENDS-nautilus=${MODGETTEXT_RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu
+
+# disable -Werror:
+#     warning: argument unused during compilation: '-I .'
+CONFIGURE_ARGS +=       --enable-compile-warnings=no \
+			--enable-cxx-warnings=no
+
+# XXX: Re-enable when it actually builds
+CONFIGURE_ARGS +=	--disable-browser-plugin
 
 MODGNOME_CPPFLAGS=${CFLAGS}
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
