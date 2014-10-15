@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2014/05/16 15:32:30 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.54 2014/10/15 15:01:14 giovanni Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -162,7 +162,6 @@ phpMyAdmin/js/codemirror/lib/codemirror.js
 phpMyAdmin/js/codemirror/mode/
 phpMyAdmin/js/codemirror/mode/sql/
 phpMyAdmin/js/codemirror/mode/sql/sql.js
-phpMyAdmin/js/columndelete.js
 phpMyAdmin/js/common.js
 phpMyAdmin/js/config.js
 phpMyAdmin/js/cross_framing_protection.js
@@ -279,6 +278,7 @@ phpMyAdmin/js/keyhandler.js
 phpMyAdmin/js/line_counts.php
 phpMyAdmin/js/makegrid.js
 phpMyAdmin/js/messages.php
+phpMyAdmin/js/multi_column_sort.js
 phpMyAdmin/js/navigation.js
 phpMyAdmin/js/openlayers/
 phpMyAdmin/js/openlayers/OpenLayers.js
@@ -717,6 +717,7 @@ phpMyAdmin/js/tbl_structure.js
 phpMyAdmin/js/tbl_zoom_plot_jqplot.js
 phpMyAdmin/js/tracekit/
 phpMyAdmin/js/tracekit/tracekit.js
+phpMyAdmin/js/whitelist.php
 phpMyAdmin/libraries/
 phpMyAdmin/libraries/Advisor.class.php
 phpMyAdmin/libraries/Config.class.php
@@ -1100,6 +1101,9 @@ phpMyAdmin/locale/
 phpMyAdmin/locale/ar/
 phpMyAdmin/locale/ar/LC_MESSAGES/
 phpMyAdmin/locale/ar/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/az/
+phpMyAdmin/locale/az/LC_MESSAGES/
+phpMyAdmin/locale/az/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/bg/
 phpMyAdmin/locale/bg/LC_MESSAGES/
 phpMyAdmin/locale/bg/LC_MESSAGES/phpmyadmin.mo
@@ -1418,6 +1422,7 @@ phpMyAdmin/themes/original/img/pause.png
 phpMyAdmin/themes/original/img/play.png
 phpMyAdmin/themes/original/img/s_asc.png
 phpMyAdmin/themes/original/img/s_asci.png
+phpMyAdmin/themes/original/img/s_attention.png
 phpMyAdmin/themes/original/img/s_cancel.png
 phpMyAdmin/themes/original/img/s_cog.png
 phpMyAdmin/themes/original/img/s_db.png

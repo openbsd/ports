@@ -1,0 +1,18 @@
+$OpenBSD: patch-libraries_common_inc_php,v 1.1 2014/10/15 15:01:14 giovanni Exp $
+Force compatibility with MySQL 5.0.x to be able to connect to 
+remote databases
+--- libraries/common.inc.php.orig	Mon Aug 25 18:29:12 2014
++++ libraries/common.inc.php	Mon Aug 25 18:29:45 2014
+@@ -991,10 +991,10 @@ if (! defined('PMA_MINIMUM_COMMON')) {
+         /* Log success */
+         PMA_logUser($cfg['Server']['user']);
+ 
+-        if (PMA_MYSQL_INT_VERSION < 50500) {
++        if (PMA_MYSQL_INT_VERSION < 50015) {
+             PMA_fatalError(
+                 __('You should upgrade to %s %s or later.'),
+-                array('MySQL', '5.5.0')
++                array('MySQL', '5.0.15')
+             );
+         }
+ 
