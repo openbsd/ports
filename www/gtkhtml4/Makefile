@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/09/05 14:45:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2014/10/15 10:09:39 jasper Exp $
 
 PORTROACH+=		limit:^4
 
@@ -7,7 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
-GNOME_VERSION=		4.8.4
+GNOME_VERSION=		4.8.5
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
