@@ -1,0 +1,14 @@
+$OpenBSD: patch-generic_udp_tcl_c,v 1.1 2014/10/15 10:31:21 sebastia Exp $
+
+Nothing to free when getaddrinfo returns error.
+
+--- generic/udp_tcl.c.orig	Thu Oct  9 07:23:05 2014
++++ generic/udp_tcl.c	Thu Oct  9 07:23:25 2014
+@@ -1315,7 +1315,6 @@ UdpMulticast(UdpState *statePtr, Tcl_Interp *interp, 
+ 
+ 		if (r != 0 ) {
+ 			Tcl_SetResult(interp, "invalid group name", TCL_STATIC);	
+-			freeaddrinfo(result);
+ 			return TCL_ERROR;
+ 		} else {
+ 			memcpy(&mreq6.ipv6mr_multiaddr, &((struct sockaddr_in6*)(result->ai_addr))->sin6_addr,sizeof(mreq6.ipv6mr_multiaddr));

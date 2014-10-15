@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/05 18:08:46 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/15 10:31:21 sebastia Exp $
 lib/tcl/tcludp/
-@lib lib/tcl/tcludp/libudp108.so.${LIBudp108_VERSION}
+lib/tcl/tcludp/libudp.so
 lib/tcl/tcludp/pkgIndex.tcl
 @man man/mann/udp.n
 share/examples/tcludp/

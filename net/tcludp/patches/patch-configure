@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.2 2011/01/05 18:08:46 sebastia Exp $
---- configure.orig	Mon May 15 10:27:16 2006
-+++ configure	Fri Dec 17 02:06:17 2010
-@@ -8419,7 +8419,7 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6
- 	    DL_LIBS=""
- 	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
--	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
- 	    echo "$as_me:$LINENO: checking for ELF" >&5
- echo $ECHO_N "checking for ELF... $ECHO_C" >&6
- if test "${tcl_cv_ld_elf+set}" = set; then
+$OpenBSD: patch-configure,v 1.3 2014/10/15 10:31:21 sebastia Exp $
+--- configure.orig	Thu Oct  9 05:40:11 2014
++++ configure	Thu Oct  9 05:40:23 2014
+@@ -7173,7 +7173,7 @@ fi
+ 		    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ fi
+ 		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
++		SHARED_LIB_SUFFIX='.so'
+ 		LDFLAGS="-Wl,-export-dynamic"
+ 		;;
+ 	    esac
