@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2014/10/15 13:35:27 jasper Exp $
+
+Related to 488dd0b402dc8c56a70f995a7456c2ff511a818b,
+while Wayland-specific, it requires Mesa >= 10.3.
+
+--- configure.orig	Wed Oct 15 13:56:24 2014
++++ configure	Wed Oct 15 13:56:44 2014
+@@ -14516,7 +14516,7 @@ MUTTER_PC_MODULES="
+    gsettings-desktop-schemas >= 3.7.3
+    $CLUTTER_PACKAGE >= 1.19.5
+    cogl-1.0 >= 1.17.1
+-   gbm >= 10.3
++   gbm
+    upower-glib >= 0.99.0
+    gnome-desktop-3.0
+    xcomposite >= 0.2

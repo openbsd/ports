@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_backends_native_meta-cursor-renderer-native_h,v 1.1 2014/10/15 13:35:27 jasper Exp $
+
+Revert 488dd0b402dc8c56a70f995a7456c2ff511a818b,
+while Wayland-specific, it requires Mesa >= 10.3.
+
+--- src/backends/native/meta-cursor-renderer-native.h.orig	Thu Oct  2 16:29:20 2014
++++ src/backends/native/meta-cursor-renderer-native.h	Wed Oct 15 13:59:39 2014
+@@ -50,7 +50,6 @@ struct _MetaCursorRendererNativeClass
+ GType meta_cursor_renderer_native_get_type (void) G_GNUC_CONST;
+ 
+ struct gbm_device * meta_cursor_renderer_native_get_gbm_device (MetaCursorRendererNative *renderer);
+-void meta_cursor_renderer_native_get_cursor_size (MetaCursorRendererNative *native, uint64_t *width, uint64_t *height);
+ void meta_cursor_renderer_native_force_update (MetaCursorRendererNative *renderer);
+ 
+ #endif /* META_CURSOR_RENDERER_NATIVE_H */
