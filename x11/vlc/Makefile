@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2014/05/14 08:59:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.181 2014/10/15 17:33:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,7 +49,7 @@ MODULES=	devel/gettext \
 		lang/clang \
 		x11/qt4
 MODCLANG_ARCHS=	amd64 i386
-MODCLANG_LANGS=	c
+
 LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS} \
 		archivers/libtar \

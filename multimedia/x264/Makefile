@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/06/02 22:01:02 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2014/10/15 17:33:51 jasper Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -24,7 +24,6 @@ WANTLIB=	c m pthread
 MODULES=	lang/clang
 
 MODCLANG_ARCHS=	amd64 i386
-MODCLANG_LANGS=	c
 
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/yasm

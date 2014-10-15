@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2014/09/03 06:43:28 brad Exp $
+# $OpenBSD: Makefile,v 1.241 2014/10/15 17:33:51 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,7 +69,6 @@ BUILD_DEPENDS += devel/yasm
 .endif
 
 MODCLANG_ARCHS=	amd64 i386
-MODCLANG_LANGS=	c
 
 CONFDIR =	${SYSCONFDIR}/mplayer
 
