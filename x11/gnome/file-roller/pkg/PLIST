@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2014/10/06 10:52:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2014/10/15 10:53:59 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
@@ -8,6 +8,7 @@ libexec/file-roller/
 libexec/file-roller/isoinfo.sh
 @bin libexec/file-roller/rpm2cpio
 share/GConf/gsettings/file-roller.convert
+share/appdata/org.gnome.FileRoller.appdata.xml
 share/applications/org.gnome.FileRoller.desktop
 share/dbus-1/services/org.gnome.FileRoller.ArchiveManager1.service
 share/dbus-1/services/org.gnome.FileRoller.service
@@ -155,6 +156,26 @@ share/help/es/file-roller/supported-formats.page
 share/help/es/file-roller/test-integrity.page
 share/help/es/file-roller/troubleshooting-archive-open.page
 share/help/es/file-roller/troubleshooting-password.page
+share/help/fi/file-roller/
+share/help/fi/file-roller/archive-create.page
+share/help/fi/file-roller/archive-edit.page
+share/help/fi/file-roller/archive-extract-advanced-options.page
+share/help/fi/file-roller/archive-extract.page
+share/help/fi/file-roller/archive-open.page
+share/help/fi/file-roller/archive-view.page
+share/help/fi/file-roller/figures/
+share/help/fi/file-roller/figures/file-roller-3-12.png
+share/help/fi/file-roller/figures/file-roller-icon.png
+share/help/fi/file-roller/figures/file-roller-open-recent.png
+share/help/fi/file-roller/index.page
+share/help/fi/file-roller/introduction.page
+share/help/fi/file-roller/keyboard-shortcuts.page
+share/help/fi/file-roller/legal.xml
+share/help/fi/file-roller/password-protection.page
+share/help/fi/file-roller/supported-formats.page
+share/help/fi/file-roller/test-integrity.page
+share/help/fi/file-roller/troubleshooting-archive-open.page
+share/help/fi/file-roller/troubleshooting-password.page
 share/help/fr/file-roller/
 share/help/fr/file-roller/archive-create.page
 share/help/fr/file-roller/archive-edit.page
