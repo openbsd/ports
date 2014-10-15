@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/13 21:04:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/10/15 01:51:51 sthen Exp $
 
 BROKEN-amd64=	hangs in most bulk builds
+BROKEN-i386=	failed since mono update
 
 COMMENT=	.NET build tool inspired by Ant
 
