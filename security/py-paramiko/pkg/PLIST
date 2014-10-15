@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/09/12 20:39:05 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/10/15 17:15:37 rpe Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/_version.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/_version.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/_winapi.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/_winapi.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/agent.py
@@ -40,6 +42,10 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/kex_gex.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_gex.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group1.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group1.pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group14.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group14.pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/kex_gss.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/kex_gss.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/message.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/message.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/packet.py
@@ -76,6 +82,8 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/sftp_si.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/sftp_si.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_exception.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_exception.pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_gss.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_gss.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/transport.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/transport.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/util.py
@@ -92,6 +100,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/client.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/config.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/file.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/hostkeys.txt
+share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/kex_gss.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/keys.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/message.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/packet.txt
@@ -100,6 +109,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/proxy.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/server.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/sftp.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/ssh_exception.txt
+share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/ssh_gss.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/api/transport.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/index.txt
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/
@@ -130,6 +140,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/api/client.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/config.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/file.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/hostkeys.html
+share/doc/${MODPY_PY_PREFIX}paramiko/api/kex_gss.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/keys.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/message.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/packet.html
@@ -138,6 +149,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/api/proxy.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/server.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/sftp.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/ssh_exception.html
+share/doc/${MODPY_PY_PREFIX}paramiko/api/ssh_gss.html
 share/doc/${MODPY_PY_PREFIX}paramiko/api/transport.html
 share/doc/${MODPY_PY_PREFIX}paramiko/genindex.html
 share/doc/${MODPY_PY_PREFIX}paramiko/index.html
