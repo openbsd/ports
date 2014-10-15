@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2014/10/06 07:37:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.49 2014/10/15 10:54:04 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -420,6 +420,7 @@ share/locale/fi/LC_MESSAGES/gnome-terminal.mo
 share/locale/fr/LC_MESSAGES/gnome-terminal.mo
 share/locale/fur/LC_MESSAGES/gnome-terminal.mo
 share/locale/ga/LC_MESSAGES/gnome-terminal.mo
+share/locale/gd/LC_MESSAGES/gnome-terminal.mo
 share/locale/gl/LC_MESSAGES/gnome-terminal.mo
 share/locale/gu/LC_MESSAGES/gnome-terminal.mo
 share/locale/he/LC_MESSAGES/gnome-terminal.mo
