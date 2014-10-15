@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 22:55:01 sebastia Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/10/15 16:11:57 sebastia Exp $
 @bin bin/dnsget
 @bin bin/rblcheck
 include/udns.h
 lib/libudns.a
+@lib lib/libudns.so.${LIBudns_VERSION}
 @man man/man1/dnsget.1
 @man man/man1/rblcheck.1
 @man man/man3/udns.3
