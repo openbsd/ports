@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.1 2014/10/15 10:37:24 sebastia Exp $
+
+make the gem default to the same version puppet is based on.
+This makes the gem provider usable to install gems used by puppet modules.
+
+--- lib/puppet/provider/package/gem.rb.orig	Wed Oct 15 10:29:04 2014
++++ lib/puppet/provider/package/gem.rb	Wed Oct 15 10:29:15 2014
+@@ -14,7 +14,7 @@ Puppet::Type.type(:package).provide :gem, :parent => P
+ 
+   has_feature :versionable, :install_options
+ 
+-  commands :gemcmd => "gem"
++  commands :gemcmd => "gem${MODRUBY_BINREV}"
+ 
+   def self.gemlist(options)
+     gem_list_command = [command(:gemcmd), "list"]
