@@ -1,13 +1,69 @@
-$OpenBSD: patch-parser_c,v 1.9 2014/05/12 07:48:35 jasper Exp $
+$OpenBSD: patch-parser_c,v 1.10 2014/10/16 17:53:25 jasper Exp $
 
 Security fix for CVE-2014-0191
 external parameter entity loaded when entity substitution is disabled
 
 https://git.gnome.org/browse/libxml2/commit/?id=9cd1c3cfbd32655d60572c0a413e017260c854df
 
---- parser.c.orig	Tue Apr 16 15:39:18 2013
-+++ parser.c	Mon May 12 09:42:56 2014
-@@ -2595,6 +2595,20 @@ xmlParserHandlePEReference(xmlParserCtxtPtr ctxt) {
+Security fix for CVE-2014-3660
+https://git.gnome.org/browse/libxml2/commit/?id=be2a7edaf289c5da74a4f9ed3a0b6c733e775230
+
+--- parser.c.orig	Thu Oct 16 19:35:41 2014
++++ parser.c	Thu Oct 16 19:35:34 2014
+@@ -130,6 +130,29 @@ xmlParserEntityCheck(xmlParserCtxtPtr ctxt, size_t siz
+         return (0);
+     if (ctxt->lastError.code == XML_ERR_ENTITY_LOOP)
+         return (1);
++
++    /*
++     * This may look absurd but is needed to detect
++     * entities problems
++     */
++    if ((ent != NULL) && (ent->etype != XML_INTERNAL_PREDEFINED_ENTITY) &&
++	(ent->content != NULL) && (ent->checked == 0)) {
++	unsigned long oldnbent = ctxt->nbentities;
++	xmlChar *rep;
++
++	ent->checked = 1;
++
++	rep = xmlStringDecodeEntities(ctxt, ent->content,
++				  XML_SUBSTITUTE_REF, 0, 0, 0);
++
++	ent->checked = (ctxt->nbentities - oldnbent + 1) * 2;
++	if (rep != NULL) {
++	    if (xmlStrchr(rep, '<'))
++		ent->checked |= 1;
++	    xmlFree(rep);
++	    rep = NULL;
++	}
++    }
+     if (replacement != 0) {
+ 	if (replacement < XML_MAX_TEXT_LENGTH)
+ 	    return(0);
+@@ -189,9 +212,12 @@ xmlParserEntityCheck(xmlParserCtxtPtr ctxt, size_t siz
+             return (0);
+     } else {
+         /*
+-         * strange we got no data for checking just return
++         * strange we got no data for checking
+          */
+-        return (0);
++	if (((ctxt->lastError.code != XML_ERR_UNDECLARED_ENTITY) &&
++	     (ctxt->lastError.code != XML_WAR_UNDECLARED_ENTITY)) ||
++	    (ctxt->nbentities <= 10000))
++	    return (0);
+     }
+     xmlFatalErr(ctxt, XML_ERR_ENTITY_LOOP, NULL);
+     return (1);
+@@ -2584,6 +2610,7 @@ xmlParserHandlePEReference(xmlParserCtxtPtr ctxt) {
+ 				      name, NULL);
+ 		    ctxt->valid = 0;
+ 		}
++		xmlParserEntityCheck(ctxt, 0, NULL, 0);
+ 	    } else if (ctxt->input->free != deallocblankswrapper) {
+ 		    input = xmlNewBlanksWrapperInputStream(ctxt, entity);
+ 		    if (xmlPushInput(ctxt, input) < 0)
+@@ -2595,6 +2622,20 @@ xmlParserHandlePEReference(xmlParserCtxtPtr ctxt) {
  		    xmlCharEncoding enc;
  
  		    /*
@@ -28,3 +84,77 @@ https://git.gnome.org/browse/libxml2/commit/?id=9cd1c3cfbd32655d60572c0a413e0172
  		     * handle the extra spaces added before and after
  		     * c.f. http://www.w3.org/TR/REC-xml#as-PE
  		     * this is done independently.
+@@ -2737,6 +2778,7 @@ xmlStringLenDecodeEntities(xmlParserCtxtPtr ctxt, cons
+ 	    if ((ctxt->lastError.code == XML_ERR_ENTITY_LOOP) ||
+ 	        (ctxt->lastError.code == XML_ERR_INTERNAL_ERROR))
+ 	        goto int_error;
++	    xmlParserEntityCheck(ctxt, 0, ent, 0);
+ 	    if (ent != NULL)
+ 	        ctxt->nbentities += ent->checked / 2;
+ 	    if ((ent != NULL) &&
+@@ -2788,6 +2830,7 @@ xmlStringLenDecodeEntities(xmlParserCtxtPtr ctxt, cons
+ 	    ent = xmlParseStringPEReference(ctxt, &str);
+ 	    if (ctxt->lastError.code == XML_ERR_ENTITY_LOOP)
+ 	        goto int_error;
++	    xmlParserEntityCheck(ctxt, 0, ent, 0);
+ 	    if (ent != NULL)
+ 	        ctxt->nbentities += ent->checked / 2;
+ 	    if (ent != NULL) {
+@@ -7286,6 +7329,7 @@ xmlParseReference(xmlParserCtxtPtr ctxt) {
+ 		   (ret != XML_WAR_UNDECLARED_ENTITY)) {
+ 	    xmlFatalErrMsgStr(ctxt, XML_ERR_UNDECLARED_ENTITY,
+ 		     "Entity '%s' failed to parse\n", ent->name);
++	    xmlParserEntityCheck(ctxt, 0, ent, 0);
+ 	} else if (list != NULL) {
+ 	    xmlFreeNodeList(list);
+ 	    list = NULL;
+@@ -7392,7 +7436,7 @@ xmlParseReference(xmlParserCtxtPtr ctxt) {
+ 		/*
+ 		 * We are copying here, make sure there is no abuse
+ 		 */
+-		ctxt->sizeentcopy += ent->length;
++		ctxt->sizeentcopy += ent->length + 5;
+ 		if (xmlParserEntityCheck(ctxt, 0, ent, ctxt->sizeentcopy))
+ 		    return;
+ 
+@@ -7440,7 +7484,7 @@ xmlParseReference(xmlParserCtxtPtr ctxt) {
+ 		/*
+ 		 * We are copying here, make sure there is no abuse
+ 		 */
+-		ctxt->sizeentcopy += ent->length;
++		ctxt->sizeentcopy += ent->length + 5;
+ 		if (xmlParserEntityCheck(ctxt, 0, ent, ctxt->sizeentcopy))
+ 		    return;
+ 
+@@ -7626,6 +7670,7 @@ xmlParseEntityRef(xmlParserCtxtPtr ctxt) {
+ 		ctxt->sax->reference(ctxt->userData, name);
+ 	    }
+ 	}
++	xmlParserEntityCheck(ctxt, 0, ent, 0);
+ 	ctxt->valid = 0;
+     }
+ 
+@@ -7819,6 +7864,7 @@ xmlParseStringEntityRef(xmlParserCtxtPtr ctxt, const x
+ 			  "Entity '%s' not defined\n",
+ 			  name);
+ 	}
++	xmlParserEntityCheck(ctxt, 0, ent, 0);
+ 	/* TODO ? check regressions ctxt->valid = 0; */
+     }
+ 
+@@ -7978,6 +8024,7 @@ xmlParsePEReference(xmlParserCtxtPtr ctxt)
+ 			  name, NULL);
+ 	    ctxt->valid = 0;
+ 	}
++	xmlParserEntityCheck(ctxt, 0, NULL, 0);
+     } else {
+ 	/*
+ 	 * Internal checking in case the entity quest barfed
+@@ -8217,6 +8264,7 @@ xmlParseStringPEReference(xmlParserCtxtPtr ctxt, const
+ 			  name, NULL);
+ 	    ctxt->valid = 0;
+ 	}
++	xmlParserEntityCheck(ctxt, 0, NULL, 0);
+     } else {
+ 	/*
+ 	 * Internal checking in case the entity quest barfed
