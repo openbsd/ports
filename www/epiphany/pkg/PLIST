@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2014/10/15 21:22:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.31 2014/10/16 07:23:11 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 lib/epiphany/
@@ -42,6 +42,7 @@ share/help/C/epiphany/history-delete.page
 share/help/C/epiphany/history.page
 share/help/C/epiphany/index.page
 share/help/C/epiphany/introduction.page
+share/help/C/epiphany/keyboard-shortcut.page
 share/help/C/epiphany/legal.xml
 share/help/C/epiphany/media/
 share/help/C/epiphany/media/epiphany-3-12.png
@@ -73,6 +74,7 @@ share/help/cs/epiphany/history-delete.page
 share/help/cs/epiphany/history.page
 share/help/cs/epiphany/index.page
 share/help/cs/epiphany/introduction.page
+share/help/cs/epiphany/keyboard-shortcut.page
 share/help/cs/epiphany/legal.xml
 share/help/cs/epiphany/media/
 share/help/cs/epiphany/media/epiphany-3-12.png
@@ -104,6 +106,7 @@ share/help/de/epiphany/history-delete.page
 share/help/de/epiphany/history.page
 share/help/de/epiphany/index.page
 share/help/de/epiphany/introduction.page
+share/help/de/epiphany/keyboard-shortcut.page
 share/help/de/epiphany/legal.xml
 share/help/de/epiphany/media/
 share/help/de/epiphany/media/epiphany-3-12.png
@@ -135,6 +138,7 @@ share/help/el/epiphany/history-delete.page
 share/help/el/epiphany/history.page
 share/help/el/epiphany/index.page
 share/help/el/epiphany/introduction.page
+share/help/el/epiphany/keyboard-shortcut.page
 share/help/el/epiphany/legal.xml
 share/help/el/epiphany/media/
 share/help/el/epiphany/media/epiphany-3-12.png
@@ -166,6 +170,7 @@ share/help/es/epiphany/history-delete.page
 share/help/es/epiphany/history.page
 share/help/es/epiphany/index.page
 share/help/es/epiphany/introduction.page
+share/help/es/epiphany/keyboard-shortcut.page
 share/help/es/epiphany/legal.xml
 share/help/es/epiphany/media/
 share/help/es/epiphany/media/epiphany-3-12.png
@@ -197,6 +202,7 @@ share/help/fr/epiphany/history-delete.page
 share/help/fr/epiphany/history.page
 share/help/fr/epiphany/index.page
 share/help/fr/epiphany/introduction.page
+share/help/fr/epiphany/keyboard-shortcut.page
 share/help/fr/epiphany/legal.xml
 share/help/fr/epiphany/media/
 share/help/fr/epiphany/media/epiphany-3-12.png
@@ -228,6 +234,7 @@ share/help/hu/epiphany/history-delete.page
 share/help/hu/epiphany/history.page
 share/help/hu/epiphany/index.page
 share/help/hu/epiphany/introduction.page
+share/help/hu/epiphany/keyboard-shortcut.page
 share/help/hu/epiphany/legal.xml
 share/help/hu/epiphany/media/
 share/help/hu/epiphany/media/epiphany-3-12.png
@@ -259,6 +266,7 @@ share/help/pt_BR/epiphany/history-delete.page
 share/help/pt_BR/epiphany/history.page
 share/help/pt_BR/epiphany/index.page
 share/help/pt_BR/epiphany/introduction.page
+share/help/pt_BR/epiphany/keyboard-shortcut.page
 share/help/pt_BR/epiphany/legal.xml
 share/help/pt_BR/epiphany/media/
 share/help/pt_BR/epiphany/media/epiphany-3-12.png
@@ -291,6 +299,7 @@ share/help/ru/epiphany/history-delete.page
 share/help/ru/epiphany/history.page
 share/help/ru/epiphany/index.page
 share/help/ru/epiphany/introduction.page
+share/help/ru/epiphany/keyboard-shortcut.page
 share/help/ru/epiphany/legal.xml
 share/help/ru/epiphany/media/
 share/help/ru/epiphany/media/epiphany-3-12.png

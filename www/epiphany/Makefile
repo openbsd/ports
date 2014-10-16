@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.119 2014/10/15 21:22:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.120 2014/10/16 07:23:11 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.12.1
-REVISION=	0
+GNOME_VERSION=	3.14.1
 MAJOR_V=	${GNOME_VERSION:R}
 
 CATEGORIES=	www
@@ -17,21 +16,22 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
-WANTLIB += atspi avahi-client avahi-common avahi-glib avahi-gobject
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 enchant execinfo
-WANTLIB += expat ffi fontconfig freetype gbm gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 gpg-error
-WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu icudata icui18n
-WANTLIB += icuuc javascriptcoregtk-3.0 jpeg m notify orc-0.4 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
-WANTLIB += startup-notification-1 stdc++ webkit2gtk-3.0 webp wnck-3
-WANTLIB += xcb xcb-render xcb-shm xcb-util xml2 xslt z
+WANTLIB += EGL GL ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xt Xxf86vm atk-1.0 atk-bridge-2.0 atspi avahi-client
+WANTLIB += avahi-common avahi-glib avahi-gobject c cairo cairo-gobject
+WANTLIB += dbus-1 drm enchant estdc++ execinfo expat ffi fontconfig
+WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstmpegts-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-4.0
+WANTLIB += jpeg m notify orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += secret-1 soup-2.4 sqlite3 startup-notification-1 stdc++
+WANTLIB += webkit2gtk-4.0 webp wnck-3 xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xml2 xslt z
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
@@ -43,9 +43,9 @@ LIB_DEPENDS=	devel/libexecinfo \
 		devel/libnotify \
 		devel/libwnck3 \
 		devel/startup-notification \
+		multimedia/gstreamer1/plugins-bad \
 		net/avahi \
-		textproc/libxslt \
-		www/webkit,gtk3 \
+		www/webkitgtk4 \
 		x11/gnome/desktop \
 		x11/gnome/gcr
 
