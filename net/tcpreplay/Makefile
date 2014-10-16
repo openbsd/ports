@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2014/10/16 13:00:56 nigel Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
-DISTNAME=	tcpreplay-3.4.4
-REVISION =	1
+DISTNAME=	tcpreplay-4.0.5
 CATEGORIES=	net
 
-HOMEPAGE=	http://tcpreplay.synfin.net
+HOMEPAGE=	http://tcpreplay.appneta.com/	
 
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
@@ -21,5 +20,6 @@ CONFIGURE_STYLE= gnu
 USE_GROFF =	Yes
 
 LIB_DEPENDS=	net/libdnet
+BUILD_DEPENDS=	devel/autogen
 
 .include <bsd.port.mk>
