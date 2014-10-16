@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2014/10/16 15:23:42 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -10,7 +10,7 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 
-V=		2.0
+V=		2.1
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -21,8 +21,6 @@ PKGNAME-mysql=	monitoring-plugins-mysql-$V
 PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
 PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
-REVISION=	0
-REVISION-mysql=	1
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
@@ -90,7 +88,7 @@ CONFIGURE_ARGS += --without-mysql
 CONFIGURE_ARGS += --with-mysql=${LOCALBASE}
 .endif
 LIB_DEPENDS-mysql = ${LIB_DEPENDS} databases/mariadb
-WANTLIB-mysql = ${WANTLIB} crypto m mysqlclient ssl z
+WANTLIB-mysql = ${WANTLIB} crypto m mysqlclient ssl stdc++ z
 
 # PGSQL
 .if !${BUILD_PACKAGES:M-pgsql}
