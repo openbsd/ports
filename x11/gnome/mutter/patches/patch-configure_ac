@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2014/10/15 19:32:49 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2014/10/16 08:21:38 jasper Exp $
 
 From 60cbb41f4237e1bf53cdf95ef5a8aef449ad1797 Mon Sep 17 00:00:00 2001
 From: "Jasper St. Pierre" <jstpierre@mecheye.net>
@@ -9,11 +9,6 @@ From d88c8d9ced0e0b1cb570007e7857928e8d1046b6 Mon Sep 17 00:00:00 2001
 From: "Jasper St. Pierre" <jstpierre@mecheye.net>
 Date: Wed, 15 Oct 2014 10:35:53 -0700
 Subject: Make gbm optional
-
-From 60ab11ecbfa0d30f7a750af48782b48c686375f1 Mon Sep 17 00:00:00 2001
-From: "Jasper St. Pierre" <jstpierre@mecheye.net>
-Date: Wed, 15 Oct 2014 10:36:42 -0700
-Subject: cursor: Clean up code flow slightly
 
 --- configure.ac.orig	Tue Oct 14 20:26:29 2014
 +++ configure.ac	Wed Oct 15 21:24:53 2014
