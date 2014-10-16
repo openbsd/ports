@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2013/09/16 20:10:02 brad Exp $
+@comment $OpenBSD: PLIST,v 1.30 2014/10/16 17:18:42 brad Exp $
 bin/libpng-config
 bin/libpng16-config
 @bin bin/png-fix-itxt
@@ -16,7 +16,6 @@ lib/libpng.la
 lib/libpng16.a
 lib/libpng16.la
 @lib lib/libpng16.so.${LIBpng16_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libpng.pc
 lib/pkgconfig/libpng16.pc
 @man man/man3/libpng.3
