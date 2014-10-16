@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/31 21:41:13 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/16 13:02:59 dcoppa Exp $
 
 COMMENT =		obtain getifaddrs(3) information from Haskell
 
-DISTNAME =		network-info-0.2.0.3
+DISTNAME =		network-info-0.2.0.5
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/jystic/network-info
