@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_common_sendpacket_h,v 1.1 2014/10/16 13:04:08 nigel Exp $
+--- src/common/sendpacket.h.orig	Sat Aug  9 16:18:28 2014
++++ src/common/sendpacket.h	Wed Oct 15 18:22:28 2014
+@@ -26,6 +26,7 @@
+ #ifdef __NetBSD__
+ #include <net/if_ether.h>
+ #else
++#include <net/if.h>
+ #include <netinet/if_ether.h>
+ #endif
+ 
