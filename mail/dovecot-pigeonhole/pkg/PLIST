@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/08/13 00:31:02 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/16 18:03:42 brad Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -14,6 +14,8 @@
 include/dovecot/sieve/
 include/dovecot/sieve/edit-mail.h
 include/dovecot/sieve/pigeonhole-config.h
+include/dovecot/sieve/program-client-private.h
+include/dovecot/sieve/program-client.h
 include/dovecot/sieve/rfc2822.h
 include/dovecot/sieve/sieve-actions.h
 include/dovecot/sieve/sieve-address-parts.h
