@@ -1,21 +1,21 @@
-$OpenBSD: patch-configure,v 1.3 2014/10/16 13:41:26 nigel Exp $
---- configure.orig	Wed May 19 12:55:31 1999
-+++ configure	Mon May 23 12:06:01 2005
-@@ -1194,7 +1194,7 @@ fi
- done
+$OpenBSD: patch-configure,v 1.4 2014/10/16 13:43:48 nigel Exp $
+--- configure.orig	Fri Sep  5 17:16:38 2014
++++ configure	Fri Oct 10 15:21:36 2014
+@@ -18765,7 +18765,7 @@ else
+ else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-[
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/types.h>
+@@ -18793,7 +18793,7 @@ main(int argc, char *argv[]) {
  
+     /* else suck, no good */
+     exit(-1);
+-}]
++}
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
  
--subdirs="Libnet-0.99 libpcap-0.4"
-+subdirs=""
- 
- 
- 
-@@ -1579,7 +1579,7 @@ if test "$no_recursion" != yes; then
-     esac
-   done
- 
--  for ac_config_dir in Libnet-0.99 libpcap-0.4; do
-+  for ac_config_dir in ; do
- 
-     # Do not complain, so a configure script can configure whichever
-     # parts of a large source tree are present.
