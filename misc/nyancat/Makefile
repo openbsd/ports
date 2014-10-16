@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/08 22:02:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/16 15:48:58 sthen Exp $
 
 COMMENT=	nyancat in your terminal
 
-V =		1.2.2
-EPOCH=		0
-DISTNAME=	${V}
-DIST_SUBDIR=	nyancat
-PKGNAME=	nyancat-${V}
+GH_ACCOUNT=	klange
+GH_PROJECT=	nyancat
+GH_TAGNAME=	1.4.4
+GH_COMMIT=	c502754f9b79b03c912815f6139ccfcc75ecf513
+WRKDIST=	${WRKDIR}/nyancat-${GH_COMMIT}
+
+DISTNAME=	nyancat-${GH_TAGNAME}
 
 CATEGORIES=	misc
 
@@ -20,8 +22,6 @@ WANTLIB += c
 MASTER_SITES=	${HOMEPAGE}/archive/
 
 NO_TEST=	Yes
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nyancat ${PREFIX}/bin
