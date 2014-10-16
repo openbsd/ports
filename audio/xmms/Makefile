@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2014/09/16 19:56:09 miod Exp $
+# $OpenBSD: Makefile,v 1.88 2014/10/16 22:53:56 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -17,7 +17,7 @@ REVISION-main=		13
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
 REVISION-vorbis=	6
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}
-REVISION-mikmod=	7
+REVISION-mikmod=	8
 PKGNAME-mp3=		xmms-mp3-${VERSION}
 REVISION-mp3=		9
 SHARED_LIBS=		xmms	4.2

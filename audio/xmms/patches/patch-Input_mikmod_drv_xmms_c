@@ -1,0 +1,25 @@
+$OpenBSD: patch-Input_mikmod_drv_xmms_c,v 1.3 2014/10/16 22:53:56 sthen Exp $
+
+https://bugs.archlinux.org/task/32627
+
+--- Input/mikmod/drv_xmms.c.orig	Thu Oct 16 23:49:37 2014
++++ Input/mikmod/drv_xmms.c	Thu Oct 16 23:50:13 2014
+@@ -117,6 +117,10 @@ static BOOL xmms_Reset(void)
+ 	return VC_Init();
+ }
+ 
++static void xmms_CommandLine(CHAR * commandLine)
++{
++}
++
+ MDRIVER drv_xmms =
+ {
+ 	NULL,
+@@ -127,6 +131,7 @@ MDRIVER drv_xmms =
+         "xmms",
+         NULL,
+ #endif
++        xmms_CommandLine, 
+         xmms_IsThere, 
+ 	VC_SampleLoad,
+ 	VC_SampleUnload,
