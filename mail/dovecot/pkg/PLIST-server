@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.44 2013/12/22 22:23:10 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.45 2014/10/16 18:01:57 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -52,6 +52,7 @@ include/dovecot/auth-worker-server.h
 include/dovecot/auth.h
 include/dovecot/backtrace-string.h
 include/dovecot/base64.h
+include/dovecot/bits.h
 include/dovecot/bsearch-insert-pos.h
 include/dovecot/buffer.h
 include/dovecot/charset-utf8.h
@@ -86,6 +87,7 @@ include/dovecot/dict-sql.h
 include/dovecot/dict-transaction-memory.h
 include/dovecot/dict.h
 include/dovecot/dns-lookup.h
+include/dovecot/doveadm-dsync.h
 include/dovecot/doveadm-dump.h
 include/dovecot/doveadm-mail-iter.h
 include/dovecot/doveadm-mail.h
@@ -98,6 +100,8 @@ include/dovecot/doveadm.h
 include/dovecot/dovecot-version.h
 include/dovecot/dsasl-client-private.h
 include/dovecot/dsasl-client.h
+include/dovecot/dsync-brain.h
+include/dovecot/dsync-ibc.h
 include/dovecot/duplicate.h
 include/dovecot/eacces-error.h
 include/dovecot/env-util.h
@@ -129,6 +133,7 @@ include/dovecot/hmac-cram-md5.h
 include/dovecot/hmac.h
 include/dovecot/home-expand.h
 include/dovecot/hostpid.h
+include/dovecot/http-auth.h
 include/dovecot/http-client-private.h
 include/dovecot/http-client.h
 include/dovecot/http-date.h
@@ -140,6 +145,8 @@ include/dovecot/http-request-parser.h
 include/dovecot/http-request.h
 include/dovecot/http-response-parser.h
 include/dovecot/http-response.h
+include/dovecot/http-server-private.h
+include/dovecot/http-server.h
 include/dovecot/http-transfer.h
 include/dovecot/http-url.h
 include/dovecot/imap-arg.h
@@ -202,6 +209,7 @@ include/dovecot/ioloop-iolist.h
 include/dovecot/ioloop-notify-fd.h
 include/dovecot/ioloop-private.h
 include/dovecot/ioloop.h
+include/dovecot/iostream-lz4.h
 include/dovecot/iostream-openssl.h
 include/dovecot/iostream-private.h
 include/dovecot/iostream-rawlog-private.h
@@ -217,6 +225,7 @@ include/dovecot/istream-attachment-connector.h
 include/dovecot/istream-attachment-extractor.h
 include/dovecot/istream-base64.h
 include/dovecot/istream-binary-converter.h
+include/dovecot/istream-callback.h
 include/dovecot/istream-chain.h
 include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
@@ -235,6 +244,7 @@ include/dovecot/istream-rawlog.h
 include/dovecot/istream-seekable.h
 include/dovecot/istream-sized.h
 include/dovecot/istream-tee.h
+include/dovecot/istream-timeout.h
 include/dovecot/istream-zlib.h
 include/dovecot/istream.h
 include/dovecot/json-parser.h
@@ -346,6 +356,7 @@ include/dovecot/message-header-parser.h
 include/dovecot/message-id.h
 include/dovecot/message-parser.h
 include/dovecot/message-part-serialize.h
+include/dovecot/message-part.h
 include/dovecot/message-search.h
 include/dovecot/message-size.h
 include/dovecot/mkdir-parents.h
@@ -390,6 +401,7 @@ include/dovecot/quota-plugin.h
 include/dovecot/quota-private.h
 include/dovecot/quota.h
 include/dovecot/quoted-printable.h
+include/dovecot/rand.h
 include/dovecot/randgen.h
 include/dovecot/raw-storage.h
 include/dovecot/raw-sync.h
@@ -459,6 +471,7 @@ lib/dovecot/lib02_imap_acl_plugin.so
 lib/dovecot/lib02_lazy_expunge_plugin.so
 lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.so
+lib/dovecot/lib10_last_login_plugin.so
 lib/dovecot/lib10_mail_filter_plugin.so
 lib/dovecot/lib10_quota_plugin.so
 lib/dovecot/lib11_imap_quota_plugin.so
@@ -478,6 +491,7 @@ lib/dovecot/lib30_imap_zlib_plugin.so
 lib/dovecot/lib90_stats_plugin.so
 lib/dovecot/lib95_imap_stats_plugin.so
 @lib lib/dovecot/libdovecot-compression.so.${LIBdovecot-compression_VERSION}
+@lib lib/dovecot/libdovecot-dsync.so.${LIBdovecot-dsync_VERSION}
 @lib lib/dovecot/libdovecot-lda.so.${LIBdovecot-lda_VERSION}
 @lib lib/dovecot/libdovecot-login.so.${LIBdovecot-login_VERSION}
 @lib lib/dovecot/libdovecot-sql.so.${LIBdovecot-sql_VERSION}
@@ -521,8 +535,10 @@ libexec/dovecot/deliver
 @bin libexec/dovecot/stats
 @bin libexec/dovecot/xml2text
 @comment @man man/man1/deliver.1
+@man man/man1/doveadm-acl.1
 @man man/man1/doveadm-altmove.1
 @man man/man1/doveadm-auth.1
+@man man/man1/doveadm-backup.1
 @man man/man1/doveadm-batch.1
 @man man/man1/doveadm-config.1
 @man man/man1/doveadm-copy.1
@@ -534,6 +550,7 @@ libexec/dovecot/deliver
 @man man/man1/doveadm-fetch.1
 @man man/man1/doveadm-flags.1
 @man man/man1/doveadm-force-resync.1
+@man man/man1/doveadm-fts.1
 @man man/man1/doveadm-help.1
 @man man/man1/doveadm-import.1
 @man man/man1/doveadm-index.1
@@ -544,12 +561,15 @@ libexec/dovecot/deliver
 @man man/man1/doveadm-mount.1
 @man man/man1/doveadm-move.1
 @man man/man1/doveadm-penalty.1
+@man man/man1/doveadm-proxy.1
 @man man/man1/doveadm-purge.1
 @man man/man1/doveadm-pw.1
 @man man/man1/doveadm-quota.1
 @man man/man1/doveadm-reload.1
+@man man/man1/doveadm-replicator.1
 @man man/man1/doveadm-search.1
 @man man/man1/doveadm-stop.1
+@man man/man1/doveadm-sync.1
 @man man/man1/doveadm-user.1
 @man man/man1/doveadm-who.1
 @man man/man1/doveadm.1
@@ -637,6 +657,7 @@ share/doc/dovecot/wiki/Design.Storage.Plugins.txt
 share/doc/dovecot/wiki/Design.Strings.txt
 share/doc/dovecot/wiki/Design.txt
 share/doc/dovecot/wiki/Dict.txt
+share/doc/dovecot/wiki/Dictionary.txt
 share/doc/dovecot/wiki/Director.txt
 share/doc/dovecot/wiki/DomainLost.txt
 share/doc/dovecot/wiki/Errors.ChgrpNoPerm.txt
@@ -719,6 +740,7 @@ share/doc/dovecot/wiki/Pigeonhole.ManageSieve.Configuration.txt
 share/doc/dovecot/wiki/Pigeonhole.ManageSieve.Install.txt
 share/doc/dovecot/wiki/Pigeonhole.ManageSieve.Troubleshooting.txt
 share/doc/dovecot/wiki/Pigeonhole.ManageSieve.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Configuration.Dict.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Configuration.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Examples.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.SpamtestVirustest.txt
@@ -739,6 +761,7 @@ share/doc/dovecot/wiki/Plugins.FTS.Lucene.txt
 share/doc/dovecot/wiki/Plugins.FTS.Solr.txt
 share/doc/dovecot/wiki/Plugins.FTS.Squat.txt
 share/doc/dovecot/wiki/Plugins.FTS.txt
+share/doc/dovecot/wiki/Plugins.LastLogin.txt
 share/doc/dovecot/wiki/Plugins.Lazyexpunge.txt
 share/doc/dovecot/wiki/Plugins.Listescape.txt
 share/doc/dovecot/wiki/Plugins.MailFilter.txt
@@ -770,6 +793,7 @@ share/doc/dovecot/wiki/SSL.txt
 share/doc/dovecot/wiki/Sasl.txt
 share/doc/dovecot/wiki/SecurityTuning.txt
 share/doc/dovecot/wiki/Services.txt
+share/doc/dovecot/wiki/SharedMailboxes.ClusterSetup.txt
 share/doc/dovecot/wiki/SharedMailboxes.Permissions.txt
 share/doc/dovecot/wiki/SharedMailboxes.Public.txt
 share/doc/dovecot/wiki/SharedMailboxes.Shared.txt

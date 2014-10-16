@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.226 2014/10/16 18:01:57 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.10
+V_DOVECOT=	2.2.14
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -20,12 +20,8 @@ PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
-REVISION-server=	3
-REVISION-ldap=		1
-REVISION-mysql=		2
-REVISION-postgresql=	1
-
 SHARED_LIBS=	dovecot-compression 0.0 \
+		dovecot-dsync	0.0 \
 		dovecot-lda	2.0 \
 		dovecot-login	2.0 \
 		dovecot-sql	2.0 \
@@ -41,7 +37,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-server=	bz2 c crypto lzma sqlite3 ssl z ${MODLIBICONV_WANTLIB}
 WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl
-WANTLIB-mysql=	crypto m lib/mysql/mysqlclient ssl z
+WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl stdc++ z
 WANTLIB-postgresql= crypto pq>=4 ssl
 
 MODULES=	converters/libiconv
