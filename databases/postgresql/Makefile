@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2014/09/23 08:41:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.194 2014/10/16 00:08:54 jeremy Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -10,15 +10,13 @@ COMMENT-plpython=Python procedural language for PostgreSQL
 # in case a dump before / restore after pkg_add -u is required!
 
 VERSION=	9.3.5
-REVISION-server= 0
+REVISION-server= 1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
-FAKE_AS_ROOT=	always-wrap
-
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.5 \
@@ -146,8 +144,14 @@ DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 pre-build:
 	touch ${WRKSRC}/doc/src/sgml/*-stamp
 
+INSTALL_REPLACE = 's/^install_bin = .*$$/ifdef BSD_INSTALL_SCRIPT\ninstall_bin
+INSTALL_REPLACE += = \$$\(subst -m 755,,\$${BSD_INSTALL_SCRIPT}\)
+INSTALL_REPLACE += \nelse\ninstall_bin = \/usr\/bin\/install -c -o ${BINOWN}
+INSTALL_REPLACE += -g ${BINGRP}\nendif/'
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postgresql
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/postgresql
+	perl -i -pe ${INSTALL_REPLACE} \
+		${PREFIX}/lib/postgresql/pgxs/src/Makefile.global
 
 .include <bsd.port.mk>
