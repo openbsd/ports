@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/11/20 15:18:31 giovanni Exp $
-@bin bin/unison
-lib/ocaml/
-lib/ocaml/stublibs/
-share/doc/unison/
-share/doc/unison/BUGS.txt
-share/doc/unison/NEWS
-share/doc/unison/README
