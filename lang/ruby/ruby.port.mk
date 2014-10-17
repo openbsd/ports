@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.77 2014/10/15 02:06:35 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.78 2014/10/17 17:08:57 jasper Exp $
 
 # ruby module
 
@@ -128,7 +128,6 @@ GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
 
 MODRUBY_RAKE_DEPENDS =	
 MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
-MODRUBY_RSPEC2_DEPENDS = devel/ruby-rspec/2/rspec,${MODRUBY_FLAVOR}>=2.0
 MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
 
 # Set the path for the ruby interpreter and the rake and rspec
@@ -161,9 +160,9 @@ MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
 .endif
 
 .if defined(MODRUBY_TEST)
-.  if !${MODRUBY_TEST:L:Mrspec} && !${MODRUBY_TEST:L:Mrspec2} && \
-     !${MODRUBY_TEST:L:Mrspec3} && !${MODRUBY_TEST:L:Mrake} && \
-     !${MODRUBY_TEST:L:Mruby} && !${MODRUBY_TEST:L:Mtestrb}
+.  if !${MODRUBY_TEST:L:Mrspec} && !${MODRUBY_TEST:L:Mrspec3} && \
+     !${MODRUBY_TEST:L:Mrake} && !${MODRUBY_TEST:L:Mruby} && \
+     !${MODRUBY_TEST:L:Mtestrb}
 ERRORS += "Fatal: Unsupported MODRUBY_TEST value: ${MODRUBY_TEST}"
 .  endif
 .else
@@ -248,9 +247,6 @@ TEST_DEPENDS+=	${MODRUBY_RAKE_DEPENDS}
 .endif
 .if ${MODRUBY_TEST:L:Mrspec}
 TEST_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}
-.endif
-.if ${MODRUBY_TEST:L:Mrspec2}
-TEST_DEPENDS+=	${MODRUBY_RSPEC2_DEPENDS}
 .endif
 .if ${MODRUBY_TEST:L:Mrspec3}
 TEST_DEPENDS+=	${MODRUBY_RSPEC3_DEPENDS}
@@ -458,7 +454,7 @@ SUBST_VARS+=		^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
 MODRUBY_TEST_BIN ?=	${RAKE} --trace
 .    elif ${MODRUBY_TEST:L:Mrspec}
 MODRUBY_TEST_BIN ?=	${RSPEC}
-.    elif ${MODRUBY_TEST:L:Mrspec2} || ${MODRUBY_TEST:L:Mrspec3}
+.    elif ${MODRUBY_TEST:L:Mrspec3}
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
 .    elif ${MODRUBY_TEST:L:Mtestrb}
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_TESTRB}
@@ -466,8 +462,7 @@ MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_TESTRB}
 MODRUBY_TEST_BIN ?=	${RUBY}
 .    endif
 
-.    if ${MODRUBY_TEST:L:Mrspec} || ${MODRUBY_TEST:L:Mrspec2} || \
-	${MODRUBY_TEST:L:Mrspec3}
+.    if ${MODRUBY_TEST:L:Mrspec} || ${MODRUBY_TEST:L:Mrspec3}
 MODRUBY_TEST_TARGET ?=	spec
 .    else
 MODRUBY_TEST_TARGET ?=	test
