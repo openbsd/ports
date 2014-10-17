@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/17 14:27:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/17 10:43:53 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
+@comment ${GEM_EXTENSIONS_DIR}/msgpack/
+@comment ${GEM_EXTENSIONS_DIR}/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
@@ -16,6 +22,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/packer.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/
+@comment ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/.RUBYARCHDIR.-.msgpack.time
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer.h
@@ -55,13 +62,17 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/msgpack.gemspec
+${GEM_LIB}/gems/${DISTNAME}/msgpack.org.md
 ${GEM_LIB}/gems/${DISTNAME}/spec/
-${GEM_LIB}/gems/${DISTNAME}/spec/buffer_io_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/buffer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cases.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/cases.msg
 ${GEM_LIB}/gems/${DISTNAME}/spec/cases_compact.msg
 ${GEM_LIB}/gems/${DISTNAME}/spec/cases_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cruby/
+${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_io_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_packer.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/format_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/packer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/random_compat.rb
