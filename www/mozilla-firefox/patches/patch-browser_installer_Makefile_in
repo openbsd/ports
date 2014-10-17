@@ -1,8 +1,8 @@
-$OpenBSD: patch-browser_installer_Makefile_in,v 1.11 2014/09/02 16:43:04 landry Exp $
+$OpenBSD: patch-browser_installer_Makefile_in,v 1.12 2014/10/17 07:26:21 landry Exp $
 Don't install the sdk / headers etc
---- browser/installer/Makefile.in.orig	Wed Jul 23 05:12:37 2014
-+++ browser/installer/Makefile.in	Thu Jul 24 20:47:32 2014
-@@ -112,10 +112,6 @@ MOZ_PKG_MAC_ICON=branding/disk.icns
+--- browser/installer/Makefile.in.orig	Sat Oct 11 11:06:17 2014
++++ browser/installer/Makefile.in	Mon Oct 13 08:47:52 2014
+@@ -104,10 +104,6 @@ MOZ_PKG_MAC_ICON=branding/disk.icns
  MOZ_PKG_MAC_EXTRA=--symlink '/Applications:/ '
  endif
  
