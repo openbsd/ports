@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.155 2014/10/16 17:53:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.156 2014/10/17 13:24:59 jasper Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
-VERSION=		2.9.1
+VERSION=		2.9.2
 DISTNAME=		libxml2-${VERSION}
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py-libxml-${VERSION}
-SHARED_LIBS +=	xml2                 15.1     # 11.0
+SHARED_LIBS +=	xml2                 15.1     # 11.2
 CATEGORIES=		textproc
 MASTER_SITES=		http://gd.tuwien.ac.at/pub/libxml/ \
 			ftp://xmlsoft.org/libxml/
-
-REVISION=		2
 
 HOMEPAGE=		http://xmlsoft.org/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		m z
+WANTLIB=		lzma m z
 
 MODULES=		converters/libiconv
+LIB_DEPENDS=		archivers/xz
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
@@ -39,7 +38,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -python
 
-WANTLIB-main=		${WANTLIB} c pthread util
+WANTLIB-main=		${WANTLIB} c
 RUN_DEPENDS-main=
 NOT_FOR_ARCHS-python =	${NO_SHARED_ARCHS}
 
@@ -50,14 +49,15 @@ MODULES+=		lang/python
 LIB_DEPENDS-python=	textproc/libxml,-main=${VERSION} \
 			${MODPY_LIB_DEPENDS} \
 			${MODLIBICONV_LIB_DEPENDS}
-WANTLIB-python=		pthread m z util xml2>=11 ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB}
+WANTLIB-python=		${WANTLIB} ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB} \
+			pthread util xml2>=11
 FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/libxml2
 CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python
 .endif
 
-TEST_DEPENDS=	devel/gmake
+TEST_DEPENDS=		devel/gmake
 
 post-configure:
 	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild

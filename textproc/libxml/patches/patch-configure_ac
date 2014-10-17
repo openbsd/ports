@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.3 2014/05/29 13:40:51 sthen Exp $
---- configure.in.orig	Thu May 29 11:37:41 2014
-+++ configure.in	Thu May 29 11:37:49 2014
-@@ -516,7 +516,7 @@ AC_CHECK_FUNCS(strdup strndup strerror)
+$OpenBSD: patch-configure_ac,v 1.1 2014/10/17 13:24:59 jasper Exp $
+--- configure.ac.orig	Fri Oct 17 14:27:14 2014
++++ configure.ac	Fri Oct 17 14:27:28 2014
+@@ -544,7 +544,7 @@ AC_CHECK_FUNCS(strdup strndup strerror)
  AC_CHECK_FUNCS(finite isnand fp_class class fpclass)
  AC_CHECK_FUNCS(strftime localtime gettimeofday ftime)
  AC_CHECK_FUNCS(stat _stat signal)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-python,v 1.4 2009/10/11 10:39:42 steven Exp $
+@comment $OpenBSD: PFRAG.shared-python,v 1.5 2014/10/17 13:24:59 jasper Exp $
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/drv_libxml2.py
@@ -18,6 +18,7 @@ share/examples/libxml2/dtdvalid.py
 share/examples/libxml2/error.py
 share/examples/libxml2/inbuf.py
 share/examples/libxml2/indexes.py
+share/examples/libxml2/input_callback.py
 share/examples/libxml2/invalid.xml
 share/examples/libxml2/nsdel.py
 share/examples/libxml2/outbuf.py

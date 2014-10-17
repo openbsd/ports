@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/04/14 23:22:05 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2014/10/17 13:24:59 jasper Exp $
 @pkgpath textproc/libxml
 bin/xml2-config
 @bin bin/xmlcatalog
@@ -52,10 +52,12 @@ include/libxml2/libxml/xmlwriter.h
 include/libxml2/libxml/xpath.h
 include/libxml2/libxml/xpathInternals.h
 include/libxml2/libxml/xpointer.h
+lib/cmake/
+lib/cmake/libxml2/
+lib/cmake/libxml2/libxml2-config.cmake
 lib/libxml2.a
 lib/libxml2.la
 @lib lib/libxml2.so.${LIBxml2_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libxml-2.0.pc
 lib/xml2Conf.sh
 @man man/man1/xml2-config.1
@@ -132,6 +134,7 @@ share/doc/libxml2/html/html/libxml-xmlwriter.html
 share/doc/libxml2/html/html/libxml-xpath.html
 share/doc/libxml2/html/html/libxml-xpathInternals.html
 share/doc/libxml2/html/html/libxml-xpointer.html
+share/doc/libxml2/html/html/libxml-xzlib.html
 share/doc/libxml2/html/html/right.png
 share/doc/libxml2/html/html/up.png
 share/doc/libxml2/html/index.html
