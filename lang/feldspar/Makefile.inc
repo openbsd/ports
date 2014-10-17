@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2014/04/24 11:18:06 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2014/10/17 11:15:03 jasper Exp $
 
 CATEGORIES?=		lang
 
@@ -13,5 +13,3 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES+=		lang/ghc
 
 MODGHC_BUILD?=		cabal hackage haddock register
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

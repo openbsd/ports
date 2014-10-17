@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/07 12:59:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2014/10/17 11:15:03 jasper Exp $
 
 COMMENT=                prototype compiler for the Feldspar DSL
 
 DISTNAME=               feldspar-compiler-0.6.0.2
-REVISION=		1
+REVISION=		2
 
 WANTLIB +=		c m pthread util
 
