@@ -1,0 +1,54 @@
+$OpenBSD: patch-SOPE_mod_ngobjweb_ngobjweb_module_c,v 1.1 2014/10/17 09:21:09 sebastia Exp $
+
+proposed fix for bug 88
+
+--- SOPE/mod_ngobjweb/ngobjweb_module.c.orig	Wed Feb  6 18:38:08 2013
++++ SOPE/mod_ngobjweb/ngobjweb_module.c	Tue Jul 23 17:19:20 2013
+@@ -21,6 +21,39 @@
+ 
+ #include "common.h"
+ 
++#ifdef APACHE2
++static const command_rec ngobjweb_cmds[] = {
++  AP_INIT_TAKE1(
++    "SetSNSPort",
++    ngobjweb_set_sns_port,
++    NULL,
++    OR_FILEINFO,
++    "the path of the Unix domain address to use (eg /tmp/.snsd)" 
++  ),
++  AP_INIT_TAKE1(
++    "SetAppPort",
++    ngobjweb_set_app_port,
++    NULL,
++    OR_FILEINFO,
++    "the path of the Unix domain address to use (eg /tmp/.snsd)"   
++  ),
++  AP_INIT_TAKE1(
++    "SetAppPrefix",
++    ngobjweb_set_app_prefix,
++    NULL,
++    OR_FILEINFO,
++    "any prefix that is before the app name (eg /MyDir with /MyDir/MyApp.woa)"
++  ),
++  AP_INIT_TAKE1(
++    "SNSUseHTTP",
++    ngobjweb_set_use_http,
++    NULL,
++    OR_FILEINFO,
++    "use HTTP protocol to query snsd (on,off) ?"
++  ),
++  {NULL}
++};
++#else
+ static command_rec ngobjweb_cmds[] = {
+   {
+     "SetSNSPort",
+@@ -56,6 +89,7 @@ static command_rec ngobjweb_cmds[] = {
+   },
+   { NULL }
+ };
++#endif
+ 
+ #ifdef AP_VERSION_1
+ static handler_rec ngobjweb_handlers[] = {

@@ -1,0 +1,15 @@
+$OpenBSD: patch-WebUI_Scheduler_LSWScheduler_LSWAppointmentProposal_m,v 1.1 2014/10/17 09:21:09 sebastia Exp $
+
+fix exception, compatibility with sope-2.2.5
+
+--- WebUI/Scheduler/LSWScheduler/LSWAppointmentProposal.m.orig	Wed May  7 19:15:52 2014
++++ WebUI/Scheduler/LSWScheduler/LSWAppointmentProposal.m	Wed May  7 19:16:52 2014
+@@ -153,7 +153,7 @@ static inline NSDictionary *_getTimeEntry(LSWAppointme
+     NSTimeZone *tz;
+     NSString   *tzA;
+     
+-    if ((tz = [[self context] valueForKey:@"SkySchedulerTimeZone"]) == nil)
++    if ((tz = [[self context] objectForKey:@"SkySchedulerTimeZone"]) == nil)
+       tz = [[self session] timeZone];
+     
+     self->timeZone = [tz retain];

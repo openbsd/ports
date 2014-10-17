@@ -1,0 +1,69 @@
+$OpenBSD: patch-WebUI_Scheduler_OGoSchedulerViews_SkyMonthRepetition_m,v 1.1 2014/10/17 09:21:09 sebastia Exp $
+
+fix exception entering calendar month view tab
+
+--- WebUI/Scheduler/OGoSchedulerViews/SkyMonthRepetition.m.orig	Wed May  7 15:48:31 2014
++++ WebUI/Scheduler/OGoSchedulerViews/SkyMonthRepetition.m	Wed May  7 19:09:33 2014
+@@ -259,7 +259,7 @@ _takeValuesInCell(SkyMonthRepetition *self, WORequest 
+           forKey:@"SkyMonthRepetition"];
+     [self->template appendToResponse:_response inContext:_ctx];
+ 
+-    queryE = [[[_ctx valueForKey:@"SkyMonthRepetition"] valueForKey:@"query"]
++    queryE = [[[_ctx objectForKey:@"SkyMonthRepetition"] objectForKey:@"query"]
+                      objectEnumerator];
+ 
+     while ((orient = [queryE nextObject]) != nil) {
+@@ -601,7 +601,7 @@ _takeValuesInCell(SkyMonthRepetition *self, WORequest 
+   orient = [self->orientation valueInComponent:[_ctx component]];
+   isEdge = [orient rangeOfString:@"/"].length > 0;
+ 
+-  op  = [_ctx valueForKey:@"SkyMonthRepetition"];
++  op  = [_ctx objectForKey:@"SkyMonthRepetition"];
+   if ((tmp = [op objectForKey:orient]) == nil)
+     return;
+   
+@@ -624,7 +624,7 @@ _takeValuesInCell(SkyMonthRepetition *self, WORequest 
+   orient = [self->orientation valueInComponent:[_ctx component]];
+   isEdge = [orient rangeOfString:@"/"].length > 0;
+ 
+-  op  = [_ctx valueForKey:@"SkyMonthRepetition"];
++  op  = [_ctx objectForKey:@"SkyMonthRepetition"];
+   if ((tmp = [op objectForKey:orient]) == nil)
+     return nil;
+   
+@@ -665,7 +665,7 @@ _takeValuesInCell(SkyMonthRepetition *self, WORequest 
+   orient = [self->orientation valueInComponent:[_ctx component]];
+   isEdge = [orient rangeOfString:@"/"].length > 0;
+   
+-  op = [_ctx valueForKey:@"SkyMonthRepetition"];
++  op = [_ctx objectForKey:@"SkyMonthRepetition"];
+   if ((tmp = [op objectForKey:@"query"])) {
+     [tmp addObject:orient];
+   }
+@@ -738,7 +738,7 @@ _takeValuesInCell(SkyMonthRepetition *self, WORequest 
+   NSDictionary *op;
+   id tmp;
+   
+-  op  = [_ctx valueForKey:@"SkyMonthRepetition"];
++  op  = [_ctx objectForKey:@"SkyMonthRepetition"];
+   if ((tmp = [op objectForKey:@"cell"]) != nil)
+     [self->template takeValuesFromRequest:_req inContext:_ctx];
+ }
+@@ -747,7 +747,7 @@ _takeValuesInCell(SkyMonthRepetition *self, WORequest 
+   NSDictionary *op;
+   id tmp;
+   
+-  op  = [_ctx valueForKey:@"SkyMonthRepetition"];
++  op  = [_ctx objectForKey:@"SkyMonthRepetition"];
+   if ((tmp = [op objectForKey:@"cell"]) == nil)
+     return nil;
+ 
+@@ -760,7 +760,7 @@ _takeValuesInCell(SkyMonthRepetition *self, WORequest 
+   NSDictionary *op;
+   id tmp;
+   
+-  op = [_ctx valueForKey:@"SkyMonthRepetition"];
++  op = [_ctx objectForKey:@"SkyMonthRepetition"];
+   if ((tmp = [op objectForKey:@"query"])) {
+     [tmp addObject:@"cell"];
+     return;

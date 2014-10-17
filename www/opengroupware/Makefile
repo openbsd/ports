@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/08/10 09:58:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/17 09:21:09 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	5.5rc2
-REVISION=	1
+REVISION=	2
 DISTNAME =	opengroupware-${VERSION}
 
 SHARED_LIBS +=  LSAddress                 0.0 # 5.5

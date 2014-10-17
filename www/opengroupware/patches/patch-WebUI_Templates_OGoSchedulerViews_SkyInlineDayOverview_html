@@ -1,0 +1,15 @@
+$OpenBSD: patch-WebUI_Templates_OGoSchedulerViews_SkyInlineDayOverview_html,v 1.1 2014/10/17 09:21:09 sebastia Exp $
+
+load printing dialog
+
+--- WebUI/Templates/OGoSchedulerViews/SkyInlineDayOverview.html.orig	Wed May  7 19:32:48 2014
++++ WebUI/Templates/OGoSchedulerViews/SkyInlineDayOverview.html	Wed May  7 19:33:05 2014
+@@ -2,7 +2,7 @@
+   <html>
+     <head><title><#DayTitle /></title></head>
+ 
+-    <body bgcolor="white" text="black">
++    <body bgcolor="white" text="black" onload="javascript:window.print()">
+       <table border="1" cellpadding="5" width="100%" cellspacing="0">
+         <tr>
+           <td align="center" colspan="2">

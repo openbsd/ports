@@ -1,0 +1,12 @@
+$OpenBSD: patch-WebUI_Common_OGoUIElements_SkyCalendarScript_m,v 1.1 2014/10/17 09:21:09 sebastia Exp $
+--- WebUI/Common/OGoUIElements/SkyCalendarScript.m.orig	Sun Jun 15 08:16:00 2014
++++ WebUI/Common/OGoUIElements/SkyCalendarScript.m	Sun Jun 15 08:16:28 2014
+@@ -80,7 +80,7 @@ static NSNumber *yesNum = nil;
+ /* generating response */
+ 
+ - (void)appendToResponse:(WOResponse *)_response inContext:(WOContext *)_ctx {
+-  if ([[_ctx valueForKey:@"SkyCalendarScriptIncluded"] boolValue])
++  if ([[_ctx objectForKey:@"SkyCalendarScriptIncluded"] boolValue])
+     return;
+   
+   [super appendToResponse:_response inContext:_ctx];

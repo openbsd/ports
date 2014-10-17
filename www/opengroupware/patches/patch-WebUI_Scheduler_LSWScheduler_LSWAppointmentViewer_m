@@ -1,0 +1,15 @@
+$OpenBSD: patch-WebUI_Scheduler_LSWScheduler_LSWAppointmentViewer_m,v 1.1 2014/10/17 09:21:09 sebastia Exp $
+
+compatibility fix to sope-2.2.5
+
+--- WebUI/Scheduler/LSWScheduler/LSWAppointmentViewer.m.orig	Sun Jun 15 08:21:43 2014
++++ WebUI/Scheduler/LSWScheduler/LSWAppointmentViewer.m	Sun Jun 15 08:22:04 2014
+@@ -497,7 +497,7 @@ static NSString *_personName(id self, id _person) {
+ 	      type:_type configuration:_cmdCfg])
+     return NO;
+   
+-  if ((tz = [[self context] valueForKey:@"SkySchedulerTimeZone"]) == nil)
++  if ((tz = [[self context] objectForKey:@"SkySchedulerTimeZone"]) == nil)
+     tz = [[self session] timeZone];
+   
+   self->timeZone = [tz retain];
