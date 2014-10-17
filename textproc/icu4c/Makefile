@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/10/17 08:35:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2014/10/17 12:36:33 dcoppa Exp $
 
 # XXX re-rolled tarball: drop at next release
 DIST_SUBDIR=		icu4c
@@ -57,8 +57,10 @@ PKG_ARGS +=		-Dbe=0 -Dle=0
 CONFIGURE_ARGS +=	--with-data-packaging=archive
 .  if ${PROPERTIES:Mbe}
 PKG_ARGS +=		-Dbe=1
+TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}b"
 .  else
 PKG_ARGS +=		-Dle=1
+TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}l"
 .  endif
 .endif
 
