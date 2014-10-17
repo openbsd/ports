@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_x509v3ext_cpp,v 1.1 2014/10/17 15:10:23 sthen Exp $
+
+http://sourceforge.net/p/xca/patches/14/
+
+--- lib/x509v3ext.cpp.orig	Fri Oct 17 15:58:32 2014
++++ lib/x509v3ext.cpp	Fri Oct 17 15:59:28 2014
+@@ -27,6 +27,8 @@ x509v3ext::x509v3ext(const X509_EXTENSION *n)
+ x509v3ext::x509v3ext(const x509v3ext &n)
+ {
+ 	ext = NULL;
++	if (!n.isValid())
++		return;
+ 	set(n.ext);
+ }
+ 
+@@ -743,7 +745,7 @@ X509_EXTENSION *x509v3ext::get() const
+ 
+ bool x509v3ext::isValid() const
+ {
+-	return ext->value->length > 0 &&
++	return ext && ext->value && ext->value->length > 0 &&
+ 		OBJ_obj2nid(ext->object) != NID_undef;
+ }
+ 
