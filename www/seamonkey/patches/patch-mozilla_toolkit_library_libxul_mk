@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_toolkit_library_libxul_mk,v 1.1 2014/10/17 07:30:43 landry Exp $
+--- mozilla/toolkit/library/libxul.mk.orig	Tue Oct 14 08:36:44 2014
++++ mozilla/toolkit/library/libxul.mk	Tue Oct 14 09:43:50 2014
+@@ -255,8 +255,10 @@ EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,StaticX
+ # the linker script is given after crtbegin.o, and even past that, replaces
+ # the default section rules with those from the script instead of
+ # supplementing them. Which leads to a lib with a huge load of sections.
++ifneq (OpenBSD,$(OS_TARGET))
+ ifdef LD_IS_BFD
+ EXTRA_DSO_LDOPTS += $(topsrcdir)/toolkit/library/StaticXULComponents.ld
++endif
+ endif
+ 
+ ifeq (WINNT,$(OS_TARGET))

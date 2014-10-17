@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.162 2014/09/09 21:27:17 landry Exp $
+# $OpenBSD: Makefile,v 1.163 2014/10/17 07:30:43 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 
-MOZILLA_VERSION =	2.29
+MOZILLA_VERSION =	2.30
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-3.4
+PKGNAME-lightning =	lightning-seamonkey-3.5
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
-#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 
-SO_VERSION =	38.0
+SO_VERSION =	39.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -64,9 +63,14 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
 
-CONFIGURE_ARGS +=	--enable-gstreamer
-BUILD_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
+# bug #1064665
+LIB_DEPENDS +=	textproc/icu4c
+CONFIGURE_ARGS += --with-system-icu
+WANTLIB += icudata icui18n icuuc
+
+CONFIGURE_ARGS +=	--enable-gstreamer=1.0
+BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
+RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 ALL_TARGET =	default
 
@@ -79,9 +83,10 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 
+CONFIGURE_ENV+=MOZCONFIG=${WRKSRC}/mozilla/.mozconfig
 # MOZCONFIG is mandatory now even if empty ?
 post-patch:
-	touch ${WRKSRC}/.mozconfig
+	touch ${WRKSRC}/mozilla/.mozconfig
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

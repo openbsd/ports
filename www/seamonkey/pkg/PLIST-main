@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2014/04/29 21:47:00 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2014/10/17 07:30:43 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -55,9 +55,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/places.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/places16.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/places48.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/${MOZILLA_PROJECT}.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/venkman-window.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/venkman-window16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/venkman-window48.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/components.manifest
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/libmozgnome.so.${LIBmozgnome_VERSION}
@@ -69,7 +66,11 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/channel-prefs.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/chrome/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/chrome/userChrome-example.css
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/chrome/userContent-example.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/localstore.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/mimeTypes.rdf
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/panels.rdf
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
@@ -79,7 +80,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/inspector@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/modern@themes.mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
