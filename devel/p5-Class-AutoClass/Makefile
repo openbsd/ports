@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.14 2014/10/17 11:15:03 jasper Exp $
+#	$OpenBSD: Makefile,v 1.15 2014/10/17 21:57:47 jasper Exp $
 
 COMMENT=	get and set methods and simplify object initialization
 
-DISTNAME=	Class-AutoClass-1.56
+DISTNAME=	Class-AutoClass-1.54
 REVISION=	0
 CATEGORIES=	devel
 
