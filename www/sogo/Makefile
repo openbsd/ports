@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.40 2014/06/12 06:16:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.41 2014/10/17 09:20:03 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	2.1.1
-DISTNAME =	SOGo-${VERSION}b
-PKGNAME =	sogo-${VERSION}.1
-REVISION =	3
+VERSION =	2.2.9
+DISTNAME =	SOGo-${VERSION}a
+PKGNAME =	sogo-${VERSION}.0
 
 SHARED_LIBS +=	GDLContentStore 2.0
 SHARED_LIBS +=	NGCards		2.0
-SHARED_LIBS +=	OGoContentStore	2.0
-SHARED_LIBS +=	SOGo		2.1
+SHARED_LIBS +=	SOGo		2.2
 SHARED_LIBS +=	SOGoUI		2.0
 
 CATEGORIES =	www
@@ -51,15 +49,8 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION
 SOGOLIBDIR =	lib/GNUstep/Frameworks/SOGo.framework/Versions/${LIBSOGo_VERSION}
 SUBST_VARS +=	SOGOLIBDIR VARBASE
 
-pre-configure:
-.for f in SOGo_Installation_Guide SOGo_Mobile_Devices_Configuration \
-    SOGo_Mozilla_Thunderbird_Configuration SOGo_Native_Microsoft_Outlook_Configuration
-	cd ${WRKSRC}/Documentation; mv "${f:S/_/ /g}.odt" "$f.odt"
-.endfor
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sogo
-	${INSTALL_DATA} ${WRKSRC}/Documentation/* ${PREFIX}/share/doc/sogo
 	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${WRKSRC}/Scripts/cas-proxy-validate.py \
 		${PREFIX}/share/doc/sogo/cas-proxy-validate.py

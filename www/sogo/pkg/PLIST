@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/01/03 18:39:51 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/10/17 09:20:03 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -6,7 +6,6 @@ include/GDLContentStore/EOAdaptorChannel+GCS.h
 include/GDLContentStore/GCSAlarmsFolder.h
 include/GDLContentStore/GCSChannelManager.h
 include/GDLContentStore/GCSContext.h
-include/GDLContentStore/GCSFieldExtractor.h
 include/GDLContentStore/GCSFieldInfo.h
 include/GDLContentStore/GCSFolder.h
 include/GDLContentStore/GCSFolderManager.h
@@ -64,7 +63,11 @@ lib/GNUstep/Frameworks/SOGo.framework/SOGo
 lib/GNUstep/Frameworks/SOGo.framework/Versions/
 ${SOGOLIBDIR}/
 ${SOGOLIBDIR}/Headers/
+${SOGOLIBDIR}/Headers/BSONCodec.h
 ${SOGOLIBDIR}/Headers/DOMNode+SOGo.h
+${SOGOLIBDIR}/Headers/EOBitmaskQualifier.h
+${SOGOLIBDIR}/Headers/EOQualifier+SOGoCacheObject.h
+${SOGOLIBDIR}/Headers/GCSSpecialQueries+SOGoCacheObject.h
 ${SOGOLIBDIR}/Headers/LDAPSource.h
 ${SOGOLIBDIR}/Headers/LDAPSourceSchema.h
 ${SOGOLIBDIR}/Headers/NSArray+DAV.h
@@ -86,6 +89,9 @@ ${SOGOLIBDIR}/Headers/SOGoAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoBuild.h
 ${SOGOLIBDIR}/Headers/SOGoCASSession.h
 ${SOGOLIBDIR}/Headers/SOGoCache.h
+${SOGOLIBDIR}/Headers/SOGoCacheGCSFolder.h
+${SOGOLIBDIR}/Headers/SOGoCacheGCSObject.h
+${SOGOLIBDIR}/Headers/SOGoCacheObject.h
 ${SOGOLIBDIR}/Headers/SOGoConstants.h
 ${SOGOLIBDIR}/Headers/SOGoContentObject.h
 ${SOGOLIBDIR}/Headers/SOGoCredentialsFile.h
@@ -890,7 +896,41 @@ lib/GNUstep/SOGo/MailPartViewers.SOGo/stamp.make
 lib/GNUstep/SOGo/Mailer.SOGo/
 @bin lib/GNUstep/SOGo/Mailer.SOGo/Mailer
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Arabic.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Arabic.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/BrazilianPortuguese.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Catalan.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Catalan.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Czech.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Czech.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Danish.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Danish.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Dutch.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Dutch.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/English.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/English.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Finnish.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Finnish.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/French.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/French.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/German.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/German.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Hungarian.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Hungarian.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Icelandic.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Info-gnustep.plist
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Italian.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/NorwegianBokmal.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/NorwegianBokmal.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/NorwegianNynorsk.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/NorwegianNynorsk.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Polish.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Polish.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Russian.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Russian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailArabicForward.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailArabicForward.wo/SOGoMailArabicForward.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailArabicForward.wo/SOGoMailArabicForward.wod
@@ -1029,7 +1069,19 @@ lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailWelshForward.wo/SOGoMailWelshForw
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailWelshReply.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailWelshReply.wo/SOGoMailWelshReply.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailWelshReply.wo/SOGoMailWelshReply.wod
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Slovak.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Slovak.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SpanishArgentina.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SpanishArgentina.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SpanishSpain.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SpanishSpain.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Swedish.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Swedish.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Ukrainian.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Ukrainian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/WebServer/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Welsh.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Welsh.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/Mailer.SOGo/bundle-info.plist
 lib/GNUstep/SOGo/MailerUI.SOGo/
@@ -1294,6 +1346,7 @@ lib/GNUstep/SOGo/Templates/Appointments/SOGoAptMailReceipt.wox
 lib/GNUstep/SOGo/Templates/Appointments/SOGoAptMailUpdate.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactEditor.wox
+lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactFolderProperties.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactFoldersView.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactView.wox
 lib/GNUstep/SOGo/Templates/ContactsUI/UIxContactsFilterPanel.wox
@@ -1320,6 +1373,7 @@ lib/GNUstep/SOGo/Templates/MailerUI/UIxMailFolderMenu.wox
 lib/GNUstep/SOGo/Templates/MailerUI/UIxMailMainFrame.wox
 lib/GNUstep/SOGo/Templates/MailerUI/UIxMailMoveToPopUp.wox
 lib/GNUstep/SOGo/Templates/MailerUI/UIxMailPopupView.wox
+lib/GNUstep/SOGo/Templates/MailerUI/UIxMailSearch.wox
 lib/GNUstep/SOGo/Templates/MailerUI/UIxMailToSelection.wox
 lib/GNUstep/SOGo/Templates/MailerUI/UIxMailUserDelegationEditor.wox
 lib/GNUstep/SOGo/Templates/MailerUI/UIxMailUserRightsEditor.wox
@@ -1458,6 +1512,7 @@ lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalMainView.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalMonthView.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalMulticolumnDayView.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalUserRightsEditor.wox
+lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalViewPrint.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalWeekView.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalendarProperties.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalendarSelector.wox
@@ -1520,6 +1575,8 @@ lib/GNUstep/SOGo/WebServerResources/UIxAttendeesEditor.css
 lib/GNUstep/SOGo/WebServerResources/UIxAttendeesEditor.js
 lib/GNUstep/SOGo/WebServerResources/UIxCalUserRightsEditor.css
 lib/GNUstep/SOGo/WebServerResources/UIxCalUserRightsEditor.js
+lib/GNUstep/SOGo/WebServerResources/UIxCalViewPrint.css
+lib/GNUstep/SOGo/WebServerResources/UIxCalViewPrint.js
 lib/GNUstep/SOGo/WebServerResources/UIxCalendarProperties.css
 lib/GNUstep/SOGo/WebServerResources/UIxCalendarProperties.js
 lib/GNUstep/SOGo/WebServerResources/UIxColorPicker.js
@@ -1527,6 +1584,8 @@ lib/GNUstep/SOGo/WebServerResources/UIxComponentEditor.css
 lib/GNUstep/SOGo/WebServerResources/UIxComponentEditor.js
 lib/GNUstep/SOGo/WebServerResources/UIxContactEditor.css
 lib/GNUstep/SOGo/WebServerResources/UIxContactEditor.js
+lib/GNUstep/SOGo/WebServerResources/UIxContactFolderProperties.css
+lib/GNUstep/SOGo/WebServerResources/UIxContactFolderProperties.js
 lib/GNUstep/SOGo/WebServerResources/UIxContactsUserFolders.css
 lib/GNUstep/SOGo/WebServerResources/UIxContactsUserFolders.js
 lib/GNUstep/SOGo/WebServerResources/UIxContactsUserRightsEditor.css
@@ -1539,6 +1598,8 @@ lib/GNUstep/SOGo/WebServerResources/UIxMailEditor.css
 lib/GNUstep/SOGo/WebServerResources/UIxMailEditor.js
 lib/GNUstep/SOGo/WebServerResources/UIxMailPartExternalHTMLViewer.css
 lib/GNUstep/SOGo/WebServerResources/UIxMailPopupView.js
+lib/GNUstep/SOGo/WebServerResources/UIxMailSearch.css
+lib/GNUstep/SOGo/WebServerResources/UIxMailSearch.js
 lib/GNUstep/SOGo/WebServerResources/UIxMailToSelection.js
 lib/GNUstep/SOGo/WebServerResources/UIxMailUserDelegationEditor.css
 lib/GNUstep/SOGo/WebServerResources/UIxMailUserDelegationEditor.js
@@ -1576,6 +1637,7 @@ lib/GNUstep/SOGo/WebServerResources/arrow-left.png
 lib/GNUstep/SOGo/WebServerResources/arrow-right.png
 lib/GNUstep/SOGo/WebServerResources/arrow-up.png
 lib/GNUstep/SOGo/WebServerResources/attachment.gif
+lib/GNUstep/SOGo/WebServerResources/attachment.png
 lib/GNUstep/SOGo/WebServerResources/attendee-partstats.png
 lib/GNUstep/SOGo/WebServerResources/attendee-roles.png
 lib/GNUstep/SOGo/WebServerResources/browser_chrome.gif
@@ -1635,9 +1697,6 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/dialog/dialogDefinition.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/div/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/div/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/div/dialogs/div.js
-lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/fakeobjects/
-lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/fakeobjects/images/
-lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/fakeobjects/images/spacer.gif
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/icons.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/icons_hidpi.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/image/
@@ -1654,6 +1713,7 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/images/anchor.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/images/hidpi/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/images/hidpi/anchor.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/LICENSE.md
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/dialogs/options.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/dialogs/toolbar.css
@@ -1664,9 +1724,9 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/tabletools/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/tabletools/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/tabletools/dialogs/tableCell.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/LICENSE.md
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/ciframe.html
-lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/tmp.html
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/wsc.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/wsc.js
@@ -1678,7 +1738,6 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/dialog_ie.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/dialog_ie7.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/dialog_ie8.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/dialog_iequirks.css
-lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/dialog_opera.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/editor.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/editor_gecko.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/editor_ie.css
@@ -1717,10 +1776,12 @@ lib/GNUstep/SOGo/WebServerResources/dtree.css
 lib/GNUstep/SOGo/WebServerResources/dtree.js
 lib/GNUstep/SOGo/WebServerResources/edit.png
 lib/GNUstep/SOGo/WebServerResources/empty.gif
+lib/GNUstep/SOGo/WebServerResources/error.png
 lib/GNUstep/SOGo/WebServerResources/event-gradient.png
 lib/GNUstep/SOGo/WebServerResources/event-grippy-bottom.png
 lib/GNUstep/SOGo/WebServerResources/event-grippy-top.png
 lib/GNUstep/SOGo/WebServerResources/event-grippy-vertical.png
+lib/GNUstep/SOGo/WebServerResources/event7.png
 lib/GNUstep/SOGo/WebServerResources/first.gif
 lib/GNUstep/SOGo/WebServerResources/flag-col.png
 lib/GNUstep/SOGo/WebServerResources/flag.png
@@ -1738,6 +1799,9 @@ lib/GNUstep/SOGo/WebServerResources/important.png
 lib/GNUstep/SOGo/WebServerResources/input_bg.gif
 lib/GNUstep/SOGo/WebServerResources/inverse.png
 lib/GNUstep/SOGo/WebServerResources/jquery-ui.js
+lib/GNUstep/SOGo/WebServerResources/jquery.fileupload.css
+lib/GNUstep/SOGo/WebServerResources/jquery.fileupload.js
+lib/GNUstep/SOGo/WebServerResources/jquery.iframe-transport.js
 lib/GNUstep/SOGo/WebServerResources/jquery.js
 lib/GNUstep/SOGo/WebServerResources/js_color_picker_v2.js
 lib/GNUstep/SOGo/WebServerResources/last.gif
@@ -1907,6 +1971,7 @@ lib/GNUstep/SOGo/WebServerResources/new-event.png
 lib/GNUstep/SOGo/WebServerResources/new-list.png
 lib/GNUstep/SOGo/WebServerResources/new-task.png
 lib/GNUstep/SOGo/WebServerResources/next.gif
+lib/GNUstep/SOGo/WebServerResources/notice.png
 lib/GNUstep/SOGo/WebServerResources/offline-settings.png
 lib/GNUstep/SOGo/WebServerResources/options.png
 lib/GNUstep/SOGo/WebServerResources/plus.png
@@ -1936,6 +2001,7 @@ lib/GNUstep/SOGo/WebServerResources/status.vacation-msg.png
 lib/GNUstep/SOGo/WebServerResources/submenu-active.gif
 lib/GNUstep/SOGo/WebServerResources/submenu-disabled.gif
 lib/GNUstep/SOGo/WebServerResources/submenu.gif
+lib/GNUstep/SOGo/WebServerResources/success.png
 lib/GNUstep/SOGo/WebServerResources/tab_a_active_bg.png
 lib/GNUstep/SOGo/WebServerResources/tab_a_inactive_bg.png
 lib/GNUstep/SOGo/WebServerResources/tab_left_active.gif
@@ -1947,6 +2013,7 @@ lib/GNUstep/SOGo/WebServerResources/tab_span_inactive_bg.png
 lib/GNUstep/SOGo/WebServerResources/tablekit-sogo.js
 lib/GNUstep/SOGo/WebServerResources/tablekit-trueresize.js
 lib/GNUstep/SOGo/WebServerResources/tablekit.js
+lib/GNUstep/SOGo/WebServerResources/task.png
 lib/GNUstep/SOGo/WebServerResources/tb-ab-properties-flat-24x24.png
 lib/GNUstep/SOGo/WebServerResources/tb-compose-attach-flat-24x24.png
 lib/GNUstep/SOGo/WebServerResources/tb-compose-contacts-flat-24x24.png
@@ -1988,6 +2055,8 @@ lib/GNUstep/SOGo/WebServerResources/toolbarbtn_a_bg.png
 lib/GNUstep/SOGo/WebServerResources/toolbarbtn_span_bg.png
 lib/GNUstep/SOGo/WebServerResources/unread.png
 lib/GNUstep/SOGo/WebServerResources/up-icon.png
+lib/GNUstep/SOGo/WebServerResources/upload_document.png
+lib/GNUstep/SOGo/WebServerResources/warning.png
 lib/GNUstep/SOGo/WebServerResources/week-view.png
 lib/GNUstep/SOGo/WebServerResources/write-message.png
 lib/GNUstep/SOGo/WebServerResources/write.png
@@ -2010,7 +2079,6 @@ lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/bundle-info.plist
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/stamp.make
 @lib lib/libGDLContentStore.so.${LIBGDLContentStore_VERSION}
 @lib lib/libNGCards.so.${LIBNGCards_VERSION}
-@lib lib/libOGoContentStore.so.${LIBOGoContentStore_VERSION}
 @lib lib/libSOGo.so.${LIBSOGo_VERSION}
 @lib lib/libSOGoUI.so.${LIBSOGoUI_VERSION}
 @bin sbin/sogo-ealarms-notify
@@ -2019,17 +2087,7 @@ lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/stamp.make
 @bin sbin/sogod
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/sogo/
-share/doc/sogo/SOGo_Installation_Guide.odt
-share/doc/sogo/SOGo_Mobile_Devices_Configuration.odt
-share/doc/sogo/SOGo_Mozilla_Thunderbird_Configuration.odt
-share/doc/sogo/SOGo_Native_Microsoft_Outlook_Configuration.odt
-share/doc/sogo/architecture.png
 share/doc/sogo/cas-proxy-validate.py
-share/doc/sogo/inverse.jpg
-share/doc/sogo/openchange.png
-share/doc/sogo/preferences.png
-share/doc/sogo/sogo-2.png
-share/doc/sogo/sogo.png
 share/doc/sogo/sql-update-1.3.11_to_1.3.12-mysql.sh
 share/doc/sogo/sql-update-1.3.11_to_1.3.12-postgres.sh
 share/doc/sogo/sql-update-1.3.16_to_1.3.17-mysql.sh
