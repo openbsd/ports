@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/17 17:03:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/17 18:35:32 jasper Exp $
 
 COMMENT =	protects rack apps against typical web attacks
 
@@ -19,6 +19,7 @@ RUN_DEPENDS =		www/ruby-rack,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
+# https://github.com/rkh/rack-protection/pull/87
 #MODRUBY_TEST =		rspec2
 #TEST_DEPENDS =		www/ruby-rack-test,${MODRUBY_FLAVOR}
 
