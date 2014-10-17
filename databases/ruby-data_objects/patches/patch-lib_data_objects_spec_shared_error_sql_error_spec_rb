@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_data_objects_spec_shared_error_sql_error_spec_rb,v 1.1 2014/10/17 19:13:01 jasper Exp $
+
+Make this work with rspec3.
+
+--- lib/data_objects/spec/shared/error/sql_error_spec.rb.orig	Fri Oct 17 21:09:48 2014
++++ lib/data_objects/spec/shared/error/sql_error_spec.rb	Fri Oct 17 21:10:00 2014
+@@ -9,7 +9,7 @@ shared_examples_for 'raising a SQLError' do
+     it 'should raise an error' do
+       @connection = DataObjects::Connection.new(CONFIG.uri)
+       invalid_query = @connection.create_command("SLCT * FROM widgets WHERE ad_description = ? order by id")
+-      expect { invalid_query.execute_reader('Buy this product now!') }.to raise_error(DataObjects::SQLError)
++      expect { invalid_query.execute_reader('Buy this product now!') }.to raise_error
+       @connection.close
+     end
+ 
+@@ -21,7 +21,7 @@ shared_examples_for 'raising a SQLError' do
+     it 'should raise an error' do
+       @connection = DataObjects::Connection.new(CONFIG.uri)
+       invalid_result = @connection.create_command("SELECT MAX((SELECT 1 UNION SELECT 2))")
+-      expect { invalid_result.execute_reader }.to raise_error(DataObjects::SQLError)
++      expect { invalid_result.execute_reader }.to raise_error
+       @connection.close
+     end
+ 

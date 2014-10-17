@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/10/17 17:03:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2014/10/17 19:13:01 jasper Exp $
 
 COMMENT=		ruby-data_objects driver for MySQL
 
@@ -21,9 +21,9 @@ WANTLIB=		mysqlclient crypto ssl z
 LIB_DEPENDS=		databases/mariadb
 
 # Requires running MySQL database
-#TEST_IS_INTERACTIVE =	Yes
-#MODRUBY_TEST =		rspec2
-#MODRUBY_TEST_TARGET =	spec/*_spec.rb
-#TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_IS_INTERACTIVE =	Yes
+MODRUBY_TEST =		rspec3
+MODRUBY_TEST_TARGET =	spec/*_spec.rb
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

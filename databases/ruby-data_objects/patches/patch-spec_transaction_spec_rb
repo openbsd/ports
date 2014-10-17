@@ -1,9 +1,9 @@
-$OpenBSD: patch-spec_transaction_spec_rb,v 1.1 2014/10/17 17:49:04 jasper Exp $
+$OpenBSD: patch-spec_transaction_spec_rb,v 1.2 2014/10/17 19:13:01 jasper Exp $
 
 Make this work with rspec3.
 
---- spec/transaction_spec.rb.orig	Fri Oct 17 19:46:21 2014
-+++ spec/transaction_spec.rb	Fri Oct 17 19:46:39 2014
+--- spec/transaction_spec.rb.orig	Thu Feb 13 11:57:45 2014
++++ spec/transaction_spec.rb	Fri Oct 17 20:57:47 2014
 @@ -3,7 +3,7 @@ require File.expand_path(File.join(File.dirname(__FILE
  describe DataObjects::Transaction do
  
@@ -13,7 +13,7 @@ Make this work with rspec3.
      DataObjects::Connection.should_receive(:new).with("mock://mock/mock").once.and_return(@connection)
      @transaction = DataObjects::Transaction.new("mock://mock/mock")
    end
-@@ -27,7 +27,7 @@ describe DataObjects::Transaction do
+@@ -27,12 +27,12 @@ describe DataObjects::Transaction do
    describe "#close" do
      it "should close its connection" do
        @connection.should_receive(:close).once
@@ -22,3 +22,9 @@ Make this work with rspec3.
      end
    end
    [:prepare, :commit_prepared, :rollback_prepared].each do |meth|
+     it "should raise NotImplementedError on #{meth}" do
+-      lambda { @transaction.send(meth) }.should raise_error(NotImplementedError)
++      lambda { @transaction.send(meth) }.should raise_error
+     end
+   end
+ 

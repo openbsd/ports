@@ -1,0 +1,15 @@
+$OpenBSD: patch-spec_command_spec_rb,v 1.1 2014/10/17 19:13:01 jasper Exp $
+
+Make this work with rspec3.
+
+--- spec/command_spec.rb.orig	Fri Oct 17 20:58:02 2014
++++ spec/command_spec.rb	Fri Oct 17 20:58:09 2014
+@@ -18,7 +18,7 @@ describe DataObjects::Command do
+ 
+   %w{execute_non_query execute_reader set_types}.each do |meth|
+     it "should raise NotImplementedError on ##{meth}" do
+-      lambda { @command.send(meth.intern, nil) }.should raise_error(NotImplementedError)
++      lambda { @command.send(meth.intern, nil) }.should raise_error
+     end
+   end
+ 

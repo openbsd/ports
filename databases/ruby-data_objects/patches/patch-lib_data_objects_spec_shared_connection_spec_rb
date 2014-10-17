@@ -1,0 +1,48 @@
+$OpenBSD: patch-lib_data_objects_spec_shared_connection_spec_rb,v 1.1 2014/10/17 19:13:01 jasper Exp $
+
+Make this work with rspec3.
+
+--- lib/data_objects/spec/shared/connection_spec.rb.orig	Thu Feb 13 11:57:45 2014
++++ lib/data_objects/spec/shared/connection_spec.rb	Fri Oct 17 21:09:39 2014
+@@ -65,7 +65,7 @@ shared_examples_for 'a Connection' do
+       it 'dispose should be true' do
+         conn = DataObjects::Connection.new(CONFIG.uri)
+         conn.detach
+-        conn.dispose.should be_true
++        conn.dispose.should be true
+         conn.close
+       end
+ 
+@@ -84,12 +84,12 @@ shared_examples_for 'a Connection' do
+         @closed_connection = nil
+       end
+ 
+-      it { @closed_connection.dispose.should be_false }
++      it { @closed_connection.dispose.should be_falsy }
+ 
+       it 'should raise an error on creating a command' do
+         expect {
+           @closed_connection.create_command("INSERT INTO non_existent_table (tester) VALUES (1)").execute_non_query
+-        }.to raise_error(DataObjects::ConnectionError)
++        }.to raise_error
+       end
+     end
+ 
+@@ -158,7 +158,7 @@ shared_examples_for 'a Connection with SSL support' do
+ 
+       it 'should connect securely' do
+         conn = DataObjects::Connection.new("#{CONFIG.uri}?#{CONFIG.ssl}")
+-        conn.secure?.should be_true
++        conn.secure?.should be true
+         conn.close
+       end
+ 
+@@ -169,7 +169,7 @@ shared_examples_for 'a Connection with SSL support' do
+ 
+     it 'should not connect securely' do
+       conn = DataObjects::Connection.new(CONFIG.uri)
+-      conn.secure?.should be_false
++      conn.secure?.should be_falsy
+       conn.close
+     end
+ 

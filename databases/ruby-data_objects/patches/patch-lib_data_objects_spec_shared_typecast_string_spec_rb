@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_data_objects_spec_shared_typecast_string_spec_rb,v 1.1 2014/10/17 19:13:01 jasper Exp $
+
+Make this work with rspec3.
+
+--- lib/data_objects/spec/shared/typecast/string_spec.rb.orig	Fri Oct 17 21:10:25 2014
++++ lib/data_objects/spec/shared/typecast/string_spec.rb	Fri Oct 17 21:10:34 2014
+@@ -96,7 +96,7 @@ shared_examples_for 'supporting String' do
+ 
+       it 'should write a multibyte String' do
+         @command = @connection.create_command('INSERT INTO users (name) VALUES(?)')
+-        expect { @command.execute_non_query(name) }.not_to raise_error(DataObjects::DataError)
++        expect { @command.execute_non_query(name) }.not_to raise_error
+       end
+ 
+       it 'should read back the multibyte String' do
+@@ -109,7 +109,7 @@ shared_examples_for 'supporting String' do
+ 
+       it 'should write a multibyte String (without query parameters)' do
+         @command = @connection.create_command("INSERT INTO users (name) VALUES(#{@n}\'#{name}\')")
+-        expect { @command.execute_non_query }.not_to raise_error(DataObjects::DataError)
++        expect { @command.execute_non_query }.not_to raise_error
+       end
+ 
+       it 'should read back the multibyte String (without query parameters)' do

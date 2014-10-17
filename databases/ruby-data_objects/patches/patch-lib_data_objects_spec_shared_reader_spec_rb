@@ -1,0 +1,60 @@
+$OpenBSD: patch-lib_data_objects_spec_shared_reader_spec_rb,v 1.1 2014/10/17 19:13:01 jasper Exp $
+
+Make this work with rspec3.
+
+--- lib/data_objects/spec/shared/reader_spec.rb.orig	Thu Feb 13 11:57:45 2014
++++ lib/data_objects/spec/shared/reader_spec.rb	Fri Oct 17 21:10:17 2014
+@@ -42,7 +42,7 @@ shared_examples_for 'a Reader' do
+     describe 'when the reader is uninitialized' do
+ 
+       it 'should raise an error' do
+-        expect { @reader.values }.to raise_error(DataObjects::DataError)
++        expect { @reader.values }.to raise_error
+       end
+ 
+     end
+@@ -78,7 +78,7 @@ shared_examples_for 'a Reader' do
+       end
+ 
+       it 'should raise an error again' do
+-        expect { @reader.values }.to raise_error(DataObjects::DataError)
++        expect { @reader.values }.to raise_error
+       end
+     end
+ 
+@@ -91,7 +91,7 @@ shared_examples_for 'a Reader' do
+     describe 'on an open reader' do
+ 
+       it 'should return true' do
+-        @reader.close.should be_true
++        @reader.close.should be true
+       end
+ 
+     end
+@@ -103,7 +103,7 @@ shared_examples_for 'a Reader' do
+       end
+ 
+       it 'should return false' do
+-        @reader.close.should be_false
++        @reader.close.should be_falsy
+       end
+ 
+     end
+@@ -117,7 +117,7 @@ shared_examples_for 'a Reader' do
+     describe 'successfully moving the cursor initially' do
+ 
+       it 'should return true' do
+-        @reader.next!.should be_true
++        @reader.next!.should be true
+       end
+ 
+     end
+@@ -143,7 +143,7 @@ shared_examples_for 'a Reader' do
+       end
+ 
+       it 'should return false when the end is reached' do
+-        @reader.next!.should be_false
++        @reader.next!.should be_falsy
+       end
+ 
+     end

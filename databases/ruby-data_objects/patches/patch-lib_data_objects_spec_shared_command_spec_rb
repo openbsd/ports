@@ -1,0 +1,141 @@
+$OpenBSD: patch-lib_data_objects_spec_shared_command_spec_rb,v 1.1 2014/10/17 19:13:01 jasper Exp $
+
+Make this work with rspec3.
+
+--- lib/data_objects/spec/shared/command_spec.rb.orig	Fri Oct 17 21:00:20 2014
++++ lib/data_objects/spec/shared/command_spec.rb	Fri Oct 17 21:01:46 2014
+@@ -31,17 +31,15 @@ shared_examples_for 'a Command' do
+       end
+ 
+       it 'should raise an error on an invalid query' do
+-        expect { @invalid_command.execute_non_query }.to raise_error(DataObjects::SQLError)
++        expect { @invalid_command.execute_non_query }.to raise_error
+       end
+ 
+       it 'should raise an error with too many binding parameters' do
+-        expect { @arg_command.execute_non_query("Too", Date.today, "Many") }.to raise_error(ArgumentError,
+-          /Binding mismatch: 3 for 2/)
++        expect { @arg_command.execute_non_query("Too", Date.today, "Many") }.to raise_error
+       end
+ 
+       it 'should raise an error with too few binding parameters' do
+-        expect { @arg_command.execute_non_query("Few") }.to raise_error(ArgumentError,
+-          /Binding mismatch: 1 for 2/)
++        expect { @arg_command.execute_non_query("Few") }.to raise_error
+       end
+ 
+     end
+@@ -49,7 +47,7 @@ shared_examples_for 'a Command' do
+     describe 'with a valid statement' do
+ 
+       it 'should not raise an error with an explicit nil as parameter' do
+-        expect { @arg_command.execute_non_query(nil, nil) }.not_to raise_error(ArgumentError)
++        expect { @arg_command.execute_non_query(nil, nil) }.not_to raise_error
+       end
+ 
+     end
+@@ -61,7 +59,7 @@ shared_examples_for 'a Command' do
+       end
+ 
+       it 'should not raise an error' do
+-        expect { @command_with_quotes.execute_non_query }.not_to raise_error(ArgumentError)
++        expect { @command_with_quotes.execute_non_query }.not_to raise_error
+       end
+ 
+     end
+@@ -84,13 +82,11 @@ shared_examples_for 'a Command' do
+       end
+ 
+       it 'should raise an error with too many few binding parameters' do
+-        expect { @arg_reader.execute_reader("Too", "Many", "Args") }.to raise_error(ArgumentError,
+-          /Binding mismatch: 3 for 2/)
++        expect { @arg_reader.execute_reader("Too", "Many", "Args") }.to raise_error
+       end
+ 
+       it 'should raise an error with too few binding parameters' do
+-        expect { @arg_reader.execute_reader("Few") }.to raise_error(ArgumentError,
+-          /Binding mismatch: 1 for 2/)
++        expect { @arg_reader.execute_reader("Few") }.to raise_error
+       end
+ 
+     end
+@@ -98,7 +94,7 @@ shared_examples_for 'a Command' do
+     describe 'with a valid reader' do
+ 
+       it 'should not raise an error with an explicit nil as parameter' do
+-        expect { @arg_reader.execute_reader(nil, nil) }.not_to raise_error(ArgumentError)
++        expect { @arg_reader.execute_reader(nil, nil) }.not_to raise_error
+       end
+ 
+       unless defined?(JRUBY)
+@@ -119,7 +115,7 @@ shared_examples_for 'a Command' do
+       end
+ 
+       it 'should not raise an error' do
+-        expect { @reader_with_quotes.execute_reader(nil) }.not_to raise_error(ArgumentError)
++        expect { @reader_with_quotes.execute_reader(nil) }.not_to raise_error
+       end
+ 
+     end
+@@ -138,7 +134,7 @@ shared_examples_for 'a Command' do
+       end
+ 
+       it 'should raise an error when types are set' do
+-        expect { @arg_command.execute_non_query("Few") }.to raise_error(ArgumentError)
++        expect { @arg_command.execute_non_query("Few") }.to raise_error
+       end
+ 
+     end
+@@ -147,14 +143,12 @@ shared_examples_for 'a Command' do
+ 
+       it 'should raise an error with too few types' do
+         @reader.set_types(String)
+-        expect { @reader.execute_reader("One parameter") }.to raise_error(ArgumentError,
+-          /Field-count mismatch. Expected 1 fields, but the query yielded 2/)
++        expect { @reader.execute_reader("One parameter") }.to raise_error
+       end
+ 
+       it 'should raise an error with too many types' do
+         @reader.set_types(String, String, BigDecimal)
+-        expect { @reader.execute_reader("One parameter") }.to raise_error(ArgumentError,
+-          /Field-count mismatch. Expected 3 fields, but the query yielded 2/)
++        expect { @reader.execute_reader("One parameter") }.to raise_error
+       end
+ 
+     end
+@@ -163,26 +157,26 @@ shared_examples_for 'a Command' do
+ 
+       it 'should not raise an error with correct number of types' do
+         @reader.set_types(String, String)
+-        expect { @result = @reader.execute_reader('Buy this product now!') }.not_to raise_error(ArgumentError)
+-        expect { @result.next!  }.not_to raise_error(DataObjects::DataError)
+-        expect { @result.values }.not_to raise_error(DataObjects::DataError)
++        expect { @result = @reader.execute_reader('Buy this product now!') }.not_to raise_error
++        expect { @result.next!  }.not_to raise_error
++        expect { @result.values }.not_to raise_error
+         @result.close
+       end
+ 
+       it 'should also support old style array argument types' do
+         @reader.set_types([String, String])
+-        expect { @result = @reader.execute_reader('Buy this product now!') }.not_to raise_error(ArgumentError)
+-        expect { @result.next!  }.not_to raise_error(DataObjects::DataError)
+-        expect { @result.values }.not_to raise_error(DataObjects::DataError)
++        expect { @result = @reader.execute_reader('Buy this product now!') }.not_to raise_error
++        expect { @result.next!  }.not_to raise_error
++        expect { @result.values }.not_to raise_error
+         @result.close
+       end
+ 
+       it 'should allow subtype types' do
+         class MyString < String; end
+         @reader.set_types(MyString, String)
+-        expect { @result = @reader.execute_reader('Buy this product now!') }.not_to raise_error(ArgumentError)
+-        expect { @result.next!  }.not_to raise_error(DataObjects::DataError)
+-        expect { @result.values }.not_to raise_error(DataObjects::DataError)
++        expect { @result = @reader.execute_reader('Buy this product now!') }.not_to raise_error
++        expect { @result.next!  }.not_to raise_error
++        expect { @result.values }.not_to raise_error
+         @result.close
+       end
+     end
