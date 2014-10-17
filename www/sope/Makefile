@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.42 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2014/10/17 09:19:32 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		2.1.1
-DISTNAME =		SOPE-${VERSION}b
-PKGNAME-main =		sope-${VERSION}.1
-REVISION-main =		2
-PKGNAME-mysql =		sope-mysql-${VERSION}.1
-REVISION-mysql =	1
-PKGNAME-postgres =	sope-postgres-${VERSION}.1
-REVISION-postgres =	0
+VERSION =		2.2.9
+DISTNAME =		SOPE-${VERSION}a
+PKGNAME-main =		sope-${VERSION}.0
+PKGNAME-mysql =		sope-mysql-${VERSION}.0
+PKGNAME-postgres =	sope-postgres-${VERSION}.0
 
 SO_MAJOR=	2
-SO_MINOR=	1
+SO_MINOR=	2
 .for _lib in DOM EOControl GDLAccess NGExtensions NGLdap NGMime \
 		NGObjWeb NGStreams SaxObjC WEExtensions \
 		WOExtensions XmlRpc SBJson
@@ -44,9 +41,9 @@ LIB_DEPENDS-main=	x11/gnustep/base \
 			databases/openldap \
 			x11/gnustep/libobjc2 \
 			${MODLIBICONV_LIB_DEPENDS}
-LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION}.1 \
+LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION}.0 \
 			databases/mariadb,-main
-LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION}.1 \
+LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION}.0 \
 			databases/postgresql,-main
 
 CONFIGURE_STYLE=simple dest

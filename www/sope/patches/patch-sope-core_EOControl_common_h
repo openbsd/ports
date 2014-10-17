@@ -1,10 +1,10 @@
-$OpenBSD: patch-sope-core_EOControl_common_h,v 1.1 2013/10/19 09:48:23 sebastia Exp $
+$OpenBSD: patch-sope-core_EOControl_common_h,v 1.2 2014/10/17 09:19:32 sebastia Exp $
 
 fix build with libobjc2-1.7
 
---- sope-core/EOControl/common.h.orig	Sun Oct 13 15:55:39 2013
-+++ sope-core/EOControl/common.h	Sun Oct 13 15:55:43 2013
-@@ -39,10 +39,11 @@
+--- sope-core/EOControl/common.h.orig	Fri Sep 26 20:38:11 2014
++++ sope-core/EOControl/common.h	Tue Sep 30 12:38:09 2014
+@@ -40,10 +40,11 @@
  #  endif
  #endif
  
