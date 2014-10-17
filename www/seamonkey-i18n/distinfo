@@ -9,7 +9,7 @@ SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.fi.langpack.xpi) = 8IrXyzDvKI
 SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.fr.langpack.xpi) = 1LiFOWH/QEASS3RlfAUpROH7NM4VWle2OAKjYQTBsYo=
 SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.gl.langpack.xpi) = CFMS9Nbg2oxtwF7pdutzxk+Ntd7qlOk+UQlK8sYS2vk=
 SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.hu.langpack.xpi) = 2ONIQn3n/EoSsp7rskLYXyp4MVXuGYARWhLqGMILOnY=
-SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.it.langpack.xpi) = WvACpAOifezERd3TblTtrjW6oA0B+WfWD0iEEhm+0nM=
+SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.it.langpack.xpi) = fPv0HFEmclLpSMcm2CyZ8d0ItB4IJMSzruN0UTm/auo=
 SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.ja-JP-mac.langpack.xpi) = K2N7YY2l3M+Y/ZysFo6UOjMnqpbpRJOvjrxYqr3ZYyI=
 SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.ja.langpack.xpi) = MQsZFf3dZF71mcTM1DoBLXrVttzYue4e1VMU3+G4TVA=
 SHA256 (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.lt.langpack.xpi) = zz8XH5syL0Y9R3YRj5HpIT78R9naMR6WZrATSVbJ+dU=
@@ -33,7 +33,7 @@ SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.fi.langpack.xpi) = 802428
 SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.fr.langpack.xpi) = 813379
 SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.gl.langpack.xpi) = 815086
 SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.hu.langpack.xpi) = 846944
-SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.it.langpack.xpi) = 12288
+SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.it.langpack.xpi) = 744667
 SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.ja-JP-mac.langpack.xpi) = 901956
 SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.ja.langpack.xpi) = 886414
 SIZE (mozilla/seamonkey-i18n-2.30/seamonkey-2.30.lt.langpack.xpi) = 852885
