@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/26 14:45:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/17 17:03:27 jasper Exp $
 
 COMMENT =		robust daemon management
 
@@ -16,7 +16,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_TEST =	rspec2
-MODRUBY_TEST_TARGET = spec/daemon_controller_spec.rb
+#MODRUBY_TEST =	rspec2
+#MODRUBY_TEST_TARGET = spec/daemon_controller_spec.rb
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/11 19:54:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2014/10/17 17:03:26 jasper Exp $
 
 COMMENT =	ruby SQLite3 embedded database library
 
@@ -27,8 +27,8 @@ AMALGALITE_SO_DIR =	amalgalite/${MODRUBY_REV}
 SUBST_VARS +=		AMALGALITE_SO_DIR
 
 # distfile doesn't include configuration directory necessary for testing.
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
-MODRUBY_TEST =	rspec2
-MODRUBY_TEST_TARGET =	spec/*_spec.rb
+#TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+#MODRUBY_TEST =	rspec2
+#MODRUBY_TEST_TARGET =	spec/*_spec.rb
 
 .include <bsd.port.mk>

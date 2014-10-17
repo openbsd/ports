@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/01/15 02:13:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/17 17:03:27 jasper Exp $
 
 COMMENT =	embeds the V8 javascript interpreter into ruby
 
@@ -19,9 +19,9 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	lang/libv8 \
 		devel/ruby-ref,${MODRUBY_FLAVOR}
 
-TEST_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
-MODRUBY_TEST_ENV = RUBYOPT='-rubygems -rv8'
-MODRUBY_TEST = rspec2
-MODRUBY_TEST_TARGET = spec/{v8,c}/*_spec.rb
+#TEST_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
+#MODRUBY_TEST_ENV = RUBYOPT='-rubygems -rv8'
+#MODRUBY_TEST =	rspec2
+#MODRUBY_TEST_TARGET = spec/{v8,c}/*_spec.rb
 
 .include <bsd.port.mk>

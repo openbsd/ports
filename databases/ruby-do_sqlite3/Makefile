@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/06/19 20:24:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2014/10/17 17:03:27 jasper Exp $
 
 COMMENT =	DataObjects driver for SQLite3
 
@@ -18,8 +18,8 @@ RUN_DEPENDS =		databases/ruby-data_objects,${MODRUBY_FLAVOR}=${VERSION}
 
 WANTLIB =		sqlite3
 
-MODRUBY_TEST =	rspec2
-MODRUBY_TEST_TARGET = spec/*_spec.rb
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+#MODRUBY_TEST =		rspec2
+#MODRUBY_TEST_TARGET =	spec/*_spec.rb
+#TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

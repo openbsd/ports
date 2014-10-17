@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/28 22:00:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/17 17:03:27 jasper Exp $
 
 COMMENT =	protects rack apps against typical web attacks
 
@@ -19,7 +19,7 @@ RUN_DEPENDS =		www/ruby-rack,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_TEST =		rspec2
-TEST_DEPENDS =		www/ruby-rack-test,${MODRUBY_FLAVOR}
+#MODRUBY_TEST =		rspec2
+#TEST_DEPENDS =		www/ruby-rack-test,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

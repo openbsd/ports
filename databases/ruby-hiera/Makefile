@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/10/11 19:54:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2014/10/17 17:03:27 jasper Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
@@ -23,8 +23,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/ruby-deep_merge,${MODRUBY_FLAVOR} \
 			devel/ruby-json_pure,${MODRUBY_FLAVOR}
 
-TEST_DEPENDS=		devel/ruby-mocha,${MODRUBY_FLAVOR}
-MODRUBY_TEST=		rspec2
+#TEST_DEPENDS=		devel/ruby-mocha,${MODRUBY_FLAVOR}
+#MODRUBY_TEST=		rspec2
 
 pre-configure:
 	perl -pi -e 's,/var/lib,/var/db,g' \

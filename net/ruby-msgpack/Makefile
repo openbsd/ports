@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/17 10:43:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/10/17 17:03:27 jasper Exp $
 
 COMMENT =	binary-based efficient object serialization library
 
@@ -18,6 +18,6 @@ CONFIGURE_STYLE =	ruby gem ext
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
-MODRUBY_TEST =		rspec2
+#MODRUBY_TEST =		rspec2
 
 .include <bsd.port.mk>
