@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2014/10/17 15:47:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/10/17 17:26:04 jasper Exp $
 
 SUBDIR =
 SUBDIR += 1,${FLAVOR}
-SUBDIR += 2
 #SUBDIR += 3
 SUBDIR += serverspec,${FLAVOR}
 SUBDIR += specinfra,${FLAVOR}
