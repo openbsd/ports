@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/08 17:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/17 14:12:02 sthen Exp $
+
+BROKEN-i386 =		duplicate definition for symbol __i686.get_pc_thunk.bx
 
 COMMENT =		type-level programming library
 
