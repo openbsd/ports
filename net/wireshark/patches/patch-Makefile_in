@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.5 2014/10/17 23:29:46 sthen Exp $
+--- Makefile.in.orig	Sat Oct 18 00:13:21 2014
++++ Makefile.in	Sat Oct 18 00:13:29 2014
+@@ -4478,7 +4478,7 @@ install_desktop_files:
+ 		install -m 644 $(srcdir)/image/WiresharkDoc-$${size}.png $(DESTDIR)/usr/share/icons/hicolor/$${size}x$${size}/mimetypes/application-wireshark-doc.png ; \
+ 	done
+ 	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/scalable/apps
+-	install -m 644 image/wsicon.svg $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/wireshark.svg
++	install -m 644 $(srcdir)/image/wsicon.svg $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/wireshark.svg
+ 	@echo "Don't forget to run \"update-desktop-database\" and \"update-mime-database /usr/share/mime\""
+ 
+ solaris-package: svr4-package

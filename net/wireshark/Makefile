@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/17 22:42:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/17 23:29:46 sthen Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
-WVER =		1.10.10
+WVER =		1.12.1
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
 SHARED_ONLY =	Yes
 
-SHARED_LIBS +=  wsutil               0.0      # 1.0
-SHARED_LIBS +=  wiretap              0.0      # 1.0
-SHARED_LIBS +=  wireshark            0.0      # 1.0
+SHARED_LIBS +=	wsutil               1.0      # 4.0
+SHARED_LIBS +=	wiretap              1.0      # 4.1
+SHARED_LIBS +=	filetap              0.0      # 0.1
+SHARED_LIBS +=	wireshark            1.0      # 5.1
 
 CATEGORIES =	net security x11
 
@@ -28,9 +29,10 @@ USE_GMAKE =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODLUA_VERSION = 5.2
-MODULES =	lang/lua
+MODULES =	lang/lua lang/python
 MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
+MODPY_RUNDEP =	No
 
 WANTLIB +=	c glib-2.0 m pcap pthread z
 

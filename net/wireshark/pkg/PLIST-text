@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-text,v 1.1.1.1 2014/07/14 08:44:51 landry Exp $
+@comment $OpenBSD: PLIST-text,v 1.2 2014/10/17 23:29:46 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
+@bin bin/captype
 @bin bin/dftest
 @mode 4550
 @group _wireshark
@@ -14,6 +15,8 @@ bin/dumpcap
 @bin bin/reordercap
 @bin bin/text2pcap
 @bin bin/tshark
+lib/libfiletap.la
+@lib lib/libfiletap.so.${LIBfiletap_VERSION}
 lib/libwireshark.la
 @lib lib/libwireshark.so.${LIBwireshark_VERSION}
 lib/libwiretap.la
@@ -23,7 +26,6 @@ lib/libwsutil.la
 lib/wireshark/
 lib/wireshark/plugins/
 lib/wireshark/plugins/${WVER}/
-lib/wireshark/plugins/${WVER}/asn1.so
 lib/wireshark/plugins/${WVER}/docsis.so
 lib/wireshark/plugins/${WVER}/ethercat.so
 lib/wireshark/plugins/${WVER}/gryphon.so
@@ -61,14 +63,17 @@ share/wireshark/diameter/
 share/wireshark/diameter/AlcatelLucent.xml
 share/wireshark/diameter/ChinaTelecom.xml
 share/wireshark/diameter/Cisco.xml
+share/wireshark/diameter/Custom.xml
 share/wireshark/diameter/Ericsson.xml
 share/wireshark/diameter/Nokia.xml
 share/wireshark/diameter/NokiaSiemensNetworks.xml
 share/wireshark/diameter/SKT.xml
+share/wireshark/diameter/Starent.xml
 share/wireshark/diameter/TGPPGmb.xml
 share/wireshark/diameter/TGPPRx.xml
 share/wireshark/diameter/TGPPS9.xml
 share/wireshark/diameter/TGPPSh.xml
+share/wireshark/diameter/VerizonWireless.xml
 share/wireshark/diameter/Vodafone.xml
 share/wireshark/diameter/chargecontrol.xml
 share/wireshark/diameter/dictionary.dtd
@@ -127,6 +132,7 @@ share/wireshark/radius/dictionary.acc
 share/wireshark/radius/dictionary.acme
 share/wireshark/radius/dictionary.airespace
 share/wireshark/radius/dictionary.alcatel
+share/wireshark/radius/dictionary.alcatel-lucent.aaa
 share/wireshark/radius/dictionary.alcatel-lucent.xylan
 share/wireshark/radius/dictionary.alcatel.esam
 share/wireshark/radius/dictionary.alcatel.sr

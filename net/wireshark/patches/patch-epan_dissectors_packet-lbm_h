@@ -1,0 +1,12 @@
+$OpenBSD: patch-epan_dissectors_packet-lbm_h,v 1.1 2014/10/17 23:29:46 sthen Exp $
+--- epan/dissectors/packet-lbm.h.orig	Sat Oct 18 00:07:34 2014
++++ epan/dissectors/packet-lbm.h	Sat Oct 18 00:09:55 2014
+@@ -25,7 +25,7 @@
+ #ifndef PACKET_LBM_H_INCLUDED
+ #define PACKET_LBM_H_INCLUDED
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #endif
