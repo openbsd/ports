@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/10/15 11:49:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/10/17 16:39:00 ajacoutot Exp $
 bin/gnome-documents
 lib/gnome-documents/
 lib/gnome-documents/girepository-1.0/
@@ -47,8 +47,6 @@ share/gnome-documents/js/trackerUtils.js
 share/gnome-documents/js/utils.js
 share/gnome-documents/js/view.js
 share/gnome-documents/js/windowMode.js
-share/gnome-shell/
-share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 share/help/C/gnome-documents/
 share/help/C/gnome-documents/collections.page
