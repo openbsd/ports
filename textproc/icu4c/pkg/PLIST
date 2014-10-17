@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/10/03 06:44:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/17 08:35:10 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -246,3 +246,5 @@ share/icu/${VERSION}/config/mh-bsd-gcc
 share/icu/${VERSION}/install-sh
 share/icu/${VERSION}/license.html
 share/icu/${VERSION}/mkinstalldirs
+%%be%%
+%%le%%

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.le,v 1.1 2014/10/17 08:35:10 ajacoutot Exp $
+share/icu/${VERSION}/icudt${MAJ_V}l.dat

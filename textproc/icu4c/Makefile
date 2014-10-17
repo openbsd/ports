@@ -1,29 +1,26 @@
-# $OpenBSD: Makefile,v 1.39 2014/10/04 07:46:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/10/17 08:35:10 ajacoutot Exp $
 
 # XXX re-rolled tarball: drop at next release
 DIST_SUBDIR=		icu4c
 
-# g++3 chokes on the code
-NOT_FOR_ARCHS=	m88k
-
-# avoid segfaults from icupkg compiled and then used during the build
-.if ${MACHINE_ARCH} == "arm"
-CFLAGS+=		-O1 -fno-stack-protector
-.endif
+NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT=		International Components for Unicode
 
 VERSION=		54.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
+REVISION=		1
+
+MAJ_V=			${VERSION:R}
 SO_VERSION=		8.0
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
-SUBST_VARS+=		VERSION
+SUBST_VARS+=		MAJ_V VERSION
+
 CATEGORIES=		textproc devel
 DPB_PROPERTIES=		parallel
-REVISION=		0
 
 HOMEPAGE=		http://www.icu-project.org
 
@@ -47,19 +44,22 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-samples
 
 SEPARATE_BUILD=		Yes
-
 WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source
 
-MAKE_FLAGS+=		SO_TARGET_VERSION=${SO_VERSION} \
+MAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION} \
 			SO_TARGET_VERSION_MAJOR=${SO_VERSION:R} \
 			PKGDATA_INVOKE_OPTS="SO_TARGET_VERSION=${SO_VERSION} SO_TARGET_VERSION_MAJOR=${SO_VERSION:R}"
 
-# XXX U_IS_BIG_ENDIAN is not propagated to the C/C++ files
-# http://comments.gmane.org/gmane.comp.tex.texlive.build/1705
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mbe}
-CONFIGURE_ENV +=	CPPFLAGS="-DU_IS_BIG_ENDIAN"
+PKG_ARGS +=		-Dbe=0 -Dle=0
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	--with-data-packaging=archive
+.  if ${PROPERTIES:Mbe}
+PKG_ARGS +=		-Dbe=1
+.  else
+PKG_ARGS +=		-Dle=1
+.  endif
 .endif
 
 post-install:
