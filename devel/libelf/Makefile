@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/10/17 12:18:06 jasper Exp $
 
 COMMENT=	read, modify, create ELF files on any arch
 
 DISTNAME=	libelf-0.8.13
-REVISION=	1
+REVISION=	2
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 SHARED_LIBS=	elf 1.1
 
 CATEGORIES=	devel
 DPB_PROPERTIES=	parallel
 
-# The actual homepage is in german, this points to it.
-HOMEPAGE=	http://directory.fsf.org/all/libelf.html
+HOMEPAGE=	http://www.mr511.de/software/english.html
 MASTER_SITES=	http://www.mr511.de/software/
 
 # LGPL
