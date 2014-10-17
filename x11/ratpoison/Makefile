@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/23 00:40:59 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2014/10/17 17:28:55 jca Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
-DISTNAME=	ratpoison-1.4.7
+DISTNAME=	ratpoison-1.4.8
 
 CATEGORIES=	x11
 HOMEPAGE=	http://www.nongnu.org/ratpoison/
