@@ -1,0 +1,14 @@
+$OpenBSD: patch-spec_spec_helper_rb,v 1.1 2014/10/17 17:49:04 jasper Exp $
+
+Make this work with rspec3.
+
+--- spec/spec_helper.rb.orig	Fri Oct 17 19:38:18 2014
++++ spec/spec_helper.rb	Fri Oct 17 19:41:50 2014
+@@ -1,6 +1,7 @@
+ require 'rubygems'
+ require 'data_objects'
+ require 'rspec'
++require 'rspec/its'
+ 
+ module DataObjects::Pooling
+   class << self

@@ -1,0 +1,15 @@
+$OpenBSD: patch-spec_pooling_spec_rb,v 1.1 2014/10/17 17:49:04 jasper Exp $
+
+Make this work with rspec3.
+
+--- spec/pooling_spec.rb.orig	Fri Oct 17 19:40:06 2014
++++ spec/pooling_spec.rb	Fri Oct 17 19:40:44 2014
+@@ -127,7 +127,7 @@ describe "DataObjects::Pooling" do
+       bob = Person.new('Bob')
+       t1.join
+       bob.release
+-    end.should_not raise_error(DataObjects::Pooling::InvalidResourceError)
++    end.should_not raise_error
+   end
+ 
+   it "should allow you to flush a pool" do

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/17 17:03:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/17 17:49:04 jasper Exp $
 
 COMMENT =	unified Ruby API for popular databases
 
@@ -15,7 +15,8 @@ RUN_DEPENDS =		www/ruby-addressable,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-#MODRUBY_TEST =		rspec2
-#MODRUBY_TEST_TARGET =	spec/*_spec.rb
+MODRUBY_TEST =		rspec3
+MODRUBY_TEST_TARGET =	spec/*_spec.rb
+MODRUBY_TEST_DEPENDS =	devel/ruby-rspec/3/its
 
 .include <bsd.port.mk>
