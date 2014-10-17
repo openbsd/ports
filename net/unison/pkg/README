@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2014/10/17 06:22:08 chrisz Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Unison uses native OCaml marshalling in its prococol. This
+means that unison might not work when the OCaml versions of
+two instances are out of sync.
+One way to work around this limitation of unison is to use
+the OPAM OCaml package and compiler manager to sync the
+OCaml versions on your machines.

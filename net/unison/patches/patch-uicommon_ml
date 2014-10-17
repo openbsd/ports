@@ -1,0 +1,26 @@
+$OpenBSD: patch-uicommon_ml,v 1.1 2014/10/17 06:22:08 chrisz Exp $
+
+Don't discard backtraces for uncaught exceptions.
+
+--- uicommon.ml.orig	Tue Sep 23 11:23:39 2014
++++ uicommon.ml	Tue Sep 23 11:37:20 2014
+@@ -309,7 +309,8 @@ let reconItem2string oldPath theRI status =
+   let (r1, action, r2, path) = reconItem2stringList oldPath theRI in
+   Format.sprintf "%s %s %s %s %s" r1 (action2niceString action) r2 status path
+ 
+-let exn2string = function
++let exn2string exn = 
++  let s = match exn with
+     Sys.Break      -> "Terminated!"
+   | Util.Fatal(s)  -> Printf.sprintf "Fatal error: %s" s
+   | Util.Transient(s) -> Printf.sprintf "Error: %s" s
+@@ -323,6 +324,9 @@ let exn2string = function
+          | _                  -> "")
+   | Invalid_argument s -> Printf.sprintf "Invalid argument: %s" s
+   | other -> Printf.sprintf "Uncaught exception %s" (Printexc.to_string other)
++  in
++  s ^
++  if Printexc.backtrace_status () then "\n" ^ Printexc.get_backtrace () else ""
+ 
+ (* precondition: uc = File (Updates(_, ..) on both sides *)
+ let showDiffs ri printer errprinter id =

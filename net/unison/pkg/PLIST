@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.4 2014/10/17 06:22:08 chrisz Exp $
+@pkgpath net/unison/stable${FLAVOR_COMMA}
+@pkgpath net/unison/snapshot${FLAVOR_COMMA}
+@bin bin/unison
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/unison/
+share/doc/unison/BUGS.txt
+share/doc/unison/NEWS
+share/doc/unison/README
