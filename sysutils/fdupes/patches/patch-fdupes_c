@@ -1,7 +1,7 @@
-$OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
---- fdupes.c.orig	Thu Mar 15 04:16:09 2001
-+++ fdupes.c	Fri May 30 13:49:42 2008
-@@ -34,6 +34,11 @@
+$OpenBSD: patch-fdupes_c,v 1.2 2014/10/17 19:56:45 sthen Exp $
+--- fdupes.c.orig	Sat Apr 20 19:21:46 2013
++++ fdupes.c	Fri Oct 17 20:51:45 2014
+@@ -36,6 +36,11 @@
  #include "md5/md5.h"
  #endif
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
  #define ISFLAG(a,b) ((a & b) == b)
  #define SETFLAG(a,b) (a |= b)
  
-@@ -94,11 +99,13 @@ void escapefilename(char *escape_list, char **filename
+@@ -113,11 +118,13 @@ void escapefilename(char *escape_list, char **filename
  {
    int x;
    int tx;
@@ -27,7 +27,7 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
    tmp = (char*) malloc(strlen(filename) * 2 + 1);
    if (tmp == NULL) {
      errormsg("out of memory!\n");
-@@ -118,7 +125,7 @@ void escapefilename(char *escape_list, char **filename
+@@ -137,7 +144,7 @@ void escapefilename(char *escape_list, char **filename
        errormsg("out of memory!\n");
        exit(1);
      }
@@ -36,7 +36,7 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
    }
  }
  
-@@ -145,6 +152,7 @@ int grokdir(char *dir, file_t **filelistp)
+@@ -236,6 +243,7 @@ int grokdir(char *dir, file_t **filelistp)
    struct dirent *dirinfo;
    int lastchar;
    int filecount = 0;
@@ -44,7 +44,7 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
    struct stat info;
    struct stat linfo;
    static int progress = 0;
-@@ -177,7 +185,8 @@ int grokdir(char *dir, file_t **filelistp)
+@@ -270,7 +278,8 @@ int grokdir(char *dir, file_t **filelistp)
        newfile->duplicates = NULL;
        newfile->hasdupes = 0;
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
  
        if (!newfile->d_name) {
  	errormsg("out of memory!\n");
-@@ -186,11 +195,11 @@ int grokdir(char *dir, file_t **filelistp)
+@@ -279,11 +288,11 @@ int grokdir(char *dir, file_t **filelistp)
  	exit(1);
        }
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
        
        if (filesize(newfile->d_name) == 0 && ISFLAG(flags, F_EXCLUDEEMPTY)) {
  	free(newfile->d_name);
-@@ -241,14 +250,22 @@ char *getcrcsignature(char *filename)
+@@ -334,14 +343,22 @@ char *getcrcsignatureuntil(char *filename, off_t max_r
    int x;
    off_t fsize;
    off_t toread;
@@ -91,10 +91,10 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
    md5_init(&state);
 +#endif
  
+  
    fsize = filesize(filename);
- 
-@@ -264,16 +281,24 @@ char *getcrcsignature(char *filename)
-       errormsg("error reading from file %s\n", filename);
+@@ -362,16 +379,24 @@ char *getcrcsignatureuntil(char *filename, off_t max_r
+       fclose(file);
        return NULL;
      }
 +#ifdef HAVE_MD5
@@ -119,60 +119,51 @@ $OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
      sigp = strchr(sigp, '\0');
    }
  
-@@ -488,6 +513,7 @@ file_t *checkmatch(filetree_t **root, filetree_t *chec
+@@ -471,6 +496,7 @@ file_t **checkmatch(filetree_t **root, filetree_t *che
  {
    int cmpresult;
    char *crcsignature;
 +  size_t l;
    off_t fsize;
  
-   /* If inodes are equal one of the files is a hard link, which
-@@ -508,24 +534,26 @@ file_t *checkmatch(filetree_t **root, filetree_t *chec
-       crcsignature = getcrcsignature(checktree->file->d_name);
+   /* If device and inode fields are equal one of the files is a 
+@@ -494,24 +520,26 @@ file_t **checkmatch(filetree_t **root, filetree_t *che
+       crcsignature = getcrcpartialsignature(checktree->file->d_name);
        if (crcsignature == NULL) return NULL;
  
--      checktree->file->crcsignature = (char*) malloc(strlen(crcsignature)+1);
+-      checktree->file->crcpartial = (char*) malloc(strlen(crcsignature)+1);
 +      l = strlen(crcsignature)+1;
-+      checktree->file->crcsignature = (char*) malloc(l);
-       if (checktree->file->crcsignature == NULL) {
++      checktree->file->crcpartial = (char*) malloc(l);
+       if (checktree->file->crcpartial == NULL) {
  	errormsg("out of memory\n");
  	exit(1);
        }
--      strcpy(checktree->file->crcsignature, crcsignature);
-+      strlcpy(checktree->file->crcsignature, crcsignature, l);
+-      strcpy(checktree->file->crcpartial, crcsignature);
++      strlcpy(checktree->file->crcpartial, crcsignature, l);
      }
  
-     if (file->crcsignature == NULL) {
-       crcsignature = getcrcsignature(file->d_name);
+     if (file->crcpartial == NULL) {
+       crcsignature = getcrcpartialsignature(file->d_name);
        if (crcsignature == NULL) return NULL;
  
--      file->crcsignature = (char*) malloc(strlen(crcsignature)+1);
+-      file->crcpartial = (char*) malloc(strlen(crcsignature)+1);
 +      l = strlen(crcsignature)+1;
-+      file->crcsignature = (char*) malloc(l);
-       if (file->crcsignature == NULL) {
++      file->crcpartial = (char*) malloc(l);
+       if (file->crcpartial == NULL) {
  	errormsg("out of memory\n");
  	exit(1);
        }
--      strcpy(file->crcsignature, crcsignature);
-+      strlcpy(file->crcsignature, crcsignature, l);
+-      strcpy(file->crcpartial, crcsignature);
++      strlcpy(file->crcpartial, crcsignature, l);
      }
  
-     cmpresult = strcmp(file->crcsignature, checktree->file->crcsignature);
-@@ -588,7 +616,7 @@ void printmatches(file_t *files)
-   while (files != NULL) {
-     if (files->hasdupes) {
-       if (!ISFLAG(flags, F_OMITFIRST)) {
--	if (ISFLAG(flags, F_SHOWSIZE)) printf("%ld byte%seach:\n", files->size,
-+	if (ISFLAG(flags, F_SHOWSIZE)) printf("%lld byte%seach:\n", files->size,
- 	 (files->size != 1) ? "s " : " ");
- 	if (ISFLAG(flags, F_DSAMELINE)) escapefilename("\\ ", &files->d_name);
- 	printf("%s%c", files->d_name, ISFLAG(flags, F_DSAMELINE)?' ':'\n');
-@@ -676,7 +704,7 @@ void autodelete(file_t *files)
-       do {
- 	printf("Set %d of %d, preserve files [1 - %d, all]", 
-           curgroup, groups, counter);
--	if (ISFLAG(flags, F_SHOWSIZE)) printf(" (%ld byte%seach)", files->size,
-+	if (ISFLAG(flags, F_SHOWSIZE)) printf(" (%lld byte%seach)", files->size,
- 	  (files->size != 1) ? "s " : " ");
- 	printf(": ");
- 	fflush(stdout);
+     cmpresult = strcmp(file->crcpartial, checktree->file->crcpartial);
+@@ -1164,7 +1192,7 @@ int main(int argc, char **argv) {
+     }
+     else
+     {
+-      stdin = freopen("/dev/tty", "r", stdin);
++      /* stdin isn't usable as an lvalue ... stdin = freopen("/dev/tty", "r", stdin); */
+       deletefiles(files, 1, stdin);
+     }
+   }
