@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.71 2014/07/24 17:57:42 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.72 2014/10/17 07:16:56 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -19,15 +19,20 @@ PKGNAME ?=	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/b/beta/}
 MAINTAINER ?=	Landry Breuil <landry@openbsd.org>
 
 MOZILLA_DIST ?=	${MOZILLA_PROJECT}
-MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION}
+MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION:C/rc.//}
 
 HOMEPAGE ?=	http://www.mozilla.org/projects/${MOZILLA_DIST}
 
+.if ${MOZILLA_VERSION:M*rc?}
+MASTER_SITES ?=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/nightly/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
 # first is the CDN and only has last releases
 # ftp.m.o has all the betas/candidate builds but should only be used as fallback
+.else
 MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
+.endif
+
 DISTNAME ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source
 EXTRACT_SUFX ?=	.tar.bz2
 DIST_SUBDIR ?=	mozilla
@@ -38,8 +43,8 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
-			devel/nspr>=4.10.6 \
-			security/nss>=3.16.2
+			devel/nspr>=4.10.7 \
+			security/nss>=3.17.2
 
 # bug #736961
 SEPARATE_BUILD =	Yes
@@ -53,7 +58,7 @@ MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gthread-2.0 m \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		plc4 plds4 pthread event kvm sqlite3>=27 \
+		plc4 plds4 pthread event kvm sqlite3>=28 \
 		smime3 sndio nssutil3 ssl3 stdc++ z hunspell-1.3
 
 # hack to build against systemwide sqlite3 (# 546162)
@@ -136,7 +141,7 @@ _MOZDIR =	mozilla
 .endif
 
 # needed for PLIST
-MOZILLA_VER =	${MOZILLA_VERSION:C/b.$//:C/esr$//}
+MOZILLA_VER =	${MOZILLA_VERSION:C/b.$//:C/esr$//:C/rc.$//}
 SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION
 
 MAKE_ENV +=	MOZILLA_OFFICIAL=1 \
