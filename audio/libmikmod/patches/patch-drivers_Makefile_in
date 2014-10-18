@@ -1,0 +1,11 @@
+$OpenBSD: patch-drivers_Makefile_in,v 1.1 2014/10/18 14:56:28 bcallah Exp $
+--- drivers/Makefile.in.orig	Thu Oct  9 20:28:20 2014
++++ drivers/Makefile.in	Thu Oct  9 20:28:38 2014
+@@ -279,6 +279,7 @@ EXTRA_DIST = CMakeLists.txt \
+ 	     drv_sdl.c    \
+ 	     drv_sgi.c    \
+ 	     drv_stdout.c \
++	     drv_sndio.c  \
+ 	     drv_sun.c    \
+ 	     drv_ultra.c  \
+ 	     drv_wav.c    \

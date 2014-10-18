@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_mikmod_h,v 1.1 2014/10/18 14:56:28 bcallah Exp $
+--- include/mikmod.h.orig	Thu Oct  9 20:31:54 2014
++++ include/mikmod.h	Thu Oct  9 20:32:29 2014
+@@ -814,6 +814,7 @@ MIKMODAPI extern struct MDRIVER drv_oss;    /* OpenSou
+ MIKMODAPI extern struct MDRIVER drv_openal; /* OpenAL driver */
+ MIKMODAPI extern struct MDRIVER drv_sdl;    /* SDL audio driver */
+ MIKMODAPI extern struct MDRIVER drv_sgi;    /* SGI audio library */
++MIKMODAPI extern struct MDRIVER drv_sndio;  /* sndio, baby! */
+ MIKMODAPI extern struct MDRIVER drv_sun;    /* Sun/NetBSD/OpenBSD audio device */
+ 
+ MIKMODAPI extern struct MDRIVER drv_dart;   /* OS/2 Direct Audio RealTime */

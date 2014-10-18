@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2014/10/18 14:56:28 bcallah Exp $
+--- Makefile.in.orig	Thu Oct  9 20:26:32 2014
++++ Makefile.in	Thu Oct  9 20:27:37 2014
+@@ -120,7 +120,7 @@ am_libmikmod_la_OBJECTS = dlapi/dl_hpux.lo drivers/drv
+ 	drivers/drv_pulseaudio.lo drivers/drv_pipe.lo \
+ 	drivers/drv_psp.lo drivers/drv_raw.lo drivers/drv_sam9407.lo \
+ 	drivers/drv_sb.lo drivers/drv_sdl.lo drivers/drv_sgi.lo \
+-	drivers/drv_stdout.lo drivers/drv_sun.lo drivers/drv_ultra.lo \
++	drivers/drv_stdout.lo drivers/drv_sndio.lo drivers/drv_sun.lo drivers/drv_ultra.lo \
+ 	drivers/drv_wav.lo drivers/drv_win.lo drivers/drv_wss.lo \
+ 	drivers/drv_xaudio2.lo loaders/load_669.lo loaders/load_amf.lo \
+ 	loaders/load_asy.lo loaders/load_dsm.lo loaders/load_far.lo \
+@@ -616,6 +616,8 @@ drivers/drv_sdl.lo: drivers/$(am__dirstamp) \
+ drivers/drv_sgi.lo: drivers/$(am__dirstamp) \
+ 	drivers/$(DEPDIR)/$(am__dirstamp)
+ drivers/drv_stdout.lo: drivers/$(am__dirstamp) \
++	drivers/$(DEPDIR)/$(am__dirstamp)
++drivers/drv_sndio.lo: drivers/$(am__dirstamp) \
+ 	drivers/$(DEPDIR)/$(am__dirstamp)
+ drivers/drv_sun.lo: drivers/$(am__dirstamp) \
+ 	drivers/$(DEPDIR)/$(am__dirstamp)
