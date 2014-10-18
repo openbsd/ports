@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/10/18 01:27:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.31 2014/10/18 04:19:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -60,15 +60,16 @@ MAKE_ENV=	VERBOSE=1
 MAKE_FLAGS=	MAJOR_VERSION=${LIBpt_VERSION:R} \
 		MINOR_VERSION=${LIBpt_VERSION:E}
 
+INSTALL_REPLACE = 's/^INSTALL := .*$$/ifdef BSD_INSTALL_SCRIPT\nINSTALL
+INSTALL_REPLACE += := \$$\(subst -m 755,,\$${BSD_INSTALL_SCRIPT}\)
+INSTALL_REPLACE += \nelse\nINSTALL := \/usr\/bin\/install -c -o ${BINOWN}
+INSTALL_REPLACE += -g ${BINGRP}\nendif/'
+
 pre-configure:
 	mkdir ${WRKSRC}/plugins/sound_sndio
 	cp ${FILESDIR}/{Makefile,sound_sndio.*} ${WRKSRC}/plugins/sound_sndio
 	${SUBST_CMD} ${WRKSRC}/make/unix.mak
 
-INSTALL_REPLACE = 's/^INSTALL := .*$$/ifdef BSD_INSTALL_SCRIPT\nINSTALL
-INSTALL_REPLACE += := \$$\(subst -m 755,,\$${BSD_INSTALL_SCRIPT}\)
-INSTALL_REPLACE += \nelse\nINSTALL := \/usr\/bin\/install -c -o ${BINOWN}
-INSTALL_REPLACE += -g ${BINGRP}\nendif/'
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/share/ptlib
 	perl -i -pe ${INSTALL_REPLACE} \
