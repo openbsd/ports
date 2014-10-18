@@ -1,0 +1,13 @@
+$OpenBSD: patch-docs_man_mupdf_1,v 1.1 2014/10/18 08:36:39 espie Exp $
+--- docs/man/mupdf.1.orig	Sat Oct 18 10:26:09 2014
++++ docs/man/mupdf.1	Sat Oct 18 10:26:49 2014
+@@ -60,6 +60,9 @@ Pan page left or right.
+ .TP
+ .B Control + Scroll wheel
+ Zoom in or out.
++.TP
++.B Shift + Control + Scroll wheel
++Fine grained Zoom in or out.
+ 
+ .SH KEY BINDINGS
+ 
