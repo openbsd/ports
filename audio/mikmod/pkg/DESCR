@@ -1,3 +1,7 @@
 Mikmod is a module player and library supporting many formats, including
-mod, s3m, it, and xm. Originally a player for MS-DOS, MikMod has been
-ported to other platforms, such as Unix, Macintosh, BeOS, and Java(!!)
+mod, s3m, it, and xm, collectively known as MOD files.
+
+MOD is a family of music file formats dating back to the Amiga in the
+1980s, which allowed for music composition using a computer and sampled
+sounds. The format is popular in the demoscene and was used in games
+from the 1990s, such as Unreal.
