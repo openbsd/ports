@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/04 19:18:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/18 14:39:35 kirby Exp $
 
 SHARED_ONLY = 		Yes
 
 COMMENT =		library for manipulating JSON data
-REVISION =		0
 
-DISTNAME =		jansson-2.6
+DISTNAME =		jansson-2.7
 
-SHARED_LIBS =		jansson 0.0 # 9.0
+SHARED_LIBS =		jansson 1.0
 
 CATEGORIES =		devel
 
