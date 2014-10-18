@@ -1,0 +1,19 @@
+$OpenBSD: patch-parser_c,v 1.12 2014/10/18 08:56:21 jasper Exp $
+
+From f65128f38289d77ff322d63aef2858cc0a819c34 Mon Sep 17 00:00:00 2001
+From: Daniel Veillard <veillard@redhat.com>
+Date: Fri, 17 Oct 2014 17:13:41 +0800
+Subject: Revert "Missing initialization for the catalog module"
+
+--- parser.c.orig	Sat Oct 18 10:33:23 2014
++++ parser.c	Sat Oct 18 10:33:44 2014
+@@ -14830,9 +14830,6 @@ xmlInitParser(void) {
+ #ifdef LIBXML_XPATH_ENABLED
+ 	xmlXPathInit();
+ #endif
+-#ifdef LIBXML_CATALOG_ENABLED
+-        xmlInitializeCatalog();
+-#endif
+ 	xmlParserInitialized = 1;
+ #ifdef LIBXML_THREAD_ENABLED
+     }
