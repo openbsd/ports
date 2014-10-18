@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/09/16 09:09:46 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2014/10/18 01:27:43 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,12 +8,11 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS=	pt	7.0
 
 CATEGORIES=	devel telephony
-FAKE_AS_ROOT =	always-wrap
 
 HOMEPAGE=	http://www.opalvoip.org/
 
@@ -66,7 +65,13 @@ pre-configure:
 	cp ${FILESDIR}/{Makefile,sound_sndio.*} ${WRKSRC}/plugins/sound_sndio
 	${SUBST_CMD} ${WRKSRC}/make/unix.mak
 
+INSTALL_REPLACE = 's/^INSTALL := .*$$/ifdef BSD_INSTALL_SCRIPT\nINSTALL
+INSTALL_REPLACE += := \$$\(subst -m 755,,\$${BSD_INSTALL_SCRIPT}\)
+INSTALL_REPLACE += \nelse\nINSTALL := \/usr\/bin\/install -c -o ${BINOWN}
+INSTALL_REPLACE += -g ${BINGRP}\nendif/'
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/share/ptlib
+	perl -i -pe ${INSTALL_REPLACE} \
+		${PREFIX}/share/ptlib/make/ptbuildopts.mak
 
 .include <bsd.port.mk>
