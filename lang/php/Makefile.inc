@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.56 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.57 2014/10/18 20:31:11 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -59,7 +59,11 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION?=	2.69
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
                         LDFLAGS="-L${LOCALBASE}/lib -pthread" \
-			EXTENSION_DIR=${MODULES_DIR} lt_cv_path_SED=/usr/bin/sed
+			EXTENSION_DIR=${MODULES_DIR} \
+			lt_cv_path_SED=/usr/bin/sed
+# configure detects us as having decimal fp support but it's not built in 
+# in libgcc. https://bugs.php.net/bug.php?id=68114
+CONFIGURE_ENV+=		ac_cv_decimal_fp_supported=no
 MAKE_ENV=               ${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--enable-shared \
