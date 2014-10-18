@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2014/07/11 17:02:00 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.36 2014/10/18 14:27:11 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 bin/gimp
 @bin bin/gimp-2.8
@@ -1249,6 +1249,7 @@ share/gtk-doc/html/libgimp/GimpZoomPreview.html
 share/gtk-doc/html/libgimp/home.png
 share/gtk-doc/html/libgimp/index.html
 share/gtk-doc/html/libgimp/index.sgml
+share/gtk-doc/html/libgimp/left-insensitive.png
 share/gtk-doc/html/libgimp/left.png
 share/gtk-doc/html/libgimp/libgimp-Gimp.html
 share/gtk-doc/html/libgimp/libgimp-GimpItemComboBox.html
@@ -1329,13 +1330,16 @@ share/gtk-doc/html/libgimp/libgimp.devhelp2
 share/gtk-doc/html/libgimp/libgimp.html
 share/gtk-doc/html/libgimp/libgimpui-hierarchy.html
 share/gtk-doc/html/libgimp/libgimpui.html
+share/gtk-doc/html/libgimp/right-insensitive.png
 share/gtk-doc/html/libgimp/right.png
 share/gtk-doc/html/libgimp/style.css
+share/gtk-doc/html/libgimp/up-insensitive.png
 share/gtk-doc/html/libgimp/up.png
 share/gtk-doc/html/libgimpbase/
 share/gtk-doc/html/libgimpbase/home.png
 share/gtk-doc/html/libgimpbase/index.html
 share/gtk-doc/html/libgimpbase/index.sgml
+share/gtk-doc/html/libgimpbase/left-insensitive.png
 share/gtk-doc/html/libgimpbase/left.png
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpbaseenums.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpbasetypes.html
@@ -1361,13 +1365,16 @@ share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-8.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index.html
 share/gtk-doc/html/libgimpbase/libgimpbase.devhelp2
 share/gtk-doc/html/libgimpbase/libgimpbase.html
+share/gtk-doc/html/libgimpbase/right-insensitive.png
 share/gtk-doc/html/libgimpbase/right.png
 share/gtk-doc/html/libgimpbase/style.css
+share/gtk-doc/html/libgimpbase/up-insensitive.png
 share/gtk-doc/html/libgimpbase/up.png
 share/gtk-doc/html/libgimpcolor/
 share/gtk-doc/html/libgimpcolor/home.png
 share/gtk-doc/html/libgimpcolor/index.html
 share/gtk-doc/html/libgimpcolor/index.sgml
+share/gtk-doc/html/libgimpcolor/left-insensitive.png
 share/gtk-doc/html/libgimpcolor/left.png
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpAdaptiveSupersample.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpBilinear.html
@@ -1385,14 +1392,17 @@ share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-8.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor.devhelp2
 share/gtk-doc/html/libgimpcolor/libgimpcolor.html
+share/gtk-doc/html/libgimpcolor/right-insensitive.png
 share/gtk-doc/html/libgimpcolor/right.png
 share/gtk-doc/html/libgimpcolor/style.css
+share/gtk-doc/html/libgimpcolor/up-insensitive.png
 share/gtk-doc/html/libgimpcolor/up.png
 share/gtk-doc/html/libgimpconfig/
 share/gtk-doc/html/libgimpconfig/GimpColorConfig.html
 share/gtk-doc/html/libgimpconfig/home.png
 share/gtk-doc/html/libgimpconfig/index.html
 share/gtk-doc/html/libgimpconfig/index.sgml
+share/gtk-doc/html/libgimpconfig/left-insensitive.png
 share/gtk-doc/html/libgimpconfig/left.png
 share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig-deserialize.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig-params.html
@@ -1411,13 +1421,16 @@ share/gtk-doc/html/libgimpconfig/libgimpconfig-index-new-in-2-8.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig.devhelp2
 share/gtk-doc/html/libgimpconfig/libgimpconfig.html
+share/gtk-doc/html/libgimpconfig/right-insensitive.png
 share/gtk-doc/html/libgimpconfig/right.png
 share/gtk-doc/html/libgimpconfig/style.css
+share/gtk-doc/html/libgimpconfig/up-insensitive.png
 share/gtk-doc/html/libgimpconfig/up.png
 share/gtk-doc/html/libgimpmath/
 share/gtk-doc/html/libgimpmath/home.png
 share/gtk-doc/html/libgimpmath/index.html
 share/gtk-doc/html/libgimpmath/index.sgml
+share/gtk-doc/html/libgimpmath/left-insensitive.png
 share/gtk-doc/html/libgimpmath/left.png
 share/gtk-doc/html/libgimpmath/libgimpmath-GimpMD5.html
 share/gtk-doc/html/libgimpmath/libgimpmath-GimpMath.html
@@ -1430,8 +1443,10 @@ share/gtk-doc/html/libgimpmath/libgimpmath-index-new-in-2-6.html
 share/gtk-doc/html/libgimpmath/libgimpmath-index.html
 share/gtk-doc/html/libgimpmath/libgimpmath.devhelp2
 share/gtk-doc/html/libgimpmath/libgimpmath.html
+share/gtk-doc/html/libgimpmath/right-insensitive.png
 share/gtk-doc/html/libgimpmath/right.png
 share/gtk-doc/html/libgimpmath/style.css
+share/gtk-doc/html/libgimpmath/up-insensitive.png
 share/gtk-doc/html/libgimpmath/up.png
 share/gtk-doc/html/libgimpmodule/
 share/gtk-doc/html/libgimpmodule/GimpModule.html
@@ -1439,6 +1454,7 @@ share/gtk-doc/html/libgimpmodule/GimpModuleDB.html
 share/gtk-doc/html/libgimpmodule/home.png
 share/gtk-doc/html/libgimpmodule/index.html
 share/gtk-doc/html/libgimpmodule/index.sgml
+share/gtk-doc/html/libgimpmodule/left-insensitive.png
 share/gtk-doc/html/libgimpmodule/left.png
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-deprecated.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-2.html
@@ -1448,14 +1464,17 @@ share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-8.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule.devhelp2
 share/gtk-doc/html/libgimpmodule/libgimpmodule.html
+share/gtk-doc/html/libgimpmodule/right-insensitive.png
 share/gtk-doc/html/libgimpmodule/right.png
 share/gtk-doc/html/libgimpmodule/style.css
+share/gtk-doc/html/libgimpmodule/up-insensitive.png
 share/gtk-doc/html/libgimpmodule/up.png
 share/gtk-doc/html/libgimpthumb/
 share/gtk-doc/html/libgimpthumb/GimpThumbnail.html
 share/gtk-doc/html/libgimpthumb/home.png
 share/gtk-doc/html/libgimpthumb/index.html
 share/gtk-doc/html/libgimpthumb/index.sgml
+share/gtk-doc/html/libgimpthumb/left-insensitive.png
 share/gtk-doc/html/libgimpthumb/left.png
 share/gtk-doc/html/libgimpthumb/libgimpthumb-GimpThumb-enums.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-GimpThumb-error.html
@@ -1467,8 +1486,10 @@ share/gtk-doc/html/libgimpthumb/libgimpthumb-index-new-in-2-6.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-index.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb.devhelp2
 share/gtk-doc/html/libgimpthumb/libgimpthumb.html
+share/gtk-doc/html/libgimpthumb/right-insensitive.png
 share/gtk-doc/html/libgimpthumb/right.png
 share/gtk-doc/html/libgimpthumb/style.css
+share/gtk-doc/html/libgimpthumb/up-insensitive.png
 share/gtk-doc/html/libgimpthumb/up.png
 share/gtk-doc/html/libgimpwidgets/
 share/gtk-doc/html/libgimpwidgets/GimpBrowser.html
@@ -1543,6 +1564,7 @@ share/gtk-doc/html/libgimpwidgets/gimp-unit-menu.png
 share/gtk-doc/html/libgimpwidgets/home.png
 share/gtk-doc/html/libgimpwidgets/index.html
 share/gtk-doc/html/libgimpwidgets/index.sgml
+share/gtk-doc/html/libgimpwidgets/left-insensitive.png
 share/gtk-doc/html/libgimpwidgets/left.png
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpCairoUtils.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpEnumWidgets.html
@@ -1569,6 +1591,7 @@ share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-utils.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-widgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets.devhelp2
+share/gtk-doc/html/libgimpwidgets/right-insensitive.png
 share/gtk-doc/html/libgimpwidgets/right.png
 share/gtk-doc/html/libgimpwidgets/stock-anchor-16.png
 share/gtk-doc/html/libgimpwidgets/stock-cap-butt-16.png
@@ -1897,6 +1920,7 @@ share/gtk-doc/html/libgimpwidgets/stock-wilber-64.png
 share/gtk-doc/html/libgimpwidgets/stock-wilber-eek-64.png
 share/gtk-doc/html/libgimpwidgets/stock-zoom-follow-window-12.png
 share/gtk-doc/html/libgimpwidgets/style.css
+share/gtk-doc/html/libgimpwidgets/up-insensitive.png
 share/gtk-doc/html/libgimpwidgets/up.png
 share/icons/hicolor/16x16/apps/gimp.png
 share/icons/hicolor/22x22/apps/gimp.png
@@ -2036,6 +2060,10 @@ share/locale/ga/LC_MESSAGES/gimp20-python.mo
 share/locale/ga/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ga/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ga/LC_MESSAGES/gimp20.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/gd/LC_MESSAGES/gimp20.mo
 share/locale/gl/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/gl/LC_MESSAGES/gimp20-python.mo
 share/locale/gl/LC_MESSAGES/gimp20-script-fu.mo
