@@ -1,0 +1,16 @@
+$OpenBSD: patch-package_json,v 1.1 2014/10/19 08:42:54 dcoppa Exp $
+
+Relax the version check on mkdirp, so it uses the newer mkdirp
+bundled with Node instead of trying to download mkdirp-0.3.5 from
+registry.npmjs.org
+
+--- package.json.orig	Sat Oct 18 20:28:19 2014
++++ package.json	Sat Oct 18 20:28:38 2014
+@@ -39,6 +39,6 @@
+     "docco": "~0.6.2"
+   },
+   "dependencies": {
+-    "mkdirp": "~0.3.5"
++    "mkdirp": ">=0.3.5"
+   }
+ }
