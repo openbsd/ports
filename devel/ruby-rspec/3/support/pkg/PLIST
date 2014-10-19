@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/17 17:59:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/19 21:36:33 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
@@ -16,6 +16,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/fuzzy_matcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/hunk_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/matcher_definition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/method_signature_verifier.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/os.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/recursive_const_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/ruby_features.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/
