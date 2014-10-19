@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/05 18:30:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/19 14:30:12 jasper Exp $
 include/xkbcommon/
 include/xkbcommon/xkbcommon-compat.h
+include/xkbcommon/xkbcommon-compose.h
 include/xkbcommon/xkbcommon-keysyms.h
 include/xkbcommon/xkbcommon-names.h
 include/xkbcommon/xkbcommon-x11.h

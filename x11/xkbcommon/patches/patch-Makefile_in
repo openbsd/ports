@@ -1,33 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2014/10/15 18:24:15 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2014/10/19 14:30:12 jasper Exp $
 
 - pre-generated parser.c is used
-- OpenBSD lacks librt
 
---- Makefile.in.orig	Tue Aug 19 19:18:26 2014
-+++ Makefile.in	Wed Oct 15 19:58:50 2014
-@@ -886,7 +886,7 @@ test_keysym_LDADD = $(TESTS_LDADD)
- test_filecomp_LDADD = $(TESTS_LDADD)
- test_context_LDADD = $(TESTS_LDADD)
- test_rules_file_CFLAGS = $(AM_CFLAGS) -Wno-declaration-after-statement
--test_rules_file_LDADD = $(TESTS_LDADD) -lrt
-+test_rules_file_LDADD = $(TESTS_LDADD)
- test_stringcomp_LDADD = $(TESTS_LDADD)
- test_buffercomp_LDADD = $(TESTS_LDADD)
- test_log_LDADD = $(TESTS_LDADD)
-@@ -894,10 +894,10 @@ test_atom_LDADD = $(TESTS_LDADD)
- test_utf8_LDADD = $(TESTS_LDADD)
- test_rmlvo_to_kccgst_LDADD = $(TESTS_LDADD)
- test_print_compiled_keymap_LDADD = $(TESTS_LDADD)
--test_bench_key_proc_LDADD = $(TESTS_LDADD) -lrt
-+test_bench_key_proc_LDADD = $(TESTS_LDADD)
- @BUILD_LINUX_TESTS_TRUE@test_state_LDADD = $(TESTS_LDADD)
- @BUILD_LINUX_TESTS_TRUE@test_keyseq_LDADD = $(TESTS_LDADD)
--@BUILD_LINUX_TESTS_TRUE@test_rulescomp_LDADD = $(TESTS_LDADD) -lrt
-+@BUILD_LINUX_TESTS_TRUE@test_rulescomp_LDADD = $(TESTS_LDADD)
- @BUILD_LINUX_TESTS_TRUE@test_interactive_evdev_LDADD = $(TESTS_LDADD)
- @ENABLE_X11_TRUE@TESTS_X11_LDADD = $(XCB_XKB_LIBS) $(TESTS_LDADD) libxkbcommon-x11.la
- @ENABLE_X11_TRUE@TESTS_X11_CFLAGS = $(XCB_XKB_CFLAGS)
-@@ -2454,8 +2454,6 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
+--- Makefile.in.orig	Sat Oct 18 15:42:51 2014
++++ Makefile.in	Sun Oct 19 10:57:33 2014
+@@ -2260,8 +2260,6 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
  	uninstall-xkbcommonincludeHEADERS
  
  
