@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.106 2014/09/04 05:49:49 brad Exp $
+# $OpenBSD: Makefile,v 1.107 2014/10/19 23:14:23 brad Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20140810
+V=		20141010
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		21.0 \
+SHARED_LIBS=	avcodec		21.1 \
 		avdevice	9.0 \
 		avfilter	7.0 \
-		avformat	19.0 \
+		avformat	19.1 \
 		avresample	1.0 \
-		avutil		12.0 \
+		avutil		12.1 \
 		postproc	16.0 \
-		swresample	1.0 \
+		swresample	1.1 \
 		swscale		6.0
 
 HOMEPAGE=	http://ffmpeg.org/
@@ -32,6 +31,11 @@ WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto gsm m mp3lame opus \
 		pthread schroedinger-1.0>=2 sndio speex ssl theoradec \
 		theoraenc vorbis vorbisenc vpx>=5 x264>=8 x265 xvidcore \
 		z
+
+MODULES=	lang/clang
+
+MODCLANG_ARCHS=	amd64
+MODCLANG_LANGS=	c
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -90,6 +94,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-iconv \
 		--disable-indev=jack \
 		--disable-indev=oss \
+		--disable-lzma \
 		--disable-mips32r2 \
 		--disable-mipsdspr1 \
 		--disable-mipsdspr2 \

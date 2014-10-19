@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2014/10/15 17:33:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.242 2014/10/19 23:14:24 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,13 +8,14 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 COMMENT =		movie player supporting many formats
 
 V =			20140824
-FFMPEG_V =		20140810
+FFMPEG_V =		20141010
 
 SUBST_VARS += 		PREFIX CONFDIR
 
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
