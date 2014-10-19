@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/21 01:24:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/19 07:46:45 bentley Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -26,12 +26,13 @@ LIB_DEPENDS =		audio/libvorbis \
 			net/miniupnp/miniupnpc \
 			textproc/icu4c \
 			textproc/libxml
-RUN_DEPENDS =		games/0ad/data
+RUN_DEPENDS =		devel/desktop-file-utils \
+			games/0ad/data
 MODULES =		gcc4 \
 			lang/python \
 			converters/libiconv
 MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.3/bin/cxxtestgen
+MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.4/bin/cxxtestgen
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 
@@ -45,7 +46,6 @@ PATCHORIG =		.orig.port
 
 USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--without-nvtt \
-			--with-system-enet \
 			--with-system-miniupnpc \
 			--with-system-mozjs24 \
 			--datadir=${PREFIX}/share/0ad \

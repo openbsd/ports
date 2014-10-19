@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/21 01:24:06 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/19 07:46:45 bentley Exp $
 bin/0ad
 @bin bin/pyrogenesis
 lib/libCollada.so
@@ -25,6 +25,8 @@ share/0ad/l10n/de.engine.po
 share/0ad/l10n/en_GB.engine.po
 share/0ad/l10n/engine.pot
 share/0ad/l10n/es.engine.po
+share/0ad/l10n/es_CL.engine.po
+share/0ad/l10n/es_MX.engine.po
 share/0ad/l10n/fr.engine.po
 share/0ad/l10n/gd.engine.po
 share/0ad/l10n/gl.engine.po
@@ -33,6 +35,8 @@ share/0ad/l10n/messages.json
 share/0ad/l10n/nl.engine.po
 share/0ad/l10n/pt_BR.engine.po
 share/0ad/l10n/pt_PT.engine.po
+share/0ad/l10n/ru.engine.po
+share/0ad/l10n/tr.engine.po
 share/0ad/mods/_test.dae/
 share/0ad/mods/_test.dae/art/
 share/0ad/mods/_test.dae/art/actors/
@@ -115,7 +119,9 @@ share/0ad/mods/_test.sim/simulation/components/test-query.js
 share/0ad/mods/_test.sim/simulation/components/test-serialize.js
 share/0ad/mods/_test.sim/simulation/components/test.js
 share/0ad/mods/_test.sim/simulation/data/
+share/0ad/mods/_test.sim/simulation/data/pathfinder.rng
 share/0ad/mods/_test.sim/simulation/data/pathfinder.xml
+share/0ad/mods/_test.sim/simulation/data/territorymanager.rng
 share/0ad/mods/_test.sim/simulation/data/territorymanager.xml
 share/0ad/mods/_test.sim/simulation/helpers/
 share/0ad/mods/_test.sim/simulation/helpers/test-helper.js
@@ -160,7 +166,6 @@ share/0ad/tests/collada/skeletons.xml
 share/0ad/tests/collada/sphere.dae
 share/0ad/tests/collada/sphere.pmd
 share/0ad/tests/test_setup.js
-share/applications/
 share/applications/0ad.desktop
 share/pixmaps/
 share/pixmaps/0ad.png

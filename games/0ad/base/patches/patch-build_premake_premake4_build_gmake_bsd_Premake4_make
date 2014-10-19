@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_premake_premake4_build_gmake_bsd_Premake4_make,v 1.1.1.1 2014/07/21 01:24:06 bentley Exp $
---- build/premake/premake4/build/gmake.bsd/Premake4.make.orig.port	Sun Jul 13 10:43:11 2014
-+++ build/premake/premake4/build/gmake.bsd/Premake4.make	Sun Jul 13 10:43:19 2014
+$OpenBSD: patch-build_premake_premake4_build_gmake_bsd_Premake4_make,v 1.2 2014/10/19 07:46:45 bentley Exp $
+--- build/premake/premake4/build/gmake.bsd/Premake4.make.orig.port	Sun Aug 19 12:49:02 2012
++++ build/premake/premake4/build/gmake.bsd/Premake4.make	Sun Oct 12 21:12:18 2014
 @@ -26,8 +26,8 @@ ifeq ($(config),release)
    DEFINES   += -DNDEBUG -DLUA_USE_POSIX -DLUA_USE_DLOPEN
    INCLUDES  += -I../../src/host/lua-5.1.4/src

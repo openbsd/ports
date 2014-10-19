@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/21 01:24:06 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/19 07:46:45 bentley Exp $
 share/0ad/
 share/0ad/config/
 share/0ad/config/default.cfg
 share/0ad/config/keys.txt
 share/0ad/mods/
+share/0ad/mods/mod/
+share/0ad/mods/mod/mod.zip
 share/0ad/mods/public/
 share/0ad/mods/public/public.zip
 share/0ad/tools/
