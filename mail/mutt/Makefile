@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2014/09/17 12:50:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2014/10/20 23:53:42 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.5.23
 EPOCH=		0
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -31,7 +31,7 @@ LIB_DEPENDS=	databases/qdbm \
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 
-FLAVORS=	sasl sidebar slang compressed
+FLAVORS=	compressed gpgme sasl sidebar slang
 FLAVOR?=
 
 AUTOCONF_VERSION= 2.65
@@ -66,6 +66,12 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 ## standard flavours:
+
+.if ${FLAVOR:Mgpgme}
+CONFIGURE_ARGS+= --enable-gpgme
+LIB_DEPENDS+=	security/gpgme
+WANTLIB+=	assuan gpg-error gpgme
+.endif
 
 .if ${FLAVOR:Msasl}
 CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}
