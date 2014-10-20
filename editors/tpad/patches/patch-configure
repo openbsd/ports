@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2014/05/03 03:51:14 bcallah Exp $
+$OpenBSD: patch-configure,v 1.2 2014/10/20 03:14:12 bcallah Exp $
 
 unity is hardcoded to pkgconfig... even if --disable-libunity is defined
 
---- configure.orig	Fri May  2 11:22:42 2014
-+++ configure	Fri May  2 11:23:24 2014
-@@ -18063,12 +18063,12 @@ if test -n "$TPAD_CFLAGS"; then
+--- configure.orig	Sat May  3 17:06:40 2014
++++ configure	Sun Oct 19 23:07:40 2014
+@@ -18169,12 +18169,12 @@ if test -n "$TPAD_CFLAGS"; then
      pkg_cv_TPAD_CFLAGS="$TPAD_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -20,7 +20,7 @@ unity is hardcoded to pkgconfig... even if --disable-libunity is defined
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -18080,12 +18080,12 @@ if test -n "$TPAD_LIBS"; then
+@@ -18186,12 +18186,12 @@ if test -n "$TPAD_LIBS"; then
      pkg_cv_TPAD_LIBS="$TPAD_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -36,7 +36,7 @@ unity is hardcoded to pkgconfig... even if --disable-libunity is defined
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -18106,14 +18106,14 @@ else
+@@ -18212,14 +18212,14 @@ else
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
