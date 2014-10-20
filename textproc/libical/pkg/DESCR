@@ -1,4 +1,6 @@
-libical is an Open Source (MPL/LGPL) implementation of the IETF's
-iCalendar Calendaring and Scheduling protocols.  (RFC 2445, 2446, and
-2447).  It parses iCal components and provides a C API for manipulating
-the component properties, parameters, and subcomponents.
+Libical is an Open Source implementation of the iCalendar protocols and
+protocol data units. The iCalendar specification describes how calendar
+clients can communicate with calendar servers so users can store their
+calendar data and arrange meetings with other users.
+
+Libical implements RFC2445, RFC2446 and some of RFC2447.

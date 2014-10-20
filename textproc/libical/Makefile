@@ -1,31 +1,32 @@
-# $OpenBSD: Makefile,v 1.15 2013/06/09 10:53:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/20 15:51:54 ajacoutot Exp $
 
-COMMENT=	implementation of basic iCAL protocols
+COMMENT=	implementation of the iCalendar protocols and data units
 
-DISTNAME=	libical-1.0
+V=		1.0.1
+DISTNAME=	libical-${V}
 
-SHARED_LIBS +=  ical                 2.0      # 48.0
-SHARED_LIBS +=  icalss               2.0      # 48.0
-SHARED_LIBS +=  icalvcal             1.0      # 48.0
+GH_ACCOUNT=	libical
+GH_PROJECT=	libical
+GH_TAGNAME=	v${V}
+
+SHARED_LIBS +=  ical                 2.0
+SHARED_LIBS +=  icalss               2.0
+SHARED_LIBS +=  icalvcal             1.0
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	http://freeassociation.sf.net/
+HOMEPAGE=	https://libical.github.io/libical/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeassociation/}
-
-# MPL/LGPL
+# MPL/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
+
+MODULES=	devel/cmake
 
 WANTLIB += pthread
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-builtintz
+BUILD_DEPENDS=	devel/gobject-introspection
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libical/
-	${INSTALL_DATA} ${WRKSRC}/doc/UsingLibical.txt \
-		${PREFIX}/share/doc/libical/
+CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
+		-DGOBJECT_INTROSPECTION=true
 
 .include <bsd.port.mk>

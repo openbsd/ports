@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/06/09 10:53:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/20 15:51:54 ajacoutot Exp $
 include/ical.h
 include/libical/
 include/libical/ical.h
@@ -46,16 +46,20 @@ include/libical/sspm.h
 include/libical/vcaltmp.h
 include/libical/vcc.h
 include/libical/vobject.h
+lib/cmake/
+lib/cmake/LibIcal/
+lib/cmake/LibIcal/LibIcalConfig.cmake
+lib/cmake/LibIcal/LibIcalConfigVersion.cmake
+lib/cmake/LibIcal/LibIcalTargets-release.cmake
+lib/cmake/LibIcal/LibIcalTargets.cmake
+lib/girepository-1.0/
+lib/girepository-1.0/libical-1.0.1.typelib
 lib/libical.a
-lib/libical.la
 @lib lib/libical.so.${LIBical_VERSION}
 lib/libicalss.a
-lib/libicalss.la
 @lib lib/libicalss.so.${LIBicalss_VERSION}
 lib/libicalvcal.a
-lib/libicalvcal.la
 @lib lib/libicalvcal.so.${LIBicalvcal_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libical.pc
-share/doc/libical/
-share/doc/libical/UsingLibical.txt
+share/gir-1.0/
+share/gir-1.0/libical-1.0.1.gir

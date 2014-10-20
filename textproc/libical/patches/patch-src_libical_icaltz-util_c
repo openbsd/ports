@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libical_icaltz-util_c,v 1.3 2012/03/23 11:58:23 ajacoutot Exp $
---- src/libical/icaltz-util.c.orig	Tue Dec 13 18:08:18 2011
-+++ src/libical/icaltz-util.c	Fri Mar 23 12:40:27 2012
-@@ -32,6 +32,14 @@
+$OpenBSD: patch-src_libical_icaltz-util_c,v 1.4 2014/10/20 15:51:54 ajacoutot Exp $
+--- src/libical/icaltz-util.c.orig	Thu Oct  9 17:07:05 2014
++++ src/libical/icaltz-util.c	Mon Oct 20 17:28:34 2014
+@@ -33,6 +33,14 @@
  #if defined(sun) && defined(__SVR4)
  #include <sys/types.h>
  #include <sys/byteorder.h>
@@ -16,7 +16,7 @@ $OpenBSD: patch-src_libical_icaltz-util_c,v 1.3 2012/03/23 11:58:23 ajacoutot Ex
  #else
  # ifdef HAVE_BYTESWAP_H
  #  include <byteswap.h>
-@@ -144,6 +152,8 @@ decode (const void *ptr)
+@@ -143,6 +151,8 @@ decode (const void *ptr)
      if (sizeof (int) == 4)
  #ifdef _BIG_ENDIAN
          return *(const int *) ptr;
