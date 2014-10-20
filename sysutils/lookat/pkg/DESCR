@@ -1,0 +1,3 @@
+lookat is a program to view Un*x text files and manual pages. It is
+inspired by the DOS program list.com, designed to be more user-friendly
+than the standard Un*x pagers.

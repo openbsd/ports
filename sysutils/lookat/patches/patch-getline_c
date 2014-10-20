@@ -1,0 +1,21 @@
+$OpenBSD: patch-getline_c,v 1.1.1.1 2014/10/20 02:41:04 bcallah Exp $
+
+Committed upstream.
+
+--- getline.c.orig	Mon Oct 13 21:34:51 2014
++++ getline.c	Mon Oct 13 21:36:54 2014
+@@ -166,6 +166,8 @@ getstr (lineptr, n, stream, terminator, offset)
+   return ret;
+ }
+ 
++#ifndef __OpenBSD__
++
+ int
+ getline (lineptr, n, stream)
+      char **lineptr;
+@@ -193,4 +195,5 @@ getdelim (lineptr, n, delimiter, stream)
+ }
+ #endif
+ 
++#endif /* ifndef __OpenBSD__ */
+ 
