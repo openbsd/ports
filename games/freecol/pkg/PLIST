@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/23 18:16:26 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/20 01:36:02 bcallah Exp $
 bin/freecol
 share/doc/freecol/
 share/doc/freecol/FreeCol.pdf
@@ -63,6 +63,7 @@ share/freecol/data/base/resources_ru.properties
 share/freecol/data/base/resources_ta.properties
 share/freecol/data/base/resources_uk.properties
 share/freecol/data/base/resources_zh_CN.properties
+share/freecol/data/base/roles-compat.xml
 share/freecol/data/freecol.png
 share/freecol/data/maps/
 share/freecol/data/maps/Africa.fsg
@@ -70,6 +71,10 @@ share/freecol/data/maps/America_large.fsg
 share/freecol/data/maps/Australia.fsg
 share/freecol/data/maps/Caribbean_basin.fsg
 share/freecol/data/mods/
+share/freecol/data/mods/bryce/
+share/freecol/data/mods/bryce/FreeColMessages.properties
+share/freecol/data/mods/bryce/mod.xml
+share/freecol/data/mods/bryce/specification.xml
 share/freecol/data/mods/classic_ui/
 share/freecol/data/mods/classic_ui/FreeColMessages.properties
 share/freecol/data/mods/classic_ui/mod.xml
@@ -104,6 +109,10 @@ share/freecol/data/mods/classic_ui/resources/images/ui/order-buttons/pressed/
 share/freecol/data/mods/classic_ui/resources/images/ui/order-buttons/pressed/zoom_in.png
 share/freecol/data/mods/classic_ui/resources/images/ui/order-buttons/pressed/zoom_out.png
 share/freecol/data/mods/classic_ui/resources/images/ui/paper.png
+share/freecol/data/mods/convertUpgrade/
+share/freecol/data/mods/convertUpgrade/FreeColMessages.properties
+share/freecol/data/mods/convertUpgrade/mod.xml
+share/freecol/data/mods/convertUpgrade/specification.xml
 share/freecol/data/mods/example/
 share/freecol/data/mods/example/FreeColMessages.properties
 share/freecol/data/mods/example/milkmaid.png
@@ -404,6 +413,7 @@ share/freecol/data/rules/classic/resources/images/buildings/rum_distillery.png
 share/freecol/data/rules/classic/resources/images/buildings/rum_factory.png
 share/freecol/data/rules/classic/resources/images/buildings/schoolhouse.png
 share/freecol/data/rules/classic/resources/images/buildings/shipyard.png
+share/freecol/data/rules/classic/resources/images/buildings/spanish_townhall.png
 share/freecol/data/rules/classic/resources/images/buildings/stable.png
 share/freecol/data/rules/classic/resources/images/buildings/stockade.png
 share/freecol/data/rules/classic/resources/images/buildings/textile_mill.png
@@ -612,6 +622,11 @@ share/freecol/data/rules/classic/resources/images/goods/sugar.png
 share/freecol/data/rules/classic/resources/images/goods/tobacco.png
 share/freecol/data/rules/classic/resources/images/goods/tools.png
 share/freecol/data/rules/classic/resources/images/goods/tradeGoods.png
+share/freecol/data/rules/classic/resources/images/mercenaries/
+share/freecol/data/rules/classic/resources/images/mercenaries/Charles_Alexander.jpg
+share/freecol/data/rules/classic/resources/images/mercenaries/Charles_I.jpg
+share/freecol/data/rules/classic/resources/images/mercenaries/Frederick_Augustus.jpg
+share/freecol/data/rules/classic/resources/images/mercenaries/Frederik_II.jpg
 share/freecol/data/rules/classic/resources/images/misc/
 share/freecol/data/rules/classic/resources/images/misc/coin.png
 share/freecol/data/rules/classic/resources/images/misc/haloDark.png
@@ -974,6 +989,8 @@ share/freecol/data/rules/classic/resources/images/terrain/highSeas/center1.png
 share/freecol/data/rules/classic/resources/images/terrain/hills/
 share/freecol/data/rules/classic/resources/images/terrain/hills/hills0.png
 share/freecol/data/rules/classic/resources/images/terrain/hills/hills1.png
+share/freecol/data/rules/classic/resources/images/terrain/hills/hills2.png
+share/freecol/data/rules/classic/resources/images/terrain/hills/hills3.png
 share/freecol/data/rules/classic/resources/images/terrain/marsh/
 share/freecol/data/rules/classic/resources/images/terrain/marsh/border_E_even.png
 share/freecol/data/rules/classic/resources/images/terrain/marsh/border_E_odd.png
@@ -996,6 +1013,8 @@ share/freecol/data/rules/classic/resources/images/terrain/marsh/center1.png
 share/freecol/data/rules/classic/resources/images/terrain/mountains/
 share/freecol/data/rules/classic/resources/images/terrain/mountains/mountains0.png
 share/freecol/data/rules/classic/resources/images/terrain/mountains/mountains1.png
+share/freecol/data/rules/classic/resources/images/terrain/mountains/mountains2.png
+share/freecol/data/rules/classic/resources/images/terrain/mountains/mountains3.png
 share/freecol/data/rules/classic/resources/images/terrain/ocean/
 share/freecol/data/rules/classic/resources/images/terrain/ocean/border_E_even.png
 share/freecol/data/rules/classic/resources/images/terrain/ocean/border_E_odd.png
@@ -1139,7 +1158,6 @@ share/freecol/data/rules/classic/resources/images/ui/infopanel-skin.png
 share/freecol/data/rules/classic/resources/images/ui/landing.png
 share/freecol/data/rules/classic/resources/images/ui/map-americas.png
 share/freecol/data/rules/classic/resources/images/ui/meet_aztec.png
-share/freecol/data/rules/classic/resources/images/ui/meet_europeans.png
 share/freecol/data/rules/classic/resources/images/ui/meet_inca.png
 share/freecol/data/rules/classic/resources/images/ui/meet_natives.png
 share/freecol/data/rules/classic/resources/images/ui/military.png
@@ -1155,6 +1173,10 @@ share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/fort
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/plow.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/road.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/sentry.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/toggle_fog_of_war.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/toggle_fog_of_war_no.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/toggle_view_economic.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/toggle_view_politics.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/wait.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/zoom_in.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/disabled/zoom_out.png
@@ -1167,6 +1189,10 @@ share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/f
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/plow.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/road.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/sentry.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/toggle_fog_of_war.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/toggle_fog_of_war_no.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/toggle_view_economic.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/toggle_view_politics.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/wait.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/zoom_in.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/highlighted/zoom_out.png
@@ -1179,6 +1205,10 @@ share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/fortif
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/plow.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/road.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/sentry.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/toggle_fog_of_war.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/toggle_fog_of_war_no.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/toggle_view_economic.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/toggle_view_politics.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/wait.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/zoom_in.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/normal/zoom_out.png
@@ -1191,6 +1221,10 @@ share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/forti
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/plow.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/road.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/sentry.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/toggle_fog_of_war.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/toggle_fog_of_war_no.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/toggle_view_economic.png
+share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/toggle_view_politics.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/wait.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/zoom_in.png
 share/freecol/data/rules/classic/resources/images/ui/order-buttons/pressed/zoom_out.png
@@ -1212,20 +1246,22 @@ share/freecol/data/rules/classic/resources/images/ui/religious.png
 share/freecol/data/rules/classic/resources/images/ui/trade.png
 share/freecol/data/rules/classic/resources/images/ui/victory.png
 share/freecol/data/rules/classic/resources/images/units/
+share/freecol/data/rules/classic/resources/images/units/armedBrave/
+share/freecol/data/rules/classic/resources/images/units/armedBrave/brave.png
 share/freecol/data/rules/classic/resources/images/units/artillery.png
 share/freecol/data/rules/classic/resources/images/units/brave.png
 share/freecol/data/rules/classic/resources/images/units/caravel.png
+share/freecol/data/rules/classic/resources/images/units/cavalry/
+share/freecol/data/rules/classic/resources/images/units/cavalry/kingsRegular.png
 share/freecol/data/rules/classic/resources/images/units/colonialRegular.png
 share/freecol/data/rules/classic/resources/images/units/damagedArtillery.png
 share/freecol/data/rules/classic/resources/images/units/dragoon/
-share/freecol/data/rules/classic/resources/images/units/dragoon/brave.png
 share/freecol/data/rules/classic/resources/images/units/dragoon/colonialDragoon-attack-left.sza
 share/freecol/data/rules/classic/resources/images/units/dragoon/colonialDragoon-attack-right.sza
 share/freecol/data/rules/classic/resources/images/units/dragoon/colonialRegular.png
 share/freecol/data/rules/classic/resources/images/units/dragoon/dragoon-attack-left.sza
 share/freecol/data/rules/classic/resources/images/units/dragoon/dragoon-attack-right.sza
 share/freecol/data/rules/classic/resources/images/units/dragoon/dragoon.png
-share/freecol/data/rules/classic/resources/images/units/dragoon/kingsRegular.png
 share/freecol/data/rules/classic/resources/images/units/dragoon/veteranDragoon-attack-left.sza
 share/freecol/data/rules/classic/resources/images/units/dragoon/veteranDragoon-attack-right.sza
 share/freecol/data/rules/classic/resources/images/units/dragoon/veteranSoldier.png
@@ -1244,6 +1280,8 @@ share/freecol/data/rules/classic/resources/images/units/galleon.png
 share/freecol/data/rules/classic/resources/images/units/hardyPioneer.png
 share/freecol/data/rules/classic/resources/images/units/indenturedServant.png
 share/freecol/data/rules/classic/resources/images/units/indianConvert.png
+share/freecol/data/rules/classic/resources/images/units/infantry/
+share/freecol/data/rules/classic/resources/images/units/infantry/kingsRegular.png
 share/freecol/data/rules/classic/resources/images/units/jesuitMissionary.png
 share/freecol/data/rules/classic/resources/images/units/kingsRegular.png
 share/freecol/data/rules/classic/resources/images/units/manOWar.png
@@ -1262,7 +1300,11 @@ share/freecol/data/rules/classic/resources/images/units/milkmaid.png
 share/freecol/data/rules/classic/resources/images/units/missionary/
 share/freecol/data/rules/classic/resources/images/units/missionary/jesuitMissionary.png
 share/freecol/data/rules/classic/resources/images/units/missionary/missionary.png
+share/freecol/data/rules/classic/resources/images/units/mountedBrave/
+share/freecol/data/rules/classic/resources/images/units/mountedBrave/brave.png
 share/freecol/data/rules/classic/resources/images/units/nativeColonist.png
+share/freecol/data/rules/classic/resources/images/units/nativeDragoon/
+share/freecol/data/rules/classic/resources/images/units/nativeDragoon/brave.png
 share/freecol/data/rules/classic/resources/images/units/nativeSoldier.png
 share/freecol/data/rules/classic/resources/images/units/pettyCriminal.png
 share/freecol/data/rules/classic/resources/images/units/pioneer/
@@ -1271,7 +1313,6 @@ share/freecol/data/rules/classic/resources/images/units/pioneer/pioneer.png
 share/freecol/data/rules/classic/resources/images/units/privateer.png
 share/freecol/data/rules/classic/resources/images/units/revenger.png
 share/freecol/data/rules/classic/resources/images/units/scout/
-share/freecol/data/rules/classic/resources/images/units/scout/brave.png
 share/freecol/data/rules/classic/resources/images/units/scout/colonialRegular.png
 share/freecol/data/rules/classic/resources/images/units/scout/kingsRegular.png
 share/freecol/data/rules/classic/resources/images/units/scout/scout.png
@@ -1279,11 +1320,9 @@ share/freecol/data/rules/classic/resources/images/units/scout/seasonedScout.png
 share/freecol/data/rules/classic/resources/images/units/scout/veteranSoldier.png
 share/freecol/data/rules/classic/resources/images/units/seasonedScout.png
 share/freecol/data/rules/classic/resources/images/units/soldier/
-share/freecol/data/rules/classic/resources/images/units/soldier/brave.png
 share/freecol/data/rules/classic/resources/images/units/soldier/colonialRegular-attack-left.sza
 share/freecol/data/rules/classic/resources/images/units/soldier/colonialRegular-attack-right.sza
 share/freecol/data/rules/classic/resources/images/units/soldier/colonialRegular.png
-share/freecol/data/rules/classic/resources/images/units/soldier/kingsRegular.png
 share/freecol/data/rules/classic/resources/images/units/soldier/soldier-attack-left.sza
 share/freecol/data/rules/classic/resources/images/units/soldier/soldier-attack-right.sza
 share/freecol/data/rules/classic/resources/images/units/soldier/soldier.png
@@ -1402,6 +1441,7 @@ share/freecol/data/strings/FreeColMessages_ta.properties
 share/freecol/data/strings/FreeColMessages_tl.properties
 share/freecol/data/strings/FreeColMessages_tr.properties
 share/freecol/data/strings/FreeColMessages_uk.properties
+share/freecol/data/strings/FreeColMessages_zh-hant.properties
 share/freecol/data/strings/FreeColMessages_zh_CN.properties
 share/freecol/data/strings/plurals.xml
 share/freecol/freecol.xpm
@@ -1410,8 +1450,5 @@ share/freecol/jars/commons-cli-1.1.jar
 share/freecol/jars/cortado-0.6.0.jar
 share/freecol/jars/jogg-0.0.7.jar
 share/freecol/jars/jorbis-0.0.15.jar
-share/freecol/jars/jsr173_1.0_api.jar
-share/freecol/jars/miglayout-4.0-swing.jar
-share/freecol/jars/tritonus_share.jar
-share/freecol/jars/vorbisspi1.0.3.jar
-share/freecol/jars/wstx-lgpl-4.0pr1.jar
+share/freecol/jars/miglayout-core-4.2.jar
+share/freecol/jars/miglayout-swing-4.2.jar
