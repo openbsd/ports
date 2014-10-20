@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/10/18 08:36:39 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2014/10/20 15:10:00 kirby Exp $
 
 SHARED_ONLY =	Yes
 SHARED_LIBS +=	mupdf 1.1
@@ -25,7 +25,8 @@ WANTLIB += X11 Xext c crypto curl freetype idn jbig2dec jpeg m
 WANTLIB += openjp2 pthread ssl z
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
-MASTER_SITES =	http://mupdf.com/downloads/
+MASTER_SITES =	http://mupdf.com/downloads/ \
+		http://mupdf.com/downloads/archive/
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
