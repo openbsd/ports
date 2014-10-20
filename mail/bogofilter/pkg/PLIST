@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/19 21:44:08 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/20 08:38:54 landry Exp $
 bin/bf_compact
 bin/bf_copy
 bin/bf_tar
-bin/bogofilter
-bin/bogolexer
-bin/bogotune
+@bin bin/bogofilter
+@bin bin/bogolexer
+@bin bin/bogotune
 bin/bogoupgrade
-bin/bogoutil
+@bin bin/bogoutil
 @man man/man1/bf_compact.1
 @man man/man1/bf_copy.1
 @man man/man1/bf_tar.1
