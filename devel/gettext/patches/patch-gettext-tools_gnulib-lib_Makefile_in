@@ -1,13 +1,13 @@
-$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.6 2014/07/10 22:41:11 naddy Exp $
+$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.7 2014/10/20 18:34:38 naddy Exp $
 
 Use standard shared library versioning.
 
 Do not remove static library after building.
 This was also a race if MAKE_JOBS > 1.
 
---- gettext-tools/gnulib-lib/Makefile.in.orig	Tue Jun 10 07:42:48 2014
-+++ gettext-tools/gnulib-lib/Makefile.in	Thu Jul 10 23:25:33 2014
-@@ -2145,7 +2145,7 @@ EXTRA_libgettextlib_la_SOURCES = atexit.c canonicalize
+--- gettext-tools/gnulib-lib/Makefile.in.orig	Thu Oct 16 08:01:38 2014
++++ gettext-tools/gnulib-lib/Makefile.in	Mon Oct 20 19:49:42 2014
+@@ -2147,7 +2147,7 @@ EXTRA_libgettextlib_la_SOURCES = atexit.c canonicalize
  #libgettextlib_la_LDFLAGS += $(LTLIBUNISTRING) @LTLIBINTL@ @LTLIBICONV@ @LIB_ACL@
  libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(LIB_ACL) \
  	$(LTLIBICONV) $(LTLIBINTL) $(LTLIBTHREAD) $(LTLIBUNISTRING) \
@@ -16,7 +16,7 @@ This was also a race if MAKE_JOBS > 1.
  	$(am__append_3) $(am__append_12)
  
  # Use this preprocessor expression to decide whether #include_next works.
-@@ -3352,7 +3352,7 @@ getopt.h: getopt.in.h $(top_builddir)/config.status $(
+@@ -3354,7 +3354,7 @@ getopt.h: getopt.in.h $(top_builddir)/config.status $(
  	mv -f $@-t $@
  
  # No need to install libgettextlib.a, except on AIX.
