@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/08/30 09:02:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/20 15:57:12 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	PolicyKit authentication agent for for Qt4
 V=		0.112.0
 DISTNAME=	polkit-qt-1-${V}
 PKGNAME=	polkit-qt4-${V}
+REVISION=	0
 
 SHARED_LIBS +=  polkit-qt-agent-1         2.0 # 0.99
 SHARED_LIBS +=  polkit-qt-core-1          2.0 # 0.99
@@ -38,7 +39,8 @@ LIB_DEPENDS=	sysutils/polkit
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
 
-CONFIGURE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
+CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include" \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
