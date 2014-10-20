@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/23 18:05:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2014/10/20 03:41:25 bcallah Exp $
 
 COMMENT=		minimal XML library
-DISTNAME=		mxml-2.8
+DISTNAME=		mxml-2.9
 CATEGORIES=		textproc
 
 SHARED_LIBS=		mxml	0.2	# 1.5
