@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/06/16 01:01:42 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/10/20 00:31:55 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -72,6 +72,7 @@ lib/seed7/lib/comp/rfl_act.s7i
 lib/seed7/lib/comp/sct_act.s7i
 lib/seed7/lib/comp/set_act.s7i
 lib/seed7/lib/comp/soc_act.s7i
+lib/seed7/lib/comp/sql_act.s7i
 lib/seed7/lib/comp/stat.s7i
 lib/seed7/lib/comp/str_act.s7i
 lib/seed7/lib/comp/tim_act.s7i
@@ -157,6 +158,7 @@ lib/seed7/lib/shell.s7i
 lib/seed7/lib/sockbase.s7i
 lib/seed7/lib/socket.s7i
 lib/seed7/lib/sokoban1.s7i
+lib/seed7/lib/sql_base.s7i
 lib/seed7/lib/stars.s7i
 lib/seed7/lib/stdfont10.s7i
 lib/seed7/lib/stdfont12.s7i
@@ -218,7 +220,7 @@ share/examples/seed7/addup.sd7
 share/examples/seed7/bas7.sd7
 share/examples/seed7/bifurk.sd7
 share/examples/seed7/blue.dna
-share/examples/seed7/calc.sd7
+share/examples/seed7/calc7.sd7
 share/examples/seed7/carddemo.sd7
 share/examples/seed7/castle.dat
 share/examples/seed7/castle.sd7
@@ -228,11 +230,13 @@ share/examples/seed7/chk_all.sd7
 share/examples/seed7/chkbig.sd7
 share/examples/seed7/chkbool.sd7
 share/examples/seed7/chkcmd.sd7
+share/examples/seed7/chkdb.sd7
 share/examples/seed7/chkexc.sd7
 share/examples/seed7/chkflt.sd7
 share/examples/seed7/chkhent.sd7
 share/examples/seed7/chkhsh.sd7
 share/examples/seed7/chkint.sd7
+share/examples/seed7/chkovf.sd7
 share/examples/seed7/chkprc.sd7
 share/examples/seed7/chkscan.sd7
 share/examples/seed7/chkset.sd7
@@ -292,6 +296,7 @@ share/examples/seed7/shisen.sd7
 share/examples/seed7/sl.sd7
 share/examples/seed7/snake.sd7
 share/examples/seed7/sokoban.sd7
+share/examples/seed7/sql7.sd7
 share/examples/seed7/startrek.sd7
 share/examples/seed7/sudoku7.sd7
 share/examples/seed7/sydir7.sd7

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2014/09/01 20:19:12 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2014/10/20 00:31:55 bcallah Exp $
 
-V =		20140615
+V =		20141019
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
@@ -16,12 +16,13 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Runtime libraries: LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 c m ncurses
+WANTLIB += X11 c m ncurses sqlite3
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	CC="${CC}" LDFLAGS="-Wl,--gc-sections -L${X11BASE}/lib"
+MAKE_FLAGS =	CC="${CC}" LDFLAGS="-L${X11BASE}/lib" \
+		SYSTEM_LIBS="-lm -lsqlite3"
 MAKE_ENV +=	S7_LIB_DIR=${TRUEPREFIX}/lib/seed7/bin \
 		SEED7_LIBRARY=${TRUEPREFIX}/lib/seed7/lib
 MAKE_FILE =	makefile
