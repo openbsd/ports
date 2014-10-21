@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/09/07 18:49:13 stu Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/21 05:08:53 stu Exp $
 @option no-default-conflict
 @conflict tcl->=8.6,<8.7
 %%SHARED%%
@@ -24,8 +24,8 @@ lib/libtclstub86.a
 lib/pkgconfig/tcl86.pc
 lib/tcl/
 lib/tcl/modules/
-lib/tcl/modules/8.5/
-lib/tcl/modules/8.6/
+lib/tcl/modules/85/
+lib/tcl/modules/86/
 lib/tcl/tcl8.6/
 lib/tcl/tcl8.6/auto.tcl
 lib/tcl/tcl8.6/clock.tcl
@@ -927,14 +927,12 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/yieldto.n
 @man lib/tcl/tcl8.6/man/mann/zlib.n
 lib/tcl/tcl8.6/modules/
-lib/tcl/tcl8.6/modules/8.5/
-lib/tcl/tcl8.6/modules/8.5/msgcat-1.5.2.tm
-lib/tcl/tcl8.6/modules/8.5/platform/
-lib/tcl/tcl8.6/modules/8.5/platform-1.0.13.tm
-lib/tcl/tcl8.6/modules/8.5/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/8.5/tcltest-2.3.8.tm
-lib/tcl/tcl8.6/modules/8.6/
-lib/tcl/tcl8.6/modules/8.6/http-2.8.8.tm
+lib/tcl/tcl8.6/modules/http-2.8.8.tm
+lib/tcl/tcl8.6/modules/msgcat-1.5.2.tm
+lib/tcl/tcl8.6/modules/platform/
+lib/tcl/tcl8.6/modules/platform-1.0.13.tm
+lib/tcl/tcl8.6/modules/platform/shell-1.1.4.tm
+lib/tcl/tcl8.6/modules/tcltest-2.3.8.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg
