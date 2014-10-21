@@ -1,4 +1,4 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.13 2014/09/22 16:54:11 stu Exp $
+$OpenBSD: patch-unix_Makefile_in,v 1.14 2014/10/21 05:08:14 stu Exp $
 --- unix/Makefile.in.orig	Wed Jul 23 09:03:24 2014
 +++ unix/Makefile.in	Sun Aug 17 15:22:06 2014
 @@ -565,6 +565,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
@@ -34,7 +34,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.13 2014/09/22 16:54:11 stu Exp $
  		fi; \
  	    done;
 -	@for i in opt0.4 http1.0 encoding ../tcl8 ../tcl8/8.4  ../tcl8/8.4/platform ../tcl8/8.5; \
-+	@for i in opt0.4 http1.0 encoding modules modules/8.5 modules/8.5/platform ../modules/8.5; \
++	@for i in opt0.4 http1.0 encoding modules modules/platform ../modules/85; \
  	    do \
  	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
  		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
@@ -43,7 +43,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.13 2014/09/22 16:54:11 stu Exp $
  	    done;
  	@echo "Installing package http 2.7.13 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/http-2.7.13.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/http-2.7.13.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/http-2.7.13.tm;
  	@echo "Installing package opt0.4 files to $(SCRIPT_INSTALL_DIR)/opt0.4/";
  	@for i in $(TOP_DIR)/library/opt/*.tcl ; \
  	    do \
@@ -51,17 +51,17 @@ $OpenBSD: patch-unix_Makefile_in,v 1.13 2014/09/22 16:54:11 stu Exp $
  	    done;
  	@echo "Installing package msgcat 1.5.2 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/msgcat-1.5.2.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/msgcat-1.5.2.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/modules/msgcat-1.5.2.tm;
  	@echo "Installing package tcltest 2.3.8 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.3.8.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/tcltest-2.3.8.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/modules/tcltest-2.3.8.tm;
  
  	@echo "Installing package platform 1.0.13 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.13.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/platform-1.0.13.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/modules/platform-1.0.13.tm;
  	@echo "Installing package platform::shell 1.1.4 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform/shell-1.1.4.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/platform/shell-1.1.4.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/modules/platform/shell-1.1.4.tm;
  
  	@echo "Installing encoding files to $(SCRIPT_INSTALL_DIR)/encoding/";
  	@for i in $(TOP_DIR)/library/encoding/*.enc ; do \
