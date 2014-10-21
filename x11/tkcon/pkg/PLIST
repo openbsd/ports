@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/02/09 12:26:00 stu Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/21 05:09:43 stu Exp $
 bin/tkcon
-lib/tcl/modules/${MODTK_VERSION}/tkcon-2.5.tm
+lib/tcl/modules/85/tkcon-2.5.tm
 @man man/man1/tkcon.1
 @man man/man5/tkconrc.5
 @man man/mann/dump.n
