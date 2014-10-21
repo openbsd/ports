@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/08/30 17:32:34 stu Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/21 05:10:34 stu Exp $
 @conflict mentry-*
 @conflict wcb-*
 @pkgpath devel/mentry
 @pkgpath devel/wcb
-lib/tcl/autoscroll/
-lib/tcl/autoscroll/autoscroll.tcl
-lib/tcl/autoscroll/pkgIndex.tcl
 lib/tcl/canvas/
 lib/tcl/canvas/canvas_drag.tcl
 lib/tcl/canvas/canvas_epoints.tcl
@@ -20,9 +17,6 @@ lib/tcl/canvas/canvas_tags.tcl
 lib/tcl/canvas/canvas_trlines.tcl
 lib/tcl/canvas/canvas_zoom.tcl
 lib/tcl/canvas/pkgIndex.tcl
-lib/tcl/chatwidget/
-lib/tcl/chatwidget/chatwidget.tcl
-lib/tcl/chatwidget/pkgIndex.tcl
 lib/tcl/controlwidget/
 lib/tcl/controlwidget/bindDown.tcl
 lib/tcl/controlwidget/controlwidget.tcl
@@ -33,18 +27,6 @@ lib/tcl/controlwidget/rdial.tcl
 lib/tcl/controlwidget/tachometer.tcl
 lib/tcl/controlwidget/vertical_meter.tcl
 lib/tcl/controlwidget/voltmeter.tcl
-lib/tcl/crosshair/
-lib/tcl/crosshair/crosshair.tcl
-lib/tcl/crosshair/pkgIndex.tcl
-lib/tcl/ctext/
-lib/tcl/ctext/ctext.tcl
-lib/tcl/ctext/pkgIndex.tcl
-lib/tcl/cursor/
-lib/tcl/cursor/cursor.tcl
-lib/tcl/cursor/pkgIndex.tcl
-lib/tcl/datefield/
-lib/tcl/datefield/datefield.tcl
-lib/tcl/datefield/pkgIndex.tcl
 lib/tcl/diagrams/
 lib/tcl/diagrams/application.tcl
 lib/tcl/diagrams/attributes.tcl
@@ -59,16 +41,10 @@ lib/tcl/diagrams/point.tcl
 lib/tcl/getstring/
 lib/tcl/getstring/pkgIndex.tcl
 lib/tcl/getstring/tk_getString.tcl
-lib/tcl/history/
-lib/tcl/history/history.tcl
-lib/tcl/history/pkgIndex.tcl
 lib/tcl/ico/
 lib/tcl/ico/ico.tcl
 lib/tcl/ico/ico0.tcl
 lib/tcl/ico/pkgIndex.tcl
-lib/tcl/ipentry/
-lib/tcl/ipentry/ipentry.tcl
-lib/tcl/ipentry/pkgIndex.tcl
 lib/tcl/khim/
 lib/tcl/khim/ROOT.msg
 lib/tcl/khim/cs.msg
@@ -101,9 +77,16 @@ lib/tcl/menubar/menubar.tcl
 lib/tcl/menubar/node.tcl
 lib/tcl/menubar/pkgIndex.tcl
 lib/tcl/menubar/tree.tcl
-lib/tcl/ntext/
-lib/tcl/ntext/ntext.tcl
-lib/tcl/ntext/pkgIndex.tcl
+lib/tcl/modules/85/autoscroll-1.1.tm
+lib/tcl/modules/85/chatwidget-1.1.0.tm
+lib/tcl/modules/85/crosshair-1.2.tm
+lib/tcl/modules/85/ctext-3.3.tm
+lib/tcl/modules/85/cursor-0.3.1.tm
+lib/tcl/modules/85/datefield-0.2.tm
+lib/tcl/modules/85/history-0.1.tm
+lib/tcl/modules/85/ipentry-0.3.tm
+lib/tcl/modules/85/ntext-0.81.tm
+lib/tcl/modules/85/swaplist-0.2.tm
 lib/tcl/plotchart/
 lib/tcl/plotchart/pkgIndex.tcl
 lib/tcl/plotchart/plot3d.tcl
@@ -131,9 +114,6 @@ lib/tcl/style/as.tcl
 lib/tcl/style/lobster.tcl
 lib/tcl/style/pkgIndex.tcl
 lib/tcl/style/style.tcl
-lib/tcl/swaplist/
-lib/tcl/swaplist/pkgIndex.tcl
-lib/tcl/swaplist/swaplist.tcl
 lib/tcl/tablelist/
 lib/tcl/tablelist/pkgIndex.tcl
 lib/tcl/tablelist/scripts/

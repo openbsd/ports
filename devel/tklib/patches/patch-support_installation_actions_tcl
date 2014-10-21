@@ -1,11 +1,11 @@
-$OpenBSD: patch-support_installation_actions_tcl,v 1.2 2014/09/10 23:10:04 stu Exp $
+$OpenBSD: patch-support_installation_actions_tcl,v 1.3 2014/10/21 05:10:34 stu Exp $
 
 Retrieve module info from man pages.
 Perform shebang adjustments.
 
---- support/installation/actions.tcl.orig	Wed Oct 30 14:44:52 2013
-+++ support/installation/actions.tcl	Fri Nov  8 15:05:31 2013
-@@ -108,15 +108,98 @@ proc _tci {module libdir} {
+--- support/installation/actions.tcl.orig	Mon Aug 11 01:25:55 2014
++++ support/installation/actions.tcl	Tue Sep 16 17:25:20 2014
+@@ -108,15 +108,106 @@ proc _tci {module libdir} {
      return
  }
  
@@ -46,7 +46,14 @@ Perform shebang adjustments.
 -	    [file join $distribution examples $module] \
 -	    [file join $exadir $module] \
 -	    1
--    return
++proc _tcm {module libdir} {
++    global distribution config pkgs
++    file mkdir $config(mp)
++    xcopyfile [file join $distribution modules $module $module.tcl] \
++	[file join $config(mp) $module-$pkgs($module).tm]
+     return
++}
++
 +proc _exafile {fn dfn tclsh} {
 +    set f [open $fn]
 +    set d [read $f 2]

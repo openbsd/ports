@@ -1,12 +1,41 @@
-$OpenBSD: patch-support_installation_modules_tcl,v 1.1 2013/11/14 09:43:09 stu Exp $
---- support/installation/modules.tcl.orig	Wed Oct 30 14:44:52 2013
-+++ support/installation/modules.tcl	Wed Nov  6 21:47:52 2013
-@@ -32,7 +32,7 @@ array set guide {}
+$OpenBSD: patch-support_installation_modules_tcl,v 1.2 2014/10/21 05:10:34 stu Exp $
+--- support/installation/modules.tcl.orig	Mon Aug 11 01:25:55 2014
++++ support/installation/modules.tcl	Tue Sep 16 17:49:55 2014
+@@ -31,26 +31,26 @@ array set guide {}
+ # @@ Registration START
  
  #      name           pkg   doc   example
- Module autoscroll    _tcl  _man  _null
+-Module autoscroll    _tcl  _man  _null
 -Module canvas        _tcl  _man  _null
+-Module chatwidget    _tcl  _man  _null
++Module autoscroll    _tcm  _man  _null
 +Module canvas        _tcl  _man  _exa
- Module chatwidget    _tcl  _man  _null
++Module chatwidget    _tcm  _man  _null
  Module controlwidget _tcl  _man  _exa
- Module ctext         _ctxt _man  _null
+-Module ctext         _ctxt _man  _null
+-Module cursor        _tcl  _man  _null
+-Module crosshair     _tcl  _man  _null
+-Module datefield     _tcl  _man  _null
++Module ctext         _tcm  _man  _null
++Module cursor        _tcm  _man  _null
++Module crosshair     _tcm  _man  _null
++Module datefield     _tcm  _man  _null
+ Module diagrams      _tcl  _man  _null
+ Module getstring     _tcl  _man  _null
+-Module history       _tcl  _man  _null
++Module history       _tcm  _man  _null
+ Module ico           _tcl  _man  _null
+-Module ipentry       _tcl  _man  _null
++Module ipentry       _tcm  _man  _null
+ Module khim          _tclm _man  _null
+ Module mentry        _tab  _null _exa
+ Module menubar       _tcl  _man  _exa
+-Module ntext         _tcl  _man  _exa
++Module ntext         _tcm  _man  _exa
+ Module plotchart     _tcl  _man  _exa
+ Module style         _tcl  _man  _null
+-Module swaplist      _tcl  _man  _null
++Module swaplist      _tcm  _man  _null
+ Module tablelist     _tab  _null _exa
+ Module tkpiechart    _tcl  _man  _exa
+ Module tooltip       _tcl  _man  _null

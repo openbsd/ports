@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/08/30 17:32:34 stu Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/21 05:10:34 stu Exp $
 
 COMMENT =	Tk Standard Library
 
 DISTNAME =	tklib-0.6pl1
+REVISION =	0
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://core.tcl.tk/tklib/home
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -33,6 +34,7 @@ do-install:
 	-pkg-path ${DESTDIR}${MODTCL_TCLDIR} \
 	-nroff-path ${PREFIX}/man/mann \
 	-example-path ${PREFIX}/share/examples/tklib \
+	-mp ${DESTDIR}${MODTCL_MODDIR}/85 \
 	-app-path ${PREFIX}/share/examples/tklib/apps \
 	-csb ${PREFIX}/share/doc \
 	-tclsh ${MODTCL_BIN} \
