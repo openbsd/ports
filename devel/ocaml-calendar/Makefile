@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/08/22 22:21:54 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2014/10/21 19:18:46 chrisz Exp $
 
 COMMENT=	Objective Caml bindings for calendar functions
 CATEGORIES=	devel
@@ -6,7 +6,7 @@ CATEGORIES=	devel
 V=		2.03.2
 DISTNAME=	calendar-${V}
 PKGNAME=	ocaml-calendar-${V}
-REVISION=	4
+REVISION=	5
 # You need to update MASTER_SITES too, when changing the version number.
 MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/915/
 
@@ -25,7 +25,14 @@ CONFIGURE_STYLE= gnu
 USE_GMAKE=	yes
 
 
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-calendar/api
+	${INSTALL_DATA} \
+		${WRKDIST}/CHANGES \
+		${PREFIX}/share/doc/ocaml-calendar/
+	${INSTALL_DATA} \
+		${WRKDIST}/doc/* \
+		${PREFIX}/share/doc/ocaml-calendar/api/
+
 
 .include <bsd.port.mk>
