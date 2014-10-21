@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/10/21 15:08:51 abieber Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
-DISTNAME =		dfu-util-0.3
-REVISION =		0
+DISTNAME =		dfu-util-0.8
 
 CATEGORIES =		comms
 
