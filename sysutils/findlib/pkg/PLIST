@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/09/02 09:24:45 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/10/21 19:12:28 chrisz Exp $
 %%native%%
 @bin bin/ocamlfind
 lib/ocaml/bigarray/
 lib/ocaml/bigarray/META
 lib/ocaml/bytes/
 lib/ocaml/bytes/META
+@comment will be installed by lang/ocaml-camlp4
+@comment lib/ocaml/camlp4/
+@comment lib/ocaml/camlp4/META
 lib/ocaml/compiler-libs/META
 lib/ocaml/dynlink/
 lib/ocaml/dynlink/META
