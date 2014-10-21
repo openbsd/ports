@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/05 07:47:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/21 14:53:46 jasper Exp $
 
 COMMENT=		OpenBSD ports tree version scanner
 
 GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
-GH_TAGNAME=		1.2.0
-GH_COMMIT=		a7dde4ecf3d7b45e0345b954fa32332bfa0081f6
-REVISION=		0
+GH_TAGNAME=		1.2.1
+GH_COMMIT=		8e7d9ccfb16bfc55c16e258e2a9228d2f6d355e0
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=		misc
