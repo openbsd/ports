@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:32:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/10/22 18:06:47 jasper Exp $
 
 COMMENT =		python network packet manipulation library
 
 MODPY_EGG_VERSION =	1.7
 DISTNAME =		dpkt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://code.google.com/p/dpkt/
 
-MAINTAINER =		Thanasoulas Spiros <dsp@physics.uoc.gr>
+MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
