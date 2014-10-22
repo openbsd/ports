@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/22 13:39:38 jasper Exp $
 
 COMMENT=	jpeg pixel interpolator
 
 DISTNAME=	jpegpixi-1.1.1
+REVISION=	0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.zero-based.org/software/jpegpixi/
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
