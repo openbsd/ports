@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/19 12:17:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/22 19:01:09 jasper Exp $
 @bin bin/evcd2vcd
 @bin bin/fst2vcd
 @bin bin/fstminer
@@ -38,10 +38,10 @@ share/applications/gtkwave.desktop
 share/doc/gtkwave/
 share/doc/gtkwave/gtkwave.odt
 share/examples/gtkwave/
+share/examples/gtkwave/des.fst
 share/examples/gtkwave/des.gtkw
 share/examples/gtkwave/des.tcl
 share/examples/gtkwave/des.v
-share/examples/gtkwave/des.vzt
 share/examples/gtkwave/gtkwaverc
 share/examples/gtkwave/transaction.c
 share/examples/gtkwave/transaction.fst
