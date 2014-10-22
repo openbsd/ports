@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/04/21 06:21:56 chrisz Exp $
+# $OpenBSD: Makefile,v 1.33 2014/10/22 13:00:54 jasper Exp $
 
 COMMENT=		lightweight sip client
 
@@ -9,9 +9,11 @@ WRKDIST=		${WRKDIR}/${DISTNAME}
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		telephony
 
+REVISION=		0
+
 HOMEPAGE=		http://www.pjsip.org/
 MASTER_SITES=		${HOMEPAGE}release/${VERSION}/
-MAINTAINER=		Christopher Zimmermann <madroach@zakweb.de>
+MAINTAINER=		Christopher Zimmermann <chrisz@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

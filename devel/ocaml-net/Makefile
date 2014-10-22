@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/22 13:00:54 jasper Exp $
 
 COMMENT =	the Ocamlnet internet protocol foundation library
 CATEGORIES =	devel www mail
@@ -6,11 +6,12 @@ CATEGORIES =	devel www mail
 V =		3.7.5
 DISTNAME =	ocamlnet-${V}
 PKGNAME =	ocaml-net-${V}
+REVISION =	0
 
 MASTER_SITES =	http://download.camlcity.org/download/
 HOMEPAGE =	http://projects.camlcity.org/projects/ocamlnet.html
 
-MAINTAINER =	Christopher Zimmermann <madroach@zakweb.de>
+MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # Mostly zlib/png, http server module is GPL
 PERMIT_PACKAGE_CDROM =	Yes

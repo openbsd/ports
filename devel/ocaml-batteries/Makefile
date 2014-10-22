@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/27 07:54:22 chrisz Exp $
+# $OpenBSD: Makefile,v 1.12 2014/10/22 13:00:54 jasper Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
@@ -10,11 +10,11 @@ GH_TAGNAME =	v$V
 GH_COMMIT =	9370680ef30e225e50c76fc05654a897d79ee79d
 DISTNAME =	${GH_PROJECT}-$V
 PKGNAME =	ocaml-batteries-$V
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://batteries.forge.ocamlcore.org/
 
-MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
+MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPL >=2.1
 PERMIT_PACKAGE_CDROM =		Yes
