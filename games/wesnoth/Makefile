@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.55 2014/01/13 09:43:10 pascal Exp $
+# $OpenBSD: Makefile,v 1.56 2014/10/22 07:57:28 kirby Exp $
+
+PORTROACH = 	limitw:1,even
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
