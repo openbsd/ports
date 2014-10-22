@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/13 09:29:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/22 09:35:20 landry Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.2
+REVISION =		0
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
@@ -38,6 +39,13 @@ MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_MOZJS=NO \
 			NETSURF_USE_JS=NO
 
+post-patch:
+	#http://bugs.netsurf-browser.org/mantis/view.php?id=2045
+	cp ${WRKSRC}/gtk/res/options.gtk2.ui{,.unfixed}
+	cd ${WRKSRC} && egrep translatable.*preferences gtk/res/options.gtk2.ui | \
+		sed -e 's/.*>\(.*\)<.*/\1/' | while read c ; do \
+		v=$$(egrep ^en\..*$$c: ${WRKSRC}/resources/FatMessages | cut -d : -f2 | sed -e 's/</\&lt;/g') ; \
+		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/gtk/res/options.gtk2.ui ; done
 post-install:
 # bug in pkg_add -u prevents symlink->directory in pkg updates
 	rm -rf ${PREFIX}/share/netsurf/C
