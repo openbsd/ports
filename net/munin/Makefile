@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2014/09/27 17:04:02 jeremy Exp $
+# $OpenBSD: Makefile,v 1.43 2014/10/22 08:01:52 kirby Exp $
+
+PORTROACH = 	limitw:1,even
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
