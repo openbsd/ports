@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/27 15:45:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/22 13:44:44 jasper Exp $
 
 COMMENT=	write Perl subroutines in other programming languages
 
 MODULES=	cpan
 DISTNAME =	Inline-0.52
+REVISION=	0
 CATEGORIES=	devel
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

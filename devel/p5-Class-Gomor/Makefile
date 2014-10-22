@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/10/22 13:44:44 jasper Exp $
 
 COMMENT=	class and object builder
 
 MODULES=	cpan
 DISTNAME=	Class-Gomor-1.02
+REVISION=	0
 CATEGORIES=	devel
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

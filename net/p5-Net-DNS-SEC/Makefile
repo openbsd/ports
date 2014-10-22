@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2014/05/08 16:18:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/10/22 13:44:44 jasper Exp $
 
 COMMENT=	extends the Net::DNS module with DNSSEC functionality
 
 MODULES=	cpan
 DISTNAME=	Net-DNS-SEC-0.18
+REVISION=	0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.net-dns.org/
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # BSD-license
 PERMIT_PACKAGE_CDROM=	Yes

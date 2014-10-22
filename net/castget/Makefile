@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/22 13:44:45 jasper Exp $
 
 COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-1.0.1
-REVISION=		2
+REVISION=		3
 SHARED_LIBS +=	castget              0.0      # .0.0
 CATEGORIES=		net
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.nongnu.org/castget
 
 MASTER_SITES=          	${MASTER_SITE_SAVANNAH:=castget/}
 
-MAINTAINER=		Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
