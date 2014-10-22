@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2013/12/08 12:21:09 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2014/10/22 20:09:29 jasper Exp $
+
+PORTROACH+=	limit:^1
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
