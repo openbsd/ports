@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/16 17:28:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/22 20:11:27 kirby Exp $
+
+PORTROACH =	limitw:1,even
 
 #atomic_int.h: error "unsupported compiler or platform" on other archs
 ONLY_FOR_ARCHS =	i386 amd64
