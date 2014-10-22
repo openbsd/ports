@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/08 14:01:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/22 13:55:07 jasper Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20120301
 RTAG =		2394
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.eduke32.com/
 
-MAINTAINER =	Ryan Freeman <rfreeman@openbsd.org>
+MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2, BUILD license and shareware data
 PERMIT_PACKAGE_CDROM =  "BUILD engine license is not compatible with GPLv2."

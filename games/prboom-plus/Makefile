@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/01 22:02:15 rfreeman Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/22 13:55:07 jasper Exp $
 
 COMMENT = 	enhanced version the PrBoom Doom engine
 DISTNAME =	prboom-plus-2.5.1.3
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://prboom-plus.sourceforge.net/
 
-MAINTAINER =	Ryan Freeman <rfreeman@openbsd.org>
+MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM = Yes
