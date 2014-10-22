@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:50:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2014/10/22 14:10:46 pea Exp $
 
 COMMENT =	FTP over SSL/TLS client class
 
 MODULES =	cpan
 DISTNAME =	Net-FTPSSL-0.17
 CATEGORIES =	net 
+REVISION = 	0
 
-MAINTAINER =	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

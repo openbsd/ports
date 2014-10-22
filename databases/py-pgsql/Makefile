@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/22 14:10:46 pea Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
 MODPY_EGG_VERSION = 2.5.1
 DISTNAME =	pyPgSQL-${MODPY_EGG_VERSION}
 PKGNAME =	py-pgsql-${MODPY_EGG_VERSION}
-REVISION =	5
+REVISION =	6
 CATEGORIES =	databases
 
 HOMEPAGE =	http://pypgsql.sourceforge.net/
 
-MAINTAINER =	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Python
 PERMIT_PACKAGE_CDROM =	Yes

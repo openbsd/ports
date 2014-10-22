@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/22 14:10:46 pea Exp $
 
 COMMENT=	curses development kit
 
 V=		5.0-20060507
 DISTNAME=	cdk-${V}
 PKGNAME=	cdk-${V:S/-/./}
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX=	.tgz
 
@@ -15,7 +15,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://invisible-island.net/cdk/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/09 16:49:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/10/22 14:10:46 pea Exp $
 
 COMMENT=	encryption backend
 
 DISTNAME=	libgringotts-1.2.1
 EXTRACT_SUFX= 	.tar.bz2
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  gringotts            0.0      # 2.7
 
 CATEGORIES=	security
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
