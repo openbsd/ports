@@ -1,0 +1,17 @@
+$OpenBSD: patch-glib_garray_c,v 1.1 2014/10/22 15:58:37 ajacoutot Exp $
+
+From bf44b592c8c6d33b35c03015ac6ff56c1992222b Mon Sep 17 00:00:00 2001
+From: Aleksander Morgado <aleksander@aleksander.es>
+Date: Wed, 8 Oct 2014 20:37:42 +0200
+Subject: garray: initialize allocated size in g_byte_array_new_take()
+
+--- glib/garray.c.orig	Mon Sep 22 15:42:12 2014
++++ glib/garray.c	Wed Oct 22 17:44:32 2014
+@@ -1589,6 +1589,7 @@ g_byte_array_new_take (guint8 *data,
+ 
+   real->data = data;
+   real->len = len;
++  real->alloc = len;
+ 
+   return array;
+ }
