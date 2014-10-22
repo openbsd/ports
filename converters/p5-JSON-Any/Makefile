@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/16 14:02:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/22 19:01:55 jasper Exp $
 
 COMMENT =	wrapper class for the various JSON classes
 
 MODULES =	cpan
-DISTNAME =	JSON-Any-1.36
+DISTNAME =	JSON-Any-1.38
 CATEGORIES =	converters
 
 # Perl
