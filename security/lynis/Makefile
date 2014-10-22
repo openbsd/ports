@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/21 13:58:29 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.4 2014/10/22 13:55:52 gonzalo Exp $
 
 COMMENT=	security auditing tool
 
 DISTNAME=	lynis-1.6.3
+REVISION=	0
 
 CATEGORIES=	security
 
 HOMEPAGE=	http://cisofy.com
 
-MAINTAINER=	Gonzalo L. Rodriguez <gonzalo@openbsd.org>
+MAINTAINER=	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
