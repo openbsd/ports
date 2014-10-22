@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/24 06:27:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/22 19:16:57 jasper Exp $
 
 COMMENT =	Ruby interface to GSL
 
-DISTNAME =	rb-gsl-1.16.0.2
+DISTNAME =	rb-gsl-1.16.0.3
 PKGNAME =	${DISTNAME:S/rb-//}
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/09/24 06:27:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/22 19:16:57 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
@@ -715,9 +715,7 @@ ${GEM_LIB}/gems/${DISTNAME}/rdoc/qrng.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/randist.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/ref.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/rng.rdoc
-${GEM_LIB}/gems/${DISTNAME}/rdoc/rngextra.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/roots.rdoc
-${GEM_LIB}/gems/${DISTNAME}/rdoc/screenshot.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/sf.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/siman.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/sort.rdoc
