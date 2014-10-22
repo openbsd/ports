@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2014/10/22 19:08:21 jasper Exp $
+
+PORTROACH +=	limit:^1
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
