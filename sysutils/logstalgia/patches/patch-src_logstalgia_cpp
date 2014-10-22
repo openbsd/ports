@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_logstalgia_cpp,v 1.1.1.1 2011/10/20 10:58:21 jasper Exp $
---- src/logstalgia.cpp.orig	Tue Sep 20 16:54:02 2011
-+++ src/logstalgia.cpp	Tue Sep 20 16:54:52 2011
-@@ -394,7 +394,7 @@ std::string Logstalgia::dateAtPosition(float percent) 
+$OpenBSD: patch-src_logstalgia_cpp,v 1.2 2014/10/22 15:02:26 gonzalo Exp $
+--- src/logstalgia.cpp.orig	Wed Oct 15 22:57:08 2014
++++ src/logstalgia.cpp	Wed Oct 22 10:29:38 2014
+@@ -391,7 +391,7 @@ std::string Logstalgia::dateAtPosition(float percent) 
  
-             long timestamp = le.timestamp;
+             time_t timestamp = le.timestamp;
  
 -            struct tm* timeinfo = localtime ( &timestamp );
 +	    struct tm *timeinfo = localtime( (const time_t *)(&timestamp) );
              strftime(datestr, 256, "%H:%M:%S %B %d, %Y", timeinfo);
              date = std::string(datestr);
          }
-@@ -908,7 +908,7 @@ void Logstalgia::logic(float t, float dt) {
+@@ -952,7 +952,7 @@ void Logstalgia::logic(float t, float dt) {
              char datestr[256];
              char timestr[256];
  
