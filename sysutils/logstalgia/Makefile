@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/10/22 15:02:25 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/22 15:13:45 gonzalo Exp $
 
 COMMENT =	website access log visualization
 
 DISTNAME =	logstalgia-1.0.6
+REVISION =	0
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://code.google.com/p/logstalgia/
 
@@ -25,10 +26,10 @@ CONFIGURE_STYLE =gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
-LIB_DEPENDS =	graphics/ftgl \
-		graphics/glew \
-		graphics/glm \
-		devel/boost \
+BUILD_DEPENDS =	graphics/glm \
+		devel/boost
+
+LIB_DEPENDS =	graphics/glew \
 		devel/pcre \
 		devel/sdl-image
 
