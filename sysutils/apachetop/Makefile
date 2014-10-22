@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/22 13:19:37 gonzalo Exp $
 
 COMMENT =		top-like monitor for Apache
 
 DISTNAME =		apachetop-0.12.6
+REVISION =		0
 CATEGORIES =		sysutils
 
-MAINTAINER =		Gonzalo L. R. <gonzalo@x61.com.ar>
+MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 
 HOMEPAGE =		http://freshmeat.net/projects/apachetop/
 
