@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/10 00:02:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/22 09:44:07 jasper Exp $
 
 COMMENT=	secure RTP library
 
 DISTNAME=	srtp-1.4.4
-REVISION=	0
+REVISION=	1
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	security telephony
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	David Hill <dhill@openbsd.org>
+MAINTAINER=	David Hill <dhill@mindcry.org>
 
 HOMEPAGE=	http://srtp.sourceforge.net/srtp.html
 
