@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/22 14:02:14 jasper Exp $
 
 COMMENT-main=	IRC client for Emacs
 COMMENT-el=	elisp sources of zenirc
 
 VERSION=	2.112
 DISTNAME=	zenirc-${VERSION}
-REVISION=		0
+REVISION=	1
 PKGNAME-main=	emacs-zenirc-${VERSION}
 PKGNAME-el=	emacs-zenirc-el-${VERSION}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.zenirc.org/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
