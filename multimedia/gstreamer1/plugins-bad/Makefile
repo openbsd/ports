@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/10/08 09:10:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2014/10/22 10:01:07 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -71,6 +71,7 @@ CONFIGURE_ARGS=		--disable-cdaudio \
 			--disable-ofa \
 			--disable-openal \
 			--disable-opencv \
+			--disable-openexr \
 			--disable-openjpeg \
 			--disable-pvr \
 			--disable-resindvd \
