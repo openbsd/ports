@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/22 13:14:54 gonzalo Exp $
 
 COMMENT=		text based IM client
 
 DISTNAME=		centerim-4.22.10
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.centerim.org/
-MAINTAINER=		Gonzalo L. R. <gonzalo@x61.com.ar>
+MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
