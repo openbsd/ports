@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/23 07:23:27 jasper Exp $
 
 COMMENT=	app-level proxy for mail retrieval behind firewalls
 
 DISTNAME=	pop3gwd-1.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=    	net mail
 
-MAINTAINER=	Ian McWilliam <ian@dodo.com.au>
+MAINTAINER=	Ian McWilliam <kaosagnt@tpg.com.au>
 
 MASTER_SITES=   http://www.go.dlr.de/linux/src/
 
