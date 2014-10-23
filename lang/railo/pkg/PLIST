@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/05/31 13:42:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/23 17:25:45 sthen Exp $
 @extraunexec rm -rf %D/railo/server-config/* %D/railo/web-config/*
 @extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
 @extraunexec rm -rf %D/webapps/manager/WEB-INF/flex
@@ -61,6 +61,7 @@ lib/com.naryx.tagfusion.cfx.jar
 lib/concurrent.jar
 lib/dom4j.jar
 lib/ehcache.jar
+lib/felix.jar
 lib/flex-messaging-common.jar
 lib/flex-messaging-core.jar
 lib/flex-messaging-opt.jar
