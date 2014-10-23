@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 19:31:07 nigel Exp $
+@conflict p5-libwww-<6.0
+${P5SITE}/WWW/
+${P5SITE}/WWW/RobotRules/
+${P5SITE}/WWW/RobotRules.pm
+${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
+@man man/man3p/WWW::RobotRules.3p
+@man man/man3p/WWW::RobotRules::AnyDBM_File.3p
