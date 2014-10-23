@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2014/10/11 11:04:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/23 12:14:43 sthen Exp $
 
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Mr-Dave
 GH_PROJECT=	motion
-GH_COMMIT=	7cfdf13cd63378e45589650f7d20195cb7bf9936
+GH_COMMIT=	9479d910f2149b5558788bb86f97f26522794212
 V=		3.2.12
-DISTNAME=	motion-$V.20140910
-REVISION=	1
+DISTNAME=	motion-$V.20141018
 
 CATEGORIES=	multimedia
 
@@ -31,7 +30,7 @@ FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS=		--without-optimizecpu \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
