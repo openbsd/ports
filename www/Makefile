@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.684 2014/10/14 09:46:35 landry Exp $
+# $OpenBSD: Makefile,v 1.685 2014/10/23 21:13:46 nigel Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -233,6 +233,7 @@
      SUBDIR += p5-HTML-Copy
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FillInForm
+     SUBDIR += p5-HTML-Form
      SUBDIR += p5-HTML-FormFu
      SUBDIR += p5-HTML-Format
      SUBDIR += p5-HTML-FormatText-WithLinks
@@ -273,10 +274,15 @@
      SUBDIR += p5-HTTP-Async
      SUBDIR += p5-HTTP-Body
      SUBDIR += p5-HTTP-BrowserDetect
+     SUBDIR += p5-HTTP-Cookies
      SUBDIR += p5-HTTP-DAV
+     SUBDIR += p5-HTTP-Daemon
+     SUBDIR += p5-HTTP-Date
      SUBDIR += p5-HTTP-GHTTP
      SUBDIR += p5-HTTP-GetImages
      SUBDIR += p5-HTTP-Lite
+     SUBDIR += p5-HTTP-Message
+     SUBDIR += p5-HTTP-Negotiate
      SUBDIR += p5-HTTP-Parser-XS
      SUBDIR += p5-HTTP-Proxy
      SUBDIR += p5-HTTP-Recorder
@@ -291,6 +297,8 @@
      SUBDIR += p5-IO-HTML
      SUBDIR += p5-JavaScript-Minifier
      SUBDIR += p5-LWP-Authen-Wsse
+     SUBDIR += p5-LWP-MediaTypes
+     SUBDIR += p5-LWP-Protocol-https
      SUBDIR += p5-LWP-Protocol-socks
      SUBDIR += p5-LWP-UserAgent-Determined
      SUBDIR += p5-MasonX-Interp-WithCallbacks
@@ -328,6 +336,7 @@
      SUBDIR += p5-WWW-Mechanize-GZip
      SUBDIR += p5-WWW-Mechanize-TreeBuilder
      SUBDIR += p5-WWW-Robot
+     SUBDIR += p5-WWW-RobotRules
      SUBDIR += p5-WWW-Search
      SUBDIR += p5-WWW-Search-Ebay
      SUBDIR += p5-WWW-Shorten
