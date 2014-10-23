@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/09/09 14:05:48 sthen Exp $
-@pkgpath www/nginx/stable
-@pkgpath www/nginx/devel
-%%passenger%%
-!%%passenger%%
+@comment $OpenBSD: PLIST,v 1.16 2014/10/23 12:13:12 sthen Exp $
+@pkgpath www/nginx/stable${FLAVOR_COMMA}
+@pkgpath www/nginx/devel${FLAVOR_COMMA}
 @man man/man8/nginx.8
 @bin sbin/nginx
 @mode 700

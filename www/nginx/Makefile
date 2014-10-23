@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2014/10/09 18:46:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.65 2014/10/23 12:13:12 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 VERSION=	1.7.6
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
@@ -27,8 +27,11 @@ LIB_DEPENDS+=	devel/pcre
 NGINX_DIR=	/var/www
 SUBST_VARS=	NGINX_DIR
 
-FLAVORS=		lua naxsi passenger
+FLAVORS=	lua naxsi passenger
 FLAVOR?=
+
+FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=	FLAVOR_COMMA
 
 # must be first option on configure line ?
 .if ${FLAVOR:Mnaxsi}
