@@ -2,3 +2,6 @@ This Perl module provides support for the https protocol under LWP,
 so that a LWP::UserAgent can make https GET & HEAD & POST requests.
 
 Please see 'perldoc LWP' for more information on POST requests.
+
+Do you really need Crypt::SSLeay?
+IO::Socket:SSL is used automatically.

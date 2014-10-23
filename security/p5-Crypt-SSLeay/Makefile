@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2014/06/14 23:26:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2014/10/23 20:02:40 nigel Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		library to provide LWP https support via OpenSSL
 
-DISTNAME =		Crypt-SSLeay-0.64
-REVISION =		0
+DISTNAME =		Crypt-SSLeay-0.72
 
 CATEGORIES =		security
 
@@ -17,10 +16,26 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c crypto ssl z
 
 MODULES =		cpan
-TEST_DEPENDS =		devel/p5-Try-Tiny \
-			www/p5-libwww
 
-CONFIGURE_ARGS +=	--default --lib=/usr
+# Include p5-IO-Socket-SSL as selected
+# dependency for p5-Net-HTTP must be before
+# p5-LWP-Protcol-https must be present and
+# in this order to avoid looping dependencies
+BUILD_DEPENDS =		devel/p5-Path-Class>=0.26 \
+			devel/p5-Try-Tiny>=0.19 \
+			security/p5-IO-Socket-SSL \
+			www/p5-LWP-Protocol-https>=6.02
+
+RUN_DEPENDS =		www/p5-LWP-Protocol-https>=6.02
+
+CONFIGURE_ARGS +=	--lib=/usr
+
+# Use make -D LIVE_TEST regress to run regression with live tests
+# --live_tests configure argument doesn't work.
+pre-test:
+.ifdef	LIVE_TEST
+	echo "network_tests	1" >${WRKSRC}/test.config
+.endif
 
 MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	eg
