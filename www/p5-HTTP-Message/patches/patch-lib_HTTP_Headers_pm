@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_HTTP_Headers_pm,v 1.1.1.1 2014/10/23 19:27:39 nigel Exp $
+--- lib/HTTP/Headers.pm.orig	Sat Oct 20 10:11:21 2012
++++ lib/HTTP/Headers.pm	Tue May 27 09:56:24 2014
+@@ -150,7 +150,7 @@ sub _header
+     my($self, $field, $val, $op) = @_;
+ 
+     Carp::croak("Illegal field name '$field'")
+-        if rindex($field, ':') > 1 || !length($field);
++        if ( $field !~ /^X-\w/ && rindex($field, ':') > 1) || !length($field);
+ 
+     unless ($field =~ /^:/) {
+ 	$field =~ tr/_/-/ if $TRANSLATE_UNDERSCORE;

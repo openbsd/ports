@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 19:27:39 nigel Exp $
+@conflict p5-libwww-<6.0
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/Config.pm
+${P5SITE}/HTTP/Headers/
+${P5SITE}/HTTP/Headers.pm
+${P5SITE}/HTTP/Headers/Auth.pm
+${P5SITE}/HTTP/Headers/ETag.pm
+${P5SITE}/HTTP/Headers/Util.pm
+${P5SITE}/HTTP/Message.pm
+${P5SITE}/HTTP/Request/
+${P5SITE}/HTTP/Request.pm
+${P5SITE}/HTTP/Request/Common.pm
+${P5SITE}/HTTP/Response.pm
+${P5SITE}/HTTP/Status.pm
+@man man/man3p/HTTP::Config.3p
+@man man/man3p/HTTP::Headers.3p
+@man man/man3p/HTTP::Headers::Util.3p
+@man man/man3p/HTTP::Message.3p
+@man man/man3p/HTTP::Request.3p
+@man man/man3p/HTTP::Request::Common.3p
+@man man/man3p/HTTP::Response.3p
+@man man/man3p/HTTP::Status.3p
