@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.869 2014/10/23 05:25:32 stu Exp $
+# $OpenBSD: Makefile,v 1.870 2014/10/23 20:48:09 nigel Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -332,6 +332,7 @@
      SUBDIR += p5-Net-Frame-Layer-IPv6
      SUBDIR += p5-Net-GPSD
      SUBDIR += p5-Net-Google
+     SUBDIR += p5-Net-HTTP
      SUBDIR += p5-Net-ICQ2000
      SUBDIR += p5-Net-ICal
      SUBDIR += p5-Net-IMP
