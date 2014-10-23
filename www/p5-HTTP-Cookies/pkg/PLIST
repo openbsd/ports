@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 19:24:21 nigel Exp $
+@conflict p5-libwww-<6.0
+${P5SITE}/HTTP/Cookies/
+${P5SITE}/HTTP/Cookies.pm
+${P5SITE}/HTTP/Cookies/Microsoft.pm
+${P5SITE}/HTTP/Cookies/Netscape.pm
+@man man/man3p/HTTP::Cookies.3p
+@man man/man3p/HTTP::Cookies::Microsoft.3p
+@man man/man3p/HTTP::Cookies::Netscape.3p
