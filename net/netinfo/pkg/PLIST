@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 05:24:10 stu Exp $
+lib/tcl/modules/85/netinfo-0.6.tm
+@man man/mann/netinfo.n
+share/examples/netinfo/
+share/examples/netinfo/LICENSE
+share/examples/netinfo/nid.tcl
+share/examples/netinfo/tknib.tcl

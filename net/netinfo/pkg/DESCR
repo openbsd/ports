@@ -1,0 +1,3 @@
+A Tcl extension that provides access to system protocol, service,
+network, host and ether information which is retrieved from system
+databases and made available for querying.
