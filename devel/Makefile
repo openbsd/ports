@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1263 2014/10/23 14:28:01 nigel Exp $
+# $OpenBSD: Makefile,v 1.1264 2014/10/23 20:43:37 nigel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -732,6 +732,7 @@
      SUBDIR += p5-File-Flat
      SUBDIR += p5-File-FnMatch
      SUBDIR += p5-File-HomeDir
+     SUBDIR += p5-File-Listing
      SUBDIR += p5-File-MimeInfo
      SUBDIR += p5-File-Modified
      SUBDIR += p5-File-NCopy
