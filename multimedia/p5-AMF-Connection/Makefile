@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/23 13:47:45 nigel Exp $
 
 COMMENT =	AMF client to connect to remote FLEX AIR service
 
-DISTNAME =	AMF-Connection-0.30
+DISTNAME =	AMF-Connection-0.32
 CATEGORIES =	multimedia net
 CPAN_AUTHOR =	AREGGIORI
 
