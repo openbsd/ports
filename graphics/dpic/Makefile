@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/23 13:43:04 nigel Exp $
 
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2011.12.09
+DISTNAME =		dpic-2014.Jan.01
+PKGNAME =		${DISTNAME:S/Jan/01/}
 
 CATEGORIES =		graphics
 
