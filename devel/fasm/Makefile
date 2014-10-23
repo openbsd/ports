@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/23 07:26:55 jasper Exp $
 
 ONLY_FOR_ARCHS =	i386
 
 COMMENT =		flat assembler
 DISTNAME =		fasm-1.67.29
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel lang
 HOMEPAGE =		http://flatassembler.net/
-MAINTAINER =		Dmitri Alenichev <mitya@rootshell.be>
+MAINTAINER =		Dmitri Alenichev <mitya@rockers.su>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

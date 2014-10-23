@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 14:34:54 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/23 07:26:55 jasper Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
@@ -7,10 +7,11 @@ V=			0.9.5
 DISTNAME=		dzen2-$V
 PKGNAME-main=		${DISTNAME}
 PKGNAME-gadgets=	dzen2-gadgets-$V
+REVISION=		0
 CATEGORIES=		x11
 
 HOMEPAGE=		https://github.com/robm/dzen
-MAINTAINER=		Dmitri Alenitchev <dma@dma.org.ru>
+MAINTAINER=		Dmitri Alenichev <mitya@rockers.su>
 
 MULTI_PACKAGES=		-main -gadgets
 
