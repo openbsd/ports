@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2014/10/23 15:13:52 sebastia Exp $
 
 COMMENT=		high performance embedded database library
 
@@ -21,6 +21,9 @@ CONFIGURE_ARGS=		--enable-zlib \
 			--enable-iconv ${CONFIGURE_SHARED}
 
 MAKE_FLAGS=		LIBVER=${LIBqdbm_VERSION:R} LIBREV=${LIBqdbm_VERSION:E}
+.if ${MACHINE_ARCH} == "vax"
+MAKE_FLAGS +=    MYLIBS=libqdbm.a
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.in
