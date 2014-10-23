@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/05/02 13:43:24 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/23 17:23:09 sthen Exp $
 @bin bin/dos2unix
 bin/mac2unix
 @bin bin/unix2dos
@@ -86,6 +86,7 @@ share/locale/eo/LC_MESSAGES/dos2unix.mo
 share/locale/es/LC_MESSAGES/dos2unix.mo
 share/locale/fr/LC_MESSAGES/dos2unix.mo
 share/locale/hu/LC_MESSAGES/dos2unix.mo
+share/locale/nb/LC_MESSAGES/dos2unix.mo
 share/locale/nl/LC_MESSAGES/dos2unix.mo
 share/locale/pl/LC_MESSAGES/dos2unix.mo
 share/locale/pt_BR/LC_MESSAGES/dos2unix.mo

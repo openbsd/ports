@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/05/02 13:43:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/23 17:23:09 sthen Exp $
 
 COMMENT=	convert DOS/MAC files to UNIX (line-endings/charset)
 
-DISTNAME =	dos2unix-6.0.5
+DISTNAME =	dos2unix-7.1
 
 CATEGORIES=	converters
 
@@ -23,7 +23,6 @@ FAKE_FLAGS=	prefix="${PREFIX}" \
 		man1dir="${PREFIX}/man/man1"
 
 USE_GMAKE=	Yes
-NO_TEST=	Yes
 
 do-configure:
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile
