@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/26 23:53:57 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/23 14:00:40 nigel Exp $
 
 COMMENT =	open an HTML file with automatic charset detection
 
-DISTNAME =	IO-HTML-1.00
+DISTNAME =	IO-HTML-1.001
 CATEGORIES =	www
 CPAN_AUTHOR =	CJM
 
