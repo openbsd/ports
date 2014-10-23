@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/10/23 07:21:06 jasper Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
 DISTNAME=	fdm-1.7
+REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://fdm.sourceforge.net/
-MAINTAINER=	Nicholas Marriott <nicm@users.sourceforge.net>
+MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
