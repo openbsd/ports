@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/12 20:31:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/10/24 16:56:32 nigel Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
+${P5SITE}/FlashVideo/FFmpegDownloader.pm
 ${P5SITE}/FlashVideo/Generic.pm
 ${P5SITE}/FlashVideo/JSON.pm
 ${P5SITE}/FlashVideo/Mechanize.pm
@@ -40,6 +41,7 @@ ${P5SITE}/FlashVideo/Site/Divxstage.pm
 ${P5SITE}/FlashVideo/Site/Ehow.pm
 ${P5SITE}/FlashVideo/Site/Escapistmagazine.pm
 ${P5SITE}/FlashVideo/Site/Expertvillage.pm
+${P5SITE}/FlashVideo/Site/Facebook.pm
 ${P5SITE}/FlashVideo/Site/Filebox.pm
 ${P5SITE}/FlashVideo/Site/Flickr.pm
 ${P5SITE}/FlashVideo/Site/Fliqz.pm
@@ -64,6 +66,7 @@ ${P5SITE}/FlashVideo/Site/Megavideo.pm
 ${P5SITE}/FlashVideo/Site/Metacafe.pm
 ${P5SITE}/FlashVideo/Site/Mitworld.pm
 ${P5SITE}/FlashVideo/Site/Mofosex.pm
+${P5SITE}/FlashVideo/Site/Motherless.pm
 ${P5SITE}/FlashVideo/Site/Msn.pm
 ${P5SITE}/FlashVideo/Site/Msnbc.pm
 ${P5SITE}/FlashVideo/Site/Mtvnservices.pm
@@ -90,6 +93,7 @@ ${P5SITE}/FlashVideo/Site/Scivee.pm
 ${P5SITE}/FlashVideo/Site/Seesaw.pm
 ${P5SITE}/FlashVideo/Site/Sevenload.pm
 ${P5SITE}/FlashVideo/Site/Slashcontrol.pm
+${P5SITE}/FlashVideo/Site/Sockshare.pm
 ${P5SITE}/FlashVideo/Site/Spiegel.pm
 ${P5SITE}/FlashVideo/Site/Spike.pm
 ${P5SITE}/FlashVideo/Site/Stagevu.pm
@@ -108,16 +112,19 @@ ${P5SITE}/FlashVideo/Site/Traileraddict.pm
 ${P5SITE}/FlashVideo/Site/Truveo.pm
 ${P5SITE}/FlashVideo/Site/Tudou.pm
 ${P5SITE}/FlashVideo/Site/Tv.pm
+${P5SITE}/FlashVideo/Site/Tv3.pm
 ${P5SITE}/FlashVideo/Site/Tv3play.pm
 ${P5SITE}/FlashVideo/Site/Tv4play.pm
 ${P5SITE}/FlashVideo/Site/Tv6play.pm
 ${P5SITE}/FlashVideo/Site/Tv8play.pm
 ${P5SITE}/FlashVideo/Site/Tva.pm
+${P5SITE}/FlashVideo/Site/Tvnz.pm
 ${P5SITE}/FlashVideo/Site/Ustream.pm
 ${P5SITE}/FlashVideo/Site/Videobb.pm
 ${P5SITE}/FlashVideo/Site/Videojug.pm
 ${P5SITE}/FlashVideo/Site/Videolectures.pm
 ${P5SITE}/FlashVideo/Site/Vimeo.pm
+${P5SITE}/FlashVideo/Site/Vitheque.pm
 ${P5SITE}/FlashVideo/Site/Vrak.pm
 ${P5SITE}/FlashVideo/Site/Wat.pm
 ${P5SITE}/FlashVideo/Site/Xhamster.pm

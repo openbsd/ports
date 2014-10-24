@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/08/07 21:32:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/24 16:56:32 nigel Exp $
 
 COMMENT=		download flash video files from various sites
 
-DISTNAME=		App-get_flash_videos-1.24.20121020
-PKGNAME=		get_flash_videos-1.24.20121020
+DISTNAME=		App-get_flash_videos-1.24.20130320
+PKGNAME=		get_flash_videos-1.24.20130320
 REVISION=		0
 #DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
 #PKGNAME=		get_flash_videos-1.24.20121012
@@ -21,19 +21,24 @@ MODULES=		cpan
 CPAN_AUTHOR=		MONSIEUR
 # git checkout
 #MASTER_SITES=		http://spacehopper.org/mirrors/
-MASTER_SITES=		https://github.com/downloads/njtaylor/get-flash-videos/
+#MASTER_SITES=		https://github.com/downloads/njtaylor/get-flash-videos/
+# No CPAN version yet....
+MASTER_SITES=		${HOMEPAGE}files/
 
 BUILD_DEPENDS=		devel/p5-Tie-IxHash
-RUN_DEPENDS=		devel/p5-Term-ReadKey \
+RUN_DEPENDS=		devel/p5-Module-Find \
+			devel/p5-Term-ReadKey \
 			devel/p5-Tie-IxHash \
-			multimedia/p5-AMF-Connection \
 			multimedia/p5-Data-AMF \
 			multimedia/p5-Storable-AMF \
 			rtmpdump-*|flvstreamer-*:net/rtmpdump \
 			security/p5-Crypt-Blowfish_PP \
 			security/p5-Crypt-Rijndael \
+			security/p5-Digest-HMAC \
 			textproc/p5-XML-Simple \
+			security/p5-IO-Socket-SSL \
 			www/p5-libwww \
+			www/p5-LWP-Protocol-https \
 			www/p5-LWP-Protocol-socks \
 			www/p5-URI \
 			www/p5-WWW-Mechanize
