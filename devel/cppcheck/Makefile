@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2014/08/13 15:13:33 jsg Exp $
+# $OpenBSD: Makefile,v 1.26 2014/10/24 03:44:33 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.66
+DISTNAME =		cppcheck-1.67
 
 CATEGORIES =		devel
 
@@ -24,6 +24,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET =		cppcheck
 TEST_TARGET =		test
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 # -Ilib before PREFIX/include to avoid picking up header from devel/check
 MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build CFGDIR=${PREFIX}/share/cppcheck/cfg \
