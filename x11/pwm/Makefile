@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 23:51:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/24 06:41:29 jasper Exp $
 
 COMMENT=		lightweight window manager with emphasis on usability
 
 DISTNAME=		pwm-20060517
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://iki.fi/tuomov/
 MASTER_SITES=		${HOMEPAGE}dl/
 
-MAINTAINER=		Gregory Steuck <greg-openbsd-pwm@nest.cx>
+MAINTAINER=		Gregory Steuck <greg@nest.cx>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
