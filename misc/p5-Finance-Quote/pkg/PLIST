@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/07/12 14:12:10 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/10/24 16:44:55 nigel Exp $
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/Quote/
 ${P5SITE}/Finance/Quote.pm
@@ -7,23 +7,40 @@ ${P5SITE}/Finance/Quote/AIAHK.pm
 ${P5SITE}/Finance/Quote/ASEGR.pm
 ${P5SITE}/Finance/Quote/ASX.pm
 ${P5SITE}/Finance/Quote/BMONesbittBurns.pm
+${P5SITE}/Finance/Quote/BSERO.pm
 ${P5SITE}/Finance/Quote/Bourso.pm
+${P5SITE}/Finance/Quote/CSE.pm
 ${P5SITE}/Finance/Quote/Cdnfundlibrary.pm
+${P5SITE}/Finance/Quote/Citywire.pm
+${P5SITE}/Finance/Quote/Cominvest.pm
+${P5SITE}/Finance/Quote/Currencies.pm
 ${P5SITE}/Finance/Quote/DWS.pm
 ${P5SITE}/Finance/Quote/Deka.pm
 ${P5SITE}/Finance/Quote/FTPortfolios.pm
+${P5SITE}/Finance/Quote/FTfunds.pm
 ${P5SITE}/Finance/Quote/Fidelity.pm
 ${P5SITE}/Finance/Quote/FinanceCanada.pm
+${P5SITE}/Finance/Quote/Finanzpartner.pm
 ${P5SITE}/Finance/Quote/Fool.pm
+${P5SITE}/Finance/Quote/GoldMoney.pm
 ${P5SITE}/Finance/Quote/HEX.pm
+${P5SITE}/Finance/Quote/HU.pm
 ${P5SITE}/Finance/Quote/IndiaMutual.pm
 ${P5SITE}/Finance/Quote/LeRevenu.pm
+${P5SITE}/Finance/Quote/MStaruk.pm
 ${P5SITE}/Finance/Quote/ManInvestments.pm
+${P5SITE}/Finance/Quote/Morningstar.pm
+${P5SITE}/Finance/Quote/MorningstarJP.pm
+${P5SITE}/Finance/Quote/MtGox.pm
 ${P5SITE}/Finance/Quote/NZX.pm
 ${P5SITE}/Finance/Quote/Platinum.pm
 ${P5SITE}/Finance/Quote/SEB.pm
+${P5SITE}/Finance/Quote/SIXfunds.pm
+${P5SITE}/Finance/Quote/SIXshares.pm
 ${P5SITE}/Finance/Quote/StockHouseCanada.pm
+${P5SITE}/Finance/Quote/TNetuk.pm
 ${P5SITE}/Finance/Quote/TSP.pm
+${P5SITE}/Finance/Quote/TSX.pm
 ${P5SITE}/Finance/Quote/Tdefunds.pm
 ${P5SITE}/Finance/Quote/Tdwaterhouse.pm
 ${P5SITE}/Finance/Quote/Tiaacref.pm
@@ -41,29 +58,46 @@ ${P5SITE}/Finance/Quote/Yahoo/Brasil.pm
 ${P5SITE}/Finance/Quote/Yahoo/Europe.pm
 ${P5SITE}/Finance/Quote/Yahoo/NZ.pm
 ${P5SITE}/Finance/Quote/Yahoo/USA.pm
+${P5SITE}/Finance/Quote/YahooJSON.pm
 ${P5SITE}/Finance/Quote/ZA.pm
+${P5SITE}/Finance/Quote/ZA_UnitTrusts.pm
 @man man/man3p/Finance::Quote.3p
 @man man/man3p/Finance::Quote::AEX.3p
 @man man/man3p/Finance::Quote::AIAHK.3p
 @man man/man3p/Finance::Quote::ASEGR.3p
 @man man/man3p/Finance::Quote::ASX.3p
 @man man/man3p/Finance::Quote::BMONesbittBurns.3p
+@man man/man3p/Finance::Quote::BSERO.3p
 @man man/man3p/Finance::Quote::Bourso.3p
+@man man/man3p/Finance::Quote::CSE.3p
 @man man/man3p/Finance::Quote::Cdnfundlibrary.3p
+@man man/man3p/Finance::Quote::Citywire.3p
+@man man/man3p/Finance::Quote::Cominvest.3p
+@man man/man3p/Finance::Quote::Currencies.3p
 @man man/man3p/Finance::Quote::DWS.3p
 @man man/man3p/Finance::Quote::Deka.3p
 @man man/man3p/Finance::Quote::FTPortfolios.3p
+@man man/man3p/Finance::Quote::FTfunds.3p
 @man man/man3p/Finance::Quote::Fidelity.3p
 @man man/man3p/Finance::Quote::FinanceCanada.3p
+@man man/man3p/Finance::Quote::Finanzpartner.3p
 @man man/man3p/Finance::Quote::Fool.3p
+@man man/man3p/Finance::Quote::GoldMoney.3p
 @man man/man3p/Finance::Quote::HEX.3p
+@man man/man3p/Finance::Quote::HU.3p
 @man man/man3p/Finance::Quote::IndiaMutual.3p
 @man man/man3p/Finance::Quote::LeRevenu.3p
+@man man/man3p/Finance::Quote::MStaruk.3p
 @man man/man3p/Finance::Quote::ManInvestments.3p
+@man man/man3p/Finance::Quote::Morningstar.3p
+@man man/man3p/Finance::Quote::MorningstarJP.3p
+@man man/man3p/Finance::Quote::MtGox.3p
 @man man/man3p/Finance::Quote::NZX.3p
 @man man/man3p/Finance::Quote::Platinum.3p
 @man man/man3p/Finance::Quote::SEB.3p
+@man man/man3p/Finance::Quote::TNetuk.3p
 @man man/man3p/Finance::Quote::TSP.3p
+@man man/man3p/Finance::Quote::TSX.3p
 @man man/man3p/Finance::Quote::Tdefunds.3p
 @man man/man3p/Finance::Quote::Tdwaterhouse.3p
 @man man/man3p/Finance::Quote::Tiaacref.3p
@@ -79,4 +113,11 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::Yahoo::Europe.3p
 @man man/man3p/Finance::Quote::Yahoo::NZ.3p
 @man man/man3p/Finance::Quote::Yahoo::USA.3p
+@man man/man3p/Finance::Quote::YahooJSON.3p
 @man man/man3p/Finance::Quote::ZA.3p
+@man man/man3p/Finance::Quote::ZA_UnitTrusts.3p
+share/examples/p5-Finance-Quote/
+share/examples/p5-Finance-Quote/Quote_example.pl
+share/examples/p5-Finance-Quote/chkshares.pl
+share/examples/p5-Finance-Quote/currency-lookup.pl
+share/examples/p5-Finance-Quote/stockdump.pl
