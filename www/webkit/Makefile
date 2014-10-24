@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.128 2014/09/30 12:18:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2014/10/24 16:06:27 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.4.6
+V =		2.4.7
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
@@ -78,7 +78,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		EGL X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg m harfbuzz-icu \
-		Xxf86vm dbus-1 dbus-glib-1 drm geoclue gbm \
+		Xxf86vm dbus-1 lzma drm gbm \
 		gstaudio-1.0 gstfft-1.0 gdk_pixbuf-2.0 orc-0.4 \
 		gstreamer-1.0 gstbase-1.0 gstvideo-1.0 gstapp-1.0 gstpbutils-1.0 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
@@ -90,7 +90,6 @@ LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \
 		devel/harfbuzz,-icu \
 		textproc/libxslt \
 		textproc/enchant \
-		geo/geoclue \
 		graphics/libwebp \
 		devel/glib2 \
 		devel/libsoup \
@@ -98,7 +97,10 @@ LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \
 
 BUILD_DEPENDS =	devel/bison \
 		devel/flex \
-		devel/gperf
+		devel/gperf \
+		geo/geoclue2
+
+RUN_DEPENDS =	geo/geoclue2
 
 # WebKitPluginProcess links against gtk2 for flash plugin, even with gtk3 ?
 LIB_DEPENDS +=	x11/gtk+2,-main
