@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2014/10/05 19:29:20 pascal Exp $
+# $OpenBSD: Makefile,v 1.75 2014/10/24 20:14:48 pascal Exp $
 
 COMMENT=	anonymity service using onion routing
 
-DISTNAME=	tor-0.2.4.24
-REVISION=	0
+DISTNAME=	tor-0.2.5.10
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
 
@@ -22,6 +21,7 @@ AUTOCONF_VERSION = 2.69
 # anyway on FRAME_GROWS_DOWN archs.
 CONFIGURE_ARGS=	--with-ssl-dir=/usr \
 		--disable-gcc-hardening
+CONFIGURE_ENV+=ac_cv_member_struct_ssl_method_st_get_cipher_by_char=no
 
 DB_DIR=		/var/tor
 SUBST_VARS+=	DB_DIR

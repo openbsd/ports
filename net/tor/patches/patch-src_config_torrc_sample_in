@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.12 2012/11/22 18:37:32 pascal Exp $
---- src/config/torrc.sample.in.orig	Mon Nov 19 22:24:38 2012
-+++ src/config/torrc.sample.in	Tue Nov 20 12:58:58 2012
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.13 2014/10/24 20:14:48 pascal Exp $
+--- src/config/torrc.sample.in.orig	Fri Oct 10 15:06:24 2014
++++ src/config/torrc.sample.in	Fri Oct 24 16:54:52 2014
 @@ -38,18 +38,18 @@
  ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
  #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_config_torrc_sample_in,v 1.12 2012/11/22 18:37:32 pascal Exp
  
  ## The port on which Tor will listen for local connections from Tor
  ## controller applications, as documented in control-spec.txt.
-@@ -169,6 +169,8 @@
+@@ -172,6 +172,8 @@
  ## For security, by default Tor rejects connections to private (local)
  ## networks, including to your public IP address. See the man page entry
  ## for ExitPolicyRejectPrivate if you want to allow "exit enclaving".
