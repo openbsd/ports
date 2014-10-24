@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/15 15:16:11 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/24 17:24:01 nigel Exp $
 ${P5SITE}/HTTP/Proxy/
 ${P5SITE}/HTTP/Proxy.pm
 ${P5SITE}/HTTP/Proxy/BodyFilter/
@@ -15,6 +15,8 @@ ${P5SITE}/HTTP/Proxy/Engine.pm
 ${P5SITE}/HTTP/Proxy/Engine/Legacy.pm
 ${P5SITE}/HTTP/Proxy/Engine/NoFork.pm
 ${P5SITE}/HTTP/Proxy/Engine/ScoreBoard.pm
+${P5SITE}/HTTP/Proxy/Engine/Threaded.pm
+${P5SITE}/HTTP/Proxy/FilterStack.pm
 ${P5SITE}/HTTP/Proxy/HeaderFilter/
 ${P5SITE}/HTTP/Proxy/HeaderFilter.pm
 ${P5SITE}/HTTP/Proxy/HeaderFilter/simple.pm
@@ -32,6 +34,8 @@ ${P5SITE}/HTTP/Proxy/HeaderFilter/standard.pm
 @man man/man3p/HTTP::Proxy::Engine::Legacy.3p
 @man man/man3p/HTTP::Proxy::Engine::NoFork.3p
 @man man/man3p/HTTP::Proxy::Engine::ScoreBoard.3p
+@man man/man3p/HTTP::Proxy::Engine::Threaded.3p
+@man man/man3p/HTTP::Proxy::FilterStack.3p
 @man man/man3p/HTTP::Proxy::HeaderFilter.3p
 @man man/man3p/HTTP::Proxy::HeaderFilter::simple.3p
 @man man/man3p/HTTP::Proxy::HeaderFilter::standard.3p
