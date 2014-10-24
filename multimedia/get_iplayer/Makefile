@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2014/10/20 11:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2014/10/24 17:01:11 nigel Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 DISTNAME=		get_iplayer-2.87
+REVISION=		0
 GH_ACCOUNT=		dinkypumpkin
 GH_PROJECT=		get_iplayer
 GH_TAGNAME=		v2.87
@@ -25,7 +26,8 @@ RUN_DEPENDS=		audio/id3lib \
 			net/rtmpdump>=2.4 \
 			textproc/p5-XML-Simple \
 			www/p5-HTML-Parser>=3.71 \
-			www/p5-libwww>=5.826
+			www/p5-LWP-Protocol-https \
+			www/p5-libwww>=6.0
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
