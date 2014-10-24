@@ -1,0 +1,52 @@
+$OpenBSD: patch-pgadmin_frm_events_cpp,v 1.1 2014/10/24 15:01:18 dcoppa Exp $
+--- pgadmin/frm/events.cpp.orig	Fri Sep 27 16:51:46 2013
++++ pgadmin/frm/events.cpp	Thu Oct 23 12:46:41 2014
+@@ -41,7 +41,7 @@
+ 
+ // Mutex to protect the "currentObject" from race conditions.
+ //
+-static wxMutex s_currentObjectMutex;
++static wxMutex *currentObjectMutex = new wxMutex( wxMUTEX_RECURSIVE );
+ 
+ // Event table
+ BEGIN_EVENT_TABLE(frmMain, pgFrame)
+@@ -418,9 +418,9 @@ void frmMain::execSelChange(wxTreeItemId item, bool cu
+ 	//
+ 	// Lock the assignment to prevent the race conditions between onSelRightClick and execSelChange.
+ 	//
+-		s_currentObjectMutex.Lock();
+-		currentObject = browser->GetObject(item);
+-		s_currentObjectMutex.Unlock();
++	currentObjectMutex->Lock();
++	currentObject = browser->GetObject(item);
++	currentObjectMutex->Unlock();
+ 
+ 	// If we didn't get an object, then we may have a right click, or
+ 	// invalid click, so ignore.
+@@ -735,6 +735,7 @@ void frmMain::OnContextMenu(wxCommandEvent &event)
+ void frmMain::OnSelRightClick(wxTreeEvent &event)
+ {
+ 	wxTreeItemId item = event.GetItem();
++
+ 	if (item != browser->GetSelection())
+ 	{
+ 		browser->SelectItem(item);
+@@ -742,13 +743,16 @@ void frmMain::OnSelRightClick(wxTreeEvent &event)
+ 		// Prevent changes to "currentObject" by "execSelchange" function by another thread.
+ 		// Will hold the lock until we do popup on the respective object.
+ 		//
+-		s_currentObjectMutex.Lock();
++		currentObjectMutex->Lock();
+ 		currentObject = browser->GetObject(item);
+ 	}
++	else
++		currentObjectMutex->Lock();
+ 
+ 	if (currentObject)
+ 		doPopup(browser, event.GetPoint(), currentObject);
+-	s_currentObjectMutex.Unlock();
++
++	currentObjectMutex->Unlock();
+ }
+ 
+ 

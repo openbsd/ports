@@ -1,7 +1,7 @@
-$OpenBSD: patch-stringextract,v 1.1 2013/03/11 20:59:05 sthen Exp $
---- stringextract.orig	Mon Mar 11 20:51:36 2013
-+++ stringextract	Mon Mar 11 20:51:44 2013
-@@ -56,7 +56,7 @@ xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot
+$OpenBSD: patch-stringextract,v 1.2 2014/10/24 15:01:18 dcoppa Exp $
+--- stringextract.orig	Wed Sep 11 14:33:58 2013
++++ stringextract	Wed Oct 22 16:32:48 2014
+@@ -55,7 +55,7 @@ xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot
  xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot pgadmin/include/*.h
  xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot pgadmin/include/*.h
  
