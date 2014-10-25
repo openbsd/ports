@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/10/25 16:56:00 chrisz Exp $
+%%dynlink%%
+lib/ocaml/uutf/uutf.a
+lib/ocaml/uutf/uutf.cmx
+lib/ocaml/uutf/uutf.cmxa
