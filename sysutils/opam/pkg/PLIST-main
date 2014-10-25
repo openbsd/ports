@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/10/25 17:10:14 chrisz Exp $
+@bin bin/opam
+@bin bin/opam-admin
+bin/opam-admin.top
+@bin bin/opam-installer
+@man man/man1/opam-admin-check.1
+@man man/man1/opam-admin-depexts.1
+@man man/man1/opam-admin-make.1
+@man man/man1/opam-admin-stats.1
+@man man/man1/opam-admin.1
+@man man/man1/opam-config.1
+@man man/man1/opam-init.1
+@man man/man1/opam-install.1
+@man man/man1/opam-installer.1
+@man man/man1/opam-list.1
+@man man/man1/opam-pin.1
+@man man/man1/opam-reinstall.1
+@man man/man1/opam-remove.1
+@man man/man1/opam-repository.1
+@man man/man1/opam-search.1
+@man man/man1/opam-show.1
+@man man/man1/opam-switch.1
+@man man/man1/opam-update.1
+@man man/man1/opam-upgrade.1
+@man man/man1/opam.1
+share/doc/opam/
+share/doc/opam/CHANGES
+share/doc/opam/README.md

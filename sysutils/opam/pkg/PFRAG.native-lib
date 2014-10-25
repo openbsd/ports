@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.native-lib,v 1.1.1.1 2014/10/25 17:10:14 chrisz Exp $
+lib/opam-lib/opam-client.a
+lib/opam-lib/opam-client.cmxa
+lib/opam-lib/opam-core.a
+lib/opam-lib/opam-core.cmxa
+lib/opam-lib/opam-repositories.a
+lib/opam-lib/opam-repositories.cmxa
+lib/opam-lib/opam-solver.a
+lib/opam-lib/opam-solver.cmxa

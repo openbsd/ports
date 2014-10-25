@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/10/25 17:10:14 chrisz Exp $
+--- Makefile.orig	Wed Sep  3 01:08:34 2014
++++ Makefile	Wed Sep  3 01:08:38 2014
+@@ -75,8 +75,8 @@ tests-%: opam opam-admin opam-check
+ doc: all
+ 	$(MAKE) -C doc
+ 
+-.PHONY: man man-html
+-man man-html: opam opam-admin opam-installer
++.PHONY: man html man-html
++man html man-html: opam opam-admin opam-installer
+ 	$(MAKE) -C doc $@
+ 
+ configure: configure.ac m4/*.m4
