@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/10/06 09:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2014/10/25 14:29:24 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,8 +9,8 @@ VERSION =	11.8.16
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
-REVISION-main =		3
-REVISION-wikipedia =	5
+REVISION-main =		4
+REVISION-wikipedia =	6
 
 CATEGORIES =	audio
 
@@ -35,26 +35,28 @@ MODULES =	devel/gettext \
 		textproc/intltool
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			audio/taglib>=1.5 \
+			audio/taglib \
 			x11/dbus-glib
 WANTLIB-main = ${WANTLIB} dbus-1 tag tag_c dbus-glib-1 pthread
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
-			www/webkit>=1.6.1v0
+			www/webkit
 WANTLIB-wikipedia =	${WANTLIB} \
-			ICE SM Xt enchant gailutil gstapp-1.0 gstbase-1.0 icui18n \
+			ICE SM Xt enchant gstapp-1.0 gstbase-1.0 icui18n \
 			gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 \
 			jpeg soup-2.4 webkitgtk-1.0 xslt javascriptcoregtk-1.0 dbus-1 \
-			dbus-glib-1 geoclue gstaudio-1.0 gstfft-1.0 pthread
+			gstaudio-1.0 gstfft-1.0 pthread GL \
+			gbm gcrypt gpg-error gsttag-1.0 harfbuzz-icu \
+			icudata icuuc secret-1 webp EGL
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs sqlite3 stdc++ xcb
-WANTLIB += xcb-render xcb-shm xml2 z ffi harfbuzz
+WANTLIB += xcb-render xcb-shm xml2 z ffi harfbuzz graphite2 lzma
 
 RUN_DEPENDS =	audio/gmpc>=${VERSION} \
 		audio/vorbis-tools
