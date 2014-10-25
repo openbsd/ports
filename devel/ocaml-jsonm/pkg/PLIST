@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/25 17:01:23 chrisz Exp $
+%%native%%
+@bin bin/jsontrip
+@bin bin/ocamltweets
+lib/ocaml/jsonm/
+lib/ocaml/jsonm/META
+lib/ocaml/jsonm/jsonm.cma
+lib/ocaml/jsonm/jsonm.cmi
+lib/ocaml/jsonm/jsonm.mli
+share/doc/ocaml-jsonm/
+share/doc/ocaml-jsonm/CHANGES
+share/doc/ocaml-jsonm/README
+share/doc/ocaml-jsonm/api/
+share/doc/ocaml-jsonm/api/Jsonm.Manual.html
+share/doc/ocaml-jsonm/api/Jsonm.Uncut.html
+share/doc/ocaml-jsonm/api/Jsonm.html
+share/doc/ocaml-jsonm/api/api.odocl
+share/doc/ocaml-jsonm/api/index.html
+share/doc/ocaml-jsonm/api/index_attributes.html
+share/doc/ocaml-jsonm/api/index_class_types.html
+share/doc/ocaml-jsonm/api/index_classes.html
+share/doc/ocaml-jsonm/api/index_exceptions.html
+share/doc/ocaml-jsonm/api/index_methods.html
+share/doc/ocaml-jsonm/api/index_module_types.html
+share/doc/ocaml-jsonm/api/index_modules.html
+share/doc/ocaml-jsonm/api/index_types.html
+share/doc/ocaml-jsonm/api/index_values.html
+share/doc/ocaml-jsonm/api/style.css
+share/doc/ocaml-jsonm/api/type_Jsonm.Manual.html
+share/doc/ocaml-jsonm/api/type_Jsonm.Uncut.html
+share/doc/ocaml-jsonm/api/type_Jsonm.html

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/10/25 17:01:23 chrisz Exp $
+%%dynlink%%
+lib/ocaml/jsonm/jsonm.a
+lib/ocaml/jsonm/jsonm.cmx
+lib/ocaml/jsonm/jsonm.cmxa
