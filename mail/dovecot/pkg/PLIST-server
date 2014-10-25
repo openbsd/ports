@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.45 2014/10/16 18:01:57 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.46 2014/10/25 22:06:40 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -793,7 +793,6 @@ share/doc/dovecot/wiki/SSL.txt
 share/doc/dovecot/wiki/Sasl.txt
 share/doc/dovecot/wiki/SecurityTuning.txt
 share/doc/dovecot/wiki/Services.txt
-share/doc/dovecot/wiki/SharedMailboxes.ClusterSetup.txt
 share/doc/dovecot/wiki/SharedMailboxes.Permissions.txt
 share/doc/dovecot/wiki/SharedMailboxes.Public.txt
 share/doc/dovecot/wiki/SharedMailboxes.Shared.txt
