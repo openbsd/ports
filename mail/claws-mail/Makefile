@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/04/22 19:26:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2014/10/25 14:53:04 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,6 +12,7 @@ COMMENT-gdata=		gdata plugin
 
 V=			3.9.3
 REVISION=		1
+REVISION-htmlviewer=	2
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -65,8 +66,7 @@ WANTLIB-gdata += nss3 oauth p11-kit plc4 plds4 smime3 softokn3 soup-2.4
 WANTLIB-gdata += sqlite3 ssl3 xml2
 
 WANTLIB-htmlviewer =  ${WANTLIB}
-WANTLIB-htmlviewer += EGL GL ICE SM Xt dbus-1 dbus-glib-1 enchant
-WANTLIB-htmlviewer += orc-0.4 gcrypt geoclue gpg-error
+WANTLIB-htmlviewer += EGL GL ICE SM Xt dbus-1 enchant orc-0.4 gcrypt gpg-error
 WANTLIB-htmlviewer += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB-htmlviewer += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
 WANTLIB-htmlviewer += icudata icui18n icuuc javascriptcoregtk-1.0
