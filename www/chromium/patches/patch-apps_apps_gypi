@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_apps_gypi,v 1.1 2014/10/25 21:08:50 sthen Exp $
+--- apps/apps.gypi.orig.port	Wed Oct 22 22:33:36 2014
++++ apps/apps.gypi	Wed Oct 22 22:35:04 2014
+@@ -17,6 +17,7 @@
+         'browser_extensions',
+         'common/extensions/api/api.gyp:chrome_api',
+         '../skia/skia.gyp:skia',
++        'chrome_resources.gyp:theme_resources',
+       ],
+       'include_dirs': [
+         '<(INTERMEDIATE_DIR)',
