@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.native-ocaml,v 1.1.1.1 2014/10/25 12:50:29 chrisz Exp $
+lib/ocaml/cudf/cudf.a
+lib/ocaml/cudf/cudf.cmx
+lib/ocaml/cudf/cudf.cmxa
+lib/ocaml/cudf/cudf_822_lexer.cmx
+lib/ocaml/cudf/cudf_822_parser.cmx
+lib/ocaml/cudf/cudf_c.cmx
+lib/ocaml/cudf/cudf_checker.cmx
+lib/ocaml/cudf/cudf_conf.cmx
+lib/ocaml/cudf/cudf_parser.cmx
+lib/ocaml/cudf/cudf_printer.cmx
+lib/ocaml/cudf/cudf_type_lexer.cmx
+lib/ocaml/cudf/cudf_type_parser.cmx
+lib/ocaml/cudf/cudf_types.cmx
+lib/ocaml/cudf/cudf_types_pp.cmx

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/10/25 12:50:29 chrisz Exp $
+@bin bin/cudf-check
+@bin bin/cudf-parse-822
+include/cudf.h
+lib/libcudf.a
+lib/pkgconfig/cudf.pc

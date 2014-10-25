@@ -1,0 +1,13 @@
+$OpenBSD: patch-c-lib_Makefile_variants,v 1.1.1.1 2014/10/25 12:50:29 chrisz Exp $
+- OpenBSD doesn't need libdl
+--- c-lib/Makefile.variants.orig	Sat Mar 16 09:03:11 2013
++++ c-lib/Makefile.variants	Sat Mar 16 09:03:31 2013
+@@ -65,7 +65,7 @@ cudf-variants.h: caml_hash_variant Makefile.variants
+ caml_hash_variant: caml_hash_variant.o
+ 	> dummy.ml
+ 	ocamlc -o dummy.o -output-obj dummy.ml
+-	$(CC) $(CFLAGS) -o $@ $< dummy.o -L$(OCAML_LIBDIR) -lcamlrun -lm -lcurses -ldl
++	$(CC) $(CFLAGS) -o $@ $< dummy.o -L$(OCAML_LIBDIR) -lcamlrun -lm -lcurses
+ 	@rm -f dummy.*
+ 
+ clean: clean-variants
