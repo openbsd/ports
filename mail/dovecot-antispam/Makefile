@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2014/10/16 18:02:48 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2014/10/25 22:07:26 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	anti-spam plugin for Dovecot
 
-V_DOVECOT_FULL=	2.2.14
-
 DISTNAME=	dovecot-antispam-plugin-5ebc6aae4d7c
 PKGNAME=	dovecot-antispam-2.2
-REVISION=	4
+REVISION=	5
 CATEGORIES=	mail
 
 # http://hg.dovecot.org/dovecot-antispam-plugin/
@@ -23,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	lib/dovecot/dovecot lib/dovecot/dovecot-storage
 
 BUILD_DEPENDS=	lang/gawk
-LIB_DEPENDS=	mail/dovecot=${V_DOVECOT_FULL}
+LIB_DEPENDS=	mail/dovecot
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
