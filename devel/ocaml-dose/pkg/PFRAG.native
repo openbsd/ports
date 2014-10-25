@@ -1,0 +1,18 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
+%%dynlink%%
+lib/ocaml/dose3/algo.a
+lib/ocaml/dose3/algo.cmxa
+lib/ocaml/dose3/boilerplate.a
+lib/ocaml/dose3/boilerplate.cmxa
+lib/ocaml/dose3/boilerplateNoRpm.a
+lib/ocaml/dose3/boilerplateNoRpm.cmxa
+lib/ocaml/dose3/common.a
+lib/ocaml/dose3/common.cmxa
+lib/ocaml/dose3/csw.a
+lib/ocaml/dose3/csw.cmxa
+lib/ocaml/dose3/debian.a
+lib/ocaml/dose3/debian.cmxa
+lib/ocaml/dose3/eclipse.a
+lib/ocaml/dose3/eclipse.cmxa
+lib/ocaml/dose3/rpm.a
+lib/ocaml/dose3/rpm.cmxa

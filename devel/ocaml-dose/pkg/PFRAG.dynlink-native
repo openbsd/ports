@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
+@bin lib/ocaml/dose3/algo.cmxs
+@bin lib/ocaml/dose3/boilerplate.cmxs
+@bin lib/ocaml/dose3/boilerplateNoRpm.cmxs
+@bin lib/ocaml/dose3/common.cmxs
+@bin lib/ocaml/dose3/csw.cmxs
+@bin lib/ocaml/dose3/debian.cmxs
+@bin lib/ocaml/dose3/eclipse.cmxs
+@bin lib/ocaml/dose3/rpm.cmxs

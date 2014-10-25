@@ -1,0 +1,63 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
+%%native%%
+@bin bin/apt-cudf
+@bin bin/ceve
+@bin bin/challenged
+@bin bin/deb-buildcheck
+@bin bin/deb-coinstall
+@bin bin/debcheck
+@bin bin/distcheck
+@bin bin/dominators-graph
+@bin bin/eclipsecheck
+@bin bin/outdated
+@bin bin/rpmcheck
+@bin bin/smallworld
+@bin bin/strong-deps
+lib/ocaml/dose3/
+lib/ocaml/dose3/META
+lib/ocaml/dose3/algo.cma
+lib/ocaml/dose3/algo.cmi
+lib/ocaml/dose3/architecture.mli
+lib/ocaml/dose3/boilerplate.cma
+lib/ocaml/dose3/boilerplate.cmi
+lib/ocaml/dose3/boilerplateNoRpm.cma
+lib/ocaml/dose3/boilerplateNoRpm.cmi
+lib/ocaml/dose3/common.cma
+lib/ocaml/dose3/common.cmi
+lib/ocaml/dose3/csw.cma
+lib/ocaml/dose3/csw.cmi
+lib/ocaml/dose3/cudfAdd.mli
+lib/ocaml/dose3/debcudf.mli
+lib/ocaml/dose3/debian.cma
+lib/ocaml/dose3/debian.cmi
+lib/ocaml/dose3/depsolver.mli
+lib/ocaml/dose3/diagnostic.mli
+lib/ocaml/dose3/eclipse.cma
+lib/ocaml/dose3/eclipse.cmi
+lib/ocaml/dose3/edosSolver.mli
+lib/ocaml/dose3/format822_parser.mli
+lib/ocaml/dose3/input.mli
+lib/ocaml/dose3/packages_parser.mli
+lib/ocaml/dose3/release.mli
+lib/ocaml/dose3/rpm.cma
+lib/ocaml/dose3/rpm.cmi
+lib/ocaml/dose3/strongdeps.mli
+lib/ocaml/dose3/url.mli
+lib/ocaml/dose3/util.mli
+lib/ocaml/dose3/version.mli
+@man man/man1/apt-cudf.1
+@man man/man1/buildcheck.1
+@man man/man1/ceve.1
+@man man/man1/challenged.1
+@man man/man1/debcoinstall.1
+@man man/man1/distcheck.1
+@man man/man1/outdated.1
+@man man/man1/smallworld.1
+@man man/man1/strongdeps.1
+@man man/man5/apt-cudf.conf.5
+@man man/man8/apt-cudf-get.8
+share/doc/ocaml-dose3/
+share/doc/ocaml-dose3/CHANGES
+share/doc/ocaml-dose3/CREDITS
+share/doc/ocaml-dose3/README.architecture
+share/doc/ocaml-dose3/TODO

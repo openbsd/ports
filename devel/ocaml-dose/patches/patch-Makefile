@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
+
+Absolute symlinks will break when installing to a temporary DESTDIR.
+Therefore use hardlinks. One could also use relative symlinks on platforms
+without hardlinks.
+
+--- Makefile.orig	Mon May 26 08:11:52 2014
++++ Makefile	Wed Sep  3 00:06:17 2014
+@@ -164,9 +164,9 @@ install: META installcudf
+ 	for f in $$(ls *.$(OCAMLBEST)) ; do \
+ 	  install $(INSTALLOPTS) $$f $(BINDIR)/$${f%.$(OCAMLBEST)} ; \
+ 	done
+-	ln -s $(BINDIR)/distcheck $(BINDIR)/debcheck
+-	ln -s $(BINDIR)/distcheck $(BINDIR)/rpmcheck
+-	ln -s $(BINDIR)/distcheck $(BINDIR)/eclipsecheck
++	ln $(BINDIR)/distcheck $(BINDIR)/debcheck
++	ln $(BINDIR)/distcheck $(BINDIR)/rpmcheck
++	ln $(BINDIR)/distcheck $(BINDIR)/eclipsecheck
+ 
+ uninstall: uninstallcudf
+ 	$(OCAMLFIND) remove -destdir $(LIBDIR) $(NAME)

@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_util_ml,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
+
+Changes for OPAM
+
+--- common/util.ml.orig	Mon May 26 08:11:52 2014
++++ common/util.ml	Tue Sep  2 23:11:49 2014
+@@ -266,7 +266,6 @@ module Timer = struct
+   let available () = Hashtbl.fold (fun k _ acc -> k::acc) timers []
+ 
+   let start c =
+-    assert(not c.is_in);
+     c.is_in <- true;
+     c.last <- !gettimeofday()
+ 
