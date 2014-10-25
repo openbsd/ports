@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/10/25 16:50:30 chrisz Exp $
+%%dynlink%%
+lib/ocaml/cmdliner/cmdliner.a
+lib/ocaml/cmdliner/cmdliner.cmx
+lib/ocaml/cmdliner/cmdliner.cmxa
