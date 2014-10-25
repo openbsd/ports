@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/10/25 16:53:42 chrisz Exp $
+%%dynlink%%
+@bin bin/graph-editor.opt
+@bin bin/graph-viewer.opt
+lib/ocaml/ocamlgraph/dgraph.cmx
+lib/ocaml/ocamlgraph/dgraph.o
+lib/ocaml/ocamlgraph/graph.a
+lib/ocaml/ocamlgraph/graph.cmx
+lib/ocaml/ocamlgraph/graph.cmxa
+lib/ocaml/ocamlgraph/graph.o
+lib/ocaml/ocamlgraph/viewgraph.cmx
+lib/ocaml/ocamlgraph/viewgraph.o
