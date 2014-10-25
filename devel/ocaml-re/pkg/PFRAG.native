@@ -1,0 +1,25 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/10/25 16:59:17 chrisz Exp $
+%%dynlink%%
+lib/ocaml/re/automata.cmx
+lib/ocaml/re/cset.cmx
+lib/ocaml/re/re.a
+lib/ocaml/re/re.cmx
+lib/ocaml/re/re.cmxa
+lib/ocaml/re/re_emacs.a
+lib/ocaml/re/re_emacs.cmx
+lib/ocaml/re/re_emacs.cmxa
+lib/ocaml/re/re_glob.a
+lib/ocaml/re/re_glob.cmx
+lib/ocaml/re/re_glob.cmxa
+lib/ocaml/re/re_pcre.a
+lib/ocaml/re/re_pcre.cmx
+lib/ocaml/re/re_pcre.cmxa
+lib/ocaml/re/re_perl.a
+lib/ocaml/re/re_perl.cmx
+lib/ocaml/re/re_perl.cmxa
+lib/ocaml/re/re_posix.a
+lib/ocaml/re/re_posix.cmx
+lib/ocaml/re/re_posix.cmxa
+lib/ocaml/re/re_str.a
+lib/ocaml/re/re_str.cmx
+lib/ocaml/re/re_str.cmxa
