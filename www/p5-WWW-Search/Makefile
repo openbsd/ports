@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/10/25 14:25:21 nigel Exp $
 
 COMMENT=		virtual base class for WWW searches
 
-DISTNAME=		WWW-Search-2.508
+DISTNAME=		WWW-Search-2.513
 CATEGORIES=		www
-REVISION=		0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		converters/p5-DateManip \
 			devel/p5-File-Slurp \
@@ -19,11 +17,11 @@ RUN_DEPENDS=		converters/p5-DateManip \
 			mail/p5-Email-Send \
 			math/p5-Bit-Vector \
 			misc/p5-User \
-			www/p5-HTML-Parser \
+			www/p5-HTML-Parser>=2.23 \
 			www/p5-HTML-Tree \
 			www/p5-URI \
 			www/p5-libwww
-TEST_DEPENDS=	devel/p5-IO-Capture \
+TEST_DEPENDS=		devel/p5-IO-Capture \
 			www/p5-WWW-Search
 
 MAKE_ENV+=		TEST_POD=Yes

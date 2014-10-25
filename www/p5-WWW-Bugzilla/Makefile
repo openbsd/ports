@@ -1,18 +1,25 @@
-# $OpenBSD: Makefile,v 1.7 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2014/10/25 14:25:21 nigel Exp $
 
 COMMENT= 	creating and updating Bugzilla bugs
 
 MODULES=	cpan
-DISTNAME=	WWW-Bugzilla-0.8
-REVISION=	0
+DISTNAME=	WWW-Bugzilla-1.5
 CATEGORIES=	www
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/p5-Class-MethodMaker \
-		www/p5-WWW-Mechanize
+RUN_DEPENDS=	devel/p5-Class-MethodMaker>=1.08 \
+		devel/p5-Params-Validate>0.88 \
+		security/p5-Crypt-SSLeay>0.57 \
+		www/p5-WWW-Mechanize>=1.3
+
+BUILD_DEPENDS = ${RUN_DEPENDS}
 
 TEST_IS_INTERACTIVE=makes network connections to bugzilla servers
+
+pre-configure:
+	mkdir -p ${WRKSRC}/lib
+	cp -rp ${WRKSRC}/WWW ${WRKSRC}/lib
 
 .include <bsd.port.mk>

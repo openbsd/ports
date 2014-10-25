@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/25 10:25:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/25 14:25:21 nigel Exp $
 ${P5SITE}/WWW/Ebay/
 ${P5SITE}/WWW/Ebay.pm
 ${P5SITE}/WWW/Ebay/Customer.pm
@@ -6,7 +6,6 @@ ${P5SITE}/WWW/Ebay/Listing.pm
 ${P5SITE}/WWW/Ebay/Search.pm
 ${P5SITE}/WWW/Ebay/Session.pm
 ${P5SITE}/WWW/Ebay/Status.pm
-${P5SITE}/WWW/Search/Ebay/ByBidderID.pm
 ${P5SITE}/WWW/Search/Ebay/Completed/
 ${P5SITE}/WWW/Search/Ebay/Completed.pm
 ${P5SITE}/WWW/Search/Ebay/Completed/Category.pm
@@ -16,6 +15,5 @@ ${P5SITE}/WWW/Search/Ebay/Completed/Category.pm
 @man man/man3p/WWW::Ebay::Search.3p
 @man man/man3p/WWW::Ebay::Session.3p
 @man man/man3p/WWW::Ebay::Status.3p
-@man man/man3p/WWW::Search::Ebay::ByBidderID.3p
 @man man/man3p/WWW::Search::Ebay::Completed.3p
 @man man/man3p/WWW::Search::Ebay::Completed::Category.3p
