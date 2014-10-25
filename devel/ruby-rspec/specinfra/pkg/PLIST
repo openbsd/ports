@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/17 17:28:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/25 10:30:53 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -86,6 +86,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/yumrepo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/zfs.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/cumulus/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/cumulus.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/cumulus/base/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/cumulus/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/cumulus/base/ppa.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/cumulus/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/
