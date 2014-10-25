@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/09/03 17:48:19 chrisz Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/10/25 11:55:54 chrisz Exp $
 %%native%%
 %%SHARED%%
 bin/ocaml
@@ -411,6 +411,7 @@ lib/ocaml/weak.cmi
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 @man man/man1/ocaml.1
+@man man/man1/ocamlbuild.1
 @man man/man1/ocamlc.1
 @man man/man1/ocamlc.opt.1
 @man man/man1/ocamlcp.1
@@ -428,6 +429,32 @@ lib/ocaml/weak.mli
 @man man/man3/Arg.3o
 @man man/man3/Array.3o
 @man man/man3/ArrayLabels.3o
+@man man/man3/Ast_helper.3o
+@man man/man3/Ast_helper.Cf.3o
+@man man/man3/Ast_helper.Ci.3o
+@man man/man3/Ast_helper.Cl.3o
+@man man/man3/Ast_helper.Csig.3o
+@man man/man3/Ast_helper.Cstr.3o
+@man man/man3/Ast_helper.Ctf.3o
+@man man/man3/Ast_helper.Cty.3o
+@man man/man3/Ast_helper.Exp.3o
+@man man/man3/Ast_helper.Incl.3o
+@man man/man3/Ast_helper.Mb.3o
+@man man/man3/Ast_helper.Md.3o
+@man man/man3/Ast_helper.Mod.3o
+@man man/man3/Ast_helper.Mtd.3o
+@man man/man3/Ast_helper.Mty.3o
+@man man/man3/Ast_helper.Opn.3o
+@man man/man3/Ast_helper.Pat.3o
+@man man/man3/Ast_helper.Sig.3o
+@man man/man3/Ast_helper.Str.3o
+@man man/man3/Ast_helper.Te.3o
+@man man/man3/Ast_helper.Typ.3o
+@man man/man3/Ast_helper.Type.3o
+@man man/man3/Ast_helper.Val.3o
+@man man/man3/Ast_helper.Vb.3o
+@man man/man3/Ast_mapper.3o
+@man man/man3/Asttypes.3o
 @man man/man3/Bigarray.3o
 @man man/man3/Bigarray.Array1.3o
 @man man/man3/Bigarray.Array2.3o
@@ -459,9 +486,12 @@ lib/ocaml/weak.mli
 @man man/man3/Int32.3o
 @man man/man3/Int64.3o
 @man man/man3/Lazy.3o
+@man man/man3/Lexer.3o
 @man man/man3/Lexing.3o
 @man man/man3/List.3o
 @man man/man3/ListLabels.3o
+@man man/man3/Location.3o
+@man man/man3/Longident.3o
 @man man/man3/Map.3o
 @man man/man3/Map.Make.3o
 @man man/man3/Map.OrderedType.3o
@@ -487,9 +517,15 @@ lib/ocaml/weak.mli
 @man man/man3/Num.3o
 @man man/man3/Obj.3o
 @man man/man3/Oo.3o
+@man man/man3/Parse.3o
+@man man/man3/Parser.3o
+@man man/man3/Parsetree.3o
 @man man/man3/Parsing.3o
 @man man/man3/Pervasives.3o
 @man man/man3/Pervasives.LargeFile.3o
+@man man/man3/Pprintast.3o
+@man man/man3/Pprintast.printer.3o
+@man man/man3/Printast.3o
 @man man/man3/Printexc.3o
 @man man/man3/Printexc.Slot.3o
 @man man/man3/Printf.3o
@@ -513,6 +549,7 @@ lib/ocaml/weak.mli
 @man man/man3/Stream.3o
 @man man/man3/String.3o
 @man man/man3/StringLabels.3o
+@man man/man3/Syntaxerr.3o
 @man man/man3/Sys.3o
 @man man/man3/Unix.3o
 @man man/man3/Unix.LargeFile.3o

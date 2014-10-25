@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2014/09/04 15:56:26 chrisz Exp $
+# $OpenBSD: Makefile,v 1.67 2014/10/25 11:55:54 chrisz Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -10,8 +10,7 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
 # Don't forget to bump version in ocaml.port.mk, too!
-VERSION=4.02.0
-REVISION=0
+VERSION=4.02.1
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
@@ -72,6 +71,9 @@ post-install:
 		${PREFIX}/share/doc/ocaml/html
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/libref/* \
 		${PREFIX}/share/doc/ocaml/html/libref
+	${INSTALL_DATA} \
+		${WRKSRC}/ocamlbuild/man/ocamlbuild.1 \
+		${PREFIX}/man/man1/
 	@${INSTALL_DATA} \
 		${WRKSRC}/{LICENSE,Changes} \
 		${PREFIX}/share/doc/ocaml

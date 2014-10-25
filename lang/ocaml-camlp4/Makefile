@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/03 10:22:03 chrisz Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/25 11:55:54 chrisz Exp $
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang
 
-V =		4.02.0
-REVISION =	0
+V =		4.02.1+1
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	camlp4
 GH_TAGNAME =	${V}
-GH_COMMIT =	0bb620fad7005850beadbf3aafeeb17d28c8fecd
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
+WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/+/-/}
 PKGNAME =	ocaml-${DISTNAME}
+# No dynlink compatibility between releases
+PKGSPEC =	ocaml-camlp4-=${V}
 
 HOMEPAGE =	https://github.com/ocaml/camlp4/
 

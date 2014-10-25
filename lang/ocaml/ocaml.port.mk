@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.29 2014/09/08 05:10:10 chrisz Exp $
+# $OpenBSD: ocaml.port.mk,v 1.30 2014/10/25 11:55:54 chrisz Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -57,6 +57,7 @@ INSTALL_TARGET = -install
 TEST_TARGET ?= -test
 _MODOASIS_SETUP = ${WRKDIR}/oasis_setup.byte
 
+
 ######################################################################
 # CONFIGURE
 .if ${PROPERTIES:Mocaml_native}
@@ -64,7 +65,12 @@ _MODOASIS_OCAMLC = ocamlc.opt
 .else
 _MODOASIS_OCAMLC = ocamlc
 .endif
-MODOASIS_configure = \
+
+. if ${CONFIGURE_STYLE:L:Moasis_setup}
+BUILD_DEPENDS += sysutils/oasis
+MODOASIS_configure += cd ${WRKSRC} && oasis setup &&
+. endif
+MODOASIS_configure += \
 	${_MODOASIS_OCAMLC} -o ${_MODOASIS_SETUP} ${WRKSRC}/setup.ml && \
 	cd ${WRKSRC} && \
 	rm setup.cm[io] && \
