@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/10/06 11:16:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/25 14:04:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.12.0
-REVISION=	0
+REVISION=	1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,8 +15,8 @@ WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject clutter-1.0 clutter-gst-2.0
 WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path crypto dbus-1
-WANTLIB += dbus-glib-1 enchant evdocument3 evview3 expat ffi fontconfig
-WANTLIB += freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0 geoclue
+WANTLIB += enchant evdocument3 evview3 expat ffi fontconfig
+WANTLIB += freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0

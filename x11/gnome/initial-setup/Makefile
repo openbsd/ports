@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/10 19:27:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/25 14:04:30 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.14.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -11,8 +12,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt accountsservice atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crack dbus-1
-WANTLIB += dbus-glib-1 enchant expat ffi fontconfig freetype gbm
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gdm geoclue geocode-glib
+WANTLIB += enchant expat ffi fontconfig freetype gbm
+WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gdm geocode-glib
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 goa-1.0
 WANTLIB += goa-backend-1.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0

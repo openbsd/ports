@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2013/10/06 09:08:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/10/25 14:04:30 ajacoutot Exp $
 
 COMMENT=		python bindings for the WebKit GTK+ port
 
 V=			1.1.8
 DISTNAME=		pywebkitgtk-$V
 PKGNAME=		py-webkitgtk-$V
-REVISION=		12
+REVISION=		13
 CATEGORIES=		www
 
 HOMEPAGE=		https://pywebkitgtk.googlecode.com/
@@ -27,7 +27,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs soup-2.4
 WANTLIB += sqlite3 stdc++ xcb xml2 z gstapp-1.0 xcb-render
 WANTLIB += GL Xxf86vm drm xcb-shm xslt webkitgtk-1.0
 WANTLIB += javascriptcoregtk-1.0 orc-0.4
-WANTLIB += dbus-1 dbus-glib-1 gcrypt geoclue gpg-error graphite2
+WANTLIB += dbus-1 gcrypt gpg-error graphite2
 WANTLIB += gstaudio-1.0 gstfft-1.0 gsttag-1.0 harfbuzz
 WANTLIB += pthread secret-1 webp
 
@@ -37,7 +37,7 @@ MODULES=		lang/python \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/py-gtk2
 LIB_DEPENDS=		textproc/libxslt \
-			www/webkit>=1.6.1v0
+			www/webkit
 
 CONFIGURE_STYLE=	gnu
 

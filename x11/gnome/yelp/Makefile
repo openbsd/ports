@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2014/10/14 07:30:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2014/10/25 14:04:30 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.14.1
+REVISION=		0
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -12,9 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1
 WANTLIB += enchant expat exslt ffi fontconfig freetype gbm gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz

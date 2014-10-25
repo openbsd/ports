@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2014/10/06 09:28:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2014/10/25 14:04:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.14.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -20,9 +20,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt apr-1 aprutil-1 atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto db
-WANTLIB += dbus-1 dbus-glib-1 devhelp-3 enchant expat ffi fontconfig
+WANTLIB += dbus-1 devhelp-3 enchant expat ffi fontconfig
 WANTLIB += freetype gcrypt gda-5.0 gdk-3 gdk_pixbuf-2.0 gdl-3
-WANTLIB += geoclue gio-2.0 gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gio-2.0 gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz

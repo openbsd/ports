@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2014/10/14 15:52:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2014/10/25 14:04:30 ajacoutot Exp $
 
 # XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -11,6 +11,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.14.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -21,9 +22,9 @@ WANTLIB += EGL FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst
 WANTLIB += accountsservice atk-1.0 atk-bridge-2.0 atspi avahi-common
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
-WANTLIB += colord-gtk colordprivate crack cups dbus-1 dbus-glib-1
+WANTLIB += colord-gtk colordprivate crack cups dbus-1
 WANTLIB += enchant execinfo expat ffi fontconfig freetype gcrypt
-WANTLIB += gdbm gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0
+WANTLIB += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 goa-1.0 goa-backend-1.0
 WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
