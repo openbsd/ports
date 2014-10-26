@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/26 14:02:48 jasper Exp $
 
 COMMENT=	lightweight scripting language with C-like syntax
 
 DISTNAME=	arena-0.9.13
-REVISION=	1
+REVISION=	2
 CATEGORIES=	lang
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
-
-HOMEPAGE=	http://www.minimalinux.org/arena/doc.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=	${HOMEPAGE}/../
+MASTER_SITES=	http://distfiles.nl/
 
 CONFIGURE_STYLE=gnu
 
