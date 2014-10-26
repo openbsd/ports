@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/09/25 20:10:13 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/10/26 20:43:57 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
@@ -72,6 +72,8 @@ lib/collectd/openvpn.so
 lib/collectd/pf.so
 @comment lib/collectd/powerdns.la
 lib/collectd/powerdns.so
+@comment lib/collectd/processes.la
+lib/collectd/processes.so
 @comment lib/collectd/swap.la
 lib/collectd/swap.so
 @comment lib/collectd/syslog.la

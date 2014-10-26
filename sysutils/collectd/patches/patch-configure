@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2014/09/25 20:10:13 landry Exp $
+$OpenBSD: patch-configure,v 1.5 2014/10/26 20:43:56 landry Exp $
 no Werror, breaks with gcrypt deprecation warnings
 dont check for pcap-bpf.h, not installed on openbsd
 need to include sys/param.h and unistd.h to properly reach swapctl() prototype
 --- configure.orig	Sun Jan 26 09:10:00 2014
-+++ configure	Mon Sep 22 17:32:52 2014
++++ configure	Fri Oct 24 10:41:43 2014
 @@ -12793,7 +12793,7 @@ eval "LTDLOPEN=\"$libname_spec\""
  
  
@@ -44,6 +44,46 @@ need to include sys/param.h and unistd.h to properly reach swapctl() prototype
  
  int
  main ()
+@@ -18562,16 +18567,16 @@ else
+ fi
+ 
+ 
+-ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "kp_proc" "ac_cv_member_struct_kinfo_proc_kp_proc" "
++ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "p_pid" "ac_cv_member_struct_kinfo_proc_p_pid" "
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <kvm.h>
+ 
+ "
+-if test "x$ac_cv_member_struct_kinfo_proc_kp_proc" = xyes; then :
++if test "x$ac_cv_member_struct_kinfo_proc_p_pid" = xyes; then :
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define HAVE_STRUCT_KINFO_PROC_KP_PROC 1
++#define HAVE_STRUCT_KINFO_PROC_P_PID 1
+ _ACEOF
+ 
+ 
+@@ -18585,16 +18590,16 @@ else
+ 		have_struct_kinfo_proc_openbsd="no"
+ 
+ fi
+-ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "kp_eproc" "ac_cv_member_struct_kinfo_proc_kp_eproc" "
++ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "p_ppid" "ac_cv_member_struct_kinfo_proc_p_ppid" "
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <kvm.h>
+ 
+ "
+-if test "x$ac_cv_member_struct_kinfo_proc_kp_eproc" = xyes; then :
++if test "x$ac_cv_member_struct_kinfo_proc_p_ppid" = xyes; then :
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define HAVE_STRUCT_KINFO_PROC_KP_EPROC 1
++#define HAVE_STRUCT_KINFO_PROC_P_PPID 1
+ _ACEOF
+ 
+ 
 @@ -22812,23 +22817,7 @@ fi
  done
  
@@ -77,3 +117,12 @@ need to include sys/param.h and unistd.h to properly reach swapctl() prototype
  	LDFLAGS="$LDFLAGS $PERL_LDFLAGS"
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for broken Perl_load_module()" >&5
+@@ -26629,7 +26618,7 @@ then
+ 	plugin_processes="yes"
+ fi
+ 
+-if test "x$with_kvm_getprocs" = "xyes" && test "x$have_struct_kinfo_proc_freebsd" = "xyes"
++if test "x$with_kvm_getprocs" = "xyes" && test "x$have_struct_kinfo_proc_openbsd" = "xyes"
+ then
+ 	plugin_processes="yes"
+ fi

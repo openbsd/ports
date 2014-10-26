@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/09/25 20:10:13 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2014/10/26 20:43:56 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -14,6 +14,9 @@ PKGNAME-pgsql =		collectd-pgsql-$V
 PKGNAME-rrdtool =	collectd-rrdtool-$V
 PKGNAME-snmp =		collectd-snmp-$V
 CATEGORIES =		sysutils
+
+REVISION-main =		0
+REVISION-rrdtool =	0
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -74,7 +77,7 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 			logfile match_empty_counter match_hashed match_regex \
 			match_timediff match_value memcached memory mysql \
 			network nginx ntpd olsrd openvpn postgresql powerdns \
-			rrdtool snmp swap syslog table tail tail_csv \
+			processes rrdtool rrdcached snmp swap syslog table tail tail_csv \
 			target_notification target_replace target_scale \
 			target_set target_v5upgrade tcpconns teamspeak2 ted unixsock uptime \
 			users uuid write_http write_graphite pf
