@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/05 03:28:11 espie Exp $
-bin/ac3dec
-bin/extract_ac3
-share/doc/ac3dec/
-share/doc/ac3dec/README
-share/doc/ac3dec/TODO
