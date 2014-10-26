@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/12 20:00:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/26 14:15:07 sthen Exp $
 
 SHARED_LIBS +=	lz4                       0.0 # 0.0
 
 COMMENT=	fast BSD-licensed data compression
 
-DISTNAME=	lz4-0.0.20131102
+GH_ACCOUNT=	Cyan4973
+GH_PROJECT=	lz4
+GH_TAGNAME=	r123
+DISTNAME=	lz4-0.${GH_TAGNAME:S/r//}
+WRKDIST=	${WRKDIR}/lz4-${GH_TAGNAME}
 
 CATEGORIES=	archivers
 
@@ -17,21 +21,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+#MODULES=	devel/cmake
+USE_GMAKE=	Yes
+MAKE_FLAGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		MANDIR="${WRKINST}/${PREFIX}/man/man1" \
+		SONAME_FLAGS= \
+		SHARED_EXT_VER="so.${LIBlz4_VERSION:R}.${LIBlz4_VERSION:E}"
+FAKE_FLAGS=	DESTDIR=
+#WRKSRC=		${WRKDIST}/cmake
+#CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=true
 
-MODULES=	devel/cmake
-WRKSRC=		${WRKDIST}/cmake
-CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=true
 
-NO_TEST=	Yes
-
-# the build is a little messy; there's also a GNU Makefile, which builds
-# an additional version of the tool (just with a macro defined to disable some
-# old options), and some additional test tools (benchmark and fuzzer), but only
-# the CMake build includes the library.
-
-# cmakefiles install as lz4c64/lz4c32 for 64/32-bit; rename for sane packaging
-post-install:
+xxpost-install:
 	mv ${PREFIX}/bin/lz4c* ${PREFIX}/bin/lz4c
 	${INSTALL_MAN} ${WRKDIST}/lz4.1 ${PREFIX}/man/man1/lz4c.1
 

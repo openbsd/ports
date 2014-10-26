@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/12 20:00:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/10/26 14:15:07 sthen Exp $
+@bin bin/lz4
 @bin bin/lz4c
+bin/lz4cat
 include/lz4.h
 include/lz4hc.h
 lib/liblz4.a
 @lib lib/liblz4.so.${LIBlz4_VERSION}
+lib/pkgconfig/liblz4.pc
+@man man/man1/lz4.1
 @man man/man1/lz4c.1
+@man man/man1/lz4cat.1
