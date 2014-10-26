@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_in,v 1.1 2014/10/26 15:24:10 ratchov Exp $
+--- configure.in.orig	Sat Sep 28 20:44:02 2002
++++ configure.in	Fri Oct 24 15:57:45 2014
+@@ -64,11 +64,9 @@ case "$host" in 
+     fi
+        ;;
+   *openbsd*) AC_DEFINE(HAVE_OPENBSD,1)
+-    $CP audio/oss/* .
+-    AC_MSG_RESULT(oss)
+-    if test -z "$LIBAUDIO"; then
+-      AC_MSG_ERROR([libossaudio required, but not found.]);
+-    fi
++    $CP audio/sndio/* .
++    LIBAUDIO=-lsndio
++    AC_MSG_RESULT(sndio)
+        ;;
+ esac
+ 
