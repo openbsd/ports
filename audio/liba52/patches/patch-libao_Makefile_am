@@ -1,0 +1,12 @@
+$OpenBSD: patch-libao_Makefile_am,v 1.1 2014/10/26 15:27:03 ratchov Exp $
+--- libao/Makefile.am.orig	Wed Oct 22 18:29:58 2014
++++ libao/Makefile.am	Wed Oct 22 18:33:05 2014
+@@ -2,7 +2,7 @@ AM_CFLAGS = $(OPT_CFLAGS)
+ 
+ noinst_LIBRARIES = libao.a
+ libao_a_SOURCES = audio_out.c audio_out_null.c audio_out_float.c \
+-		  audio_out_oss.c audio_out_solaris.c audio_out_al.c \
++		  audio_out_oss.c audio_out_sndio.c audio_out_solaris.c audio_out_al.c \
+ 		  audio_out_win.c audio_out_wav.c audio_out_aif.c \
+ 		  audio_out_peak.c convert2s16.c
+ 

@@ -1,0 +1,37 @@
+$OpenBSD: patch-libao_Makefile_in,v 1.3 2014/10/26 15:27:03 ratchov Exp $
+--- libao/Makefile.in.orig	Wed Oct 22 18:31:21 2014
++++ libao/Makefile.in	Wed Oct 22 18:32:54 2014
+@@ -52,7 +52,7 @@ ARFLAGS = cru
+ libao_a_AR = $(AR) $(ARFLAGS)
+ libao_a_LIBADD =
+ am_libao_a_OBJECTS = audio_out.$(OBJEXT) audio_out_null.$(OBJEXT) \
+-	audio_out_float.$(OBJEXT) audio_out_oss.$(OBJEXT) \
++	audio_out_float.$(OBJEXT) audio_out_oss.$(OBJEXT) audio_out_sndio.$(OBJEXT) \
+ 	audio_out_solaris.$(OBJEXT) audio_out_al.$(OBJEXT) \
+ 	audio_out_win.$(OBJEXT) audio_out_wav.$(OBJEXT) \
+ 	audio_out_aif.$(OBJEXT) audio_out_peak.$(OBJEXT) \
+@@ -67,6 +67,7 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_out_float.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_out_null.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_out_oss.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/audio_out_sndio.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_out_peak.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_out_solaris.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_out_wav.Po \
+@@ -197,7 +198,7 @@ target_alias = @target_alias@
+ AM_CFLAGS = $(OPT_CFLAGS)
+ noinst_LIBRARIES = libao.a
+ libao_a_SOURCES = audio_out.c audio_out_null.c audio_out_float.c \
+-		  audio_out_oss.c audio_out_solaris.c audio_out_al.c \
++		  audio_out_oss.c audio_out_sndio.c audio_out_solaris.c audio_out_al.c \
+ 		  audio_out_win.c audio_out_wav.c audio_out_aif.c \
+ 		  audio_out_peak.c convert2s16.c
+ 
+@@ -255,6 +256,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_float.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_null.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_oss.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_sndio.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_peak.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_solaris.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_wav.Po@am__quote@

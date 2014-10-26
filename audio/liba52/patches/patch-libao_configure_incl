@@ -1,0 +1,19 @@
+$OpenBSD: patch-libao_configure_incl,v 1.1 2014/10/26 15:27:03 ratchov Exp $
+--- libao/configure.incl.orig	Wed Oct 22 17:08:13 2014
++++ libao/configure.incl	Wed Oct 22 18:29:09 2014
+@@ -12,6 +12,15 @@ if test x"$enable_oss" != x"no"; then
+     esac
+ fi
+ 
++dnl check for sndio
++AC_ARG_ENABLE([sndio],
++    [  --disable-sndio           make a version not using sndio])
++if test x"$enable_sndio" != x"no"; then
++    AC_DEFINE([LIBAO_SNDIO],,[libao SNDIO support])
++    AC_CHECK_LIB([sndio],[sio_initpar],
++	[LIBAO_LIBS="$LIBAO_LIBS -lsndio"])
++fi
++
+ dnl check for solaris
+ AC_ARG_ENABLE([solaris-audio],
+     [  --disable-solaris-audio make a version not using solaris audio])
