@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/09/30 19:35:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/26 14:22:01 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -29,14 +29,10 @@ lib/python${MODPY_VERSION}/site-packages/trac/admin/console.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin.html
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_basics.html
-lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_components.html
-lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_enums.html
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_legacy.html
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_logging.html
-lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_milestones.html
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_perms.html
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_plugins.html
-lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/admin_versions.html
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/deploy_trac.cgi
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/deploy_trac.fcgi
 lib/python${MODPY_VERSION}/site-packages/trac/admin/templates/deploy_trac.wsgi
@@ -457,6 +453,10 @@ lib/python${MODPY_VERSION}/site-packages/trac/ticket/report.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/roadmap.py
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/roadmap.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/
+lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/admin_components.html
+lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/admin_enums.html
+lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/admin_milestones.html
+lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/admin_versions.html
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/batch_modify.html
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/batch_ticket_notify_email.txt
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/templates/milestone_delete.html
