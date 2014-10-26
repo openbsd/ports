@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/29 16:12:51 juanfra Exp $
+# $OpenBSD: Makefile,v 1.12 2014/10/26 14:22:05 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.7.2
-REVISION=	1
+V=		4.7.3
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 
@@ -19,11 +18,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v${V:R}/source/
 EXTRACT_SUFX=	.tgz
 
-WANTLIB += c m util
+WANTLIB +=	c m util
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-cplusplus \
-		${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+		--disable-cplusplus \
 		--disable-absolute-shared-libs \
 		--docdir=${PREFIX}/share/doc/gambit-c/ \
 		--includedir=${PREFIX}/include/gambit-c/ \
@@ -32,7 +31,7 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 
 MAKE_FILE=	${WRKSRC}/makefile
 
-# Untill we figure out how to make it play nice with a staged directory.
+# Until we figure out how to make it play nice with a staged directory.
 NO_TEST=	Yes
 
 post-install:
