@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/07/25 13:36:55 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/10/26 13:07:14 jsing Exp $
 %%amd64%%
 %%i386%%
 @bin bin/go
@@ -309,10 +309,12 @@ go/misc/cgo/test/issue7560.go
 go/misc/cgo/test/issue7665.go
 go/misc/cgo/test/issue7695_test.go
 go/misc/cgo/test/issue7786.go
+go/misc/cgo/test/issue7978.go
 go/misc/cgo/test/issue8148.go
 go/misc/cgo/test/issue8331.h
 go/misc/cgo/test/issue8331a.go
 go/misc/cgo/test/issue8331b.go
+go/misc/cgo/test/issue8441.go
 go/misc/cgo/test/setgid_linux.go
 go/misc/cgo/test/sleep_windows_386.go
 go/misc/cgo/testasan/
@@ -1571,11 +1573,13 @@ go/src/pkg/crypto/tls/testdata/Server-TLSv12-ClientAuthRequestedAndGiven
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-ClientAuthRequestedNotGiven
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-ECDHE-ECDSA-AES
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-IssueTicket
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-IssueTicketPreDisable
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-3DES
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-AES
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-AES-GCM
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-RC4
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-Resume
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-ResumeDisabled
 go/src/pkg/crypto/tls/testdata/Server-TLSv12-SNI
 go/src/pkg/crypto/tls/ticket.go
 go/src/pkg/crypto/tls/tls.go
