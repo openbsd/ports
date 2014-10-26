@@ -1,0 +1,29 @@
+$OpenBSD: patch-libao_Makefile_in,v 1.1 2014/10/26 15:23:09 ratchov Exp $
+--- libao/Makefile.in.orig	Fri Oct 24 12:07:06 2014
++++ libao/Makefile.in	Fri Oct 24 12:08:02 2014
+@@ -46,7 +46,7 @@ LTLIBRARIES = $(noinst_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libao_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_libao_la_OBJECTS = audio_out.lo audio_out_null.lo \
+-	audio_out_float.lo audio_out_oss.lo audio_out_solaris.lo \
++	audio_out_float.lo audio_out_oss.lo audio_out_sndio.lo audio_out_solaris.lo \
+ 	audio_out_al.lo audio_out_win.lo audio_out_wav.lo \
+ 	audio_out_aif.lo audio_out_peak.lo convert2s16.lo
+ libao_la_OBJECTS = $(am_libao_la_OBJECTS)
+@@ -176,7 +176,7 @@ AM_CFLAGS = $(OPT_CFLAGS)
+ AM_CPPFLAGS = -I$(top_srcdir)/include
+ noinst_LTLIBRARIES = libao.la
+ libao_la_SOURCES = audio_out.c audio_out_null.c audio_out_float.c \
+-		   audio_out_oss.c audio_out_solaris.c audio_out_al.c \
++		   audio_out_oss.c audio_out_sndio.c audio_out_solaris.c audio_out_al.c \
+ 		   audio_out_win.c audio_out_wav.c audio_out_aif.c \
+ 		   audio_out_peak.c convert2s16.c \
+ 		   audio_out_internal.h
+@@ -240,6 +240,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_float.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_null.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_oss.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_sndio.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_peak.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_solaris.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_out_wav.Plo@am__quote@
