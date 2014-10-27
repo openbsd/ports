@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/21 14:53:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2014/10/27 13:51:12 jasper Exp $
 
 COMMENT=		OpenBSD ports tree version scanner
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
 GH_TAGNAME=		1.2.1
 GH_COMMIT=		8e7d9ccfb16bfc55c16e258e2a9228d2f6d355e0
+REVISION=		0
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=		misc
@@ -27,6 +28,7 @@ RUN_DEPENDS=		converters/p5-JSON \
 			www/p5-HTML-Parser \
 			www/p5-URI \
 			www/p5-XML-Feed \
+			www/p5-LWP-Protocol-https \
 			www/p5-libwww
 
 # database
