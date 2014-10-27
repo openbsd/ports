@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.542 2014/10/05 18:31:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.543 2014/10/27 11:22:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -30,6 +30,7 @@
      SUBDIR += cegui
      SUBDIR += chbg
      SUBDIR += compiz
+     SUBDIR += compton
      SUBDIR += ctwm
      SUBDIR += dbus
      SUBDIR += dbus-glib
