@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:01:06 espie Exp $
-bin/bmore
-bin/bvedit
-bin/bvi
-bin/bview
+@comment $OpenBSD: PLIST,v 1.6 2014/10/27 21:59:32 naddy Exp $
+@bin bin/bmore
+@bin bin/bvedit
+@bin bin/bvi
+@bin bin/bview
 @man man/man1/bmore.1
 @man man/man1/bvi.1
-share/bmore.help
+share/bvi/
+share/bvi/bmore.help
