@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/10/27 18:35:21 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/License.txt
-${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.txt
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/polyglot/
 ${GEM_LIB}/gems/${DISTNAME}/lib/polyglot.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/polyglot/version.rb
-${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_polyglot.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
