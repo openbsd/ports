@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/26 14:15:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/27 13:42:39 sthen Exp $
 
 SHARED_LIBS +=	lz4                       0.0 # 0.0
 
@@ -7,7 +7,8 @@ COMMENT=	fast BSD-licensed data compression
 GH_ACCOUNT=	Cyan4973
 GH_PROJECT=	lz4
 GH_TAGNAME=	r123
-DISTNAME=	lz4-0.${GH_TAGNAME:S/r//}
+DISTNAME=	lz4-${GH_TAGNAME}
+PKGNAME=	lz4-0.${GH_TAGNAME:S/r//}
 WRKDIST=	${WRKDIR}/lz4-${GH_TAGNAME}
 
 CATEGORIES=	archivers
