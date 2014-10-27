@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.56 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/10/27 12:04:14 jasper Exp $
+
+PORTROACH=		limitw:1,even
 
 SHARED_ONLY=		Yes
 
