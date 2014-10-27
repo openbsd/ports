@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.5 2014/10/26 20:43:56 landry Exp $
+$OpenBSD: patch-configure,v 1.6 2014/10/27 09:07:07 landry Exp $
 no Werror, breaks with gcrypt deprecation warnings
 dont check for pcap-bpf.h, not installed on openbsd
 need to include sys/param.h and unistd.h to properly reach swapctl() prototype
+https://github.com/collectd/collectd/pull/779
 --- configure.orig	Sun Jan 26 09:10:00 2014
 +++ configure	Fri Oct 24 10:41:43 2014
 @@ -12793,7 +12793,7 @@ eval "LTDLOPEN=\"$libname_spec\""
