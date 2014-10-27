@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/05/26 14:37:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/27 17:13:30 sthen Exp $
 
 COMMENT =		python style guide checker
 
-MODPY_EGG_VERSION =	1.5.6
+MODPY_EGG_VERSION =	1.5.7
 DISTNAME =		pep8-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
@@ -17,6 +17,5 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=p/pep8/}
 MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
