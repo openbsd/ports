@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2014/09/27 08:50:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2014/10/27 21:33:22 ajacoutot Exp $
 
 COMMENT=		graphical diff and merge tool
 
-GNOME_VERSION=		3.12.0
+GNOME_VERSION=		3.12.1
 GNOME_PROJECT=		meld
+SUBST_VARS=		GNOME_VERSION
 
 CATEGORIES=		textproc
 
@@ -29,5 +30,8 @@ NO_TEST=		yes
 do-install:
 	${MODPY_CMD} --no-compile-schemas --no-update-icon-cache \
 		${MODPY_DISTUTILS_INSTALL}
+	mv ${PREFIX}/share/doc/meld{-${GNOME_VERSION},}
+	mv ${PREFIX}/{share,}/man/man1/meld.1
+	rmdir ${PREFIX}/share/man/{man1,}
 
 .include <bsd.port.mk>

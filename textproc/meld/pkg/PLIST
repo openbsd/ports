@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/09/27 08:50:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/10/27 21:33:22 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
-lib/python${MODPY_VERSION}/site-packages/meld-3.12.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/meld-${GNOME_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/meld/__init__.py
 lib/python${MODPY_VERSION}/site-packages/meld/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/build_helpers.py
