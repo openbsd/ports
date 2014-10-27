@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/09/21 08:58:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/10/27 10:33:32 sthen Exp $
 
 COMMENT=	generates simple manual pages from program output
 
-DISTNAME=	help2man-1.41.1
-REVISION=	0
+DISTNAME=	help2man-1.46.4
+EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=help2man/}
 
