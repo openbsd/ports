@@ -1,4 +1,4 @@
-gxmessage is a GTK2 based xmessage clone trying to be as compatible as
+gxmessage is a GTK+3 based xmessage clone trying to be as compatible as
 possible.  You might like it if you're running a mostly GTK desktop.
 gxmessage opens a window to display a message obtained from the command
 line, from a file, or from stdin.  The window includes a row of buttons,
