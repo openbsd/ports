@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
+--- Makefile.orig	Sun Oct 26 01:25:22 2014
++++ Makefile	Sun Oct 26 01:25:52 2014
+@@ -9,7 +9,7 @@ MANDIR ?= $(PREFIX)/share/man/man1
+ APPDIR ?= $(PREFIX)/share/applications
+ 
+ PACKAGES = x11 xcomposite xfixes xdamage xrender xext xrandr
+-LIBS = -lm -lrt
++LIBS = -lm
+ INCS =
+ 
+ OBJS = compton.o

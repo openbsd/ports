@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_c2_h,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
+
+anonymous unions aren't part of c99, but code is compiled with --std=c99
+(and uses other c99 features that need this).
+
+--- src/c2.h.orig	Sat Oct 25 22:13:48 2014
++++ src/c2.h	Sat Oct 25 22:14:01 2014
+@@ -38,13 +38,13 @@ typedef struct {
+   union {
+     c2_b_t *b;
+     c2_l_t *l;
+-  };
++  } u;
+ } c2_ptr_t;
+ 
+ /// Initializer for c2_ptr_t.
+ #define C2_PTR_INIT { \
+   .isbranch = false, \
+-  .l = NULL, \
++  .u.l = NULL, \
+ }
+ 
+ const static c2_ptr_t C2_PTR_NULL = C2_PTR_INIT;
+@@ -233,7 +233,7 @@ strcmp_wd(const char *needle, const char *src) {
+  */
+ static inline bool
+ c2_ptr_isempty(const c2_ptr_t p) {
+-  return !(p.isbranch ? (bool) p.b: (bool) p.l);
++  return !(p.isbranch ? (bool) p.u.b: (bool) p.u.l);
+ }
+ 
+ /**
+@@ -252,12 +252,12 @@ static inline c2_ptr_t
+ c2h_comb_tree(c2_b_op_t op, c2_ptr_t p1, c2_ptr_t p2) {
+  c2_ptr_t p = {
+    .isbranch = true,
+-   .b = malloc(sizeof(c2_b_t))
++   .u.b = malloc(sizeof(c2_b_t))
+  };
+ 
+- p.b->opr1 = p1;
+- p.b->opr2 = p2;
+- p.b->op = op;
++ p.u.b->opr1 = p1;
++ p.u.b->opr2 = p2;
++ p.u.b->op = op;
+ 
+  return p;
+ }

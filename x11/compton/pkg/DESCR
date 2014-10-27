@@ -1,0 +1,13 @@
+Compton is a lightweight, standalone composite manager, suitable for use
+with window managers that do not natively provide compositing functionality.
+
+Compton itself is a fork of xcompmgr-dana, in turn a fork of xcompmgr.
+
+Compton in particular is notable for fixing numerous bugs found in
+its predecessors, and as such, is popular due to its reliability and
+stability. Numerous additional improvements and configuration options
+have also been implemented, including a faster GLX (OpenGL) backend
+(disabled by default), default inactive/active window opacity, window
+frame transparency, window background blur, window color inversion,
+painting rate throttling, VSync, condition-based fine-tune control,
+configuration file reading, and D-Bus control.

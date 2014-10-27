@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_common_h,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
+--- src/common.h.orig	Sun Oct 26 00:50:17 2014
++++ src/common.h	Sun Oct 26 00:50:29 2014
+@@ -1302,7 +1302,7 @@ print_timestamp(session_t *ps) {
+   if (gettimeofday(&tm, NULL)) return;
+ 
+   timeval_subtract(&diff, &tm, &ps->time_start);
+-  printf("[ %5ld.%02ld ] ", diff.tv_sec, diff.tv_usec / 10000);
++  printf("[ %5ld.%02ld ] ", (long int) diff.tv_sec, diff.tv_usec / 10000);
+ }
+ 
+ /**

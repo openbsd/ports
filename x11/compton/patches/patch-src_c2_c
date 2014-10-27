@@ -1,0 +1,142 @@
+$OpenBSD: patch-src_c2_c,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
+
+anonymous unions aren't part of c99, but code is compiled with --std=c99
+(and uses other c99 features that need this).
+
+--- src/c2.c.orig	Sat Oct 25 22:13:39 2014
++++ src/c2.c	Sat Oct 25 22:14:08 2014
+@@ -171,7 +171,7 @@ c2_parse_grp(session_t *ps, const char *pattern, int o
+       else {
+         eles[1] = c2h_comb_tree(ops[2], eles[1], C2_PTR_NULL);
+         assert(eles[1].isbranch);
+-        pele = &eles[1].b->opr2;
++        pele = &eles[1].u.b->opr2;
+       }
+       // The last operator always needs to be reset
+       ops[2] = C2_B_OUNDEFINED;
+@@ -195,7 +195,7 @@ c2_parse_grp(session_t *ps, const char *pattern, int o
+       if ((offset = c2_parse_pattern(ps, pattern, offset, pele)) < 0)
+         goto c2_parse_grp_fail;
+ 
+-      if (!c2_l_postprocess(ps, pele->l))
++      if (!c2_l_postprocess(ps, pele->u.l))
+         goto c2_parse_grp_fail;
+     }
+     // Decrement offset -- we will increment it in loop update
+@@ -205,9 +205,9 @@ c2_parse_grp(session_t *ps, const char *pattern, int o
+     if (neg) {
+       neg = false;
+       if (pele->isbranch)
+-        pele->b->neg = !pele->b->neg;
++        pele->u.b->neg = !pele->u.b->neg;
+       else
+-        pele->l->neg = !pele->l->neg;
++        pele->u.l->neg = !pele->u.l->neg;
+     }
+ 
+     next_expected = false;
+@@ -263,11 +263,11 @@ static int
+ c2_parse_target(session_t *ps, const char *pattern, int offset, c2_ptr_t *presult) {
+   // Initialize leaf
+   presult->isbranch = false;
+-  presult->l = malloc(sizeof(c2_l_t));
+-  if (!presult->l)
++  presult->u.l = malloc(sizeof(c2_l_t));
++  if (!presult->u.l)
+     c2_error("Failed to allocate memory for new leaf.");
+ 
+-  c2_l_t * const pleaf = presult->l;
++  c2_l_t * const pleaf = presult->u.l;
+   memcpy(pleaf, &leaf_def, sizeof(c2_l_t));
+ 
+   // Parse negation marks
+@@ -452,7 +452,7 @@ c2_parse_target(session_t *ps, const char *pattern, in
+  */
+ static int
+ c2_parse_op(const char *pattern, int offset, c2_ptr_t *presult) {
+-  c2_l_t * const pleaf = presult->l;
++  c2_l_t * const pleaf = presult->u.l;
+ 
+   // Parse negation marks
+   C2H_SKIP_SPACES();
+@@ -517,7 +517,7 @@ c2_parse_op(const char *pattern, int offset, c2_ptr_t 
+  */
+ static int
+ c2_parse_pattern(session_t *ps, const char *pattern, int offset, c2_ptr_t *presult) {
+-  c2_l_t * const pleaf = presult->l;
++  c2_l_t * const pleaf = presult->u.l;
+ 
+   // Exists operator cannot have pattern
+   if (!pleaf->op)
+@@ -664,7 +664,7 @@ c2_parse_legacy(session_t *ps, const char *pattern, in
+   if (!pleaf)
+     printf_errfq(1, "(): Failed to allocate memory for new leaf.");
+   presult->isbranch = false;
+-  presult->l = pleaf;
++  presult->u.l = pleaf;
+   memcpy(pleaf, &leaf_def, sizeof(c2_l_t));
+   pleaf->type = C2_L_TSTRING;
+   pleaf->op = C2_L_OEQ;
+@@ -825,7 +825,7 @@ static void
+ c2_free(c2_ptr_t p) {
+   // For a branch element
+   if (p.isbranch) {
+-    c2_b_t * const pbranch = p.b;
++    c2_b_t * const pbranch = p.u.b;
+ 
+     if (!pbranch)
+       return;
+@@ -836,7 +836,7 @@ c2_free(c2_ptr_t p) {
+   }
+   // For a leaf element
+   else {
+-    c2_l_t * const pleaf = p.l;
++    c2_l_t * const pleaf = p.u.l;
+ 
+     if (!pleaf)
+       return;
+@@ -901,7 +901,7 @@ static void
+ c2_dump_raw(c2_ptr_t p) {
+   // For a branch
+   if (p.isbranch) {
+-    const c2_b_t * const pbranch = p.b;
++    const c2_b_t * const pbranch = p.u.b;
+ 
+     if (!pbranch)
+       return;
+@@ -924,7 +924,7 @@ c2_dump_raw(c2_ptr_t p) {
+   }
+   // For a leaf
+   else {
+-    const c2_l_t * const pleaf = p.l;
++    const c2_l_t * const pleaf = p.u.l;
+ 
+     if (!pleaf)
+       return;
+@@ -1219,7 +1219,7 @@ c2_match_once(session_t *ps, win *w, const c2_ptr_t co
+ 
+   // Handle a branch
+   if (cond.isbranch) {
+-    const c2_b_t *pb = cond.b;
++    const c2_b_t *pb = cond.u.b;
+ 
+     if (!pb)
+       return false;
+@@ -1251,7 +1251,7 @@ c2_match_once(session_t *ps, win *w, const c2_ptr_t co
+   }
+   // Handle a leaf
+   else {
+-    const c2_l_t *pleaf = cond.l;
++    const c2_l_t *pleaf = cond.u.l;
+ 
+     if (!pleaf)
+       return false;
+@@ -1276,7 +1276,7 @@ c2_match_once(session_t *ps, win *w, const c2_ptr_t co
+   if (error)
+     result = false;
+ 
+-  if (cond.isbranch ? cond.b->neg: cond.l->neg)
++  if (cond.isbranch ? cond.u.b->neg: cond.u.l->neg)
+     result = !result;
+ 
+   return result;
