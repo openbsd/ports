@@ -1,0 +1,17 @@
+$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.14 2014/10/27 20:55:50 landry Exp $
+
+Dont hardcode gnome-terminal, fallback to xterm
+
+--- driver/XScreenSaver.ad.in.orig	Mon Oct 27 20:37:40 2014
++++ driver/XScreenSaver.ad.in	Mon Oct 27 20:40:38 2014
+@@ -100,8 +100,8 @@ GetViewPortIsFullOfLies: False
+ !   Gnome 2.4, 2.6: (yelp can't display man pages, as of 2.6.3)
+ !
+ @GNOME24@*loadURL: @WITH_BROWSER@ '%s'
+-@GNOME24@*manualCommand: gnome-terminal --title '%s manual' \
+-@GNOME24@		--command '/bin/sh -c "man %s; read foo"'
++@GNOME24@*manualCommand: xterm -sb -fg black -bg gray75 -T '%s manual' \
++@GNOME24@		    -e /bin/sh -c 'man "%s" ; read foo'
+ !
+ !   Gnome 2.2:
+ !
