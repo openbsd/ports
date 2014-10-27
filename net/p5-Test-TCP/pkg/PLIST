@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 09:44:52 landry Exp $
-${P5SITE}/Test/
+@comment $OpenBSD: PLIST,v 1.2 2014/10/27 19:13:05 gonzalo Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/EmptyPort.pm
+${P5SITE}/Test/TCP/
 ${P5SITE}/Test/TCP.pm
+${P5SITE}/Test/TCP/CheckPort.pm
+@man man/man3p/Net::EmptyPort.3p
 @man man/man3p/Test::TCP.3p
+@man man/man3p/Test::TCP::CheckPort.3p

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/27 19:13:05 gonzalo Exp $
 
 COMMENT =		testing TCP program
 
 MODULES =		cpan
-DISTNAME =		Test-TCP-1.13
+DISTNAME =		Test-TCP-2.06
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
