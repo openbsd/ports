@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.21 2014/09/29 08:43:47 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.22 2014/10/27 11:07:18 dcoppa Exp $
 
-Don't reset CPPFLAGS...stupid configure.
+Don't reset CPPFLAGS
 
---- configure.orig	Fri Sep 26 10:57:27 2014
-+++ configure	Mon Sep 29 10:30:38 2014
-@@ -10354,7 +10354,7 @@ if test x$enable_aac = xyes; then
+--- configure.orig	Fri Oct 10 23:50:12 2014
++++ configure	Mon Oct 13 13:35:53 2014
+@@ -12500,7 +12500,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $FAAD_CFLAGS"
  	LIBS="$LIBS $FAAD_LIBS"
@@ -13,7 +13,7 @@ Don't reset CPPFLAGS...stupid configure.
  	ac_fn_c_check_header_mongrel "$LINENO" "faad.h" "ac_cv_header_faad_h" "$ac_includes_default"
  if test "x$ac_cv_header_faad_h" = xyes; then :
  
-@@ -10480,7 +10480,7 @@ if test x$enable_aac = xyes; then
+@@ -12626,7 +12626,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $FAAD_CFLAGS -Werror"
  	LIBS="$LIBS $FAAD_LIBS"
