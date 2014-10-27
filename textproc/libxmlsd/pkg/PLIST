@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/01 12:02:27 naddy Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2014/10/27 13:23:11 gonzalo Exp $
 include/xmlsd.h
 lib/libxmlsd.a
+@lib lib/libxmlsd.so.${LIBxmlsd_VERSION}
 lib/libxmlsd_p.a
 @man man/man3/xmlsd.3
 @man man/man3/xmlsd_add_element.3
