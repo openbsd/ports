@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/07 06:10:15 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/10/27 08:30:20 dcoppa Exp $
 @bin bin/ncmpcpp
 @man man/man1/ncmpcpp.1
 share/examples/ncmpcpp/
 @comment share/examples/ncmpcpp/AUTHORS
 @comment share/examples/ncmpcpp/COPYING
 @comment share/examples/ncmpcpp/NEWS
+share/examples/ncmpcpp/bindings
 share/examples/ncmpcpp/config
-share/examples/ncmpcpp/keys

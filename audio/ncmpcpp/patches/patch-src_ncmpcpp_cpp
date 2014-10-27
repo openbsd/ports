@@ -1,18 +1,15 @@
-$OpenBSD: patch-src_ncmpcpp_cpp,v 1.4 2012/08/08 12:32:10 dcoppa Exp $
+$OpenBSD: patch-src_ncmpcpp_cpp,v 1.5 2014/10/27 08:30:20 dcoppa Exp $
 
-Fix columns generation without configuration file (the text of the
-playlist disappeared in columns display mode when there is no config
-file)
-(upstream git commit 6126def6c5b339c7f43d99c47501dde21d4943b3)
+OpenBSD lacks sigignore()
 
---- src/ncmpcpp.cpp.orig	Sun Apr  1 18:49:09 2012
-+++ src/ncmpcpp.cpp	Wed Aug  8 13:41:05 2012
-@@ -249,6 +249,8 @@ int main(int argc, char **argv)
- 	Config.Read();
- 	Key.Read();
+--- src/ncmpcpp.cpp.orig	Sun Oct 26 19:47:09 2014
++++ src/ncmpcpp.cpp	Sun Oct 26 19:47:59 2014
+@@ -150,7 +150,7 @@ int main(int argc, char **argv)
+ 	signal(SIGPIPE, sighandler);
+ 	signal(SIGWINCH, sighandler);
+ 	// ignore Ctrl-C
+-	sigignore(SIGINT);
++	signal(SIGINT, SIG_IGN);
+ #	endif // !WIN32
  	
-+	Config.GenerateColumns();
-+	
- 	if (getenv("MPD_HOST"))
- 		Mpd.SetHostname(getenv("MPD_HOST"));
- 	if (getenv("MPD_PORT"))
+ 	while (!Actions::ExitMainLoop)

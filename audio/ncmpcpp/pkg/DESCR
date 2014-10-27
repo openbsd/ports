@@ -2,4 +2,4 @@ Ncmpcpp or ncmpc++ is a mpd client with a UI very similar to ncmpc, but
 it provides new useful features such as support for regular expressions
 in the search engine, extended song format, items filtering, last.fm
 support, ability to sort playlists, local filesystem browser and other
-minor functions.
+minor functionalities.

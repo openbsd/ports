@@ -1,19 +1,25 @@
-$OpenBSD: patch-doc_ncmpcpp_1,v 1.1 2012/10/25 13:43:42 dcoppa Exp $
---- doc/ncmpcpp.1.orig	Sun Apr  1 18:49:09 2012
-+++ doc/ncmpcpp.1	Thu Oct 25 15:31:48 2012
-@@ -50,7 +50,6 @@ Switch to previous song and exit.
+$OpenBSD: patch-doc_ncmpcpp_1,v 1.2 2014/10/27 08:30:20 dcoppa Exp $
+--- doc/ncmpcpp.1.orig	Sun Oct 26 19:38:30 2014
++++ doc/ncmpcpp.1	Sun Oct 26 19:40:56 2014
+@@ -1,4 +1,4 @@
+-.TH "ncmpcpp" "1"
++.TH "NCMPCPP" "1"
+ .SH "NAME"
+ ncmpcpp \- An ncurses Music Player Daemon (MPD) client.
+ .SH "SYNOPSIS"
+@@ -26,7 +26,6 @@ Display help.
  .TP
- .B volume [+-]<number>
- Raise/lower volume by given number of percents and exit.
+ .B \-v, \-\-version
+ Display version information.
 -.TP
  .SH "CONFIGURATION"
- When ncmpcpp starts, it tries to read user's settings from the ~/.ncmpcpp/config file. If no user's configuration is found, ncmpcpp uses its default configuration. An example configuration file containing all default values is provided with ncmpcpp and can be found usually in /usr/share/doc/ncmpcpp (exact location may depend on used distribution/OS/configure prefix).
+ When ncmpcpp starts, it tries to read user's settings from the ~/.ncmpcpp/config file. If no user's configuration is found, ncmpcpp uses its default configuration. An example configuration file containing all default values is provided with ncmpcpp and can be usually found in /usr/share/doc/ncmpcpp (exact location may depend on used distribution or configure prefix).
  
-@@ -377,7 +376,6 @@ Color of visualization.
+@@ -366,7 +365,6 @@ Color of visualization.
  .TP 
  .B active_window_border = COLOR
  Color of active window's border.
 -.TP 
- .SH "KEYS"
- When ncmpcpp starts, it tries to read user's keybindings from ~/.ncmpcpp/keys file. If no user's keybindings is found, ncmpcpp uses its default keybindings. An example keybindings file containing all default values is provided with ncmpcpp and can be found usually in /usr/share/doc/ncmpcpp (exact location may depend on used distribution/OS/configure prefix).
+ .SH "BINDINGS"
+ When ncmpcpp starts, it tries to read user's bindings from ~/.ncmpcpp/bindings file. If no bindings file is found, ncmpcpp uses the defaults. An example bindings file with the default values can be found usually in /usr/share/doc/ncmpcpp (exact location may depend on used distribution or configure prefix).
  
