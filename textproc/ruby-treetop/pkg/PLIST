@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/02 20:42:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/27 18:35:10 jasper Exp $
 ${GEM_BIN}/tt${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -13,24 +13,10 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/grammar_composition.markdown
 ${GEM_LIB}/gems/${DISTNAME}/doc/index.markdown
 ${GEM_LIB}/gems/${DISTNAME}/doc/pitfalls_and_advanced_techniques.markdown
 ${GEM_LIB}/gems/${DISTNAME}/doc/semantic_interpretation.markdown
-${GEM_LIB}/gems/${DISTNAME}/doc/site/
 ${GEM_LIB}/gems/${DISTNAME}/doc/site.rb
-${GEM_LIB}/gems/${DISTNAME}/doc/site/contribute.html
-${GEM_LIB}/gems/${DISTNAME}/doc/site/images/
-${GEM_LIB}/gems/${DISTNAME}/doc/site/images/bottom_background.png
-${GEM_LIB}/gems/${DISTNAME}/doc/site/images/middle_background.png
-${GEM_LIB}/gems/${DISTNAME}/doc/site/images/paren_language_output.png
-${GEM_LIB}/gems/${DISTNAME}/doc/site/images/pivotal.gif
-${GEM_LIB}/gems/${DISTNAME}/doc/site/images/top_background.png
-${GEM_LIB}/gems/${DISTNAME}/doc/site/index.html
-${GEM_LIB}/gems/${DISTNAME}/doc/site/pitfalls_and_advanced_techniques.html
-${GEM_LIB}/gems/${DISTNAME}/doc/site/robots.txt
-${GEM_LIB}/gems/${DISTNAME}/doc/site/screen.css
-${GEM_LIB}/gems/${DISTNAME}/doc/site/semantic_interpretation.html
-${GEM_LIB}/gems/${DISTNAME}/doc/site/syntactic_recognition.html
-${GEM_LIB}/gems/${DISTNAME}/doc/site/using_in_ruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc/sitegen.rb
 ${GEM_LIB}/gems/${DISTNAME}/doc/syntactic_recognition.markdown
+${GEM_LIB}/gems/${DISTNAME}/doc/tt.1
 ${GEM_LIB}/gems/${DISTNAME}/doc/using_in_ruby.markdown
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/
@@ -119,6 +105,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/terminal_symbol_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/test_grammar.treetop
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/test_grammar.tt
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/test_grammar_do.treetop
+${GEM_LIB}/gems/${DISTNAME}/spec/compiler/test_grammar_magic_coding.treetop
+${GEM_LIB}/gems/${DISTNAME}/spec/compiler/test_grammar_magic_encoding.treetop
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/tt_compiler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/zero_or_more_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/composition/
