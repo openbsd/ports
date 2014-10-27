@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.11 2014/08/22 02:22:25 gsoares Exp $
+$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.12 2014/10/27 13:16:48 gonzalo Exp $
 
---- tools/stunnel.conf-sample.in.orig	Thu May  8 05:31:52 2014
-+++ tools/stunnel.conf-sample.in	Wed Aug 20 19:18:23 2014
+--- tools/stunnel.conf-sample.in.orig	Wed Oct 15 09:04:20 2014
++++ tools/stunnel.conf-sample.in	Thu Oct 23 10:32:30 2014
 @@ -9,13 +9,13 @@
  
  ; A copy of some devices and system files is needed within the chroot jail
@@ -44,5 +44,5 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.11 2014/08/22 02:22:25 gsoares 
 -;CRLfile = @prefix@/etc/stunnel/crls.pem
 +;CRLfile = @sysconfdir@/ssl/crls.pem
  
- ; Disable support for insecure SSLv2 protocol
- options = NO_SSLv2
+ ; Enable support for the insecure SSLv2 protocol
+ ;options = -NO_SSLv2
