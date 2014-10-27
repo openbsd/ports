@@ -1,7 +1,0 @@
-You might want to append Smarty directory to `include_path' found in
-PHP configuration file ${PREFIX}/conf/php.ini. It may look like this:
-
-include_path = ".:/pear/lib:/var/www/pear/lib:/smarty:/var/www/smarty"
-
-Note: First entry (`/smarty') is necessary because on OpenBSD Apache runs
-      in chroot by default.
