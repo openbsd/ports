@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.7 2014/09/05 09:50:18 dcoppa Exp $
---- src/Plugins/Monitors.hs.orig	Tue Jul  1 18:46:51 2014
-+++ src/Plugins/Monitors.hs	Fri Sep  5 11:19:40 2014
+$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.8 2014/10/28 17:27:15 dcoppa Exp $
+--- src/Plugins/Monitors.hs.orig	Sat Oct 11 20:46:25 2014
++++ src/Plugins/Monitors.hs	Tue Oct 28 18:14:37 2014
 @@ -21,20 +21,20 @@ import Plugins
  
  import Plugins.Monitors.Common (runM, runMD)
@@ -100,27 +100,27 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.7 2014/09/05 09:50:18 dcoppa Exp $
 +--  alias (Cpu _ _) = "cpu"
 +--  alias (MultiCpu _ _) = "multicpu"
      alias (Battery _ _) = "battery"
--    alias (BatteryP _ _ _)= "battery"
+-    alias (BatteryP {})= "battery"
 -    alias (BatteryN _ _ _ a)= a
 -    alias (Brightness _ _) = "bright"
 -    alias (CpuFreq _ _) = "cpufreq"
 -    alias (TopProc _ _) = "top"
 -    alias (TopMem _ _) = "topmem"
 -    alias (CoreTemp _ _) = "coretemp"
--    alias (DiskU _ _ _) = "disku"
--    alias (DiskIO _ _ _) = "diskio"
+-    alias (DiskU {}) = "disku"
+-    alias (DiskIO {}) = "diskio"
 -    alias (Uptime _ _) = "uptime"
-+--  alias (BatteryP _ _ _)= "battery"
++--  alias (BatteryP {})= "battery"
 +--  alias (BatteryN _ _ _ a)= a
 +--  alias (Brightness _ _) = "bright"
 +--  alias (CpuFreq _ _) = "cpufreq"
 +--  alias (TopProc _ _) = "top"
 +--  alias (TopMem _ _) = "topmem"
 +--  alias (CoreTemp _ _) = "coretemp"
-+--  alias (DiskU _ _ _) = "disku"
-+--  alias (DiskIO _ _ _) = "diskio"
++--  alias (DiskU {}) = "disku"
++--  alias (DiskIO {}) = "diskio"
 +--  alias (Uptime _ _) = "uptime"
-     alias (CatInt n _ _ _) = "cat" ++ (show n)
+     alias (CatInt n _ _ _) = "cat" ++ show n
  #ifdef IWLIB
      alias (Wireless i _ _) = i ++ "wi"
 @@ -133,27 +133,27 @@ instance Exec Monitors where
@@ -169,4 +169,4 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.7 2014/09/05 09:50:18 dcoppa Exp $
 +--  start (Uptime a r) = runM a uptimeConfig runUptime r
      start (CatInt _ s a r) = runM a catIntConfig (runCatInt s) r
  #ifdef IWLIB
-     start (Wireless i a r) = runM (a ++ [i]) wirelessConfig runWireless r
+     start (Wireless i a r) = runM a wirelessConfig (runWireless i) r

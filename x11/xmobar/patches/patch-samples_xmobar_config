@@ -1,24 +1,22 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.7 2014/04/15 12:08:06 dcoppa Exp $
---- samples/xmobar.config.orig	Fri Mar 14 00:17:19 2014
-+++ samples/xmobar.config	Tue Apr 15 13:33:17 2014
-@@ -1,23 +1,21 @@
+$OpenBSD: patch-samples_xmobar_config,v 1.8 2014/10/28 17:27:15 dcoppa Exp $
+--- samples/xmobar.config.orig	Sat Oct 11 20:46:25 2014
++++ samples/xmobar.config	Tue Oct 28 18:07:37 2014
+@@ -1,4 +1,4 @@
 -Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
 +Config { font = "fixed"
         , borderColor = "black"
         , border = TopB
         , bgColor = "black"
-        , fgColor = "grey"
-        , position = Top
-+       , allDesktops = True
-        , lowerOnStart = True
-        , pickBroadest = False
-+       , overrideRedirect = True
-        , persistent = False
-        , hideOnStart = False
-        , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
--                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
--                    , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
--                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+@@ -16,19 +16,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+                                           "--normal","green",
+                                           "--high","red",
+                                           "--low","lightblue"] 36000
+-                    , Run Network "eth0" ["-L","0","-H","32",
+-                                          "--normal","green","--high","red"] 10
+-                    , Run Network "eth1" ["-L","0","-H","32",
+-                                          "--normal","green","--high","red"] 10
+-                    , Run Cpu ["-L","3","-H","50",
+-                               "--normal","green","--high","red"] 10
 -                    , Run Memory ["-t","Mem: <usedratio>%"] 10
 -                    , Run Swap [] 10
 +                    , Run Battery ["-t","AC: <status> Batt: <left> <minleft>"] 10
@@ -27,6 +25,7 @@ $OpenBSD: patch-samples_xmobar_config,v 1.7 2014/04/15 12:08:06 dcoppa Exp $
                      ]
         , sepChar = "%"
         , alignSep = "}{"
--       , template = "%cpu% | %memory% * %swap% | %eth0% - %eth1% }{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
+-       , template = "%cpu% | %memory% * %swap% | %eth0% - %eth1% }\
+-                    \{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
 +       , template = "%battery% }{ <fc=#ee9a00>%date%</fc> | %EGPF% | %uname%"
         }
