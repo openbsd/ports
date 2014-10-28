@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/12/22 10:30:41 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2014/10/28 01:09:22 brad Exp $
 include/libgadu.h
 lib/libgadu.a
 lib/libgadu.la
-lib/pkgconfig/
+@lib lib/libgadu.so.${LIBgadu_VERSION}
 lib/pkgconfig/libgadu.pc
