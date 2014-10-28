@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86MCAsmInfo_cpp,v 1.1 2014/10/28 17:52:05 brad Exp $
+
+Revert workaround for buggy GNU assembler with OpenBSD.
+
+--- lib/Target/X86/MCTargetDesc/X86MCAsmInfo.cpp.orig	Fri Oct 17 03:18:59 2014
++++ lib/Target/X86/MCTargetDesc/X86MCAsmInfo.cpp	Fri Oct 17 03:38:34 2014
+@@ -111,12 +111,6 @@ X86ELFMCAsmInfo::X86ELFMCAsmInfo(const Triple &T) {
+   // Exceptions handling
+   ExceptionsType = ExceptionHandling::DwarfCFI;
+ 
+-  // OpenBSD and Bitrig have buggy support for .quad in 32-bit mode, just split
+-  // into two .words.
+-  if ((T.getOS() == Triple::OpenBSD || T.getOS() == Triple::Bitrig) &&
+-       T.getArch() == Triple::x86)
+-    Data64bitsDirective = 0;
+-
+   // Always enable the integrated assembler by default.
+   // Clang also enabled it when the OS is Solaris but that is redundant here.
+   UseIntegratedAssembler = true;
