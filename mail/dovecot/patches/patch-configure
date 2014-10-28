@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.9 2014/10/28 09:19:54 sthen Exp $
+--- configure.orig	Mon Oct 27 11:49:14 2014
++++ configure	Mon Oct 27 11:49:23 2014
+@@ -25263,7 +25263,7 @@ _ACEOF
+ 
+ 
+ CFLAGS="$CFLAGS $EXTRA_CFLAGS"
+-NOPLUGIN_LDFLAGS="-no-undefined"
++NOPLUGIN_LDFLAGS="-no-undefined -lpthread"
+ if test "$with_gnu_ld" = yes; then
+   NOPLUGIN_LDFLAGS="$NOPLUGIN_LDFLAGS -Wl,--as-needed"
+ fi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2014/10/25 22:06:40 brad Exp $
+# $OpenBSD: Makefile,v 1.228 2014/10/28 09:19:54 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.2
 V_DOVECOT=	2.2.15
+REVISION-server=0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -35,7 +36,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-server=	bz2 c crypto lz4 lzma sqlite3 ssl z ${MODLIBICONV_WANTLIB}
+WANTLIB-server=	bz2 c crypto lz4 lzma pthread sqlite3 ssl z ${MODLIBICONV_WANTLIB}
 WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl stdc++ z
 WANTLIB-postgresql= crypto pq>=4 ssl
