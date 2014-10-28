@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/28 01:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2014/10/28 12:30:55 brad Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
-DISTNAME=	libgadu-1.12.0
+VER=		1.12.0
+DISTNAME=	libgadu-${VER}
+REVISION=	0
 EPOCH=		0
 CATEGORIES=	net
-MASTER_SITES=	${HOMEPAGE}/files/
+MASTER_SITES=	http://github.com/wojtekka/libgadu/releases/download/${VER}/
 
 SHARED_LIBS=	gadu	7.0
 
-HOMEPAGE=	http://toxygen.net/libgadu/
+HOMEPAGE=	http://http://libgadu.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
