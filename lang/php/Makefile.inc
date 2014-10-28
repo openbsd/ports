@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.58 2014/10/28 12:46:21 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.59 2014/10/28 13:07:47 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -391,13 +391,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-fastcgi-${PV}
-
-.if ${V:M5.3*} || ${V:M5.4*} || ${V:M5.5*}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/fpm/php-fpm ${PREFIX}/sbin/php-fpm-${PV}
 	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
-.endif
 
 	${INSTALL_DATA} ${.CURDIR}/../files/php.conf \
 		${PREFIX}/share/examples/php-${PV}/php.conf
