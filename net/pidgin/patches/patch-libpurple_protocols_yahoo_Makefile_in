@@ -1,7 +1,7 @@
-$OpenBSD: patch-libpurple_protocols_yahoo_Makefile_in,v 1.8 2013/03/08 01:03:09 brad Exp $
---- libpurple/protocols/yahoo/Makefile.in.orig	Mon Feb 11 04:17:22 2013
-+++ libpurple/protocols/yahoo/Makefile.in	Wed Feb 13 14:55:46 2013
-@@ -101,7 +101,7 @@ am__v_lt_0 = --silent
+$OpenBSD: patch-libpurple_protocols_yahoo_Makefile_in,v 1.9 2014/10/28 01:14:23 brad Exp $
+--- libpurple/protocols/yahoo/Makefile.in.orig	Thu Oct 16 20:20:20 2014
++++ libpurple/protocols/yahoo/Makefile.in	Thu Oct 23 04:31:11 2014
+@@ -130,7 +130,7 @@ am__v_lt_1 = 
  libyahoo_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libyahoo_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -10,7 +10,7 @@ $OpenBSD: patch-libpurple_protocols_yahoo_Makefile_in,v 1.8 2013/03/08 01:03:09 
  @STATIC_YAHOO_FALSE@libyahoojp_la_DEPENDENCIES = libymsg.la
  am__libyahoojp_la_SOURCES_DIST = libyahoojp.c
  @STATIC_YAHOO_FALSE@am_libyahoojp_la_OBJECTS = libyahoojp.lo
-@@ -109,7 +109,7 @@ libyahoojp_la_OBJECTS = $(am_libyahoojp_la_OBJECTS)
+@@ -138,7 +138,7 @@ libyahoojp_la_OBJECTS = $(am_libyahoojp_la_OBJECTS)
  libyahoojp_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libyahoojp_la_LDFLAGS) $(LDFLAGS) -o $@

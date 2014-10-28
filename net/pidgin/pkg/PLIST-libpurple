@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.21 2014/02/06 07:44:15 brad Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.22 2014/10/28 01:14:23 brad Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -145,9 +145,9 @@ share/purple/ca-certs/Thawte_Premium_Server_CA.pem
 share/purple/ca-certs/Thawte_Primary_Root_CA.pem
 share/purple/ca-certs/ValiCert_Class_2_VA.pem
 share/purple/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
-share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G2.pem
-share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
-share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5_2.pem
+share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G2.pem
+share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G5-2.pem
+share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G5.pem
 share/purple/ca-certs/VeriSign_International_Server_Class_3_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1

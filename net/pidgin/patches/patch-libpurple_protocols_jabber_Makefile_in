@@ -1,12 +1,12 @@
-$OpenBSD: patch-libpurple_protocols_jabber_Makefile_in,v 1.4 2013/03/08 01:03:09 brad Exp $
---- libpurple/protocols/jabber/Makefile.in.orig	Mon Feb 11 04:17:20 2013
-+++ libpurple/protocols/jabber/Makefile.in	Wed Feb 13 14:55:46 2013
-@@ -160,7 +160,7 @@ libxmpp_la_OBJECTS = $(am_libxmpp_la_OBJECTS)
+$OpenBSD: patch-libpurple_protocols_jabber_Makefile_in,v 1.5 2014/10/28 01:14:23 brad Exp $
+--- libpurple/protocols/jabber/Makefile.in.orig	Thu Oct 16 20:20:19 2014
++++ libpurple/protocols/jabber/Makefile.in	Sun Oct 26 16:45:40 2014
+@@ -191,7 +191,7 @@ libxmpp_la_OBJECTS = $(am_libxmpp_la_OBJECTS)
  libxmpp_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libxmpp_la_LDFLAGS) $(LDFLAGS) -o $@
 -@STATIC_JABBER_FALSE@am_libxmpp_la_rpath = -rpath $(pkgdir)
 +@STATIC_JABBER_FALSE@am_libxmpp_la_rpath = -rpath $(pkgdir) -Wl,-rpath,$(pkgdir)
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+ am__v_P_0 = false

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libpurple_protocols_oscar_Makefile_in,v 1.21 2013/03/08 01:03:09 brad Exp $
---- libpurple/protocols/oscar/Makefile.in.orig	Mon Feb 11 04:17:21 2013
-+++ libpurple/protocols/oscar/Makefile.in	Wed Feb 13 14:55:46 2013
-@@ -102,7 +102,7 @@ am__v_lt_0 = --silent
+$OpenBSD: patch-libpurple_protocols_oscar_Makefile_in,v 1.22 2014/10/28 01:14:23 brad Exp $
+--- libpurple/protocols/oscar/Makefile.in.orig	Thu Oct 16 20:20:20 2014
++++ libpurple/protocols/oscar/Makefile.in	Thu Oct 23 04:31:11 2014
+@@ -130,7 +130,7 @@ am__v_lt_1 = 
  libaim_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libaim_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -10,7 +10,7 @@ $OpenBSD: patch-libpurple_protocols_oscar_Makefile_in,v 1.21 2013/03/08 01:03:09
  @STATIC_OSCAR_FALSE@libicq_la_DEPENDENCIES = liboscar.la
  am__libicq_la_SOURCES_DIST = libicq.c
  @STATIC_OSCAR_FALSE@am_libicq_la_OBJECTS = libicq.lo
-@@ -110,7 +110,7 @@ libicq_la_OBJECTS = $(am_libicq_la_OBJECTS)
+@@ -138,7 +138,7 @@ libicq_la_OBJECTS = $(am_libicq_la_OBJECTS)
  libicq_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libicq_la_LDFLAGS) $(LDFLAGS) -o $@

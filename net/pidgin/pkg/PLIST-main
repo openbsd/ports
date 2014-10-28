@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2014/02/06 07:44:15 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2014/10/28 01:14:23 brad Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -118,19 +118,17 @@ share/locale/he/LC_MESSAGES/pidgin.mo
 share/locale/hi/LC_MESSAGES/pidgin.mo
 share/locale/hr/LC_MESSAGES/pidgin.mo
 share/locale/hu/LC_MESSAGES/pidgin.mo
-share/locale/hy/LC_MESSAGES/pidgin.mo
 share/locale/id/LC_MESSAGES/pidgin.mo
 share/locale/it/LC_MESSAGES/pidgin.mo
 share/locale/ja/LC_MESSAGES/pidgin.mo
 share/locale/ka/LC_MESSAGES/pidgin.mo
+share/locale/kk/LC_MESSAGES/pidgin.mo
 share/locale/km/LC_MESSAGES/pidgin.mo
 share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ko/LC_MESSAGES/pidgin.mo
 share/locale/ku/LC_MESSAGES/pidgin.mo
-share/locale/lo/
-share/locale/lo/LC_MESSAGES/
-share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
+share/locale/lv/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
 share/locale/mhr/
 share/locale/mhr/LC_MESSAGES/
@@ -138,9 +136,6 @@ share/locale/mhr/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/mn/LC_MESSAGES/pidgin.mo
 share/locale/mr/LC_MESSAGES/pidgin.mo
-share/locale/ms_MY/
-share/locale/ms_MY/LC_MESSAGES/
-share/locale/ms_MY/LC_MESSAGES/pidgin.mo
 share/locale/my_MM/
 share/locale/my_MM/LC_MESSAGES/
 share/locale/my_MM/LC_MESSAGES/pidgin.mo
@@ -171,6 +166,7 @@ share/locale/ta/LC_MESSAGES/pidgin.mo
 share/locale/te/LC_MESSAGES/pidgin.mo
 share/locale/th/LC_MESSAGES/pidgin.mo
 share/locale/tr/LC_MESSAGES/pidgin.mo
+share/locale/tt/LC_MESSAGES/pidgin.mo
 share/locale/uk/LC_MESSAGES/pidgin.mo
 share/locale/ur/LC_MESSAGES/pidgin.mo
 share/locale/vi/LC_MESSAGES/pidgin.mo

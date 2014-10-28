@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2014/02/06 07:44:15 brad Exp $
+# $OpenBSD: Makefile,v 1.122 2014/10/28 01:14:23 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.10.9
+VERSION=	2.10.10
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -33,17 +33,17 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 idn m pcre pthread util xml2 z
+WANTLIB=	c dbus-1 dbus-glib-1 ffi gadu gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gthread-2.0 idn m pcre pthread xml2 z
 WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 gtk-x11-2.0 \
 		harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread-stubs purple stdc++ xcb-render xcb-shm xcb \
 		${WANTLIB}
-WANTLIB-libpurple= crypto gadu>=5 meanwhile ssl silc>=7 silcclient>=5 \
-		${WANTLIB}
-WANTLIB-finch=	X11 ncursesw panelw purple xcb ${WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-libpurple= crypto meanwhile ssl silc silcclient ${WANTLIB}
+WANTLIB-finch=	X11 ncursesw panelw purple util xcb ${WANTLIB} \
+		${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -66,7 +66,7 @@ LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
 			devel/libidn \
 			devel/silc-toolkit \
 			net/meanwhile \
-			net/libgadu>=1.11.0
+			net/libgadu>=1.12.0
 
 MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.7 2011/12/13 14:42:55 jasper Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.8 2014/10/28 01:14:23 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -150,7 +150,7 @@ ssl_openssl_connect(PurpleSslConnection *gsc)
 
 	/*
 	 * allocate a new SSL_CTX object
-	*/
+	 */
 	openssl_data->ssl_ctx = SSL_CTX_new(SSLv23_client_method());
 	if (openssl_data->ssl_ctx == NULL) {
 		purple_debug_error("openssl", "SSL_CTX_new failed\n");
@@ -163,9 +163,9 @@ ssl_openssl_connect(PurpleSslConnection *gsc)
 	}
 
 	/*
-	 * disable SSLv2
-	*/
-	SSL_CTX_set_options(openssl_data->ssl_ctx, SSL_OP_NO_SSLv2);
+	 * disable SSLv2 and SSLv3
+	 */
+	SSL_CTX_set_options(openssl_data->ssl_ctx, (SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3));
 
 	/*
 	 * allocate a new SSL object
