@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2014/09/08 08:23:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.23 2014/10/28 09:13:23 dcoppa Exp $
 
 COMMENT =		large library of utility functions
 
 DISTNAME =		MissingH-1.2.1.0
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jgoerzen/missingh/wiki
 
