@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2014/04/11 09:35:04 giovanni Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2014/10/28 09:19:29 giovanni Exp $
 --- Makefile.in.orig	Mon Nov 11 19:58:27 2013
-+++ Makefile.in	Sun Jan 12 17:31:43 2014
++++ Makefile.in	Tue Oct 28 09:01:02 2014
 @@ -654,7 +654,7 @@ CLEANFILES = authldaprc.h authmysqlrc.h authsqliterc.h
  
  DISTCLEANFILES = dbobj.config README_authlib.html
@@ -46,3 +46,12 @@ $OpenBSD: patch-Makefile_in,v 1.4 2014/04/11 09:35:04 giovanni Exp $
  include_HEADERS = courier_auth_config.h courierauth.h courierauthsasl.h \
  	courierauthsaslclient.h courierauthdebug.h courierauthstaticlist.h
  
+@@ -822,7 +822,7 @@ authdaemondprog_LDADD = $(LIBLTDL) libcourierauthcommo
+ 	libs/libhmac/libhmac.la libs/md5/libmd5.la libs/sha1/libsha1.la \
+ 	libs/rfc822/libencode.la libs/numlib/libnumlib.la
+ 
+-authdaemondprog_LDFLAGS = -export-dynamic $(modules:%=-dlopen %) @NETLIBS@
++authdaemondprog_LDFLAGS = -export-dynamic $(modules:%=-dlopen %) -lpthread @NETLIBS@
+ authdaemontest_SOURCES = authdaemontest.c
+ authdaemontest_DEPENDENCIES = libcourierauthcommon.la
+ authdaemontest_LDADD = libcourierauthcommon.la @NETLIBS@
