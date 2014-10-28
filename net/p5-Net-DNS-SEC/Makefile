@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/22 13:44:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/28 20:00:32 gonzalo Exp $
 
 COMMENT=	extends the Net::DNS module with DNSSEC functionality
 
 MODULES=	cpan
-DISTNAME=	Net-DNS-SEC-0.18
-REVISION=	0
+DISTNAME=	Net-DNS-SEC-0.20
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.net-dns.org/
@@ -23,6 +22,8 @@ RUN_DEPENDS=	mail/p5-MIME-Base32 \
 		security/p5-Crypt-OpenSSL-DSA>=0.10 \
 		security/p5-Crypt-OpenSSL-Bignum>=0.03 \
 		security/p5-Digest-SHA1
+
+MAKE_ENV+=		TEST_POD=1
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	demo
