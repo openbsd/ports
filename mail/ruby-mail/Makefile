@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/28 19:17:38 jasper Exp $
 
 COMMENT=	easy email delivery and testing for ruby
 
-DISTNAME=	mail-2.3.0
-REVISION =	1
+DISTNAME=	mail-2.6.1
 CATEGORIES=	mail
 
 # MIT License
@@ -12,9 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS= 	devel/ruby-i18n,${MODRUBY_FLAVOR}>=0.4.0 \
-		textproc/ruby-treetop,${MODRUBY_FLAVOR}>=1.4.8,<1.5 \
-		mail/ruby-mime-types,${MODRUBY_FLAVOR}>=1.16,<2.0
+RUN_DEPENDS= 	mail/ruby-mime-types,${MODRUBY_FLAVOR}>=1.16,<3.0
 
 CONFIGURE_STYLE=ruby gem
 
