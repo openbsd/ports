@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2014/07/16 09:11:43 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2014/10/28 08:42:47 jca Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -11,7 +11,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		28
+REVISION-main=		29
 REVISION-el=		7
 REVISION-leim=		7
 
@@ -40,13 +40,14 @@ LDFLAGS=		-Z -L${LOCALBASE}/lib -nopie
 CFLAGS +=		-fno-pie
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS}"
+			LDFLAGS="${LDFLAGS}" \
+			ac_cv_lib_ossaudio__oss_ioctl=no
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"
 
 SUBST_VARS=		GCCARCH VERSION
 
-WANTLIB-main=		c m ncurses ossaudio
+WANTLIB-main=		c m ncurses
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
