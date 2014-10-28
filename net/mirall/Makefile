@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/03 09:53:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2014/10/28 09:02:57 kirby Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		mirall-1.4.2
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		owncloudsync 0.0
 
