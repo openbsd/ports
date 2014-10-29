@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/16 18:03:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/29 22:56:18 brad Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -36,6 +36,7 @@ include/dovecot/sieve/sieve-error.h
 include/dovecot/sieve/sieve-ext-copy.h
 include/dovecot/sieve/sieve-ext-enotify.h
 include/dovecot/sieve/sieve-ext-environment.h
+include/dovecot/sieve/sieve-ext-mailbox.h
 include/dovecot/sieve/sieve-ext-variables.h
 include/dovecot/sieve/sieve-extensions.h
 include/dovecot/sieve/sieve-generator.h
@@ -51,11 +52,12 @@ include/dovecot/sieve/sieve-plugins.h
 include/dovecot/sieve/sieve-result.h
 include/dovecot/sieve/sieve-runtime-trace.h
 include/dovecot/sieve/sieve-runtime.h
-include/dovecot/sieve/sieve-script-file.h
 include/dovecot/sieve/sieve-script-private.h
 include/dovecot/sieve/sieve-script.h
 include/dovecot/sieve/sieve-settings.h
 include/dovecot/sieve/sieve-smtp.h
+include/dovecot/sieve/sieve-storage-private.h
+include/dovecot/sieve/sieve-storage.h
 include/dovecot/sieve/sieve-stringlist.h
 include/dovecot/sieve/sieve-types.h
 include/dovecot/sieve/sieve-validator.h
