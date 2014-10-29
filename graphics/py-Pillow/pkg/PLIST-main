@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/08/25 20:15:28 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/10/29 22:12:38 landry Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-docs[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-main[,python2.4][,python2.5][,python2.6][,python2.7]
+bin/createfontdatachunk
 bin/enhancer
 bin/explode
 bin/gifmaker
@@ -130,6 +131,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/MicImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MicImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/MpegImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MpegImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/MpoImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/MpoImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO-README.md
