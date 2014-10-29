@@ -1,6 +1,0 @@
-wdsetup - Western Digital and SMC ethernet card configuration program
-
-Wdsetup is used to configure the i/o address, interrupt line, ram
-size, ram base address, wait states, network connection, rom size,
-and rom base address of the Western Digital (now SMC) WD8013, WD8003,
-WD8115, and WD8216 series ISA ethernet cards.
