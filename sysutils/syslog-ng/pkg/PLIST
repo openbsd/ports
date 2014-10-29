@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/03/31 17:06:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/10/29 09:14:50 ajacoutot Exp $
 @bin bin/loggen
 @bin bin/pdbtool
 bin/update-patterndb
@@ -110,10 +110,10 @@ lib/syslog-ng/libsystem-source.so
 @bin sbin/syslog-ng
 @bin sbin/syslog-ng-ctl
 share/examples/syslog-ng/
-@sample ${SYSCONFDIR}/syslog-ng/
+@sample ${SYSCONFDIR}/
 share/examples/syslog-ng/patterndb.d/
 share/examples/syslog-ng/scl.conf
 share/examples/syslog-ng/syslog-ng.conf
 share/examples/syslog-ng/syslog-ng.conf.openbsd
-@sample ${SYSCONFDIR}/syslog-ng/syslog-ng.conf
+@sample ${SYSCONFDIR}/syslog-ng.conf
 @rcscript ${RCDIR}/syslog_ng
