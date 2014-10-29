@@ -1,25 +1,23 @@
-# OpenBSD makefile for:	newsfetch
-# Version required:	1.0
-# Date created:		28 April 1998
-# Whom:			Ejovi Nuwere <ejovi@ejovi.net>
-#
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:58 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.24 2014/10/29 00:07:17 jca Exp $
 
 COMMENT=	download news articles from NNTP server
 
 DISTNAME=	newsfetch-1.21
+REVISION=	0
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=system/news/readers/}
 
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c 
+WANTLIB=	c
 
-MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+FAKE_FLAGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_MAN="${INSTALL_MAN}"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
+
+ALL_TARGET=	newsfetch
 
 .include <bsd.port.mk>
