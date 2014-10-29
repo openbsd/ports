@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.186 2014/10/27 15:28:21 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.187 2014/10/29 12:07:02 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -448,6 +448,7 @@ my $obsolete_reason = {
 	'libgee06' => 3,
 	'smarty' => 2,
 	'smarty-docs' => 2,
+	'wdsetup' => 0,
 };
 
 # ->is_base_system($handle, $state):
