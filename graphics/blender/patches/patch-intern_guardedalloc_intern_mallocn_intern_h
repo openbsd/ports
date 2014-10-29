@@ -1,6 +1,6 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_intern_h,v 1.1 2014/03/24 21:16:15 pascal Exp $
---- intern/guardedalloc/intern/mallocn_intern.h.orig	Wed Mar 19 23:05:25 2014
-+++ intern/guardedalloc/intern/mallocn_intern.h	Fri Mar 21 08:55:15 2014
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_intern_h,v 1.2 2014/10/29 22:55:06 brad Exp $
+--- intern/guardedalloc/intern/mallocn_intern.h.orig	Wed Jun 25 16:43:52 2014
++++ intern/guardedalloc/intern/mallocn_intern.h	Sun Oct 19 01:17:43 2014
 @@ -56,6 +56,8 @@
  #  define HAVE_MALLOC_STATS
  #elif defined(__FreeBSD__)
@@ -10,3 +10,13 @@ $OpenBSD: patch-intern_guardedalloc_intern_mallocn_intern_h,v 1.1 2014/03/24 21:
  #elif defined(__APPLE__)
  #  include <malloc/malloc.h>
  #  define malloc_usable_size malloc_size
+@@ -85,7 +87,8 @@
+ #  define UNLIKELY(x)     (x)
+ #endif
+ 
+-#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__NetBSD__) && \
++	!defined(__OpenBSD__)
+ // Needed for memalign on Linux and _aligned_alloc on Windows.
+ #  ifdef FREE_WINDOWS
+ /* make sure _aligned_malloc is included */
