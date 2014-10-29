@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:08 espie Exp $
-bin/swfplayer
-share/doc/flash/
-share/doc/flash/README
