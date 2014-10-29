@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.188 2014/10/29 14:51:21 stsp Exp $
+# $OpenBSD: Quirks.pm,v 1.189 2014/10/29 20:56:17 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -450,6 +450,7 @@ my $obsolete_reason = {
 	'smarty-docs' => 2,
 	'wdsetup' => 0,
 	'pptp' => 0,
+	'aumix' => 0,
 };
 
 # ->is_base_system($handle, $state):
