@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/08/10 07:51:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/10/29 10:49:10 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -1155,6 +1155,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/location
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/locationembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/locationmodel.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/locationmodel.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/mediaattrembedlist.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/mediaattrembedlist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/mediabackreflist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/mediabackreflist.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/nameembedlist.py
@@ -1701,6 +1703,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/gramplet.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/gramplet.gpr.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/leak.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/leak.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/locations.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/locations.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/mediapreview.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/mediapreview.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/metadataviewer.py
@@ -2539,6 +2543,7 @@ share/locale/da/LC_MESSAGES/gramps.mo
 share/locale/de/LC_MESSAGES/gramps.mo
 share/locale/el/LC_MESSAGES/gramps.mo
 share/locale/en_GB/LC_MESSAGES/gramps.mo
+share/locale/eo/LC_MESSAGES/gramps.mo
 share/locale/es/LC_MESSAGES/gramps.mo
 share/locale/fi/LC_MESSAGES/gramps.mo
 share/locale/fr/LC_MESSAGES/gramps.mo
@@ -2560,6 +2565,7 @@ share/locale/ru/LC_MESSAGES/gramps.mo
 share/locale/sk/LC_MESSAGES/gramps.mo
 share/locale/sl/LC_MESSAGES/gramps.mo
 share/locale/sq/LC_MESSAGES/gramps.mo
+share/locale/sr/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
 share/locale/uk/LC_MESSAGES/gramps.mo
 share/locale/vi/LC_MESSAGES/gramps.mo
