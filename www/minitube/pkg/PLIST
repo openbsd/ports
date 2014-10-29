@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/07/22 13:03:27 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/10/29 08:18:23 dcoppa Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/icons/hicolor/128x128/apps/minitube.png
@@ -37,6 +37,7 @@ share/minitube/locale/he_IL.qm
 share/minitube/locale/hr.qm
 share/minitube/locale/hu.qm
 share/minitube/locale/ia.qm
+share/minitube/locale/id.qm
 share/minitube/locale/it.qm
 share/minitube/locale/ja_JP.qm
 share/minitube/locale/ky.qm
