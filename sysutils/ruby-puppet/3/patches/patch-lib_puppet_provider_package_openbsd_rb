@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.24 2014/10/29 19:35:31 jasper Exp $
+
+Allow for installing a specific version if multiple are found. Unbreaks installing
+specific versions of openldap-server, php, python, etc.
+
+--- lib/puppet/provider/package/openbsd.rb.orig	Tue Oct 21 23:52:27 2014
++++ lib/puppet/provider/package/openbsd.rb	Wed Oct 29 16:57:28 2014
+@@ -159,7 +159,16 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+         # Don't depend on get_version for updates.
+         full_name = @resource[:name]
+       else
+-        full_name = [ @resource[:name], get_version || @resource[:ensure], @resource[:flavor] ].join('-').chomp('-').chomp('-')
++        # If :ensure contains a version, use that instead of looking it up.
++        # This allows for installing packages with the same stem, but multiple
++        # version such as openldap-server.
++        if /(\d[^-]*)$/.match(@resource[:ensure].to_s)
++          use_version = @resource[:ensure]
++        else
++          use_version = get_version
++        end
++
++        full_name = [ @resource[:name], use_version, @resource[:flavor] ].join('-').chomp('-').chomp('-')
+       end
+     else
+       e_vars = {}
