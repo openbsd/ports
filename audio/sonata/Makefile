@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.47 2014/09/29 07:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2014/10/29 09:06:35 ajacoutot Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
 MODPY_EGG_VERSION=1.7a2
-# git describe (v1.7a2.r58.g2c533b3)
-DISTNAME=	sonata-${MODPY_EGG_VERSION}258
+# git describe (v1.7a2-62-gace5e33)
+DISTNAME=	sonata-${MODPY_EGG_VERSION}262
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	audio
 
-GH_COMMIT=	2c533b3a05d05135ff955d7ddae26a8c6f632c80
+GH_COMMIT=	ace5e33f3e4e587c34476ac0f50fe66fc3a26c96
 GH_ACCOUNT=	multani
 GH_PROJECT=	sonata
 
-HOMEPAGE=	https://github.com/multani/sonata
+HOMEPAGE=	http://www.nongnu.org/sonata/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
