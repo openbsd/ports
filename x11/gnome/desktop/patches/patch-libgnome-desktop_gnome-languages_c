@@ -1,9 +1,12 @@
-$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.8 2014/04/14 17:29:58 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.9 2014/10/29 14:21:37 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=710412
+From 093e0a549c2ab2e465494105126ea7046f26e047 Mon Sep 17 00:00:00 2001
+From: Rui Matos <tiagomatos@gmail.com>
+Date: Mon, 20 Jan 2014 22:38:10 +0100
+Subject: languages: Use a more broadly compatible locale codeset suffix
 
---- libgnome-desktop/gnome-languages.c.orig	Mon Feb  3 16:41:40 2014
-+++ libgnome-desktop/gnome-languages.c	Mon Apr 14 19:14:49 2014
+--- libgnome-desktop/gnome-languages.c.orig	Tue Jun  3 17:05:02 2014
++++ libgnome-desktop/gnome-languages.c	Wed Oct 29 15:17:19 2014
 @@ -88,27 +88,14 @@ gnome_locale_free (GnomeLocale *locale)
  static char *
  normalize_codeset (const char *codeset)
@@ -53,7 +56,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=710412
          } else if (utf8_only) {
 -                name = g_strdup_printf ("%s.utf8", language_name);
 +
-+                if (strchr(language_name, '.'))
++                if (strchr (language_name, '.'))
 +                        return FALSE;
 +
 +                /* If the locale name has no dot, assume that its
