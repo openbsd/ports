@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.1 2014/10/30 19:17:52 sthen Exp $
+
+https://github.com/ansible/ansible/pull/9458
+
+--- lib/ansible/module_utils/facts.py.orig	Thu Oct 30 13:14:45 2014
++++ lib/ansible/module_utils/facts.py	Thu Oct 30 13:20:22 2014
+@@ -166,6 +166,8 @@ class Facts(object):
+             rc, out, err = module.run_command("/usr/sbin/bootinfo -p")
+             data = out.split('\n')
+             self.facts['architecture'] = data[0]
++        elif self.facts['system'] == 'OpenBSD':
++            self.facts['architecture'] = platform.uname()[5]
+ 
+ 
+     def get_local_facts(self):
