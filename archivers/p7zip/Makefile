@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/19 19:03:12 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2014/10/30 23:42:19 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
 PKGNAME-rar=	p7zip-rar-${V}
-REVISION-main=	0
+REVISION-main=	1
 REVISION-rar=	1
 CATEGORIES=	archivers
 
@@ -50,5 +50,6 @@ do-configure:
 do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} PREFIX=${TRUEPREFIX} \
 		DESTDIR=${DESTDIR} /bin/sh install.sh
+	@chmod -R u=rwX,g=rX ${PREFIX}/share/doc/p7zip
 
 .include <bsd.port.mk>
