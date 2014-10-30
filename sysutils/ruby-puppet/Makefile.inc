@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2014/09/27 17:08:47 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2014/10/30 12:21:37 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -35,7 +35,7 @@ RUN_DEPENDS +=	converters/ruby-json,${MODRUBY_FLAVOR} \
 		databases/ruby-hiera,${MODRUBY_FLAVOR} \
 		sysutils/ruby-augeas,${MODRUBY_FLAVOR} \
 		sysutils/ruby-facter>=2.0.1p0 \
-		sysutils/ruby-shadow,${MODRUBY_FLAVOR} \
+		sysutils/ruby-shadow,${MODRUBY_FLAVOR}>=2.3.4p1 \
 		${MODRUBY_ICONV_DEPENDS}
 
 # Apache2

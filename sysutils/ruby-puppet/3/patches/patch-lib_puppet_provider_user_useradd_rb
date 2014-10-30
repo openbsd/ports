@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.2 2013/06/10 14:46:34 jasper Exp $
---- lib/puppet/provider/user/useradd.rb.orig	Wed May 22 19:29:46 2013
-+++ lib/puppet/provider/user/useradd.rb	Mon Jun 10 14:04:56 2013
+$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.3 2014/10/30 12:21:37 jasper Exp $
+--- lib/puppet/provider/user/useradd.rb.orig	Tue Oct 21 23:52:27 2014
++++ lib/puppet/provider/user/useradd.rb	Thu Oct 30 12:16:26 2014
 @@ -9,7 +9,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
      install Ruby's shadow password library (often known as `ruby-libshadow`)
      if you wish to manage user passwords."
@@ -10,3 +10,28 @@ $OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.2 2013/06/10 14:46:34 ja
  
    options :home, :flag => "-d", :method => :dir
    options :comment, :method => :gecos
+@@ -17,6 +17,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+   options :password_min_age, :flag => "-m", :method => :sp_min
+   options :password_max_age, :flag => "-M", :method => :sp_max
+   options :password, :method => :sp_pwdp
++  options :loginclass, :flag => '-L', :method => :sp_loginclass
+   options :expiry, :method => :sp_expire,
+     :munge => proc { |value|
+       if value == :absent
+@@ -159,6 +160,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+       next if property.to_s =~ /password_.+_age/
+       next if property == :groups and @resource.forcelocal?
+       next if property == :expiry and @resource.forcelocal?
++      next if property == :loginclass and @resource.forcelocal?
+       # the value needs to be quoted, mostly because -c might
+       # have spaces in it
+       if value = @resource.should(property) and value != ""
+@@ -200,7 +202,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+     end
+   end
+ 
+-  [:expiry, :password_min_age, :password_max_age, :password].each do |shadow_property|
++  [:expiry, :password_min_age, :password_max_age, :password, :loginclass].each do |shadow_property|
+     define_method(shadow_property) do
+       if Puppet.features.libshadow?
+         if ent = Shadow::Passwd.getspnam(@resource.name)
