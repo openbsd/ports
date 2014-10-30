@@ -1,36 +1,6 @@
-$OpenBSD: patch-gif2png_c,v 1.2 2011/07/08 20:36:09 naddy Exp $
-
-Fixes cmdline buffer overflow described in
-
-http://lists.grok.org.uk/pipermail/full-disclosure/2009-December/072002.html
-http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=550978
-
-From: http://cvs.fedoraproject.org/viewvc/rpms/gif2png/devel/gif2png-overflow.patch?revision=HEAD&root=extras&view=markup
-
-Fix build with png-1.5.
-
---- gif2png.c.orig	Wed Nov 11 13:28:02 2009
-+++ gif2png.c	Wed Jul  6 17:39:37 2011
-@@ -10,6 +10,7 @@
- #include <string.h>
- #include <stdlib.h>
- #include <unistd.h>	/* for isatty() */
-+#include <zlib.h>
- 
- #if !defined(TRUE)
- #define FALSE	0
-@@ -120,8 +121,8 @@ int writefile(struct GIFelement *s,struct GIFelement *
-     int colors_used = 0;
-     byte remap[MAXCMSIZE];
-     int low_prec;
--    png_struct *png_ptr = xalloc(sizeof (png_struct));
--    png_info *info_ptr = xalloc(sizeof (png_info));
-+    png_struct *png_ptr;
-+    png_info *info_ptr;
-     int p;
-     int gray_bitdepth;
-     png_color pal_rgb[MAXCMSIZE], *pltep;
-@@ -136,6 +137,19 @@ int writefile(struct GIFelement *s,struct GIFelement *
+--- gif2png.c.orig	Wed Oct 29 11:16:37 2014
++++ gif2png.c	Wed Oct 29 11:35:23 2014
+@@ -140,6 +140,19 @@ static int writefile(struct GIFelement *s, struct GIFe
      png_text software;
      png_text comment;
  
@@ -49,30 +19,4 @@ Fix build with png-1.5.
 +
      /* these volatile declarations prevent gcc warnings ("variable might be
       *  clobbered by `longjmp' or `vfork'") */
-     volatile int gray = TRUE;
-@@ -682,7 +696,10 @@ int processfile(char *fname, FILE *fp)
- 
-     strcpy(outname, fname);
- 
--    file_ext = outname+strlen(outname)-4;
-+    file_ext = outname+strlen(outname);
-+    if (file_ext >= outname + 4)
-+	file_ext -= 4;
-+
-     if (strcmp(file_ext, ".gif") != 0 && strcmp(file_ext, ".GIF") != 0 &&
- 	strcmp(file_ext, "_gif") != 0 && strcmp(file_ext, "_GIF") != 0) {
- 	/* try to derive basename */
-@@ -874,6 +891,13 @@ int main(int argc, char *argv[])
- 	}
-     } else {
- 	for (i = ac;i<argc; i++) {
-+	    /* make sure that there is enough space for a '.p<NUM>' suffix;
-+	       this check catches also the '.gif' case below. */
-+	    if (strlen(argv[i]) >= sizeof name - sizeof ".p" - 3 * sizeof(int)) {
-+		fprintf(stderr, "%s: name too long\n", argv[i]);
-+		errors = 1;
-+		continue;
-+	    }
- 	    strcpy(name, argv[i]);
- 	    if ((fp = fopen(name, "rb")) == NULL) {
- 		/* retry with .gif appended */
+     volatile bool gray = true;
