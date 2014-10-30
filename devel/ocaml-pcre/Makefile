@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/22 22:21:53 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2014/10/30 23:39:23 sthen Exp $
 
 COMMENT =	OCaml Perl-compatible regexp library
 CATEGORIES =	devel textproc
 
 V =		7.0.2
-REVISION=	1
+REVISION=	2
 NAME =		ocaml-pcre
 DISTNAME =	pcre-ocaml-$V
 PKGNAME =	${NAME}-$V
@@ -27,7 +27,7 @@ CONFIGURE_STYLE =	oasis
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	@cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/${NAME}/
-	@chmod -R a-w ${PREFIX}/share/examples/${NAME}/*
 	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/${NAME}/
+	@chmod -R u=rwX,go=rX ${PREFIX}/share/examples/${NAME}/*
 
 .include <bsd.port.mk>
