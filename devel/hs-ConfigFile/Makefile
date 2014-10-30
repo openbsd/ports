@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2014/10/28 09:13:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2014/10/30 09:40:39 dcoppa Exp $
 
 COMMENT =		parser and writer for config files
 
-DISTNAME =		ConfigFile-1.1.2
-REVISION =		0
+DISTNAME =		ConfigFile-1.1.4
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/configfile/wiki
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
-# GPLv2
+# BSD3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ghc
