@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/23 11:09:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/30 12:18:58 jasper Exp $
 @bin bin/spicy
 @bin bin/spicy-screenshot
 @bin bin/spicy-stats
@@ -48,6 +48,7 @@ lib/libspice-controller.la
 lib/pkgconfig/spice-client-glib-2.0.pc
 lib/pkgconfig/spice-client-gtk-3.0.pc
 lib/pkgconfig/spice-controller.pc
+@man man/man1/spice-client.1
 share/gir-1.0/SpiceClientGLib-2.0.gir
 share/gir-1.0/SpiceClientGtk-3.0.gir
 share/gtk-doc/html/spice-gtk/
@@ -80,13 +81,16 @@ share/gtk-doc/html/spice-gtk/ch03.html
 share/gtk-doc/html/spice-gtk/home.png
 share/gtk-doc/html/spice-gtk/index.html
 share/gtk-doc/html/spice-gtk/index.sgml
+share/gtk-doc/html/spice-gtk/left-insensitive.png
 share/gtk-doc/html/spice-gtk/left.png
 share/gtk-doc/html/spice-gtk/object-tree.html
+share/gtk-doc/html/spice-gtk/right-insensitive.png
 share/gtk-doc/html/spice-gtk/right.png
 share/gtk-doc/html/spice-gtk/spice-gtk-SpiceURI.html
 share/gtk-doc/html/spice-gtk/spice-gtk-Utilities.html
 share/gtk-doc/html/spice-gtk/spice-gtk.devhelp2
 share/gtk-doc/html/spice-gtk/style.css
+share/gtk-doc/html/spice-gtk/up-insensitive.png
 share/gtk-doc/html/spice-gtk/up.png
 share/locale/fr/LC_MESSAGES/spice-gtk.mo
 share/vala/vapi/spice-client-glib-2.0.deps
