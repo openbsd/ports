@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/30 11:57:58 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 
-VERSION=	1.9.4
+VERSION=	1.9.5
 DISTNAME=	pear-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	pear-utils-${VERSION}
 CATEGORIES=	www devel
 
-REVISION=	2
-
 HOMEPAGE=	http://pear.php.net/
-MASTER_SITES=	http://blade2k.humppa.hu/
+MASTER_SITES=	http://spacehopper.org/mirrors/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
