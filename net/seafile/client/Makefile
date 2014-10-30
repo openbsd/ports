@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2014/10/30 15:53:30 kirby Exp $
 
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
 GH_COMMIT = 		ba9601b42423e642779dda9540c14874c174220a
+REVISION = 		0
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns c ccnet crypto gio-2.0

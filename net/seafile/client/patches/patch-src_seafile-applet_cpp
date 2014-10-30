@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_seafile-applet_cpp,v 1.1 2014/10/30 15:53:30 kirby Exp $
+
+Disable checking for updates.
+
+--- src/seafile-applet.cpp.orig	Thu Oct 30 18:13:27 2014
++++ src/seafile-applet.cpp	Thu Oct 30 18:14:00 2014
+@@ -174,10 +174,6 @@ void SeafileApplet::onDaemonStarted()
+     configurator_->installCustomUrlHandler();
+ #endif
+ 
+-    if (settings_mgr_->isCheckLatestVersionEnabled()) {
+-        checkLatestVersionInfo();
+-    }
+-
+     OpenLocalHelper::instance()->checkPendingOpenLocalRequest();
+ }
+ 
