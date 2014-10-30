@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/08/28 10:26:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2014/10/30 12:56:05 ajacoutot Exp $
 
 # Does _not_ depend on desktop-file-utils, hicolor-icon-theme,
 # gtk-update-icon-cache, shared-mime-info... on purpose as it should
@@ -7,8 +7,9 @@
 COMMENT=	utilities to assist desktop integration tasks
 
 DISTNAME=	xdg-utils-1.1.0-rc2
-PKGNAME=	xdg-utils-1.1.0rc2
+PKGNAME=	xdg-utils-1.1.0rc3
 
+###
 DIST_SUBDIR=	xdg-utils
 MASTER_SITES0=	http://cgit.freedesktop.org/xdg/xdg-utils/patch/?id=
 PATCH_DIST_STRIP=-p1
@@ -22,11 +23,14 @@ IDS=		a983a14293129ea94b634579a46dc69835e88e15 \
 		69adcfeb4679f75eb24f357f304715d3c014273b \
 		5913207e625a92b73cd9489aea4b7b10bf3eb855 \
 		34e033845ea6997bc4fdafd9bdd4856bfa5d0d36 \
-		7cd846d62e17f36be2f7d29e56188ddf6a6d72cb
+		7cd846d62e17f36be2f7d29e56188ddf6a6d72cb \
+		781023ef997bac433dbc258bd5cfdc1366f2ffa4 \
+		48545132620f85d3ba133010116884a63f26f3a3
 .for i in ${IDS}
 PATCHFILES +=		$i:0
 .endfor
 BUILD_DEPENDS +=	textproc/xmlto
+###
 
 CATEGORIES=	devel
 
