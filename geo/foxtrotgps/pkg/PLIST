@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/02/06 14:23:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/30 21:39:12 kirby Exp $
 @pkgpath geo/tangogps
 bin/convert2gpx
 bin/convert2osm
 @bin bin/foxtrotgps
 bin/georss2foxtrotgps-poi
+bin/gpx2osm
 bin/osb2foxtrot
 bin/poi2osm
+@info info/foxtrotgps.info
 @man man/man1/convert2gpx.1
 @man man/man1/convert2osm.1
 @man man/man1/foxtrotgps.1
@@ -20,6 +22,17 @@ share/doc/foxtrotgps/NEWS
 share/doc/foxtrotgps/README
 share/doc/foxtrotgps/README.osb2foxtrot
 share/doc/foxtrotgps/TODO
+share/doc/foxtrotgps/cc-by-sa.png
+share/doc/foxtrotgps/cc-by-sa_small.png
+share/doc/foxtrotgps/foxtrotgps-logo.png
+share/doc/foxtrotgps/foxtrotgps.html
+share/doc/foxtrotgps/screenshots/
+share/doc/foxtrotgps/screenshots/found-route.png
+share/doc/foxtrotgps/screenshots/get-route.png
+share/doc/foxtrotgps/screenshots/main-window.png
+share/doc/foxtrotgps/screenshots/map-download.png
+share/doc/foxtrotgps/screenshots/route-planning.png
+share/doc/foxtrotgps/screenshots/tracking.png
 share/foxtrotgps/
 share/foxtrotgps/foxtrotgps.glade
 share/locale/bg/LC_MESSAGES/foxtrotgps.mo
@@ -29,8 +42,11 @@ share/locale/es/LC_MESSAGES/foxtrotgps.mo
 share/locale/fi/LC_MESSAGES/foxtrotgps.mo
 share/locale/fr/LC_MESSAGES/foxtrotgps.mo
 share/locale/hu/LC_MESSAGES/foxtrotgps.mo
+share/locale/it/LC_MESSAGES/foxtrotgps.mo
 share/locale/ja/LC_MESSAGES/foxtrotgps.mo
 share/locale/nl/LC_MESSAGES/foxtrotgps.mo
+share/locale/pl/LC_MESSAGES/foxtrotgps.mo
+share/locale/pt_BR/LC_MESSAGES/foxtrotgps.mo
 share/locale/ru/LC_MESSAGES/foxtrotgps.mo
 share/locale/sk/LC_MESSAGES/foxtrotgps.mo
 share/locale/sr/LC_MESSAGES/foxtrotgps.mo
@@ -41,9 +57,9 @@ share/pixmaps/foxtrotgps-photo.png
 share/pixmaps/foxtrotgps-poi.png
 share/pixmaps/foxtrotgps-wp.png
 share/pixmaps/foxtrotgps.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/apps_foxtrotgps.schemas
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
