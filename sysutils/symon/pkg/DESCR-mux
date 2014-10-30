@@ -1,3 +1,7 @@
-symux is a heavyweight data gatherer for the lightweight symon system
-monitor.  symon is a lightweight system monitor that measures cpu,
-memory, interface and disk statistics every 5 seconds.
+symux is a data gatherer for symon, a lightweight system monitor that
+measures cpu, memory, interface and disk statistics every 5 seconds and
+records the results in RRD files.
+
+A very simple sample perl client is included; the results can also be
+graphed via "syweb" (packaged separately) or by any other method that can
+work with RRD files.
