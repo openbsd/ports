@@ -1,6 +1,7 @@
-$OpenBSD: patch-pwd_shadow_c,v 1.3 2014/10/30 12:20:30 jasper Exp $
+$OpenBSD: patch-pwd_shadow_c,v 1.4 2014/10/30 14:10:07 jasper Exp $
 
 Add new sp_loginclass field to retrieve the user's login class.
+https://github.com/apalmblad/ruby-shadow/pull/22
 
 --- pwd/shadow.c.orig	Thu Oct 30 11:16:01 2014
 +++ pwd/shadow.c	Thu Oct 30 11:26:02 2014
