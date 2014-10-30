@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/10/13 07:39:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/10/30 12:19:33 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -50,6 +50,7 @@ ${MODRUBY_SITEDIR}/facter/lsbdistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbmajdistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbminordistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbrelease.rb
+${MODRUBY_SITEDIR}/facter/loginclass.rb
 ${MODRUBY_SITEDIR}/facter/macaddress.rb
 ${MODRUBY_SITEDIR}/facter/macosx.rb
 ${MODRUBY_SITEDIR}/facter/manufacturer.rb

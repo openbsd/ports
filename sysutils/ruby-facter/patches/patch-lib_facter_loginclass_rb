@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_facter_loginclass_rb,v 1.1 2014/10/30 12:19:33 jasper Exp $
+
+Add loginclass fact
+
+--- lib/facter/loginclass.rb.orig	Thu Oct 30 09:48:27 2014
++++ lib/facter/loginclass.rb	Thu Oct 30 09:48:33 2014
+@@ -0,0 +1,22 @@
++# Facter: loginclass
++#
++# Purpose: Retrieve the login class of the current user.
++#
++# Resolution:
++#  On OpenBSD parses the output of 'userinfo'
++#
++# Caveats:
++#  Not all systems utilize the login class (such as Darwin)
++#
++
++Facter.add(:loginclass) do
++  confine do
++    Facter::Core::Execution.which('userinfo')
++  end
++
++  setcode do
++    uid = Facter.value(:id)
++    output = Facter::Core::Execution.exec("userinfo #{uid}")
++    output.split("\n").select { |field| /^class/.match(field) }.first.split("\t").last
++  end
++end
