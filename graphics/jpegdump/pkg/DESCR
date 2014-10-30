@@ -1,0 +1,3 @@
+jpegdump is a small utility that dumps all the markers in a jpeg file,
+Mostly useful for development, as exif libraries tend to display high-level
+content and thus are worthless for debugging wrong files.
