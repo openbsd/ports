@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/20 21:07:20 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2014/10/30 12:20:30 jasper Exp $
 
 COMMENT =		module to access shadow passwords
 
 DISTNAME =		ruby-shadow-2.3.4
-REVISION =		0
+REVISION =		1
 PKGNAME =		${DISTNAME:S/ruby-//}
 CATEGORIES =		sysutils
 
