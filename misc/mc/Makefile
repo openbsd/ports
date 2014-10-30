@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/09/11 09:58:34 robert Exp $
+# $OpenBSD: Makefile,v 1.51 2014/10/30 20:23:59 kirby Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -32,11 +32,9 @@ RUN_DEPENDS=		archivers/unzip \
 			security/libssh2
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-confdir=${SYSCONFDIR}/mc \
-			--with-screeen=slang \
-			--with-subshell \
-			--with-vfs \
-			--with-samba \
+CONFIGURE_ARGS+=	--with-subshell \
+			--enable-vfs-sftp \
+			--enable-vfs-smb \
 			--enable-charset
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE} \
 			LIBS="-lm"
