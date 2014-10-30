@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/01/11 18:46:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/10/30 15:33:00 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -396,6 +396,7 @@ lib/libptexenc.la
 libdata/perl5/site_perl/TeXLive/
 libdata/perl5/site_perl/TeXLive/TLConfig.pm
 libdata/perl5/site_perl/TeXLive/TLUtils.pm
+share/doc/pkg-readmes/${FULLPKGNAME}
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R

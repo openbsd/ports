@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2014/03/17 23:22:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2014/10/30 15:33:00 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		1
+REVISION =		2
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -12,10 +12,12 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 SHARED_LIBS =		kpathsea	6.0
 SHARED_LIBS +=		ptexenc		3.0
 
-WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
-WANTLIB +=		fontconfig freetype gd jpeg lcms2 m
-WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
-WANTLIB +=		t1>=4 tiff ttf vpx xcb z
+WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xrender Xt c
+WANTLIB += cairo expat fontconfig freetype gd glib-2.0 graphite2
+WANTLIB += harfbuzz icudata icui18n icuio icuuc intl jpeg lcms2
+WANTLIB += m openjpeg pcre pixman-1 png>=3 poppler pthread pthread-stubs
+WANTLIB += stdc++ t1>=4 tiff ttf vpx xcb xcb-render xcb-shm z
+
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -30,7 +32,14 @@ LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
 			graphics/gd \
 			print/freetype \
-			print/poppler
+			print/poppler \
+			graphics/cairo \
+			textproc/icu4c \
+			graphics/graphite2 \
+			devel/harfbuzz
+
+# Needs the header, but does not actually link with the lib
+BUILD_DEPENDS +=	devel/harfbuzz,-icu
 
 MODULES =		textproc/intltool converters/libiconv
 # These following modules are mostly for variable substitution in patches
@@ -125,18 +134,13 @@ SH_ADJ_SCRIPTS =	texk/texlive/linked_scripts/typeoutfileinfo/typeoutfileinfo.sh 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
 
-# Don't put ${PREFIX}/include in CPPFLAGS or system icu .h's are picked up
-# TeX Live uses a modified version of icu.
 CPPFLAGS =	-I${X11BASE}/include \
-		-I${TRUEPREFIX}/include/poppler
+		-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/poppler \
+		-I${LOCALBASE}/include/freetype1/freetype
 
-# Big endian ICU bug
-# http://tug.org/pipermail/tlbuild/2012q2/002266.html
-# XXX still needed
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mbe}
-CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
-.endif
+LDFLAGS =	-L${LOCALBASE}/lib \
+		-L${X11BASE}/lib
 
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 			CPPFLAGS="${CPPFLAGS}"
@@ -166,29 +170,15 @@ PKG_ARGS +=		-Dxindy=1
 PKG_ARGS +=		-Dxindy=0
 .endif
 
-# Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
-			--x-includes=${X11BASE}/include \
-			--x-libraries=${X11BASE}/lib \
 			--with-system-freetype2 \
 			--with-system-freetype \
-			--with-freetype-includes=${LOCALBASE}/include/freetype1/freetype \
-			--with-freetype-libdir=${LOCALBASE}/lib \
 			--with-system-gd \
-			--with-gd-libdir=${LOCALBASE}/lib \
 			--with-system-libpng \
-			--with-libpng-includes=${LOCALBASE}/include \
-			--with-libpng-libdir=${LOCALBASE}/lib \
 			--with-system-ncurses \
 			--with-system-pnglib \
-			--with-pnglib-libdir=${LOCALBASE}/lib \
-			--with-pnglib-include=${LOCALBASE}/include \
 			--with-system-zlib \
 			--with-system-t1lib \
-			--with-t1lib-libdir=${LOCALBASE}/lib \
-			--with-t1lib-includes=${LOCALBASE}/include \
-			--with-xpdf-includes=${LOCALBASE}/include/poppler \
-			--with-xpdf-libdir=${LOCALBASE}/lib \
 			--enable-texinfo=no \
 			--with-xdvi-x-toolkit=xaw \
 			--enable-texi2html=no \
@@ -202,7 +192,12 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
-			--with-system-xpdf #link poppler
+			--with-system-xpdf \
+			--with-system-icu \
+			--with-system-cairo \
+			--with-system-harfbuzz \
+			--with-system-graphite2 \
+			--with-system-poppler
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 
