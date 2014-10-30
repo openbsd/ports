@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/02/08 18:52:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/30 11:05:18 sthen Exp $
 @option no-default-conflict
 @conflict drupal->=7,<8
 @owner ${DRUPAL_OWNER}
@@ -251,6 +251,7 @@ ${DRUPAL_ROOT}/modules/aggregator/tests/aggregator_test.info
 ${DRUPAL_ROOT}/modules/aggregator/tests/aggregator_test.module
 ${DRUPAL_ROOT}/modules/aggregator/tests/aggregator_test_atom.xml
 ${DRUPAL_ROOT}/modules/aggregator/tests/aggregator_test_rss091.xml
+${DRUPAL_ROOT}/modules/aggregator/tests/aggregator_test_title_entities.xml
 ${DRUPAL_ROOT}/modules/block/
 ${DRUPAL_ROOT}/modules/block/block-admin-display-form.tpl.php
 ${DRUPAL_ROOT}/modules/block/block.admin.inc
@@ -472,7 +473,6 @@ ${DRUPAL_ROOT}/modules/forum/forums.tpl.php
 ${DRUPAL_ROOT}/modules/help/
 ${DRUPAL_ROOT}/modules/help/help-rtl.css
 ${DRUPAL_ROOT}/modules/help/help.admin.inc
-${DRUPAL_ROOT}/modules/help/help.api.php
 ${DRUPAL_ROOT}/modules/help/help.css
 ${DRUPAL_ROOT}/modules/help/help.info
 ${DRUPAL_ROOT}/modules/help/help.module
@@ -736,6 +736,7 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/entity_cache_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/entity_cache_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/entity_cache_test_dependency.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/entity_cache_test_dependency.module
+${DRUPAL_ROOT}/modules/simpletest/tests/entity_crud.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/entity_crud_hook_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/entity_crud_hook_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/entity_crud_hook_test.test
@@ -900,6 +901,7 @@ ${DRUPAL_ROOT}/modules/syslog/syslog.install
 ${DRUPAL_ROOT}/modules/syslog/syslog.module
 ${DRUPAL_ROOT}/modules/syslog/syslog.test
 ${DRUPAL_ROOT}/modules/system/
+${DRUPAL_ROOT}/modules/system/form.api.php
 ${DRUPAL_ROOT}/modules/system/html.tpl.php
 ${DRUPAL_ROOT}/modules/system/image.gd.inc
 ${DRUPAL_ROOT}/modules/system/language.api.php
@@ -931,6 +933,9 @@ ${DRUPAL_ROOT}/modules/system/system.theme-rtl.css
 ${DRUPAL_ROOT}/modules/system/system.theme.css
 ${DRUPAL_ROOT}/modules/system/system.tokens.inc
 ${DRUPAL_ROOT}/modules/system/system.updater.inc
+${DRUPAL_ROOT}/modules/system/tests/
+${DRUPAL_ROOT}/modules/system/tests/cron_queue_test.info
+${DRUPAL_ROOT}/modules/system/tests/cron_queue_test.module
 ${DRUPAL_ROOT}/modules/system/theme.api.php
 ${DRUPAL_ROOT}/modules/taxonomy/
 ${DRUPAL_ROOT}/modules/taxonomy/taxonomy-term.tpl.php
