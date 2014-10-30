@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Feb 26 15:45:42 2014
-+++ Makefile	Sun Apr  6 13:34:10 2014
-@@ -13,7 +13,7 @@
+--- Makefile.orig	Sun Oct 26 12:25:14 2014
++++ Makefile	Mon Oct 27 11:23:10 2014
+@@ -13,7 +13,7 @@ CFLAGS+=-std=c99 -Wmissing-prototypes -Wall -Wextra -W
  # Uncomment define below to disallow user settable clock format string
  #CFLAGS+=-DSWM_DENY_CLOCK_FORMAT
  CPPFLAGS+= -I${X11BASE}/include -I${X11BASE}/include/freetype2
@@ -9,7 +9,7 @@
  BUILDVERSION != sh "${.CURDIR}/buildver.sh"
  .if !${BUILDVERSION} == ""
  CPPFLAGS+= -DSPECTRWM_BUILDSTR=\"$(BUILDVERSION)\"
-@@ -26,8 +26,8 @@
+@@ -26,8 +26,8 @@ MANDIR= ${PREFIX}/man/man
  
  obj: _xenocara_obj
  
