@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/19 11:34:11 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2014/10/30 21:44:30 edd Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
@@ -33,7 +33,7 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: Makefile,v 1.2 2014/07/19 11:34:11 edd Exp $
+# $Id: Makefile,v 1.3 2014/10/30 21:44:30 edd Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
 
@@ -109,37 +109,40 @@ MAKEFILE = Makefile
 # AVR (extended) COFF requires stabs, plus an avr-objcopy run.
 DEBUG = stabs
 
-OPT = s
-
-# Place -D or -U options here
+# C options
+COPT = s
 CDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100
-CXXDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100
-
-# Place -I options here
-ROOTLIBINCS=${LIBRARIES:S|^|-I$(ARDUINO)/libraries/|g}
-UTILITYLIBINCS=${ROOTLIBINCS:S|$|/utility/|g}
-LIBINC=${ROOTLIBINCS} ${UTILITYLIBINCS} -I$(ARDUINO)/variants/$(VARIANT)
-CINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) -I$(ARDUINO)/variants/$(VARIANT)
-CXXINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) -I$(ARDUINO)/variants/$(VARIANT)
-
-# Compiler flag to set the C Standard level.
-# c89   - "ANSI" C
-# gnu89 - c89 plus GCC extensions
-# c99   - ISO C99 standard (not yet fully implemented)
-# gnu99 - c99 plus GCC extensions
+CINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) \
+	-I$(ARDUINO)/variants/$(VARIANT)
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
 CTUNING = -ffunction-sections -fdata-sections
 #CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 #CEXTRA = -Wa,-adhlns=$(<:.c=.lst)
-
 CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) \
 	 $(CSTANDARD) $(CEXTRA) $(CTUNING)
-CXXFLAGS = $(CDEFS) $(CINCS) -O$(OPT)
-#ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
-LDFLAGS = -lm -Wl,--gc-sections
 
+# C++ options
+CXXOPT = ${COPT}
+CXXDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100
+CXXINCS = ${CINCS}
+CXXSTANDARD =
+CXXDEBUG = ${CDEBUG}
+CXXWARN =
+CXXTUNING = ${CTUNING}
+CXXEXTRA = ${CEXTRA}
+CXXFLAGS = $(CXXDEBUG) $(CXXDEFS) $(CXXINCS) -O$(CXXOPT) $(CXXWARN) \
+	 $(CXXSTANDARD) $(CXXEXTRA) $(CXXTUNING)
+
+# Linker stuff
+LDFLAGS = -lm -Wl,--gc-sections
+ROOTLIBINCS=${LIBRARIES:S|^|-I$(ARDUINO)/libraries/|g}
+UTILITYLIBINCS=${ROOTLIBINCS:S|$|/utility/|g}
+LIBINC=${ROOTLIBINCS} ${UTILITYLIBINCS}
+
+# Assembler stuff
+#ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
 
 # Programming support using avrdude. Settings and variables.
 AVRDUDE_PORT = $(PORT)
