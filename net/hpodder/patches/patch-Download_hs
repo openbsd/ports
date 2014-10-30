@@ -1,9 +1,11 @@
-$OpenBSD: patch-Download_hs,v 1.3 2013/08/12 08:03:18 dcoppa Exp $
+$OpenBSD: patch-Download_hs,v 1.4 2014/10/30 15:08:22 dcoppa Exp $
 
 port to ghc-7.6
 
+fix version number in the User-Agent string
+
 --- Download.hs.orig	Tue Nov  8 16:49:38 2011
-+++ Download.hs	Mon Aug 12 11:53:56 2013
++++ Download.hs	Thu Oct 30 15:54:45 2014
 @@ -43,7 +43,7 @@ import System.Posix.Process
  import System.Posix.Types
  import System.Posix.IO
@@ -13,6 +15,15 @@ port to ghc-7.6
  
  data Result = Success | Failure
              deriving (Eq, Show, Read)
+@@ -59,7 +59,7 @@ d = debugM "download"
+ i = infoM "download"
+ 
+ curl = "curl"
+-curlopts = ["-A", "hpodder v1.0.0; Haskell; GHC", -- Set User-Agent
++curlopts = ["-A", "hpodder v1.1.6; Haskell; GHC", -- Set User-Agent
+             "-s",               -- Silent mode
+             "-S",               -- Still show error messages
+             "-L",               -- Follow redirects
 @@ -74,7 +74,8 @@ getCurlConfig =
      do ad <- getAppDir
         return $ ad ++ "/curlrc"
