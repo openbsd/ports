@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2014/10/15 13:54:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/31 23:05:36 ajacoutot Exp $
 @conflict evince-djvu-*
+@conflict evince-dvi-*
 @conflict nautilus-evince-*
 @pkgpath graphics/evince
 @pkgpath graphics/evince,-djvu
+@pkgpath graphics/evince,-dvi
+@pkgpath graphics/evince,-main
 @pkgpath graphics/evince,-nautilus
 @bin bin/evince
 @bin bin/evince-previewer
-@bin bin/evince-thumbnailer
 include/evince/
 include/evince/${MAJ_V}/
 include/evince/${MAJ_V}/evince-document.h
@@ -61,18 +63,12 @@ include/evince/${MAJ_V}/libview/ev-view.h
 lib/evince/
 lib/evince/4/
 lib/evince/4/backends/
-lib/evince/4/backends/comicsdocument.evince-backend
-lib/evince/4/backends/djvudocument.evince-backend
-lib/evince/4/backends/libcomicsdocument.so
-lib/evince/4/backends/libdjvudocument.so
 lib/evince/4/backends/libpdfdocument.so
 lib/evince/4/backends/libpsdocument.so
 lib/evince/4/backends/libtiffdocument.so
-lib/evince/4/backends/libxpsdocument.so
 lib/evince/4/backends/pdfdocument.evince-backend
 lib/evince/4/backends/psdocument.evince-backend
 lib/evince/4/backends/tiffdocument.evince-backend
-lib/evince/4/backends/xpsdocument.evince-backend
 lib/girepository-1.0/EvinceDocument-${MAJ_V}.typelib
 lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
 lib/libevdocument3.a
@@ -81,23 +77,16 @@ lib/libevdocument3.la
 lib/libevview3.a
 lib/libevview3.la
 @lib lib/libevview3.so.${LIBevview3_VERSION}
-lib/nautilus/extensions-${MAJ_V}/libevince-properties-page.so
 lib/pkgconfig/evince-document-${MAJ_V}.pc
 lib/pkgconfig/evince-view-${MAJ_V}.pc
-@bin libexec/evinced
 @man man/man1/evince.1
 share/GConf/gsettings/evince.convert
-share/appdata/evince-comicsdocument.metainfo.xml
-share/appdata/evince-djvudocument.metainfo.xml
-share/appdata/evince-dvidocument.metainfo.xml
 share/appdata/evince-pdfdocument.metainfo.xml
 share/appdata/evince-psdocument.metainfo.xml
 share/appdata/evince-tiffdocument.metainfo.xml
-share/appdata/evince-xpsdocument.metainfo.xml
 share/appdata/evince.appdata.xml
 share/applications/evince-previewer.desktop
 share/applications/evince.desktop
-share/dbus-1/services/org.gnome.evince.Daemon.service
 share/evince/
 share/evince/hand-open.png
 share/evince/icons/
@@ -3056,7 +3045,7 @@ share/locale/zh_CN/LC_MESSAGES/evince.mo
 share/locale/zh_HK/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
-share/thumbnailers/evince.thumbnailer
+!%%light%%
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

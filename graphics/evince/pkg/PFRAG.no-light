@@ -1,0 +1,17 @@
+@bin bin/evince-thumbnailer
+lib/evince/4/backends/comicsdocument.evince-backend
+lib/evince/4/backends/djvudocument.evince-backend
+lib/evince/4/backends/dvidocument.evince-backend
+lib/evince/4/backends/libcomicsdocument.so
+lib/evince/4/backends/libdjvudocument.so
+lib/evince/4/backends/libdvidocument.so
+lib/evince/4/backends/libxpsdocument.so
+lib/evince/4/backends/xpsdocument.evince-backend
+lib/nautilus/extensions-${MAJ_V}/libevince-properties-page.so
+@bin libexec/evinced
+share/appdata/evince-comicsdocument.metainfo.xml
+share/appdata/evince-djvudocument.metainfo.xml
+share/appdata/evince-dvidocument.metainfo.xml
+share/appdata/evince-xpsdocument.metainfo.xml
+share/dbus-1/services/org.gnome.evince.Daemon.service
+share/thumbnailers/evince.thumbnailer
