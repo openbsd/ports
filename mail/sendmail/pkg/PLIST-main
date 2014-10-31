@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2014/09/17 09:11:53 ajacoutot Exp $
-@newgroup _smmsp:742
-@newuser _smmsp:742:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST-main,v 1.2 2014/10/31 15:51:51 jca Exp $
+@newgroup _smmsp:745
+@newuser _smmsp:745:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
 @bin libexec/mail.local
 libexec/sendmail/
 @bin libexec/sendmail/makemap
