@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.422 2014/10/13 00:53:32 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.423 2014/10/31 12:05:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -361,7 +361,6 @@
      SUBDIR += ruby-nori
      SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pygments.rb
-     SUBDIR += ruby-randexp
      SUBDIR += ruby-rdiscount,ruby20
      SUBDIR += ruby-rdiscount,ruby21
      SUBDIR += ruby-redcarpet,ruby20

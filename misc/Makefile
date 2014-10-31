@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2014/09/05 19:42:28 matthieu Exp $
+# $OpenBSD: Makefile,v 1.169 2014/10/31 12:05:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -85,7 +85,6 @@
      SUBDIR += rlwrap
      SUBDIR += rocrail
      SUBDIR += rpm
-     SUBDIR += ruby-spreadsheet
      SUBDIR += screen
      SUBDIR += screen,shm
      SUBDIR += shared-desktop-ontologies
