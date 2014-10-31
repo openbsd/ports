@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/10/25 14:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2014/10/31 23:06:24 ajacoutot Exp $
 
 TRACKER_API=	1.0
 
@@ -8,7 +8,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.14.1
-REVISION=	0
+REVISION=	1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,7 +39,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	devel/libgdata \
-		graphics/evince \
+		evince-*-!light:graphics/evince \
 		x11/gnome/desktop \
 		x11/gnome/gjs \
 		x11/gnome/libzapojit \

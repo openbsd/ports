@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/10/25 14:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2014/10/31 23:06:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.12.0
-REVISION=	1
+REVISION=	2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,7 +35,7 @@ MODULES=	devel/dconf \
 LIB_DEPENDS=	audio/libmusicbrainz5 \
 		graphics/clutter/clutter-gst \
 		graphics/clutter/clutter-gtk \
-		graphics/evince \
+		evince-*-!light:graphics/evince \
 		www/webkit,gtk3 \
 		x11/gnome/gjs \
 		x11/gtksourceview3
