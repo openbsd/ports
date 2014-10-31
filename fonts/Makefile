@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2014/08/15 12:19:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2014/10/31 13:37:14 dcoppa Exp $
 
      SUBDIR =
-     SUBDIR += acrofonts
      SUBDIR += adobe-source-code-pro
      SUBDIR += adobe-source-sans-pro
      SUBDIR += anonymous-pro
