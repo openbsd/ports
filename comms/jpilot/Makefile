@@ -1,29 +1,31 @@
-# $OpenBSD: Makefile,v 1.66 2013/10/11 23:48:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2014/10/31 18:30:10 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	desktop organizer software for the palm pilot
 
-DISTNAME=	jpilot-1.8.0
-REVISION=	4
+DISTNAME=	jpilot-1.8.2
 CATEGORIES=	comms
-
-MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.jpilot.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs xcb z pisock>=11
-WANTLIB += gcrypt>=14 gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += GL Xxf86vm drm ffi gthread-2.0 stdc++ xcb-render xcb-shm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
+WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pisock pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm z
+
+MASTER_SITES=	http://www.jpilot.org/
 
 LIB_DEPENDS=	comms/pilot-link \
 		security/libgcrypt \
 		x11/gtk+2
+
 RUN_DEPENDS=	devel/desktop-file-utils
 
 MODULES=	devel/gettext \
@@ -33,15 +35,13 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-pilot-prefix=${LOCALBASE} \
-		--with-gtk-prefix=${LOCALBASE}
-
-MAKE_FLAGS=	mkdir_p='mkdir -p'
+		--with-pilot-prefix=${LOCALBASE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/jpilot.xpm ${PREFIX}/share/pixmaps
+	rm ${PREFIX}/lib/jpilot/plugins/*.{a,la}
 
 .include <bsd.port.mk>

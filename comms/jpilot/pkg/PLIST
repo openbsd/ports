@@ -1,18 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/03/25 10:39:38 giovanni Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.16 2014/10/31 18:30:10 ajacoutot Exp $
 @bin bin/jpilot
 @bin bin/jpilot-dump
+@bin bin/jpilot-merge
 @bin bin/jpilot-sync
 lib/jpilot/
 lib/jpilot/plugins/
-@comment lib/jpilot/plugins/libexpense.a
-@comment lib/jpilot/plugins/libexpense.la
-@comment lib/jpilot/plugins/libkeyring.a
-@comment lib/jpilot/plugins/libkeyring.la
-@comment lib/jpilot/plugins/libsynctime.a
-@comment lib/jpilot/plugins/libsynctime.la
+lib/jpilot/plugins/libexpense.so
+lib/jpilot/plugins/libkeyring.so
+lib/jpilot/plugins/libsynctime.so
 @comment @man man/man1/jpilot-dial.1
 @man man/man1/jpilot-dump.1
+@man man/man1/jpilot-merge.1
 @man man/man1/jpilot-sync.1
 @man man/man1/jpilot.1
 share/applications/jpilot.desktop
@@ -80,8 +78,6 @@ share/locale/nb/LC_MESSAGES/jpilot.mo
 share/locale/nl/LC_MESSAGES/jpilot.mo
 share/locale/pt_BR/LC_MESSAGES/jpilot.mo
 share/locale/ru/LC_MESSAGES/jpilot.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
 share/locale/tr/LC_MESSAGES/jpilot.mo
