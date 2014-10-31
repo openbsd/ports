@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/10/30 12:19:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/10/31 07:36:23 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -43,6 +43,7 @@ ${MODRUBY_SITEDIR}/facter/kernelmajversion.rb
 ${MODRUBY_SITEDIR}/facter/kernelrelease.rb
 ${MODRUBY_SITEDIR}/facter/kernelversion.rb
 ${MODRUBY_SITEDIR}/facter/ldom.rb
+${MODRUBY_SITEDIR}/facter/loginclass.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistcodename.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistdescription.rb
 ${MODRUBY_SITEDIR}/facter/lsbdistid.rb
@@ -50,7 +51,6 @@ ${MODRUBY_SITEDIR}/facter/lsbdistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbmajdistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbminordistrelease.rb
 ${MODRUBY_SITEDIR}/facter/lsbrelease.rb
-${MODRUBY_SITEDIR}/facter/loginclass.rb
 ${MODRUBY_SITEDIR}/facter/macaddress.rb
 ${MODRUBY_SITEDIR}/facter/macosx.rb
 ${MODRUBY_SITEDIR}/facter/manufacturer.rb
@@ -80,10 +80,12 @@ ${MODRUBY_SITEDIR}/facter/processors/os.rb
 ${MODRUBY_SITEDIR}/facter/ps.rb
 ${MODRUBY_SITEDIR}/facter/puppetversion.rb
 ${MODRUBY_SITEDIR}/facter/rackspace.rb
+${MODRUBY_SITEDIR}/facter/rubyplatform.rb
 ${MODRUBY_SITEDIR}/facter/rubysitedir.rb
 ${MODRUBY_SITEDIR}/facter/rubyversion.rb
 ${MODRUBY_SITEDIR}/facter/selinux.rb
 ${MODRUBY_SITEDIR}/facter/ssh.rb
+${MODRUBY_SITEDIR}/facter/system32.rb
 ${MODRUBY_SITEDIR}/facter/system_uptime.rb
 ${MODRUBY_SITEDIR}/facter/timezone.rb
 ${MODRUBY_SITEDIR}/facter/uniqueid.rb
