@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.375 2014/10/31 12:05:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.376 2014/10/31 23:07:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -48,6 +48,7 @@
      SUBDIR += enblend-enfuse
      SUBDIR += enjoympeg
      SUBDIR += evince
+     SUBDIR += evince,light
      SUBDIR += exiftran
      SUBDIR += exiv2
      SUBDIR += feh
