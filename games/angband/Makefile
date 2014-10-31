@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/08/20 22:05:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2014/10/31 09:37:40 sthen Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -69,5 +69,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	mv ${PREFIX}/share/angband/xtra/icon/*.desktop \
 		${PREFIX}/share/applications
+	chmod -R u+rwX ${WRKINST}/var
 
 .include <bsd.port.mk>
