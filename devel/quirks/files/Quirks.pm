@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.192 2014/10/30 17:04:22 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.193 2014/10/31 12:10:59 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -455,6 +455,12 @@ my $obsolete_reason = {
 	'aumix' => 0,
 	'ac3dec' => 3,
 	'flash' => 3,
+	'ruby-columnize' => 3,
+	'ruby-mini_magick' => 3,
+	'ruby-spreadsheet' => 3,
+	'ruby-minion' => 3,
+	'ruby-bunny' => 3,
+	'ruby-randexp' => 3,
 };
 
 # ->is_base_system($handle, $state):
