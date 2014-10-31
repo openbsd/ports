@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/26 14:24:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/10/31 14:43:09 sthen Exp $
 
 COMMENT=	library and tools to program YubiKeys
 
-DISTNAME=	ykpers-1.16.0
+DISTNAME=	ykpers-1.16.1
 
 SHARED_LIBS +=	ykpers-1                  0.4 # 17.0
 
