@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/08/31 14:56:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/10/31 07:31:19 jasper Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -262,8 +262,8 @@ libexec/mcollective/mcollective/audit/logfile.rb
 libexec/mcollective/mcollective/connector/
 libexec/mcollective/mcollective/connector/activemq.ddl
 libexec/mcollective/mcollective/connector/activemq.rb
-libexec/mcollective/mcollective/connector/rabbitmq.rb
 libexec/mcollective/mcollective/connector/rabbitmq.ddl
+libexec/mcollective/mcollective/connector/rabbitmq.rb
 libexec/mcollective/mcollective/data/
 libexec/mcollective/mcollective/data/agent_data.ddl
 libexec/mcollective/mcollective/data/agent_data.rb
