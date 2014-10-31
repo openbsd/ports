@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2014/10/23 12:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2014/10/31 14:40:59 robert Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-VERSION=	1.7.6
+VERSION=	1.7.7
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-REVISION=	1
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
