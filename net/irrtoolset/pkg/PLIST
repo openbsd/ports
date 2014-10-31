@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/31 16:43:44 sthen Exp $
+@bin bin/peval
+@bin bin/rpslcheck
+@bin bin/rtconfig
+@man man/man1/irrtoolset-errors.1
+@man man/man1/peval.1
+@man man/man1/rpslcheck.1
+@man man/man1/rtconfig.1

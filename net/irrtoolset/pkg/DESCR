@@ -1,0 +1,17 @@
+The IRRToolSet is a set of tools to work with Internet routing policies.
+These policies are stored in Internet Routing Registries (IRR) in the
+Routing Policy Specification Language (RPSL). The tools are used to
+produce lists suitable for automating router configuration, etc.
+
+- peval is a low level policy evaluation tool that can be used to write
+router configuration generators. It takes policy expressions as input,
+expands the AS sets, route sets, filter sets and (optionally) AS numbers,
+and outputs the resulting list of AS numbers or prefixes.
+
+- rpslcheck syntax-checks an RPSL object to determine whether it will
+cause problems for any of the tools in IRRToolSet, such as rtconfig.
+This does not guarantee that the syntax is valid for a particular IRR,
+which may have different syntax constraints.
+
+- rtconfig is a filter which can generate cisco/juniper configuration
+sections based on information from IRRs.
