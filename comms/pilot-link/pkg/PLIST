@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/06/14 10:34:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/10/31 18:28:54 ajacoutot Exp $
 @bin bin/pilot-addresses
 @bin bin/pilot-clip
 @bin bin/pilot-csd
@@ -99,7 +99,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/dump.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/Pilot.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/Pilot.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man1/ietf2datebook.1
 @man man/man1/pilot-addresses.1
@@ -159,6 +159,3 @@ share/pilot-link/pix/casemask.xbm
 share/pilot-link/prc/
 share/pilot-link/prc/getrom.prc
 share/pilot-link/prc/getrom2.prc
-%%SHARED%%
-@comment share/pilot-link/udev/
-@comment share/pilot-link/udev/60-libpisock.rules
