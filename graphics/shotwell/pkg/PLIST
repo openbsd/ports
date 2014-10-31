@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/09/20 06:10:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/10/31 23:54:39 ajacoutot Exp $
 %%SHARED%%
 @bin bin/shotwell
 lib/shotwell/
@@ -341,6 +341,7 @@ share/shotwell/ui/savedsearch.ui
 share/shotwell/ui/search_bar.ui
 share/shotwell/ui/search_sidebar_context.ui
 share/shotwell/ui/set_background_dialog.glade
+share/shotwell/ui/set_background_slideshow_dialog.glade
 share/shotwell/ui/shotwell.glade
 share/shotwell/ui/shotwell.xml
 share/shotwell/ui/sidebar_default_context.ui
