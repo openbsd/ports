@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.873 2014/10/31 16:44:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.874 2014/10/31 23:59:41 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -653,7 +653,6 @@
      SUBDIR += zabbix,mysql
      SUBDIR += zabbix,pgsql
      SUBDIR += zabbix,sqlite3
-     SUBDIR += zenirc
      SUBDIR += zeromq
      SUBDIR += ziproxy
      SUBDIR += znc
