@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/31 12:01:09 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/sh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/sh.py
+lib/python${MODPY_VERSION}/site-packages/sh.pyc
