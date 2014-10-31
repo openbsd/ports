@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2014/05/22 14:16:55 sthen Exp $
+$OpenBSD: README,v 1.2 2014/10/31 13:39:22 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,8 +13,8 @@ and many require additional packages to be installed.
 Here are a few common examples.
 
 discogs: The discogs plugin extends the autotagger's search capabilities
-to include matches from the Discogs database. Install the py-discogs-client
-package with pkg_add(1) and add 'discogs' to the plugins: line.
+to include matches from the Discogs database. Add 'discogs' to the plugins:
+line in ~/.config/beets/config.yaml.
 
 chroma: This plugin is for acoustic fingerprinting. Install py-acoustid
 and add 'chroma' to the plugins: line.
@@ -27,5 +27,4 @@ web: The web plugin lets your browse and listen to your library through
 an HTML5 compatible browser. Install the py-flask package and add 'web'
 to the plugins: line.
 
-See http://beets.readthedocs.org/en/latest/plugins/index.html for a
-complete list.
+See http://beets.readthedocs.org/en/latest/plugins/ for a complete list.
