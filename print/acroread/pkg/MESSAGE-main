@@ -1,5 +1,0 @@
-Be sure to read the license agreement in
-${PREFIX}/Acrobat7/Reader/Legal/ENU/License.html
-
-This package requires the sysctl kern.emul.linux being set to 1 and
-just did so. To make this change permanent, edit /etc/sysctl.conf.

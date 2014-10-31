@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.111 2014/08/28 19:02:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2014/10/31 12:34:21 dcoppa Exp $
 
     SUBDIR =
     SUBDIR += a2ps
-    SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
     SUBDIR += apvlv

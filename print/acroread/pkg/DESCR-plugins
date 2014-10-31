@@ -1,4 +1,0 @@
-Further plugins for acrobat reader. These are factored out into their
-own package, as they are not really needed for viewing PDFs, slow down
-startup time, might invade your privacy and leave less room for security
-problems (think about javascript in PDFs).
