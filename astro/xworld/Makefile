@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/29 12:51:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2014/10/31 15:12:05 landry Exp $
 
 COMMENT=	earth as seen from the direction of the sun
 
 DISTNAME=	xworld-2.0
-REVISION=	0
+REVISION=	2
 CATEGORIES=	astro x11
 
 MAINTAINER=	Vladimir Kotal <vlada@devnull.cz>
@@ -13,7 +13,6 @@ MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=naddy/}
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
 
-REVISION =	1
 WANTLIB=	X11 c m
 
 
