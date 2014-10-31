@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.60 2014/09/26 13:55:44 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.61 2014/10/31 15:03:21 benoit Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -357,7 +357,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gitglossary.7
 @man man/man7/gitnamespaces.7
 @man man/man7/gitrevisions.7
-@man man/man7/gittutorial-2.7
+@man man/man7/gittutorial-${MODPY_VERSION}
 @man man/man7/gittutorial.7
 @man man/man7/gitworkflows.7
 share/doc/pkg-readmes/${FULLPKGNAME}
