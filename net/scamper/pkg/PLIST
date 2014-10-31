@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/04 23:13:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/10/31 23:19:33 sthen Exp $
 @newgroup _scamper:677
 @newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
 @bin bin/sc_ally
@@ -13,6 +13,7 @@
 @bin bin/sc_wartscat
 @bin bin/sc_wartsdump
 @bin bin/sc_wartsfix
+@mode 4555
 @bin bin/scamper
 @bin bin/scamper-dealias
 @bin bin/scamper-neighbourdisc
@@ -22,6 +23,7 @@
 @bin bin/scamper-tbit
 @bin bin/scamper-trace
 @bin bin/scamper-tracelb
+@mode
 include/scamper_addr.h
 include/scamper_dealias.h
 include/scamper_file.h
