@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_preferences_cpp,v 1.4 2014/08/20 16:24:11 gonzalo Exp $
---- src/preferences.cpp.orig	Sat Mar 15 18:56:31 2014
-+++ src/preferences.cpp	Mon Jul 28 12:12:56 2014
+$OpenBSD: patch-src_preferences_cpp,v 1.5 2014/10/31 13:51:36 gonzalo Exp $
+--- src/preferences.cpp.orig	Sat Aug 30 19:28:56 2014
++++ src/preferences.cpp	Wed Oct 22 13:01:25 2014
 @@ -136,7 +136,7 @@ void Preferences::reset() {
  	softvol_max = 110; // 110 = default value in mplayer
  	use_scaletempo = Detect;
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_preferences_cpp,v 1.4 2014/08/20 16:24:11 gonzalo Exp $
  #ifdef BLURAY_SUPPORT
  	bluray_device = "";
  #endif
-@@ -287,13 +287,13 @@ void Preferences::reset() {
+@@ -290,13 +290,13 @@ void Preferences::reset() {
      mplayer_additional_audio_filters="";
  
  #ifdef LOG_MPLAYER
