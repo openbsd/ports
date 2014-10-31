@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2014/02/03 19:06:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2014/10/31 15:38:22 dcoppa Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
@@ -40,7 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_prog_EMACS=no \
 		lispdir=${PREFIX}/share/a2ps/emacs
 
-.for p in bzip2 gv ghostview dvips pdf2ps acroread tex latex ps2pdf \
+.for p in bzip2 gv ghostview dvips pdf2ps tex latex ps2pdf \
 	  bzip distill netscape html2ps grog convert
 CONFIGURE_ENV+= ac_cv_prog_COM_$p=no
 .endfor
