@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_Makefile_in,v 1.19 2012/08/18 23:47:27 avsm Exp $
+$OpenBSD: patch-config_Makefile_in,v 1.5 2014/10/31 08:19:39 dcoppa Exp $
 --- config/Makefile.in.orig	Sun Jul  1 19:47:41 2012
 +++ config/Makefile.in	Tue Aug  7 07:54:39 2012
 @@ -633,6 +633,8 @@ uninstall::

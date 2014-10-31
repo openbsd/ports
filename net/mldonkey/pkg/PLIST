@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/04/24 12:55:12 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/10/31 08:19:39 dcoppa Exp $
 bin/mlbt
 bin/mlbt+gui
 bin/mldc
