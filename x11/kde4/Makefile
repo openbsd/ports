@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/07/18 08:17:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.39 2014/11/01 21:00:22 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -16,15 +16,15 @@
 # +-> libs                                               | |||
 #     +-> pure resources: base-artwork, l10n, wallpapers | |||
 #     |                                                  | |||
-#     +-> baseapps                                       | |||
-#     |   +-> konsole                                    | |||
-#     |                                                  | |||
-#     |-> kfilemetadata -->-----+                        | |||
-#     +-> pimlibs               |                        | |||
-#     |   +-> libkfbapi         |                        | |||
-#     |   +-> libkgapi          |                        | |||
-#     |   +-> pim-runtime       |                        | |||
-#     |   +-> baloo <---------<-+                        | |||
+#     +-> baseapps <---------------<-+                   | |||
+#     |   +-> konsole                |                   | |||
+#     |                              |                   | |||
+#     |-> kfilemetadata -->-----+    |                   | |||
+#     +-> pimlibs               |    |                   | |||
+#     |   +-> libkfbapi         |    |                   | |||
+#     |   +-> libkgapi          |    |                   | |||
+#     |   +-> pim-runtime       |    |                   | |||
+#     |   +-> baloo <>-------<>-+-->-+                   | |||
 #     |       +-> nepomuk-core                           | |||
 #     |           +-> kactivities                        | |||
 #     |               +-> runtime                        | |||
@@ -274,7 +274,7 @@ SUBDIR += kteatime
 # additional resources
 SUBDIR += artwork
 SUBDIR += base-artwork
-#SUBDIR += l10n
+SUBDIR += l10n
 SUBDIR += plasma-addons
 SUBDIR += wallpapers
 
