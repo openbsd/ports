@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 10:41:13 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/01 20:47:29 zhuk Exp $
 include/QtGStreamer/
 include/QtGStreamer/QGlib/
 include/QtGStreamer/QGlib/Connect
@@ -27,6 +27,7 @@ include/QtGStreamer/QGlib/type.h
 include/QtGStreamer/QGlib/value.h
 include/QtGStreamer/QGlib/wrap.h
 include/QtGStreamer/QGst/
+include/QtGStreamer/QGst/Allocator
 include/QtGStreamer/QGst/Bin
 include/QtGStreamer/QGst/Buffer
 include/QtGStreamer/QGst/BufferList
@@ -49,6 +50,7 @@ include/QtGStreamer/QGst/Global
 include/QtGStreamer/QGst/Init
 include/QtGStreamer/QGst/Int64Range
 include/QtGStreamer/QGst/IntRange
+include/QtGStreamer/QGst/Memory
 include/QtGStreamer/QGst/Message
 include/QtGStreamer/QGst/MiniObject
 include/QtGStreamer/QGst/Object
@@ -56,8 +58,9 @@ include/QtGStreamer/QGst/Pad
 include/QtGStreamer/QGst/Parse
 include/QtGStreamer/QGst/Pipeline
 include/QtGStreamer/QGst/PluginFeature
-include/QtGStreamer/QGst/PropertyProbe
 include/QtGStreamer/QGst/Query
+include/QtGStreamer/QGst/Sample
+include/QtGStreamer/QGst/Segment
 include/QtGStreamer/QGst/StreamVolume
 include/QtGStreamer/QGst/Structure
 include/QtGStreamer/QGst/TagList
@@ -77,7 +80,8 @@ include/QtGStreamer/QGst/Utils/applicationsink.h
 include/QtGStreamer/QGst/Utils/applicationsource.h
 include/QtGStreamer/QGst/Utils/global.h
 include/QtGStreamer/QGst/VideoOrientation
-include/QtGStreamer/QGst/XOverlay
+include/QtGStreamer/QGst/VideoOverlay
+include/QtGStreamer/QGst/allocator.h
 include/QtGStreamer/QGst/bin.h
 include/QtGStreamer/QGst/buffer.h
 include/QtGStreamer/QGst/bufferlist.h
@@ -95,6 +99,7 @@ include/QtGStreamer/QGst/event.h
 include/QtGStreamer/QGst/ghostpad.h
 include/QtGStreamer/QGst/global.h
 include/QtGStreamer/QGst/init.h
+include/QtGStreamer/QGst/memory.h
 include/QtGStreamer/QGst/message.h
 include/QtGStreamer/QGst/miniobject.h
 include/QtGStreamer/QGst/object.h
@@ -102,15 +107,16 @@ include/QtGStreamer/QGst/pad.h
 include/QtGStreamer/QGst/parse.h
 include/QtGStreamer/QGst/pipeline.h
 include/QtGStreamer/QGst/pluginfeature.h
-include/QtGStreamer/QGst/propertyprobe.h
 include/QtGStreamer/QGst/query.h
+include/QtGStreamer/QGst/sample.h
+include/QtGStreamer/QGst/segment.h
 include/QtGStreamer/QGst/streamvolume.h
 include/QtGStreamer/QGst/structs.h
 include/QtGStreamer/QGst/structure.h
 include/QtGStreamer/QGst/taglist.h
 include/QtGStreamer/QGst/urihandler.h
 include/QtGStreamer/QGst/videoorientation.h
-include/QtGStreamer/QGst/xoverlay.h
+include/QtGStreamer/QGst/videooverlay.h
 lib/cmake/
 lib/cmake/QtGStreamer/
 lib/cmake/QtGStreamer/QtGStreamerConfig.cmake
@@ -118,15 +124,15 @@ lib/cmake/QtGStreamer/QtGStreamerConfigCommon.cmake
 lib/cmake/QtGStreamer/QtGStreamerConfigVersion.cmake
 lib/cmake/QtGStreamer/QtGStreamerTargets-noconfig.cmake
 lib/cmake/QtGStreamer/QtGStreamerTargets.cmake
-lib/gstreamer-0.10/libgstqtvideosink.so
+lib/gstreamer-1.0/libgstqtvideosink.so
 @lib lib/libQtGLib-2.0.so.${LIBQtGLib-2.0_VERSION}
-@lib lib/libQtGStreamer-0.10.so.${LIBQtGStreamer-0.10_VERSION}
-@lib lib/libQtGStreamerUi-0.10.so.${LIBQtGStreamerUi-0.10_VERSION}
-@lib lib/libQtGStreamerUtils-0.10.so.${LIBQtGStreamerUtils-0.10_VERSION}
+@lib lib/libQtGStreamer-1.0.so.${LIBQtGStreamer-1.0_VERSION}
+@lib lib/libQtGStreamerUi-1.0.so.${LIBQtGStreamerUi-1.0_VERSION}
+@lib lib/libQtGStreamerUtils-1.0.so.${LIBQtGStreamerUtils-1.0_VERSION}
 lib/pkgconfig/QtGLib-2.0.pc
-lib/pkgconfig/QtGStreamer-0.10.pc
-lib/pkgconfig/QtGStreamerUi-0.10.pc
-lib/pkgconfig/QtGStreamerUtils-0.10.pc
+lib/pkgconfig/QtGStreamer-1.0.pc
+lib/pkgconfig/QtGStreamerUi-1.0.pc
+lib/pkgconfig/QtGStreamerUtils-1.0.pc
 lib/qt4/imports/QtGStreamer/
 lib/qt4/imports/QtGStreamer/libQtGStreamerQuick1.so
 lib/qt4/imports/QtGStreamer/qmldir
