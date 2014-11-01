@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/10 19:50:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/01 20:32:54 zhuk Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
-VERSION =	4.7.2
+VERSION =	4.8.1
 DISTNAME =	phonon-${VERSION}
 HOMEPAGE =	http://phonon.kde.org/
 
 # Renamed to avoid clashing with Qt4's one
-SHARED_LIBS =	phonon_s		1.0 \
-		phonon_sexperimental	0.0
+# XXX major should be tweaked on any update, to unbreak
+# IMPORTED_LINK_INTERFACE_LIBRARIES CMake feature.
+SHARED_LIBS =	phonon_s		2.0 \
+		phonon_sexperimental	1.0
+
+MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,7 +23,7 @@ MODULES =		x11/kde4
 MODKDE4_USE =
 MODKDE4_LIB_LINKS =	Yes
 
-WANTLIB =	m pthread
+WANTLIB =	m
 WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB +=	lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB +=	lib/qt4/QtTest lib/qt4/QtXml lib/qt4/QtXmlPatterns
@@ -34,7 +38,8 @@ CONFIGURE_ARGS =	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:Bool=Yes \
 			-DBACKEND_INSTALL_DIR="${PREFIX}/lib/kde4/plugins/phonon_backend"
 
 # Clashes with the one provided by Qt itself.
-CONFIGURE_ARGS +=	-DPHONON_BUILD_DESIGNER_PLUGIN:Bool=No
+CONFIGURE_ARGS +=	-DPHONON_BUILD_DESIGNER_PLUGIN:Bool=No \
+			-DCMAKE_POLICY_DEFAULT_CMP0017=NEW
 
 # Upstream says, tests need to be redone.
 NO_TEST =		Yes

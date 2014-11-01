@@ -1,30 +1,22 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/10 19:50:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/01 20:32:54 zhuk Exp $
 
 COMMENT =	GStreamer-based Phonon backend
-VERSION =	4.7.1
+VERSION =	4.8.0
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/}
 
 # allow playing Vorbis and MP3 notification sounds out of the box
-RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
-		multimedia/gstreamer-0.10/plugins-ugly \
+RUN_DEPENDS =	multimedia/gstreamer1/plugins-base \
+		multimedia/gstreamer1/plugins-ugly \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS =	multimedia/gstreamer-0.10/core
+LIB_DEPENDS =	multimedia/gstreamer1/core
 
 WANTLIB =	GL m
 WANTLIB +=	lib/qt4/QtGui lib/qt4/QtOpenGL
 WANTLIB +=	glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB +=	gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
-WANTLIB +=	gstreamer-0.10 gstvideo-0.10 gstapp-0.10
-
-# XXX
-# (gst-plugin-scanner:18789): GLib-GObject-WARNING **: cannot register existing
-# type `GstVorbisDec'
-# (gst-plugin-scanner:18789): GLib-CRITICAL **: g_once_init_leave: assertion
-# `result != 0' failed
-# (gst-plugin-scanner:18789): GStreamer-CRITICAL **: gst_element_register:
-# assertion `g_type_is_a (type, GST_TYPE_ELEMENT)' failed
+WANTLIB +=	gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB +=	gstreamer-1.0 gstvideo-1.0 gstapp-1.0
 
 .include <bsd.port.mk>
