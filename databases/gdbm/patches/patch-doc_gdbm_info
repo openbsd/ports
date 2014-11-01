@@ -1,0 +1,18 @@
+$OpenBSD: patch-doc_gdbm_info,v 1.1 2014/11/01 19:29:54 jasper Exp $
+
+Silence install-info error:
+  install-info: menu item `gdbm_load' already exists, for file `(none)' 
+
+--- doc/gdbm.info.orig	Sat Nov  1 20:15:56 2014
++++ doc/gdbm.info	Sat Nov  1 20:16:06 2014
+@@ -3,8 +3,8 @@ This is gdbm.info, produced by makeinfo version 4.13 f
+ INFO-DIR-SECTION Programming & development tools
+ START-INFO-DIR-ENTRY
+ * GDBM: (gdbm).                 The GNU database manager.
+-* gdbm_dump: gdbm_dump(gdbm).   Dump the GDBM database into a flat file.
+-* gdbm_load: gdbm_load(gdbm).   Load the database from a flat file.
++* gdbm_dump: (gdbm).   Dump the GDBM database into a flat file.
++* gdbm_load: (gdbm).   Load the database from a flat file.
+ END-INFO-DIR-ENTRY
+ 
+    Published by the Free Software Foundation, 51 Franklin Street, Fifth

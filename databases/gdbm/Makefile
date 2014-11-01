@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2014/03/27 07:57:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2014/11/01 19:29:54 jasper Exp $
 
 COMMENT=		GNU dbm
 
 VERSION=		1.11
+REVISION=		0
 DISTNAME=		gdbm-${VERSION}
 CATEGORIES=		databases
 
