@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.103 2014/10/30 15:55:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2014/11/01 18:44:10 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.14.1.5
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -90,6 +91,9 @@ RUN_DEPENDS +=		net/telepathy/telepathy-logger
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
 RUN_DEPENDS +=		x11/gnome/user-docs
+
+# gkbd-keyboard-display
+RUN_DEPENDS +=		x11/gnome/libgnomekbd
 
 # add required introspection libs that are not in the dependency chain
 RUN_DEPENDS +=		inputmethods/ibus \
