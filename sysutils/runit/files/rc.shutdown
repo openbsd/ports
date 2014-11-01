@@ -1,6 +1,7 @@
-# Stop runit services
+# $OpenBSD: rc.shutdown,v 1.4 2014/11/01 14:54:51 ajacoutot Exp $
+#
+# Stop runit services.
 
-echo -n 'Waiting for services to stop...'
-/usr/local/sbin/sv -w196 force-stop /var/service/*
-/usr/local/sbin/sv exit /var/service/*
-
+echo 'Waiting for runit services to stop...'
+${TRUEPREFIX}/sbin/sv -w196 force-stop ${LOCALSTATEDIR}/service/*
+${TRUEPREFIX}/sbin/sv exit ${LOCALSTATEDIR}/service/*

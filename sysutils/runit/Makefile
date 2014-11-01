@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/05/31 10:49:02 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/01 14:54:51 ajacoutot Exp $
 
 COMMENT=		daemontools alike replacement for init
 
 DISTNAME=		runit-1.7.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.smarden.org/runit/
@@ -54,7 +54,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/package/${doc} ${PREFIX}/share/doc/runit/
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/runit
-	${INSTALL_DATA} ${FILESDIR}/rc.shutdown ${PREFIX}/share/examples/runit/
+	${SUBST_CMD} -c ${FILESDIR}/rc.shutdown \
+		${PREFIX}/share/examples/runit/rc.shutdown
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/runit/init
 .for file in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKDIST}/${file} ${PREFIX}/share/examples/runit/init/
