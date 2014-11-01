@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/12/07 23:42:04 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.18 2014/11/01 00:56:44 jca Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -8,7 +8,7 @@ DISTNAME =	anthy-$V
 PKGNAME-main =	anthy-$V
 PKGNAME-emacs =	emacs-anthy-$V
 REVISION-main = 0
-REVISION-emacs = 0
+REVISION-emacs = 1
 
 SHARED_LIBS +=	anthydic             1.0      # .1.0
 SHARED_LIBS +=	anthy                1.0      # .1.0
@@ -39,7 +39,9 @@ MULTI_PACKAGES = -main -emacs
 .include <bsd.port.arch.mk>
 
 .if ${BUILD_PACKAGES:M-emacs}
-BUILD_DEPENDS =	editors/emacs21
+BUILD_DEPENDS =	emacs->=24:editors/emacs
+.else
+CONFIGURE_ENV += EMACS=no
 .endif
 
 # can't make sense of any of these tests
