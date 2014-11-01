@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/07 09:07:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/01 10:44:05 jca Exp $
 
 SHARED_ONLY =		Yes
-VERSION =		4.0.21
+VERSION =		4.0.22
 DISTNAME =		samba-${VERSION}
 DOCSVERSION =		v3-5-test-4c5a1b6b
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
