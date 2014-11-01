@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/11/01 09:30:59 ratchov Exp $
+# $OpenBSD: Makefile,v 1.47 2014/11/01 14:08:38 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -87,6 +87,8 @@ WANTLIB+=		ICE SM X11 Xft Xpm Xrender atk-1.0 cairo-gobject \
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
 .endif
+
+NO_TEST=		Yes
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}
