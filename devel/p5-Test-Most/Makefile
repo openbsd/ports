@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/16 22:33:44 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/01 19:59:16 jasper Exp $
 
 COMMENT =	most commonly needed test functions and features
 DISTNAME =	Test-Most-0.33
+REVISION =	0
 CATEGORIES =	devel
 
-MAINTAINER =	Andrew Fresh <andrew@cpan.org>
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
 PERMIT_PACKAGE_CDROM =	Yes

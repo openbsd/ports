@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/16 21:56:38 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/01 19:59:16 jasper Exp $
 
 COMMENT =	inflect short English Phrases
 DISTNAME =	Lingua-EN-Inflect-Phrase-0.18
+REVISION =	0
 CATEGORIES =	textproc
 
-MAINTAINER =	Andrew Fresh <andrew@cpan.org>
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
 PERMIT_PACKAGE_CDROM =	Yes

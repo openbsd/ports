@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2014/03/16 03:00:03 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/01 19:59:16 jasper Exp $
 
 COMMENT =	parse and format strp and strf time patterns
 
 MODULES =	cpan
 DISTNAME =	DateTime-Format-Strptime-1.54
 EPOCH =		0
+REVISION =	0
 CATEGORIES =	devel
 
-MAINTAINER = Andrew Fresh <andrew@cpan.org>
+MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 
 # artistic_2
 PERMIT_PACKAGE_CDROM =	Yes

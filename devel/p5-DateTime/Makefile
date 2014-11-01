@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/06/14 23:24:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2014/11/01 19:59:16 jasper Exp $
 
 COMMENT =		perl objected oriented Date Time
 
@@ -8,9 +8,9 @@ MODULES =		cpan
 DISTNAME =		DateTime-1.07
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
-MAINTAINER = Andrew Fresh <andrew@cpan.org>
+MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 
 # artistic_2
 PERMIT_PACKAGE_CDROM =	Yes

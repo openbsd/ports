@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/23 22:21:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/01 19:59:16 jasper Exp $
 
 COMMENT=	unload a class
 
 DISTNAME=	Class-Unload-0.08
+REVISION=	0
 CATEGORIES=	devel
 
-MAINTAINER=	Andrew Fresh <andrew@cpan.org>
+MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
