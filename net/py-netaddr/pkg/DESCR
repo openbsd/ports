@@ -1,0 +1,8 @@
+A pure Python network address representation and manipulation library.
+
+netaddr provides a Pythonic way of working with :-
+
+IPv4 and IPv6 addresses and subnets
+MAC addresses, OUI and IAB identifiers, IEEE EUI-64 identifiers
+arbitrary (non-aligned) IP address ranges and IP address sets
+various non-CIDR IP range formats such as nmap and glob-style formats
