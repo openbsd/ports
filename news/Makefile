@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2014/11/01 10:31:21 jca Exp $
 
      SUBDIR =
      SUBDIR += aub
      SUBDIR += hellanzb
      SUBDIR += leafnode
-     SUBDIR += newsfetch
      SUBDIR += nn
      SUBDIR += p5-Gateway
      SUBDIR += p5-News-Article

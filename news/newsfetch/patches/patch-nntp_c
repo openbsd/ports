@@ -1,9 +1,0 @@
-$OpenBSD: patch-nntp_c,v 1.1 2012/08/06 20:32:22 naddy Exp $
---- nntp.c.orig	Mon Aug  6 22:25:44 2012
-+++ nntp.c	Mon Aug  6 22:26:07 2012
-@@ -1,4 +1,5 @@
- #include <stdio.h>
-+#include <stdlib.h>
- #include <pwd.h>
- #include <sys/types.h>
- #include <sys/socket.h>

@@ -1,3 +1,0 @@
-newsfetch pulls news from an NNTP server and writes the articles to
-a file named same as newsgroup name. The file created by newsfetch can
-be used with any mail reader.
