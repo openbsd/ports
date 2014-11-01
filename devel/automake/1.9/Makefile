@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2014/11/01 00:09:24 jca Exp $
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
@@ -29,7 +29,7 @@ TEST_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/gmake \
 			archivers/bzip2 \
 			devel/bison \
-			editors/emacs21 \
+			emacs->=24:editors/emacs \
 			print/texlive/base \
 			devel/dejagnu
 

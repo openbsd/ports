@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2014/11/01 00:09:24 jca Exp $
 
 VERSION=	1.10
 DISTNAME=	automake-${VERSION}.3
@@ -32,7 +32,7 @@ TEST_DEPENDS=	${BASE_PKGPATH} \
 			devel/gmake \
 			archivers/bzip2 \
 			devel/bison \
-			editors/emacs21 \
+			emacs->=24:editors/emacs \
 			devel/dejagnu
 
 TEST_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
