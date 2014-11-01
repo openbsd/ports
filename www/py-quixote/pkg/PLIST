@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/11 17:51:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/01 16:21:32 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/quixote/demo/forms.ptl
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/integers.ptl
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/mini_demo.py
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/mini_demo.pyc
+lib/python${MODPY_VERSION}/site-packages/quixote/demo/profile.py
+lib/python${MODPY_VERSION}/site-packages/quixote/demo/profile.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/root.ptl
 lib/python${MODPY_VERSION}/site-packages/quixote/directory.py
 lib/python${MODPY_VERSION}/site-packages/quixote/directory.pyc
@@ -50,9 +52,13 @@ lib/python${MODPY_VERSION}/site-packages/quixote/http_response.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/logger.py
 lib/python${MODPY_VERSION}/site-packages/quixote/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/
+lib/python${MODPY_VERSION}/site-packages/quixote/ptl.py
+lib/python${MODPY_VERSION}/site-packages/quixote/ptl.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/cimport.so
+lib/python${MODPY_VERSION}/site-packages/quixote/ptl/ihooks_local.py
+lib/python${MODPY_VERSION}/site-packages/quixote/ptl/ihooks_local.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/install.py
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/install.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/ptl_compile.py
@@ -92,6 +98,8 @@ lib/python${MODPY_VERSION}/site-packages/quixote/server/util.py
 lib/python${MODPY_VERSION}/site-packages/quixote/server/util.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/session.py
 lib/python${MODPY_VERSION}/site-packages/quixote/session.pyc
+lib/python${MODPY_VERSION}/site-packages/quixote/t.py
+lib/python${MODPY_VERSION}/site-packages/quixote/t.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/util.py
 lib/python${MODPY_VERSION}/site-packages/quixote/util.pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/wsgi.py
