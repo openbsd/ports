@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:11 espie Exp $
-bin/synaesthesia
-share/doc/synaesthesia/
-share/doc/synaesthesia/README
