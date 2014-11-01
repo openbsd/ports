@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/01 20:53:55 abieber Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/01 22:20:49 abieber Exp $
 
 BROKEN-powerpc=	help2man: can't get `--help' info from ./luakit
 
 COMMENT=	fast, small, webkit based browser written in lua
 
-VERSION=	2014.10.17
-GH_ACCOUNT=	mason-larobina
-GH_PROJECT=	luakit
-GH_COMMIT=	5e3c2c8f519eaf095d1ae3e402639bf80eafbb3b
+VERSION=	2012.09.13.rc1
+
+REVISION=	6
 
 DISTNAME=	luakit-${VERSION}
 
@@ -16,6 +15,8 @@ CATEGORIES=	www
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 HOMEPAGE=	http://luakit.org
+
+MASTER_SITES= http://deftly.net/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,8 +33,6 @@ WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES = lang/lua \
 		devel/gettext
-
-MODLUA_SA=	Yes
 
 BUILD_DEPENDS=	devel/help2man
 
@@ -52,7 +51,6 @@ MAKE_ENV+= USE_LUAJIT=1 USE_UNIQUE=1 INSTALLDIR=${PREFIX} \
 PIXDIR = ${PREFIX}/share/pixmaps
 JQDIR = ${PREFIX}/share/luakit/lib
 
-NO_TEST = Yes
 
 pre-configure: 
 	perl -pi -e 's,/usr/bin/env lua,${MODLUA_BIN},g' \
