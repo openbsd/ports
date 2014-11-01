@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/10/15 02:06:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.47 2014/11/01 04:56:09 jeremy Exp $
 
 BROKEN-alpha =		miniruby abort trap when generating rdoc
 
@@ -9,7 +9,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		1.9.3
-PATCHLEVEL =		545
+PATCHLEVEL =		550
 RUBYLIBREV =		1.9.1
 
 SHARED_LIBS =		ruby19 1.1
@@ -18,7 +18,6 @@ PKGNAME-gdbm =		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-dbm =		ruby-dbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby-ri_docs-${VERSION}.${PATCHLEVEL}
-REVISION-main =		1
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
@@ -90,7 +89,7 @@ SUBST_VARS +=		RUBYLIBREV
 
 TEST_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
-post-install:
+pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
 do-test:
