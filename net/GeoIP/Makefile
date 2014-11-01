@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.32 2014/07/09 22:57:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2014/11/01 09:43:57 sthen Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
-V=		1.6.2
+V=		1.6.3
 DISTNAME=	GeoIP-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		geolite-data-20140709.tar.bz2:0
+		geolite-data-20141101.tar.bz2:0
 
-SHARED_LIBS +=	GeoIP                9.0      # 7.0
+SHARED_LIBS +=	GeoIP                9.0      # 7.3
 
 CATEGORIES=	net geo
 
 HOMEPAGE=	http://dev.maxmind.com/geoip/legacy/downloadable/
-MASTER_SITES=	https://github.com/maxmind/geoip-api-c/releases/download/v$V/
-MASTER_SITES0=	http://spacehopper.org/mirrors/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c z
 
-SEPARATE_BUILD=	Yes
+MASTER_SITES=	https://github.com/maxmind/geoip-api-c/releases/download/v$V/
+MASTER_SITES0=	http://spacehopper.org/mirrors/
 
 CONFIGURE_STYLE= gnu
+SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS=	--datadir=${LOCALSTATEDIR}/db \
 		${CONFIGURE_SHARED}
 

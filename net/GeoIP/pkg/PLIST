@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/03/18 17:56:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/11/01 09:43:58 sthen Exp $
 @extraunexec rm /var/db/GeoIP/*
 @bin bin/geoiplookup
 @bin bin/geoiplookup6
@@ -7,7 +7,6 @@ include/GeoIPCity.h
 lib/libGeoIP.a
 lib/libGeoIP.la
 @lib lib/libGeoIP.so.${LIBGeoIP_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/geoip.pc
 @man man/man1/geoiplookup.1
 @man man/man1/geoiplookup6.1
