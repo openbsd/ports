@@ -1,0 +1,5 @@
+It is often neccessary to refer to 'default values' or important
+constant values in your POD, but then you have to put them in your
+code as well, and they can easily get out of sync.  use this module
+and you can import variables from the POD directly, avoiding
+repetition.
