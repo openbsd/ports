@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1269 2014/10/31 12:05:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.1270 2014/11/01 22:59:47 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -932,6 +932,7 @@
      SUBDIR += p5-PerlIO-via-Bzip2
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
+     SUBDIR += p5-Pod-Constant
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Pod-ToDemo
      SUBDIR += p5-Probe-Perl
