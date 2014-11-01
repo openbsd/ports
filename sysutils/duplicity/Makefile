@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/14 15:14:28 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2014/11/01 10:28:15 jca Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.6.23
+MODPY_EGG_VERSION = 0.6.24
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -17,6 +16,7 @@ MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
+MODPY_SETUPTOOLS =     Yes
 
 WANTLIB +=	pthread rsync ${MODPY_WANTLIB}
 
@@ -30,7 +30,8 @@ RUN_DEPENDS +=	net/py-boto \
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
-# Tests in ${WRKSRC}/testing directory require bash to run and they all fail
+# Some regression tests are hanging
+# TEST_DEPENDS =	devel/py-mock
 NO_TEST =	Yes
 
 # XXX 600 mode prevents from reading the man page;
