@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/15 02:06:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/01 04:53:09 jeremy Exp $
 
 BROKEN-hppa =		miniruby abort trap when generating rdoc
 BROKEN-alpha =		miniruby abort trap when generating rdoc
@@ -9,16 +9,15 @@ COMMENT-gdbm =		gdbm interface for ruby
 COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
-VERSION =		2.1.3
+VERSION =		2.1.4
 RUBYLIBREV =		2.1
 DISTNAME =		ruby-${VERSION}
 
-SHARED_LIBS =		ruby21	0.0
+SHARED_LIBS =		ruby21	1.0
 PKGNAME-main =		ruby-${VERSION}
 PKGNAME-gdbm =		ruby21-gdbm-${VERSION}
 PKGNAME-tk =		ruby21-tk-${VERSION}
 PKGNAME-ri_docs =	ruby21-ri_docs-${VERSION}
-REVISION-main =		0
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
@@ -87,7 +86,7 @@ ALL_TARGET +=		rdoc
 INSTALL_TARGET +=	install-doc
 .endif
 
-SUBST_VARS +=		RUBYLIBREV
+SUBST_VARS +=		VERSION RUBYLIBREV
 
 TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
