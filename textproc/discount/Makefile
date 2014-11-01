@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/01 11:06:55 jca Exp $
 
 COMMENT =		fast C implementation of Markdown
 
-DISTNAME =		discount-1.6.6
+DISTNAME =		discount-2.1.6
+EXTRACT_SUFX =		.tar.bz2
+
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://www.pell.portland.or.us/~orc/Code/markdown/
@@ -14,22 +16,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c
 
-# Stupid github.
-MASTER_SITES =		http://distfiles.nl/
-WRKDIST = 		${WRKDIR}/Orc-discount-9dabdb8
+MASTER_SITES =		http://www.pell.portland.or.us/~orc/Code/discount/
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure.sh
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
-BUILD_DEPENDS = 	archivers/gtar
-TAR =			${LOCALBASE}/bin/gtar
-
 INSTALL_TARGET =	install.everything
-TEST_TARGET =	test
-USE_GROFF =		Yes
+#TEST_TARGET =		test
 
 pre-configure:
-	@perl -pi -e 's,\./markdown,\./discount,' ${WRKSRC}/tests/*.t
+	@perl -pi -e 's,\./markdown,\./discount,' ${WRKSRC}/tests/*
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2010/08/30 21:40:29 jasper Exp $
---- Makefile.in.orig	Thu Jun 17 03:14:33 2010
-+++ Makefile.in	Mon Aug 30 15:01:46 2010
-@@ -7,7 +7,7 @@ MANDIR=@mandir@
+$OpenBSD: patch-Makefile_in,v 1.3 2014/11/01 11:06:55 jca Exp $
+--- Makefile.in.orig	Sat Aug 16 12:01:00 2014
++++ Makefile.in	Sat Aug 16 12:03:28 2014
+@@ -9,7 +9,7 @@ MANDIR=@mandir@
  LIBDIR=@libdir@
  INCDIR=@prefix@/include
  
@@ -9,24 +9,25 @@ $OpenBSD: patch-Makefile_in,v 1.2 2010/08/30 21:40:29 jasper Exp $
 +PGMS=discount
  SAMPLE_PGMS=mkd2html makepage
  @THEME@SAMPLE_PGMS+= theme
- MKDLIB=libmarkdown.a
-@@ -47,15 +47,16 @@ install.man:
- 	@INSTALL_DIR@ $(DESTDIR)/$(MANDIR)/man7
- 	@INSTALL_DATA@ markdown.7 mkd-extensions.7 $(DESTDIR)/$(MANDIR)/man7
- 	@INSTALL_DIR@ $(DESTDIR)/$(MANDIR)/man1
--	@INSTALL_DATA@ markdown.1 $(DESTDIR)/$(MANDIR)/man1
+ MKDLIB=libmarkdown
+@@ -50,7 +50,8 @@ install.man:
+ 	@INSTALL_DIR@ $(DESTDIR)$(MANDIR)/man7
+ 	@INSTALL_DATA@ markdown.7 mkd-extensions.7 $(DESTDIR)$(MANDIR)/man7
+ 	@INSTALL_DIR@ $(DESTDIR)$(MANDIR)/man1
+-	@INSTALL_DATA@ markdown.1 $(DESTDIR)$(MANDIR)/man1
 +	@mv markdown.1 discount.1
-+	@INSTALL_DATA@ discount.1 $(DESTDIR)/$(MANDIR)/man1
++	@INSTALL_DATA@ discount.1 $(DESTDIR)$(MANDIR)/man1
  
  install.everything: install install.man
  
- version.o: version.c VERSION
- 	$(CC) -DVERSION=\"`cat VERSION`\" -c version.c
+@@ -82,8 +83,8 @@ blocktags: mktags
+ mkd2html:  mkd2html.o $(MKDLIB) mkdio.h
+ 	$(CC) $(LFLAGS) -o mkd2html mkd2html.o -lmarkdown @LIBS@
  
--markdown: main.o $(MKDLIB)
--	$(CC) -o markdown main.o -lmarkdown @LIBS@
-+discount: main.o $(MKDLIB)
-+	$(CC) -o discount main.o -lmarkdown @LIBS@
- 
- # example programs
- @THEME@theme:  theme.o $(MKDLIB) mkdio.h
+-markdown: main.o pgm_options.o $(MKDLIB)
+-	$(CC) $(LFLAGS) -o markdown main.o pgm_options.o -lmarkdown @LIBS@
++discount: main.o pgm_options.o $(MKDLIB)
++	$(CC) $(LFLAGS) -o discount main.o pgm_options.o -lmarkdown @LIBS@
+ 	
+ makepage:  makepage.c pgm_options.o $(MKDLIB) mkdio.h
+ 	$(CC) $(LFLAGS) -o makepage makepage.c pgm_options.o -lmarkdown @LIBS@

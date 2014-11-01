@@ -1,7 +1,7 @@
-$OpenBSD: patch-markdown_3,v 1.2 2010/08/30 21:40:29 jasper Exp $
---- markdown.3.orig	Mon Aug 30 15:00:43 2010
-+++ markdown.3	Mon Aug 30 15:00:57 2010
-@@ -102,7 +102,7 @@ and
+$OpenBSD: patch-markdown_3,v 1.3 2014/11/01 11:06:55 jca Exp $
+--- markdown.3.orig	Sat Aug 16 12:07:43 2014
++++ markdown.3	Sat Aug 16 12:09:08 2014
+@@ -116,7 +116,7 @@ and
  .Fn mkd_string
  functions return a MMIOT* on success, null on failure.
  .Sh SEE ALSO

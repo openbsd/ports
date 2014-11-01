@@ -1,6 +1,6 @@
-$OpenBSD: patch-markdown_7,v 1.2 2010/08/30 21:40:29 jasper Exp $
---- markdown.7.orig	Thu Jun 17 03:14:33 2010
-+++ markdown.7	Mon Aug 30 15:01:46 2010
+$OpenBSD: patch-markdown_7,v 1.3 2014/11/01 11:06:55 jca Exp $
+--- markdown.7.orig	Sat Aug 16 12:07:45 2014
++++ markdown.7	Sat Aug 16 12:09:20 2014
 @@ -999,7 +999,7 @@ assumes that tabs are set to 4 spaces.
  John Gruber
  .%T http://daringfireball.net/

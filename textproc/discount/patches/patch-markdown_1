@@ -1,0 +1,12 @@
+$OpenBSD: patch-markdown_1,v 1.1 2014/11/01 11:06:55 jca Exp $
+--- markdown.1.orig	Sat Aug 16 12:51:44 2014
++++ markdown.1	Sat Aug 16 12:52:05 2014
+@@ -4,7 +4,7 @@
+ .Dt MARKDOWN 1
+ .Os MASTODON
+ .Sh NAME
+-.Nm markdown
++.Nm discount
+ .Nd text to html conversion tool
+ .Sh SYNOPSIS
+ .Nm
