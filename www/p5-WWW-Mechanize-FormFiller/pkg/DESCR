@@ -1,0 +1,4 @@
+The module is intended as a simple way to fill out HTML forms from
+a set of predetermined values.  You set up the form filler with
+value elements, retrieve the HTML form, and let the form filler
+loose on that form.
