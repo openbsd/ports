@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.3 2014/06/11 21:54:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/01 14:51:27 jasper Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
-V=		1.4.2
+V=		1.5.1
 DISTNAME=	tsung-$V
 
 CATEGORIES=	benchmarks net
 
-HOMEPAGE=	http://www.process-one.net/en/tsung/
+HOMEPAGE=	http://tsung.erlang-projects.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=          Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 
-MODPY_BUILDDEP=	No
+MODPY_BUILDDEP= 	No
 MODULES=		lang/python
 
 BUILD_DEPENDS=		lang/erlang
@@ -31,6 +31,9 @@ CONFIGURE_ENV=		HOME=/tmp
 MODPY_ADJ_FILES=	src/tsung-plotter/tsplot.py.in
 
 TEST_TARGET=		test
+
+FAKE_FLAGS=		CONFDIR="${PREFIX}/share/examples/tsung/" \
+			MAN_DIR="${PREFIX}/man/man1/"
 
 SUBST_VARS+=		V
 
