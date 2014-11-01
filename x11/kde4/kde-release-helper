@@ -613,6 +613,24 @@ BEGIN {
 	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
 }
 
+update_l10n() {
+	local d dirs l parargs
+	if [[ $# -gt 0 && $1 == @([0-9]) ]]; then
+		parargs="-j $1"
+	fi
+	if [ $# -eq 0 ]; then
+		dirs=$(list_l10n_port_dirs)
+	else
+		dirs=
+		for l; do
+			dirs="$dirs l10n/$l"
+		done
+	fi
+	for d in $dirs; do
+		echo SUBDIR=$d
+	done | parallel $parargs make DANGEROUS=Yes update-plist
+}
+
 update() {
 	test $# -ge 1 || usage
 
@@ -624,6 +642,10 @@ update() {
 
 	local CMD=$1; shift
 	case $CMD in
+	l|l1|l10|l10n)
+		update_l10n "$@"
+		;;
+
 	s|st|sta|stat|statu|status)
 		update_status "$@"
 		;;
