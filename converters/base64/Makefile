@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/11/01 21:17:57 schwarze Exp $
 
 COMMENT=	converter to/from base64 encoding
 
@@ -15,7 +15,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
 ALL_TARGET=	prog
-USE_GROFF =	Yes
 TEST_TARGET=	wringer
 
 .include <bsd.port.mk>
