@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/24 20:43:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/01 19:23:13 rpe Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.8.0
+DISTNAME =		uriparser-0.8.1
 
-SHARED_LIBS +=  uriparser                 0.0 # 1.15
+SHARED_LIBS +=  uriparser                 0.1 # 1.17
 
 CATEGORIES =		www
 
