@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/07/09 20:03:31 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2014/11/01 21:09:47 zhuk Exp $
 @pkgpath x11/kde4/runtime
 @bin bin/kcmshell4
 @bin bin/kde-cp
@@ -1113,6 +1113,12 @@ share/kde4/services/searchproviders/php.desktop
 share/kde4/services/searchproviders/python.desktop
 share/kde4/services/searchproviders/qt.desktop
 share/kde4/services/searchproviders/qt4.desktop
+share/kde4/services/searchproviders/qwant.desktop
+share/kde4/services/searchproviders/qwant_images.desktop
+share/kde4/services/searchproviders/qwant_news.desktop
+share/kde4/services/searchproviders/qwant_shopping.desktop
+share/kde4/services/searchproviders/qwant_social.desktop
+share/kde4/services/searchproviders/qwant_videos.desktop
 share/kde4/services/searchproviders/rae.desktop
 share/kde4/services/searchproviders/rag.desktop
 share/kde4/services/searchproviders/rfc.desktop

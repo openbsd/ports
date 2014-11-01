@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/01 21:09:47 zhuk Exp $
 @bin bin/rocs
 include/kde4/rocs/
 include/kde4/rocs/ConsoleModule.h
@@ -31,6 +31,8 @@ lib/kde4/rocs_tikzfileformat.so
 lib/kde4/rocs_transformedgesplugin.so
 @lib lib/librocscore.so.${LIBrocscore_VERSION}
 @lib lib/librocsvisualeditor.so.${LIBrocsvisualeditor_VERSION}
+share/appdata/
+share/appdata/rocs.appdata.xml
 share/applications/kde4/rocs.desktop
 share/apps/rocs/
 share/apps/rocs/engineapi/

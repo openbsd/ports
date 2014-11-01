@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:47 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE4_VERSION}
 
-SHARED_LIBS =	smokeakonadi		51.0 # 3.0
-#SHARED_LIBS +=	smokeattica		50.0 # 3.0
-SHARED_LIBS +=	smokekate		51.0 # 3.0
-SHARED_LIBS +=	smokekdecore		51.0 # 3.0
-SHARED_LIBS +=	smokekdeui		51.0 # 3.0
-SHARED_LIBS +=	smokekfile		51.0 # 3.0
-SHARED_LIBS +=	smokekhtml		51.0 # 3.0
-SHARED_LIBS +=	smokekio		51.0 # 3.0
-SHARED_LIBS +=	smokeknewstuff2		51.0 # 3.0
-SHARED_LIBS +=	smokeknewstuff3		51.0 # 3.0
-SHARED_LIBS +=	smokekparts		51.0 # 3.0
-SHARED_LIBS +=	smokektexteditor	51.0 # 3.0
-SHARED_LIBS +=	smokekutils		51.0 # 3.0
-SHARED_LIBS +=	smokenepomuk		51.0 # 3.0
-SHARED_LIBS +=	smokenepomukquery	51.0 # 3.0
-SHARED_LIBS +=	smokeokular		51.0 # 3.0
-SHARED_LIBS +=	smokeplasma		51.0 # 3.0
-SHARED_LIBS +=	smokesolid		51.0 # 3.0
-SHARED_LIBS +=	smokesoprano		51.0 # 3.0
-SHARED_LIBS +=	smokesopranoclient	51.0 # 3.0
-SHARED_LIBS +=	smokesopranoserver	51.0 # 3.0
+SHARED_LIBS =	smokeakonadi		52.0 # 3.0
+SHARED_LIBS +=	smokeattica		51.0 # 3.0
+SHARED_LIBS +=	smokekate		52.0 # 3.0
+SHARED_LIBS +=	smokekdecore		52.0 # 3.0
+SHARED_LIBS +=	smokekdeui		52.0 # 3.0
+SHARED_LIBS +=	smokekfile		52.0 # 3.0
+SHARED_LIBS +=	smokekhtml		52.0 # 3.0
+SHARED_LIBS +=	smokekio		52.0 # 3.0
+SHARED_LIBS +=	smokeknewstuff2		52.0 # 3.0
+SHARED_LIBS +=	smokeknewstuff3		52.0 # 3.0
+SHARED_LIBS +=	smokekparts		52.0 # 3.0
+SHARED_LIBS +=	smokektexteditor	52.0 # 3.0
+SHARED_LIBS +=	smokekutils		52.0 # 3.0
+SHARED_LIBS +=	smokenepomuk		52.0 # 3.0
+SHARED_LIBS +=	smokenepomukquery	52.0 # 3.0
+SHARED_LIBS +=	smokeokular		52.0 # 3.0
+SHARED_LIBS +=	smokeplasma		52.0 # 3.0
+SHARED_LIBS +=	smokesolid		52.0 # 3.0
+SHARED_LIBS +=	smokesoprano		52.0 # 3.0
+SHARED_LIBS +=	smokesopranoclient	52.0 # 3.0
+SHARED_LIBS +=	smokesopranoserver	52.0 # 3.0
 
 WANTLIB =  m pthread
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
@@ -55,6 +55,6 @@ LIB_DEPENDS =	databases/soprano \
 		${MODKDE4_DEP_DIR}/smokegen>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes
+#CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes
 
 .include <bsd.port.mk>

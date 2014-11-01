@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/18 08:17:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/01 21:09:40 zhuk Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${MODKDE4_VERSION}
@@ -8,10 +8,11 @@ HOMEPAGE =	http://projects.kde.org/projects/kde/kdelibs/baloo
 
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS =	baloocore	1.0
-SHARED_LIBS +=	baloofiles	1.0
-SHARED_LIBS +=	baloopim	1.0
-SHARED_LIBS +=	balooxapian	1.0
+SHARED_LIBS =	baloocore		2.0
+SHARED_LIBS +=	baloofiles		2.0
+SHARED_LIBS +=	baloopim		2.0
+SHARED_LIBS +=	balooxapian		2.0
+SHARED_LIBS +=	balooqueryparser	0.0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/24 17:33:43 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/01 21:09:43 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/kmplot
 lib/kde4/libkmplotpart.so
 @man man/man1/kmplot.1
+share/appdata/
+share/appdata/kmplot.appdata.xml
 share/applications/kde4/kmplot.desktop
 share/apps/kmplot/
 share/apps/kmplot/kmplot_part.rc

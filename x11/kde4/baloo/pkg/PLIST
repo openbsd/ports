@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 19:48:32 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/01 21:09:40 zhuk Exp $
 @conflict kde-runtime-<4.13
 @bin bin/akonadi_baloo_indexer
 @bin bin/baloo_file
@@ -8,6 +8,7 @@
 @bin bin/baloosearch
 @bin bin/balooshow
 include/kde4/baloo/
+include/kde4/baloo/completionproposal.h
 include/kde4/baloo/core_export.h
 include/kde4/baloo/file.h
 include/kde4/baloo/file_export.h
@@ -24,6 +25,8 @@ include/kde4/baloo/pim/pim_export.h
 include/kde4/baloo/pim/query.h
 include/kde4/baloo/pim/resultiterator.h
 include/kde4/baloo/query.h
+include/kde4/baloo/queryparser.h
+include/kde4/baloo/queryparser_export.h
 include/kde4/baloo/queryrunnable.h
 include/kde4/baloo/result.h
 include/kde4/baloo/resultiterator.h
@@ -35,7 +38,6 @@ lib/cmake/Baloo/BalooConfig.cmake
 lib/cmake/Baloo/BalooConfigVersion.cmake
 lib/cmake/Baloo/BalooTargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/Baloo/BalooTargetsWithPrefix.cmake
-lib/kde4/akonadi/
 lib/kde4/akonadi/akonadi_baloo_searchplugin.so
 lib/kde4/akonadi/akonadibaloosearchplugin.desktop
 lib/kde4/baloo_calendarsearchstore.so
@@ -51,14 +53,14 @@ lib/kde4/krunner_baloosearchrunner.so
 @lib ${KDE4LIB}/libbaloocore.so.${LIBbaloocore_VERSION}
 @lib ${KDE4LIB}/libbaloofiles.so.${LIBbaloofiles_VERSION}
 @lib ${KDE4LIB}/libbaloopim.so.${LIBbaloopim_VERSION}
+@lib ${KDE4LIB}/libbalooqueryparser.so.${LIBbalooqueryparser_VERSION}
 @lib ${KDE4LIB}/libbalooxapian.so.${LIBbalooxapian_VERSION}
 @lib lib/libbaloocore.so.${LIBbaloocore_VERSION}
 @lib lib/libbaloofiles.so.${LIBbaloofiles_VERSION}
 @lib lib/libbaloopim.so.${LIBbaloopim_VERSION}
+@lib lib/libbalooqueryparser.so.${LIBbalooqueryparser_VERSION}
 @lib lib/libbalooxapian.so.${LIBbalooxapian_VERSION}
 @bin libexec/kde_baloo_filewatch_raiselimit
-share/akonadi/
-share/akonadi/agents/
 share/akonadi/agents/akonadibalooindexingagent.desktop
 share/autostart/
 share/autostart/baloo_file.desktop

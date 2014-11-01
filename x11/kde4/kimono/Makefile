@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2014/08/12 01:03:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/01 21:09:42 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	KDE bindings for .NET
 DISTNAME =	kimono-${MODKDE4_VERSION}
-REVISION =	0
 
-SHARED_LIBS =	kimono			51.0 # 2.0
-SHARED_LIBS +=	akonadi-sharp		51.0
-SHARED_LIBS +=	khtml-sharp		51.0
-SHARED_LIBS +=	ktexteditor-sharp	51.0
-SHARED_LIBS +=	nepomuk-sharp		51.0
-SHARED_LIBS +=	plasma-sharp		51.0
-SHARED_LIBS +=	soprano-sharp		51.0
+SHARED_LIBS =	kimono			52.0 # 2.0
+SHARED_LIBS +=	akonadi-sharp		52.0
+SHARED_LIBS +=	khtml-sharp		52.0
+SHARED_LIBS +=	ktexteditor-sharp	52.0
+SHARED_LIBS +=	nepomuk-sharp		52.0
+SHARED_LIBS +=	plasma-sharp		52.0
+SHARED_LIBS +=	soprano-sharp		52.0
 
 WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -33,7 +32,7 @@ WANTLIB += ${KDE4LIB}/smokeqtgui ${KDE4LIB}/smokeqtnetwork
 WANTLIB += ${KDE4LIB}/smokeqtopengl ${KDE4LIB}/smokeqtsql
 WANTLIB += ${KDE4LIB}/smokeqtsvg ${KDE4LIB}/smokeqtxml
 WANTLIB += ${KDE4LIB}/smokesoprano
-WANTLIB += gc mono-2.0 soprano sopranoclient sopranoserver sopranoindex
+WANTLIB += mono-2.0 soprano sopranoclient sopranoserver sopranoindex
 
 MODULES =		lang/mono
 MODKDE4_USE =		libs
@@ -46,7 +45,6 @@ RUN_DEPENDS =		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =		databases/soprano>=${MIN_SOPRANO_VERSION} \
-			devel/boehm-gc \
 			lang/mono \
 			${MODKDE4_DEP_DIR}/qyoto>=${MODKDE4_DEP_VERSION} \
 			${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}

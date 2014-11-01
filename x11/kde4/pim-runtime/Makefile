@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/18 08:17:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2014/11/01 21:09:46 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
@@ -48,7 +48,7 @@ LIB_DEPENDS =	databases/soprano \
 		devel/qjson \
 		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 		productivity/libkfbapi,${MODKDE4_FLAVOR}>=1.0 \
-		productivity/libkgapi,${MODKDE4_FLAVOR}>=2.0.1 \
+		productivity/libkgapi,${MODKDE4_FLAVOR}>=2.2.0 \
 		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_VERSION}
 
 # Long dependency chain, not ported yet.

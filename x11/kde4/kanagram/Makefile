@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/18 08:17:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/01 21:09:41 zhuk Exp $
 
 COMMENT =	letter order game for KDE
 DISTNAME =	kanagram-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kanagramengine		51.0
+#SHARED_LIBS =	kanagramengine		51.0
 
 WANTLIB =  c m pthread
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/knewstuff3 ${KDE4LIB}/keduvocdocument
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdeui ${KDE4LIB}/knewstuff3
+WANTLIB += ${KDE4LIB}/keduvocdocument ${KDE4LIB}/kio ${KDE4LIB}/plasma
 
 MODULES =	multimedia/phonon
 

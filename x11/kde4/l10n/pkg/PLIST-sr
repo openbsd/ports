@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sr,v 1.8 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-sr,v 1.9 2014/11/01 21:09:45 zhuk Exp $
 man/sr@latin/
 man/sr@latin/man1/
 @man man/sr@latin/man1/ark.1
@@ -1190,6 +1190,8 @@ share/locale/sr/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/sr/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/sr/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/sr/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/sr/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/sr/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/sr/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/sr/LC_MESSAGES/adblock.mo
 share/locale/sr/LC_MESSAGES/akonadi-filestore.mo
@@ -1199,6 +1201,7 @@ share/locale/sr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/sr/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_ical_resource.mo
@@ -1233,6 +1236,7 @@ share/locale/sr/LC_MESSAGES/akonadinotes.mo
 share/locale/sr/LC_MESSAGES/akonaditray.mo
 share/locale/sr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sr/LC_MESSAGES/amor.mo
+share/locale/sr/LC_MESSAGES/ark.appdata.mo
 share/locale/sr/LC_MESSAGES/ark.mo
 share/locale/sr/LC_MESSAGES/attica_kde.mo
 share/locale/sr/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -1242,6 +1246,7 @@ share/locale/sr/LC_MESSAGES/autorefresh.mo
 share/locale/sr/LC_MESSAGES/babelfish.mo
 share/locale/sr/LC_MESSAGES/baloo_file.mo
 share/locale/sr/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/sr/LC_MESSAGES/baloo_queryparser.mo
 share/locale/sr/LC_MESSAGES/baloosearch.mo
 share/locale/sr/LC_MESSAGES/balooshow.mo
 share/locale/sr/LC_MESSAGES/baloowidgets.mo
@@ -1250,6 +1255,7 @@ share/locale/sr/LC_MESSAGES/bomber.mo
 share/locale/sr/LC_MESSAGES/bovo.mo
 share/locale/sr/LC_MESSAGES/dirfilterplugin.mo
 share/locale/sr/LC_MESSAGES/display.mo
+share/locale/sr/LC_MESSAGES/dolphin.appdata.mo
 share/locale/sr/LC_MESSAGES/dolphin.mo
 share/locale/sr/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr/LC_MESSAGES/dragonplayer.mo
@@ -1267,6 +1273,7 @@ share/locale/sr/LC_MESSAGES/imagerename_plugin.mo
 share/locale/sr/LC_MESSAGES/imgalleryplugin.mo
 share/locale/sr/LC_MESSAGES/jovie.mo
 share/locale/sr/LC_MESSAGES/joystick.mo
+share/locale/sr/LC_MESSAGES/juk.appdata.mo
 share/locale/sr/LC_MESSAGES/juk.mo
 share/locale/sr/LC_MESSAGES/kabc.mo
 share/locale/sr/LC_MESSAGES/kabc_akonadi.mo
@@ -1286,6 +1293,7 @@ share/locale/sr/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/sr/LC_MESSAGES/kajongg.mo
 share/locale/sr/LC_MESSAGES/kalarm.mo
 share/locale/sr/LC_MESSAGES/kapman.mo
+share/locale/sr/LC_MESSAGES/kapptemplate.mo
 share/locale/sr/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sr/LC_MESSAGES/kate.mo
 share/locale/sr/LC_MESSAGES/kate_kttsd.mo
@@ -1431,6 +1439,7 @@ share/locale/sr/LC_MESSAGES/kget.mo
 share/locale/sr/LC_MESSAGES/kgetplugin.mo
 share/locale/sr/LC_MESSAGES/kglobalaccel.mo
 share/locale/sr/LC_MESSAGES/kgoldrunner.mo
+share/locale/sr/LC_MESSAGES/kgpg.appdata.mo
 share/locale/sr/LC_MESSAGES/kgpg.mo
 share/locale/sr/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr/LC_MESSAGES/kgreet_generic.mo
@@ -1888,6 +1897,8 @@ share/locale/sr@ijekavian/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/sr@ijekavian/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/sr@ijekavian/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/sr@ijekavian/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/sr@ijekavian/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/sr@ijekavian/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/sr@ijekavian/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/sr@ijekavian/LC_MESSAGES/adblock.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi-filestore.mo
@@ -1897,6 +1908,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/sr@ijekavian/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_ical_resource.mo
@@ -1931,6 +1943,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/akonadinotes.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonaditray.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/amor.mo
+share/locale/sr@ijekavian/LC_MESSAGES/ark.appdata.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ark.mo
 share/locale/sr@ijekavian/LC_MESSAGES/attica_kde.mo
 share/locale/sr@ijekavian/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -1940,6 +1953,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/autorefresh.mo
 share/locale/sr@ijekavian/LC_MESSAGES/babelfish.mo
 share/locale/sr@ijekavian/LC_MESSAGES/baloo_file.mo
 share/locale/sr@ijekavian/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/sr@ijekavian/LC_MESSAGES/baloo_queryparser.mo
 share/locale/sr@ijekavian/LC_MESSAGES/baloosearch.mo
 share/locale/sr@ijekavian/LC_MESSAGES/balooshow.mo
 share/locale/sr@ijekavian/LC_MESSAGES/baloowidgets.mo
@@ -1948,6 +1962,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/bomber.mo
 share/locale/sr@ijekavian/LC_MESSAGES/bovo.mo
 share/locale/sr@ijekavian/LC_MESSAGES/dirfilterplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/display.mo
+share/locale/sr@ijekavian/LC_MESSAGES/dolphin.appdata.mo
 share/locale/sr@ijekavian/LC_MESSAGES/dolphin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr@ijekavian/LC_MESSAGES/dragonplayer.mo
@@ -1965,6 +1980,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/imagerename_plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/imgalleryplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/jovie.mo
 share/locale/sr@ijekavian/LC_MESSAGES/joystick.mo
+share/locale/sr@ijekavian/LC_MESSAGES/juk.appdata.mo
 share/locale/sr@ijekavian/LC_MESSAGES/juk.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kabc.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kabc_akonadi.mo
@@ -1984,6 +2000,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kajongg.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kalarm.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kapman.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kapptemplate.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kate.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kate_kttsd.mo
@@ -2129,6 +2146,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kget.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kglobalaccel.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgoldrunner.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kgpg.appdata.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgpg.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgreet_generic.mo
@@ -2586,6 +2604,8 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/adblock.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi-filestore.mo
@@ -2595,6 +2615,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_ical_resource.mo
@@ -2629,6 +2650,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadinotes.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonaditray.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/amor.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/ark.appdata.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ark.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/attica_kde.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -2638,6 +2660,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/autorefresh.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/babelfish.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/baloo_file.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/baloo_queryparser.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/baloosearch.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/balooshow.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/baloowidgets.mo
@@ -2646,6 +2669,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/bomber.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/bovo.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/dirfilterplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/display.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/dolphin.appdata.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/dolphin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/dragonplayer.mo
@@ -2663,6 +2687,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/imagerename_plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/imgalleryplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/jovie.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/joystick.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/juk.appdata.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/juk.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kabc.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kabc_akonadi.mo
@@ -2682,6 +2707,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kajongg.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kalarm.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kapman.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kapptemplate.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kate.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kate_kttsd.mo
@@ -2827,6 +2853,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kget.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kglobalaccel.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgoldrunner.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kgpg.appdata.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgpg.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgreet_generic.mo
@@ -3282,6 +3309,8 @@ share/locale/sr@latin/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/sr@latin/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/sr@latin/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/sr@latin/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/sr@latin/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/sr@latin/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/sr@latin/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/sr@latin/LC_MESSAGES/adblock.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi-filestore.mo
@@ -3291,6 +3320,7 @@ share/locale/sr@latin/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/sr@latin/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_ical_resource.mo
@@ -3325,6 +3355,7 @@ share/locale/sr@latin/LC_MESSAGES/akonadinotes.mo
 share/locale/sr@latin/LC_MESSAGES/akonaditray.mo
 share/locale/sr@latin/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sr@latin/LC_MESSAGES/amor.mo
+share/locale/sr@latin/LC_MESSAGES/ark.appdata.mo
 share/locale/sr@latin/LC_MESSAGES/ark.mo
 share/locale/sr@latin/LC_MESSAGES/attica_kde.mo
 share/locale/sr@latin/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -3334,6 +3365,7 @@ share/locale/sr@latin/LC_MESSAGES/autorefresh.mo
 share/locale/sr@latin/LC_MESSAGES/babelfish.mo
 share/locale/sr@latin/LC_MESSAGES/baloo_file.mo
 share/locale/sr@latin/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/sr@latin/LC_MESSAGES/baloo_queryparser.mo
 share/locale/sr@latin/LC_MESSAGES/baloosearch.mo
 share/locale/sr@latin/LC_MESSAGES/balooshow.mo
 share/locale/sr@latin/LC_MESSAGES/baloowidgets.mo
@@ -3342,6 +3374,7 @@ share/locale/sr@latin/LC_MESSAGES/bomber.mo
 share/locale/sr@latin/LC_MESSAGES/bovo.mo
 share/locale/sr@latin/LC_MESSAGES/dirfilterplugin.mo
 share/locale/sr@latin/LC_MESSAGES/display.mo
+share/locale/sr@latin/LC_MESSAGES/dolphin.appdata.mo
 share/locale/sr@latin/LC_MESSAGES/dolphin.mo
 share/locale/sr@latin/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr@latin/LC_MESSAGES/dragonplayer.mo
@@ -3359,6 +3392,7 @@ share/locale/sr@latin/LC_MESSAGES/imagerename_plugin.mo
 share/locale/sr@latin/LC_MESSAGES/imgalleryplugin.mo
 share/locale/sr@latin/LC_MESSAGES/jovie.mo
 share/locale/sr@latin/LC_MESSAGES/joystick.mo
+share/locale/sr@latin/LC_MESSAGES/juk.appdata.mo
 share/locale/sr@latin/LC_MESSAGES/juk.mo
 share/locale/sr@latin/LC_MESSAGES/kabc.mo
 share/locale/sr@latin/LC_MESSAGES/kabc_akonadi.mo
@@ -3378,6 +3412,7 @@ share/locale/sr@latin/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/sr@latin/LC_MESSAGES/kajongg.mo
 share/locale/sr@latin/LC_MESSAGES/kalarm.mo
 share/locale/sr@latin/LC_MESSAGES/kapman.mo
+share/locale/sr@latin/LC_MESSAGES/kapptemplate.mo
 share/locale/sr@latin/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sr@latin/LC_MESSAGES/kate.mo
 share/locale/sr@latin/LC_MESSAGES/kate_kttsd.mo
@@ -3523,6 +3558,7 @@ share/locale/sr@latin/LC_MESSAGES/kget.mo
 share/locale/sr@latin/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@latin/LC_MESSAGES/kglobalaccel.mo
 share/locale/sr@latin/LC_MESSAGES/kgoldrunner.mo
+share/locale/sr@latin/LC_MESSAGES/kgpg.appdata.mo
 share/locale/sr@latin/LC_MESSAGES/kgpg.mo
 share/locale/sr@latin/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr@latin/LC_MESSAGES/kgreet_generic.mo

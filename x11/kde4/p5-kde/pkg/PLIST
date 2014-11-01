@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/01 21:09:46 zhuk Exp $
 lib/kde4/kperlpluginfactory.so
 ${P5ARCH}/Akonadi.pm
+${P5ARCH}/Attica.pm
 ${P5ARCH}/KDECore4.pm
 ${P5ARCH}/KDEUi4.pm
 ${P5ARCH}/KFile.pm
@@ -22,6 +23,8 @@ ${P5ARCH}/SopranoClient.pm
 ${P5ARCH}/SopranoServer.pm
 ${P5ARCH}/auto/Akonadi/
 ${P5ARCH}/auto/Akonadi/Akonadi.so
+${P5ARCH}/auto/Attica/
+${P5ARCH}/auto/Attica/Attica.so
 ${P5ARCH}/auto/KDECore4/
 ${P5ARCH}/auto/KDECore4/KDECore4.so
 ${P5ARCH}/auto/KDEUi4/

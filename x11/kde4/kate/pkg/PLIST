@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/07/09 20:03:24 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/01 21:09:41 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @bin bin/kate
@@ -267,6 +267,8 @@ share/apps/katepart/script/files/quickcoding/cpp/
 share/apps/katepart/script/files/quickcoding/cpp/a.template
 share/apps/katepart/script/files/quickcoding/cpp/c.template
 share/apps/katepart/script/indentation/
+share/apps/katepart/script/indentation/ada.js
+share/apps/katepart/script/indentation/cmake.js
 share/apps/katepart/script/indentation/cppstyle.js
 share/apps/katepart/script/indentation/cstyle.js
 share/apps/katepart/script/indentation/haskell.js
@@ -279,6 +281,7 @@ share/apps/katepart/script/indentation/python.js
 share/apps/katepart/script/indentation/ruby.js
 share/apps/katepart/script/indentation/xml.js
 share/apps/katepart/script/libraries/
+share/apps/katepart/script/libraries/cmake_indenter_config.js
 share/apps/katepart/script/libraries/cursor.js
 share/apps/katepart/script/libraries/documentcursor.js
 share/apps/katepart/script/libraries/emmet/
@@ -293,6 +296,7 @@ share/apps/katepart/syntax/abap.xml
 share/apps/katepart/syntax/abc.xml
 share/apps/katepart/syntax/actionscript.xml
 share/apps/katepart/syntax/ada.xml
+share/apps/katepart/syntax/agda.xml
 share/apps/katepart/syntax/ahdl.xml
 share/apps/katepart/syntax/ahk.xml
 share/apps/katepart/syntax/alert.xml
@@ -383,6 +387,7 @@ share/apps/katepart/syntax/idl.xml
 share/apps/katepart/syntax/ilerpg.xml
 share/apps/katepart/syntax/inform.xml
 share/apps/katepart/syntax/ini.xml
+share/apps/katepart/syntax/isocpp.xml
 share/apps/katepart/syntax/jam.xml
 share/apps/katepart/syntax/java.xml
 share/apps/katepart/syntax/javadoc.xml
@@ -395,6 +400,7 @@ share/apps/katepart/syntax/julia.xml
 share/apps/katepart/syntax/k.xml
 share/apps/katepart/syntax/katetemplate.xml
 share/apps/katepart/syntax/kbasic.xml
+share/apps/katepart/syntax/kconfig.xml
 share/apps/katepart/syntax/language.dtd
 share/apps/katepart/syntax/latex.xml
 share/apps/katepart/syntax/ld.xml
@@ -461,14 +467,12 @@ share/apps/katepart/syntax/python.xml
 share/apps/katepart/syntax/q.xml
 share/apps/katepart/syntax/qmake.xml
 share/apps/katepart/syntax/qml.xml
-share/apps/katepart/syntax/qt4.xml
 share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rapidq.xml
 share/apps/katepart/syntax/relaxng.xml
 share/apps/katepart/syntax/relaxngcompact.xml
 share/apps/katepart/syntax/replicode.xml
 share/apps/katepart/syntax/rest.xml
-share/apps/katepart/syntax/restructuredtext.xml
 share/apps/katepart/syntax/rexx.xml
 share/apps/katepart/syntax/rhtml.xml
 share/apps/katepart/syntax/rib.xml

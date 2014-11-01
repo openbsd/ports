@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tr,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-tr,v 1.7 2014/11/01 21:09:45 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/tr.txt
@@ -151,7 +151,6 @@ share/locale/tr/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/tr/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/tr/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/tr/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/tr/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/tr/LC_MESSAGES/adblock.mo
 share/locale/tr/LC_MESSAGES/akonadi-filestore.mo
 share/locale/tr/LC_MESSAGES/akonadi_birthdays_resource.mo
@@ -191,7 +190,9 @@ share/locale/tr/LC_MESSAGES/akonaditray.mo
 share/locale/tr/LC_MESSAGES/akregator.mo
 share/locale/tr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tr/LC_MESSAGES/amor.mo
+share/locale/tr/LC_MESSAGES/ark.appdata.mo
 share/locale/tr/LC_MESSAGES/ark.mo
+share/locale/tr/LC_MESSAGES/artikulate.mo
 share/locale/tr/LC_MESSAGES/attica_kde.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_vorbis.mo
@@ -696,12 +697,15 @@ share/locale/tr/LC_MESSAGES/okular_tiff.mo
 share/locale/tr/LC_MESSAGES/okular_txt.mo
 share/locale/tr/LC_MESSAGES/okular_xps.mo
 share/locale/tr/LC_MESSAGES/org.kde.active.documentviewer.mo
+share/locale/tr/LC_MESSAGES/pairs.mo
+share/locale/tr/LC_MESSAGES/pairseditor.mo
 share/locale/tr/LC_MESSAGES/palapeli.mo
 share/locale/tr/LC_MESSAGES/parley.mo
 share/locale/tr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/tr/LC_MESSAGES/phonon_kde.mo
 share/locale/tr/LC_MESSAGES/phonon_vlc.mo
 share/locale/tr/LC_MESSAGES/phononserver.mo
+share/locale/tr/LC_MESSAGES/picmi.mo
 share/locale/tr/LC_MESSAGES/pimsettingexporter.mo
 share/locale/tr/LC_MESSAGES/plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma-netbook.mo

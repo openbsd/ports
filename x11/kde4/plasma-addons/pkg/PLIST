@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/01 21:09:46 zhuk Exp $
 @bin bin/lancelot
 include/kde4/KDE/Lancelot/
 include/kde4/KDE/Lancelot/ActionListModel
@@ -510,6 +510,7 @@ share/config/comic.knsrc
 share/config/pastebin.knsrc
 share/config/plasmaweather.knsrc
 share/config/virus_wallpaper.knsrc
+share/ibus/component/kimpanel.xml
 share/icons/hicolor/128x128/apps/bball.png
 share/icons/hicolor/128x128/apps/eyes.png
 share/icons/hicolor/128x128/apps/kdeobservatory.png

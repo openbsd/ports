@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2014/08/12 01:08:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:42 zhuk Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread ${MODPY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/07/09 20:03:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/01 21:09:46 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/akonadi_archivemail_agent
+@bin bin/akonadi_followupreminder_agent
 @bin bin/akonadi_mailfilter_agent
 @bin bin/akonadi_notes_agent
 @bin bin/akonadi_sendlater_agent
@@ -62,6 +63,9 @@ lib/kde4/akregator_mk4storage_plugin.so
 lib/kde4/akregator_sharemicroblog_plugin.so
 lib/kde4/akregatorpart.so
 lib/kde4/imports/org/kde/pim/
+lib/kde4/imports/org/kde/pim/mail/
+lib/kde4/imports/org/kde/pim/mail/libmailplugin.so
+lib/kde4/imports/org/kde/pim/mail/qmldir
 lib/kde4/imports/org/kde/pim/mobileui/
 lib/kde4/imports/org/kde/pim/mobileui/AboutDialog.qml
 lib/kde4/imports/org/kde/pim/mobileui/Action.qml
@@ -194,6 +198,7 @@ lib/kde4/ktimetrackerpart.so
 @lib ${KDE4LIB}/libcalendarsupport.so.${LIBcalendarsupport_VERSION}
 @lib ${KDE4LIB}/libcomposereditorng.so.${LIBcomposereditorng_VERSION}
 @lib ${KDE4LIB}/libeventviews.so.${LIBeventviews_VERSION}
+@lib ${KDE4LIB}/libfollowupreminder.so.${LIBfollowupreminder_VERSION}
 @lib ${KDE4LIB}/libgrantleetheme.so.${LIBgrantleetheme_VERSION}
 @lib ${KDE4LIB}/libgrantleethemeeditor.so.${LIBgrantleethemeeditor_VERSION}
 @lib ${KDE4LIB}/libincidenceeditorsng.so.${LIBincidenceeditorsng_VERSION}
@@ -250,6 +255,7 @@ lib/kde4/plugins/grantlee/0.3/grantlee_messageheaderfilters.so
 @lib lib/libcalendarsupport.so.${LIBcalendarsupport_VERSION}
 @lib lib/libcomposereditorng.so.${LIBcomposereditorng_VERSION}
 @lib lib/libeventviews.so.${LIBeventviews_VERSION}
+@lib lib/libfollowupreminder.so.${LIBfollowupreminder_VERSION}
 @lib lib/libgrantleetheme.so.${LIBgrantleetheme_VERSION}
 @lib lib/libgrantleethemeeditor.so.${LIBgrantleethemeeditor_VERSION}
 @lib lib/libincidenceeditorsng.so.${LIBincidenceeditorsng_VERSION}
@@ -290,6 +296,7 @@ lib/kde4/plugins/grantlee/0.3/grantlee_messageheaderfilters.so
 @man man/man1/kabcclient.1
 share/akonadi/agents/archivemailagent.desktop
 share/akonadi/agents/folderarchiveagent.desktop
+share/akonadi/agents/followupreminder.desktop
 share/akonadi/agents/mailfilteragent.desktop
 share/akonadi/agents/notesagent.desktop
 share/akonadi/agents/sendlateragent.desktop
@@ -321,11 +328,14 @@ share/applications/kde4/ktimetracker.desktop
 share/applications/kde4/ktnef.desktop
 share/applications/kde4/mboximporter.desktop
 share/applications/kde4/notes-mobile.desktop
+share/applications/kde4/pimsettingexporter.desktop
 share/applications/kde4/sieveeditor.desktop
 share/applications/kde4/storageservicemanager.desktop
 share/applications/kde4/tasks-mobile.desktop
 share/apps/akonadi_archivemail_agent/
 share/apps/akonadi_archivemail_agent/akonadi_archivemail_agent.notifyrc
+share/apps/akonadi_followupreminder_agent/
+share/apps/akonadi_followupreminder_agent/akonadi_followupreminder_agent.notifyrc
 share/apps/akonadi_mailfilter_agent/
 share/apps/akonadi_mailfilter_agent/akonadi_mailfilter_agent.notifyrc
 share/apps/akonadi_notes_agent/
@@ -381,6 +391,9 @@ share/apps/kaddressbook/printing/themes/big-theme-example/theme.html
 share/apps/kaddressbook/printing/themes/default/
 share/apps/kaddressbook/printing/themes/default/theme.desktop
 share/apps/kaddressbook/printing/themes/default/theme.html
+share/apps/kaddressbook/printing/themes/full/
+share/apps/kaddressbook/printing/themes/full/theme.desktop
+share/apps/kaddressbook/printing/themes/full/theme.html
 share/apps/kaddressbook/viewertemplates/
 share/apps/kaddressbook/viewertemplates/default/
 share/apps/kaddressbook/viewertemplates/default/contact.html
@@ -563,6 +576,9 @@ share/apps/knotes/knotesappui.rc
 share/apps/knotes/knotesui.rc
 share/apps/knotes/print/
 share/apps/knotes/print/themes/
+share/apps/knotes/print/themes/background-color/
+share/apps/knotes/print/themes/background-color/theme.desktop
+share/apps/knotes/print/themes/background-color/theme.html
 share/apps/knotes/print/themes/big-title/
 share/apps/knotes/print/themes/big-title/theme.desktop
 share/apps/knotes/print/themes/big-title/theme.html
@@ -848,6 +864,10 @@ share/doc/HTML/en/akonadi_archivemail_agent/common
 share/doc/HTML/en/akonadi_archivemail_agent/configure-archive-mail-agent.png
 share/doc/HTML/en/akonadi_archivemail_agent/index.cache.bz2
 share/doc/HTML/en/akonadi_archivemail_agent/index.docbook
+share/doc/HTML/en/akonadi_followupreminder_agent/
+share/doc/HTML/en/akonadi_followupreminder_agent/common
+share/doc/HTML/en/akonadi_followupreminder_agent/index.cache.bz2
+share/doc/HTML/en/akonadi_followupreminder_agent/index.docbook
 share/doc/HTML/en/akonadi_notes_agent/
 share/doc/HTML/en/akonadi_notes_agent/common
 share/doc/HTML/en/akonadi_notes_agent/index.cache.bz2

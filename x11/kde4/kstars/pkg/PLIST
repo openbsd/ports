@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/01 21:09:44 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/kstars
 lib/libhtmesh.a
+share/appdata/
+share/appdata/kstars.appdata.xml
 share/applications/kde4/kstars.desktop
 share/apps/kstars/
 share/apps/kstars/Cities.dat

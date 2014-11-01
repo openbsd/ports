@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/18 08:17:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:46 zhuk Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
@@ -53,8 +53,8 @@ LIB_DEPENDS =	devel/qjson \
 		security/qca2 \
 		security/qoauth \
 		x11/dbusmenu-qt \
+		x11/qwt \
 		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/marble>=${MODKDE4_DEP_VERSION} \
-		x11/qwt
+		${MODKDE4_DEP_DIR}/marble>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

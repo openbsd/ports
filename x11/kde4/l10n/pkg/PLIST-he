@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-he,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-he,v 1.7 2014/11/01 21:09:45 zhuk Exp $
 share/apps/
 share/apps/klettres/
 share/apps/klettres/he/
@@ -64,7 +64,6 @@ share/doc/HTML/he/common/fdl-translated.html
 share/doc/HTML/he/common/gpl-translated.html
 share/doc/HTML/he/common/kde-localised.css
 share/doc/HTML/he/common/lgpl-translated.html
-share/locale/he/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/he/LC_MESSAGES/adblock.mo
 share/locale/he/LC_MESSAGES/akonadicontact.mo
 share/locale/he/LC_MESSAGES/akonadinotes.mo

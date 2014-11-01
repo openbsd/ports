@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:06:28 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/01 21:09:47 zhuk Exp $
 @bin bin/step
+share/appdata/
+share/appdata/step.appdata.xml
 share/applications/kde4/step.desktop
 share/apps/step/
 share/apps/step/examples/

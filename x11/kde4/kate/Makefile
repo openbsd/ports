@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:41 zhuk Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${MODKDE4_VERSION}
@@ -29,7 +29,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/qjson \
-		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/kactivities>=${MIN_ACTIVITIES_VERSION}
 
 # TODO: build and install both Python2 and Python3 pate plugins
 

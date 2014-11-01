@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/18 08:17:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/01 21:09:42 zhuk Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${MODKDE4_VERSION}
@@ -6,14 +6,14 @@ DISTNAME =	kget-${MODKDE4_VERSION}
 CATEGORIES =	network
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kget
 
-SHARED_LIBS =	kgetcore		51.0 # 4.11
+SHARED_LIBS =	kgetcore		52.0 # 4.11
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/khtml
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/knotifyconfig
-WANTLIB += ${KDE4LIB}/konq ${KDE4LIB}/kparts ${KDE4LIB}/ktorrent
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/ktorrent
 WANTLIB += ${KDE4LIB}/kworkspace ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/nepomukwidgets ${KDE4LIB}/plasma ${KDE4LIB}/solid
@@ -29,11 +29,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	multimedia/libmms \
 		net/libktorrent,${MODKDE4_FLAVOR} \
 		security/qca2 \
-		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
 
-# Not ported yet
-#CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qwerty:Bool=Yes
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-ko,v 1.7 2014/11/01 21:09:45 zhuk Exp $
 share/doc/HTML/
 share/doc/HTML/ko/
 share/doc/HTML/ko/common/
@@ -14,7 +14,8 @@ share/locale/ko/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/ko/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/ko/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/ko/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/ko/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
+share/locale/ko/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/ko/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/ko/LC_MESSAGES/adblock.mo
 share/locale/ko/LC_MESSAGES/akonadi-filestore.mo
 share/locale/ko/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -23,6 +24,8 @@ share/locale/ko/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/ko/LC_MESSAGES/akonadi_followupreminder_agent.mo
+share/locale/ko/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_ical_resource.mo
@@ -60,6 +63,7 @@ share/locale/ko/LC_MESSAGES/akonaditray.mo
 share/locale/ko/LC_MESSAGES/akregator.mo
 share/locale/ko/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ko/LC_MESSAGES/amor.mo
+share/locale/ko/LC_MESSAGES/ark.appdata.mo
 share/locale/ko/LC_MESSAGES/ark.mo
 share/locale/ko/LC_MESSAGES/attica_kde.mo
 share/locale/ko/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -105,6 +109,7 @@ share/locale/ko/LC_MESSAGES/imgalleryplugin.mo
 share/locale/ko/LC_MESSAGES/importwizard.mo
 share/locale/ko/LC_MESSAGES/jovie.mo
 share/locale/ko/LC_MESSAGES/joystick.mo
+share/locale/ko/LC_MESSAGES/juk.appdata.mo
 share/locale/ko/LC_MESSAGES/juk.mo
 share/locale/ko/LC_MESSAGES/kabc.mo
 share/locale/ko/LC_MESSAGES/kabc_akonadi.mo
@@ -278,6 +283,7 @@ share/locale/ko/LC_MESSAGES/kgeography.mo
 share/locale/ko/LC_MESSAGES/kget.mo
 share/locale/ko/LC_MESSAGES/kgetplugin.mo
 share/locale/ko/LC_MESSAGES/kglobalaccel.mo
+share/locale/ko/LC_MESSAGES/kgpg.appdata.mo
 share/locale/ko/LC_MESSAGES/kgpg.mo
 share/locale/ko/LC_MESSAGES/kgreet_classic.mo
 share/locale/ko/LC_MESSAGES/kgreet_generic.mo
@@ -359,6 +365,7 @@ share/locale/ko/LC_MESSAGES/knotes-migrator.mo
 share/locale/ko/LC_MESSAGES/knotes.mo
 share/locale/ko/LC_MESSAGES/knotify4.mo
 share/locale/ko/LC_MESSAGES/kollision.mo
+share/locale/ko/LC_MESSAGES/kolourpaint.appdata.mo
 share/locale/ko/LC_MESSAGES/kolourpaint.mo
 share/locale/ko/LC_MESSAGES/kommander.mo
 share/locale/ko/LC_MESSAGES/kompare.mo
@@ -461,6 +468,8 @@ share/locale/ko/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/ko/LC_MESSAGES/libkalarmcal.mo
 share/locale/ko/LC_MESSAGES/libkasten.mo
 share/locale/ko/LC_MESSAGES/libkblog.mo
+share/locale/ko/LC_MESSAGES/libkcal.mo
+share/locale/ko/LC_MESSAGES/libkcalutils.mo
 share/locale/ko/LC_MESSAGES/libkcddb.mo
 share/locale/ko/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ko/LC_MESSAGES/libkdcraw.mo

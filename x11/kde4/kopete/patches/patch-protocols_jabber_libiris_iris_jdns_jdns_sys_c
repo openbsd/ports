@@ -1,8 +1,8 @@
-$OpenBSD: patch-protocols_jabber_libiris_iris_jdns_jdns_sys_c,v 1.2 2014/07/09 20:03:27 zhuk Exp $
+$OpenBSD: patch-protocols_jabber_libiris_iris_jdns_jdns_sys_c,v 1.3 2014/11/01 21:09:43 zhuk Exp $
 Make this stuff compile and work on OpenBSD.
 Partly from net/psi port.
---- protocols/jabber/libiris/src/jdns/jdns_sys.c.orig	Thu Jun  5 09:25:17 2014
-+++ protocols/jabber/libiris/src/jdns/jdns_sys.c	Wed Jul  9 15:45:21 2014
+--- protocols/jabber/libiris/src/jdns/src/jdns/jdns_sys.c.orig	Thu Jun  5 09:25:17 2014
++++ protocols/jabber/libiris/src/jdns/src/jdns/jdns_sys.c	Wed Jul  9 15:45:21 2014
 @@ -727,7 +727,7 @@ static int my_res_init()
  //   specify the platforms that have __res_state_ext
  //#ifdef __res_state_ext

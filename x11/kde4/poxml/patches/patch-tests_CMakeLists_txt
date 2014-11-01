@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2014/11/01 21:09:46 zhuk Exp $
+KDE deconflicting.
+--- tests/CMakeLists.txt.orig	Thu Oct 30 22:29:31 2014
++++ tests/CMakeLists.txt	Thu Oct 30 22:29:44 2014
+@@ -5,7 +5,7 @@ if (GETTEXT_FOUND)
+ 
+ add_custom_command(
+   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/lauri.pot
+-  COMMAND checkXML ${lauri_xml}
++  COMMAND checkXML4 ${lauri_xml}
+   COMMAND xml2pot ${lauri_xml} > lauri.pot
+   COMMAND msgmerge -o lauri.pot lauri.pot lauri.pot
+   DEPENDS ${lauri_xml}
+@@ -38,7 +38,7 @@ add_custom_target(tests-data ALL
+ 
+ add_test(
+   NAME lauri_de
+-  COMMAND checkXML lauri_de.xml
++  COMMAND checkXML4 lauri_de.xml
+   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+ )
+ 

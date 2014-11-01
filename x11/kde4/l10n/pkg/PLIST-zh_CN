@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_CN,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-zh_CN,v 1.7 2014/11/01 21:09:45 zhuk Exp $
 share/apps/
 share/apps/kvtml/
 share/apps/kvtml/zh_CN/
@@ -58,7 +58,6 @@ share/locale/zh_CN/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/zh_CN/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/zh_CN/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/zh_CN/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/zh_CN/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/zh_CN/LC_MESSAGES/adblock.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi-filestore.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -103,6 +102,7 @@ share/locale/zh_CN/LC_MESSAGES/akregator.mo
 share/locale/zh_CN/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/zh_CN/LC_MESSAGES/amor.mo
 share/locale/zh_CN/LC_MESSAGES/analitza.mo
+share/locale/zh_CN/LC_MESSAGES/ark.appdata.mo
 share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_CN/LC_MESSAGES/attica_kde.mo
 share/locale/zh_CN/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -322,6 +322,7 @@ share/locale/zh_CN/LC_MESSAGES/kget.mo
 share/locale/zh_CN/LC_MESSAGES/kgetplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kglobalaccel.mo
 share/locale/zh_CN/LC_MESSAGES/kgoldrunner.mo
+share/locale/zh_CN/LC_MESSAGES/kgpg.appdata.mo
 share/locale/zh_CN/LC_MESSAGES/kgpg.mo
 share/locale/zh_CN/LC_MESSAGES/kgreet_classic.mo
 share/locale/zh_CN/LC_MESSAGES/kgreet_generic.mo

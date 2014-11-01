@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2014/10/03 10:02:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.60 2014/11/01 21:09:45 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -11,7 +11,6 @@ PKGNAME-langlist =	kde4-langlist-${MODKDE4_VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs->=4
-REVISION-main =		1
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -139,7 +138,8 @@ CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
 			-DKDE_DISTRIBUTION_TEXT:String="OpenBSD packages" \
 			-DKDE4_AUTH_BACKEND_NAME:String="PolkitQt-1" \
-			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE
+			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
+			-DInotify_RPATH=${LOCALBASE}/lib/inotify
 
 # New CMake modules, to be pushed upstream (KDE or CMake)
 NEW_CMAKE_MODULES =	FindInotify

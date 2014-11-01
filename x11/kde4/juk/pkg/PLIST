@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/01/16 13:48:03 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/01 21:09:41 zhuk Exp $
 @conflict kdemultimedia-<4
 @bin bin/juk
+share/appdata/
+share/appdata/juk.appdata.xml
 share/applications/kde4/juk.desktop
 share/apps/juk/
 share/apps/juk/juk.notifyrc

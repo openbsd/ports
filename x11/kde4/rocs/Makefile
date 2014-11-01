@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/09 20:03:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/01 21:09:47 zhuk Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${MODKDE4_VERSION}
@@ -27,10 +27,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	x11/grantlee
 
 # XXX Ugly hack until CMake or rocs, whatever, could be fixed.
-LOST_LIBS =	rocs_GraphStructure rocs_ListStructure
-post-configure:
-.for _l in ${LOST_LIBS}
-	cd ${WRKBUILD}/lib && ln -s {,lib}${_l}.so
-.endfor
+#LOST_LIBS =	rocs_GraphStructure rocs_ListStructure
+#post-configure:
+#.for _l in ${LOST_LIBS}
+#	cd ${WRKBUILD}/lib && ln -s {,lib}${_l}.so
+#.endfor
 
 .include <bsd.port.mk>

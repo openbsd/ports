@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/18 08:17:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/01 21:09:40 zhuk Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${MODKDE4_VERSION}
 
-SHARED_LIBS =	gwenviewlib               51.0 # 4.7
+SHARED_LIBS =	gwenviewlib               52.0 # 4.7
 
 WANTLIB =  c m pthread z
 WANTLIB += X11
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtOpenGL
 WANTLIB += ${KDE4LIB}/baloocore ${KDE4LIB}/baloofiles ${KDE4LIB}/baloopim
+WANTLIB += ${KDE4LIB}/balooqueryparser
 WANTLIB += ${KDE4LIB}/kactivities ${KDE4LIB}/kdcraw
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/konq ${KDE4LIB}/kparts
@@ -30,7 +31,7 @@ LIB_DEPENDS = 	databases/soprano>=${MIN_SOPRANO_VERSION} \
 		graphics/lcms2 \
 		graphics/png \
 		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/kactivities>=${MIN_ACTIVITIES_VERSION} \
 		${MODKDE4_DEP_DIR}/libkdcraw>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/libkipi>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/baloo>=${MODKDE4_DEP_VERSION}

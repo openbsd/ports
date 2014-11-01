@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/09 20:03:23 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/11/01 21:09:40 zhuk Exp $
 @conflict kdeaddons-<4
 @conflict kdebase-<4
 @newgroup _kdesud:583
@@ -92,6 +92,8 @@ lib/libkdeinit4_konqueror.so
 @lib lib/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
 @man man/man1/kbookmarkmerger.1
 @man man/man1/kfind.1
+share/appdata/
+share/appdata/dolphin.appdata.xml
 share/applications/kde4/Home.desktop
 share/applications/kde4/dolphin.desktop
 share/applications/kde4/kdepasswd.desktop

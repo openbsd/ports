@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/09 20:03:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/01 21:09:46 zhuk Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
 
-SHARED_LIBS =	nepomukcore		52.1 # 4.9
+SHARED_LIBS =	nepomukcore		53.0 # 4.9
 #SHARED_LIBS +=	nepomuksync		0.0 # 4.9
-SHARED_LIBS +=	nepomukcommon		52.1 # 4.10
-SHARED_LIBS +=	kdeinit4_nepomukserver	52.1 # 4.10
-SHARED_LIBS +=	nepomukextractor	52.1
-SHARED_LIBS +=	nepomukcleaner		0.1
+SHARED_LIBS +=	nepomukcommon		53.0 # 4.10
+SHARED_LIBS +=	kdeinit4_nepomukserver	53.0 # 4.10
+SHARED_LIBS +=	nepomukextractor	53.0
+SHARED_LIBS +=	nepomukcleaner		1.0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/baloocore ${KDE4LIB}/baloofiles ${KDE4LIB}/baloopim
+WANTLIB += ${KDE4LIB}/balooqueryparser
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kidletime ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/solid
 WANTLIB += avcodec avformat avutil epub exiv2 poppler-qt4 soprano

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:47 zhuk Exp $
 bin/pykdeuic4
 bin/pykdeuic4-${MODPY_VERSION}
 lib/kde4/kpythonpluginfactory.so
@@ -927,6 +927,7 @@ share/sip/PyKDE4/polkitqt/actionbuttons.sip
 share/sip/PyKDE4/polkitqt/auth.sip
 share/sip/PyKDE4/polkitqt/context.sip
 share/sip/PyKDE4/polkitqt/polkitqtmod.sip
+share/sip/PyKDE4/pykde_config.sip
 share/sip/PyKDE4/solid/
 share/sip/PyKDE4/solid/acadapter.sip
 share/sip/PyKDE4/solid/audiointerface.sip

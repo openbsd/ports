@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/18 08:17:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/01 21:09:40 zhuk Exp $
 
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${MODKDE4_VERSION}
@@ -16,5 +16,9 @@ MODULES =	multimedia/phonon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
+
+# XXX share/apps/solid/ should be kept in PLIST,
+# it comes from vlc via phonon-vlc, and the latter
+# could be swapped with phonon-gstreamer instead.
 
 .include <bsd.port.mk>

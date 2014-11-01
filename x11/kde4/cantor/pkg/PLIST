@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:23 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:40 zhuk Exp $
 @bin bin/cantor
 @bin bin/cantor_rserver
 include/kde4/cantor/
@@ -29,6 +29,7 @@ lib/kde4/cantor_importpackageassistant.so
 lib/kde4/cantor_integrateassistant.so
 lib/kde4/cantor_invertmatrixassistant.so
 lib/kde4/cantor_kalgebrabackend.so
+lib/kde4/cantor_luabackend.so
 lib/kde4/cantor_maximabackend.so
 lib/kde4/cantor_nullbackend.so
 lib/kde4/cantor_octavebackend.so
@@ -48,6 +49,8 @@ lib/kde4/libcantorpart.so
 @lib ${KDE4LIB}/libcantorlibs.so.${LIBcantorlibs_VERSION}
 @lib lib/libcantor_config.so.${LIBcantor_config_VERSION}
 @lib lib/libcantorlibs.so.${LIBcantorlibs_VERSION}
+share/appdata/
+share/appdata/cantor.appdata.xml
 share/applications/kde4/cantor.desktop
 share/apps/cantor/
 share/apps/cantor/cantor_advancedplot_assistant.rc
@@ -82,6 +85,8 @@ share/apps/cantor/xslt/
 share/apps/cantor/xslt/latex.xsl
 share/config.kcfg/cantor.kcfg
 share/config.kcfg/cantor_libs.kcfg
+share/config.kcfg/kalgebrabackend.kcfg
+share/config.kcfg/luabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/octavebackend.kcfg
 share/config.kcfg/python2backend.kcfg
@@ -92,6 +97,7 @@ share/config.kcfg/scilabbackend.kcfg
 share/config/cantor.knsrc
 share/config/cantor_kalgebra.knsrc
 share/config/cantor_maxima.knsrc
+share/config/cantor_python2.knsrc
 share/config/cantor_r.knsrc
 share/config/cantor_sage.knsrc
 share/doc/HTML/en/cantor/
@@ -103,6 +109,7 @@ share/doc/HTML/en/cantor/screenshot.png
 share/icons/hicolor/16x16/apps/cantor.png
 share/icons/hicolor/32x32/apps/cantor.png
 share/icons/hicolor/48x48/apps/cantor.png
+share/icons/hicolor/48x48/apps/luabackend.png
 share/icons/hicolor/48x48/apps/maximabackend.png
 share/icons/hicolor/48x48/apps/octavebackend.png
 share/icons/hicolor/48x48/apps/pythonbackend.png
@@ -122,6 +129,7 @@ share/kde4/services/cantor/importpackageassistant.desktop
 share/kde4/services/cantor/integrateassistant.desktop
 share/kde4/services/cantor/invertmatrixassistant.desktop
 share/kde4/services/cantor/kalgebrabackend.desktop
+share/kde4/services/cantor/luabackend.desktop
 share/kde4/services/cantor/maximabackend.desktop
 share/kde4/services/cantor/nullbackend.desktop
 share/kde4/services/cantor/octavebackend.desktop

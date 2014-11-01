@@ -1,8 +1,8 @@
-$OpenBSD: patch-filters_stringreplacer_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+$OpenBSD: patch-filters_stringreplacer_CMakeLists_txt,v 1.2 2014/11/01 21:09:41 zhuk Exp $
 Fix linking.
---- filters/stringreplacer/CMakeLists.txt.orig	Fri Nov  8 14:29:28 2013
-+++ filters/stringreplacer/CMakeLists.txt	Fri Nov  8 14:31:29 2013
-@@ -12,7 +12,7 @@ kde4_add_plugin(jovie_stringreplacerplugin ${jovie_str
+--- filters/stringreplacer/CMakeLists.txt.orig	Thu Oct  9 11:06:47 2014
++++ filters/stringreplacer/CMakeLists.txt	Tue Oct 21 09:52:44 2014
+@@ -15,7 +15,7 @@ kde4_add_plugin(jovie_stringreplacerplugin ${jovie_str
  
  
  
@@ -11,7 +11,7 @@ Fix linking.
  
  install(TARGETS jovie_stringreplacerplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
  
-@@ -26,6 +26,7 @@ kde4_add_unit_test(
+@@ -29,6 +29,7 @@ kde4_add_unit_test(
  target_link_libraries(test_cdataescaper
      ${KDE4_KDECORE_LIBS}
      ${QT_QTTEST_LIBRARY}

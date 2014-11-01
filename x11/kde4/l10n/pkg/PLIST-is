@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-is,v 1.7 2014/07/09 20:03:28 zhuk Exp $
-share/locale/is/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
+@comment $OpenBSD: PLIST-is,v 1.8 2014/11/01 21:09:45 zhuk Exp $
 share/locale/is/LC_MESSAGES/adblock.mo
 share/locale/is/LC_MESSAGES/akregator.mo
 share/locale/is/LC_MESSAGES/akregator_konqplugin.mo

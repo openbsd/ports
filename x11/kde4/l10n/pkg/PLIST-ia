@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-ia,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-ia,v 1.7 2014/11/01 21:09:45 zhuk Exp $
 share/locale/ia/LC_MESSAGES/accountwizard.mo
-share/locale/ia/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/ia/LC_MESSAGES/accountwizard_ical.mo
 share/locale/ia/LC_MESSAGES/accountwizard_imap.mo
 share/locale/ia/LC_MESSAGES/accountwizard_kolab.mo
@@ -63,6 +62,7 @@ share/locale/ia/LC_MESSAGES/autorefresh.mo
 share/locale/ia/LC_MESSAGES/babelfish.mo
 share/locale/ia/LC_MESSAGES/baloo_file.mo
 share/locale/ia/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/ia/LC_MESSAGES/baloo_queryparser.mo
 share/locale/ia/LC_MESSAGES/baloosearch.mo
 share/locale/ia/LC_MESSAGES/balooshow.mo
 share/locale/ia/LC_MESSAGES/baloowidgets.mo
@@ -73,6 +73,7 @@ share/locale/ia/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ia/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ia/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ia/LC_MESSAGES/display.mo
+share/locale/ia/LC_MESSAGES/dolphin.appdata.mo
 share/locale/ia/LC_MESSAGES/dolphin.mo
 share/locale/ia/LC_MESSAGES/domtreeviewer.mo
 share/locale/ia/LC_MESSAGES/dragonplayer.mo
@@ -89,6 +90,7 @@ share/locale/ia/LC_MESSAGES/imagerename_plugin.mo
 share/locale/ia/LC_MESSAGES/imgalleryplugin.mo
 share/locale/ia/LC_MESSAGES/importwizard.mo
 share/locale/ia/LC_MESSAGES/joystick.mo
+share/locale/ia/LC_MESSAGES/juk.appdata.mo
 share/locale/ia/LC_MESSAGES/juk.mo
 share/locale/ia/LC_MESSAGES/kabc.mo
 share/locale/ia/LC_MESSAGES/kabc_akonadi.mo
@@ -307,6 +309,7 @@ share/locale/ia/LC_MESSAGES/knode.mo
 share/locale/ia/LC_MESSAGES/knotes-migrator.mo
 share/locale/ia/LC_MESSAGES/knotes.mo
 share/locale/ia/LC_MESSAGES/knotify4.mo
+share/locale/ia/LC_MESSAGES/kolourpaint.appdata.mo
 share/locale/ia/LC_MESSAGES/kolourpaint.mo
 share/locale/ia/LC_MESSAGES/konqueror.mo
 share/locale/ia/LC_MESSAGES/konsole.mo
@@ -380,7 +383,6 @@ share/locale/ia/LC_MESSAGES/libakonadi-xml.mo
 share/locale/ia/LC_MESSAGES/libakonadi.mo
 share/locale/ia/LC_MESSAGES/libcomposereditorng.mo
 share/locale/ia/LC_MESSAGES/libeventviews.mo
-share/locale/ia/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/ia/LC_MESSAGES/libgrantleetheme.mo
 share/locale/ia/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/ia/LC_MESSAGES/libincidenceeditors.mo

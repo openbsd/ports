@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/25 17:19:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:41 zhuk Exp $
 @conflict kdesdk->=4,<4.11
 @bin bin/kapptemplate4
 share/applications/kde4/kapptemplate.desktop
@@ -8,6 +8,7 @@ share/apps/kdevappwizard/template_previews/akonadi-resources.png
 share/apps/kdevappwizard/template_previews/akonadi-serializer.png
 share/apps/kdevappwizard/template_previews/default.png
 share/apps/kdevappwizard/template_previews/kapp4.png
+share/apps/kdevappwizard/template_previews/kde-frameworks5-simple.png
 share/apps/kdevappwizard/template_previews/kde-simple.png
 share/apps/kdevappwizard/template_previews/kderubyapp.png
 share/apps/kdevappwizard/template_previews/konqplugin.png
@@ -25,6 +26,7 @@ share/apps/kdevappwizard/templates/akonadiserializer.tar.bz2
 share/apps/kdevappwizard/templates/flake.tar.bz2
 share/apps/kdevappwizard/templates/kapp4-qml.tar.bz2
 share/apps/kdevappwizard/templates/kapp4.tar.bz2
+share/apps/kdevappwizard/templates/kde-frameworks5-simple.tar.bz2
 share/apps/kdevappwizard/templates/kde-simple.tar.bz2
 share/apps/kdevappwizard/templates/kderubyapp.tar.bz2
 share/apps/kdevappwizard/templates/kofficetext.tar.bz2

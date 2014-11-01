@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/09 20:03:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/01 21:09:40 zhuk Exp $
 
 COMMENT =	KDE KSplash theme
 DISTNAME =	kde-base-artwork-${MODKDE4_VERSION}
 
 MODKDE4_RESOURCES =	Yes
 
-RUN_DEPENDS =	devel/desktop-file-utils
-
-NO_REGESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

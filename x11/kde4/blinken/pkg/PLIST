@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:40 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/blinken
+share/appdata/
+share/appdata/blinken.appdata.xml
 share/applications/kde4/blinken.desktop
 share/apps/blinken/
 share/apps/blinken/README.packagers

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:41 zhuk Exp $
 @bin bin/kalgebra
 @bin bin/kalgebramobile
 lib/kde4/imports/org/kde/analitza/
@@ -6,6 +6,8 @@ lib/kde4/imports/org/kde/analitza/Graph2D.qml
 lib/kde4/imports/org/kde/analitza/libanalitzadeclarativeplugin.so
 lib/kde4/imports/org/kde/analitza/qmldir
 lib/kde4/plasma_applet_kalgebra.so
+share/appdata/
+share/appdata/kalgebra.appdata.xml
 share/applications/kde4/kalgebra.desktop
 share/applications/kde4/kalgebramobile.desktop
 share/apps/kalgebramobile/

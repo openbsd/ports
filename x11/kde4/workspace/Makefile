@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2014/10/08 02:16:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.28 2014/11/01 21:09:47 zhuk Exp $
 
 COMMENT =	KDE workspace
-MODKDE4_VERSION =	4.11.12
+MODKDE4_VERSION =	4.11.13
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/4.14.1/src/}
 
@@ -98,6 +97,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/lsof \
 		x11/gtk+2,-guic \
 		x11/polkit-qt4 \
+		${MODKDE4_DEP_DIR}/base-artwork>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	audio/xmms \
@@ -108,7 +108,7 @@ LIB_DEPENDS =	audio/xmms \
 		misc/gpsd \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
-		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/kactivities>=${MIN_ACTIVITIES_VERSION}
 
 CONFIGURE_ARGS =	-DWITH_OpenGLES:Bool=False \
 			-DWITH_PAM:Bool=False \

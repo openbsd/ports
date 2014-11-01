@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:11 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:42 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/kiten
 @bin bin/kitengen
@@ -21,6 +21,8 @@ include/kde4/libkiten/kromajiedit.h
 include/kde4/libkiten/libkitenexport.h
 @lib ${KDE4LIB}/libkiten.so.${LIBkiten_VERSION}
 @lib lib/libkiten.so.${LIBkiten_VERSION}
+share/appdata/
+share/appdata/kiten.appdata.xml
 share/applications/kde4/kiten.desktop
 share/applications/kde4/kitenkanjibrowser.desktop
 share/applications/kde4/kitenradselect.desktop

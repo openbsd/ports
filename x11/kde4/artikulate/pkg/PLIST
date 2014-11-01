@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 19:46:50 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/01 21:09:39 zhuk Exp $
 @bin bin/artikulate
 @lib ${KDE4LIB}/libartikulatecore.so.${LIBartikulatecore_VERSION}
 @lib ${KDE4LIB}/libartikulatelearnerprofile.so.${LIBartikulatelearnerprofile_VERSION}
+@lib ${KDE4LIB}/libartikulatesound.so.${LIBartikulatesound_VERSION}
 @lib lib/libartikulatecore.so.${LIBartikulatecore_VERSION}
 @lib lib/libartikulatelearnerprofile.so.${LIBartikulatelearnerprofile_VERSION}
+@lib lib/libartikulatesound.so.${LIBartikulatesound_VERSION}
+share/appdata/
+share/appdata/artikulate.appdata.xml
 share/applications/kde4/artikulate.desktop
 share/apps/artikulate/
 share/apps/artikulate/icons/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:45 zhuk Exp $
 
 COMMENT =	KDE exiv2 wrapper
 CATEGORIES =	graphics devel
 DISTNAME =	libkexiv2-${MODKDE4_VERSION}
 PKGSPEC =	libkexiv2->=4,<5
 
-SHARED_LIBS =	kexiv2			50.0	# 10.0
+SHARED_LIBS =	kexiv2			51.0	# 10.0
 
 WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml

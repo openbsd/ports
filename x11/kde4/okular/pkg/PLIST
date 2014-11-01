@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/07/09 20:03:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/01 21:09:46 zhuk Exp $
 @conflict gwenview->=4,<4.9.3
 @bin bin/okular
 include/kde4/okular/
@@ -97,10 +97,15 @@ share/apps/okular/icons/
 share/apps/okular/icons/hicolor/
 share/apps/okular/icons/hicolor/16x16/
 share/apps/okular/icons/hicolor/16x16/apps/
+share/apps/okular/icons/hicolor/16x16/apps/okular-fb2.png
 share/apps/okular/icons/hicolor/16x16/apps/okular-gv.png
 share/apps/okular/icons/hicolor/32x32/
 share/apps/okular/icons/hicolor/32x32/apps/
+share/apps/okular/icons/hicolor/32x32/apps/okular-fb2.png
 share/apps/okular/icons/hicolor/32x32/apps/okular-gv.png
+share/apps/okular/icons/hicolor/48x48/
+share/apps/okular/icons/hicolor/48x48/apps/
+share/apps/okular/icons/hicolor/48x48/apps/okular-fb2.png
 share/apps/okular/part-viewermode.rc
 share/apps/okular/part.rc
 share/apps/okular/pics/

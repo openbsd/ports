@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/01 21:09:42 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/klettres
+share/appdata/
+share/appdata/klettres.appdata.xml
 share/applications/kde4/klettres.desktop
 share/apps/klettres/
 share/apps/klettres/cs.txt
@@ -157,6 +159,8 @@ share/apps/klettres/icons/hicolor/scalable/actions/klettres_kids.svgz
 share/apps/klettres/klettresui.rc
 share/apps/klettres/nds.txt
 share/apps/klettres/pics/
+share/apps/klettres/pics/aqua/
+share/apps/klettres/pics/aqua/klettres_aqua.svg
 share/apps/klettres/pics/desert/
 share/apps/klettres/pics/desert/klettres_desert.svg
 share/apps/klettres/pics/kids/

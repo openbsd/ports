@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:43 zhuk Exp $
 @conflict kdegraphics-<4
 @bin bin/kolourpaint
 @lib ${KDE4LIB}/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
 @lib lib/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
+share/appdata/
+share/appdata/kolourpaint.appdata.xml
 share/applications/kde4/kolourpaint.desktop
 share/apps/kolourpaint/
 share/apps/kolourpaint/icons/

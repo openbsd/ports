@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 19:50:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/01 21:09:42 zhuk Exp $
 
 COMMENT =	file metadata extraction library for KDE
 DISTNAME =	kfilemetadata-${MODKDE4_VERSION}
@@ -6,7 +6,7 @@ DISTNAME =	kfilemetadata-${MODKDE4_VERSION}
 CATEGORIES =	sysutils
 HOMEPAGE =	https://projects.kde.org/projects/kde/kdelibs/kfilemetadata
 
-SHARED_LIBS =	kfilemetadata		0.0
+SHARED_LIBS =	kfilemetadata		1.0
 
 WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

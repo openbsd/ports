@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:05 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:42 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/khangman
 include/khangman/
@@ -8,6 +8,8 @@ include/khangman/prefs.h
 @lib ${KDE4LIB}/libkhangmanengine.so.${LIBkhangmanengine_VERSION}
 @lib lib/libkhangmanengine.so.${LIBkhangmanengine_VERSION}
 @man man/man6/khangman.6
+share/appdata/
+share/appdata/khangman.appdata.xml
 share/applications/kde4/khangman.desktop
 share/apps/khangman/
 share/apps/khangman/fonts/

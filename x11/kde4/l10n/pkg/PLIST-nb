@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nb,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-nb,v 1.7 2014/11/01 21:09:45 zhuk Exp $
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/
@@ -183,6 +183,8 @@ share/locale/nb/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/nb/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/nb/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/nb/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/nb/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/nb/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/nb/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/nb/LC_MESSAGES/adblock.mo
 share/locale/nb/LC_MESSAGES/akonadi-filestore.mo
@@ -192,6 +194,8 @@ share/locale/nb/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/nb/LC_MESSAGES/akonadi_followupreminder_agent.mo
+share/locale/nb/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_ical_resource.mo
@@ -231,6 +235,7 @@ share/locale/nb/LC_MESSAGES/akregator.mo
 share/locale/nb/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/nb/LC_MESSAGES/amor.mo
 share/locale/nb/LC_MESSAGES/analitza.mo
+share/locale/nb/LC_MESSAGES/ark.appdata.mo
 share/locale/nb/LC_MESSAGES/ark.mo
 share/locale/nb/LC_MESSAGES/attica_kde.mo
 share/locale/nb/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -240,6 +245,7 @@ share/locale/nb/LC_MESSAGES/autorefresh.mo
 share/locale/nb/LC_MESSAGES/babelfish.mo
 share/locale/nb/LC_MESSAGES/baloo_file.mo
 share/locale/nb/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/nb/LC_MESSAGES/baloo_queryparser.mo
 share/locale/nb/LC_MESSAGES/baloosearch.mo
 share/locale/nb/LC_MESSAGES/balooshow.mo
 share/locale/nb/LC_MESSAGES/baloowidgets.mo
@@ -256,6 +262,7 @@ share/locale/nb/LC_MESSAGES/cryptopageplugin.mo
 share/locale/nb/LC_MESSAGES/cvsservice.mo
 share/locale/nb/LC_MESSAGES/dirfilterplugin.mo
 share/locale/nb/LC_MESSAGES/display.mo
+share/locale/nb/LC_MESSAGES/dolphin.appdata.mo
 share/locale/nb/LC_MESSAGES/dolphin.mo
 share/locale/nb/LC_MESSAGES/domtreeviewer.mo
 share/locale/nb/LC_MESSAGES/dragonplayer.mo
@@ -298,9 +305,6 @@ share/locale/nb/LC_MESSAGES/kajongg.mo
 share/locale/nb/LC_MESSAGES/kalarm.mo
 share/locale/nb/LC_MESSAGES/kalgebra.mo
 share/locale/nb/LC_MESSAGES/kalzium.mo
-share/locale/nb/LC_MESSAGES/kanagram-active.mo
-share/locale/nb/LC_MESSAGES/kanagram-engine.mo
-share/locale/nb/LC_MESSAGES/kanagram-harmattan.mo
 share/locale/nb/LC_MESSAGES/kanagram.mo
 share/locale/nb/LC_MESSAGES/kapman.mo
 share/locale/nb/LC_MESSAGES/kapptemplate.mo
@@ -457,6 +461,7 @@ share/locale/nb/LC_MESSAGES/kget.mo
 share/locale/nb/LC_MESSAGES/kgetplugin.mo
 share/locale/nb/LC_MESSAGES/kglobalaccel.mo
 share/locale/nb/LC_MESSAGES/kgoldrunner.mo
+share/locale/nb/LC_MESSAGES/kgpg.appdata.mo
 share/locale/nb/LC_MESSAGES/kgpg.mo
 share/locale/nb/LC_MESSAGES/kgreet_classic.mo
 share/locale/nb/LC_MESSAGES/kgreet_generic.mo

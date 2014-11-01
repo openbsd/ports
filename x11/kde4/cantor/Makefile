@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/09 20:03:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/01 21:09:40 zhuk Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
@@ -18,14 +18,16 @@ WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpty ${KDE4LIB}/ktexteditor
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 WANTLIB += cln gfortran glib-2.0 qalculate soprano spectre xml2
+WANTLIB += luajit-${MODLUA_DEFAULT_VERSION}
 
-MODULES =	devel/gettext lang/python
+MODULES =	devel/gettext lang/lua lang/python
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS = 	databases/soprano \
 		lang/gfortran,-lib \
+		lang/luajit \
 		math/R>=2.15.1p4 \
 		math/libqalculate \
 		print/libspectre \

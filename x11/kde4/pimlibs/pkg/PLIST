@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/07/09 20:03:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/11/01 21:09:46 zhuk Exp $
 @conflict kdepim-runtime-<4.13
 @bin bin/akonadi2xml
+@bin bin/akonadi_benchmarker
+@bin bin/akonaditest
 include/kde4/KDE/Akonadi/
 include/kde4/KDE/Akonadi/AgentBase
 include/kde4/KDE/Akonadi/AgentFactory
@@ -939,6 +941,9 @@ include/kde4/kimap/setquotajob.h
 include/kde4/kimap/storejob.h
 include/kde4/kimap/subscribejob.h
 include/kde4/kimap/unsubscribejob.h
+include/kde4/kimaptest/
+include/kde4/kimaptest/fakeserver.h
+include/kde4/kimaptest/mockjob.h
 include/kde4/kldap/
 include/kde4/kldap/ber.h
 include/kde4/kldap/kldap_export.h
@@ -1146,6 +1151,10 @@ lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake
 lib/gpgmepp/
 lib/gpgmepp/GpgmeppConfig.cmake
 lib/gpgmepp/GpgmeppLibraryDepends.cmake
+lib/kde4/akonadi/
+lib/kde4/akonadi/akonadi_test_searchplugin.so
+lib/kde4/akonadi/akonaditestsearchplugin.desktop
+lib/kde4/akonadi_knut_resource.so
 lib/kde4/akonadi_serializer_socialfeeditem.so
 lib/kde4/kabc_directory.so
 lib/kde4/kabc_file.so
@@ -1220,6 +1229,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libkcalutils.so.${LIBkcalutils_VERSION}
 @lib lib/libkholidays.so.${LIBkholidays_VERSION}
 @lib lib/libkimap.so.${LIBkimap_VERSION}
+lib/libkimaptest.a
 @lib lib/libkldap.so.${LIBkldap_VERSION}
 @lib lib/libkmbox.so.${LIBkmbox_VERSION}
 @lib lib/libkmime.so.${LIBkmime_VERSION}
@@ -1234,6 +1244,9 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libmicroblog.so.${LIBmicroblog_VERSION}
 @lib lib/libqgpgme.so.${LIBqgpgme_VERSION}
 @lib lib/libsyndication.so.${LIBsyndication_VERSION}
+share/akonadi/
+share/akonadi/agents/
+share/akonadi/agents/knutresource.desktop
 share/apps/akonadi/
 share/apps/akonadi-kde/
 share/apps/akonadi-kde/kcfg2dbus.xsl
@@ -1261,6 +1274,8 @@ share/apps/akonadi/contact/pics/world.jpg
 share/apps/akonadi/plugins/
 share/apps/akonadi/plugins/serializer/
 share/apps/akonadi/plugins/serializer/akonadi_serializer_socialfeeditem.desktop
+share/apps/akonadi_knut_resource/
+share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/cmake/modules/AkonadiMacros.cmake
 share/apps/cmake/modules/CheckTimezone.cmake
 share/apps/cmake/modules/FindGpgme.cmake
@@ -1292,6 +1307,7 @@ share/apps/libkholidays/plan2/holiday_ba-srp_sr
 share/apps/libkholidays/plan2/holiday_ba-srp_sr@ijekavian
 share/apps/libkholidays/plan2/holiday_ba-srp_sr@ijekavianlatin
 share/apps/libkholidays/plan2/holiday_ba-srp_sr@latin
+share/apps/libkholidays/plan2/holiday_bb_en-gb
 share/apps/libkholidays/plan2/holiday_be_fr
 share/apps/libkholidays/plan2/holiday_be_nl
 share/apps/libkholidays/plan2/holiday_be_wa
@@ -1326,6 +1342,7 @@ share/apps/libkholidays/plan2/holiday_gb-sct_en-gb
 share/apps/libkholidays/plan2/holiday_gf_fr
 share/apps/libkholidays/plan2/holiday_gp_fr
 share/apps/libkholidays/plan2/holiday_gr_el
+share/apps/libkholidays/plan2/holiday_gr_el_nameday
 share/apps/libkholidays/plan2/holiday_gt_es
 share/apps/libkholidays/plan2/holiday_hk_en-gb
 share/apps/libkholidays/plan2/holiday_hk_zh-cn

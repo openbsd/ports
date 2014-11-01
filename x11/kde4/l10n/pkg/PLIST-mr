@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mr,v 1.6 2014/07/09 20:03:28 zhuk Exp $
+@comment $OpenBSD: PLIST-mr,v 1.7 2014/11/01 21:09:45 zhuk Exp $
 share/locale/mr/LC_MESSAGES/accountwizard.mo
 share/locale/mr/LC_MESSAGES/accountwizard_ical.mo
 share/locale/mr/LC_MESSAGES/accountwizard_imap.mo
@@ -7,7 +7,6 @@ share/locale/mr/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/mr/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/mr/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/mr/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/mr/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/mr/LC_MESSAGES/adblock.mo
 share/locale/mr/LC_MESSAGES/akonadi-filestore.mo
 share/locale/mr/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -112,7 +111,6 @@ share/locale/mr/LC_MESSAGES/kajongg.mo
 share/locale/mr/LC_MESSAGES/kalarm.mo
 share/locale/mr/LC_MESSAGES/kalgebra.mo
 share/locale/mr/LC_MESSAGES/kalzium.mo
-share/locale/mr/LC_MESSAGES/kanagram-harmattan.mo
 share/locale/mr/LC_MESSAGES/kanagram.mo
 share/locale/mr/LC_MESSAGES/kapman.mo
 share/locale/mr/LC_MESSAGES/kapptemplate.mo

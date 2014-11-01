@@ -1,8 +1,8 @@
-$OpenBSD: patch-cmake_modules_FindKDE4Internal_cmake,v 1.3 2014/01/15 19:42:11 zhuk Exp $
+$OpenBSD: patch-cmake_modules_FindKDE4Internal_cmake,v 1.4 2014/11/01 21:09:45 zhuk Exp $
 Allow overriding KDE4_LIB_DIR by user.
---- cmake/modules/FindKDE4Internal.cmake.orig	Thu Jan  2 23:26:54 2014
-+++ cmake/modules/FindKDE4Internal.cmake	Wed Jan 15 23:11:29 2014
-@@ -582,9 +582,8 @@ else (_kdeBootStrapping)
+--- cmake/modules/FindKDE4Internal.cmake.orig	Thu Oct  9 22:40:29 2014
++++ cmake/modules/FindKDE4Internal.cmake	Mon Oct 27 20:12:51 2014
+@@ -587,9 +587,8 @@ else (_kdeBootStrapping)
  
     # KDE4_LIB_INSTALL_DIR and KDE4_INCLUDE_INSTALL_DIR are set in KDELibsDependencies.cmake,
     # use them to set the KDE4_LIB_DIR and KDE4_INCLUDE_DIR "public interface" variables

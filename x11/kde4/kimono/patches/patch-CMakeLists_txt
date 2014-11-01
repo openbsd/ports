@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/04/29 08:56:17 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2014/11/01 21:09:42 zhuk Exp $
 Fix detection of Akonadi.
---- CMakeLists.txt.orig	Thu Jan 24 01:49:25 2013
-+++ CMakeLists.txt	Wed Feb 13 18:51:34 2013
+--- CMakeLists.txt.orig	Sun Sep 28 03:21:42 2014
++++ CMakeLists.txt	Thu Oct 30 23:22:51 2014
 @@ -1,5 +1,7 @@
  PROJECT(kimono)
  
@@ -10,15 +10,6 @@ Fix detection of Akonadi.
  find_package(PkgConfig)
  find_package(KDE4 REQUIRED)
  find_package(Qyoto REQUIRED)
-@@ -78,7 +80,7 @@ macro_optional_find_package(KdepimLibs)
- macro_log_feature(KDEPIMLIBS_FOUND "kdepimlibs" "KDE PIM libraries" "http://www.kde.org" FALSE "" "Needed to compile Akonadi bindings")
- 
- macro_optional_find_package(Akonadi)
--macro_log_feature(AKONADI_FOUND "Akonadi" "Akonadi libraries" "http://www.kde.org" FALSE "" "Needed to compile Akonadi bindings")
-+macro_log_feature(Akonadi_FOUND "Akonadi" "Akonadi libraries" "http://www.kde.org" FALSE "" "Needed to compile Akonadi bindings")
- 
- if (NOT CMAKE_CSharp_COMPILER_LOADED)
-     return()
 @@ -92,11 +94,13 @@ macro_optional_add_bindings(Soprano_FOUND "Soprano" so
  
  macro_optional_add_bindings(Nepomuk_FOUND "Nepomuk" nepomuk)

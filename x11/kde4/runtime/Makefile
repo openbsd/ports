@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/07/18 08:17:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2014/11/01 21:09:47 zhuk Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -55,7 +55,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			archivers/xz \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/kde-shared-data>=${MODKDE4_DEP_VERSION} \
+			x11/kde-shared-data,${MODKDE4_FLAVOR}>=${MODKDE4_DEP_VERSION} \
 			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 			${BUILD_PKGPATH},-locale>=${MODKDE4_DEP_VERSION}
 
@@ -73,13 +73,13 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			net/samba \
 			productivity/attica \
 			security/libssh \
-			${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
+			${MODKDE4_DEP_DIR}/kactivities>=${MIN_ACTIVITIES_VERSION}
 
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_NetworkManager:Bool=TRUE \
-			-DCMAKE_DISABLE_FIND_PACKAGE_SLP:Bool=TRUE \
-			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE
+			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE \
+			-DCMAKE_DISABLE_FIND_PACKAGE_SLP:Bool=TRUE
 
 MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
