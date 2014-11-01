@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2014/10/29 14:48:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2014/11/01 18:35:35 ajacoutot Exp $
 
 # XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -11,7 +11,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.14.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -71,20 +71,23 @@ RUN_DEPENDS=		x11/gnome/settings-daemon \
 RUN_DEPENDS +=	sysutils/consolekit
 
 # needed for gnome-color-panel
-RUN_DEPENDS+=		x11/gnome/color-manager
+RUN_DEPENDS +=		x11/gnome/color-manager
 
 # needed for gnome-power-panel+gnome-screen-panel
-RUN_DEPENDS+=		x11/gnome/power-manager
+RUN_DEPENDS +=		x11/gnome/power-manager
 
 # needed for gnome-printers-panel
-RUN_DEPENDS+=		print/cups-pk-helper
+RUN_DEPENDS +=		print/cups-pk-helper
+
+# gkbd-keyboard-display
+RUN_DEPENDS +=		x11/gnome/libgnomekbd
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 # needed for gnome-region-panel; optional and would create a cyclic dep:
 # gnome-session -> gnome-shell -> gnome-control-center -> gnome-session
-#RUN_DEPENDS+=		x11/gnome/session
+#RUN_DEPENDS +=		x11/gnome/session
 
 MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
