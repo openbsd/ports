@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.685 2014/10/23 21:13:46 nigel Exp $
+# $OpenBSD: Makefile,v 1.686 2014/11/01 20:53:55 abieber Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -397,6 +397,8 @@
      SUBDIR += py-clientform
      SUBDIR += py-django
      SUBDIR += py-flask
+     SUBDIR += py-flask-login
+     SUBDIR += py-flask-principal
      SUBDIR += py-flask-wtf
      SUBDIR += py-flup
      SUBDIR += py-formencode
@@ -425,6 +427,7 @@
      SUBDIR += py-repoze-who
      SUBDIR += py-requests
      SUBDIR += py-routes
+     SUBDIR += py-sockjs-tornado
      SUBDIR += py-tempita
      SUBDIR += py-tornado
      SUBDIR += py-urlgrabber
