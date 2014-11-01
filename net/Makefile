@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.874 2014/10/31 23:59:41 jca Exp $
+# $OpenBSD: Makefile,v 1.875 2014/11/01 20:55:50 abieber Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -495,6 +495,7 @@
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
      SUBDIR += py-msgpack
+     SUBDIR += py-netaddr
      SUBDIR += py-nmap
      SUBDIR += py-oauth2
      SUBDIR += py-pcapy
