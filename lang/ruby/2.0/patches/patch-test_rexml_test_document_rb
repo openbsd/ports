@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_rexml_test_document_rb,v 1.1 2014/11/01 04:54:43 jeremy Exp $
+
+Fix error in backported patch.
+
+--- test/rexml/test_document.rb.orig	Mon Oct 27 20:08:32 2014
++++ test/rexml/test_document.rb	Mon Oct 27 20:08:41 2014
+@@ -57,7 +57,7 @@ EOF
+   <!ENTITY % f "%e;%e;%e;%e;%e;%e;%e;%e;%e;%e;%e;%e;%e;%e;%e;">
+   <!ENTITY % g "%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;">
+  <!ENTITY test "test %g;">
+-+]>
++]>
+ <cd></cd>
+ EOF
+ 
