@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_lib_CMakeLists_txt,v 1.1 2014/11/01 20:43:26 zhuk Exp $
+Fix linking order.
+--- tests/lib/CMakeLists.txt.orig	Mon Oct  6 00:17:43 2014
++++ tests/lib/CMakeLists.txt	Mon Oct  6 00:18:05 2014
+@@ -22,7 +22,7 @@ foreach(moc_src ${tp_qt_tests_MOC_SRCS})
+ endforeach(moc_src ${tp_qt_tests_MOC_SRCS})
+ 
+ add_library(tp-qt-tests ${tp_qt_tests_SRCS})
+-target_link_libraries(tp-qt-tests ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} telepathy-qt${QT_VERSION_MAJOR})
++target_link_libraries(tp-qt-tests telepathy-qt${QT_VERSION_MAJOR} ${QT_QTDBUS_LIBRARY} ${QT_QTCORE_LIBRARY})
+ 
+ if(ENABLE_TP_GLIB_TESTS)
+     add_subdirectory(glib)

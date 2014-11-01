@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/09 19:25:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/01 20:43:26 zhuk Exp $
 include/telepathy-qt4/
 include/telepathy-qt4/TelepathyQt/
+include/telepathy-qt4/TelepathyQt/AbstractAdaptor
 include/telepathy-qt4/TelepathyQt/AbstractClient
 include/telepathy-qt4/TelepathyQt/AbstractClientApprover
 include/telepathy-qt4/TelepathyQt/AbstractClientHandler
 include/telepathy-qt4/TelepathyQt/AbstractClientObserver
+include/telepathy-qt4/TelepathyQt/AbstractDBusServiceInterface
 include/telepathy-qt4/TelepathyQt/AbstractInterface
+include/telepathy-qt4/TelepathyQt/AbstractProtocolInterface
 include/telepathy-qt4/TelepathyQt/Account
 include/telepathy-qt4/TelepathyQt/AccountCapabilityFilter
 include/telepathy-qt4/TelepathyQt/AccountFactory
@@ -22,6 +25,13 @@ include/telepathy-qt4/TelepathyQt/AndFilter
 include/telepathy-qt4/TelepathyQt/AuthenticationTLSCertificateInterface
 include/telepathy-qt4/TelepathyQt/AvatarData
 include/telepathy-qt4/TelepathyQt/AvatarSpec
+include/telepathy-qt4/TelepathyQt/BaseChannel
+include/telepathy-qt4/TelepathyQt/BaseConnection
+include/telepathy-qt4/TelepathyQt/BaseConnectionManager
+include/telepathy-qt4/TelepathyQt/BaseProtocol
+include/telepathy-qt4/TelepathyQt/BaseProtocolAddressingInterface
+include/telepathy-qt4/TelepathyQt/BaseProtocolAvatarsInterface
+include/telepathy-qt4/TelepathyQt/BaseProtocolPresenceInterface
 include/telepathy-qt4/TelepathyQt/CallChannel
 include/telepathy-qt4/TelepathyQt/CallContent
 include/telepathy-qt4/TelepathyQt/CallContentInterface
@@ -66,10 +76,13 @@ include/telepathy-qt4/TelepathyQt/ChannelInterfaceHoldInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceMediaSignallingInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceMessagesInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfacePasswordInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceRoomConfigInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceRoomInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSASLAuthenticationInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSMSInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSecurableInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceServicePointInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceSubjectInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceTubeInterface
 include/telepathy-qt4/TelepathyQt/ChannelRequest
 include/telepathy-qt4/TelepathyQt/ChannelRequestHints
@@ -132,8 +145,11 @@ include/telepathy-qt4/TelepathyQt/ContactMessenger
 include/telepathy-qt4/TelepathyQt/ContactSearchChannel
 include/telepathy-qt4/TelepathyQt/DBus
 include/telepathy-qt4/TelepathyQt/DBusDaemonInterface
+include/telepathy-qt4/TelepathyQt/DBusError
+include/telepathy-qt4/TelepathyQt/DBusObject
 include/telepathy-qt4/TelepathyQt/DBusProxy
 include/telepathy-qt4/TelepathyQt/DBusProxyFactory
+include/telepathy-qt4/TelepathyQt/DBusService
 include/telepathy-qt4/TelepathyQt/DBusTubeChannel
 include/telepathy-qt4/TelepathyQt/Debug
 include/telepathy-qt4/TelepathyQt/DebugReceiver
@@ -226,6 +242,7 @@ include/telepathy-qt4/TelepathyQt/RequestableChannelClassSpec
 include/telepathy-qt4/TelepathyQt/RequestableChannelClassSpecList
 include/telepathy-qt4/TelepathyQt/RoomListChannel
 include/telepathy-qt4/TelepathyQt/ServerAuthenticationChannel
+include/telepathy-qt4/TelepathyQt/ServiceTypes
 include/telepathy-qt4/TelepathyQt/SharedPtr
 include/telepathy-qt4/TelepathyQt/SimpleCallObserver
 include/telepathy-qt4/TelepathyQt/SimpleObserver
@@ -262,7 +279,11 @@ include/telepathy-qt4/TelepathyQt/_gen/cli-media-stream-handler.h
 include/telepathy-qt4/TelepathyQt/_gen/cli-properties.h
 include/telepathy-qt4/TelepathyQt/_gen/cli-tls-certificate.h
 include/telepathy-qt4/TelepathyQt/_gen/constants.h
+include/telepathy-qt4/TelepathyQt/_gen/svc-channel.h
+include/telepathy-qt4/TelepathyQt/_gen/svc-connection-manager.h
+include/telepathy-qt4/TelepathyQt/_gen/svc-connection.h
 include/telepathy-qt4/TelepathyQt/_gen/types.h
+include/telepathy-qt4/TelepathyQt/abstract-adaptor.h
 include/telepathy-qt4/TelepathyQt/abstract-client.h
 include/telepathy-qt4/TelepathyQt/abstract-interface.h
 include/telepathy-qt4/TelepathyQt/account-capability-filter.h
@@ -274,6 +295,10 @@ include/telepathy-qt4/TelepathyQt/account-set.h
 include/telepathy-qt4/TelepathyQt/account.h
 include/telepathy-qt4/TelepathyQt/and-filter.h
 include/telepathy-qt4/TelepathyQt/avatar.h
+include/telepathy-qt4/TelepathyQt/base-channel.h
+include/telepathy-qt4/TelepathyQt/base-connection-manager.h
+include/telepathy-qt4/TelepathyQt/base-connection.h
+include/telepathy-qt4/TelepathyQt/base-protocol.h
 include/telepathy-qt4/TelepathyQt/call-channel.h
 include/telepathy-qt4/TelepathyQt/call-content-media-description.h
 include/telepathy-qt4/TelepathyQt/call-content.h
@@ -305,8 +330,11 @@ include/telepathy-qt4/TelepathyQt/contact-manager.h
 include/telepathy-qt4/TelepathyQt/contact-messenger.h
 include/telepathy-qt4/TelepathyQt/contact-search-channel.h
 include/telepathy-qt4/TelepathyQt/contact.h
+include/telepathy-qt4/TelepathyQt/dbus-error.h
+include/telepathy-qt4/TelepathyQt/dbus-object.h
 include/telepathy-qt4/TelepathyQt/dbus-proxy-factory.h
 include/telepathy-qt4/TelepathyQt/dbus-proxy.h
+include/telepathy-qt4/TelepathyQt/dbus-service.h
 include/telepathy-qt4/TelepathyQt/dbus-tube-channel.h
 include/telepathy-qt4/TelepathyQt/dbus.h
 include/telepathy-qt4/TelepathyQt/debug-receiver.h
@@ -368,6 +396,7 @@ include/telepathy-qt4/TelepathyQt/referenced-handles.h
 include/telepathy-qt4/TelepathyQt/requestable-channel-class-spec.h
 include/telepathy-qt4/TelepathyQt/room-list-channel.h
 include/telepathy-qt4/TelepathyQt/server-authentication-channel.h
+include/telepathy-qt4/TelepathyQt/service-types.h
 include/telepathy-qt4/TelepathyQt/shared-ptr.h
 include/telepathy-qt4/TelepathyQt/simple-call-observer.h
 include/telepathy-qt4/TelepathyQt/simple-observer.h
@@ -391,7 +420,12 @@ lib/cmake/TelepathyQt4/TelepathyQt4Targets.cmake
 lib/cmake/TelepathyQt4Farstream/
 lib/cmake/TelepathyQt4Farstream/TelepathyQt4FarstreamConfig.cmake
 lib/cmake/TelepathyQt4Farstream/TelepathyQt4FarstreamConfigVersion.cmake
+lib/cmake/TelepathyQt4Service/
+lib/cmake/TelepathyQt4Service/TelepathyQt4ServiceConfig.cmake
+lib/cmake/TelepathyQt4Service/TelepathyQt4ServiceConfigVersion.cmake
 @lib lib/libtelepathy-qt4-farstream.so.${LIBtelepathy-qt4-farstream_VERSION}
+@lib lib/libtelepathy-qt4-service.so.${LIBtelepathy-qt4-service_VERSION}
 @lib lib/libtelepathy-qt4.so.${LIBtelepathy-qt4_VERSION}
 lib/pkgconfig/TelepathyQt4.pc
 lib/pkgconfig/TelepathyQt4Farstream.pc
+lib/pkgconfig/TelepathyQt4Service.pc

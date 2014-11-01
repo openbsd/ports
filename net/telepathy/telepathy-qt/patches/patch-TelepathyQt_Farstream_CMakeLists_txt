@@ -1,7 +1,7 @@
-$OpenBSD: patch-TelepathyQt_Farstream_CMakeLists_txt,v 1.1.1.1 2013/05/09 19:25:59 zhuk Exp $
-Unbreak build.
---- TelepathyQt/Farstream/CMakeLists.txt.orig	Wed May  8 22:12:54 2013
-+++ TelepathyQt/Farstream/CMakeLists.txt	Wed May  8 22:13:25 2013
+$OpenBSD: patch-TelepathyQt_Farstream_CMakeLists_txt,v 1.2 2014/11/01 20:43:26 zhuk Exp $
+Unbreak build: missing include dirs, wrong linking order.
+--- TelepathyQt/Farstream/CMakeLists.txt.orig	Tue Sep  9 02:13:43 2014
++++ TelepathyQt/Farstream/CMakeLists.txt	Mon Oct  6 00:03:02 2014
 @@ -4,6 +4,7 @@ if(FARSTREAM_COMPONENTS_FOUND)
                          ${FARSTREAM_INCLUDE_DIR}
                          ${GSTREAMER_INCLUDE_DIR}
@@ -10,3 +10,22 @@ Unbreak build.
                          ${LIBXML2_INCLUDE_DIR}
                          ${DBUS_INCLUDE_DIR})
  
+@@ -39,13 +40,14 @@ if(FARSTREAM_COMPONENTS_FOUND)
+ 
+     # Link
+     target_link_libraries(telepathy-qt${QT_VERSION_MAJOR}-farstream
+-        ${QT_QTDBUS_LIBRARY}
+-        ${QT_QTCORE_LIBRARY}
+-        ${GOBJECT_LIBRARIES}
++        ${TP_QT_LIBRARY_LINKER_FLAGS}
+         ${TELEPATHY_FARSTREAM_LIBRARIES}
+         ${TELEPATHY_GLIB_LIBRARIES}
+         telepathy-qt${QT_VERSION_MAJOR}
+-        ${TP_QT_LIBRARY_LINKER_FLAGS})
++        ${QT_QTDBUS_LIBRARY}
++        ${QT_QTCORE_LIBRARY}
++        ${GOBJECT_LIBRARIES}
++        )
+ 
+     if (ENABLE_COMPILER_COVERAGE)
+         target_link_libraries(telepathy-qt${QT_VERSION_MAJOR}-farstream gcov)

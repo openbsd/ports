@@ -1,0 +1,22 @@
+$OpenBSD: patch-examples_cm_CMakeLists_txt,v 1.1 2014/11/01 20:43:26 zhuk Exp $
+Fix linking order.
+--- examples/cm/CMakeLists.txt.orig	Mon Oct  6 00:18:47 2014
++++ examples/cm/CMakeLists.txt	Mon Oct  6 00:19:21 2014
+@@ -11,11 +11,12 @@ if(ENABLE_SERVICE_SUPPORT)
+ 
+     add_executable(cm ${cm_SRCS} ${cm_MOC_SRCS})
+     target_link_libraries(cm
+-        ${QT_QTCORE_LIBRARY}
++        ${TP_QT_EXECUTABLE_LINKER_FLAGS}
++        telepathy-qt${QT_VERSION_MAJOR}-service
++        telepathy-qt${QT_VERSION_MAJOR}
+         ${QT_QTDBUS_LIBRARY}
+-        ${QT_QTNETWORK_LIBRARY}
+         ${QT_QTXML_LIBRARY}
+-        telepathy-qt${QT_VERSION_MAJOR}
+-        telepathy-qt${QT_VERSION_MAJOR}-service
+-        ${TP_QT_EXECUTABLE_LINKER_FLAGS})
++        ${QT_QTNETWORK_LIBRARY}
++        ${QT_QTCORE_LIBRARY}
++        )
+ endif(ENABLE_SERVICE_SUPPORT)

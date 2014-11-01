@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/07 18:25:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/01 20:43:26 zhuk Exp $
 
 # XXX: PORTROACH set below to override the value from ../Makefile.inc
 
 COMMENT =		flexible communications framework, Qt bindings
-DISTNAME =		telepathy-qt-0.9.3
+DISTNAME =		telepathy-qt-0.9.5
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
-SHARED_LIBS =		telepathy-qt4		0.0
-SHARED_LIBS +=		telepathy-qt4-farstream	0.0
+SHARED_LIBS =		telepathy-qt4		0.1
+SHARED_LIBS +=		telepathy-qt4-farstream	0.1
+SHARED_LIBS +=		telepathy-qt4-service	0.0
 
 HOMEPAGE =		${HOMEPAGE_TP:=Telepathy Qt}
 
@@ -15,6 +16,7 @@ MASTER_SITES =		${MASTER_SITES_TP:=telepathy-qt/}
 
 WANTLIB =  lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m stdc++
 WANTLIB += telepathy-farstream telepathy-glib
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 
 MODULES =		devel/cmake \
 			devel/gettext \

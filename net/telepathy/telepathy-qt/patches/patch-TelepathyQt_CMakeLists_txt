@@ -1,0 +1,59 @@
+$OpenBSD: patch-TelepathyQt_CMakeLists_txt,v 1.1 2014/11/01 20:43:26 zhuk Exp $
+1. Unbreak build: wrong linking order.
+2. Build shared library for telepathy-qt4-service: since we manage
+   shlib versions anyway, we don't care about ABI.
+--- TelepathyQt/CMakeLists.txt.orig	Tue Sep  9 02:13:43 2014
++++ TelepathyQt/CMakeLists.txt	Mon Oct  6 00:30:48 2014
+@@ -768,19 +768,21 @@ endforeach(moc_src ${telepathy_qt_MOC_SRCS})
+ 
+ # Link
+ target_link_libraries(telepathy-qt${QT_VERSION_MAJOR}
+-    ${QT_QTCORE_LIBRARY}
++    ${TP_QT_LIBRARY_LINKER_FLAGS}
+     ${QT_QTDBUS_LIBRARY}
+-    ${QT_QTNETWORK_LIBRARY}
+     ${QT_QTXML_LIBRARY}
+-    ${TP_QT_LIBRARY_LINKER_FLAGS})
++    ${QT_QTNETWORK_LIBRARY}
++    ${QT_QTCORE_LIBRARY}
++    )
+ 
+ # Link - Library used by tests to test some unexported functionality
+ target_link_libraries(telepathy-qt-test-backdoors
+-    ${QT_QTCORE_LIBRARY}
++    ${TP_QT_LIBRARY_LINKER_FLAGS}
+     ${QT_QTDBUS_LIBRARY}
+-    ${QT_QTNETWORK_LIBRARY}
+     ${QT_QTXML_LIBRARY}
+-    ${TP_QT_LIBRARY_LINKER_FLAGS})
++    ${QT_QTNETWORK_LIBRARY}
++    ${QT_QTCORE_LIBRARY}
++    )
+ 
+ if (ENABLE_COMPILER_COVERAGE)
+     target_link_libraries(telepathy-qt${QT_VERSION_MAJOR} gcov)
+@@ -938,10 +940,10 @@ if(ENABLE_SERVICE_SUPPORT)
+     #if (ENABLE_COMPILER_COVERAGE)
+     #    add_library(telepathy-qt${QT_VERSION_MAJOR}-service STATIC ${telepathy_qt_service_SRCS})
+     #else (ENABLE_COMPILER_COVERAGE)
+-    #    add_library(telepathy-qt${QT_VERSION_MAJOR}-service SHARED ${telepathy_qt_service_SRCS})
++        add_library(telepathy-qt${QT_VERSION_MAJOR}-service SHARED ${telepathy_qt_service_SRCS})
+     #endif (ENABLE_COMPILER_COVERAGE)
+     # lets build a static only library until we have a stable API/ABI
+-    add_library(telepathy-qt${QT_VERSION_MAJOR}-service STATIC ${telepathy_qt_service_SRCS})
++    #add_library(telepathy-qt${QT_VERSION_MAJOR}-service STATIC ${telepathy_qt_service_SRCS})
+ 
+     # generate service moc files
+     foreach(moc_src ${telepathy_qt_service_MOC_SRCS})
+@@ -957,9 +959,10 @@ if(ENABLE_SERVICE_SUPPORT)
+ 
+     # Link
+     target_link_libraries(telepathy-qt${QT_VERSION_MAJOR}-service
++        ${TP_QT_LIBRARY_LINKER_FLAGS}
+         ${QT_QTDBUS_LIBRARY}
+         ${QT_QTCORE_LIBRARY}
+-        ${TP_QT_LIBRARY_LINKER_FLAGS})
++        )
+ 
+     # Set the correct version number
+     set_target_properties(telepathy-qt${QT_VERSION_MAJOR}-service PROPERTIES
