@@ -88,6 +88,15 @@ gst_sndio_getcaps (struct gstsndio *sio, GstCaps * filter)
   }
 }
 
+static void
+gst_sndio_onvol (void *arg, unsigned int vol)
+{
+  struct gstsndio *sio = arg;
+  sio->volume = vol;
+  g_object_notify (G_OBJECT (sio->obj), "mute");
+  g_object_notify (G_OBJECT (sio->obj), "volume");
+}
+
 gboolean
 gst_sndio_open (struct gstsndio *sio, gint mode)
 {
@@ -123,6 +132,7 @@ gst_sndio_open (struct gstsndio *sio, gint mode)
     sio->hdl = NULL;
     return FALSE;
   }
+  sio_onvol (sio->hdl, gst_sndio_onvol, sio);
 
   caps = gst_caps_new_empty ();
   s = gst_structure_new ("audio/x-raw", (char *)NULL, (void *)NULL);
@@ -359,6 +369,13 @@ gst_sndio_set_property (struct gstsndio *sio, guint prop_id,
       g_free (sio->device);
       sio->device = g_value_dup_string (value);
       break;
+    case PROP_VOLUME:
+      sio_setvol (sio->hdl, g_value_get_double (value) * SIO_MAXVOL);
+      break;
+    case PROP_MUTE:
+      if (g_value_get_boolean (value))
+        sio_setvol (sio->hdl, 0);
+      break;
     default:
       break;
   }
@@ -371,6 +388,12 @@ gst_sndio_get_property (struct gstsndio *sio, guint prop_id,
   switch (prop_id) {
     case PROP_DEVICE:
       g_value_set_string (value, sio->device);
+      break;
+    case PROP_VOLUME:
+      g_value_set_double (value, (gdouble)sio->volume / SIO_MAXVOL);
+      break;
+    case PROP_MUTE:
+      g_value_set_boolean (value, (sio->volume == 0));
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (sio->obj, prop_id, pspec);

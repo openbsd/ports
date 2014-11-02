@@ -49,7 +49,8 @@ static GstStaticPadTemplate sndiosink_factory =
 	GST_STATIC_CAPS (GST_SNDIO_CAPS_STRING)
     );
 
-G_DEFINE_TYPE (GstSndioSink, gst_sndiosink, GST_TYPE_AUDIO_SINK);
+G_DEFINE_TYPE_WITH_CODE (GstSndioSink, gst_sndiosink, GST_TYPE_AUDIO_SINK,
+	G_IMPLEMENT_INTERFACE (GST_TYPE_STREAM_VOLUME, NULL));
 
 static void gst_sndiosink_finalize (GObject * object);
 static GstCaps *gst_sndiosink_getcaps (GstBaseSink * bsink,
@@ -214,4 +215,12 @@ gst_sndiosink_class_init (GstSndioSinkClass * klass)
       g_param_spec_string ("device", "Device",
           "sndio device as defined in sndio(7)",
           SIO_DEVANY, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  g_object_class_install_property (gobject_class, PROP_VOLUME,
+      g_param_spec_double ("volume", "Volume",
+	  "Linear volume of this stream, 1.0=100%", 0.0, 1.0,
+	  1.0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  g_object_class_install_property (gobject_class, PROP_MUTE,
+      g_param_spec_boolean ("mute", "Mute",
+	  "Mute state of this stream", FALSE,
+	  G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 }

@@ -20,11 +20,14 @@
 #include <gst/gst.h>
 #include <gst/audio/gstaudiosink.h>
 #include <gst/audio/gstaudiosrc.h>
+#include <gst/audio/streamvolume.h>
 
 enum
 {
   PROP_0,
-  PROP_DEVICE
+  PROP_DEVICE,
+  PROP_VOLUME,
+  PROP_MUTE
 };
 
 #define GST_SNDIO_CAPS_STRING					\
@@ -49,6 +52,7 @@ struct gstsndio {
     gint mode;
     gint bpf;		/* bytes per frame */
     gint delay;		/* bytes stored in the audio fifo */
+    guint volume;	/* volume level */
     GstCaps *cur_caps;  /* saved capabilities of opened device */
     GObject *obj;	/* for logging */
 };

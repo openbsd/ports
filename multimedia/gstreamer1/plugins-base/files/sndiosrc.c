@@ -43,7 +43,8 @@ GST_DEBUG_CATEGORY_EXTERN (gst_sndio_debug);
 #define GST_CAT_DEFAULT gst_sndio_debug
 
 #define gst_sndiosrc_parent_class parent_class
-G_DEFINE_TYPE (GstSndioSrc, gst_sndiosrc, GST_TYPE_AUDIO_SRC);
+G_DEFINE_TYPE_WITH_CODE (GstSndioSrc, gst_sndiosrc, GST_TYPE_AUDIO_SRC,
+	G_IMPLEMENT_INTERFACE (GST_TYPE_STREAM_VOLUME, NULL));
 
 static void gst_sndiosrc_finalize (GObject * object);
 static GstCaps *gst_sndiosrc_getcaps (GstBaseSrc * bsrc, GstCaps * filter);
@@ -213,4 +214,12 @@ gst_sndiosrc_class_init (GstSndioSrcClass * klass)
       g_param_spec_string ("device", "Device",
           "sndio device as defined in sndio(7)",
           SIO_DEVANY, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  g_object_class_install_property (gobject_class, PROP_VOLUME,
+      g_param_spec_double ("volume", "Volume",
+	  "Linear volume of this stream, 1.0=100%", 0.0, 1.0,
+	  1.0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+  g_object_class_install_property (gobject_class, PROP_MUTE,
+      g_param_spec_boolean ("mute", "Mute",
+	  "Mute state of this stream", FALSE,
+	  G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 }
