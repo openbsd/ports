@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/04 18:41:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2014/11/02 15:19:22 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	isometric RPG game
 
 DISTNAME =	freedroidRPG-0.15.1
-REVISION =	2
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
+REVISION =	3
 
 HOMEPAGE =	http://www.freedroid.org/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,13 +33,10 @@ LIB_DEPENDS=	devel/libexecinfo \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_CFLAGS="-pthread" \
-		PTHREAD_LIBS="-pthread" \
-		am_cv_prog_tar_ustar=plaintar
-CONFIGURE_ARGS=	--with-x \
-		--enable-opengl
+		LUA_CFLAGS="$$(pkg-config --cflags lua51)" \
+		LUA_LIBS="$$(pkg-config --libs lua51)"
 
 post-install:
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/freedroidrpg
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/freedroidrpg
 
 .include <bsd.port.mk>
