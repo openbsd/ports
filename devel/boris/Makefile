@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/02 14:48:55 sthen Exp $
 
 COMMENT =		read-eval-print loop for PHP
 
 V =			1.0.8
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		d11wtq
 GH_PROJECT =		boris
@@ -20,8 +20,7 @@ HOMEPAGE =		https://github.com/d11wtq/boris
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/php
-RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-pcntl \
-			php->=5.4.27p2,<5.5:lang/php/${MODPHP_VERSION}
+RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-pcntl
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
