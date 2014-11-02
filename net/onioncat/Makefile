@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:50:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/11/02 18:41:00 naddy Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
@@ -23,5 +23,7 @@ RUN_DEPENDS =	net/tor
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man
+# Do not pick up gawk or mawk
+CONFIGURE_ENV =		AWK=awk
 
 .include <bsd.port.mk>
