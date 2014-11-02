@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/25 16:40:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/11/02 18:43:23 sebastia Exp $
 bin/ProjectCenter
 include/ProjectCenter
 lib/GNUstep/Frameworks/
@@ -10,6 +10,7 @@ lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/
 ${LIBDIR}/
 ${LIBDIR}/Headers/
 ${LIBDIR}/Headers/PCAddFilesPanel.h
+${LIBDIR}/Headers/PCAuxiliaryWindow.h
 ${LIBDIR}/Headers/PCBundleManager.h
 ${LIBDIR}/Headers/PCDefines.h
 ${LIBDIR}/Headers/PCEditorManager.h
@@ -184,10 +185,6 @@ libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/Resources/Info
 libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/Resources/Info.table
 libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/
-libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/
-libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.classes
-libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.info
-libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
 libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/Info.gorm/
 libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/Info.gorm/Info.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/English.lproj/Info.gorm/data.classes
@@ -274,6 +271,10 @@ libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileM
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileMH.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info.table
+libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/
+libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/data.classes
+libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/data.info
+libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/objects.gorm
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/ObjC.syntax
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Plist.syntax
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/stamp.make
