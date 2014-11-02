@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/02 13:18:19 dcoppa Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
 GH_ACCOUNT =	stevedonovan
 GH_PROJECT =	LDoc
-GH_TAGNAME =	1.4.2
-GH_COMMIT =	511dfe7df01f92da03c639c5f56495c0c31b6e2b
+GH_TAGNAME =	1.4.3
+GH_COMMIT =	25fd0b6bed06ce87c62b7997c18a5ef9f8627f01
 DISTNAME =	LDoc-${GH_TAGNAME}
 PKGNAME =	lualdoc-${GH_TAGNAME}
 CATEGORIES =	devel
@@ -29,6 +29,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/ldoc/builtin
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/ldoc/html
 	${INSTALL_DATA_DIR} ${MODLUA_DOCDIR}
+	${SUBST_CMD} ${WRKSRC}/ldoc/markdown.lua
 	${INSTALL_DATA} ${WRKSRC}/ldoc/*.{ld,lua} ${MODLUA_DATADIR}/ldoc/
 	${INSTALL_DATA} ${WRKSRC}/ldoc/builtin/*.lua \
 		${MODLUA_DATADIR}/ldoc/builtin/
