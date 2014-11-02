@@ -1,5 +1,4 @@
-The File::Modified module is intended as a simple method for programs to
-detect whether configuration files (or modules they rely on) have
-changed.  There are currently two methods of change detection
-implemented, mtime and MD5.  The MD5 method will fall back to use
-timestamps if the Digest::MD5 module cannot be loaded.
+This module provides a simple mechanism for identifying when the
+contents of one or more files have changed.  It was initially
+intended for programs to detect when their configuration files (or
+the module they rely on) have changed.
