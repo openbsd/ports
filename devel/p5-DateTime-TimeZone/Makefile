@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/16 02:57:14 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/02 09:35:05 jasper Exp $
 
 COMMENT =		DateTime submodule for TZ
 
 MODULES =		cpan
 DISTNAME =		DateTime-TimeZone-1.64
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
-MAINTAINER = Andrew Fresh <andrew@cpan.org>
+MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
 PERMIT_PACKAGE_CDROM =	Yes
