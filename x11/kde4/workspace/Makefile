@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2014/11/01 21:09:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2014/11/02 07:37:39 zhuk Exp $
 
 COMMENT =	KDE workspace
 MODKDE4_VERSION =	4.11.13
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/4.14.1/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/4.14.2/src/}
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
