@@ -1,7 +1,6 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.24 2014/10/29 19:35:31 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.25 2014/11/02 20:06:18 jasper Exp $
 
-Allow for installing a specific version if multiple are found. Unbreaks installing
-specific versions of openldap-server, php, python, etc.
+https://github.com/puppetlabs/puppet/pull/3266
 
 --- lib/puppet/provider/package/openbsd.rb.orig	Tue Oct 21 23:52:27 2014
 +++ lib/puppet/provider/package/openbsd.rb	Wed Oct 29 16:57:28 2014
