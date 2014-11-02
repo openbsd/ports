@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/02 08:01:32 zhuk Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -9,22 +9,20 @@ COMMENT-vkontakte =	KIPI interface for VK.com
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.digikam.org/
-VERSION =		4.1.0
+VERSION =		4.4.0
 DISTNAME =		digikam-${VERSION}
 
 PKGSPEC-main =		digikam->=1
 PKGSPEC-kipi =		kipi-plugins->=1
 
-PKGNAME-face =		libkface-3.1.0
+PKGNAME-face =		libkface-3.4.0
 PKGNAME-geomap =	libkgeomap-2.0.0
 PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		2
-REVISION-kipi =		0
-REVISION-face =		0
+REVISION-geomap =	0
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -83,7 +81,7 @@ WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
 WANTLIB-kipi += gthread-2.0 jpeg
 WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca2 soprano
 WANTLIB-kipi += tiff xml2 xslt MagickCore
-WANTLIB-kipi += QtGLib-2.0 QtGStreamer-0.10 QtGStreamerUtils-0.10
+WANTLIB-kipi += QtGLib-2.0 QtGStreamer-1.0 QtGStreamerUtils-1.0
 
 WANTLIB-main =  ${WANTLIB-common} ${MODPHONON_WANTLIB}
 WANTLIB-main += c ICE SM X11 Xext z
@@ -205,8 +203,8 @@ LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
 			-DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS:Bool=No \
 			-DENABLE_INTERNALMYSQL:Bool=No \
+			-DENABLE_KDEPIMLIBSSUPPORT:Bool=Yes \
 			-DENABLE_LCMS2:Bool=Yes \
-			-DENABLE_NEPOMUKSUPPORT:Bool=Yes \
 			-DWITH_OpenMP:Bool=No
 
 FLAVOR ?=

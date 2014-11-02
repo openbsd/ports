@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-geomap,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+@comment $OpenBSD: PLIST-geomap,v 1.2 2014/11/02 08:01:32 zhuk Exp $
 include/kde4/libkgeomap/
 include/kde4/libkgeomap/abstractmarkertiler.h
 include/kde4/libkgeomap/dragdrophandler.h
@@ -57,6 +57,7 @@ share/apps/libkgeomap/marker-ffff00-selected.png
 share/apps/libkgeomap/marker-ffff00-someselected.png
 share/apps/libkgeomap/marker-ffff00.png
 share/apps/libkgeomap/marker-icon-16x16.png
+share/locale/ar/LC_MESSAGES/libkgeomap.mo
 share/locale/bg/LC_MESSAGES/libkgeomap.mo
 share/locale/bs/LC_MESSAGES/libkgeomap.mo
 share/locale/ca/LC_MESSAGES/libkgeomap.mo

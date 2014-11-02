@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/11/02 08:01:32 zhuk Exp $
 @conflict digikam-doc-*
 bin/cleanup_digikamdb
 @bin bin/digikam
@@ -9,7 +9,6 @@ lib/kde4/digikamimageplugin_decorate.so
 lib/kde4/digikamimageplugin_enhance.so
 lib/kde4/digikamimageplugin_fxfilters.so
 lib/kde4/digikamimageplugin_transform.so
-lib/kde4/digikamnepomukservice.so
 lib/kde4/kio_digikamalbums.so
 lib/kde4/kio_digikamdates.so
 lib/kde4/kio_digikammapimages.so
@@ -19,6 +18,14 @@ lib/kde4/kio_digikamtags.so
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
 @man man/man1/cleanup_digikamdb.1
 @man man/man1/digitaglinktree.1
+share/appdata/
+share/appdata/digiKam-ImagePlugin_Color.metainfo.xml
+share/appdata/digiKam-ImagePlugin_Decorate.metainfo.xml
+share/appdata/digiKam-ImagePlugin_Enhance.metainfo.xml
+share/appdata/digiKam-ImagePlugin_FxFilters.metainfo.xml
+share/appdata/digiKam-ImagePlugin_Transform.metainfo.xml
+share/appdata/digikam.appdata.xml
+share/appdata/showfoto.appdata.xml
 share/applications/kde4/digikam.desktop
 share/applications/kde4/photolayoutseditor.desktop
 share/applications/kde4/scangui.desktop
@@ -804,7 +811,6 @@ share/kde4/services/digikamimageplugin_enhance.desktop
 share/kde4/services/digikamimageplugin_fxfilters.desktop
 share/kde4/services/digikamimageplugin_transform.desktop
 share/kde4/services/digikammapimages.protocol
-share/kde4/services/digikamnepomukservice.desktop
 share/kde4/services/digikamsearch.protocol
 share/kde4/services/digikamtags.protocol
 share/kde4/servicetypes/digikamimageplugin.desktop
