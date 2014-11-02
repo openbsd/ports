@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 16:09:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/02 10:33:51 zhuk Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
-MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
+MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 VERSION =		4.6.4
 DISTNAME =		kmymoney-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		kmm_kdchart		0.0
 SHARED_LIBS +=		kmm_mymoney		0.0

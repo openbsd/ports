@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2014/10/04 14:25:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2014/11/02 10:33:51 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	powerful KDE batch file renamer
 
 DISTNAME =	krename-3.0.14
-REVISION =	11
+REVISION =	12
 
 SRCFILES =	${DISTNAME}.tar.bz2
 DOCFILES =	krename-3.0.12.pdf \
@@ -19,7 +19,7 @@ EXTRACT_ONLY =	${SRCFILES}
 CATEGORIES =	sysutils x11 x11/kde
 HOMEPAGE =	http://www.krename.net/
 
-MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
+MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 PORTROACH =	limit:^3\.0
 
 # GPLv2

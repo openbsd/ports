@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/02 10:33:50 zhuk Exp $
 
 COMMENT =	free Cyrillic fonts
 PKG_ARCH =	*
 DISTNAME =	ptsans-2.0
 PKGNAME =	ru-${DISTNAME}
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11
 
-MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
+MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 # Original distfile taken from http://www.fontstock.com/public/
 MASTER_SITES =	http://www.linklevel.net/distfiles/
 HOMEPAGE =	http://paratype.com/public/

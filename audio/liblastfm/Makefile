@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/06 22:05:04 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/02 10:33:50 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,9 +7,10 @@ V =		1.0.9
 DISTNAME =	$V
 PKGNAME =	liblastfm-$V
 CATEGORIES =	audio devel net
+REVISION =	0
 
 HOMEPAGE =	https://github.com/lastfm/liblastfm
-MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
+MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 
 SHARED_LIBS =	lastfm			1.0
 SHARED_LIBS +=	lastfm_fingerprint	1.0
