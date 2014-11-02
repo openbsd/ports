@@ -1,0 +1,16 @@
+$OpenBSD: patch-jv_print_c,v 1.1 2014/11/02 12:01:00 sthen Exp $
+--- jv_print.c.orig	Sun Nov  2 11:54:34 2014
++++ jv_print.c	Sun Nov  2 11:55:51 2014
+@@ -96,10 +96,10 @@ static void jvp_dump_string(jv str, int ascii_only, FI
+     }
+     if (unicode_escape) {
+       if (c <= 0xffff) {
+-        sprintf(buf, "\\u%04x", c);
++        snprintf(buf, sizeof(buf), "\\u%04x", c);
+       } else {
+         c -= 0x10000;
+-        sprintf(buf, "\\u%04x\\u%04x", 
++        snprintf(buf, sizeof(buf), "\\u%04x\\u%04x", 
+                 0xD800 | ((c & 0xffc00) >> 10),
+                 0xDC00 | (c & 0x003ff));
+       }
