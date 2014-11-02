@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2014/03/16 21:57:55 matthieu Exp $
+# $OpenBSD: Makefile,v 1.28 2014/11/02 13:32:04 matthieu Exp $
 
 COMMENT =	X11 Cursors themes generator
-DIST_VERS =	1.0.5
-XORG_VERS =	7.7
-DISTNAME =	xcursorgen-${DIST_VERS}
-PKGNAME =	xcursorgen-${XORG_VERS}
+DISTNAME =	xcursorgen-1.0.6
 CATEGORIES =	x11
+EPOCH =	0
 
 HOMEPAGE =	http://wiki.X.Org/
 
