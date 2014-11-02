@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2014/11/02 00:33:45 naddy Exp $
 
 COMMENT-main =		multi-protocol instant messenger for KDE
 COMMENT-sounds =	notification sounds for Kopete
@@ -66,7 +66,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 #WANTLIB-main += crypto expat mediastreamer_base mediastreamer_voip
 #WANTLIB-main += ortp ssl
 #LIB_DEPENDS-main +=	net/ortp \
-			telephony/mediastreamer2
+#			telephony/mediastreamer2
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_JsonCpp:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2:Bool=Yes \
