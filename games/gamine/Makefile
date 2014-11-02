@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2013/09/27 17:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/11/02 15:26:08 ajacoutot Exp $
 
 COMMENT=	interactive game for young children
 
 DISTNAME=	gamine-1.1
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	games
 
 HOMEPAGE=	http://gnunux.info/projets/gamine/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # DWTFYWTPL
 # (DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE)
