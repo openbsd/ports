@@ -76,3 +76,6 @@ package.
 * Now check that everything works fine still:
     cd ../kde4 && make clean="all dist"
     dpb x11/kde4
+
+* On commit, remember to clean up REVISION marks and do other tweaks,
+  if needed, in meta/kde4, and commit it as well.
