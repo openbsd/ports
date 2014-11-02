@@ -1,4 +1,7 @@
-$OpenBSD: patch-lib_puppet_type_user_rb,v 1.1 2014/10/30 12:21:37 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_user_rb,v 1.2 2014/11/02 19:57:12 jasper Exp $
+
+- add new 'loginclass' attribute to the 'user' type
+
 --- lib/puppet/type/user.rb.orig	Thu Oct 30 12:15:02 2014
 +++ lib/puppet/type/user.rb	Thu Oct 30 12:15:17 2014
 @@ -639,6 +639,16 @@ module Puppet
