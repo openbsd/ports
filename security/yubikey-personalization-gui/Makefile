@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/12 14:22:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/02 21:55:36 sthen Exp $
 
 COMMENT=	Qt GUI to configure YubiKeys
 
-DISTNAME=	yubikey-personalization-gui-3.1.15
+DISTNAME=	yubikey-personalization-gui-3.1.17
 
 CATEGORIES=	security x11
 
