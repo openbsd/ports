@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 18:59:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/02 22:02:34 sthen Exp $
 @group daemon
 lib/
 lib/php/
@@ -13,8 +13,11 @@ pear/lib/Validate.php
 pear/tests/Validate/
 pear/tests/Validate/tests/
 pear/tests/Validate/tests/email.phpt
+pear/tests/Validate/tests/email_domaincheck.phpt
 pear/tests/Validate/tests/multicard.phpt
 pear/tests/Validate/tests/multiple.phpt
 pear/tests/Validate/tests/number.phpt
 pear/tests/Validate/tests/testdate.phpt
+pear/tests/Validate/tests/testdate_minmax.phpt
 pear/tests/Validate/tests/uri.phpt
+pear/tests/Validate/tests/uri_domaincheck.phpt
