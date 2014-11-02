@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2014/10/14 23:11:56 abieber Exp $
+# $OpenBSD: Makefile,v 1.303 2014/11/02 15:28:47 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -87,7 +87,6 @@
      SUBDIR += freedroid
      SUBDIR += freedroidrpg
      SUBDIR += fretsonfire
-     SUBDIR += frogatto
      SUBDIR += frotz
      SUBDIR += frozen-bubble
      SUBDIR += galois
