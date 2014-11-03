@@ -1,7 +1,7 @@
-$OpenBSD: patch-buildsys_mk_in,v 1.6 2013/10/23 19:15:15 naddy Exp $
---- buildsys.mk.in.orig	Mon Sep  2 21:01:58 2013
-+++ buildsys.mk.in	Mon Oct 21 00:13:00 2013
-@@ -102,7 +102,7 @@ PLUGIN_OBJS = ${OBJS:.o=.plugin.o}
+$OpenBSD: patch-buildsys_mk_in,v 1.7 2014/11/03 04:28:11 bcallah Exp $
+--- buildsys.mk.in.orig	Thu Oct 16 20:00:28 2014
++++ buildsys.mk.in	Sat Nov  1 19:11:40 2014
+@@ -107,7 +107,7 @@ PLUGIN_OBJS = ${OBJS:.o=.plugin.o}
  
  MO_FILES = ${LOCALES:.po=.mo}
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-buildsys_mk_in,v 1.6 2013/10/23 19:15:15 naddy Exp $
 +#.SILENT:
  .SUFFIXES:
  .SUFFIXES: .beam .c .c.dep .cc .cc.dep .class .cxx .cxx.dep .d .erl .lib.o .java .mo .m .m.dep .mm .mm.dep .o .plugin.o .po .py .pyc .rc .S .S.dep .xpm
- .PHONY: all subdirs pre-depend depend install install-extra uninstall uninstall-extra clean distclean locales
+ .PHONY: all subdirs pre-depend depend install install-extra uninstall uninstall-extra clean distclean locales ${SUBDIRS}

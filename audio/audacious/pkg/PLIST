@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/01/11 19:19:43 brad Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/11/03 04:28:11 bcallah Exp $
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
@@ -7,14 +7,13 @@ include/audacious/api-alias-end.h
 include/audacious/api-define-begin.h
 include/audacious/api-define-end.h
 include/audacious/api.h
-include/audacious/audctrl.h
 include/audacious/audtag.h
-include/audacious/dbus-service.h
-include/audacious/dbus.h
 include/audacious/debug.h
 include/audacious/drct-api.h
 include/audacious/drct.h
 include/audacious/i18n.h
+include/audacious/input-api.h
+include/audacious/input.h
 include/audacious/misc-api.h
 include/audacious/misc.h
 include/audacious/playlist-api.h
@@ -30,6 +29,9 @@ include/libaudcore/audstrings.h
 include/libaudcore/core.h
 include/libaudcore/hook.h
 include/libaudcore/index.h
+include/libaudcore/inifile.h
+include/libaudcore/multihash.h
+include/libaudcore/tinylock.h
 include/libaudcore/tuple.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_async.h
@@ -37,12 +39,11 @@ include/libaudgui/
 include/libaudgui/libaudgui-gtk.h
 include/libaudgui/libaudgui.h
 include/libaudgui/list.h
-@lib lib/libaudclient.so.${LIBaudclient_VERSION}
+include/libaudgui/menu.h
 @lib lib/libaudcore.so.${LIBaudcore_VERSION}
 @lib lib/libaudgui.so.${LIBaudgui_VERSION}
 @lib lib/libaudtag.so.${LIBaudtag_VERSION}
 lib/pkgconfig/audacious.pc
-lib/pkgconfig/audclient.pc
 @man man/man1/audacious.1
 @man man/man1/audtool.1
 share/applications/audacious.desktop
@@ -52,13 +53,10 @@ share/audacious/COPYING
 share/audacious/images/
 share/audacious/images/about-logo.png
 share/audacious/images/album.png
-share/audacious/images/audacious.png
+share/audacious/images/appearance.png
 share/audacious/images/audio.png
 share/audacious/images/connectivity.png
 share/audacious/images/info.png
-share/audacious/images/menu_playlist.png
-share/audacious/images/menu_plugin.png
-share/audacious/images/menu_queue_toggle.png
 share/audacious/images/playlist.png
 share/audacious/images/plugins.png
 share/icons/hicolor/48x48/apps/audacious.png
@@ -89,6 +87,7 @@ share/locale/fa_IR/LC_MESSAGES/audacious.mo
 share/locale/fi/LC_MESSAGES/audacious.mo
 share/locale/fr/LC_MESSAGES/audacious.mo
 share/locale/gl/LC_MESSAGES/audacious.mo
+share/locale/he/LC_MESSAGES/audacious.mo
 share/locale/hu/LC_MESSAGES/audacious.mo
 share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/
@@ -116,6 +115,10 @@ share/locale/sk/LC_MESSAGES/audacious.mo
 share/locale/sq/LC_MESSAGES/audacious.mo
 share/locale/sr/LC_MESSAGES/audacious.mo
 share/locale/sr@latin/LC_MESSAGES/audacious.mo
+share/locale/sr_RS/
+share/locale/sr_RS/LC_MESSAGES/
+share/locale/sr_RS/LC_MESSAGES/audacious.mo
+share/locale/sv/LC_MESSAGES/audacious.mo
 share/locale/ta/LC_MESSAGES/audacious.mo
 share/locale/tr/LC_MESSAGES/audacious.mo
 share/locale/uk/LC_MESSAGES/audacious.mo
