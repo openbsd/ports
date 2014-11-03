@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/04 15:22:10 schwarze Exp $
+# $OpenBSD: Makefile,v 1.20 2014/11/03 19:19:44 schwarze Exp $
 
 COMMENT =		list processes as a tree
 DISTNAME =		pstree-2.36
-REVISION =		0
+REVISION =		1
 CATEGORIES =		sysutils
+HOMEPAGE =		http://www.thp.uni-duisburg.de/pstree/
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
