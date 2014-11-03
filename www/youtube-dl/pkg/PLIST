@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2014/10/31 07:29:11 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.57 2014/11/03 20:12:34 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -147,8 +147,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/crunchyroll.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/crunchyroll.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cspan.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cspan.pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/d8.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/d8.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dailymotion.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dailymotion.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/daum.py
