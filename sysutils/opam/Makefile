@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/25 17:10:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/03 08:13:42 jasper Exp $
 
 MULTI_PACKAGES =	-main -lib
 
@@ -12,13 +12,14 @@ GH_ACCOUNT =		ocaml
 GH_PROJECT =		opam
 GH_TAGNAME =		${V}
 DISTNAME =		${GH_PROJECT}-${V}
+REVISION =		0
 
 PKGNAME-main =		opam-${V}
 PKGNAME-lib =		opam-lib-${V}
 
 HOMEPAGE =		http://opam.ocamlpro.com/
 
-MAINTAINER =		chrisz@openbsd.org
+MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes

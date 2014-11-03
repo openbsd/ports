@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/03 08:13:42 jasper Exp $
 
 COMMENT =		software repository analysis in OCaml
 CATEGORIES =		devel
@@ -6,10 +6,11 @@ CATEGORIES =		devel
 VERSION =		3.2.2
 DISTNAME =		dose3-${VERSION}
 PKGNAME =		ocaml-dose-${VERSION}
+REVISION =		0
 
 HOMEPAGE =		http://dose.gforge.inria.fr/public_html/
 
-MAINTAINER =		chrisz@openbsd.org
+MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
