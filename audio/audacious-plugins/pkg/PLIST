@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/01/11 19:19:43 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/11/03 04:29:05 bcallah Exp $
 @pkgpath audio/audacious-plugins,-main
 lib/audacious/
 lib/audacious/Container/
 lib/audacious/Container/asx.so
+lib/audacious/Container/asx3.so
 lib/audacious/Container/audpl.so
 lib/audacious/Container/cue.so
 lib/audacious/Container/m3u.so
@@ -25,6 +26,7 @@ lib/audacious/General/alarm.so
 lib/audacious/General/albumart.so
 lib/audacious/General/aosd.so
 lib/audacious/General/cd-menu-items.so
+lib/audacious/General/delete-files.so
 lib/audacious/General/gnomeshortcuts.so
 lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
@@ -37,6 +39,7 @@ lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 lib/audacious/General/statusicon.so
 lib/audacious/Input/
+lib/audacious/Input/aac-raw.so
 lib/audacious/Input/aac.so
 lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
@@ -59,7 +62,6 @@ lib/audacious/Transport/
 lib/audacious/Transport/gio.so
 lib/audacious/Transport/mms.so
 lib/audacious/Transport/neon.so
-lib/audacious/Transport/unix-io.so
 lib/audacious/Visualization/
 lib/audacious/Visualization/blur_scope.so
 lib/audacious/Visualization/cairo-spectrum.so
@@ -191,10 +193,6 @@ share/audacious/Skins/TinyPlayer/text.png
 share/audacious/Skins/TinyPlayer/titlebar.png
 share/audacious/Skins/TinyPlayer/viscolor.txt
 share/audacious/Skins/TinyPlayer/volume.png
-share/audacious/ui/
-share/audacious/ui/equalizer.ui
-share/audacious/ui/mainwin.ui
-share/audacious/ui/playlist.ui
 share/locale/be/LC_MESSAGES/audacious-plugins.mo
 share/locale/bg/LC_MESSAGES/audacious-plugins.mo
 share/locale/ca/LC_MESSAGES/audacious-plugins.mo
@@ -209,6 +207,7 @@ share/locale/es_AR/LC_MESSAGES/audacious-plugins.mo
 share/locale/es_MX/LC_MESSAGES/audacious-plugins.mo
 share/locale/et/LC_MESSAGES/audacious-plugins.mo
 share/locale/eu/LC_MESSAGES/audacious-plugins.mo
+share/locale/fa_IR/LC_MESSAGES/audacious-plugins.mo
 share/locale/fi/LC_MESSAGES/audacious-plugins.mo
 share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 share/locale/gl/LC_MESSAGES/audacious-plugins.mo
@@ -221,15 +220,17 @@ share/locale/ky/LC_MESSAGES/audacious-plugins.mo
 share/locale/lt/LC_MESSAGES/audacious-plugins.mo
 share/locale/lv/LC_MESSAGES/audacious-plugins.mo
 share/locale/ml_IN/LC_MESSAGES/audacious-plugins.mo
+share/locale/ms/LC_MESSAGES/audacious-plugins.mo
+share/locale/nl/LC_MESSAGES/audacious-plugins.mo
 share/locale/pl/LC_MESSAGES/audacious-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/audacious-plugins.mo
 share/locale/pt_PT/LC_MESSAGES/audacious-plugins.mo
 share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 share/locale/si/LC_MESSAGES/audacious-plugins.mo
 share/locale/sk/LC_MESSAGES/audacious-plugins.mo
-share/locale/sr_RS/
-share/locale/sr_RS/LC_MESSAGES/
+share/locale/sr/LC_MESSAGES/audacious-plugins.mo
 share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
+share/locale/sv/LC_MESSAGES/audacious-plugins.mo
 share/locale/ta/LC_MESSAGES/audacious-plugins.mo
 share/locale/tr/LC_MESSAGES/audacious-plugins.mo
 share/locale/uk/LC_MESSAGES/audacious-plugins.mo
