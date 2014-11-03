@@ -1,0 +1,25 @@
+$OpenBSD: patch-cdda2wav_lconfig_h_in,v 1.1 2014/11/03 09:12:41 ratchov Exp $
+
+preprocessor directives for sndio
+
+--- cdda2wav/lconfig.h.in.orig	Sat Aug  8 21:24:22 2009
++++ cdda2wav/lconfig.h.in	Thu Oct 30 19:14:12 2014
+@@ -19,12 +19,18 @@
+ 
+ #undef HAVE_MACHINE_SOUNDCARD_H	/* if we should use machine/soundcard.h */
+ 
++#undef HAVE_SNDIO_H	/* if we should use sndio.h */
++
+ #undef HAVE_SYS_ASOUNDLIB_H	/* if we should use sys/asoundlib.h */
+ 
+ #undef HAVE_MMSYSTEM_H		/* if we should use mmsystem.h */
+ 
+ #if	defined HAVE_SOUNDCARD_H || defined HAVE_SYS_SOUNDCARD_H  || defined HAVE_LINUX_SOUNDCARD_H || defined HAVE_MACHINE_SOUNDCARD_H
+ #define HAVE_OSS	1
++#endif
++
++#if	defined HAVE_SNDIO_H
++#define HAVE_SNDIO	 1
+ #endif
+ 
+ #if	defined HAVE_WINDOWS_H && defined HAVE_MMSYSTEM_H

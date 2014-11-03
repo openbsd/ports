@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.21 2014/06/12 08:07:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2014/11/03 09:12:41 ratchov Exp $
 
 COMMENT=		ISO 9660 filesystem and CD/DVD/BD creation tools
 
 DISTNAME=		cdrtools-3.00
-REVISION=		0
+REVISION=		1
 CATEGORIES=		sysutils
 HOMEPAGE=		http://cdrtools.sourceforge.net/private/cdrtools.html
 
 # mostly CDDL, some components GPL (see COPYING)
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ossaudio
+WANTLIB=		c sndio
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cdrtools/}
 
 
+BUILD_DEPENDS=		devel/m4
 USE_GMAKE=		Yes
 
 MAKE_ENV +=		MAKEPROG=${MAKE_PROGRAM}
@@ -21,8 +22,7 @@ MAKE_FLAGS =		GMAKE_NOWARN=true CC="${CC}" CC++="${CXX}" \
 			LDCC="${CC}" LDCC++="${CXX}" \
 			MKC++DEP="${CXX} -M" MKDEP="${CC} -M" \
 			DYNLD="${CC}" DYNLDC++="${CXX}" \
-			GCCOPTOPT="" RANLIB=ranlib AR=ar \
-			OSS_SOUND_DEV='"/dev/audio"'
+			GCCOPTOPT="" RANLIB=ranlib AR=ar
 
 NO_TEST=		Yes
 
