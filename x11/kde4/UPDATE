@@ -79,3 +79,5 @@ package.
 
 * On commit, remember to clean up REVISION marks and do other tweaks,
   if needed, in meta/kde4, and commit it as well.
+  Also, remember to regen distinfo in x11/kde-shared-data and include
+  it in the KDE update commit.
