@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.7 2014/03/24 15:18:17 afresh1 Exp $
+# $OpenBSD: make-plist,v 1.8 2014/11/03 19:50:01 bcallah Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1021,7 +1021,7 @@ sub scan_for_files
 		my $p = $item->{plist}->{replacement};
 		if ($file->type eq 'directory' && 
 		    $p->{mtree}->{$file->path}) {
-		    	report "Found out old directory in ", $p, 
+		    	report "Discovered old directory in ", $p, 
 			    ": ", $file, " (mtree)\n";
 			next;
 		}
