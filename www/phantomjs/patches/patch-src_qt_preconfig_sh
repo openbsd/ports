@@ -1,13 +1,15 @@
-$OpenBSD: patch-src_qt_preconfig_sh,v 1.1 2014/01/15 08:41:37 sthen Exp $
---- src/qt/preconfig.sh.orig	Sat Jan 11 22:14:23 2014
-+++ src/qt/preconfig.sh	Sat Jan 11 22:14:43 2014
-@@ -107,9 +107,3 @@ done
- export MAKEFLAGS=-j$COMPILE_JOBS
+$OpenBSD: patch-src_qt_preconfig_sh,v 1.2 2014/11/03 14:42:41 landry Exp $
+--- src/qt/preconfig.sh.orig	Fri Oct 31 20:07:14 2014
++++ src/qt/preconfig.sh	Fri Oct 31 20:07:30 2014
+@@ -120,11 +120,3 @@ else
+     ./configure -prefix $PWD $QT_CFG &> /dev/null
+ fi
  
- ./configure -prefix $PWD $QT_CFG
--make -j$COMPILE_JOBS
+-echo
+-echo "Building Qt and WebKit. Please wait..."
+-make -j$COMPILE_JOBS $SILENT
 -
 -# Build text codecs
 -pushd src/plugins/codecs/
--make -j$COMPILE_JOBS
+-make -j$COMPILE_JOBS $SILENT
 -popd

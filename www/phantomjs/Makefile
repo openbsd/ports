@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/18 14:19:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/03 14:42:41 landry Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 DPB_PROPERTIES =	parallel nojunk
@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel nojunk
 
 COMMENT =		headless WebKit scriptable with a JavaScript API
 
-DISTNAME =		phantomjs-1.9.7
+DISTNAME =		phantomjs-1.9.8
 
 CATEGORIES =		www
 HOMEPAGE =		http://phantomjs.org/
