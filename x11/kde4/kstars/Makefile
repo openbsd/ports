@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/01 21:09:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/03 16:49:46 zhuk Exp $
 
 COMMENT =	planetarium simulator for KDE
 DISTNAME =	kstars-${MODKDE4_VERSION}
+REVISION =	0
 
 # Crashed after following actions:
 #   1. Enable OpenGL;
@@ -26,6 +27,7 @@ MODULES =		lang/python
 MODPY_BUILDDEP =	No
 
 LIB_DEPENDS = 	astro/wcslib \
+		devel/qjson \
 		math/cfitsio
 
 BUILD_DEPENDS =	math/eigen3 \

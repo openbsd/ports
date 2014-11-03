@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/01 21:09:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/03 16:49:46 zhuk Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdelibs/baloo
@@ -30,6 +31,7 @@ MODKDE4_SYSCONF_FILES =	dbus-1	share/examples
 RUN_DEPENDS =	x11/gtk+2,-guic
 
 LIB_DEPENDS =	databases/xapian-core \
+		devel/qjson \
 		${MODKDE4_DEP_DIR}/kfilemetadata>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

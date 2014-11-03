@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2014/11/02 07:37:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.30 2014/11/03 16:49:46 zhuk Exp $
 
 COMMENT =	KDE workspace
 MODKDE4_VERSION =	4.11.13
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/4.14.2/src/}
 
@@ -103,6 +104,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb-compat \
+		devel/qjson \
 		graphics/qimageblitz \
 		math/libqalculate \
 		misc/gpsd \
