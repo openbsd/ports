@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1 2014/11/04 15:11:05 giovanni Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Memcached relies on SASL as authentication mechanisms, if you could not
+use it, it should be firewalled accordingly. You may wish
+to add a rule such as the following to /etc/pf.conf:
+
+  block on $ext_if proto tcp to ($ext_if) port 11211

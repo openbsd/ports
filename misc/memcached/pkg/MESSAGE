@@ -1,5 +1,0 @@
-Since memcached has no authentication mechanisms, it is designed for
-internal use only, and should be firewalled accordingly. You may wish
-to add a rule such as the following to /etc/pf.conf:
-
-  block on $ext_if proto tcp to ($ext_if) port 11211
