@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.6 2014/03/23 18:17:34 kili Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.7 2014/11/04 15:41:40 dcoppa Exp $
 --- src/CMakeLists.txt.orig	Wed Jan  1 22:54:28 2014
-+++ src/CMakeLists.txt	Tue Mar 18 11:50:33 2014
++++ src/CMakeLists.txt	Tue Nov  4 16:39:24 2014
 @@ -29,6 +29,8 @@ set(USE_GETTEXT 0)
  
  if(ENABLE_GETTEXT)
@@ -44,12 +44,14 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.6 2014/03/23 18:17:34 kili Exp $
  		${LUA_LIBRARY}
  		${PLATFORM_LIBS}
  	)
-@@ -533,7 +542,7 @@ else()
+@@ -533,8 +542,8 @@ else()
  		set(ARCH i386)
  	endif()
  
 -	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -O3 -ffast-math -Wall -fomit-frame-pointer -pipe -funroll-loops")
+-	set(CMAKE_CXX_FLAGS_DEBUG "-g -O1 -Wall ${WARNING_FLAGS} ${OTHER_FLAGS}")
 +	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS}")
- 	set(CMAKE_CXX_FLAGS_DEBUG "-g -O1 -Wall ${WARNING_FLAGS} ${OTHER_FLAGS}")
++	set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall ${WARNING_FLAGS} ${OTHER_FLAGS}")
  
  	if(USE_GPROF)
+ 		set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -pg")

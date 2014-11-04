@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/23 18:17:34 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/04 15:41:40 dcoppa Exp $
 
 COMMENT =	infinite-world block sandbox game
 V =		0.4.9
 DISTNAME =	minetest-${V}
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://www.minetest.net/
 
