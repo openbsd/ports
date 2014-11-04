@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2011/05/03 18:31:14 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/11/04 14:58:39 dcoppa Exp $
 
 Don't use "-isystem /usr/..." but regular "-I/usr/..."
 Prevents "error: template with C linkage" errors.
@@ -6,7 +6,7 @@ Prevents "error: template with C linkage" errors.
 http://www.mail-archive.com/cmake@cmake.org/msg13226.html
 
 --- CMakeLists.txt.orig	Thu Apr 22 19:48:48 2010
-+++ CMakeLists.txt	Fri Apr 29 13:41:49 2011
++++ CMakeLists.txt	Tue Nov  4 15:48:30 2014
 @@ -6,6 +6,8 @@ else(WIN32)
      cmake_minimum_required(VERSION 2.6.0 FATAL_ERROR)
  endif(WIN32)
@@ -16,6 +16,17 @@ http://www.mail-archive.com/cmake@cmake.org/msg13226.html
  # Path to local CMake modules.
  set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
  
+@@ -30,8 +32,8 @@ option(USE_WX_GRAPHICS_CONTEXT
+ 
+ if(CMAKE_COMPILER_IS_GNUCXX)
+     # Set default flags for Release build.
+-    set(CMAKE_C_FLAGS_RELEASE "-Wall -O2 -DNDEBUG")
+-    set(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -DNDEBUG")
++    set(CMAKE_C_FLAGS_RELEASE "-Wall -DNDEBUG")
++    set(CMAKE_CXX_FLAGS_RELEASE "-Wall -DNDEBUG")
+     set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-s")
+ 
+     # Set default flags for Debug build.
 @@ -163,7 +165,9 @@ endif(EXISTS ${CMAKE_SOURCE_DIR}/include/config.h)
  
  
