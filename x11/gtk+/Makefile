@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.79 2014/09/10 07:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2014/11/04 10:35:35 dcoppa Exp $
 
-PORTROACH=	limit:^1
+PORTROACH=	limitw:1,even
 
 COMMENT=	General Toolkit for X11 GUI
 

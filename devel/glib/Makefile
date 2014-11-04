@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.69 2014/09/10 07:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2014/11/04 10:35:35 dcoppa Exp $
 
-PORTROACH=	limit:^1
+PORTROACH=	limitw:1,even
 
 COMMENT=	useful routines for C programming
 
