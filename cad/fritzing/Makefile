@@ -1,20 +1,24 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/10 09:58:04 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2014/11/04 22:01:53 abieber Exp $
 
 COMMENT=	interactive electronics designing software
 
-V=		0.8.7
+V=		0.9.0
 DISTNAME=	fritzing-$Vb.source
 PKGNAME=	fritzing-$V
 CATEGORIES=	cad
 
 HOMEPAGE=	http://fritzing.org/
 
+MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
+
 # Code: GPLv3+
 # Rest: CreativeCommons:BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/$Vb/source-tarball/
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar_1.bz2
+
+EXTRACT_CASES=	*.tar_1.bz2) tar -jxf ${FULLDISTDIR}/$$archive ;;
 
 WANTLIB += QtGui QtNetwork QtSql QtSvg QtXml c m pthread stdc++ z
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
