@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.340 2014/10/29 20:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.341 2014/11/04 19:12:01 armani Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -37,7 +37,6 @@
      SUBDIR += disc-cover
      SUBDIR += dumb
      SUBDIR += easytag
-     SUBDIR += esound
      SUBDIR += espeak
      SUBDIR += exaile
      SUBDIR += faac
