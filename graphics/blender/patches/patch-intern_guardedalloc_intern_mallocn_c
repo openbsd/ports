@@ -1,4 +1,7 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_c,v 1.1 2014/07/03 14:41:48 pascal Exp $
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_c,v 1.2 2014/11/04 06:02:40 brad Exp $
+
+Use posix_memalign() on OpenBSD.
+
 --- intern/guardedalloc/intern/mallocn.c.orig	Sun Jun 29 15:22:31 2014
 +++ intern/guardedalloc/intern/mallocn.c	Sun Jun 29 15:22:56 2014
 @@ -73,7 +73,7 @@ void *aligned_malloc(size_t size, size_t alignment)

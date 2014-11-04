@@ -1,4 +1,7 @@
-$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.9 2014/03/24 21:16:15 pascal Exp $
+$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.10 2014/11/04 06:02:40 brad Exp $
+
+Use statvfs() on OpenBSD.
+
 --- source/blender/blenlib/intern/storage.c.orig	Wed Mar 19 23:05:25 2014
 +++ source/blender/blenlib/intern/storage.c	Thu Mar 20 22:35:00 2014
 @@ -42,7 +42,7 @@
