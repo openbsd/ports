@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/11/04 16:06:31 dcoppa Exp $
+--- CMakeLists.txt.orig	Tue Nov  4 17:05:22 2014
++++ CMakeLists.txt	Tue Nov  4 17:05:52 2014
+@@ -182,8 +182,8 @@ endif (NOT CMAKE_BUILD_TYPE)
+ 
+ #define various build types
+ if (CMAKE_COMPILER_IS_GNUCXX)
+-  set (CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
+-  set (CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
++  set (CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG")
++  set (CMAKE_CXX_FLAGS_RELWITHDEBINFO "-g")
+   set (CMAKE_CXX_FLAGS_DEBUG   "-g3 -fno-inline")
+ endif (CMAKE_COMPILER_IS_GNUCXX)
+ 
