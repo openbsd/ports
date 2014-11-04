@@ -1,12 +1,16 @@
-$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.3 2014/10/30 12:21:37 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.4 2014/11/04 09:03:58 jasper Exp $
+
+- add new 'loginclass' attribute to the 'user' type
+- make 'chage' an optional command
+
 --- lib/puppet/provider/user/useradd.rb.orig	Tue Oct 21 23:52:27 2014
-+++ lib/puppet/provider/user/useradd.rb	Thu Oct 30 12:16:26 2014
++++ lib/puppet/provider/user/useradd.rb	Sun Nov  2 20:55:27 2014
 @@ -9,7 +9,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
      install Ruby's shadow password library (often known as `ruby-libshadow`)
      if you wish to manage user passwords."
  
 -  commands :add => "useradd", :delete => "userdel", :modify => "usermod", :password => "chage"
-+  commands :add => "useradd", :delete => "userdel", :modify => "usermod", :password => "passwd"
++  commands :add => "useradd", :delete => "userdel", :modify => "usermod"
  
    options :home, :flag => "-d", :method => :dir
    options :comment, :method => :gecos
@@ -18,7 +22,16 @@ $OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.3 2014/10/30 12:21:37 ja
    options :expiry, :method => :sp_expire,
      :munge => proc { |value|
        if value == :absent
-@@ -159,6 +160,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+@@ -42,6 +43,8 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+     }
+ 
+   optional_commands :localadd => "luseradd"
++  optional_commands :chage    => "chage"
++  optional_commands :password => "passwd"
+   has_feature :libuser if Puppet.features.libuser?
+ 
+   def exists?
+@@ -159,6 +162,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
        next if property.to_s =~ /password_.+_age/
        next if property == :groups and @resource.forcelocal?
        next if property == :expiry and @resource.forcelocal?
@@ -26,7 +39,26 @@ $OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.3 2014/10/30 12:21:37 ja
        # the value needs to be quoted, mostly because -c might
        # have spaces in it
        if value = @resource.should(property) and value != ""
-@@ -200,7 +202,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+@@ -191,16 +195,25 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+     cmd << @resource[:name]
+   end
+ 
++  def self.passwordcmd
++    case Facter.value(:operatingsystem)
++    when 'OpenBSD'
++      command(:password)
++    else
++      command(:chage)
++    end
++  end
++
+   def passcmd
+     age_limits = [:password_min_age, :password_max_age].select { |property| @resource.should(property) }
+     if age_limits.empty?
+       nil
+     else
+-      [command(:password),age_limits.collect { |property| [flag(property), @resource.should(property)]}, @resource[:name]].flatten
++      [passwordcmd,age_limits.collect { |property| [flag(property), @resource.should(property)]}, @resource[:name]].flatten
      end
    end
  
