@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_audio_h,v 1.1 2014/11/04 07:41:10 ratchov Exp $
+--- src/audio.h.orig	Fri Oct 31 18:10:24 2014
++++ src/audio.h	Fri Oct 31 18:55:16 2014
+@@ -28,7 +28,11 @@
+ #include <stdio.h>
+ 
+ #ifdef __OpenBSD__
+-# include <soundcard.h>
++#define HAVE_SNDIO
++#endif
++
++#ifdef HAVE_SNDIO
++# include <sndio.h>
+ #else
+ # include <sys/soundcard.h>
+ #endif

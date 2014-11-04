@@ -1,0 +1,109 @@
+$OpenBSD: patch-src_audio_c,v 1.1 2014/11/04 07:41:10 ratchov Exp $
+--- src/audio.c.orig	Wed Apr  5 09:16:50 2006
++++ src/audio.c	Fri Oct 31 19:49:46 2014
+@@ -31,12 +31,48 @@
+ 
+ extern char sc_device[];
+ 
++#ifdef HAVE_SNDIO
++struct sio_hdl *ahdl;
++#else
+ int afd;
++#endif
+ 
+ #define ABUFSIZE          4000
+ 
+  void init_audio() {
++#ifdef HAVE_SNDIO
++	struct sio_par par;
+ 
++	if ((ahdl = sio_open(SIO_DEVANY, SIO_REC, 0)) == NULL)
++    {
++        fprintf(stderr, "Failed to open audio device\n");
++	exit(1);
++    }
++
++	sio_initpar(&par);
++	par.bits = 8;
++	par.sig = 0;
++	par.rchan = 1;
++	par.rate = 8000;
++	if (!sio_setpar(ahdl, &par) || !sio_getpar(ahdl, &par))
++    {
++        fprintf(stderr, "Couldn't set audio parameters\n");
++	exit(1);
++    }
++
++	if (par.bits != 8 || par.sig || par.rchan != 1 || par.rate != 8000)
++    {
++        fprintf(stderr, "Unsupported audio parameters\n");
++	exit(1);
++    }
++
++	if (!sio_start(ahdl))
++    {
++        fprintf(stderr, "Couldn't start audio device\n");
++	exit(1);
++    }
++
++#else
+ 	char afile[40];                     /* Audio device name */
+ 	int sndfmt;                         /* Encoding of audio from */
+ 	int channels;                       /* Number of channels to record */
+@@ -73,11 +109,15 @@ int afd;
+         perror("8000 sps");
+         exit(errno);
+     }
++#endif
+ }
+ 
+ int close_audio() {
+-
++#ifdef HAVE_SNDIO
++	sio_close (ahdl);
++#else
+ 	close (afd);
++#endif
+ 
+ return (0);
+ }
+@@ -113,7 +153,23 @@ else testvalue = 0;
+ 	return (testvalue);
+ }
+ 
++#ifdef HAVE_SNDIO
++void read_abuf(unsigned char *p) {
++	size_t todo, n;
+ 
++	todo = ABUFSIZE;
++	while (todo > 0) {
++		n = sio_read(ahdl, p, todo);
++		if (n == 0) {
++			fprintf(stderr, "Failed to read from audio device\n");
++			exit(1);
++		}
++		p += n;
++		todo -= n;
++	}
++}
++#endif
++
+ float get_audio_sample(void) {
+ 
+     int rc=0;                      		/* Return value from subs */
+@@ -125,11 +181,15 @@ float get_audio_sample(void) {
+ 	int i, k;
+ 
+ 	for (k=0; k < 4; k++) {
++#ifdef HAVE_SNDIO
++	   read_abuf(abuf);
++#else
+ 	   if ((rc = read(afd, abuf, ABUFSIZE)) == -1)
+         {
+             perror("audio read");
+             exit(errno);
+         }
++#endif
+ 
+ 		for (i=0; i < rc; i++)		// calculate average
+ 		{
