@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_window_cpp,v 1.1 2014/11/04 10:52:25 dcoppa Exp $
+
+commit 7e2900511cfa8a41984144b1be03d8108abd8798
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Sat Nov 1 01:02:46 2014 +0100
+
+window: initScreen: initialize readline
+
+this fixes segmentation fault in rl_resize_terminal on SIGWINCH.
+
+--- src/window.cpp.orig	Sat Oct 25 17:16:07 2014
++++ src/window.cpp	Tue Nov  4 10:57:48 2014
+@@ -392,6 +392,9 @@ void initScreen(GNUC_UNUSED const char *window_title, 
+ 	rl_getc_function = rl::read_key;
+ 	rl_redisplay_function = rl::display_string;
+ 	rl_startup_hook = rl::add_base;
++	// initialize readline (needed, otherwise
++	// we get segmentation fault on SIGWINCH).
++	rl_initialize();
+ }
+ 
+ void destroyScreen()

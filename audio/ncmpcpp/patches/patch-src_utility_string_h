@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_utility_string_h,v 1.1 2014/11/04 10:52:25 dcoppa Exp $
+
+commit 6402b6f9c9aad20180079d8b35f55267634028f2
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Tue Oct 28 20:07:07 2014 +0100
+
+tags: writeID3v2Tags: write comment tag properly
+
+--- src/utility/string.h.orig	Sat Oct 25 17:16:07 2014
++++ src/utility/string.h	Tue Nov  4 10:32:30 2014
+@@ -31,6 +31,27 @@ template <size_t N> size_t const_strlen(const char (&)
+ 	return N-1;
+ }
+ 
++// it's present in boost for std::string, but we want more general version.
++template <typename CollectionT, typename StringT>
++StringT join(CollectionT &&collection, StringT &&separator)
++{
++	StringT result;
++	auto first = std::begin(collection), last = std::end(collection);
++	if (first != last)
++	{
++		while (true)
++		{
++			result += *first;
++			++first;
++			if (first != last)
++				result += separator;
++			else
++				break;
++		}
++	}
++	return result;
++}
++
+ std::string getBasename(const std::string &path);
+ std::string getParentDirectory(const std::string &path);
+ std::string getSharedDirectory(const std::string &dir1, const std::string &dir2);

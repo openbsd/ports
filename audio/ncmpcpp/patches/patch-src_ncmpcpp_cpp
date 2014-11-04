@@ -1,15 +1,40 @@
-$OpenBSD: patch-src_ncmpcpp_cpp,v 1.5 2014/10/27 08:30:20 dcoppa Exp $
+$OpenBSD: patch-src_ncmpcpp_cpp,v 1.6 2014/11/04 10:52:25 dcoppa Exp $
+
+commit 9e6b8533f1606fdc2535aad88817b50b8e4ad663
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Fri Oct 31 12:10:58 2014 +0100
+ncmpcpp: ignore SIGPIPE, not SIGINT
 
 OpenBSD lacks sigignore()
 
---- src/ncmpcpp.cpp.orig	Sun Oct 26 19:47:09 2014
-+++ src/ncmpcpp.cpp	Sun Oct 26 19:47:59 2014
-@@ -150,7 +150,7 @@ int main(int argc, char **argv)
- 	signal(SIGPIPE, sighandler);
+--- src/ncmpcpp.cpp.orig	Tue Nov  4 11:00:35 2014
++++ src/ncmpcpp.cpp	Tue Nov  4 11:03:44 2014
+@@ -58,12 +58,8 @@ namespace
+ #	if !defined(WIN32)
+ 	void sighandler(int sig)
+ 	{
+-		if (sig == SIGPIPE)
++		if (sig == SIGWINCH)
+ 		{
+-			Statusbar::print("SIGPIPE (broken pipe signal) received");
+-		}
+-		else if (sig == SIGWINCH)
+-		{
+ 			run_resize_screen = true;
+ 		}
+ #		if defined(__sun) && defined(__SVR4)
+@@ -147,10 +143,11 @@ int main(int argc, char **argv)
+ 		mousemask(ALL_MOUSE_EVENTS, 0);
+ 	
+ #	ifndef WIN32
+-	signal(SIGPIPE, sighandler);
  	signal(SIGWINCH, sighandler);
- 	// ignore Ctrl-C
+-	// ignore Ctrl-C
 -	sigignore(SIGINT);
-+	signal(SIGINT, SIG_IGN);
++	// we get it after connection with mpd is broken.
++	// just ignore it and wait for the connection to
++	// be reestablished.
++	signal(SIGPIPE, SIG_IGN);
  #	endif // !WIN32
  	
  	while (!Actions::ExitMainLoop)
