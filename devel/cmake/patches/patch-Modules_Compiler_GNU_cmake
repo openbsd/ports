@@ -1,14 +1,16 @@
-$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.7 2014/09/11 10:24:38 dcoppa Exp $
---- Modules/Compiler/GNU.cmake.orig	Thu Jul 31 17:03:56 2014
-+++ Modules/Compiler/GNU.cmake	Wed Sep  3 08:10:09 2014
-@@ -47,8 +47,8 @@ macro(__compiler_gnu lang)
+$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.8 2014/11/04 13:50:24 dcoppa Exp $
+--- Modules/Compiler/GNU.cmake.orig	Thu Sep 11 15:24:00 2014
++++ Modules/Compiler/GNU.cmake	Tue Nov  4 14:41:29 2014
+@@ -47,9 +47,9 @@ macro(__compiler_gnu lang)
    # Initial configuration flags.
    set(CMAKE_${lang}_FLAGS_INIT "")
    set(CMAKE_${lang}_FLAGS_DEBUG_INIT "-g")
 -  set(CMAKE_${lang}_FLAGS_MINSIZEREL_INIT "-Os -DNDEBUG")
 -  set(CMAKE_${lang}_FLAGS_RELEASE_INIT "-O3 -DNDEBUG")
+-  set(CMAKE_${lang}_FLAGS_RELWITHDEBINFO_INIT "-O2 -g -DNDEBUG")
 +  set(CMAKE_${lang}_FLAGS_MINSIZEREL_INIT "-DNDEBUG")
 +  set(CMAKE_${lang}_FLAGS_RELEASE_INIT "-DNDEBUG")
-   set(CMAKE_${lang}_FLAGS_RELWITHDEBINFO_INIT "-O2 -g -DNDEBUG")
++  set(CMAKE_${lang}_FLAGS_RELWITHDEBINFO_INIT "-g -DNDEBUG")
    set(CMAKE_${lang}_CREATE_PREPROCESSED_SOURCE "<CMAKE_${lang}_COMPILER> <DEFINES> <FLAGS> -E <SOURCE> > <PREPROCESSED_SOURCE>")
    set(CMAKE_${lang}_CREATE_ASSEMBLY_SOURCE "<CMAKE_${lang}_COMPILER> <DEFINES> <FLAGS> -S <SOURCE> -o <ASSEMBLY_SOURCE>")
+   if(NOT APPLE)
