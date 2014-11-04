@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.196 2014/11/04 19:18:33 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.197 2014/11/04 19:21:45 armani Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -467,6 +467,9 @@ my $obsolete_reason = {
 	'emacs-zenirc' => 3,
 	'emacs-zenirc-el' => 3,
 	'newsfetch' => 2,
+	'esound' => 3,
+	'extace' => 3,
+	'gkrellmss' => 3,
 };
 
 # ->is_base_system($handle, $state):
