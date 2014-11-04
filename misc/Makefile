@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2014/10/31 12:05:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.170 2014/11/04 21:16:45 sthen Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -48,6 +48,7 @@
      SUBDIR += magicpoint
      SUBDIR += mc
      SUBDIR += memcached
+     SUBDIR += memcached,sasl
      SUBDIR += memchan
      SUBDIR += migrationtools
      SUBDIR += mmv

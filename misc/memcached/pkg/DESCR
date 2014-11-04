@@ -1,3 +1,6 @@
 memcached is a high-performance, distributed memory object caching
 system, generic in nature, but intended for use in speeding up dynamic
 web applications by alleviating database load.
+
+Flavours:
+	sasl - build with support for sasl authentication
