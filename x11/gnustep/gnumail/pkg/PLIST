@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/18 12:21:25 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/11/04 14:25:29 sebastia Exp $
 bin/GNUMail
 include/GNUMail
 lib/GNUstep/ApplicationSupport/
@@ -106,8 +106,12 @@ lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/Resources/MailIcon_send.tif
 lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/
+lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/3-pane_96x96.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/drawer_96x96.tiff
+lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/floating_96x96.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/viewing.tiff
+lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/widescreen_96x96.tiff
 @bin lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Viewing
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/stamp.make
 lib/GNUstep/Frameworks/GNUMail.framework/
@@ -115,12 +119,12 @@ lib/GNUstep/Frameworks/GNUMail.framework/GNUMail
 lib/GNUstep/Frameworks/GNUMail.framework/Headers
 lib/GNUstep/Frameworks/GNUMail.framework/Resources
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/
-lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/
-lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/GNUMail
-lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/Headers/
-lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/Resources/
-lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/Resources/Info-gnustep.plist
-@lib lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/libGNUMail.so.${LIBGNUMail_VERSION}
+lib/GNUstep/Frameworks/GNUMail.framework/Versions/${SHLIB_VERSION}/
+lib/GNUstep/Frameworks/GNUMail.framework/Versions/${SHLIB_VERSION}/GNUMail
+lib/GNUstep/Frameworks/GNUMail.framework/Versions/${SHLIB_VERSION}/Headers/
+lib/GNUstep/Frameworks/GNUMail.framework/Versions/${SHLIB_VERSION}/Resources/
+lib/GNUstep/Frameworks/GNUMail.framework/Versions/${SHLIB_VERSION}/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/GNUMail.framework/Versions/${SHLIB_VERSION}/libGNUMail.so.${LIBGNUMail_VERSION}
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/GNUMail.framework/libGNUMail.so.${LIBGNUMail_VERSION}
 @lib lib/libGNUMail.so.${LIBGNUMail_VERSION}
