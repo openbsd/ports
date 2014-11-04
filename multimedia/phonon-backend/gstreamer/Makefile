@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/02 07:39:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/04 06:55:04 zhuk Exp $
 
 COMMENT =	GStreamer-based Phonon backend
 VERSION =	4.8.0
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
-REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/}
 

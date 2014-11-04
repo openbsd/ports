@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_FindGStreamer_cmake,v 1.1.1.1 2013/04/24 08:42:12 zhuk Exp $
+$OpenBSD: patch-cmake_FindGStreamer_cmake,v 1.2 2014/11/04 06:55:04 zhuk Exp $
 *_CFLAGS variables does not contain include directories.
---- cmake/FindGStreamer.cmake.orig	Mon Nov 19 02:58:40 2012
-+++ cmake/FindGStreamer.cmake	Mon Nov 19 03:01:02 2012
+--- cmake/FindGStreamer.cmake.orig	Sat Sep  6 20:13:59 2014
++++ cmake/FindGStreamer.cmake	Tue Nov  4 09:47:41 2014
 @@ -28,6 +28,7 @@ IF (NOT WIN32)
-    PKG_CHECK_MODULES(PKG_GSTREAMER gstreamer-0.10)
+    PKG_CHECK_MODULES(PKG_GSTREAMER gstreamer-1.0)
     SET(GSTREAMER_VERSION ${PKG_GSTREAMER_VERSION})
     SET(GSTREAMER_DEFINITIONS ${PKG_GSTREAMER_CFLAGS})
 +   SET(GSTREAMER_INCLUDE_DIRS ${PKG_GSTREAMER_INCLUDE_DIRS})
