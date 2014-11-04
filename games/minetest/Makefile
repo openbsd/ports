@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/04 15:41:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/04 16:57:14 landry Exp $
 
 COMMENT =	infinite-world block sandbox game
-V =		0.4.9
+V =		0.4.10
 DISTNAME =	minetest-${V}
 CATEGORIES =	games x11
-REVISION =	2
 
 HOMEPAGE =	http://www.minetest.net/
 
@@ -25,11 +24,11 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 LIB_DEPENDS =	audio/openal \
 		audio/libogg \
 		audio/libvorbis \
+		x11/irrlicht \
 		net/curl
-BUILD_DEPENDS +=	x11/irrlicht
 
-WANTLIB += GL GLU ICE SM X11 Xext Xxf86vm bz2 c curl jpeg m ogg openal
-WANTLIB += png pthread sqlite3 stdc++ vorbis vorbisfile z GLESv2
+WANTLIB += GL GLU ICE Irrlicht SM X11 Xext Xxf86vm bz2 c curl jpeg m ogg openal
+WANTLIB += png pthread sqlite3 stdc++ vorbis vorbisfile z
 
 NO_TEST =	Yes
 
