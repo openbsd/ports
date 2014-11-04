@@ -1,7 +1,16 @@
-$OpenBSD: patch-_bochsrc,v 1.11 2013/06/15 22:59:59 brad Exp $
---- .bochsrc.orig	Wed Apr 17 15:46:11 2013
-+++ .bochsrc	Thu May 30 18:26:03 2013
-@@ -432,13 +432,13 @@ vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
+$OpenBSD: patch-_bochsrc,v 1.12 2014/11/04 06:01:41 brad Exp $
+--- .bochsrc.orig	Sun Oct 19 04:54:16 2014
++++ .bochsrc	Tue Nov  4 00:08:55 2014
+@@ -559,7 +559,7 @@ pci: enabled=1, chipset=i440fx
+ #
+ # Default value are sync=none, rtc_sync=0, time0=local
+ #=======================================================================
+-#clock: sync=none, time0=local
++clock: sync=realtime, time0=local
+ 
+ #=======================================================================
+ # CMOSIMAGE:
+@@ -614,13 +614,13 @@ private_colormap: enabled=0
  # The optional parameter 'write_protected' can be used to control the media
  # write protect switch. By default it is turned off.
  #=======================================================================
@@ -17,16 +26,7 @@ $OpenBSD: patch-_bochsrc,v 1.11 2013/06/15 22:59:59 brad Exp $
  
  #=======================================================================
  # FLOPPYB:
-@@ -581,7 +581,7 @@ boot: disk
- # 
- # Default value are sync=none, time0=local
- #=======================================================================
--#clock: sync=none, time0=local
-+clock: sync=realtime, time0=local
- 
- 
- #=======================================================================
-@@ -605,8 +605,8 @@ floppy_bootsig_check: disabled=0
+@@ -745,8 +745,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================

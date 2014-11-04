@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/04/26 17:32:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/11/04 06:01:41 brad Exp $
 @bin bin/bochs
-@bin bin/bxcommit
 @bin bin/bximage
 @man man/man1/bochs-dlx.1
 @man man/man1/bochs.1
-@man man/man1/bxcommit.1
 @man man/man1/bximage.1
 @man man/man5/bochsrc.5
 share/bochs/
 share/bochs/BIOS-bochs-latest
 share/bochs/BIOS-bochs-legacy
+share/bochs/SeaBIOS-README
 share/bochs/VGABIOS-elpin-2.40
 share/bochs/VGABIOS-elpin-LICENSE
 share/bochs/VGABIOS-lgpl-README
@@ -17,10 +16,13 @@ share/bochs/VGABIOS-lgpl-latest
 share/bochs/VGABIOS-lgpl-latest-cirrus
 share/bochs/VGABIOS-lgpl-latest-cirrus-debug
 share/bochs/VGABIOS-lgpl-latest-debug
+share/bochs/bios.bin-1.7.5
 share/bochs/bochsrc
 share/bochs/keymaps/
 share/bochs/keymaps/sdl-pc-de.map
 share/bochs/keymaps/sdl-pc-us.map
+share/bochs/keymaps/sdl2-pc-de.map
+share/bochs/keymaps/sdl2-pc-us.map
 share/bochs/keymaps/x11-pc-be.map
 share/bochs/keymaps/x11-pc-da.map
 share/bochs/keymaps/x11-pc-de.map
@@ -39,3 +41,4 @@ share/doc/bochs/LICENSE
 share/doc/bochs/README
 share/doc/bochs/TODO
 share/doc/bochs/bxdebugger.html
+share/doc/bochs/slirp.conf
