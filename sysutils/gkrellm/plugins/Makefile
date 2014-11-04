@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/04 19:00:12 armani Exp $
 
      SUBDIR =
      SUBDIR += aclock 
@@ -10,7 +10,6 @@
      SUBDIR += mailwatch
      SUBDIR += mms
      SUBDIR += moon
-     SUBDIR += mss
      SUBDIR += reminder
      SUBDIR += shoot
      SUBDIR += stock
