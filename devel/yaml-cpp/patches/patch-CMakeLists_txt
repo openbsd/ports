@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2014/09/08 15:43:03 sthen Exp $
---- CMakeLists.txt.orig	Sun Apr 14 00:37:53 2013
-+++ CMakeLists.txt	Mon Sep  8 16:42:40 2014
-@@ -127,8 +127,8 @@ if(CMAKE_COMPILER_IS_GNUCXX)
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/11/04 15:08:18 dcoppa Exp $
+--- CMakeLists.txt.orig	Sun Apr 14 01:37:53 2013
++++ CMakeLists.txt	Tue Nov  4 16:07:08 2014
+@@ -127,10 +127,10 @@ if(CMAKE_COMPILER_IS_GNUCXX)
  		set(CMAKE_BUILD_TYPE Release)
  	endif()
  	#
@@ -10,7 +10,10 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2014/09/08 15:43:03 sthen Exp $
 +	set(CMAKE_CXX_FLAGS_RELEASE "")
 +	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-g")
  	set(CMAKE_CXX_FLAGS_DEBUG "-g")
- 	set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os")
+-	set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os")
++	set(CMAKE_CXX_FLAGS_MINSIZEREL "")
+ 	#
+ 	set(GCC_EXTRA_OPTIONS "")
  	#
 @@ -142,11 +142,11 @@ if(CMAKE_COMPILER_IS_GNUCXX)
  	#

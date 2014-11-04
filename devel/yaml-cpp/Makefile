@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/08 17:02:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/04 15:08:18 dcoppa Exp $
 
 COMMENT =		YAML parser and emitter in C++
 DISTNAME =		yaml-cpp-0.5.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		yaml-cpp	2.0 # 0.5
 
