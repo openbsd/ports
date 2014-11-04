@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.108 2014/10/23 07:41:45 brad Exp $
+# $OpenBSD: Makefile,v 1.109 2014/11/04 09:31:01 landry Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20141010
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -30,7 +30,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto gsm m mp3lame opus \
 		pthread schroedinger-1.0>=2 sndio speex ssl theoradec \
-		theoraenc vorbis vorbisenc vpx>=5 x264>=8 x265 xvidcore \
+		theoraenc vorbis vorbisenc vpx>=5 x264>=8 xvidcore \
 		z
 
 MODULES=	lang/clang
@@ -53,11 +53,9 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/libvpx>=1.3.0 \
 		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264>=20111027 \
-		multimedia/x265 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lz -pthread
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lXv -lsndio
 LIBavfilter_EXTRALIBS=
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -pthread
@@ -75,6 +73,18 @@ WRKTMP=		${WRKDIR}/tmp
 FFMPEG_ARCH=	generic
 .else
 FFMPEG_ARCH=	${MACHINE_ARCH}
+.endif
+
+# x265 only builds on archs with working builtin atomics
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "alpha"
+LIB_DEPENDS +=	multimedia/x265
+WANTLIB +=	x265
+CONFIGURE_ARGS +=	--enable-libx265
+CONFIGURE_ENV +=	LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264 x265"
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lz -pthread
+.else
+CONFIGURE_ENV +=	LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264"
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
 .endif
 
 OPTFLAGS=	${CFLAGS}
@@ -114,7 +124,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-libvorbis \
 		--enable-libvpx \
 		--enable-libx264 \
-		--enable-libx265 \
 		--enable-libxvid \
 		--enable-nonfree \
 		--enable-openssl \
@@ -142,7 +151,6 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBpostproc_LINKFLAGS="" \
 		LIBswresample_LINKFLAGS="" \
 		LIBswscale_LINKFLAGS="" \
-		LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264 x265" \
 		LIBavdevice_REQUIRES="libavcodec libavfilter libavformat libavutil libpostproc libswresample libswscale" \
 		LIBavfilter_REQUIRES="libavcodec libavformat libavresample libavutil libpostproc libswresample libswscale" \
 		LIBavformat_REQUIRES="libavcodec libavutil libswresample" \
