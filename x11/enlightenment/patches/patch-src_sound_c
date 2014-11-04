@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_sound_c,v 1.1 2014/11/04 08:35:57 armani Exp $
+--- src/sound.c.orig	Sun Jul 31 16:02:52 2011
++++ src/sound.c	Sun Nov 11 14:48:28 2012
+@@ -34,6 +34,8 @@
+ #define SOUND_SERVER_NAME "esd"
+ #elif HAVE_SOUND_PA
+ #define SOUND_SERVER_NAME "pulseaudio"
++#elif HAVE_SOUND_SNDIO
++#define SOUND_SERVER_NAME "sndio"
+ #else
+ #error Invalid sound configuration
+ #endif
+@@ -72,6 +74,9 @@ static const SoundOps *ops = &SoundOps_esd;
+ #elif HAVE_SOUND_PA
+ extern const SoundOps SoundOps_pa;
+ static const SoundOps *ops = &SoundOps_pa;
++#elif HAVE_SOUND_SNDIO
++extern const SoundOps SoundOps_sndio;
++static const SoundOps *ops = &SoundOps_sndio;
+ #endif
+ #endif
+ 

@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2014/11/04 08:35:57 armani Exp $
+--- src/Makefile.am.orig	Sun Jul 31 10:02:54 2011
++++ src/Makefile.am	Thu Nov 15 21:58:47 2012
+@@ -161,7 +161,7 @@ MODULE_LIBS = $(DLOPEN_LIBS)
+ 
+ libe16dir = $(pkglibdir)
+ 
+-libe16_LTLIBRARIES = $(LIBSND_ESD) $(LIBSND_PA) $(LIBFNT_IFT) $(LIBFNT_XFT) $(LIBFNT_PANGO)
++libe16_LTLIBRARIES = $(LIBSND_ESD) $(LIBSND_PA) $(LIBSND_SNDIO) $(LIBFNT_IFT) $(LIBFNT_XFT) $(LIBFNT_PANGO)
+ 
+ if USE_LIBESD
+ LIBSND_ESD = libsound_esd.la
+@@ -179,6 +179,14 @@ libsound_pa_la_LIBADD    = $(PA_LIBS) $(AUDIOFILE_LIBS
+ libsound_pa_la_LDFLAGS   = -module -avoid-version
+ endif
+ 
++if USE_LIBSNDIO
++LIBSND_SNDIO = libsound_sndio.la
++libsound_sndio_la_SOURCES = sound_sndio.c sound_load.c
++libsound_sndio_la_CFLAGS  = $(SNDIO_CFLAGS) $(AUDIOFILE_CFLAGS) $(CWARNFLAGS)
++libsound_sndio_la_LIBADD  = $(SNDIO_LIBS) $(AUDIOFILE_LIBS)
++libsound_sndio_la_LDFLAGS = -module -avoid-version
++endif
++
+ LIBFNT_IFT = libfont_ift.la
+ libfont_ift_la_SOURCES    = ttfont.c
+ libfont_ift_la_CFLAGS     = $(IMLIB2_CFLAGS) $(CWARNFLAGS)
+@@ -203,9 +211,9 @@ endif
+ 
+ else
+ 
+-MODULE_SRCS = sound_esd.c sound_pa.c sound_load.c ttfont.c text_xft.c text_pango.c
+-MODULE_LIBS = $(ESD_LIBS) $(PA_LIBS) $(AUDIOFILE_LIBS) $(PANGO_LIBS) $(XFT_LIBS)
+-MODULE_CFLAGS = $(ESD_CFLAGS) $(PA_CFLAGS) $(AUDIOFILE_CFLAGS) $(PANGO_CFLAGS) $(XFT_CFLAGS)
++MODULE_SRCS = sound_esd.c sound_pa.c sound_sndio.c sound_load.c ttfont.c text_xft.c text_pango.c
++MODULE_LIBS = $(ESD_LIBS) $(PA_LIBS) $(SNDIO_LIBS) $(AUDIOFILE_LIBS) $(PANGO_LIBS) $(XFT_LIBS)
++MODULE_CFLAGS = $(ESD_CFLAGS) $(PA_CFLAGS) $(SNDIO_CFLAGS) $(AUDIOFILE_CFLAGS) $(PANGO_CFLAGS) $(XFT_CFLAGS)
+ 
+ endif
+ 
