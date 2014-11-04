@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.543 2014/10/27 11:22:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.544 2014/11/04 19:05:26 armani Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -55,7 +55,6 @@
      SUBDIR += eterm
      SUBDIR += eterm,kanji
      SUBDIR += evilwm
-     SUBDIR += extace
      SUBDIR += faenza-icon-theme
      SUBDIR += fbpanel
      SUBDIR += fleditor
