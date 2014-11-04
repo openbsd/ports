@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2014/11/04 15:04:14 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
 DISTNAME=	ettercap-0.7.5.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
