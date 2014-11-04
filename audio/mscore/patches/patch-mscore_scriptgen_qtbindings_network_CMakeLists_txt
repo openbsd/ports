@@ -1,0 +1,12 @@
+$OpenBSD: patch-mscore_scriptgen_qtbindings_network_CMakeLists_txt,v 1.1 2014/11/04 14:36:36 dcoppa Exp $
+--- mscore/scriptgen/qtbindings/network/CMakeLists.txt.orig	Tue Nov  4 15:29:52 2014
++++ mscore/scriptgen/qtbindings/network/CMakeLists.txt	Tue Nov  4 15:30:44 2014
+@@ -18,7 +18,7 @@
+ #  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ #=============================================================================
+ 
+-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DQT_NO_DEBUG")
++set(CMAKE_CXX_FLAGS_RELEASE "-DQT_NO_DEBUG")
+ set(CMAKE_CXX_FLAGS_DEBUG   "-DQT_DEBUG")
+ 
+ if (STATIC_SCRIPT_BINDINGS)
