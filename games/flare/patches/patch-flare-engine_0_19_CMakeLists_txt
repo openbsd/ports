@@ -1,0 +1,23 @@
+$OpenBSD: patch-flare-engine_0_19_CMakeLists_txt,v 1.1 2014/11/04 15:22:30 dcoppa Exp $
+--- flare-engine.0.19/CMakeLists.txt.orig	Tue Nov  4 16:16:14 2014
++++ flare-engine.0.19/CMakeLists.txt	Tue Nov  4 16:18:26 2014
+@@ -23,19 +23,6 @@ elseif ()
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-enforce-eh-specs")
+ endif ()
+ 
+-if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-  set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g0")
+-elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+-  set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+-elseif(CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
+-  set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -g0")
+-elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-  set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3 -pg")
+-  set(CMAKE_EXE_LINKER_FLAGS_DEBUG "-pg")
+-  set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "-pg")
+-  set(CMAKE_MODULE_LINKER_FLAGS_DEBUG "-pg")
+-endif()
+-
+ set(BINDIR  "games"             CACHE STRING "Directory from CMAKE_INSTALL_PREFIX where game executable will be installed.")
+ set(DATADIR "share/games/flare" CACHE STRING "Directory from CMAKE_INSTALL_PREFIX where game data files will be installed.")
+ set(MANDIR  "share/man"         CACHE STRING "Directory from CMAKE_INSTALL_PREFIX where manual pages will be installed.")

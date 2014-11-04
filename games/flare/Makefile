@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/06 15:03:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/04 15:22:30 dcoppa Exp $
 
 COMMENT =		free/libre action roleplaying engine
 
 V =			0.19
 PKGNAME =		flare-${V}
+REVISION =		0
 
 CATEGORIES =		games
 
