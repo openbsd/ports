@@ -25,6 +25,7 @@ holds all the information retrieved through various variables, e.g.,:
     HOMEPAGE 
     IS_INTERACTIVE 
     MAINTAINER
+    MAKEFILE_LIST
     MASTER_SITES*
     MODULES 
     MULTI_PACKAGES 
@@ -70,6 +71,7 @@ CANONICAL points to the reduced version.
 - Flavors(FULLPKGPATH, VALUE)
 - Categories(FULLPKGPATH, VALUE)
 - Multi(FULLPKGPATH, VALUE, SUBPKGPATH)
+- Makefiles(FULLPKGPATH, VALUE)
 - Modules(FULLPKGPATH, VALUE)
 - Configure(FULLPKGPATH, VALUE)
 - ConfigureArgs(FULLPKGPATH, VALUE)
@@ -79,6 +81,9 @@ CANONICAL points to the reduced version.
 All of these variable values are actually lists. These lists are taken apart
 and result in many entries in these secondary tables (or none if the list
 is completely empty)
+
+Makefiles holds the stuff from MAKEFILE_LIST that's specific to a given port
+with all default entries stripped away.
 
 - Depends(FULLPKGPATH, FULLDEPENDS, PKGSPEC, REST, DEPENDSPATH, TYPE)
 All depends are stored in a single table, including the type:

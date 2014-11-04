@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.15 2014/09/05 14:45:02 jasper Exp $
+# $OpenBSD: Info.pm,v 1.16 2014/11/04 10:44:33 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -52,6 +52,7 @@ our $vars = {
     IS_INTERACTIVE => 'AnyVar',
     LIB_DEPENDS => 'LibDependsVar',
     MAINTAINER=> 'EmailVar',
+    MAKEFILE_LIST => 'FilesListVar',
     MASTER_SITES => 'MasterSitesVar',
     MASTER_SITES0 => 'MasterSitesVar',
     MASTER_SITES1 => 'MasterSitesVar',

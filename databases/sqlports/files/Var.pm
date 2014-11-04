@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.22 2013/11/01 14:50:11 espie Exp $
+# $OpenBSD: Var.pm,v 1.23 2014/11/04 10:44:33 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -438,6 +438,41 @@ sub add
 	my ($self, $ins) = @_;
 	return if $self->value eq '';
 	$self->SUPER::add($ins);
+}
+
+package FilesListVar;
+our @ISA = qw(DefinedListKeyVar);
+
+my $portsdir = $ENV{PORTSDIR} || '/usr/ports';
+sub table() { 'Makefiles' }
+sub keyword_table() { 'Filename' }
+
+my $always = {
+	map {($_, 1)} (
+		'/usr/share/mk/sys.mk', 
+		'Makefile',
+		'/usr/share/mk/bsd.port.mk',
+		'/usr/share/mk/bsd.own.mk',
+		'/etc/mk.conf', 
+		'${PORTSDIR}/infrastructure/mk/bsd.port.mk',
+		'${PORTSDIR}/infrastructure/mk/pkgpath.mk',
+		'${PORTSDIR}/infrastructure/mk/arch-defines.mk',
+		'${PORTSDIR}/infrastructure/mk/modules.port.mk',
+		'${PORTSDIR}/infrastructure/mk/bsd.port.arch.mk',
+		'${PORTSDIR}/infrastructure/templates/network.conf.template',
+		)
+};
+	
+sub words
+{
+	my $self = shift;
+	my @result = ();
+	for my $x ($self->SUPER::words) {
+		$x =~ s,^\Q$portsdir\E/,\$\{PORTSDIR\}/,;
+		next if $always->{$x};
+		push(@result, $x);
+	}
+	return @result;
 }
 
 package FlavorsVar;

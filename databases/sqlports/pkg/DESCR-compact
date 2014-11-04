@@ -71,12 +71,15 @@ MULTI_PACKAGES ports hold several entries with corresponding FULLPKGPATH
 - Configure(FULLPKGPATH, VALUE) 	(corresponds to CONFIGURE_STYLE)
 - ConfigureArgs(FULLPKGPATH, VALUE)
 - MasterSites(FULLPKGPATH, N, VALUE)
+- Makefiles(FULLPKGPATH, VALUE)
 - NotForArch(FULLPKGPATH, VALUE)
 - OnlyForArch(FULLPKGPATH, VALUE)
 All of these variable values are actually lists. These lists are taken apart
 and result in many entries in these secondary tables (or none if the list
 is completely empty)
 
+The Makefiles table contains only Makefiles from MAKEFILE_LIST that are not
+"default values" (always included makefiles).
 
 Each keyword table follows the same scheme
 TABLENAME(KEYREF, VALUE)
@@ -112,6 +115,7 @@ AUTOCONF_VERSION, AUTOMAKE_VERSION -> AUTOVERSION
 MAINTAINER -> EMAIL
 CATEGORIES -> CATEGORYKEYS
 CONFIGURE -> CONFIGURE_KEYS
+MAKEFILES -> FILENAMES
 MODULES -> MODULEKEYS
 PREFIX -> PREFIX
 WANTLIB.VALUE, SHARED_LIBS.LIBNAME -> LIBRARY
