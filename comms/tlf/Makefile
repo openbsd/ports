@@ -1,52 +1,38 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/04 07:41:10 ratchov Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/04 10:58:21 sthen Exp $
 
 COMMENT=	radio contest logger
 
-DISTNAME=	tlf-0.9.30
-REVISION=	2
+DISTNAME=	tlf-1.2.1
 CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html
 
-MASTER_SITES=	http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/ \
-		http://www.wwns.com/tlf/
+MASTER_SITES=	https://github.com/Tlf/tlf/archive/
+WRKDIST=	${WRKDIR}/tlf-${DISTNAME}
 
-CONFIGURE_STYLE=autoheader gnu
-
-# License: GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	hamlib>=2 ncurses pthread sndio c m
+WANTLIB=	glib-2.0 hamlib>=2 ncurses panel pthread sndio c m
+MODULES+=	devel/gettext
 
-SOME_LD_FLAGS=	-lsndio
-SOME_CPP_FLAGS=
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.11
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
-AUTOCONF_VER=	2.59
-AUTOMAKE_VER=	1.9
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --enable-hamlib
+LIB_DEPENDS=	comms/hamlib \
+		devel/glib2
 
-BUILD_DEPENDS=	devel/automake/${AUTOMAKE_VER} \
-		devel/autoconf/${AUTOCONF_VER}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-lsndio -L${LOCALBASE}/lib"
 
-
-CONFIGURE_ARGS+=--enable-hamlib
-LIB_DEPENDS=	comms/hamlib
-SOME_CPP_FLAGS	+= -I${LOCALBASE}/include
-SOME_LD_FLAGS	+= -L${LOCALBASE}/lib
-
-CONFIGURE_ENV=	CPPFLAGS="${SOME_CPP_FLAGS}" \
-		LDFLAGS="${SOME_LD_FLAGS}" \
-		AUTOMAKE_VERSION=${AUTOMAKE_VER} \
-		AUTOCONF_VERSION=${AUTOCONF_VER}
-USE_GROFF =	Yes
-
-pre-configure:
-	cd $(WRKSRC) && env AUTOCONF_VERSION=$(AUTOCONF_VER) \
-	    AUTOMAKE_VERSION=$(AUTOMAKE_VER) aclocal
-	cd $(WRKSRC) && env AUTOCONF_VERSION=$(AUTOCONF_VER) \
-	    AUTOMAKE_VERSION=$(AUTOMAKE_VER) automake --add-missing
-	cd $(WRKSRC) && env AUTOCONF_VERSION=$(AUTOCONF_VER) \
-	    AUTOMAKE_VERSION=$(AUTOMAKE_VER) autoconf
-	cd $(WRKSRC) && env AUTOCONF_VERSION=$(AUTOCONF_VER) \
-	    AUTOMAKE_VERSION=$(AUTOMAKE_VER) autoheader
+post-patch:
+	cd ${WRKSRC}; \
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	    autoreconf --install
 
 .include <bsd.port.mk>

@@ -1,24 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/30 21:54:17 jason Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/04 10:58:21 sthen Exp $
+bin/play_vk
 bin/soundlog
-bin/tlf
+@bin bin/tlf
 @man man/man1/tlf.1
+share/doc/tlf/
+share/doc/tlf/FAQ
+share/doc/tlf/New_Bandmap.txt
+share/doc/tlf/README
+share/doc/tlf/README.cabrillo
+share/doc/tlf/README.ssb
 share/tlf/
+share/tlf/arrl10m_mults
+share/tlf/arrldx_mults
 share/tlf/arrlsections
+share/tlf/cabrillo.fmt
 share/tlf/callmaster
 share/tlf/cty.dat
-share/tlf/doc/
-share/tlf/doc/README
 share/tlf/ea_sections
+share/tlf/help.txt
 share/tlf/logcfg.dat
 share/tlf/paccmults
 share/tlf/rules/
+share/tlf/rules/arrl10m_dx
 share/tlf/rules/arrldx_dx
 share/tlf/rules/arrldx_usa
 share/tlf/rules/arrlfd
 share/tlf/rules/arrlss
+share/tlf/rules/contest
 share/tlf/rules/cqww
 share/tlf/rules/dxped
 share/tlf/rules/eusprint
+share/tlf/rules/focmarathon
 share/tlf/rules/lzdx
 share/tlf/rules/pacc_dx
 share/tlf/rules/pacc_pa
@@ -26,6 +38,7 @@ share/tlf/rules/qso
 share/tlf/rules/spdx_dx
 share/tlf/rules/spdx_sp
 share/tlf/rules/ssa_mt
+share/tlf/rules/stewperry
 share/tlf/rules/template
 share/tlf/rules/wpx
 share/tlf/spdxmults
