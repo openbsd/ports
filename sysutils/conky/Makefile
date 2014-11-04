@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/09/16 07:28:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.42 2014/11/04 12:38:57 bcallah Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	light-weight system monitor
 DISTNAME=	conky-1.9.0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
-REVISION =	1
+REVISION =	2
 
 MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
@@ -30,11 +30,11 @@ LIB_DEPENDS=	devel/glib2 \
 		${MODLUA_LIB_DEPENDS}
 
 
-FLAVORS=	no_x11 audacious xmms2
+FLAVORS=	no_x11 xmms2
 FLAVOR?=
 
 .if ${FLAVOR:Mno_x11}
-.  if ${FLAVOR:Maudacious} || ${FLAVOR:Mxmms2}
+.  if ${FLAVOR:Mxmms2}
 ERRORS+="Fatal: nonsense combination of flavors"
 .  else
 CONFIGURE_ARGS+=--disable-double-buffer \
@@ -48,19 +48,6 @@ CONFIGURE_ARGS+=--enable-imlib2
 LIB_DEPENDS+=	graphics/imlib2
 WANTLIB += Imlib2 X11 Xdamage Xext Xfixes Xft
 WANTLIB += Xrender expat fontconfig freetype xcb
-.endif
-
-.if ${FLAVOR:Maudacious}
-CONFIGURE_ARGS+=--enable-audacious=yes
-LIB_DEPENDS +=	audio/audacious devel/harfbuzz
-WANTLIB +=	GL ICE Xau Xcomposite Xcursor Xdmcp Xi Xinerama \
-		Xrandr Xxf86vm atk-1.0 atk-bridge-2.0 atspi \
-		audclient audcore audgui cairo cairo-gobject \
-		dbus-1 dbus-glib-1 drm ffi gdk-3 gdk_pixbuf-2.0 \
-		gio-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		gtk-3 harfbuzz pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-		pthread-stubs SM stdc++ xcb-render xcb-shm
 .endif
 
 .if ${FLAVOR:Mxmms2}
