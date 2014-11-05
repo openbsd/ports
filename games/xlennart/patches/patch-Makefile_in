@@ -1,0 +1,63 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/11/05 22:36:47 landry Exp $
+--- Makefile.in.orig	Mon Nov  3 04:38:53 2014
++++ Makefile.in	Wed Nov  5 20:52:50 2014
+@@ -23,14 +23,14 @@ VPATH = @srcdir@
+ ALL_CFLAGS =	$(CFLAGS) $(CPPFLAGS) -I$(srcdir)
+ ALL_LDFLAGS =	$(CFLAGS) $(LDFLAGS)
+ IMAGE_DEFINES=-DIMAGES=\"${datadir}/xlennart\"
+-SCORE_DEFINES=-DSCOREFILE=\"${localstatedir}/xlennart/scores\"
++SCORE_DEFINES=-DSCOREFILE=\"${localstatedir}/games/xlennart.scores\"
+ 
+ PROG =	xlennart
+ 
+ OBJS =	Bill.o Bucket.o Cable.o Computer.o Game.o Horde.o Network.o \
+ 	OS.o Scorelist.o Spark.o UI.o util.o @WIDGET_OBJS@
+ 
+-XPMS =	pixmaps/about.xpm pixmaps/apple.xpm pixmaps/billA_0.xpm \
++XPMS =	pixmaps/about.xpm pixmaps/arch.xpm pixmaps/billA_0.xpm \
+ 	pixmaps/billA_1.xpm pixmaps/billA_10.xpm pixmaps/billA_11.xpm \
+ 	pixmaps/billA_12.xpm pixmaps/billA_2.xpm pixmaps/billA_3.xpm \
+ 	pixmaps/billA_4.xpm pixmaps/billA_5.xpm pixmaps/billA_6.xpm \
+@@ -39,20 +39,20 @@ XPMS =	pixmaps/about.xpm pixmaps/apple.xpm pixmaps/bil
+ 	pixmaps/billD_3.xpm pixmaps/billD_4.xpm pixmaps/billL_0.xpm \
+ 	pixmaps/billL_1.xpm pixmaps/billL_2.xpm pixmaps/billR_0.xpm \
+ 	pixmaps/billR_1.xpm pixmaps/billR_2.xpm pixmaps/bsd.xpm \
+-	pixmaps/bsdcpu.xpm pixmaps/bucket.xpm pixmaps/arch.xpm \
+-	pixmaps/icon.xpm pixmaps/centos.xpm pixmaps/logo.xpm \
+-	pixmaps/maccpu.xpm pixmaps/debian.xpm pixmaps/nextcpu.xpm \
+-	pixmaps/gentoo.xpm pixmaps/os2cpu.xpm \
+-	pixmaps/palm.xpm pixmaps/palmcpu.xpm pixmaps/mandriva.xpm \
+-	pixmaps/spark_0.xpm pixmaps/slackware.xpm pixmaps/suse.xpm \
+-	pixmaps/spark_1.xpm pixmaps/ubuntu.xpm pixmaps/suncpu.xpm \
+-	pixmaps/toaster.xpm pixmaps/initfail.xpm
++	pixmaps/bsdcpu.xpm pixmaps/bucket.xpm pixmaps/centos.xpm \
++	pixmaps/debian.xpm pixmaps/gentoo.xpm pixmaps/icon.xpm \
++	pixmaps/initfail.xpm pixmaps/logo.xpm pixmaps/maccpu.xpm \
++	pixmaps/mandriva.xpm pixmaps/nextcpu.xpm pixmaps/os2cpu.xpm \
++	pixmaps/sgicpu.xpm pixmaps/slackware.xpm pixmaps/spark_0.xpm \
++	pixmaps/spark_1.xpm pixmaps/suncpu.xpm pixmaps/suse.xpm \
++	pixmaps/toaster.xpm pixmaps/ubuntu.xpm
+ 
+-XBMS =	bitmaps/apple.xbm bitmaps/bsd.xbm bitmaps/bucket.xbm \
+-	bitmaps/hand_down.xbm bitmaps/hand_down_mask.xbm bitmaps/hand_up.xbm \
+-	bitmaps/hand_up_mask.xbm bitmaps/hurd.xbm bitmaps/linux.xbm \
+-	bitmaps/next.xbm bitmaps/os2.xbm bitmaps/palm.xbm bitmaps/redhat.xbm \
+-	bitmaps/sgi.xbm bitmaps/sun.xbm
++XBMS =	bitmaps/arch.xbm bitmaps/bsd.xbm bitmaps/bucket.xbm bitmaps/centos.xbm \
++	bitmaps/debian.xbm bitmaps/gentoo.xbm bitmaps/hand_down.xbm \
++	bitmaps/hand_down_mask.xbm bitmaps/hand_up.xbm \
++	bitmaps/hand_up_mask.xbm bitmaps/initfail.xbm bitmaps/mandriva.xbm \
++	bitmaps/redhat.xbm bitmaps/slackware.xbm bitmaps/suse.xbm \
++	bitmaps/ubuntu.xbm
+ 
+ MANDIR = man6
+ MAN = xlennart.6
+@@ -85,8 +85,6 @@ install:
+ 	$(INSTALL) ${PROG} ${DESTDIR}${bindir}/${PROG}
+ 	$(MKINSTALLDIRS) ${DESTDIR}${mandir}/${MANDIR}
+ 	$(INSTALL_DATA) ${srcdir}/${MAN} ${DESTDIR}${mandir}/${MANDIR}
+-	$(MKINSTALLDIRS) ${DESTDIR}${localstatedir}/xlennart
+-	$(INSTALL_DATA) -m 0666 ${srcdir}/scores ${DESTDIR}${localstatedir}/xlennart
+ 	$(MKINSTALLDIRS) ${DESTDIR}${datadir}/xlennart
+ 	$(MKINSTALLDIRS) ${DESTDIR}${datadir}/xlennart/pixmaps
+ 	$(MKINSTALLDIRS) ${DESTDIR}${datadir}/xlennart/bitmaps

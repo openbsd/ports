@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/05 22:36:47 landry Exp $
+@group games
+@bin bin/xlennart
+@group
+@man man/man6/xlennart.6
+share/examples/xlennart/
+share/examples/xlennart/xlennart.scores
+@mode g+w
+@group games
+@sample /var/games/xbill.scores
+@mode
+@group
+share/xlennart/
+share/xlennart/bitmaps/
+share/xlennart/bitmaps/arch.xbm
+share/xlennart/bitmaps/bsd.xbm
+share/xlennart/bitmaps/bucket.xbm
+share/xlennart/bitmaps/centos.xbm
+share/xlennart/bitmaps/debian.xbm
+share/xlennart/bitmaps/gentoo.xbm
+share/xlennart/bitmaps/hand_down.xbm
+share/xlennart/bitmaps/hand_down_mask.xbm
+share/xlennart/bitmaps/hand_up.xbm
+share/xlennart/bitmaps/hand_up_mask.xbm
+share/xlennart/bitmaps/initfail.xbm
+share/xlennart/bitmaps/mandriva.xbm
+share/xlennart/bitmaps/redhat.xbm
+share/xlennart/bitmaps/slackware.xbm
+share/xlennart/bitmaps/suse.xbm
+share/xlennart/bitmaps/ubuntu.xbm
+share/xlennart/pixmaps/
+share/xlennart/pixmaps/about.xpm
+share/xlennart/pixmaps/arch.xpm
+share/xlennart/pixmaps/billA_0.xpm
+share/xlennart/pixmaps/billA_1.xpm
+share/xlennart/pixmaps/billA_10.xpm
+share/xlennart/pixmaps/billA_11.xpm
+share/xlennart/pixmaps/billA_12.xpm
+share/xlennart/pixmaps/billA_2.xpm
+share/xlennart/pixmaps/billA_3.xpm
+share/xlennart/pixmaps/billA_4.xpm
+share/xlennart/pixmaps/billA_5.xpm
+share/xlennart/pixmaps/billA_6.xpm
+share/xlennart/pixmaps/billA_7.xpm
+share/xlennart/pixmaps/billA_8.xpm
+share/xlennart/pixmaps/billA_9.xpm
+share/xlennart/pixmaps/billD_0.xpm
+share/xlennart/pixmaps/billD_1.xpm
+share/xlennart/pixmaps/billD_2.xpm
+share/xlennart/pixmaps/billD_3.xpm
+share/xlennart/pixmaps/billD_4.xpm
+share/xlennart/pixmaps/billL_0.xpm
+share/xlennart/pixmaps/billL_1.xpm
+share/xlennart/pixmaps/billL_2.xpm
+share/xlennart/pixmaps/billR_0.xpm
+share/xlennart/pixmaps/billR_1.xpm
+share/xlennart/pixmaps/billR_2.xpm
+share/xlennart/pixmaps/bsd.xpm
+share/xlennart/pixmaps/bsdcpu.xpm
+share/xlennart/pixmaps/bucket.xpm
+share/xlennart/pixmaps/centos.xpm
+share/xlennart/pixmaps/debian.xpm
+share/xlennart/pixmaps/gentoo.xpm
+share/xlennart/pixmaps/icon.xpm
+share/xlennart/pixmaps/initfail.xpm
+share/xlennart/pixmaps/logo.xpm
+share/xlennart/pixmaps/maccpu.xpm
+share/xlennart/pixmaps/mandriva.xpm
+share/xlennart/pixmaps/nextcpu.xpm
+share/xlennart/pixmaps/os2cpu.xpm
+share/xlennart/pixmaps/sgicpu.xpm
+share/xlennart/pixmaps/slackware.xpm
+share/xlennart/pixmaps/spark_0.xpm
+share/xlennart/pixmaps/spark_1.xpm
+share/xlennart/pixmaps/suncpu.xpm
+share/xlennart/pixmaps/suse.xpm
+share/xlennart/pixmaps/toaster.xpm
+share/xlennart/pixmaps/ubuntu.xpm
