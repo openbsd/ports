@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/05 11:34:37 chrisz Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/05 14:59:12 chrisz Exp $
 
 COMMENT =	OCaml graph library
 CATEGORIES =	devel
 
 V =		1.8.5
-REVISION =	0
+REVISION =	1
 DISTNAME =	ocamlgraph-${V}
 PKGNAME =	ocaml-graph-${V}
 MASTER_SITES =	http://ocamlgraph.lri.fr/download/
@@ -23,8 +23,8 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gnomecanvas-2 gobject-2.0 gtk-x11-2.0 intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
 
-RUN_DEPENDS =		x11/lablgtk2 x11/gtk+2 x11/gnome/libgnomecanvas
-BUILD_DEPENDS =		x11/lablgtk2 sysutils/findlib
+RUN_DEPENDS =		x11/lablgtk2
+BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib
 
 CONFIGURE_STYLE =	gnu
 
