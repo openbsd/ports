@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/11/05 15:42:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/11/05 16:05:21 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
@@ -188,5 +188,10 @@ htdocs/smokeping/cropper/marqueeHoriz.gif
 htdocs/smokeping/cropper/marqueeVert.gif
 htdocs/smokeping/cropper/smokeping-zoom.js
 htdocs/smokeping/smokeping.fcgi
+@owner _smokeping
+@mode 755
+htdocs/smokeping/cache/
+@mode
+@owner
 @rcscript ${RCDIR}/smokeping
 @rcscript ${RCDIR}/smokeping_fcgi
