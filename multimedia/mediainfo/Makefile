@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/13 20:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/05 16:15:06 naddy Exp $
 
 COMMENT=	display technical and tag data for video and audio files
 
-VERSION=	0.7.69
+VERSION=	0.7.70
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 HOMEPAGE=	http://mediainfo.sourceforge.net/
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	SUBDIRS="${SUBDIRS}"
 MAKE_ENV=	SUBDIRS="${SUBDIRS}"
 LIBTOOL_FLAGS=	--tag=disable-shared
+MODGNU_CONFIG_GUESS_DIRS=${SUBDIRS}
 
 ZENLIBDIR=	${WRKSRC}/ZenLib/Project/GNU/Library
 MEDIAINFOLIBDIR=${WRKSRC}/MediaInfoLib/Project/GNU/Library

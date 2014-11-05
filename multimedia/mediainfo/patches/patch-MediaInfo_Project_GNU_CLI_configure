@@ -1,7 +1,7 @@
-$OpenBSD: patch-MediaInfo_Project_GNU_CLI_configure,v 1.1.1.1 2014/06/13 20:48:58 naddy Exp $
---- MediaInfo/Project/GNU/CLI/configure.orig	Thu Apr 24 13:30:03 2014
-+++ MediaInfo/Project/GNU/CLI/configure	Wed Jun  4 18:53:00 2014
-@@ -15570,9 +15570,6 @@ if test "$GXX" = yes ; then
+$OpenBSD: patch-MediaInfo_Project_GNU_CLI_configure,v 1.2 2014/11/05 16:15:06 naddy Exp $
+--- MediaInfo/Project/GNU/CLI/configure.orig	Wed Sep  3 13:50:52 2014
++++ MediaInfo/Project/GNU/CLI/configure	Wed Nov  5 16:55:47 2014
+@@ -15064,9 +15064,6 @@ if test "$GXX" = yes ; then
  	if test "$enable_debug" = "yes"; then
  		CFLAGS="$CFLAGS -O0 -g -Wall -Wundef"
  		CXXFLAGS="$CXXFLAGS -O0 -g -Wall -W -Wundef -Wcast-qual -Wno-ctor-dtor-privacy"
