@@ -1,22 +1,25 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/11/05 11:43:59 sthen Exp $
 
-COMMENT=automatic text creation from templates
-CATEGORIES=devel
+COMMENT=	automatic text creation from templates
+CATEGORIES=	devel
 
 V=		5.8.7
 DISTNAME=	autogen-${V}
-REVISION=	2
+REVISION=	3
+
 SHARED_LIBS +=	opts                 27.5     # .27.5
 SHARED_LIBS +=	guileopts            1.0      # .0.1
-HOMEPAGE=http://autogen.sourceforge.net/
-MASTER_SITES=${MASTER_SITE_GNU:=autogen/rel${V}/}
+
+HOMEPAGE=	http://autogen.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_GNU:=autogen/rel${V}/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=Yes
 
+WANTLIB += c gmp guile ltdl lzma m pthread xml2 z
+
 MODULES=	devel/gettext
 
-WANTLIB=	c gmp ltdl m pthread z guile xml2
 LIB_DEPENDS=	lang/guile \
 		textproc/libxml
 CONFIGURE_STYLE=gnu

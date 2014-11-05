@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/06 12:28:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT =		AppData tools
 
 DISTNAME =		appdata-tools-0.1.8
-REVISION =		0
+REVISION =		2
 
 CATEGORIES =		misc
 
@@ -19,7 +19,7 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender appstream-glib atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz lzma m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 xcb xcb-render
 WANTLIB += xcb-shm xml2 z

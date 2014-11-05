@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2013/12/22 19:24:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.62 2014/11/05 11:43:59 sthen Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-REVISION =	22
+REVISION =	23
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL
@@ -21,6 +21,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gpod idn lcms m mng mtp njb pcre pcreposix plist
 WANTLIB += png pthread pthread-stubs sqlite3 stdc++ tag usb
 WANTLIB += usb-1.0 util xcb xine xml2 z ${MODRUBY_WANTLIB}
+WANTLIB += X11-xcb Xau Xdmcp glapi jpeg lzma xcb-dri2 xcb-glx
+WANTLIB += xdg-basedir
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
 WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kdnssd
 WANTLIB += ${KDE}/khtml ${KDE}/kio ${KDE}/kjs ${KDE}/knewstuff

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
 DISTNAME=	mod_perl-2.0.8
 PKGNAME=	ap2-${DISTNAME}
 CATEGORIES=	www net
-REVISION=	0
+REVISION=	1
 
-WANTLIB=	c m perl util db expat apr-1 aprutil-1
 MODULES=	cpan converters/libiconv
 MASTER_SITES=	${MASTER_SITE_APACHE:=perl/}
 
@@ -15,6 +14,8 @@ MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += apr-1 aprutil-1 c db expat m perl pthread util
 
 SHARED_ONLY=		Yes
 

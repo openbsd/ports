@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/01/31 09:37:06 jca Exp $
+# $OpenBSD: Makefile,v 1.45 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT=	free video editor
 
@@ -6,7 +6,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	15
+REVISION=	16
 
 CATEGORIES=	multimedia
 
@@ -17,14 +17,14 @@ HOMEPAGE=	http://fixounet.free.fr/avidemux/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xv Xxf86vm atk-1.0 c cairo drm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xv atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio
 WANTLIB += stdc++ xcb xcb-render xcb-shm z gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gtk-x11-2.0 faad mp3lame vorbis vorbisenc xml2 xvidcore
-WANTLIB += ffi harfbuzz
+WANTLIB += ffi harfbuzz graphite2 lzma
 
 MODULES=	devel/gettext
 

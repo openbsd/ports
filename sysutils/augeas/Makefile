@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/07/21 14:17:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT=		configuration editing tool and API
 
 DISTNAME=		augeas-1.2.0
-REVISION=		2
+REVISION=		3
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=  augeas                    0.0 # 16.0
@@ -22,7 +22,7 @@ MODULES=		converters/libiconv
 
 LIB_DEPENDS=		textproc/libxml
 
-WANTLIB += c m ncurses readline xml2 z
+WANTLIB += c lzma m ncurses readline xml2 z
 
 USE_GMAKE=		Yes
 

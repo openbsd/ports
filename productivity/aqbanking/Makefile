@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/07 13:27:15 henning Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/05 11:43:59 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ COMMENT=	online banking interface and financial data framework
 DISTNAME=	aqbanking-5.5.0.2git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=03\&release=117\&file=01}
 WRKDIST=	${WRKDIR}/aqbanking-5.5.0.2-git
+REVISION=	0
 
 SHARED_LIBS +=	aqbanking            2.0      # 39.2
 SHARED_LIBS +=	aqbankingpp          0.0      # unknown
@@ -24,7 +25,7 @@ HOMEPAGE=	http://www.aquamaniac.de/sites/aqbanking/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gcrypt gmp gnutls gpg-error gwenhywfar hogweed
-WANTLIB += ltdl m nettle p11-kit pthread stdc++ tasn1 xml2 xmlsec1
+WANTLIB += ltdl lzma m nettle p11-kit pthread stdc++ tasn1 xml2 xmlsec1
 WANTLIB += xmlsec1-gcrypt xmlsec1-gnutls xslt z
 
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/

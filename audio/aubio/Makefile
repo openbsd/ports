@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT =		extract annotations from audio signals
 DISTNAME =		aubio-0.3.2
@@ -6,12 +6,12 @@ SHARED_LIBS += 		aubio		0.0 # 3.1
 SHARED_LIBS += 		aubioext	0.0 # 3.1
 CATEGORIES =		audio
 HOMEPAGE =		http://aubio.org
-REVISION =		0
+REVISION =		1
 
 # GPLv2+ 
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m pthread fftw3f jack samplerate sndfile
+WANTLIB = FLAC c m pthread fftw3f jack ogg samplerate sndfile vorbis vorbisenc
 
 MASTER_SITES=		${HOMEPAGE}/pub/
 

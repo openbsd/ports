@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.21 2014/10/30 09:40:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT =		modern tiling window manager
 
 DISTNAME =		bluetile-0.6
-REVISION =		4
+REVISION =		5
 CATEGORIES =		x11
 HOMEPAGE =		http://www.bluetile.org/
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB += Xinerama Xrandr Xrender Xss atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs util xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pthread util xml2 z
 
 MODULES =		devel/gettext\
 			lang/ghc

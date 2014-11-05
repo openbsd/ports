@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/13 16:36:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT=	highly flexible sniffer/NIDS
 
@@ -6,7 +6,7 @@ V=		1.4
 DISTNAME=	bro-${V}-release
 PKGNAME=	bro-${V}
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS= 	broccoli	0.0	# .2.0
 
@@ -19,7 +19,7 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB=	c crypto m pcap ssl stdc++ termcap z GeoIP>=5 magic>=1
+WANTLIB=	c crypto m pcap pthread ssl stdc++ termcap z GeoIP>=5 magic>=1
 
 MASTER_SITES=	ftp://bro-ids.org/
 

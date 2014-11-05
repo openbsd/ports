@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2014/07/22 08:21:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/11/05 11:43:59 sthen Exp $
 
 COMMENT =	bozotic HTTP server
 
 DISTNAME =	bozohttpd-20140708
 CATEGORIES =	www
+REVISION =	0
 
 HOMEPAGE =	http://www.eterna.com.au/bozohttpd/
 
@@ -12,7 +13,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto ssl
+WANTLIB =		c crypto m ssl
 
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
