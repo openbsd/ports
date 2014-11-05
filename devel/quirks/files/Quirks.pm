@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.197 2014/11/04 19:21:45 armani Exp $
+# $OpenBSD: Quirks.pm,v 1.198 2014/11/05 20:38:58 ratchov Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -470,6 +470,11 @@ my $obsolete_reason = {
 	'esound' => 3,
 	'extace' => 3,
 	'gkrellmss' => 3,
+	'mixer.app' => 0,
+	'wmix' => 0,
+	'wmmixer' => 0,
+	'xmix' => 0,
+	'xmmix' => 0,
 };
 
 # ->is_base_system($handle, $state):

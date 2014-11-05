@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:28 espie Exp $
-bin/wmmixer
-share/examples/wmmixer/
-share/examples/wmmixer/dot.wmmixer.sample

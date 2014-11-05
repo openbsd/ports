@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2014/11/04 19:12:01 armani Exp $
+# $OpenBSD: Makefile,v 1.342 2014/11/05 20:38:58 ratchov Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -108,7 +108,6 @@
      SUBDIR += midish
      SUBDIR += mikmod
      SUBDIR += milkytracker
-     SUBDIR += mixer.app
      SUBDIR += mkplaylist
      SUBDIR += mono-taglib
      SUBDIR += morseplayer
@@ -256,8 +255,6 @@
      SUBDIR += vorbis-tools
      SUBDIR += vorbisgain
      SUBDIR += wavpack
-     SUBDIR += wmix
-     SUBDIR += wmmixer
      SUBDIR += wmmp
      SUBDIR += wmmp3
      SUBDIR += wmtune
@@ -266,8 +263,6 @@
      SUBDIR += xcdplayer
      SUBDIR += xhippo
      SUBDIR += xmcd
-     SUBDIR += xmix
-     SUBDIR += xmmix
      SUBDIR += xmms
      SUBDIR += xmms-flac
      SUBDIR += xmms-fmradio

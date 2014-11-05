@@ -1,5 +1,0 @@
-This is an audio mixer that can run within the Window Maker "Dock"
-or Aftersteps Wharf. Fluxbox also supports this app.
-
-You can configure wmmixer by using a ~/.wmixrc file. You can find
-a sample rc file in ${SAMPLE_DIR}.
