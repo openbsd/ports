@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2014/11/02 15:28:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.304 2014/11/05 22:37:35 landry Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -270,6 +270,7 @@
      SUBDIR += xjig
      SUBDIR += xkobo
      SUBDIR += xkobo,harder
+     SUBDIR += xlennart
      SUBDIR += xlife
      SUBDIR += xmahjongg
      SUBDIR += xmine
