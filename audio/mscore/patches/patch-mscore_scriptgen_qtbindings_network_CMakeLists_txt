@@ -1,7 +1,7 @@
-$OpenBSD: patch-mscore_scriptgen_qtbindings_network_CMakeLists_txt,v 1.1 2014/11/04 14:36:36 dcoppa Exp $
---- mscore/scriptgen/qtbindings/network/CMakeLists.txt.orig	Tue Nov  4 15:29:52 2014
-+++ mscore/scriptgen/qtbindings/network/CMakeLists.txt	Tue Nov  4 15:30:44 2014
-@@ -18,7 +18,7 @@
+$OpenBSD: patch-mscore_scriptgen_qtbindings_network_CMakeLists_txt,v 1.2 2014/11/05 06:03:33 dcoppa Exp $
+--- mscore/scriptgen/qtbindings/network/CMakeLists.txt.orig	Wed Feb 27 12:29:19 2013
++++ mscore/scriptgen/qtbindings/network/CMakeLists.txt	Tue Nov  4 21:47:22 2014
+@@ -18,14 +18,14 @@
  #  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  #=============================================================================
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-mscore_scriptgen_qtbindings_network_CMakeLists_txt,v 1.1 2014/11
  set(CMAKE_CXX_FLAGS_DEBUG   "-DQT_DEBUG")
  
  if (STATIC_SCRIPT_BINDINGS)
+-      set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -Winvalid-pch -DQT_STATICPLUGIN")
++      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Winvalid-pch -DQT_STATICPLUGIN")
+       set(LIBTYPE "STATIC")
+ else (STATIC_SCRIPT_BINDINGS)
+-      set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -Winvalid-pch")
++      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Winvalid-pch")
+       set(LIBTYPE "SHARED")
+ endif (STATIC_SCRIPT_BINDINGS)
+ 
