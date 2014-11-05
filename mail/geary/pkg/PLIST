@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/10/09 12:09:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/11/05 09:13:15 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
+bin/geary-attach
 share/appdata/
 share/appdata/geary.appdata.xml
 share/applications/geary-autostart.desktop
 share/applications/geary.desktop
+share/contractor/
+share/contractor/geary-attach.contract
 share/geary/
 share/geary/icons/
 share/geary/icons/archive-symbolic.svg
