@@ -1,0 +1,20 @@
+$OpenBSD: patch-cmake_modules_FindQt_cmake,v 1.4 2014/11/05 15:52:32 dcoppa Exp $
+
+Do not pick up qmake from qt3-mt if it's installed
+
+CMake Error at /usr/local/share/cmake/Modules/FindQt4.cmake:1323 (message):
+  Found unsuitable Qt version "QSettings: error creating /.qt
+
+  **Unknown**" from /usr/local/bin/qmake, this code requires Qt 4.x
+
+--- cmake/modules/FindQt.cmake.orig	Wed Nov  5 16:30:25 2014
++++ cmake/modules/FindQt.cmake	Wed Nov  5 16:31:13 2014
+@@ -18,7 +18,7 @@ ENDIF(DESIRED_QT_VERSION MATCHES 5)
+ #Otherwise search for installed qmakes
+ IF(NOT QT5_INSTALLED)
+     IF(NOT QT_QMAKE_EXECUTABLE)
+-        FIND_PROGRAM(QT_QMAKE_EXECUTABLE_FINDQT NAMES qmake qmake4 qmake-qt4 qmake5 qmake-qt5
++        FIND_PROGRAM(QT_QMAKE_EXECUTABLE_FINDQT NAMES qmake4 qmake-qt4 qmake5 qmake-qt5
+             PATHS "${QT_SEARCH_PATH}/bin" "$ENV{QTDIR}/bin")
+         SET(QT_QMAKE_EXECUTABLE ${QT_QMAKE_EXECUTABLE_FINDQT} CACHE PATH "Qt qmake program.")
+     ENDIF(NOT QT_QMAKE_EXECUTABLE)
