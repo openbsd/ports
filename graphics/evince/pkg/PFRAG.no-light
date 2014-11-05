@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.no-light,v 1.2 2014/11/05 08:04:29 ajacoutot Exp $
 @bin bin/evince-thumbnailer
 lib/evince/4/backends/comicsdocument.evince-backend
 lib/evince/4/backends/djvudocument.evince-backend
