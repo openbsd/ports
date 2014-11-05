@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/04 19:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/05 09:40:05 dcoppa Exp $
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
 DISTNAME=	polarssl-1.3.9
+REVISION=	0
 EXTRACT_SUFX=	-gpl.tgz
 
 # check SOVERSION
