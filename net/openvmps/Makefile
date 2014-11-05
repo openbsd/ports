@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/10 18:06:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/05 08:24:57 ajacoutot Exp $
 
 COMMENT=	free implementation of Cisco VMPS
 
-V=		1.4.05
+V=		1.4.06
 DISTNAME=	vmpsd-${V}
 PKGNAME=	openvmps-${V}
 CATEGORIES=	net
