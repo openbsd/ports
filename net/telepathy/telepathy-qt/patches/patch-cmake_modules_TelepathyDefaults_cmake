@@ -1,0 +1,25 @@
+$OpenBSD: patch-cmake_modules_TelepathyDefaults_cmake,v 1.1 2014/11/05 11:39:04 dcoppa Exp $
+--- cmake/modules/TelepathyDefaults.cmake.orig	Wed Nov  5 12:26:29 2014
++++ cmake/modules/TelepathyDefaults.cmake	Wed Nov  5 12:27:20 2014
+@@ -20,15 +20,15 @@ endif (${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.$
+ 
+ # Set compiler flags
+ if(CMAKE_COMPILER_IS_GNUCXX)
+-    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -ggdb")
+-    set(CMAKE_CXX_FLAGS_RELEASE        "-O2 -DNDEBUG")
+-    set(CMAKE_CXX_FLAGS_DEBUG          "-ggdb -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
++    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-ggdb")
++    set(CMAKE_CXX_FLAGS_RELEASE        "-DNDEBUG")
++    set(CMAKE_CXX_FLAGS_DEBUG          "-ggdb -fno-reorder-blocks -fno-schedule-insns -fno-inline")
+     set(CMAKE_CXX_FLAGS_DEBUGFULL      "-O0 -g3 -ggdb -fno-inline")
+     set(CMAKE_CXX_FLAGS_PROFILE        "-pg -g3 -ggdb -DNDEBUG")
+ 
+-    set(CMAKE_C_FLAGS_RELWITHDEBINFO   "-O2 -ggdb")
+-    set(CMAKE_C_FLAGS_RELEASE          "-O2 -DNDEBUG")
+-    set(CMAKE_C_FLAGS_DEBUG            "-ggdb -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
++    set(CMAKE_C_FLAGS_RELWITHDEBINFO   "-ggdb")
++    set(CMAKE_C_FLAGS_RELEASE          "-DNDEBUG")
++    set(CMAKE_C_FLAGS_DEBUG            "-ggdb -fno-reorder-blocks -fno-schedule-insns -fno-inline")
+     set(CMAKE_C_FLAGS_DEBUGFULL        "-O0 -g3 -ggdb -fno-inline")
+     set(CMAKE_C_FLAGS_PROFILE          "-pg -g3 -ggdb -DNDEBUG")
+ 

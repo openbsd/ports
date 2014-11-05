@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/01 20:43:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/05 11:39:04 dcoppa Exp $
 
 # XXX: PORTROACH set below to override the value from ../Makefile.inc
 
 COMMENT =		flexible communications framework, Qt bindings
 DISTNAME =		telepathy-qt-0.9.5
+REVISION =		0
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
 SHARED_LIBS =		telepathy-qt4		0.1
