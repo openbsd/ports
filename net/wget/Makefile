@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2014/10/27 15:28:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2014/11/05 22:11:40 naddy Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME =	wget-1.15
-REVISION =	0
+DISTNAME =	wget-1.16
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
@@ -16,19 +15,34 @@ LIB_DEPENDS =		devel/libidn \
 			devel/pcre
 
 MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
+EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/gettext
 
-FAKE_FLAGS =           sysconfdir="${PREFIX}/share/examples/wget"
+# some regression tests require python3
+MODULES +=		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_BUILDDEP =	No
+MODPY_RUNDEP =		No
+
+TEST_DEPENDS =		www/p5-HTTP-Daemon ${MODPY_RUN_DEPENDS}
+# Test-proxied-https-auth.px
+TEST_DEPENDS +=		www/p5-HTTP-Message security/p5-IO-Socket-SSL
+
+FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/wget"
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-ssl=openssl
+CONFIGURE_ARGS =	--without-libpsl --with-ssl=openssl
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 # do not pick up libuuid from sysutils/e2fsprogs
 CONFIGURE_ENV +=	ac_cv_header_uuid_uuid_h=no
+MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/build-aux
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/sample.wgetrc
+
+pre-test:
+	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python3
 
 .include <bsd.port.mk>

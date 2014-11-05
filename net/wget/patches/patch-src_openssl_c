@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_openssl_c,v 1.7 2014/04/19 12:14:15 sthen Exp $
---- src/openssl.c.orig	Sat Apr 19 06:12:48 2014
-+++ src/openssl.c	Sat Apr 19 06:13:18 2014
-@@ -86,9 +86,11 @@ init_prng (void)
+$OpenBSD: patch-src_openssl_c,v 1.8 2014/11/05 22:11:40 naddy Exp $
+--- src/openssl.c.orig	Mon Oct 27 09:15:33 2014
++++ src/openssl.c	Tue Nov  4 22:27:21 2014
+@@ -89,9 +89,11 @@ init_prng (void)
    if (RAND_status ())
      return;
  

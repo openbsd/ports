@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Test-stdouterr_px,v 1.1 2014/11/05 22:11:40 naddy Exp $
+--- tests/Test-stdouterr.px.orig	Mon Oct 27 09:15:33 2014
++++ tests/Test-stdouterr.px	Tue Nov  4 23:20:32 2014
+@@ -21,7 +21,7 @@ my %urls = (
+ );
+ 
+ unless(-e "/dev/full") {
+-    exit 2; # skip
++    exit 77; # skip
+ }
+ 
+ my $cmdline = $WgetTest::WGETPATH . " -c http://localhost:{{port}}/somefile.txt -O /dev/full";
