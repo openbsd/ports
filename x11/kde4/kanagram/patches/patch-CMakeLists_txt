@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/11/05 14:01:14 dcoppa Exp $
+--- CMakeLists.txt.orig	Wed Nov  5 14:53:00 2014
++++ CMakeLists.txt	Wed Nov  5 14:53:38 2014
+@@ -1,8 +1,8 @@
+ project(kanagram)
+ 
+ if(NOT MSVC)
+-    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wall -Wno-switch -O2 -g")
+-    set(CMAKE_CXX_FLAGS_RELEASE "-Wall -Wno-switch -O2")
++    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wall -Wno-switch -g")
++    set(CMAKE_CXX_FLAGS_RELEASE "-Wall -Wno-switch")
+     set(CMAKE_CXX_FLAGS_DEBUG  "-Wall -Wno-switch -g3 -ggdb -O0" CACHE STRING "Debug options." FORCE)
+ endif(NOT MSVC)
+ 
