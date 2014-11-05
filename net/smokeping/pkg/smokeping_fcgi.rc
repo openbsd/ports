@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: smokeping_fcgi.rc,v 1.1 2014/11/05 15:42:09 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/smokeping_cgi"
+daemon_flags="${SYSCONFDIR}/config"
+
+. /etc/rc.d/rc.subr
+
+pexp="/usr/bin/perl ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_start() {
+	${LOCALBASE}/bin/spawn-fcgi -s /var/www/run/smokeping.sock \
+	    -u _smokeping -U www -M 0660 ${daemon} ${daemon_flags}
+}
+
+rc_cmd $1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/05/30 13:14:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/11/05 15:42:09 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
@@ -55,7 +55,9 @@ lib/Smokeping/probes/FTPtransfer.pm
 lib/Smokeping/probes/IOSPing.pm
 lib/Smokeping/probes/LDAP.pm
 lib/Smokeping/probes/NFSping.pm
+lib/Smokeping/probes/OpenSSHEOSPing.pm
 lib/Smokeping/probes/OpenSSHJunOSPing.pm
+lib/Smokeping/probes/Qstat.pm
 lib/Smokeping/probes/Radius.pm
 lib/Smokeping/probes/RemoteFPing.pm
 lib/Smokeping/probes/SSH.pm
@@ -112,7 +114,9 @@ lib/Smokeping/sorters/base.pm
 @man man/man3/Smokeping_probes_IOSPing.3
 @man man/man3/Smokeping_probes_LDAP.3
 @man man/man3/Smokeping_probes_NFSping.3
+@man man/man3/Smokeping_probes_OpenSSHEOSPing.3
 @man man/man3/Smokeping_probes_OpenSSHJunOSPing.3
+@man man/man3/Smokeping_probes_Qstat.3
 @man man/man3/Smokeping_probes_Radius.3
 @man man/man3/Smokeping_probes_RemoteFPing.3
 @man man/man3/Smokeping_probes_SSH.3
@@ -185,3 +189,4 @@ htdocs/smokeping/cropper/marqueeVert.gif
 htdocs/smokeping/cropper/smokeping-zoom.js
 htdocs/smokeping/smokeping.fcgi
 @rcscript ${RCDIR}/smokeping
+@rcscript ${RCDIR}/smokeping_fcgi

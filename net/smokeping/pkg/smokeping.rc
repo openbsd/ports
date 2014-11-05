@@ -1,8 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: smokeping.rc,v 1.1 2013/01/05 22:52:07 sthen Exp $
+# $OpenBSD: smokeping.rc,v 1.2 2014/11/05 15:42:09 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/smokeping"
+daemon_user="_smokeping"
 
 . /etc/rc.d/rc.subr
 

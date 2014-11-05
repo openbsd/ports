@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2014/07/22 10:55:41 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2014/11/05 15:42:09 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,60 +7,53 @@ $OpenBSD: README,v 1.3 2014/07/22 10:55:41 ajacoutot Exp $
 Basic configuration
 ===================
 
-Symlink the sample apache config file into the modules directory:
-
-# ln -s ../modules.sample/smokeping.conf /var/www/conf/modules/
+Smokeping is split into two main parts, the daemon (running the probes
+and updating RRD files) and the part responsible for generating website
+graphs.
 
 Edit ${SYSCONFDIR}/smokeping/config (at least add some hosts to
-monitor).
+monitor) and enable the daemon:
 
-To have smokeping start at boot time, add "smokeping" to rc_scripts
-in /etc/rc.conf.local, e.g.:
+    rcctl enable smokeping
+    rcctl start smokeping
 
-rc_scripts="${rc_scripts} smokeping"
+The simplest method to generate graphs is as static HTML and images.
+There is no possibility to zoom into graphs interactively from the
+browser, but it is easy to configure and might be quite acceptable.
+Do this by running 'smokeping --static=/path/to/html-dir' from cron.
 
-To use probes other than the most common fping probe, you may need to
-install additional packages:
+Alternatively it will run as a CGI/FastCGI script with a web server.
+Smokeping itself doesn't work well with a chroot jail, but the script
+can be run as a persistant process outside the jail, and communicate
+with a chroot'ed webserver via FastCGI. The included smokeping_fcgi
+rc script will start Smokeping ready to communicate over a FastCGI
+UNIX socket /var/www/run/smokeping.sock. If you wish to use this
+method, enable this:
+
+    rcctl enable smokeping_fcgi
+    rcctl start smokeping_fcgi
+
+And configure your web server to access it - here is a sample
+configuration section for use with nginx:
+
+    location ~ /smokeping/smokeping.cgi$ {
+	fastcgi_pass	unix:run/smokeping.sock;
+	fastcgi_split_path_info ^(/cgi-bin/[^/]+)(.*);
+	fastcgi_param	PATH_INFO $fastcgi_path_info;
+	fastcgi_param	SCRIPT_FILENAME $fastcgi_script_name;
+	include		fastcgi_params;
+    }
+
+Other probe types
+=================
+
+Smokeping is commonly used to perform ICMP monitoring using fping,
+but also includes probes to monitor other protocols. Some require
+additional dependencies:
 
  RADIUS:	   p5-Authen-Radius
  TelnetIOSPing:	   p5-Net-Telnet
- OpenSSHJunOSPing: p5-Net-OpenSSH
+ OpenSSHEOSPing:   p5-Net-OpenSSH, p5-IO-Pty
+ OpenSSHJunOSPing: p5-Net-OpenSSH, p5-IO-Pty
  AnotherDNS:	   p5-Net-DNS
- LDAP:		   p5-ldap (and p5-IO-Socket-SSL for starttls)
-
-chroot considerations
-=====================
-
-By default OpenBSD's httpd uses chroot(2) so that only files
-within /var/www are accessible; this doesn't work with smokeping's
-CGI scripts (at least without major work copying large parts of
-Perl and Smokeping into the chroot jail). Simpler options are:
-
-- Disable chroot by setting the following in /etc/rc.conf.local:
-    httpd_flags=-u
-
-- Create static HTML and images rather than allowing them to be
-viewed/zoomed; do this by running 'smokeping --static=/path/to/html-dir'
-from cron.
-
-Alternatively, Smokeping now uses FastCGI, so it would be possible
-to pass the requests across from a jailed httpd to a copy of Smokeping
-running outside the jail. Please contact the port maintainer if you
-have a working configuration for this which you would be willing to
-share.
-
-
-Remote sensors
-==============
-
-This feature requires that the userid running the webserver is
-able to create new .cache files and write to existing .rrd files
-under /var/db/smokeping. After adjusting the configuration file
-and starting smokeping to generate the rrd files, adjust the
-group ownership and permissions accordingly, e.g.
-
-# chgrp -R www /var/db/smokeping/*
-# chmod -R g+rwX /var/db/smokeping/*
-
-This will need to be repeated if additional hosts are monitored
-via remote sensors.
+ LDAP:		   p5-ldap, p5-IO-Socket-SSL
