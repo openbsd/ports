@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/11/05 16:05:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2014/11/06 09:37:39 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
@@ -17,13 +17,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 COMMON_DEPENDS=	devel/p5-Config-Grammar \
-		net/rrdtool
+		net/rrdtool \
+		security/p5-Digest-HMAC
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		net/fping \
 		net/p5-SNMP_Session \
 		net/p5-Socket6 \
-		security/p5-Digest-HMAC \
 		www/fcgi \
 		www/spawn-fcgi \
 		www/p5-CGI-Session \
