@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/04/06 20:13:11 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2014/11/06 09:57:00 nigel Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -70,6 +70,7 @@ do-configure:
 		--mandir=${PREFIX}/man \
 		--conf-prefix=${PREFIX} \
 		--with-default-output-plugin=ao \
+		--no-cython \
 		--disable-shmvis-server \
 		--without-optionals=medialib-updater,tests,xmmsclient-cf,xmmsclient-ecore,ruby \
 		--without-plugins=airplay,alsa,cdda,coreaudio,faad,gme,ices,mac,mms,modplug,mpg123,musepack,nms,ofa,oss,pulse,samba,sid,speex,sun,vocoder,waveout,wavpack
