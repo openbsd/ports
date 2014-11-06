@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2014/10/30 11:57:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2014/11/06 17:13:40 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 
 VERSION=	1.9.5
+REVISION=	0
 DISTNAME=	pear-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	pear-utils-${VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/07/10 11:06:37 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2014/11/06 17:13:39 sthen Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
@@ -10,6 +10,7 @@ DISTNAME=	sieverules-${GH_TAGNAME}
 PKGNAME=	rcube-${DISTNAME}
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#pisieverules
+REVISION=	0
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 

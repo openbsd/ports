@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/27 07:48:07 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/06 17:13:40 sthen Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
 DISTNAME =	davical-1.1.1
-REVISION =	5
+REVISION =	6
 CATEGORIES =	productivity net
 
 HOMEPAGE =	http://www.davical.org/

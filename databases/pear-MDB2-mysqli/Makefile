@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/12 04:11:20 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/06 17:13:39 sthen Exp $
 
 COMMENT =	MySQLi database abstraction layer for PHP
 
@@ -10,7 +10,7 @@ CATEGORIES =	net databases
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 MODULES =	lang/php www/pear
 
-REVISION =	4
+REVISION =	5
 
 # PHP License
 PERMIT_PACKAGE_CDROM =	Yes

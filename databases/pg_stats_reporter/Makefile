@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/23 22:04:58 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/06 17:13:39 sthen Exp $
 
 COMMENT =	graphical report tool for PostgreSQL
 SHARED_ONLY =	Yes
 
 DISTNAME =	pg_stats_reporter-1.0.1
 CATEGORIES =	databases www
+REVISION =	0
 
 HOMEPAGE =	http://pgstatsinfo.projects.pgfoundry.org/
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2014/10/02 21:05:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2014/11/06 17:13:39 sthen Exp $
 
 COMMENT =	web UI for icinga
 
 V =		1.11.2
 DISTNAME =	icinga-web-$V
+REVISION =	0
 
 MASTER_SITES =	https://github.com/Icinga/icinga-web/releases/download/v$V/
 

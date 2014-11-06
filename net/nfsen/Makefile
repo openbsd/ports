@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2014/09/17 09:20:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2014/11/06 17:13:39 sthen Exp $
 
 COMMENT=		web-based front end for the nfdump netflow tools
 
 V=			1.3.6p1
-REVISION=		4
+REVISION=		5
 DISTNAME=		nfsen-$V
 PKGNAME=		${DISTNAME:S/p/pl/}
 CATEGORIES=		net www
