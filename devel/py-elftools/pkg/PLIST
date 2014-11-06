@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/09 09:28:53 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/06 09:26:08 benoit Exp $
 bin/readelf.py
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
@@ -76,10 +76,14 @@ lib/python${MODPY_VERSION}/site-packages/elftools/elf/constants.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/descriptions.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/descriptions.pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/elf/dynamic.py
+lib/python${MODPY_VERSION}/site-packages/elftools/elf/dynamic.pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/elffile.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/elffile.pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/enums.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/enums.pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/elf/gnuversions.py
+lib/python${MODPY_VERSION}/site-packages/elftools/elf/gnuversions.pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/relocation.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/relocation.pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/sections.py
@@ -90,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/elf/structs.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/structs.pyc
 lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/examples/${MODPY_PY_PREFIX}elftools/
+share/examples/${MODPY_PY_PREFIX}elftools/dwarf_decode_address.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_die_tree.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_location_lists.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_range_lists.py
