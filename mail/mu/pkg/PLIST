@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/06 14:23:32 abieber Exp $
+@bin bin/mu
+@info info/mu4e.info
+@man man/man1/mu-add.1
+@man man/man1/mu-cfind.1
+@man man/man1/mu-easy.1
+@man man/man1/mu-extract.1
+@man man/man1/mu-find.1
+@man man/man1/mu-help.1
+@man man/man1/mu-index.1
+@man man/man1/mu-mkdir.1
+@man man/man1/mu-remove.1
+@man man/man1/mu-script.1
+@man man/man1/mu-server.1
+@man man/man1/mu-verify.1
+@man man/man1/mu-view.1
+@man man/man1/mu.1
+@man man/man1/mug.1
+@man man/man5/mu-bookmarks.5
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/mu4e/
+share/emacs/site-lisp/mu4e/mu4e-about.el
+share/emacs/site-lisp/mu4e/mu4e-about.elc
+share/emacs/site-lisp/mu4e/mu4e-actions.el
+share/emacs/site-lisp/mu4e/mu4e-actions.elc
+share/emacs/site-lisp/mu4e/mu4e-compose.el
+share/emacs/site-lisp/mu4e/mu4e-compose.elc
+share/emacs/site-lisp/mu4e/mu4e-contrib.el
+share/emacs/site-lisp/mu4e/mu4e-contrib.elc
+share/emacs/site-lisp/mu4e/mu4e-draft.el
+share/emacs/site-lisp/mu4e/mu4e-draft.elc
+share/emacs/site-lisp/mu4e/mu4e-headers.el
+share/emacs/site-lisp/mu4e/mu4e-headers.elc
+share/emacs/site-lisp/mu4e/mu4e-lists.el
+share/emacs/site-lisp/mu4e/mu4e-lists.elc
+share/emacs/site-lisp/mu4e/mu4e-main.el
+share/emacs/site-lisp/mu4e/mu4e-main.elc
+share/emacs/site-lisp/mu4e/mu4e-mark.el
+share/emacs/site-lisp/mu4e/mu4e-mark.elc
+share/emacs/site-lisp/mu4e/mu4e-message.el
+share/emacs/site-lisp/mu4e/mu4e-message.elc
+share/emacs/site-lisp/mu4e/mu4e-meta.el
+share/emacs/site-lisp/mu4e/mu4e-meta.elc
+share/emacs/site-lisp/mu4e/mu4e-proc.el
+share/emacs/site-lisp/mu4e/mu4e-proc.elc
+share/emacs/site-lisp/mu4e/mu4e-speedbar.el
+share/emacs/site-lisp/mu4e/mu4e-speedbar.elc
+share/emacs/site-lisp/mu4e/mu4e-utils.el
+share/emacs/site-lisp/mu4e/mu4e-utils.elc
+share/emacs/site-lisp/mu4e/mu4e-vars.el
+share/emacs/site-lisp/mu4e/mu4e-vars.elc
+share/emacs/site-lisp/mu4e/mu4e-view.el
+share/emacs/site-lisp/mu4e/mu4e-view.elc
+share/emacs/site-lisp/mu4e/mu4e.el
+share/emacs/site-lisp/mu4e/mu4e.elc
+share/emacs/site-lisp/mu4e/org-mu4e.el
+share/emacs/site-lisp/mu4e/org-mu4e.elc
