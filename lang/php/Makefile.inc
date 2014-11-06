@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.59 2014/10/28 13:07:47 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.60 2014/11/06 17:34:33 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -119,7 +119,18 @@ CONFIGURE_ARGS+= 	--with-openssl \
 TEST_TARGET=		test
 TEST_FLAGS=		NO_INTERACTION=1
 
-MULTI_PACKAGES+=	-main -fastcgi
+MULTI_PACKAGES+=	-main -fastcgi -fpm
+
+# fpm
+PKGNAME-fpm?=		php-fpm-${V}
+COMMENT-fpm=		stand-alone FPM version of PHP
+CONFIGURE_ARGS+=	--enable-fpm \
+			--with-fpm-user=www \
+			--with-fpm-group=www
+LIB_DEPENDS-fpm=	${LIB_DEPENDS-main}
+WANTLIB-fpm=		${WANTLIB-main}
+RUN_DEPENDS-fpm=	${RUN_DEPENDS-main} \
+			php-${V}:lang/php/${PV}
 
 #
 # Loadable php extensions by name that are included in all versions
@@ -218,6 +229,13 @@ COMMENT-odbc=		odbc database access extensions for php5
 CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbcinst iodbc>=2 pthread
+
+# pcntl
+MULTI_PACKAGES+=	-pcntl
+COMMENT-pcntl=		PCNTL extensions for php5
+CONFIGURE_ARGS+=	--enable-pcntl=shared
+LIB_DEPENDS-pcntl=
+WANTLIB-pcntl=		pthread
 
 # pdo-mysql
 MULTI_PACKAGES+=	-pdo_mysql
@@ -360,7 +378,7 @@ pre-configure:
 MULTI_PACKAGES :=       ${MULTI_PACKAGES:N-fpm:N-fastcgi}
 .endif
 
-.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:N-pcntl:S/-//g}
+.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:S/-//g}
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 MESSAGE-${i}=		${.CURDIR}/../files/MESSAGE-ext
