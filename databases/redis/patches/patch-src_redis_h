@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_redis_h,v 1.3 2014/08/12 10:09:56 dcoppa Exp $
+$OpenBSD: patch-src_redis_h,v 1.4 2014/11/06 12:52:13 dcoppa Exp $
 --- src/redis.h.orig	Mon Jul 14 17:48:14 2014
 +++ src/redis.h	Tue Aug 12 11:49:22 2014
 @@ -101,7 +101,7 @@ typedef long long mstime_t; /* millisecond time type. 
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_redis_h,v 1.3 2014/08/12 10:09:56 dcoppa Exp $
  #define REDIS_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
  #define REDIS_BGSAVE_RETRY_DELAY 5 /* Wait a few secs before trying again. */
 -#define REDIS_DEFAULT_PID_FILE "/var/run/redis.pid"
-+#define REDIS_DEFAULT_PID_FILE "${DBDIR}/redis.pid"
++#define REDIS_DEFAULT_PID_FILE "/var/run/redis/redis.pid"
  #define REDIS_DEFAULT_SYSLOG_IDENT "redis"
  #define REDIS_DEFAULT_CLUSTER_CONFIG_FILE "nodes.conf"
  #define REDIS_DEFAULT_DAEMONIZE 0

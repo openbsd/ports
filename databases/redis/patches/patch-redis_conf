@@ -1,26 +1,27 @@
-$OpenBSD: patch-redis_conf,v 1.13 2014/11/06 09:21:28 dcoppa Exp $
+$OpenBSD: patch-redis_conf,v 1.14 2014/11/06 12:52:13 dcoppa Exp $
 --- redis.conf.orig	Fri Sep 19 17:49:16 2014
-+++ redis.conf	Thu Nov  6 10:00:00 2014
-@@ -33,12 +33,13 @@
++++ redis.conf	Thu Nov  6 12:35:21 2014
+@@ -33,12 +33,14 @@
  ################################ GENERAL  #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
 -# Note that Redis will write a pid file in /var/run/redis.pid when daemonized.
 -daemonize no
-+# Note that Redis will write a pid file in ${DBDIR}/redis.pid
++# Note that Redis will write a pid file in /var/run/redis/redis.pid
 +# when daemonized.
 +daemonize yes
  
 -# When running daemonized, Redis writes a pid file in /var/run/redis.pid by
 -# default. You can specify a custom pid file location here.
 -pidfile /var/run/redis.pid
-+# When running daemonized, Redis writes a pid file in ${DBDIR}/redis.pid
-+# by default. You can specify a custom pid file location here.
-+pidfile ${DBDIR}/redis.pid
++# When running daemonized, Redis writes a pid file in
++# /var/run/redis/redis.pid by default. You can specify a custom pid file
++# location here.
++pidfile /var/run/redis/redis.pid
  
  # Accept connections on the specified port, default is 6379.
  # If port 0 is specified Redis will not listen on a TCP socket.
-@@ -61,7 +62,7 @@ tcp-backlog 511
+@@ -61,14 +63,14 @@ tcp-backlog 511
  # Examples:
  #
  # bind 192.168.1.100 10.0.0.1
@@ -29,7 +30,16 @@ $OpenBSD: patch-redis_conf,v 1.13 2014/11/06 09:21:28 dcoppa Exp $
  
  # Specify the path for the Unix socket that will be used to listen for
  # incoming connections. There is no default, so Redis will not listen
-@@ -100,17 +101,18 @@ loglevel notice
+ # on a unix socket when not specified.
+ #
+-# unixsocket /tmp/redis.sock
+-# unixsocketperm 700
++# unixsocket /var/run/redis/redis.sock
++# unixsocketperm 770
+ 
+ # Close the connection after a client is idle for N seconds (0 to disable)
+ timeout 0
+@@ -100,17 +102,18 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -53,7 +63,7 @@ $OpenBSD: patch-redis_conf,v 1.13 2014/11/06 09:21:28 dcoppa Exp $
  
  # Set the number of databases. The default database is DB 0, you can select
  # a different one on a per-connection basis using SELECT <dbid> where
-@@ -184,7 +186,7 @@ dbfilename dump.rdb
+@@ -184,7 +187,7 @@ dbfilename dump.rdb
  # The Append Only File will also be created inside this directory.
  # 
  # Note that you must specify a directory here, not a file name.
@@ -62,7 +72,7 @@ $OpenBSD: patch-redis_conf,v 1.13 2014/11/06 09:21:28 dcoppa Exp $
  
  ################################# REPLICATION #################################
  
-@@ -345,7 +347,7 @@ slave-priority 100
+@@ -345,7 +348,7 @@ slave-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
@@ -71,7 +81,7 @@ $OpenBSD: patch-redis_conf,v 1.13 2014/11/06 09:21:28 dcoppa Exp $
  
  # Command renaming.
  #
-@@ -377,7 +379,7 @@ slave-priority 100
+@@ -377,7 +380,7 @@ slave-priority 100
  # Once the limit is reached Redis will close all the new connections sending
  # an error 'max number of clients reached'.
  #
