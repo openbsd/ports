@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/06 02:57:12 stu Exp $
+lib/tcl/tclarc4random/
+lib/tcl/tclarc4random/libta4r.so
+lib/tcl/tclarc4random/pkgIndex.tcl
+share/doc/tclarc4random/
+share/doc/tclarc4random/LICENSE
+share/doc/tclarc4random/tclarc4random.txt
