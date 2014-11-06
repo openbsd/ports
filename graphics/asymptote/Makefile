@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2014/11/06 19:10:07 sthen Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-hppa=		ghostscript segfaults during build
@@ -19,7 +19,7 @@ EXTRACT_SUFX=		.tgz
 MODULES=		lang/python
 
 WANTLIB += GL GLU c fftw3 gc glut gsl gslcblas m ncurses pthread
-WANTLIB += readline sigsegv stdc++ x11 z
+WANTLIB += readline sigsegv stdc++ X11 z
 
 BUILD_DEPENDS=		print/texlive/base
 RUN_DEPENDS=		graphics/py-Pillow \
