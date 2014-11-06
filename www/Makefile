@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.687 2014/11/01 23:05:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.688 2014/11/06 17:15:24 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -363,7 +363,6 @@
      SUBDIR += pear-HTML-Template-IT
      SUBDIR += pear-HTTP-WebDAV-Server
      SUBDIR += pear-SOAP
-     SUBDIR += pecl-APC
      SUBDIR += pecl-chroot
      SUBDIR += pecl-geoip
      SUBDIR += pecl-http
