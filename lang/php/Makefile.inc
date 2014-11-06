@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.60 2014/11/06 17:34:33 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.61 2014/11/06 20:22:12 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -425,6 +425,11 @@ post-install:
 	echo "extension=${m}.so" > \
 		${PREFIX}/share/examples/php-${PV}/${m}.ini
 .endfor
+	if [ -f ${WRKBUILD}/modules/opcache.so ]; then \
+		${INSTALL_DATA} ${WRKBUILD}/modules/opcache.so \
+		    ${PREFIX}/${MODULES_SUBDIR}/opcache.so; \
+		echo "zend_extension=opcache.so" > \
+		    ${PREFIX}/share/examples/php-${PV}/opcache.ini; fi
 	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/etc
 	echo "www:*:67:67::0:0:dummy user to appease c-client:/nonexistent:/sbin/nologin" > \
 		${WRKINST}/${CHROOT_DIR}/etc/master.passwd.imap
