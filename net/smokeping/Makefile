@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2014/11/06 09:37:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2014/11/06 09:46:28 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
 DISTNAME=	smokeping-2.6.11
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -18,16 +18,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMMON_DEPENDS=	devel/p5-Config-Grammar \
 		net/rrdtool \
-		security/p5-Digest-HMAC
+		security/p5-Digest-HMAC \
+		www/p5-libwww
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		net/fping \
 		net/p5-SNMP_Session \
 		net/p5-Socket6 \
 		www/fcgi \
-		www/spawn-fcgi \
-		www/p5-CGI-Session \
-		www/p5-libwww
+		www/spawn-fcgi
 SYSCONFDIR=	${BASESYSCONFDIR}/smokeping
 
 NO_TEST=	Yes
