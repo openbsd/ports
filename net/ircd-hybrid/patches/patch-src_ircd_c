@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ircd_c,v 1.6 2014/05/08 14:36:49 brad Exp $
---- src/ircd.c.orig	Tue Feb 25 07:27:20 2014
-+++ src/ircd.c	Fri Mar 28 16:56:14 2014
-@@ -131,7 +131,6 @@ make_daemon(void)
+$OpenBSD: patch-src_ircd_c,v 1.7 2014/11/06 00:45:31 brad Exp $
+--- src/ircd.c.orig	Tue Oct 21 05:04:51 2014
++++ src/ircd.c	Tue Oct 28 23:50:45 2014
+@@ -150,7 +150,6 @@ make_daemon(void)
    }
    else if (pid > 0)
    {
@@ -9,11 +9,11 @@ $OpenBSD: patch-src_ircd_c,v 1.6 2014/05/08 14:36:49 brad Exp $
      exit(EXIT_SUCCESS);
    }
  
-@@ -464,8 +463,19 @@ main(int argc, char *argv[])
+@@ -475,8 +474,19 @@ main(int argc, char *argv[])
    /* Check to see if the user is running us as root, which is a nono */
-   if (geteuid() == 0)
+   if (!geteuid())
    {
--    fprintf(stderr, "Don't run ircd as root!!!\n");
+-    fprintf(stderr, "ERROR: This server won't run as root/superuser\n");
 -    return -1;
 +    struct passwd *pw;
 +
@@ -25,7 +25,7 @@ $OpenBSD: patch-src_ircd_c,v 1.6 2014/05/08 14:36:49 brad Exp $
 +
 +    if (setusercontext(NULL, pw, pw->pw_uid, LOGIN_SETALL) < 0)
 +    {
-+      fprintf(stderr, "Can't set user context to %s!\n", IRCD_USER);
++      fprintf(stderr, "ERROR: This server won't run as root/superuser\n");
 +      return -1;
 +    }
    }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/05/08 14:36:49 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/11/06 00:45:31 brad Exp $
 @conflict bnc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
@@ -71,8 +71,6 @@ lib/ircd-hybrid/modules/autoload/m_names.la
 lib/ircd-hybrid/modules/autoload/m_names.so
 lib/ircd-hybrid/modules/autoload/m_oper.la
 lib/ircd-hybrid/modules/autoload/m_oper.so
-lib/ircd-hybrid/modules/autoload/m_operwall.la
-lib/ircd-hybrid/modules/autoload/m_operwall.so
 lib/ircd-hybrid/modules/autoload/m_pass.la
 lib/ircd-hybrid/modules/autoload/m_pass.so
 lib/ircd-hybrid/modules/autoload/m_ping.la
@@ -87,20 +85,22 @@ lib/ircd-hybrid/modules/autoload/m_restart.la
 lib/ircd-hybrid/modules/autoload/m_restart.so
 lib/ircd-hybrid/modules/autoload/m_resv.la
 lib/ircd-hybrid/modules/autoload/m_resv.so
-lib/ircd-hybrid/modules/autoload/m_services.la
-lib/ircd-hybrid/modules/autoload/m_services.so
 lib/ircd-hybrid/modules/autoload/m_set.la
 lib/ircd-hybrid/modules/autoload/m_set.so
 lib/ircd-hybrid/modules/autoload/m_stats.la
 lib/ircd-hybrid/modules/autoload/m_stats.so
 lib/ircd-hybrid/modules/autoload/m_svinfo.la
 lib/ircd-hybrid/modules/autoload/m_svinfo.so
+lib/ircd-hybrid/modules/autoload/m_svsjoin.la
+lib/ircd-hybrid/modules/autoload/m_svsjoin.so
 lib/ircd-hybrid/modules/autoload/m_svskill.la
 lib/ircd-hybrid/modules/autoload/m_svskill.so
 lib/ircd-hybrid/modules/autoload/m_svsmode.la
 lib/ircd-hybrid/modules/autoload/m_svsmode.so
 lib/ircd-hybrid/modules/autoload/m_svsnick.la
 lib/ircd-hybrid/modules/autoload/m_svsnick.so
+lib/ircd-hybrid/modules/autoload/m_svspart.la
+lib/ircd-hybrid/modules/autoload/m_svspart.so
 lib/ircd-hybrid/modules/autoload/m_tburst.la
 lib/ircd-hybrid/modules/autoload/m_tburst.so
 lib/ircd-hybrid/modules/autoload/m_time.la
@@ -109,6 +109,14 @@ lib/ircd-hybrid/modules/autoload/m_topic.la
 lib/ircd-hybrid/modules/autoload/m_topic.so
 lib/ircd-hybrid/modules/autoload/m_trace.la
 lib/ircd-hybrid/modules/autoload/m_trace.so
+lib/ircd-hybrid/modules/autoload/m_undline.la
+lib/ircd-hybrid/modules/autoload/m_undline.so
+lib/ircd-hybrid/modules/autoload/m_unkline.la
+lib/ircd-hybrid/modules/autoload/m_unkline.so
+lib/ircd-hybrid/modules/autoload/m_unresv.la
+lib/ircd-hybrid/modules/autoload/m_unresv.so
+lib/ircd-hybrid/modules/autoload/m_unxline.la
+lib/ircd-hybrid/modules/autoload/m_unxline.so
 lib/ircd-hybrid/modules/autoload/m_user.la
 lib/ircd-hybrid/modules/autoload/m_user.so
 lib/ircd-hybrid/modules/autoload/m_userhost.la
@@ -129,6 +137,8 @@ lib/ircd-hybrid/modules/autoload/m_whowas.la
 lib/ircd-hybrid/modules/autoload/m_whowas.so
 lib/ircd-hybrid/modules/autoload/m_xline.la
 lib/ircd-hybrid/modules/autoload/m_xline.so
+lib/ircd-hybrid/modules/m_bmask.la
+lib/ircd-hybrid/modules/m_bmask.so
 lib/ircd-hybrid/modules/m_die.la
 lib/ircd-hybrid/modules/m_die.so
 lib/ircd-hybrid/modules/m_error.la
@@ -155,6 +165,8 @@ lib/ircd-hybrid/modules/m_sjoin.la
 lib/ircd-hybrid/modules/m_sjoin.so
 lib/ircd-hybrid/modules/m_squit.la
 lib/ircd-hybrid/modules/m_squit.so
+lib/ircd-hybrid/modules/m_tmode.la
+lib/ircd-hybrid/modules/m_tmode.so
 @man man/man8/ircd.8
 share/examples/ircd-hybrid/
 @mode 700
@@ -211,7 +223,6 @@ share/ircd-hybrid/help/names
 share/ircd-hybrid/help/nick
 share/ircd-hybrid/help/notice
 share/ircd-hybrid/help/oper
-share/ircd-hybrid/help/operwall
 share/ircd-hybrid/help/part
 share/ircd-hybrid/help/pass
 share/ircd-hybrid/help/ping

@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2013/10/31 01:23:26 brad Exp $
---- doc/Makefile.in.orig	Fri Oct 25 16:40:44 2013
-+++ doc/Makefile.in	Sat Oct 26 22:53:55 2013
-@@ -380,25 +380,25 @@ uninstall-man8:
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2014/11/06 00:45:31 brad Exp $
+--- doc/Makefile.in.orig	Sun Aug 24 07:30:49 2014
++++ doc/Makefile.in	Fri Aug 29 20:18:53 2014
+@@ -385,25 +385,25 @@ uninstall-man8:
  	dir='$(DESTDIR)$(man8dir)'; $(am__uninstall_files_from_dir)
  install-dist_sysconfDATA: $(dist_sysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -34,7 +34,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.4 2013/10/31 01:23:26 brad Exp $
  tags TAGS:
  
  ctags CTAGS:
-@@ -440,7 +440,7 @@ check-am: all-am
+@@ -445,7 +445,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(MANS) $(DATA)
  installdirs:
