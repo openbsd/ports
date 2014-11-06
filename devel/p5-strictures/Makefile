@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/05 15:09:04 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/06 10:23:38 benoit Exp $
 
 COMMENT =	turn on strict and make all warnings fatal
 
 MODULES =	cpan
-DISTNAME =	strictures-1.005004
+DISTNAME =	strictures-1.005005
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
