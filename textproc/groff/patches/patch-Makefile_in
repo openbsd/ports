@@ -1,10 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2013/03/30 23:10:05 schwarze Exp $
-chunk 1: Install preformatted manuals, not source pages (local change).
-chunks 2-6: Building contrib/mom/examples requires src/devices/gropdf;
-            fixes parallel builds (to be submitted upstream).
---- Makefile.in.orig	Thu Feb  7 13:06:06 2013
-+++ Makefile.in	Thu Mar 28 21:48:11 2013
-@@ -249,15 +249,15 @@ manroot=$(mandir)
+$OpenBSD: patch-Makefile_in,v 1.5 2014/11/06 22:15:22 schwarze Exp $
+Install preformatted manuals, not source pages (local change).
+--- Makefile.in.orig	Sun Oct 12 23:00:07 2014
++++ Makefile.in	Sun Oct 12 23:27:06 2014
+@@ -253,15 +253,15 @@ manroot=$(mandir)
  
  # `man1ext' is the man section for user commands.
  man1ext=1
@@ -21,70 +19,5 @@ chunks 2-6: Building contrib/mom/examples requires src/devices/gropdf;
 -man7dir=$(manroot)/man$(man7ext)
 +man7dir=$(manroot)/cat$(man7ext)
  
- # The configure script checks whether all necessary utility programs for
- # grohtml are available -- only then we can build the HTML documentation.
-@@ -608,14 +608,16 @@ ALLTTYDEVDIRS=\
-   font/devutf8 \
-   font/devcp1047
- # `doc' must be processed before `contrib/pdfmark',
--# pdf stuff must be processed before `contrib/mom
-+# pdf stuff must be processed before `contrib/mom'.
-+MIDDIRS=\
-+  doc \
-+  src/devices/gropdf
- OTHERDIRS=\
-   man \
-   tmac \
-   src/utils/afmtodit \
-   src/roff/grog \
-   src/roff/nroff \
--  doc \
-   contrib/mm \
-   contrib/chem \
-   contrib/pic2graph \
-@@ -624,7 +626,6 @@ OTHERDIRS=\
-   contrib/groffer \
-   contrib/hdtbl \
-   contrib/pdfmark \
--  src/devices/gropdf \
-   font/devpdf \
-   contrib/mom \
-   contrib/gdiffmk
-@@ -678,6 +679,7 @@ DISTDIRS=\
-   $(XDEVDIRS) \
-   $(OTHERDEVDIRS) \
-   $(ALLTTYDEVDIRS) \
-+  $(MIDDIRS) \
-   $(OTHERDIRS) \
-   $(EXTRADIRS) \
-   $(NOMAKEDIRS) \
-@@ -702,13 +704,14 @@ ENVSETUP=\
- 	fi
- 
- do=all
--dodirs=$(ALLDIRS) $(OTHERDIRS) dot
-+dodirs=$(ALLDIRS) $(MIDDIRS) $(OTHERDIRS) dot
- # Default target for subdir_Makefile
- subdir=src/roff/troff
- 
- 
- $(TARGETS):
- 	@$(ENVSETUP); $(MAKE) $(MAKE_K_FLAG) do=$@ $(ALLDIRS)
-+	@$(ENVSETUP); $(MAKE) $(MAKE_K_FLAG) do=$@ $(MIDDIRS)
- 	@$(ENVSETUP); $(MAKE) $(MAKE_K_FLAG) do=$@ $(OTHERDIRS) dot
- 
- dot: FORCE
-@@ -796,9 +799,11 @@ $(GNULIBDIRS): FORCE
- 	  $(MAKE) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=: $(do) ;; \
- 	esac
- 
--$(OTHERDIRS): $(PROGDEPDIRS) $(CCPROGDIRS) $(CPROGDIRS)
-+$(MIDDIRS): $(PROGDEPDIRS)
- 
--$(INCDIRS) $(PROGDEPDIRS) $(OTHERDIRS): FORCE
-+$(OTHERDIRS): $(PROGDEPDIRS) $(MIDDIRS) $(CCPROGDIRS) $(CPROGDIRS)
-+
-+$(INCDIRS) $(PROGDEPDIRS) $(MIDDIRS) $(OTHERDIRS): FORCE
- 	@$(ENVSETUP); \
- 	if test $(srcdir) = .; then \
- 	  srcdir=.; \
+ # `dist' target is disallowed in some `configure' combinations.
+ doc_dist_target_ok=@doc_dist_target_ok@

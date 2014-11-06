@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/30 23:10:05 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/11/06 22:15:23 schwarze Exp $
 @conflict groff-mdoc-*
 @pkgpath textproc/groff.mdoc
 @bin bin/addftinfo
@@ -7,6 +7,9 @@ bin/chem
 @bin bin/eqn
 bin/eqn2graph
 bin/gdiffmk
+bin/glilypond
+bin/gperl
+bin/gpinyin
 bin/grap2graph
 @bin bin/grn
 @bin bin/grodvi
@@ -47,12 +50,23 @@ bin/roff2x
 @info info/groff.info
 @comment lib/charset.alias
 lib/groff/
+lib/groff/glilypond/
+lib/groff/glilypond/args.pl
+lib/groff/glilypond/oop_fh.pl
+lib/groff/glilypond/subs.pl
+lib/groff/gpinyin/
+lib/groff/gpinyin/subs.pl
+lib/groff/groff_opts_no_arg.txt
+lib/groff/groff_opts_with_arg.txt
 lib/groff/groffer/
-lib/groff/groffer/func.pl
+lib/groff/groffer/main_subs.pl
 lib/groff/groffer/man.pl
-lib/groff/groffer/perl_test.pl
 lib/groff/groffer/split_env.sh
+lib/groff/groffer/subs.pl
 lib/groff/groffer/version.sh
+lib/groff/grog/
+lib/groff/grog/subs.pl
+lib/groff/refer/
 lib/groff/site-tmac/
 @man man/cat1/addftinfo.0
 @man man/cat1/afmtodit.0
@@ -60,6 +74,9 @@ lib/groff/site-tmac/
 @man man/cat1/eqn.0
 @man man/cat1/eqn2graph.0
 @man man/cat1/gdiffmk.0
+@man man/cat1/glilypond.0
+@man man/cat1/gperl.0
+@man man/cat1/gpinyin.0
 @man man/cat1/grap2graph.0
 @man man/cat1/grn.0
 @man man/cat1/grodvi.0
@@ -104,6 +121,7 @@ lib/groff/site-tmac/
 @man man/cat7/groff.0
 @man man/cat7/groff_char.0
 @man man/cat7/groff_diff.0
+@man man/cat7/groff_filenames.0
 @man man/cat7/groff_hdtbl.0
 @man man/cat7/groff_man.0
 @man man/cat7/groff_me.0
@@ -143,10 +161,10 @@ share/doc/groff/html/mom/using.html
 share/doc/groff/html/mom/version-2.html
 share/doc/groff/meintro.me
 share/doc/groff/meintro.ps
+share/doc/groff/meintro_fr.me
+share/doc/groff/meintro_fr.ps
 share/doc/groff/meref.me
 share/doc/groff/meref.ps
-share/doc/groff/pdf/
-share/doc/groff/pdf/mom-pdf.pdf
 share/doc/groff/pic.ms
 share/doc/groff/pic.ps
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -242,16 +260,12 @@ share/examples/groff/mom/README.txt
 share/examples/groff/mom/elvis_syntax
 share/examples/groff/mom/elvis_syntax.new
 share/examples/groff/mom/letter.mom
-share/examples/groff/mom/letter.pdf
 share/examples/groff/mom/mom-pdf.mom
-share/examples/groff/mom/mom-pdf.pdf
 share/examples/groff/mom/mom.vim
 share/examples/groff/mom/penguin.pdf
 share/examples/groff/mom/penguin.ps
 share/examples/groff/mom/sample_docs.mom
-share/examples/groff/mom/sample_docs.pdf
 share/examples/groff/mom/typesetting.mom
-share/examples/groff/mom/typesetting.pdf
 share/examples/groff/webpage.ms
 share/examples/groff/webpage.ps
 share/groff/

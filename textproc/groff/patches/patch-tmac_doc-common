@@ -1,48 +1,57 @@
-$OpenBSD: patch-tmac_doc-common,v 1.6 2013/11/11 06:41:02 schwarze Exp $
-chunk 1: Implement .%C (accepted and committed upstream).
-chunk 2: Keep traditional OpenBSD page headers (local change).
-chunk 3: Default value for the .Os macro (local change).
-chunk 4: More OpenBSD release versions (to be submitted upstream).
-chunk 5: Handle .Dd Mdocdate (local change).
-chunk 6: Do not use an ugly double dash in the NAME line (local change).
---- tmac/doc-common.orig	Thu Feb  7 13:06:08 2013
-+++ tmac/doc-common	Wed Jul 24 23:28:04 2013
-@@ -37,6 +37,7 @@
- .
- .nr %A 1
- .nr %B 1
-+.nr %C 1
- .nr %D 1
- .nr %I 1
- .nr %J 1
-@@ -231,17 +232,17 @@
+$OpenBSD: patch-tmac_doc-common,v 1.7 2014/11/06 22:15:23 schwarze Exp $
+chunks 1-3: Tweak page headers (local change).
+chunk 4: Default value for the .Os macro (local change).
+chunk 5: Do not use an ugly double dash in the NAME line (local change).
+--- tmac/doc-common.orig	Tue Nov  4 09:38:35 2014
++++ tmac/doc-common	Wed Nov  5 23:16:57 2014
+@@ -234,12 +234,10 @@
  .
  .\" an alternative, more detailed scheme for naming the manual sections
  .\"
 -.ds doc-volume-operating-system BSD
-+.ds doc-volume-operating-system OpenBSD
- .nr doc-volume-operating-system-ateol 0
--.ds doc-volume-ds-1 General Commands Manual
--.ds doc-volume-ds-2 System Calls Manual
--.ds doc-volume-ds-3 Library Functions Manual
+-.nr doc-volume-operating-system-ateol 0
+ .ds doc-volume-ds-1 General Commands Manual
+ .ds doc-volume-ds-2 System Calls Manual
+ .ds doc-volume-ds-3 Library Functions Manual
 -.ds doc-volume-ds-4 Kernel Interfaces Manual
--.ds doc-volume-ds-5 File Formats Manual
--.ds doc-volume-ds-6 Games Manual
--.ds doc-volume-ds-7 Miscellaneous Information Manual
-+.ds doc-volume-ds-1 Reference Manual
-+.ds doc-volume-ds-2 Programmer's Manual
-+.ds doc-volume-ds-3 Programmer's Manual
-+.ds doc-volume-ds-4 Programmer's Manual
-+.ds doc-volume-ds-5 Programmer's Manual
-+.ds doc-volume-ds-6 Reference Manual
-+.ds doc-volume-ds-7 Reference Manual
- .ds doc-volume-ds-8 System Manager's Manual
--.ds doc-volume-ds-9 Kernel Developer's Manual
-+.ds doc-volume-ds-9 Kernel Manual
- .
- .ds doc-volume-ds-USD   User's Supplementary Documents
- .ds doc-volume-ds-PS1   Programmer's Supplementary Documents
-@@ -399,7 +400,7 @@
++.ds doc-volume-ds-4 Device Drivers Manual
+ .ds doc-volume-ds-5 File Formats Manual
+ .ds doc-volume-ds-6 Games Manual
+ .ds doc-volume-ds-7 Miscellaneous Information Manual
+@@ -358,19 +356,10 @@
+ .    ds doc-section \$2
+ .    ie \B\$2 \{\
+ .      if ((\$2 >= 1) & (\$2 <= 9)) \{\
+-.        ie \n[doc-volume-operating-system-ateol] \{\
+-.          ds doc-volume "\*[doc-volume-ds-\$2] \*[doc-volume-operating-system]
+-.          if \A\$3 \{\
+-.            if d doc-volume-as-\$3 \
+-.              as doc-volume "/\*[doc-volume-as-\$3]
+-.        \}\}
+-.        el \{\
+-.          ds doc-volume "\*[doc-volume-operating-system]
+-.          if \A\$3 \{\
+-.            if d doc-volume-as-\$3 \
+-.              as doc-volume "/\*[doc-volume-as-\$3]
+-.          \}
+-.          as doc-volume " \*[doc-volume-ds-\$2]
++.        ds doc-volume "\*[doc-volume-ds-\$2]
++.        if \A\$3 \{\
++.          if d doc-volume-as-\$3 \
++.            as doc-volume " (\*[doc-volume-as-\$3])
+ .    \}\}\}
+ .    el \{\
+ .      ie "\$2"unass" \
+@@ -379,7 +368,7 @@
+ .        ds doc-volume DRAFT
+ .      el .if "\$2"paper" \
+ .        ds doc-volume UNTITLED
+-.      \}\}
++.      \}
+ .      if \A\$3 \{\
+ .        if d doc-volume-ds-\$3 \
+ .          ds doc-volume "\*[doc-volume-ds-\$3]
+@@ -402,7 +391,7 @@
  .\" NS
  .\" NS override this in `mdoc.local', if necessary
  .
@@ -51,29 +60,7 @@ chunk 6: Do not use an ugly double dash in the NAME line (local change).
  .
  .
  .\" NS doc-operating-system global string
-@@ -517,6 +518,10 @@
- .ds doc-operating-system-OpenBSD-4.8  4.8
- .ds doc-operating-system-OpenBSD-4.9  4.9
- .ds doc-operating-system-OpenBSD-5.0  5.0
-+.ds doc-operating-system-OpenBSD-5.1  5.1
-+.ds doc-operating-system-OpenBSD-5.2  5.2
-+.ds doc-operating-system-OpenBSD-5.3  5.3
-+.ds doc-operating-system-OpenBSD-5.4  5.4
- .
- .ds doc-operating-system-FreeBSD-1.0     1.0
- .ds doc-operating-system-FreeBSD-1.1     1.1
-@@ -732,7 +737,9 @@
- .  ds doc-command-name
- .
- .  ie \n[.$] \{\
--.    ie (\n[.$] == 3) \
-+.    ie "\$1"$Mdocdate:" \
-+.      ds doc-date-string \$2\~\$3, \$4
-+.    el .ie (\n[.$] == 3) \
- .      ds doc-date-string \$1\~\$2 \$3
- .    el \{\
- .      ds doc-date-string "\*[doc-date-\n[mo]]
-@@ -906,7 +913,7 @@
+@@ -976,7 +965,7 @@
  .\" NS width register `Nd' set above
  .
  .de Nd
