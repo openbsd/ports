@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/05 15:09:46 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/06 16:29:38 benoit Exp $
 
 COMMENT =	minimalist object orientation (with Moose compatibility)
 
 MODULES =	cpan
-DISTNAME =	Moo-1.004002
+DISTNAME =	Moo-1.006001
 CATEGORIES =	devel
 
 CPAN_AUTHOR =	HAARG
