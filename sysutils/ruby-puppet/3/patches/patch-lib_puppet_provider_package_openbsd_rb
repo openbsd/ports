@@ -1,9 +1,12 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.26 2014/11/04 19:49:12 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.27 2014/11/06 20:28:16 jasper Exp $
 
-https://github.com/puppetlabs/puppet/pull/3266
+From a85e6635d608a280a1766d21da8d5d114b04034e Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 29 Oct 2014 16:23:39 +0100
+Subject: [PATCH] (PUP-3604) Rework handling of :ensure with a version
 
---- lib/puppet/provider/package/openbsd.rb.orig	Tue Oct 21 23:52:27 2014
-+++ lib/puppet/provider/package/openbsd.rb	Tue Nov  4 19:49:20 2014
+--- lib/puppet/provider/package/openbsd.rb.orig	Mon Nov  3 23:23:13 2014
++++ lib/puppet/provider/package/openbsd.rb	Thu Nov  6 21:27:12 2014
 @@ -149,18 +149,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
  
      if @resource[:source][-1,1] == ::File::SEPARATOR
@@ -24,7 +27,7 @@ https://github.com/puppetlabs/puppet/pull/3266
      else
        e_vars = {}
        full_name = @resource[:source]
-@@ -174,6 +163,30 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -174,6 +163,31 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      end
  
      Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact }
@@ -33,9 +36,10 @@ https://github.com/puppetlabs/puppet/pull/3266
 +  def get_full_name(latest = false)
 +    # In case of a real update (i.e., the package already exists) then
 +    # pkg_add(8) can handle the flavors. However, if we're actually
-+    # installing with 'latest', we do need to handle the flavors.
-+    # So we always need to handle flavors ourselves as to not break installs.
-+    if latest and resource[:flavor]
++    # installing with 'latest', we do need to handle the flavors. This is
++    # done so we can feed pkg_add(8) the full package name to install to
++    # prevent ambiguity.
++    if latest && resource[:flavor]
 +      "#{resource[:name]}--#{resource[:flavor]}"
 +    elsif latest
 +      # Don't depend on get_version for updates.
@@ -50,7 +54,7 @@ https://github.com/puppetlabs/puppet/pull/3266
 +        use_version = get_version
 +      end
 +
-+      [ @resource[:name], use_version, @resource[:flavor] ].join('-').chomp('-').chomp('-')
++      [ @resource[:name], use_version, @resource[:flavor]].join('-').gsub(/-+$/, '')
 +    end
    end
  
