@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_config_c,v 1.4 2014/11/06 09:21:28 dcoppa Exp $
+
+Recognize LOG_DAEMON as a valid facility
+
+--- src/config.c.orig	Fri Sep 19 17:49:16 2014
++++ src/config.c	Thu Nov  6 09:33:51 2014
+@@ -37,6 +37,7 @@ static struct {
+     const char     *name;
+     const int       value;
+ } validSyslogFacilities[] = {
++    {"daemon",  LOG_DAEMON},
+     {"user",    LOG_USER},
+     {"local0",  LOG_LOCAL0},
+     {"local1",  LOG_LOCAL1},
+@@ -207,7 +208,7 @@ void loadServerConfigFromString(char *config) {
+             }
+ 
+             if (!validSyslogFacilities[i].name) {
+-                err = "Invalid log facility. Must be one of USER or between LOCAL0-LOCAL7";
++                err = "Invalid log facility. Must be one of DAEMON, USER or between LOCAL0-LOCAL7";
+                 goto loaderr;
+             }
+         } else if (!strcasecmp(argv[0],"databases") && argc == 2) {
