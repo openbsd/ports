@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/24 18:52:58 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/11/07 14:20:11 abieber Exp $
 @bin bin/callpass
 @bin bin/testdbfawk
 @bin bin/xastir
@@ -65,6 +65,7 @@ share/xastir/config/nwsc_ddmmyy_09.dbfawk
 share/xastir/config/nwsc_ddmmyy_09b.dbfawk
 share/xastir/config/nwsc_ddmmyy_10.dbfawk
 share/xastir/config/nwsc_ddmmyy_10a.dbfawk
+share/xastir/config/nwsc_ddmmyy_13.dbfawk
 share/xastir/config/nwshzddmmyy.dbfawk
 share/xastir/config/nwsmzddmmyy.dbfawk
 share/xastir/config/nwsmzddmmyy_09.dbfawk
@@ -73,10 +74,14 @@ share/xastir/config/nwsmzoddmmyy.dbfawk
 share/xastir/config/nwsozddap12.dbfawk
 share/xastir/config/nwsozddmmyy.dbfawk
 share/xastir/config/nwsozddmmyy_09.dbfawk
+share/xastir/config/nwsozddmmyy_14.dbfawk
 share/xastir/config/nwsw_ddjn12.dbfawk
 share/xastir/config/nwsw_ddmmyy.dbfawk
 share/xastir/config/nwsw_ddmmyy_09.dbfawk
 share/xastir/config/nwsw_ddmmyy_10.dbfawk
+share/xastir/config/nwsw_ddmmyy_13.dbfawk
+share/xastir/config/nwsw_ddmmyy_14.dbfawk
+share/xastir/config/nwsw_ddmmyy_14a.dbfawk
 share/xastir/config/nwsz1ddmmyy.dbfawk
 share/xastir/config/nwsz_ddmmyy.dbfawk
 share/xastir/config/nwsz_ddmmyy_09.dbfawk
@@ -84,6 +89,7 @@ share/xastir/config/nwsz_ddmmyy_10.dbfawk
 share/xastir/config/nwsz_ddmmyy_10b.dbfawk
 share/xastir/config/nwsz_ddmmyy_10c.dbfawk
 share/xastir/config/nwsz_ddmmyy_11.dbfawk
+share/xastir/config/nwsz_ddmmyy_13.dbfawk
 share/xastir/config/nwszoddmmyy.dbfawk
 share/xastir/config/pointlm.dbfawk
 share/xastir/config/predefined_EVENT.sys
