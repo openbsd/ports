@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/07 10:07:40 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -62,6 +62,8 @@ MODULES =	devel/cmake \
 WRKDIST = ${WRKDIR}/stevedekorte-io-02f9800
 WRKBUILD = ${WRKSRC}/build
 
+# Segfaults during the build otherwise
+CFLAGS += -O0
 CONFIGURE_ARGS =-DATK_NAMES=atk-1.0 \
 		-DCLUTTER_NAMES=clutter-1.0 \
 		-DEVENT_NAMES=event_core \
