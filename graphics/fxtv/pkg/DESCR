@@ -1,5 +1,0 @@
-FXTV provides TV-in-a-window and image/audio/video capture capabilities
-for Brooktree-based tuner/capture cards through the Brooktree video
-capture driver, bktr(4). It can take advantage of direct video and DGA.
-FXTV can perform video and audio capture, and run a script to assemble
-captured data into an audio/video MPEG stream.
