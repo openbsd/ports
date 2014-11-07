@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2014/11/04 10:52:25 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2014/11/07 09:02:29 dcoppa Exp $
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
-DISTNAME =		ncmpcpp-0.6
-
-REVISION =		0
+DISTNAME =		ncmpcpp-0.6.1
 
 EXTRACT_SUFX =		.tar.bz2
 
