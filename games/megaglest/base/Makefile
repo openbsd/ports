@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 09:16:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/07 10:45:04 ajacoutot Exp $
 
 COMMENT =		3D real-time strategy game
 DISTNAME =		megaglest-source-${V}
@@ -31,10 +31,6 @@ LIB_DEPENDS =		audio/libogg \
 
 CONFIGURE_ARGS = 	-DBUILD_MEGAGLEST_MODEL_IMPORT_EXPORT_TOOLS=0 \
 			-DMEGAGLEST_MANPAGE_INSTALL_PATH="${LOCALBASE}/man/man6"
-.ifdef DEBUG
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Debug
-.endif
-
 WRKDIST = 		${WRKDIR}/${PKGNAME}
 
 pre-configure:
