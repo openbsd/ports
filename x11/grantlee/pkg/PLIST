@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/07 10:05:29 landry Exp $
 include/grantlee/
 include/grantlee/abstractlocalizer.h
 include/grantlee/abstractmarkupbuilder.h
@@ -38,7 +38,7 @@ lib/cmake/grantlee/
 lib/cmake/grantlee/GrantleeConfig.cmake
 lib/cmake/grantlee/GrantleeConfigVersion.cmake
 lib/cmake/grantlee/GrantleeParseArguments.cmake
-lib/cmake/grantlee/GrantleeTargets-noconfig.cmake
+lib/cmake/grantlee/GrantleeTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/grantlee/GrantleeTargets.cmake
 lib/cmake/grantlee/GrantleeUse.cmake
 lib/grantlee/

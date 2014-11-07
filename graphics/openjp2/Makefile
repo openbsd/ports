@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/12 14:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/07 10:05:29 landry Exp $
 
 COMMENT =		open-source JPEG 2000 codec library
 
@@ -6,6 +6,7 @@ V =			2.0.1
 # 2.1.0 changes opj_stream_set_user_data API; gdal/mupdf need to catch up
 DISTNAME =		openjpeg-$V
 PKGNAME =		openjp2-$V
+REVISION =	0
 
 SHARED_LIBS +=	openjp2                   0.0 # 2.0
 

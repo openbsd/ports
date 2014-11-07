@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/07 10:05:28 landry Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		template and text document library for Qt
@@ -7,6 +7,7 @@ PLIST_VERSION =		${PKG_VERSION:R}
 DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11
 HOMEPAGE =		http://www.gitorious.org/grantlee/
+REVISION =		0
 
 SHARED_LIBS =		grantlee_core		0.0
 SHARED_LIBS +=		grantlee_gui		0.0

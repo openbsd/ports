@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/20 15:57:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/07 10:05:29 landry Exp $
 @conflict QtZeitgeist-*
 include/QZeitgeist/
 include/QZeitgeist/DataModel/
@@ -29,7 +29,7 @@ include/QZeitgeist/refreshjob.h
 lib/cmake/QZeitgeist/
 lib/cmake/QZeitgeist/QZeitgeistConfig.cmake
 lib/cmake/QZeitgeist/QZeitgeistConfigVersion.cmake
-lib/cmake/QZeitgeist/QZeitgeistExport-release.cmake
+lib/cmake/QZeitgeist/QZeitgeistExport${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QZeitgeist/QZeitgeistExport.cmake
 @lib lib/libqzeitgeist.so.${LIBqzeitgeist_VERSION}
 lib/pkgconfig/QZeitgeist.pc

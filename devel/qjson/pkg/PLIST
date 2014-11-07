@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/05 10:31:01 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/07 10:05:29 landry Exp $
 include/qjson/
 include/qjson/parser.h
 include/qjson/parserrunnable.h
@@ -10,7 +10,7 @@ lib/cmake/
 lib/cmake/qjson/
 lib/cmake/qjson/QJSONConfig.cmake
 lib/cmake/qjson/QJSONConfigVersion.cmake
-lib/cmake/qjson/QJSONTargets-noconfig.cmake
+lib/cmake/qjson/QJSONTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/qjson/QJSONTargets.cmake
 @lib lib/libqjson.so.${LIBqjson_VERSION}
 lib/pkgconfig/QJson.pc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/09 21:26:32 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/07 10:05:29 landry Exp $
 include/mygpo-qt/
 include/mygpo-qt/AddRemoveResult.h
 include/mygpo-qt/ApiRequest.h
@@ -21,7 +21,7 @@ lib/cmake/
 lib/cmake/mygpo-qt/
 lib/cmake/mygpo-qt/Mygpo-qtConfig.cmake
 lib/cmake/mygpo-qt/Mygpo-qtConfigVersion.cmake
-lib/cmake/mygpo-qt/Mygpo-qtTargets-noconfig.cmake
+lib/cmake/mygpo-qt/Mygpo-qtTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/mygpo-qt/Mygpo-qtTargets.cmake
 @lib lib/libmygpo-qt.so.${LIBmygpo-qt_VERSION}
 lib/pkgconfig/

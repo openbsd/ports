@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/11/29 19:07:57 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/07 10:05:29 landry Exp $
 bin/wv2-config
 include/wv2/
 include/wv2/associatedstrings.h
@@ -31,5 +31,5 @@ lib/libwv2.a
 lib/libwv2.la
 %%SHARED%%
 lib/wvWare/
-lib/wvWare/wv2-noconfig.cmake
+lib/wvWare/wv2${MODCMAKE_BUILD_SUFFIX}
 lib/wvWare/wv2.cmake

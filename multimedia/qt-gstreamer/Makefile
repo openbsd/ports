@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/01 20:47:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/07 10:05:29 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Qt bindings to GStreamer 1.x
 
 DISTNAME =	qt-gstreamer-1.2.0
+REVISION =	0
 
 SHARED_LIBS =   QtGLib-2.0                1.0 # 0.10
 SHARED_LIBS +=  QtGStreamer-1.0           0.0 # 1.0

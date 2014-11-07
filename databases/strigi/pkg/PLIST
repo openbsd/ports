@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/11/15 00:04:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/07 10:05:29 landry Exp $
 @bin bin/deepfind
 @bin bin/deepgrep
 @bin bin/lucene2indexer
@@ -82,7 +82,7 @@ lib/libstreamanalyzer/LibStreamAnalyzerConfig.cmake
 lib/libstreams/
 @lib lib/libstreams.so.${LIBstreams_VERSION}
 lib/libstreams/LibStreamsConfig.cmake
-lib/libstreams/LibStreamsTargets-noconfig.cmake
+lib/libstreams/LibStreamsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/libstreams/LibStreamsTargets.cmake
 @lib lib/libstrigihtmlgui.so.${LIBstrigihtmlgui_VERSION}
 @lib lib/libstrigiqtdbusclient.so.${LIBstrigiqtdbusclient_VERSION}
