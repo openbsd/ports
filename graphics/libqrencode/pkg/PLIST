@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/27 15:30:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/07 01:31:02 sthen Exp $
 @bin bin/qrencode
 include/qrencode.h
 lib/libqrencode.a
 lib/libqrencode.la
 @lib lib/libqrencode.so.${LIBqrencode_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libqrencode.pc
 @man man/man1/qrencode.1

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/16 20:25:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/07 01:31:02 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for encoding data in a QR Code symbol
 
-DISTNAME=		qrencode-3.1.1
+DISTNAME=		qrencode-3.4.4
 PKGNAME=		lib${DISTNAME}
-SHARED_LIBS +=  qrencode             0.0      # 3.1
+
+SHARED_LIBS +=  qrencode             1.0      # 3.1
 
 CATEGORIES=		graphics
 
@@ -24,6 +25,7 @@ LIB_DEPENDS=		graphics/png
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-thread-safety \
 			--with-tools \
 			--with-tests \
 			--with-sdl-prefix=/no
