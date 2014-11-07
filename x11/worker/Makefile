@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/17 13:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/07 14:08:08 bcallah Exp $
 
 COMMENT =	Midnight Commander like file manager for X
-DISTNAME =	worker-3.4.1
+DISTNAME =	worker-3.5.1
 CATEGORIES =	x11
-REVISION =	0
 
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE =	http://www.boomerangsworld.de/
 
 # GPLv2+
@@ -26,6 +26,7 @@ CONFIGURE_ARGS =	--without-avfs \
 			--without-dbus \
 			--without-hal \
 			--without-libmagic \
-			--disable-inotify
+			--disable-inotify \
+			--disable-lua
 
 .include <bsd.port.mk>
