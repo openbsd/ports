@@ -1,0 +1,14 @@
+$OpenBSD: patch-htmldoc_http_c,v 1.1 2014/11/07 13:33:40 benoit Exp $
+--- htmldoc/http.c.orig	Sun Jan 12 10:36:41 2014
++++ htmldoc/http.c	Sun Jan 12 10:40:00 2014
+@@ -38,6 +38,10 @@
+ #  include <sys/poll.h>
+ #endif /* HAVE_POLL */
+ 
++#if defined(__OpenBSD__)
++#  define CUPS_RAND() arc4random() 
++#  define CUPS_SRAND(v)
++#endif
+ 
+ /*
+  * Some operating systems have done away with the Fxxxx constants for

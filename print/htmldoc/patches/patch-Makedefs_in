@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makedefs_in,v 1.2 2006/09/23 10:14:34 steven Exp $
---- Makedefs.in.orig	Fri Sep 22 19:27:17 2006
-+++ Makedefs.in	Fri Sep 22 19:27:30 2006
-@@ -81,13 +81,10 @@ OPTIM		=	@OPTIM@ @SSLFLAGS@
+$OpenBSD: patch-Makedefs_in,v 1.3 2014/11/07 13:33:40 benoit Exp $
+--- Makedefs.in.orig	Fri Dec 23 07:23:11 2011
++++ Makedefs.in	Sun Apr  6 17:57:37 2014
+@@ -70,13 +70,10 @@ OPTIM		=	@OPTIM@ @SSLFLAGS@
  # Rules...
  #
  

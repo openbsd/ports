@@ -1,7 +1,7 @@
-$OpenBSD: patch-htmldoc_file_c,v 1.4 2007/05/02 18:34:00 ajacoutot Exp $
---- htmldoc/file.c.orig	Wed May 31 21:00:02 2006
-+++ htmldoc/file.c	Wed May  2 16:56:21 2007
-@@ -78,7 +78,7 @@
+$OpenBSD: patch-htmldoc_file_c,v 1.5 2014/11/07 13:33:40 benoit Exp $
+--- htmldoc/file.c.orig	Fri Dec 30 06:03:21 2011
++++ htmldoc/file.c	Sun Apr  6 17:57:37 2014
+@@ -66,7 +66,7 @@
  #  define OPENPERM	(_S_IREAD | _S_IWRITE)
  #else
  #  define TEMPLATE	"%s/%06ld.%06d.tmp"
@@ -10,7 +10,7 @@ $OpenBSD: patch-htmldoc_file_c,v 1.4 2007/05/02 18:34:00 ajacoutot Exp $
  #  define OPENPERM	0600
  #endif /* WIN32 */
  
-@@ -176,7 +176,7 @@ file_cleanup(void)
+@@ -164,7 +164,7 @@ file_cleanup(void)
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
@@ -19,7 +19,7 @@ $OpenBSD: patch-htmldoc_file_c,v 1.4 2007/05/02 18:34:00 ajacoutot Exp $
  #endif /* WIN32 */
  
   /*
-@@ -1097,7 +1097,7 @@ file_temp(char *name,			/* O - Filename */
+@@ -1086,7 +1086,7 @@ file_temp(char *name,			/* O - Filename */
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
