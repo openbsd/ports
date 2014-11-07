@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/07/11 22:17:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2014/11/07 10:40:05 ajacoutot Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -71,8 +71,7 @@ LIB_DEPENDS =		devel/boost \
 
 MODULES =		devel/cmake devel/gettext lang/python
 CONFIGURE_ENV =		MANDIR=man
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
-			-DBUILD_HSI=ON
+CONFIGURE_ARGS +=	-DBUILD_HSI=ON
 NO_TEST =		Yes
 
 MODPY_ADJ_FILES =	src/hugin_script_interface/hpi.py \

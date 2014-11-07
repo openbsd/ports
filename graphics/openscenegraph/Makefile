@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/24 21:58:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/07 10:40:05 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -57,8 +57,6 @@ LIB_DEPENDS =		graphics/openexr \
 			net/curl \
 			print/poppler \
 			x11/gnome/librsvg
-
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE="Release"
 
 NO_TEST =		Yes
 

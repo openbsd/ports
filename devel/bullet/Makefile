@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/07 21:31:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/07 10:40:05 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -30,8 +30,7 @@ WANTLIB += m stdc++
 MODULES =		devel/cmake
 BUILD_DEPENDS =		graphics/freeglut
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
-			-DBUILD_SHARED_LIBS=ON \
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DBUILD_DEMOS=OFF \
 			-DBUILD_EXTRAS=OFF \
 			-DINSTALL_LIBS=ON

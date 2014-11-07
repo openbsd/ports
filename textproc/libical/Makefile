@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/20 15:51:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT=	implementation of the iCalendar protocols and data units
 
@@ -26,7 +26,6 @@ WANTLIB += pthread
 
 BUILD_DEPENDS=	devel/gobject-introspection
 
-CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
-		-DGOBJECT_INTROSPECTION=true
+CONFIGURE_ARGS= -DGOBJECT_INTROSPECTION=true
 
 .include <bsd.port.mk>

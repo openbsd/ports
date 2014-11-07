@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/20 15:57:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT =		Qt wrapper for Zeitgeist, event logging framework
 
@@ -36,8 +36,6 @@ NO_TEST =		Yes
 
 MODPY_ADJ_FILES =	scripts/onto2cpp.py
 MODPY_RUNDEP =		No
-
-CONFIGURE_ARGS=		-DCMAKE_BUILD_TYPE=Release
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/qzeitgeist

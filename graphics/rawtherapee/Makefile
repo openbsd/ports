@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/10 08:27:49 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT =		RAW image processing application
 
@@ -37,8 +37,7 @@ LIB_DEPENDS =		audio/libcanberra,-gtk \
 			math/fftw3,float \
 			x11/gtk2mm
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
-			-DBUILD_SHARED=ON \
+CONFIGURE_ARGS +=	-DBUILD_SHARED=ON \
 			-DOPTION_OMP=OFF \
 			-DCMAKE_CXX_FLAGS_RELEASE=${CXXFLAGS}
 

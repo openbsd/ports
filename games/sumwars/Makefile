@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/19 22:40:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/07 10:40:05 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -45,7 +45,6 @@ LIB_DEPENDS =		x11/cegui \
 
 CONFIGURE_ARGS += \
 	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
-	-DCMAKE_BUILD_TYPE=Release \
 	-DSUMWARS_NO_ENET=ON \
 	-DSUMWARS_NO_TINYXML=ON
 

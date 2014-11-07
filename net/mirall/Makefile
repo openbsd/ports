@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/28 09:02:57 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT =		owncloud sync client
 
@@ -32,8 +32,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		devel/libinotify \
 			net/ocsync
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
-			-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync
+CONFIGURE_ARGS +=	-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync
 
 NO_TEST =		Yes
 

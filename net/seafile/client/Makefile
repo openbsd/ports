@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/30 15:53:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT =		seafile client
 
@@ -15,8 +15,6 @@ MODULES =		devel/cmake devel/gettext x11/qt4
 LIB_DEPENDS =		net/seafile/seafile
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic
-
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release
 
 NO_TEST =		Yes
 

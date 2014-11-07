@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/21 01:11:52 jturner Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
@@ -29,8 +29,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
 CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
-			-DWITH_HARMATTAN=OFF \
+CONFIGURE_ARGS +=	-DWITH_HARMATTAN=OFF \
 			-DWITH_RAGEL=OFF \
 			-DWITH_QT5=OFF \
 			-DGIT_EXECUTABLE=""

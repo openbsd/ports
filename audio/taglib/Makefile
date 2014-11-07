@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/02/07 14:57:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.9.1
@@ -21,8 +21,7 @@ WANTLIB=	stdc++ m z
 
 BUILD_DEPENDS=	devel/cppunit
 
-CONFIGURE_ARGS+=-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_POLICY_DEFAULT_CMP0022=OLD \
+CONFIGURE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0022=OLD \
 		-DBUILD_TESTS=ON
 
 pre-configure:

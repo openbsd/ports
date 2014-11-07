@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/11/05 09:26:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2014/11/07 10:40:05 ajacoutot Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -66,8 +66,7 @@ LIB_DEPENDS=	devel/json-glib \
 SEPARATE_BUILD=	Yes
 USE_GROFF=	Yes
 
-CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
-		-DOPENJPEG_INCLUDE_DIR=${PREFIX}/include/openjpeg-1.5 \
+CONFIGURE_ARGS=	-DOPENJPEG_INCLUDE_DIR=${PREFIX}/include/openjpeg-1.5 \
 		-DBINARY_PACKAGE_BUILD=1 \
 		-DCUSTOM_CFLAGS=1
 

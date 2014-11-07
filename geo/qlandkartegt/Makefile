@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/10/28 10:00:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT =	garmin gps map management tool
 
@@ -26,8 +26,6 @@ LIB_DEPENDS +=	devel/proj \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		geo/garmindev \
 		geo/gpsbabel
-
-CONFIGURE_ARGS = -DCMAKE_BUILD_TYPE=Release
 
 post-extract:
 	@find ${WRKDIST} -name *.orig -exec rm {} \;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/21 14:25:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/07 10:40:05 ajacoutot Exp $
 
 COMMENT=		library for audio metadata lookup (v5)
 
@@ -25,8 +25,6 @@ MODULES=		devel/cmake
 NO_TEST=		Yes
 
 LIB_DEPENDS=		net/neon
-
-CONFIGURE_ARGS=		-DCMAKE_BUILD_TYPE=Release
 
 pre-configure:
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \

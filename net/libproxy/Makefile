@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/03/25 11:18:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2014/11/07 10:40:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -59,7 +59,6 @@ WANTLIB-webkit += glib-2.0 javascriptcoregtk-3.0 proxy
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DCMAKE_BUILD_TYPE:STRING=Release \
 			-DWITH_PYTHON:BOOL=ON \
 			-DWITH_PERL:BOOL=ON \
 			-DWITH_GNOME3:BOOL=ON \

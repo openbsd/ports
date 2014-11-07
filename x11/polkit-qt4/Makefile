@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/10/20 15:57:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/11/07 10:40:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,8 +39,7 @@ LIB_DEPENDS=	sysutils/polkit
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
 
-CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
+CONFIGURE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include" \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"

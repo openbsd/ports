@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/07/03 11:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/11/07 10:40:05 ajacoutot Exp $
 
 # XXX updating requires Thread Local Storage support
 
@@ -39,8 +39,7 @@ CONFIGURE_ARGS=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 		-DCMAKE_SKIP_RPATH=YES \
 		-DMAN_INSTALL_DIR=${PREFIX}/man \
 		-DSYSCONFDIR=${SYSCONFDIR} \
-		-DSYSCONF_INSTALL_DIR=${PREFIX}/share/examples \
-		-DCMAKE_BUILD_TYPE=Release
+		-DSYSCONF_INSTALL_DIR=${PREFIX}/share/examples
 
 # force disabling libssh and samba support
 CONFIGURE_ARGS+= \

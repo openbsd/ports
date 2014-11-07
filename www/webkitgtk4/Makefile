@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/24 15:57:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/07 10:40:05 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -79,7 +79,6 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 LDFLAGS =		-L${X11BASE}/lib
 
 CONFIGURE_ARGS =	-DPORT=GTK \
-			-DCMAKE_BUILD_TYPE=Release \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
 

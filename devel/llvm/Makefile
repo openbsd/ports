@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2014/10/28 17:52:05 brad Exp $
+# $OpenBSD: Makefile,v 1.90 2014/11/07 10:40:05 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -39,7 +39,6 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_ENABLE_TERMINFO:Bool=False \
 			-DLLVM_REQUIRES_RTTI:Bool=True \
-			-DCMAKE_BUILD_TYPE:String=Release \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True
 
 # Workaround relocation overflow

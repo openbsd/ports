@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/11 21:20:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/07 10:40:05 ajacoutot Exp $
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
@@ -46,8 +46,7 @@ MASTER_SITES =		https://bitbucket.org/sinbad/ogre/get/
 DISTFILES =		ogre-$V${EXTRACT_SUFX}{v${V:S/./-/g}${EXTRACT_SUFX}}
 #EXTRACT_SUFX =		.tar.bz2
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release \
-			-DOGRE_INSTALL_SAMPLES=1
+CONFIGURE_ARGS +=	-DOGRE_INSTALL_SAMPLES=1
 
 MODULES =		devel/cmake gcc4
 MODGCC4_LANGS =		c c++

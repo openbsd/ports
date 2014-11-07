@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/05 06:03:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/07 10:40:05 ajacoutot Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -39,8 +39,7 @@ LIB_DEPENDS =	audio/portaudio-svn \
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=RELEASE \
-		-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_JACK=OFF
 
 WRKSRC =	${WRKDIST}/mscore
