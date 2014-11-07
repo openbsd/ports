@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/30 06:46:37 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/07 09:36:28 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyaudio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_portaudio.so
 lib/python${MODPY_VERSION}/site-packages/pyaudio.py
-lib/python${MODPY_VERSION}/site-packages/pyaudio.pyc
