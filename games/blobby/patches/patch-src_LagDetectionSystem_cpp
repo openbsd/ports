@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_LagDetectionSystem_cpp,v 1.1 2014/11/07 10:06:09 landry Exp $
+--- src/LagDetectionSystem.cpp.orig	Thu Nov  6 23:41:34 2014
++++ src/LagDetectionSystem.cpp	Thu Nov  6 23:42:18 2014
+@@ -22,6 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ #include "LagDetectionSystem.h"
+ 
+ /* includes */
++#include <cassert>
+ #include "CrossCorrelation.h"
+ 
+ /* implementation */
