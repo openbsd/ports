@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/07 12:44:28 naddy Exp $
 
 COMMENT=		load balancer for simple TCP-based protocols
 
@@ -15,7 +15,6 @@ WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-docdir=${PREFIX}/share/doc/pen
-USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pen
