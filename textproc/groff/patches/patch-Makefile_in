@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2014/11/06 22:15:22 schwarze Exp $
-Install preformatted manuals, not source pages (local change).
---- Makefile.in.orig	Sun Oct 12 23:00:07 2014
-+++ Makefile.in	Sun Oct 12 23:27:06 2014
+$OpenBSD: patch-Makefile_in,v 1.6 2014/11/07 17:10:36 schwarze Exp $
+chunk 1: Install preformatted manuals, not source pages (local change).
+chunk 2: src/devices/gropdf depends on arch/misc (to be submitted upstream).
+--- Makefile.in.orig	Tue Nov  4 09:38:35 2014
++++ Makefile.in	Fri Nov  7 17:30:00 2014
 @@ -253,15 +253,15 @@ manroot=$(mandir)
  
  # `man1ext' is the man section for user commands.
@@ -21,3 +22,12 @@ Install preformatted manuals, not source pages (local change).
  
  # `dist' target is disallowed in some `configure' combinations.
  doc_dist_target_ok=@doc_dist_target_ok@
+@@ -895,6 +895,8 @@ $(GNULIBDIRS): FORCE
+ 	    || eval $$srcdir/configure "$$args" --srcdir=$$srcdir; \
+ 	  $(MAKE) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=: $(do) ;; \
+ 	esac
++
++$(SHPROGDIRS): $(PROGDEPDIRS)
+ 
+ $(OTHERDIRS): $(PROGDEPDIRS) $(CCPROGDIRS) $(CPROGDIRS) $(SHPROGDIRS)
+ 
