@@ -1,10 +1,18 @@
-Mojolicious is a MVC web framework that supports following features:
+Mojolicious is a real-time web framework, allowing you to easily grow
+single file prototypes into well-structured web applications.
 
-* Full stack HTTP 1.1 and WebSocket client/server implementation with IPv6,
-  TLS, Bonjour, IDNA, Comet (long polling), chunking and multipart support.
-* Builtin async IO web server supporting epoll, kqueue, UNIX domain sockets
-  and hot deployment, perfect for embedding.
-* Automatic CGI, FastCGI and PSGI detection.
-* JSON and XML/HTML5 parser with CSS3 selector support.
-* Very clean, portable and Object Oriented pure Perl API without any hidden
-  magic
+Powerful out of the box with RESTful routes, plugins, commands, Perl-ish
+templates, content negotiation, session management, form validation,
+testing framework, static file server, first class Unicode support and
+much more for you to discover.
+
+Full stack HTTP and WebSocket client/server implementation with IPv6, TLS,
+SNI, IDNA, HTTP/SOCKS5 proxy, Comet (long polling), keep-alive, connection
+pooling, timeout, cookie, multipart and gzip compression support.
+
+Built-in non-blocking I/O web server, supporting multiple event loops as
+well as optional preforking and hot deployment, perfect for embedding.
+
+Automatic CGI and PSGI detection.
+
+JSON and HTML/XML parser with CSS selector support.
