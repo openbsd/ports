@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/09/01 20:07:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/11/08 14:56:01 rpe Exp $
 tt-rss/
 tt-rss/LICENSE
 tt-rss/README.md
@@ -2282,6 +2282,10 @@ tt-rss/lib/timezones.txt
 tt-rss/lib/xsl_mop-up.js
 tt-rss/locale/
 tt-rss/locale/.htaccess
+tt-rss/locale/ar_SA/
+tt-rss/locale/ar_SA/LC_MESSAGES/
+tt-rss/locale/ar_SA/LC_MESSAGES/messages.mo
+tt-rss/locale/ar_SA/LC_MESSAGES/messages.po
 tt-rss/locale/ca_CA/
 tt-rss/locale/ca_CA/LC_MESSAGES/
 tt-rss/locale/ca_CA/LC_MESSAGES/messages.mo
@@ -2392,12 +2396,15 @@ tt-rss/plugins/af_comics/filter_base.php
 tt-rss/plugins/af_comics/filters/
 tt-rss/plugins/af_comics/filters/af_comics_cad.php
 tt-rss/plugins/af_comics/filters/af_comics_comicpress.php
+tt-rss/plugins/af_comics/filters/af_comics_darklegacy.php
 tt-rss/plugins/af_comics/filters/af_comics_dilbert.php
 tt-rss/plugins/af_comics/filters/af_comics_explosm.php
 tt-rss/plugins/af_comics/filters/af_comics_gocomics.php
 tt-rss/plugins/af_comics/filters/af_comics_pa.php
 tt-rss/plugins/af_comics/filters/af_comics_twp.php
 tt-rss/plugins/af_comics/init.php
+tt-rss/plugins/af_elreg/
+tt-rss/plugins/af_elreg/init.php
 tt-rss/plugins/af_fsckportal/
 tt-rss/plugins/af_fsckportal/init.php
 tt-rss/plugins/af_habr/

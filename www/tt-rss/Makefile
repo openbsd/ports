@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2014/11/06 17:13:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2014/11/08 14:56:01 rpe Exp $
 
 COMMENT=		webbased rss reader with standalone look and feel
 
 GH_ACCOUNT=		gothfox
 GH_PROJECT=		Tiny-Tiny-RSS
-GH_TAGNAME=		1.13
-GH_COMMIT=		1725817ac1567712051e0df7e07bc81fbcfcc6f3
+GH_TAGNAME=		1.14
+GH_COMMIT=		edccb21df011d9957403f6a1d51895a2068cc372
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=		tt-rss-${GH_TAGNAME}
 CATEGORIES=		www
-REVISION =		1
 
 HOMEPAGE=		http://tt-rss.org/
 
