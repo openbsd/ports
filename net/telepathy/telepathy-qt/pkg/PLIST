@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/01 20:43:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/08 14:10:26 landry Exp $
 include/telepathy-qt4/
 include/telepathy-qt4/TelepathyQt/
 include/telepathy-qt4/TelepathyQt/AbstractAdaptor
@@ -415,7 +415,7 @@ lib/cmake/
 lib/cmake/TelepathyQt4/
 lib/cmake/TelepathyQt4/TelepathyQt4Config.cmake
 lib/cmake/TelepathyQt4/TelepathyQt4ConfigVersion.cmake
-lib/cmake/TelepathyQt4/TelepathyQt4Targets-relwithdebinfo.cmake
+lib/cmake/TelepathyQt4/TelepathyQt4Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/TelepathyQt4/TelepathyQt4Targets.cmake
 lib/cmake/TelepathyQt4Farstream/
 lib/cmake/TelepathyQt4Farstream/TelepathyQt4FarstreamConfig.cmake
