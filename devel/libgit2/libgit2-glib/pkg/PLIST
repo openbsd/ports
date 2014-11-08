@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/09/16 08:18:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/08 12:33:40 jasper Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-blame-options.h
@@ -35,6 +35,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-main.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-merge-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-message.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-native.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-note.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory-base.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object.h
