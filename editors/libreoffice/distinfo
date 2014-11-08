@@ -26,7 +26,6 @@ SHA256 (libreoffice/a2f6010987e1c601274ab5d63b72c944-hyphen-2.8.4.tar.gz) = 7v/i
 SHA256 (libreoffice/a4e565e220b5de082c23995e256e3c12-dejavu-fonts-ttf-2.34.zip) = 9rgGtKoOo2qNDyxG3NWvpnQ3c5MAJOVimAxM0PkjB5I=
 SHA256 (libreoffice/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip) = dYI3dvtRqcUmr5BPFQOnr6qrkA+6g+2mT4pBBzckyHA=
 SHA256 (libreoffice/aa5ca9d1ed1082890835afab26400a39-mdds_0.10.3.tar.bz2) = 2xCTLb5+m1ubP1E7yBZat+KcO/dXArPDz/9pVsUh4MI=
-SHA256 (libreoffice/ac4781e01619be13461bb2d562b94a7b-cppunit-1.13.1.tar.gz) = poeLYC0nMOzGnwDQlacWLED62ej6PzVSTT1RKWJbDxU=
 SHA256 (libreoffice/ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip) = fSeX/p95p3AJch4/FPpKHewXptcGvck/hfHwHRJPq2Y=
 SHA256 (libreoffice/ae330b9493bd4503ac390106ff6060d7-libexttextcat-3.4.3.tar.bz2) = FsKNPHDyD2Yp+4ofw2Ngv0BNlNbqcca5hwd5L+Q5NBA=
 SHA256 (libreoffice/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip) = Iz9m6NJcXdlxcW1CACA6YSpAdklobvO1IHXQS0yd8N0=
@@ -89,7 +88,6 @@ SIZE (libreoffice/a2f6010987e1c601274ab5d63b72c944-hyphen-2.8.4.tar.gz) = 636667
 SIZE (libreoffice/a4e565e220b5de082c23995e256e3c12-dejavu-fonts-ttf-2.34.zip) = 5140387
 SIZE (libreoffice/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip) = 23150
 SIZE (libreoffice/aa5ca9d1ed1082890835afab26400a39-mdds_0.10.3.tar.bz2) = 151389
-SIZE (libreoffice/ac4781e01619be13461bb2d562b94a7b-cppunit-1.13.1.tar.gz) = 855746
 SIZE (libreoffice/ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip) = 2929311
 SIZE (libreoffice/ae330b9493bd4503ac390106ff6060d7-libexttextcat-3.4.3.tar.bz2) = 1080803
 SIZE (libreoffice/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip) = 743031

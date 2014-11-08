@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2014/10/10 17:13:10 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2014/11/08 11:14:23 robert Exp $
 %%SHARED%%
 bin/libreoffice
 bin/libreoffice${BV}
@@ -2054,19 +2054,19 @@ lib/libreoffice/share/extensions/dict-fr/icon.png
 lib/libreoffice/share/extensions/dict-fr/package-description.txt
 lib/libreoffice/share/extensions/dict-fr/thes_fr.dat
 lib/libreoffice/share/extensions/dict-fr/thes_fr.idx
-lib/libreoffice/share/extensions/dict-uk/
-lib/libreoffice/share/extensions/dict-uk/META-INF/
-lib/libreoffice/share/extensions/dict-uk/META-INF/manifest.xml
-lib/libreoffice/share/extensions/dict-uk/README_hyph_uk_UA.txt
-lib/libreoffice/share/extensions/dict-uk/README_th_uk_UA.txt
-lib/libreoffice/share/extensions/dict-uk/README_uk_UA.txt
-lib/libreoffice/share/extensions/dict-uk/description.xml
-lib/libreoffice/share/extensions/dict-uk/dictionaries.xcu
-lib/libreoffice/share/extensions/dict-uk/hyph_uk_UA.dic
-lib/libreoffice/share/extensions/dict-uk/th_uk_UA.dat
-lib/libreoffice/share/extensions/dict-uk/th_uk_UA.idx
-lib/libreoffice/share/extensions/dict-uk/uk_UA.aff
-lib/libreoffice/share/extensions/dict-uk/uk_UA.dic
+@comment lib/libreoffice/share/extensions/dict-uk/
+@comment lib/libreoffice/share/extensions/dict-uk/META-INF/
+@comment lib/libreoffice/share/extensions/dict-uk/META-INF/manifest.xml
+@comment lib/libreoffice/share/extensions/dict-uk/README_hyph_uk_UA.txt
+@comment lib/libreoffice/share/extensions/dict-uk/README_th_uk_UA.txt
+@comment lib/libreoffice/share/extensions/dict-uk/README_uk_UA.txt
+@comment lib/libreoffice/share/extensions/dict-uk/description.xml
+@comment lib/libreoffice/share/extensions/dict-uk/dictionaries.xcu
+@comment lib/libreoffice/share/extensions/dict-uk/hyph_uk_UA.dic
+@comment lib/libreoffice/share/extensions/dict-uk/th_uk_UA.dat
+@comment lib/libreoffice/share/extensions/dict-uk/th_uk_UA.idx
+@comment lib/libreoffice/share/extensions/dict-uk/uk_UA.aff
+@comment lib/libreoffice/share/extensions/dict-uk/uk_UA.dic
 lib/libreoffice/share/extensions/package.txt
 lib/libreoffice/share/filter/
 lib/libreoffice/share/filter/oox-drawingml-adj-names
@@ -3368,7 +3368,7 @@ lib/libreoffice/share/uno_packages/cache/uno_packages/
 lib/libreoffice/share/wordbook/
 lib/libreoffice/share/wordbook/en-GB.dic
 lib/libreoffice/share/wordbook/en-US.dic
-lib/libreoffice/share/wordbook/sl.dic
+@comment lib/libreoffice/share/wordbook/sl.dic
 lib/libreoffice/share/wordbook/technical.dic
 lib/libreoffice/share/xdg/
 lib/libreoffice/share/xdg/base.desktop

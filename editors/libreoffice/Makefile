@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/10/12 17:43:31 robert Exp $
+# $OpenBSD: Makefile,v 1.120 2014/11/08 11:14:23 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -18,7 +18,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	0
+REVISION-main=	1
 
 EPOCH=		0
 
@@ -75,7 +75,6 @@ DISTFILES+=	${EDISTFILES} \
 		a4e565e220b5de082c23995e256e3c12-dejavu-fonts-ttf-2.34.zip:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
 		aa5ca9d1ed1082890835afab26400a39-mdds_0.10.3.tar.bz2:0 \
-		ac4781e01619be13461bb2d562b94a7b-cppunit-1.13.1.tar.gz:0 \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
 		ae330b9493bd4503ac390106ff6060d7-libexttextcat-3.4.3.tar.bz2:0 \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
@@ -145,6 +144,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		archivers/gtar \
 		databases/db/v4 \
 		devel/bison \
+		devel/cppunit \
 		devel/flex \
 		devel/gpatch \
 		devel/gperf \
@@ -322,7 +322,7 @@ CONFIGURE_ARGS+=\
 		--without-gssapi \
 		--without-system-apache-commons \
 		--without-system-beanshell \
-		--without-system-cppunit \
+		--with-system-cppunit \
 		--without-system-hsqldb \
 		--without-system-jfreereport \
 		--without-system-libwpd \
