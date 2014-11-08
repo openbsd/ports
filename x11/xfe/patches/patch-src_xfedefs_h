@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_xfedefs_h,v 1.1 2014/11/08 19:03:59 dcoppa Exp $
+
+Unbreak launching Xfe as root with sudo or su (fix gnuisms)
+
+--- src/xfedefs.h.orig	Fri Oct 17 13:41:26 2014
++++ src/xfedefs.h	Fri Oct 17 13:43:44 2014
+@@ -157,11 +157,11 @@
+ 
+ // Command to launch Xfe as root with sudo or su, using Xvt as a terminal
+ #ifndef SUDOCMD
+-#define SUDOCMD "-fn 7x14 -geometry 60x4 -e sudo su -c 'nohup xfe >& /dev/null & sleep 1'"
++#define SUDOCMD "-fn 7x14 -geometry 60x4 -e sudo su -s /bin/sh root -c 'nohup xfe >/dev/null & sleep 1'"
+ #endif
+ 
+ #ifndef SUCMD
+-#define SUCMD "-fn 7x14 -geometry 60x4 -e su -c 'nohup xfe >& /dev/null & sleep 1'"
++#define SUCMD "-fn 7x14 -geometry 60x4 -e su root -c 'nohup xfe >/dev/null & sleep 1'"
+ #endif
+ 
+ // Tooltips setup time and duration
