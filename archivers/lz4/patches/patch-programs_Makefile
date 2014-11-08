@@ -1,20 +1,20 @@
-$OpenBSD: patch-programs_Makefile,v 1.1 2014/10/26 14:15:07 sthen Exp $
+$OpenBSD: patch-programs_Makefile,v 1.2 2014/11/08 14:39:21 sthen Exp $
 
 Don't build -m32 variants.
 Don't build fuzzer/frametest (requires patches for ftime).
 
---- programs/Makefile.orig	Thu Sep 25 13:03:36 2014
-+++ programs/Makefile	Sun Oct 26 14:03:33 2014
-@@ -68,7 +68,7 @@ endif
+--- programs/Makefile.orig	Thu Nov  6 18:39:42 2014
++++ programs/Makefile	Sat Nov  8 14:29:29 2014
+@@ -63,7 +63,7 @@ TRAVIS_TARGET=$(LZ4_TRAVIS_CI_ENV)
  
  default: lz4 lz4c
  
--all: lz4 lz4c lz4c32 fullbench fullbench32 fuzzer fuzzer32 frametest datagen
+-all: lz4 lz4c lz4c32 fullbench fullbench32 fuzzer fuzzer32 frametest frametest32 datagen
 +all: lz4 lz4c fullbench datagen
  
  lz4: $(LZ4DIR)/lz4.c $(LZ4DIR)/lz4hc.c $(LZ4DIR)/xxhash.c bench.c lz4io.c lz4cli.c
  	$(CC)      $(FLAGS) -DDISABLE_LZ4C_LEGACY_OPTIONS $^ -o $@$(EXT)
-@@ -109,7 +109,7 @@ clean:
+@@ -108,7 +108,7 @@ clean:
  
  #------------------------------------------------------------------------
  #make install is validated only for Linux, OSX, kFreeBSD and Hurd targets
@@ -23,12 +23,12 @@ Don't build fuzzer/frametest (requires patches for ftime).
  
  install: lz4 lz4c
  	@echo Installing binaries
-@@ -132,7 +132,7 @@ uninstall:
+@@ -131,7 +131,7 @@ uninstall:
  	[ -f $(DESTDIR)$(MANDIR)/lz4cat.1 ] && rm -f $(DESTDIR)$(MANDIR)/lz4cat.1
  	@echo lz4 successfully uninstalled
  
--test-native: test-lz4 test-lz4c test-frame test-fullbench test-fuzzer test-mem
-+test-native: test-lz4 test-lz4c test-fullbench
+-test: test-lz4 test-lz4c test-frametest test-fullbench test-fuzzer test-mem
++test: test-lz4 test-lz4c test-fullbench
  
- test-force32: test-lz4c32 test-fullbench32 test-fuzzer32 test-mem32
+ test32: test-lz4c32 test-frametest32 test-fullbench32 test-fuzzer32 test-mem32
  
