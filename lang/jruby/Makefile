@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/10/01 06:20:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2014/11/08 19:59:18 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -10,9 +10,9 @@ PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
-		jnr-posix-20140930.tar.gz:0 \
+		jnr-posix-3.0.7-SNAPSHOT.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.jruby.org/
 
