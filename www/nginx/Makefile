@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2014/10/31 14:40:59 robert Exp $
+# $OpenBSD: Makefile,v 1.67 2014/11/08 00:02:45 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -25,6 +25,7 @@ LIB_DEPENDS+=	devel/pcre
 
 NGINX_DIR=	/var/www
 SUBST_VARS=	NGINX_DIR
+CFLAGS+=	-Wall -Wpointer-arith -Werror
 
 FLAVORS=	lua naxsi passenger
 FLAVOR?=
