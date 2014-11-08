@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/04/30 11:40:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/11/08 11:28:04 sthen Exp $
 @conflict e2fs-uuid-*
 @conflict uuid-*
 @conflict ossp-uuid-<1.6.2p2
@@ -28,8 +28,6 @@ include/ext2fs/ext2fs.h
 include/ext2fs/ext3_extents.h
 include/ext2fs/qcow2.h
 include/ext2fs/tdb.h
-include/quota/
-include/quota/mkquota.h
 include/ss/
 include/ss/ss.h
 include/ss/ss_err.h
@@ -45,17 +43,14 @@ lib/libe2p.a
 @lib lib/libe2p.so.${LIBe2p_VERSION}
 lib/libext2fs.a
 @lib lib/libext2fs.so.${LIBext2fs_VERSION}
-lib/libquota.a
 lib/libss.a
 @lib lib/libss.so.${LIBss_VERSION}
 lib/libuuid.a
 @lib lib/libuuid.so.${LIBuuid_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/blkid.pc
 lib/pkgconfig/com_err.pc
 lib/pkgconfig/e2p.pc
 lib/pkgconfig/ext2fs.pc
-lib/pkgconfig/quota.pc
 lib/pkgconfig/ss.pc
 lib/pkgconfig/uuid.pc
 @man man/man1/chattr.1
@@ -142,6 +137,7 @@ share/examples/e2fsprogs/mke2fs.conf
 share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 share/locale/de/LC_MESSAGES/e2fsprogs.mo
+share/locale/eo/LC_MESSAGES/e2fsprogs.mo
 share/locale/es/LC_MESSAGES/e2fsprogs.mo
 share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 share/locale/id/LC_MESSAGES/e2fsprogs.mo
@@ -150,6 +146,7 @@ share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 share/locale/tr/LC_MESSAGES/e2fsprogs.mo
+share/locale/uk/LC_MESSAGES/e2fsprogs.mo
 share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
 share/ss/
