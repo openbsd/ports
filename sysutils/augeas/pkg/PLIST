@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/02/06 10:21:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/11/08 14:28:02 jasper Exp $
 @bin bin/augparse
 @bin bin/augtool
 @bin bin/fadot
@@ -11,7 +11,6 @@ lib/libaugeas.la
 lib/libfa.a
 lib/libfa.la
 @lib lib/libfa.so.${LIBfa_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/augeas.pc
 @man man/man1/augparse.1
 @man man/man1/augtool.1
@@ -42,9 +41,11 @@ share/augeas/lenses/dist/carbon.aug
 share/augeas/lenses/dist/cgconfig.aug
 share/augeas/lenses/dist/cgrules.aug
 share/augeas/lenses/dist/channels.aug
+share/augeas/lenses/dist/chrony.aug
 share/augeas/lenses/dist/cobblermodules.aug
 share/augeas/lenses/dist/cobblersettings.aug
 share/augeas/lenses/dist/collectd.aug
+share/augeas/lenses/dist/cpanel.aug
 share/augeas/lenses/dist/cron.aug
 share/augeas/lenses/dist/crypttab.aug
 share/augeas/lenses/dist/cups.aug
@@ -69,6 +70,7 @@ share/augeas/lenses/dist/fuse.aug
 share/augeas/lenses/dist/gdm.aug
 share/augeas/lenses/dist/group.aug
 share/augeas/lenses/dist/grub.aug
+share/augeas/lenses/dist/gshadow.aug
 share/augeas/lenses/dist/gtkbookmarks.aug
 share/augeas/lenses/dist/host_conf.aug
 share/augeas/lenses/dist/hostname.aug
@@ -90,6 +92,7 @@ share/augeas/lenses/dist/jmxpassword.aug
 share/augeas/lenses/dist/json.aug
 share/augeas/lenses/dist/kdump.aug
 share/augeas/lenses/dist/keepalived.aug
+share/augeas/lenses/dist/known_hosts.aug
 share/augeas/lenses/dist/koji.aug
 share/augeas/lenses/dist/krb5.aug
 share/augeas/lenses/dist/ldif.aug
@@ -127,6 +130,7 @@ share/augeas/lenses/dist/openshift_config.aug
 share/augeas/lenses/dist/openshift_http.aug
 share/augeas/lenses/dist/openshift_quickstarts.aug
 share/augeas/lenses/dist/openvpn.aug
+share/augeas/lenses/dist/pagekite.aug
 share/augeas/lenses/dist/pam.aug
 share/augeas/lenses/dist/pamconf.aug
 share/augeas/lenses/dist/passwd.aug
@@ -152,6 +156,7 @@ share/augeas/lenses/dist/rabbitmq.aug
 share/augeas/lenses/dist/redis.aug
 share/augeas/lenses/dist/reprepro_uploaders.aug
 share/augeas/lenses/dist/resolv.aug
+share/augeas/lenses/dist/rmt.aug
 share/augeas/lenses/dist/rsyncd.aug
 share/augeas/lenses/dist/rsyslog.aug
 share/augeas/lenses/dist/rx.aug
@@ -160,6 +165,7 @@ share/augeas/lenses/dist/schroot.aug
 share/augeas/lenses/dist/securetty.aug
 share/augeas/lenses/dist/sep.aug
 share/augeas/lenses/dist/services.aug
+share/augeas/lenses/dist/shadow.aug
 share/augeas/lenses/dist/shells.aug
 share/augeas/lenses/dist/shellvars.aug
 share/augeas/lenses/dist/shellvars_list.aug
@@ -209,9 +215,11 @@ share/augeas/lenses/dist/tests/test_carbon.aug
 share/augeas/lenses/dist/tests/test_cgconfig.aug
 share/augeas/lenses/dist/tests/test_cgrules.aug
 share/augeas/lenses/dist/tests/test_channels.aug
+share/augeas/lenses/dist/tests/test_chrony.aug
 share/augeas/lenses/dist/tests/test_cobblermodules.aug
 share/augeas/lenses/dist/tests/test_cobblersettings.aug
 share/augeas/lenses/dist/tests/test_collectd.aug
+share/augeas/lenses/dist/tests/test_cpanel.aug
 share/augeas/lenses/dist/tests/test_cron.aug
 share/augeas/lenses/dist/tests/test_crypttab.aug
 share/augeas/lenses/dist/tests/test_cups.aug
@@ -236,6 +244,7 @@ share/augeas/lenses/dist/tests/test_fuse.aug
 share/augeas/lenses/dist/tests/test_gdm.aug
 share/augeas/lenses/dist/tests/test_group.aug
 share/augeas/lenses/dist/tests/test_grub.aug
+share/augeas/lenses/dist/tests/test_gshadow.aug
 share/augeas/lenses/dist/tests/test_gtkbookmarks.aug
 share/augeas/lenses/dist/tests/test_host_conf.aug
 share/augeas/lenses/dist/tests/test_hostname.aug
@@ -257,6 +266,7 @@ share/augeas/lenses/dist/tests/test_jmxpassword.aug
 share/augeas/lenses/dist/tests/test_json.aug
 share/augeas/lenses/dist/tests/test_kdump.aug
 share/augeas/lenses/dist/tests/test_keepalived.aug
+share/augeas/lenses/dist/tests/test_known_hosts.aug
 share/augeas/lenses/dist/tests/test_koji.aug
 share/augeas/lenses/dist/tests/test_krb5.aug
 share/augeas/lenses/dist/tests/test_ldap.aug
@@ -295,6 +305,7 @@ share/augeas/lenses/dist/tests/test_openshift_config.aug
 share/augeas/lenses/dist/tests/test_openshift_http.aug
 share/augeas/lenses/dist/tests/test_openshift_quickstarts.aug
 share/augeas/lenses/dist/tests/test_openvpn.aug
+share/augeas/lenses/dist/tests/test_pagekite.aug
 share/augeas/lenses/dist/tests/test_pam.aug
 share/augeas/lenses/dist/tests/test_pamconf.aug
 share/augeas/lenses/dist/tests/test_passwd.aug
@@ -320,6 +331,7 @@ share/augeas/lenses/dist/tests/test_rabbitmq.aug
 share/augeas/lenses/dist/tests/test_redis.aug
 share/augeas/lenses/dist/tests/test_reprepro_uploaders.aug
 share/augeas/lenses/dist/tests/test_resolv.aug
+share/augeas/lenses/dist/tests/test_rmt.aug
 share/augeas/lenses/dist/tests/test_rsyncd.aug
 share/augeas/lenses/dist/tests/test_rsyslog.aug
 share/augeas/lenses/dist/tests/test_rx.aug
@@ -327,6 +339,7 @@ share/augeas/lenses/dist/tests/test_samba.aug
 share/augeas/lenses/dist/tests/test_schroot.aug
 share/augeas/lenses/dist/tests/test_securetty.aug
 share/augeas/lenses/dist/tests/test_services.aug
+share/augeas/lenses/dist/tests/test_shadow.aug
 share/augeas/lenses/dist/tests/test_shells.aug
 share/augeas/lenses/dist/tests/test_shellvars.aug
 share/augeas/lenses/dist/tests/test_shellvars_list.aug
@@ -352,7 +365,9 @@ share/augeas/lenses/dist/tests/test_sysctl.aug
 share/augeas/lenses/dist/tests/test_syslog.aug
 share/augeas/lenses/dist/tests/test_systemd.aug
 share/augeas/lenses/dist/tests/test_thttpd.aug
+share/augeas/lenses/dist/tests/test_tuned.aug
 share/augeas/lenses/dist/tests/test_up2date.aug
+share/augeas/lenses/dist/tests/test_updatedb.aug
 share/augeas/lenses/dist/tests/test_util.aug
 share/augeas/lenses/dist/tests/test_vfstab.aug
 share/augeas/lenses/dist/tests/test_vmware_config.aug
@@ -367,7 +382,9 @@ share/augeas/lenses/dist/tests/test_xymon.aug
 share/augeas/lenses/dist/tests/test_xymon_alerting.aug
 share/augeas/lenses/dist/tests/test_yum.aug
 share/augeas/lenses/dist/thttpd.aug
+share/augeas/lenses/dist/tuned.aug
 share/augeas/lenses/dist/up2date.aug
+share/augeas/lenses/dist/updatedb.aug
 share/augeas/lenses/dist/util.aug
 share/augeas/lenses/dist/vfstab.aug
 share/augeas/lenses/dist/vmware_config.aug
