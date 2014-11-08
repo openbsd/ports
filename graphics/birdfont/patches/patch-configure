@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2014/09/05 01:54:15 bcallah Exp $
---- configure.orig	Thu Sep  4 09:02:52 2014
-+++ configure	Thu Sep  4 21:14:06 2014
-@@ -110,7 +110,7 @@ parser.add_option("-e", "--gee", dest="gee", help="Ver
+$OpenBSD: patch-configure,v 1.6 2014/11/08 15:52:03 bcallah Exp $
+--- configure.orig	Fri Nov  7 04:49:33 2014
++++ configure	Sat Nov  8 10:08:43 2014
+@@ -118,7 +118,7 @@ parser.add_option("-x", "--posix", dest="posix", help=
  (options, args) = parser.parse_args()
  
  if not options.prefix:

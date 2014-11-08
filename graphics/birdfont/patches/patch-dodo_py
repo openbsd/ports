@@ -1,10 +1,10 @@
-$OpenBSD: patch-dodo_py,v 1.7 2014/10/09 17:40:00 bcallah Exp $
+$OpenBSD: patch-dodo_py,v 1.8 2014/11/08 15:52:03 bcallah Exp $
 
 glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
 
---- dodo.py.orig	Sun Oct  5 16:26:44 2014
-+++ dodo.py	Tue Oct  7 19:42:19 2014
-@@ -81,13 +81,12 @@ def task_pkg_flags():
+--- dodo.py.orig	Fri Nov  7 04:49:33 2014
++++ dodo.py	Sat Nov  8 10:08:43 2014
+@@ -88,13 +88,12 @@ def task_pkg_flags():
  
  
  valac_options = [
@@ -17,9 +17,9 @@ glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from null
 -libbirdxml = Vala(src='libbirdxml', build='build', library='birdxml', so_version=version.LIBBIRDXML_SO_VERSION, pkg_libs=LIBBIRD_XML_LIBS)
 +libbirdxml = Vala(src='libbirdxml', build='build', library='birdxml', so_version='${LIBbirdxml_VERSION}', pkg_libs=LIBBIRD_XML_LIBS)
  def task_libbirdxml():
-     yield libbirdxml.gen_c(valac_options)
-     yield libbirdxml.gen_o(['-fPIC'])
-@@ -95,7 +94,7 @@ def task_libbirdxml():
+ 
+     if config.POSIXVALA == True:
+@@ -107,7 +106,7 @@ def task_libbirdxml():
      yield libbirdxml.gen_ln()
      
  
