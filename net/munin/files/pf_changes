@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: pf_changes,v 1.1 2010/02/25 17:07:17 sthen Exp $
+# $OpenBSD: pf_changes,v 1.2 2014/11/08 20:08:20 kirby Exp $
 #
 # Script to monitor OpenBSD pf statistics
 #
@@ -41,6 +41,7 @@ if [ "$1" = "config" ]; then
 	echo 'rem.info State table entry removals'
 	echo 'rem.type DERIVE'
 	echo 'ins.min 0'
+	exit 0
 fi
 
 pfctl -si | awk '
