@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/23 18:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/09 16:25:17 naddy Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -64,6 +64,7 @@ do-build:
 	env MINGW32_TMP=${MINGW32_TMP} FULLDISTDIR=${FULLDISTDIR} \
 	    MINGW32_OUT=${MINGW32_OUT} MAKE=${MAKE_PROGRAM} \
 	    CONFIG_SHELL=${LOCALBASE}/bin/bash \
+	    AWK=/usr/bin/awk \
 	    ac_cv_path_mkdir=/bin/mkdir \
 	    /bin/sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
 	    --unattended
