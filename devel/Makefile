@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1271 2014/11/06 02:58:04 stu Exp $
+# $OpenBSD: Makefile,v 1.1272 2014/11/09 12:37:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -129,6 +129,7 @@
      SUBDIR += git-bz
      SUBDIR += git-cola
      SUBDIR += git-cvs
+     SUBDIR += gitsh
      SUBDIR += glade
      SUBDIR += glib
      SUBDIR += glib2
