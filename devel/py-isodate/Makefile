@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/29 07:02:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/09 13:19:36 benoit Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		ISO 8601 date/time/duration parser and formater
 
-MODPY_EGG_VERSION =	0.5.0
+MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		isodate-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
