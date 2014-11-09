@@ -1,0 +1,5 @@
+The gitsh program is an interactive shell for git. From within gitsh you
+can issue any git command, even using your local aliases and
+configuration. This simplifies repetitive commands, plus allows for
+additional advancements such as informative prompts, runtime git
+configuration, and scripting.
