@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/02 06:27:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/09 08:58:23 benoit Exp $
 
 COMMENT =	library for string essentials
-DISTNAME =	libestr-0.1.5
+DISTNAME =	libestr-0.1.9
 SHARED_LIBS +=  estr                 0.0      # 0.0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://libestr.adiscon.com/
-MAINTAINER =	David Hill <dhill@mindcry.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # LGPLv2.1 
 PERMIT_PACKAGE_CDROM =	Yes
