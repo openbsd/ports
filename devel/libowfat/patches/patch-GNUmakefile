@@ -1,0 +1,12 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2014/11/09 19:47:41 bluhm Exp $
+--- GNUmakefile.orig	Tue Apr 17 23:26:31 2012
++++ GNUmakefile	Sun Nov  2 13:25:39 2014
+@@ -297,7 +297,7 @@ dns_nd6.o fmt_xlong.o scan_xlong.o fmt_ip6_flat.o $(TE
+ 
+ iob_send.o scan_ip6if.o: havealloca.h
+ 
+-dep: haveip6.h haven2i.h havesl.h haveinline.h iopause.h select.h haveepoll.h havekqueue.h havedevpoll.h havescope.h havesigio.h havebsdsf.h havesendfile.h
++dep: haveip6.h haven2i.h havesl.h haveinline.h iopause.h select.h haveepoll.h havekqueue.h havedevpoll.h havescope.h havesigio.h havebsdsf.h havesendfile.h havealloca.h
+ 	gcc -I. -MM `ls */*.c | grep -v test` t.c | sed -e 's@ \./@ @g' > dep
+ 
+ libdep:
