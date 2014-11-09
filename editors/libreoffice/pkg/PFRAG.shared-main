@@ -1,12 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.15 2014/10/10 17:13:10 robert Exp $
-@bin lib/libreoffice/program/libCbc.so.3
-@bin lib/libreoffice/program/libCbcSolver.so.3
-@bin lib/libreoffice/program/libCgl.so.1
-@bin lib/libreoffice/program/libClp.so.1
-@bin lib/libreoffice/program/libCoinMP.so.1
-@bin lib/libreoffice/program/libCoinUtils.so.3
-@bin lib/libreoffice/program/libOsi.so.1
-@bin lib/libreoffice/program/libOsiClp.so.1
+@comment $OpenBSD: PFRAG.shared-main,v 1.16 2014/11/09 12:33:18 robert Exp $
 lib/libreoffice/program/libPresentationMinimizerlo.so
 lib/libreoffice/program/libPresenterScreenlo.so
 lib/libreoffice/program/libabplo.so

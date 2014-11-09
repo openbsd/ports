@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2014/11/08 11:14:23 robert Exp $
+# $OpenBSD: Makefile,v 1.121 2014/11/09 12:33:18 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		4.3
-VERSION=	4.3.2.2
+VERSION=	4.3.3.2
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -17,8 +17,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
-
-REVISION-main=	1
 
 EPOCH=		0
 
@@ -74,7 +72,7 @@ DISTFILES+=	${EDISTFILES} \
 		a2f6010987e1c601274ab5d63b72c944-hyphen-2.8.4.tar.gz:0 \
 		a4e565e220b5de082c23995e256e3c12-dejavu-fonts-ttf-2.34.zip:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
-		aa5ca9d1ed1082890835afab26400a39-mdds_0.10.3.tar.bz2:0 \
+		896272c1a9e396b871cb4dffbd694503-mdds_0.11.1.tar.bz2:0 \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
 		ae330b9493bd4503ac390106ff6060d7-libexttextcat-3.4.3.tar.bz2:0 \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
@@ -90,14 +88,13 @@ DISTFILES+=	${EDISTFILES} \
 		edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0 \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		CoinMP-1.7.6.tgz:0 \
 		graphite2-1.2.4.tgz:0 \
 		libabw-0.1.0.tar.bz2:0 \
 		libcdr-0.1.0.tar.bz2:0 \
 		libe-book-0.1.1.tar.bz2:0 \
 		libetonyek-0.1.1.tar.bz2:0 \
 		libfreehand-0.1.0.tar.bz2:0 \
-		libgltf-0.0.1.tar.bz2:1 \
+		libgltf-0.0.2.tar.bz2:1 \
 		libmspub-0.1.1.tar.bz2:0 \
 		libmwaw-0.3.1.tar.bz2:0 \
 		libodfgen-0.1.1.tar.bz2:0 \
@@ -268,6 +265,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		KDEDIR="${LOCALBASE}"
 
 CONFIGURE_ARGS+=\
+		--disable-coinmp \
 		--disable-collada \
 		--disable-ccache \
 		--disable-dbus \
@@ -282,12 +280,17 @@ CONFIGURE_ARGS+=\
 		--disable-randr-link \
 		--disable-firebird-sdbc \
 		--disable-liblangtag \
+		--disable-mergelibs \
+		--disable-packagekit \
+		--disable-dependency-tracking \
+		--disable-online-update \
 		--enable-gio \
 		--enable-gstreamer \
 		--enable-kde \
 		--enable-ext-presenter-minimizer \
 		--enable-systray \
 		--enable-release-build \
+		--enable-cairo-canvas \
 		--with-alloc=system \
 		--with-compat-oowrappers \
 		--with-external-tar=${DISTDIR}/libreoffice \
