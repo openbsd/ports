@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/09/03 09:46:46 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/09 14:35:25 benoit Exp $
 include/NTL/
 include/NTL/FFT.h
 include/NTL/FacVec.h
@@ -11,8 +11,11 @@ include/NTL/GF2XFactoring.h
 include/NTL/GF2XVec.h
 include/NTL/HNF.h
 include/NTL/LLL.h
+include/NTL/Lazy.h
+include/NTL/LazyTable.h
 include/NTL/RR.h
 include/NTL/SPMM_ASM.h
+include/NTL/SmartPtr.h
 include/NTL/WordVector.h
 include/NTL/ZZ.h
 include/NTL/ZZVec.h
@@ -61,6 +64,7 @@ include/NTL/pair_ZZ_pX_long.h
 include/NTL/pair_lzz_pEX_long.h
 include/NTL/pair_lzz_pX_long.h
 include/NTL/quad_float.h
+include/NTL/thread.h
 include/NTL/tools.h
 include/NTL/vec_GF2.h
 include/NTL/vec_GF2E.h
@@ -199,7 +203,6 @@ share/doc/NTL/tour-impl.html
 share/doc/NTL/tour-intro.html
 share/doc/NTL/tour-modules.html
 share/doc/NTL/tour-roadmap.html
-share/doc/NTL/tour-stdcxx.html
 share/doc/NTL/tour-struct.html
 share/doc/NTL/tour-time.html
 share/doc/NTL/tour-tips.html

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2014/09/03 09:46:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2014/11/09 14:35:25 benoit Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
-DISTNAME =	ntl-6.2.1
-SHARED_LIBS =	ntl	2.0	# 0.0
+DISTNAME =	ntl-7.0.0
+SHARED_LIBS =	ntl	3.0	# 0.0
 CATEGORIES =	math
 
 HOMEPAGE =	http://www.shoup.net/ntl/
@@ -22,10 +22,9 @@ LIB_DEPENDS =		devel/gmp
 MAKE_FILE =		makefile
 
 CONFIGURE_STYLE = 	simple
-CONFIGURE_ARGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
-			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+CONFIGURE_ARGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			NTL_GMP_LIP=on GMP_PREFIX="${LOCALBASE}" \
-			NTL_STD_CXX=on LIBntl_VERSION=${LIBntl_VERSION} \
+			LIBntl_VERSION=${LIBntl_VERSION} \
 			SHARED=on DEF_PREFIX="${LOCALBASE}"
 
 WRKBUILD =		${WRKSRC}/src
