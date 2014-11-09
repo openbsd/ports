@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1272 2014/11/09 12:37:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.1273 2014/11/09 19:51:25 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -376,6 +376,7 @@
      SUBDIR += liboil
      SUBDIR += liboop
      SUBDIR += libopensync
+     SUBDIR += libowfat
      SUBDIR += libpeas
      SUBDIR += libplist
      SUBDIR += libproplist
