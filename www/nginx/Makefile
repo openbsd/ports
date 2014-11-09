@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2014/11/08 00:02:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2014/11/09 20:46:19 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 VERSION=	1.7.7
+REVISION=	0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -31,7 +32,7 @@ FLAVORS=	lua naxsi passenger
 FLAVOR?=
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
-SUBST_VARS=	FLAVOR_COMMA
+SUBST_VARS+=	FLAVOR_COMMA
 
 # must be first option on configure line ?
 .if ${FLAVOR:Mnaxsi}
