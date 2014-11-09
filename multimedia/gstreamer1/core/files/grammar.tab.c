@@ -1,3 +1,6 @@
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 /* A Bison parser, made by GNU Bison 2.6.2.  */
 
 /* Bison implementation for Yacc-like parsers in C
