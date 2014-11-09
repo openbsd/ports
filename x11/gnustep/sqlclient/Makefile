@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/09 11:46:00 sebastia Exp $
 
 COMMENT =	GNUstep database abstraction layer
 
-VERSION =	1.7.3
+VERSION =	1.8.1
 DISTNAME =	SQLClient-${VERSION}
 PKGNAME =	gnustep-sqlclient-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  SQLClient	1.2
+SHLIB_VERSION =	2.0
+SHARED_LIBS +=  SQLClient	${SHLIB_VERSION}
 
 CATEGORIES =	databases
 
@@ -27,5 +27,7 @@ CONFIGURE_ARGS =	--with-additional-include="-I${LOCALBASE}/include \
 				-I${LOCALBASE}/include/postgresql" \
 			--with-additional-lib=-L${LOCALBASE}/lib
 MAKE_FLAGS +=	SQLClient_INTERFACE_VERSION=${LIBSQLClient_VERSION}
+
+SUBST_VARS +=	SHLIB_VERSION
 
 .include <bsd.port.mk>
