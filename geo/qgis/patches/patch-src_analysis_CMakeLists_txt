@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_analysis_CMakeLists_txt,v 1.1 2014/08/20 08:54:45 landry Exp $
+$OpenBSD: patch-src_analysis_CMakeLists_txt,v 1.2 2014/11/10 16:05:17 landry Exp $
 dont call bison to generate the parser, and build the pregenerated file instead
---- src/analysis/CMakeLists.txt.orig	Fri Jun 27 14:00:08 2014
-+++ src/analysis/CMakeLists.txt	Mon Aug 18 13:32:52 2014
+--- src/analysis/CMakeLists.txt.orig	Fri Oct 31 15:17:19 2014
++++ src/analysis/CMakeLists.txt	Mon Nov 10 10:59:34 2014
 @@ -33,6 +33,7 @@ SET(QGIS_ANALYSIS_SRCS
    raster/qgsrelief.cpp
    raster/qgsrastercalcnode.cpp

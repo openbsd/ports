@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_Flex_cmake,v 1.1 2014/11/10 16:05:17 landry Exp $
+Use gflex from ports, our flex doesnt handle %option reentrant
+used since https://github.com/qgis/QGIS/commit/2427546d8850c7f0b2ca191b238a77c49f648510
+--- cmake/Flex.cmake.orig	Fri Nov  7 10:51:41 2014
++++ cmake/Flex.cmake	Fri Nov  7 10:52:43 2014
+@@ -15,7 +15,7 @@ MACRO(FIND_FLEX)
+                      PATHS $ENV{LIB_DIR}/bin c:/cygwin/bin $ENV{PROGRAMFILES}/GnuWin32/bin
+                     )
+       ELSE(MSVC)
+-        FIND_PROGRAM(FLEX_EXECUTABLE flex)
++        FIND_PROGRAM(FLEX_EXECUTABLE gflex)
+       ENDIF (MSVC)
+         IF (NOT FLEX_EXECUTABLE)
+           MESSAGE(FATAL_ERROR "flex not found - aborting")

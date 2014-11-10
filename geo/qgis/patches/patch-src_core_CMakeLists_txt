@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_core_CMakeLists_txt,v 1.6 2014/08/20 08:54:45 landry Exp $
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.7 2014/11/10 16:05:17 landry Exp $
 chunk 1/2: dont call bison to generate the parser, and build the pregenerated file instead
---- src/core/CMakeLists.txt.orig	Fri Jun 27 14:00:08 2014
-+++ src/core/CMakeLists.txt	Mon Aug 18 13:32:26 2014
-@@ -74,6 +74,7 @@ SET(QGIS_CORE_SRCS
+--- src/core/CMakeLists.txt.orig	Fri Oct 31 15:17:19 2014
++++ src/core/CMakeLists.txt	Mon Nov 10 10:59:34 2014
+@@ -79,6 +79,7 @@ SET(QGIS_CORE_SRCS
    qgsdistancearea.cpp
    qgserror.cpp
    qgsexpression.cpp
 +  qgsexpressionparser.cpp
    qgsexpression_texts.cpp
+   qgsexpressionfieldbuffer.cpp
    qgsfeature.cpp
-   qgsfeatureiterator.cpp
-@@ -317,7 +318,7 @@ ENDIF (WITH_INTERNAL_SPATIALITE)
+@@ -337,7 +338,7 @@ ENDIF (WITH_INTERNAL_SPATIALITE)
  
  ADD_FLEX_FILES(QGIS_CORE_SRCS qgsexpressionlexer.ll)
  
@@ -19,7 +19,7 @@ chunk 1/2: dont call bison to generate the parser, and build the pregenerated fi
  
  SET(QGIS_CORE_MOC_HDRS
  
-@@ -715,9 +716,9 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND)
+@@ -760,9 +761,9 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND)
  TARGET_LINK_LIBRARIES(qgis_core
    ${QT_QTMAIN_LIBRARY}
    ${QT_QTXML_LIBRARY}
@@ -31,4 +31,4 @@ chunk 1/2: dont call bison to generate the parser, and build the pregenerated fi
 +  ${QT_QTNETWORK_LIBRARY} ${QT_QTNETWORK_LIB_DEPENDENCIES}
    ${QT_QTSVG_LIBRARY}
    ${QT_QTWEBKIT_LIBRARY}
- 
+   ${QSCINTILLA_LIBRARY}

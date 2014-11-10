@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.33 2014/10/08 14:36:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2014/11/10 16:05:17 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 SHARED_ONLY =	Yes
 
-DISTNAME =	qgis-2.4.0
-REVISION =	0
+DISTNAME =	qgis-2.6.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	6.0 \
-		qgis_gui	5.0 \
-		qgis_analysis	2.0 \
+SHARED_LIBS =	qgis_core	7.0 \
+		qgis_gui	6.0 \
+		qgis_analysis	3.0 \
 		qgispython	2.0 \
-		qgis_networkanalysis 0.0 \
-		qgissqlanyconnection 0.0 # 2.0
+		qgis_networkanalysis 0.0
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -30,6 +28,7 @@ MODULES =	devel/cmake \
 		lang/python
 
 BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
+		devel/flex \
 		geo/gdal,-python
 
 # need to update bison...
@@ -58,7 +57,7 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		mng png pthread util stdc++ z proj \
 		QtGui QtNetwork QtXml QtSql QtCore QtScript QtSvg \
 		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi \
-		QtTest spatialindex spatialite sqlite3
+		QtTest spatialindex spatialite sqlite3 qscintilla2
 WANTLIB += ${MODPY_WANTLIB} jpeg tiff
 
 CONFIGURE_ENV+=	VERBOSE=1

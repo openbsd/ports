@@ -70,7 +70,7 @@
 
 /* Copy the first part of user declarations.  */
 /* Line 336 of yacc.c  */
-#line 19 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 19 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
 
   #include "qgsrastercalcnode.h"
 
@@ -104,7 +104,7 @@
   #define YYERROR_VERBOSE 1
 
 /* Line 336 of yacc.c  */
-#line 108 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
+#line 108 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -124,8 +124,8 @@
 
 /* In a future release of Bison, this section will be replaced
    by #include "qgsrastercalcparser.hpp".  */
-#ifndef RASTER_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
-# define RASTER_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
+#ifndef RASTER_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
+# define RASTER_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -157,11 +157,11 @@ extern int rasterdebug;
 typedef union YYSTYPE
 {
 /* Line 350 of yacc.c  */
-#line 52 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 52 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
  QgsRasterCalcNode* node; double number; QgsRasterCalcNode::Operator op;
 
 /* Line 350 of yacc.c  */
-#line 165 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
+#line 165 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -184,12 +184,12 @@ int rasterparse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !RASTER_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP  */
+#endif /* !RASTER_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP  */
 
 /* Copy the second part of user declarations.  */
 
 /* Line 353 of yacc.c  */
-#line 193 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
+#line 193 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
 
 #ifdef short
 # undef short
@@ -1444,127 +1444,127 @@ yyreduce:
     {
         case 2:
 /* Line 1787 of yacc.c  */
-#line 77 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 77 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     {}
     break;
 
   case 3:
 /* Line 1787 of yacc.c  */
-#line 81 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 81 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode((yyvsp[(1) - (4)].op), (yyvsp[(3) - (4)].node), 0); joinTmpNodes((yyval.node), (yyvsp[(3) - (4)].node), 0);}
     break;
 
   case 4:
 /* Line 1787 of yacc.c  */
-#line 82 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 82 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opAND, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 5:
 /* Line 1787 of yacc.c  */
-#line 83 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 83 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opOR, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 6:
 /* Line 1787 of yacc.c  */
-#line 84 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 84 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opEQ, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 7:
 /* Line 1787 of yacc.c  */
-#line 85 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 85 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opNE, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 8:
 /* Line 1787 of yacc.c  */
-#line 86 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 86 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opGT, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 9:
 /* Line 1787 of yacc.c  */
-#line 87 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 87 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opLT, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 10:
 /* Line 1787 of yacc.c  */
-#line 88 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 88 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opGE, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 11:
 /* Line 1787 of yacc.c  */
-#line 89 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 89 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opLE, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node) ); joinTmpNodes((yyval.node), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 12:
 /* Line 1787 of yacc.c  */
-#line 90 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 90 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode(QgsRasterCalcNode::opPOW, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 13:
 /* Line 1787 of yacc.c  */
-#line 91 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 91 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode(QgsRasterCalcNode::opMUL, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 14:
 /* Line 1787 of yacc.c  */
-#line 92 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 92 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode(QgsRasterCalcNode::opDIV, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 15:
 /* Line 1787 of yacc.c  */
-#line 93 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 93 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode(QgsRasterCalcNode::opPLUS, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 16:
 /* Line 1787 of yacc.c  */
-#line 94 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 94 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode(QgsRasterCalcNode::opMINUS, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); joinTmpNodes((yyval.node),(yyvsp[(1) - (3)].node),(yyvsp[(3) - (3)].node)); }
     break;
 
   case 17:
 /* Line 1787 of yacc.c  */
-#line 95 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 95 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = (yyvsp[(2) - (3)].node); }
     break;
 
   case 18:
 /* Line 1787 of yacc.c  */
-#line 96 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 96 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = (yyvsp[(2) - (2)].node); }
     break;
 
   case 19:
 /* Line 1787 of yacc.c  */
-#line 97 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 97 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode( QgsRasterCalcNode::opSIGN, (yyvsp[(2) - (2)].node), 0 ); joinTmpNodes((yyval.node), (yyvsp[(2) - (2)].node), 0); }
     break;
 
   case 20:
 /* Line 1787 of yacc.c  */
-#line 98 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 98 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode((yyvsp[(1) - (1)].number)); addToTmpNodes((yyval.node)); }
     break;
 
   case 21:
 /* Line 1787 of yacc.c  */
-#line 99 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 99 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
     { (yyval.node) = new QgsRasterCalcNode(QString::fromUtf8(rastertext)); addToTmpNodes((yyval.node)); }
     break;
 
 
 /* Line 1787 of yacc.c  */
-#line 1568 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
+#line 1568 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/analysis/qgsrastercalcparser.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1794,7 +1794,7 @@ yyreturn:
 
 
 /* Line 2048 of yacc.c  */
-#line 102 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 102 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
 
 
 void addToTmpNodes(QgsRasterCalcNode* node)

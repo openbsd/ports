@@ -30,11 +30,11 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef EXP_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
-# define EXP_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
+#ifndef EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
+# define EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
 /* Enabling traces.  */
 #ifndef YYDEBUG
-# define YYDEBUG 0
+# define YYDEBUG 1
 #endif
 #if YYDEBUG
 extern int exp_debug;
@@ -89,7 +89,7 @@ extern int exp_debug;
 typedef union YYSTYPE
 {
 /* Line 2049 of yacc.c  */
-#line 57 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 77 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 
   QgsExpression::Node* node;
   QgsExpression::NodeList* nodelist;
@@ -103,14 +103,13 @@ typedef union YYSTYPE
 
 
 /* Line 2049 of yacc.c  */
-#line 107 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.hpp"
+#line 107 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.hpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
-extern YYSTYPE exp_lval;
 
 #ifdef YYPARSE_PARAM
 #if defined __STDC__ || defined __cplusplus
@@ -120,10 +119,10 @@ int exp_parse ();
 #endif
 #else /* ! YYPARSE_PARAM */
 #if defined __STDC__ || defined __cplusplus
-int exp_parse (void);
+int exp_parse (expression_parser_context* parser_ctx);
 #else
 int exp_parse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !EXP_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP  */
+#endif /* !EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP  */

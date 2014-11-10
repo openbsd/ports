@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.2 2014/08/20 08:54:45 landry Exp $
+$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.3 2014/11/10 16:05:17 landry Exp $
 Fix paths to various doc files, installed in share/doc/qgis
 per doc/CMakeLists.txt patch
---- src/core/qgsapplication.cpp.orig	Fri Jun 27 14:00:08 2014
-+++ src/core/qgsapplication.cpp	Mon Aug 18 17:26:32 2014
+--- src/core/qgsapplication.cpp.orig	Fri Oct 31 15:17:19 2014
++++ src/core/qgsapplication.cpp	Fri Nov  7 14:32:50 2014
 @@ -421,21 +421,21 @@ const QString QgsApplication::themeName()
  */
  const QString QgsApplication::authorsFilePath()
@@ -28,7 +28,7 @@ per doc/CMakeLists.txt patch
  }
  
  /*!
-@@ -443,7 +443,7 @@ const QString QgsApplication::sponsorsFilePath()
+@@ -443,19 +443,19 @@ const QString QgsApplication::sponsorsFilePath()
  */
  const QString QgsApplication::donorsFilePath()
  {
@@ -36,18 +36,14 @@ per doc/CMakeLists.txt patch
 +  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/DONORS" );
  }
  
- /*!
-@@ -452,7 +452,7 @@ const QString QgsApplication::donorsFilePath()
- */
+ /** Returns the path to the sponsors file. */
  const QString QgsApplication::translatorsFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QString( "/doc/TRANSLATORS" );
 +  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/TRANSLATORS" );
  }
  
- /*!
-@@ -460,7 +460,7 @@ const QString QgsApplication::translatorsFilePath()
- */
+ /** Returns the path to the licence file. */
  const QString QgsApplication::licenceFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QString( "/doc/LICENSE" );

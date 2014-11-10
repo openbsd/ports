@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef RASTER_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
-# define RASTER_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
+#ifndef RASTER_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
+# define RASTER_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -63,11 +63,11 @@ extern int rasterdebug;
 typedef union YYSTYPE
 {
 /* Line 2049 of yacc.c  */
-#line 52 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/analysis/raster/qgsrastercalcparser.yy"
+#line 52 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/analysis/raster/qgsrastercalcparser.yy"
  QgsRasterCalcNode* node; double number; QgsRasterCalcNode::Operator op;
 
 /* Line 2049 of yacc.c  */
-#line 71 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/analysis/qgsrastercalcparser.hpp"
+#line 71 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/analysis/qgsrastercalcparser.hpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -90,4 +90,4 @@ int rasterparse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !RASTER_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP  */
+#endif /* !RASTER_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_ANALYSIS_QGSRASTERCALCPARSER_HPP  */

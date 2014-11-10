@@ -50,7 +50,7 @@
 #define YYSKELETON_NAME "yacc.c"
 
 /* Pure parsers.  */
-#define YYPURE 0
+#define YYPURE 1
 
 /* Push parsers.  */
 #define YYPUSH 0
@@ -70,7 +70,7 @@
 
 /* Copy the first part of user declarations.  */
 /* Line 336 of yacc.c  */
-#line 16 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 16 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 
 #include <qglobal.h>
 #include <QList>
@@ -85,9 +85,16 @@
 // don't redeclare malloc/free
 #define YYINCLUDED_STDLIB_H 1
 
+struct expression_parser_context;
+#include "qgsexpressionparser.hpp"
+
 //! from lexer
-extern int exp_lex();
-extern void exp_set_input_buffer(const char* buffer);
+typedef void* yyscan_t;
+typedef struct yy_buffer_state* YY_BUFFER_STATE;
+extern int exp_lex_init(yyscan_t* scanner);
+extern int exp_lex_destroy(yyscan_t scanner);
+extern int exp_lex(YYSTYPE* yylval_param, yyscan_t yyscanner);
+extern YY_BUFFER_STATE exp__scan_string(const char* buffer, yyscan_t scanner);
 
 /** returns parsed tree, otherwise returns NULL and sets parserErrorMsg
     (interface function to be called from QgsExpression)
@@ -95,12 +102,20 @@ extern void exp_set_input_buffer(const char* buffer);
 QgsExpression::Node* parseExpression(const QString& str, QString& parserErrorMsg);
 
 /** error handler for bison */
-void exp_error(const char* msg);
+void exp_error(expression_parser_context* parser_ctx, const char* msg);
 
-//! varible where the parser error will be stored
-QString gExpParserErrorMsg;
-QgsExpression::Node* gExpParserRootNode;
+struct expression_parser_context
+{
+  // lexer context
+  yyscan_t flex_scanner;
 
+  // varible where the parser error will be stored
+  QString errorMsg;
+  // root node of the expression
+  QgsExpression::Node* rootNode;
+};
+
+#define scanner parser_ctx->flex_scanner
 
 // we want verbose error messages
 #define YYERROR_VERBOSE 1
@@ -109,7 +124,7 @@ QgsExpression::Node* gExpParserRootNode;
 
 
 /* Line 336 of yacc.c  */
-#line 113 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 128 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -129,11 +144,11 @@ QgsExpression::Node* gExpParserRootNode;
 
 /* In a future release of Bison, this section will be replaced
    by #include "qgsexpressionparser.hpp".  */
-#ifndef EXP_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
-# define EXP_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
+#ifndef EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
+# define EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
 /* Enabling traces.  */
 #ifndef YYDEBUG
-# define YYDEBUG 0
+# define YYDEBUG 1
 #endif
 #if YYDEBUG
 extern int exp_debug;
@@ -188,7 +203,7 @@ extern int exp_debug;
 typedef union YYSTYPE
 {
 /* Line 350 of yacc.c  */
-#line 57 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 77 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 
   QgsExpression::Node* node;
   QgsExpression::NodeList* nodelist;
@@ -202,14 +217,13 @@ typedef union YYSTYPE
 
 
 /* Line 350 of yacc.c  */
-#line 206 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 221 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
-extern YYSTYPE exp_lval;
 
 #ifdef YYPARSE_PARAM
 #if defined __STDC__ || defined __cplusplus
@@ -219,18 +233,18 @@ int exp_parse ();
 #endif
 #else /* ! YYPARSE_PARAM */
 #if defined __STDC__ || defined __cplusplus
-int exp_parse (void);
+int exp_parse (expression_parser_context* parser_ctx);
 #else
 int exp_parse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !EXP_HOME_PORTS_POBJ_QGIS_2_4_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP  */
+#endif /* !EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP  */
 
 /* Copy the second part of user declarations.  */
 
 /* Line 353 of yacc.c  */
-#line 234 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 248 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 
 #ifdef short
 # undef short
@@ -538,11 +552,11 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,   133,   133,   137,   138,   139,   140,   141,   142,   143,
-     144,   145,   146,   147,   148,   149,   150,   151,   152,   153,
-     154,   155,   156,   158,   178,   179,   181,   182,   184,   185,
-     188,   191,   215,   216,   217,   218,   222,   223,   227,   228,
-     232
+       0,   153,   153,   157,   158,   159,   160,   161,   162,   163,
+     164,   165,   166,   167,   168,   169,   170,   171,   172,   173,
+     174,   175,   176,   178,   198,   199,   201,   202,   204,   205,
+     208,   211,   235,   236,   237,   238,   242,   243,   247,   248,
+     252
 };
 #endif
 
@@ -753,7 +767,7 @@ do                                                              \
     }                                                           \
   else                                                          \
     {                                                           \
-      yyerror (YY_("syntax error: cannot back up")); \
+      yyerror (parser_ctx, YY_("syntax error: cannot back up")); \
       YYERROR;							\
     }								\
 while (YYID (0))
@@ -800,9 +814,9 @@ while (YYID (0))
 /* YYLEX -- calling `yylex' with the right arguments.  */
 
 #ifdef YYLEX_PARAM
-# define YYLEX yylex (YYLEX_PARAM)
+# define YYLEX yylex (&yylval, YYLEX_PARAM)
 #else
-# define YYLEX yylex ()
+# define YYLEX yylex (&yylval, scanner)
 #endif
 
 /* Enable debugging if requested.  */
@@ -825,7 +839,7 @@ do {									  \
     {									  \
       YYFPRINTF (stderr, "%s ", Title);					  \
       yy_symbol_print (stderr,						  \
-		  Type, Value); \
+		  Type, Value, parser_ctx); \
       YYFPRINTF (stderr, "\n");						  \
     }									  \
 } while (YYID (0))
@@ -839,19 +853,21 @@ do {									  \
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static void
-yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)
+yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep, expression_parser_context* parser_ctx)
 #else
 static void
-yy_symbol_value_print (yyoutput, yytype, yyvaluep)
+yy_symbol_value_print (yyoutput, yytype, yyvaluep, parser_ctx)
     FILE *yyoutput;
     int yytype;
     YYSTYPE const * const yyvaluep;
+    expression_parser_context* parser_ctx;
 #endif
 {
   FILE *yyo = yyoutput;
   YYUSE (yyo);
   if (!yyvaluep)
     return;
+  YYUSE (parser_ctx);
 # ifdef YYPRINT
   if (yytype < YYNTOKENS)
     YYPRINT (yyoutput, yytoknum[yytype], *yyvaluep);
@@ -873,13 +889,14 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static void
-yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)
+yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep, expression_parser_context* parser_ctx)
 #else
 static void
-yy_symbol_print (yyoutput, yytype, yyvaluep)
+yy_symbol_print (yyoutput, yytype, yyvaluep, parser_ctx)
     FILE *yyoutput;
     int yytype;
     YYSTYPE const * const yyvaluep;
+    expression_parser_context* parser_ctx;
 #endif
 {
   if (yytype < YYNTOKENS)
@@ -887,7 +904,7 @@ yy_symbol_print (yyoutput, yytype, yyvaluep)
   else
     YYFPRINTF (yyoutput, "nterm %s (", yytname[yytype]);
 
-  yy_symbol_value_print (yyoutput, yytype, yyvaluep);
+  yy_symbol_value_print (yyoutput, yytype, yyvaluep, parser_ctx);
   YYFPRINTF (yyoutput, ")");
 }
 
@@ -930,12 +947,13 @@ do {								\
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static void
-yy_reduce_print (YYSTYPE *yyvsp, int yyrule)
+yy_reduce_print (YYSTYPE *yyvsp, int yyrule, expression_parser_context* parser_ctx)
 #else
 static void
-yy_reduce_print (yyvsp, yyrule)
+yy_reduce_print (yyvsp, yyrule, parser_ctx)
     YYSTYPE *yyvsp;
     int yyrule;
+    expression_parser_context* parser_ctx;
 #endif
 {
   int yynrhs = yyr2[yyrule];
@@ -949,7 +967,7 @@ yy_reduce_print (yyvsp, yyrule)
       YYFPRINTF (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr, yyrhs[yyprhs[yyrule] + yyi],
 		       &(yyvsp[(yyi + 1) - (yynrhs)])
-		       		       );
+		       		       , parser_ctx);
       YYFPRINTF (stderr, "\n");
     }
 }
@@ -957,7 +975,7 @@ yy_reduce_print (yyvsp, yyrule)
 # define YY_REDUCE_PRINT(Rule)		\
 do {					\
   if (yydebug)				\
-    yy_reduce_print (yyvsp, Rule); \
+    yy_reduce_print (yyvsp, Rule, parser_ctx); \
 } while (YYID (0))
 
 /* Nonzero means print parse trace.  It is left uninitialized so that
@@ -1234,16 +1252,18 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static void
-yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep)
+yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep, expression_parser_context* parser_ctx)
 #else
 static void
-yydestruct (yymsg, yytype, yyvaluep)
+yydestruct (yymsg, yytype, yyvaluep, parser_ctx)
     const char *yymsg;
     int yytype;
     YYSTYPE *yyvaluep;
+    expression_parser_context* parser_ctx;
 #endif
 {
   YYUSE (yyvaluep);
+  YYUSE (parser_ctx);
 
   if (!yymsg)
     yymsg = "Deleting";
@@ -1253,45 +1273,45 @@ yydestruct (yymsg, yytype, yyvaluep)
     {
       case 31: /* STRING */
 /* Line 1381 of yacc.c  */
-#line 129 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 149 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1260 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 1280 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 	break;
       case 32: /* COLUMN_REF */
 /* Line 1381 of yacc.c  */
-#line 129 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 149 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1267 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 1287 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 	break;
       case 33: /* FUNCTION */
 /* Line 1381 of yacc.c  */
-#line 129 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 149 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1274 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 1294 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 	break;
       case 34: /* SPECIAL_COL */
 /* Line 1381 of yacc.c  */
-#line 129 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 149 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1281 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 1301 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 	break;
       case 42: /* expression */
 /* Line 1381 of yacc.c  */
-#line 127 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 147 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).node); };
 /* Line 1381 of yacc.c  */
-#line 1288 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 1308 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 	break;
       case 43: /* exp_list */
 /* Line 1381 of yacc.c  */
-#line 128 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 148 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).nodelist); };
 /* Line 1381 of yacc.c  */
-#line 1295 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 1315 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
 	break;
 
       default:
@@ -1300,16 +1320,6 @@ yydestruct (yymsg, yytype, yyvaluep)
 }
 
 
-
-
-/* The lookahead symbol.  */
-int yychar;
-
-/* The semantic value of the lookahead symbol.  */
-YYSTYPE yylval;
-
-/* Number of syntax errors so far.  */
-int yynerrs;
 
 
 /*----------.
@@ -1330,14 +1340,23 @@ yyparse (YYPARSE_PARAM)
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 int
-yyparse (void)
+yyparse (expression_parser_context* parser_ctx)
 #else
 int
-yyparse ()
-
+yyparse (parser_ctx)
+    expression_parser_context* parser_ctx;
 #endif
 #endif
 {
+/* The lookahead symbol.  */
+int yychar;
+
+/* The semantic value of the lookahead symbol.  */
+YYSTYPE yylval;
+
+    /* Number of syntax errors so far.  */
+    int yynerrs;
+
     int yystate;
     /* Number of tokens to shift before error messages enabled.  */
     int yyerrstatus;
@@ -1578,146 +1597,146 @@ yyreduce:
     {
         case 2:
 /* Line 1787 of yacc.c  */
-#line 133 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
-    { gExpParserRootNode = (yyvsp[(1) - (1)].node); }
+#line 153 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
+    { parser_ctx->rootNode = (yyvsp[(1) - (1)].node); }
     break;
 
   case 3:
 /* Line 1787 of yacc.c  */
-#line 137 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 157 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 4:
 /* Line 1787 of yacc.c  */
-#line 138 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 158 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 5:
 /* Line 1787 of yacc.c  */
-#line 139 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 159 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 6:
 /* Line 1787 of yacc.c  */
-#line 140 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 160 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 7:
 /* Line 1787 of yacc.c  */
-#line 141 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 161 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 8:
 /* Line 1787 of yacc.c  */
-#line 142 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 162 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 9:
 /* Line 1787 of yacc.c  */
-#line 143 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 163 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 10:
 /* Line 1787 of yacc.c  */
-#line 144 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 164 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 11:
 /* Line 1787 of yacc.c  */
-#line 145 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 165 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 12:
 /* Line 1787 of yacc.c  */
-#line 146 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 166 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 13:
 /* Line 1787 of yacc.c  */
-#line 147 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 167 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 14:
 /* Line 1787 of yacc.c  */
-#line 148 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 168 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 15:
 /* Line 1787 of yacc.c  */
-#line 149 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 169 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 16:
 /* Line 1787 of yacc.c  */
-#line 150 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 170 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 17:
 /* Line 1787 of yacc.c  */
-#line 151 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 171 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 18:
 /* Line 1787 of yacc.c  */
-#line 152 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 172 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 19:
 /* Line 1787 of yacc.c  */
-#line 153 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 173 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 20:
 /* Line 1787 of yacc.c  */
-#line 154 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 174 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 21:
 /* Line 1787 of yacc.c  */
-#line 155 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 175 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeUnaryOperator((yyvsp[(1) - (2)].u_op), (yyvsp[(2) - (2)].node)); }
     break;
 
   case 22:
 /* Line 1787 of yacc.c  */
-#line 156 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 176 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = (yyvsp[(2) - (3)].node); }
     break;
 
   case 23:
 /* Line 1787 of yacc.c  */
-#line 159 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 179 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     {
           int fnIndex = QgsExpression::functionIndex(*(yyvsp[(1) - (4)].text));
           if (fnIndex == -1)
           {
             // this should not actually happen because already in lexer we check whether an identifier is a known function
             // (if the name is not known the token is parsed as a column)
-            exp_error("Function is not known");
+            exp_error(parser_ctx, "Function is not known");
             YYERROR;
           }
           if ( QgsExpression::Functions()[fnIndex]->params() != -1
                && QgsExpression::Functions()[fnIndex]->params() != (yyvsp[(3) - (4)].nodelist)->count() )
           {
-            exp_error("Function is called with wrong number of arguments");
+            exp_error(parser_ctx, "Function is called with wrong number of arguments");
             YYERROR;
           }
           (yyval.node) = new QgsExpression::NodeFunction(fnIndex, (yyvsp[(3) - (4)].nodelist));
@@ -1727,56 +1746,56 @@ yyreduce:
 
   case 24:
 /* Line 1787 of yacc.c  */
-#line 178 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 198 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeInOperator((yyvsp[(1) - (5)].node), (yyvsp[(4) - (5)].nodelist), false);  }
     break;
 
   case 25:
 /* Line 1787 of yacc.c  */
-#line 179 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 199 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeInOperator((yyvsp[(1) - (6)].node), (yyvsp[(5) - (6)].nodelist), true); }
     break;
 
   case 26:
 /* Line 1787 of yacc.c  */
-#line 181 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 201 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = (yyvsp[(2) - (2)].node); }
     break;
 
   case 27:
 /* Line 1787 of yacc.c  */
-#line 182 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 202 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeUnaryOperator( QgsExpression::uoMinus, (yyvsp[(2) - (2)].node)); }
     break;
 
   case 28:
 /* Line 1787 of yacc.c  */
-#line 184 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 204 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeCondition((yyvsp[(2) - (3)].whenthenlist)); }
     break;
 
   case 29:
 /* Line 1787 of yacc.c  */
-#line 185 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 205 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeCondition((yyvsp[(2) - (5)].whenthenlist),(yyvsp[(4) - (5)].node)); }
     break;
 
   case 30:
 /* Line 1787 of yacc.c  */
-#line 188 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 208 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeColumnRef( *(yyvsp[(1) - (1)].text) ); delete (yyvsp[(1) - (1)].text); }
     break;
 
   case 31:
 /* Line 1787 of yacc.c  */
-#line 192 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 212 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     {
           int fnIndex = QgsExpression::functionIndex(*(yyvsp[(1) - (1)].text));
           if (fnIndex == -1)
           {
       if ( !QgsExpression::hasSpecialColumn( *(yyvsp[(1) - (1)].text) ) )
 	    {
-	      exp_error("Special column is not known");
+        exp_error(parser_ctx, "Special column is not known");
 	      YYERROR;
 	    }
 	    // $var is equivalent to _specialcol_( "$var" )
@@ -1795,61 +1814,61 @@ yyreduce:
 
   case 32:
 /* Line 1787 of yacc.c  */
-#line 215 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 235 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeLiteral( QVariant((yyvsp[(1) - (1)].numberFloat)) ); }
     break;
 
   case 33:
 /* Line 1787 of yacc.c  */
-#line 216 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 236 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeLiteral( QVariant((yyvsp[(1) - (1)].numberInt)) ); }
     break;
 
   case 34:
 /* Line 1787 of yacc.c  */
-#line 217 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 237 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeLiteral( QVariant(*(yyvsp[(1) - (1)].text)) ); delete (yyvsp[(1) - (1)].text); }
     break;
 
   case 35:
 /* Line 1787 of yacc.c  */
-#line 218 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 238 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeLiteral( QVariant() ); }
     break;
 
   case 36:
 /* Line 1787 of yacc.c  */
-#line 222 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 242 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.nodelist) = (yyvsp[(1) - (3)].nodelist); (yyvsp[(1) - (3)].nodelist)->append((yyvsp[(3) - (3)].node)); }
     break;
 
   case 37:
 /* Line 1787 of yacc.c  */
-#line 223 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 243 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.nodelist) = new QgsExpression::NodeList(); (yyval.nodelist)->append((yyvsp[(1) - (1)].node)); }
     break;
 
   case 38:
 /* Line 1787 of yacc.c  */
-#line 227 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 247 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.whenthenlist) = (yyvsp[(1) - (2)].whenthenlist); (yyvsp[(1) - (2)].whenthenlist)->append((yyvsp[(2) - (2)].whenthen)); }
     break;
 
   case 39:
 /* Line 1787 of yacc.c  */
-#line 228 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 248 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.whenthenlist) = new QgsExpression::WhenThenList(); (yyval.whenthenlist)->append((yyvsp[(1) - (1)].whenthen)); }
     break;
 
   case 40:
 /* Line 1787 of yacc.c  */
-#line 232 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 252 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
     { (yyval.whenthen) = new QgsExpression::WhenThen((yyvsp[(2) - (4)].node),(yyvsp[(4) - (4)].node)); }
     break;
 
 
 /* Line 1787 of yacc.c  */
-#line 1853 "/home/ports/pobj/qgis-2.4.0/build-amd64/src/core/qgsexpressionparser.cpp"
+#line 1872 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1899,7 +1918,7 @@ yyerrlab:
     {
       ++yynerrs;
 #if ! YYERROR_VERBOSE
-      yyerror (YY_("syntax error"));
+      yyerror (parser_ctx, YY_("syntax error"));
 #else
 # define YYSYNTAX_ERROR yysyntax_error (&yymsg_alloc, &yymsg, \
                                         yyssp, yytoken)
@@ -1926,7 +1945,7 @@ yyerrlab:
                 yymsgp = yymsg;
               }
           }
-        yyerror (yymsgp);
+        yyerror (parser_ctx, yymsgp);
         if (yysyntax_error_status == 2)
           goto yyexhaustedlab;
       }
@@ -1950,7 +1969,7 @@ yyerrlab:
       else
 	{
 	  yydestruct ("Error: discarding",
-		      yytoken, &yylval);
+		      yytoken, &yylval, parser_ctx);
 	  yychar = YYEMPTY;
 	}
     }
@@ -2006,7 +2025,7 @@ yyerrlab1:
 
 
       yydestruct ("Error: popping",
-		  yystos[yystate], yyvsp);
+		  yystos[yystate], yyvsp, parser_ctx);
       YYPOPSTACK (1);
       yystate = *yyssp;
       YY_STACK_PRINT (yyss, yyssp);
@@ -2041,7 +2060,7 @@ yyabortlab:
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
 yyexhaustedlab:
-  yyerror (YY_("memory exhausted"));
+  yyerror (parser_ctx, YY_("memory exhausted"));
   yyresult = 2;
   /* Fall through.  */
 #endif
@@ -2053,7 +2072,7 @@ yyreturn:
          user semantic actions for why this is necessary.  */
       yytoken = YYTRANSLATE (yychar);
       yydestruct ("Cleanup: discarding lookahead",
-                  yytoken, &yylval);
+                  yytoken, &yylval, parser_ctx);
     }
   /* Do not reclaim the symbols of the rule which action triggered
      this YYABORT or YYACCEPT.  */
@@ -2062,7 +2081,7 @@ yyreturn:
   while (yyssp != yyss)
     {
       yydestruct ("Cleanup: popping",
-		  yystos[*yyssp], yyvsp);
+		  yystos[*yyssp], yyvsp, parser_ctx);
       YYPOPSTACK (1);
     }
 #ifndef yyoverflow
@@ -2079,31 +2098,36 @@ yyreturn:
 
 
 /* Line 2048 of yacc.c  */
-#line 235 "/home/ports/pobj/qgis-2.4.0/qgis-2.4.0/src/core/qgsexpressionparser.yy"
+#line 255 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
+
 
 
 // returns parsed tree, otherwise returns NULL and sets parserErrorMsg
 QgsExpression::Node* parseExpression(const QString& str, QString& parserErrorMsg)
 {
-  gExpParserRootNode = NULL;
-  exp_set_input_buffer(str.toUtf8().constData());
-  int res = exp_parse();
+  expression_parser_context ctx;
+  ctx.rootNode = 0;
+
+  exp_lex_init(&ctx.flex_scanner);
+  exp__scan_string(str.toUtf8().constData(), ctx.flex_scanner);
+  int res = exp_parse(&ctx);
+  exp_lex_destroy(ctx.flex_scanner);
 
   // list should be empty when parsing was OK
   if (res == 0) // success?
   {
-    return gExpParserRootNode;
+    return ctx.rootNode;
   }
   else // error?
   {
-    parserErrorMsg = gExpParserErrorMsg;
+    parserErrorMsg = ctx.errorMsg;
     return NULL;
   }
 }
 
 
-void exp_error(const char* msg)
+void exp_error(expression_parser_context* parser_ctx, const char* msg)
 {
-  gExpParserErrorMsg = msg;
+  parser_ctx->errorMsg = msg;
 }
 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2014/08/20 08:54:45 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2014/11/10 16:05:17 landry Exp $
 chunk 1: dont look for bison, since >2.4 is required..
 chunk 2: http://hub.qgis.org/issues/3999
 lots of undefined refs to syms in libc, we dont link shlibs with -lc
---- CMakeLists.txt.orig	Fri Jun 27 14:00:08 2014
-+++ CMakeLists.txt	Mon Aug 18 11:34:39 2014
+--- CMakeLists.txt.orig	Fri Oct 31 15:17:19 2014
++++ CMakeLists.txt	Fri Nov  7 14:32:50 2014
 @@ -141,13 +141,13 @@ IF (NOT FLEX_EXECUTABLE)
    MESSAGE(FATAL_ERROR "Couldn't find Flex")
  ENDIF (NOT FLEX_EXECUTABLE)
@@ -23,7 +23,7 @@ lots of undefined refs to syms in libc, we dont link shlibs with -lc
  
  #############################################################
  # search for dependencies
-@@ -496,12 +496,6 @@ IF (WIN32)
+@@ -489,12 +489,6 @@ IF (WIN32)
    SET(DLLIMPORT "__declspec(dllimport)")
    SET(DLLEXPORT "__declspec(dllexport)")
  ELSE (WIN32)
