@@ -1,0 +1,19 @@
+$OpenBSD: patch-extensions_extensions_gyp,v 1.1 2014/11/10 15:03:43 dcoppa Exp $
+--- extensions/extensions.gyp.orig.port	Fri Nov  7 09:12:58 2014
++++ extensions/extensions.gyp	Fri Nov  7 14:56:33 2014
+@@ -31,6 +31,7 @@
+         '../url/url.gyp:url_lib',
+         '../third_party/libxml/libxml.gyp:libxml',
+         'common/api/api.gyp:extensions_api',
++        'extensions_resources.gyp:extensions_resources',
+         'extensions_strings.gyp:extensions_strings',
+       ],
+       'include_dirs': [
+@@ -263,6 +264,7 @@
+         'cast_channel_proto',
+         'common/api/api.gyp:extensions_api',
+         'extensions_common',
++        'extensions_resources.gyp:extensions_resources',
+         'extensions_strings.gyp:extensions_strings',
+       ],
+       'include_dirs': [
