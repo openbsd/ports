@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.259 2014/10/17 07:26:21 landry Exp $
+# $OpenBSD: Makefile,v 1.260 2014/11/10 15:40:02 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	33.0
+MOZILLA_VERSION =	33.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
