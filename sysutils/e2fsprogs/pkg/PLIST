@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/11/08 11:28:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/11/10 20:38:50 sthen Exp $
 @conflict e2fs-uuid-*
 @conflict uuid-*
 @conflict ossp-uuid-<1.6.2p2
@@ -101,7 +101,6 @@ lib/pkgconfig/uuid.pc
 @man man/man8/mklost+found.8
 @man man/man8/resize2fs.8
 @man man/man8/tune2fs.8
-@man man/man8/uuidd.8
 @bin sbin/badblocks
 @bin sbin/blkid
 @bin sbin/debugfs
@@ -127,7 +126,6 @@ lib/pkgconfig/uuid.pc
 @bin sbin/mklost+found
 @bin sbin/resize2fs
 @bin sbin/tune2fs
-@bin sbin/uuidd
 share/et/
 share/et/et_c.awk
 share/et/et_h.awk

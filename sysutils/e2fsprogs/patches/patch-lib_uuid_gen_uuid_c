@@ -1,0 +1,53 @@
+$OpenBSD: patch-lib_uuid_gen_uuid_c,v 1.1 2014/11/10 20:38:50 sthen Exp $
+--- lib/uuid/gen_uuid.c.orig	Sat Nov  8 10:51:53 2014
++++ lib/uuid/gen_uuid.c	Sat Nov  8 11:12:57 2014
+@@ -167,8 +167,17 @@ static int get_random_fd(void)
+ 	return fd;
+ }
+ 
+-
++#ifdef __OpenBSD__
+ /*
++ * On OpenBSD, arc4random does not require a device node, so we can
++ * use it always.
++ */
++static void get_random_bytes(void *buf, int nbytes)
++{
++	arc4random_buf(buf, nbytes);
++}
++#else
++/*
+  * Generate a series of random bytes.  Use /dev/urandom if possible,
+  * and if not, use srandom/random.
+  */
+@@ -213,6 +222,7 @@ static void get_random_bytes(void *buf, int nbytes)
+ 
+ 	return;
+ }
++#endif
+ 
+ /*
+  * Get the ethernet hardware address, if we can find it...
+@@ -663,7 +673,17 @@ void uuid_generate_random(uuid_t out)
+ }
+ 
+ 
++#ifdef __OpenBSD__
+ /*
++ * On OpenBSD, arc4random does not require a device node, so we can
++ * use it always.
++ */
++void uuid_generate(uuid_t out)
++{
++	uuid_generate_random(out);
++}
++#else
++/*
+  * This is the generic front-end to uuid_generate_random and
+  * uuid_generate_time.  It uses uuid_generate_random only if
+  * /dev/urandom is available, since otherwise we won't have
+@@ -676,3 +696,4 @@ void uuid_generate(uuid_t out)
+ 	else
+ 		uuid_generate_time(out);
+ }
++#endif
