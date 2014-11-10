@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2014/11/10 10:55:58 dcoppa Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.9.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	audio devel
 
 MASTER_SITES=	http://taglib.github.io/releases/
@@ -22,7 +22,7 @@ WANTLIB=	stdc++ m z
 BUILD_DEPENDS=	devel/cppunit
 
 CONFIGURE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0022=OLD \
-		-DBUILD_TESTS=ON
+		-DBUILD_TESTS:BOOL=ON
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindCppUnit.cmake

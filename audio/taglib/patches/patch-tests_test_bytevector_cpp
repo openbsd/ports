@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_test_bytevector_cpp,v 1.1 2014/11/10 10:55:58 dcoppa Exp $
+
+From 4a7d31c87bf41c1de21cb725176d5b34c2a95720 Mon Sep 17 00:00:00 2001
+From: Tsuda Kageyu <tsuda.kageyu@gmail.com>
+Date: Thu, 14 Nov 2013 14:05:32 +0900
+Subject: [PATCH] Rewrote ByteVector::replace() simpler
+
+--- tests/test_bytevector.cpp.orig	Tue Oct  8 17:50:01 2013
++++ tests/test_bytevector.cpp	Mon Nov 10 10:57:36 2014
+@@ -239,6 +239,11 @@ class TestByteVector : public CppUnit::TestFixture (pu
+       a.replace(ByteVector("ab"), ByteVector());
+       CPPUNIT_ASSERT_EQUAL(ByteVector("cdf"), a);
+     }
++    {
++      ByteVector a("abcdabf");
++      a.replace(ByteVector("bf"), ByteVector("x"));
++      CPPUNIT_ASSERT_EQUAL(ByteVector("abcdax"), a);
++    }
+   }
+ 
+ };

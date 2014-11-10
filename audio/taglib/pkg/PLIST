@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/11/28 15:49:25 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/10 10:55:58 dcoppa Exp $
 bin/taglib-config
 include/taglib/
 include/taglib/aifffile.h
@@ -103,6 +103,5 @@ include/taglib/xmfile.h
 include/taglib/xmproperties.h
 @lib lib/libtag.so.${LIBtag_VERSION}
 @lib lib/libtag_c.so.${LIBtag_c_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/taglib.pc
 lib/pkgconfig/taglib_c.pc
