@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/11/10 13:12:59 benoit Exp $
 
-COMMENT=	simple interface to subversion's editor interface#'
+COMMENT =	simple interface to subversion's editor interface#'
 
-MODULES=	cpan
-DISTNAME=	SVN-Simple-0.27
-REVISION=	2
-CATEGORIES=	devel
+DISTNAME =	SVN-Simple-0.28
+CATEGORIES =	devel
 
-CPAN_AUTHOR=	CLKAO
+CPAN_AUTHOR =	CLKAO
+MODULES =	cpan
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+# Perl
+PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_ENV=	LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
-MAKE_ENV=	LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
-
-RUN_DEPENDS=	devel/subversion,-perl>=1.1.1
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS =	devel/subversion,-perl>=1.1.1
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
