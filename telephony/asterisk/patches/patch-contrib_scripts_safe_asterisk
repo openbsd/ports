@@ -1,10 +1,10 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.17 2014/07/12 01:32:13 sthen Exp $
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.18 2014/11/10 20:43:18 sthen Exp $
 
 - more useful defaults
 - create /var/run/asterisk with sane ownership/perms
 
---- contrib/scripts/safe_asterisk.orig	Mon Jun  9 12:57:09 2014
-+++ contrib/scripts/safe_asterisk	Fri Jul 11 23:38:20 2014
+--- contrib/scripts/safe_asterisk.orig	Thu Oct  9 09:06:26 2014
++++ contrib/scripts/safe_asterisk	Mon Nov 10 19:52:06 2014
 @@ -5,21 +5,22 @@ ASTVARRUNDIR="__ASTERISK_VARRUN_DIR__"
  ASTVARLOGDIR="__ASTERISK_LOG_DIR__"
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.17 2014/07/12 01:32:13 sthen E
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
  VERSION=`"${ASTSBINDIR}/asterisk" -nrx 'core show version' 2>/dev/null`
-@@ -75,7 +89,7 @@ else
+@@ -80,7 +94,7 @@ else
  			fi
  		fi
  		SYSCTL_MAXFILES="fs.file-max"
@@ -62,7 +62,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.17 2014/07/12 01:32:13 sthen E
  		SYSCTL_MAXFILES="kern.maxfiles"
  	fi
  
-@@ -86,8 +100,10 @@ else
+@@ -91,8 +105,10 @@ else
  		fi
  	fi
  
