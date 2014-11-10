@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/11/10 08:14:34 dcoppa Exp $
+
+PORTROACH=	limit:^2\.
 
 COMMENT=	C routines for computing the Discrete Fourier Transform
 
