@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/10 16:37:19 afresh1 Exp $
 
-COMMENT= 	Test differences in data structures
+COMMENT =	test and show differences in strings and data structures
 
-MODULES=	cpan
-DISTNAME=	Test-Differences-0.61
-CATEGORIES=	devel
+DISTNAME =	Test-Differences-0.62
+CATEGORIES =	devel
+MODULES =	cpan
+
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	textproc/p5-Text-Diff
+RUN_DEPENDS =	sysutils/p5-Capture-Tiny>=0.24 \
+		textproc/p5-Text-Diff>=0.35
 
 .include <bsd.port.mk>
