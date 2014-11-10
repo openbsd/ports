@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/10 11:09:57 benoit Exp $
 
 COMMENT=	make a separate copy of a web site in local file system
 
 MODULES=	cpan
-DISTNAME=	HTML-SiteTear-1.42
-REVISION=	1
+DISTNAME =	HTML-SiteTear-1.44
 CATEGORIES=	www
 USE_GROFF =	Yes
 
