@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/10/29 07:42:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/11/10 09:01:29 ajacoutot Exp $
 @bin bin/glabels-3
 @bin bin/glabels-3-batch
 include/libglabels-3.0/
@@ -30,7 +30,6 @@ lib/libglabels-3.0.la
 lib/libglbarcode-3.0.a
 lib/libglbarcode-3.0.la
 @lib lib/libglbarcode-3.0.so.${LIBglbarcode-3.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libglabels-3.0.pc
 lib/pkgconfig/libglbarcode-3.0.pc
 @man man/man1/glabels-3-batch.1
@@ -122,6 +121,7 @@ share/gtk-doc/html/libglabels-3.0/ch03.html
 share/gtk-doc/html/libglabels-3.0/home.png
 share/gtk-doc/html/libglabels-3.0/index.html
 share/gtk-doc/html/libglabels-3.0/index.sgml
+share/gtk-doc/html/libglabels-3.0/left-insensitive.png
 share/gtk-doc/html/libglabels-3.0/left.png
 share/gtk-doc/html/libglabels-3.0/libglabels-3.0-category.html
 share/gtk-doc/html/libglabels-3.0/libglabels-3.0-db.html
@@ -136,14 +136,17 @@ share/gtk-doc/html/libglabels-3.0/libglabels-3.0-xml-template.html
 share/gtk-doc/html/libglabels-3.0/libglabels-3.0-xml-vendor.html
 share/gtk-doc/html/libglabels-3.0/libglabels-3.0-xml.html
 share/gtk-doc/html/libglabels-3.0/libglabels-3.0.devhelp2
+share/gtk-doc/html/libglabels-3.0/right-insensitive.png
 share/gtk-doc/html/libglabels-3.0/right.png
 share/gtk-doc/html/libglabels-3.0/style.css
+share/gtk-doc/html/libglabels-3.0/up-insensitive.png
 share/gtk-doc/html/libglabels-3.0/up.png
 share/gtk-doc/html/libglbarcode-3.0/
 share/gtk-doc/html/libglbarcode-3.0/api.html
 share/gtk-doc/html/libglbarcode-3.0/home.png
 share/gtk-doc/html/libglbarcode-3.0/index.html
 share/gtk-doc/html/libglbarcode-3.0/index.sgml
+share/gtk-doc/html/libglbarcode-3.0/left-insensitive.png
 share/gtk-doc/html/libglbarcode-3.0/left.png
 share/gtk-doc/html/libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html
 share/gtk-doc/html/libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html
@@ -152,8 +155,10 @@ share/gtk-doc/html/libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html
 share/gtk-doc/html/libglbarcode-3.0/libglbarcode-3.0.devhelp2
 share/gtk-doc/html/libglbarcode-3.0/libglbarcode-intro.html
 share/gtk-doc/html/libglbarcode-3.0/overview.html
+share/gtk-doc/html/libglbarcode-3.0/right-insensitive.png
 share/gtk-doc/html/libglbarcode-3.0/right.png
 share/gtk-doc/html/libglbarcode-3.0/style.css
+share/gtk-doc/html/libglbarcode-3.0/up-insensitive.png
 share/gtk-doc/html/libglbarcode-3.0/up.png
 share/help/
 share/help/C/
@@ -657,6 +662,7 @@ share/libglabels-3.0/templates/avery-iso-templates.xml
 share/libglabels-3.0/templates/avery-other-templates.xml
 share/libglabels-3.0/templates/avery-us-templates.xml
 share/libglabels-3.0/templates/brother-other-templates.xml
+share/libglabels-3.0/templates/canon-other-templates.xml
 share/libglabels-3.0/templates/categories.xml
 share/libglabels-3.0/templates/databecker-iso-templates.xml
 share/libglabels-3.0/templates/dataline-iso-templates.xml
@@ -703,7 +709,6 @@ share/locale/ko/LC_MESSAGES/glabels-3.0.mo
 share/locale/lv/LC_MESSAGES/glabels-3.0.mo
 share/locale/nb/LC_MESSAGES/glabels-3.0.mo
 share/locale/nl/LC_MESSAGES/glabels-3.0.mo
-share/locale/pl/LC_MESSAGES/glabels-3.0.mo
 share/locale/pt/LC_MESSAGES/glabels-3.0.mo
 share/locale/pt_BR/LC_MESSAGES/glabels-3.0.mo
 share/locale/ru/LC_MESSAGES/glabels-3.0.mo
