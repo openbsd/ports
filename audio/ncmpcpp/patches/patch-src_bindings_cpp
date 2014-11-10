@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_bindings_cpp,v 1.1 2014/11/10 15:51:56 dcoppa Exp $
+
+commit 2ef83ff15ff52f437ebe11844b5a2d0a36497dde
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Fri Nov 7 23:08:13 2014 +0100
+
+bindings: additionally bind delete to DeleteBrowserItems by default
+
+--- src/bindings.cpp.orig	Thu Nov  6 19:21:21 2014
++++ src/bindings.cpp	Mon Nov 10 16:28:35 2014
+@@ -366,6 +366,7 @@ void BindingsConfiguration::generateDefaults()
+ 	if (notBound(k = stringToKey("delete")))
+ 	{
+ 		bind(k, Actions::Type::DeletePlaylistItems);
++		bind(k, Actions::Type::DeleteBrowserItems);
+ 		bind(k, Actions::Type::DeleteStoredPlaylist);
+ 	}
+ 	if (notBound(k = stringToKey("right")))

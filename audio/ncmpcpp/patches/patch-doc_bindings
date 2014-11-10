@@ -1,0 +1,20 @@
+$OpenBSD: patch-doc_bindings,v 1.1 2014/11/10 15:51:56 dcoppa Exp $
+
+commit 2ef83ff15ff52f437ebe11844b5a2d0a36497dde
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Fri Nov 7 23:08:13 2014 +0100
+
+bindings: additionally bind delete to DeleteBrowserItems by default
+
+--- doc/bindings.orig	Thu Nov  6 19:21:21 2014
++++ doc/bindings	Mon Nov 10 16:28:35 2014
+@@ -188,6 +188,9 @@
+ #  delete_playlist_items
+ #
+ #def_key "delete"
++#  delete_browser_items
++#
++#def_key "delete"
+ #  delete_stored_playlist
+ #
+ #def_key "right"
