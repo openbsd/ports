@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/11/10 16:06:27 benoit Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.4
-REVISION=	6
+REVISION =	7
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://materm.sourceforge.net
-
-MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
