@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/05 18:33:14 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/10 17:39:00 sebastia Exp $
 include/jpegtcl.h
 include/jpegtclDecls.h
 include/pngtcl.h
@@ -13,79 +13,79 @@ lib/jpegtclConfig.sh
 lib/pngtclConfig.sh
 lib/tcl/tkimg/
 lib/tcl/tkimg/base/
-@lib lib/tcl/tkimg/base/libtkimg14.so.${LIBtkimg14_VERSION}
-lib/tcl/tkimg/base/libtkimgstub14.a
+@lib lib/tcl/tkimg/base/libtkimg142.so.${LIBtkimg142_VERSION}
+lib/tcl/tkimg/base/libtkimgstub142.a
 lib/tcl/tkimg/base/pkgIndex.tcl
 lib/tcl/tkimg/bmp/
-@lib lib/tcl/tkimg/bmp/libtkimgbmp14.so.${LIBtkimgbmp14_VERSION}
+@lib lib/tcl/tkimg/bmp/libtkimgbmp142.so.${LIBtkimgbmp142_VERSION}
 lib/tcl/tkimg/bmp/pkgIndex.tcl
 lib/tcl/tkimg/dted/
-@lib lib/tcl/tkimg/dted/libtkimgdted14.so.${LIBtkimgdted14_VERSION}
+@lib lib/tcl/tkimg/dted/libtkimgdted142.so.${LIBtkimgdted142_VERSION}
 lib/tcl/tkimg/dted/pkgIndex.tcl
 lib/tcl/tkimg/gif/
-@lib lib/tcl/tkimg/gif/libtkimggif14.so.${LIBtkimggif14_VERSION}
+@lib lib/tcl/tkimg/gif/libtkimggif142.so.${LIBtkimggif142_VERSION}
 lib/tcl/tkimg/gif/pkgIndex.tcl
 lib/tcl/tkimg/ico/
-@lib lib/tcl/tkimg/ico/libtkimgico14.so.${LIBtkimgico14_VERSION}
+@lib lib/tcl/tkimg/ico/libtkimgico142.so.${LIBtkimgico142_VERSION}
 lib/tcl/tkimg/ico/pkgIndex.tcl
 lib/tcl/tkimg/jpeg/
-@lib lib/tcl/tkimg/jpeg/libtkimgjpeg14.so.${LIBtkimgjpeg14_VERSION}
+@lib lib/tcl/tkimg/jpeg/libtkimgjpeg142.so.${LIBtkimgjpeg142_VERSION}
 lib/tcl/tkimg/jpeg/pkgIndex.tcl
 lib/tcl/tkimg/libjpeg/
-@lib lib/tcl/tkimg/libjpeg/libjpegtcl82.so.${LIBjpegtcl82_VERSION}
-lib/tcl/tkimg/libjpeg/libjpegtclstub82.a
+@lib lib/tcl/tkimg/libjpeg/libjpegtcl84.so.${LIBjpegtcl84_VERSION}
+lib/tcl/tkimg/libjpeg/libjpegtclstub84.a
 lib/tcl/tkimg/libjpeg/pkgIndex.tcl
 lib/tcl/tkimg/libpng/
-@lib lib/tcl/tkimg/libpng/libpngtcl143.so.${LIBpngtcl143_VERSION}
-lib/tcl/tkimg/libpng/libpngtclstub143.a
+@lib lib/tcl/tkimg/libpng/libpngtcl1412.so.${LIBpngtcl1412_VERSION}
+lib/tcl/tkimg/libpng/libpngtclstub1412.a
 lib/tcl/tkimg/libpng/pkgIndex.tcl
 lib/tcl/tkimg/libtiff/
 @lib lib/tcl/tkimg/libtiff/libtifftcl394.so.${LIBtifftcl394_VERSION}
 lib/tcl/tkimg/libtiff/libtifftclstub394.a
 lib/tcl/tkimg/libtiff/pkgIndex.tcl
 lib/tcl/tkimg/pcx/
-@lib lib/tcl/tkimg/pcx/libtkimgpcx14.so.${LIBtkimgpcx14_VERSION}
+@lib lib/tcl/tkimg/pcx/libtkimgpcx142.so.${LIBtkimgpcx142_VERSION}
 lib/tcl/tkimg/pcx/pkgIndex.tcl
 lib/tcl/tkimg/pixmap/
-@lib lib/tcl/tkimg/pixmap/libtkimgpixmap14.so.${LIBtkimgpixmap14_VERSION}
+@lib lib/tcl/tkimg/pixmap/libtkimgpixmap142.so.${LIBtkimgpixmap142_VERSION}
 lib/tcl/tkimg/pixmap/pkgIndex.tcl
 lib/tcl/tkimg/pkgIndex.tcl
 lib/tcl/tkimg/png/
-@lib lib/tcl/tkimg/png/libtkimgpng14.so.${LIBtkimgpng14_VERSION}
+@lib lib/tcl/tkimg/png/libtkimgpng142.so.${LIBtkimgpng142_VERSION}
 lib/tcl/tkimg/png/pkgIndex.tcl
 lib/tcl/tkimg/ppm/
-@lib lib/tcl/tkimg/ppm/libtkimgppm14.so.${LIBtkimgppm14_VERSION}
+@lib lib/tcl/tkimg/ppm/libtkimgppm142.so.${LIBtkimgppm142_VERSION}
 lib/tcl/tkimg/ppm/pkgIndex.tcl
 lib/tcl/tkimg/ps/
-@lib lib/tcl/tkimg/ps/libtkimgps14.so.${LIBtkimgps14_VERSION}
+@lib lib/tcl/tkimg/ps/libtkimgps142.so.${LIBtkimgps142_VERSION}
 lib/tcl/tkimg/ps/pkgIndex.tcl
 lib/tcl/tkimg/raw/
-@lib lib/tcl/tkimg/raw/libtkimgraw14.so.${LIBtkimgraw14_VERSION}
+@lib lib/tcl/tkimg/raw/libtkimgraw142.so.${LIBtkimgraw142_VERSION}
 lib/tcl/tkimg/raw/pkgIndex.tcl
 lib/tcl/tkimg/sgi/
-@lib lib/tcl/tkimg/sgi/libtkimgsgi14.so.${LIBtkimgsgi14_VERSION}
+@lib lib/tcl/tkimg/sgi/libtkimgsgi142.so.${LIBtkimgsgi142_VERSION}
 lib/tcl/tkimg/sgi/pkgIndex.tcl
 lib/tcl/tkimg/sun/
-@lib lib/tcl/tkimg/sun/libtkimgsun14.so.${LIBtkimgsun14_VERSION}
+@lib lib/tcl/tkimg/sun/libtkimgsun142.so.${LIBtkimgsun142_VERSION}
 lib/tcl/tkimg/sun/pkgIndex.tcl
 lib/tcl/tkimg/tga/
-@lib lib/tcl/tkimg/tga/libtkimgtga14.so.${LIBtkimgtga14_VERSION}
+@lib lib/tcl/tkimg/tga/libtkimgtga142.so.${LIBtkimgtga142_VERSION}
 lib/tcl/tkimg/tga/pkgIndex.tcl
 lib/tcl/tkimg/tiff/
-@lib lib/tcl/tkimg/tiff/libtkimgtiff14.so.${LIBtkimgtiff14_VERSION}
+@lib lib/tcl/tkimg/tiff/libtkimgtiff142.so.${LIBtkimgtiff142_VERSION}
 lib/tcl/tkimg/tiff/pkgIndex.tcl
 lib/tcl/tkimg/window/
-@lib lib/tcl/tkimg/window/libtkimgwindow14.so.${LIBtkimgwindow14_VERSION}
+@lib lib/tcl/tkimg/window/libtkimgwindow142.so.${LIBtkimgwindow142_VERSION}
 lib/tcl/tkimg/window/pkgIndex.tcl
 lib/tcl/tkimg/xbm/
-@lib lib/tcl/tkimg/xbm/libtkimgxbm14.so.${LIBtkimgxbm14_VERSION}
+@lib lib/tcl/tkimg/xbm/libtkimgxbm142.so.${LIBtkimgxbm142_VERSION}
 lib/tcl/tkimg/xbm/pkgIndex.tcl
 lib/tcl/tkimg/xpm/
-@lib lib/tcl/tkimg/xpm/libtkimgxpm14.so.${LIBtkimgxpm14_VERSION}
+@lib lib/tcl/tkimg/xpm/libtkimgxpm142.so.${LIBtkimgxpm142_VERSION}
 lib/tcl/tkimg/xpm/pkgIndex.tcl
 lib/tcl/tkimg/zlib/
-@lib lib/tcl/tkimg/zlib/libzlibtcl125.so.${LIBzlibtcl125_VERSION}
-lib/tcl/tkimg/zlib/libzlibtclstub125.a
+@lib lib/tcl/tkimg/zlib/libzlibtcl128.so.${LIBzlibtcl128_VERSION}
+lib/tcl/tkimg/zlib/libzlibtclstub128.a
 lib/tcl/tkimg/zlib/pkgIndex.tcl
 lib/tifftclConfig.sh
 lib/tkimgConfig.sh

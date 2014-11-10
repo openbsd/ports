@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/10 17:39:00 sebastia Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	image extension for Tcl/Tk
 
-V =		1.4
-REVISION =	1
+V =		1.4.2
 DISTNAME =	tkimg$V
 PKGNAME =	tkimg-$V
 SHLIB_VERSION =	0.0
-.for _lib in tkimgbmp14 tkimg14 tkimggif14 tkimgico14 tkimgjpeg14 \
-	tkimgpcx14 tkimgpixmap14 tkimgpng14 tkimgppm14 tkimgps14 \
-	tkimgsgi14 tkimgsun14 tkimgtga14 tkimgtiff14 tkimgwindow14 \
-	tkimgxbm14 tkimgxpm14 tkimgraw14 tkimgdted14 zlibtcl125 \
-	jpegtcl82 pngtcl143 tifftcl394
+.for _lib in tkimgbmp142 tkimg142 tkimggif142 tkimgico142 tkimgjpeg142 \
+	tkimgpcx142 tkimgpixmap142 tkimgpng142 tkimgppm142 tkimgps142 \
+	tkimgsgi142 tkimgsun142 tkimgtga142 tkimgtiff142 tkimgwindow142 \
+	tkimgxbm142 tkimgxpm142 tkimgraw142 tkimgdted142 zlibtcl128 \
+	jpegtcl84 pngtcl1412 tifftcl394
 SHARED_LIBS +=	${_lib} ${SHLIB_VERSION}
 .endfor
 
@@ -45,6 +44,7 @@ CONFIGURE_ARGS= --libdir=${MODTCL_TCLDIR} \
 		--with-tkinclude=${MODTK_INCDIR} \
 		--with-x \
 		--x-includes=${X11BASE}/include	
+WRKDIST =	${WRKDIR}/tkimg1.4
 TEST_IS_INTERACTIVE = X11
 TEST_TARGET =	test
 INSTALL_TARGET =	collate
