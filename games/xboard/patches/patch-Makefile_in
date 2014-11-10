@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.7 2014/11/10 09:04:18 dcoppa Exp $
+--- Makefile.in.orig	Mon Nov 10 09:41:17 2014
++++ Makefile.in	Mon Nov 10 09:41:27 2014
+@@ -532,7 +532,7 @@ xboard_SOURCES = backend.c backend.h backendz.h \
+ 
+ ###
+ SUBDIRS = po
+-xboard_LDADD = -ldl -lm @FRONTEND_LIBS@ @X_LIBS@ @LIBINTL@ @CAIRO_LIBS@
++xboard_LDADD = -lm @FRONTEND_LIBS@ @X_LIBS@ @LIBINTL@ @CAIRO_LIBS@
+ EXTRA_DIST = pixmaps themes png sounds winboard \
+ 	xboard.texi gpl.texinfo texi2man texinfo.tex xboard.man xboard.desktop xboard-config.desktop \
+ 	xboard-fen-viewer.desktop  xboard-pgn-viewer.desktop  xboard-tourney.desktop xboard.xml \
