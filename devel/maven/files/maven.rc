@@ -1,10 +1,10 @@
-# $OpenBSD: maven.rc,v 1.2 2006/08/07 19:30:52 kurt Exp $
+# $OpenBSD: maven.rc,v 1.3 2014/11/11 08:40:38 jasper Exp $
 #
 # Define JAVA_HOME, M2_HOME and MAVEN_OPTS here.
 #
 
 JAVA_HOME=$(javaPathHelper -h maven)
 
-M2_HOME=%%MAVEN_HOME%%
+M2_HOME=${MAVEN_HOME}
 
 #MAVEN_OPTS=
