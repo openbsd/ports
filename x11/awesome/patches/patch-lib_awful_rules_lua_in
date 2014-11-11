@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_awful_rules_lua_in,v 1.1 2014/11/11 12:20:16 dcoppa Exp $
+
+commit b0ede3108e4e4bb2f917f0c3fe607e86cb534b5a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon May 5 23:12:21 2014 -0400
+
+Add context to request::activate signal
+
+--- lib/awful/rules.lua.in.orig	Fri Apr 11 11:07:10 2014
++++ lib/awful/rules.lua.in	Tue Nov 11 11:51:14 2014
+@@ -237,7 +237,7 @@ function rules.execute(c, props, callbacks)
+     -- Do this at last so we do not erase things done by the focus
+     -- signal.
+     if props.focus and (type(props.focus) ~= "function" or props.focus(c)) then
+-        c:emit_signal('request::activate')
++        c:emit_signal('request::activate',"rules")
+     end
+ end
+ 

@@ -1,0 +1,33 @@
+$OpenBSD: patch-lib_awful_layout_suit_magnifier_lua_in,v 1.1 2014/11/11 12:20:16 dcoppa Exp $
+
+commit 1f431384cbb428d97a6991ba0c59217cbc71b4a6
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Oct 13 15:07:31 2014 -0400
+
+layouts: Allow layouts to be invoked with fake data
+
+This patch allows 2 things to be done:
+
+* Write unit test to validate layouts using fake clients and tags
+* Query the current layout geometry from another tag
+
+The advantages of the former are clear and simple. Those of the later include:
+
+* Creating a screenshot of another layout
+* Display the layout wireframe in the tag list (like KDE2-3, Gnome2)
+* Having and 'ALT-tab' like visual popup for tags
+
+--- lib/awful/layout/suit/magnifier.lua.in.orig	Fri Apr 11 11:07:10 2014
++++ lib/awful/layout/suit/magnifier.lua.in	Tue Nov 11 11:54:30 2014
+@@ -23,8 +23,9 @@ function magnifier.arrange(p)
+     -- Fullscreen?
+     local area = p.workarea
+     local cls = p.clients
+-    local focus = capi.client.focus
+-    local mwfact = tag.getmwfact(tag.selected(p.screen))
++    local focus = p.focus or capi.client.focus
++    local t = p.tag or tag.selected(p.screen)
++    local mwfact = tag.getmwfact(t)
+     local fidx
+ 
+     -- Check that the focused window is on the right screen
