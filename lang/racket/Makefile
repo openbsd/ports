@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/08/19 22:51:20 juanfra Exp $
+# $OpenBSD: Makefile,v 1.19 2014/11/11 23:51:51 juanfra Exp $
 
 BROKEN-hppa =		segfault while racket compiles XFORMS (at xsrc)
 BROKEN-mips64el =	sigbus while racket compiles XFORMS (at xsrc)
@@ -9,14 +9,9 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1
+V =			6.1.1
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-builtpkgs
-
-# Each new version of racket is incompatible with the previous one.
-# Increase always the major number.
-# http://article.gmane.org/gmane.comp.lang.racket.devel/9872
-SHARED_LIBS +=		racket3m	3.0 # 6.1
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -33,6 +28,8 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://pre-release.racket-lang.org/installers/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://pre.racket-lang.org/installers/ \
+			https://www.cs.utah.edu/plt/snapshots/current/installers/ \
+			http://plt.eecs.northwestern.edu/snapshots/current/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
@@ -45,13 +42,12 @@ MODULES +=		converters/libiconv
 # are called by ffi.
 LIB_DEPENDS =		databases/iodbc,-main \
 			devel/libffi>=3.0.9p2 \
-			devel/libunique \
-			x11/gtkglext
+			devel/libunique
 BUILD_DEPENDS =		devel/pango \
 			graphics/jpeg
 RUN_DEPENDS =		devel/desktop-file-utils
 
-WANTLIB += c m pthread ffi iodbc unique-1.0 gtkglext-x11-1.0 gdkglext-x11-1.0
+WANTLIB += c m pthread ffi iodbc unique-1.0
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -61,8 +57,7 @@ NO_TEST =		Yes
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-libffi \
+CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-gracket \
 			--enable-jit \
 			--enable-foreign \
@@ -76,12 +71,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
-
-# Enable Senora GC by default. Racket uses an old version of Boehm GC with some
-# local changes for the first step of the bootstrap. Senora is an alternative,
-# more simple (and slightly more slow) GC. With this enabled, we avoid possible
-# bugs of the old version of Boehm with the modern versions of OpenBSD.
-CONFIGURE_ARGS +=	--enable-sgc
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
