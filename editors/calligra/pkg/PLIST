@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/12 10:44:19 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/11 07:05:08 zhuk Exp $
 @conflict koffice-*
 @bin bin/braindump
 @bin bin/calligra
@@ -1090,7 +1090,6 @@ lib/libkritasketchlib.so
 @lib lib/libplanworkfactory.so.${LIBplanworkfactory_VERSION}
 @lib lib/librcps_plan.so.${LIBrcps_plan_VERSION}
 @lib lib/libwordsprivate.so.${LIBwordsprivate_VERSION}
-share/appdata/
 share/appdata/krita.appdata.xml
 share/applications/calligraactive.desktop
 share/applications/kde4/author.desktop
@@ -5680,12 +5679,12 @@ share/apps/kexi/pics/external-link.png
 share/apps/kexi/pics/kexi-logo-white.png
 share/apps/kexi/pics/kexi-logo.png
 share/apps/kexi/status/
-share/apps/kexi/status/2.8.0/
-share/apps/kexi/status/2.8.0/contribution_details.ui
-share/apps/kexi/status/2.8.0/contribution_help.ui
-share/apps/kexi/status/2.8.0/status.rcc
-share/apps/kexi/status/2.8.0/status.ui
-share/apps/kexi/status/2.8.0/status_strings.ui
+share/apps/kexi/status/2.8.6/
+share/apps/kexi/status/2.8.6/contribution_details.ui
+share/apps/kexi/status/2.8.6/contribution_help.ui
+share/apps/kexi/status/2.8.6/status.rcc
+share/apps/kexi/status/2.8.6/status.ui
+share/apps/kexi/status/2.8.6/status_strings.ui
 share/apps/koproperty/
 share/apps/koproperty/icons/
 share/apps/koproperty/icons/hicolor/
@@ -7241,6 +7240,33 @@ share/kde4/services/ServiceMenus/words_print.desktop
 share/kde4/services/authorpart.desktop
 share/kde4/services/braindump_shape_state.desktop
 share/kde4/services/braindump_shape_web.desktop
+share/kde4/services/calligra/
+share/kde4/services/calligra/kexicsv_importexporthandler.desktop
+share/kde4/services/calligra/kexidb_mysqldriver.desktop
+share/kde4/services/calligra/kexidb_pqxxsqldriver.desktop
+share/kde4/services/calligra/kexidb_sqlite3driver.desktop
+share/kde4/services/calligra/kexidb_sybasedriver.desktop
+share/kde4/services/calligra/kexiformhandler.desktop
+share/kde4/services/calligra/keximigrate_mdb.desktop
+share/kde4/services/calligra/keximigrate_mysql.desktop
+share/kde4/services/calligra/keximigrate_pqxx.desktop
+share/kde4/services/calligra/keximigrate_spreadsheet.desktop
+share/kde4/services/calligra/keximigrate_sybase.desktop
+share/kde4/services/calligra/keximigrate_txt.desktop
+share/kde4/services/calligra/keximigrationhandler.desktop
+share/kde4/services/calligra/kexiqueryhandler.desktop
+share/kde4/services/calligra/kexirelationdesignshape.desktop
+share/kde4/services/calligra/kexireporthandler.desktop
+share/kde4/services/calligra/kexiscripthandler.desktop
+share/kde4/services/calligra/kexitablehandler.desktop
+share/kde4/services/calligra/kformdesigner_containers.desktop
+share/kde4/services/calligra/kformdesigner_kexidbfactory.desktop
+share/kde4/services/calligra/kformdesigner_mapbrowser.desktop
+share/kde4/services/calligra/kformdesigner_stdwidgets.desktop
+share/kde4/services/calligra/kformdesigner_webbrowser.desktop
+share/kde4/services/calligra/koreport_barcodeplugin.desktop
+share/kde4/services/calligra/koreport_mapsplugin.desktop
+share/kde4/services/calligra/koreport_webplugin.desktop
 share/kde4/services/calligra_docker_defaults.desktop
 share/kde4/services/calligra_filter_applixspread2kspread.desktop
 share/kde4/services/calligra_filter_applixword2odt.desktop
@@ -7319,37 +7345,9 @@ share/kde4/services/karbonrefinepathplugin.desktop
 share/kde4/services/karbonroundcornersplugin.desktop
 share/kde4/services/karbontools.desktop
 share/kde4/services/karbonwhirlpinchplugin.desktop
-share/kde4/services/kexi/
-share/kde4/services/kexi/kexicsv_importexporthandler.desktop
-share/kde4/services/kexi/kexiformhandler.desktop
-share/kde4/services/kexi/keximigrationhandler.desktop
-share/kde4/services/kexi/kexiqueryhandler.desktop
-share/kde4/services/kexi/kexireporthandler.desktop
-share/kde4/services/kexi/kexiscripthandler.desktop
-share/kde4/services/kexi/kexitablehandler.desktop
-share/kde4/services/kexidb_mysqldriver.desktop
-share/kde4/services/kexidb_pqxxsqldriver.desktop
-share/kde4/services/kexidb_sqlite3driver.desktop
-share/kde4/services/kexidb_sybasedriver.desktop
-share/kde4/services/keximigrate_mdb.desktop
-share/kde4/services/keximigrate_mysql.desktop
-share/kde4/services/keximigrate_pqxx.desktop
-share/kde4/services/keximigrate_spreadsheet.desktop
-share/kde4/services/keximigrate_sybase.desktop
-share/kde4/services/keximigrate_txt.desktop
-share/kde4/services/kexirelationdesignshape.desktop
-share/kde4/services/kformdesigner/
-share/kde4/services/kformdesigner/kformdesigner_containers.desktop
-share/kde4/services/kformdesigner/kformdesigner_kexidbfactory.desktop
-share/kde4/services/kformdesigner/kformdesigner_mapbrowser.desktop
-share/kde4/services/kformdesigner/kformdesigner_stdwidgets.desktop
-share/kde4/services/kformdesigner/kformdesigner_webbrowser.desktop
 share/kde4/services/kformulapart.desktop
 share/kde4/services/kolcmsengine.desktop
 share/kde4/services/kopabackgroundtool.desktop
-share/kde4/services/koreport_barcodeplugin.desktop
-share/kde4/services/koreport_mapsplugin.desktop
-share/kde4/services/koreport_webplugin.desktop
 share/kde4/services/kpr_pageeffect_barwipe.desktop
 share/kde4/services/kpr_pageeffect_clockwipe.desktop
 share/kde4/services/kpr_pageeffect_edgewipe.desktop

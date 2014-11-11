@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/21 09:02:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/11 07:05:08 zhuk Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
-DISTNAME =	calligra-2.8.5
-REVISION=	0
+DISTNAME =	calligra-2.8.6
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
@@ -162,5 +161,8 @@ CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
+
+# Running D-Bus daemon is required
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
