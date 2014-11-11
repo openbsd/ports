@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.20 2007/04/01 05:58:43 steven Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/11/11 09:28:29 dcoppa Exp $
 @conflict libbt-*
-bin/blackbox
+@bin bin/blackbox
 bin/bsetbg
-bin/bsetroot
-bin/bstyleconvert
+@bin bin/bsetroot
+@bin bin/bstyleconvert
 include/bt/
 include/bt/Application.hh
 include/bt/Bitmap.hh
@@ -25,7 +25,6 @@ include/bt/Util.hh
 include/bt/XDG.hh
 lib/libbt.a
 lib/libbt.la
-lib/pkgconfig/
 lib/pkgconfig/libbt.pc
 @man man/man1/blackbox.1
 @man man/man1/bsetbg.1
