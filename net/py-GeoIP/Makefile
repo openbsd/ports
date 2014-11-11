@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/18 19:24:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/11 15:58:35 benoit Exp $
 
 COMMENT =		GeoIP Python API
 
-MODPY_EGG_VERSION =	1.2.9
+MODPY_EGG_VERSION =	1.3.2
 DISTNAME =		GeoIP-${MODPY_EGG_VERSION}
 PKGNAME =		py-GeoIP-${MODPY_EGG_VERSION}
 CATEGORIES =		net
@@ -19,7 +19,8 @@ WANTLIB += ${MODPY_WANTLIB} GeoIP>=8 pthread
 MASTER_SITES =		${MASTER_SITE_PYPI:=G/GeoIP/}
 
 MODULES =		lang/python
-MODPY_ADJ_FILES =	test*.py
+MODPY_ADJ_FILES =	tests/test*.py
+MODPY_SETUPTOOLS =	Yes
 
 LIB_DEPENDS =		net/GeoIP>=1.4.7
 
@@ -29,13 +30,13 @@ pre-patch:
 	perl -pi -e 's,/usr/local/share/GeoIP,${LOCALSTATEDIR}/db/GeoIP,g' \
 	    ${WRKSRC}/*.py
 
+pre-configure:
+	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' ${WRKSRC}/setup.py
+
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MODPY_ADJ_FILES} ${EXAMPLEDIR}
 
-TEST_DEPENDS =		${BUILD_PKGPATH}
-
-do-test:
-	cd ${WRKSRC}; ${MODPY_BIN} test.py
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

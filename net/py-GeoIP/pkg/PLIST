@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/18 19:24:59 sthen Exp $
-lib/python${MODPY_VERSION}/site-packages/GeoIP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.6 2014/11/11 15:58:35 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/GeoIP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/GeoIP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/GeoIP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/GeoIP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/GeoIP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/GeoIP.so
 share/examples/${MODPY_PY_PREFIX}GeoIP/
-share/examples/${MODPY_PY_PREFIX}GeoIP/test.py
+share/examples/${MODPY_PY_PREFIX}GeoIP/test_charset.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_city.py
-share/examples/${MODPY_PY_PREFIX}GeoIP/test_city_charset.py
+share/examples/${MODPY_PY_PREFIX}GeoIP/test_country.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_domain.py
-share/examples/${MODPY_PY_PREFIX}GeoIP/test_netspeed.py
+share/examples/${MODPY_PY_PREFIX}GeoIP/test_errors.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_netspeedcell.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_org.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_region.py
