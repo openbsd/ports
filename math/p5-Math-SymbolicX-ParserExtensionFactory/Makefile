@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/11 07:15:08 benoit Exp $
 
 COMMENT =	generate Math::Symbolic parser extensions
 
 DISTNAME =	Math-SymbolicX-ParserExtensionFactory-3.02
 CATEGORIES =	math
 HOMEPAGE =	http://search.cpan.org/~smueller/Math-SymbolicX-ParserExtensionFactory/
-MAINTAINER =	Markus Bergkvist <markus.bergkvist@telia.com>
+
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
