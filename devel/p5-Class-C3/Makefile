@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/04/13 01:01:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2014/11/11 09:38:19 benoit Exp $
 
 COMMENT=		pragma to use the C3 method resolution order algorithm
 
 MODULES=		cpan
-DISTNAME=		Class-C3-0.26
+DISTNAME =		Class-C3-0.27
 CATEGORIES=		devel
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
@@ -16,6 +16,8 @@ RUN_DEPENDS=		devel/p5-Algorithm-C3>=0.06 \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 TEST_DEPENDS=		devel/p5-MRO-Compat \
 			devel/p5-Sub-Name
+
+MAKE_ENV +=		TEST_POD=1
 
 CONFIGURE_STYLE=	modinst
 
