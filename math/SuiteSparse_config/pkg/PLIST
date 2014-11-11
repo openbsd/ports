@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/11 11:21:01 pirofti Exp $
+include/SuiteSparse_config.h
