@@ -1,6 +1,6 @@
-$OpenBSD: patch-platform_OpenBSD_sm_mbuf_c,v 1.6 2014/08/23 09:53:18 landry Exp $
---- platform/OpenBSD/sm_mbuf.c.orig	Mon Nov  2 11:29:12 2009
-+++ platform/OpenBSD/sm_mbuf.c	Sat Aug 23 11:51:53 2014
+$OpenBSD: patch-platform_OpenBSD_sm_mbuf_c,v 1.7 2014/11/11 21:48:40 sthen Exp $
+--- platform/OpenBSD/sm_mbuf.c.orig	Mon Nov  2 10:29:12 2009
++++ platform/OpenBSD/sm_mbuf.c	Tue Nov 11 21:47:25 2014
 @@ -32,6 +32,7 @@
  #include <sys/mbuf.h>
  #include <sys/sysctl.h>
@@ -18,3 +18,12 @@ $OpenBSD: patch-platform_OpenBSD_sm_mbuf_c,v 1.6 2014/08/23 09:53:18 landry Exp 
      int mib[4];
      size_t size;
      int i;
+@@ -111,7 +112,7 @@ get_mbuf(char *symon_buf, int maxlen, struct stream *s
+             warning("mbuf(%.200s) failed (sysctl() %.200s)", st->arg, strerror(errno));
+             return (0);
+         }
+-        if (!strcmp(name, "mbpl")) {
++        if (!strcmp(name, "mbpl") || !strcmp(name, "mbufpl")) {
+             bcopy(&pool, &mbpool, sizeof(pool));
+             flag |= (1 << 0);
+         } else if (!strcmp(name, "mclpl")) {
