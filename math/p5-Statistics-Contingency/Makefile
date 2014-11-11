@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/11 16:51:34 benoit Exp $
 
 COMMENT=	calculate precision, recall, F1, accuracy, etc
-DISTNAME=	Statistics-Contingency-0.08
-REVISION=	0
+DISTNAME =	Statistics-Contingency-0.09
 CATEGORIES=	math
 
 # Perl
