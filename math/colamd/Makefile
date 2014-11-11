@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/11/11 19:29:24 pirofti Exp $
 
 COMMENT =	library for column approximate minimum degree ordering
 
-DISTNAME =	COLAMD-2.7.4
+DISTNAME =	COLAMD-2.9.0
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
-SHARED_LIBS +=  colamd	0.0
+SHARED_LIBS +=  colamd	1.0
 CATEGORIES =	math
 
 HOMEPAGE =	http://www.cise.ufl.edu/research/sparse/colamd/
@@ -19,8 +18,8 @@ MASTER_SITES =	${HOMEPAGE}/
 WRKDIST =	${WRKDIR}/COLAMD
 WRKSRC =	${WRKDIST}/Source
 
-BUILD_DEPENDS =	math/ufconfig
-RUN_DEPENDS =	math/ufconfig
+BUILD_DEPENDS =	math/SuiteSparse_config
+RUN_DEPENDS =	math/SuiteSparse_config
 
 MAKE_ENV=	SHLIB_MAJOR=${LIBcolamd_VERSION:R} \
 		SHLIB_MINOR=${LIBcolamd_VERSION:E}
