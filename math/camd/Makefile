@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/11 19:27:09 pirofti Exp $
 
 COMMENT=	constrained approximate minimum degree
 
-VERSION=	2.2.1
+VERSION=	2.4.0
 DISTNAME=	CAMD-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	1
-SHARED_LIBS=	camd	0.0
+
+SHARED_LIBS=	camd	1.0
 
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.cise.ufl.edu/research/sparse/camd/
+
+MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,8 +21,8 @@ MASTER_SITES=	${HOMEPAGE}/
 WRKDIST=	${WRKDIR}/CAMD
 WRKSRC=		${WRKDIST}/Source
 
-BUILD_DEPENDS=	math/ufconfig
-RUN_DEPENDS=	math/ufconfig
+BUILD_DEPENDS=	math/SuiteSparse_config
+RUN_DEPENDS=	math/SuiteSparse_config
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBcamd_VERSION:R} \
