@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2014/05/07 15:42:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.23 2014/11/11 08:29:59 jasper Exp $
 
 COMMENT=	software project management and comprehension tool
 
-V=		3.0.5
+V=		3.2.3
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	http://maven.apache.org/
 
@@ -37,6 +36,8 @@ do-install:
 		tar -C ${PREFIX}/maven -xf -
 	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
 		xargs rm
+	${INSTALL_DATA_DIR} ${SAMPLEDIR}/logging/
+	${INSTALL_DATA} ${WRKSRC}/conf/logging/* ${SAMPLEDIR}/logging/
 	${INSTALL_DATA} ${WRKSRC}/conf/settings.xml ${SAMPLEDIR}/
 	ln -s ${SYSCONFDIR}/maven ${PREFIX}/maven/conf
 	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
