@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.118 2014/09/17 06:42:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2014/11/11 11:22:21 pirofti Exp $
 
      SUBDIR =
      SUBDIR += R
+     SUBDIR += SuiteSparse_config
      SUBDIR += aamath
      SUBDIR += abs
      SUBDIR += amd
