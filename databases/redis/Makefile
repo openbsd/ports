@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.75 2014/11/06 12:52:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.76 2014/11/11 10:12:54 dcoppa Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.8.17
-REVISION =		1
+REVISION =		2
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
@@ -41,7 +41,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Makefile
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/src/redis-sentinel ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis
 	${SUBST_DATA} ${WRKSRC}/redis.conf \
 			${PREFIX}/share/examples/redis/redis.conf
