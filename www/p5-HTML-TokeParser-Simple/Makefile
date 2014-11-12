@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/12 10:53:53 benoit Exp $
 
 COMMENT= 	simple interface to HTML::TokeParser
 
-DISTNAME=	HTML-TokeParser-Simple-3.15
-REVISION=	4
+DISTNAME =	HTML-TokeParser-Simple-3.16
 CATEGORIES=	www
 
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
