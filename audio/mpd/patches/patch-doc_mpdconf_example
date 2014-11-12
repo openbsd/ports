@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.12 2014/05/06 10:49:23 dcoppa Exp $
---- doc/mpdconf.example.orig	Wed Dec 11 20:51:53 2013
-+++ doc/mpdconf.example	Tue Mar 18 22:19:40 2014
+$OpenBSD: patch-doc_mpdconf_example,v 1.13 2014/11/12 08:46:02 dcoppa Exp $
+--- doc/mpdconf.example.orig	Mon Oct 27 09:26:34 2014
++++ doc/mpdconf.example	Wed Nov 12 08:26:18 2014
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -64,12 +64,12 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.12 2014/05/06 10:49:23 dcoppa Exp $
  # And for Unix Socket
  #bind_to_address		"~/.mpd/socket"
  #
-+bind_to_address                 "localhost"
++bind_to_address                 "127.0.0.1"
 +#
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -324,6 +326,14 @@ input {
+@@ -324,6 +326,15 @@ input {
  #	name		"My Null Output"
  #	mixer_type      "none"			# optional
  #}
@@ -80,6 +80,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.12 2014/05/06 10:49:23 dcoppa Exp $
 +	type			"ao"
 +	name			"Libao Audio Device"
 +	mixer_type      	"software"
++	driver			"sndio"
 +}
  #
  # If MPD has been compiled with libsamplerate support, this setting specifies 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.65 2014/11/03 12:12:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.66 2014/11/12 08:46:02 dcoppa Exp $
 
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.19.2
+DISTNAME =		mpd-0.19.3
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -45,6 +45,7 @@ FLAVOR ?=
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
+			--disable-adplug \
 			--disable-alsa \
 			--disable-epoll \
 			--disable-fluidsynth \
@@ -72,8 +73,10 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-twolame-encoder \
 			--disable-upnp \
 			--disable-wavpack \
+			--disable-wildmidi \
 			--enable-ao \
 			--enable-audiofile \
+			--enable-bzip2 \
 			--enable-cdio-paranoia \
 			--enable-curl \
 			--enable-ffmpeg \
@@ -81,8 +84,10 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--enable-mad \
 			--enable-mikmod \
 			--enable-mpc \
+			--enable-opus \
 			--enable-pipe-output \
 			--enable-sndfile \
+			--enable-zlib \
 			--with-pollmethod=poll \
 			--with-zeroconf=no \
 			--without-systemdsystemunitdir
