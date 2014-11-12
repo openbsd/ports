@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/09/16 06:46:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/11/12 07:42:47 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -819,6 +819,7 @@ ${MODRUBY_SITEDIR}/puppet/provider/user/aix.rb
 ${MODRUBY_SITEDIR}/puppet/provider/user/directoryservice.rb
 ${MODRUBY_SITEDIR}/puppet/provider/user/hpux.rb
 ${MODRUBY_SITEDIR}/puppet/provider/user/ldap.rb
+${MODRUBY_SITEDIR}/puppet/provider/user/openbsd.rb
 ${MODRUBY_SITEDIR}/puppet/provider/user/pw.rb
 ${MODRUBY_SITEDIR}/puppet/provider/user/user_role_add.rb
 ${MODRUBY_SITEDIR}/puppet/provider/user/useradd.rb
