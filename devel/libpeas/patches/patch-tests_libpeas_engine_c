@@ -1,28 +1,17 @@
-$OpenBSD: patch-tests_libpeas_engine_c,v 1.3 2014/08/10 11:59:17 jasper Exp $
+$OpenBSD: patch-tests_libpeas_engine_c,v 1.4 2014/11/12 10:47:12 jasper Exp $
 
 Add error messages on OpenBSD to test log hooks
 https://bugzilla.gnome.org/show_bug.cgi?id=727380
 
---- tests/libpeas/engine.c.orig	Fri Aug  1 15:26:46 2014
-+++ tests/libpeas/engine.c	Sun Aug 10 13:51:49 2014
-@@ -248,8 +248,12 @@ test_engine_not_loadable_plugin (PeasEngine *engine)
+--- tests/libpeas/engine.c.orig	Mon Sep 22 15:52:54 2014
++++ tests/libpeas/engine.c	Wed Nov 12 10:22:28 2014
+@@ -248,8 +248,7 @@ test_engine_not_loadable_plugin (PeasEngine *engine)
    GError *error = NULL;
    PeasPluginInfo *info;
  
-+#ifndef __OpenBSD__
-   testing_util_push_log_hook ("*libnot-loadable.so: cannot open shared "
-                               "object file: No such file or directory");
-+#else
-+  testing_util_push_log_hook ("not-loadable: File not found");
-+#endif /* !__OpenBSD__ */
+-  testing_util_push_log_hook ("*libnot-loadable.so: cannot open shared "
+-                              "object file: No such file or directory");
++  testing_util_push_log_hook ("Failed to load module 'not-loadable'*");
    testing_util_push_log_hook ("Error loading plugin 'not-loadable'");
  
    info = peas_engine_get_plugin_info (engine, "not-loadable");
-@@ -387,6 +391,7 @@ test_engine_nonexistent_loader (PeasEngine *engine)
-   PeasPluginInfo *info;
- 
-   testing_util_push_log_hook ("Could not load plugin loader 'does-not-exist'*");
-+  testing_util_push_log_hook ("does-not-existloader: File not found");
- 
-   info = peas_engine_get_plugin_info (engine, "nonexistent-loader");
-   peas_engine_enable_loader (engine, "does-not-exist");
