@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
+# $OpenBSD: gcc4.port.mk,v 1.2 2014/11/12 10:56:59 tobiasu Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -10,7 +10,7 @@ MODGCC4_LANGS ?=
 MODGCC4_LANGS +=	c
 .endif
 
-_MODGCC4_OKAY = c c++ java fortran go
+_MODGCC4_OKAY = c c++ java fortran
 .for _l in ${MODGCC4_LANGS:L}
 .  if !${_MODGCC4_OKAY:M${_l}}
 ERRORS += "Fatal: unknown language ${_l}"

@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/25 09:57:04 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/12 10:56:59 tobiasu Exp $
 
-ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
+BROKEN-arm = needs binutils-2.17
+
+ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64 arm
 DPB_PROPERTIES = parallel
 
 V = 4.9.1
