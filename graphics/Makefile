@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2014/11/07 08:52:25 ratchov Exp $
+# $OpenBSD: Makefile,v 1.379 2014/11/13 20:43:16 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -150,6 +150,7 @@
      SUBDIR += luagd
      SUBDIR += luagd,lua52
      SUBDIR += luvcview
+     SUBDIR += maim
      SUBDIR += makehuman
      SUBDIR += mandelbulber
      SUBDIR += mapivi
