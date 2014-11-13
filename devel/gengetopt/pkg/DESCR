@@ -1,0 +1,7 @@
+gengetopt generates a C function that uses getopt_long function to parse
+the command line options, to validate them and fill a struct.
+
+gengetopt is perfect if you are too lazy to write all stuff required to
+call getopt_long, and when you have a program and wish it took options.
+
+Generated code works if you use GNU Autoconf or GNU Automake.

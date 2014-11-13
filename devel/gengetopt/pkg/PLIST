@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/13 20:39:46 bcallah Exp $
+@bin bin/gengetopt
+@info info/gengetopt.info
+@man man/man1/gengetopt.1
+share/doc/gengetopt/
+share/doc/gengetopt/COPYING
+share/doc/gengetopt/ChangeLog
+share/doc/gengetopt/INSTALL
+share/doc/gengetopt/LICENSE
+share/doc/gengetopt/NEWS
+share/doc/gengetopt/README
+share/doc/gengetopt/THANKS
+share/doc/gengetopt/examples/
+share/doc/gengetopt/examples/README.example
+share/doc/gengetopt/examples/cmdline1.c
+share/doc/gengetopt/examples/cmdline1.h
+share/doc/gengetopt/examples/cmdline2.c
+share/doc/gengetopt/examples/cmdline2.h
+share/doc/gengetopt/examples/main1.cc
+share/doc/gengetopt/examples/main2.c
+share/doc/gengetopt/examples/sample1.ggo
+share/doc/gengetopt/examples/sample2.ggo
+share/doc/gengetopt/examples/test_manual_help.c
+share/doc/gengetopt/examples/test_manual_help_cmd.c
+share/doc/gengetopt/examples/test_manual_help_cmd.ggo
+share/doc/gengetopt/examples/test_manual_help_cmd.h
+share/doc/gengetopt/gengetopt.html
+share/doc/gengetopt/index.html
+share/gengetopt/
+share/gengetopt/getopt.c
+share/gengetopt/getopt1.c
+share/gengetopt/gnugetopt.h
