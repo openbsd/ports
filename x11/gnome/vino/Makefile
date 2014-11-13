@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2014/10/06 09:46:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2014/11/13 17:29:57 ajacoutot Exp $
 
 COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
-GNOME_VERSION=		3.14.0
+GNOME_VERSION=		3.14.1
 
 CATEGORIES=		net
 
