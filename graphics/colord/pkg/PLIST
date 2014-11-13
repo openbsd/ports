@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/04/11 10:48:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/11/13 09:34:38 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -13,6 +13,7 @@
 @bin bin/cd-create-profile
 @bin bin/cd-fix-profile
 @bin bin/cd-iccdump
+@bin bin/cd-it8
 @bin bin/colormgr
 include/colord-1/
 include/colord-1/colord/
@@ -60,6 +61,7 @@ lib/pkgconfig/colord.pc
 @bin libexec/colord-session
 @man man/man1/cd-create-profile.1
 @man man/man1/cd-fix-profile.1
+@man man/man1/cd-it8.1
 @man man/man1/colormgr.1
 share/color/
 share/color/icc/
@@ -100,6 +102,7 @@ share/colord/icons/color-munki-photo-projector.svg
 share/colord/icons/color-munki-photo-screen.svg
 share/colord/icons/color-munki-smile-attach.svg
 share/colord/icons/colorhug-attach.svg
+share/colord/icons/colorhug2-attach.svg
 share/colord/icons/dtp94-attach.svg
 share/colord/icons/hcfr-attach.svg
 share/colord/icons/huey-attach.svg
@@ -202,7 +205,6 @@ share/locale/lv/LC_MESSAGES/colord.mo
 share/locale/ml/LC_MESSAGES/colord.mo
 share/locale/mr/LC_MESSAGES/colord.mo
 share/locale/ms/LC_MESSAGES/colord.mo
-share/locale/nb/LC_MESSAGES/colord.mo
 share/locale/nb_NO/
 share/locale/nb_NO/LC_MESSAGES/
 share/locale/nb_NO/LC_MESSAGES/colord.mo
