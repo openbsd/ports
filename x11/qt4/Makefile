@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.125 2014/11/13 18:33:24 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,6 +24,7 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
+REVISION-main =		0
 
 REVISION-mysql =	0
 
@@ -35,7 +36,7 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtDesigner 7.0 \
 		QtDesignerComponents 7.0 \
 		QtGui 10.1 \
-		QtNetwork 9.1 \
+		QtNetwork 10.0 \
 		QtOpenGL 7.0 \
 		QtSql 8.0 \
 		QtXml 8.0 \
@@ -48,7 +49,7 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtHelp 1.0 \
 		QtXmlPatterns 0.0 \
 		QtScriptTools 0.0 \
-		QtWebKit 3.0 \
+		QtWebKit 4.0 \
 		phonon 4.1 \
 		QtDeclarative 0.0
 
