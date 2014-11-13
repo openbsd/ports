@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.29 2014/11/01 21:09:39 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.30 2014/11/13 19:18:01 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.14.2
@@ -38,6 +38,8 @@ MODKDE4_DEP_DIR =	x11/${MODKDE4_FLAVOR}
 .else
 MODKDE4_DEP_DIR =	x11/kde4
 .endif
+
+MODKDE4_SPEC =		>=${MODKDE4_VERSION},<5
 
 CATEGORIES +=		${MODKDE4_DEP_DIR}
 
