@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/11/10 16:05:17 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2014/11/13 15:04:06 landry Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -37,14 +37,14 @@ BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
 		geo/gdal,-python \
 		databases/py-psycopg2 \
-		devel/desktop-file-utils \
-		editors/py-qscintilla
+		devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/proj \
 		x11/qt4>=4.7.2 \
 		x11/qwt \
 		www/fcgi \
+		editors/py-qscintilla \
 		geo/gdal \
 		geo/geos \
 		geo/spatialite/libspatialite \
