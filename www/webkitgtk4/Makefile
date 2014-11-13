@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/13 08:33:06 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -6,7 +6,7 @@ SHARED_ONLY =		Yes
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.6.2
+V =			2.6.3
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
