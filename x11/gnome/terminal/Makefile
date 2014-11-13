@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.127 2014/10/15 10:54:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2014/11/13 16:32:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.14.1
+GNOME_VERSION=	3.14.2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
