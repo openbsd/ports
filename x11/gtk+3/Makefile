@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2014/10/22 07:22:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2014/11/13 17:25:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 
-GNOME_VERSION=		3.14.4
+GNOME_VERSION=		3.14.5
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
