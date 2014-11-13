@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/10/14 07:26:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/11/13 17:31:33 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -263,6 +263,7 @@ share/help/C/gnome-help/net-install-flash.page
 share/help/C/gnome-help/net-install-moonlight.page
 share/help/C/gnome-help/net-macaddress.page
 share/help/C/gnome-help/net-manual.page
+share/help/C/gnome-help/net-mobile.page
 share/help/C/gnome-help/net-othersconnect.page
 share/help/C/gnome-help/net-othersedit.page
 share/help/C/gnome-help/net-problem.page
@@ -685,6 +686,7 @@ share/help/as/gnome-help/net-install-flash.page
 share/help/as/gnome-help/net-install-moonlight.page
 share/help/as/gnome-help/net-macaddress.page
 share/help/as/gnome-help/net-manual.page
+share/help/as/gnome-help/net-mobile.page
 share/help/as/gnome-help/net-othersconnect.page
 share/help/as/gnome-help/net-othersedit.page
 share/help/as/gnome-help/net-problem.page
@@ -1072,6 +1074,7 @@ share/help/ca/gnome-help/net-install-flash.page
 share/help/ca/gnome-help/net-install-moonlight.page
 share/help/ca/gnome-help/net-macaddress.page
 share/help/ca/gnome-help/net-manual.page
+share/help/ca/gnome-help/net-mobile.page
 share/help/ca/gnome-help/net-othersconnect.page
 share/help/ca/gnome-help/net-othersedit.page
 share/help/ca/gnome-help/net-problem.page
@@ -1459,6 +1462,7 @@ share/help/cs/gnome-help/net-install-flash.page
 share/help/cs/gnome-help/net-install-moonlight.page
 share/help/cs/gnome-help/net-macaddress.page
 share/help/cs/gnome-help/net-manual.page
+share/help/cs/gnome-help/net-mobile.page
 share/help/cs/gnome-help/net-othersconnect.page
 share/help/cs/gnome-help/net-othersedit.page
 share/help/cs/gnome-help/net-problem.page
@@ -1846,6 +1850,7 @@ share/help/de/gnome-help/net-install-flash.page
 share/help/de/gnome-help/net-install-moonlight.page
 share/help/de/gnome-help/net-macaddress.page
 share/help/de/gnome-help/net-manual.page
+share/help/de/gnome-help/net-mobile.page
 share/help/de/gnome-help/net-othersconnect.page
 share/help/de/gnome-help/net-othersedit.page
 share/help/de/gnome-help/net-problem.page
@@ -2233,6 +2238,7 @@ share/help/el/gnome-help/net-install-flash.page
 share/help/el/gnome-help/net-install-moonlight.page
 share/help/el/gnome-help/net-macaddress.page
 share/help/el/gnome-help/net-manual.page
+share/help/el/gnome-help/net-mobile.page
 share/help/el/gnome-help/net-othersconnect.page
 share/help/el/gnome-help/net-othersedit.page
 share/help/el/gnome-help/net-problem.page
@@ -2620,6 +2626,7 @@ share/help/es/gnome-help/net-install-flash.page
 share/help/es/gnome-help/net-install-moonlight.page
 share/help/es/gnome-help/net-macaddress.page
 share/help/es/gnome-help/net-manual.page
+share/help/es/gnome-help/net-mobile.page
 share/help/es/gnome-help/net-othersconnect.page
 share/help/es/gnome-help/net-othersedit.page
 share/help/es/gnome-help/net-problem.page
@@ -3007,6 +3014,7 @@ share/help/fi/gnome-help/net-install-flash.page
 share/help/fi/gnome-help/net-install-moonlight.page
 share/help/fi/gnome-help/net-macaddress.page
 share/help/fi/gnome-help/net-manual.page
+share/help/fi/gnome-help/net-mobile.page
 share/help/fi/gnome-help/net-othersconnect.page
 share/help/fi/gnome-help/net-othersedit.page
 share/help/fi/gnome-help/net-problem.page
@@ -3394,6 +3402,7 @@ share/help/fr/gnome-help/net-install-flash.page
 share/help/fr/gnome-help/net-install-moonlight.page
 share/help/fr/gnome-help/net-macaddress.page
 share/help/fr/gnome-help/net-manual.page
+share/help/fr/gnome-help/net-mobile.page
 share/help/fr/gnome-help/net-othersconnect.page
 share/help/fr/gnome-help/net-othersedit.page
 share/help/fr/gnome-help/net-problem.page
@@ -3781,6 +3790,7 @@ share/help/gl/gnome-help/net-install-flash.page
 share/help/gl/gnome-help/net-install-moonlight.page
 share/help/gl/gnome-help/net-macaddress.page
 share/help/gl/gnome-help/net-manual.page
+share/help/gl/gnome-help/net-mobile.page
 share/help/gl/gnome-help/net-othersconnect.page
 share/help/gl/gnome-help/net-othersedit.page
 share/help/gl/gnome-help/net-problem.page
@@ -4168,6 +4178,7 @@ share/help/gu/gnome-help/net-install-flash.page
 share/help/gu/gnome-help/net-install-moonlight.page
 share/help/gu/gnome-help/net-macaddress.page
 share/help/gu/gnome-help/net-manual.page
+share/help/gu/gnome-help/net-mobile.page
 share/help/gu/gnome-help/net-othersconnect.page
 share/help/gu/gnome-help/net-othersedit.page
 share/help/gu/gnome-help/net-problem.page
@@ -4555,6 +4566,7 @@ share/help/hi/gnome-help/net-install-flash.page
 share/help/hi/gnome-help/net-install-moonlight.page
 share/help/hi/gnome-help/net-macaddress.page
 share/help/hi/gnome-help/net-manual.page
+share/help/hi/gnome-help/net-mobile.page
 share/help/hi/gnome-help/net-othersconnect.page
 share/help/hi/gnome-help/net-othersedit.page
 share/help/hi/gnome-help/net-problem.page
@@ -4942,6 +4954,7 @@ share/help/hu/gnome-help/net-install-flash.page
 share/help/hu/gnome-help/net-install-moonlight.page
 share/help/hu/gnome-help/net-macaddress.page
 share/help/hu/gnome-help/net-manual.page
+share/help/hu/gnome-help/net-mobile.page
 share/help/hu/gnome-help/net-othersconnect.page
 share/help/hu/gnome-help/net-othersedit.page
 share/help/hu/gnome-help/net-problem.page
@@ -5329,6 +5342,7 @@ share/help/id/gnome-help/net-install-flash.page
 share/help/id/gnome-help/net-install-moonlight.page
 share/help/id/gnome-help/net-macaddress.page
 share/help/id/gnome-help/net-manual.page
+share/help/id/gnome-help/net-mobile.page
 share/help/id/gnome-help/net-othersconnect.page
 share/help/id/gnome-help/net-othersedit.page
 share/help/id/gnome-help/net-problem.page
@@ -5716,6 +5730,7 @@ share/help/it/gnome-help/net-install-flash.page
 share/help/it/gnome-help/net-install-moonlight.page
 share/help/it/gnome-help/net-macaddress.page
 share/help/it/gnome-help/net-manual.page
+share/help/it/gnome-help/net-mobile.page
 share/help/it/gnome-help/net-othersconnect.page
 share/help/it/gnome-help/net-othersedit.page
 share/help/it/gnome-help/net-problem.page
@@ -6103,6 +6118,7 @@ share/help/ja/gnome-help/net-install-flash.page
 share/help/ja/gnome-help/net-install-moonlight.page
 share/help/ja/gnome-help/net-macaddress.page
 share/help/ja/gnome-help/net-manual.page
+share/help/ja/gnome-help/net-mobile.page
 share/help/ja/gnome-help/net-othersconnect.page
 share/help/ja/gnome-help/net-othersedit.page
 share/help/ja/gnome-help/net-problem.page
@@ -6490,6 +6506,7 @@ share/help/kn/gnome-help/net-install-flash.page
 share/help/kn/gnome-help/net-install-moonlight.page
 share/help/kn/gnome-help/net-macaddress.page
 share/help/kn/gnome-help/net-manual.page
+share/help/kn/gnome-help/net-mobile.page
 share/help/kn/gnome-help/net-othersconnect.page
 share/help/kn/gnome-help/net-othersedit.page
 share/help/kn/gnome-help/net-problem.page
@@ -6877,6 +6894,7 @@ share/help/lv/gnome-help/net-install-flash.page
 share/help/lv/gnome-help/net-install-moonlight.page
 share/help/lv/gnome-help/net-macaddress.page
 share/help/lv/gnome-help/net-manual.page
+share/help/lv/gnome-help/net-mobile.page
 share/help/lv/gnome-help/net-othersconnect.page
 share/help/lv/gnome-help/net-othersedit.page
 share/help/lv/gnome-help/net-problem.page
@@ -7264,6 +7282,7 @@ share/help/mr/gnome-help/net-install-flash.page
 share/help/mr/gnome-help/net-install-moonlight.page
 share/help/mr/gnome-help/net-macaddress.page
 share/help/mr/gnome-help/net-manual.page
+share/help/mr/gnome-help/net-mobile.page
 share/help/mr/gnome-help/net-othersconnect.page
 share/help/mr/gnome-help/net-othersedit.page
 share/help/mr/gnome-help/net-problem.page
@@ -7651,6 +7670,7 @@ share/help/nl/gnome-help/net-install-flash.page
 share/help/nl/gnome-help/net-install-moonlight.page
 share/help/nl/gnome-help/net-macaddress.page
 share/help/nl/gnome-help/net-manual.page
+share/help/nl/gnome-help/net-mobile.page
 share/help/nl/gnome-help/net-othersconnect.page
 share/help/nl/gnome-help/net-othersedit.page
 share/help/nl/gnome-help/net-problem.page
@@ -8038,6 +8058,7 @@ share/help/pa/gnome-help/net-install-flash.page
 share/help/pa/gnome-help/net-install-moonlight.page
 share/help/pa/gnome-help/net-macaddress.page
 share/help/pa/gnome-help/net-manual.page
+share/help/pa/gnome-help/net-mobile.page
 share/help/pa/gnome-help/net-othersconnect.page
 share/help/pa/gnome-help/net-othersedit.page
 share/help/pa/gnome-help/net-problem.page
@@ -8425,6 +8446,7 @@ share/help/pt_BR/gnome-help/net-install-flash.page
 share/help/pt_BR/gnome-help/net-install-moonlight.page
 share/help/pt_BR/gnome-help/net-macaddress.page
 share/help/pt_BR/gnome-help/net-manual.page
+share/help/pt_BR/gnome-help/net-mobile.page
 share/help/pt_BR/gnome-help/net-othersconnect.page
 share/help/pt_BR/gnome-help/net-othersedit.page
 share/help/pt_BR/gnome-help/net-problem.page
@@ -8812,6 +8834,7 @@ share/help/ru/gnome-help/net-install-flash.page
 share/help/ru/gnome-help/net-install-moonlight.page
 share/help/ru/gnome-help/net-macaddress.page
 share/help/ru/gnome-help/net-manual.page
+share/help/ru/gnome-help/net-mobile.page
 share/help/ru/gnome-help/net-othersconnect.page
 share/help/ru/gnome-help/net-othersedit.page
 share/help/ru/gnome-help/net-problem.page
@@ -9199,6 +9222,7 @@ share/help/sl/gnome-help/net-install-flash.page
 share/help/sl/gnome-help/net-install-moonlight.page
 share/help/sl/gnome-help/net-macaddress.page
 share/help/sl/gnome-help/net-manual.page
+share/help/sl/gnome-help/net-mobile.page
 share/help/sl/gnome-help/net-othersconnect.page
 share/help/sl/gnome-help/net-othersedit.page
 share/help/sl/gnome-help/net-problem.page
@@ -9586,6 +9610,7 @@ share/help/sr/gnome-help/net-install-flash.page
 share/help/sr/gnome-help/net-install-moonlight.page
 share/help/sr/gnome-help/net-macaddress.page
 share/help/sr/gnome-help/net-manual.page
+share/help/sr/gnome-help/net-mobile.page
 share/help/sr/gnome-help/net-othersconnect.page
 share/help/sr/gnome-help/net-othersedit.page
 share/help/sr/gnome-help/net-problem.page
@@ -9973,6 +9998,7 @@ share/help/sr@latin/gnome-help/net-install-flash.page
 share/help/sr@latin/gnome-help/net-install-moonlight.page
 share/help/sr@latin/gnome-help/net-macaddress.page
 share/help/sr@latin/gnome-help/net-manual.page
+share/help/sr@latin/gnome-help/net-mobile.page
 share/help/sr@latin/gnome-help/net-othersconnect.page
 share/help/sr@latin/gnome-help/net-othersedit.page
 share/help/sr@latin/gnome-help/net-problem.page
@@ -10360,6 +10386,7 @@ share/help/sv/gnome-help/net-install-flash.page
 share/help/sv/gnome-help/net-install-moonlight.page
 share/help/sv/gnome-help/net-macaddress.page
 share/help/sv/gnome-help/net-manual.page
+share/help/sv/gnome-help/net-mobile.page
 share/help/sv/gnome-help/net-othersconnect.page
 share/help/sv/gnome-help/net-othersedit.page
 share/help/sv/gnome-help/net-problem.page
@@ -10747,6 +10774,7 @@ share/help/ta/gnome-help/net-install-flash.page
 share/help/ta/gnome-help/net-install-moonlight.page
 share/help/ta/gnome-help/net-macaddress.page
 share/help/ta/gnome-help/net-manual.page
+share/help/ta/gnome-help/net-mobile.page
 share/help/ta/gnome-help/net-othersconnect.page
 share/help/ta/gnome-help/net-othersedit.page
 share/help/ta/gnome-help/net-problem.page
@@ -11134,6 +11162,7 @@ share/help/te/gnome-help/net-install-flash.page
 share/help/te/gnome-help/net-install-moonlight.page
 share/help/te/gnome-help/net-macaddress.page
 share/help/te/gnome-help/net-manual.page
+share/help/te/gnome-help/net-mobile.page
 share/help/te/gnome-help/net-othersconnect.page
 share/help/te/gnome-help/net-othersedit.page
 share/help/te/gnome-help/net-problem.page
@@ -11521,6 +11550,7 @@ share/help/vi/gnome-help/net-install-flash.page
 share/help/vi/gnome-help/net-install-moonlight.page
 share/help/vi/gnome-help/net-macaddress.page
 share/help/vi/gnome-help/net-manual.page
+share/help/vi/gnome-help/net-mobile.page
 share/help/vi/gnome-help/net-othersconnect.page
 share/help/vi/gnome-help/net-othersedit.page
 share/help/vi/gnome-help/net-problem.page
@@ -11908,6 +11938,7 @@ share/help/zh_CN/gnome-help/net-install-flash.page
 share/help/zh_CN/gnome-help/net-install-moonlight.page
 share/help/zh_CN/gnome-help/net-macaddress.page
 share/help/zh_CN/gnome-help/net-manual.page
+share/help/zh_CN/gnome-help/net-mobile.page
 share/help/zh_CN/gnome-help/net-othersconnect.page
 share/help/zh_CN/gnome-help/net-othersedit.page
 share/help/zh_CN/gnome-help/net-problem.page
