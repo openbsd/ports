@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.92 2014/08/12 01:44:08 zhuk Exp $
+# $OpenBSD: portcheck,v 1.93 2014/11/13 15:35:50 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1208,8 +1208,7 @@ check_plist() {
 
 # Checks made:
 #   * devel/gettext and converters/libiconv MODULES are not forgotten.
-#   * lib/qt[34]/, lib/kde/ and lib/kde4/ prefixes not missing where
-#     applicable.
+#   * lib/kde/ and lib/kde4/ prefixes not missing where applicable.
 #   * stdc++ doesn't get into WANTLIB when gcc4.port.mk is used.
 check_wantlib() {
 	local portref="$1"; shift
@@ -1221,8 +1220,6 @@ check_wantlib() {
 
 	local gettext_module=false
 	local iconv_module=false
-	local qt3_module=false
-	local qt4_module=false
 	local kde3_module=false
 	local kde4_module=false
 	local phonon_module=false
@@ -1235,8 +1232,6 @@ check_wantlib() {
 		devel/gettext)		gettext_module=true;;
 		gcc4)			gcc4_module=true;;
 		multimedia/phonon)	phonon_module=true;;
-		x11/qt3)		qt3_module=true;;
-		x11/qt4)		qt4_module=true;;
 		x11/kde)		kde3_module=true;;
 		x11/kde4)		kde4_module=true;;
 	esac; done
@@ -1252,16 +1247,6 @@ check_wantlib() {
 
 		phonon_s?(?(">")=+([0-9])))
 			phonon_s_wantlib=true
-			;;
-
-		@(Qt+([A-Za-z0-9])|phonon)?(?('>')=+([0-9])))
-			err "$portref$v instead of lib/qt4/$v" \
-			    "in WANTLIB"
-			;;
-
-		@(qt-mt|qui|qui-mt)?(?('>')=+([0-9])))
-			err "$portref$v instead of lib/qt3/$v" \
-			    "in WANTLIB"
 			;;
 
 		@(smbclient|wbclient)?(?('>')=+([0-9])))
