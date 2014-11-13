@@ -1,12 +1,12 @@
-$OpenBSD: patch-panels_region_cc-input-chooser_c,v 1.3 2014/10/29 14:48:05 ajacoutot Exp $
+$OpenBSD: patch-panels_region_cc-input-chooser_c,v 1.4 2014/11/13 17:32:17 ajacoutot Exp $
 
 From 880f9f147531e0b21b2566ff96c905dd19ec19dd Mon Sep 17 00:00:00 2001
 From: Rui Matos <tiagomatos@gmail.com>
 Date: Mon, 20 Jan 2014 22:42:56 +0100
 Subject: Use 'UTF-8' instead of 'utf8' as locale codeset suffix
 
---- panels/region/cc-input-chooser.c.orig	Fri Jul 18 16:05:33 2014
-+++ panels/region/cc-input-chooser.c	Mon Oct  6 09:42:44 2014
+--- panels/region/cc-input-chooser.c.orig	Tue Nov 11 17:17:51 2014
++++ panels/region/cc-input-chooser.c	Wed Nov 12 10:00:36 2014
 @@ -897,7 +897,7 @@ get_ibus_locale_infos (GtkWidget *chooser)
            lang_code != NULL &&
            country_code != NULL)
@@ -16,12 +16,15 @@ Subject: Use 'UTF-8' instead of 'utf8' as locale codeset suffix
  
            info = g_hash_table_lookup (priv->locales, locale);
            if (info)
-@@ -1022,7 +1022,7 @@ get_locale_infos (GtkWidget *chooser)
-       if (!gnome_parse_locale (*locale, &lang_code, &country_code, NULL, NULL))
+@@ -1023,9 +1023,9 @@ get_locale_infos (GtkWidget *chooser)
          continue;
  
--      simple_locale = g_strdup_printf ("%s_%s.utf8", lang_code, country_code);
-+      simple_locale = g_strdup_printf ("%s_%s.UTF-8", lang_code, country_code);
+       if (country_code != NULL)
+-	simple_locale = g_strdup_printf ("%s_%s.utf8", lang_code, country_code);
++	simple_locale = g_strdup_printf ("%s_%s.UTF-8", lang_code, country_code);
+       else
+-	simple_locale = g_strdup_printf ("%s.utf8", lang_code);
++	simple_locale = g_strdup_printf ("%s.UTF-8", lang_code);
+ 
        if (g_hash_table_contains (priv->locales, simple_locale))
          {
-           g_free (simple_locale);
