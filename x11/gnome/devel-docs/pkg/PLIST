@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/10/14 07:15:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/11/13 17:31:07 ajacoutot Exp $
 share/help/
 share/help/C/
 share/help/C/accessibility-devel-guide/
@@ -522,6 +522,7 @@ share/help/C/hig/dialogs.page
 share/help/C/hig/drop-down-lists.page
 share/help/C/hig/essentials.page
 share/help/C/hig/figures/
+share/help/C/hig/figures/hig.png
 share/help/C/hig/figures/icons/
 share/help/C/hig/figures/icons/inverting.svg
 share/help/C/hig/figures/icons/palette/
@@ -1863,6 +1864,7 @@ share/help/de/hig/dialogs.page
 share/help/de/hig/drop-down-lists.page
 share/help/de/hig/essentials.page
 share/help/de/hig/figures/
+share/help/de/hig/figures/hig.png
 share/help/de/hig/figures/icons/
 share/help/de/hig/figures/icons/inverting.svg
 share/help/de/hig/figures/icons/palette/
@@ -2559,6 +2561,7 @@ share/help/el/hig/dialogs.page
 share/help/el/hig/drop-down-lists.page
 share/help/el/hig/essentials.page
 share/help/el/hig/figures/
+share/help/el/hig/figures/hig.png
 share/help/el/hig/figures/icons/
 share/help/el/hig/figures/icons/inverting.svg
 share/help/el/hig/figures/icons/palette/
@@ -3255,6 +3258,7 @@ share/help/es/hig/dialogs.page
 share/help/es/hig/drop-down-lists.page
 share/help/es/hig/essentials.page
 share/help/es/hig/figures/
+share/help/es/hig/figures/hig.png
 share/help/es/hig/figures/icons/
 share/help/es/hig/figures/icons/inverting.svg
 share/help/es/hig/figures/icons/palette/
