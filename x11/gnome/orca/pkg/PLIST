@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/10/05 13:40:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/11/13 17:28:10 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -580,6 +580,8 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}structural_navigation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}structural_navigation.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}tutorial_generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/${MODPY_PYCACHE}tutorial_generator.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/bookmarks.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/braille_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/formatting.py
@@ -588,6 +590,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/structural_navigation.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/tutorial_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/J2SE-access-bridge/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/J2SE-access-bridge/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/J2SE-access-bridge/${MODPY_PYCACHE}/
