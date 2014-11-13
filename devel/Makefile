@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1273 2014/11/09 19:51:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1274 2014/11/13 20:40:12 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -119,6 +119,7 @@
      SUBDIR += gconf2
      SUBDIR += gdb
      SUBDIR += geany
+     SUBDIR += gengetopt
      SUBDIR += geotiff
      SUBDIR += gettext
      SUBDIR += gflags
