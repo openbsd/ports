@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/10/08 13:43:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2014/11/13 17:29:13 ajacoutot Exp $
 
 # XXX should RUN_DEPENDS on dleyna-renderer; not ported (signalfd)
 
@@ -7,8 +7,7 @@ TRACKER_API=		1.0
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
-GNOME_VERSION=		3.14.0
-REVISION=		0
+GNOME_VERSION=		3.14.2
 
 CATEGORIES=		graphics
 
@@ -25,7 +24,7 @@ WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += grilo-0.2 gthread-2.0 gtk-3 harfbuzz icudata icui18n
 WANTLIB += icuuc idn json-glib-1.0 kvm lcms2 m mediaart-1.0 nspr4
 WANTLIB += nss3 oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs lzma
 WANTLIB += rest-0.7 rsvg-2 smime3 softokn3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ssl3 uuid xcb xcb-render xcb-shm xml2 z
 WANTLIB += tracker-control-${TRACKER_API}
