@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/25 14:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/13 17:29:29 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.14.1
-REVISION=		0
+GNOME_VERSION=		3.14.2.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +23,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png polkit-gobject-1 pthread pthread-stubs pwquality
 WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB += telepathy-glib webkitgtk-3.0 webp xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z
+WANTLIB += xml2 xslt z dbus-glib-1 lzma
 
 MODULES=		devel/dconf \
 			devel/gettext \
