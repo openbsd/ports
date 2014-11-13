@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2014/10/15 10:00:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.92 2014/11/13 16:32:38 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		3.14.1
+GNOME_VERSION=		3.14.2
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
