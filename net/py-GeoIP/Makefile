@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/11 15:58:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/13 12:29:01 sthen Exp $
 
 COMMENT =		GeoIP Python API
 
@@ -19,7 +19,7 @@ WANTLIB += ${MODPY_WANTLIB} GeoIP>=8 pthread
 MASTER_SITES =		${MASTER_SITE_PYPI:=G/GeoIP/}
 
 MODULES =		lang/python
-MODPY_ADJ_FILES =	tests/test*.py
+MODPY_ADJ_FILES =	examples/*.py
 MODPY_SETUPTOOLS =	Yes
 
 LIB_DEPENDS =		net/GeoIP>=1.4.7
@@ -28,15 +28,16 @@ EXAMPLEDIR =		${PREFIX}/share/examples/py-GeoIP
 
 pre-patch:
 	perl -pi -e 's,/usr/local/share/GeoIP,${LOCALSTATEDIR}/db/GeoIP,g' \
-	    ${WRKSRC}/*.py
+	    ${WRKSRC}/examples/*.py
 
-pre-configure:
-	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' ${WRKSRC}/setup.py
+CFLAGS += -I${LOCALBASE}/include
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MODPY_ADJ_FILES} ${EXAMPLEDIR}
 
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-nose
+# needs commercial GeoIP database copied/linked into ${WRKSRC}/tests/data
+TEST_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>
