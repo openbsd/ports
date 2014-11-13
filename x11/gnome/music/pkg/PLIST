@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/10/06 09:38:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/13 17:33:28 ajacoutot Exp $
 bin/gnome-music
 lib/gnome-music/
 lib/gnome-music/girepository-1.0/
@@ -60,7 +60,7 @@ share/help/
 share/help/C/
 share/help/C/gnome-music/
 share/help/C/gnome-music/figures/
-share/help/C/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/C/gnome-music/figures/gnome-music-3.12.png
 share/help/C/gnome-music/index.page
 share/help/C/gnome-music/introduction.page
 share/help/C/gnome-music/legal.xml
@@ -76,7 +76,7 @@ share/help/C/gnome-music/search.page
 share/help/cs/
 share/help/cs/gnome-music/
 share/help/cs/gnome-music/figures/
-share/help/cs/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/cs/gnome-music/figures/gnome-music-3.12.png
 share/help/cs/gnome-music/index.page
 share/help/cs/gnome-music/introduction.page
 share/help/cs/gnome-music/legal.xml
@@ -89,10 +89,26 @@ share/help/cs/gnome-music/playlist-remove-songs.page
 share/help/cs/gnome-music/playlist-repeat.page
 share/help/cs/gnome-music/playlist-shuffle.page
 share/help/cs/gnome-music/search.page
+share/help/de/
+share/help/de/gnome-music/
+share/help/de/gnome-music/figures/
+share/help/de/gnome-music/figures/gnome-music-3.12.png
+share/help/de/gnome-music/index.page
+share/help/de/gnome-music/introduction.page
+share/help/de/gnome-music/legal.xml
+share/help/de/gnome-music/play-music.page
+share/help/de/gnome-music/playlist-create-albums.page
+share/help/de/gnome-music/playlist-create-artists.page
+share/help/de/gnome-music/playlist-create-songs.page
+share/help/de/gnome-music/playlist-delete.page
+share/help/de/gnome-music/playlist-remove-songs.page
+share/help/de/gnome-music/playlist-repeat.page
+share/help/de/gnome-music/playlist-shuffle.page
+share/help/de/gnome-music/search.page
 share/help/el/
 share/help/el/gnome-music/
 share/help/el/gnome-music/figures/
-share/help/el/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/el/gnome-music/figures/gnome-music-3.12.png
 share/help/el/gnome-music/index.page
 share/help/el/gnome-music/introduction.page
 share/help/el/gnome-music/legal.xml
@@ -108,7 +124,7 @@ share/help/el/gnome-music/search.page
 share/help/es/
 share/help/es/gnome-music/
 share/help/es/gnome-music/figures/
-share/help/es/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/es/gnome-music/figures/gnome-music-3.12.png
 share/help/es/gnome-music/index.page
 share/help/es/gnome-music/introduction.page
 share/help/es/gnome-music/legal.xml
@@ -124,7 +140,7 @@ share/help/es/gnome-music/search.page
 share/help/fr/
 share/help/fr/gnome-music/
 share/help/fr/gnome-music/figures/
-share/help/fr/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/fr/gnome-music/figures/gnome-music-3.12.png
 share/help/fr/gnome-music/index.page
 share/help/fr/gnome-music/introduction.page
 share/help/fr/gnome-music/legal.xml
@@ -140,7 +156,7 @@ share/help/fr/gnome-music/search.page
 share/help/gl/
 share/help/gl/gnome-music/
 share/help/gl/gnome-music/figures/
-share/help/gl/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/gl/gnome-music/figures/gnome-music-3.12.png
 share/help/gl/gnome-music/index.page
 share/help/gl/gnome-music/introduction.page
 share/help/gl/gnome-music/legal.xml
@@ -156,7 +172,7 @@ share/help/gl/gnome-music/search.page
 share/help/hu/
 share/help/hu/gnome-music/
 share/help/hu/gnome-music/figures/
-share/help/hu/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/hu/gnome-music/figures/gnome-music-3.12.png
 share/help/hu/gnome-music/index.page
 share/help/hu/gnome-music/introduction.page
 share/help/hu/gnome-music/legal.xml
@@ -172,7 +188,7 @@ share/help/hu/gnome-music/search.page
 share/help/ko/
 share/help/ko/gnome-music/
 share/help/ko/gnome-music/figures/
-share/help/ko/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/ko/gnome-music/figures/gnome-music-3.12.png
 share/help/ko/gnome-music/index.page
 share/help/ko/gnome-music/introduction.page
 share/help/ko/gnome-music/legal.xml
@@ -188,7 +204,7 @@ share/help/ko/gnome-music/search.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-music/
 share/help/pt_BR/gnome-music/figures/
-share/help/pt_BR/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/pt_BR/gnome-music/figures/gnome-music-3.12.png
 share/help/pt_BR/gnome-music/index.page
 share/help/pt_BR/gnome-music/introduction.page
 share/help/pt_BR/gnome-music/legal.xml
@@ -204,7 +220,7 @@ share/help/pt_BR/gnome-music/search.page
 share/help/ro/
 share/help/ro/gnome-music/
 share/help/ro/gnome-music/figures/
-share/help/ro/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/ro/gnome-music/figures/gnome-music-3.12.png
 share/help/ro/gnome-music/index.page
 share/help/ro/gnome-music/introduction.page
 share/help/ro/gnome-music/legal.xml
@@ -257,6 +273,7 @@ share/locale/eu/LC_MESSAGES/gnome-music.mo
 share/locale/fa/LC_MESSAGES/gnome-music.mo
 share/locale/fi/LC_MESSAGES/gnome-music.mo
 share/locale/fr/LC_MESSAGES/gnome-music.mo
+share/locale/fur/LC_MESSAGES/gnome-music.mo
 share/locale/ga/LC_MESSAGES/gnome-music.mo
 share/locale/gl/LC_MESSAGES/gnome-music.mo
 share/locale/he/LC_MESSAGES/gnome-music.mo
