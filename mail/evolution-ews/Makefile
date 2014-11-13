@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2014/10/25 14:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2014/11/13 17:27:07 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -8,8 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.12.7
-REVISION=		0
+GNOME_VERSION=		3.12.8
 
 CATEGORIES=		mail
 
@@ -39,7 +38,7 @@ WANTLIB += m mspack nspr4 nss3 nssutil3 ogg orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png pthread pthread-stubs secret-1 smime3 softokn3
 WANTLIB += soup-2.4 sqlite3 ssl3 stdc++ vorbis vorbisfile webkitgtk-3.0
-WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z gbm
+WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z gbm lzma
 
 MODULES=		devel/gettext \
 			x11/gnome
