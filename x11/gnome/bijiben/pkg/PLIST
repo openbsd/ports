@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/15 13:34:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/11/13 18:26:52 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
-share/appdata/
 share/appdata/bijiben.appdata.xml
 share/applications/bijiben.desktop
 share/bijiben/
