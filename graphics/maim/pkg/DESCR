@@ -1,0 +1,12 @@
+maim (Make Image) is a utility that takes screenshots of your desktop using
+imlib2. It's meant to overcome shortcomings of scrot and performs better
+in several ways.
+
+Features:
+* Allows you to take a screenshot of your desktop and save it in any format.
+* Allows you to take a screenshot of a predetermined region or window of
+  your desktop.
+* If slop is installed, it can be used for selecting a region to screenshot.
+* Allows you to blend the system cursor into screenshots.
+* Allows you to mask off-screen pixels to be black and transparent in
+  screenshots. (Great for people who use an uneven multi-monitor setup!)
