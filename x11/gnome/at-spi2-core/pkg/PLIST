@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/10/01 08:41:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/11/13 17:30:16 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -75,6 +75,7 @@ share/gtk-doc/html/libatspi/ch01.html
 share/gtk-doc/html/libatspi/home.png
 share/gtk-doc/html/libatspi/index.html
 share/gtk-doc/html/libatspi/index.sgml
+share/gtk-doc/html/libatspi/left-insensitive.png
 share/gtk-doc/html/libatspi/left.png
 share/gtk-doc/html/libatspi/libatspi-AtspiApplication.html
 share/gtk-doc/html/libatspi/libatspi-atspi-action.html
@@ -90,14 +91,17 @@ share/gtk-doc/html/libatspi/libatspi-atspi-misc-private.html
 share/gtk-doc/html/libatspi/libatspi-atspi-misc.html
 share/gtk-doc/html/libatspi/libatspi-atspi-registry.html
 share/gtk-doc/html/libatspi/libatspi-atspi-selection.html
+share/gtk-doc/html/libatspi/libatspi-atspi-table-cell.html
 share/gtk-doc/html/libatspi/libatspi-atspi-table.html
 share/gtk-doc/html/libatspi/libatspi-atspi-text.html
 share/gtk-doc/html/libatspi/libatspi-atspi-types.html
 share/gtk-doc/html/libatspi/libatspi-atspi-value.html
 share/gtk-doc/html/libatspi/libatspi.devhelp2
 share/gtk-doc/html/libatspi/object-tree.html
+share/gtk-doc/html/libatspi/right-insensitive.png
 share/gtk-doc/html/libatspi/right.png
 share/gtk-doc/html/libatspi/style.css
+share/gtk-doc/html/libatspi/up-insensitive.png
 share/gtk-doc/html/libatspi/up.png
 share/locale/an/
 share/locale/an/LC_MESSAGES/
