@@ -1,7 +1,7 @@
-$OpenBSD: patch-sslsplit_1,v 1.2 2014/09/02 19:45:53 sthen Exp $
---- sslsplit.1.orig	Wed Jan 15 18:07:07 2014
-+++ sslsplit.1	Tue Sep  2 20:39:50 2014
-@@ -231,7 +231,7 @@ Drop privileges after opening sockets and files by set
+$OpenBSD: patch-sslsplit_1,v 1.3 2014/11/13 22:39:58 sthen Exp $
+--- sslsplit.1.orig	Mon Nov  3 18:42:24 2014
++++ sslsplit.1	Thu Nov 13 22:37:30 2014
+@@ -240,7 +240,7 @@ Drop privileges after opening sockets and files by set
  effective and stored user IDs to \fIuser\fP and loading the appropriate
  primary and ancillary groups.  If \fB-u\fP is not given, SSLsplit will drop
  privileges to the stored UID if EUID != UID (setuid bit scenario), or to
@@ -9,8 +9,8 @@ $OpenBSD: patch-sslsplit_1,v 1.2 2014/09/02 19:45:53 sthen Exp $
 +\fB_sslsplit\fP if running with full \fBroot\fP privileges (EUID == UID == 0)
  and \fB-S\fP is not used.
  .TP
- .B \-V
-@@ -337,6 +337,19 @@ First in IPFW, then in pf \fBdivert-to\fP syntax:
+ .B \-m
+@@ -369,6 +369,19 @@ First in IPFW, then in pf \fBdivert-to\fP syntax:
  \fBipfw add fwd       ::1,10443 tcp from 2001:db8::/64 to any 443\fP
  \fBipfw add fwd 127.0.0.1,10080 tcp from 192.0.2.0/24  to any  80\fP
  \fBipfw add fwd 127.0.0.1,10443 tcp from 192.0.2.0/24  to any 443\fP
