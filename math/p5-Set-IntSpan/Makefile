@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/11/13 20:12:25 benoit Exp $
 
 COMMENT=	manage sets of integers
 
 MODULES=	cpan
-DISTNAME=	Set-IntSpan-1.13
-REVISION=	0
+DISTNAME =	Set-IntSpan-1.19
 CATEGORIES=	math
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 .include <bsd.port.mk>
