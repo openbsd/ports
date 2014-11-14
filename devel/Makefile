@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1274 2014/11/13 20:40:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1275 2014/11/14 22:29:26 rpe Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1419,6 +1419,7 @@
      SUBDIR += spice-protocol
      SUBDIR += spidermonkey
      SUBDIR += splint
+     SUBDIR += src
      SUBDIR += srecord
      SUBDIR += startup-notification
      SUBDIR += stfl
