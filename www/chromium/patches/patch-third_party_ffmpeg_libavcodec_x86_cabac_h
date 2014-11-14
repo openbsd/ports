@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_cabac_h,v 1.4 2014/10/25 14:27:00 robert Exp $
---- third_party/ffmpeg/libavcodec/x86/cabac.h.orig.port	Sat Oct 25 18:12:49 2014
-+++ third_party/ffmpeg/libavcodec/x86/cabac.h	Sat Oct 25 18:12:02 2014
-@@ -30,7 +30,7 @@
+$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_cabac_h,v 1.5 2014/11/14 21:04:36 robert Exp $
+--- third_party/ffmpeg/libavcodec/x86/cabac.h.orig.port	Thu Nov 13 23:02:42 2014
++++ third_party/ffmpeg/libavcodec/x86/cabac.h	Fri Nov 14 22:03:05 2014
+@@ -29,7 +29,7 @@
  
  #if   (defined(__i386) && defined(__clang__) && (__clang_major__<2 || (__clang_major__==2 && __clang_minor__<10)))\
     || (                  !defined(__clang__) && defined(__llvm__) && __GNUC__==4 && __GNUC_MINOR__==2 && __GNUC_PATCHLEVEL__<=1)\

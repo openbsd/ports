@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_common_gypi,v 1.27 2014/10/13 06:49:19 robert Exp $
---- build/common.gypi.orig.port	Thu Oct  2 19:39:45 2014
-+++ build/common.gypi	Sat Oct 11 09:51:07 2014
+$OpenBSD: patch-build_common_gypi,v 1.28 2014/11/14 21:04:36 robert Exp $
+--- build/common.gypi.orig.port	Thu Nov 13 23:01:51 2014
++++ build/common.gypi	Fri Nov 14 22:03:05 2014
 @@ -91,7 +91,7 @@
  
            'conditions': [
@@ -52,7 +52,7 @@ $OpenBSD: patch-build_common_gypi,v 1.27 2014/10/13 06:49:19 robert Exp $
      ['os_posix==1 and OS!="mac" and OS!="ios"', {
        'target_defaults': {
          # Enable -Werror by default, but put it in a variable so it can
-@@ -5547,8 +5555,8 @@
+@@ -5550,8 +5558,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [
