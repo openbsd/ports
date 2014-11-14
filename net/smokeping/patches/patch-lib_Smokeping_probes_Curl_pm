@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Smokeping_probes_Curl_pm,v 1.1 2014/11/14 17:07:24 sthen Exp $
+--- lib/Smokeping/probes/Curl.pm.orig	Fri Nov 14 17:02:57 2014
++++ lib/Smokeping/probes/Curl.pm	Fri Nov 14 17:03:04 2014
+@@ -18,7 +18,7 @@ use strict;
+ use base qw(Smokeping::probes::basefork);
+ use Carp;
+ 
+-my $DEFAULTBIN = "/usr/bin/curl";
++my $DEFAULTBIN = "/usr/local/bin/curl";
+ 
+ sub pod_hash {
+     return {

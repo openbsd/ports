@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Smokeping_probes_SipSak_pm,v 1.1 2014/11/14 17:07:24 sthen Exp $
+--- lib/Smokeping/probes/SipSak.pm.orig	Fri Nov 14 17:02:57 2014
++++ lib/Smokeping/probes/SipSak.pm	Fri Nov 14 17:03:38 2014
+@@ -100,7 +100,7 @@ sub probevars {
+     return $class->_makevars($h, {
+         binary => {
+             _doc => "The location of your echoping binary.",
+-            _default => '/usr/bin/sipsak',
++            _default => '/usr/local/bin/sipsak',
+             _sub => sub {
+                 my $val = shift;
+                 -x $val or return "ERROR: binary '$val' is not executable";

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2014/11/12 12:19:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2014/11/14 17:07:23 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
 DISTNAME=	smokeping-2.6.11
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net
 
@@ -48,6 +48,7 @@ MODPERL_ADJ_FILES= bin/smokeinfo bin/smokeping bin/smokeping_cgi bin/tSmoke
 pre-configure:
 	@cd ${WRKSRC} && ${SUBST_CMD} \
 	    etc/config.dist.in bin/smokeping bin/smokeping_cgi bin/tSmoke
+	perl -pi -e s,/usr/local,${LOCALBASE}, ${WRKSRC}/lib/Smokeping/probes/*.pm
 
 post-install:
 	-mv ${PREFIX}/share/examples/smokeping/examples/* \
