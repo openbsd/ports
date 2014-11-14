@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/25 01:11:26 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/11/14 13:56:43 benoit Exp $
 bin/pyro-es
 bin/pyro-esd
 bin/pyro-genguid
@@ -8,7 +8,11 @@ bin/pyro-nsd
 bin/pyro-wxnsc
 bin/pyro-xnsc
 lib/python${MODPY_VERSION}/site-packages/Pyro/
-lib/python${MODPY_VERSION}/site-packages/Pyro-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Pyro-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Pyro-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Pyro-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Pyro-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Pyro-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Clients.py
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Clients.pyc
@@ -105,7 +109,6 @@ share/doc/py-pyro/7-features.html
 share/doc/py-pyro/8-example.html
 share/doc/py-pyro/9-security.html
 share/doc/py-pyro/LICENSE
-share/doc/py-pyro/PyroManual.html
 share/doc/py-pyro/index.html
 share/doc/py-pyro/pyro-large.png
 share/doc/py-pyro/pyromanual.css
