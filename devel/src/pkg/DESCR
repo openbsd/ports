@@ -1,0 +1,8 @@
+SRC (Simple Revision Control) is RCS, reloaded.
+
+It remains determinedly file-oriented and doesn't even track the
+committer of a change (because that's always you), but incorporates
+the design and user-interface lessons of modern systems.  It features
+sequential revision numbers, lockless operation, embedded command
+help, and a command set that will seem familiar to users of Subversion,
+Mercurial, and Git.
