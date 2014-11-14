@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2014/10/31 23:06:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2014/11/14 07:20:39 ajacoutot Exp $
 
 TRACKER_API=	1.0
 
@@ -7,15 +7,14 @@ SHARED_ONLY=	Yes
 COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
-GNOME_VERSION=	3.14.1
-REVISION=	1
+GNOME_VERSION=	3.14.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
-WANTLIB += atspi cairo cairo-gobject crypto curl dbus-1
+WANTLIB += atspi cairo cairo-gobject crypto curl dbus-1 lzma
 WANTLIB += enchant evdocument3 evview3 expat ffi fontconfig freetype
 WANTLIB += gbm gck-1 gcr-base-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gmodule-2.0
