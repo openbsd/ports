@@ -1,0 +1,40 @@
+$OpenBSD: patch-lib_Class_Date_pm,v 1.1 2014/11/14 02:00:22 bluhm Exp $
+--- lib/Class/Date.pm.orig	Mon May  5 04:20:17 2014
++++ lib/Class/Date.pm	Thu Nov 13 23:13:02 2014
+@@ -14,7 +14,6 @@ use vars qw(
+ use Carp;
+ 
+ use Exporter;
+-use DynaLoader;
+ use Time::Local;
+ use Class::Date::Const;
+ use Scalar::Util qw(blessed);
+@@ -32,17 +31,13 @@ BEGIN { 
+         *timegm = *Time::Local::timegm;
+     }
+ 
+-    @ISA=qw(DynaLoader Exporter);
++    @ISA=qw(Exporter);
+     %EXPORT_TAGS = ( errors => $Class::Date::Const::EXPORT_TAGS{errors});
+     @EXPORT_OK = (qw( date localdate gmdate now @ERROR_MESSAGES), 
+         @{$EXPORT_TAGS{errors}});
+ 
+     our $VERSION = '1.1.15';
+-    eval { Class::Date->bootstrap($VERSION); };
+-    if ($@) {
+-        warn "Cannot find the XS part of Class::Date, \n".
+-            "   using strftime, tzset and tzname from POSIX module.\n"
+-                if $WARNINGS;
++    {
+         require POSIX;
+         *strftime_xs = *POSIX::strftime;
+         *tzset_xs = *POSIX::tzset;
+@@ -59,7 +54,7 @@ $DATE_FORMAT="%Y-%m-%d %H:%M:%S";
+ 
+ sub _set_tz { my ($tz) = @_;
+     my $lasttz = $ENV{TZ};
+-    if (!defined $tz || $tz eq $NOTZ_TIMEZONE) {
++    if (!defined $tz) {
+         # warn "_set_tz: deleting TZ\n";
+         delete $ENV{TZ};
+         Env::C::unsetenv('TZ') if exists $INC{"Env/C.pm"};

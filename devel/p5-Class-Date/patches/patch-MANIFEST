@@ -1,0 +1,9 @@
+$OpenBSD: patch-MANIFEST,v 1.1 2014/11/14 02:00:22 bluhm Exp $
+--- MANIFEST.orig	Mon May  5 05:20:32 2014
++++ MANIFEST	Mon Nov 10 00:07:10 2014
+@@ -1,5 +1,4 @@
+ Changes
+-Date.xs
+ lib/Class/Date.pm
+ lib/Class/Date.pod
+ lib/Class/Date/Const.pm

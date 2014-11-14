@@ -1,18 +1,22 @@
-# $OpenBSD: Makefile,v 1.30 2014/06/14 23:24:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2014/11/14 02:00:22 bluhm Exp $
 
-SHARED_ONLY=	Yes
+COMMENT =		module for easy date and time manipulation
 
-COMMENT=	module for easy date and time manipulation
+DISTNAME =		Class-Date-1.1.15
 
-MODULES=	cpan
-DISTNAME=	Class-Date-1.1.9
-REVISION=	4
-CATEGORIES=	devel
+CATEGORIES =		devel
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   Yes
+# Perl
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+MODULES =		cpan
+
+# In Date.xs the tm_zone field is not set so the test t/50_timezone.t
+# fails.  Instead of implementing strftime_xs locally, use the POSIX
+# module which has the propper fixes in Perl_my_strftime().
+post-patch:
+	rm ${WRKDIST}/Date.xs
 
 .include <bsd.port.mk>
