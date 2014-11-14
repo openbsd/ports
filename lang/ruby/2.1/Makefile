@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 04:53:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/11/14 17:37:52 jeremy Exp $
 
 BROKEN-hppa =		miniruby abort trap when generating rdoc
 BROKEN-alpha =		miniruby abort trap when generating rdoc
@@ -9,7 +9,7 @@ COMMENT-gdbm =		gdbm interface for ruby
 COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
-VERSION =		2.1.4
+VERSION =		2.1.5
 RUBYLIBREV =		2.1
 DISTNAME =		ruby-${VERSION}
 
