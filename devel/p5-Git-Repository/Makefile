@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/28 19:53:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/14 13:40:30 benoit Exp $
 
 COMMENT = 	Perl interface to Git repositories
 
 MODULES =	cpan
-DISTNAME =	Git-Repository-1.311
+DISTNAME =	Git-Repository-1.312
 CATEGORIES =	devel
+
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
