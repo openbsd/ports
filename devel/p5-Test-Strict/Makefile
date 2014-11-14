@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/13 14:56:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/14 08:31:12 benoit Exp $
 
 
 COMMENT =	check syntax, presence of use strict; and test coverage
 
 MODULES =	cpan
-DISTNAME =	Test-Strict-0.22
+DISTNAME =	Test-Strict-0.26
 CATEGORIES =	devel
 
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
