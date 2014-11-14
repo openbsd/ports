@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2014/10/19 23:14:24 brad Exp $
+# $OpenBSD: Makefile,v 1.243 2014/11/14 06:18:42 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
-V =			20140824
+V =			20141103
 FFMPEG_V =		20141010
 
 SUBST_VARS += 		PREFIX CONFDIR
@@ -15,7 +15,6 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
@@ -26,9 +25,9 @@ HOMEPAGE =		http://www.mplayerhq.hu/
 PERMIT_PACKAGE_CDROM =		patents
 PERMIT_PACKAGE_FTP =		Yes
 
-WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
+WANTLIB =	EGL GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
-		crypto dv dvdnavmini dvdread enca fontconfig freetype \
+		crypto dv dvdnav dvdread enca fontconfig freetype \
 		fribidi jpeg m mng mp3lame ncurses png postproc pthread \
 		SDL sndio stdc++ swscale gif util x264>=5 xvidcore z
 
@@ -112,8 +111,6 @@ CONFIGURE_ARGS += --disable-alsa \
 		--disable-select \
 		--disable-libcdio \
 		--disable-libmpeg2-internal \
-		--disable-dvdread-internal \
-		--disable-libdvdcss-internal \
 		--disable-gui \
 		--disable-ffmpeg_a	# link FFmpeg .so (graphics/ffmpeg)
 

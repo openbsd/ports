@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
---- configure.orig	Sun Aug 24 20:39:15 2014
-+++ configure	Sun Aug 24 20:52:56 2014
-@@ -1513,39 +1513,39 @@ echo configuration: $configuration > "$TMPLOG"
+$OpenBSD: patch-configure,v 1.76 2014/11/14 06:18:42 brad Exp $
+--- configure.orig	Mon Nov  3 01:29:00 2014
++++ configure	Mon Nov  3 01:34:51 2014
+@@ -1498,39 +1498,39 @@ echo configuration: $configuration > "$TMPLOG"
  echo >> "$TMPLOG"
  
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
  list_subparts() {
    test ! -e ffmpeg/libav${3} && return 1
    pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
-@@ -2400,7 +2400,7 @@ case "$host_arch" in
+@@ -2392,7 +2392,7 @@ case "$host_arch" in
      arch='sparc'
      iproc='sparc'
      if test "$host_arch" = "sparc64" ; then
@@ -82,7 +82,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
        proc='ultrasparc'
        def_fast_64bit='#define HAVE_FAST_64BIT 1'
      elif sunos ; then
-@@ -2736,7 +2736,7 @@ cat > $TMPC << EOF
+@@ -2735,7 +2735,7 @@ cat > $TMPC << EOF
  int ff_extern;
  EOF
  cc_check -c || die "Symbol mangling check failed."
@@ -91,7 +91,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
  extern_prefix=${sym%%ff_extern*}
  def_extern_asm="#define EXTERN_ASM $extern_prefix"
  def_extern_prefix="#define EXTERN_PREFIX \"$extern_prefix\""
-@@ -2864,7 +2864,7 @@ elif test $relocatable = "yes" ; then
+@@ -2863,7 +2863,7 @@ elif test $relocatable = "yes" ; then
  fi
  echores $relocatable
  
@@ -100,7 +100,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
    # Checking assembler (_as) compatibility...
    # Added workaround for older as that reads from stdin by default - atmos
    as_version=$(echo '' | $_as -version 2>&1 | sed -n 's/^.*assembler \(version \)*\([0-9.]*\).*$/\2/p')
-@@ -6213,7 +6213,7 @@ echocheck "cdparanoia"
+@@ -6165,7 +6165,7 @@ echocheck "cdparanoia"
  if test "$_cdparanoia" = auto ; then
      _cdparanoia=no
      for inc_tmp in "" "-I/usr/include/cdda" "-I/usr/local/include/cdda" ; do
@@ -109,7 +109,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
          _cdparanoia=yes && extra_cflags="$extra_cflags $inc_tmp" && break
      done
  fi
-@@ -8169,6 +8169,7 @@ extra_ldflags="$extra_ldflags $libm"
+@@ -8071,6 +8071,7 @@ extra_ldflags="$extra_ldflags $libm"
  # XML documentation tests
  echocheck "XML catalogs"
  for try_catalog in \
@@ -117,7 +117,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
    /etc/sgml/catalog \
    /usr/share/xml/docbook/*/catalog.xml \
    /opt/local/share/xml/docbook-xml/*/catalog.xml \
-@@ -8196,6 +8197,7 @@ fi
+@@ -8098,6 +8099,7 @@ fi
  
  echocheck "XML chunked stylesheet"
  for try_chunk_xsl in \
@@ -125,7 +125,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
    /usr/share/xml/docbook/*/html/chunk.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/chunk.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/chunk.xsl \
-@@ -8221,6 +8223,7 @@ fi
+@@ -8123,6 +8125,7 @@ fi
  
  echocheck "XML monolithic stylesheet"
  for try_docbook_xsl in \
@@ -133,7 +133,7 @@ $OpenBSD: patch-configure,v 1.75 2014/09/03 06:43:28 brad Exp $
    /usr/share/xml/docbook/*/html/docbook.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/docbook.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/docbook.xsl \
-@@ -8274,6 +8277,7 @@ EOF
+@@ -8176,6 +8179,7 @@ EOF
  echocheck "XML DTD"
  #FIXME: This should prefer higher version numbers, not the other way around ..
  for try_dtd in \
