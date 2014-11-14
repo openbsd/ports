@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2014/11/07 15:18:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.49 2014/11/14 17:40:42 jeremy Exp $
 
 BROKEN-alpha =		miniruby abort trap when generating rdoc
 
@@ -9,7 +9,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		1.9.3
-PATCHLEVEL =		550
+PATCHLEVEL =		551
 RUBYLIBREV =		1.9.1
 
 SHARED_LIBS =		ruby19 1.1
