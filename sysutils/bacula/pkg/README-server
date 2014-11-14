@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.13 2014/11/04 16:46:03 ajacoutot Exp $
+$OpenBSD: README-server,v 1.14 2014/11/14 08:26:50 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -37,7 +37,7 @@ you can create the 'bacula' user like this:
 Creating the database and tables:
     $ cd ${TRUEPREFIX}/libexec/bacula
     $ ./create_bacula_database -U bacula
-    $ ./make_bacula_tables -U bacula
+    $ ./make_bacula_tables postgresql -U bacula
     $ ./grant_bacula_privileges -U bacula
 
 MariaDB
@@ -46,7 +46,7 @@ MariaDB
 Creating the DB, table and bacula user.
     $ cd ${TRUEPREFIX}/libexec/bacula
     $ ./create_bacula_database -u root -p
-    $ ./make_bacula_tables -u root -p
+    $ ./make_bacula_tables mysql -u root -p
     $ ./grant_bacula_privileges -u root -p
 
 Setting up the bacula DB user password.
@@ -59,7 +59,7 @@ SQLite3
 
 Creating the DB and tables (default to ${LOCALSTATEDIR}/bacula.db).
     $ cd ${TRUEPREFIX}/libexec/bacula
-    $ sudo -u _bacula ./make_bacula_tables
+    $ sudo -u _bacula ./make_bacula_tables sqlite3
 
 Device permissions
 ==================

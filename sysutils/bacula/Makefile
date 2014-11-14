@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2014/11/04 16:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2014/11/14 08:26:50 jasper Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -21,7 +21,7 @@ PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
 
-REVISION-server=	1
+REVISION-server=	2
 REVISION-mysql=		0
 
 CATEGORIES=		sysutils
