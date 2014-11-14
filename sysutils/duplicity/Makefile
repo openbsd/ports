@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2014/11/01 10:28:15 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2014/11/14 07:49:33 brad Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.6.24
+MODPY_EGG_VERSION = 0.6.25
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
@@ -16,7 +16,7 @@ MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS =     Yes
+MODPY_SETUPTOOLS =	Yes
 
 WANTLIB +=	pthread rsync ${MODPY_WANTLIB}
 

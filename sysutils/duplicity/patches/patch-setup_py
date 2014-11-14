@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.5 2012/02/19 17:49:53 ajacoutot Exp $
---- setup.py.orig	Fri Nov 25 20:20:20 2011
-+++ setup.py	Thu Feb 16 14:06:06 2012
-@@ -42,17 +42,9 @@ if os.name == 'posix':
+$OpenBSD: patch-setup_py,v 1.6 2014/11/14 07:49:33 brad Exp $
+--- setup.py.orig	Fri May  9 09:27:41 2014
++++ setup.py	Sat Aug  9 00:18:15 2014
+@@ -45,17 +45,9 @@ if os.name == 'posix':
          incdir_list = [os.path.join(LIBRSYNC_DIR, 'include')]
          libdir_list = [os.path.join(LIBRSYNC_DIR, 'lib')]
  
@@ -19,4 +19,4 @@ $OpenBSD: patch-setup_py,v 1.5 2012/02/19 17:49:53 ajacoutot Exp $
 -                'CHANGELOG']),
                ]
  
- assert os.path.exists("po"), "Missing 'po' directory."
+ top_dir = os.path.dirname(os.path.abspath(__file__))
