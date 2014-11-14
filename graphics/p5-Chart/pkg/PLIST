@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/04/30 03:05:00 djm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/14 15:08:18 benoit Exp $
 ${P5SITE}/Chart/
 ${P5SITE}/Chart.pod
 ${P5SITE}/Chart/Bars.pm
 ${P5SITE}/Chart/Base.pm
+${P5SITE}/Chart/BrushStyles.pm
 ${P5SITE}/Chart/Composite.pm
+${P5SITE}/Chart/Constants.pm
 ${P5SITE}/Chart/Direction.pm
 ${P5SITE}/Chart/ErrorBars.pm
 ${P5SITE}/Chart/HorizontalBars.pm
