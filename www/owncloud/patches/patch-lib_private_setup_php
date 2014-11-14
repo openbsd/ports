@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_private_setup_php,v 1.2 2014/06/29 17:08:56 ajacoutot Exp $
---- lib/private/setup.php.orig	Tue Jun 24 17:10:43 2014
-+++ lib/private/setup.php	Sun Jun 29 19:03:36 2014
-@@ -72,7 +72,7 @@ class OC_Setup {
+$OpenBSD: patch-lib_private_setup_php,v 1.3 2014/11/14 07:44:04 ajacoutot Exp $
+--- lib/private/setup.php.orig	Mon Nov 10 17:18:34 2014
++++ lib/private/setup.php	Fri Nov 14 08:36:14 2014
+@@ -182,7 +182,7 @@ class OC_Setup {
  
  		//write the config file
  		OC_Config::setValue('trusted_domains', $trustedDomains);
 -		OC_Config::setValue('datadirectory', $datadir);
 +		OC_Config::setValue('datadirectory', '/owncloud-data');
+ 		OC_Config::setValue('overwrite.cli.url', \OC_Request::serverProtocol() . '://' . \OC_Request::serverHost() . OC::$WEBROOT);
  		OC_Config::setValue('dbtype', $dbtype);
  		OC_Config::setValue('version', implode('.', OC_Util::getVersion()));
- 		try {
