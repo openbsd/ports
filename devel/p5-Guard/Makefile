@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/14 23:24:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/14 13:37:36 benoit Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	scope guards, lighter alternative
 
 MODULES =	cpan
-DISTNAME =	Guard-1.021
-REVISION =	1
+DISTNAME =	Guard-1.022
 CATEGORIES =	devel
 CPAN_AUTHOR = 	MLEHMANN
 
