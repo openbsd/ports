@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.14 2014/11/14 08:26:50 jasper Exp $
+$OpenBSD: README-server,v 1.15 2014/11/14 08:39:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -27,7 +27,6 @@ RDBMS like PostgreSQL or MariaDB.
 
 PostgreSQL
 ----------
-
 Assuming you have an administrative account named `postgres',
 you can create the 'bacula' user like this:
 
@@ -36,18 +35,17 @@ you can create the 'bacula' user like this:
 
 Creating the database and tables:
     $ cd ${TRUEPREFIX}/libexec/bacula
-    $ ./create_bacula_database -U bacula
-    $ ./make_bacula_tables postgresql -U bacula
-    $ ./grant_bacula_privileges -U bacula
+    $ ./create_postgresql_database -U bacula
+    $ ./make_postgresql_tables postgresql -U bacula
+    $ ./grant_postgresql_privileges -U bacula
 
 MariaDB
 -------
-
 Creating the DB, table and bacula user.
     $ cd ${TRUEPREFIX}/libexec/bacula
-    $ ./create_bacula_database -u root -p
-    $ ./make_bacula_tables mysql -u root -p
-    $ ./grant_bacula_privileges -u root -p
+    $ ./create_mysql_database -u root -p
+    $ ./make_mysql_tables -u root -p
+    $ ./grant_mysql_privileges -u root -p
 
 Setting up the bacula DB user password.
     $ mysql -u root -p bacula
@@ -56,10 +54,9 @@ Setting up the bacula DB user password.
 
 SQLite3
 -------
-
 Creating the DB and tables (default to ${LOCALSTATEDIR}/bacula.db).
     $ cd ${TRUEPREFIX}/libexec/bacula
-    $ sudo -u _bacula ./make_bacula_tables sqlite3
+    $ sudo -u _bacula ./make_sqlite3_tables
 
 Device permissions
 ==================
