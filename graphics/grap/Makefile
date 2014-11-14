@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/22 06:49:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/14 08:20:26 benoit Exp $
 
 COMMENT =	language for typesetting graphs
 
-DISTNAME =	grap-1.44
+DISTNAME =	grap-1.45
 CATEGORIES =	textproc graphics
 
 HOMEPAGE =	http://lunabase.org/~faber/Vault/software/grap/
