@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1 2011/11/08 23:40:05 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2014/11/14 17:51:42 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.8,<1.9
 share/ri/${REV}/system/ACL/
@@ -4105,7 +4105,6 @@ share/ri/${REV}/system/REXML/Document/name-i.yaml
 share/ri/${REV}/system/REXML/Document/new-c.yaml
 share/ri/${REV}/system/REXML/Document/node_type-i.yaml
 share/ri/${REV}/system/REXML/Document/parse_stream-c.yaml
-share/ri/${REV}/system/REXML/Document/record_entity_expansion%21-i.yaml
 share/ri/${REV}/system/REXML/Document/record_entity_expansion-i.yaml
 share/ri/${REV}/system/REXML/Document/root-i.yaml
 share/ri/${REV}/system/REXML/Document/stand_alone%3f-i.yaml
