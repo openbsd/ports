@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/14 13:53:12 benoit Exp $
 
 COMMENT=	lexically scoped subroutine wrappers
 
 MODULES=	cpan
-DISTNAME=	Hook-LexWrap-0.24
+DISTNAME=	Hook-LexWrap-0.25
 CATEGORIES=	devel
 
 # perl
