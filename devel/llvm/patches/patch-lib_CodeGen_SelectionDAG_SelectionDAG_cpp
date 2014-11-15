@@ -1,0 +1,49 @@
+$OpenBSD: patch-lib_CodeGen_SelectionDAG_SelectionDAG_cpp,v 1.1 2014/11/15 03:26:40 brad Exp $
+
+r221709
+Totally forget deallocated SDNodes in SDDbgInfo.
+
+What would happen before that commit is that the SDDbgValues associated with
+a deallocated SDNode would be marked Invalidated, but SDDbgInfo would keep
+a map entry keyed by the SDNode pointer pointing to this list of invalidated
+SDDbgNodes. As the memory gets reused, the list might get wrongly associated
+with another new SDNode. As the SDDbgValues are cloned when they are transfered,
+this can lead to an exponential number of SDDbgValues being produced during
+DAGCombine like in http://llvm.org/bugs/show_bug.cgi?id=20893
+
+Note that the previous behavior wasn't really buggy as the invalidation made
+sure that the SDDbgValues won't be used. This commit can be considered a
+memory optimization and as such is really hard to validate in a unit-test.
+
+--- lib/CodeGen/SelectionDAG/SelectionDAG.cpp.orig	Fri Nov 14 21:02:43 2014
++++ lib/CodeGen/SelectionDAG/SelectionDAG.cpp	Fri Nov 14 21:08:05 2014
+@@ -642,6 +642,15 @@ void SelectionDAG::DeleteNodeNotInCSEMaps(SDNode *N) {
+   DeallocateNode(N);
+ }
+ 
++void SDDbgInfo::erase(const SDNode *Node) {
++  DbgValMapType::iterator I = DbgValMap.find(Node);
++  if (I == DbgValMap.end())
++    return;
++  for (unsigned J = 0, N = I->second.size(); J != N; ++J)
++    I->second[J]->setIsInvalidated();
++  DbgValMap.erase(I);
++}
++
+ void SelectionDAG::DeallocateNode(SDNode *N) {
+   if (N->OperandsNeedDelete)
+     delete[] N->OperandList;
+@@ -652,10 +661,9 @@ void SelectionDAG::DeallocateNode(SDNode *N) {
+ 
+   NodeAllocator.Deallocate(AllNodes.remove(N));
+ 
+-  // If any of the SDDbgValue nodes refer to this SDNode, invalidate them.
+-  ArrayRef<SDDbgValue*> DbgVals = DbgInfo->getSDDbgValues(N);
+-  for (unsigned i = 0, e = DbgVals.size(); i != e; ++i)
+-    DbgVals[i]->setIsInvalidated();
++  // If any of the SDDbgValue nodes refer to this SDNode, invalidate
++  // them and forget about that node.
++  DbgInfo->erase(N);
+ }
+ 
+ /// RemoveNodeFromCSEMaps - Take the specified node out of the CSE map that

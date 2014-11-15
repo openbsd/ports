@@ -1,0 +1,30 @@
+$OpenBSD: patch-include_llvm_CodeGen_SelectionDAG_h,v 1.1 2014/11/15 03:26:40 brad Exp $
+
+r221709  
+Totally forget deallocated SDNodes in SDDbgInfo.
+
+What would happen before that commit is that the SDDbgValues associated with
+a deallocated SDNode would be marked Invalidated, but SDDbgInfo would keep
+a map entry keyed by the SDNode pointer pointing to this list of invalidated
+SDDbgNodes. As the memory gets reused, the list might get wrongly associated
+with another new SDNode. As the SDDbgValues are cloned when they are transfered,
+this can lead to an exponential number of SDDbgValues being produced during
+DAGCombine like in http://llvm.org/bugs/show_bug.cgi?id=20893
+
+Note that the previous behavior wasn't really buggy as the invalidation made
+sure that the SDDbgValues won't be used. This commit can be considered a
+memory optimization and as such is really hard to validate in a unit-test.
+
+--- include/llvm/CodeGen/SelectionDAG.h.orig	Fri Nov 14 21:08:36 2014
++++ include/llvm/CodeGen/SelectionDAG.h	Fri Nov 14 21:09:49 2014
+@@ -126,6 +126,10 @@ class SDDbgInfo { (public)
+       DbgValMap[Node].push_back(V);
+   }
+ 
++  /// \brief Invalidate all DbgValues attached to the node and remove
++  /// it from the Node-to-DbgValues map.
++  void erase(const SDNode *Node);
++
+   void clear() {
+     DbgValMap.clear();
+     DbgValues.clear();
