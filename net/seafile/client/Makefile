@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/15 16:34:36 kirby Exp $
 
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
-GH_COMMIT = 		ba9601b42423e642779dda9540c14874c174220a
-REVISION = 		0
+GH_COMMIT = 		e54d6b666744ee1afd8291c756273d522de4dc5f
 
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtWebKit
-WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns c ccnet crypto gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 intl jansson m pthread seafile searpc
-WANTLIB += sqlite3 ssl stdc++
+WANTLIB += QtDBus QtGui QtNetwork QtWebKit QtXml QtXmlPatterns
+WANTLIB += c ccnet crypto gio-2.0 glib-2.0 gobject-2.0 intl jansson
+WANTLIB += m pthread seafile searpc sqlite3 ssl stdc++
 
 MODULES =		devel/cmake devel/gettext x11/qt4
 LIB_DEPENDS =		net/seafile/seafile

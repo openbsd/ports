@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/15 16:34:36 kirby Exp $
 
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
-GH_COMMIT = 		dd3f1fab491dfcec8b8ca30dbcc75b890cb3529a
+GH_COMMIT = 		13630d608da7528cbda151ddcc9e65b0984439e4
 
 SHARED_LIBS =		ccnet 0.0
 
@@ -36,14 +36,6 @@ AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
 MODPY_ADJ_FILES = 	tools/ccnet-admin.py
-
-post-extract:
-	cd ${WRKSRC} && perl -pi -e 's,-levent ,\@LIBEVENT_LIBS\@ ,g' \
-		lib/Makefile.am \
-		net/cluster/Makefile.am \
-		net/daemon/Makefile.am \
-		net/server/Makefile.am
-
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
