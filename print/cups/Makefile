@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.187 2014/10/08 12:06:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2014/11/15 10:22:23 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		1.7.5
+VERSION=		2.0.1
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
 
-REVISION-main=		2
-
 CATEGORIES=		print sysutils
 
 # config-scripts/cups-sharedlibs.m4
-SHARED_LIBS+=	cupsimage	5.0 # so.2
-SHARED_LIBS+=	cups		6.1 # so.2
-SHARED_LIBS+=	cupscgi		1.0 # so.1
-SHARED_LIBS+=	cupsmime	1.0 # so.1
-SHARED_LIBS+=	cupsppdc	1.0 # so.1
+SHARED_LIBS+=  cupsimage       5.1 # so.2
+SHARED_LIBS+=  cups            6.2 # so.2
+SHARED_LIBS+=  cupscgi         1.1 # so.1
+SHARED_LIBS+=  cupsmime        1.1 # so.1
+SHARED_LIBS+=  cupsppdc        1.1 # so.1
 
 HOMEPAGE=		http://www.cups.org/
 
@@ -28,8 +26,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avahi-client avahi-common crypto m pthread ssl stdc++
-WANTLIB += z
+WANTLIB += avahi-client avahi-common gnutls m pthread stdc++ z
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
@@ -48,7 +45,8 @@ BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
 # bootstrap prevents a cyclic dep: gtk+{2,3}->cups->avahi->gtk+{2,3}
-LIB_DEPENDS-libs=	net/avahi,no_gui,no_mono,no_qt3,no_qt4,bootstrap
+LIB_DEPENDS-libs=	net/avahi,no_gui,no_mono,no_qt3,no_qt4,bootstrap \
+			security/gnutls
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${VERSION} \
 			devel/libusb1
@@ -74,15 +72,15 @@ FAKE_FLAGS=		BUILDROOT=${WRKINST} \
 			MENUDIR=${PREFIX}/share/applications \
 			SERVERROOT=${WRKINST}${PREFIX}/share/examples/cups
 
-AUTOCONF_VERSION= 	2.68
-AUTOMAKE_VERSION= 	1.9
+AUTOCONF_VERSION= 	2.69
+AUTOMAKE_VERSION= 	1.14
 
 USE_GMAKE=		Yes
 
 MAKE_ENV=		${LIBS_ENV}
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
 			${LIBS_ENV}
 
 CONFIGURE_STYLE=	gnu
@@ -91,14 +89,12 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-cups-group=_cups \
 			--with-cups-user=_cups \
 			--with-system-groups=wheel \
-			--with-optim="${CFLAGS}" \
 			--with-dbusdir=${SYSCONFDIR}/dbus-1 \
 			--with-printcap=${SYSCONFDIR}/cups/printcap \
-			--with-smbconfigfile="samba:///${SYSCONFDIR}/samba/smb.conf" \
-			--enable-openssl \
+			--with-smbconfigfile="samba://${SYSCONFDIR}/samba/smb.conf" \
 			--disable-cdsassl \
-			--disable-gnutls \
 			--disable-pam \
+			--disable-systemd \
 			--without-java \
 			--without-php \
 			--without-python
@@ -121,8 +117,8 @@ post-install:
 # printers.conf and subscriptions.conf in the PLIST
 	touch ${PREFIX}/share/examples/cups/empty.conf
 # Remove files now part of cups-filters
-	rm ${PREFIX}/share/cups/banners/*
-	rm ${PREFIX}/share/cups/data/testprint
+	rm -f ${PREFIX}/share/cups/banners/*
+	rm -f ${PREFIX}/share/cups/data/testprint
 
 # Remove desktop file and icons; we don't really need them (it's just a
 # launcher for http://localhost:631 and we may actually want to
@@ -130,5 +126,8 @@ post-install:
 # loop: cups->gtk+2,-guic->cups
 	rm -rf ${PREFIX}/share/icons
 	rm -rf ${PREFIX}/share/applications
+
+# Remove systemV files
+	rm -rf ${WRKINST}/etc/rc.d/rc*.d
 
 .include <bsd.port.mk>

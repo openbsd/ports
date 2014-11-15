@@ -1,10 +1,10 @@
-$OpenBSD: patch-backend_ipp_c,v 1.8 2014/05/28 08:04:47 ajacoutot Exp $
+$OpenBSD: patch-backend_ipp_c,v 1.9 2014/11/15 10:22:23 ajacoutot Exp $
 
 Increase timeout for the PPD file to be copied so that it doesn't fail
 on low-end configurations.
 
---- backend/ipp.c.orig	Thu May 22 15:59:21 2014
-+++ backend/ipp.c	Wed May 28 09:00:35 2014
+--- backend/ipp.c.orig	Fri Jul 18 16:26:14 2014
++++ backend/ipp.c	Fri Oct  3 15:35:39 2014
 @@ -680,7 +680,7 @@ main(int  argc,				/* I - Number of command-line args 
  
    http = httpConnect2(hostname, port, addrlist, AF_UNSPEC, cupsEncryption(), 1,
@@ -12,9 +12,9 @@ on low-end configurations.
 -  httpSetTimeout(http, 30.0, timeout_cb, NULL);
 +  httpSetTimeout(http, 90.0, timeout_cb, NULL);
  
-  /*
-   * See if the printer supports SNMP...
-@@ -2252,7 +2252,7 @@ monitor_printer(
+   if (httpIsEncrypted(http))
+   {
+@@ -2303,7 +2303,7 @@ monitor_printer(
  
    http = httpConnect2(monitor->hostname, monitor->port, NULL, AF_UNSPEC,
                        monitor->encryption, 1, 0, NULL);
