@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/15 23:32:57 sthen Exp $
 
 COMMENT=	Framework for caching of arbitrary data for PHP
 
-DISTNAME=	Cache-1.5.4
-REVISION =	3
+DISTNAME=	Cache-1.5.6
 CATEGORIES=	devel
 
 MODULES=	www/pear
