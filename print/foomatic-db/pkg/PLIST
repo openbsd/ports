@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/08/21 07:43:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/11/15 10:03:36 ajacoutot Exp $
+share/cups/
+share/cups/model/
+share/cups/model/foomatic-db-ppds
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/oldprinterids
