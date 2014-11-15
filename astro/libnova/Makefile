@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/04 16:06:27 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/15 09:27:41 benoit Exp $
 
 COMMENT =	astronomic computations as a library
 
-DISTNAME =	libnova-0.13.0
-REVISION=	0
-SHARED_LIBS +=	nova	1.0	# .0.0
+DISTNAME =	libnova-0.15.0
+SHARED_LIBS +=	nova	1.1	# unknown
 CATEGORIES =	astro devel
 
 HOMEPAGE =	http://libnova.sourceforge.net/
