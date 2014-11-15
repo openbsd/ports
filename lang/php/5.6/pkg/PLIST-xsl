@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-xsl,v 1.1 2014/11/15 13:43:02 robert Exp $
+@option no-default-conflict
+@conflict php-xsl->=5.6,<5.7
+@conflict php5-xsl->=5.2
+lib/php-${PV}/modules/xsl.so
+share/examples/php-${PV}/xsl.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/xsl.ini

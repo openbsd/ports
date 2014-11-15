@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-zip,v 1.1 2014/11/15 13:43:02 robert Exp $
+@option no-default-conflict
+@conflict php-zip->=5.6,<5.7
+@conflict pecl-zip-*
+@pkgpath archivers/pecl-zip
+lib/php-${PV}/modules/zip.so
+share/examples/php-${PV}/zip.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/zip.ini

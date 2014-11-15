@@ -1,0 +1,13 @@
+$OpenBSD: patch-main_php_h,v 1.1 2014/11/15 13:43:01 robert Exp $
+--- main/php.h.orig.port	Wed Nov 12 14:52:21 2014
++++ main/php.h	Sat Nov 15 10:45:12 2014
+@@ -146,7 +146,9 @@ END_EXTERN_C()
+ # if PHP_WIN32
+ typedef int socklen_t;
+ # else
++#   if !defined(__OpenBSD__)
+ typedef unsigned int socklen_t;
++#   endif
+ # endif
+ #endif
+ 

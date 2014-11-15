@@ -1,0 +1,25 @@
+$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.1 2014/11/15 13:43:01 robert Exp $
+--- sapi/cgi/cgi_main.c.orig.port	Wed Nov 12 14:52:21 2014
++++ sapi/cgi/cgi_main.c	Sat Nov 15 10:45:12 2014
+@@ -1744,6 +1744,7 @@ int main(int argc, char *argv[])
+ 	char *orig_optarg = php_optarg;
+ 	char *script_file = NULL;
+ 	int ini_entries_len = 0;
++	char *ini;
+ 	/* end of temporary locals */
+ 
+ #ifdef ZTS
+@@ -1798,7 +1799,12 @@ int main(int argc, char *argv[])
+ 
+ 	sapi_startup(&cgi_sapi_module);
+ 	fastcgi = fcgi_is_fastcgi();
+-	cgi_sapi_module.php_ini_path_override = NULL;
++
++	if ((ini = getenv("PHP_INI_PATH"))) {
++		cgi_sapi_module.php_ini_path_override = ini;
++	} else {
++		cgi_sapi_module.php_ini_path_override = NULL;
++	}
+ 
+ #ifdef PHP_WIN32
+ 	_fmode = _O_BINARY; /* sets default for file streams to binary */
