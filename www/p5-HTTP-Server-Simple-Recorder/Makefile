@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/15 16:39:06 benoit Exp $
 
 COMMENT= 	record communication with an HTTP::Server::Simple
 
 MODULES=	cpan
 
-DISTNAME=	HTTP-Server-Simple-Recorder-0.02
-REVISION=	0
+DISTNAME =	HTTP-Server-Simple-Recorder-0.03
 CATEGORIES=	www
 USE_GROFF =	Yes
 
