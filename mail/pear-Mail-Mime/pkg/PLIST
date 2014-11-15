@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/04/19 14:24:32 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/11/15 22:17:33 sthen Exp $
 @group daemon
 lib/
 lib/php/
-pear/data/Mail_Mime/
-pear/data/Mail_Mime/xmail.dtd
-pear/data/Mail_Mime/xmail.xsl
 pear/doc/
 pear/doc/Mail_Mime/
 pear/doc/Mail_Mime/scripts/
@@ -23,17 +20,27 @@ pear/tests/Mail_Mime/tests/sleep_wakeup_EOL-bug3488-part1.phpt
 pear/tests/Mail_Mime/tests/sleep_wakeup_EOL-bug3488-part2.phpt
 pear/tests/Mail_Mime/tests/test_Bug_10596_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_10816_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_10999_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_11381.phpt
 pear/tests/Mail_Mime/tests/test_Bug_11731.phpt
+pear/tests/Mail_Mime/tests/test_Bug_12165.phpt
+pear/tests/Mail_Mime/tests/test_Bug_12385_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_12411.phpt
+pear/tests/Mail_Mime/tests/test_Bug_12466.phpt
+pear/tests/Mail_Mime/tests/test_Bug_13032.phpt
 pear/tests/Mail_Mime/tests/test_Bug_13444.phpt
 pear/tests/Mail_Mime/tests/test_Bug_13962.phpt
 pear/tests/Mail_Mime/tests/test_Bug_14529.phpt
 pear/tests/Mail_Mime/tests/test_Bug_14779.phpt
 pear/tests/Mail_Mime/tests/test_Bug_14780.phpt
 pear/tests/Mail_Mime/tests/test_Bug_15320.phpt
+pear/tests/Mail_Mime/tests/test_Bug_16539.phpt
 pear/tests/Mail_Mime/tests/test_Bug_17025.phpt
 pear/tests/Mail_Mime/tests/test_Bug_17175.phpt
 pear/tests/Mail_Mime/tests/test_Bug_18083.phpt
+pear/tests/Mail_Mime/tests/test_Bug_19497.phpt
+pear/tests/Mail_Mime/tests/test_Bug_20226.phpt
+pear/tests/Mail_Mime/tests/test_Bug_20273.phpt
 pear/tests/Mail_Mime/tests/test_Bug_3513_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_3513_2.phpt
 pear/tests/Mail_Mime/tests/test_Bug_3513_3.phpt
