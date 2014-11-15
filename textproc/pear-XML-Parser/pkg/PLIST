@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/22 22:48:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/15 23:39:29 sthen Exp $
 @group daemon
 lib/
 lib/php/
@@ -7,6 +7,7 @@ pear/doc/XML_Parser/
 pear/doc/XML_Parser/examples/
 pear/doc/XML_Parser/examples/xml_parser_file.php
 pear/doc/XML_Parser/examples/xml_parser_file.xml
+pear/doc/XML_Parser/examples/xml_parser_funcmode.php
 pear/doc/XML_Parser/examples/xml_parser_handler.php
 pear/doc/XML_Parser/examples/xml_parser_simple1.php
 pear/doc/XML_Parser/examples/xml_parser_simple1.xml
@@ -24,6 +25,12 @@ pear/tests/XML_Parser/tests/001.phpt
 pear/tests/XML_Parser/tests/002.phpt
 pear/tests/XML_Parser/tests/003.phpt
 pear/tests/XML_Parser/tests/004.phpt
+pear/tests/XML_Parser/tests/004b.phpt
 pear/tests/XML_Parser/tests/005.phpt
+pear/tests/XML_Parser/tests/AllTests.php
+pear/tests/XML_Parser/tests/bug-9328.phpt
+pear/tests/XML_Parser/tests/bug-9328b.phpt
+pear/tests/XML_Parser/tests/bug-9328c.phpt
+pear/tests/XML_Parser/tests/bug-9328d.phpt
 pear/tests/XML_Parser/tests/test2.xml
 pear/tests/XML_Parser/tests/test3.xml
