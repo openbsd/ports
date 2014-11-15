@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/14 17:37:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/15 11:36:14 sebastia Exp $
 
-BROKEN-hppa =		miniruby abort trap when generating rdoc
-BROKEN-alpha =		miniruby abort trap when generating rdoc
 BROKEN-mips64 =		miniruby spins on rbconfig.rb
 
 COMMENT-main =		object oriented script language with threads
@@ -52,7 +50,8 @@ LIB_DEPENDS-main =	devel/gmp \
 
 PSEUDO_FLAVORS=		no_x11 no_ri_docs
 # Do not build the RI docs on slow arches
-.if ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax}
+# on alpha and hppa: miniruby abort trap when generating rdoc
+.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax}
 FLAVOR?=		no_ri_docs
 .else
 FLAVOR?=
