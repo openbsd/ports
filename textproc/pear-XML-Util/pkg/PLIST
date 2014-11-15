@@ -1,16 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/15 23:46:32 sthen Exp $
 @group daemon
 lib/
 lib/php/
-@group
 pear/doc/
-@group daemon
 pear/doc/XML_Util/
 pear/doc/XML_Util/examples/
 pear/doc/XML_Util/examples/example.php
 pear/doc/XML_Util/examples/example2.php
 pear/lib/.registry/xml_util.reg
-@group
 pear/lib/XML/
-@group daemon
 pear/lib/XML/Util.php
+pear/tests/XML_Util/
+pear/tests/XML_Util/tests/
+pear/tests/XML_Util/tests/testBasic_apiVersion.phpt
+pear/tests/XML_Util/tests/testBasic_attributesToString.phpt
+pear/tests/XML_Util/tests/testBasic_collapseEmptyTags.phpt
+pear/tests/XML_Util/tests/testBasic_createCDataSection.phpt
+pear/tests/XML_Util/tests/testBasic_createComment.phpt
+pear/tests/XML_Util/tests/testBasic_createEndElement.phpt
+pear/tests/XML_Util/tests/testBasic_createStartElement.phpt
+pear/tests/XML_Util/tests/testBasic_createTag.phpt
+pear/tests/XML_Util/tests/testBasic_createTagFromArray.phpt
+pear/tests/XML_Util/tests/testBasic_getDocTypeDeclaration.phpt
+pear/tests/XML_Util/tests/testBasic_getXmlDeclaration.phpt
+pear/tests/XML_Util/tests/testBasic_isValidName.phpt
+pear/tests/XML_Util/tests/testBasic_raiseError.phpt
+pear/tests/XML_Util/tests/testBasic_replaceEntities.phpt
+pear/tests/XML_Util/tests/testBasic_reverseEntities.phpt
+pear/tests/XML_Util/tests/testBasic_splitQualifiedName.phpt
+pear/tests/XML_Util/tests/testBug_18343.phpt
+pear/tests/XML_Util/tests/testBug_4950.phpt
+pear/tests/XML_Util/tests/testBug_5392.phpt
