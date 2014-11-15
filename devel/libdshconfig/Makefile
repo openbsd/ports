@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/15 12:25:50 benoit Exp $
 
 COMMENT=	library for parsing dsh-style configuration files
 
-DISTNAME=	libdshconfig-0.20.9
+DISTNAME=	libdshconfig-0.20.13
 CATEGORIES=	devel
 
 SHARED_LIBS+=		dshconfig                 0.0 # 1.0

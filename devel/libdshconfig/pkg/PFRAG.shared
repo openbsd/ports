@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/08/27 14:34:19 ajacoutot Exp $
-@lib lib/libdshconfig.so.${LIBdshconfig_VERSION}

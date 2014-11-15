@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/27 14:34:19 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/11/15 12:25:50 benoit Exp $
 include/libdshconfig.h
 lib/libdshconfig.a
 lib/libdshconfig.la
+@lib lib/libdshconfig.so.${LIBdshconfig_VERSION}
