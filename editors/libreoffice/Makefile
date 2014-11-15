@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2014/11/09 12:33:18 robert Exp $
+# $OpenBSD: Makefile,v 1.122 2014/11/15 13:44:40 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		4.3
-VERSION=	4.3.3.2
+VERSION=	4.3.4.1
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
