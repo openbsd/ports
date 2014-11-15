@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/11/15 23:35:33 sthen Exp $
 
 COMMENT=	implementation of the IMAP protocol for PHP
 
-DISTNAME=	Net_IMAP-1.1.0
-REVISION=		0
+DISTNAME=	Net_IMAP-1.1.3
 CATEGORIES=	net
 
 MODULES=	www/pear
