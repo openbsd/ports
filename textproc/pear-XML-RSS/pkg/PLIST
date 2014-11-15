@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/03/22 22:48:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/11/15 23:42:08 sthen Exp $
 @group daemon
 pear/lib/.registry/xml_rss.reg
 pear/lib/XML/RSS.php
 pear/tests/XML_RSS/
 pear/tests/XML_RSS/tests/
-pear/tests/XML_RSS/tests/01-parse.phpt
+pear/tests/XML_RSS/tests/AllTests.php
+pear/tests/XML_RSS/tests/XML_RSS_Infrastructure_Test.php
+pear/tests/XML_RSS/tests/XML_RSS_Parsing_Test.php
 pear/tests/XML_RSS/tests/test.rss
