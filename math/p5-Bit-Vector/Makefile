@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2014/06/14 23:25:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2014/11/15 16:48:24 benoit Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library of advanced math functions
 
 MODULES=	cpan
-DISTNAME =	Bit-Vector-7.2
+DISTNAME =	Bit-Vector-7.3
 CATEGORIES=	math
-REVISION =	0
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
