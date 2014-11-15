@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.61 2014/11/06 20:22:12 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.62 2014/11/15 10:17:44 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -48,7 +48,7 @@ MODULES_SUBDIR=		lib/php-${PV}/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
 FLAVORS=		ap2
-.if ${PV} != "5.4" && ${PV} != "5.5"
+.if ${PV} == "5.3"
 FLAVORS+=		no_suhosin
 .endif
 FLAVOR?=
@@ -185,7 +185,7 @@ COMMENT-intl=		intl library support for php5
 CONFIGURE_ARGS+=	--enable-intl=shared \
 			--with-icu-dir=${LOCALBASE}
 LIB_DEPENDS-intl=	textproc/icu4c
-WANTLIB-intl=		icudata icui18n icuio icuuc m pthread
+WANTLIB-intl=		icudata icui18n icuio icuuc pthread
 
 # imap
 MULTI_PACKAGES+=	-imap
@@ -228,7 +228,10 @@ MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php5
 CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
-WANTLIB-odbc=		iodbcinst iodbc>=2 pthread
+WANTLIB-odbc=		iodbc>=2 pthread
+.if ${PV} != "5.3"
+WANTLIB-odbc+=		iodbcinst
+.endif
 
 # pcntl
 MULTI_PACKAGES+=	-pcntl
@@ -338,7 +341,12 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 
 MODULES=		converters/libiconv devel/gettext
 
-WANTLIB-main+=		c crypto m pthread ssl xml2>=8 z ${MODGETTEXT_WANTLIB}
+WANTLIB-main+=		c crypto lzma m pthread ssl xml2>=8 z ${MODGETTEXT_WANTLIB}
+
+.if ${PV} != "5.3"
+WANTLIB-main+=		ncurses readline stdc++
+.endif
+
 # php 5.4/5.5 : WANTLIB-main += stdc++
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
@@ -346,7 +354,7 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			mail/femail,-chroot
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
-.if ${PV} != "5.4" && ${PV} != "5.5"
+.if ${PV} == "5.3"
 .  if ${FLAVOR:Mno_suhosin}
 SUPDISTFILES=		suhosin-${SUHOSIN_V}.tgz:0 \
 			suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0

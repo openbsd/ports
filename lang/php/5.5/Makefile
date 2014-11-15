@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/11/13 19:57:16 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2014/11/15 10:17:44 robert Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -9,11 +9,11 @@ USE_LIBTOOL=	No
 PV=		5.5
 V=		${PV}.19
 
+REVISION=	0
+
 INI_TEMPLATES=	development production
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
-
-WANTLIB-main+=		stdc++ ncurses readline
 
 # sybase-ct
 MULTI_PACKAGES+=	-sybase_ct

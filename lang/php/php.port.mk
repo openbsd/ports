@@ -1,4 +1,4 @@
-# $OpenBSD: php.port.mk,v 1.11 2014/11/06 17:11:43 sthen Exp $
+# $OpenBSD: php.port.mk,v 1.12 2014/11/15 10:17:44 robert Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,8 @@ MODPHP_VSPEC = >=${MODPHP_VERSION},<5.4
 MODPHP_VSPEC = >=${MODPHP_VERSION},<5.5
 .elif ${MODPHP_VERSION} == 5.5
 MODPHP_VSPEC = >=${MODPHP_VERSION},<5.6
+.elif ${MODPHP_VERSION} == 5.6
+MODPHP_VSPEC = >=${MODPHP_VERSION},<5.7
 .endif
 MODPHPSPEC = php-${MODPHP_VSPEC}
 
