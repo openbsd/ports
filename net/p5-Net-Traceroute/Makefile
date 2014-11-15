@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 23:50:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2014/11/15 10:09:13 benoit Exp $
 
 COMMENT=		traceroute(1) functionality in perl
 
 MODULES=		cpan
-DISTNAME=		Net-Traceroute-1.13
+DISTNAME =		Net-Traceroute-1.15
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.linnaean.org/~hag/perl/traceroute/traceroute.html
+
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # License: MIT
 PERMIT_PACKAGE_CDROM=	Yes
