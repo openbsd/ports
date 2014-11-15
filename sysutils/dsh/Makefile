@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/15 12:23:17 benoit Exp $
 
 COMMENT=	dancers shell or distributed shell
 
-DISTNAME=	dsh-0.25.9
+DISTNAME =	dsh-0.25.10
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/dsh.html.en
@@ -16,7 +16,6 @@ WANTLIB += c dshconfig
 LIB_DEPENDS=		devel/libdshconfig
 
 MODULES=		devel/gettext
-
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \
