@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/16 18:30:15 sthen Exp $
+@group daemon
+lib/
+lib/php/
+pear/doc/
+pear/doc/Net_IDNA2/
+pear/doc/Net_IDNA2/docs/
+pear/doc/Net_IDNA2/docs/examples/
+pear/doc/Net_IDNA2/docs/examples/example_web.php
+pear/lib/.registry/net_idna2.reg
+pear/lib/Net/
+pear/lib/Net/IDNA2/
+pear/lib/Net/IDNA2.php
+pear/lib/Net/IDNA2/Exception/
+pear/lib/Net/IDNA2/Exception.php
+pear/lib/Net/IDNA2/Exception/Nameprep.php
+pear/tests/Net_IDNA2/
+pear/tests/Net_IDNA2/tests/
+pear/tests/Net_IDNA2/tests/AllTests.php
+pear/tests/Net_IDNA2/tests/Net_IDNA2Test.php
