@@ -1,6 +1,6 @@
-$OpenBSD: patch-backend_usb-libusb_c,v 1.11 2014/11/15 10:22:23 ajacoutot Exp $
+$OpenBSD: patch-backend_usb-libusb_c,v 1.12 2014/11/16 10:21:39 ajacoutot Exp $
 
-http://www.cups.org/str.php?L4088
+https://www.cups.org/str.php?L4525
 
 --- backend/usb-libusb.c.orig	Fri Feb 14 21:09:01 2014
 +++ backend/usb-libusb.c	Fri Oct  3 15:35:39 2014
