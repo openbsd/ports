@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/16 01:17:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/16 16:55:29 bcallah Exp $
 
 V =		2.3.34
 COMMENT =	desktop screenshot utility (make image)
 DISTNAME =	maim-${V}
+REVISION =	0
 CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	naelstrof
@@ -24,6 +25,8 @@ MODULES =	devel/cmake
 BUILD_DEPENDS =	devel/gengetopt
 
 LIB_DEPENDS =	graphics/imlib2
+
+RUN_DEPENDS =	graphics/slop
 
 NO_TEST =	Yes
 
