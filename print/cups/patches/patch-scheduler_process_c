@@ -1,6 +1,6 @@
-$OpenBSD: patch-scheduler_process_c,v 1.4 2014/11/15 10:22:23 ajacoutot Exp $
+$OpenBSD: patch-scheduler_process_c,v 1.5 2014/11/16 10:32:56 ajacoutot Exp $
 
-https://www.cups.org/str.php?L4496 (REVERT)
+https://www.cups.org/str.php?L4526
 
 --- scheduler/process.c.orig	Fri Nov 14 18:14:45 2014
 +++ scheduler/process.c	Sat Nov 15 10:10:58 2014
