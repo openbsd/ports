@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/20 01:36:02 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/11/16 20:32:16 bcallah Exp $
 bin/freecol
 share/doc/freecol/
 share/doc/freecol/FreeCol.pdf
@@ -1435,6 +1435,7 @@ share/freecol/data/strings/FreeColMessages_pt_BR.properties
 share/freecol/data/strings/FreeColMessages_pt_PT.properties
 share/freecol/data/strings/FreeColMessages_qqq.properties
 share/freecol/data/strings/FreeColMessages_ru.properties
+share/freecol/data/strings/FreeColMessages_sk.properties
 share/freecol/data/strings/FreeColMessages_sq.properties
 share/freecol/data/strings/FreeColMessages_sv_SE.properties
 share/freecol/data/strings/FreeColMessages_ta.properties
