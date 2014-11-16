@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2014/10/06 07:25:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2014/11/16 13:58:31 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.14.0
-REVISION=		0
+GNOME_VERSION=		3.14.1
 
 CATEGORIES=		editors
 
@@ -19,7 +18,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gtksourceview-3.0 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += xml2 z sqlite3 zeitgeist-2.0
+WANTLIB += xml2 z sqlite3 zeitgeist-2.0 lzma
 
 MODULES=		devel/dconf \
 			devel/gettext \
