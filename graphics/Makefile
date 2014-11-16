@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.379 2014/11/13 20:43:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.380 2014/11/16 16:49:13 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -248,6 +248,7 @@
      SUBDIR += simgear
      SUBDIR += simple-scan
      SUBDIR += sketch
+     SUBDIR += slop
      SUBDIR += smpeg-xmms
      SUBDIR += swfdec
      SUBDIR += sxiv
