@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.31 2014/09/14 05:58:07 ajacoutot Exp $
+$OpenBSD: README,v 1.32 2014/11/16 22:15:02 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -79,8 +79,9 @@ memory_limit = 512M
 upload_max_filesize = 513M	# to accept large files upload
 post_max_size = 513M		# sync with above value	
 
-For enhanced performance one of these PHP packages can be installed:
-    pecl-APC or xcache
+For enhanced performance, a PHP opcode cache can be used, either
+use "opcache" (built-in to PHP 5.5+, enable "opcache.ini" to use it)
+or install xcache.
 
 Database configuration
 ----------------------
