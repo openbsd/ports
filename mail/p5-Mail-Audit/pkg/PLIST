@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/06/13 19:44:27 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/16 10:15:49 benoit Exp $
+bin/popread
+bin/proc2ma
 ${P5SITE}/Mail/Audit/
 ${P5SITE}/Mail/Audit.pm
 ${P5SITE}/Mail/Audit/KillDups.pm
@@ -8,6 +10,8 @@ ${P5SITE}/Mail/Audit/MimeEntity.pm
 ${P5SITE}/Mail/Audit/Util/
 ${P5SITE}/Mail/Audit/Util/Tempdir.pm
 ${P5SITE}/Mail/Audit/Vacation.pm
+@man man/man1/popread.1
+@man man/man1/proc2ma.1
 @man man/man3p/Mail::Audit.3p
 @man man/man3p/Mail::Audit::KillDups.3p
 @man man/man3p/Mail::Audit::MAPS.3p
