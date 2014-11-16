@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.104 2014/11/01 18:44:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2014/11/16 14:00:12 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.14.1.5
-REVISION=		0
+GNOME_VERSION=		3.14.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,8 +27,7 @@ WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ telepathy-glib upower-glib vorbis vorbisenc
 WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z
 WANTLIB += EGL Xau Xdmcp drm gbm glapi xcb-dri2 xcb-randr xcb-shape
-WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile
-
+WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile lzma
 
 MODULES=		devel/dconf \
 			devel/gettext \
