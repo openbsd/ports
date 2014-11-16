@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_de_srcpd_conf_5,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
---- man/de/srcpd.conf.5.orig	Fri Dec  3 17:21:36 2010
-+++ man/de/srcpd.conf.5	Fri Dec  3 17:22:08 2010
+$OpenBSD: patch-man_de_srcpd_conf_5,v 1.2 2014/11/16 11:39:44 sebastia Exp $
+--- man/de/srcpd.conf.5.orig	Sun Oct 28 18:45:11 2012
++++ man/de/srcpd.conf.5	Sat Oct 25 12:53:48 2014
 @@ -52,8 +52,8 @@ vorkonfigurierten Bus.  Sie hat den folgenden Aufbau:
      <server>
        <tcp-port>4303</tcp-port>
@@ -12,7 +12,7 @@ $OpenBSD: patch-man_de_srcpd_conf_5,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
      </server>
      <verbosity>5</verbosity>
    </bus>
-@@ -251,14 +251,14 @@ username
+@@ -256,14 +256,14 @@ username
  Benutzerkennung, unter der
  .IR srcpd
  auf dem System läuft.  Voreingestellt ist

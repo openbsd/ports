@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_srcpd_conf_5,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
---- man/srcpd.conf.5.orig	Fri Dec  3 17:21:01 2010
-+++ man/srcpd.conf.5	Fri Dec  3 17:21:28 2010
+$OpenBSD: patch-man_srcpd_conf_5,v 1.2 2014/11/16 11:39:44 sebastia Exp $
+--- man/srcpd.conf.5.orig	Sun Oct 28 18:46:50 2012
++++ man/srcpd.conf.5	Sat Oct 25 12:53:48 2014
 @@ -39,8 +39,8 @@ default settings and an example bus configuration.
      <server>
        <tcp-port>4303</tcp-port>
@@ -12,7 +12,7 @@ $OpenBSD: patch-man_srcpd_conf_5,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
      </server>
      <verbosity>5</verbosity>
    </bus>
-@@ -202,12 +202,12 @@ is
+@@ -204,12 +204,12 @@ is
  .TP
  username
  srcpd runs under this user.  Default is
