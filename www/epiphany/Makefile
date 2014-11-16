@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.120 2014/10/16 07:23:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.121 2014/11/16 13:57:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.14.1
+GNOME_VERSION=	3.14.2
 MAJOR_V=	${GNOME_VERSION:R}
 
 CATEGORIES=	www
@@ -24,14 +24,14 @@ WANTLIB += dbus-1 drm enchant estdc++ execinfo expat ffi fontconfig
 WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstfft-1.0 gstmpegts-1.0 gstpbutils-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-4.0
 WANTLIB += jpeg m notify orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += secret-1 soup-2.4 sqlite3 startup-notification-1 stdc++
 WANTLIB += webkit2gtk-4.0 webp wnck-3 xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xml2 xslt z
+WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xml2 xslt z lzma
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
