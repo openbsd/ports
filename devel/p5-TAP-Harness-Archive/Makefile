@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/16 12:41:48 benoit Exp $
 
 COMMENT =	create an archive of TAP results
 
 MODULES =	cpan
-DISTNAME =	TAP-Harness-Archive-0.14
+DISTNAME =	TAP-Harness-Archive-0.15
 CATEGORIES =	devel
 
 CONFIGURE_STYLE =	modbuild
