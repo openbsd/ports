@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/06 10:30:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/16 22:31:28 benoit Exp $
 
 COMMENT =	import packages into other packages
 
 MODULES =	cpan
-DISTNAME =	Import-Into-1.002001
+DISTNAME =	Import-Into-1.002004
 CATEGORIES =	devel
 
-CPAN_AUTHOR =	HAARG
+CPAN_AUTHOR =	ETHER
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
