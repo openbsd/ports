@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/16 12:57:35 benoit Exp $
 
 COMMENT =	capture STDOUT and STDERR from Perl code, subprocesses or XS
 
 MODULES =	cpan
-DISTNAME =	IO-CaptureOutput-1.1102
+DISTNAME =	IO-CaptureOutput-1.1103
 CATEGORIES =	devel
 
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/08 14:51:19 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/16 12:57:35 benoit Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/CaptureOutput.pm
-${P5SITE}/IO/CaptureOutput.pod
 @man man/man3p/IO::CaptureOutput.3p
