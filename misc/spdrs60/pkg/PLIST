@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 11:19:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/16 11:41:21 sebastia Exp $
 @bin bin/centralclock
 @bin bin/spdrs60
 man/de/
@@ -199,3 +199,4 @@ share/spdrs60/layouts/lintorf.spdrs60
 share/spdrs60/translations/
 share/spdrs60/translations/spdrs60_de.qm
 share/spdrs60/translations/spdrs60_it.qm
+share/spdrs60/translations/spdrs60_nl.qm
