@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/11/16 16:48:56 bcallah Exp $
+--- CMakeLists.txt.orig	Sat Nov 15 22:04:29 2014
++++ CMakeLists.txt	Sat Nov 15 22:04:47 2014
+@@ -98,8 +98,7 @@ set( CMAKE_CXX_FLAGS
+ 
+ # Includes
+ include_directories( ${X11_INCLUDE_DIR}
+-                     ${XEXT_INCLUDE_DIR}
+-                     ${RT_INCLUDE_DIR} )
++                     ${XEXT_INCLUDE_DIR} )
+ 
+ # Executable
+ add_executable( "${BIN_TARGET}" ${source} )
+@@ -107,8 +106,7 @@ add_executable( "${BIN_TARGET}" ${source} )
+ # Libraries
+ target_link_libraries( "${BIN_TARGET}"
+                        ${X11_LIBRARIES}
+-                       "${XEXT_LIBRARY}"
+-                       "${RT_LIBRARY}" )
++                       "${XEXT_LIBRARY}" )
+ 
+ install( TARGETS ${BIN_TARGET}
+          DESTINATION  ${CMAKE_INSTALL_PREFIX} )
