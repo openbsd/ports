@@ -1,0 +1,4 @@
+The rcm suite of tools is for managing dotfiles directories. This suite is
+useful for committing your rc files to a central repository to share, but it
+also scales to a more complex situation such as multiple source directories
+shared between computers with some host-specific or task-specific files.

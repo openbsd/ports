@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/16 16:33:28 pirofti Exp $
+bin/lsrc
+bin/mkrc
+bin/rcdn
+bin/rcup
+@man man/man1/lsrc.1
+@man man/man1/mkrc.1
+@man man/man1/rcdn.1
+@man man/man1/rcup.1
+@man man/man5/rcrc.5
+@man man/man7/rcm.7
+share/rcm/
+share/rcm/rcm.sh
