@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.875 2014/11/01 20:55:50 abieber Exp $
+# $OpenBSD: Makefile,v 1.876 2014/11/16 18:30:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -431,12 +431,14 @@
      SUBDIR += pear-HTTP-Request
      SUBDIR += pear-Net-DNS
      SUBDIR += pear-Net-DNS2
+     SUBDIR += pear-Net-IDNA2
      SUBDIR += pear-Net-IMAP
      SUBDIR += pear-Net-IPv4
      SUBDIR += pear-Net-IPv6
      SUBDIR += pear-Net-LDAP
      SUBDIR += pear-Net-LDAP2
      SUBDIR += pear-Net-SMTP
+     SUBDIR += pear-Net-Sieve
      SUBDIR += pear-Net-Socket
      SUBDIR += pear-Net-URL
      SUBDIR += pear-Net-URL-Mapper
