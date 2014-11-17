@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.8 2012/03/14 18:36:04 gsoares Exp $
+$OpenBSD: patch-configure,v 1.9 2014/11/17 15:09:16 benoit Exp $
 
 Don't pickup libsamplerate if that's installed.
 
---- configure.orig	Mon Jan  9 11:11:57 2012
-+++ configure	Tue Mar 13 13:53:08 2012
-@@ -5757,6 +5757,7 @@ $as_echo "yes" >&6; }
+--- configure.orig	Fri Oct 31 12:40:13 2014
++++ configure	Mon Nov 17 11:50:04 2014
+@@ -5928,6 +5928,7 @@ $as_echo "yes" >&6; }
  	HAVE_ALSA=1
  fi
  
@@ -12,7 +12,7 @@ Don't pickup libsamplerate if that's installed.
  pkg_failed=no
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for LIBSAMPLERATE" >&5
  $as_echo_n "checking for LIBSAMPLERATE... " >&6; }
-@@ -5834,6 +5835,8 @@ fi
+@@ -6007,6 +6008,8 @@ fi
              LIBSAMPLERATE_LIBS="$LIBSAMPLERATE_LIBS -lm"
          fi
      fi

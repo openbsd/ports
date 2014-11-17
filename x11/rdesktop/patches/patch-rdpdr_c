@@ -1,14 +1,14 @@
-$OpenBSD: patch-rdpdr_c,v 1.1 2013/07/04 15:12:34 gsoares Exp $
+$OpenBSD: patch-rdpdr_c,v 1.2 2014/11/17 15:09:16 benoit Exp $
 
 Fix crash when a invalid device is received in rdpdr_process_irp.
 patch from upstream
 http://sourceforge.net/p/rdesktop/code/1701/
 
---- rdpdr.c.orig	Wed Apr 13 08:13:04 2011
-+++ rdpdr.c	Tue Jun 18 20:51:34 2013
-@@ -379,6 +379,15 @@ rdpdr_process_irp(STREAM s)
- 	buffer = (uint8 *) xmalloc(1024);
- 	buffer[0] = 0;
+--- rdpdr.c.orig	Thu Sep 11 13:54:46 2014
++++ rdpdr.c	Mon Nov 17 11:50:04 2014
+@@ -388,6 +388,15 @@ rdpdr_process_irp(STREAM s)
+ 		return;
+ 	}
  
 +	if(device >= RDPDR_MAX_DEVICES)
 +	{
