@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2014/11/11 11:34:01 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.59 2014/11/17 00:29:23 sthen Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -237,6 +237,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freesound.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freesound.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freespeech.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freespeech.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freevideo.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freevideo.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/funnyordie.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/funnyordie.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gamekings.py
@@ -259,6 +261,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/globo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/globo.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/godtube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/godtube.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/goldenmoustache.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/goldenmoustache.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/golem.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/golem.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/googleplus.py
@@ -553,6 +557,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencast.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencast.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/servingsys.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/servingsys.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sexu.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sexu.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sexykarma.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sexykarma.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/shared.py
