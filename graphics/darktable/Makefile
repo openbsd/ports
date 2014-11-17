@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/11/12 12:34:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2014/11/17 11:18:53 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -13,6 +13,7 @@ COMMENT=	virtual lighttable and darkroom for photographers
 
 # N.B. newer versions require TLS
 DISTNAME=	darktable-1.2.3
+PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 REVISION=	3
 
