@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2014/11/17 17:13:01 sthen Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=92412
+
+--- Makefile.PL.orig	Mon Nov 17 17:11:40 2014
++++ Makefile.PL	Mon Nov 17 17:12:14 2014
+@@ -4,7 +4,8 @@ use 5.008; # Stop perl 5.005 or earler barfing on the 
+ use ExtUtils::MakeMaker;
+ use Config;
+ 
+-unless ($Config{useperlio} eq 'define' and $Config{usesfio} eq 'false') {
++unless ($Config{useperlio} eq 'define' and
++	(defined($Config{usesfio}) ? $Config{usesfio} : 'false') eq 'false') {
+   die <<BARF;
+ You need perl 5.8.0 or later, configured to use perlio (and not to use sfio)
+ BARF
