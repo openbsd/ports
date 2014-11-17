@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/04 20:50:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/17 08:53:24 benoit Exp $
 @bin bin/meandmyshadow
 share/applications/meandmyshadow.desktop
 share/icons/hicolor/16x16/apps/meandmyshadow.png
@@ -22,6 +22,8 @@ share/meandmyshadow/data/gfx/medals.png
 share/meandmyshadow/data/gfx/menu/
 share/meandmyshadow/data/gfx/menu/background.png
 share/meandmyshadow/data/gfx/menu/credits.png
+share/meandmyshadow/data/gfx/menu/level.png
+share/meandmyshadow/data/gfx/menu/levellocked.png
 share/meandmyshadow/data/gfx/menu/moving.png
 share/meandmyshadow/data/gfx/menu/selection.png
 share/meandmyshadow/data/gfx/menu/title.png
@@ -58,8 +60,11 @@ share/meandmyshadow/data/levelpacks/classic/UpDown.map
 share/meandmyshadow/data/levelpacks/classic/levels.lst
 share/meandmyshadow/data/levelpacks/classic/locale/
 share/meandmyshadow/data/levelpacks/classic/locale/fi.po
+share/meandmyshadow/data/levelpacks/classic/locale/fr.po
+share/meandmyshadow/data/levelpacks/classic/locale/gd.po
 share/meandmyshadow/data/levelpacks/classic/locale/it.po
 share/meandmyshadow/data/levelpacks/classic/locale/messages.pot
+share/meandmyshadow/data/levelpacks/classic/locale/nl.po
 share/meandmyshadow/data/levelpacks/classic/locale/ru.po
 share/meandmyshadow/data/levelpacks/classic/locale/zh_CN.po
 share/meandmyshadow/data/levelpacks/default/
@@ -80,8 +85,11 @@ share/meandmyshadow/data/levelpacks/default/Volcano.map
 share/meandmyshadow/data/levelpacks/default/levels.lst
 share/meandmyshadow/data/levelpacks/default/locale/
 share/meandmyshadow/data/levelpacks/default/locale/fi.po
+share/meandmyshadow/data/levelpacks/default/locale/fr.po
+share/meandmyshadow/data/levelpacks/default/locale/gd.po
 share/meandmyshadow/data/levelpacks/default/locale/it.po
 share/meandmyshadow/data/levelpacks/default/locale/messages.pot
+share/meandmyshadow/data/levelpacks/default/locale/nl.po
 share/meandmyshadow/data/levelpacks/default/locale/ru.po
 share/meandmyshadow/data/levelpacks/default/locale/zh_CN.po
 share/meandmyshadow/data/levelpacks/default/map01.map
@@ -94,8 +102,11 @@ share/meandmyshadow/data/levelpacks/tutorial/levels.lst
 share/meandmyshadow/data/levelpacks/tutorial/locale/
 share/meandmyshadow/data/levelpacks/tutorial/locale/de.po
 share/meandmyshadow/data/levelpacks/tutorial/locale/fi.po
+share/meandmyshadow/data/levelpacks/tutorial/locale/fr.po
+share/meandmyshadow/data/levelpacks/tutorial/locale/gd.po
 share/meandmyshadow/data/levelpacks/tutorial/locale/it.po
 share/meandmyshadow/data/levelpacks/tutorial/locale/messages.pot
+share/meandmyshadow/data/levelpacks/tutorial/locale/nl.po
 share/meandmyshadow/data/levelpacks/tutorial/locale/ru.po
 share/meandmyshadow/data/levelpacks/tutorial/locale/zh_CN.po
 share/meandmyshadow/data/levelpacks/tutorial/tut01.map
@@ -124,9 +135,19 @@ share/meandmyshadow/data/levelpacks/tutorial/tut23.map
 share/meandmyshadow/data/levelpacks/tutorial/tut24.map
 share/meandmyshadow/data/levelpacks/tutorial/tut25.map
 share/meandmyshadow/data/levels/
+share/meandmyshadow/data/levels/Abitoff.map
+share/meandmyshadow/data/levels/Gauntlet.map
+share/meandmyshadow/data/levels/QuantumTunnel.map
+share/meandmyshadow/data/levels/Reflection.map
+share/meandmyshadow/data/levels/ShiftingSands.map
+share/meandmyshadow/data/levels/SkyHigh.map
+share/meandmyshadow/data/levels/StairwaytoHell.map
 share/meandmyshadow/data/locale/
 share/meandmyshadow/data/locale/de.po
+share/meandmyshadow/data/locale/es.po
 share/meandmyshadow/data/locale/fi.po
+share/meandmyshadow/data/locale/fr.po
+share/meandmyshadow/data/locale/gd.po
 share/meandmyshadow/data/locale/it.po
 share/meandmyshadow/data/locale/messages.pot
 share/meandmyshadow/data/locale/nl.po

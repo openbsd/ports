@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/17 08:53:24 benoit Exp $
 
 COMMENT =	puzzle/platform game
 
-DISTNAME =	meandmyshadow-0.4-src
+DISTNAME =	meandmyshadow-0.4.1-src
 CATEGORIES =	games
 PKGNAME =	${DISTNAME:S/-src//}
 
@@ -18,7 +18,6 @@ LIB_DEPENDS =	net/curl \
 		devel/sdl-gfx \
 		devel/sdl-mixer \
 		devel/sdl-image \
-		devel/sdl-mixer \
 		devel/sdl-ttf \
 		archivers/libarchive
 
