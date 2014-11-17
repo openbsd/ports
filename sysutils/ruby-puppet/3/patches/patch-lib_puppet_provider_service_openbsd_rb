@@ -1,11 +1,13 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:42 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.20 2014/11/17 12:44:20 jasper Exp $
 
 * Rewrite using rcctl(8)
   https://github.com/puppetlabs/puppet/pull/3017
 
---- lib/puppet/provider/service/openbsd.rb.orig	Thu Sep  4 00:22:46 2014
-+++ lib/puppet/provider/service/openbsd.rb	Sun Sep  7 20:15:22 2014
-@@ -2,341 +2,89 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+* Ensure we restart a service after the flags have been changed
+
+--- lib/puppet/provider/service/openbsd.rb.orig	Mon Nov  3 23:23:13 2014
++++ lib/puppet/provider/service/openbsd.rb	Sat Nov 15 20:48:14 2014
+@@ -2,341 +2,101 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    desc "Provider for OpenBSD's rc.d daemon control scripts"
  
@@ -150,6 +152,12 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:4
 +      execpipe([command(:rcctl), :status]) do |process|
 +        process.each_line do |line|
 +          match = /^(.*?)(?:_flags)?=(.*)$/.match(line)
++          attributes_hash = {
++            :name      => match[1],
++            :flags     => match[2],
++            :hasstatus => true,
++            :provider  => :openbsd,
++          }
  
 -  # @api private
 -  def rcvar_name
@@ -195,11 +203,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:4
 -    if flags.nil? or flags.size == 0
 -      if in_base?
 -        append = resource[:name] + '_flags=""'
-+            instances << new(
-+              :name      => match[1],
-+              :flags     => match[2],
-+              :hasstatus => true,
-+            )
++          instances << new(attributes_hash);
 +        end
        end
 -    else
@@ -293,14 +297,21 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:4
 -  def in_base?
 -    script = File.readlines(self.class.rcconf).find {|s| s =~ /^#{rcvar_name}/ }
 -    !script.nil?
--  end
--
++  def disable
++    self.debug("Disabling")
++    rcctl(:disable, @resource[:name])
+   end
+ 
 -  # @api private
 -  def default_disabled?
 -    line = File.readlines(self.class.rcconf).find {|l| l =~ /#{rcvar_name}/ }
 -    self.class.parse_rc_line(line) == 'NO'
--  end
--
++  def running?
++    output = execute([command(:rcctl), "check", @resource[:name]],
++                     :failonfail => false, :combine => false, :squelch => false).chomp
++  return :true if output.match(/\(ok\)/)
+   end
+ 
 -  def enabled?
 -    if in_base?
 -      if (@property_hash[:flags].nil? or @property_hash[:flags] == 'NO')
@@ -322,19 +333,17 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:4
 -  end
 -
 -  # We should also check for default state
-   def disable
+-  def disable
 -    self.debug("Disabling #{self.name}")
-+    self.debug("Disabling")
-+    rcctl(:disable, @resource[:name])
-   end
- 
+-  end
+-
 +  # Uses the wrapper to prevent failure when the service is not running;
 +  # rcctl(8) return non-zero in that case.
    def flags
 -    @property_hash[:flags]
 +    output = execute([command(:rcctl), "status", @resource[:name]],
 +                     :failonfail => false, :combine => false, :squelch => false).chomp
-+    self.debug("Flags are: #{output}")
++    self.debug("Flags are: \"#{output}\"")
 +    output
    end
  
@@ -379,7 +388,12 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:4
 -          content = set_content_flags(content, "NO")
 -        end
 -      end
--    end
++    self.debug("Changing flags from #{flags} to #{value}")
++    # If the service is already running, force a restart as the flags have been changed.
++    rcctl(:enable, @resource[:name], :flags, value)
++    if running?
++      rcctl(:restart, @resource[:name])
+     end
 -
 -    # Make sure to append a newline to the end of the file
 -    unless content[-1] == ""
@@ -389,7 +403,5 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.19 2014/09/07 18:16:4
 -
 -    # Write the contents only if necessary, and only once
 -    write_rc_contents(self.class.rcconf_local(), output)
-+    self.debug("Changing flags from #{flags} to #{value}")
-+    rcctl(:enable, @resource[:name], :flags, value)
    end
  end
