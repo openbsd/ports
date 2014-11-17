@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/16 16:55:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/17 22:45:49 bcallah Exp $
 
-V =		2.3.34
+V =		2.3.36
 COMMENT =	desktop screenshot utility (make image)
 DISTNAME =	maim-${V}
-REVISION =	0
 CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
 GH_TAGNAME =	v${V}
-GH_COMMIT =	8b955bb1b0507eecef2edf8562c7794076753332
+GH_COMMIT =	14f993643491b0e4d7e89df407c37712bbfbfdfa
 
 HOMEPAGE =	https://github.com/naelstrof/maim
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -22,8 +21,6 @@ WANTLIB += z
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	devel/gengetopt
-
 LIB_DEPENDS =	graphics/imlib2
 
 RUN_DEPENDS =	graphics/slop
@@ -31,12 +28,6 @@ RUN_DEPENDS =	graphics/slop
 NO_TEST =	Yes
 
 pre-configure:
-	perl -pi -e "s,-Werror -pedantic-errors,,g |\
-		s,/usr/bin,${PREFIX}/bin,g" ${WRKSRC}/CMakeLists.txt
-pre-build:
-	# For some reason CMake can't do this itself?
-	perl -pi -e \
-		"s,\@maim_VERSION_MAJOR\@\.\@maim_VERSION_MINOR\@\.\@maim_VERSION_PATCH\@,${V},g" \
-			${WRKSRC}/src/cmdline.h
+	perl -pi -e "s,/usr/bin,${PREFIX}/bin,g" ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
