@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/17 07:36:30 benoit Exp $
 
 COMMENT=	DBIx::DataModel model class
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Model-DBIDM-0.03
-REVISION=	0
+DISTNAME =	Catalyst-Model-DBIDM-0.04
 CATEGORIES=	databases
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
