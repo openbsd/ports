@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/06/01 12:11:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/11/17 12:50:14 eric Exp $
 %%SHARED%%
 @bin bin/cairo-sphinx
 include/cairo/
@@ -27,7 +27,6 @@ lib/libcairo-script-interpreter.la
 lib/libcairo.a
 lib/libcairo.la
 @lib lib/libcairo.so.${LIBcairo_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/cairo-fc.pc
 lib/pkgconfig/cairo-ft.pc
 lib/pkgconfig/cairo-gobject.pc
@@ -71,6 +70,7 @@ share/gtk-doc/html/cairo/cairo-Script-Surfaces.html
 share/gtk-doc/html/cairo/cairo-Transformations.html
 share/gtk-doc/html/cairo/cairo-Types.html
 share/gtk-doc/html/cairo/cairo-User-Fonts.html
+share/gtk-doc/html/cairo/cairo-Version-Information.html
 share/gtk-doc/html/cairo/cairo-Win32-Fonts.html
 share/gtk-doc/html/cairo/cairo-Win32-Surfaces.html
 share/gtk-doc/html/cairo/cairo-XCB-Surfaces.html

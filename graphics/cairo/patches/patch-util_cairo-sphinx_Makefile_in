@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_cairo-sphinx_Makefile_in,v 1.1 2013/06/01 12:11:52 ajacoutot Exp $
---- util/cairo-sphinx/Makefile.in.orig	Fri May 31 23:28:59 2013
-+++ util/cairo-sphinx/Makefile.in	Fri May 31 23:29:32 2013
-@@ -390,7 +390,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+$OpenBSD: patch-util_cairo-sphinx_Makefile_in,v 1.2 2014/11/17 12:50:14 eric Exp $
+--- util/cairo-sphinx/Makefile.in.orig	Tue Oct 14 03:47:28 2014
++++ util/cairo-sphinx/Makefile.in	Thu Oct 30 21:01:04 2014
+@@ -368,7 +368,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
  cairo_sphinx_la_SOURCES = fdr.c
  cairo_sphinx_la_CPPFLAGS = $(AM_CPPFLAGS)
  cairo_sphinx_la_CFLAGS = $(CAIRO_CFLAGS)

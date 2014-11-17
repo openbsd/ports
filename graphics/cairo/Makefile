@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2014/09/13 16:36:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2014/11/17 12:50:14 eric Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.12.16
-SHARED_LIBS+=		cairo 12.2
+DISTNAME=		cairo-1.14.0
+SHARED_LIBS+=		cairo 12.3
 SHARED_LIBS+=		cairo-gobject 1.1
 SHARED_LIBS+=		cairo-script-interpreter 1.1
 CATEGORIES=		graphics
@@ -33,6 +33,7 @@ LIB_DEPENDS=		archivers/lzo2 \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+CONFIGURE_ENV=		LDFLAGS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
 
 # needed for firefox
 CONFIGURE_ARGS +=	--enable-tee

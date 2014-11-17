@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_cairo-tor-scan-converter_c,v 1.1 2014/11/17 12:50:14 eric Exp $
+
+http://cgit.freedesktop.org/cairo/commit/?id=2de69581c28bf115852037ca41eba13cb7335976
+
+    tor-scan-converter: can't do_fullrow when intersection in row + 0.5subrow
+
+--- src/cairo-tor-scan-converter.c.orig	Fri Oct 31 02:02:09 2014
++++ src/cairo-tor-scan-converter.c	Fri Oct 31 02:02:58 2014
+@@ -1167,8 +1167,8 @@ can_do_full_row (struct active_list *active)
+ 
+ 	if (e->dy) {
+ 	    struct quorem x = e->x;
+-	    x.quo += e->dxdy_full.quo - e->dxdy.quo/2;
+-	    x.rem += e->dxdy_full.rem - e->dxdy.rem/2;
++	    x.quo += e->dxdy_full.quo;
++	    x.rem += e->dxdy_full.rem;
+ 	    if (x.rem < 0) {
+ 		x.quo--;
+ 		x.rem += e->dy;
