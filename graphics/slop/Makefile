@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/16 16:48:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/17 10:44:50 sthen Exp $
 
 V =		3.1.12
 COMMENT =	query for a selection and print to stdout (select operation)
@@ -21,7 +21,8 @@ WANTLIB += ICE SM X11 Xext c m stdc++
 MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/gengetopt \
-		sysutils/coreutils
+		sysutils/coreutils \
+		textproc/gsed
 
 NO_TEST =	Yes
 
