@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1275 2014/11/14 22:29:26 rpe Exp $
+# $OpenBSD: Makefile,v 1.1276 2014/11/17 14:24:22 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1221,6 +1221,7 @@
      SUBDIR += py-libmagic,python3
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
+     SUBDIR += py-mccabe
      SUBDIR += py-minimock
      SUBDIR += py-mock
      SUBDIR += py-modulegraph
