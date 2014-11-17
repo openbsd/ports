@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/06 17:13:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/17 20:41:15 sthen Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 #COMMENT-lua=		Redland librdf Lua Bindings
@@ -14,6 +14,7 @@ PKGNAME-main=		p5-librdf-$V
 PKGNAME-php=		php-librdf-$V
 PKGNAME-python=		py-librdf-$V
 PKGNAME-ruby=		ruby-librdf-$V
+REVISION-perl=		0
 REVISION-php=		0
 
 HOMEPAGE=		http://librdf.org/bindings/
@@ -68,5 +69,8 @@ CONFIGURE_ENV+=		RUBY=${RUBY}
 LIB_DEPENDS-ruby=	${LIB_DEPENDS} ${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 WANTLIB-ruby=		${WANTLIB} ${MODRUBY_WANTLIB}
+
+post-extract:
+	rm ${WRKSRC}/perl/CORE_wrap.c
 
 .include <bsd.port.mk>
