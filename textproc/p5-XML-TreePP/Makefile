@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/16 16:13:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/17 09:51:05 benoit Exp $
 
 COMMENT =	pure Perl implementation for parsing/writing XML documents
 
-DISTNAME =	XML-TreePP-0.42
+DISTNAME =	XML-TreePP-0.43
 CATEGORIES =	textproc
 CPAN_AUTHOR =	KAWASAKI
 
