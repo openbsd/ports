@@ -1,0 +1,2 @@
+py-mccabe is a complexity checker for Python code using cyclomatic complexity
+measurement, also known as McCabe's complexity measure.
