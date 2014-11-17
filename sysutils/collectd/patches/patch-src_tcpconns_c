@@ -1,5 +1,6 @@
-$OpenBSD: patch-src_tcpconns_c,v 1.3 2014/10/27 09:07:07 landry Exp $
+$OpenBSD: patch-src_tcpconns_c,v 1.4 2014/11/17 15:23:12 landry Exp $
 https://github.com/collectd/collectd/pull/779
+https://github.com/collectd/collectd/pull/808
 --- src/tcpconns.c.orig	Sun Jan 26 09:09:14 2014
 +++ src/tcpconns.c	Mon Sep 22 16:59:13 2014
 @@ -896,7 +896,6 @@ static int conn_init (void)
