@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2014/06/14 23:24:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/17 14:54:57 sthen Exp $
 
 COMMENT =	coroutines for perl
 
 SHARED_ONLY =	Yes
 MODULES =	cpan
-DISTNAME =	Coro-6.23
+DISTNAME =	Coro-6.41
 CATEGORIES =	devel
-REVISION =	0
 
 
 # perl
