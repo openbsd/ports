@@ -1,12 +1,12 @@
-$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.18 2014/07/15 06:53:29 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.19 2014/11/18 16:04:43 sthen Exp $
 
 From 9a887feed2147f32ac360be92405e41ad324ff95 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 10 Jul 2014 13:15:50 +0200
 Subject: Unbreak build on OpenBSD after recent header changes.
 
---- sysdeps/openbsd/procmap.c.orig	Thu Jul 10 04:25:16 2014
-+++ sysdeps/openbsd/procmap.c	Thu Jul 10 04:25:40 2014
+--- sysdeps/openbsd/procmap.c.orig	Mon Apr 28 15:09:24 2014
++++ sysdeps/openbsd/procmap.c	Tue Nov 18 08:39:53 2014
 @@ -41,6 +41,10 @@
  #include <sys/ucred.h>
  #include <sys/sysctl.h>
@@ -18,3 +18,18 @@ Subject: Unbreak build on OpenBSD after recent header changes.
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
  #define _UVM_UVM_MAP_I_H_ 1
+@@ -276,11 +280,11 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 
+ 		mentry->perm   = (guint64) 0;
+ 
+-		if (entry->protection & VM_PROT_READ)
++		if (entry->protection & PROT_READ)
+ 			mentry->perm |= GLIBTOP_MAP_PERM_READ;
+-		if (entry->protection & VM_PROT_WRITE)
++		if (entry->protection & PROT_WRITE)
+ 			mentry->perm |= GLIBTOP_MAP_PERM_WRITE;
+-		if (entry->protection & VM_PROT_EXECUTE)
++		if (entry->protection & PROT_EXEC)
+ 			mentry->perm |= GLIBTOP_MAP_PERM_EXECUTE;
+ 	}
+ 
