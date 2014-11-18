@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/18 08:12:14 pirofti Exp $
 
 COMMENT=	unsymmetric multifrontal sparse LU factorization package
 
-VERSION=	5.1.0
+VERSION=	5.6.2
 DISTNAME=	UMFPACK-${VERSION}
 PKGNAME=	umfpack-${VERSION}
-REVISION=	4
-SHARED_LIBS=	umfpack	0.0
+SHARED_LIBS=	umfpack	1.0
 
 CATEGORIES=	math
 
@@ -18,24 +17,27 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 AMD_DIR=	math/amd
+LIB_DEPENDS =	math/SuiteSparse_config
 BUILD_DEPENDS=	${AMD_DIR}:patch \
 		${AMD_DIR}
+RUN_DEPENDS =	math/SuiteSparse_config
 
 MASTER_SITES=	${HOMEPAGE}
-MASTER_SITES0=	${HOMEPAGE}../UFconfig/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} UFconfig-3.0.0.tar.gz:0
 WRKDIST=	${WRKDIR}/UMFPACK
 WRKSRC=		${WRKDIST}/Source
+
+NO_TEST =	Yes
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBumfpack_VERSION:R} \
 		SHLIB_MINOR=${LIBumfpack_VERSION:E}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
-CFLAGS+=	-I${WRKDIST}/Include -I${WRKDIR}/UFconfig \
-		-I${WRKDIR}/${AMD_DIR}/AMD/Include -I${LOCALBASE}/include
+CFLAGS+=	-I${WRKDIST}/Include \
+		-I${WRKDIR}/${AMD_DIR}/AMD/Include -I${LOCALBASE}/include \
+		-DNCHOLMOD
 
 SRC1=	analyze apply_order colamd free fsize is_permutation malloc \
-	realloc report_perm singletons
+	realloc report_perm singletons cholmod
 SRC2=	ltsolve utsolve
 SRC3=	assemble blas3_update build_tuples create_element dump \
 	extend_front garbage_collection get_memory init_front \
@@ -44,7 +46,7 @@ SRC3=	assemble blas3_update build_tuples create_element dump \
 	mem_alloc_tail_block mem_free_tail_block mem_init_memoryspace \
         report_vector row_search scale_column set_stats solve \
 	symbolic_usage transpose tuple_lengths usolve utsolve \
-	valid_numeric valid_symbolic grow_front start_front 2by2 \
+	valid_numeric valid_symbolic grow_front start_front \
         store_lu scale
 SRC4=	col_to_triplet defaults free_numeric free_symbolic get_numeric \
 	get_lunz get_symbolic get_determinant numeric qsymbolic \
@@ -90,6 +92,5 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/umfpack
 	${INSTALL_DATA} ${WRKDIST}/Include/*.h ${PREFIX}/include/umfpack
-	${INSTALL_DATA} ${WRKDIR}/UFconfig/UFconfig.h ${PREFIX}/include/umfpack
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/21 17:22:47 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/18 08:12:14 pirofti Exp $
 
 LIB=	umfpack
+LDADD +=	-L${LOCALBASE}/lib -lamd
 SRCS=	umfpack_global.c umfpack_timer.c umfpack_tictoc.c \
 	umf_i_analyze.c umf_i_apply_order.c umf_i_colamd.c umf_i_free.c \
 	umf_i_fsize.c umf_i_is_permutation.c umf_i_malloc.c umf_i_realloc.c \
@@ -8,6 +9,7 @@ SRCS=	umfpack_global.c umfpack_timer.c umfpack_tictoc.c \
 	umf_l_analyze.c umf_l_apply_order.c umf_l_colamd.c umf_l_free.c \
 	umf_l_fsize.c umf_l_is_permutation.c umf_l_malloc.c umf_l_realloc.c \
 	umf_l_report_perm.c umf_l_singletons.c \
+	umf_l_cholmod.c umf_i_cholmod.c \
 	umf_di_lhsolve.c \
 	umf_di_uhsolve.c umf_di_triplet_map_nox.c umf_di_triplet_nomap_x.c \
 	umf_di_triplet_nomap_nox.c umf_di_triplet_map_x.c \
@@ -24,7 +26,7 @@ SRCS=	umfpack_global.c umfpack_timer.c umfpack_tictoc.c \
 	umf_di_set_stats.c umf_di_solve.c umf_di_symbolic_usage.c \
 	umf_di_transpose.c umf_di_tuple_lengths.c umf_di_usolve.c \
 	umf_di_utsolve.c umf_di_valid_numeric.c umf_di_valid_symbolic.c \
-	umf_di_grow_front.c umf_di_start_front.c umf_di_2by2.c \
+	umf_di_grow_front.c umf_di_start_front.c \
 	umf_di_store_lu.c umf_di_scale.c \
 	umfpack_di_wsolve.c \
 	umfpack_di_col_to_triplet.c umfpack_di_defaults.c \
@@ -57,7 +59,7 @@ SRCS=	umfpack_global.c umfpack_timer.c umfpack_tictoc.c \
 	umf_dl_set_stats.c umf_dl_solve.c umf_dl_symbolic_usage.c \
 	umf_dl_transpose.c umf_dl_tuple_lengths.c umf_dl_usolve.c \
 	umf_dl_utsolve.c umf_dl_valid_numeric.c umf_dl_valid_symbolic.c \
-	umf_dl_grow_front.c umf_dl_start_front.c umf_dl_2by2.c \
+	umf_dl_grow_front.c umf_dl_start_front.c \
 	umf_dl_store_lu.c umf_dl_scale.c umfpack_dl_wsolve.c \
 	umfpack_dl_col_to_triplet.c umfpack_dl_defaults.c \
 	umfpack_dl_free_numeric.c umfpack_dl_free_symbolic.c \
@@ -89,7 +91,7 @@ SRCS=	umfpack_global.c umfpack_timer.c umfpack_tictoc.c \
 	umf_zi_set_stats.c umf_zi_solve.c umf_zi_symbolic_usage.c \
 	umf_zi_transpose.c umf_zi_tuple_lengths.c umf_zi_usolve.c \
 	umf_zi_utsolve.c umf_zi_valid_numeric.c umf_zi_valid_symbolic.c \
-	umf_zi_grow_front.c umf_zi_start_front.c umf_zi_2by2.c \
+	umf_zi_grow_front.c umf_zi_start_front.c \
 	umf_zi_store_lu.c umf_zi_scale.c umfpack_zi_wsolve.c \
 	umfpack_zi_col_to_triplet.c umfpack_zi_defaults.c \
 	umfpack_zi_free_numeric.c umfpack_zi_free_symbolic.c \
@@ -121,7 +123,7 @@ SRCS=	umfpack_global.c umfpack_timer.c umfpack_tictoc.c \
 	umf_zl_set_stats.c umf_zl_solve.c umf_zl_symbolic_usage.c \
 	umf_zl_transpose.c umf_zl_tuple_lengths.c umf_zl_usolve.c \
 	umf_zl_utsolve.c umf_zl_valid_numeric.c umf_zl_valid_symbolic.c \
-	umf_zl_grow_front.c umf_zl_start_front.c umf_zl_2by2.c \
+	umf_zl_grow_front.c umf_zl_start_front.c \
 	umf_zl_store_lu.c umf_zl_scale.c umfpack_zl_wsolve.c \
 	umfpack_zl_col_to_triplet.c umfpack_zl_defaults.c \
 	umfpack_zl_free_numeric.c umfpack_zl_free_symbolic.c \
