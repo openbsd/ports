@@ -1,0 +1,3 @@
+Flake8 is a wrapper around python code checker tools such as
+PyFlakes, pep8 and Ned Batchelder's McCabe script. It displays
+the warnings in a per-file, merged output and is configurable.
