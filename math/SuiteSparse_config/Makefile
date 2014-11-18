@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/11 11:21:01 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/18 08:07:33 pirofti Exp $
 
-PKG_ARCH =	*
-
-COMMENT =	configuration header file shared by the SuiteSparse ports
+COMMENT =	configuration header and library shared by SuiteSparse ports
 
 VERSION =	4.3.1
+REVISION =	0
 DISTNAME =	SuiteSparse_config-${VERSION}
 PKGNAME =	${DISTNAME:L}
+
+SHARED_LIBS +=	suitesparseconfig	0.0
 
 CATEGORIES =	math
 
@@ -20,9 +21,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	${HOMEPAGE}
 WRKDIST =	${WRKDIR}/SuiteSparse_config
 
-NO_BUILD =	Yes
+NO_TEST =	Yes
 
-do-install:
+MAKE_FILE=	${FILESDIR}/Makefile
+MAKE_ENV=	SHLIB_MAJOR=${LIBsuitesparseconfig_VERSION:R} \
+		SHLIB_MINOR=${LIBsuitesparseconfig_VERSION:E}
+
+FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/SuiteSparse_config.h ${PREFIX}/include
 
 .include <bsd.port.mk>
