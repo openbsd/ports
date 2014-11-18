@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_system_h,v 1.1.1.1 2001/07/05 13:29:05 espie Exp $
+$OpenBSD: patch-include_system_h,v 1.2 2014/11/18 11:18:54 brad Exp $
 --- include/system.h.orig	Sun Jun 24 18:57:16 2001
-+++ include/system.h	Wed Jul  4 11:23:29 2001
-@@ -513,11 +513,15 @@ E struct tm *FDECL(localtime, (const tim
++++ include/system.h	Tue Nov 18 05:30:52 2014
+@@ -513,11 +513,15 @@ E struct tm *FDECL(localtime, (const time_t *));
  #  endif
  # endif
  
