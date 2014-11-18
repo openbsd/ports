@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2014/11/11 13:27:10 pirofti Exp $
+# $OpenBSD: Makefile,v 1.24 2014/11/18 08:09:07 pirofti Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
 VERSION=	2.4.0
+REVISION =	0
 DISTNAME=	AMD-${VERSION}
 PKGNAME=	${DISTNAME:L}
 
@@ -23,9 +24,12 @@ WRKDIST=	${WRKDIR}/AMD
 WRKSRC=		${WRKDIST}/Source
 MODULES=	fortran
 MODFORTRAN_COMPILER = g77
-BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
-		math/SuiteSparse_config
+
+LIB_DEPENDS =	math/SuiteSparse_config
+BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 RUN_DEPENDS=	math/SuiteSparse_config
+
+NO_TEST =	Yes
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBamd_VERSION:R} \
