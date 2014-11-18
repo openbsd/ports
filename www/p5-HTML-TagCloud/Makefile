@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/18 20:09:07 benoit Exp $
 
 COMMENT=	HTML tag cloud generator
 
 MODULES=	cpan
-DISTNAME=	HTML-TagCloud-0.37
+DISTNAME =	HTML-TagCloud-0.38
 CATEGORIES=	www
 
 # Perl
