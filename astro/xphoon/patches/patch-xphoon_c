@@ -1,7 +1,18 @@
-$OpenBSD: patch-xphoon_c,v 1.4 2013/11/29 20:48:35 naddy Exp $
---- xphoon.c.orig	Tue Jun 13 22:50:16 2000
-+++ xphoon.c	Tue Feb 15 21:13:26 2011
-@@ -65,7 +65,7 @@ main( argc, argv )
+$OpenBSD: patch-xphoon_c,v 1.5 2014/11/18 10:17:18 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- xphoon.c.orig	Tue Jun 13 17:50:16 2000
++++ xphoon.c	Mon Nov  3 22:38:23 2014
+@@ -20,7 +20,6 @@ static char rcsid[] =
+ #include "vroot.h"
+ #include <stdio.h>
+ #include <stdlib.h>	/* added by David Frey */
+-#include <malloc.h>	/* added by David Frey */
+ #include <time.h>	/* added by David Frey */
+ #include <math.h>
+ #include <limits.h>	/* added by Lalo Martins */
+@@ -65,7 +64,7 @@ main( argc, argv )
      int blackflag, demoflag, southflag;
      int printpid;
      char* display_name;

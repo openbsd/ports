@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2013/11/29 20:48:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2014/11/18 10:17:18 brad Exp $
 
 COMMENT=	set the root window to the moon in its current phase
 DISTNAME=	xphoon-20000613
-REVISION=	0
+REVISION=	1
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://xphoon.sourceforge.net/

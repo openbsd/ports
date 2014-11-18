@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lofi_cpp,v 1.1 2014/11/18 10:17:17 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/lofi.cpp.orig	Mon Nov  3 22:53:48 2014
++++ src/lofi.cpp	Mon Nov  3 22:53:53 2014
+@@ -24,7 +24,6 @@
+ 
+ /*****************************************************************************/
+ 
+-#include <malloc.h>
+ #include <math.h>
+ #include <stdlib.h>
+ #include "cmt.h"

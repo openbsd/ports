@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_syndrum_cpp,v 1.1 2014/11/18 10:17:17 brad Exp $
+
+Replace the malloc.h header with stdlib.h.
+
+--- src/syndrum.cpp.orig	Mon Nov  3 22:54:13 2014
++++ src/syndrum.cpp	Mon Nov  3 22:56:33 2014
+@@ -24,7 +24,7 @@
+ 
+ /*****************************************************************************/
+ 
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <math.h>
+ #include "cmt.h"
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_example_calculator_c,v 1.1 2014/11/18 10:17:17 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/example/calculator.c.orig	Mon Nov  3 23:23:00 2014
++++ src/example/calculator.c	Mon Nov  3 23:23:08 2014
+@@ -17,7 +17,6 @@
+ // A calculator example used to demonstrate the cmockery testing library.
+ 
+ #include <assert.h>
+-#include <malloc.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

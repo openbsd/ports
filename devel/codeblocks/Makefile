@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/09/12 07:44:22 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2014/11/18 10:17:17 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ V=		13.12
 P=		1
 DISTNAME=	codeblocks_${V}-${P}
 PKGNAME=	codeblocks-${V}
+REVISION=	0
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}
 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ctl_led_cpp,v 1.1 2014/11/18 10:17:17 brad Exp $
+
+Replace the malloc.h header with stdlib.h
+
+--- src/ctl_led.cpp.orig	Mon Nov  3 22:44:48 2014
++++ src/ctl_led.cpp	Mon Nov  3 22:45:51 2014
+@@ -21,7 +21,7 @@
+ #include <calf/ctl_led.h>
+ #include <math.h>
+ #include <stdint.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ GtkWidget *
+ calf_led_new()

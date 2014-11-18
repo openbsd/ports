@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ctl_curve_cpp,v 1.1 2014/11/18 10:17:17 brad Exp $
+
+Replace the malloc.h header with stdlib.h
+
+--- src/ctl_curve.cpp.orig	Mon Nov  3 22:43:27 2014
++++ src/ctl_curve.cpp	Mon Nov  3 22:48:57 2014
+@@ -20,8 +20,8 @@
+  * Boston, MA 02111-1307, USA.
+  */
+ #include <calf/ctl_curve.h>
+-#include <malloc.h>
+ #include <stdint.h>
++#include <stdlib.h>
+ #include <math.h>
+ 
+ static gpointer parent_class = NULL;
