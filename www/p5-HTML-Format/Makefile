@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 23:51:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2014/11/18 20:02:59 benoit Exp $
 
 COMMENT=	HTML text formating class
 
 MODULES=	cpan
-DISTNAME=	HTML-Format-2.10
+DISTNAME=	HTML-Format-2.11
 CATEGORIES=	www devel
 
 # GPL
