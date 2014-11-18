@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2014/11/05 10:30:53 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2014/11/18 13:17:38 landry Exp $
 
 COMMENT=	Xfce4 network load monitor panel plugin
 
-XFCE_VERSION=	1.2.2
+XFCE_VERSION=	1.2.3
 XFCE_PLUGIN=	netload
 
 # GPLv2
