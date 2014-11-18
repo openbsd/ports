@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2014/09/10 08:36:18 chrisz Exp $
+# $OpenBSD: Makefile,v 1.29 2014/11/18 02:00:52 daniel Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-V=			8.4pl4
+V=			8.4pl5
 DISTNAME=		coq-$V
 
 CATEGORIES=		math
@@ -41,6 +41,7 @@ CONFIGURE_ARGS=	-emacslib ${PREFIX}/share/emacs/site-lisp \
 		-prefix ${PREFIX} \
 		-mandir ${PREFIX}/man \
 		-configdir ${SYSCONFDIR}/xdg/coq \
+		-with-doc no \
 		-usecamlp4
 
 .include <bsd.port.arch.mk>
