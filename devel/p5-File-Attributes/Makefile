@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/18 22:38:05 sthen Exp $
 
 COMMENT =	manipulate file metadata
 
 MODULES =	cpan
 DISTNAME =	File-Attributes-0.04
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
@@ -14,6 +13,7 @@ MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 PERMIT_PACKAGE_CDROM =		Yes
 
 RUN_DEPENDS =	devel/p5-Best \
+		devel/p5-Module-Pluggable \
 		devel/p5-YAML
 
 # p5-Directory-Scratch should be TEST_DEPENDS but Module::Install screws up
