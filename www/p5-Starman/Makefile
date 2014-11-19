@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/19 22:04:01 sthen Exp $
 
 COMMENT =		high-performance preforking PSGI/Plack web server
 
@@ -20,5 +20,8 @@ RUN_DEPENDS =		devel/p5-Data-Dump \
 			www/p5-Plack>=0.9931 \
 			www/p5-HTTP-Parser-XS \
 			www/p5-libwww
+
+# XXX strange failure to find Test::More
+CONFIGURE_ARGS = --skipdeps
 
 .include <bsd.port.mk>
