@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.14 2014/10/13 06:49:19 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Fri Oct 10 16:14:37 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Fri Oct 10 16:15:12 2014
-@@ -171,7 +171,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.15 2014/11/19 21:27:32 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Nov 19 06:13:08 2014
++++ chrome/browser/chrome_content_browser_client.cc	Wed Nov 19 08:38:24 2014
+@@ -162,7 +162,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  #include "base/debug/leak_annotations.h"
- #include "components/breakpad/app/breakpad_linux.h"
- #include "components/breakpad/browser/crash_handler_host_linux.h"
-@@ -430,7 +430,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+ #include "components/crash/app/breakpad_linux.h"
+ #include "components/crash/browser/crash_handler_host_linux.h"
+@@ -434,7 +434,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.14 2014/10/1
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1196,7 +1196,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
+@@ -1194,7 +1194,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
  
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      CommandLine* command_line, int child_process_id) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.14 2014/10/1
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2447,7 +2447,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2408,7 +2408,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  

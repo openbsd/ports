@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_common_gypi,v 1.28 2014/11/14 21:04:36 robert Exp $
---- build/common.gypi.orig.port	Thu Nov 13 23:01:51 2014
-+++ build/common.gypi	Fri Nov 14 22:03:05 2014
+$OpenBSD: patch-build_common_gypi,v 1.29 2014/11/19 21:27:32 robert Exp $
+--- build/common.gypi.orig.port	Wed Nov 19 06:13:07 2014
++++ build/common.gypi	Wed Nov 19 08:38:24 2014
 @@ -91,7 +91,7 @@
  
            'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_common_gypi,v 1.28 2014/11/14 21:04:36 robert Exp $
                'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -782,7 +782,7 @@
+@@ -809,7 +809,7 @@
  
          # Use GPU accelerated cross process image transport by default
          # on linux builds with the Aura window manager
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_common_gypi,v 1.28 2014/11/14 21:04:36 robert Exp $
            'ui_compositor_image_transport%': 1,
          }, {
            'ui_compositor_image_transport%': 0,
-@@ -915,7 +915,7 @@
+@@ -936,7 +936,7 @@
          # NOTE: The check for disable_nacl==0 and component=="static_library"
          # can't be used here because these variables are not defined yet, but it
          # is still not supported.
@@ -28,7 +28,7 @@ $OpenBSD: patch-build_common_gypi,v 1.28 2014/11/14 21:04:36 robert Exp $
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -931,7 +931,7 @@
+@@ -952,7 +952,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
@@ -37,7 +37,7 @@ $OpenBSD: patch-build_common_gypi,v 1.28 2014/11/14 21:04:36 robert Exp $
              'enable_mdns%' : 1,
          }],
  
-@@ -3425,6 +3425,14 @@
+@@ -3517,6 +3517,14 @@
          ],
        },
      }],
@@ -52,7 +52,7 @@ $OpenBSD: patch-build_common_gypi,v 1.28 2014/11/14 21:04:36 robert Exp $
      ['os_posix==1 and OS!="mac" and OS!="ios"', {
        'target_defaults': {
          # Enable -Werror by default, but put it in a variable so it can
-@@ -5550,8 +5558,8 @@
+@@ -5683,8 +5691,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [

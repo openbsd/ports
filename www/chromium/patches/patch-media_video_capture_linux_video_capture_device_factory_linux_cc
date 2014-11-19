@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_video_capture_linux_video_capture_device_factory_linux_cc,v 1.1 2014/09/11 19:04:52 robert Exp $
---- media/video/capture/linux/video_capture_device_factory_linux.cc.orig.port	Wed Sep 10 22:20:43 2014
-+++ media/video/capture/linux/video_capture_device_factory_linux.cc	Wed Sep 10 22:21:09 2014
+$OpenBSD: patch-media_video_capture_linux_video_capture_device_factory_linux_cc,v 1.2 2014/11/19 21:27:32 robert Exp $
+--- media/video/capture/linux/video_capture_device_factory_linux.cc.orig.port	Wed Nov 19 08:49:56 2014
++++ media/video/capture/linux/video_capture_device_factory_linux.cc	Wed Nov 19 08:50:19 2014
 @@ -141,10 +141,7 @@ void VideoCaptureDeviceFactoryLinux::GetDeviceSupporte
      frame_size.pixel_format = pixel_format.pixelformat;
      while (HANDLE_EINTR(ioctl(fd.get(), VIDIOC_ENUM_FRAMESIZES, &frame_size)) ==
@@ -13,21 +13,20 @@ $OpenBSD: patch-media_video_capture_linux_video_capture_device_factory_linux_cc,
          // TODO(mcasas): see http://crbug.com/249953, support these devices.
          NOTIMPLEMENTED();
        } else if (frame_size.type == V4L2_FRMSIZE_TYPE_CONTINUOUS) {
-@@ -153,19 +150,9 @@ void VideoCaptureDeviceFactoryLinux::GetDeviceSupporte
+@@ -153,18 +150,10 @@ void VideoCaptureDeviceFactoryLinux::GetDeviceSupporte
        }
        v4l2_frmivalenum frame_interval = {};
        frame_interval.pixel_format = pixel_format.pixelformat;
 -      frame_interval.width = frame_size.discrete.width;
 -      frame_interval.height = frame_size.discrete.height;
+       std::list<float> frame_rates;
        while (HANDLE_EINTR(ioctl(
                   fd.get(), VIDIOC_ENUM_FRAMEINTERVALS, &frame_interval)) == 0) {
 -        if (frame_interval.type == V4L2_FRMIVAL_TYPE_DISCRETE) {
 -          if (frame_interval.discrete.numerator != 0) {
--            supported_format.frame_rate =
+-            frame_rates.push_back(
 -                static_cast<float>(frame_interval.discrete.denominator) /
--                static_cast<float>(frame_interval.discrete.numerator);
--          } else {
--            supported_format.frame_rate = 0;
+-                static_cast<float>(frame_interval.discrete.numerator));
 -          }
 -        } else if (frame_interval.type == V4L2_FRMIVAL_TYPE_CONTINUOUS) {
 +        if (frame_interval.type == V4L2_FRMIVAL_TYPE_CONTINUOUS) {

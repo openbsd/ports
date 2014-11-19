@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.1 2014/07/20 17:22:34 robert Exp $
---- chrome/browser/ui/views/first_run_dialog.cc.orig.port	Thu Jul 17 12:41:08 2014
-+++ chrome/browser/ui/views/first_run_dialog.cc	Thu Jul 17 12:42:08 2014
-@@ -124,12 +124,16 @@ void FirstRunDialog::OnClosed() {
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.2 2014/11/19 21:27:32 robert Exp $
+--- chrome/browser/ui/views/first_run_dialog.cc.orig.port	Wed Nov 19 05:53:00 2014
++++ chrome/browser/ui/views/first_run_dialog.cc	Wed Nov 19 08:38:25 2014
+@@ -118,12 +118,16 @@ void FirstRunDialog::OnClosed() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

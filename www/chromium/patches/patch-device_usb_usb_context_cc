@@ -1,0 +1,13 @@
+$OpenBSD: patch-device_usb_usb_context_cc,v 1.1 2014/11/19 21:27:32 robert Exp $
+--- device/usb/usb_context.cc.orig.port	Wed Nov 19 08:47:41 2014
++++ device/usb/usb_context.cc	Wed Nov 19 08:48:07 2014
+@@ -43,7 +43,9 @@ UsbContext::UsbEventHandler::UsbEventHandler(libusb_co
+ 
+ UsbContext::UsbEventHandler::~UsbEventHandler() {
+   base::subtle::Release_Store(&running_, 0);
++#if !defined(OS_BSD)
+   libusb_interrupt_handle_event(context_);
++#endif
+   base::PlatformThread::Join(thread_handle_);
+ }
+ 

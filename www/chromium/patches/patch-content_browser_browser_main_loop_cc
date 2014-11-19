@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.22 2014/10/13 06:49:19 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Fri Oct 10 16:23:59 2014
-+++ content/browser/browser_main_loop.cc	Fri Oct 10 16:24:36 2014
-@@ -134,7 +134,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.23 2014/11/19 21:27:32 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Wed Nov 19 06:13:09 2014
++++ content/browser/browser_main_loop.cc	Wed Nov 19 08:38:25 2014
+@@ -135,7 +135,7 @@
  namespace content {
  namespace {
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.22 2014/10/13 06:49:19 
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    base::FilePath sandbox_binary;
-@@ -376,7 +376,7 @@ void BrowserMainLoop::Init() {
+@@ -377,7 +377,7 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.22 2014/10/13 06:49:19 
    // No thread should be created before this call, as SetupSandbox()
    // will end-up using fork().
    SetupSandbox(parsed_command_line_);
-@@ -809,7 +809,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
+@@ -808,7 +808,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
    }
  #endif
  

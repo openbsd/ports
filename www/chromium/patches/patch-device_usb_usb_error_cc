@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_usb_usb_error_cc,v 1.1 2014/11/19 21:27:32 robert Exp $
+--- device/usb/usb_error.cc.orig.port	Wed Nov 19 08:48:20 2014
++++ device/usb/usb_error.cc	Wed Nov 19 08:48:28 2014
+@@ -9,7 +9,7 @@
+ namespace device {
+ 
+ std::string ConvertPlatformUsbErrorToString(int errcode) {
+-  return libusb_strerror(static_cast<libusb_error>(errcode));
++  return ""; 
+ }
+ 
+ }  // namespace device

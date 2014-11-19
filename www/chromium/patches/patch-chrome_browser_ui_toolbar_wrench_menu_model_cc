@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_toolbar_wrench_menu_model_cc,v 1.7 2014/10/13 06:49:19 robert Exp $
---- chrome/browser/ui/toolbar/wrench_menu_model.cc.orig.port	Thu Oct  2 19:39:46 2014
-+++ chrome/browser/ui/toolbar/wrench_menu_model.cc	Fri Oct 10 16:10:30 2014
-@@ -463,7 +463,7 @@ bool WrenchMenuModel::IsCommandIdVisible(int command_i
+$OpenBSD: patch-chrome_browser_ui_toolbar_wrench_menu_model_cc,v 1.8 2014/11/19 21:27:32 robert Exp $
+--- chrome/browser/ui/toolbar/wrench_menu_model.cc.orig.port	Wed Nov 19 06:13:08 2014
++++ chrome/browser/ui/toolbar/wrench_menu_model.cc	Wed Nov 19 08:38:25 2014
+@@ -461,7 +461,7 @@ bool WrenchMenuModel::IsCommandIdVisible(int command_i
  #endif
      case IDC_UPGRADE_DIALOG:
        return UpgradeDetector::GetInstance()->notify_upgrade();

@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.22 2014/09/11 19:04:52 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Wed Sep 10 01:47:13 2014
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Sep 10 22:05:41 2014
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.23 2014/11/19 21:27:32 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Wed Nov 19 05:53:04 2014
++++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Nov 19 08:38:26 2014
 @@ -4,55 +4,25 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
@@ -125,7 +125,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.22 2014/09/11 1
  
    ChannelLayout channel_layout = CHANNEL_LAYOUT_STEREO;
    int sample_rate = kDefaultSampleRate;
-@@ -147,15 +107,14 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
+@@ -145,15 +105,14 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
  
  AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
      const AudioParameters& params) {

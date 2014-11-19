@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_ninja_py,v 1.12 2014/10/13 06:49:19 robert Exp $
---- tools/gyp/pylib/gyp/generator/ninja.py.orig.port	Thu Oct  2 19:40:30 2014
-+++ tools/gyp/pylib/gyp/generator/ninja.py	Fri Oct 10 16:10:31 2014
-@@ -1929,7 +1929,7 @@ def GenerateOutputForConfig(target_list, target_dicts,
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_ninja_py,v 1.13 2014/11/19 21:27:32 robert Exp $
+--- tools/gyp/pylib/gyp/generator/ninja.py.orig.port	Wed Nov 19 06:13:55 2014
++++ tools/gyp/pylib/gyp/generator/ninja.py	Wed Nov 19 08:38:27 2014
+@@ -1953,7 +1953,7 @@ def GenerateOutputForConfig(target_list, target_dicts,
      master_ninja.rule(
        'alink_thin',
        description='AR $out',

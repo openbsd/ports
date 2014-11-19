@@ -1,7 +1,7 @@
-$OpenBSD: patch-skia_skia_gyp,v 1.18 2014/10/13 06:49:19 robert Exp $
---- skia/skia.gyp.orig.port	Fri Oct 10 16:26:58 2014
-+++ skia/skia.gyp	Fri Oct 10 16:27:28 2014
-@@ -106,12 +106,12 @@
+$OpenBSD: patch-skia_skia_gyp,v 1.19 2014/11/19 21:27:32 robert Exp $
+--- skia/skia.gyp.orig.port	Wed Nov 19 06:13:10 2014
++++ skia/skia.gyp	Wed Nov 19 08:38:26 2014
+@@ -112,12 +112,12 @@
            ],
          }],
          [ 'target_arch != "arm" and target_arch != "mipsel" and \

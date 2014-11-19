@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.5 2014/10/13 06:49:19 robert Exp $
---- chrome/browser/renderer_preferences_util.cc.orig.port	Fri Oct 10 16:17:29 2014
-+++ chrome/browser/renderer_preferences_util.cc	Fri Oct 10 16:18:30 2014
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.6 2014/11/19 21:27:32 robert Exp $
+--- chrome/browser/renderer_preferences_util.cc.orig.port	Wed Nov 19 06:13:08 2014
++++ chrome/browser/renderer_preferences_util.cc	Wed Nov 19 08:38:25 2014
 @@ -11,7 +11,7 @@
  #include "content/public/common/renderer_preferences.h"
  #include "third_party/skia/include/core/SkColor.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.5 2014/10/13 06:
  #include "ui/gfx/font_render_params.h"
  #endif
  
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "ui/views/controls/textfield/textfield.h"
  #endif
  
@@ -19,8 +19,8 @@ $OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.5 2014/10/13 06:
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/views/linux_ui/linux_ui.h"
-@@ -65,7 +65,7 @@ void UpdateFromSystemSettings(
-   prefs->caret_blink_interval = views::Textfield::GetCaretBlinkMs() / 1000.0;
+@@ -60,7 +60,7 @@ void UpdateFromSystemSettings(
+   }
  #endif
  
 -#if defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.5 2014/10/13 06:
    views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -87,7 +87,7 @@ void UpdateFromSystemSettings(
+@@ -82,7 +82,7 @@ void UpdateFromSystemSettings(
    }
  #endif
  

@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_hid_hid_service_cc,v 1.1 2014/11/19 21:27:32 robert Exp $
+--- device/hid/hid_service.cc.orig.port	Wed Nov 19 10:53:13 2014
++++ device/hid/hid_service.cc	Wed Nov 19 15:58:29 2014
+@@ -14,7 +14,7 @@
+ #include "device/hid/hid_service_linux.h"
+ #elif defined(OS_MACOSX)
+ #include "device/hid/hid_service_mac.h"
+-#else
++#elsif !defined(OS_BSD)
+ #include "device/hid/hid_service_win.h"
+ #endif
+ 

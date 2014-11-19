@@ -1,0 +1,23 @@
+$OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.1 2014/11/19 21:27:32 robert Exp $
+--- third_party/skia/gyp/ports.gyp.orig.port	Wed Nov 19 15:30:59 2014
++++ third_party/skia/gyp/ports.gyp	Wed Nov 19 15:31:14 2014
+@@ -76,11 +76,6 @@
+         [ 'skia_os in ["linux", "freebsd", "openbsd", "solaris", "chromeos"]', {
+           'conditions': [
+             [ 'skia_no_fontconfig', {
+-              'link_settings': {
+-                'libraries': [
+-                  '-ldl',
+-                ],
+-              },
+               'sources': [
+                 '../src/ports/SkFontHost_linux.cpp',
+               ],
+@@ -88,7 +83,6 @@
+               'link_settings': {
+                 'libraries': [
+                   '-lfontconfig',
+-                  '-ldl',
+                 ],
+               },
+               'sources': [

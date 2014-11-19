@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.7 2014/10/13 06:49:19 robert Exp $
---- chrome/chrome_browser_ui.gypi.orig.port	Thu Oct  2 19:39:46 2014
-+++ chrome/chrome_browser_ui.gypi	Sun Oct 12 10:38:17 2014
-@@ -2729,7 +2729,7 @@
+$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.8 2014/11/19 21:27:32 robert Exp $
+--- chrome/chrome_browser_ui.gypi.orig.port	Wed Nov 19 08:42:19 2014
++++ chrome/chrome_browser_ui.gypi	Wed Nov 19 08:56:38 2014
+@@ -2743,7 +2743,7 @@
              }],
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.7 2014/10/13 06:49:19 robert E
            'dependencies': [
              # gtk2 is the only component that can interact with gtk2 in our new
              # world.
-@@ -2737,7 +2737,7 @@
+@@ -2751,7 +2751,7 @@
              '../build/linux/system.gyp:gio',
            ],
          }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.7 2014/10/13 06:49:19 robert E
            'sources': [ '<@(chrome_browser_ui_desktop_sources)' ],
          }],
          ['use_aura==1', {
-@@ -2772,7 +2772,7 @@
+@@ -2788,7 +2788,7 @@
          ['enable_printing==1', {
            'sources': [ '<@(chrome_browser_ui_print_preview_sources)' ],
          }],
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.7 2014/10/13 06:49:19 robert E
            'sources': [ '<@(chrome_browser_ui_android_linux_sources)' ],
          }],
          ['OS=="android"', {
-@@ -2888,14 +2888,11 @@
+@@ -2904,10 +2904,10 @@
              }],
            ],
          }],
@@ -37,11 +37,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.7 2014/10/13 06:49:19 robert E
            'sources': [ '<@(chrome_browser_ui_desktop_linux_sources)' ],
          }],
 -        ['OS=="linux"', {  # Both desktop Linux and ChromeOS.
-+        ['OS=="linux" or OS=="openbsd"', {  # Both desktop Linux and ChromeOS.
++        ['OS=="linux" or os_bsd==1', {  # Both desktop Linux and ChromeOS.
            'sources': [ '<@(chrome_browser_ui_linux_sources)' ],
--          'dependencies': [
--            '../build/linux/system.gyp:udev',
--          ],
            'conditions': [
              ['use_aura==1', {
-               'dependencies': [
