@@ -1,0 +1,13 @@
+$OpenBSD: patch-services_virus_scan_clamav_mod_c,v 1.1 2014/11/19 21:13:10 sthen Exp $
+--- services/virus_scan/clamav_mod.c.orig	Wed Nov 19 14:10:35 2014
++++ services/virus_scan/clamav_mod.c	Wed Nov 19 14:10:53 2014
+@@ -24,7 +24,9 @@
+ #include "c_icap/module.h"
+ #include "c_icap/debug.h"
+ #include "../../common.h"
++#define CONF osslCONF
+ #include <clamav.h>
++#undef CONF
+ 
+ #include <assert.h>
+ 
