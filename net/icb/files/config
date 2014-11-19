@@ -19,7 +19,7 @@ MANDIR		= @PREFIX@/man
 CC		= @CC@
 
 # Compile options.
-CFLAGS		+= ${DEBUG} -DSTRINGS_H -DTIME_H
+CFLAGS		+= ${DEBUG} -DSTRINGS_H -DTIME_H -DHAVE_UNISTD_H
 TCLCFLAGS	+= ${DEBUG} -DSTRINGS_H -DTIME_H
 
 # Lint flags

@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
+$OpenBSD: patch-src_metamail_mailto_c,v 1.2 2014/11/19 20:48:00 sthen Exp $
 --- src/metamail/mailto.c.orig	Wed Feb  9 20:30:26 1994
-+++ src/metamail/mailto.c	Sat Mar 17 10:51:52 2012
-@@ -37,6 +37,8 @@ STILL NEED TO DO/SUPPORT:
++++ src/metamail/mailto.c	Wed Nov 19 20:46:06 2014
+@@ -37,6 +37,9 @@ STILL NEED TO DO/SUPPORT:
  */
  
  #include <stdio.h>
 +#include <stdlib.h>
++#include <unistd.h>
 +#include <string.h>
  #include <ctype.h>
  #include <config.h>
  #include <pwd.h>
-@@ -50,8 +52,6 @@ STILL NEED TO DO/SUPPORT:
+@@ -50,8 +53,6 @@ STILL NEED TO DO/SUPPORT:
  #include <getfiles.h>
  #include <time.h>
  #include <lib_protos.h>
@@ -19,7 +20,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
  #endif
  
  #ifdef SYSV
-@@ -60,7 +60,7 @@ extern char *getenv();
+@@ -60,7 +61,7 @@ extern char *getenv();
  #include <unistd.h>
  #endif
  
@@ -28,7 +29,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
  struct mailpart *CreateNewPart();
  
  /* The main data structure for the multiple parts of the mail */
-@@ -195,7 +195,7 @@ tmpname() {
+@@ -195,7 +196,7 @@ tmpname() {
          sprintf(s, "%s/mm.XXXXXX", tmproot);
      }
  #endif
@@ -37,7 +38,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
      return(s);
  }
  
-@@ -205,7 +205,7 @@ TildeHelp() {
+@@ -205,7 +206,7 @@ TildeHelp() {
      FILE *fp;
  
      strcpy(TmpName, tmpname());
@@ -46,7 +47,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
      if (!fp) fp = stdout;
      fprintf(fp, "The following tilde escapes are BSD-mail-compatible:\n");
      fprintf(fp, "~? Show help on tilde escapes\n");
-@@ -570,6 +570,7 @@ char **argv;
+@@ -570,6 +571,7 @@ char **argv;
          if (isupper(*sdum)) *sdum = tolower(*sdum);
      }
      if (strcmp(CharacterSet, "us-ascii")
@@ -54,7 +55,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
           && strncmp(CharacterSet, "iso-8859-", 9)) {
          fprintf(stderr, "mailto:  Unsupported character set: %s\n", CharacterSet);
          exit(-1);
-@@ -591,7 +592,7 @@ char **argv;
+@@ -591,7 +593,7 @@ char **argv;
      }
      FirstPart = NewPart();
      CurrentPart = FirstPart;
@@ -63,7 +64,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
      if (!fpout) {
          fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
          cleanexit(-1);
-@@ -678,7 +679,7 @@ char **argv;
+@@ -678,7 +680,7 @@ char **argv;
                      CurrentPart->next = NewPart();
                      CurrentPart->next->prev = CurrentPart;
                      CurrentPart = CurrentPart->next;
@@ -72,7 +73,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      if (!fpout) {
                          fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
                          cleanexit(-1);
-@@ -717,7 +718,7 @@ char **argv;
+@@ -717,7 +719,7 @@ char **argv;
                      CurrentPart = CurrentPart->next;
                      CurrentPart->istext = 0;
                      CurrentPart->content_type = "message/rfc822";
@@ -81,7 +82,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      if (!fpout) {
                          fprintf(stderr, "mailto: Cannot open temporary file %s\n", CurrentPart->filename);
                          break;
-@@ -729,7 +730,7 @@ char **argv;
+@@ -729,7 +731,7 @@ char **argv;
                      CurrentPart->next = NewPart();
                      CurrentPart->next->prev = CurrentPart;
                      CurrentPart = CurrentPart->next;
@@ -90,7 +91,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      if (!fpout) {
                          fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
                          cleanexit(-1);
-@@ -808,11 +809,11 @@ char **argv;
+@@ -808,11 +810,11 @@ char **argv;
                      char Cmd[TMPFILE_NAME_SIZE + 15];
                      char *s=tmpname();
                      fclose(fpout);
@@ -104,7 +105,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      if (!fpout) {
                          fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
                          cleanexit(-1);
-@@ -969,7 +970,7 @@ char **argv;
+@@ -969,7 +971,7 @@ char **argv;
                      CurrentPart = CurrentPart->next;
                      CurrentPart->istext = 0;
                      CurrentPart->content_type = "message/rfc822";
@@ -113,7 +114,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      if (!fpout) {
                          fprintf(stderr, "mailto: Cannot open temporary file %s\n", CurrentPart->filename);
                          break;
-@@ -991,7 +992,7 @@ char **argv;
+@@ -991,7 +993,7 @@ char **argv;
                      CurrentPart->next = NewPart();
                      CurrentPart->next->prev = CurrentPart;
                      CurrentPart = CurrentPart->next;
@@ -122,7 +123,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      if (!fpout) {
                          fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
                          cleanexit(-1);
-@@ -1130,6 +1131,7 @@ struct mailpart *part;
+@@ -1130,6 +1132,7 @@ struct mailpart *part;
          if (part->isrich) {
              if (strcmp(CharacterSet, "us-ascii")
                   && (strncmp(CharacterSet, "iso-8859-", 9) 
@@ -130,7 +131,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                        || part->encoding_type_needed != ENC_NONE)) {
                  fprintf(fp, "Content-type: text/richtext; charset=\"%s\"\n", CharacterSet);
              } else {
-@@ -1140,6 +1142,7 @@ struct mailpart *part;
+@@ -1140,6 +1143,7 @@ struct mailpart *part;
              WriteCtypeNicely(fp, part->content_type);
              if (strcmp(CharacterSet, "us-ascii")
                   && (strncmp(CharacterSet, "iso-8859-", 9) 
@@ -138,7 +139,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                        || part->encoding_type_needed != ENC_NONE)) {
                  fprintf(fp, "; charset=\"%s\"\n", CharacterSet);
              } else fputs("\n", fp);
-@@ -1745,6 +1748,7 @@ CreateNewPart() {
+@@ -1745,6 +1749,7 @@ CreateNewPart() {
      }
      printf("\n\nEnter your choice as a number from 0 to %d: ", i);
      fflush(stdout);
@@ -146,7 +147,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
      fgets(LineBuf, sizeof(LineBuf), stdin);
      ans = atoi(LineBuf);
      if (ans == 0 || ans == 1) {
-@@ -1773,7 +1777,7 @@ CreateNewPart() {
+@@ -1773,7 +1778,7 @@ CreateNewPart() {
              printf("Cannot read %s, data insertion cancelled\n", sdum);
              return(NULL);
          }
@@ -155,7 +156,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
          if (!fpo) {
              printf("Cannot open temporary file, data insertion cancelled\n");
              return(NULL);
-@@ -1791,12 +1795,13 @@ CreateNewPart() {
+@@ -1791,12 +1796,13 @@ CreateNewPart() {
                  int ct;
                  printf("\nEnter the MIME Content-type value for the data from file %s\n    (type '?' for a list of locally-valid content-types): ", sdum);
                  fflush(stdout);
@@ -170,7 +171,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      }
                      if (!strcmp(lc, "text/plain")) break;
                      if (!strcmp(lc, "application/octet-stream")) break;
-@@ -1809,7 +1814,7 @@ CreateNewPart() {
+@@ -1809,7 +1815,7 @@ CreateNewPart() {
                      }
                      if (mc) break;
                      printf("The MIME content-type '%s' is not listed in your local mailcap files,\nand may not be a valid MIME type.  Do you want to use it anyway [no] ? ", LineBuf);
@@ -179,7 +180,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
                      while (s && *s && isspace((unsigned char) *s)) ++s;
                      if (s && (*s == 'y' || *s == 'Y')) break;
                      continue;
-@@ -1866,7 +1871,8 @@ CreateNewPart() {
+@@ -1866,7 +1872,8 @@ CreateNewPart() {
          mp->content_type = mc->contenttype;
          mp->encoding_type_needed = WhichEncodingForFile(mp->filename, mp->content_type);
      } else {
@@ -189,7 +190,7 @@ $OpenBSD: patch-src_metamail_mailto_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
          FILE *fp, *fpout;
          int inheaders=1, bct=0;
  
-@@ -1936,7 +1942,7 @@ CreateNewPart() {
+@@ -1936,7 +1943,7 @@ CreateNewPart() {
              mp->encoding_type_needed = ENC_NONE;
          }
          newfilename = tmpname();

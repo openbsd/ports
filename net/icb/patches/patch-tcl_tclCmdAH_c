@@ -1,7 +1,25 @@
-$OpenBSD: patch-tcl_tclCmdAH_c,v 1.2 2010/05/22 14:23:48 espie Exp $
---- tcl/tclCmdAH.c.orig	Fri Feb 24 22:19:53 1995
-+++ tcl/tclCmdAH.c	Sat May 22 16:16:44 2010
-@@ -38,9 +38,17 @@ static char rcsid[] = "$Header: /home/agamotto/mark/pk
+$OpenBSD: patch-tcl_tclCmdAH_c,v 1.3 2014/11/19 20:48:00 sthen Exp $
+--- tcl/tclCmdAH.c.orig	Fri Feb 24 21:19:53 1995
++++ tcl/tclCmdAH.c	Wed Nov 19 20:36:11 2014
+@@ -19,16 +19,13 @@
+ static char rcsid[] = "$Header: /home/cvs/ports/net/icb/patches/Attic/patch-tcl_tclCmdAH_c,v 1.3 2014/11/19 20:48:00 sthen Exp $ SPRITE (Berkeley)";
+ #endif /* not lint */
+ 
+-#ifdef linux
+-#include <unistd.h>
+-#endif /* linux */
+-
+ #include <ctype.h>
+ #include <errno.h>
+ #include <signal.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/errno.h>
+ #include <sys/file.h>
+@@ -38,9 +35,17 @@ static char rcsid[] = "$Header: /home/agamotto/mark/pk
  #include <sys/wait.h>
  #include "tclInt.h"
  
@@ -19,7 +37,7 @@ $OpenBSD: patch-tcl_tclCmdAH_c,v 1.2 2010/05/22 14:23:48 espie Exp $
  
  /*
   *----------------------------------------------------------------------
-@@ -430,7 +438,7 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
+@@ -430,7 +435,7 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
      int pid = -1;			/* -1 means child process doesn't
  					 * exist (yet).  Non-zero gives its
  					 * id (0 only in child). */
@@ -28,7 +46,7 @@ $OpenBSD: patch-tcl_tclCmdAH_c,v 1.2 2010/05/22 14:23:48 espie Exp $
      char *cmdName, *execName;
  
      /*
-@@ -501,8 +509,13 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
+@@ -501,8 +506,13 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
      } else {
  	char tmp[sizeof(TMP_FILE_NAME) + 1];
  	strcpy(tmp, TMP_FILE_NAME);
@@ -42,7 +60,7 @@ $OpenBSD: patch-tcl_tclCmdAH_c,v 1.2 2010/05/22 14:23:48 espie Exp $
  	if (stdIn[0] < 0) {
  	    sprintf(interp->result,
  		    "couldn't create input file for \"%.50s\" command: %.50s",
-@@ -642,7 +655,7 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
+@@ -642,7 +652,7 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
  	    sprintf(interp->result, "command terminated abnormally");
  	    result = TCL_ERROR;
  	}
