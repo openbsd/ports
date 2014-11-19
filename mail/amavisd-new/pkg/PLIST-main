@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/12/05 10:21:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2014/11/19 19:00:50 giovanni Exp $
+@pkgpath mail/amavisd-new
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -fr /var/amavisd/*
 @extraunexec rm -fr /var/virusmails/*
-bin/amavisd-agent
-bin/amavisd-nanny
 bin/amavisd-release
 bin/amavisd-signer
-bin/amavisd-snmp-subagent
 bin/amavisd-submit
 bin/p0f-analyzer.pl
 libdata/perl5/site_perl/JpegTester.pm
@@ -54,9 +52,6 @@ share/examples/amavisd-new/amavisd-custom.conf
 share/examples/amavisd-new/amavisd.conf
 @sample ${SYSCONFDIR}/amavisd.conf
 share/examples/amavisd-new/amavisd.conf-default
-share/snmp/
-share/snmp/mibs/
-share/snmp/mibs/AMAVIS-MIB.txt
 @mode 0755
 @owner _vscan
 @group _vscan

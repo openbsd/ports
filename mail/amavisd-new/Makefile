@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2014/07/14 08:56:30 giovanni Exp $
+# $OpenBSD: Makefile,v 1.37 2014/11/19 19:00:50 giovanni Exp $
 
-COMMENT=		interface between mailer MTA and content checkers
+COMMENT-main=		interface between mailer MTA and content checkers
+COMMENT-utils=		utilities to monitor amavisd-new server
 
-DISTNAME=		amavisd-new-2.9.1
+V=			2.10.1
+DISTNAME=		amavisd-new-${V}
+PKGNAME-main=		${DISTNAME}
+PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.amavis.org/
@@ -16,6 +20,8 @@ MASTER_SITES=		${HOMEPAGE} \
 			http://mirror.mainloop.se/amavisd/ \
 			http://mirror.cedratnet.com/amavisd-new/ \
 			http://mirror.omroep.nl/amavisd-new/
+
+EXTRACT_SUFX=		.tar.xz
 
 RUN_DEPENDS=		archivers/arc \
 			archivers/bzip2 \
@@ -33,27 +39,38 @@ RUN_DEPENDS=		archivers/arc \
 			mail/p5-Mail-SpamAssassin \
 			mail/p5-Mail-DKIM>=0.31 \
 			mail/p5-MIME-tools \
+			misc/p5-File-LibMagic \
 			net/net-snmp,-perl \
 			net/p5-IO-Socket-INET6 \
 			net/p5-IO-Socket-IP \
+			net/p5-Net-LibIDN \
 			security/clamav \
 			sysutils/p5-Unix-Syslog
+
+RUN_DEPENDS-utils=	devel/p5-ZMQ \
+			devel/p5-ZMQ-LibZMQ3 \
+			mail/amavisd-new
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
 PKG_ARCH=		*
 
+MULTI_PACKAGES=		-main -utils
+
 pre-configure:
-	@perl -pi -e 's,/var/amavis,/var/amavisd,g' ${WRKSRC}/amavisd-*
+	${SUBST_CMD} ${WRKSRC}/amavis-mc
+	@perl -pi -e 's,/var/amavis,/${VARBASE}/amavisd,g' ${WRKSRC}/amavisd-*
 	@perl -pi -e "s,= 'vscan',= '_vscan',g" ${WRKSRC}/amavisd-signer \
 		${WRKSRC}/amavisd.conf ${WRKSRC}/amavisd.conf-default
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin/amavisd
+	cd ${WRKSRC}; ${INSTALL_SCRIPT} amavisd amavis-mc amavis-services \
+		${PREFIX}/sbin/
 	cd ${WRKSRC}; ${INSTALL_SCRIPT} amavisd-agent amavisd-nanny \
 		amavisd-release amavisd-signer amavisd-snmp-subagent \
-		amavisd-submit p0f-analyzer.pl ${PREFIX}/bin/
+		amavisd-submit amavisd-status amavisd-snmp-subagent-zmq \
+		p0f-analyzer.pl ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/JpegTester.pm \
 			${PREFIX}/libdata/perl5/site_perl/JpegTester.pm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amavisd-new

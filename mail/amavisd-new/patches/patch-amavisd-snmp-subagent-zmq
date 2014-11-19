@@ -1,0 +1,12 @@
+$OpenBSD: patch-amavisd-snmp-subagent-zmq,v 1.1 2014/11/19 19:00:50 giovanni Exp $
+--- amavisd-snmp-subagent-zmq.orig	Fri Jul 11 10:03:13 2014
++++ amavisd-snmp-subagent-zmq	Fri Jul 11 10:10:01 2014
+@@ -1123,7 +1123,7 @@ my $keep_running = 1;
+   if (!defined $mta_queue_dir) {  # test for access to Postfix queue directory
+     local($ENV{PATH}) = '/usr/sbin:/usr/local/sbin:/opt/postfix/sbin';
+     $! = 0;
+-    $mta_queue_dir = qx(postconf -h queue_directory);
++    $mta_queue_dir = qx(postconf -h queue_directory 2>&1);
+     if (!defined $mta_queue_dir) {
+       if ($! != 0) {
+         do_log(1, "no postfix (unable to run postconf command): $!");

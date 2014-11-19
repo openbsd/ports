@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: amavis_mc.rc,v 1.1 2014/11/19 19:00:50 giovanni Exp $
+
+daemon="${TRUEPREFIX}/sbin/amavis-mc"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+pexp="/usr/bin/perl -T ${daemon}"
+
+rc_cmd $1

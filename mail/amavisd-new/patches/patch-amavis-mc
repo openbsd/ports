@@ -1,0 +1,24 @@
+$OpenBSD: patch-amavis-mc,v 1.1 2014/11/19 19:00:50 giovanni Exp $
+--- amavis-mc.orig	Tue May  6 13:56:46 2014
++++ amavis-mc	Mon Jul 14 10:15:13 2014
+@@ -70,16 +70,16 @@ use vars qw(@path @services $daemon_user $daemon_group
+ 
+ ### USER CONFIGURABLE:
+ 
+-$daemon_user  = 'vscan';
+-$daemon_group = 'vscan';
++$daemon_user  = '_vscan';
++$daemon_group = '_vscan';
+ 
+-$pid_file = '/var/amavis/amavis-mc.pid';
++$pid_file = '/var/amavisd/amavis-mc.pid';
+ 
+ $log_level = 0;
+ $syslog_ident = 'amavis-mc';
+ $syslog_facility = LOG_MAIL;
+ 
+-@path = qw(/usr/local/sbin /usr/local/bin /usr/sbin /sbin /usr/bin /bin);
++@path = qw(${TRUEPREFIX}/sbin ${TRUEPREFIX}/bin /usr/sbin /sbin /usr/bin /bin);
+ 
+ @services = (
+   { cmd => 'amavis-services msg-forwarder' },
