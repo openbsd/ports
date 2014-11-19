@@ -1,23 +1,28 @@
-$OpenBSD: patch-tests_test_mips_c,v 1.1 2014/03/09 19:58:51 jasper Exp $
+$OpenBSD: patch-tests_test_mips_c,v 1.2 2014/11/19 21:59:31 benoit Exp $
 
 The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
 conflict.
 
---- tests/test_mips.c.orig	Sat Feb 22 12:42:41 2014
-+++ tests/test_mips.c	Sat Feb 22 13:10:29 2014
-@@ -31,14 +31,14 @@ static void print_string_hex(char *comment, unsigned c
- 
+--- tests/test_mips.c.orig	Wed Nov 19 10:56:04 2014
++++ tests/test_mips.c	Wed Nov 19 21:49:16 2014
+@@ -32,18 +32,18 @@
  static void print_insn_detail(cs_insn *ins)
  {
--	cs_mips *mips = &(ins->detail->mips);
-+	cs_mips *mipsen=  &(ins->detail->mipsen);
+ 	int i;
+-	cs_mips *mips;
++	cs_mips *mipsen;
  
+ 	// detail can be NULL on "data" instruction if SKIPDATA option is turned ON
+ 	if (ins->detail == NULL)
+ 		return;
+ 
+-	mips = &(ins->detail->mips);
 -	if (mips->op_count)
 -		printf("\top_count: %u\n", mips->op_count);
++	mipsen = &(ins->detail->mipsen);
 +	if (mipsen->op_count)
 +		printf("\top_count: %u\n", mipsen->op_count);
  
- 	int i;
 -	for (i = 0; i < mips->op_count; i++) {
 -		cs_mips_op *op = &(mips->operands[i]);
 +	for (i = 0; i < mipsen->op_count; i++) {
