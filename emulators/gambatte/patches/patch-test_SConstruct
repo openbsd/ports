@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_SConstruct,v 1.1 2014/11/19 10:32:48 bentley Exp $
+--- test/SConstruct.orig	Wed Nov 19 03:18:18 2014
++++ test/SConstruct	Wed Nov 19 03:18:41 2014
+@@ -5,9 +5,10 @@ vars = Variables()
+ vars.Add('CC')
+ vars.Add('CXX')
+ 
+-env = Environment(CPPPATH = ['.', '../common', '../libgambatte/include'],
++env = Environment(CPPPATH = ['.', '../common', '../libgambatte/include', '${LOCALBASE}/include'],
+                   CFLAGS = global_cflags + global_defines,
+                   CXXFLAGS = global_cxxflags + global_defines,
++                  LIBPATH = '${LOCALBASE}/lib',
+                   LIBS = 'm',
+                   variables = vars)
+ 

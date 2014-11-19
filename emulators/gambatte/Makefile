@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/10 04:18:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/19 10:32:48 bentley Exp $
 
 COMMENT =		highly accurate Game Boy Color emulator
 
-REV =			550
+REV =			571
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-0.5.0.${REV}
-REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -27,7 +26,7 @@ LIB_DEPENDS =		devel/sdl
 TEST_DEPENDS =	graphics/png
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/testrunner/SConstruct
+	${SUBST_CMD} ${WRKDIST}/test/SConstruct
 
 do-build:
 	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/libgambatte \
@@ -40,9 +39,9 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/gambatte_sdl.6 ${PREFIX}/man/man6
 
 do-test:
-	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/testrunner \
+	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/test \
 		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
-	cd ${WRKDIST}/testrunner && \
+	cd ${WRKDIST}/test && \
 	${MODPY_BIN} qdgbas.py hwtests/*.asm hwtests/*/*.asm \
 		hwtests/*/*/*.asm hwtests/*/*/*/*.asm && ./run_tests.sh
 

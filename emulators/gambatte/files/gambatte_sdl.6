@@ -1,4 +1,4 @@
-.\"     $OpenBSD: gambatte_sdl.6,v 1.1 2014/03/10 04:18:25 bentley Exp $
+.\"     $OpenBSD: gambatte_sdl.6,v 1.2 2014/11/19 10:32:48 bentley Exp $
 .Dd August 27, 2007
 .Dt GAMBATTE 6
 .Os
@@ -9,7 +9,7 @@
 .Nm gambatte
 .Op Fl f
 .Op Fl i Ar keys
-.Op Fl Fl list-keys
+.Op Fl -list-keys
 .Op Fl r Ar freq
 .Op Fl s Ar scale
 .Op Fl v Ar filter
@@ -23,24 +23,24 @@ loaded as a Game Boy cartridge.
 .Pp
 The options are as follows:
 .Bl -tag -width Ds
-.It Fl Fl controls
+.It Fl -controls
 Show keyboard controls.
-.It Fl Fl force-dmg
+.It Fl -force-dmg
 Force DMG mode.
-.It Fl f , Fl Fl full-screen
+.It Fl f , Fl -full-screen
 Start in full screen mode.
-.It Fl Fl gba-cgb
-Emulate the Game Boy Advance's CGB mode.
-.It Fl Fl multicart-compat
+.It Fl -gba-cgb
+Emulate the Game Boy Advance\(cqs CGB mode.
+.It Fl -multicart-compat
 Support certain multicart ROM images by not strictly respecting the MBC type
 in the ROM header.
-.It Fl i Ar keys , Fl Fl input Ar keys
+.It Fl i Ar keys , Fl -input Ar keys
 Use the 8 given input
 .Ar keys
 for respectively
 .br
 START SELECT A B UP DOWN LEFT RIGHT
-.It Fl l Ar n , Fl Fl latency Ar n
+.It Fl l Ar n , Fl -latency Ar n
 Use audio buffer latency of
 .Ar n
 ms.
@@ -48,10 +48,10 @@ ms.
 16 \(<=
 .Ar n
 \(<= 5000, default: 133
-.It Fl Fl list-keys
+.It Fl -list-keys
 List valid input
 .Ar keys .
-.It Fl p Ar n , Fl Fl periods Ar n
+.It Fl p Ar n , Fl -periods Ar n
 Use
 .Ar n
 audio buffer periods.
@@ -59,7 +59,7 @@ audio buffer periods.
 1 \(<=
 .Ar n
 \(<= 32, default: 4
-.It Fl Fl resampler Ar n
+.It Fl -resampler Ar n
 Use audio resampler number
 .Ar n.
 .Bl -inset -compact
@@ -76,7 +76,7 @@ Very high quality
 Highest quality
 .Pq polyphase FIR
 .El
-.It Fl r Ar n , Fl Fl sample-rate Ar n
+.It Fl r Ar n , Fl -sample-rate Ar n
 Use sound sample rate of
 .Ar n
 Hz.
@@ -84,52 +84,52 @@ Hz.
 32000 \(<=
 .Ar n
 \(<= 192000, default: 48000
-.It Fl s Ar n , Fl Fl scale Ar n
+.It Fl s Ar n , Fl -scale Ar n
 Scale video output by an integer factor of
 .Ar n .
-.It Fl v Ar n , Fl Fl video-filter Ar n
+.It Fl v Ar n , Fl -video-filter Ar n
 Use video filter number
 .Ar n :
 .Bl -inset -compact
 .It 0
 None
 .It 1
-Bicubic Catmull-Rom spline 2\(mu
+Bicubic Catmull\(hyRom spline 2\(mu
 .It 2
-Bicubic Catmull-Rom spline 3\(mu
+Bicubic Catmull\(hyRom spline 3\(mu
 .It 3
-Kreed's 2xSal
+Kreed\(cqs 2xSal
 .It 4
-MaxSt's hq2x
+MaxSt\(cqs hq2x
 .It 5
-MaxSt's hq3x
+MaxSt\(cqs hq3x
 .El
-.It Fl y , Fl Fl yuv-overlay
+.It Fl y , Fl -yuv-overlay
 Use YUV overlay for
 .Pq usually faster
 scaling.
 .El
 .Sh INTERACTIVE KEYBOARD CONTROLS
-.Bl -hang
-.It Cm TAB
-fast-forward
-.It Cm Ctrl-f
+.Bl -hang -width "<Return>" -compact
+.It Aq Cm Tab
+fast\(hyforward
+.It Aq Cm Ctrl Ns + Ns Cm f
 toggle full screen
-.It Cm Ctrl-r
+.It Aq Cm Ctrl Ns + Ns Cm r
 reset
-.It Cm F5
+.It Aq Cm F5
 save state
-.It Cm F6
+.It Aq Cm F6
 choose previous state slot
-.It Cm F7
+.It Aq Cm F7
 choose next state slot
-.It Cm F8
+.It Aq Cm F8
 load state
 .It Cm 0\(en9
 choose state slot 0 to 9
-.It Cm Return
+.It Aq Cm Return
 Start
-.It Cm Shift
+.It Aq Cm Shift
 Select
 .It Cm d
 A
