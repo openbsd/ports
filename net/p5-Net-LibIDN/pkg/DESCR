@@ -1,0 +1,3 @@
+Perl module that provides bindings for GNU Libidn, a C library for
+handling Internationalized Domain Names according to IDNA (RFC
+3490).
