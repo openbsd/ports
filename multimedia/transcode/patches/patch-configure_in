@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2013/01/19 08:42:35 brad Exp $
+$OpenBSD: patch-configure_in,v 1.7 2014/11/19 09:36:53 brad Exp $
 --- configure.in.orig	Sat Nov 19 11:50:27 2011
-+++ configure.in	Fri Jan 18 02:01:12 2013
++++ configure.in	Thu Oct 30 23:03:22 2014
 @@ -721,6 +721,12 @@ TC_CHECK_SUNAU(AC_DEFINE([HAVE_SUNAU], 1, [Have Sun st
  AM_CONDITIONAL(HAVE_SUNAU, test x"$have_sunau" = x"yes")
  
@@ -14,6 +14,15 @@ $OpenBSD: patch-configure_in,v 1.6 2013/01/19 08:42:35 brad Exp $
  dnl OSS
  dnl
  TC_CHECK_OSS(AC_DEFINE([HAVE_OSS], 1, [Have OSS audio]))
+@@ -901,7 +907,7 @@ dnl libdvdread
+ dnl
+ LIBDVDREAD_EXTRA_LIBS="$LIBDVDREAD_EXTRA_LIBS -lm"
+ TC_PKG_CHECK(libdvdread, yes, LIBDVDREAD, no, none, dvdread, DVDOpen,
+- libdvdread, [http://www.dtek.chalmers.se/groups/dvd/downloads.shtml])
++ dvdread, [http://www.dtek.chalmers.se/groups/dvd/downloads.shtml])
+ if test x"$have_libdvdread" = x"yes" ; then
+   libdvdread_inc="no"
+   save_CPPFLAGS="$CPPFLAGS"
 @@ -1406,6 +1412,7 @@ ALSA                           $have_alsa
  OSS                            $have_oss
  bktr                           $have_bktr
