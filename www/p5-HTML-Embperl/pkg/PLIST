@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/11/08 11:41:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/19 21:42:58 sthen Exp $
 bin/embpexec.pl
 bin/embpmsgid.pl
 ${P5ARCH}/Embperl/
@@ -97,7 +97,6 @@ ${P5ARCH}/Embperl/TOC.pod
 ${P5ARCH}/Embperl/TipsAndTricks.pod
 ${P5ARCH}/Embperl/Util.pm
 ${P5ARCH}/auto/Embperl/
-${P5ARCH}/auto/Embperl/Embperl.bs
 ${P5ARCH}/auto/Embperl/Embperl.so
 @man man/man1/embpexec.pl.1
 @man man/man1/embpmsgid.pl.1
