@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2014/11/19 20:48:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2014/11/19 20:48:51 sthen Exp $
 
-#NOT_FOR_ARCHS=	${LP64_ARCHS}
+NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	cryptographic file system (user-space NFS server)
 
