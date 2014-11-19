@@ -1,8 +1,8 @@
-$OpenBSD: patch-clamd_Makefile_in,v 1.16 2014/05/08 08:18:51 sthen Exp $
---- clamd/Makefile.in.orig	Tue May  6 19:59:42 2014
-+++ clamd/Makefile.in	Thu May  8 00:45:57 2014
-@@ -271,7 +271,9 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
- INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+$OpenBSD: patch-clamd_Makefile_in,v 1.17 2014/11/19 00:18:01 sthen Exp $
+--- clamd/Makefile.in.orig	Thu Nov 13 22:31:30 2014
++++ clamd/Makefile.in	Tue Nov 18 23:40:53 2014
+@@ -329,7 +329,9 @@ JSON_LDFLAGS = @JSON_LDFLAGS@
+ JSON_LIBS = @JSON_LIBS@
  LCOV = @LCOV@
  LD = @LD@
 -LDFLAGS = @LDFLAGS@
