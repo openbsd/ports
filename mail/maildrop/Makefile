@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.49 2014/06/05 21:04:51 giovanni Exp $
+# $OpenBSD: Makefile,v 1.50 2014/11/20 19:26:34 sthen Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
 V=			2.7.1
+REVISION=		0
 DISTNAME=		maildrop-$V
-PKGNAME-main=		maildrop-${V}
+PKGNAME-main=		maildrop-$V
 FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
@@ -72,7 +73,10 @@ DOCFILES=		${WRKSRC}/README \
 CONFIGURE_ARGS+=	--enable-sendmail=/usr/local/sbin/sendmail
 CONFIGURE_ARGS+=	--enable-trusted-users="root _courier _postfix"
 CONFIGURE_ARGS+=	--enable-trusted-groups="wheel _courier _postdrop"
-RUN_DEPENDS=		mail/postfix/stable
+# this sets the default version as postfix/stable if postfix is not
+# already installed, but matches postfix-* so can still be installed
+# alongside postfix/snapshot.
+RUN_DEPENDS-main=	mail/postfix/stable
 .else
 CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 CONFIGURE_ARGS+=	--enable-trusted-users="root _courier"
