@@ -1,0 +1,11 @@
+$OpenBSD: patch-uulib_uustring_h,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- Debian patch
+
+--- uulib/uustring.h.orig	Tue Apr  2 12:04:53 2002
++++ uulib/uustring.h	Mon Jan 27 21:44:47 2014
+@@ -36,3 +36,4 @@
+ #define S_MIME_B_NOT_FOUND    35
+ #define S_MIME_MULTI_DEPTH    36
+ #define S_MIME_PART_MULTI     37
++#define S_OPEN_FILE           38

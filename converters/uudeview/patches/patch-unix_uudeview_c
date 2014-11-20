@@ -1,0 +1,84 @@
+$OpenBSD: patch-unix_uudeview_c,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- mkstemp(3) support
+- Debian patch
+
+--- unix/uudeview.c.orig	Sun Apr 13 01:33:55 2003
++++ unix/uudeview.c	Mon Jan 27 21:44:47 2014
+@@ -443,18 +443,45 @@ proc_stdin (void)
+   FILE *target;
+   size_t bytes;
+   int res;
++#ifdef HAVE_MKSTEMP
++  int tmpfd;
++  const char *tmpprefix = "uuXXXXXXXXXX";
++  char *tmpdir = NULL;
++#endif /* HAVE_MKSTEMP */
+ 
+   if (stdinput) {
+     fprintf (stderr, "proc_stdin: cannot process stdin twice\n");
+     return 0;
+   }
+ 
++#ifdef HAVE_MKSTEMP
++  if ((getuid()==geteuid()) && (getgid()==getegid())) {
++	tmpdir=getenv("TMPDIR");
++  }
++
++  if (!tmpdir) {
++	tmpdir = "/tmp";
++  }
++  stdfile = malloc(strlen(tmpdir)+strlen(tmpprefix)+2);
++
++  if (!stdfile) {
++#else
+   if ((stdfile = tempnam (NULL, "uu")) == NULL) {
++#endif
+     fprintf (stderr, "proc_stdin: cannot get temporary file\n");
+     return 0;
+   }
+ 
++#ifdef HAVE_MKSTEMP
++  strcpy(stdfile, tmpdir);
++  strcat(stdfile, "/");
++  strcat(stdfile, tmpprefix);
++
++  if ((tmpfd = mkstemp(stdfile)) == -1 ||
++	  (target = fdopen(tmpfd, "wb")) == NULL) {
++#else
+   if ((target = fopen (stdfile, "wb")) == NULL) {
++#endif
+     fprintf (stderr, "proc_stdin: cannot open temp file %s for writing: %s\n",
+ 	     stdfile, strerror (errno));
+     _FP_free (stdfile);
+@@ -657,9 +684,6 @@ work_comline (int argc, char *argv[])
+     else switch (*(argv[number] + 1)) {
+     case '\0':
+       interact = 0;
+-      if (overwrite == 0) {
+-	overwrite = 1;
+-      }
+       proc_stdin ();
+       break;
+     case 'a':
+@@ -699,10 +723,7 @@ work_comline (int argc, char *argv[])
+ 	fprintf (stderr, "WARNING: cannot interact when reading from stdin\n");
+       }
+       else {
+-	interact  = (*argv[number] == '+') ? 1 : 0;
+-	if (overwrite == 0 && *argv[number] == '-') {
+-	  overwrite = 1;
+-	}
++	interact = (*argv[number] == '+') ? 1 : 0;
+       }
+       break;
+     case 'm':
+@@ -773,6 +794,8 @@ work_comline (int argc, char *argv[])
+       break;
+     }
+   }
++  if (overwrite == 0 && interact == 0 && autoren == 0)
++    overwrite = 1;
+ 
+   return 1;
+ }

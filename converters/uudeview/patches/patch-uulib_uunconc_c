@@ -1,0 +1,120 @@
+$OpenBSD: patch-uulib_uunconc_c,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- mkstemp(3) support
+- Debian patch
+
+--- uulib/uunconc.c.orig	Mon Mar  1 23:52:27 2004
++++ uulib/uunconc.c	Mon Jan 27 21:44:47 2014
+@@ -1311,6 +1311,11 @@ UUDecode (uulist *data)
+   char *mode, *ntmp;
+   uufile *iter;
+   size_t bytes;
++#ifdef HAVE_MKSTEMP
++  int tmpfd;
++  const char *tmpprefix = "uuXXXXXXXXXX";
++  char *tmpdir = NULL;
++#endif /* HAVE_MKSTEMP */
+ 
+   if (data == NULL || data->thisfile == NULL)
+     return UURET_ILLVAL;
+@@ -1329,13 +1334,35 @@ UUDecode (uulist *data)
+   else
+     mode = "wb";	/* otherwise in binary          */
+ 
++#ifdef HAVE_MKSTEMP
++  if ((getuid()==geteuid()) && (getgid()==getegid())) {
++	  tmpdir=getenv("TMPDIR");
++  }
++
++  if (!tmpdir) {
++	  tmpdir = "/tmp";
++  }
++  data->binfile = malloc(strlen(tmpdir)+strlen(tmpprefix)+2);
++
++  if (!data->binfile) {
++#else
+   if ((data->binfile = tempnam (NULL, "uu")) == NULL) {
++#endif /* HAVE_MKSTEMP */
+     UUMessage (uunconc_id, __LINE__, UUMSG_ERROR,
+ 	       uustring (S_NO_TEMP_NAME));
+     return UURET_NOMEM;
+   }
+ 
++#ifdef HAVE_MKSTEMP
++  strcpy(data->binfile, tmpdir);
++  strcat(data->binfile, "/");
++  strcat(data->binfile, tmpprefix);
++
++  if ((tmpfd = mkstemp(data->binfile)) == -1 || 
++	  (dataout = fdopen(tmpfd, mode)) == NULL) {
++#else
+   if ((dataout = fopen (data->binfile, mode)) == NULL) {
++#endif /* HAVE_MKSTEMP */
+     /*
+      * we couldn't create a temporary file. Usually this means that TMP
+      * and TEMP aren't set
+@@ -1343,6 +1370,12 @@ UUDecode (uulist *data)
+     UUMessage (uunconc_id, __LINE__, UUMSG_ERROR,
+ 	       uustring (S_WR_ERR_TARGET),
+ 	       data->binfile, strerror (uu_errno = errno));
++#ifdef HAVE_MKSTEMP
++	if (tmpfd != -1) {
++		unlink(data->binfile);
++		close(tmpfd);
++    }
++#endif /* HAVE_MKSTEMP */
+     _FP_free (data->binfile);
+     data->binfile = NULL;
+     uu_errno = errno;
+@@ -1437,6 +1470,9 @@ UUDecode (uulist *data)
+ 	res = UURET_IOERR;
+ 	break;
+       }
++      UUMessage (uunconc_id, __LINE__, UUMSG_MESSAGE,
++		uustring (S_OPEN_FILE),
++		iter->data->sfname);
+       _FP_strncpy (uugen_fnbuffer, iter->data->sfname, 1024);
+     }
+ 
+@@ -1496,7 +1532,13 @@ UUDecode (uulist *data)
+    */
+ 
+   if (data->uudet == BH_ENCODED && data->binfile) {
++#ifdef HAVE_MKSTEMP
++	  ntmp = malloc(strlen(tmpdir)+strlen(tmpprefix)+2);
++	  
++	  if (ntmp == NULL) {
++#else
+     if ((ntmp = tempnam (NULL, "uu")) == NULL) {
++#endif /* HAVE_MKSTEMP */
+       UUMessage (uunconc_id, __LINE__, UUMSG_ERROR,
+ 		 uustring (S_NO_TEMP_NAME));
+       progress.action = 0;
+@@ -1510,12 +1552,27 @@ UUDecode (uulist *data)
+       free (ntmp);
+       return UURET_IOERR;
+     }
++
++#ifdef HAVE_MKSTEMP
++    strcpy(ntmp, tmpdir);
++    strcat(ntmp, "/");
++    strcat(ntmp, tmpprefix); 
++    if ((tmpfd = mkstemp(ntmp)) == -1 ||
++		(dataout = fdopen(tmpfd, "wb")) == NULL) {
++#else
+     if ((dataout = fopen (ntmp, "wb")) == NULL) {
++#endif /* HAVE_MKSTEMP */
+       UUMessage (uunconc_id, __LINE__, UUMSG_ERROR,
+ 		 uustring (S_NOT_OPEN_TARGET),
+ 		 ntmp, strerror (uu_errno = errno));
+       progress.action = 0;
+       fclose (datain);
++#ifdef HAVE_MKSTEMP
++	  if (tmpfd != -1) {
++		  unlink(ntmp);
++		  close(tmpfd);
++	  }
++#endif /* HAVE_MKSTEMP */
+       free   (ntmp);
+       return UURET_IOERR;
+     }

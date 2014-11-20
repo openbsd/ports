@@ -1,0 +1,21 @@
+$OpenBSD: patch-uulib_uuscan_c,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- Debian patch
+
+--- uulib/uuscan.c.orig	Mon Mar  1 23:52:27 2004
++++ uulib/uuscan.c	Mon Jan 27 21:44:47 2014
+@@ -387,10 +387,10 @@ ParseValue (char *attribute)
+ 	   *attribute != '(' && *attribute != ')' &&
+ 	   *attribute != '<' && *attribute != '>' &&
+ 	   *attribute != '@' && *attribute != ',' &&
+-	   /* *attribute != ';' && */ *attribute != ':' &&
+-	   *attribute != '\\' &&*attribute != '"' &&
+-	   *attribute != '/' && /* *attribute != '[' &&
+-	   *attribute != ']' && */ *attribute != '?' &&
++	   *attribute != ';' && *attribute != ':' &&
++	   *attribute != '\\' && *attribute != '"' &&
++	   *attribute != '/' && *attribute != '[' &&
++	   *attribute != ']' && *attribute != '?' &&
+ 	   *attribute != '=' && length < 255) {
+       *ptr++ = *attribute++;
+       length++;

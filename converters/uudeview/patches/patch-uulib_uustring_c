@@ -1,0 +1,14 @@
+$OpenBSD: patch-uulib_uustring_c,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- Debian patch
+
+--- uulib/uustring.c.orig	Mon Mar 11 10:15:47 2002
++++ uulib/uustring.c	Mon Jan 27 21:44:47 2014
+@@ -107,6 +107,7 @@ static stringmap messages[] = {
+   { S_MIME_B_NOT_FOUND, "Boundary expected on Multipart message but found EOF" },
+   { S_MIME_MULTI_DEPTH, "Multipart message nested too deep" },
+   { S_MIME_PART_MULTI,  "Handling partial multipart message as plain text" },
++  { S_OPEN_FILE,        "Opened file %s" },
+ 
+   { 0, "" }
+ };

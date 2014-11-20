@@ -1,0 +1,23 @@
+$OpenBSD: patch-man_uudeview_1,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- Debian patch
+
+--- man/uudeview.1.orig	Sun Apr 13 01:18:29 2003
++++ man/uudeview.1	Mon Jan 27 21:44:47 2014
+@@ -164,6 +164,16 @@ delivered in have different subject lines.
+ verbosity. Normally, the program prints some status messages
+ while reading the input files, which can be very helpful if something
+ should go wrong. Use if these messages disturb you.
++Disables progress bars. See
++.B -n
++option.
++.TP
++.B -v
++(disables Verbosity) Disables verbose messages, i.e. notes are not
++displayed, but does not remove warnings and errors. Is not as quiet as
++the
++.B -q
++(Quiet) option.
+ .TP
+ .B -n
+ No progress bars. Normally, UUDeview prints ASCII bars crawling up

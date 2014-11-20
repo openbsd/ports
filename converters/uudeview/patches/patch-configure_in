@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- mkstemp(3) support
+
+--- configure.in.orig	Tue Mar  2 00:06:18 2004
++++ configure.in	Mon Jan 27 21:44:48 2014
+@@ -507,7 +507,7 @@ AC_HEADER_STDC
+ AC_HEADER_TIME
+ AC_CHECK_HEADERS(fcntl.h unistd.h memory.h malloc.h errno.h direct.h)
+ AC_CHECK_HEADERS(io.h sys/time.h)
+-AC_CHECK_FUNCS(getcwd popen gettimeofday isatty)
++AC_CHECK_FUNCS(getcwd popen gettimeofday isatty mkstemp)
+ 
+ AC_CHECK_FUNC(tempnam,,AC_DEFINE(tempnam,_FP_tempnam))
+ 

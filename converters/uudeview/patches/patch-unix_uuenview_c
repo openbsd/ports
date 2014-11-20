@@ -1,0 +1,15 @@
+$OpenBSD: patch-unix_uuenview_c,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+
+- arbitrary string being passed as a format string to fprintf(3), patch from Debian
+
+--- unix/uuenview.c.orig	Wed Mar  6 13:52:46 2002
++++ unix/uuenview.c	Tue Nov 18 23:24:07 2014
+@@ -483,7 +483,7 @@ AttachFiles (char *towhom, char *subject,
+       if (_FP_stristr (input, "multipart") != NULL) {
+ 	/* it is already a multipart posting. grab the boundary */
+ 	if ((ptr = _FP_stristr (input, "boundary=")) != NULL) {
+-	  fprintf(thepipe,  input);
++	  fprintf(thepipe,  "%s", input);
+ 	  strcpy (boundary, ParseValue (ptr));
+ 	  hadmulti = 1;
+ 	}

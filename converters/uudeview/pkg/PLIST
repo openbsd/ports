@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+@bin bin/uudeview
+@bin bin/uuenview
+@man man/man1/uudeview.1
+@man man/man1/uuenview.1
