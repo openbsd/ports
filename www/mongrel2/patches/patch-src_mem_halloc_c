@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mem_halloc_c,v 1.1 2014/11/20 09:46:55 brad Exp $
+
+Fix mistake with symbol name.
+
+--- src/mem/halloc.c.orig	Thu Nov 20 04:36:28 2014
++++ src/mem/halloc.c	Thu Nov 20 04:36:55 2014
+@@ -12,7 +12,7 @@
+  *	http://www.opensource.org/licenses/bsd-license.php
+  */
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <stdlib.h>
+ #else
+ #include <malloc.h>  /* realloc */

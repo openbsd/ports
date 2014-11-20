@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/23 12:09:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/20 09:46:55 brad Exp $
 
 # Some assembly required
 ONLY_FOR_ARCHS =i386 amd64
@@ -9,6 +9,7 @@ COMMENT =	language agnostic asynchronous web server
 V =		1.9.1
 DISTNAME =	mongrel2-v${V}
 PKGNAME =	mongrel2-${V}
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://mongrel2.org/
