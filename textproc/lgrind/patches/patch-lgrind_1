@@ -1,6 +1,6 @@
-$OpenBSD: patch-lgrind_1,v 1.2 2004/04/11 19:12:24 sturm Exp $
---- lgrind.1.orig	2004-04-11 20:38:29.000000000 +0200
-+++ lgrind.1	2004-04-11 20:38:29.000000000 +0200
+$OpenBSD: patch-lgrind_1,v 1.3 2014/11/20 09:22:30 brad Exp $
+--- lgrind.1.orig	Thu Nov 20 04:15:55 2014
++++ lgrind.1	Thu Nov 20 04:15:55 2014
 @@ -44,7 +44,7 @@ change tab width (default 8).
  specifies text to go into the header.
  .IP "\fB\-d\fP"
@@ -10,7 +10,7 @@ $OpenBSD: patch-lgrind_1,v 1.2 2004/04/11 19:12:24 sturm Exp $
  .IP "\fB\-d!\fP"
  same as above, but write patched executable.
  .IP "\fB\-l\fP"
-@@ -86,7 +86,7 @@ This uses Piet van Oostrum's \fCfancyhdr
+@@ -86,7 +86,7 @@ This uses Piet van Oostrum's \fCfancyhdr.sty\fP to mak
  headers and footers.
  .PP
  For a more detailed explanation of these commands, refer to
@@ -19,7 +19,7 @@ $OpenBSD: patch-lgrind_1,v 1.2 2004/04/11 19:12:24 sturm Exp $
  .PP
  .SH "EMBEDDED PROGRAMS WITHIN A LaTeX FILE"
  (From Jerry Leichter's notes.)
-@@ -198,16 +198,16 @@ that looks reasonable to me, though I ca
+@@ -198,16 +198,16 @@ that looks reasonable to me, though I can't say I'm ec
  Doing a \fIreally\fP good job would require defining some special fonts.
  .PP
  .SH FILES
