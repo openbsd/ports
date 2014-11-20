@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.7 2014/08/30 14:16:07 jasper Exp $
+$OpenBSD: README-main,v 1.8 2014/11/20 09:28:52 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -63,7 +63,7 @@ First create ${SYSCONFDIR}/puppet/routes.yaml so Puppet can store facts to Puppe
       master:
         facts:
           terminus: puppetdb
-          cache: yam
+          cache: yaml
 
 Next create ${SYSCONFDIR}/puppet/puppetdb.conf to teach Puppet how to reach PuppetDB:
 
