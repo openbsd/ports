@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/10/31 13:39:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/20 01:43:59 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -45,8 +45,6 @@ lib/python${MODPY_VERSION}/site-packages/beets/ui/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/ui/commands.py
 lib/python${MODPY_VERSION}/site-packages/beets/ui/commands.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/ui/completion_base.sh
-lib/python${MODPY_VERSION}/site-packages/beets/ui/migrate.py
-lib/python${MODPY_VERSION}/site-packages/beets/ui/migrate.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/
 lib/python${MODPY_VERSION}/site-packages/beets/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/__init__.pyc
@@ -96,6 +94,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/freedesktop.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/freedesktop.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fromfilename.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fromfilename.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/ftintitle.py
@@ -119,6 +119,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/lastgenre/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/lastgenre/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/lastgenre/genres-tree.yaml
 lib/python${MODPY_VERSION}/site-packages/beetsplug/lastgenre/genres.txt
+lib/python${MODPY_VERSION}/site-packages/beetsplug/lastimport.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/lastimport.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/lyrics.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/lyrics.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbcollection.py
