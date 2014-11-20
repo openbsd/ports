@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.7 2013/06/04 15:41:24 naddy Exp $
+$OpenBSD: patch-configure_in,v 1.8 2014/11/20 09:11:22 brad Exp $
 --- configure.in.orig	Tue May 22 02:09:42 2001
 +++ configure.in	Tue Jun  4 11:22:03 2013
 @@ -103,6 +103,8 @@ if test "$mgp_use_freetype" = "yes"; then
@@ -28,12 +28,3 @@ $OpenBSD: patch-configure_in,v 1.7 2013/06/04 15:41:24 naddy Exp $
  			[LIBS="$LIBS -lpng -lz"
  			 AC_DEFINE(USE_PNG)],
  			[], [-lz])])
-@@ -274,7 +276,7 @@ for i in /usr/pkg /usr/local /usr; do
- 		else
- 			break;
- 		fi
--		LIBS="$LIBS -L$i/lib"
-+		LIBS="$LIBS -L$i/lib -ljpeg -llcms"
- 		OPTFLAGS="$OPTFLAGS -I$i/include"
- 		AC_CHECK_LIB(mng, mng_initialize, 
- 			[LIBS="$LIBS -Wl,-rpath,$i/lib -lmng"

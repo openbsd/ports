@@ -1,0 +1,15 @@
+$OpenBSD: patch-image_new_c,v 1.1 2014/11/20 09:11:22 brad Exp $
+
+Replace the malloc.h header with stdlib.h.
+
+--- image/new.c.orig	Thu Nov 20 01:05:26 2014
++++ image/new.c	Thu Nov 20 01:05:51 2014
+@@ -11,7 +11,7 @@
+ #include "copyright.h"
+ #include "image.h"
+ 
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ extern int _Xdebug;
+ extern void memoryExhausted(void);
