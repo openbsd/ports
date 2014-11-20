@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/12 10:56:59 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/20 19:54:40 pascal Exp $
 
 BROKEN-arm = needs binutils-2.17
 
-ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64 arm
+ONLY_FOR_ARCHS = amd64 arm i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
 
-V = 4.9.1
+V = 4.9.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 77.0
+ADASTRAP_LIBC-i386 = 77.2
 ADASTRAP_LIBM-i386 = 9.0
 ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
-ADASTRAP_LIBC-amd64 = 77.0
+ADASTRAP_LIBC-amd64 = 77.2
 ADASTRAP_LIBM-amd64 = 9.0
 ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
-ADASTRAP_LIBC-sparc64 = 77.0
+ADASTRAP_LIBC-sparc64 = 77.2
 ADASTRAP_LIBM-sparc64 = 9.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 

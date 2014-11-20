@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_opts_c,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
---- gcc/opts.c.orig	Fri Mar 14 18:58:52 2014
-+++ gcc/opts.c	Wed Apr 23 12:49:03 2014
+$OpenBSD: patch-gcc_opts_c,v 1.2 2014/11/20 19:54:40 pascal Exp $
+--- gcc/opts.c.orig	Thu Oct 16 15:49:11 2014
++++ gcc/opts.c	Fri Oct 31 11:59:54 2014
 @@ -50,6 +50,9 @@ const char *const debug_type_names[] =
    ((strncmp (prefix, string, sizeof prefix - 1) == 0) \
     ? ((string += sizeof prefix - 1), 1) : 0)
@@ -28,7 +28,7 @@ $OpenBSD: patch-gcc_opts_c,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
        if (opts->x_flag_pie)
  	opts->x_flag_pic = opts->x_flag_pie;
        if (opts->x_flag_pic && !opts->x_flag_pie)
-@@ -1548,6 +1554,11 @@ common_handle_option (struct gcc_options *opts,
+@@ -1584,6 +1590,11 @@ common_handle_option (struct gcc_options *opts,
      case OPT_Wframe_larger_than_:
        opts->x_frame_larger_than_size = value;
        opts->x_warn_frame_larger_than = value != -1;

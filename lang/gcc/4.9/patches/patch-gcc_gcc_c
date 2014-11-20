@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_gcc_c,v 1.1.1.1 2014/06/26 16:30:18 pascal Exp $
---- gcc/gcc.c.orig	Wed Feb  5 18:21:07 2014
-+++ gcc/gcc.c	Fri Feb 14 20:24:54 2014
-@@ -672,7 +672,7 @@ proper position among the other output files.  */
+$OpenBSD: patch-gcc_gcc_c,v 1.2 2014/11/20 19:54:40 pascal Exp $
+--- gcc/gcc.c.orig	Wed Oct 22 23:42:48 2014
++++ gcc/gcc.c	Fri Oct 31 11:59:54 2014
+@@ -678,7 +678,7 @@ proper position among the other output files.  */
  
  #ifndef LINK_PIE_SPEC
  #ifdef HAVE_LD_PIE
