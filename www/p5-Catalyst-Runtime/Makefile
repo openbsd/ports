@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2014/03/22 14:00:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2014/11/20 01:20:13 sthen Exp $
 
 COMMENT=	MVC Web Application Framework
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Runtime-5.90006
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://www.catalystframework.org/
 
@@ -26,6 +25,7 @@ RUN_DEPENDS=	devel/p5-namespace-autoclean \
 		devel/p5-Data-OptList \
 		devel/p5-List-MoreUtils \
 		devel/p5-MRO-Compat \
+		devel/p5-Module-Pluggable \
 		devel/p5-Moose>=2.1204 \
 		devel/p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903 \
 		devel/p5-MooseX-Getopt>=0.30 \
