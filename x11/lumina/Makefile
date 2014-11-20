@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/01 21:33:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/20 16:17:58 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
-GITV=		1414614312
+GITV=		1416412720
 DISTNAME=	lumina-${GITV}
-PKGNAME=	lumina-0.7.1.${GITV}
+PKGNAME=	lumina-0.7.2.${GITV}
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/lumina
-REVISION=	0
 
 SHARED_LIBS +=  LuminaUtils               0.0 # 1.0
 
