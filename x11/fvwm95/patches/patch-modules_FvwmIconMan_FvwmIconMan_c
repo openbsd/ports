@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_FvwmIconMan_FvwmIconMan_c,v 1.1 2004/01/15 17:45:57 espie Exp $
---- modules/FvwmIconMan/FvwmIconMan.c.orig	2004-01-15 18:37:29.000000000 +0100
-+++ modules/FvwmIconMan/FvwmIconMan.c	2004-01-15 18:37:54.000000000 +0100
-@@ -320,11 +320,11 @@ static char *conditional_copy_string (ch
+$OpenBSD: patch-modules_FvwmIconMan_FvwmIconMan_c,v 1.2 2014/11/20 09:58:56 brad Exp $
+--- modules/FvwmIconMan/FvwmIconMan.c.orig	Tue Dec 10 11:41:44 1996
++++ modules/FvwmIconMan/FvwmIconMan.c	Thu Nov 20 04:48:09 2014
+@@ -320,11 +320,11 @@ static char *conditional_copy_string (char **s1, char 
       int id = manager;                                             \
       if (id == -1) {                                               \
         for (id = 0; id < globals.num_managers; id++) {             \
