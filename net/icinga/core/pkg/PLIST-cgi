@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cgi,v 1.13 2014/06/10 21:24:26 sthen Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.14 2014/11/21 14:06:26 sthen Exp $
 cgi-bin/icinga/
 @bin cgi-bin/icinga/avail.cgi
 @bin cgi-bin/icinga/cmd.cgi
@@ -103,6 +103,7 @@ icinga-cgi/docs/de/monitoring-routers.html
 icinga-cgi/docs/de/monitoring-windows.html
 icinga-cgi/docs/de/mrtggraphs.html
 icinga-cgi/docs/de/networkreachability.html
+icinga-cgi/docs/de/newbie.html
 icinga-cgi/docs/de/notifications.html
 icinga-cgi/docs/de/notifications2.html
 icinga-cgi/docs/de/nrpe.html
@@ -238,6 +239,7 @@ icinga-cgi/docs/en/monitoring-routers.html
 icinga-cgi/docs/en/monitoring-windows.html
 icinga-cgi/docs/en/mrtggraphs.html
 icinga-cgi/docs/en/networkreachability.html
+icinga-cgi/docs/en/newbie.html
 icinga-cgi/docs/en/notifications.html
 icinga-cgi/docs/en/notifications2.html
 icinga-cgi/docs/en/nrpe.html
@@ -544,6 +546,7 @@ icinga-cgi/images/Icinga_Header_Webinterface_Pixel.jpg
 icinga-cgi/images/Icinga_TAC_Header_Webinterface.jpg
 icinga-cgi/images/ack.gif
 icinga-cgi/images/action.gif
+icinga-cgi/images/activeonly.gif
 icinga-cgi/images/application-monitor.png
 icinga-cgi/images/cmd_shadow.gif
 icinga-cgi/images/cmd_stop.png
@@ -561,6 +564,7 @@ icinga-cgi/images/down.gif
 icinga-cgi/images/downtime.gif
 icinga-cgi/images/empty.gif
 icinga-cgi/images/enabled.gif
+icinga-cgi/images/eventhandlingdisabled.gif
 icinga-cgi/images/export_csv.png
 icinga-cgi/images/export_json.png
 icinga-cgi/images/export_link.png
