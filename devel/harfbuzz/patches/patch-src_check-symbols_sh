@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_check-symbols_sh,v 1.4 2014/05/02 16:22:07 ajacoutot Exp $
---- src/check-symbols.sh.orig	Thu Apr 10 01:37:55 2014
-+++ src/check-symbols.sh	Fri May  2 18:17:39 2014
+$OpenBSD: patch-src_check-symbols_sh,v 1.5 2014/11/21 08:01:30 ajacoutot Exp $
+--- src/check-symbols.sh.orig	Thu Oct  2 00:18:11 2014
++++ src/check-symbols.sh	Fri Nov 21 08:47:42 2014
 @@ -16,7 +16,7 @@ fi
  
  echo "Checking that we are not exposing internal symbols"
  tested=false
--for so in `ls .libs/lib*.so .libs/lib*.dylib 2>/dev/null` ; do
-+for so in `ls .libs/lib*.so.${LIBharfbuzz_VERSION} .libs/lib*.dylib 2>/dev/null` ; do
+-for suffix in so dylib; do
++for suffix in so.${LIBharfbuzz_VERSION} dylib; do
+ 	so=.libs/libharfbuzz.$suffix
+ 	if ! test -f "$so"; then continue; fi
  	
- 	EXPORTED_SYMBOLS="`nm "$so" | grep ' [BCDGINRSTVW] ' | grep -v ' _fini\>\| _init\>\| _fdata\>\| _ftext\>\| _fbss\>\| __bss_start\>\| __bss_start__\>\| __bss_end__\>\| _edata\>\| _end\>\| _bss_end__\>\| __end__\>' | cut -d' ' -f3`"
- 	prefix=`basename "$so" | sed 's/libharfbuzz/hb/; s/-/_/g; s/[.].*//'`
