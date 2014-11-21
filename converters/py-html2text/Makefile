@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.2 2014/11/21 22:34:25 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/21 22:51:27 landry Exp $
 
 COMMENT =	HTML to markdown-formatted text converter
 
 MODPY_EGG_VERSION =	3.200.3
 DISTNAME =	html2text-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	converters
 HOMEPAGE =	http://www.aaronsw.com/2002/html2text/
