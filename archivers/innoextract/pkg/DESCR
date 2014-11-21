@@ -1,0 +1,7 @@
+Inno Setup is a tool to create installers for Microsoft Windows
+applications.  innoextract allows to extract such installers under
+non-windows systems without running the actual installer using Wine.
+
+innoextract is able to unpack GOG.com installers, Wadjet Eye Games
+installers (to play with AGS), Arx Fatalis patches (for use with
+Arx Libertatis) as well as various other Inno Setup executables.
