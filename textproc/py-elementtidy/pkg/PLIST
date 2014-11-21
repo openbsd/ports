@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/21 22:39:09 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/_elementtidy.so
+lib/python${MODPY_VERSION}/site-packages/elementtidy/
+lib/python${MODPY_VERSION}/site-packages/elementtidy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/elementtidy/TidyHTMLTreeBuilder.py
+lib/python${MODPY_VERSION}/site-packages/elementtidy/TidyHTMLTreeBuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtidy/__init__.py
+lib/python${MODPY_VERSION}/site-packages/elementtidy/__init__.pyc
