@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/13 08:33:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/21 13:40:09 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -13,6 +13,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     0.0 # 18.0
 SHARED_LIBS +=  webkit2gtk-${API}            0.0 # 37.2
@@ -93,11 +94,6 @@ CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 
 .if ${MACHINE_ARCH} != "amd64"
 LDFLAGS +=		-Wl,--no-keep-memory
-.endif
-
-# __atomic_fetch_add_8
-.if ${MACHINE_ARCH} == "powerpc"
-LDFLAGS +=		-Wl,-relax -latomic
 .endif
 
 # __sync_add_and_fetch_8
