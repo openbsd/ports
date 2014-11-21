@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.14 2014/06/12 06:16:35 sebastia Exp $
+# $OpenBSD: README,v 1.15 2014/11/21 18:23:45 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,7 +23,7 @@ over multiple systems, related to your needs:
   - or install the apache-httpd-openbsd package
 - Database Server:
   * install postgresql-server package
-  - or install mysql-server package
+  - or install mariadb-server package
 - LDAP Server for user authentication shared addressbooks:
   * install openldap-server package
   - or use ldapd from base
