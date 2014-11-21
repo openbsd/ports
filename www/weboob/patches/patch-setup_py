@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2014/11/21 22:44:57 landry Exp $
+--- setup.py.orig	Fri Oct 17 14:10:14 2014
++++ setup.py	Fri Nov 14 17:09:21 2014
+@@ -111,7 +111,7 @@ def install_weboob():
+         packages = packages - qt_packages
+ 
+     data_files = [
+-        ('share/man/man1', glob.glob('man/*')),
++        ('man/man1', glob.glob('man/*')),
+     ]
+     if options.xdg:
+         data_files.extend([
