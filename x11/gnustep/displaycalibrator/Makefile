@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/22 09:48:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/21 18:21:21 sebastia Exp $
 
 COMMENT =	GNUstep frontend for xgamma
 
 V =		0.7
-REVISION =	0
+REVISION =	1
 DISTNAME =	displaycalibrator.app_${V}.orig
 PKGNAME =	displaycalibrator-${V}
 CATEGORIES =	graphics

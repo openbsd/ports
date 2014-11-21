@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/05/23 22:27:26 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/21 18:21:22 sebastia Exp $
 
 COMMENT =	GNUstep library to manipulate matrices
 
 VERSION =	1.3
-REVISION =	1
+REVISION =	2
 DISTNAME =	MathArray-${VERSION}
 PKGNAME =	gnustep-matharray-${VERSION}
 CATEGORIES =	math

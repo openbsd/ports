@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/05/22 09:48:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/21 18:21:22 sebastia Exp $
 
 COMMENT =	web cookies sniffer and providing proxy
 
 ONLY_FOR_ARCHS =	${MODCLANG_ARCHS}
 
 DISTNAME =	ImpersonatorToolKit-0.3
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net security
 
 HOMEPAGE =	http://gna.org/projects/gnustep-nonfsf

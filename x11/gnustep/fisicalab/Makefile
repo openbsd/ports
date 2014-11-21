@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/05/22 09:48:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2014/11/21 18:21:21 sebastia Exp $
 
 COMMENT=	educational application to solve physics problems
 
 DISTNAME =	fisicalab-0.3.4
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	http://www.nongnu.org/fisicalab/
 MASTER_SITES=	${MASTER_SITE_GNU:=fisicalab/}

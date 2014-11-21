@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/11/02 18:43:23 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2014/11/21 18:21:22 sebastia Exp $
 
 COMMENT=	GNUstep integrated development environment
 
 VERSION =	0.6.2
+REVISION =	0
 DISTNAME=	ProjectCenter-${VERSION}
 CATEGORIES=	devel
 

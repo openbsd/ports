@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.23 2014/07/17 17:35:50 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.24 2014/11/21 18:21:21 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
@@ -32,7 +32,6 @@ MAKE_ENV +=	INSTALL_AS_GROUP=${BINGRP}
 MAKE_ENV +=     GNUSTEP_CONFIG_FILE=${PORTSDIR}/x11/gnustep/GNUstep.conf
 
 MODGNUSTEP_IS_FRAMEWORK ?=	No
-MODGNUSTEP_NEEDS_LIBICONV ?=	Yes
 MODGNUSTEP_NEEDS_C ?=		Yes
 
 .if ${MODGNUSTEP_IS_FRAMEWORK:L} == yes
@@ -42,10 +41,6 @@ MODGNUSTEP_NEEDS_BASE ?=	No
 MODGNUSTEP_NEEDS_GUI ?=		No
 MODGNUSTEP_NEEDS_BACK ?=	No
 .else
-.  if ${MODGNUSTEP_NEEDS_LIBICONV:L} == yes
-MODULES +=			converters/libiconv
-MODGNUSTEP_WANTLIB +=		${MODLIBICONV_WANTLIB}
-.  endif
 MODGNUSTEP_NEEDS_BASE ?=	Yes
 MODGNUSTEP_NEEDS_GUI ?=		Yes
 MODGNUSTEP_NEEDS_BACK ?=	Yes
@@ -62,8 +57,7 @@ MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/back
 .  endif
 .endif
 .if ${MODGNUSTEP_NEEDS_BASE:L} == yes
-MODGNUSTEP_WANTLIB +=		objc2 avahi-client avahi-common ffi gcrypt gmp
-MODGNUSTEP_WANTLIB +=		gnutls icudata icui18n icuuc xml2 xslt z m
+MODGNUSTEP_WANTLIB +=		objc2 m
 MODGNUSTEP_WANTLIB +=		gnustep-base pthread
 MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/base
 .endif
