@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2014/11/19 00:34:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2014/11/21 19:05:09 jca Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -16,6 +16,7 @@
      SUBDIR += hs-zlib
      SUBDIR += hs-zlib-bindings
      SUBDIR += hs-zlib-enum
+     SUBDIR += innoextract
      SUBDIR += lha
      SUBDIR += libarchive
      SUBDIR += libmspack
