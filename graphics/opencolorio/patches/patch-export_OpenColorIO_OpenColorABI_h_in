@@ -1,7 +1,7 @@
-$OpenBSD: patch-export_OpenColorIO_OpenColorABI_h_in,v 1.1.1.1 2014/03/25 10:33:33 pascal Exp $
---- export/OpenColorIO/OpenColorABI.h.in.orig	Wed Oct  9 00:59:34 2013
-+++ export/OpenColorIO/OpenColorABI.h.in	Mon Mar 24 22:57:22 2014
-@@ -65,7 +65,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
+$OpenBSD: patch-export_OpenColorIO_OpenColorABI_h_in,v 1.2 2014/11/21 17:25:49 pascal Exp $
+--- export/OpenColorIO/OpenColorABI.h.in.orig	Thu Sep 11 21:08:18 2014
++++ export/OpenColorIO/OpenColorABI.h.in	Fri Nov 21 13:29:20 2014
+@@ -69,7 +69,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
  
  // If supported, define OCIOEXPORT, OCIOHIDDEN
  // (used to choose which symbols to export from OpenColorIO)

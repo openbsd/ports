@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/03 11:17:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/21 17:25:49 pascal Exp $
 
 COMMENT =		color management library
 
-GH_ACCOUNT = 		imageworks
-GH_PROJECT = 		OpenColorIO
-GH_TAGNAME = 		v1.0.9
-GH_COMMIT =		2b12063e22dbdbff927b5a59d04fe1e30e90c1fe
-DISTNAME =		opencolorio-${GH_TAGNAME:S/v//}
-REVISION =		0
+V =			20140911
+DISTNAME =		OpenColorIO-$V
+PKGNAME =		opencolorio-$V
 
-SHARED_LIBS +=  OpenColorIO               0.0 # 1.0
+SHARED_LIBS +=  OpenColorIO               1.0 # 1.0
 
 CATEGORIES =		graphics
 
@@ -21,6 +18,8 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m pthread stdc++ tinyxml yaml-cpp
+
+MASTER_SITES =		http://deftly.net/
 
 MODULES =		devel/cmake \
 			lang/python
@@ -38,6 +37,8 @@ CONFIGURE_ARGS +=	-DPYTHON="${MODPY_BIN}" \
 			-DCMAKE_MODULE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST =		Yes
+
+WRKDIST =		${WRKDIR}/OpenColorIO-master
 
 CFLAGS =		-pthread
 
