@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2014/05/22 09:48:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.55 2014/11/21 18:19:53 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.24.6
-REVISION =	1
+DISTNAME=	gnustep-base-1.24.7
 
-SHARED_LIBS=	gnustep-base 8.1
+SHARED_LIBS=	gnustep-base 8.2
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -13,8 +12,9 @@ SUBST_VARS=	LIBDIR
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += c gcrypt m objc2 pthread xml2 z ffi gmp xslt gnutls
+WANTLIB += c m objc2 pthread xml2 z ffi gmp xslt gnutls
 WANTLIB += avahi-client avahi-common icudata icui18n icuuc
+WANTLIB += ${MODLIBICONV_WANTLIB}
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
 WANTLIB += iberty
@@ -22,7 +22,7 @@ WANTLIB += iberty
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
-MODULES =	x11/gnustep
+MODULES =	x11/gnustep converters/libiconv
 MODGNUSTEP_NEEDS_GUI=	No
 MODGNUSTEP_NEEDS_BASE=	No
 

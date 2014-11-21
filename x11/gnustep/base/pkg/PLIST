@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/01/03 18:53:01 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/11/21 18:19:53 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -129,6 +129,7 @@ include/Foundation/NSURLResponse.h
 include/Foundation/NSUUID.h
 include/Foundation/NSUndoManager.h
 include/Foundation/NSUserDefaults.h
+include/Foundation/NSUserNotification.h
 include/Foundation/NSUtilities.h
 include/Foundation/NSValue.h
 include/Foundation/NSValueTransformer.h
@@ -194,6 +195,7 @@ lib/GNUstep/DTDs/gsdoc-1_0_1.dtd
 lib/GNUstep/DTDs/gsdoc-1_0_1.rnc
 lib/GNUstep/DTDs/gsdoc-1_0_2.dtd
 lib/GNUstep/DTDs/gsdoc-1_0_3.dtd
+lib/GNUstep/DTDs/gsdoc-1_0_4.dtd
 lib/GNUstep/DTDs/plist-0_9.dtd
 lib/GNUstep/Libraries/
 lib/GNUstep/Libraries/gnustep-base/
@@ -478,6 +480,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Antarctica/Palmer
 ${LIBDIR}/Resources/NSTimeZones/zones/Antarctica/Rothera
 ${LIBDIR}/Resources/NSTimeZones/zones/Antarctica/South_Pole
 ${LIBDIR}/Resources/NSTimeZones/zones/Antarctica/Syowa
+${LIBDIR}/Resources/NSTimeZones/zones/Antarctica/Troll
 ${LIBDIR}/Resources/NSTimeZones/zones/Antarctica/Vostok
 ${LIBDIR}/Resources/NSTimeZones/zones/Arctic/
 ${LIBDIR}/Resources/NSTimeZones/zones/Arctic/Longyearbyen
@@ -498,6 +501,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Beirut
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Bishkek
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Brunei
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Calcutta
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Chita
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Choibalsan
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Chongqing
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Chungking
@@ -549,15 +553,13 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Qatar
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Qyzylorda
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Rangoon
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Riyadh
-${LIBDIR}/Resources/NSTimeZones/zones/Asia/Riyadh87
-${LIBDIR}/Resources/NSTimeZones/zones/Asia/Riyadh88
-${LIBDIR}/Resources/NSTimeZones/zones/Asia/Riyadh89
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Saigon
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Sakhalin
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Samarkand
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Seoul
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Shanghai
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Singapore
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Srednekolymsk
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Taipei
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Tashkent
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Tbilisi
@@ -798,10 +800,6 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Mexico/
 ${LIBDIR}/Resources/NSTimeZones/zones/Mexico/BajaNorte
 ${LIBDIR}/Resources/NSTimeZones/zones/Mexico/BajaSur
 ${LIBDIR}/Resources/NSTimeZones/zones/Mexico/General
-${LIBDIR}/Resources/NSTimeZones/zones/Mideast/
-${LIBDIR}/Resources/NSTimeZones/zones/Mideast/Riyadh87
-${LIBDIR}/Resources/NSTimeZones/zones/Mideast/Riyadh88
-${LIBDIR}/Resources/NSTimeZones/zones/Mideast/Riyadh89
 ${LIBDIR}/Resources/NSTimeZones/zones/NZ
 ${LIBDIR}/Resources/NSTimeZones/zones/NZ-CHAT
 ${LIBDIR}/Resources/NSTimeZones/zones/Navajo
@@ -881,11 +879,13 @@ ${LIBDIR}/Resources/Spanish.lproj/Localizable.strings
 ${LIBDIR}/Resources/TraditionalChinese.lproj/
 ${LIBDIR}/Resources/TraditionalChinese.lproj/Localizable.strings
 @lib lib/libgnustep-base.so.${LIBgnustep-base_VERSION}
+@man man/man1/HTMLLinker.1
 @man man/man1/autogsdoc.1
 @man man/man1/cvtenc.1
 @man man/man1/defaults.1
 @man man/man1/gdnc.1
 @man man/man1/gspath.1
+@man man/man1/make_strings.1.gz
 @man man/man1/pldes.1
 @man man/man1/sfparse.1
 @man man/man1/xmlparse.1
