@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.109 2014/10/19 19:08:48 kili Exp $
+# $OpenBSD: Makefile,v 1.110 2014/11/22 20:23:22 kili Exp $
+
+BROKEN =        	too many errors for bulk builders
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -11,14 +13,12 @@ COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		2
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
-REVISION-doc =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.4.2.20130707
+BIN_VER =		7.6.3.20141019
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -115,25 +115,25 @@ PORTHOME =		${WRKDIR}
 TEST_DEPENDS =	print/ghostscript/gnu
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/docs/index.html
 # - Install a precompiled binary.
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	./configure --prefix=${WRKDIR} && \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
 # - Force the bootstrapper to use -nopie
-#   (maybe removed when switching to a newer bootstrapper)
+#   (maybe removed when switching to a newer bootstrapper, but only if I
+#    properly fix the bootstrap target)
 	perl -pi -e 's/(\S+ \S+)/\1 -optl -nopie/ if /^exec /' \
 		${WRKDIR}/bin/ghc
 
 post-install:
 	cd ${PREFIX}/lib/ghc && \
-	GHC_PKG="./ghc-pkg --no-user-package-db --global-package-db ./package.conf.d" && \
+	GHC_PKG="./bin/ghc-pkg --no-user-package-db --global-package-db ./package.conf.d" && \
 	${INSTALL_SCRIPT} /dev/null register.sh && \
 	exec > register.sh && \
 	echo '#!/bin/sh' && \
 	echo 'exec > /dev/null 2>&1' && \
-	echo 'p="$${0%/*}/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
+	echo 'p="$${0%/*}/bin/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
 	for p in $$($$GHC_PKG list --simple); do \
 		echo \$$p register --force - \<\< \'EOF\' && \
 		$$GHC_PKG describe $$p | sed '/^pkgpath:$$/s@$$@ ${PKGPATH}@' && \
@@ -143,7 +143,7 @@ post-install:
 	exec > unregister.sh && \
 	echo '#!/bin/sh' && \
 	echo 'exec > /dev/null 2>&1' && \
-	echo 'p="$${0%/*}/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
+	echo 'p="$${0%/*}/bin/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
 	for p in $$($$GHC_PKG list --simple); do \
 		echo \$$p unregister --force $$p; \
 	done && \

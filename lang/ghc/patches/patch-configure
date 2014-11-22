@@ -1,17 +1,17 @@
-$OpenBSD: patch-configure,v 1.12 2013/07/18 21:43:23 kili Exp $
---- configure.orig	Fri Apr 19 00:47:00 2013
-+++ configure	Sun Jul  7 16:02:19 2013
-@@ -3863,7 +3863,7 @@ fi
- $as_echo "$as_me: Building in-tree ghc-pwd" >&6;}
+$OpenBSD: patch-configure,v 1.13 2014/11/22 20:23:23 kili Exp $
+--- configure.orig	Thu Jul 10 07:04:54 2014
++++ configure	Sun Nov  2 22:01:38 2014
+@@ -4076,7 +4076,7 @@ $as_echo "$as_me: Building in-tree ghc-pwd" >&6;}
                  rm -rf utils/ghc-pwd/dist-boot
      mkdir  utils/ghc-pwd/dist-boot
--    if ! "$WithGhc" -v0 -no-user-$GHC_PACKAGE_DB_FLAG -hidir utils/ghc-pwd/dist-boot -odir utils/ghc-pwd/dist-boot -stubdir utils/ghc-pwd/dist-boot --make utils/ghc-pwd/Main.hs -o utils/ghc-pwd/dist-boot/ghc-pwd
-+    if ! "$WithGhc" -optl -nopie -v0 -no-user-$GHC_PACKAGE_DB_FLAG -hidir utils/ghc-pwd/dist-boot -odir utils/ghc-pwd/dist-boot -stubdir utils/ghc-pwd/dist-boot --make utils/ghc-pwd/Main.hs -o utils/ghc-pwd/dist-boot/ghc-pwd
+                 GHC_LDFLAGS=`echo $LDFLAGS | sed 's/\(^\| \)\([^ ]\)/\1-optl\2/g'`
+-        if ! "$WithGhc" $GHC_LDFLAGS -v0 -no-user-$GHC_PACKAGE_DB_FLAG -hidir utils/ghc-pwd/dist-boot -odir utils/ghc-pwd/dist-boot -stubdir utils/ghc-pwd/dist-boot --make utils/ghc-pwd/Main.hs -o utils/ghc-pwd/dist-boot/ghc-pwd
++        if ! "$WithGhc" $GHC_LDFLAGS -optl -nopie -v0 -no-user-$GHC_PACKAGE_DB_FLAG -hidir utils/ghc-pwd/dist-boot -odir utils/ghc-pwd/dist-boot -stubdir utils/ghc-pwd/dist-boot --make utils/ghc-pwd/Main.hs -o utils/ghc-pwd/dist-boot/ghc-pwd
      then
          as_fn_error $? "Building ghc-pwd failed" "$LINENO" 5
      fi
-@@ -6185,7 +6185,7 @@ $as_echo_n "checking for extra options to pass gcc whe
- if test "${fp_cv_gcc_extra_opts+set}" = set; then :
+@@ -7281,7 +7281,7 @@ $as_echo_n "checking for extra options to pass gcc whe
+ if ${fp_cv_gcc_extra_opts+:} false; then :
    $as_echo_n "(cached) " >&6
  else
 -  fp_cv_gcc_extra_opts=

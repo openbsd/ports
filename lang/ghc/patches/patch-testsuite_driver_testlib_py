@@ -1,7 +1,7 @@
-$OpenBSD: patch-testsuite_driver_testlib_py,v 1.5 2013/07/18 21:43:24 kili Exp $
---- testsuite/driver/testlib.py.orig	Thu Apr 18 23:44:31 2013
-+++ testsuite/driver/testlib.py	Sun Jul  7 16:00:36 2013
-@@ -1563,6 +1563,13 @@ def compare_outputs( kind, normaliser, expected_file, 
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.6 2014/11/22 20:23:23 kili Exp $
+--- testsuite/driver/testlib.py.orig	Thu Jul 10 06:27:16 2014
++++ testsuite/driver/testlib.py	Sun Nov  2 22:08:03 2014
+@@ -1604,6 +1604,13 @@ def compare_outputs( kind, normaliser, expected_file, 
      actual_raw = read_no_crs(actual_file)
      actual_str = normaliser(actual_raw)
  
@@ -15,19 +15,19 @@ $OpenBSD: patch-testsuite_driver_testlib_py,v 1.5 2013/07/18 21:43:24 kili Exp $
      if expected_str == actual_str:
          return 1
      else:
-@@ -1585,13 +1592,13 @@ def compare_outputs( kind, normaliser, expected_file, 
-         # (including newlines) so the diff would be hard to read.
+@@ -1627,13 +1634,13 @@ def compare_outputs( kind, normaliser, expected_file, 
          # This does mean that the diff might contain changes that
          # would be normalised away.
--        r = os.system( 'diff -uw ' + expected_file_for_diff + \
-+        r = os.system( 'diff -auw ' + expected_file_for_diff + \
-                                ' ' + actual_file )
+         if (config.verbose >= 1):
+-            r = os.system( 'diff -uw ' + expected_file_for_diff + \
++            r = os.system( 'diff -auw ' + expected_file_for_diff + \
+                                    ' ' + actual_file )
  
-         # If for some reason there were no non-whitespace differences,
-         # then do a full diff
-         if r == 0:
--            r = os.system( 'diff -u ' + expected_file_for_diff + \
-+            r = os.system( 'diff -au ' + expected_file_for_diff + \
-                                   ' ' + actual_file )
+             # If for some reason there were no non-whitespace differences,
+             # then do a full diff
+             if r == 0:
+-                r = os.system( 'diff -u ' + expected_file_for_diff + \
++                r = os.system( 'diff -au ' + expected_file_for_diff + \
+                                       ' ' + actual_file )
  
          if config.accept:

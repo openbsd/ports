@@ -1,15 +1,16 @@
-$OpenBSD: patch-libraries_unix_include_execvpe_h,v 1.1 2012/03/23 20:17:06 kili Exp $
+$OpenBSD: patch-libraries_unix_include_execvpe_h,v 1.2 2014/11/22 20:23:23 kili Exp $
 
 Don't build the included execvpe().
 
---- libraries/unix/include/execvpe.h.orig	Mon Jun 13 19:10:12 2011
-+++ libraries/unix/include/execvpe.h	Fri Mar 23 18:52:34 2012
-@@ -18,8 +18,5 @@
- #include <sys/wait.h>
+--- libraries/unix/include/execvpe.h.orig	Thu Jul 10 06:33:35 2014
++++ libraries/unix/include/execvpe.h	Sun Nov  2 22:19:39 2014
+@@ -19,9 +19,6 @@
  #endif
  
--#if !defined(_MSC_VER) && !defined(__MINGW32__) && !defined(_WIN32)
+ #if !defined(_MSC_VER) && !defined(__MINGW32__) && !defined(_WIN32)
+-#ifndef __QNXNTO__
 -extern int execvpe(char *name, char *const argv[], char **envp);
- extern void pPrPr_disableITimers (void);
 -#endif
+ extern void pPrPr_disableITimers (void);
+ #endif
  

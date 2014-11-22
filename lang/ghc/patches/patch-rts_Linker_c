@@ -1,10 +1,12 @@
-$OpenBSD: patch-rts_Linker_c,v 1.7 2013/07/18 21:43:24 kili Exp $
+$OpenBSD: patch-rts_Linker_c,v 1.8 2014/11/22 20:23:23 kili Exp $
 
-Workaround error: unknown symbol '__guard_local'
+Workaround error: unknown symbol '__guard_local'.
 
---- rts/Linker.c.orig	Thu Apr 18 23:22:46 2013
-+++ rts/Linker.c	Sun Jul  7 16:00:36 2013
-@@ -822,6 +822,14 @@ typedef struct _RtsSymbolVal {
+Dissable check for .init_array sections, we don't have them.
+
+--- rts/Linker.c.orig	Thu Jul 10 06:27:16 2014
++++ rts/Linker.c	Mon Nov  3 14:33:18 2014
+@@ -849,6 +849,14 @@ typedef struct _RtsSymbolVal {
  #define RTS_DARWIN_ONLY_SYMBOLS
  #endif
  
@@ -19,7 +21,7 @@ Workaround error: unknown symbol '__guard_local'
  #ifndef SMP
  # define MAIN_CAP_SYM SymI_HasProto(MainCapability)
  #else
-@@ -1352,6 +1360,7 @@ RTS_POSIX_ONLY_SYMBOLS
+@@ -1433,6 +1441,7 @@ RTS_POSIX_ONLY_SYMBOLS
  RTS_MINGW_ONLY_SYMBOLS
  RTS_CYGWIN_ONLY_SYMBOLS
  RTS_DARWIN_ONLY_SYMBOLS
@@ -27,7 +29,7 @@ Workaround error: unknown symbol '__guard_local'
  RTS_LIBGCC_SYMBOLS
  RTS_LIBFFI_SYMBOLS
  #undef SymI_NeedsProto
-@@ -1387,6 +1396,7 @@ static RtsSymbolVal rtsSyms[] = {
+@@ -1468,6 +1477,7 @@ static RtsSymbolVal rtsSyms[] = {
        RTS_MINGW_ONLY_SYMBOLS
        RTS_CYGWIN_ONLY_SYMBOLS
        RTS_DARWIN_ONLY_SYMBOLS
@@ -35,3 +37,17 @@ Workaround error: unknown symbol '__guard_local'
        RTS_LIBGCC_SYMBOLS
        RTS_LIBFFI_SYMBOLS
  #if defined(darwin_HOST_OS) && defined(i386_HOST_ARCH)
+@@ -4980,11 +4990,13 @@ static int getSectionKind_ELF( Elf_Shdr *hdr, int *is_
+         return SECTIONKIND_CODE_OR_RODATA;
+     }
+ 
++#ifndef openbsd_HOST_OS  
+     if (hdr->sh_type == SHT_INIT_ARRAY
+         && (hdr->sh_flags & SHF_ALLOC) && (hdr->sh_flags & SHF_WRITE)) {
+        /* .init_array section */
+         return SECTIONKIND_INIT_ARRAY;
+     }
++#endif
+ 
+     if (hdr->sh_type == SHT_NOBITS
+         && (hdr->sh_flags & SHF_ALLOC) && (hdr->sh_flags & SHF_WRITE)) {

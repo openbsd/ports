@@ -1,7 +1,7 @@
-$OpenBSD: patch-libraries_Cabal_Cabal_Distribution_InstalledPackageInfo_hs,v 1.1 2012/09/02 19:53:46 kili Exp $
---- libraries/Cabal/Cabal/Distribution/InstalledPackageInfo.hs.orig	Wed Feb  1 19:10:49 2012
-+++ libraries/Cabal/Cabal/Distribution/InstalledPackageInfo.hs	Sat Jun  9 21:36:25 2012
-@@ -103,6 +103,7 @@ data InstalledPackageInfo_ m
+$OpenBSD: patch-libraries_Cabal_Cabal_Distribution_InstalledPackageInfo_hs,v 1.2 2014/11/22 20:23:23 kili Exp $
+--- libraries/Cabal/Cabal/Distribution/InstalledPackageInfo.hs.orig	Thu Jul 10 06:34:21 2014
++++ libraries/Cabal/Cabal/Distribution/InstalledPackageInfo.hs	Sun Nov  2 21:50:32 2014
+@@ -105,6 +105,7 @@ data InstalledPackageInfo_ m
          description       :: String,
          category          :: String,
          -- these parts are required by an installed package only:
@@ -9,7 +9,7 @@ $OpenBSD: patch-libraries_Cabal_Cabal_Distribution_InstalledPackageInfo_hs,v 1.1
          exposed           :: Bool,
          exposedModules    :: [m],
          hiddenModules     :: [m],
-@@ -145,6 +146,7 @@ emptyInstalledPackageInfo
+@@ -147,6 +148,7 @@ emptyInstalledPackageInfo
          synopsis          = "",
          description       = "",
          category          = "",
@@ -17,7 +17,7 @@ $OpenBSD: patch-libraries_Cabal_Cabal_Distribution_InstalledPackageInfo_hs,v 1.1
          exposed           = False,
          exposedModules    = [],
          hiddenModules     = [],
-@@ -236,7 +238,10 @@ basicFieldDescrs =
+@@ -241,7 +243,10 @@ basicFieldDescrs =
  
  installedFieldDescrs :: [FieldDescr InstalledPackageInfo]
  installedFieldDescrs = [
