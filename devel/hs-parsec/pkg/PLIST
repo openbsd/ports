@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/20 18:02:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:49:28 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Parsec/
 lib/ghc/${DISTNAME}/Text/Parsec.hi
