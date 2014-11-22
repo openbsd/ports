@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/07/18 21:52:57 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/22 20:51:50 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/HashMap/
@@ -18,7 +18,6 @@ lib/ghc/${DISTNAME}/Data/HashMap/UnsafeShift.hi
 lib/ghc/${DISTNAME}/Data/HashMap/UnsafeShift.p_hi
 lib/ghc/${DISTNAME}/Data/HashSet.hi
 lib/ghc/${DISTNAME}/Data/HashSet.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
