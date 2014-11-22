@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/07/18 21:51:39 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/11/22 20:59:42 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -25,7 +25,6 @@ lib/ghc/${DISTNAME}/Control/Monad/STM.p_hi
 lib/ghc/${DISTNAME}/Control/Sequential/
 lib/ghc/${DISTNAME}/Control/Sequential/STM.hi
 lib/ghc/${DISTNAME}/Control/Sequential/STM.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

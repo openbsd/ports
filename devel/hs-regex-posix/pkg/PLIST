@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:03:12 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/22 20:59:42 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Regex/
 lib/ghc/${DISTNAME}/Text/Regex/Posix/

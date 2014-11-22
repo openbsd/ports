@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2014/06/19 18:58:02 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/22 20:59:42 kili Exp $
 
 COMMENT =		fast combinator parsing for bytestrings
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		attoparsec-0.10.4.0
+REVISION =		0
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \

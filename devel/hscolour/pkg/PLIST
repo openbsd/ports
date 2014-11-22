@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/20 18:04:22 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:59:42 kili Exp $
 @bin bin/HsColour
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/Haskell/
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/
