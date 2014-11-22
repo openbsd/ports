@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/22 20:31:29 kili Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =	cabal-install-1.16.0.2
+DISTNAME =	cabal-install-1.18.0.5
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/cabal/
@@ -22,7 +22,8 @@ MODGHC_BUILD =          cabal hackage nort
 BUILD_DEPENDS +=	devel/hs-mtl>=2.0,<3 \
 			devel/hs-network>=1,<3 \
 			devel/hs-random>=1,<1.1 \
+			devel/hs-stm>=2.0,<3 \
 			net/hs-HTTP>=4000.0.2,<4001 \
-			archivers/hs-zlib>=0.4,<0.6
+			archivers/hs-zlib>=0.5.3,<0.6
 
 .include <bsd.port.mk>
