@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/01 19:19:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/22 22:20:09 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -31,7 +31,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--localedir=${PREFIX}/share/locale
 MODULES =		devel/gettext \
 			textproc/intltool
-USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 USE_GMAKE =		Yes
 

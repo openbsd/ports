@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/11/22 22:20:09 sthen Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -18,7 +18,6 @@ MASTER_SITES?=	${MASTER_SITE_SOURCEFORGE:=c-icap/}
 
 CONFIGURE_STYLE?= gnu
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 SYSCONFDIR=	${BASESYSCONFDIR}/c-icap
 

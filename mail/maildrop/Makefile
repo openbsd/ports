@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/11/20 19:26:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2014/11/22 22:20:09 sthen Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -102,7 +102,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			mail/courier-authlib
 
 USE_GROFF=		Yes
-USE_LIBTOOL=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop
