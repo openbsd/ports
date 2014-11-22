@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2014/01/22 21:49:52 okan Exp $
+# $OpenBSD: Makefile,v 1.80 2014/11/22 22:56:42 ian Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.17
+REVISION=	0
 CATEGORIES=	mail www
 
 HOMEPAGE=	https://www.gnu.org/software/mailman/
@@ -38,12 +39,14 @@ CONFIGURE_ARGS+=	--prefix='${MMHOME}' \
 			--with-username=_mailman \
 			--with-groupname=_mailman
 
-FLAVORS=	postfix
+FLAVORS=	postfix sendmail
 FLAVOR?=
 .if ${FLAVOR:Mpostfix}
 CONFIGURE_ARGS+=--with-mail-gid=_mailman
-.else
+.elif ${FLAVOR:Msendmail}
 CONFIGURE_ARGS+=--with-mail-gid=daemon
+.else
+CONFIGURE_ARGS+=--with-mail-gid=_smtpd
 .endif
 
 SCRIPTS=	Mailman/Archiver/pipermail.py \

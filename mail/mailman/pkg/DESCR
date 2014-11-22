@@ -32,4 +32,6 @@ mailing list manager, and more:
 - Support for virtual domains.
 
 Flavors:
-    postfix - makes the mailwrapper work with postfix
+    The default flavor makes the mailwrapper run in group _smtpd, for smtpd
+    postfix - makes the mailwrapper run in group _mailman, for  postfix
+    sendmail - makes the mailwrapper run in group daemon, for sendmail
