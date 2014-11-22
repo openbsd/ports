@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/07/13 18:25:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/22 20:47:28 kili Exp $
 @conflict hs-monads-fd-*
 @pkgpath devel/hs-monads-fd
 lib/ghc/${DISTNAME}/
@@ -52,7 +52,6 @@ lib/ghc/${DISTNAME}/Control/Monad/Writer/Lazy.hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Lazy.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Strict.hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Strict.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
