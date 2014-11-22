@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1284 2014/11/03 16:35:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1285 2014/11/22 10:07:38 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3493,11 +3493,23 @@ show:
 	@echo ${${_s}:Q}
 .endfor
 
+# avoid sudo and avoid modifying dir (if possible):
+# du fails if it can't access everything
 show-size:
-	@-du -ks ${WRKDIR}
+	@if du -ks ${WRKDIR} 2>/dev/null >${WRKDIR}/wrkdir-size; then \
+		cat ${WRKDIR}/wrkdir-size && rm -f ${WRKDIR}/wrkdir-size; \
+	else \
+		chmod -R u+rX ${WRKDIR}; \
+		du -ks ${WRKDIR}; \
+	fi
 
 show-fake-size:
-	@-du -ks ${WRKINST}
+	@if du -ks ${WRKINST} 2>/dev/null >${WRKINST}/wrkdir-size; then \
+		cat ${WRKINST}/wrkdir-size && rm -f ${WRKINST}/wrkdir-size; \
+	else \
+		chmod -R u+rX ${WRKINST}; \
+		du -ks ${WRKINST}; \
+	fi
 
 verbose-show:
 .for _s in ${verbose-show}
