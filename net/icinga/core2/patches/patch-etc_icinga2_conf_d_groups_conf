@@ -1,0 +1,16 @@
+$OpenBSD: patch-etc_icinga2_conf_d_groups_conf,v 1.1 2014/11/22 00:13:03 sthen Exp $
+--- etc/icinga2/conf.d/groups.conf.orig	Fri Nov 21 21:30:11 2014
++++ etc/icinga2/conf.d/groups.conf	Fri Nov 21 21:31:05 2014
+@@ -2,6 +2,12 @@
+  * Host group examples.
+  */
+ 
++object HostGroup "openbsd-servers" {
++  display_name = "OpenBSD Servers"
++
++  assign where host.vars.os == "OpenBSD"
++}
++
+ object HostGroup "linux-servers" {
+   display_name = "Linux Servers"
+ 

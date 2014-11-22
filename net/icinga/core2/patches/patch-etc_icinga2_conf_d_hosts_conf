@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_icinga2_conf_d_hosts_conf,v 1.1 2014/11/22 00:13:03 sthen Exp $
+--- etc/icinga2/conf.d/hosts.conf.orig	Fri Nov 21 21:30:11 2014
++++ etc/icinga2/conf.d/hosts.conf	Fri Nov 21 21:31:13 2014
+@@ -24,7 +24,7 @@ object Host NodeName {
+   address6 = "::1"
+ 
+   /* Set custom attribute `os` for hostgroup assignment in `groups.conf`. */
+-  vars.os = "Linux"
++  vars.os = "OpenBSD"
+ 
+   /* Define http vhost attributes for service apply rules in `services.conf`. */
+   vars.http_vhosts["http"] = {
