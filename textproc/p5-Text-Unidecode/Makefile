@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/11/22 21:39:23 giovanni Exp $
 
 COMMENT=	US-ASCII transliterations of Unicode text
 
 MODULES=	cpan
-DISTNAME=	Text-Unidecode-0.04
-REVISION=	1
+DISTNAME=	Text-Unidecode-1.22
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER=	Mikolaj Kucharski <mikolaj@kucharski.name>
 
-# GPL/Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=   Yes
 
 .include <bsd.port.mk>
