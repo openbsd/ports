@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2014/11/22 17:00:13 espie Exp $
 
 # TODO: hppa mips64 mips64el sparc
 ONLY_FOR_ARCHS = alpha i386 sparc64 powerpc amd64 arm sh
@@ -52,7 +52,8 @@ USE_GROFF =	Yes
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = i386 amd64 sparc64
+# XXX bootstrap currently broken
+ONLY_FOR_ARCHS-ada = #i386 amd64 sparc64
 ONLY_FOR_ARCHS-java = amd64 sparc64 i386
 
 MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada
