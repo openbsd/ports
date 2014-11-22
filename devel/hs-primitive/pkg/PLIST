@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:03:12 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/22 20:49:52 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
@@ -25,7 +25,6 @@ lib/ghc/${DISTNAME}/Data/Primitive/MutVar.hi
 lib/ghc/${DISTNAME}/Data/Primitive/MutVar.p_hi
 lib/ghc/${DISTNAME}/Data/Primitive/Types.hi
 lib/ghc/${DISTNAME}/Data/Primitive/Types.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/primitive-memops.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
