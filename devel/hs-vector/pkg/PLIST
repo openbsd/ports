@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:04:22 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/22 20:52:13 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Vector/
@@ -47,7 +47,6 @@ lib/ghc/${DISTNAME}/Data/Vector/Unboxed/Base.hi
 lib/ghc/${DISTNAME}/Data/Vector/Unboxed/Base.p_hi
 lib/ghc/${DISTNAME}/Data/Vector/Unboxed/Mutable.hi
 lib/ghc/${DISTNAME}/Data/Vector/Unboxed/Mutable.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/vector.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a

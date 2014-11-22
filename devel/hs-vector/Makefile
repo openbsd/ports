@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/17 14:12:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/22 20:52:12 kili Exp $
 
-BROKEN-i386 =		duplicate definition for symbol __i686.get_pc_thunk.bx
+# BROKEN-i386 =		duplicate definition for symbol __i686.get_pc_thunk.bx
 
 COMMENT =		Int-indexed arrays
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =		vector-0.10.0.1
-REVISION =		0
+DISTNAME =		vector-0.10.9.1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
