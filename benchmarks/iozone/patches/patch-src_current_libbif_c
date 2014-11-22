@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_current_libbif_c,v 1.1 2014/11/22 12:21:43 sthen Exp $
+--- src/current/libbif.c.orig	Sat Nov 22 12:16:51 2014
++++ src/current/libbif.c	Sat Nov 22 12:17:13 2014
+@@ -27,7 +27,7 @@
+ #include <string.h>
+ #endif
+ 
+-#if defined(linux) || defined(__DragonFly__) || defined(IOZ_macosx)
++#if defined(linux) || defined(__DragonFly__) || defined(IOZ_macosx) || defined(__OpenBSD__)
+ #include <unistd.h>
+ #include <stdlib.h>
+ #endif
