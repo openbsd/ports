@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/18 21:02:02 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/22 20:53:02 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/Rendering/
@@ -18,7 +18,6 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/GLU/Raw/Types.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/GLU/Raw/Types.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/GLU/Raw/TypesInternal.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/GLU/Raw/TypesInternal.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

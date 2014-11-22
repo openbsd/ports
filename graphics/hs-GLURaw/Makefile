@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/22 20:53:02 kili Exp $
 
 COMMENT =		raw Haskell binding for the OpenGL utility library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =		GLURaw-1.3.0.0
+DISTNAME =		GLURaw-1.4.0.1
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/haskellwiki/Opengl
 
@@ -21,7 +21,7 @@ MODGHC_SETUP_CONF_ARGS = \
 		--extra-include-dirs=${X11BASE}/include \
 		--extra-lib-dirs=${X11BASE}/lib
 
-RUN_DEPENDS =		graphics/hs-OpenGLRaw>=1.3,<1.4
+RUN_DEPENDS =		graphics/hs-OpenGLRaw>=1.3
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

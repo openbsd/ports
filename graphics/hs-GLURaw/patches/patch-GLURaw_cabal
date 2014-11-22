@@ -1,12 +1,12 @@
-$OpenBSD: patch-GLURaw_cabal,v 1.1.1.1 2013/07/18 21:02:02 kili Exp $
---- GLURaw.cabal.orig	Sun Nov  4 20:17:44 2012
-+++ GLURaw.cabal	Mon Jul  8 15:01:05 2013
-@@ -54,7 +54,7 @@ library
-       if os(darwin)
-          frameworks: OpenGL
-       else
--         extra-libraries: GLU
-+         extra-libraries: GLU GL
+$OpenBSD: patch-GLURaw_cabal,v 1.2 2014/11/22 20:53:02 kili Exp $
+--- GLURaw.cabal.orig	Mon May 19 17:18:28 2014
++++ GLURaw.cabal	Thu Nov 13 20:45:38 2014
+@@ -61,7 +61,7 @@ library
+          if os(ios)
+             frameworks: OpenGLES
+          else
+-            extra-libraries: GLU
++            extra-libraries: GLU GL
  
  source-repository head
    type:     git
