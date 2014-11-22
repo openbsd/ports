@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2014/11/22 20:32:01 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =	haddock-2.13.2
+DISTNAME =	haddock-2.14.3
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
 CATEGORIES =	devel
@@ -19,15 +19,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage register
-
-# We still use the version bundled with the ghc sources, even if it's
-# the same as the one from hackage, because it contains the alex- and
-# happy-generated sources. And we cannot generate them ourselves,
-# because alex and happy themselves depend on some Haskell packages
-# (devel/hs-QuickCheck resp. devel/hs-mtl) which obviously need haddock
-# to be built.
-DISTFILES =
-BUILD_DEPENDS +=	lang/ghc:patch
 
 LIB_DEPENDS-lib =
 LIB_DEPENDS-main =	${LIB_DEPENDS}
@@ -49,10 +40,6 @@ CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.61
 AUTOCONF_DIR =		${WRKSRC}/doc
 WRKCONF =		${AUTOCONF_DIR}
-
-post-extract:
-	mv ${WRKDIR}/lang/ghc/ghc-${MODGHC_VER}/utils/haddock ${WRKSRC}
-	rm -f ${WRKSRC}/src/Haddock/*.source
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
