@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/07 10:37:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2014/11/22 20:22:43 naddy Exp $
+
+BROKEN=		internal error in gengtype
 
 TOOL=			gcc
 TOOL_V= 		4.6.3
