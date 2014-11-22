@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2014/11/22 20:48:48 kili Exp $
 
 COMMENT =		parallel programming library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =		parallel-3.2.0.3
-REVISION =		0
+DISTNAME =		parallel-3.2.0.4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
