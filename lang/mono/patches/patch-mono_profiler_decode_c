@@ -1,0 +1,12 @@
+$OpenBSD: patch-mono_profiler_decode_c,v 1.1 2014/11/22 20:14:21 brad Exp $
+--- mono/profiler/decode.c.orig	Thu Nov 20 22:48:52 2014
++++ mono/profiler/decode.c	Thu Nov 20 22:49:07 2014
+@@ -12,7 +12,7 @@
+ #include <string.h>
+ #include <assert.h>
+ #include <stdio.h>
+-#if !defined(__APPLE__) && !defined(__FreeBSD__)
++#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <malloc.h>
+ #endif
+ #include <unistd.h>
