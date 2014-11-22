@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/07/18 21:48:49 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:48:00 kili Exp $
 @conflict hs-network-bytestring-*
 @pkgpath net/hs-network-bytestring
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network.hi
 lib/ghc/${DISTNAME}/Network.p_hi

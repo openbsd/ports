@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2014/11/22 20:48:00 kili Exp $
 
 COMMENT =		Haskell networking library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =		network-2.4.1.2
+DISTNAME =		network-2.4.2.3
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
