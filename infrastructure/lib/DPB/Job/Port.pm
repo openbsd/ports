@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.150 2014/03/17 10:47:45 espie Exp $
+# $OpenBSD: Port.pm,v 1.151 2014/11/22 12:44:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -161,7 +161,7 @@ sub finalize
 	}
 	$core->job->{failed} = $core->{status};
 	if ($core->prop->{always_clean}) {
-		$core->job->replace_tasks(DPB::Task::Port::BaseClean->new(
+		$core->job->replace_tasks(DPB::Task::Port::Clean->new(
 			'clean'));
 		return 1;
 	}
@@ -679,7 +679,6 @@ sub want_percent { 0 }
 sub fork
 {
 	my ($self, $core) = @_;
-	$self->{sudo} = 1;
 	open($self->{fh}, "-|");
 }
 
@@ -777,7 +776,7 @@ sub finalize
 	$self->SUPER::finalize($core);
 }
 
-package DPB::Task::Port::BaseClean;
+package DPB::Task::Port::Clean;
 our @ISA = qw(DPB::Task::BasePort);
 
 sub notime { 1 }
@@ -792,38 +791,8 @@ sub setup
 sub finalize
 {
 	my ($self, $core) = @_;
-	if ($self->requeue($core)) {
-		return 1;
-	}
 	$self->SUPER::finalize($core);
 	return 1;
-}
-
-sub requeue
-{
-	my ($self, $core) = @_;
-	# didn't clean right, and no sudo yet:
-	# run ourselves again (but log the problem)
-	if ($core->{status} != 0 && !$self->{sudo}) {
-		$self->{sudo} = 1;
-		my $job = $core->job;
-		$job->insert_tasks($self);
-		my $fh = $job->{builder}->logger->open("clean");
-		print $fh $job->{path}, "\n";
-		$core->{status} = 0;
-		return 1;
-	}
-	return 0;
-}
-
-package DPB::Task::Port::Clean;
-our @ISA = qw(DPB::Task::Port::BaseClean);
-
-sub finalize
-{
-	my ($self, $core) = @_;
-	$self->requeue($core);
-	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Test;
@@ -1152,7 +1121,7 @@ sub add_normal_tasks
 		$small = 1;
 	}
 	if ($builder->{clean}) {
-		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
+		$self->insert_tasks(DPB::Task::Port::Clean->new('clean'));
 	}
 	$hostprop->{junk_count} //= 0;
 	$hostprop->{depends_count} //= 0;
