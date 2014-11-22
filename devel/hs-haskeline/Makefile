@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/18 22:22:34 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/22 20:28:30 kili Exp $
+
+BROKEN =		conflicts with lang/ghc
 
 COMMENT =		command-line interface for user input
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/19 07:09:28 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/22 20:28:30 kili Exp $
+
+BROKEN =		conflicts with lang/ghc
 
 COMMENT = 		Haskell bindings to the terminfo library
 

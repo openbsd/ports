@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2014/11/22 20:28:30 kili Exp $
+
+BROKEN =		conflicts with lang/ghc
 
 COMMENT =		concrete monad transformers
 
