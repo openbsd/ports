@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 17:56:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/22 20:29:53 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Compression/
@@ -13,7 +13,6 @@ lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Raw.hi
 lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Raw.p_hi
 lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Stream.hi
 lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Stream.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
