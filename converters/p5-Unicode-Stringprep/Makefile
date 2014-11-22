@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/22 09:26:37 benoit Exp $
 
 COMMENT=	preparation of internationalized strings
 
-DISTNAME=	Unicode-Stringprep-1.104
+DISTNAME =	Unicode-Stringprep-1.105
 CATEGORIES=	converters
 
 # perl
