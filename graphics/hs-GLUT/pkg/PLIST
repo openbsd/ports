@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/07/18 21:47:59 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/11/22 20:53:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/UI/
@@ -55,7 +55,6 @@ lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Types.hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Types.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Window.hi
 lib/ghc/${DISTNAME}/Graphics/UI/GLUT/Window.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -65,7 +64,6 @@ share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/GLUT.haddock
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Begin.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Callbacks-Global.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Callbacks-Registration.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Callbacks-Window.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Callbacks.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Colormap.html
@@ -77,15 +75,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Initialization.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Menu.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Objects.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Overlay.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-QueryUtils.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Raw-APIEntry.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Raw-Callbacks.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Raw-Fonts.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Raw-Functions.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Raw-Tokens.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Raw.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-State.html
-share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Types.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT-Window.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-GLUT.html
 share/doc/hs-${DISTNAME}/html/doc-index-36.html
@@ -124,7 +114,6 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Begin.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Callbacks-Global.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Callbacks-Registration.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Callbacks-Window.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Callbacks.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Colormap.html
@@ -136,15 +125,7 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Initialization.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Menu.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Objects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Overlay.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-QueryUtils.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Raw-APIEntry.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Raw-Callbacks.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Raw-Fonts.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Raw-Functions.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Raw-Tokens.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Raw.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-State.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT-Window.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-GLUT.html
 share/doc/hs-${DISTNAME}/html/minus.gif
