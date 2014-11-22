@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2014/11/22 20:30:51 kili Exp $
 
 COMMENT =	lexical analyser generator for Haskell
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =	alex-3.0.5
+DISTNAME =	alex-3.1.3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/alex/
@@ -26,9 +26,6 @@ WRKCONF =		${AUTOCONF_DIR}
 
 BUILD_DEPENDS +=	devel/hs-QuickCheck>=2 \
 			textproc/docbook-xsl
-
-post-extract:
-	@chmod -R a+r ${WRKSRC}
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
