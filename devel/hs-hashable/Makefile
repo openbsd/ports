@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/06/19 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/22 20:46:49 kili Exp $
 
 COMMENT =		class for hashable data types
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =		hashable-1.1.2.5
+DISTNAME =		hashable-1.2.2.0
 CATEGORIES =		devel
 
 # BSD3
