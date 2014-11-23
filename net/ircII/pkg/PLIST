@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/10/01 20:16:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/11/23 19:37:40 naddy Exp $
 bin/irc
-@bin bin/irc-20140831
+@bin bin/irc-20141028
 bin/ircbug
 @bin bin/ircflush
 @bin libexec/ircio

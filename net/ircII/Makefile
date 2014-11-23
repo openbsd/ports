@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2014/10/01 20:16:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2014/11/23 19:37:40 naddy Exp $
 
 COMMENT=	Internet Relay Chat client
 
-VERSION=	20140831
+VERSION=	20141028
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
-REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://ircii.warped.com/ \
 		http://ircii.warped.com/old/ \

@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_window_c,v 1.1 2014/11/23 19:37:40 naddy Exp $
+--- source/window.c.orig	Wed Oct 29 07:49:55 2014
++++ source/window.c	Sat Nov 22 22:10:07 2014
+@@ -4507,7 +4507,8 @@ window_get_query_nick(Window *window)
+ void
+ add_to_window_log(Window *window, u_char *str)
+ {
+-	add_to_log(window->log_fp, str);
++	if (window->log)
++		add_to_log(window->log_fp, str);
+ }
+ 
+ LastlogInfo *
