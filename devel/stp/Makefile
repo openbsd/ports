@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:31:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/23 20:28:01 sthen Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
@@ -27,8 +27,6 @@ MAKE_ENV=	CXX="${CXX}"
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
-
-WRKDIST=	${WRKDIR}/${DISTNAME}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/stp

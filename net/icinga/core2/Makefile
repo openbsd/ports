@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/22 00:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/11/23 20:28:01 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,8 +22,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt crypto execinfo m pthread ssl stdc++ yajl
-
-WRKDIST =		${WRKDIR}/${DISTNAME}
 
 MODULES =		devel/cmake
 
