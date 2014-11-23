@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2014/11/22 20:59:42 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2014/11/23 19:43:00 kili Exp $
 
 COMMENT =	Haskell code colourizer
 
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
 DISTNAME =	hscolour-1.20.3
 REVISION =	0
 # Rip off the hs- prefix, even if it contains a Haskell library.
