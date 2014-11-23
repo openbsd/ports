@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/24 08:25:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/23 19:39:46 benoit Exp $
 
 COMMENT =	simple, extensible Perl debugger
 
 MODULES =	cpan
-DISTNAME =	Devel-ebug-0.55
+DISTNAME =	Devel-ebug-0.56
 CATEGORIES =	devel
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
-
-CONFIGURE_STYLE =	modbuild
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	devel/p5-PadWalker \
 		devel/p5-YAML \
