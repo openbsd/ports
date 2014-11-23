@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/11/11 20:49:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/23 08:43:37 landry Exp $
 awl/
 awl/README
 awl/dba/
@@ -8,6 +8,7 @@ awl/dba/grant-on-all-tables.sh
 awl/dba/schema-management.sql
 awl/docs/
 awl/docs/api/
+awl/docs/api/.gitignore
 awl/docs/api/awl/
 awl/docs/api/awl/AuthPlugin/
 awl/docs/api/awl/AuthPlugin/AuthPlugin.html
@@ -41,12 +42,14 @@ awl/docs/api/awl/MenuSet/
 awl/docs/api/awl/MenuSet/MenuOption.html
 awl/docs/api/awl/MenuSet/MenuSet.html
 awl/docs/api/awl/MenuSet/_MenuSet.php.html
+awl/docs/api/awl/Multipart.html
 awl/docs/api/awl/PgQuery/
 awl/docs/api/awl/PgQuery/PgQuery.html
 awl/docs/api/awl/PgQuery/_PgQuery.php.html
 awl/docs/api/awl/Session/
 awl/docs/api/awl/Session/Session.html
 awl/docs/api/awl/Session/_Session.php.html
+awl/docs/api/awl/SinglePart.html
 awl/docs/api/awl/Translation/
 awl/docs/api/awl/Translation/_Translation.php.html
 awl/docs/api/awl/User/
@@ -64,6 +67,7 @@ awl/docs/api/awl/XMLElement/
 awl/docs/api/awl/XMLElement/XMLElement.html
 awl/docs/api/awl/XMLElement/_XMLElement.php.html
 awl/docs/api/awl/_AwlCache.php.html
+awl/docs/api/awl/_Multipart.php.html
 awl/docs/api/awl/classEditor/
 awl/docs/api/awl/classEditor/Editor.html
 awl/docs/api/awl/classEditor/EditorField.html
@@ -74,7 +78,6 @@ awl/docs/api/awl/iCalendar/iCalComponent.html
 awl/docs/api/awl/iCalendar/iCalProp.html
 awl/docs/api/awl/iCalendar/iCalendar.html
 awl/docs/api/awl/vCalendar/
-awl/docs/api/awl/vCalendar/VCalendar.html
 awl/docs/api/awl/vCalendar/_vCalendar.php.html
 awl/docs/api/awl/vCalendar/vCalendar.html
 awl/docs/api/awl/vComponent/
@@ -174,3 +177,5 @@ awl/inc/classEditor.php
 awl/inc/iCalendar.php
 awl/inc/vCalendar.php
 awl/inc/vComponent.php
+awl/inc/vObject.php
+awl/inc/vProperty.php

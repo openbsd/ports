@@ -1,22 +1,26 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/06 17:13:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/23 08:43:37 landry Exp $
 
-COMMENT =	Andrew's web libraries for PHP
+COMMENT =	Andrews web libraries for PHP
 
-DISTNAME =	awl-0.53
+GITLAB_PROJECT = awl
+GITLAB_ACCOUNT = davical-project
+GITLAB_TAG =	r0.55
+DISTNAME =	${GITLAB_PROJECT}-${GITLAB_TAG:S/r//}
 PKGNAME =	php-${DISTNAME}
 CATEGORIES =	www
 PKG_ARCH =	*
-REVISION =	1
 
-HOMEPAGE =	http://andrew.mcmillan.net.nz/projects/awl
+HOMEPAGE =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://debian.mcmillan.net.nz/packages/awl/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GITLAB_TAG}}
+MASTER_SITES =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}/repository/
 
 PREFIX =	${VARBASE}/www
-INSTDIR =	${PREFIX}/awl
+WRKDIST =	${WRKDIR}/${GITLAB_PROJECT}.git
+INSTDIR =	${PREFIX}/${GITLAB_PROJECT}
 SUBST_VARS =	INSTDIR
 NO_BUILD =	Yes
 NO_TEST =	Yes
