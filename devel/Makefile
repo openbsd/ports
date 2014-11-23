@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1278 2014/11/18 22:33:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.1279 2014/11/23 03:14:41 jsg Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
      SUBDIR += ORBit2
      SUBDIR += acpica
+     SUBDIR += afl
      SUBDIR += ald
      SUBDIR += alex
      SUBDIR += apache-ant
