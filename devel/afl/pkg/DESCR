@@ -1,0 +1,5 @@
+American Fuzzy Lop is a brute-force fuzzer coupled with an exceedingly
+simple but rock-solid instrumentation-guided genetic algorithm. It uses
+an enhanced form of edge coverage to easily detect subtle, local-scale
+changes to program control flow, without being bogged down by complex
+comparisons between multiple long-winded execution paths.
