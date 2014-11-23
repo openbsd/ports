@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/05/05 19:24:13 jasper Exp $
+$OpenBSD: README,v 1.5 2014/11/23 08:48:27 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -67,18 +67,29 @@ Then point your browser at:
     http://<hostname>/davical/
 and you should get a message telling you to configure DAViCal.
 
-PHP Configuration
-=================
+Nginx Configuration
+===================
 
-In order for Davical to function correctly, one needs to disable
-suhosin.server.strip. This can be done either by editing
-${SYSCONFDIR}/php-${MODPHP_VERSION}.ini and set:
+With Nginx, the simplest way is to run php-fpm, and use the following
+configuration for a distinct server block:
 
-    suhosin.server.strip to 0.
+server {
+    server_name calendar.example.com;
+    root ${TINSTDIR}/htdocs/;
 
-Or by adjusting your vhost configuration and set:
-
-  php_admin_flag suhosin.server.strip off
+    location / {
+        index index.php;
+    }
+    location /images/ {
+    }
+    location ~ ^(.*\.php)(.*)$ {
+        include fastcgi_params;
+        fastcgi_pass unix:run/php-fpm.sock;
+        fastcgi_split_path_info ^(.*\.php)(.*)$;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+}
 
 Client Setup
 ============

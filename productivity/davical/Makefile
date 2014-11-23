@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/06 17:13:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/23 08:48:27 landry Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
-DISTNAME =	davical-1.1.1
-REVISION =	6
+GITLAB_PROJECT = davical
+GITLAB_ACCOUNT = davical-project
+GITLAB_TAG =	r1.1.3.1
+DISTNAME =	${GITLAB_PROJECT}-${GITLAB_TAG:S/r//}
 CATEGORIES =	productivity net
 
 HOMEPAGE =	http://www.davical.org/
@@ -13,28 +15,26 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://debian.mcmillan.net.nz/packages/davical/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GITLAB_TAG}}
+MASTER_SITES =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}/repository/
 
 MODULES =	lang/php
 PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/davical
+WRKDIST =	${WRKDIR}/${GITLAB_PROJECT}.git
 TINSTDIR =	${TRUEPREFIX}/davical
 
 SUBST_VARS =	TINSTDIR
 
 RUN_DEPENDS +=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-pdo_pgsql \
-		www/awl>=0.53 \
+		www/awl>=0.55 \
 		devel/p5-YAML \
 		databases/p5-DBD-Pg
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
-
-post-patch:
-	# fix sql files to remove quotes from LANGUAGE statements, breaks with pgsql 9.3.
-	cd ${WRKSRC} && grep -rl LANGUAGE dba | xargs perl -pi -e "s/LANGUAGE '(\w+)'/LANGUAGE \1/"
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

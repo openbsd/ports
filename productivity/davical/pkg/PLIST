@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/11/11 20:50:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/23 08:48:27 landry Exp $
 davical/
 davical/INSTALL
 davical/README
 davical/config/
+davical/config/.gitignore
 davical/config/apache-davical.conf
 davical/config/debug-config.php
 davical/config/example-administration.yml
@@ -58,6 +59,7 @@ davical/dba/views/dav_principal.sql
 davical/dba/windows/
 davical/dba/windows/create-database.bat
 davical/htdocs/
+davical/htdocs/.gitignore
 davical/htdocs/.htaccess
 davical/htdocs/admin.php
 davical/htdocs/always.php
@@ -83,6 +85,7 @@ davical/htdocs/tools.php
 davical/htdocs/tz.php
 davical/htdocs/upgrade.php
 davical/inc/
+davical/inc/.gitignore
 davical/inc/AtomFeed.php
 davical/inc/CalDAVRequest.php
 davical/inc/DAVPrincipal.php
@@ -161,6 +164,10 @@ davical/inc/vcard.php
 davical/inc/vtimezone.php
 davical/inc/well-known.php
 davical/po/
+davical/po/.gitignore
+davical/po/ar.po
+davical/po/ca.po
+davical/po/cs_CZ.po
 davical/po/de.po
 davical/po/de.values
 davical/po/es_AR.po
@@ -173,14 +180,17 @@ davical/po/es_VE.po
 davical/po/es_VE.values
 davical/po/et.po
 davical/po/et.values
+davical/po/fi.po
 davical/po/fr.po
 davical/po/fr.values
 davical/po/hu.po
 davical/po/hu.values
+davical/po/id_ID.po
 davical/po/it.po
 davical/po/it.values
 davical/po/ja.po
 davical/po/ja.values
+davical/po/ko_KR.po
 davical/po/messages.pot
 davical/po/nb_NO.po
 davical/po/nb_NO.values
@@ -195,9 +205,11 @@ davical/po/pt_PT.po
 davical/po/pt_PT.values
 davical/po/ru.po
 davical/po/ru.values
+davical/po/sk_SK.po
 davical/po/sv.po
 davical/po/sv.values
 davical/scripts/
+davical/scripts/archive-old-events.php
 davical/scripts/build-always.sh
 davical/scripts/cron-sync-ldap.php
 davical/scripts/export_calendar.php
