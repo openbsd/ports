@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:48:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/23 19:38:07 benoit Exp $
 
 COMMENT=		validate and convert data types
 
 MODULES=		cpan
-DISTNAME=		Data-Types-0.08
+DISTNAME =		Data-Types-0.09
 CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-
-CONFIGURE_STYLE=	modbuild
 
 MAKE_ENV+=		TEST_POD=Yes
 
