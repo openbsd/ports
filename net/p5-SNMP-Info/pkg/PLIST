@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/19 10:03:22 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/23 11:08:53 benoit Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
+${P5SITE}/SNMP/Info/AMAP.pm
 ${P5SITE}/SNMP/Info/AdslLine.pm
+${P5SITE}/SNMP/Info/Aggregate.pm
 ${P5SITE}/SNMP/Info/Airespace.pm
 ${P5SITE}/SNMP/Info/Bridge.pm
 ${P5SITE}/SNMP/Info/CDP.pm
+${P5SITE}/SNMP/Info/CiscoAgg.pm
 ${P5SITE}/SNMP/Info/CiscoConfig.pm
-${P5SITE}/SNMP/Info/CiscoImage.pm
 ${P5SITE}/SNMP/Info/CiscoPortSecurity.pm
 ${P5SITE}/SNMP/Info/CiscoPower.pm
 ${P5SITE}/SNMP/Info/CiscoQOS.pm
@@ -16,10 +18,12 @@ ${P5SITE}/SNMP/Info/CiscoStack.pm
 ${P5SITE}/SNMP/Info/CiscoStats.pm
 ${P5SITE}/SNMP/Info/CiscoStpExtensions.pm
 ${P5SITE}/SNMP/Info/CiscoVTP.pm
+${P5SITE}/SNMP/Info/EDP.pm
 ${P5SITE}/SNMP/Info/Entity.pm
 ${P5SITE}/SNMP/Info/EtherLike.pm
 ${P5SITE}/SNMP/Info/FDP.pm
 ${P5SITE}/SNMP/Info/IEEE802dot11.pm
+${P5SITE}/SNMP/Info/IEEE802dot3ad.pm
 ${P5SITE}/SNMP/Info/IPv6.pm
 ${P5SITE}/SNMP/Info/LLDP.pm
 ${P5SITE}/SNMP/Info/Layer1/
@@ -31,24 +35,28 @@ ${P5SITE}/SNMP/Info/Layer1/Cyclades.pm
 ${P5SITE}/SNMP/Info/Layer1/S3000.pm
 ${P5SITE}/SNMP/Info/Layer2/
 ${P5SITE}/SNMP/Info/Layer2.pm
+${P5SITE}/SNMP/Info/Layer2/3Com.pm
 ${P5SITE}/SNMP/Info/Layer2/Airespace.pm
 ${P5SITE}/SNMP/Info/Layer2/Aironet.pm
 ${P5SITE}/SNMP/Info/Layer2/Allied.pm
-${P5SITE}/SNMP/Info/Layer2/Bay.pm
 ${P5SITE}/SNMP/Info/Layer2/Baystack.pm
 ${P5SITE}/SNMP/Info/Layer2/C1900.pm
 ${P5SITE}/SNMP/Info/Layer2/C2900.pm
 ${P5SITE}/SNMP/Info/Layer2/Catalyst.pm
 ${P5SITE}/SNMP/Info/Layer2/Centillion.pm
 ${P5SITE}/SNMP/Info/Layer2/Cisco.pm
-${P5SITE}/SNMP/Info/Layer2/Foundry.pm
+${P5SITE}/SNMP/Info/Layer2/CiscoSB.pm
 ${P5SITE}/SNMP/Info/Layer2/HP.pm
 ${P5SITE}/SNMP/Info/Layer2/HP4000.pm
 ${P5SITE}/SNMP/Info/Layer2/HPVC.pm
+${P5SITE}/SNMP/Info/Layer2/Kentrox.pm
 ${P5SITE}/SNMP/Info/Layer2/N2270.pm
 ${P5SITE}/SNMP/Info/Layer2/NAP222x.pm
+${P5SITE}/SNMP/Info/Layer2/NWSS2300.pm
 ${P5SITE}/SNMP/Info/Layer2/Netgear.pm
 ${P5SITE}/SNMP/Info/Layer2/Orinoco.pm
+${P5SITE}/SNMP/Info/Layer2/Trapeze.pm
+${P5SITE}/SNMP/Info/Layer2/Ubiquiti.pm
 ${P5SITE}/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
 ${P5SITE}/SNMP/Info/Layer3/
 ${P5SITE}/SNMP/Info/Layer3.pm
@@ -59,40 +67,61 @@ ${P5SITE}/SNMP/Info/Layer3/Altiga.pm
 ${P5SITE}/SNMP/Info/Layer3/Arista.pm
 ${P5SITE}/SNMP/Info/Layer3/Aruba.pm
 ${P5SITE}/SNMP/Info/Layer3/BayRS.pm
+${P5SITE}/SNMP/Info/Layer3/BlueCoatSG.pm
 ${P5SITE}/SNMP/Info/Layer3/C3550.pm
 ${P5SITE}/SNMP/Info/Layer3/C4000.pm
 ${P5SITE}/SNMP/Info/Layer3/C6500.pm
 ${P5SITE}/SNMP/Info/Layer3/Cisco.pm
+${P5SITE}/SNMP/Info/Layer3/CiscoASA.pm
 ${P5SITE}/SNMP/Info/Layer3/CiscoFWSM.pm
+${P5SITE}/SNMP/Info/Layer3/CiscoSwitch.pm
 ${P5SITE}/SNMP/Info/Layer3/Contivity.pm
 ${P5SITE}/SNMP/Info/Layer3/Dell.pm
 ${P5SITE}/SNMP/Info/Layer3/Enterasys.pm
 ${P5SITE}/SNMP/Info/Layer3/Extreme.pm
+${P5SITE}/SNMP/Info/Layer3/F5.pm
+${P5SITE}/SNMP/Info/Layer3/Force10.pm
 ${P5SITE}/SNMP/Info/Layer3/Foundry.pm
+${P5SITE}/SNMP/Info/Layer3/H3C.pm
 ${P5SITE}/SNMP/Info/Layer3/HP9300.pm
+${P5SITE}/SNMP/Info/Layer3/IBMGbTor.pm
 ${P5SITE}/SNMP/Info/Layer3/Juniper.pm
+${P5SITE}/SNMP/Info/Layer3/Lantronix.pm
 ${P5SITE}/SNMP/Info/Layer3/Microsoft.pm
 ${P5SITE}/SNMP/Info/Layer3/Mikrotik.pm
 ${P5SITE}/SNMP/Info/Layer3/N1600.pm
 ${P5SITE}/SNMP/Info/Layer3/NetSNMP.pm
 ${P5SITE}/SNMP/Info/Layer3/Netscreen.pm
+${P5SITE}/SNMP/Info/Layer3/Nexus.pm
 ${P5SITE}/SNMP/Info/Layer3/PacketFront.pm
 ${P5SITE}/SNMP/Info/Layer3/Passport.pm
 ${P5SITE}/SNMP/Info/Layer3/Pf.pm
+${P5SITE}/SNMP/Info/Layer3/Pica8.pm
+${P5SITE}/SNMP/Info/Layer3/SonicWALL.pm
+${P5SITE}/SNMP/Info/Layer3/Steelhead.pm
 ${P5SITE}/SNMP/Info/Layer3/Sun.pm
+${P5SITE}/SNMP/Info/Layer3/Tasman.pm
 ${P5SITE}/SNMP/Info/Layer3/Timetra.pm
+${P5SITE}/SNMP/Info/Layer7/
+${P5SITE}/SNMP/Info/Layer7.pm
+${P5SITE}/SNMP/Info/Layer7/APC.pm
+${P5SITE}/SNMP/Info/Layer7/Neoteris.pm
+${P5SITE}/SNMP/Info/Layer7/Netscaler.pm
 ${P5SITE}/SNMP/Info/MAU.pm
+${P5SITE}/SNMP/Info/MRO.pm
 ${P5SITE}/SNMP/Info/NortelStack.pm
 ${P5SITE}/SNMP/Info/PowerEthernet.pm
 ${P5SITE}/SNMP/Info/RapidCity.pm
 ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info.3p
+@man man/man3p/SNMP::Info::AMAP.3p
 @man man/man3p/SNMP::Info::AdslLine.3p
+@man man/man3p/SNMP::Info::Aggregate.3p
 @man man/man3p/SNMP::Info::Airespace.3p
 @man man/man3p/SNMP::Info::Bridge.3p
 @man man/man3p/SNMP::Info::CDP.3p
+@man man/man3p/SNMP::Info::CiscoAgg.3p
 @man man/man3p/SNMP::Info::CiscoConfig.3p
-@man man/man3p/SNMP::Info::CiscoImage.3p
 @man man/man3p/SNMP::Info::CiscoPortSecurity.3p
 @man man/man3p/SNMP::Info::CiscoPower.3p
 @man man/man3p/SNMP::Info::CiscoQOS.3p
@@ -101,10 +130,12 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::CiscoStats.3p
 @man man/man3p/SNMP::Info::CiscoStpExtensions.3p
 @man man/man3p/SNMP::Info::CiscoVTP.3p
+@man man/man3p/SNMP::Info::EDP.3p
 @man man/man3p/SNMP::Info::Entity.3p
 @man man/man3p/SNMP::Info::EtherLike.3p
 @man man/man3p/SNMP::Info::FDP.3p
 @man man/man3p/SNMP::Info::IEEE802dot11.3p
+@man man/man3p/SNMP::Info::IEEE802dot3ad.3p
 @man man/man3p/SNMP::Info::IPv6.3p
 @man man/man3p/SNMP::Info::LLDP.3p
 @man man/man3p/SNMP::Info::Layer1.3p
@@ -114,24 +145,28 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer1::Cyclades.3p
 @man man/man3p/SNMP::Info::Layer1::S3000.3p
 @man man/man3p/SNMP::Info::Layer2.3p
+@man man/man3p/SNMP::Info::Layer2::3Com.3p
 @man man/man3p/SNMP::Info::Layer2::Airespace.3p
 @man man/man3p/SNMP::Info::Layer2::Aironet.3p
 @man man/man3p/SNMP::Info::Layer2::Allied.3p
-@man man/man3p/SNMP::Info::Layer2::Bay.3p
 @man man/man3p/SNMP::Info::Layer2::Baystack.3p
 @man man/man3p/SNMP::Info::Layer2::C1900.3p
 @man man/man3p/SNMP::Info::Layer2::C2900.3p
 @man man/man3p/SNMP::Info::Layer2::Catalyst.3p
 @man man/man3p/SNMP::Info::Layer2::Centillion.3p
 @man man/man3p/SNMP::Info::Layer2::Cisco.3p
-@man man/man3p/SNMP::Info::Layer2::Foundry.3p
+@man man/man3p/SNMP::Info::Layer2::CiscoSB.3p
 @man man/man3p/SNMP::Info::Layer2::HP.3p
 @man man/man3p/SNMP::Info::Layer2::HP4000.3p
 @man man/man3p/SNMP::Info::Layer2::HPVC.3p
+@man man/man3p/SNMP::Info::Layer2::Kentrox.3p
 @man man/man3p/SNMP::Info::Layer2::N2270.3p
 @man man/man3p/SNMP::Info::Layer2::NAP222x.3p
+@man man/man3p/SNMP::Info::Layer2::NWSS2300.3p
 @man man/man3p/SNMP::Info::Layer2::Netgear.3p
 @man man/man3p/SNMP::Info::Layer2::Orinoco.3p
+@man man/man3p/SNMP::Info::Layer2::Trapeze.3p
+@man man/man3p/SNMP::Info::Layer2::Ubiquiti.3p
 @man man/man3p/SNMP::Info::Layer2::ZyXEL_DSLAM.3p
 @man man/man3p/SNMP::Info::Layer3.3p
 @man man/man3p/SNMP::Info::Layer3::Aironet.3p
@@ -141,29 +176,47 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Arista.3p
 @man man/man3p/SNMP::Info::Layer3::Aruba.3p
 @man man/man3p/SNMP::Info::Layer3::BayRS.3p
+@man man/man3p/SNMP::Info::Layer3::BlueCoatSG.3p
 @man man/man3p/SNMP::Info::Layer3::C3550.3p
 @man man/man3p/SNMP::Info::Layer3::C4000.3p
 @man man/man3p/SNMP::Info::Layer3::C6500.3p
 @man man/man3p/SNMP::Info::Layer3::Cisco.3p
+@man man/man3p/SNMP::Info::Layer3::CiscoASA.3p
 @man man/man3p/SNMP::Info::Layer3::CiscoFWSM.3p
+@man man/man3p/SNMP::Info::Layer3::CiscoSwitch.3p
 @man man/man3p/SNMP::Info::Layer3::Contivity.3p
 @man man/man3p/SNMP::Info::Layer3::Dell.3p
 @man man/man3p/SNMP::Info::Layer3::Enterasys.3p
 @man man/man3p/SNMP::Info::Layer3::Extreme.3p
+@man man/man3p/SNMP::Info::Layer3::F5.3p
+@man man/man3p/SNMP::Info::Layer3::Force10.3p
 @man man/man3p/SNMP::Info::Layer3::Foundry.3p
+@man man/man3p/SNMP::Info::Layer3::H3C.3p
 @man man/man3p/SNMP::Info::Layer3::HP9300.3p
+@man man/man3p/SNMP::Info::Layer3::IBMGbTor.3p
 @man man/man3p/SNMP::Info::Layer3::Juniper.3p
+@man man/man3p/SNMP::Info::Layer3::Lantronix.3p
 @man man/man3p/SNMP::Info::Layer3::Microsoft.3p
 @man man/man3p/SNMP::Info::Layer3::Mikrotik.3p
 @man man/man3p/SNMP::Info::Layer3::N1600.3p
 @man man/man3p/SNMP::Info::Layer3::NetSNMP.3p
 @man man/man3p/SNMP::Info::Layer3::Netscreen.3p
+@man man/man3p/SNMP::Info::Layer3::Nexus.3p
 @man man/man3p/SNMP::Info::Layer3::PacketFront.3p
 @man man/man3p/SNMP::Info::Layer3::Passport.3p
 @man man/man3p/SNMP::Info::Layer3::Pf.3p
+@man man/man3p/SNMP::Info::Layer3::Pica8.3p
+@man man/man3p/SNMP::Info::Layer3::SonicWALL.3p
+@man man/man3p/SNMP::Info::Layer3::Steelhead.3p
 @man man/man3p/SNMP::Info::Layer3::Sun.3p
+@man man/man3p/SNMP::Info::Layer3::Tasman.3p
 @man man/man3p/SNMP::Info::Layer3::Timetra.3p
+@man man/man3p/SNMP::Info::Layer7.3p
+@man man/man3p/SNMP::Info::Layer7::APC.3p
+@man man/man3p/SNMP::Info::Layer7::Neoteris.3p
+@man man/man3p/SNMP::Info::Layer7::Netscaler.3p
 @man man/man3p/SNMP::Info::MAU.3p
+@man man/man3p/SNMP::Info::MRO.3p
 @man man/man3p/SNMP::Info::NortelStack.3p
 @man man/man3p/SNMP::Info::PowerEthernet.3p
 @man man/man3p/SNMP::Info::RapidCity.3p
