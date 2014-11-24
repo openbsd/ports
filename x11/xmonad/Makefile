@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/07/18 22:03:58 kili Exp $
+# $OpenBSD: Makefile,v 1.43 2014/11/24 16:15:55 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -7,7 +7,7 @@ DISTNAME =		xmonad-0.11
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
 REVISION =		1
-REVISION-lib =		1
+REVISION-lib =		2
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -27,16 +27,12 @@ BUILD_DEPENDS =		${RUN_DEPENDS-lib}
 RUN_DEPENDS-lib =	devel/hs-extensible-exceptions \
 			devel/hs-mtl \
 			devel/hs-syb \
+			devel/hs-utf8-string>=0.3,<0.4 \
 			x11/hs-X11>=1.5,<1.7
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 
-# Instead of adding `nort' to MODGHC_BUILD for -main, explicitely set
-# MODGHC_SETUP_CONF_ARGS and add lang/ghc to RUN_DEPENDS-lib.
-# Otherwise, we may end up in xmonad configured with `nort', which
-# causes xmonad-lib to be installed in the wrong place.
-MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/hs-\$$pkgid
-MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
-MODGHC_SETUP_CONF_ARGS +=	--enable-library-profiling
+# MODGHC_BUILD contains 'nort', an explicity dependency is needed for
+# the -lib subpackage (plus the tweaks to MODGHC_SETUP_CONF_ARGS below).
 RUN_DEPENDS-lib +=		lang/ghc=${MODGHC_VER}
 
 USE_GROFF =		Yes
@@ -52,3 +48,9 @@ post-install:
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
+
+# Override the 'nort' settings from ghc.port.mk, to get the correct
+# flags and directories for the -lib subpackage.
+MODGHC_SETUP_CONF_ARGS +=	--enable-library-profiling
+MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/hs-\$$pkgid
+MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
