@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2014/11/06 10:53:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.180 2014/11/24 10:48:59 sthen Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -68,6 +68,11 @@ LIB_DEPENDS=		audio/libcue \
 			textproc/icu4c \
 			x11/gnome/libmediaart>=0.6.0 \
 			x11/gnome/totem-pl-parser
+
+# picked up by configure to build the resdump tool. it is not installed,
+# but when dpb removes libgee during a running build, causes tracker build
+# to fail.
+BUILD_DEPENDS +=	devel/libgee
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
