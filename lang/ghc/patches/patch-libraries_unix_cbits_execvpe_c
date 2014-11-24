@@ -1,9 +1,9 @@
-$OpenBSD: patch-libraries_unix_cbits_execvpe_c,v 1.2 2014/11/22 20:23:23 kili Exp $
+$OpenBSD: patch-libraries_unix_cbits_execvpe_c,v 1.3 2014/11/24 13:39:19 kili Exp $
 
 Don't build the included execvpe().
 
 --- libraries/unix/cbits/execvpe.c.orig	Thu Jul 10 06:33:35 2014
-+++ libraries/unix/cbits/execvpe.c	Sun Nov  2 22:17:21 2014
++++ libraries/unix/cbits/execvpe.c	Mon Nov 24 14:24:39 2014
 @@ -9,7 +9,7 @@
  #include "Rts.h"
  #endif
@@ -13,3 +13,17 @@ Don't build the included execvpe().
  #ifndef __QNXNTO__
  
  /* Evidently non-Posix. */
+@@ -159,6 +159,7 @@ execvpe(char *name, char *const argv[], char **envp)
+     return (-1);
+ }
+ #endif
++#endif
+ 
+ 
+ /* Copied verbatim from ghc/lib/std/cbits/system.c. */
+@@ -168,5 +169,3 @@ void pPrPr_disableITimers (void)
+     stopTimer();
+ #endif
+ }
+-
+-#endif
