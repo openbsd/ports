@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:01:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/24 16:11:18 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Binary/
@@ -30,7 +30,6 @@ lib/ghc/${DISTNAME}/Codec/Binary/Xx.hi
 lib/ghc/${DISTNAME}/Codec/Binary/Xx.p_hi
 lib/ghc/${DISTNAME}/Codec/Binary/Yenc.hi
 lib/ghc/${DISTNAME}/Codec/Binary/Yenc.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

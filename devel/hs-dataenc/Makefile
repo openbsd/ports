@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/07/18 22:20:38 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2014/11/24 16:11:18 kili Exp $
 
 COMMENT =		data encoding library for Haskell
 
-DISTNAME =		dataenc-0.14.0.5
+DISTNAME =		dataenc-0.14.0.7
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/haskellwiki/Library/Data_encoding
