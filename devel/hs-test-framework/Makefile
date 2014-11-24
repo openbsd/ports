@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/18 22:04:52 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2014/11/24 16:09:55 kili Exp $
 
 COMMENT =		framework for running and organising tests
 
-DISTNAME =		test-framework-0.6
-REVISION =		3
+DISTNAME =		test-framework-0.8.0.3
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/test-framework/
