@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/20 17:59:16 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/11/24 16:07:58 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -55,7 +55,6 @@ lib/ghc/${DISTNAME}/Data/String/Utils.p_hi
 lib/ghc/${DISTNAME}/Data/Tuple/
 lib/ghc/${DISTNAME}/Data/Tuple/Utils.hi
 lib/ghc/${DISTNAME}/Data/Tuple/Utils.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/Email/
 lib/ghc/${DISTNAME}/Network/Email/Mailbox.hi

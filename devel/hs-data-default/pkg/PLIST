@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/20 18:01:18 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/24 16:07:59 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Default.hi
 lib/ghc/${DISTNAME}/Data/Default.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

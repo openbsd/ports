@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/18 20:48:52 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/24 16:07:59 kili Exp $
 @conflict gjhc-<7.6
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Exception/
 lib/ghc/${DISTNAME}/Control/Exception/Extensible.hi
 lib/ghc/${DISTNAME}/Control/Exception/Extensible.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

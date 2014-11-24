@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/24 16:07:59 kili Exp $
 
 COMMENT =		list-like type supporting O(1) append
 
 DISTNAME =		dlist-0.5
-REVISION =		5
+REVISION =		6
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

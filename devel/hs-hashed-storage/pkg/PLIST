@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:01:51 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/24 16:07:59 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Bundled/
 lib/ghc/${DISTNAME}/Bundled/Posix.hi
 lib/ghc/${DISTNAME}/Bundled/Posix.p_hi
 lib/ghc/${DISTNAME}/Bundled/SHA256.hi
 lib/ghc/${DISTNAME}/Bundled/SHA256.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Storage/
 lib/ghc/${DISTNAME}/Storage/Hashed/
 lib/ghc/${DISTNAME}/Storage/Hashed.hi

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/06/17 10:07:40 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/11/24 16:07:59 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/X11/
@@ -60,7 +60,6 @@ lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Window.hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Window.p_hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xrandr.hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xrandr.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsAllKeysyms.h
 lib/ghc/${DISTNAME}/include/HsXlib.h

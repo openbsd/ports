@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/24 16:07:59 kili Exp $
 
 COMMENT =		simple XML library
 
 DISTNAME =		xml-1.3.7
-REVISION =		5
+REVISION =		6
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
