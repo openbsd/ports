@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.48 2014/11/19 19:35:38 jca Exp $
+# $OpenBSD: Makefile,v 1.49 2014/11/24 16:39:41 jca Exp $
 
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.4.5
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils
 HOMEPAGE =	http://cfengine.com/
+
+MAINTAINER =	Rodrigo Mosconi <openbsd@mosconi.mat.br>
 
 # GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
