@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2014/11/24 10:01:47 edd Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_EGG_VERSION= 6.5.4
+MODPY_EGG_VERSION = 6.5.6
+GH_ACCOUNT =	OfflineIMAP
+GH_PROJECT =	offlineimap
+GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_COMMIT =	7770b5ff73737d1269eb1ba7554b8d3486c7f5ec
 DISTNAME=	offlineimap-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
 HOMEPAGE=	http://offlineimap.org/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER=	Edd Barrett <edd@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=	https://github.com/spaetz/offlineimap/tarball/v${MODPY_EGG_VERSION}/
 
 NO_TEST=	Yes
 
 MODULES=	lang/python
 
 BUILD_DEPENDS=	textproc/py-docutils
-
-WRKDIST=	${WRKDIR}/spaetz-offlineimap-c9e9690
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 

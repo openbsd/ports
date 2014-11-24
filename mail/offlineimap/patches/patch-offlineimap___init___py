@@ -1,0 +1,15 @@
+$OpenBSD: patch-offlineimap___init___py,v 1.1 2014/11/24 10:01:47 edd Exp $
+
+They forgot to bump the version.
+
+--- offlineimap/__init__.py.orig	Wed Oct 22 21:46:26 2014
++++ offlineimap/__init__.py	Wed Oct 22 21:46:36 2014
+@@ -1,7 +1,7 @@
+ __all__ = ['OfflineImap']
+ 
+ __productname__ = 'OfflineIMAP'
+-__version__     = "6.5.5"
++__version__     = "6.5.6"
+ __copyright__   = "Copyright 2002-2013 John Goerzen & contributors"
+ __author__      = "John Goerzen"
+ __author_email__= "john@complete.org"

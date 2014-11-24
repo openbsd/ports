@@ -1,7 +1,7 @@
-$OpenBSD: patch-offlineimap_conf,v 1.2 2012/08/15 13:09:59 gonzalo Exp $
---- offlineimap.conf.orig	Sat Jun  2 08:41:46 2012
-+++ offlineimap.conf	Mon Aug  6 17:32:45 2012
-@@ -312,7 +312,7 @@ ssl = yes
+$OpenBSD: patch-offlineimap_conf,v 1.3 2014/11/24 10:01:47 edd Exp $
+--- offlineimap.conf.orig	Fri May 23 18:50:46 2014
++++ offlineimap.conf	Wed Oct 22 21:43:18 2014
+@@ -385,7 +385,7 @@ ssl = yes
  # specified, the CA Cert(s) need to verify the Server cert AND
  # match the hostname (* wildcard allowed on the left hand side)
  # The certificate should be in PEM format.

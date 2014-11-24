@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_MANUAL_rst,v 1.3 2012/08/15 13:09:59 gonzalo Exp $
---- docs/MANUAL.rst.orig	Sat Jun  2 08:41:46 2012
-+++ docs/MANUAL.rst	Mon Aug  6 17:32:45 2012
-@@ -322,7 +322,7 @@ a running offlineimap "daemon".
+$OpenBSD: patch-docs_MANUAL_rst,v 1.4 2014/11/24 10:01:47 edd Exp $
+--- docs/MANUAL.rst.orig	Fri May 23 18:50:46 2014
++++ docs/MANUAL.rst	Wed Oct 22 21:43:18 2014
+@@ -335,7 +335,7 @@ core.
  Folder filtering and nametrans
  ==============================
  

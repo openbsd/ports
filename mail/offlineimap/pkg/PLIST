@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/05/13 11:56:35 pea Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/11/24 10:01:47 edd Exp $
 bin/offlineimap
 lib/python${MODPY_VERSION}/site-packages/offlineimap/
 lib/python${MODPY_VERSION}/site-packages/offlineimap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/accounts.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/accounts.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/emailutil.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/emailutil.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/error.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/error.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/
@@ -15,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Base.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Base.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Gmail.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Gmail.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/GmailMaildir.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/GmailMaildir.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/IMAP.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/IMAP.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/LocalStatus.py
@@ -27,6 +31,8 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/UIDMaps.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/UIDMaps.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/globals.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/globals.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplib2.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplib2.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplibutil.py
@@ -46,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/Base.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/Base.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/Gmail.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/Gmail.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/GmailMaildir.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/GmailMaildir.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/IMAP.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/IMAP.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/LocalStatus.py
@@ -73,6 +81,13 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/debuglock.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/debuglock.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/
+lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/const.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/const.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/stacktrace.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/stacktrace.pyc
 @man man/man1/offlineimap.1
 share/examples/offlineimap/
 share/examples/offlineimap/offlineimap.conf
