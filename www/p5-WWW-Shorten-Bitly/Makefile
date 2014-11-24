@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/24 09:36:57 benoit Exp $
 
 COMMENT=		interface to bit.ly shortening site
 
-DISTNAME=		WWW-Shorten-Bitly-1.14
+DISTNAME =		WWW-Shorten-Bitly-1.17
 CATEGORIES=		www
 
 # Perl
@@ -14,5 +14,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		converters/p5-JSON-Any \
 			textproc/p5-XML-Simple \
 			www/p5-WWW-Shorten
+
+MAKE_ENV +=		TEST_POD=1
 
 .include <bsd.port.mk>
