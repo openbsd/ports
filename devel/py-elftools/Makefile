@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/06 09:26:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/24 10:16:13 benoit Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
-MODPY_EGG_VERSION =	0.22
+MODPY_EGG_VERSION =	0.23
 DISTNAME =		pyelftools-${MODPY_EGG_VERSION}
 PKGNAME =		py-elftools-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
