@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_WebKit2_PlatformGTK_cmake,v 1.1 2014/11/21 13:40:09 ajacoutot Exp $
+$OpenBSD: patch-Source_WebKit2_PlatformGTK_cmake,v 1.2 2014/11/24 14:51:31 ajacoutot Exp $
 
-https://bugs.webkit.org/show_bug.cgi?id=130837
+http://trac.webkit.org/changeset/176519
 
 --- Source/WebKit2/PlatformGTK.cmake.orig	Tue Nov 11 08:58:45 2014
 +++ Source/WebKit2/PlatformGTK.cmake	Thu Nov 20 13:54:36 2014
