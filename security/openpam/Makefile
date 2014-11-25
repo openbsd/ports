@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/25 09:29:46 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/25 09:41:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,6 +29,8 @@ MAKE_ENV+=	PAM_MOD_DIR=${TRUEPREFIX}/lib/security
 
 PAM_MODULES=	deny echo exec nologin permit rootok \
 		self bsdauth group
+
+NO_TEST=	Yes
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} obj
