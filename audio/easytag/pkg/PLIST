@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/09/27 08:59:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/11/25 05:48:46 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/appdata/
@@ -96,6 +96,7 @@ share/locale/it/LC_MESSAGES/easytag.mo
 share/locale/ja/LC_MESSAGES/easytag.mo
 share/locale/ko/LC_MESSAGES/easytag.mo
 share/locale/lt/LC_MESSAGES/easytag.mo
+share/locale/nb/LC_MESSAGES/easytag.mo
 share/locale/nl/LC_MESSAGES/easytag.mo
 share/locale/pl/LC_MESSAGES/easytag.mo
 share/locale/pt_BR/LC_MESSAGES/easytag.mo

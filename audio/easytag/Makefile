@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2014/09/27 08:59:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2014/11/25 05:48:46 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
-GNOME_VERSION=		2.2.4
+GNOME_VERSION=		2.2.5
 
 CATEGORIES=		audio
 
