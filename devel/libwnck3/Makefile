@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2014/09/03 09:28:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2014/11/25 04:50:03 ajacoutot Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
-GNOME_VERSION=		3.4.9
+GNOME_VERSION=		3.14.0
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
 
 SHARED_LIBS +=  wnck-3               2.1      # 2.2
@@ -23,18 +23,17 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
-WANTLIB += xcb-util xcb-render xcb-shm z
+WANTLIB += xcb-render xcb-shm xcb-util z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
-LIB_DEPENDS=		x11/gtk+3 \
-			devel/startup-notification
+LIB_DEPENDS=		devel/startup-notification \
+			x11/gtk+3
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	--enable-startup-notification \
-			--program-suffix=3
+CONFIGURE_ARGS= 	--program-suffix=3
 
 .include <bsd.port.mk>
