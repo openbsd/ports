@@ -1,0 +1,14 @@
+$OpenBSD: patch-ext_rack_config_ru,v 1.1 2014/11/25 13:19:28 jasper Exp $
+--- ext/rack/config.ru.orig	Tue Nov 25 11:10:20 2014
++++ ext/rack/config.ru	Tue Nov 25 11:10:40 2014
+@@ -14,8 +14,8 @@ ARGV << "--rack"
+ # Rack applications typically don't start as root.  Set --confdir and --vardir
+ # to prevent reading configuration from ~puppet/.puppet/puppet.conf and writing
+ # to ~puppet/.puppet
+-ARGV << "--confdir" << "/etc/puppet"
+-ARGV << "--vardir"  << "/var/lib/puppet"
++ARGV << "--confdir" << "${SYSCONFDIR}/puppet"
++ARGV << "--vardir"  << "/var/puppet"
+ 
+ # NOTE: it's unfortunate that we have to use the "CommandLine" class
+ #  here to launch the app, but it contains some initialization logic
