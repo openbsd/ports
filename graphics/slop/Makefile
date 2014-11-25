@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/18 18:52:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/25 19:58:39 bcallah Exp $
 
-V =		3.1.14
+V =		3.1.15
 COMMENT =	query for a selection and print to stdout (select operation)
 DISTNAME =	slop-${V}
 CATEGORIES =	graphics x11
@@ -8,7 +8,7 @@ CATEGORIES =	graphics x11
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	slop
 GH_TAGNAME =	v${V}
-GH_COMMIT =	ce9a0ca84a1dfac38614f42fdec3cc982db89afc
+GH_COMMIT =	761a7c0d009178b31532da15e8b59fba41f0080b
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE =	https://github.com/naelstrof/slop
