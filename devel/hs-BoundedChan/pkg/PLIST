@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/04 05:36:56 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/25 22:11:03 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
 lib/ghc/${DISTNAME}/Control/Concurrent/BoundedChan.hi
 lib/ghc/${DISTNAME}/Control/Concurrent/BoundedChan.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

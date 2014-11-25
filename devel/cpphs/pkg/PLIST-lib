@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-lib,v 1.6 2013/01/20 17:59:15 kili Exp $
+@comment $OpenBSD: PLIST-lib,v 1.7 2014/11/25 22:11:03 kili Exp $
 lib/ghc/
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/Preprocessor/
 lib/ghc/${DISTNAME}/Language/Preprocessor/Cpphs/

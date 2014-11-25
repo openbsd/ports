@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:05:35 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/25 22:11:05 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Entropy.hi
 lib/ghc/${DISTNAME}/System/Entropy.p_hi

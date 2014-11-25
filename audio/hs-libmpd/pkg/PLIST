@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/09/29 10:09:32 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/11/25 22:11:02 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/MPD/
 lib/ghc/${DISTNAME}/Network/MPD.hi

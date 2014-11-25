@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/25 22:11:04 kili Exp $
 
 COMMENT =		Efficient algorithms for vector arrays
 
 DISTNAME =		vector-algorithms-0.5.4.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

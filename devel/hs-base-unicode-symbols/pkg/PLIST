@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:00:15 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/25 22:11:03 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Applicative/
@@ -35,7 +35,6 @@ lib/ghc/${DISTNAME}/Data/Monoid/Unicode.p_hi
 lib/ghc/${DISTNAME}/Data/Ord/
 lib/ghc/${DISTNAME}/Data/Ord/Unicode.hi
 lib/ghc/${DISTNAME}/Data/Ord/Unicode.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Prelude/
 lib/ghc/${DISTNAME}/Prelude/Unicode.hi
 lib/ghc/${DISTNAME}/Prelude/Unicode.p_hi

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:03:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/25 22:11:04 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Safe/
 lib/ghc/${DISTNAME}/Safe.hi
 lib/ghc/${DISTNAME}/Safe.p_hi

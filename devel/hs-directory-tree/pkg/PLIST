@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:01:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/11/25 22:11:04 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Directory/
 lib/ghc/${DISTNAME}/System/Directory/Tree.hi

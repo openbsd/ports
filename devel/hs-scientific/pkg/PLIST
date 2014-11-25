@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/14 13:06:02 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/25 22:11:04 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/ByteString/
@@ -12,7 +12,6 @@ lib/ghc/${DISTNAME}/Data/Text/Lazy/
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/Scientific.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/Scientific.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Math/
 lib/ghc/${DISTNAME}/Math/NumberTheory/
 lib/ghc/${DISTNAME}/Math/NumberTheory/Logarithms.hi

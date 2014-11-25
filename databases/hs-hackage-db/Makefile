@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/25 22:11:02 kili Exp $
 
 COMMENT =		access to the Hackage database via Data.Map
 
 DISTNAME =		hackage-db-1.4
+REVISION =		0
 CATEGORIES =		databases
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
