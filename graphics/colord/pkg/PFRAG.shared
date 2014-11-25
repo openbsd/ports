@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2013/03/08 06:58:38 ajacoutot Exp $
-lib/colord-sensors/libcolord_sensor_argyll.so
+@comment $OpenBSD: PFRAG.shared,v 1.8 2014/11/25 05:19:29 ajacoutot Exp $
 lib/colord-sensors/libcolord_sensor_dummy.so

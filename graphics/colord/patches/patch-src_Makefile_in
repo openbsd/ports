@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.11 2014/06/04 13:37:20 ajacoutot Exp $
---- src/Makefile.in.orig	Fri May 23 12:46:47 2014
-+++ src/Makefile.in	Wed Jun  4 15:17:19 2014
-@@ -1822,11 +1822,6 @@ cd-resources.h: colord.gresource.xml
+$OpenBSD: patch-src_Makefile_in,v 1.12 2014/11/25 05:19:29 ajacoutot Exp $
+--- src/Makefile.in.orig	Mon Nov 24 15:26:16 2014
++++ src/Makefile.in	Tue Nov 25 05:52:50 2014
+@@ -1829,11 +1829,6 @@ cd-resources.h: colord.gresource.xml
  		$(srcdir)/colord.gresource.xml
  
  install-data-hook:

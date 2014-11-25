@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2014/11/13 09:34:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2014/11/25 05:19:29 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-V=		1.2.5
+V=		1.2.6
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
 
@@ -57,6 +57,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # disable: takes a huge amount of time/RAM
 CONFIGURE_ARGS += --disable-print-profiles
+# until proven useful
+CONFIGURE_ARGS += --disable-argyllcms-sensor
 #BUILD_DEPENDS += graphics/argyll
 
 # XXX configure: error: Package requirements (bash-completion >= 2.0) were not met
