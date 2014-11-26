@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/26 17:43:53 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
-${GEM_LIB}/gems/${DISTNAME}/NOTES
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/compile/
+${GEM_LIB}/gems/${DISTNAME}/compile/rake-compiler-dev-box.patch
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds.rb
@@ -34,4 +35,5 @@ ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_azure.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sybase_ase.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/thread_test.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
