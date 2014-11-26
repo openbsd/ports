@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/05 07:47:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/26 19:24:34 jasper Exp $
 @pkgpath misc/portscout
 bin/portroach
 ${P5SITE}/Portroach/
@@ -21,6 +21,8 @@ ${P5SITE}/Portroach/SiteHandler/CPAN.pm
 ${P5SITE}/Portroach/SiteHandler/GitHub.pm
 ${P5SITE}/Portroach/SiteHandler/Hackage.pm
 ${P5SITE}/Portroach/SiteHandler/NPM.pm
+${P5SITE}/Portroach/SiteHandler/Pear.pm
+${P5SITE}/Portroach/SiteHandler/Pecl.pm
 ${P5SITE}/Portroach/SiteHandler/RubyGems.pm
 ${P5SITE}/Portroach/SiteHandler/SourceForge.pm
 ${P5SITE}/Portroach/Template.pm
