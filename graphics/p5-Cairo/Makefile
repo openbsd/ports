@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2014/06/14 23:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2014/11/26 08:00:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface to the cairo library
 
 MODULES=	cpan
-DISTNAME=	Cairo-1.104
+DISTNAME=	Cairo-1.105
 CATEGORIES=	graphics devel
 CPAN_AUTHOR=	XAOC
-REVISION=	0
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += cairo freetype z
