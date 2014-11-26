@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_scripts_features_archives,v 1.1 2014/11/26 20:01:23 naddy Exp $
+--- tests/scripts/features/archives.orig	Sun Oct  5 18:24:51 2014
++++ tests/scripts/features/archives	Tue Nov 25 18:40:08 2014
+@@ -83,7 +83,7 @@ run_make_test(q!
+ DIR = artest
+ vpath % $(DIR)
+ default: lib(foo)
+-(%): %.vhd ; @cd $(DIR) && touch $(*F) && $(AR) $(ARFLAGS) $@ $(*F) >/dev/null 2>&1 && rm $(*F)
++(%): %.vhd ; @cd $(DIR) && echo foo >$(*F) && $(AR) $(ARFLAGS) $@ $(*F) >/dev/null 2>&1 && rm $(*F)
+ .PHONY: default
+ !,
+               '', "");
