@@ -1,0 +1,9 @@
+RemoteBox is a VirtualBox client. In essence, you can remotely
+administer (ie over the network) an installation of VirtualBox on a
+server, including its guests and interact with them as if they were
+running locally. VirtualBox is installed on 'the server' machine and
+RemoteBox runs on 'the client' machine. RemoteBox provides a complete
+GTK graphical interface with a look and feel very similar to that of
+VirtualBox's native GUI. If you're familiar with other virtualization
+software, such as VMWare ESX, then think of RemoteBox as the
+"poor man's" VI client.
