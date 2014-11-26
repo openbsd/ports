@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/11/26 17:42:43 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/COPYING.ja
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
@@ -12,8 +13,10 @@ ${GEM_LIB}/gems/${DISTNAME}/extra/README.html
 ${GEM_LIB}/gems/${DISTNAME}/extra/README_ja.html
 ${GEM_LIB}/gems/${DISTNAME}/extra/tommy.css
 ${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/mysql_api.so
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql/mysql_api.so
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/gem.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/native.rake
