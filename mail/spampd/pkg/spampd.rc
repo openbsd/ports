@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: spampd.rc,v 1.1.1.1 2014/02/08 18:58:22 ajacoutot Exp $
+# $OpenBSD: spampd.rc,v 1.2 2014/11/27 12:37:29 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/spampd"
-daemon_flags="--tagall --aw"
+daemon_flags="--a --aw --p=/var/spampd/spampd.pid"
 
 . /etc/rc.d/rc.subr
 

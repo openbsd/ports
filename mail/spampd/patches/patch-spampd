@@ -1,6 +1,12 @@
-$OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
---- spampd.orig	Mon Oct 31 20:45:53 2005
-+++ spampd	Wed Mar 19 20:02:26 2014
+$OpenBSD: patch-spampd,v 1.3 2014/11/27 12:37:29 ajacoutot Exp $
+
+https://github.com/mpaperno/spampd/commit/1fe20e4c0f06760eb341b519c32954bfc9ef7a15
+https://github.com/mpaperno/spampd/commit/9088ae52b6fc6dcf4bc1b2d19109166b4f76c66a
+https://github.com/mpaperno/spampd/commit/7706c364d19f630ba7fbc8681f6e75282d60a73f
+https://github.com/mpaperno/spampd/commit/e472b7b8f39f69ec20c81eaaf42c7fbfb9c703dd
+
+--- spampd.orig	Wed Nov 26 09:56:25 2014
++++ spampd	Wed Nov 26 09:56:09 2014
 @@ -752,8 +752,8 @@ my $childtimeout = 6*60; # child process per-command t
  my $satimeout = 285; # SpamAssassin timeout in seconds (15s less than Postfix 
                       # default for smtp_data_done_timeout)
@@ -12,7 +18,28 @@ $OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
  my $tagall = 0; # mark-up all msgs with SA, not just spam
  my $maxsize = 64; # max. msg size to scan with SA, in KB.
  my $rh = 0; # log which rules were hit
-@@ -849,6 +849,7 @@ if ( $tmp[1] ) { $port = $tmp[1]; }
+@@ -824,6 +824,20 @@ if ( $logsock !~ /^(unix|inet)$/ ) {
+ 	usage(0);
+ }
+ 
++# Untaint some options provided by admin command line.
++$logsock = $1 if $logsock =~ /^(.*)$/;
++
++$pidfile = $1 if $pidfile =~ /^(.*)$/;
++
++$relayhost = $1 if $relayhost =~ /^(.*)$/;
++
++$relayport = $1 if $relayport =~ /^(.*)$/;
++
++$host = $1 if $host =~ /^(.*)$/;
++
++$port = $1 if $port =~ /^(.*)$/;
++#
++
+ if ( $options{tagall} ) { $tagall = 1; }
+ if ( $options{'log-rules-hit'} ) { $rh = 1; }
+ if ( $options{debug} ) { $debug = 1; $nsloglevel = 4; }
+@@ -849,6 +863,7 @@ if ( $tmp[1] ) { $port = $tmp[1]; }
  my $assassin = Mail::SpamAssassin->new({
  		'dont_copy_prefs' => 1,
  		'debug' => $debug,
@@ -20,7 +47,7 @@ $OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
  		'local_tests_only' => $options{'local-only'} || 0 });
  
  $options{'auto-whitelist'} and eval {
-@@ -942,9 +943,9 @@ Options:
+@@ -942,9 +957,9 @@ Options:
    --pid=filename           Store the daemon's process ID in this file. 
                                 Default is /var/run/spampd.pid
    --user=username          Specifies the user that the daemon runs as.
@@ -32,7 +59,7 @@ $OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
    --nodetach               Don't detach from the console and fork into
                                 background. Useful for some daemon control
                                 tools or when running as a win32 service
-@@ -1075,10 +1076,10 @@ L<http://www.WorldDesign.com/index.cfm/rd/mta/spampd.h
+@@ -1075,10 +1090,10 @@ L<http://www.WorldDesign.com/index.cfm/rd/mta/spampd.h
  
  =head1 Requires
  
@@ -45,7 +72,7 @@ $OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
  =item B<Mail::SpamAssassin>
  
  =item B<Net::Server::PreForkSimple>
-@@ -1249,7 +1250,7 @@ alternate to using the above --relayhost=ip:port notat
+@@ -1249,7 +1264,7 @@ alternate to using the above --relayhost=ip:port notat
  =item B<--group=groupname> or  B<--g=groupname>
  
  Specifies the user and group that the proxy will run as. Default is
@@ -54,7 +81,7 @@ $OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
  
  =item B<--children=n> or B<--c=n>
  
-@@ -1299,7 +1300,7 @@ Default is 285 seconds.
+@@ -1299,7 +1314,7 @@ Default is 285 seconds.
  
  Specifies a filename where I<spampd> will write its process ID so
  that it is easy to kill it later. The directory that will contain this
@@ -63,7 +90,7 @@ $OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
  F</var/run/spampd.pid>.
  
  =item B<--logsock=unix or inet> C<(new in v2.20)>
-@@ -1390,10 +1391,10 @@ Prints usage information.
+@@ -1390,10 +1405,10 @@ Prints usage information.
  
  =head2 Deprecated Options
  
