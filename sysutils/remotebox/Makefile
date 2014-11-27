@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/26 15:32:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/27 11:35:47 ajacoutot Exp $
 
 COMMENT=		VirtualBox client with remote management
 
 DISTNAME=		RemoteBox-1.9
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -40,6 +41,6 @@ do-install:
 	cd ${PREFIX}/share/pixmaps && \
 		ln -sf ${TRUEPREFIX}/share/remotebox/icons/remotebox.png
 	cp -Rp ${WRKSRC}/share/remotebox ${PREFIX}/share
-	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/remotebox
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/remotebox
 
 .include <bsd.port.mk>
