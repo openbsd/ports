@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/04 08:20:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/11/27 11:10:05 sthen Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -15,22 +15,22 @@ REVISION-main=		0
 
 CATEGORIES=		security net
 
-SHARED_LIBS +=  heimbase             1.0      # 1.0
-SHARED_LIBS +=  roken                2.0      # 19.0
+SHARED_LIBS +=  heimbase             1.1      # 1.0
+SHARED_LIBS +=  roken                2.1      # 19.0
 SHARED_LIBS +=  heimedit             0.0      # 0.36
-SHARED_LIBS +=  sl                   0.0      # 2.1
-SHARED_LIBS +=  wind                 2.0      # 0.0
-SHARED_LIBS +=  asn1                 21.0     # 8.0
-SHARED_LIBS +=  heimsqlite           0.0      # unknown
-SHARED_LIBS +=  hx509                0.0      # 5.0
-SHARED_LIBS +=  krb5                 21.0     # 26.0
+SHARED_LIBS +=  sl                   0.1      # 2.1
+SHARED_LIBS +=  wind                 2.1      # 0.0
+SHARED_LIBS +=  asn1                 21.1     # 8.0
+SHARED_LIBS +=  heimsqlite           0.1      # unknown
+SHARED_LIBS +=  hx509                0.1      # 5.0
+SHARED_LIBS +=  krb5                 21.1     # 26.0
 SHARED_LIBS +=  heimntlm             0.0      # 1.0
 SHARED_LIBS +=  kafs                 21.0     # 5.1
-SHARED_LIBS +=  gssapi               8.0      # 3.0
-SHARED_LIBS +=  hdb                  2.0      # 11.0
-SHARED_LIBS +=  kadm5srv             2.0      # 8.1
+SHARED_LIBS +=  gssapi               8.1      # 3.0
+SHARED_LIBS +=  hdb                  2.1      # 11.0
+SHARED_LIBS +=  kadm5srv             2.1      # 8.1
 SHARED_LIBS +=  kadm5clnt            2.0      # 7.1
-SHARED_LIBS +=  kdc                  2.0      # 2.0
+SHARED_LIBS +=  kdc                  2.1      # 2.0
 
 HOMEPAGE=		http://www.h5l.org/
 
@@ -92,6 +92,10 @@ CONFIGURE_ENV +=	ac_cv_funclib_db_create=no \
 			ac_cv_header_db3_db_h=no \
 			ac_cv_header_db4_db_h=no \
 			ac_cv_header_db5_db_h=no
+
+# symbol versioning suspected to trigger weird linking problems
+# with our binutils
+CONFIGURE_ENV +=	rk_cv_version_script=no
 
 # do not pick-up libexecinfo if installed
 CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
