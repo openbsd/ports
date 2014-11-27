@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/20 19:54:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2014/11/27 17:23:08 naddy Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -48,7 +48,8 @@ SHARED_LIBS =	estdc++		17.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 i386 sparc64
+# XXX broken with memcpy that checks for overlap
+ONLY_FOR_ARCHS-ada = #amd64 i386 sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada

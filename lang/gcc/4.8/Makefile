@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/08/15 08:19:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.39 2014/11/27 17:23:08 naddy Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
@@ -57,7 +57,8 @@ SHARED_LIBS =	estdc++		16.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 i386 sparc64
+# XXX broken with memcpy that checks for overlap
+ONLY_FOR_ARCHS-ada = #amd64 i386 sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 powerpc sparc64
 
 MULTI_PACKAGES = -main -f95 -objc -c++ -estdc -java -ada
