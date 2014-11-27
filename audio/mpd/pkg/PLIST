@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/10/27 11:07:18 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/11/27 19:57:16 ajacoutot Exp $
+@pkgpath audio/mpd,tremor
 @newgroup _mpd:560
 @newuser _mpd:560:560:daemon:Music Player Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/mpd/*
