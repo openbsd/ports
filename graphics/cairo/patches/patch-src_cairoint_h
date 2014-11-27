@@ -1,11 +1,24 @@
-$OpenBSD: patch-src_cairoint_h,v 1.1 2014/11/17 12:50:14 eric Exp $
+$OpenBSD: patch-src_cairoint_h,v 1.2 2014/11/27 03:23:57 brad Exp $
 
 http://cgit.freedesktop.org/cairo/commit/?id=99a35dd273f3deb4ae54310f1ed1746bfd9fae70
 
     CFF: Fix unaligned access
 
+http://cgit.freedesktop.org/cairo/commit/?id=adbeb3d53c6c6e8ddcc63988200da4c5c9627717
+
+    Improve performance of cpu_to_be32 and be32_to_cpu
+
 --- src/cairoint.h.orig	Mon Oct 13 21:46:33 2014
-+++ src/cairoint.h	Fri Oct 31 02:05:05 2014
++++ src/cairoint.h	Mon Nov 17 19:57:23 2014
+@@ -229,7 +229,7 @@ be16_to_cpu(uint16_t v)
+ static inline uint32_t cairo_const
+ cpu_to_be32(uint32_t v)
+ {
+-    return (cpu_to_be16 (v) << 16) | cpu_to_be16 (v >> 16);
++    return (v >> 24) | ((v >> 8) & 0xff00) | ((v << 8) & 0xff0000) | (v << 24);
+ }
+ 
+ static inline uint32_t cairo_const
 @@ -240,6 +240,32 @@ be32_to_cpu(uint32_t v)
  
  #endif
