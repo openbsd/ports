@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/17 17:59:00 jasper Exp $
-@conflict ${MODRUBY_PREFIX}-rspec-expectations-<3.1.0
+@comment $OpenBSD: PLIST,v 1.2 2014/11/27 09:19:14 jeremy Exp $
+@option no-default-conflict
+@conflict ${MODRUBY_PREFIX}-rspec-expectations->=2,<4
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
