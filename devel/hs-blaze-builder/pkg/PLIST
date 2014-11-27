@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/18 22:07:18 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/11/27 21:30:16 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Blaze/
 lib/ghc/${DISTNAME}/Blaze/ByteString/
@@ -32,7 +32,6 @@ lib/ghc/${DISTNAME}/Blaze/ByteString/Builder/Internal/Write.hi
 lib/ghc/${DISTNAME}/Blaze/ByteString/Builder/Internal/Write.p_hi
 lib/ghc/${DISTNAME}/Blaze/ByteString/Builder/Word.hi
 lib/ghc/${DISTNAME}/Blaze/ByteString/Builder/Word.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
