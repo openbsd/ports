@@ -1,0 +1,13 @@
+$OpenBSD: patch-menu_c,v 1.1 2014/11/27 03:19:18 brad Exp $
+
+For exit() declaration.
+
+--- menu.c.orig	Thu Nov 20 01:33:40 2014
++++ menu.c	Thu Nov 20 01:34:00 2014
+@@ -1,5 +1,6 @@
+ /* Copyright (c) 1994 David Hogan, 2000 Benjamin Drieu, see README for licence details */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <unistd.h>
+ #include <sys/types.h>

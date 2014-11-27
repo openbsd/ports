@@ -1,0 +1,14 @@
+$OpenBSD: patch-client_c,v 1.1 2014/11/27 03:19:18 brad Exp $
+
+Replace the malloc.h header with stdlib.h.
+
+--- client.c.orig	Thu Nov 20 01:34:10 2014
++++ client.c	Thu Nov 20 01:34:48 2014
+@@ -1,6 +1,6 @@
+ /* Copyright (c) 1994 David Hogan, 2000 Benjamin Drieu see README for licence details */
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <X11/X.h>
+ #include <X11/Xlib.h>

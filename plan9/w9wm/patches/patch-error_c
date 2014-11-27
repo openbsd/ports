@@ -1,0 +1,13 @@
+$OpenBSD: patch-error_c,v 1.1 2014/11/27 03:19:18 brad Exp $
+
+For exit() declaration.
+
+--- error.c.orig	Thu Nov 20 01:35:06 2014
++++ error.c	Thu Nov 20 01:35:16 2014
+@@ -1,5 +1,6 @@
+ /* Copyright (c) 1994 David Hogan, see README for licence details */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <X11/X.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
