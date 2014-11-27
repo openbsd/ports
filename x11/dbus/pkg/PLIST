@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/01/24 10:43:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/11/27 07:59:24 ajacoutot Exp $
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 @extra /var/db/dbus/machine-id
@@ -37,7 +37,6 @@ lib/dbus-1.0/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.la
 @lib lib/libdbus-1.so.${LIBdbus-1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/dbus-1.pc
 @mode 4750
 @group _dbus
