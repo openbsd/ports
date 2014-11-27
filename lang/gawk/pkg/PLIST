@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/06/16 20:01:27 jca Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/11/27 13:06:11 dcoppa Exp $
 %%SHARED%%
 bin/awk
 @bin bin/gawk
@@ -16,6 +16,7 @@ libexec/awk/
 @man man/man3am/filefuncs.3am
 @man man/man3am/fnmatch.3am
 @man man/man3am/fork.3am
+@man man/man3am/inplace.3am
 @man man/man3am/ordchr.3am
 @man man/man3am/readdir.3am
 @man man/man3am/readfile.3am
@@ -40,11 +41,13 @@ share/awk/ord.awk
 share/awk/passwd.awk
 share/awk/quicksort.awk
 share/awk/readable.awk
+share/awk/readfile.awk
 share/awk/rewind.awk
 share/awk/round.awk
 share/awk/strtonum.awk
 share/awk/walkarray.awk
 share/awk/zerofile.awk
+share/locale/ca/LC_MESSAGES/gawk.mo
 share/locale/da/LC_MESSAGES/gawk.mo
 share/locale/de/LC_MESSAGES/gawk.mo
 share/locale/es/LC_MESSAGES/gawk.mo

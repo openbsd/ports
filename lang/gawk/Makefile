@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2014/11/27 13:06:11 dcoppa Exp $
 
 COMMENT=	GNU awk
 
-V=		4.1.0
+V=		4.1.1
 DISTNAME=	gawk-$V
-REVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
 
@@ -22,6 +21,8 @@ LIB_DEPENDS=	devel/gmp \
 
 SUBST_VARS=	V
 
+MAKE_ENV +=	RM="rm -f"
+
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= ${CONFIGURE_SHARED}
@@ -30,7 +31,6 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	rm -f ${PREFIX}/lib/gawk/*.la
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man3am
 	mv ${PREFIX}/man/man3/*.3am ${PREFIX}/man/man3am
 
