@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2014/11/26 16:59:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2014/11/27 14:52:18 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 lib/gtk-2.0/2.10.0/engines/libadwaita.so
@@ -167,7 +167,6 @@ share/icons/HighContrast/16x16/apps/brasero.png
 share/icons/HighContrast/16x16/apps/cheese.png
 share/icons/HighContrast/16x16/apps/config-firewall.png
 share/icons/HighContrast/16x16/apps/configuration-editor.png
-share/icons/HighContrast/16x16/apps/dconf-editor.png
 share/icons/HighContrast/16x16/apps/deja-dup.png
 share/icons/HighContrast/16x16/apps/devhelp.png
 share/icons/HighContrast/16x16/apps/documents.png
@@ -185,12 +184,9 @@ share/icons/HighContrast/16x16/apps/glade.png
 share/icons/HighContrast/16x16/apps/gnome-abrt.png
 share/icons/HighContrast/16x16/apps/gnome-aisleriot.png
 share/icons/HighContrast/16x16/apps/gnome-boxes.png
-share/icons/HighContrast/16x16/apps/gnome-clocks.png
 share/icons/HighContrast/16x16/apps/gnome-documents.png
 share/icons/HighContrast/16x16/apps/gnome-freecell.png
-share/icons/HighContrast/16x16/apps/gnome-music.png
 share/icons/HighContrast/16x16/apps/gnome-nettool.png
-share/icons/HighContrast/16x16/apps/gnome-photos.png
 share/icons/HighContrast/16x16/apps/gnome-power-manager.png
 share/icons/HighContrast/16x16/apps/gnome-tweak-tool.png
 share/icons/HighContrast/16x16/apps/gnome-weather.png
@@ -202,7 +198,6 @@ share/icons/HighContrast/16x16/apps/headpin.png
 share/icons/HighContrast/16x16/apps/help-browser.png
 share/icons/HighContrast/16x16/apps/help-contents.png
 share/icons/HighContrast/16x16/apps/help-faq.png
-share/icons/HighContrast/16x16/apps/iagno.png
 share/icons/HighContrast/16x16/apps/ifolder.png
 share/icons/HighContrast/16x16/apps/inkscape.png
 share/icons/HighContrast/16x16/apps/katello.png
@@ -723,7 +718,6 @@ share/icons/HighContrast/22x22/apps/brasero.png
 share/icons/HighContrast/22x22/apps/cheese.png
 share/icons/HighContrast/22x22/apps/config-firewall.png
 share/icons/HighContrast/22x22/apps/configuration-editor.png
-share/icons/HighContrast/22x22/apps/dconf-editor.png
 share/icons/HighContrast/22x22/apps/deja-dup.png
 share/icons/HighContrast/22x22/apps/devhelp.png
 share/icons/HighContrast/22x22/apps/documents.png
@@ -741,12 +735,9 @@ share/icons/HighContrast/22x22/apps/glade.png
 share/icons/HighContrast/22x22/apps/gnome-abrt.png
 share/icons/HighContrast/22x22/apps/gnome-aisleriot.png
 share/icons/HighContrast/22x22/apps/gnome-boxes.png
-share/icons/HighContrast/22x22/apps/gnome-clocks.png
 share/icons/HighContrast/22x22/apps/gnome-documents.png
 share/icons/HighContrast/22x22/apps/gnome-freecell.png
-share/icons/HighContrast/22x22/apps/gnome-music.png
 share/icons/HighContrast/22x22/apps/gnome-nettool.png
-share/icons/HighContrast/22x22/apps/gnome-photos.png
 share/icons/HighContrast/22x22/apps/gnome-power-manager.png
 share/icons/HighContrast/22x22/apps/gnome-tweak-tool.png
 share/icons/HighContrast/22x22/apps/gnome-weather.png
@@ -758,7 +749,6 @@ share/icons/HighContrast/22x22/apps/headpin.png
 share/icons/HighContrast/22x22/apps/help-browser.png
 share/icons/HighContrast/22x22/apps/help-contents.png
 share/icons/HighContrast/22x22/apps/help-faq.png
-share/icons/HighContrast/22x22/apps/iagno.png
 share/icons/HighContrast/22x22/apps/ifolder.png
 share/icons/HighContrast/22x22/apps/inkscape.png
 share/icons/HighContrast/22x22/apps/katello.png
@@ -1279,7 +1269,6 @@ share/icons/HighContrast/24x24/apps/brasero.png
 share/icons/HighContrast/24x24/apps/cheese.png
 share/icons/HighContrast/24x24/apps/config-firewall.png
 share/icons/HighContrast/24x24/apps/configuration-editor.png
-share/icons/HighContrast/24x24/apps/dconf-editor.png
 share/icons/HighContrast/24x24/apps/deja-dup.png
 share/icons/HighContrast/24x24/apps/devhelp.png
 share/icons/HighContrast/24x24/apps/documents.png
@@ -1297,12 +1286,9 @@ share/icons/HighContrast/24x24/apps/glade.png
 share/icons/HighContrast/24x24/apps/gnome-abrt.png
 share/icons/HighContrast/24x24/apps/gnome-aisleriot.png
 share/icons/HighContrast/24x24/apps/gnome-boxes.png
-share/icons/HighContrast/24x24/apps/gnome-clocks.png
 share/icons/HighContrast/24x24/apps/gnome-documents.png
 share/icons/HighContrast/24x24/apps/gnome-freecell.png
-share/icons/HighContrast/24x24/apps/gnome-music.png
 share/icons/HighContrast/24x24/apps/gnome-nettool.png
-share/icons/HighContrast/24x24/apps/gnome-photos.png
 share/icons/HighContrast/24x24/apps/gnome-power-manager.png
 share/icons/HighContrast/24x24/apps/gnome-tweak-tool.png
 share/icons/HighContrast/24x24/apps/gnome-weather.png
@@ -1314,7 +1300,6 @@ share/icons/HighContrast/24x24/apps/headpin.png
 share/icons/HighContrast/24x24/apps/help-browser.png
 share/icons/HighContrast/24x24/apps/help-contents.png
 share/icons/HighContrast/24x24/apps/help-faq.png
-share/icons/HighContrast/24x24/apps/iagno.png
 share/icons/HighContrast/24x24/apps/ifolder.png
 share/icons/HighContrast/24x24/apps/inkscape.png
 share/icons/HighContrast/24x24/apps/katello.png
@@ -1834,7 +1819,6 @@ share/icons/HighContrast/256x256/apps/brasero.png
 share/icons/HighContrast/256x256/apps/cheese.png
 share/icons/HighContrast/256x256/apps/config-firewall.png
 share/icons/HighContrast/256x256/apps/configuration-editor.png
-share/icons/HighContrast/256x256/apps/dconf-editor.png
 share/icons/HighContrast/256x256/apps/deja-dup.png
 share/icons/HighContrast/256x256/apps/devhelp.png
 share/icons/HighContrast/256x256/apps/documents.png
@@ -1852,12 +1836,9 @@ share/icons/HighContrast/256x256/apps/glade.png
 share/icons/HighContrast/256x256/apps/gnome-abrt.png
 share/icons/HighContrast/256x256/apps/gnome-aisleriot.png
 share/icons/HighContrast/256x256/apps/gnome-boxes.png
-share/icons/HighContrast/256x256/apps/gnome-clocks.png
 share/icons/HighContrast/256x256/apps/gnome-documents.png
 share/icons/HighContrast/256x256/apps/gnome-freecell.png
-share/icons/HighContrast/256x256/apps/gnome-music.png
 share/icons/HighContrast/256x256/apps/gnome-nettool.png
-share/icons/HighContrast/256x256/apps/gnome-photos.png
 share/icons/HighContrast/256x256/apps/gnome-power-manager.png
 share/icons/HighContrast/256x256/apps/gnome-tweak-tool.png
 share/icons/HighContrast/256x256/apps/gnome-weather.png
@@ -1869,7 +1850,6 @@ share/icons/HighContrast/256x256/apps/headpin.png
 share/icons/HighContrast/256x256/apps/help-browser.png
 share/icons/HighContrast/256x256/apps/help-contents.png
 share/icons/HighContrast/256x256/apps/help-faq.png
-share/icons/HighContrast/256x256/apps/iagno.png
 share/icons/HighContrast/256x256/apps/ifolder.png
 share/icons/HighContrast/256x256/apps/inkscape.png
 share/icons/HighContrast/256x256/apps/katello.png
@@ -2390,7 +2370,6 @@ share/icons/HighContrast/32x32/apps/brasero.png
 share/icons/HighContrast/32x32/apps/cheese.png
 share/icons/HighContrast/32x32/apps/config-firewall.png
 share/icons/HighContrast/32x32/apps/configuration-editor.png
-share/icons/HighContrast/32x32/apps/dconf-editor.png
 share/icons/HighContrast/32x32/apps/deja-dup.png
 share/icons/HighContrast/32x32/apps/devhelp.png
 share/icons/HighContrast/32x32/apps/documents.png
@@ -2408,12 +2387,9 @@ share/icons/HighContrast/32x32/apps/glade.png
 share/icons/HighContrast/32x32/apps/gnome-abrt.png
 share/icons/HighContrast/32x32/apps/gnome-aisleriot.png
 share/icons/HighContrast/32x32/apps/gnome-boxes.png
-share/icons/HighContrast/32x32/apps/gnome-clocks.png
 share/icons/HighContrast/32x32/apps/gnome-documents.png
 share/icons/HighContrast/32x32/apps/gnome-freecell.png
-share/icons/HighContrast/32x32/apps/gnome-music.png
 share/icons/HighContrast/32x32/apps/gnome-nettool.png
-share/icons/HighContrast/32x32/apps/gnome-photos.png
 share/icons/HighContrast/32x32/apps/gnome-power-manager.png
 share/icons/HighContrast/32x32/apps/gnome-tweak-tool.png
 share/icons/HighContrast/32x32/apps/gnome-weather.png
@@ -2425,7 +2401,6 @@ share/icons/HighContrast/32x32/apps/headpin.png
 share/icons/HighContrast/32x32/apps/help-browser.png
 share/icons/HighContrast/32x32/apps/help-contents.png
 share/icons/HighContrast/32x32/apps/help-faq.png
-share/icons/HighContrast/32x32/apps/iagno.png
 share/icons/HighContrast/32x32/apps/ifolder.png
 share/icons/HighContrast/32x32/apps/inkscape.png
 share/icons/HighContrast/32x32/apps/katello.png
@@ -2950,7 +2925,6 @@ share/icons/HighContrast/48x48/apps/brasero.png
 share/icons/HighContrast/48x48/apps/cheese.png
 share/icons/HighContrast/48x48/apps/config-firewall.png
 share/icons/HighContrast/48x48/apps/configuration-editor.png
-share/icons/HighContrast/48x48/apps/dconf-editor.png
 share/icons/HighContrast/48x48/apps/deja-dup.png
 share/icons/HighContrast/48x48/apps/devhelp.png
 share/icons/HighContrast/48x48/apps/documents.png
@@ -2968,12 +2942,9 @@ share/icons/HighContrast/48x48/apps/glade.png
 share/icons/HighContrast/48x48/apps/gnome-abrt.png
 share/icons/HighContrast/48x48/apps/gnome-aisleriot.png
 share/icons/HighContrast/48x48/apps/gnome-boxes.png
-share/icons/HighContrast/48x48/apps/gnome-clocks.png
 share/icons/HighContrast/48x48/apps/gnome-documents.png
 share/icons/HighContrast/48x48/apps/gnome-freecell.png
-share/icons/HighContrast/48x48/apps/gnome-music.png
 share/icons/HighContrast/48x48/apps/gnome-nettool.png
-share/icons/HighContrast/48x48/apps/gnome-photos.png
 share/icons/HighContrast/48x48/apps/gnome-power-manager.png
 share/icons/HighContrast/48x48/apps/gnome-tweak-tool.png
 share/icons/HighContrast/48x48/apps/gnome-weather.png
@@ -2985,7 +2956,6 @@ share/icons/HighContrast/48x48/apps/headpin.png
 share/icons/HighContrast/48x48/apps/help-browser.png
 share/icons/HighContrast/48x48/apps/help-contents.png
 share/icons/HighContrast/48x48/apps/help-faq.png
-share/icons/HighContrast/48x48/apps/iagno.png
 share/icons/HighContrast/48x48/apps/ifolder.png
 share/icons/HighContrast/48x48/apps/inkscape.png
 share/icons/HighContrast/48x48/apps/katello.png
