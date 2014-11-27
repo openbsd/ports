@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/20 02:28:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/27 17:58:53 bcallah Exp $
 
-MODPY_EGG_VERSION =	1.3.0
+MODPY_EGG_VERSION =	1.4.0
 COMMENT =	curses-based front-end for livestreamer
 GH_ACCOUNT =	gapato
 GH_PROJECT =	livestreamer-curses
