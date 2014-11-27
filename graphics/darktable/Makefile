@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/11/17 11:18:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2014/11/27 13:25:00 dcoppa Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -15,7 +15,7 @@ COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-1.2.3
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
-REVISION=	3
+REVISION=	4
 
 SHARED_ONLY=	Yes
 
@@ -68,10 +68,14 @@ SEPARATE_BUILD=	Yes
 USE_GROFF=	Yes
 
 CONFIGURE_ARGS=	-DOPENJPEG_INCLUDE_DIR=${PREFIX}/include/openjpeg-1.5 \
-		-DBINARY_PACKAGE_BUILD=1
+		-DBINARY_PACKAGE_BUILD=1 \
+		-DCUSTOM_CFLAGS=1
 
 # enable workaround for mutex problems
 CFLAGS+=	-D_DEBUG
+
+# error: #error "SSE instruction set not enabled"
+CFLAGS+=	-msse2
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
