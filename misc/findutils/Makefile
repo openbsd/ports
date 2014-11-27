@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2014/11/27 13:14:00 dcoppa Exp $
 
 COMMENT=		finds and then operates on files
 
 # XXX alpha-test version for now; switch back to stable when there's
 # a version which works with 64-bit time_t/ino_t.
-DISTNAME=		findutils-4.5.11
-REVISION=		0
+DISTNAME=		findutils-4.5.14
 CATEGORIES=		misc
 
 HOMEPAGE=		https://www.gnu.org/software/findutils/
