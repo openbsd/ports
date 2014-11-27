@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_ck-log-system-start_c,v 1.1 2011/04/28 13:08:33 ajacoutot Exp $
---- tools/ck-log-system-start.c.orig	Fri Sep  3 15:54:31 2010
-+++ tools/ck-log-system-start.c	Wed Apr 27 20:01:29 2011
+$OpenBSD: patch-tools_ck-log-system-start_c,v 1.2 2014/11/27 09:38:22 ajacoutot Exp $
+--- tools/ck-log-system-start.c.orig	Fri Jul 19 06:15:28 2013
++++ tools/ck-log-system-start.c	Thu Nov 27 10:34:39 2014
 @@ -41,7 +41,9 @@
  
  #define DEFAULT_LOG_FILENAME LOCALSTATEDIR "/log/ConsoleKit/history"
@@ -11,21 +11,21 @@ $OpenBSD: patch-tools_ck-log-system-start_c,v 1.1 2011/04/28 13:08:33 ajacoutot 
  
  /* Adapted from auditd auditd-event.c */
  static gboolean
-@@ -163,6 +165,7 @@ static char *
+@@ -162,6 +164,7 @@ write_log_for_event (CkLogEvent *event)
+ static char *
  get_boot_arguments (void)
  {
++#if defined(__linux__)
          char *contents;
-+#ifdef __linux__
          gboolean res;
  
-         contents = NULL;
-@@ -176,6 +179,9 @@ get_boot_arguments (void)
-         } else {
-                 g_strchomp (contents);
+@@ -178,6 +181,9 @@ get_boot_arguments (void)
          }
-+#else
-+        contents = NULL;
-+#endif
  
          return contents;
++#else
++        return NULL;
++#endif
  }
+ 
+ int

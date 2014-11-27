@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.17 2013/11/30 08:21:41 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Wed Nov 27 15:56:18 2013
-+++ src/ck-sysdeps-openbsd.c	Wed Nov 27 15:57:40 2013
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.18 2014/11/27 09:38:22 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Thu Nov 27 10:30:57 2014
++++ src/ck-sysdeps-openbsd.c	Thu Nov 27 10:32:12 2014
 @@ -0,0 +1,471 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
@@ -195,15 +195,15 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.17 2013/11/30 08:21:41 ajacoutot Ex
 +        snprintf (P->tty_text, sizeof P->tty_text, "%3d,%-3d", tty_maj, tty_min);
 +
 +        if (p.p_tdev != NODEV && (ttname = devname (p.p_tdev, S_IFCHR)) != NULL) {
-+                memcpy (P->tty_text, ttname, sizeof P->tty_text);
++                memcpy (P->tty_text, ttname, sizeof (P->tty_text));
 +        }
 +
 +        if (p.p_tdev == NODEV) {
 +		/* XXX how do we associate X with its tty? */
 +#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
-+                memcpy (P->tty_text, "/dev/ttyC4", sizeof P->tty_text);
++                memcpy (P->tty_text, "/dev/ttyC4", sizeof (P->tty_text));
 +#else
-+                memcpy (P->tty_text, "/dev/ttyC0", sizeof P->tty_text);
++                memcpy (P->tty_text, "/dev/ttyC0", sizeof (P->tty_text));
 +#endif
 +        }
 +
@@ -382,7 +382,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.17 2013/11/30 08:21:41 ajacoutot Ex
 +         if (num != NULL) {
 +                *num = max_consoles;
 +         }
-+ 
++
 +        return ret;
 +}
 +
