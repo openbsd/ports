@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2014/11/27 12:26:49 naddy Exp $
 
 COMMENT=	less + zcat + ISO-2022 - a pager similar to more and pg
 
@@ -26,6 +26,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c ncurses
 
 CONFIGURE_STYLE=	gnu dest
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
