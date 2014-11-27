@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.343 2014/11/07 09:36:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.344 2014/11/27 18:20:55 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -123,7 +123,6 @@
      SUBDIR += mp3wrap
      SUBDIR += mpc
      SUBDIR += mpd
-     SUBDIR += mpd,tremor
      SUBDIR += mpd-add-similar
      SUBDIR += mpdBrowser
      SUBDIR += mpdscribble

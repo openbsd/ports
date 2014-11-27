@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2014/11/27 13:52:08 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.68 2014/11/27 18:20:55 dcoppa Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.19.5
+REVISION =		0
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -11,11 +12,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		FLAC ao audiofile avcodec avformat \
 			avutil bz2 c cdio cdio_cdda \
-			cdio_paranoia curl expat glib-2.0 \
-			gthread-2.0 icudata icui18n icuuc \
-			id3tag m mad mikmod mpdclient ogg \
-			opus pthread samplerate sndfile \
-			sndio z
+			cdio_paranoia curl expat faad glib-2.0 \
+			gthread-2.0 icudata icui18n icuuc id3tag \
+			m mikmod mp3lame mpcdec mpdclient ogg \
+			opus pthread samplerate shout sndfile \
+			sndio speex theora vorbis vorbisenc \
+			vorbisfile z
 
 MASTER_SITES =		http://www.musicpd.org/download/mpd/stable/
 
@@ -25,23 +27,24 @@ MODGCC4_LANGS =		c++
 
 BUILD_DEPENDS =		devel/boost
 
-LIB_DEPENDS =		devel/libaudiofile \
+LIB_DEPENDS =		audio/faad>=2.6.1p0 \
+			audio/flac \
+			audio/lame \
 			audio/libao \
 			audio/libcdio \
-			audio/libsamplerate \
-			audio/flac \
 			audio/libid3tag \
-			audio/libmad \
 			audio/libmikmod \
-			audio/opus \
 			audio/libmpdclient \
+			audio/libsamplerate \
+			audio/libvorbis \
+			audio/musepack \
+			audio/opus \
 			devel/glib2 \
+			devel/libaudiofile \
 			graphics/ffmpeg \
 			net/curl \
+			net/libshout \
 			textproc/icu4c
-
-FLAVORS =		tremor
-FLAVOR ?=
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
@@ -53,6 +56,7 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-inotify \
 			--disable-jack \
 			--disable-libwrap \
+			--disable-mad \
 			--disable-mms \
 			--disable-modplug \
 			--disable-mpg123 \
@@ -73,50 +77,32 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-upnp \
 			--disable-wavpack \
 			--disable-wildmidi \
+			--enable-aac \
 			--enable-ao \
 			--enable-audiofile \
 			--enable-bzip2 \
 			--enable-cdio-paranoia \
 			--enable-curl \
 			--enable-ffmpeg \
+			--enable-lame-encoder \
 			--enable-lsr \
-			--enable-mad \
 			--enable-mikmod \
 			--enable-mpc \
 			--enable-opus \
 			--enable-pipe-output \
+			--enable-shout \
 			--enable-sndfile \
+			--enable-vorbis \
+			--enable-vorbis-encoder \
+			--enable-wave-encoder \
 			--enable-zlib \
 			--with-pollmethod=poll \
 			--with-zeroconf=no \
 			--without-systemdsystemunitdir
 
-# OggFLAC and tremor tests, initgroups(3)
+# OggFLAC tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
-
-.if ${FLAVOR:Mtremor}
-CONFIGURE_ARGS +=	--with-tremor \
-			--disable-shout \
-			--disable-vorbis-encoder \
-			--disable-lame-encoder \
-			--disable-aac \
-			--disable-mpc
-LIB_DEPENDS +=		audio/tremor
-WANTLIB +=		vorbisidec
-.else
-WANTLIB +=		theora vorbis vorbisfile vorbisenc speex mp3lame \
-			shout faad mpcdec
-LIB_DEPENDS +=		audio/libvorbis \
-			audio/speex \
-			audio/lame \
-			net/libshout \
-			audio/faad>=2.6.1p0 \
-			audio/musepack
-CONFIGURE_ARGS +=	--enable-aac \
-			--enable-shout \
-			--enable-vorbis-encoder
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpd
