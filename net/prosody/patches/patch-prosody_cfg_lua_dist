@@ -1,6 +1,6 @@
-$OpenBSD: patch-prosody_cfg_lua_dist,v 1.5 2014/04/23 17:59:01 jca Exp $
---- prosody.cfg.lua.dist.orig	Thu Feb 27 20:05:53 2014
-+++ prosody.cfg.lua.dist	Thu Feb 27 20:06:51 2014
+$OpenBSD: patch-prosody_cfg_lua_dist,v 1.6 2014/11/27 08:12:51 landry Exp $
+--- prosody.cfg.lua.dist.orig	Wed Oct 15 11:33:36 2014
++++ prosody.cfg.lua.dist	Thu Nov 27 09:10:35 2014
 @@ -22,6 +22,14 @@
  -- Example: admins = { "user1@example.com", "user2@example.net" }
  admins = { }
@@ -16,6 +16,24 @@ $OpenBSD: patch-prosody_cfg_lua_dist,v 1.5 2014/04/23 17:59:01 jca Exp $
  -- Enable use of libevent for better performance under high load
  -- For more information see: http://prosody.im/doc/libevent
  --use_libevent = true;
+@@ -44,7 +52,7 @@ modules_enabled = {
+ 	
+ 	-- These are commented by default as they have a performance impact
+ 		--"privacy"; -- Support privacy lists
+-		--"compression"; -- Stream compression
++		"compression"; -- Stream compression
+ 
+ 	-- Nice to have
+ 		"version"; -- Replies to server version requests
+@@ -63,7 +71,7 @@ modules_enabled = {
+ 		--"http_files"; -- Serve static files from a directory over HTTP
+ 
+ 	-- Other specific functionality
+-		--"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
++		"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
+ 		--"groups"; -- Shared roster support
+ 		--"announce"; -- Send announcement to all online users
+ 		--"welcome"; -- Welcome users who register accounts
 @@ -139,8 +147,8 @@ authentication = "internal_plain"
  -- Logging configuration
  -- For advanced logging see http://prosody.im/doc/logging
