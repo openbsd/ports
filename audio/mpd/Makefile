@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.66 2014/11/12 08:46:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.67 2014/11/27 13:52:08 dcoppa Exp $
 
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.19.3
+DISTNAME =		mpd-0.19.5
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -55,7 +55,6 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-libwrap \
 			--disable-mms \
 			--disable-modplug \
-			--disable-mp4v2 \
 			--disable-mpg123 \
 			--disable-nfs \
 			--disable-neighbor-plugins \

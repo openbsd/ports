@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.23 2014/11/03 12:12:12 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.24 2014/11/27 13:52:08 dcoppa Exp $
 
 Don't reset CPPFLAGS
 
---- configure.orig	Fri Oct 10 23:50:12 2014
-+++ configure	Mon Oct 13 13:35:53 2014
-@@ -12606,7 +12606,7 @@ if test x$enable_aac = xyes; then
+--- configure.orig	Wed Nov 26 13:01:27 2014
++++ configure	Thu Nov 27 07:39:02 2014
+@@ -12592,7 +12592,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $FAAD_CFLAGS"
  	LIBS="$LIBS $FAAD_LIBS"
