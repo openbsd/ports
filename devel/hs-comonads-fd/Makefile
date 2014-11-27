@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/18 20:44:13 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/27 21:45:36 kili Exp $
 
 COMMENT =		comonad transformers using functional dependencies
 
 DISTNAME =		comonads-fd-3.0.2
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -17,8 +18,7 @@ MODGHC_BUILD =		cabal hackage haddock register
 RUN_DEPENDS +=		devel/hs-comonad-transformers>=3.0 \
 			devel/hs-comonad>=3.0 \
 			devel/hs-mtl>=2.0,<2.2 \
-			devel/hs-semigroups>=0.8.3.1 \
-			devel/hs-transformers>=0.2,<0.4 
+			devel/hs-semigroups>=0.8.3.1
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 

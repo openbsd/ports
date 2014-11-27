@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/18 20:41:45 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/27 21:45:36 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
@@ -7,7 +7,6 @@ lib/ghc/${DISTNAME}/Control/Monad/Random.hi
 lib/ghc/${DISTNAME}/Control/Monad/Random.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/Random/Class.hi
 lib/ghc/${DISTNAME}/Control/Monad/Random/Class.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

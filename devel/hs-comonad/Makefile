@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/19 06:56:43 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/27 21:45:36 kili Exp $
 
 COMMENT =		Haskell 98 comonads
 
 DISTNAME =		comonad-3.0.3
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3
@@ -12,8 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-semigroups>=0.8.3,<1 \
-			devel/hs-transformers>=0.2,<0.4
+RUN_DEPENDS =		devel/hs-semigroups>=0.8.3,<1
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

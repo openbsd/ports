@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/20 18:02:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/27 21:45:37 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
@@ -50,7 +50,6 @@ lib/ghc/${DISTNAME}/Control/Monad/Writer/Lazy.hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Lazy.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Strict.hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Strict.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
