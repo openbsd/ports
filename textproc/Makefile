@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.424 2014/11/21 22:52:43 landry Exp $
+# $OpenBSD: Makefile,v 1.425 2014/11/28 22:48:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -319,6 +319,7 @@
      SUBDIR += py-polib
      SUBDIR += py-prettytable
      SUBDIR += py-pygments
+     SUBDIR += py-pygments,python3
      SUBDIR += py-rdflib
      SUBDIR += py-rdflib,python3
      SUBDIR += py-rtf
