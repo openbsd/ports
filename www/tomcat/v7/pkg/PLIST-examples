@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.23 2014/10/07 14:41:50 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.24 2014/11/28 08:27:02 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -545,6 +545,7 @@ webapps/docs/api/org/apache/catalina/startup/Tomcat.html
 webapps/docs/api/org/apache/catalina/startup/Tool.html
 webapps/docs/api/org/apache/catalina/startup/UserConfig.html
 webapps/docs/api/org/apache/catalina/startup/UserDatabase.html
+webapps/docs/api/org/apache/catalina/startup/VersionLoggerListener.html
 webapps/docs/api/org/apache/catalina/startup/WebAnnotationSet.html
 webapps/docs/api/org/apache/catalina/startup/WebRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/WebappServiceLoader.html
@@ -2557,13 +2558,6 @@ webapps/examples/jsp/cal/cal2.jsp
 webapps/examples/jsp/cal/cal2.jsp.html
 webapps/examples/jsp/cal/calendar.html
 webapps/examples/jsp/cal/login.html
-webapps/examples/jsp/chat/
-webapps/examples/jsp/chat/index.jsp
-webapps/examples/jsp/chat/index.jsp.html
-webapps/examples/jsp/chat/login.jsp
-webapps/examples/jsp/chat/login.jsp.html
-webapps/examples/jsp/chat/post.jsp
-webapps/examples/jsp/chat/post.jsp.html
 webapps/examples/jsp/checkbox/
 webapps/examples/jsp/checkbox/CheckTest.html
 webapps/examples/jsp/checkbox/check.html
@@ -2747,6 +2741,13 @@ webapps/examples/jsp/xml/xml.html
 webapps/examples/jsp/xml/xml.jsp
 webapps/examples/jsp/xml/xml.jsp.html
 webapps/examples/servlets/
+webapps/examples/servlets/chat/
+webapps/examples/servlets/chat/index.jsp
+webapps/examples/servlets/chat/index.jsp.html
+webapps/examples/servlets/chat/login.jsp
+webapps/examples/servlets/chat/login.jsp.html
+webapps/examples/servlets/chat/post.jsp
+webapps/examples/servlets/chat/post.jsp.html
 webapps/examples/servlets/cookies.html
 webapps/examples/servlets/helloworld.html
 webapps/examples/servlets/images/
