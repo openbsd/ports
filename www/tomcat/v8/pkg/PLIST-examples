@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2014/10/06 08:15:54 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2014/11/28 08:34:28 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -50,6 +50,7 @@ webapps/docs/api/org/apache/catalina/ContainerEvent.html
 webapps/docs/api/org/apache/catalina/ContainerListener.html
 webapps/docs/api/org/apache/catalina/ContainerServlet.html
 webapps/docs/api/org/apache/catalina/Context.html
+webapps/docs/api/org/apache/catalina/CredentialHandler.html
 webapps/docs/api/org/apache/catalina/DistributedManager.html
 webapps/docs/api/org/apache/catalina/Engine.html
 webapps/docs/api/org/apache/catalina/Executor.html
@@ -404,6 +405,7 @@ webapps/docs/api/org/apache/catalina/realm/
 webapps/docs/api/org/apache/catalina/realm/CombinedRealm.html
 webapps/docs/api/org/apache/catalina/realm/Constants.html
 webapps/docs/api/org/apache/catalina/realm/DataSourceRealm.html
+webapps/docs/api/org/apache/catalina/realm/DigestCredentialHandlerBase.html
 webapps/docs/api/org/apache/catalina/realm/GenericPrincipal.html
 webapps/docs/api/org/apache/catalina/realm/JAASCallbackHandler.html
 webapps/docs/api/org/apache/catalina/realm/JAASMemoryLoginModule.html
@@ -415,9 +417,12 @@ webapps/docs/api/org/apache/catalina/realm/LockOutRealm.LockRecord.html
 webapps/docs/api/org/apache/catalina/realm/LockOutRealm.html
 webapps/docs/api/org/apache/catalina/realm/MemoryRealm.html
 webapps/docs/api/org/apache/catalina/realm/MemoryRuleSet.html
+webapps/docs/api/org/apache/catalina/realm/MessageDigestCredentialHandler.html
+webapps/docs/api/org/apache/catalina/realm/NestedCredentialHandler.html
 webapps/docs/api/org/apache/catalina/realm/NullRealm.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.AllRolesMode.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.html
+webapps/docs/api/org/apache/catalina/realm/SecretKeyCredentialHandler.html
 webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.html
 webapps/docs/api/org/apache/catalina/realm/X509SubjectDnRetriever.html
 webapps/docs/api/org/apache/catalina/realm/X509UsernameRetriever.html
@@ -501,6 +506,7 @@ webapps/docs/api/org/apache/catalina/startup/Constants.html
 webapps/docs/api/org/apache/catalina/startup/ContextConfig.html
 webapps/docs/api/org/apache/catalina/startup/ContextRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/CopyParentClassLoaderRule.html
+webapps/docs/api/org/apache/catalina/startup/CredentialHandlerRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/EngineConfig.html
 webapps/docs/api/org/apache/catalina/startup/EngineRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/ExpandWar.html
@@ -540,6 +546,7 @@ webapps/docs/api/org/apache/catalina/storeconfig/IStoreConfig.html
 webapps/docs/api/org/apache/catalina/storeconfig/IStoreFactory.html
 webapps/docs/api/org/apache/catalina/storeconfig/InstanceListenerSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/InterceptorSF.html
+webapps/docs/api/org/apache/catalina/storeconfig/JarScannerSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/LoaderSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/ManagerSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/NamingResourcesSF.html
@@ -715,6 +722,7 @@ webapps/docs/api/org/apache/catalina/tribes/transport/package-summary.html
 webapps/docs/api/org/apache/catalina/tribes/transport/package-tree.html
 webapps/docs/api/org/apache/catalina/tribes/util/
 webapps/docs/api/org/apache/catalina/tribes/util/Arrays.html
+webapps/docs/api/org/apache/catalina/tribes/util/ExceptionUtils.html
 webapps/docs/api/org/apache/catalina/tribes/util/ExecutorFactory.html
 webapps/docs/api/org/apache/catalina/tribes/util/Logs.html
 webapps/docs/api/org/apache/catalina/tribes/util/StringManager.html
@@ -865,6 +873,7 @@ webapps/docs/api/org/apache/catalina/webresources/CachedResource.html
 webapps/docs/api/org/apache/catalina/webresources/Constants.html
 webapps/docs/api/org/apache/catalina/webresources/DirResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/EmptyResource.html
+webapps/docs/api/org/apache/catalina/webresources/EmptyResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/FileResource.html
 webapps/docs/api/org/apache/catalina/webresources/FileResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/JarResource.html
@@ -1280,6 +1289,7 @@ webapps/docs/api/org/apache/juli/FileHandler.html
 webapps/docs/api/org/apache/juli/JdkLoggerFormatter.html
 webapps/docs/api/org/apache/juli/OneLineFormatter.html
 webapps/docs/api/org/apache/juli/VerbatimFormatter.html
+webapps/docs/api/org/apache/juli/WebappProperties.html
 webapps/docs/api/org/apache/juli/logging/
 webapps/docs/api/org/apache/juli/logging/Log.html
 webapps/docs/api/org/apache/juli/logging/LogConfigurationException.html
@@ -1744,13 +1754,15 @@ webapps/docs/api/org/apache/tomcat/util/file/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/file/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/file/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/
+webapps/docs/api/org/apache/tomcat/util/http/CookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/CookieSupport.html
-webapps/docs/api/org/apache/tomcat/util/http/Cookies.html
 webapps/docs/api/org/apache/tomcat/util/http/FastHttpDateFormat.html
 webapps/docs/api/org/apache/tomcat/util/http/HttpMessages.html
+webapps/docs/api/org/apache/tomcat/util/http/LegacyCookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html
 webapps/docs/api/org/apache/tomcat/util/http/Parameters.html
 webapps/docs/api/org/apache/tomcat/util/http/RequestUtil.html
+webapps/docs/api/org/apache/tomcat/util/http/Rfc6265CookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookies.html
 webapps/docs/api/org/apache/tomcat/util/http/SetCookieSupport.html
@@ -2120,6 +2132,8 @@ webapps/docs/config/cluster-sender.html
 webapps/docs/config/cluster-valve.html
 webapps/docs/config/cluster.html
 webapps/docs/config/context.html
+webapps/docs/config/cookie-processor.html
+webapps/docs/config/credentialhandler.html
 webapps/docs/config/engine.html
 webapps/docs/config/executor.html
 webapps/docs/config/filter.html

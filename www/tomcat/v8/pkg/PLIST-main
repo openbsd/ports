@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/10/06 08:15:54 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/11/28 08:34:28 dcoppa Exp $
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
@@ -49,6 +49,7 @@ share/examples/tomcat/tomcat-users.xml
 @mode
 @owner
 @group
+share/examples/tomcat/tomcat-users.xsd
 share/examples/tomcat/web.xml
 @owner _tomcat
 @group _tomcat
