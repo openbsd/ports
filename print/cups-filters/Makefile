@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/11/02 14:38:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2014/11/28 10:26:51 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
@@ -6,7 +6,7 @@ COMMENT=	OpenPrinting CUPS filters
 
 DISTNAME=	cups-filters-1.0.61
 CATEGORIES=	print
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
 SHARED_LIBS +=  fontembed            0.0      # 1.0
@@ -75,6 +75,7 @@ pre-configure:
 		${WRKSRC}/filter/foomatic-rip/spooler.c
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/filter/foomatic-rip/foomaticrip.c
+	perl -pi -e 's,/bin/bash,/bin/ksh,g' ${WRKSRC}/filter/textonly
 
 post-install:
 	rm -rf ${WRKINST}/rc?.d
