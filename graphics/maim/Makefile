@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/25 19:59:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/28 23:08:24 bcallah Exp $
 
-V =		2.3.37
+V =		2.3.38
 COMMENT =	desktop screenshot utility (make image)
 DISTNAME =	maim-${V}
 CATEGORIES =	graphics x11
@@ -8,7 +8,7 @@ CATEGORIES =	graphics x11
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
 GH_TAGNAME =	v${V}
-GH_COMMIT =	8706bc4e5a0a64c48305020ba349037f2958774f
+GH_COMMIT =	b2aaaff52b0bcf5a08030b903153bd951633e13e
 
 HOMEPAGE =	https://github.com/naelstrof/maim
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
