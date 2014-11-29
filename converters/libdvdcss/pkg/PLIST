@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/03/23 23:28:15 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/11/29 07:38:18 brad Exp $
 include/dvdcss/
 include/dvdcss/dvdcss.h
 lib/libdvdcss.a
 lib/libdvdcss.la
 @lib lib/libdvdcss.so.${LIBdvdcss_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libdvdcss.pc
 share/doc/libdvdcss/
 share/doc/libdvdcss/AUTHORS

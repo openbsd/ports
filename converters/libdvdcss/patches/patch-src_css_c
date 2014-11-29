@@ -1,23 +1,23 @@
-$OpenBSD: patch-src_css_c,v 1.3 2013/03/23 23:28:14 brad Exp $
---- src/css.c.orig	Tue Feb 26 03:08:35 2013
-+++ src/css.c	Sun Mar 10 22:29:29 2013
-@@ -219,10 +219,13 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+$OpenBSD: patch-src_css_c,v 1.4 2014/11/29 07:38:18 brad Exp $
+--- src/css.c.orig	Sun Mar 17 10:45:09 2013
++++ src/css.c	Wed Oct 22 20:09:31 2014
+@@ -221,10 +221,13 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
          {
-             char psz_key[KEY_SIZE * 3];
+             char psz_key[PSZ_KEY_SIZE];
              unsigned int k0, k1, k2, k3, k4;
 +            int n;
  
--            psz_key[KEY_SIZE * 3 - 1] = '\0';
+-            psz_key[PSZ_KEY_SIZE - 1] = '\0';
 +            memset(psz_key, 0, sizeof psz_key);
-+            n = read( i_fd, psz_key, KEY_SIZE * 3 - 1 );
++            n = read( i_fd, psz_key, PSZ_KEY_SIZE - 1 );
 +            close( i_fd );
  
--            if( read( i_fd, psz_key, KEY_SIZE * 3 - 1 ) == KEY_SIZE * 3 - 1
-+            if( n == KEY_SIZE * 3 - 1
+-            if( read( i_fd, psz_key, PSZ_KEY_SIZE - 1 ) == PSZ_KEY_SIZE - 1
++            if( n == PSZ_KEY_SIZE - 1
                   && sscanf( psz_key, "%x:%x:%x:%x:%x",
                              &k0, &k1, &k2, &k3, &k4 ) == 5 )
              {
-@@ -236,9 +239,12 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+@@ -238,9 +241,12 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
                  /* Don't try to save it again */
                  b_cache = 0;
                  i_ret = 1;
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_css_c,v 1.3 2013/03/23 23:28:14 brad Exp $
          }
      }
  
-@@ -250,6 +256,15 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+@@ -252,6 +258,15 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
          if( i_ret < 0 )
          {
              print_error( dvdcss, "fatal error in VTS CSS key" );
