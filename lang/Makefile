@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2014/09/29 09:58:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2014/11/29 16:12:35 jturner Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -53,6 +53,7 @@
      SUBDIR += luajit
      SUBDIR += luajit,lua52
      SUBDIR += mawk
+     SUBDIR += mlite
      SUBDIR += moarvm
      SUBDIR += mono
      SUBDIR += mono-basic
