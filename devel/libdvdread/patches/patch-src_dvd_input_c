@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_dvd_input_c,v 1.1 2013/01/20 15:11:22 espie Exp $
---- src/dvd_input.c.orig	Sun Jan 20 16:09:17 2013
-+++ src/dvd_input.c	Sun Jan 20 16:09:24 2013
-@@ -290,7 +290,7 @@ int dvdinput_setup(void)
+$OpenBSD: patch-src_dvd_input_c,v 1.2 2014/11/29 07:35:40 brad Exp $
+--- src/dvd_input.c.orig	Fri May 16 11:11:50 2014
++++ src/dvd_input.c	Thu Oct 30 23:51:08 2014
+@@ -288,7 +288,7 @@ int dvdinput_setup(void)
  #elif defined(__OS2__)
    #define CSS_LIB "dvdcss.dll"
  #else
 -  #define CSS_LIB "libdvdcss.so.2"
-+  #define CSS_LIB "libdvdcss.so.3"
++  #define CSS_LIB "libdvdcss.so.4"
  #endif
    dvdcss_library = dlopen(CSS_LIB, RTLD_LAZY);
  

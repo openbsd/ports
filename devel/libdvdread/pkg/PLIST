@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/05/03 06:51:07 ajacoutot Exp $
-bin/dvdread-config
+@comment $OpenBSD: PLIST,v 1.7 2014/11/29 07:35:40 brad Exp $
 include/dvdread/
 include/dvdread/bitreader.h
 include/dvdread/dvd_reader.h
@@ -11,5 +10,13 @@ include/dvdread/nav_print.h
 include/dvdread/nav_read.h
 include/dvdread/nav_types.h
 lib/libdvdread.a
+lib/libdvdread.la
 @lib lib/libdvdread.so.${LIBdvdread_VERSION}
 lib/pkgconfig/dvdread.pc
+share/doc/libdvdread/
+share/doc/libdvdread/AUTHORS
+share/doc/libdvdread/COPYING
+share/doc/libdvdread/ChangeLog
+share/doc/libdvdread/NEWS
+share/doc/libdvdread/README
+share/doc/libdvdread/TODO
