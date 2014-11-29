@@ -1,0 +1,15 @@
+$OpenBSD: patch-slaveclienttalk_c,v 1.1 2014/11/29 09:54:56 ajacoutot Exp $
+
+slaveclienttalk.c:172: warning: implicit declaration of function 'isalpha'
+slaveclienttalk.c:174: warning: implicit declaration of function 'tolower'
+
+--- slaveclienttalk.c.orig	Sat Nov 29 10:37:08 2014
++++ slaveclienttalk.c	Sat Nov 29 10:37:21 2014
+@@ -48,6 +48,7 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <syslog.h>
++#include <ctype.h>
+ 
+ #include "poppassd.h"
+ 
