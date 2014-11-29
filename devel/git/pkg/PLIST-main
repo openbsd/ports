@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.61 2014/10/31 15:03:21 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.62 2014/11/29 07:28:40 benoit Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -80,6 +80,7 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-init
 @bin libexec/git/git-init-db
 libexec/git/git-instaweb
+@bin libexec/git/git-interpret-trailers
 @bin libexec/git/git-log
 @bin libexec/git/git-ls-files
 @bin libexec/git/git-ls-remote
@@ -174,6 +175,7 @@ libexec/git/git-web--browse
 @bin libexec/git/git-write-tree
 libexec/git/mergetools/
 libexec/git/mergetools/araxis
+libexec/git/mergetools/bc
 libexec/git/mergetools/bc3
 libexec/git/mergetools/codecompare
 libexec/git/mergetools/deltawalker
@@ -258,6 +260,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-init-db.1
 @man man/man1/git-init.1
 @man man/man1/git-instaweb.1
+@man man/man1/git-interpret-trailers.1
 @man man/man1/git-log.1
 @man man/man1/git-ls-files.1
 @man man/man1/git-ls-remote.1
@@ -354,6 +357,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gitcredentials.7
 @man man/man7/gitcvs-migration.7
 @man man/man7/gitdiffcore.7
+@man man/man7/giteveryday.7
 @man man/man7/gitglossary.7
 @man man/man7/gitnamespaces.7
 @man man/man7/gitrevisions.7
