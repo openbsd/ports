@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/05 08:09:27 ajacoutot Exp $
-bin/dvdnav-config
+@comment $OpenBSD: PLIST,v 1.6 2014/11/29 07:36:37 brad Exp $
 include/dvdnav/
 include/dvdnav/dvd_types.h
 include/dvdnav/dvdnav.h
@@ -7,10 +6,10 @@ include/dvdnav/dvdnav_events.h
 lib/libdvdnav.a
 lib/libdvdnav.la
 @lib lib/libdvdnav.so.${LIBdvdnav_VERSION}
-lib/libdvdnavmini.a
-lib/libdvdnavmini.la
-@lib lib/libdvdnavmini.so.${LIBdvdnavmini_VERSION}
 lib/pkgconfig/dvdnav.pc
-lib/pkgconfig/dvdnavmini.pc
-share/aclocal/
-share/aclocal/dvdnav.m4
+share/doc/libdvdnav/
+share/doc/libdvdnav/AUTHORS
+share/doc/libdvdnav/COPYING
+share/doc/libdvdnav/ChangeLog
+share/doc/libdvdnav/README
+share/doc/libdvdnav/TODO
