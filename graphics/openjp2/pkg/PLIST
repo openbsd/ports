@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/07 10:05:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/11/29 13:25:05 sthen Exp $
 @bin bin/opj_compress
 @bin bin/opj_decompress
 @bin bin/opj_dump
@@ -11,12 +11,8 @@ lib/openjp2/
 lib/openjp2/OpenJPEGConfig.cmake
 lib/openjp2/OpenJPEGTargets${MODCMAKE_BUILD_SUFFIX}
 lib/openjp2/OpenJPEGTargets.cmake
-lib/pkgconfig/
 lib/pkgconfig/libopenjp2.pc
 @man man/man1/opj_compress.1
 @man man/man1/opj_decompress.1
 @man man/man1/opj_dump.1
 @man man/man3/libopenjp2.3
-share/doc/openjp2/
-share/doc/openjp2/CHANGES
-share/doc/openjp2/LICENSE

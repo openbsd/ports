@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/07 10:05:29 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/29 13:25:05 sthen Exp $
 
 COMMENT =		open-source JPEG 2000 codec library
 
-V =			2.0.1
-# 2.1.0 changes opj_stream_set_user_data API; gdal/mupdf need to catch up
+V =			2.1.0
 DISTNAME =		openjpeg-$V
 PKGNAME =		openjp2-$V
-REVISION =	0
 
-SHARED_LIBS +=	openjp2                   0.0 # 2.0
+SHARED_LIBS +=	openjp2                   1.0 # 2.0
 
 CATEGORIES =		graphics
 
@@ -24,16 +22,20 @@ WANTLIB += c lcms2 m png pthread tiff z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openjpeg.mirror/}
 
 MODULES =		devel/cmake
-CONFIGURE_ARGS =	-DOPENJPEG_INSTALL_MAN_DIR=${PREFIX}/man \
+CONFIGURE_ARGS =	-DOPENJPEG_INSTALL_MAN_DIR=man \
 			-DOPENJPEG_INSTALL_SUBDIR:STRING=openjp2 \
 			-DOPENJPEG_SOVERSION:STRING=${LIBopenjpeg_VERSION}
 
 LIB_DEPENDS =		graphics/lcms2 \
 			graphics/png
 
-NO_TEST =		Yes
 
 pre-patch:
 	cd ${WRKSRC}/src/lib && perl -i -pe 's/\r$$//; s/\t*$$//;' openmj2/opj_malloc.h openjp2/opj_malloc.h
+
+post-install:
+	cd ${WRKSRC}/doc/man; \
+	       ${INSTALL_DATA} man1/* ${PREFIX}/man/man1/; \
+	       ${INSTALL_DATA} man3/* ${PREFIX}/man/man3/
 
 .include <bsd.port.mk>
