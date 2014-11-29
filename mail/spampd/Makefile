@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/27 12:37:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/29 10:18:48 ajacoutot Exp $
 
 COMMENT=		SMTP/LMTP proxy for Spamassassin
 
 DISTNAME=		spampd-2.30
-REVISION=		2
+REVISION=		3
+
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.worlddesign.com/index.cfm/page/rd/mta/spampd.htm
