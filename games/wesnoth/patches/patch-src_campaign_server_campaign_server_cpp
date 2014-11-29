@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_campaign_server_campaign_server_cpp,v 1.3 2014/01/13 09:43:10 pascal Exp $
---- src/campaign_server/campaign_server.cpp.orig	Sat Aug 17 11:42:19 2013
-+++ src/campaign_server/campaign_server.cpp	Sun Jan 12 03:55:08 2014
-@@ -42,6 +42,8 @@
+$OpenBSD: patch-src_campaign_server_campaign_server_cpp,v 1.4 2014/11/29 06:46:33 kirby Exp $
+--- src/campaign_server/campaign_server.cpp.orig	Sat Nov  8 23:23:53 2014
++++ src/campaign_server/campaign_server.cpp	Thu Nov 13 10:53:24 2014
+@@ -45,6 +45,8 @@
  // work on Windows not sure which other platforms have a problem with it.
  #if !(defined(_WIN32))
  #include <errno.h>
@@ -9,4 +9,4 @@ $OpenBSD: patch-src_campaign_server_campaign_server_cpp,v 1.3 2014/01/13 09:43:1
 +#include <sys/types.h>
  #endif
  
- static lg::log_domain log_network("network");
+ static lg::log_domain log_campaignd("campaignd");

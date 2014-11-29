@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-lite,v 1.10 2012/04/07 08:32:32 kirby Exp $
+@comment $OpenBSD: PFRAG.no-lite,v 1.11 2014/11/29 06:46:33 kirby Exp $
 share/wesnoth/data/core/music/
 share/wesnoth/data/core/music/battle-epic.ogg
 share/wesnoth/data/core/music/battle.ogg
@@ -156,6 +156,7 @@ share/wesnoth/data/core/sounds/human-old-hit-1.ogg
 share/wesnoth/data/core/sounds/human-old-hit-2.ogg
 share/wesnoth/data/core/sounds/human-old-hit-3.ogg
 share/wesnoth/data/core/sounds/human-old-hit-4.ogg
+share/wesnoth/data/core/sounds/knife.ogg
 share/wesnoth/data/core/sounds/lich-die.ogg
 share/wesnoth/data/core/sounds/lich-hit-1.ogg
 share/wesnoth/data/core/sounds/lich-hit-2.ogg
