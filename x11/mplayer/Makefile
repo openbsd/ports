@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2014/11/14 06:18:42 brad Exp $
+# $OpenBSD: Makefile,v 1.244 2014/11/29 06:53:25 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,6 +15,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		x11 multimedia
@@ -149,7 +150,8 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-relocatable \
 		--disable-speex \
 		--disable-libopus \
-		--disable-libvorbis
+		--disable-libvorbis \
+		--disable-gnutls
 
 .if ${MACHINE_ARCH:Marm}
 WANTLIB +=	ogg vorbisidec
