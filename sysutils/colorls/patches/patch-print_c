@@ -1,6 +1,6 @@
-$OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
---- print.c.orig	Sun Jun  2 15:23:20 2013
-+++ print.c	Sun Aug 18 13:13:40 2013
+$OpenBSD: patch-print_c,v 1.11 2014/11/29 19:16:48 naddy Exp $
+--- print.c.orig	Tue May  6 22:55:10 2014
++++ print.c	Sat Nov 29 20:07:39 2014
 @@ -48,6 +48,11 @@
  #include <tzfile.h>
  #include <unistd.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
  
  #include "ls.h"
  #include "extern.h"
-@@ -58,9 +63,39 @@ static void	printsize(size_t, off_t);
+@@ -58,12 +63,42 @@ static void	printsize(size_t, off_t);
  static void	printtime(time_t);
  static int	printtype(u_int);
  static int	compute_columns(DISPLAY *, int *);
@@ -23,6 +23,9 @@ $OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
 +#endif
  
  #define	IS_NOPRINT(p)	((p)->fts_number == NO_PRINT)
+ 
+ #define	DATELEN		64
+ #define	SIXMONTHS	((DAYSPERNYEAR / 2) * SECSPERDAY)
  
 +#ifdef COLORLS
 +/* Most of these are taken from <sys/stat.h> */
@@ -53,7 +56,7 @@ $OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
  void
  printscol(DISPLAY *dp)
  {
-@@ -81,6 +116,9 @@ printlong(DISPLAY *dp)
+@@ -84,6 +119,9 @@ printlong(DISPLAY *dp)
  	FTSENT *p;
  	NAMES *np;
  	char buf[20];
@@ -63,7 +66,7 @@ $OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
  
  	if (dp->list->fts_level != FTS_ROOTLEVEL && (f_longform || f_size))
  		(void)printf("total %llu\n", howmany(dp->btotal, blocksize));
-@@ -117,7 +155,15 @@ printlong(DISPLAY *dp)
+@@ -120,7 +158,15 @@ printlong(DISPLAY *dp)
  			printtime(sp->st_ctime);
  		else
  			printtime(sp->st_mtime);
@@ -79,7 +82,7 @@ $OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
  		if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  			(void)printtype(sp->st_mode);
  		if (S_ISLNK(sp->st_mode))
-@@ -217,6 +263,9 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
+@@ -220,6 +266,9 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  {
  	struct stat *sp;
  	int chcnt;
@@ -89,7 +92,7 @@ $OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
  
  	sp = p->fts_statp;
  	chcnt = 0;
-@@ -226,7 +275,15 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
+@@ -229,7 +278,15 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  	if (f_size)
  		chcnt += printf("%*qd ",
  		    (int)sizefield, howmany(sp->st_blocks, blocksize));
@@ -105,7 +108,7 @@ $OpenBSD: patch-print_c,v 1.10 2013/08/18 15:58:17 mpi Exp $
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -346,6 +403,151 @@ printtype(u_int mode)
+@@ -341,6 +398,151 @@ printtype(u_int mode)
  	}
  	return (0);
  }

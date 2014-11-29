@@ -1,6 +1,6 @@
-$OpenBSD: patch-colorls_1,v 1.14 2013/08/23 16:57:23 naddy Exp $
---- colorls.1.orig	Fri Aug 23 17:46:24 2013
-+++ colorls.1	Fri Aug 23 17:49:36 2013
+$OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
+--- colorls.1.orig	Sat Nov 29 19:57:03 2014
++++ colorls.1	Sat Nov 29 20:02:08 2014
 @@ -37,11 +37,11 @@
  .Dt COLORLS 1
  .Os
@@ -16,10 +16,10 @@ $OpenBSD: patch-colorls_1,v 1.14 2013/08/23 16:57:23 naddy Exp $
  .Op Ar
  .Sh DESCRIPTION
  For each operand that names a
-@@ -121,6 +121,12 @@ and a vertical bar
- after each that is a FIFO.
- .It Fl f
+@@ -123,6 +123,12 @@ after each that is a FIFO.
  Output is not sorted.
+ This option implies
+ .Fl a .
 +.It Fl G
 +Enable colorized output.
 +This option is equivalent to defining
@@ -29,7 +29,7 @@ $OpenBSD: patch-colorls_1,v 1.14 2013/08/23 16:57:23 naddy Exp $
  .It Fl g
  List in long format as in
  .Fl l ,
-@@ -423,7 +429,7 @@ user append-only
+@@ -425,7 +431,7 @@ user append-only
  user immutable
  .El
  .Sh ENVIRONMENT
@@ -38,7 +38,7 @@ $OpenBSD: patch-colorls_1,v 1.14 2013/08/23 16:57:23 naddy Exp $
  .It Ev BLOCKSIZE
  If the environment variable
  .Ev BLOCKSIZE
-@@ -433,11 +439,138 @@ option is not specified, the block counts
+@@ -435,11 +441,138 @@ option is not specified, the block counts
  (see
  .Fl s )
  will be displayed in units of that size block.
@@ -177,7 +177,7 @@ $OpenBSD: patch-colorls_1,v 1.14 2013/08/23 16:57:23 naddy Exp $
  .It Ev TZ
  The time zone to use when displaying dates.
  See
-@@ -445,40 +578,41 @@ See
+@@ -447,33 +580,34 @@ See
  for more information.
  .El
  .Sh EXIT STATUS
@@ -216,18 +216,22 @@ $OpenBSD: patch-colorls_1,v 1.14 2013/08/23 16:57:23 naddy Exp $
 +.Xr ls 1
  utility is compliant with the
  .St -p1003.1-2008
- specification.
+ specification,
+@@ -482,10 +616,10 @@ except behaviour for the
+ flag differs.
  .Pp
  The flags
--.Op Fl hT
--are extensions to that specification.
-+.Op Fl GhT
-+and colorls itself are extensions to that specification.
+-.Op Fl hT ,
++.Op Fl GhT ,
+ as well as the
+ .Ev BLOCKSIZE
+-environment variable,
++environment variable and colorls itself,
+ are extensions to that specification.
  .Pp
- Historically, the
- .Fl g
-@@ -498,6 +632,6 @@ flags differs between this implementation and
- .St -p1003.1-2008 .
+ The flags
+@@ -505,6 +639,6 @@ flag has been changed in order to be compatible with t
+ specification.
  .Sh HISTORY
  An
 -.Nm
