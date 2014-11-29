@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/03 11:53:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2014/11/29 00:26:58 sthen Exp $
 
 COMMENT=	Ubiquiti uniFi wireless controller
 
@@ -6,7 +6,7 @@ DISTFILES=	unifi-$V{UniFi.unix}.zip
 V=		3.2.5
 FW_VER=		3.2.5.2791
 PKGNAME=	unifi-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -43,5 +43,8 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	find ${INSTDIR} -type f|xargs chmod ${SHAREMODE}
 	find ${INSTDIR} -type d|xargs chmod ${DIRMODE}
+	${SUBST_CMD} -c -m 555 -o ${BINOWN} -g ${BINGRP} \
+		${FILESDIR}/unifi.sh ${PREFIX}/bin/unifi
+	ln -s unifi ${PREFIX}/bin/unifi-discover
 
 .include <bsd.port.mk>
