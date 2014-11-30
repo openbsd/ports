@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/02 13:22:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/11/30 23:11:04 edd Exp $
 include/girara/
 include/girara/callbacks.h
 include/girara/commands.h
@@ -6,6 +6,7 @@ include/girara/completion.h
 include/girara/config.h
 include/girara/css-definitions.h
 include/girara/datastructures.h
+include/girara/entry.h
 include/girara/girara.h
 include/girara/input-history.h
 include/girara/macros.h

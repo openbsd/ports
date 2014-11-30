@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/29 19:57:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/11/30 23:11:04 edd Exp $
 
 COMMENT =	user interface library from pwmt
-DISTNAME =	girara-0.2.2
+DISTNAME =	girara-0.2.3
 
-SHARED_LIBS +=	girara-gtk3 0.0 # 0.0
+SHARED_LIBS +=	girara-gtk3 0.1 # 2.3
 
 CATEGORIES =	x11
 HOMEPAGE =	http://pwmt.org/projects/girara/
@@ -23,14 +23,14 @@ WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 z
 
 USE_GMAKE =	Yes
 
-MAKE_FLAGS +=	QUIET= TPUT=true
+MAKE_FLAGS +=	VERBOSE=1 TPUT=true COLOR=0
 MAKE_FLAGS +=	SOVERSION=${LIBgirara-gtk3_VERSION}
 
 FAKE_FLAGS +=	PREFIX=${TRUEPREFIX}
 
 TEST_TARGET =	test
 TEST_DEPENDS =	devel/check
-TEST_FLAGS +=	QUIET=
+TEST_FLAGS +=	VERBOSE=1
 TEST_FLAGS +=	HOME=${WRKDIR}
 TEST_IS_INTERACTIVE =X11
 
