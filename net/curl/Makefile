@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2014/11/15 21:36:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.104 2014/11/30 16:44:04 schwarze Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ca-bundle=/etc/ssl/cert.pem \
 		--with-libidn=${LOCALBASE} \
 		--without-libssh2
-CONFIGURE_ENV=	ac_cv_path_NROFF=/usr/bin/mandoc
+CONFIGURE_ENV=	ac_cv_path_NROFF="/usr/bin/mandoc -Tascii"
 
 # speed up some time-consuming configure tests
 CONFIGURE_ENV+=curl_cv_func_select_args="int,fd_set *,struct timeval *,int"
