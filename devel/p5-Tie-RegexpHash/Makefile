@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/30 15:37:54 benoit Exp $
 
 COMMENT=	use regular expressions as hash keys
 
 MODULES=	cpan
-DISTNAME=	Tie-RegexpHash-0.15
-REVISION=	0
+DISTNAME =	Tie-RegexpHash-0.16
 CATEGORIES=	devel
 
 # perl
