@@ -1,0 +1,7 @@
+rcs-fast-import unpacks a git fast-import stream into an RCS file tree
+
+It keeps the revision structure, comments, authorship dates, and tag
+names.  It loses tag dates and comments and authorship information;
+commits are recorded as though they were from the user invoking it.
+However, all import-stream metadata is preserved in RFC-822-style
+headers in commits.
