@@ -1,0 +1,14 @@
+$OpenBSD: patch-win_jtp_jtp_gfl_c,v 1.1 2014/11/30 07:08:48 brad Exp $
+
+Add missing header for malloc().
+
+--- win/jtp/jtp_gfl.c.orig	Sun Nov 30 01:44:07 2014
++++ win/jtp/jtp_gfl.c	Sun Nov 30 01:44:17 2014
+@@ -7,6 +7,7 @@
+ 
+ #include "jtp_def.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include "jtp_gra.h"
+ #include "jtp_gfl.h"

@@ -1,0 +1,14 @@
+$OpenBSD: patch-win_jtp_jtp_mou_c,v 1.1 2014/11/30 07:08:48 brad Exp $
+
+Add missing header for malloc().
+
+--- win/jtp/jtp_mou.c.orig	Sun Nov 30 01:44:54 2014
++++ win/jtp/jtp_mou.c	Sun Nov 30 01:45:40 2014
+@@ -6,6 +6,7 @@
+ #define _jtp_mou_c_
+ 
+ #include "jtp_def.h"
++#include <stdlib.h>
+ #ifdef USE_DIRECTX_SYSCALLS
+ #include "jtp_dirx.h"
+ #endif

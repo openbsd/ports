@@ -1,7 +1,18 @@
-$OpenBSD: patch-win_jtp_jtp_win_c,v 1.1 2001/07/05 14:25:05 espie Exp $
+$OpenBSD: patch-win_jtp_jtp_win_c,v 1.2 2014/11/30 07:08:48 brad Exp $
+
+Add missing header for toupper()/tolower().
+
 --- win/jtp/jtp_win.c.orig	Mon Jul  2 08:59:00 2001
-+++ win/jtp/jtp_win.c	Thu Jul  5 16:21:59 2001
-@@ -7811,6 +7811,7 @@ jtp_init_filenames()
++++ win/jtp/jtp_win.c	Tue Nov 18 05:36:56 2014
+@@ -7,6 +7,7 @@
+ #include <math.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <ctype.h>
+ #include "jtp_gen.h"
+ #include "jtp_gra.h"
+ #include "jtp_mou.h"
+@@ -7811,6 +7812,7 @@ jtp_init_filenames()
  {
    int gplength;
    int i;
@@ -9,7 +20,7 @@ $OpenBSD: patch-win_jtp_jtp_win_c,v 1.1 2001/07/05 14:25:05 espie Exp $
  
    /* Get starting directory, and save it for reference */
    getcwd(jtp_game_path, JTP_MAX_FILENAME_LENGTH);
-@@ -7835,16 +7836,26 @@ jtp_init_filenames()
+@@ -7835,16 +7837,26 @@ jtp_init_filenames()
    }
  
    /* Data filenames */

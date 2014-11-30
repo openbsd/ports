@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_jtp_gen_h,v 1.1 2014/11/30 07:08:48 brad Exp $
+
+Replace the malloc.h header with stdlib.h.
+
+--- include/jtp_gen.h.orig	Sun Jun 24 18:57:16 2001
++++ include/jtp_gen.h	Tue Nov 18 05:34:55 2014
+@@ -11,7 +11,7 @@
+ 
+ #include "jtp_def.h"
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ void jtp_write_log_message(char * logmessage);
