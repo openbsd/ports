@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/14 23:24:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/11/30 15:39:29 benoit Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	control over the flow of time
 
 MODULES =	cpan
-DISTNAME =	Time-Warp-0.5
-REVISION =	1
+DISTNAME =	Time-Warp-0.51
 CATEGORIES =	devel
 
 # same as perl
