@@ -1,0 +1,38 @@
+$OpenBSD: patch-config,v 1.1.1.1 2014/11/30 20:54:04 landry Exp $
+--- config.orig	Mon Jul 24 03:42:06 2006
++++ config	Tue Nov 25 16:02:14 2014
+@@ -1,26 +1,26 @@
+ # Installation directories
+ # System's libraries directory (where binary libraries are installed)
+-LUA_LIBDIR= /usr/local/lib/lua/5.0
++LUA_LIBDIR= ${LOCALBASE}/lib/lua/${MODLUA_VERSION}
+ # Lua includes directory
+-LUA_INC= /usr/local/include
++LUA_INC= ${LOCALBASE}/include/lua-${MODLUA_VERSION}
+ # OpenLDAP includes directory
+-OPENLDAP_INC= /usr/local/include
++OPENLDAP_INC= ${LOCALBASE}/include
+ # OpenLDAP library (an optional directory can be specified with -L<dir>)
+-OPENLDAP_LIB= -lldap
++OPENLDAP_LIB= -L${LOCALBASE}/lib -lldap
+ 
+ # OS dependent
+ LIB_OPTION= -shared #for Linux
+ #LIB_OPTION= -bundle -undefined dynamic_lookup #for MacOS X
+ 
+ # Lua version number (first and second digits of target version)
+-LUA_VERSION_NUM= 500
+-LIBNAME= $T.so.$V
++LUA_VERSION_NUM= 501
++LIBNAME= $T.so
+ COMPAT_DIR= ../compat/src
+ 
+ # Compilation parameters
+ WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -ansi
+ INCS= -I$(LUA_INC) -I$(OPENLDAP_INC) -I$(COMPAT_DIR)
+-CFLAGS= $(WARN) $(INCS)
+-CC= gcc
++CFLAGS+= $(WARN) $(INCS)
++CC?= gcc
+ 
+ # $Id: patch-config,v 1.1.1.1 2014/11/30 20:54:04 landry Exp $
