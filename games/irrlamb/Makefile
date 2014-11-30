@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/20 14:45:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/30 05:41:34 brad Exp $
 
 V =		0.1.1
 COMMENT =	third person, 3D physics game
 DISTNAME =	irrlamb-${V}-src
 PKGNAME =	irrlamb-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://code.google.com/p/irrlamb/
@@ -25,6 +26,10 @@ LIB_DEPENDS =	audio/openal \
 		x11/irrlicht
 
 RUN_DEPENDS =	devel/desktop-file-utils
+
+# dos2unix the code before applying a patch
+post-extract:
+	perl -pi -e 'tr/\r//d' ${WRKSRC}/src/stb_vorbis/stb_vorbis.c
 
 post-patch:
 	perl -pi -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \

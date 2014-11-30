@@ -1,0 +1,15 @@
+$OpenBSD: patch-regexp_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Replace the malloc.h header with stdlib.h.
+
+--- regexp.c.orig	Thu Nov 20 04:27:49 2014
++++ regexp.c	Thu Nov 20 04:28:00 2014
+@@ -56,7 +56,7 @@ static char rcsid[] =
+ 
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include <string.h>
+ #include "regexp.h"

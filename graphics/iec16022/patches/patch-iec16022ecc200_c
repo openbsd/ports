@@ -1,0 +1,14 @@
+$OpenBSD: patch-iec16022ecc200_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- iec16022ecc200.c.orig	Wed Nov 19 23:08:01 2014
++++ iec16022ecc200.c	Wed Nov 19 23:08:06 2014
+@@ -29,7 +29,6 @@
+ #include <string.h>
+ #include <time.h>
+ #include <popt.h>
+-#include <malloc.h>
+ #include "reedsol.h"
+ #include "iec16022ecc200.h"
+ 

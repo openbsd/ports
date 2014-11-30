@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_stb_vorbis_stb_vorbis_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/stb_vorbis/stb_vorbis.c.orig	Wed Nov 19 22:17:29 2014
++++ src/stb_vorbis/stb_vorbis.c	Wed Nov 19 22:17:45 2014
+@@ -200,7 +200,7 @@
+ #include <string.h>
+ #include <assert.h>
+ #include <math.h>
+-#if !(defined(__APPLE__) || defined(MACOSX) || defined(macintosh) || defined(Macintosh))
++#if !(defined(__APPLE__) || defined(MACOSX) || defined(macintosh) || defined(Macintosh) || defined(__OpenBSD__))
+ #include <malloc.h>
+ #endif
+ #else

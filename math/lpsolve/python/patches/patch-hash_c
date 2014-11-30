@@ -1,0 +1,14 @@
+$OpenBSD: patch-hash_c,v 1.1 2014/11/30 05:41:35 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- hash.c.orig	Thu Nov 20 00:32:43 2014
++++ hash.c	Thu Nov 20 00:32:50 2014
+@@ -8,7 +8,6 @@
+ 
+ #include <sys/types.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <string.h>
+ 
+ #include "hash.h"

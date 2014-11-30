@@ -1,7 +1,18 @@
-$OpenBSD: patch-lgrind_c,v 1.1 2004/04/11 19:12:24 sturm Exp $
---- lgrind.c.orig	2004-04-11 20:39:57.000000000 +0200
-+++ lgrind.c	2004-04-11 20:40:28.000000000 +0200
-@@ -516,7 +516,8 @@ int main(int argc, char **argv)
+$OpenBSD: patch-lgrind_c,v 1.2 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- lgrind.c.orig	Thu Nov 20 04:15:55 2014
++++ lgrind.c	Thu Nov 20 04:21:30 2014
+@@ -94,7 +94,6 @@ static char rcsid[] =
+ #include <stdlib.h>
+ #include <ctype.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <time.h>
+ /* One of the following two (depending on your system) */
+ #include <unistd.h>
+@@ -516,7 +515,8 @@ int main(int argc, char **argv)
  		 printf("\\File{");
  		 putstr(fname);
  		 printf("}{%d}{%d}{%d}{%d:%02d}{%ld}\n", modtime.tm_year+1900, modtime.tm_mon+1,

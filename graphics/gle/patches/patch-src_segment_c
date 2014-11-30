@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_segment_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/segment.c.orig	Wed Nov 19 22:59:20 2014
++++ src/segment.c	Wed Nov 19 22:59:27 2014
+@@ -16,7 +16,6 @@
+  * Copyright (c) 1991,1993,2003 Linas Vepstas <linas@linas.org>
+  */
+ 
+-#include <malloc.h>
+ #include <stdlib.h>
+ #include <math.h>
+ #include <string.h>	/* for the memcpy() subroutine */

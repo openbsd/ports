@@ -1,0 +1,14 @@
+$OpenBSD: patch-stocks_stocks_c,v 1.1 2014/11/30 05:41:35 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- stocks/stocks.c.orig	Thu Nov 20 01:56:13 2014
++++ stocks/stocks.c	Thu Nov 20 01:56:21 2014
+@@ -22,7 +22,6 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <stdlib.h>
+ 
+ #ifdef __WINDOWS__

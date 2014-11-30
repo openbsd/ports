@@ -1,10 +1,19 @@
-$OpenBSD: patch-src_rfc2440_c,v 1.1 2013/05/18 20:00:43 benoit Exp $
+$OpenBSD: patch-src_rfc2440_c,v 1.2 2014/11/30 05:41:35 brad Exp $
 
-- fix segv : http://sourceforge.net/p/mcrypt/patches/13/
+- Don't use malloc.h header on OpenBSD
+- Fix segv : http://sourceforge.net/p/mcrypt/patches/13/
 
---- src/rfc2440.c.orig	Sun Nov 16 20:50:01 2008
-+++ src/rfc2440.c	Sat May 18 17:22:25 2013
-@@ -497,7 +497,7 @@
+--- src/rfc2440.c.orig	Sun Nov 16 14:50:01 2008
++++ src/rfc2440.c	Thu Nov 20 02:24:36 2014
+@@ -23,7 +23,6 @@
+ #include <zlib.h>
+ #endif
+ #include <stdio.h>
+-#include <malloc.h>
+ 
+ #include "xmalloc.h"
+ #include "keys.h"
+@@ -497,7 +496,7 @@ plaintext_encode(const USTRING dat)
      time_t t;
  
      assert(dat->len > 0);
@@ -13,7 +22,7 @@ $OpenBSD: patch-src_rfc2440_c,v 1.1 2013/05/18 20:00:43 benoit Exp $
      newdat = (USTRING)dat;
      result->d[pos++] = (0x80 | 0x40 | PKT_PLAINTEXT);
  
-@@ -810,7 +810,8 @@
+@@ -810,7 +809,8 @@ encrypted_encode(const USTRING pt, const DEK *dek)
      _mcrypt_encrypt(dek->hd, rndpref, dek->blocklen + 2, NULL, 0);
      _mcrypt_sync(dek->hd, rndpref, dek->blocklen);
  

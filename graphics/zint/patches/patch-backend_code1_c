@@ -1,0 +1,15 @@
+$OpenBSD: patch-backend_code1_c,v 1.1 2014/11/30 05:41:35 brad Exp $
+
+Replace the malloc.h header with stdlib.h.
+
+--- backend/code1.c.orig	Wed Nov 19 23:15:02 2014
++++ backend/code1.c	Wed Nov 19 23:15:12 2014
+@@ -28,7 +28,7 @@
+ #ifdef __APPLE__
+ #include <sys/malloc.h>
+ #else
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
+ 
+ void horiz(struct zint_symbol *symbol, int row_no, int full)

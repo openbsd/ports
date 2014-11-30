@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/30 05:41:35 brad Exp $
 
 COMMENT=		tightly integrated, free office package
 
 VERSION=		3.6.1
 DISTNAME=		siag-${VERSION}
-REVISION=		3
+REVISION=		4
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://siag.nu/

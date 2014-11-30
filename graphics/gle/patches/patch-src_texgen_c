@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_texgen_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/texgen.c.orig	Wed Nov 19 23:00:04 2014
++++ src/texgen.c	Wed Nov 19 23:00:10 2014
+@@ -13,7 +13,6 @@
+  * Copyright (c) 1994,1995 Linas Vepstas <linas@linas.org>
+  */
+ 
+-#include <malloc.h>
+ #include <math.h>
+ #include <stdlib.h>
+ 

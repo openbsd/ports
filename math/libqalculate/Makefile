@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2014/11/30 05:41:34 brad Exp $
 
 COMMENT =	applied math library
 CATEGORIES =	math devel
 DISTNAME =	libqalculate-0.9.7
+REVISION =	0
 HOMEPAGE =	http://qalculate.sourceforge.net/
 
 SHARED_LIBS =	qalculate		0.0	# 5.0

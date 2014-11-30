@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_round_cap_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/round_cap.c.orig	Wed Nov 19 22:59:05 2014
++++ src/round_cap.c	Wed Nov 19 22:59:10 2014
+@@ -12,7 +12,6 @@
+  */
+ 
+ 
+-#include <malloc.h>
+ #include <stdlib.h>
+ #include <math.h>
+ #include <string.h>	/* for the memcpy() subroutine */

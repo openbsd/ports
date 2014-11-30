@@ -1,7 +1,22 @@
-$OpenBSD: patch-lib_wnutil_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
---- lib/wnutil.c.orig	Sat Jan 20 20:50:23 2007
-+++ lib/wnutil.c	Mon Sep  1 20:53:39 2008
-@@ -48,7 +48,7 @@ int wninit(void)
+$OpenBSD: patch-lib_wnutil_c,v 1.2 2014/11/30 05:41:35 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- lib/wnutil.c.orig	Sat Jan 20 15:50:23 2007
++++ lib/wnutil.c	Thu Nov 20 01:29:11 2014
+@@ -14,9 +14,11 @@
+ 
+ #ifdef __unix__
+ #ifndef __MACH__
++#ifndef __OpenBSD__
+ #include <malloc.h>
+ #endif
+ #endif
++#endif
+ 
+ #include <assert.h>
+ #include <string.h>
+@@ -48,7 +50,7 @@ int wninit(void)
      char *env;
  
      if (!done) {
@@ -10,7 +25,7 @@ $OpenBSD: patch-lib_wnutil_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
  	    wnrelease = strdup(env);	/* set release */
  	    assert(wnrelease);
  	}
-@@ -70,7 +70,7 @@ int re_wninit(void)
+@@ -70,7 +72,7 @@ int re_wninit(void)
  
      closefps();
  
@@ -19,7 +34,7 @@ $OpenBSD: patch-lib_wnutil_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
  	wnrelease = strdup(env);	/* set release */
  	assert(wnrelease);
      }
-@@ -149,25 +149,25 @@ static int do_init(void)
+@@ -149,25 +151,25 @@ static int do_init(void)
  	sprintf(searchdir, DEFAULTPATH);
  #else
      if ((env = getenv("WNSEARCHDIR")) != NULL)
@@ -51,7 +66,7 @@ $OpenBSD: patch-lib_wnutil_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
  		    "WordNet library error: Can't open indexfile(%s)\n",
  		    tmpbuf);
  	    display_message(msgbuf);
-@@ -178,35 +178,35 @@ static int do_init(void)
+@@ -178,35 +180,35 @@ static int do_init(void)
      /* This file isn't used by the library and doesn't have to
         be present.  No error is reported if the open fails. */
  

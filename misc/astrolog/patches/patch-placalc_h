@@ -1,0 +1,16 @@
+$OpenBSD: patch-placalc_h,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- placalc.h.orig	Thu Nov 20 00:36:12 2014
++++ placalc.h	Thu Nov 20 01:01:14 2014
+@@ -123,7 +123,9 @@ auto-dectection of MSDOS (TURBO_C or MS_C) or HPUNIX
+ #if HPUNIX
+ #ifndef MAC
+ #ifndef NeXT
++#ifndef __OpenBSD__
+ #include <malloc.h>
++#endif
+ #endif
+ #endif /* MAC */
+ typedef double  REAL8;  /* real with at least 64 bit precision */

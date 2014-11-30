@@ -1,0 +1,15 @@
+$OpenBSD: patch-win_Qt_qt_win_cpp,v 1.6 2014/11/30 05:41:35 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- win/Qt/qt_win.cpp.orig	Thu Nov 20 22:02:50 2014
++++ win/Qt/qt_win.cpp	Thu Nov 20 22:13:01 2014
+@@ -104,8 +104,6 @@ extern "C" {
+ #include <dirent.h>
+ #ifdef Q_WS_MACX
+ #  include <sys/malloc.h>
+-#else
+-#  include <malloc.h>
+ #endif
+ 
+ #ifdef _WS_X11_

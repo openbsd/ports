@@ -1,0 +1,15 @@
+$OpenBSD: patch-backend_maxicode_c,v 1.1 2014/11/30 05:41:35 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- backend/maxicode.c.orig	Wed Nov 19 23:16:22 2014
++++ backend/maxicode.c	Wed Nov 19 23:16:55 2014
+@@ -28,8 +28,6 @@
+ #include <stdlib.h>
+ #ifdef __APPLE__
+ #include <sys/malloc.h> 
+-#else
+-#include <malloc.h> 
+ #endif
+ 
+ int maxi_codeword[144];

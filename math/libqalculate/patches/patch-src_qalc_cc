@@ -1,8 +1,12 @@
-$OpenBSD: patch-src_qalc_cc,v 1.1.1.1 2013/04/11 13:38:31 zhuk Exp $
+$OpenBSD: patch-src_qalc_cc,v 1.2 2014/11/30 05:41:34 brad Exp $
+
 Unbreak build (wrong header path, triggered by SEPARATE_BUILD).
---- src/qalc.cc.orig	Tue Sep 13 22:24:17 2011
-+++ src/qalc.cc	Tue Sep 13 22:27:36 2011
-@@ -9,7 +9,7 @@
+
+Replace the malloc.h header with stdlib.h.
+
+--- src/qalc.cc.orig	Tue Jan  5 10:17:29 2010
++++ src/qalc.cc	Thu Nov 20 00:26:42 2014
+@@ -9,14 +9,14 @@
      (at your option) any later version.
  */
  
@@ -11,3 +15,11 @@ Unbreak build (wrong header path, triggered by SEPARATE_BUILD).
  #include <libqalculate/qalculate.h>
  #include <sys/stat.h>
  #include <unistd.h>
+ #include <time.h>
+ #include <pthread.h>
+ #include <dirent.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <vector>
+ #include <glib.h>

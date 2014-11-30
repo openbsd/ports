@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ex_cut_round_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/ex_cut_round.c.orig	Wed Nov 19 22:57:13 2014
++++ src/ex_cut_round.c	Wed Nov 19 22:57:20 2014
+@@ -20,7 +20,6 @@
+  */
+ 
+ 
+-#include <malloc.h>
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>

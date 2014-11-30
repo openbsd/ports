@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ex_angle_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- src/ex_angle.c.orig	Wed Nov 19 22:56:35 2014
++++ src/ex_angle.c	Wed Nov 19 22:56:40 2014
+@@ -18,7 +18,6 @@
+  */
+ 
+ 
+-#include <malloc.h>
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
