@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/12 20:07:51 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/30 15:33:01 benoit Exp $
 
 COMMENT =	test fallback behaviour in absence of modules
 
-DISTNAME =	Test-Without-Module-0.17
+DISTNAME =	Test-Without-Module-0.18
 CATEGORIES =	devel
 
 # Perl
