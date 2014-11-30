@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/30 15:36:21 benoit Exp $
 COMMENT=	ordered hashes
 
 MODULES=	cpan
-DISTNAME=	Tie-LLHash-1.003
-REVISION=	0
+DISTNAME =	Tie-LLHash-1.004
 CATEGORIES=	devel
 
 # perl
