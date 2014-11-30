@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/02 13:29:57 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/11/30 23:14:48 edd Exp $
 
-V =			0.2.9
-COMMENT =		pdf viewer with vi-like keybindings
+V =			0.3.2
+COMMENT =		PDF viewer with vi-like keybindings
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS =	textproc/py-docutils
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	graphics/gdk-pixbuf2 \
 		devel/libmagic \
-		x11/girara
+		x11/girara>=0.2.3
 
 MAKE_FLAGS =	MANPREFIX=${PREFIX}/man \
 		DESKTOPPREFIX=${PREFIX}/share/applications \
