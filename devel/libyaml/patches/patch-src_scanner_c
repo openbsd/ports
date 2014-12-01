@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_scanner_c,v 1.3 2014/12/01 08:29:19 jsg Exp $
+$OpenBSD: patch-src_scanner_c,v 1.4 2014/12/01 08:48:51 jasper Exp $
+
+Security fix for CVE-2014-9130
+https://marc.info/?l=oss-security&m=141715462623662&w=2
+
 --- src/scanner.c.orig	Thu Mar 27 05:54:02 2014
 +++ src/scanner.c	Sat Nov 29 16:10:33 2014
 @@ -1106,13 +1106,6 @@ yaml_parser_save_simple_key(yaml_parser_t *parser)
