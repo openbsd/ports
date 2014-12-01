@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/04/20 16:22:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/12/01 21:43:39 sthen Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -36,12 +36,17 @@ share/examples/openvpn/sample-keys/
 share/examples/openvpn/sample-keys/README
 share/examples/openvpn/sample-keys/ca.crt
 share/examples/openvpn/sample-keys/ca.key
+share/examples/openvpn/sample-keys/client-ec.crt
+share/examples/openvpn/sample-keys/client-ec.key
+share/examples/openvpn/sample-keys/client-pass.key
 share/examples/openvpn/sample-keys/client.crt
 share/examples/openvpn/sample-keys/client.key
-share/examples/openvpn/sample-keys/dh1024.pem
-share/examples/openvpn/sample-keys/pass.crt
-share/examples/openvpn/sample-keys/pass.key
-share/examples/openvpn/sample-keys/pkcs12.p12
+share/examples/openvpn/sample-keys/client.p12
+share/examples/openvpn/sample-keys/dh2048.pem
+share/examples/openvpn/sample-keys/gen-sample-keys.sh
+share/examples/openvpn/sample-keys/openssl.cnf
+share/examples/openvpn/sample-keys/server-ec.crt
+share/examples/openvpn/sample-keys/server-ec.key
 share/examples/openvpn/sample-keys/server.crt
 share/examples/openvpn/sample-keys/server.key
 share/examples/openvpn/sample-scripts/
