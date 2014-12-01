@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/11/26 14:53:33 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/01 14:35:59 dcoppa Exp $
 @bin bin/musique
 share/applications/musique.desktop
 share/icons/hicolor/128x128/apps/musique.png
@@ -24,6 +24,7 @@ share/musique/locale/da.qm
 share/musique/locale/de.qm
 share/musique/locale/el.qm
 share/musique/locale/en.qm
+share/musique/locale/en_GB.qm
 share/musique/locale/es.qm
 share/musique/locale/es_ES.qm
 share/musique/locale/es_MX.qm
