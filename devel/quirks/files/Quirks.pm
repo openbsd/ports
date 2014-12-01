@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.201 2014/11/25 20:42:18 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.202 2014/12/01 11:53:00 nigel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -496,12 +496,13 @@ sub is_base_system
 	my $test = $base_exceptions->{$stem};
 	if (defined $test) {
 		if (-e $test) {
-			$state->say("Removing ", $handle->pkgname,
+			$state->say("Removing #1 #2", $handle->pkgname,
 			    " (part of base system now)");
 			return 1;
 		} else {
-			$state->say("Not removing ", $handle->pkgname,
+			$state->say("Not removing #1 #2 #3 #4", $handle->pkgname,
 			 ", ", $test, " not found");
+			return 0;
 		}
 	} else {
 		return 0;
