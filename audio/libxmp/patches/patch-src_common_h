@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_common_h,v 1.1 2014/12/01 18:03:51 miod Exp $
+
+Disable versioned symbols on platforms using gcc 3.x, for the toolchain does
+not support them.
+
+--- src/common.h.orig	Mon Nov 10 22:25:25 2014
++++ src/common.h	Sun Nov 30 15:20:17 2014
+@@ -9,7 +9,7 @@
+ #include <string.h>
+ #include "xmp.h"
+ 
+-#if defined(__GNUC__) || defined(__clang__)
++#if (defined(__GNUC__) && __GNUC__ >= 4) || defined(__clang__)
+ #if !defined(WIN32) && !defined(ANDROID) && !defined(__APPLE__) && !defined(__AMIGA__) && !defined(B_BEOS_VERSION) && !defined(__ATHEOS__) && !defined(EMSCRIPTEN) && !defined(__MINT__) 
+ #define USE_VERSIONED_SYMBOLS
+ #endif
