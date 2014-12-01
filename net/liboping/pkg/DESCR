@@ -1,0 +1,12 @@
+liboping was inspired by ping, libping and fping: It differs from these
+existing solutions in that it can "ping" multiple hosts in parallel
+using IPv4 or IPv6 transparently. Other design principles were an object
+oriented interface, simplicity and extensibility.
+
+On top of liboping two command line applications have been built.
+"oping" is a drop-in replacement for ping(1) with very similar output.
+"noping" is an ncurses-based application which displays statistics while
+pinging and highlights aberrant round-trip times.
+
+This package also provides a perl module is a high-level interface to the
+oping library.

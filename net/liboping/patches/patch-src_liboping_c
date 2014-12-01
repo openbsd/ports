@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_liboping_c,v 1.1.1.1 2014/12/01 08:18:45 landry Exp $
+needed for struct iovec
+--- src/liboping.c.orig	Tue Oct 28 11:41:21 2014
++++ src/liboping.c	Tue Oct 28 11:41:30 2014
+@@ -67,6 +67,7 @@
+ 
+ #if HAVE_SYS_SOCKET_H
+ # include <sys/socket.h>
++# include <sys/uio.h>
+ #endif
+ 
+ #if HAVE_NETDB_H
