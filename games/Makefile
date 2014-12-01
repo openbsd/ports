@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2014/11/05 22:37:35 landry Exp $
+# $OpenBSD: Makefile,v 1.305 2014/12/01 23:12:26 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -34,6 +34,7 @@
      SUBDIR += capitan-sevilla
      SUBDIR += castle-combat
      SUBDIR += cdogs-sdl
+     SUBDIR += cgames
      SUBDIR += cgoban
      SUBDIR += childsplay
      SUBDIR += chocolate-doom
