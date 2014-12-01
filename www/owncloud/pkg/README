@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.32 2014/11/16 22:15:02 sthen Exp $
+$OpenBSD: README,v 1.33 2014/12/01 10:16:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -115,10 +115,10 @@ e.g. "crontab -u www -e"
 -> "Cron" (does *not* work in chroot)
 */15	*	*	*	*	${MODPHP_BIN} -f ${INSTDIR}/cron.php
 
-LDAP user backend
------------------
-If the LDAP user backend is enabled, the "php-ldap" package will need to
-be installed.
+Authentication backends
+-----------------------
+When using a non-default user authentication backend (LDAP, IMAP, ...),
+extra packages may be needed (e.g. php-ldap, php-imap).
 
 Finishing and validating the installation
 -----------------------------------------
