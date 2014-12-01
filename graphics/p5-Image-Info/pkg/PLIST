@@ -1,21 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/10/10 06:17:14 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/01 14:28:29 benoit Exp $
+${P5SITE}/Bundle/
+${P5SITE}/Bundle/Image/
+${P5SITE}/Bundle/Image/Info/
+${P5SITE}/Bundle/Image/Info/Everything.pm
+${P5SITE}/Bundle/Image/Info/PNG.pm
+${P5SITE}/Bundle/Image/Info/SVG.pm
+${P5SITE}/Bundle/Image/Info/XBM.pm
+${P5SITE}/Bundle/Image/Info/XPM.pm
 ${P5SITE}/Image/
 ${P5SITE}/Image/Info/
 ${P5SITE}/Image/Info.pm
 ${P5SITE}/Image/Info/BMP.pm
 ${P5SITE}/Image/Info/GIF.pm
+${P5SITE}/Image/Info/ICO.pm
 ${P5SITE}/Image/Info/JPEG.pm
 ${P5SITE}/Image/Info/PNG.pm
 ${P5SITE}/Image/Info/PPM.pm
+${P5SITE}/Image/Info/SVG/
 ${P5SITE}/Image/Info/SVG.pm
+${P5SITE}/Image/Info/SVG/XMLLibXMLReader.pm
+${P5SITE}/Image/Info/SVG/XMLSimple.pm
 ${P5SITE}/Image/Info/TIFF.pm
+${P5SITE}/Image/Info/WBMP.pm
 ${P5SITE}/Image/Info/XBM.pm
 ${P5SITE}/Image/Info/XPM.pm
 ${P5SITE}/Image/TIFF.pm
+@man man/man3p/Bundle::Image::Info::Everything.3p
+@man man/man3p/Bundle::Image::Info::PNG.3p
+@man man/man3p/Bundle::Image::Info::SVG.3p
+@man man/man3p/Bundle::Image::Info::XBM.3p
+@man man/man3p/Bundle::Image::Info::XPM.3p
 @man man/man3p/Image::Info.3p
 @man man/man3p/Image::Info::BMP.3p
+@man man/man3p/Image::Info::ICO.3p
 @man man/man3p/Image::Info::PPM.3p
 @man man/man3p/Image::Info::SVG.3p
 @man man/man3p/Image::Info::TIFF.3p
+@man man/man3p/Image::Info::WBMP.3p
 @man man/man3p/Image::Info::XBM.3p
 @man man/man3p/Image::Info::XPM.3p
