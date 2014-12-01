@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/10/26 20:43:56 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2014/12/01 09:07:12 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -15,8 +15,8 @@ PKGNAME-rrdtool =	collectd-rrdtool-$V
 PKGNAME-snmp =		collectd-snmp-$V
 CATEGORIES =		sysutils
 
-REVISION-main =		0
-REVISION-rrdtool =	0
+REVISION-main =		1
+REVISION-rrdtool =	1
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -41,7 +41,7 @@ RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-rrdtool =	X11 Xext Xrender cairo expat ffi fontconfig \
 			freetype glib-2.0 gmodule-2.0 gobject-2.0 \
-			graphite2 gthread-2.0 harfbuzz iconv intl m \
+			graphite2 gthread-2.0 harfbuzz iconv intl lzma m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 			pixman-1 png pthread pthread-stubs rrd_th xcb \
 			xcb-render xcb-shm xml2 z
@@ -53,12 +53,13 @@ LIB_DEPENDS-snmp =	net/net-snmp
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS +=	net/curl \
+		net/liboping \
 		textproc/libxml \
 		sysutils/libstatgrab \
 		security/libgcrypt \
 		devel/libtool,-ltdl
 
-WANTLIB += c crypto gpg-error idn kvm curl xml2 ltdl
+WANTLIB += c crypto gpg-error idn kvm curl xml2 ltdl lzma oping
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
@@ -76,7 +77,7 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 			df disk dns email exec filecount interface load \
 			logfile match_empty_counter match_hashed match_regex \
 			match_timediff match_value memcached memory mysql \
-			network nginx ntpd olsrd openvpn postgresql powerdns \
+			network nginx ntpd olsrd openvpn ping postgresql powerdns \
 			processes rrdtool rrdcached snmp swap syslog table tail tail_csv \
 			target_notification target_replace target_scale \
 			target_set target_v5upgrade tcpconns teamspeak2 ted unixsock uptime \

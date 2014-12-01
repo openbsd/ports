@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/10/26 20:43:57 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2014/12/01 09:07:12 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
@@ -70,6 +70,8 @@ lib/collectd/olsrd.so
 lib/collectd/openvpn.so
 @comment lib/collectd/pf.la
 lib/collectd/pf.so
+@comment lib/collectd/ping.la
+lib/collectd/ping.so
 @comment lib/collectd/powerdns.la
 lib/collectd/powerdns.so
 @comment lib/collectd/processes.la
@@ -116,8 +118,8 @@ lib/collectd/write_http.so
 @lib lib/libcollectdclient.so.${LIBcollectdclient_VERSION}
 lib/pkgconfig/libcollectdclient.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.18.2/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.18.2/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.1/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.1/perllocal.pod
 libdata/perl5/site_perl/Collectd/
 libdata/perl5/site_perl/Collectd.pm
 libdata/perl5/site_perl/Collectd/Plugins/
