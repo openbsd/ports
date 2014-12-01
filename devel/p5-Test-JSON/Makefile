@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:49:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2014/12/01 13:33:14 benoit Exp $
 
 COMMENT =	test JSON data
 
 MODULES =	cpan
-DISTNAME =	Test-JSON-0.06
-REVISION =	0
+DISTNAME =	Test-JSON-0.11
 CATEGORIES =	devel
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
