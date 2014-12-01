@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2014/12/01 15:13:52 naddy Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -70,6 +70,7 @@ pre-patch:
 #.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
+	    ${WRKDIST}/src/emu/cpu/m68000/m68kmake.c \
 	    ${WRKDIST}/src/emu/machine/netlist.h \
 	    ${WRKDIST}/src/osd/sdl/sdl.mak
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
