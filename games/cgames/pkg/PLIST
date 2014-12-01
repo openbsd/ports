@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/01 23:12:08 bcallah Exp $
+@bin bin/cblocks
+@bin bin/cmines
+@bin bin/csokoban
+@man man/man6/cblocks.6
+@man man/man6/cmines.6
+@man man/man6/csokoban.6
+share/cgames/
+share/cgames/cblocks/
+share/cgames/cblocks/Classics.txt
+share/cgames/csokoban/
+share/cgames/csokoban/Original.txt
+share/cgames/csokoban/Xsokoban.txt
+share/cgames/csokoban/still-more.txt
+share/cgames/csokoban/yoshio-murase.txt

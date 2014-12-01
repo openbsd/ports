@@ -1,0 +1,14 @@
+$OpenBSD: patch-csokoban_Makefile_in,v 1.1.1.1 2014/12/01 23:12:08 bcallah Exp $
+--- csokoban/Makefile.in.orig	Sun Nov 30 22:39:33 2014
++++ csokoban/Makefile.in	Sun Nov 30 22:39:51 2014
+@@ -32,8 +32,8 @@ install: csokoban
+ 	install -c ./csokoban $(bindir)/csokoban
+ 	install -d $(mandir)/man6
+ 	install -c ./csokoban.6 $(mandir)/man6/csokoban.6
+-	install -d -g games $(datadir)
+-	install -c ./series/* $(datadir)/
++	install -d -g bin $(datadir)/csokoban
++	install -c ./series/* $(datadir)/csokoban/
+ 
+ movelist.o: movelist.c gen.h movelist.h
+ dirio.o   : dirio.c gen.h dirio.h
