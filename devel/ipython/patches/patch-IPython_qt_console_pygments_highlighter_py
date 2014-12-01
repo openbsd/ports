@@ -1,0 +1,25 @@
+$OpenBSD: patch-IPython_qt_console_pygments_highlighter_py,v 1.1 2014/12/01 09:53:50 edd Exp $
+
+Fix for pygments 2.x
+https://github.com/ipython/ipython/commit/b2cf998b17d7f394f5cff933c123bbabd1b3381a
+
+--- IPython/qt/console/pygments_highlighter.py.orig	Sun Nov 30 23:58:03 2014
++++ IPython/qt/console/pygments_highlighter.py	Mon Dec  1 00:00:24 2014
+@@ -24,11 +24,12 @@ def get_tokens_unprocessed(self, text, stack=('root',)
+         for rexmatch, action, new_state in statetokens:
+             m = rexmatch(text, pos)
+             if m:
+-                if type(action) is _TokenType:
+-                    yield pos, action, m.group()
+-                else:
+-                    for item in action(self, m):
+-                        yield item
++                if action is not None:
++                    if type(action) is _TokenType:
++                        yield pos, action, m.group()
++                    else:
++                        for item in action(self, m):
++                            yield item
+                 pos = m.end()
+                 if new_state is not None:
+                     # state transition
