@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.877 2014/11/19 18:49:03 giovanni Exp $
+# $OpenBSD: Makefile,v 1.878 2014/12/01 08:19:17 landry Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -195,6 +195,7 @@
      SUBDIR += libnice
      SUBDIR += libnids
      SUBDIR += liboauth
+     SUBDIR += liboping
      SUBDIR += libpcapnav
      SUBDIR += libproxy,
      SUBDIR += librest
