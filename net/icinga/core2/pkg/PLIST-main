@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/11/22 00:13:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/12/01 23:45:58 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingacmd:734
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -24,7 +24,6 @@ lib/icinga2/libmmatch.so
 lib/icinga2/libnotification.so
 lib/icinga2/libperfdata.so
 lib/icinga2/libremote.so
-@man man/man8/icinga2-prepare-dirs.8
 @man man/man8/icinga2.8
 @bin sbin/icinga2
 share/doc/icinga2/

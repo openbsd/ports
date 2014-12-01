@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/11/23 20:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2014/12/01 23:45:58 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.2.0
+V =		2.2.1
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
