@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_yaml_scanner_py,v 1.1 2014/12/01 09:24:46 jasper Exp $
+
+Security fix for CVE-2014-9130
+http://marc.info/?l=oss-security&m=141720508007010&w=2
+
+--- lib/yaml/scanner.py.orig	Wed Mar 26 19:54:13 2014
++++ lib/yaml/scanner.py	Mon Dec  1 10:15:36 2014
+@@ -299,7 +299,8 @@ class Scanner(object):
+ 
+         # A simple key is required only if it is the first token in the current
+         # line. Therefore it is always allowed.
+-        assert self.allow_simple_key or not required
++        # http://marc.info/?l=oss-security&m=141720508007010&w=2
++        #assert self.allow_simple_key or not required
+ 
+         # The next token might be a simple key. Let's save it's number and
+         # position.

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2014/08/19 14:25:11 rpointel Exp $
+# $OpenBSD: Makefile,v 1.13 2014/12/01 09:24:46 jasper Exp $
 
 COMMENT=	YAML parser and emitter in Python
 
 MODPY_EGG_VERSION=3.11
 DISTNAME=	PyYAML-${MODPY_EGG_VERSION}
 PKGNAME=	py-yaml-${MODPY_EGG_VERSION}
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://pyyaml.org/wiki/PyYAML
