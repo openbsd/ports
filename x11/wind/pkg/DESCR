@@ -1,0 +1,12 @@
+Wind is a window manager for the X Window System. It supports virtual
+desktops, optional Xft font rendering, and is pretty standards compliant.
+It provides overlapping window management with click-to-type focus.
+
+Unlike most window managers, Wind does not have the concept of minimized
+or hidden windows. Instead of hiding and unhiding windows, the virtual
+desktops abstraction makes it easy to group similar tasks and switch between
+these groups instantly using convenient key bindings.
+
+Standards compliancy is a prominent goal of the project, and Wind supports
+almost all mandatory parts of the ICCCM and the Extended Window Manager
+Hints specifications.

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/01 23:05:53 bcallah Exp $
+@bin bin/wind
+@man man/man1/wind.1
+share/doc/wind/
+share/doc/wind/LICENSE
+share/doc/wind/NEWS
+share/doc/wind/README
