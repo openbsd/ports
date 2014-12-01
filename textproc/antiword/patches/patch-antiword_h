@@ -1,4 +1,4 @@
-$OpenBSD: patch-antiword_h,v 1.9 2005/11/14 02:03:20 cathcart Exp $
+$OpenBSD: patch-antiword_h,v 1.10 2014/12/01 17:35:34 sthen Exp $
 --- antiword.h.orig	Wed Jul  6 18:46:22 2005
 +++ antiword.h	Tue Nov  8 12:54:38 2005
 @@ -224,7 +224,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-antiword_h,v 1.9 2005/11/14 02:03:20 cathcart Exp $
  #define FONTNAMES_FILE		"fontnames"
  #else	/* All others */
 -#define GLOBAL_ANTIWORD_DIR	"/usr/share/antiword"
-+#define GLOBAL_ANTIWORD_DIR	"%%PREFIX%%/share/antiword"
++#define GLOBAL_ANTIWORD_DIR	"${PREFIX}/share/antiword"
  #define ANTIWORD_DIR		".antiword"
  #define FONTNAMES_FILE		"fontnames"
  #endif /* __dos */

@@ -1,31 +1,29 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2014/12/01 17:35:33 sthen Exp $
 
 COMMENT=	converts MSWord Documents to ASCII Text and PostScript
 
 DISTNAME=	antiword-0.37
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.winfield.demon.nl/
 
-MAINTAINER=	David Cathcart <cathcart@openbsd.org>
-
 MASTER_SITES=	${HOMEPAGE}/linux/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		c
+
+WANTLIB += c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DNDEBUG" \
 		LD="${CC}"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 DOCS=		FAQ Netscape QandA ReadMe Mutt
 
 pre-configure:
-	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/antiword.h
+	@${SUBST_CMD} ${WRKSRC}/antiword.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/antiword ${PREFIX}/bin
