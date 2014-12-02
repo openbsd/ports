@@ -1,0 +1,20 @@
+$OpenBSD: patch-makeint_h,v 1.1 2014/12/02 23:20:20 naddy Exp $
+
+Handle NULL returns from ttyname().
+http://git.savannah.gnu.org/cgit/make.git/commit/?id=292da6f6867b75a5af7ddbb639a1feae022f438f
+
+--- makeint.h.orig	Sun Oct  5 18:24:51 2014
++++ makeint.h	Wed Dec  3 00:12:50 2014
+@@ -424,10 +424,11 @@ extern struct rlimit stack_limit;
+ /* The number of bytes needed to represent the largest integer as a string.  */
+ #define INTSTR_LENGTH         CSTRLEN ("18446744073709551616")
+ 
++#define DEFAULT_TTYNAME "true"
+ #ifdef HAVE_TTYNAME
+ # define TTYNAME(_f) ttyname (_f)
+ #else
+-# define TTYNAME(_f) "true"
++# define TTYNAME(_f) DEFAULT_TTYNAME
+ #endif
+ 
+ 
