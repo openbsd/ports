@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/01 13:36:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/02 17:10:00 nigel Exp $
 
 COMMENT= 	perform diffs on arrays
 
 MODULES=	cpan
 DISTNAME =	Array-Diff-0.07
+PKGNAME =	p5-${DISTNAME}000
 CATEGORIES=	devel
 
 # Perl
