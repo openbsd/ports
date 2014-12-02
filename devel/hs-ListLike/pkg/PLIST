@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 17:59:15 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/02 20:45:58 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/ListLike/
@@ -16,9 +16,26 @@ lib/ghc/${DISTNAME}/Data/ListLike/Instances.hi
 lib/ghc/${DISTNAME}/Data/ListLike/Instances.p_hi
 lib/ghc/${DISTNAME}/Data/ListLike/String.hi
 lib/ghc/${DISTNAME}/Data/ListLike/String.p_hi
+lib/ghc/${DISTNAME}/Data/ListLike/Text/
+lib/ghc/${DISTNAME}/Data/ListLike/Text.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Text.p_hi
+lib/ghc/${DISTNAME}/Data/ListLike/Text/Text.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Text/Text.p_hi
+lib/ghc/${DISTNAME}/Data/ListLike/Text/TextLazy.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Text/TextLazy.p_hi
 lib/ghc/${DISTNAME}/Data/ListLike/Utils.hi
 lib/ghc/${DISTNAME}/Data/ListLike/Utils.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/
+lib/ghc/${DISTNAME}/Data/ListLike/Vector.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector.p_hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Generic.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Generic.p_hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Storable.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Storable.p_hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Unboxed.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Unboxed.p_hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Vector.hi
+lib/ghc/${DISTNAME}/Data/ListLike/Vector/Vector.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -31,7 +48,15 @@ share/doc/hs-${DISTNAME}/html/Data-ListLike-FoldableLL.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike-IO.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike-Instances.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike-String.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Text-Text.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Text-TextLazy.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Text.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike-Utils.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Vector-Generic.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Vector-Storable.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Vector-Unboxed.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Vector-Vector.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-Vector.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike.html
 share/doc/hs-${DISTNAME}/html/ListLike.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
@@ -46,7 +71,15 @@ share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-FoldableLL.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-IO.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Instances.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-String.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Text-Text.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Text-TextLazy.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Text.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Utils.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Vector-Generic.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Vector-Storable.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Vector-Unboxed.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Vector-Vector.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Vector.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
