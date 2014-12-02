@@ -1,3 +1,0 @@
-Haskell 98 part of a monad transformer library.  Contains the monad
-transformer class, the concrete monad transformers, operations and
-liftings.
