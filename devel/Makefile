@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1280 2014/11/24 14:02:17 kili Exp $
+# $OpenBSD: Makefile,v 1.1281 2014/12/02 21:09:11 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -232,7 +232,6 @@
      SUBDIR += hs-glib
      SUBDIR += hs-hashable
      SUBDIR += hs-hashed-storage
-     SUBDIR += hs-haskeline
      SUBDIR += hs-hint
      SUBDIR += hs-hlint
      SUBDIR += hs-hood
@@ -284,12 +283,10 @@
      SUBDIR += hs-syb
      SUBDIR += hs-tagged
      SUBDIR += hs-tar
-     SUBDIR += hs-terminfo
      SUBDIR += hs-test-framework
      SUBDIR += hs-test-framework-hunit
      SUBDIR += hs-test-framework-quickcheck2
      SUBDIR += hs-text
-     SUBDIR += hs-transformers
      SUBDIR += hs-transformers-base
      SUBDIR += hs-tuple
      SUBDIR += hs-type-level
