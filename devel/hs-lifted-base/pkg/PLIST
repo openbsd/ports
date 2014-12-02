@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:02:12 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/12/02 20:46:28 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -10,19 +10,13 @@ lib/ghc/${DISTNAME}/Control/Concurrent/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/Lifted.hi
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/Lifted.p_hi
-lib/ghc/${DISTNAME}/Control/Concurrent/QSem/
-lib/ghc/${DISTNAME}/Control/Concurrent/QSem/Lifted.hi
-lib/ghc/${DISTNAME}/Control/Concurrent/QSem/Lifted.p_hi
-lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/
-lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/Lifted.hi
-lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/Lifted.p_hi
-lib/ghc/${DISTNAME}/Control/Concurrent/SampleVar/
-lib/ghc/${DISTNAME}/Control/Concurrent/SampleVar/Lifted.hi
-lib/ghc/${DISTNAME}/Control/Concurrent/SampleVar/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Exception/
 lib/ghc/${DISTNAME}/Control/Exception/Lifted.hi
 lib/ghc/${DISTNAME}/Control/Exception/Lifted.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/Data/
+lib/ghc/${DISTNAME}/Data/IORef/
+lib/ghc/${DISTNAME}/Data/IORef/Lifted.hi
+lib/ghc/${DISTNAME}/Data/IORef/Lifted.p_hi
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Timeout/
 lib/ghc/${DISTNAME}/System/Timeout/Lifted.hi
@@ -36,10 +30,8 @@ share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-Chan-Lifted.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-Lifted.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-MVar-Lifted.html
-share/doc/hs-${DISTNAME}/html/Control-Concurrent-QSem-Lifted.html
-share/doc/hs-${DISTNAME}/html/Control-Concurrent-QSemN-Lifted.html
-share/doc/hs-${DISTNAME}/html/Control-Concurrent-SampleVar-Lifted.html
 share/doc/hs-${DISTNAME}/html/Control-Exception-Lifted.html
+share/doc/hs-${DISTNAME}/html/Data-IORef-Lifted.html
 share/doc/hs-${DISTNAME}/html/System-Timeout-Lifted.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -51,10 +43,8 @@ share/doc/hs-${DISTNAME}/html/lifted-base.haddock
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-Chan-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-MVar-Lifted.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-QSem-Lifted.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-QSemN-Lifted.html
-share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-SampleVar-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Exception-Lifted.html
+share/doc/hs-${DISTNAME}/html/mini_Data-IORef-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_System-Timeout-Lifted.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css

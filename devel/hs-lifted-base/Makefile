@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/02 20:46:28 kili Exp $
 
 COMMENT =		lifted IO operations from the base library
 
-DISTNAME =		lifted-base-0.1.1.1
-REVISION =		1
+DISTNAME =		lifted-base-0.2.0.5
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
