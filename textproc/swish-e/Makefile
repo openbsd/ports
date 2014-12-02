@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/02 11:59:42 naddy Exp $
 
 COMMENT =		web/text search engine
 
 DISTNAME =		swish-e-2.4.7
-REVISION=	0
+REVISION =		1
 SHARED_LIBS =		swish-e	2.1
 CATEGORIES =		textproc www
 
@@ -29,7 +29,6 @@ RUN_DEPENDS =		www/p5-URI \
 			www/p5-HTML-FillInForm \
 			www/p5-HTML-Template
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-pcre
 

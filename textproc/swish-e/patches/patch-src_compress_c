@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_compress_c,v 1.1 2014/12/02 11:59:42 naddy Exp $
+--- src/compress.c.orig	Sun Apr  5 03:58:32 2009
++++ src/compress.c	Tue Dec  2 05:06:54 2014
+@@ -995,7 +995,7 @@ void    remove_worddata_longs(unsigned char *worddata,
+             progerr("Internal error in remove_worddata_longs");
+ 
+         /* dst may be smaller than src. So move the data */
+-        memcpy(dst,src,data_len);
++        memmove(dst,src,data_len);
+ 
+         /* Increase pointers */
+         src += data_len;
