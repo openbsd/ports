@@ -1,23 +1,33 @@
-$OpenBSD: patch-lib_puppet_type_user_rb,v 1.2 2014/11/02 19:57:12 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_user_rb,v 1.3 2014/12/02 19:26:18 jasper Exp $
 
 - add new 'loginclass' attribute to the 'user' type
 
---- lib/puppet/type/user.rb.orig	Thu Oct 30 12:15:02 2014
-+++ lib/puppet/type/user.rb	Thu Oct 30 12:15:17 2014
-@@ -639,6 +639,16 @@ module Puppet
-       end
-     end
+--- lib/puppet/type/user.rb.orig	Mon Nov  3 23:23:13 2014
++++ lib/puppet/type/user.rb	Tue Dec  2 20:22:30 2014
+@@ -57,6 +57,9 @@ module Puppet
+     feature :manages_shell,
+       "The provider allows for setting shell and validates if possible"
  
-+    newproperty(:loginclass) do
++    feature :manages_loginclass,
++      "The provider can manage the login class for a user."
++
+     newproperty(:ensure, :parent => Puppet::Property::Ensure) do
+       newvalue(:present, :event => :user_created) do
+         provider.create
+@@ -635,6 +638,16 @@ module Puppet
+           entry.gsub!(/^~\//, "#{home}/")
+           entry.gsub!(/^%h\//, "#{home}/")
+           entry
++        end
++      end
++    end
++
++    newproperty(:loginclass, :required_features => :manages_loginclass) do
 +      desc "The name of login class to which the user belongs."
 +
 +      validate do |value|
 +        if value =~ /^\d+$/
 +          raise ArgumentError, "Class name must be provided."
-+        end
-+      end
-+    end
-+
-     # Generate ssh_authorized_keys resources for purging. The key files are
-     # taken from the purge_ssh_keys parameter. The generated resources inherit
-     # all metaparameters from the parent user resource.
+         end
+       end
+     end

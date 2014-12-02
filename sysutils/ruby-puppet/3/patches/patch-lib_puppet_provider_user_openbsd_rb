@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_puppet_provider_user_openbsd_rb,v 1.1 2014/11/12 07:42:47 jasper Exp $
---- lib/puppet/provider/user/openbsd.rb.orig	Mon Nov 10 21:38:00 2014
-+++ lib/puppet/provider/user/openbsd.rb	Mon Nov 10 21:38:15 2014
-@@ -0,0 +1,68 @@
+$OpenBSD: patch-lib_puppet_provider_user_openbsd_rb,v 1.2 2014/12/02 19:26:18 jasper Exp $
+--- lib/puppet/provider/user/openbsd.rb.orig	Tue Dec  2 20:19:15 2014
++++ lib/puppet/provider/user/openbsd.rb	Tue Dec  2 20:20:56 2014
+@@ -0,0 +1,70 @@
 +require 'date'
 +require 'time'
 +require 'puppet/error'
@@ -54,8 +54,10 @@ $OpenBSD: patch-lib_puppet_provider_user_openbsd_rb,v 1.1 2014/11/12 07:42:47 ja
 +  end
 +
 +  has_features :manages_homedir, :manages_expiry, :system_users
-+  has_features :manages_passwords if Puppet.features.libshadow?
 +  has_features :manages_shell
++  if Puppet.features.libshadow?
++    has_features :manages_passwords, :manages_loginclass
++  end
 +
 +  def loginclass=(value)
 +    set("loginclass", value)
