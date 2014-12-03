@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/01/05 10:49:58 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/12/03 18:06:25 benoit Exp $
 @pkgpath devel/py-mxDateTime[,python2.4][,python2.5][,python2.6][,python2.7]
 lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mx/
@@ -37,6 +37,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/btr.h
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/calc-sectorsize.py
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/calc-sectorsize.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/calc-sectorsize.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/mxBeeBase.h
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/mxBeeBase.so
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/mxh.h

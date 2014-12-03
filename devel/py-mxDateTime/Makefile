@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2014/01/23 23:55:57 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2014/12/03 18:06:24 benoit Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	date and time types for Python
-REVISION =	0
 
-MODPY_EGG_VERSION = 3.2.6
+MODPY_EGG_VERSION = 3.2.8
 DISTNAME =	egenix-mx-base-${MODPY_EGG_VERSION}
 PKGNAME =	py-mxDateTime-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
