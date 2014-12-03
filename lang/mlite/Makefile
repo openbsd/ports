@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/01 18:15:34 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/03 19:57:05 jturner Exp $
 
 COMMENT =		lightweight inhabitant of the ML family of languages
 
-DISTNAME =		mlite-20141201
+DISTNAME =		mlite-20141203
 CATEGORIES =		lang
 
 MAINTAINER =		James Turner <james@calminferno.net>
