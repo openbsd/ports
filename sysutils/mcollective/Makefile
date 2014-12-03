@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2014/10/31 07:31:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2014/12/03 10:32:30 jasper Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
-DISTNAME=	mcollective-2.6.1
+DISTNAME=	mcollective-2.7.0
 
 CATEGORIES=	sysutils
 
@@ -19,7 +19,8 @@ MODULES=	lang/ruby
 
 NO_BUILD=	Yes
 BUILD_DEPENDS=	lang/ruby/${MODRUBY_REV}
-RUN_DEPENDS=	net/ruby-stomp,${MODRUBY_FLAVOR}>=1.3.2
+RUN_DEPENDS=	converters/ruby-json,${MODRUBY_FLAVOR} \
+		net/ruby-stomp,${MODRUBY_FLAVOR}>=1.3.4
 
 PKG_ARCH=	*
 NO_TEST=	Yes
