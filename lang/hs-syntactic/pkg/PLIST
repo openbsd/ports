@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/20 18:05:02 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/03 21:56:44 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/DynamicAlt.hi
 lib/ghc/${DISTNAME}/Data/DynamicAlt.p_hi
 lib/ghc/${DISTNAME}/Data/PolyProxy.hi
 lib/ghc/${DISTNAME}/Data/PolyProxy.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/Syntactic/
 lib/ghc/${DISTNAME}/Language/Syntactic.hi

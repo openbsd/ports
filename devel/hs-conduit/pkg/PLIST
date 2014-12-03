@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/07/19 06:54:22 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/12/03 21:56:44 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Conduit/
@@ -16,7 +16,6 @@ lib/ghc/${DISTNAME}/Data/Conduit/Text.hi
 lib/ghc/${DISTNAME}/Data/Conduit/Text.p_hi
 lib/ghc/${DISTNAME}/Data/Conduit/Util.hi
 lib/ghc/${DISTNAME}/Data/Conduit/Util.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/PosixFile.hi
 lib/ghc/${DISTNAME}/System/PosixFile.p_hi

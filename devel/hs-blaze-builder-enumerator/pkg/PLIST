@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:00:41 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/12/03 21:56:43 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Blaze/
 lib/ghc/${DISTNAME}/Blaze/ByteString/
 lib/ghc/${DISTNAME}/Blaze/ByteString/Builder/
 lib/ghc/${DISTNAME}/Blaze/ByteString/Builder/Enumerator.hi
 lib/ghc/${DISTNAME}/Blaze/ByteString/Builder/Enumerator.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

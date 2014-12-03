@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/07/19 06:57:56 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/12/03 21:56:45 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/HeterogeneousEnvironment.hi
 lib/ghc/${DISTNAME}/Data/HeterogeneousEnvironment.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Heist/
 lib/ghc/${DISTNAME}/Heist.hi
 lib/ghc/${DISTNAME}/Heist.p_hi

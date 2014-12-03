@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/31 21:48:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/03 21:56:43 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/PostgreSQL/
@@ -60,7 +60,6 @@ lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/Types.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/Types.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Types.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Types.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

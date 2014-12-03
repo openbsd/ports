@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/07/19 07:05:01 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/03 21:56:44 kili Exp $
 @newgroup _hoogle:689
 @newuser _hoogle:689:_hoogle:daemon:Hoogle account:/nonexistent:/sbin/nologin
 @bin bin/hoogle
@@ -17,7 +17,6 @@ lib/ghc/${DISTNAME}/General/Util.hi
 lib/ghc/${DISTNAME}/General/Util.p_hi
 lib/ghc/${DISTNAME}/General/Web.hi
 lib/ghc/${DISTNAME}/General/Web.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Hoogle/
 lib/ghc/${DISTNAME}/Hoogle.hi
 lib/ghc/${DISTNAME}/Hoogle.p_hi

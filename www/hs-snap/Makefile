@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/03 21:56:45 kili Exp $
 
 COMMENT =		Snap project starter and glue code library
 
 DISTNAME =		snap-0.12.0
+REVISION =		0
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
@@ -38,7 +39,6 @@ RUN_DEPENDS +=		devel/hs-MonadCatchIO-transformers>=0.2,<0.4 \
 			devel/hs-stm>=2.2,<2.5 \
 			devel/hs-syb>=0.1,<0.5 \
 			devel/hs-text>=0.11,<0.12 \
-			devel/hs-transformers>=0.2,<0.4 \
 			devel/hs-unordered-containers>=0.1.4,<0.3 \
 			devel/hs-vector>=0.7.1,<0.11 \
 			devel/hs-vector-algorithms>=0.4,<0.6 \
