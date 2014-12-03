@@ -1,6 +1,9 @@
-$OpenBSD: patch-poppass_c,v 1.1 2011/03/31 12:21:39 ajacoutot Exp $
---- poppass.c.orig	Thu Mar 31 13:40:06 2011
-+++ poppass.c	Thu Mar 31 13:40:25 2011
+$OpenBSD: patch-poppass_c,v 1.2 2014/12/03 13:02:45 mpi Exp $
+
+Properly initialize the sockaddr to not compare garbage.
+
+--- poppass.c.orig	Fri Aug  3 23:16:24 2007
++++ poppass.c	Wed Dec  3 13:19:25 2014
 @@ -91,7 +91,7 @@ fork_slave(int pipe_prnt[2])
  	/* Open TCP-socket */
  	server_socket = setup_listeners(se);
@@ -10,3 +13,12 @@ $OpenBSD: patch-poppass_c,v 1.1 2011/03/31 12:21:39 ajacoutot Exp $
  	if (setgroups(1, &pw->pw_gid) ||
  	    setegid(pw->pw_gid) || setgid(pw->pw_gid) ||
  	    seteuid(pw->pw_uid) || setuid(pw->pw_uid))
+@@ -142,6 +142,8 @@ setup_listeners(struct servent *se)
+ 	if ((fd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
+ 		fatal("socket");
+ 
++	memset(&server_sock, 0, sizeof(server_sock));
++	server_sock.sin_len         = sizeof(server_sock);
+ 	server_sock.sin_family      = AF_INET;
+ 	server_sock.sin_addr.s_addr = inet_addr(LISTEN_IP);
+ 	server_sock.sin_port        = (short)se->s_port;
