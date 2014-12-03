@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/23 17:07:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/12/03 10:32:24 jasper Exp $
 ${GEM_BIN}/catstomp${GEM_BIN_SUFFIX}
 ${GEM_BIN}/stompcat${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -25,6 +25,8 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/logexamp_ssl.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/publisher.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/put11conn_ex1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/putget11_rh1.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/ssl_ctxoptions.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/ssl_newparm.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl_uc1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl_uc1_ciphers.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl_uc2.rb
