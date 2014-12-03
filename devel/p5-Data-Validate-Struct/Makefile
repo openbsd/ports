@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/09 20:35:56 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/03 21:02:54 bluhm Exp $
 
 COMMENT =		validate recursive perl hash structures
 
-DISTNAME =		Data-Validate-Struct-0.08
+DISTNAME =		Data-Validate-Struct-0.09
 
 CATEGORIES =		devel
 
