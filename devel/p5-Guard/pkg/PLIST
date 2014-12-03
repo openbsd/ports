@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/03 18:10:45 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Guard.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Guard/
-@comment ${P5ARCH}/auto/Guard/Guard.bs
 ${P5ARCH}/auto/Guard/Guard.so
 @man man/man3p/Guard.3p
