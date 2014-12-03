@@ -1,0 +1,73 @@
+$OpenBSD: patch-utils_c,v 1.1 2014/12/03 08:32:28 dcoppa Exp $
+
+Remove local copies of strl{cat,cpy}.
+Use ours from our libc.
+
+--- utils.c.orig	Wed Dec  3 02:20:11 2014
++++ utils.c	Wed Dec  3 02:20:36 2014
+@@ -662,65 +662,6 @@ char *strdup(const char *src) {
+ #endif
+ 
+ /*
+- * More intuitive version of strncpy with string termination
+- * from OpenBSD
+- */
+-size_t strlcpy(char *dst, const char *src, size_t siz) {
+-        char *d = dst;
+-        const char *s = src;
+-        size_t n = siz;
+-
+-        /* Copy as many bytes as will fit */
+-        if (n != 0) {
+-                while (--n != 0) {
+-                        if ((*d++ = *s++) == '\0')
+-                                break;
+-                }
+-        }
+-
+-        /* Not enough room in dst, add NUL and traverse rest of src */
+-        if (n == 0) {
+-                if (siz != 0)
+-                        *d = '\0';                /* NUL-terminate dst */
+-                while (*s++);
+-        }
+-
+-        return (s - src - 1);        /* count does not include NUL */
+-}
+-
+-/*
+- * More intuitive version os strncat with string termination
+- * from OpenBSD
+- */
+-size_t strlcat(char *dst, const char *src, size_t siz) {
+-        char *d = dst;
+-        const char *s = src;
+-        size_t n = siz;
+-        size_t dlen;
+-
+-        /* Find the end of dst and adjust bytes left but don't go past end */
+-        while (n-- != 0 && *d != '\0')
+-                d++;
+-
+-        dlen = d - dst;
+-        n = siz - dlen;
+-
+-        if (n == 0)
+-                return(dlen + strlen(s));
+-
+-        while (*s != '\0') {
+-                if (n != 1) {
+-                        *d++ = *s;
+-                        n--;
+-                }
+-                s++;
+-        }
+-        *d = '\0';
+-
+-        return (dlen + (s - src));        /* count does not include NUL */
+-}
+-
+-/*
+  * Shortcut for malloc/memset zero.
+  */
+ char *new(size_t size) {
