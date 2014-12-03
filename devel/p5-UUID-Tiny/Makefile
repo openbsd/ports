@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/03 18:08:19 benoit Exp $
 
 COMMENT=	tiny pure-perl UUID generation
 
 MODULES=	cpan
-DISTNAME=	UUID-Tiny-1.03
+DISTNAME =	UUID-Tiny-1.04
 CATEGORIES=	devel
 
 # perl
