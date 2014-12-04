@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/03 09:00:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/04 07:16:45 ajacoutot Exp $
 
 COMMENT=	GTK+ support library for colord
 
@@ -30,8 +30,9 @@ MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 MODULES=	devel/gettext \
 		textproc/intltool
 
-BUILD_DEPENDS=	lang/vala \
-		devel/gobject-introspection
+BUILD_DEPENDS=	devel/gobject-introspection \
+		lang/vala \
+		textproc/docbook2x
 
 LIB_DEPENDS=	graphics/colord \
 		x11/gtk+3
