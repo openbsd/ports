@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.197 2014/10/17 07:21:59 landry Exp $
+# $OpenBSD: Makefile,v 1.198 2014/12/04 17:55:53 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	31.2.0
+MOZILLA_VERSION =	31.3.0
 MOZILLA_BRANCH =	esr31
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-3.3.2
+PKGNAME-lightning =	lightning-3.3.3
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
@@ -83,9 +83,10 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 
+CONFIGURE_ENV+=MOZCONFIG=${WRKSRC}/mozilla/.mozconfig
 # MOZCONFIG is mandatory now even if empty ?
 post-patch:
-	touch ${WRKSRC}/.mozconfig
+	touch ${WRKSRC}/mozilla/.mozconfig
 
 post-install:
 .for xpi guid in ${GUIDS}
