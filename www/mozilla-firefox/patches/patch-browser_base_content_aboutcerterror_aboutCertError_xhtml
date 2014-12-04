@@ -1,8 +1,8 @@
-$OpenBSD: patch-browser_base_content_aboutcerterror_aboutCertError_xhtml,v 1.1 2014/07/24 18:03:00 landry Exp $
+$OpenBSD: patch-browser_base_content_aboutcerterror_aboutCertError_xhtml,v 1.2 2014/12/04 17:50:12 landry Exp $
 click the 'get certificate' button
---- browser/base/content/aboutcerterror/aboutCertError.xhtml.orig	Sat Jun 14 15:57:28 2014
-+++ browser/base/content/aboutcerterror/aboutCertError.xhtml	Sat Jun 14 15:57:56 2014
-@@ -96,6 +96,9 @@
+--- browser/base/content/aboutcerterror/aboutCertError.xhtml.orig	Tue Oct 14 23:02:23 2014
++++ browser/base/content/aboutcerterror/aboutCertError.xhtml	Fri Oct 17 09:46:22 2014
+@@ -101,6 +101,9 @@
            tech.textContent = getDescription();
  
          addDomainErrorLink();
