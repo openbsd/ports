@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/16 15:23:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/04 01:08:04 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -10,7 +10,7 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 
-V=		2.1
+V=		2.1.1
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
