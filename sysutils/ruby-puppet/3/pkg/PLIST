@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/11/25 13:19:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/12/04 14:17:39 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
-@unexec-delete rm -rf ${SYSCONFDIR}/puppet/*
-@unexec-delete rm -rf /var/puppet/*
+@extraunexec rm -rf ${SYSCONFDIR}/puppet/*
+@extraunexec rm -rf /var/puppet/*
 bin/extlookup2hiera
 bin/puppet
 ${MODRUBY_SITEDIR}/hiera/
