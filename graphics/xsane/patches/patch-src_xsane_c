@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_xsane_c,v 1.4 2014/12/04 21:05:42 ajacoutot Exp $
+
+overlapping memcpy
+
+--- src/xsane.c.orig	Tue Nov 16 21:57:51 2010
++++ src/xsane.c	Thu Dec  4 13:54:42 2014
+@@ -4892,7 +4892,7 @@ static void xsane_device_dialog(void)
+  char buf[TEXTBUFSIZE];
+  char windowname[TEXTBUFSIZE];
+  char devicetext[TEXTBUFSIZE];
+- char *textptr;
++ char *cp, *textptr;
+  GtkWidget *xsane_window;
+  GtkWidget *xsane_vbox_main;
+  GtkWidget *xsane_vbox_standard;
+@@ -4993,8 +4993,8 @@ static void xsane_device_dialog(void)
+     textptr = devicetext + strlen(devicetext);
+   }
+ 
+-  snprintf(buf, sizeof(buf), ":%s", devname);
+-  snprintf(buf, sizeof(buf), "/%s", (strrchr(buf, ':')+1));
++  cp = strrchr(devname, ':');
++  snprintf(buf, sizeof(buf), "/%s", cp ? cp + 1 : devname);
+   sprintf(textptr, "%s", (strrchr(buf, '/')+1));
+ 
+   xsane.device_text = strdup(devicetext);
