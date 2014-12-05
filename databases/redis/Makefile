@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.76 2014/11/11 10:12:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.77 2014/12/05 09:33:09 dcoppa Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-2.8.17
-REVISION =		2
+DISTNAME =		redis-2.8.18
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
@@ -36,8 +35,10 @@ DBDIR =			/var/redis
 SUBST_VARS +=		DBDIR
 
 pre-configure:
+	cp ${WRKSRC}/deps/lua/src/fpconv.? ${WRKSRC}/src/
 	cp ${WRKSRC}/deps/lua/src/strbuf.? ${WRKSRC}/src/
 	cp ${WRKSRC}/deps/lua/src/lua_*.c ${WRKSRC}/src/
+	rm -rf ${WRKSRC}/deps/lua
 	${SUBST_CMD} ${WRKSRC}/src/Makefile
 
 post-install:

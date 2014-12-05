@@ -1,6 +1,6 @@
-$OpenBSD: patch-redis_conf,v 1.14 2014/11/06 12:52:13 dcoppa Exp $
---- redis.conf.orig	Fri Sep 19 17:49:16 2014
-+++ redis.conf	Thu Nov  6 12:35:21 2014
+$OpenBSD: patch-redis_conf,v 1.15 2014/12/05 09:33:09 dcoppa Exp $
+--- redis.conf.orig	Thu Dec  4 04:36:52 2014
++++ redis.conf	Fri Dec  5 02:30:05 2014
 @@ -33,12 +33,14 @@
  ################################ GENERAL  #####################################
  
@@ -65,14 +65,14 @@ $OpenBSD: patch-redis_conf,v 1.14 2014/11/06 12:52:13 dcoppa Exp $
  # a different one on a per-connection basis using SELECT <dbid> where
 @@ -184,7 +187,7 @@ dbfilename dump.rdb
  # The Append Only File will also be created inside this directory.
- # 
+ #
  # Note that you must specify a directory here, not a file name.
 -dir ./
 +dir ${DBDIR}
  
  ################################# REPLICATION #################################
  
-@@ -345,7 +348,7 @@ slave-priority 100
+@@ -388,7 +391,7 @@ slave-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
@@ -81,7 +81,7 @@ $OpenBSD: patch-redis_conf,v 1.14 2014/11/06 12:52:13 dcoppa Exp $
  
  # Command renaming.
  #
-@@ -377,7 +380,7 @@ slave-priority 100
+@@ -420,7 +423,7 @@ slave-priority 100
  # Once the limit is reached Redis will close all the new connections sending
  # an error 'max number of clients reached'.
  #

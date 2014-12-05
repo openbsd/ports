@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_lua_src_lua_bit_c,v 1.1 2014/12/05 09:33:09 dcoppa Exp $
+--- deps/lua/src/lua_bit.c.orig	Fri Dec  5 03:06:08 2014
++++ deps/lua/src/lua_bit.c	Fri Dec  5 03:06:35 2014
+@@ -29,8 +29,8 @@
+ #define LUA_BITOP_VERSION	"1.0.2"
+ 
+ #define LUA_LIB
+-#include "lua.h"
+-#include "lauxlib.h"
++#include <lua.h>
++#include <lauxlib.h>
+ 
+ #ifdef _MSC_VER
+ /* MSVC is stuck in the last century and doesn't have C99's stdint.h. */
