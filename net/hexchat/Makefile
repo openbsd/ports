@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/10 19:15:50 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/05 14:12:24 bcallah Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		GTK+2 IRC Client
-DISTNAME =		hexchat-2.10.1
+DISTNAME =		hexchat-2.10.2
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
 
