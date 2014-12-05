@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/05/06 12:01:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2014/12/05 12:50:09 naddy Exp $
 
 COMMENT=	Chinese(Big5) VT100 terminal emulator for X
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_FTP=   no license
 WANTLIB=		c X11
 
 RUN_DEPENDS=	fonts/zh-taipeifonts
-
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS=	--os=OpenBSD --no-menu

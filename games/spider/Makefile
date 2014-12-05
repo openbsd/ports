@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2014/12/05 12:50:09 naddy Exp $
 
 COMMENT=	challenging double decked solitaire game
 
@@ -16,7 +16,6 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs xcb
 CONFIGURE_STYLE=imake
 INSTALL_TARGET=	install install.doc
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

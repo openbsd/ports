@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/05 12:50:09 naddy Exp $
 
 COMMENT=	symbolics math system
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WRKDIST=	${WRKDIR}/jacal
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 

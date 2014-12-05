@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2014/12/05 12:50:09 naddy Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -26,7 +26,6 @@ MAKE_ENV+=	UIC=${MODQT_UIC}
 PORTHOME=	${WRKDIST}
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-extract:

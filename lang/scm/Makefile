@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/09/11 08:47:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/12/05 12:50:09 naddy Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc vax sparc sparc64
@@ -33,7 +33,6 @@ FLAVORS =	no_x11
 FLAVOR ?=
 
 SUBST_VARS =	V
-USE_GROFF =	Yes
 
 SCM_DATA =	COPYING Idiffer.scm Iedline.scm Init${V}.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm \

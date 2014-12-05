@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2014/12/05 12:50:09 naddy Exp $
 
 COMMENT=	multilingual clone of vi/ex
 
@@ -26,7 +26,6 @@ AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf dest
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${SYSCONFDIR}/vi.exrc\"' 
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
-USE_GROFF =	Yes
 
 .if ${FLAVOR} == "canna"
 WANTLIB+=	canna

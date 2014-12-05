@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/12/05 12:50:09 naddy Exp $
 
 COMMENT=		wm-dockapp; Time/Date applet
 
@@ -14,7 +14,6 @@ WANTLIB=		ICE SM X11 Xext Xpm c m
 
 MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-jpeg

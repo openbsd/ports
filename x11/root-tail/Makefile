@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 20:39:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2014/12/05 12:50:09 naddy Exp $
 
 COMMENT=	tails a given file anywhere on your X11 root window
 
@@ -17,7 +17,6 @@ WANTLIB += X11 Xau Xdmcp Xext c
 MASTER_SITES=		${HOMESITE}/data/
 
 CONFIGURE_STYLE=	imake
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
