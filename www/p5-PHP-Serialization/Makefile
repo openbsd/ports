@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/05 07:17:08 benoit Exp $
 
 COMMENT=	simple means to move data between Perl and PHP
 
 MODULES=	cpan
-DISTNAME=	PHP-Serialization-0.33
-REVISION=	0
+DISTNAME =	PHP-Serialization-0.34
 CATEGORIES=     www
-USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes
