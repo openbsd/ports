@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.20 2014/11/15 10:22:23 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.21 2014/12/06 11:12:44 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -18,8 +18,8 @@ rc_pre() {
 	# runs in debug mode to prevent MaxClients warnings in logs
 	${rcexec} "${daemon} ${daemon_flags} -t" || return 1
 	[ -e /dev/lpt0 ] && chown _cups /dev/lp[a,t][0-2]
-	# XXX cups-driverd(8) can crash when foomatic DB sources are added/removed
-	#rm -f /var/cache/cups/*
+	# XXX cups-driverd(8) can crash when setting up a printer driver
+	rm -f /var/cache/cups/*
 
 	if [ -e /usr/sbin/lpd.pre-cups -a ! -f /usr/sbin/lpd -a -L /usr/sbin/lpc ]; then
 		return
