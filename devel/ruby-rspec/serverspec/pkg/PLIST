@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/17 17:28:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/06 10:26:34 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -46,6 +46,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/subject.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/bridge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/cgroup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/command.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/cron.rb
@@ -141,6 +142,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/type/gentoo/
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/gentoo/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/gentoo/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/
+${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/bridge_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/cgroup_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/docker_container_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/docker_image_spec.rb

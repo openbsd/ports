@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/27 09:33:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/12/06 10:26:34 jasper Exp $
 
 COMMENT=	RSpec tests for testing machine configuration/state
 
-DISTNAME=	serverspec-2.4.0
+DISTNAME=	serverspec-2.6.0
 
 HOMEPAGE=	http://serverspec.org/
 
@@ -12,7 +12,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/ruby-multi_json,${MODRUBY_FLAVOR} \
 		devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR} \
 		devel/ruby-rspec/3/its,${MODRUBY_FLAVOR} \
-		devel/ruby-rspec/specinfra,${MODRUBY_FLAVOR}>=2.8.0
+		devel/ruby-rspec/specinfra,${MODRUBY_FLAVOR}>=2.10.0
 
 MODRUBY_TEST=	rspec3
 TEST_DEPENDS=	devel/ruby-rspec/3/its,${MODRUBY_FLAVOR}
