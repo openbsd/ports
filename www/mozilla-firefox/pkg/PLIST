@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2014/03/24 21:11:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.55 2014/12/06 16:55:32 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -39,6 +39,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/omni.ja
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/amazondotcom.xml
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/bing.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/ddg.xml
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/eBay.xml
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/google.xml
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/twitter.xml
