@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.45 2013/11/12 22:11:50 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.46 2014/12/06 17:39:21 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -82,6 +82,7 @@ sub fullpkgname
 			require Data::Dumper;
 			say STDERR Data::Dumper::Dumper($self->{info});
 		}
+		$DB::single = 1;
 		die;
 	}
 }
