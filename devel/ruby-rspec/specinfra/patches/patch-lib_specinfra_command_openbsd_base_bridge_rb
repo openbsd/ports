@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_specinfra_command_openbsd_base_bridge_rb,v 1.1 2014/12/06 10:58:42 jasper Exp $
+--- lib/specinfra/command/openbsd/base/bridge.rb.orig	Sat Dec  6 11:54:37 2014
++++ lib/specinfra/command/openbsd/base/bridge.rb	Sat Dec  6 11:54:31 2014
+@@ -0,0 +1,11 @@
++class Specinfra::Command::Openbsd::Base::Bridge < Specinfra::Command::Base::Bridge
++  class << self
++    def check_exists(name)
++      "ifconfig #{name}"
++    end
++
++    def check_has_interface(name, interface)
++      "ifconfig #{name} | grep -o #{interface}"
++    end
++  end
++end
