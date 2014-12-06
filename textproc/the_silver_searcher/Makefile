@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/27 18:53:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/06 18:01:00 bcallah Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
-DISTNAME =	the_silver_searcher-0.26.0
+DISTNAME =	the_silver_searcher-0.27.0
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://github.com/ggreer/the_silver_searcher
@@ -23,6 +23,9 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 # referenced in Makefile, but apparently included in distfile
 NO_TEST =	YES
+
+pre-configure:
+	perl -pi -e "s,-O2,,g" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ag ${PREFIX}/bin/ag
