@@ -1,32 +1,33 @@
-# $OpenBSD: Makefile,v 1.40 2013/10/02 19:30:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2014/12/06 21:26:42 kirby Exp $
 
 COMMENT=	checks HTML documents for broken links
 
-MODPY_EGG_VERSION=8.4
-DISTNAME=	LinkChecker-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME:L}
+V=		9.3
+MODPY_EGG_VERSION=${V}
+GH_ACCOUNT=	wummel
+GH_PROJECT=	linkchecker
+GH_TAGNAME=	upstream/$V
+GH_COMMIT=	85dadc1f1a1d1379d6e3565fc20697adb6f69521
 
+DISTNAME=	${GH_PROJECT}-${V}
 CATEGORIES=    	www
 
-HOMEPAGE=	http://wummel.github.com/linkchecker/
+HOMEPAGE=	http://wummel.github.io/linkchecker/
 
 MAINTAINER=	Amit Kulkarni <amitkulz@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://github.com/downloads/wummel/linkchecker/ \
-		http://distfiles.nl/
-
-EXTRACT_SUFX=	.tar.xz
-
-MODULES=	lang/python
-
 WANTLIB+=	${MODPY_WANTLIB} pthread
 
-RUN_DEPENDS=	devel/desktop-file-utils \
-		net/py-dnspython
+MODULES=	devel/gettext lang/python
 
+RUN_DEPENDS=	devel/desktop-file-utils \
+		net/py-dnspython \
+		www/py-requests
+
+WRKDIST=	${WRKDIR}/${GH_PROJECT}-upstream-${V}
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
