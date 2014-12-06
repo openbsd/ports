@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.107 2014/09/23 18:19:21 espie Exp $
+# $OpenBSD: Engine.pm,v 1.108 2014/12/06 18:34:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -241,6 +241,18 @@ sub should_ignore
 	}
 }
 
+sub has_known_depends
+{
+	my ($self, $v) = @_;
+	for my $kind (qw(DEPENDS BDEPENDS)) {
+		next unless defined $v->{info}{$kind};
+		for my $d (values %{$v->{info}{$kind}}) {
+			return 0 unless $d->has_fullpkgname;
+		}
+	}
+	return 1;
+}
+
 sub adjust_extra
 {
 	my ($self, $v, $kind, $kind2) = @_;
@@ -248,7 +260,8 @@ sub adjust_extra
 	my $not_yet = 0;
 	for my $d (values %{$v->{info}{$kind}}) {
 		$self->{heuristics}->mark_depend($d, $v);
-		if ((defined $d->{info} && !$self->{tobuild}{$d}) ||
+		if ((defined $d->{info} && !$self->{tobuild}{$d} && 
+			$self->has_known_depends($d)) ||
 		    ($d->has_fullpkgname &&
 		    $d->fullpkgname eq $v->fullpkgname)) {
 			delete $v->{info}{$kind}{$d};
