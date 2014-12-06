@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/25 10:30:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/06 10:26:31 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -61,6 +61,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/arch/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/arch/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/bridge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/cron.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/base/group.rb
@@ -136,6 +137,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/bridge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/interface.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/inventory.rb
@@ -307,6 +309,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/factory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/bridge_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/inventory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/ip6tables_spec.rb
@@ -318,6 +321,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat7/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat7/service_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/ubuntu/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/ubuntu/ppa_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/configuration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/os_spec.rb
