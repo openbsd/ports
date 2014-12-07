@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.9 2013/10/06 13:33:31 espie Exp $
+# $OpenBSD: Job.pm,v 1.10 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,6 +16,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+use DPB::Util;
 
 # a "job" is the actual stuff a core runs at some point.
 # it's mostly an abstract class here... it's organized
@@ -64,18 +65,18 @@ sub redirect
 {
 	my ($self, $log) = @_;
 	close STDOUT;
-	open STDOUT, '>>', $log or die "Can't write to $log";
+	open STDOUT, '>>', $log or DPB::Util->die_bang("Can't write to $log");
 	close STDERR;
-	open STDERR, '>&STDOUT' or die "bad redirect";
+	open STDERR, '>&STDOUT' or DPB::Util->die_bang("bad redirect");
 }
 
 sub redirect_fh
 {
 	my ($self, $fh, $log) = @_;
 	close STDOUT;
-	open STDOUT, '>&', $fh or die "Can't write to $log";
+	open STDOUT, '>&', $fh or DPB::Util->die_bang("Can't write to $log");
 	close STDERR;
-	open STDERR, '>&STDOUT' or die "bad redirect";
+	open STDERR, '>&STDOUT' or DPB::Util->die_bang("bad redirect");
 }
 
 package DPB::Task::Pipe;

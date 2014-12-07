@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.20 2014/03/09 20:15:10 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.21 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,6 +24,26 @@ sub new
 	my ($class, $engine) = @_;
 	bless { engine => $engine, queue => $class->new_queue($engine),
 		doing => {}, later => {}}, $class;
+}
+
+sub detain
+{
+	my ($self, $v) = @_;
+	$self->{detained}{$self->key_for_doing($v)} = 1;
+}
+
+sub release
+{
+	my ($self, $v) = @_;
+	my $k = $self->key_for_doing($v);
+	delete $self->{detained}{$k};
+	for my $candidate (values %{$self->{later2}}) {
+		if ($self->key_for_doing($candidate) eq $k) {
+			delete $self->{later2}{$candidate};
+			$self->log('x', $candidate);
+			$self->add($candidate);
+		}
+	}
 }
 
 sub count
@@ -140,6 +160,11 @@ sub can_really_start_build
 		$self->remove($v);
 		$self->{later}{$v} = $v;
 		$self->log('^', $v);
+		return 0;
+	} elsif ($self->{detained}{$self->key_for_doing($v)}) {
+		$self->remove($v);
+		$self->{later2}{$v} = $v;
+		$self->log('X', $v);
 		return 0;
 	} else {
 		return $self->can_start_build($v, $core);

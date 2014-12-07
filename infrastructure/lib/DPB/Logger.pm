@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.13 2014/03/15 09:51:27 espie Exp $
+# $OpenBSD: Logger.pm,v 1.14 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -42,7 +42,8 @@ sub _open
 {
 	my ($self, $mode, $name) = @_;
 	my $log = $self->logfile($name);
-	my $fh = IO::File->new($log, $mode) or die "Can't write to $log: $!\n";
+	my $fh = IO::File->new($log, $mode) or 
+	    DPB::Util->die_bang("Can't write to $log");
 	my $flags = $fh->fcntl(F_GETFL, 0);
 	$fh->fcntl(F_SETFL, $flags | FD_CLOEXEC);
 	return $fh;
@@ -121,7 +122,8 @@ sub log_error
 {
 	my ($self, $v, @messages) = @_;
 	my $log = $self->make_logs($v);
-	CORE::open my $fh, ">>", $log or die "Can't write to $log: $!\n";
+	CORE::open my $fh, ">>", $log or 
+	    DPB::Util->die_bang("Can't write to $log");
 	for my $msg (@messages) {
 		print $fh $msg, "\n";
 	}

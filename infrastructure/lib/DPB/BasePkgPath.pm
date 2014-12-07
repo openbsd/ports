@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.5 2013/10/06 13:33:26 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.6 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,6 +16,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+use DPB::Util;
 
 # Handles PkgPath;
 # all this code is *seriously* dependent on unique objects
@@ -36,7 +37,7 @@ sub create
 	$o->init;
 	for my $v (@list) {
 		if ($v =~ m/^\-/) {
-			die "$fullpkgpath has >1 multi\n" 
+			DPB::Util->die("$fullpkgpath has >1 multi") 
 			    if exists $o->{m};
 			if ($v eq '-main') {
 				$o->{m} = undef;

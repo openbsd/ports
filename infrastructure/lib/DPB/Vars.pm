@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.39 2014/03/17 10:48:40 espie Exp $
+# $OpenBSD: Vars.pm,v 1.40 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,6 +16,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+use DPB::Util;
 
 package DPB::GetThings;
 sub subdirlist
@@ -84,7 +85,7 @@ EOT
 		open(STDIN, '<&', $rh);
 		$shell->chdir('/')
 			->exec($make, '-f', '-', 'print-data');
-		die "oops couldn't exec $make";
+		DPB::Util->die("oops couldn't exec $make");
     	}
 	return @list;
 }
@@ -95,7 +96,7 @@ sub run_pipe
 	$core->start_pipe(sub {
 		my $shell = shift;
 		close STDERR;
-		open STDERR, '>&', STDOUT or die "bad redirect";
+		open STDERR, '>&', STDOUT or DPB::Util->die_bang("bad redirect");
 		$class->run_command($core, $shell, $grabber, $subdirs,
 		    'dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
 	}, "LISTING");

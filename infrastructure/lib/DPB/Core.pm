@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.73 2014/07/14 17:54:11 espie Exp $
+# $OpenBSD: Core.pm,v 1.74 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,6 +16,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+use DPB::Util;
 
 # we have unique objects for hosts, so we can put properties in there.
 package DPB::Host;
@@ -376,7 +377,7 @@ sub run_task
 	my $core = shift;
 	my $pid = $core->task->fork($core);
 	if (!defined $pid) {
-		die "Oops: task ".$core->task->name." couldn't start\n";
+		DPB::Util->die_bang("Oops: task ".$core->task->name." couldn't start");
 	} elsif ($pid == 0) {
 		$DB::inhibit_exit = 0;
 		for my $sig (keys %SIG) {
@@ -420,7 +421,7 @@ sub mark_ready
 	if ($self->{pid}) {
 		require Data::Dumper;
 		print Data::Dumper::Dumper($self), "\n";
-		die "Marking ready an incomplete process";
+		DPB::Util->die("Marking ready an incomplete process");
 	}
 	delete $self->{job};
 	return $self;
@@ -927,7 +928,7 @@ sub is_alive
 sub chdir
 {
 	my ($self, $dir) = @_;
-	CORE::chdir($dir) or die "Can't chdir to $dir\n";
+	CORE::chdir($dir) or DPB::Util->die_bang("Can't chdir to $dir");
 	return $self;
 }
 

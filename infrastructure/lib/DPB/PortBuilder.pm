@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.62 2014/07/18 07:02:20 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.63 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -206,7 +206,7 @@ sub build
 	my ($self, $v, $core, $lock, $final_sub) = @_;
 	my $start = time();
 	my $log = $self->logger->make_logs($v);
-	open my $fh, ">>", $log or die "can't open $log: $!";
+	open my $fh, ">>", $log or DPB::Util->die_bang("can't open $log");
 	my $memsize = $self->{sizer}->build_in_memory($fh, $core, $v);
 	my $meminfo;
 
@@ -249,7 +249,7 @@ sub test
 	my $log = $self->logger->make_test_logs($v);
 	my $memsize = $self->{sizer}->build_in_memory($core, $v);
 
-	open my $fh, ">>", $log or die "can't open $log: $!";
+	open my $fh, ">>", $log or DPB::Util->die_bang("can't open $log");
 	if ($memsize) {
 		print $lock "mem=$memsize\n";
 		print $fh ">>> Building in memory under ";
@@ -282,7 +282,7 @@ sub install
 {
 	my ($self, $v, $core) = @_;
 	my $log = $self->logger->make_logs($v);
-	open my $fh, ">>", $log or die "can't open $log: $!";
+	open my $fh, ">>", $log or DPB::Util->die_bang("can't open $log");
 	print $fh ">>> Installing under ";
 	$v->quick_dump($fh);
 	my $job = DPB::Job::Port::Install->new($log, $fh, $v, $self,

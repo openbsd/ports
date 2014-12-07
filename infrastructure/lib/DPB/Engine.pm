@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.108 2014/12/06 18:34:05 espie Exp $
+# $OpenBSD: Engine.pm,v 1.109 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -493,13 +493,9 @@ sub rebuild_info
 	my @l = @{$self->{requeued}};
 	$self->{requeued} = [];
 	my %subdirs = map {($_->pkgpath_and_flavors, 1)} @l;
-	for my $v (@l) {
-		$v->ensure_fullpkgname;
-	}
 
-	$self->{heldlocks} = {};
 	for my $v (@l) {
-		$self->{heldlocks}{$v} = $self->{locker}->lock($v);
+		$self->{buildable}->detain($v);
 		if (defined $v->{info}{FDEPENDS}) {
 			for my $f (values %{$v->{info}{FDEPENDS}}) {
 				$f->forget;
@@ -509,10 +505,8 @@ sub rebuild_info
 	}
 	$self->{state}->grabber->grab_subdirs($core, \%subdirs);
 	for my $v (@l) {
-		next unless $self->{heldlocks}{$v};
-		$self->{locker}->unlock($v);
+		$self->{buildable}->release($v);
 	}
-	$self->{heldlocks} = {};
 }
 
 sub start_new_job

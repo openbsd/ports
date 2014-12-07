@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.46 2014/12/06 17:39:21 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.47 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -16,7 +16,6 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
-use feature qw(say);
 
 # Handles PkgPath;
 # all this code is *seriously* dependent on unique objects
@@ -24,6 +23,7 @@ use feature qw(say);
 # one pkgpath object for each distinct flavor/subpackage combination
 
 use DPB::BasePkgPath;
+use DPB::Util;
 
 package DPB::PkgPath;
 our @ISA = qw(DPB::BasePkgPath);
@@ -71,27 +71,11 @@ sub fullpkgname
 {
 	my $self = shift;
 	if (defined $self->{info} && defined $self->{info}{FULLPKGNAME}) {
-		delete $self->{tmpname};
 		return ${$self->{info}{FULLPKGNAME}};
-	} elsif (defined $self->{tmpname}) {
-		return $self->{tmpname};
 	} else {
-		say STDERR $self->fullpkgpath, " has no associated fullpkgname\n";
-		if (defined $self->{info}) {
-			say STDERR "But info is defined"; 
-			require Data::Dumper;
-			say STDERR Data::Dumper::Dumper($self->{info});
-		}
-		$DB::single = 1;
-		die;
-	}
-}
-
-sub ensure_fullpkgname
-{
-	my $self = shift;
-	if (!defined $self->{tmpname} && $self->has_fullpkgname) {
-		$self->{tmpname} = $self->fullpkgname;
+		DPB::Util->die(
+		    $self->fullpkgpath." has no associated fullpkgname", 
+		    $self->{info});
 	}
 }
 

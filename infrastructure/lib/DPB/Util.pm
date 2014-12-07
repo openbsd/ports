@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Util.pm,v 1.4 2013/10/06 13:33:35 espie Exp $
+# $OpenBSD: Util.pm,v 1.5 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,6 +17,7 @@
 
 use strict;
 use warnings;
+use feature qw(say);
 
 package DPB::Util;
 sub make_hot
@@ -42,6 +43,23 @@ sub time2string
 	my ($sec, $min, $hour, $mday, $mon) = (localtime $time)[0 .. 4];
 	return sprintf("%d %s %02d:%02d:%02d", $mday, $name[$mon],
 	    $hour, $min, $sec);
+}
+
+sub die_bang
+{
+	my ($class, $msg) = @_;
+	$class->die("$msg: $!", @_);
+}
+
+sub die
+{
+	my ($class, $msg) = @_;
+	if (@_ > 0) {
+		require Data::Dumper;
+		say STDERR Data::Dumper::Dump(@_);
+	}
+	$DB::single = 1;
+	CORE::die("$msg\n");
 }
 
 1

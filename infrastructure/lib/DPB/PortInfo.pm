@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.34 2014/03/17 10:48:40 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.35 2014/12/07 15:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -212,7 +212,7 @@ sub new
 		} else {
 			$d =~ s/\:$//;
 			if ($d =~ m/[:<>=]/) {
-				die "Error: invalid *DEPENDS $copy";
+				DPB::Util->die("Error: invalid *DEPENDS $copy");
 			} else {
 				my $info = DPB::PkgPath->new($d);
 				$info->{parent} //= $parent;
