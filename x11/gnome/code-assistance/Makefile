@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/01 08:53:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/07 13:04:56 jasper Exp $
 
 COMMENT=		code assistance services for GNOME
 
 GNOME_PROJECT=		gnome-code-assistance
-GNOME_VERSION=		0.3.1
-
-REVISION =		2
+GNOME_VERSION=		3.14.0
 
 CATEGORIES=		devel
 
@@ -44,9 +42,5 @@ CONFIGURE_ARGS +=	--disable-go
 # python3 vs. python3.3
 post-extract:
 	perl -pi -e 's,PYTHON_VERSION_MAJOR,PYTHON_VERSION,g' ${WRKSRC}/backends/*/*.in
-
-# XXX: Remove when updating
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.mk>
