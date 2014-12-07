@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2014/08/29 21:09:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/07 19:05:15 jasper Exp $
 
 COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-0.2.11
+REVISION=		0
 
 SHARED_LIBS +=  osinfo-1.0           0.0      # 2.11
 
