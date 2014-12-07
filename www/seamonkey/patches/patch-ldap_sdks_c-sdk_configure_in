@@ -1,0 +1,13 @@
+$OpenBSD: patch-ldap_sdks_c-sdk_configure_in,v 1.7 2014/12/07 09:19:57 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=1107063
+--- ldap/sdks/c-sdk/configure.in.orig	Sun Dec  7 00:10:29 2014
++++ ldap/sdks/c-sdk/configure.in	Sun Dec  7 00:10:57 2014
+@@ -1823,7 +1823,7 @@ mips-sony-newsos*)
+     fi
+     DSO_CFLAGS=-fPIC
+     USE_NSPR_THREADS=1
+-    DSO_LDOPTS='-shared -fPIC'
++    DSO_LDOPTS='-shared -fPIC -Wl,-soname,$(notdir $@)'
+     ;;
+ 
+ *-openvms*)

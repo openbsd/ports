@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.163 2014/10/17 07:30:43 landry Exp $
+# $OpenBSD: Makefile,v 1.164 2014/12/07 09:19:57 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 
-MOZILLA_VERSION =	2.30
+MOZILLA_VERSION =	2.31
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-3.5
+PKGNAME-lightning =	lightning-seamonkey-3.6
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
-SO_VERSION =	39.0
+SO_VERSION =	40.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -89,10 +89,10 @@ post-patch:
 	touch ${WRKSRC}/mozilla/.mozconfig
 
 post-install:
-	${INSTALL_MAN} ${WRKBUILD}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 
 .for xpi guid in ${GUIDS}
-	${UNZIP} -oq ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}
+	${UNZIP} -oq ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}
 .endfor
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \

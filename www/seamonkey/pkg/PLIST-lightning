@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-lightning,v 1.22 2014/09/09 21:27:17 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.23 2014/12/07 09:19:57 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/.mkdir.done
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider-en-US/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider-en-US/locale/
@@ -87,6 +88,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calWeekPrinter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/.mkdir.done
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar-en-US.jar
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/
@@ -478,8 +480,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calWcapCalendarModule.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calbase.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calbaseinternal.xpt
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/caldatetime_icaljs.xpt
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/caldatetime_libical.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/caldav.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/icaljs.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/interfaces.manifest
@@ -494,6 +494,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/install.rdf
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calAlarmUtils.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calAsyncUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calAuthUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calExtract.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calHashedArray.jsm
