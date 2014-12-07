@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2014/11/18 10:49:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.68 2014/12/07 22:57:24 giovanni Exp $
 
 COMMENT=		open source web analytics software program
 
-DISTNAME=		piwik-2.9.0
+DISTNAME=		piwik-2.9.1
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.piwik.org/

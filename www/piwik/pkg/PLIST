@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2014/11/18 10:49:25 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.54 2014/12/07 22:57:24 giovanni Exp $
 @group daemon
 piwik/
 piwik/.bowerrc
@@ -179,9 +179,15 @@ piwik/core/DeviceDetectorCache.php
 piwik/core/DeviceDetectorFactory.php
 piwik/core/Error.php
 piwik/core/EventDispatcher.php
+piwik/core/Exception/
+piwik/core/Exception/AuthenticationFailedException.php
+piwik/core/Exception/Exception.php
+piwik/core/Exception/InvalidRequestParameterException.php
+piwik/core/Exception/MissingFilePermissionException.php
+piwik/core/Exception/NoPrivilegesException.php
+piwik/core/Exception/NoWebsiteFoundException.php
+piwik/core/Exception/UnexpectedWebsiteFoundException.php
 piwik/core/ExceptionHandler.php
-piwik/core/Exceptions/
-piwik/core/Exceptions/HtmlMessageException.php
 piwik/core/Filechecks.php
 piwik/core/Filesystem.php
 piwik/core/FrontController.php
@@ -496,6 +502,7 @@ piwik/lang/sv.json
 piwik/lang/ta.json
 piwik/lang/te.json
 piwik/lang/th.json
+piwik/lang/tl.json
 piwik/lang/tr.json
 piwik/lang/uk.json
 piwik/lang/vi.json
@@ -1676,6 +1683,7 @@ piwik/plugins/API/lang/sv.json
 piwik/plugins/API/lang/ta.json
 piwik/plugins/API/lang/te.json
 piwik/plugins/API/lang/th.json
+piwik/plugins/API/lang/tl.json
 piwik/plugins/API/lang/tr.json
 piwik/plugins/API/lang/uk.json
 piwik/plugins/API/lang/vi.json
@@ -1781,6 +1789,7 @@ piwik/plugins/Actions/lang/sv.json
 piwik/plugins/Actions/lang/ta.json
 piwik/plugins/Actions/lang/te.json
 piwik/plugins/Actions/lang/th.json
+piwik/plugins/Actions/lang/tl.json
 piwik/plugins/Actions/lang/tr.json
 piwik/plugins/Actions/lang/uk.json
 piwik/plugins/Actions/lang/vi.json
@@ -1833,6 +1842,7 @@ piwik/plugins/Annotations/lang/sv.json
 piwik/plugins/Annotations/lang/ta.json
 piwik/plugins/Annotations/lang/te.json
 piwik/plugins/Annotations/lang/th.json
+piwik/plugins/Annotations/lang/tl.json
 piwik/plugins/Annotations/lang/tr.json
 piwik/plugins/Annotations/lang/vi.json
 piwik/plugins/Annotations/lang/zh-cn.json
@@ -1877,11 +1887,13 @@ piwik/plugins/Contents/lang/en.json
 piwik/plugins/Contents/lang/es.json
 piwik/plugins/Contents/lang/et.json
 piwik/plugins/Contents/lang/fi.json
+piwik/plugins/Contents/lang/fr.json
 piwik/plugins/Contents/lang/it.json
 piwik/plugins/Contents/lang/ja.json
 piwik/plugins/Contents/lang/nl.json
 piwik/plugins/Contents/lang/pl.json
 piwik/plugins/Contents/lang/pt.json
+piwik/plugins/Contents/lang/tl.json
 piwik/plugins/Contents/lang/tr.json
 piwik/plugins/Contents/plugin.json
 piwik/plugins/Contents/screenshots/
@@ -1945,6 +1957,7 @@ piwik/plugins/CoreAdminHome/lang/sv.json
 piwik/plugins/CoreAdminHome/lang/ta.json
 piwik/plugins/CoreAdminHome/lang/te.json
 piwik/plugins/CoreAdminHome/lang/th.json
+piwik/plugins/CoreAdminHome/lang/tl.json
 piwik/plugins/CoreAdminHome/lang/tr.json
 piwik/plugins/CoreAdminHome/lang/uk.json
 piwik/plugins/CoreAdminHome/lang/vi.json
@@ -2150,6 +2163,7 @@ piwik/plugins/CoreHome/lang/sv.json
 piwik/plugins/CoreHome/lang/ta.json
 piwik/plugins/CoreHome/lang/te.json
 piwik/plugins/CoreHome/lang/th.json
+piwik/plugins/CoreHome/lang/tl.json
 piwik/plugins/CoreHome/lang/tr.json
 piwik/plugins/CoreHome/lang/uk.json
 piwik/plugins/CoreHome/lang/vi.json
@@ -2277,6 +2291,7 @@ piwik/plugins/CorePluginsAdmin/lang/sv.json
 piwik/plugins/CorePluginsAdmin/lang/ta.json
 piwik/plugins/CorePluginsAdmin/lang/te.json
 piwik/plugins/CorePluginsAdmin/lang/th.json
+piwik/plugins/CorePluginsAdmin/lang/tl.json
 piwik/plugins/CorePluginsAdmin/lang/tr.json
 piwik/plugins/CorePluginsAdmin/lang/uk.json
 piwik/plugins/CorePluginsAdmin/lang/vi.json
@@ -2289,7 +2304,6 @@ piwik/plugins/CorePluginsAdmin/templates/
 piwik/plugins/CorePluginsAdmin/templates/browsePlugins.twig
 piwik/plugins/CorePluginsAdmin/templates/browsePluginsActions.twig
 piwik/plugins/CorePluginsAdmin/templates/browseThemes.twig
-piwik/plugins/CorePluginsAdmin/templates/extend.twig
 piwik/plugins/CorePluginsAdmin/templates/installPlugin.twig
 piwik/plugins/CorePluginsAdmin/templates/macros.twig
 piwik/plugins/CorePluginsAdmin/templates/pluginDetails.twig
@@ -2356,6 +2370,7 @@ piwik/plugins/CoreUpdater/lang/sv.json
 piwik/plugins/CoreUpdater/lang/ta.json
 piwik/plugins/CoreUpdater/lang/te.json
 piwik/plugins/CoreUpdater/lang/th.json
+piwik/plugins/CoreUpdater/lang/tl.json
 piwik/plugins/CoreUpdater/lang/tr.json
 piwik/plugins/CoreUpdater/lang/uk.json
 piwik/plugins/CoreUpdater/lang/vi.json
@@ -2463,6 +2478,7 @@ piwik/plugins/CustomVariables/lang/sr.json
 piwik/plugins/CustomVariables/lang/sv.json
 piwik/plugins/CustomVariables/lang/ta.json
 piwik/plugins/CustomVariables/lang/th.json
+piwik/plugins/CustomVariables/lang/tl.json
 piwik/plugins/CustomVariables/lang/tr.json
 piwik/plugins/CustomVariables/lang/vi.json
 piwik/plugins/CustomVariables/lang/zh-cn.json
@@ -2532,6 +2548,7 @@ piwik/plugins/DBStats/lang/sv.json
 piwik/plugins/DBStats/lang/ta.json
 piwik/plugins/DBStats/lang/te.json
 piwik/plugins/DBStats/lang/th.json
+piwik/plugins/DBStats/lang/tl.json
 piwik/plugins/DBStats/lang/tr.json
 piwik/plugins/DBStats/lang/uk.json
 piwik/plugins/DBStats/lang/vi.json
@@ -2603,6 +2620,7 @@ piwik/plugins/Dashboard/lang/sv.json
 piwik/plugins/Dashboard/lang/ta.json
 piwik/plugins/Dashboard/lang/te.json
 piwik/plugins/Dashboard/lang/th.json
+piwik/plugins/Dashboard/lang/tl.json
 piwik/plugins/Dashboard/lang/tr.json
 piwik/plugins/Dashboard/lang/uk.json
 piwik/plugins/Dashboard/lang/vi.json
@@ -2797,9 +2815,11 @@ piwik/plugins/DevicesDetection/lang/pt-br.json
 piwik/plugins/DevicesDetection/lang/pt.json
 piwik/plugins/DevicesDetection/lang/ro.json
 piwik/plugins/DevicesDetection/lang/ru.json
+piwik/plugins/DevicesDetection/lang/sl.json
 piwik/plugins/DevicesDetection/lang/sq.json
 piwik/plugins/DevicesDetection/lang/sr.json
 piwik/plugins/DevicesDetection/lang/sv.json
+piwik/plugins/DevicesDetection/lang/tl.json
 piwik/plugins/DevicesDetection/lang/tr.json
 piwik/plugins/DevicesDetection/lang/vi.json
 piwik/plugins/DevicesDetection/lang/zh-cn.json
@@ -2856,6 +2876,7 @@ piwik/plugins/Events/lang/sl.json
 piwik/plugins/Events/lang/sr.json
 piwik/plugins/Events/lang/sv.json
 piwik/plugins/Events/lang/ta.json
+piwik/plugins/Events/lang/tl.json
 piwik/plugins/Events/lang/tr.json
 piwik/plugins/Events/lang/vi.json
 piwik/plugins/Events/lang/zh-cn.json
@@ -3025,6 +3046,7 @@ piwik/plugins/Feedback/lang/sr.json
 piwik/plugins/Feedback/lang/sv.json
 piwik/plugins/Feedback/lang/ta.json
 piwik/plugins/Feedback/lang/th.json
+piwik/plugins/Feedback/lang/tl.json
 piwik/plugins/Feedback/lang/tr.json
 piwik/plugins/Feedback/lang/uk.json
 piwik/plugins/Feedback/lang/vi.json
@@ -3228,7 +3250,9 @@ piwik/plugins/Insights/lang/ro.json
 piwik/plugins/Insights/lang/ru.json
 piwik/plugins/Insights/lang/sr.json
 piwik/plugins/Insights/lang/sv.json
+piwik/plugins/Insights/lang/tl.json
 piwik/plugins/Insights/lang/tr.json
+piwik/plugins/Insights/lang/zh-cn.json
 piwik/plugins/Insights/plugin.json
 piwik/plugins/Insights/stylesheets/
 piwik/plugins/Insights/stylesheets/insightVisualization.less
@@ -3243,6 +3267,8 @@ piwik/plugins/Insights/templates/table_header.twig
 piwik/plugins/Insights/templates/table_row.twig
 piwik/plugins/Installation/
 piwik/plugins/Installation/Controller.php
+piwik/plugins/Installation/Exception/
+piwik/plugins/Installation/Exception/DatabaseConnectionFailedException.php
 piwik/plugins/Installation/FormDatabaseSetup.php
 piwik/plugins/Installation/FormDefaultSettings.php
 piwik/plugins/Installation/FormFirstWebsiteSetup.php
@@ -3300,6 +3326,7 @@ piwik/plugins/Installation/lang/sv.json
 piwik/plugins/Installation/lang/ta.json
 piwik/plugins/Installation/lang/te.json
 piwik/plugins/Installation/lang/th.json
+piwik/plugins/Installation/lang/tl.json
 piwik/plugins/Installation/lang/tr.json
 piwik/plugins/Installation/lang/uk.json
 piwik/plugins/Installation/lang/vi.json
@@ -3387,6 +3414,7 @@ piwik/plugins/LanguagesManager/lang/sr.json
 piwik/plugins/LanguagesManager/lang/sv.json
 piwik/plugins/LanguagesManager/lang/te.json
 piwik/plugins/LanguagesManager/lang/th.json
+piwik/plugins/LanguagesManager/lang/tl.json
 piwik/plugins/LanguagesManager/lang/tr.json
 piwik/plugins/LanguagesManager/lang/uk.json
 piwik/plugins/LanguagesManager/lang/vi.json
@@ -3417,7 +3445,9 @@ piwik/plugins/LeftMenu/lang/ro.json
 piwik/plugins/LeftMenu/lang/ru.json
 piwik/plugins/LeftMenu/lang/sr.json
 piwik/plugins/LeftMenu/lang/sv.json
+piwik/plugins/LeftMenu/lang/tl.json
 piwik/plugins/LeftMenu/lang/tr.json
+piwik/plugins/LeftMenu/lang/zh-cn.json
 piwik/plugins/LeftMenu/plugin.json
 piwik/plugins/LeftMenu/stylesheets/
 piwik/plugins/LeftMenu/stylesheets/theme.less
@@ -3504,6 +3534,7 @@ piwik/plugins/Live/lang/sv.json
 piwik/plugins/Live/lang/ta.json
 piwik/plugins/Live/lang/te.json
 piwik/plugins/Live/lang/th.json
+piwik/plugins/Live/lang/tl.json
 piwik/plugins/Live/lang/tr.json
 piwik/plugins/Live/lang/uk.json
 piwik/plugins/Live/lang/vi.json
@@ -3579,6 +3610,7 @@ piwik/plugins/Login/lang/sv.json
 piwik/plugins/Login/lang/ta.json
 piwik/plugins/Login/lang/te.json
 piwik/plugins/Login/lang/th.json
+piwik/plugins/Login/lang/tl.json
 piwik/plugins/Login/lang/tr.json
 piwik/plugins/Login/lang/uk.json
 piwik/plugins/Login/lang/vi.json
@@ -3638,6 +3670,7 @@ piwik/plugins/MobileMessaging/lang/sr.json
 piwik/plugins/MobileMessaging/lang/sv.json
 piwik/plugins/MobileMessaging/lang/ta.json
 piwik/plugins/MobileMessaging/lang/th.json
+piwik/plugins/MobileMessaging/lang/tl.json
 piwik/plugins/MobileMessaging/lang/vi.json
 piwik/plugins/MobileMessaging/lang/zh-cn.json
 piwik/plugins/MobileMessaging/stylesheets/
@@ -3864,6 +3897,7 @@ piwik/plugins/MultiSites/lang/sr.json
 piwik/plugins/MultiSites/lang/sv.json
 piwik/plugins/MultiSites/lang/ta.json
 piwik/plugins/MultiSites/lang/th.json
+piwik/plugins/MultiSites/lang/tl.json
 piwik/plugins/MultiSites/lang/uk.json
 piwik/plugins/MultiSites/lang/vi.json
 piwik/plugins/MultiSites/lang/zh-cn.json
@@ -3926,6 +3960,7 @@ piwik/plugins/Overlay/lang/sv.json
 piwik/plugins/Overlay/lang/ta.json
 piwik/plugins/Overlay/lang/te.json
 piwik/plugins/Overlay/lang/th.json
+piwik/plugins/Overlay/lang/tl.json
 piwik/plugins/Overlay/lang/vi.json
 piwik/plugins/Overlay/lang/zh-cn.json
 piwik/plugins/Overlay/stylesheets/
@@ -3991,6 +4026,7 @@ piwik/plugins/PrivacyManager/lang/sr.json
 piwik/plugins/PrivacyManager/lang/sv.json
 piwik/plugins/PrivacyManager/lang/te.json
 piwik/plugins/PrivacyManager/lang/th.json
+piwik/plugins/PrivacyManager/lang/tl.json
 piwik/plugins/PrivacyManager/lang/tr.json
 piwik/plugins/PrivacyManager/lang/uk.json
 piwik/plugins/PrivacyManager/lang/vi.json
@@ -4053,6 +4089,7 @@ piwik/plugins/Provider/lang/sq.json
 piwik/plugins/Provider/lang/sr.json
 piwik/plugins/Provider/lang/sv.json
 piwik/plugins/Provider/lang/th.json
+piwik/plugins/Provider/lang/tl.json
 piwik/plugins/Provider/lang/tr.json
 piwik/plugins/Provider/lang/uk.json
 piwik/plugins/Provider/lang/vi.json
@@ -4454,6 +4491,7 @@ piwik/plugins/Referrers/lang/sr.json
 piwik/plugins/Referrers/lang/sv.json
 piwik/plugins/Referrers/lang/te.json
 piwik/plugins/Referrers/lang/th.json
+piwik/plugins/Referrers/lang/tl.json
 piwik/plugins/Referrers/lang/tr.json
 piwik/plugins/Referrers/lang/uk.json
 piwik/plugins/Referrers/lang/vi.json
@@ -4512,6 +4550,7 @@ piwik/plugins/SEO/lang/sr.json
 piwik/plugins/SEO/lang/sv.json
 piwik/plugins/SEO/lang/te.json
 piwik/plugins/SEO/lang/th.json
+piwik/plugins/SEO/lang/tl.json
 piwik/plugins/SEO/lang/tr.json
 piwik/plugins/SEO/lang/uk.json
 piwik/plugins/SEO/lang/vi.json
@@ -4571,6 +4610,7 @@ piwik/plugins/ScheduledReports/lang/sv.json
 piwik/plugins/ScheduledReports/lang/ta.json
 piwik/plugins/ScheduledReports/lang/te.json
 piwik/plugins/ScheduledReports/lang/th.json
+piwik/plugins/ScheduledReports/lang/tl.json
 piwik/plugins/ScheduledReports/lang/tr.json
 piwik/plugins/ScheduledReports/lang/uk.json
 piwik/plugins/ScheduledReports/lang/vi.json
@@ -4628,6 +4668,7 @@ piwik/plugins/SegmentEditor/lang/ru.json
 piwik/plugins/SegmentEditor/lang/sl.json
 piwik/plugins/SegmentEditor/lang/sr.json
 piwik/plugins/SegmentEditor/lang/sv.json
+piwik/plugins/SegmentEditor/lang/tl.json
 piwik/plugins/SegmentEditor/lang/vi.json
 piwik/plugins/SegmentEditor/lang/zh-cn.json
 piwik/plugins/SegmentEditor/stylesheets/
@@ -4702,6 +4743,7 @@ piwik/plugins/SitesManager/lang/sv.json
 piwik/plugins/SitesManager/lang/ta.json
 piwik/plugins/SitesManager/lang/te.json
 piwik/plugins/SitesManager/lang/th.json
+piwik/plugins/SitesManager/lang/tl.json
 piwik/plugins/SitesManager/lang/tr.json
 piwik/plugins/SitesManager/lang/uk.json
 piwik/plugins/SitesManager/lang/vi.json
@@ -4769,6 +4811,7 @@ piwik/plugins/Transitions/lang/sl.json
 piwik/plugins/Transitions/lang/sr.json
 piwik/plugins/Transitions/lang/sv.json
 piwik/plugins/Transitions/lang/th.json
+piwik/plugins/Transitions/lang/tl.json
 piwik/plugins/Transitions/lang/tr.json
 piwik/plugins/Transitions/lang/vi.json
 piwik/plugins/Transitions/lang/zh-cn.json
@@ -5138,6 +5181,7 @@ piwik/plugins/UserCountry/lang/sv.json
 piwik/plugins/UserCountry/lang/ta.json
 piwik/plugins/UserCountry/lang/te.json
 piwik/plugins/UserCountry/lang/th.json
+piwik/plugins/UserCountry/lang/tl.json
 piwik/plugins/UserCountry/lang/tr.json
 piwik/plugins/UserCountry/lang/uk.json
 piwik/plugins/UserCountry/lang/vi.json
@@ -5207,6 +5251,7 @@ piwik/plugins/UserCountryMap/lang/sr.json
 piwik/plugins/UserCountryMap/lang/sv.json
 piwik/plugins/UserCountryMap/lang/te.json
 piwik/plugins/UserCountryMap/lang/th.json
+piwik/plugins/UserCountryMap/lang/tl.json
 piwik/plugins/UserCountryMap/lang/tr.json
 piwik/plugins/UserCountryMap/lang/uk.json
 piwik/plugins/UserCountryMap/lang/vi.json
@@ -5697,6 +5742,7 @@ piwik/plugins/UserSettings/lang/sv.json
 piwik/plugins/UserSettings/lang/ta.json
 piwik/plugins/UserSettings/lang/te.json
 piwik/plugins/UserSettings/lang/th.json
+piwik/plugins/UserSettings/lang/tl.json
 piwik/plugins/UserSettings/lang/tr.json
 piwik/plugins/UserSettings/lang/uk.json
 piwik/plugins/UserSettings/lang/vi.json
@@ -5762,6 +5808,7 @@ piwik/plugins/UsersManager/lang/sr.json
 piwik/plugins/UsersManager/lang/sv.json
 piwik/plugins/UsersManager/lang/te.json
 piwik/plugins/UsersManager/lang/th.json
+piwik/plugins/UsersManager/lang/tl.json
 piwik/plugins/UsersManager/lang/tr.json
 piwik/plugins/UsersManager/lang/uk.json
 piwik/plugins/UsersManager/lang/vi.json
@@ -5823,6 +5870,7 @@ piwik/plugins/VisitFrequency/lang/sr.json
 piwik/plugins/VisitFrequency/lang/sv.json
 piwik/plugins/VisitFrequency/lang/te.json
 piwik/plugins/VisitFrequency/lang/th.json
+piwik/plugins/VisitFrequency/lang/tl.json
 piwik/plugins/VisitFrequency/lang/uk.json
 piwik/plugins/VisitFrequency/lang/vi.json
 piwik/plugins/VisitFrequency/lang/zh-cn.json
@@ -5892,6 +5940,7 @@ piwik/plugins/VisitTime/lang/sr.json
 piwik/plugins/VisitTime/lang/sv.json
 piwik/plugins/VisitTime/lang/te.json
 piwik/plugins/VisitTime/lang/th.json
+piwik/plugins/VisitTime/lang/tl.json
 piwik/plugins/VisitTime/lang/tr.json
 piwik/plugins/VisitTime/lang/uk.json
 piwik/plugins/VisitTime/lang/vi.json
@@ -5959,6 +6008,7 @@ piwik/plugins/VisitorInterest/lang/sr.json
 piwik/plugins/VisitorInterest/lang/sv.json
 piwik/plugins/VisitorInterest/lang/te.json
 piwik/plugins/VisitorInterest/lang/th.json
+piwik/plugins/VisitorInterest/lang/tl.json
 piwik/plugins/VisitorInterest/lang/tr.json
 piwik/plugins/VisitorInterest/lang/uk.json
 piwik/plugins/VisitorInterest/lang/vi.json
@@ -6019,6 +6069,7 @@ piwik/plugins/VisitsSummary/lang/sr.json
 piwik/plugins/VisitsSummary/lang/sv.json
 piwik/plugins/VisitsSummary/lang/te.json
 piwik/plugins/VisitsSummary/lang/th.json
+piwik/plugins/VisitsSummary/lang/tl.json
 piwik/plugins/VisitsSummary/lang/tr.json
 piwik/plugins/VisitsSummary/lang/uk.json
 piwik/plugins/VisitsSummary/lang/vi.json
@@ -6081,6 +6132,7 @@ piwik/plugins/Widgetize/lang/sq.json
 piwik/plugins/Widgetize/lang/sr.json
 piwik/plugins/Widgetize/lang/sv.json
 piwik/plugins/Widgetize/lang/th.json
+piwik/plugins/Widgetize/lang/tl.json
 piwik/plugins/Widgetize/lang/tr.json
 piwik/plugins/Widgetize/lang/uk.json
 piwik/plugins/Widgetize/lang/vi.json
@@ -6116,10 +6168,12 @@ piwik/plugins/ZenMode/lang/fa.json
 piwik/plugins/ZenMode/lang/fr.json
 piwik/plugins/ZenMode/lang/it.json
 piwik/plugins/ZenMode/lang/ja.json
+piwik/plugins/ZenMode/lang/nl.json
 piwik/plugins/ZenMode/lang/pl.json
 piwik/plugins/ZenMode/lang/ru.json
 piwik/plugins/ZenMode/lang/sr.json
 piwik/plugins/ZenMode/lang/sv.json
+piwik/plugins/ZenMode/lang/tl.json
 piwik/plugins/ZenMode/plugin.json
 piwik/tests/
 piwik/tests/README.md
