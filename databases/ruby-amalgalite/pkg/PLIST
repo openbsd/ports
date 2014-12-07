@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/12/07 21:34:08 jeremy Exp $
 ${GEM_BIN}/amalgalite-pack${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/HISTORY.rdoc
+${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
+${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/TODO.md
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/amalgalite-pack
 ${GEM_LIB}/gems/${DISTNAME}/examples/
@@ -18,12 +22,11 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/gem-db.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/require_me.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/requires.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/schema-info.rb
-${GEM_LIB}/gems/${DISTNAME}/gemspec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/amalgalite/
 ${GEM_LIB}/gems/${DISTNAME}/lib/amalgalite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/${AMALGALITE_SO_DIR}/
-${GEM_LIB}/gems/${DISTNAME}/lib/${AMALGALITE_SO_DIR}/amalgalite3.so
+${GEM_LIB}/gems/${DISTNAME}/lib/${AMALGALITE_SO_DIR}/amalgalite.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/amalgalite/aggregate.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/amalgalite/blob.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/amalgalite/boolean.rb
@@ -101,11 +104,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/text_map_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type_map_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/version_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/announce.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/config.rb
-${GEM_LIB}/gems/${DISTNAME}/tasks/distribution.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/documentation.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/custom.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/default.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/extension.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/rspec.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/utils.rb
+${GEM_LIB}/gems/${DISTNAME}/tasks/this.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
