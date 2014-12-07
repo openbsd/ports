@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/04/01 18:06:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/12/07 13:04:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	0.3.1
+REVISION=	0
 
 CATEGORIES=	editors devel
 
@@ -28,7 +29,9 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 MODGNOME_TOOLS +=	gobject-introspection
 LIB_DEPENDS=	devel/libgee
 
-BUILD_DEPENDS=	x11/gnome/gedit
+# XXX: Remove 'lang/vala' when updating
+BUILD_DEPENDS=	x11/gnome/gedit \
+		lang/vala
 
 RUN_DEPENDS=	x11/gnome/code-assistance \
 		x11/gnome/gedit
