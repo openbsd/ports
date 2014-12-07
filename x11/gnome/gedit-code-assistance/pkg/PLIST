@@ -1,5 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/03/30 13:13:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/07 20:00:55 jasper Exp $
+include/gedit-3.0/
+include/gedit-3.0/gca/
+include/gedit-3.0/gca/gca.h
 lib/gedit/plugins/codeassistance.plugin
+lib/gedit/plugins/gca/
+lib/gedit/plugins/gca/indent-backends/
+lib/gedit/plugins/gca/indent-backends/gcaindentbackendc.plugin
+lib/gedit/plugins/gca/indent-backends/libgcaindentbackendc.so
 lib/gedit/plugins/libcodeassistance.so
+share/appdata/gedit-code-assistance.metainfo.xml
 share/gedit/plugins/codeassistance/
 share/gedit/plugins/codeassistance/codeassistance.css
+share/vala/vapi/gca.vapi

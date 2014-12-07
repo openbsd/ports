@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2014/12/07 13:04:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2014/12/07 20:00:55 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
-GNOME_VERSION=	0.3.1
-REVISION=	0
+GNOME_VERSION=	3.14.0
 
 CATEGORIES=	editors devel
 
@@ -24,19 +23,17 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z lzma
 
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS +=	gobject-introspection vala
 LIB_DEPENDS=	devel/libgee
 
-# XXX: Remove 'lang/vala' when updating
-BUILD_DEPENDS=	x11/gnome/gedit \
-		lang/vala
+BUILD_DEPENDS=	x11/gnome/gedit>=3.14.0
 
 RUN_DEPENDS=	x11/gnome/code-assistance \
-		x11/gnome/gedit
+		x11/gnome/gedit>=3.14.0
 
 post-install:
-	rm ${PREFIX}/lib/gedit/plugins/*.{a,la}
+	rm ${PREFIX}/lib/gedit/plugins{,/gca/indent-backends}/*.{a,la}
 
 .include <bsd.port.mk>
