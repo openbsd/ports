@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2014/11/20 09:28:52 jasper Exp $
+$OpenBSD: README-main,v 1.9 2014/12/07 19:24:10 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,13 +26,11 @@ ${SYSCONFDIR}/puppetdb/ssl/ (relative to ${SYSCONFDIR}/puppet/):
     ssl/private_keys/<puppet master certname>.pem
     ssl/certs/<puppet master certname>.pem
 
-Now run to finalize the setup:
+In order to finalize the setup now run these commands, though if the Puppet
+Master runs on the same host as PuppetDB, the first command can be skipped:
 
-    ${LOCALBASE}/libexec/puppetdb/puppetdb-ssl-setup
+    # ${LOCALBASE}/libexec/puppetdb/puppetdb-ssl-setup
     # puppetdb ssl-setup -f
-
-Assuming the Puppet Master runs on the same host as PuppetDB, you only have to do
-the final step.
 
 PostgreSQL indexes
 ------------------
