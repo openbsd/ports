@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/03 11:53:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/07 14:35:31 jasper Exp $
 
 COMMENT=	Ubiquiti mfi wireless controller
 
@@ -6,7 +6,7 @@ DISTFILES=	mFi-$V{mFi.unix}.zip
 V=		2.0.24
 FW_VER=		2.0.24.1227
 PKGNAME=	mfi-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -41,5 +41,7 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	find ${INSTDIR} -type f|xargs chmod ${SHAREMODE}
 	find ${INSTDIR} -type d|xargs chmod ${DIRMODE}
+	${SUBST_CMD} -c -m 555 -o ${BINOWN} -g ${BINGRP} \
+		${FILESDIR}/mfi.sh ${PREFIX}/bin/mfi
 
 .include <bsd.port.mk>

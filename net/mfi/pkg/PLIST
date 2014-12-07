@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/14 07:00:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/07 14:35:31 jasper Exp $
 @newgroup _mfi:733
 @newuser _mfi:733:_mfi:daemon:mfi user:/usr/local/share/mfi:/sbin/nologin
+bin/mfi
 @owner _mfi
 share/mfi/
 @owner
