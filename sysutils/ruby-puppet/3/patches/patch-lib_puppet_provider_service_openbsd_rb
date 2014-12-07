@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.20 2014/11/17 12:44:20 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.21 2014/12/07 13:31:08 jasper Exp $
 
-* Rewrite using rcctl(8)
-  https://github.com/puppetlabs/puppet/pull/3017
+* From 93f6754f9c886922d39e938251d4885c1ebb5a29 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Tue, 26 Aug 2014 08:52:12 +0200
+  Subject: [PATCH] (PUP-3144) Rewrite OpenBSD service provider with rcctl(8)
 
 * Ensure we restart a service after the flags have been changed
 
