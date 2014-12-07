@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/01/19 20:42:18 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/12/07 21:34:37 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
@@ -42,6 +42,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_poll.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_singleton_read_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_socket.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_socketpair_read_write.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_syssend.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp6_client_read_server_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_client_read_server_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_connect.rb
