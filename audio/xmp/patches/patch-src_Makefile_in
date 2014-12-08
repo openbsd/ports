@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2014/10/06 01:18:53 bcallah Exp $
---- src/Makefile.in.orig	Sat Aug  9 08:16:34 2014
-+++ src/Makefile.in	Sun Oct  5 00:06:56 2014
-@@ -388,7 +388,7 @@ xmp_LDADD = ${libxmp_LIBS} $(am__append_3) $(am__appen
+$OpenBSD: patch-src_Makefile_in,v 1.3 2014/12/08 20:01:33 bcallah Exp $
+--- src/Makefile.in.orig	Tue Nov 25 16:48:44 2014
++++ src/Makefile.in	Sun Dec  7 10:21:40 2014
+@@ -389,7 +389,7 @@ xmp_LDADD = ${libxmp_LIBS} $(am__append_3) $(am__appen
  	$(am__append_21) $(am__append_23)
  xmp_LDFLAGS = ${XMP_DARWIN_LDFLAGS}
  man_MANS = xmp.1

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.54 2014/10/06 01:18:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.55 2014/12/08 20:01:33 bcallah Exp $
 
 COMMENT=		extended module player
 
-DISTNAME=		xmp-4.0.9
+DISTNAME=		xmp-4.0.10
 CATEGORIES=		audio
 
 HOMEPAGE=		http://xmp.sourceforge.net/
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmp/}
