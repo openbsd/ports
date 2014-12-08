@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/12/08 19:42:55 benoit Exp $
 
 COMMENT=		concise expressive creations of Class::Meta classes
 
 MODULES=		cpan
-DISTNAME=		Class-Meta-Express-0.11
+DISTNAME =		Class-Meta-Express-0.13
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
