@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/29 12:03:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/08 21:35:32 naddy Exp $
 
 COMMENT=	Libretto BIOS Setting Program
 
@@ -17,7 +17,6 @@ MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
 
 WRKDIST=	${WRKDIR}/libapm
 DOCDIR=		${PREFIX}/share/doc/libretto-config
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:
