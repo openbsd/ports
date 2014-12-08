@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtsensors_src_plugins_sensors_dummy_dummy_pro,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Temporary solution until proper support for sensors is added.
+--- qtsensors/src/plugins/sensors/dummy/dummy.pro.ports.orig	Wed Nov  5 19:23:26 2014
++++ qtsensors/src/plugins/sensors/dummy/dummy.pro	Wed Nov  5 19:23:46 2014
+@@ -16,4 +16,4 @@ SOURCES += dummycommon.cpp\
+ 
+ OTHER_FILES = plugin.json
+ 
+-unix:!mac:!qnx:!android:LIBS+=-lrt
++unix:!mac:!qnx:!android:!openbsd:LIBS+=-lrt

@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtwebkit_Source_WebKit2_Platform_CoreIPC_unix_ConnectionUnix_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak compilation.
+--- qtwebkit/Source/WebKit2/Platform/CoreIPC/unix/ConnectionUnix.cpp.ports.orig	Mon Nov 10 10:59:16 2014
++++ qtwebkit/Source/WebKit2/Platform/CoreIPC/unix/ConnectionUnix.cpp	Mon Nov 10 11:00:19 2014
+@@ -31,6 +31,7 @@
+ #include "DataReference.h"
+ #include "SharedMemory.h"
+ #include <sys/socket.h>
++#include <sys/uio.h>
+ #include <unistd.h>
+ #include <errno.h>
+ #include <fcntl.h>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-qttools_src_assistant_clucene_qclucene-config_p_h,v 1.1.1.1 2014/12/08 20:33:41 zhuk Exp $
+Unbreak build.
+--- qttools/src/assistant/clucene/qclucene-config_p.h.ports.orig	Thu Nov  6 00:45:23 2014
++++ qttools/src/assistant/clucene/qclucene-config_p.h	Thu Nov  6 00:45:45 2014
+@@ -304,11 +304,6 @@ configure.
+ #define _CL_HAVE_SYS_STAT_H  1
+ #endif
+ 
+-/* Define to 1 if you have the <sys/timeb.h> header file. */
+-#ifndef _CL_HAVE_SYS_TIMEB_H
+-#define _CL_HAVE_SYS_TIMEB_H  1
+-#endif
+-
+ /* Define to 1 if you have the <sys/types.h> header file. */
+ #ifndef _CL_HAVE_SYS_TYPES_H
+ #define _CL_HAVE_SYS_TYPES_H  1

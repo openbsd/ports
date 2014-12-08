@@ -1,0 +1,22 @@
+$OpenBSD: patch-qtwebkit_Tools_qmake_mkspecs_features_functions_prf,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak linking to static libraries by providing exact paths when possible.
+
+Particular problem: system version of leveldb gets picked up due to madness in -L.
+--- qtwebkit/Tools/qmake/mkspecs/features/functions.prf.ports.orig	Mon Nov 10 12:03:26 2014
++++ qtwebkit/Tools/qmake/mkspecs/features/functions.prf	Mon Nov 10 20:52:43 2014
+@@ -269,13 +269,12 @@ defineTest(linkAgainstLibrary) {
+         mac {
+             LIBS += -Wl,-force_load,$${path}$${QMAKE_DIR_SEP}lib$${target}.a
+         } else:win32-msvc*|wince*|win32-icc {
++            LIBS = -L$$path $$LIBS
+             LIBS += /OPT:REF -l$$target
+         } else {
+             CONFIG *= no_smart_library_merge
+-            LIBS += -Wl,-whole-archive -l$$target -Wl,-no-whole-archive
++            LIBS += -Wl,-whole-archive $${path}/$${QMAKE_PREFIX_STATICLIB}$${target}.$${QMAKE_EXTENSION_STATICLIB} -Wl,-no-whole-archive
+         }
+-
+-        LIBS += -L$$path
+ 
+         win32-msvc*|wince*|win32-icc {
+             POST_TARGETDEPS += $${path}$${QMAKE_DIR_SEP}$${target}.lib

@@ -1,0 +1,17 @@
+$OpenBSD: patch-qtwebkit_Source_WebCore_Target_pri,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak compilation.
+--- qtwebkit/Source/WebCore/Target.pri.ports.orig	Mon Nov 10 00:45:47 2014
++++ qtwebkit/Source/WebCore/Target.pri	Mon Nov 10 01:24:43 2014
+@@ -4272,6 +4272,12 @@ win32:!mingw:contains(QMAKE_HOST.arch, x86_64):{
+    }
+ }
+ 
++openbsd: {
++    INCLUDEPATH += $(LOCALBASE)/include/libsoup-2.4
++    INCLUDEPATH += $(LOCALBASE)/include/harfbuzz
++    INCLUDEPATH += $(X11BASE)/include/freetype2
++}
++
+ contains(CONFIG, opengl-shims) {
+     HEADERS += platform/graphics/OpenGLShims.h
+     SOURCES += platform/graphics/OpenGLShims.cpp

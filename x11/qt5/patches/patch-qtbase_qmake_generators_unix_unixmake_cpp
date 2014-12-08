@@ -1,0 +1,74 @@
+$OpenBSD: patch-qtbase_qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+1. Always prepend project directory to list of linking directories,
+   to avoid picking up wrong library from system.
+2. Try to avoid picking up system libraries instead of locally built ones.
+3. Don't special case GNU make, BSD make isn't that bad, too.
+4. Respect OpenBSD shared library naming rules.
+--- qtbase/qmake/generators/unix/unixmake.cpp.ports.orig	Thu Sep 11 14:48:00 2014
++++ qtbase/qmake/generators/unix/unixmake.cpp	Mon Dec  8 14:32:38 2014
+@@ -150,6 +150,10 @@ UnixMakefileGenerator::init()
+               : project->isActiveConfig("ti_linker") ? "--search_path="
+               : "-L");
+     ProStringList ldadd;
++    QString destdir = unescapeFilePath(project->first("DESTDIR").toQString());
++    if (destdir.isEmpty())
++        destdir = qmake_getpwd();
++    project->values("QMAKE_LIBDIR_FLAGS") += "-L" + escapeFilePath(destdir);
+     if(!project->isEmpty("QMAKE_LIBDIR")) {
+         const ProStringList &libdirs = project->values("QMAKE_LIBDIR");
+         for(int i = 0; i < libdirs.size(); ++i) {
+@@ -167,8 +171,34 @@ UnixMakefileGenerator::init()
+         }
+         ldadd += project->values("QMAKE_FRAMEWORKPATH_FLAGS");
+     }
++
++    // Put -L for in-build-tree directories first, all other arguments later;
++    // avoids picking up system libraries instead of built ones.
+     ProStringList &qmklibs = project->values("QMAKE_LIBS");
+-    qmklibs = ldadd + qmklibs;
++    ProStringList nqmklibs;
++    QString lbroot = "-L" + project->buildRoot() + "/";
++    for (int i = 0; i < ldadd.size(); ++i) {
++        QString l = ldadd[i].toQString();
++        if (l.startsWith(lbroot))
++            nqmklibs += l;
++    }
++    for (int i = 0; i < qmklibs.size(); ++i) {
++        QString l = qmklibs[i].toQString();
++        if (l.startsWith(lbroot))
++            nqmklibs += l;
++    }
++    for (int i = 0; i < ldadd.size(); ++i) {
++        QString l = ldadd[i].toQString();
++        if (!l.startsWith(lbroot))
++            nqmklibs += l;
++    }
++    for (int i = 0; i < qmklibs.size(); ++i) {
++        QString l = qmklibs[i].toQString();
++        if (!l.startsWith(lbroot))
++            nqmklibs += l;
++    }
++    qmklibs = nqmklibs;
++
+     if(!project->isEmpty("QMAKE_RPATHDIR")) {
+         const ProStringList &rpathdirs = project->values("QMAKE_RPATHDIR");
+         for(int i = 0; i < rpathdirs.size(); ++i) {
+@@ -184,7 +214,7 @@ UnixMakefileGenerator::init()
+         }
+     }
+ 
+-    if(project->isActiveConfig("GNUmake") && !project->isEmpty("QMAKE_CFLAGS_DEPS"))
++    if(!project->isEmpty("QMAKE_CFLAGS_DEPS"))
+         include_deps = true; //do not generate deps
+     if(project->isActiveConfig("compile_libtool"))
+         Option::obj_ext = ".lo"; //override the .o
+@@ -748,7 +778,8 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+     } else if(project->first("TEMPLATE") == "app") {
+         target = "$(QMAKE_TARGET)";
+     } else if(project->first("TEMPLATE") == "lib") {
+-        if(project->isEmpty("QMAKE_CYGWIN_SHLIB")) {
++        if(project->isEmpty("QMAKE_CYGWIN_SHLIB") 
++               && project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
+             if (!project->isActiveConfig("staticlib")
+                     && !project->isActiveConfig("plugin")
+                     && !project->isActiveConfig("unversioned_libname")) {

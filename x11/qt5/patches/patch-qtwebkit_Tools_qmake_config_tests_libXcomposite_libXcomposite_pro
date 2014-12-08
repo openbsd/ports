@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtwebkit_Tools_qmake_config_tests_libXcomposite_libXcomposite_pro,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak configure stage.
+--- qtwebkit/Tools/qmake/config.tests/libXcomposite/libXcomposite.pro.ports.orig	Thu Sep 11 14:48:10 2014
++++ qtwebkit/Tools/qmake/config.tests/libXcomposite/libXcomposite.pro	Fri Nov  7 12:23:47 2014
+@@ -1,3 +1,4 @@
++CONFIG += x11
+ SOURCES = libXcomposite.cpp
+ OBJECTS_DIR = obj
+-LIBS += -lXcomposite -lX11
++LIBS += -lXcomposite ${QMAKE_LIBS_X11}

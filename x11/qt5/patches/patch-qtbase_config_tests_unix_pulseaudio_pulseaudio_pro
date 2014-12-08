@@ -1,0 +1,9 @@
+$OpenBSD: patch-qtbase_config_tests_unix_pulseaudio_pulseaudio_pro,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Allow test to pass.
+--- qtbase/config.tests/unix/pulseaudio/pulseaudio.pro.ports.orig	Mon Nov  3 21:14:11 2014
++++ qtbase/config.tests/unix/pulseaudio/pulseaudio.pro	Mon Nov  3 21:14:54 2014
+@@ -1,3 +1,3 @@
+ SOURCES = pulseaudio.cpp
+ CONFIG -= qt
+-LIBS +=
++LIBS += -L$(X11BASE)/lib

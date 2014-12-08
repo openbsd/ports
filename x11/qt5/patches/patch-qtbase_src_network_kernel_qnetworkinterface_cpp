@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtbase_src_network_kernel_qnetworkinterface_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Avoid confusing warning from linker.
+--- qtbase/src/network/kernel/qnetworkinterface.cpp.ports.orig	Tue Nov  4 17:53:00 2014
++++ qtbase/src/network/kernel/qnetworkinterface.cpp	Tue Nov  4 17:53:57 2014
+@@ -133,7 +133,7 @@ QString QNetworkInterfacePrivate::makeHwAddress(int le
+ #if defined(Q_OS_WIN) && !defined(Q_OS_WINCE) && defined(_MSC_VER) && _MSC_VER >= 1400
+         sprintf_s(buf, 3, "%02hX", ushort(data[i]));
+ #else
+-        sprintf(buf, "%02hX", ushort(data[i]));
++        qsnprintf(buf, sizeof(buf), "%02hX", ushort(data[i]));
+ #endif
+         result += QLatin1String(buf);
+     }

@@ -1,0 +1,55 @@
+$OpenBSD: patch-qtwebkit_Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak build.
+--- qtwebkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp.ports.orig	Thu Nov  6 10:32:50 2014
++++ qtwebkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp	Thu Nov  6 12:35:05 2014
+@@ -45,6 +45,10 @@
+ 
+ #elif OS(UNIX)
+ 
++#if OS(OPENBSD)
++#include<sys/param.h>
++#endif
++
+ #include <sys/mman.h>
+ #include <unistd.h>
+ 
+@@ -311,6 +315,8 @@ typedef arm_thread_state_t PlatformThreadRegisters;
+ typedef CONTEXT PlatformThreadRegisters;
+ #elif OS(QNX)
+ typedef struct _debug_thread_info PlatformThreadRegisters;
++#elif OS(OPENBSD)
++typedef pthread_t PlatformThreadRegisters;
+ #elif USE(PTHREADS)
+ typedef pthread_attr_t PlatformThreadRegisters;
+ #else
+@@ -369,6 +375,8 @@ static size_t getPlatformThreadRegisters(const Platfor
+     }
+     close(fd);
+     return sizeof(struct _debug_thread_info);
++#elif OS(OPENBSD)
++    regs = platformThread;
+ #elif USE(PTHREADS)
+     pthread_attr_init(&regs);
+ #if HAVE(PTHREAD_NP_H) || OS(NETBSD)
+@@ -434,6 +442,12 @@ static inline void* otherThreadStackPointer(const Plat
+ #elif OS(QNX)
+     return reinterpret_cast<void*>((uintptr_t) regs.sp);
+ 
++#elif OS(OPENBSD)
++    stack_t ss;
++    // FIXME: Deal with error code below somehow? Seems fatal.
++    (void)pthread_stackseg_np(regs, &ss);
++    return ss.ss_sp;
++
+ #elif USE(PTHREADS)
+     void* stackBase = 0;
+     size_t stackSize = 0;
+@@ -448,7 +462,7 @@ static inline void* otherThreadStackPointer(const Plat
+ 
+ static void freePlatformThreadRegisters(PlatformThreadRegisters& regs)
+ {
+-#if USE(PTHREADS) && !OS(WINDOWS) && !OS(DARWIN) && !OS(QNX)
++#if USE(PTHREADS) && !OS(WINDOWS) && !OS(DARWIN) && !OS(QNX) && !OS(OPENBSD)
+     pthread_attr_destroy(&regs);
+ #else
+     UNUSED_PARAM(regs);

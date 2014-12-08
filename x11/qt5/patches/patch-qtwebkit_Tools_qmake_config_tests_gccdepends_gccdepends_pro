@@ -1,0 +1,33 @@
+$OpenBSD: patch-qtwebkit_Tools_qmake_config_tests_gccdepends_gccdepends_pro,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak configure stage.
+--- qtwebkit/Tools/qmake/config.tests/gccdepends/gccdepends.pro.ports.orig	Fri Nov  7 02:15:40 2014
++++ qtwebkit/Tools/qmake/config.tests/gccdepends/gccdepends.pro	Fri Nov  7 13:07:15 2014
+@@ -3,25 +3,20 @@
+ QMAKE_CXXFLAGS += -MD
+ 
+ base_filename = empty
+-object_file = $$OBJECTS_DIR/$${base_filename}.o
++object_file = $${base_filename}.o
+ deps_filename = $${base_filename}.d
+ 
+ SOURCES += $${base_filename}.cpp
+ 
+ test.commands = \
+-    # Earlier teambuilder and icecream versions would not
+-    # respect the -o argument for the .d file, so the file
+-    # would end up in the root build dir.
+-    test ! -f $${deps_filename} && \
+-    \
+     # But it should end up in the OBJECTS_DIR
+-    test -f $$OBJECTS_DIR/$${deps_filename} && \
++    test -f $${deps_filename} && \
+     \
+     # Icecream 0.9.7 and earlier does not ensure that the
+     # target rule matches the path of the .o file, since
+     # the file is compiled into the current dir and then
+     # moved. Verify that we don't hit that case.
+-    grep -q \"$${object_file}:\" $$OBJECTS_DIR/$${deps_filename} && \
++    grep -q \"$${object_file}:\" $${deps_filename} && \
+     \
+     # If everything is all right we mark the test as succeeded
+     echo success > $$basename(PWD)

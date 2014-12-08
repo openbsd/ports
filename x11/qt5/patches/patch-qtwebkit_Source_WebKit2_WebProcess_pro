@@ -1,0 +1,15 @@
+$OpenBSD: patch-qtwebkit_Source_WebKit2_WebProcess_pro,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak compilation.
+--- qtwebkit/Source/WebKit2/WebProcess.pro.ports.orig	Thu Sep 11 14:48:23 2014
++++ qtwebkit/Source/WebKit2/WebProcess.pro	Mon Nov 10 20:49:42 2014
+@@ -15,6 +15,10 @@ INCLUDEPATH = \
+     $$PWD/Shared/linux/SandboxProcess/ \
+     $$INCLUDEPATH
+ 
++openbsd: {
++    INCLUDEPATH += $(LOCALBASE)/include
++}
++
+ QT += network webkit
+ macx: QT += xml
+ 

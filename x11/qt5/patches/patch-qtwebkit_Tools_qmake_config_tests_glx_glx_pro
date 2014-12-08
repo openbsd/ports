@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtwebkit_Tools_qmake_config_tests_glx_glx_pro,v 1.1.1.1 2014/12/08 20:33:41 zhuk Exp $
+Unbreak configure stage.
+--- qtwebkit/Tools/qmake/config.tests/glx/glx.pro.ports.orig	Thu Sep 11 14:48:10 2014
++++ qtwebkit/Tools/qmake/config.tests/glx/glx.pro	Fri Nov  7 12:23:47 2014
+@@ -1,4 +1,4 @@
++CONFIG += opengl
+ SOURCES = glx.cpp
+ OBJECTS_DIR = obj
+-LIBS += -lX11 -lGL
+ 

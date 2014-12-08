@@ -1,0 +1,36 @@
+$OpenBSD: patch-qtscript_src_3rdparty_javascriptcore_WebKit_pri,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+1. Try to unbreak build (work in progress).
+2. Use system malloc(3).
+--- qtscript/src/3rdparty/javascriptcore/WebKit.pri.ports.orig	Mon Nov 10 22:44:40 2014
++++ qtscript/src/3rdparty/javascriptcore/WebKit.pri	Tue Nov 11 00:26:10 2014
+@@ -4,17 +4,17 @@
+ # either the generated files directory or as part of the Qt package through
+ # QTDIR_build
+ CONFIG(QTDIR_build): CONFIG += standalone_package
+-else:exists($$PWD/WebCore/generated): CONFIG += standalone_package
++else:exists($$OUT_PWD/WebCore/generated): CONFIG += standalone_package
+ 
+ CONFIG(standalone_package) {
+-    OUTPUT_DIR=$$PWD
++    OUTPUT_DIR=$$OUT_PWD
+ }
+ 
+ isEmpty(OUTPUT_DIR) {
+     CONFIG(debug, debug|release) {
+-        OUTPUT_DIR=$$PWD/WebKitBuild/Debug
++        OUTPUT_DIR=$$OUT_PWD/WebKitBuild/Debug
+     } else { # Release
+-        OUTPUT_DIR=$$PWD/WebKitBuild/Release
++        OUTPUT_DIR=$$OUT_PWD/WebKitBuild/Release
+     }
+ }
+ 
+@@ -44,7 +44,7 @@ building-libs {
+ }
+ greaterThan(QT_MINOR_VERSION, 5):DEFINES += WTF_USE_ACCELERATED_COMPOSITING
+ 
+-!mac:!unix {
++openbsd:!mac:!unix {
+     DEFINES += USE_SYSTEM_MALLOC
+ }
+ 

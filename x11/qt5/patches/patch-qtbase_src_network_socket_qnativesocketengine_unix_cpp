@@ -1,0 +1,14 @@
+$OpenBSD: patch-qtbase_src_network_socket_qnativesocketengine_unix_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+Unbreak compilation.
+--- qtbase/src/network/socket/qnativesocketengine_unix.cpp.ports.orig	Sun Nov  2 17:26:25 2014
++++ qtbase/src/network/socket/qnativesocketengine_unix.cpp	Sun Nov  2 17:27:13 2014
+@@ -604,7 +604,9 @@ int QNativeSocketEnginePrivate::nativeAccept()
+             setError(QAbstractSocket::SocketResourceError, NotSocketErrorString);
+             break;
+         case EPROTONOSUPPORT:
++#ifdef EPROTO
+         case EPROTO:
++#endif
+         case EAFNOSUPPORT:
+         case EINVAL:
+             setError(QAbstractSocket::UnsupportedSocketOperationError, ProtocolUnsupportedErrorString);
