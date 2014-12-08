@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_encoder_slicetype_cpp,v 1.1 2014/12/08 08:25:05 brad Exp $
+
+threading: use 32bit atomic integer operations exclusively
+
+--- source/encoder/slicetype.cpp.orig	Fri Oct 31 14:24:01 2014
++++ source/encoder/slicetype.cpp	Sun Dec  7 00:05:35 2014
+@@ -192,7 +192,7 @@ Frame* Lookahead::getDecidedPicture()
+ /* Called by pool worker threads */
+ bool Lookahead::findJob(int)
+ {
+-    if (m_bReady && ATOMIC_CAS32(&m_bReady, 1, 0) == 1)
++    if (m_bReady > 0 && ATOMIC_DEC(&m_bReady) == 0)
+     {
+         m_inputQueueLock.acquire();
+         slicetypeDecide();

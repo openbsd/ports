@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_encoder_api_cpp,v 1.1 2014/12/08 08:25:05 brad Exp $
+
+constants: remove init/destroyROM functions
+
+--- source/encoder/api.cpp.orig	Sun Dec  7 00:43:39 2014
++++ source/encoder/api.cpp	Sun Dec  7 00:43:58 2014
+@@ -178,7 +178,6 @@ void x265_encoder_close(x265_encoder *enc)
+ extern "C"
+ void x265_cleanup(void)
+ {
+-    destroyROM();
+     BitCost::destroy();
+ }
+ 

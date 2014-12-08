@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/02 11:36:48 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2014/12/08 08:25:05 brad Exp $
 
 COMMENT=	free H.265/HEVC encoder
-BROKEN-hppa =		undefined reference to `__sync_val_compare_and_swap_8'
-BROKEN-mips64 =		undefined reference to `__sync_val_compare_and_swap_8'
-BROKEN-mips64el =	undefined reference to `__sync_val_compare_and_swap_8'
-BROKEN-powerpc =	undefined reference to `__sync_val_compare_and_swap_8'
 
 VER=		1.4
 DISTNAME=	x265-${VER}
+REVISION=	0
 DISTFILES=	${DISTNAME}{${VER}}${EXTRACT_SUFX}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/get/
