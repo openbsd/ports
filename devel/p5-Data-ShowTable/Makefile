@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/08 19:47:55 benoit Exp $
 
 COMMENT=		print arrays of data in a nicely formatted listing
 
 MODULES=		cpan
-DISTNAME=		Data-ShowTable-3.3
-REVISION=		1
+DISTNAME =		Data-ShowTable-4.6
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 .include <bsd.port.mk>
