@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:06:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/08 09:15:02 kili Exp $
 @comment bin/spoj-eugene
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
@@ -13,7 +13,6 @@ lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Hex.hi
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Hex.p_hi
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Int.hi
 lib/ghc/${DISTNAME}/Data/ByteString/Nums/Careless/Int.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:03:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/08 09:15:02 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/Socket/
 lib/ghc/${DISTNAME}/Network/Socket/SendFile/

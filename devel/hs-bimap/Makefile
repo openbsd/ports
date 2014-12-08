@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/12/08 09:15:02 kili Exp $
 
 COMMENT=		bidirectional mapping between two key types
 
 DISTNAME=		bimap-0.2.4
-REVISION=		3
+REVISION=		4
 CATEGORIES=		devel
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
