@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2014/12/06 10:58:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2014/12/08 08:55:38 jasper Exp $
 
 COMMENT=	common layer for serverspec and configspec
-DISTNAME=	specinfra-2.10.0
-REVISION=	0
+DISTNAME=	specinfra-2.10.1
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
