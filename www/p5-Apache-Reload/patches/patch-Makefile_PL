@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_PL,v 1.3 2014/12/08 14:26:02 benoit Exp $
+--- Makefile.PL.orig	Fri Feb 24 09:51:16 2012
++++ Makefile.PL	Mon Dec  8 15:11:44 2014
+@@ -241,18 +241,5 @@
+ 
+     my $string = $self->MM::constants;
+ 
+-    # mp2 installs this into INSTALLSITEARCH, so in order to avoid
+-    # problems when users forget 'make install UNINST=1', trick MM into
+-    # installing pure perl modules to the sitearch location, when this is
+-    # not installed as a part of mp2 build
+-    if (!$ENV{MOD_PERL_2_BUILD}) {
+-        $string .= <<'EOI';
+-
+-# install into the same location as mod_perl 2.0
+-INSTALLSITELIB = $(INSTALLSITEARCH)
+-DESTINSTALLSITELIB = $(DESTINSTALLSITEARCH)
+-EOI
+-    }
+-
+     $string;
+ }
