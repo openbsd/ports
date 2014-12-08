@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: bacula.rc,v 1.1 2013/05/03 18:40:32 sthen Exp $
+# $OpenBSD: bacula.rc,v 1.2 2014/12/08 10:57:09 ajacoutot Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user and daemon_class are not passed to
@@ -13,4 +13,4 @@ else
 	_pkg_scripts="bacula_sd bacula_fd bacula_dir"
 fi
 
-for _i in ${_pkg_scripts}; do [[ -x ${RCDIR}/${_i} ]] && ${RCDIR}/${_i} $1; done
+for _i in ${_pkg_scripts}; do [[ -x ${RCDIR}/${_i} ]] && ${RCDIR}/${_i} $@; done

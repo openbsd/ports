@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cfengine.rc,v 1.1 2013/05/01 21:09:23 sthen Exp $
+# $OpenBSD: cfengine.rc,v 1.2 2014/12/08 10:57:09 ajacoutot Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument
 
@@ -11,4 +11,4 @@ if [ "$1" = stop ]; then
         _pkg_scripts=${_l% }
 fi
 
-for _i in ${_pkg_scripts}; do ${RCDIR}/${_i} $1; done
+for _i in ${_pkg_scripts}; do [[ -x ${RCDIR}/${_i} ]] && ${RCDIR}/${_i} $@; done

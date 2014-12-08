@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2014/11/24 16:39:41 jca Exp $
+# $OpenBSD: Makefile,v 1.50 2014/12/08 10:57:09 ajacoutot Exp $
 
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.4.5
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils
