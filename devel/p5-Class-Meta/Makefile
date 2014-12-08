@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/12/08 19:41:32 benoit Exp $
 
 COMMENT=		class automation, introspection and validation
 
 MODULES=		cpan
-DISTNAME=		Class-Meta-0.63
+DISTNAME =		Class-Meta-0.66
 CATEGORIES=		devel
-USE_GROFF=		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
