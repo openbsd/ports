@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/26 14:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/12/08 14:28:00 landry Exp $
 
 SHARED_ONLY=	Yes
+BROKEN-hppa=	ICE on _gambc.c since 2014-09-29 
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
