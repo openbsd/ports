@@ -1,0 +1,19 @@
+$OpenBSD: patch-rand_cpp,v 1.1 2014/12/09 20:46:00 sthen Exp $
+--- rand.cpp.orig	Tue Dec  9 20:35:55 2014
++++ rand.cpp	Tue Dec  9 20:36:20 2014
+@@ -40,7 +40,7 @@ void Rand::seedNum(UINT num)
+   delete(m_arr);
+   m_arr = NULL;
+   m_size = 0;
+-  srand(num);
++  srand_deterministic(num);
+   m_init = num;
+   char buf[12];
+   sprintf(buf, "%u", num);
+@@ -52,5 +52,5 @@ void Rand::reset()
+   if(m_arr)
+     m_ind = -1;
+   else
+-    srand(m_init);
++    srand_deterministic(m_init);
+ }

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 15:26:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.30 2014/12/09 20:46:00 sthen Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 BROKEN-mips64 =	undefined reference to __sync atomic ops
@@ -8,6 +8,7 @@ COMMENT =	cross-platform 3D audio API
 
 V =		1.15.1
 EPOCH =		0
+REVISION =	0
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio

@@ -1,0 +1,21 @@
+$OpenBSD: patch-utils_makehrtf_c,v 1.1 2014/12/09 20:46:00 sthen Exp $
+--- utils/makehrtf.c.orig	Tue Dec  9 20:40:59 2014
++++ utils/makehrtf.c	Tue Dec  9 20:41:24 2014
+@@ -2017,7 +2017,7 @@ static int StoreMhr (const HrirDataT * hData, const ch
+   step = hData -> mIrSize;
+   end = hData -> mIrCount * step;
+   n = hData -> mIrPoints;
+-  srand (0x31DF840C);
++  srand_deterministic (0x31DF840C);
+   for (j = 0; j < end; j += step) {
+       hpHist = 0;
+       for (i = 0; i < n; i ++) {
+@@ -2072,7 +2072,7 @@ static int StoreTable (const HrirDataT * hData, const 
+                        "static const ALshort defaultCoeffs[%u] =\n{\n", hData -> mIrCount * n);
+   if (! WriteAscii (text, fp, filename))
+      return (0);
+-  srand (0x31DF840C);
++  srand_deterministic (0x31DF840C);
+   for (j = 0; j < end; j += step) {
+       if (! WriteAscii ("   ", fp, filename))
+          return (0);

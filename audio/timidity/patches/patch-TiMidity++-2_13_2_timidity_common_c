@@ -1,0 +1,12 @@
+$OpenBSD: patch-TiMidity++-2_13_2_timidity_common_c,v 1.1 2014/12/09 20:46:00 sthen Exp $
+--- TiMidity++-2.13.2/timidity/common.c.orig	Tue Dec  9 20:33:09 2014
++++ TiMidity++-2.13.2/timidity/common.c	Tue Dec  9 20:33:30 2014
+@@ -1133,7 +1133,7 @@ int int_rand(int n)
+ 	if(n == -1)
+ 	    srand(time(NULL));
+ 	else
+-	    srand(-n);
++	    srand_deterministic(-n);
+ 	return n;
+     }
+     return (int)(n * (double)rand() * (1.0 / (RAND_MAX + 1.0)));

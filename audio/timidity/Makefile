@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2014/12/09 20:45:59 sthen Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
 V=		2.13.2
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
