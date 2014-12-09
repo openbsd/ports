@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/09/02 11:10:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/12/09 17:13:50 robert Exp $
 zarafa-webapp/
 zarafa-webapp/.htaccess
 zarafa-webapp/client/
@@ -1675,7 +1675,7 @@ zarafa-webapp/plugins/zperformance/js/zperformance.js
 zarafa-webapp/plugins/zperformance/manifest.xml
 zarafa-webapp/plugins/zperformance/php/
 zarafa-webapp/plugins/zperformance/php/plugin.zperformance.php
-zarafa-webapp/senddocument.php
+@comment zarafa-webapp/senddocument.php
 zarafa-webapp/server/
 zarafa-webapp/server/PEAR/
 zarafa-webapp/server/PEAR/JSON.php
