@@ -1,0 +1,18 @@
+$OpenBSD: patch-bin_named_config_c,v 1.1 2014/12/09 17:21:36 sthen Exp $
+
+Increase query limit until a level at which a query with "dig @::1
+www.ibm.com a" succeeds at startup. 150 was not enough.
+
+https://lists.isc.org/pipermail/bind-users/2014-December/094240.html
+
+--- bin/named/config.c.orig	Tue Dec  9 17:03:45 2014
++++ bin/named/config.c	Tue Dec  9 17:04:17 2014
+@@ -169,7 +169,7 @@ options {\n\
+ 	clients-per-query 10;\n\
+ 	max-clients-per-query 100;\n\
+ 	max-recursion-depth 7;\n\
+-	max-recursion-queries 50;\n\
++	max-recursion-queries 200;\n\
+ 	zero-no-soa-ttl-cache no;\n\
+ 	nsec3-test-zone no;\n\
+ 	allow-new-zones no;\n\

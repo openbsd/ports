@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/09/23 09:42:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/09 17:21:36 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -133,6 +133,7 @@ include/isc/buffer.h
 include/isc/bufferlist.h
 include/isc/commandline.h
 include/isc/condition.h
+include/isc/counter.h
 include/isc/crc64.h
 include/isc/dir.h
 include/isc/entropy.h
@@ -252,6 +253,7 @@ include/lwres/netdb.h
 include/lwres/platform.h
 include/lwres/result.h
 include/lwres/stdlib.h
+include/lwres/string.h
 include/lwres/version.h
 include/pk11/
 include/pk11/constants.h

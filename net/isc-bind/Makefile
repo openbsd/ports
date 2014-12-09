@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/09/23 09:42:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2014/12/09 17:21:36 sthen Exp $
 
 # XXX should we rename the rc script to either named.rc or isc_bind.rc ?
 # XXX how about also the package now we don't need to distinguish from the
@@ -6,20 +6,20 @@
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-V=		9.10.1
+V=		9.10.1-P1
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
-SHARED_LIBS +=	isc                  1.1      # 145.0
+SHARED_LIBS +=	isc                  2.0      # 146.0
 SHARED_LIBS +=	isccc                0.0      # 140.1
-SHARED_LIBS +=	dns                  2.0      # 146.2
-SHARED_LIBS +=	isccfg               0.2      # 142.2
-SHARED_LIBS +=	bind9                0.0      # 140.6
+SHARED_LIBS +=	dns                  3.0      # 147.0
+SHARED_LIBS +=	isccfg               0.3      # 142.3
+SHARED_LIBS +=	bind9                0.1      # 140.7
 SHARED_LIBS +=	lwres                0.1      # 141.0
 SHARED_LIBS +=	irs                  0.0      # 141.2
 
 # not installed:
-#SHARED_LIBS +=	isc-nosymtbl         0.0      # 145.0
+#SHARED_LIBS +=	isc-nosymtbl         0.0      # 146.0
 #SHARED_LIBS +=	t_api                0.0      # unknown
 
 CATEGORIES=	net
@@ -29,7 +29,7 @@ HOMEPAGE=	http://www.isc.org/software/bind
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto json-c m pthread xml2 z
+WANTLIB=	c crypto json-c lzma m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
