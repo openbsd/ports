@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2014/09/09 06:02:09 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/12/09 18:01:32 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,16 +19,16 @@ match your keys.
 
 Test login_duo
 ==============
-As a regular user, run ${PREFIX}/libexec/auth/login_duo. You should
+As a regular user, run ${PREFIX}/sbin/login_duo. You should
 be provided with an enrollment link. Enroll your phone then run
-${PREFIX}/libexec/auth/login_duo again. Once you provide a valid pass
+${PREFIX}/sbin/login_duo again. Once you provide a valid pass
 code you should get a SUCCESS message.
 
 Enable SSH two-factor authentication
 ====================================
 To enable two-factor authentication add
 
-ForceCommand ${PREFIX}/libexec/auth/login_duo
+ForceCommand ${PREFIX}/sbin/login_duo
 
 to your ${SYSCONFDIR}/ssh/sshd_config. Duo Security recommends disabling
 PermitTunnel and AllowTcpForwarding when using two-factor
