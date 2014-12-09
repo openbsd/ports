@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/15 17:30:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/09 08:05:52 jasper Exp $
 @bin bin/california
 share/appdata/
 share/appdata/california.appdata.xml
@@ -37,6 +37,25 @@ share/help/C/california/legal.xml
 share/help/C/california/media/
 share/help/C/california/media/california-screenshot.png
 share/help/C/california/media/x-office-calendar.png
+share/help/ca/
+share/help/ca/california/
+share/help/ca/california/cal-add-calendar.page
+share/help/ca/california/cal-change-view.page
+share/help/ca/california/cal-event-edit.page
+share/help/ca/california/cal-event-quick-add.page
+share/help/ca/california/cal-event-remove.page
+share/help/ca/california/cal-hide-a-calendar.page
+share/help/ca/california/cal-open-calendar-list.xml
+share/help/ca/california/cal-quickstart.page
+share/help/ca/california/cal-remove-calendar.page.stub
+share/help/ca/california/cal-rename-calendar.page
+share/help/ca/california/cal-shortcut-keys.page
+share/help/ca/california/gnome-help.sct
+share/help/ca/california/index.page
+share/help/ca/california/legal.xml
+share/help/ca/california/media/
+share/help/ca/california/media/california-screenshot.png
+share/help/ca/california/media/x-office-calendar.png
 share/locale/ca/LC_MESSAGES/california.mo
 share/locale/cs/LC_MESSAGES/california.mo
 share/locale/de/LC_MESSAGES/california.mo
@@ -47,8 +66,11 @@ share/locale/gl/LC_MESSAGES/california.mo
 share/locale/he/LC_MESSAGES/california.mo
 share/locale/hu/LC_MESSAGES/california.mo
 share/locale/id/LC_MESSAGES/california.mo
+share/locale/kk/LC_MESSAGES/california.mo
 share/locale/pl/LC_MESSAGES/california.mo
+share/locale/pt/LC_MESSAGES/california.mo
 share/locale/pt_BR/LC_MESSAGES/california.mo
+share/locale/ru/LC_MESSAGES/california.mo
 share/locale/sl/LC_MESSAGES/california.mo
 share/locale/sr/LC_MESSAGES/california.mo
 share/locale/sr@latin/LC_MESSAGES/california.mo
