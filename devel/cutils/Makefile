@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/09 20:29:03 sthen Exp $
 
 COMMENT=	collection of utilities for C programmers
 
 DISTNAME=	cutils-1.6
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.sigala.it/sandro/software.php

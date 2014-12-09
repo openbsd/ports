@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mlist_c,v 1.1 2014/12/09 20:29:03 sthen Exp $
+--- src/mlist.c.orig	Tue Dec  9 20:26:01 2014
++++ src/mlist.c	Tue Dec  9 20:26:19 2014
+@@ -101,7 +101,7 @@ void PL_InitList(PLAYLIST * pl)
+ 		const char * s = getenv("MIKMOD_SRAND_CONSTANT");
+ 		if (s)
+ 		{
+-			srandom((unsigned int)atoi(s));
++			srandom_deterministic((unsigned int)atoi(s));
+ 		}
+ 		else
+ 		{

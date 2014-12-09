@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_psf_psx_hw_c,v 1.1 2014/12/09 20:29:03 sthen Exp $
+--- src/psf/psx_hw.c.orig	Tue Dec  9 20:10:57 2014
++++ src/psf/psx_hw.c	Tue Dec  9 20:11:17 2014
+@@ -1547,7 +1547,7 @@ void psx_bios_hle(uint32_t pc)
+ 					#if DEBUG_HLE_BIOS
+ 					printf("HLEBIOS: srand(%x)\n", a0);
+ 					#endif
+-					srand(a0);
++					srand_deterministic(a0);
+ 					break;
+ 
+ 				case 0x33:	// malloc
