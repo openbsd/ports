@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/03 13:19:00 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/09 21:47:03 zhuk Exp $
 
 COMMENT =		traditional top-down car racing game
 
@@ -28,6 +28,7 @@ LIB_DEPENDS =		audio/openal
 
 CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 			-DDATA_PATH=${PREFIX}/share/dustrac \
-			-DDOC_PATH=${PREFIX}/share/dustrac
+			-DDOC_PATH=${PREFIX}/share/dustrac \
+			-DUseQt5=OFF
 
 .include <bsd.port.mk>
