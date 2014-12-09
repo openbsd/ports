@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.202 2014/12/01 11:53:00 nigel Exp $
+# $OpenBSD: Quirks.pm,v 1.203 2014/12/09 09:15:35 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -356,6 +356,7 @@ my $stem_extensions = {
 	'py3-distribute' => 'py3-setuptools',
 	'symon-mon' => 'symon',
 	'symon-mux' => 'symux',
+	'ruby-dbus' => 'ruby21-dbus',
 };
 
 # reasons for obsolete packages
