@@ -1,9 +1,7 @@
-# $OpenBSD: heimdal.port.mk,v 1.2 2014/08/15 07:56:42 ajacoutot Exp $
+# $OpenBSD: heimdal.port.mk,v 1.3 2014/12/09 15:55:10 ajacoutot Exp $
 
-MODHEIMDAL_WANTLIB +=	com_err crypto
 MODHEIMDAL_WANTLIB +=	heimdal/lib/asn1
 MODHEIMDAL_WANTLIB +=	heimdal/lib/heimbase
-MODHEIMDAL_WANTLIB +=	heimdal/lib/heimsqlite
 MODHEIMDAL_WANTLIB +=	heimdal/lib/hx509
 MODHEIMDAL_WANTLIB +=	heimdal/lib/krb5
 MODHEIMDAL_WANTLIB +=	heimdal/lib/roken
