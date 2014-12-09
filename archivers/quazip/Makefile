@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/13 13:11:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/09 18:55:42 zhuk Exp $
 
 COMMENT =	Qt/C++ wrapper for ZIP/UNZIP package
 DISTNAME =	quazip-0.7
@@ -21,5 +21,7 @@ MODULES =	devel/cmake \
 		x11/qt4
 
 NO_TEST =	Yes
+
+CONFIGURE_ARGS =	-DBUILD_WITH_QT4=Yes
 
 .include <bsd.port.mk>
