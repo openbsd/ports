@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_squid_endian_h,v 1.1 2014/12/09 21:44:29 sthen Exp $
+
+added in /sys/sys/endian.h r1.23 (2014/07/12)
+
+--- include/squid_endian.h.orig	Tue Dec  9 21:41:39 2014
++++ include/squid_endian.h	Tue Dec  9 21:41:43 2014
+@@ -122,14 +122,7 @@
+  *
+  * XXX: If htole16() is missing, we assume that the other *le*() functions
+  *      are also missing.
+- *
+- *      Except OpenBSD - htole16 & 32 exist, but not le16toh etc
+  */
+-#if _SQUID_OPENBSD_
+-#  define le16toh(x) htole16(x)
+-#  define le32toh(x) htole32(x)
+-#endif
+-
+ #if ! HAVE_HTOLE16 && ! defined(htole16)
+ #  ifdef WORDS_BIGENDIAN
+ #    define htole16(x) bswap16(x)
