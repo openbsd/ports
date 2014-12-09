@@ -1,21 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/24 16:16:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/09 09:15:12 jasper Exp $
 
 COMMENT=	Ruby implementation of the D-Bus protocol
 
-DISTNAME=	ruby-dbus-0.2.1
-REVISION=	5
+DISTNAME=	ruby-dbus-0.11.0
+PKGNAME=	${DISTNAME:S/ruby-//}
 
 CATEGORIES=	x11 devel
 
-# gpl
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	yes
 
-MASTER_SITES=	https://trac.luon.net/data/ruby-dbus/releases/
+MODULES=		lang/ruby
 
-MODULES=	lang/ruby
-
-CONFIGURE_STYLE=ruby setup
-
-PKG_ARCH=	*
+CONFIGURE_STYLE=	ruby gem
 
 .include <bsd.port.mk>
