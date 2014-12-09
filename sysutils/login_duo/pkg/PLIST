@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/08 22:42:03 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/09 15:54:25 ajacoutot Exp $
 include/duo.h
 include/util.h
 lib/libduo.a
 lib/libduo.la
 @lib lib/libduo.so.${LIBduo_VERSION}
 lib/pkgconfig/libduo.pc
+@mode 0750
 @group auth
 libexec/auth/
 @mode 4755
