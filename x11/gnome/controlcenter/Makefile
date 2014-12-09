@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2014/11/13 17:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2014/12/09 15:55:45 ajacoutot Exp $
 
 # XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -11,6 +11,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.14.2
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -36,7 +37,9 @@ WANTLIB += pthread-stubs pulse pulse-mainloop-glib pwquality rest-0.7
 WANTLIB += secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 stdc++ telepathy-glib upower-glib vorbis vorbisenc
 WANTLIB += vorbisfile webkitgtk-3.0 webp xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z gbm dbus-glib-1 lzma
+WANTLIB += xml2 xslt z gbm dbus-glib-1 lzma com_err crypto gmp
+WANTLIB += hogweed nettle p11-kit tasn1
+WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		devel/gettext \
 			security/heimdal \
