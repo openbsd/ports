@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/22 07:23:44 ajacoutot Exp $
-bin/py-html2text
+@comment $OpenBSD: PLIST,v 1.3 2014/12/09 22:46:23 rpe Exp $
+bin/${MODPY_PY_PREFIX}html2text
+lib/python${MODPY_VERSION}/site-packages/html2text/
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -7,5 +8,13 @@ lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/html2text-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/html2text.py
-lib/python${MODPY_VERSION}/site-packages/html2text.pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/__init__.py
+lib/python${MODPY_VERSION}/site-packages/html2text/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/cli.py
+lib/python${MODPY_VERSION}/site-packages/html2text/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/compat.py
+lib/python${MODPY_VERSION}/site-packages/html2text/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/config.py
+lib/python${MODPY_VERSION}/site-packages/html2text/config.pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/utils.py
+lib/python${MODPY_VERSION}/site-packages/html2text/utils.pyc
