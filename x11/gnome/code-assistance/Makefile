@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/12/07 13:04:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/12/09 09:16:12 jasper Exp $
 
 COMMENT=		code assistance services for GNOME
 
 GNOME_PROJECT=		gnome-code-assistance
 GNOME_VERSION=		3.14.0
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -26,7 +27,7 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/llvm>=${MODCLANG_VERSION} \
 			devel/py-gobject3${MODPY_FLAVOR} \
-			x11/ruby-dbus>=0.2.1p0 \
+			x11/ruby-dbus,${MODRUBY_FLAVOR}>=0.11.0 \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/gjs
 
