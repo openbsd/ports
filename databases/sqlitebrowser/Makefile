@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/07/13 15:43:05 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2014/12/09 20:49:59 zhuk Exp $
 
 COMMENT=	graphical interface to sqlite databases
 DISTNAME =	sqlb-3.2.0
@@ -14,5 +14,7 @@ MODULES=	x11/qt4 devel/cmake
 # MPLv2/GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += QtGui QtNetwork c m pthread sqlite3 stdc++
+
+CONFIGURE_ARGS =	-DUSE_QT5=False
 
 .include <bsd.port.mk>
