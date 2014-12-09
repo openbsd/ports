@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2014/11/19 19:00:50 giovanni Exp $
+# $OpenBSD: Makefile,v 1.38 2014/12/09 15:21:13 sthen Exp $
 
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
 
 V=			2.10.1
+REVISION=		0
 DISTNAME=		amavisd-new-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-utils=		amavisd-new-utils-${V}
@@ -40,7 +41,7 @@ RUN_DEPENDS=		archivers/arc \
 			mail/p5-Mail-DKIM>=0.31 \
 			mail/p5-MIME-tools \
 			misc/p5-File-LibMagic \
-			net/net-snmp,-perl \
+			net/net-snmp \
 			net/p5-IO-Socket-INET6 \
 			net/p5-IO-Socket-IP \
 			net/p5-Net-LibIDN \
