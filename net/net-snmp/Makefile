@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.78 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2014/12/09 15:20:06 sthen Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT-main=	extendable SNMP implementation
-COMMENT-perl=	SNMP modules for Perl
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.7.2.1
-REVISION=	2
+V=		5.7.3
 
-DISTNAME=	net-snmp-${V:S/pre/.pre/:S/rc/.rc/}
-MULTI_PACKAGES=	-main -perl -tkmib
+DISTNAME=	net-snmp-$V
+MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V
-PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
-NOT_FOR_ARCHS-perl = ${NO_SHARED_ARCHS}
-NOT_FOR_ARCHS-tkmib = ${NO_SHARED_ARCHS}
 
-LIBV=		13.0
+LIBV=		14.0
 .for i in netsnmp netsnmpagent netsnmphelpers netsnmpmibs netsnmptrapd
 SHARED_LIBS +=	$i ${LIBV}
 .endfor
@@ -31,12 +28,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-main=		c crypto kvm m perl util
-WANTLIB-perl=		crypto m netsnmp netsnmpagent netsnmptrapd \
-			netsnmpmibs perl
-# depends on libperl's ABI (XS module)
 
-LIB_DEPENDS-perl=	net/net-snmp,-main
-RUN_DEPENDS-tkmib=	net/net-snmp,-perl \
+RUN_DEPENDS-tkmib=	net/net-snmp \
 			x11/p5-Tk
 
 NET_SNMP_MIB_LIST=	smux mibII/mta_sendmail
@@ -67,7 +60,7 @@ CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 TEST_TARGET=	test
 
 pre-configure:
-	@if ! fgrep '#define NETSNMP_DEFAULT_MIBS "${DEFAULT_MIBS}"' \
+	@if ! grep '^#define NETSNMP_DEFAULT_MIBS "${DEFAULT_MIBS}"$$' \
 	    ${WRKSRC}/include/net-snmp/net-snmp-config.h.in > /dev/null; then \
 	    echo 'DEFAULT_MIBS in the port Makefile is out of sync'; exit 1; fi
 	@perl -pi -e 's,(snmpd\(8\)|snmpd\.conf\(5\)),netsnmp-\1,' ${WRKSRC}/man/*

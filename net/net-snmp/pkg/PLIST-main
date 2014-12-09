@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2014/03/12 23:52:14 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2014/12/09 15:20:06 sthen Exp $
+@conflict p5-SNMP-*
 @pkgpath net/net-snmp
+@pkgpath net/net-snmp,-perl
 @extraunexec rm -rf /var/net-snmp/*
 @bin bin/agentxtrap
 @bin bin/encode_keychange
@@ -182,6 +184,8 @@ include/net-snmp/system/dragonfly.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
 include/net-snmp/system/freebsd10.h
+include/net-snmp/system/freebsd11.h
+include/net-snmp/system/freebsd12.h
 include/net-snmp/system/freebsd2.h
 include/net-snmp/system/freebsd3.h
 include/net-snmp/system/freebsd4.h
@@ -229,6 +233,43 @@ lib/libnetsnmpmibs.la
 lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.la
 @lib lib/libnetsnmptrapd.so.${LIBnetsnmptrapd_VERSION}
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/Makefile.subs.pl
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/ASN.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/OID.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/TrapReceiver.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/Support.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/default_store.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/netsnmp_request_infoPtr.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/default_store.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SNMP.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/TrapReceiver.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/agent.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/default_store.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/default_store.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/SNMP.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/autosplit.ix
 @man man/man1/agentxtrap.1
 @man man/man1/encode_keychange.1
 @man man/man1/fixproc.1
@@ -304,6 +345,7 @@ lib/libnetsnmptrapd.la
 @man man/man3/snmp_alarm_register_hr.3
 @man man/man3/snmp_alarm_unregister.3
 @man man/man3/snmp_api_errstring.3
+@man man/man3/snmp_async_send.3
 @man man/man3/snmp_clone_pdu.3
 @man man/man3/snmp_clone_varbind.3
 @man man/man3/snmp_close.3
@@ -330,6 +372,7 @@ lib/libnetsnmptrapd.la
 @man man/man3/snmp_sess_select_info.3
 @man man/man3/snmp_sess_send.3
 @man man/man3/snmp_sess_session.3
+@man man/man3/snmp_sess_synch_response.3
 @man man/man3/snmp_sess_timeout.3
 @man man/man3/snmp_set_mib_errors.3
 @man man/man3/snmp_set_mib_warnings.3
@@ -338,6 +381,7 @@ lib/libnetsnmptrapd.la
 @man man/man3/snmp_set_var_typed_integer.3
 @man man/man3/snmp_set_var_typed_value.3
 @man man/man3/snmp_set_var_value.3
+@man man/man3/snmp_synch_response.3
 @man man/man3/snmp_timeout.3
 @man man/man3/snmp_varlist_add_variable.3
 @man man/man3/snprint_description.3
@@ -347,6 +391,14 @@ lib/libnetsnmptrapd.la
 @man man/man3/unregister_all_config_handlers.3
 @man man/man3/unregister_app_config_handler.3
 @man man/man3/unregister_config_handler.3
+@man man/man3p/NetSNMP::ASN.3p
+@man man/man3p/NetSNMP::OID.3p
+@man man/man3p/NetSNMP::TrapReceiver.3p
+@man man/man3p/NetSNMP::agent.3p
+@man man/man3p/NetSNMP::agent::default_store.3p
+@man man/man3p/NetSNMP::default_store.3p
+@man man/man3p/NetSNMP::netsnmp_request_infoPtr.3p
+@man man/man3p/SNMP.3p
 @man man/man5/mib2c.conf.5
 @man man/man5/netsnmp-snmpd.conf.5
 @man man/man5/snmp.conf.5
@@ -507,6 +559,8 @@ share/snmp/mibs/SNMP-MPD-MIB.txt
 share/snmp/mibs/SNMP-NOTIFICATION-MIB.txt
 share/snmp/mibs/SNMP-PROXY-MIB.txt
 share/snmp/mibs/SNMP-TARGET-MIB.txt
+share/snmp/mibs/SNMP-TLS-TM-MIB.txt
+share/snmp/mibs/SNMP-TSM-MIB.txt
 share/snmp/mibs/SNMP-USER-BASED-SM-MIB.txt
 share/snmp/mibs/SNMP-USM-AES-MIB.txt
 share/snmp/mibs/SNMP-USM-DH-OBJECTS-MIB.txt
@@ -525,6 +579,8 @@ share/snmp/mibs/UCD-DLMOD-MIB.txt
 share/snmp/mibs/UCD-IPFWACC-MIB.txt
 share/snmp/mibs/UCD-SNMP-MIB.txt
 share/snmp/mibs/UDP-MIB.txt
+share/snmp/snmp_perl.pl
+share/snmp/snmp_perl_trapd.pl
 share/snmp/snmpconf-data/
 share/snmp/snmpconf-data/snmp-data/
 share/snmp/snmpconf-data/snmp-data/authopts

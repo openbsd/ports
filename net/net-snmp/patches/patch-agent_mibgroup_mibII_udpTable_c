@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_mibII_udpTable_c,v 1.4 2013/12/20 02:20:00 krw Exp $
---- agent/mibgroup/mibII/udpTable.c.orig	Tue Oct  9 18:28:58 2012
-+++ agent/mibgroup/mibII/udpTable.c	Fri Nov 29 14:52:47 2013
+$OpenBSD: patch-agent_mibgroup_mibII_udpTable_c,v 1.5 2014/12/09 15:20:06 sthen Exp $
+--- agent/mibgroup/mibII/udpTable.c.orig	Tue Feb 25 20:50:16 2014
++++ agent/mibgroup/mibII/udpTable.c	Thu Mar 20 12:41:29 2014
 @@ -65,7 +65,7 @@ struct netsnmp_udpEntry_s {
  #define INP_NEXT_SYMBOL		inp_next
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_udpTable_c,v 1.4 2013/12/20 02:20:00 krw Ex
  #endif
  
  #if defined(freebsd4) || defined(darwin) || defined(osf5)
-@@ -705,7 +705,7 @@ udpTable_load(netsnmp_cache *cache, void *vmagic)
+@@ -706,7 +706,7 @@ udpTable_load(netsnmp_cache *cache, void *vmagic)
      /*
       *  Set up a linked list
       */
@@ -19,7 +19,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_udpTable_c,v 1.4 2013/12/20 02:20:00 krw Ex
      while (entry) {
     
          nnew = SNMP_MALLOC_TYPEDEF(struct inpcb);
-@@ -717,11 +717,11 @@ udpTable_load(netsnmp_cache *cache, void *vmagic)
+@@ -718,11 +718,11 @@ udpTable_load(netsnmp_cache *cache, void *vmagic)
              break;
          }
  

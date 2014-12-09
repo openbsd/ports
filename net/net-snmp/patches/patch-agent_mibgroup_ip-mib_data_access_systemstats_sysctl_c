@@ -1,0 +1,11 @@
+$OpenBSD: patch-agent_mibgroup_ip-mib_data_access_systemstats_sysctl_c,v 1.1 2014/12/09 15:20:06 sthen Exp $
+--- agent/mibgroup/ip-mib/data_access/systemstats_sysctl.c.orig	Thu Nov 13 01:08:13 2014
++++ agent/mibgroup/ip-mib/data_access/systemstats_sysctl.c	Thu Nov 13 01:08:48 2014
+@@ -25,6 +25,7 @@
+ #include <ctype.h>
+ 
+ #include <sys/param.h>
++#include <sys/queue.h>
+ #include <sys/sysctl.h>
+ #include <sys/protosw.h>
+ 

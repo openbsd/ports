@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.8 2013/12/20 02:20:00 krw Exp $
---- agent/mibgroup/mibII/tcpTable.c.orig	Tue Oct  9 18:28:58 2012
-+++ agent/mibgroup/mibII/tcpTable.c	Fri Nov 29 14:52:27 2013
-@@ -946,7 +946,7 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
+$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.9 2014/12/09 15:20:06 sthen Exp $
+--- agent/mibgroup/mibII/tcpTable.c.orig	Tue Feb 25 20:50:16 2014
++++ agent/mibgroup/mibII/tcpTable.c	Thu Mar 20 12:41:29 2014
+@@ -974,7 +974,7 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
      /*
       *  Set up a linked list
       */
@@ -10,7 +10,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.8 2013/12/20 02:20:00 krw Ex
      while (entry) {
     
          nnew = SNMP_MALLOC_TYPEDEF(netsnmp_inpcb);
-@@ -970,7 +970,7 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
+@@ -998,7 +998,7 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
  	nnew->inp_next = tcp_head;
  	tcp_head   = nnew;
  
