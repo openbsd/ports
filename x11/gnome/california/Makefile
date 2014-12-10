@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/10 12:30:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/10 12:35:06 ajacoutot Exp $
 
 COMMENT=		GNOME 3 calendar
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=		databases/evolution-data-server \
 			devel/libgee
 
 # needs xdg-email
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		devel/xdg-utils
 RUN_DEPENDS=		devel/xdg-utils
 
 MODULES=		devel/dconf \
