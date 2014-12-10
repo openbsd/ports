@@ -1,0 +1,16 @@
+$OpenBSD: patch-qtmultimedia_config_tests_linux_v4l_main_cpp,v 1.1 2014/12/10 21:23:54 zhuk Exp $
+Allow V4L layer to be used on OpenBSD.
+--- qtmultimedia/config.tests/linux_v4l/main.cpp.ports.orig	Thu Dec 11 00:01:10 2014
++++ qtmultimedia/config.tests/linux_v4l/main.cpp	Thu Dec 11 00:01:20 2014
+@@ -39,7 +39,11 @@
+ **
+ ****************************************************************************/
+ 
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ int main(int argc, char** argv)
+ {
