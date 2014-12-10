@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/02 00:33:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/10 20:19:12 zhuk Exp $
 
 COMMENT-main =		multi-protocol instant messenger for KDE
 COMMENT-sounds =	notification sounds for Kopete
@@ -71,7 +71,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_JsonCpp:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2:Bool=Yes \
 			-DMOZPLUGIN_INSTALL_DIR=${LOCALBASE}/lib/mozilla/plugins \
-			-DWITH_Libmsn:Bool=No
+			-DWITH_Libmsn:Bool=No \
+			-DQT4_BUILD=Yes
 
 # requires enabling of exceptions, thanks to roots in Boost via PIM
 CONFIGURE_ARGS +=	-DWITH_Kleopatra:Bool=No
