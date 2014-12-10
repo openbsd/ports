@@ -1,0 +1,3 @@
+The Net::IMP::HTTP modules make it easier to write HTTP specific
+IMP plugins.  We distinguish between HTTP connection specific plugins
+and HTTP request specific plugins.
