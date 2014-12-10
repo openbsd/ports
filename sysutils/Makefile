@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2014/11/26 15:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.334 2014/12/10 12:48:45 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -86,6 +86,7 @@
      SUBDIR += logfmon
      SUBDIR += login_duo
      SUBDIR += login_fingerprint
+     SUBDIR += login_krb5
      SUBDIR += login_ldap
      SUBDIR += login_oath
      SUBDIR += logpp
