@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2013/05/05 16:17:19 gonzalo Exp $
+$OpenBSD: README,v 1.7 2014/12/10 15:25:05 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,26 +31,15 @@ $OpenBSD: README,v 1.6 2013/05/05 16:17:19 gonzalo Exp $
                 {registration_watchers, ["admin1@example.org"]},
 
 
-* Running
-  Control is done using ${TRUEPREFIX}/sbin/ejabberdctl, run it without
+* Administration
+  Control is done using ${TRUEPREFIX}/sbin/ejabberdctl. Run it without
   arguments for list of possible commands and flags. It needs to be
   executed as either root or _ejabberd user.
 
-  To start ejabberd at boot time, you may insert the following
-  into ${SYSCONFDIR}/rc.local:
-
-    if [ -x ${TRUEPREFIX}/sbin/ejabberdctl ]; then
-	echo -n ' ejabberd';   ${TRUEPREFIX}/sbin/ejabberdctl start
-    fi
-
-
-* Administration
-  ejabberdctl has some commands for administration of the server. After
-  starting ejabberd run ejabberdctl again for the list of options.
   Another possibility, giving you more options, is the web interface,
-  available at http://your.server:5280/admin/ where you need to log in
-  as a user added to admin acl group, give your full jid and your
-  account password
+  available at http://your.server:5280/admin/. First, you need to
+  create a user in the "admin" ACL group. Then you can use his full JID
+  and account password to log in.
 
 
 * Using SSL

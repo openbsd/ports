@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/01/24 19:05:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/12/10 15:25:05 sebastia Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -275,3 +275,7 @@ share/examples/ejabberd/transport-configs/init-scripts/yahoo-transport-2
 @sample /var/log/ejabberd/
 @sample /var/db/ejabberd/
 @sample /var/db/ejabberd/ejabberd/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/ejabberd

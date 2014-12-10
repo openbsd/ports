@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: ejabberd.rc,v 1.1 2014/12/10 15:25:05 sebastia Exp $
+
+daemon="${TRUEPREFIX}/sbin/ejabberdctl"
+
+. /etc/rc.d/rc.subr
+rc_usercheck=NO
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} start"
+}
+
+rc_stop() {
+	${daemon} ${daemon_flags} stop
+}
+
+rc_check() {
+	${daemon} ${daemon_flags} status
+}
+
+rc_reload=NO
+
+rc_cmd $1
