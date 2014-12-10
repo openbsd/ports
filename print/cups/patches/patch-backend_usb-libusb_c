@@ -1,9 +1,26 @@
-$OpenBSD: patch-backend_usb-libusb_c,v 1.12 2014/11/16 10:21:39 ajacoutot Exp $
+$OpenBSD: patch-backend_usb-libusb_c,v 1.13 2014/12/10 10:22:13 ajacoutot Exp $
 
-https://www.cups.org/str.php?L4525
+commit ce7d367df7e8b554116e297d6e38a9b989dea725
+Author: msweet <msweet@a1ca3aef-8c08-0410-bb20-df032aa958be>
+Date:   Tue Dec 9 21:33:23 2014 +0000
+Fix a libusb issue on OpenBSD.
 
---- backend/usb-libusb.c.orig	Fri Feb 14 21:09:01 2014
-+++ backend/usb-libusb.c	Fri Oct  3 15:35:39 2014
+commit 5e1504aa1e8854f222154d627148ad5675dc7de3
+Author: msweet <msweet@a1ca3aef-8c08-0410-bb20-df032aa958be>
+Date:   Tue Dec 9 22:10:45 2014 +0000
+Fix USB printing on OpenBSD (STR #4525)
+
+--- backend/usb-libusb.c.orig	Wed Dec 10 10:48:01 2014
++++ backend/usb-libusb.c	Wed Dec 10 10:48:18 2014
+@@ -915,7 +915,7 @@ find_device(usb_cb_t   cb,		/* I - Callback function *
+ 		  write_endp = endp;
+ 	      }
+ 
+-            if (write_endp >= 0)
++            if (write_endp != 0xff)
+ 	    {
+ 	     /*
+ 	      * Save the best match so far...
 @@ -1451,9 +1451,14 @@ open_device(usb_printer_t *printer,	/* I - Printer */
    else
    {
