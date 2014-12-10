@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/10 12:48:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/10 19:03:06 naddy Exp $
 
 # needs mode 4555 to access passwd(5) and the Kerberos keytab
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c com_err crypto pthread util
 
-MASTER_SITES		https://distfiles.bsdfrog.org/
+MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES=		security/heimdal
 
