@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_openssl_c,v 1.9 2014/11/20 10:38:51 jca Exp $
---- src/openssl.c.orig	Mon Oct 27 09:15:33 2014
-+++ src/openssl.c	Wed Nov 19 21:21:07 2014
-@@ -89,9 +89,11 @@ init_prng (void)
+$OpenBSD: patch-src_openssl_c,v 1.10 2014/12/10 20:23:28 jca Exp $
+--- src/openssl.c.orig	Thu Dec  4 09:55:49 2014
++++ src/openssl.c	Mon Dec  8 12:06:14 2014
+@@ -91,9 +91,11 @@ init_prng (void)
    if (RAND_status ())
      return;
  
@@ -13,32 +13,3 @@ $OpenBSD: patch-src_openssl_c,v 1.9 2014/11/20 10:38:51 jca Exp $
  
    if (RAND_status ())
      return;
-@@ -201,6 +203,8 @@ ssl_init (void)
-   SSLeay_add_all_algorithms ();
-   SSLeay_add_ssl_algorithms ();
- 
-+  long ssl_options = 0;
-+
-   switch (opt.secure_protocol)
-     {
- #ifndef OPENSSL_NO_SSL2
-@@ -213,6 +217,9 @@ ssl_init (void)
-       break;
-     case secure_protocol_auto:
-     case secure_protocol_pfs:
-+      meth = SSLv23_client_method ();
-+      ssl_options |= SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3;
-+      break;
-     case secure_protocol_tlsv1:
-       meth = TLSv1_client_method ();
-       break;
-@@ -233,6 +240,9 @@ ssl_init (void)
-   ssl_ctx = SSL_CTX_new ((SSL_METHOD *)meth);
-   if (!ssl_ctx)
-     goto error;
-+
-+  if (ssl_options)
-+    SSL_CTX_set_options (ssl_ctx, ssl_options);
- 
-   /* OpenSSL ciphers: https://www.openssl.org/docs/apps/ciphers.html
-    * Since we want a good protection, we also use HIGH (that excludes MD4 ciphers and some more)

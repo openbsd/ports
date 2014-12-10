@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2014/11/20 10:38:51 jca Exp $
+# $OpenBSD: Makefile,v 1.66 2014/12/10 20:23:28 jca Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME =	wget-1.16
-REVISION =	0
+DISTNAME =	wget-1.16.1
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
@@ -33,11 +32,14 @@ TEST_DEPENDS +=		www/p5-HTTP-Message security/p5-IO-Socket-SSL
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/wget"
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--without-libpsl --with-ssl=openssl
+CONFIGURE_ARGS =	--without-libpsl \
+			--without-libuuid \
+			--with-ssl=openssl
+# wget-1.16.1: hack to avoid depending on python3 at build time
+CONFIGURE_ARGS +=	PYTHON="" \
+			am_cv_pathless_PYTHON="${MODPY_BIN}"
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-# do not pick up libuuid from sysutils/e2fsprogs
-CONFIGURE_ENV +=	ac_cv_header_uuid_uuid_h=no
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/build-aux
 
 pre-build:
