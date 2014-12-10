@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/12/10 14:51:20 benoit Exp $
 
 COMMENT=		sensible default end action (deprecated)
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Plugin-DefaultEnd-0.08
 CATEGORIES=		www devel
-USE_GROFF =		Yes
-
-MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
+REVISION =		0
 
 # same as perl
 PERMIT_PACKAGE_CDROM=	Yes
