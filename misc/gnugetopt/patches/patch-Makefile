@@ -1,19 +1,18 @@
-$OpenBSD: patch-Makefile,v 1.3 2009/03/25 14:32:22 naddy Exp $
---- Makefile.orig	Mon Nov  7 23:32:46 2005
-+++ Makefile	Wed Mar 25 15:31:06 2009
-@@ -1,17 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.4 2014/12/10 20:46:57 rpe Exp $
+--- Makefile.orig	Mon Nov 24 13:33:39 2014
++++ Makefile	Mon Dec  8 19:21:29 2014
+@@ -1,29 +1,29 @@
  .SUFFIXES:
  
  DESTDIR=
 -prefix=/usr/local
-+prefix=$(PREFIX)
++prefix=$(TRUEPREFIX)
  bindir=$(prefix)/bin
  mandir=$(prefix)/man
  man1dir=$(mandir)/man1
- libdir=$(prefix)/lib
  sharedir=$(prefix)/share
--getoptdir=$(libdir)/getopt
-+getoptdir=$(sharedir)/examples/getopt
+-getoptdir=$(sharedir)/getopt
++getoptdir=$(sharedir)/examples/gnugetopt
  localedir=$(sharedir)/locale
  
  # Define this to 0 to use the getopt(3) routines in this package.
@@ -22,7 +21,13 @@ $OpenBSD: patch-Makefile,v 1.3 2009/03/25 14:32:22 naddy Exp $
  
  # Define this to 1 if you do not have the gettext routines
  WITHOUT_GETTEXT=0
-@@ -24,7 +24,7 @@ UNLIKELYNAME=a8vwjfd92
+ 
+ # For creating the archive
+-PACKAGE=getopt
++PACKAGE=gnugetopt
+ VERSION=1.1.6
+ BASENAME=$(PACKAGE)-$(VERSION)
+ UNLIKELYNAME=a8vwjfd92
  
  SHELL=/bin/sh
  
@@ -31,16 +36,16 @@ $OpenBSD: patch-Makefile,v 1.3 2009/03/25 14:32:22 naddy Exp $
  LD=ld
  RM=rm -f
  INSTALL=install
-@@ -33,7 +33,7 @@ MSGFMT=msgfmt
- LANGUAGES = cs de es fr it ja nl pt_BR
+@@ -32,7 +32,7 @@ MSGFMT=msgfmt
+ LANGUAGES = ca cs da de es et eu fi fr gl hr hu id it ja nl pl pt_BR ru sl sv tr uk vi zh_CN zh_TW
  MOFILES:=$(patsubst %,po/%.mo,$(LANGUAGES))
  
--CPPFLAGS=-DLIBCGETOPT=$(LIBCGETOPT) -DWITH_GETTEXT=$(WITH_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX
-+CPPFLAGS+=-DLIBCGETOPT=$(LIBCGETOPT) -DWITH_GETTEXT=$(WITH_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX
+-CPPFLAGS=-DLIBCGETOPT=$(LIBCGETOPT) -DWITHOUT_GETTEXT=$(WITHOUT_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX -Dprogram_invocation_short_name=\"$(PACKAGE)\"  -Dprogram_version=\"$(VERSION)\"
++CPPFLAGS+=-DLIBCGETOPT=$(LIBCGETOPT) -DWITHOUT_GETTEXT=$(WITHOUT_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX -Dprogram_invocation_short_name=\"$(PACKAGE)\"  -Dprogram_version=\"$(VERSION)\"
  ifeq ($(LIBCGETOPT),0)
  CPPFLAGS+=-I./gnu 
  endif
-@@ -43,8 +43,6 @@ WARNINGS=-Wall \
+@@ -42,8 +42,6 @@ WARNINGS=-Wall \
           -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes \
           -Wnested-externs -Winline
  OPTIMIZE=-O3 -fno-strength-reduce
@@ -49,7 +54,7 @@ $OpenBSD: patch-Makefile,v 1.3 2009/03/25 14:32:22 naddy Exp $
  
  sources=getopt.c
  ifeq ($(LIBCGETOPT),0)
-@@ -62,7 +60,7 @@ clean: clean_po
+@@ -61,14 +59,12 @@ clean: clean_po
  	-$(RM) $(objects) $(binaries) 
  
  getopt: $(objects)
@@ -58,3 +63,12 @@ $OpenBSD: patch-Makefile,v 1.3 2009/03/25 14:32:22 naddy Exp $
  
  install: getopt install_po
  	$(INSTALL) -m 755 -d $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir)
+-	$(INSTALL) -m 755 getopt $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 644 getopt.1 $(DESTDIR)$(man1dir)
+-
+-install_doc:
++	$(INSTALL) -m 755 getopt $(DESTDIR)$(bindir)/$(PACKAGE)
++	$(INSTALL) -m 644 getopt.1 $(DESTDIR)$(man1dir)/$(PACKAGE).1
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(getoptdir)
+ 	$(INSTALL) -m 755 getopt-parse.bash getopt-parse.tcsh \
+ 	                  getopt-test.bash getopt-test.tcsh \

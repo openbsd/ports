@@ -1,0 +1,8 @@
+$OpenBSD: patch-tests_invalid_getopt_option_stderr,v 1.1 2014/12/10 20:46:57 rpe Exp $
+--- tests/invalid_getopt_option.stderr.orig	Sun Nov 23 11:39:51 2014
++++ tests/invalid_getopt_option.stderr	Mon Dec  8 12:43:13 2014
+@@ -1,2 +1,2 @@
+-$0: invalid option -- 'b'
+-Try `getopt --help' for more information.
++$0: invalid option -- b
++Try `gnugetopt --help' for more information.
