@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.47 2014/11/08 19:59:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.48 2014/12/10 17:00:01 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.7.16
+V =		1.7.17
 DISTNAME =	jruby-bin-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
-		jnr-posix-3.0.7-SNAPSHOT.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
-REVISION =	1
 
 HOMEPAGE =	http://www.jruby.org/
 
@@ -32,9 +30,7 @@ USE_GMAKE =	Yes
 
 WANTLIB =	c m pthread stdc++
 
-BUILD_DEPENDS =	archivers/unzip \
-		archivers/zip \
-		devel/apache-ant \
+BUILD_DEPENDS =	devel/apache-ant \
 		shells/bash \
 		${RUN_DEPENDS}
 RUN_DEPENDS =	java/javaPathHelper
@@ -56,7 +52,6 @@ SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V
 
 post-extract:
 	mv ${WRKDIR}/jnr-jffi* ${JFFI_HOME}
-	cd ${WRKSRC} && unzip ${WRKDIR}/jnr-posix.jar
 	# Unpack the jruby-launcher gem, since it needs to be patched
 	cd ${WRKSRC} && mkdir jruby-launcher \
 		&& cd jruby-launcher && tar zxf ../../data.tar.gz \
@@ -75,7 +70,6 @@ do-configure:
                 -e 'close ARGV if eof;' ${WRKSRC}/bin/!(*.*)
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/zip -r lib/jruby.jar jnr/posix/
 	cd ${JFFI_HOME} && ${ANT_CMD} jar
 	rm -rf ${WRKSRC}/lib/jni
 	mkdir -p ${WRKSRC}/lib/jni/${JFFI_ARCH}
