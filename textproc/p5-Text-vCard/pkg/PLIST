@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/10 21:51:09 landry Exp $
+${P5SITE}/Text/vCard/
+${P5SITE}/Text/vCard.pm
+${P5SITE}/Text/vCard/Addressbook.pm
+${P5SITE}/Text/vCard/Node.pm
+${P5SITE}/vCard/
+${P5SITE}/vCard.pm
+${P5SITE}/vCard/AddressBook.pm
+${P5SITE}/vCard/Role/
+${P5SITE}/vCard/Role/FileIO.pm
+@man man/man3p/Text::vCard.3p
+@man man/man3p/Text::vCard::Addressbook.3p
+@man man/man3p/Text::vCard::Node.3p
+@man man/man3p/vCard.3p
+@man man/man3p/vCard::AddressBook.3p
