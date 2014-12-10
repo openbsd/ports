@@ -1,6 +1,10 @@
-$OpenBSD: patch-SConstruct,v 1.4 2014/09/16 17:28:07 jasper Exp $
---- SConstruct.orig	Fri Aug  8 22:13:51 2014
-+++ SConstruct	Tue Sep 16 16:08:02 2014
+$OpenBSD: patch-SConstruct,v 1.5 2014/12/10 19:59:29 dcoppa Exp $
+
+Fixup detection of yaml-cpp system library
+https://github.com/mongodb/mongo/commit/44b0e3591839525a0c951319540488814e5c25fd
+
+--- SConstruct.orig	Fri Aug  8 15:13:51 2014
++++ SConstruct	Wed Dec 10 09:28:50 2014
 @@ -814,7 +814,6 @@ if nix:
      # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used.
      env.Append( CCFLAGS=["-fPIC",
@@ -33,3 +37,12 @@ $OpenBSD: patch-SConstruct,v 1.4 2014/09/16 17:28:07 jasper Exp $
              env.Append( LINKFLAGS=["-fstack-protector"] )
              env.Append( SHLINKFLAGS=["-fstack-protector"] )
          env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
+@@ -1352,7 +1347,7 @@ def doConfigure(myenv):
+         conf.FindSysLibDep("stemmer", ["stemmer"])
+ 
+     if use_system_version_of_library("yaml"):
+-        conf.FindSysLibDep("yaml", ["yaml"])
++        conf.FindSysLibDep("yaml", ["yaml-cpp"])
+ 
+     if use_system_version_of_library("boost"):
+         if not conf.CheckCXXHeader( "boost/filesystem/operations.hpp" ):
