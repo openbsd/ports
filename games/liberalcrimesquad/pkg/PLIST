@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/10 04:15:32 bcallah Exp $
+@bin bin/crimesquad
+@man man/man6/crimesquad.6
+share/applications/
+share/applications/crimesquad.desktop
+share/lcs/
+share/lcs/art/
+share/lcs/art/abort.cmv
+share/lcs/art/anchor.cmv
+share/lcs/art/armors.xml
+share/lcs/art/armsdealer.xml
+share/lcs/art/clips.xml
+share/lcs/art/deptstore.xml
+share/lcs/art/glamshow.cmv
+share/lcs/art/lacops.cmv
+share/lcs/art/largecap.cpc
+share/lcs/art/loot.xml
+share/lcs/art/mapCSV_Bank_Specials.csv
+share/lcs/art/mapCSV_Bank_Tiles.csv
+share/lcs/art/mapCSV_BarAndGrill_Specials.csv
+share/lcs/art/mapCSV_BarAndGrill_Tiles.csv
+share/lcs/art/mapCSV_BombShelter_Specials.csv
+share/lcs/art/mapCSV_BombShelter_Tiles.csv
+share/lcs/art/mapCSV_Bunker_Specials.csv
+share/lcs/art/mapCSV_Bunker_Tiles.csv
+share/lcs/art/mapCSV_Courthouse_Specials.csv
+share/lcs/art/mapCSV_Courthouse_Tiles.csv
+share/lcs/art/mapCSV_NuclearPlant_Specials.csv
+share/lcs/art/mapCSV_NuclearPlant_Tiles.csv
+share/lcs/art/mapCSV_WhiteHouse2_Specials.csv
+share/lcs/art/mapCSV_WhiteHouse2_Tiles.csv
+share/lcs/art/mapCSV_WhiteHouse3_Specials.csv
+share/lcs/art/mapCSV_WhiteHouse3_Tiles.csv
+share/lcs/art/mapCSV_WhiteHouse_Specials.csv
+share/lcs/art/mapCSV_WhiteHouse_Tiles.csv
+share/lcs/art/masks.xml
+share/lcs/art/newscast.cmv
+share/lcs/art/newspic.cpc
+share/lcs/art/newstops.cpc
+share/lcs/art/oubliette.xml
+share/lcs/art/pawnshop.xml
+share/lcs/art/sitemaps.txt
+share/lcs/art/vehicles.xml
+share/lcs/art/weapons.xml
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
