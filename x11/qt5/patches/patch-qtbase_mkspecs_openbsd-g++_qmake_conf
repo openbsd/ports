@@ -1,11 +1,12 @@
-$OpenBSD: patch-qtbase_mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtbase_mkspecs_openbsd-g++_qmake_conf,v 1.2 2014/12/10 22:42:17 zhuk Exp $
 1. Un-hardcode system paths.
 2. Respect OpenBSD shared library naming rules.
 3. Use common GCC options to avoid duplication.
 4. Fix --no-undefined usage and sync other things with current OpenBSD style.
+5. Allow C++11 to work.
 --- qtbase/mkspecs/openbsd-g++/qmake.conf.ports.orig	Thu Sep 11 14:48:07 2014
-+++ qtbase/mkspecs/openbsd-g++/qmake.conf	Mon Dec  8 16:23:16 2014
-@@ -7,40 +7,34 @@ QMAKE_PLATFORM          = openbsd bsd
++++ qtbase/mkspecs/openbsd-g++/qmake.conf	Tue Dec  9 16:09:10 2014
+@@ -7,40 +7,35 @@ QMAKE_PLATFORM          = openbsd bsd
  
  QMAKE_COMPILER          = gcc
  
@@ -33,6 +34,7 @@ $OpenBSD: patch-qtbase_mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2014/12/08 20:33
  
  QMAKE_CXX               = g++
  QMAKE_CXXFLAGS          = $$QMAKE_CFLAGS
++QMAKE_CXXFLAGS_CXX11	= -std=c++11
  QMAKE_CXXFLAGS_DEPS     = $$QMAKE_CFLAGS_DEPS
 -QMAKE_CXXFLAGS_WARN_ON  = $$QMAKE_CFLAGS_WARN_ON
 -QMAKE_CXXFLAGS_WARN_OFF = $$QMAKE_CFLAGS_WARN_OFF
@@ -59,7 +61,7 @@ $OpenBSD: patch-qtbase_mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2014/12/08 20:33
  
  QMAKE_LINK              = g++
  QMAKE_LINK_SHLIB        = g++
-@@ -52,22 +46,18 @@ QMAKE_LINK_SHLIB_CMD    = $$QMAKE_LINK_SHLIB $(LFLAGS)
+@@ -52,22 +47,18 @@ QMAKE_LINK_SHLIB_CMD    = $$QMAKE_LINK_SHLIB $(LFLAGS)
  QMAKE_LFLAGS            =
  QMAKE_LFLAGS_RELEASE    =
  QMAKE_LFLAGS_DEBUG      =

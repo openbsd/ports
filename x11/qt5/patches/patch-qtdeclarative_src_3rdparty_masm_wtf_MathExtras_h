@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtdeclarative_src_3rdparty_masm_wtf_MathExtras_h,v 1.1 2014/12/10 22:42:17 zhuk Exp $
+Unbreak compilation in C++11 mode.
+--- qtdeclarative/src/3rdparty/masm/wtf/MathExtras.h.ports.orig	Tue Dec  9 16:52:23 2014
++++ qtdeclarative/src/3rdparty/masm/wtf/MathExtras.h	Tue Dec  9 16:53:52 2014
+@@ -106,7 +106,7 @@ inline bool isinf(double x) { return !finite(x) && !is
+ 
+ #endif
+ 
+-#if OS(OPENBSD)
++#if OS(OPENBSD) && __cplusplus < 201103L
+ 
+ namespace std {
+ 

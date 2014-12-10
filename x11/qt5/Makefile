@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/10 21:22:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/10 22:42:17 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -252,7 +252,7 @@ CONFIGURE_ARGS +=	-sysconfdir ${SYSCONFDIR} \
 			-L${X11BASE}/lib
 
 # other options
-CONFIGURE_ARGS +=	-no-c++11 \
+CONFIGURE_ARGS +=	-c++11 \
 			-no-alsa \
 			-no-journald \
 			-no-mtdev \

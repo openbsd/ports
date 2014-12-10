@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtwebkit_Source_WTF_wtf_MathExtras_h,v 1.1 2014/12/10 22:42:17 zhuk Exp $
+Unbreak compilation in C++11 mode.
+--- qtwebkit/Source/WTF/wtf/MathExtras.h.ports.orig	Wed Dec 10 10:30:02 2014
++++ qtwebkit/Source/WTF/wtf/MathExtras.h	Wed Dec 10 10:30:39 2014
+@@ -106,7 +106,7 @@ inline bool isinf(double x) { return !finite(x) && !is
+ 
+ #endif
+ 
+-#if OS(OPENBSD)
++#if OS(OPENBSD) && __cplusplus < 201103L
+ 
+ namespace std {
+ 
