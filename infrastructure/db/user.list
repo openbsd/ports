@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.240 2014/11/29 10:17:59 ajacoutot Exp $
+$OpenBSD: user.list,v 1.241 2014/12/10 10:30:51 jasper Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -255,3 +255,4 @@ id  user		group		port options
 744 _isc-dhcp		_isc-dhcp	net/isc-dhcp
 745 _smmsp		_smmsp		mail/sendmail
 746 _spampd		_spampd		mail/spampd
+747 _mfi		_mfi		net/mfi
