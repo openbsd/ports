@@ -1,10 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: ejabberd.rc,v 1.1 2014/12/10 15:25:05 sebastia Exp $
+# $OpenBSD: ejabberd.rc,v 1.2 2014/12/10 15:30:19 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/ejabberdctl"
 
 . /etc/rc.d/rc.subr
+
+rc_reload=NO
 rc_usercheck=NO
 
 rc_start() {
@@ -18,7 +20,5 @@ rc_stop() {
 rc_check() {
 	${daemon} ${daemon_flags} status
 }
-
-rc_reload=NO
 
 rc_cmd $1
