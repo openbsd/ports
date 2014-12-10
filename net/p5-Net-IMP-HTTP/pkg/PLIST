@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/10 00:15:12 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/10 12:38:03 bluhm Exp $
 ${P5SITE}/Net/IMP/Adaptor/
 ${P5SITE}/Net/IMP/Adaptor/STREAM2HTTPConn.pm
 ${P5SITE}/Net/IMP/HTTP/
@@ -8,15 +8,15 @@ ${P5SITE}/Net/IMP/HTTP/Example/
 ${P5SITE}/Net/IMP/HTTP/Example/AddXFooHeader.pm
 ${P5SITE}/Net/IMP/HTTP/Example/BlockContentType.pm
 ${P5SITE}/Net/IMP/HTTP/Example/FlipImg.pm
-${P5SITE}/Net/IMP/HTTP/LogFormData.pm
+${P5SITE}/Net/IMP/HTTP/Example/LogFormData.pm
+${P5SITE}/Net/IMP/HTTP/Example/SaveResponse.pm
 ${P5SITE}/Net/IMP/HTTP/Request.pm
-${P5SITE}/Net/IMP/HTTP/SaveResponse.pm
 @man man/man3p/Net::IMP::Adaptor::STREAM2HTTPConn.3p
 @man man/man3p/Net::IMP::HTTP.3p
 @man man/man3p/Net::IMP::HTTP::Connection.3p
 @man man/man3p/Net::IMP::HTTP::Example::AddXFooHeader.3p
 @man man/man3p/Net::IMP::HTTP::Example::BlockContentType.3p
 @man man/man3p/Net::IMP::HTTP::Example::FlipImg.3p
-@man man/man3p/Net::IMP::HTTP::LogFormData.3p
+@man man/man3p/Net::IMP::HTTP::Example::LogFormData.3p
+@man man/man3p/Net::IMP::HTTP::Example::SaveResponse.3p
 @man man/man3p/Net::IMP::HTTP::Request.3p
-@man man/man3p/Net::IMP::HTTP::SaveResponse.3p
