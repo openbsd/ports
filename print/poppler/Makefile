@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2014/11/18 18:59:08 kili Exp $
+# $OpenBSD: Makefile,v 1.89 2014/12/10 20:51:49 zhuk Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -54,6 +54,9 @@ MODULES+=	x11/qt4
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt4
 .endif
+
+# until Qt5 is enabled
+CONFIGURE_ARGS+=	--disable-poppler-qt5
 
 MODULES+=	devel/gettext
 
