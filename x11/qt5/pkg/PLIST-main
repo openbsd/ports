@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/12/10 21:22:46 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/12/10 22:40:05 zhuk Exp $
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
@@ -4629,16 +4629,10 @@ lib/cmake/Qt5Help/Qt5HelpConfig.cmake
 lib/cmake/Qt5Help/Qt5HelpConfigExtras.cmake
 lib/cmake/Qt5Help/Qt5HelpConfigVersion.cmake
 lib/cmake/Qt5LinguistTools/
-lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake
-lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake
-lib/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake
 lib/cmake/Qt5Multimedia/
 lib/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake
 lib/cmake/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake
-lib/cmake/Qt5Multimedia/Qt5Multimedia_CameraBinServicePlugin.cmake
-lib/cmake/Qt5Multimedia/Qt5Multimedia_QGstreamerAudioDecoderServicePlugin.cmake
-lib/cmake/Qt5Multimedia/Qt5Multimedia_QGstreamerCaptureServicePlugin.cmake
-lib/cmake/Qt5Multimedia/Qt5Multimedia_QGstreamerPlayerServicePlugin.cmake
+lib/cmake/Qt5Multimedia/Qt5Multimedia_AudioCaptureServicePlugin.cmake
 lib/cmake/Qt5Multimedia/Qt5Multimedia_QM3uPlaylistPlugin.cmake
 lib/cmake/Qt5Multimedia/Qt5Multimedia_QPulseAudioPlugin.cmake
 lib/cmake/Qt5MultimediaWidgets/
@@ -4779,7 +4773,6 @@ lib/cmake/Qt5XmlPatterns/Qt5XmlPatternsConfigVersion.cmake
 @lib lib/libQt5X11Extras.so.${LIBQt5X11Extras_VERSION}
 @lib lib/libQt5Xml.so.${LIBQt5Xml_VERSION}
 @lib lib/libQt5XmlPatterns.so.${LIBQt5XmlPatterns_VERSION}
-@lib lib/libqgsttools_p.so.${LIBqgsttools_p_VERSION}
 lib/pkgconfig/Enginio.pc
 lib/pkgconfig/Qt5Bluetooth.pc
 lib/pkgconfig/Qt5Bootstrap.pc
@@ -5017,8 +5010,6 @@ lib/qt5/libQt5XmlPatterns.prl
 lib/qt5/libexec/
 @bin lib/qt5/libexec/QtWebPluginProcess
 @bin lib/qt5/libexec/QtWebProcess
-lib/qt5/libqgsttools_p.prl
-@lib lib/qt5/libqgsttools_p.so.${LIBqgsttools_p_VERSION}
 lib/qt5/mkspecs/
 lib/qt5/mkspecs/aix-g++/
 lib/qt5/mkspecs/aix-g++-64/
@@ -5758,10 +5749,7 @@ lib/qt5/plugins/imageformats/libqtiff.so
 lib/qt5/plugins/imageformats/libqwbmp.so
 lib/qt5/plugins/imageformats/libqwebp.so
 lib/qt5/plugins/mediaservice/
-lib/qt5/plugins/mediaservice/libgstaudiodecoder.so
-lib/qt5/plugins/mediaservice/libgstcamerabin.so
-lib/qt5/plugins/mediaservice/libgstmediacapture.so
-lib/qt5/plugins/mediaservice/libgstmediaplayer.so
+lib/qt5/plugins/mediaservice/libqtmedia_audioengine.so
 lib/qt5/plugins/platforminputcontexts/
 lib/qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
 lib/qt5/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so

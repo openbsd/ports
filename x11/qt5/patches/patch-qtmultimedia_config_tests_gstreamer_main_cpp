@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtmultimedia_config_tests_gstreamer_main_cpp,v 1.1 2014/12/10 22:40:05 zhuk Exp $
+Disable detection of GStreamer 0.10, to avoid loading of both GStreamer 0.10 and
+GStreamer 1.0 libraries when linking to both Qt5Multimedia and Qt5Webkit.
+--- qtmultimedia/config.tests/gstreamer/main.cpp.ports.orig	Thu Dec 11 01:36:13 2014
++++ qtmultimedia/config.tests/gstreamer/main.cpp	Thu Dec 11 00:56:42 2014
+@@ -42,6 +42,7 @@
+ #define GST_USE_UNSTABLE_API
+ 
+ #include <gst/gst.h>
++#error "sorry, GStreamer 0.10, you're out of game"
+ 
+ int main(int argc, char** argv)
+ {
