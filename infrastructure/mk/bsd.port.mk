@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1285 2014/11/22 10:07:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1286 2014/12/10 22:39:24 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1242,9 +1242,12 @@ DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}}
 DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 .endif
 
+PATCHFILES ?=
+SUPDISTFILES ?=
+
 _FILES=
 .for v in DISTFILES PATCHFILES SUPDISTFILES
-.  if defined($v)
+.  if !empty($v)
 .    for e in ${$v}
 .      for f m u in ${e:C/:[0-9]$//:C/(.*)\{.*\}(.*)/\1\2/} MASTER_SITES${e:M*\:[0-9]:C/.*:([0-9])/\1/} ${e:C/:[0-9]$//:C/.*\{(.*)\}(.*)/\1\2/}
 .        if empty(_FILES:M$f)
@@ -1260,6 +1263,10 @@ _LIST_$v += $f
 .        endif
 .      endfor
 .    endfor
+.  else
+_FULL_$v =
+_PATH_$v =
+_LIST_$v =
 .  endif
 .endfor
 
@@ -1274,50 +1281,48 @@ ERRORS += "Fatal: don't use IGNOREFILES"
 # by the user.
 EXTRACT_ONLY ?= ${_LIST_DISTFILES}
 
-# okay, time for some guess work
-.if !empty(EXTRACT_ONLY:M*.zip)
-_USE_ZIP ?= Yes
-.endif
-.if !empty(EXTRACT_ONLY:M*.tar.xz) || !empty(EXTRACT_ONLY:M*.tar.lzma)
-_USE_XZ ?= Yes
-.endif
-.if !empty(EXTRACT_ONLY:M*.tar.lz)
-_USE_LZIP ?= Yes
-.endif
-.if !empty(EXTRACT_ONLY:M*.tar.bz2) || !empty(EXTRACT_ONLY:M*.tbz2) || !empty(EXTRACT_ONLY:M*.tbz) || \
-	(defined(PATCHFILES) && !empty(_LIST_PATCHFILES:M*.bz2))
-_USE_BZIP2 ?= Yes
-.endif
-_USE_XZ ?= No
-_USE_LZIP ?= No
-_USE_ZIP ?= No
-_USE_BZIP2 ?= No
-
+PATCH_CASES ?=
 EXTRACT_CASES ?=
 
-_PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
+_LIST_EXTRACTED = ${EXTRACT_ONLY} ${_LIST_PATCHFILES}
 
 # XXX note that we DON'T set EXTRACT_SUFX.
-.if ${_USE_XZ:L} != "no"
-BUILD_DEPENDS += archivers/xz
-EXTRACT_CASES += *.tar.xz|*.tar.lzma) \
-	xzcat ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
-.endif
-.if ${_USE_LZIP:L} != "no"
-BUILD_DEPENDS += archivers/lzip/lunzip
-EXTRACT_CASES += *.tar.lz) \
-	lunzip -c ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
-.endif
-.if ${_USE_ZIP:L} != "no"
+
+# okay, time for some guess work
+.if !empty(_LIST_EXTRACTED:M*.zip)
 BUILD_DEPENDS += archivers/unzip
 EXTRACT_CASES += *.zip) \
 	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 .endif
-.if ${_USE_BZIP2:L} != "no"
+
+.if !empty(_LIST_EXTRACTED:M*.xz) || \
+	!empty(_LIST_EXTRACTED:M*.lzma)
+BUILD_DEPENDS += archivers/xz
+EXTRACT_CASES += *.tar.xz|*.tar.lzma) \
+	xzcat ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
+.endif
+
+.if !empty(_LIST_EXTRACTED:M*.tar.lz)
+BUILD_DEPENDS += archivers/lzip/lunzip
+EXTRACT_CASES += *.tar.lz) \
+	lunzip -c ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
+PATCH_CASES += *.lz) \
+	lunzip -c $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+.endif
+
+.if !empty(_LIST_EXTRACTED:M*.bz2) || \
+	!empty(_LIST_EXTRACTED:M*.tbz2) || \
+	!empty(_LIST_EXTRACTED:M*.tbz)
 BUILD_DEPENDS += archivers/bzip2
 EXTRACT_CASES += *.tar.bz2|*.tbz2|*.tbz) \
 	${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+PATCH_CASES += *.bz2) \
+	${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
+
+
+_PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
+
 EXTRACT_CASES += *.tar) \
 	${TAR} xf ${FULLDISTDIR}/$$archive;;
 EXTRACT_CASES += *.shar.gz|*.shar.Z|*.sh.gz|*.sh.Z) \
@@ -1331,15 +1336,6 @@ EXTRACT_CASES += *.gz) \
 EXTRACT_CASES += *) \
 	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
-PATCH_CASES ?=
-.if ${_USE_BZIP2:L} != "no"
-PATCH_CASES += *.bz2) \
-	${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
-.endif
-.if ${_USE_LZIP:L} != "no"
-PATCH_CASES += *.lz) \
-	lunzip -c $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
-.endif
 PATCH_CASES += *.Z|*.gz) \
 	${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 PATCH_CASES += *) \
@@ -2626,7 +2622,7 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !target(do-distpatch)
 do-distpatch:
 # What DISTPATCH normally does
-.  if defined(_LIST_PATCHFILES)
+.  if !empty(_LIST_PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}${_MASTER}"
 	@cd ${FULLDISTDIR}; \
 	  for patchfile in ${_LIST_PATCHFILES}; do \
