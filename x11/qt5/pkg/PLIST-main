@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/12/08 20:33:51 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/12/10 21:22:46 zhuk Exp $
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
@@ -4562,7 +4562,6 @@ include/X11/qt5/QtXmlPatterns/qxmlresultitems.h
 include/X11/qt5/QtXmlPatterns/qxmlschema.h
 include/X11/qt5/QtXmlPatterns/qxmlschemavalidator.h
 include/X11/qt5/QtXmlPatterns/qxmlserializer.h
-lib/cmake/
 lib/cmake/Qt5/
 lib/cmake/Qt5/Qt5Config.cmake
 lib/cmake/Qt5/Qt5ConfigVersion.cmake
@@ -4780,8 +4779,6 @@ lib/cmake/Qt5XmlPatterns/Qt5XmlPatternsConfigVersion.cmake
 @lib lib/libQt5X11Extras.so.${LIBQt5X11Extras_VERSION}
 @lib lib/libQt5Xml.so.${LIBQt5Xml_VERSION}
 @lib lib/libQt5XmlPatterns.so.${LIBQt5XmlPatterns_VERSION}
-@lib lib/libfftreal.so.${LIBfftreal_VERSION}
-@lib lib/libgruesensor.so.${LIBgruesensor_VERSION}
 @lib lib/libqgsttools_p.so.${LIBqgsttools_p_VERSION}
 lib/pkgconfig/Enginio.pc
 lib/pkgconfig/Qt5Bluetooth.pc
@@ -5249,7 +5246,6 @@ lib/qt5/mkspecs/features/qt_android_deps.prf
 lib/qt5/mkspecs/features/qt_app.prf
 lib/qt5/mkspecs/features/qt_build_config.prf
 lib/qt5/mkspecs/features/qt_build_paths.prf
-lib/qt5/mkspecs/features/qt_build_paths.prf.ports.orig
 lib/qt5/mkspecs/features/qt_common.prf
 lib/qt5/mkspecs/features/qt_config.prf
 lib/qt5/mkspecs/features/qt_docs.prf
@@ -5555,7 +5551,6 @@ lib/qt5/mkspecs/netbsd-g++/qmake.conf
 lib/qt5/mkspecs/netbsd-g++/qplatformdefs.h
 lib/qt5/mkspecs/openbsd-g++/
 lib/qt5/mkspecs/openbsd-g++/qmake.conf
-lib/qt5/mkspecs/openbsd-g++/qmake.conf.ports.orig
 lib/qt5/mkspecs/openbsd-g++/qplatformdefs.h
 lib/qt5/mkspecs/qconfig.pri
 lib/qt5/mkspecs/qdevice.pri

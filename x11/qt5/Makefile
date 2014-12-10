@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/10 21:22:46 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -369,7 +369,7 @@ post-install:
 	rm -Rf ${PREFIX}/lib/cmake
 	mv ${QT_CMAKEDIR} ${PREFIX}/lib/cmake
 	# cleanup
-	rm -f share/qt5/mkspecs/openbsd-g++/qmake.conf${PATCHORIG}
+	find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs rm
 	cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
 
 pre-configure:
