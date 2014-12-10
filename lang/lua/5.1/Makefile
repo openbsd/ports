@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/09 13:54:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/10 00:44:52 sthen Exp $
 
 VERSION=	5.1.5
 PKGSPEC=	lua->=5.1,<5.2
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	lua5.1 ${VERSION:R}
 

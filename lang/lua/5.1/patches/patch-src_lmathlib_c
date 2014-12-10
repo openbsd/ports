@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lmathlib_c,v 1.1 2014/12/10 00:44:53 sthen Exp $
+--- src/lmathlib.c.orig	Wed Dec 10 00:42:41 2014
++++ src/lmathlib.c	Wed Dec 10 00:42:46 2014
+@@ -207,7 +207,7 @@ static int math_random (lua_State *L) {
+ 
+ 
+ static int math_randomseed (lua_State *L) {
+-  srand(luaL_checkint(L, 1));
++  srand_deterministic(luaL_checkint(L, 1));
+   return 0;
+ }
+ 
