@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/12/10 21:50:23 benoit Exp $
 
 COMMENT=		catalyst development bundle
 
 MODULES=		cpan
 DISTNAME=		Task-Catalyst-1.90
-REVISION=		0
+REVISION =		1
 PKGNAME=		catalyst-1.90
 CATEGORIES=		devel www
-
-MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

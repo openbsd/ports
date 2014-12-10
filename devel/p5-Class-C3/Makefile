@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/11 09:38:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2014/12/10 21:50:24 benoit Exp $
 
 COMMENT=		pragma to use the C3 method resolution order algorithm
 
-MODULES=		cpan
+MODULES =		cpan
 DISTNAME =		Class-C3-0.27
-CATEGORIES=		devel
-
-MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
+CATEGORIES =		devel
+REVISION =		0
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
