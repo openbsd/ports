@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/22 12:06:22 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/10 20:36:15 rpe Exp $
 
 COMMENT=		advanced HTML-to-text converter
 
 DISTNAME=		html2text-1.3.2a
 REVISION=		1
 CATEGORIES=		converters textproc
+PORTROACH=		skipb:0
 
 
 HOMEPAGE=		http://www.mbayer.de/html2text/
