@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/05/23 22:17:56 kili Exp $
+# $OpenBSD: Makefile,v 1.43 2014/12/10 15:51:59 jasper Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -6,7 +6,7 @@ RB_V=		30
 V=		2.23-08-RB${RB_V}
 DISTNAME=	webalizer-${V}-src
 PKGNAME=	webalizer-${V:S/-/./g:S/RB//}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
