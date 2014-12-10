@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/05 14:21:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2014/12/10 20:14:16 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	collaboration services library for KDE
 DISTNAME =	attica-0.4.2
-REVISION =	2
+MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
+REVISION =	3
 
 HOMEPAGE =	https://projects.kde.org/projects/frameworks/attica
 
@@ -20,6 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		x11/kde4
 MODKDE4_USE =
 
-CONFIGURE_ARGS =	-DATTICA_ENABLE_TESTS:Bool=Yes
+CONFIGURE_ARGS =	-DATTICA_ENABLE_TESTS:Bool=Yes \
+			-DQT4_BUILD=Yes
 
 .include <bsd.port.mk>
