@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2014/12/10 10:49:11 benoit Exp $
 
 COMMENT=		C-language sources to HTML converter
 
-DISTNAME=		c2html-0.9.5
+DISTNAME=		c2html-0.9.6
 CATEGORIES=		textproc www
 
 # Old versions seem to stay there...
 MASTER_SITES=		http://user.cs.tu-berlin.de/%7Eschintke/x2html/ \
 			${MASTER_SITE_SUNSITE:=apps/www/converters/}
 
-# License: GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c 
+WANTLIB =		c
 
 CONFIGURE_STYLE=	gnu
 
