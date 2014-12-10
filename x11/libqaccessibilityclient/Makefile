@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/07 10:05:29 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/10 20:20:47 zhuk Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Qt-based library for writing accessibility apps
@@ -24,7 +24,8 @@ MODULES =		devel/cmake gcc4 x11/qt4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
-CONFIGURE_ARGS +=	-DQT5_BUILD=No
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Qt5DBus=Yes
 
 NO_TEST =		Yes
 
