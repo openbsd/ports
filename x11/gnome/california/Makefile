@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/09 08:05:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/10 12:30:17 jasper Exp $
 
 COMMENT=		GNOME 3 calendar
 
 GNOME_PROJECT=		california
 GNOME_VERSION=		0.3.0
+REVISION=		0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +20,10 @@ WANTLIB += sqlite3 ssl3 xml2 z
 LIB_DEPENDS=		databases/evolution-data-server \
 			devel/gobject-introspection \
 			devel/libgee
+
+# needs xdg-email
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		devel/xdg-utils
 
 MODULES=		devel/dconf \
 			devel/gettext \
