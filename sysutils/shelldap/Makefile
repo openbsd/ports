@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/11 10:23:39 landry Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
-DISTNAME =	shelldap-0.5
+DISTNAME =	shelldap-1.3.0
+HG_COMMIT =	ceb8bd75e05b
 EPOCH =	0
 CATEGORIES =	sysutils
 
@@ -11,7 +12,9 @@ HOMEPAGE =	http://projects.martini.nu/shelldap/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	http://www.martini.nu/misc/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${HG_COMMIT}${EXTRACT_SUFX}}
+MASTER_SITES =	http://code.martini.nu/shelldap/archive/
+WRKDIST =	${WRKDIR}/shelldap-${HG_COMMIT}
 
 NO_BUILD =	Yes
 RUN_DEPENDS =	databases/p5-ldap \
