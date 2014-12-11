@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/11 10:56:19 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,8 @@ RUN_DEPENDS +=	sysutils/consolekit
 CONFIGURE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include" \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
-		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
+		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
+		-DUSE_QT4=Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/PolkitQt-1Config.cmake.in
