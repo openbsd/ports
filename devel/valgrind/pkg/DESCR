@@ -1,0 +1,9 @@
+Valgrind is an instrumentation framework for building dynamic analysis
+tools. There are Valgrind tools that can automatically detect many memory
+management and threading bugs, and profile your programs in detail. You
+can also use Valgrind to build new tools.
+
+This OpenBSD port is still very preliminary and has minimal functionality
+(memcheck).  All problems should be reported to the "valgrind-openbsd" page:
+
+https://bitbucket.org/uebayasi/valgrind-openbsd/
