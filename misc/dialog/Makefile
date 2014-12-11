@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2013/11/21 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2014/12/11 23:54:51 rpe Exp $
 
 COMMENT =	curses widgets (menus, lists, etc) for shell scripts
 
-V =		1.2-20130928
+V =		1.2-20140911
 DISTNAME =	dialog-${V}
 PKGNAME =	dialog-${V:S/-/./}
 
@@ -28,11 +28,5 @@ CONFIGURE_ARGS = --enable-nls \
 CONFIGURE_ENV =	LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 NO_TEST =	Yes
-
-post-build:
-	cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
-
-post-install:
-	cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} DESTDIR=${DESTDIR} ${MAKE_FLAGS} install
 
 .include <bsd.port.mk>
