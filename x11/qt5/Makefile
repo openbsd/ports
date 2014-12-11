@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/11 17:48:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/12/11 17:50:03 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -63,7 +63,7 @@ SHARED_LIBS +=		Qt5Widgets		0.0
 SHARED_LIBS +=		Qt5X11Extras		0.0
 SHARED_LIBS +=		Qt5Xml			0.0
 SHARED_LIBS +=		Qt5XmlPatterns		0.0
-SHARED_LIBS +=		qgsttools_p		0.0
+#SHARED_LIBS +=		qgsttools_p		0.0
 
 SHARED_LIBS-examples =	fftreal			0.0
 SHARED_LIBS-examples +=	gruesensor		0.0
