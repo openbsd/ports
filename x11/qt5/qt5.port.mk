@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.3 2014/12/10 20:11:03 zhuk Exp $
+# $OpenBSD: qt5.port.mk,v 1.4 2014/12/11 13:24:27 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt4/qt5 in a port.
@@ -45,3 +45,49 @@ MODQT5_USE_GCC4_MODULE ?=	Yes
   MODGCC4_LANGS +=	c++
   MODGCC4_ARCHS ?=	*
 .endif
+
+_MODQT5_ENV =
+_MODQT5_CMAKE_PKGS = \
+	Qt5 \
+	Qt5Bluetooth \
+	Qt5Concurrent \
+	Qt5Core \
+	Qt5DBus \
+	Qt5Declarative \
+	Qt5Designer \
+	Qt5Enginio \
+	Qt5Gui \
+	Qt5Help \
+	Qt5LinguistTools \
+	Qt5Multimedia \
+	Qt5MultimediaWidgets \
+	Qt5Network \
+	Qt5Nfc \
+	Qt5OpenGL \
+	Qt5OpenGLExtensions \
+	Qt5Positioning \
+	Qt5PrintSupport \
+	Qt5Qml \
+	Qt5Quick \
+	Qt5QuickTest \
+	Qt5QuickWidgets \
+	Qt5Script \
+	Qt5ScriptTools \
+	Qt5Sensors \
+	Qt5SerialPort \
+	Qt5Sql \
+	Qt5Svg \
+	Qt5Test \
+	Qt5UiTools \
+	Qt5WebKit \
+	Qt5WebKitWidgets \
+	Qt5WebSockets \
+	Qt5Widgets \
+	Qt5X11Extras \
+	Qt5Xml \
+	Qt5XmlPatterns
+.for _p in ${_MODQT5_CMAKE_PKGS}
+_MODQT5_ENV +=		${_p}_DIR=${MODQT5_LIBDIR}/cmake
+.endfor
+CONFIGURE_ENV +=	${_MODQT5_ENV}
+MAKE_ENV +=		${_MODQT5_ENV}
