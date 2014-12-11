@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.4 2014/12/11 13:24:27 zhuk Exp $
+# $OpenBSD: qt5.port.mk,v 1.5 2014/12/11 17:39:03 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt4/qt5 in a port.
@@ -10,8 +10,6 @@ MODQT_LIBDIR ?= ${MODQT5_LIBDIR}
 MODQT5_INCDIR =	${LOCALBASE}/include/X11/qt5
 MODQT_INCDIR ?= ${MODQT5_INCDIR}
 .if ${CONFIGURE_STYLE:Mcmake}
-MODQT5_CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qt4=Yes
-.else
 MODQT5_CONFIGURE_ARGS =	--with-qt-includes=${MODQT5_INCDIR} \
 			--with-qt-libraries=${MODQT5_LIBDIR}
 .endif
@@ -31,22 +29,6 @@ MODQT_UIC ?=	${MODQT5_UIC}
 MODQT5_QTDIR =	${LOCALBASE}/lib/qt5
 MODQT_QTDIR ?=	${MODQT5_QTDIR}
 
-MODQT5_LIB_DEPENDS = 	x11/qt5
-MODQT_LIB_DEPENDS ?= 	${MODQT5_LIB_DEPENDS}
-LIB_DEPENDS += 		${MODQT5_LIB_DEPENDS}
-
-CONFIGURE_ENV +=${_MODQT5_SETUP}
-MAKE_ENV +=	${_MODQT5_SETUP}
-MAKE_FLAGS +=	${_MODQT5_SETUP}
-
-MODQT5_USE_GCC4_MODULE ?=	Yes
-.if ${MODQT5_USE_GCC4_MODULE} == "Yes"
-  MODULES +=		gcc4
-  MODGCC4_LANGS +=	c++
-  MODGCC4_ARCHS ?=	*
-.endif
-
-_MODQT5_ENV =
 _MODQT5_CMAKE_PKGS = \
 	Qt5 \
 	Qt5Bluetooth \
@@ -87,7 +69,20 @@ _MODQT5_CMAKE_PKGS = \
 	Qt5Xml \
 	Qt5XmlPatterns
 .for _p in ${_MODQT5_CMAKE_PKGS}
-_MODQT5_ENV +=		${_p}_DIR=${MODQT5_LIBDIR}/cmake
+_MODQT5_SETUP +=	${_p}_DIR=${MODQT5_LIBDIR}/cmake
 .endfor
-CONFIGURE_ENV +=	${_MODQT5_ENV}
-MAKE_ENV +=		${_MODQT5_ENV}
+
+MODQT5_LIB_DEPENDS = 	x11/qt5
+MODQT_LIB_DEPENDS ?= 	${MODQT5_LIB_DEPENDS}
+LIB_DEPENDS += 		${MODQT5_LIB_DEPENDS}
+
+CONFIGURE_ENV +=${_MODQT5_SETUP}
+MAKE_ENV +=	${_MODQT5_SETUP}
+MAKE_FLAGS +=	${_MODQT5_SETUP}
+
+MODQT5_USE_GCC4_MODULE ?=	Yes
+.if ${MODQT5_USE_GCC4_MODULE} == "Yes"
+  MODULES +=		gcc4
+  MODGCC4_LANGS +=	c++
+  MODGCC4_ARCHS ?=	*
+.endif
