@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dns_mod_mk,v 1.1 2014/12/11 13:48:42 sthen Exp $
+--- src/dns/mod.mk.orig	Thu Dec 11 08:00:09 2014
++++ src/dns/mod.mk	Thu Dec 11 08:00:21 2014
+@@ -13,7 +13,7 @@ SRCS	+= dns/rr.c
+ SRCS	+= dns/rrlist.c
+ 
+ ifneq ($(HAVE_LIBRESOLV),)
+-ifeq ($(filter-out netbsd openbsd,$(OS)),)
++ifeq ($(filter-out netbsd,$(OS)),)
+ SRCS	+= dns/bsd/srv.c
+ else
+ SRCS	+= dns/res.c

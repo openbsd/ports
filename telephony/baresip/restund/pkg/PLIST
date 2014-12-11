@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/11 13:48:42 sthen Exp $
 @newgroup _restund:742
 @newuser _restund:742:742:daemon:restund user:/var/empty:/sbin/nologin
 lib/restund/
 lib/restund/modules/
 lib/restund/modules/auth.so
 lib/restund/modules/binding.so
+lib/restund/modules/filedb.so
 lib/restund/modules/mysql_ser.so
+lib/restund/modules/restauth.so
 lib/restund/modules/stat.so
 lib/restund/modules/status.so
 lib/restund/modules/syslog.so

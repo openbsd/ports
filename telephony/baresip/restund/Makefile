@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/11 13:48:42 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		modular and flexible STUN and TURN Server
 
-V =			0.4.2
+V =			0.4.11
 DISTNAME =		restund-${V}
 
 WANTLIB =		c crypto mysqlclient pthread re ssl z

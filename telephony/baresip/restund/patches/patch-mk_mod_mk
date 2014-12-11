@@ -1,0 +1,33 @@
+$OpenBSD: patch-mk_mod_mk,v 1.1 2014/12/11 13:48:42 sthen Exp $
+--- mk/mod.mk.orig	Thu Dec 11 08:26:15 2014
++++ mk/mod.mk	Thu Dec 11 08:27:30 2014
+@@ -19,15 +19,13 @@ ifeq ($(STATIC),)
+ #
+ 
+ $(MOD)$(MOD_SUFFIX): $($(MOD)_OBJS)
+-	@echo "  LD [M]  $@"
+-	@$(LD) $(LFLAGS) $(SH_LFLAGS) $(MOD_LFLAGS) $($(basename $@)_OBJS) \
++	$(LD) $(LFLAGS) $(SH_LFLAGS) $(MOD_LFLAGS) $($(basename $@)_OBJS) \
+ 		$($(basename $@)_LFLAGS) -L$(LIBRE_SO) -lre -o $@
+ 
+ $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.c $(BUILD) Makefile mk/mod.mk \
+ 				modules/$(MOD)/module.mk
+-	@echo "  CC [M]  $@"
+-	@mkdir -p $(dir $@)
+-	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
++	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
+ 
+ else
+ 
+@@ -41,8 +39,7 @@ APP_LFLAGS := $(APP_LFLAGS) $($(MOD)_LFLAGS)
+ 
+ $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.c $(BUILD) Makefile mk/mod.mk \
+ 				modules/$(MOD)/module.mk
+-	@echo "  CC [m]  $@"
+-	@mkdir -p $(dir $@)
+-	@$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
++	$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
+ 
+ endif
