@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/12/11 13:24:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/11 17:48:44 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -346,8 +346,7 @@ post-install:
 .for p in ${PROGRAMS5}
 	ln -sf ../lib/qt5/bin/$p ${PREFIX}/bin/$p-qt5
 .endfor
-	# this helps qdbuscpp2xml
-	#cd ${QT_BINDIR} && ln -sf moc moc-qt5
+	# shared libraries
 .for l v in ${SHARED_LIBS}
 	cd ${PREFIX}/lib; \
 	f=qt5/lib$l.so.$v; \
@@ -369,8 +368,9 @@ post-install:
 	find ${QT_CMAKEDIR} -type f -print0 | xargs -0 perl -pi \
 		-e 's,\$$\(LOCALBASE\),${LOCALBASE},g;' \
 		-e 's,\$$\(X11BASE\),${X11BASE},g;'
-	# cleanup
+	# remove unpatched files
 	find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs rm
+	# often-used includes directory
 	cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
 
 pre-configure:
