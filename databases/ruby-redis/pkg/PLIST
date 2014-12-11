@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/07/11 21:58:14 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/12/11 11:21:55 dcoppa Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.order
 ${GEM_LIB}/gems/${DISTNAME}/.travis/
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/.travis/Gemfile
@@ -19,10 +18,15 @@ ${GEM_LIB}/gems/${DISTNAME}/benchmarking/suite.rb
 ${GEM_LIB}/gems/${DISTNAME}/benchmarking/worker.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/consistency.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/dist_redis.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/incr-decr.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/list.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/pubsub.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/sentinel/
+${GEM_LIB}/gems/${DISTNAME}/examples/sentinel.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/sentinel/sentinel.conf
+${GEM_LIB}/gems/${DISTNAME}/examples/sentinel/start
 ${GEM_LIB}/gems/${DISTNAME}/examples/sets.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn/
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn/config.ru
