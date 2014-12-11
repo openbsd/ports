@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/07/10 21:24:51 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/12/11 22:21:59 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/AE.pm
 ${P5ARCH}/AnyEvent/
@@ -24,6 +24,7 @@ ${P5ARCH}/AnyEvent/Impl/POE.pm
 ${P5ARCH}/AnyEvent/Impl/Perl.pm
 ${P5ARCH}/AnyEvent/Impl/Qt.pm
 ${P5ARCH}/AnyEvent/Impl/Tk.pm
+${P5ARCH}/AnyEvent/Impl/UV.pm
 ${P5ARCH}/AnyEvent/Intro.pod
 ${P5ARCH}/AnyEvent/Log.pm
 ${P5ARCH}/AnyEvent/Loop.pm
@@ -56,6 +57,7 @@ ${P5ARCH}/AnyEvent/constants.pl
 @man man/man3p/AnyEvent::Impl::Perl.3p
 @man man/man3p/AnyEvent::Impl::Qt.3p
 @man man/man3p/AnyEvent::Impl::Tk.3p
+@man man/man3p/AnyEvent::Impl::UV.3p
 @man man/man3p/AnyEvent::Intro.3p
 @man man/man3p/AnyEvent::Log.3p
 @man man/man3p/AnyEvent::Loop.3p

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2014/07/10 22:03:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.21 2014/12/11 22:21:59 bluhm Exp $
 
 COMMENT =		provide framework for multiple event loops
 
-DISTNAME =		AnyEvent-7.07
+DISTNAME =		AnyEvent-7.08
 EPOCH =			0
 CATEGORIES =		devel
 
