@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_alias_c,v 1.1 2014/12/11 12:43:50 otto Exp $
+--- src/alias.c.orig	Fri Dec  5 07:09:11 2014
++++ src/alias.c	Fri Dec  5 07:11:04 2014
+@@ -158,7 +158,7 @@ logical do_aliasr(char *name,  char *dirsuffix, unsign
+   if (dirsufflength > 0 && dirsufflength < (unsigned int)(e2 - name) &&
+       *(e2 - dirsufflength - 1) == '/' &&
+       STREQ(e2 - dirsufflength, dirsuffix)) {
+-    memcpy((void *)(e2 - dirsufflength), (void *)e2, (size_t)(e1 - e2) + 1);
++    memmove((void *)(e2 - dirsufflength), (void *)e2, (size_t)(e1 - e2) + 1);
+     if (e2 != e1)
+       e2 -= dirsufflength;
+   }
