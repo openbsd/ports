@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/11 16:50:08 uebayasi Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/12 05:18:30 uebayasi Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -28,7 +28,8 @@ USE_GMAKE =		Yes
 AUTOCONF_VERSION =	2.62
 AUTOMAKE_VERSION =	1.11
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libelf
 
 pre-configure:
 	@cd ${WRKSRC} && \
