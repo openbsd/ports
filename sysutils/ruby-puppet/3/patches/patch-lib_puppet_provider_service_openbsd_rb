@@ -1,15 +1,18 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.21 2014/12/07 13:31:08 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.22 2014/12/12 07:52:54 jasper Exp $
 
 * From 93f6754f9c886922d39e938251d4885c1ebb5a29 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
   Date: Tue, 26 Aug 2014 08:52:12 +0200
   Subject: [PATCH] (PUP-3144) Rewrite OpenBSD service provider with rcctl(8)
 
-* Ensure we restart a service after the flags have been changed
+* From 00322051f892916a58eaf138e2757a4828c7688d Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Thu, 4 Dec 2014 09:17:14 +0100
+  Subject: [PATCH] (PUP-3736) Restart a service when the flags are modified
 
 --- lib/puppet/provider/service/openbsd.rb.orig	Mon Nov  3 23:23:13 2014
-+++ lib/puppet/provider/service/openbsd.rb	Sat Nov 15 20:48:14 2014
-@@ -2,341 +2,101 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
++++ lib/puppet/provider/service/openbsd.rb	Fri Dec 12 08:52:09 2014
+@@ -2,341 +2,99 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    desc "Provider for OpenBSD's rc.d daemon control scripts"
  
@@ -311,7 +314,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.21 2014/12/07 13:31:0
 +  def running?
 +    output = execute([command(:rcctl), "check", @resource[:name]],
 +                     :failonfail => false, :combine => false, :squelch => false).chomp
-+  return :true if output.match(/\(ok\)/)
++  return true if output.match(/\(ok\)/)
    end
  
 -  def enabled?
@@ -390,12 +393,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.21 2014/12/07 13:31:0
 -          content = set_content_flags(content, "NO")
 -        end
 -      end
-+    self.debug("Changing flags from #{flags} to #{value}")
-+    # If the service is already running, force a restart as the flags have been changed.
-+    rcctl(:enable, @resource[:name], :flags, value)
-+    if running?
-+      rcctl(:restart, @resource[:name])
-     end
+-    end
 -
 -    # Make sure to append a newline to the end of the file
 -    unless content[-1] == ""
@@ -405,5 +403,9 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.21 2014/12/07 13:31:0
 -
 -    # Write the contents only if necessary, and only once
 -    write_rc_contents(self.class.rcconf_local(), output)
++    self.debug("Changing flags from #{flags} to #{value}")
++    rcctl(:enable, @resource[:name], :flags, value)
++    # If the service is already running, force a restart as the flags have been changed.
++    rcctl(:restart, @resource[:name]) if running?
    end
  end
