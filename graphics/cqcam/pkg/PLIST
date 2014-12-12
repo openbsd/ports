@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/03/23 19:42:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/12 19:44:45 naddy Exp $
 @conflict xawtv-*
 @pkgpath graphics/cqcam,no_x11
 @mode u+s
 @owner root
-bin/cqcam
+@bin bin/cqcam
 bin/movify
-bin/webcam
+@bin bin/webcam
 @mode
 @owner
 @man man/man1/cqcam.1
 @man man/man1/webcam.1
+@comment @man man/man1/xcqcam.1
 share/doc/cqcam/
 share/doc/cqcam/README.webcam
 share/examples/cqcam/
