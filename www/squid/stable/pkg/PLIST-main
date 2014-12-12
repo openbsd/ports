@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/04/24 14:26:21 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/12/12 22:17:33 sthen Exp $
 @pkgpath www/squid[,ldap][,ntlm][,snmp][,transparent]
 @pkgpath www/squid,-main
 @newgroup _squid:515
@@ -33,6 +33,7 @@ libexec/squid/log_db_daemon
 @bin libexec/squid/negotiate_wrapper_auth
 @comment @bin libexec/squid/ntlm_fake_auth
 @comment @bin libexec/squid/ntlm_smb_lm_auth
+@bin libexec/squid/ssl_crtd
 libexec/squid/storeid_file_rewrite
 @bin libexec/squid/unlinkd
 @bin libexec/squid/url_fake_rewrite

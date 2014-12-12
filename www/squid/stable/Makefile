@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2014/11/17 14:02:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/12/12 22:17:33 sthen Exp $
 
-V=		3.4.9
-REVISION-main=	0
+V=		3.4.10
 
 EXTERNAL_ACL=	LDAP_group SQL_session file_userip time_quota session \
 		unix_group wbinfo_group

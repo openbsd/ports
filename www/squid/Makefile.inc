@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2014/05/15 21:24:33 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2014/12/12 22:17:33 sthen Exp $
 
 MULTI_PACKAGES=	-main
 # -ntlm may come back with samba 4
@@ -66,6 +66,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-referer-log \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
+		--enable-ssl-crtd \
 		--with-openssl \
 		--enable-storeio="aufs ufs diskd" \
 		--with-default-user="_squid" \
