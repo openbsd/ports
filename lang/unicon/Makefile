@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:20:29 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2014/12/12 19:50:16 naddy Exp $
 
 # crashes & hangs on anything but i386
 ONLY_FOR_ARCHS=	i386
@@ -28,7 +28,6 @@ LIB_DEPENDS=	databases/gdbm
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Unicon
-USE_GROFF =	Yes
 
 CONFIGURE_TARGET=X-Configure
 
