@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_mkspecs_features_create_cmake_prf,v 1.1 2014/12/11 13:24:27 zhuk Exp $
+$OpenBSD: patch-qtbase_mkspecs_features_create_cmake_prf,v 1.2 2014/12/12 23:31:33 zhuk Exp $
 Make sure correct library filenames get propagated into CMake package
 config files.
 --- qtbase/mkspecs/features/create_cmake.prf.ports.orig	Tue Dec  9 19:55:08 2014
-+++ qtbase/mkspecs/features/create_cmake.prf	Thu Dec 11 14:11:24 2014
++++ qtbase/mkspecs/features/create_cmake.prf	Fri Dec 12 22:04:24 2014
 @@ -241,10 +241,16 @@ mac {
          CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so
          CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so
@@ -12,14 +12,14 @@ config files.
 -        CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
 -        CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.MAJOR_VERSION)
 +    } else:eval(LIBVER_OVERRIDE = \$\$(LIB$${CMAKE_QT_STEM}_VERSION)) {
-+        isEmpty(LIBVER_OVERRIDE) {
-+            CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
-+            CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
-+            CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.MAJOR_VERSION)
-+        } else {
++        !isEmpty(QMAKE_OPENBSD_SHLIB):!isEmpty(LIBVER_OVERRIDE) {
 +            # OpenBSD-style version overriding, no SONAME intended
 +            CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so.$${LIBVER_OVERRIDE}
 +            CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so.$${LIBVER_OVERRIDE}
++        } else {
++            CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
++            CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
++            CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.MAJOR_VERSION)
 +        }
      }
  }
