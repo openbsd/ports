@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/04/06 11:31:21 sthen Exp $
---- CMakeLists.txt.orig	Wed Dec 12 22:55:46 2012
-+++ CMakeLists.txt	Mon Mar 31 22:57:32 2014
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/12/12 18:24:44 espie Exp $
+--- CMakeLists.txt.orig	Wed Dec 12 15:55:46 2012
++++ CMakeLists.txt	Fri Dec 12 11:01:44 2014
 @@ -282,7 +282,6 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
          -Wswitch-enum
          -Wcast-qual
@@ -9,7 +9,25 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/04/06 11:31:21 sthen Exp $
          -Wreorder
  		#-Wold-style-cast
         )
-@@ -505,7 +504,7 @@ SET(PODOFO_LIB
+@@ -357,16 +356,8 @@ ELSE(PNG_FOUND)
+ ENDIF(PNG_FOUND)
+ 
+ 
+-FIND_PACKAGE(CppUnit)
++MESSAGE("Cppunit not found. No unit tests will be built.")
+ 
+-IF(CppUnit_FOUND)
+-  MESSAGE("Found cppunit. Unit tests will be built.")
+-  SET(PODOFO_HAVE_CPPUNIT CppUnit_FOUND)
+-  INCLUDE_DIRECTORIES(${CPPUNIT_INCLUDE_DIR})
+-ELSE(CppUnit_FOUND)
+-  MESSAGE("Cppunit not found. No unit tests will be built.")
+-ENDIF(CppUnit_FOUND)
+-
+ FIND_PACKAGE(OpenSSL)
+ 
+ FIND_PACKAGE(FREETYPE REQUIRED)
+@@ -505,7 +496,7 @@ SET(PODOFO_LIB
  #
  # Setup directories we will need
  #
