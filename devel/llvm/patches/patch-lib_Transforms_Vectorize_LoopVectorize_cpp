@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_Transforms_Vectorize_LoopVectorize_cpp,v 1.1 2014/12/12 21:51:39 brad Exp $
+
+r223171
+PR21302. Vectorize only bottom-tested loops.
+
+--- lib/Transforms/Vectorize/LoopVectorize.cpp.orig	Thu Dec 11 11:41:59 2014
++++ lib/Transforms/Vectorize/LoopVectorize.cpp	Thu Dec 11 11:45:56 2014
+@@ -3247,6 +3247,14 @@ bool LoopVectorizationLegality::canVectorize() {
+   if (!TheLoop->getExitingBlock())
+     return false;
+ 
++  // We only handle bottom-tested loops, i.e. loop in which the condition is
++  // checked at the end of each iteration. With that we can assume that all
++  // instructions in the loop are executed the same number of times.
++  if (TheLoop->getExitingBlock() != TheLoop->getLoopLatch()) {
++    DEBUG(dbgs() << "LV: loop control flow is not understood by vectorizer\n");
++    return false;
++  }
++
+   // We need to have a loop header.
+   DEBUG(dbgs() << "LV: Found a loop: " <<
+         TheLoop->getHeader()->getName() << '\n');
