@@ -1,0 +1,39 @@
+$OpenBSD: patch-qtbase_src_corelib_tools_qbytearray_cpp,v 1.1 2014/12/13 05:47:37 zhuk Exp $
+Get rid of strcpy().
+--- qtbase/src/corelib/tools/qbytearray.cpp.ports.orig	Fri Dec 12 15:52:43 2014
++++ qtbase/src/corelib/tools/qbytearray.cpp	Sat Dec 13 00:47:23 2014
+@@ -108,12 +108,15 @@ int qAllocMore(int alloc, int extra)
+ 
+ char *qstrdup(const char *src)
+ {
++    size_t sz = strlen(src) + 1;
+     if (!src)
+         return 0;
+-    char *dst = new char[strlen(src) + 1];
+-    return qstrcpy(dst, src);
++    char *dst = new char[sz];
++    memcpy(dst, src, sz);
++    return dst;
+ }
+ 
++#ifndef Q_OS_OPENBSD
+ /*! \relates QByteArray
+ 
+     Copies all the characters up to and including the '\\0' from \a
+@@ -141,6 +144,7 @@ char *qstrcpy(char *dst, const char *src)
+     return strcpy(dst, src);
+ #endif
+ }
++#endif
+ 
+ /*! \relates QByteArray
+ 
+@@ -157,8 +161,6 @@ char *qstrcpy(char *dst, const char *src)
+     \note When compiling with Visual C++ compiler version 14.00
+     (Visual C++ 2005) or later, internally the function strncpy_s
+     will be used.
+-
+-    \sa qstrcpy()
+ */
+ 
+ char *qstrncpy(char *dst, const char *src, uint len)

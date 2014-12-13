@@ -1,0 +1,30 @@
+$OpenBSD: patch-qtbase_tests_auto_corelib_tools_qbytearray_tst_qbytearray_cpp,v 1.1 2014/12/13 05:47:37 zhuk Exp $
+Get rid of strcpy().
+--- qtbase/tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp.ports.orig	Sat Dec 13 00:40:19 2014
++++ qtbase/tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp	Sat Dec 13 00:39:38 2014
+@@ -84,7 +84,9 @@ private slots:
+     void qvsnprintf();
+     void qstrlen();
+     void qstrnlen();
++#ifndef Q_OS_OPENBSD
+     void qstrcpy();
++#endif
+     void qstrncpy();
+     void qstricmp_data();
+     void qstricmp();
+@@ -766,6 +768,7 @@ void tst_QByteArray::qstrnlen()
+     QCOMPARE(::qstrnlen(src, 20), (uint)20);
+ }
+ 
++#ifndef Q_OS_OPENBSD
+ void tst_QByteArray::qstrcpy()
+ {
+     const char *src = "Something about ... \0 a string.";
+@@ -778,6 +781,7 @@ void tst_QByteArray::qstrcpy()
+     QCOMPARE(::qstrcpy(dst ,src), (char *)dst);
+     QCOMPARE((char *)dst, const_cast<char *>(expected));
+ }
++#endif
+ 
+ void tst_QByteArray::qstrncpy()
+ {
