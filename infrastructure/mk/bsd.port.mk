@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1286 2014/12/10 22:39:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1287 2014/12/13 11:08:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -25,17 +25,11 @@ ERRORS += "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 .endif
 
-.for v in PKGREPOSITORY PKGREPOSITORYBASE CDROM_PACKAGES FTP_PACKAGES SED_PLIST
+.for v in PKGREPOSITORY PKGREPOSITORYBASE CDROM_PACKAGES FTP_PACKAGES \
+	SED_PLIST IGNORE_FILES NO_REGRESS REGRESS_IS_INTERACTIVE REGRESS_DEPENDS \
+	PERMIT_DISTFILES_CDROM
 .  if defined($v)
-ERRORS += "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
-.  endif
-.endfor
-.if defined(PERMIT_DISTFILES_CDROM)
-ERRORS += "Fatal: Variable PERMIT_DISTFILES_CDROM is obsolete."
-.endif
-.for v in NO_REGRESS REGRESS_IS_INTERACTIVE REGRESS_DEPENDS
-.  if defined($v)
-ERRORS += "Fatal: $v has been replaced with ${v:S/REGRESS/TEST/}."
+ERRORS += "Fatal: Variable $v is obsolete, see bsd.port.mk(5)"
 .  endif
 .endfor
 
@@ -307,7 +301,8 @@ MODULES += ${_i}
 .  endif
 .endfor
 
-.if defined(MODULES)
+MODULES ?=
+.if !empty(MODULES)
 _MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
@@ -696,19 +691,12 @@ PORTPATH ?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBA
 # Add any COPTS to CFLAGS.  Note: programs that use imake do not
 # use CFLAGS!  Also, many (most?) ports hard code CFLAGS, ignoring
 # what we pass in.
-.if defined(COPTS)
 CFLAGS += ${COPTS}
-.endif
-.if defined(CXXOPTS)
 CXXFLAGS += ${CXXOPTS}
-.endif
-.if defined(WARNINGS) && ${WARNINGS:L} == "yes"
-.  if defined(CDIAGFLAGS)
+WARNINGS ?= no
+.if ${WARNINGS:L} == "yes"
 CFLAGS += ${CDIAGFLAGS}
-.  endif
-.  if defined(CXXDIAGFLAGS)
 CXXFLAGS += ${CXXDIAGFLAGS}
-.  endif
 .endif
 
 PORTHOME ?= /${PKGNAME}_writes_to_HOME
@@ -1272,10 +1260,6 @@ _LIST_$v =
 
 CHECKSUMFILES = ${_PATH_DISTFILES} ${_PATH_PATCHFILES}
 MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
-
-.if defined(IGNOREFILES)
-ERRORS += "Fatal: don't use IGNOREFILES"
-.endif
 
 # This is what is actually going to be extracted, and is overridable
 # by the user.
@@ -2344,7 +2328,7 @@ _internal-checksum: _internal-fetch
 			exit 1; \
 		fi; \
 	done
-.  if ! defined(NO_CHECKSUM)
+.  if !defined(NO_CHECKSUM)
 	@if [ -z "${DISTFILES}" ]; then \
 	  ${ECHO_MSG} ">> No distfiles."; \
 	elif [ ! -f ${CHECKSUM_FILE} ]; then \
@@ -2650,7 +2634,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
-.  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES)
+.  if target(do-distpatch) || target(post-distpatch) || !empty(PATCHFILES)
 	@${_MAKE} _internal-distpatch
 .  endif
 	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M/*}" != x"" ]; then \
