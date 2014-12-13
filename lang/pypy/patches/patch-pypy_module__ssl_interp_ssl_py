@@ -1,22 +1,19 @@
-$OpenBSD: patch-pypy_module__ssl_interp_ssl_py,v 1.1 2014/04/24 21:44:07 sthen Exp $
---- pypy/module/_ssl/interp_ssl.py.orig	Thu Apr 24 16:21:39 2014
-+++ pypy/module/_ssl/interp_ssl.py	Thu Apr 24 16:25:47 2014
-@@ -108,16 +108,8 @@ if HAVE_OPENSSL_RAND:
+$OpenBSD: patch-pypy_module__ssl_interp_ssl_py,v 1.2 2014/12/13 13:53:18 edd Exp $
+--- pypy/module/_ssl/interp_ssl.py.orig	Mon Sep 22 18:34:11 2014
++++ pypy/module/_ssl/interp_ssl.py	Fri Oct 10 13:20:39 2014
+@@ -101,14 +101,7 @@ if HAVE_OPENSSL_RAND:
+         Queries the entropy gather daemon (EGD) on socket path.  Returns number
          of bytes read.  Raises socket.sslerror if connection to EGD fails or
          if it does provide enough data to seed PRNG."""
- 
--        socket_path = rffi.str2charp(path)
--        try:
+-        with rffi.scoped_str2charp(path) as socket_path:
 -            bytes = libssl_RAND_egd(socket_path)
--        finally:
--            rffi.free_charp(socket_path)
 -        if bytes == -1:
--            msg = "EGD connection failed or EGD did not return"
--            msg += " enough data to seed the PRNG"
--            raise ssl_error(space, msg)
+-            raise ssl_error(space,
+-                            "EGD connection failed or EGD did not return "
+-                            "enough data to seed the PRNG")
 -        return space.wrap(bytes)
-+        msg = "EGD disabled"
-+        raise ssl_error(space, msg)
- 
+-
++        raise ssl_error(space, "EGD disabled")
  
  class SSLObject(W_Root):
+     def __init__(self, space):

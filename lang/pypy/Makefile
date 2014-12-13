@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/07/18 08:48:37 edd Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/13 13:53:18 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -12,7 +12,7 @@ COMMENT =		fast implementation of the Python language
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
-V =			2.3.1
+V =			2.4.0
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}

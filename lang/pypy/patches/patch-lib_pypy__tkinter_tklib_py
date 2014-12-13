@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_pypy__tkinter_tklib_py,v 1.2 2013/12/04 21:56:21 edd Exp $
---- lib_pypy/_tkinter/tklib.py.orig	Fri Nov 15 19:44:50 2013
-+++ lib_pypy/_tkinter/tklib.py	Mon Dec  2 11:23:02 2013
-@@ -109,9 +109,9 @@ int Tk_GetNumMainWindows();
+$OpenBSD: patch-lib_pypy__tkinter_tklib_py,v 1.3 2014/12/13 13:53:18 edd Exp $
+--- lib_pypy/_tkinter/tklib.py.orig	Mon Sep 22 18:34:11 2014
++++ lib_pypy/_tkinter/tklib.py	Fri Oct 10 13:16:29 2014
+@@ -118,9 +118,9 @@ void Tcl_FindExecutable(char *argv0);
  # XXX find a better way to detect paths
  # XXX pick up CPPFLAGS and LDFLAGS and add to these paths?
  if sys.platform.startswith("openbsd"):
