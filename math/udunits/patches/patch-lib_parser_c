@@ -1,16 +1,15 @@
-$OpenBSD: patch-lib_parser_c,v 1.1.1.1 2010/07/11 10:32:52 espie Exp $
---- lib/parser.c.orig	Fri Jul  2 17:36:01 2010
-+++ lib/parser.c	Fri Jul  2 17:36:33 2010
-@@ -143,6 +143,12 @@ static ut_system*	_unitSystem;	/* The unit-system to u
- static char*		_errorMessage;	/* last error-message */
+$OpenBSD: patch-lib_parser_c,v 1.2 2014/12/13 17:15:01 benoit Exp $
+--- lib/parser.c.orig	Tue Sep 23 21:16:44 2014
++++ lib/parser.c	Mon Dec  1 22:11:16 2014
+@@ -113,6 +113,11 @@
  static ut_encoding	_encoding;	/* encoding of string to be parsed */
  static int		_restartScanner;/* restart scanner? */
-+extern int		utlex(void);
+ static int		_isTime;        /* product_exp is time? */
++extern int             utlex(void);
 +extern ut_status utGetPrefixByName(ut_system* const, const const char*,
-+	const double*, const size_t* const);
++       const double*, const size_t* const);
 +extern ut_status utGetPrefixBySymbol( ut_system* const, const char* const,
-+	double* const, size_t* const);
-+
++       double* const, size_t* const);
  
  
  /*

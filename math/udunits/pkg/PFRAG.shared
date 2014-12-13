@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/11 10:32:52 espie Exp $
-@lib lib/libudunits2.so.${LIBudunits2_VERSION}
