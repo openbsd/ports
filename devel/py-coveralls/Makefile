@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/31 12:00:03 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/13 10:34:25 benoit Exp $
 
 COMMENT =	display coverage stats online via coveralls.io
 
-MODPY_EGG_VERSION = 0.4.4
+MODPY_EGG_VERSION = 0.5
 DISTNAME =	coveralls-${MODPY_EGG_VERSION}
 EXTRACT_SUFX=	.zip
 PKGNAME =	py-${DISTNAME}
