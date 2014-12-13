@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2014/11/13 17:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2014/12/13 08:11:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 
-GNOME_VERSION=		3.14.5
+GNOME_VERSION=		3.14.6
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
@@ -62,7 +62,8 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
 WANTLIB-cups += ${WANTLIB}
-WANTLIB-cups += avahi-client avahi-common crypto cups gdk-3 gtk-3 ssl
+WANTLIB-cups += avahi-client avahi-common cups gdk-3 gmp
+WANTLIB-cups += gnutls gtk-3 hogweed nettle p11-kit tasn1
 
 RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
