@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.11 2014/11/18 18:59:08 kili Exp $
---- configure.ac.orig	Tue Nov  4 19:45:17 2014
-+++ configure.ac	Sun Nov 16 23:41:54 2014
+$OpenBSD: patch-configure_ac,v 1.12 2014/12/13 19:02:07 kili Exp $
+--- configure.ac.orig	Thu Dec  4 22:52:06 2014
++++ configure.ac	Mon Dec  8 10:41:54 2014
 @@ -563,6 +563,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
  
  GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2014/11/18 18:59:08 kili Exp $
    AC_MSG_CHECKING([for Qt4 moc])
    mocversion=`$MOCQT4 -v 2>&1`
    mocversiongrep=`echo $mocversion | grep "Qt 4"`
-@@ -864,6 +882,9 @@ glib/reference/Makefile
+@@ -866,6 +884,9 @@ glib/reference/Makefile
  glib/reference/version.xml
  glib/demo/Makefile
  test/Makefile
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2014/11/18 18:59:08 kili Exp $
  qt4/Makefile
  qt4/src/Makefile
  qt4/tests/Makefile
-@@ -896,6 +917,7 @@ echo "Building poppler with support for:"
+@@ -898,6 +919,7 @@ echo "Building poppler with support for:"
  echo "  font configuration: $with_font_configuration"
  echo "  splash output:      $enable_splash_output"
  echo "  cairo output:       $use_cairo"
