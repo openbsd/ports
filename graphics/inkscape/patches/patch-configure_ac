@@ -1,13 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.7 2014/07/10 10:19:45 robert Exp $
-
-First chunk reported to upstream and committed on trunk and the
-0.48 branch: https://bugs.launchpad.net/inkscape/+bug/1315142
+$OpenBSD: patch-configure_ac,v 1.8 2014/12/13 18:58:38 kili Exp $
 
 Hardcoded -dl.
 
---- configure.ac.orig	Sat Dec 15 17:50:19 2012
-+++ configure.ac	Thu Jul 10 11:39:49 2014
-@@ -263,7 +263,7 @@ if test "x$gc_ok" = "xyes" && test "x$cross_compiling"
+--- configure.ac.orig	Fri Jun 20 22:29:03 2014
++++ configure.ac	Thu Dec 11 22:08:27 2014
+@@ -241,7 +241,7 @@ if test "x$gc_ok" = "xyes" && test "x$cross_compiling"
  			# include <gc.h>
  			#endif
  			#include <stdio.h>
@@ -16,19 +13,19 @@ Hardcoded -dl.
  			int main(void){
  				unsigned min = ((6 << 16) | (4 << 8) | 0);
  				printf("%d.%d.%d ",GC_version >> 16, (GC_version >> 8) & 0xFF, GC_version & 0xFF);
-@@ -610,6 +610,11 @@ else
- 	AC_MSG_RESULT(no)
+@@ -593,6 +593,11 @@ if test "x$popplernewercolorspaceapi" = "xyes"; then
+ 	AC_DEFINE(POPPLER_EVEN_NEWER_COLOR_SPACE_API, 1, [Use even newer color space API from Poppler >= 0.26.0])
  fi
  
-+PKG_CHECK_MODULES(POPPLER_EVEN_NEWER_COLOR_SPACE_API, poppler >= 0.26.0, popplernewercolorspaceapi=yes, popplernewercolorspaceapi=no)
-+if test "x$popplernewercolorspaceapi" = "xyes"; then
-+	AC_DEFINE(POPPLER_EVEN_NEWER_COLOR_SPACE_API, 1, [Use even newer color space API from Poppler >= 0.26.0])
++PKG_CHECK_MODULES(POPPLER_REALLY_NEWEWST_COLOR_SPACE_API, poppler >= 0.29.0, popplernewestcolorspaceapi=yes, popplernewestcolorspaceapi=no)
++if test "x$popplernewestcolorspaceapi" = "xyes"; then
++	AC_DEFINE(POPPLER_REALLY_NEWEST_COLOR_SPACE_API, 1, [Use really newest color space API from Poppler >= 0.29.0])
 +fi
 +
  # Poppler's b604a008 commit changes this
  AC_MSG_CHECKING([whether Poppler's GfxPatch no longer uses GfxColor])
  popplergfxcolor="no"
-@@ -780,7 +785,7 @@ if test "x$cairo_pdf" = "xyes"; then
+@@ -757,7 +762,7 @@ if test "x$cairo_pdf" = "xyes"; then
  fi
  
  dnl Shouldn't we test for libpng and libz?
