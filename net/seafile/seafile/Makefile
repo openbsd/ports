@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/15 16:34:36 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/13 11:47:42 kirby Exp $
 
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
-GH_COMMIT = 		e2ec7141503a7035868cf7b9ab72627c906e00bc
+GH_COMMIT = 		77482e0d6c0208a6120f49182453039d0467f697
 PKGNAME = 		${GH_PROJECT}-daemon-${V}
 
 SHARED_LIBS =		seafile 0.0
 
-cWANTLIB += c ccnet event_core event_extra crypto ffi gio-2.0 glib-2.0
-cWANTLIB += gmodule-2.0 gobject-2.0 jansson pcre pthread searpc sqlite3
+cWANTLIB += c ccnet curl event_core event_extra crypto ffi gio-2.0 glib-2.0
+cWANTLIB += gmodule-2.0 gobject-2.0 idn jansson pcre pthread searpc sqlite3
 cWANTLIB += ssl uuid z ${MODGETTEXT_WANTLIB}
 
 WANTLIB += lib/inotify/inotify ${cWANTLIB}
@@ -22,6 +22,7 @@ BUILD_DEPENDS =		devel/libtool \
 
 RUN_DEPENDS = 		devel/py-simplejson
 LIB_DEPENDS = 		devel/libinotify \
+			net/curl \
 			net/seafile/ccnet
 
 USE_GMAKE =		Yes
@@ -37,17 +38,6 @@ AUTOMAKE_VERSION =	1.9
 MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py scripts/upgrade/*.py \
 			tests/test-share.py tests/test-transfer.py \
 			tools/seafile-admin app/seaf-cli
-
-post-extract:
-	cd ${WRKSRC} && perl -pi -e 's,-levent ,\@LIBEVENT_LIBS\@ ,g' \
-		controller/Makefile.am \
-		daemon/Makefile.am \
-		fileserver/Makefile.am \
-		fuse/Makefile.am \
-		lib/Makefile.am \
-		server/Makefile.am \
-		server/gc/Makefile.am \
-		tests/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
