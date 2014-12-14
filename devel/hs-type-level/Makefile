@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/17 14:12:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2014/12/14 11:26:07 kili Exp $
 
-BROKEN-i386 =		duplicate definition for symbol __i686.get_pc_thunk.bx
+BROKEN =		does not compile with ghc-7.8
 
 COMMENT =		type-level programming library
 
