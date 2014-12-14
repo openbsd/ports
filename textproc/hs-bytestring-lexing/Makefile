@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/04 05:49:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/14 12:11:54 kili Exp $
 
 COMMENT =		parse literals from strict or lazy bytestrings
 
-DISTNAME =		bytestring-lexing-0.4.3
+DISTNAME =		bytestring-lexing-0.4.3.2
 CATEGORIES =		textproc
 HOMEPAGE =		http://code.haskell.org/~wren/
 
