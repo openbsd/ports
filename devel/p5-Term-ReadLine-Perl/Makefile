@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/14 16:55:41 benoit Exp $
 
 COMMENT=		minimal interface to Readline
-DISTNAME=		Term-ReadLine-Perl-1.0302
-REVISION=		0
+DISTNAME =		Term-ReadLine-Perl-1.0303
 CATEGORIES=		devel perl5
 
 # perl
