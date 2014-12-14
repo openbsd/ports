@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1282 2014/12/11 17:00:40 uebayasi Exp $
+# $OpenBSD: Makefile,v 1.1283 2014/12/14 14:49:32 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -232,6 +232,7 @@
      SUBDIR += hs-glib
      SUBDIR += hs-hashable
      SUBDIR += hs-hashed-storage
+     SUBDIR += hs-hashtables
      SUBDIR += hs-hint
      SUBDIR += hs-hlint
      SUBDIR += hs-hood
