@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:02:11 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/12/14 11:13:13 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/C/
 lib/ghc/${DISTNAME}/Language/C.hi
@@ -10,6 +9,10 @@ lib/ghc/${DISTNAME}/Language/C/Analysis.hi
 lib/ghc/${DISTNAME}/Language/C/Analysis.p_hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/AstAnalysis.hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/AstAnalysis.p_hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/Builtins.hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/Builtins.p_hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/ConstEval.hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/ConstEval.p_hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/Debug.hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/Debug.p_hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/DeclAnalysis.hi
@@ -26,6 +29,12 @@ lib/ghc/${DISTNAME}/Language/C/Analysis/SemRep.hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/SemRep.p_hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/TravMonad.hi
 lib/ghc/${DISTNAME}/Language/C/Analysis/TravMonad.p_hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/TypeCheck.hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/TypeCheck.p_hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/TypeConversions.hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/TypeConversions.p_hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/TypeUtils.hi
+lib/ghc/${DISTNAME}/Language/C/Analysis/TypeUtils.p_hi
 lib/ghc/${DISTNAME}/Language/C/Data/
 lib/ghc/${DISTNAME}/Language/C/Data.hi
 lib/ghc/${DISTNAME}/Language/C/Data.p_hi
@@ -67,6 +76,8 @@ lib/ghc/${DISTNAME}/Language/C/Syntax/Constants.hi
 lib/ghc/${DISTNAME}/Language/C/Syntax/Constants.p_hi
 lib/ghc/${DISTNAME}/Language/C/Syntax/Ops.hi
 lib/ghc/${DISTNAME}/Language/C/Syntax/Ops.p_hi
+lib/ghc/${DISTNAME}/Language/C/Syntax/Utils.hi
+lib/ghc/${DISTNAME}/Language/C/Syntax/Utils.p_hi
 lib/ghc/${DISTNAME}/Language/C/System/
 lib/ghc/${DISTNAME}/Language/C/System/GCC.hi
 lib/ghc/${DISTNAME}/Language/C/System/GCC.p_hi
@@ -79,13 +90,19 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-AstAnalysis.html
+share/doc/hs-${DISTNAME}/html/Language-C-Analysis-Builtins.html
+share/doc/hs-${DISTNAME}/html/Language-C-Analysis-ConstEval.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-Debug.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-DeclAnalysis.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-DefTable.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-Export.html
+share/doc/hs-${DISTNAME}/html/Language-C-Analysis-NameSpaceMap.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-SemError.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-SemRep.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis-TravMonad.html
+share/doc/hs-${DISTNAME}/html/Language-C-Analysis-TypeCheck.html
+share/doc/hs-${DISTNAME}/html/Language-C-Analysis-TypeConversions.html
+share/doc/hs-${DISTNAME}/html/Language-C-Analysis-TypeUtils.html
 share/doc/hs-${DISTNAME}/html/Language-C-Analysis.html
 share/doc/hs-${DISTNAME}/html/Language-C-Data-Error.html
 share/doc/hs-${DISTNAME}/html/Language-C-Data-Ident.html
@@ -99,6 +116,7 @@ share/doc/hs-${DISTNAME}/html/Language-C-Pretty.html
 share/doc/hs-${DISTNAME}/html/Language-C-Syntax-AST.html
 share/doc/hs-${DISTNAME}/html/Language-C-Syntax-Constants.html
 share/doc/hs-${DISTNAME}/html/Language-C-Syntax-Ops.html
+share/doc/hs-${DISTNAME}/html/Language-C-Syntax-Utils.html
 share/doc/hs-${DISTNAME}/html/Language-C-Syntax.html
 share/doc/hs-${DISTNAME}/html/Language-C-System-GCC.html
 share/doc/hs-${DISTNAME}/html/Language-C-System-Preprocess.html
@@ -133,13 +151,19 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/language-c.haddock
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-AstAnalysis.html
+share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-Builtins.html
+share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-ConstEval.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-Debug.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-DeclAnalysis.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-DefTable.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-Export.html
+share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-NameSpaceMap.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-SemError.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-SemRep.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-TravMonad.html
+share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-TypeCheck.html
+share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-TypeConversions.html
+share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis-TypeUtils.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Analysis.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Data-Error.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Data-Ident.html
@@ -153,6 +177,7 @@ share/doc/hs-${DISTNAME}/html/mini_Language-C-Pretty.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Syntax-AST.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Syntax-Constants.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Syntax-Ops.html
+share/doc/hs-${DISTNAME}/html/mini_Language-C-Syntax-Utils.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-Syntax.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-System-GCC.html
 share/doc/hs-${DISTNAME}/html/mini_Language-C-System-Preprocess.html
