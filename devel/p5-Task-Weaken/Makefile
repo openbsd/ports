@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:49:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/12/14 16:57:27 benoit Exp $
 
 COMMENT=		ensure that a platform has weaken support
 
 MODULES=		cpan
-DISTNAME=		Task-Weaken-1.03
-REVISION=		0
+DISTNAME =		Task-Weaken-1.04
 CATEGORIES=		devel
 
 # perl
