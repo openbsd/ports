@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/11 23:49:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/14 16:52:09 benoit Exp $
 
 COMMENT= 	tests strings for equality
 
 MODULES=	cpan
 
-DISTNAME=	Test-LongString-0.15
+DISTNAME=	Test-LongString-0.17
 CATEGORIES=	devel
 
 # perl
