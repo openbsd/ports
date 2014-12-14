@@ -1,6 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/03 21:56:44 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/14 11:14:01 kili Exp $
 
 COMMENT =		lenses, folds and traversals
+
+# XXX Update needs more new dependencies:
+# bifunctors, generic-deriving, profunctor-extras, profunctors,
+# reflection.
+
 
 DISTNAME =		lens-3.7.6
 REVISION =		0
