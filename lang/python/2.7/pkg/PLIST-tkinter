@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.3 2014/07/11 06:59:43 rpointel Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.4 2014/12/14 08:32:55 rpointel Exp $
 @option no-default-conflict
 @conflict python-tkinter->=2.7,<2.8
 lib/python2.7/lib-dynload/_tkinter.so
@@ -42,6 +42,9 @@ lib/python2.7/lib-tk/test/test_tkinter/
 lib/python2.7/lib-tk/test/test_tkinter/__init__.py
 lib/python2.7/lib-tk/test/test_tkinter/__init__.pyc
 lib/python2.7/lib-tk/test/test_tkinter/__init__.pyo
+lib/python2.7/lib-tk/test/test_tkinter/test_font.py
+lib/python2.7/lib-tk/test/test_tkinter/test_font.pyc
+lib/python2.7/lib-tk/test/test_tkinter/test_font.pyo
 lib/python2.7/lib-tk/test/test_tkinter/test_geometry_managers.py
 lib/python2.7/lib-tk/test/test_tkinter/test_geometry_managers.pyc
 lib/python2.7/lib-tk/test/test_tkinter/test_geometry_managers.pyo

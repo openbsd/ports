@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2014/07/11 06:59:43 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2014/12/14 08:32:55 rpointel Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -1366,6 +1366,19 @@ lib/python2.7/encodings/uu_codec.pyo
 lib/python2.7/encodings/zlib_codec.py
 lib/python2.7/encodings/zlib_codec.pyc
 lib/python2.7/encodings/zlib_codec.pyo
+lib/python2.7/ensurepip/
+lib/python2.7/ensurepip/__init__.py
+lib/python2.7/ensurepip/__init__.pyc
+lib/python2.7/ensurepip/__init__.pyo
+lib/python2.7/ensurepip/__main__.py
+lib/python2.7/ensurepip/__main__.pyc
+lib/python2.7/ensurepip/__main__.pyo
+lib/python2.7/ensurepip/_bundled/
+lib/python2.7/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/setuptools-7.0-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_uninstall.py
+lib/python2.7/ensurepip/_uninstall.pyc
+lib/python2.7/ensurepip/_uninstall.pyo
 lib/python2.7/filecmp.py
 lib/python2.7/filecmp.pyc
 lib/python2.7/filecmp.pyo
@@ -1536,7 +1549,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.8-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.9-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1600,9 +1613,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.8.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.9.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.8.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.9.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo
@@ -1628,6 +1641,9 @@ lib/python2.7/lib2to3/fixes/__init__.pyo
 lib/python2.7/lib2to3/fixes/fix_apply.py
 lib/python2.7/lib2to3/fixes/fix_apply.pyc
 lib/python2.7/lib2to3/fixes/fix_apply.pyo
+lib/python2.7/lib2to3/fixes/fix_asserts.py
+lib/python2.7/lib2to3/fixes/fix_asserts.pyc
+lib/python2.7/lib2to3/fixes/fix_asserts.pyo
 lib/python2.7/lib2to3/fixes/fix_basestring.py
 lib/python2.7/lib2to3/fixes/fix_basestring.pyc
 lib/python2.7/lib2to3/fixes/fix_basestring.pyo

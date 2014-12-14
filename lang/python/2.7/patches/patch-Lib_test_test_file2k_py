@@ -1,9 +1,9 @@
-$OpenBSD: patch-Lib_test_test_file2k_py,v 1.1 2014/07/11 06:59:43 rpointel Exp $
+$OpenBSD: patch-Lib_test_test_file2k_py,v 1.2 2014/12/14 08:32:55 rpointel Exp $
 
 No /dev/full on OpenBSD (http://bugs.python.org/issue21934).
 
---- Lib/test/test_file2k.py.orig	Sat May 31 14:58:39 2014
-+++ Lib/test/test_file2k.py	Sat Jul  5 08:37:49 2014
+--- Lib/test/test_file2k.py.orig	Wed Dec 10 16:59:44 2014
++++ Lib/test/test_file2k.py	Sat Dec 13 12:13:40 2014
 @@ -4,6 +4,7 @@ import unittest
  import itertools
  import select
@@ -43,5 +43,5 @@ No /dev/full on OpenBSD (http://bugs.python.org/issue21934).
 +        else:
 +             self.skipTest("requires '/dev/full'")
  
- class FileSubclassTests(unittest.TestCase):
- 
+     @unittest.skipUnless(sys.maxsize > 2**31, "requires 64-bit system")
+     @test_support.precisionbigmemtest(2**31, 2.5, dry_run=False)

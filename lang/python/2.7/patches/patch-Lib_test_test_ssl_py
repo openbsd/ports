@@ -1,10 +1,10 @@
-$OpenBSD: patch-Lib_test_test_ssl_py,v 1.1 2014/07/11 06:59:43 rpointel Exp $
+$OpenBSD: patch-Lib_test_test_ssl_py,v 1.2 2014/12/14 08:32:55 rpointel Exp $
 
 No RAND_egd on OpenBSD.
 
---- Lib/test/test_ssl.py.orig	Fri Jul  4 17:30:14 2014
-+++ Lib/test/test_ssl.py	Fri Jul  4 17:31:09 2014
-@@ -96,8 +96,6 @@ class BasicSocketTests(unittest.TestCase):
+--- Lib/test/test_ssl.py.orig	Wed Dec 10 16:59:47 2014
++++ Lib/test/test_ssl.py	Sat Dec 13 12:13:40 2014
+@@ -169,8 +169,6 @@ class BasicSocketTests(unittest.TestCase):
              sys.stdout.write("\n RAND_status is %d (%s)\n"
                               % (v, (v and "sufficient randomness") or
                                  "insufficient randomness"))

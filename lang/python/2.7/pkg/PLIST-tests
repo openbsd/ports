@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.8 2014/07/11 06:59:43 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.9 2014/12/14 08:32:55 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -7,6 +7,9 @@ lib/python2.7/test/Sine-1000Hz-300ms.aif
 lib/python2.7/test/__init__.py
 lib/python2.7/test/__init__.pyc
 lib/python2.7/test/__init__.pyo
+lib/python2.7/test/_mock_backport.py
+lib/python2.7/test/_mock_backport.pyc
+lib/python2.7/test/_mock_backport.pyo
 lib/python2.7/test/audiodata/
 lib/python2.7/test/audiodata/pluck-pcm16.aiff
 lib/python2.7/test/audiodata/pluck-pcm16.au
@@ -44,6 +47,11 @@ lib/python2.7/test/badsyntax_nocaret.py
 lib/python2.7/test/buffer_tests.py
 lib/python2.7/test/buffer_tests.pyc
 lib/python2.7/test/buffer_tests.pyo
+lib/python2.7/test/capath/
+lib/python2.7/test/capath/4e1295a3.0
+lib/python2.7/test/capath/5ed36f99.0
+lib/python2.7/test/capath/6e88d7b8.0
+lib/python2.7/test/capath/99d0fa06.0
 lib/python2.7/test/cfgparser.1
 lib/python2.7/test/check_soundcard.vbs
 lib/python2.7/test/cjkencodings/
@@ -227,6 +235,7 @@ lib/python2.7/test/decimaltestdata/testall.decTest
 lib/python2.7/test/decimaltestdata/tointegral.decTest
 lib/python2.7/test/decimaltestdata/tointegralx.decTest
 lib/python2.7/test/decimaltestdata/xor.decTest
+lib/python2.7/test/dh512.pem
 lib/python2.7/test/doctest_aliases.py
 lib/python2.7/test/doctest_aliases.pyc
 lib/python2.7/test/doctest_aliases.pyo
@@ -267,13 +276,20 @@ lib/python2.7/test/inspect_fodder.pyo
 lib/python2.7/test/inspect_fodder2.py
 lib/python2.7/test/inspect_fodder2.pyc
 lib/python2.7/test/inspect_fodder2.pyo
+lib/python2.7/test/keycert.passwd.pem
 lib/python2.7/test/keycert.pem
+lib/python2.7/test/keycert2.pem
+lib/python2.7/test/keycert3.pem
+lib/python2.7/test/keycert4.pem
 lib/python2.7/test/list_tests.py
 lib/python2.7/test/list_tests.pyc
 lib/python2.7/test/list_tests.pyo
 lib/python2.7/test/lock_tests.py
 lib/python2.7/test/lock_tests.pyc
 lib/python2.7/test/lock_tests.pyo
+lib/python2.7/test/make_ssl_certs.py
+lib/python2.7/test/make_ssl_certs.pyc
+lib/python2.7/test/make_ssl_certs.pyo
 lib/python2.7/test/mapping_tests.py
 lib/python2.7/test/mapping_tests.pyc
 lib/python2.7/test/mapping_tests.pyo
@@ -293,6 +309,7 @@ lib/python2.7/test/pickletester.pyo
 lib/python2.7/test/profilee.py
 lib/python2.7/test/profilee.pyc
 lib/python2.7/test/profilee.pyo
+lib/python2.7/test/pycacert.pem
 lib/python2.7/test/pyclbr_input.py
 lib/python2.7/test/pyclbr_input.pyc
 lib/python2.7/test/pyclbr_input.pyo
@@ -320,6 +337,7 @@ lib/python2.7/test/relimport.pyo
 lib/python2.7/test/reperf.py
 lib/python2.7/test/reperf.pyc
 lib/python2.7/test/reperf.pyo
+lib/python2.7/test/revocation.crl
 lib/python2.7/test/sample_doctest.py
 lib/python2.7/test/sample_doctest.pyc
 lib/python2.7/test/sample_doctest.pyo
@@ -332,6 +350,7 @@ lib/python2.7/test/sample_doctest_no_doctests.pyo
 lib/python2.7/test/script_helper.py
 lib/python2.7/test/script_helper.pyc
 lib/python2.7/test/script_helper.pyo
+lib/python2.7/test/selfsigned_pythontestdotnet.pem
 lib/python2.7/test/seq_tests.py
 lib/python2.7/test/seq_tests.pyc
 lib/python2.7/test/seq_tests.pyo
@@ -340,6 +359,12 @@ lib/python2.7/test/sha256.pem
 lib/python2.7/test/sortperf.py
 lib/python2.7/test/sortperf.pyc
 lib/python2.7/test/sortperf.pyo
+lib/python2.7/test/ssl_cert.pem
+lib/python2.7/test/ssl_key.passwd.pem
+lib/python2.7/test/ssl_key.pem
+lib/python2.7/test/ssl_servers.py
+lib/python2.7/test/ssl_servers.pyc
+lib/python2.7/test/ssl_servers.pyo
 lib/python2.7/test/string_tests.py
 lib/python2.7/test/string_tests.pyc
 lib/python2.7/test/string_tests.pyo
@@ -703,6 +728,9 @@ lib/python2.7/test/test_email_codecs.pyo
 lib/python2.7/test/test_email_renamed.py
 lib/python2.7/test/test_email_renamed.pyc
 lib/python2.7/test/test_email_renamed.pyo
+lib/python2.7/test/test_ensurepip.py
+lib/python2.7/test/test_ensurepip.pyc
+lib/python2.7/test/test_ensurepip.pyo
 lib/python2.7/test/test_enumerate.py
 lib/python2.7/test/test_enumerate.pyc
 lib/python2.7/test/test_enumerate.pyo

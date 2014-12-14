@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.4 2013/04/13 22:31:42 fgsch Exp $
+@comment $OpenBSD: PLIST-tools,v 1.5 2014/12/14 08:32:55 rpointel Exp $
 @option no-default-conflict
 @conflict python-tools->=2.7,<2.8
 lib/python2.7/Tools/
@@ -157,6 +157,7 @@ lib/python2.7/Tools/scripts/analyze_dxp.py
 lib/python2.7/Tools/scripts/byext.py
 lib/python2.7/Tools/scripts/byteyears.py
 lib/python2.7/Tools/scripts/checkappend.py
+lib/python2.7/Tools/scripts/checkpip.py
 lib/python2.7/Tools/scripts/checkpyc.py
 lib/python2.7/Tools/scripts/classfix.py
 lib/python2.7/Tools/scripts/cleanfuture.py
@@ -224,6 +225,8 @@ lib/python2.7/Tools/scripts/win_add2path.py
 lib/python2.7/Tools/scripts/xxci.py
 lib/python2.7/Tools/ssl/
 lib/python2.7/Tools/ssl/get-remote-certificate.py
+lib/python2.7/Tools/ssl/make_ssl_data.py
+lib/python2.7/Tools/ssl/test_multiple_versions.py
 lib/python2.7/Tools/unicode/
 lib/python2.7/Tools/unicode/Makefile
 lib/python2.7/Tools/unicode/comparecodecs.py
