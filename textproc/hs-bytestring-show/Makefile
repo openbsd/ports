@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/18 22:15:43 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/14 12:06:19 kili Exp $
 
 COMMENT =		efficient conversion of values to readable byte strings
 
-DISTNAME =		bytestring-show-0.3.5.5
+DISTNAME =		bytestring-show-0.3.5.6
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
