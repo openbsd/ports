@@ -1,5 +1,2 @@
-MD5 (ghc/MonadCatchIO-transformers-0.3.0.0.tar.gz) = a4zOIUteUSDmAEosESuxww==
-RMD160 (ghc/MonadCatchIO-transformers-0.3.0.0.tar.gz) = U/7DGw6yZ2tgOJ/sXMf02JJ8GXU=
-SHA1 (ghc/MonadCatchIO-transformers-0.3.0.0.tar.gz) = HEDqpYiZlORwOTlO6nXXrEEj600=
-SHA256 (ghc/MonadCatchIO-transformers-0.3.0.0.tar.gz) = jBzxxd9tnm/K8PPySuot+sMdmDY+ATIX0amH7K4182w=
-SIZE (ghc/MonadCatchIO-transformers-0.3.0.0.tar.gz) = 3965
+SHA256 (ghc/MonadCatchIO-transformers-0.3.1.2.tar.gz) = LUT9mw8p1dhmseNVAbuyrIk5SysjtjSrzjhcbz4mrOQ=
+SIZE (ghc/MonadCatchIO-transformers-0.3.1.2.tar.gz) = 4523
