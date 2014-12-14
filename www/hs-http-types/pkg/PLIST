@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/19 06:51:06 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/14 12:07:54 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/HTTP/
 lib/ghc/${DISTNAME}/Network/HTTP/Types/
