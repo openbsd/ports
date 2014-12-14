@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/14 23:25:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/14 13:33:16 benoit Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		pragma to call methods on native types
 
-DISTNAME =		autobox-2.77
-REVISION =		0
+DISTNAME =		autobox-2.82
 
 CATEGORIES =		devel
 
