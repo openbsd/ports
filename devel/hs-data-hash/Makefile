@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/14 10:43:46 kili Exp $
 
 COMMENT =		combinators for building fast hashing functions
 
-DISTNAME =		data-hash-0.1.0.0
-REVISION =		0
+DISTNAME =		data-hash-0.2.0.0
 CATEGORIES =		devel
 
 # BSD3
