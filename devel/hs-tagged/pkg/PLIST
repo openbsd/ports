@@ -1,18 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:03:47 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/14 11:25:06 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
-lib/ghc/${DISTNAME}/Data/Proxy.hi
-lib/ghc/${DISTNAME}/Data/Proxy.p_hi
 lib/ghc/${DISTNAME}/Data/Tagged.hi
 lib/ghc/${DISTNAME}/Data/Tagged.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
-share/doc/hs-${DISTNAME}/html/Data-Proxy.html
 share/doc/hs-${DISTNAME}/html/Data-Tagged.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -20,7 +16,6 @@ share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Proxy.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Tagged.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
