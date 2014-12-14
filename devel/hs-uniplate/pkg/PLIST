@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:04:22 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/12/14 11:36:10 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Generics/
@@ -10,8 +10,6 @@ lib/ghc/${DISTNAME}/Data/Generics/PlateData.hi
 lib/ghc/${DISTNAME}/Data/Generics/PlateData.p_hi
 lib/ghc/${DISTNAME}/Data/Generics/PlateDirect.hi
 lib/ghc/${DISTNAME}/Data/Generics/PlateDirect.p_hi
-lib/ghc/${DISTNAME}/Data/Generics/PlateInternal.hi
-lib/ghc/${DISTNAME}/Data/Generics/PlateInternal.p_hi
 lib/ghc/${DISTNAME}/Data/Generics/PlateTypeable.hi
 lib/ghc/${DISTNAME}/Data/Generics/PlateTypeable.p_hi
 lib/ghc/${DISTNAME}/Data/Generics/SYB.hi
@@ -49,7 +47,6 @@ lib/ghc/${DISTNAME}/Data/Generics/UniplateStr.hi
 lib/ghc/${DISTNAME}/Data/Generics/UniplateStr.p_hi
 lib/ghc/${DISTNAME}/Data/Generics/UniplateStrOn.hi
 lib/ghc/${DISTNAME}/Data/Generics/UniplateStrOn.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -75,6 +72,7 @@ share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateOn.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateStr.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateStrOn.html
 share/doc/hs-${DISTNAME}/html/doc-index-124.html
+share/doc/hs-${DISTNAME}/html/doc-index-58.html
 share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-B.html
 share/doc/hs-${DISTNAME}/html/doc-index-C.html
