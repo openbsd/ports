@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/14 23:21:50 kili Exp $
 
 COMMENT =		fast, lightweight YAML loader and dumper
 
-DISTNAME =		HsSyck-0.50
-REVISION =		4
+DISTNAME =		HsSyck-0.52
 EPOCH =			0
 CATEGORIES =		devel
 
@@ -14,6 +13,8 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/hs-syb
+RUN_DEPENDS =		devel/hs-hashtables \
+			devel/hs-syb \
+			devel/hs-utf8-string>=0.3
 
 .include <bsd.port.mk>
