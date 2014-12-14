@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/01/24 09:44:18 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/14 09:31:20 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/XMonad/
 lib/ghc/${DISTNAME}/XMonad/Actions/
 lib/ghc/${DISTNAME}/XMonad/Actions/BluetileCommands.hi
