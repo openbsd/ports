@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.15 2014/11/21 18:23:45 sebastia Exp $
+# $OpenBSD: README,v 1.16 2014/12/14 17:04:50 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -157,8 +157,8 @@ copy some files into the server's chroot environment:
 
 Edit ${VARBASE}/www/conf/httpd.conf:
 You should make sure the proxy and header modules are loaded:
-LoadModule proxy_module /usr/lib/apache/modules/libproxy.so
-LoadModule headers_module /usr/lib/apache/modules/mod_headers.so
+LoadModule proxy_module ${TRUEPREFIX}/lib/apache/modules/libproxy.so
+LoadModule headers_module ${TRUEPREFIX}/apache/modules/mod_headers.so
 
 Alias /SOGo.woa/WebServerResources/ \
       /lib/sogo/www/

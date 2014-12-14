@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/10/17 09:20:03 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/12/14 17:04:50 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -59,7 +59,6 @@ lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/SOGo.framework/
 lib/GNUstep/Frameworks/SOGo.framework/Headers
 lib/GNUstep/Frameworks/SOGo.framework/Resources
-lib/GNUstep/Frameworks/SOGo.framework/SOGo
 lib/GNUstep/Frameworks/SOGo.framework/Versions/
 ${SOGOLIBDIR}/
 ${SOGOLIBDIR}/Headers/
@@ -127,10 +126,13 @@ ${SOGOLIBDIR}/Resources/CASLogoutRequestMap.plist
 ${SOGOLIBDIR}/Resources/DAVReportMap.plist
 ${SOGOLIBDIR}/Resources/Info-gnustep.plist
 ${SOGOLIBDIR}/Resources/SOGoDefaults.plist
-${SOGOLIBDIR}/SOGo
-@lib ${SOGOLIBDIR}/libSOGo.so.${LIBSOGo_VERSION}
+${SOGOLIBDIR}/sogo/
+${SOGOLIBDIR}/sogo/SOGo
+@lib ${SOGOLIBDIR}/sogo/libSOGo.so.${LIBSOGo_VERSION}
 lib/GNUstep/Frameworks/SOGo.framework/Versions/Current
-@lib lib/GNUstep/Frameworks/SOGo.framework/libSOGo.so.${LIBSOGo_VERSION}
+lib/GNUstep/Frameworks/SOGo.framework/sogo/
+lib/GNUstep/Frameworks/SOGo.framework/sogo/SOGo
+@lib lib/GNUstep/Frameworks/SOGo.framework/sogo/libSOGo.so.${LIBSOGo_VERSION}
 lib/GNUstep/Libraries/Resources/
 lib/GNUstep/Libraries/Resources/NGCards/
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/
@@ -351,6 +353,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Antarctica/Palmer.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Antarctica/Rothera.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Antarctica/South_Pole.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Antarctica/Syowa.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Antarctica/Troll.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Antarctica/Vostok.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Arctic/
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Arctic/Longyearbyen.ics
@@ -369,6 +372,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Bangkok.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Beirut.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Bishkek.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Brunei.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Chita.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Choibalsan.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Chongqing.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Colombo.ics
@@ -393,6 +397,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Kamchatka.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Karachi.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Kashgar.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Kathmandu.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Khandyga.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Kolkata.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Krasnoyarsk.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Kuala_Lumpur.ics
@@ -420,6 +425,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Samarkand.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Seoul.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Shanghai.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Singapore.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Srednekolymsk.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Taipei.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Tashkent.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Tbilisi.ics
@@ -428,6 +434,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Thimphu.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Tokyo.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Ulaanbaatar.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Urumqi.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Ust-Nera.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Vientiane.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Vladivostok.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Yakutsk.ics
@@ -467,6 +474,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Bratislava.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Brussels.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Bucharest.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Budapest.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Busingen.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Chisinau.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Copenhagen.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Dublin.ics
@@ -529,6 +537,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Indian/Reunion.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Pacific/
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Pacific/Apia.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Pacific/Auckland.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Pacific/Bougainville.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Pacific/Chatham.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Pacific/Chuuk.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Pacific/Easter.ics
@@ -1501,8 +1510,6 @@ lib/GNUstep/SOGo/Templates/SOGoFolderUkrainianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderUkrainianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxAppointmentEditor.wox
-lib/GNUstep/SOGo/Templates/SchedulerUI/UIxAppointmentProposal.wox
-lib/GNUstep/SOGo/Templates/SchedulerUI/UIxAptTableView.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxAttendeesEditor.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalDateSelector.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxCalDayTable.wox
@@ -1526,7 +1533,6 @@ lib/GNUstep/SOGo/Templates/SchedulerUI/UIxRecurrenceEditor.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxReminderEditor.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxSortButton.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxTaskEditor.wox
-lib/GNUstep/SOGo/Templates/SchedulerUI/UIxTaskProposal.wox
 lib/GNUstep/SOGo/Templates/SchedulerUI/UIxTimeDateControl.wox
 lib/GNUstep/SOGo/Templates/UIxAclEditor.wox
 lib/GNUstep/SOGo/Templates/UIxJSClose.wox
@@ -2077,10 +2083,11 @@ lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/Resources/Info-gnustep.plist
 @bin lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/SOGoElements
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/bundle-info.plist
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/stamp.make
-@lib lib/libGDLContentStore.so.${LIBGDLContentStore_VERSION}
-@lib lib/libNGCards.so.${LIBNGCards_VERSION}
-@lib lib/libSOGo.so.${LIBSOGo_VERSION}
-@lib lib/libSOGoUI.so.${LIBSOGoUI_VERSION}
+lib/sogo/
+@lib lib/sogo/libGDLContentStore.so.${LIBGDLContentStore_VERSION}
+@lib lib/sogo/libNGCards.so.${LIBNGCards_VERSION}
+@lib lib/sogo/libSOGo.so.${LIBSOGo_VERSION}
+@lib lib/sogo/libSOGoUI.so.${LIBSOGoUI_VERSION}
 @bin sbin/sogo-ealarms-notify
 @bin sbin/sogo-slapd-sockd
 @bin sbin/sogo-tool
