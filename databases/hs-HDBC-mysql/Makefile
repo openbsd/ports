@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2014/09/15 11:46:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2014/12/14 12:08:27 kili Exp $
+
+BROKEN =		does not compile with ghc-7.8
 
 COMMENT=		mysql driver for HDBC
 
