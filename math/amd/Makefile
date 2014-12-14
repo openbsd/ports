@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2014/11/18 08:09:07 pirofti Exp $
+# $OpenBSD: Makefile,v 1.25 2014/12/14 20:56:07 brad Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
 VERSION=	2.4.0
-REVISION =	0
+REVISION=	1
 DISTNAME=	AMD-${VERSION}
 PKGNAME=	${DISTNAME:L}
 
@@ -18,6 +18,8 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	suitesparseconfig
 
 MASTER_SITES=	${HOMEPAGE}/
 WRKDIST=	${WRKDIR}/AMD
