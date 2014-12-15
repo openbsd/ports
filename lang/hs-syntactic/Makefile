@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/12/03 21:56:44 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/15 20:03:33 kili Exp $
 
 COMMENT =		abstract syntax and utilities for embedded languages
+
+# XXX update to newer version needs a new dependency: tree-view.
+# No version prior to 1.10 (which adds the new dependency) is buildable
+# with ghc-7.8.
 
 DISTNAME =		syntactic-1.4
 REVISION =		1
