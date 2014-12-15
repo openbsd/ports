@@ -1,5 +1,0 @@
-Hudson is a continuous integration (CI) server (for information on CI
-see http://www.martinfowler.com/articles/continuousIntegration.html).
-Written in Java and with a web-based configuration interface, Hudson
-can be run standalone (contains its own tiny web server) or in any
-standard Java-capable web server or application server.
