@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:02:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/12/15 17:12:32 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/Rendering/
@@ -44,7 +44,6 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/Pango/Structs.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Pango/Types.chi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Pango/Types.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Pango/Types.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -58,7 +57,6 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Font.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Layout.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Markup.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Rendering.html
-share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Types.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
 share/doc/hs-${DISTNAME}/html/doc-index-All.html
@@ -67,12 +65,9 @@ share/doc/hs-${DISTNAME}/html/doc-index-D.html
 share/doc/hs-${DISTNAME}/html/doc-index-E.html
 share/doc/hs-${DISTNAME}/html/doc-index-F.html
 share/doc/hs-${DISTNAME}/html/doc-index-G.html
-share/doc/hs-${DISTNAME}/html/doc-index-I.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
-share/doc/hs-${DISTNAME}/html/doc-index-O.html
 share/doc/hs-${DISTNAME}/html/doc-index-P.html
-share/doc/hs-${DISTNAME}/html/doc-index-Q.html
 share/doc/hs-${DISTNAME}/html/doc-index-R.html
 share/doc/hs-${DISTNAME}/html/doc-index-S.html
 share/doc/hs-${DISTNAME}/html/doc-index-T.html
@@ -92,7 +87,6 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Font.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Layout.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Markup.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Rendering.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css

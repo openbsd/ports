@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/15 17:12:32 kili Exp $
 
 COMMENT =		Haskell bindings to pango
 
-DISTNAME =		pango-0.12.3
-REVISION =		1
+DISTNAME =		pango-0.12.5.3
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -23,8 +22,8 @@ BUILD_DEPENDS =		devel/gtk2hs-buildtools \
 
 LIB_DEPENDS =		devel/pango
 
-RUN_DEPENDS =		devel/hs-glib>=0.12,<0.13 \
+RUN_DEPENDS =		devel/hs-glib>=0.12.5.3,<0.13 \
 			devel/hs-mtl \
-			graphics/hs-cairo>=0.12.0,<0.13
+			graphics/hs-cairo>=0.12.5.3,<0.13
 
 .include <bsd.port.mk>
