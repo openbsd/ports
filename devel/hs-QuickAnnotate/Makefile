@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/16 09:09:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/15 21:05:06 kili Exp $
+
+BROKEN =		does not build with new haskell-src-exts
 
 COMMENT =		annotation framework
 
