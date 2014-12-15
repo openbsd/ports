@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.204 2014/12/15 18:02:46 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.205 2014/12/15 23:50:32 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -479,6 +479,7 @@ my $obsolete_reason = {
 	'pecl-APC' => 3,
 	'fxtv' => 3,
 	'hudson' => 2,
+	'epdfview' => 0,
 };
 
 # ->is_base_system($handle, $state):
