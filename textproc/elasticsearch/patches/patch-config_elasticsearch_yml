@@ -1,0 +1,25 @@
+$OpenBSD: patch-config_elasticsearch_yml,v 1.1.1.1 2014/12/15 17:57:33 jasper Exp $
+--- config/elasticsearch.yml.orig	Mon Dec 15 15:38:55 2014
++++ config/elasticsearch.yml	Mon Dec 15 15:50:33 2014
+@@ -143,10 +143,13 @@
+ # Path to directory containing configuration (this file and logging.yml):
+ #
+ #path.conf: /path/to/conf
++path.conf: ${SYSCONFDIR}/elasticsearch/
+ 
+ # Path to directory where to store index data allocated for this node.
+ #
+ #path.data: /path/to/data
++path.data: ${VARBASE}/elasticsearch/
++
+ #
+ # Can optionally include more than one location, causing data to be striped across
+ # the locations (a la RAID 0) on a file level, favouring locations with most free
+@@ -161,6 +164,7 @@
+ # Path to log files:
+ #
+ #path.logs: /path/to/logs
++path.logs: /var/log/elasticsearch/
+ 
+ # Path to where plugins are installed:
+ #

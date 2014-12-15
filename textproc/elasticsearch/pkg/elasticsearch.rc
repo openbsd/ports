@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $OpenBSD: elasticsearch.rc,v 1.1.1.1 2014/12/15 17:57:33 jasper Exp $
+
+daemon="${TRUEPREFIX}/elasticsearch/bin/elasticsearch"
+daemon_flags="-d -Des.config=${SYSCONFDIR}/elasticsearch/elasticsearch.yml -p /var/run/elasticsearch/elasticsearch.pid"
+daemon_user="_elasticsearch"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c elasticsearch).*org.elasticsearch.bootstrap.Elasticsearch"
+
+rc_reload=NO
+
+rc_start() {
+	${rcexec} \
+		"ES_INCLUDE=\"${SYSCONFDIR}/elasticsearch/elasticsearch.in.sh\" \
+		JAVA_HOME=\"$(${LOCALBASE}/bin/javaPathHelper -h elasticsearch)\" \
+		${daemon} ${daemon_flags}"
+}
+
+rc_pre() {
+	install -d -o _elasticsearch /var/run/elasticsearch/
+}
+
+rc_cmd $1
