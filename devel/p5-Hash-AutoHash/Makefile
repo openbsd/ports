@@ -1,9 +1,8 @@
-#	$OpenBSD: Makefile,v 1.9 2013/10/11 23:48:52 naddy Exp $
+#	$OpenBSD: Makefile,v 1.10 2014/12/15 17:51:27 benoit Exp $
 
 COMMENT=	object-oriented access to real and tied hashes
 
-DISTNAME=	Hash-AutoHash-1.12
-REVISION=	2
+DISTNAME =	Hash-AutoHash-1.17
 CATEGORIES=	devel
 
 # perl
