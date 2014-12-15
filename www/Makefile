@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.690 2014/12/02 21:07:31 kili Exp $
+# $OpenBSD: Makefile,v 1.691 2014/12/15 21:02:38 nigel Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -91,7 +91,6 @@
      SUBDIR += kwebkitpart
      SUBDIR += larbin
      SUBDIR += libcroco
-     SUBDIR += libghttp
      SUBDIR += liferea
      SUBDIR += lightsquid
      SUBDIR += lighttpd
@@ -277,7 +276,6 @@
      SUBDIR += p5-HTTP-DAV
      SUBDIR += p5-HTTP-Daemon
      SUBDIR += p5-HTTP-Date
-     SUBDIR += p5-HTTP-GHTTP
      SUBDIR += p5-HTTP-GetImages
      SUBDIR += p5-HTTP-Lite
      SUBDIR += p5-HTTP-Message
