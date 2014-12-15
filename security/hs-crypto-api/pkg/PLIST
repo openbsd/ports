@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:05:35 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/15 20:19:37 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/CPoly.hi
 lib/ghc/${DISTNAME}/Crypto/CPoly.p_hi
+lib/ghc/${DISTNAME}/Crypto/Classes/
 lib/ghc/${DISTNAME}/Crypto/Classes.hi
 lib/ghc/${DISTNAME}/Crypto/Classes.p_hi
+lib/ghc/${DISTNAME}/Crypto/Classes/Exceptions.hi
+lib/ghc/${DISTNAME}/Crypto/Classes/Exceptions.p_hi
 lib/ghc/${DISTNAME}/Crypto/HMAC.hi
 lib/ghc/${DISTNAME}/Crypto/HMAC.p_hi
 lib/ghc/${DISTNAME}/Crypto/Modes.hi
@@ -17,19 +20,20 @@ lib/ghc/${DISTNAME}/Crypto/Types.hi
 lib/ghc/${DISTNAME}/Crypto/Types.p_hi
 lib/ghc/${DISTNAME}/Crypto/Util.hi
 lib/ghc/${DISTNAME}/Crypto/Util.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Crypto-Classes-Exceptions.html
 share/doc/hs-${DISTNAME}/html/Crypto-Classes.html
 share/doc/hs-${DISTNAME}/html/Crypto-HMAC.html
 share/doc/hs-${DISTNAME}/html/Crypto-Modes.html
 share/doc/hs-${DISTNAME}/html/Crypto-Padding.html
 share/doc/hs-${DISTNAME}/html/Crypto-Random.html
 share/doc/hs-${DISTNAME}/html/Crypto-Types.html
+share/doc/hs-${DISTNAME}/html/Crypto-Util.html
 share/doc/hs-${DISTNAME}/html/crypto-api.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -37,12 +41,14 @@ share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Crypto-Classes-Exceptions.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Classes.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-HMAC.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Modes.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Padding.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Random.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Types.html
+share/doc/hs-${DISTNAME}/html/mini_Crypto-Util.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
