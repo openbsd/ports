@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/12/15 19:32:11 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/15 22:09:54 kili Exp $
 
 COMMENT =		Iteratee monad provides strict, safe, and functional I/O
 
 # XXX update to newer version needs a new dependency: exceptions.
 
-DISTNAME =		iteratee-0.8.9.4
-REVISION =		0
+DISTNAME =		iteratee-0.8.9.5
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
@@ -18,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		devel/hs-ListLike>=3.0,<4 \
+RUN_DEPENDS +=		devel/hs-ListLike>=3.0,<5 \
 			devel/hs-MonadCatchIO-transformers>0.2,<0.4 \
 			devel/hs-monad-control>=0.3,<0.4 \
 			devel/hs-parallel>=2,<4 \
