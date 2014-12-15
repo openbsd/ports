@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2014/12/03 07:46:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2014/12/15 12:39:24 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	generalisation of wantarray
 
 MODULES=	cpan
-DISTNAME=	Want-0.24
+DISTNAME=	Want-0.25
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
