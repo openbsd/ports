@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/23 12:36:53 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/15 14:13:59 jsg Exp $
 bin/afl-clang
 bin/afl-clang++
 @bin bin/afl-fuzz
 bin/afl-g++
 @bin bin/afl-gcc
+bin/afl-plot
 @bin bin/afl-showmap
 libexec/afl/
 @bin libexec/afl/afl-as
@@ -38,6 +39,8 @@ share/afl/testcases/images/jp2/
 share/afl/testcases/images/jp2/hello_kitty.jp2
 share/afl/testcases/images/jpeg/
 share/afl/testcases/images/jpeg/hello_kitty.jpg
+share/afl/testcases/images/jxr/
+share/afl/testcases/images/jxr/hello_kitty.jxr
 share/afl/testcases/images/png/
 share/afl/testcases/images/png/hello_kitty.png
 share/afl/testcases/images/tiff/

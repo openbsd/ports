@@ -1,0 +1,9 @@
+$OpenBSD: patch-afl-plot,v 1.1 2014/12/15 14:13:59 jsg Exp $
+--- afl-plot.orig	Tue Dec 16 00:24:55 2014
++++ afl-plot	Tue Dec 16 00:25:40 2014
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # american fuzzy lop - Advanced Persistent Graphing
+ # -------------------------------------------------
