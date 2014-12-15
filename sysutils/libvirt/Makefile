@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2014/11/08 12:58:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2014/12/15 13:50:25 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-1.2.10
+DISTNAME=		libvirt-1.2.11
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=  virt-qemu                 0.3 # 1002.5
@@ -48,12 +48,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 # OpenBSD can't act as a virtualization host, so no need for libvirtd.
 # If support is added, subtitute /var/lib/{xen,virt,libvirt,...} with /var/db
 CONFIGURE_ARGS+=	--without-libvirtd
-
-MODPY_ADJ_FILES=        python/tests/basic.py \
-                        python/tests/create.py \
-                        python/tests/error.py \
-                        python/tests/node.py \
-                        python/tests/uuid.py
 
 FAKE_FLAGS=		confdir=${PREFIX}/share/examples/libvirt \
 			DOCS_DIR=${PREFIX}/share/doc/libvirt/python \

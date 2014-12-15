@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/11/08 12:58:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/12/15 13:50:25 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -107,7 +107,17 @@ share/doc/libvirt/html/html/
 share/doc/libvirt/html/html/home.png
 share/doc/libvirt/html/html/index.html
 share/doc/libvirt/html/html/left.png
-share/doc/libvirt/html/html/libvirt-libvirt.html
+share/doc/libvirt/html/html/libvirt-libvirt-domain-snapshot.html
+share/doc/libvirt/html/html/libvirt-libvirt-domain.html
+share/doc/libvirt/html/html/libvirt-libvirt-event.html
+share/doc/libvirt/html/html/libvirt-libvirt-host.html
+share/doc/libvirt/html/html/libvirt-libvirt-interface.html
+share/doc/libvirt/html/html/libvirt-libvirt-network.html
+share/doc/libvirt/html/html/libvirt-libvirt-nodedev.html
+share/doc/libvirt/html/html/libvirt-libvirt-nwfilter.html
+share/doc/libvirt/html/html/libvirt-libvirt-secret.html
+share/doc/libvirt/html/html/libvirt-libvirt-storage.html
+share/doc/libvirt/html/html/libvirt-libvirt-stream.html
 share/doc/libvirt/html/html/libvirt-virterror.html
 share/doc/libvirt/html/html/right.png
 share/doc/libvirt/html/html/up.png
@@ -167,7 +177,6 @@ share/gtk-doc/html/libvirt/general.html
 share/gtk-doc/html/libvirt/home.png
 share/gtk-doc/html/libvirt/index.html
 share/gtk-doc/html/libvirt/left.png
-share/gtk-doc/html/libvirt/libvirt-libvirt.html
 share/gtk-doc/html/libvirt/libvirt-virterror.html
 share/gtk-doc/html/libvirt/libvirt.devhelp
 share/gtk-doc/html/libvirt/right.png
