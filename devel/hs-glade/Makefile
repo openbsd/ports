@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/15 19:04:25 kili Exp $
 
 COMMENT =		Haskell bindings to libglade2
 
-DISTNAME =		glade-0.12.1
-REVISION =		2
+DISTNAME =		glade-0.12.5.0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -20,8 +19,8 @@ MODGHC_BUILD =		cabal hackage haddock register
 BUILD_DEPENDS =		devel/gtk2hs-buildtools \
 			${RUN_DEPENDS}
 LIB_DEPENDS =           devel/libglade2
-RUN_DEPENDS =		devel/hs-glib>=0.12,<0.13 \
-			x11/hs-gtk>=0.12,<0.13 \
+RUN_DEPENDS =		devel/hs-glib>=0.12.5.0,<0.13 \
+			x11/hs-gtk>=0.12.5.0,<0.13
 
 # This is much simpler than fiddling with MODGHC_SETUP_CONF_ARGS:
 post-install:
