@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2014/08/14 01:05:03 brad Exp $
+@comment $OpenBSD: PLIST,v 1.31 2014/12/15 18:19:51 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -31,6 +31,7 @@
 @bin bin/qemu-system-sh4eb
 @bin bin/qemu-system-sparc
 @bin bin/qemu-system-sparc64
+@bin bin/qemu-system-tricore
 @bin bin/qemu-system-unicore32
 @bin bin/qemu-system-x86_64
 @bin bin/qemu-system-xtensa
@@ -64,6 +65,7 @@ share/locale/fr_FR/LC_MESSAGES/qemu.mo
 share/locale/hu/LC_MESSAGES/qemu.mo
 share/locale/it/LC_MESSAGES/qemu.mo
 share/locale/tr/LC_MESSAGES/qemu.mo
+share/locale/zh_CN/LC_MESSAGES/qemu.mo
 share/qemu/
 share/qemu/QEMU,cgthree.bin
 share/qemu/QEMU,tcx.bin
@@ -139,6 +141,7 @@ share/qemu/s390-zipl.rom
 share/qemu/sgabios.bin
 share/qemu/slof.bin
 share/qemu/spapr-rtas.bin
+share/qemu/trace-events
 share/qemu/u-boot.e500
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios-qxl.bin
