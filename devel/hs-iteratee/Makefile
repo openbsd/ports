@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/03 21:56:44 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/15 19:32:11 kili Exp $
 
 COMMENT =		Iteratee monad provides strict, safe, and functional I/O
+
+# XXX update to newer version needs a new dependency: exceptions.
 
 DISTNAME =		iteratee-0.8.9.4
 REVISION =		0
