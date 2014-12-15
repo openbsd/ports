@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/15 21:04:05 kili Exp $
 
 COMMENT=	D-Bus profiler
+
+# XXX newer versions need additional new dependencies:
+# hgettext (since bustle-0.4.4), pcap. Also, the distfile is now
+# available from hackage.
 
 DISTNAME=	bustle-0.2.3
 REVISION=	5
