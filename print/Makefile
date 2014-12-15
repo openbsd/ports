@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2014/10/31 23:59:41 jca Exp $
+# $OpenBSD: Makefile,v 1.114 2014/12/15 23:35:26 kili Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -14,7 +14,6 @@
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += enscript
-    SUBDIR += epdfview
     SUBDIR += foiltex
     SUBDIR += fontforge
     SUBDIR += foo2zjs
