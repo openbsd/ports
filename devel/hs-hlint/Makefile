@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2014/12/03 21:56:44 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2014/12/15 21:28:34 kili Exp $
 
 COMMENT=		source code suggestions for Haskell
 
-DISTNAME=		hlint-1.8.29
-REVISION=		4
+# XXX versions after 1.9.10 need a new dependency 'extra'.
+# XXX versions after 1.8.57 need a newer cpphs (>= 1.18.1).
+
+DISTNAME=		hlint-1.8.57
 CATEGORIES=		devel
 
 HOMEPAGE=		http://community.haskell.org/~ndm/hlint/
@@ -19,11 +21,10 @@ MODULES=		converters/libiconv \
 MODGHC_BUILD=		cabal hackage haddock register
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/cpphs,-lib>=1.11,<1.14 \
-			devel/hscolour>=1.17,<1.21 \
-			devel/hs-syb \
-			devel/hs-uniplate>=1.5,<1.7 \
-			lang/hs-haskell-src-exts>=1.11,<1.14
+RUN_DEPENDS=		devel/cpphs>=1.11 \
+			devel/hscolour>=1.17 \
+			devel/hs-uniplate>=1.5 \
+			lang/hs-haskell-src-exts>=1.14,<1.15
 
 post-install:
 	${SUBST_CMD} -c ${WRKSRC}/data/hlint.1 ${PREFIX}/man/man1/hlint.1

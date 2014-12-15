@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/12/03 21:56:44 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/12/15 21:28:34 kili Exp $
 @bin bin/hlint
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Apply.hi
@@ -14,10 +14,12 @@ lib/ghc/${DISTNAME}/HSE/Bracket.hi
 lib/ghc/${DISTNAME}/HSE/Bracket.p_hi
 lib/ghc/${DISTNAME}/HSE/Evaluate.hi
 lib/ghc/${DISTNAME}/HSE/Evaluate.p_hi
+lib/ghc/${DISTNAME}/HSE/FreeVars.hi
+lib/ghc/${DISTNAME}/HSE/FreeVars.p_hi
 lib/ghc/${DISTNAME}/HSE/Match.hi
 lib/ghc/${DISTNAME}/HSE/Match.p_hi
-lib/ghc/${DISTNAME}/HSE/NameMatch.hi
-lib/ghc/${DISTNAME}/HSE/NameMatch.p_hi
+lib/ghc/${DISTNAME}/HSE/Scope.hi
+lib/ghc/${DISTNAME}/HSE/Scope.p_hi
 lib/ghc/${DISTNAME}/HSE/Type.hi
 lib/ghc/${DISTNAME}/HSE/Type.p_hi
 lib/ghc/${DISTNAME}/HSE/Util.hi
@@ -63,10 +65,15 @@ lib/ghc/${DISTNAME}/Parallel.hi
 lib/ghc/${DISTNAME}/Parallel.p_hi
 lib/ghc/${DISTNAME}/Paths_hlint.hi
 lib/ghc/${DISTNAME}/Paths_hlint.p_hi
+lib/ghc/${DISTNAME}/Proof.hi
+lib/ghc/${DISTNAME}/Proof.p_hi
 lib/ghc/${DISTNAME}/Report.hi
 lib/ghc/${DISTNAME}/Report.p_hi
 lib/ghc/${DISTNAME}/Settings.hi
 lib/ghc/${DISTNAME}/Settings.p_hi
+lib/ghc/${DISTNAME}/Temporary/
+lib/ghc/${DISTNAME}/Temporary/API.hi
+lib/ghc/${DISTNAME}/Temporary/API.p_hi
 lib/ghc/${DISTNAME}/Test.hi
 lib/ghc/${DISTNAME}/Test.p_hi
 lib/ghc/${DISTNAME}/Util.hi
@@ -79,6 +86,7 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Language-Haskell-HLint.html
+share/doc/hs-${DISTNAME}/html/Temporary-API.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
@@ -87,6 +95,7 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-HLint.html
+share/doc/hs-${DISTNAME}/html/mini_Temporary-API.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
