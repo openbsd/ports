@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/15 16:55:46 kili Exp $
 
 COMMENT =		Haskell bindings to cairo
 
-DISTNAME =		cairo-0.12.3.1
-REVISION =		2
+DISTNAME =		cairo-0.12.5.3
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -23,6 +22,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 
 LIB_DEPENDS =		graphics/cairo
 RUN_DEPENDS =		devel/hs-mtl \
+			devel/hs-utf8-string>=0.2,<0.4 \
 			${LIB_DEPENDS}
 
 .include <bsd.port.mk>

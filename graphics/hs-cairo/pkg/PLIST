@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:04:48 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/15 16:55:46 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/Rendering/
@@ -28,6 +28,9 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Fonts/
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Fonts/FontOptions.chi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Fonts/FontOptions.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Fonts/FontOptions.p_hi
+lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Region.chi
+lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Region.hi
+lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Region.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Surfaces/
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Surfaces/Image.chi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Internal/Surfaces/Image.hi
@@ -56,7 +59,6 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Matrix.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Types.chi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Types.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/Cairo/Types.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -86,6 +88,8 @@ share/doc/hs-${DISTNAME}/html/doc-index-T.html
 share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-V.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
+share/doc/hs-${DISTNAME}/html/doc-index-X.html
+share/doc/hs-${DISTNAME}/html/doc-index-Y.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
