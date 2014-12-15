@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/15 16:11:35 rpe Exp $
 
 COMMENT =	quick access to files in a POSIX shell
 
 PKG_ARCH =	*
-DISTNAME =	fasd-0.5.4
+
+GH_ACCOUNT =	clvv
+GH_PROJECT =	fasd
+GH_TAGNAME =	1.0.1
+GH_COMMIT =	48220241e764fdf46b075cd7fe723468aaadde58
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	misc
 HOMEPAGE =	https://github.com/clvv/fasd
-MASTER_SITES =	http://rhaalovely.net/stuff/
 
 # MIT/X11
 PERMIT_PACKAGE_CDROM =	Yes
