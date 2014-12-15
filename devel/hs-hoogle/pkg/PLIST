@@ -1,18 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/12/03 21:56:44 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/12/15 22:13:35 kili Exp $
 @newgroup _hoogle:689
 @newuser _hoogle:689:_hoogle:daemon:Hoogle account:/nonexistent:/sbin/nologin
 @bin bin/hoogle
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/Data/
-lib/ghc/${DISTNAME}/Data/Heap.hi
-lib/ghc/${DISTNAME}/Data/Heap.p_hi
-lib/ghc/${DISTNAME}/Data/TypeMap.hi
-lib/ghc/${DISTNAME}/Data/TypeMap.p_hi
 lib/ghc/${DISTNAME}/General/
 lib/ghc/${DISTNAME}/General/Base.hi
 lib/ghc/${DISTNAME}/General/Base.p_hi
+lib/ghc/${DISTNAME}/General/Heap.hi
+lib/ghc/${DISTNAME}/General/Heap.p_hi
 lib/ghc/${DISTNAME}/General/System.hi
 lib/ghc/${DISTNAME}/General/System.p_hi
+lib/ghc/${DISTNAME}/General/TypeMap.hi
+lib/ghc/${DISTNAME}/General/TypeMap.p_hi
 lib/ghc/${DISTNAME}/General/Util.hi
 lib/ghc/${DISTNAME}/General/Util.p_hi
 lib/ghc/${DISTNAME}/General/Web.hi
