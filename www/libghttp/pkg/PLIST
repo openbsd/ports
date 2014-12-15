@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/08/17 17:11:42 brad Exp $
-include/ghttp.h
-include/ghttp_constants.h
-lib/ghttpConf.sh
-lib/libghttp.a
-lib/libghttp.la
-%%SHARED%%
