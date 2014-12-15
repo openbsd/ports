@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:01:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/15 17:11:45 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/GIO/
 lib/ghc/${DISTNAME}/System/GIO.hi
@@ -100,7 +99,6 @@ share/doc/hs-${DISTNAME}/html/System-GIO-Icons-EmblemedIcon.html
 share/doc/hs-${DISTNAME}/html/System-GIO-Icons-FileIcon.html
 share/doc/hs-${DISTNAME}/html/System-GIO-Icons-Icon.html
 share/doc/hs-${DISTNAME}/html/System-GIO-Icons-ThemedIcon.html
-share/doc/hs-${DISTNAME}/html/System-GIO-Types.html
 share/doc/hs-${DISTNAME}/html/System-GIO-Volumes-Drive.html
 share/doc/hs-${DISTNAME}/html/System-GIO-Volumes-Mount.html
 share/doc/hs-${DISTNAME}/html/System-GIO-Volumes-Volume.html
@@ -113,15 +111,11 @@ share/doc/hs-${DISTNAME}/html/doc-index-C.html
 share/doc/hs-${DISTNAME}/html/doc-index-D.html
 share/doc/hs-${DISTNAME}/html/doc-index-E.html
 share/doc/hs-${DISTNAME}/html/doc-index-F.html
-share/doc/hs-${DISTNAME}/html/doc-index-G.html
 share/doc/hs-${DISTNAME}/html/doc-index-I.html
-share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
 share/doc/hs-${DISTNAME}/html/doc-index-O.html
 share/doc/hs-${DISTNAME}/html/doc-index-P.html
-share/doc/hs-${DISTNAME}/html/doc-index-S.html
 share/doc/hs-${DISTNAME}/html/doc-index-T.html
-share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-V.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -147,7 +141,6 @@ share/doc/hs-${DISTNAME}/html/mini_System-GIO-Icons-EmblemedIcon.html
 share/doc/hs-${DISTNAME}/html/mini_System-GIO-Icons-FileIcon.html
 share/doc/hs-${DISTNAME}/html/mini_System-GIO-Icons-Icon.html
 share/doc/hs-${DISTNAME}/html/mini_System-GIO-Icons-ThemedIcon.html
-share/doc/hs-${DISTNAME}/html/mini_System-GIO-Types.html
 share/doc/hs-${DISTNAME}/html/mini_System-GIO-Volumes-Drive.html
 share/doc/hs-${DISTNAME}/html/mini_System-GIO-Volumes-Mount.html
 share/doc/hs-${DISTNAME}/html/mini_System-GIO-Volumes-Volume.html
