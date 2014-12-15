@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/15 19:22:51 kili Exp $
+
+BROKEN =		does not compile with ghc-7.8
 
 COMMENT =		meta-object system for Haskell based on Perl 6
 
