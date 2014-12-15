@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.426 2014/12/10 21:52:16 landry Exp $
+# $OpenBSD: Makefile,v 1.427 2014/12/15 17:58:54 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -32,6 +32,7 @@
      SUBDIR += doclifter
      SUBDIR += docx2txt
      SUBDIR += ebook-tools
+     SUBDIR += elasticsearch
      SUBDIR += enchant
      SUBDIR += exempi
      SUBDIR += fcbanner
