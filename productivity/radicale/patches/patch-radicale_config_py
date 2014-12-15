@@ -1,6 +1,6 @@
-$OpenBSD: patch-radicale_config_py,v 1.7 2013/10/21 09:47:19 jung Exp $
---- radicale/config.py.orig	Fri Jun 28 16:35:07 2013
-+++ radicale/config.py	Sun Oct 20 14:46:24 2013
+$OpenBSD: patch-radicale_config_py,v 1.8 2014/12/15 13:27:13 ian Exp $
+--- radicale/config.py.orig	Wed Aug  6 13:23:29 2014
++++ radicale/config.py	Sun Nov 16 18:58:10 2014
 @@ -43,8 +43,8 @@ INITIAL_CONFIG = {
          "daemon": "False",
          "pid": "",
@@ -9,22 +9,22 @@ $OpenBSD: patch-radicale_config_py,v 1.7 2013/10/21 09:47:19 jung Exp $
 -        "key": "/etc/apache2/ssl/server.key",
 +        "certificate": "${SYSCONFDIR}/radicale/server.crt",
 +        "key": "${SYSCONFDIR}/radicale/private/server.key",
+         "protocol": "PROTOCOL_SSLv23",
+         "ciphers": "",
          "dns_lookup": "True",
-         "base_prefix": "/",
-         "realm": "Radicale - Password Required"},
-@@ -55,7 +55,7 @@ INITIAL_CONFIG = {
+@@ -57,7 +57,7 @@ INITIAL_CONFIG = {
+     "auth": {
          "type": "None",
-         "public_users": "public",
-         "private_users": "private",
+         "custom_handler": "",
 -        "htpasswd_filename": "/etc/radicale/users",
 +        "htpasswd_filename": "${SYSCONFDIR}/radicale/users",
          "htpasswd_encryption": "crypt",
          "imap_hostname": "localhost",
          "imap_port": "143",
-@@ -77,11 +77,10 @@ INITIAL_CONFIG = {
-         "file": ""},
+@@ -83,11 +83,10 @@ INITIAL_CONFIG = {
      "storage": {
          "type": "filesystem",
+         "custom_handler": "",
 -        "filesystem_folder": os.path.expanduser(
 -            "~/.config/radicale/collections"),
 +        "filesystem_folder": "/var/db/radicale/calendars",
@@ -35,7 +35,7 @@ $OpenBSD: patch-radicale_config_py,v 1.7 2013/10/21 09:47:19 jung Exp $
          "debug": "False",
          "full_environment": "False"}}
  
-@@ -93,7 +92,7 @@ for section, values in INITIAL_CONFIG.items():
+@@ -99,7 +98,7 @@ for section, values in INITIAL_CONFIG.items():
      for key, value in values.items():
          _CONFIG_PARSER.set(section, key, value)
  
