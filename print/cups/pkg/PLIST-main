@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2014/11/15 10:22:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2014/12/15 12:55:18 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
-@extraunexec rm -rf ${SYSCONFDIR}/cups/*.conf.O /var/log/cups/*
+@extraunexec rm -rf ${SYSCONFDIR}/cups/*.conf.O /var/log/cups
 @bin bin/cancel
 @bin bin/cupstestdsc
 @bin bin/cupstestppd
@@ -471,9 +471,6 @@ share/examples/cups/ssl/
 @mode 0700
 @sample ${SYSCONFDIR}/cups/ssl/
 @mode
-@owner _cups
-@sample /var/log/cups/
-@owner
 @group
 share/locale/ca/cups_ca.po
 share/locale/cs/cups_cs.po
