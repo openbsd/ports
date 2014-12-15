@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/15 18:19:15 kili Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
-DISTNAME =		gtk-0.12.4
+DISTNAME =		gtk-0.12.5.7
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -19,11 +19,11 @@ MODGHC_BUILD =		cabal hackage haddock register
 BUILD_DEPENDS =		devel/gtk2hs-buildtools \
 			${RUN_DEPENDS}
 LIB_DEPENDS =		x11/gtk+2
-RUN_DEPENDS =		devel/hs-gio>=0.12.0,<0.13 \
-			devel/hs-glib>=0.12.0,<0.13 \
+RUN_DEPENDS =		devel/hs-gio>=0.12.5,<0.13 \
+			devel/hs-glib>=0.12.5.4,<0.13 \
 			devel/hs-mtl \
-			devel/hs-pango>=0.12.0,<0.13 \
-			graphics/hs-cairo>=0.12.0,<0.13
+			devel/hs-pango>=0.12.5.3,<0.13 \
+			graphics/hs-cairo>=0.12.5.3,<0.13 \
 
 # This is much simpler than fiddling with MODGHC_SETUP_CONF_ARGS:
 post-install:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:07:10 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/12/15 18:19:15 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/UI/
@@ -233,6 +233,9 @@ lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/RcStyle.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/Selection.chi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/Selection.hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/Selection.p_hi
+lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/Settings.chi
+lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/Settings.hi
+lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/Settings.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/StockItems.hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/StockItems.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/General/Structs.hi
@@ -390,6 +393,7 @@ lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Misc/Viewport.chi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Misc/Viewport.hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Misc/Viewport.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/ModelView/
+lib/ghc/${DISTNAME}/Graphics/UI/Gtk/ModelView.chi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/ModelView.hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/ModelView.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/Gtk/ModelView/CellEditable.chi
@@ -631,7 +635,6 @@ lib/ghc/${DISTNAME}/Graphics/UI/Gtk/Windows/WindowGroup.p_hi
 lib/ghc/${DISTNAME}/Graphics/UI/GtkInternals.chi
 lib/ghc/${DISTNAME}/Graphics/UI/GtkInternals.hi
 lib/ghc/${DISTNAME}/Graphics/UI/GtkInternals.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -709,6 +712,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-General-IconFactory.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-General-IconTheme.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-General-RcStyle.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-General-Selection.html
+share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-General-Settings.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-General-StockItems.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-General-Style.html
 share/doc/hs-${DISTNAME}/html/Graphics-UI-Gtk-Layout-Alignment.html
@@ -937,6 +941,7 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-General-IconFactory.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-General-IconTheme.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-General-RcStyle.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-General-Selection.html
+share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-General-Settings.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-General-StockItems.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-General-Style.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-UI-Gtk-Layout-Alignment.html
