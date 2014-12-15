@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/18 21:06:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/15 15:14:35 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/HTTP/
 lib/ghc/${DISTNAME}/Network/HTTP/Attoparsec.hi

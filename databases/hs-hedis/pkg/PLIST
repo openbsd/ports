@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/04 06:07:55 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/15 15:14:35 kili Exp $
 @conflict hs-redis-*
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
@@ -21,7 +21,6 @@ lib/ghc/${DISTNAME}/Database/Redis/Transactions.hi
 lib/ghc/${DISTNAME}/Database/Redis/Transactions.p_hi
 lib/ghc/${DISTNAME}/Database/Redis/Types.hi
 lib/ghc/${DISTNAME}/Database/Redis/Types.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh

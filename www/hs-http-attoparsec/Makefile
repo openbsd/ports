@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/18 21:06:17 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/15 15:14:35 kili Exp $
 
 COMMENT =		attoparsec parsers for http-types
 
 DISTNAME =		http-attoparsec-0.1.0
+REVISION =		0
 CATEGORIES =		devel textproc www
 HOMEPAGE =		https://github.com/tlaitinen/http-attoparsec
 
