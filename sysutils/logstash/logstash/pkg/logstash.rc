@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $OpenBSD: logstash.rc,v 1.1.1.1 2014/12/16 18:11:02 jasper Exp $
+
+daemon="${TRUEPREFIX}/logstash/bin/logstash"
+daemon_flags="--config ${SYSCONFDIR}/logstash/logstash.conf --log /var/log/logstash.log"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c logstash).*logstash/runner.rb agent ${daemon_flags}"
+
+rc_reload=NO
+
+rc_start() {
+	(${rcexec} "JAVA_HOME=\"$(${LOCALBASE}/bin/javaPathHelper -h logstash)\" \
+	   	     ${daemon} ${daemon_flags}") &
+}
+
+rc_cmd $1
