@@ -1,4 +1,4 @@
-$OpenBSD: patch-event_c,v 1.7 2014/04/29 11:36:22 dcoppa Exp $
+$OpenBSD: patch-event_c,v 1.8 2014/12/16 11:16:05 dcoppa Exp $
 
 commit 4073f8d88653032854136529da70e38daf6882be
 Author: Uli Schlachter <psychon@znc.in>
@@ -12,8 +12,24 @@ the input device for us. Without this, everything appears to freeze.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
---- event.c.orig	Fri Apr 11 11:07:10 2014
-+++ event.c	Tue Apr 29 13:30:39 2014
+commit f4a7b2d73a15adc03f705be689bf2713d1ac663e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Dec 5 18:40:06 2014 +0100
+
+Don't move clients on ConfigureRequests (FS#1030)
+
+I never saw a single program that set a border on its own windows. However,
+awesome commonly sets borders on its clients and the position of a client is the
+part outside of the border. So when processing a position request from a client,
+we also have to include this border and fix things up correspondingly.
+
+However, the same isn't needed for the client size, because the size does not
+include the borders, but just the titlebar plus the "real" client content.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- event.c.orig	Fri Apr 11 04:07:10 2014
++++ event.c	Tue Dec 16 04:45:59 2014
 @@ -196,6 +196,16 @@ event_handle_button(xcb_button_press_event_t *ev)
          lua_pop(globalconf.L, 1);
          /* check if any button object matches */
@@ -31,3 +47,21 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      }
      else if((c = client_getbyframewin(ev->event)))
      {
+@@ -289,9 +299,17 @@ event_handle_configurerequest(xcb_configure_request_ev
+         int16_t diff_w = 0, diff_h = 0, diff_border = 0;
+ 
+         if(ev->value_mask & XCB_CONFIG_WINDOW_X)
++        {
+             geometry.x = ev->x;
++            /* The ConfigureRequest specifies the position of the outer corner of the client window, we want the frame */
++            geometry.x -= c->border_width;
++        }
+         if(ev->value_mask & XCB_CONFIG_WINDOW_Y)
++        {
+             geometry.y = ev->y;
++            /* The ConfigureRequest specifies the position of the outer corner of the client window, we want the frame */
++            geometry.y -= c->border_width;
++        }
+         if(ev->value_mask & XCB_CONFIG_WINDOW_WIDTH)
+         {
+             uint16_t old_w = geometry.width;

@@ -1,0 +1,123 @@
+$OpenBSD: patch-objects_client_c,v 1.9 2014/12/16 11:16:05 dcoppa Exp $
+
+commit a44b3a2daffa52640a2be20b904156abf1c585e5
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 30 14:58:03 2014 +0200
+
+Don't set a background-pixel for our client frame windows
+
+Previously we would get a short black flicker when a client closes. This
+happened because first the client's window would get hidden and only a short
+moment later would awesome react to this and close its own window. In the mean
+time, the X server filled the frame window with its background-pixel which was
+black.
+
+Just removing the background-pixel means we get the default value which is None.
+This means that the content will be left untouched and the client's window will
+be visible for a moment longer.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ed3d0489ced8c4f56d2af990979ba75cfa5107b8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Dec 7 14:09:35 2014 +0100
+
+Implement icon_pixmap and icon_mask from WM_HINTS (FS#1297)
+
+Fun fact: ICCCM specifies that icon_pixmap must have depth 1. Xterm uses a
+pixmap with depth 24. Yay... As such, I don't have any test for the depth == 1
+case and will just assume that it does the right thing. If it doesn't, I bet no
+one will notice anyway.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/client.c.orig	Fri Apr 11 04:07:10 2014
++++ objects/client.c	Tue Dec 16 04:47:44 2014
+@@ -455,13 +455,11 @@ client_manage(xcb_window_t w, xcb_get_geometry_reply_t
+     xcb_create_window(globalconf.connection, globalconf.default_depth, c->frame_window, s->root,
+                       wgeom->x, wgeom->y, wgeom->width, wgeom->height,
+                       wgeom->border_width, XCB_COPY_FROM_PARENT, globalconf.visual->visual_id,
+-                      XCB_CW_BACK_PIXEL | XCB_CW_BORDER_PIXEL | XCB_CW_BIT_GRAVITY
+-                      | XCB_CW_WIN_GRAVITY | XCB_CW_OVERRIDE_REDIRECT | XCB_CW_EVENT_MASK
+-                      | XCB_CW_COLORMAP,
++                      XCB_CW_BORDER_PIXEL | XCB_CW_BIT_GRAVITY | XCB_CW_WIN_GRAVITY
++                      | XCB_CW_OVERRIDE_REDIRECT | XCB_CW_EVENT_MASK | XCB_CW_COLORMAP,
+                       (const uint32_t [])
+                       {
+                           globalconf.screen->black_pixel,
+-                          globalconf.screen->black_pixel,
+                           XCB_GRAVITY_NORTH_WEST,
+                           XCB_GRAVITY_NORTH_WEST,
+                           1,
+@@ -1311,6 +1309,71 @@ client_set_icon(client_t *c, cairo_surface_t *s)
+     luaA_object_emit_signal(globalconf.L, -1, "property::icon", 0);
+     lua_pop(globalconf.L, 1);
+ }
++
++/** Set a client icon.
++ * \param c The client to change.
++ * \param icon A bitmap containing the icon.
++ * \param mask A mask for the bitmap (optional)
++ */
++void
++client_set_icon_from_pixmaps(client_t *c, xcb_pixmap_t icon, xcb_pixmap_t mask)
++{
++    xcb_get_geometry_cookie_t geom_icon_c, geom_mask_c;
++    xcb_get_geometry_reply_t *geom_icon_r, *geom_mask_r = NULL;
++    cairo_surface_t *s_icon, *result;
++
++    geom_icon_c = xcb_get_geometry_unchecked(globalconf.connection, icon);
++    if (mask)
++        geom_mask_c = xcb_get_geometry_unchecked(globalconf.connection, mask);
++    geom_icon_r = xcb_get_geometry_reply(globalconf.connection, geom_icon_c, NULL);
++    if (mask)
++        geom_mask_r = xcb_get_geometry_reply(globalconf.connection, geom_mask_c, NULL);
++
++    if (!geom_icon_r || (mask && !geom_mask_r))
++        goto out;
++    if ((geom_icon_r->depth != 1 && geom_icon_r->depth != globalconf.screen->root_depth)
++            || (geom_mask_r && geom_mask_r->depth != 1))
++    {
++        warn("Got pixmaps with depth (%d, %d) while processing icon, but only depth 1 and %d are allowed",
++                geom_icon_r->depth, geom_mask_r ? geom_mask_r->depth : 0, globalconf.screen->root_depth);
++        goto out;
++    }
++
++    if (geom_icon_r->depth == 1)
++        s_icon = cairo_xcb_surface_create_for_bitmap(globalconf.connection,
++                globalconf.screen, icon, geom_icon_r->width, geom_icon_r->height);
++    else
++        s_icon = cairo_xcb_surface_create(globalconf.connection, icon, globalconf.default_visual,
++                geom_icon_r->width, geom_icon_r->height);
++    result = s_icon;
++
++    if (mask)
++    {
++        cairo_surface_t *s_mask;
++        cairo_t *cr;
++
++        result = cairo_surface_create_similar(s_icon, CAIRO_CONTENT_COLOR_ALPHA, geom_icon_r->width, geom_icon_r->height);
++        s_mask = cairo_xcb_surface_create_for_bitmap(globalconf.connection,
++                globalconf.screen, mask, geom_icon_r->width, geom_icon_r->height);
++        cr = cairo_create(result);
++
++        cairo_set_source_surface(cr, s_icon, 0, 0);
++        cairo_mask_surface(cr, s_mask, 0, 0);
++        cairo_surface_destroy(s_mask);
++        cairo_destroy(cr);
++    }
++
++    client_set_icon(c, result);
++
++    cairo_surface_destroy(result);
++    if (result != s_icon)
++        cairo_surface_destroy(s_icon);
++
++out:
++    p_delete(&geom_icon_r);
++    p_delete(&geom_mask_r);
++}
++
+ 
+ /** Kill a client.
+  * \param L The Lua VM state.
