@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.427 2014/12/15 17:58:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.428 2014/12/16 11:00:14 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -274,6 +274,7 @@
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Smart
      SUBDIR += p5-XML-Stream
+     SUBDIR += p5-XML-Tidy
      SUBDIR += p5-XML-TreePP
      SUBDIR += p5-XML-Twig
      SUBDIR += p5-XML-Validator-Schema
