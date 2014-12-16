@@ -1,0 +1,4 @@
+This module creates XML document objects (with inheritance from XML::XPath)
+to tidy mixed-content (i.e., non-data) text node indenting.  There are also
+some other handy member functions to compress and expand your XML document
+object (into either a compact XML representation or a binary one).
