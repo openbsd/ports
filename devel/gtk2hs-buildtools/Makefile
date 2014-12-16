@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/12/15 16:54:38 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/16 18:33:35 kili Exp $
 
 COMMENT =		tools to build Gtk2Hs
 
@@ -20,6 +20,7 @@ MODGHC_BUILD =		cabal hackage nort
 
 BUILD_DEPENDS =		devel/alex \
 			devel/happy \
+			devel/hs-hashtables \
 			devel/hs-random
 
 .include <bsd.port.mk>
