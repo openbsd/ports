@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/16 18:13:57 jasper Exp $
 
     SUBDIR =
     SUBDIR += forwarder
+    SUBDIR += logstash
 
 .include <bsd.port.subdir.mk>
