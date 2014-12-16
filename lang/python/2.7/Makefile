@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2014/12/14 08:32:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.37 2014/12/16 10:05:40 sthen Exp $
+
+# IMPORTANT!  If you make any changes to the Python ports, be sure
+# to also update files/CHANGES.OpenBSD for your change.  This is a
+# requirement of the PSF license, if it constitutes a change to
+# Python itself.
 
 VERSION =		2.7
 PATCHLEVEL =	.9
