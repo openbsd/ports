@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/23 12:28:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2014/12/16 12:30:23 benoit Exp $
 
 COMMENT =	POE component providing TCP server services for test cases
 
 MODULES =	cpan
-DISTNAME =	Test-POE-Server-TCP-1.16
+DISTNAME =	Test-POE-Server-TCP-1.18
 CATEGORIES =	devel
 
 # Perl
