@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmaker_pro,v 1.14 2014/08/31 17:03:33 shadchin Exp $
---- texmaker.pro.orig	Thu Apr 24 20:15:57 2014
-+++ texmaker.pro	Thu May  8 23:55:13 2014
+$OpenBSD: patch-texmaker_pro,v 1.15 2014/12/16 19:53:15 shadchin Exp $
+--- texmaker.pro.orig	Wed Nov 26 17:05:48 2014
++++ texmaker.pro	Tue Dec  9 00:14:02 2014
 @@ -23,7 +23,7 @@ PKGCONFIG 	= poppler-qt5
  DEFINES += POPPLER24
  } else {
@@ -10,7 +10,7 @@ $OpenBSD: patch-texmaker_pro,v 1.14 2014/08/31 17:03:33 shadchin Exp $
  DETECTEDPOPPLER=$$system(pkg-config --modversion poppler)
  contains( DETECTEDPOPPLER, "^0.18.*" ){
  DEFINES += OLDPOPPLER
-@@ -96,25 +96,6 @@ HEADERS	+= texmaker.h \
+@@ -97,25 +97,6 @@ HEADERS	+= texmaker.h \
  	unicodedialog.h \
  	unicodeview.h \
  	quickbeamerdialog.h \
@@ -36,7 +36,7 @@ $OpenBSD: patch-texmaker_pro,v 1.14 2014/08/31 17:03:33 shadchin Exp $
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -206,18 +187,6 @@ SOURCES	+= main.cpp \
+@@ -208,18 +189,6 @@ SOURCES	+= main.cpp \
  	unicodedialog.cpp \
  	unicodeview.cpp \
  	quickbeamerdialog.cpp \
@@ -55,11 +55,11 @@ $OpenBSD: patch-texmaker_pro,v 1.14 2014/08/31 17:03:33 shadchin Exp $
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -429,40 +398,7 @@ utilities.files = doc/doc1.png \
- 	locale/texmaker_se.qm \
+@@ -434,40 +403,7 @@ utilities.files = doc/doc1.png \
  	locale/texmaker_ar.qm \
  	locale/texmaker_lv.qm \
--	locale/texmaker_uk.qm \
+ 	locale/texmaker_uk.qm \
+-	locale/texmaker_vi_VN.qm \
 -	dictionaries/nl_NL.aff \
 -	dictionaries/nl_NL.dic \
 -	dictionaries/de_DE.aff \
@@ -93,7 +93,7 @@ $OpenBSD: patch-texmaker_pro,v 1.14 2014/08/31 17:03:33 shadchin Exp $
 -	dictionaries/README_DIC_fr_FR.txt \
 -	dictionaries/README_es_ES.txt \
 -	dictionaries/README_en_US.txt
-+	locale/texmaker_uk.qm
++	locale/texmaker_vi_VN.qm
  INSTALLS += utilities
  
  desktop.files = utilities/texmaker.desktop
