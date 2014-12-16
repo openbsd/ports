@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2014/12/10 12:48:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.335 2014/12/16 15:21:43 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -91,6 +91,7 @@
      SUBDIR += login_oath
      SUBDIR += logpp
      SUBDIR += logstalgia
+     SUBDIR += logstash
      SUBDIR += logtail
      SUBDIR += lookat
      SUBDIR += lsof
