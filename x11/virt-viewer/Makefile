@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/08/10 18:32:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/16 10:46:37 jasper Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-1.0
+REVISION=	0
 CATEGORIES=	x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -21,14 +22,14 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avahi-client avahi-common c cairo cairo-gobject crypto
 WANTLIB += curl dbus-1 expat ffi fontconfig freetype gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
-WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-0.10 gstaudio-0.10
-WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
+WANTLIB += gobject-2.0 gpg-error graphite2 gsttag-1.0 lzma orc-0.4
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gthread-2.0 gtk-3 gtk-vnc-2.0 gvnc-1.0 harfbuzz hogweed
 WANTLIB += idn jpeg m nettle opus p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 spice-client-glib-2.0 spice-client-gtk-3.0 spice-controller
 WANTLIB += ssh2 ssl tasn1 util virt xcb xcb-render xcb-shm xml2
-WANTLIB += z soup-2.4 sqlite3
+WANTLIB += z
 
 LIB_DEPENDS=	sysutils/libvirt \
 		x11/gtk-vnc \
