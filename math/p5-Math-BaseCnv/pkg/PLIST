@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/16 10:59:07 sthen Exp $
+bin/cnv
+${P5SITE}/Math/
+${P5SITE}/Math/BaseCnv.pm
+@man man/man3p/Math::BaseCnv.3p
