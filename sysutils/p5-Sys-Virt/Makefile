@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/11 00:10:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/16 07:37:53 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
-V=			1.2.9
+V=			1.2.11
 DISTNAME=		Sys-Virt-$V
-REVISION=		0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://libvirt.org/

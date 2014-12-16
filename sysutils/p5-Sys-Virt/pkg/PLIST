@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/10/04 05:38:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/16 07:37:53 jasper Exp $
+@comment ${P5ARCH}/auto/Sys/Virt/Virt.bs
 ${P5ARCH}/Sys/
 ${P5ARCH}/Sys/Virt/
 ${P5ARCH}/Sys/Virt.pm
@@ -16,7 +17,6 @@ ${P5ARCH}/Sys/Virt/StorageVol.pm
 ${P5ARCH}/Sys/Virt/Stream.pm
 ${P5ARCH}/auto/Sys/
 ${P5ARCH}/auto/Sys/Virt/
-@comment ${P5ARCH}/auto/Sys/Virt/Virt.bs
 ${P5ARCH}/auto/Sys/Virt/Virt.so
 @man man/man3p/Sys::Virt.3p
 @man man/man3p/Sys::Virt::Domain.3p
@@ -35,6 +35,7 @@ share/examples/p5-Sys-Virt/
 share/examples/p5-Sys-Virt/auth.pl
 share/examples/p5-Sys-Virt/devices.pl
 share/examples/p5-Sys-Virt/dhcp-leases.pl
+share/examples/p5-Sys-Virt/dom-fsinfo.pl
 share/examples/p5-Sys-Virt/dom-stats.pl
 share/examples/p5-Sys-Virt/dump-info.pl
 share/examples/p5-Sys-Virt/dump-xml.pl
