@@ -1,0 +1,16 @@
+$OpenBSD: patch-filestate_openbsd_go,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+
+https://github.com/elasticsearch/logstash-forwarder/issues/194
+
+--- filestate_openbsd.go.orig	Tue Dec 16 08:46:47 2014
++++ filestate_openbsd.go	Tue Dec 16 08:47:05 2014
+@@ -0,0 +1,9 @@
++package main
++
++type FileState struct {
++  Source *string `json:"source,omitempty"`
++  Offset int64 `json:"offset,omitempty"`
++  Inode uint64 `json:"inode,omitempty"`
++  Device int32 `json:"device,omitempty"`
++}
++

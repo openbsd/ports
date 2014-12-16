@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+@bin sbin/logstash-forwarder
+share/doc/logstash-forwarder/
+share/doc/logstash-forwarder/README.md
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/logstash-forwarder/
+@sample ${SYSCONFDIR}/logstash-forwarder/
+share/examples/logstash-forwarder/logstash-forwarder.conf.example
+@sample ${SYSCONFDIR}/logstash-forwarder/logstash-forwarder.conf
+@rcscript ${RCDIR}/logstash_forwarder

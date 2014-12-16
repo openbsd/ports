@@ -1,0 +1,22 @@
+$OpenBSD: patch-logstash-forwarder_conf_example,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+
+Provide a reasonable config and don't include arbitrary log files that
+are most likely not in syslog format.
+
+--- logstash-forwarder.conf.example.orig	Tue Dec 16 11:25:20 2014
++++ logstash-forwarder.conf.example	Tue Dec 16 11:25:58 2014
+@@ -8,13 +8,10 @@
+   "files": [
+     {
+       "paths": [ 
+-        "/var/log/*.log",
++	"/var/log/daemon",
+         "/var/log/messages"
+       ],
+       "fields": { "type": "syslog" }
+-    }, {
+-      "paths": [ "/var/log/apache2/access.log" ],
+-      "fields": { "type": "apache" }
+     }
+   ]
+ }

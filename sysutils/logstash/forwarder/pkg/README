@@ -1,0 +1,40 @@
+$OpenBSD: README,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+TLS configuration
+=================
+logstash-forwarder will require the usage of an encrypted connection. In
+order to set this up do not follow the instructions in in
+${PREFIX}/share/doc/logstash-forwarder/README.md as those instructions
+are incorrect. Instead generate the certificate and keys with a command
+like:
+
+  openssl req -x509 -nodes -newkey rsa:2048 -keyout \
+	logstash-forwarder.key -out logstash-forwarder.crt -days 365
+
+and ensure you enter a valid CN.
+
+Configure logstash
+==================
+In order for logstash to receive the events from logstash-forwarder, a
+configuration block like the following is needed:
+
+  input {
+      lumberjack {
+      # The port to listen on
+      port => 12345
+
+      # The paths to your ssl cert and key
+      ssl_certificate => "/path/to/logstash.crt"
+      ssl_key => "/path/to/logstash.key"
+
+      # Set this to whatever you want.
+      type => "logs"
+    }
+  }
+
+Adjust 'ssl_key', 'ssl_certificate' and 'port' as needed to match your
+setup.
