@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/29 13:25:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/16 12:46:53 sthen Exp $
 
 COMMENT =		open-source JPEG 2000 codec library
 
@@ -22,6 +22,7 @@ WANTLIB += c lcms2 m png pthread tiff z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openjpeg.mirror/}
 
 MODULES =		devel/cmake
+NO_TEST =		Yes
 CONFIGURE_ARGS =	-DOPENJPEG_INSTALL_MAN_DIR=man \
 			-DOPENJPEG_INSTALL_SUBDIR:STRING=openjp2 \
 			-DOPENJPEG_SOVERSION:STRING=${LIBopenjpeg_VERSION}

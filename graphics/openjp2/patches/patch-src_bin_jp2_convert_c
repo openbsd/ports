@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bin_jp2_convert_c,v 1.1 2014/12/16 12:46:53 sthen Exp $
+--- src/bin/jp2/convert.c.orig	Tue Dec 16 12:44:56 2014
++++ src/bin/jp2/convert.c	Tue Dec 16 12:45:21 2014
+@@ -187,7 +187,7 @@ static int tga_readheader(FILE *fp, unsigned int *bits
+     return 1;
+ }
+ 
+-#ifdef OPJ_BIG_ENDIAN
++#if defined(OPJ_BIG_ENDIAN) && !defined(swap16)
+ 
+ static INLINE int16_t swap16(int16_t x)
+ {
