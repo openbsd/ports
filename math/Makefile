@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/11/11 11:22:21 pirofti Exp $
+# $OpenBSD: Makefile,v 1.120 2014/12/16 11:00:10 sthen Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -72,6 +72,7 @@
      SUBDIR += p5-GraphViz
      SUBDIR += p5-Math-Base36
      SUBDIR += p5-Math-Base85
+     SUBDIR += p5-Math-BaseCnv
      SUBDIR += p5-Math-Bezier
      SUBDIR += p5-Math-BigInt-GMP
      SUBDIR += p5-Math-BigInt-Pari
