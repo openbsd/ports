@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.205 2014/12/15 23:50:32 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.206 2014/12/16 10:43:56 nigel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -480,6 +480,8 @@ my $obsolete_reason = {
 	'fxtv' => 3,
 	'hudson' => 2,
 	'epdfview' => 0,
+	'p5-HTTP-GHTTP' => 3,
+	'libghttp' => 3,
 };
 
 # ->is_base_system($handle, $state):
