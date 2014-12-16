@@ -1,0 +1,6 @@
+The Heirloom Documentation Tools package provides troff, nroff, and
+related utilities to format manual pages and other documents for output
+on terminals and printers. They are portable and enhanced versions of
+the utilities released by Sun as part of OpenSolaris, which are a
+variant of ditroff, which, in turn, descends from the historical Unix
+troff that generated output for the C/A/T phototypesetter.

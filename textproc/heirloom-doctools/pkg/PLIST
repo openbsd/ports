@@ -1,0 +1,490 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/16 22:27:06 bentley Exp $
+heirloom-doctools/
+heirloom-doctools/bin/
+@bin heirloom-doctools/bin/addbib
+@bin heirloom-doctools/bin/checkeq
+@bin heirloom-doctools/bin/checknr
+@bin heirloom-doctools/bin/col
+@bin heirloom-doctools/bin/daps
+@bin heirloom-doctools/bin/dpost
+@bin heirloom-doctools/bin/eqn
+@bin heirloom-doctools/bin/grap
+heirloom-doctools/bin/indxbib
+@bin heirloom-doctools/bin/lookbib
+@bin heirloom-doctools/bin/neqn
+@bin heirloom-doctools/bin/nroff
+@bin heirloom-doctools/bin/otfdump
+@bin heirloom-doctools/bin/pic
+@bin heirloom-doctools/bin/picpack
+@bin heirloom-doctools/bin/ptx
+@bin heirloom-doctools/bin/refer
+heirloom-doctools/bin/roffbib
+@bin heirloom-doctools/bin/soelim
+@bin heirloom-doctools/bin/sortbib
+@bin heirloom-doctools/bin/ta
+@bin heirloom-doctools/bin/tbl
+@bin heirloom-doctools/bin/troff
+heirloom-doctools/bin/vgrind
+@mandir heirloom-doctools/man/
+heirloom-doctools/man/man1/
+@man heirloom-doctools/man/man1/addbib.1
+@man heirloom-doctools/man/man1/checkeq.1
+@man heirloom-doctools/man/man1/checknr.1
+@man heirloom-doctools/man/man1/dpost.1
+@man heirloom-doctools/man/man1/eqn.1
+@man heirloom-doctools/man/man1/grap.1
+@man heirloom-doctools/man/man1/indxbib.1
+@man heirloom-doctools/man/man1/lookbib.1
+@man heirloom-doctools/man/man1/neqn.1
+@man heirloom-doctools/man/man1/nroff.1
+@man heirloom-doctools/man/man1/otfdump.1
+@man heirloom-doctools/man/man1/pic.1
+@man heirloom-doctools/man/man1/picpack.1
+@man heirloom-doctools/man/man1/ptx.1
+@man heirloom-doctools/man/man1/refer.1
+@man heirloom-doctools/man/man1/roffbib.1
+@man heirloom-doctools/man/man1/soelim.1
+@man heirloom-doctools/man/man1/sortbib.1
+@man heirloom-doctools/man/man1/tbl.1
+@man heirloom-doctools/man/man1/troff.1
+@man heirloom-doctools/man/man1/vgrind.1
+heirloom-doctools/man/man7/
+@man heirloom-doctools/man/man7/eqnchar.7
+@man heirloom-doctools/man/man7/mcolor.7
+@man heirloom-doctools/man/man7/mpictures.7
+libexec/heirloom-doctools/
+libexec/heirloom-doctools/eign
+libexec/heirloom-doctools/grap.defines
+@bin libexec/heirloom-doctools/pm
+libexec/heirloom-doctools/reftools/
+@bin libexec/heirloom-doctools/reftools/hunt
+@bin libexec/heirloom-doctools/reftools/inv
+@bin libexec/heirloom-doctools/reftools/mkey
+libexec/heirloom-doctools/reftools/papers/
+libexec/heirloom-doctools/reftools/papers/Ind.ia
+libexec/heirloom-doctools/reftools/papers/Ind.ib
+libexec/heirloom-doctools/reftools/papers/Ind.ic
+libexec/heirloom-doctools/reftools/papers/Rbstjissue
+libexec/heirloom-doctools/reftools/papers/Rv7man
+libexec/heirloom-doctools/reftools/papers/runinv
+@bin libexec/heirloom-doctools/vfontedpr
+libexec/heirloom-doctools/vgrindefs
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/heirloom-doctools/
+share/heirloom-doctools/font/
+share/heirloom-doctools/font/devaps/
+share/heirloom-doctools/font/devaps/B
+share/heirloom-doctools/font/devaps/B.add
+share/heirloom-doctools/font/devaps/B.out
+share/heirloom-doctools/font/devaps/BI
+share/heirloom-doctools/font/devaps/BI.out
+share/heirloom-doctools/font/devaps/C
+share/heirloom-doctools/font/devaps/C.out
+share/heirloom-doctools/font/devaps/CE
+share/heirloom-doctools/font/devaps/CE.out
+share/heirloom-doctools/font/devaps/CI
+share/heirloom-doctools/font/devaps/CI.out
+share/heirloom-doctools/font/devaps/CT
+share/heirloom-doctools/font/devaps/CT.add
+share/heirloom-doctools/font/devaps/CT.out
+share/heirloom-doctools/font/devaps/CW
+share/heirloom-doctools/font/devaps/CW.add
+share/heirloom-doctools/font/devaps/CW.out
+share/heirloom-doctools/font/devaps/CX
+share/heirloom-doctools/font/devaps/CX.add
+share/heirloom-doctools/font/devaps/CX.out
+share/heirloom-doctools/font/devaps/DESC
+share/heirloom-doctools/font/devaps/DESC.out
+share/heirloom-doctools/font/devaps/G
+share/heirloom-doctools/font/devaps/G.out
+share/heirloom-doctools/font/devaps/GB
+share/heirloom-doctools/font/devaps/GB.add
+share/heirloom-doctools/font/devaps/GB.out
+share/heirloom-doctools/font/devaps/GI
+share/heirloom-doctools/font/devaps/GI.add
+share/heirloom-doctools/font/devaps/GI.out
+share/heirloom-doctools/font/devaps/GR
+share/heirloom-doctools/font/devaps/GR.add
+share/heirloom-doctools/font/devaps/GR.out
+share/heirloom-doctools/font/devaps/GS
+share/heirloom-doctools/font/devaps/GS.add
+share/heirloom-doctools/font/devaps/GS.out
+share/heirloom-doctools/font/devaps/H
+share/heirloom-doctools/font/devaps/H.out
+share/heirloom-doctools/font/devaps/HB
+share/heirloom-doctools/font/devaps/HB.out
+share/heirloom-doctools/font/devaps/HI
+share/heirloom-doctools/font/devaps/HI.add
+share/heirloom-doctools/font/devaps/HI.out
+share/heirloom-doctools/font/devaps/HK
+share/heirloom-doctools/font/devaps/HK.add
+share/heirloom-doctools/font/devaps/HK.out
+share/heirloom-doctools/font/devaps/HL
+share/heirloom-doctools/font/devaps/HL.out
+share/heirloom-doctools/font/devaps/HM.out
+share/heirloom-doctools/font/devaps/HX
+share/heirloom-doctools/font/devaps/HX.add
+share/heirloom-doctools/font/devaps/HX.out
+share/heirloom-doctools/font/devaps/I
+share/heirloom-doctools/font/devaps/I.add
+share/heirloom-doctools/font/devaps/I.out
+share/heirloom-doctools/font/devaps/MB
+share/heirloom-doctools/font/devaps/MB.out
+share/heirloom-doctools/font/devaps/MI
+share/heirloom-doctools/font/devaps/MI.out
+share/heirloom-doctools/font/devaps/MR
+share/heirloom-doctools/font/devaps/MR.out
+share/heirloom-doctools/font/devaps/MX
+share/heirloom-doctools/font/devaps/MX.out
+share/heirloom-doctools/font/devaps/PA
+share/heirloom-doctools/font/devaps/PA.out
+share/heirloom-doctools/font/devaps/PB
+share/heirloom-doctools/font/devaps/PB.out
+share/heirloom-doctools/font/devaps/PI
+share/heirloom-doctools/font/devaps/PI.out
+share/heirloom-doctools/font/devaps/PO
+share/heirloom-doctools/font/devaps/PO.add
+share/heirloom-doctools/font/devaps/PO.out
+share/heirloom-doctools/font/devaps/PX
+share/heirloom-doctools/font/devaps/PX.add
+share/heirloom-doctools/font/devaps/PX.out
+share/heirloom-doctools/font/devaps/R
+share/heirloom-doctools/font/devaps/R.add
+share/heirloom-doctools/font/devaps/R.out
+share/heirloom-doctools/font/devaps/S
+share/heirloom-doctools/font/devaps/S.add
+share/heirloom-doctools/font/devaps/S.out
+share/heirloom-doctools/font/devaps/S1
+share/heirloom-doctools/font/devaps/S1.add
+share/heirloom-doctools/font/devaps/S1.out
+share/heirloom-doctools/font/devaps/SC
+share/heirloom-doctools/font/devaps/SC.add
+share/heirloom-doctools/font/devaps/SC.out
+share/heirloom-doctools/font/devaps/SM
+share/heirloom-doctools/font/devaps/SM.add
+share/heirloom-doctools/font/devaps/SM.out
+share/heirloom-doctools/font/devaps/TB
+share/heirloom-doctools/font/devaps/TB.out
+share/heirloom-doctools/font/devaps/TX
+share/heirloom-doctools/font/devaps/TX.add
+share/heirloom-doctools/font/devaps/TX.out
+share/heirloom-doctools/font/devaps/version
+share/heirloom-doctools/font/devpost/
+share/heirloom-doctools/font/devpost/AB
+share/heirloom-doctools/font/devpost/AB.name
+share/heirloom-doctools/font/devpost/AI
+share/heirloom-doctools/font/devpost/AI.name
+share/heirloom-doctools/font/devpost/AR
+share/heirloom-doctools/font/devpost/AR.name
+share/heirloom-doctools/font/devpost/AX
+share/heirloom-doctools/font/devpost/AX.name
+share/heirloom-doctools/font/devpost/B
+share/heirloom-doctools/font/devpost/B.name
+share/heirloom-doctools/font/devpost/BI
+share/heirloom-doctools/font/devpost/BI.name
+share/heirloom-doctools/font/devpost/CB
+share/heirloom-doctools/font/devpost/CB.name
+share/heirloom-doctools/font/devpost/CI
+share/heirloom-doctools/font/devpost/CI.name
+share/heirloom-doctools/font/devpost/CO
+share/heirloom-doctools/font/devpost/CO.name
+share/heirloom-doctools/font/devpost/CW
+share/heirloom-doctools/font/devpost/CW.name
+share/heirloom-doctools/font/devpost/CX
+share/heirloom-doctools/font/devpost/CX.name
+share/heirloom-doctools/font/devpost/DESC
+share/heirloom-doctools/font/devpost/DESC.big
+share/heirloom-doctools/font/devpost/DESC.small
+share/heirloom-doctools/font/devpost/G
+share/heirloom-doctools/font/devpost/GI
+share/heirloom-doctools/font/devpost/GR
+share/heirloom-doctools/font/devpost/GR.name
+share/heirloom-doctools/font/devpost/H
+share/heirloom-doctools/font/devpost/H.name
+share/heirloom-doctools/font/devpost/HB
+share/heirloom-doctools/font/devpost/HB.name
+share/heirloom-doctools/font/devpost/HI
+share/heirloom-doctools/font/devpost/HI.name
+share/heirloom-doctools/font/devpost/HK
+share/heirloom-doctools/font/devpost/HL
+share/heirloom-doctools/font/devpost/HM
+share/heirloom-doctools/font/devpost/HX
+share/heirloom-doctools/font/devpost/HX.name
+share/heirloom-doctools/font/devpost/Hb
+share/heirloom-doctools/font/devpost/Hb.name
+share/heirloom-doctools/font/devpost/Hi
+share/heirloom-doctools/font/devpost/Hi.name
+share/heirloom-doctools/font/devpost/Hr
+share/heirloom-doctools/font/devpost/Hr.name
+share/heirloom-doctools/font/devpost/Hx
+share/heirloom-doctools/font/devpost/Hx.name
+share/heirloom-doctools/font/devpost/I
+share/heirloom-doctools/font/devpost/I.name
+share/heirloom-doctools/font/devpost/KB
+share/heirloom-doctools/font/devpost/KB.name
+share/heirloom-doctools/font/devpost/KI
+share/heirloom-doctools/font/devpost/KI.name
+share/heirloom-doctools/font/devpost/KR
+share/heirloom-doctools/font/devpost/KR.name
+share/heirloom-doctools/font/devpost/KX
+share/heirloom-doctools/font/devpost/KX.name
+share/heirloom-doctools/font/devpost/NB
+share/heirloom-doctools/font/devpost/NB.name
+share/heirloom-doctools/font/devpost/NI
+share/heirloom-doctools/font/devpost/NI.name
+share/heirloom-doctools/font/devpost/NR
+share/heirloom-doctools/font/devpost/NR.name
+share/heirloom-doctools/font/devpost/NX
+share/heirloom-doctools/font/devpost/NX.name
+share/heirloom-doctools/font/devpost/PA
+share/heirloom-doctools/font/devpost/PA.name
+share/heirloom-doctools/font/devpost/PB
+share/heirloom-doctools/font/devpost/PB.name
+share/heirloom-doctools/font/devpost/PI
+share/heirloom-doctools/font/devpost/PI.name
+share/heirloom-doctools/font/devpost/PX
+share/heirloom-doctools/font/devpost/PX.name
+share/heirloom-doctools/font/devpost/R
+share/heirloom-doctools/font/devpost/R.name
+share/heirloom-doctools/font/devpost/S
+share/heirloom-doctools/font/devpost/S.name
+share/heirloom-doctools/font/devpost/S1
+share/heirloom-doctools/font/devpost/S1.name
+share/heirloom-doctools/font/devpost/VB
+share/heirloom-doctools/font/devpost/VB.name
+share/heirloom-doctools/font/devpost/VI
+share/heirloom-doctools/font/devpost/VI.name
+share/heirloom-doctools/font/devpost/VR
+share/heirloom-doctools/font/devpost/VR.name
+share/heirloom-doctools/font/devpost/VX
+share/heirloom-doctools/font/devpost/VX.name
+share/heirloom-doctools/font/devpost/ZD
+share/heirloom-doctools/font/devpost/ZD.name
+share/heirloom-doctools/font/devpost/ZI
+share/heirloom-doctools/font/devpost/ZI.name
+share/heirloom-doctools/font/devpost/charlib/
+share/heirloom-doctools/font/devpost/charlib/12
+share/heirloom-doctools/font/devpost/charlib/14
+share/heirloom-doctools/font/devpost/charlib/34
+share/heirloom-doctools/font/devpost/charlib/BRACKETS_NOTE
+share/heirloom-doctools/font/devpost/charlib/Fi
+share/heirloom-doctools/font/devpost/charlib/Fl
+share/heirloom-doctools/font/devpost/charlib/L1
+share/heirloom-doctools/font/devpost/charlib/L1.map
+share/heirloom-doctools/font/devpost/charlib/LH
+share/heirloom-doctools/font/devpost/charlib/LH.map
+share/heirloom-doctools/font/devpost/charlib/Lb
+share/heirloom-doctools/font/devpost/charlib/Lb.map
+share/heirloom-doctools/font/devpost/charlib/OLD_LH
+share/heirloom-doctools/font/devpost/charlib/OLD_LH.map
+share/heirloom-doctools/font/devpost/charlib/README
+share/heirloom-doctools/font/devpost/charlib/Sl
+share/heirloom-doctools/font/devpost/charlib/bx
+share/heirloom-doctools/font/devpost/charlib/ci
+share/heirloom-doctools/font/devpost/charlib/ff
+share/heirloom-doctools/font/devpost/charlib/lc
+share/heirloom-doctools/font/devpost/charlib/lf
+share/heirloom-doctools/font/devpost/charlib/lh
+share/heirloom-doctools/font/devpost/charlib/ob
+share/heirloom-doctools/font/devpost/charlib/rc
+share/heirloom-doctools/font/devpost/charlib/rf
+share/heirloom-doctools/font/devpost/charlib/rh
+share/heirloom-doctools/font/devpost/charlib/sq
+share/heirloom-doctools/font/devpost/charlib/~=
+share/heirloom-doctools/font/devpost/postscript/
+share/heirloom-doctools/font/devpost/postscript/aps.ps
+share/heirloom-doctools/font/devpost/postscript/baseline.ps
+share/heirloom-doctools/font/devpost/postscript/color.ps
+share/heirloom-doctools/font/devpost/postscript/cutmarks.ps
+share/heirloom-doctools/font/devpost/postscript/dpost.ps
+share/heirloom-doctools/font/devpost/postscript/draw.ps
+share/heirloom-doctools/font/devpost/postscript/fatcourier.ps
+share/heirloom-doctools/font/devpost/postscript/forms.ps
+share/heirloom-doctools/font/devpost/postscript/ps.requests
+share/heirloom-doctools/font/devpost/postscript/ps_include.ps
+share/heirloom-doctools/font/devps/
+share/heirloom-doctools/font/devps/B
+share/heirloom-doctools/font/devps/B.afm
+share/heirloom-doctools/font/devps/BI
+share/heirloom-doctools/font/devps/BI.afm
+share/heirloom-doctools/font/devps/CB
+share/heirloom-doctools/font/devps/CB.afm
+share/heirloom-doctools/font/devps/CI
+share/heirloom-doctools/font/devps/CI.afm
+share/heirloom-doctools/font/devps/CW
+share/heirloom-doctools/font/devps/CW.afm
+share/heirloom-doctools/font/devps/CX
+share/heirloom-doctools/font/devps/CX.afm
+share/heirloom-doctools/font/devps/DESC
+share/heirloom-doctools/font/devps/H
+share/heirloom-doctools/font/devps/H.afm
+share/heirloom-doctools/font/devps/HB
+share/heirloom-doctools/font/devps/HB.afm
+share/heirloom-doctools/font/devps/HI
+share/heirloom-doctools/font/devps/HI.afm
+share/heirloom-doctools/font/devps/HX
+share/heirloom-doctools/font/devps/HX.afm
+share/heirloom-doctools/font/devps/I
+share/heirloom-doctools/font/devps/I.afm
+share/heirloom-doctools/font/devps/MustRead.html
+share/heirloom-doctools/font/devps/R
+share/heirloom-doctools/font/devps/R.afm
+share/heirloom-doctools/font/devps/S
+share/heirloom-doctools/font/devps/S.afm
+share/heirloom-doctools/font/devps/S1
+share/heirloom-doctools/font/devps/S1.afm
+share/heirloom-doctools/font/devps/ZD
+share/heirloom-doctools/font/devps/ZD.afm
+share/heirloom-doctools/font/devps/charlib
+share/heirloom-doctools/font/devps/postscript
+share/heirloom-doctools/font/devpslow/
+share/heirloom-doctools/font/devpslow/B
+share/heirloom-doctools/font/devpslow/B.afm
+share/heirloom-doctools/font/devpslow/BI
+share/heirloom-doctools/font/devpslow/BI.afm
+share/heirloom-doctools/font/devpslow/CB
+share/heirloom-doctools/font/devpslow/CB.afm
+share/heirloom-doctools/font/devpslow/CI
+share/heirloom-doctools/font/devpslow/CI.afm
+share/heirloom-doctools/font/devpslow/CW
+share/heirloom-doctools/font/devpslow/CW.afm
+share/heirloom-doctools/font/devpslow/CX
+share/heirloom-doctools/font/devpslow/CX.afm
+share/heirloom-doctools/font/devpslow/DESC
+share/heirloom-doctools/font/devpslow/H
+share/heirloom-doctools/font/devpslow/H.afm
+share/heirloom-doctools/font/devpslow/HB
+share/heirloom-doctools/font/devpslow/HB.afm
+share/heirloom-doctools/font/devpslow/HI
+share/heirloom-doctools/font/devpslow/HI.afm
+share/heirloom-doctools/font/devpslow/HX
+share/heirloom-doctools/font/devpslow/HX.afm
+share/heirloom-doctools/font/devpslow/I
+share/heirloom-doctools/font/devpslow/I.afm
+share/heirloom-doctools/font/devpslow/MustRead.html
+share/heirloom-doctools/font/devpslow/R
+share/heirloom-doctools/font/devpslow/R.afm
+share/heirloom-doctools/font/devpslow/S
+share/heirloom-doctools/font/devpslow/S.afm
+share/heirloom-doctools/font/devpslow/S1
+share/heirloom-doctools/font/devpslow/S1.afm
+share/heirloom-doctools/font/devpslow/ZD
+share/heirloom-doctools/font/devpslow/ZD.afm
+share/heirloom-doctools/font/devpslow/charlib
+share/heirloom-doctools/font/devpslow/postscript
+share/heirloom-doctools/font/devpsmed/
+share/heirloom-doctools/font/devpsmed/B
+share/heirloom-doctools/font/devpsmed/B.afm
+share/heirloom-doctools/font/devpsmed/BI
+share/heirloom-doctools/font/devpsmed/BI.afm
+share/heirloom-doctools/font/devpsmed/CB
+share/heirloom-doctools/font/devpsmed/CB.afm
+share/heirloom-doctools/font/devpsmed/CI
+share/heirloom-doctools/font/devpsmed/CI.afm
+share/heirloom-doctools/font/devpsmed/CW
+share/heirloom-doctools/font/devpsmed/CW.afm
+share/heirloom-doctools/font/devpsmed/CX
+share/heirloom-doctools/font/devpsmed/CX.afm
+share/heirloom-doctools/font/devpsmed/DESC
+share/heirloom-doctools/font/devpsmed/H
+share/heirloom-doctools/font/devpsmed/H.afm
+share/heirloom-doctools/font/devpsmed/HB
+share/heirloom-doctools/font/devpsmed/HB.afm
+share/heirloom-doctools/font/devpsmed/HI
+share/heirloom-doctools/font/devpsmed/HI.afm
+share/heirloom-doctools/font/devpsmed/HX
+share/heirloom-doctools/font/devpsmed/HX.afm
+share/heirloom-doctools/font/devpsmed/I
+share/heirloom-doctools/font/devpsmed/I.afm
+share/heirloom-doctools/font/devpsmed/MustRead.html
+share/heirloom-doctools/font/devpsmed/R
+share/heirloom-doctools/font/devpsmed/R.afm
+share/heirloom-doctools/font/devpsmed/S
+share/heirloom-doctools/font/devpsmed/S.afm
+share/heirloom-doctools/font/devpsmed/S1
+share/heirloom-doctools/font/devpsmed/S1.afm
+share/heirloom-doctools/font/devpsmed/ZD
+share/heirloom-doctools/font/devpsmed/ZD.afm
+share/heirloom-doctools/font/devpsmed/charlib
+share/heirloom-doctools/font/devpsmed/postscript
+share/heirloom-doctools/hyphen/
+share/heirloom-doctools/hyphen/hyph_de_DE.dic
+share/heirloom-doctools/hyphen/hyph_de_DE@traditional.dic
+share/heirloom-doctools/hyphen/hyph_en_US.dic
+share/heirloom-doctools/hyphen/hyph_fr_FR.dic
+share/heirloom-doctools/hyphen/hyph_it_IT.dic
+share/heirloom-doctools/hyphen/hyph_la_VA.dic
+share/heirloom-doctools/hyphen/hyph_nl_NL.dic
+share/heirloom-doctools/nterm/
+share/heirloom-doctools/nterm/tab.2631
+share/heirloom-doctools/nterm/tab.2631-c
+share/heirloom-doctools/nterm/tab.2631-e
+share/heirloom-doctools/nterm/tab.300
+share/heirloom-doctools/nterm/tab.300-12
+share/heirloom-doctools/nterm/tab.300S
+share/heirloom-doctools/nterm/tab.300S-12
+share/heirloom-doctools/nterm/tab.300s
+share/heirloom-doctools/nterm/tab.300s-12
+share/heirloom-doctools/nterm/tab.37
+share/heirloom-doctools/nterm/tab.382
+share/heirloom-doctools/nterm/tab.4000A
+share/heirloom-doctools/nterm/tab.4000a
+share/heirloom-doctools/nterm/tab.450
+share/heirloom-doctools/nterm/tab.450-12
+share/heirloom-doctools/nterm/tab.832
+share/heirloom-doctools/nterm/tab.8510
+share/heirloom-doctools/nterm/tab.X
+share/heirloom-doctools/nterm/tab.lp
+share/heirloom-doctools/nterm/tab.tn300
+share/heirloom-doctools/pub/
+share/heirloom-doctools/pub/ascii
+share/heirloom-doctools/pub/eqnchar
+share/heirloom-doctools/pub/greek
+share/heirloom-doctools/pub/iso
+share/heirloom-doctools/pub/utf-8
+share/heirloom-doctools/tmac/
+share/heirloom-doctools/tmac/acm.me
+share/heirloom-doctools/tmac/an
+share/heirloom-doctools/tmac/andoc
+share/heirloom-doctools/tmac/bib
+share/heirloom-doctools/tmac/chars.me
+share/heirloom-doctools/tmac/color
+share/heirloom-doctools/tmac/deltext.me
+share/heirloom-doctools/tmac/doc
+share/heirloom-doctools/tmac/doc-common
+share/heirloom-doctools/tmac/doc-ditroff
+share/heirloom-doctools/tmac/doc-nroff
+share/heirloom-doctools/tmac/doc-syms
+share/heirloom-doctools/tmac/e
+share/heirloom-doctools/tmac/eqn.me
+share/heirloom-doctools/tmac/float.me
+share/heirloom-doctools/tmac/footnote.me
+share/heirloom-doctools/tmac/g
+share/heirloom-doctools/tmac/index.me
+share/heirloom-doctools/tmac/local.me
+share/heirloom-doctools/tmac/m
+share/heirloom-doctools/tmac/mmn
+share/heirloom-doctools/tmac/mmt
+share/heirloom-doctools/tmac/ms.acc
+share/heirloom-doctools/tmac/ms.cov
+share/heirloom-doctools/tmac/ms.eqn
+share/heirloom-doctools/tmac/ms.ref
+share/heirloom-doctools/tmac/ms.tbl
+share/heirloom-doctools/tmac/ms.ths
+share/heirloom-doctools/tmac/ms.toc
+share/heirloom-doctools/tmac/naa
+share/heirloom-doctools/tmac/null.me
+share/heirloom-doctools/tmac/padj
+share/heirloom-doctools/tmac/pictures
+share/heirloom-doctools/tmac/pm
+share/heirloom-doctools/tmac/ptx
+share/heirloom-doctools/tmac/refer.me
+share/heirloom-doctools/tmac/s
+share/heirloom-doctools/tmac/safe
+share/heirloom-doctools/tmac/sh.me
+share/heirloom-doctools/tmac/srefs
+share/heirloom-doctools/tmac/taa
+share/heirloom-doctools/tmac/tbl.me
+share/heirloom-doctools/tmac/thesis.me
+share/heirloom-doctools/tmac/v
+share/heirloom-doctools/tmac/vgrind

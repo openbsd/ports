@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1.1.1 2014/12/16 22:27:06 bentley Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Running doctools binaries
+=========================
+The Heirloom doctools consist of many small binaries intimately tied
+together, most of them conflicting with groff. To avoid runtime
+conflicts, you may wish to prefer Heirloom binaries by prepending
+${TRUEPREFIX}/heirloom-doctools/bin to your PATH.
+
+Reading doctools manual pages
+=============================
+Adding the heirloom-doctools/man directory to man.conf(5) only makes
+sense if you do *not* intend to use the groff package in parallel;
+otherwise, just set
+
+export MANPATH=${TRUEPREFIX}/heirloom-doctools/man:
+
+in the shell where you want to read Heirloom manuals. Note the trailing
+colon.
