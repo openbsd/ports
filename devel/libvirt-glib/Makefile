@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/31 12:27:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/16 07:43:36 jasper Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
-DISTNAME=		libvirt-glib-0.1.9
+DISTNAME=		libvirt-glib-0.2.0
 CATEGORIES=		devel sysutils
 
-SHARED_LIBS +=  virt-gconfig-1.0          0.2 # 1.7
-SHARED_LIBS +=  virt-glib-1.0             0.2 # 1.7
-SHARED_LIBS +=  virt-gobject-1.0          0.2 # 1.7
+SHARED_LIBS +=  virt-gconfig-1.0          0.2 # 2.0
+SHARED_LIBS +=  virt-glib-1.0             0.3 # 2.0
+SHARED_LIBS +=  virt-gobject-1.0          0.2 # 2.0
 
 HOMEPAGE=		http://libvirt.org/
 
@@ -23,7 +23,7 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 WANTLIB += avahi-client avahi-common crypto curl dbus-1 ffi
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
 WANTLIB += gthread-2.0 hogweed idn m nettle p11-kit gnutls
 WANTLIB += pcre pthread ssh2 ssl tasn1 util virt xml2 z gmp
 
