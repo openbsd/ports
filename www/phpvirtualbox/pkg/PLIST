@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/22 08:16:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/17 08:50:07 ajacoutot Exp $
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
 phpvirtualbox/GPLv3.txt
@@ -100,6 +100,7 @@ phpvirtualbox/images/vbox/cd_disabled_16px.png
 phpvirtualbox/images/vbox/cd_disabled_32px.png
 phpvirtualbox/images/vbox/cd_unmount_16px.png
 phpvirtualbox/images/vbox/cd_unmount_dis_16px.png
+phpvirtualbox/images/vbox/cd_unmount_disabled_16px.png
 phpvirtualbox/images/vbox/chipset_16px.png
 phpvirtualbox/images/vbox/chipset_disabled_16px.png
 phpvirtualbox/images/vbox/close_16px.png
@@ -467,7 +468,6 @@ phpvirtualbox/js/jquery.projectPlugins.js
 phpvirtualbox/js/jquery.scrollTo-min.js
 phpvirtualbox/js/jquery.tipped-2.1b.min.js
 phpvirtualbox/js/language.php
-phpvirtualbox/js/phptest.php
 phpvirtualbox/js/phpvirtualbox.js
 phpvirtualbox/js/utils.js
 phpvirtualbox/languages/
