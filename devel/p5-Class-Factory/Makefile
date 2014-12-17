@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/17 14:05:07 benoit Exp $
 
 COMMENT= 	automates the Factory design pattern
 
 MODULES=	cpan
 
-DISTNAME=	Class-Factory-1.02
-REVISION=	1
+DISTNAME =	Class-Factory-1.06
 CATEGORIES=	devel
 
 # perl
