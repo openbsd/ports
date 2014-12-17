@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.69 2014/10/25 14:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2014/12/17 09:30:55 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		2.6.4
+GNOME_VERSION =		2.6.5
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
 
 SHARED_LIBS +=  gnc-qof              2.0      # 1.4
 SHARED_LIBS +=  gnc-core-utils       0.0      # unknown
@@ -40,7 +39,7 @@ WANTLIB += icudata icui18n icuuc javascriptcoregtk-1.0 jpeg ltdl
 WANTLIB += m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += sqlite3 stdc++ webkitgtk-1.0 webp xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z
+WANTLIB += xml2 xslt z dbus-glib-1 lzma
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
 
