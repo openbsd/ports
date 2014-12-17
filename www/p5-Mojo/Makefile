@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/07 11:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/17 00:15:25 bluhm Exp $
 
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
 DISTNAME =	Mojolicious-5.58
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 
 MAINTAINER =	Mark Patruck <mark@wrapped.cx>
@@ -17,7 +17,6 @@ HOMEPAGE =	http://mojolicio.us/
 CPAN_AUTHOR =	SRI
 
 RUN_DEPENDS =	devel/p5-EV \
-		net/p5-IO-Socket-IP>=0.20 \
 		security/p5-IO-Socket-SSL>=1.84
 
 MAKE_ENV += TEST_CACHING=Yes

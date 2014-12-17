@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.91 2014/09/30 13:06:24 okan Exp $
+# $OpenBSD: Makefile,v 1.92 2014/12/17 00:15:24 bluhm Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.4.0
-REVISION=		4
+REVISION=		5
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1565117.tgz
@@ -28,7 +28,6 @@ COMMON_DEPENDS=		www/p5-HTML-Parser>=3.31 \
 			mail/p5-Mail-DKIM>=0.31 \
 			net/p5-Net-DNS>=0.34 \
 			net/p5-NetAddr-IP \
-			net/p5-IO-Socket-IP \
 			security/p5-IO-Socket-SSL
 
 BUILD_DEPENDS=		${COMMON_DEPENDS}
