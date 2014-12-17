@@ -1,10 +1,34 @@
-$OpenBSD: patch-libgit2-glib_ggit-blob-output-stream_c,v 1.1 2014/08/14 06:42:16 jasper Exp $
+$OpenBSD: patch-libgit2-glib_ggit-blob-output-stream_c,v 1.2 2014/12/17 19:23:32 jasper Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=734010
+From 55c649fa4d95e72e530bba1d070242b10d860ad8 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 30 Jul 2014 23:51:05 +0200
+Subject: Rework synchronization for blob's state machine, effectively unbreaking on OpenBSD
 
---- libgit2-glib/ggit-blob-output-stream.c.orig	Sun Feb  9 21:35:38 2014
-+++ libgit2-glib/ggit-blob-output-stream.c	Thu Jul 31 00:14:49 2014
-@@ -36,9 +36,6 @@ struct _GgitBlobOutputStreamPrivate
+--- libgit2-glib/ggit-blob-output-stream.c.orig	Wed Dec 17 20:21:15 2014
++++ libgit2-glib/ggit-blob-output-stream.c	Wed Dec 17 20:21:28 2014
+@@ -28,6 +28,20 @@
+ 
+ #define GGIT_BLOB_OUTPUT_STREAM_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), GGIT_TYPE_BLOB_OUTPUT_STREAM, GgitBlobOutputStreamPrivate))
+ 
++/*
++ * BLOB_CHUNKING_STATE_IDLE: stream's thread is waiting for data
++ * BLOB_CHUNKING_STATE_SENDING: have data, outside thread is waiting for result
++ * BLOB_CHUNKING_STATE_CANCELLED: cancelled, stream's thread to exit and set error result
++ * BLOB_CHUNKING_STATE_CLOSED: closed by outside thread or error, exit and set result
++ */
++typedef enum
++{
++	BLOB_CHUNKING_STATE_IDLE,
++	BLOB_CHUNKING_STATE_SENDING,
++	BLOB_CHUNKING_STATE_CANCELLED,
++	BLOB_CHUNKING_STATE_CLOSED
++} BlobChunkingState;
++
+ struct _GgitBlobOutputStreamPrivate
+ {
+ 	GgitRepository *repository;
+@@ -36,9 +50,6 @@ struct _GgitBlobOutputStreamPrivate
  	GMutex mutex;
  	GCond cond;
  
@@ -14,32 +38,28 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  	gssize written;
  
  	const gchar *writebuf;
-@@ -47,8 +44,13 @@ struct _GgitBlobOutputStreamPrivate
+@@ -47,8 +58,7 @@ struct _GgitBlobOutputStreamPrivate
  	gint ret;
  	GgitOId *oid;
  
 -	guint closing : 1;
 -	guint cancelled : 1;
-+	/*
-+	 * IDLE -> stream's thread is waiting for data
-+	 * SENDING -> have data, outside thread is waiting for result
-+	 * CANCELLED -> cancelled, stream's thread to exit and set error result
-+	 * CLOSED -> closed by outside thread or error, exit and set result
-+	 */
-+	enum { IDLE, SENDING, CANCELLED, CLOSED } state;
++	BlobChunkingState state;
  };
  
  G_DEFINE_TYPE (GgitBlobOutputStream, ggit_blob_output_stream, G_TYPE_OUTPUT_STREAM)
-@@ -68,17 +70,20 @@ ggit_blob_output_stream_close (GOutputStream  *object,
+@@ -68,17 +78,22 @@ ggit_blob_output_stream_close (GOutputStream  *object,
  
  	if (g_cancellable_set_error_if_cancelled (cancellable, error))
  	{
 +		g_mutex_lock (&stream->priv->mutex);
-+		if (stream->priv->state != CANCELLED)
++
++		if (stream->priv->state != BLOB_CHUNKING_STATE_CANCELLED)
 +		{
-+			stream->priv->state = CANCELLED;
++			stream->priv->state = BLOB_CHUNKING_STATE_CANCELLED;
 +			g_cond_signal (&stream->priv->cond);
 +		}
++
 +		g_mutex_unlock (&stream->priv->mutex);
  		return FALSE;
  	}
@@ -47,7 +67,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  	g_mutex_lock (&stream->priv->mutex);
 -	stream->priv->closing = TRUE;
 -
-+	stream->priv->state = CLOSED;
++	stream->priv->state = BLOB_CHUNKING_STATE_CLOSED;
  	g_cond_signal (&stream->priv->cond);
 -	g_mutex_lock (&stream->priv->reply_mutex);
  	g_mutex_unlock (&stream->priv->mutex);
@@ -56,7 +76,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  
  	g_thread_join (stream->priv->thread);
  	return TRUE;
-@@ -105,38 +110,54 @@ ggit_blob_output_stream_write (GOutputStream  *object,
+@@ -105,38 +120,54 @@ ggit_blob_output_stream_write (GOutputStream  *object,
                                 GError        **error)
  {
  	GgitBlobOutputStream *stream = GGIT_BLOB_OUTPUT_STREAM (object);
@@ -65,12 +85,12 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
 -	if (stream->priv->closing)
 +	g_mutex_lock (&stream->priv->mutex);
 +
-+	while (stream->priv->state == SENDING)
++	while (stream->priv->state == BLOB_CHUNKING_STATE_SENDING)
  	{
 +		g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
 +	}
 +
-+	if (stream->priv->state == CLOSED)
++	if (stream->priv->state == BLOB_CHUNKING_STATE_CLOSED)
 +	{
 +		g_mutex_unlock (&stream->priv->mutex);
  		return 0;
@@ -81,25 +101,25 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  	if (g_cancellable_is_cancelled (cancellable))
  	{
 -		stream->priv->cancelled = TRUE;
-+		stream->priv->state = CANCELLED;
++		stream->priv->state = BLOB_CHUNKING_STATE_CANCELLED;
  	}
  
 -	stream->priv->writebuf = buffer;
 -	stream->priv->bufsize = count;
 -	stream->priv->written = 0;
-+	if (stream->priv->state == IDLE)
++	if (stream->priv->state == BLOB_CHUNKING_STATE_IDLE)
 +	{
 +		stream->priv->writebuf = buffer;
 +		stream->priv->bufsize = count;
 +		stream->priv->written = 0;
-+		stream->priv->state = SENDING;
++		stream->priv->state = BLOB_CHUNKING_STATE_SENDING;
 +	}
  
  	g_cond_signal (&stream->priv->cond);
  
 -	g_mutex_lock (&stream->priv->reply_mutex);
 -	g_mutex_unlock (&stream->priv->mutex);
-+	while (stream->priv->state == SENDING)
++	while (stream->priv->state == BLOB_CHUNKING_STATE_SENDING)
 +	{
 +		g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
 +	}
@@ -108,7 +128,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
 -	g_mutex_unlock (&stream->priv->reply_mutex);
 -
 -	if (stream->priv->cancelled)
-+	if (stream->priv->state == CANCELLED)
++	if (stream->priv->state == BLOB_CHUNKING_STATE_CANCELLED)
  	{
  		g_cancellable_set_error_if_cancelled (cancellable, error);
 -		return -1;
@@ -126,7 +146,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  }
  
  static void
-@@ -151,9 +172,6 @@ ggit_blob_output_stream_finalize (GObject *object)
+@@ -151,9 +182,6 @@ ggit_blob_output_stream_finalize (GObject *object)
  	g_mutex_clear (&stream->priv->mutex);
  	g_cond_clear (&stream->priv->cond);
  
@@ -136,50 +156,51 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  	if (stream->priv->oid)
  	{
  		ggit_oid_free (stream->priv->oid);
-@@ -233,18 +251,26 @@ blob_chunk_cb (char   *content,
+@@ -233,18 +261,27 @@ blob_chunk_cb (char   *content,
  	GgitBlobOutputStream *stream = payload;
  	int written = 0;
  
 -	g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
 +	g_mutex_lock (&stream->priv->mutex);
-+	while (stream->priv->state == IDLE)
-+	{
-+		g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
-+	}
  
 -	if (stream->priv->closing)
-+	if (stream->priv->state == CLOSED)
++	while (stream->priv->state == BLOB_CHUNKING_STATE_IDLE)
  	{
++		g_cond_wait (&stream->priv->cond, &stream->priv->mutex);
++	}
++
++	if (stream->priv->state == BLOB_CHUNKING_STATE_CLOSED)
++	{
 +		g_mutex_unlock (&stream->priv->mutex);
  		return 0;
  	}
  
 -	if (stream->priv->cancelled)
-+	if (stream->priv->state == CANCELLED)
++	if (stream->priv->state == BLOB_CHUNKING_STATE_CANCELLED)
  	{
 +		g_mutex_unlock (&stream->priv->mutex);
  		return -1;
  	}
  
-+	/* state must be SENDING */
++	/* state must be BLOB_CHUNKING_STATE_SENDING */
 +
  	if (stream->priv->bufsize > maxlen)
  	{
  		stream->priv->written = maxlen;
-@@ -260,9 +286,9 @@ blob_chunk_cb (char   *content,
+@@ -260,9 +297,9 @@ blob_chunk_cb (char   *content,
  		written = stream->priv->written;
  	}
  
 -	g_mutex_lock (&stream->priv->reply_mutex);
 -	g_cond_signal (&stream->priv->reply_cond);
 -	g_mutex_unlock (&stream->priv->reply_mutex);
-+	stream->priv->state = IDLE;
++	stream->priv->state = BLOB_CHUNKING_STATE_IDLE;
 +	g_cond_signal (&stream->priv->cond);
 +	g_mutex_unlock (&stream->priv->mutex);
  
  	return written;
  }
-@@ -280,23 +306,22 @@ chunk_blob_in_thread (gpointer data)
+@@ -280,23 +317,22 @@ chunk_blob_in_thread (gpointer data)
  	                                  blob_chunk_cb,
  	                                  data);
  
@@ -189,13 +210,13 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  
  	if (ret == GIT_OK)
  	{
-+		stream->priv->state = CLOSED;
++		stream->priv->state = BLOB_CHUNKING_STATE_CLOSED;
  		stream->priv->oid = _ggit_oid_wrap (&oid);
  	}
  	else
  	{
 -		stream->priv->cancelled = TRUE;
-+		stream->priv->state = CANCELLED;
++		stream->priv->state = BLOB_CHUNKING_STATE_CANCELLED;
  	}
  
 -	g_mutex_lock (&stream->priv->reply_mutex);
@@ -207,7 +228,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
  
  	return NULL;
  }
-@@ -309,10 +334,7 @@ ggit_blob_output_stream_init (GgitBlobOutputStream *se
+@@ -309,10 +345,7 @@ ggit_blob_output_stream_init (GgitBlobOutputStream *se
  	g_mutex_init (&self->priv->mutex);
  	g_cond_init (&self->priv->cond);
  
@@ -215,7 +236,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=734010
 -	g_cond_init (&self->priv->reply_cond);
 -
 -	g_mutex_lock (&self->priv->mutex);
-+	self->priv->state = IDLE;
++	self->priv->state = BLOB_CHUNKING_STATE_IDLE;
  
  	self->priv->thread = g_thread_new ("ggit-blob-output-stream",
  	                                   chunk_blob_in_thread,

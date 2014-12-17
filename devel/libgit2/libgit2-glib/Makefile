@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/08 12:33:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/17 19:23:32 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
 V=			0.0.24
+REVISION=		0
 PROJECT=		libgit2-glib
 SHARED_LIBS +=	git2-glib-1.0        2.0      # 0.0
 
