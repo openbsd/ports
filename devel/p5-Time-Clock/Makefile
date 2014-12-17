@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/12/17 10:06:17 benoit Exp $
 
 COMMENT=		simple 24 hours clock object
 
 MODULES=		cpan
-DISTNAME=		Time-Clock-0.12
-REVISION=		0
+DISTNAME =		Time-Clock-1.03
 CATEGORIES=		devel
 
 # perl
