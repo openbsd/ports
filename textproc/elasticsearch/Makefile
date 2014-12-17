@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/15 17:57:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/17 08:36:56 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
 DISTNAME=		elasticsearch-1.4.1
+REVISION=		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.elasticsearch.org/
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
