@@ -1,9 +1,9 @@
-$OpenBSD: patch-source_include_platform_aclinux_h,v 1.1 2014/05/20 16:37:09 sthen Exp $
---- source/include/platform/aclinux.h.orig	Wed Jul 11 16:55:44 2012
-+++ source/include/platform/aclinux.h	Tue May 20 16:58:15 2014
-@@ -50,6 +50,10 @@
+$OpenBSD: patch-source_include_platform_aclinux_h,v 1.2 2014/12/17 00:27:23 daniel Exp $
+--- source/include/platform/aclinux.h.orig	Fri Nov  7 12:48:00 2014
++++ source/include/platform/aclinux.h	Sun Nov 16 22:48:45 2014
+@@ -59,6 +59,10 @@
+ #define ACPI_USE_SYSTEM_CLIBRARY
  #define ACPI_USE_DO_WHILE_0
- #define ACPI_MUTEX_TYPE             ACPI_BINARY_SEMAPHORE
  
 +#ifdef __OpenBSD__
 +#define ACPI_USE_ALTERNATE_TIMEOUT
