@@ -1,24 +1,50 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/23 08:23:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/17 14:51:35 gonzalo Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @bin bin/varnishadm
 @bin bin/varnishhist
 @bin bin/varnishlog
 @bin bin/varnishncsa
-@bin bin/varnishreplay
-@bin bin/varnishsizes
 @bin bin/varnishstat
 @bin bin/varnishtest
 @bin bin/varnishtop
 include/varnish/
-include/varnish/varnishapi.h
+include/varnish/tbl/
+include/varnish/tbl/acct_fields_bereq.h
+include/varnish/tbl/acct_fields_req.h
+include/varnish/tbl/backend_poll.h
+include/varnish/tbl/ban_vars.h
+include/varnish/tbl/bo_flags.h
+include/varnish/tbl/body_status.h
+include/varnish/tbl/debug_bits.h
+include/varnish/tbl/feature_bits.h
+include/varnish/tbl/http_headers.h
+include/varnish/tbl/http_response.h
+include/varnish/tbl/locks.h
+include/varnish/tbl/req_body.h
+include/varnish/tbl/sess_close.h
+include/varnish/tbl/steps.h
+include/varnish/tbl/symbol_kind.h
+include/varnish/tbl/vcc_types.h
+include/varnish/tbl/vcl_returns.h
+include/varnish/tbl/vrt_stv_var.h
+include/varnish/tbl/vsc_all.h
+include/varnish/tbl/vsc_f_main.h
+include/varnish/tbl/vsc_fields.h
+include/varnish/tbl/vsc_levels.h
+include/varnish/tbl/vsc_types.h
+include/varnish/tbl/vsl_tags.h
+include/varnish/tbl/vsl_tags_http.h
+include/varnish/vapi/
+include/varnish/vapi/vapi_options.h
+include/varnish/vapi/voptget.h
+include/varnish/vapi/vsc.h
+include/varnish/vapi/vsc_int.h
+include/varnish/vapi/vsl.h
+include/varnish/vapi/vsl_int.h
+include/varnish/vapi/vsm.h
+include/varnish/vapi/vsm_int.h
 include/varnish/vcli.h
-include/varnish/vsc.h
-include/varnish/vsc_all.h
-include/varnish/vsc_fields.h
-include/varnish/vsl.h
-include/varnish/vsl_tags.h
-include/varnish/vsm.h
 lib/libvarnishapi.a
 lib/libvarnishapi.la
 @lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
@@ -26,30 +52,62 @@ lib/pkgconfig/varnishapi.pc
 lib/varnish/
 lib/varnish/libvarnish.so
 lib/varnish/libvarnishcompat.so
-lib/varnish/libvcl.so
+lib/varnish/libvcc.so
 lib/varnish/libvgz.so
 lib/varnish/vmods/
+lib/varnish/vmods/libvmod_directors.so
 lib/varnish/vmods/libvmod_std.so
 @man man/man1/varnishadm.1
 @man man/man1/varnishd.1
 @man man/man1/varnishhist.1
 @man man/man1/varnishlog.1
 @man man/man1/varnishncsa.1
-@man man/man1/varnishreplay.1
-@man man/man1/varnishsizes.1
 @man man/man1/varnishstat.1
 @man man/man1/varnishtest.1
 @man man/man1/varnishtop.1
+@man man/man3/vmod_directors.3
 @man man/man3/vmod_std.3
 @man man/man7/varnish-cli.7
 @man man/man7/varnish-counters.7
 @man man/man7/vcl.7
+@man man/man7/vsl-query.7
+@man man/man7/vsl.7
 @bin sbin/varnishd
+share/varnish/
+share/varnish/include/
+share/varnish/include/cache/
+share/varnish/include/cache/cache.h
+share/varnish/include/cache/cache_backend.h
+share/varnish/include/common/
+share/varnish/include/common/common.h
+share/varnish/include/common/params.h
+share/varnish/include/miniobj.h
+share/varnish/include/vas.h
+share/varnish/include/vav.h
+share/varnish/include/vbm.h
+share/varnish/include/vcl.h
+share/varnish/include/vcs.h
+share/varnish/include/vdef.h
+share/varnish/include/vmod_abi.h
+share/varnish/include/vqueue.h
+share/varnish/include/vre.h
+share/varnish/include/vrt.h
+share/varnish/include/vrt_obj.h
+share/varnish/include/vsa.h
+share/varnish/include/vsb.h
+share/varnish/include/vsha256.h
+share/varnish/vmodtool.py
+share/aclocal/
+share/aclocal/varnish.m4
 share/doc/varnish/
+share/doc/varnish/builtin.vcl
+share/doc/varnish/example.vcl
 share/examples/varnish/
 @sample ${SYSCONFDIR}/varnish/
-share/examples/varnish/default.vcl
-@sample ${SYSCONFDIR}/varnish/default.vcl
+share/examples/varnish/builtin.vcl
+@sample ${SYSCONFDIR}/varnish/builtin.vcl
+share/examples/varnish/example.vcl
+@sample ${SYSCONFDIR}/varnish/example.vcl
 @exec-add mkdir -p /var/varnish
 @extraunexec rm -fr /var/varnish
 @rcscript ${RCDIR}/varnishd
