@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/12/09 17:21:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2014/12/17 23:39:17 sthen Exp $
 
 # XXX should we rename the rc script to either named.rc or isc_bind.rc ?
 # XXX how about also the package now we don't need to distinguish from the
@@ -7,6 +7,7 @@
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.1-P1
+REVISION=	0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
