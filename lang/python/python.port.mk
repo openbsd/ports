@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.78 2014/11/05 12:09:07 naddy Exp $
+# $OpenBSD: python.port.mk,v 1.79 2014/12/17 00:31:52 daniel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -107,7 +107,7 @@ _MODPY_USERBASE =	${WRKDIR}
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:L} != "yes"
-MODPY_TKINTER_DEPENDS =	${MODPY_RUN_DEPENDS},-tkinter
+MODPY_TKINTER_DEPENDS =	lang/python/${MODPY_VERSION},-tkinter
 .endif
 
 MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
