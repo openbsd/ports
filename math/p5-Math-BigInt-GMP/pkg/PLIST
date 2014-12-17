@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/17 10:22:48 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Math/
 ${P5ARCH}/Math/BigInt/
@@ -7,6 +7,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/BigInt/
 ${P5ARCH}/auto/Math/BigInt/GMP/
-@comment ${P5ARCH}/auto/Math/BigInt/GMP/GMP.bs
 ${P5ARCH}/auto/Math/BigInt/GMP/GMP.so
 @man man/man3p/Math::BigInt::GMP.3p

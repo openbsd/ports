@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/14 23:25:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/12/17 10:22:47 benoit Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	use the GMP library for Math::BigInt routines
 
 MODULES=	cpan
-DISTNAME=	Math-BigInt-GMP-1.24
-REVISION=	3
+DISTNAME =	Math-BigInt-GMP-1.38
 CATEGORIES=	math
 
 # perl
