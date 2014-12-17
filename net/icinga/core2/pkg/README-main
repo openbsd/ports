@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2014/11/22 00:13:03 sthen Exp $
+$OpenBSD: README-main,v 1.7 2014/12/17 22:10:30 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,8 +12,9 @@ Icinga2 is not a drop-in replacement for Icinga (or Nagios)!
 Read the "Migration from Icinga 1.x" and the "Differences between Icinga
 1.x and 2" sections in the documentation.
 
-A migration script (https://github.com/Icinga/icinga2-migration) exists,
-but it has several limitations (see the Known Caveats section).
+A migration script exists (see the "icinga2-migration" package), but it
+has several limitations (see the Known Caveats section in the information
+at https://github.com/Icinga/icinga2-migration).
 
 
 Getting Started
@@ -39,27 +40,6 @@ line in /etc/rc.conf.local.
 To start icinga2, reboot or start it manually:
 
    $ sudo ${RCDIR}/icinga2 start
-
-
-Chroot Considerations
-=====================
-
-If you're using OpenBSD's default chroot environment for nginx, some files
-will need to be moved inside the jail and symbolic links created.
-
-   mkdir -p ${PREFIX-cgi}/etc ${PREFIX-cgi}/var/log
-   mv ${SYSCONFDIR} ${PREFIX-cgi}/etc/
-   ln -s ${PREFIX-cgi}/etc/icinga2 ${BASESYSCONFDIR}
-   mv /var/icinga2 ${PREFIX-cgi}/var/
-   ln -s ${PREFIX-cgi}/var/icinga /var
-   mv /var/log/icinga2 ${PREFIX-cgi}/var/log/
-   ln -s ${PREFIX-cgi}/var/log/icinga2 /var/log
-
-To display times in your local timezone, you will also need to provide
-a suitable /var/www/etc/localtime; due to the chroot, a symbolic link cannot
-be used here, instead the file can be copied:
-
-   cp /usr/share/zoneinfo/Antarctica/South_Pole ${PREFIX-cgi}/etc/localtime
 
 Web User-Interfaces
 ===================
