@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/24 08:53:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/17 07:15:04 benoit Exp $
 
 COMMENT=	more sensible way to change directories
 
 MODULES=	cpan
-DISTNAME=	File-chdir-0.1008
+DISTNAME =	File-chdir-0.1009
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
