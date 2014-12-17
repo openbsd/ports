@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.21 2014/12/05 09:33:09 dcoppa Exp $
---- src/Makefile.orig	Fri Sep 19 17:49:16 2014
-+++ src/Makefile	Tue Nov 11 09:56:22 2014
+$OpenBSD: patch-src_Makefile,v 1.22 2014/12/17 08:52:16 dcoppa Exp $
+--- src/Makefile.orig	Tue Dec 16 02:18:20 2014
++++ src/Makefile	Wed Dec 17 02:28:04 2014
 @@ -14,8 +14,8 @@
  
  release_hdr := $(shell sh -c './mkreleasehdr.sh')
@@ -76,7 +76,7 @@ $OpenBSD: patch-src_Makefile,v 1.21 2014/12/05 09:33:09 dcoppa Exp $
  
  test-sentinel: $(REDIS_SENTINEL_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -245,8 +250,10 @@ src/help.h:
+@@ -245,10 +250,11 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
@@ -85,7 +85,9 @@ $OpenBSD: patch-src_Makefile,v 1.21 2014/12/05 09:33:09 dcoppa Exp $
 +	$(INSTALL_DIR) $(INSTALL_BIN)
 +	$(INSTALL_DIR) $(INSTALL_SBIN)
 +	$(REDIS_INSTALL) $(REDIS_SERVER_NAME) $(INSTALL_SBIN)
-+	$(REDIS_INSTALL) $(REDIS_SENTINEL_NAME) $(INSTALL_SBIN)
  	$(REDIS_INSTALL) $(REDIS_BENCHMARK_NAME) $(INSTALL_BIN)
  	$(REDIS_INSTALL) $(REDIS_CLI_NAME) $(INSTALL_BIN)
  	$(REDIS_INSTALL) $(REDIS_CHECK_DUMP_NAME) $(INSTALL_BIN)
+ 	$(REDIS_INSTALL) $(REDIS_CHECK_AOF_NAME) $(INSTALL_BIN)
+-	@ln -sf $(INSTALL_BIN)/$(REDIS_SERVER_NAME) $(INSTALL_BIN)/$(REDIS_SENTINEL_NAME)
++	@ln -sf $(REDIS_SERVER_NAME) $(INSTALL_SBIN)/$(REDIS_SENTINEL_NAME)

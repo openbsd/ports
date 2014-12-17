@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/11/11 10:12:54 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/12/17 08:52:16 dcoppa Exp $
 @newgroup _redis:686
 @newuser _redis:686:_redis:daemon:redis account:${DBDIR}:/sbin/nologin
 @bin bin/redis-benchmark
 @bin bin/redis-check-aof
 @bin bin/redis-check-dump
 @bin bin/redis-cli
-@bin sbin/redis-sentinel
+sbin/redis-sentinel
 @bin sbin/redis-server
 share/examples/redis/
 @sample ${SYSCONFDIR}/redis/
