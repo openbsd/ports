@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/12/17 20:15:55 benoit Exp $
 
 COMMENT =		structured tags datastructures
 
-DISTNAME =		Data-Stag-0.11
-REVISION =		1
+DISTNAME =		Data-Stag-0.14
 CATEGORIES =		devel
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

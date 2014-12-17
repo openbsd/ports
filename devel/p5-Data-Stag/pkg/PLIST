@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:32:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/17 20:15:55 benoit Exp $
 bin/stag-autoschema.pl
 bin/stag-db.pl
 bin/stag-diff.pl
@@ -33,6 +33,7 @@ ${P5SITE}/Data/Stag/ITextParser.pm
 ${P5SITE}/Data/Stag/ITextWriter.pm
 ${P5SITE}/Data/Stag/IndentParser.pm
 ${P5SITE}/Data/Stag/IndentWriter.pm
+${P5SITE}/Data/Stag/JSONWriter.pm
 ${P5SITE}/Data/Stag/PerlWriter.pm
 ${P5SITE}/Data/Stag/PodParser.pm
 ${P5SITE}/Data/Stag/SAX2Stag.pm
@@ -58,6 +59,9 @@ ${P5SITE}/Data/Stag/null.pm
 @man man/man1/stag-flatten.pl.1
 @man man/man1/stag-grep.pl.1
 @man man/man1/stag-handle.pl.1
+@man man/man1/stag-itext2simple.pl.1
+@man man/man1/stag-itext2sxpr.pl.1
+@man man/man1/stag-itext2xml.pl.1
 @man man/man1/stag-join.pl.1
 @man man/man1/stag-merge.pl.1
 @man man/man1/stag-mogrify.pl.1
@@ -65,6 +69,7 @@ ${P5SITE}/Data/Stag/null.pm
 @man man/man1/stag-query.pl.1
 @man man/man1/stag-splitter.pl.1
 @man man/man1/stag-view.pl.1
+@man man/man1/stag-xml2itext.pl.1
 @man man/man3p/Data::Stag.3p
 @man man/man3p/Data::Stag::Arr2HTML.3p
 @man man/man3p/Data::Stag::BaseGenerator.3p
@@ -77,6 +82,7 @@ ${P5SITE}/Data/Stag/null.pm
 @man man/man3p/Data::Stag::ITextWriter.3p
 @man man/man3p/Data::Stag::IndentParser.3p
 @man man/man3p/Data::Stag::IndentWriter.3p
+@man man/man3p/Data::Stag::JSONWriter.3p
 @man man/man3p/Data::Stag::PerlWriter.3p
 @man man/man3p/Data::Stag::PodParser.3p
 @man man/man3p/Data::Stag::SAX2Stag.3p
