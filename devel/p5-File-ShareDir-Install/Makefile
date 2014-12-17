@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/23 19:10:04 henning Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/17 20:19:22 benoit Exp $
 
 COMMENT= 	install shared files, to use with File::ShareDir
 
 MODULES=	cpan
-DISTNAME=	File-ShareDir-Install-0.08
+DISTNAME=	File-ShareDir-Install-0.10
 CATEGORIES=	devel
 
 # perl
