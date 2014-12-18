@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1285 2014/12/15 18:01:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.1286 2014/12/18 06:20:50 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1263,6 +1263,7 @@
      SUBDIR += py-singledispatch
      SUBDIR += py-sip
      SUBDIR += py-six
+     SUBDIR += py-six,python3
      SUBDIR += py-smmap
      SUBDIR += py-subvertpy
      SUBDIR += py-suds
