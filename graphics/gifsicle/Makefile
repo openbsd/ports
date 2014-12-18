@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.39 2014/11/17 13:02:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.40 2014/12/18 10:44:45 benoit Exp $
 
-COMMENT=	creating & editing GIF images and animations
+COMMENT =	creating & editing GIF images and animations
 
-DISTNAME=	gifsicle-1.86
-CATEGORIES=    	graphics
+DISTNAME =	gifsicle-1.87
+CATEGORIES =	graphics
 
-MAINTAINER=	Eric Faurot <eric@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ICE SM X11 m
+PERMIT_PACKAGE_CDROM =	Yes
 
-HOMEPAGE=	http://www.lcdf.org/gifsicle/
+WANTLIB =		c ICE SM X11 m
 
-MASTER_SITES=	${HOMEPAGE}/ \
+HOMEPAGE =	http://www.lcdf.org/gifsicle/
+
+MASTER_SITES =	${HOMEPAGE}/ \
 		ftp://ftp.lcdf.org/pub/ \
 		ftp://ftp.lcdf.org/pub/OLD-VERSIONS/
 
-CONFIGURE_STYLE=	gnu
-
-SEPARATE_BUILD=		Yes
+CONFIGURE_STYLE =	gnu
+SEPARATE_BUILD =	Yes
 
 .include <bsd.port.mk>
