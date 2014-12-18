@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2013/07/18 22:40:11 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2014/12/18 20:26:35 kili Exp $
+
+BROKEN =		does not compile with ghc-7.8
 
 COMMENT =		DrIFT with pugs-specific rules
 

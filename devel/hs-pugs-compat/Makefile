@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/19 06:52:21 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/18 20:26:36 kili Exp $
+
+BROKEN =		does not compile with ghc-7.8
 
 COMMENT =		portable Haskell/POSIX layer for Pugs
 
