@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/22 14:10:46 pea Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/18 22:39:19 benoit Exp $
 
 COMMENT =	DBI wrapper intended to Do What I Want
 
 MODULES =	cpan
 
-DISTNAME =	DBIx-DWIW-0.48
-REVISION =	1
+DISTNAME =	DBIx-DWIW-0.50
 CATEGORIES =	databases
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
