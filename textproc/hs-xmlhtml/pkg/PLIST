@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/07/19 06:55:34 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/12/18 21:13:58 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Blaze/
 lib/ghc/${DISTNAME}/Text/Blaze/Renderer/
