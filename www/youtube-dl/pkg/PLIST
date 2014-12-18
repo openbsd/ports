@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2014/12/16 11:39:04 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.63 2014/12/18 08:32:44 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -47,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/adultswim.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/adultswim.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftonbladet.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftonbladet.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aljazeera.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aljazeera.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/allocine.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/allocine.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/anitube.py
@@ -585,6 +587,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/scivee.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/scivee.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencast.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencast.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencastomatic.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencastomatic.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screenwavemedia.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screenwavemedia.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/servingsys.py
