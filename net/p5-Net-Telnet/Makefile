@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/18 14:44:21 benoit Exp $
 
 COMMENT=		perl5 module for interactive network functions
 
 MODULES=		cpan
-DISTNAME=		Net-Telnet-3.03
-REVISION=		1
+DISTNAME =		Net-Telnet-3.04
 CATEGORIES=		net
-USE_GROFF =		Yes
 
-# Artistic License
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
-
-MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
 
 .include <bsd.port.mk>
