@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2014/10/30 10:15:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2014/12/18 07:46:10 benoit Exp $
 
 COMMENT=	converts GIF images to the PNG format
 
-DISTNAME=	gif2png-2.5.9
+DISTNAME=	gif2png-2.5.10
 CATEGORIES=	graphics
 HOMEPAGE=	http://www.catb.org/~esr/gif2png/
 
