@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/15 19:54:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/12/18 21:12:54 kili Exp $
 
 COMMENT=		fast, pure, practical collection of crypto hashes
 
-DISTNAME=		cryptohash-0.7.0
-REVISION=		5
+DISTNAME=		cryptohash-0.7.10
 CATEGORIES=		security
 
 # BSD3

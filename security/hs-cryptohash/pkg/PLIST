@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:05:35 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/18 21:12:54 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/Hash/
@@ -16,6 +16,8 @@ lib/ghc/${DISTNAME}/Crypto/Hash/SHA224.hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA224.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA256.hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA256.p_hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA3.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/SHA3.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA384.hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA384.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/SHA512.hi
@@ -28,7 +30,11 @@ lib/ghc/${DISTNAME}/Crypto/Hash/Skein512.hi
 lib/ghc/${DISTNAME}/Crypto/Hash/Skein512.p_hi
 lib/ghc/${DISTNAME}/Crypto/Hash/Tiger.hi
 lib/ghc/${DISTNAME}/Crypto/Hash/Tiger.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/Crypto/Hash/Whirlpool.hi
+lib/ghc/${DISTNAME}/Crypto/Hash/Whirlpool.p_hi
+lib/ghc/${DISTNAME}/Crypto/MAC/
+lib/ghc/${DISTNAME}/Crypto/MAC/HMAC.hi
+lib/ghc/${DISTNAME}/Crypto/MAC/HMAC.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -42,12 +48,15 @@ share/doc/hs-${DISTNAME}/html/Crypto-Hash-RIPEMD160.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-SHA1.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-SHA224.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-SHA256.html
+share/doc/hs-${DISTNAME}/html/Crypto-Hash-SHA3.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-SHA384.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-SHA512.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-SHA512t.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-Skein256.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-Skein512.html
 share/doc/hs-${DISTNAME}/html/Crypto-Hash-Tiger.html
+share/doc/hs-${DISTNAME}/html/Crypto-Hash-Whirlpool.html
+share/doc/hs-${DISTNAME}/html/Crypto-MAC-HMAC.html
 share/doc/hs-${DISTNAME}/html/cryptohash.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -62,18 +71,21 @@ share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-RIPEMD160.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA1.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA224.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA256.html
+share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA3.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA384.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA512.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-SHA512t.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Skein256.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Skein512.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Tiger.html
+share/doc/hs-${DISTNAME}/html/mini_Crypto-Hash-Whirlpool.html
+share/doc/hs-${DISTNAME}/html/mini_Crypto-MAC-HMAC.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
 share/hs-${DISTNAME}/
-share/hs-${DISTNAME}/README
+share/hs-${DISTNAME}/README.md
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
 lib/ghc/${DISTNAME}/unregister.sh

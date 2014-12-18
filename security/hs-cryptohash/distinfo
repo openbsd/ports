@@ -1,5 +1,2 @@
-MD5 (ghc/cryptohash-0.7.0.tar.gz) = hF3VvAo9BgIewAPMnsPMpw==
-RMD160 (ghc/cryptohash-0.7.0.tar.gz) = 7RWqlLyTIxOMlyKsCjSZABTF9U0=
-SHA1 (ghc/cryptohash-0.7.0.tar.gz) = FY4aPzY/88O0yl5lJSKa1xxNf8s=
-SHA256 (ghc/cryptohash-0.7.0.tar.gz) = 1RKIPXfHCWFLlZV89j0LPQFBZ55RK/meFdk1Finynu4=
-SIZE (ghc/cryptohash-0.7.0.tar.gz) = 38002
+SHA256 (ghc/cryptohash-0.7.10.tar.gz) = 9OkqMY0vttMzClbGB0FFbzhcHxLYlNBujZLaTliUGws=
+SIZE (ghc/cryptohash-0.7.10.tar.gz) = 59644
