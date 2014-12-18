@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/10/06 22:32:41 fkr Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/18 10:54:13 benoit Exp $
 @mode g+s
 @group games
-bin/moon-buggy
+@bin bin/moon-buggy
 @mode
 @group
 @info info/moon-buggy.info
