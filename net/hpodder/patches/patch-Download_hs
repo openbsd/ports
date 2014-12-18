@@ -1,11 +1,11 @@
-$OpenBSD: patch-Download_hs,v 1.4 2014/10/30 15:08:22 dcoppa Exp $
+$OpenBSD: patch-Download_hs,v 1.5 2014/12/18 20:16:59 kili Exp $
 
-port to ghc-7.6
+port to ghc-7.8
 
 fix version number in the User-Agent string
 
 --- Download.hs.orig	Tue Nov  8 16:49:38 2011
-+++ Download.hs	Thu Oct 30 15:54:45 2014
++++ Download.hs	Thu Dec 18 20:53:14 2014
 @@ -43,7 +43,7 @@ import System.Posix.Process
  import System.Posix.Types
  import System.Posix.IO
@@ -34,3 +34,12 @@ fix version number in the User-Agent string
               (\_ -> return Nothing)
  
  {- | Begin the download process on the given URL.
+@@ -118,7 +119,7 @@ finishGetURL dltok ec =
+        let r = case ec of
+                   Exited ExitSuccess -> Success
+                   Exited (ExitFailure i) -> Failure
+-                  Terminated _ -> Failure
++                  Terminated _ _ -> Failure
+                   Stopped _ -> Failure
+        if r == Success
+           then do d $ "curl returned successfully; new size is " ++
