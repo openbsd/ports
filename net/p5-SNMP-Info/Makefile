@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/09 15:21:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/18 07:44:07 benoit Exp $
 
-COMMENT=	perl5 interface to network devices and MIBs through SNMP
+COMMENT =	perl5 interface to network devices and MIBs through SNMP
 
-MODULES=	cpan
+MODULES =	cpan
 
-DISTNAME =	SNMP-Info-3.22
-REVISION=	0
-CATEGORIES=	net
+DISTNAME =	SNMP-Info-3.23
+CATEGORIES =	net
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	net/net-snmp
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS =	net/net-snmp
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-MAKE_ENV+=	TEST_POD=1
+MAKE_ENV +=	TEST_POD=1
 
 CONFIGURE_STYLE= perl
 
