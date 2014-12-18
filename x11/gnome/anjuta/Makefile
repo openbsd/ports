@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/10/25 14:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2014/12/18 19:10:10 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.14.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -27,7 +27,7 @@ WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz
 WANTLIB += harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg m magic orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += jpeg m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 secret-1 serf-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
 WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
