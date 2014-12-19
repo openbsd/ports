@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/19 22:16:33 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
@@ -57,6 +57,8 @@ LIB_DEPENDS =		graphics/openexr \
 			net/curl \
 			print/poppler \
 			x11/gnome/librsvg
+
+CONFIGURE_ARGS =	-DDESIRED_QT_VERSION=4
 
 NO_TEST =		Yes
 
