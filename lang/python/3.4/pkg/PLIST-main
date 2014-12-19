@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/06/09 05:14:45 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/12/19 20:32:07 rpointel Exp $
 @option no-default-conflict
 @conflict python->=3.4,<3.5
 @pkgpath lang/python3/3.4,-main
@@ -479,6 +479,8 @@ lib/python3.4/asyncio/__pycache__/base_subprocess.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/base_subprocess.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/constants.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/constants.cpython-34.pyo
+lib/python3.4/asyncio/__pycache__/coroutines.cpython-34.pyc
+lib/python3.4/asyncio/__pycache__/coroutines.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/events.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/events.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/futures.cpython-34.pyc
@@ -514,6 +516,7 @@ lib/python3.4/asyncio/__pycache__/windows_utils.cpython-34.pyo
 lib/python3.4/asyncio/base_events.py
 lib/python3.4/asyncio/base_subprocess.py
 lib/python3.4/asyncio/constants.py
+lib/python3.4/asyncio/coroutines.py
 lib/python3.4/asyncio/events.py
 lib/python3.4/asyncio/futures.py
 lib/python3.4/asyncio/locks.py
@@ -626,11 +629,12 @@ lib/python3.4/ctypes/macholib/fetch_macholib.bat
 lib/python3.4/ctypes/macholib/framework.py
 lib/python3.4/ctypes/test/
 lib/python3.4/ctypes/test/__init__.py
+lib/python3.4/ctypes/test/__main__.py
 lib/python3.4/ctypes/test/__pycache__/
 lib/python3.4/ctypes/test/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/__init__.cpython-34.pyo
-lib/python3.4/ctypes/test/__pycache__/runtests.cpython-34.pyc
-lib/python3.4/ctypes/test/__pycache__/runtests.cpython-34.pyo
+lib/python3.4/ctypes/test/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/ctypes/test/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_anon.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_anon.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_array_in_pointer.cpython-34.pyc
@@ -657,8 +661,6 @@ lib/python3.4/ctypes/test/__pycache__/test_checkretval.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_checkretval.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_delattr.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_delattr.cpython-34.pyo
-lib/python3.4/ctypes/test/__pycache__/test_errcheck.cpython-34.pyc
-lib/python3.4/ctypes/test/__pycache__/test_errcheck.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_errno.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_errno.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_find.cpython-34.pyc
@@ -673,8 +675,6 @@ lib/python3.4/ctypes/test/__pycache__/test_incomplete.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_incomplete.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_init.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_init.cpython-34.pyo
-lib/python3.4/ctypes/test/__pycache__/test_integers.cpython-34.pyc
-lib/python3.4/ctypes/test/__pycache__/test_integers.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_internals.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_internals.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_keeprefs.cpython-34.pyc
@@ -737,7 +737,6 @@ lib/python3.4/ctypes/test/__pycache__/test_win32.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_win32.cpython-34.pyo
 lib/python3.4/ctypes/test/__pycache__/test_wintypes.cpython-34.pyc
 lib/python3.4/ctypes/test/__pycache__/test_wintypes.cpython-34.pyo
-lib/python3.4/ctypes/test/runtests.py
 lib/python3.4/ctypes/test/test_anon.py
 lib/python3.4/ctypes/test/test_array_in_pointer.py
 lib/python3.4/ctypes/test/test_arrays.py
@@ -751,7 +750,6 @@ lib/python3.4/ctypes/test/test_cast.py
 lib/python3.4/ctypes/test/test_cfuncs.py
 lib/python3.4/ctypes/test/test_checkretval.py
 lib/python3.4/ctypes/test/test_delattr.py
-lib/python3.4/ctypes/test/test_errcheck.py
 lib/python3.4/ctypes/test/test_errno.py
 lib/python3.4/ctypes/test/test_find.py
 lib/python3.4/ctypes/test/test_frombuffer.py
@@ -759,7 +757,6 @@ lib/python3.4/ctypes/test/test_funcptr.py
 lib/python3.4/ctypes/test/test_functions.py
 lib/python3.4/ctypes/test/test_incomplete.py
 lib/python3.4/ctypes/test/test_init.py
-lib/python3.4/ctypes/test/test_integers.py
 lib/python3.4/ctypes/test/test_internals.py
 lib/python3.4/ctypes/test/test_keeprefs.py
 lib/python3.4/ctypes/test/test_libc.py
@@ -963,11 +960,11 @@ lib/python3.4/distutils/command/register.py
 lib/python3.4/distutils/command/sdist.py
 lib/python3.4/distutils/command/upload.py
 @comment lib/python3.4/distutils/command/wininst-10.0-${MACHINE_ARCH}.exe
+@comment lib/python3.4/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
 @comment lib/python3.4/distutils/command/wininst-10.0.exe
 @comment lib/python3.4/distutils/command/wininst-6.0.exe
 @comment lib/python3.4/distutils/command/wininst-7.1.exe
 @comment lib/python3.4/distutils/command/wininst-8.0.exe
-@comment lib/python3.4/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
 @comment lib/python3.4/distutils/command/wininst-9.0.exe
 lib/python3.4/distutils/config.py
 lib/python3.4/distutils/core.py
@@ -1749,9 +1746,9 @@ lib/python3.4/lib-dynload/xxlimited.so
 lib/python3.4/lib-dynload/zlib.so
 lib/python3.4/lib2to3/
 lib/python3.4/lib2to3/Grammar.txt
-lib/python3.4/lib2to3/Grammar3.4.1.final.0.pickle
+lib/python3.4/lib2to3/Grammar3.4.2.final.0.pickle
 lib/python3.4/lib2to3/PatternGrammar.txt
-lib/python3.4/lib2to3/PatternGrammar3.4.1.final.0.pickle
+lib/python3.4/lib2to3/PatternGrammar3.4.2.final.0.pickle
 lib/python3.4/lib2to3/__init__.py
 lib/python3.4/lib2to3/__main__.py
 lib/python3.4/lib2to3/__pycache__/
@@ -2295,13 +2292,10 @@ lib/python3.4/turtledemo/__pycache__/wikipedia.cpython-34.pyc
 lib/python3.4/turtledemo/__pycache__/wikipedia.cpython-34.pyo
 lib/python3.4/turtledemo/__pycache__/yinyang.cpython-34.pyc
 lib/python3.4/turtledemo/__pycache__/yinyang.cpython-34.pyo
-lib/python3.4/turtledemo/about_turtle.txt
-lib/python3.4/turtledemo/about_turtledemo.txt
 lib/python3.4/turtledemo/bytedesign.py
 lib/python3.4/turtledemo/chaos.py
 lib/python3.4/turtledemo/clock.py
 lib/python3.4/turtledemo/colormixer.py
-lib/python3.4/turtledemo/demohelp.txt
 lib/python3.4/turtledemo/forest.py
 lib/python3.4/turtledemo/fractalcurves.py
 lib/python3.4/turtledemo/lindenmayer.py

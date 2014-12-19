@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2014/04/13 07:10:12 rpointel Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2014/12/19 20:32:07 rpointel Exp $
 
 SOVERSION defaults to 1.0. SHARED_LIBS, however, could be changed
 at any point.  Ensure they are on sync in case INSTSONAME is used
 by a third party.
 
---- configure.ac.orig	Mon Mar 17 03:31:31 2014
-+++ configure.ac	Sat Apr  5 09:24:16 2014
-@@ -961,6 +961,9 @@ if test $enable_shared = "yes"; then
+--- configure.ac.orig	Wed Oct  8 10:18:16 2014
++++ configure.ac	Sun Dec 14 10:06:52 2014
+@@ -964,6 +964,9 @@ if test $enable_shared = "yes"; then
  	      FreeBSD*)
  		SOVERSION=`echo $SOVERSION|cut -d "." -f 1`
  		;;

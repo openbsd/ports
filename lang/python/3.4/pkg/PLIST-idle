@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.2 2014/06/07 15:01:27 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.3 2014/12/19 20:32:07 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=3.4,<3.5
 @pkgpath lang/python3/3.4,-idle
@@ -219,42 +219,66 @@ lib/python3.4/idlelib/idle_test/__pycache__/mock_idle.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/mock_idle.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/mock_tk.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/mock_tk.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_autocomplete.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_autocomplete.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_autoexpand.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_autoexpand.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_calltips.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_calltips.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_config_name.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_config_name.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_configdialog.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_configdialog.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_delegator.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_delegator.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_formatparagraph.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_formatparagraph.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_grep.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_grep.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_hyperparser.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_hyperparser.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_idlehistory.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_idlehistory.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_parenmatch.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_parenmatch.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_rstrip.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_rstrip.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_searchdialogbase.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_searchdialogbase.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_searchengine.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_searchengine.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_text.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_text.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_textview.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_textview.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_warning.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_warning.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/test_widgetredir.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/test_widgetredir.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/htest.py
 lib/python3.4/idlelib/idle_test/mock_idle.py
 lib/python3.4/idlelib/idle_test/mock_tk.py
+lib/python3.4/idlelib/idle_test/test_autocomplete.py
+lib/python3.4/idlelib/idle_test/test_autoexpand.py
 lib/python3.4/idlelib/idle_test/test_calltips.py
 lib/python3.4/idlelib/idle_test/test_config_name.py
+lib/python3.4/idlelib/idle_test/test_configdialog.py
 lib/python3.4/idlelib/idle_test/test_delegator.py
 lib/python3.4/idlelib/idle_test/test_formatparagraph.py
 lib/python3.4/idlelib/idle_test/test_grep.py
+lib/python3.4/idlelib/idle_test/test_hyperparser.py
 lib/python3.4/idlelib/idle_test/test_idlehistory.py
+lib/python3.4/idlelib/idle_test/test_parenmatch.py
 lib/python3.4/idlelib/idle_test/test_pathbrowser.py
 lib/python3.4/idlelib/idle_test/test_rstrip.py
+lib/python3.4/idlelib/idle_test/test_searchdialogbase.py
 lib/python3.4/idlelib/idle_test/test_searchengine.py
 lib/python3.4/idlelib/idle_test/test_text.py
+lib/python3.4/idlelib/idle_test/test_textview.py
 lib/python3.4/idlelib/idle_test/test_warning.py
+lib/python3.4/idlelib/idle_test/test_widgetredir.py
 lib/python3.4/idlelib/idlever.py
 lib/python3.4/idlelib/keybindingDialog.py
 lib/python3.4/idlelib/macosxSupport.py

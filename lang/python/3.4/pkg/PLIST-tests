@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2014/06/07 15:01:27 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2014/12/19 20:32:07 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=3.4,<3.5
 @pkgpath lang/python3/3.4,-tests
@@ -684,6 +684,8 @@ lib/python3.4/test/__pycache__/test_sort.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_sort.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_source_encoding.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_source_encoding.cpython-34.pyo
+lib/python3.4/test/__pycache__/test_spwd.cpython-34.pyc
+lib/python3.4/test/__pycache__/test_spwd.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_sqlite.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_sqlite.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_ssl.cpython-34.pyc
@@ -768,8 +770,6 @@ lib/python3.4/test/__pycache__/test_tk.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_tk.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_tokenize.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_tokenize.cpython-34.pyo
-lib/python3.4/test/__pycache__/test_tools.cpython-34.pyc
-lib/python3.4/test/__pycache__/test_tools.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_trace.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_trace.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_traceback.cpython-34.pyc
@@ -968,7 +968,23 @@ lib/python3.4/test/cmath_testcases.txt
 lib/python3.4/test/coding20731.py
 lib/python3.4/test/curses_tests.py
 lib/python3.4/test/data/
+lib/python3.4/test/data/BIG5.TXT
+lib/python3.4/test/data/BIG5HKSCS-2004.TXT
+lib/python3.4/test/data/CP932.TXT
+lib/python3.4/test/data/CP936.TXT
+lib/python3.4/test/data/CP949.TXT
+lib/python3.4/test/data/CP950.TXT
+lib/python3.4/test/data/EUC-CN.TXT
+lib/python3.4/test/data/EUC-JISX0213.TXT
+lib/python3.4/test/data/EUC-JP.TXT
+lib/python3.4/test/data/EUC-KR.TXT
+lib/python3.4/test/data/JOHAB.TXT
+lib/python3.4/test/data/NamedSequences.txt
+lib/python3.4/test/data/NormalizationTest.txt
 lib/python3.4/test/data/README
+lib/python3.4/test/data/SHIFTJIS.TXT
+lib/python3.4/test/data/SHIFT_JISX0213.TXT
+lib/python3.4/test/data/gb-18030-2000.xml
 lib/python3.4/test/datetimetester.py
 lib/python3.4/test/decimaltestdata/
 lib/python3.4/test/decimaltestdata/abs.decTest
@@ -1599,9 +1615,12 @@ lib/python3.4/test/test_importlib/__pycache__/util.cpython-34.pyo
 lib/python3.4/test/test_importlib/abc.py
 lib/python3.4/test/test_importlib/builtin/
 lib/python3.4/test/test_importlib/builtin/__init__.py
+lib/python3.4/test/test_importlib/builtin/__main__.py
 lib/python3.4/test/test_importlib/builtin/__pycache__/
 lib/python3.4/test/test_importlib/builtin/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/test/test_importlib/builtin/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/test/test_importlib/builtin/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/test/test_importlib/builtin/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/test/test_importlib/builtin/__pycache__/test_finder.cpython-34.pyc
 lib/python3.4/test/test_importlib/builtin/__pycache__/test_finder.cpython-34.pyo
 lib/python3.4/test/test_importlib/builtin/__pycache__/test_loader.cpython-34.pyc
@@ -1613,9 +1632,12 @@ lib/python3.4/test/test_importlib/builtin/test_loader.py
 lib/python3.4/test/test_importlib/builtin/util.py
 lib/python3.4/test/test_importlib/extension/
 lib/python3.4/test/test_importlib/extension/__init__.py
+lib/python3.4/test/test_importlib/extension/__main__.py
 lib/python3.4/test/test_importlib/extension/__pycache__/
 lib/python3.4/test/test_importlib/extension/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/test/test_importlib/extension/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/test/test_importlib/extension/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/test/test_importlib/extension/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/test/test_importlib/extension/__pycache__/test_case_sensitivity.cpython-34.pyc
 lib/python3.4/test/test_importlib/extension/__pycache__/test_case_sensitivity.cpython-34.pyo
 lib/python3.4/test/test_importlib/extension/__pycache__/test_finder.cpython-34.pyc
@@ -1633,9 +1655,12 @@ lib/python3.4/test/test_importlib/extension/test_path_hook.py
 lib/python3.4/test/test_importlib/extension/util.py
 lib/python3.4/test/test_importlib/frozen/
 lib/python3.4/test/test_importlib/frozen/__init__.py
+lib/python3.4/test/test_importlib/frozen/__main__.py
 lib/python3.4/test/test_importlib/frozen/__pycache__/
 lib/python3.4/test/test_importlib/frozen/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/test/test_importlib/frozen/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/test/test_importlib/frozen/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/test/test_importlib/frozen/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/test/test_importlib/frozen/__pycache__/test_finder.cpython-34.pyc
 lib/python3.4/test/test_importlib/frozen/__pycache__/test_finder.cpython-34.pyo
 lib/python3.4/test/test_importlib/frozen/__pycache__/test_loader.cpython-34.pyc
@@ -1644,9 +1669,12 @@ lib/python3.4/test/test_importlib/frozen/test_finder.py
 lib/python3.4/test/test_importlib/frozen/test_loader.py
 lib/python3.4/test/test_importlib/import_/
 lib/python3.4/test/test_importlib/import_/__init__.py
+lib/python3.4/test/test_importlib/import_/__main__.py
 lib/python3.4/test/test_importlib/import_/__pycache__/
 lib/python3.4/test/test_importlib/import_/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/test/test_importlib/import_/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/test/test_importlib/import_/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/test/test_importlib/import_/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/test/test_importlib/import_/__pycache__/test___loader__.cpython-34.pyc
 lib/python3.4/test/test_importlib/import_/__pycache__/test___loader__.cpython-34.pyo
 lib/python3.4/test/test_importlib/import_/__pycache__/test___package__.cpython-34.pyc
@@ -1742,9 +1770,12 @@ lib/python3.4/test/test_importlib/namespace_pkgs/top_level_portion1.zip
 lib/python3.4/test/test_importlib/regrtest.py
 lib/python3.4/test/test_importlib/source/
 lib/python3.4/test/test_importlib/source/__init__.py
+lib/python3.4/test/test_importlib/source/__main__.py
 lib/python3.4/test/test_importlib/source/__pycache__/
 lib/python3.4/test/test_importlib/source/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/test/test_importlib/source/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/test/test_importlib/source/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/test/test_importlib/source/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/test/test_importlib/source/__pycache__/test_case_sensitivity.cpython-34.pyc
 lib/python3.4/test/test_importlib/source/__pycache__/test_case_sensitivity.cpython-34.pyo
 lib/python3.4/test/test_importlib/source/__pycache__/test_file_loader.cpython-34.pyc
@@ -1960,6 +1991,7 @@ lib/python3.4/test/test_socket.py
 lib/python3.4/test/test_socketserver.py
 lib/python3.4/test/test_sort.py
 lib/python3.4/test/test_source_encoding.py
+lib/python3.4/test/test_spwd.py
 lib/python3.4/test/test_sqlite.py
 lib/python3.4/test/test_ssl.py
 lib/python3.4/test/test_startfile.py
@@ -2002,7 +2034,6 @@ lib/python3.4/test/test_timeit.py
 lib/python3.4/test/test_timeout.py
 lib/python3.4/test/test_tk.py
 lib/python3.4/test/test_tokenize.py
-lib/python3.4/test/test_tools.py
 lib/python3.4/test/test_trace.py
 lib/python3.4/test/test_traceback.py
 lib/python3.4/test/test_tracemalloc.py
