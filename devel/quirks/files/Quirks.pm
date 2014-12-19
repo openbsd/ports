@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.206 2014/12/16 10:43:56 nigel Exp $
+# $OpenBSD: Quirks.pm,v 1.207 2014/12/19 16:01:00 nigel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -96,6 +96,8 @@ my $base_exceptions = {
 	'sqlite3' => '/usr/bin/sqlite3',
 # 5.6
 	'unbound' => '/usr/sbin/unbound',
+# 5.7
+	'p5-IO-Socket-IP' => "$p5/IO/Socket/IP.pm",
 };
 
 my $stem_extensions = {
