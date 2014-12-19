@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.691 2014/12/15 21:02:38 nigel Exp $
+# $OpenBSD: Makefile,v 1.692 2014/12/19 17:28:44 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -423,6 +423,7 @@
      SUBDIR += py-repoze-profile
      SUBDIR += py-repoze-who
      SUBDIR += py-requests
+     SUBDIR += py-requests,python3
      SUBDIR += py-routes
      SUBDIR += py-sockjs-tornado
      SUBDIR += py-tempita
