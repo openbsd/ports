@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/04/27 09:54:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/19 16:30:25 millert Exp $
 
 COMMENT =	tiny replacement for Module::Build
 
-DISTNAME =	Module-Build-Tiny-0.035
-REVISION =	0
+DISTNAME =	Module-Build-Tiny-0.039
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
