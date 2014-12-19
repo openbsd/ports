@@ -1,0 +1,3 @@
+CGI::Compile is an utility to compile CGI scripts into a code
+reference that can run many times on its own namespace, as long as
+the script is ready to run on a persistent environment.
