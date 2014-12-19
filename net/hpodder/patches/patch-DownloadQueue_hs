@@ -1,6 +1,6 @@
-$OpenBSD: patch-DownloadQueue_hs,v 1.1 2013/08/12 08:03:18 dcoppa Exp $
+$OpenBSD: patch-DownloadQueue_hs,v 1.2 2014/12/19 09:27:46 dcoppa Exp $
 
-port to ghc-7.6
+port to ghc>=7.6
 
 --- DownloadQueue.hs.orig	Tue Nov  8 16:49:38 2011
 +++ DownloadQueue.hs	Mon Aug 12 11:53:56 2013

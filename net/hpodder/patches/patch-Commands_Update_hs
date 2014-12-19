@@ -1,6 +1,6 @@
-$OpenBSD: patch-Commands_Update_hs,v 1.1 2014/12/18 20:16:59 kili Exp $
+$OpenBSD: patch-Commands_Update_hs,v 1.2 2014/12/19 09:27:46 dcoppa Exp $
 
-patch for ghc-6.8
+port to ghc-7.8
 
 --- Commands/Update.hs.orig	Tue Nov  8 16:49:38 2011
 +++ Commands/Update.hs	Thu Dec 18 20:58:44 2014
