@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/23 19:20:31 espie Exp $
-bin/qgit
+@comment $OpenBSD: PLIST,v 1.2 2014/12/19 12:29:51 jca Exp $
+@bin bin/qgit
+share/doc/qgit/
+share/doc/qgit/README
