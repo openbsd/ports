@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.545 2014/12/01 23:06:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.546 2014/12/19 22:21:32 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -221,6 +221,7 @@
      SUBDIR += qrfcview
      SUBDIR += qt3
      SUBDIR += qt4
+     SUBDIR += qt5
      SUBDIR += quadkonsole
      SUBDIR += qvwm
      SUBDIR += qwt
