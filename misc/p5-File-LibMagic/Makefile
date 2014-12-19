@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/15 23:09:38 bluhm Exp $
+# $OpenBSD: Makefile,v 1.11 2014/12/19 16:18:04 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		perl wrapper for libmagic
 
-DISTNAME =		File-LibMagic-1.07
+DISTNAME =		File-LibMagic-1.08
 
 CATEGORIES =		misc
 
@@ -21,5 +21,11 @@ RUN_DEPENDS =		devel/libmagic
 
 CONFIGURE_ARGS +=	--include ${LOCALBASE}/include --lib ${LOCALBASE}/lib
 CONFIGURE_ARGS +=	"LIBS=-L${LOCALBASE}/lib -lmagic"
+
+# The version 1.08 has an additional layer of source files in the
+# package.  Seems like a bug in the creation process.  We do not
+# want to rely on such crap, just remove it.
+post-extract:
+	rm -r ${WRKDIST}/File-LibMagic-1.08
 
 .include <bsd.port.mk>
