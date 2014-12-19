@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/09/02 12:07:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/19 20:34:58 landry Exp $
 @bin bin/pgsql2shp
 @bin bin/raster2pgsql
 @bin bin/shp2pgsql
@@ -221,6 +221,8 @@ share/postgresql/extension/postgis--2.1.0rc2--${V}.sql
 share/postgresql/extension/postgis--2.1.0rc3--${V}.sql
 share/postgresql/extension/postgis--2.1.1--${V}.sql
 share/postgresql/extension/postgis--2.1.2--${V}.sql
+share/postgresql/extension/postgis--2.1.3--${V}.sql
+share/postgresql/extension/postgis--2.1.4--${V}.sql
 share/postgresql/extension/postgis--${V}--${V}next.sql
 share/postgresql/extension/postgis--${V}.sql
 share/postgresql/extension/postgis--${V}next--${V}.sql
@@ -238,6 +240,8 @@ share/postgresql/extension/postgis_tiger_geocoder--2.1.0rc2--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.1.0rc3--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.1.1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.1.2--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.1.3--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.1.4--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}next.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}next--${V}.sql
@@ -255,6 +259,8 @@ share/postgresql/extension/postgis_topology--2.1.0rc2--${V}.sql
 share/postgresql/extension/postgis_topology--2.1.0rc3--${V}.sql
 share/postgresql/extension/postgis_topology--2.1.1--${V}.sql
 share/postgresql/extension/postgis_topology--2.1.2--${V}.sql
+share/postgresql/extension/postgis_topology--2.1.3--${V}.sql
+share/postgresql/extension/postgis_topology--2.1.4--${V}.sql
 share/postgresql/extension/postgis_topology--${V}--${V}next.sql
 share/postgresql/extension/postgis_topology--${V}.sql
 share/postgresql/extension/postgis_topology--${V}next--${V}.sql

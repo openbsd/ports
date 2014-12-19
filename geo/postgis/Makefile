@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/09/02 12:07:46 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2014/12/19 20:34:58 landry Exp $
 
 SHARED_ONLY=	Yes
 
-V =	2.1.3
+V =	2.1.5
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
@@ -20,7 +20,7 @@ WANTLIB=	c geos_c m pq>=5.3 proj xml2 z
 WANTLIB +=	curl expat gdal geos geotiff gif idn
 WANTLIB +=	jasper jpeg json-c png pthread ssl stdc++ tiff
 WANTLIB +=	freexl pcre spatialite sqlite3
-WANTLIB +=	crypto openjp2
+WANTLIB +=	crypto openjp2 lzma
 
 MODULES =	devel/gettext
 
