@@ -1,0 +1,4 @@
+File::pushd does a temporary chdir that is easily and automatically
+reverted, similar to pushd in some Unix command shells.  This is
+very handy when working with temporary directories for tasks like
+testing.
