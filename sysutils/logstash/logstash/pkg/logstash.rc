@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: logstash.rc,v 1.1.1.1 2014/12/16 18:11:02 jasper Exp $
+# $OpenBSD: logstash.rc,v 1.2 2014/12/19 14:06:32 jasper Exp $
 
 daemon="${TRUEPREFIX}/logstash/bin/logstash"
-daemon_flags="--config ${SYSCONFDIR}/logstash/logstash.conf --log /var/log/logstash.log"
+daemon_flags="--config ${SYSCONFDIR}/logstash/conf.d/ --log /var/log/logstash/logstash.log"
 
 . /etc/rc.d/rc.subr
 

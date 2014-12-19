@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/16 18:11:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/19 14:06:32 jasper Exp $
 logstash/
 logstash/bin/
 logstash/bin/logstash
@@ -11285,7 +11285,8 @@ logstash/vendor/kibana/vendor/require/require.js
 logstash/vendor/kibana/vendor/require/tmpl.js
 logstash/vendor/kibana/vendor/timezone.js
 share/examples/logstash/
-@sample ${SYSCONFDIR}/logstash/
+@sample ${SYSCONFDIR}/logstash/conf.d/
 share/examples/logstash/logstash.conf
-@sample ${SYSCONFDIR}/logstash/logstash.conf
+@sample ${SYSCONFDIR}/logstash/conf.d/logstash.conf
+@sample /var/log/logstash/
 @rcscript ${RCDIR}/logstash
