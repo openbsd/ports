@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2014/10/14 11:30:04 henning Exp $
+# $OpenBSD: Makefile,v 1.358 2014/12/19 17:38:52 benoit Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -186,6 +186,7 @@
      SUBDIR += p5-Digest-MD4
      SUBDIR += p5-Digest-MD5-M4p
      SUBDIR += p5-Digest-Nilsimsa
+     SUBDIR += p5-Digest-Perl-MD5
      SUBDIR += p5-Digest-SHA1
      SUBDIR += p5-Digest-Skein
      SUBDIR += p5-File-Scan-ClamAV
