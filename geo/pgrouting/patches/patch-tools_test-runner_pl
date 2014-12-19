@@ -1,0 +1,13 @@
+$OpenBSD: patch-tools_test-runner_pl,v 1.1 2014/12/19 21:16:55 landry Exp $
+--- tools/test-runner.pl.orig	Fri Dec 19 21:33:45 2014
++++ tools/test-runner.pl	Fri Dec 19 21:55:37 2014
+@@ -20,7 +20,8 @@ my $DRYRUN = 0;
+ my $DEBUG = 0;
+ 
+ my $DBNAME = "pgr_test__db__test";
+-my $DBUSER = 'postgres';
++my $DBUSER = `whoami`;
++chomp $DBUSER;
+ my $DBHOST = 'localhost';
+ my $DBPORT = '5432';
+ 
