@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/12/03 21:56:45 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/20 01:51:19 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/HeterogeneousEnvironment.hi
@@ -13,11 +13,15 @@ lib/ghc/${DISTNAME}/Heist/Compiled.hi
 lib/ghc/${DISTNAME}/Heist/Compiled.p_hi
 lib/ghc/${DISTNAME}/Heist/Compiled/Internal.hi
 lib/ghc/${DISTNAME}/Heist/Compiled/Internal.p_hi
+lib/ghc/${DISTNAME}/Heist/Compiled/LowLevel.hi
+lib/ghc/${DISTNAME}/Heist/Compiled/LowLevel.p_hi
 lib/ghc/${DISTNAME}/Heist/Interpreted/
 lib/ghc/${DISTNAME}/Heist/Interpreted.hi
 lib/ghc/${DISTNAME}/Heist/Interpreted.p_hi
 lib/ghc/${DISTNAME}/Heist/Interpreted/Internal.hi
 lib/ghc/${DISTNAME}/Heist/Interpreted/Internal.p_hi
+lib/ghc/${DISTNAME}/Heist/SpliceAPI.hi
+lib/ghc/${DISTNAME}/Heist/SpliceAPI.p_hi
 lib/ghc/${DISTNAME}/Heist/Splices/
 lib/ghc/${DISTNAME}/Heist/Splices.hi
 lib/ghc/${DISTNAME}/Heist/Splices.p_hi
@@ -47,8 +51,10 @@ lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Heist-Compiled-LowLevel.html
 share/doc/hs-${DISTNAME}/html/Heist-Compiled.html
 share/doc/hs-${DISTNAME}/html/Heist-Interpreted.html
+share/doc/hs-${DISTNAME}/html/Heist-SpliceAPI.html
 share/doc/hs-${DISTNAME}/html/Heist-Splices-Apply.html
 share/doc/hs-${DISTNAME}/html/Heist-Splices-Bind.html
 share/doc/hs-${DISTNAME}/html/Heist-Splices-BindStrict.html
@@ -60,26 +66,6 @@ share/doc/hs-${DISTNAME}/html/Heist-Splices-Markdown.html
 share/doc/hs-${DISTNAME}/html/Heist-Splices.html
 share/doc/hs-${DISTNAME}/html/Heist-TemplateDirectory.html
 share/doc/hs-${DISTNAME}/html/Heist.html
-share/doc/hs-${DISTNAME}/html/doc-index-95.html
-share/doc/hs-${DISTNAME}/html/doc-index-A.html
-share/doc/hs-${DISTNAME}/html/doc-index-All.html
-share/doc/hs-${DISTNAME}/html/doc-index-B.html
-share/doc/hs-${DISTNAME}/html/doc-index-C.html
-share/doc/hs-${DISTNAME}/html/doc-index-D.html
-share/doc/hs-${DISTNAME}/html/doc-index-E.html
-share/doc/hs-${DISTNAME}/html/doc-index-G.html
-share/doc/hs-${DISTNAME}/html/doc-index-H.html
-share/doc/hs-${DISTNAME}/html/doc-index-I.html
-share/doc/hs-${DISTNAME}/html/doc-index-L.html
-share/doc/hs-${DISTNAME}/html/doc-index-M.html
-share/doc/hs-${DISTNAME}/html/doc-index-N.html
-share/doc/hs-${DISTNAME}/html/doc-index-O.html
-share/doc/hs-${DISTNAME}/html/doc-index-P.html
-share/doc/hs-${DISTNAME}/html/doc-index-R.html
-share/doc/hs-${DISTNAME}/html/doc-index-S.html
-share/doc/hs-${DISTNAME}/html/doc-index-T.html
-share/doc/hs-${DISTNAME}/html/doc-index-W.html
-share/doc/hs-${DISTNAME}/html/doc-index-Y.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
@@ -87,8 +73,10 @@ share/doc/hs-${DISTNAME}/html/heist.haddock
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Heist-Compiled-LowLevel.html
 share/doc/hs-${DISTNAME}/html/mini_Heist-Compiled.html
 share/doc/hs-${DISTNAME}/html/mini_Heist-Interpreted.html
+share/doc/hs-${DISTNAME}/html/mini_Heist-SpliceAPI.html
 share/doc/hs-${DISTNAME}/html/mini_Heist-Splices-Apply.html
 share/doc/hs-${DISTNAME}/html/mini_Heist-Splices-Bind.html
 share/doc/hs-${DISTNAME}/html/mini_Heist-Splices-BindStrict.html
