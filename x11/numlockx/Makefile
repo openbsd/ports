@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/26 09:30:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2014/12/20 09:17:13 benoit Exp $
 
 COMMENT=		start X11 with NumLock turned on
 
-DISTNAME=		numlockx-1.1
-REVISION=		0
+DISTNAME =		numlockx-1.2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://home.kde.org/~seli/numlockx/
-
-MAINTAINER=		Thomas Delaet <thomas@delaet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
