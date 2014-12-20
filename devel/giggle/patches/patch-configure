@@ -1,0 +1,50 @@
+$OpenBSD: patch-configure,v 1.7 2014/12/20 11:36:11 landry Exp $
+
+Check for vte-2.91 pkg-config file
+
+--- configure.orig	Thu Nov  1 06:29:18 2012
++++ configure	Sat Dec 20 12:15:37 2014
+@@ -13276,12 +13276,12 @@ if test -n "$VTE_CFLAGS"; then
+     pkg_cv_VTE_CFLAGS="$VTE_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"vte-2.90 >= \$VTE_REQUIRED_VERSION\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "vte-2.90 >= $VTE_REQUIRED_VERSION") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"vte-2.91 >= \$VTE_REQUIRED_VERSION\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "vte-2.91 >= $VTE_REQUIRED_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_VTE_CFLAGS=`$PKG_CONFIG --cflags "vte-2.90 >= $VTE_REQUIRED_VERSION" 2>/dev/null`
++  pkg_cv_VTE_CFLAGS=`$PKG_CONFIG --cflags "vte-2.91 >= $VTE_REQUIRED_VERSION" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -13292,12 +13292,12 @@ if test -n "$VTE_LIBS"; then
+     pkg_cv_VTE_LIBS="$VTE_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"vte-2.90 >= \$VTE_REQUIRED_VERSION\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "vte-2.90 >= $VTE_REQUIRED_VERSION") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"vte-2.91 >= \$VTE_REQUIRED_VERSION\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "vte-2.91 >= $VTE_REQUIRED_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_VTE_LIBS=`$PKG_CONFIG --libs "vte-2.90 >= $VTE_REQUIRED_VERSION" 2>/dev/null`
++  pkg_cv_VTE_LIBS=`$PKG_CONFIG --libs "vte-2.91 >= $VTE_REQUIRED_VERSION" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -13317,9 +13317,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        VTE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "vte-2.90 >= $VTE_REQUIRED_VERSION" 2>&1`
++	        VTE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "vte-2.91 >= $VTE_REQUIRED_VERSION" 2>&1`
+         else
+-	        VTE_PKG_ERRORS=`$PKG_CONFIG --print-errors "vte-2.90 >= $VTE_REQUIRED_VERSION" 2>&1`
++	        VTE_PKG_ERRORS=`$PKG_CONFIG --print-errors "vte-2.91 >= $VTE_REQUIRED_VERSION" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$VTE_PKG_ERRORS" >&5
