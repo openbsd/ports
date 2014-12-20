@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/20 12:44:44 florian Exp $
 
 COMMENT=		dns rate limiter for divert(4)
+
+REVISION=		0
 
 DISTNAME=		dnsfilter-0.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://sha256.net/dnsfilter/
-MAINTAINER=		Florian Obser <florian+dnsfilter@narrans.de>
+MAINTAINER=		Florian Obser <florian+ports@narrans.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
