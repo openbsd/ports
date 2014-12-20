@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/11/05 09:13:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/12/20 09:47:59 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -108,6 +108,19 @@ share/gnome/help/geary/cs/search.page
 share/gnome/help/geary/cs/shortcuts.page
 share/gnome/help/geary/cs/star.page
 share/gnome/help/geary/cs/write.page
+share/gnome/help/geary/de/
+share/gnome/help/geary/de/accounts.page
+share/gnome/help/geary/de/archive.page
+share/gnome/help/geary/de/bugs.page
+share/gnome/help/geary/de/index.page
+share/gnome/help/geary/de/label.page
+share/gnome/help/geary/de/limits.page
+share/gnome/help/geary/de/overview.page
+share/gnome/help/geary/de/preferences.page
+share/gnome/help/geary/de/search.page
+share/gnome/help/geary/de/shortcuts.page
+share/gnome/help/geary/de/star.page
+share/gnome/help/geary/de/write.page
 share/gnome/help/geary/el/
 share/gnome/help/geary/el/accounts.page
 share/gnome/help/geary/el/archive.page
@@ -191,6 +204,7 @@ share/locale/hu/LC_MESSAGES/geary.mo
 share/locale/id/LC_MESSAGES/geary.mo
 share/locale/it/LC_MESSAGES/geary.mo
 share/locale/ja/LC_MESSAGES/geary.mo
+share/locale/kk/LC_MESSAGES/geary.mo
 share/locale/km/LC_MESSAGES/geary.mo
 share/locale/lt/LC_MESSAGES/geary.mo
 share/locale/ms/LC_MESSAGES/geary.mo
