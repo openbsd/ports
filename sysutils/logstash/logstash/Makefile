@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/19 14:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/20 12:28:04 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
 # built with https://github.com/elasticsearch/logstash/pull/2236
 DISTNAME=		logstash-1.5.0.beta1
-REVISION=		0
+REVISION=		1
 
 MASTER_SITES=		http://distfiles.nl/ \
 			https://download.elasticsearch.org/logstash/logstash/
