@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_giggle-diff-view_h,v 1.1 2013/03/31 07:00:21 ajacoutot Exp $
+$OpenBSD: patch-src_giggle-diff-view_h,v 1.2 2014/12/20 10:19:39 landry Exp $
 
 Fix build with gtksourceview>=3.8.0
 
---- src/giggle-diff-view.h.orig	Sun Mar 31 08:49:31 2013
-+++ src/giggle-diff-view.h	Sun Mar 31 08:50:02 2013
-@@ -23,8 +23,7 @@
+--- src/giggle-diff-view.h.orig	Thu Nov  1 06:29:01 2012
++++ src/giggle-diff-view.h	Fri Dec 19 22:19:17 2014
+@@ -21,8 +21,7 @@
  
  #include <glib-object.h>
  #include <gtk/gtk.h>

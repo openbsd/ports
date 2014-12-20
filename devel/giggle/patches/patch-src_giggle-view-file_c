@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_giggle-view-file_c,v 1.1 2013/03/31 07:00:21 ajacoutot Exp $
+$OpenBSD: patch-src_giggle-view-file_c,v 1.2 2014/12/20 10:19:39 landry Exp $
 
 Fix build with gtksourceview>=3.8.0
 
---- src/giggle-view-file.c.orig	Sun Mar 31 08:49:27 2013
-+++ src/giggle-view-file.c	Sun Mar 31 08:50:36 2013
-@@ -40,8 +40,7 @@
+--- src/giggle-view-file.c.orig	Thu Nov  1 06:29:01 2012
++++ src/giggle-view-file.c	Fri Dec 19 22:19:17 2014
+@@ -38,8 +38,7 @@
  #include <gio/gio.h>
  #include <glib/gi18n.h>
  

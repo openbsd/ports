@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgiggle_Makefile_in,v 1.4 2012/11/01 08:08:31 jasper Exp $
---- libgiggle/Makefile.in.orig	Thu Nov  1 05:23:00 2012
-+++ libgiggle/Makefile.in	Thu Nov  1 08:59:44 2012
-@@ -386,7 +386,7 @@ libgiggle_la_LIBADD = \
+$OpenBSD: patch-libgiggle_Makefile_in,v 1.5 2014/12/20 10:19:39 landry Exp $
+--- libgiggle/Makefile.in.orig	Thu Nov  1 06:29:20 2012
++++ libgiggle/Makefile.in	Fri Dec 19 22:19:17 2014
+@@ -396,7 +396,7 @@ libgiggle_la_LIBADD = \
  libgiggle_la_LDFLAGS = \
  	$(AM_LDFLAGS) \
  	-version-info $(LIBGIGGLE_ABI) \
