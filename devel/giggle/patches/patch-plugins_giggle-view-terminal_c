@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_giggle-view-terminal_c,v 1.4 2014/12/20 11:35:46 landry Exp $
+http://git.pld-linux.org/gitweb.cgi/packages/giggle.git/commitdiff/a1dc3607586184f7870b0eb2498582c366430a08
+--- plugins/giggle-view-terminal.c.orig	Sat Dec 20 12:02:35 2014
++++ plugins/giggle-view-terminal.c	Sat Dec 20 12:03:57 2014
+@@ -186,19 +186,19 @@ giggle_view_terminal_append_tab (GiggleViewTerminal *v
+ 	real_argv[1] = NULL;
+ 	spawn_flags = G_SPAWN_CHILD_INHERITS_STDIN | G_SPAWN_SEARCH_PATH | G_SPAWN_FILE_AND_ARGV_ZERO;
+ 
+-	succes = vte_terminal_fork_command_full (VTE_TERMINAL (terminal),
++	succes = vte_terminal_spawn_sync (VTE_TERMINAL (terminal),
+ 	                                         pty_flags,
+ 	                                         directory,
+ 	                                         real_argv,
+ 	                                         NULL,
+ 	                                         spawn_flags,
+ 	                                         NULL, NULL,
+-	                                         NULL,
++	                                         NULL, NULL,
+ 	                                         &error);
+ 	g_strfreev (real_argv);
+ 
+ 	if (succes == FALSE) {
+-		g_warning ("%s: %s: vte_terminal_fork_command_full failed %s",
++		g_warning ("%s: %s: vte_terminal_spawn_sync failed %s",
+ 		           G_STRLOC, G_STRFUNC, error->message);
+ 		g_error_free (error);
+ 	}

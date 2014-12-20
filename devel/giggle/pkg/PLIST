@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/12/20 10:19:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/12/20 11:35:46 landry Exp $
 %%SHARED%%
 @bin bin/giggle
 include/giggle/
@@ -31,6 +31,7 @@ lib/giggle/
 lib/giggle/plugins/
 lib/giggle/plugins/${GNOME_VERSION}/
 lib/giggle/plugins/${GNOME_VERSION}/personal-details.xml
+lib/giggle/plugins/${GNOME_VERSION}/terminal-view.xml
 lib/libgiggle-git.a
 lib/libgiggle-git.la
 @lib lib/libgiggle-git.so.${LIBgiggle-git_VERSION}
