@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/05/14 11:27:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/20 09:11:28 benoit Exp $
 ${P5SITE}/Device/Gsm/
 ${P5SITE}/Device/Gsm.pm
 ${P5SITE}/Device/Gsm/Charset.pm
@@ -11,13 +11,16 @@ ${P5SITE}/Device/Gsm/Sms/Token/
 ${P5SITE}/Device/Gsm/Sms/Token.pm
 ${P5SITE}/Device/Gsm/Sms/Token/DA.pm
 ${P5SITE}/Device/Gsm/Sms/Token/DCS.pm
+${P5SITE}/Device/Gsm/Sms/Token/DT.pm
 ${P5SITE}/Device/Gsm/Sms/Token/MR.pm
 ${P5SITE}/Device/Gsm/Sms/Token/OA.pm
 ${P5SITE}/Device/Gsm/Sms/Token/PDUTYPE.pm
 ${P5SITE}/Device/Gsm/Sms/Token/PID.pm
 ${P5SITE}/Device/Gsm/Sms/Token/SCA.pm
 ${P5SITE}/Device/Gsm/Sms/Token/SCTS.pm
+${P5SITE}/Device/Gsm/Sms/Token/ST.pm
 ${P5SITE}/Device/Gsm/Sms/Token/UD.pm
+${P5SITE}/Device/Gsm/Sms/Token/UDH.pm
 ${P5SITE}/Device/Gsm/Sms/Token/VP.pm
 @man man/man3p/Device::Gsm.3p
 @man man/man3p/Device::Gsm::Pdu.3p
