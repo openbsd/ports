@@ -1,0 +1,77 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/12/20 19:31:44 bcallah Exp $
+
+configure is stupid. Force it to do the right thing.
+
+--- configure.orig	Mon Nov 24 11:35:31 2014
++++ configure	Mon Dec 15 18:00:26 2014
+@@ -3571,7 +3571,7 @@ fi
+ 
+ 
+ #   fftw3f
+-deps_packages+=" fftw3f"
++#deps_packages+=" fftw3f"
+ 
+ #   ALSA
+ 
+@@ -3596,20 +3596,8 @@ _ACEOF
+ 
+ #   pulseaudio
+ 
+-# Check whether --with-pulseaudio was given.
+-if test "${with_pulseaudio+set}" = set; then :
+-  withval=$with_pulseaudio;
+-fi
++use_pulseaudio=1
+ 
+-if test "x$with_pulseaudio" == "xno"; then :
+-  # then
+-	use_pulseaudio=0
+-else
+-  # else
+-	use_pulseaudio=1
+-	deps_packages+=" libpulse-simple"
+-fi
+-
+ cat >>confdefs.h <<_ACEOF
+ #define USE_PULSEAUDIO $use_pulseaudio
+ _ACEOF
+@@ -3617,20 +3605,8 @@ _ACEOF
+ 
+ #   sndfile
+ 
+-# Check whether --with-sndfile was given.
+-if test "${with_sndfile+set}" = set; then :
+-  withval=$with_sndfile;
+-fi
++use_sndfile=1
+ 
+-if test "x$with_sndfile" == "xno"; then :
+-  # then
+-	use_sndfile=0
+-else
+-  # else
+-	use_sndfile=1
+-	deps_packages+=" sndfile"
+-fi
+-
+ cat >>confdefs.h <<_ACEOF
+ #define USE_SNDFILE $use_sndfile
+ _ACEOF
+@@ -3813,7 +3789,7 @@ if test -n "$DEPS_CFLAGS"; then
+   pkg_cv_DEPS_CFLAGS=`$PKG_CONFIG --cflags " $deps_packages " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+-  pkg_failed=yes
++  pkg_failed=no
+ fi
+  else
+     pkg_failed=untried
+@@ -3830,7 +3806,7 @@ if test -n "$DEPS_LIBS"; then
+   pkg_cv_DEPS_LIBS=`$PKG_CONFIG --libs " $deps_packages " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+-  pkg_failed=yes
++  pkg_failed=no
+ fi
+  else
+     pkg_failed=untried
