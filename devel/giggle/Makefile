@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/12/20 11:35:46 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2014/12/20 12:41:02 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 
@@ -34,8 +34,6 @@ MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-evolution-data-server
-
-CONFIGURE_ARGS+=--enable-terminal
 
 SUBST_VARS+=	GNOME_VERSION
 
