@@ -1,0 +1,14 @@
+$OpenBSD: patch-qtbase_src_testlib_qtestcase_cpp,v 1.1 2014/12/20 12:15:34 zhuk Exp $
+Get rid of qstrcpy.
+--- qtbase/src/testlib/qtestcase.cpp.ports.orig	Sat Dec 13 01:37:06 2014
++++ qtbase/src/testlib/qtestcase.cpp	Sat Dec 13 01:37:34 2014
+@@ -2982,8 +2982,7 @@ char *QTest::toString(const char *str)
+ {
+     if (!str)
+         return 0;
+-    char *msg = new char[strlen(str) + 1];
+-    return qstrcpy(msg, str);
++    return qstrdup(str);
+ }
+ 
+ /*! \internal
