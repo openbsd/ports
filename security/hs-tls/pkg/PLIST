@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:05:35 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/20 01:43:17 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/TLS/
 lib/ghc/${DISTNAME}/Network/TLS.hi
