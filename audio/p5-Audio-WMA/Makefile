@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/01 10:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/20 08:42:06 benoit Exp $
 
 COMMENT=	read WMA/ASF metadata
 
 MODULES=	cpan
-DISTNAME=	Audio-WMA-1.2
-REVISION=	1
+DISTNAME =	Audio-WMA-1.3
 CATEGORIES=	audio
 
 # perl
