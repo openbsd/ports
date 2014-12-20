@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/20 09:00:49 benoit Exp $
 
 COMMENT=	unique identifiers as columns in DBIx::Class
 
 MODULES=	cpan
-DISTNAME=	DBIx-Class-UUIDColumns-0.02005
+DISTNAME =	DBIx-Class-UUIDColumns-0.02006
 CATEGORIES=	databases devel
 
 # perl
@@ -18,6 +18,5 @@ RUN_DEPENDS=	databases/p5-DBIx-Class \
 TEST_DEPENDS=	databases/p5-DBD-SQLite
 
 MAKE_ENV=	TEST_POD=Yes
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
