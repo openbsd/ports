@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/07/21 08:59:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/12/21 05:01:42 daniel Exp $
 bin/ipcluster
 bin/ipcluster2
 bin/ipcontroller
@@ -2330,6 +2330,7 @@ share/doc/ipython/html/_sources/config/options/
 share/doc/ipython/html/_sources/config/options/index.txt
 share/doc/ipython/html/_sources/config/options/kernel.txt
 share/doc/ipython/html/_sources/config/options/notebook.txt
+share/doc/ipython/html/_sources/config/options/qtconsole.txt
 share/doc/ipython/html/_sources/config/options/terminal.txt
 share/doc/ipython/html/_sources/development/
 share/doc/ipython/html/_sources/development/config.txt
@@ -2752,6 +2753,7 @@ share/doc/ipython/html/config/options/
 share/doc/ipython/html/config/options/index.html
 share/doc/ipython/html/config/options/kernel.html
 share/doc/ipython/html/config/options/notebook.html
+share/doc/ipython/html/config/options/qtconsole.html
 share/doc/ipython/html/config/options/terminal.html
 share/doc/ipython/html/development/
 share/doc/ipython/html/development/config.html
