@@ -1,3 +1,6 @@
 Evince is a document viewer for multiple document formats.
 The goal of evince is to replace the multiple document viewers that
 exist on the GNOME Desktop with a single simple application.
+
+Flavor:
+	light - reduced dependencies: PDF, PS and TIFF backends only
