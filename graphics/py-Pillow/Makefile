@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/28 22:20:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/21 00:12:09 daniel Exp $
 
 COMMENT-main=		Python Imaging Library (fork)
 COMMENT-sane=		Python SANE module
@@ -39,11 +39,10 @@ WANTLIB-sane=		pthread sane ${MODPY_WANTLIB}
 MODULES=		lang/python \
 			x11/tk
 
-# ${MODPY_TKINTER_DEPENDS} appends ,tkinter to devel/setuptools too.
-BUILD_DEPENDS=		lang/python/${MODPY_VERSION},-tkinter
+BUILD_DEPENDS=		${MODPY_TKINTER_DEPENDS}
 TEST_DEPENDS=		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
-			lang/python/${MODPY_VERSION},-tkinter
+			${MODPY_TKINTER_DEPENDS}
 
 # Enable JPEG2000 support via openjpeg?
 LIB_DEPENDS-main=	graphics/lcms2 \
