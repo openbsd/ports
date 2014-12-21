@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/21 13:49:06 benoit Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Number/
+${P5SITE}/Test/Number/Delta.pm
+@man man/man3p/Test::Number::Delta.3p
