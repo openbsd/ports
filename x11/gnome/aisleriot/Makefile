@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/21 11:41:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/21 11:53:23 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -27,6 +27,10 @@ MODULES =		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
+
+# make it possible to build when both guile and guile2 are installed
+# (takes precedence over -I${LOCALBASE}/include)
+MODGNOME_CPPFLAGS =	-I${LOCALBASE}/include/guile/2.0
 
 MODGCONF2_SCHEMAS_DIR =	aisleriot
 
