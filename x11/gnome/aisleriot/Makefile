@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/21 11:35:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/21 11:41:57 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
 GNOME_VERSION =		3.14.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -21,7 +21,8 @@ WANTLIB += ltdl lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 unistring
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
 
-MODULES =		devel/gconf2 \
+MODULES =		devel/dconf \
+			devel/gconf2 \
 			devel/gettext \
 			x11/gnome
 
