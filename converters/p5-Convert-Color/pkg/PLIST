@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/06/14 11:18:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/21 13:55:51 benoit Exp $
 ${P5SITE}/Convert/
 ${P5SITE}/Convert/Color/
 ${P5SITE}/Convert/Color.pm
@@ -6,7 +6,7 @@ ${P5SITE}/Convert/Color/CMY.pm
 ${P5SITE}/Convert/Color/CMYK.pm
 ${P5SITE}/Convert/Color/HSL.pm
 ${P5SITE}/Convert/Color/HSV.pm
-${P5SITE}/Convert/Color/HueBased.pm
+${P5SITE}/Convert/Color/HueChromaBased.pm
 ${P5SITE}/Convert/Color/RGB.pm
 ${P5SITE}/Convert/Color/RGB16.pm
 ${P5SITE}/Convert/Color/RGB8.pm
