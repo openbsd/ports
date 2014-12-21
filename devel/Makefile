@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1288 2014/12/19 20:12:00 landry Exp $
+# $OpenBSD: Makefile,v 1.1289 2014/12/21 13:53:18 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1042,6 +1042,7 @@
      SUBDIR += p5-Test-Most
      SUBDIR += p5-Test-NoTabs
      SUBDIR += p5-Test-NoWarnings
+     SUBDIR += p5-Test-Number-Delta
      SUBDIR += p5-Test-Object
      SUBDIR += p5-Test-Output
      SUBDIR += p5-Test-POE-Server-TCP
