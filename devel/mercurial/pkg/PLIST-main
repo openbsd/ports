@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/05/19 19:15:45 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/12/21 20:44:08 rpointel Exp $
 @pkgpath devel/mercurial
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -174,8 +174,6 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/dagutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/dagutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/demandimport.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/demandimport.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/dicthelpers.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/dicthelpers.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/diffhelpers.so
 lib/python${MODPY_VERSION}/site-packages/mercurial/dirstate.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/dirstate.pyc
@@ -183,6 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/discovery.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/discovery.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/dispatch.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/dispatch.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/dummycert.pem
 lib/python${MODPY_VERSION}/site-packages/mercurial/encoding.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/encoding.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/error.py
@@ -388,6 +387,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/subrepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/subrepo.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/tagmerge.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/tagmerge.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/tags.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/tags.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/templatefilters.py
@@ -586,7 +587,6 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/worker.pyc
 @man man/man5/hgrc.5
 share/mercurial/
 share/mercurial/bash_completion
-share/mercurial/convert-repo
 share/mercurial/dumprevlog
 share/mercurial/hg-ssh
 share/mercurial/hgeditor
@@ -597,7 +597,6 @@ share/mercurial/hgweb.cgi
 share/mercurial/mercurial.el
 share/mercurial/mergetools.hgrc
 share/mercurial/mq.el
-share/mercurial/sample.hgrc
 share/mercurial/simplemerge
 share/mercurial/tcsh_completion
 share/mercurial/tcsh_completion_build.sh

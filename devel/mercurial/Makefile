@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2014/05/19 19:15:44 rpointel Exp $
+# $OpenBSD: Makefile,v 1.61 2014/12/21 20:44:08 rpointel Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_EGG_VERSION =    3.0
+MODPY_EGG_VERSION =    3.2.3
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 
@@ -33,12 +33,12 @@ RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 
 FILES =			hgeditor hgweb.cgi
 
-CONTRIBFILES =		bash_completion mercurial.el sample.hgrc \
+CONTRIBFILES =		bash_completion mercurial.el \
 			tcsh_completion zsh_completion \
 			mergetools.hgrc mq.el
 
 CONTRIBDIRS =		hgsh vim
-SCRIPTS =		convert-repo hg-ssh hgk \
+SCRIPTS =		hg-ssh hgk \
 			tcsh_completion_build.sh dumprevlog \
 			undumprevlog simplemerge
 
