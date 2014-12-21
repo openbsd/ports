@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.96 2014/10/08 12:17:06 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.97 2014/12/21 11:49:48 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -24,8 +24,8 @@ USE_GMAKE?=		Yes
 .    endif
      # If a port needs extra CPPFLAGS, they can just set MODGNOME_CPPFLAGS
      # to the desired value, like -I${X11BASE}/include
-     _MODGNOME_cppflags ?= CPPFLAGS="-I${LOCALBASE}/include ${MODGNOME_CPPFLAGS}"
-     _MODGNOME_ldflags ?= LDFLAGS="-L${LOCALBASE}/lib ${MODGNOME_LDFLAGS}"
+     _MODGNOME_cppflags ?= CPPFLAGS="${MODGNOME_CPPFLAGS} -I${LOCALBASE}/include"
+     _MODGNOME_ldflags ?= LDFLAGS="${MODGNOME_LDFLAGS} -L${LOCALBASE}/lib"
      CONFIGURE_ENV += ${_MODGNOME_cppflags} \
                       ${_MODGNOME_ldflags}
 .endif
