@@ -1,6 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/09/04 09:44:29 kevlo Exp $
-${P5SITE}/Test/Output/
+@comment $OpenBSD: PLIST,v 1.3 2014/12/22 17:48:59 benoit Exp $
 ${P5SITE}/Test/Output.pm
-${P5SITE}/Test/Output/Tie.pm
 @man man/man3p/Test::Output.3p
-@man man/man3p/Test::Output::Tie.3p
