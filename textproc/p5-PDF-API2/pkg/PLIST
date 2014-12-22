@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/19 03:13:20 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/12/22 15:45:15 benoit Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/API2/
 ${P5SITE}/PDF/API2.pm
@@ -9,7 +9,13 @@ ${P5SITE}/PDF/API2/Basic/PDF/Array.pm
 ${P5SITE}/PDF/API2/Basic/PDF/Bool.pm
 ${P5SITE}/PDF/API2/Basic/PDF/Dict.pm
 ${P5SITE}/PDF/API2/Basic/PDF/File.pm
+${P5SITE}/PDF/API2/Basic/PDF/Filter/
 ${P5SITE}/PDF/API2/Basic/PDF/Filter.pm
+${P5SITE}/PDF/API2/Basic/PDF/Filter/ASCII85Decode.pm
+${P5SITE}/PDF/API2/Basic/PDF/Filter/ASCIIHexDecode.pm
+${P5SITE}/PDF/API2/Basic/PDF/Filter/FlateDecode.pm
+${P5SITE}/PDF/API2/Basic/PDF/Filter/LZWDecode.pm
+${P5SITE}/PDF/API2/Basic/PDF/Filter/RunLengthDecode.pm
 ${P5SITE}/PDF/API2/Basic/PDF/Literal.pm
 ${P5SITE}/PDF/API2/Basic/PDF/Name.pm
 ${P5SITE}/PDF/API2/Basic/PDF/Null.pm
@@ -19,72 +25,9 @@ ${P5SITE}/PDF/API2/Basic/PDF/Page.pm
 ${P5SITE}/PDF/API2/Basic/PDF/Pages.pm
 ${P5SITE}/PDF/API2/Basic/PDF/String.pm
 ${P5SITE}/PDF/API2/Basic/PDF/Utils.pm
-${P5SITE}/PDF/API2/Basic/TTF/
-${P5SITE}/PDF/API2/Basic/TTF/AATKern.pm
-${P5SITE}/PDF/API2/Basic/TTF/AATutils.pm
-${P5SITE}/PDF/API2/Basic/TTF/Anchor.pm
-${P5SITE}/PDF/API2/Basic/TTF/Bsln.pm
-${P5SITE}/PDF/API2/Basic/TTF/Cmap.pm
-${P5SITE}/PDF/API2/Basic/TTF/Coverage.pm
-${P5SITE}/PDF/API2/Basic/TTF/Cvt_.pm
-${P5SITE}/PDF/API2/Basic/TTF/Delta.pm
-${P5SITE}/PDF/API2/Basic/TTF/Fdsc.pm
-${P5SITE}/PDF/API2/Basic/TTF/Feat.pm
-${P5SITE}/PDF/API2/Basic/TTF/Fmtx.pm
-${P5SITE}/PDF/API2/Basic/TTF/Font.pm
-${P5SITE}/PDF/API2/Basic/TTF/Fpgm.pm
-${P5SITE}/PDF/API2/Basic/TTF/GDEF.pm
-${P5SITE}/PDF/API2/Basic/TTF/GPOS.pm
-${P5SITE}/PDF/API2/Basic/TTF/GSUB.pm
-${P5SITE}/PDF/API2/Basic/TTF/Glyf.pm
-${P5SITE}/PDF/API2/Basic/TTF/Glyph.pm
-${P5SITE}/PDF/API2/Basic/TTF/Hdmx.pm
-${P5SITE}/PDF/API2/Basic/TTF/Head.pm
-${P5SITE}/PDF/API2/Basic/TTF/Hhea.pm
-${P5SITE}/PDF/API2/Basic/TTF/Hmtx.pm
-${P5SITE}/PDF/API2/Basic/TTF/Kern/
-${P5SITE}/PDF/API2/Basic/TTF/Kern.pm
-${P5SITE}/PDF/API2/Basic/TTF/Kern/ClassArray.pm
-${P5SITE}/PDF/API2/Basic/TTF/Kern/CompactClassArray.pm
-${P5SITE}/PDF/API2/Basic/TTF/Kern/OrderedList.pm
-${P5SITE}/PDF/API2/Basic/TTF/Kern/StateTable.pm
-${P5SITE}/PDF/API2/Basic/TTF/Kern/Subtable.pm
-${P5SITE}/PDF/API2/Basic/TTF/LTSH.pm
-${P5SITE}/PDF/API2/Basic/TTF/Loca.pm
-${P5SITE}/PDF/API2/Basic/TTF/Maxp.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/
-${P5SITE}/PDF/API2/Basic/TTF/Mort.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/Chain.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/Contextual.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/Insertion.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/Ligature.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/Noncontextual.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/Rearrangement.pm
-${P5SITE}/PDF/API2/Basic/TTF/Mort/Subtable.pm
-${P5SITE}/PDF/API2/Basic/TTF/Name.pm
-${P5SITE}/PDF/API2/Basic/TTF/OS_2.pm
-${P5SITE}/PDF/API2/Basic/TTF/OldCmap.pm
-${P5SITE}/PDF/API2/Basic/TTF/OldMort.pm
-${P5SITE}/PDF/API2/Basic/TTF/PCLT.pm
-${P5SITE}/PDF/API2/Basic/TTF/PSNames.pm
-${P5SITE}/PDF/API2/Basic/TTF/Post.pm
-${P5SITE}/PDF/API2/Basic/TTF/Prep.pm
-${P5SITE}/PDF/API2/Basic/TTF/Prop.pm
-${P5SITE}/PDF/API2/Basic/TTF/Segarr.pm
-${P5SITE}/PDF/API2/Basic/TTF/Table.pm
-${P5SITE}/PDF/API2/Basic/TTF/Ttc.pm
-${P5SITE}/PDF/API2/Basic/TTF/Ttopen.pm
-${P5SITE}/PDF/API2/Basic/TTF/Useall.pm
-${P5SITE}/PDF/API2/Basic/TTF/Utils.pm
-${P5SITE}/PDF/API2/Basic/TTF/Vhea.pm
-${P5SITE}/PDF/API2/Basic/TTF/Vmtx.pm
-${P5SITE}/PDF/API2/Basic/TTF/Win32.pm
-${P5SITE}/PDF/API2/Basic/TTF/XMLparse.pm
 ${P5SITE}/PDF/API2/Content/
 ${P5SITE}/PDF/API2/Content.pm
 ${P5SITE}/PDF/API2/Content/Text.pm
-${P5SITE}/PDF/API2/HOWTO.pod
-${P5SITE}/PDF/API2/IOString.pm
 ${P5SITE}/PDF/API2/Lite.pm
 ${P5SITE}/PDF/API2/Matrix.pm
 ${P5SITE}/PDF/API2/NamedDestination.pm
@@ -98,16 +41,16 @@ ${P5SITE}/PDF/API2/Resource/CIDFont/
 ${P5SITE}/PDF/API2/Resource/CIDFont.pm
 ${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/
 ${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/adobemingstdlightacro.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/adobemyungjostdmediumacro.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/adobesongstdlightacro.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/kozgopromediumacro.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/kozminproregularacro.pm
+${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/adobemingstdlightacro.data
+${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/adobemyungjostdmediumacro.data
+${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/adobesongstdlightacro.data
+${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/kozgopromediumacro.data
+${P5SITE}/PDF/API2/Resource/CIDFont/CJKFont/kozminproregularacro.data
 ${P5SITE}/PDF/API2/Resource/CIDFont/CMap/
-${P5SITE}/PDF/API2/Resource/CIDFont/CMap/japanese.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CMap/korean.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CMap/simplified.pm
-${P5SITE}/PDF/API2/Resource/CIDFont/CMap/traditional.pm
+${P5SITE}/PDF/API2/Resource/CIDFont/CMap/japanese.cmap
+${P5SITE}/PDF/API2/Resource/CIDFont/CMap/korean.cmap
+${P5SITE}/PDF/API2/Resource/CIDFont/CMap/simplified.cmap
+${P5SITE}/PDF/API2/Resource/CIDFont/CMap/traditional.cmap
 ${P5SITE}/PDF/API2/Resource/CIDFont/TrueType/
 ${P5SITE}/PDF/API2/Resource/CIDFont/TrueType.pm
 ${P5SITE}/PDF/API2/Resource/CIDFont/TrueType/FontFile.pm
@@ -120,6 +63,7 @@ ${P5SITE}/PDF/API2/Resource/ColorSpace/Indexed/ACTFile.pm
 ${P5SITE}/PDF/API2/Resource/ColorSpace/Indexed/Hue.pm
 ${P5SITE}/PDF/API2/Resource/ColorSpace/Indexed/WebColor.pm
 ${P5SITE}/PDF/API2/Resource/ColorSpace/Separation.pm
+${P5SITE}/PDF/API2/Resource/Colors.pm
 ${P5SITE}/PDF/API2/Resource/ExtGState.pm
 ${P5SITE}/PDF/API2/Resource/Font/
 ${P5SITE}/PDF/API2/Resource/Font.pm
@@ -157,6 +101,8 @@ ${P5SITE}/PDF/API2/Resource/Font/CoreFont/wingdings.pm
 ${P5SITE}/PDF/API2/Resource/Font/CoreFont/zapfdingbats.pm
 ${P5SITE}/PDF/API2/Resource/Font/Postscript.pm
 ${P5SITE}/PDF/API2/Resource/Font/SynFont.pm
+${P5SITE}/PDF/API2/Resource/Glyphs.pm
+${P5SITE}/PDF/API2/Resource/PaperSizes.pm
 ${P5SITE}/PDF/API2/Resource/Pattern.pm
 ${P5SITE}/PDF/API2/Resource/Shading.pm
 ${P5SITE}/PDF/API2/Resource/UniFont.pm
@@ -180,40 +126,47 @@ ${P5SITE}/PDF/API2/Resource/XObject/Image/JPEG.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Image/PNG.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Image/PNM.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Image/TIFF.pm
-${P5SITE}/PDF/API2/Resource/unicolor.txt
 ${P5SITE}/PDF/API2/Resource/uniglyph.txt
-${P5SITE}/PDF/API2/Resource/unipaper.txt
 ${P5SITE}/PDF/API2/UniWrap.pm
 ${P5SITE}/PDF/API2/Util.pm
-${P5SITE}/PDF/API2/Version.pm
 ${P5SITE}/PDF/API2/Win32.pm
-${P5SITE}/PDF/API2/fonts/
-${P5SITE}/PDF/API2/fonts/AUTHORS.txt
-${P5SITE}/PDF/API2/fonts/BUGS.txt
-${P5SITE}/PDF/API2/fonts/DejaVuSans-Bold.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSans-BoldOblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSans-ExtraLight.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSans-Oblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSans.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansCondensed-Bold.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansCondensed-BoldOblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansCondensed-Oblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansCondensed.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansMono-Bold.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansMono-BoldOblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansMono-Oblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSansMono.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerif-Bold.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerif-BoldOblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerif-Oblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerif.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerifCondensed-Bold.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerifCondensed-BoldOblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerifCondensed-Oblique.ttf
-${P5SITE}/PDF/API2/fonts/DejaVuSerifCondensed.ttf
-${P5SITE}/PDF/API2/fonts/LICENSE.txt
-${P5SITE}/PDF/API2/fonts/NEWS.txt
-${P5SITE}/PDF/API2/fonts/README.txt
-${P5SITE}/PDF/API2/fonts/langcover.txt
-${P5SITE}/PDF/API2/fonts/status.txt
-${P5SITE}/PDF/API2/fonts/unicover.txt
+@man man/man3p/PDF::API2.3p
+@man man/man3p/PDF::API2::Annotation.3p
+@man man/man3p/PDF::API2::Basic::PDF::Array.3p
+@man man/man3p/PDF::API2::Basic::PDF::Bool.3p
+@man man/man3p/PDF::API2::Basic::PDF::Dict.3p
+@man man/man3p/PDF::API2::Basic::PDF::File.3p
+@man man/man3p/PDF::API2::Basic::PDF::Filter.3p
+@man man/man3p/PDF::API2::Basic::PDF::Name.3p
+@man man/man3p/PDF::API2::Basic::PDF::Null.3p
+@man man/man3p/PDF::API2::Basic::PDF::Number.3p
+@man man/man3p/PDF::API2::Basic::PDF::Objind.3p
+@man man/man3p/PDF::API2::Basic::PDF::Page.3p
+@man man/man3p/PDF::API2::Basic::PDF::Pages.3p
+@man man/man3p/PDF::API2::Basic::PDF::String.3p
+@man man/man3p/PDF::API2::Basic::PDF::Utils.3p
+@man man/man3p/PDF::API2::Content.3p
+@man man/man3p/PDF::API2::Lite.3p
+@man man/man3p/PDF::API2::NamedDestination.3p
+@man man/man3p/PDF::API2::Outline.3p
+@man man/man3p/PDF::API2::Page.3p
+@man man/man3p/PDF::API2::Resource.3p
+@man man/man3p/PDF::API2::Resource::BaseFont.3p
+@man man/man3p/PDF::API2::Resource::CIDFont.3p
+@man man/man3p/PDF::API2::Resource::CIDFont::CJKFont.3p
+@man man/man3p/PDF::API2::Resource::CIDFont::TrueType.3p
+@man man/man3p/PDF::API2::Resource::ColorSpace.3p
+@man man/man3p/PDF::API2::Resource::ColorSpace::Indexed::ACTFile.3p
+@man man/man3p/PDF::API2::Resource::ColorSpace::Separation.3p
+@man man/man3p/PDF::API2::Resource::ExtGState.3p
+@man man/man3p/PDF::API2::Resource::Font::BdFont.3p
+@man man/man3p/PDF::API2::Resource::Font::CoreFont.3p
+@man man/man3p/PDF::API2::Resource::Font::SynFont.3p
+@man man/man3p/PDF::API2::Resource::UniFont.3p
+@man man/man3p/PDF::API2::Resource::XObject.3p
+@man man/man3p/PDF::API2::Resource::XObject::Form.3p
+@man man/man3p/PDF::API2::Resource::XObject::Form::BarCode.3p
+@man man/man3p/PDF::API2::Resource::XObject::Form::BarCode::code128.3p
+@man man/man3p/PDF::API2::Resource::XObject::Image.3p
+@man man/man3p/PDF::API2::Resource::XObject::Image::TIFF.3p
+@man man/man3p/PDF::API2::Util.3p
