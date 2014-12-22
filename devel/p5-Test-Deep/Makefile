@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/10 16:35:46 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2014/12/22 07:39:19 benoit Exp $
 
 COMMENT =	flexible deep comparison
 
-DISTNAME =	Test-Deep-0.113
+DISTNAME =	Test-Deep-0.114
 CATEGORIES =	devel
 MODULES =	cpan
 
-MAINTAINER =	Andrew Fresh <andrew@afresh1.com>
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
