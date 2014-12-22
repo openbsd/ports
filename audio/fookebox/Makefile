@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/22 00:18:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2014/12/22 20:29:23 landry Exp $
 
 COMMENT=		jukebox frontend to mpd
 
-MODPY_EGG_VERSION=	0.6.1
+MODPY_EGG_VERSION=	0.7.2
 DISTNAME=		fookebox-${MODPY_EGG_VERSION}
-REVISION=		3
+GH_TAG =	${MODPY_EGG_VERSION}
+GH_ACCOUNT =	cockroach
+GH_PROJECT =	fookebox
+GH_COMMIT =	3e466a2773a1641af0836314c110171b6f28f728
 CATEGORIES=		audio www
-
-HOMEPAGE=		https://fookebox.googlecode.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		${HOMEPAGE}/files/
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
