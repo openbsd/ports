@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.67 2014/12/16 11:32:11 sthen Exp $
---- get_iplayer.orig	Mon Dec 15 20:35:41 2014
-+++ get_iplayer	Tue Dec 16 11:21:19 2014
+$OpenBSD: patch-get_iplayer,v 1.68 2014/12/22 14:57:11 sthen Exp $
+--- get_iplayer.orig	Sun Dec 21 18:58:18 2014
++++ get_iplayer	Mon Dec 22 14:56:08 2014
 @@ -386,6 +386,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
  }
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-get_iplayer,v 1.67 2014/12/16 11:32:11 sthen Exp $
  }
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
-@@ -899,7 +900,7 @@ sub init_search {
+@@ -901,7 +902,7 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-get_iplayer,v 1.67 2014/12/16 11:32:11 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -2713,7 +2714,7 @@ sub request_url_retry {
+@@ -2715,7 +2716,7 @@ sub request_url_retry {
  	}
  
  	# Malformed URL check
@@ -36,7 +36,7 @@ $OpenBSD: patch-get_iplayer,v 1.67 2014/12/16 11:32:11 sthen Exp $
  		logger "ERROR: Malformed URL: '$url'\n";
  		return '';
  	}
-@@ -11648,7 +11649,7 @@ sub tag_file_id3 {
+@@ -11683,7 +11684,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
