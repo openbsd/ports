@@ -1,0 +1,4 @@
+Time::Out - Easily timeout long running operations
+
+Time::Out provides an easy interface to alarm(2) based timeouts. 
+Nested timeouts are supported.
