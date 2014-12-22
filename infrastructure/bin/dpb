@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.108 2014/04/28 12:51:41 espie Exp $
+# $OpenBSD: dpb,v 1.109 2014/12/22 09:05:24 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -189,6 +189,7 @@ $state->{affinity} = affinityclass()->new($state, join("/", $state->logdir, "aff
 
 $state->{engine} = DPB::Engine->new($state);
 $reporter = DPB::Reporter->new($state, "main", "DPB::Core", $state->engine);
+print "Waiting for hosts to finish STARTUP...";
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
 	sleep 1;
@@ -200,6 +201,7 @@ sub reread_config
 }
 
 my $core = DPB::Core->get;
+print "ready on ", $core->hostname, "\n";
 
 if (!$state->{fetch_only} && !$state->{scan_only} &&
     DPB::Core::Init->hostcount == 1 && $core->prop->{jobs} == 1) {
