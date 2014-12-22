@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/22 14:41:39 benoit Exp $
+${P5SITE}/PerlIO/
+${P5SITE}/PerlIO/via/
+${P5SITE}/PerlIO/via/README.pod
+${P5SITE}/PerlIO/via/Timeout.pm
+@man man/man3p/PerlIO::via::README.3p
+@man man/man3p/PerlIO::via::Timeout.3p
