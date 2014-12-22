@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_core_screen_c,v 1.4 2014/10/08 09:47:35 ajacoutot Exp $
+$OpenBSD: patch-src_core_screen_c,v 1.5 2014/12/22 09:23:29 jasper Exp $
 
 Use new Startup Notification API.
 
---- src/core/screen.c.orig	Mon Sep 22 19:57:01 2014
-+++ src/core/screen.c	Sun Oct  5 20:22:03 2014
-@@ -2590,7 +2590,8 @@ collect_timed_out_foreach (void *element,
+--- src/core/screen.c.orig	Fri Dec 19 11:57:58 2014
++++ src/core/screen.c	Mon Dec 22 09:59:26 2014
+@@ -2580,7 +2580,8 @@ collect_timed_out_foreach (void *element,
  {
    CollectTimedOutData *ctod = data;
    SnStartupSequence *sequence = element;
