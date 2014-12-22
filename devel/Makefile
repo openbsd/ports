@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1290 2014/12/22 14:46:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.1291 2014/12/22 20:38:14 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1091,6 +1091,7 @@
      SUBDIR += p5-Time-Duration
      SUBDIR += p5-Time-Duration-Parse
      SUBDIR += p5-Time-Format
+     SUBDIR += p5-Time-Out
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece-MySQL
      SUBDIR += p5-Time-Progress
