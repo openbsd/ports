@@ -1,0 +1,4 @@
+IO::Socket provides a way to set a timeout on the socket, but the timeout
+will be used only for connection, not for reading / writing operations.
+This module provides a way to set a timeout on read / write operations on an
+IO::Socket instance, or any IO::Socket::* modules, like IO::Socket::INET.
