@@ -1,55 +1,61 @@
-# $OpenBSD: Makefile,v 1.37 2014/10/08 12:06:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/12/22 14:26:01 ajacoutot Exp $
 
-COMMENT =	digital camera library
-CATEGORIES =	graphics devel
+SHARED_ONLY=		Yes
 
-MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
+COMMENT=		digital camera library
 
-VERSION =	2.5.5.1
-DISTNAME =	libgphoto2-${VERSION}
-PKGNAME =	libgphoto-${VERSION}
-REVISION =	0
+VERSION=		2.5.6
+DISTNAME=		libgphoto2-${VERSION}
+PKGNAME=		libgphoto-${VERSION}
 
-SHARED_LIBS +=  gphoto2_port         7.0      # 11.1
+GPHOTO2_PORT_API=	0.12.0
+SUBST_VARS=		GPHOTO2_PORT_API VERSION
+
+CATEGORIES=		graphics devel
+
+SHARED_LIBS +=  gphoto2_port         8.0      # 12.0
 SHARED_LIBS +=  gphoto2              4.2      # 6.0
 
-HOMEPAGE =	http://www.gphoto.org/
+HOMEPAGE=		http://www.gphoto.org/
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gphoto/}
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c exif expat fontconfig freetype gd jpeg ltdl m png
-WANTLIB += pthread pthread-stubs tiff usb usb-1.0 vpx xml2 z
+WANTLIB += c exif expat fontconfig freetype gd jpeg ltdl lzma
+WANTLIB += m png pthread pthread-stubs tiff usb usb-1.0 vpx xml2
+WANTLIB += z
 
-MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			ac_cv_path_DOXYGEN=false
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--enable-static \
-			--without-hal \
-			--without-bonjour
+MODULES=		devel/gettext
 
-SUBST_VARS =		VERSION
-
-MODULES =		devel/gettext
-LIB_DEPENDS =		graphics/gd \
+LIB_DEPENDS=		graphics/gd \
 			graphics/libexif \
 			devel/libusb-compat \
 			devel/libtool,-ltdl \
 			textproc/libxml
 
-# cleanup
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			ac_cv_path_DOXYGEN=false
+
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-static \
+			--without-hal \
+			--without-bonjour
+
+# /usr/local/lib/libiconv.a(localcharset.o)(.text+0x0): In function `locale_charset':
+# : multiple definition of `locale_charset'
+MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
+
 post-install:
 	rm ${PREFIX}/lib/libgphoto2/${VERSION}/*.{a,la}
-	rm ${PREFIX}/lib/libgphoto2_port/0.10.0/*.{a,la}
+	rm ${PREFIX}/lib/libgphoto2_port/${GPHOTO2_PORT_API}/*.{a,la}
 	rm -rf ${PREFIX}/lib/udev
 	mv ${PREFIX}/share/doc/libgphoto2_port \
 		${PREFIX}/share/doc/libgphoto2
-	rm ${PREFIX}/share/doc/libgphoto2/{ABOUT-NLS,AUTHORS,COPYING,ChangeLog,NEWS,README.packaging}
 
 .include <bsd.port.mk>
