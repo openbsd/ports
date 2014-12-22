@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/16 07:30:49 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/12/22 14:26:54 ajacoutot Exp $
 include/libexif-gtk/
 include/libexif-gtk/gtk-exif-browser.h
 include/libexif-gtk/gtk-exif-content-list.h
@@ -17,8 +16,10 @@ include/libexif-gtk/gtk-exif-entry-version.h
 include/libexif-gtk/gtk-exif-entry.h
 lib/libexif-gtk.a
 lib/libexif-gtk.la
-lib/pkgconfig/
+@lib lib/libexif-gtk.so.${LIBexif-gtk_VERSION}
 lib/pkgconfig/libexif-gtk.pc
-share/locale/es/LC_MESSAGES/libexif-gtk.mo
-share/locale/fr/LC_MESSAGES/libexif-gtk.mo
-share/locale/ru/LC_MESSAGES/libexif-gtk.mo
+share/locale/de/LC_MESSAGES/libexif-gtk-5.mo
+share/locale/es/LC_MESSAGES/libexif-gtk-5.mo
+share/locale/fr/LC_MESSAGES/libexif-gtk-5.mo
+share/locale/pl/LC_MESSAGES/libexif-gtk-5.mo
+share/locale/ru/LC_MESSAGES/libexif-gtk-5.mo
