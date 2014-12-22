@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.3 2014/12/19 20:32:07 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.4 2014/12/22 06:29:59 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=3.4,<3.5
 @pkgpath lang/python3/3.4,-tests
@@ -968,23 +968,7 @@ lib/python3.4/test/cmath_testcases.txt
 lib/python3.4/test/coding20731.py
 lib/python3.4/test/curses_tests.py
 lib/python3.4/test/data/
-lib/python3.4/test/data/BIG5.TXT
-lib/python3.4/test/data/BIG5HKSCS-2004.TXT
-lib/python3.4/test/data/CP932.TXT
-lib/python3.4/test/data/CP936.TXT
-lib/python3.4/test/data/CP949.TXT
-lib/python3.4/test/data/CP950.TXT
-lib/python3.4/test/data/EUC-CN.TXT
-lib/python3.4/test/data/EUC-JISX0213.TXT
-lib/python3.4/test/data/EUC-JP.TXT
-lib/python3.4/test/data/EUC-KR.TXT
-lib/python3.4/test/data/JOHAB.TXT
-lib/python3.4/test/data/NamedSequences.txt
-lib/python3.4/test/data/NormalizationTest.txt
 lib/python3.4/test/data/README
-lib/python3.4/test/data/SHIFTJIS.TXT
-lib/python3.4/test/data/SHIFT_JISX0213.TXT
-lib/python3.4/test/data/gb-18030-2000.xml
 lib/python3.4/test/datetimetester.py
 lib/python3.4/test/decimaltestdata/
 lib/python3.4/test/decimaltestdata/abs.decTest
