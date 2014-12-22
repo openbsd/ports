@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/17 06:19:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/22 11:41:44 ajacoutot Exp $
 
 COMMENT=		OCR and DAR program
 
 GNOME_PROJECT=		ocrfeeder
-GNOME_VERSION=		0.8
-REVISION=		0
+GNOME_VERSION=		0.8.1
 
 CATEGORIES=		graphics textproc
 
@@ -23,6 +22,9 @@ BUILD_DEPENDS=		devel/py-gobject3 \
 			print/py-reportlab/reportlab \
 			textproc/py-enchant \
 			x11/gtk+3
+
+# XXX ?
+BUILD_DEPENDS=		devel/py-gobject
 
 RUN_DEPENDS=		devel/iso-codes \
 			devel/py-gobject3 \
