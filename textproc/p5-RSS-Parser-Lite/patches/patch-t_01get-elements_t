@@ -1,0 +1,15 @@
+$OpenBSD: patch-t_01get-elements_t,v 1.1 2014/12/22 14:00:50 benoit Exp $
+
+- https://rt.cpan.org/Public/Bug/Display.html?id=89579
+
+--- t/01_get-elements.t~	Tue Oct  1 14:48:18 2013
++++ t/01_get-elements.t	Mon Dec 22 10:29:01 2014
+@@ -5,7 +5,7 @@
+ 
+ # change 'tests => 1' to 'tests => last_test_to_print';
+ 
+-use local::lib;
++# use local::lib;
+ use Test::More tests => 5;
+ BEGIN { use_ok('XML::RSS::Parser::Lite') };
+ 
