@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/12/11 13:24:27 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/12/22 21:30:41 zhuk Exp $
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
@@ -4748,6 +4748,9 @@ lib/qt5/cmake/Qt5Help/Qt5HelpConfig.cmake
 lib/qt5/cmake/Qt5Help/Qt5HelpConfigExtras.cmake
 lib/qt5/cmake/Qt5Help/Qt5HelpConfigVersion.cmake
 lib/qt5/cmake/Qt5LinguistTools/
+lib/qt5/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake
+lib/qt5/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake
+lib/qt5/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake
 lib/qt5/cmake/Qt5Multimedia/
 lib/qt5/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake
 lib/qt5/cmake/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake
