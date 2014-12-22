@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/22 20:29:23 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/22 21:22:20 landry Exp $
 
 COMMENT=		jukebox frontend to mpd
 
-MODPY_EGG_VERSION=	0.7.2
+MODPY_EGG_VERSION=	0.7.1
 DISTNAME=		fookebox-${MODPY_EGG_VERSION}
 GH_TAG =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	cockroach
