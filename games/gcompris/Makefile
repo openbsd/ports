@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2014/08/30 08:33:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2014/12/22 13:09:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
-DISTNAME=	gcompris-14.07
+DISTNAME=	gcompris-14.12
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	games education
@@ -23,7 +23,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rsvg-2 sqlite3 util xcb xcb-render xcb-shm xml2 z
+WANTLIB += rsvg-2 sqlite3 util xcb xcb-render xcb-shm xml2 z lzma
 WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES=	http://gcompris.net/download/
