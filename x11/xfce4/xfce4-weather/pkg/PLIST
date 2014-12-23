@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/11/05 10:30:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/12/23 22:02:33 landry Exp $
 @conflict xfce4-weather-plugin-*
 lib/xfce4/panel/plugins/libweather.so
 share/icons/hicolor/48x48/apps/xfce4-weather.png
@@ -39,6 +39,7 @@ share/locale/pt/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/sl/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sr/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-weather-plugin.mo
