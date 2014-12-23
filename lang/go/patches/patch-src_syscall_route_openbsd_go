@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_pkg_syscall_route_openbsd_go,v 1.1 2014/07/25 14:39:41 jsing Exp $
---- src/pkg/syscall/route_openbsd.go.orig	Fri Jul 25 23:38:47 2014
-+++ src/pkg/syscall/route_openbsd.go	Fri Jul 25 23:39:20 2014
+$OpenBSD: patch-src_syscall_route_openbsd_go,v 1.1 2014/12/23 12:21:37 jsing Exp $
+--- src/syscall/route_openbsd.go.orig	Thu Oct 30 12:55:40 2014
++++ src/syscall/route_openbsd.go	Sat Nov  1 02:17:33 2014
 @@ -12,16 +12,16 @@ func (any *anyMessage) toRoutingMessage(b []byte) Rout
  	switch any.Type {
  	case RTM_ADD, RTM_DELETE, RTM_CHANGE, RTM_GET, RTM_LOSING, RTM_REDIRECT, RTM_MISS, RTM_LOCK, RTM_RESOLVE:
