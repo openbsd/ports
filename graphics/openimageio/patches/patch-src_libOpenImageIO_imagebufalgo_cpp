@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libOpenImageIO_imagebufalgo_cpp,v 1.1 2014/12/23 12:34:42 dcoppa Exp $
+
+Fix compilation with freetype>=2.5.4
+
+--- src/libOpenImageIO/imagebufalgo.cpp.orig	Tue Dec 23 06:06:15 2014
++++ src/libOpenImageIO/imagebufalgo.cpp	Tue Dec 23 06:07:53 2014
+@@ -1166,9 +1166,9 @@ ImageBufAlgo::render_text (ImageBuf &R, int x, int y, 
+         if (error)
+             continue;  // ignore errors
+         // now, draw to our target surface
+-        for (int j = 0;  j < slot->bitmap.rows; ++j) {
++        for (unsigned int j = 0;  j < (unsigned int)slot->bitmap.rows; ++j) {
+             int ry = y + j - slot->bitmap_top;
+-            for (int i = 0;  i < slot->bitmap.width; ++i) {
++            for (unsigned int i = 0;  i < (unsigned int)slot->bitmap.width; ++i) {
+                 int rx = x + i + slot->bitmap_left;
+                 float b = slot->bitmap.buffer[slot->bitmap.pitch*j+i] / 255.0f;
+                 R.getpixel (rx, ry, pixelcolor);
