@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/28 11:33:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/12/23 10:38:36 ajacoutot Exp $
 
 COMMENT=	free open source planetarium
 
-DISTNAME=	stellarium-0.12.4
+DISTNAME=	stellarium-0.13.1
 
 CATEGORIES=	astro x11
 
@@ -15,12 +15,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stellarium/}
 
-WANTLIB += GL GLU ICE QtGui QtNetwork QtOpenGL QtScript SM X11
-WANTLIB += Xext c m pthread stdc++ z
+WANTLIB += GL Qt5Concurrent Qt5Core Qt5Declarative Qt5Gui Qt5Network
+WANTLIB += Qt5OpenGL Qt5Script Qt5Widgets c m pthread z
 
-MODULES=	devel/gettext \
-		devel/cmake \
-		x11/qt4
+MODULES=	devel/cmake \
+		x11/qt5
 
 # used to download more stars definitions
 RUN_DEPENDS=	net/curl \
@@ -39,8 +38,7 @@ NO_TEST=	Yes
 
 pre-configure:
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/CMakeLists.txt \
-		${WRKSRC}/cmake/FindIconv.cmake
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
