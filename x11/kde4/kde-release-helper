@@ -619,7 +619,7 @@ update_l10n() {
 		parargs="-j $1"
 	fi
 	if [ $# -eq 0 ]; then
-		dirs=$(list_l10n_port_dirs)
+		dirs=$(list_l10n_ports_dirs)
 	else
 		dirs=
 		for l; do
