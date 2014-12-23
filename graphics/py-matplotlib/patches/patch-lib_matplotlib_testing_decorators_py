@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_matplotlib_testing_decorators_py,v 1.1 2014/12/23 13:50:15 daniel Exp $
+
+Don't create a result_images directory in the current working area.
+
+--- lib/matplotlib/testing/decorators.py.orig	Tue Dec 16 11:39:11 2014
++++ lib/matplotlib/testing/decorators.py	Tue Dec 16 11:39:30 2014
+@@ -323,7 +323,7 @@ def _image_directories(func):
+         basedir = os.path.dirname(mod_file)
+ 
+     baseline_dir = os.path.join(basedir, 'baseline_images', subdir)
+-    result_dir = os.path.abspath(os.path.join('result_images', subdir))
++    result_dir = os.path.abspath(os.path.join(basedir, 'result_images', subdir))
+ 
+     if not os.path.exists(result_dir):
+         cbook.mkdirs(result_dir)
