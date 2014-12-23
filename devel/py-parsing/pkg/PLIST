@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/01/05 13:10:22 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/12/23 13:36:13 shadchin Exp $
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyparsing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
-lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
 share/doc/${MODPY_PY_PREFIX}parsing/
 share/doc/${MODPY_PY_PREFIX}parsing/CHANGES
 share/doc/${MODPY_PY_PREFIX}parsing/HowToUsePyparsing.html
@@ -14,9 +15,11 @@ share/examples/${MODPY_PY_PREFIX}parsing/
 share/examples/${MODPY_PY_PREFIX}parsing/0README.html
 share/examples/${MODPY_PY_PREFIX}parsing/AcManForm.dfm
 share/examples/${MODPY_PY_PREFIX}parsing/LAparser.py
+share/examples/${MODPY_PY_PREFIX}parsing/Setup.ini
 share/examples/${MODPY_PY_PREFIX}parsing/SimpleCalc.py
 share/examples/${MODPY_PY_PREFIX}parsing/SingleForm.dfm
 share/examples/${MODPY_PY_PREFIX}parsing/TAP.py
+share/examples/${MODPY_PY_PREFIX}parsing/__init__.py
 share/examples/${MODPY_PY_PREFIX}parsing/adventureEngine.py
 share/examples/${MODPY_PY_PREFIX}parsing/antlr_grammar.py
 share/examples/${MODPY_PY_PREFIX}parsing/antlr_grammar_tests.py
