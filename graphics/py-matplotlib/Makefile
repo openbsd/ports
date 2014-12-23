@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.50 2014/08/14 07:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2014/12/23 13:48:54 daniel Exp $
 
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	1.2.1
-REVISION =		1
+MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics devel math
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
+
+MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,15 +28,20 @@ MODULES=	lang/python \
 		devel/gettext \
 		x11/tk
 
+MODPY_SETUPTOOLS = Yes
+
 RUN_DEPENDS=	devel/py-tz \
 		devel/py-dateutil \
+		devel/py-parsing \
 		math/py-numpy \
 		x11/py-gtk2 \
 		graphics/py-Pillow \
 		${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	graphics/png
-TEST_DEPENDS =	${RUN_DEPENDS}
+TEST_DEPENDS =	${RUN_DEPENDS} \
+		devel/py-six \
+		devel/py-nose
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 		LDSHARED="${CC} -shared -fPIC"
@@ -49,9 +55,9 @@ post-install:
 	cd ${WRKSRC}/examples && pax -rw * \
 	    ${PREFIX}/share/examples/py-matplotlib
 
+# http://matplotlib.org/devel/testing.html
 do-test: fake
-	cd ${WRKSRC}/examples/tests && ${MAKE_ENV} \
-	    PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-	    ${MODPY_BIN} backend_driver.py
+	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
+		'import matplotlib ; matplotlib.test()'
 
 .include <bsd.port.mk>
