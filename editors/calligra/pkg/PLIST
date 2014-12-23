@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/11 07:05:08 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/23 13:45:17 zhuk Exp $
 @conflict koffice-*
 @bin bin/braindump
 @bin bin/calligra
@@ -876,6 +876,7 @@ lib/kde4/kformdesigner_webbrowser.so
 lib/kde4/kolcmsengine.so
 lib/kde4/kopabackgroundtool.so
 lib/kde4/koreport_barcodeplugin.so
+lib/kde4/koreport_chartplugin.so
 lib/kde4/koreport_mapsplugin.so
 lib/kde4/koreport_webplugin.so
 lib/kde4/kplatorcpsscheduler.so
@@ -7265,6 +7266,7 @@ share/kde4/services/calligra/kformdesigner_mapbrowser.desktop
 share/kde4/services/calligra/kformdesigner_stdwidgets.desktop
 share/kde4/services/calligra/kformdesigner_webbrowser.desktop
 share/kde4/services/calligra/koreport_barcodeplugin.desktop
+share/kde4/services/calligra/koreport_chartplugin.desktop
 share/kde4/services/calligra/koreport_mapsplugin.desktop
 share/kde4/services/calligra/koreport_webplugin.desktop
 share/kde4/services/calligra_docker_defaults.desktop

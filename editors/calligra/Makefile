@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/11 07:05:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/23 13:45:17 zhuk Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
-DISTNAME =	calligra-2.8.6
+DISTNAME =	calligra-2.8.7
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
