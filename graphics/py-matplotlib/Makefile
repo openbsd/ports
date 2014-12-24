@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2014/12/23 13:48:54 daniel Exp $
+# $OpenBSD: Makefile,v 1.52 2014/12/24 14:21:15 sthen Exp $
 
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	1.4.2
+REVISION =		0
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics devel math
@@ -33,6 +34,7 @@ MODPY_SETUPTOOLS = Yes
 RUN_DEPENDS=	devel/py-tz \
 		devel/py-dateutil \
 		devel/py-parsing \
+		devel/py-six \
 		math/py-numpy \
 		x11/py-gtk2 \
 		graphics/py-Pillow \
@@ -40,7 +42,6 @@ RUN_DEPENDS=	devel/py-tz \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	graphics/png
 TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-six \
 		devel/py-nose
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
