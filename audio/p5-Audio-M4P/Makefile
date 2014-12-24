@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/24 08:26:06 benoit Exp $
 
 COMMENT=	M4P/MP4/M4a audio/video tools
 
-DISTNAME=	Audio-M4P-0.51
-REVISION=	0
+DISTNAME =	Audio-M4P-0.57
 CATEGORIES=	audio
 
 MODULES=	cpan
