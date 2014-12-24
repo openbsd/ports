@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/10/26 20:42:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.39 2014/12/24 11:17:34 dcoppa Exp $
 
 SHARED_LIBS=	polarssl 1.0
 
@@ -34,8 +34,8 @@ pre-configure:
 		${WRKSRC}/man/hiawatha.1.in
 
 post-install:
-	mv ${DESTDIR}/etc/hiawatha/ ${PREFIX}/share/examples/hiawatha/
-	mv ${DESTDIR}/var/hiawatha/index.html ${PREFIX}/share/examples/hiawatha/
-	rm -r ${PREFIX}/var/
+	mv ${WRKINST}${SYSCONFDIR}/hiawatha ${PREFIX}/share/examples/hiawatha
+	mv ${WRKINST}/var/hiawatha/index.html ${PREFIX}/share/examples/hiawatha/
+	rm -r ${WRKINST}/var
 
 .include <bsd.port.mk>
