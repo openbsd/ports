@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:29:19 espie Exp $
-@comment ${P5SITE}/ExtUtils/
-@comment ${P5SITE}/ExtUtils/Command.pm
+@comment $OpenBSD: PLIST,v 1.2 2014/12/24 15:46:38 rpe Exp $
 ${P5SITE}/Shell/
 ${P5SITE}/Shell/Command.pm
-@man man/man3p/ExtUtils::Command.3p
-@comment @man man/man3p/Shell::Command.3p
+@man man/man3p/Shell::Command.3p
