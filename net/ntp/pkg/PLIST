@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/02/09 21:36:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/12/24 16:35:12 jca Exp $
 @conflict ntp-doc-*
 @pkgpath net/ntp,-main
 @man man/man5/ntp.conf.5
@@ -71,6 +71,7 @@ share/doc/ntp/html/drivers/driver42.html
 share/doc/ntp/html/drivers/driver43.html
 share/doc/ntp/html/drivers/driver44.html
 share/doc/ntp/html/drivers/driver45.html
+share/doc/ntp/html/drivers/driver46.html
 share/doc/ntp/html/drivers/driver5.html
 share/doc/ntp/html/drivers/driver6.html
 share/doc/ntp/html/drivers/driver7.html

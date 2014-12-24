@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2014/12/24 13:10:20 jca Exp $
+# $OpenBSD: Makefile,v 1.61 2014/12/24 16:35:12 jca Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -9,6 +9,7 @@ COMMENT=	Network Time Protocol reference implementation
 VERSION=	4.2.8
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://archive.ntp.org/ntp4/ntp-4.2/
 
