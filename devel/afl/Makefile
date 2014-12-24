@@ -1,13 +1,13 @@
-#	$OpenBSD: Makefile,v 1.5 2014/12/15 14:13:59 jsg Exp $
+#	$OpenBSD: Makefile,v 1.6 2014/12/24 05:53:55 jsg Exp $
 
 ONLY_FOR_ARCHS= i386 amd64
 
 COMMENT=	instrumented fuzzer
-DISTNAME=	afl-0.90b
+DISTNAME=	afl-1.00b
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	devel
 
-HOMEPAGE=	http://lcamtuf.coredump.cx/afl/
+HOMEPAGE=	http://lcamtuf.coredump.cx/afl
 MASTER_SITES=	${HOMEPAGE}/releases/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
