@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2014/11/16 21:08:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.27 2014/12/24 21:13:22 bcallah Exp $
 
-V =		20141116
+V =		20141223
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
@@ -9,7 +9,6 @@ CATEGORIES =	lang
 BROKEN-hppa =	SIGILL during build
 
 HOMEPAGE =	http://seed7.sourceforge.net/
-
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Interpreter and example programs: GPLv2+
@@ -36,6 +35,7 @@ WRKSRC =	${WRKDIST}/src
 post-patch:
 	perl -pi -e "s,-O2,${CFLAGS},g" ${WRKSRC}/makefile
 	perl -pi -e "s,/usr,${TRUEPREFIX},g" ${WRKDIST}/doc/s7{,c}.1
+	perl -pi -e "s,swap64(?!double),oswap64,g" ${WRKSRC}/sql_post.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/s7{,c} ${PREFIX}/bin
