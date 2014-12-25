@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/20 03:43:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2014/12/25 19:41:07 dcoppa Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
@@ -17,10 +17,6 @@ MASTER_SITES =	https://github.com/bentley/nvi2/releases/download/v${V}/
 WANTLIB=	c ncursesw util
 
 MODULES=	devel/cmake
-
-# the specialized commands don't work yet.
-# until we figure out a graceful way to deal with $@ in cmake.
-USE_NINJA =	No
 
 # ${WRKSRC}/config.h is written
 SEPARATE_BUILD=	No

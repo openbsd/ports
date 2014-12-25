@@ -1,0 +1,9 @@
+$OpenBSD: patch-cl_cl_h,v 1.1 2014/12/25 19:41:07 dcoppa Exp $
+--- cl/cl.h.orig	Wed Dec 24 11:08:53 2014
++++ cl/cl.h	Wed Dec 24 11:10:07 2014
+@@ -92,4 +92,4 @@ typedef enum { INP_OK=0, INP_EOF, INP_ERR, INP_INTR, I
+ #define	FALSE	0
+ #endif
+ 
+-#include "extern.h"
++#include "cl_extern.h"
