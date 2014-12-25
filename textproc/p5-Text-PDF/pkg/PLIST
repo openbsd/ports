@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/10/03 16:59:55 jasper Exp $
-bin/pdfbklt.plx
-bin/pdfrevert.plx
-bin/pdfstamp.plx
+@comment $OpenBSD: PLIST,v 1.11 2014/12/25 07:33:34 benoit Exp $
+bin/pdfbklt
+bin/pdfrevert
+bin/pdfstamp
 ${P5SITE}/Text/
 ${P5SITE}/Text/PDF/
+${P5SITE}/Text/PDF.pm
 ${P5SITE}/Text/PDF/Array.pm
 ${P5SITE}/Text/PDF/Bool.pm
 ${P5SITE}/Text/PDF/Dict.pm
@@ -21,6 +22,7 @@ ${P5SITE}/Text/PDF/TTFont.pm
 ${P5SITE}/Text/PDF/TTFont0.pm
 ${P5SITE}/Text/PDF/Utils.pm
 ${P5SITE}/Text/PDF/changes
+@man man/man3p/Text::PDF.3p
 @man man/man3p/Text::PDF::Array.3p
 @man man/man3p/Text::PDF::Bool.3p
 @man man/man3p/Text::PDF::Dict.3p
@@ -39,6 +41,7 @@ ${P5SITE}/Text/PDF/changes
 @man man/man3p/Text::PDF::Utils.3p
 share/examples/p5-Text-PDF/
 share/examples/p5-Text-PDF/CD.CFG
+share/examples/p5-Text-PDF/boon_graph.pdf
 share/examples/p5-Text-PDF/call_conf.txt
 share/examples/p5-Text-PDF/graph.pl
 share/examples/p5-Text-PDF/hello.pl
@@ -47,5 +50,6 @@ share/examples/p5-Text-PDF/pdfaddpg.pl
 share/examples/p5-Text-PDF/pdfcrop.pl
 share/examples/p5-Text-PDF/pdfgetobj.pl
 share/examples/p5-Text-PDF/pdflines.pl
+share/examples/p5-Text-PDF/squ.pdf
 share/examples/p5-Text-PDF/squares.pdf
 share/examples/p5-Text-PDF/test.pdf
