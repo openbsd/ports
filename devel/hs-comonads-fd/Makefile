@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/27 21:45:36 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/25 21:27:24 kili Exp $
+
+BROKEN =		deprecated
 
 COMMENT =		comonad transformers using functional dependencies
 
