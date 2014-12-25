@@ -1,0 +1,14 @@
+$OpenBSD: patch-qtbase_src_widgets_styles_qgtk2painter_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+Fix Qt5 in situation GTK+ shared library version is overridden.
+--- qtbase/src/widgets/styles/qgtk2painter.cpp.ports.orig	Fri Dec 26 02:24:43 2014
++++ qtbase/src/widgets/styles/qgtk2painter.cpp	Fri Dec 26 02:25:21 2014
+@@ -103,8 +103,7 @@ static void initGtk()
+ {
+     static bool initialized = false;
+     if (!initialized) {
+-        // enforce the "0" suffix, so we'll open libgtk-x11-2.0.so.0
+-        QLibrary libgtk(QLS("gtk-x11-2.0"), 0, 0);
++        QLibrary libgtk(QLS("gtk-x11-2.0"));
+ 
+         QGtk2PainterPrivate::gdk_pixmap_new = (Ptr_gdk_pixmap_new)libgtk.resolve("gdk_pixmap_new");
+         QGtk2PainterPrivate::gdk_pixbuf_get_from_drawable = (Ptr_gdk_pixbuf_get_from_drawable)libgtk.resolve("gdk_pixbuf_get_from_drawable");

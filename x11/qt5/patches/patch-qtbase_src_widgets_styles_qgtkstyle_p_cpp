@@ -1,0 +1,38 @@
+$OpenBSD: patch-qtbase_src_widgets_styles_qgtkstyle_p_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+Fix Qt5 in situation GTK+ shared library version is overridden.
+--- qtbase/src/widgets/styles/qgtkstyle_p.cpp.ports.orig	Fri Dec 26 02:21:40 2014
++++ qtbase/src/widgets/styles/qgtkstyle_p.cpp	Fri Dec 26 02:25:50 2014
+@@ -333,8 +333,7 @@ void QGtkStylePrivate::gtkWidgetSetFocus(GtkWidget *wi
+  */
+ void QGtkStylePrivate::resolveGtk() const
+ {
+-    // enforce the "0" suffix, so we'll open libgtk-x11-2.0.so.0
+-    QLibrary libgtk(QLS("gtk-x11-2.0"), 0, 0);
++    QLibrary libgtk(QLS("gtk-x11-2.0"));
+ 
+     gtk_init = (Ptr_gtk_init)libgtk.resolve("gtk_init");
+     gtk_window_new = (Ptr_gtk_window_new)libgtk.resolve("gtk_window_new");
+@@ -432,8 +431,8 @@ void QGtkStylePrivate::resolveGtk() const
+     pango_font_description_get_family = (Ptr_pango_font_description_get_family)libgtk.resolve("pango_font_description_get_family");
+     pango_font_description_get_style = (Ptr_pango_font_description_get_style)libgtk.resolve("pango_font_description_get_style");
+ 
+-    gnome_icon_lookup_sync = (Ptr_gnome_icon_lookup_sync)QLibrary::resolve(QLS("gnomeui-2"), 0, "gnome_icon_lookup_sync");
+-    gnome_vfs_init= (Ptr_gnome_vfs_init)QLibrary::resolve(QLS("gnomevfs-2"), 0, "gnome_vfs_init");
++    gnome_icon_lookup_sync = (Ptr_gnome_icon_lookup_sync)QLibrary::resolve(QLS("gnomeui-2"), "gnome_icon_lookup_sync");
++    gnome_vfs_init= (Ptr_gnome_vfs_init)QLibrary::resolve(QLS("gnomevfs-2"), "gnome_vfs_init");
+ }
+ 
+ /* \internal
+@@ -601,9 +600,9 @@ void QGtkStylePrivate::cleanupGtkWidgets()
+ static bool resolveGConf()
+ {
+     if (!QGtkStylePrivate::gconf_client_get_default) {
+-        QGtkStylePrivate::gconf_client_get_default = (Ptr_gconf_client_get_default)QLibrary::resolve(QLS("gconf-2"), 4, "gconf_client_get_default");
+-        QGtkStylePrivate::gconf_client_get_string =  (Ptr_gconf_client_get_string)QLibrary::resolve(QLS("gconf-2"), 4, "gconf_client_get_string");
+-        QGtkStylePrivate::gconf_client_get_bool =  (Ptr_gconf_client_get_bool)QLibrary::resolve(QLS("gconf-2"), 4, "gconf_client_get_bool");
++        QGtkStylePrivate::gconf_client_get_default = (Ptr_gconf_client_get_default)QLibrary::resolve(QLS("gconf-2"), "gconf_client_get_default");
++        QGtkStylePrivate::gconf_client_get_string =  (Ptr_gconf_client_get_string)QLibrary::resolve(QLS("gconf-2"), "gconf_client_get_string");
++        QGtkStylePrivate::gconf_client_get_bool =  (Ptr_gconf_client_get_bool)QLibrary::resolve(QLS("gconf-2"), "gconf_client_get_bool");
+     }
+     return (QGtkStylePrivate::gconf_client_get_default !=0);
+ }

@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtwebkit_Source_WebKit2_PluginProcess_qt_PluginProcessMainQt_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+Fix Qt5 in situation GTK+ shared library version is overridden.
+--- qtwebkit/Source/WebKit2/PluginProcess/qt/PluginProcessMainQt.cpp.ports.orig	Fri Dec 26 02:29:24 2014
++++ qtwebkit/Source/WebKit2/PluginProcess/qt/PluginProcessMainQt.cpp	Fri Dec 26 02:29:35 2014
+@@ -53,7 +53,7 @@ static void messageHandler(QtMsgType type, const QMess
+ 
+ static bool initializeGtk()
+ {
+-    QLibrary gtkLibrary(QLatin1String("libgtk-x11-2.0"), 0);
++    QLibrary gtkLibrary(QLatin1String("libgtk-x11-2.0"));
+     if (!gtkLibrary.load())
+         return false;
+     typedef void* (*gtk_init_ptr)(void*, void*);

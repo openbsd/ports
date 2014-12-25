@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtwebkit_Source_WebCore_plugins_qt_PluginPackageQt_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+Fix Qt5 in situation GTK+ shared library version is overridden.
+--- qtwebkit/Source/WebCore/plugins/qt/PluginPackageQt.cpp.ports.orig	Fri Dec 26 02:27:52 2014
++++ qtwebkit/Source/WebCore/plugins/qt/PluginPackageQt.cpp	Fri Dec 26 02:28:33 2014
+@@ -132,7 +132,7 @@ static void initializeGtk(QLibrary* module = 0)
+         }
+     }
+ 
+-    QLibrary library(QLatin1String("libgtk-x11-2.0"), 0);
++    QLibrary library(QLatin1String("libgtk-x11-2.0"));
+     if (library.load()) {
+         typedef void *(*gtk_init_check_ptr)(int*, char***);
+         gtk_init_check_ptr gtkInitCheck = (gtk_init_check_ptr)library.resolve("gtk_init_check");

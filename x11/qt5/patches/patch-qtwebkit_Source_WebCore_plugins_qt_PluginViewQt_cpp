@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtwebkit_Source_WebCore_plugins_qt_PluginViewQt_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+Fix Qt5 in situation GTK+ shared library version is overridden.
+--- qtwebkit/Source/WebCore/plugins/qt/PluginViewQt.cpp.ports.orig	Fri Dec 26 02:28:55 2014
++++ qtwebkit/Source/WebCore/plugins/qt/PluginViewQt.cpp	Fri Dec 26 02:29:10 2014
+@@ -697,7 +697,7 @@ static Display *getPluginDisplay()
+     // support gdk based plugins (like flash) that use a different X connection.
+     // The code below has the same effect as this one:
+     // Display *gdkDisplay = gdk_x11_display_get_xdisplay(gdk_display_get_default());
+-    QLibrary library(QLatin1String("libgdk-x11-2.0"), 0);
++    QLibrary library(QLatin1String("libgdk-x11-2.0"));
+     if (!library.load())
+         return 0;
+ 

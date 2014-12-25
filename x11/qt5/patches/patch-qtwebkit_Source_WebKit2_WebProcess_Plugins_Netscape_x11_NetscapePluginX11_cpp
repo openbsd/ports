@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtwebkit_Source_WebKit2_WebProcess_Plugins_Netscape_x11_NetscapePluginX11_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+Fix Qt5 in situation GTK+ shared library version is overridden.
+--- qtwebkit/Source/WebKit2/WebProcess/Plugins/Netscape/x11/NetscapePluginX11.cpp.ports.orig	Fri Dec 26 02:30:14 2014
++++ qtwebkit/Source/WebKit2/WebProcess/Plugins/Netscape/x11/NetscapePluginX11.cpp	Fri Dec 26 02:30:24 2014
+@@ -64,7 +64,7 @@ static Display* getPluginDisplay()
+     // The code below has the same effect as this one:
+     // Display *gdkDisplay = gdk_x11_display_get_xdisplay(gdk_display_get_default());
+ 
+-    QLibrary library(QLatin1String("libgdk-x11-2.0"), 0);
++    QLibrary library(QLatin1String("libgdk-x11-2.0"));
+     if (!library.load())
+         return 0;
+ 
