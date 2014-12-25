@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.63 2014/11/21 18:55:16 pascal Exp $
+# $OpenBSD: Makefile,v 1.64 2014/12/25 22:44:42 dcoppa Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.72b
+
+REVISION =	0
 
 CATEGORIES =	graphics
 
