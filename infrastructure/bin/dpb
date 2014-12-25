@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.109 2014/12/22 09:05:24 espie Exp $
+# $OpenBSD: dpb,v 1.110 2014/12/25 15:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -106,6 +106,9 @@ use DPB::State;
 use DPB::PkgPath;
 use DPB::Core;
 use DPB::Core::Init;
+use DPB::HostProperties;
+use DPB::Shell;
+use DPB::Host;
 use DPB::Vars;
 use DPB::PortInfo;
 use DPB::Engine;
