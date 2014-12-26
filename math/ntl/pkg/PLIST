@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/11/09 14:35:25 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/12/26 08:42:02 benoit Exp $
 include/NTL/
 include/NTL/FFT.h
 include/NTL/FacVec.h
@@ -115,8 +115,14 @@ share/doc/NTL/HNF.cpp.html
 share/doc/NTL/HNF.txt
 share/doc/NTL/LLL.cpp.html
 share/doc/NTL/LLL.txt
+share/doc/NTL/Lazy.cpp.html
+share/doc/NTL/Lazy.txt
+share/doc/NTL/LazyTable.cpp.html
+share/doc/NTL/LazyTable.txt
 share/doc/NTL/RR.cpp.html
 share/doc/NTL/RR.txt
+share/doc/NTL/SmartPtr.cpp.html
+share/doc/NTL/SmartPtr.txt
 share/doc/NTL/ZZ.cpp.html
 share/doc/NTL/ZZ.txt
 share/doc/NTL/ZZVec.cpp.html
