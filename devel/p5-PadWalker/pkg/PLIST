@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/12/26 09:50:05 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/PadWalker.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/PadWalker/
-@comment ${P5ARCH}/auto/PadWalker/PadWalker.bs
 ${P5ARCH}/auto/PadWalker/PadWalker.so
 @man man/man3p/PadWalker.3p
