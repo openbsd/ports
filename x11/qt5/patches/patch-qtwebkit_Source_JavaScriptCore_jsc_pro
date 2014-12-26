@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtwebkit_Source_JavaScriptCore_jsc_pro,v 1.1 2014/12/26 00:02:32 zhuk Exp $
+Enable W^X in QtWebkit's JIT.
+--- qtwebkit/Source/JavaScriptCore/jsc.pro.ports.orig	Tue Dec 23 11:35:56 2014
++++ qtwebkit/Source/JavaScriptCore/jsc.pro	Tue Dec 23 13:54:38 2014
+@@ -30,4 +30,5 @@ wince* {
+ # Prevent warnings about difference in visibility on Mac OS X
+ contains(QT_CONFIG, reduce_exports):CONFIG += hide_symbols
+ unix:contains(QT_CONFIG, reduce_relocations):CONFIG += bsymbolic_functions
++openbsd:DEFINES *= ASSEMBLER_WX_EXCLUSIVE=1
+ 

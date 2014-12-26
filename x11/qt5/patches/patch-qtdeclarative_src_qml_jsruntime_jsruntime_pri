@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtdeclarative_src_qml_jsruntime_jsruntime_pri,v 1.1 2014/12/26 00:02:32 zhuk Exp $
+Enable W^X in JIT.
+--- qtdeclarative/src/qml/jsruntime/jsruntime.pri.ports.orig	Thu Dec 25 23:26:54 2014
++++ qtdeclarative/src/qml/jsruntime/jsruntime.pri	Thu Dec 25 23:27:08 2014
+@@ -116,6 +116,6 @@ valgrind {
+     DEFINES += V4_USE_VALGRIND
+ }
+ 
+-ios: DEFINES += ENABLE_ASSEMBLER_WX_EXCLUSIVE=1
++ios|openbsd: DEFINES += ENABLE_ASSEMBLER_WX_EXCLUSIVE=1
+ 
+ include(../../3rdparty/double-conversion/double-conversion.pri)
