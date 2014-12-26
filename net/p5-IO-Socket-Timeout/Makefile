@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/22 15:00:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/26 09:07:40 benoit Exp $
 
 COMMENT =	IO::Socket with read/write timeout
 
 DISTNAME =	IO-Socket-Timeout-0.27
 CATEGORIES =	net
+
+REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
@@ -12,6 +14,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS =		devel/p5-PerlIO-via-Timeout
+RUN_DEPENDS =		devel/p5-PerlIO-via-Timeout
 
 .include <bsd.port.mk>
