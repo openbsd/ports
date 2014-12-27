@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/06/05 20:38:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/12/27 15:33:54 jasper Exp $
 bin/gitolite
 libexec/gitolite/
 libexec/gitolite/VERSION
@@ -8,6 +8,7 @@ libexec/gitolite/VREF/EMAIL-CHECK
 libexec/gitolite/VREF/FILETYPE
 libexec/gitolite/VREF/MAX_NEWBIN_SIZE
 libexec/gitolite/VREF/MERGE-CHECK
+libexec/gitolite/VREF/NAME_NC
 libexec/gitolite/VREF/VOTES
 libexec/gitolite/VREF/lock
 libexec/gitolite/VREF/partial-copy
@@ -27,6 +28,7 @@ libexec/gitolite/commands/info
 libexec/gitolite/commands/list-dangling-repos
 libexec/gitolite/commands/lock
 libexec/gitolite/commands/mirror
+libexec/gitolite/commands/motd
 libexec/gitolite/commands/owns
 libexec/gitolite/commands/perms
 libexec/gitolite/commands/print-default-rc
@@ -44,6 +46,7 @@ libexec/gitolite/gitolite
 libexec/gitolite/gitolite-shell
 libexec/gitolite/lib/
 libexec/gitolite/lib/Gitolite/
+libexec/gitolite/lib/Gitolite/Cache.pm
 libexec/gitolite/lib/Gitolite/Common.pm
 libexec/gitolite/lib/Gitolite/Conf/
 libexec/gitolite/lib/Gitolite/Conf.pm
@@ -65,7 +68,9 @@ libexec/gitolite/lib/Gitolite/Triggers.pm
 libexec/gitolite/lib/Gitolite/Triggers/Alias.pm
 libexec/gitolite/lib/Gitolite/Triggers/AutoCreate.pm
 libexec/gitolite/lib/Gitolite/Triggers/CpuTime.pm
+libexec/gitolite/lib/Gitolite/Triggers/Kindergarten.pm
 libexec/gitolite/lib/Gitolite/Triggers/Mirroring.pm
+libexec/gitolite/lib/Gitolite/Triggers/Motd.pm
 libexec/gitolite/lib/Gitolite/Triggers/RefexExpr.pm
 libexec/gitolite/lib/Gitolite/Triggers/RepoUmask.pm
 libexec/gitolite/lib/Gitolite/Triggers/Shell.pm
