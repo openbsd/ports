@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.96 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.97 2014/12/27 15:57:41 rpe Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
 COMMENT-mysql=		MySQL backend for libgda
-COMMENT-pgsql=		PostreSQL backend for libgda
+COMMENT-pgsql=		PostgreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
@@ -23,7 +23,7 @@ PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 REVISION-main=		2
 REVISION-ldap=		1
 REVISION-mysql=		1
-REVISION-pgsql=		1
+REVISION-pgsql=		2
 REVISION-ui=		1
 
 EPOCH-main=		2
