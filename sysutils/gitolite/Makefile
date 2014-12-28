@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/27 15:33:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/28 13:38:56 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		secure hosting of Git repositories
 
 V=			3.6.2
+REVISION=		0
 GH_ACCOUNT=		sitaramc
 GH_PROJECT=		gitolite
 GH_TAGNAME=		v$V
@@ -24,7 +25,7 @@ RUN_DEPENDS=		devel/git
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-SUBST_VARS+=		GH_VER
+SUBST_VARS+=		GH_TAGNAME
 GL_DIR=			${PREFIX}/libexec/gitolite/
 
 do-install:

@@ -1,4 +1,4 @@
-$OpenBSD: patch-install,v 1.4 2014/12/27 15:33:54 jasper Exp $
+$OpenBSD: patch-install,v 1.5 2014/12/28 13:38:56 jasper Exp $
 --- install.orig	Mon Nov 10 04:11:59 2014
 +++ install	Sat Dec 27 16:22:13 2014
 @@ -66,7 +66,7 @@ for my $d ($ln, $to) {
@@ -6,7 +6,7 @@ $OpenBSD: patch-install,v 1.4 2014/12/27 15:33:54 jasper Exp $
  
  chdir($ENV{GL_BINDIR});
 -my $version = `git describe --tags --long --dirty=-dt 2>/dev/null`;
-+my $version = "${GH_VER}";
++my $version = "${GH_TAGNAME}";
  unless ($version =~ /^v\d/) {
      print STDERR "git describe failed; cannot deduce version number\n";
      $version = "(unknown)";
