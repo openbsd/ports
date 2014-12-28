@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/07/13 09:07:50 robert Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/12/28 15:21:50 robert Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -232,6 +232,7 @@ share/mc/hints/mc.hint.eu
 share/mc/hints/mc.hint.fa
 share/mc/hints/mc.hint.fi
 share/mc/hints/mc.hint.fr
+share/mc/hints/mc.hint.fr_CA
 share/mc/hints/mc.hint.gl
 share/mc/hints/mc.hint.hr
 share/mc/hints/mc.hint.hu
@@ -256,6 +257,7 @@ share/mc/hints/mc.hint.sr
 share/mc/hints/mc.hint.sv
 share/mc/hints/mc.hint.sv_SE
 share/mc/hints/mc.hint.szl
+share/mc/hints/mc.hint.te
 share/mc/hints/mc.hint.tr
 share/mc/hints/mc.hint.uk
 share/mc/hints/mc.hint.zh
@@ -269,6 +271,8 @@ share/mc/skins/default.ini
 share/mc/skins/double-lines.ini
 share/mc/skins/featured.ini
 share/mc/skins/gotar.ini
+share/mc/skins/gray-green-purple256.ini
+share/mc/skins/gray-orange-blue256.ini
 share/mc/skins/mc46.ini
 share/mc/skins/modarcon16-defbg.ini
 share/mc/skins/modarcon16.ini
