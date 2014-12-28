@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
---- conf/zabbix_server.conf.orig	Mon Jun 23 16:12:54 2014
-+++ conf/zabbix_server.conf	Tue Jul  8 10:09:58 2014
-@@ -36,7 +36,7 @@
+$OpenBSD: patch-conf_zabbix_server_conf,v 1.5 2014/12/28 15:17:10 robert Exp $
+--- conf/zabbix_server.conf.orig	Tue Dec 16 07:37:44 2014
++++ conf/zabbix_server.conf	Sun Dec 28 16:00:03 2014
+@@ -27,7 +27,7 @@
  # Default:
  # LogFile=
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
  
  ### Option: LogFileSize
  #	Maximum size of log file in MB.
-@@ -66,6 +66,7 @@ LogFile=/tmp/zabbix_server.log
+@@ -57,6 +57,7 @@ LogFile=/tmp/zabbix_server.log
  # Mandatory: no
  # Default:
  # PidFile=/tmp/zabbix_server.pid
@@ -18,7 +18,7 @@ $OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
  
  ### Option: DBHost
  #	Database host name.
-@@ -100,7 +101,7 @@ DBName=zabbix
+@@ -91,7 +92,7 @@ DBName=zabbix
  # Default:
  # DBUser=
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
  
  ### Option: DBPassword
  #	Database password. Ignored for SQLite.
-@@ -116,6 +117,7 @@ DBUser=root
+@@ -107,6 +108,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # DBSocket=/tmp/mysql.sock
@@ -35,7 +35,7 @@ $OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
  
  ### Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -432,6 +434,7 @@ DBUser=root
+@@ -407,6 +409,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # AlertScriptsPath=${datadir}/zabbix/alertscripts
@@ -43,7 +43,7 @@ $OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
  
  ### Option: ExternalScripts
  #	Full path to location of external scripts.
-@@ -440,6 +443,7 @@ DBUser=root
+@@ -415,6 +418,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # ExternalScripts=${datadir}/zabbix/externalscripts
@@ -51,7 +51,7 @@ $OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -448,6 +452,7 @@ DBUser=root
+@@ -423,6 +427,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -59,7 +59,7 @@ $OpenBSD: patch-conf_zabbix_server_conf,v 1.4 2014/07/08 08:10:38 robert Exp $
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -457,6 +462,7 @@ DBUser=root
+@@ -432,6 +437,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
