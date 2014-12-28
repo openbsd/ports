@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/08 11:57:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/28 12:59:54 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
-VERSION =		5.1.3
+VERSION =		5.2.0
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 
 SHARED_LIBS +=  minisat              0.0      # 2.0
-SHARED_LIBS +=  sat-solver           0.0      # 2.0
-SHARED_LIBS +=  link-grammar         2.0      # 6.0
-SHARED_LIBS +=  link-grammar-java    2.0      # 6.0
+SHARED_LIBS +=  sat-solver           1.0      # 4.0
+SHARED_LIBS +=  link-grammar         3.0      # 7.0
+SHARED_LIBS +=  link-grammar-java    3.0      # 7.0
 
 CATEGORIES =		textproc
 
@@ -20,13 +20,18 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += aspell m pthread sqlite3
-WANTLIB-main += ${WANTLIB} c stdc++
-WANTLIB-java += ${WANTLIB} link-grammar minisat sat-solver
+cWANTLIB += ${MODGETTEXT_WANTLIB} aspell m pthread sqlite3
+WANTLIB-main += ${cWANTLIB} ${MODGCC4_CPPWANTLIB} c
+WANTLIB-java += ${cWANTLIB} link-grammar minisat sat-solver
 
 MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
 
 MODULES =		devel/gettext
+
+# -std=c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c++
 
 MULTI_PACKAGES =	-main -java
 PSEUDO_FLAVORS =	no_java
@@ -38,7 +43,7 @@ BUILD_DEPENDS =		textproc/aspell/core
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/aspell/core
 
-LIB_DEPENDS-java =	${LIB_DEPENDS} \
+LIB_DEPENDS-java =	${MODGETTEXT_LIB_DEPENDS} \
 			${BUILD_PKGPATH},-main
 
 RUN_DEPENDS-main = 	${MODGETTEXT_RUN_DEPENDS}
@@ -46,7 +51,6 @@ RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 SUBST_VARS =		VERSION
 
-SEPARATE_BUILD =	No
 CONFIGURE_STYLE =	gnu
 
 ADD_CFLAGS =		-I${JAVA_HOME}/include -I${JAVA_HOME}/include/openbsd
@@ -64,6 +68,9 @@ BUILD_DEPENDS +=	devel/apache-ant
 .else
 CONFIGURE_ARGS +=	--disable-java-bindings
 .endif
+
+pre-configure:
+	perl -pi -e 's,-O2,,g;' -e 's,-O3,,g' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.{a,la}
