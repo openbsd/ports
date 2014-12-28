@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/12/28 16:35:06 jasper Exp $
 
 COMMENT=	Erlang library for building lightweight HTTP servers
 
-VERSION=	1.5.1
-DISTNAME=	mochiweb-${VERSION}p3
-PKGNAME=	erl-${DISTNAME:S/p3//}
-REVISION=	0
+V=		2.10.0
+GH_ACCOUNT=	mochi
+GH_PROJECT=	mochiweb
+GH_TAGNAME=	v$V
+DISTNAME=	${GH_PROJECT}-$V
+PKGNAME=	erl-${DISTNAME}
 CATEGORIES=	www
 
 HOMEPAGE=	https://github.com/basho/mochiweb
@@ -13,9 +15,9 @@ HOMEPAGE=	https://github.com/basho/mochiweb
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://distfiles.nl/
-
 MODULES=	lang/erlang
+
+SUBST_VARS+=	V
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,include,scripts,src}
