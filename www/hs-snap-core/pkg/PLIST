@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/01/20 18:06:55 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/12/28 13:10:59 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Snap/
 lib/ghc/${DISTNAME}/Snap/Core.hi
 lib/ghc/${DISTNAME}/Snap/Core.p_hi
