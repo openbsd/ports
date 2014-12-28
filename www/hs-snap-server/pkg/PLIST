@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/01/20 18:06:55 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/12/28 13:12:21 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/Control/
+lib/ghc/${DISTNAME}/Control/Concurrent/
+lib/ghc/${DISTNAME}/Control/Concurrent/Extended.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/Extended.p_hi
 lib/ghc/${DISTNAME}/Paths_snap_server.hi
 lib/ghc/${DISTNAME}/Paths_snap_server.p_hi
 lib/ghc/${DISTNAME}/Snap/
