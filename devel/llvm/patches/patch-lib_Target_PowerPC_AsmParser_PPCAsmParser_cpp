@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Target_PowerPC_AsmParser_PPCAsmParser_cpp,v 1.1 2014/12/28 00:30:17 brad Exp $
+
+r203699
+Allow exclamation and tilde to be parsed as a part of the ppc asm operand.
+
+--- lib/Target/PowerPC/AsmParser/PPCAsmParser.cpp.orig	Fri Dec 26 14:50:10 2014
++++ lib/Target/PowerPC/AsmParser/PPCAsmParser.cpp	Fri Dec 26 14:50:56 2014
+@@ -1205,6 +1205,8 @@ ParseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
+   case AsmToken::Integer:
+   case AsmToken::Dot:
+   case AsmToken::Dollar:
++  case AsmToken::Exclaim:
++  case AsmToken::Tilde:
+     if (!ParseExpression(EVal))
+       break;
+     /* fall through */

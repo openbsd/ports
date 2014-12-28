@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCISelDAGToDAG_cpp,v 1.2 2014/09/11 17:54:13 brad Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCISelDAGToDAG_cpp,v 1.3 2014/12/28 00:30:18 brad Exp $
 
 r203054
 The PPC global base register cannot be r0
@@ -16,8 +16,14 @@ backend.
 r213960
 [PowerPC] Support TLS on PPC32/ELF
 
+r209821
+[PPC] Use alias symbols in address computation.
+
+This seems to match what gcc does for ppc and what every other llvm
+backend does.
+
 --- lib/Target/PowerPC/PPCISelDAGToDAG.cpp.orig	Sun Mar  2 21:57:39 2014
-+++ lib/Target/PowerPC/PPCISelDAGToDAG.cpp	Sun Jul 27 04:50:41 2014
++++ lib/Target/PowerPC/PPCISelDAGToDAG.cpp	Fri Dec 26 15:33:12 2014
 @@ -15,6 +15,7 @@
  #define DEBUG_TYPE "ppc-codegen"
  #include "PPC.h"
@@ -67,7 +73,28 @@ r213960
  
      // For medium and large code model, we generate two instructions as
      // described below.  Otherwise we allow SelectCodeCommon to handle this,
-@@ -1418,6 +1437,12 @@ SDNode *PPCDAGToDAGISel::Select(SDNode *N) {
+@@ -1400,24 +1419,21 @@ SDNode *PPCDAGToDAGISel::Select(SDNode *N) {
+ 
+     if (GlobalAddressSDNode *G = dyn_cast<GlobalAddressSDNode>(GA)) {
+       const GlobalValue *GValue = G->getGlobal();
+-      const GlobalAlias *GAlias = dyn_cast<GlobalAlias>(GValue);
+-      const GlobalValue *RealGValue = GAlias ?
+-        GAlias->resolveAliasedGlobal(false) : GValue;
+-      const GlobalVariable *GVar = dyn_cast<GlobalVariable>(RealGValue);
+-      assert((GVar || isa<Function>(RealGValue)) &&
+-             "Unexpected global value subclass!");
+-
+-      // An external variable is one without an initializer.  For these,
+-      // for variables with common linkage, and for Functions, generate
+-      // the LDtocL form.
+-      if (!GVar || !GVar->hasInitializer() || RealGValue->hasCommonLinkage() ||
+-          RealGValue->hasAvailableExternallyLinkage())
++      if (GValue->getType()->getElementType()->isFunctionTy() ||
++          GValue->isDeclaration() || GValue->hasCommonLinkage() ||
++          GValue->hasAvailableExternallyLinkage())
+         return CurDAG->getMachineNode(PPC::LDtocL, dl, MVT::i64, GA,
+                                       SDValue(Tmp, 0));
+     }
  
      return CurDAG->getMachineNode(PPC::ADDItocL, dl, MVT::i64,
                                    SDValue(Tmp, 0), GA);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCAsmPrinter_cpp,v 1.1 2014/09/11 17:54:13 brad Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCAsmPrinter_cpp,v 1.2 2014/12/28 00:30:18 brad Exp $
 
 r213427
 [PowerPC] 32-bit ELF PIC support
@@ -10,8 +10,14 @@ backend.
 r213960
 [PowerPC] Support TLS on PPC32/ELF
 
+r209821
+[PPC] Use alias symbols in address computation.
+
+This seems to match what gcc does for ppc and what every other llvm
+backend does.
+
 --- lib/Target/PowerPC/PPCAsmPrinter.cpp.orig	Sun Mar  2 21:57:39 2014
-+++ lib/Target/PowerPC/PPCAsmPrinter.cpp	Sun Jul 27 19:51:14 2014
++++ lib/Target/PowerPC/PPCAsmPrinter.cpp	Fri Dec 26 15:31:43 2014
 @@ -19,6 +19,7 @@
  #define DEBUG_TYPE "asmprinter"
  #include "PPC.h"
@@ -103,7 +109,68 @@ r213960
    case PPC::LDtocJTI:
    case PPC::LDtocCPT:
    case PPC::LDtoc: {
-@@ -513,6 +576,34 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+@@ -376,16 +439,12 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+     bool IsAvailExt = false;
+ 
+     if (MO.isGlobal()) {
+-      const GlobalValue *GValue = MO.getGlobal();
+-      const GlobalAlias *GAlias = dyn_cast<GlobalAlias>(GValue);
+-      const GlobalValue *RealGValue = GAlias ?
+-        GAlias->resolveAliasedGlobal(false) : GValue;
+-      MOSymbol = getSymbol(RealGValue);
+-      const GlobalVariable *GVar = dyn_cast<GlobalVariable>(RealGValue);
+-      IsExternal = GVar && !GVar->hasInitializer();
+-      IsCommon = GVar && RealGValue->hasCommonLinkage();
+-      IsFunction = !GVar;
+-      IsAvailExt = GVar && RealGValue->hasAvailableExternallyLinkage();
++      const GlobalValue *GV = MO.getGlobal();
++      MOSymbol = getSymbol(GV);
++      IsExternal = GV->isDeclaration();
++      IsCommon = GV->hasCommonLinkage();
++      IsFunction = GV->getType()->getElementType()->isFunctionTy();
++      IsAvailExt = GV->hasAvailableExternallyLinkage();
+     } else if (MO.isCPI())
+       MOSymbol = GetCPISymbol(MO.getIndex());
+     else if (MO.isJTI())
+@@ -424,14 +483,10 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+     }
+     else if (MO.isGlobal()) {
+       const GlobalValue *GValue = MO.getGlobal();
+-      const GlobalAlias *GAlias = dyn_cast<GlobalAlias>(GValue);
+-      const GlobalValue *RealGValue = GAlias ?
+-        GAlias->resolveAliasedGlobal(false) : GValue;
+-      MOSymbol = getSymbol(RealGValue);
+-      const GlobalVariable *GVar = dyn_cast<GlobalVariable>(RealGValue);
+-    
+-      if (!GVar || !GVar->hasInitializer() || RealGValue->hasCommonLinkage() ||
+-          RealGValue->hasAvailableExternallyLinkage() ||
++      MOSymbol = getSymbol(GValue);
++      if (GValue->getType()->getElementType()->isFunctionTy() ||
++          GValue->isDeclaration() || GValue->hasCommonLinkage() ||
++          GValue->hasAvailableExternallyLinkage() ||
+           TM.getCodeModel() == CodeModel::Large)
+         MOSymbol = lookUpOrCreateTOCEntry(MOSymbol);
+     }
+@@ -458,14 +513,10 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+     bool IsFunction = false;
+ 
+     if (MO.isGlobal()) {
+-      const GlobalValue *GValue = MO.getGlobal();
+-      const GlobalAlias *GAlias = dyn_cast<GlobalAlias>(GValue);
+-      const GlobalValue *RealGValue = GAlias ?
+-        GAlias->resolveAliasedGlobal(false) : GValue;
+-      MOSymbol = getSymbol(RealGValue);
+-      const GlobalVariable *GVar = dyn_cast<GlobalVariable>(RealGValue);
+-      IsExternal = GVar && !GVar->hasInitializer();
+-      IsFunction = !GVar;
++      const GlobalValue *GV = MO.getGlobal();
++      MOSymbol = getSymbol(GV);
++      IsExternal = GV->isDeclaration();
++      IsFunction = GV->getType()->getElementType()->isFunctionTy();
+     } else if (MO.isCPI())
+       MOSymbol = GetCPISymbol(MO.getIndex());
+ 
+@@ -513,6 +564,34 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
      return;
    }
  
@@ -138,7 +205,7 @@ r213960
    case PPC::PPC32GOT: {
      MCSymbol *GOTSymbol = OutContext.GetOrCreateSymbol(StringRef("_GLOBAL_OFFSET_TABLE_"));
      const MCExpr *SymGotTlsL =
-@@ -546,40 +637,54 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+@@ -546,40 +625,54 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
                                  .addExpr(SymGotTlsGD));
      return;
    }
@@ -206,7 +273,7 @@ r213960
      return;
    }
    case PPC::ADDIStlsldHA: {
-@@ -598,72 +703,93 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+@@ -598,72 +691,93 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
                                  .addExpr(SymGotTlsLD));
      return;
    }
@@ -325,7 +392,7 @@ r213960
      return;
    }
    case PPC::MFOCRF:
-@@ -722,9 +848,60 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+@@ -722,9 +836,60 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
    EmitToStreamer(OutStreamer, TmpInst);
  }
  
@@ -387,7 +454,7 @@ r213960
      
    // Emit an official procedure descriptor.
    MCSectionSubPair Current = OutStreamer.getCurrentSection();
-@@ -764,17 +941,27 @@ bool PPCLinuxAsmPrinter::doFinalization(Module &M) {
+@@ -764,17 +929,27 @@ bool PPCLinuxAsmPrinter::doFinalization(Module &M) {
    PPCTargetStreamer &TS =
        static_cast<PPCTargetStreamer &>(*OutStreamer.getTargetStreamer());
  
