@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2014/12/28 14:28:34 jasper Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
@@ -140,10 +140,10 @@ post-install:
 	@ln -sf ../lib/erlang/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
 	tar zxf ${FULLDISTDIR}/otp_doc_html_${V}.tar.gz -C ${DOC_DIR}
-	rm -rf ${DOC_DIR}/lib/${JINTERFACE}
-	rm -rf ${DOC_DIR}/lib/${ODBC}
-	rm -rf ${DOC_DIR}/man/man7/*MIB.7
-	rm -rf ${DOC_DIR}/man/man7/*TM.7
+	rm -r ${DOC_DIR}/lib/${JINTERFACE}
+	rm -r ${DOC_DIR}/lib/${ODBC}
+	rm -r ${DOC_DIR}/man/man7/*MIB.7
+	rm -r ${DOC_DIR}/man/man7/*TM.7
 	# resolve confict with audio/speech-dispatcher
 	mv ${PREFIX}/bin/run_test ${PREFIX}/bin/run_etest
 
