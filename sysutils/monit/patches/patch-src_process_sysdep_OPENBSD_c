@@ -1,25 +1,17 @@
-$OpenBSD: patch-src_process_sysdep_OPENBSD_c,v 1.4 2014/09/17 14:42:52 espie Exp $
---- src/process/sysdep_OPENBSD.c.orig	Mon May 12 09:51:19 2014
-+++ src/process/sysdep_OPENBSD.c	Wed Sep 17 08:41:37 2014
-@@ -45,6 +45,10 @@
- #include <sys/proc.h>
- #endif
- 
-+#ifdef HAVE_SYS_VMMETER_H
-+#include <sys/vmmeter.h>
-+#endif
-+
- #ifdef HAVE_KVM_H
- #include <kvm.h>
- #endif
-@@ -57,9 +61,7 @@
+$OpenBSD: patch-src_process_sysdep_OPENBSD_c,v 1.5 2014/12/28 12:33:57 jasper Exp $
+
+https://bitbucket.org/tildeslash/monit/pull-request/22/openbsd-needs-sys-schedh/diff
+
+--- src/process/sysdep_OPENBSD.c.orig	Mon Dec 22 19:41:37 2014
++++ src/process/sysdep_OPENBSD.c	Sun Dec 28 12:17:57 2014
+@@ -61,8 +61,8 @@
  #include <sys/sysctl.h>
  #endif
  
 -#ifdef HAVE_SYS_DKSTAT_H
 -#include <sys/dkstat.h>
--#endif
++#ifdef HAVE_SYS_SCHED_H
 +#include <sys/sched.h>
+ #endif
  
  #include "monit.h"
- #include "process.h"

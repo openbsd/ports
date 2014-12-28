@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2014/12/28 12:33:57 jasper Exp $
+
+https://bitbucket.org/tildeslash/monit/pull-request/22/openbsd-needs-sys-schedh
+
+--- configure.ac.orig	Sun Dec 28 12:17:19 2014
++++ configure.ac	Sun Dec 28 12:17:42 2014
+@@ -168,6 +168,7 @@ AC_CHECK_HEADERS([ \
+ 	sys/pstat.h \
+ 	sys/queue.h \
+ 	sys/resource.h \
++	sys/sched.h \
+ 	sys/statfs.h \
+ 	sys/statvfs.h \
+ 	sys/sysinfo.h \
