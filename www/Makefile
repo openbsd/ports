@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.693 2014/12/19 20:12:00 landry Exp $
+# $OpenBSD: Makefile,v 1.694 2014/12/28 20:58:45 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -47,7 +47,6 @@
 #     SUBDIR += elinks,js
      SUBDIR += epiphany
      SUBDIR += erl-mochiweb
-     SUBDIR += erl-webmachine
      SUBDIR += fcgi
      SUBDIR += fcgi-cgi
      SUBDIR += ffproxy
