@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/22 10:05:15 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/12/28 19:48:03 jasper Exp $
 @conflict py-CouchDB-*
 bin/couchdb-dump
 bin/couchdb-load
@@ -35,10 +35,10 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/tests/client.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/client.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couch_tests.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couch_tests.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couchhttp.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couchhttp.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/design.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/design.pyc
-lib/python${MODPY_VERSION}/site-packages/couchdb/tests/http.py
-lib/python${MODPY_VERSION}/site-packages/couchdb/tests/http.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/mapping.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/mapping.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/multipart.py
@@ -60,6 +60,12 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/tools/load.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/load.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replicate.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replicate.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/util.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/util.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/util2.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/util2.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/util3.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/util3.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/view.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/view.pyc
 share/doc/${MODPY_PY_PREFIX}couchdb/
@@ -91,12 +97,12 @@ share/doc/${MODPY_PY_PREFIX}couchdb/getting-started.html
 share/doc/${MODPY_PY_PREFIX}couchdb/index.html
 share/doc/${MODPY_PY_PREFIX}couchdb/mapping.html
 share/doc/${MODPY_PY_PREFIX}couchdb/objects.inv
-share/doc/${MODPY_PY_PREFIX}couchdb/py-modindex.html
+share/doc/${MODPY_PY_PREFIX}couchdb/${MODPY_PY_PREFIX}modindex.html
 share/doc/${MODPY_PY_PREFIX}couchdb/search.html
 share/doc/${MODPY_PY_PREFIX}couchdb/searchindex.js
 share/doc/${MODPY_PY_PREFIX}couchdb/views.html
 share/examples/${MODPY_PY_PREFIX}couchdb/
-share/examples/${MODPY_PY_PREFIX}couchdb/python.ini
 @sample ${SYSCONFDIR}/couchdb/
 @sample ${SYSCONFDIR}/couchdb/local.d/
+share/examples/${MODPY_PY_PREFIX}couchdb/python.ini
 @sample ${SYSCONFDIR}/couchdb/local.d/python.ini
