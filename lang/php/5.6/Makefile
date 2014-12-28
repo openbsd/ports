@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/02 09:41:07 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/28 13:01:42 robert Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -7,9 +7,7 @@ BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 USE_LIBTOOL=	No
 
 PV=		5.6
-V=		${PV}.3
-
-REVISION=	1
+V=		${PV}.4
 
 INI_TEMPLATES=	development production
 
