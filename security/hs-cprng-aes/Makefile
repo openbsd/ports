@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/12/28 12:45:40 kili Exp $
+
+BROKEN =		needs new dependencies hs-cipher-aes and hs-crypto-random
 
 COMMENT =		crypto PRNG using AES in counter mode.
 
