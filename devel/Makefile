@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1295 2014/12/28 09:24:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.1296 2014/12/28 09:42:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1349,7 +1349,6 @@
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
-     SUBDIR += ruby-hub
      SUBDIR += ruby-i18n
      SUBDIR += ruby-indentation
      SUBDIR += ruby-isolate
