@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/18 22:25:06 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2014/12/28 13:11:42 kili Exp $
 
 COMMENT =		Snap framework static loader
 
-DISTNAME =		snap-loader-static-0.9.0.1
+DISTNAME =		snap-loader-static-0.9.0.2
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
