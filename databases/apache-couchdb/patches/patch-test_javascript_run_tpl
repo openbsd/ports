@@ -1,0 +1,9 @@
+$OpenBSD: patch-test_javascript_run_tpl,v 1.1 2014/12/28 19:54:58 jasper Exp $
+--- test/javascript/run.tpl.orig	Sun Dec 28 20:26:11 2014
++++ test/javascript/run.tpl	Sun Dec 28 20:26:25 2014
+@@ -1,4 +1,4 @@
+-#!/bin/sh -e
++#!${LOCALBASE}/bin/bash -e
+ 
+ # Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ # use this file except in compliance with the License. You may obtain a copy of

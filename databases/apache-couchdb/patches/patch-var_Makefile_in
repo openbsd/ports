@@ -1,7 +1,7 @@
-$OpenBSD: patch-var_Makefile_in,v 1.5 2013/02/07 16:06:43 jasper Exp $
---- var/Makefile.in.orig	Thu Dec 20 22:00:17 2012
-+++ var/Makefile.in	Tue Jan 15 21:25:59 2013
-@@ -365,7 +365,7 @@ info-am:
+$OpenBSD: patch-var_Makefile_in,v 1.6 2014/12/28 19:54:58 jasper Exp $
+--- var/Makefile.in.orig	Fri Aug 22 01:15:39 2014
++++ var/Makefile.in	Sun Dec 28 19:47:18 2014
+@@ -384,7 +384,7 @@ info-am:
  
  install-data-am:
  	@$(NORMAL_INSTALL)
