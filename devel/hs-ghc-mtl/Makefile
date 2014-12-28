@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/15 19:26:22 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2014/12/28 11:36:21 kili Exp $
+
+BROKEN =		update needs new dependency hs-exceptions
 
 COMMENT =		mtl compatible GhcT monad-transformer
-
-# XXX update to newer version needs a new dependency: exceptions.
 
 DISTNAME =		ghc-mtl-1.0.1.2
 REVISION =		0
