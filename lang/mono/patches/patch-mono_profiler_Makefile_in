@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_profiler_Makefile_in,v 1.6 2014/07/09 11:39:17 robert Exp $
---- mono/profiler/Makefile.in.orig	Tue Jul  8 13:51:53 2014
-+++ mono/profiler/Makefile.in	Tue Jul  8 13:52:28 2014
-@@ -414,13 +414,13 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.7 2014/12/29 10:49:12 robert Exp $
+--- mono/profiler/Makefile.in.orig	Sat Oct  4 11:29:00 2014
++++ mono/profiler/Makefile.in	Sun Dec 28 16:22:53 2014
+@@ -473,13 +473,13 @@ AM_CPPFLAGS = \
  @DISABLE_EXECUTABLES_FALSE@@SHARED_MONO_FALSE@@SUPPORT_BOEHM_TRUE@	$(LIBGC_STATIC_LIBS)
  
  libmono_profiler_cov_la_SOURCES = mono-cov.c

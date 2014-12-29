@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgc_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
---- libgc/Makefile.in.orig	Tue Jul  8 11:53:47 2014
-+++ libgc/Makefile.in	Tue Jul  8 11:54:08 2014
-@@ -91,7 +91,7 @@ am__libmonogc_static_la_SOURCES_DIST = allchblk.c allo
+$OpenBSD: patch-libgc_Makefile_in,v 1.2 2014/12/29 10:49:12 robert Exp $
+--- libgc/Makefile.in.orig	Sat Oct  4 11:29:03 2014
++++ libgc/Makefile.in	Sun Dec 28 16:22:53 2014
+@@ -120,7 +120,7 @@ am__libmonogc_static_la_SOURCES_DIST = allchblk.c allo
  	ptr_chck.c real_malloc.c reclaim.c solaris_pthreads.c \
  	solaris_threads.c specific.c stubborn.c typd_mlc.c backgraph.c \
  	win32_threads.c pthread_support.c pthread_stop_world.c \
@@ -10,7 +10,7 @@ $OpenBSD: patch-libgc_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
  	powerpc_darwin_mach_dep.s ia64_save_regs_in_stack.s
  @POWERPC_DARWIN_FALSE@@TARGET_IA64_TRUE@am__objects_1 = ia64_save_regs_in_stack.lo
  @POWERPC_DARWIN_TRUE@am__objects_1 = powerpc_darwin_mach_dep.lo
-@@ -103,7 +103,7 @@ am__objects_2 = allchblk.lo alloc.lo blacklst.lo check
+@@ -132,7 +132,7 @@ am__objects_2 = allchblk.lo alloc.lo blacklst.lo check
  	solaris_threads.lo specific.lo stubborn.lo typd_mlc.lo \
  	backgraph.lo win32_threads.lo pthread_support.lo \
  	pthread_stop_world.lo darwin_stop_world.lo \
@@ -19,7 +19,7 @@ $OpenBSD: patch-libgc_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
  am_libmonogc_static_la_OBJECTS = $(am__objects_2)
  libmonogc_static_la_OBJECTS = $(am_libmonogc_static_la_OBJECTS)
  AM_V_lt = $(am__v_lt_@AM_V@)
-@@ -120,7 +120,7 @@ am__libmonogc_la_SOURCES_DIST = allchblk.c alloc.c bla
+@@ -150,7 +150,7 @@ am__libmonogc_la_SOURCES_DIST = allchblk.c alloc.c bla
  	ptr_chck.c real_malloc.c reclaim.c solaris_pthreads.c \
  	solaris_threads.c specific.c stubborn.c typd_mlc.c backgraph.c \
  	win32_threads.c pthread_support.c pthread_stop_world.c \
@@ -28,7 +28,7 @@ $OpenBSD: patch-libgc_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
  	powerpc_darwin_mach_dep.s ia64_save_regs_in_stack.s
  am_libmonogc_la_OBJECTS = allchblk.lo alloc.lo blacklst.lo \
  	checksums.lo dbg_mlc.lo dyn_load.lo finalize.lo gc_dlopen.lo \
-@@ -130,7 +130,7 @@ am_libmonogc_la_OBJECTS = allchblk.lo alloc.lo blackls
+@@ -160,7 +160,7 @@ am_libmonogc_la_OBJECTS = allchblk.lo alloc.lo blackls
  	solaris_threads.lo specific.lo stubborn.lo typd_mlc.lo \
  	backgraph.lo win32_threads.lo pthread_support.lo \
  	pthread_stop_world.lo darwin_stop_world.lo \
@@ -37,7 +37,7 @@ $OpenBSD: patch-libgc_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
  libmonogc_la_OBJECTS = $(am_libmonogc_la_OBJECTS)
  libmonogc_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-@@ -410,7 +410,7 @@ obj_map.c os_dep.c pcr_interface.c ptr_chck.c real_mal
+@@ -475,7 +475,7 @@ obj_map.c os_dep.c pcr_interface.c ptr_chck.c real_mal
  solaris_pthreads.c solaris_threads.c specific.c stubborn.c typd_mlc.c \
  backgraph.c win32_threads.c \
  pthread_support.c pthread_stop_world.c darwin_stop_world.c \
@@ -46,7 +46,7 @@ $OpenBSD: patch-libgc_Makefile_in,v 1.1 2014/07/09 11:39:17 robert Exp $
  
  
  # Include THREADDLLIBS here to ensure that the correct versions of
-@@ -575,7 +575,6 @@ distclean-compile:
+@@ -644,7 +644,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/misc.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/new_hblk.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/obj_map.Plo@am__quote@

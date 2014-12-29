@@ -1,0 +1,16 @@
+$OpenBSD: patch-mono_Makefile_in,v 1.1 2014/12/29 10:49:12 robert Exp $
+--- mono/Makefile.in.orig	Sun Dec 28 16:47:28 2014
++++ mono/Makefile.in	Sun Dec 28 16:47:37 2014
+@@ -380,10 +380,10 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-@CROSS_COMPILING_FALSE@@INSTALL_MONOTOUCH_FALSE@SUBDIRS = arch utils io-layer cil metadata $(interpreter_dir) mini dis monograph tests unit-tests benchmark profiler
++@CROSS_COMPILING_FALSE@@INSTALL_MONOTOUCH_FALSE@SUBDIRS = arch utils io-layer cil metadata $(interpreter_dir) mini dis monograph tests benchmark profiler
+ @CROSS_COMPILING_FALSE@@INSTALL_MONOTOUCH_TRUE@SUBDIRS = utils io-layer metadata arch mini profiler
+ @CROSS_COMPILING_TRUE@SUBDIRS = arch utils io-layer cil metadata $(interpreter_dir) mini dis profiler
+-DIST_SUBDIRS = arch utils io-layer cil metadata interpreter mini dis monograph tests unit-tests benchmark profiler
++DIST_SUBDIRS = arch utils io-layer cil metadata interpreter mini dis monograph tests benchmark profiler
+ all: all-recursive
+ 
+ .SUFFIXES:

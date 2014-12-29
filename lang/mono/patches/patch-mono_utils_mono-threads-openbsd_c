@@ -1,0 +1,11 @@
+$OpenBSD: patch-mono_utils_mono-threads-openbsd_c,v 1.1 2014/12/29 10:49:12 robert Exp $
+--- mono/utils/mono-threads-openbsd.c.orig	Sun Dec 28 16:29:20 2014
++++ mono/utils/mono-threads-openbsd.c	Sun Dec 28 16:30:07 2014
+@@ -2,6 +2,7 @@
+ 
+ #if defined(__OpenBSD__)
+ 
++#include <mono/utils/mono-threads.h>
+ #include <pthread.h>
+ #include <pthread_np.h>
+ 
