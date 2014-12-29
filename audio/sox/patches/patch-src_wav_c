@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_wav_c,v 1.1 2014/12/29 10:44:55 sthen Exp $
+
+[f39c57] More checks for invalid MS ADPCM blocks.
+
+If block doesn't exacty match blockAlign then do not allow
+number of samples in invalid size block to ever be more than
+what WAV header defined as samplesPerBlock.
+
+--- src/wav.c.orig	Wed Dec 24 12:33:35 2014
++++ src/wav.c	Wed Dec 24 12:33:54 2014
+@@ -166,7 +166,7 @@ static unsigned short  AdpcmReadBlock(sox_format_t * f
+         /* work with partial blocks.  Specs say it should be null */
+         /* padded but I guess this is better than trailing quiet. */
+         samplesThisBlock = lsx_ms_adpcm_samples_in((size_t)0, (size_t)ft->signal.channels, bytesRead, (size_t)0);
+-        if (samplesThisBlock == 0)
++        if (samplesThisBlock == 0 || samplesThisBlock > wav->samplesPerBlock)
+         {
+             lsx_warn("Premature EOF on .wav input file");
+             return 0;
