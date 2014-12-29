@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2014/12/28 12:59:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2014/12/29 10:06:05 ajacoutot Exp $
+@bin bin/dict-reopen
 @bin bin/link-parser
-@bin bin/multi-thread
 include/link-grammar/
 include/link-grammar/dict-api.h
 include/link-grammar/dict-structures.h
@@ -18,7 +18,7 @@ lib/libsat-solver.la
 lib/pkgconfig/link-grammar.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.7.0
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.7.1
 @man man/man1/link-parser.1
 share/link-grammar/
 share/link-grammar/amy/
@@ -181,6 +181,12 @@ share/link-grammar/he/4.0.constituent-knowledge
 share/link-grammar/he/4.0.dict
 share/link-grammar/he/4.0.knowledge
 share/link-grammar/he/4.0.regex
+share/link-grammar/id/
+share/link-grammar/id/4.0.affix
+share/link-grammar/id/4.0.constituent-knowledge
+share/link-grammar/id/4.0.dict
+share/link-grammar/id/4.0.knowledge
+share/link-grammar/id/4.0.regex
 share/link-grammar/lt/
 share/link-grammar/lt/4.0.affix
 share/link-grammar/lt/4.0.constituent-knowledge
