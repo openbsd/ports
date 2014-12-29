@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/29 20:40:27 jca Exp $
 
 COMMENT =	modular SIP User-Agent with audio and video support
 
-DISTNAME =	baresip-0.4.11
+DISTNAME =	baresip-0.4.12
 
 WANTLIB +=	X11 Xext avcodec avdevice avformat avutil c crypto gsm
 WANTLIB +=	m opus pthread re rem sndfile sndio spandsp speex
-WANTLIB +=	speexdsp ssl swscale uuid vpx x264 z
+WANTLIB +=	speexdsp ssl swscale vpx x264 z
 
 BUILD_DEPENDS =	telephony/libzrtp
 LIB_DEPENDS =	audio/gsm \
@@ -15,13 +15,12 @@ LIB_DEPENDS =	audio/gsm \
 		audio/speex \
 		graphics/ffmpeg \
 		multimedia/libvpx \
-		sysutils/e2fsprogs \
 		telephony/baresip/rem \
 		telephony/spandsp
 
 MAKE_FLAGS +=	MOD_AUTODETECT=
-MAKE_FLAGS +=	USE_AMR=yes USE_CONS=yes USE_DTLS=yes USE_DTLS_SRTP=yes \
-		USE_FFMPEG=yes USE_FFMPEG_AVFORMAT=yes USE_G711=yes \
+MAKE_FLAGS +=	USE_AMR=yes USE_AVCODEC=yes USE_AVFORMAT=yes USE_CONS=yes \
+		USE_DTLS=yes USE_DTLS_SRTP=yes USE_FFMPEG=yes USE_G711=yes \
 		USE_G722=yes USE_G726=yes USE_GSM=yes USE_L16=yes \
 		USE_OPUS=yes USE_PLC=yes USE_SNDFILE=yes USE_SNDIO=yes \
 		USE_SPEEX=yes USE_SPEEX_AEC=yes USE_SPEEX_PP=yes \

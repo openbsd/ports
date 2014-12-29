@@ -1,41 +1,46 @@
-$OpenBSD: patch-mk_mod_mk,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
---- mk/mod.mk.orig	Thu Sep 25 10:53:31 2014
-+++ mk/mod.mk	Thu Sep 25 10:53:47 2014
+$OpenBSD: patch-mk_mod_mk,v 1.2 2014/12/29 20:40:27 jca Exp $
+--- mk/mod.mk.orig	Wed Dec 24 14:19:04 2014
++++ mk/mod.mk	Fri Dec 26 22:51:37 2014
 @@ -26,33 +26,28 @@ ifeq ($(STATIC),)
  #
  
  $(MOD)$(MOD_SUFFIX): $($(MOD)_OBJS)
 -	@echo "  LD [M]  $@"
 -	@$(LD) $(LFLAGS) $(SH_LFLAGS) $(MOD_LFLAGS) $($(basename $@)_OBJS) \
+-		$($(basename $@)_LFLAGS) -L$(LIBRE_SO) -lre -o $@
 +	$(LD) $(LFLAGS) $(SH_LFLAGS) $(MOD_LFLAGS) $($(basename $@)_OBJS) \
- 		$($(basename $@)_LFLAGS) -L$(LIBRE_SO) -lre -o $@
++		$($(basename $@)_LFLAGS) -L$(LIBRE_SO) -lre -o $@
  
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.c $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  CC [M]  $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
 +	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
  
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.m $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  OC [M]  $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CC) $(CFLAGS) $(OBJCFLAGS) -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
 +	$(CC) $(CFLAGS) $(OBJCFLAGS) -c $< -o $@ $(DFLAGS)
  
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.cpp $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  CXX [M] $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CXX) $(CXXFLAGS) -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
 +	$(CXX) $(CXXFLAGS) -c $< -o $@ $(DFLAGS)
  
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.S $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  AS [M]  $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
 +	$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
  
  else
@@ -45,15 +50,17 @@ $OpenBSD: patch-mk_mod_mk,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.c $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  CC [m]  $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
 +	$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
  
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.m $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  OC [m]  $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CC) $(CFLAGS) $(OBJCFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ \
++	mkdir -p $(dir $@)
 +	$(CC) $(CFLAGS) $(OBJCFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ \
  		$(DFLAGS)
  
@@ -61,15 +68,17 @@ $OpenBSD: patch-mk_mod_mk,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.cpp $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  CXX [m] $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CXX) $(CXXFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
 +	$(CXX) $(CXXFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
  
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.S $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk
 -	@echo "  AS [m]  $@"
- 	@mkdir -p $(dir $@)
+-	@mkdir -p $(dir $@)
 -	@$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
++	mkdir -p $(dir $@)
 +	$(CC) $(CFLAGS) -DMOD_NAME=\"$(MOD)\" -c $< -o $@ $(DFLAGS)
  
  endif
