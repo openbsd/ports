@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/29 20:11:12 naddy Exp $
 
 COMMENT=	command-line LiveJournal client
 DISTNAME=	clive-0.4.0
@@ -16,6 +16,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
