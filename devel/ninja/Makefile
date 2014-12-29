@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/09/17 11:58:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/29 21:22:34 dcoppa Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -7,11 +7,11 @@ NOT_FOR_ARCHS=		m88k
 
 COMMENT =		small build system with a focus on speed
 
-V =			1.5.1
+V =			1.5.3
 GH_ACCOUNT =		martine
 GH_PROJECT =		ninja
 GH_TAGNAME =		v$V
-GH_COMMIT =		85e13c163d0129216fb382df6a53d11393c4c0c2
+GH_COMMIT =		3309498174411e02e7680ea8b470bb7d1d70bdb8
 DISTNAME =		${GH_PROJECT}-$V
 
 CATEGORIES =		devel
@@ -38,7 +38,8 @@ MAKE_ENV =		CXX="${CXX}"
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	    ${MODPY_BIN} ./bootstrap.py --verbose
+	    ${MODPY_BIN} ./configure.py --bootstrap \
+	    --with-python=${MODPY_BIN}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ninja ${PREFIX}/bin
