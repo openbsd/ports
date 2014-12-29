@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2014/05/13 22:57:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2014/12/29 09:28:22 jasper Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		2.8.4
+V =		3.4.2
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
-REVISION =	1
 
 HOMEPAGE =	http://www.rabbitmq.com/
 
@@ -41,10 +40,9 @@ RABBITUSER =	_rabbitmq
 
 SUBST_VARS +=	RABBITUSER V
 
-# help 'make update-patches' work.  if upstream do this often,
-# consider PATCHORIG and regenerating patches.
-post-extract:
-	rm ${WRKSRC}/plugins-src/mochiweb-wrapper/mochiweb-git/src/mochiweb_request.erl.orig
+MODPY_ADJ_FILES =	plugins-src/rabbitmq-amqp1.0/codegen.py
+
+NO_TEST =	Yes
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl
@@ -56,7 +54,7 @@ post-install:
 			${PREFIX}/share/doc/rabbitmq; \
 	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rabbitmq
-	${INSTALL_DATA} ${FILESDIR}/rabbitmq.conf \
+	${SUBST_CMD} -c ${FILESDIR}/rabbitmq.conf \
 		${PREFIX}/share/examples/rabbitmq/rabbitmq-env.conf
 
 .include <bsd.port.mk>

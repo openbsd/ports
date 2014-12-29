@@ -1,18 +1,18 @@
-$OpenBSD: patch-scripts_rabbitmqctl,v 1.4 2012/01/13 20:54:25 sthen Exp $
---- scripts/rabbitmqctl.orig	Fri Dec 16 12:24:15 2011
-+++ scripts/rabbitmqctl	Fri Jan 13 20:23:03 2012
-@@ -20,7 +20,7 @@
- [ "x" = "x$RABBITMQ_NODENAME" ] && RABBITMQ_NODENAME=${NODENAME}
- [ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
- 
--exec erl \
-+su -s /bin/sh -l ${RABBITUSER} -c "erl \
+$OpenBSD: patch-scripts_rabbitmqctl,v 1.5 2014/12/29 09:28:23 jasper Exp $
+--- scripts/rabbitmqctl.orig	Sun Dec 28 20:10:23 2014
++++ scripts/rabbitmqctl	Sun Dec 28 20:10:49 2014
+@@ -28,7 +28,7 @@ ${ERL_DIR}erl ${RABBITMQ_NAME_TYPE} rabbitmqctl-prelau
+ # (e.g. forget_cluster_node --offline) require us to impersonate the
+ # real node.
+ RABBITMQ_USE_LONGNAME=${RABBITMQ_USE_LONGNAME} \
+-exec ${ERL_DIR}erl \
++su -s /bin/sh -l ${RABBITUSER} -c "${ERL_DIR}erl \
      -pa "${RABBITMQ_HOME}/ebin" \
      -noinput \
      -hidden \
-@@ -28,4 +28,4 @@ exec erl \
-     -sname rabbitmqctl$$ \
-     -s rabbit_control \
+@@ -38,4 +38,4 @@ exec ${ERL_DIR}erl \
+     -mnesia dir "\"${RABBITMQ_MNESIA_DIR}\"" \
+     -s rabbit_control_main \
      -nodename $RABBITMQ_NODENAME \
 -    -extra "$@"
 +    -extra $*"

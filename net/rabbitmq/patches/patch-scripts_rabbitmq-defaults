@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_rabbitmq-defaults,v 1.1 2012/07/18 14:03:44 jasper Exp $
---- scripts/rabbitmq-defaults.orig	Fri Jul 13 02:56:15 2012
-+++ scripts/rabbitmq-defaults	Fri Jul 13 02:56:46 2012
-@@ -22,7 +22,7 @@
+$OpenBSD: patch-scripts_rabbitmq-defaults,v 1.2 2014/12/29 09:28:22 jasper Exp $
+--- scripts/rabbitmq-defaults.orig	Wed Nov 26 13:20:50 2014
++++ scripts/rabbitmq-defaults	Sun Dec 28 17:49:44 2014
+@@ -28,7 +28,7 @@ SASL_BOOT_FILE=start_sasl
  
  CONFIG_FILE=${SYS_PREFIX}/etc/rabbitmq/rabbitmq
  LOG_BASE=${SYS_PREFIX}/var/log/rabbitmq
