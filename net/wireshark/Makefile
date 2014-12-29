@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/17 23:29:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/29 10:38:57 sthen Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 WVER =		1.12.1
+REVISION-main =	0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
