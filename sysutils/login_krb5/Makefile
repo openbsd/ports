@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/10 19:03:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/29 09:31:39 ajacoutot Exp $
 
 # needs mode 4555 to access passwd(5) and the Kerberos keytab
 
 COMMENT=		authentication provider for KerberosV
 
-DISTNAME=		login_krb5-5.7
+DISTNAME=		login_krb5-5.7.1
 
 CATEGORIES=		sysutils
 
