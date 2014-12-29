@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:25:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/12/29 10:48:15 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/IO/
 ${P5ARCH}/IO/Interface/
@@ -9,6 +9,5 @@ ${P5ARCH}/auto/IO/
 ${P5ARCH}/auto/IO/Interface/
 @comment ${P5ARCH}/auto/IO/Interface/Interface.bs
 ${P5ARCH}/auto/IO/Interface/Interface.so
-${P5ARCH}/auto/IO/Interface/autosplit.ix
 @man man/man3p/IO::Interface.3p
 @man man/man3p/IO::Interface::Simple.3p
