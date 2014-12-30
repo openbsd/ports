@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/12/10 15:51:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2014/12/30 11:37:26 ajacoutot Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -6,7 +6,7 @@ RB_V=		30
 V=		2.23-08-RB${RB_V}
 DISTNAME=	webalizer-${V}-src
 PKGNAME=	webalizer-${V:S/-/./g:S/RB//}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
@@ -31,7 +31,8 @@ CONFIGURE_ARGS=	--enable-dns \
 		--enable-geoip \
 		--with-db=${LOCALBASE}/include/db4 \
 		--with-dblib=${LOCALBASE}/lib/db4 \
-		--with-gd=${LOCALBASE}/include
+		--with-gd=${LOCALBASE}/include \
+		--with-geodb=/var/db/GeoDB
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes

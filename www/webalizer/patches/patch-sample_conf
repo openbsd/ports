@@ -1,12 +1,12 @@
-$OpenBSD: patch-sample_conf,v 1.5 2013/03/25 11:36:54 jasper Exp $
---- sample.conf.orig	Mon Mar 25 11:45:11 2013
-+++ sample.conf	Mon Mar 25 11:45:30 2013
+$OpenBSD: patch-sample_conf,v 1.6 2014/12/30 11:37:26 ajacoutot Exp $
+--- sample.conf.orig	Tue Dec 30 11:36:08 2014
++++ sample.conf	Tue Dec 30 11:36:33 2014
 @@ -28,7 +28,7 @@
  # (bzip2 compressed file), it will be decompressed on the fly as it
  # is being read.
  
 -#LogFile        /var/lib/httpd/logs/access_log
-+#LogFile        /var/www/logs/access_log
++#LogFile        /var/www/logs/access.log
  
  # LogType defines the log type being processed.  Normally, the Webalizer
  # expects a CLF or Combined web server log as input.  Using this option,
@@ -24,7 +24,16 @@ $OpenBSD: patch-sample_conf,v 1.5 2013/03/25 11:36:54 jasper Exp $
  # (ie: starts with a leading '/') is specified.
  
 -#GeoDBDatabase	/usr/share/GeoDB/GeoDB.dat
-+#GeoDBDatabase	/var/db/GeoIP/GeoIP.dat
++#GeoDBDatabase	/var/db/GeoDB/GeoDB.dat
  
  # The GeoIP option enables or disables the use of geolocation
  # services provided by the GeoIP library (http://www.maxmind.com),
+@@ -232,7 +232,7 @@ PageType	cgi
+ # (ie: starts with a leading '/'), then the name is relative to the
+ # default output directory. This option should not normally be needed.
+ 
+-#GeoIPDatabase	/usr/share/GeoIP/GeoIP.dat
++#GeoIPDatabase	/var/db/GeoIP/GeoIP.dat
+ 
+ # HTMLPre defines HTML code to insert at the very beginning of the
+ # file.  Default is the DOCTYPE line shown below.  Max line length
