@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2014/12/28 12:33:57 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2014/12/30 20:16:23 jasper Exp $
 
-https://bitbucket.org/tildeslash/monit/pull-request/22/openbsd-needs-sys-schedh
+From 8fefcf503b903377eb46b79f5b3192350ff5f5a6 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 28 Dec 2014 12:23:38 +0100
+Subject: [PATCH] OpenBSD needs sys/sched.h
 
 --- configure.ac.orig	Sun Dec 28 12:17:19 2014
 +++ configure.ac	Sun Dec 28 12:17:42 2014
