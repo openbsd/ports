@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.1 2014/09/11 17:54:13 brad Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.2 2014/12/30 22:41:09 brad Exp $
 
 r213899
 Don't use 128bit functions on PPC32.
@@ -13,8 +13,23 @@ backend.
 r213960
 [PowerPC] Support TLS on PPC32/ELF
 
+r223708
+[PowerPC] Don't use a non-allocatable register to implement the 'cc' alias
+
+GCC accepts 'cc' as an alias for 'cr0', and we need to do the same when
+processing inline asm constraints. This had previously been implemented using a
+non-allocatable register, named 'cc', that was listed as an alias of 'cr0', but
+the infrastructure does not seem to support this properly (neither the register
+allocator nor the scheduler properly accounts for the alias). Instead, we can
+just process this as a naming alias inside of the inline asm
+constraint-processing code, so we'll do that instead.
+
+There are two regression tests, one where the post-RA scheduler did the wrong
+thing with the non-allocatable alias, and one where the register allocator did
+the wrong thing. Fixes PR21742.
+
 --- lib/Target/PowerPC/PPCISelLowering.cpp.orig	Sun Mar  2 21:57:39 2014
-+++ lib/Target/PowerPC/PPCISelLowering.cpp	Sun Jul 27 04:56:45 2014
++++ lib/Target/PowerPC/PPCISelLowering.cpp	Tue Dec 30 17:32:03 2014
 @@ -543,6 +543,13 @@ PPCTargetLowering::PPCTargetLowering(PPCTargetMachine 
    // Altivec instructions set fields to all zeros or all ones.
    setBooleanVectorContents(ZeroOrNegativeOneBooleanContent);
@@ -221,3 +236,16 @@ r213960
  
    MachineInstrBuilder MIB;
  
+@@ -8317,6 +8371,12 @@ PPCTargetLowering::getRegForInlineAsmConstraint(const 
+     return std::make_pair(TRI->getMatchingSuperReg(R.first,
+                             PPC::sub_32, &PPC::G8RCRegClass),
+                           &PPC::G8RCRegClass);
++  }
++
++  // GCC accepts 'cc' as an alias for 'cr0', and we need to do the same.
++  if (!R.second && StringRef("{cc}").equals_lower(Constraint)) {
++    R.first = PPC::CR0;
++    R.second = &PPC::CRRCRegClass;
+   }
+ 
+   return R;
