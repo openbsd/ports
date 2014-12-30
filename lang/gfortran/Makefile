@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2014/07/16 12:35:23 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2014/12/30 21:50:24 landry Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
 
 BROKEN-hppa =	port not contributed
+BROKEN-alpha =	configure: error: cannot run C compiled programs.
 COMMENT-main =	GNU fortran 77 and fortran 95 compiler
 COMMENT-lib =	GNU fortran library
 

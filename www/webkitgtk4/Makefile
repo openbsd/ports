@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/27 12:40:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/12/30 21:50:25 landry Exp $
 
 PORTROACH =		limitw:1,even
 
 SHARED_ONLY =		Yes
 
 COMMENT =		GTK+ port of the WebKit rendering engine
+BROKEN-alpha =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
+BROKEN-hppa =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 
 V =			2.6.4
 DISTNAME =		webkitgtk-${V}

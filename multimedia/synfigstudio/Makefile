@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/06 07:05:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2014/12/30 21:50:25 landry Exp $
 
 COMMENT =		2D animation software studio
+BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
 
 DISTNAME =		synfigstudio-0.64.1
 

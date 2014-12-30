@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2014/11/27 17:23:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2014/12/30 21:50:24 landry Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
+BROKEN-alpha =	libdecnumber/decNumber.c:2267:3: internal compiler error: Segmentation fault
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64 mips64 mips64el
 DPB_PROPERTIES = parallel

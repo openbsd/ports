@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/03 19:59:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2014/12/30 21:50:25 landry Exp $
 
 COMMENT =		extremely fast password cracker, with community patches
+BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
 
 V =		1.8.0
 JV =		20140604

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/11 18:03:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/30 21:50:24 landry Exp $
 
 COMMENT =		downhill racing game
+BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
 
 V =			0.6.0
 DISTNAME =		etr-$V

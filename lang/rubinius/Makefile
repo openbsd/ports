@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/06/24 21:51:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.33 2014/12/30 21:50:24 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ BROKEN-mips64 = no atomics for this arch
 BROKEN-hppa = no atomics for this arch
 BROKEN-mips64el = no atomics for this arch
 BROKEN-powerpc = no atomics for this arch
+BROKEN-alpha =	{standard input}:1134: Error: unknown opcode `mfence'
 
 COMMENT =	Ruby virtual machine and core library
 

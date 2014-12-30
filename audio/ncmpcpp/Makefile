@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2014/12/14 10:43:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2014/12/30 21:50:24 landry Exp $
 
 COMMENT =		ncurses mpd client inspired by ncmpc
+BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
 
 DISTNAME =		ncmpcpp-0.6.2
 

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2014/06/25 13:48:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.30 2014/12/30 21:50:25 landry Exp $
 
+BROKEN-alpha =	MetalinkParserStateV4Impl.cc:219:1: internal compiler error: Segmentation fault
 COMMENT =		lightweight multi-protocol & multi-source download utility
 DISTNAME =		aria2-1.18.5
 REVISION =		2
