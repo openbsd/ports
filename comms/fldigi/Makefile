@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/16 16:21:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/12/30 01:41:37 bcallah Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
-DISTNAME=	fldigi-3.21.83
+DISTNAME=	fldigi-3.22.04
 
 CATEGORIES=	comms hamradio
 
@@ -11,9 +11,9 @@ HOMEPAGE=	http://www.w1hkj.com/Fldigi.html
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama c fltk fltk_images
-WANTLIB += fontconfig hamlib jpeg m png portaudio pthread samplerate
-WANTLIB += sndfile stdc++ z
+WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c fltk
+WANTLIB += fltk_images fontconfig hamlib jpeg m png portaudio
+WANTLIB += pthread samplerate sndfile stdc++ z
 
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/
 
