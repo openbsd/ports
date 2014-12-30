@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2014/12/29 10:49:12 robert Exp $
+# $OpenBSD: Makefile,v 1.87 2014/12/30 18:47:31 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-3.10.0
+REVISION=	0
 
 CATEGORIES=	lang devel
 
@@ -83,7 +84,7 @@ pre-configure:
 		-e 's,^exec_prefix=.*,exec_prefix=\@prefix\@,g' \
 		${WRKSRC}/data/*.pc.in
 	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
-		mono/tests/gc-descriptors/gen-descriptor-tests.py
+		${WRKSRC}/mono/tests/gc-descriptors/gen-descriptor-tests.py
 
 
 	@ln -fs /usr/local/bin/bash ${WRKDIR}/bin/bash
