@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/30 01:41:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/30 01:54:26 bcallah Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
@@ -35,9 +35,6 @@ CONFIGURE_ARGS+= --disable-oss \
 		--without-pulseaudio
 
 MAKE_FLAGS=	ASCIIDOC_ICONS_DIR=${SYSCONFDIR}/asciidoc/images/icons
-
-# not highly useful, but we may as well run them..
-TEST_DEPENDS=	textproc/gsed
 
 # supplied empty *.1 files are newer than .txt files
 post-extract:
