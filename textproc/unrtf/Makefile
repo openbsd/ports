@@ -1,29 +1,37 @@
-# $OpenBSD: Makefile,v 1.13 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/30 15:02:32 sthen Exp $
 
 COMMENT=	RTF document converter
 
-VERSION=	0.19.3
-DISTNAME=	unrtf-${VERSION}
-REVISION=	1
+DISTNAME=	unrtf-0.21.8
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://www.gnu.org/software/unrtf/unrtf.html
 
 MASTER_SITES=	${MASTER_SITE_GNU:=unrtf/}
 
-# GPL
+# GPLv3+
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		c
 
-MAKE_FLAGS=	CFLAGS='${CFLAGS}' CC='${CC}'
+WANTLIB += c
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unrtf ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unrtf
-	${INSTALL_DATA} ${WRKSRC}/doc/unrtf.html ${PREFIX}/share/doc/unrtf/unrtf.html
-	${INSTALL_MAN} ${WRKSRC}/unrtf.1 ${PREFIX}/man/man1
+MODULES=	converters/libiconv
 
-TEST_TARGET=	tests
-TEST_FLAGS=	PATH=${WRKSRC}
+CONFIGURE_STYLE= gnu
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+
+# rm/bootstrap are only done because of symlinks to /usr/share/auto*
+# in ${WRKSRC}/config for missing/etc.
+#
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.11
+
+post-patch:
+	rm ${WRKSRC}/config/*
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./bootstrap
 
 .include <bsd.port.mk>

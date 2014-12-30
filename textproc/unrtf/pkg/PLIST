@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:08 espie Exp $
-bin/unrtf
+@comment $OpenBSD: PLIST,v 1.3 2014/12/30 15:02:33 sthen Exp $
+@bin bin/unrtf
 @man man/man1/unrtf.1
-share/doc/unrtf/
-share/doc/unrtf/unrtf.html
+share/unrtf/
+share/unrtf/SYMBOL.charmap
+share/unrtf/html.conf
+share/unrtf/latex.conf
+share/unrtf/rtf.conf
+share/unrtf/text.conf
+share/unrtf/troff_mm.conf
+share/unrtf/vt.conf
