@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_MC_MCObjectFileInfo_cpp,v 1.1 2014/12/30 05:23:32 brad Exp $
+
+r213890
+Use the same .eh_frame encoding for 32bit PPC as on i386.
+
+--- lib/MC/MCObjectFileInfo.cpp.orig	Tue Dec 30 00:10:03 2014
++++ lib/MC/MCObjectFileInfo.cpp	Tue Dec 30 00:19:28 2014
+@@ -248,7 +248,7 @@ void MCObjectFileInfo::InitELFMCObjectFileInfo(Triple 
+   else
+     FDECFIEncoding = dwarf::DW_EH_PE_pcrel | dwarf::DW_EH_PE_sdata4;
+ 
+-  if (T.getArch() == Triple::x86) {
++  if (T.getArch() == Triple::ppc || T.getArch() == Triple::x86) {
+     PersonalityEncoding = (RelocM == Reloc::PIC_)
+      ? dwarf::DW_EH_PE_indirect | dwarf::DW_EH_PE_pcrel | dwarf::DW_EH_PE_sdata4
+      : dwarf::DW_EH_PE_absptr;
