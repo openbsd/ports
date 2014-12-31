@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_shunit2_test_misc_sh,v 1.1.1.1 2014/12/31 11:14:17 rpe Exp $
+--- src/shunit2_test_misc.sh.orig	Sat Dec 27 22:07:52 2014
++++ src/shunit2_test_misc.sh	Sat Dec 27 22:09:17 2014
+@@ -35,12 +35,18 @@ testUnboundVariable()
+ EOF
+   ( exec ${SHUNIT_SHELL:-sh} "${unittestF}" >"${stdoutF}" 2>"${stderrF}" )
+   assertFalse 'expected a non-zero exit value' $?
++# OpenBSD sh and ksh do not implement handling of ERR or EXIT traps in functions
++case $SHUNIT_SHELL in
++/bin/sh|/bin/ksh) ;;
++*)
+   grep '^ASSERT:Unknown failure' "${stdoutF}" >/dev/null
+   assertTrue 'assert message was not generated' $?
+   grep '^Ran [0-9]* test' "${stdoutF}" >/dev/null
+   assertTrue 'test count message was not generated' $?
+   grep '^FAILED' "${stdoutF}" >/dev/null
+   assertTrue 'failure message was not generated' $?
++  ;;
++esac
+ }
+ 
+ testIssue7()
