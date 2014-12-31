@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/12/30 11:37:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2014/12/31 08:51:05 jasper Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -6,12 +6,10 @@ RB_V=		30
 V=		2.23-08-RB${RB_V}
 DISTNAME=	webalizer-${V}-src
 PKGNAME=	webalizer-${V:S/-/./g:S/RB//}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
