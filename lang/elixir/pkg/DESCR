@@ -1,13 +1,6 @@
-Elixir is a programming language built on top of the Erlang VM. As
-Erlang, it is a functional language built to support distributed,
-fault-tolerant, non-stop applications with hot code swapping.
+Elixir is a dynamic, functional language designed for building scalable
+and maintainable applications.
 
-Elixir is also dynamic typed but, differently from Erlang, it is also
-homoiconic, allowing meta-programming via macros. Elixir also supports
-polymorphism via protocols (similar to Clojure's), dynamic records and
-provides a reference mechanism.
-
-Finally, Elixir and Erlang share the same bytecode and data types. This
-means you can invoke Erlang code from Elixir (and vice-versa) without
-any conversion or performance hit. This allows a developer to mix the
-expressiveness of Elixir with the robustness and performance of Erlang.
+Elixir leverages the Erlang VM, known for running low-latency,
+distributed and fault-tolerant systems, while also being successfully
+used in web development and the embedded software domain.

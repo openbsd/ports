@@ -1,45 +1,26 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/12/31 13:18:34 jasper Exp $
 
 COMMENT=		modern approach to programming for the Erlang VM
 
-V=			0.5.0
-DISTNAME=		v${V}
-PKGNAME=		elixir-${V}
+V=			0.12.5
+GH_ACCOUNT=		elixir-lang
+GH_PROJECT=		elixir
+GH_TAGNAME=		v$V
+DISTNAME=		${GH_PROJECT}-$V
 CATEGORIES=		lang
 
 HOMEPAGE=		http://elixir-lang.org/
 
-# APLv2
+# Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://github.com/downloads/elixir-lang/elixir/
-EXTRACT_SUFX=		.zip
-DIST_SUBDIR=		elixir
-
 BUILD_DEPENDS=		devel/rebar \
-			lang/erlang
-RUN_DEPENDS=		lang/erlang
+			lang/erlang>=16b.03v0
+RUN_DEPENDS=		lang/erlang>=16b.03v0
 
-ALL_TARGET=		compile
+ALL_TARGET=		# empty
 USE_GMAKE=		Yes
 
-WRKDIST=		${WRKDIR}
-SUBST_VARS+=		V
-
 TEST_TARGET=		test
-
-LIB_DIR=		${PREFIX}/lib/erlang/lib/elixir-lang-${V}/
-
-# Remove pre-compiled files.
-post-extract:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} clean
-
-do-install:
-.for s in elixir elixirc iex
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/$s ${PREFIX}/bin/
-.endfor
-	${INSTALL_DATA_DIR} ${LIB_DIR}
-	cd ${WRKSRC}/ebin/ && umask 022 && pax -rw . ${LIB_DIR}
-
 
 .include <bsd.port.mk>
