@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.13 2014/09/30 14:24:31 dcoppa Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Thu Sep 11 15:24:00 2014
-+++ Modules/Platform/OpenBSD.cmake	Tue Sep 30 11:44:17 2014
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.14 2014/12/31 11:06:02 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Mon Dec 15 14:07:43 2014
++++ Modules/Platform/OpenBSD.cmake	Thu Dec 18 05:37:12 2014
 @@ -1,5 +1,7 @@
  include(Platform/NetBSD)
  
@@ -9,26 +9,3 @@ $OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.13 2014/09/30 14:24:31 dcoppa
  # On OpenBSD, the compile time linker does not share it's configuration with
  # the runtime linker.  This will extract the library search paths from the
  # system's ld.so.hints file which will allow CMake to set the appropriate
-@@ -17,6 +19,22 @@ endif()
- 
- set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)
- 
-+# OpenBSD has no multilib
-+set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS FALSE)
-+
- # OpenBSD policy requires that shared libraries be installed without
- # executable permission.
- set(CMAKE_INSTALL_SO_NO_EXE 1)
-+
-+if($ENV{LOCALBASE})
-+  set(OPENBSD_LOCALBASE $ENV{LOCALBASE})
-+else()
-+  set(OPENBSD_LOCALBASE /usr/local)
-+endif()
-+if($ENV{X11BASE})
-+  set(OPENBSD_X11BASE $ENV{X11BASE})
-+else()
-+  set(OPENBSD_X11BASE /usr/X11R6)
-+endif()
-+
-+list(APPEND CMAKE_SYSTEM_PREFIX_PATH ${OPENBSD_LOCALBASE})

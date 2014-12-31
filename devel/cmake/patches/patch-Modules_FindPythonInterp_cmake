@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.8 2014/09/11 10:24:38 dcoppa Exp $
---- Modules/FindPythonInterp.cmake.orig	Thu Jul 31 17:03:56 2014
-+++ Modules/FindPythonInterp.cmake	Wed Sep  3 09:35:10 2014
-@@ -43,6 +43,8 @@
+$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.9 2014/12/31 11:06:02 dcoppa Exp $
+--- Modules/FindPythonInterp.cmake.orig	Mon Dec 15 14:07:43 2014
++++ Modules/FindPythonInterp.cmake	Thu Dec 18 06:34:41 2014
+@@ -47,6 +47,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
@@ -10,21 +10,39 @@ $OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.8 2014/09/11 10:24:38 dcoppa 
  unset(_Python_NAMES)
  
  set(_PYTHON1_VERSIONS 1.6 1.5)
-@@ -79,10 +81,14 @@ find_program(PYTHON_EXECUTABLE NAMES ${_Python_NAMES})
+@@ -79,19 +81,23 @@ find_program(PYTHON_EXECUTABLE NAMES ${_Python_NAMES})
  
  # Set up the versions we know about, in the order we will search. Always add
  # the user supplied additional versions to the front.
--set(_Python_VERSIONS
--  ${Python_ADDITIONAL_VERSIONS}
--  ${_PYTHON_FIND_OTHER_VERSIONS}
--  )
+-set(_Python_VERSIONS ${Python_ADDITIONAL_VERSIONS})
+-# If FindPythonInterp has already found the major and minor version,
+-# insert that version next to get consistent versions of the interpreter and
+-# library.
+-if(DEFINED PYTHONLIBS_VERSION_STRING)
+-  string(REPLACE "." ";" _PYTHONLIBS_VERSION "${PYTHONLIBS_VERSION_STRING}")
+-  list(GET _PYTHONLIBS_VERSION 0 _PYTHONLIBS_VERSION_MAJOR)
+-  list(GET _PYTHONLIBS_VERSION 1 _PYTHONLIBS_VERSION_MINOR)
+-  list(APPEND _Python_VERSIONS ${_PYTHONLIBS_VERSION_MAJOR}.${_PYTHONLIBS_VERSION_MINOR})
+-endif()
+-# Search for the current active python version first
+-list(APPEND _Python_VERSIONS ";")
+-list(APPEND _Python_VERSIONS ${_PYTHON_FIND_OTHER_VERSIONS})
 +if(MODPY_VERSION)
 +  set(_Python_VERSIONS ${MODPY_VERSION})
 +else(MODPY_VERSION)
-+  set(_Python_VERSIONS
-+    ${Python_ADDITIONAL_VERSIONS}
-+    ${_PYTHON_FIND_OTHER_VERSIONS}
-+    )
++  set(_Python_VERSIONS ${Python_ADDITIONAL_VERSIONS})
++  # If FindPythonInterp has already found the major and minor version,
++  # insert that version next to get consistent versions of the interpreter and
++  # library.
++  if(DEFINED PYTHONLIBS_VERSION_STRING)
++    string(REPLACE "." ";" _PYTHONLIBS_VERSION "${PYTHONLIBS_VERSION_STRING}")
++    list(GET _PYTHONLIBS_VERSION 0 _PYTHONLIBS_VERSION_MAJOR)
++    list(GET _PYTHONLIBS_VERSION 1 _PYTHONLIBS_VERSION_MINOR)
++    list(APPEND _Python_VERSIONS ${_PYTHONLIBS_VERSION_MAJOR}.${_PYTHONLIBS_VERSION_MINOR})
++  endif()
++  # Search for the current active python version first
++  list(APPEND _Python_VERSIONS ";")
++  list(APPEND _Python_VERSIONS ${_PYTHON_FIND_OTHER_VERSIONS})
 +endif(MODPY_VERSION)
  
  unset(_PYTHON_FIND_OTHER_VERSIONS)

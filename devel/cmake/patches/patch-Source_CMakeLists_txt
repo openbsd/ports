@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_CMakeLists_txt,v 1.5 2013/10/14 12:58:03 dcoppa Exp $
+$OpenBSD: patch-Source_CMakeLists_txt,v 1.6 2014/12/31 11:06:02 dcoppa Exp $
 
 XXX: CMake's built-in ELF parser is broken on arm
 
---- Source/CMakeLists.txt.orig	Wed Oct  9 09:45:09 2013
-+++ Source/CMakeLists.txt	Wed Oct  9 09:45:53 2013
+--- Source/CMakeLists.txt.orig	Mon Dec 15 14:07:43 2014
++++ Source/CMakeLists.txt	Thu Dec 18 05:37:12 2014
 @@ -16,7 +16,7 @@ if(CMAKE_CXX_PLATFORM_ID MATCHES "OpenBSD")
  else()
    CHECK_INCLUDE_FILE("elf.h" HAVE_ELF_H)
@@ -11,5 +11,5 @@ XXX: CMake's built-in ELF parser is broken on arm
 -if(HAVE_ELF_H)
 +if(HAVE_ELF_H AND NOT CMAKE_SYSTEM_PROCESSOR MATCHES "^arm")
    set(CMAKE_USE_ELF_PARSER 1)
- else()
-   set(CMAKE_USE_ELF_PARSER)
+ elseif(HAIKU)
+   # On Haiku, we need to include elf32.h from the private headers

@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.22 2014/10/03 10:11:45 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Thu Jul 31 17:03:57 2014
-+++ Source/cmTarget.cxx	Wed Sep  3 08:10:09 2014
-@@ -260,7 +260,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
-     {
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.23 2014/12/31 11:06:02 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Mon Dec 15 14:07:43 2014
++++ Source/cmTarget.cxx	Thu Dec 18 05:37:12 2014
+@@ -327,7 +327,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
+     this->SetPropertyDefault("ANDROID_API", 0);
      this->SetPropertyDefault("INSTALL_NAME_DIR", 0);
      this->SetPropertyDefault("INSTALL_RPATH", "");
 -    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "OFF");
@@ -10,25 +10,24 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.22 2014/10/03 10:11:45 dcoppa Exp $
      this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
      this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");
      this->SetPropertyDefault("ARCHIVE_OUTPUT_DIRECTORY", 0);
-@@ -3183,6 +3183,7 @@ std::string cmTarget::GetPDBName(const char* config) c
+@@ -3640,12 +3640,16 @@ std::string cmTarget::GetCompilePDBPath(const std::str
  //----------------------------------------------------------------------------
- bool cmTarget::HasSOName(const char* config) const
+ bool cmTarget::HasSOName(const std::string& config) const
  {
 +#if !defined(__OpenBSD__)
    // soname is supported only for shared libraries and modules,
    // and then only when the platform supports an soname flag.
    return ((this->GetType() == cmTarget::SHARED_LIBRARY ||
-@@ -3190,6 +3191,9 @@ bool cmTarget::HasSOName(const char* config) const
+            this->GetType() == cmTarget::MODULE_LIBRARY) &&
            !this->GetPropertyAsBool("NO_SONAME") &&
-           this->Makefile->GetSONameFlag(this->GetLinkerLanguage(config,
-                                                                 this)));
+           this->Makefile->GetSONameFlag(this->GetLinkerLanguage(config)));
 +#else
 +  return false;
 +#endif
  }
  
  //----------------------------------------------------------------------------
-@@ -3658,8 +3662,13 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -4118,9 +4122,14 @@ void cmTarget::GetLibraryNames(std::string& name,
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -37,12 +36,13 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.22 2014/10/03 10:11:45 dcoppa Exp $
 +     this->GetType() != cmTarget::MODULE_LIBRARY)
 +#else
    if(!this->HasSOName(config) ||
+      this->Makefile->IsOn("CMAKE_PLATFORM_NO_VERSIONED_SONAME") ||
       this->IsFrameworkOnApple())
 +#endif
      {
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
-@@ -3687,6 +3696,36 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -4148,6 +4157,36 @@ void cmTarget::GetLibraryNames(std::string& name,
    // The library name.
    name = prefix+base+suffix;
  
@@ -79,7 +79,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.22 2014/10/03 10:11:45 dcoppa Exp $
    if(this->IsFrameworkOnApple())
      {
      realName = prefix;
-@@ -3698,9 +3737,15 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -4159,9 +4198,15 @@ void cmTarget::GetLibraryNames(std::string& name,
      }
    else
      {
@@ -95,7 +95,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.22 2014/10/03 10:11:45 dcoppa Exp $
      // The library's real name on disk.
      this->ComputeVersionedName(realName, prefix, base, suffix,
                                 name, version);
-@@ -3733,7 +3778,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
+@@ -4194,7 +4239,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
    if(version)
      {
      vName += ".";
