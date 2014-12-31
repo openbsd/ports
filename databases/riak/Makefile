@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2014/09/15 07:14:21 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.14 2014/12/31 13:18:10 jasper Exp $
+
+BROKEN=				needs update to 2.x to work with Erlang 16
 
 COMMENT=			distributed data store
 DISTNAME=			riak-1.4.7
