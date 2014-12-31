@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2014/11/21 08:10:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2014/12/31 11:33:56 steven Exp $
 
 COMMENT=	syslogd replacement
 
 SHARED_ONLY =	Yes
 
-V =		3.4.7
+V =		3.5.6
 DISTNAME =	syslog-ng-$V
-REVISION =	5
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -19,8 +18,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/$V/source/
 DISTFILES =	syslog-ng_$V.tar.gz
 
-SHARED_LIBS =	syslog-ng		0.0 \
-		syslog-ng-${V}		0.0
+SHARED_LIBS =	syslog-ng		1.0 \
+		syslog-ng-${V}		1.0
 
 MODULES =	devel/gettext
 
@@ -41,6 +40,7 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--with-librabbitmq-client=no \
 			--disable-mongodb \
 			--disable-amqp \
+			--disable-stomp \
 			--disable-geoip \
 			--without-libnet \
 			--with-ivykis=system \
