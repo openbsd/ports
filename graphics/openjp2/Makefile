@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/16 12:46:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/12/31 08:42:26 landry Exp $
 
 COMMENT =		open-source JPEG 2000 codec library
+BROKEN-hppa =	src/bin/jp2/convert.c:192: error: expected identifier or '(' before '__extension__'
 
 V =			2.1.0
 DISTNAME =		openjpeg-$V

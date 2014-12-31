@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2014/12/31 08:42:26 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
+BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 DISTNAME=	gnugk-3.7
 

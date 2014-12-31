@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/30 21:50:24 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/31 08:42:26 landry Exp $
 
 COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
+BROKEN-hppa =		cc1plus: error: unrecognized command line option '-std=c++11'
 
 V =			0.6.0
 DISTNAME =		etr-$V

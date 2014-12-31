@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.71 2013/12/25 16:32:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.72 2014/12/31 08:42:27 landry Exp $
 
+BROKEN-hppa =	kstars/kstars/tools/scriptbuilder.cpp:103: internal compiler error: Segmentation fault
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10

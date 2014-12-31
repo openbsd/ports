@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2014/10/11 19:54:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.37 2014/12/31 08:42:27 landry Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
+BROKEN-hppa =	rake fails when linking PassengerHelperAgent
 
 PASS_VERSION =		4.0.44
 NGINX_VERSION =		1.4.7

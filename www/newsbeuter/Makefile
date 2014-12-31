@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/17 07:46:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/31 08:42:27 landry Exp $
 
 COMMENT =		open-source RSS/Atom feed reader for text terminals
 DISTNAME =		newsbeuter-2.7
 CATEGORIES =		www
+BROKEN-hppa =	undefined reference to `__sync_val_compare_and_swap_4' in libjson-c
 
 HOMEPAGE =		http://newsbeuter.org/
 

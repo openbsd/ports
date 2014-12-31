@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/17 13:28:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/12/31 08:42:26 landry Exp $
 
 COMMENT =	library of general purpose APIs
+BROKEN-hppa=	missing atomic ops
 
 DISTNAME =	libowfat-0.29
 REVISION =	0
