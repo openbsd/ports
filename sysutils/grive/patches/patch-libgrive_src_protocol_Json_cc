@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgrive_src_protocol_Json_cc,v 1.1.1.1 2014/12/31 10:06:35 kirby Exp $
+--- libgrive/src/protocol/Json.cc.orig	Sun Jun 29 21:20:47 2014
++++ libgrive/src/protocol/Json.cc	Sun Jun 29 21:21:03 2014
+@@ -29,8 +29,8 @@
+ 	#pragma warning(push)
+ 	#pragma warning(disable: 4005)
+ #endif
+-#include <json/json_tokener.h>
+-#include <json/linkhash.h>
++#include <json-c/json_tokener.h>
++#include <json-c/linkhash.h>
+ #ifdef _MSC_VER
+ 	#pragma warning(pop)
+ #endif

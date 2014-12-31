@@ -1,0 +1,9 @@
+$OpenBSD: patch-grive_CMakeLists_txt,v 1.1.1.1 2014/12/31 10:06:35 kirby Exp $
+--- grive/CMakeLists.txt.orig	Thu May  2 18:40:04 2013
++++ grive/CMakeLists.txt	Mon Jul  7 22:31:24 2014
+@@ -25,4 +25,4 @@ set_target_properties( grive_executable
+ )
+ 
+ install(TARGETS grive_executable RUNTIME DESTINATION bin)
+-install(FILES doc/grive.1 DESTINATION share/man/man1 )
++install(FILES doc/grive.1 DESTINATION man/man1 )
