@@ -1,0 +1,30 @@
+$OpenBSD: patch-qdbus_QDBusReply_cs,v 1.1 2014/12/31 09:59:17 robert Exp $
+
+https://bugs.kde.org/show_bug.cgi?id=339977
+
+--- qdbus/QDBusReply.cs.orig	Sat Jun  1 23:29:59 2013
++++ qdbus/QDBusReply.cs	Wed Dec 31 10:56:42 2014
+@@ -4,9 +4,12 @@ namespace Qyoto {
+ 	using System.Runtime.InteropServices;
+ 	using System.Collections.Generic; 
+ 
+-	public class QDBusReply<T> {
++	class QDBusReplyFill {
+ 		[DllImport("qyoto", CharSet=CharSet.Ansi)]
+-		private static extern void qyoto_qdbus_reply_fill(IntPtr msg, IntPtr error, IntPtr variant);
++		public static extern void qyoto_qdbus_reply_fill(IntPtr msg, IntPtr error, IntPtr variant);
++	}
++
++	public class QDBusReply<T> {
+ 		
+ 		public QDBusReply(QDBusMessage reply) {
+ 			m_error = new QDBusError(reply);
+@@ -18,7 +21,7 @@ namespace Qyoto {
+ 				variant = QVariant.FromValue<T>(default(T));
+ 			}
+ 
+-			qyoto_qdbus_reply_fill((IntPtr) GCHandle.Alloc(reply), (IntPtr) GCHandle.Alloc(m_error),
++			QDBusReplyFill.qyoto_qdbus_reply_fill((IntPtr) GCHandle.Alloc(reply), (IntPtr) GCHandle.Alloc(m_error),
+ 				(IntPtr) GCHandle.Alloc(variant));
+ 
+ 			if (!m_error.IsValid()) {
