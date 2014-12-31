@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1296 2014/12/28 09:42:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.1297 2014/12/31 11:16:53 rpe Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1421,6 +1421,7 @@
      SUBDIR += sfio
      SUBDIR += shapelib
      SUBDIR += shtool
+     SUBDIR += shunit2
      SUBDIR += silc-toolkit
      SUBDIR += simulavr
      SUBDIR += slib
