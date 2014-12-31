@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_make_tools_src_build_tools_generatecurrencydata_GenerateCurrencyData_java,v 1.1 2014/12/31 12:46:07 sthen Exp $
+--- jdk/make/tools/src/build/tools/generatecurrencydata/GenerateCurrencyData.java.orig	Tue Dec 30 16:33:52 2014
++++ jdk/make/tools/src/build/tools/generatecurrencydata/GenerateCurrencyData.java	Tue Dec 30 19:20:43 2014
+@@ -281,9 +281,6 @@ public class GenerateCurrencyData {
+             checkCurrencyCode(newCurrency);
+             String timeString = currencyInfo.substring(4, length - 4);
+             long time = format.parse(timeString).getTime();
+-            if (Math.abs(time - System.currentTimeMillis()) > ((long) 10) * 365 * 24 * 60 * 60 * 1000) {
+-                throw new RuntimeException("time is more than 10 years from present: " + time);
+-            }
+             specialCaseCutOverTimes[specialCaseCount] = time;
+             specialCaseOldCurrencies[specialCaseCount] = oldCurrency;
+             specialCaseOldCurrenciesDefaultFractionDigits[specialCaseCount] = getDefaultFractionDigits(oldCurrency);
