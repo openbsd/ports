@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1297 2014/12/31 11:16:53 rpe Exp $
+# $OpenBSD: Makefile,v 1.1298 2015/01/01 19:03:42 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -169,10 +169,8 @@
      SUBDIR += hs-ConfigFile
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
-     SUBDIR += hs-HsSyck
      SUBDIR += hs-List
      SUBDIR += hs-ListLike
-     SUBDIR += hs-MetaObject
      SUBDIR += hs-MissingH
      SUBDIR += hs-MonadCatchIO-mtl
      SUBDIR += hs-MonadCatchIO-transformers
@@ -209,7 +207,6 @@
      SUBDIR += hs-configurator
      SUBDIR += hs-constraints
      SUBDIR += hs-contravariant
-     SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-hash
@@ -261,13 +258,10 @@
      SUBDIR += hs-parsec
      SUBDIR += hs-patch-combinators
      SUBDIR += hs-primitive
-     SUBDIR += hs-pugs-DrIFT
-     SUBDIR += hs-pugs-compat
      SUBDIR += hs-random
      SUBDIR += hs-readline
      SUBDIR += hs-regex-base
      SUBDIR += hs-regex-compat
-     SUBDIR += hs-regex-pcre-builtin
      SUBDIR += hs-regex-posix
      SUBDIR += hs-resourcet
      SUBDIR += hs-safe
@@ -280,7 +274,6 @@
      SUBDIR += hs-split
      SUBDIR += hs-stm
      SUBDIR += hs-strict
-     SUBDIR += hs-stringtable-atom
      SUBDIR += hs-syb
      SUBDIR += hs-tagged
      SUBDIR += hs-tar
