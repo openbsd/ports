@@ -1,31 +1,26 @@
-# $OpenBSD: Makefile,v 1.51 2014/04/19 14:43:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.52 2015/01/01 15:19:49 bcallah Exp $
 
 COMMENT=	graphics and text browser
-
-VER=		2.8
+VER=		2.9
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
-REVISION=	0
-
 CATEGORIES=	www
 
 HOMEPAGE=	http://links.twibright.com/
-
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	bz2>=10 c crypto lzma m ssl z
+WANTLIB=	bz2 c crypto lzma m ssl z
 
 MASTER_SITES=	http://links.twibright.com/download/
 
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz
 
-AUTOCONF_VERSION=2.13
-CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS+= --with-ssl --without-sdl
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --with-ssl
 USE_GROFF =	Yes
 
 FLAVORS=	no_x11
