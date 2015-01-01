@@ -1,8 +1,0 @@
-This is a simple YAML ('Yet Another Markup Language') processor,
-used by the Pugs project for handling data serialization; this can
-be useful for optimization and caching purposes.
-
-This is an interface to the syck C library for parsing and dumping
-YAML data. It lets you transform textual YAML data into an object
-of type 'YamlNode', and vice versa, fast.
-
