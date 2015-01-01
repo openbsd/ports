@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2014/11/29 16:12:35 jturner Exp $
+# $OpenBSD: Makefile,v 1.167 2015/01/01 19:01:57 kili Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -33,7 +33,6 @@
      SUBDIR += gprolog
      SUBDIR += guile
      SUBDIR += guile2
-     SUBDIR += hs-HsParrot
      SUBDIR += hs-haskell-src
      SUBDIR += hs-haskell-src-exts
      SUBDIR += hs-syntactic
@@ -80,7 +79,6 @@
      SUBDIR += pfe
      SUBDIR += php
      SUBDIR += processing
-     SUBDIR += pugs
      SUBDIR += pypy
      SUBDIR += python
      SUBDIR += racket
