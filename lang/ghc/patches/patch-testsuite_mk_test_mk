@@ -1,11 +1,11 @@
-$OpenBSD: patch-testsuite_mk_test_mk,v 1.4 2014/11/22 20:23:23 kili Exp $
+$OpenBSD: patch-testsuite_mk_test_mk,v 1.5 2015/01/01 19:25:36 kili Exp $
 
 Disable LLVM tests for now (until I unslack and debug why all LLVM
 tests are failing).
 
---- testsuite/mk/test.mk.orig	Thu Jul 10 06:27:16 2014
-+++ testsuite/mk/test.mk	Sun Nov  2 22:06:42 2014
-@@ -126,16 +126,7 @@ else
+--- testsuite/mk/test.mk.orig	Mon Nov  3 14:24:57 2014
++++ testsuite/mk/test.mk	Mon Dec 29 10:24:49 2014
+@@ -133,16 +133,7 @@ else
  RUNTEST_OPTS += -e ghc_with_smp=0
  endif
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ghc_mk,v 1.9 2014/11/22 20:23:23 kili Exp $
+$OpenBSD: patch-ghc_mk,v 1.10 2015/01/01 19:25:36 kili Exp $
 
 Fix the bindist-list (for building the bootstrapper); without this,
 gtar creates an archive which our tar can't extract.
@@ -9,8 +9,8 @@ gtar creates an archive which our tar can't extract.
  	echo "UseSystemLibFFI    = $(UseSystemLibFFI)"    >> $(BIN_DIST_MK)
  	cd $(BIN_DIST_PREP_DIR) && autoreconf
  	$(call removeFiles,$(BIN_DIST_PREP_TAR))
-+	sed 's@/\./@/@g' ${BIN_DIST_LIST} | sort -u > ${BIN_DIST_LIST}.new
-+	mv ${BIN_DIST_LIST}.new ${BIN_DIST_LIST}
++	sed 's@/\./@/@g' bindist-list | sort -u > bindist-list.new
++	mv bindist-list.new bindist-list
  # h means "follow symlinks", e.g. if aclocal.m4 is a symlink to a source
  # tree then we want to include the real file, not a symlink to it
  	cd bindistprep && "$(TAR_CMD)" hcf - -T ../bindist-list | $(TAR_COMP_CMD) -c > ../$(BIN_DIST_PREP_TAR_COMP)

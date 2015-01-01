@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2014/11/22 20:23:22 kili Exp $
+# $OpenBSD: Makefile,v 1.111 2015/01/01 19:25:36 kili Exp $
 
 BROKEN =        	too many errors for bulk builders
 
@@ -18,7 +18,7 @@ CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.6.3.20141019
+BIN_VER =		7.8.3.20141229
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -162,7 +162,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20141019
+BOOTSTRAP_DATE =	20141229
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
