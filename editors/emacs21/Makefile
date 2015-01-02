@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.75 2014/10/28 08:42:47 jca Exp $
+# $OpenBSD: Makefile,v 1.76 2015/01/02 14:26:31 sthen Exp $
+
+BROKEN-i386= segfault during build (./temacs -batch -l loadup dump)
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -11,7 +13,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		29
+REVISION-main=		30
 REVISION-el=		7
 REVISION-leim=		7
 
