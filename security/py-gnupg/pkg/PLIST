@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/02/09 19:15:39 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/GnuPGInterface.py
-lib/python${MODPY_VERSION}/site-packages/GnuPGInterface.pyc
+@comment $OpenBSD: PLIST,v 1.5 2015/01/02 20:12:47 jca Exp $
+lib/python${MODPY_VERSION}/site-packages/gnupg.py
+lib/python${MODPY_VERSION}/site-packages/gnupg.pyc
+lib/python${MODPY_VERSION}/site-packages/python_gnupg-0.3.7-py${MODPY_VERSION}.egg-info
