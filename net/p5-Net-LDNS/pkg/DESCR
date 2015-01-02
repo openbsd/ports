@@ -1,0 +1,4 @@
+Net::LDNS is a DNS resolver using the ldns library.  It allows the
+programmer to perform nearly any type of DNS query from a Perl
+script.  For details and examples, please read the Net::LDNS manual
+page.

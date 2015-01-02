@@ -1,0 +1,161 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 14:33:44 florian Exp $
+${P5ARCH}/
+${P5ARCH}/Net/
+${P5ARCH}/Net/LDNS/
+${P5ARCH}/Net/LDNS.pm
+${P5ARCH}/Net/LDNS/Packet.pm
+${P5ARCH}/Net/LDNS/RR/
+${P5ARCH}/Net/LDNS/RR.pm
+${P5ARCH}/Net/LDNS/RR/A.pm
+${P5ARCH}/Net/LDNS/RR/A6.pm
+${P5ARCH}/Net/LDNS/RR/AAAA.pm
+${P5ARCH}/Net/LDNS/RR/AFSDB.pm
+${P5ARCH}/Net/LDNS/RR/APL.pm
+${P5ARCH}/Net/LDNS/RR/ATMA.pm
+${P5ARCH}/Net/LDNS/RR/CAA.pm
+${P5ARCH}/Net/LDNS/RR/CDS.pm
+${P5ARCH}/Net/LDNS/RR/CERT.pm
+${P5ARCH}/Net/LDNS/RR/CNAME.pm
+${P5ARCH}/Net/LDNS/RR/DHCID.pm
+${P5ARCH}/Net/LDNS/RR/DLV.pm
+${P5ARCH}/Net/LDNS/RR/DNAME.pm
+${P5ARCH}/Net/LDNS/RR/DNSKEY.pm
+${P5ARCH}/Net/LDNS/RR/DS.pm
+${P5ARCH}/Net/LDNS/RR/EID.pm
+${P5ARCH}/Net/LDNS/RR/EUI48.pm
+${P5ARCH}/Net/LDNS/RR/EUI64.pm
+${P5ARCH}/Net/LDNS/RR/GID.pm
+${P5ARCH}/Net/LDNS/RR/GPOS.pm
+${P5ARCH}/Net/LDNS/RR/HINFO.pm
+${P5ARCH}/Net/LDNS/RR/HIP.pm
+${P5ARCH}/Net/LDNS/RR/IPSECKEY.pm
+${P5ARCH}/Net/LDNS/RR/ISDN.pm
+${P5ARCH}/Net/LDNS/RR/KEY.pm
+${P5ARCH}/Net/LDNS/RR/KX.pm
+${P5ARCH}/Net/LDNS/RR/L32.pm
+${P5ARCH}/Net/LDNS/RR/L64.pm
+${P5ARCH}/Net/LDNS/RR/LOC.pm
+${P5ARCH}/Net/LDNS/RR/LP.pm
+${P5ARCH}/Net/LDNS/RR/MAILA.pm
+${P5ARCH}/Net/LDNS/RR/MAILB.pm
+${P5ARCH}/Net/LDNS/RR/MB.pm
+${P5ARCH}/Net/LDNS/RR/MD.pm
+${P5ARCH}/Net/LDNS/RR/MF.pm
+${P5ARCH}/Net/LDNS/RR/MG.pm
+${P5ARCH}/Net/LDNS/RR/MINFO.pm
+${P5ARCH}/Net/LDNS/RR/MR.pm
+${P5ARCH}/Net/LDNS/RR/MX.pm
+${P5ARCH}/Net/LDNS/RR/NAPTR.pm
+${P5ARCH}/Net/LDNS/RR/NID.pm
+${P5ARCH}/Net/LDNS/RR/NIMLOC.pm
+${P5ARCH}/Net/LDNS/RR/NINFO.pm
+${P5ARCH}/Net/LDNS/RR/NS.pm
+${P5ARCH}/Net/LDNS/RR/NSAP.pm
+${P5ARCH}/Net/LDNS/RR/NSEC.pm
+${P5ARCH}/Net/LDNS/RR/NSEC3.pm
+${P5ARCH}/Net/LDNS/RR/NSEC3PARAM.pm
+${P5ARCH}/Net/LDNS/RR/NULL.pm
+${P5ARCH}/Net/LDNS/RR/NXT.pm
+${P5ARCH}/Net/LDNS/RR/PTR.pm
+${P5ARCH}/Net/LDNS/RR/PX.pm
+${P5ARCH}/Net/LDNS/RR/RKEY.pm
+${P5ARCH}/Net/LDNS/RR/RP.pm
+${P5ARCH}/Net/LDNS/RR/RRSIG.pm
+${P5ARCH}/Net/LDNS/RR/RT.pm
+${P5ARCH}/Net/LDNS/RR/SINK.pm
+${P5ARCH}/Net/LDNS/RR/SOA.pm
+${P5ARCH}/Net/LDNS/RR/SPF.pm
+${P5ARCH}/Net/LDNS/RR/SRV.pm
+${P5ARCH}/Net/LDNS/RR/SSHFP.pm
+${P5ARCH}/Net/LDNS/RR/TA.pm
+${P5ARCH}/Net/LDNS/RR/TALINK.pm
+${P5ARCH}/Net/LDNS/RR/TKEY.pm
+${P5ARCH}/Net/LDNS/RR/TLSA.pm
+${P5ARCH}/Net/LDNS/RR/TXT.pm
+${P5ARCH}/Net/LDNS/RR/TYPE.pm
+${P5ARCH}/Net/LDNS/RR/UID.pm
+${P5ARCH}/Net/LDNS/RR/UINFO.pm
+${P5ARCH}/Net/LDNS/RR/UNSPEC.pm
+${P5ARCH}/Net/LDNS/RR/URI.pm
+${P5ARCH}/Net/LDNS/RR/WKS.pm
+${P5ARCH}/Net/LDNS/RR/X25.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/LDNS/
+${P5ARCH}/auto/Net/LDNS/LDNS.so
+@man man/man3p/Net::LDNS.3p
+@man man/man3p/Net::LDNS::Packet.3p
+@man man/man3p/Net::LDNS::RR.3p
+@man man/man3p/Net::LDNS::RR::A.3p
+@man man/man3p/Net::LDNS::RR::A6.3p
+@man man/man3p/Net::LDNS::RR::AAAA.3p
+@man man/man3p/Net::LDNS::RR::AFSDB.3p
+@man man/man3p/Net::LDNS::RR::APL.3p
+@man man/man3p/Net::LDNS::RR::ATMA.3p
+@man man/man3p/Net::LDNS::RR::CAA.3p
+@man man/man3p/Net::LDNS::RR::CDS.3p
+@man man/man3p/Net::LDNS::RR::CERT.3p
+@man man/man3p/Net::LDNS::RR::CNAME.3p
+@man man/man3p/Net::LDNS::RR::DHCID.3p
+@man man/man3p/Net::LDNS::RR::DLV.3p
+@man man/man3p/Net::LDNS::RR::DNAME.3p
+@man man/man3p/Net::LDNS::RR::DNSKEY.3p
+@man man/man3p/Net::LDNS::RR::DS.3p
+@man man/man3p/Net::LDNS::RR::EID.3p
+@man man/man3p/Net::LDNS::RR::EUI48.3p
+@man man/man3p/Net::LDNS::RR::EUI64.3p
+@man man/man3p/Net::LDNS::RR::GID.3p
+@man man/man3p/Net::LDNS::RR::GPOS.3p
+@man man/man3p/Net::LDNS::RR::HINFO.3p
+@man man/man3p/Net::LDNS::RR::HIP.3p
+@man man/man3p/Net::LDNS::RR::IPSECKEY.3p
+@man man/man3p/Net::LDNS::RR::ISDN.3p
+@man man/man3p/Net::LDNS::RR::KEY.3p
+@man man/man3p/Net::LDNS::RR::KX.3p
+@man man/man3p/Net::LDNS::RR::L32.3p
+@man man/man3p/Net::LDNS::RR::L64.3p
+@man man/man3p/Net::LDNS::RR::LOC.3p
+@man man/man3p/Net::LDNS::RR::LP.3p
+@man man/man3p/Net::LDNS::RR::MAILA.3p
+@man man/man3p/Net::LDNS::RR::MAILB.3p
+@man man/man3p/Net::LDNS::RR::MB.3p
+@man man/man3p/Net::LDNS::RR::MD.3p
+@man man/man3p/Net::LDNS::RR::MF.3p
+@man man/man3p/Net::LDNS::RR::MG.3p
+@man man/man3p/Net::LDNS::RR::MINFO.3p
+@man man/man3p/Net::LDNS::RR::MR.3p
+@man man/man3p/Net::LDNS::RR::MX.3p
+@man man/man3p/Net::LDNS::RR::NAPTR.3p
+@man man/man3p/Net::LDNS::RR::NID.3p
+@man man/man3p/Net::LDNS::RR::NIMLOC.3p
+@man man/man3p/Net::LDNS::RR::NINFO.3p
+@man man/man3p/Net::LDNS::RR::NS.3p
+@man man/man3p/Net::LDNS::RR::NSAP.3p
+@man man/man3p/Net::LDNS::RR::NSEC.3p
+@man man/man3p/Net::LDNS::RR::NSEC3.3p
+@man man/man3p/Net::LDNS::RR::NSEC3PARAM.3p
+@man man/man3p/Net::LDNS::RR::NULL.3p
+@man man/man3p/Net::LDNS::RR::NXT.3p
+@man man/man3p/Net::LDNS::RR::PTR.3p
+@man man/man3p/Net::LDNS::RR::PX.3p
+@man man/man3p/Net::LDNS::RR::RKEY.3p
+@man man/man3p/Net::LDNS::RR::RP.3p
+@man man/man3p/Net::LDNS::RR::RRSIG.3p
+@man man/man3p/Net::LDNS::RR::RT.3p
+@man man/man3p/Net::LDNS::RR::SINK.3p
+@man man/man3p/Net::LDNS::RR::SOA.3p
+@man man/man3p/Net::LDNS::RR::SPF.3p
+@man man/man3p/Net::LDNS::RR::SRV.3p
+@man man/man3p/Net::LDNS::RR::SSHFP.3p
+@man man/man3p/Net::LDNS::RR::TA.3p
+@man man/man3p/Net::LDNS::RR::TALINK.3p
+@man man/man3p/Net::LDNS::RR::TKEY.3p
+@man man/man3p/Net::LDNS::RR::TLSA.3p
+@man man/man3p/Net::LDNS::RR::TXT.3p
+@man man/man3p/Net::LDNS::RR::TYPE.3p
+@man man/man3p/Net::LDNS::RR::UID.3p
+@man man/man3p/Net::LDNS::RR::UINFO.3p
+@man man/man3p/Net::LDNS::RR::UNSPEC.3p
+@man man/man3p/Net::LDNS::RR::URI.3p
+@man man/man3p/Net::LDNS::RR::WKS.3p
+@man man/man3p/Net::LDNS::RR::X25.3p
