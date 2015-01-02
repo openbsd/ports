@@ -1,0 +1,2 @@
+Devel::CheckLib is a perl module that checks whether a particular C
+library and its headers are available.

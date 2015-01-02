@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 14:23:29 florian Exp $
+bin/use-devel-checklib
+${P5SITE}/Devel/
+${P5SITE}/Devel/CheckLib.pm
+@man man/man1/use-devel-checklib.1
+@man man/man3p/Devel::CheckLib.3p
