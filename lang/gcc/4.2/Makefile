@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2014/11/22 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2015/01/02 14:26:12 sthen Exp $
 
 # TODO: hppa mips64 mips64el sparc
 ONLY_FOR_ARCHS = alpha i386 sparc64 powerpc amd64 arm sh
@@ -24,13 +24,7 @@ PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 
-REVISION-main = 15
-REVISION-c++ = 18
-REVISION-estdc = 5
-REVISION-f95 = 16
-REVISION-java = 16
-REVISION-objc = 15
-REVISION-ada = 13
+REVISION = 19
 EPOCH = 0
 
 SHARED_LIBS =	estdc++		13.0 \

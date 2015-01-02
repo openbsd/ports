@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/27 17:23:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/02 14:26:12 sthen Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -29,6 +29,8 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.9,<4.10
+
+REVISION =	0
 
 SHARED_LIBS =	estdc++		17.0 \
 		gfortran	6.0 \

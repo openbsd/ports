@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/12/30 21:50:24 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2015/01/02 14:26:12 sthen Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -14,7 +14,7 @@ PKGNAME-main =	gfortran-$V
 PKGNAME-lib =	libgfortran-$V
 SHARED_LIBS =	gfortran	2.0
 
-REVISION = 12
+REVISION = 13
 
 CATEGORIES =	lang math
 
