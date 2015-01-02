@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2014/11/30 05:41:35 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2015/01/02 19:32:08 kirby Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
-V =	 	0.5.10
+V =	 	0.5.11
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
-REVISION = 	1
 CATEGORIES =	games
 
 MAINTAINER =	Antti Harri <iku@openbsd.fi>
@@ -48,6 +47,10 @@ AUTOCONF_VERSION =	2.68
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
+
+# stop picking up included ode
+post-extract:
+	rm -r ${WRKDIST}/src/ode
 
 pre-configure:
 	cd ${WRKSRC} && \
