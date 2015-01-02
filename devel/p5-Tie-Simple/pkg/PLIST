@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 14:26:48 florian Exp $
+${P5SITE}/Tie/
+${P5SITE}/Tie/Simple/
+${P5SITE}/Tie/Simple.pm
+${P5SITE}/Tie/Simple/Array.pm
+${P5SITE}/Tie/Simple/Handle.pm
+${P5SITE}/Tie/Simple/Hash.pm
+${P5SITE}/Tie/Simple/Scalar.pm
+${P5SITE}/Tie/Simple/Util.pm
+@man man/man3p/Tie::Simple.3p
