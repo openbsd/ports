@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/21 09:07:27 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/02 11:32:23 sebastia Exp $
 
 COMMENT =	GNUstep desktop meta-package
 
-VERSION =	0.9.2
-REVISION =	2
+VERSION =	0.9.3
 PKGNAME =	gnustep-desktop-${VERSION}
 
 RUN_DEPENDS += \
