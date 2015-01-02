@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/11/08 11:17:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/01/02 15:54:38 jca Exp $
 bin/git-cola
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -6,10 +6,15 @@ share/applications/git-cola-folder-handler.desktop
 share/applications/git-cola.desktop
 share/applications/git-dag.desktop
 share/doc/git-cola/
-share/doc/git-cola/git-cola.txt
-share/doc/git-cola/git-dag.txt
+share/doc/git-cola/git-cola.rst
+share/doc/git-cola/git-dag.rst
 share/doc/git-cola/hotkeys.html
 share/doc/git-cola/hotkeys_de.html
+share/doc/git-cola/hotkeys_zh_CN.html
+share/doc/git-cola/hotkeys_zh_TW.html
+share/doc/git-cola/index.rst
+share/doc/git-cola/relnotes.rst
+share/doc/git-cola/thanks.rst
 share/git-cola/
 share/git-cola/bin/
 share/git-cola/bin/git-xbase
@@ -24,7 +29,7 @@ share/git-cola/icons/edit-clear.svg
 share/git-cola/icons/edit-copy.svg
 share/git-cola/icons/edit-select-all.svg
 share/git-cola/icons/generic.png
-share/git-cola/icons/git.svg
+share/git-cola/icons/git-cola.svg
 share/git-cola/icons/image.png
 share/git-cola/icons/logo-top.png
 share/git-cola/icons/modified.png
@@ -40,6 +45,7 @@ share/git-cola/icons/staged.png
 share/git-cola/icons/undo.svg
 share/git-cola/icons/untracked.png
 share/git-cola/icons/upstream.png
+share/git-cola/icons/view-filter.png
 share/git-cola/icons/view-refresh.svg
 share/git-cola/icons/zoom-fit-best.png
 share/git-cola/icons/zoom-in.png
@@ -49,19 +55,12 @@ share/git-cola/lib/cola/
 share/git-cola/lib/cola/__init__.py
 share/git-cola/lib/cola/_version.py
 share/git-cola/lib/cola/app.py
-share/git-cola/lib/cola/bookmarks.py
-share/git-cola/lib/cola/classic/
-share/git-cola/lib/cola/classic/__init__.py
-share/git-cola/lib/cola/classic/controller.py
-share/git-cola/lib/cola/classic/model.py
-share/git-cola/lib/cola/classic/view.py
 share/git-cola/lib/cola/cmds.py
 share/git-cola/lib/cola/compat.py
 share/git-cola/lib/cola/core.py
 share/git-cola/lib/cola/decorators.py
 share/git-cola/lib/cola/diffparse.py
 share/git-cola/lib/cola/difftool.py
-share/git-cola/lib/cola/errors.py
 share/git-cola/lib/cola/git.py
 share/git-cola/lib/cola/gitcfg.py
 share/git-cola/lib/cola/gitcmds.py
@@ -70,17 +69,14 @@ share/git-cola/lib/cola/guicmds.py
 share/git-cola/lib/cola/i18n.py
 share/git-cola/lib/cola/inotify.py
 share/git-cola/lib/cola/interaction.py
-share/git-cola/lib/cola/main/
-share/git-cola/lib/cola/main/__init__.py
-share/git-cola/lib/cola/main/model.py
-share/git-cola/lib/cola/main/view.py
 share/git-cola/lib/cola/models/
 share/git-cola/lib/cola/models/__init__.py
+share/git-cola/lib/cola/models/browse.py
 share/git-cola/lib/cola/models/dag.py
+share/git-cola/lib/cola/models/main.py
 share/git-cola/lib/cola/models/prefs.py
 share/git-cola/lib/cola/models/selection.py
 share/git-cola/lib/cola/models/stash.py
-share/git-cola/lib/cola/notification.py
 share/git-cola/lib/cola/observable.py
 share/git-cola/lib/cola/qtcompat.py
 share/git-cola/lib/cola/qtutils.py
@@ -94,9 +90,9 @@ share/git-cola/lib/cola/widgets/__init__.py
 share/git-cola/lib/cola/widgets/about.py
 share/git-cola/lib/cola/widgets/action.py
 share/git-cola/lib/cola/widgets/archive.py
+share/git-cola/lib/cola/widgets/bookmarks.py
 share/git-cola/lib/cola/widgets/browse.py
 share/git-cola/lib/cola/widgets/cfgactions.py
-share/git-cola/lib/cola/widgets/combodlg.py
 share/git-cola/lib/cola/widgets/commitmsg.py
 share/git-cola/lib/cola/widgets/compare.py
 share/git-cola/lib/cola/widgets/completion.py
@@ -106,10 +102,13 @@ share/git-cola/lib/cola/widgets/dag.py
 share/git-cola/lib/cola/widgets/defs.py
 share/git-cola/lib/cola/widgets/diff.py
 share/git-cola/lib/cola/widgets/editremotes.py
+share/git-cola/lib/cola/widgets/filelist.py
 share/git-cola/lib/cola/widgets/grep.py
 share/git-cola/lib/cola/widgets/highlighter.py
 share/git-cola/lib/cola/widgets/log.py
+share/git-cola/lib/cola/widgets/main.py
 share/git-cola/lib/cola/widgets/merge.py
+share/git-cola/lib/cola/widgets/patch.py
 share/git-cola/lib/cola/widgets/prefs.py
 share/git-cola/lib/cola/widgets/recent.py
 share/git-cola/lib/cola/widgets/remote.py
@@ -121,16 +120,19 @@ share/git-cola/lib/cola/widgets/startup.py
 share/git-cola/lib/cola/widgets/stash.py
 share/git-cola/lib/cola/widgets/status.py
 share/git-cola/lib/cola/widgets/text.py
-share/git-cola/lib/cola/xdg.py
 share/locale/de/LC_MESSAGES/git-cola.mo
+share/locale/es/LC_MESSAGES/git-cola.mo
 share/locale/fr/LC_MESSAGES/git-cola.mo
 share/locale/hu/LC_MESSAGES/git-cola.mo
+share/locale/id_ID/
+share/locale/id_ID/LC_MESSAGES/
+share/locale/id_ID/LC_MESSAGES/git-cola.mo
 share/locale/it/LC_MESSAGES/git-cola.mo
 share/locale/ja/LC_MESSAGES/git-cola.mo
+share/locale/pt_BR/LC_MESSAGES/git-cola.mo
 share/locale/ru/LC_MESSAGES/git-cola.mo
 share/locale/sv/LC_MESSAGES/git-cola.mo
-share/locale/zh_cn/
-share/locale/zh_cn/LC_MESSAGES/
-share/locale/zh_cn/LC_MESSAGES/git-cola.mo
+share/locale/zh_CN/LC_MESSAGES/git-cola.mo
+share/locale/zh_TW/LC_MESSAGES/git-cola.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

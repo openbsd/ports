@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1 2015/01/02 15:54:38 jca Exp $
+
+Avoid dep on gnu make
+
+--- Makefile.orig	Sun Nov 30 08:51:18 2014
++++ Makefile	Mon Dec 15 21:49:55 2014
+@@ -44,11 +44,7 @@ setup_args += --force
+ setup_args += --install-scripts=$(bindir)
+ setup_args += --record=build/MANIFEST
+ setup_args += --install-lib=$(coladir)
+-ifdef DESTDIR
+-    setup_args += --root=$(DESTDIR)
+-    export DESTDIR
+-endif
+-export prefix
++setup_args += --root=$(DESTDIR)
+ 
+ all::
+ 	$(PYTHON) setup.py build
