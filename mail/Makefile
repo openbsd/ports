@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2014/11/22 22:57:46 ian Exp $
+# $OpenBSD: Makefile,v 1.322 2015/01/02 14:42:46 florian Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -151,6 +151,7 @@
      SUBDIR += p5-Mail-IMAPTalk
      SUBDIR += p5-Mail-Mbox-MessageParser
      SUBDIR += p5-Mail-POP3Client
+     SUBDIR += p5-Mail-RFC822-Address
      SUBDIR += p5-Mail-SPF
      SUBDIR += p5-Mail-SPF-Iterator
      SUBDIR += p5-Mail-SPF-Query
