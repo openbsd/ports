@@ -1,0 +1,2 @@
+Mail::RFC822::Address validates email addresses against the grammar
+described in RFC 822 using regular expressions.
