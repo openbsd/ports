@@ -1,0 +1,15 @@
+These routines will reflow the paragraphs in the given file,
+filehandle, string or array using Knuth's paragraphing algorithm (as
+used in TeX) to pick "good" places to break the lines.
+
+Each routine takes ascii text data with paragraphs separated by blank
+lines and reflows the paragraphs. If two or more lines in a row are
+"indented" then they are assumed to be a quoted poem and are passed
+through unchanged.
+
+The reflow algorithm tries to keep the lines the same length but also
+tries to break at punctuation, and avoid breaking within a proper name
+or after certain connectives ("a", "the", etc.). The result is a file
+with a more "ragged" right margin than is produced by fmt or
+Text::Wrap but it is easier to read since fewer phrases are broken
+across line breaks.
