@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/12/31 08:42:27 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2015/01/02 19:32:21 robert Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
@@ -8,7 +8,7 @@ BROKEN-hppa =	rake fails when linking PassengerHelperAgent
 PASS_VERSION =		4.0.44
 NGINX_VERSION =		1.4.7
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		0
+REVISION =		1
 FULLPKGNAME-main =	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 FULLPKGNAME-standalone = ${MODRUBY_PKG_PREFIX}-passenger-standalone-${PASS_VERSION}.${NGINX_VERSION}
 FULLPKGPATH-main =	${BASE_PKGPATH},-main
@@ -35,7 +35,7 @@ FLAVOR ?=		ruby21
 
 # Fix conflict between subpackages when using ruby21 FLAVOR
 .if ${FLAVOR} == ruby21
-PKG_ARGS-standalone =	
+PKG_ARGS-standalone =
 .endif
 
 SHARED_ONLY-main =	Yes
