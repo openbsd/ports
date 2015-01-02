@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/02 11:31:49 sebastia Exp $
 
 COMMENT=	GNUstep workspace manager
 
-DISTNAME =	gworkspace-0.9.2
-REVISION =	2
+DISTNAME =	gworkspace-0.9.3
 
 CATEGORIES=	x11
 
@@ -18,10 +17,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP:=usr-apps/}
 
 MODULES=	x11/gnustep
 WANTLIB +=	sqlite3 PreferencePanes
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS}
 LIB_DEPENDS +=		x11/gnustep/systempreferences
-
-AUTOCONF_VERSION =	2.52
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-gwmetadata
@@ -38,7 +34,13 @@ MAKE_ENV+=	FSNode_VERSION=${LIBFSNode_VERSION} \
 		Operation_VERSION=${LIBOperation_VERSION} \
 		Operation_INTERFACE_VERSION=${LIBOperation_VERSION}
 
-pre-configure:
-	cd ${WRKSRC} && rm GWorkspace/Resources/Spanish.lproj/Localizable.strings~
+APP_WRAPPERS +=	ImageMagick LibreOffice LyX abiword bluefish coccinella
+APP_WRAPPERS +=	firefox gedit gnumeric nedit opennx qlandkartegt seamonkey
+APP_WRAPPERS +=	spdrs60 xchat xfig xmms xpdf xtrkcad xv
+
+post-install:
+.for _app in ${APP_WRAPPERS}
+	cp -r ${WRKSRC}/Apps_wrappers/${_app}.app ${PREFIX}/libexec/GNUstep
+.endfor
 
 .include <bsd.port.mk>
