@@ -1,0 +1,13 @@
+Zonemaster is a software package to check the quality of DNS
+delegations.
+It checks the delegation from the parent nameservers including glue
+records if necessary, consistency of all authoritative nameservers
+and DNSSEC chains, among other things.
+It can also check undelegated domains by providing the list of
+authoritative nameservers and DS records.
+This is a joint project from .SE and AFNIC implementing a major
+rewrite of their erlier DNS validation projects DNSCheck and
+Zonecheck.
+
+This package contains the backend modules. For the command-line user
+interface, install the "zonemaster" package.
