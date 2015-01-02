@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2014/11/14 07:49:33 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2015/01/02 20:11:18 jca Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION = 0.6.25
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.nongnu.org/duplicity/
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=duplicity/}
-
-MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,7 +24,6 @@ LIB_DEPENDS +=	net/librsync \
 
 RUN_DEPENDS +=	net/py-boto \
 		net/ncftp \
-		security/py-gnupg \
 		sysutils/py-lockfile
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
