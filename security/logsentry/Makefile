@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/28 10:54:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/03 18:36:53 jca Exp $
 
 COMMENT=	logfile auditing tool
 
 DISTNAME=	logcheck-1.1.1
 PKGNAME=	logsentry-1.1.1
-REVISION = 	5
+REVISION = 	6
 CATEGORIES=	security
 
-MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
+MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=  	Yes
@@ -45,7 +45,7 @@ do-install:
 		${CFG_DIR}/${i:S/logcheck/logsentry/}
 .endfor
 	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},;' \
-	 -e 's,%%LOGSENTRY_TMP%%,/var/tmp/logsentry,;' \
+	 -e 's,%%LOGSENTRY_TMP%%,/var/cache/logsentry,;' \
 	 -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},;' ${CFG_DIR}/logsentry.sh
 
 .include <bsd.port.mk> 

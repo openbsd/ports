@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/11/28 10:54:09 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/01/03 18:36:53 jca Exp $
 @conflict logcheck-1.1.1
 @conflict logtail-*
-@extraunexec rm -rf /var/tmp/logsentry/*
+@extraunexec rm -rf /var/cache/logsentry/*
 @bin bin/logtail
 share/doc/logsentry/
 share/doc/logsentry/CREDITS
@@ -33,4 +33,5 @@ share/examples/logsentry/logsentry.violations
 share/examples/logsentry/logsentry.violations.ignore
 @mode 600
 @sample ${SYSCONFDIR}/logsentry/logsentry.violations.ignore
-@sample /var/tmp/logsentry/
+@mode 700
+@sample /var/cache/logsentry/
