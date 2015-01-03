@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/09/02 09:24:09 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/01/03 19:07:17 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -143,6 +143,7 @@ pear/lib/Predis/Command/SetUnionStore.php
 pear/lib/Predis/Command/StringAppend.php
 pear/lib/Predis/Command/StringBitCount.php
 pear/lib/Predis/Command/StringBitOp.php
+pear/lib/Predis/Command/StringBitPos.php
 pear/lib/Predis/Command/StringDecrement.php
 pear/lib/Predis/Command/StringDecrementBy.php
 pear/lib/Predis/Command/StringGet.php
