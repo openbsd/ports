@@ -1,6 +1,5 @@
-$OpenBSD: patch-graphs_c,v 1.4 2014/12/10 15:51:59 jasper Exp $
+$OpenBSD: patch-graphs_c,v 1.5 2015/01/03 09:11:22 ajacoutot Exp $
 
-- use snprintf()
 - use memmove() instead of memcpy() to prevent a backwards copy
 
 --- graphs.c.orig	Tue Apr  8 20:58:18 2014

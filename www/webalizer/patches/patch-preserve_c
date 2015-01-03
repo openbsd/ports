@@ -1,6 +1,9 @@
-$OpenBSD: patch-preserve_c,v 1.4 2011/01/05 08:19:18 giovanni Exp $
---- preserve.c.orig	Thu Dec 30 14:52:23 2010
-+++ preserve.c	Mon Jan  3 11:42:14 2011
+$OpenBSD: patch-preserve_c,v 1.5 2015/01/03 09:11:22 ajacoutot Exp $
+
+- use memmove() instead of memcpy() to prevent a backwards copy
+
+--- preserve.c.orig	Tue Apr  8 20:58:18 2014
++++ preserve.c	Sat Jan  3 09:51:46 2015
 @@ -157,7 +157,7 @@ void put_history()
     char    timestamp[48];
  
@@ -19,6 +22,15 @@ $OpenBSD: patch-preserve_c,v 1.4 2011/01/05 08:19:18 giovanni Exp $
           if ((rename(hist_fname,old_fname)==-1)&&(errno!=ENOENT)&&verbose)
              fprintf(stderr,"Failed renaming %s to %s: %s\n",
                 hist_fname,old_fname,strerror(errno));
+@@ -282,7 +282,7 @@ void update_history()
+                   yr = hist[i].year;
+                   mth= hist[i].month+1;
+                   if (mth>12) { mth=1; yr++; }
+-                  memcpy(&hist[0],&hist[1],sizeof(hist[0])*i);
++                  memmove(&hist[0],&hist[1],sizeof(hist[0])*i);
+                   memset(&hist[i], 0, sizeof(struct hist_rec));
+                   hist[i].year=yr; hist[i].month=mth; n--;
+                }
 @@ -329,7 +329,7 @@ int save_state()
     char new_fname[MAXKVAL+4];
  
