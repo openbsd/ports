@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2014/07/09 17:43:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2015/01/03 05:55:06 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
-DISTNAME=	gbrainy-2.2.3
+DISTNAME=	gbrainy-2.2.4
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	games
 
 HOMEPAGE=	https://live.gnome.org/gbrainy
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
