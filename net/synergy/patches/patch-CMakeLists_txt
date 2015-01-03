@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2014/06/03 13:45:41 bcallah Exp $
---- CMakeLists.txt.orig	Fri May 23 11:43:58 2014
-+++ CMakeLists.txt	Fri May 23 14:42:41 2014
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2015/01/03 04:59:27 bcallah Exp $
+--- CMakeLists.txt.orig	Thu Nov  6 13:09:27 2014
++++ CMakeLists.txt	Thu Nov  6 19:59:59 2014
 @@ -76,7 +76,7 @@ if (UNIX)
  
  	# warnings as errors:
@@ -36,7 +36,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.6 2014/06/03 13:45:41 bcallah Exp $
  	# curl is used on both Linux and Mac
  	find_package(CURL)
  	if (CURL_FOUND)
-@@ -193,78 +194,60 @@ if (UNIX)
+@@ -196,78 +197,60 @@ if (UNIX)
  
  	else() # not-apple
  
@@ -151,7 +151,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.6 2014/06/03 13:45:41 bcallah Exp $
  
  	endif()
  
-@@ -316,7 +299,6 @@ else() # not-unix
+@@ -319,7 +302,6 @@ else() # not-unix
  endif()
  
  add_subdirectory(src)
