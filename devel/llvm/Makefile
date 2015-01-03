@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2014/12/30 22:41:09 brad Exp $
+# $OpenBSD: Makefile,v 1.98 2015/01/03 00:54:12 brad Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -10,7 +10,7 @@ COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
 LLVM_V =	3.5
 DISTNAME =	llvm-${LLVM_V}.20140228
-REVISION =	24
+REVISION =	25
 CATEGORIES =	devel
 MASTER_SITES =	http://comstyle.com/source/
 EXTRACT_SUFX =	.tar.xz
@@ -42,8 +42,11 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True
 
 # Workaround relocation overflow
+#
+# Have the build disable PIE to workaround breakage that was
+# introduced when PIE was enabled
 .if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS=-Wl,--relax
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,--relax -nopie"
 .endif
 
 TEST_TARGET =		check
