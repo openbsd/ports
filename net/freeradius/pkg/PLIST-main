@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2014/07/17 00:20:51 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2015/01/03 13:20:25 sthen Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -104,7 +104,7 @@ lib/freeradius/rlm_wimax.so
 lib/libfreeradius-eap.a
 lib/libfreeradius-eap.la
 @lib lib/libfreeradius-eap.so.${LIBfreeradius-eap_VERSION}
-lib/libfreeradius-radius-020205.la
+lib/libfreeradius-radius-020206.la
 lib/libfreeradius-radius.a
 lib/libfreeradius-radius.la
 @lib lib/libfreeradius-radius.so.${LIBfreeradius-radius_VERSION}
@@ -539,6 +539,7 @@ share/freeradius/dictionary.avaya
 share/freeradius/dictionary.azaire
 share/freeradius/dictionary.bay
 share/freeradius/dictionary.bintec
+share/freeradius/dictionary.bluecoat
 share/freeradius/dictionary.bristol
 share/freeradius/dictionary.broadsoft
 share/freeradius/dictionary.brocade
@@ -552,19 +553,23 @@ share/freeradius/dictionary.cisco
 share/freeradius/dictionary.cisco.bbsm
 share/freeradius/dictionary.cisco.vpn3000
 share/freeradius/dictionary.cisco.vpn5000
+share/freeradius/dictionary.citrix
 share/freeradius/dictionary.clavister
 share/freeradius/dictionary.colubris
 share/freeradius/dictionary.columbia_university
 share/freeradius/dictionary.compat
+share/freeradius/dictionary.compatible
 share/freeradius/dictionary.cosine
 share/freeradius/dictionary.dante
 share/freeradius/dictionary.dhcp
 share/freeradius/dictionary.digium
 share/freeradius/dictionary.dlink
+share/freeradius/dictionary.dragonwave
 share/freeradius/dictionary.efficientip
 share/freeradius/dictionary.eltex
 share/freeradius/dictionary.epygi
 share/freeradius/dictionary.ericsson
+share/freeradius/dictionary.ericsson.packet.core.networks
 share/freeradius/dictionary.erx
 share/freeradius/dictionary.extreme
 share/freeradius/dictionary.f5
@@ -648,8 +653,12 @@ share/freeradius/dictionary.rfc6572
 share/freeradius/dictionary.rfc6677
 share/freeradius/dictionary.rfc6911
 share/freeradius/dictionary.rfc6930
+share/freeradius/dictionary.rfc7055
+share/freeradius/dictionary.rfc7268
+share/freeradius/dictionary.riverbed
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
+share/freeradius/dictionary.ruckus
 share/freeradius/dictionary.sg
 share/freeradius/dictionary.shasta
 share/freeradius/dictionary.shiva
