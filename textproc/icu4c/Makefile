@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/11/03 12:29:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/01/03 07:53:00 ajacoutot Exp $
 
 # XXX re-rolled tarball: drop at next release
 DIST_SUBDIR=		icu4c
@@ -10,7 +10,7 @@ COMMENT=		International Components for Unicode
 VERSION=		54.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION=		2
+REVISION=		3
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		8.0
@@ -67,6 +67,12 @@ TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}b"
 PKG_ARGS +=		-Dle=1
 TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}l"
 .  endif
+.endif
+
+# binutils bugs on mips64.
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+pre-configure:
+	perl -pi -e 's|-Wl,-Bsymbolic||g' ${WRKSRC}/config/mh-bsd-gcc
 .endif
 
 post-install:
