@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_openssl_c,v 1.10 2014/12/10 20:23:28 jca Exp $
+$OpenBSD: patch-src_openssl_c,v 1.11 2015/01/04 22:01:22 jca Exp $
+
+http://git.savannah.gnu.org/cgit/wget.git/commit/?id=b5778699f0fd65efb78ac8fc0777128a7069b856
+
 --- src/openssl.c.orig	Thu Dec  4 09:55:49 2014
 +++ src/openssl.c	Mon Dec  8 12:06:14 2014
 @@ -91,9 +91,11 @@ init_prng (void)
