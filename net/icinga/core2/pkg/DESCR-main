@@ -1,5 +1,3 @@
-XXX rewrite marketing blurb
-
 Icinga monitors network resources such as servers, routers, switches,
 applications and services and notifies administrators or responsible
 persons.
@@ -14,8 +12,6 @@ inherited from Nagios as a fork.
 * Easy to extend with native support for Livestatus and Graphite
 * Cluster-enabled for distributed monitoring out of the box
 
-Icinga 2 ships with all the functionality modern monitoring environments
-need, while delivering unmatched performance, scalability and interoperability.
-From Livestatus and performance data writers to IDO and cluster capabilities,
-the above features are currently available in Icinga 2, with API / Agents on
-the drawing board.
++----------------------------------------------------------------+
+| WARNING: This package is not considered stable on OpenBSD yet. |
++----------------------------------------------------------------+
