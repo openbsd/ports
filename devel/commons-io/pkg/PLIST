@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/30 07:17:38 jasper Exp $
-share/java/
-share/java/classes/
-share/java/classes/commons-io.jar
