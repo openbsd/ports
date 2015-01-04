@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/13 09:25:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/04 21:12:52 jasper Exp $
 abcl/
 abcl/abcl-contrib.jar
 abcl/abcl.jar
@@ -60,6 +60,7 @@ abcl/src/org/armedbear/lisp/Do.java
 abcl/src/org/armedbear/lisp/DocString.java
 abcl/src/org/armedbear/lisp/DoubleFloat.java
 abcl/src/org/armedbear/lisp/DowncaseStream.java
+abcl/src/org/armedbear/lisp/EMFCache.java
 abcl/src/org/armedbear/lisp/EchoStream.java
 abcl/src/org/armedbear/lisp/EndOfFile.java
 abcl/src/org/armedbear/lisp/Environment.java
@@ -80,7 +81,6 @@ abcl/src/org/armedbear/lisp/FuncallableStandardClass.java
 abcl/src/org/armedbear/lisp/FuncallableStandardObject.java
 abcl/src/org/armedbear/lisp/Function.java
 abcl/src/org/armedbear/lisp/FunctionBinding.java
-abcl/src/org/armedbear/lisp/GenericFunction.java
 abcl/src/org/armedbear/lisp/Go.java
 abcl/src/org/armedbear/lisp/HashTable.java
 abcl/src/org/armedbear/lisp/HashTableFunctions.java
@@ -91,6 +91,7 @@ abcl/src/org/armedbear/lisp/JHandler.java
 abcl/src/org/armedbear/lisp/JProxy.java
 abcl/src/org/armedbear/lisp/JarStream.java
 abcl/src/org/armedbear/lisp/Java.java
+abcl/src/org/armedbear/lisp/JavaBeans.java
 abcl/src/org/armedbear/lisp/JavaClassLoader.java
 abcl/src/org/armedbear/lisp/JavaException.java
 abcl/src/org/armedbear/lisp/JavaObject.java
@@ -163,8 +164,6 @@ abcl/src/org/armedbear/lisp/SpecialOperator.java
 abcl/src/org/armedbear/lisp/SpecialOperators.java
 abcl/src/org/armedbear/lisp/StackFrame.java
 abcl/src/org/armedbear/lisp/StandardClass.java
-abcl/src/org/armedbear/lisp/StandardGenericFunction.java
-abcl/src/org/armedbear/lisp/StandardGenericFunctionClass.java
 abcl/src/org/armedbear/lisp/StandardObject.java
 abcl/src/org/armedbear/lisp/StorageCondition.java
 abcl/src/org/armedbear/lisp/Stream.java
@@ -280,6 +279,7 @@ abcl/src/org/armedbear/lisp/ensure-directories-exist.lisp
 abcl/src/org/armedbear/lisp/error.lisp
 abcl/src/org/armedbear/lisp/extensible-sequences-base.lisp
 abcl/src/org/armedbear/lisp/extensible-sequences.lisp
+abcl/src/org/armedbear/lisp/fasl-concat.lisp
 abcl/src/org/armedbear/lisp/fdefinition.lisp
 abcl/src/org/armedbear/lisp/featurep.lisp
 abcl/src/org/armedbear/lisp/file_author.java
@@ -440,7 +440,6 @@ abcl/src/org/armedbear/lisp/sort.lisp
 abcl/src/org/armedbear/lisp/source-transform.lisp
 abcl/src/org/armedbear/lisp/step.lisp
 abcl/src/org/armedbear/lisp/stream_element_type.java
-abcl/src/org/armedbear/lisp/stream_external_format.java
 abcl/src/org/armedbear/lisp/strings.lisp
 abcl/src/org/armedbear/lisp/sublis.lisp
 abcl/src/org/armedbear/lisp/subst.lisp

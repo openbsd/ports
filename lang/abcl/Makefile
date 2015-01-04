@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/04 21:12:52 jasper Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 
-V =			1.1.1
+V =			1.3.1
 DISTNAME =		abcl-src-${V}
 PKGNAME =		abcl-${V}
-REVISION =		1
 PKG_ARCH =		*
 
 CATEGORIES =		lang
@@ -29,7 +28,6 @@ RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap
 
 TEST_TARGET =		abcl.test
-NO_TEST =		Yes
 
 ABCL_HOME =		${PREFIX}/abcl
 
@@ -44,5 +42,9 @@ do-install:
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant ${TEST_TARGET}
+
+# maintainer target to generate completions file
+completions: install
+	${LOCALBASE}/bin/abcl --load ${FILESDIR}/gen-completions.lisp
 
 .include <bsd.port.mk>

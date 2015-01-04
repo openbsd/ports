@@ -17,9 +17,9 @@
                                  (symbol-name sym))
                     symbols)))))
 (with-open-file (output #.(concatenate 'string
-                                       (getenv "HOME")
-                                       "/.abcl_completions")
+                                       (getenv "PWD")
+                                       "/files/abcl_completions")
                         :direction :output :if-exists :overwrite
                         :if-does-not-exist :create)
   (format output "~{~(~A~)~%~}" (sort symbols #'string<)))
-(quit))
+(quit)
