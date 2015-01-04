@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.21 2014/09/07 16:27:24 chrisz Exp $
+# $OpenBSD: arch-defines.mk,v 1.22 2015/01/04 06:09:45 brad Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -38,4 +38,3 @@ PROPERTIES += ${PROP:L}
 .    endif
 .  endfor
 .endfor
-PROPERTIES += elf
