@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.95 2014/10/13 19:21:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2015/01/04 22:12:55 jca Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
-DISTNAME=	gnupg-1.4.17
-REVISION=	0
+DISTNAME=	gnupg-1.4.18
 CATEGORIES=	security
 
 # restrict, not compatible with gnupg-2.
@@ -12,6 +11,8 @@ PKGSPEC =	gnupg-<2
 MASTER_SITES=	${MASTER_SITES_GNUPG:=gnupg/}
 
 HOMEPAGE=	http://www.gnupg.org/
+
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -64,8 +65,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnupg
 	cd ${WRKSRC}; ${INSTALL_DATA} ${GNUPGDOCFILES} \
 		${PREFIX}/share/doc/gnupg
-
-do-test:
-	@cd ${WRKSRC}/checks && ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
