@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/06/11 07:58:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/01/04 19:15:52 jasper Exp $
 include/gupnp-av-1.0/
 include/gupnp-av-1.0/libgupnp-av/
 include/gupnp-av-1.0/libgupnp-av/gupnp-av-enums.h
@@ -26,7 +26,6 @@ lib/girepository-1.0/GUPnPAV-1.0.typelib
 lib/libgupnp-av-1.0.a
 lib/libgupnp-av-1.0.la
 @lib lib/libgupnp-av-1.0.so.${LIBgupnp-av-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gupnp-av-1.0.pc
 share/gir-1.0/
 share/gir-1.0/GUPnPAV-1.0.gir
