@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.209 2014/12/28 20:59:42 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.210 2015/01/04 19:48:18 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -486,6 +486,7 @@ my $obsolete_reason = {
 	'libghttp' => 3,
 	'ruby-hub' => 3,
 	'erl-webmachine' => 0,
+	'commons-io' => 2,
 };
 
 # ->is_base_system($handle, $state):
