@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.32 2014/04/22 10:56:37 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2015/01/04 19:08:27 jasper Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
 
-DISTNAME=	pfstat-2.3
+DISTNAME=	pfstat-2.5
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-daemon=	${DISTNAME:S/-/d-/}
-REVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.cx/
 
 HOMEPAGE=	http://www.benzedrine.cx/pfstat.html
 
-MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,6 +28,8 @@ LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} graphics/gd
 WANTLIB-daemon=		c
 LIB_DEPENDS-daemon=
 RUN_DEPENDS-daemon=
+
+NO_TEST=		Yes
 
 pre-configure:
 	@perl -pi -e "s,/etc,${SYSCONFDIR}," ${WRKSRC}/pfstat.c \
