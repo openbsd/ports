@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1287 2014/12/13 11:08:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1288 2015/01/04 05:47:07 brad Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -734,7 +734,7 @@ BZIP2 ?= bzip2
 
 
 # copy selected info from bsd.own.mk
-MAKE_ENV += ELF_TOOLCHAIN=Yes COMPILER_VERSION=${COMPILER_VERSION} \
+MAKE_ENV += COMPILER_VERSION=${COMPILER_VERSION} \
 	PICFLAG="${PICFLAG}" ASPICFLAG=${ASPICFLAG} \
 	BINGRP=bin BINOWN=root BINMODE=${BINMODE} NONBINMODE=${NONBINMODE} \
 	DIRMODE=755 \
