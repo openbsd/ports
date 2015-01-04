@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/16 20:32:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2015/01/04 06:50:56 bcallah Exp $
 
 COMMENT =	free Colonization clone
-DISTNAME =	freecol-0.11.1
+DISTNAME =	freecol-0.11.2
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games java x11
 
