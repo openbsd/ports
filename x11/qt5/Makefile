@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/26 00:02:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/05 18:13:32 landry Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 IGNORE-html =		qdoc segfaults
+BROKEN-powerpc =	relocation overflow when linking libQt5WebKit
 
 VERSION =		5.3.2
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
