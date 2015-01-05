@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2014/12/24 21:13:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.28 2015/01/05 04:55:53 bcallah Exp $
 
-V =		20141223
+V =		20150104
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
@@ -35,7 +35,6 @@ WRKSRC =	${WRKDIST}/src
 post-patch:
 	perl -pi -e "s,-O2,${CFLAGS},g" ${WRKSRC}/makefile
 	perl -pi -e "s,/usr,${TRUEPREFIX},g" ${WRKDIST}/doc/s7{,c}.1
-	perl -pi -e "s,swap64(?!double),oswap64,g" ${WRKSRC}/sql_post.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/s7{,c} ${PREFIX}/bin
