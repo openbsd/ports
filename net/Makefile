@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.885 2015/01/02 19:57:58 florian Exp $
+# $OpenBSD: Makefile,v 1.886 2015/01/05 22:18:35 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -249,6 +249,7 @@
      SUBDIR += nepim
      SUBDIR += net-snmp
      SUBDIR += netatalk
+     SUBDIR += netatalk,avahi
      SUBDIR += netbsd-iscsi-target
      SUBDIR += netfwd
      SUBDIR += netinfo
