@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/11 09:02:38 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/01/05 15:32:16 landry Exp $
 
 COMMENT =	streaming radio player
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.7.3
 DISTNAME =	radiotray-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 HOMEPAGE =	http://radiotray.sourceforge.net/
+REVISION =	0
 
 MAINTAINER =	Fred Crowson <openbsd@crowsons.com>
 
@@ -19,6 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-gobject${MODPY_FLAVOR} \
 		devel/py-notify${MODPY_FLAVOR} \
+		devel/py-xdg${MODPY_FLAVOR} \
 		devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-good \
