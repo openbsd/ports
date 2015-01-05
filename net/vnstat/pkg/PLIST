@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/08 10:37:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/01/05 09:46:42 jasper Exp $
 @newgroup _vnstat:658
 @newuser _vnstat:658:_vnstat:daemon:vnstat daemon:/var/db/vnstat:/sbin/nologin
 @bin bin/vnstat
 @bin bin/vnstati
-@man man/man1/vnstat.1
-@man man/man1/vnstatd.1
-@man man/man1/vnstati.1
-@man man/man5/vnstat.conf.5
+@man man/man1/vnstat.1.gz
+@man man/man1/vnstatd.1.gz
+@man man/man1/vnstati.1.gz
+@man man/man5/vnstat.conf.5.gz
 @bin sbin/vnstatd
 @owner _vnstat
 @sample /var/log/vnstat/

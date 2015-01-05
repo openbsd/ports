@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2013/09/02 16:02:41 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2015/01/05 09:46:42 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,5 +19,5 @@ This will create the database for the specified interface.
 
 
 Random hints:
-    * You can enable debug in ${SYSCONFDIR}/vnstat.conf and check 
+    * You can enable debug in ${SYSCONFDIR}/vnstat.conf and check
       the logs in /var/log/vnstat/vnstat.log
