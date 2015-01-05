@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/10 01:25:21 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/05 15:34:15 benoit Exp $
 
 COMMENT =	test for warnings and the lack of them
 
-DISTNAME =	Test-Warnings-0.016
+DISTNAME =	Test-Warnings-0.019
 CATEGORIES =	devel
 MODULES =	cpan
 
