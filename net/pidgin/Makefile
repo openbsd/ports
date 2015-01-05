@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2014/10/28 01:14:23 brad Exp $
+# $OpenBSD: Makefile,v 1.123 2015/01/05 08:29:37 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.10.10
+VERSION=	2.10.11
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -34,7 +34,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c dbus-1 dbus-glib-1 ffi gadu gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 idn m pcre pthread xml2 z
+		gobject-2.0 gthread-2.0 idn lzma m pcre pthread xml2 z
 WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 gtk-x11-2.0 \

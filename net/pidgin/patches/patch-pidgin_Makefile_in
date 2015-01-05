@@ -1,7 +1,7 @@
-$OpenBSD: patch-pidgin_Makefile_in,v 1.17 2014/10/28 01:14:23 brad Exp $
---- pidgin/Makefile.in.orig	Thu Oct 16 20:20:20 2014
-+++ pidgin/Makefile.in	Thu Oct 23 04:38:23 2014
-@@ -178,7 +178,7 @@ AM_V_CC = $(am__v_CC_@AM_V@)
+$OpenBSD: patch-pidgin_Makefile_in,v 1.18 2015/01/05 08:29:37 brad Exp $
+--- pidgin/Makefile.in.orig	Sun Nov 23 11:41:59 2014
++++ pidgin/Makefile.in	Wed Nov 26 04:17:18 2014
+@@ -176,7 +176,7 @@ AM_V_CC = $(am__v_CC_@AM_V@)
  am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
  am__v_CC_0 = @echo "  CC      " $@;
  am__v_CC_1 = 

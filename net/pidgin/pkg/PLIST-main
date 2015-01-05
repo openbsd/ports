@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2014/10/28 01:14:23 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2015/01/05 08:29:37 brad Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -76,6 +76,8 @@ lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.so
 lib/pkgconfig/pidgin.pc
 @man man/man1/pidgin.1
+share/appdata/
+share/appdata/pidgin.appdata.xml
 share/applications/pidgin.desktop
 share/doc/pidgin/
 share/icons/hicolor/16x16/apps/pidgin.png
@@ -127,6 +129,9 @@ share/locale/km/LC_MESSAGES/pidgin.mo
 share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ko/LC_MESSAGES/pidgin.mo
 share/locale/ku/LC_MESSAGES/pidgin.mo
+share/locale/ku_IQ/
+share/locale/ku_IQ/LC_MESSAGES/
+share/locale/ku_IQ/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/lv/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
