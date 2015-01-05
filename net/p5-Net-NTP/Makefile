@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/01/05 17:10:46 benoit Exp $
 
 COMMENT =	Perl extension for decoding NTP server responses
 
-DISTNAME =	Net-NTP-1.3
+DISTNAME =	Net-NTP-1.4
 CATEGORIES =	net
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
