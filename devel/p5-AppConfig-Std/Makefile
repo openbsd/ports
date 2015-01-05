@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:48:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/05 15:29:56 benoit Exp $
 
 COMMENT=	subclass of AppConfig that provides standard options
 
 MODULES=	cpan
-DISTNAME=	AppConfig-Std-1.07
-REVISION=	1
+DISTNAME =	AppConfig-Std-1.09
 CATEGORIES=	devel
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 
-# Artistic/GPL
+# Perl
 PERMIT_PACKAGE_CDROM=   Yes
 
 RUN_DEPENDS=	devel/p5-AppConfig
