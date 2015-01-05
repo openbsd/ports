@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/08/01 22:36:21 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/05 14:56:03 benoit Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/Reuse/
 ${P5SITE}/PDF/Reuse.pm
@@ -33,6 +33,7 @@ ${P5SITE}/auto/PDF/Reuse/inkludera.al
 ${P5SITE}/auto/PDF/Reuse/kolla.al
 ${P5SITE}/auto/PDF/Reuse/mergeLinks.al
 ${P5SITE}/auto/PDF/Reuse/ordnaBookmarks.al
+${P5SITE}/auto/PDF/Reuse/prAltJpeg.al
 ${P5SITE}/auto/PDF/Reuse/prBar.al
 ${P5SITE}/auto/PDF/Reuse/prBookmark.al
 ${P5SITE}/auto/PDF/Reuse/prCid.al
@@ -56,7 +57,6 @@ ${P5SITE}/auto/PDF/Reuse/prLog.al
 ${P5SITE}/auto/PDF/Reuse/prLogDir.al
 ${P5SITE}/auto/PDF/Reuse/prMbox.al
 ${P5SITE}/auto/PDF/Reuse/prSinglePage.al
-${P5SITE}/auto/PDF/Reuse/prStrWidth.al
 ${P5SITE}/auto/PDF/Reuse/prTouchUp.al
 ${P5SITE}/auto/PDF/Reuse/prVers.al
 ${P5SITE}/auto/PDF/Reuse/prep.al
@@ -70,3 +70,4 @@ ${P5SITE}/auto/PDF/Reuse/xRefs.al
 ${P5SITE}/auto/PDF/Reuse/xform.al
 ${P5SITE}/auto/PDF/Reuse/xrefSection.al
 @man man/man3p/PDF::Reuse.3p
+@man man/man3p/PDF::Reuse::Util.3p
