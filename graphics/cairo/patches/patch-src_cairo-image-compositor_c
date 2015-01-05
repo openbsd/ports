@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_cairo-image-compositor_c,v 1.1 2015/01/05 09:27:41 brad Exp $
+
+http://cgit.freedesktop.org/cairo/commit/?id=5c82d91a5e15d29b1489dcb413b24ee7fdf59934
+
+    image: Fix crash in _fill_xrgb32_lerp_opaque_spans
+
+--- src/cairo-image-compositor.c.orig	Fri Jan  2 19:19:26 2015
++++ src/cairo-image-compositor.c	Fri Jan  2 19:20:25 2015
+@@ -2242,10 +2242,10 @@ _fill_xrgb32_lerp_opaque_spans (void *abstract_rendere
+ 				     spans[0].x, y, len, 1, r->u.fill.pixel);
+ 		    } else {
+ 			uint32_t *d = (uint32_t*)(r->u.fill.data + r->u.fill.stride*y + spans[0].x*4);
+-			while (len--)
++			while (len-- > 0)
+ 			    *d++ = r->u.fill.pixel;
+ 		    }
+-		} else while (len--) {
++		} else while (len-- > 0) {
+ 		    *d = lerp8x4 (r->u.fill.pixel, a, *d);
+ 		    d++;
+ 		}
