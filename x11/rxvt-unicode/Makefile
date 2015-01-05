@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2014/07/10 20:27:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2015/01/05 16:09:51 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
-DISTNAME =	rxvt-unicode-9.20
-REVISION =	1
+DISTNAME =	rxvt-unicode-9.21
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -14,7 +13,7 @@ HOMEPAGE =	http://software.schmorp.de/pkg/rxvt-unicode.html
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	X11 Xft Xrender c fontconfig freetype \

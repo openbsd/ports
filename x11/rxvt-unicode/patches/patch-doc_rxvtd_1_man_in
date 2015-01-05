@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.3 2014/04/30 05:04:03 dcoppa Exp $
---- doc/rxvtd.1.man.in.orig	Sat Apr 26 16:29:58 2014
-+++ doc/rxvtd.1.man.in	Tue Apr 29 16:45:16 2014
+$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.4 2015/01/05 16:09:51 dcoppa Exp $
+--- doc/rxvtd.1.man.in.orig	Wed Dec 31 08:37:40 2014
++++ doc/rxvtd.1.man.in	Mon Jan  5 09:14:22 2015
 @@ -142,7 +142,7 @@
  @@RXVT_NAME@@d \- @@RXVT_NAME@@ terminal daemon
  .SH "SYNOPSIS"
  .IX Header "SYNOPSIS"
--\&\fB@@RXVT_NAME@@d\fR [\-q|\-\-quiet] [\-o|\-\-opendisplay] [\-f|\-\-fork] [\-m|\-\-mlock]
-+\&\fB@@RXVT_NAME@@d\fR [\-q|\-\-quiet] [\-o|\-\-opendisplay] [\-f|\-\-fork]
+-\&\fB@@RXVT_NAME@@d\fR [\-q|\-\-quiet] [\-o|\-\-opendisplay] [\-f|\-\-fork] [\-m|\-\-mlock] [\-e|\-\-eval \fIperlstring\fR]
++\&\fB@@RXVT_NAME@@d\fR [\-q|\-\-quiet] [\-o|\-\-opendisplay] [\-f|\-\-fork] [\-e|\-\-eval \fIperlstring\fR]
  .PP
  \&\fB@@RXVT_NAME@@d\fR \-q \-o \-f    # for .xsession use
  .SH "DESCRIPTION"
@@ -28,6 +28,6 @@ $OpenBSD: patch-doc_rxvtd_1_man_in,v 1.3 2014/04/30 05:04:03 dcoppa Exp $
 -versions) where calloc returns non-zeroed memory when mlockall is in
 -effect. If you experience crashes or other odd behaviour while using
 -\&\-\-mlock, try it without it.
- .SH "EXAMPLES"
- .IX Header "EXAMPLES"
- This is a useful invocation of \fB@@RXVT_NAME@@d\fR in a \fI.xsession\fR\-style
+ .IP "\fB\-e\fR, \fB\-\-eval\fR \fIperlstring\fR" 4
+ .IX Item "-e, --eval perlstring"
+ Evaluate the given perl code after basic initialisation (requires perl
