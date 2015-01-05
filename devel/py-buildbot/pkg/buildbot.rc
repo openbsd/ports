@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: buildbot.rc,v 1.1 2011/04/21 10:20:43 eric Exp $
+# $OpenBSD: buildbot.rc,v 1.2 2015/01/05 20:12:30 landry Exp $
 
 daemon="${TRUEPREFIX}/bin/buildbot"
 daemon_flags="${HOMEDIR}"
@@ -8,7 +8,7 @@ daemon_user="_buildbot"
 
 . /etc/rc.d/rc.subr
 
-pexp="${MODPY_BIN} ${daemon} start ${daemon_flags}"
+pexp="${MODPY_BIN}.*logfile=twistd.log --python=buildbot.tac"
 
 rc_start() {
 	${rcexec} "${daemon} start ${daemon_flags}"

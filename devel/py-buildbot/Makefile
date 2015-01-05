@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/03 14:36:03 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2015/01/05 20:12:30 landry Exp $
 
 COMMENT =	continuous integration framework
 
 MODPY_EGG_VERSION =	0.8.8
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/p/pl/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
