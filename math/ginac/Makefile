@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/06 13:19:05 pirofti Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
-DISTNAME=	ginac-1.6.2
-SHARED_LIBS +=	ginac	3.0	# 0.3
+DISTNAME=	ginac-1.6.3
+SHARED_LIBS +=	ginac	4.0	# 0.4
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.ginac.de/
@@ -19,6 +19,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	c m ncurses readline stdc++ gmp cln
 
+MODULES =       lang/python
+BUILD_DEPENDS =	devel/doxygen
 LIB_DEPENDS=	devel/cln
 
 USE_GMAKE=	Yes

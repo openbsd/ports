@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/03/17 11:53:01 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/01/06 13:19:05 pirofti Exp $
 %%SHARED%%
 bin/ginac-excompiler
 @bin bin/ginsh
@@ -54,7 +54,7 @@ include/ginac/wildcard.h
 @info info/ginac.info
 lib/libginac.a
 lib/libginac.la
-lib/pkgconfig/
+@lib lib/libginac.so.${LIBginac_VERSION}
 lib/pkgconfig/ginac.pc
 @man man/man1/ginsh.1
 @man man/man1/viewgar.1
