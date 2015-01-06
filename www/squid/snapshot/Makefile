@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/17 14:02:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/01/06 22:51:54 sthen Exp $
 
-D=		20140626-r13480
-V=		3.5pre${D:C/-.*//}
-DISTNAME=	squid-3.HEAD-$D
-EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
-REVISION-main=	2
+BROKEN=		sslbump uses functions removed in libressl
+
+V=		3.5.0.4
 
 # future versions will be requiring c++11 support, so let's build
 # the devel version in squid/snapshot with a newer compiler to get

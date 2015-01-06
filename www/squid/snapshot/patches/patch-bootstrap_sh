@@ -1,7 +1,7 @@
-$OpenBSD: patch-bootstrap_sh,v 1.1 2013/11/15 19:09:17 sthen Exp $
---- bootstrap.sh.orig	Thu Oct  3 13:32:47 2013
-+++ bootstrap.sh	Mon Oct 21 13:49:36 2013
-@@ -136,7 +136,7 @@ do
+$OpenBSD: patch-bootstrap_sh,v 1.2 2015/01/06 22:51:55 sthen Exp $
+--- bootstrap.sh.orig	Sun Dec 21 05:11:48 2014
++++ bootstrap.sh	Tue Jan  6 22:32:47 2015
+@@ -144,7 +144,7 @@ do
  	    mkdir -p cfgaux
  
              if test -n "$ltpath"; then
