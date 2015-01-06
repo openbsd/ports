@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/11 21:54:57 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/06 21:28:05 sthen Exp $
 
 COMMENT=	event notification library
 
-V=		2.0.21
+V=		2.0.22
 DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
-REVISION=	1
 CATEGORIES=	devel
 HOMEPAGE=	http://monkey.org/~provos/libevent/
 
-SHARED_LIBS+=	event_core      1.0	# 6.5
-SHARED_LIBS+=	event_extra     0.1	# 6.5
-SHARED_LIBS+=	event_openssl   0.0	# 6.5
-SHARED_LIBS+=	event_pthreads  0.0	# 6.5
+SHARED_LIBS+=	event_core      1.1	# 6.9
+SHARED_LIBS+=	event_extra     0.1	# 6.9
+SHARED_LIBS+=	event_openssl   0.0	# 6.9
+SHARED_LIBS+=	event_pthreads  0.0	# 6.9
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://github.com/downloads/libevent/libevent/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=levent/}
 
 WANTLIB=	crypto pthread ssl
 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_event2_util_h,v 1.1 2013/11/11 21:54:57 landry Exp $
---- include/event2/util.h.orig	Mon Nov 11 22:39:31 2013
-+++ include/event2/util.h	Mon Nov 11 22:40:21 2013
-@@ -672,22 +672,6 @@ void evutil_secure_rng_get_bytes(void *buf, size_t n);
+$OpenBSD: patch-include_event2_util_h,v 1.2 2015/01/06 21:28:05 sthen Exp $
+--- include/event2/util.h.orig	Mon Jan  5 15:17:40 2015
++++ include/event2/util.h	Mon Jan  5 23:01:59 2015
+@@ -690,22 +690,6 @@ int evutil_secure_rng_init(void);
   */
- int evutil_secure_rng_init(void);
+ int evutil_secure_rng_set_urandom_device_file(char *fname);
  
 -/** Seed the random number generator with extra random bytes.
 -
