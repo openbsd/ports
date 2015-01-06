@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/21 00:12:09 daniel Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/06 17:24:00 sthen Exp $
 
 COMMENT-main=		Python Imaging Library (fork)
 COMMENT-sane=		Python SANE module
 
-MODPY_EGG_VERSION=	2.6.1
-REVISION=		0
+MODPY_EGG_VERSION=	2.6.2
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME-main=		py-${DISTNAME}
 PKGNAME-sane=		py-sane-${MODPY_EGG_VERSION}
