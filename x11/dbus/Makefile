@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.121 2014/11/27 07:59:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2015/01/06 10:57:34 ajacoutot Exp $
 
 PORTROACH=	limitw:1,even
 
 COMMENT=	message bus system
 
-DISTNAME=	dbus-1.8.12
+DISTNAME=	dbus-1.8.14
 EPOCH=		0
 
 SHARED_LIBS +=  dbus-1               11.0     # 11.3
