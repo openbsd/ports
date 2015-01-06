@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/01/06 13:19:05 pirofti Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/01/06 21:11:54 sthen Exp $
 bin/ginac-excompiler
 @bin bin/ginsh
 @bin bin/viewgar
