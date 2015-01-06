@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/20 16:17:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/06 10:07:01 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
-GITV=		1416412720
+GITV=		1420494806
 DISTNAME=	lumina-${GITV}
-PKGNAME=	lumina-0.7.2.${GITV}
+PKGNAME=	lumina-0.8.0.${GITV}
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/lumina
 
-SHARED_LIBS +=  LuminaUtils               0.0 # 1.0
+SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
 CATEGORIES=	x11
 
@@ -19,21 +19,16 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =   Yes
 
-WANTLIB += ICE QtDBus QtGui QtNetwork QtSolutions_SingleApplication-head
-WANTLIB += QtXml SM X11 Xcomposite Xdamage Xext Xi Xinerama Xrender
-WANTLIB += c fontconfig freetype m phonon pthread stdc++
+WANTLIB += GL Qt5Core Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
+WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras X11 Xcomposite Xdamage
+WANTLIB += Xrender c m pthread xcb xcb-damage xcb-ewmh xcb-icccm
 
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
 
-MODULES=	x11/qt4
-
-BUILD_DEPENDS=	multimedia/phonon
-
-LIB_DEPENDS=	devel/qt4-qtsolutions-singleinstance
+MODULES=	x11/qt5
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		phonon-gstreamer-*|phonon-vlc-*:multimedia/phonon-backend/gstreamer \
 		x11/kde4/oxygen-icons \
 		x11/fluxbox \
 		x11/numlockx \
@@ -41,11 +36,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 NO_TEST=	Yes
 
-MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} \
-			-I${X11BASE}/include \
-			-I${LOCALBASE}/include/kde4/KDE" \
-		LIBLuminaUtils_VERSION=${LIBLuminaUtils_VERSION}
-
+MAKE_FLAGS=	LIBLuminaUtils_VERSION=${LIBLuminaUtils_VERSION}
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 pre-configure:
@@ -55,6 +46,6 @@ pre-configure:
 		${WRKSRC}/lumina-desktop/SettingsMenu.cpp
 
 do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4
+	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake-qt5
 
 .include <bsd.port.mk>
