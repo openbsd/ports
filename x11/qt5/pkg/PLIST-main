@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/12/22 21:30:41 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/01/06 21:32:41 zhuk Exp $
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
@@ -4816,12 +4816,8 @@ lib/qt5/cmake/Qt5SerialPort/Qt5SerialPortConfigVersion.cmake
 lib/qt5/cmake/Qt5Sql/
 lib/qt5/cmake/Qt5Sql/Qt5SqlConfig.cmake
 lib/qt5/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake
-lib/qt5/cmake/Qt5Sql/Qt5Sql_QMYSQLDriverPlugin.cmake
 lib/qt5/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake
-lib/qt5/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake
-lib/qt5/cmake/Qt5Sql/Qt5Sql_QSQLite2DriverPlugin.cmake
 lib/qt5/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake
-lib/qt5/cmake/Qt5Sql/Qt5Sql_QTDSDriverPlugin.cmake
 lib/qt5/cmake/Qt5Svg/
 lib/qt5/cmake/Qt5Svg/Qt5SvgConfig.cmake
 lib/qt5/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake
