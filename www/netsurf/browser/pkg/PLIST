@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/10/13 09:29:20 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/01/06 00:21:57 bentley Exp $
 @bin bin/netsurf
+share/applications/netsurf.desktop
 share/netsurf/
 share/netsurf/C
 share/netsurf/Messages
@@ -104,3 +105,5 @@ share/netsurf/toolbarIndices
 share/netsurf/viewdata.gtk2.ui
 share/netsurf/warning.gtk2.ui
 share/netsurf/welcome.html
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

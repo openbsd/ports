@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2014/10/22 09:35:20 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/06 00:21:57 bentley Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.2
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
@@ -21,6 +21,7 @@ LIB_DEPENDS =		www/netsurf/hubbub>=0.3.0 \
 			x11/gtk+2 \
 			x11/gnome/librsvg \
 			net/curl
+RUN_DEPENDS =		devel/desktop-file-utils
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto css curl dom
@@ -47,6 +48,9 @@ post-patch:
 		v=$$(egrep ^en\..*$$c: ${WRKSRC}/resources/FatMessages | cut -d : -f2 | sed -e 's/</\&lt;/g') ; \
 		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/gtk/res/options.gtk2.ui ; done
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/netsurf.desktop \
+		${PREFIX}/share/applications/netsurf.desktop
 # bug in pkg_add -u prevents symlink->directory in pkg updates
 	rm -rf ${PREFIX}/share/netsurf/C
 	ln -s en ${PREFIX}/share/netsurf/C
