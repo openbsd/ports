@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86MCAsmInfo_cpp,v 1.1 2014/10/28 17:52:05 brad Exp $
+$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86MCAsmInfo_cpp,v 1.2 2015/01/06 00:58:02 brad Exp $
 
-Revert workaround for buggy GNU assembler with OpenBSD.
+r225227
+Remove X86 .quad workaround for buggy GNU assembler on OpenBSD / Bitrig.
 
 --- lib/Target/X86/MCTargetDesc/X86MCAsmInfo.cpp.orig	Fri Oct 17 03:18:59 2014
 +++ lib/Target/X86/MCTargetDesc/X86MCAsmInfo.cpp	Fri Oct 17 03:38:34 2014
