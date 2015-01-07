@@ -1,12 +1,16 @@
-$OpenBSD: patch-qt_poppler-document_cc,v 1.1 2012/07/13 15:04:46 kili Exp $
---- qt/poppler-document.cc.orig	Mon Jul  9 19:01:04 2012
-+++ qt/poppler-document.cc	Mon Jul  9 22:37:00 2012
-@@ -326,7 +326,7 @@ bool Document::print(const QString &fileName, QValueLi
+$OpenBSD: patch-qt_poppler-document_cc,v 1.2 2015/01/07 14:53:01 kili Exp $
+--- qt/poppler-document.cc.orig	Mon Jan  5 14:53:48 2015
++++ qt/poppler-document.cc	Mon Jan  5 15:02:20 2015
+@@ -326,7 +326,11 @@ bool Document::print(const QString &fileName, QValueLi
  
  bool Document::print(const QString &file, QValueList<int> pageList, double hDPI, double vDPI, int rotate, int paperWidth, int paperHeight)
  {
 -  PSOutputDev *psOut = new PSOutputDev(file.latin1(), &(data->doc), data->doc.getXRef(), data->doc.getCatalog(), NULL, 1, data->doc.getNumPages(), psModePS, paperWidth, paperHeight);
-+  PSOutputDev *psOut = new PSOutputDev(file.latin1(), &(data->doc), NULL, 1, data->doc.getNumPages(), psModePS, paperWidth, paperHeight);
++  std::vector<int> pages;
++  for (int i = 1; i <= data->doc.getNumPages(); ++i) {
++    pages.push_back(i);
++  }
++  PSOutputDev *psOut = new PSOutputDev(file.latin1(), &(data->doc), NULL, pages, psModePS, paperWidth, paperHeight);
    
    if (psOut->isOk()) {
      QValueList<int>::iterator it;
