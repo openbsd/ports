@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/01 19:27:11 kili Exp $
-
-BROKEN =	useless until the other hs-ports are done
+# $OpenBSD: Makefile,v 1.10 2015/01/07 20:45:50 kili Exp $
 
 COMMENT =	Haskell platform meta-package
 
