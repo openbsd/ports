@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2015/01/01 19:25:36 kili Exp $
-
-BROKEN =        	too many errors for bulk builders
+# $OpenBSD: Makefile,v 1.112 2015/01/07 20:45:28 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
