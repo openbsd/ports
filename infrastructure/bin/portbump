@@ -229,8 +229,34 @@ sub parse_for_revisions {
 	}
 }
 
+{ my %manual_noticed;
+sub _update_libs {
+	my ($self, $shline) = @_;
+	my @splitres = split(/\s+/, $shline);
+	my $nchanges = 0;
+	if (scalar(@splitres) % 2 != 0) {
+		# avoid pointless error message from Perl
+		if (!defined $manual_noticed{$self->{dir}}) {
+			printf STDERR $self->{dir} .
+			    " may need manual intervention\n";
+			$manual_noticed{$self->{dir}} = 1;
+		}
+	} else {
+		my %lineshlibs = @splitres; 
+		for my $lib (keys %lineshlibs) {
+			my $v = $self->{shlibs}->{$lib} // next;
+			printf STDERR "%-30s: changing shared library ".
+			    "%s version to %s\n",
+			    $self->{dir}, $lib, $v
+			    if $self->{verbose};
+			$nchanges++ if s/($lib\s+)[0-9]+\.[0-9]+/$1$v/g;
+		}
+	}
+	return $nchanges;
+} }
+
 sub update {
-	my ($self, $in, $out, $bumppkgs, $removerevs) = @_;
+	my ($self, $in, $out, $bumppkgs, $removerevs, $bumplibs) = @_;
 
 	my $defbumped = 0;
 	my $shlib_block = 0;
@@ -240,25 +266,20 @@ sub update {
 
 		if ($shlib_block or /^ *SHARED_LIBS/) {
 			my $shline = $_;
-			$shlib_block or $shline =~ s/^ *SHARED_LIBS\s*\+?=\s*//;
+
+			# N.B.: Some ports define SHARED_LIBS in subpackage-
+			# dependant way, i.e., add them only if
+			# the corresponding subpackage should be built,
+			# or use subpackage-specific lists of shared libs
+			# for additional tasks.
+
+			$shlib_block or $shline =~ s/^ *SHARED_LIBS(?:\S+)?\s*\+?=\s*//;
 			$shlib_block = $shline =~ s/\\$//;
-			# XXX will misbehave after "<...> # \"
-			$shline =~ s/\s*#.*//;
-			#$shline =~ s/\s*$//;
-			$shline =~ s/^\s*//;
-			# XXX will break in "libfoo 0.0 libbar" case
-			my %lineshlibs = split(/\s+/, $shline);
-			for my $lib (keys %lineshlibs) {
-				# Some ports define SHARED_LIBS in
-				# subpackage-dependant way, i.e.,
-				# add them only if the corresponding
-				# subpackage should be built.
-				my $v = $self->{shlibs}->{$lib} // next;
-				printf STDERR "%-30s: changing shared library ".
-				    "%s version to %s\n",
-				    $self->{dir}, $lib, $v
-				    if $self->{verbose};
-				$nchanges++ if $_ =~ s/($lib\s+)[0-9]+\.[0-9]+/$1$v/g;
+			if ($bumplibs) {
+				# XXX will misbehave after "<...> # \"
+				$shline =~ s/\\s*#.*//;
+				$shline =~ s/^\s*//;
+				$nchanges += $self->_update_libs($shline);
 			}
 		} elsif (/^ *REVISION(-[a-zA-Z0-9_]+)?.*=\s*([0-9]*)$/) {
 			my $subpkg = $1 // "";
@@ -418,7 +439,7 @@ for my $dir (keys %allpkgs) {
 		die "cannot open output file $dir/Makefile.bump";
 	seek($in, 0, 0);
 	$in->input_line_number(0);
-	my $nchanges = $port->update($in, $out, $bumppkgs, $opt_d);
+	my $nchanges = $port->update($in, $out, $bumppkgs, $opt_d, $opt_m|$opt_M);
 	close($in);
 	close($out);
 	if (!defined $opt_o) {
