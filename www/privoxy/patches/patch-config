@@ -1,6 +1,6 @@
-$OpenBSD: patch-config,v 1.8 2013/06/13 08:47:46 benoit Exp $
---- config.orig	Thu Mar  7 15:11:51 2013
-+++ config	Sun Jun  9 11:42:21 2013
+$OpenBSD: patch-config,v 1.9 2015/01/07 02:10:50 bcallah Exp $
+--- config.orig	Fri Nov 14 06:31:53 2014
++++ config	Sat Jan  3 00:27:23 2015
 @@ -260,7 +260,7 @@
  #
  #      No trailing "/", please.
@@ -10,12 +10,12 @@ $OpenBSD: patch-config,v 1.8 2013/06/13 08:47:46 benoit Exp $
  #
  #  2.2. templdir
  #  ==============
-@@ -315,7 +315,7 @@ confdir .
+@@ -345,7 +345,7 @@ confdir .
  #
  #      No trailing "/", please.
  #
 -logdir .
 +logdir /log
  #
- #  2.4. actionsfile
+ #  2.5. actionsfile
  #  =================

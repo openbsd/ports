@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.6 2013/06/13 08:47:46 benoit Exp $
---- configure.in.orig	Fri Mar  1 18:40:18 2013
-+++ configure.in	Sun Jun  9 11:42:21 2013
-@@ -331,24 +331,6 @@ fi
+$OpenBSD: patch-configure_in,v 1.7 2015/01/07 02:10:50 bcallah Exp $
+--- configure.in.orig	Fri Nov 14 06:30:59 2014
++++ configure.in	Sat Jan  3 00:24:41 2015
+@@ -333,24 +333,6 @@ fi
  AC_SUBST(W3M)
  AC_SUBST(DB2HTML)
  
@@ -26,9 +26,9 @@ $OpenBSD: patch-configure_in,v 1.6 2013/06/13 08:47:46 benoit Exp $
  dnl Set doc status flag for conditional content inclusions
  DOC_STATUS=p-not-stable
  if  test $CODE_STATUS = stable; then
-@@ -1034,7 +1016,7 @@ if test $have_pcre = "yes"; then
-   echo "using libpcre"
+@@ -1042,7 +1024,7 @@ if test $have_pcre = "yes"; then
    pcre_dyn=yes
+   AC_DEFINE(FEATURE_DYNAMIC_PCRE,1,[Define to dynamically link to pcre.])
    STATIC_PCRE_ONLY=#
 -  LIBS="$LIBS -lpcre -lpcreposix"
 +  LIBS="$LIBS -lpcreposix -lpcre"
