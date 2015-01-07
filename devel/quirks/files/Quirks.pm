@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.211 2015/01/06 17:50:57 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.212 2015/01/07 20:46:48 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -368,6 +368,7 @@ my @msg = (
 	"no longer maintained and full of security holes", #2
 	"no longer maintained upstream", #3
 	"superseded by base component", #4
+	"outdated and/or no longer required by other ports", #5
 );
 
 my $obsolete_reason = {
@@ -488,6 +489,16 @@ my $obsolete_reason = {
 	'erl-webmachine' => 0,
 	'commons-io' => 2,
 	'qt4-qtsolutions-singleinstance' => 3,
+	'hs-cgi' => 5,
+	'hs-HsParrot' => 5,
+	'hs-HsSyck' => 5,
+	'hs-MetaObject' => 5,
+	'hs-control-timeout' => 5,
+	'hs-pugs-DrIFT' => 5,
+	'hs-pugs-compat' => 5,
+	'hs-regex-pcre-builtin' => 5,
+	'hs-stringtable-atom' => 5,
+	'pugs' => 5,
 };
 
 # ->is_base_system($handle, $state):
