@@ -1,10 +1,10 @@
-$OpenBSD: patch-salt_modules_useradd_py,v 1.4 2014/09/02 17:18:55 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_useradd_py,v 1.5 2015/01/07 09:57:40 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/9feb62718a19420054313898b78d36263fb6db7f
 https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c98
 
---- salt/modules/useradd.py.orig	Fri Aug  1 20:38:41 2014
-+++ salt/modules/useradd.py	Fri Aug 29 17:36:11 2014
+--- salt/modules/useradd.py.orig	Mon Nov  3 20:38:21 2014
++++ salt/modules/useradd.py	Wed Jan  7 10:37:53 2015
 @@ -29,7 +29,7 @@ __virtualname__ = 'user'
  
  def __virtual__():
@@ -134,10 +134,10 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
 +    if __grains__['kernel'] != 'OpenBSD':
 +        cmd += '-G '
 +    cmd += '"{0}" {1}'.format(','.join(groups), name)
-     return not __salt__['cmd.retcode'](cmd)
- 
- 
-@@ -432,6 +466,29 @@ def chhomephone(name, homephone):
+     cmdret = __salt__['cmd.run_all'](cmd)
+     ret = not cmdret['retcode']
+     # try to fallback on gpasswd to add user to localgroups
+@@ -443,6 +477,29 @@ def chhomephone(name, homephone):
      return False
  
  
@@ -167,7 +167,7 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
  def info(name):
      '''
      Return user information
-@@ -448,6 +505,29 @@ def info(name):
+@@ -459,6 +516,29 @@ def info(name):
          return {}
      else:
          return _format_info(data)

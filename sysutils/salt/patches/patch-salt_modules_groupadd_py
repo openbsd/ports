@@ -1,9 +1,9 @@
-$OpenBSD: patch-salt_modules_groupadd_py,v 1.2 2014/08/28 06:32:56 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_groupadd_py,v 1.3 2015/01/07 09:57:39 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/7f302190ebe517b8e18f836e20fa535e7ea37b96
 
---- salt/modules/groupadd.py.orig	Fri Aug  1 20:38:41 2014
-+++ salt/modules/groupadd.py	Wed Aug 27 12:20:56 2014
+--- salt/modules/groupadd.py.orig	Mon Nov  3 20:38:21 2014
++++ salt/modules/groupadd.py	Wed Jan  7 10:33:06 2015
 @@ -1,6 +1,6 @@
  # -*- coding: utf-8 -*-
  '''
@@ -21,7 +21,7 @@ https://github.com/saltstack/salt/commit/7f302190ebe517b8e18f836e20fa535e7ea37b9
          cmd += '-r '
      cmd += name
  
-@@ -126,3 +126,95 @@ def chgid(name, gid):
+@@ -126,6 +126,98 @@ def chgid(name, gid):
      if post_gid != pre_gid:
          return post_gid == gid
      return False
@@ -117,3 +117,6 @@ https://github.com/saltstack/salt/commit/7f302190ebe517b8e18f836e20fa535e7ea37b9
 +                    retcode = 0
 +
 +    return not retcode
+ 
+ 
+ def adduser(name, username):

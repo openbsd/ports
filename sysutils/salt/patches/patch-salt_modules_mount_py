@@ -1,10 +1,10 @@
-$OpenBSD: patch-salt_modules_mount_py,v 1.3 2014/09/02 17:18:55 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_mount_py,v 1.4 2015/01/07 09:57:39 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527ba
 
---- salt/modules/mount.py.orig	Fri Aug  1 20:38:41 2014
-+++ salt/modules/mount.py	Mon Sep  1 16:49:33 2014
-@@ -88,6 +88,24 @@ def _active_mounts_solaris(ret):
+--- salt/modules/mount.py.orig	Mon Nov  3 20:38:21 2014
++++ salt/modules/mount.py	Wed Jan  7 10:34:31 2015
+@@ -115,6 +115,24 @@ def _active_mounts_solaris(ret):
      return ret
  
  
@@ -26,19 +26,19 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
 +    return ret
 +
 +
- def active():
+ def active(extended=False):
      '''
      List the active mounts.
-@@ -103,6 +121,8 @@ def active():
+@@ -130,6 +148,8 @@ def active(extended=False):
          _active_mounts_freebsd(ret)
      elif __grains__['os'] == 'Solaris':
          _active_mounts_solaris(ret)
 +    if __grains__['os'] == 'OpenBSD':
 +        _active_mounts_openbsd(ret)
      else:
-         try:
-             _active_mountinfo(ret)
-@@ -357,13 +377,16 @@ def remount(name, device, mkmnt=False, fstype='', opts
+         if extended:
+             try:
+@@ -387,13 +407,16 @@ def remount(name, device, mkmnt=False, fstype='', opts
      mnts = active()
      if name in mnts:
          # The mount point is mounted, attempt to remount it with the given data
@@ -57,7 +57,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
          out = __salt__['cmd.run_all'](cmd)
          if out['retcode']:
              return out['stderr']
-@@ -426,15 +449,28 @@ def swaps():
+@@ -456,15 +479,28 @@ def swaps():
          salt '*' mount.swaps
      '''
      ret = {}
@@ -93,7 +93,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
      return ret
  
  
-@@ -478,9 +514,31 @@ def swapoff(name):
+@@ -508,12 +544,34 @@ def swapoff(name):
      '''
      on_ = swaps()
      if name in on_:
@@ -126,3 +126,6 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
 +        return True
 +    else:
 +        return False
+ 
+ 
+ def is_mounted(name):

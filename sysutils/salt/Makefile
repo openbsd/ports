@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2015/01/06 17:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2015/01/07 09:57:39 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -11,14 +11,12 @@
 # py-mysql
 # py-openssl
 # py-redis
-# py-requests
 # rabbitmq
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	2014.1.13
+MODPY_EGG_VERSION =	2014.7.0
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		sysutils net devel
 
@@ -40,8 +38,10 @@ RUN_DEPENDS =		net/py-msgpack \
 			net/py-zmq \
 			security/py-M2Crypto \
 			security/py-crypto \
+			textproc/py-MarkupSafe \
 			textproc/py-yaml \
-			www/py-jinja2
+			www/py-jinja2 \
+			www/py-requests
 
 # for tests
 PORTHOME =		${WRKDIST}

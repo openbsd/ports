@@ -1,12 +1,12 @@
-$OpenBSD: patch-conf_master,v 1.4 2014/06/17 12:30:39 ajacoutot Exp $
---- conf/master.orig	Mon May  5 18:47:41 2014
-+++ conf/master	Tue May 27 15:52:13 2014
+$OpenBSD: patch-conf_master,v 1.5 2015/01/07 09:57:39 ajacoutot Exp $
+--- conf/master.orig	Mon Nov  3 20:38:20 2014
++++ conf/master	Wed Jan  7 10:33:41 2015
 @@ -24,7 +24,7 @@
  # permissions to allow the specified user to run the master. The exception is
- # the job cache, which must be deleted if this user is changed.  If the
- # modified files cause conflicts set verify_env to False.
+ # the job cache, which must be deleted if this user is changed. If the
+ # modified files cause conflicts, set verify_env to False.
 -#user: root
 +user: _salt
  
  # Max open files
- # Each minion connecting to the master uses AT LEAST one file descriptor, the
+ #
