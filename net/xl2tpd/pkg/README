@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2014/10/11 16:13:36 landry Exp $
+$OpenBSD: README,v 1.6 2015/01/08 14:08:15 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -91,7 +91,8 @@ $username	*	$password		*
 
 Enable/start isakmpd:
 
-# rcctl enable isakmpd flags -Kv
+# rcctl enable isakmpd
+# rcctl set isakmpd flags -Kv
 # rcctl start isakmpd
 # ipsecctl -vf /etc/ipsec.conf
 
