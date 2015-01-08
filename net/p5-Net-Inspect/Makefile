@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/07 21:39:10 bluhm Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/08 18:39:43 bluhm Exp $
 
 COMMENT =		library for inspection of data on various network layers
 
-DISTNAME =		Net-Inspect-0.308
+DISTNAME =		Net-Inspect-0.309
 
 CATEGORIES =		net
 
