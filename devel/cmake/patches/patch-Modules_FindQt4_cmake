@@ -1,6 +1,13 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.23 2014/12/31 11:06:02 dcoppa Exp $
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.24 2015/01/08 16:58:00 dcoppa Exp $
+
+commit 8de3f22e8fe9e798b63eb00e35eee6404748d3bd
+Author: Rolf Eike Beer <eike@sf-mail.de>
+Date:   Wed Jan 7 23:42:35 2015 +0100
+
+FindQt4: search for versioned qmake names first before general qmake
+
 --- Modules/FindQt4.cmake.orig	Mon Dec 15 14:07:43 2014
-+++ Modules/FindQt4.cmake	Thu Dec 18 06:34:41 2014
++++ Modules/FindQt4.cmake	Thu Jan  8 10:39:46 2015
 @@ -522,7 +522,12 @@ endfunction()
  
  set(QT4_INSTALLED_VERSION_TOO_OLD FALSE)
@@ -9,7 +16,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.23 2014/12/31 11:06:02 dcoppa Exp $
 +if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
 +  set(_QT4_QMAKE_NAMES qmake4)
 +else()
-+  set(_QT4_QMAKE_NAMES qmake qmake4 qmake-qt4 qmake-mac)
++  set(_QT4_QMAKE_NAMES qmake4 qmake-qt4 qmake qmake-mac)
 +endif()
 +
  _qt4_find_qmake("${_QT4_QMAKE_NAMES}" QT_QMAKE_EXECUTABLE QTVERSION)
