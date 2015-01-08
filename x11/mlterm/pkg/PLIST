@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/27 10:30:13 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/01/08 09:21:38 dcoppa Exp $
 @bin bin/mlcc
 @bin bin/mlclient
 @bin bin/mlclientx
@@ -36,6 +36,9 @@ lib/mlterm/
 @comment lib/mlterm/libathena.a
 @comment lib/mlterm/libathena.la
 lib/mlterm/libathena.so
+@comment lib/mlterm/libctl_bidi.a
+@comment lib/mlterm/libctl_bidi.la
+lib/mlterm/libctl_bidi.so
 @comment lib/mlterm/libim-kbd-fb.a
 @comment lib/mlterm/libim-kbd-fb.la
 lib/mlterm/libim-kbd-fb.so
@@ -54,6 +57,9 @@ lib/mlterm/libnext.so
 @comment lib/mlterm/libsample.a
 @comment lib/mlterm/libsample.la
 lib/mlterm/libsample.so
+@comment lib/mlterm/libtype_cairo.a
+@comment lib/mlterm/libtype_cairo.la
+lib/mlterm/libtype_cairo.so
 @comment lib/mlterm/libtype_xft.a
 @comment lib/mlterm/libtype_xft.la
 lib/mlterm/libtype_xft.so

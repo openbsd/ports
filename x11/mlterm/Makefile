@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2014/09/29 14:33:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2015/01/08 09:21:38 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	color terminal emulator with unicode support
-DISTNAME=	mlterm-3.3.8
+DISTNAME=	mlterm-3.4.2
 
 SHARED_LIBS+=	kik	12.0 # 16.0
 SHARED_LIBS+=	mkf	14.0 # 16.0
@@ -16,16 +16,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi
-WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += fontconfig freetype fribidi gdk_pixbuf-2.0 gdk-x11-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += util xcb xcb-render xcb-shm z
 
 HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
 
-LIB_DEPENDS=	x11/gtk+2
+LIB_DEPENDS=	devel/fribidi \
+		x11/gtk+2
 
 MODULES=	devel/gettext
 
@@ -33,11 +34,11 @@ FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples"
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.65
-CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
-		--with-gtk=2.0 --with-gui=xlib,fb \
+CONFIGURE_ARGS=	--enable-utmp \
+		--with-gtk=2.0 \
+		--with-gui=xlib,fb \
 		--with-imagelib=gdk-pixbuf2 \
-		--with-tools=mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader \
-		--with-type-engines=xft,xcore
+		--with-tools=mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
 MAKE_ENV=	LIBkik_VERSION=${LIBkik_VERSION} \
 		LIBmkf_VERSION=${LIBmkf_VERSION} \
