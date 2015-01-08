@@ -1,0 +1,18 @@
+$OpenBSD: patch-plv8_func_cc,v 1.1 2015/01/08 15:03:35 sthen Exp $
+
+https://code.google.com/p/plv8js/source/detail?r=0bf77f3c5e2ee7d47da426b1963cd887b97e7d61&name=r1.4
+
+--- plv8_func.cc.orig	Wed Dec 24 18:24:15 2014
++++ plv8_func.cc	Wed Dec 24 18:24:49 2014
+@@ -518,7 +518,11 @@ plv8_Prepare(const Arguments &args)
+ 		CString			typestr(array->Get(i));
+ 		int32			typemod;
+ 
++#if PG_VERSION_NUM >= 90400
++		parseTypeString(typestr, &types[i], &typemod, false);
++#else
+ 		parseTypeString(typestr, &types[i], &typemod);
++#endif
+ 	}
+ 
+ 	PG_TRY();

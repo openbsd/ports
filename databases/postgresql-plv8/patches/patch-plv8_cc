@@ -1,0 +1,115 @@
+$OpenBSD: patch-plv8_cc,v 1.1 2015/01/08 15:03:35 sthen Exp $
+
+https://code.google.com/p/plv8js/source/detail?r=094df45dce2a879d1814b792aeb46b38f0f0ef87&name=r1.4
+
+--- plv8.cc.orig	Wed Dec 24 18:18:58 2014
++++ plv8.cc	Wed Dec 24 18:20:58 2014
+@@ -47,22 +47,12 @@ PG_FUNCTION_INFO_V1(plcoffee_call_validator);
+ PG_FUNCTION_INFO_V1(plls_call_handler);
+ PG_FUNCTION_INFO_V1(plls_call_validator);
+ 
+-Datum	plv8_call_handler(PG_FUNCTION_ARGS) throw();
+-Datum	plv8_call_validator(PG_FUNCTION_ARGS) throw();
+-Datum	plcoffee_call_handler(PG_FUNCTION_ARGS) throw();
+-Datum	plcoffee_call_validator(PG_FUNCTION_ARGS) throw();
+-Datum	plls_call_handler(PG_FUNCTION_ARGS) throw();
+-Datum	plls_call_validator(PG_FUNCTION_ARGS) throw();
+-
+ void _PG_init(void);
+ 
+ #if PG_VERSION_NUM >= 90000
+ PG_FUNCTION_INFO_V1(plv8_inline_handler);
+ PG_FUNCTION_INFO_V1(plcoffee_inline_handler);
+ PG_FUNCTION_INFO_V1(plls_inline_handler);
+-Datum	plv8_inline_handler(PG_FUNCTION_ARGS) throw();
+-Datum	plcoffee_inline_handler(PG_FUNCTION_ARGS) throw();
+-Datum	plls_inline_handler(PG_FUNCTION_ARGS) throw();
+ #endif
+ } // extern "C"
+ 
+@@ -307,26 +297,26 @@ common_pl_call_handler(PG_FUNCTION_ARGS, Dialect diale
+ }
+ 
+ Datum
+-plv8_call_handler(PG_FUNCTION_ARGS) throw()
++plv8_call_handler(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_call_handler(fcinfo, PLV8_DIALECT_NONE);
+ }
+ 
+ Datum
+-plcoffee_call_handler(PG_FUNCTION_ARGS) throw()
++plcoffee_call_handler(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_call_handler(fcinfo, PLV8_DIALECT_COFFEE);
+ }
+ 
+ Datum
+-plls_call_handler(PG_FUNCTION_ARGS) throw()
++plls_call_handler(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_call_handler(fcinfo, PLV8_DIALECT_LIVESCRIPT);
+ }
+ 
+ #if PG_VERSION_NUM >= 90000
+ static Datum
+-common_pl_inline_handler(PG_FUNCTION_ARGS, Dialect dialect) throw()
++common_pl_inline_handler(PG_FUNCTION_ARGS, Dialect dialect)
+ {
+ 	InlineCodeBlock *codeblock = (InlineCodeBlock *) DatumGetPointer(PG_GETARG_DATUM(0));
+ 
+@@ -354,19 +344,19 @@ common_pl_inline_handler(PG_FUNCTION_ARGS, Dialect dia
+ }
+ 
+ Datum
+-plv8_inline_handler(PG_FUNCTION_ARGS) throw()
++plv8_inline_handler(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_inline_handler(fcinfo, PLV8_DIALECT_NONE);
+ }
+ 
+ Datum
+-plcoffee_inline_handler(PG_FUNCTION_ARGS) throw()
++plcoffee_inline_handler(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_inline_handler(fcinfo, PLV8_DIALECT_COFFEE);
+ }
+ 
+ Datum
+-plls_inline_handler(PG_FUNCTION_ARGS) throw()
++plls_inline_handler(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_inline_handler(fcinfo, PLV8_DIALECT_LIVESCRIPT);
+ }
+@@ -688,7 +678,7 @@ CallTrigger(PG_FUNCTION_ARGS, plv8_exec_env *xenv)
+ }
+ 
+ static Datum
+-common_pl_call_validator(PG_FUNCTION_ARGS, Dialect dialect) throw()
++common_pl_call_validator(PG_FUNCTION_ARGS, Dialect dialect)
+ {
+ 	Oid				fn_oid = PG_GETARG_OID(0);
+ 	HeapTuple		tuple;
+@@ -746,19 +736,19 @@ common_pl_call_validator(PG_FUNCTION_ARGS, Dialect dia
+ }
+ 
+ Datum
+-plv8_call_validator(PG_FUNCTION_ARGS) throw()
++plv8_call_validator(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_call_validator(fcinfo, PLV8_DIALECT_NONE);
+ }
+ 
+ Datum
+-plcoffee_call_validator(PG_FUNCTION_ARGS) throw()
++plcoffee_call_validator(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_call_validator(fcinfo, PLV8_DIALECT_COFFEE);
+ }
+ 
+ Datum
+-plls_call_validator(PG_FUNCTION_ARGS) throw()
++plls_call_validator(PG_FUNCTION_ARGS)
+ {
+ 	return common_pl_call_validator(fcinfo, PLV8_DIALECT_LIVESCRIPT);
+ }
