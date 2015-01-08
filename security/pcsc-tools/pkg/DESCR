@@ -1,0 +1,12 @@
+This package contains tools used to test a PC/SC driver, card or reader.
+
+- pcsc_scan regularly scans PC/SC readers connected to the host,
+and displays information about any cards which are inserted.
+
+- ATR_analysis is a Perl script used to parse the smart card ATR, and
+can be called by pcsc_scan.
+
+- scriptor is a Perl script to send commands to a smart card.
+
+- gscriptor is a Perl script with a Gtk-based graphical interface.
+(Install the p5-Gtk2 package to use this).

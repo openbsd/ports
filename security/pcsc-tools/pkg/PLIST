@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/08 15:08:53 sthen Exp $
+bin/ATR_analysis
+bin/gscriptor
+@bin bin/pcsc_scan
+bin/scriptor
+@man man/man1/pcsc_scan.1
+man/man1p/
+@man man/man1p/ATR_analysis.1p
+@man man/man1p/gscriptor.1p
+@man man/man1p/scriptor.1p
+share/pcsc/
+share/pcsc/smartcard_list.txt
