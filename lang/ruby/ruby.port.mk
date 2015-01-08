@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.78 2014/10/17 17:08:57 jasper Exp $
+# $OpenBSD: ruby.port.mk,v 1.79 2015/01/08 18:51:20 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=		ruby18 ruby19 ruby20 ruby21 rbx
+FLAVORS=		ruby18 ruby19 ruby20 ruby21 ruby22 rbx
 .      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
 FLAVORS+=		jruby
 .      endif
@@ -53,11 +53,12 @@ FLAVOR =		ruby21
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby18 ruby19 ruby20 ruby21 jruby rbx
+.    for i in ruby18 ruby19 ruby20 ruby21 ruby22 jruby rbx
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby18} || ${FLAVOR:N$i:Mruby19} || \
             ${FLAVOR:N$i:Mruby20} || ${FLAVOR:N$i:Mruby21} || \
+            ${FLAVOR:N$i:Mruby22} || \
 	    ${FLAVOR:N$i:Mjruby} || ${FLAVOR:N$i:Mrbx}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
@@ -106,6 +107,11 @@ MODRUBY_LIBREV =	2.1
 MODRUBY_BINREV =	21
 MODRUBY_FLAVOR =	ruby21
 GEM_BIN_SUFFIX =	21
+.elif ${MODRUBY_REV} == 2.2
+MODRUBY_LIBREV =	2.2
+MODRUBY_BINREV =	22
+MODRUBY_FLAVOR =	ruby22
+GEM_BIN_SUFFIX =	22
 .elif ${MODRUBY_REV} == jruby
 MODRUBY_LIBREV =	1.9
 
@@ -280,7 +286,7 @@ MODRUBY_WANTLIB+=	c m
 .  if ${MODRUBY_REV} != 1.8
 MODRUBY_WANTLIB+=	pthread
 .  endif
-.  if ${MODRUBY_REV} == 2.1
+.  if ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2
 MODRUBY_WANTLIB+=	gmp
 .  endif
 WANTLIB+=	${MODRUBY_WANTLIB}
@@ -319,9 +325,9 @@ ERRORS+=	"Fatal: Pure ruby gems without ext CONFIGURE_STYLE should not \
 		have SHARED_ONLY=Yes"
 .    endif
 PKG_ARCH=	*
-.  elif ${MODRUBY_REV} == 2.1
-# Add build complete file to package so rubygems doesn't attempt to
-# build extensions at runtime
+.  elif ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2
+# Add build complete file to package so rubygems doesn't complain
+# or build extensions at runtime
 GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
 SUBST_VARS+=	GEM_EXTENSIONS_DIR
 PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
