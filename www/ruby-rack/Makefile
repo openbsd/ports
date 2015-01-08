@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2014/10/11 19:54:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/01/08 19:01:36 jeremy Exp $
 
 COMMENT=		modular Ruby webserver interface
 
-DISTNAME=		rack-1.4.5
-REVISION =		1
+DISTNAME=		rack-1.6.0
 CATEGORIES=		www
 
-HOMEPAGE=		http://rack.rubyforge.org/
+HOMEPAGE=		http://rack.github.io/
 
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/18 17:10:09 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/01/08 19:01:36 jeremy Exp $
 ${GEM_BIN}/rackup${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -91,8 +91,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/session/pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/showexceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/showstatus.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/static.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/tempfile_reaper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/urlmap.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/utils/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/utils.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/utils/okjson.rb
 ${GEM_LIB}/gems/${DISTNAME}/rack.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/builder/
@@ -131,6 +134,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/multipart/empty
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/fail_16384_nofile
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/file1.txt
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_and_modification_param
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_and_no_name
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_escaped_quotes
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_escaped_quotes_and_modification_param
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_percent_escaped_quotes
@@ -139,6 +143,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_percentages2
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_percentages3
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_quotes
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/ie
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/invalid_character
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/mixed_files
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/nested
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/none
@@ -151,7 +156,6 @@ ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/
 ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/
 ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/handler/
 ${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/handler/registering_myself.rb
-${GEM_LIB}/gems/${DISTNAME}/test/spec_auth.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_auth_basic.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_auth_digest.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_body_proxy.rb
@@ -176,6 +180,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/spec_lobster.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_lock.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_methodoverride.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_mime.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_mock.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_mongrel.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_multipart.rb
@@ -194,6 +199,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/spec_session_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_showexceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_showstatus.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_static.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_tempfile_reaper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_thin.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_urlmap.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_utils.rb
