@@ -1,11 +1,11 @@
-$OpenBSD: patch-gcc_common_opt,v 1.2 2014/06/08 18:55:36 brad Exp $
+$OpenBSD: patch-gcc_common_opt,v 1.3 2015/01/08 20:23:21 pascal Exp $
 
 Add stack protector strong support.
 
 http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35acea43
 
---- gcc/common.opt.orig	Thu Mar 14 05:13:36 2013
-+++ gcc/common.opt	Sat May 24 17:11:22 2014
+--- gcc/common.opt.orig	Fri Jun 13 18:39:37 2014
++++ gcc/common.opt	Mon Jan  5 22:42:05 2015
 @@ -572,6 +572,10 @@ Wlarger-than=
  Common RejectNegative Joined UInteger Warning
  -Wlarger-than=<number>	Warn if an object is larger than <number> bytes
@@ -55,7 +55,7 @@ http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35ac
  Delete useless null pointer checks
  
  fdevirtualize
-@@ -1247,7 +1255,7 @@ Enable guessing of branch probabilities
+@@ -1251,7 +1259,7 @@ Enable guessing of branch probabilities
  ; On SVR4 targets, it also controls whether or not to emit a
  ; string identifying the compiler.
  fident
@@ -64,7 +64,7 @@ http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35ac
  Process #ident directives
  
  fif-conversion
-@@ -1599,7 +1607,7 @@ Common Report Var(flag_pic,2) Negative(fPIE)
+@@ -1603,7 +1611,7 @@ Common Report Var(flag_pic,2) Negative(fPIE)
  Generate position-independent code if possible (large mode)
  
  fPIE
@@ -73,7 +73,7 @@ http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35ac
  Generate position-independent code for executables if possible (large mode)
  
  fpic
-@@ -1902,13 +1910,17 @@ Common RejectNegative Joined Var(common_deferred_optio
+@@ -1906,13 +1914,17 @@ Common RejectNegative Joined Var(common_deferred_optio
  -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>
  
  fstack-protector
@@ -92,7 +92,7 @@ http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35ac
  fstack-usage
  Common RejectNegative Var(flag_stack_usage)
  Output stack usage information on a per-function basis
-@@ -2307,7 +2319,7 @@ Common JoinedOrMissing Negative(gdwarf-)
+@@ -2311,7 +2323,7 @@ Common JoinedOrMissing Negative(gdwarf-)
  Generate debug information in COFF format
  
  gdwarf-
@@ -101,7 +101,7 @@ http://repo.or.cz/w/official-gcc.git/commit/b156ec373ccf27f4fcce7972de5e043d35ac
  Generate debug information in DWARF v2 (or later) format
  
  ggdb
-@@ -2391,6 +2403,9 @@ no-canonical-prefixes
+@@ -2395,6 +2407,9 @@ no-canonical-prefixes
  Driver
  
  nodefaultlibs

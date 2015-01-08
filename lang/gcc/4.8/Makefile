@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.41 2015/01/02 14:26:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2015/01/08 20:23:21 pascal Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
 BROKEN-alpha =	libdecnumber/decNumber.c:2267:3: internal compiler error: Segmentation fault
 
-ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64 mips64 mips64el
+ONLY_FOR_ARCHS = alpha amd64 i386 powerpc mips64 mips64el sparc64 
 DPB_PROPERTIES = parallel
 
-V = 4.8.3
+V = 4.8.4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 75.0
+ADASTRAP_LIBC-i386 = 78.0
 ADASTRAP_LIBM-i386 = 9.0
 ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
-ADASTRAP_LIBC-amd64 = 75.0
+ADASTRAP_LIBC-amd64 = 78.0
 ADASTRAP_LIBM-amd64 = 9.0
 ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
-ADASTRAP_LIBC-sparc64 = 75.0
+ADASTRAP_LIBC-sparc64 = 78.0
 ADASTRAP_LIBM-sparc64 = 9.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
@@ -31,8 +31,6 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
-
-REVISION = 3
 
 SHARED_LIBS =	estdc++		16.0 \
 		gfortran	5.0 \
@@ -51,8 +49,7 @@ SHARED_LIBS =	estdc++		16.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-# XXX broken with memcpy that checks for overlap
-ONLY_FOR_ARCHS-ada = #amd64 i386 sparc64
+ONLY_FOR_ARCHS-ada = amd64 i386 sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 powerpc sparc64
 
 MULTI_PACKAGES = -main -f95 -objc -c++ -estdc -java -ada
@@ -81,9 +78,7 @@ TEST_DEPENDS = 	devel/dejagnu \
 		devel/autogen
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://spacehopper.org/mirrors/ \
-		http://distfiles.tmux.org/adastrap/ \
-		https://distfiles.bsdfrog.org/
+MASTER_SITES0 =	http://distfiles.tmux.org/adastrap/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 
 LANGS = c
@@ -243,7 +238,7 @@ post-extract:
 .endfor
 .for f in gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
-	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/e$f "$$@"' >>${WRKDIR}/bin/$f
+	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
 	rm -rf ${WRKDIR}/bootstrap/lib/gcc/*-unknown-openbsd*/$V/include-fixed
