@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2013/10/15 02:18:19 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2015/01/08 15:01:11 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -202,6 +202,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/ALTER_SCHEMA.7
 @man man/man7/ALTER_SEQUENCE.7
 @man man/man7/ALTER_SERVER.7
+@man man/man7/ALTER_SYSTEM.7
 @man man/man7/ALTER_TABLE.7
 @man man/man7/ALTER_TABLESPACE.7
 @man man/man7/ALTER_TEXT_SEARCH_CONFIGURATION.7

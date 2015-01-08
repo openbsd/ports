@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2014/10/16 00:08:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.195 2015/01/08 15:01:11 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -9,8 +9,7 @@ COMMENT-plpython=Python procedural language for PostgreSQL
 # DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
 # in case a dump before / restore after pkg_add -u is required!
 
-VERSION=	9.3.5
-REVISION-server= 1
+VERSION=	9.4.0
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -19,10 +18,10 @@ PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.5 \
-		ecpg_compat	4.5 \
-		pgtypes		4.4 \
-		pq		5.6
+SHARED_LIBS=	ecpg		7.6 \
+		ecpg_compat	4.6 \
+		pgtypes		4.5 \
+		pq		5.7
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -66,6 +65,7 @@ CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-perl \
 		--with-python \
 		--with-pam=no \
+		--with-uuid=bsd \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
 		--datadir="${PREFIX}/share/postgresql" \
@@ -74,7 +74,6 @@ CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-libraries="${LOCALBASE}/lib" \
 		--with-system-tzdata="/usr/share/zoneinfo" \
 		--with-openssl \
-		--with-ossp-uuid \
 		--with-libxml \
 		--disable-thread-safety
 
@@ -101,9 +100,8 @@ WANTLIB-server=	${WANTLIB-main} perl pq>=4
 RUN_DEPENDS-contrib= databases/postgresql,-server=${VERSION}
 
 LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
-		     ${LIB_DEPENDS-main} \
-		     devel/uuid
-WANTLIB-contrib=	${WANTLIB-main} pq>=4 ossp-uuid
+		     ${LIB_DEPENDS-main}
+WANTLIB-contrib=	${WANTLIB-main} pq>=4
 
 LIB_DEPENDS-plpython=	${MODPY_LIB_DEPENDS}
 WANTLIB-plpython =	c m pthread util \

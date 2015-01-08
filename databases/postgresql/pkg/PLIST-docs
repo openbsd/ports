@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.65 2014/09/02 13:39:39 pea Exp $
+@comment $OpenBSD: PLIST-docs,v 1.66 2015/01/08 15:01:11 pea Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -33,6 +33,7 @@ share/doc/postgresql/html/app-pgconfig.html
 share/doc/postgresql/html/app-pgcontroldata.html
 share/doc/postgresql/html/app-pgdump.html
 share/doc/postgresql/html/app-pgreceivexlog.html
+share/doc/postgresql/html/app-pgrecvlogical.html
 share/doc/postgresql/html/app-pgresetxlog.html
 share/doc/postgresql/html/app-pgrestore.html
 share/doc/postgresql/html/app-postgres.html
@@ -99,6 +100,7 @@ share/doc/postgresql/html/catalog-pg-opfamily.html
 share/doc/postgresql/html/catalog-pg-pltemplate.html
 share/doc/postgresql/html/catalog-pg-proc.html
 share/doc/postgresql/html/catalog-pg-range.html
+share/doc/postgresql/html/catalog-pg-replication-slots.html
 share/doc/postgresql/html/catalog-pg-rewrite.html
 share/doc/postgresql/html/catalog-pg-seclabel.html
 share/doc/postgresql/html/catalog-pg-shdepend.html
@@ -165,6 +167,7 @@ share/doc/postgresql/html/datatype-money.html
 share/doc/postgresql/html/datatype-net-types.html
 share/doc/postgresql/html/datatype-numeric.html
 share/doc/postgresql/html/datatype-oid.html
+share/doc/postgresql/html/datatype-pg-lsn.html
 share/doc/postgresql/html/datatype-pseudo.html
 share/doc/postgresql/html/datatype-textsearch.html
 share/doc/postgresql/html/datatype-uuid.html
@@ -307,6 +310,7 @@ share/doc/postgresql/html/geqo-intro.html
 share/doc/postgresql/html/geqo-intro2.html
 share/doc/postgresql/html/geqo-pg-intro.html
 share/doc/postgresql/html/geqo.html
+share/doc/postgresql/html/gin-builtin-opclasses.html
 share/doc/postgresql/html/gin-examples.html
 share/doc/postgresql/html/gin-extensibility.html
 share/doc/postgresql/html/gin-implementation.html
@@ -314,6 +318,7 @@ share/doc/postgresql/html/gin-intro.html
 share/doc/postgresql/html/gin-limit.html
 share/doc/postgresql/html/gin-tips.html
 share/doc/postgresql/html/gin.html
+share/doc/postgresql/html/gist-builtin-opclasses.html
 share/doc/postgresql/html/gist-examples.html
 share/doc/postgresql/html/gist-extensibility.html
 share/doc/postgresql/html/gist-implementation.html
@@ -457,6 +462,15 @@ share/doc/postgresql/html/locale.html
 share/doc/postgresql/html/locking-indexes.html
 share/doc/postgresql/html/log-shipping-alternative.html
 share/doc/postgresql/html/logfile-maintenance.html
+share/doc/postgresql/html/logicaldecoding-catalogs.html
+share/doc/postgresql/html/logicaldecoding-example.html
+share/doc/postgresql/html/logicaldecoding-explanation.html
+share/doc/postgresql/html/logicaldecoding-output-plugin.html
+share/doc/postgresql/html/logicaldecoding-sql.html
+share/doc/postgresql/html/logicaldecoding-synchronous.html
+share/doc/postgresql/html/logicaldecoding-walsender.html
+share/doc/postgresql/html/logicaldecoding-writer.html
+share/doc/postgresql/html/logicaldecoding.html
 share/doc/postgresql/html/ltree.html
 share/doc/postgresql/html/maintenance.html
 share/doc/postgresql/html/manage-ag-config.html
@@ -490,6 +504,7 @@ share/doc/postgresql/html/pgbench.html
 share/doc/postgresql/html/pgbuffercache.html
 share/doc/postgresql/html/pgcrypto.html
 share/doc/postgresql/html/pgfreespacemap.html
+share/doc/postgresql/html/pgprewarm.html
 share/doc/postgresql/html/pgrowlocks.html
 share/doc/postgresql/html/pgstandby.html
 share/doc/postgresql/html/pgstatstatements.html
@@ -505,6 +520,7 @@ share/doc/postgresql/html/planner-stats.html
 share/doc/postgresql/html/plhandler.html
 share/doc/postgresql/html/plperl-builtins.html
 share/doc/postgresql/html/plperl-data.html
+share/doc/postgresql/html/plperl-event-triggers.html
 share/doc/postgresql/html/plperl-funcs.html
 share/doc/postgresql/html/plperl-global.html
 share/doc/postgresql/html/plperl-triggers.html
@@ -537,6 +553,7 @@ share/doc/postgresql/html/plpython-util.html
 share/doc/postgresql/html/plpython.html
 share/doc/postgresql/html/pltcl-data.html
 share/doc/postgresql/html/pltcl-dbaccess.html
+share/doc/postgresql/html/pltcl-event-trigger.html
 share/doc/postgresql/html/pltcl-functions.html
 share/doc/postgresql/html/pltcl-global.html
 share/doc/postgresql/html/pltcl-overview.html
@@ -577,6 +594,7 @@ share/doc/postgresql/html/reference.html
 share/doc/postgresql/html/regress-coverage.html
 share/doc/postgresql/html/regress-evaluation.html
 share/doc/postgresql/html/regress-run.html
+share/doc/postgresql/html/regress-tap.html
 share/doc/postgresql/html/regress-variant.html
 share/doc/postgresql/html/regress.html
 share/doc/postgresql/html/release-0-01.html
@@ -843,6 +861,7 @@ share/doc/postgresql/html/release-9-3-3.html
 share/doc/postgresql/html/release-9-3-4.html
 share/doc/postgresql/html/release-9-3-5.html
 share/doc/postgresql/html/release-9-3.html
+share/doc/postgresql/html/release-9-4.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html
 share/doc/postgresql/html/role-attributes.html
@@ -886,6 +905,7 @@ share/doc/postgresql/html/server-start.html
 share/doc/postgresql/html/source-format.html
 share/doc/postgresql/html/source.html
 share/doc/postgresql/html/sourcerepo.html
+share/doc/postgresql/html/spgist-builtin-opclasses.html
 share/doc/postgresql/html/spgist-examples.html
 share/doc/postgresql/html/spgist-extensibility.html
 share/doc/postgresql/html/spgist-implementation.html
@@ -966,6 +986,7 @@ share/doc/postgresql/html/sql-alterrule.html
 share/doc/postgresql/html/sql-alterschema.html
 share/doc/postgresql/html/sql-altersequence.html
 share/doc/postgresql/html/sql-alterserver.html
+share/doc/postgresql/html/sql-altersystem.html
 share/doc/postgresql/html/sql-altertable.html
 share/doc/postgresql/html/sql-altertablespace.html
 share/doc/postgresql/html/sql-altertrigger.html
@@ -1121,7 +1142,9 @@ share/doc/postgresql/html/stylesheet.css
 share/doc/postgresql/html/supported-platforms.html
 share/doc/postgresql/html/tablefunc.html
 share/doc/postgresql/html/tcn.html
+share/doc/postgresql/html/test-decoding.html
 share/doc/postgresql/html/test-parser.html
+share/doc/postgresql/html/test-shm-mq.html
 share/doc/postgresql/html/textsearch-configuration.html
 share/doc/postgresql/html/textsearch-controls.html
 share/doc/postgresql/html/textsearch-debugging.html
