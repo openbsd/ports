@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/01/08 19:00:19 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -18,10 +18,15 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile.cross
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/basic_type_mapping.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/coder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/constants.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/exceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/result.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_decoder.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_encoder.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/type_map_by_column.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/sample/
 ${GEM_LIB}/gems/${DISTNAME}/sample/array_insert.rb
@@ -46,10 +51,17 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/data/
 ${GEM_LIB}/gems/${DISTNAME}/spec/data/expected_trace.out
 ${GEM_LIB}/gems/${DISTNAME}/spec/data/random_binary_data
-${GEM_LIB}/gems/${DISTNAME}/spec/lib/
-${GEM_LIB}/gems/${DISTNAME}/spec/lib/helpers.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/basic_type_mapping_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/connection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/result_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_by_class_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_by_column_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_by_mri_type_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_by_oid_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_in_ruby_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
