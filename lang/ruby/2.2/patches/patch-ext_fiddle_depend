@@ -1,0 +1,18 @@
+$OpenBSD: patch-ext_fiddle_depend,v 1.1.1.1 2015/01/08 18:48:32 jeremy Exp $
+
+Delete unnecessary Makefile code not supported by our make.
+
+--- ext/fiddle/depend.orig	Tue Dec 30 00:57:44 2014
++++ ext/fiddle/depend	Tue Dec 30 00:58:03 2014
+@@ -45,11 +45,7 @@ distclean-libffi:
+ realclean-libffi:
+ 	$(Q) $(RMALL) $(LIBFFI_DIR)
+ 
+-.PHONY clean-libffi distclean-libffi realclean-libffi: .FORCE
+-.PHONY clean-none distclean-none realclean-none: .FORCE
+-
+ clean: clean-$(LIBFFI_CLEAN)
+ distclean: distclean-$(LIBFFI_CLEAN)
+ realclean: realclean-$(LIBFFI_CLEAN)
+ 
+-.PHONY configure: configure-libffi

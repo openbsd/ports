@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_extmk_rb,v 1.1.1.1 2015/01/08 18:48:32 jeremy Exp $
+
+Build extensions in verbose mode by default.
+
+--- ext/extmk.rb.orig	Wed Jul  2 20:40:24 2014
++++ ext/extmk.rb	Thu Sep 18 17:53:36 2014
+@@ -667,7 +667,7 @@ ENV.delete("RUBYOPT")
+ if $configure_only and $command_output
+   exts.map! {|d| "ext/#{d}/."}
+   atomic_write_open($command_output) do |mf|
+-    mf.puts "V = 0"
++    mf.puts "V = 1"
+     mf.puts "Q1 = $(V:1=)"
+     mf.puts "Q = $(Q1:0=@)"
+     mf.puts "ECHO1 = $(V:1=@:)"

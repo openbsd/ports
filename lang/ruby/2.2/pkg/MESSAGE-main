@@ -1,0 +1,9 @@
+If you want to use this package as your default system ruby, as root
+create symbolic links like so (overwriting any previous default):
+ ln -sf ${PREFIX}/bin/ruby22 ${PREFIX}/bin/ruby
+ ln -sf ${PREFIX}/bin/erb22 ${PREFIX}/bin/erb
+ ln -sf ${PREFIX}/bin/irb22 ${PREFIX}/bin/irb
+ ln -sf ${PREFIX}/bin/rdoc22 ${PREFIX}/bin/rdoc
+ ln -sf ${PREFIX}/bin/ri22 ${PREFIX}/bin/ri
+ ln -sf ${PREFIX}/bin/rake22 ${PREFIX}/bin/rake
+ ln -sf ${PREFIX}/bin/gem22 ${PREFIX}/bin/gem
