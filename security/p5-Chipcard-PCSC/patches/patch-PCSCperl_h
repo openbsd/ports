@@ -1,0 +1,12 @@
+$OpenBSD: patch-PCSCperl_h,v 1.1.1.1 2015/01/08 15:05:53 sthen Exp $
+--- PCSCperl.h.orig	Thu Jan  8 14:07:57 2015
++++ PCSCperl.h	Thu Jan  8 14:08:03 2015
+@@ -123,7 +123,7 @@ void*  GET_FCT(CFBundleRef bundle, char *fct_name)    
+ /* other Unixes */
+ #  include <dlfcn.h>
+ #  include <pcsclite.h>
+-#  define LOAD_LIB()      dlopen("libpcsclite.so.1", RTLD_LAZY)
++#  define LOAD_LIB()      dlopen("libpcsclite.so", RTLD_LAZY)
+ #  define CLOSE_LIB(x)    dlclose(x)
+ #  define DLL_HANDLE      void*
+ #  define GET_FCT         dlsym

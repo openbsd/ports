@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/08 15:05:53 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/Chipcard/
+${P5ARCH}/Chipcard/PCSC/
+${P5ARCH}/Chipcard/PCSC.pm
+${P5ARCH}/Chipcard/PCSC.pod
+${P5ARCH}/Chipcard/PCSC/Card.pm
+${P5ARCH}/Chipcard/PCSC/Card.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/Chipcard/
+${P5ARCH}/auto/Chipcard/PCSC/
+${P5ARCH}/auto/Chipcard/PCSC/PCSC.so
+@man man/man3p/Chipcard::PCSC.3p
+@man man/man3p/Chipcard::PCSC::Card.3p
+share/examples/p5-Chipcard-PCSC/
+share/examples/p5-Chipcard-PCSC/gsm.script
+share/examples/p5-Chipcard-PCSC/gsm_directory.pl
+share/examples/p5-Chipcard-PCSC/test_iso_error.pl
