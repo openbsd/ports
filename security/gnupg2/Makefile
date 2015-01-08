@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2014/09/01 08:42:01 pea Exp $
+# $OpenBSD: Makefile,v 1.33 2015/01/08 09:06:19 pea Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.0.26
+DISTNAME =	gnupg-2.1.1
 CATEGORIES = 	security
 
 MASTER_SITES =	${MASTER_SITES_GNUPG:=gnupg/}
@@ -14,9 +14,9 @@ MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM = 	Yes
 
-WANTLIB +=		assuan bz2 c crypto curl gcrypt
-WANTLIB +=		gpg-error idn ksba pth pthread
-WANTLIB +=		readline ssl termcap usb z
+WANTLIB +=		assuan bz2 c gcrypt gnutls gpg-error
+WANTLIB +=		ksba npth pthread readline
+WANTLIB +=		termcap usb z
 
 EXTRACT_SUFX = 		.tar.bz2
 
@@ -27,15 +27,15 @@ FLAVOR ?=
 
 LIB_DEPENDS =		archivers/bzip2 \
 			devel/libusb-compat \
+			devel/npth \
+			security/gnutls \
 			security/libassuan \
 			security/libgcrypt \
-			security/libksba \
-			net/curl \
-			devel/pth
+			security/libksba
 
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS +=	--enable-ldap
-WANTLIB +=		ldap
+WANTLIB +=		lber ldap
 LIB_DEPENDS +=		databases/openldap
 .else
 CONFIGURE_ARGS +=	--disable-ldap
