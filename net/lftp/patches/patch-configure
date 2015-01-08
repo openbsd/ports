@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.6 2014/12/21 21:22:52 sthen Exp $
+$OpenBSD: patch-configure,v 1.7 2015/01/08 16:56:56 stsp Exp $
 
 Use GNU readline as our base readline lacks add_history_time().
 Fix failing test for libssl, LibreSSL doesn't provide RAND_egd.
@@ -23,12 +23,3 @@ Fix failing test for libssl, LibreSSL doesn't provide RAND_egd.
     READLINE_DEPEND=''
     COMPILE_READLINE=no
  else
-@@ -48420,7 +48420,7 @@ else
- int
- main ()
- {
--static SSL_CTX *ctx; SSL_new(ctx); RAND_status(); RAND_egd("file")
-+static SSL_CTX *ctx; SSL_new(ctx); RAND_status();
-   ;
-   return 0;
- }
