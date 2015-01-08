@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/08 22:03:20 sthen Exp $
+@bin sbin/p0f3
+share/doc/p0f3/
+share/doc/p0f3/COPYING
+share/doc/p0f3/ChangeLog
+share/doc/p0f3/README
+share/doc/p0f3/TODO
+share/doc/p0f3/existential-notes.txt
+share/doc/p0f3/extra-sigs.txt
+share/examples/p0f3/
+@sample ${SYSCONFDIR}/p0f/
+share/examples/p0f3/p0f3.fp
+@sample ${SYSCONFDIR}/p0f/p0f3.fp

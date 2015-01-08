@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_h,v 1.1.1.1 2015/01/08 22:03:20 sthen Exp $
+--- config.h.orig	Wed Jan  7 16:03:43 2015
++++ config.h	Wed Jan  7 16:04:11 2015
+@@ -20,7 +20,7 @@
+ /* Default location of p0f.fp: */
+ 
+ #ifndef FP_FILE
+-#  define FP_FILE           "p0f.fp"
++#  define FP_FILE           "/etc/p0f/p0f3.fp"
+ #endif /* !FP_FILE */
+ 
+ /* Initial permissions on log files: */

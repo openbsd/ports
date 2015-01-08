@@ -1,0 +1,24 @@
+$OpenBSD: patch-build_sh,v 1.1.1.1 2015/01/08 22:03:20 sthen Exp $
+--- build.sh.orig	Wed Jan  7 15:09:18 2015
++++ build.sh	Wed Jan  7 15:10:36 2015
+@@ -81,8 +81,8 @@ if [ "$1" = "clean" -o "$1" = "publish" ]; then
+ elif [ "$1" = "all" -o "$1" = "" ]; then
+ 
+   echo "[+] Configuring production build."
+-  BASIC_CFLAGS="$BASIC_CFLAGS -O3"
+-  USE_CFLAGS="$USE_CFLAGS -O3"
++  #BASIC_CFLAGS="$BASIC_CFLAGS -O3"
++  #USE_CFLAGS="$USE_CFLAGS -O3"
+ 
+ elif [ "$1" = "debug" ]; then
+ 
+@@ -318,7 +318,8 @@ echo -n "[*] Compiling $PROGNAME... "
+ 
+ rm -f "$PROGNAME" || exit 1
+ 
+-$CC $USE_CFLAGS $USE_LDFLAGS "$PROGNAME.c" $OBJFILES -o "$PROGNAME" $USE_LIBS &>"$TMP.log"
++echo $CC $USE_CFLAGS $USE_LDFLAGS "$PROGNAME.c" $OBJFILES -o "$PROGNAME" $USE_LIBS
++$CC $USE_CFLAGS $USE_LDFLAGS "$PROGNAME.c" $OBJFILES -o "$PROGNAME" $USE_LIBS 2>&1 | tee "$TMP.log"
+ 
+ if [ ! -x "$PROGNAME" ]; then
+ 
