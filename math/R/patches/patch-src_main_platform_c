@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_main_platform_c,v 1.9 2014/09/02 14:55:37 dcoppa Exp $
+$OpenBSD: patch-src_main_platform_c,v 1.10 2015/01/08 14:14:11 dcoppa Exp $
 
 Allow building with USE_SYSTRACE=Yes
 
---- src/main/platform.c.orig	Sat Jun 14 00:15:13 2014
-+++ src/main/platform.c	Sat Jun 14 16:14:58 2014
-@@ -2159,17 +2159,22 @@ SEXP attribute_hidden do_dircreate(SEXP call, SEXP op,
+--- src/main/platform.c.orig	Wed Sep 24 17:15:13 2014
++++ src/main/platform.c	Thu Jan  8 05:51:05 2015
+@@ -2166,17 +2166,22 @@ SEXP attribute_hidden do_dircreate(SEXP call, SEXP op,
  	    /* Solaris 10 returns ENOSYS on automount, PR#13834
  	       EROFS is allowed by POSIX, so we skip that too */
  	    serrno = errno;

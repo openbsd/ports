@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_Makefile_in,v 1.8 2014/05/20 11:02:12 dcoppa Exp $
---- src/main/Makefile.in.orig	Thu Mar 13 00:03:13 2014
-+++ src/main/Makefile.in	Tue May 20 10:45:51 2014
+$OpenBSD: patch-src_main_Makefile_in,v 1.9 2015/01/08 14:14:11 dcoppa Exp $
+--- src/main/Makefile.in.orig	Mon Jul 14 17:15:06 2014
++++ src/main/Makefile.in	Thu Jan  8 05:51:05 2015
 @@ -98,7 +98,7 @@ EXTRA_STATIC_LIBS = \
    $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE) $(R_TRE) $(R_XDR) $(R_XZ) $(R_LIBINTL) $(R_TZONE)
  STATIC_LIBS = $(MAIN_LIBS) $(EXTRA_STATIC_LIBS)
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_main_Makefile_in,v 1.8 2014/05/20 11:02:12 dcoppa Exp $
  R_binary = R.bin
  R_bin_OBJECTS = Rmain.o @WANT_R_SHLIB_FALSE@$(OBJECTS)
 @@ -107,7 +107,7 @@ R_bin_OBJECTS = Rmain.o @WANT_R_SHLIB_FALSE@$(OBJECTS)
- @WANT_R_SHLIB_TRUE@R_bin_LDADD = -L../../lib@R_ARCH@ -lR @BLAS_SHLIB_TRUE@-lRblas
+ @WANT_R_SHLIB_TRUE@R_bin_LDADD = -lR @BLAS_SHLIB_TRUE@-lRblas
  @BUILD_LTO_FALSE@R_bin_DEPENDENCIES =@WANT_R_SHLIB_FALSE@ libR.a @USE_EXPORTFILES_TRUE@ $(top_builddir)/etc/R.exp
  
 -libR_la = libR$(DYLIB_EXT)

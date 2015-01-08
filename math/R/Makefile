@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.63 2014/09/02 14:55:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.64 2015/01/08 14:14:11 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.1.1
+DISTNAME=	R-3.1.2
 
-SHARED_LIBS=	R	2.1 	# 2.1
+SHARED_LIBS=	R	3.0
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
-SHARED_LIBS+=	Rblas	31.1 	# 31.1
+SHARED_LIBS+=	Rblas	31.2 	# 31.2
 
 CATEGORIES=	math
 HOMEPAGE=	http://www.r-project.org/
@@ -26,19 +26,19 @@ WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c cairo \
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-3/ \
+		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-3/ \
 		http://cran.at.r-project.org/src/base/R-3/ \
 		http://cran.au.r-project.org/src/base/R-3/ \
 		http://cran.br.r-project.org/src/base/R-3/ \
 		http://cran.ch.r-project.org/src/base/R-3/ \
-		http://cran.es.r-project.org/src/base/R-3/ \
 		http://cran.dk.r-project.org/src/base/R-3/ \
+		http://cran.es.r-project.org/src/base/R-3/ \
 		http://cran.hu.r-project.org/src/base/R-3/ \
+		http://cran.stat.ucla.edu/src/base/R-3/ \
 		http://cran.uk.r-project.org/src/base/R-3/ \
 		http://cran.us.r-project.org/src/base/R-3/ \
 		http://cran.za.r-project.org/src/base/R-3/ \
-		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-3/ \
 		http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/ \
-		http://cran.stat.ucla.edu/src/base/R-3/ \
 		http://probability.ca/cran/src/base/R-3/
 
 MODULES=	fortran \
@@ -52,6 +52,7 @@ BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
 		archivers/unzip \
 		archivers/zip \
 		devel/xdg-utils
+
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
@@ -64,14 +65,18 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		graphics/png \
 		graphics/tiff \
 		textproc/icu4c
+
 RUN_DEPENDS=	archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
 		devel/gmake \
-		devel/xdg-utils
+		devel/xdg-utils \
+		print/texlive/base
 
 CONFIGURE_STYLE=gnu
+
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
+
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
@@ -85,14 +90,16 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-system-bzlib \
 		--with-system-pcre \
 		--with-system-xz \
-		--with-tcltk \
 		--with-tcl-config=${MODTCL_CONFIG} \
+		--with-tcltk \
 		--with-tk-config=${MODTK_CONFIG}
 
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
-		ac_cv_path_TAR="${LOCALBASE}/bin/gtar"
+		LIBnn=lib \
+		ac_cv_path_TAR="${LOCALBASE}/bin/gtar" \
+		rdocdir="${PREFIX}/share/doc/R"
 
 MAKE_FLAGS=	INSTALL_DATA='install -c -m 644' \
 		INSTALL_PROGRAM='install -c -s -m 555' \
