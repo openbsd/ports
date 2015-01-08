@@ -1,6 +1,12 @@
-$OpenBSD: patch-rubynative_configure,v 1.3 2011/07/12 18:06:23 jeremy Exp $
+$OpenBSD: patch-rubynative_configure,v 1.4 2015/01/08 18:59:03 jeremy Exp $
+
+Use RbConfig instead of Config, as RbConfig no longer exists
+in ruby 2.2.
+
+Use the current ruby version to figure out prefix and sitelibdir.
+
 --- rubynative/configure.orig	Mon Dec 24 17:53:40 2007
-+++ rubynative/configure	Fri Jul  8 09:01:02 2011
++++ rubynative/configure	Mon Dec  1 15:57:38 2014
 @@ -1228,8 +1228,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
@@ -15,7 +21,7 @@ $OpenBSD: patch-rubynative_configure,v 1.3 2011/07/12 18:06:23 jeremy Exp $
  if test "$prefix" = NONE
  then
 -  prefix=`ruby -rrbconfig -e 'puts(Config::CONFIG.fetch("prefix"))'`
-+  prefix=`$RUBY -rrbconfig -e 'puts(Config::CONFIG.fetch("prefix"))'`
++  prefix=`$RUBY -rrbconfig -e 'puts(RbConfig::CONFIG.fetch("prefix"))'`
  fi
  
  
@@ -41,7 +47,7 @@ $OpenBSD: patch-rubynative_configure,v 1.3 2011/07/12 18:06:23 jeremy Exp $
 -
  # Librarh path
 -myrblibdir=`ruby -rrbconfig -e 'puts(Config::CONFIG.fetch("sitelibdir"))'`
-+myrblibdir=`$RUBY -rrbconfig -e 'puts(Config::CONFIG.fetch("sitearchdir"))'`
++myrblibdir=`$RUBY -rrbconfig -e 'puts(RbConfig::CONFIG.fetch("sitearchdir"))'`
  if test -n "$myrblibdir"
  then
    MYRBLIBDIR="$myrblibdir"
