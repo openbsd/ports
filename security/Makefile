@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2015/01/08 15:09:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.360 2015/01/08 22:03:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -136,6 +136,7 @@
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
+     SUBDIR += p0f3
      SUBDIR += p11-kit
      SUBDIR += p5-Authen-Htpasswd
      SUBDIR += p5-Authen-NTLM
