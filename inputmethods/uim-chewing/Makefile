@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:32:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/09 16:46:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	chewing input method for uim
 
-DISTNAME=	uim-chewing-0.0.4.2
-REVISION=	1
+DISTNAME=	uim-chewing-0.1.0
 
 CATEGORIES=	inputmethods chinese
 
@@ -16,14 +15,14 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	chewing gcroots uim uim-scm
+WANTLIB += chewing gcroots uim uim-scm
 
-MODULES=		devel/gettext
+MODULES=	devel/gettext
 
 MASTER_SITES=	https://uim.googlecode.com/files/
 
 LIB_DEPENDS=	chinese/libchewing \
-		inputmethods/uim
+		inputmethods/uim>=1.8.6
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
