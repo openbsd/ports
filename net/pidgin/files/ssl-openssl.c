@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.8 2014/10/28 01:14:23 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.9 2015/01/09 01:34:44 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -165,7 +165,8 @@ ssl_openssl_connect(PurpleSslConnection *gsc)
 	/*
 	 * disable SSLv2 and SSLv3
 	 */
-	SSL_CTX_set_options(openssl_data->ssl_ctx, (SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3));
+	SSL_CTX_set_options(openssl_data->ssl_ctx,
+		(SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3));
 
 	/*
 	 * allocate a new SSL object
@@ -242,7 +243,7 @@ ssl_openssl_read(PurpleSslConnection *gsc, void *data, size_t len)
 			return (-1);
 		}
 
-		purple_debug_error("openssl", "receive failed: %d\n", s);
+		purple_debug_error("openssl", "receive failed: %zi\n", s);
 		s = 0;
 	}
 
@@ -256,9 +257,10 @@ ssl_openssl_write(PurpleSslConnection *gsc, const void *data, size_t len)
 	ssize_t s = 0;
 	int ret;
 
-	if (openssl_data != NULL)
-		s = SSL_write(openssl_data->ssl, data, len);
+	if (openssl_data == NULL)
+		return (0);
 
+	s = SSL_write(openssl_data->ssl, data, len);
 	if (s <= 0) {
 		ret = SSL_get_error(openssl_data->ssl, s);
 
@@ -267,7 +269,7 @@ ssl_openssl_write(PurpleSslConnection *gsc, const void *data, size_t len)
 			return (-1);
 		}
 
-		purple_debug_error("openssl", "send failed: %d\n", s);
+		purple_debug_error("openssl", "send failed: %zi\n", s);
 		s = 0;
 	}
 
