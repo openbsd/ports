@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/07/16 14:35:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/01/09 13:21:03 schwarze Exp $
 
 COMMENT=	curses-based URL ripper
 
@@ -16,7 +16,6 @@ WANTLIB=		c
 
 CONFIGURE_STYLE= gnu
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 # see patch-url_handler_sh
