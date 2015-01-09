@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/20 01:43:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/01/09 17:15:29 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -88,8 +88,6 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest.pyc
-lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest_tempo.py
-lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest_tempo.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.py
@@ -133,8 +131,12 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdstats.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdstats.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdupdate.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdupdate.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/permissions.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/permissions.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/play.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/play.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/plexupdate.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/plexupdate.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/random.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/random.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/replaygain.py
