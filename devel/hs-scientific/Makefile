@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/25 22:11:04 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/09 11:32:11 dcoppa Exp $
 
 COMMENT =		scientific number type
 
-DISTNAME =		scientific-0.3.3.1
-REVISION =		0
+DISTNAME =		scientific-0.3.3.5
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/basvandijk/scientific

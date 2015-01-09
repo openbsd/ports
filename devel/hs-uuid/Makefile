@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/20 01:37:32 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2015/01/09 11:32:11 dcoppa Exp $
 
 COMMENT =		creating, comparing, parsing and printing UUIDs
 
-DISTNAME =		uuid-1.3.6
+DISTNAME =		uuid-1.3.8
 CATEGORIES =		devel
 
 HOMEPAGE =		http://projects.haskell.org/uuid/

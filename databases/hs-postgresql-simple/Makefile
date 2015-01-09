@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/12/03 21:56:43 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/09 11:32:11 dcoppa Exp $
 
 COMMENT =		mid-level PostgreSQL client library
 
-DISTNAME =		postgresql-simple-0.4.6.0
-REVISION =		1
+DISTNAME =		postgresql-simple-0.4.9.0
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-simple
@@ -22,6 +21,7 @@ RUN_DEPENDS =		databases/hs-postgresql-libpq>=0.9 \
 			devel/hs-aeson>=0.6 \
 			devel/hs-blaze-builder \
 			devel/hs-blaze-textual \
+			devel/hs-case-insensitive \
 			devel/hs-hashable \
 			devel/hs-scientific \
 			devel/hs-text>=0.11.1 \
