@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/11/06 17:13:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/01/09 18:04:19 sthen Exp $
 
 COMMENT=		web-based front end for the nfdump netflow tools
 
-V=			1.3.6p1
-REVISION=		5
+V=			1.3.7
 DISTNAME=		nfsen-$V
-PKGNAME=		${DISTNAME:S/p/pl/}
 CATEGORIES=		net www
 HOMEPAGE=		http://nfsen.sourceforge.net/
 
@@ -19,6 +17,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nfsen/}
 MODULES=		perl lang/php
 RUN_DEPENDS=		net/rrdtool \
 			mail/p5-Mail-Tools \
+			net/p5-Socket6 \
 			net/nfdump,-nfprofile \
 			net/nfdump>=1.6.9
 BUILD_DEPENDS=		${RUN_DEPENDS}
@@ -51,7 +50,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.pm ${PREFIX}/lib/nfsen/plugins/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.php ${WWWDIR}/nfsen/plugins/
 	-mv ${WWWDIR}/nfsen/conf.php ${WWWDIR}/nfsen/conf.php.dist
-	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
+	find ${WRKINST} -name '*.orig' -or -name '._*' -print0 | xargs -0r rm
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}/var/www/htdocs/nfsen
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/libdata
 

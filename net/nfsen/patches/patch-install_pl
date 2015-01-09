@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_pl,v 1.6 2014/09/17 09:20:01 sthen Exp $
---- install.pl.orig	Mon Jan 23 16:36:02 2012
-+++ install.pl	Wed Sep 17 10:18:50 2014
+$OpenBSD: patch-install_pl,v 1.7 2015/01/09 18:04:19 sthen Exp $
+--- install.pl.orig	Mon Jun 23 20:27:50 2014
++++ install.pl	Fri Jan  9 17:16:58 2015
 @@ -165,14 +165,14 @@ sub VerifyUser {
  	if ( !defined $gid_name ) {
  		die "Group '$user_gid' not found on this system\n";
@@ -68,15 +68,7 @@ $OpenBSD: patch-install_pl,v 1.6 2014/09/17 09:20:01 sthen Exp $
  # Load the required NfSen modules 
  unshift @INC, "libexec";
  print "Check for required Perl modules: ";
-@@ -639,7 +643,6 @@ eval {
- 	require RRDs; 			import RRDs;
- 	require Mail::Header;	import Mail::Header;
- 	require Mail::Internet;	import Mail::Internet;
--	require Socket6;		import Socket6;
- };
- if ( $@ ) {
- 	print "Failed\nRequired nfsen modules not found\n";
-@@ -651,7 +654,7 @@ if ( $@ ) {
+@@ -652,7 +656,7 @@ if ( $@ ) {
  
  # need to run as root
  if ( !NfSen::root_process() ) {
@@ -85,7 +77,7 @@ $OpenBSD: patch-install_pl,v 1.6 2014/09/17 09:20:01 sthen Exp $
  }
  
  # need a config file
-@@ -701,7 +704,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
+@@ -702,7 +706,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
  
  # Get Perl
  # Put this into a NfConf variable, so we can use the standard Patch Procedure
@@ -95,7 +87,7 @@ $OpenBSD: patch-install_pl,v 1.6 2014/09/17 09:20:01 sthen Exp $
  $NfConf::INSTPREFIX = $ENV{'INSTPREFIX'};
  if ( defined $NfConf::INSTPREFIX ) {
  	if ( ! $NfConf::INSTPREFIX =~ /\/$/ ) {
-@@ -715,7 +719,10 @@ if ( defined $NfConf::INSTPREFIX ) {
+@@ -716,7 +721,10 @@ if ( defined $NfConf::INSTPREFIX ) {
  
  my ($nfsen_uid, $www_gid ) = VerifyConfig();
  my $nfsen_run = 0;
@@ -106,7 +98,7 @@ $OpenBSD: patch-install_pl,v 1.6 2014/09/17 09:20:01 sthen Exp $
  # test for two files of old layout
  my $need_rrdlayout_upgrade = -f "$NfConf::PROFILESTATDIR/live/flows.rrd" && -f "$NfConf::PROFILESTATDIR/live/packets_other.rrd";
  
-@@ -765,10 +772,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
+@@ -766,10 +774,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
  		}
  	}
  }
@@ -121,7 +113,7 @@ $OpenBSD: patch-install_pl,v 1.6 2014/09/17 09:20:01 sthen Exp $
  Cleanup();
  SetupEnv($nfsen_uid, $www_gid);
  
-@@ -809,14 +820,17 @@ $$$hints{'version'} 		= $nfsen_version;
+@@ -810,14 +822,17 @@ $$$hints{'version'} 		= $nfsen_version;
  $$$hints{'installed'} 		= time();
  NfSen::StoreHints();
  chown $nfsen_uid, $www_gid, "$NfConf::INSTPREFIX$NfConf::PROFILESTATDIR/hints" || die "Can't chown hints db: $!\n";
