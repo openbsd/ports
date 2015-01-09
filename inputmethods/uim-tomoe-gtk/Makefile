@@ -1,34 +1,36 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/01/09 16:47:55 ajacoutot Exp $
 
 COMMENT=	japanese handwriting
 
-DISTNAME=	uim-tomoe-gtk-0.2.0
-REVISION=	7
+DISTNAME=	uim-tomoe-gtk-0.6.0
 
 HOMEPAGE= 	http://tomoe.sourceforge.jp/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=tomoe/17172/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/uim-tomoe-gtk/}
 
 CATEGORIES=	inputmethods japanese
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_ENV=CPPFLAGS=-I${LOCALBASE}/include
-CONFIGURE_STYLE=gnu
-
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
+WANTLIB += freetype gcroots gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs tomoe tomoe-gtk
+WANTLIB += uim uim-scm xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	inputmethods/libtomoe-gtk \
-		inputmethods/uim
+BUILD_DEPENDS=	textproc/gsed
 
-WANTLIB=	Xrender Xext X11 m z png freetype fontconfig \
-		gio-2.0 gmodule-2.0 glib-2.0 pangocairo-1.0 pango-1.0 \
-		pangoft2-1.0 cairo atk-1.0 gobject-2.0 \
-		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 c \
-		tomoe Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi \
-		Xinerama Xrandr expat pcre pixman-1 pthread-stubs xcb \
-		tomoe-gtk gcroots uim uim-scm gthread-2.0 pthread \
-		xcb-render GL Xxf86vm drm ffi stdc++ xcb-shm
+LIB_DEPENDS=	inputmethods/libtomoe-gtk>=0.6.0 \
+		inputmethods/uim>=1.8.6
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
