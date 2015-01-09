@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/06 21:32:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/09 08:10:56 pascal Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 IGNORE-html =		qdoc segfaults
-BROKEN-powerpc =	relocation overflow when linking libQt5WebKit
 
 VERSION =		5.3.2
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
@@ -273,6 +272,9 @@ CONFIGURE_ENV =		MAKE=make \
 			MAKEFLAGS="-j ${MAKE_JOBS}" \
 			EXTRA_CPPFLAGS="-DLOCALBASE=\\\"${LOCALBASE}\\\" -DX11BASE=\\\"${X11BASE}\\\""
 
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
+.endif
 .include <bsd.port.arch.mk>
 
 # QtWebkit (at least, maybe others) plays dirty games with inter-target
