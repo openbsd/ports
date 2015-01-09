@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2015/01/09 21:04:02 bluhm Exp $
+--- doc/Makefile.in.orig	Thu Aug  5 11:39:55 2010
++++ doc/Makefile.in	Fri Dec 26 22:53:16 2014
+@@ -521,3 +521,9 @@ uninstall-am:
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
++
++install-data-am:
++	mkdir "$(DESTDIR)$(htmldir)"
++.for f in $(html_files) $(grfx_files)
++	$(INSTALL_DATA) $f "$(DESTDIR)$(htmldir)"
++.endfor

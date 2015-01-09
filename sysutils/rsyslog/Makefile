@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2015/01/09 21:04:02 bluhm Exp $
 
 BROKEN-hppa =		lack of atomic ops
 BROKEN-mips64 =		lack of atomic ops
@@ -6,20 +6,23 @@ BROKEN-mips64 =		lack of atomic ops
 SHARED_ONLY =		Yes
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
+COMMENT-docs =		additional html documentation for rsyslog
 COMMENT-mysql =		mysql plugin for rsyslog
 COMMENT-pgsql =		postgresql plugin for rsyslog
 
-MULTI_PACKAGES =	-main -mysql -pgsql
+MULTI_PACKAGES =	-main -docs -mysql -pgsql
 
 V =			4.6.4
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
+PKGNAME-docs =		rsyslog-docs-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
 
-REVISION-main =		5
-REVISION-mysql =	5
+REVISION-main =		6
+REVISION-docs =		0
+REVISION-mysql =	6
 REVISION-pgsql =	3
 
 HOMEPAGE =		http://www.rsyslog.com/
@@ -29,9 +32,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		devel/gettext
 
-WANTLIB-main +=		c gmp hogweed nettle gnutls pthread p11-kit
+WANTLIB-main +=		c gmp hogweed nettle ffi gnutls pthread p11-kit
 WANTLIB-main +=		relp tasn1 z ${MODGETTEXT_WANTLIB}
-WANTLIB-mysql +=	crypto m mysqlclient ssl z
+WANTLIB-mysql +=	crypto m mysqlclient ssl z pthread stdc++
 WANTLIB-pgsql +=	crypto pq ssl
 
 LIB_DEPENDS-main =	security/gnutls \
