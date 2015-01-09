@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_glib-utils_h,v 1.1 2015/01/09 16:46:49 ajacoutot Exp $
+--- lib/glib-utils.h.orig	Wed Apr 25 09:35:58 2007
++++ lib/glib-utils.h	Fri Jan  9 14:42:52 2015
+@@ -28,7 +28,7 @@
+ #include "config.h"
+ #endif /* HAVE_CONFIG_H */
+ 
+-#include <glib/garray.h>
++#include <glib.h>
+ #include <glib/gi18n-lib.h>
+ #include "glib-compat-file-utilities.h"
+ #include "glib-compat-key-file.h"

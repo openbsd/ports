@@ -1,21 +1,43 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:46:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/09 16:46:49 ajacoutot Exp $
 
 COMMENT=	japanese handwriting recognition library
 
-DISTNAME=	tomoe-0.2.1
-REVISION=	0
+DISTNAME=	tomoe-0.6.0
 
 HOMEPAGE= 	http://tomoe.sourceforge.jp/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=tomoe/16048/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/}
 
 CATEGORIES=	inputmethods japanese
 
-SHARED_LIBS=	tomoe 0.0
+SHARED_LIBS +=  tomoe                1.0      # 1.0
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 pcre pthread
+
+MODULES=	devel/gettext
+
+BUILD_DEPENDS=	textproc/gsed
+
+LIB_DEPENDS=	devel/glib2
+
 CONFIGURE_STYLE=gnu
-WANTLIB=	c m
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_path_MYSQL_CONFIG="mysql_config-not-found" \
+		ac_cv_path_UNZIP="unzip-not-found"
+
+CONFIGURE_ARGS=	--without-python \
+		--without-ruby \
+		--with-svn-lib=/dev/null \
+		--with-svn-include=/dev/null \
+		--disable-unihan
+
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/
+
+post-install:
+	rm ${PREFIX}/lib/tomoe/module/dict/*.{a,la}
+	rm ${PREFIX}/lib/tomoe/module/recognizer/*.{a,la}
 
 .include <bsd.port.mk>

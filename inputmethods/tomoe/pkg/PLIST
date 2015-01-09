@@ -1,13 +1,61 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 00:29:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/09 16:46:49 ajacoutot Exp $
 %%SHARED%%
-bin/tomoe
-bin/tomoe1
 include/tomoe/
+include/tomoe/tomoe-candidate.h
+include/tomoe/tomoe-char.h
+include/tomoe/tomoe-config.h
+include/tomoe/tomoe-context.h
+include/tomoe/tomoe-dict.h
+include/tomoe/tomoe-enum-types.h
+include/tomoe/tomoe-module-impl.h
+include/tomoe/tomoe-module.h
+include/tomoe/tomoe-query.h
+include/tomoe/tomoe-reading.h
+include/tomoe/tomoe-recognizer.h
+include/tomoe/tomoe-shelf.h
+include/tomoe/tomoe-writing.h
 include/tomoe/tomoe.h
 lib/libtomoe.a
 lib/libtomoe.la
-lib/pkgconfig/
+@lib lib/libtomoe.so.${LIBtomoe_VERSION}
 lib/pkgconfig/tomoe.pc
+lib/tomoe/
+lib/tomoe/module/
+lib/tomoe/module/dict/
+lib/tomoe/module/recognizer/
+share/examples/tomoe/
+@sample ${SYSCONFDIR}/tomoe/
+share/examples/tomoe/config
+@sample ${SYSCONFDIR}/tomoe/config
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/tomoe/
+share/gtk-doc/html/tomoe/TomoeCandidate.html
+share/gtk-doc/html/tomoe/TomoeChar.html
+share/gtk-doc/html/tomoe/TomoeConfig.html
+share/gtk-doc/html/tomoe/TomoeContext.html
+share/gtk-doc/html/tomoe/TomoeDict.html
+share/gtk-doc/html/tomoe/TomoeQuery.html
+share/gtk-doc/html/tomoe/TomoeReading.html
+share/gtk-doc/html/tomoe/TomoeRecognizer.html
+share/gtk-doc/html/tomoe/TomoeShelf.html
+share/gtk-doc/html/tomoe/TomoeWriting.html
+share/gtk-doc/html/tomoe/home.png
+share/gtk-doc/html/tomoe/index.html
+share/gtk-doc/html/tomoe/index.sgml
+share/gtk-doc/html/tomoe/ix01.html
+share/gtk-doc/html/tomoe/left.png
+share/gtk-doc/html/tomoe/right.png
+share/gtk-doc/html/tomoe/style.css
+share/gtk-doc/html/tomoe/tomoe-tomoe.html
+share/gtk-doc/html/tomoe/tomoe.devhelp
+share/gtk-doc/html/tomoe/tomoe.devhelp2
+share/gtk-doc/html/tomoe/tomoe.html
+share/gtk-doc/html/tomoe/up.png
 share/tomoe/
-share/tomoe/all.tdic
-share/tomoe/hiragana.tdic
+share/tomoe/dict/
+share/tomoe/dict.dtd
+share/tomoe/recognizer/
+share/tomoe/recognizer/handwriting-ja.xml
+share/tomoe/recognizer/handwriting-zh_CN.xml
+share/tomoe/xml2est.rb
