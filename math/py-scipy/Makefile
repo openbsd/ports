@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/03 16:37:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2015/01/09 14:40:27 daniel Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
@@ -6,12 +6,12 @@ BROKEN-alpha =		ICE in scipy/optimize/minpack/lmstr.f:462
 
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	0.10.0
+MODPY_EGG_VERSION=	0.14.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math devel
 
-MAINTAINER=		Eric Faurot <eric@openbsd.org>
+MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,6 +40,11 @@ TEST_DEPENDS=	devel/py-nose
 
 MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/amd -I${LOCALBASE}/include"
 MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
+
+# fix perms
+post-extract:
+	find ${WRKSRC} -type d | xargs chmod 755
+	find ${WRKSRC} -type f | xargs chmod 644
 
 do-test: fake
 	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \

@@ -1,0 +1,27 @@
+$OpenBSD: patch-scipy_weave_tests_test_catalog_py,v 1.1 2015/01/09 14:40:27 daniel Exp $
+
+Don't write to HOME when running regress tests.
+
+--- scipy/weave/tests/test_catalog.py.orig	Sun Dec 21 01:45:34 2014
++++ scipy/weave/tests/test_catalog.py	Sun Dec 21 01:45:55 2014
+@@ -228,13 +228,13 @@ class TestCatalogPath(TestCase):
+         assert_(d == os.path.abspath(in_path))
+         assert_(f == catalog.os_dependent_catalog_name())
+ 
+-    @skip_on_windows
+-    def test_user(path):
+-        in_path = '~'
+-        path = catalog.catalog_path(in_path)
+-        d,f = os.path.split(path)
+-        assert_(d == os.path.expanduser(in_path))
+-        assert_(f == catalog.os_dependent_catalog_name())
++#    @skip_on_windows
++#    def test_user(path):
++#        in_path = '~'
++#        path = catalog.catalog_path(in_path)
++#        d,f = os.path.split(path)
++#        assert_(d == os.path.expanduser(in_path))
++#        assert_(f == catalog.os_dependent_catalog_name())
+ 
+     def test_module(self):
+         # hand it a module and see if it uses the parent directory
