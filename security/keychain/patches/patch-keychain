@@ -1,0 +1,33 @@
+$OpenBSD: patch-keychain,v 1.7 2015/01/09 18:48:29 robert Exp $
+--- keychain.orig	Fri Jan  9 19:46:55 2015
++++ keychain	Fri Jan  9 19:46:57 2015
+@@ -812,6 +812,11 @@ extract_fingerprints() {
+                 #   1024 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 /home/barney/.ssh/id_dsa (DSA)
+                 echo "$ef_line" | cut -f2 -d' '
+                 ;;
++            *\ MD5:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:*)
++                # The new OpenSSH format with ssh-add -l -E md5
++		#   2048 MD5:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 /home/barney/.ssh/id_rsa (RSA)
++                echo "$ef_line" | cut -f2 -d' '
++                ;;
+             *)
+                 # Fall back to filename.  Note that commercial ssh is handled
+                 # explicitly in ssh_l and ssh_f, so hopefully this rule will
+@@ -827,7 +832,7 @@ extract_fingerprints() {
+ # synopsis: ssh_l
+ # Return space-separated list of known fingerprints
+ ssh_l() {
+-    sl_mylist=`ssh-add -l 2>/dev/null`
++    sl_mylist=`ssh-add -l -E md5 2>/dev/null`
+     sl_retval=$?
+ 
+     if $openssh; then
+@@ -893,7 +898,7 @@ ssh_f() {
+             warn "$sf_filename.pub missing; can't tell if $sf_filename is loaded"
+             return 1
+         fi
+-        sf_fing=`ssh-keygen -l -f "$sf_filename.pub"` || return 1
++        sf_fing=`ssh-keygen -l -E md5 -f "$sf_filename.pub"` || return 1
+         echo "$sf_fing" | extract_fingerprints
+     else
+         # can't get fingerprint for ssh2 so use filename *shrug*
