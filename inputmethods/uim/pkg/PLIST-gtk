@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST-gtk,v 1.8 2013/07/07 09:53:03 ajacoutot Exp $
-@bin bin/uim-dict-gtk
+@comment $OpenBSD: PLIST-gtk,v 1.9 2015/01/09 16:45:37 ajacoutot Exp $
 @bin bin/uim-im-switcher-gtk
 @bin bin/uim-input-pad-ja
 @bin bin/uim-pref-gtk
 @bin bin/uim-toolbar-gtk
 @bin bin/uim-toolbar-gtk-systray
-@comment lib/gtk-2.0/2.10.0/immodules/im-uim.a
-@comment lib/gtk-2.0/2.10.0/immodules/im-uim.la
 lib/gtk-2.0/2.10.0/immodules/im-uim.so
 @bin libexec/uim-candwin-gtk
+@bin libexec/uim-candwin-horizontal-gtk
+@bin libexec/uim-candwin-tbl-gtk
 @exec %D/bin/gtk-query-immodules-2.0 --update-cache
 @unexec-delete %D/bin/gtk-query-immodules-2.0 --update-cache

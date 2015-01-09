@@ -1,4 +1,4 @@
-QT3 input module for uim.
+GTK+3 input module for uim.
 
 Usage requires setting the following in the environment:
-export QT_IM_MODULE=uim
+export GTK_IM_MODULE="uim"

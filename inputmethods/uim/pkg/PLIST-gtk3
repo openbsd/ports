@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST-gtk3,v 1.1 2015/01/09 16:45:37 ajacoutot Exp $
+@bin bin/uim-im-switcher-gtk3
+@bin bin/uim-input-pad-ja-gtk3
+@bin bin/uim-pref-gtk3
+@bin bin/uim-toolbar-gtk3
+@bin bin/uim-toolbar-gtk3-systray
+lib/gtk-3.0/3.0.0/immodules/im-uim.so
+@bin libexec/uim-candwin-gtk3
+@bin libexec/uim-candwin-horizontal-gtk3
+@bin libexec/uim-candwin-tbl-gtk3
+@exec /usr/local/bin/gtk-query-immodules-3.0 --update-cache
+@unexec-delete /usr/local/bin/gtk-query-immodules-3.0 --update-cache

@@ -1,0 +1,15 @@
+$OpenBSD: patch-qt3_toolbar_Makefile_in,v 1.1 2015/01/09 16:45:37 ajacoutot Exp $
+
+Undefined references to libc functions.
+
+--- qt3/toolbar/Makefile.in.orig	Fri Jan  9 10:26:52 2015
++++ qt3/toolbar/Makefile.in	Fri Jan  9 10:27:43 2015
+@@ -508,7 +508,7 @@ EXTRA_DIST = uimapplet.desktop.in
+ @APPLET_KDE_TRUE@@QT_TRUE@			 common-quimhelpertoolbar.h common-uimstateindicator.h
+ 
+ @APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_CXXFLAGS = -I@KDE_INCLUDE_DIR@ $(QT_CXXFLAGS)
+-@APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LDFLAGS = -avoid-version -module -no-undefined -Wl,--no-undefined -Wl,--allow-shlib-undefined -L@KDE_LIB_DIR@ $(QT_LDFLAGS)
++@APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LDFLAGS = -avoid-version -module -no-undefined -Wl,--allow-shlib-undefined -L@KDE_LIB_DIR@ $(QT_LDFLAGS)
+ @APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
+ @APPLET_KDE_TRUE@@QT_TRUE@			      $(top_builddir)/uim/libuim.la \
+ @APPLET_KDE_TRUE@@QT_TRUE@			      libtoolbarcommon.la  -lkdeui -lkdecore 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.5 2008/10/14 02:16:46 kevlo Exp $
---- configure.ac.orig	Sun Sep  7 16:47:35 2008
-+++ configure.ac	Fri Oct  3 16:09:47 2008
-@@ -1101,15 +1101,10 @@ if test x$use_qt = xyes ; then
+$OpenBSD: patch-configure_ac,v 1.6 2015/01/09 16:45:37 ajacoutot Exp $
+--- configure.ac.orig	Sun Jun 30 06:26:20 2013
++++ configure.ac	Fri Jan  9 09:57:19 2015
+@@ -1387,15 +1387,10 @@ if test x$use_qt = xyes ; then
      fi
      UIC=$HOST_UIC
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2008/10/14 02:16:46 kevlo Exp $
  
      # Process for compiler & linker flags
      QT_CXXFLAGS="-I${QTINCDIR} -DQT_GENUINE_STR -DQT_NO_STL"
-@@ -1121,13 +1116,10 @@ if test x$use_qt = xyes ; then
+@@ -1407,13 +1402,10 @@ if test x$use_qt = xyes ; then
      LDFLAGS="$LDFLAGS $QT_LDFLAGS"
      AC_LANG_SAVE
      AC_LANG_CPLUSPLUS

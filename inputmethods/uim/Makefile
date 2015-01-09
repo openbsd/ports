@@ -1,104 +1,130 @@
-# $OpenBSD: Makefile,v 1.47 2013/10/24 15:18:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/01/09 16:45:37 ajacoutot Exp $
 
-COMMENT-main=	multilingual input method library
-COMMENT-gtk=	uim for GTK
-COMMENT-qt=	uim for QT
-COMMENT-kde=	uim for KDE
+SHARED_ONLY=		Yes
+DPB_PROPERTIES=		tag:kde3
 
-SHARED_ONLY=	Yes
-CATEGORIES=	inputmethods japanese chinese
+COMMENT-main=		multilingual input method library
+COMMENT-gtk=		uim for GTK+2
+COMMENT-gtk3=		uim for GTK+3
+COMMENT-kde=		uim for KDE3
+COMMENT-qt=		uim for QT3
+COMMENT-qt4=		uim for QT4
 
-V=		1.5.3
-DISTNAME=	uim-$V
-MASTER_SITES=	https://uim.googlecode.com/files/
-HOMEPAGE=	https://code.google.com/p/uim/
-PKGNAME-main=	uim-$V
-PKGNAME-gtk=	uim-gtk-$V
-PKGNAME-qt=	uim-qt-$V
-PKGNAME-kde=	uim-kde-$V
+CATEGORIES=		inputmethods japanese chinese
 
-REVISION-main=	11
-REVISION-gtk=	13
-REVISION-qt=	7
-REVISION-kde=	10
+V=			1.8.6
+DISTNAME=		uim-$V
+PKGNAME-main=		uim-$V
+PKGNAME-gtk=		uim-gtk-$V
+PKGNAME-gtk3=		uim-gtk3-$V
+PKGNAME-kde=		uim-kde-$V
+PKGNAME-qt=		uim-qt-$V
+PKGNAME-qt4=		uim-qt4-$V
 
-# BSD
-PERMIT_PACKAGE_CDROM=	Yes
+MASTER_SITES=		https://uim.googlecode.com/files/
+HOMEPAGE=		https://code.google.com/p/uim/
 
 SHARED_LIBS +=	gcroots              0.0      # .1.0
 SHARED_LIBS +=	uim-scm              0.0      # .0.0
 SHARED_LIBS +=	uim                  1.0      # .6.0
 SHARED_LIBS +=	uim-custom           0.0      # .2.0
 
-MULTI_PACKAGES=	-main -gtk -qt -kde
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE=	autoconf
+cWANTLIB += X11 Xext Xrender fontconfig freetype m
+cWANTLIB += ${MODGETTEXT_WANTLIB}
 
-MODULES=	devel/gettext \
-		x11/qt3 \
-		textproc/intltool
-DPB_PROPERTIES =	tag:kde3
+MULTI_PACKAGES=		-main -gtk -gtk3 -kde -qt -qt4
 
-USE_GMAKE=	Yes
-AUTOCONF_VERSION=	2.62
-SUBST_VARS=	MODQT_PLUGINS
+MODULES=		devel/gettext \
+			textproc/intltool \
+			x11/qt4 \
+			x11/kde # last on purpose
 
-Wcommon =	X11 Xext c m xcb \
-		Xrender fontconfig freetype expat z \
-		${MODGETTEXT_WANTLIB}
+USE_GMAKE=		Yes
 
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
+			devel/desktop-file-utils
 
-RUN_DEPENDS-main=${RUN_DEPENDS} \
-		devel/desktop-file-utils
-LIB_DEPENDS-main =	inputmethods/anthy \
-			${MODGETTEXT_LIB_DEPENDS}
-WANTLIB-main=	${Wcommon} curses \
-		util Xft stdc++ anthy anthydic \
+WANTLIB-main += ${cWANTLIB}
+WANTLIB-main += Xft anthy anthydic c curses expat pthread-stubs stdc++
+WANTLIB-main += util xcb z
 
-uim_LIB_DEPENDS=inputmethods/uim
-
-#common to -qt, -kde, and -gtk
-Wx =	GL Xinerama Xrandr Xcursor Xdamage Xfixes Xi Xxf86vm drm
-
-LIB_DEPENDS-qt=		${MODQT_LIB_DEPENDS} \
-			${uim_LIB_DEPENDS} \
-			${MODGETTEXT_LIB_DEPENDS}
-
-#common to -qt and -kde
-Wqt =		${Wcommon} ${Wx} ${MODQT_WANTLIB} \
-		ICE SM Xft Xmu Xt jpeg lcms mng png \
-		 stdc++ uim gcroots uim-scm
-
-WANTLIB-qt =	${Wqt} uim-custom pthread
-
-LIB_DEPENDS-kde	=	inputmethods/uim \
-			${MODGETTEXT_LIB_DEPENDS} \
-			x11/kde/libs3
-WANTLIB-kde =	${Wqt} idn util art_lgpl_2 lib/kde3/DCOP \
-		lib/kde3/kdecore>=7 lib/kde3/kdefx lib/kde3/kdeui
+LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
+			inputmethods/anthy
 
 
-LIB_DEPENDS-gtk =	${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
+WANTLIB-gtk += ${cWANTLIB}
+WANTLIB-gtk += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
+WANTLIB-gtk += atk-1.0 c cairo expat ffi gcroots gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB-gtk += gthread-2.0 gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB-gtk += uim uim-custom uim-scm xcb xcb-render xcb-shm z
+
+LIB_DEPENDS-gtk=	inputmethods/uim \
 			x11/gtk+2
 
-WANTLIB-gtk=	${Wcommon} ${Wx} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
-		gobject-2.0 pango-1.0 atk-1.0 uim gcroots uim-scm \
-		pangocairo-1.0 cairo png Xcomposite xcb-render xcb-shm \
-		pcre pixman-1 gtk-x11-2.0 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gthread-2.0 pthread anthy anthydic \
-		uim-custom Xau Xdmcp ffi pthread-stubs stdc++
+WANTLIB-gtk3 += ${cWANTLIB}
+WANTLIB-gtk3 += ICE SM Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
+WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB-gtk3 += dbus-1 expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB-gtk3 += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs uim uim-custom
+WANTLIB-gtk3 += uim-scm xcb xcb-render xcb-shm z
 
-MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules' \
-		UIM_QT_LDFLAGS='-pthread -L${X11BASE}/lib -L${MODQT_LIBDIR} -lqt-mt -lXext -lX11'
+LIB_DEPENDS-gtk3=	inputmethods/uim \
+			x11/gtk+3
 
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include'
-CONFIGURE_ENV+=	LDFLAGS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib -L${X11BASE}/lib'
-CONFIGURE_ENV+=	QTDIR=${MODQT_QTDIR} QTPLUGINSDIR=${LOCALBASE}/${MODQT_PLUGINS}
+WANTLIB-kde += ${cWANTLIB} ${KDE}/kdecore ${KDE}/kdeui
+WANTLIB-kde += DCOP GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
+WANTLIB-kde += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm art_lgpl_2 drm
+WANTLIB-kde += expat gcroots glapi idn jpeg kdefx lcms mng png pthread
+WANTLIB-kde += pthread-stubs qt-mt stdc++ uim uim-scm util xcb xcb-dri2
+WANTLIB-kde += xcb-glx z
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-canna --with-anthy --without-prime  \
-		--with-gtk2 --with-qt --with-qt-immodule \
-		--enable-default-toolkit=gtk --without-m17nlib \
-		--enable-pref --enable-dict
+LIB_DEPENDS-kde=	inputmethods/uim \
+			x11/kde/libs3
+
+WANTLIB-qt += ${cWANTLIB} ${MODQT3_WANTLIB}
+WANTLIB-qt += GL ICE SM X11-xcb Xau Xcursor Xdamage Xdmcp Xfixes
+WANTLIB-qt += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm c drm expat gcroots
+WANTLIB-qt += glapi jpeg lcms mng png pthread pthread-stubs stdc++
+WANTLIB-qt += uim uim-custom uim-scm xcb xcb-dri2 xcb-glx z
+
+LIB_DEPENDS-qt=		${MODQT3_LIB_DEPENDS} \
+			${MODGETTEXT_LIB_DEPENDS} \
+			inputmethods/uim
+
+WANTLIB-qt4 += ${cWANTLIB} ${MODQT4_WANTLIB}
+WANTLIB-qt4 += ICE QtGui SM Xi Xinerama c pthread stdc++ uim
+WANTLIB-qt4 += uim-custom uim-scm
+
+LIB_DEPENDS-qt4=	${MODQT4_LIB_DEPENDS} \
+			${MODGETTEXT_LIB_DEPENDS} \
+			inputmethods/uim
+
+AUTOCONF_VERSION=	2.68
+CONFIGURE_STYLE=	autoconf
+
+CONFIGURE_ENV=		CPPFLAGS='-I${MODQT3_INCDIR} -I${LOCALBASE}/include -I${X11BASE}/include' \
+			LDFLAGS='-L${MODQT3_LIBDIR} -L${LOCALBASE}/lib -L${X11BASE}/lib' \
+			ac_cv_prog_HOST_MOC=${MODQT3_MOC} \
+			ac_cv_prog_HOST_UIC=${MODQT3_MOC}
+
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-qt \
+			--with-qt-immodule \
+			--with-qt4 \
+			--with-qt4-immodule \
+			--with-anthy-utf8
+
+post-install:
+	rm ${PREFIX}/lib/uim/plugin/*.{a,la}
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/immodules/*.{a,la}
+	rm ${PREFIX}/lib/gtk-3.0/3.0.0/immodules/*.{a,la}
+	rm ${PREFIX}/lib/kde3/*.{a,la}
 
 .include <bsd.port.mk>
