@@ -1,0 +1,14 @@
+$OpenBSD: patch-conf_c,v 1.5 2015/01/10 12:44:01 sthen Exp $
+--- conf.c.orig	Sat Jan 10 12:25:32 2015
++++ conf.c	Sat Jan 10 12:26:16 2015
+@@ -675,8 +675,10 @@ void conf_ifxflags(FILE *output, int ifs, char *ifname
+  		/* set mpls mode for eth interfaces */
+ 		if (ifr.ifr_flags & IFXF_MPLS)
+ 			fprintf(output, " mpls\n");
++#ifdef IFXF_NOINET6
+ 		if (ifr.ifr_flags & IFXF_NOINET6)
+ 			fprintf(output, " no inet6\n");
++#endif
+ #ifdef IFXF_INET6_PRIVACY
+ 		if (ifr.ifr_flags & IFXF_INET6_PRIVACY)
+ 			fprintf(output, " autoconfprivacy\n");
