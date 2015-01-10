@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/11/04 08:17:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2015/01/10 11:40:09 kirby Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -13,6 +13,7 @@
      SUBDIR += devtodo
      SUBDIR += entomologist
      SUBDIR += fet
+     SUBDIR += gbirthday
      SUBDIR += glabels
      SUBDIR += gnucash
      SUBDIR += googlecl
