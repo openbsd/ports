@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2014/10/30 15:33:00 edd Exp $
+# $OpenBSD: Makefile,v 1.76 2015/01/10 13:06:29 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		2
+REVISION =		3
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -44,91 +44,11 @@ BUILD_DEPENDS +=	devel/harfbuzz,-icu
 MODULES =		textproc/intltool converters/libiconv
 # These following modules are mostly for variable substitution in patches
 # They are not real dependencies of _base, but of _texmf-full
-MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
-MODLUA_RUNDEP =		No
+MODULES +=		lang/ruby x11/tk
 MODRUBY_REV =		1.8
 MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
-MODPY_BUILDDEP =	No
-MODPY_RUNDEP =		No
-SUBST_VARS +=		MODRUBY_BINREV MODPY_VERSION MODTK_VERSION
-
-MODPY_ADJ_FILES =	texk/texlive/linked_scripts/de-macro/de-macro \
-			texk/texlive/linked_scripts/dviasm/dviasm.py \
-			texk/texlive/linked_scripts/ebong/ebong.py \
-			texk/texlive/linked_scripts/texliveonfly/texliveonfly.py
-
-MODRUBY_ADJ_FILES =	convbkmk.rb \
-			match_parens
-
-MODPERL_ADJ_FILES =	texk/texlive/linked_scripts/texlive/updmap.pl \
-			texk/tetex/updmap-single.pl \
-			texk/tex4htk/mk4ht.pl \
-			texk/texlive/linked_scripts/authorindex/authorindex \
-			texk/texlive/linked_scripts/bundledoc/arlatex \
-			texk/texlive/linked_scripts/bundledoc/bundledoc \
-			texk/texlive/linked_scripts/ctanify/ctanify \
-			texk/texlive/linked_scripts/dosepsbin/dosepsbin.pl \
-			texk/texlive/linked_scripts/epstopdf/epstopdf.pl \
-			texk/texlive/linked_scripts/fig4latex/fig4latex \
-			texk/texlive/linked_scripts/fontools/afm2afm \
-			texk/texlive/linked_scripts/fontools/autoinst \
-			texk/texlive/linked_scripts/fontools/ot2kpx \
-			texk/texlive/linked_scripts/glossaries/makeglossaries \
-			texk/texlive/linked_scripts/jfontmaps/updmap-setup-kanji.pl \
-			texk/texlive/linked_scripts/latex2man/latex2man \
-			texk/texlive/linked_scripts/latexmk/latexmk.pl \
-			texk/texlive/linked_scripts/mkgrkindex/mkgrkindex \
-			texk/texlive/linked_scripts/mkjobtexmf/mkjobtexmf.pl \
-			texk/texlive/linked_scripts/oberdiek/pdfatfi.pl \
-			texk/texlive/linked_scripts/pax/pdfannotextractor.pl \
-			texk/texlive/linked_scripts/pdfcrop/pdfcrop.pl \
-			texk/texlive/linked_scripts/pedigree-perl/pedigree.pl \
-			texk/texlive/linked_scripts/perltex/perltex.pl \
-			texk/texlive/linked_scripts/pkfix-helper/pkfix-helper \
-			texk/texlive/linked_scripts/purifyeps/purifyeps \
-			texk/texlive/linked_scripts/sty2dtx/sty2dtx.pl \
-			texk/texlive/linked_scripts/tetex/e2pall.pl \
-			utils/texdoctk/texdoctk.pl \
-			texk/texlive/linked_scripts/texcount/texcount.pl \
-			texk/texlive/linked_scripts/texdef/texdef.pl \
-			texk/texlive/linked_scripts/texdiff/texdiff \
-			texk/texlive/linked_scripts/texlive/tlmgr.pl \
-			texk/texlive/tl_scripts/e2pall.pl \
-			texk/texlive/linked_scripts/texloganalyser/texloganalyser \
-			utils/xindy/xindy-2.4/user-commands/texindy.in \
-			utils/xindy/xindy-2.4/user-commands/xindy.in \
-			texk/texlive/linked_scripts/jfontmaps/kanji-fontmap-creator.pl \
-			texk/texlive/linked_scripts/jfontmaps/kanji-config-updmap.pl \
-			texk/texlive/linked_scripts/latexdiff/latexdiff.pl \
-			texk/texlive/linked_scripts/latexdiff/latexdiff-vc.pl \
-			texk/texlive/linked_scripts/latexdiff/latexrevise.pl
-
-# None this year, but there have been in the past.
-LUA_ADJ_SCRIPTS =
-
-TEXLUA_ADJ_SCRIPTS =	texk/texlive/linked_scripts/cachepic/cachepic.tlu \
-			texk/texlive/linked_scripts/checkcites/checkcites.lua \
-			texk/texlive/linked_scripts/context/stubs/unix/mtxrun \
-			texk/texlive/linked_scripts/epspdf/epspdf.tlu \
-			texk/texlive/linked_scripts/luaotfload/luaotfload-tool.lua \
-			texk/texlive/linked_scripts/luaotfload/mkluatexfontdb.lua \
-			texk/texlive/linked_scripts/musixtex/musixflx.lua \
-			texk/texlive/linked_scripts/musixtex/musixtex.lua \
-			texk/texlive/linked_scripts/pfarrei/a5toa4.tlu \
-			texk/texlive/linked_scripts/pfarrei/pfarrei.tlu \
-			texk/texlive/linked_scripts/pmx/pmx2pdf.lua \
-			texk/texlive/linked_scripts/ptex2pdf/ptex2pdf.lua \
-			texk/texlive/linked_scripts/texdoc/texdoc.tlu \
-			texk/texlive/linked_scripts/texlive/rungs.tlu \
-			utils/pmx/pmx2pdf.lua \
-
-SH_ADJ_SCRIPTS =	texk/texlive/linked_scripts/typeoutfileinfo/typeoutfileinfo.sh \
-			texk/texlive/linked_scripts/lua2dox/lua2dox_filter \
-			texk/texlive/linked_scripts/ltxfileinfo/ltxfileinfo \
-			texk/texlive/linked_scripts/arara/arara.sh \
-			texk/texlive/linked_scripts/dtxgen/dtxgen \
-			texk/texlive/linked_scripts/listbib/listbib
+SUBST_VARS +=		MODRUBY_BINREV MODTK_VERSION
 
 
 # Never set SEPARATE_BUILD
@@ -200,23 +120,6 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-poppler
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
-
-# substitute paths to script interpreters
-pre-configure:
-	${MODTCL_WISH_ADJ} ${WRKSRC}/texk/texlive/linked_scripts/epspdf/epspdftk.tcl
-	cd ${WRKSRC} && \
-	    for F in ${LUA_ADJ_SCRIPTS}; do \
-	        perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' $$F; \
-	    done
-	cd ${WRKSRC} && \
-	    for F in ${TEXLUA_ADJ_SCRIPTS}; do \
-	        perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' $$F; \
-	    done
-	cd ${WRKSRC} && \
-	    for F in ${SH_ADJ_SCRIPTS}; do \
-	        perl -pi -e '($$. == 1) && s@^.*$$@#!/bin/sh@' $$F; \
-	    done
-	${SUBST_CMD} ${WRKSRC}/texk/texlive/linked_scripts/context/stubs/unix/mtxrun
 
 # just to silence error - never used
 pre-install:

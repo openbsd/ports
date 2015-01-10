@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.11 2014/01/11 18:46:52 edd Exp $
+$OpenBSD: README,v 1.12 2015/01/10 13:06:29 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -94,6 +94,7 @@ As far as I know:
  * x11/tk/${MODTK_VERSION} is needed for epspdftk
  * lang/ruby/${MODRUBY_LIBREV} is needed for convbkmk, epspdf, and
    other stuff.
+ * Some scripts need bash.
 
 If you know more, please mail the package maintainer.
 

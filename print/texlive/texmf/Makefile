@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/02/08 17:46:18 edd Exp $
+# $OpenBSD: Makefile,v 1.40 2015/01/10 13:06:29 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -9,8 +9,10 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 # If you move things out of another texmf into the buildset, don't forget to:
 #   * Update the buildset conflict markers in PLIST-buildset.
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
-REVISION-buildset =	2
-REVISION-main =		1
+REVISION-buildset =	3
+REVISION-main =		2
+REVISION-full =		0
+REVISION-context =	0
 
 DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
@@ -33,7 +35,8 @@ PKG_ARCH =		*
 BUILD_DEPENDS =		archivers/xz
 
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
-MODULES +=		lang/ruby lang/python
+.include "adj.mk"
+MODULES +=		lang/ruby lang/python x11/tk perl
 MODRUBY_REV =		1.8
 MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
@@ -52,6 +55,29 @@ RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
 			x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
+
+SUBST_VARS +=		RUBY
+
+# Substitute correct interpreter paths into scripts.
+# Some are done automatically by MODULES
+pre-configure:
+	@# Don't use builtin ruby.port.mk substitution. It uses
+	@# find, which takes an age on such a large directory.
+	for F in ${RUBY_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
+	done
+	for F in ${WISH_ADJ_FILES}; do \
+	    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
+	done
+	for F in ${TEXLUA_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
+	    ${WRKSRC}/$$F; \
+	done
+	for F in ${BASH_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
+	    ${WRKSRC}/$$F; \
+	done
+	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share

@@ -1,6 +1,6 @@
-$OpenBSD: patch-texk_texlive_linked_scripts_a2ping_a2ping_pl,v 1.1 2014/01/11 18:46:52 edd Exp $
---- texk/texlive/linked_scripts/a2ping/a2ping.pl.origy	Thu Sep 12 23:06:08 2013
-+++ texk/texlive/linked_scripts/a2ping/a2ping.pl	Thu Sep 12 23:06:33 2013
+$OpenBSD: patch-texmf-dist_scripts_a2ping_a2ping_pl,v 1.1 2015/01/10 13:06:29 edd Exp $
+--- texmf-dist/scripts/a2ping/a2ping.pl.origy	Wed May 14 00:33:51 2008
++++ texmf-dist/scripts/a2ping/a2ping.pl	Sat Jan  3 14:30:25 2015
 @@ -2,7 +2,7 @@
  eval '(exit $?0)' && eval 'PERL_BADLANG=x;export PERL_BADLANG;: \
  ;exec perl -x -S -- "$0" ${1+"$@"};#'if 0;
