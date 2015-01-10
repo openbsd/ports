@@ -1,231 +1,222 @@
-# $OpenBSD: Makefile,v 1.245 2015/01/10 11:06:13 brad Exp $
+# $OpenBSD: Makefile,v 1.246 2015/01/10 23:13:29 brad Exp $
 
-SHARED_ONLY=		Yes
+SHARED_ONLY=	Yes
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
-COMMENT =		movie player supporting many formats
+COMMENT =	movie player supporting many formats
 
-V =			20141103
-FFMPEG_V =		20150107
+V=		20141103
+FFMPEG_V=	20150107
+DISTNAME=	mplayer-${V}
+REVISION=	2
+CATEGORIES=	x11 multimedia
+MASTER_SITES=	http://comstyle.com/source/
+EXTRACT_SUFX=	.tar.xz
 
-SUBST_VARS += 		PREFIX CONFDIR
+HOMEPAGE=	http://www.mplayerhq.hu/
 
-# Distfiles must be hand-rolled, see README
-N =			mplayer
-DISTNAME =		mplayer-${V}
-REVISION =		1
-EXTRACT_SUFX =		.tar.xz
-
-CATEGORIES =		x11 multimedia
-
-HOMEPAGE =		http://www.mplayerhq.hu/
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		patents
-PERMIT_PACKAGE_FTP =		Yes
+PERMIT_PACKAGE_CDROM=	patents
+PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB =	EGL GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
-		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
-		crypto dv dvdnav dvdread enca fontconfig freetype \
-		fribidi jpeg m mng mp3lame ncurses png postproc pthread \
-		SDL sndio stdc++ swscale gif util x264>=5 xvidcore z
+WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
+		avcodec avformat avutil bluray bz2 c cdda_interface \
+		cdda_paranoia crypto dv dvdnav dvdread enca fontconfig \
+		freetype fribidi gif jpeg m mng mp3lame ncurses png postproc \
+		pthread sndio stdc++ swscale util x264 xvidcore z
 
-# we use a snapshot
-MASTER_SITES =	http://comstyle.com/source/
-
-MAINTAINER =	Brad Smith <brad@comstyle.com>
-
-MODULES +=	converters/libiconv \
+MODULES+=	converters/libiconv \
 		lang/clang
-
-LIB_DEPENDS =	graphics/png \
-		graphics/jpeg \
-		graphics/giflib \
-		graphics/ffmpeg>=${FFMPEG_V} \
-		audio/cdparanoia>=3.a9.8 \
-		audio/lame \
-		multimedia/libbluray \
-		multimedia/libdv \
-		devel/fribidi \
-		graphics/libmng \
-		archivers/bzip2 \
-		multimedia/x264>=20101023 \
-		devel/sdl>=1.2.5 \
-		multimedia/libass \
-		devel/libdvdread>=4.2.0 \
-		multimedia/libdvdnav>=4.2.0
-
-BUILD_DEPENDS =	net/livemedia \
-		audio/rtunes>=0.8 \
-		textproc/docbook-xsl \
-		audio/ladspa
-# MPlayer uses non-public interfaces to FFmpeg, so we still need
-# the FFmpeg source in the MPlayer tree at build time.
-BUILD_DEPENDS +=graphics/ffmpeg:patch
-
-.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
-BUILD_DEPENDS += devel/yasm
-.endif
 
 MODCLANG_ARCHS=	amd64 i386
 
-CONFDIR =	${SYSCONFDIR}/mplayer
+LIB_DEPENDS=	archivers/bzip2 \
+		audio/cdparanoia \
+		audio/lame \
+		devel/fribidi \
+		devel/sdl \
+		devel/libdvdread>=4.2.0 \
+		graphics/ffmpeg>=${FFMPEG_V} \
+		graphics/giflib \
+		graphics/jpeg \
+		graphics/libmng \
+		graphics/png \
+		multimedia/libass \
+		multimedia/libbluray \
+		multimedia/libdv \
+		multimedia/libdvdnav>=4.2.0 \
+		multimedia/x264
+
+BUILD_DEPENDS=	audio/ladspa \
+		audio/rtunes \
+		net/livemedia \
+		textproc/docbook-xsl
+# MPlayer uses non-public interfaces to FFmpeg, so we still need
+# the FFmpeg source in the MPlayer tree at build time.
+BUILD_DEPENDS+=	graphics/ffmpeg:patch
+
+.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
+BUILD_DEPENDS+=	devel/yasm
+.endif
+
+CONFDIR=	${SYSCONFDIR}/mplayer
+
+MAKE_ENV=	V=1
+SUBST_VARS+=	PREFIX CONFDIR
 
 .if ${MACHINE_ARCH:Marm}
 # uses ARM EABI
-MPLAYER_ARCH =	generic
+MPLAYER_ARCH=	generic
 .else
-MPLAYER_ARCH =	${MACHINE_ARCH}
+MPLAYER_ARCH=	${MACHINE_ARCH}
 .endif
 
 # Add back fast math flag since we override CFLAGS
-CFLAGS +=	-ffast-math
+CFLAGS+=	-ffast-math
 
 # PIE doesn't leave sufficient registers
 .if ${MACHINE_ARCH:Mi386}
-CFLAGS +=	-fomit-frame-pointer
+CFLAGS+=	-fomit-frame-pointer
 .endif
 
-USE_GMAKE =	Yes
-USE_GROFF =	Yes
-MAKE_ENV =	V=1 	# turn on verbose FFmpeg build
-CONFIGURE_STYLE = simple
+USE_GMAKE=	Yes
+USE_GROFF=	Yes
+CONFIGURE_STYLE= simple
 
 # CONFIGURE_ARGS for misc stuff
-CONFIGURE_ARGS += --target="${MPLAYER_ARCH}-openbsd" \
-		--confdir=${CONFDIR} \
-		--mandir=${LOCALBASE}/man \
+CONFIGURE_ARGS+=--confdir=${CONFDIR} \
 		--extra-cflags="-I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib -ffast-math" \
-		--extra-libs-mplayer="-lrtunes -lcrypto"
+		--extra-libs-mplayer="-lrtunes -lcrypto" \
+		--mandir=${LOCALBASE}/man \
+		--target="${MPLAYER_ARCH}-openbsd"
 
 # CONFIGURE_ARGS that disable internal stuff
-# gui is not supported anymore and we have better ones in ports
-CONFIGURE_ARGS += --disable-alsa \
+CONFIGURE_ARGS+=--disable-alsa \
 		--disable-arts \
 		--disable-esd \
-		--disable-ossaudio \
-		--disable-sunaudio \
-		--disable-vidix \
-		--disable-select \
+		--disable-ffmpeg_a \
+		--disable-gui \
 		--disable-libcdio \
 		--disable-libmpeg2-internal \
-		--disable-gui \
-		--disable-ffmpeg_a	# link FFmpeg .so (graphics/ffmpeg)
+		--disable-ossaudio \
+		--disable-select \
+		--disable-sunaudio \
+		--disable-vidix
 
 # CONFIGURE_ARGS that enable internal stuff
-CONFIGURE_ARGS += --enable-menu
+CONFIGURE_ARGS+=--enable-menu
 
 # CONFIGURE_ARGS that enable external stuff
-CONFIGURE_ARGS += --with-sdl-config=${LOCALBASE}/bin/sdl-config
+CONFIGURE_ARGS+=--with-sdl-config=${LOCALBASE}/bin/sdl-config
 
 # CONFIGURE_ARGS that disable external stuff
-CONFIGURE_ARGS += --disable-smb \
-		--disable-liblzo \
-		--disable-nas \
-		--disable-caca \
-		--disable-langinfo \
-		--disable-mad \
-		--disable-openal \
-		--disable-libdca \
-		--disable-liba52 \
-		--disable-libilbc \
-		--disable-libmpeg2 \
-		--disable-toolame \
-		--disable-twolame \
-		--disable-win32dll \
+CONFIGURE_ARGS+=--disable-caca \
+		--disable-faac \
+		--disable-faad \
+		--disable-faac-lavc \
 		--disable-ggi \
+		--disable-gnutls \
+		--disable-langinfo \
+		--disable-liba52 \
+		--disable-libdca \
+		--disable-libilbc \
+		--disable-liblzo \
+		--disable-libmpeg2 \
 		--disable-libopencore_amrnb \
 		--disable-libopencore_amrwb \
 		--disable-libopenjpeg \
-		--disable-mpg123 \
+		--disable-libopus \
 		--disable-librtmp \
-		--disable-faac \
-		--disable-faac-lavc \
-		--disable-faad \
-		--disable-theora \
+		--disable-libvorbis \
+		--disable-mad \
+		--disable-mpg123 \
+		--disable-nas \
+		--disable-openal \
 		--disable-pulse \
 		--disable-relocatable \
+		--disable-smb \
 		--disable-speex \
-		--disable-libopus \
-		--disable-libvorbis \
-		--disable-gnutls
+		--disable-theora \
+		--disable-toolame \
+		--disable-twolame \
+		--disable-win32dll
 
 .if ${MACHINE_ARCH:Marm}
-WANTLIB +=	ogg vorbisidec
-LIB_DEPENDS +=	audio/tremor
+WANTLIB+=	ogg vorbisidec
+LIB_DEPENDS+=	audio/tremor
 .else
-CONFIGURE_ARGS += --disable-tremor
+CONFIGURE_ARGS+=--disable-tremor
 .endif
 
-CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
-
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
-CONFIGURE_ARGS += --enable-runtime-cpudetection
+CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
 # binutils 2.15 assembler missing opcode support
 .if ${MACHINE_ARCH:Mpowerpc}
-CONFIGURE_ARGS += --disable-altivec
-CONFIGURE_ARGS += --enable-runtime-cpudetection
+CONFIGURE_ARGS+=--disable-altivec \
+		--enable-runtime-cpudetection
 .endif
 
 .if ${MACHINE_ARCH:Marm}
 # disable common floating point decoders that have integer alternatives
-CONFIGURE_ARGS += --disable-decoder=mp3on4float \
+CONFIGURE_ARGS+=--disable-decoder=mp2float \
 		--disable-decoder=mp3adufloat \
 		--disable-decoder=mp3float \
-		--disable-decoder=mp2float \
+		--disable-decoder=mp3on4float \
 		--disable-decoder=vorbis
 .endif
 
-FLAVORS =	debug aa jack
-FLAVOR ?=
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
+
+FLAVORS=	debug aa jack
+FLAVOR?=
 
 .if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS += --enable-debug=3 \
+CONFIGURE_ARGS+=--enable-debug=3 \
 		--disable-sighandler
 .endif
 
 .if ${FLAVOR:Maa}
-LIB_DEPENDS +=	graphics/aalib
-WANTLIB +=	aa>=1.3
+LIB_DEPENDS+=	graphics/aalib
+WANTLIB+=	aa
 .else
-CONFIGURE_ARGS += --disable-aa
+CONFIGURE_ARGS+=--disable-aa
 .endif
 
 .if ${FLAVOR:Mjack}
-LIB_DEPENDS +=	audio/jack
-WANTLIB +=	jack
+LIB_DEPENDS+=	audio/jack
+WANTLIB+=	jack
 .else
-CONFIGURE_ARGS += --disable-jack
+CONFIGURE_ARGS+=--disable-jack
 .endif
 
-NO_TEST =	Yes
+NO_TEST=	Yes
 
-DOCDIR =	${PREFIX}/share/doc/mplayer
-EXAMPLEDIR =	${PREFIX}/share/examples/mplayer
+DOCDIR=		${PREFIX}/share/doc/mplayer
+EXAMPLEDIR=	${PREFIX}/share/examples/mplayer
 
-# copy in rtunes and sndio backends
+EXAMPLES=	input.conf menu.conf codecs.conf
+
 post-extract:
 	@cp ${FILESDIR}/ao_rtunes.c ${WRKSRC}/libao2
 	@cp ${FILESDIR}/ai_sndio.c ${WRKSRC}/stream
 
-# link FFmpeg sources to where build expects
 pre-patch:
-	ln -s ${WRKDIR}/graphics/ffmpeg/ffmpeg-git-${FFMPEG_V} ${WRKSRC}/ffmpeg
+	@ln -s ${WRKDIR}/graphics/ffmpeg/ffmpeg-git-${FFMPEG_V} ${WRKSRC}/ffmpeg
 
 post-build:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} doc
 
-# install docs
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
-	cd ${WRKDIST}/etc; ${INSTALL_DATA} input.conf menu.conf codecs.conf \
-		${EXAMPLEDIR}
+	cd ${WRKDIST}/etc; ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKDIST}/etc/example.conf ${EXAMPLEDIR}/mplayer.conf
 	${INSTALL_DATA} ${WRKDIST}/DOCS/HTML/en/*.html ${DOCDIR}
 
