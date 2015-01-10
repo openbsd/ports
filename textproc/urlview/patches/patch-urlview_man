@@ -1,0 +1,111 @@
+$OpenBSD: patch-urlview_man,v 1.1 2015/01/10 18:02:04 schwarze Exp $
+Fix incorrect escaping resulting in incorrectly shown regexp.
+While here, fix various other nits.
+--- urlview.man.orig	Tue Jul  4 12:14:30 2000
++++ urlview.man	Fri Jan  9 14:41:54 2015
+@@ -7,18 +7,18 @@
+ .\" Copyright (c) 1997 Michael Elkins <me@cs.hmc.edu>
+ .\" Copyright (c) 2000 Thomas Roessler <roessler@does-not-exist.org>
+ .\"
+-.\" This document is free software; you can redistribute it and/or 
++.\" This document is free software; you can redistribute it and/or
+ .\" modify it under the terms of the GNU General Public License as
+ .\" published by the Free Software Foundation; either version 2 of the
+ .\" License, or (at your option) any later version.
+ .\"
+-.TH "urlview" 1 
++.TH URLVIEW 1
+ .SH NAME
+ .PP
+ urlview \- URL extractor/launcher
+ .SH SYNOPSIS
+ .PP
+-.B urlview 
++.B urlview
+ \fIfilename\fP [ \fIfilename\fP ... ]
+ .SH DESCRIPTION
+ .PP
+@@ -29,53 +29,50 @@ specific item.
+ .SH CONFIGURATION
+ .PP
+ .B urlview
+-attempts to read 
++attempts to read
+ .I ~/.urlview
+-upon startup.  If this file
+-doesn't exist, it will try to read a system wide file 
+-in 
++upon startup.
++If this file doesn't exist, it will try to read a system wide file in
+ .IR /etc/urlview.conf .
+ There are two configuration commands (order does not matter):
+ .TP
+ REGEXP \fIregexp\fP
+ .B urlview
+-uses a regular expression to extract URLs from the specified
+-text files.  \\r, \\t, \\n and \\f are all converted to
+-their normal 
++uses a regular expression to extract URLs from the specified text files.
++\er, \et, \en and \ef are all converted to their normal
+ .BR printf (3)
+-meanings.  The default REGEXP is:
++meanings.
++The default REGEXP is:
+ .PP
+-.sp 
+-.ft RR
++.sp
+ .nf
+-(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>"]+|(www|web|w3)\.[-a-z0-9.]+)[^' \t.,;<>"\):]
++(((https?|ftp|gopher)://|(mailto|file|news):)[^' \et<>"]+|(www|web|w3)\e.[-a-z0-9.]+)[^' \et.,;<>"\e):]
+ .fi
+-.ec
+-.ft P
+ .sp
+ .TP
+ COMMAND \fIcommand\fP
+-If the specified command contains a 
++If the specified command contains a
+ .BR %s ,
+ it will be subsituted
+ with the URL that was requested, otherwise the URL is appended to
+-the COMMAND string.  The default COMMAND is:
++the COMMAND string.
++The default COMMAND is:
+ .br
+ .sp
+ url_handler.sh %s
+ .PP
+ .B Note:
+-You should 
++You should
+ .I never
+-put single quotes around the 
++put single quotes around the
+ .BR %s .
+ .B urlview
+ does this for you, and also makes sure that single quotes eventually
+-showing up inside the URL are handled properly.  (Note that this
++showing up inside the URL are handled properly.
++(Note that this
+ shouldn't happen with the default regular expression, which
+ explicitly excludes single quotes.)
+ .SH FILES
+-.PP
+ .IP "/etc/urlview.conf"
+ system-wide urlview configuration file
+ .IP "~/.urlview"
+@@ -83,7 +80,7 @@ urlview configuration file
+ .SH SEE ALSO
+ .PP
+ .BR printf (3),
+-.BR regcomp (3), 
++.BR regcomp (3),
+ .BR regex (7)
+ .SH AUTHOR
+ .PP
+@@ -94,4 +91,3 @@ Modified for Debian by Luis Francisco Gonzalez <luisgh
+ Modified for SuSE by Dr. Werner Fink <werner@suse.de> and Stepan Kasal <kasal@suse.cz>.
+ .PP
+ Changes put together by Thomas Roessler <roessler@does-not-exist.org>.
+-
