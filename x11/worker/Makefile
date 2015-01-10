@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/09 16:52:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/10 00:36:08 bcallah Exp $
 
 COMMENT =	Midnight Commander like file manager for X
-DISTNAME =	worker-3.5.2
+DISTNAME =	worker-3.6.0
 CATEGORIES =	x11
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
