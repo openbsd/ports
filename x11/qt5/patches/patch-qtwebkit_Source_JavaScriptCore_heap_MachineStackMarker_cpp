@@ -1,7 +1,8 @@
-$OpenBSD: patch-qtwebkit_Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtwebkit_Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.2 2015/01/10 22:02:56 zhuk Exp $
 Unbreak build.
---- qtwebkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp.ports.orig	Thu Nov  6 10:32:50 2014
-+++ qtwebkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp	Thu Nov  6 12:35:05 2014
+Synchronized with WebKit upsteam.
+--- qtwebkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp.ports.orig	Thu Sep 11 14:48:22 2014
++++ qtwebkit/Source/JavaScriptCore/heap/MachineStackMarker.cpp	Wed Jan  7 01:01:51 2015
 @@ -45,6 +45,10 @@
  
  #elif OS(UNIX)
@@ -31,20 +32,22 @@ Unbreak build.
  #elif USE(PTHREADS)
      pthread_attr_init(&regs);
  #if HAVE(PTHREAD_NP_H) || OS(NETBSD)
-@@ -434,6 +442,12 @@ static inline void* otherThreadStackPointer(const Plat
- #elif OS(QNX)
-     return reinterpret_cast<void*>((uintptr_t) regs.sp);
- 
-+#elif OS(OPENBSD)
-+    stack_t ss;
-+    // FIXME: Deal with error code below somehow? Seems fatal.
-+    (void)pthread_stackseg_np(regs, &ss);
-+    return ss.ss_sp;
-+
+@@ -437,7 +445,14 @@ static inline void* otherThreadStackPointer(const Plat
  #elif USE(PTHREADS)
      void* stackBase = 0;
      size_t stackSize = 0;
-@@ -448,7 +462,7 @@ static inline void* otherThreadStackPointer(const Plat
++#if OS(OPENBSD)
++    stack_t ss;
++    int rc = pthread_stackseg_np(regs, &ss);
++    stackBase = (void*)((size_t) ss.ss_sp - ss.ss_size);
++    stackSize = ss.ss_size;
++#else
+     int rc = pthread_attr_getstack(&regs, &stackBase, &stackSize);
++#endif
+     (void)rc; // FIXME: Deal with error code somehow? Seems fatal.
+     ASSERT(stackBase);
+     return static_cast<char*>(stackBase) + stackSize;
+@@ -448,7 +463,7 @@ static inline void* otherThreadStackPointer(const Plat
  
  static void freePlatformThreadRegisters(PlatformThreadRegisters& regs)
  {
