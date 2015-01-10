@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.694 2014/12/28 20:58:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.695 2015/01/10 17:35:05 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -450,31 +450,38 @@
      SUBDIR += ruby-capybara
      SUBDIR += ruby-capybara-webkit,ruby20
      SUBDIR += ruby-capybara-webkit,ruby21
+     SUBDIR += ruby-capybara-webkit,ruby22
      SUBDIR += ruby-fcgi,ruby20
      SUBDIR += ruby-fcgi,ruby21
+     SUBDIR += ruby-fcgi,ruby22
      SUBDIR += ruby-httpclient
      SUBDIR += ruby-httpi
      SUBDIR += ruby-jekyll
      SUBDIR += ruby-mechanize
      SUBDIR += ruby-ntlm,ruby20
      SUBDIR += ruby-ntlm,ruby21
+     SUBDIR += ruby-ntlm,ruby22
      SUBDIR += ruby-passenger,ruby20
      SUBDIR += ruby-passenger,ruby21
+     SUBDIR += ruby-passenger,ruby22
      SUBDIR += ruby-rack
      SUBDIR += ruby-rack-protection
      SUBDIR += ruby-rack-test
      SUBDIR += ruby-rainbows
      SUBDIR += ruby-raindrops,ruby20
      SUBDIR += ruby-raindrops,ruby21
+     SUBDIR += ruby-raindrops,ruby22
      SUBDIR += ruby-rest-client
      SUBDIR += ruby-sanitize
      SUBDIR += ruby-savon
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin,ruby20
      SUBDIR += ruby-thin,ruby21
+     SUBDIR += ruby-thin,ruby22
      SUBDIR += ruby-thin_http
      SUBDIR += ruby-unicorn,ruby20
      SUBDIR += ruby-unicorn,ruby21
+     SUBDIR += ruby-unicorn,ruby22
      SUBDIR += ruby-vegas
      SUBDIR += ruby-wasabi
      SUBDIR += ruby-xpath

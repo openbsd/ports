@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.360 2015/01/08 22:03:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.361 2015/01/10 17:35:05 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -259,6 +259,7 @@
      SUBDIR += ruby-akami
      SUBDIR += ruby-bcrypt,ruby20
      SUBDIR += ruby-bcrypt,ruby21
+     SUBDIR += ruby-bcrypt,ruby22
      SUBDIR += ruby-ezcrypto
      SUBDIR += ruby-hmac
      SUBDIR += ruby-openid
