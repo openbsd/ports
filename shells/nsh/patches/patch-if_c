@@ -1,4 +1,4 @@
-$OpenBSD: patch-if_c,v 1.6 2015/01/10 12:44:01 sthen Exp $
+$OpenBSD: patch-if_c,v 1.7 2015/01/10 13:06:14 sthen Exp $
 
 Initial handling of NOINET6 removal (post-5.6).
 
@@ -60,12 +60,3 @@ XXX "inet6 autoconf" also needs to be handled (replacement for rtsol).
  		cmdname = "rtsol";
  		cmdpath = RTSOL;
  	} else if (isprefix(argv[0], "rtadvd")) {
-@@ -1818,7 +1839,7 @@ intrtd(char *ifname, int ifs, int argc, char **argv)
- 	if (dbreturn->sl_cur > 0) {
- 		/* already found in db for ifname */
- 		if (!set) {
--			if (db_delete_flag_x_ctl(cmdname, ifname) < 0)
-+			if (db_delete_flag_x_ctl(cmdname, ifname) < 0o
- 				printf("%% database delete failure\n");
- 		} else {
- 			printf("%% %s already running\n", cmdname);
