@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/08/29 22:07:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/01/10 09:39:21 ajacoutot Exp $
 @bin bin/redshift
 bin/redshift-gtk
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/
@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/redshift_gtk/defs.py
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/statusicon.py
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.py
 @man man/man1/redshift.1
+share/appdata/
+share/appdata/redshift-gtk.appdata.xml
 share/applications/redshift-gtk.desktop
 share/icons/hicolor/scalable/apps/redshift-status-off.svg
 share/icons/hicolor/scalable/apps/redshift-status-on.svg
@@ -36,6 +38,7 @@ share/locale/gl/LC_MESSAGES/redshift.mo
 share/locale/he/LC_MESSAGES/redshift.mo
 share/locale/hi/LC_MESSAGES/redshift.mo
 share/locale/hr/LC_MESSAGES/redshift.mo
+share/locale/hu/LC_MESSAGES/redshift.mo
 share/locale/it/LC_MESSAGES/redshift.mo
 share/locale/ja/LC_MESSAGES/redshift.mo
 share/locale/ka/LC_MESSAGES/redshift.mo
