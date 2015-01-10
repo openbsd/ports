@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.5 2014/08/26 21:31:03 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.6 2015/01/10 00:38:39 ajacoutot Exp $
 
 Add defines for sparc64/mips64.
 Disable yarr jit on anything not having a jit
@@ -22,8 +22,8 @@ last chunk needed to build on ppc/sparc64, otherwise yarr jit and
 assembler is enabled (because of llint cloop) but there's no asm
 for those
 
---- Source/WTF/wtf/Platform.h.orig	Mon Aug 25 14:50:32 2014
-+++ Source/WTF/wtf/Platform.h	Tue Aug 26 13:55:22 2014
+--- Source/WTF/wtf/Platform.h.orig	Wed Jan  7 10:45:42 2015
++++ Source/WTF/wtf/Platform.h	Fri Jan  9 18:32:23 2015
 @@ -71,6 +71,12 @@
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
@@ -78,17 +78,17 @@ for those
     low-level interpreter. */
  #if !defined(ENABLE_LLINT) \
      && ENABLE(JIT) \
--    && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD)) \
-+    && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)) \
+-    && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(HURD)) \
++    && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD) || OS(HURD)) \
      && (PLATFORM(MAC) || PLATFORM(IOS) || PLATFORM(GTK)) \
      && (CPU(X86) || CPU(X86_64) || CPU(ARM_THUMB2) || CPU(ARM_TRADITIONAL) || CPU(ARM64) || CPU(MIPS) || CPU(SH4))
  #define ENABLE_LLINT 1
 @@ -731,7 +744,7 @@
  
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT) && !COMPILER(MSVC)
- /* Enable the DFG JIT on X86 and X86_64.  Only tested on Mac, GNU/Linux and FreeBSD. */
--#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD))
-+#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD))
+ /* Enable the DFG JIT on X86 and X86_64. */
+-#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(HURD))
++#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD) || OS(HURD))
  #define ENABLE_DFG_JIT 1
  #endif
  /* Enable the DFG JIT on ARMv7.  Only tested on iOS and Qt/GTK+ Linux. */
