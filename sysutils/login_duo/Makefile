@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/09 18:01:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/10 19:39:00 jturner Exp $
 
 COMMENT =		two-factor authentication for unix systems
 
-V =			1.9.13
+V =			1.9.14
 PKGNAME =		login_duo-${V}
 DISTNAME =		duo_unix-${V}
 CATEGORIES =		sysutils
-REVISION =		1
 
 SHARED_LIBS =		duo 0.0 # 3.0
 
