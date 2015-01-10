@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/11/21 18:55:16 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/01/10 00:30:49 pascal Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -451,9 +451,13 @@ share/blender/datafiles/blender_icons16/icon16_texture_shaded.dat
 share/blender/datafiles/blender_icons16/icon16_time.dat
 share/blender/datafiles/blender_icons16/icon16_tpaint_hlt.dat
 share/blender/datafiles/blender_icons16/icon16_tria_down.dat
+share/blender/datafiles/blender_icons16/icon16_tria_down_bar.dat
 share/blender/datafiles/blender_icons16/icon16_tria_left.dat
+share/blender/datafiles/blender_icons16/icon16_tria_left_bar.dat
 share/blender/datafiles/blender_icons16/icon16_tria_right.dat
+share/blender/datafiles/blender_icons16/icon16_tria_right_bar.dat
 share/blender/datafiles/blender_icons16/icon16_tria_up.dat
+share/blender/datafiles/blender_icons16/icon16_tria_up_bar.dat
 share/blender/datafiles/blender_icons16/icon16_uglypackage.dat
 share/blender/datafiles/blender_icons16/icon16_ui.dat
 share/blender/datafiles/blender_icons16/icon16_unlinked.dat
@@ -921,9 +925,13 @@ share/blender/datafiles/blender_icons32/icon32_texture_shaded.dat
 share/blender/datafiles/blender_icons32/icon32_time.dat
 share/blender/datafiles/blender_icons32/icon32_tpaint_hlt.dat
 share/blender/datafiles/blender_icons32/icon32_tria_down.dat
+share/blender/datafiles/blender_icons32/icon32_tria_down_bar.dat
 share/blender/datafiles/blender_icons32/icon32_tria_left.dat
+share/blender/datafiles/blender_icons32/icon32_tria_left_bar.dat
 share/blender/datafiles/blender_icons32/icon32_tria_right.dat
+share/blender/datafiles/blender_icons32/icon32_tria_right_bar.dat
 share/blender/datafiles/blender_icons32/icon32_tria_up.dat
+share/blender/datafiles/blender_icons32/icon32_tria_up_bar.dat
 share/blender/datafiles/blender_icons32/icon32_uglypackage.dat
 share/blender/datafiles/blender_icons32/icon32_ui.dat
 share/blender/datafiles/blender_icons32/icon32_unlinked.dat
@@ -1085,7 +1093,6 @@ share/blender/datafiles/fonts/
 share/blender/datafiles/fonts/bmonofont-i18n.ttf.gz
 share/blender/datafiles/fonts/droidsans.ttf.gz
 share/blender/datafiles/locale/
-share/blender/datafiles/locale/.gitignore
 share/blender/datafiles/locale/languages
 share/blender/datafiles/locale/po/
 share/blender/datafiles/locale/po/_POTFILES.in
@@ -1159,8 +1166,6 @@ share/blender/datafiles/splash_template.xcf
 share/blender/datafiles/startup.blend
 share/blender/scripts/
 share/blender/scripts/addons/
-share/blender/scripts/addons/.arcconfig
-share/blender/scripts/addons/.gitignore
 share/blender/scripts/addons/add_curve_extra_objects/
 share/blender/scripts/addons/add_curve_extra_objects/__init__.py
 share/blender/scripts/addons/add_curve_extra_objects/add_curve_aceous_galore.py
@@ -1491,6 +1496,7 @@ share/blender/scripts/addons/render_copy_settings/operator.py
 share/blender/scripts/addons/render_copy_settings/panel.py
 share/blender/scripts/addons/render_copy_settings/presets.py
 share/blender/scripts/addons/render_copy_settings/translations.py
+share/blender/scripts/addons/render_freestyle_svg.py
 share/blender/scripts/addons/render_povray/
 share/blender/scripts/addons/render_povray/__init__.py
 share/blender/scripts/addons/render_povray/render.py
@@ -1773,7 +1779,10 @@ share/blender/scripts/presets/interface_theme/
 share/blender/scripts/presets/interface_theme/back_to_black.xml
 share/blender/scripts/presets/interface_theme/blender_24x.xml
 share/blender/scripts/presets/interface_theme/elsyiun.xml
+share/blender/scripts/presets/interface_theme/graph.xml
 share/blender/scripts/presets/interface_theme/hexagon.xml
+share/blender/scripts/presets/interface_theme/science_lab.xml
+share/blender/scripts/presets/interface_theme/softimage.xml
 share/blender/scripts/presets/interface_theme/ubuntu_ambiance.xml
 share/blender/scripts/presets/keyconfig/
 share/blender/scripts/presets/keyconfig/3dsmax.py
@@ -1946,7 +1955,6 @@ share/blender/scripts/templates_osl/gabor_noise.osl
 share/blender/scripts/templates_osl/lyapunov_texture.osl
 share/blender/scripts/templates_osl/noise.osl
 share/blender/scripts/templates_osl/ramp_closure.osl
-share/blender/scripts/templates_osl/westin_closure.osl
 share/blender/scripts/templates_py/
 share/blender/scripts/templates_py/addon_add_object.py
 share/blender/scripts/templates_py/background_job.py

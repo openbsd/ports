@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2014/12/25 22:44:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.65 2015/01/10 00:30:48 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.72b
-
-REVISION =	0
+DISTNAME =	blender-2.73
 
 CATEGORIES =	graphics
 
@@ -31,7 +29,9 @@ CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
 			-DWITH_CODEC_FFMPEG=ON \
 			-DWITH_INTERNATIONAL=OFF \
-			-DWITH_RAYOPTIMIZATION=OFF
+			-DWITH_RAYOPTIMIZATION=OFF \
+			-DWITH_OPENCOLORIO=ON \
+			-DWITH_SYSTEM_OPENJPEG=ON
 
 BUILD_DEPENDS =	devel/gflags
 LIB_DEPENDS =	graphics/png \
@@ -40,22 +40,20 @@ LIB_DEPENDS =	graphics/png \
 		graphics/openexr \
 		graphics/tiff \
 		devel/boost \
-		devel/sdl \
 		audio/openal \
 		graphics/openjpeg \
 		graphics/ffmpeg>=20111126 \
 		graphics/openimageio \
-		math/fftw3 \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gnome/librsvg
 
 WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath OpenColorIO
-WANTLIB += OpenImageIO SDL X11 Xi Xxf86vm avcodec avdevice avformat
+WANTLIB += OpenImageIO X11 Xi Xxf86vm avcodec avdevice avformat
 WANTLIB += avutil boost_date_time-mt boost_filesystem-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c fftw3 freetype jpeg
-WANTLIB += m openal openjpeg png pthread ${MODPY_WANTLIB} swscale tiff
-WANTLIB += tinyxml util yaml-cpp z
+WANTLIB += boost_system-mt boost_thread-mt c freetype jpeg m openal
+WANTLIB += openjpeg png pthread ${MODPY_WANTLIB} swscale tiff tinyxml
+WANTLIB += util yaml-cpp z
 
 NO_TEST =	Yes
 
