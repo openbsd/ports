@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.109 2014/11/04 09:31:01 landry Exp $
+# $OpenBSD: Makefile,v 1.110 2015/01/10 10:46:37 brad Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20141010
+V=		20150107
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -28,10 +27,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto gsm m mp3lame opus \
-		pthread schroedinger-1.0>=2 sndio speex ssl theoradec \
-		theoraenc vorbis vorbisenc vpx>=5 x264>=8 xvidcore \
-		z
+WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto gsm m mp3lame opus pthread \
+		schroedinger-1.0 sndio speex ssl theoradec theoraenc vorbis \
+		vorbisenc vpx>=5 x264 xvidcore z
 
 MODULES=	lang/clang
 
@@ -51,8 +49,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 		devel/sdl \
 		multimedia/libtheora \
 		multimedia/libvpx>=1.3.0 \
-		multimedia/schroedinger>=1.0.10 \
-		multimedia/x264>=20111027 \
+		multimedia/schroedinger \
+		multimedia/x264 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
@@ -76,14 +74,14 @@ FFMPEG_ARCH=	${MACHINE_ARCH}
 .endif
 
 # x265 only builds on archs with working builtin atomics
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "alpha"
-LIB_DEPENDS +=	multimedia/x265
-WANTLIB +=	x265
-CONFIGURE_ARGS +=	--enable-libx265
-CONFIGURE_ENV +=	LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264 x265"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc64"
+LIB_DEPENDS+=	multimedia/x265
+WANTLIB+=	x265
+CONFIGURE_ARGS+=	--enable-libx265
+CONFIGURE_ENV+=		LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264 x265"
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lz -pthread
 .else
-CONFIGURE_ENV +=	LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264"
+CONFIGURE_ENV+=		LIBavcodec_REQUIRES="libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264"
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
 .endif
 

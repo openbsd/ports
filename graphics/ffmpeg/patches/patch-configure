@@ -1,11 +1,7 @@
-$OpenBSD: patch-configure,v 1.42 2014/10/23 07:41:45 brad Exp $
-
-04a4fb81b3d1a92f52b5404738da8971c018946f
-v4l2: Make use of the VIDIOC_ENUM_FRAMESIZES ioctl on OpenBSD
-
---- configure.orig	Wed Oct  8 18:04:13 2014
-+++ configure	Sun Oct 19 19:48:01 2014
-@@ -3990,7 +3990,7 @@ case $target_os in
+$OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
+--- configure.orig	Wed Jan  7 04:31:28 2015
++++ configure	Wed Jan  7 04:42:09 2015
+@@ -3992,7 +3992,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
          SHFLAGS='-shared'
@@ -14,7 +10,7 @@ v4l2: Make use of the VIDIOC_ENUM_FRAMESIZES ioctl on OpenBSD
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4321,7 +4321,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -4323,7 +4323,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -23,15 +19,7 @@ v4l2: Make use of the VIDIOC_ENUM_FRAMESIZES ioctl on OpenBSD
  
  enable_weak_pic() {
      disabled pic && return
-@@ -4943,6 +4943,7 @@ check_header linux/videodev2.h
- check_code cc linux/videodev2.h "struct v4l2_frmsizeenum vfse; vfse.discrete.width = 0;" && enable_safe struct_v4l2_frmivalenum_discrete
- 
- check_header sys/videoio.h
-+check_code cc sys/videoio.h "struct v4l2_frmsizeenum vfse; vfse.discrete.width = 0;" && enable_safe struct_v4l2_frmivalenum_discrete
- 
- check_func_headers "windows.h vfw.h" capCreateCaptureWindow "$vfwcap_indev_extralibs"
- # check that WM_CAP_DRIVER_CONNECT is defined to the proper value
-@@ -5052,7 +5053,6 @@ check_disable_warning -Wno-pointer-sign
+@@ -5054,7 +5054,6 @@ check_disable_warning -Wno-pointer-sign
  check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
  enabled rpath && add_ldexeflags -Wl,-rpath,$libdir
@@ -39,7 +27,7 @@ v4l2: Make use of the VIDIOC_ENUM_FRAMESIZES ioctl on OpenBSD
  
  # add some strip flags
  # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -5672,8 +5672,8 @@ pkgconfig_generate(){
+@@ -5675,8 +5674,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -50,7 +38,7 @@ v4l2: Make use of the VIDIOC_ENUM_FRAMESIZES ioctl on OpenBSD
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -5688,7 +5688,7 @@ Version: $version
+@@ -5691,7 +5690,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -59,7 +47,7 @@ v4l2: Make use of the VIDIOC_ENUM_FRAMESIZES ioctl on OpenBSD
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -5721,3 +5721,13 @@ pkgconfig_generate libpostproc   "FFmpeg postprocessin
+@@ -5724,3 +5723,13 @@ pkgconfig_generate libpostproc   "FFmpeg postprocessin
  pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBM"
  pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBM"
  pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM"
