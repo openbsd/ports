@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/11/25 11:37:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/01/10 19:22:16 stsp Exp $
 @conflict apr-mt-*
 @pkgpath devel/apr,mt
 bin/apr-1-config
@@ -9,6 +9,7 @@ include/apr-1/apr_atomic.h
 include/apr-1/apr_dso.h
 include/apr-1/apr_env.h
 include/apr-1/apr_errno.h
+include/apr-1/apr_escape.h
 include/apr-1/apr_file_info.h
 include/apr-1/apr_file_io.h
 include/apr-1/apr_fnmatch.h
@@ -28,6 +29,7 @@ include/apr-1/apr_random.h
 include/apr-1/apr_ring.h
 include/apr-1/apr_shm.h
 include/apr-1/apr_signal.h
+include/apr-1/apr_skiplist.h
 include/apr-1/apr_strings.h
 include/apr-1/apr_support.h
 include/apr-1/apr_tables.h
@@ -48,5 +50,4 @@ lib/apr-1/mkdir.sh
 lib/libapr-1.a
 lib/libapr-1.la
 @lib lib/libapr-1.so.${LIBapr-1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/apr-1.pc
