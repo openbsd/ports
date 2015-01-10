@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_imudp_imudp_c,v 1.1 2015/01/10 11:48:04 bluhm Exp $
+
+Without debug printing, the missing '\0' is added later in MsgSetRawMsg().
+
+--- plugins/imudp/imudp.c.orig	Thu Aug  5 11:33:54 2010
++++ plugins/imudp/imudp.c	Fri Jan  9 22:31:59 2015
+@@ -241,6 +241,8 @@ processSocket(int fd, struct sockaddr_storage *fromine
+ 			}
+ 		}
+ 
++		if(Debug)
++			pRcvBuf[lenRcvBuf] = '\0';
+ 		DBGPRINTF("recv(%d,%d)/%s,acl:%d,msg:%s\n", fd, (int) lenRcvBuf, fromHost, *pbIsPermitted, pRcvBuf);
+ 
+ 		if(*pbIsPermitted)  {
