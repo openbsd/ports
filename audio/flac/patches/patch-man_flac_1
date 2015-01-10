@@ -1,12 +1,12 @@
-$OpenBSD: patch-man_flac_1,v 1.3 2013/05/31 14:34:27 naddy Exp $
---- man/flac.1.orig	Sun May 26 05:30:33 2013
-+++ man/flac.1	Wed May 29 18:36:03 2013
-@@ -380,7 +380,7 @@ These flags can be used to invert the sense of the cor
+$OpenBSD: patch-man_flac_1,v 1.4 2015/01/10 15:50:58 naddy Exp $
+--- man/flac.1.orig	Tue Nov 25 04:40:14 2014
++++ man/flac.1	Sun Nov 30 20:59:42 2014
+@@ -384,7 +384,7 @@ These flags can be used to invert the sense of the cor
  .PP
- metaflac(1).
+ metaflac(1)
  .PP
 -The programs are documented fully by HTML format documentation, available in \fI/usr/share/doc/libflac-doc/html\fR on Debian GNU/Linux systems.
 +The programs are documented fully by HTML format documentation, available in \fI${TRUEPREFIX}/share/doc/flac/html\fR.
  .SH "AUTHOR"
  .PP
- This manual page was written by Matt Zimmerman <mdz@debian.org> for the Debian GNU/Linux system (but may be used by others).
+ This manual page was initially written by Matt Zimmerman <mdz@debian.org> for the Debian GNU/Linux system (but may be used by others). It has been kept up-to-date by the Xiph.org Foundation.
