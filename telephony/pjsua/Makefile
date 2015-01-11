@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2014/11/23 20:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2015/01/11 17:24:06 dcoppa Exp $
 
 COMMENT=		lightweight sip client
 
-VERSION=		2.2.1
+VERSION=		2.3
 DISTNAME=		pjproject-${VERSION}
 PKGNAME=		pjsua-${VERSION}
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		telephony
-
-REVISION=		0
 
 HOMEPAGE=		http://www.pjsip.org/
 MASTER_SITES=		${HOMEPAGE}release/${VERSION}/
