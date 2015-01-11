@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/11 08:21:39 bentley Exp $
+@bin bin/mpv
+@man man/man1/mpv.1
+share/applications/mpv.desktop
+share/examples/mpv/
+@sample ${SYSCONFDIR}/mpv/
+share/examples/mpv/encoding-profiles.conf
+@sample ${SYSCONFDIR}/mpv/encoding-profiles.conf
+share/examples/mpv/example.conf
+share/examples/mpv/input.conf
+share/examples/mpv/mplayer-input.conf
+share/examples/mpv/mpv_identify.sh
+share/examples/mpv/restore-old-bindings.conf
+share/examples/mpv/umpv
+share/icons/hicolor/16x16/apps/mpv.png
+share/icons/hicolor/32x32/apps/mpv.png
+share/icons/hicolor/64x64/apps/mpv.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+share/zsh/
+share/zsh/vendor-completions/
+share/zsh/vendor-completions/_mpv

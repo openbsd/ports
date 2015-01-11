@@ -1,0 +1,42 @@
+$OpenBSD: patch-old-configure,v 1.1.1.1 2015/01/11 08:21:39 bentley Exp $
+--- old-configure.orig	Sat Dec 20 12:00:13 2014
++++ old-configure	Fri Jan  2 23:33:22 2015
+@@ -191,7 +191,7 @@ options_state_machine() {
+     opt_yes_no _libavresample "libavresample (preferred over libswresample)"
+     opt_yes_no _libswresample "libswresample"
+     opt_yes_no _caca        "CACA  video output"
+-    opt_yes_no _sdl2        "SDL2 video and audio outputs" no
++    opt_yes_no _sdl2        "SDL2 video and audio outputs"
+     opt_yes_no _xv          "Xv video output"
+     opt_yes_no _vdpau       "VDPAU acceleration"
+     opt_yes_no _vaapi       "VAAPI acceleration"
+@@ -328,7 +328,7 @@ test -z "$_bindir"  && _bindir="$_prefix/bin"
+ test -z "$_mandir"  && _mandir="$_prefix/share/man"
+ test -z "$_confdir" && _confdir="$_prefix/etc/mpv"
+ 
+-mplayer_tmpdir=$(mktemp -d --tmpdir mpv-configure-XXXX)
++mplayer_tmpdir=$(mktemp -d mpv-configure-XXXXXX)
+ test -n "$mplayer_tmpdir" || die "Unable to create tmpdir."
+ trap 'rm -rf "$mplayer_tmpdir"' EXIT
+ 
+@@ -670,6 +670,8 @@ EOF
+     _gl_wayland=yes
+     libs_mplayer="$libs_mplayer -lGL -lEGL"
+     test "$_gl_wayland" = yes && res_comment="$res_comment wayland"
++  else
++    _gl_wayland=no
+   fi
+   if test "$_x11" = yes && test "$_gl" = yes && pkg_config_add "egl"; then
+     _gl_x11_egl=yes
+@@ -864,9 +866,11 @@ test_lua() {
+ 
+ test_lua "lua >= 5.1.0 lua < 5.2.0"
+ test_lua "lua5.1 >= 5.1.0" # debian
++test_lua "lua51 >= 5.1.0" # OpenBSD
+ test_lua "luajit >= 2.0.0"
+ test_lua "lua >= 5.2.0"
+ test_lua "lua5.2 >= 5.2.0" # debian
++test_lua "lua52 >= 5.2.0" # OpenBSD
+ 
+ test "$_lua" != yes && check_yes_no no LUA
+ 

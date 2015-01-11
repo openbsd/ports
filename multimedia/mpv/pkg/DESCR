@@ -1,0 +1,8 @@
+mpv is a fork of mplayer2 and MPlayer.  Its option parser was improved
+to behave more like other CLI programs, and many option names and
+semantics were reworked to make them more intuitive and memorable.
+Instead of default GUI it provides a small controller interface that is
+triggered by mouse movement.  OpenGL video output is capable of many
+features loved by videophiles, such as video scaling with popular high
+quality algorithms, color management, and more, as well as of hardware
+decoding using VDPAU and VAAPI.
