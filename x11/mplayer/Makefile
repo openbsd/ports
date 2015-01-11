@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2015/01/10 23:13:29 brad Exp $
+# $OpenBSD: Makefile,v 1.247 2015/01/11 02:44:44 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -84,7 +84,6 @@ CFLAGS+=	-fomit-frame-pointer
 .endif
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE= simple
 
 # CONFIGURE_ARGS for misc stuff
