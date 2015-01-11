@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1303 2015/01/10 17:35:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1304 2015/01/11 08:14:45 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -775,6 +775,7 @@
      SUBDIR += p5-Hash-AutoHash-Args
      SUBDIR += p5-Hash-Flatten
      SUBDIR += p5-Hash-Merge
+     SUBDIR += p5-Hash-Merge-Simple
      SUBDIR += p5-Hash-MultiValue
      SUBDIR += p5-Hash-NoRef
      SUBDIR += p5-Hash-Util-FieldHash-Compat
