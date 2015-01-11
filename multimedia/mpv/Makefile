@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/11 08:21:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2015/01/11 19:44:53 bentley Exp $
 
 # undefined reference to `__sync_fetch_and_add_8'
 ONLY_FOR_ARCHS =	amd64 i386
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =		movie player based on MPlayer/mplayer2
 V =			0.7.2
 DISTNAME =		mpv-${V}
+REVISION =		0
 
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv
@@ -53,6 +54,7 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
 			--disable-alsa \
 			--disable-bluray \
+			--disable-caca \
 			--disable-enca \
 			--disable-jack \
 			--disable-libguess \
