@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/11 08:10:30 benoit Exp $
+${P5SITE}/Hash/
+${P5SITE}/Hash/Merge/
+${P5SITE}/Hash/Merge/Simple.pm
+@man man/man3p/Hash::Merge::Simple.3p
