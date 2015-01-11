@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/09/25 13:44:56 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/01/11 12:59:43 kirby Exp $
 @bin bin/gnuchess
 bin/gnuchessu
 bin/gnuchessx
 @info info/gnuchess.info
+@man man/man1/gnuchess.1
 share/doc/gnuchess/
 share/doc/gnuchess/README
+share/games/
+share/games/plugins/
+share/games/plugins/logos/
+share/games/plugins/logos/gnuchess.png
+share/games/plugins/xboard/
+share/games/plugins/xboard/gnuchess.eng
 share/gnuchess/
 share/gnuchess/book.bin
 share/gnuchess/gnuchess.ini
