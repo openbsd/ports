@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2014/11/15 21:36:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.29 2015/01/11 12:58:41 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -226,6 +226,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_TLSAUTH_USERNAME.3
 @man man/man3/CURLOPT_TRANSFERTEXT.3
 @man man/man3/CURLOPT_TRANSFER_ENCODING.3
+@man man/man3/CURLOPT_UNIX_SOCKET_PATH.3
 @man man/man3/CURLOPT_UNRESTRICTED_AUTH.3
 @man man/man3/CURLOPT_UPLOAD.3
 @man man/man3/CURLOPT_URL.3
