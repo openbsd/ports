@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/11 19:44:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/11 23:52:08 sthen Exp $
 
-# undefined reference to `__sync_fetch_and_add_8'
-ONLY_FOR_ARCHS =	amd64 i386
+# requires 64-bit atomic ops.
+# some other arch could probably be added..certainly fails on i386
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 V =			0.7.2
