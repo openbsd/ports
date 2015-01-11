@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.696 2015/01/11 07:45:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.697 2015/01/11 07:55:51 benoit Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -309,6 +309,7 @@
      SUBDIR += p5-PSGI
      SUBDIR += p5-Plack
      SUBDIR += p5-Plack-Middleware-FixMissingBodyInRedirect
+     SUBDIR += p5-Plack-Middleware-RemoveRedundantBody
      SUBDIR += p5-Plack-Middleware-ReverseProxy
      SUBDIR += p5-Plack-Test-ExternalServer
      SUBDIR += p5-Plagger
