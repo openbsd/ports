@@ -1,34 +1,66 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/08/20 22:05:53 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/01/11 13:26:35 kirby Exp $
+@conflict freeciv-client-<2.4.4
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
-@bin bin/freeciv-modpack
 @bin bin/freeciv-server
+@comment lib/fcai/
 @comment lib/libfreeciv-srv.a
 @comment lib/libfreeciv-srv.la
-@man man/man6/freeciv-client.6
 @man man/man6/freeciv-manual.6
-@man man/man6/freeciv-modpack.6
 @man man/man6/freeciv-server.6
 @comment share/applications/
-share/applications/freeciv-modpack.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
+share/appdata/
+share/appdata/freeciv-server.appdata.xml
+share/applications/freeciv-server.desktop
+share/doc/freeciv/
+share/doc/freeciv/ABOUT-NLS
+share/doc/freeciv/AUTHORS
+share/doc/freeciv/BUGS
+share/doc/freeciv/COPYING
+share/doc/freeciv/ChangeLog
+share/doc/freeciv/CodingStyle
+share/doc/freeciv/FAQ
+share/doc/freeciv/HACKING
+share/doc/freeciv/HOWTOPLAY
+share/doc/freeciv/INSTALL
+share/doc/freeciv/INSTALL.Cygwin
+share/doc/freeciv/NEWS
+share/doc/freeciv/NEWS-2.4
+share/doc/freeciv/README.AI
+share/doc/freeciv/README.AI_modules
+share/doc/freeciv/README.SDLClient
+share/doc/freeciv/README.agents
+share/doc/freeciv/README.attributes
+share/doc/freeciv/README.cma
+share/doc/freeciv/README.delta
+share/doc/freeciv/README.effects
+share/doc/freeciv/README.fcdb
+share/doc/freeciv/README.graphics
+share/doc/freeciv/README.nations
+share/doc/freeciv/README.packaging
+share/doc/freeciv/README.ruleset_experimental
+share/doc/freeciv/README.ruleset_multiplayer
+share/doc/freeciv/README.rulesets
+share/doc/freeciv/README.scorelog
+share/doc/freeciv/README.sound
+share/doc/freeciv/TODO
+share/examples/freeciv/
+@sample ${SYSCONFDIR}/freeciv/
+share/examples/freeciv/database.lua
+@sample ${SYSCONFDIR}/freeciv/database.lua
+share/icons/hicolor/128x128/apps/freeciv-server.png
+share/icons/hicolor/16x16/apps/freeciv-server.png
+share/icons/hicolor/32x32/apps/freeciv-server.png
+share/icons/hicolor/48x48/apps/freeciv-server.png
+share/icons/hicolor/64x64/apps/freeciv-server.png
 share/locale/bg/LC_MESSAGES/freeciv.mo
 share/locale/ga/LC_MESSAGES/freeciv.mo
 share/locale/gd/
 share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/freeciv.mo
+share/locale/id/LC_MESSAGES/freeciv.mo
 share/locale/sr/LC_MESSAGES/freeciv.mo
+share/locale/zh_TW/LC_MESSAGES/freeciv.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.96 2013/08/20 22:05:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.97 2015/01/11 13:26:35 kirby Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.3.4
+VERSION=	2.4.4
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
-CATEGORIES=	games
-HOMEPAGE=	http://www.freeciv.org/
 
-REVISION-main=	1
-REVISION-client=0
+CATEGORIES=	games
+
+HOMEPAGE=	http://www.freeciv.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,62 +20,68 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.bz2
 
-PSEUDO_FLAVORS=	no_x11
-FLAVOR?=
+cWANTLIB += bz2 c crypto curl idn lzma m pthread ssl z
+cWANTLIB += ${MODLUA_WANTLIB} ${MODGETTEXT_WANTLIB}
 
-USE_GROFF =	Yes
-MULTI_PACKAGES=	-main -share
+WANTLIB-main += ncurses readline ${cWANTLIB}
 
-MODULES=	devel/gettext
-WANTLIB-main +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB-main +=	Xrandr Xrender expat fontconfig freetype graphite2
-WANTLIB-main +=	pixman-1 pthread pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB-client += atk-1.0 cairo expat ffi fontconfig freetype gdk_pixbuf-2.0
+WANTLIB-client += gdk-x11-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB-client += gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB-client += pixman-1 png pthread-stubs xcb xcb-render xcb-shm ${cWANTLIB}
 
-CONFIGURE_ARGS=	--with-ggz-client=no
-
-.if !${FLAVOR:Mno_x11}
-MULTI_PACKAGES+= -client
-CONFIGURE_ARGS+= --enable-client=gtk2 \
-		 --disable-sdl-mixer
-.else
-CONFIGURE_ARGS+= --enable-client=no
-.endif
-
-PKG_ARCH-share=	*
-LIB_DEPENDS-share=
 WANTLIB-share=
 
-LIB_DEPENDS =	archivers/bzip2 \
+MODULES=	devel/gettext lang/lua
+
+LIB_DEPENDS=	archivers/xz \
+		net/curl \
 		x11/gtk+2
 
-WANTLIB +=		bz2 c m z
-WANTLIB +=		atk-1.0 cairo ffi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB +=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB +=		harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB +=		pangoft2-1.0 pcre png
+LIB_DEPENDS-share=
 
-WANTLIB-main +=		${WANTLIB}
-WANTLIB-main +=		ncurses readline
-
-WANTLIB-client +=	${WANTLIB}
-WANTLIB-client +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB-client +=	Xinerama Xrandr Xrender expat fontconfig freetype graphite2
-WANTLIB-client +=	pixman-1 pthread pthread-stubs xcb xcb-render xcb-shm
-
-RUN_DEPENDS-client= devel/desktop-file-utils \
-		    freeciv-share-${VERSION}:${BUILD_PKGPATH},-share \
+RUN_DEPENDS-client= freeciv-share-${VERSION}:${BUILD_PKGPATH},-share \
+		    devel/desktop-file-utils \
 		    x11/gtk+2,-guic
 
 RUN_DEPENDS-main=   freeciv-share-${VERSION}:${BUILD_PKGPATH},-share \
 		    devel/desktop-file-utils \
 		    x11/gtk+2,-guic
 
-USE_GMAKE=	Yes
+SEPARATE_BUILD = Yes
+USE_GROFF =	Yes
+USE_GMAKE =	Yes
 USE_LIBTOOL =	No
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv" \
+		LUA_CFLAGS=-I${MODLUA_INCL_DIR} \
+		LUA_LIBS="${MODLUA_LIB} -lm"
+
+CONFIGURE_ARGS=	--with-ggz-client=no \
+		--enable-mapimg=no \
+		--enable-sys-lua
+
+MULTI_PACKAGES=	-main -share
+
+PSEUDO_FLAVORS=	no_x11
+FLAVOR?=
+
+.if !${FLAVOR:Mno_x11}
+MULTI_PACKAGES+= -client
+CONFIGURE_ARGS+= --enable-client=gtk2 \
+		 --enable-fcmp=gtk2 \
+		 --disable-sdl-mixer
+.else
+CONFIGURE_ARGS+= --enable-client=no
+.endif
+
+PKG_ARCH-share=	*
+
+post-install:
+	mv ${WRKINST}/etc/freeciv ${PREFIX}/share/examples/
 
 .include <bsd.port.mk>
