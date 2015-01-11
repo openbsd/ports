@@ -1,0 +1,1 @@
+This module removes body in HTTP response, if it's not required.
