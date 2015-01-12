@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/10 22:02:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/12 20:30:18 landry Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 IGNORE-html =		qdoc segfaults
+BROKEN-sparc64 =	tries to include a non-existent qatomic_sparc.h in src/corelib/thread/qbasicatomic.h
 
 VERSION =		5.3.2
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
