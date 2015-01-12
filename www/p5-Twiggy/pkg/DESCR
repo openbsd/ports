@@ -1,0 +1,4 @@
+Twiggy is a lightweight and fast HTTP server with unique features such as:
+PSGI, AnyEvent, and fast header parser. It has low memory footprint and is
+superdaemon aware (supports Server::Starter for hot deploy and graceful
+restarts).

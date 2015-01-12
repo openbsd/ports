@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/12 08:19:22 benoit Exp $
+bin/twiggy
+${P5SITE}/AnyEvent/
+${P5SITE}/AnyEvent/Server/
+${P5SITE}/AnyEvent/Server/PSGI.pm
+${P5SITE}/Plack/Handler/Twiggy.pm
+${P5SITE}/Twiggy/
+${P5SITE}/Twiggy.pm
+${P5SITE}/Twiggy/Server/
+${P5SITE}/Twiggy/Server.pm
+${P5SITE}/Twiggy/Server/SS.pm
+@man man/man1/twiggy.1
+@man man/man3p/Plack::Handler::Twiggy.3p
+@man man/man3p/Twiggy.3p
