@@ -1,2 +1,6 @@
+SHA256 (firmware/iwlwifi-3160-ucode-25.228.9.0.tgz) = aFaplLj5J4WrIg6yoEIzaQzzgkobUSUoAqivIG6Bs4g=
 SHA256 (firmware/iwlwifi-7260-ucode-25.228.9.0.tgz) = ZngbpVoSGInDovBDPZnHv/x2mfCEN9XeU4kKNi9N/V4=
+SHA256 (firmware/iwlwifi-7265-ucode-25.228.9.0.tgz) = 6Ju4ZkqajBYEOBJ9PJ9u4tpmKZc9L6j0i20bHaJaabc=
+SIZE (firmware/iwlwifi-3160-ucode-25.228.9.0.tgz) = 337276
 SIZE (firmware/iwlwifi-7260-ucode-25.228.9.0.tgz) = 348138
+SIZE (firmware/iwlwifi-7265-ucode-25.228.9.0.tgz) = 365335

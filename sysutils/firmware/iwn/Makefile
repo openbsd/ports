@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/12 21:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/12 22:34:43 sthen Exp $
 
 FW_DRIVER=	iwn
 FW_VER=		5.11
-REVISION=	0
+REVISION=	1
 
 DISTFILES=	iwlwifi-4965-ucode-228.61.2.24.tgz \
 		iwlwifi-5000-ucode-8.83.5.1-1.tgz \
@@ -16,10 +16,7 @@ DISTFILES=	iwlwifi-4965-ucode-228.61.2.24.tgz \
 		iwlwifi-6000-ucode-9.221.4.1.tgz \
 		iwlwifi-6050-ucode-41.28.5.1.tgz \
 		iwlwifi-6000g2a-ucode-18.168.6.1.tgz \
-		iwlwifi-6000g2b-ucode-18.168.6.1.tgz \
-		iwlwifi-7260-ucode-23.10.10.0.tgz \
-		iwlwifi-3160-ucode-23.10.10.0.tgz \
-		iwlwifi-7265-ucode-23.10.10.0.tgz
+		iwlwifi-6000g2b-ucode-18.168.6.1.tgz
 
 WRKDIST=	${WRKDIR}
 
@@ -28,8 +25,7 @@ MASTER_SITES=	"http://wireless.kernel.org/en/users/Drivers/iwlwifi?action=Attach
 		http://firmware.openbsd.org/firmware-dist/
 
 FW_FILES=	iwn-4965 iwn-5000 iwn-5150 iwn-1000 iwn-100 iwn-2030 iwn-2030\
-		iwn-2000 iwn-105 iwn-135 iwn-6000 iwn-6050 iwn-6005 iwn-6030\
-		iwn-7260 iwn-3160 iwn-7265
+		iwn-2000 iwn-105 iwn-135 iwn-6000 iwn-6050 iwn-6005 iwn-6030
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/iwlwifi-6000g2b-ucode-18.168.6.1/LICENSE.iwlwifi-6000g2b-ucode ${PREFIX}/firmware/iwn-license
@@ -47,8 +43,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/iwlwifi-6050-ucode-41.28.5.1/iwlwifi-6050-5.ucode ${PREFIX}/firmware/iwn-6050
 	${INSTALL_DATA} ${WRKSRC}/iwlwifi-6000g2a-ucode-18.168.6.1/iwlwifi-6000g2a-6.ucode ${PREFIX}/firmware/iwn-6005
 	${INSTALL_DATA} ${WRKSRC}/iwlwifi-6000g2b-ucode-18.168.6.1/iwlwifi-6000g2b-6.ucode ${PREFIX}/firmware/iwn-6030
-	${INSTALL_DATA} ${WRKSRC}/iwlwifi-7260-ucode-23.10.10.0/iwlwifi-7260-10.ucode ${PREFIX}/firmware/iwn-7260
-	${INSTALL_DATA} ${WRKSRC}/iwlwifi-3160-ucode-23.10.10.0/iwlwifi-3160-10.ucode ${PREFIX}/firmware/iwn-3160
-	${INSTALL_DATA} ${WRKSRC}/iwlwifi-7265-ucode-23.10.10.0/iwlwifi-7265-10.ucode ${PREFIX}/firmware/iwn-7265
 
 .include <bsd.port.mk>
