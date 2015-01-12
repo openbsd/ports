@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/11/13 17:26:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2015/01/12 13:09:49 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -1059,10 +1059,13 @@ share/gtk-doc/html/evolution-mail-composer/evolution-mail-composer.devhelp2
 share/gtk-doc/html/evolution-mail-composer/home.png
 share/gtk-doc/html/evolution-mail-composer/index.html
 share/gtk-doc/html/evolution-mail-composer/index.sgml
+share/gtk-doc/html/evolution-mail-composer/left-insensitive.png
 share/gtk-doc/html/evolution-mail-composer/left.png
 share/gtk-doc/html/evolution-mail-composer/object-tree.html
+share/gtk-doc/html/evolution-mail-composer/right-insensitive.png
 share/gtk-doc/html/evolution-mail-composer/right.png
 share/gtk-doc/html/evolution-mail-composer/style.css
+share/gtk-doc/html/evolution-mail-composer/up-insensitive.png
 share/gtk-doc/html/evolution-mail-composer/up.png
 share/gtk-doc/html/evolution-mail-engine/
 share/gtk-doc/html/evolution-mail-engine/CamelNullStore.html
@@ -1086,10 +1089,13 @@ share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine.devhelp2
 share/gtk-doc/html/evolution-mail-engine/home.png
 share/gtk-doc/html/evolution-mail-engine/index.html
 share/gtk-doc/html/evolution-mail-engine/index.sgml
+share/gtk-doc/html/evolution-mail-engine/left-insensitive.png
 share/gtk-doc/html/evolution-mail-engine/left.png
 share/gtk-doc/html/evolution-mail-engine/object-tree.html
+share/gtk-doc/html/evolution-mail-engine/right-insensitive.png
 share/gtk-doc/html/evolution-mail-engine/right.png
 share/gtk-doc/html/evolution-mail-engine/style.css
+share/gtk-doc/html/evolution-mail-engine/up-insensitive.png
 share/gtk-doc/html/evolution-mail-engine/up.png
 share/gtk-doc/html/evolution-mail-formatter/
 share/gtk-doc/html/evolution-mail-formatter/EMailExtensionRegistry.html
@@ -1115,10 +1121,13 @@ share/gtk-doc/html/evolution-mail-formatter/evolution-mail-formatter.devhelp2
 share/gtk-doc/html/evolution-mail-formatter/home.png
 share/gtk-doc/html/evolution-mail-formatter/index.html
 share/gtk-doc/html/evolution-mail-formatter/index.sgml
+share/gtk-doc/html/evolution-mail-formatter/left-insensitive.png
 share/gtk-doc/html/evolution-mail-formatter/left.png
 share/gtk-doc/html/evolution-mail-formatter/object-tree.html
+share/gtk-doc/html/evolution-mail-formatter/right-insensitive.png
 share/gtk-doc/html/evolution-mail-formatter/right.png
 share/gtk-doc/html/evolution-mail-formatter/style.css
+share/gtk-doc/html/evolution-mail-formatter/up-insensitive.png
 share/gtk-doc/html/evolution-mail-formatter/up.png
 share/gtk-doc/html/evolution-shell/
 share/gtk-doc/html/evolution-shell/EShell.html
@@ -1140,10 +1149,13 @@ share/gtk-doc/html/evolution-shell/evolution-shell.devhelp2
 share/gtk-doc/html/evolution-shell/home.png
 share/gtk-doc/html/evolution-shell/index.html
 share/gtk-doc/html/evolution-shell/index.sgml
+share/gtk-doc/html/evolution-shell/left-insensitive.png
 share/gtk-doc/html/evolution-shell/left.png
 share/gtk-doc/html/evolution-shell/object-tree.html
+share/gtk-doc/html/evolution-shell/right-insensitive.png
 share/gtk-doc/html/evolution-shell/right.png
 share/gtk-doc/html/evolution-shell/style.css
+share/gtk-doc/html/evolution-shell/up-insensitive.png
 share/gtk-doc/html/evolution-shell/up.png
 share/gtk-doc/html/evolution-util/
 share/gtk-doc/html/evolution-util/EActionComboBox.html
@@ -1363,10 +1375,13 @@ share/gtk-doc/html/evolution-util/evolution-util.devhelp2
 share/gtk-doc/html/evolution-util/home.png
 share/gtk-doc/html/evolution-util/index.html
 share/gtk-doc/html/evolution-util/index.sgml
+share/gtk-doc/html/evolution-util/left-insensitive.png
 share/gtk-doc/html/evolution-util/left.png
 share/gtk-doc/html/evolution-util/object-tree.html
+share/gtk-doc/html/evolution-util/right-insensitive.png
 share/gtk-doc/html/evolution-util/right.png
 share/gtk-doc/html/evolution-util/style.css
+share/gtk-doc/html/evolution-util/up-insensitive.png
 share/gtk-doc/html/evolution-util/up.png
 share/help/C/evolution/
 share/help/C/evolution/backup-restore.page
