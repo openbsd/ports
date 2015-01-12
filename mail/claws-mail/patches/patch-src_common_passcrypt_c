@@ -1,0 +1,134 @@
+$OpenBSD: patch-src_common_passcrypt_c,v 1.1 2015/01/12 21:47:13 landry Exp $
+
+Use libressl des code to read/write the pwd. backwards-compatible with 5.6
+
+--- src/common/passcrypt.c.orig	Sat Dec 14 11:15:06 2013
++++ src/common/passcrypt.c	Sun Jan 11 22:32:43 2015
+@@ -35,6 +35,7 @@
+ #endif
+ 
+ #include <glib.h>
++#include <openssl/des.h>
+ 
+ #include "passcrypt.h"
+ 
+@@ -72,100 +73,30 @@ crypt_cfb_buf(const char key[8], unsigned char *buf, u
+ 		ecb_crypt(des_key, buf, len, DES_ENCRYPT);
+ }
+ #else
+-static void crypt_cfb_shift(unsigned char *to,
+-			    const unsigned char *from, unsigned len);
+-static void crypt_cfb_xor(unsigned char *to, const unsigned char *from,
+-			  unsigned len);
+-static void crypt_unpack(unsigned char *a);
+-
+ static void
+ crypt_cfb_buf(const char key[8], unsigned char *buf, unsigned len,
+ 	      unsigned chunksize, int decrypt)
+ {
+-	unsigned char temp[64];
++	unsigned char *out;
++	char des_key[8];
++	DES_key_schedule keysched;
+ 
+-	memcpy(temp, key, 8);
+-	crypt_unpack(temp);
+-	setkey((const char *) temp);
+-	memset(temp, 0, sizeof(temp));
++	out = malloc(len);
++	if(out == NULL)
++		return;
++	strncpy(des_key, PASSCRYPT_KEY, 8);
++	memset(&crypt_cfb_iv, 0, sizeof(crypt_cfb_iv));
++	
++	DES_set_odd_parity(&des_key);
++	DES_set_key_unchecked(&des_key, &keysched);
++	if (decrypt)
++		DES_cfb_encrypt(buf, out, crypt_cfb_blocksize,\
++		    len, &keysched, &crypt_cfb_iv, DES_DECRYPT);
++	else
++		DES_cfb_encrypt(buf, out, crypt_cfb_blocksize,\
++		    len, &keysched, &crypt_cfb_iv, DES_ENCRYPT);
+ 
+-	memset(crypt_cfb_iv, 0, sizeof(crypt_cfb_iv));
+-
+-	if (chunksize > crypt_cfb_blocksize)
+-		chunksize = crypt_cfb_blocksize;
+-
+-	while (len) {
+-		memcpy(temp, crypt_cfb_iv, sizeof(temp));
+-		encrypt((char *) temp, 0);
+-		if (chunksize > len)
+-			chunksize = len;
+-		if (decrypt)
+-			crypt_cfb_shift(crypt_cfb_iv, buf, chunksize);
+-		crypt_cfb_xor((unsigned char *) buf, temp, chunksize);
+-		if (!decrypt)
+-			crypt_cfb_shift(crypt_cfb_iv, buf, chunksize);
+-		len -= chunksize;
+-		buf += chunksize;
+-	}
+-}
+-
+-/*
+-* Shift len bytes from end of to buffer to beginning, then put len
+-* bytes from from at the end.  Caution: the to buffer is unpacked,
+-* but the from buffer is not.
+-*/
+-static void
+-crypt_cfb_shift(unsigned char *to, const unsigned char *from, unsigned len)
+-{
+-	unsigned i;
+-	unsigned j;
+-	unsigned k;
+-
+-	if (len < crypt_cfb_blocksize) {
+-		i = len * 8;
+-		j = crypt_cfb_blocksize * 8;
+-		for (k = i; k < j; k++) {
+-			to[0] = to[i];
+-			++to;
+-		}
+-	}
+-
+-	for (i = 0; i < len; i++) {
+-		j = *from++;
+-		for (k = 0x80; k; k >>= 1)
+-			*to++ = ((j & k) != 0);
+-	}
+-}
+-
+-/*
+-* XOR len bytes from from into the data at to.  Caution: the from buffer
+-* is unpacked, but the to buffer is not.
+-*/
+-static void
+-crypt_cfb_xor(unsigned char *to, const unsigned char *from, unsigned len)
+-{
+-	unsigned i;
+-	unsigned j;
+-	unsigned char c;
+-
+-	for (i = 0; i < len; i++) {
+-		c = 0;
+-		for (j = 0; j < 8; j++)
+-			c = (c << 1) | *from++;
+-		*to++ ^= c;
+-	}
+-}
+-
+-/*
+-* Take the 8-byte array at *a (must be able to hold 64 bytes!) and unpack
+-* each bit into its own byte.
+-*/
+-static void crypt_unpack(unsigned char *a)
+-{
+-	int i, j;
+-
+-	for (i = 7; i >= 0; --i)
+-		for (j = 7; j >= 0; --j)
+-			a[(i << 3) + j] = (a[i] & (0x80 >> j)) != 0;
++	strncpy(buf, out, len);
++	free(out);
+ }
+ #endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2014/10/25 14:53:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2015/01/12 21:47:13 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,6 +13,7 @@ COMMENT-gdata=		gdata plugin
 V=			3.9.3
 REVISION=		1
 REVISION-htmlviewer=	2
+REVISION-main=		2
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
