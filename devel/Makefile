@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1306 2015/01/12 08:44:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.1307 2015/01/12 08:55:06 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -967,6 +967,7 @@
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell-Command
+     SUBDIR += p5-Signal-Mask
      SUBDIR += p5-Slay-Makefile
      SUBDIR += p5-Slay-Makefile-Gress
      SUBDIR += p5-Slay-Maker
