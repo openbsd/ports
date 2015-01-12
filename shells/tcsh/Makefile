@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2015/01/12 13:10:10 millert Exp $
 
 COMMENT=	extended C-shell with many useful features
 
 DISTNAME=	tcsh-6.18.01
-REVISION=	0
+REVISION=	1
 CATEGORIES=	shells
 HOMEPAGE=	http://www.tcsh.org/
 
