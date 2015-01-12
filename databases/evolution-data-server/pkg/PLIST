@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2014/10/13 08:54:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2015/01/12 13:09:15 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -558,10 +558,13 @@ share/gtk-doc/html/camel/camel.devhelp2
 share/gtk-doc/html/camel/home.png
 share/gtk-doc/html/camel/index.html
 share/gtk-doc/html/camel/index.sgml
+share/gtk-doc/html/camel/left-insensitive.png
 share/gtk-doc/html/camel/left.png
+share/gtk-doc/html/camel/right-insensitive.png
 share/gtk-doc/html/camel/right.png
 share/gtk-doc/html/camel/services.html
 share/gtk-doc/html/camel/style.css
+share/gtk-doc/html/camel/up-insensitive.png
 share/gtk-doc/html/camel/up.png
 share/gtk-doc/html/eds/
 share/gtk-doc/html/eds/annotation-glossary.html
@@ -738,11 +741,14 @@ share/gtk-doc/html/eds/examples.html
 share/gtk-doc/html/eds/home.png
 share/gtk-doc/html/eds/index.html
 share/gtk-doc/html/eds/index.sgml
+share/gtk-doc/html/eds/left-insensitive.png
 share/gtk-doc/html/eds/left.png
 share/gtk-doc/html/eds/misc.html
+share/gtk-doc/html/eds/right-insensitive.png
 share/gtk-doc/html/eds/right.png
 share/gtk-doc/html/eds/style.css
 share/gtk-doc/html/eds/unit-testing.html
+share/gtk-doc/html/eds/up-insensitive.png
 share/gtk-doc/html/eds/up.png
 share/locale/am/LC_MESSAGES/evolution-data-server-3.12.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server-3.12.mo
