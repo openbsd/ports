@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.697 2015/01/11 07:55:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.698 2015/01/12 08:21:53 benoit Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -323,6 +323,7 @@
      SUBDIR += p5-Starlet
      SUBDIR += p5-Starman
      SUBDIR += p5-Test-HTTP-Server-Simple
+     SUBDIR += p5-Twiggy
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Fetch
      SUBDIR += p5-URI-Find
