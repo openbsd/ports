@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2014/05/21 15:40:54 sthen Exp $
---- configure.ac.orig	Thu May  9 22:17:52 2013
-+++ configure.ac	Thu Jan 30 21:23:45 2014
-@@ -71,7 +71,7 @@ AC_SUBST(DEFAULT_INCLUDES)
+$OpenBSD: patch-configure_ac,v 1.2 2015/01/12 00:13:53 jca Exp $
+--- configure.ac.orig	Sat Jan  3 17:50:28 2015
++++ configure.ac	Wed Jan  7 18:25:30 2015
+@@ -77,7 +77,7 @@ AC_SUBST(DEFAULT_INCLUDES)
+ AC_ARG_WITH([irssi-module-dir],
+ 	AS_HELP_STRING([--with-irssi-module-dir=DIR], [Irssi module directory]),
+ 	[IRSSI_MODULE_DIR="$withval"],
+-	[IRSSI_MODULE_DIR="/usr/lib/irssi/modules"])
++	[IRSSI_MODULE_DIR="$prefix/lib/irssi/modules"])
  
- # Hardcoded here since irssi only searches in $HOME/.irssi/modules or this path
- # which is unfortunate...
--IRSSI_MODULE_DIR="/usr/lib/irssi/modules"
-+IRSSI_MODULE_DIR="$prefix/lib/irssi/modules"
  AC_SUBST(IRSSI_MODULE_DIR)
  
- AC_CONFIG_FILES([
