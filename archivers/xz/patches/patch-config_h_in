@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_in,v 1.4 2014/09/19 20:58:39 naddy Exp $
---- config.h.in.orig	Sun Sep 14 18:40:20 2014
-+++ config.h.in	Thu Sep 18 18:02:46 2014
-@@ -288,7 +288,11 @@
+$OpenBSD: patch-config_h_in,v 1.5 2015/01/12 22:07:17 brad Exp $
+--- config.h.in.orig	Sun Dec 21 13:50:05 2014
++++ config.h.in	Wed Jan  7 04:54:36 2015
+@@ -345,7 +345,11 @@
  
  /* Define to 1 if the system supports fast unaligned access to 16-bit and
     32-bit integers. */

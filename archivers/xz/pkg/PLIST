@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/09/19 20:58:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/01/12 22:07:17 brad Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
 bin/lzcat
@@ -36,7 +36,7 @@ include/lzma/filter.h
 include/lzma/hardware.h
 include/lzma/index.h
 include/lzma/index_hash.h
-include/lzma/lzma.h
+include/lzma/lzma12.h
 include/lzma/stream_flags.h
 include/lzma/version.h
 include/lzma/vli.h
@@ -80,6 +80,7 @@ share/doc/xz/examples/00_README.txt
 share/doc/xz/examples/01_compress_easy.c
 share/doc/xz/examples/02_decompress.c
 share/doc/xz/examples/03_compress_custom.c
+share/doc/xz/examples/04_compress_easy_mt.c
 share/doc/xz/examples/Makefile
 share/doc/xz/examples_old/
 share/doc/xz/examples_old/xz_pipe_comp.c
