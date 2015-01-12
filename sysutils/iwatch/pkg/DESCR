@@ -1,0 +1,3 @@
+iwatch is "interval watch", it shows the command output periodically
+and makes the changed words, lines or characters be highlighted so that
+the changes can be monitored easily.
