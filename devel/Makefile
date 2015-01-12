@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1304 2015/01/11 08:14:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.1305 2015/01/12 05:51:45 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -149,6 +149,7 @@
      SUBDIR += gperf
      SUBDIR += gputils
      SUBDIR += grcs
+     SUBDIR += greg
      SUBDIR += gsettings-desktop-schemas
      SUBDIR += gsl
      SUBDIR += gtest
