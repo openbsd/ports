@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/12 08:51:13 benoit Exp $
+${P5SITE}/Signal/
+${P5SITE}/Signal/Mask.pm
+${P5SITE}/Signal/Pending.pm
+@man man/man3p/Signal::Mask.3p
+@man man/man3p/Signal::Pending.3p
