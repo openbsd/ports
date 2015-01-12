@@ -1,13 +1,16 @@
-$OpenBSD: patch-tools_test-runner_pl,v 1.1 2014/12/19 21:16:55 landry Exp $
---- tools/test-runner.pl.orig	Fri Dec 19 21:33:45 2014
-+++ tools/test-runner.pl	Fri Dec 19 21:55:37 2014
-@@ -20,7 +20,8 @@ my $DRYRUN = 0;
+$OpenBSD: patch-tools_test-runner_pl,v 1.2 2015/01/12 20:57:55 zhuk Exp $
+Allow tests to run.
+See also: https://github.com/pgRouting/pgrouting/pull/284
+--- tools/test-runner.pl.orig	Wed Sep 25 00:38:31 2013
++++ tools/test-runner.pl	Sat Jan 10 19:07:01 2015
+@@ -20,8 +20,9 @@ my $DRYRUN = 0;
  my $DEBUG = 0;
  
  my $DBNAME = "pgr_test__db__test";
 -my $DBUSER = 'postgres';
-+my $DBUSER = `whoami`;
-+chomp $DBUSER;
- my $DBHOST = 'localhost';
+-my $DBHOST = 'localhost';
++my $DBUSER = getlogin || getpwuid($<) || "postgres";
++my $DBHOST = '${MODPOSTGRESQL_TEST_PGHOST}';
  my $DBPORT = '5432';
  
+ sub Usage {

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/02 10:16:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2015/01/12 20:57:55 zhuk Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -18,7 +18,7 @@ MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 
 LIB_DEPENDS=	databases/postgresql
 
-MODULES=	lang/python
+MODULES=	databases/postgresql lang/python
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES=tools/splitconfig \
 		tools/template2mak.py
@@ -29,27 +29,6 @@ SEPARATE_BUILD=	No
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-# Regression tests start up and use a real database
-TEST_DEPENDS =		databases/postgresql,-server
-PGDATA =		${WRKDIR}/testdb
-PGDATABASE =		pqxx-test
-TEST_ENV =		PGDATABASE=${PGDATABASE} \
-			PGHOST=${WRKDIR}
-
-# Make sure that server is always stopped after starting
-do-test:
-	rm -Rf ${PGDATA}
-	${LOCALBASE}/bin/initdb -D ${PGDATA} -A trust --locale=C
-	${LOCALBASE}/bin/pg_ctl start -w -D ${PGDATA} -l ${WRKDIR}/pg.log \
-		-o "-F -h '' -k ${WRKDIR}"
-	${TEST_ENV} ${LOCALBASE}/bin/createdb ${PGDATABASE} || \
-	    (${LOCALBASE}/bin/pg_ctl stop -D ${PGDATA} -m i; exit 1)
-	cd ${WRKBUILD}; \
-	    set +e; \
-	    ${SETENV} ${ALL_TEST_ENV} ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} \
-	        -f ${MAKE_FILE} ${TEST_TARGET}; \
-	    Q=$$?; \
-	    ${LOCALBASE}/bin/pg_ctl stop -D ${PGDATA} -m i; \
-	    exit $$Q
+MODPOSTGRESQL_TEST_DBNAME =	pqxx-test
 
 .include <bsd.port.mk>

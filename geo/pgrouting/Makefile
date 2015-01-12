@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/19 21:16:55 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/12 20:57:55 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
@@ -20,20 +20,21 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES =	devel/cmake
+MODULES =	databases/postgresql devel/cmake
 
 LIB_DEPENDS =	math/cgal
 RUN_DEPENDS =	geo/postgis
 BUILD_DEPENDS =	databases/postgresql,-server
 TEST_DEPENDS =	${BUILD_PKGPATH}
+TEST_ENV =	LD_PRELOAD=libpthread.so
 WANTLIB +=	CGAL boost_system-mt boost_thread-mt gmp m stdc++
 
-do-test:
-	regdir=$$(mktemp -t -d pgrouting-regress.XXXXXX) && \
-	LC_CTYPE=C initdb -D $${regdir} && \
-	LD_PRELOAD=libpthread.so pg_ctl -D $${regdir} -o '-p 12341' -l $${regdir}/log start && \
-	cd ${WRKSRC} && perl tools/test-runner.pl -pgport 12341 || \
-	pg_ctl -D $${regdir} -o '-p 12341'  stop -m fast
-	#not all tests pass - ensure we stop the server
+MODPOSTGRESQL_TEST_CMD = \
+	cd ${WRKSRC}; \
+	./tools/test-runner.pl
+
+SUBST_VARS +=	MODPOSTGRESQL_TEST_PGHOST
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/tools/test-runner.pl
 
 .include <bsd.port.mk>
