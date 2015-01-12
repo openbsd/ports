@@ -1,0 +1,30 @@
+$OpenBSD: patch-awesome_c,v 1.12 2015/01/12 09:00:17 dcoppa Exp $
+
+commit 635223b5fe599d94de4ab44d27500041f121e081
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jan 11 10:42:45 2015 +0100
+
+Remove titlebars from clients during shutdown
+
+This reparents all clients back to their proper position during shutdown, so
+that their top-left corner is now where their titlebar's top-left corner was.
+Hopefully, this fixes floating clients moving around across a restart.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- awesome.c.orig	Mon Jan 12 02:45:28 2015
++++ awesome.c	Mon Jan 12 02:45:35 2015
+@@ -72,6 +72,13 @@ awesome_atexit(bool restart)
+     lua_pushboolean(globalconf.L, restart);
+     signal_object_emit(globalconf.L, &global_signals, "exit", 1);
+ 
++    /* Move clients where we want them to be */
++    foreach(c, globalconf.clients)
++    {
++        xcb_reparent_window(globalconf.connection, (*c)->window, globalconf.screen->root,
++                (*c)->geometry.x, (*c)->geometry.y);
++    }
++
+     a_dbus_cleanup();
+ 
+     systray_cleanup();
