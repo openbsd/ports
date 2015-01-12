@@ -1,0 +1,24 @@
+$OpenBSD: patch-greg_c,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
+
+Carry along the compiles.c diff.
+
+--- greg.c.orig	Tue Oct  8 22:39:24 2013
++++ greg.c	Fri Jan  2 14:31:43 2015
+@@ -67,7 +67,7 @@ int main()\n\
+ #define YY_NAME(N) yy##N
+ #endif
+ #ifndef YY_INPUT
+-#define YY_INPUT(buf, result, max_size)			\
++#define YY_INPUT(buf, result, max_size, D)		\
+   {							\
+     int yyc= fgetc(G->input);				\
+     if ('\n' == yyc) ++G->lineno;      		\
+@@ -189,7 +189,7 @@ YY_LOCAL(int) yyrefill(GREG *G)
+       G->buflen *= 2;
+       G->buf= (char*)YY_REALLOC(G->buf, G->buflen, G->data);
+     }
+-  YY_INPUT((G->buf + G->pos), yyn, (G->buflen - G->pos));
++  YY_INPUT((G->buf + G->pos), yyn, (G->buflen - G->pos), G->data);
+   if (!yyn) return 0;
+   G->limit += yyn;
+   return 1;

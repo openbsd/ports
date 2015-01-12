@@ -1,0 +1,75 @@
+$OpenBSD: patch-samples_Makefile,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
+
+Clean up so "make test" works at top level, all expected binaries
+are built with -DYY_MAIN.  Fix the clean target.
+
+--- samples/Makefile.orig	Tue Oct  8 22:39:24 2013
++++ samples/Makefile	Fri Jan  2 14:31:43 2015
+@@ -1,6 +1,6 @@
+-EXAMPLES = test rule accept wc dc dcv calc basic
++EXAMPLES = test rule accept wc dc dcv calc basic erract
+ 
+-CFLAGS = -g -O3
++CFLAGS += -g -DYY_MAIN
+ 
+ DIFF = diff
+ TEE = cat >
+@@ -9,7 +9,7 @@ all : $(EXAMPLES)
+ 
+ test : .FORCE
+ 	../greg -o test.leg.c test.leg
+-	$(CC) $(CFLAGS) -o test test.c
++	$(CC) $(CFLAGS) -o test test.leg.c
+ 	echo 'ab.ac.ad.ae.afg.afh.afg.afh.afi.afj.' | ./$@ | $(TEE) $@.out
+ 	$(DIFF) $@.ref $@.out
+ 	rm -f $@.out
+@@ -17,7 +17,7 @@ test : .FORCE
+ 
+ rule : .FORCE
+ 	../greg -o rule.leg.c rule.leg
+-	$(CC) $(CFLAGS) -o rule rule.c
++	$(CC) $(CFLAGS) -o rule rule.leg.c
+ 	echo 'abcbcdabcbcdabcbcdabcbcd' | ./$@ | $(TEE) $@.out
+ 	$(DIFF) $@.ref $@.out
+ 	rm -f $@.out
+@@ -25,7 +25,7 @@ rule : .FORCE
+ 
+ accept : .FORCE
+ 	../greg -o accept.leg.c accept.leg
+-	$(CC) $(CFLAGS) -o accept accept.c
++	$(CC) $(CFLAGS) -o accept accept.leg.c
+ 	echo 'abcbcdabcbcdabcbcdabcbcd' | ./$@ | $(TEE) $@.out
+ 	$(DIFF) $@.ref $@.out
+ 	rm -f $@.out
+@@ -41,7 +41,7 @@ wc : .FORCE
+ 
+ dc : .FORCE
+ 	../greg -o dc.leg.c dc.leg
+-	$(CC) $(CFLAGS) -o dc dc.c
++	$(CC) $(CFLAGS) -o dc dc.leg.c
+ 	echo '  2  *3 *(3+ 4) ' | ./dc | $(TEE) $@.out
+ 	$(DIFF) $@.ref $@.out
+ 	rm -f $@.out
+@@ -49,7 +49,7 @@ dc : .FORCE
+ 
+ dcv : .FORCE
+ 	../greg -o dcv.leg.c dcv.leg
+-	$(CC) $(CFLAGS) -o dcv dcv.c
++	$(CC) $(CFLAGS) -o dcv dcv.leg.c
+ 	echo 'a = 6;  b = 7;  a * b' | ./dcv | $(TEE) $@.out
+ 	$(DIFF) $@.ref $@.out
+ 	rm -f $@.out
+@@ -71,8 +71,12 @@ basic : .FORCE
+ 	rm -f $@.out
+ 	@echo
+ 
++erract : .FORCE
++	../greg -o erract.leg.c erract.leg
++	$(CC) $(CFLAGS) -o erract erract.leg.c
++
+ clean : .FORCE
+-	rm -f *~ *.o *.[pl]eg.[cd] $(EXAMPLES)
++	rm -f *~ *.o *.[pl]eg.[cd] *.out $(EXAMPLES)
+ 	rm -rf *.dSYM
+ 
+ spotless : clean

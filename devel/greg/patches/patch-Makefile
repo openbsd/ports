@@ -1,0 +1,48 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
+
+We don't care about rebuilding when source files change since they
+aren't going to change in this case (ports).  Clean up a bit wrt
+samples/test so at least all of the targets work.
+
+--- Makefile.orig	Tue Oct  8 22:39:24 2013
++++ Makefile	Fri Jan  2 14:31:43 2015
+@@ -24,33 +24,25 @@ uninstall : .FORCE
+ 	rm -f $(BINDIR)/greg
+ 
+ # bootstrap greg from greg.g
+-greg.c : greg.g compile.c tree.c
+-	$(MAKE) greg-new
+-	./greg-new -o greg-new.c greg.g
+-	$(CC) $(CFLAGS) -o greg-new greg-new.c $(SRCS)
+-	cp greg-new.c greg.c
+-	cp greg-new greg
++greg-new.c : greg greg.g
++	./greg -o greg-new.c greg.g
+ 
+ # bootstrap: call make greg-new when you updated compile.c and greg-new.c
+-greg-new : greg-new.c $(SRCS)
++greg-new : greg-new.c
+ 	$(CC) $(CFLAGS) -o greg-new greg-new.c $(SRCS)
+ 
+ grammar : .FORCE
+ 	./greg -o greg.c greg.g
+ 
+ clean : .FORCE
+-	rm -rf *~ *.o *.greg.[cd] greg ${SAMPLES:.leg=.o} ${SAMPLES:.leg=} ${SAMPLES:.leg=.c} samples/*.dSYM testing1.c testing2.c *.dSYM selftest/
++	rm -rf *~ *.o *.greg.[cd] greg greg-new greg-new.c ${SAMPLES:.leg=.o} ${SAMPLES:.leg=} ${SAMPLES:.leg=.c} samples/*.dSYM testing1.c testing2.c *.dSYM selftest/
+ 
+ spotless : clean .FORCE
+ 	rm -f greg
++	(cd samples; $(MAKE) $(MFLAGS) clean)
+ 
+-samples/calc.c: samples/calc.leg greg
+-	./greg -o $@ $<
+-
+-samples/calc: samples/calc.c
+-	$(CC) $(CFLAGS) -o $@ $<
+-
+ samples: ${SAMPLES:.leg=} greg
++	(cd samples; $(MAKE) $(MFLAGS))
+ 
+ %.c: %.leg
+ 	./greg $< > $@

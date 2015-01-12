@@ -1,0 +1,34 @@
+$OpenBSD: patch-samples_basic_leg,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
+
+Use a four-arg YY_INPUT() as per patch-compile_c.  Turn sprintf(3) into
+snprintf(3).
+
+--- samples/basic.leg.orig	Tue Oct  8 22:39:24 2013
++++ samples/basic.leg	Fri Jan  2 14:31:43 2015
+@@ -20,6 +20,7 @@
+ 
+ %{
+ # include <stdio.h>
++# include <assert.h>
+ 
+   typedef struct line line;
+ 
+@@ -39,7 +40,7 @@
+ 
+ # define min(x, y) ((x) < (y) ? (x) : (y))
+ 
+-# define YY_INPUT(buf, result, max_size)	\
++# define YY_INPUT(buf, result, max_size, D)	\
+   {						\
+     if ((pc >= 0) && (pc < numLines))		\
+       {						\
+@@ -286,7 +287,8 @@ char *extend(char *name)
+ {
+   static char path[1024];
+   int len= strlen(name);
+-  sprintf(path, "%s%s", name, (((len > 4) && !strcasecmp(".bas", name + len - 4)) ? "" : ".bas"));
++  int n= snprintf(path, sizeof(path), "%s%s", name, (((len > 4) && !strcasecmp(".bas", name + len - 4)) ? "" : ".bas"));
++  assert(n < sizeof(path));
+   return path;
+ }
+ 

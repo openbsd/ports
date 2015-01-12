@@ -1,0 +1,20 @@
+$OpenBSD: patch-tree_c,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
+
+Switch from sprintf(3) to snprintf(3) for cases involving strings that
+come from the user, at least.  They already use assert(3) in the code
+so I just followed along.
+
+--- tree.c.orig	Tue Oct  8 22:39:24 2013
++++ tree.c	Fri Jan  2 14:31:43 2015
+@@ -140,8 +140,10 @@ Node *makeAction(char *text)
+ {
+   Node *node= newNode(Action);
+   char name[1024];
++  size_t n;
+   assert(thisRule);
+-  sprintf(name, "_%d_%s", ++actionCount, thisRule->rule.name);
++  n = snprintf(name,sizeof(name),"_%d_%s",++actionCount,thisRule->rule.name);
++  assert(n < sizeof(name));
+   node->action.name= strdup(name);
+   node->action.text= strdup(text);
+   node->action.list= actions;

@@ -1,0 +1,69 @@
+$OpenBSD: patch-compile_c,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
+
+Widen the YY_INPUT() interface to four args, since that seems to be
+how it is actually used in the only real application that uses greg
+I've tried so far (MMD-4).  Also convert two instances of sprintf(3)
+to snprintf(3).
+
+--- compile.c.orig	Tue Oct  8 22:39:24 2013
++++ compile.c	Fri Jan  2 14:31:43 2015
+@@ -136,8 +136,12 @@ static char *yyqq(char* s) {
+     } else if (*s == 92) { // '\'
+       *d++ = '\\'; *d++ = *s++;
+     } else if (*(signed char *)s<32) {
+-      sprintf(d,"\\%03o", *s); // octal \000
+-      d += 4; s++;
++      char octbuf[8];
++      size_t noct = snprintf(octbuf,sizeof(octbuf),"\\%03o",*s);
++      assert(noct < sizeof(octbuf));
++      memcpy(d,octbuf,noct+1);
++      d += noct;
++      s++;
+     } else {
+       *d++ = *s++;
+     }
+@@ -152,7 +156,7 @@ static char *makeCharClass(unsigned char *cclass)
+   setter	 set;
+   int		 c, prev= -1;
+   static char	 string[256];
+-  char		*ptr;
++  size_t	 left, off;
+ 
+   if ('^' == *cclass)
+     {
+@@ -179,9 +183,14 @@ static char *makeCharClass(unsigned char *cclass)
+   }
+     }
+ 
+-  ptr= string;
+-  for (c= 0;  c < 32;  ++c)
+-    ptr += sprintf(ptr, "\\%03o", bits[c]);
++  left = sizeof(string);
++  off = 0;
++  for (c= 0;  c < 32;  ++c) {
++    size_t n = snprintf(&string[off],left,"\\%03o",bits[c]);
++    assert(n < left);
++    left -= n;
++    off += n;
++  }
+ 
+   return string;
+ }
+@@ -502,7 +511,7 @@ static char *preamble= "\
+ #define YY_NAME(N) yy##N\n\
+ #endif\n\
+ #ifndef YY_INPUT\n\
+-#define YY_INPUT(buf, result, max_size)			\\\n\
++#define YY_INPUT(buf, result, max_size, D)		\\\n\
+   {							\\\n\
+     int yyc= fgetc(G->input);				\\\n\
+     if ('\\n' == yyc) ++G->lineno;      		\\\n\
+@@ -624,7 +633,7 @@ YY_LOCAL(int) yyrefill(GREG *G)\n\
+       G->buflen *= 2;\n\
+       G->buf= (char*)YY_REALLOC(G->buf, G->buflen, G->data);\n\
+     }\n\
+-  YY_INPUT((G->buf + G->pos), yyn, (G->buflen - G->pos));\n\
++  YY_INPUT((G->buf + G->pos), yyn, (G->buflen - G->pos), G->data);\n\
+   if (!yyn) return 0;\n\
+   G->limit += yyn;\n\
+   return 1;\n\

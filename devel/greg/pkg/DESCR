@@ -1,0 +1,2 @@
+greg is a recursive-descent parser generator based on Ian Piumarta's
+peg/leg.  It implements a formalism called Parsing Expression Grammars.
