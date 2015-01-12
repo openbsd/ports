@@ -1,0 +1,40 @@
+$OpenBSD: patch-lib_Makefile,v 1.1 2015/01/12 15:23:09 sthen Exp $
+--- lib/Makefile.orig	Fri Dec 19 08:51:32 2014
++++ lib/Makefile	Mon Jan 12 00:32:39 2015
+@@ -67,13 +67,10 @@ all: liblz4
+ 
+ liblz4: lz4.c lz4hc.c lz4frame.c xxhash.c
+ 	@echo compiling static library
+-	@$(CC) $(CPPFLAGS) $(CFLAGS) -c $^
+-	@$(AR) rcs liblz4.a lz4.o lz4hc.o lz4frame.o xxhash.o
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c $^
++	$(AR) rcs liblz4.a lz4.o lz4hc.o lz4frame.o xxhash.o
+ 	@echo compiling dynamic library $(LIBVER)
+-	@$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -shared $^ -fPIC $(SONAME_FLAGS) -o $@.$(SHARED_EXT_VER)
+-	@echo creating versioned links
+-	@ln -sf $@.$(SHARED_EXT_VER) $@.$(SHARED_EXT_MAJOR)
+-	@ln -sf $@.$(SHARED_EXT_VER) $@.$(SHARED_EXT)
++	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -shared $^ -fPIC $(SONAME_FLAGS) -o $@.$(SHARED_EXT_VER)
+ 
+ clean:
+ 	@rm -f core *.o *.a *.$(SHARED_EXT) *.$(SHARED_EXT).* liblz4.pc
+@@ -82,7 +79,7 @@ clean:
+ 
+ #------------------------------------------------------------------------
+ #make install is validated only for Linux, OSX, kFreeBSD and Hurd targets
+-ifneq (,$(filter $(shell uname),Linux Darwin GNU/kFreeBSD GNU))
++ifneq (,$(filter $(shell uname),Linux Darwin GNU/kFreeBSD GNU OpenBSD))
+ 
+ liblz4.pc: liblz4.pc.in Makefile
+ 	@echo creating pkgconfig
+@@ -95,9 +92,7 @@ liblz4.pc: liblz4.pc.in Makefile
+ install: liblz4 liblz4.pc
+ 	@install -d -m 755 $(DESTDIR)$(LIBDIR)/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
+ 	@install -m 755 liblz4.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)/liblz4.$(SHARED_EXT_VER)
+-	@cp -a liblz4.$(SHARED_EXT_MAJOR) $(DESTDIR)$(LIBDIR)
+-	@cp -a liblz4.$(SHARED_EXT) $(DESTDIR)$(LIBDIR)
+-	@cp -a liblz4.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
++	@install -m 644 liblz4.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
+ 	@install -m 644 liblz4.a $(DESTDIR)$(LIBDIR)/liblz4.a
+ 	@install -m 644 lz4.h $(DESTDIR)$(INCLUDEDIR)/lz4.h
+ 	@install -m 644 lz4hc.h $(DESTDIR)$(INCLUDEDIR)/lz4hc.h
