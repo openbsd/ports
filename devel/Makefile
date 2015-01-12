@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1305 2015/01/12 05:51:45 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1306 2015/01/12 08:44:13 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -802,6 +802,7 @@
      SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-IPC-Shareable
+     SUBDIR += p5-IPC-Signal
      SUBDIR += p5-Import-Into
      SUBDIR += p5-Inline
      SUBDIR += p5-Internals
