@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/10/26 14:22:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/01/13 15:40:04 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -795,6 +795,7 @@ share/examples/trac/contrib/htpasswd.py
 share/examples/trac/contrib/l10n_diff_index.py
 share/examples/trac/contrib/l10n_reset_en_GB.py
 share/examples/trac/contrib/l10n_revert_lineno_conflicts.py
+share/examples/trac/contrib/make_status.py
 share/examples/trac/contrib/migrateticketmodel.py
 share/examples/trac/contrib/rpm/
 share/examples/trac/contrib/rpm/installscript
