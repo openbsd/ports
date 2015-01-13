@@ -1,0 +1,112 @@
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.11 2015/01/13 08:22:48 dcoppa Exp $
+
+commit dd5d2eb156b7e45ded53f694a12a1e00d19f6cd6
+Author: David Coppa <dcoppa@gmail.com>
+Date:   Mon Jan 12 19:28:02 2015 +0100
+
+FindRuby: fix selection of version x.0 (#15345)
+
+When "Ruby_FIND_VERSION_MINOR" is 0, the "if(Ruby_FIND_VERSION_MAJOR AND
+Ruby_FIND_VERSION_MINOR)" check evaluated to false.
+
+commit 802d0aa0b0a0af72fdc95bf1f69afeb362b6ef95
+Author: Evangelos Foutras <evangelos@foutrelis.com>
+Date:   Mon Dec 29 19:02:04 2014 +0200
+
+FindRuby: Fix output check in _RUBY_CONFIG_VAR
+
+Since commit v2.8.8~173^2 (FindRuby: clean up querying variables from
+Ruby, 2012-02-17) we query RbConfig::CONFIG first and, if the command
+fails or its output equates to a false constant, then fall back to
+querying Config::CONFIG.
+
+Due to the above, an error condition exists with Ruby 2.2.0; when
+querying RbConfig::CONFIG['TEENY'], the output of '0' will be discarded
+since it matches the false constant '0'.
+
+In previous versions this wasn't a problem, but Ruby 2.2 has completely
+removed Config::CONFIG. This causes RUBY_VERSION_PATCH to be set to an
+empty string and the Ruby version to be detected as '2.2.' (instead of
+'2.2.0').
+
+Fix the output check to explicitly look for an empty string before using
+the fallback query method. (Someone more familiar with Ruby might be
+able to deem the fallback as unnecessary and fully remove it.)
+
+--- Modules/FindRuby.cmake.orig	Mon Dec 15 14:07:43 2014
++++ Modules/FindRuby.cmake	Tue Jan 13 01:56:31 2015
+@@ -55,33 +55,35 @@
+ 
+ # Determine the list of possible names of the ruby executable depending
+ # on which version of ruby is required
+-set(_RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
++set(_RUBY_POSSIBLE_EXECUTABLE_NAMES)
+ 
+ # if 1.9 is required, don't look for ruby18 and ruby1.8, default to version 1.8
+-if(Ruby_FIND_VERSION_MAJOR  AND  Ruby_FIND_VERSION_MINOR)
++if(DEFINED Ruby_FIND_VERSION_MAJOR AND DEFINED Ruby_FIND_VERSION_MINOR)
+    set(Ruby_FIND_VERSION_SHORT_NODOT "${Ruby_FIND_VERSION_MAJOR}${RUBY_FIND_VERSION_MINOR}")
+    # we can't construct that if only major version is given
+    set(_RUBY_POSSIBLE_EXECUTABLE_NAMES
+-       ruby${Ruby_FIND_VERSION_MAJOR}.${Ruby_FIND_VERSION_MINOR}
+        ruby${Ruby_FIND_VERSION_MAJOR}${Ruby_FIND_VERSION_MINOR}
++       ruby${Ruby_FIND_VERSION_MAJOR}.${Ruby_FIND_VERSION_MINOR}
+        ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
+ else()
+    set(Ruby_FIND_VERSION_SHORT_NODOT "18")
+ endif()
+ 
+ if(NOT Ruby_FIND_VERSION_EXACT)
+-  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.1 ruby21)
+-  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.0 ruby20)
+-  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.9 ruby19)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby22 ruby2.2)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby21 ruby2.1)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby20 ruby2.0)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby19 ruby1.9)
+ 
+   # if we want a version below 1.9, also look for ruby 1.8
+   if("${Ruby_FIND_VERSION_SHORT_NODOT}" VERSION_LESS "19")
+-    list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.8 ruby18)
++    list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby18 ruby1.8)
+   endif()
+-
+-  list(REMOVE_DUPLICATES _RUBY_POSSIBLE_EXECUTABLE_NAMES)
+ endif()
+ 
++list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
++list(REMOVE_DUPLICATES _RUBY_POSSIBLE_EXECUTABLE_NAMES)
++
+ find_program(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
+ 
+ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+@@ -90,7 +92,7 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+       RESULT_VARIABLE _RUBY_SUCCESS
+       OUTPUT_VARIABLE _RUBY_OUTPUT
+       ERROR_QUIET)
+-    if(_RUBY_SUCCESS OR NOT _RUBY_OUTPUT)
++    if(_RUBY_SUCCESS OR _RUBY_OUTPUT STREQUAL "")
+       execute_process(COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print Config::CONFIG['${RBVAR}']"
+         RESULT_VARIABLE _RUBY_SUCCESS
+         OUTPUT_VARIABLE _RUBY_OUTPUT
+@@ -181,6 +183,11 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+       set(RUBY_VERSION_MAJOR 2)
+       set(RUBY_VERSION_MINOR 1)
+    endif()
++   # check whether we found 2.2.x
++   if(${RUBY_EXECUTABLE} MATCHES "ruby2.?2")
++      set(RUBY_VERSION_MAJOR 2)
++      set(RUBY_VERSION_MINOR 2)
++   endif()
+ endif()
+ 
+ if(RUBY_VERSION_MAJOR)
+@@ -214,7 +221,7 @@ endif()
+ 
+ 
+ # Determine the list of possible names for the ruby library
+-set(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT} ruby${_RUBY_VERSION_SHORT_NODOT} ruby-${_RUBY_VERSION_SHORT} ruby-${RUBY_VERSION})
++set(_RUBY_POSSIBLE_LIB_NAMES ruby${_RUBY_VERSION_SHORT_NODOT} ruby${_RUBY_VERSION_SHORT} ruby-${_RUBY_VERSION_SHORT} ruby-${RUBY_VERSION} ruby ruby-static)
+ 
+ if(WIN32)
+    set( _RUBY_MSVC_RUNTIME "" )
