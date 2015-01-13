@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2015/01/08 16:56:56 stsp Exp $
+$OpenBSD: patch-configure,v 1.8 2015/01/13 01:03:58 sthen Exp $
 
 Use GNU readline as our base readline lacks add_history_time().
-Fix failing test for libssl, LibreSSL doesn't provide RAND_egd.
 
 --- configure.orig	Mon Oct 13 11:41:55 2014
 +++ configure	Sun Dec 21 22:01:12 2014
