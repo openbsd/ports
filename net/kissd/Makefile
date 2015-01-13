@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/13 11:26:10 sthen Exp $
 
 COMMENT=	server for KiSS DP-500 network movie player
 
 DISTNAME=	kissd-0.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.benzedrine.cx/
+MASTER_SITES=	http://www.benzedrine.ch/
+REVISION=	0
 
-HOMEPAGE=	http://www.benzedrine.cx/kissd.html
+HOMEPAGE=	http://www.benzedrine.ch/kissd.html
 
 MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 

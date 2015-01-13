@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/17 09:13:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/13 11:26:09 sthen Exp $
 
 COMMENT=	sendmail milter plugin for recipient checking
 
 DISTNAME=	milter-checkrcpt-0.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.benzedrine.cx/
+MASTER_SITES=	http://www.benzedrine.ch/
 
-HOMEPAGE=	http://www.benzedrine.cx/milter-checkrcpt.html
+HOMEPAGE=	http://www.benzedrine.ch/milter-checkrcpt.html
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
