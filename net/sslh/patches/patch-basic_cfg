@@ -1,9 +1,9 @@
-$OpenBSD: patch-basic_cfg,v 1.1 2013/04/01 21:37:28 sthen Exp $
---- basic.cfg.orig	Tue Mar  5 19:01:27 2013
-+++ basic.cfg	Tue Mar  5 19:01:27 2013
-@@ -6,7 +6,7 @@ foreground: false;
- inetd: false;
+$OpenBSD: patch-basic_cfg,v 1.2 2015/01/13 11:15:04 sthen Exp $
+--- basic.cfg.orig	Tue Feb 11 22:06:01 2014
++++ basic.cfg	Thu May  8 13:16:47 2014
+@@ -7,7 +7,7 @@ inetd: false;
  numeric: false;
+ transparent: false;
  timeout: 2;
 -user: "nobody";
 +user: "_sslh";
