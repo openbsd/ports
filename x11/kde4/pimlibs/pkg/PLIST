@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/01/12 21:05:54 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/01/13 17:32:33 zhuk Exp $
 @conflict kdepim-runtime-<4.13
 @bin bin/akonadi2xml
 @bin bin/akonaditest
@@ -1236,9 +1236,6 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libmicroblog.so.${LIBmicroblog_VERSION}
 @lib lib/libqgpgme.so.${LIBqgpgme_VERSION}
 @lib lib/libsyndication.so.${LIBsyndication_VERSION}
-share/akonadi/
-share/akonadi/agents/
-share/akonadi/agents/knutresource.desktop
 share/apps/akonadi/
 share/apps/akonadi-kde/
 share/apps/akonadi-kde/kcfg2dbus.xsl
@@ -1266,8 +1263,6 @@ share/apps/akonadi/contact/pics/world.jpg
 share/apps/akonadi/plugins/
 share/apps/akonadi/plugins/serializer/
 share/apps/akonadi/plugins/serializer/akonadi_serializer_socialfeeditem.desktop
-share/apps/akonadi_knut_resource/
-share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/cmake/modules/AkonadiMacros.cmake
 share/apps/cmake/modules/CheckTimezone.cmake
 share/apps/cmake/modules/FindGpgme.cmake
@@ -1334,7 +1329,6 @@ share/apps/libkholidays/plan2/holiday_gb-sct_en-gb
 share/apps/libkholidays/plan2/holiday_gf_fr
 share/apps/libkholidays/plan2/holiday_gp_fr
 share/apps/libkholidays/plan2/holiday_gr_el
-share/apps/libkholidays/plan2/holiday_gr_el_nameday
 share/apps/libkholidays/plan2/holiday_gt_es
 share/apps/libkholidays/plan2/holiday_hk_en-gb
 share/apps/libkholidays/plan2/holiday_hk_zh-cn
