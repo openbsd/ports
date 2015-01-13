@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.100 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.101 2015/01/13 18:00:23 sthen Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
-VERSION =		4.83
+VERSION =		4.85
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-REVISION-main =		0
 MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
 			http://ftp.exim.org/pub/exim/exim4/old/ \
 			ftp://ftp.exim.org/pub/exim/exim4/ \
