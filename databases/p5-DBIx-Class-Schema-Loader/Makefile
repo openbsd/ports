@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/01/13 13:05:02 naddy Exp $
 
 COMMENT=	dynamic definition of a DBIx::Class::Schema
 
 MODULES=	cpan
 DISTNAME=	DBIx-Class-Schema-Loader-0.07015
+REVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -15,6 +16,7 @@ RUN_DEPENDS=	databases/p5-DBIx-Class \
 		databases/p5-DBIx-Class-IntrospectableM2M \
 		devel/p5-Class-Unload \
 		devel/p5-Data-Dump \
+		devel/p5-List-MoreUtils \
 		p5-Universal-exports-<0.05|p5-Universal-require->=0.11:devel/p5-Universal-require \
 		textproc/p5-Lingua-EN-Inflect \
 		textproc/p5-Lingua-EN-Inflect-Phrase \
