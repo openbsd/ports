@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.28 2013/06/02 16:59:48 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.29 2015/01/14 20:07:45 jturner Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -13,9 +13,9 @@ MODLUA_DEFAULT_VERSION=	5.1
 # If a port already has flavors, append our lua flavors to it, unless it requests a specific
 # version of lua. Otherwise set the FLAVORS list to just the lua flavors.
 .if !defined(MODLUA_VERSION) && !defined(FLAVORS)
-FLAVORS?=		lua52
+FLAVORS?=		lua52 lua53
 .else
-FLAVORS+=		lua52
+FLAVORS+=		lua52 lua53
 .endif
 
 FLAVOR?=		# empty
@@ -23,6 +23,8 @@ FLAVOR?=		# empty
 # without a flavor, assume ${MODLUA_DEFAULT_VERSION}
 .if ${FLAVOR:Mlua52}
 MODLUA_VERSION=		5.2
+.elif ${FLAVOR:Mlua53}
+MODLUA_VERSION=		5.3
 .else
 MODLUA_VERSION?=	${MODLUA_DEFAULT_VERSION}
 .endif
@@ -33,6 +35,9 @@ MODLUA_FLAVOR=		# empty
 .elif "${MODLUA_VERSION}" == "5.2"
 _MODLUA_PKG_PREFIX=	lua52
 MODLUA_FLAVOR=		lua52
+.elif "${MODLUA_VERSION}" == "5.3"
+_MODLUA_PKG_PREFIX=	lua53
+MODLUA_FLAVOR=		lua53
 .else
 ERRORS+=		"Invalid MODLUA_VERSION set: ${MODLUA_VERSION}."
 .endif
@@ -62,6 +67,8 @@ MODLUA_LIB=		-l${MODLUA_WANTLIB}
 _MODLUA_RUN_DEPENDS=	lang/lua/5.1
 .elif "${MODLUA_VERSION}" == "5.2"
 _MODLUA_RUN_DEPENDS=	lang/lua/5.2
+.elif "${MODLUA_VERSION}" == "5.3"
+_MODLUA_RUN_DEPENDS=	land/lua/5.3
 .endif
 
 MODLUA_LIB_DEPENDS=	${_MODLUA_RUN_DEPENDS}
