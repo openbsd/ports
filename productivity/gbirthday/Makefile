@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/10 11:38:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2015/01/14 10:55:55 sthen Exp $
 
 COMMENT =		birthday reminder with tray notification
 
@@ -20,7 +20,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-notify \
 			x11/gtk+2,-guic \
 			x11/py-gtk2
-NO_BUILD =		Yes
 NO_TEST =		Yes
 
 MODPY_ADJ_FILES += 	src/gb
@@ -29,6 +28,9 @@ PKG_ARCH = 		*
 
 post-patch:
 	perl -pi -e 's|_Comment|Comment|' ${WRKSRC}/gbirthday.desktop.in
+
+do-build:
+	# dummy. cannot be "NO_BUILD" as that zaps BUILD_DEPENDS.
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/gb ${PREFIX}/bin/gbirthday
