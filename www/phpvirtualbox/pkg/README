@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/09/19 12:31:52 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2015/01/14 13:46:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,6 +9,8 @@ phpVirtualBox has been installed into:
 
 Configuration is done in:
     ${INSTDIR}/config.php
+When not using httpd(8), ensure that the HTTP server user (and only it)
+can read this file.
 
 Default username/password is: admin/admin
 
@@ -16,7 +18,7 @@ VirtualBox configuration on Linux Red Hat(-like) systems
 ========================================================
 
 Official documentation is available at:
-  http://code.google.com/p/phpvirtualbox/wiki/vboxwebServiceConfigLinux
+    http://sourceforge.net/p/phpvirtualbox/wiki/Home/
 
 phpVirtualBox user
 ------------------
@@ -35,19 +37,17 @@ Remote display support using VRDP requires the installation of the
 proprietary extension pack from Oracle.
 
 e.g.
-# su - vbox
-$ wget http://download.virtualbox.org/virtualbox/4.3.16/Oracle_VM_VirtualBox_Extension_Pack-4.3.16-95972.vbox-extpack
-$ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-4.3.16-95972.vbox-extpack
+# wget http://download.virtualbox.org/virtualbox/4.3.20/Oracle_VM_VirtualBox_Extension_Pack-4.3.20-96996.vbox-extpack
+# VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-4.3.20-96996.vbox-extpack
 
 VirtualBox web service
 ----------------------
 By default, the VirtualBox web service will not run and needs to be
 enabled.
 
-# chkconfig vboxweb-service on
-# echo "VBOXWEB_HOST=127.0.0.1" >> /etc/default/virtualbox
-# echo "VBOXWEB_USER=vbox" >> /etc/default/virtualbox
-# /etc/init.d/vboxweb-service start
+# echo "VBOXWEB_HOST=127.0.0.1" >>/etc/default/virtualbox
+# echo "VBOXWEB_USER=vbox" >>/etc/default/virtualbox
+# systemctl start vboxweb-service
 
 VBOXWEB_HOST is the local IP address the service will bind too. It must
 match the "$location" value set in ${INSTDIR}/config.php.
@@ -55,12 +55,4 @@ VBOXWEB_USER is the VirtualBox user that phpVirtualBox will use. It must
 match the "$username" value set in ${INSTDIR}/config.php.
 
 More info is available at:
-    http://code.google.com/p/phpvirtualbox/wiki/vboxwebServiceConfigLinux
-
-SELinux considerations
-----------------------
-When SELinux is enabled, the VirtualBox's web service port (18083) must
-be accessible by a service running in the http context.
-
-# yum install policycoreutils-python
-# semanage port -a -t http_port_t -p tcp 18083
+    http://sourceforge.net/p/phpvirtualbox/wiki/vboxweb-service%20Configuration%20in%20Linux/
