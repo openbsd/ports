@@ -1,0 +1,53 @@
+$OpenBSD: patch-time_unix_c,v 1.1.1.1 2015/01/14 21:38:32 naddy Exp $
+--- time_unix.c.orig	Sun Jan 11 20:44:54 2015
++++ time_unix.c	Tue Jan 13 20:06:31 2015
+@@ -38,7 +38,9 @@
+ #include <string.h>
+ #include <sys/time.h>
+ 
++#ifndef __OpenBSD__
+ #include <sys/timex.h>
++#endif
+ 
+ #include "ntimed.h"
+ 
+@@ -72,9 +74,30 @@ static struct todolist *kt_tdl;
+  * XXX: Requires TODO cancellation.
+  */
+ 
++#if defined(__OpenBSD__)
++
+ static void
+ kt_setfreq(struct ocx *ocx, double frequency)
+ {
++	int64_t freq;
++	int i;
++
++	assert(isfinite(frequency));
++
++	freq = frequency * 1e9 * (1LL << 32);
++	errno = 0;
++	i = adjfreq(&freq, NULL);
++	Put(ocx, OCX_TRACE, "KERNPLL %.6e %d\n", frequency, i);
++	/* XXX: what is the correct error test here ? */
++	assert(i >= 0);
++}
++
++
++#else
++
++static void
++kt_setfreq(struct ocx *ocx, double frequency)
++{
+ 	struct timex tx;
+ 	int i;
+ 
+@@ -97,6 +120,8 @@ kt_setfreq(struct ocx *ocx, double frequency)
+ 	/* XXX: what is the correct error test here ? */
+ 	assert(i >= 0);
+ }
++
++#endif
+ 
+ static enum todo_e __match_proto__(todo_f)
+ kt_ticker(struct ocx *ocx, struct todolist *tdl, void *priv)
