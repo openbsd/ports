@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.10 2015/01/12 21:47:13 landry Exp $
---- configure.ac.orig	Sat Dec 14 11:14:50 2013
-+++ configure.ac	Sun Jan 11 22:42:57 2015
+$OpenBSD: patch-configure_ac,v 1.11 2015/01/14 12:18:43 landry Exp $
+--- configure.ac.orig	Mon Oct 27 19:58:19 2014
++++ configure.ac	Mon Jan 12 23:00:19 2015
 @@ -152,7 +152,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
  
  if test "$GCC" = "yes"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2015/01/12 21:47:13 landry Exp $
  	#CFLAGS="-g -Wall -Wno-unused-function"
  fi
  
-@@ -494,6 +494,8 @@ dnl password encryption
+@@ -495,6 +495,8 @@ dnl password encryption
  OLDLIBS=$LIBS
  LIBS=
  case $host_os in
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2015/01/12 21:47:13 landry Exp $
  	*dragonfly*)
  		AC_SEARCH_LIBS(encrypt, cipher, [], AC_MSG_ERROR(['encrypt'-function not found.]))
  	;;
-@@ -737,6 +739,7 @@ if test x"$enable_new_addrbook" = xno; then
+@@ -738,6 +740,7 @@ if test x"$enable_new_addrbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2015/01/12 21:47:13 landry Exp $
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -809,7 +812,7 @@ if test x"$enable_new_addrbook" = xno; then
+@@ -810,7 +813,7 @@ if test x"$enable_new_addrbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  

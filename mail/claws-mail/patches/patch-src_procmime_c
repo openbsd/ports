@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_procmime_c,v 1.10 2014/04/21 17:40:19 sthen Exp $
+$OpenBSD: patch-src_procmime_c,v 1.11 2015/01/14 12:18:43 landry Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2641
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2642
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
---- src/procmime.c.orig	Sat Dec 14 10:15:01 2013
-+++ src/procmime.c	Mon Apr 21 18:40:02 2014
-@@ -616,10 +616,22 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
+--- src/procmime.c.orig	Mon Oct 27 19:58:13 2014
++++ src/procmime.c	Mon Jan 12 23:00:15 2015
+@@ -634,10 +634,22 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
  			g_free(tmp_file);
  		}
  	} else if (encoding == ENC_QUOTED_PRINTABLE) {
@@ -31,7 +31,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  
  			if (!strncmp("From ", outbuf, sizeof("From ")-1)) {
  				gchar *tmpbuf = outbuf;
-@@ -634,14 +646,39 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
+@@ -652,14 +664,39 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
  				if (SC_FPUTS(outbuf, outfp) == EOF)
  					err = TRUE;
  			}
@@ -75,7 +75,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  		}
  	}
  
-@@ -1182,7 +1219,7 @@ GList *procmime_get_mime_type_list(void)
+@@ -1203,7 +1240,7 @@ GList *procmime_get_mime_type_list(void)
  #endif
  	{
  		fp_is_glob_file = FALSE;
@@ -84,7 +84,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  			if ((fp = procmime_fopen(SYSCONFDIR "/mime.types", "rb")) 
  				== NULL) {
  				FILE_OP_ERROR(SYSCONFDIR "/mime.types", 
-@@ -1262,11 +1299,12 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1283,11 +1320,12 @@ EncodingType procmime_get_encoding_for_text_file(const
  {
  	FILE *fp;
  	guchar buf[BUFFSIZE];
@@ -98,7 +98,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  
  	if ((fp = procmime_fopen(file, "rb")) == NULL) {
  		FILE_OP_ERROR(file, "fopen");
-@@ -1278,11 +1316,27 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1299,11 +1337,27 @@ EncodingType procmime_get_encoding_for_text_file(const
  		gint i;
  
  		for (p = buf, i = 0; i < len; ++p, ++i) {
@@ -131,7 +131,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  			}
  		}
  		total_len += len;
-@@ -1296,15 +1350,20 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1317,15 +1371,20 @@ EncodingType procmime_get_encoding_for_text_file(const
  		octet_percentage = 0.0;
  
  	debug_print("procmime_get_encoding_for_text_file(): "

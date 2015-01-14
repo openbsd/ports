@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_messageview_c,v 1.3 2014/04/21 17:40:19 sthen Exp $
+$OpenBSD: patch-src_messageview_c,v 1.4 2015/01/14 12:18:43 landry Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
---- src/messageview.c.orig	Sat Dec 14 10:15:01 2013
-+++ src/messageview.c	Mon Apr 21 18:40:02 2014
-@@ -1004,8 +1004,9 @@ static gint disposition_notification_send(MsgInfo *msg
+--- src/messageview.c.orig	Mon Oct 27 19:58:12 2014
++++ src/messageview.c	Mon Jan 12 23:00:15 2015
+@@ -1005,8 +1005,9 @@ static gint disposition_notification_send(MsgInfo *msg
  		extract_address(orig_to);
  	}
  	if (msginfo->subject && *(msginfo->subject)) {

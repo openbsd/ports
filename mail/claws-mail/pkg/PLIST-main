@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2014/04/14 08:53:35 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2015/01/14 12:18:43 landry Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -36,6 +36,7 @@ include/claws-mail/addrselect.h
 include/claws-mail/advsearch.h
 include/claws-mail/alertpanel.h
 include/claws-mail/autofaces.h
+include/claws-mail/avatars.h
 include/claws-mail/browseldap.h
 include/claws-mail/claws-features.h
 include/claws-mail/codeconv.h
@@ -83,6 +84,7 @@ include/claws-mail/editvcard.h
 include/claws-mail/enriched.h
 include/claws-mail/etpan/
 include/claws-mail/etpan/etpan-errors.h
+include/claws-mail/etpan/etpan-ssl.h
 include/claws-mail/etpan/etpan-thread-manager-types.h
 include/claws-mail/etpan/etpan-thread-manager.h
 include/claws-mail/etpan/imap-thread.h
@@ -190,6 +192,7 @@ include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
 include/claws-mail/plugins/claws-mail/ical.h
 include/claws-mail/plugins/pgpcore/
+include/claws-mail/plugins/pgpcore/autocompletion.h
 include/claws-mail/plugins/pgpcore/passphrase.h
 include/claws-mail/plugins/pgpcore/pgp_utils.h
 include/claws-mail/plugins/pgpcore/pgp_viewer.h
@@ -278,6 +281,8 @@ lib/claws-mail/plugins/clamd.la
 lib/claws-mail/plugins/clamd.so
 lib/claws-mail/plugins/fetchinfo.la
 lib/claws-mail/plugins/fetchinfo.so
+lib/claws-mail/plugins/libravatar.la
+lib/claws-mail/plugins/libravatar.so
 lib/claws-mail/plugins/mailmbox.la
 lib/claws-mail/plugins/mailmbox.so
 lib/claws-mail/plugins/newmail.la
@@ -359,6 +364,7 @@ share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/LC_MESSAGES/claws-mail.mo
+share/locale/eo/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
@@ -370,6 +376,7 @@ share/locale/id_ID/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
 share/locale/ja/LC_MESSAGES/claws-mail.mo
 share/locale/lt/LC_MESSAGES/claws-mail.mo
+share/locale/nb/LC_MESSAGES/claws-mail.mo
 share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/01/12 21:47:13 landry Exp $
+# $OpenBSD: Makefile,v 1.75 2015/01/14 12:18:42 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,10 +10,7 @@ COMMENT-htmlviewer=	fancy htmlviewer plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.9.3
-REVISION=		1
-REVISION-htmlviewer=	2
-REVISION-main=		2
+V=			3.11.1
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -29,7 +26,7 @@ HOMEPAGE=		http://www.claws-mail.org/
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=claws-mail/}
 EXTRACT_SUFX=		.tar.bz2
 
 DIST_SUBDIR=		claws
@@ -58,16 +55,16 @@ WANTLIB += xcb-shm z
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb assuan c dbus-1 dbus-glib-1 enchant
 WANTLIB-main += gmp gnutls gpg-error gpgme hogweed nettle p11-kit perl
-WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-util xml2
+WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-util
 WANTLIB-main += canberra canberra-gtk notify ltdl ogg vorbis vorbisfile
 
 WANTLIB-gdata = ${WANTLIB}
 WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error nspr4
 WANTLIB-gdata += nss3 oauth p11-kit plc4 plds4 smime3 softokn3 soup-2.4
-WANTLIB-gdata += sqlite3 ssl3 xml2
+WANTLIB-gdata += sqlite3 ssl3 xml2 json-glib-1.0
 
 WANTLIB-htmlviewer =  ${WANTLIB}
-WANTLIB-htmlviewer += EGL GL ICE SM Xt dbus-1 enchant orc-0.4 gcrypt gpg-error
+WANTLIB-htmlviewer += EGL GL ICE SM Xt enchant gbm orc-0.4 gcrypt gpg-error
 WANTLIB-htmlviewer += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB-htmlviewer += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
 WANTLIB-htmlviewer += icudata icui18n icuuc javascriptcoregtk-1.0
@@ -192,6 +189,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/claws-mail-64x64.png ${PREFIX}/share/icons/hicolor/64x64/apps/claws-mail.png
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/128x128/apps
 	${INSTALL_DATA} ${WRKSRC}/claws-mail-128x128.png ${PREFIX}/share/icons/hicolor/128x128/apps/claws-mail.png
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${PREFIX}/share/applications/claws-mail.desktop
 	${INSTALL_DATA_DIR} ${PREFIX}/share/claws-mail/tools/kdeservicemenu
 .for i in ${TOOLS}
 	${INSTALL_DATA} ${WRKSRC}/tools/${i} \
