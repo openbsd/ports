@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/28 15:14:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/01/14 06:17:11 brad Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-bind \
 		--without-gnutls \
 		--without-openssl
+CONFIGURE_ENV=	ac_cv_prog_DOXYGEN=no
 
 NO_TEST=	Yes
 
