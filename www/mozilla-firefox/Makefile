@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.262 2014/12/06 16:55:32 landry Exp $
+# $OpenBSD: Makefile,v 1.263 2015/01/14 17:33:44 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	34.0
+MOZILLA_VERSION =	35.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION = 0
 
-SO_VERSION =	52.0
+SO_VERSION =	53.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
@@ -51,6 +50,9 @@ CONFIGURE_ARGS += --with-system-icu
 WANTLIB += icudata icui18n icuuc
 
 CONFIGURE_ARGS +=	--enable-gstreamer=1.0
+
+# bug 857628
+CONFIGURE_ARGS +=	--enable-pie
 
 # libxul doesnt link directly with gst but dlopens it at runtime
 # see content/media/gstreamer/GStreamerLoader.cpp

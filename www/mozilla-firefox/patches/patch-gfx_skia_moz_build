@@ -1,18 +1,17 @@
-$OpenBSD: patch-gfx_skia_moz_build,v 1.6 2014/12/09 16:49:22 landry Exp $
+$OpenBSD: patch-gfx_skia_moz_build,v 1.7 2015/01/14 17:33:44 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
---- gfx/skia/moz.build.orig	Tue Dec  9 07:20:42 2014
-+++ gfx/skia/moz.build	Tue Dec  9 07:20:17 2014
-@@ -869,7 +869,8 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
+--- gfx/skia/moz.build.orig	Thu Dec 11 23:35:29 2014
++++ gfx/skia/moz.build	Sun Dec 21 21:24:55 2014
+@@ -869,7 +869,7 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
              'trunk/src/opts/memset32_neon.S',
          ]
  
--if CONFIG['INTEL_ARCHITECTURE'] and (CONFIG['GNU_CC'] or CONFIG['CLANG_CL']):
-+if CONFIG['INTEL_ARCHITECTURE'] and (CONFIG['GNU_CC'] or CONFIG['CLANG_CL']) and \
-+   CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE4_1']:
+-if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] != 'WINNT':
++if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] != 'WINNT' and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSE4_1']:
      if CONFIG['CPU_ARCH'] == 'x86_64':
          SOURCES += [
              'trunk/src/opts/SkBlitRow_opts_SSE4_x64_asm.S',
-@@ -942,11 +943,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
+@@ -944,11 +944,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'windows':
  if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
      SOURCES['trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
      SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
@@ -23,7 +22,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
      SOURCES['trunk/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
      SOURCES['trunk/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
 -    SOURCES['trunk/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
-+    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE4_1']:
++    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSE4_1']:
 +        SOURCES['trunk/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
      SOURCES['trunk/src/opts/SkMorphology_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
      SOURCES['trunk/src/opts/SkUtils_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
