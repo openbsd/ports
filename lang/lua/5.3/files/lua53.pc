@@ -1,0 +1,11 @@
+version=${VERSION}
+prefix=${TRUEPREFIX}
+libdir=${TRUEPREFIX}/lib
+includedir=${TRUEPREFIX}/include/lua-5.3
+
+Name: Lua
+Description: An Extensible Extension Language
+Version: ${VERSION}
+Requires:
+Libs: -L${libdir} -llua5.3 -lm
+Cflags: -I${includedir}

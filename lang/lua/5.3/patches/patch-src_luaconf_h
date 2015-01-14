@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_luaconf_h,v 1.1.1.1 2015/01/14 20:06:36 jturner Exp $
+--- src/luaconf.h.orig	Mon Jan 12 14:06:50 2015
++++ src/luaconf.h	Mon Jan 12 14:07:04 2015
+@@ -58,7 +58,7 @@
+ #endif
+ 
+ 
+-#if defined(LUA_USE_LINUX)
++#if defined(LUA_USE_BSD) || defined(LUA_USE_LINUX)
+ #define LUA_USE_POSIX
+ #define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
+ #define LUA_USE_READLINE	/* needs some extra libraries */

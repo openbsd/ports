@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_lmathlib_c,v 1.1.1.1 2015/01/14 20:06:36 jturner Exp $
+--- src/lmathlib.c.orig	Mon Jan 12 14:06:55 2015
++++ src/lmathlib.c	Mon Jan 12 14:07:08 2015
+@@ -26,11 +26,11 @@
+ #if !defined(l_rand)		/* { */
+ #if defined(LUA_USE_POSIX)
+ #define l_rand()	random()
+-#define l_srand(x)	srandom(x)
++#define l_srand(x)	srandom_deterministic(x)
+ #define L_RANDMAX	2147483647	/* (2^31 - 1), following POSIX */
+ #else
+ #define l_rand()	rand()
+-#define l_srand(x)	srand(x)
++#define l_srand(x)	srand_deterministic(x)
+ #define L_RANDMAX	RAND_MAX
+ #endif
+ #endif				/* } */

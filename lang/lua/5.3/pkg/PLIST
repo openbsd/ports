@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/14 20:06:36 jturner Exp $
+@option no-default-conflict
+@conflict lua->=5.3,<5.4
+@bin bin/lua53
+@bin bin/luac53
+include/lua-5.3/
+include/lua-5.3/lauxlib.h
+include/lua-5.3/lua.h
+include/lua-5.3/lua.hpp
+include/lua-5.3/luaconf.h
+include/lua-5.3/lualib.h
+lib/liblua5.3.a
+@lib lib/liblua5.3.so.${LIBlua5.3_VERSION}
+lib/lua/
+lib/lua/5.3/
+lib/pkgconfig/lua53.pc
+@man man/man1/lua53.1
+@man man/man1/luac53.1
+share/lua/
+share/lua/5.3/
