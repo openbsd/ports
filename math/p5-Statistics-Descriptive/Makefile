@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/03 17:55:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/15 10:29:29 benoit Exp $
 
 COMMENT =		basic descriptive statistical functions
 
-DISTNAME =		Statistics-Descriptive-3.0607
+DISTNAME =		Statistics-Descriptive-3.0608
 CATEGORIES =		math
 
 # perl
@@ -12,6 +12,9 @@ MODULES =		cpan
 
 CONFIGURE_STYLE =	modbuild
 MODCPAN_EXAMPLES =	Yes
-MAKE_ENV+=		TEST_POD=Yes
+MAKE_ENV +=		TEST_POD=Yes
+
+RUN_DEPENDS =		devel/p5-List-MoreUtils
+TEST_DEPENDS +=		devel/p5-Test-TrailingSpace
 
 .include <bsd.port.mk>
