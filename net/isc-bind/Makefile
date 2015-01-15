@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2014/12/17 23:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/01/15 18:10:38 landry Exp $
 
 # XXX should we rename the rc script to either named.rc or isc_bind.rc ?
 # XXX how about also the package now we don't need to distinguish from the
 # XXX version in base?
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
+BROKEN-hppa =	uses json-c which requires atomic ops
 
 V=		9.10.1-P1
 REVISION=	0
