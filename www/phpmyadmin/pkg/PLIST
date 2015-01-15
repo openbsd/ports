@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2014/12/07 21:22:00 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.56 2015/01/15 18:50:28 giovanni Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -1244,6 +1244,9 @@ phpMyAdmin/locale/sk/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/sl/
 phpMyAdmin/locale/sl/LC_MESSAGES/
 phpMyAdmin/locale/sl/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/sq/
+phpMyAdmin/locale/sq/LC_MESSAGES/
+phpMyAdmin/locale/sq/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/sr@latin/
 phpMyAdmin/locale/sr@latin/LC_MESSAGES/
 phpMyAdmin/locale/sr@latin/LC_MESSAGES/phpmyadmin.mo
@@ -1273,6 +1276,10 @@ phpMyAdmin/prefs_manage.php
 phpMyAdmin/print.css
 phpMyAdmin/robots.txt
 phpMyAdmin/schema_export.php
+@comment phpMyAdmin/scripts/
+@comment phpMyAdmin/scripts/decode_bug.php
+@comment phpMyAdmin/scripts/line-counts.sh
+@comment phpMyAdmin/scripts/revision-info
 phpMyAdmin/server_binlog.php
 phpMyAdmin/server_collations.php
 phpMyAdmin/server_databases.php
