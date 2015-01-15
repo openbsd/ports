@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/13 11:47:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/15 22:41:38 kirby Exp $
 
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
-GH_COMMIT = 		d332e70458265db4c0856be7c208b8977e3dd0d0
+GH_COMMIT = 		a46c6c1c62bfb08a303f0c1a52fee824e5b279bf
 
 WANTLIB += QtDBus QtGui QtNetwork QtXml c ccnet crypto gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 jansson m pthread seafile searpc

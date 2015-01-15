@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/13 11:47:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2015/01/15 22:41:38 kirby Exp $
 
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
-GH_COMMIT = 		8bca42a29e944898c2be645e7c8a3d326f8c4084
+GH_COMMIT = 		6b8e8718825af85f481b7da61e919d848af2d56d
 
 SHARED_LIBS =		ccnet 0.0
 
