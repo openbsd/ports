@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/15 20:04:48 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/15 18:09:06 landry Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
+BROKEN-hppa =		undefined reference to `__sync_fetch_and_or_4'
 BROKEN-mips64 =		undefined reference to `__sync_fetch_and_or_4'
 BROKEN-mips64el =	undefined reference to `__sync_fetch_and_or_4'
 
