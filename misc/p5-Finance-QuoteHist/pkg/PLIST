@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/24 16:51:38 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/01/15 11:24:53 benoit Exp $
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/QuoteHist/
 ${P5SITE}/Finance/QuoteHist.pm
-${P5SITE}/Finance/QuoteHist/BusinessWeek.pm
 ${P5SITE}/Finance/QuoteHist/DailyFinance.pm
 ${P5SITE}/Finance/QuoteHist/Generic.pm
 ${P5SITE}/Finance/QuoteHist/Google.pm
@@ -11,7 +10,6 @@ ${P5SITE}/Finance/QuoteHist/Yahoo/
 ${P5SITE}/Finance/QuoteHist/Yahoo.pm
 ${P5SITE}/Finance/QuoteHist/Yahoo/Australia.pm
 @man man/man3p/Finance::QuoteHist.3p
-@man man/man3p/Finance::QuoteHist::BusinessWeek.3p
 @man man/man3p/Finance::QuoteHist::DailyFinance.3p
 @man man/man3p/Finance::QuoteHist::Generic.3p
 @man man/man3p/Finance::QuoteHist::Google.3p
