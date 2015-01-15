@@ -1,4 +1,4 @@
-$OpenBSD: patch-nspr_pr_src_linking_prlink_c,v 1.1 2013/06/23 18:36:50 landry Exp $
+$OpenBSD: patch-nspr_pr_src_linking_prlink_c,v 1.2 2015/01/15 21:50:19 landry Exp $
 If dlopen() fails, retry with everything stripped after .so
 https://bugzilla.mozilla.org/show_bug.cgi?id=650772
 --- nspr/pr/src/linking/prlink.c.orig	Tue May 28 23:39:29 2013
@@ -7,7 +7,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=650772
  #include <image.h>
  #endif
  
-+#if defined(OpenBSD)
++#if defined(OPENBSD)
 +#include <sys/param.h> /* for MAXPATHLEN */
 +#endif
 +
@@ -18,7 +18,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=650772
  #else
      int dl_flags = 0;
  #endif
-+#if defined(OpenBSD)
++#if defined(OPENBSD)
 +    char sname[MAXPATHLEN];
 +    char *c;
 +#endif
