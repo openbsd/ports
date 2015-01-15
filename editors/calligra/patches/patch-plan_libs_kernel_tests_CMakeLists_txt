@@ -1,0 +1,19 @@
+$OpenBSD: patch-plan_libs_kernel_tests_CMakeLists_txt,v 1.1 2015/01/15 18:13:52 dcoppa Exp $
+
+Rename some targets to avoid generating multiple ninja rules with
+the same name
+
+--- plan/libs/kernel/tests/CMakeLists.txt.orig	Sun Nov 30 08:02:20 2014
++++ plan/libs/kernel/tests/CMakeLists.txt	Thu Jan 15 09:35:44 2015
+@@ -73,9 +73,9 @@ target_link_libraries(ScheduleTester  ${KDE4_KDECORE_L
+ set(ProjectTester_SRCS ProjectTester.cpp )
+  
+  
+-kde4_add_unit_test(ProjectTester TESTNAME Plan-ProjectTester  ${ProjectTester_SRCS})
++kde4_add_unit_test(plan_ProjectTester TESTNAME Plan-ProjectTester  ${ProjectTester_SRCS})
+  
+-target_link_libraries(ProjectTester  ${KDE4_KDECORE_LIBS} planprivate kplatokernel kundo2 ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY})
++target_link_libraries(plan_ProjectTester  ${KDE4_KDECORE_LIBS} planprivate kplatokernel kundo2 ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY})
+  
+ 
+ ########### next target ###############

@@ -1,0 +1,26 @@
+$OpenBSD: patch-libs_kotext_tests_CMakeLists_txt,v 1.1 2015/01/15 18:13:52 dcoppa Exp $
+
+Rename some targets to avoid generating multiple ninja rules with
+the same name
+
+--- libs/kotext/tests/CMakeLists.txt.orig	Sun Nov 30 08:01:15 2014
++++ libs/kotext/tests/CMakeLists.txt	Thu Jan 15 09:43:23 2015
+@@ -15,8 +15,8 @@ target_link_libraries(TestBorder kotext  ${QT_QTTEST_L
+ ########### next target ###############
+ 
+ set(TestKoTableColumnAndRowStyleManager_test_SRCS TestKoTableColumnAndRowStyleManager.cpp)
+-kde4_add_unit_test(TestKoTableColumnAndRowStyleManager TESTNAME libs-kotext-KoTableColumnAndRowStyleManager ${TestKoTableColumnAndRowStyleManager_test_SRCS})
+-target_link_libraries(TestKoTableColumnAndRowStyleManager kotext  ${QT_QTTEST_LIBRARY})
++kde4_add_unit_test(kotext_TestKoTableColumnAndRowStyleManager TESTNAME libs-kotext-KoTableColumnAndRowStyleManager ${TestKoTableColumnAndRowStyleManager_test_SRCS})
++target_link_libraries(kotext_TestKoTableColumnAndRowStyleManager kotext  ${QT_QTTEST_LIBRARY})
+ 
+ ########### next target ###############
+ 
+@@ -39,5 +39,5 @@ target_link_libraries(TestKoBookmarkManager kotext  ${
+ ########### next target ###############
+ 
+ set(TestKoInlineTextObjectManager_test_SRCS TestKoInlineTextObjectManager.cpp)
+-kde4_add_unit_test(TestKoInlineTextObjectManager TESTNAME libs-kotext-TestKoInlineTextObjectManager  ${TestKoInlineTextObjectManager_test_SRCS})
+-target_link_libraries(TestKoInlineTextObjectManager kotext  ${QT_QTTEST_LIBRARY})
++kde4_add_unit_test(kotext_TestKoInlineTextObjectManager TESTNAME libs-kotext-TestKoInlineTextObjectManager  ${TestKoInlineTextObjectManager_test_SRCS})
++target_link_libraries(kotext_TestKoInlineTextObjectManager kotext  ${QT_QTTEST_LIBRARY})

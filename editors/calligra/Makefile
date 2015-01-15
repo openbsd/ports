@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/23 13:45:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/15 18:13:52 dcoppa Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
@@ -161,6 +161,9 @@ CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
+
+# XXX Silently ignore non-existent dependencies
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0046=OLD
 
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11
