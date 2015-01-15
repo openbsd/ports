@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2014/12/30 21:50:24 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2015/01/15 02:55:22 daniel Exp $
+
+BROKEN-alpha =	numpy/linalg/umath_linalg.c.src:3231: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.8.2
-BROKEN-alpha =	numpy/linalg/umath_linalg.c.src:3231: internal compiler error: in extract_insn, at recog.c:2077
-REVISION=		0
+REVISION=		1
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -17,7 +18,7 @@ MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		blas m lapack ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
+WANTLIB=		blas lapack m pthread ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
 
@@ -37,12 +38,6 @@ MODFORTRAN_COMPILER =	g77
 BUILD_DEPENDS = ${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=            math/lapack \
 			${MODFORTRAN_LIB_DEPENDS}
-
-# XXX Segmentation fault on powerpc when building py-scipy:
-# remove '-funroll-loops'
-.if ${MACHINE_ARCH} == "powerpc"
-PATCH_LIST=	patch-* powerpc-patch-numpy_distutils_fcompiler_gnu_py
-.endif
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg

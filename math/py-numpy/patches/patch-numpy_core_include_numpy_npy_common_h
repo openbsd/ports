@@ -1,13 +1,61 @@
-$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.3 2014/09/17 00:46:13 daniel Exp $
+$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.4 2015/01/15 02:55:22 daniel Exp $
 
-py-numpy only checks for expl to determine whether extended-precision
+(1) optimize function attributes were added in gcc 4.4. Apply a fix for the warnings. But
+the next release of numpy should fix this in a better way. See:
+https://github.com/numpy/numpy/issues/5451
+
+Gets rid of these warnings from the build:
+numpy/core/src/multiarray/lowlevel_strided_loops.c.src:120: warning: 'optimize' attribute directive ignored
+
+(2) Backport fix for #5027: incorrect numpy.datetime64 on macppc. See:
+https://github.com/numpy/numpy/issues/5027
+
+(3) py-numpy only checks for expl to determine whether extended-precision
 support is present.  since we don't have it yet;  it implements
 it's own.  however, on alpha, powerpc, it declared functions with
 types that conflict with C99 (double for *l), therefore failed.
 
---- numpy/core/include/numpy/npy_common.h.orig	Sun Mar  2 09:04:27 2014
-+++ numpy/core/include/numpy/npy_common.h	Wed Mar 12 06:00:39 2014
-@@ -255,14 +255,8 @@ typedef unsigned char npy_bool;
+--- numpy/core/include/numpy/npy_common.h.orig	Tue Aug  5 14:04:19 2014
++++ numpy/core/include/numpy/npy_common.h	Wed Jan 14 00:33:33 2015
+@@ -7,6 +7,7 @@
+ #include <npy_config.h>
+ #endif
+ 
++#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ > 4)))
+ /*
+  * gcc does not unroll even with -O3
+  * use with care, unrolling on modern cpus rarely speeds things up
+@@ -17,6 +18,9 @@
+ #else
+ #define NPY_GCC_UNROLL_LOOPS
+ #endif
++#else
++#define NPY_GCC_UNROLL_LOOPS
++#endif
+ 
+ #if defined HAVE_XMMINTRIN_H && defined HAVE__MM_LOAD_PS
+ #define NPY_HAVE_SSE_INTRINSICS
+@@ -223,18 +227,9 @@ typedef unsigned PY_LONG_LONG npy_ulonglong;
+ #  ifdef _MSC_VER
+ #    define NPY_LONGLONG_FMT         "I64d"
+ #    define NPY_ULONGLONG_FMT        "I64u"
+-#  elif defined(__APPLE__) || defined(__FreeBSD__)
+-/*   "%Ld" only parses 4 bytes -- "L" is floating modifier on MacOS X/BSD */
++#  else
+ #    define NPY_LONGLONG_FMT         "lld"
+ #    define NPY_ULONGLONG_FMT        "llu"
+-/*
+-     another possible variant -- *quad_t works on *BSD, but is deprecated:
+-     #define LONGLONG_FMT   "qd"
+-     #define ULONGLONG_FMT   "qu"
+-*/
+-#  else
+-#    define NPY_LONGLONG_FMT         "Ld"
+-#    define NPY_ULONGLONG_FMT        "Lu"
+ #  endif
+ #  ifdef _MSC_VER
+ #    define NPY_LONGLONG_SUFFIX(x)   (x##i64)
+@@ -255,14 +250,8 @@ typedef unsigned char npy_bool;
  #define NPY_FALSE 0
  #define NPY_TRUE 1
  
