@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/15 13:11:59 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/15 01:28:06 daniel Exp $
 bin/fs-uae-launcher
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -1201,8 +1201,3 @@ lib/python${MODPY_VERSION}/site-packages/lhafile/tests/archive_lhaplus.lzh
 lib/python${MODPY_VERSION}/site-packages/lhafile/tests/archive_lhaunix_lh5.lzh
 lib/python${MODPY_VERSION}/site-packages/lhafile/tests/archive_lhaunix_lh6.lzh
 lib/python${MODPY_VERSION}/site-packages/lhafile/tests/archive_lhaunix_lh7.lzh
-lib/python${MODPY_VERSION}/site-packages/six/
-lib/python${MODPY_VERSION}/site-packages/six/__init__.py
-lib/python${MODPY_VERSION}/site-packages/six/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/six/six.py
-lib/python${MODPY_VERSION}/site-packages/six/six.pyc
