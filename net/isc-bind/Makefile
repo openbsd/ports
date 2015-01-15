@@ -1,14 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/15 18:10:38 landry Exp $
-
-# XXX should we rename the rc script to either named.rc or isc_bind.rc ?
-# XXX how about also the package now we don't need to distinguish from the
-# XXX version in base?
+# $OpenBSD: Makefile,v 1.35 2015/01/15 22:34:02 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
-BROKEN-hppa =	uses json-c which requires atomic ops
 
 V=		9.10.1-P1
-REVISION=	0
+REVISION=	1
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -31,7 +26,7 @@ HOMEPAGE=	http://www.isc.org/software/bind
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto json-c lzma m pthread xml2 z
+WANTLIB=	c crypto lzma m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
@@ -39,16 +34,18 @@ MODULES=	converters/libiconv \
 		lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
 MODPY_RUNDEP=	No
-LIB_DEPENDS=	devel/json-c \
-		textproc/libxml
+LIB_DEPENDS=	textproc/libxml
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-newstats \
 		--enable-threads \
 		--with-libtool \
 		--with-python=${MODPY_BIN}
+
+# JSON stats support is build if json-c is found at build time; however this
+# breaks on hppa, so it's forcibly disabled at this time.
+CONFIGURE_ARGS+= --without-libjson
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 
