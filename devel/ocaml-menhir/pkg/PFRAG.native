@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2015/01/15 12:14:41 daniel Exp $
+lib/ocaml/menhirLib/menhirLib.cmx
+lib/ocaml/menhirLib/menhirLib.o
