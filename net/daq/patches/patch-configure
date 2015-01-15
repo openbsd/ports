@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2014/01/30 03:22:48 lteo Exp $
---- configure.orig	Tue Nov  5 16:10:24 2013
-+++ configure	Thu Jan 23 22:05:29 2014
-@@ -12806,12 +12806,20 @@ else
+$OpenBSD: patch-configure,v 1.5 2015/01/15 03:48:31 lteo Exp $
+--- configure.orig	Sat Sep 20 01:30:04 2014
++++ configure	Sat Oct 25 13:55:21 2014
+@@ -12977,12 +12977,20 @@ else
  
      #include <pcap.h>
      #include <string.h>
