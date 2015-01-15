@@ -1,38 +1,42 @@
-# $OpenBSD: Makefile,v 1.101 2015/01/13 18:00:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2015/01/15 21:39:36 kirby Exp $
 
-CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
+
 VERSION =		4.85
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
-			http://ftp.exim.org/pub/exim/exim4/old/ \
-			ftp://ftp.exim.org/pub/exim/exim4/ \
-			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/
+REVISION-main =		0
+
+CATEGORIES =		mail
 
 HOMEPAGE =		http://www.exim.org/
 
 # GPLv2+, with OpenSSL exemption
 PERMIT_PACKAGE_CDROM =   Yes
 
+cWANTLIB =		c m
+WANTLIB-main =		${WANTLIB} ${cWANTLIB} crypto perl ssl util pcre
+WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre
+
+MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
+			http://ftp.exim.org/pub/exim/exim4/old/ \
+			ftp://ftp.exim.org/pub/exim/exim4/ \
+			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/
+
+MODULES =		converters/libiconv
+LIB_DEPENDS-main =	${LIB_DEPENDS} devel/pcre
+RUN_DEPENDS-eximon =	${PKGPATH},-main
+LIB_DEPENDS-eximon =	devel/pcre
+
+MAKE_FLAGS +=		FULLECHO=
+
 PSEUDO_FLAVORS =	no_eximon
 FLAVORS =		mysql postgresql sqlite3 ldap sasl
 FLAVOR ?=
 MULTI_PACKAGES =	-main -eximon
-
-MODULES =		converters/libiconv
-LIB_DEPENDS-main =	${LIB_DEPENDS} devel/pcre
-cWANTLIB =		c m
-WANTLIB-main =		${WANTLIB} ${cWANTLIB} crypto perl ssl util pcre
-WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre
-RUN_DEPENDS-eximon =	${PKGPATH},-main
-LIB_DEPENDS-eximon =	devel/pcre
-
-USE_GROFF =		Yes
-NO_TEST =		Yes
 
 .include <bsd.port.arch.mk>
 
@@ -87,7 +91,7 @@ EXIM_MAKECAT +=		"EXTRALIBS_EXIM=${EXIM_EXTRA_LIBS}\n"
 EXIM_MAKECAT +=		"CFLAGS=${CFLAGS} ${EXIM_CFLAGS}\n"
 EXIM_MAKECAT +=		"INCLUDE=-I${LOCALBASE}/include\n"
 
-MAKE_FLAGS +=		FULLECHO=
+NO_TEST =		Yes
 
 do-configure:
 	@mkdir -p ${WRKSRC}/Local
