@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2014/11/28 10:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2015/01/15 08:34:44 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.61
+DISTNAME=	cups-filters-1.0.62
 CATEGORIES=	print
-REVISION=	2
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
 SHARED_LIBS +=  fontembed            0.0      # 1.0
@@ -18,10 +17,10 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3 - LGPLv2 - GPLv2+ - MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avahi-client avahi-common avahi-glib c crypto cups
-WANTLIB += cupsimage dbus-1 expat fontconfig freetype glib-2.0
-WANTLIB += ijs jpeg lcms2 m openjpeg pcre png poppler pthread
-WANTLIB += pthread-stubs qpdf ssl tiff z
+WANTLIB += avahi-client avahi-common avahi-glib c cups cupsimage
+WANTLIB += dbus-1 expat ffi fontconfig freetype glib-2.0 gmp gnutls
+WANTLIB += hogweed ijs jpeg lcms2 m nettle openjpeg p11-kit pcre
+WANTLIB += png poppler pthread pthread-stubs qpdf tasn1 tiff z
 
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/08/21 07:30:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/01/15 08:34:45 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -58,7 +58,6 @@ libexec/cups/filter/texttops
 @man man/man5/cups-browsed.conf.5
 @man man/man8/cups-browsed.8
 @bin sbin/cups-browsed
-share/cups/
 share/cups/banners/
 share/cups/banners/classified
 share/cups/banners/confidential
