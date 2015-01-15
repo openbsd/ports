@@ -1,33 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/11 18:25:37 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/01/15 15:47:05 abieber Exp $
 @bin bin/task
-@bin bin/tasksh
 @man man/man1/task.1
-@man man/man1/tasksh.1
 @man man/man5/task-color.5
-@man man/man5/task-faq.5
 @man man/man5/task-sync.5
-@man man/man5/task-tutorial.5
 @man man/man5/taskrc.5
 share/taskwarrior/
 share/taskwarrior/AUTHORS
+@comment share/taskwarrior/README
 @comment share/taskwarrior/COPYING
 @comment share/taskwarrior/ChangeLog
 @comment share/taskwarrior/INSTALL
 @comment share/taskwarrior/NEWS
-@comment share/taskwarrior/README
-share/taskwarrior/i18n/
-share/taskwarrior/i18n/tips.de-DE
-share/taskwarrior/i18n/tips.en-US
-share/taskwarrior/i18n/tips.es-ES
-share/taskwarrior/i18n/tips.fr-FR
-share/taskwarrior/i18n/tips.it-IT
-share/taskwarrior/i18n/tips.ja-JP
-share/taskwarrior/i18n/tips.sv-SE
+share/taskwarrior/README.md
 share/taskwarrior/rc/
 share/taskwarrior/rc/dark-16.theme
 share/taskwarrior/rc/dark-256.theme
 share/taskwarrior/rc/dark-blue-256.theme
 share/taskwarrior/rc/dark-gray-256.theme
+share/taskwarrior/rc/dark-gray-blue-256.theme
 share/taskwarrior/rc/dark-green-256.theme
 share/taskwarrior/rc/dark-red-256.theme
 share/taskwarrior/rc/dark-violets-256.theme
@@ -36,20 +26,46 @@ share/taskwarrior/rc/holidays.be-BY.rc
 share/taskwarrior/rc/holidays.cs-CZ.rc
 share/taskwarrior/rc/holidays.da-DK.rc
 share/taskwarrior/rc/holidays.de-AT.rc
+share/taskwarrior/rc/holidays.de-BE.rc
+share/taskwarrior/rc/holidays.de-CH.rc
 share/taskwarrior/rc/holidays.de-DE.rc
+share/taskwarrior/rc/holidays.el-GR.rc
+share/taskwarrior/rc/holidays.en-AU.rc
 share/taskwarrior/rc/holidays.en-CA.rc
 share/taskwarrior/rc/holidays.en-GB.rc
+share/taskwarrior/rc/holidays.en-GL.rc
+share/taskwarrior/rc/holidays.en-HK.rc
 share/taskwarrior/rc/holidays.en-NZ.rc
 share/taskwarrior/rc/holidays.en-US.rc
+share/taskwarrior/rc/holidays.en-ZA.rc
 share/taskwarrior/rc/holidays.es-ES.rc
+share/taskwarrior/rc/holidays.es-MX.rc
+share/taskwarrior/rc/holidays.es-US.rc
+share/taskwarrior/rc/holidays.et-EE.rc
+share/taskwarrior/rc/holidays.fi-FI.rc
+share/taskwarrior/rc/holidays.fr-BE.rc
 share/taskwarrior/rc/holidays.fr-FR.rc
+share/taskwarrior/rc/holidays.ga-IE.rc
+share/taskwarrior/rc/holidays.hr-HR.rc
+share/taskwarrior/rc/holidays.is-IS.rc
 share/taskwarrior/rc/holidays.it-IT.rc
 share/taskwarrior/rc/holidays.jp-JP.rc
+share/taskwarrior/rc/holidays.lt-LT.rc
+share/taskwarrior/rc/holidays.lv-LV.rc
 share/taskwarrior/rc/holidays.nb-NO.rc
+share/taskwarrior/rc/holidays.nb-SJ.rc
+share/taskwarrior/rc/holidays.nl-BE.rc
 share/taskwarrior/rc/holidays.nl-NL.rc
+share/taskwarrior/rc/holidays.pl-PL.rc
+share/taskwarrior/rc/holidays.por-PRT.rc
+share/taskwarrior/rc/holidays.pt-BR.rc
+share/taskwarrior/rc/holidays.pt-PT.rc
+share/taskwarrior/rc/holidays.ru-RU.rc
 share/taskwarrior/rc/holidays.sv-SE.rc
+share/taskwarrior/rc/holidays.tr-TR.rc
 share/taskwarrior/rc/light-16.theme
 share/taskwarrior/rc/light-256.theme
+share/taskwarrior/rc/no-color.theme
 share/taskwarrior/rc/refresh
 share/taskwarrior/rc/solarized-dark-256.theme
 share/taskwarrior/rc/solarized-light-256.theme
@@ -69,9 +85,20 @@ share/taskwarrior/scripts/add-ons/import-todo.sh.pl
 share/taskwarrior/scripts/add-ons/import-yaml.pl
 share/taskwarrior/scripts/add-ons/update-holidays.pl
 share/taskwarrior/scripts/bash/
+share/taskwarrior/scripts/bash/context
+share/taskwarrior/scripts/bash/focus
 share/taskwarrior/scripts/bash/task.sh
+share/taskwarrior/scripts/bash/task_functions.sh
 share/taskwarrior/scripts/fish/
 share/taskwarrior/scripts/fish/task.fish
+share/taskwarrior/scripts/hooks/
+share/taskwarrior/scripts/hooks/README
+share/taskwarrior/scripts/hooks/on-add
+share/taskwarrior/scripts/hooks/on-add.the
+share/taskwarrior/scripts/hooks/on-exit
+share/taskwarrior/scripts/hooks/on-exit.shadow-file
+share/taskwarrior/scripts/hooks/on-launch
+share/taskwarrior/scripts/hooks/on-modify
 share/taskwarrior/scripts/vim/
 share/taskwarrior/scripts/vim/README
 share/taskwarrior/scripts/vim/ftdetect/
