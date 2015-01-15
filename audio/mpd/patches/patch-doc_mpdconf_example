@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.13 2014/11/12 08:46:02 dcoppa Exp $
---- doc/mpdconf.example.orig	Mon Oct 27 09:26:34 2014
-+++ doc/mpdconf.example	Wed Nov 12 08:26:18 2014
+$OpenBSD: patch-doc_mpdconf_example,v 1.14 2015/01/15 08:15:14 dcoppa Exp $
+--- doc/mpdconf.example.orig	Thu Dec  4 14:06:38 2014
++++ doc/mpdconf.example	Thu Jan 15 02:08:15 2015
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -27,7 +27,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.13 2014/11/12 08:46:02 dcoppa Exp $
  # 
  # These settings are the locations for the daemon log files for the daemon.
  # These logs are great for troubleshooting, depending on your log_level
-@@ -34,20 +34,20 @@
+@@ -34,25 +34,25 @@
  # The special value "syslog" makes MPD use the local syslog daemon. This
  # setting defaults to logging to syslog, otherwise logging is disabled.
  #
@@ -51,6 +51,12 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.13 2014/11/12 08:46:02 dcoppa Exp $
  #
  # The location of the sticker database.  This is a database which
  # manages dynamic information attached to songs.
+ #
+-#sticker_file			"~/.mpd/sticker.sql"
++sticker_file			"/var/spool/mpd/sticker.sql"
+ #
+ ###############################################################################
+ 
 @@ -64,7 +64,7 @@
  # initialization. This setting is disabled by default and MPD is run as the
  # current user.
