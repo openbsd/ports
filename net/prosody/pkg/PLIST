@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/23 17:59:01 jca Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/01/15 11:13:21 edd Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
-%%SHARED%%
 lib/prosody/
 lib/prosody/core/
 lib/prosody/core/certmanager.lua
@@ -92,6 +91,10 @@ lib/prosody/net/server_event.lua
 lib/prosody/net/server_select.lua
 lib/prosody/prosody.version
 lib/prosody/util/
+lib/prosody/util/encodings.so
+lib/prosody/util/hashes.so
+lib/prosody/util/pposix.so
+lib/prosody/util/signal.so
 lib/prosody/util/adhoc.lua
 lib/prosody/util/array.lua
 lib/prosody/util/caps.lua
@@ -157,8 +160,12 @@ share/examples/prosody/certs/example.com.key
 share/examples/prosody/certs/localhost.cnf
 share/examples/prosody/certs/localhost.crt
 @sample ${SYSCONFDIR}/prosody/certs/localhost.crt
+@mode 400
+@owner _prosody
 share/examples/prosody/certs/localhost.key
 @sample ${SYSCONFDIR}/prosody/certs/localhost.key
+@mode
+@owner
 share/examples/prosody/certs/openssl.cnf
 @sample ${SYSCONFDIR}/prosody/certs/openssl.cnf
 share/examples/prosody/prosody.cfg.lua
