@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/09 12:36:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/16 00:35:14 jca Exp $
 @bin bin/gitsh
 @man man/man1/gitsh.1
 share/gitsh/
@@ -120,9 +120,17 @@ share/gitsh/gems/setup.rb
 share/gitsh/ruby/
 share/gitsh/ruby/gitsh/
 share/gitsh/ruby/gitsh.rb
+share/gitsh/ruby/gitsh/argument_builder.rb
+share/gitsh/ruby/gitsh/argument_list.rb
+share/gitsh/ruby/gitsh/arguments/
+share/gitsh/ruby/gitsh/arguments/composite_argument.rb
+share/gitsh/ruby/gitsh/arguments/string_argument.rb
+share/gitsh/ruby/gitsh/arguments/variable_argument.rb
 share/gitsh/ruby/gitsh/cli.rb
 share/gitsh/ruby/gitsh/colors.rb
 share/gitsh/ruby/gitsh/commands/
+share/gitsh/ruby/gitsh/commands/error_handler.rb
+share/gitsh/ruby/gitsh/commands/factory.rb
 share/gitsh/ruby/gitsh/commands/git_command.rb
 share/gitsh/ruby/gitsh/commands/internal_command.rb
 share/gitsh/ruby/gitsh/commands/noop.rb
@@ -130,6 +138,7 @@ share/gitsh/ruby/gitsh/commands/shell_command.rb
 share/gitsh/ruby/gitsh/commands/tree.rb
 share/gitsh/ruby/gitsh/completer.rb
 share/gitsh/ruby/gitsh/environment.rb
+share/gitsh/ruby/gitsh/error.rb
 share/gitsh/ruby/gitsh/exit_statuses.rb
 share/gitsh/ruby/gitsh/git_repository.rb
 share/gitsh/ruby/gitsh/history.rb
@@ -139,6 +148,7 @@ share/gitsh/ruby/gitsh/magic_variables.rb
 share/gitsh/ruby/gitsh/module_delegator.rb
 share/gitsh/ruby/gitsh/parser.rb
 share/gitsh/ruby/gitsh/program_name.rb
+share/gitsh/ruby/gitsh/prompt_color.rb
 share/gitsh/ruby/gitsh/prompter.rb
 share/gitsh/ruby/gitsh/readline_blank_filter.rb
 share/gitsh/ruby/gitsh/script_runner.rb
