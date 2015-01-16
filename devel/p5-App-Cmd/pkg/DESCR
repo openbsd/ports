@@ -1,0 +1,4 @@
+App::Cmd is a set of tools designed to make it simple to write
+sophisticated command line programs. It handles commands with multiple
+subcommands, generates usage text, validates options, and lets you write
+your program as easy-to-test classes.

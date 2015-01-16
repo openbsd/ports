@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/16 13:51:37 benoit Exp $
+${P5SITE}/App/
+${P5SITE}/App/Cmd/
+${P5SITE}/App/Cmd.pm
+${P5SITE}/App/Cmd/ArgProcessor.pm
+${P5SITE}/App/Cmd/Command/
+${P5SITE}/App/Cmd/Command.pm
+${P5SITE}/App/Cmd/Command/commands.pm
+${P5SITE}/App/Cmd/Command/help.pm
+${P5SITE}/App/Cmd/Command/version.pm
+${P5SITE}/App/Cmd/Plugin.pm
+${P5SITE}/App/Cmd/Setup.pm
+${P5SITE}/App/Cmd/Simple.pm
+${P5SITE}/App/Cmd/Subdispatch/
+${P5SITE}/App/Cmd/Subdispatch.pm
+${P5SITE}/App/Cmd/Subdispatch/DashedStyle.pm
+${P5SITE}/App/Cmd/Tester/
+${P5SITE}/App/Cmd/Tester.pm
+${P5SITE}/App/Cmd/Tester/CaptureExternal.pm
+${P5SITE}/App/Cmd/Tutorial.pod
+@man man/man3p/App::Cmd.3p
+@man man/man3p/App::Cmd::ArgProcessor.3p
+@man man/man3p/App::Cmd::Command.3p
+@man man/man3p/App::Cmd::Command::commands.3p
+@man man/man3p/App::Cmd::Command::help.3p
+@man man/man3p/App::Cmd::Command::version.3p
+@man man/man3p/App::Cmd::Plugin.3p
+@man man/man3p/App::Cmd::Setup.3p
+@man man/man3p/App::Cmd::Simple.3p
+@man man/man3p/App::Cmd::Subdispatch.3p
+@man man/man3p/App::Cmd::Subdispatch::DashedStyle.3p
+@man man/man3p/App::Cmd::Tester.3p
+@man man/man3p/App::Cmd::Tester::CaptureExternal.3p
+@man man/man3p/App::Cmd::Tutorial.3p
