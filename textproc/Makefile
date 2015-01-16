@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2015/01/10 17:35:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.433 2015/01/16 14:40:53 benoit Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -210,6 +210,7 @@
      SUBDIR += p5-Template-Plugin-Number-Format
      SUBDIR += p5-Template-Provider-Encoding
      SUBDIR += p5-Template-Timer
+     SUBDIR += p5-Template-Tiny
      SUBDIR += p5-Text-vCard
      SUBDIR += p5-Text-ASCIIMathML
      SUBDIR += p5-Text-Affixes
