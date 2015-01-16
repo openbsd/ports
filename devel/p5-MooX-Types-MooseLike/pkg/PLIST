@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/16 19:40:15 benoit Exp $
+${P5SITE}/MooX/
+${P5SITE}/MooX/Types/
+${P5SITE}/MooX/Types/MooseLike/
+${P5SITE}/MooX/Types/MooseLike.pm
+${P5SITE}/MooX/Types/MooseLike/Base.pm
+@man man/man3p/MooX::Types::MooseLike.3p
+@man man/man3p/MooX::Types::MooseLike::Base.3p
