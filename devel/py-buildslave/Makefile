@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/09/16 10:02:29 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/16 19:09:10 landry Exp $
 
 COMMENT=	buildslave for the buildbot CI system
 
-MODPY_EGG_VERSION=	0.8.8
+MODPY_EGG_VERSION=	0.8.10
 DISTNAME=	buildbot-slave-${MODPY_EGG_VERSION}
 PKGNAME=	py-buildslave-${MODPY_EGG_VERSION:S/p/pl/}
 
@@ -15,7 +15,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	https://buildbot.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_PYPI:=b/buildbot-slave/}
 
 MODULES=	lang/python
 

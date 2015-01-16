@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/09/16 10:02:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/01/16 19:09:10 landry Exp $
 @newgroup _buildslave:674
 @newuser _buildslave:674:_buildslave:daemon:BuildBot slave daemon:${HOMEDIR}:/sbin/nologin
 bin/buildslave
@@ -71,12 +71,20 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/base.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/base.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/create_slave.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/create_slave.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/logwatcher.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/logwatcher.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/restart.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/restart.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/runner.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/runner.pyc
-lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/startup.py
-lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/startup.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/start.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/start.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/stop.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/stop.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/upgrade_slave.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/upgrade_slave.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/__init__.pyc
@@ -134,8 +142,18 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_runprocess.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_runprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_base.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_base.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_create_slave.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_create_slave.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_restart.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_restart.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_runner.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_runner.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_start.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_start.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_stop.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_stop.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_upgrade_slave.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_upgrade_slave.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_util.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/
