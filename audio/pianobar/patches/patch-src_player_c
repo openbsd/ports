@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_player_c,v 1.18 2015/01/16 09:23:42 dcoppa Exp $
+
+commit d888d0ac2aeb233deeb70aaca196453f8195e433
+Author: Cody <codyschuyler@gmail.com>
+Date:   Sat Oct 25 11:22:33 2014 -0700
+
+Use default channel layout if zero
+
+libav 11 reports an invalid channel layout for mp3 files. This is a
+work-around. The problem is fixed with libav 11.1.
+
+--- src/player.c.orig	Fri Jan 16 03:16:14 2015
++++ src/player.c	Fri Jan 16 03:16:21 2015
+@@ -216,6 +216,13 @@ static bool openFilter (player_t * const player) {
+ 
+ 	/* abuffer */
+ 	AVRational time_base = player->st->time_base;
++
++	/* Workaround for a bug in libav-11, which reports an invalid channel
++	 * layout mp3 files */
++	if (cctx->channel_layout == 0) {
++		cctx->channel_layout = av_get_default_channel_layout (cctx->channels);
++	}
++
+ 	snprintf (strbuf, sizeof (strbuf),
+ 			"time_base=%d/%d:sample_rate=%d:sample_fmt=%s:channel_layout=0x%"PRIx64, 
+ 			time_base.num, time_base.den, cctx->sample_rate,
