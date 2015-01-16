@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/30 21:50:25 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/16 15:02:23 sthen Exp $
 
 COMMENT =		extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
 
 V =		1.8.0
 JV =		20140604
+REVISION =	0
 
 # when jumbo1 is out, use JV=1 and change PKGNAME to use pl${JV} not pre${JV}
 GH_ACCOUNT =	magnumripper
