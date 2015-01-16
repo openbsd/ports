@@ -1,0 +1,11 @@
+$OpenBSD: patch-ftpsesame_c,v 1.1 2015/01/16 19:29:02 sthen Exp $
+--- ftpsesame.c.orig	Fri Jan 16 19:28:21 2015
++++ ftpsesame.c	Fri Jan 16 19:28:31 2015
+@@ -34,6 +34,7 @@
+ #include <errno.h>
+ #include <pcap.h>
+ #include <pwd.h>
++#include <signal.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <stdlib.h>
