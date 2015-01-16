@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/12/14 17:04:50 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/01/16 09:51:18 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -1320,9 +1320,6 @@ lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Russian.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Russian.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoAppointmentFolders.toolbar
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoAppointmentObject.toolbar
-lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoAppointmentObjectAccept.toolbar
-lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoAppointmentObjectAcceptOrDecline.toolbar
-lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoAppointmentObjectDecline.toolbar
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoComponentClose.toolbar
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoEmpty.toolbar
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/SOGoTaskObject.toolbar
