@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/01/07 09:57:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/01/16 13:19:48 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/auth/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/auth/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/auth/auto.py
 lib/python${MODPY_VERSION}/site-packages/salt/auth/auto.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/auth/django.py
+lib/python${MODPY_VERSION}/site-packages/salt/auth/django.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/auth/keystone.py
 lib/python${MODPY_VERSION}/site-packages/salt/auth/keystone.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/auth/ldap.py
@@ -188,6 +190,17 @@ lib/python${MODPY_VERSION}/site-packages/salt/daemons/masterapi.py
 lib/python${MODPY_VERSION}/site-packages/salt/daemons/masterapi.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/daemons/salting.py
 lib/python${MODPY_VERSION}/site-packages/salt/daemons/salting.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_master.py
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_master.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_minion.py
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_minion.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_raetkey.py
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_raetkey.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_saltkeep.py
+lib/python${MODPY_VERSION}/site-packages/salt/daemons/test/test_saltkeep.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/salt/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/exitcodes.py
@@ -195,6 +208,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/exitcodes.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/
 lib/python${MODPY_VERSION}/site-packages/salt/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/ext/six.py
+lib/python${MODPY_VERSION}/site-packages/salt/ext/six.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/fileclient.py
 lib/python${MODPY_VERSION}/site-packages/salt/fileclient.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/fileserver/
@@ -683,7 +698,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/twilio_notify.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/upstart.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/upstart.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/useradd.py
-lib/python${MODPY_VERSION}/site-packages/salt/modules/useradd.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/uwsgi.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/uwsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/varnish.py
@@ -863,6 +877,11 @@ lib/python${MODPY_VERSION}/site-packages/salt/proxy/junos.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/junos.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/rest_sample.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/rest_sample.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/queues/
+lib/python${MODPY_VERSION}/site-packages/salt/queues/__init__.py
+lib/python${MODPY_VERSION}/site-packages/salt/queues/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/queues/sqlite_queue.py
+lib/python${MODPY_VERSION}/site-packages/salt/queues/sqlite_queue.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/renderers/
 lib/python${MODPY_VERSION}/site-packages/salt/renderers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/renderers/__init__.pyc
@@ -993,6 +1012,11 @@ lib/python${MODPY_VERSION}/site-packages/salt/runners/winrepo.py
 lib/python${MODPY_VERSION}/site-packages/salt/runners/winrepo.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/scripts.py
 lib/python${MODPY_VERSION}/site-packages/salt/scripts.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/sdb/
+lib/python${MODPY_VERSION}/site-packages/salt/sdb/__init__.py
+lib/python${MODPY_VERSION}/site-packages/salt/sdb/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/sdb/keyring_db.py
+lib/python${MODPY_VERSION}/site-packages/salt/sdb/keyring_db.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/search/
 lib/python${MODPY_VERSION}/site-packages/salt/search/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/search/__init__.pyc
@@ -1041,6 +1065,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/boto_secgroup.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/boto_secgroup.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/boto_sqs.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/boto_sqs.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/states/chef.py
+lib/python${MODPY_VERSION}/site-packages/salt/states/chef.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/cloud.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/cloud.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/cmd.py
@@ -1472,7 +1498,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/wheel/pillar_roots.pyc
 @man man/man1/salt-ssh.1
 @man man/man1/salt-syndic.1
 @man man/man1/salt-unity.1
-@man man/man1/salt.1
 @man man/man7/salt.7
 share/examples/salt/
 @sample ${SYSCONFDIR}/salt/

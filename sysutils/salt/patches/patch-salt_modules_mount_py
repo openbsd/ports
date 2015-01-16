@@ -1,10 +1,10 @@
-$OpenBSD: patch-salt_modules_mount_py,v 1.4 2015/01/07 09:57:39 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_mount_py,v 1.5 2015/01/16 13:19:48 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527ba
 
---- salt/modules/mount.py.orig	Mon Nov  3 20:38:21 2014
-+++ salt/modules/mount.py	Wed Jan  7 10:34:31 2015
-@@ -115,6 +115,24 @@ def _active_mounts_solaris(ret):
+--- salt/modules/mount.py.orig	Wed Jan 14 19:38:21 2015
++++ salt/modules/mount.py	Fri Jan 16 13:45:13 2015
+@@ -121,6 +121,24 @@ def _active_mounts_solaris(ret):
      return ret
  
  
@@ -29,7 +29,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
  def active(extended=False):
      '''
      List the active mounts.
-@@ -130,6 +148,8 @@ def active(extended=False):
+@@ -136,6 +154,8 @@ def active(extended=False):
          _active_mounts_freebsd(ret)
      elif __grains__['os'] == 'Solaris':
          _active_mounts_solaris(ret)
@@ -38,7 +38,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
      else:
          if extended:
              try:
-@@ -387,13 +407,16 @@ def remount(name, device, mkmnt=False, fstype='', opts
+@@ -393,13 +413,16 @@ def remount(name, device, mkmnt=False, fstype='', opts
      mnts = active()
      if name in mnts:
          # The mount point is mounted, attempt to remount it with the given data
@@ -54,10 +54,10 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
 +            cmd = 'mount {0} {1} {2} '.format(args, device, name)
 +        else:
 +            cmd = 'mount -u {0} {1} {2} '.format(args, device, name)
-         out = __salt__['cmd.run_all'](cmd)
+         out = __salt__['cmd.run_all'](cmd, python_shell=False)
          if out['retcode']:
              return out['stderr']
-@@ -456,15 +479,28 @@ def swaps():
+@@ -462,15 +485,28 @@ def swaps():
          salt '*' mount.swaps
      '''
      ret = {}
@@ -93,39 +93,15 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
      return ret
  
  
-@@ -508,12 +544,34 @@ def swapoff(name):
+@@ -514,7 +550,10 @@ def swapoff(name):
      '''
      on_ = swaps()
      if name in on_:
--        __salt__['cmd.run']('swapoff {0}'.format(name))
+-        __salt__['cmd.run']('swapoff {0}'.format(name), python_shell=False)
 +        if __grains__['os'] != 'OpenBSD':
-+            __salt__['cmd.run']('swapoff {0}'.format(name))
++            __salt__['cmd.run']('swapoff {0}'.format(name), python_shell=False)
 +        else:
-+            __salt__['cmd.run']('swapctl -d {0}'.format(name))
++            __salt__['cmd.run']('swapctl -d {0}'.format(name), python_shell=False)
          on_ = swaps()
          if name in on_:
              return False
-         return True
-     return None
-+
-+
-+def is_mounted(name):
-+    '''
-+    .. versionadded:: 2014.7.0
-+
-+    Provide information if the path is mounted
-+
-+    CLI Example:
-+
-+    .. code-block:: bash
-+
-+        salt '*' mount.is_mounted /mnt/share
-+    '''
-+    active_ = active()
-+    if name in active_:
-+        return True
-+    else:
-+        return False
- 
- 
- def is_mounted(name):

@@ -1,10 +1,10 @@
-$OpenBSD: patch-salt_modules_useradd_py,v 1.5 2015/01/07 09:57:40 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_useradd_py,v 1.6 2015/01/16 13:19:48 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/9feb62718a19420054313898b78d36263fb6db7f
 https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c98
 
---- salt/modules/useradd.py.orig	Mon Nov  3 20:38:21 2014
-+++ salt/modules/useradd.py	Wed Jan  7 10:37:53 2015
+--- salt/modules/useradd.py.orig	Wed Jan 14 19:38:21 2015
++++ salt/modules/useradd.py	Fri Jan 16 14:12:43 2015
 @@ -29,7 +29,7 @@ __virtualname__ = 'user'
  
  def __virtual__():
@@ -97,7 +97,7 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
 +
      cmd.append(name)
  
-     ret = __salt__['cmd.run_all'](' '.join(cmd))
+     ret = __salt__['cmd.run_all'](cmd, python_shell=False)
 @@ -168,7 +194,7 @@ def delete(name, remove=False, force=False):
      if remove:
          cmd.append('-r')
@@ -110,34 +110,32 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
 @@ -295,7 +321,7 @@ def chhome(name, home, persist=False):
      if home == pre_info['home']:
          return True
-     cmd = 'usermod -d {0} '.format(home)
+     cmd = ['usermod', '-d', home]
 -    if persist:
 +    if persist and __grains__['kernel'] != 'OpenBSD':
-         cmd += ' -m '
-     cmd += name
-     __salt__['cmd.run'](cmd)
-@@ -322,9 +348,17 @@ def chgroups(name, groups, append=False):
+         cmd.append('-m')
+     cmd.append(name)
+     __salt__['cmd.run'](cmd, python_shell=False)
+@@ -322,9 +348,15 @@ def chgroups(name, groups, append=False):
      if ugrps == set(groups):
          return True
-     cmd = 'usermod '
+     cmd = ['usermod']
 -    if append:
--        cmd += '-a '
--    cmd += '-G "{0}" {1}'.format(','.join(groups), name)
+-        cmd.append('-a')
+-    cmd.extend(['-G', ','.join(groups), name])
 +    if __grains__['kernel'] != 'OpenBSD':
 +        if append:
-+            cmd += '-a '
++            cmd.append('-a')
++        cmd.extend(['-G', ','.join(groups), name])
 +    else:
 +        if append:
-+            cmd += '-G '
++            cmd.extend(['-G', ','.join(groups), name])
 +        else:
-+            cmd += '-S '
-+    if __grains__['kernel'] != 'OpenBSD':
-+        cmd += '-G '
-+    cmd += '"{0}" {1}'.format(','.join(groups), name)
-     cmdret = __salt__['cmd.run_all'](cmd)
++            cmd.extend(['-S', ','.join(groups), name])
+     cmdret = __salt__['cmd.run_all'](cmd, python_shell=False)
      ret = not cmdret['retcode']
      # try to fallback on gpasswd to add user to localgroups
-@@ -443,6 +477,29 @@ def chhomephone(name, homephone):
+@@ -443,6 +475,29 @@ def chhomephone(name, homephone):
      return False
  
  
@@ -167,7 +165,7 @@ https://github.com/saltstack/salt/commit/e7df337b5549309867e672ea3362f63b584d5c9
  def info(name):
      '''
      Return user information
-@@ -459,6 +516,29 @@ def info(name):
+@@ -459,6 +514,29 @@ def info(name):
          return {}
      else:
          return _format_info(data)

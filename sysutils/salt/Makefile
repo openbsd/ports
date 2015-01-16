@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/01/07 09:57:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2015/01/16 13:19:48 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -15,7 +15,7 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	2014.7.0
+MODPY_EGG_VERSION =	2014.7.1
 DISTNAME =		salt-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils net devel
@@ -32,7 +32,8 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=s/salt/}
 MODULES =		lang/python
 
 BUILD_DEPENDS =		textproc/py-yaml \
-			www/py-jinja2
+			www/py-jinja2 \
+			www/py-requests
 			
 RUN_DEPENDS =		net/py-msgpack \
 			net/py-zmq \

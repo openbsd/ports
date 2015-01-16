@@ -1,10 +1,10 @@
-$OpenBSD: patch-salt_modules_openbsdservice_py,v 1.4 2015/01/07 09:57:39 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_openbsdservice_py,v 1.5 2015/01/16 13:19:48 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/ea2be8bc7813ba2e2ddd05913783887513516c8c
 
---- salt/modules/openbsdservice.py.orig	Mon Nov  3 20:38:21 2014
-+++ salt/modules/openbsdservice.py	Wed Jan  7 10:33:06 2015
-@@ -27,8 +27,10 @@ def __virtual__():
+--- salt/modules/openbsdservice.py.orig	Wed Jan 14 19:38:21 2015
++++ salt/modules/openbsdservice.py	Fri Jan 16 13:29:58 2015
+@@ -30,8 +30,10 @@ def __virtual__():
          krel = map(int, __grains__['kernelrelease'].split('.'))
          # The -f flag, used to force a script to run even if disabled,
          # was added after the 5.0 release.

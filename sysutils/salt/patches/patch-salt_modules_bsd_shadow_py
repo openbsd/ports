@@ -1,11 +1,11 @@
-$OpenBSD: patch-salt_modules_bsd_shadow_py,v 1.4 2014/09/02 17:18:55 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_bsd_shadow_py,v 1.5 2015/01/16 13:19:48 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/2e4318132e53451658777924b66e0e38b7c7b0ac
 https://github.com/saltstack/salt/commit/af6f374db57fbbee8fceeadea7c50dcde833a40a
 
---- salt/modules/bsd_shadow.py.orig	Tue Jun 17 21:18:30 2014
-+++ salt/modules/bsd_shadow.py	Mon Sep  1 11:51:09 2014
-@@ -50,19 +50,73 @@ def info(name):
+--- salt/modules/bsd_shadow.py.orig	Wed Jan 14 19:38:21 2015
++++ salt/modules/bsd_shadow.py	Fri Jan 16 13:47:50 2015
+@@ -55,20 +55,74 @@ def info(name):
              'name': '',
              'passwd': ''}
  
@@ -13,15 +13,15 @@ https://github.com/saltstack/salt/commit/af6f374db57fbbee8fceeadea7c50dcde833a40
 -    # TODO: Implement this for NetBSD, OpenBSD
 +    cmd = ""
      if __salt__['cmd.has_exec']('pw'):
--        cmd = 'pw user show {0} | cut -f6,7 -d:'.format(name)
-+        cmd = 'pw user show {0}'.format(name)
+-        cmd = 'pw user show {0} | cut -f6,7 -d:'.format(_cmd_quote(name))
++        cmd = 'pw user show {0}'.format(_cmd_quote(name))
 +    elif __grains__['kernel'] in ('NetBSD', 'OpenBSD'):
-+        cmd = 'grep "^{0}:" /etc/master.passwd'.format(name)
++        cmd = 'grep "^{0}:" /etc/master.passwd'.format(_cmd_quote(name))
 +
 +    if cmd:
 +        cmd += '| cut -f6,7 -d:'
          try:
-             change, expire = __salt__['cmd.run_all'](cmd)['stdout'].split(':')
+             change, expire = __salt__['cmd.run_all'](cmd, python_shell=True)['stdout'].split(':')
          except ValueError:
              pass
          else:
@@ -31,7 +31,7 @@ https://github.com/saltstack/salt/commit/af6f374db57fbbee8fceeadea7c50dcde833a40
 +            ret['expire'] = int(expire)
  
      return ret
-+
+ 
 +
 +def set_change(name, change):
 +    '''
@@ -81,6 +81,7 @@ https://github.com/saltstack/salt/commit/af6f374db57fbbee8fceeadea7c50dcde833a40
 +    post_info = info(name)
 +    if post_info['expire'] != pre_info['expire']:
 +        return post_info['expire'] == expire
- 
++ 
  
  def set_password(name, password):
+     '''
