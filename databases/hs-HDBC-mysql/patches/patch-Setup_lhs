@@ -1,0 +1,20 @@
+$OpenBSD: patch-Setup_lhs,v 1.1 2015/01/16 19:49:36 kili Exp $
+
+Let this compile with Cabal-1.18. Fix borrowed from hs-HDBC-postgresql
+(but without the Cabal-1.16 compatibility hack).
+
+--- Setup.lhs.orig	Thu Aug 30 05:40:03 2012
++++ Setup.lhs	Fri Jan 16 20:35:59 2015
+@@ -27,9 +27,9 @@ main = defaultMainWithHooks simpleUserHooks {
+ }
+ 
+ mysqlConfigProgram = (simpleProgram "mysql_config") {
+-    programFindLocation = \verbosity -> do
+-      mysql_config  <- findProgramOnPath "mysql_config"  verbosity
+-      mysql_config5 <- findProgramOnPath "mysql_config5" verbosity
++    programFindLocation = \verbosity _ -> do
++      mysql_config  <- findProgramLocation verbosity "mysql_config"
++      mysql_config5 <- findProgramLocation verbosity "mysql_config5"
+       return (mysql_config `mplus` mysql_config5)
+   }
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/20 17:58:07 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/01/16 19:49:36 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/HDBC/
@@ -9,7 +9,6 @@ lib/ghc/${DISTNAME}/Database/HDBC/MySQL/Connection.hi
 lib/ghc/${DISTNAME}/Database/HDBC/MySQL/Connection.p_hi
 lib/ghc/${DISTNAME}/Database/HDBC/MySQL/RTS.hi
 lib/ghc/${DISTNAME}/Database/HDBC/MySQL/RTS.p_hi
-lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
