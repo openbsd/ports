@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1310 2015/01/16 13:55:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.1311 2015/01/16 15:06:52 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -961,6 +961,7 @@
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
      SUBDIR += p5-Safe-Hole
+     SUBDIR += p5-Safe-Isa
      SUBDIR += p5-Safe-World
      SUBDIR += p5-Scalar-Defer
      SUBDIR += p5-Scope-Guard
