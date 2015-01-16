@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.196 2015/01/16 18:24:57 landry Exp $
+# $OpenBSD: Makefile,v 1.197 2015/01/16 23:24:15 landry Exp $
 
-BROKEN-alpha=	{standard input}:1354: Error: unknown opcode `rmb'
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
