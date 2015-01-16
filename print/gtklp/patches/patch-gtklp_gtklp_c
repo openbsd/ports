@@ -1,0 +1,15 @@
+$OpenBSD: patch-gtklp_gtklp_c,v 1.1 2015/01/16 11:28:42 ajacoutot Exp $
+
+http://bugs.debian.org/644113
+
+--- gtklp/gtklp.c.orig	Wed Feb 26 20:31:06 2014
++++ gtklp/gtklp.c	Fri Jan 16 12:03:18 2015
+@@ -302,7 +302,7 @@ int main(int argc,char *argv[])
+ 			case '?':
+ 				if(calledGtkLP)
+ 				{
+-					g_print(str2str(_("Usage: gtklp [-P|-d printer] [-c configdir] [-S server] [-U user] [-p port] [-l] [-D] [-V] [-b] [-i] [-# n] [-C] [-H] [-E] [-J jobname] [-q priority] [-o option=value ...] [file(s)]\n")));
++					g_print("%s", str2str(_("Usage: gtklp [-P|-d printer] [-c configdir] [-S server] [-U user] [-p port] [-l] [-D] [-V] [-b] [-i] [-# n] [-C] [-H] [-E] [-J jobname] [-q priority] [-o option=value ...] [file(s)]\n")));
+ 				}
+ 				return(0);
+ 			break;

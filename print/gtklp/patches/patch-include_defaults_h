@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_defaults_h,v 1.6 2015/01/16 11:28:42 ajacoutot Exp $
+
+http://bugs.debian.org/422266
+
+--- include/defaults.h.orig	Wed Feb 26 20:31:06 2014
++++ include/defaults.h	Fri Jan 16 12:01:50 2015
+@@ -72,7 +72,7 @@
+ #define GTKLPRC_GLOBAL "gtklprc"
+ 
+ /* Constants */
+-#define DEF_PRN_LEN 50
++#define DEF_PRN_LEN 256
+ #define MAX_BANNER 20
+ #ifdef PATH_MAX
+ #  define MAXPATH PATH_MAX
