@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/15 12:14:41 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/16 09:20:47 daniel Exp $
 %%native%%
 @bin bin/menhir
 lib/ocaml/menhirLib/
@@ -13,8 +13,6 @@ share/doc/ocaml-menhir/demos/Makefile.auto
 share/doc/ocaml-menhir/demos/Makefile.shared
 share/doc/ocaml-menhir/demos/calc/
 share/doc/ocaml-menhir/demos/calc-incremental/
-share/doc/ocaml-menhir/demos/calc-incremental/.gitignore
-share/doc/ocaml-menhir/demos/calc-incremental/.gitignore~
 share/doc/ocaml-menhir/demos/calc-incremental/Makefile
 share/doc/ocaml-menhir/demos/calc-incremental/README
 share/doc/ocaml-menhir/demos/calc-incremental/_tags
@@ -22,7 +20,6 @@ share/doc/ocaml-menhir/demos/calc-incremental/calc.ml
 share/doc/ocaml-menhir/demos/calc-incremental/lexer.mll
 share/doc/ocaml-menhir/demos/calc-incremental/parser.mly
 share/doc/ocaml-menhir/demos/calc-param/
-share/doc/ocaml-menhir/demos/calc-param/.gitignore
 share/doc/ocaml-menhir/demos/calc-param/Makefile
 share/doc/ocaml-menhir/demos/calc-param/README
 share/doc/ocaml-menhir/demos/calc-param/calc.ml
@@ -30,7 +27,6 @@ share/doc/ocaml-menhir/demos/calc-param/lexer.mll
 share/doc/ocaml-menhir/demos/calc-param/parser.mly
 share/doc/ocaml-menhir/demos/calc-param/tokens.mly
 share/doc/ocaml-menhir/demos/calc-two/
-share/doc/ocaml-menhir/demos/calc-two/.gitignore
 share/doc/ocaml-menhir/demos/calc-two/Makefile
 share/doc/ocaml-menhir/demos/calc-two/README
 share/doc/ocaml-menhir/demos/calc-two/algebraic.mly
@@ -39,7 +35,6 @@ share/doc/ocaml-menhir/demos/calc-two/common.mly
 share/doc/ocaml-menhir/demos/calc-two/lexer.mll
 share/doc/ocaml-menhir/demos/calc-two/reverse.mly
 share/doc/ocaml-menhir/demos/calc-two/tokens.mly
-share/doc/ocaml-menhir/demos/calc/.gitignore
 share/doc/ocaml-menhir/demos/calc/Makefile
 share/doc/ocaml-menhir/demos/calc/README
 share/doc/ocaml-menhir/demos/calc/_tags

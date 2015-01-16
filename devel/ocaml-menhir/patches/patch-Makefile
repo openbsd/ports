@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2015/01/16 09:20:47 daniel Exp $
+--- Makefile.orig	Thu Jan 15 22:29:57 2015
++++ Makefile	Thu Jan 15 22:31:25 2015
+@@ -95,7 +95,7 @@ install:
+ 	mkdir -p $(libdir)
+ 	mkdir -p $(docdir)
+ 	mkdir -p $(mandir)
+-	install $(BUILDDIR)/menhir.native $(bindir)/$(MENHIREXE)
++	install $(BUILDDIR)/menhir.$(TARGET) $(bindir)/$(MENHIREXE)
+ 	install -m 644 $(MLYLIB) $(libdir)
+ 	cp -r $(DOCS) $(docdir)
+ 	cp -r $(MANS) $(mandir)
