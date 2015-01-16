@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/29 09:39:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/16 09:59:20 ajacoutot Exp $
+
+MODPY_EGG_VERSION =	3.2.1
 
 TRYTOND_MODULE =	account_stock_anglo_saxon
-REVISION =		0
 
 RUN_DEPENDS =		productivity/tryton/account_invoice \
 			productivity/tryton/account_product \

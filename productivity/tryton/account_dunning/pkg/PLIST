@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/28 08:53:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/16 09:59:20 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/__init__.pyc
@@ -22,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/party.x
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/scenario_account_dunning.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/test_account_dunning.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tests/test_account_dunning.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_dunning/tryton.cfg
