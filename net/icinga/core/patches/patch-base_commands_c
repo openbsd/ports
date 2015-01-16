@@ -1,0 +1,23 @@
+$OpenBSD: patch-base_commands_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
+--- base/commands.c.orig	Fri Jan 16 17:56:09 2015
++++ base/commands.c	Fri Jan 16 17:57:05 2015
+@@ -3963,7 +3963,7 @@ void disable_all_notifications_expire_time(int cmd, ch
+ 	/* log that we will expire disabled notifications */
+ 	tm = localtime_r(&disable_notifications_expire_time, &tm_s);
+ 	strftime(temp_time, 80, "%c", tm);
+-	logit(NSLOG_INFO_MESSAGE, TRUE, "Disabled Notifications will expire on %s (%lu).\n", temp_time, disable_notifications_expire_time);
++	logit(NSLOG_INFO_MESSAGE, TRUE, "Disabled Notifications will expire on %s (%lld).\n", temp_time, (long long)disable_notifications_expire_time);
+ }
+ 
+ /* enables notifications for a service */
+@@ -5551,8 +5551,8 @@ void process_passive_checks(void) {
+ 			fprintf(checkresult_file_fp, "scheduled_check=0\n");
+ 			fprintf(checkresult_file_fp, "reschedule_check=0\n");
+ 			fprintf(checkresult_file_fp, "latency=%f\n", temp_pcr->latency);
+-			fprintf(checkresult_file_fp, "start_time=%lu.%lu\n", temp_pcr->check_time, 0L);
+-			fprintf(checkresult_file_fp, "finish_time=%lu.%lu\n", temp_pcr->check_time, 0L);
++			fprintf(checkresult_file_fp, "start_time=%lld.%lu\n", (long long)temp_pcr->check_time, 0L);
++			fprintf(checkresult_file_fp, "finish_time=%lld.%lu\n", (long long)temp_pcr->check_time, 0L);
+ 			fprintf(checkresult_file_fp, "return_code=%d\n", temp_pcr->return_code);
+ 			/* newlines in output are already escaped */
+ 			fprintf(checkresult_file_fp, "output=%s\n", (temp_pcr->output == NULL) ? "" : temp_pcr->output);

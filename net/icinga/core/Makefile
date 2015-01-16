@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2014/11/21 14:06:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2015/01/16 18:07:53 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -63,8 +63,7 @@ CONFIGURE_ARGS += \
 	--enable-embedded-perl \
 	--enable-ssl
 
-CFLAGS +=	-fPIC \
-		-I${LOCALBASE}/include \
+CFLAGS +=	-Wformat -fPIC -I${LOCALBASE}/include \
 		-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 INSTALL_TARGET = install-unstripped install-idoutils install-config \

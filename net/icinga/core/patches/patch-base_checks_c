@@ -1,0 +1,79 @@
+$OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
+--- base/checks.c.orig	Fri Jan 16 17:52:14 2015
++++ base/checks.c	Fri Jan 16 17:55:52 2015
+@@ -683,7 +683,7 @@ int run_async_service_check(service *svc, int check_op
+ 		fprintf(check_result_info.output_file_fp, "scheduled_check=%d\n", check_result_info.scheduled_check);
+ 		fprintf(check_result_info.output_file_fp, "reschedule_check=%d\n", check_result_info.reschedule_check);
+ 		fprintf(check_result_info.output_file_fp, "latency=%f\n", svc->latency);
+-		fprintf(check_result_info.output_file_fp, "start_time=%lu.%lu\n", check_result_info.start_time.tv_sec, check_result_info.start_time.tv_usec);
++		fprintf(check_result_info.output_file_fp, "start_time=%lld.%lld\n", (long long)check_result_info.start_time.tv_sec, (long long)check_result_info.start_time.tv_usec);
+ 
+ 		/* flush output or it'll get written again when we fork() */
+ 		fflush(check_result_info.output_file_fp);
+@@ -774,7 +774,7 @@ int run_async_service_check(service *svc, int check_op
+ 			/* write check result to file */
+ 			if (check_result_info.output_file_fp) {
+ 
+-				fprintf(check_result_info.output_file_fp, "finish_time=%lu.%lu\n", check_result_info.finish_time.tv_sec, check_result_info.finish_time.tv_usec);
++				fprintf(check_result_info.output_file_fp, "finish_time=%lld.%lld\n", (long long)check_result_info.finish_time.tv_sec, (long long)check_result_info.finish_time.tv_usec);
+ 				fprintf(check_result_info.output_file_fp, "early_timeout=%d\n", check_result_info.early_timeout);
+ 				fprintf(check_result_info.output_file_fp, "exited_ok=%d\n", check_result_info.exited_ok);
+ 				fprintf(check_result_info.output_file_fp, "return_code=%d\n", check_result_info.return_code);
+@@ -914,7 +914,7 @@ int run_async_service_check(service *svc, int check_op
+ 				/* write check result to file */
+ 				if (check_result_info.output_file_fp) {
+ 
+-					fprintf(check_result_info.output_file_fp, "finish_time=%lu.%lu\n", check_result_info.finish_time.tv_sec, check_result_info.finish_time.tv_usec);
++					fprintf(check_result_info.output_file_fp, "finish_time=%lld.%lld\n", (long long)check_result_info.finish_time.tv_sec, (long long)check_result_info.finish_time.tv_usec);
+ 					fprintf(check_result_info.output_file_fp, "early_timeout=%d\n", check_result_info.early_timeout);
+ 					fprintf(check_result_info.output_file_fp, "exited_ok=%d\n", check_result_info.exited_ok);
+ 					fprintf(check_result_info.output_file_fp, "return_code=%d\n", check_result_info.return_code);
+@@ -973,7 +973,7 @@ int run_async_service_check(service *svc, int check_op
+ 				fp = check_result_info.output_file_fp;
+ 				check_result_info.output_file_fp = NULL;
+ 
+-				fprintf(fp, "finish_time=%lu.%lu\n", check_result_info.finish_time.tv_sec, check_result_info.finish_time.tv_usec);
++				fprintf(fp, "finish_time=%lld.%lld\n", (long long)check_result_info.finish_time.tv_sec, (long long)check_result_info.finish_time.tv_usec);
+ 				fprintf(fp, "early_timeout=%d\n", check_result_info.early_timeout);
+ 				fprintf(fp, "exited_ok=%d\n", check_result_info.exited_ok);
+ 				fprintf(fp, "return_code=%d\n", check_result_info.return_code);
+@@ -2164,9 +2164,9 @@ void check_for_orphaned_services(void) {
+ 			log_debug_info(DEBUGL_CHECKS, 1, "Service '%s' on host '%s' was orphaned, so we're scheduling an immediate check...\n", temp_service->description, temp_service->host_name);
+ 
+ 			if (log_level(DEBUGL_CHECKS, 1))
+-				log_debug_info(DEBUGL_CHECKS, 1, "  next_check=%lu (%s); last_check=%lu (%s);\n",
+-					temp_service->next_check, ctime(&temp_service->next_check),
+-					temp_service->last_check, ctime(&temp_service->last_check));
++				log_debug_info(DEBUGL_CHECKS, 1, "  next_check=%lld (%s); last_check=%lld (%s);\n",
++					(long long)temp_service->next_check, ctime(&temp_service->next_check),
++					(long long)temp_service->last_check, ctime(&temp_service->last_check));
+ 
+ 			/* decrement the number of running service checks */
+ 			if (currently_running_service_checks > 0)
+@@ -3295,7 +3295,7 @@ int run_async_host_check_3x(host *hst, int check_optio
+ 		fprintf(check_result_info.output_file_fp, "scheduled_check=%d\n", check_result_info.scheduled_check);
+ 		fprintf(check_result_info.output_file_fp, "reschedule_check=%d\n", check_result_info.reschedule_check);
+ 		fprintf(check_result_info.output_file_fp, "latency=%f\n", hst->latency);
+-		fprintf(check_result_info.output_file_fp, "start_time=%lu.%lu\n", check_result_info.start_time.tv_sec, check_result_info.start_time.tv_usec);
++		fprintf(check_result_info.output_file_fp, "start_time=%lld.%lld\n", (long long)check_result_info.start_time.tv_sec, (long long)check_result_info.start_time.tv_usec);
+ 
+ 		/* flush buffer or we'll end up writing twice when we fork() */
+ 		fflush(check_result_info.output_file_fp);
+@@ -3403,7 +3403,7 @@ int run_async_host_check_3x(host *hst, int check_optio
+ 				fp = check_result_info.output_file_fp;
+ 				check_result_info.output_file_fp = NULL;
+ 
+-				fprintf(fp, "finish_time=%lu.%lu\n", check_result_info.finish_time.tv_sec, check_result_info.finish_time.tv_usec);
++				fprintf(fp, "finish_time=%lld.%lld\n", (long long)check_result_info.finish_time.tv_sec, (long long)check_result_info.finish_time.tv_usec);
+ 				fprintf(fp, "early_timeout=%d\n", check_result_info.early_timeout);
+ 				fprintf(fp, "exited_ok=%d\n", check_result_info.exited_ok);
+ 				fprintf(fp, "return_code=%d\n", check_result_info.return_code);
+@@ -4133,7 +4133,7 @@ int process_host_check_result_3x(host *hst, int new_st
+ 		run_async_check = TRUE;
+ 		temp_host = (host *)hostlist_item->object_ptr;
+ 
+-		log_debug_info(DEBUGL_CHECKS, 2, "ASYNC CHECK OF HOST: %s, CURRENTTIME: %lu, LASTHOSTCHECK: %lu, CACHEDTIMEHORIZON: %lu, USECACHEDRESULT: %d, ISEXECUTING: %d\n", temp_host->name, current_time, temp_host->last_check, check_timestamp_horizon, use_cached_result, temp_host->is_executing);
++		log_debug_info(DEBUGL_CHECKS, 2, "ASYNC CHECK OF HOST: %s, CURRENTTIME: %lld, LASTHOSTCHECK: %lld, CACHEDTIMEHORIZON: %lld, USECACHEDRESULT: %d, ISEXECUTING: %d\n", temp_host->name, (long long)current_time, (long long)temp_host->last_check, (long long)check_timestamp_horizon, use_cached_result, temp_host->is_executing);
+ 
+ 		if (use_cached_result == TRUE && ((current_time - temp_host->last_check) <= check_timestamp_horizon))
+ 			run_async_check = FALSE;

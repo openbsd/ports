@@ -1,0 +1,14 @@
+$OpenBSD: patch-cgi_notifications_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
+--- cgi/notifications.c.orig	Fri Jan 16 17:33:21 2015
++++ cgi/notifications.c	Fri Jan 16 17:33:45 2015
+@@ -257,8 +257,8 @@ int main(void) {
+ 			printf("<input type='hidden' name='servicegroup' value='%s'>\n", escape_string(query_servicegroup_name));
+ 		} else
+ 			printf("<input type='hidden' name='%s' value='%s'>\n", (query_type == DISPLAY_HOSTS) ? "host" : "contact", (query_type == DISPLAY_HOSTS) ? escape_string(query_host_name) : escape_string(query_contact_name));
+-		printf("<input type='hidden' name='ts_start' value='%lu'>\n", ts_start);
+-		printf("<input type='hidden' name='ts_end' value='%lu'>\n", ts_end);
++		printf("<input type='hidden' name='ts_start' value='%lld'>\n", (long long)ts_start);
++		printf("<input type='hidden' name='ts_end' value='%lld'>\n", (long long)ts_end);
+ 		printf("<input type='hidden' name='limit' value='%d'>\n", result_limit);
+ 
+ 		printf("<table border='0' class='optBox'>\n");

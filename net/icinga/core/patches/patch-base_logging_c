@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_logging_c,v 1.1 2014/08/14 09:00:06 sthen Exp $
---- base/logging.c.orig	Mon Jul 28 23:13:36 2014
-+++ base/logging.c	Mon Jul 28 23:12:30 2014
+$OpenBSD: patch-base_logging_c,v 1.2 2015/01/16 18:07:53 sthen Exp $
+--- base/logging.c.orig	Wed Nov 19 11:12:54 2014
++++ base/logging.c	Fri Jan 16 17:31:53 2015
 @@ -306,7 +306,7 @@ int write_to_log_with_host_service(char *buffer, unsig
  	strip(buffer);
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-base_logging_c,v 1.1 2014/08/14 09:00:06 sthen Exp $
  	fflush(fp);
  
  #ifdef USE_EVENT_BROKER
+@@ -681,7 +681,7 @@ int log_debug_info(int level, int verbosity, const cha
+ 
+ 	/* write the timestamp */
+ 	gettimeofday(&current_time, NULL);
+-	fprintf(debug_file_fp, "[%lu.%06lu] [%03d.%d] [pid=%lu] ", current_time.tv_sec, current_time.tv_usec, level, verbosity, (unsigned long)getpid());
++	fprintf(debug_file_fp, "[%lld.%06lld] [%03d.%d] [pid=%lu] ", (long long)current_time.tv_sec, (long long)current_time.tv_usec, level, verbosity, (unsigned long)getpid());
+ 
+ 	/* write the data */
+ 	va_start(ap, fmt);
