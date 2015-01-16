@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1315 2015/01/16 16:39:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.1316 2015/01/16 19:43:59 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -887,6 +887,7 @@
      SUBDIR += p5-MooseX-Types-LoadableClass
      SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
+     SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Mouse
      SUBDIR += p5-MouseX-Types
      SUBDIR += p5-Net-Server
