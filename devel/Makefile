@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1312 2015/01/16 15:27:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.1313 2015/01/16 15:57:46 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -979,6 +979,7 @@
      SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Sort-Key
      SUBDIR += p5-Spiffy
+     SUBDIR += p5-Stream-Buffered
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
      SUBDIR += p5-String-Scanf
