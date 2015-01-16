@@ -1,0 +1,1 @@
+Call isa, can, does and DOES safely on things that may not be objects.
