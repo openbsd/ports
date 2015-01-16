@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/16 15:52:38 benoit Exp $
+${P5SITE}/Stream/
+${P5SITE}/Stream/Buffered/
+${P5SITE}/Stream/Buffered.pm
+${P5SITE}/Stream/Buffered/Auto.pm
+${P5SITE}/Stream/Buffered/File.pm
+${P5SITE}/Stream/Buffered/PerlIO.pm
+@man man/man3p/Stream::Buffered.3p
