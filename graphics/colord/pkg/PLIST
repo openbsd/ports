@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/11/13 09:34:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/01/16 08:59:06 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -205,13 +205,9 @@ share/locale/lv/LC_MESSAGES/colord.mo
 share/locale/ml/LC_MESSAGES/colord.mo
 share/locale/mr/LC_MESSAGES/colord.mo
 share/locale/ms/LC_MESSAGES/colord.mo
-share/locale/nb_NO/
-share/locale/nb_NO/LC_MESSAGES/
-share/locale/nb_NO/LC_MESSAGES/colord.mo
+share/locale/nb/LC_MESSAGES/colord.mo
 share/locale/nl/LC_MESSAGES/colord.mo
-share/locale/nn_NO/
-share/locale/nn_NO/LC_MESSAGES/
-share/locale/nn_NO/LC_MESSAGES/colord.mo
+share/locale/nn/LC_MESSAGES/colord.mo
 share/locale/or/LC_MESSAGES/colord.mo
 share/locale/pa/LC_MESSAGES/colord.mo
 share/locale/pl/LC_MESSAGES/colord.mo
