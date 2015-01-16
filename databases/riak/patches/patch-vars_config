@@ -1,9 +1,9 @@
-$OpenBSD: patch-vars_config,v 1.4 2013/10/27 11:24:05 jmatthew Exp $
+$OpenBSD: patch-vars_config,v 1.5 2015/01/16 04:42:13 jmatthew Exp $
 
 use system locations for riak files.
 
---- rel/vars.config.orig	Fri Aug 30 04:13:02 2013
-+++ rel/vars.config	Sat Oct 26 22:06:44 2013
+--- rel/vars.config.orig	Sat Jan 10 09:29:36 2015
++++ rel/vars.config	Fri Jan 16 13:27:44 2015
 @@ -2,11 +2,11 @@
  %% ex: ft=erlang ts=4 sw=4 et
  
@@ -21,11 +21,11 @@ use system locations for riak files.
  
  %%
  %% etc/app.config
-@@ -47,12 +47,12 @@
+@@ -40,16 +40,16 @@
  %%
  %% bin/riak
  %%
--{runner_script_dir,  "$(cd ${0%/*} && pwd)"}.
+-{runner_script_dir,  "\`cd \\`dirname $0\\` && /bin/pwd\`"}.
 -{runner_base_dir,    "{{runner_script_dir}}/.."}.
 -{runner_etc_dir,     "$RUNNER_BASE_DIR/etc"}.
 -{runner_log_dir,     "$RUNNER_BASE_DIR/log"}.
@@ -40,3 +40,8 @@ use system locations for riak files.
 +{pipe_dir,           "/tmp/riak/"}.
 +{runner_user,        "_riak"}.
  {runner_wait_process, "riak_core_node_watcher"}.
+-{runner_ulimit_warn, 65536}.
++{runner_ulimit_warn, 7000}.
+ 
+ %%
+ %% cuttlefish

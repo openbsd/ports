@@ -1,11 +1,11 @@
-$OpenBSD: patch-erlang-js-rebar_config,v 1.3 2013/03/26 05:26:30 jmatthew Exp $
+$OpenBSD: patch-erlang-js-rebar_config,v 1.4 2015/01/16 04:42:13 jmatthew Exp $
 
 Use external nspr and spidermonkey.  These need lots of patches.
 
---- deps/erlang_js/rebar.config.orig	Wed Jan 30 06:13:01 2013
-+++ deps/erlang_js/rebar.config	Sat Feb 23 10:26:09 2013
-@@ -8,8 +8,8 @@
- {erl_opts, [warnings_as_errors]}.
+--- deps/erlang_js/rebar.config.orig	Sat Apr 12 06:39:20 2014
++++ deps/erlang_js/rebar.config	Wed Jan  7 19:27:23 2015
+@@ -10,8 +10,8 @@
+ {port_specs, [{"priv/erlang_js_drv.so", ["c_src/*.c"]}]}.
  
  {port_env, [
 -             {"DRV_CFLAGS", "$DRV_CFLAGS -I c_src/system/include/js -DXP_UNIX -Wall"},
@@ -15,7 +15,7 @@ Use external nspr and spidermonkey.  These need lots of patches.
  
               %% Define flags for enabling/disable 64 bit build of NSPR
               {"-32$", "NSPR_SIXTYFOUR", "--disable-64bit"},
-@@ -34,5 +34,5 @@
+@@ -40,5 +40,5 @@
  
              ]}.
  

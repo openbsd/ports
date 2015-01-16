@@ -1,12 +1,12 @@
-$OpenBSD: patch-deps_eleveldb_c_src_build_deps_sh,v 1.1 2013/11/01 12:37:46 jmatthew Exp $
+$OpenBSD: patch-deps_eleveldb_c_src_build_deps_sh,v 1.2 2015/01/16 04:42:13 jmatthew Exp $
 
 Don't try to install libsnappy.  Instead, find the headers in the source
 tree and get the static library from where it's built.
 
---- deps/eleveldb/c_src/build_deps.sh.orig	Fri Aug 30 07:03:04 2013
-+++ deps/eleveldb/c_src/build_deps.sh	Tue Oct 29 07:18:53 2013
-@@ -65,12 +65,12 @@
-             (cd snappy-$SNAPPY_VSN && ./configure --prefix=$BASEDIR/system --with-pic)
+--- deps/eleveldb/c_src/build_deps.sh.orig	Sat May 31 02:22:55 2014
++++ deps/eleveldb/c_src/build_deps.sh	Tue Jun 10 19:58:57 2014
+@@ -65,12 +65,12 @@ case "$1" in
+             (cd snappy-$SNAPPY_VSN && ./configure --prefix=$BASEDIR/system --libdir=$BASEDIR/system/lib --with-pic)
          fi
  
 -        (cd snappy-$SNAPPY_VSN && $MAKE && $MAKE install)

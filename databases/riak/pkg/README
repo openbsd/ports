@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/10/27 11:24:06 jmatthew Exp $
+$OpenBSD: README,v 1.5 2015/01/16 04:42:13 jmatthew Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,27 +7,23 @@ $OpenBSD: README,v 1.4 2013/10/27 11:24:06 jmatthew Exp $
 Setting up a Riak cluster
 =========================
 
-See http://wiki.basho.com/Adding-and-Removing-Nodes.html for information
-on setting up a new Riak cluster.
+See http://docs.basho.com/riak/latest/ops/building/configuration/ for
+information on setting up a new Riak cluster.
 
 File descriptor limits
 ======================
 
 Riak requires a large number of open files to run reliably.  See 
-http://wiki.basho.com/Open-Files-Limit.html and
-http://wiki.basho.com/LevelDB.html for more information.
+http://docs.basho.com/riak/latest/ops/tuning/open-files-limit/
+for more information.
 
 To raise the open file descriptor limit for riak, add the following to
 the login.conf(5) file:
 
 	riak:\
-		:openfiles=4096:\
+		:openfiles=8000:\
 		:tc=daemon:
 
 Rebuild the login.conf.db file if necessary:
 
 	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
-
-And assign the _riak user to the riak login class:
-
-	# usermod -L riak _riak
