@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/16 13:17:02 benoit Exp $
+${P5SITE}/IO/
+${P5SITE}/IO/TieCombine/
+${P5SITE}/IO/TieCombine.pm
+${P5SITE}/IO/TieCombine/Handle.pm
+${P5SITE}/IO/TieCombine/Scalar.pm
+@man man/man3p/IO::TieCombine.3p
+@man man/man3p/IO::TieCombine::Handle.3p
+@man man/man3p/IO::TieCombine::Scalar.3p
