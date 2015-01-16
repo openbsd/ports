@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1309 2015/01/16 13:21:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.1310 2015/01/16 13:55:19 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -518,6 +518,7 @@
      SUBDIR += p5-AnyEvent
      SUBDIR += p5-AnyEvent-HTTP
      SUBDIR += p5-App-CLI
+     SUBDIR += p5-App-Cmd
      SUBDIR += p5-App-Info
      SUBDIR += p5-AppConfig
      SUBDIR += p5-AppConfig-Std
