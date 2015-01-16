@@ -1,11 +1,7 @@
-$OpenBSD: patch-src_Makefile_orig,v 1.2 2014/10/03 19:59:46 naddy Exp $
-
-Yes, the Makefile we are using really is named Makefile.orig.
-(there's a wip autoconf conversion, but it doesn't build yet).
-
---- src/Makefile.orig.orig.port	Wed Jun  4 09:49:27 2014
-+++ src/Makefile.orig	Fri Oct  3 21:27:53 2014
-@@ -1123,11 +1123,9 @@ openbsd-alpha:
+$OpenBSD: patch-src_Makefile_legacy,v 1.1 2015/01/16 15:40:01 sthen Exp $
+--- src/Makefile.legacy.orig	Thu Dec 18 07:59:02 2014
++++ src/Makefile.legacy	Fri Jan 16 15:08:20 2015
+@@ -1073,11 +1073,9 @@ openbsd-alpha:
  openbsd-sparc64:
  	$(LN) sparc64.h arch.h
  	@echo "#define JOHN_BLD" '"'$@'"' > john_build_rule.h
@@ -19,11 +15,11 @@ Yes, the Makefile we are using really is named Makefile.orig.
  	@echo "All done"
  
  openbsd-sparc:
-@@ -2402,7 +2400,7 @@ endif
+@@ -2307,7 +2305,7 @@ john.com: john.asm
  
  ../run/cprepair: cprepair.c unicode.c unicode.h options.h misc.h misc.c \
  	memdbg.h memdbg.c
--	gcc -Wall -O3 -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
+-	$(CC) -Wall -O3 -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
 +	$(CC) -Wall $(COPTFLAGS) -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
  	misc.c memdbg.c -o ../run/cprepair
  

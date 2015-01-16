@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/04 13:52:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/01/16 15:40:01 sthen Exp $
 @conflict john-*
 bin/1password2john.py
 bin/7z2john.py
@@ -7,6 +7,7 @@ bin/aix2john.pl
 bin/aix2john.py
 bin/androidfde2john.py
 bin/apex2john.py
+bin/base64conv
 bin/bitcoin2john.py
 bin/blockchain2john.py
 @bin bin/calc_stat
@@ -16,8 +17,8 @@ bin/cracf2john.py
 bin/dmg2john
 bin/dmg2john.py
 bin/ecryptfs2john.py
+bin/efs2john.py
 bin/encfs2john.py
-bin/gadu2john.py
 bin/genincstats.rb
 @bin bin/genmkvpwd
 bin/gpg2john
@@ -34,10 +35,9 @@ bin/keychain2john.py
 bin/keyring2john
 bin/keystore2john
 bin/keystore2john.py
-bin/krbpa2john.py
+bin/known_hosts2john.py
 bin/kwallet2john
 bin/kwallet2john.py
-bin/lastpass2john.py
 bin/ldif2john.pl
 bin/leet.pl
 bin/lion2john-alt.pl
@@ -49,13 +49,15 @@ bin/makechr
 bin/mcafee_epo2john.py
 @bin bin/mkvcalcproba
 bin/ml2john.py
-bin/mozilla2john
+bin/mozilla2john.py
 bin/netntlm.pl
 bin/netscreen.py
 bin/odf2john.py
 bin/office2john.py
+bin/openbsd_softraid2john.py
 bin/openssl2john.py
 bin/pass_gen.pl
+bin/pcap2john.py
 bin/pdf2john.py
 bin/pfx2john
 bin/putty2john
@@ -63,10 +65,8 @@ bin/pwsafe2john
 bin/racf2john
 bin/radius2john.pl
 bin/rar2john
-bin/rar5tojohn.py
 @bin bin/raw2dyna
 bin/rexgen2rules.pl
-bin/s7tojohn.py
 bin/sap2john.pl
 bin/sha-dump.pl
 bin/sha-test.pl
@@ -76,7 +76,6 @@ bin/ssh2sshng.py
 bin/sshng2john.py
 bin/strip2john.py
 bin/sxc2john.py
-bin/tcpmd5tojohn.py
 @bin bin/tgtsnarf
 bin/truecrypt_volume2john
 @bin bin/uaf2john
@@ -88,6 +87,7 @@ bin/unshadow
 @bin bin/wpapcap2john
 bin/zip2john
 share/doc/john/
+share/doc/john/AddressSanitizer-HOWTO.txt
 share/doc/john/BUGS
 share/doc/john/CHANGES
 share/doc/john/CHANGES-jumbo
@@ -106,9 +106,11 @@ share/doc/john/FAQ
 share/doc/john/HDAA_README
 share/doc/john/INSTALL
 share/doc/john/INSTALL-UBUNTU
+share/doc/john/Kerberos-Auditing-HOWTO.md
 share/doc/john/LICENSE
 share/doc/john/LICENSE.mpi
 share/doc/john/MARKOV
+share/doc/john/MASK
 share/doc/john/MODES
 share/doc/john/NETNTLM_README
 share/doc/john/OFFICE
@@ -117,7 +119,9 @@ share/doc/john/README
 share/doc/john/README-CUDA
 share/doc/john/README-OPENCL
 share/doc/john/README-krb5-18-23
+share/doc/john/README.Apple_DMG
 share/doc/john/README.FreeBSD
+share/doc/john/README.LUKS
 share/doc/john/README.LotusNotes
 share/doc/john/README.MinGW
 share/doc/john/README.apex
@@ -139,10 +143,12 @@ share/doc/john/README.ssh
 share/doc/john/RULES
 share/doc/john/Regen-Lost-Salts.txt
 share/doc/john/SIPcrack-LICENSE
+share/doc/john/SecureMode-tutorial.md
 share/doc/john/dynamic_history.txt
 share/doc/john/john-1.7.9-jumbo-7-licensing-stats.txt
 share/doc/john/john-1.7.9-jumbo-7-licensing.txt
 share/doc/john/pass_gen.Manifest
+share/doc/john/pcap2john.readme
 share/doc/john/pdfcrack_README
 share/doc/john/pdfcrack_TODO
 share/examples/john/

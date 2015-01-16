@@ -1,19 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/16 15:02:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/16 15:40:01 sthen Exp $
 
 COMMENT =		extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
 
 V =		1.8.0
-JV =		20140604
-REVISION =	0
-
-# when jumbo1 is out, use JV=1 and change PKGNAME to use pl${JV} not pre${JV}
-GH_ACCOUNT =	magnumripper
-GH_PROJECT =	JohnTheRipper
-GH_COMMIT =	3f5494dc78c2ee64fbbbd8c74d495d0bcc895dbc
+JV =		1
+EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
-PKGNAME =	john-jumbo-$Vpre${JV}
+PKGNAME =	john-jumbo-$V.${JV}
 CATEGORIES =	security
 
 HOMEPAGE =	http://www.openwall.com/john/
@@ -25,14 +20,12 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 pthread smime3
 WANTLIB += softokn3 sqlite3 ssl ssl3 z
 
-# Using a bleeding-jumbo snapshot for now.
-# Releases: http://www.openwall.com/john/g/
+MASTER_SITES =		http://www.openwall.com/john/j/
 
 LIB_DEPENDS =		security/nss
 
 USE_GMAKE =		Yes
-MAKE_FILE =		Makefile.orig
-PATCHORIG =		.orig.port
+MAKE_FILE =		Makefile.legacy
 
 MODULES +=		lang/python
 MODPY_BUILDDEP =	No

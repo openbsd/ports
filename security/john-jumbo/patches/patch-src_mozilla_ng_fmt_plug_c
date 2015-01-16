@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_mozilla_ng_fmt_plug_c,v 1.1 2015/01/16 15:40:01 sthen Exp $
+--- src/mozilla_ng_fmt_plug.c.orig	Fri Jan 16 15:13:05 2015
++++ src/mozilla_ng_fmt_plug.c	Fri Jan 16 15:17:01 2015
+@@ -36,6 +36,7 @@ john_register_one(&fmt_mozilla);
+ #include "options.h"
+ #include "memdbg.h"
+ #include "stdint.h"
++#include <crypto/des.h>
+ #include <openssl/des.h>
+ #include "sha.h"
+ 
