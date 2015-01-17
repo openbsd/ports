@@ -1,12 +1,17 @@
-$OpenBSD: patch-src_truecrypt_fmt_plug_c,v 1.1 2015/01/16 15:40:01 sthen Exp $
+$OpenBSD: patch-src_truecrypt_fmt_plug_c,v 1.2 2015/01/17 14:39:52 sthen Exp $
 
 From 61d7d8b0985a3015921df839c68cf42e49d72260 Mon Sep 17 00:00:00 2001
 From: jfoug <jfoug@cox.net>
 Date: Tue, 23 Dec 2014 06:28:40 -0600
 Subject: [PATCH] truecrypt: fixed unified format. Fix #941
 
---- src/truecrypt_fmt_plug.c.orig	Thu Dec 18 07:59:02 2014
-+++ src/truecrypt_fmt_plug.c	Fri Jan 16 15:37:15 2015
+From 480e95b0e449863be3e1a5b0bc634a67df28b618 Mon Sep 17 00:00:00 2001
+From: Solar <solar@openwall.com>
+Date: Thu, 18 Dec 2014 21:24:01 +0100
+Subject: [PATCH] Fix a bug in truecrypt for non-x86 archs. Closes #912.
+
+--- src/truecrypt_fmt_plug.c.orig	Thu Dec 18 00:59:02 2014
++++ src/truecrypt_fmt_plug.c	Sat Jan 17 07:38:39 2015
 @@ -235,18 +235,24 @@ static void* get_salt(char *ciphertext)
  	return s;
  }
@@ -44,6 +49,17 @@ Subject: [PATCH] truecrypt: fixed unified format. Fix #941
  	unsigned char tweak[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
  	unsigned char buf[16];
  	int i, j, cnt;
+@@ -310,8 +316,8 @@ static int crypt_all(int *pcount, struct db_salt *salt
+ 			pbkdf2_sha512_sse((const unsigned char **)pin, lens, psalt->salt, 64, psalt->num_iterations, &(x.poutc), sizeof(key), 0);
+ 		}
+ #else
+-		if (is_sha512)
+-			pbkdf2_sha512((const unsigned char*)key_buffer[i], strlen(key_buffer[i]), psalt->salt, 64, num_iterations, key, sizeof(key), 0);
++		if (psalt->hash_type == IS_SHA512)
++			pbkdf2_sha512((const unsigned char*)key_buffer[i], strlen((char*)key_buffer[i]), psalt->salt, 64, psalt->num_iterations, key, sizeof(key), 0);
+ #endif
+ 		else if (psalt->hash_type == IS_RIPEMD160)
+ 			pbkdf2_ripemd160(key_buffer[i], strlen((char*)(key_buffer[i])), psalt->salt, 64, psalt->num_iterations, key, sizeof(key), 0);
 @@ -463,8 +469,13 @@ struct fmt_main fmt_truecrypt = {
  		BINARY_ALIGN,
  		SALT_SIZE,
