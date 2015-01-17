@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_usb_bsd_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
---- src/usb_bsd.c.orig	Mon Nov 22 23:41:32 2004
-+++ src/usb_bsd.c	Tue Aug  2 19:56:03 2005
-@@ -278,13 +278,13 @@ validate_descriptors(int fd, usb_device_
+$OpenBSD: patch-src_usb_bsd_c,v 1.2 2015/01/17 23:51:07 naddy Exp $
+--- src/usb_bsd.c.orig	Tue Nov 23 06:41:32 2004
++++ src/usb_bsd.c	Sun Jan 18 00:48:30 2015
+@@ -278,13 +278,13 @@ validate_descriptors(int fd, usb_device_descriptor_t *
      // -----------------------------------------------------------------------
  
      memset(&conf, 0, sizeof(conf));
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_usb_bsd_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
      conf.ucd_desc.bLength = USB_CONFIG_DESCRIPTOR_SIZE;
  #else
      conf.desc.bLength = USB_CONFIG_DESCRIPTOR_SIZE; // only get first part
-@@ -296,7 +296,7 @@ validate_descriptors(int fd, usb_device_
+@@ -296,7 +296,7 @@ validate_descriptors(int fd, usb_device_descriptor_t *
          return 0;
      }
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_usb_bsd_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
      if(check_desc_config(&(conf.ucd_desc)) == 0) { return 0; } // not valid
  #else
      if(check_desc_config(&(conf.desc)) == 0) { return 0; } // not valid
-@@ -307,25 +307,25 @@ validate_descriptors(int fd, usb_device_
+@@ -307,25 +307,25 @@ validate_descriptors(int fd, usb_device_descriptor_t *
  
      memset(&intf, 0, sizeof(intf));
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-src_usb_bsd_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
      intf.uid_desc.bLength = USB_INTERFACE_DESCRIPTOR_SIZE;
  #else
      intf.desc.bLength    = USB_INTERFACE_DESCRIPTOR_SIZE;
-@@ -337,7 +337,7 @@ validate_descriptors(int fd, usb_device_
+@@ -337,7 +337,7 @@ validate_descriptors(int fd, usb_device_descriptor_t *
          return 0;
      }
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-src_usb_bsd_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
      if(check_desc_interface(&(intf.uid_desc)) == 0) { return 0; } // not valid
  #else
      if(check_desc_interface(&(intf.desc)) == 0) { return 0; } // not valid
-@@ -350,31 +350,31 @@ validate_descriptors(int fd, usb_device_
+@@ -350,31 +350,31 @@ validate_descriptors(int fd, usb_device_descriptor_t *
      for(i = 0; i < 4; i++) // get endpoint descriptors
      {
          memset(&endp, 0, sizeof(endp));
@@ -102,7 +102,7 @@ $OpenBSD: patch-src_usb_bsd_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
  	endp.ued_desc.bLength = USB_ENDPOINT_DESCRIPTOR_SIZE;
  #else
          endp.desc.bLength    = USB_ENDPOINT_DESCRIPTOR_SIZE;
-@@ -386,7 +386,7 @@ validate_descriptors(int fd, usb_device_
+@@ -386,7 +386,7 @@ validate_descriptors(int fd, usb_device_descriptor_t *
              return 0;
          }
  
