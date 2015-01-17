@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/17 17:13:22 benoit Exp $
 
 COMMENT=	parse and validate simple name/value option pairs
 
 MODULES=	cpan
-DISTNAME=	Data-OptList-0.107
+DISTNAME =	Data-OptList-0.109
 CATEGORIES=	devel
 
 # perl
