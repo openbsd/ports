@@ -1,23 +1,23 @@
-$OpenBSD: patch-gtk_makefile,v 1.6 2011/11/15 19:17:09 jeremy Exp $
---- gtk/makefile.orig	Fri Sep 16 11:14:07 2011
-+++ gtk/makefile	Tue Nov 15 19:30:57 2011
-@@ -5,13 +5,6 @@
+--- gtk/makefile.orig	Sun Aug 10 01:52:11 2014
++++ gtk/makefile	Mon Dec 22 23:03:04 2014
+@@ -5,14 +5,6 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
  .SUFFIXES: .cxx .o .h .a .c
 -ifdef CLANG
--CC = clang
--CCOMP = clang
--else
--CC = g++
--CCOMP = gcc
+-# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
+-# thread also need to create Position Independent Executable -> search online documentation
+-SANITIZE = address
+-#SANITIZE = undefined
+-CXX = clang++ -fsanitize=$(SANITIZE) --std=c++0x -Wno-deprecated-register
+-CC = clang -fsanitize=$(SANITIZE) -Wno-empty-body
 -endif
- AR = ar
  
  ifdef GTK3
-@@ -24,20 +17,21 @@ endif
+ GTKVERSION=gtk+-3.0
+@@ -24,20 +16,21 @@
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
- CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0)
+ CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0 gmodule-no-export-2.0)
  CONFIGTHREADS:=
 -gnomeprefix:=$(shell pkg-config --variable=prefix $(GTKVERSION) 2>/dev/null)
 +#gnomeprefix:=$(shell pkg-config --variable=prefix $(GTKVERSION) 2>/dev/null)
@@ -40,7 +40,7 @@ $OpenBSD: patch-gtk_makefile,v 1.6 2011/11/15 19:17:09 jeremy Exp $
  
  PROG	= ../bin/SciTE
  
-@@ -46,19 +40,21 @@ all: $(PROG)
+@@ -46,19 +39,21 @@
  vpath %.h ../src ../../scintilla/include
  vpath %.cxx ../src
  
@@ -49,8 +49,8 @@ $OpenBSD: patch-gtk_makefile,v 1.6 2011/11/15 19:17:09 jeremy Exp $
  ifdef CHECK_DEPRECATED
  DEPRECATED=-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
  endif
--CXXBASEFLAGS=-W -Wall -Wno-char-subscripts -pedantic -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
-+CXXBASEFLAGS=-W -Wall -Wno-char-subscripts -pedantic -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
+-CXXBASEFLAGS=-W -Wall -pedantic -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
++CXXBASEFLAGS=-W -Wall -pedantic -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
  
  ifdef DEBUG
 -CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
@@ -67,7 +67,7 @@ $OpenBSD: patch-gtk_makefile,v 1.6 2011/11/15 19:17:09 jeremy Exp $
  LUA_CORE_OBJS = lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
  		lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o \
  		ltable.o ltm.o lundump.o lvm.o lzio.o
-@@ -70,10 +66,10 @@ LUA_OBJS = LuaExtension.o $(LUA_CORE_OBJS) $(LUA_LIB_O
+@@ -70,7 +65,7 @@
  
  vpath %.c ../lua/src ../lua/src/lib
  
@@ -75,40 +75,28 @@ $OpenBSD: patch-gtk_makefile,v 1.6 2011/11/15 19:17:09 jeremy Exp $
 +INCLUDEDIRS+=-I../lua/include
  
  .c.o:
--	$(CCOMP) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c $< -o $@
-+	$(CC) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c $< -o $@
- 
- else
- CXXFLAGS+=-DNO_LUA
-@@ -90,22 +86,19 @@ CXXFLAGS:=$(CXXFLAGS) -Dunix
- endif
- 
- .cxx.o:
--	$(CC) $(CONFIGFLAGS) $(CXXFLAGS) -c $< -o $@
-+	$(CXX) $(CONFIGFLAGS) $(CXXFLAGS) -c $< -o $@
- 
- clean:
- 	rm -f *.o $(PROG)
- 
+ 	$(CC) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c $< -o $@
+@@ -106,15 +101,12 @@
  deps:
--	$(CC) -MM $(CONFIGFLAGS) $(CXXFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
-+	$(CXX) -MM $(CONFIGFLAGS) $(CXXFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
+ 	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
  
 -# make should be run in ../../scintilla/gtk to compile all the lexers.
 -COMPLIB=../../scintilla/bin/scintilla.a
 -
  $(PROG): SciTEGTK.o GUIGTK.o Widget.o \
--FilePath.o SciTEBase.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o StringHelpers.o \
--PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleWriter.o Utf8_16.o \
-+	FilePath.o SciTEBase.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o StringHelpers.o \
-+	PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleWriter.o Utf8_16.o \
+-FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
+-Exporters.o  MatchMarker.o StringHelpers.o \
+-PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
++	FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
++	Exporters.o  MatchMarker.o StringHelpers.o \
++	PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
  	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lstdc++
-+	$(CXX) `$(CONFIGTHREADS)` $(LIBS) -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lstdc++
+-	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
++	$(CXX) `$(CONFIGTHREADS)` $(LIBS) -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
-@@ -114,19 +107,18 @@ include deps.mak
+@@ -123,19 +115,18 @@
  # This is OK - just means no SciTE in the Gnome Applications menu
  # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
  install:

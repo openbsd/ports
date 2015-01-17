@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/11/15 19:17:09 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/01/17 05:06:12 jeremy Exp $
 @bin bin/SciTE
 share/doc/scite/
 share/doc/scite/CommandValues.html
+share/doc/scite/PaneAPI.html
 share/doc/scite/PrintHi.png
 share/doc/scite/SciTE.html
 share/doc/scite/SciTEDirector.html
@@ -24,10 +25,12 @@ share/scite/SciTEGlobal.properties
 share/scite/abaqus.properties
 share/scite/abbrev.properties
 share/scite/ada.properties
+share/scite/asl.properties
 share/scite/asm.properties
 share/scite/asn1.properties
 share/scite/au3.properties
 share/scite/ave.properties
+share/scite/avs.properties
 share/scite/baan.properties
 share/scite/blitzbasic.properties
 share/scite/bullant.properties
@@ -39,6 +42,7 @@ share/scite/cpp.properties
 share/scite/csound.properties
 share/scite/css.properties
 share/scite/d.properties
+share/scite/ecl.properties
 share/scite/eiffel.properties
 share/scite/erlang.properties
 share/scite/escript.properties
@@ -64,6 +68,7 @@ share/scite/nimrod.properties
 share/scite/nncrontab.properties
 share/scite/nsis.properties
 share/scite/opal.properties
+share/scite/oscript.properties
 share/scite/others.properties
 share/scite/pascal.properties
 share/scite/perl.properties
@@ -75,7 +80,9 @@ share/scite/purebasic.properties
 share/scite/python.properties
 share/scite/r.properties
 share/scite/rebol.properties
+share/scite/registry.properties
 share/scite/ruby.properties
+share/scite/rust.properties
 share/scite/scriptol.properties
 share/scite/smalltalk.properties
 share/scite/sorcins.properties
