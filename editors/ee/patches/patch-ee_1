@@ -1,6 +1,17 @@
-$OpenBSD: patch-ee_1,v 1.3 2012/05/10 12:56:27 gonzalo Exp $
---- ee.1.orig	Sun Dec 16 01:49:37 2001
-+++ ee.1	Thu Apr 26 15:46:35 2012
+$OpenBSD: patch-ee_1,v 1.4 2015/01/17 21:02:19 bcallah Exp $
+--- ee.1.orig	Sat Dec 15 23:49:37 2001
++++ ee.1	Sat Jan 17 15:49:05 2015
+@@ -329,8 +329,8 @@ A window showing the keyboard operations that can be p
+ displayed or not.
+ .IP "\fBemacs keys\fR"
+ Control keys may be given bindings similar to emacs, or not.
+-.IP "\f16 bit characters\fR"
+-Toggles whether sixteen bit characters are handled as one 16-bit quantities or 
++.IP "\fB16 bit characters\fR"
++Toggles whether sixteen bit characters are handled as one 16-bit quantity or 
+ two 8-bit quantities.  This works primarily with the Chinese Big 5 code set.
+ .RE
+ .PP
 @@ -406,7 +406,7 @@ cursor location.  The old information would have to be
  .PP
  Since different users have different preferences, \fIee\fR allows some 
@@ -19,6 +30,15 @@ $OpenBSD: patch-ee_1,v 1.3 2012/05/10 12:56:27 gonzalo Exp $
  \fI$HOME/.init.ee\fR, then \fI.init.ee\fR, with the settings specified by the 
  most recent file read taking precedence.
  .PP
+@@ -461,7 +461,7 @@ Turns off display of eight bit characters (they are di
+ value inside angle brackets, e.g., "<220>").
+ .IP \fB16bit\fR
+ Turns on handling of 16-bit characters.
+-.IP \fbno16bit\fR
++.IP \fBno16bit\fR
+ Turns off handling of 16-bit characters.
+ .IP \fBemacs\fR
+ Turns on emacs key bindings.
 @@ -521,7 +521,7 @@ The automatic paragraph formatting operation 
  may be too slow for slower systems.
  .SH FILES

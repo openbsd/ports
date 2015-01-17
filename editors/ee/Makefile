@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/12/06 15:46:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/17 21:02:19 bcallah Exp $
 
 COMMENT=		easy to use text editor
 
 VERSION=		1.5.2
 DISTNAME=		ee-${VERSION}.src
 PKGNAME=		ee-${VERSION}
-REVISION=		0
+REVISION=		1
 EPOCH=			0
 CATEGORIES=		editors
 
