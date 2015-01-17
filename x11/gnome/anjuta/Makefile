@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2014/12/18 19:10:10 kili Exp $
+# $OpenBSD: Makefile,v 1.121 2015/01/17 12:23:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.14.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -17,24 +17,25 @@ HOMEPAGE=		http://www.anjuta.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xt apr-1 aprutil-1 atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto db
-WANTLIB += dbus-1 devhelp-3 enchant expat ffi fontconfig
-WANTLIB += freetype gcrypt gda-5.0 gdk-3 gdk_pixbuf-2.0 gdl-3
-WANTLIB += gio-2.0 gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz
-WANTLIB += harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg m orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sasl2 secret-1 serf-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
-WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
-WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1
-WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.26
-WANTLIB += vte-2.91 webkit2gtk-3.0 webp xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z gbm
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += apr-1 aprutil-1 atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject crypto db dbus-1 devhelp-3 drm enchant
+WANTLIB += estdc++ expat ffi fontconfig freetype gbm gcrypt gda-5.0
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdl-3 gio-2.0 gladeui-2 glapi
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += gtksourceview-3.0 harfbuzz harfbuzz-icu icudata icui18n
+WANTLIB += icuuc javascriptcoregtk-4.0 jpeg lzma m orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sasl2 secret-1 serf-1 soup-2.4 sqlite3
+WANTLIB += ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1
+WANTLIB += svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
+WANTLIB += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB += util vala-0.26 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
+WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
+WANTLIB += xslt z
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/dconf \
@@ -50,9 +51,10 @@ RUN_DEPENDS=		devel/subversion,-gnome-keyring
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion \
-			devel/vte3>=0.38 \
-			lang/vala>=0.26 \
+			devel/vte3 \
+			lang/vala \
 			textproc/icu4c \
+			www/webkitgtk4 \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
 			x11/gtksourceview3 \
@@ -70,7 +72,7 @@ MODGNOME_TOOLS += gobject-introspection vala yelp
 YACC=			bison -y
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-symbol-db-shm=/tmp \
+CONFIGURE_ARGS=		--with-symbol-db-shm=/tmp \
 			--disable-neon
 
 pre-configure:
