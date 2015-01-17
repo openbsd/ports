@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/17 22:58:12 naddy Exp $
 
 COMMENT=	transparent IRC proxy
 
@@ -18,7 +18,6 @@ INSTALL_TARGET=	install-strip
 
 WRKDIST=	${WRKDIR}/tircproxy-0.4
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
