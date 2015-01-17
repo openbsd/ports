@@ -1,6 +1,6 @@
-$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.14 2014/12/29 10:49:12 robert Exp $
---- mono/utils/mono-proclib.c.orig	Mon Sep 22 15:23:09 2014
-+++ mono/utils/mono-proclib.c	Sun Dec 28 16:22:49 2014
+$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.15 2015/01/17 12:24:25 robert Exp $
+--- mono/utils/mono-proclib.c.orig	Mon Jan 12 18:15:08 2015
++++ mono/utils/mono-proclib.c	Sat Jan 17 12:34:41 2015
 @@ -55,15 +55,15 @@ mono_process_list (int *size)
  {
  #if USE_SYSCTL
@@ -59,7 +59,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.14 2014/12/29 10:49:12 robert Exp 
  	buf = g_realloc (buf, res * sizeof (void*));
  	for (i = 0; i < res; ++i)
  		buf [i] = GINT_TO_POINTER (processes [i].kinfo_pid_member);
-@@ -191,29 +191,29 @@ mono_process_get_name (gpointer pid, char *buf, int le
+@@ -195,29 +195,29 @@ mono_process_get_name (gpointer pid, char *buf, int le
  {
  #if USE_SYSCTL
  	int res;
@@ -97,7 +97,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.14 2014/12/29 10:49:12 robert Exp 
  		return buf;
  	}
  #else
-@@ -226,7 +226,7 @@ mono_process_get_name (gpointer pid, char *buf, int le
+@@ -230,7 +230,7 @@ mono_process_get_name (gpointer pid, char *buf, int le
  	if (res < 0 || data_len != sizeof (struct kinfo_proc)) {
  		return buf;
  	}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_io-layer_processes_h,v 1.1 2013/01/24 13:52:09 kurt Exp $
---- mono/io-layer/processes.h.orig	Tue Nov 15 12:22:44 2011
-+++ mono/io-layer/processes.h	Mon Jan 21 16:48:48 2013
-@@ -146,6 +146,10 @@ struct _WapiShellExecuteInfo
+$OpenBSD: patch-mono_io-layer_processes_h,v 1.2 2015/01/17 12:24:25 robert Exp $
+--- mono/io-layer/processes.h.orig	Wed Dec  3 12:25:48 2014
++++ mono/io-layer/processes.h	Sat Jan 17 12:34:41 2015
+@@ -149,6 +149,10 @@ struct _WapiShellExecuteInfo
  #define CREATE_DEFAULT_ERROR_MODE 0x04000000
  #define CREATE_NO_WINDOW 0x08000000
  
