@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/17 17:19:06 benoit Exp $
 
 COMMENT =	mark overload code symbols as methods
 
 MODULES =	cpan
-DISTNAME =	MooseX-MarkAsMethods-0.14
+DISTNAME =	MooseX-MarkAsMethods-0.15
 CATEGORIES =	devel
 
 # LGPLv2.1
