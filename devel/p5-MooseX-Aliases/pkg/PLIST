@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/16 14:55:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/17 17:17:25 benoit Exp $
 ${P5SITE}/MooseX/
 ${P5SITE}/MooseX/Aliases/
 ${P5SITE}/MooseX/Aliases.pm
@@ -6,7 +6,6 @@ ${P5SITE}/MooseX/Aliases/Meta/
 ${P5SITE}/MooseX/Aliases/Meta/Trait/
 ${P5SITE}/MooseX/Aliases/Meta/Trait/Attribute.pm
 ${P5SITE}/MooseX/Aliases/Meta/Trait/Class.pm
-${P5SITE}/MooseX/Aliases/Meta/Trait/Constructor.pm
 ${P5SITE}/MooseX/Aliases/Meta/Trait/Method.pm
 ${P5SITE}/MooseX/Aliases/Meta/Trait/Role/
 ${P5SITE}/MooseX/Aliases/Meta/Trait/Role.pm
@@ -15,10 +14,4 @@ ${P5SITE}/MooseX/Aliases/Meta/Trait/Role/ApplicationToRole.pm
 ${P5SITE}/MooseX/Aliases/Meta/Trait/Role/Composite.pm
 @man man/man3p/MooseX::Aliases.3p
 @man man/man3p/MooseX::Aliases::Meta::Trait::Attribute.3p
-@man man/man3p/MooseX::Aliases::Meta::Trait::Class.3p
-@man man/man3p/MooseX::Aliases::Meta::Trait::Constructor.3p
 @man man/man3p/MooseX::Aliases::Meta::Trait::Method.3p
-@man man/man3p/MooseX::Aliases::Meta::Trait::Role.3p
-@man man/man3p/MooseX::Aliases::Meta::Trait::Role::ApplicationToClass.3p
-@man man/man3p/MooseX::Aliases::Meta::Trait::Role::ApplicationToRole.3p
-@man man/man3p/MooseX::Aliases::Meta::Trait::Role::Composite.3p
