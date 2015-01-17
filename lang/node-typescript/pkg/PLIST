@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/13 00:04:18 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/01/17 00:06:34 jturner Exp $
 @owner root
 @group wheel
 bin/tsc
 lib/node_modules/typescript/
 lib/node_modules/typescript/.npmignore
-lib/node_modules/typescript/.travis.yml
 lib/node_modules/typescript/CONTRIBUTING.md
 lib/node_modules/typescript/CopyrightNotice.txt
 lib/node_modules/typescript/LICENSE.txt
@@ -12,16 +11,17 @@ lib/node_modules/typescript/README.md
 lib/node_modules/typescript/ThirdPartyNoticeText.txt
 lib/node_modules/typescript/bin/
 lib/node_modules/typescript/bin/lib.core.d.ts
+lib/node_modules/typescript/bin/lib.core.es6.d.ts
 lib/node_modules/typescript/bin/lib.d.ts
 lib/node_modules/typescript/bin/lib.dom.d.ts
+lib/node_modules/typescript/bin/lib.es6.d.ts
 lib/node_modules/typescript/bin/lib.scriptHost.d.ts
 lib/node_modules/typescript/bin/lib.webworker.d.ts
 lib/node_modules/typescript/bin/tsc
 lib/node_modules/typescript/bin/tsc.js
+lib/node_modules/typescript/bin/typescript.d.ts
+lib/node_modules/typescript/bin/typescriptServices.d.ts
 lib/node_modules/typescript/bin/typescriptServices.js
+lib/node_modules/typescript/bin/typescriptServices_internal.d.ts
+lib/node_modules/typescript/bin/typescript_internal.d.ts
 lib/node_modules/typescript/package.json
-lib/node_modules/typescript/scripts/
-lib/node_modules/typescript/scripts/importDefinitelyTypedTests.ts
-lib/node_modules/typescript/scripts/processDiagnosticMessages.ts
-lib/node_modules/typescript/scripts/word2md.js
-lib/node_modules/typescript/scripts/word2md.ts
