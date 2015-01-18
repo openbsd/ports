@@ -1,11 +1,14 @@
-$OpenBSD: patch-src_keychain_fmt_plug_c,v 1.4 2015/01/16 15:40:01 sthen Exp $
---- src/keychain_fmt_plug.c.orig	Thu Dec 18 07:59:02 2014
-+++ src/keychain_fmt_plug.c	Fri Jan 16 15:08:20 2015
-@@ -17,6 +17,7 @@ john_register_one(&fmt_keychain);
+$OpenBSD: patch-src_keychain_fmt_plug_c,v 1.5 2015/01/18 11:57:22 sthen Exp $
+--- src/keychain_fmt_plug.c.orig	Thu Dec 18 00:59:02 2014
++++ src/keychain_fmt_plug.c	Sun Jan 18 04:52:03 2015
+@@ -33,6 +33,10 @@ john_register_one(&fmt_keychain);
+ #endif
+ #include "memdbg.h"
  
- #include <string.h>
- #include <assert.h>
-+#include <crypto/des.h>
- #include <errno.h>
- #include "arch.h"
- #include "misc.h"
++#ifndef C_Block
++#define C_Block DES_cblock
++#endif
++
+ #define FORMAT_LABEL		"keychain"
+ #define FORMAT_NAME		"Mac OS X Keychain"
+ #ifdef MMX_COEF

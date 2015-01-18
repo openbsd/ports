@@ -1,11 +1,14 @@
-$OpenBSD: patch-src_mozilla_ng_fmt_plug_c,v 1.1 2015/01/16 15:40:01 sthen Exp $
---- src/mozilla_ng_fmt_plug.c.orig	Fri Jan 16 15:13:05 2015
-+++ src/mozilla_ng_fmt_plug.c	Fri Jan 16 15:17:01 2015
-@@ -36,6 +36,7 @@ john_register_one(&fmt_mozilla);
- #include "options.h"
- #include "memdbg.h"
- #include "stdint.h"
-+#include <crypto/des.h>
+$OpenBSD: patch-src_mozilla_ng_fmt_plug_c,v 1.2 2015/01/18 11:57:22 sthen Exp $
+--- src/mozilla_ng_fmt_plug.c.orig	Thu Dec 18 00:59:02 2014
++++ src/mozilla_ng_fmt_plug.c	Sun Jan 18 04:52:05 2015
+@@ -39,6 +39,10 @@ john_register_one(&fmt_mozilla);
  #include <openssl/des.h>
  #include "sha.h"
  
++#ifndef C_Block
++#define C_Block DES_cblock
++#endif
++
+ #define FORMAT_LABEL            "Mozilla"
+ #define FORMAT_NAME             "Mozilla key3.db"
+ #define FORMAT_TAG              "$mozilla$"
