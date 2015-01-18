@@ -1,0 +1,24 @@
+$OpenBSD: patch-ipfreely_c,v 1.1 2015/01/18 15:47:52 naddy Exp $
+--- ipfreely.c.orig	Sun Mar 27 19:10:06 2005
++++ ipfreely.c	Sun Jan 18 16:30:35 2015
+@@ -22,6 +22,7 @@
+ 
+ #include <err.h>
+ #include <errno.h>
++#include <limits.h>
+ #include <poll.h>
+ #include <pwd.h>
+ #include <signal.h>
+@@ -54,9 +55,9 @@ int   debug_flag = 0;
+ char  username[10];
+ char  local_port[6];
+ char  remote_port[6];
+-char  local_host[MAXHOSTNAMELEN];
+-char  remote_host[MAXHOSTNAMELEN];
+-char  chroot_dir[MAXPATHLEN];
++char  local_host[HOST_NAME_MAX+1];
++char  remote_host[HOST_NAME_MAX+1];
++char  chroot_dir[PATH_MAX];
+ uid_t _uid;
+ 
+ void

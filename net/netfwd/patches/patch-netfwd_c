@@ -1,0 +1,21 @@
+$OpenBSD: patch-netfwd_c,v 1.1 2015/01/18 15:47:52 naddy Exp $
+--- netfwd.c.orig	Tue Nov 20 17:34:16 2007
++++ netfwd.c	Sun Jan 18 16:37:58 2015
+@@ -27,6 +27,8 @@
+ #include <err.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <limits.h>
++#include <signal.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -167,7 +169,7 @@ struct net_fwd_addr {
+ 		struct addrinfo	*ai0;		/* TCP/UDP */
+ 		char		path[104];	/* unix sockaddr */
+ 		struct {
+-			char path[MAXPATHLEN];
++			char path[PATH_MAX];
+ 			struct tty_settings cfg;
+ 		} tty;				/* TTY address and settings */
+ 	} spec;
