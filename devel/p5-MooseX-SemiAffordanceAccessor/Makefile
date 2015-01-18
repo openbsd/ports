@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/18 10:38:31 benoit Exp $
 
 COMMENT =	name your accessors foo() and set_foo()
 
 MODULES =	cpan
-DISTNAME =	MooseX-SemiAffordanceAccessor-0.09
+DISTNAME =	MooseX-SemiAffordanceAccessor-0.10
 CATEGORIES =	devel
 
 # Perl
