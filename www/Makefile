@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.698 2015/01/12 08:21:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.699 2015/01/18 00:21:59 benoit Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -150,6 +150,7 @@
      SUBDIR += p5-Apache-DB
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Apache-Gallery
+     SUBDIR += p5-Apache-LogFormat-Compiler
      SUBDIR += p5-Apache-MP3
      SUBDIR += p5-Apache-Reload
      SUBDIR += p5-Apache-Session
