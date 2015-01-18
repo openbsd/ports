@@ -1,7 +1,15 @@
-$OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
---- sf-gencode.c.orig	Wed Nov  7 01:34:18 2007
-+++ sf-gencode.c	Thu Jun 13 14:28:14 2013
-@@ -44,7 +44,7 @@
+$OpenBSD: patch-sf-gencode_c,v 1.3 2015/01/18 15:59:46 naddy Exp $
+--- sf-gencode.c.orig	Wed Nov  7 07:34:18 2007
++++ sf-gencode.c	Sun Jan 18 16:57:57 2015
+@@ -26,6 +26,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/time.h>
++#include <sys/param.h>	/* ALIGN */
+ 
+ #include <net/if.h>
+ 
+@@ -44,7 +45,7 @@
  
  #define INET6
  
@@ -10,7 +18,7 @@ $OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
  #include <pcap-namedb.h>
  #include "sf-gencode.h"
  
-@@ -474,9 +474,107 @@ gen_proto(int proto)
+@@ -474,9 +475,107 @@ gen_proto(int proto)
  			(bpf_int32)proto));
  }
  
@@ -118,7 +126,7 @@ $OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
  	struct block *b0, *b1, *b2;
  	const static int lan_off = offsetof(pf_state_t, lan.addr.v4);
  	const static int gwy_off = offsetof(pf_state_t, gwy.addr.v4);
-@@ -542,6 +640,7 @@ gen_hostop(bpf_u_int32 addr, bpf_u_int32 mask, int dir
+@@ -542,6 +641,7 @@ gen_hostop(bpf_u_int32 addr, bpf_u_int32 mask, int dir
  
  	return b1;
  }
@@ -126,7 +134,7 @@ $OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
  
  static struct block *
  gen_hostcmp6(u_int off, u_int32_t *a, u_int32_t *m)
-@@ -560,9 +659,108 @@ gen_hostcmp6(u_int off, u_int32_t *a, u_int32_t *m)
+@@ -560,9 +660,108 @@ gen_hostcmp6(u_int off, u_int32_t *a, u_int32_t *m)
  	return b1;
  }
  
@@ -235,7 +243,7 @@ $OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
  	struct block *b0, *b1, *b2;
  	u_int32_t *a, *m;
  
-@@ -630,6 +828,7 @@ gen_hostop6(struct in6_addr *addr, struct in6_addr *ma
+@@ -630,6 +829,7 @@ gen_hostop6(struct in6_addr *addr, struct in6_addr *ma
  	gen_and(b0, b1);
  	return b1;
  }
@@ -243,7 +251,7 @@ $OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
  
  static const char *
  get_modifier_by_id(int id)
-@@ -748,9 +947,107 @@ gen_proto_abbrev(proto)
+@@ -748,9 +948,107 @@ gen_proto_abbrev(proto)
  	return b1;
  }
  
@@ -351,7 +359,7 @@ $OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
  	struct block *b0, *b1, *b2;
  	const static int lan_off = offsetof(pf_state_t, lan.port);
  	const static int gwy_off = offsetof(pf_state_t, gwy.port);
-@@ -815,6 +1112,7 @@ gen_portop(int port, int proto, int dir)
+@@ -815,6 +1113,7 @@ gen_portop(int port, int proto, int dir)
  
  	return b1;
  }
