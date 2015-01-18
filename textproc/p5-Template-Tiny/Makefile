@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/16 14:38:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/01/18 10:49:29 benoit Exp $
 
-COMMENT =	template Toolkit reimplemented in as little code as possible
+COMMENT =	Template Toolkit reimplemented in as little code as possible
 
 MODULES =	cpan
 DISTNAME =	Template-Tiny-1.12
 CATEGORIES =	textproc
+
+REVISION =	0
 
 MAINTAINER =	Cesare Gargano <gar@plusiagamma.org>
 
