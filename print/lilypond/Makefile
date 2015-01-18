@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/05/27 20:43:50 kili Exp $
+# $OpenBSD: Makefile,v 1.42 2015/01/18 21:27:21 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -91,28 +91,7 @@ post-install:
 	done
 
 
-# Regression tests temporarily disabled, because we don't
-# build the documentation for now.
+# Regression tests disabled, because we don't build the documentation.
 NO_TEST=		Yes
-
-TEST_DEPENDS=	graphics/ImageMagick \
-			print/lilypond-test-baseline:patch
-
-pre-test:
-.for d in input/regression input/regression/musicxml
-	-@mv ${WRKDIR}/print/lilypond-test-baseline/${DISTNAME}/$d/out-test-baseline ${WRKBUILD}/$d
-.endfor
-
-post-test:
-	@echo Please check ${WRKBUILD}/out/test-results/index.html for \
-		any graphical anomalities.
-
-# Build a new lilypond-test-baseline-*.tar.bz2
-test-baseline:	build
-	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} test-baseline
-	cd ${WRKDIR} && pax -wjf ${DISTNAME:C/-.*//}-test-baseline-${VERSION}.tar.bz2 \
-		${DISTNAME}/input/regression/out-test-baseline \
-		${DISTNAME}/input/regression/musicxml/out-test-baseline
 
 .include <bsd.port.mk>
