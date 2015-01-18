@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 10:34:02 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/18 20:41:44 benoit Exp $
 ${P5SITE}/XML/
 ${P5SITE}/XML/Atom/
 ${P5SITE}/XML/Atom/SimpleFeed.pm
+${P5SITE}/XML/Atom/t.pl
+${P5SITE}/XML/Atom/x.pl
 @man man/man3p/XML::Atom::SimpleFeed.3p
