@@ -1,0 +1,182 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/18 13:48:47 benoit Exp $
+bin/dancer2
+${P5SITE}/Dancer2/
+${P5SITE}/Dancer2.pm
+${P5SITE}/Dancer2/CLI/
+${P5SITE}/Dancer2/CLI.pm
+${P5SITE}/Dancer2/CLI/Command/
+${P5SITE}/Dancer2/CLI/Command/gen.pm
+${P5SITE}/Dancer2/CLI/Command/version.pm
+${P5SITE}/Dancer2/Config.pod
+${P5SITE}/Dancer2/Cookbook.pod
+${P5SITE}/Dancer2/Core/
+${P5SITE}/Dancer2/Core.pm
+${P5SITE}/Dancer2/Core/App.pm
+${P5SITE}/Dancer2/Core/Cookie.pm
+${P5SITE}/Dancer2/Core/DSL.pm
+${P5SITE}/Dancer2/Core/Dispatcher.pm
+${P5SITE}/Dancer2/Core/Error.pm
+${P5SITE}/Dancer2/Core/Factory.pm
+${P5SITE}/Dancer2/Core/HTTP.pm
+${P5SITE}/Dancer2/Core/Hook.pm
+${P5SITE}/Dancer2/Core/MIME.pm
+${P5SITE}/Dancer2/Core/Request/
+${P5SITE}/Dancer2/Core/Request.pm
+${P5SITE}/Dancer2/Core/Request/Upload.pm
+${P5SITE}/Dancer2/Core/Response.pm
+${P5SITE}/Dancer2/Core/Role/
+${P5SITE}/Dancer2/Core/Role/ConfigReader.pm
+${P5SITE}/Dancer2/Core/Role/DSL.pm
+${P5SITE}/Dancer2/Core/Role/Engine.pm
+${P5SITE}/Dancer2/Core/Role/Handler.pm
+${P5SITE}/Dancer2/Core/Role/HasLocation.pm
+${P5SITE}/Dancer2/Core/Role/Headers.pm
+${P5SITE}/Dancer2/Core/Role/Hookable.pm
+${P5SITE}/Dancer2/Core/Role/Logger.pm
+${P5SITE}/Dancer2/Core/Role/Serializer.pm
+${P5SITE}/Dancer2/Core/Role/SessionFactory/
+${P5SITE}/Dancer2/Core/Role/SessionFactory.pm
+${P5SITE}/Dancer2/Core/Role/SessionFactory/File.pm
+${P5SITE}/Dancer2/Core/Role/StandardResponses.pm
+${P5SITE}/Dancer2/Core/Role/Template.pm
+${P5SITE}/Dancer2/Core/Route.pm
+${P5SITE}/Dancer2/Core/Runner.pm
+${P5SITE}/Dancer2/Core/Session.pm
+${P5SITE}/Dancer2/Core/Time.pm
+${P5SITE}/Dancer2/Core/Types.pm
+${P5SITE}/Dancer2/FileUtils.pm
+${P5SITE}/Dancer2/Handler/
+${P5SITE}/Dancer2/Handler/AutoPage.pm
+${P5SITE}/Dancer2/Handler/File.pm
+${P5SITE}/Dancer2/Logger/
+${P5SITE}/Dancer2/Logger/Capture/
+${P5SITE}/Dancer2/Logger/Capture.pm
+${P5SITE}/Dancer2/Logger/Capture/Trap.pm
+${P5SITE}/Dancer2/Logger/Console.pm
+${P5SITE}/Dancer2/Logger/Diag.pm
+${P5SITE}/Dancer2/Logger/File.pm
+${P5SITE}/Dancer2/Logger/Note.pm
+${P5SITE}/Dancer2/Logger/Null.pm
+${P5SITE}/Dancer2/Manual/
+${P5SITE}/Dancer2/Manual.pod
+${P5SITE}/Dancer2/Manual/Migration.pod
+${P5SITE}/Dancer2/Manual/Testing.pod
+${P5SITE}/Dancer2/Plugin.pm
+${P5SITE}/Dancer2/Plugins.pod
+${P5SITE}/Dancer2/Policy.pod
+${P5SITE}/Dancer2/Serializer/
+${P5SITE}/Dancer2/Serializer/Dumper.pm
+${P5SITE}/Dancer2/Serializer/JSON.pm
+${P5SITE}/Dancer2/Serializer/Mutable.pm
+${P5SITE}/Dancer2/Serializer/YAML.pm
+${P5SITE}/Dancer2/Session/
+${P5SITE}/Dancer2/Session/Simple.pm
+${P5SITE}/Dancer2/Session/YAML.pm
+${P5SITE}/Dancer2/Template/
+${P5SITE}/Dancer2/Template/Implementation/
+${P5SITE}/Dancer2/Template/Implementation/ForkedTiny.pm
+${P5SITE}/Dancer2/Template/Simple.pm
+${P5SITE}/Dancer2/Template/TemplateToolkit.pm
+${P5SITE}/Dancer2/Template/Tiny.pm
+${P5SITE}/Dancer2/Test.pm
+${P5SITE}/Dancer2/Tutorial.pod
+${P5SITE}/auto/share/dist/Dancer2/
+${P5SITE}/auto/share/dist/Dancer2/skel/
+${P5SITE}/auto/share/dist/Dancer2/skel/MANIFEST.SKIP
+${P5SITE}/auto/share/dist/Dancer2/skel/Makefile.PL
+${P5SITE}/auto/share/dist/Dancer2/skel/bin/
+${P5SITE}/auto/share/dist/Dancer2/skel/bin/+app.psgi
+${P5SITE}/auto/share/dist/Dancer2/skel/config.yml
+${P5SITE}/auto/share/dist/Dancer2/skel/cpanfile
+${P5SITE}/auto/share/dist/Dancer2/skel/environments/
+${P5SITE}/auto/share/dist/Dancer2/skel/environments/development.yml
+${P5SITE}/auto/share/dist/Dancer2/skel/environments/production.yml
+${P5SITE}/auto/share/dist/Dancer2/skel/lib/
+${P5SITE}/auto/share/dist/Dancer2/skel/lib/AppFile.pm
+${P5SITE}/auto/share/dist/Dancer2/skel/public/
+${P5SITE}/auto/share/dist/Dancer2/skel/public/+dispatch.cgi
+${P5SITE}/auto/share/dist/Dancer2/skel/public/+dispatch.fcgi
+${P5SITE}/auto/share/dist/Dancer2/skel/public/404.html
+${P5SITE}/auto/share/dist/Dancer2/skel/public/500.html
+${P5SITE}/auto/share/dist/Dancer2/skel/public/css/
+${P5SITE}/auto/share/dist/Dancer2/skel/public/css/error.css
+${P5SITE}/auto/share/dist/Dancer2/skel/public/css/style.css
+${P5SITE}/auto/share/dist/Dancer2/skel/public/favicon.ico
+${P5SITE}/auto/share/dist/Dancer2/skel/public/images/
+${P5SITE}/auto/share/dist/Dancer2/skel/public/images/perldancer-bg.jpg
+${P5SITE}/auto/share/dist/Dancer2/skel/public/images/perldancer.jpg
+${P5SITE}/auto/share/dist/Dancer2/skel/public/javascripts/
+${P5SITE}/auto/share/dist/Dancer2/skel/public/javascripts/jquery.js
+${P5SITE}/auto/share/dist/Dancer2/skel/t/
+${P5SITE}/auto/share/dist/Dancer2/skel/t/001_base.t
+${P5SITE}/auto/share/dist/Dancer2/skel/t/002_index_route.t
+${P5SITE}/auto/share/dist/Dancer2/skel/views/
+${P5SITE}/auto/share/dist/Dancer2/skel/views/index.tt
+${P5SITE}/auto/share/dist/Dancer2/skel/views/layouts/
+${P5SITE}/auto/share/dist/Dancer2/skel/views/layouts/main.tt
+@man man/man1/dancer2.1
+@man man/man3p/Dancer2.3p
+@man man/man3p/Dancer2::CLI.3p
+@man man/man3p/Dancer2::CLI::Command::gen.3p
+@man man/man3p/Dancer2::CLI::Command::version.3p
+@man man/man3p/Dancer2::Config.3p
+@man man/man3p/Dancer2::Cookbook.3p
+@man man/man3p/Dancer2::Core.3p
+@man man/man3p/Dancer2::Core::App.3p
+@man man/man3p/Dancer2::Core::Cookie.3p
+@man man/man3p/Dancer2::Core::DSL.3p
+@man man/man3p/Dancer2::Core::Dispatcher.3p
+@man man/man3p/Dancer2::Core::Error.3p
+@man man/man3p/Dancer2::Core::Factory.3p
+@man man/man3p/Dancer2::Core::HTTP.3p
+@man man/man3p/Dancer2::Core::Hook.3p
+@man man/man3p/Dancer2::Core::MIME.3p
+@man man/man3p/Dancer2::Core::Request.3p
+@man man/man3p/Dancer2::Core::Request::Upload.3p
+@man man/man3p/Dancer2::Core::Response.3p
+@man man/man3p/Dancer2::Core::Role::ConfigReader.3p
+@man man/man3p/Dancer2::Core::Role::DSL.3p
+@man man/man3p/Dancer2::Core::Role::Engine.3p
+@man man/man3p/Dancer2::Core::Role::Handler.3p
+@man man/man3p/Dancer2::Core::Role::HasLocation.3p
+@man man/man3p/Dancer2::Core::Role::Headers.3p
+@man man/man3p/Dancer2::Core::Role::Hookable.3p
+@man man/man3p/Dancer2::Core::Role::Logger.3p
+@man man/man3p/Dancer2::Core::Role::Serializer.3p
+@man man/man3p/Dancer2::Core::Role::SessionFactory.3p
+@man man/man3p/Dancer2::Core::Role::SessionFactory::File.3p
+@man man/man3p/Dancer2::Core::Role::StandardResponses.3p
+@man man/man3p/Dancer2::Core::Role::Template.3p
+@man man/man3p/Dancer2::Core::Route.3p
+@man man/man3p/Dancer2::Core::Runner.3p
+@man man/man3p/Dancer2::Core::Session.3p
+@man man/man3p/Dancer2::Core::Time.3p
+@man man/man3p/Dancer2::Core::Types.3p
+@man man/man3p/Dancer2::FileUtils.3p
+@man man/man3p/Dancer2::Handler::AutoPage.3p
+@man man/man3p/Dancer2::Handler::File.3p
+@man man/man3p/Dancer2::Logger::Capture.3p
+@man man/man3p/Dancer2::Logger::Capture::Trap.3p
+@man man/man3p/Dancer2::Logger::Console.3p
+@man man/man3p/Dancer2::Logger::Diag.3p
+@man man/man3p/Dancer2::Logger::File.3p
+@man man/man3p/Dancer2::Logger::Note.3p
+@man man/man3p/Dancer2::Logger::Null.3p
+@man man/man3p/Dancer2::Manual.3p
+@man man/man3p/Dancer2::Manual::Migration.3p
+@man man/man3p/Dancer2::Manual::Testing.3p
+@man man/man3p/Dancer2::Plugin.3p
+@man man/man3p/Dancer2::Plugins.3p
+@man man/man3p/Dancer2::Policy.3p
+@man man/man3p/Dancer2::Serializer::Dumper.3p
+@man man/man3p/Dancer2::Serializer::JSON.3p
+@man man/man3p/Dancer2::Serializer::Mutable.3p
+@man man/man3p/Dancer2::Serializer::YAML.3p
+@man man/man3p/Dancer2::Session::Simple.3p
+@man man/man3p/Dancer2::Session::YAML.3p
+@man man/man3p/Dancer2::Template::Implementation::ForkedTiny.3p
+@man man/man3p/Dancer2::Template::Simple.3p
+@man man/man3p/Dancer2::Template::TemplateToolkit.3p
+@man man/man3p/Dancer2::Template::Tiny.3p
+@man man/man3p/Dancer2::Test.3p
+@man man/man3p/Dancer2::Tutorial.3p
