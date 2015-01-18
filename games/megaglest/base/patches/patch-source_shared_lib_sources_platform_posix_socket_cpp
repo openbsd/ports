@@ -1,10 +1,19 @@
-$OpenBSD: patch-source_shared_lib_sources_platform_posix_socket_cpp,v 1.1 2013/05/21 10:34:14 dcoppa Exp $
+$OpenBSD: patch-source_shared_lib_sources_platform_posix_socket_cpp,v 1.2 2015/01/18 17:20:27 sthen Exp $
 
 Unbreak build with miniupnpc>1.7
 (from upstream SVN revision 3958)
 
---- source/shared_lib/sources/platform/posix/socket.cpp.orig	Sat Nov 10 07:37:23 2012
-+++ source/shared_lib/sources/platform/posix/socket.cpp	Tue May 21 11:06:22 2013
+--- source/shared_lib/sources/platform/posix/socket.cpp.orig	Sat Nov 10 06:37:23 2012
++++ source/shared_lib/sources/platform/posix/socket.cpp	Sun Jan 18 17:20:02 2015
+@@ -314,7 +314,7 @@ string Ip::getString() const{
+ //	class Socket
+ // ===============================================
+ 
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(BSD) || defined(__APPLE__) || defined(__linux__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(BSD) || defined(__APPLE__) || defined(__linux__) || defined(__OpenBSD__)
+ # define USE_GETIFADDRS 1
+ # include <ifaddrs.h>
+ #endif
 @@ -2478,13 +2478,22 @@ int UPNP_Tools::upnp_init(void *param) {
  				if(SystemFlags::VERBOSE_MODE_ENABLED) printf("UPnP device found: %s %s\n", dev->descURL, dev->st);
  
