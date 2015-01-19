@@ -1,0 +1,16 @@
+$OpenBSD: patch-po_wesnoth_ru_po,v 1.1 2015/01/19 14:43:25 kirby Exp $
+
+Fix translation bug for russian locale and make level value visible.
+Upstream 814acfaf7ce215e297a7c9854d841fabde085327
+
+--- po/wesnoth/ru.po.orig	Mon Jan 19 13:05:44 2015
++++ po/wesnoth/ru.po	Mon Jan 19 13:43:14 2015
+@@ -3315,7 +3315,7 @@ msgstr "доход"
+ #. [unit_level]: id=unit-level
+ #: data/themes/default.cfg:394
+ msgid "statuspanel^lvl"
+-msgstr "урвн"
++msgstr "ур"
+ 
+ #. [action]: id=button-playreplay, type=image
+ #: data/themes/macros.cfg:397
