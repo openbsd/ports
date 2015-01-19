@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/06/14 23:24:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.34 2015/01/19 07:14:29 afresh1 Exp $
 bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
@@ -74,7 +74,6 @@ ${P5ARCH}/DBI/W32ODBC.pm
 ${P5ARCH}/Win32/
 ${P5ARCH}/Win32/DBIODBC.pm
 ${P5ARCH}/auto/DBI/
-@comment ${P5ARCH}/auto/DBI/DBI.bs
 ${P5ARCH}/auto/DBI/DBI.so
 ${P5ARCH}/auto/DBI/DBIXS.h
 ${P5ARCH}/auto/DBI/Driver.xst
