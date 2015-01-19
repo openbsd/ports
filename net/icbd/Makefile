@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/28 11:26:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/19 12:25:08 pascal Exp $
 
 COMMENT =		Internet Citizens Band Server
 
-V =			1.1
 GH_ACCOUNT =		mbelop
 GH_PROJECT =		icbd
-GH_TAGNAME =		version_${V:S/./_/}
-DISTNAME =		icbd-$V
+GH_TAGNAME =		1.4
+DISTNAME =		icbd-${GH_TAGNAME}
 
 CATEGORIES =		net
 
@@ -20,7 +19,5 @@ WANTLIB =		c event
 FAKE_FLAGS =		PREFIX=${TRUEPREFIX}
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/icbd-${GH_TAGNAME}
 
 .include <bsd.port.mk>
