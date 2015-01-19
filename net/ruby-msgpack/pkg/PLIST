@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/17 10:43:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/01/19 09:08:11 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
 ${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
 @comment ${GEM_EXTENSIONS_DIR}/gem_make.out
 @comment ${GEM_EXTENSIONS_DIR}/mkmf.log
 @comment ${GEM_EXTENSIONS_DIR}/msgpack/
@@ -21,6 +24,18 @@ ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/packer.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/java/
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Buffer.java
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Decoder.java
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Encoder.java
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/ExtensionValue.java
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/MessagePackLibrary.java
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Packer.java
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Types.java
+${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Unpacker.java
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/
 @comment ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/.RUBYARCHDIR.-.msgpack.time
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/Makefile
@@ -73,9 +88,18 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_io_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_packer.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cruby/buffer_unpacker.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cruby/packer_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cruby/unpacker_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/format_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/packer_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/jruby/
+${GEM_LIB}/gems/${DISTNAME}/spec/jruby/benchmarks/
+${GEM_LIB}/gems/${DISTNAME}/spec/jruby/benchmarks/shootout_bm.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/jruby/benchmarks/symbolize_keys_bm.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/jruby/msgpack/
+${GEM_LIB}/gems/${DISTNAME}/spec/jruby/msgpack/unpacker_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/jruby/msgpack_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pack_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/random_compat.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/unpacker_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unpack_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
