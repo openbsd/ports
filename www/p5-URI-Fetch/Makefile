@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/19 16:28:30 benoit Exp $
 
 COMMENT=		smart URI fetching/caching
 
 MODULES=		cpan
-DISTNAME=		URI-Fetch-0.08
-REVISION=		1
+DISTNAME =		URI-Fetch-0.10
 CATEGORIES=		www
-USE_GROFF =		Yes
-
-CONFIGURE_STYLE=	modbuild
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
