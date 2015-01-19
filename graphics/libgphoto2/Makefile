@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2014/12/22 14:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/01/19 14:02:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		digital camera library
 
-VERSION=		2.5.6
+VERSION=		2.5.7
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
 
