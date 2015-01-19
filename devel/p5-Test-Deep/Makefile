@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/12/22 07:39:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/19 00:02:45 afresh1 Exp $
 
 COMMENT =	flexible deep comparison
 
-DISTNAME =	Test-Deep-0.114
+DISTNAME =	Test-Deep-0.115
 CATEGORIES =	devel
 MODULES =	cpan
 
