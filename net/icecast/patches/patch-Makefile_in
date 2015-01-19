@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2014/05/28 13:37:25 gonzalo Exp $
---- Makefile.in.orig	Tue May  6 01:55:10 2014
-+++ Makefile.in	Tue May 13 08:42:27 2014
+$OpenBSD: patch-Makefile_in,v 1.7 2015/01/19 09:14:32 dcoppa Exp $
+--- Makefile.in.orig	Wed Nov 19 05:58:18 2014
++++ Makefile.in	Sun Jan  4 17:06:40 2015
 @@ -392,7 +392,7 @@ EXTRA_DIST = HACKING m4/acx_pthread.m4 m4/ogg.m4 \
      m4/xiph_compiler.m4 m4/xiph_curl.m4 m4/xiph_net.m4 \
-     m4/xiph_types.m4 m4/xiph_xml2.m4 icecast.spec
+     m4/xiph_types.m4 m4/xiph_xml2.m4
  
 -doc_DATA = README AUTHORS COPYING NEWS TODO ChangeLog
 +doc_DATA = AUTHORS NEWS

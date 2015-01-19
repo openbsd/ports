@@ -1,28 +1,47 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/05/28 13:37:25 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/01/19 09:14:32 dcoppa Exp $
 @newgroup _icecast:611
 @newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
 @bin bin/icecast
 share/doc/icecast/
 share/doc/icecast/AUTHORS
 share/doc/icecast/NEWS
-share/doc/icecast/icecast2_admin.html
-share/doc/icecast/icecast2_auth.html
-share/doc/icecast/icecast2_basicsetup.html
-share/doc/icecast/icecast2_changes.html
-share/doc/icecast/icecast2_config_file.html
-share/doc/icecast/icecast2_faq.html
-share/doc/icecast/icecast2_glossary.html
-share/doc/icecast/icecast2_introduction.html
-share/doc/icecast/icecast2_relay.html
-share/doc/icecast/icecast2_stats.html
-share/doc/icecast/icecast2_win32.html
-share/doc/icecast/icecast2_yp.html
+share/doc/icecast/admin-interface.html
+share/doc/icecast/assets/
+share/doc/icecast/assets/css/
+share/doc/icecast/assets/css/style.css
+share/doc/icecast/assets/font/
+share/doc/icecast/assets/font/FiraMono-Bold.eot
+share/doc/icecast/assets/font/FiraMono-Bold.woff
+share/doc/icecast/assets/font/FiraMono-Regular.eot
+share/doc/icecast/assets/font/FiraMono-Regular.woff
+share/doc/icecast/assets/font/FiraSans-Bold.eot
+share/doc/icecast/assets/font/FiraSans-Bold.woff
+share/doc/icecast/assets/font/FiraSans-BoldItalic.eot
+share/doc/icecast/assets/font/FiraSans-BoldItalic.woff
+share/doc/icecast/assets/font/FiraSans-Italic.eot
+share/doc/icecast/assets/font/FiraSans-Italic.woff
+share/doc/icecast/assets/font/FiraSans-Regular.eot
+share/doc/icecast/assets/font/FiraSans-Regular.woff
+share/doc/icecast/assets/img/
+share/doc/icecast/assets/img/xiph-community.svg
+share/doc/icecast/auth.html
+share/doc/icecast/basic-setup.html
+share/doc/icecast/changes.html
+share/doc/icecast/config-file.html
+share/doc/icecast/faq.html
+share/doc/icecast/glossary.html
+share/doc/icecast/img/
+share/doc/icecast/img/listener_auth1.png
+share/doc/icecast/img/listener_auth2.png
+share/doc/icecast/img/listener_auth3.png
+share/doc/icecast/img/masterslave.png
+share/doc/icecast/img/relay.png
 share/doc/icecast/index.html
-share/doc/icecast/listener_auth1.jpg
-share/doc/icecast/listener_auth2.jpg
-share/doc/icecast/listener_auth3.jpg
-share/doc/icecast/masterslave.png
-share/doc/icecast/relay.png
+share/doc/icecast/introduction.html
+share/doc/icecast/relaying.html
+share/doc/icecast/server-stats.html
+share/doc/icecast/win32.html
+share/doc/icecast/yp.html
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/icecast/
 @owner _icecast
@@ -67,10 +86,6 @@ share/examples/icecast/web/server_version.xsl
 @sample /var/icecast/web/server_version.xsl
 share/examples/icecast/web/status-json.xsl
 @sample /var/icecast/web/status-json.xsl
-share/examples/icecast/web/xml2json.xslt
-@sample /var/icecast/web/xml2json.xslt
-@owner _icecast
-@group _icecast
 share/examples/icecast/web/status.xsl
 @sample /var/icecast/web/status.xsl
 share/examples/icecast/web/style.css
@@ -79,4 +94,6 @@ share/examples/icecast/web/tunein.png
 @sample /var/icecast/web/tunein.png
 @sample /var/icecast/log/
 @sample /var/icecast/etc/
+share/examples/icecast/web/xml2json.xslt
+@sample /var/icecast/web/xml2json.xslt
 @rcscript ${RCDIR}/icecast

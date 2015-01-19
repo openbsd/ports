@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_Makefile_in,v 1.6 2014/05/28 13:37:25 gonzalo Exp $
---- conf/Makefile.in.orig	Tue May  6 01:55:10 2014
-+++ conf/Makefile.in	Tue May 13 08:42:27 2014
+$OpenBSD: patch-conf_Makefile_in,v 1.7 2015/01/19 09:14:32 dcoppa Exp $
+--- conf/Makefile.in.orig	Wed Nov 19 07:58:18 2014
++++ conf/Makefile.in	Mon Jan 19 03:09:48 2015
 @@ -269,7 +269,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
@@ -10,3 +10,11 @@ $OpenBSD: patch-conf_Makefile_in,v 1.6 2014/05/28 13:37:25 gonzalo Exp $
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
+@@ -465,7 +465,6 @@ info-am:
+ 
+ install-data-am: install-docDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-am
+ 
+ install-dvi-am:

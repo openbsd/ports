@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_icecast_minimal_xml_in,v 1.2 2012/09/01 17:35:54 gonzalo Exp $
---- conf/icecast_minimal.xml.in.orig	Mon Jun 11 13:45:19 2012
-+++ conf/icecast_minimal.xml.in	Fri Aug 31 11:26:58 2012
-@@ -22,9 +22,10 @@
+$OpenBSD: patch-conf_icecast_minimal_xml_in,v 1.3 2015/01/19 09:14:32 dcoppa Exp $
+--- conf/icecast_minimal.xml.in.orig	Mon Nov 10 00:17:57 2014
++++ conf/icecast_minimal.xml.in	Sun Jan  4 17:06:40 2015
+@@ -23,9 +23,10 @@
      </listen-socket>
      <fileserve>1</fileserve>
      <paths>
@@ -15,9 +15,9 @@ $OpenBSD: patch-conf_icecast_minimal_xml_in,v 1.2 2012/09/01 17:35:54 gonzalo Ex
          <alias source="/" destination="/status.xsl"/>
      </paths>
      <logging>
-@@ -32,4 +33,11 @@
+@@ -33,6 +34,13 @@
          <errorlog>error.log</errorlog>
-       	<loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
+         <loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
      </logging>
 +    <security>
 +        <chroot>1</chroot>  
@@ -26,4 +26,6 @@ $OpenBSD: patch-conf_icecast_minimal_xml_in,v 1.2 2012/09/01 17:35:54 gonzalo Ex
 +            <group>_icecast</group>
 +        </changeowner>
 +    </security>
- </icecast>
+     <http-headers>
+         <header name="Access-Control-Allow-Origin" value="*" />
+     </http-headers>
