@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_plugins_python_CMakeLists_txt,v 1.1 2015/01/19 12:28:46 dcoppa Exp $
+--- src/plugins/python/CMakeLists.txt.orig	Mon Jan 19 04:44:30 2015
++++ src/plugins/python/CMakeLists.txt	Mon Jan 19 04:45:43 2015
+@@ -22,10 +22,9 @@ weechat-python-api.c weechat-python-api.h)
+ 
+ set_target_properties(python PROPERTIES PREFIX "")
+ 
+-if(PYTHON_FOUND)
+-  include_directories(${PYTHON_INCLUDE_PATH})
+-  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} ${PYTHON_LFLAGS}")
+-  target_link_libraries(python ${PYTHON_LIBRARY} weechat_plugins_scripts)
++if(PYTHONLIBS_FOUND)
++  include_directories(${PYTHON_INCLUDE_DIRS})
++  target_link_libraries(python ${PYTHON_LIBRARIES} weechat_plugins_scripts)
+ endif()
+ 
+ install(TARGETS python LIBRARY DESTINATION ${LIBDIR}/plugins)

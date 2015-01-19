@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/08 13:46:16 nigel Exp $
+# $OpenBSD: Makefile,v 1.17 2015/01/19 12:28:46 dcoppa Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		1.0.1
+V=		1.1
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -31,7 +31,7 @@ MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 WANTLIB-main=	c curl m ncursesw perl pthread util \
 		gcrypt gnutls gpg-error z ${MODGETTEXT_WANTLIB}
 
-WANTLIB-lua=	${MODLUA_WANTLIB}
+WANTLIB-lua=	${MODLUA_WANTLIB} m
 WANTLIB-python=	${MODPY_WANTLIB}
 WANTLIB-ruby=	${MODRUBY_WANTLIB} gmp m pthread
 WANTLIB-tcl=	${MODTCL_WANTLIB}
@@ -78,6 +78,11 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DTCL_TCLSH=${MODTCL_BIN} \
 		-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 		-DMODTCL_LIB=${MODTCL_LIB}
+
+pre-configure:
+	rm ${WRKSRC}/cmake/FindLua.cmake \
+		${WRKSRC}/cmake/FindRuby.cmake \
+		${WRKSRC}/cmake/FindTCL.cmake
 
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_gui_curses_CMakeLists_txt,v 1.1 2014/11/04 11:41:19 dcoppa Exp $
---- src/gui/curses/CMakeLists.txt.orig	Sun Sep 28 08:59:19 2014
-+++ src/gui/curses/CMakeLists.txt	Mon Nov  3 11:52:33 2014
+$OpenBSD: patch-src_gui_curses_CMakeLists_txt,v 1.2 2015/01/19 12:28:46 dcoppa Exp $
+--- src/gui/curses/CMakeLists.txt.orig	Sun Jan 11 02:39:40 2015
++++ src/gui/curses/CMakeLists.txt	Mon Jan 19 03:17:43 2015
 @@ -84,15 +84,12 @@ add_dependencies(${EXECUTABLE} weechat_gui_curses)
- # Because of a linker bug, we have to link 2 times with libweechat_core.a
+ # Due to circular references, we must link two times with libweechat_core.a
  target_link_libraries(${EXECUTABLE} ${STATIC_LIBS} weechat_gui_curses ${EXTRA_LIBS} ${STATIC_LIBS})
  
 -install(TARGETS ${EXECUTABLE} RUNTIME DESTINATION bin)
