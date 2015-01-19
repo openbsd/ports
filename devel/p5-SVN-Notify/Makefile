@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/19 14:42:50 benoit Exp $
 
 COMMENT=	subversion activity notification
 
 MODULES=	cpan
 
-DISTNAME=	SVN-Notify-2.78
-REVISION=	1
+DISTNAME =	SVN-Notify-2.84
 CATEGORIES=	devel
 
 # perl
@@ -18,6 +17,5 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 MAKE_ENV=	TEST_POD=Yes
 
 CONFIGURE_STYLE= modbuild
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
