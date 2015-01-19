@@ -1,0 +1,22 @@
+$OpenBSD: patch-dbus_c,v 1.3 2015/01/19 08:45:16 dcoppa Exp $
+
+commit 89fd49f48cea35a0a78691c3839cc0b8df2ade1c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 17 19:44:04 2015 +0100
+
+a_dbus_message_iter: Handle DBUS_TYPE_DOUBLE
+
+Fixes #78 on GitHub.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- dbus.c.orig	Sat Jan 10 13:36:35 2015
++++ dbus.c	Sun Jan 18 13:49:57 2015
+@@ -239,6 +239,7 @@ a_dbus_message_iter(DBusMessageIter *iter)
+           DBUS_MSG_HANDLE_TYPE_NUMBER(uint32_t, DBUS_TYPE_UINT32)
+           DBUS_MSG_HANDLE_TYPE_NUMBER(int64_t, DBUS_TYPE_INT64)
+           DBUS_MSG_HANDLE_TYPE_NUMBER(uint64_t, DBUS_TYPE_UINT64)
++          DBUS_MSG_HANDLE_TYPE_NUMBER(double, DBUS_TYPE_DOUBLE)
+ #undef DBUS_MSG_HANDLE_TYPE_NUMBER
+           case DBUS_TYPE_STRING:
+             {
