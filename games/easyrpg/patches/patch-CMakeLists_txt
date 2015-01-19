@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/10/24 12:51:30 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/01/19 10:40:48 dcoppa Exp $
 --- CMakeLists.txt.orig	Mon Oct 14 15:30:54 2013
 +++ CMakeLists.txt	Sun Oct 20 12:35:11 2013
 @@ -9,12 +9,6 @@ set(DEFAULT_EASYRPG_READERS_PATH "${CMAKE_CURRENT_SOUR
@@ -34,7 +34,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2013/10/24 12:51:30 bcallah Exp $
  set(SHINONOME_SRCS "${SHINONOME_PATH}/gothic.cxx" "${SHINONOME_PATH}/mincho.cxx")
  include_directories(${SHINONOME_PATH})
 -find_package(Ruby)
-+find_package(Ruby 1.8)
++find_package(Ruby $ENV{MODRUBY_REV})
  if(RUBY_FOUND)
    set(SHINONOME_GENERATOR "${SHINONOME_PATH}/generate_cxx_font.rb")
    add_custom_command(
@@ -43,7 +43,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2013/10/24 12:51:30 bcallah Exp $
  
  # RTP Table
 -find_package(Ruby)
-+find_package(Ruby 1.8)
++find_package(Ruby $ENV{MODRUBY_REV})
  if(RUBY_FOUND)
    add_custom_command(
      OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/src/rtp_table_bom.h"
