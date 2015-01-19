@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dep_constants_dep_h,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp $
+$OpenBSD: patch-src_dep_constants_dep_h,v 1.2 2015/01/19 20:44:15 naddy Exp $
 --- src/dep/constants_dep.h.orig	Wed Mar 28 00:09:06 2007
-+++ src/dep/constants_dep.h	Sun Oct 26 16:14:54 2008
++++ src/dep/constants_dep.h	Mon Jan 19 21:32:19 2015
 @@ -5,7 +5,8 @@
  
  /* platform dependent */
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_dep_constants_dep_h,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp 
  # include <sys/types.h>
  # include <sys/socket.h>
  # include <netinet/in.h>
-@@ -37,14 +38,21 @@
+@@ -37,14 +38,20 @@
  # if defined(__FreeBSD__)
  #  include <net/ethernet.h>
  #  include <sys/uio.h>
@@ -31,7 +31,6 @@ $OpenBSD: patch-src_dep_constants_dep_h,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp 
  # endif
 +# if defined(__OpenBSD__)
 +#  include <netinet/if_ether.h>
-+#  include <sys/uio.h>
 +# endif
  # include <ifaddrs.h>
  # define IFACE_NAME_LENGTH         IF_NAMESIZE
