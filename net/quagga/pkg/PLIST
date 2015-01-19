@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/06/27 00:06:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/01/19 15:44:12 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
@@ -70,6 +70,7 @@ lib/libzebra.la
 @lib lib/libzebra.so.${LIBzebra_VERSION}
 @man man/man1/vtysh.1
 @man man/man8/bgpd.8
+@man man/man8/isisd.8
 @man man/man8/ospf6d.8
 @man man/man8/ospfclient.8
 @man man/man8/ospfd.8
@@ -79,6 +80,7 @@ lib/libzebra.la
 @man man/man8/zebra.8
 @bin sbin/babeld
 @bin sbin/bgpd
+@bin sbin/isisd
 @bin sbin/ospf6d
 @bin sbin/ospfclient
 @bin sbin/ospfd
@@ -106,6 +108,12 @@ share/examples/quagga/bgpd.conf.sample
 @owner
 @group
 share/examples/quagga/bgpd.conf.sample2
+share/examples/quagga/isisd.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/isisd.conf
+@owner
+@group
 share/examples/quagga/ospf6d.conf.sample
 @owner _quagga
 @group _quagga
@@ -146,6 +154,7 @@ share/examples/quagga/zebra.conf.sample
 @group
 @rcscript ${RCDIR}/quagga_babeld
 @rcscript ${RCDIR}/quagga_bgpd
+@rcscript ${RCDIR}/quagga_isisd
 @rcscript ${RCDIR}/quagga_ospf6d
 @rcscript ${RCDIR}/quagga_ospfd
 @rcscript ${RCDIR}/quagga_ripd

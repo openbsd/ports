@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: quagga_isisd.rc,v 1.1 2015/01/19 15:44:12 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/isisd -d"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
