@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.92 2014/12/17 00:15:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.93 2015/01/19 20:20:59 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.4.0
-REVISION=		5
+REVISION=		6
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1565117.tgz
@@ -38,9 +38,8 @@ RUN_DEPENDS=		${COMMON_DEPENDS} \
 			net/p5-Net-Patricia \
 			security/gnupg \
 			textproc/p5-Encode-Detect \
-			www/p5-libwww
-# SpamAssassin can use curl instead of LWP (lighter dep chain), but it needs
-# a separate HTTP::Date, our LWP pre-dates this being split off.
+			curl-*|p5-libwww-*:net/curl \
+			www/p5-HTTP-Date
 TEST_DEPENDS=		${RUN_DEPENDS}
 
 MAKE_ENV+=		CC="${CC}"
