@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/08/10 18:32:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/01/19 09:24:03 jasper Exp $
 @bin bin/remote-viewer
 @bin bin/virt-viewer
 libexec/spice-xpi-client-remote-viewer
@@ -8,11 +8,13 @@ share/applications/remote-viewer.desktop
 share/icons/hicolor/16x16/apps/virt-viewer.png
 share/icons/hicolor/22x22/apps/virt-viewer.png
 share/icons/hicolor/24x24/apps/virt-viewer.png
+share/icons/hicolor/24x24/devices/virt-viewer-usb.png
 share/icons/hicolor/24x24/devices/virt-viewer-usb.svg
 share/icons/hicolor/256x256/apps/virt-viewer.png
 share/icons/hicolor/32x32/apps/virt-viewer.png
 share/icons/hicolor/48x48/apps/virt-viewer.png
 share/icons/hicolor/devices/
+share/icons/hicolor/devices/virt-viewer-usb.png
 share/icons/hicolor/devices/virt-viewer-usb.svg
 share/locale/ach/
 share/locale/ach/LC_MESSAGES/
@@ -20,9 +22,6 @@ share/locale/ach/LC_MESSAGES/virt-viewer.mo
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/virt-viewer.mo
-share/locale/af_ZA/
-share/locale/af_ZA/LC_MESSAGES/
-share/locale/af_ZA/LC_MESSAGES/virt-viewer.mo
 share/locale/aln/
 share/locale/aln/LC_MESSAGES/
 share/locale/aln/LC_MESSAGES/virt-viewer.mo
@@ -60,9 +59,6 @@ share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/virt-viewer.mo
 share/locale/ca/LC_MESSAGES/virt-viewer.mo
 share/locale/cs/LC_MESSAGES/virt-viewer.mo
-share/locale/cs_CZ/
-share/locale/cs_CZ/LC_MESSAGES/
-share/locale/cs_CZ/LC_MESSAGES/virt-viewer.mo
 share/locale/cy/LC_MESSAGES/virt-viewer.mo
 share/locale/da/LC_MESSAGES/virt-viewer.mo
 share/locale/de/LC_MESSAGES/virt-viewer.mo
@@ -79,16 +75,9 @@ share/locale/en_US/LC_MESSAGES/
 share/locale/en_US/LC_MESSAGES/virt-viewer.mo
 share/locale/eo/LC_MESSAGES/virt-viewer.mo
 share/locale/es/LC_MESSAGES/virt-viewer.mo
-share/locale/es_ES/
-share/locale/es_ES/LC_MESSAGES/
-share/locale/es_ES/LC_MESSAGES/virt-viewer.mo
 share/locale/et/LC_MESSAGES/virt-viewer.mo
 share/locale/eu/LC_MESSAGES/virt-viewer.mo
-share/locale/eu_ES/
-share/locale/eu_ES/LC_MESSAGES/
-share/locale/eu_ES/LC_MESSAGES/virt-viewer.mo
 share/locale/fa/LC_MESSAGES/virt-viewer.mo
-share/locale/fa_IR/LC_MESSAGES/virt-viewer.mo
 share/locale/fi/LC_MESSAGES/virt-viewer.mo
 share/locale/fr/LC_MESSAGES/virt-viewer.mo
 share/locale/ga/LC_MESSAGES/virt-viewer.mo
@@ -99,9 +88,6 @@ share/locale/gu/LC_MESSAGES/virt-viewer.mo
 share/locale/he/LC_MESSAGES/virt-viewer.mo
 share/locale/hi/LC_MESSAGES/virt-viewer.mo
 share/locale/hr/LC_MESSAGES/virt-viewer.mo
-share/locale/hr_HR/
-share/locale/hr_HR/LC_MESSAGES/
-share/locale/hr_HR/LC_MESSAGES/virt-viewer.mo
 share/locale/hu/LC_MESSAGES/virt-viewer.mo
 share/locale/hy/
 share/locale/hy/LC_MESSAGES/
@@ -115,13 +101,7 @@ share/locale/is/
 share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/virt-viewer.mo
 share/locale/it/LC_MESSAGES/virt-viewer.mo
-share/locale/it_IT/
-share/locale/it_IT/LC_MESSAGES/
-share/locale/it_IT/LC_MESSAGES/virt-viewer.mo
 share/locale/ja/LC_MESSAGES/virt-viewer.mo
-share/locale/ja_JP/
-share/locale/ja_JP/LC_MESSAGES/
-share/locale/ja_JP/LC_MESSAGES/virt-viewer.mo
 share/locale/ka/LC_MESSAGES/virt-viewer.mo
 share/locale/kk/LC_MESSAGES/virt-viewer.mo
 share/locale/km/
@@ -167,9 +147,6 @@ share/locale/mr/
 share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/virt-viewer.mo
 share/locale/ms/LC_MESSAGES/virt-viewer.mo
-share/locale/ms_MY/
-share/locale/ms_MY/LC_MESSAGES/
-share/locale/ms_MY/LC_MESSAGES/virt-viewer.mo
 share/locale/my/
 share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/virt-viewer.mo
@@ -210,9 +187,6 @@ share/locale/sv/LC_MESSAGES/virt-viewer.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/virt-viewer.mo
-share/locale/ta_IN/
-share/locale/ta_IN/LC_MESSAGES/
-share/locale/ta_IN/LC_MESSAGES/virt-viewer.mo
 share/locale/te/LC_MESSAGES/virt-viewer.mo
 share/locale/tg/
 share/locale/tg/LC_MESSAGES/
@@ -225,9 +199,6 @@ share/locale/tl/LC_MESSAGES/
 share/locale/tl/LC_MESSAGES/virt-viewer.mo
 share/locale/tr/LC_MESSAGES/virt-viewer.mo
 share/locale/uk/LC_MESSAGES/virt-viewer.mo
-share/locale/uk_UA/
-share/locale/uk_UA/LC_MESSAGES/
-share/locale/uk_UA/LC_MESSAGES/virt-viewer.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/virt-viewer.mo
@@ -241,8 +212,14 @@ share/locale/wo/LC_MESSAGES/virt-viewer.mo
 share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/virt-viewer.mo
+share/locale/zh_CN.GB2312/
+share/locale/zh_CN.GB2312/LC_MESSAGES/
+share/locale/zh_CN.GB2312/LC_MESSAGES/virt-viewer.mo
 share/locale/zh_CN/LC_MESSAGES/virt-viewer.mo
 share/locale/zh_HK/LC_MESSAGES/virt-viewer.mo
+share/locale/zh_TW.Big5/
+share/locale/zh_TW.Big5/LC_MESSAGES/
+share/locale/zh_TW.Big5/LC_MESSAGES/virt-viewer.mo
 share/locale/zh_TW/LC_MESSAGES/virt-viewer.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
@@ -252,6 +229,8 @@ share/virt-viewer/
 share/virt-viewer/ui/
 share/virt-viewer/ui/virt-viewer-about.xml
 share/virt-viewer/ui/virt-viewer-auth.xml
+share/virt-viewer/ui/virt-viewer-guest-details.xml
+share/virt-viewer/ui/virt-viewer-vm-connection.xml
 share/virt-viewer/ui/virt-viewer.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
