@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/10 01:27:12 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2015/01/19 00:03:42 afresh1 Exp $
 
 COMMENT =	test functions for exception based code
 
-DISTNAME =	Test-Exception-0.35
+DISTNAME =	Test-Exception-0.36
 CATEGORIES =	devel
 MODULES =	cpan
 
