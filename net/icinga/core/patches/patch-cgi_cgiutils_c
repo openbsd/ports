@@ -1,0 +1,73 @@
+$OpenBSD: patch-cgi_cgiutils_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
+--- cgi/cgiutils.c.orig	Mon Jan 19 16:15:51 2015
++++ cgi/cgiutils.c	Mon Jan 19 16:18:42 2015
+@@ -1278,7 +1278,7 @@ void document_header(int cgi_id, int use_stylesheet, c
+ 		printf("{ \"cgi_json_version\": \"%s\",\n", JSON_OUTPUT_VERSION);
+ 		printf("\"icinga_status\": {\n");
+ 
+-		printf("\"status_data_age\": %lu,\n", current_time - status_file_creation_time);
++		printf("\"status_data_age\": %llu,\n", (long long)current_time - (long long)status_file_creation_time);
+ 		printf("\"status_update_interval\": %d,\n", status_update_interval);
+ 		printf("\"reading_status_data_ok\": %s,\n", (result == ERROR && daemon_check == TRUE) ? "false" : "true");
+ 		printf("\"program_version\": \"%s\",\n", status_file_icinga_version);
+@@ -1293,12 +1293,12 @@ void document_header(int cgi_id, int use_stylesheet, c
+ 			printf("\"date_format\": \"%siso8601\",\n", (date_format == DATE_FORMAT_STRICT_ISO8601) ? "strict-" : "");
+ 		else
+ 			printf("\"date_format\": \"us\",\n");
+-		printf("\"program_start\": %lu,\n", program_start);
++		printf("\"program_start\": %llu,\n", (long long)program_start);
+ 		printf("\"total_running_time\": \"%s\",\n", run_time_string);
+-		printf("\"last_external_command_check\": %lu,\n", last_command_check);
+-		printf("\"last_log_file_rotation\": %lu,\n", last_log_rotation);
++		printf("\"last_external_command_check\": %llu,\n", (long long)last_command_check);
++		printf("\"last_log_file_rotation\": %llu,\n", (long long)last_log_rotation);
+ 		printf("\"notifications_enabled\": %s,\n", (enable_notifications == TRUE) ? "true" : "false");
+-		printf("\"disable_notifications_expire_time\": %lu,\n", disable_notifications_expire_time);
++		printf("\"disable_notifications_expire_time\": %llu,\n", (long long)disable_notifications_expire_time);
+ 		printf("\"service_checks_being_executed\": %s,\n", (execute_service_checks == TRUE) ? "true" : "false");
+ 		printf("\"passive_service_checks_being_accepted\": %s,\n", (accept_passive_service_checks == TRUE) ? "true" : "false");
+ 		printf("\"host_checks_being_executed\": %s,\n", (execute_host_checks == TRUE) ? "true" : "false");
+@@ -2296,10 +2296,10 @@ void display_nav_table(time_t ts_start, time_t ts_end)
+ 	printf("<td align='center' valign='middle' class='navBoxItem'>\n");
+ 	if (ts_end > ts_midnight) {
+ 		printf("Latest Archive<br>");
+-		printf("<a href='%s%sts_start=%lu&amp;ts_end=%lu'><img src='%s%s' border='0' alt='Latest Archive' title='Latest Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", ts_midnight - 86400, ts_midnight - 1, url_images_path, LEFT_ARROW_ICON);
++		printf("<a href='%s%sts_start=%llu&amp;ts_end=%llu'><img src='%s%s' border='0' alt='Latest Archive' title='Latest Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", (long long)ts_midnight - 86400, (long long)ts_midnight - 1, url_images_path, LEFT_ARROW_ICON);
+ 	} else {
+ 		printf("Earlier Archive<br>");
+-		printf("<a href='%s%sts_start=%lu&amp;ts_end=%lu'><img src='%s%s' border='0' alt='Earlier Archive' title='Earlier Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", ts_start - 86400, ts_start - 1, url_images_path, LEFT_ARROW_ICON);
++		printf("<a href='%s%sts_start=%llu&amp;ts_end=%lul'><img src='%s%s' border='0' alt='Earlier Archive' title='Earlier Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", (long long)ts_start - 86400, (long long)ts_start - 1, url_images_path, LEFT_ARROW_ICON);
+ 	}
+ 	printf("</td>\n");
+ 
+@@ -2325,10 +2325,10 @@ void display_nav_table(time_t ts_start, time_t ts_end)
+ 		printf("<td align='center' valign='middle' class='navBoxItem'>\n");
+ 		if (ts_end == ts_midnight) {
+ 			printf("Current Log<br>");
+-			printf("<a href='%s%sts_start=%lu&amp;ts_end=%lu'><img src='%s%s' border='0' alt='Current Log' title='Current Log'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", ts_midnight + 1, ts_midnight + 86400, url_images_path, RIGHT_ARROW_ICON);
++			printf("<a href='%s%sts_start=%llu&amp;ts_end=%llu'><img src='%s%s' border='0' alt='Current Log' title='Current Log'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", (long long)ts_midnight + 1, (long long)ts_midnight + 86400, url_images_path, RIGHT_ARROW_ICON);
+ 		} else {
+ 			printf("More Recent Archive<br>");
+-			printf("<a href='%s%sts_start=%lu&amp;ts_end=%lu'><img src='%s%s' border='0' alt='More Recent Archive' title='More Recent Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", ts_end + 1, ts_end + 86400, url_images_path, RIGHT_ARROW_ICON);
++			printf("<a href='%s%sts_start=%llu&amp;ts_end=%llu'><img src='%s%s' border='0' alt='More Recent Archive' title='More Recent Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", (long long)ts_end + 1, (long long)ts_end + 86400, url_images_path, RIGHT_ARROW_ICON);
+ 		}
+ 		printf("</td>\n");
+ 	} else
+@@ -2342,7 +2342,7 @@ void display_nav_table(time_t ts_start, time_t ts_end)
+ 
+ 	printf("<script type='text/javascript'>\n");
+ 	printf("$(function() {\n");
+-	printf("\t$(\"#history-datepicker\").datepicker( \"setDate\", \"%lu000\" );\n",ts_start);
++	printf("\t$(\"#history-datepicker\").datepicker( \"setDate\", \"%llu000\" );\n",(long long)ts_start);
+ 	printf("});\n");
+ 	printf("</script>\n");
+ 
+@@ -2955,7 +2955,7 @@ int write_to_cgi_log(char *buffer) {
+ 	strip(buffer);
+ 
+ 	/* write the buffer to the log file */
+-	fprintf(fp, "[%lu] %s\n", log_time, buffer);
++	fprintf(fp, "[%llu] %s\n", (long long)log_time, buffer);
+ 
+ 	fclose(fp);
+ 

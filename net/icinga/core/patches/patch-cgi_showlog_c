@@ -1,0 +1,28 @@
+$OpenBSD: patch-cgi_showlog_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
+--- cgi/showlog.c.orig	Mon Jan 19 16:19:15 2015
++++ cgi/showlog.c	Mon Jan 19 16:20:03 2015
+@@ -175,8 +175,8 @@ int main(void) {
+ 
+ 		/* start input form */
+ 		printf("<form method='GET' style='margin:0;' action='%s'>\n", SHOWLOG_CGI);
+-		printf("<input type='hidden' name='ts_start' value='%lu'>\n", ts_start);
+-		printf("<input type='hidden' name='ts_end' value='%lu'>\n", ts_end);
++		printf("<input type='hidden' name='ts_start' value='%llu'>\n", (long long)ts_start);
++		printf("<input type='hidden' name='ts_end' value='%llu'>\n", (long long)ts_end);
+ 		printf("<input type='hidden' name='limit' value='%d'>\n", result_limit);
+ 
+ 		/* begin top table */
+@@ -832,11 +832,11 @@ void display_logentries() {
+ 				if (json_start == FALSE)
+ 					printf(",\n");
+ 				json_start = FALSE;
+-				printf("{ \"timestamp\": %lu, ", temp_entry->timestamp);
++				printf("{ \"timestamp\": %llu, ", (long long)temp_entry->timestamp);
+ 				printf(" \"date_time\": \"%s\", ", date_time);
+ 				printf(" \"log_entry\": \"%s\"}", json_encode(temp_entry->entry_text));
+ 			} else if (content_type == CSV_CONTENT) {
+-				printf("%s%lu%s%s", csv_data_enclosure, temp_entry->timestamp, csv_data_enclosure, csv_delimiter);
++				printf("%s%llu%s%s", csv_data_enclosure, (long long)temp_entry->timestamp, csv_data_enclosure, csv_delimiter);
+ 				printf("%s%s%s%s", csv_data_enclosure, date_time, csv_data_enclosure, csv_delimiter);
+ 				printf("%s%s%s\n", csv_data_enclosure, temp_entry->entry_text, csv_data_enclosure);
+ 			} else {

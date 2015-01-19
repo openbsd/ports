@@ -1,0 +1,48 @@
+$OpenBSD: patch-cgi_histogram_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
+--- cgi/histogram.c.orig	Mon Jan 19 16:22:10 2015
++++ cgi/histogram.c	Mon Jan 19 16:24:07 2015
+@@ -314,9 +314,9 @@ int main(int argc, char **argv) {
+ 
+ 			if (display_type == DISPLAY_HOST_HISTOGRAM) {
+ #ifdef USE_TRENDS
+-				printf("<a href='%s?host=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s'>View <b>Trends</b> For <b>This Host</b></a><br>\n", TRENDS_CGI, url_encode(host_name), t1, t2, (assume_state_retention == TRUE) ? "yes" : "no");
++				printf("<a href='%s?host=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s'>View <b>Trends</b> For <b>This Host</b></a><br>\n", TRENDS_CGI, url_encode(host_name), (long long)t1, (long long)t2, (assume_state_retention == TRUE) ? "yes" : "no");
+ #endif
+-				printf("<a href='%s?host=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s&amp;show_log_entries'>View <b>Availability Report</b> For <b>This Host</b></a><br>\n", AVAIL_CGI, url_encode(host_name), t1, t2, (assume_state_retention == TRUE) ? "yes" : "no");
++				printf("<a href='%s?host=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s&amp;show_log_entries'>View <b>Availability Report</b> For <b>This Host</b></a><br>\n", AVAIL_CGI, url_encode(host_name), (long long)t1, (long long)t2, (assume_state_retention == TRUE) ? "yes" : "no");
+ 				printf("<a href='%s?host=%s'>View <b>Service Status Detail</b> For <b>This Host</b></a><br>\n", STATUS_CGI, url_encode(host_name));
+ 				printf("<a href='%s?type=%d&amp;host=%s'>View <b>Information</b> For <b>This Host</b></a><br>\n", EXTINFO_CGI, DISPLAY_HOST_INFO, url_encode(host_name));
+ 				printf("<a href='%s?host=%s'>View <b>Alert History</b> For <b>This Host</b></a><br>\n", HISTORY_CGI, url_encode(host_name));
+@@ -324,10 +324,10 @@ int main(int argc, char **argv) {
+ 			} else {
+ #ifdef USE_TRENDS
+ 				printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
+-				printf("&amp;service=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s'>View <b>Trends</b> For <b>This Service</b></a><br>\n", url_encode(service_desc), t1, t2, (assume_state_retention == TRUE) ? "yes" : "no");
++				printf("&amp;service=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s'>View <b>Trends</b> For <b>This Service</b></a><br>\n", url_encode(service_desc), (long long)t1, (long long)t2, (assume_state_retention == TRUE) ? "yes" : "no");
+ #endif
+ 				printf("<a href='%s?host=%s", AVAIL_CGI, url_encode(host_name));
+-				printf("&amp;service=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s&amp;show_log_entries'>View <b>Availability Report</b> For <b>This Service</b></a><br>\n", url_encode(service_desc), t1, t2, (assume_state_retention == TRUE) ? "yes" : "no");
++				printf("&amp;service=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s&amp;show_log_entries'>View <b>Availability Report</b> For <b>This Service</b></a><br>\n", url_encode(service_desc), (long long)t1, (long long)t2, (assume_state_retention == TRUE) ? "yes" : "no");
+ 				printf("<a href='%s?type=%d&amp;host=%s&amp;service=%s'>View <b>Information</b> For <b>This Service</b></a><br>\n", EXTINFO_CGI, DISPLAY_SERVICE_INFO, url_encode(host_name), url_encode(service_desc));
+ 				printf("<a href='%s?host=%s&amp;service=%s'>View <b>Alert History</b> For <b>This Service</b></a><br>\n", HISTORY_CGI, url_encode(host_name), url_encode(service_desc));
+ 				printf("<a href='%s?host=%s&amp;service=%s'>View <b>Notifications</b> For <b>This Service</b></a><br>\n", NOTIFICATIONS_CGI, url_encode(host_name), url_encode(service_desc));
+@@ -384,8 +384,8 @@ int main(int argc, char **argv) {
+ 			printf("<tr><td class='optBoxItem' valign='top' align='left'>Breakdown type:</td><td class='optBoxItem' valign='top' align='left'>Initial states logged:</td></tr>\n");
+ 			printf("<tr><td class='optBoxItem' valign='top' align='left'>\n");
+ 
+-			printf("<input type='hidden' name='t1' value='%lu'>\n", (unsigned long)t1);
+-			printf("<input type='hidden' name='t2' value='%lu'>\n", (unsigned long)t2);
++			printf("<input type='hidden' name='t1' value='%llu'>\n", (long long)t1);
++			printf("<input type='hidden' name='t2' value='%llu'>\n", (long long)t2);
+ 			printf("<input type='hidden' name='host' value='%s'>\n", escape_string(host_name));
+ 			if (display_type == DISPLAY_SERVICE_HISTOGRAM)
+ 				printf("<input type='hidden' name='service' value='%s'>\n", escape_string(service_desc));
+@@ -508,7 +508,7 @@ int main(int argc, char **argv) {
+ 
+ 			printf("<br><br>\n");
+ 			printf("<div align='center'>\n");
+-			printf("<img src='%s?createimage&amp;t1=%lu&amp;t2=%lu", HISTOGRAM_CGI, (unsigned long)t1, (unsigned long)t2);
++			printf("<img src='%s?createimage&amp;t1=%llu&amp;t2=%llu", HISTOGRAM_CGI, (long long)t1, (long long)t2);
+ 			printf("&amp;host=%s", url_encode(host_name));
+ 			if (display_type == DISPLAY_SERVICE_HISTOGRAM)
+ 				printf("&amp;service=%s", url_encode(service_desc));

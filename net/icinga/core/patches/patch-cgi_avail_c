@@ -1,0 +1,112 @@
+$OpenBSD: patch-cgi_avail_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
+--- cgi/avail.c.orig	Mon Jan 19 16:24:12 2015
++++ cgi/avail.c	Mon Jan 19 16:27:46 2015
+@@ -392,10 +392,10 @@ int main(int argc, char **argv) {
+ 				host_report_url("all", "View <b>Availability Report</b> For <b>All Hosts</b>");
+ 				printf("<br>\n");
+ #ifdef USE_TRENDS
+-				printf("<a href='%s?host=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;includesoftstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedhoststate=%d&amp;backtrack=%d'>View <b>Trends</b> For <b>This Host</b></a><br>\n", TRENDS_CGI, url_encode(host_name), t1, t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_host_state, backtrack_archives);
++				printf("<a href='%s?host=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;includesoftstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedhoststate=%d&amp;backtrack=%d'>View <b>Trends</b> For <b>This Host</b></a><br>\n", TRENDS_CGI, url_encode(host_name), (long long)t1, (long long)t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_host_state, backtrack_archives);
+ #endif
+ #ifdef USE_HISTOGRAM
+-				printf("<a href='%s?host=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s'>View <b>Alert Histogram</b> For <b>This Host</b></a><br>\n", HISTOGRAM_CGI, url_encode(host_name), t1, t2, (assume_state_retention == TRUE) ? "yes" : "no");
++				printf("<a href='%s?host=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s'>View <b>Alert Histogram</b> For <b>This Host</b></a><br>\n", HISTOGRAM_CGI, url_encode(host_name), (long long)t1, (long long)t2, (assume_state_retention == TRUE) ? "yes" : "no");
+ #endif
+ 				printf("<a href='%s?type=%d&amp;host=%s'>View <b>Information</b> For <b>This Host</b></a><br>\n", EXTINFO_CGI, DISPLAY_HOST_INFO, url_encode(host_name));
+ 				printf("<a href='%s?host=%s'>View <b>Service Status Detail</b> For <b>This Host</b></a><br>\n", STATUS_CGI, url_encode(host_name));
+@@ -408,10 +408,10 @@ int main(int argc, char **argv) {
+ 				printf("<br>\n");
+ #ifdef USE_TRENDS
+ 				printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
+-				printf("&amp;service=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s&amp;includesoftstates=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedservicestate=%d&amp;backtrack=%d'>View <b>Trends</b> For <b>This Service</b></a><br>\n", url_encode(service_desc), t1, t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_service_state, backtrack_archives);
++				printf("&amp;service=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s&amp;includesoftstates=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedservicestate=%d&amp;backtrack=%d'>View <b>Trends</b> For <b>This Service</b></a><br>\n", url_encode(service_desc), (long long)t1, (long long)t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_service_state, backtrack_archives);
+ #endif
+ #ifdef USE_HISTOGRAM
+-				printf("<a href='%s?host=%s&amp;service=%s&amp;t1=%lu&amp;t2=%lu&amp;assumestateretention=%s'>View <b>Alert Histogram</b> For <b>This Service</b></a><br>\n", HISTOGRAM_CGI, url_encode(host_name), url_encode(service_desc), t1, t2, (assume_state_retention == TRUE) ? "yes" : "no");
++				printf("<a href='%s?host=%s&amp;service=%s&amp;t1=%llu&amp;t2=%llu&amp;assumestateretention=%s'>View <b>Alert Histogram</b> For <b>This Service</b></a><br>\n", HISTOGRAM_CGI, url_encode(host_name), url_encode(service_desc), (long long)t1, (long long)t2, (assume_state_retention == TRUE) ? "yes" : "no");
+ #endif
+ 				printf("<a href='%s?type=%d&amp;host=%s&amp;service=%s'>View <b>Information</b> For <b>This Service</b></a><br>\n", EXTINFO_CGI, DISPLAY_SERVICE_INFO, url_encode(host_name), url_encode(service_desc));
+ 				printf("<a href='%s?host=%s&amp;service=%s'>View <b>Alert History</b> For <b>This Service</b></a><br>\n", HISTORY_CGI, url_encode(host_name), url_encode(service_desc));
+@@ -487,8 +487,8 @@ int main(int argc, char **argv) {
+ 			printf("<tr>\n");
+ 			printf("<td valign='top' align='left' class='optBoxItem'>\n");
+ 
+-			printf("<input type='hidden' name='t1' value='%lu'>\n", (unsigned long)t1);
+-			printf("<input type='hidden' name='t2' value='%lu'>\n", (unsigned long)t2);
++			printf("<input type='hidden' name='t1' value='%llu'>\n", (long long)t1);
++			printf("<input type='hidden' name='t2' value='%llu'>\n", (long long)t2);
+ 			if (show_log_entries == TRUE)
+ 				printf("<input type='hidden' name='show_log_entries' value=''>\n");
+ 			if (full_log_entries == TRUE)
+@@ -3294,11 +3294,11 @@ void write_log_entries(avail_subject *subject) {
+ 				printf(",\n");
+ 			json_start = FALSE;
+ 			printf("{ \"start_time_string\": \"%s\", ", start_date_time);
+-			printf(" \"start_time_timestamp\": %lu, ", temp_as->time_stamp);
++			printf(" \"start_time_timestamp\": %llu, ", (long long)temp_as->time_stamp);
+ 			printf(" \"end_time_string\": \"%s\", ", end_date_time);
+-			printf(" \"end_time_timestamp\": %lu, ", ts_end);
++			printf(" \"end_time_timestamp\": %llu, ", (long long)ts_end);
+ 			printf(" \"duration_string\": \"%s\", ", duration);
+-			printf(" \"duration_timestamp\": %lu, ", (ts_end - temp_as->time_stamp));
++			printf(" \"duration_timestamp\": %llu, ", (long long)(ts_end - temp_as->time_stamp));
+ 			printf(" \"entry_type\": \"%s\", ", entry_type);
+ 			printf(" \"state_type\": \"");
+ 			if (temp_as->state_type == AS_HARD_STATE)
+@@ -3311,11 +3311,11 @@ void write_log_entries(avail_subject *subject) {
+ 		} else if (content_type == XML_CONTENT) {
+ 			printf("<log_entry>\n");
+ 			printf("<start_time_string>%s</start_time_string>\n", start_date_time);
+-			printf("<start_time_timestamp>%lu</start_time_timestamp>\n", temp_as->time_stamp);
++			printf("<start_time_timestamp>%llu</start_time_timestamp>\n", (long long)temp_as->time_stamp);
+ 			printf("<end_time_string>%s</end_time_string>\n", end_date_time);
+-			printf("<end_time_timestamp>%lu</end_time_timestamp>\n", ts_end);
++			printf("<end_time_timestamp>%llu</end_time_timestamp>\n", (long long)ts_end);
+ 			printf("<duration_string>%s</duration_string>\n", duration);
+-			printf("<duration_timestamp>%lu</duration_timestamp>\n", (ts_end - temp_as->time_stamp));
++			printf("<duration_timestamp>%llu</duration_timestamp>\n", (long long)(ts_end - temp_as->time_stamp));
+ 			printf("<entry_type>%s</entry_type>\n", entry_type);
+ 			printf("<state_type>");
+ 			if (temp_as->state_type == AS_HARD_STATE)
+@@ -4621,9 +4621,9 @@ void display_host_availability(void) {
+ #ifdef USE_TRENDS
+ 				printf("<p align='center'>\n");
+ 				printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
+-				printf("&amp;t1=%lu&amp;t2=%lu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedhoststate=%d&amp;backtrack=%d'>", t1, t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_host_state, backtrack_archives);
++				printf("&amp;t1=%llu&amp;t2=%llu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedhoststate=%d&amp;backtrack=%d'>", (long long)t1, (long long)t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_host_state, backtrack_archives);
+ 				printf("<img src='%s?createimage&amp;smallimage&amp;host=%s", TRENDS_CGI, url_encode(host_name));
+-				printf("&amp;t1=%lu&amp;t2=%lu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedhoststate=%d&amp;backtrack=%d' border='1' alt='Host State Trends' title='Host State Trends' width='500' height='20'>", t1, t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_host_state, backtrack_archives);
++				printf("&amp;t1=%llu&amp;t2=%llu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedhoststate=%d&amp;backtrack=%d' border='1' alt='Host State Trends' title='Host State Trends' width='500' height='20'>", (long long)t1, (long long)t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_host_state, backtrack_archives);
+ 				printf("</a><br>\n");
+ 				printf("</p>\n");
+ #endif
+@@ -5503,9 +5503,9 @@ void display_service_availability(void) {
+ #ifdef USE_TRENDS
+ 			printf("<p align='center'>\n");
+ 			printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
+-			printf("&amp;service=%s&amp;t1=%lu&amp;t2=%lu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedservicestate=%d&amp;backtrack=%d'>", url_encode(service_desc), t1, t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_service_state, backtrack_archives);
++			printf("&amp;service=%s&amp;t1=%llu&amp;t2=%llu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedservicestate=%d&amp;backtrack=%d'>", url_encode(service_desc), (long long)t1, (long long)t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_service_state, backtrack_archives);
+ 			printf("<img src='%s?createimage&amp;smallimage&amp;host=%s", TRENDS_CGI, url_encode(host_name));
+-			printf("&amp;service=%s&amp;t1=%lu&amp;t2=%lu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedservicestate=%d&amp;backtrack=%d' border='1' alt='Service State Trends' title='Service State Trends' width='500' height='20'>", url_encode(service_desc), t1, t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_service_state, backtrack_archives);
++			printf("&amp;service=%s&amp;t1=%llu&amp;t2=%llu&amp;includesoftstates=%s&amp;assumestateretention=%s&amp;assumeinitialstates=%s&amp;assumestatesduringnotrunning=%s&amp;initialassumedservicestate=%d&amp;backtrack=%d' border='1' alt='Service State Trends' title='Service State Trends' width='500' height='20'>", url_encode(service_desc), (long long)t1, (long long)t2, (include_soft_states == TRUE) ? "yes" : "no", (assume_state_retention == TRUE) ? "yes" : "no", (assume_initial_states == TRUE) ? "yes" : "no", (assume_states_during_notrunning == TRUE) ? "yes" : "no", initial_assumed_service_state, backtrack_archives);
+ 			printf("</a><br>\n");
+ 			printf("</p>\n");
+ #endif
+@@ -6161,7 +6161,7 @@ void host_report_url(char *hn, char *label) {
+ 
+ 	printf("<a href='%s?host=%s", AVAIL_CGI, url_encode(hn));
+ 	printf("&amp;show_log_entries");
+-	printf("&amp;t1=%lu&amp;t2=%lu", t1, t2);
++	printf("&amp;t1=%llu&amp;t2=%llu", (long long)t1, (long long)t2);
+ 	printf("&amp;backtrack=%d", backtrack_archives);
+ 	printf("&amp;assumestateretention=%s", (assume_state_retention == TRUE) ? "yes" : "no");
+ 	printf("&amp;assumeinitialstates=%s", (assume_initial_states == TRUE) ? "yes" : "no");
+@@ -6185,7 +6185,7 @@ void service_report_url(char *hn, char *sd, char *labe
+ 
+ 	printf("<a href='%s?host=%s", AVAIL_CGI, url_encode(hn));
+ 	printf("&amp;service=%s", url_encode(sd));
+-	printf("&amp;t1=%lu&amp;t2=%lu", t1, t2);
++	printf("&amp;t1=%llu&amp;t2=%llu", (long long)t1, (long long)t2);
+ 	printf("&amp;backtrack=%d", backtrack_archives);
+ 	printf("&amp;assumestateretention=%s", (assume_state_retention == TRUE) ? "yes" : "no");
+ 	printf("&amp;assumeinitialstates=%s", (assume_initial_states == TRUE) ? "yes" : "no");

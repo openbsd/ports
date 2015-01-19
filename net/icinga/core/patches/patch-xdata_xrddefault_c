@@ -1,0 +1,148 @@
+$OpenBSD: patch-xdata_xrddefault_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
+--- xdata/xrddefault.c.orig	Mon Jan 19 16:36:27 2015
++++ xdata/xrddefault.c	Mon Jan 19 16:43:08 2015
+@@ -320,7 +320,7 @@ int xrddefault_save_state_information(void) {
+ 
+ 	/* write file info */
+ 	fprintf(fp, "info {\n");
+-	fprintf(fp, "created=%lu\n", current_time);
++	fprintf(fp, "created=%llu\n", (long long)current_time);
+ 	fprintf(fp, "version=%s\n", PROGRAM_VERSION);
+ 	fprintf(fp, "}\n");
+ 
+@@ -329,7 +329,7 @@ int xrddefault_save_state_information(void) {
+ 	fprintf(fp, "modified_host_attributes=%lu\n", (modified_host_process_attributes & ~process_host_attribute_mask));
+ 	fprintf(fp, "modified_service_attributes=%lu\n", (modified_service_process_attributes & ~process_service_attribute_mask));
+ 	fprintf(fp, "enable_notifications=%d\n", enable_notifications);
+-	fprintf(fp, "disable_notifications_expire_time=%lu\n", disable_notifications_expire_time);
++	fprintf(fp, "disable_notifications_expire_time=%llu\n", (long long)disable_notifications_expire_time);
+ 	fprintf(fp, "active_service_checks_enabled=%d\n", execute_service_checks);
+ 	fprintf(fp, "passive_service_checks_enabled=%d\n", accept_passive_service_checks);
+ 	fprintf(fp, "active_host_checks_enabled=%d\n", execute_host_checks);
+@@ -375,22 +375,22 @@ int xrddefault_save_state_information(void) {
+ 		fprintf(fp, "plugin_output=%s\n", (temp_host->plugin_output == NULL) ? "" : temp_host->plugin_output);
+ 		fprintf(fp, "long_plugin_output=%s\n", (temp_host->long_plugin_output == NULL) ? "" : temp_host->long_plugin_output);
+ 		fprintf(fp, "performance_data=%s\n", (temp_host->perf_data == NULL) ? "" : temp_host->perf_data);
+-		fprintf(fp, "last_check=%lu\n", temp_host->last_check);
+-		fprintf(fp, "next_check=%lu\n", temp_host->next_check);
++		fprintf(fp, "last_check=%llu\n", (long long)temp_host->last_check);
++		fprintf(fp, "next_check=%llu\n", (long long)temp_host->next_check);
+ 		fprintf(fp, "check_options=%d\n", temp_host->check_options);
+ 		fprintf(fp, "current_attempt=%d\n", temp_host->current_attempt);
+ 		fprintf(fp, "max_attempts=%d\n", temp_host->max_attempts);
+ 		fprintf(fp, "normal_check_interval=%f\n", temp_host->check_interval);
+ 		fprintf(fp, "retry_check_interval=%f\n", temp_host->check_interval);
+ 		fprintf(fp, "state_type=%d\n", temp_host->state_type);
+-		fprintf(fp, "last_state_change=%lu\n", temp_host->last_state_change);
+-		fprintf(fp, "last_hard_state_change=%lu\n", temp_host->last_hard_state_change);
+-		fprintf(fp, "last_time_up=%lu\n", temp_host->last_time_up);
+-		fprintf(fp, "last_time_down=%lu\n", temp_host->last_time_down);
+-		fprintf(fp, "last_time_unreachable=%lu\n", temp_host->last_time_unreachable);
++		fprintf(fp, "last_state_change=%llu\n", (long long)temp_host->last_state_change);
++		fprintf(fp, "last_hard_state_change=%llu\n", (long long)temp_host->last_hard_state_change);
++		fprintf(fp, "last_time_up=%llu\n", (long long)temp_host->last_time_up);
++		fprintf(fp, "last_time_down=%llu\n", (long long)temp_host->last_time_down);
++		fprintf(fp, "last_time_unreachable=%llu\n", (long long)temp_host->last_time_unreachable);
+ 		fprintf(fp, "notified_on_down=%d\n", temp_host->notified_on_down);
+ 		fprintf(fp, "notified_on_unreachable=%d\n", temp_host->notified_on_unreachable);
+-		fprintf(fp, "last_notification=%lu\n", temp_host->last_host_notification);
++		fprintf(fp, "last_notification=%llu\n", (long long)temp_host->last_host_notification);
+ 		fprintf(fp, "current_notification_number=%d\n", temp_host->current_notification_number);
+ 		/* state based escalation ranges */
+ 		fprintf(fp, "current_down_notification_number=%d\n", temp_host->current_down_notification_number);
+@@ -400,7 +400,7 @@ int xrddefault_save_state_information(void) {
+ 		fprintf(fp, "notifications_enabled=%d\n", temp_host->notifications_enabled);
+ 		fprintf(fp, "problem_has_been_acknowledged=%d\n", temp_host->problem_has_been_acknowledged);
+ 		fprintf(fp, "acknowledgement_type=%d\n", temp_host->acknowledgement_type);
+-		fprintf(fp, "acknowledgement_end_time=%lu\n", temp_host->acknowledgement_end_time);
++		fprintf(fp, "acknowledgement_end_time=%llu\n", (long long)temp_host->acknowledgement_end_time);
+ 		fprintf(fp, "active_checks_enabled=%d\n", temp_host->checks_enabled);
+ 		fprintf(fp, "passive_checks_enabled=%d\n", temp_host->accept_passive_host_checks);
+ 		fprintf(fp, "event_handler_enabled=%d\n", temp_host->event_handler_enabled);
+@@ -453,17 +453,17 @@ int xrddefault_save_state_information(void) {
+ 		fprintf(fp, "normal_check_interval=%f\n", temp_service->check_interval);
+ 		fprintf(fp, "retry_check_interval=%f\n", temp_service->retry_interval);
+ 		fprintf(fp, "state_type=%d\n", temp_service->state_type);
+-		fprintf(fp, "last_state_change=%lu\n", temp_service->last_state_change);
+-		fprintf(fp, "last_hard_state_change=%lu\n", temp_service->last_hard_state_change);
+-		fprintf(fp, "last_time_ok=%lu\n", temp_service->last_time_ok);
+-		fprintf(fp, "last_time_warning=%lu\n", temp_service->last_time_warning);
+-		fprintf(fp, "last_time_unknown=%lu\n", temp_service->last_time_unknown);
+-		fprintf(fp, "last_time_critical=%lu\n", temp_service->last_time_critical);
++		fprintf(fp, "last_state_change=%llu\n", (long long)temp_service->last_state_change);
++		fprintf(fp, "last_hard_state_change=%llu\n", (long long)temp_service->last_hard_state_change);
++		fprintf(fp, "last_time_ok=%llu\n", (long long)temp_service->last_time_ok);
++		fprintf(fp, "last_time_warning=%llu\n", (long long)temp_service->last_time_warning);
++		fprintf(fp, "last_time_unknown=%llu\n", (long long)temp_service->last_time_unknown);
++		fprintf(fp, "last_time_critical=%llu\n", (long long)temp_service->last_time_critical);
+ 		fprintf(fp, "plugin_output=%s\n", (temp_service->plugin_output == NULL) ? "" : temp_service->plugin_output);
+ 		fprintf(fp, "long_plugin_output=%s\n", (temp_service->long_plugin_output == NULL) ? "" : temp_service->long_plugin_output);
+ 		fprintf(fp, "performance_data=%s\n", (temp_service->perf_data == NULL) ? "" : temp_service->perf_data);
+-		fprintf(fp, "last_check=%lu\n", temp_service->last_check);
+-		fprintf(fp, "next_check=%lu\n", temp_service->next_check);
++		fprintf(fp, "last_check=%llu\n", (long long)temp_service->last_check);
++		fprintf(fp, "next_check=%llu\n", (long long)temp_service->next_check);
+ 		fprintf(fp, "check_options=%d\n", temp_service->check_options);
+ 		fprintf(fp, "notified_on_unknown=%d\n", temp_service->notified_on_unknown);
+ 		fprintf(fp, "notified_on_warning=%d\n", temp_service->notified_on_warning);
+@@ -475,14 +475,14 @@ int xrddefault_save_state_information(void) {
+ 		fprintf(fp, "current_unknown_notification_number=%d\n", temp_service->current_unknown_notification_number);
+ 
+ 		fprintf(fp, "current_notification_id=%lu\n", temp_service->current_notification_id);
+-		fprintf(fp, "last_notification=%lu\n", temp_service->last_notification);
++		fprintf(fp, "last_notification=%llu\n", (long long)temp_service->last_notification);
+ 		fprintf(fp, "notifications_enabled=%d\n", temp_service->notifications_enabled);
+ 		fprintf(fp, "active_checks_enabled=%d\n", temp_service->checks_enabled);
+ 		fprintf(fp, "passive_checks_enabled=%d\n", temp_service->accept_passive_service_checks);
+ 		fprintf(fp, "event_handler_enabled=%d\n", temp_service->event_handler_enabled);
+ 		fprintf(fp, "problem_has_been_acknowledged=%d\n", temp_service->problem_has_been_acknowledged);
+ 		fprintf(fp, "acknowledgement_type=%d\n", temp_service->acknowledgement_type);
+-		fprintf(fp, "acknowledgement_end_time=%lu\n", temp_service->acknowledgement_end_time);
++		fprintf(fp, "acknowledgement_end_time=%llu\n", (long long)temp_service->acknowledgement_end_time);
+ 		fprintf(fp, "flap_detection_enabled=%d\n", temp_service->flap_detection_enabled);
+ 		fprintf(fp, "failure_prediction_enabled=%d\n", temp_service->failure_prediction_enabled);
+ 		fprintf(fp, "process_performance_data=%d\n", temp_service->process_performance_data);
+@@ -515,8 +515,8 @@ int xrddefault_save_state_information(void) {
+ 		fprintf(fp, "modified_service_attributes=%lu\n", (temp_contact->modified_service_attributes & ~contact_service_attribute_mask));
+ 		fprintf(fp, "host_notification_period=%s\n", (temp_contact->host_notification_period == NULL) ? "" : temp_contact->host_notification_period);
+ 		fprintf(fp, "service_notification_period=%s\n", (temp_contact->service_notification_period == NULL) ? "" : temp_contact->service_notification_period);
+-		fprintf(fp, "last_host_notification=%lu\n", temp_contact->last_host_notification);
+-		fprintf(fp, "last_service_notification=%lu\n", temp_contact->last_service_notification);
++		fprintf(fp, "last_host_notification=%llu\n", (long long)temp_contact->last_host_notification);
++		fprintf(fp, "last_service_notification=%llu\n", (long long)temp_contact->last_service_notification);
+ 		fprintf(fp, "host_notifications_enabled=%d\n", temp_contact->host_notifications_enabled);
+ 		fprintf(fp, "service_notifications_enabled=%d\n", temp_contact->service_notifications_enabled);
+ 
+@@ -543,9 +543,9 @@ int xrddefault_save_state_information(void) {
+ 		fprintf(fp, "comment_id=%lu\n", temp_comment->comment_id);
+ 		fprintf(fp, "source=%d\n", temp_comment->source);
+ 		fprintf(fp, "persistent=%d\n", temp_comment->persistent);
+-		fprintf(fp, "entry_time=%lu\n", temp_comment->entry_time);
++		fprintf(fp, "entry_time=%llu\n", (long long)temp_comment->entry_time);
+ 		fprintf(fp, "expires=%d\n", temp_comment->expires);
+-		fprintf(fp, "expire_time=%lu\n", temp_comment->expire_time);
++		fprintf(fp, "expire_time=%llu\n", (long long)temp_comment->expire_time);
+ 		fprintf(fp, "author=%s\n", temp_comment->author);
+ 		fprintf(fp, "comment_data=%s\n", temp_comment->comment_data);
+ 		fprintf(fp, "}\n");
+@@ -562,16 +562,16 @@ int xrddefault_save_state_information(void) {
+ 		if (temp_downtime->type == SERVICE_DOWNTIME)
+ 			fprintf(fp, "service_description=%s\n", temp_downtime->service_description);
+ 		fprintf(fp, "downtime_id=%lu\n", temp_downtime->downtime_id);
+-		fprintf(fp, "entry_time=%lu\n", temp_downtime->entry_time);
+-		fprintf(fp, "start_time=%lu\n", temp_downtime->start_time);
+-		fprintf(fp, "end_time=%lu\n", temp_downtime->end_time);
++		fprintf(fp, "entry_time=%llu\n", (long long)temp_downtime->entry_time);
++		fprintf(fp, "start_time=%llu\n", (long long)temp_downtime->start_time);
++		fprintf(fp, "end_time=%llu\n", (long long)temp_downtime->end_time);
+ 		fprintf(fp, "triggered_by=%lu\n", temp_downtime->triggered_by);
+ 		fprintf(fp, "fixed=%d\n", temp_downtime->fixed);
+ 		fprintf(fp, "duration=%lu\n", temp_downtime->duration);
+ 		fprintf(fp, "is_in_effect=%d\n", temp_downtime->is_in_effect);
+ 		fprintf(fp, "author=%s\n", temp_downtime->author);
+ 		fprintf(fp, "comment=%s\n", temp_downtime->comment);
+-		fprintf(fp, "trigger_time=%lu\n", temp_downtime->trigger_time);
++		fprintf(fp, "trigger_time=%llu\n", (long long)temp_downtime->trigger_time);
+ 		fprintf(fp, "}\n");
+ 	}
+ 

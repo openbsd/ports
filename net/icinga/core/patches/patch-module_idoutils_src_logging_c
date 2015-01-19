@@ -1,0 +1,12 @@
+$OpenBSD: patch-module_idoutils_src_logging_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
+--- module/idoutils/src/logging.c.orig	Mon Jan 19 16:14:24 2015
++++ module/idoutils/src/logging.c	Mon Jan 19 16:15:35 2015
+@@ -138,7 +138,7 @@ int ido2db_log_debug_info(int level, int verbosity, co
+ 	if (ido2db_debug_readable_timestamp)
+ 	        fprintf(ido2db_debug_file_fp, "%s .%06lu [%03d.%d] [pid=%lu] [tid=%lu] ", temp_time, current_time.tv_usec, level, verbosity, pid, tid);
+ 	else
+-        	fprintf(ido2db_debug_file_fp, "[%lu.%06lu] [%03d.%d] [pid=%lu] [tid=%lu] ", current_time.tv_sec, current_time.tv_usec, level, verbosity, pid, tid);
++        	fprintf(ido2db_debug_file_fp, "[%llu.%06lu] [%03d.%d] [pid=%lu] [tid=%lu] ", (long long)current_time.tv_sec, current_time.tv_usec, level, verbosity, pid, tid);
+ 
+         /* write the data */
+         va_start(ap, fmt);
