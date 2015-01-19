@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2014/11/28 08:34:28 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2015/01/19 14:30:57 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -141,6 +141,8 @@ webapps/docs/api/org/apache/catalina/authenticator/SSLAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/SavedRequest.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnEntry.html
+webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnListener.html
+webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnSessionKey.html
 webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/package-frame.html
 webapps/docs/api/org/apache/catalina/authenticator/package-summary.html
@@ -259,7 +261,6 @@ webapps/docs/api/org/apache/catalina/ha/ClusterValve.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/
 webapps/docs/api/org/apache/catalina/ha/authenticator/ClusterSingleSignOn.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/ClusterSingleSignOnListener.html
-webapps/docs/api/org/apache/catalina/ha/authenticator/SingleSignOnMessage.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/package-frame.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/package-summary.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/package-tree.html
@@ -305,7 +306,7 @@ webapps/docs/api/org/apache/catalina/ha/session/DeltaManager.html
 webapps/docs/api/org/apache/catalina/ha/session/DeltaRequest.html
 webapps/docs/api/org/apache/catalina/ha/session/DeltaSession.html
 webapps/docs/api/org/apache/catalina/ha/session/JvmRouteBinderValve.html
-webapps/docs/api/org/apache/catalina/ha/session/SerializablePrincipal.html
+webapps/docs/api/org/apache/catalina/ha/session/ReplicatedSessionListener.html
 webapps/docs/api/org/apache/catalina/ha/session/SessionMessage.html
 webapps/docs/api/org/apache/catalina/ha/session/SessionMessageImpl.html
 webapps/docs/api/org/apache/catalina/ha/session/package-frame.html
@@ -541,6 +542,7 @@ webapps/docs/api/org/apache/catalina/storeconfig/ChannelSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/ConnectorSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/ConnectorStoreAppender.html
 webapps/docs/api/org/apache/catalina/storeconfig/Constants.html
+webapps/docs/api/org/apache/catalina/storeconfig/CredentialHandlerSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/GlobalNamingResourcesSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/IStoreConfig.html
 webapps/docs/api/org/apache/catalina/storeconfig/IStoreFactory.html
@@ -1205,6 +1207,7 @@ webapps/docs/api/org/apache/jasper/runtime/JspFragmentHelper.html
 webapps/docs/api/org/apache/jasper/runtime/JspRuntimeLibrary.PrivilegedIntrospectHelper.html
 webapps/docs/api/org/apache/jasper/runtime/JspRuntimeLibrary.html
 webapps/docs/api/org/apache/jasper/runtime/JspSourceDependent.html
+webapps/docs/api/org/apache/jasper/runtime/JspSourceImports.html
 webapps/docs/api/org/apache/jasper/runtime/JspWriterImpl.html
 webapps/docs/api/org/apache/jasper/runtime/PageContextImpl.html
 webapps/docs/api/org/apache/jasper/runtime/ProtectedFunctionMapper.html
@@ -1996,6 +1999,7 @@ webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperNonSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcess.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcessManager.html
+webapps/docs/api/org/apache/tomcat/websocket/CaseInsensitiveKeyMap.html
 webapps/docs/api/org/apache/tomcat/websocket/Constants.html
 webapps/docs/api/org/apache/tomcat/websocket/DecoderEntry.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResult.html

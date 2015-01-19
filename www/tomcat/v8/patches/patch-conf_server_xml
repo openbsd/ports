@@ -1,9 +1,9 @@
-$OpenBSD: patch-conf_server_xml,v 1.1.1.1 2014/10/06 08:15:50 dcoppa Exp $
---- conf/server.xml.orig	Wed Sep 24 22:05:51 2014
-+++ conf/server.xml	Fri Oct  3 13:17:54 2014
+$OpenBSD: patch-conf_server_xml,v 1.2 2015/01/19 14:30:57 dcoppa Exp $
+--- conf/server.xml.orig	Fri Jan  9 10:02:07 2015
++++ conf/server.xml	Mon Jan 19 08:24:28 2015
 @@ -66,12 +66,12 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
-          Define a non-SSL HTTP/1.1 Connector on port 8080
+          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
      -->
 -    <Connector port="8080" protocol="HTTP/1.1"
 +    <Connector address="0.0.0.0" port="8080" protocol="HTTP/1.1"
