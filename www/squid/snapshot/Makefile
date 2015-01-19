@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/06 22:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/19 08:35:43 sthen Exp $
 
-BROKEN=		sslbump uses functions removed in libressl
+#BROKEN=		sslbump uses functions removed in libressl
 
 V=		3.5.0.4
 
