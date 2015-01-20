@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2014/07/10 05:04:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/20 12:16:48 bentley Exp $
 
 COMMENT=	Python-based build system
 
-VERSION =	2.3.2
+VERSION =	2.3.4
 DISTNAME=	scons-${VERSION}
 CATEGORIES=	devel
 
@@ -21,8 +21,5 @@ NO_TEST=	Yes
 SUBST_VARS+=	VERSION
 
 MODPY_ADJ_FILES +=	script/scons script/sconsign script/scons-time
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/scons{,ign,-time}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
