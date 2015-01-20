@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/20 02:25:30 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2015/01/20 02:32:49 jca Exp $
 
 COMMENT=	fast scatter/gather TCP port scanner
 
 DISTNAME=	strobe-1.06
+REVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/strobe/
 

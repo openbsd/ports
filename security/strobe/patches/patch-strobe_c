@@ -1,0 +1,12 @@
+$OpenBSD: patch-strobe_c,v 1.1 2015/01/20 02:32:49 jca Exp $
+--- strobe.c.orig	Sun Mar 21 06:49:27 1999
++++ strobe.c	Tue Jan 20 03:27:42 2015
+@@ -1297,7 +1297,7 @@ loaddescs ()
+ 	exit (1);
+     }
+     port_descs=(struct port_desc_s **) Smalloc(sizeof(struct port_descs_s *) * 65536);
+-    memset(port_descs, 0, 65536);
++    memset(port_descs, 0, sizeof(struct port_descs_s *) * 65536);
+     while (fgets (lbuf, sizeof (lbuf), fh))
+     {
+ 	char *p;
