@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.11 2015/01/13 08:22:48 dcoppa Exp $
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.12 2015/01/20 11:41:32 dcoppa Exp $
 
 commit dd5d2eb156b7e45ded53f694a12a1e00d19f6cd6
 Author: David Coppa <dcoppa@gmail.com>
@@ -34,9 +34,20 @@ the fallback query method. (Someone more familiar with Ruby might be
 able to deem the fallback as unnecessary and fully remove it.)
 
 --- Modules/FindRuby.cmake.orig	Mon Dec 15 14:07:43 2014
-+++ Modules/FindRuby.cmake	Tue Jan 13 01:56:31 2015
-@@ -55,33 +55,35 @@
++++ Modules/FindRuby.cmake	Tue Jan 20 04:36:32 2015
+@@ -53,35 +53,53 @@
+ # uncomment the following line to get debug output for this file
+ # set(_RUBY_DEBUG_OUTPUT TRUE)
  
++set(MODRUBY_REV $ENV{MODRUBY_REV})
++
++if(MODRUBY_REV AND MODRUBY_REV MATCHES "^[0-9]+\\.[0-9]$")
++   string(REPLACE "." "" MODRUBY_REV_NO_DOTS ${MODRUBY_REV})
++   string(REPLACE "." ";" MODRUBY_REV_LIST ${MODRUBY_REV})
++   list(GET MODRUBY_REV_LIST 0 MODRUBY_REV_MAJOR)
++   list(GET MODRUBY_REV_LIST 1 MODRUBY_REV_MINOR)
++endif()
++
  # Determine the list of possible names of the ruby executable depending
  # on which version of ruby is required
 -set(_RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
@@ -53,13 +64,21 @@ able to deem the fallback as unnecessary and fully remove it.)
 +       ruby${Ruby_FIND_VERSION_MAJOR}.${Ruby_FIND_VERSION_MINOR}
         ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
  else()
-    set(Ruby_FIND_VERSION_SHORT_NODOT "18")
+-   set(Ruby_FIND_VERSION_SHORT_NODOT "18")
++   if(MODRUBY_REV_NO_DOTS)
++      set(Ruby_FIND_VERSION_SHORT_NODOT "${MODRUBY_REV_NO_DOTS}")
++   else(MODRUBY_REV_NO_DOTS)
++      set(Ruby_FIND_VERSION_SHORT_NODOT "18")
++   endif(MODRUBY_REV_NO_DOTS)
  endif()
  
  if(NOT Ruby_FIND_VERSION_EXACT)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.1 ruby21)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.0 ruby20)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.9 ruby19)
++  if(MODRUBY_REV AND MODRUBY_REV_NO_DOTS)
++    list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby${MODRUBY_REV_NO_DOTS} ruby${MODRUBY_REV})
++  endif()
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby22 ruby2.2)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby21 ruby2.1)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby20 ruby2.0)
@@ -80,7 +99,7 @@ able to deem the fallback as unnecessary and fully remove it.)
  find_program(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
  
  if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
-@@ -90,7 +92,7 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+@@ -90,7 +108,7 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
        RESULT_VARIABLE _RUBY_SUCCESS
        OUTPUT_VARIABLE _RUBY_OUTPUT
        ERROR_QUIET)
@@ -89,7 +108,18 @@ able to deem the fallback as unnecessary and fully remove it.)
        execute_process(COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print Config::CONFIG['${RBVAR}']"
          RESULT_VARIABLE _RUBY_SUCCESS
          OUTPUT_VARIABLE _RUBY_OUTPUT
-@@ -181,6 +183,11 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+@@ -166,6 +184,10 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+    set(RUBY_VERSION_MAJOR 1)
+    set(RUBY_VERSION_MINOR 8)
+    set(RUBY_VERSION_PATCH 0)
++   if(${RUBY_EXECUTABLE} MATCHES "ruby${MODRUBY_REV_NO_DOTS}")
++      set(RUBY_VERSION_MAJOR ${MODRUBY_REV_MAJOR})
++      set(RUBY_VERSION_MINOR ${MODRUBY_REV_MINOR})
++   endif()
+    # check whether we found 1.9.x
+    if(${RUBY_EXECUTABLE} MATCHES "ruby1.?9")
+       set(RUBY_VERSION_MAJOR 1)
+@@ -181,6 +203,11 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
        set(RUBY_VERSION_MAJOR 2)
        set(RUBY_VERSION_MINOR 1)
     endif()
@@ -101,7 +131,7 @@ able to deem the fallback as unnecessary and fully remove it.)
  endif()
  
  if(RUBY_VERSION_MAJOR)
-@@ -214,7 +221,7 @@ endif()
+@@ -214,7 +241,7 @@ endif()
  
  
  # Determine the list of possible names for the ruby library
