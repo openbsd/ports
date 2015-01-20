@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/20 02:25:30 jca Exp $
 
 COMMENT=	fast scatter/gather TCP port scanner
 
 DISTNAME=	strobe-1.06
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.u-aizu.ac.jp/pub/net/misc/win.or.jp/ \
-		ftp://ftp.win.ne.jp/pub/network/misc/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/strobe/
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
