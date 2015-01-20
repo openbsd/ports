@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtscript_src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.1 2015/01/20 13:38:42 zhuk Exp $
+Enable W^X in JIT.
+--- qtscript/src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.ports.orig	Wed Jan  7 14:12:26 2015
++++ qtscript/src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Wed Jan  7 14:13:35 2015
+@@ -1042,7 +1042,7 @@ on MinGW. See https://bugs.webkit.org/show_bug.cgi?id=
+ #endif
+ /* Setting this flag prevents the assembler from using RWX memory; this may improve
+    security but currectly comes at a significant performance cost. */
+-#if PLATFORM(IPHONE)
++#if PLATFORM(IPHONE) || OS(OPENBSD)
+ #define ENABLE_ASSEMBLER_WX_EXCLUSIVE 1
+ #else
+ #define ENABLE_ASSEMBLER_WX_EXCLUSIVE 0
