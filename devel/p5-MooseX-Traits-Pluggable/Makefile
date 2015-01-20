@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/20 09:56:55 benoit Exp $
 
 COMMENT =	trait loading and resolution for Moose
 
 MODULES =	cpan
-DISTNAME =	MooseX-Traits-Pluggable-0.10
+DISTNAME =	MooseX-Traits-Pluggable-0.12
 CATEGORIES =	devel
 
 # same as perl
