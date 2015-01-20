@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/24 14:54:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/20 09:45:05 benoit Exp $
 
 COMMENT=	use shorter versions of class names
 
-DISTNAME =	aliased-0.31
+DISTNAME =	aliased-0.34
 
 CATEGORIES=	devel
 
@@ -15,6 +15,6 @@ MODULES=	cpan
 
 MAKE_ENV=	TEST_POD=Yes
 
-CPAN_AUTHOR=	OVID
+CPAN_AUTHOR =	ETHER
 
 .include <bsd.port.mk>
