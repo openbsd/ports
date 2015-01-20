@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2014/11/01 09:34:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/01/20 20:43:37 sthen Exp $
 
 COMMENT=		GnuPG Made Easy
 
 DISTNAME=		gpgme-1.5.1
+REVISION=		0
 CATEGORIES=		security devel
 
 SHARED_LIBS +=  gpgme                19.0     # 24.0
@@ -22,8 +23,11 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 MODULES=		devel/gettext
-RUN_DEPENDS=		security/gnupg2
-BUILD_DEPENDS=		${RUN_DEPENDS}
+# Requires gpgsm (gnupg 2.x) during build, but can run with any gnupg.
+BUILD_DEPENDS=		gnupg->=2:security/gnupg2
+# gnupg-* is normally the default anyway, but gnupg1 overrides PKGSPEC
+# so we must be explicit here.
+RUN_DEPENDS=		gnupg-*:security/gnupg
 LIB_DEPENDS=		security/libgpg-error>=1.4 \
 			security/libassuan
 
