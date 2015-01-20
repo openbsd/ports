@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2015/01/20 11:08:41 sthen Exp $
 
-COMMENT=	MS Word, Excel, Powerpoint ==> ASCII or TeX
+COMMENT-main=	convert MS Word, Excel, Powerpoint to ASCII or TeX
+COMMENT-tk=	viewer for MS Word files
 
-DISTNAME=	catdoc-0.94.2
-REVISION=	3
+V=		0.94.2
+DISTNAME=	catdoc-$V
+PKGNAME-main=	catdoc-$V
+PKGNAME-tk=	wordview-$V
+PKG_ARCH-tk=	*
+REVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/
 
@@ -12,18 +17,22 @@ HOMEPAGE=	http://wagner.pp.ru/~vitus/software/catdoc/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m
-
-FLAVORS=	tk
+MULTI_PACKAGES=	-main
+PSEUDO_FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:Mtk}
-MODULES=	x11/tk
-RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
-CONFIGURE_ARGS+=--with-wish=${MODTK_BIN}
-.else
+WANTLIB-main=	c m
+
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=--disable-wordview
+.else
+MODULES=	x11/tk
+MULTI_PACKAGES+=-tk
+CONFIGURE_ARGS+=--with-wish=${MODTK_BIN}
 .endif
+
+RUN_DEPENDS-tk=	textproc/catdoc,-main \
+		${MODTK_RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu dest
 

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.tk,v 1.2 2006/10/27 20:41:47 steven Exp $
-bin/wordview
-@man man/man1/wordview.1

@@ -1,0 +1,2 @@
+"tk" flavor of catdoc was dropped in favor of separate "wordview" subpackage,
+which has to be installed explicitly.

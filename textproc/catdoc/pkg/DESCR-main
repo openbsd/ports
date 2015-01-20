@@ -8,6 +8,4 @@ comma-separated value file.
 catppt is a utility to extract textual information from MS Powerpoint
 files.
 
-Flavors:
-        tk - a Tcl/Tk GUI frontend to catdoc for viewing MS Word
-             documents
+Tcl/Tk-based user interface for catdoc is provided in "wordview" package.
