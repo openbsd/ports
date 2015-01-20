@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/09 17:34:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/20 10:04:15 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
@@ -26,8 +26,7 @@ LIB_DEPENDS=	devel/libevent2
 
 SEPARATE_BUILD=	Yes
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-privsep-chroot=/var/run/lldpd
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
