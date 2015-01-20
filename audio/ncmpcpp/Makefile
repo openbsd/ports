@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2014/12/30 21:50:24 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/20 19:48:42 landry Exp $
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
+BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
 
 DISTNAME =		ncmpcpp-0.6.2
 
@@ -31,7 +32,7 @@ LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 
 MODULES =		devel/gettext gcc4
 
-MODGCC4_ARCHS =		i386 amd64 powerpc sparc64 alpha
+MODGCC4_ARCHS =		i386 amd64 powerpc sparc64 alpha hppa
 MODGCC4_LANGS =		c++
 
 FAKE_FLAGS =		docdir="${PREFIX}/share/examples/ncmpcpp/"
