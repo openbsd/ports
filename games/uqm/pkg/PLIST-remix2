@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-remix2,v 1.3 2012/05/18 05:22:49 bentley Exp $
-share/uqm/content/addons/
+@comment $OpenBSD: PLIST-remix2,v 1.4 2015/01/20 12:28:31 bentley Exp $
 share/uqm/content/addons/uqm-remix-disc2.uqm

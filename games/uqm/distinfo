@@ -5,6 +5,7 @@ SHA256 (uqm/uqm-0.7.0-voice.uqm) = vMz4AbS6N1lP9iF7KSdE6lhu4tRH6SeASELMrotzyXk=
 SHA256 (uqm/uqm-remix-disc1.uqm) = tpdpR0XZOTEejr/91e32kuAQwl15ZuFIEHSUCk0Eh+g=
 SHA256 (uqm/uqm-remix-disc2.uqm) = f7tHRBAuMSc+RFmwGhVtoFLsU3wSj+kXk2Q+NIvBut4=
 SHA256 (uqm/uqm-remix-disc3.uqm) = 5tifj2bPHfHLJ4/KHpImGxd27mcN/yYTLjPxTb0x6R0=
+SHA256 (uqm/uqm-remix-disc4.uqm) = pMgZdxKltyqBx+96KjPqfTrJCrBjySndaOcyilWahtA=
 SIZE (uqm/uqm-0.7.0-3domusic.uqm) = 18980671
 SIZE (uqm/uqm-0.7.0-content.uqm) = 11538533
 SIZE (uqm/uqm-0.7.0-source.tgz) = 1562003
@@ -12,3 +13,4 @@ SIZE (uqm/uqm-0.7.0-voice.uqm) = 115143439
 SIZE (uqm/uqm-remix-disc1.uqm) = 50188876
 SIZE (uqm/uqm-remix-disc2.uqm) = 60282662
 SIZE (uqm/uqm-remix-disc3.uqm) = 39924875
+SIZE (uqm/uqm-remix-disc4.uqm) = 86545760

@@ -1,43 +1,41 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2015/01/20 12:28:31 bentley Exp $
 
-COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
+COMMENT-main=		ur-quan masters: space exploration game with battles
 COMMENT-content=	ur-quan masters: game content
 COMMENT-remix1=		ur-quan masters: remix pack number one
 COMMENT-remix2=		ur-quan masters: remix pack number two
 COMMENT-remix3=		ur-quan masters: remix pack number three
+COMMENT-remix4=		ur-quan masters: remix pack number four
 COMMENT-threedomusic=	ur-quan masters: 3DO music content
 COMMENT-voice=		ur-quan masters: speech content
 
-VER =			0.7.0
+V =			0.7.0
 EPOCH=			0# N.B. in RUN_DEPENDS
-DISTNAME =		uqm-${VER}
+DISTNAME =		uqm-$V
 CATEGORIES=		games x11
-PDIST=			${DISTNAME}-source.tgz
-CDIST =			${DISTNAME}-content.uqm
-MDIST =			${DISTNAME}-3domusic.uqm
-VDIST =			${DISTNAME}-voice.uqm
-RM1DIST =		uqm-remix-disc1.uqm
-RM2DIST =		uqm-remix-disc2.uqm
-RM3DIST =		uqm-remix-disc3.uqm
-DISTFILES=		${PDIST} ${CDIST}
-SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
+uqm_source =		uqm-$V-source.tgz
+uqm_packages =		uqm-$V-content.uqm
+uqm_addons =		uqm-$V-3domusic.uqm \
+			uqm-$V-voice.uqm \
+			uqm-remix-disc1.uqm \
+			uqm-remix-disc2.uqm \
+			uqm-remix-disc3.uqm \
+			uqm-remix-disc4.uqm
+DISTFILES =		${uqm_source} \
+			${uqm_packages} \
+			${uqm_addons}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME-main=		uqm-${VER}
-PKGNAME-content=	uqm-content-${VER}
-PKGNAME-remix1=		uqm-remix1-${VER}
-PKGNAME-remix2=		uqm-remix2-${VER}
-PKGNAME-remix3=		uqm-remix3-${VER}
-PKGNAME-threedomusic=	uqm-threedomusic-${VER}
-PKGNAME-voice=		uqm-voice-${VER}
-REVISION-main=		1
-REVISION-content=	1
-REVISION-remix1=	1
-REVISION-remix2=	1
-REVISION-remix3=	1
-REVISION-threedomusic=	1
-REVISION-voice=		1
-EXTRACT_ONLY=		${PDIST}
+PKGNAME-main =		uqm-$V
+PKGNAME-content =	uqm-content-$V
+PKGNAME-remix1 =	uqm-remix1-$V
+PKGNAME-remix2 =	uqm-remix2-$V
+PKGNAME-remix3 =	uqm-remix3-$V
+PKGNAME-remix4 =	uqm-remix4-$V
+PKGNAME-threedomusic =	uqm-threedomusic-$V
+PKGNAME-voice =		uqm-voice-$V
+REVISION =		2
+EXTRACT_ONLY =		${uqm_source}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
 HOMEPAGE=		http://sc2.sourceforge.net/
@@ -56,6 +54,7 @@ PKG_ARCH-content=	*
 PKG_ARCH-remix1=	*
 PKG_ARCH-remix2=	*
 PKG_ARCH-remix3=	*
+PKG_ARCH-remix4=	*
 PKG_ARCH-threedomusic=	*
 PKG_ARCH-voice=		*
 RUN_DEPENDS=		${PKGNAME-main}v0:games/uqm
@@ -67,28 +66,16 @@ WANTLIB-main=		c m pthread z SDL mikmod>=2.4 vorbisidec>=3 \
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 
-PSEUDO_FLAVORS=	no_remix1 no_remix2 no_remix3 no_threedomusic no_voice
-FLAVOR?=
-
-MULTI_PACKAGES= -main -content -remix1 -remix2 -remix3 -threedomusic -voice
+MULTI_PACKAGES =	-main \
+			-content \
+			-remix1 \
+			-remix2 \
+			-remix3 \
+			-remix4 \
+			-threedomusic \
+			-voice
 
 .include <bsd.port.arch.mk>
-
-.if ${BUILD_PACKAGES:M-remix1}
-DISTFILES+=	${RM1DIST}
-.endif
-.if ${BUILD_PACKAGES:M-remix2}
-DISTFILES+=	${RM2DIST}
-.endif
-.if ${BUILD_PACKAGES:M-remix3}
-DISTFILES+=	${RM3DIST}
-.endif
-.if ${BUILD_PACKAGES:M-threedomusic}
-DISTFILES+=	${MDIST}
-.endif
-.if ${BUILD_PACKAGES:M-voice}
-DISTFILES+=	${VDIST}
-.endif
 
 do-configure:
 .if ${PROPERTIES:Mle}
@@ -109,33 +96,20 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/uqm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/uqm/content/packages
-	${INSTALL_DATA_DIR} ${PREFIX}/share/uqm/content/addons
+	${INSTALL_MAN} ${FILESDIR}/uqm.6 ${PREFIX}/man/man6
 	${INSTALL_DATA} ${WRKBUILD}/doc/users/manual.txt \
 		${PREFIX}/share/doc/uqm
 	${INSTALL_DATA} ${WRKBUILD}/content/version \
 		${PREFIX}/share/uqm/content
-	${INSTALL_DATA} ${FULLDISTDIR}/${CDIST} \
-		${PREFIX}/share/uqm/content/packages
-.if ${BUILD_PACKAGES:M-remix1}
-	${INSTALL_DATA} ${FULLDISTDIR}/${RM1DIST} \
-		${PREFIX}/share/uqm/content/addons
-.endif
-.if ${BUILD_PACKAGES:M-remix2}
-	${INSTALL_DATA} ${FULLDISTDIR}/${RM2DIST} \
-		${PREFIX}/share/uqm/content/addons
-.endif
-.if ${BUILD_PACKAGES:M-remix3}
-	${INSTALL_DATA} ${FULLDISTDIR}/${RM3DIST} \
-		${PREFIX}/share/uqm/content/addons
-.endif
-.if ${BUILD_PACKAGES:M-threedomusic}
-	${INSTALL_DATA} ${FULLDISTDIR}/${MDIST} \
-		${PREFIX}/share/uqm/content/addons
-.endif
-.if ${BUILD_PACKAGES:M-voice}
-	${INSTALL_DATA} ${FULLDISTDIR}/${VDIST} \
-		${PREFIX}/share/uqm/content/addons
-.endif
 	${INSTALL_PROGRAM} ${WRKBUILD}/uqm ${PREFIX}/bin
+.for package in ${uqm_packages}
+	${INSTALL_DATA} ${FULLDISTDIR}/${package} \
+		${PREFIX}/share/uqm/content/packages
+.endfor
+.for addon in ${uqm_addons}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/uqm/content/addons
+	${INSTALL_DATA} ${FULLDISTDIR}/${addon} \
+		${PREFIX}/share/uqm/content/addons
+.endfor
 
 .include <bsd.port.mk>
