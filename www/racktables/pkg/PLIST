@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/06/10 00:16:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/01/20 10:06:48 sthen Exp $
 @extraunexec rm -rf /var/www/racktables/plugins/*
 htdocs/racktables/
 htdocs/racktables/index.php
@@ -75,6 +75,7 @@ racktables/wwwroot/js/net-usage.js
 racktables/wwwroot/js/portinfo.js
 racktables/wwwroot/js/racktables.js
 racktables/wwwroot/js/slb_editor.js
+racktables/wwwroot/js/tabindex_auto.js
 racktables/wwwroot/js/tag-cb.js
 racktables/wwwroot/js/tag-it-local.js
 racktables/wwwroot/js/tag-it.js
