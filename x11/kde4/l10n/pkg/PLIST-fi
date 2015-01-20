@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.7 2014/11/01 21:09:45 zhuk Exp $
+@comment $OpenBSD: PLIST-fi,v 1.8 2015/01/20 21:58:42 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/fi.txt
@@ -123,8 +123,6 @@ share/locale/fi/LC_MESSAGES/drkonqi.mo
 share/locale/fi/LC_MESSAGES/filelight.mo
 share/locale/fi/LC_MESSAGES/filetypes.mo
 share/locale/fi/LC_MESSAGES/fileviewbazaarplugin.mo
-share/locale/fi/LC_MESSAGES/fileviewgitplugin.mo
-share/locale/fi/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/fi/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/fi/LC_MESSAGES/freespacenotifier.mo
 share/locale/fi/LC_MESSAGES/fsview.mo
@@ -616,6 +614,7 @@ share/locale/fi/LC_MESSAGES/nepomukwidgets.mo
 share/locale/fi/LC_MESSAGES/notes-mobile.mo
 share/locale/fi/LC_MESSAGES/nsplugin.mo
 share/locale/fi/LC_MESSAGES/okteta-mobile.mo
+share/locale/fi/LC_MESSAGES/okteta.appdata.mo
 share/locale/fi/LC_MESSAGES/okteta.mo
 share/locale/fi/LC_MESSAGES/oktetapart.mo
 share/locale/fi/LC_MESSAGES/okular.mo
@@ -826,6 +825,7 @@ share/locale/fi/LC_MESSAGES/sieveeditor.mo
 share/locale/fi/LC_MESSAGES/solid-hardware.mo
 share/locale/fi/LC_MESSAGES/solid_qt.mo
 share/locale/fi/LC_MESSAGES/soliduiserver.mo
+share/locale/fi/LC_MESSAGES/step.appdata.mo
 share/locale/fi/LC_MESSAGES/step.mo
 share/locale/fi/LC_MESSAGES/step_qt.mo
 share/locale/fi/LC_MESSAGES/storageservicemanager.mo

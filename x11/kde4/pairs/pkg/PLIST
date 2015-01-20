@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/01/20 21:58:43 zhuk Exp $
 @bin bin/pairs
 @bin bin/pairseditor
+share/appdata/
+share/appdata/pairs.appdata.xml
 share/applications/kde4/pairs.desktop
 share/applications/kde4/pairseditor.desktop
 share/apps/pairs/

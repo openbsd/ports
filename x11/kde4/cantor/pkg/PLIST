@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:40 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/01/20 21:58:38 zhuk Exp $
 @bin bin/cantor
 @bin bin/cantor_rserver
 include/kde4/cantor/
@@ -96,10 +96,14 @@ share/config.kcfg/sagebackend.kcfg
 share/config.kcfg/scilabbackend.kcfg
 share/config/cantor.knsrc
 share/config/cantor_kalgebra.knsrc
+share/config/cantor_lua.knsrc
 share/config/cantor_maxima.knsrc
+share/config/cantor_octave.knsrc
 share/config/cantor_python2.knsrc
+share/config/cantor_qalculate.knsrc
 share/config/cantor_r.knsrc
 share/config/cantor_sage.knsrc
+share/config/cantor_scilab.knsrc
 share/doc/HTML/en/cantor/
 share/doc/HTML/en/cantor/common
 share/doc/HTML/en/cantor/index.cache.bz2

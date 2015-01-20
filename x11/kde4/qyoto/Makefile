@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/31 09:59:17 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/20 21:58:44 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE4_VERSION}
-
-REVISION = 	0
 
 SHARED_LIBS =	qyoto			50.1 # 2.0
 SHARED_LIBS +=	phonon-sharp		50.1

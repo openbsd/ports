@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/08 09:17:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/20 21:58:44 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
 COMMENT-minimal =	KDE4 desktop meta-package (minimal installation)
 COMMENT-main =		KDE4 desktop meta-package (full installation)
 COMMENT-extras =	non-SC KDE4 applications
-COMMENT-admin =		KDE SC system administrator tools
-COMMENT-games =		KDE SC games
-COMMENT-network =	KDE SC network applications
-COMMENT-sdk =		KDE SC development applications
-COMMENT-toys =		KDE SC small funny applications
+COMMENT-admin =		KDE4 SC system administrator tools
+COMMENT-games =		KDE4 SC games
+COMMENT-network =	KDE4 SC network applications
+COMMENT-sdk =		KDE4 SC development applications
+COMMENT-toys =		KDE4 SC small funny applications
 
 PKGNAME-minimal =	kde4-minimal-${MODKDE4_VERSION}
 PKGNAME-main =		kde4-${MODKDE4_VERSION}
@@ -19,14 +19,12 @@ PKGNAME-games =		kdegames-${MODKDE4_VERSION}
 PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
 PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
 PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
-REVISION-minimal =	1
-REVISION-admin =	0
-REVISION-extras =	1
-REVISION-games =	0
-REVISION-main =		0
-REVISION-network =	0
-REVISION-sdk =		0
-REVISION-toys =		0
+
+PKGSPEC-admin =		kdeadmin-${MODKDE4_SPEC}
+PKGSPEC-games =		kdegames-${MODKDE4_SPEC}
+PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
+PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
+PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -38,8 +36,10 @@ MULTI_PACKAGES +=	-admin -network -sdk -toys
 # stuff outside KDE SC
 MULTI_PACKAGES +=	-extras
 
-MODKDE4_USE =
+MODULES =		x11/kde4
+MODKDE4_NO_QT =		Yes
 MODKDE4_RESOURCES =	Yes
+MODKDE4_USE =
 
 # Specialization packages. Separate to be able to easily
 # convert them into proper packages in the future - will
@@ -251,9 +251,5 @@ RUN_DEPENDS-extras = \
 	net/ktorrent-kde4		\
 	x11/tellico-kde4		\
 	x11/yakuake-kde4
-
-MODULES =		x11/kde4
-MODKDE4_NO_QT =		Yes
-MODKDE4_USE =
 
 .include <bsd.port.mk>

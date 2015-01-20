@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/20 21:58:44 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
@@ -45,7 +45,7 @@ WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kabc
 WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime ${KDE4LIB}/kabc
 WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kmime ${KDE4LIB}/kpimutils
 WANTLIB += ${KDE4LIB}/kresources
-WANTLIB += soprano sopranoclient sopranoserver
+WANTLIB += attica soprano sopranoclient sopranoserver
 
 MODKDE4_USE =	pim libs
 

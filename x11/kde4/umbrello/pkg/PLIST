@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/09 20:03:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/01/20 21:58:44 zhuk Exp $
 @conflict kdesdk-<4.11
 @bin bin/umbrello
 share/applications/kde4/umbrello.desktop
@@ -100,6 +100,7 @@ share/apps/umbrello/pics/check_constraint.png
 share/apps/umbrello/pics/child2category.png
 share/apps/umbrello/pics/choice-rhomb.png
 share/apps/umbrello/pics/choice-round.png
+share/apps/umbrello/pics/class-or-package.png
 share/apps/umbrello/pics/class.png
 share/apps/umbrello/pics/combined_fragment.png
 share/apps/umbrello/pics/component.png
@@ -154,6 +155,8 @@ share/apps/umbrello/pics/cursor-send_signal.png
 share/apps/umbrello/pics/cursor-shallow-history.png
 share/apps/umbrello/pics/cursor-state-fork.png
 share/apps/umbrello/pics/cursor-text.png
+share/apps/umbrello/pics/cursor-umbr-coll-message-asynchronous.png
+share/apps/umbrello/pics/cursor-umbr-coll-message-synchronous.png
 share/apps/umbrello/pics/cursor-umbr-message-asynchronous.png
 share/apps/umbrello/pics/cursor-umbr-message-found.png
 share/apps/umbrello/pics/cursor-umbr-message-lost.png
@@ -183,6 +186,7 @@ share/apps/umbrello/pics/object.png
 share/apps/umbrello/pics/object_node.png
 share/apps/umbrello/pics/package.png
 share/apps/umbrello/pics/pin.png
+share/apps/umbrello/pics/port.png
 share/apps/umbrello/pics/precondition.png
 share/apps/umbrello/pics/primarykey_constraint.png
 share/apps/umbrello/pics/refactor.png

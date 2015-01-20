@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nl,v 1.7 2014/11/01 21:09:45 zhuk Exp $
+@comment $OpenBSD: PLIST-nl,v 1.8 2015/01/20 21:58:42 zhuk Exp $
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/
@@ -2132,6 +2132,7 @@ share/locale/nl/LC_MESSAGES/nepomukwidgets.mo
 share/locale/nl/LC_MESSAGES/notes-mobile.mo
 share/locale/nl/LC_MESSAGES/nsplugin.mo
 share/locale/nl/LC_MESSAGES/okteta-mobile.mo
+share/locale/nl/LC_MESSAGES/okteta.appdata.mo
 share/locale/nl/LC_MESSAGES/okteta.mo
 share/locale/nl/LC_MESSAGES/oktetapart.mo
 share/locale/nl/LC_MESSAGES/okular.mo

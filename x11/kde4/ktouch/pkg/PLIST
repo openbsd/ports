@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/07/18 08:17:11 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/01/20 21:58:42 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/ktouch
 @man man/man1/ktouch.1
+share/appdata/
+share/appdata/ktouch.appdata.xml
 share/applications/kde4/ktouch.desktop
 share/apps/ktouch/
 share/apps/ktouch/courses/

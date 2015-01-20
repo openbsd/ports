@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.7 2014/11/01 21:09:45 zhuk Exp $
+@comment $OpenBSD: PLIST-ko,v 1.8 2015/01/20 21:58:42 zhuk Exp $
 share/doc/HTML/
 share/doc/HTML/ko/
 share/doc/HTML/ko/common/
@@ -58,6 +58,7 @@ share/locale/ko/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ko/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/ko/LC_MESSAGES/akonadicontact.mo
 share/locale/ko/LC_MESSAGES/akonadinotes.mo
 share/locale/ko/LC_MESSAGES/akonaditray.mo
 share/locale/ko/LC_MESSAGES/akregator.mo
@@ -549,6 +550,7 @@ share/locale/ko/LC_MESSAGES/nepomukwidgets.mo
 share/locale/ko/LC_MESSAGES/notes-mobile.mo
 share/locale/ko/LC_MESSAGES/nsplugin.mo
 share/locale/ko/LC_MESSAGES/okteta-mobile.mo
+share/locale/ko/LC_MESSAGES/okteta.appdata.mo
 share/locale/ko/LC_MESSAGES/okteta.mo
 share/locale/ko/LC_MESSAGES/oktetapart.mo
 share/locale/ko/LC_MESSAGES/okular.mo

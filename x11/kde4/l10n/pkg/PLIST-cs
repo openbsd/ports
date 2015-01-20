@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cs,v 1.7 2014/11/01 21:09:45 zhuk Exp $
+@comment $OpenBSD: PLIST-cs,v 1.8 2015/01/20 21:58:42 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/cs.xml
@@ -738,6 +738,7 @@ share/locale/cs/LC_MESSAGES/nepomukwidgets.mo
 share/locale/cs/LC_MESSAGES/notes-mobile.mo
 share/locale/cs/LC_MESSAGES/nsplugin.mo
 share/locale/cs/LC_MESSAGES/okteta-mobile.mo
+share/locale/cs/LC_MESSAGES/okteta.appdata.mo
 share/locale/cs/LC_MESSAGES/okteta.mo
 share/locale/cs/LC_MESSAGES/oktetapart.mo
 share/locale/cs/LC_MESSAGES/okular.mo

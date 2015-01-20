@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:45 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/20 21:58:42 zhuk Exp $
 
 COMMENT =	KDE exiv2 wrapper
 CATEGORIES =	graphics devel
 DISTNAME =	libkexiv2-${MODKDE4_VERSION}
-PKGSPEC =	libkexiv2->=4,<5
+PKGSPEC =	libkexiv2-${MODKDE4_SPEC}
 
 SHARED_LIBS =	kexiv2			51.0	# 10.0
 
