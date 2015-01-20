@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/12/08 21:35:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2015/01/20 01:17:52 jca Exp $
 
 NOT_FOR_ARCHS=		${LP64_ARCHS}
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.scsh.net/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m util
 
-MASTER_SITES=		ftp://ftp.scsh.net/pub/scsh/0.6/ \
+MASTER_SITES=		http://ftp.scsh.net/pub/scsh/0.6/ \
 			${MASTER_SITE_SOURCEFORGE:=scsh/}
 
 AUTOCONF_VERSION=	2.59
