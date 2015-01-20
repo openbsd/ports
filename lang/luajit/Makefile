@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/06/02 19:43:50 juanfra Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/20 15:26:26 abieber Exp $
 
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs EABI/aapcs
@@ -11,7 +11,7 @@ COMMENT =	just-in-time compiler for Lua
 V =		2.0.3
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	lang
 
