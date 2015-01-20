@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/11 18:59:59 jasper Exp $
-${P5SITE}/POE/Component/Resolver/
-${P5SITE}/POE/Component/Resolver.pm
-${P5SITE}/POE/Component/Resolver/Sidecar.pm
-@man man/man3p/POE::Component::Resolver.3p
-@man man/man3p/POE::Component::Resolver::Sidecar.3p

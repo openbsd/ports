@@ -1,7 +1,0 @@
-POE::Component::Resolver performs Socket::GetAddrInfo::getaddrinfo()
-calls in subprocesses where they're permitted to block as long as
-necessary.
-
-By default it will run eight subprocesses and prefer address
-families in whatever order Socket::GetAddrInfo returns them.
-These defaults can be overridden with constructor parameters.
