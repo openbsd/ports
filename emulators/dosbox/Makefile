@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2014/09/29 22:10:37 juanfra Exp $
+# $OpenBSD: Makefile,v 1.30 2015/01/20 09:08:32 jsg Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 
 DISTNAME=	dosbox-0.74
-REVISION=	4
+REVISION=	5
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
 
@@ -16,13 +16,12 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += SDL SDL_net SDL_sound stdc++ png X11 c m pthread sndio z
+WANTLIB += GL SDL SDL_net SDL_sound stdc++ png X11 c m pthread sndio z
 
 LIB_DEPENDS=	devel/sdl-net \
 		devel/sdl-sound \
 		graphics/png
 
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 AUTOCONF_VERSION=       2.69
@@ -34,7 +33,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 CONFIGURE_ENV+=LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	--disable-alsatest
-CONFIGURE_ARGS+=	--disable-opengl
 
 pre-configure:
 	cp ${FILESDIR}/midi_sndio.h ${WRKSRC}/src/gui
