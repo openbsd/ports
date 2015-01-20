@@ -1,0 +1,15 @@
+$OpenBSD: patch-library_asn1parse_c,v 1.1 2015/01/20 09:47:47 sthen Exp $
+
+https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2014-04
+
+--- library/asn1parse.c.orig	Tue Jan 20 09:44:16 2015
++++ library/asn1parse.c	Tue Jan 20 09:44:24 2015
+@@ -278,6 +278,8 @@ int asn1_get_sequence_of( unsigned char **p,
+             if( cur->next == NULL )
+                 return( POLARSSL_ERR_ASN1_MALLOC_FAILED );
+ 
++            memset( cur->next, 0, sizeof( asn1_sequence ) );
++
+             cur = cur->next;
+         }
+     }
