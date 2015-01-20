@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/04 21:47:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/20 18:42:38 landry Exp $
 
 SHARED_ONLY =	Yes
-
+BROKEN-hppa =	undefined reference to `__sync_add_and_fetch_4' when linking icinga2
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
