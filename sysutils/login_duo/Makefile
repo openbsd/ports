@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/10 19:39:00 jturner Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/20 22:31:35 jturner Exp $
 
 COMMENT =		two-factor authentication for unix systems
 
 V =			1.9.14
 PKGNAME =		login_duo-${V}
 DISTNAME =		duo_unix-${V}
+REVISION =		0
 CATEGORIES =		sysutils
 
 SHARED_LIBS =		duo 0.0 # 3.0
@@ -25,6 +26,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-pam
 
 FAKE_FLAGS =		docdir="${PREFIX}/share/doc/login_duo" \
+			includedir="${PREFIX}/include/duo" \
 			sbindir="${PREFIX}/sbin" \
 			sysconfdir="${PREFIX}/share/examples/login_duo"
 
