@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_FbTk_TextButton_cc,v 1.1 2015/01/21 08:52:04 dcoppa Exp $
+
+commit 7b8fd2d81ad80a73564fc9fbb779f47568f12652
+Author: Mathias Gumz <akira@fluxbox.org>
+Date:   Sat Jan 10 22:44:37 2015 +0100
+
+Fix bug: integer underflow in startup phase
+
+When fluxbox comes up some of it's drawables span a 1x1 area. Subtracting from
+such small numbers bigger ones always lead to massive problems when 'unsigned
+int' are involved:
+
+'button_width' is an unsigned int of '1' (this might be caused by another
+issue or on purpose, anyway), subtracting -10 or any other number should
+result in something < 0 when in reality an integer underflow happen: max_width
+is now MAX_INT-something big. This makes fluxbox crash under certain
+circumstances.
+
+--- src/FbTk/TextButton.cc.orig	Mon Jun 17 06:38:14 2013
++++ src/FbTk/TextButton.cc	Wed Jan 21 01:54:20 2015
+@@ -143,11 +143,17 @@ void TextButton::drawText(int x_offset, int y_offset, 
+     unsigned int textlen = visual.size();
+     unsigned int button_width = width();
+     unsigned int button_height = height();
++    const int max_width = static_cast<int>(button_width) - x_offset -
++        m_left_padding - m_right_padding;
+ 
++    if (max_width <= bevel()) {
++        return;
++    }
++
+     translateSize(m_orientation, button_width, button_height);
+ 
+     // horizontal alignment, cut off text if needed
+-    int align_x = FbTk::doAlignment(button_width - x_offset - m_left_padding - m_right_padding,
++    int align_x = FbTk::doAlignment(max_width,
+                                     bevel(), justify(), font(),
+                                     visual.data(), visual.size(),
+                                     textlen); // return new text len
