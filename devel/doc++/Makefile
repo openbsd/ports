@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2014/01/21 23:33:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/21 06:13:46 bentley Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
 DISTNAME=	doc++-3.4.10
-REVISION=	4
+REVISION=	5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docpp.sourceforge.net/
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m stdc++
 

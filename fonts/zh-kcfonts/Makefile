@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	extra chinese fonts
 
 DISTNAME=       zh-fonts-kc-1.05
-REVISION=	0
+REVISION=	1
 CATEGORIES=     fonts chinese x11
-
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 

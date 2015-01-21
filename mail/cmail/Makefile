@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:49:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 06:13:49 bentley Exp $
 
 COMMENT=	simple mail counter
 
 DISTNAME=	cmail-3.1
-REVISION =	0
+REVISION =	1
 CATEGORIES=	mail
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 

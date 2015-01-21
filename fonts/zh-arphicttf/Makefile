@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	chinese big5/gb truetype fonts
 
 DISTNAME=       zh-arphicttf-2.11
 PKGNAME=	zh-fonts-arphicttf-2.11
-REVISION=	2
+REVISION=	3
 CATEGORIES=     fonts chinese x11
-
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/01/21 06:13:49 bentley Exp $
 
 COMMENT=	hangul input library
 
 DISTNAME=	libhangul-0.0.10
+REVISION =	0
 
 SHARED_LIBS=	hangul	0.1	# .1.0
 
@@ -10,9 +11,7 @@ CATEGORIES=	korean inputmethods
 
 HOMEPAGE= 	http://kldp.net/projects/hangul/
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-
-# GPLv2
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	converters/libiconv

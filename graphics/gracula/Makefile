@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	graphic counter language compiler/interpreter
 
 DISTNAME=	gracula-3.0
 CATEGORIES=	graphics
+REVISION =	0
 
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.whizkidtech.redprince.net/gcl/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m

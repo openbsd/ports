@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	generate index pages for displaying images
 
 DISTNAME=	indexpage-1.0.3
 CATEGORIES=	graphics
+REVISION =	0
 
 HOMEPAGE=	http://www.lysator.liu.se/~unicorn/hacks/indexpage/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 

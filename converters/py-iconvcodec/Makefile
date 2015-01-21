@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/01 08:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/01/21 06:13:46 bentley Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,10 +6,8 @@ COMMENT=	universal unicode codec using iconv for Python
 
 DISTNAME=	iconvcodec-1.1.2
 PKGNAME=	py-${DISTNAME}
-REVISION =	8
+REVISION =	9
 CATEGORIES=	converters
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

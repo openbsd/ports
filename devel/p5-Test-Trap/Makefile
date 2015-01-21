@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/14 14:29:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2015/01/21 06:13:47 bentley Exp $
 
 COMMENT=		trap exit codes
 
 DISTNAME =		Test-Trap-v0.2.4
 PKGNAME=		p5-${DISTNAME:S/v//}
+REVISION =		0
 
 CATEGORIES=		devel
-
-MAINTAINER=		Kevin Lo <kevlo@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

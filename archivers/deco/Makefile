@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 06:13:46 bentley Exp $
 
 COMMENT=	extract various archive file formats
 
@@ -11,12 +11,10 @@ CATEGORIES=	archivers
 
 HOMEPAGE= 	http://hartlich.com/deco/
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-
-# GPLv3
+# GPLv3 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-REVISION =	1
+REVISION =	2
 WANTLIB=	c
 
 MASTER_SITES=	${HOMEPAGE}/download/

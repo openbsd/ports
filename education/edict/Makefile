@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 06:13:48 bentley Exp $
 
 PKG_ARCH=	*
 
@@ -6,12 +6,11 @@ COMMENT=	commandline interface to online dictionaries
 
 DISTNAME=	edict-2.2
 CATEGORIES=	education
+REVISION =	0
 
 HOMEPAGE=	http://edictionary.sourceforge.net/
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=edictionary/}

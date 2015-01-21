@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	Wen Quan Yi Zen Hei outline font
 
 V=		0.6.26-0
 DISTNAME=	wqy-zenhei-$V
 PKGNAME=	zh-wqy-zenhei-ttf-${V:S/-/./}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	fonts x11 chinese
 
 HOMEPAGE=	http://wqy.sourceforge.net/en/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

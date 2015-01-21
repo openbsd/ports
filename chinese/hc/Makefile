@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:48:55 espie Exp $	
+# $OpenBSD: Makefile,v 1.11 2015/01/21 06:13:46 bentley Exp $	
 
 COMMENT=	convert between GB and BIG-5 codes
 
 DISTNAME=	zh-hc-3.0
 CATEGORIES=	chinese
-
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
+REVISION =	0
 
 # Fairly restrictive licence
 PERMIT_PACKAGE_CDROM=	No

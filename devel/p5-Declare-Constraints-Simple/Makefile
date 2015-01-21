@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:47 bentley Exp $
 
 COMMENT=	declarative validation of data structures
 
 DISTNAME=	Declare-Constraints-Simple-0.03
-REVISION=	0
+REVISION =	0
 
 CATEGORIES=	devel
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

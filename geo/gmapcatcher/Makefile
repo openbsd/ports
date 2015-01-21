@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/08/14 07:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/01/21 06:13:48 bentley Exp $
 
 BROKEN=		triggers unlocking a mutex which is not locked (bug probably in py-gtk2, but some other py-gtk2 ports do still work)
 
@@ -7,13 +7,11 @@ COMMENT=	offline maps viewer
 MODPY_EGG_VERSION=	0.7.6.1
 DISTNAME=	GMapCatcher-${MODPY_EGG_VERSION}
 PKGNAME=	gmapcatcher-${MODPY_EGG_VERSION}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	geo x11
 
 HOMEPAGE=	https://code.google.com/p/gmapcatcher/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

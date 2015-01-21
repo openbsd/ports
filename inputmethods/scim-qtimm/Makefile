@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/21 06:13:48 bentley Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim plugin for qt
 
 DISTNAME=	scim-qtimm-0.9.4
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	inputmethods
 
 HOMEPAGE=	http://www.scim-im.org/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/23 20:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
 V=		0.1
 DISTNAME=	stp-ver-${V}-11-18-2008
 PKGNAME=	stp-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://sites.google.com/site/stpfastprover/STP-Fast-Prover
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # MIT license
 PERMIT_PACKAGE_CDROM=	Yes

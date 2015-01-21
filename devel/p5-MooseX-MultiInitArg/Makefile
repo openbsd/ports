@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:47 bentley Exp $
 
 COMMENT=	attributes with aliases for constructor arguments for MooseX
 
 DISTNAME=	MooseX-MultiInitArg-0.01
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

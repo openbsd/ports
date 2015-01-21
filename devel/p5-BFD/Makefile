@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 06:13:47 bentley Exp $
 
 COMMENT=	impromptu dumping of data structures for debugging purposes
 
 MODULES=	cpan
 DISTNAME=	BFD-0.31
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

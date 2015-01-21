@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/07 21:31:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:46 bentley Exp $
 
 COMMENT=	simplified-traditional chinese translate tool
 
 DISTNAME=	cconv-0.6.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	chinese converters
 
@@ -11,9 +11,7 @@ SHARED_LIBS=	cconv		0.0
 
 HOMEPAGE=	https://code.google.com/p/cconv/
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB= 	c

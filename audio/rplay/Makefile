@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2014/01/11 11:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2015/01/21 06:13:46 bentley Exp $
 
 COMMENT=	network audio player
 DISTNAME=	rplay-3.3.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 SHARED_LIBS=	rplay	0.0
 
 HOMEPAGE=	http://rplay.doit.org/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

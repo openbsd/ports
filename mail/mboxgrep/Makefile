@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 06:13:49 bentley Exp $
 
 COMMENT=	scan mailboxes for messages matching a regular expression
 
 DISTNAME=	mboxgrep-0.7.8
+REVISION =	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mboxgrep.org/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=		c z pcre

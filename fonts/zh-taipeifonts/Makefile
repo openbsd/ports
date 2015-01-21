@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	extra chinese fonts
 
 DISTNAME=       zh-fonts-taipei-1.01
-REVISION=	0
+REVISION=	1
 CATEGORIES=     fonts chinese x11
 
 DIST_SUBDIR=    zh-fonts
 
 MASTER_SITES=	http://cle.linux.org.tw/fonts/bitmap/taipeifont/
-
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_DISTFILES_FTP=   no license
 PERMIT_PACKAGE_CDROM=   no license

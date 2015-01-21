@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2015/01/21 06:13:48 bentley Exp $
 
 COMMENT=	MIPS R2000/R3000 simulator
 
 DISTNAME=	spim-8.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	emulators
 
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

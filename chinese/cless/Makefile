@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.20 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/01/21 06:13:46 bentley Exp $
 #
 
 COMMENT=	pager utility that speaks Chinese
@@ -11,10 +11,10 @@ COMMENT=	pager utility that speaks Chinese
 DISTNAME=       cless-290
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese misc
-MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
+MASTER_SITES=   http://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
+REVISION =	0
 
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
-
+# BSD
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=		c curses termcap
