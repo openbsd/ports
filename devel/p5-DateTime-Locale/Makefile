@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 14:29:19 sthen Exp $
 
 COMMENT=		localization data for perl DateTime.pm
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 DISTNAME=		DateTime-Locale-0.45
 REVISION=		0
 CATEGORIES=		devel
-USE_GROFF =		Yes
+USE_GROFF =		Yes # XXX mandoc drops chars in ::is (Icelandic) files
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes
