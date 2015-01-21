@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2014/10/03 08:04:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 09:22:51 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.6.2
-REVISION =		1
+REVISION =		2
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
