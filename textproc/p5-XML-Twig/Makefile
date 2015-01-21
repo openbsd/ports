@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/09/15 19:51:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/21 14:41:38 sthen Exp $
 
 COMMENT=	perl module for parsing huge XML documents
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
 CPAN_AUTHOR=	MIROD
-
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	devel/p5-Tie-IxHash \
 		textproc/p5-XML-Parser \

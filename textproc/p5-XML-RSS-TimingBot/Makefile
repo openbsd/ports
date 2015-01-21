@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:41:38 sthen Exp $
 
 COMMENT=	efficiently fetch RSS feeds
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	XML-RSS-TimingBot-2.03
 REVISION=	0
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

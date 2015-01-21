@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/06/14 23:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2015/01/21 14:41:38 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,8 +18,6 @@ WANTLIB += m xml2 z
 
 MODULES=	converters/libiconv \
 		cpan
-
-USE_GROFF =	Yes
 
 LIB_DEPENDS=	textproc/libxml
 RUN_DEPENDS=	textproc/p5-LibXML-Common \

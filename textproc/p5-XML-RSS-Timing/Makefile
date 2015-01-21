@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:41:38 sthen Exp $
 
 COMMENT=	figure out when to fetch RSS Feeds
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	XML-RSS-Timing-1.07
 REVISION=	0
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

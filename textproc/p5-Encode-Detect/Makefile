@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/06/14 23:26:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:41:37 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,6 @@ MODULES =	cpan
 DISTNAME =	Encode-Detect-1.01
 REVISION =	3
 CATEGORIES =	textproc
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

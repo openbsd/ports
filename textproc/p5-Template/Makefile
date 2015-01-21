@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/14 23:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/21 14:41:38 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,6 @@ DISTNAME=		Template-Toolkit-${VERSION}
 PKGNAME=		p5-Template-${VERSION}
 REVISION=		2
 CATEGORIES=		textproc
-USE_GROFF =		Yes
 
 HOMEPAGE=		http://www.template-toolkit.org/
 

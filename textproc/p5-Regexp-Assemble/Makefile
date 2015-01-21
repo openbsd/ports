@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:41:37 sthen Exp $
 
 COMMENT =	assemble multiple Regular Expressions into a single RE
 
 MODULES =	cpan
-USE_GROFF =	Yes
 DISTNAME =	Regexp-Assemble-0.35
 CATEGORIES =	textproc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 14:41:38 sthen Exp $
 
 COMMENT=	Perl/Tk graphical user interface to GNU ispell
 
@@ -12,7 +12,6 @@ CPAN_AUTHOR=	RKIES
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 RUN_DEPENDS=	x11/p5-Tk \
 		textproc/ispell
 

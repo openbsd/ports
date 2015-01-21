@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/28 08:23:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:41:37 sthen Exp $
 
 COMMENT =	persistent Markdown processor for Catalyst
 
@@ -6,7 +6,6 @@ MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-Markdown-0.01
 REVISION =	1
 CATEGORIES =	textproc
-USE_GROFF =	Yes
 
 MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 

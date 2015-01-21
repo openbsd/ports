@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/01/21 14:41:38 sthen Exp $
 
 COMMENT=	parses 'folksonomy' space-separated tags
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Text-Tags-0.04
 REVISION=	0
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
