@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/18 07:15:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 15:27:00 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
-MODPY_EGG_VERSION = 1.24
+MODPY_EGG_VERSION = 1.27
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
 
-HOMEPAGE =	https://mutagen.googlecode.com/
+HOMEPAGE =	https://mutagen.readthedocs.org/
 
 MASTER_SITES =	https://bitbucket.org/lazka/mutagen/downloads/
 
@@ -15,6 +15,7 @@ MASTER_SITES =	https://bitbucket.org/lazka/mutagen/downloads/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
+# has py3 support, not handled in port yet
 
 MODPY_ADJ_FILES =	docs/id3_frames_gen.py \
 			tools/mid3iconv \

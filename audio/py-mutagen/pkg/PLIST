@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/05/23 20:26:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/01/21 15:27:00 sthen Exp $
+bin/mid3cp
 bin/mid3iconv
 bin/mid3v2
 bin/moggsplit
@@ -12,16 +13,16 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/_compat.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_constants.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_constants.pyc
-lib/python${MODPY_VERSION}/site-packages/mutagen/_id3frames.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_id3frames.pyc
-lib/python${MODPY_VERSION}/site-packages/mutagen/_id3specs.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_id3specs.pyc
-lib/python${MODPY_VERSION}/site-packages/mutagen/_id3util.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_id3util.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/_file.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/_file.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/_tags.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/_tags.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_util.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/aac.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/aac.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/aiff.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/aiff.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/apev2.py
@@ -34,16 +35,30 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/easymp4.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/easymp4.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/flac.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/flac.pyc
-lib/python${MODPY_VERSION}/site-packages/mutagen/id3.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/id3.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_frames.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_frames.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_specs.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_specs.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_util.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/m4a.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/m4a.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/monkeysaudio.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/monkeysaudio.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3.pyc
-lib/python${MODPY_VERSION}/site-packages/mutagen/mp4.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/mp4.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_as_entry.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_as_entry.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_atom.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_atom.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_util.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/musepack.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/musepack.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/ogg.py
@@ -64,6 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.pyc
+@man man/man1/mid3cp.1
 @man man/man1/mid3iconv.1
 @man man/man1/mid3v2.1
 @man man/man1/moggsplit.1
