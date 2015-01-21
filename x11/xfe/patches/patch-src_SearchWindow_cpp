@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_SearchWindow_cpp,v 1.1 2013/11/25 18:39:02 bcallah Exp $
+$OpenBSD: patch-src_SearchWindow_cpp,v 1.2 2015/01/21 02:26:00 bcallah Exp $
 
 Remove gnuisms. The Find Hidden checkbox does nothing now.
 
---- src/SearchWindow.cpp.orig	Wed Nov 13 04:47:37 2013
-+++ src/SearchWindow.cpp	Mon Nov 25 13:30:32 2013
-@@ -513,7 +513,7 @@ long SearchWindow::onCmdStart(FXObject*,FXSelector,voi
+--- src/SearchWindow.cpp.orig	Tue Dec 16 07:26:10 2014
++++ src/SearchWindow.cpp	Mon Jan 12 00:16:23 2015
+@@ -533,7 +533,7 @@ long SearchWindow::onCmdStart(FXObject*,FXSelector,voi
  	if (linkbtn->getCheck())
  		searchcommand="find -L " + ::quote(wheredir->getText());
  	else
@@ -13,7 +13,7 @@ Remove gnuisms. The Find Hidden checkbox does nothing now.
  
  	// Ignore case
  	FXString nameoption;
-@@ -574,8 +574,8 @@ long SearchWindow::onCmdStart(FXObject*,FXSelector,voi
+@@ -602,8 +602,8 @@ long SearchWindow::onCmdStart(FXObject*,FXSelector,voi
  		searchcommand += " -empty"; 
  
  	// Hidden files

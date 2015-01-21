@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_xfedefs_h,v 1.1 2014/11/08 19:03:59 dcoppa Exp $
+$OpenBSD: patch-src_xfedefs_h,v 1.2 2015/01/21 02:26:00 bcallah Exp $
 
 Unbreak launching Xfe as root with sudo or su (fix gnuisms)
 
---- src/xfedefs.h.orig	Fri Oct 17 13:41:26 2014
-+++ src/xfedefs.h	Fri Oct 17 13:43:44 2014
-@@ -157,11 +157,11 @@
+--- src/xfedefs.h.orig	Mon Dec 22 11:57:44 2014
++++ src/xfedefs.h	Mon Jan 12 00:16:23 2015
+@@ -162,11 +162,11 @@
  
  // Command to launch Xfe as root with sudo or su, using Xvt as a terminal
  #ifndef SUDOCMD
