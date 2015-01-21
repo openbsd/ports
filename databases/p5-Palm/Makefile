@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 14:05:46 sthen Exp $
 
 COMMENT=	interface to palm pdb databases
 
@@ -17,7 +17,6 @@ CPAN_AUTHOR=	ARENSB
 PERMIT_PACKAGE_CDROM=	Yes
 
 WRKDIST=	${WRKDIR}/p5-Palm-1.003_000
-USE_GROFF=	Yes
 PKG_ARCH=	*
 
 .include <bsd.port.mk>

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/21 14:05:46 sthen Exp $
 
 COMMENT= 	database OO schema for Jifty
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 DISTNAME=	Jifty-DBI-0.68
 CATEGORIES=	databases www

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:05:45 sthen Exp $
 
 COMMENT =	easy DBI access
 
@@ -12,7 +12,6 @@ CATEGORIES =	databases www
 PERMIT_PACKAGE_CDROM =		Yes
 
 CONFIGURE_STYLE =	modbuild
-USE_GROFF =		Yes
 
 RUN_DEPENDS =		databases/p5-DBI \
 			www/p5-CGI-Application

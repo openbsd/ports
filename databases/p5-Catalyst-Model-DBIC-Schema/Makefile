@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/21 14:05:45 sthen Exp $
 
 COMMENT=	model class for catalyst
 
@@ -36,7 +36,6 @@ TEST_DEPENDS=	databases/p5-DBD-SQLite \
 
 MAKE_ENV+=	TEST_POD=Yes \
 		C_M_DBIC_SCHEMA_TESTAPP=Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	modinst
 

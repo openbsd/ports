@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:05:45 sthen Exp $
 
 COMMENT=	abstract Class::DBI's SQL with SQL::Abstract
 
@@ -8,7 +8,6 @@ REVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	Sam Smith <S@msmith.net>
-USE_GROFF =	Yes
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

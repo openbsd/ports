@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:05:45 sthen Exp $
 
 COMMENT= 	RDBO and RHTMLO base classes for Catalyst
 DISTNAME=	Catalyst-Controller-Rose-0.02
 REVISION=	0
 CATEGORIES=	databases www
 MODULES=	cpan
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

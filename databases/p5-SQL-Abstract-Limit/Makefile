@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:05:46 sthen Exp $
 
 COMMENT=	portability layer for LIMIT emulation
 
 DISTNAME=	SQL-Abstract-Limit-0.141
 CATEGORIES=	databases
 MODULES=	cpan
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

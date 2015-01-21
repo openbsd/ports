@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:05:45 sthen Exp $
 
 COMMENT=	simple database abstraction
 
@@ -8,7 +8,6 @@ DISTNAME=	Class-DBI-v${V}
 PKGNAME=	p5-Class-DBI-${V}
 REVISION =	2
 CATEGORIES=	databases
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/17 07:36:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:05:45 sthen Exp $
 
 COMMENT=	DBIx::DataModel model class
 
@@ -15,6 +15,5 @@ RUN_DEPENDS=	databases/p5-DBIx-DataModel \
 CONFIGURE_STYLE=modbuild
 
 MAKE_ENV+=	TEST_POD=1
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

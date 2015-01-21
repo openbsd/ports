@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/21 14:05:46 sthen Exp $
 
 COMMENT=	object-oriented database mapper
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 DISTNAME=	Rose-DB-Object-0.784
 REVISION=	1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:05:46 sthen Exp $
 
 COMMENT=		handle and create CouchDB views in Perl
 
@@ -7,7 +7,6 @@ REVISION=		0
 CATEGORIES=		databases
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
