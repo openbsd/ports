@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2013/10/26 11:27:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2015/01/21 17:25:50 ajacoutot Exp $
 @pkgpath editors/abiword,gnome
 @bin bin/abiword
 include/abiword-${MAJORVER}/
@@ -341,6 +341,16 @@ share/abiword-${MAJORVER}/ui/xap_UnixDlg_WindowMore.ui
 share/abiword-${MAJORVER}/ui/xap_UnixDlg_Zoom.ui
 share/applications/abiword.desktop
 share/gir-1.0/Abi-${MAJORVER}.gir
+share/icons/hicolor/16x16/apps/abiword.png
+share/icons/hicolor/22x22/apps/abiword.png
+share/icons/hicolor/256x256/apps/abiword.png
+share/icons/hicolor/32x32/apps/abiword.png
 share/icons/hicolor/48x48/apps/abiword.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/abiword.png
+share/icons/hicolor/scalable/apps/abiword.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
