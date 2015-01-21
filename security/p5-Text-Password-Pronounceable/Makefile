@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 14:40:11 sthen Exp $
 
 COMMENT=	generate pronounceable passwords
 
@@ -9,7 +9,5 @@ CATEGORIES=	security
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
-
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

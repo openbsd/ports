@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/06/14 23:25:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/01/21 14:40:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to yaz zoom
@@ -17,6 +17,5 @@ LIB_DEPENDS=	net/yaz
 
 MODULES=	cpan \
 		devel/gettext
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

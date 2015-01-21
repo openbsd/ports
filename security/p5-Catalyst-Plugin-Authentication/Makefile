@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=	Catalyst authentication framework
 
@@ -11,7 +11,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	devel/p5-Class-Inspector \
 		devel/p5-MRO-Compat \

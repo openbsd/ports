@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=		interface to XML based eBay API
 
@@ -10,8 +10,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
-
-USE_GROFF=		Yes
 
 RUN_DEPENDS=		devel/p5-DateTime-Precise \
 			security/p5-Crypt-SSLeay \

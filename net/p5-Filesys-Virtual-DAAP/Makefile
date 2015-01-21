@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:40:09 sthen Exp $
 
 COMMENT=	presents a DAAP share as a VFS
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Filesys-Virtual-DAAP-0.04
 REVISION=	1
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 # same as perl
 PERMIT_PACKAGE_CDROM=	Yes

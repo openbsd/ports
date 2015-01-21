@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT =	storage class for Catalyst Authentication using DBIx::Class
 
@@ -21,7 +21,6 @@ RUN_DEPENDS =	databases/p5-DBIx-Class \
 TEST_DEPENDS =	devel/p5-Test-WWW-Mechanize-Catalyst \
 			security/p5-Catalyst-Plugin-Authorization-Roles \
 			www/p5-Catalyst-Plugin-Session-State-Cookie
-USE_GROFF =	Yes
 
 MAKE_ENV =	TEST_POD=Yes
 

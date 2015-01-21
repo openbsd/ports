@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=		POE Component for communicating over Jabber
 
@@ -12,7 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Filter-Template \
 			devel/p5-POE-Component-PubSub \

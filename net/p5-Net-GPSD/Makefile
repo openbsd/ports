@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=	perl module that provides a client interface to gpsd
 MODULES=	cpan
 DISTNAME=	Net-GPSD-0.36
 REVISION=	0
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

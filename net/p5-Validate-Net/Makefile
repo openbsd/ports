@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=        module to format validation for Net:: related strings
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Validate-Net-0.6
 REVISION=	0
 CATEGORIES=     net devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

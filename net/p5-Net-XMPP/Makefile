@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=		XMPP perl library
 
@@ -12,7 +12,6 @@ MODULES=		cpan
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	perl modbuild
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		security/p5-Digest-SHA1 \
 			textproc/p5-XML-Stream

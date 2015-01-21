@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/09/08 17:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=	perform and manipulate nmap scans using Perl
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Nmap-Scanner-1.0
 REVISION=	4
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

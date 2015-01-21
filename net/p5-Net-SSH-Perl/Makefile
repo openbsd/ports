@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=	perl implementation of the SSH1 and SSH2 protocols
 
 MODULES=	cpan
 DISTNAME=	Net-SSH-Perl-1.34
 CATEGORIES=	net security
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

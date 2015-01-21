@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:40:10 sthen Exp $
 
 COMMENT=	Perl module for encoding/decoding network traffic
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	NetPacket-0.04
 REVISION=	3
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
