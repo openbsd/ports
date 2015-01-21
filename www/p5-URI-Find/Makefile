@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:43:33 sthen Exp $
 
 COMMENT=		find URIs in arbitrary text
 
@@ -6,7 +6,6 @@ MODULES=		cpan
 DISTNAME=		URI-Find-0.16
 REVISION=		1
 CATEGORIES=		www
-USE_GROFF =		Yes
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

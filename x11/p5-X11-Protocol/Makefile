@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 06:23:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:43:34 sthen Exp $
 
 COMMENT=	provides an interface roughly equivalent to Xlib
 
@@ -11,8 +11,6 @@ CATEGORIES=	x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-
-USE_GROFF =	Yes
 
 TEST_IS_INTERACTIVE=	x11
 

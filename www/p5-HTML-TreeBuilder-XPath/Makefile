@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/12 12:07:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:43:33 sthen Exp $
 
 COMMENT =	add XPath support to HTML::TreeBuilder
 
 MODULES =	cpan
 DISTNAME =	HTML-TreeBuilder-XPath-0.14
 CATEGORIES =	www
-
-USE_GROFF =	Yes
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

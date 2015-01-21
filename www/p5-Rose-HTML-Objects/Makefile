@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:43:33 sthen Exp $
 COMMENT=	HTML objects for Rose
 
 MODULES=	cpan
 DISTNAME=	Rose-HTML-Objects-0.6061
 REVISION=	0
 CATEGORIES=	www devel databases
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	mail/p5-Email-Valid \
 		www/p5-HTML-Parser \

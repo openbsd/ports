@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:43:33 sthen Exp $
 
 COMMENT=	pluggable RSS/Atom aggregator
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Plagger-0.7.17
 REVISION=	0
 CATEGORIES=	www textproc
-USE_GROFF =	Yes
 
 CPAN_AUTHOR=	MIYAGAWA
 
@@ -47,7 +46,6 @@ RUN_DEPENDS=	devel/p5-Cache-Cache \
 		www/p5-URI-Fetch \
 		www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
 
 SHAREDIR=	${PREFIX}/share/p5-Plagger
 SUBST_VARS+=	SHAREDIR

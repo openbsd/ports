@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/15 16:39:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:43:33 sthen Exp $
 
 COMMENT= 	record communication with an HTTP::Server::Simple
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 
 DISTNAME =	HTTP-Server-Simple-Recorder-0.03
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

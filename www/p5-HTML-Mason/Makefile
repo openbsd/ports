@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/10/22 09:44:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/01/21 14:43:32 sthen Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	HTML-Mason-1.45
 REVISION=	0
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://www.masonhq.com/
 MAINTAINER=	David Hill <dhill@mindcry.org>
