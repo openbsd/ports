@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtwebkit_Source_WTF_wtf_RandomNumberSeed_h,v 1.1 2015/01/21 20:49:50 zhuk Exp $
+--- qtwebkit/Source/WTF/wtf/RandomNumberSeed.h.ports.orig	Fri Dec 19 23:00:04 2014
++++ qtwebkit/Source/WTF/wtf/RandomNumberSeed.h	Fri Dec 19 23:01:03 2014
+@@ -55,6 +55,8 @@ inline void initializeRandomNumberGenerator()
+     timeval time;
+     gettimeofday(&time, 0);
+     srandom(static_cast<unsigned>(time.tv_usec * getpid()));
++#elif OS(OPENBSD)
++    // On OpenBSD we use arc4random() which initialises itself
+ #else
+     srand(static_cast<unsigned>(time(0)));
+ #endif

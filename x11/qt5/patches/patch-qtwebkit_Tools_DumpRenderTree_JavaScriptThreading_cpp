@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtwebkit_Tools_DumpRenderTree_JavaScriptThreading_cpp,v 1.1 2015/01/21 20:49:50 zhuk Exp $
+--- qtwebkit/Tools/DumpRenderTree/JavaScriptThreading.cpp.ports.orig	Fri Dec 19 23:01:59 2014
++++ qtwebkit/Tools/DumpRenderTree/JavaScriptThreading.cpp	Fri Dec 19 23:02:47 2014
+@@ -101,7 +101,7 @@ void runJavaScriptThread(void*)
+         }
+ 
+         // Respawn probabilistically.
+-        if (rand() % 5)
++        if (arc4random_uniform(5))
+             continue;
+ 
+         MutexLocker locker(javaScriptThreadsMutex());

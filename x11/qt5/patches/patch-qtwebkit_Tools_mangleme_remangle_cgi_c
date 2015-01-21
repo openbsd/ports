@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtwebkit_Tools_mangleme_remangle_cgi_c,v 1.1 2015/01/21 20:49:50 zhuk Exp $
+--- qtwebkit/Tools/mangleme/remangle.cgi.c.ports.orig	Fri Dec 26 02:49:32 2014
++++ qtwebkit/Tools/mangleme/remangle.cgi.c	Fri Dec 26 02:50:11 2014
+@@ -17,7 +17,7 @@
+ 
+ #include "tags.h"
+ 
+-#define R(x) (rand() % (x))
++#define R(x) arc4random_uniform((x))
+ 
+ #define MAXTCOUNT 100
+ #define MAXPCOUNT 20
