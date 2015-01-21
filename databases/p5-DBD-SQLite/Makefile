@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/06/14 23:24:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/01/21 00:08:38 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,6 @@ DISTNAME=		DBD-SQLite-1.35
 EPOCH=			0
 REVISION =		3
 CATEGORIES=		databases
-USE_GROFF =		Yes
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
