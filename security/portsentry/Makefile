@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 06:23:35 bentley Exp $
 
 COMMENT=	port scan detection and active defense
 
 DISTNAME=	portsentry-1.2
 CATEGORIES=	security
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+REVISION =	0
 
 # Common Public License
 PERMIT_PACKAGE_CDROM=  	commercial distribution defend and indemnify clauses

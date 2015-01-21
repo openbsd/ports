@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	highly flexible sniffer/NIDS
 
@@ -6,15 +6,13 @@ V=		1.4
 DISTNAME=	bro-${V}-release
 PKGNAME=	bro-${V}
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS= 	broccoli	0.0	# .2.0
 
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.bro-ids.org/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM= 	Yes

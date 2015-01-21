@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2014/08/30 21:34:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 06:23:35 bentley Exp $
 
 COMMENT=	strip cascading style sheets from webpages
 
 DISTNAME=	decss-0.07
 CATEGORIES=	www
+REVISION =	0
 
 MASTER_SITES=   ${HOMEPAGE}
 
 HOMEPAGE=       http://www.pigdog.org/decss/
-
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:50:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	module for ICQv7 protocol realisation
 
 MODULES=	cpan
 DISTNAME=	Net-ICQ2000-0.2.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license

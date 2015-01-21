@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/21 06:23:35 bentley Exp $
 
 COMMENT=	APC Smart UPS Monitoring Daemon
 
 DISTNAME=	upsd-2.0.1.6
 CATEGORIES=	sysutils
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+REVISION =	0
 
 PERMIT_PACKAGE_CDROM=	missing license
 PERMIT_PACKAGE_FTP=	missing license

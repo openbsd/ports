@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2013/10/22 11:34:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.30 2015/01/21 06:23:36 bentley Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://kdirstat.sourceforge.net/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes

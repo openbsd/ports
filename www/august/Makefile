@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.25 2015/01/21 06:23:35 bentley Exp $
 
 COMMENT=	html editor designed for the experienced web designer
 
 DISTNAME=	august0.63b.src
 PKGNAME=	august-0.63b
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.erjobe.info/index.php?n=Main.August
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

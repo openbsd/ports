@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/05 15:03:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 06:23:33 bentley Exp $
 
 COMMENT=	perl multi-level hash/array DBM that supports transactions
 
 DISTNAME =	DBM-Deep-2.0011
+REVISION =	0
 
 CATEGORIES=	databases
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

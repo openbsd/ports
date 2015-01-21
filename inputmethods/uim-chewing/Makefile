@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/09 16:46:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 06:23:33 bentley Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	chewing input method for uim
 
 DISTNAME=	uim-chewing-0.1.0
+REVISION =	0
 
 CATEGORIES=	inputmethods chinese
 
 HOMEPAGE= 	https://code.google.com/p/uim/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

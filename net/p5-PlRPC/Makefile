@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:50:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	module for writing rpc servers and clients
 
 MODULES=	cpan
 DISTNAME=	PlRPC-0.2018
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

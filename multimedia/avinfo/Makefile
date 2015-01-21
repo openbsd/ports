@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	utility for audio-video information extraction
 
 DISTNAME=	avinfo-1.0.a15unix
 PKGNAME=	${DISTNAME:S/unix//}
+REVISION =	0
 
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://shounen.ru/soft/avinfo/desc_en.shtml
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

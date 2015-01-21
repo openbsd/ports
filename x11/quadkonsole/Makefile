@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/22 11:34:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2015/01/21 06:23:36 bentley Exp $
 
 COMMENT=	terminal application that embeds Konsole for KDE
 
 DISTNAME=	quadkonsole-2.0
-REVISION=	11
+REVISION=	12
 CATEGORIES=	x11 x11/kde
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes

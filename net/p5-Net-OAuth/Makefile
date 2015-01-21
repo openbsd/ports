@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	implementation of the OAuth protocol
 
 DISTNAME=	Net-OAuth-0.25
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

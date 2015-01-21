@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	text-based ICQ implementation
 
 DISTNAME=	vicq-0.4.1
 CATEGORIES=     net
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq.old/
+REVISION =	0
 
 HOMEPAGE=	http://gonzo.kiev.ua/projects/vicq/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 

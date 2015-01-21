@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:50:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/21 06:23:33 bentley Exp $
 
 COMMENT=	module to internal operations of neural networks
 
 MODULES=	cpan
 DISTNAME=	AI-Perceptron-1.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	math
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

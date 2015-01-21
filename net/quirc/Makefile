@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
 DISTNAME=	quirc-0.9.84
-REVISION =	6
+REVISION =	7
 CATEGORIES=	net
 
 HOMEPAGE=	http://quirc.sourceforge.net/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/22 11:34:20 zhuk Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	task-based timeclock for KDE
 
 VERSION=	2.0.2
 DISTNAME=	ktimeclock-${VERSION}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://www.howlingfrog.com/opensource/ktimeclock/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes

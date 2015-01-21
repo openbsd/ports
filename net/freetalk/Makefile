@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	console based Jabber client
 
 DISTNAME=	freetalk-3.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.gnu.org/software/freetalk/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

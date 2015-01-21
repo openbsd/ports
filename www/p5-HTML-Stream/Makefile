@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 06:23:35 bentley Exp $
 
 COMMENT=	HTML output stream class
 
 MODULES=	cpan
 DISTNAME=	HTML-Stream-1.60
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www devel
 USE_GROFF =	Yes
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2014/06/12 18:56:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/01/21 06:23:33 bentley Exp $
 
 COMMENT=	decode MS-TNEF MIME attachments
 
 DISTNAME=	tnef-1.4.10
 CATEGORIES=	mail
+REVISION =	0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tnef/}
 
 HOMEPAGE=	http://tnef.sourceforge.net/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

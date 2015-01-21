@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/21 06:23:35 bentley Exp $
 
 COMMENT=	generate HTML from files containing POD documentation
 
 MODULES=	cpan
 DISTNAME=	PodToHTML-0.08
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
 USE_GROFF =	Yes
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

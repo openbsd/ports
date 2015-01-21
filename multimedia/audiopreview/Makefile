@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT =	tool to play previews of audio and video files
 
 DISTNAME =	audiopreview-0.6
-REVISION=	2
+REVISION=	3
 
 CATEGORIES =	multimedia
 
 HOMEPAGE =	http://audiopreview.codealpha.net/audiopreview/
-
-MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

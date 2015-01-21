@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/16 08:54:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/21 06:23:34 bentley Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
 DISTNAME=	App-ClusterSSH-4.02_03
 PKGNAME=	clusterssh-4.02.03
+REVISION =	0
 
 CATEGORIES=	security
 
 HOMEPAGE=	http://clusterssh.sourceforge.net/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/27 17:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/21 06:23:36 bentley Exp $
 
 COMMENT=	3D filesystem visualizer
 
 V=		1.0.1
 DISTNAME=	fsv2-$V
 PKGNAME=	fsv-$V
-REVISION=	1
+REVISION=	2
 CATEGORIES=     x11
 
 HOMEPAGE=	http://fedorchenko.net/fsv2.php
-
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=   Yes
