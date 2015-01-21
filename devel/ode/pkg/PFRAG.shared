@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2010/10/17 19:12:33 armani Exp $
-@lib lib/libode.so.${LIBode_VERSION}

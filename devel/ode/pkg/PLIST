@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/10/09 07:36:50 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/01/21 04:55:43 kirby Exp $
 bin/ode-config
 include/ode/
 include/ode/collision.h
@@ -21,16 +21,16 @@ include/ode/odecpp_collision.h
 include/ode/odeinit.h
 include/ode/odemath.h
 include/ode/odemath_legacy.h
+include/ode/precision.h
 include/ode/rotation.h
+include/ode/threading.h
+include/ode/threading_impl.h
 include/ode/timer.h
+include/ode/version.h
 lib/libode.a
 lib/libode.la
-%%SHARED%%
-lib/pkgconfig/
+@lib lib/libode.so.${LIBode_VERSION}
 lib/pkgconfig/ode.pc
-share/doc/ode/
-share/doc/ode/LICENSE
-share/doc/ode/README
 share/examples/ode/
 @bin share/examples/ode/demo_I
 @bin share/examples/ode/demo_basket
@@ -40,12 +40,14 @@ share/examples/ode/
 @bin share/examples/ode/demo_chain1
 @bin share/examples/ode/demo_chain2
 @bin share/examples/ode/demo_collision
-@bin share/examples/ode/demo_convex_cd
 @bin share/examples/ode/demo_crash
 @bin share/examples/ode/demo_cyl
 @bin share/examples/ode/demo_cylvssphere
+@bin share/examples/ode/demo_dball
+@bin share/examples/ode/demo_dhinge
 @bin share/examples/ode/demo_feedback
 @bin share/examples/ode/demo_friction
+@bin share/examples/ode/demo_gyro2
 @bin share/examples/ode/demo_gyroscopic
 @bin share/examples/ode/demo_heightfield
 @bin share/examples/ode/demo_hinge
@@ -60,11 +62,13 @@ share/examples/ode/
 @bin share/examples/ode/demo_ode
 @bin share/examples/ode/demo_piston
 @bin share/examples/ode/demo_plane2d
+@bin share/examples/ode/demo_rfriction
 @bin share/examples/ode/demo_slider
 @bin share/examples/ode/demo_space
 @bin share/examples/ode/demo_space_stress
 @bin share/examples/ode/demo_step
 @bin share/examples/ode/demo_tracks
+@bin share/examples/ode/demo_transmission
 @bin share/examples/ode/demo_trimesh
 share/examples/ode/textures/
 share/examples/ode/textures/checkered.ppm
