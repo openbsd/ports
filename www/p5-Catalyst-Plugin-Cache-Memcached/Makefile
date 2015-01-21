@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/28 08:23:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:42:33 sthen Exp $
 
 COMMENT =	distributed cache for Catalyst (deprecated)
 
@@ -7,7 +7,6 @@ DISTNAME =	Catalyst-Plugin-Cache-Memcached-0.8
 REVISION =	0
 EPOCH =		0
 CATEGORIES =	www
-USE_GROFF =	Yes
 
 MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 

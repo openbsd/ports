@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 14:42:33 sthen Exp $
 
 COMMENT=	catalyst session IDs as URI extensions
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Session-State-URI-0.15
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

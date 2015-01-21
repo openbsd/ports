@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:42:33 sthen Exp $
 
 COMMENT =	FastMmap cache store for Catalyst (deprecated)
 
@@ -6,7 +6,6 @@ MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-Cache-Store-FastMmap-0.02
 REVISION =	1
 CATEGORIES =	www
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

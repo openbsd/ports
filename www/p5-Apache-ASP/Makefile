@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/21 14:42:32 sthen Exp $
 
 COMMENT=	Apache ASP support
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Apache-ASP-2.61
 REVISION=	0
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	devel/p5-MLDBM-Sync>=0.25 \
 		www/mod_perl

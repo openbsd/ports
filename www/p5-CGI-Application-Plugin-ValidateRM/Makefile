@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:42:32 sthen Exp $
 
 COMMENT =	helps validate CGI::Application run modes
 
@@ -6,7 +6,6 @@ MODULES =	cpan
 DISTNAME =	CGI-Application-Plugin-ValidateRM-2.3
 REVISION =	0
 CATEGORIES =	www
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =		Yes

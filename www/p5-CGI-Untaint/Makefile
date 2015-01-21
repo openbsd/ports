@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:42:32 sthen Exp $
 
 COMMENT=	taint checking and input validation from web forms
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	CGI-Untaint-1.26
 REVISION=	1
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

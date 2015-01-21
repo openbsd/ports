@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:42:33 sthen Exp $
 
 COMMENT=	per-user session for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Session-PerUser-0.05
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes

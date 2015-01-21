@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:42:32 sthen Exp $
 
 COMMENT=		catalyst helper for CRUD scaffolding
 
@@ -6,7 +6,6 @@ MODULES=		cpan
 DISTNAME=		Catalyst-Helper-Controller-Scaffold-0.04
 REVISION=		0
 CATEGORIES=		devel www
-USE_GROFF =		Yes
 
 # same as perl
 PERMIT_PACKAGE_CDROM=	Yes

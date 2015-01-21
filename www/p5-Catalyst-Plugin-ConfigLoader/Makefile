@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/21 14:42:33 sthen Exp $
 
 COMMENT=	catalyst plugin to Config::Any
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-ConfigLoader-0.30
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
