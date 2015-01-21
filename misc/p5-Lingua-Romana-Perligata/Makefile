@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:19:14 sthen Exp $
 
 COMMENT=		write Perl in Latin
 
@@ -7,7 +7,6 @@ REVISION=		1
 CATEGORIES=		misc
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

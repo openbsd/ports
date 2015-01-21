@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:19:14 sthen Exp $
 
 COMMENT=	perl interface to the graphviz graphing tool
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	GraphViz-2.02
 REVISION=	2
 CATEGORIES=	math
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

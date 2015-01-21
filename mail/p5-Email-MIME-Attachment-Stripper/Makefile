@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/14 15:23:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:19:13 sthen Exp $
 
 COMMENT=	strip the attachments from an e-mail
 
 MODULES=	cpan
 DISTNAME =	Email-MIME-Attachment-Stripper-1.317
 CATEGORIES=	mail
-USE_GROFF =	Yes
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

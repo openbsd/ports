@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:19:13 sthen Exp $
 
 COMMENT= 	library for sending email
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 DISTNAME=	Email-Sender-0.102370
 REVISION=	1

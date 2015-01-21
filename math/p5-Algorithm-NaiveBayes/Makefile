@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:19:14 sthen Exp $
 
 COMMENT=	Bayesian prediction of categories
 
@@ -12,6 +12,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

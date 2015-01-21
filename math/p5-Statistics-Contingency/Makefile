@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/11 16:51:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:19:14 sthen Exp $
 
 COMMENT=	calculate precision, recall, F1, accuracy, etc
 DISTNAME =	Statistics-Contingency-0.09
@@ -12,6 +12,5 @@ RUN_DEPENDS=		devel/p5-Params-Validate>=0.23
 CONFIGURE_STYLE=	modbuild
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

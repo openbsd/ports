@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/04 10:52:05 nigel Exp $
+# $OpenBSD: Makefile,v 1.5 2015/01/21 14:19:14 sthen Exp $
 
 COMMENT =	serialize/deserialize Adobe Action Message Format data
 
@@ -21,7 +21,5 @@ RUN_DEPENDS =	devel/p5-Any-Moose \
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 TEST_DEPENDS = devel/p5-YAML
-
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

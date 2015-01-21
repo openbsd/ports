@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/06/08 02:15:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:19:14 sthen Exp $
 
 COMMENT=		produce sprite animations using ASCII art
 
@@ -12,7 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Curses
 

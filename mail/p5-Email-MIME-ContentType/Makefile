@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/21 06:25:20 giovanni Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:19:13 sthen Exp $
 
 COMMENT=	parses a MIME Content-Type Header
 
 MODULES=	cpan
 DISTNAME=	Email-MIME-ContentType-1.017
 CATEGORIES=	mail
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

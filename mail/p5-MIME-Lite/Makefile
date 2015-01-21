@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 14:19:13 sthen Exp $
 
 COMMENT =		low-calorie MIME generator
 
@@ -16,6 +16,5 @@ BUILD_DEPENDS = 	${RUN_DEPENDS}
 
 MODULES =		cpan
 MAKE_ENV +=		TEST_POD=1
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
