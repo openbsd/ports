@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT=	Compare Dates
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Number-Compare-Date-0.02
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

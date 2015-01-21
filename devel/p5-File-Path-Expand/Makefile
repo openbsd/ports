@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:57 sthen Exp $
 
 COMMENT= 	expands user directories in paths
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	File-Path-Expand-1.02
 REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

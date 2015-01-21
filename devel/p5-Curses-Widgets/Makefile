@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2015/01/21 14:27:56 sthen Exp $
 
 COMMENT=	curses(3) based terminal widgets
 
@@ -7,7 +7,6 @@ VERSION=	1.997
 DISTNAME=	CursesWidgets-${VERSION}
 REVISION=	3
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 

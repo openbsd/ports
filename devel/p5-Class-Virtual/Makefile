@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:27:56 sthen Exp $
 COMMENT=	base class for virtual base classes
 
 MODULES=	cpan
 DISTNAME=	Class-Virtual-0.06
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Class-Data-Inheritable \

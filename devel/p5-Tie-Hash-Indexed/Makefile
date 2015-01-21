@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/10/22 13:56:33 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:27:59 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ DISTNAME=	Tie-Hash-Indexed-0.05
 REVISION=	5
 CATEGORIES=	devel
 MODULES=	cpan
-USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 

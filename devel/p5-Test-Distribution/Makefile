@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:27:59 sthen Exp $
 
 COMMENT=	perform tests on all modules of a distribution
 
@@ -12,7 +12,6 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE= modbuild
-USE_GROFF =	Yes
 
 RUN_DEPENDS=		devel/p5-File-Find-Rule-Perl
 

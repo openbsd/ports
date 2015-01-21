@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/24 08:00:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/21 14:27:56 sthen Exp $
 
 COMMENT=        pretty printing of data structures
 
 MODULES=	cpan
 DISTNAME=	Data-Dump-1.22
 CATEGORIES=     devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

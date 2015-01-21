@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:55 sthen Exp $
 
 COMMENT =	build and evaluate include/exclude lists
 
@@ -6,7 +6,6 @@ MODULES =	cpan
 DISTNAME =	Algorithm-IncludeExclude-0.01
 REVISION =	0
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

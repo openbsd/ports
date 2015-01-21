@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/22 14:06:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT =	organise your Moose types in libraries
 
 MODULES =	cpan
 DISTNAME =	MooseX-Types-0.44
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

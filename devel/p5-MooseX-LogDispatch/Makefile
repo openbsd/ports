@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/22 14:09:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT=		logging role for Moose
 
@@ -10,7 +10,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-IO-stringy \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/24 10:31:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT=		set up Log::Dispatch::Config for a test run
 
@@ -10,7 +10,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Log-Dispatch-Binlog \
 			devel/p5-Log-Dispatch-Config \

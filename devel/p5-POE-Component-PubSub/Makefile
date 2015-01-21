@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:59 sthen Exp $
 
 COMMENT=		publish/subscribe to publish events from POE::Sessions
 
@@ -12,7 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-POE
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:28:00 sthen Exp $
 
 COMMENT=	class for viewing Tree::Simple hierarchies
 
@@ -7,7 +7,6 @@ REVISION=	0
 CATEGORIES=	devel
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

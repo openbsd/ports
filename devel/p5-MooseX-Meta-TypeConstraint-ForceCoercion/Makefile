@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT=		force coercion when validating type constraints
 
@@ -11,7 +11,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Moose \
 			devel/p5-namespace-autoclean

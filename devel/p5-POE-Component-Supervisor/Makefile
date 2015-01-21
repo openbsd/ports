@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/16 06:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:27:59 sthen Exp $
 
 COMMENT=		Erlang inspired babysitting
 
@@ -12,7 +12,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Devel-PartialDump \
 			devel/p5-POE-API-Peek \

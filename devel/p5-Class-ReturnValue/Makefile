@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/21 14:27:56 sthen Exp $
 
 COMMENT=	smart return-value object
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Class-ReturnValue-0.55
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

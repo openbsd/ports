@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT =		simple starter kit for any module
 
@@ -7,7 +7,6 @@ DISTNAME =		Module-Starter-1.54
 REVISION =		1
 CATEGORIES =		devel
 CPAN_AUTHOR =		PETDANCE
-USE_GROFF =		Yes
 
 MAINTAINER =		James Wright <jamesw@openbsd.org>
 

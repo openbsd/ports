@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:59 sthen Exp $
 
 COMMENT =	set of building blocks for both unit and runtime testing
 
@@ -6,7 +6,6 @@ MODULES =	cpan
 DISTNAME =	Test-Assertions-1.054
 REVISION =	0
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

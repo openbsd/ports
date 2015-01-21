@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/22 14:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT = 	logging Role with easy interface for Moose
 
@@ -6,7 +6,6 @@ DISTNAME =	MooseX-Log-Log4perl-0.42
 REVISION =	1
 CATEGORIES =	devel
 MODULES =	cpan
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:27:56 sthen Exp $
 
 COMMENT=	inheritable, overridable class data
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Class-Data-Inheritable-0.08
 REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:59 sthen Exp $
 
 COMMENT=		Readline Library Wrapper for zoid
 
@@ -11,7 +11,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Term-ReadKey
 

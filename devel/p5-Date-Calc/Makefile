@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/01/21 06:13:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/21 14:27:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ MODULES=	cpan
 DISTNAME=	Date-Calc-6.3
 REVISION=	2
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

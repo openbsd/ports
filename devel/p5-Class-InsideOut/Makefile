@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/23 22:13:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/21 14:27:56 sthen Exp $
 
 COMMENT= 	alternative object layout in perl
 
@@ -7,7 +7,6 @@ MODULES=	cpan
 DISTNAME=	Class-InsideOut-1.13
 
 CATEGORIES=	devel
-USE_GROFF=	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/21 14:27:56 sthen Exp $
 
 COMMENT=	stack trace for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-StackTrace-0.11
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

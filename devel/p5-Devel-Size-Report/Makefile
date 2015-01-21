@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 14:27:57 sthen Exp $
 
 COMMENT=		generate a size report for all elements in a structure
 
@@ -16,7 +16,5 @@ MODCPAN_EXAMPLES_DIST=	example
 
 RUN_DEPENDS=		devel/p5-Array-RefElem \
 			devel/p5-Devel-Size
-
-USE_GROFF=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:28:00 sthen Exp $
 
 COMMENT=	internationalization library written in Perl
 
@@ -8,7 +8,6 @@ PKGNAME=	p5-libintl-${V}
 REVISION =	2
 CATEGORIES=	devel
 MODULES=	cpan
-USE_GROFF =	Yes
 CPAN_AUTHOR=	GUIDO
 
 # perl

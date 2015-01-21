@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:57 sthen Exp $
 
 COMMENT =	keeps track of file creation times
 
@@ -6,7 +6,6 @@ MODULES =	cpan
 DISTNAME =	File-CreationTime-2.04
 REVISION =	0
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

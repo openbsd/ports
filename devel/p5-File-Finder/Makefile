@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/21 14:27:57 sthen Exp $
 
 COMMENT=        wrapper around File::Find
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	File-Finder-0.53
 REVISION=	1
 CATEGORIES=     devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

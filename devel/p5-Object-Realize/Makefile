@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/08/31 09:55:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 14:27:59 sthen Exp $
 
 COMMENT=	perl module to implementing delay loading of object-data
 
@@ -7,7 +7,6 @@ VERSION=	0.19
 DISTNAME=	Object-Realize-Later-${VERSION}
 PKGNAME=	p5-Object-Realize-${VERSION}
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://perl.overmeer.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/01/21 14:27:59 sthen Exp $
 
 COMMENT=		base class for creating plugin-enabled objects
 
@@ -8,8 +8,6 @@ CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-
-USE_GROFF=		Yes
 
 MODULES=		cpan
 

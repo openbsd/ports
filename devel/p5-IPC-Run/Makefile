@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/31 15:14:27 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:27:58 sthen Exp $
 
 COMMENT= 	run a subprocess
 
 MODULES=	cpan
 DISTNAME=	IPC-Run-0.92
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

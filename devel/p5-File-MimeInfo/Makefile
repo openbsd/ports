@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/07/13 21:59:15 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 14:27:57 sthen Exp $
 
 COMMENT=		determine file types
 
 DISTNAME=		File-MimeInfo-0.26
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

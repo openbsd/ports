@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/21 14:28:00 sthen Exp $
 
 COMMENT=	extends require to work on variables
 
@@ -8,7 +8,6 @@ DISTNAME=	UNIVERSAL-require-${V}
 PKGNAME=	p5-Universal-require-${V}
 REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

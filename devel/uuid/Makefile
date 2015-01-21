@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2014/06/14 10:34:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2015/01/21 14:28:00 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,6 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/uuid/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GROFF =		Yes
 MULTI_PACKAGES=		-main -perl
 
 WANTLIB-main=		c m stdc++
@@ -39,7 +38,6 @@ CATEGORIES-perl=	devel perl5
 # libperl will show as "extra" but this should be kept as it depends on perl ABI
 WANTLIB-perl=		perl ossp-uuid
 LIB_DEPENDS-perl=	${BASE_PKGPATH}
-
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-perl --with-cxx \
