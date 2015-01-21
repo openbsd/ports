@@ -1,0 +1,24 @@
+$OpenBSD: patch-qtwebkit_Source_ThirdParty_ANGLE_src_libGLESv2_Program_cpp,v 1.1 2015/01/21 20:40:46 zhuk Exp $
+Avoid strcpy().
+--- qtwebkit/Source/ThirdParty/ANGLE/src/libGLESv2/Program.cpp.ports.orig	Fri Dec 26 13:50:19 2014
++++ qtwebkit/Source/ThirdParty/ANGLE/src/libGLESv2/Program.cpp	Fri Dec 26 13:53:09 2014
+@@ -107,17 +107,13 @@ void InfoLog::append(const char *format, ...)
+     if (!mInfoLog)
+     {
+         mInfoLog = new char[infoLength + 2];
+-        strcpy(mInfoLog, info);
+-        strcpy(mInfoLog + infoLength, "\n");
++        snprintf(mInfoLog, infoLength + 2, "%s\n", info);
+     }
+     else
+     {
+         size_t logLength = strlen(mInfoLog);
+         char *newLog = new char[logLength + infoLength + 2];
+-        strcpy(newLog, mInfoLog);
+-        strcpy(newLog + logLength, info);
+-        strcpy(newLog + logLength + infoLength, "\n");
+-
++        snprintf(mInfoLog, logLength + infoLength + 2, "%s%s\n", mInfoLog, info);
+         delete[] mInfoLog;
+         mInfoLog = newLog;
+     }
