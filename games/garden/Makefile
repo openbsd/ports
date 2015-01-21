@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/01 19:31:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/21 06:59:05 bentley Exp $
 
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
 DISTNAME =		garden-1.0.8
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://garden.sourceforge.net
+
+MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
