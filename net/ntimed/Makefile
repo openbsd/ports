@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/14 21:38:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2015/01/21 22:17:11 naddy Exp $
 
 COMMENT=	network time synchronization software
 
-DISTNAME=	ntimed-0.0.2015.01.12
+DISTNAME=	ntimed-0.0.2015.01.17
 CATEGORIES=	net
 HOMEPAGE=	https://github.com/bsdphk/Ntimed
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 GH_ACCOUNT=	bsdphk
 GH_PROJECT=	Ntimed
-GH_COMMIT=	3da3e4bde33cf3eafe2158f358a47cbdd69e2c98
+GH_COMMIT=	db0abbb4c80f2ecef6bc5d9639bca5bea28532a2
 
 WANTLIB=	c m
 
