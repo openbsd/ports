@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/21 09:09:44 ajacoutot Exp $
 
 COMMENT=	PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=	seahorse-sharing
 GNOME_VERSION=	3.8.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net security
 
@@ -21,13 +21,17 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 
+MODULES=	devel/gettext \
+		x11/gnome
+
 LIB_DEPENDS=	devel/libsoup \
 		security/gpgme \
 		net/avahi \
 		x11/gtk+3
 
-MODULES=	devel/gettext \
-		x11/gnome
+# security/gpgme depends on either gnupg-1 or gnupg-2; we want 1.X
+BUILD_DEPENDS+=	security/gnupg
+RUN_DEPENDS+=	security/gnupg
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/seahorse-sharing
 

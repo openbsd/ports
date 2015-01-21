@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.99 2014/10/06 09:47:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2015/01/21 09:09:43 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.14.0
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -17,6 +18,12 @@ WANTLIB += gobject-2.0 gpg-error gpgme gthread-2.0 gtk-3 lber
 WANTLIB += ldap m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pthread secret-1 soup-2.4 z
 
+MODULES=		devel/gettext \
+			x11/gnome \
+			devel/dconf
+
+MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala yelp
+
 LIB_DEPENDS=		databases/openldap \
 			x11/gnome/gcr \
 			x11/gnome/libsecret \
@@ -24,11 +31,9 @@ LIB_DEPENDS=		databases/openldap \
 			security/gpgme \
 			net/avahi
 
-MODULES=		devel/gettext \
-			x11/gnome \
-			devel/dconf
-
-MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala yelp
+# security/gpgme depends on either gnupg-1 or gnupg-2; we want 1.X
+BUILD_DEPENDS+=		security/gnupg
+RUN_DEPENDS+=		security/gnupg
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/seahorse
 
