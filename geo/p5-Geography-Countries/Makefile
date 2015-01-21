@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/21 14:09:59 sthen Exp $
 
 COMMENT =		2-letter, 3-letter, and numerical codes for countries
 
@@ -10,6 +10,5 @@ CATEGORIES =		geo devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

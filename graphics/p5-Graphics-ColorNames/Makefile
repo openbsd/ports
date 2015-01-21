@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2015/01/21 14:09:59 sthen Exp $
 
 COMMENT=	defines RGB values for common color names
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	devel/p5-Test-Exception
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	cpan
-USE_GROFF =	Yes
 CPAN_AUTHOR=	RRWO
 
 .include <bsd.port.mk>

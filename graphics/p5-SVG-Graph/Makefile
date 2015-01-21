@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:10:00 sthen Exp $
 
 COMMENT =		visualize your data in SVG format
 
@@ -10,7 +10,6 @@ REVISION =		1
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS =		devel/p5-Tree-DAG_Node \
 			graphics/p5-SVG \
