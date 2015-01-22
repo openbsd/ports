@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/08/30 20:24:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2015/01/22 12:52:45 naddy Exp $
 
 # XXX This will panic any vax
 NOT_FOR_ARCHS=	vax
@@ -18,7 +18,6 @@ HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/01/22 12:52:46 naddy Exp $
 
 COMMENT=	delay program with feedback to the user
 
@@ -16,7 +16,6 @@ WANTLIB=		c curses
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/01/22 12:52:46 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,7 +22,6 @@ WANTLIB =		c
 
 WRKSRC =		${WRKDIST}/NKF.mod
 CONFIGURE_STYLE =	perl
-USE_GROFF =		Yes
 
 post-build:
 	cd ${WRKDIST} && ${CC} -o nkf ${CFLAGS} nkf.c utf8tbl.c
