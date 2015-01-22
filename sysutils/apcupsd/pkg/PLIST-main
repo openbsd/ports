@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2014/07/15 11:46:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/01/22 21:23:30 kirby Exp $
 @pkgpath sysutils/apcupsd,snmp
 @group bin
 @man man/man5/apcupsd.conf.5
@@ -75,4 +75,5 @@ share/examples/apcupsd/status/SmartUPS700-2.status
 share/examples/apcupsd/status/SmartUPS700.status
 share/examples/apcupsd/status/newbackupspro1.status
 share/examples/apcupsd/status/newbackupspro2.status
+share/doc/pkg-readmes/${FULLPKGNAME}
 @rcscript ${RCDIR}/apcupsd
