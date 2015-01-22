@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=		file integrity checker
 
@@ -18,7 +18,6 @@ CONFIGURE_STYLE=	gnu
 
 ALL_TARGET=		integrit utils
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 post-install:

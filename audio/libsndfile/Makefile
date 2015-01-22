@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/22 21:17:46 naddy Exp $
 
 COMMENT=	library to handle various audio file formats
 
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-octave \
 		--disable-sqlite
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Cfg
-USE_GROFF =	Yes
 
 LIB_DEPENDS=	audio/flac \
 		audio/libogg \

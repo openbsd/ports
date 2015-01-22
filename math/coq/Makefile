@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/11/18 02:00:52 daniel Exp $
+# $OpenBSD: Makefile,v 1.30 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -30,7 +30,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 DESTDIRNAME=	COQINSTALLPREFIX
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 MODULES=	devel/gettext \
 		lang/ocaml

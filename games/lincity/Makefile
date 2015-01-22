@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/05/17 09:12:26 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/22 21:17:46 naddy Exp $
 
 COMMENT=		Rich city simulation game for X
 
@@ -19,7 +19,6 @@ BUILD_DEPENDS=		devel/imake
 
 MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=		xlincity
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 post-extract:

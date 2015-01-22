@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=		IP traffic summarizer
 
@@ -16,7 +16,6 @@ WANTLIB=		c m pcap
 
 EXTRACT_SUFX=		.tgz
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-install:

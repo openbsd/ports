@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/13 11:26:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=	server for KiSS DP-500 network movie player
 
@@ -15,7 +15,6 @@ MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

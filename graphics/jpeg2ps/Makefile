@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/22 21:17:46 naddy Exp $
 
 COMMENT=	convert jpeg to compressed PostScript
 
@@ -17,6 +17,5 @@ MASTER_SITES=	${HOMEPAGE:S/.html/\//}
 
 TEST_TARGET=	test
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} -c' LD='${CC}'
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

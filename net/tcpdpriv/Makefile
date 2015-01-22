@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/31 17:47:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=	removes sensitive information from a tcpdump -w file
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX=		.tar.Z
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DARC4RANDOM"
 
 CONFIGURE_STYLE=	simple
-USE_GROFF =		Yes
 
 NO_TEST=		Yes
 

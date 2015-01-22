@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2014/07/16 08:20:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--disable-xface \
 		--with-gc=${LOCALBASE}
 
 NO_TEST=	Yes
-USE_GROFF=	Yes
 
 .if ${FLAVOR:Mimage}
 LIB_DEPENDS+=	x11/gtk+2

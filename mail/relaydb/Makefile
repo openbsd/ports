@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/13 11:26:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/22 21:17:46 naddy Exp $
 
 COMMENT=	spam relay database
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

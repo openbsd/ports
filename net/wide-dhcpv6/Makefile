@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/22 14:34:52 stsp Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=	client and servers for the WIDE DHCPv6 protocol
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 CONFIGURE_STYLE=	gnu
 
 WANTLIB=		c
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 pre-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/22 21:17:46 naddy Exp $
 
 COMMENT=		commandline screen capture util
 
@@ -21,7 +21,6 @@ MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 LIB_DEPENDS=            devel/giblib \
 			graphics/imlib2
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 FAKE_FLAGS+=		docsdir=${PREFIX}/share/doc/scrot/

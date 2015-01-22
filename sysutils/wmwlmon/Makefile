@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/08/24 18:05:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=		wm-dockapp; wireless interface monitor
 
@@ -15,7 +15,6 @@ MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 Xext Xpm c m pthread-stubs xcb
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-install:

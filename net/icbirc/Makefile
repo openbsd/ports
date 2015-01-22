@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/13 11:26:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/22 21:17:47 naddy Exp $
 
 COMMENT=	proxy IRC client with ICB server
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:
