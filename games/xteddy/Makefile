@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2015/01/22 17:47:51 naddy Exp $
 
 COMMENT=	cuddlesome teddy for the X11 desktop
 
@@ -19,7 +19,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-configure:

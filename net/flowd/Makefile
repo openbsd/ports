@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/22 17:47:51 naddy Exp $
 
 COMMENT=	NetFlow collector
 
@@ -14,7 +14,6 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu

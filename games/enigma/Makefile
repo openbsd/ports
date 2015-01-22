@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/06/21 11:54:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/22 17:47:51 naddy Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=	devel/sdl-image \
 		textproc/xerces-c
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-cxxlua=no

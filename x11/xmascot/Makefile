@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/11 20:40:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/22 17:47:52 naddy Exp $
 
 COMMENT=	moving mascot on your X11 screen
 
@@ -17,7 +17,6 @@ WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c m
 
 MASTER_SITES=	${HOMEPAGE}
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 NO_TEST=	Yes

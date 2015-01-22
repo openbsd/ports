@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/10/08 08:44:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2015/01/22 17:47:51 naddy Exp $
 
 PORTROACH=		limit:^0\.3a
 
@@ -18,7 +18,6 @@ MASTER_SITES=		${HOMEPAGE}
 RUN_DEPENDS=		graphics/ImageMagick
 WANTLIB=		X11 Xext Xpm c
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 WRKSRC=			${WRKDIST}/wmphoto

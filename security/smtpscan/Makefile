@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/22 17:47:51 naddy Exp $
 
 COMMENT=	Remote SMTP Server Detection
 
@@ -19,7 +19,6 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 WRKDIST=	${WRKDIR}/smtpscan
-USE_GROFF =	Yes
 
 do-install:
 	@perl -pi -e 's|/usr/local|${TRUEPREFIX}|g' ${WRKSRC}/src/smtpscan

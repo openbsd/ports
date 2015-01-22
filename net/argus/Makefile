@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/01/22 17:47:51 naddy Exp $
 
 COMMENT =	Audit Record Generation and Utilization System
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =	c m pcap z
 
-USE_GROFF =	Yes
 NO_TEST =	Yes
 
 CONFIGURE_STYLE = 	gnu

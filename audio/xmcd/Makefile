@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2015/01/22 17:47:50 naddy Exp $
 
 COMMENT=	Motif CD player
 
@@ -19,7 +19,6 @@ LIB_DEPENDS+=		x11/openmotif
 CONFIGURE_STYLE= imake
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 XMCDLIB=	${PREFIX}/share/xmcd
 

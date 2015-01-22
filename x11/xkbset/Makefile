@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/22 17:47:52 naddy Exp $
 
 COMMENT-main=	X11 keyboard accessibility tool
 COMMENT-gui=	GUI for xkbset
@@ -21,8 +21,6 @@ MAKE_FLAGS=	X11BASE="${X11BASE}"
 FAKE_FLAGS=	X11PREFIX="${PREFIX}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-
-USE_GROFF =	Yes
 
 MULTI_PACKAGES=	-main -gui
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/01/22 17:47:51 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,7 +21,6 @@ LIB_DEPENDS =	net/net-snmp
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS = 	${MODTCL_RUN_DEPENDS}
 
-USE_GROFF =		yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
