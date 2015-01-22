@@ -1,7 +1,7 @@
-$OpenBSD: patch-skia_skia_chrome_gypi,v 1.7 2014/11/19 21:27:32 robert Exp $
---- skia/skia_chrome.gypi.orig.port	Wed Nov 19 06:13:10 2014
-+++ skia/skia_chrome.gypi	Wed Nov 19 08:38:26 2014
-@@ -89,6 +89,11 @@
+$OpenBSD: patch-skia_skia_chrome_gypi,v 1.8 2015/01/22 11:16:41 robert Exp $
+--- skia/skia_chrome.gypi.orig.port	Sat Dec  6 11:49:01 2014
++++ skia/skia_chrome.gypi	Sat Dec  6 11:49:25 2014
+@@ -87,6 +87,11 @@
      'ext/vector_platform_device_skia.h',
    ],
    'conditions': [
@@ -10,6 +10,6 @@ $OpenBSD: patch-skia_skia_chrome_gypi,v 1.7 2014/11/19 21:27:32 robert Exp $
 +        '../build/linux/system.gyp:pangocairo',
 +      ],
 +    }],
-     [ 'OS == "android" and enable_printing == 0', {
+     [ 'OS == "android" and '
+       'enable_basic_printing==0 and enable_print_preview==0', {
        'sources!': [
-         'ext/skia_utils_base.cc',

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.10 2014/11/19 21:27:32 robert Exp $
---- chrome/app/theme/theme_resources.grd.orig.port	Wed Nov 19 06:13:08 2014
-+++ chrome/app/theme/theme_resources.grd	Wed Nov 19 08:38:24 2014
-@@ -498,7 +498,7 @@
+$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.11 2015/01/22 11:16:40 robert Exp $
+--- chrome/app/theme/theme_resources.grd.orig.port	Wed Dec  3 03:32:11 2014
++++ chrome/app/theme/theme_resources.grd	Sat Dec  6 11:34:25 2014
+@@ -504,7 +504,7 @@
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_PERIPHERAL_BATTERY_LOW" file="cros/notification_peripheral_battery_low.png" />
          <structure type="chrome_scaled_image" name="IDR_PORTAL_DETECTION_ALERT" file="cros/captive_portal_icon.png" />
        </if>

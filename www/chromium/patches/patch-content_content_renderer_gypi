@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_renderer_gypi,v 1.4 2014/11/19 21:27:32 robert Exp $
---- content/content_renderer.gypi.orig.port	Wed Nov 19 06:13:09 2014
-+++ content/content_renderer.gypi	Wed Nov 19 08:38:26 2014
-@@ -24,6 +24,7 @@
+$OpenBSD: patch-content_content_renderer_gypi,v 1.5 2015/01/22 11:16:41 robert Exp $
+--- content/content_renderer.gypi.orig.port	Wed Dec  3 03:32:12 2014
++++ content/content_renderer.gypi	Sat Dec  6 11:34:27 2014
+@@ -26,6 +26,7 @@
      '../third_party/icu/icu.gyp:icui18n',
      '../third_party/icu/icu.gyp:icuuc',
      '../third_party/libjingle/libjingle.gyp:libjingle',

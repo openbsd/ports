@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_app_list_app_list_constants_cc,v 1.4 2014/11/19 21:27:32 robert Exp $
---- ui/app_list/app_list_constants.cc.orig.port	Wed Nov 19 06:13:10 2014
-+++ ui/app_list/app_list_constants.cc	Wed Nov 19 08:38:27 2014
-@@ -94,7 +94,7 @@ const size_t kMaxFolderNameChars = 40;
+$OpenBSD: patch-ui_app_list_app_list_constants_cc,v 1.5 2015/01/22 11:16:41 robert Exp $
+--- ui/app_list/app_list_constants.cc.orig.port	Wed Dec  3 03:32:12 2014
++++ ui/app_list/app_list_constants.cc	Sat Dec  6 11:34:27 2014
+@@ -110,7 +110,7 @@ const size_t kMaxFolderNameChars = 40;
  const ui::ResourceBundle::FontStyle kItemTextFontStyle =
      ui::ResourceBundle::SmallBoldFont;
  

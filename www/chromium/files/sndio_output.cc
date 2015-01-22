@@ -148,7 +148,7 @@ void SndioAudioOutputStream::RealTimeThread(void) {
     pthread_mutex_unlock(&mutex);
 
     // Get data to play
-    count = source->OnMoreData(audio_bus.get(), AudioBuffersState(0, hw_delay));
+    count = source->OnMoreData(audio_bus.get(), hw_delay);
     audio_bus->ToInterleaved(count, params.bits_per_sample() / 8, buffer);
     if (count == 0) {
       // We have to submit something to the device

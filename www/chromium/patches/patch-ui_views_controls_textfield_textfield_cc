@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.5 2014/11/19 21:27:32 robert Exp $
---- ui/views/controls/textfield/textfield.cc.orig.port	Wed Nov 19 06:13:11 2014
-+++ ui/views/controls/textfield/textfield.cc	Wed Nov 19 08:38:27 2014
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.6 2015/01/22 11:16:41 robert Exp $
+--- ui/views/controls/textfield/textfield.cc.orig.port	Wed Dec  3 03:32:12 2014
++++ ui/views/controls/textfield/textfield.cc	Sat Dec  6 11:34:27 2014
 @@ -40,7 +40,7 @@
  #include "base/win/win_util.h"
  #endif
@@ -73,7 +73,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.5 2014/11/19 21:27:
    // Desktop Linux Aura does not yet support transparency in drag images.
    canvas->DrawColor(GetBackgroundColor());
  #endif
-@@ -1787,7 +1787,7 @@ void Textfield::CreateTouchSelectionControllerAndNotif
+@@ -1791,7 +1791,7 @@ void Textfield::CreateTouchSelectionControllerAndNotif
  }
  
  void Textfield::UpdateSelectionClipboard() const {

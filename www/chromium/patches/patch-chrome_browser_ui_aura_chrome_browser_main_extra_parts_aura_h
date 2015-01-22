@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_h,v 1.1 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.h.orig.port	Sat Jul 19 03:27:25 2014
-+++ chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.h	Sat Jul 19 03:28:34 2014
+$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_h,v 1.2 2015/01/22 11:16:40 robert Exp $
+--- chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.h.orig.port	Wed Dec  3 03:13:21 2014
++++ chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.h	Sat Dec  6 11:34:25 2014
 @@ -25,7 +25,7 @@ class ChromeBrowserMainExtraPartsAura : public ChromeB
-   virtual void PostMainMessageLoopRun() OVERRIDE;
+   void PostMainMessageLoopRun() override;
  
   private:
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.16 2014/11/19 21:27:32 robert Exp $
---- chrome/browser/browser_resources.grd.orig.port	Wed Nov 19 06:13:08 2014
-+++ chrome/browser/browser_resources.grd	Wed Nov 19 08:38:24 2014
-@@ -239,7 +239,7 @@
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.17 2015/01/22 11:16:40 robert Exp $
+--- chrome/browser/browser_resources.grd.orig.port	Wed Dec  3 03:32:11 2014
++++ chrome/browser/browser_resources.grd	Sat Dec  6 11:34:25 2014
+@@ -241,7 +241,7 @@
        <if expr="chromeos">
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>

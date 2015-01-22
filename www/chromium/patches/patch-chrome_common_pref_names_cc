@@ -1,12 +1,21 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.10 2014/11/19 21:27:32 robert Exp $
---- chrome/common/pref_names.cc.orig.port	Wed Nov 19 06:13:08 2014
-+++ chrome/common/pref_names.cc	Wed Nov 19 08:38:25 2014
-@@ -891,7 +891,7 @@ const char kAllowDeletingBrowserHistory[] = "history.d
- // Boolean controlling whether SafeSearch is mandatory for Google Web Searches.
- const char kForceSafeSearch[] = "settings.force_safesearch";
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.11 2015/01/22 11:16:41 robert Exp $
+--- chrome/common/pref_names.cc.orig.port	Wed Dec  3 03:32:11 2014
++++ chrome/common/pref_names.cc	Sat Dec  6 18:26:07 2014
+@@ -895,7 +895,7 @@ const char kForceSafeSearch[] = "settings.force_safese
+ // supervised users.
+ const char kRecordHistory[] = "settings.history_recorded";
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
+@@ -1425,7 +1425,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+ // upgrade a unsafe location to a safe location.
+ const char kDownloadDirUpgraded[] = "download.directory_upgrade";
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
+     (defined(OS_MACOSX) && !defined(OS_IOS))
+ const char kOpenPdfDownloadInSystemReader[] =
+     "download.open_pdf_in_system_reader";

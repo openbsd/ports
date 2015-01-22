@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:04:52 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Wed Sep 10 01:47:13 2014
-+++ content/browser/child_process_launcher.cc	Wed Sep 10 22:05:41 2014
-@@ -68,7 +68,7 @@ class ChildProcessLauncher::Context
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.18 2015/01/22 11:16:41 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Sat Dec  6 11:42:43 2014
++++ content/browser/child_process_launcher.cc	Sun Dec  7 14:53:20 2014
+@@ -69,7 +69,7 @@ class ChildProcessLauncher::Context
  #else
          terminate_child_on_shutdown_(true)
  #endif
@@ -10,25 +10,34 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
          , zygote_(false)
  #endif
          {
-@@ -234,7 +234,7 @@ class ChildProcessLauncher::Context
+@@ -190,7 +190,7 @@ class ChildProcessLauncher::Context
+     bool launch_elevated = delegate->ShouldLaunchElevated();
+ #elif defined(OS_ANDROID)
+     // Uses |ipcfd_| instead of |ipcfd| on Android.
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_BSD)
+     base::EnvironmentMap env = delegate->GetEnvironment();
+     base::ScopedFD ipcfd = delegate->TakeIpcFd();
+ #elif defined(OS_POSIX)
+@@ -253,7 +253,7 @@ class ChildProcessLauncher::Context
+     // We need to close the client end of the IPC channel to reliably detect
      // child termination.
-     base::ScopedFD ipcfd_closer(ipcfd);
  
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
-     GetContentClient()->browser()->
-         GetAdditionalMappedFilesForChildProcess(*cmd_line, child_process_id,
-                                                 &files_to_register);
-@@ -255,7 +255,7 @@ class ChildProcessLauncher::Context
-                 base::GlobalDescriptors::kBaseDescriptor));
-       }
+     GetContentClient()->browser()->GetAdditionalMappedFilesForChildProcess(
+         *cmd_line, child_process_id, files_to_register.get());
+     if (use_zygote) {
+@@ -268,7 +268,7 @@ class ChildProcessLauncher::Context
+           files_to_register->GetMappingWithIDAdjustment(
+               base::GlobalDescriptors::kBaseDescriptor);
  
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
        if (process_type == switches::kRendererProcess) {
          const int sandbox_fd =
              RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
-@@ -322,7 +322,7 @@ class ChildProcessLauncher::Context
+@@ -335,7 +335,7 @@ class ChildProcessLauncher::Context
        base::Bind(
            &Context::Notify,
            this_object.get(),
@@ -36,8 +45,8 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
            use_zygote,
  #endif
-           handle));
-@@ -330,7 +330,7 @@ class ChildProcessLauncher::Context
+           base::Passed(base::Process(handle))));
+@@ -343,7 +343,7 @@ class ChildProcessLauncher::Context
    }
  
    void Notify(
@@ -45,9 +54,9 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
        bool zygote,
  #endif
-       base::ProcessHandle handle) {
-@@ -343,7 +343,7 @@ class ChildProcessLauncher::Context
-     if (!handle)
+       base::Process process) {
+@@ -356,7 +356,7 @@ class ChildProcessLauncher::Context
+     if (!process_.IsValid())
        LOG(ERROR) << "Failed to launch child process";
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
@@ -55,7 +64,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -370,7 +370,7 @@ class ChildProcessLauncher::Context
+@@ -383,7 +383,7 @@ class ChildProcessLauncher::Context
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          base::Bind(
              &Context::TerminateInternal,
@@ -63,8 +72,8 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
              zygote_,
  #endif
-             process_.handle()));
-@@ -387,7 +387,7 @@ class ChildProcessLauncher::Context
+             base::Passed(&process_)));
+@@ -398,7 +398,7 @@ class ChildProcessLauncher::Context
    }
  
    static void TerminateInternal(
@@ -72,8 +81,8 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
        bool zygote,
  #endif
-       base::ProcessHandle handle) {
-@@ -401,7 +401,7 @@ class ChildProcessLauncher::Context
+       base::Process process) {
+@@ -412,7 +412,7 @@ class ChildProcessLauncher::Context
      process.Terminate(RESULT_CODE_NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -82,16 +91,16 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
      if (zygote) {
        // If the renderer was created via a zygote, we have to proxy the reaping
        // through the zygote process.
-@@ -428,7 +428,7 @@ class ChildProcessLauncher::Context
+@@ -438,7 +438,7 @@ class ChildProcessLauncher::Context
  #if defined(OS_ANDROID)
    // The fd to close after creating the process.
-   int ipcfd_;
+   base::ScopedFD ipcfd_;
 -#elif defined(OS_POSIX) && !defined(OS_MACOSX)
 +#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    bool zygote_;
  #endif
  };
-@@ -470,7 +470,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
+@@ -479,7 +479,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
        *exit_code = context_->exit_code_;
      return context_->termination_status_;
    }
@@ -99,4 +108,4 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.17 2014/09/11 19:0
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
    if (context_->zygote_) {
      context_->termination_status_ = ZygoteHostImpl::GetInstance()->
-         GetTerminationStatus(handle, known_dead, &context_->exit_code_);
+         GetTerminationStatus(context_->process_.Handle(), known_dead,

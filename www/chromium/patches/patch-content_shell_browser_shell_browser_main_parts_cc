@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.1 2014/10/13 14:20:28 robert Exp $
---- content/shell/browser/shell_browser_main_parts.cc.orig.port	Mon Oct 13 14:26:38 2014
-+++ content/shell/browser/shell_browser_main_parts.cc	Mon Oct 13 14:27:18 2014
-@@ -42,7 +42,7 @@
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.2 2015/01/22 11:16:41 robert Exp $
+--- content/shell/browser/shell_browser_main_parts.cc.orig.port	Wed Dec  3 03:32:12 2014
++++ content/shell/browser/shell_browser_main_parts.cc	Sat Dec  6 11:34:27 2014
+@@ -38,7 +38,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
- #include "ui/events/x/touch_factory_x11.h"
+ #include "ui/events/devices/x11/touch_factory_x11.h"
  #endif
 -#if !defined(OS_CHROMEOS) && defined(USE_AURA) && defined(OS_LINUX)
 +#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))

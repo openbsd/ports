@@ -1,0 +1,43 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.1 2015/01/22 11:16:41 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Thu Dec 18 10:59:05 2014
++++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Sun Dec 21 22:34:27 2014
+@@ -30,7 +30,7 @@
+ 
+ #include "config.h"
+ 
+-#if !OS(WIN) && !OS(ANDROID)
++#if !OS(WIN) && !OS(ANDROID) && !OS(OPENBSD)
+ #include "SkFontConfigInterface.h"
+ #endif
+ #include "SkFontMgr.h"
+@@ -48,7 +48,7 @@
+ #include "wtf/text/CString.h"
+ #include <unicode/locid.h>
+ 
+-#if !OS(WIN) && !OS(ANDROID)
++#if !OS(WIN) && !OS(ANDROID) && !OS(OPENBSD)
+ static SkStream* streamForFontconfigInterfaceId(int fontconfigInterfaceId)
+ {
+     SkAutoTUnref<SkFontConfigInterface> fci(SkFontConfigInterface::RefGlobal());
+@@ -131,8 +131,11 @@ PassRefPtr<SimpleFontData> FontCache::fallbackFontForC
+     return fontDataFromFontPlatformData(&platformData, DoNotRetain);
+ }
+ 
+-#endif // !OS(WIN) && !OS(ANDROID)
++#endif // !OS(WIN) && !OS(ANDROID) && !OS(OPENBSD)
+ 
++#if OS(OPENBSD)
++#endif
++
+ PassRefPtr<SimpleFontData> FontCache::getLastResortFallbackFont(const FontDescription& description, ShouldRetain shouldRetain)
+ {
+     const FontFaceCreationParams fallbackCreationParams(getFallbackFontFamily(description));
+@@ -184,7 +187,7 @@ COMPILE_ASSERT(static_cast<int>(FontStretchUltraExpand
+ 
+ PassRefPtr<SkTypeface> FontCache::createTypeface(const FontDescription& fontDescription, const FontFaceCreationParams& creationParams, CString& name)
+ {
+-#if !OS(WIN) && !OS(ANDROID)
++#if !OS(WIN) && !OS(ANDROID) && !OS(OPENBSD)
+     if (creationParams.creationType() == CreateFontByFciIdAndTtcIndex) {
+         // TODO(dro): crbug.com/381620 Use creationParams.ttcIndex() after
+         // https://code.google.com/p/skia/issues/detail?id=1186 gets fixed.

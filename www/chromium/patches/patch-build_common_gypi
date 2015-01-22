@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_common_gypi,v 1.29 2014/11/19 21:27:32 robert Exp $
---- build/common.gypi.orig.port	Wed Nov 19 06:13:07 2014
-+++ build/common.gypi	Wed Nov 19 08:38:24 2014
-@@ -91,7 +91,7 @@
+$OpenBSD: patch-build_common_gypi,v 1.30 2015/01/22 11:16:40 robert Exp $
+--- build/common.gypi.orig.port	Thu Dec 18 10:40:58 2014
++++ build/common.gypi	Sun Dec 21 15:30:56 2014
+@@ -94,7 +94,7 @@
  
            'conditions': [
              # ChromeOS and Windows use Aura and Ash.
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_common_gypi,v 1.29 2014/11/19 21:27:32 robert Exp $
                'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -809,7 +809,7 @@
+@@ -827,7 +827,7 @@
  
          # Use GPU accelerated cross process image transport by default
          # on linux builds with the Aura window manager
@@ -19,16 +19,16 @@ $OpenBSD: patch-build_common_gypi,v 1.29 2014/11/19 21:27:32 robert Exp $
            'ui_compositor_image_transport%': 1,
          }, {
            'ui_compositor_image_transport%': 0,
-@@ -936,7 +936,7 @@
-         # NOTE: The check for disable_nacl==0 and component=="static_library"
-         # can't be used here because these variables are not defined yet, but it
-         # is still not supported.
+@@ -952,7 +952,7 @@
+         # --help for more information. Meant to be overriden with GYP_DEFINES.
+         # TODO(maruel): Remove the conditions as more configurations are
+         # supported.
 -        ['OS!="ios" and OS!="android" and chromeos==0', {
 +        ['OS!="ios" and OS!="android" and chromeos==0 and OS!="openbsd"', {
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -952,7 +952,7 @@
+@@ -968,7 +968,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
@@ -37,10 +37,10 @@ $OpenBSD: patch-build_common_gypi,v 1.29 2014/11/19 21:27:32 robert Exp $
              'enable_mdns%' : 1,
          }],
  
-@@ -3517,6 +3517,14 @@
-         ],
-       },
-     }],
+@@ -3520,6 +3520,14 @@
+     },
+   },
+   'conditions': [
 +    ['OS=="openbsd"', {
 +      'target_defaults': {
 +        'cflags': [
@@ -49,10 +49,10 @@ $OpenBSD: patch-build_common_gypi,v 1.29 2014/11/19 21:27:32 robert Exp $
 +        ],
 +      },
 +    }],
-     ['os_posix==1 and OS!="mac" and OS!="ios"', {
+     ['os_posix==1', {
        'target_defaults': {
-         # Enable -Werror by default, but put it in a variable so it can
-@@ -5683,8 +5691,8 @@
+         'ldflags': [
+@@ -5778,8 +5786,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [

@@ -1,11 +1,11 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.4 2014/07/20 17:22:33 robert Exp $
---- base/process/process_metrics_openbsd.cc.orig.port	Thu Jul 17 12:30:05 2014
-+++ base/process/process_metrics_openbsd.cc	Thu Jul 17 12:34:26 2014
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.5 2015/01/22 11:16:40 robert Exp $
+--- base/process/process_metrics_openbsd.cc.orig.port	Wed Dec  3 03:13:19 2014
++++ base/process/process_metrics_openbsd.cc	Sat Dec  6 12:13:17 2014
 @@ -4,8 +4,19 @@
  
  #include "base/process/process_metrics.h"
  
-+#include "base/file_util.h"
++#include "base/files/file_util.h"
 +#include "base/logging.h"
 +#include "base/process/internal_linux.h"
 +#include "base/strings/string_number_conversions.h"

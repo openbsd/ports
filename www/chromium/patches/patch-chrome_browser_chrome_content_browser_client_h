@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.9 2014/11/19 21:27:32 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Wed Nov 19 06:13:08 2014
-+++ chrome/browser/chrome_content_browser_client.h	Wed Nov 19 08:38:24 2014
-@@ -278,7 +278,7 @@ class ChromeContentBrowserClient : public content::Con
-   virtual net::CookieStore* OverrideCookieStoreForRenderProcess(
-       int render_process_id) OVERRIDE;
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.10 2015/01/22 11:16:40 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Thu Dec 18 10:40:59 2014
++++ chrome/browser/chrome_content_browser_client.h	Sun Dec 21 15:30:57 2014
+@@ -262,7 +262,7 @@ class ChromeContentBrowserClient : public content::Con
+   net::CookieStore* OverrideCookieStoreForRenderProcess(
+       int render_process_id) override;
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
-   virtual void GetAdditionalMappedFilesForChildProcess(
+   void GetAdditionalMappedFilesForChildProcess(
        const base::CommandLine& command_line,
        int child_process_id,

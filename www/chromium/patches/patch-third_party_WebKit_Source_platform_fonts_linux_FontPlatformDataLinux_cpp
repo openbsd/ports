@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_linux_FontPlatformDataLinux_cpp,v 1.1 2015/01/22 11:16:41 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/linux/FontPlatformDataLinux.cpp.orig.port	Sun Dec  7 21:53:07 2014
++++ third_party/WebKit/Source/platform/fonts/linux/FontPlatformDataLinux.cpp	Sun Dec  7 21:53:47 2014
+@@ -102,7 +102,7 @@ void FontPlatformData::setupPaint(SkPaint* paint, Grap
+ void FontPlatformData::querySystemForRenderStyle(bool useSkiaSubpixelPositioning)
+ {
+     WebFontRenderStyle style;
+-#if OS(ANDROID)
++#if OS(ANDROID) || OS(OPENBSD)
+     style.setDefaults();
+ #else
+     // If the font name is missing (i.e. probably a web font) or the sandbox is disabled, use the system defaults.

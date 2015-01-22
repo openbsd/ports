@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_resources_ui_resources_grd,v 1.1 2014/07/20 17:22:34 robert Exp $
---- ui/resources/ui_resources.grd.orig.port	Sun Jul 20 07:17:41 2014
-+++ ui/resources/ui_resources.grd	Sun Jul 20 07:21:16 2014
-@@ -39,7 +39,7 @@
+$OpenBSD: patch-ui_resources_ui_resources_grd,v 1.2 2015/01/22 11:16:41 robert Exp $
+--- ui/resources/ui_resources.grd.orig.port	Wed Dec  3 03:32:12 2014
++++ ui/resources/ui_resources.grd	Sat Dec  6 11:34:27 2014
+@@ -40,7 +40,7 @@
          <structure type="chrome_scaled_image" name="IDR_APP_TOP_LEFT" file="app_top_left.png" />
          <structure type="chrome_scaled_image" name="IDR_APP_TOP_RIGHT" file="app_top_right.png" />
        </if>

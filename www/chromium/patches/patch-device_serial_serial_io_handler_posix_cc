@@ -1,7 +1,7 @@
-$OpenBSD: patch-device_serial_serial_io_handler_posix_cc,v 1.1 2014/10/13 06:49:19 robert Exp $
---- device/serial/serial_io_handler_posix.cc.orig.port	Fri Oct 10 16:17:10 2014
-+++ device/serial/serial_io_handler_posix.cc	Fri Oct 10 16:17:22 2014
-@@ -39,7 +39,7 @@ bool BitrateToSpeedConstant(int bitrate, speed_t* spee
+$OpenBSD: patch-device_serial_serial_io_handler_posix_cc,v 1.2 2015/01/22 11:16:41 robert Exp $
+--- device/serial/serial_io_handler_posix.cc.orig.port	Wed Dec  3 03:13:25 2014
++++ device/serial/serial_io_handler_posix.cc	Sat Dec  6 11:34:27 2014
+@@ -45,7 +45,7 @@ bool BitrateToSpeedConstant(int bitrate, speed_t* spee
      BITRATE_TO_SPEED_CASE(9600)
      BITRATE_TO_SPEED_CASE(19200)
      BITRATE_TO_SPEED_CASE(38400)
@@ -10,7 +10,7 @@ $OpenBSD: patch-device_serial_serial_io_handler_posix_cc,v 1.1 2014/10/13 06:49:
      BITRATE_TO_SPEED_CASE(57600)
      BITRATE_TO_SPEED_CASE(115200)
      BITRATE_TO_SPEED_CASE(230400)
-@@ -77,7 +77,7 @@ bool SpeedConstantToBitrate(speed_t speed, int* bitrat
+@@ -83,7 +83,7 @@ bool SpeedConstantToBitrate(speed_t speed, int* bitrat
      SPEED_TO_BITRATE_CASE(9600)
      SPEED_TO_BITRATE_CASE(19200)
      SPEED_TO_BITRATE_CASE(38400)
