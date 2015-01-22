@@ -1,2 +1,0 @@
-pfflowd is a small daemon which converts pfsync flow expiry 
-messages into Cisco NetFlow datagrams.

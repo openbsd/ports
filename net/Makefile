@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.888 2015/01/14 21:39:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.889 2015/01/22 22:20:07 naddy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -455,7 +455,6 @@
      SUBDIR += pear-Services-oEmbed
      SUBDIR += pebrot
      SUBDIR += pen
-     SUBDIR += pfflowd
      SUBDIR += pfstat
      SUBDIR += php-weathermap
      SUBDIR += pidgin
