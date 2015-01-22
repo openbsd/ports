@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2015/01/22 15:34:43 naddy Exp $
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.atmel.com/tools/ATMELAVRTOOLCHAINFORLINUX.aspx
@@ -11,4 +11,3 @@ CONFIGURE_ARGS +=	--target=avr32 \
 MASTER_SITES ?=		http://distribute.atmel.no/tools/opensource/Atmel-AVR-Toolchain-3.4.2/avr32/
 LIBTOOL_FLAGS = 	--tag=disable-shared
 USE_GMAKE = 		Yes
-USE_GROFF =		Yes
