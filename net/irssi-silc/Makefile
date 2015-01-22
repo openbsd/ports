@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/01/22 15:18:43 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,6 @@ MAKE_FLAGS=	libfe_common_silc_la_LDFLAGS=-avoid-version \
 		libsilc_core_la_LDFLAGS=-avoid-version
 
 LIBTOOL_FLAGS+=	  --tag=disable-static
-USE_GROFF =	Yes
 CONFIGURE_STYLE=  autoconf
 AUTOCONF_VERSION= 2.63
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
