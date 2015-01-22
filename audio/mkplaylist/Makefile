@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/04/20 10:00:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/22 20:02:22 schwarze Exp $
 
 COMMENT=		creates playlists from directory trees
 
 MODPY_EGG_VERSION=	0.4.5
 DISTNAME=		mkplaylist-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 CATEGORIES=		audio
 HOMEPAGE=		http://bj.spline.de/software.html
 
@@ -18,7 +18,6 @@ MASTER_SITES=	http://bj.spline.de/download/mkplaylist/
 MODULES=	lang/python
 PKG_ARCH =	*
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-patch:

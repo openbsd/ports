@@ -12,56 +12,56 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd 
+.Dd June 4, 2008
 .Dt MKPLAYLIST 1
 .Os
 .Sh NAME
 .Nm mkplaylist
 .Nd create a playlist from directories
 .Sh SYNOPSIS
-.Nm 
-.Bk -words
+.Nm mkplaylist
 .Op Fl chqrv
 .Op Fl f Ar playlist_format
-.Op Fl o Ar playlist_file 
-.Ek
+.Op Fl o Ar playlist_file
 .Sh DESCRIPTION
 .Nm
 is a small python script that creates m3u, extended m3u or PLS playlists
 from ac3, flac, it, mod, mp3, ogg, s3m and wav files.
-.Pp
 .Sh OPTIONS
-Here are the command line options.
+The options are as follows:
 .Bl -tag -width Ds
-.It Fl c 
-use a cache file. Default is not to use one.
-.It Fl h 
-help message
+.It Fl c
+Use a cache file.
+The default is not to use one.
+.It Fl h
+Show a help message.
 .It Fl q
-be really quiet
+Be really quiet.
 .It Fl r
-write relative paths. Default is absolute paths.
+Write relative paths.
+The default is to write absolute paths.
 .It Fl v
-be verbose
+Be verbose.
 .It Fl -shuffle
-shuffle the playlist before saving it
+Shuffle the playlist before saving it.
 .It Fl o
-output playlist filename
+Output playlist filename.
 .El
-.Pp
 .Sh EXAMPLES
-.Bd -literal
-
-Create the playlist  playlist.m3u from the audio files in 
-/data/music directory.
-
-	mkplaylist --cache -o playlist.m3u /data/music
-
-Create a playlist in m3u format with relative paths from 
-two directories /data/music/Various and  /data/music/Soundtracks.
-
-	mkplaylist -r -f m3u --shuffle /data/music/Various    \
-                                    /data/music/Soundtracks
-
+Create the playlist
+.Pa playlist.m3u
+from the audio files in the
+.Pa /data/music
+directory:
+.Pp
+.Dl mkplaylist --cache -o playlist.m3u /data/music
+.Pp
+Create a playlist in m3u format with relative paths from
+the two directories
+.Pa /data/music/Various
+and
+.Pa /data/music/Soundtracks :
+.Bd -literal -offset indent
+mkplaylist -r -f m3u --shuffle /data/music/Various \e
+                               /data/music/Soundtracks
 .Ed
-
