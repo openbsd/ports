@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=	convert solar calendar to lunar calendar
 
@@ -17,7 +17,6 @@ WANTLIB=		c
 
 ALL_TARGET=
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

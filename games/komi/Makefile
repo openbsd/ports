@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT =	Komi the Space Frog
 
@@ -17,7 +17,6 @@ WANTLIB =	SDL c pthread SDL_mixer>=3
 
 LIB_DEPENDS =	devel/sdl-mixer
 
-USE_GROFF =	Yes
 NO_TEST =	Yes
 
 pre-configure:

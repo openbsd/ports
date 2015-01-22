@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=	X11/Motif schedule planner with calendar
 
@@ -23,7 +23,6 @@ FAKE_FLAGS=	PLANBASE=${WRKINST}${PREFIX} \
 		EXAMPLES=${WRKINST}${PREFIX}/share/examples/plan
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-extract:

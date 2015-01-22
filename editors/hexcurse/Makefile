@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=	user-friendly ncurses-based hexeditor with many features
 
@@ -16,6 +16,5 @@ WANTLIB=		c ncurses
 MASTER_SITES=	http://jewfish.net/downloads/
 
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/12/19 13:19:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.42 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=		new mail notification utility for KDE
 
@@ -31,7 +31,6 @@ MODKDE_FIXUP_DATADIR =	Yes
 
 MAKE_ENV=		KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
-USE_GROFF =		Yes
 
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static

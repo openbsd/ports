@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=	3d tetris
 
@@ -23,7 +23,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/spatial
 	${INSTALL_DATA} ${WRKBUILD}/spatial.shp ${PREFIX}/share/spatial/spatial.shp
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 WANTLIB=	X11 c m pthread-stubs xcb
 

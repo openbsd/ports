@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=	translate character sets
 
@@ -21,7 +21,6 @@ MAKE_FLAGS=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"
 ALL_TARGET=	tcs
 
 WRKDIST=	${WRKDIR}
-USE_GROFF =	Yes
 
 do-test:
 	cd ${WRKSRC}; ./regress

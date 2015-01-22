@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=compile Java source into .class files (quickly!)
 
@@ -23,7 +23,6 @@ MODULES=	converters/libiconv
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-USE_GROFF=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

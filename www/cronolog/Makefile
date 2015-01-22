@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/22 18:41:17 naddy Exp $
 
 COMMENT=	web log rotation program
 
@@ -15,6 +15,5 @@ WANTLIB=		c
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 06:13:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=	scan mailboxes for messages matching a regular expression
 
@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/mboxgrep
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

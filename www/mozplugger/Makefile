@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/22 18:41:17 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,7 +15,6 @@ WANTLIB =		X11 c
 
 MASTER_SITES =		${HOMEPAGE}files/
 
-USE_GROFF =		Yes
 NO_TEST =		Yes
 ALL_TARGET =		openbsd
 

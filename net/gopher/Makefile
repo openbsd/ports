@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/29 23:21:06 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=	distributed document delivery client
 
@@ -21,7 +21,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CLIENTLIB=${SYSCONFDIR}/gopher
 WRKDIST=	${WRKDIR}/gopher
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/06/03 02:55:50 lteo Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/22 18:41:16 naddy Exp $
 
 COMMENT=		passive OS fingerprinting tool
 
@@ -21,7 +21,6 @@ WRKDIST=	${WRKDIR}/p0f
 
 MAKE_FILE=	${WRKSRC}/mk/OpenBSD
 MAKE_FLAGS=	CC=${CC}
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

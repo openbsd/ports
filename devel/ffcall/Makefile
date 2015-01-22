@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/03/19 13:38:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/22 18:41:16 naddy Exp $
 
 # arm: doesn't build super-old and broken assember files
 ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
@@ -18,7 +18,6 @@ HOMEPAGE=	http://www.haible.de/bruno/packages-ffcall.html
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
