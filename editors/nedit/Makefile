@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/03/09 19:59:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2015/01/22 13:11:43 naddy Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
@@ -29,7 +29,6 @@ MODULES=		converters/libiconv
 
 LIB_DEPENDS+=		x11/openmotif
 
-USE_GROFF =		Yes
 ALL_TARGET=		openbsd
 
 NO_TEST=		Yes

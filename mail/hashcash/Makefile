@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/22 13:11:44 naddy Exp $
 
 COMMENT=		hashcash anti-spam / denial of service counter-measure tool
 
@@ -16,7 +16,6 @@ WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}/source/
 EXTRACT_SUFX=		.tgz
-USE_GROFF =		Yes
 
 .if ${MACHINE_ARCH} == "i386"
 ALL_TARGET=		x86

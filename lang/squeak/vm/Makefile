@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/02/11 07:49:58 stu Exp $
+# $OpenBSD: Makefile,v 1.21 2015/01/22 13:11:44 naddy Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -23,7 +23,6 @@ DESTDIRNAME =		ROOT
 CONFIGURE_ENV =		LDFLAGS="-lpthread ${LDFLAGS}" RANLIB=ranlib \
 			ac_cv_socklen_t=yes
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 USE_LIBTOOL =		No
 NO_TEST =		Yes
 
