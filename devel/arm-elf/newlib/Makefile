@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/28 18:55:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/22 22:17:46 naddy Exp $
 
 COMMENT=	newlib for arm-elf cross-development
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	devel/arm-elf/gcc
 # cope with user settings in /etc/mk.conf
 MAKE_FLAGS=	CFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	Yes
-USE_GROFF=	No
 CONFIGURE_ARGS+=--enable-interwork \
 		--enable-multilib
 
