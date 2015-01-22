@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.107 2014/11/05 12:09:07 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.108 2015/01/22 23:03:31 naddy Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -107,8 +107,6 @@ LIB_DEPENDS-tkinter =	lang/python/${VERSION},-main \
 			${MODTK_LIB_DEPENDS}
 WANTLIB-tkinter =	X11 pthread python${VERSION}${LIB_SUFX} \
 			${MODTK_WANTLIB}
-
-USE_GROFF =	Yes
 
 AUTOCONF_VERSION =	2.69
 
