@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2015/01/22 11:16:40 robert Exp $
+# $OpenBSD: Makefile,v 1.195 2015/01/22 11:42:24 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -7,6 +7,8 @@ COMMENT=		Chromium browser
 
 V=			40.0.2214.91
 DISTNAME=		chromium-${V}
+
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -173,7 +175,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
-.for f in libffmpegsumo.so protoc icudtl.dat mksnapshot
+.for f in libexif.so libffmpegsumo.so libpdf.so protoc icudtl.dat mksnapshot
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
 .for s in 22 24 48 64 128 256
