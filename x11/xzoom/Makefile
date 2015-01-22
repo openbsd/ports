@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 20:40:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/01/22 22:58:18 naddy Exp $
 
 COMMENT=	magnify, rotate, mirror the image on the X11 screen
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		X11 Xext c 
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 NO_TEST=	Yes

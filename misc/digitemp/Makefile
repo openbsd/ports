@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/22 22:58:17 naddy Exp $
 
 COMMENT=	program for reading values from 1-wire devices
 
@@ -24,7 +24,6 @@ ALL_TARGET=	ds9097 ds9097u ds2490
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 MAKE_FLAGS=	CC=${CC}
-USE_GROFF=	Yes
 
 NO_TEST=	Yes
 

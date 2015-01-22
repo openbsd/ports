@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/01/22 22:58:17 naddy Exp $
 
 COMMENT =		powerful curses interface python file manager
 
@@ -20,7 +20,6 @@ MAINTAINER =		Patrikas Kugrinas <pkugrinas@gmail.com>
 MODULES =		lang/python
 
 NO_TEST =		Yes
-USE_GROFF =		Yes
 
 post-install:
 		${INSTALL_MAN} ${WRKSRC}/lfm.1 ${PREFIX}/man/man1

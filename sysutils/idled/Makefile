@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2015/01/22 22:58:18 naddy Exp $
 
 COMMENT=	log out idle users and those hogging resources
 
@@ -15,7 +15,6 @@ WANTLIB=		c
 
 MAKE_ENV=	SYSCONFDIR="${SYSCONFDIR}"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-extract:
