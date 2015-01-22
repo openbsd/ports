@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/12/01 09:07:12 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2015/01/22 20:26:43 naddy Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -64,7 +64,6 @@ WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
 LIBTOOL_FLAGS =	--tag=disable-static
-USE_GROFF =	Yes
 CONFIGURE_ARGS +=--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib \
 		--with-librrd=${LOCALBASE} \

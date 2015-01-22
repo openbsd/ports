@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/06/02 10:39:11 stsp Exp $
+# $OpenBSD: Makefile,v 1.17 2015/01/22 20:26:43 naddy Exp $
 
 COMMENT=	full featured DVD copy program
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS=	devel/p5-Event-ExecFlow \
 		x11/p5-Gtk2-Ex-FormFactory
 
 CONFIGURE_STYLE=perl
-USE_GROFF =	Yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
 
 TEST_DEPENDS=x11/p5-Gtk2-Ex-FormFactory

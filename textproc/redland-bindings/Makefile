@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/17 20:41:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/22 20:26:43 naddy Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 #COMMENT-lua=		Redland librdf Lua Bindings
@@ -35,7 +35,6 @@ BUILD_DEPENDS=		devel/swig
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-perl
-USE_GROFF=		Yes
 
 MODULES+=		lang/python
 CONFIGURE_ARGS+=	--with-python

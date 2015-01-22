@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/27 14:10:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/22 20:26:43 naddy Exp $
 
 COMMENT=	Nagios plugin to check full email delivery loop (SMTP/IMAP)
 
@@ -19,7 +19,6 @@ MASTER_SITES=	${HOMEPAGE}/archive/
 PKG_ARCH=	*
 NO_BUILD=	Yes
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	converters/p5-DateManip \
 		mail/p5-Email-Simple \
