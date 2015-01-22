@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2014/08/14 06:54:24 ajacoutot Exp $
+$OpenBSD: README-main,v 1.7 2015/01/22 16:42:09 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -67,6 +67,25 @@ ownership of the relevant /dev/tty* device to ${NUT_USER}.
 USB: Change the group of the relevant /dev/ugen* and /dev/usb* devices
 to ${NUT_USER}; to identify the specific controller and ugen device
 names, use "sudo usbdevs -vd".
+
+Special notice for APC USB devices
+----------------------------------
+Some APC USB devices are reported to only work with NUT if the device is
+attached to ugen(4). Normally these devices attach to upd(4) to provide
+system power sensors (see "sysctl hw.sensors"). If you are having problems
+using such a device with NUT, you may need to prevent this attachment.
+ 
+The option with fewest side-effects is to add the following entries to
+the table in /sys/dev/usb/usb_quirks.c and build a new kernel:
+
+{ USB_VENDOR_APC, USB_PRODUCT_APC_UPS, ANY, { UQ_BAD_HID }},
+{ USB_VENDOR_APC, USB_PRODUCT_APC_UPS5G, ANY, { UQ_BAD_HID }},
+
+Alternatively, if you do not use a USB keyboard/mouse, you could simply
+disable the upd and uhid drivers. The following line creates a new kernel
+with the relevant changes:
+
+  printf 'disable uhid\ndisable upd\nquit\n' | config -e -o /bsd.no-uhid /bsd
 
 Starting the daemons
 --------------------
