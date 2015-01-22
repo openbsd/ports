@@ -1,7 +1,15 @@
-$OpenBSD: patch-openbsd__sysvar_c,v 1.1 2012/09/27 21:27:43 naddy Exp $
---- openbsd/_sysvar.c.orig	Thu Sep 27 22:57:54 2012
-+++ openbsd/_sysvar.c	Thu Sep 27 22:59:29 2012
-@@ -85,5 +85,4 @@ void init_sysvar(void){
+$OpenBSD: patch-openbsd__sysvar_c,v 1.2 2015/01/22 12:25:51 naddy Exp $
+--- openbsd/_sysvar.c.orig	Tue Dec 21 07:32:04 2004
++++ openbsd/_sysvar.c	Thu Jan 22 13:22:43 2015
+@@ -29,6 +29,7 @@
+ #include <sys/param.h>
+ #include <sys/socket.h>
+ #include <sys/mbuf.h>
++#include <netinet/in.h>
+ #include <net/if.h>
+ #include <net/pfvar.h>
+ #include <net/if_pflog.h>
+@@ -85,5 +86,4 @@ void init_sysvar(void){
      /* enc interface packet format flags */
      PyModule_AddIntConstant(module, "ENC_CONF",                 (long) M_CONF);       
      PyModule_AddIntConstant(module, "ENC_AUTH",                 (long) M_AUTH);       
