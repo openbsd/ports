@@ -1,0 +1,12 @@
+$OpenBSD: patch-platforms_openbsd_apccontrol_in,v 1.1 2015/01/22 11:45:49 ajacoutot Exp $
+--- platforms/openbsd/apccontrol.in.orig	Thu Jan 22 10:30:40 2015
++++ platforms/openbsd/apccontrol.in	Thu Jan 22 10:30:52 2015
+@@ -89,7 +89,7 @@ case "$1" in
+ 	;;
+ 	doshutdown)
+ 		printf "Beginning Shutdown Sequence" | wall
+-		${SHUTDOWN} -h now "apcupsd initiated shutdown"
++		${SHUTDOWN} -p now "apcupsd initiated shutdown"
+ 	;;
+ 	annoyme)
+ 		printf "Power problems please logoff." | wall
