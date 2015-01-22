@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.66 2014/07/03 16:02:23 brad Exp $
+@comment $OpenBSD: PLIST,v 1.67 2015/01/22 18:19:46 brad Exp $
 @conflict postfix-*
 @pkgpath mail/postfix/snapshot,sqlite
 @newgroup _postfix:507
@@ -335,7 +335,7 @@ share/examples/postfix/makedefs.out
 share/examples/postfix/master.cf
 share/examples/postfix/master.cf.proto
 share/examples/postfix/postfix-files
-share/examples/postfix/postfix-files.d/
+@comment share/examples/postfix/postfix-files.d/
 share/examples/postfix/relocated
 share/examples/postfix/transport
 share/examples/postfix/virtual
