@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/22 20:02:51 naddy Exp $
 
 COMMENT=	Linux libc5
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	emulators/fedora/base
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 PREFIX=		${LOCALBASE}/emul/fedora
 
