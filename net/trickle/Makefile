@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/01/22 00:02:41 jca Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	lightweight userspace bandwidth shaper
-DISTNAME=	trickle-1.06
-REVISION=	5
+DISTNAME=	trickle-1.07
 CATEGORIES=	net
 
 HOMEPAGE=	http://monkey.org/~marius/trickle/

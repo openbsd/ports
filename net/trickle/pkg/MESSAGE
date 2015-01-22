@@ -1,6 +1,0 @@
-Post Installation Set-Up of trickle
------------------------------------
-
-See trickle(1), trickled.conf(5), and trickled(8) for information on
-configuring and using trickle.  The optional trickled.conf configuration
-file should be placed at ${SYSCONFDIR}/trickled.conf.
