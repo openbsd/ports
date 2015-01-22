@@ -1,0 +1,16 @@
+$OpenBSD: patch-bin_ansible-doc,v 1.1 2015/01/22 19:57:41 rpe Exp $
+
+ignore VERSION file in ansible-doc #10070
+https://github.com/ansible/ansible/pull/10070
+
+--- bin/ansible-doc.orig	Thu Jan 22 19:22:39 2015
++++ bin/ansible-doc	Thu Jan 22 19:22:55 2015
+@@ -34,7 +34,7 @@ import traceback
+ MODULEDIR = C.DEFAULT_MODULE_PATH
+ 
+ BLACKLIST_EXTS = ('.pyc', '.swp', '.bak', '~', '.rpm')
+-IGNORE_FILES = [ "COPYING", "CONTRIBUTING", "LICENSE", "README" ]
++IGNORE_FILES = [ "COPYING", "CONTRIBUTING", "LICENSE", "README", "VERSION" ]
+ 
+ _ITALIC = re.compile(r"I\(([^)]+)\)")
+ _BOLD   = re.compile(r"B\(([^)]+)\)")
