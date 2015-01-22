@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2015/01/22 22:31:04 naddy Exp $
 
 COMMENT=	graphical version of traceroute
 
@@ -31,7 +31,6 @@ WANTLIB += pthread-stubs xcb z gtkgl-2.0
 LIB_DEPENDS=	x11/gtkglarea
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 AUTOCONF_VERSION=2.57
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

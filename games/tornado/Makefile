@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/22 22:31:04 naddy Exp $
 
 COMMENT=	Ouranos (Weather War) clone; multiplayer
 DISTNAME=	tornado-1.4
@@ -13,7 +13,6 @@ WANTLIB=		c ncurses
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/22 22:31:04 naddy Exp $
 
 COMMENT=		tool to monitor interface bandwidth usage
 
@@ -18,7 +18,6 @@ WANTLIB=		c
 MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu dest
-USE_GROFF =		Yes
 
 NO_TEST=		Yes
 
