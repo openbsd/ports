@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2014/09/09 07:52:07 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2015/01/22 19:58:57 naddy Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -63,7 +63,6 @@ CONFIGURE_ARGS+=	--target=msp430		\
 			--disable-nls		\
 			--disable-shared
 
-USE_GROFF?=		Yes
 USE_GMAKE?=		Yes
 
 LIBTOOL_FLAGS?=		--tag=disable-shared
