@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/06 11:53:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/23 22:13:34 benoit Exp $
 ${P5SITE}/Net/Frame/Dump/
 ${P5SITE}/Net/Frame/Dump.pm
 ${P5SITE}/Net/Frame/Dump/Offline.pm
@@ -15,4 +15,6 @@ share/examples/p5-Net-Frame-Dump/dump-offline.pl
 share/examples/p5-Net-Frame-Dump/dump-online-1-frame.pl
 share/examples/p5-Net-Frame-Dump/dump-online-onrecv.pl
 share/examples/p5-Net-Frame-Dump/dump-online.pl
+share/examples/p5-Net-Frame-Dump/dump-online2-saveonly.pl
+share/examples/p5-Net-Frame-Dump/dump-online2.pl
 share/examples/p5-Net-Frame-Dump/dump-writer.pl
