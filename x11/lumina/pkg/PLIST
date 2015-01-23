@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/01/06 10:07:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/01/23 09:31:10 ajacoutot Exp $
 @bin bin/Lumina-DE
 @bin bin/lumina-config
 @bin bin/lumina-fm
@@ -23,7 +23,6 @@ share/Lumina-DE/colors/Lumina-Purple.qss.colors
 share/Lumina-DE/colors/Lumina-Red.qss.colors
 share/Lumina-DE/defaultapps.conf
 share/Lumina-DE/desktop-background.jpg
-share/Lumina-DE/desktopsettings.conf
 share/Lumina-DE/fluxbox-init-rc
 share/Lumina-DE/fluxbox-keys
 share/Lumina-DE/i18n/
@@ -399,12 +398,16 @@ share/Lumina-DE/i18n/lumina-search_zh_CN.qm
 share/Lumina-DE/i18n/lumina-search_zh_HK.qm
 share/Lumina-DE/i18n/lumina-search_zh_TW.qm
 share/Lumina-DE/i18n/lumina-search_zu.qm
+share/Lumina-DE/luminaDesktop.conf
 share/Lumina-DE/themes/
 share/Lumina-DE/themes/Lumina-default.qss.template
 share/Lumina-DE/themes/None.qss.template
 share/applications/lumina-fm.desktop
 share/applications/lumina-screenshot.desktop
 share/applications/lumina-search.desktop
+share/examples/lumina/
+share/examples/lumina/luminaDesktop.conf.dist
+@sample ${SYSCONFDIR}/luminaDesktop.conf
 share/pixmaps/Insight-FileManager.png
 share/pixmaps/Lumina-DE.png
 share/wallpapers/

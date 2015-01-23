@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/06 10:07:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/23 09:31:10 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
-GITV=		1420494806
+GITV=		1421890927
 DISTNAME=	lumina-${GITV}
-PKGNAME=	lumina-0.8.0.${GITV}
+PKGNAME=	lumina-0.8.1.${GITV}
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/lumina
 
@@ -19,7 +19,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =   Yes
 
-WANTLIB += GL Qt5Core Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
+WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
 WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras X11 Xcomposite Xdamage
 WANTLIB += Xrender c m pthread xcb xcb-damage xcb-ewmh xcb-icccm
 
@@ -44,8 +44,16 @@ pre-configure:
 		${WRKSRC}/libLumina/LuminaXDG.cpp \
 		${WRKSRC}/lumina-config/mainUI.cpp \
 		${WRKSRC}/lumina-desktop/SettingsMenu.cpp
+	perl -pi -e 's,/etc/luminaDesktop.conf,${SYSCONFDIR}/luminaDesktop.conf,g' \
+		${WRKSRC}/libLumina/LuminaUtils.cpp
 
 do-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake-qt5
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lumina
+	mv ${PREFIX}/etc/luminaDesktop.conf.dist \
+		${PREFIX}/share/examples/lumina/
+	rmdir ${PREFIX}/etc
 
 .include <bsd.port.mk>
