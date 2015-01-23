@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2014/12/31 11:06:02 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.29 2015/01/23 18:01:09 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -834,6 +834,7 @@ share/cmake/Help/variable/CMAKE_EXTRA_SHARED_LIBRARY_SUFFIXES.rst
 share/cmake/Help/variable/CMAKE_FIND_LIBRARY_PREFIXES.rst
 share/cmake/Help/variable/CMAKE_FIND_LIBRARY_SUFFIXES.rst
 share/cmake/Help/variable/CMAKE_FIND_NO_INSTALL_PREFIX.rst
+share/cmake/Help/variable/CMAKE_FIND_PACKAGE_NAME.rst
 share/cmake/Help/variable/CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY.rst
 share/cmake/Help/variable/CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY.rst
 share/cmake/Help/variable/CMAKE_FIND_PACKAGE_WARN_NO_MODULE.rst
@@ -2647,6 +2648,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_EXTRA_SHARED_LIBRARY_SUFFIXES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_FIND_LIBRARY_PREFIXES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_FIND_LIBRARY_SUFFIXES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_FIND_NO_INSTALL_PREFIX.txt
+share/doc/cmake/html/_sources/variable/CMAKE_FIND_PACKAGE_NAME.txt
 share/doc/cmake/html/_sources/variable/CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_FIND_PACKAGE_WARN_NO_MODULE.txt
@@ -3731,6 +3733,7 @@ share/doc/cmake/html/variable/CMAKE_EXTRA_SHARED_LIBRARY_SUFFIXES.html
 share/doc/cmake/html/variable/CMAKE_FIND_LIBRARY_PREFIXES.html
 share/doc/cmake/html/variable/CMAKE_FIND_LIBRARY_SUFFIXES.html
 share/doc/cmake/html/variable/CMAKE_FIND_NO_INSTALL_PREFIX.html
+share/doc/cmake/html/variable/CMAKE_FIND_PACKAGE_NAME.html
 share/doc/cmake/html/variable/CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY.html
 share/doc/cmake/html/variable/CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY.html
 share/doc/cmake/html/variable/CMAKE_FIND_PACKAGE_WARN_NO_MODULE.html

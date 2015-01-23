@@ -1,40 +1,6 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.12 2015/01/20 11:41:32 dcoppa Exp $
-
-commit dd5d2eb156b7e45ded53f694a12a1e00d19f6cd6
-Author: David Coppa <dcoppa@gmail.com>
-Date:   Mon Jan 12 19:28:02 2015 +0100
-
-FindRuby: fix selection of version x.0 (#15345)
-
-When "Ruby_FIND_VERSION_MINOR" is 0, the "if(Ruby_FIND_VERSION_MAJOR AND
-Ruby_FIND_VERSION_MINOR)" check evaluated to false.
-
-commit 802d0aa0b0a0af72fdc95bf1f69afeb362b6ef95
-Author: Evangelos Foutras <evangelos@foutrelis.com>
-Date:   Mon Dec 29 19:02:04 2014 +0200
-
-FindRuby: Fix output check in _RUBY_CONFIG_VAR
-
-Since commit v2.8.8~173^2 (FindRuby: clean up querying variables from
-Ruby, 2012-02-17) we query RbConfig::CONFIG first and, if the command
-fails or its output equates to a false constant, then fall back to
-querying Config::CONFIG.
-
-Due to the above, an error condition exists with Ruby 2.2.0; when
-querying RbConfig::CONFIG['TEENY'], the output of '0' will be discarded
-since it matches the false constant '0'.
-
-In previous versions this wasn't a problem, but Ruby 2.2 has completely
-removed Config::CONFIG. This causes RUBY_VERSION_PATCH to be set to an
-empty string and the Ruby version to be detected as '2.2.' (instead of
-'2.2.0').
-
-Fix the output check to explicitly look for an empty string before using
-the fallback query method. (Someone more familiar with Ruby might be
-able to deem the fallback as unnecessary and fully remove it.)
-
---- Modules/FindRuby.cmake.orig	Mon Dec 15 14:07:43 2014
-+++ Modules/FindRuby.cmake	Tue Jan 20 04:36:32 2015
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.13 2015/01/23 18:01:09 dcoppa Exp $
+--- Modules/FindRuby.cmake.orig	Wed Jan 21 08:10:26 2015
++++ Modules/FindRuby.cmake	Fri Jan 23 11:10:10 2015
 @@ -53,35 +53,53 @@
  # uncomment the following line to get debug output for this file
  # set(_RUBY_DEBUG_OUTPUT TRUE)
@@ -54,8 +20,7 @@ able to deem the fallback as unnecessary and fully remove it.)
 +set(_RUBY_POSSIBLE_EXECUTABLE_NAMES)
  
  # if 1.9 is required, don't look for ruby18 and ruby1.8, default to version 1.8
--if(Ruby_FIND_VERSION_MAJOR  AND  Ruby_FIND_VERSION_MINOR)
-+if(DEFINED Ruby_FIND_VERSION_MAJOR AND DEFINED Ruby_FIND_VERSION_MINOR)
+ if(DEFINED Ruby_FIND_VERSION_MAJOR AND DEFINED Ruby_FIND_VERSION_MINOR)
     set(Ruby_FIND_VERSION_SHORT_NODOT "${Ruby_FIND_VERSION_MAJOR}${RUBY_FIND_VERSION_MINOR}")
     # we can't construct that if only major version is given
     set(_RUBY_POSSIBLE_EXECUTABLE_NAMES
@@ -99,15 +64,6 @@ able to deem the fallback as unnecessary and fully remove it.)
  find_program(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
  
  if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
-@@ -90,7 +108,7 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
-       RESULT_VARIABLE _RUBY_SUCCESS
-       OUTPUT_VARIABLE _RUBY_OUTPUT
-       ERROR_QUIET)
--    if(_RUBY_SUCCESS OR NOT _RUBY_OUTPUT)
-+    if(_RUBY_SUCCESS OR _RUBY_OUTPUT STREQUAL "")
-       execute_process(COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print Config::CONFIG['${RBVAR}']"
-         RESULT_VARIABLE _RUBY_SUCCESS
-         OUTPUT_VARIABLE _RUBY_OUTPUT
 @@ -166,6 +184,10 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
     set(RUBY_VERSION_MAJOR 1)
     set(RUBY_VERSION_MINOR 8)

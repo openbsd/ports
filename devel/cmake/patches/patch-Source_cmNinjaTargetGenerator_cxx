@@ -1,30 +1,11 @@
-$OpenBSD: patch-Source_cmNinjaTargetGenerator_cxx,v 1.2 2014/12/31 11:06:02 dcoppa Exp $
-
-commit 9a13fcbf02e16bda1b8d30332c97ea9460306e4d
-Author: Brad King <brad.king@kitware.com>
-Date:   Mon Dec 22 18:34:28 2014 -0500
-
-Ninja: Do not crash when CMAKE_<LANG>_COMPILE_OBJECT is empty (#15325)
-
+$OpenBSD: patch-Source_cmNinjaTargetGenerator_cxx,v 1.3 2015/01/23 18:01:09 dcoppa Exp $
 
 Use Ninja-1.5's console pool to have visible output during long-running
 tasks which produce status updates on the console (such as test suites)
 
---- Source/cmNinjaTargetGenerator.cxx.orig	Mon Dec 15 14:07:43 2014
-+++ Source/cmNinjaTargetGenerator.cxx	Tue Dec 23 07:47:07 2014
-@@ -454,7 +454,10 @@ cmNinjaTargetGenerator
-   std::vector<std::string> compileCmds;
-   cmSystemTools::ExpandListArgument(compileCmd, compileCmds);
- 
--  compileCmds.front().insert(0, cldeps);
-+  if (!compileCmds.empty())
-+    {
-+    compileCmds.front().insert(0, cldeps);
-+    }
- 
-   for (std::vector<std::string>::iterator i = compileCmds.begin();
-        i != compileCmds.end(); ++i)
-@@ -469,10 +472,13 @@ cmNinjaTargetGenerator
+--- Source/cmNinjaTargetGenerator.cxx.orig	Wed Jan 21 08:10:26 2015
++++ Source/cmNinjaTargetGenerator.cxx	Fri Jan 23 11:10:11 2015
+@@ -472,10 +472,13 @@ cmNinjaTargetGenerator
    comment << "Rule for compiling " << lang << " files.";
    cmOStringStream description;
    description << "Building " << lang << " object $out";

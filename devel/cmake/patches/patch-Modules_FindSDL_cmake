@@ -1,13 +1,6 @@
-$OpenBSD: patch-Modules_FindSDL_cmake,v 1.8 2015/01/08 16:58:00 dcoppa Exp $
-
-commit fd329307b2ee76abaa41e25a300902a2fb983895
-Author: Rolf Eike Beer <eike@sf-mail.de>
-Date:   Wed Jan 7 23:46:56 2015 +0100
-
-FindSDL: fix bad variable expansion
-
---- Modules/FindSDL.cmake.orig	Mon Dec 15 14:07:43 2014
-+++ Modules/FindSDL.cmake	Thu Jan  8 10:38:20 2015
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.9 2015/01/23 18:01:09 dcoppa Exp $
+--- Modules/FindSDL.cmake.orig	Wed Jan 21 08:10:26 2015
++++ Modules/FindSDL.cmake	Fri Jan 23 11:10:10 2015
 @@ -96,6 +96,11 @@ else()
    set(VC_LIB_PATH_SUFFIX lib/x86)
  endif()
@@ -20,12 +13,3 @@ FindSDL: fix bad variable expansion
  # SDL-1.1 is the name used by FreeBSD ports...
  # don't confuse it for the version number.
  find_library(SDL_LIBRARY_TEMP
-@@ -106,7 +111,7 @@ find_library(SDL_LIBRARY_TEMP
- )
- 
- if(NOT SDL_BUILDING_LIBRARY)
--  if(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
-+  if(NOT SDL_INCLUDE_DIR MATCHES ".framework")
-     # Non-OS X framework versions expect you to also dynamically link to
-     # SDLmain. This is mainly for Windows and OS X. Other (Unix) platforms
-     # seem to provide SDLmain for compatibility even though they don't
