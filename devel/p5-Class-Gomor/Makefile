@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/22 13:44:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/01/23 22:07:10 benoit Exp $
 
 COMMENT=	class and object builder
 
 MODULES=	cpan
-DISTNAME=	Class-Gomor-1.02
-REVISION=	0
+DISTNAME =	Class-Gomor-1.03
 CATEGORIES=	devel
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
