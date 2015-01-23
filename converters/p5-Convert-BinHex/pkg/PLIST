@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/14 17:43:33 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/01/23 20:51:14 benoit Exp $
+bin/binhex.pl
+bin/debinhex.pl
 ${P5SITE}/Convert/
 ${P5SITE}/Convert/BinHex.pm
+@man man/man1/binhex.pl.1
+@man man/man1/debinhex.pl.1
 @man man/man3p/Convert::BinHex.3p
