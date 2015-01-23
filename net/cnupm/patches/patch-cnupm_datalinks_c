@@ -1,0 +1,16 @@
+$OpenBSD: patch-cnupm_datalinks_c,v 1.1 2015/01/23 13:01:16 naddy Exp $
+--- cnupm/datalinks.c.orig	Fri Aug 12 13:58:59 2005
++++ cnupm/datalinks.c	Fri Jan 23 13:29:44 2015
+@@ -30,11 +30,11 @@
+ 
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #ifdef HAVE_PFLOG
+ #include <net/if.h>
+ #include <net/if_pflog.h>
+ #endif
+-#include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <pcap.h>

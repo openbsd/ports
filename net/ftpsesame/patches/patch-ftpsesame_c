@@ -1,6 +1,19 @@
-$OpenBSD: patch-ftpsesame_c,v 1.1 2015/01/16 19:29:02 sthen Exp $
---- ftpsesame.c.orig	Fri Jan 16 19:28:21 2015
-+++ ftpsesame.c	Fri Jan 16 19:28:31 2015
+$OpenBSD: patch-ftpsesame_c,v 1.2 2015/01/23 13:01:16 naddy Exp $
+--- ftpsesame.c.orig	Tue Oct  5 14:07:24 2004
++++ ftpsesame.c	Fri Jan 23 13:58:08 2015
+@@ -19,10 +19,10 @@
+ #include <sys/ioctl.h>
+ 
+ #include <net/if.h>
+-#include <net/pfvar.h>
+ #include <net/ppp_defs.h>
+-#include <netinet/if_ether.h>
+ #include <netinet/in.h>
++#include <net/pfvar.h>
++#include <netinet/if_ether.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/tcp.h>
 @@ -34,6 +34,7 @@
  #include <errno.h>
  #include <pcap.h>

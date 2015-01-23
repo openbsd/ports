@@ -1,0 +1,17 @@
+$OpenBSD: patch-pf_if_c,v 1.1 2015/01/23 13:01:16 naddy Exp $
+--- pf_if.c.orig	Sat Nov 10 15:07:43 2012
++++ pf_if.c	Fri Jan 23 13:19:07 2015
+@@ -18,12 +18,12 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+-#include <net/pfvar.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/ip_var.h>
+ #include <netinet/udp.h>
++#include <net/pfvar.h>
+ #include <arpa/inet.h>
+ #include <err.h>
+ #include <fcntl.h>

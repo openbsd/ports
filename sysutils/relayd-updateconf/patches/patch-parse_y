@@ -1,0 +1,14 @@
+$OpenBSD: patch-parse_y,v 1.1 2015/01/23 13:01:16 naddy Exp $
+--- parse.y.orig	Thu Dec 18 23:03:05 2014
++++ parse.y	Fri Jan 23 13:50:26 2015
+@@ -31,9 +31,9 @@
+ #include <sys/queue.h>
+ #include <sys/ioctl.h>
+ 
++#include <netinet/in.h>
+ #include <net/if.h>
+ #include <net/pfvar.h>
+-#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <arpa/nameser.h>
+ #include <net/route.h>

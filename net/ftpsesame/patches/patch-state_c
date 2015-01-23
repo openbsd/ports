@@ -1,0 +1,17 @@
+$OpenBSD: patch-state_c,v 1.1 2015/01/23 13:01:16 naddy Exp $
+--- state.c.orig	Tue Oct  5 14:07:04 2004
++++ state.c	Fri Jan 23 13:58:56 2015
+@@ -19,12 +19,12 @@
+ #include <sys/tree.h>
+ 
+ #include <net/if.h>
+-#include <net/pfvar.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/tcp.h>
+ #include <netinet/tcp_fsm.h>
++#include <net/pfvar.h>
+ 
+ #include <stdlib.h>
+ #include <string.h>

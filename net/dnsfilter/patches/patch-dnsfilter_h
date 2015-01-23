@@ -1,0 +1,11 @@
+$OpenBSD: patch-dnsfilter_h,v 1.1 2015/01/23 13:01:16 naddy Exp $
+--- dnsfilter.h.orig	Fri Jan 23 01:55:19 2015
++++ dnsfilter.h	Fri Jan 23 13:14:24 2015
+@@ -20,6 +20,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/uio.h>
++#include <netinet/in.h>
+ #include <net/if.h>
+ #include <net/pfvar.h>
+ #include <netinet/in.h>

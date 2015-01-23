@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_pf_c,v 1.1 2015/01/23 13:01:16 naddy Exp $
+--- src/pf.c.orig	Sun Jan 26 09:09:14 2014
++++ src/pf.c	Fri Jan 23 13:22:31 2015
+@@ -29,6 +29,7 @@
+ # include <net/if.h>
+ #endif
+ 
++#include <netinet/in.h>
+ #include <net/pfvar.h>
+ 
+ #ifndef FCNT_NAMES
