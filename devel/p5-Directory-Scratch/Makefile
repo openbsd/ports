@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/17 13:39:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/23 08:42:46 benoit Exp $
 
 COMMENT =	easy-to-use self-cleaning scratch space
 
 MODULES =	cpan
-DISTNAME =	Directory-Scratch-0.16
+DISTNAME =	Directory-Scratch-0.18
 CATEGORIES =	devel
 
 # Perl
