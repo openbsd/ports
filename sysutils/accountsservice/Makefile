@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2014/10/17 06:36:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2015/01/23 08:11:41 ajacoutot Exp $
 
 # XXX fix change password (gnome-cc run-passwd.c: argv[0])
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
-DISTNAME=	accountsservice-0.6.39
+DISTNAME=	accountsservice-0.6.40
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=  accountsservice      0.0      # 0.0
