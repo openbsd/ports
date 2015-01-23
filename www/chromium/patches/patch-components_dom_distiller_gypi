@@ -1,0 +1,11 @@
+$OpenBSD: patch-components_dom_distiller_gypi,v 1.1 2015/01/23 06:34:57 robert Exp $
+--- components/dom_distiller.gypi.orig.port	Thu Jan 22 19:08:21 2015
++++ components/dom_distiller.gypi	Thu Jan 22 19:10:45 2015
+@@ -44,6 +44,7 @@
+             'components_strings.gyp:components_strings',
+             'distilled_page_proto',
+             'pref_registry',
++            '../third_party/dom_distiller_js/dom_distiller_js.gyp:dom_distiller_js_proto',
+           ],
+           'include_dirs': [
+             '..',
