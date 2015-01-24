@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.37 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	network audio player
 DISTNAME=	rplay-3.3.2
@@ -23,7 +23,6 @@ CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
 MAKE_FLAGS=	LIBrplay_VERSION=${LIBrplay_VERSION}
-USE_GROFF =	Yes
 
 post-extract:
 	@cd ${WRKSRC}/doc && mv rplay.texi rplayd.texi

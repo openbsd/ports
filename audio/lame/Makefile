@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/07/09 20:01:38 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -24,7 +24,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 MODULES=	converters/libiconv
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

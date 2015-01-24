@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
@@ -13,7 +13,6 @@ HOMEPAGE=	http://www.xiph.org/vorbis/
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 LIB_DEPENDS=	audio/libao \
 		audio/libogg \

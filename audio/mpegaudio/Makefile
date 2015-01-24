@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/30 21:54:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	MPEG/audio Layer 1 and Layer 2 encoder/decoder
 DISTNAME=	mpegaudio
@@ -10,7 +10,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
 MAKE_ENV=	CC="${CC}"
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-install:

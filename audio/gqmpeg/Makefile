@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/06/04 18:41:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=		front-end to various audio players
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=		audio/mpg321 \
 			devel/desktop-file-utils
 LIB_DEPENDS=		x11/gtk+2
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

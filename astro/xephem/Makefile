@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/01/19 15:44:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/01/24 11:07:56 schwarze Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -17,7 +17,6 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m Xm
 LIB_DEPENDS += x11/openmotif
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE= imake
 
 do-configure:

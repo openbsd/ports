@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.41 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	generic playlist manager for UNIX
 
@@ -24,7 +24,6 @@ MASTER_SITES=	${MASTER_SITE_GNU:=xhippo/}
 LIB_DEPENDS=	x11/gtk+2 \
 		audio/libid3tag
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gtk2
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \

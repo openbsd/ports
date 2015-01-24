@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	split mp3/ogg files without decoding
 DISTNAME=	mp3splt-2.2.3
@@ -21,6 +21,5 @@ LIB_DEPENDS=	audio/libmp3splt
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

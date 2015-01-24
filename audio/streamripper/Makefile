@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	rip shoutcast streams to local mp3s
 
@@ -27,6 +27,5 @@ CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS += ac_cv_lib_faad_NeAACDecDecode2=no
 CONFIGURE_ENV=	CPPLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

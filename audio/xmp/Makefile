@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2014/12/08 20:01:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.56 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=		extended module player
 
@@ -16,7 +16,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmp/}
 WANTLIB += c sndio xmp
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 
 NO_TEST=		Yes
 

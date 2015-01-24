@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -23,7 +23,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pms/}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
 
 # fix up timestamp to keep autotools cascade from triggering
 post-patch:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/11/09 23:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	compact disk input and control library
 
@@ -25,7 +25,6 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	audio/libcddb
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

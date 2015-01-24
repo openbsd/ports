@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/05/22 09:29:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT=	u-law to gsm encoding audio converter and library
 
@@ -21,7 +21,6 @@ MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)' \
 FAKE_FLAGS=	INSTALL_ROOT="${WRKINST}${PREFIX}"
 
 WRKDIST=	${WRKDIR}/gsm-1.0-pl13
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

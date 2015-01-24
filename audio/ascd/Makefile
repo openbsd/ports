@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/04/25 16:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/01/24 11:07:56 schwarze Exp $
 
 COMMENT=		cd player for Afterstep or Window Maker
 DISTNAME=		ascd-0.13.2
@@ -16,7 +16,6 @@ DATAFILES=		ascd-0.13pr6-themes.tgz
 
 LIB_DEPENDS=		audio/libworkman
 
-USE_GROFF=		Yes
 NO_TEST=		Yes
 CONFIGURE_STYLE=	imake
 

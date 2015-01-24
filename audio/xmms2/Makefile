@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/11/06 09:57:00 nigel Exp $
+# $OpenBSD: Makefile,v 1.34 2015/01/24 11:07:57 schwarze Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -37,7 +37,6 @@ MODULES =		lang/python \
 			devel/gettext \
 			perl
 
-USE_GROFF =		Yes
 NO_TEST =		Yes
 
 BUILD_DEPENDS =		devel/pyrex \

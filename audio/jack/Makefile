@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/07/22 10:55:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/01/24 11:07:57 schwarze Exp $
 
 SHARED_ONLY =		Yes
 
@@ -29,7 +29,6 @@ LIB_DEPENDS =		audio/libsndfile \
 
 # uses macros from libtool.m4
 BUILD_DEPENDS =		devel/libtool
-USE_GROFF =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 
 AUTOCONF_VERSION =	2.65
