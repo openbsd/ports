@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.26 2014/12/19 13:43:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/01/24 08:38:16 ajacoutot Exp $
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			0.9.37
+V=			0.9.38
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             5.0      # 935.0
-SHARED_LIBS +=  harfbuzz-icu         0.2      # 935.0
+SHARED_LIBS +=  harfbuzz             5.0      # 938.0
+SHARED_LIBS +=  harfbuzz-icu         0.2      # 938.0
+SHARED_LIBS +=  harfbuzz-gobject     0.0      # 938.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -34,10 +35,13 @@ USE_GMAKE=		Yes
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
-WANTLIB-main += png pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-main += png pthread-stubs xcb xcb-render xcb-shm ffi
+WANTLIB-main += gobject-2.0
 
 WANTLIB-icu += ${WANTLIB}
 WANTLIB-icu += harfbuzz icudata icuuc
+
+BUILB_DEPENDS=		devel/gobject-introspection
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			graphics/cairo \
@@ -48,9 +52,12 @@ LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-graphite2
+			--enable-introspection \
+			--with-graphite2 \
+			--with-gobject
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/check-symbols.sh
+	perl -pi -e 's,for suffix in so,for suffix in so.${LIBharfbuzz_VERSION},,' \
+		${WRKSRC}/src/check-symbols.sh
 
 .include <bsd.port.mk>

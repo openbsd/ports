@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/08/10 08:01:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/01/24 08:38:16 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -12,6 +12,9 @@ include/harfbuzz/hb-face.h
 include/harfbuzz/hb-font.h
 include/harfbuzz/hb-ft.h
 include/harfbuzz/hb-glib.h
+include/harfbuzz/hb-gobject-enums.h
+include/harfbuzz/hb-gobject-structs.h
+include/harfbuzz/hb-gobject.h
 include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-ot-font.h
 include/harfbuzz/hb-ot-layout.h
@@ -24,10 +27,18 @@ include/harfbuzz/hb-shape.h
 include/harfbuzz/hb-unicode.h
 include/harfbuzz/hb-version.h
 include/harfbuzz/hb.h
+lib/girepository-1.0/
+lib/girepository-1.0/HarfBuzz-0.0.typelib
+lib/libharfbuzz-gobject.a
+lib/libharfbuzz-gobject.la
+@lib lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}
 lib/libharfbuzz.a
 lib/libharfbuzz.la
 @lib lib/libharfbuzz.so.${LIBharfbuzz_VERSION}
+lib/pkgconfig/harfbuzz-gobject.pc
 lib/pkgconfig/harfbuzz.pc
+share/gir-1.0/
+share/gir-1.0/HarfBuzz-0.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/harfbuzz/
