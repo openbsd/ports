@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/10 12:55:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/01/24 17:53:05 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -6,7 +6,7 @@ VERSION=		2.1.10
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 

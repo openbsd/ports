@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_geoclue_conf_in,v 1.1 2015/01/24 17:53:05 ajacoutot Exp $
+--- data/geoclue.conf.in.orig	Sat Jan 24 18:51:44 2015
++++ data/geoclue.conf.in	Sat Jan 24 18:52:00 2015
+@@ -65,3 +65,8 @@ users=
+ allowed=true
+ system=false
+ users=
++
++[redshift]
++allowed=true
++system=false
++users=
