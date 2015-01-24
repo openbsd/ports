@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2015/01/22 11:42:24 robert Exp $
+# $OpenBSD: Makefile,v 1.196 2015/01/24 18:07:46 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -176,7 +176,7 @@ do-install:
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
 .for f in libexif.so libffmpegsumo.so libpdf.so protoc icudtl.dat mksnapshot
-	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
+	if [ -f ${BUILDDIR}/${f} ]; then ${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome; fi
 .endfor
 .for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
@@ -186,5 +186,13 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/chromium-browser.desktop \
 		${PREFIX}/share/applications/chromium-browser.desktop
+
+.include <bsd.port.arch.mk>
+
+.if ${ARCH} == i386
+PKG_ARGS= -DI386_DISABLE="@comment "
+.else
+PKG_ARGS= -DI386_DISABLE=""
+.endif
 
 .include <bsd.port.mk>

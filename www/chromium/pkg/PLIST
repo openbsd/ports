@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2015/01/22 11:42:24 robert Exp $
+@comment $OpenBSD: PLIST,v 1.42 2015/01/24 18:07:46 sthen Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -9,7 +9,7 @@ chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/libexif.so
 chrome/libffmpegsumo.so
-chrome/libpdf.so
+${I386_DISABLE}chrome/libpdf.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/ar.pak

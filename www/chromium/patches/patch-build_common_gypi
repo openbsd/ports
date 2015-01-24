@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_common_gypi,v 1.30 2015/01/22 11:16:40 robert Exp $
---- build/common.gypi.orig.port	Thu Dec 18 10:40:58 2014
-+++ build/common.gypi	Sun Dec 21 15:30:56 2014
+$OpenBSD: patch-build_common_gypi,v 1.31 2015/01/24 18:07:46 sthen Exp $
+--- build/common.gypi.orig.port	Wed Jan 21 13:28:14 2015
++++ build/common.gypi	Sat Jan 24 04:26:54 2015
 @@ -94,7 +94,7 @@
  
            'conditions': [
@@ -52,6 +52,15 @@ $OpenBSD: patch-build_common_gypi,v 1.30 2015/01/22 11:16:40 robert Exp $
      ['os_posix==1', {
        'target_defaults': {
          'ldflags': [
+@@ -4477,7 +4485,7 @@
+     }],
+     # FreeBSD-specific options; note that most FreeBSD options are set above,
+     # with Linux.
+-    ['OS=="freebsd"', {
++    ['OS=="openbsd"', {
+       'target_defaults': {
+         'ldflags': [
+           '-Wl,--no-keep-memory',
 @@ -5778,8 +5786,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {

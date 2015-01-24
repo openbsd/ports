@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_chrome_exe_gypi,v 1.5 2015/01/24 18:07:46 sthen Exp $
+--- chrome/chrome_exe.gypi.orig.port	Fri Jan 23 14:55:52 2015
++++ chrome/chrome_exe.gypi	Fri Jan 23 15:00:36 2015
+@@ -425,7 +425,7 @@
+               ],
+             }], # OS=="linux" and chromeos==0 and linux_dump_symbols==1
+             # Android doesn't use pdfium.
+-            ['OS!="android"', {
++            ['OS!="android" and (OS!="openbsd" or target_arch=="x64")', {
+               'dependencies': [
+                 # On Mac, this is done in chrome_dll.gypi.
+                 '../pdf/pdf.gyp:pdf',
