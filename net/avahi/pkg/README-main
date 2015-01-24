@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2014/12/31 11:53:55 jasper Exp $
+$OpenBSD: README-main,v 1.6 2015/01/24 16:56:39 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,4 +13,4 @@ starting avahi.
 
 A rule similar to the one below can be used in pf.conf(5) to pass
 incoming avahi (multicast) traffic:
-    pass in proto udp from any to 224.0.0.251 port mdns allow-opts
+    pass proto udp from any to 224.0.0.251 port mdns allow-opts
