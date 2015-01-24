@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2014/12/10 15:25:05 sebastia Exp $
+$OpenBSD: README,v 1.8 2015/01/24 10:27:46 zhuk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -47,7 +47,8 @@ $OpenBSD: README,v 1.7 2014/12/10 15:25:05 sebastia Exp $
   generate the keys. Note that you should enter your domain name as the
   Common Name for your certificate.
     # openssl req -new -nodes -x509 -newkey rsa:4096 -days 365 \
-      -keyout ${SYSCONFDIR}/ejabberd/myserver.pem -out ${SYSCONFDIR}/ejabberd/myserver.pem
+      -keyout ${SYSCONFDIR}/ejabberd/myserver.pem \
+      -out ${SYSCONFDIR}/ejabberd/myserver.pem
     # chown root:_ejabberd ${SYSCONFDIR}/ejabberd/myserver.pem
     # chmod 640 ${SYSCONFDIR}/ejabberd/myserver.pem
 
