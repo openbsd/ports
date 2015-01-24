@@ -1,0 +1,83 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/24 19:03:47 landry Exp $
+@bin bin/xfdashboard
+@bin bin/xfdashboard-settings
+share/appdata/
+share/appdata/xfdashboard.appdata.xml
+share/applications/xfdashboard-settings.desktop
+share/applications/xfdashboard.desktop
+share/examples/xfdashboard/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/xfdashboard/xfdashboard-autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/xfdashboard-autostart.desktop
+share/icons/hicolor/128x128/apps/xfdashboard.png
+share/icons/hicolor/16x16/apps/xfdashboard.png
+share/icons/hicolor/22x22/apps/xfdashboard.png
+share/icons/hicolor/24x24/apps/xfdashboard.png
+share/icons/hicolor/256x256/apps/xfdashboard.png
+share/icons/hicolor/32x32/apps/xfdashboard.png
+share/icons/hicolor/48x48/apps/xfdashboard.png
+share/icons/hicolor/64x64/apps/xfdashboard.png
+share/icons/hicolor/96x96/apps/xfdashboard.png
+share/themes/xfdashboard/
+share/themes/xfdashboard-auber/
+share/themes/xfdashboard-auber/xfdashboard-1.0/
+share/themes/xfdashboard-auber/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard-auber/xfdashboard-1.0/screenshot-xfdashboard-auber.png
+share/themes/xfdashboard-auber/xfdashboard-1.0/xfdashboard-auber.css
+share/themes/xfdashboard-auber/xfdashboard-1.0/xfdashboard.css
+share/themes/xfdashboard-auber/xfdashboard-1.0/xfdashboard.theme
+share/themes/xfdashboard-auber/xfdashboard-1.0/xfdashboard.xml
+share/themes/xfdashboard-blue/
+share/themes/xfdashboard-blue/xfdashboard-1.0/
+share/themes/xfdashboard-blue/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard-blue.css
+share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard.css
+share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard.theme
+share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard.xml
+share/themes/xfdashboard-dark/
+share/themes/xfdashboard-dark/xfdashboard-1.0/
+share/themes/xfdashboard-dark/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard-dark/xfdashboard-1.0/screenshot-xfdashboard-dark.png
+share/themes/xfdashboard-dark/xfdashboard-1.0/xfdashboard-dark.css
+share/themes/xfdashboard-dark/xfdashboard-1.0/xfdashboard.css
+share/themes/xfdashboard-dark/xfdashboard-1.0/xfdashboard.theme
+share/themes/xfdashboard-dark/xfdashboard-1.0/xfdashboard.xml
+share/themes/xfdashboard-mint/
+share/themes/xfdashboard-mint/xfdashboard-1.0/
+share/themes/xfdashboard-mint/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard-mint/xfdashboard-1.0/screenshot-xfdashboard-mint.png
+share/themes/xfdashboard-mint/xfdashboard-1.0/xfdashboard-mint.css
+share/themes/xfdashboard-mint/xfdashboard-1.0/xfdashboard.css
+share/themes/xfdashboard-mint/xfdashboard-1.0/xfdashboard.theme
+share/themes/xfdashboard-mint/xfdashboard-1.0/xfdashboard.xml
+share/themes/xfdashboard-moranga/
+share/themes/xfdashboard-moranga/xfdashboard-1.0/
+share/themes/xfdashboard-moranga/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard-moranga/xfdashboard-1.0/screenshot-xfdashboard-moranga.png
+share/themes/xfdashboard-moranga/xfdashboard-1.0/xfdashboard-moranga.css
+share/themes/xfdashboard-moranga/xfdashboard-1.0/xfdashboard.css
+share/themes/xfdashboard-moranga/xfdashboard-1.0/xfdashboard.theme
+share/themes/xfdashboard-moranga/xfdashboard-1.0/xfdashboard.xml
+share/themes/xfdashboard-wine/
+share/themes/xfdashboard-wine/xfdashboard-1.0/
+share/themes/xfdashboard-wine/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard-wine/xfdashboard-1.0/screenshot-xfdashboard-wine.png
+share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard-wine.css
+share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard.css
+share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard.theme
+share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard.xml
+share/themes/xfdashboard/xfdashboard-1.0/
+share/themes/xfdashboard/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard/xfdashboard-1.0/screenshot-xfdashboard.png
+share/themes/xfdashboard/xfdashboard-1.0/windows-view.png
+share/themes/xfdashboard/xfdashboard-1.0/xfdashboard.css
+share/themes/xfdashboard/xfdashboard-1.0/xfdashboard.theme
+share/themes/xfdashboard/xfdashboard-1.0/xfdashboard.xml
+share/xfdashboard/
+share/xfdashboard/bindings.xml
+share/xfdashboard/preferences.ui
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

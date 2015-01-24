@@ -1,0 +1,7 @@
+Xfdashboard is a Gnome shell like dashboard for Xfce.
+For easy and quick access without typing in any command into a terminal a
+keyboard shortcut can be defined in Settings -> Keyboard, e.g. the key
+combination <Super>+<Tab> runs the command xfdashboard. It has several views
+which shows different elements like windows of currently running applications
+window list), application menu etc. You can switch between the views using the
+view selector.
