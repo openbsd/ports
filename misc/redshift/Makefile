@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/10 09:39:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/01/24 17:50:42 ajacoutot Exp $
 
 COMMENT=		automatic color temperature adjustment
 
 V=			1.10
 DISTNAME=		redshift-${V}
+REVISION=		0
 
 GH_PROJECT=		redshift
 GH_ACCOUNT=		jonls
@@ -32,6 +33,7 @@ LIB_DEPENDS=		devel/glib2
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
+			geo/geoclue2 \
 			x11/gtk+2,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
