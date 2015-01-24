@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/06/03 20:41:36 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2015/01/24 10:56:43 zhuk Exp $
 @bin bin/opencv_createsamples
 @bin bin/opencv_haartraining
 @bin bin/opencv_performance
@@ -214,7 +214,7 @@ lib/python${MODPY_VERSION}/site-packages/cv2.so
 share/OpenCV/
 share/OpenCV/OpenCVConfig-version.cmake
 share/OpenCV/OpenCVConfig.cmake
-share/OpenCV/OpenCVModules-release.cmake
+share/OpenCV/OpenCVModules${MODCMAKE_BUILD_SUFFIX}
 share/OpenCV/OpenCVModules.cmake
 share/OpenCV/haarcascades/
 share/OpenCV/haarcascades/haarcascade_eye.xml

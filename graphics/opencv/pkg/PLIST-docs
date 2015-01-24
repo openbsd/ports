@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.6 2014/09/29 15:09:12 dcoppa Exp $
+@comment $OpenBSD: PLIST-docs,v 1.7 2015/01/24 10:56:43 zhuk Exp $
 share/OpenCV/samples/
 share/OpenCV/samples/c/
 share/OpenCV/samples/c/JCB.png
@@ -426,8 +426,8 @@ share/doc/OpenCV/html/.doctrees/doc/tutorials/viz/widget_pose/
 share/doc/OpenCV/html/.doctrees/doc/tutorials/viz/widget_pose/widget_pose.doctree
 share/doc/OpenCV/html/.doctrees/doc/user_guide/
 share/doc/OpenCV/html/.doctrees/doc/user_guide/ug_features2d.doctree
-share/doc/OpenCV/html/.doctrees/doc/user_guide/ug_highgui.doctree
 share/doc/OpenCV/html/.doctrees/doc/user_guide/ug_intelperc.doctree
+share/doc/OpenCV/html/.doctrees/doc/user_guide/ug_kinect.doctree
 share/doc/OpenCV/html/.doctrees/doc/user_guide/ug_mat.doctree
 share/doc/OpenCV/html/.doctrees/doc/user_guide/ug_traincascade.doctree
 share/doc/OpenCV/html/.doctrees/doc/user_guide/user_guide.doctree
@@ -983,6 +983,7 @@ share/doc/OpenCV/html/_images/fisherface_0.png
 share/doc/OpenCV/html/_images/fisherface_reconstruction_0.png
 share/doc/OpenCV/html/_images/fisherface_reconstruction_opencv.png
 share/doc/OpenCV/html/_images/fisherfaces_opencv.png
+share/doc/OpenCV/html/_images/fisheye_undistorted.jpg
 share/doc/OpenCV/html/_images/gccegg-65.jpg
 share/doc/OpenCV/html/_images/general.jpg
 share/doc/OpenCV/html/_images/global_view_point.png
@@ -1298,8 +1299,8 @@ share/doc/OpenCV/html/_sources/doc/tutorials/viz/widget_pose/
 share/doc/OpenCV/html/_sources/doc/tutorials/viz/widget_pose/widget_pose.txt
 share/doc/OpenCV/html/_sources/doc/user_guide/
 share/doc/OpenCV/html/_sources/doc/user_guide/ug_features2d.txt
-share/doc/OpenCV/html/_sources/doc/user_guide/ug_highgui.txt
 share/doc/OpenCV/html/_sources/doc/user_guide/ug_intelperc.txt
+share/doc/OpenCV/html/_sources/doc/user_guide/ug_kinect.txt
 share/doc/OpenCV/html/_sources/doc/user_guide/ug_mat.txt
 share/doc/OpenCV/html/_sources/doc/user_guide/ug_traincascade.txt
 share/doc/OpenCV/html/_sources/doc/user_guide/user_guide.txt
@@ -1708,8 +1709,8 @@ share/doc/OpenCV/html/doc/tutorials/viz/widget_pose/
 share/doc/OpenCV/html/doc/tutorials/viz/widget_pose/widget_pose.html
 share/doc/OpenCV/html/doc/user_guide/
 share/doc/OpenCV/html/doc/user_guide/ug_features2d.html
-share/doc/OpenCV/html/doc/user_guide/ug_highgui.html
 share/doc/OpenCV/html/doc/user_guide/ug_intelperc.html
+share/doc/OpenCV/html/doc/user_guide/ug_kinect.html
 share/doc/OpenCV/html/doc/user_guide/ug_mat.html
 share/doc/OpenCV/html/doc/user_guide/ug_traincascade.html
 share/doc/OpenCV/html/doc/user_guide/user_guide.html

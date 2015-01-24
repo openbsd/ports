@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/09/30 17:18:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2015/01/24 10:56:43 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 # XXX no i386 due to often JDK build failures
@@ -10,13 +10,11 @@ COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			2.4.9
+V =			2.4.10
 DISTNAME =		opencv-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
-REVISION-main =		1
-REVISION-docs =		0
 
 HOMEPAGE =		http://www.opencv.org/
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
@@ -99,7 +97,14 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/png \
 			graphics/tiff
 LIB_DEPENDS-docs =
-LIB_DEPENDS-java =	${BUILD_PKGPATH},-main
+LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
+
+# XXX PIE cannot be produced due to problems with inline assembly.
+# Since OpenCV is mostly used as a library, switch to PIC.
+.if ${ARCH:Mi386}
+CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
+			CXXFLAGS="${CXXFLAGS} -fPIC"
+.endif
 
 # ATM opencv requires V4L1 compat, ask them to change it,
 # then see WITH_V4L below.

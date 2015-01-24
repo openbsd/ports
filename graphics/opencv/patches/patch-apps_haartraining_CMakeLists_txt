@@ -1,7 +1,7 @@
-$OpenBSD: patch-apps_haartraining_CMakeLists_txt,v 1.2 2014/09/19 22:35:51 zhuk Exp $
+$OpenBSD: patch-apps_haartraining_CMakeLists_txt,v 1.3 2015/01/24 10:56:43 zhuk Exp $
 Fix linking.
---- apps/haartraining/CMakeLists.txt.orig	Fri Apr 11 14:15:26 2014
-+++ apps/haartraining/CMakeLists.txt	Sat Sep 20 01:51:33 2014
+--- apps/haartraining/CMakeLists.txt.orig	Wed Oct  1 09:33:36 2014
++++ apps/haartraining/CMakeLists.txt	Sun Dec 21 20:16:55 2014
 @@ -14,8 +14,6 @@ if(WIN32)
    link_directories(${CMAKE_CURRENT_BINARY_DIR})
  endif()
@@ -11,7 +11,7 @@ Fix linking.
  # -----------------------------------------------------------
  #  Library
  # -----------------------------------------------------------
-@@ -39,6 +37,8 @@ set_target_properties(opencv_haartraining_engine PROPE
+@@ -42,6 +40,8 @@ set_target_properties(opencv_haartraining_engine PROPE
                        INSTALL_NAME_DIR lib
                       )
  
@@ -20,7 +20,7 @@ Fix linking.
  # -----------------------------------------------------------
  #  haartraining
  # -----------------------------------------------------------
-@@ -47,6 +47,7 @@ add_executable(opencv_haartraining cvhaartraining.h ha
+@@ -50,6 +50,7 @@ add_executable(opencv_haartraining cvhaartraining.h ha
  set_target_properties(opencv_haartraining PROPERTIES
                        DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
                        OUTPUT_NAME "opencv_haartraining")
@@ -28,7 +28,7 @@ Fix linking.
  
  # -----------------------------------------------------------
  #  createsamples
-@@ -56,6 +57,7 @@ add_executable(opencv_createsamples cvhaartraining.h c
+@@ -59,6 +60,7 @@ add_executable(opencv_createsamples cvhaartraining.h c
  set_target_properties(opencv_createsamples PROPERTIES
                        DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
                        OUTPUT_NAME "opencv_createsamples")
@@ -36,7 +36,7 @@ Fix linking.
  
  # -----------------------------------------------------------
  #  performance
-@@ -64,6 +66,7 @@ add_executable(opencv_performance performance.cpp)
+@@ -67,6 +69,7 @@ add_executable(opencv_performance performance.cpp)
  set_target_properties(opencv_performance PROPERTIES
                        DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
                        OUTPUT_NAME "opencv_performance")
