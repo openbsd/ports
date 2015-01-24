@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:42:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/24 09:48:51 benoit Exp $
 
 COMMENT=	Catalyst views using Mason components
 
 MODULES=	cpan
-DISTNAME=	Catalyst-View-Mason-0.18
+DISTNAME =	Catalyst-View-Mason-0.19
 CATEGORIES=	www
 
 # Artistic + GPL
