@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2015/01/24 13:46:44 schwarze Exp $
 
 COMMENT=	communication package for X11
 
@@ -19,7 +19,6 @@ CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/seyon
 
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

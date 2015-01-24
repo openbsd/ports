@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/11/18 10:17:18 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2015/01/24 13:46:44 schwarze Exp $
 
 COMMENT=	convert Excel and PowerPoint to HTML
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --enable-static ${CONFIGURE_SHARED}
 

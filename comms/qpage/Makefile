@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2015/01/24 13:46:44 schwarze Exp $
 
 COMMENT=	SNPP client/server (alphanum pager software)
 
@@ -14,7 +14,6 @@ WANTLIB=		c
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

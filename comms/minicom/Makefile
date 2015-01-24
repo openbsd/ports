@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/08/21 08:23:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2015/01/24 13:46:44 schwarze Exp $
 
 COMMENT=		MS-DOS Telix-like serial communication program
 
@@ -24,7 +24,6 @@ CONFIGURE_ARGS=		--enable-cfg-dir=${SYSCONFDIR}/minicom \
 			--enable-lock-dir=/var/spool/lock \
 			--enable-dfl-port=/dev/cua00 \
 			--enable-dfl-baud=9600
-USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/minicom

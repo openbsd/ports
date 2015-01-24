@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/03/26 18:36:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/01/24 13:46:44 schwarze Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -51,7 +51,6 @@ LIB_DEPENDS-python=	${MODLIBICONV_LIB_DEPENDS} \
 			devel/boost
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
