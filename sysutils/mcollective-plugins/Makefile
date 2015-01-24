@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/29 13:41:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/01/24 17:09:39 sebastia Exp $
 
 SUBDIR =
 SUBDIR += filemgr-agent
+SUBDIR += nrpe-agent
 SUBDIR += package-agent
 SUBDIR += puppet-agent
 SUBDIR += service-agent
