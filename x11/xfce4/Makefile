@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/12/30 11:48:53 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2015/01/24 19:04:17 landry Exp $
 
      SUBDIR =
      SUBDIR += exo
@@ -55,6 +55,7 @@
      SUBDIR += xfce4-wmdock
      SUBDIR += xfce4-xkb
      SUBDIR += xfconf
+     SUBDIR += xfdashboard
      SUBDIR += xfdesktop
      SUBDIR += xfmpc
      SUBDIR += xfprint
