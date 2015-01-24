@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/24 11:15:04 benoit Exp $
 
 COMMENT=	perl module to provide a DAV server
 
 MODULES=	cpan
-DISTNAME=	Net-DAV-Server-1.302
+DISTNAME =	Net-DAV-Server-1.305
 CATEGORIES=	net
 
 # perl
