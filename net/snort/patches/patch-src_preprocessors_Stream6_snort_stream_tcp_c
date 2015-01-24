@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_preprocessors_Stream6_snort_stream_tcp_c,v 1.1 2015/01/24 03:52:53 lteo Exp $
+--- src/preprocessors/Stream6/snort_stream_tcp.c.orig	Fri Oct 10 21:17:45 2014
++++ src/preprocessors/Stream6/snort_stream_tcp.c	Sat Oct 25 16:54:16 2014
+@@ -8161,7 +8161,7 @@ static int ProcessTcp(SessionControlBlock *scb, Packet
+                         char src_addr[17];
+                         char dst_addr[17];
+                         memset((char *)timestamp, 0, TIMEBUF_SIZE);
+-                        ts_print((struct timeval *) &p->pkth->ts, timestamp);
++                        ts_print((struct sf_timeval32 *) &p->pkth->ts, timestamp);
+                         SnortSnprintf(src_addr, 17, "%s",
+                             inet_ntoa(GET_SRC_ADDR(p)));
+                         SnortSnprintf(dst_addr, 17, "%s",

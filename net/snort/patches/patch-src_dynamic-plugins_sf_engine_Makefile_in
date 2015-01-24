@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_dynamic-plugins_sf_engine_Makefile_in,v 1.7 2014/01/30 03:23:48 lteo Exp $
---- src/dynamic-plugins/sf_engine/Makefile.in.orig	Tue Dec 31 19:30:40 2013
-+++ src/dynamic-plugins/sf_engine/Makefile.in	Thu Jan 23 23:02:17 2014
-@@ -371,7 +371,7 @@ top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_dynamic-plugins_sf_engine_Makefile_in,v 1.8 2015/01/24 03:52:53 lteo Exp $
+--- src/dynamic-plugins/sf_engine/Makefile.in.orig	Mon Oct 13 17:43:44 2014
++++ src/dynamic-plugins/sf_engine/Makefile.in	Sat Oct 25 16:47:53 2014
+@@ -377,7 +377,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
- lib_LTLIBRARIES = libsf_engine.la
+ dynamicengine_LTLIBRARIES = libsf_engine.la
+ dynamicenginedir = $(libdir)/snort_dynamicengine
 -libsf_engine_la_LDFLAGS = -export-dynamic -module @XCCFLAGS@
 +libsf_engine_la_LDFLAGS = -export-dynamic -module -avoid-version @XCCFLAGS@
- BUILT_SOURCES = \
- sfhashfcn.c \
- sfhashfcn.h \
+ @BUILD_OPENSSL_MD5_TRUE@OPENSSL_MD5 = \
+ @BUILD_OPENSSL_MD5_TRUE@    md5.c md5.h 
+ 

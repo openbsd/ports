@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_log_c,v 1.6 2014/01/30 03:23:48 lteo Exp $
---- src/log.c.orig	Tue Dec 31 17:07:53 2013
-+++ src/log.c	Thu Jan 23 23:07:23 2014
+$OpenBSD: patch-src_log_c,v 1.7 2015/01/24 03:52:53 lteo Exp $
+--- src/log.c.orig	Sat Feb 22 03:45:22 2014
++++ src/log.c	Sat Oct 25 16:32:17 2014
 @@ -457,7 +457,7 @@ void PrintIPPkt(FILE * fp, int type, Packet * p)
      DEBUG_WRAP(DebugMessage(DEBUG_LOG, "PrintIPPkt type = %d\n", type););
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_log_c,v 1.6 2014/01/30 03:23:48 lteo Exp $
  
      /* dump the timestamp */
      fwrite(timestamp, strlen(timestamp), 1, fp);
-@@ -1944,7 +1944,7 @@ void PrintEapolPkt(FILE * fp, Packet * p)
+@@ -1955,7 +1955,7 @@ void PrintEapolPkt(FILE * fp, Packet * p)
  
  
      memset((char *) timestamp, 0, TIMEBUF_SIZE);
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_log_c,v 1.6 2014/01/30 03:23:48 lteo Exp $
  
      /* dump the timestamp */
      fwrite(timestamp, strlen(timestamp), 1, fp);
-@@ -2118,7 +2118,7 @@ void PrintWifiPkt(FILE * fp, Packet * p)
+@@ -2129,7 +2129,7 @@ void PrintWifiPkt(FILE * fp, Packet * p)
  
  
      memset((char *) timestamp, 0, TIMEBUF_SIZE);

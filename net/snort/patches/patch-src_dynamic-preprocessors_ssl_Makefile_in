@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_dynamic-preprocessors_ssl_Makefile_in,v 1.9 2014/01/30 03:23:48 lteo Exp $
---- src/dynamic-preprocessors/ssl/Makefile.in.orig	Tue Dec 31 19:30:43 2013
-+++ src/dynamic-preprocessors/ssl/Makefile.in	Thu Jan 23 23:02:19 2014
-@@ -328,7 +328,7 @@ top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_dynamic-preprocessors_ssl_Makefile_in,v 1.10 2015/01/24 03:52:53 lteo Exp $
+--- src/dynamic-preprocessors/ssl/Makefile.in.orig	Mon Oct 13 17:43:45 2014
++++ src/dynamic-preprocessors/ssl/Makefile.in	Sat Oct 25 16:52:09 2014
+@@ -333,7 +333,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
- lib_LTLIBRARIES = libsf_ssl_preproc.la
+ dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
+ dynamicpreprocessor_LTLIBRARIES = libsf_ssl_preproc.la
 -libsf_ssl_preproc_la_LDFLAGS = -export-dynamic -module @XCCFLAGS@
 +libsf_ssl_preproc_la_LDFLAGS = -export-dynamic -module -avoid-version @XCCFLAGS@
  @SO_WITH_STATIC_LIB_TRUE@libsf_ssl_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_ssl_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -535,7 +535,7 @@ distdir: $(DISTFILES)
+@@ -546,7 +546,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
 -all-am: Makefile $(LTLIBRARIES) all-local
 +all-am: Makefile $(LTLIBRARIES)
  installdirs:
- 	for dir in "$(DESTDIR)$(libdir)"; do \
+ 	for dir in "$(DESTDIR)$(dynamicpreprocessordir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
