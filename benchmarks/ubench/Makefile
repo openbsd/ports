@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/01/24 12:20:38 schwarze Exp $
 
 COMMENT=	Unix benchmark utility
 
@@ -19,7 +19,6 @@ CONFIGURE_STYLE=	simple
 ALL_TARGET=	default
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/07 21:31:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2015/01/24 12:20:38 schwarze Exp $
 
 COMMENT =		web server performance testing tool
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://httperf.googlecode.com/files/
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 WANTLIB +=		c crypto m ssl
