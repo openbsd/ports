@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/01/02 11:31:49 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/01/25 12:09:51 sebastia Exp $
 bin/GWorkspace
 bin/MDFinder
 bin/Recycler
@@ -888,6 +888,21 @@ libexec/GNUstep/gedit.app/Resources/
 libexec/GNUstep/gedit.app/Resources/Info-gnustep.plist
 libexec/GNUstep/gedit.app/gedit
 libexec/GNUstep/gedit.app/gedit.png
+libexec/GNUstep/gimp.app/
+libexec/GNUstep/gimp.app/FileIcon_.gif.tiff
+libexec/GNUstep/gimp.app/FileIcon_.jpg.tiff
+libexec/GNUstep/gimp.app/FileIcon_.png.tiff
+libexec/GNUstep/gimp.app/FileIcon_.tga.tiff
+libexec/GNUstep/gimp.app/FileIcon_.tif.tiff
+libexec/GNUstep/gimp.app/FileIcon_.tiff.tiff
+libexec/GNUstep/gimp.app/FileIcon_.xcf.tiff
+libexec/GNUstep/gimp.app/FileIcon_.xpm.tiff
+libexec/GNUstep/gimp.app/Resources/
+libexec/GNUstep/gimp.app/Resources/Info-gnustep.plist
+libexec/GNUstep/gimp.app/file-dot-xbm.xpm
+libexec/GNUstep/gimp.app/genericImage.tiff
+libexec/GNUstep/gimp.app/gimp
+libexec/GNUstep/gimp.app/gimp.tiff
 libexec/GNUstep/gnumeric.app/
 libexec/GNUstep/gnumeric.app/FileIcon_.gnumeric.png
 libexec/GNUstep/gnumeric.app/FileIcon_.xls.png
