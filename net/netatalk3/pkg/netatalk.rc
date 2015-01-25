@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: netatalk.rc,v 1.1.1.1 2015/01/25 09:33:53 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/netatalk"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

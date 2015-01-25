@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_atalk_acl_h,v 1.1.1.1 2015/01/25 09:33:53 ajacoutot Exp $
+--- include/atalk/acl.h.orig	Sat Jan 24 14:55:35 2015
++++ include/atalk/acl.h	Sat Jan 24 14:55:50 2015
+@@ -61,6 +61,7 @@ extern int remove_acl_vfs(const char *name);
+ #else /* HAVE_ACLS=no */
+ 
+ #define O_NETATALK_ACL 0
++#define O_IGNORE 0
+ #define chmod_acl chmod
+ 
+ #endif /* HAVE_ACLS */

@@ -1,0 +1,15 @@
+$OpenBSD: patch-etc_netatalk_Makefile_in,v 1.1.1.1 2015/01/25 09:33:53 ajacoutot Exp $
+
+Pick-up libevent2 from LOCALBASE.
+
+--- etc/netatalk/Makefile.in.orig	Sat Jan 24 15:15:49 2015
++++ etc/netatalk/Makefile.in	Sat Jan 24 15:16:34 2015
+@@ -63,7 +63,7 @@ sbin_PROGRAMS = netatalk$(EXEEXT)
+ @USE_BUILTIN_LIBEVENT_TRUE@	$(top_builddir)/libevent/libevent.la
+ 
+ @USE_BUILTIN_LIBEVENT_FALSE@am__append_3 = @LIBEVENT_CFLAGS@
+-@USE_BUILTIN_LIBEVENT_FALSE@am__append_4 = @LIBEVENT_LDFLAGS@ -levent
++@USE_BUILTIN_LIBEVENT_FALSE@am__append_4 = @LIBEVENT_LDFLAGS@ $$(pkg-config --libs libevent)
+ subdir = etc/netatalk
+ DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(top_srcdir)/depcomp

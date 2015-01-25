@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_afp_conf_tmpl,v 1.1.1.1 2015/01/25 09:33:53 ajacoutot Exp $
+--- config/afp.conf.tmpl.orig	Sat Jan 24 16:52:44 2015
++++ config/afp.conf.tmpl	Sat Jan 24 16:54:10 2015
+@@ -4,9 +4,15 @@
+ 
+ [Global]
+ ; Global server settings
++; mimic model = TimeCapsule6,106
+ 
+ ; [Homes]
+ ; basedir regex = /xxxx
+ 
+ ; [My AFP Volume]
+ ; path = /path/to/volume
++
++; [TimeMachine]
++; path = /path/to/backups
++; valid users = @users
++; time machine = yes

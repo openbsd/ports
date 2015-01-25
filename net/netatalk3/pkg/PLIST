@@ -1,0 +1,96 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/25 09:33:53 ajacoutot Exp $
+@conflict jday-*
+@bin bin/ad
+@bin bin/afpldaptest
+@mode 4755
+@owner root
+@bin bin/afppasswd
+@mode
+@owner
+bin/afpstats
+bin/apple_dump
+bin/asip-status.pl
+bin/cnid2_create
+@bin bin/dbd
+bin/macusers
+bin/netatalk-config
+include/atalk/
+include/atalk/acl.h
+include/atalk/adouble.h
+include/atalk/afp.h
+include/atalk/bstrlib.h
+include/atalk/cnid.h
+include/atalk/compat.h
+include/atalk/dictionary.h
+include/atalk/ea.h
+include/atalk/globals.h
+include/atalk/hash.h
+include/atalk/iniparser.h
+include/atalk/list.h
+include/atalk/logger.h
+include/atalk/netatalk_conf.h
+include/atalk/paths.h
+include/atalk/standards.h
+include/atalk/uam.h
+include/atalk/unicode.h
+include/atalk/unix.h
+include/atalk/util.h
+include/atalk/vfs.h
+include/atalk/volume.h
+lib/libatalk.la
+@lib lib/libatalk.so.${LIBatalk_VERSION}
+lib/netatalk/
+lib/netatalk/uams_clrtxt.so
+lib/netatalk/uams_dhx.so
+lib/netatalk/uams_dhx2.so
+lib/netatalk/uams_dhx2_passwd.so
+lib/netatalk/uams_dhx_passwd.so
+lib/netatalk/uams_guest.so
+lib/netatalk/uams_passwd.so
+lib/netatalk/uams_randnum.so
+@man man/man1/ad.1
+@man man/man1/afpldaptest.1
+@man man/man1/afppasswd.1
+@man man/man1/afpstats.1
+@man man/man1/apple_dump.1
+@man man/man1/asip-status.pl.1
+@man man/man1/dbd.1
+@man man/man1/macusers.1
+@man man/man1/netatalk-config.1
+@man man/man1/uniconv.1
+@man man/man5/afp.conf.5
+@man man/man5/afp_signature.conf.5
+@man man/man5/afp_voluuid.conf.5
+@man man/man5/extmap.conf.5
+@man man/man8/afpd.8
+@man man/man8/cnid_dbd.8
+@man man/man8/cnid_metad.8
+@man man/man8/netatalk.8
+@bin sbin/afpd
+@bin sbin/cnid_dbd
+@bin sbin/cnid_metad
+@bin sbin/netatalk
+share/aclocal/netatalk.m4
+share/examples/netatalk/
+share/examples/netatalk/dbus-1/
+share/examples/netatalk/dbus-1/system.d/
+share/examples/netatalk/dbus-1/system.d/netatalk-dbus.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/netatalk-dbus.conf
+share/examples/netatalk/netatalk/
+@sample ${SYSCONFDIR}/netatalk/
+share/examples/netatalk/netatalk/afp.conf
+@sample ${SYSCONFDIR}/netatalk/afp.conf
+share/examples/netatalk/netatalk/dbus-session.conf
+@sample ${SYSCONFDIR}/netatalk/dbus-session.conf
+share/examples/netatalk/netatalk/extmap.conf
+@sample ${SYSCONFDIR}/netatalk/extmap.conf
+share/examples/netatalk/var/
+share/examples/netatalk/var/netatalk/
+@sample ${LOCALSTATEDIR}/netatalk/
+share/examples/netatalk/var/netatalk/CNID/
+@sample ${LOCALSTATEDIR}/netatalk/CNID/
+share/examples/netatalk/var/netatalk/CNID/README
+@sample ${LOCALSTATEDIR}/netatalk/CNID/README
+share/examples/netatalk/var/netatalk/README
+@sample ${LOCALSTATEDIR}/netatalk/README
+@rcscript ${RCDIR}/netatalk
