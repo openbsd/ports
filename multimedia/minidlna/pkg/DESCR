@@ -1,3 +1,3 @@
-MiniDLNA is lightweight server software written in C, capable of
-serving media files to DLNA/UPnP-AV clients (televisions, tablets,
-etc).
+ReadyMedia (formerly known as MiniDLNA) is simple media server software,
+written in C, with the aim of being fully compliant with DLNA/UPnP-AV clients
+(televisions, tablets, etc).
