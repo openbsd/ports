@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2015/01/25 23:22:46 naddy Exp $
 
 COMMENT = 	Atmel AVR 32-bit gcc
 V = 		4.4.7
@@ -21,6 +21,7 @@ CONFIGURE_ARGS = 	--disable-libssp \
 			--with-dwarf2 \
 			--enable-version-specific-runtime-libs \
 			--with-newlib
+MAKE_ENV =		lt_cv_path_SED=/usr/bin/sed
 WRKDIST = 		${WRKDIR}/gcc-${V}
 BUILD_DEPENDS = 	devel/avr32/binutils \
 			devel/avr32/newlib
