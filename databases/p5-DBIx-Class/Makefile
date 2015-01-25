@@ -1,70 +1,91 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/01/25 20:08:33 afresh1 Exp $
 
-COMMENT=	object-oriented database access
+COMMENT =	extensible and flexible object relational mapper
 
-MODULES=	cpan
-DISTNAME=	DBIx-Class-0.08196
-REVISION=	0
-CATEGORIES=	databases devel
+MODULES =	cpan databases/postgresql
+DISTNAME =	DBIx-Class-0.082810
+CATEGORIES =	databases devel
+
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_ARGS=--skipdeps
+CONFIGURE_ARGS =	--skipdeps
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-RUN_DEPENDS=	devel/p5-Carp-Clan \
-		devel/p5-Class-Accessor-Grouped \
-		devel/p5-Class-C3-Componentised>=1.0009 \
-		devel/p5-Class-C3>=0.13 \
-		devel/p5-Class-Data-Accessor \
-		devel/p5-Class-Inspector \
-		devel/p5-Config-Any \
-		devel/p5-Context-Preserve \
-		devel/p5-Data-Compare \
-		devel/p5-Data-Dumper-Concise \
+RUN_DEPENDS =	databases/p5-DBI>=1.57 \
 		databases/p5-Data-Page>=2.00 \
-		databases/p5-DBI \
-		converters/p5-JSON \
-		devel/p5-Hash-Merge \
-		devel/p5-Module-Find \
-		devel/p5-namespace-clean \
-		devel/p5-Path-Class \
-		devel/p5-Scope-Guard \
-		databases/p5-SQL-Abstract \
-		databases/p5-SQL-Abstract-Limit \
-		devel/p5-Sub-Name \
-		devel/p5-Try-Tiny \
-		devel/p5-Variable-Magic
+		databases/p5-SQL-Abstract>=1.77 \
+		devel/p5-Class-Accessor-Grouped>=0.10010 \
+		devel/p5-Class-C3-Componentised>=1.0009 \
+		devel/p5-Class-Inspector>=1.24 \
+		devel/p5-Config-Any>=0.20 \
+		devel/p5-Context-Preserve>=0.01 \
+		devel/p5-Data-Compare>=1.22 \
+		devel/p5-Data-Dumper-Concise>=2.020 \
+		devel/p5-Devel-GlobalDestruction>=0.09 \
+		devel/p5-Hash-Merge>=0.12 \
+		devel/p5-MRO-Compat>=0.12 \
+		devel/p5-Module-Find>=0.07 \
+		devel/p5-Moo>=1.002 \
+		devel/p5-Path-Class>=0.18 \
+		devel/p5-Scope-Guard>=0.03 \
+		devel/p5-Sub-Name>=0.04 \
+		devel/p5-Try-Tiny>=0.07 \
+		devel/p5-namespace-clean>=0.24
 
-TEST_DEPENDS=databases/p5-DBD-SQLite \
-		devel/p5-PadWalker \
-		devel/p5-Test-Memory-Cycle \
-		devel/p5-Test-Warn \
-		textproc/p5-Text-CSV_XS \
-		devel/p5-DateTime-Format-MySQL \
-		databases/p5-SQL-Translator
+TEST_DEPENDS =	databases/p5-DBD-SQLite>=1.29 \
+		devel/p5-Package-Stash>=0.28 \
+		devel/p5-Test-Deep>=0.101 \
+		devel/p5-Test-Exception>=0.31 \
+		devel/p5-Test-Warn>=0.21
 
-MAKE_ENV=	DATA_DUMPER_TEST=Yes \
-		DBICTEST_FORK_STRESS=Yes \
-		RELEASE_TESTING=Yes \
+# Optional depends to avoid skipping tests
+TEST_DEPENDS +=	converters/p5-JSON-Any \
+		devel/p5-Getopt-Long-Descriptive \
+		devel/p5-Module-Pluggable \
+		devel/p5-Sys-SigAction \
+		math/p5-Math-Base36 \
+		textproc/p5-Text-CSV \
+		databases/p5-Class-DBI
+
+# More tests can be enabled by porting
+# * p5-Class-DBI-Plugin-DeepAbstractSearch
+# * p5-Cpanel-JSON-XS
+# * p5-MooseX-Types-JSON
+
+MAKE_ENV =	RELEASE_TESTING=Yes \
 		TEST_POD=Yes
 
-TEST_PG ?=	No
-.if ${TEST_PG:L:Myes}
-MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=test;host=localhost' \
-		DBICTEST_PG_USER=postgres \
-		DBICTEST_PG_PASS=
-TEST_DEPENDS += databases/p5-DBD-Pg
-.endif
+DATABASE =	dbix_class_test
 
-TEST_MYSQL ?=	No
-.if ${TEST_MYSQL:L:Myes}
-MAKE_ENV +=	DBICTEST_MYSQL_DSN='dbi:mysql:database=test;host=localhost' \
+MODPOSTGRESQL_TEST_DBNAME =    ${DATABASE}
+MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=${DATABASE}' \
+		DBICTEST_PG_USER=${USER} \
+		DBICTEST_PG_PASS=1
+TEST_DEPENDS += databases/p5-DBD-Pg
+
+MYSQLDATA =	${WRKDIR}/mysql-data
+MYSQLSOCKET =	${WRKDIR}/mysql.sock
+MYSQLADMIN =	${LOCALBASE}/bin/mysqladmin --socket=${MYSQLSOCKET} --user=root
+
+MAKE_ENV +=	DBICTEST_MYSQL_DSN='dbi:mysql:database=${DATABASE};mysql_socket=${MYSQLSOCKET}' \
 		DBICTEST_MYSQL_USER=root \
 		DBICTEST_MYSQL_PASS=
-TEST_DEPENDS += databases/p5-DBD-mysql
-.endif
+TEST_DEPENDS += databases/p5-DBD-mysql \
+		databases/mariadb,-server
+
+do-test:
+	-test -e ${MYSQLSOCKET} && ${MYSQLADMIN} shutdown
+	rm -Rf ${MYSQLDATA}
+	${LOCALBASE}/bin/mysql_install_db --datadir=${MYSQLDATA}
+	${LOCALBASE}/bin/mysqld_safe --datadir=${MYSQLDATA} \
+	    --pid-file=${WRKDIR}/mysql.pid --socket=${MYSQLSOCKET} &
+	while [ "$$t" -lt 5 ] && ! ${MYSQLADMIN} status 2>/dev/null; do \
+		sleep 1; t=$$(($$t+1)); \
+	done
+	${MYSQLADMIN} create ${DATABASE} || (${MYSQLADMIN} shutdown; exit 1)
+	trap '${MYSQLADMIN} shutdown' 0 1 2 15; \
+	${MODPOSTGRESQL_TEST_TARGET}
 
 .include <bsd.port.mk>
