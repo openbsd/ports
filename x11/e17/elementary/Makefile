@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2015/01/02 14:58:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/01/25 07:46:44 rpe Exp $
 
 COMMENT =		basic widget set, based on EFL
 
-VERSION =		1.7.9
+VERSION =		1.7.10
 DISTNAME =		elementary-${VERSION}
-REVISION = 		3
 
-SHARED_LIBS +=	elementary                0.0 # 8.6
+SHARED_LIBS +=	elementary                1.0 # 8.10
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -30,13 +29,13 @@ MODE17_PURGE_LA =	lib/edje/modules lib/elementary/modules
 
 USE_GMAKE =		Yes
 
-LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.9v1 \
-			x11/e17/edje>=1.7.9v2 \
-			x11/e17/eet>=1.7.9v2 \
-			x11/e17/efreet>=1.7.9v2 \
-			x11/e17/eio>=1.7.9 \
-			x11/e17/emotion>=1.7.9 \
-			x11/e17/ethumb>=1.7.9 \
+LIB_DEPENDS +=		x11/e17/e_dbus>=1.7.10v1 \
+			x11/e17/edje>=1.7.10v2 \
+			x11/e17/eet>=1.7.10v2 \
+			x11/e17/efreet>=1.7.10v2 \
+			x11/e17/eio>=1.7.10 \
+			x11/e17/emotion>=1.7.10 \
+			x11/e17/ethumb>=1.7.10 \
 			${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_ARGS +=	--disable-doc

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2013/12/06 13:16:45 dlg Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/25 07:46:44 rpe Exp $
 
 COMMENT =		EFL API for data types
 
-VERSION = 		1.7.9
+VERSION = 		1.7.10
 DISTNAME =		eina-${VERSION}
 EPOCH =			1
 
-SHARED_LIBS +=	eina                 3.0      # 8.6
+SHARED_LIBS += eina                 4.0      # 8.10
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,7 +26,5 @@ CONFIGURE_ARGS =	--disable-doc \
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
-TEST_TARGET = 		check-local
 
 .include <bsd.port.mk>

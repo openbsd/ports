@@ -1,30 +1,28 @@
-# $OpenBSD: Makefile,v 1.43 2015/01/02 14:58:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2015/01/25 07:46:44 rpe Exp $
 
 COMMENT =		canvas API for X
 
-VERSION = 		1.7.9
+VERSION = 		1.7.10
 DISTNAME =		evas-${VERSION}
-REVISION =		2
 EPOCH =			2
 
-SHARED_LIBS +=	evas                 3.0      # 8.6
+SHARED_LIBS +=	evas                 4.0      # 8.10
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += crypto drm
-WANTLIB += eet eina expat fontconfig freetype fribidi gif glapi
-WANTLIB += glib-2.0 graphite2 harfbuzz
-WANTLIB += jpeg m pcre png pthread pthread-stubs ssl stdc++
-WANTLIB += tiff xcb xcb-dri2 xcb-glx
+WANTLIB += GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender
+WANTLIB += Xxf86vm c crypto drm eet eina expat fontconfig freetype
+WANTLIB += fribidi gif glapi glib-2.0 graphite2 harfbuzz jpeg
+WANTLIB += m pcre png pthread pthread-stubs ssl stdc++ tiff xcb
+WANTLIB += xcb-dri2 xcb-glx z
 
 MODULES=		devel/gettext \
 			x11/e17
 
 MODE17_PURGE_LA =	lib/evas/modules
 
-LIB_DEPENDS =		x11/e17/eet>=1.7.9v2 \
+LIB_DEPENDS =		x11/e17/eet>=1.7.10v2 \
 			graphics/giflib \
 			graphics/png \
 			graphics/tiff \

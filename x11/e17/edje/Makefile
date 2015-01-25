@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2013/12/06 13:16:45 dlg Exp $
+# $OpenBSD: Makefile,v 1.38 2015/01/25 07:46:44 rpe Exp $
 
 COMMENT =		complex graphical design & layout library
 
-DISTNAME =		edje-1.7.9
+DISTNAME =		edje-1.7.10
 EPOCH =			2
-SHARED_LIBS +=	edje                 3.0      # 8.6
+SHARED_LIBS +=	edje                 4.0      # 8.10
 
 # BSD (epp binary GPLv2)
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,8 +24,8 @@ MODULES =		devel/gettext \
 MODE17_MIME_DB =	Yes
 
 LIB_DEPENDS +=		devel/fribidi \
-			x11/e17/eio>=1.7.9 \
-			x11/e17/embryo>=1.7.9v2 \
+			x11/e17/eio>=1.7.10 \
+			x11/e17/embryo>=1.7.10v2 \
 			${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_ARGS +=	--disable-doc

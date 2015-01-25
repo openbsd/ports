@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2015/01/02 14:58:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2015/01/25 07:46:44 rpe Exp $
 
 COMMENT =		the enlightened window manager
 
-VERSION =		0.17.5
+VERSION =		0.17.6
 DISTNAME =		enlightenment-${VERSION}
-REVISION =		3
 EPOCH =			1
 
 # BSD
@@ -28,7 +27,7 @@ MODULES +=		devel/gettext \
 MODE17_DESKTOP_FILE =	Yes
 MODE17_PURGE_LA =	lib/enlightenment/modules
 
-LIB_DEPENDS =		x11/e17/elementary>=1.7.9 \
+LIB_DEPENDS =		x11/e17/elementary>=1.7.10 \
 			devel/libexecinfo
 
 CONFIGURE_ARGS +=	--disable-doc \
