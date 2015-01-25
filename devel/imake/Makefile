@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/01/25 10:39:11 matthieu Exp $
 
 COMMENT =  	makefile generator
 CATEGORIES =	devel x11
 DISTNAME = 	imake-1.0.5
+REVISION =	0
 MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
 
 PERMIT_PACKAGE_CDROM = 		Yes
+
+WANTLIB =	c
 
 do-configure:
 	ln -sf ${FILESDIR}/Makefile ${WRKSRC}
