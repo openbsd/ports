@@ -1,12 +1,12 @@
-$OpenBSD: patch-libjsonevt_int_defs_h,v 1.1 2010/06/05 13:52:55 kevlo Exp $
---- libjsonevt/int_defs.h.orig	Tue May 25 17:22:37 2010
-+++ libjsonevt/int_defs.h	Tue May 25 17:22:49 2010
+$OpenBSD: patch-libjsonevt_int_defs_h,v 1.2 2015/01/25 20:36:18 benoit Exp $
+--- libjsonevt/int_defs.h.orig	Thu Mar 18 04:24:34 2010
++++ libjsonevt/int_defs.h	Sun Jan 25 13:35:49 2015
 @@ -9,6 +9,8 @@
  
- #include "jsonevt_config.h"
+ #include <jsonevt_config.h>
  
 +#include <sys/types.h>
 +
  #ifdef JSONEVT_DEF_HAVE_INTTYPES_H
  #include <inttypes.h>
- #else
+ #endif
