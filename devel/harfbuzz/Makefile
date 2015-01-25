@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/01/24 08:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/01/25 12:42:48 naddy Exp $
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
@@ -41,7 +41,7 @@ WANTLIB-main += gobject-2.0
 WANTLIB-icu += ${WANTLIB}
 WANTLIB-icu += harfbuzz icudata icuuc
 
-BUILB_DEPENDS=		devel/gobject-introspection
+BUILD_DEPENDS=		devel/gobject-introspection
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			graphics/cairo \
