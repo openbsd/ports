@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/25 15:14:49 benoit Exp $
 
 COMMENT=	RSS Abstraction Interface
 
 MODULES=	cpan
-DISTNAME=	XML-RAI-1.301
-REVISION=	0
+DISTNAME =	XML-RAI-1.3031
 CATEGORIES=	textproc
 
 MAINTAINER=	Sam Smith <s@msmith.net>
