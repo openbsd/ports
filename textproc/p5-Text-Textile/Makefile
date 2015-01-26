@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:51:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/26 08:56:23 benoit Exp $
 
 COMMENT=	converts simple text to web constructs
 
-DISTNAME=	Text-Textile-2.03
-REVISION=	1
+DISTNAME =	Text-Textile-2.13
 CATEGORIES=	textproc
 
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+HOMEPAGE =	https://github.com/bradchoate/text-textile/
 
-HOMEPAGE=	http://www.textism.com/tools/textile/
+# Perl
+PERMIT_PACKAGE_CDROM =	Yes
 
-# Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+MODULES =		cpan
 
-MODULES=	cpan
+TEST_DEPENDS =		devel/p5-Test-Harness
 
 .include <bsd.port.mk>
