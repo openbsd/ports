@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.705 2015/01/26 11:58:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.706 2015/01/26 18:36:38 benoit Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -220,6 +220,7 @@
      SUBDIR += p5-CatalystX-Component-Traits
      SUBDIR += p5-Config-ApacheFormat
      SUBDIR += p5-Dancer
+     SUBDIR += p5-Dancer-Plugin-Database-Core
      SUBDIR += p5-Dancer-Plugin-Thumbnail
      SUBDIR += p5-Dancer2
      SUBDIR += p5-Dancer2-Plugin-Ajax
