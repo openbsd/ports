@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_ratop_Makefile_in,v 1.1 2015/01/26 13:13:58 steven Exp $
+--- examples/ratop/Makefile.in.orig	Fri Jan 23 21:04:33 2015
++++ examples/ratop/Makefile.in	Fri Jan 23 21:04:49 2015
+@@ -93,7 +93,7 @@ PROGS = $(INSTALLBIN)/ratop
+ all: $(PROGS)
+ 
+ $(INSTALLBIN)/ratop: $(OBJ) $(LIB)
+-	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LDFLAGS) $(LIB) $(COMPATLIB) $(CURSESLIB)
++	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LDFLAGS) $(LIB) $(COMPATLIB) $(CURSESLIB) -lpthread
+ 
+ CLEANFILES = $(OBJ) $(PROGS)
+ 

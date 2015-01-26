@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/07/08 19:24:18 steven Exp $
-@comment bin/argusbug
-@comment argus/
+@comment $OpenBSD: PLIST,v 1.4 2015/01/26 13:13:58 steven Exp $
 bin/argusclientbug
 @bin bin/ra
 @bin bin/rabins
@@ -8,7 +6,7 @@ bin/argusclientbug
 @bin bin/raconvert
 @bin bin/racount
 bin/radark
-@bin bin/radium
+bin/radecode
 @bin bin/radump
 @bin bin/raevent
 @bin bin/rafilteraddr
@@ -16,11 +14,9 @@ bin/ragraph
 @bin bin/ragrep
 @bin bin/rahisto
 bin/rahosts
-bin/raips
 @bin bin/ralabel
 @bin bin/ranonymize
 @bin bin/rapath
-bin/raplot
 @bin bin/rapolicy
 bin/raports
 @bin bin/rarpwatch
@@ -74,6 +70,7 @@ include/argus/argus_metric.h
 include/argus/argus_namedb.h
 include/argus/argus_os.h
 include/argus/argus_out.h
+include/argus/argus_output.h
 include/argus/argus_parser.h
 include/argus/argus_sort.h
 include/argus/argus_udt.h
@@ -84,19 +81,18 @@ include/argus/net/nff.h
 include/argus/netinet/
 include/argus/netinet/rtp.h
 include/argus/rabins.h
-include/argus/radium.h
 include/argus/rapolicy.h
 include/argus/rasplit.h
 lib/argus_client.a
 lib/argus_common.a
 lib/argus_parse.a
-lib/pkgconfig/
 lib/pkgconfig/argus-clients.pc
 @man man/man1/ra.1
 @man man/man1/rabins.1
 @man man/man1/racluster.1
 @man man/man1/raconvert.1
 @man man/man1/racount.1
+@man man/man1/radecode.1
 @man man/man1/radump.1
 @man man/man1/raevent.1
 @man man/man1/rafilteraddr.1
@@ -114,7 +110,9 @@ lib/pkgconfig/argus-clients.pc
 @man man/man1/rasqltimeindex.1
 @man man/man1/rastream.1
 @man man/man1/rastrip.1
+@man man/man1/ratop.1
 @man man/man5/racluster.5
+@man man/man5/racolor.conf.5
 @man man/man5/radium.conf.5
 @man man/man5/ralabel.conf.5
 @man man/man5/ranonymize.5
@@ -133,17 +131,23 @@ share/doc/argus-clients/README
 share/examples/argus-clients/
 share/examples/argus-clients/Config/
 share/examples/argus-clients/Config/README
+share/examples/argus-clients/Config/apt1.ipv4.addrs
+share/examples/argus-clients/Config/continent.txt
 share/examples/argus-clients/Config/delegated-ipv4-latest
+share/examples/argus-clients/Config/duration.classifier.labels
 share/examples/argus-clients/Config/excel.rc
 share/examples/argus-clients/Config/iana-address-file
 share/examples/argus-clients/Config/iana-ipv4-address
 share/examples/argus-clients/Config/iana-multicast-address
 share/examples/argus-clients/Config/iana-port-numbers
+share/examples/argus-clients/Config/local.addrs
 share/examples/argus-clients/Config/racluster.conf
+share/examples/argus-clients/Config/racolor.conf
 share/examples/argus-clients/Config/radium.conf
 share/examples/argus-clients/Config/ragetcountrycodes.sh
 share/examples/argus-clients/Config/ralabel.conf
 share/examples/argus-clients/Config/ranonymize.conf
+share/examples/argus-clients/Config/rapolicy.conf
 share/examples/argus-clients/Config/rarc
 share/examples/argus-clients/Config/rarc.print.all.conf
 share/examples/argus-clients/Config/rastream.sh
