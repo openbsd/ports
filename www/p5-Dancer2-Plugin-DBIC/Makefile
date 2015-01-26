@@ -1,4 +1,4 @@
-# OpenBSD$
+# $OpenBSD: Makefile,v 1.2 2015/01/26 18:00:22 benoit Exp $
 
 COMMENT =		DBIx::Class interface for Dancer2 applications
 

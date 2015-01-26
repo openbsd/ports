@@ -1,4 +1,4 @@
-# OpenBSD$
+# $OpenBSD: Makefile,v 1.2 2015/01/26 18:00:21 benoit Exp $
 
 COMMENT =		require logged-in user for specified routes
 
