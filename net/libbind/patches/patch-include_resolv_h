@@ -1,13 +1,21 @@
-$OpenBSD: patch-include_resolv_h,v 1.1 2013/11/29 11:45:26 sthen Exp $
---- include/resolv.h.orig	Fri Nov 29 11:08:39 2013
-+++ include/resolv.h	Fri Nov 29 11:09:22 2013
-@@ -336,6 +336,9 @@ int		res_sendsigned __P((const u_char *, int, ns_tsig_
+$OpenBSD: patch-include_resolv_h,v 1.2 2015/01/26 22:42:04 sthen Exp $
+--- include/resolv.h.orig	Mon Jan 26 22:34:19 2015
++++ include/resolv.h	Mon Jan 26 22:34:13 2015
+@@ -284,6 +284,7 @@ union res_sockaddr_union {
+ #define RES_PRF_TRUNC	0x00008000
+ /*			0x00010000	*/
+ 
++#define _res __res
+ /* Things involving an internal (static) resolver context. */
+ #ifdef _REENTRANT
+ __BEGIN_DECLS
+@@ -335,6 +336,9 @@ int		res_sendsigned __P((const u_char *, int, ns_tsig_
+ 				    u_char *, int));
  __END_DECLS
  #endif
- 
++
 +#define __p_class_syms __LB__p_class_syms
 +#define __p_type_syms __LB__p_type_syms
-+
+ 
  #if !defined(SHARED_LIBBIND) || defined(LIB)
  /*
-  * If libbind is a shared object (well, DLL anyway)
