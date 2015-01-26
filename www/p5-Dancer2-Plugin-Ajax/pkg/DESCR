@@ -1,0 +1,2 @@
+Dancer2 plugin which allow to define a route handler optimized for
+Ajax queries.
