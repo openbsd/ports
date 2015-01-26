@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/14 13:53:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/01/26 19:53:44 sthen Exp $
 
 COMMENT=	lexically scoped subroutine wrappers
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	demo
 
-CONFIGURE_STYLE=	modbuild
+BUILD_DEPENDS=	devel/p5-Module-Build-Tiny
 
 MAKE_ENV+=	TEST_POD=1
 
