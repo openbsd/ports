@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:33:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/26 12:54:01 jca Exp $
 
-COMMENT=	turns your keyboard into an fast pointer mover
+COMMENT=	turns your keyboard into a fast pointer mover
 
-DISTNAME=	keynav-20080614.01
-PKGNAME=	${DISTNAME:S/.//}
-REVISION=	1
+DISTNAME=	keynav-0.20101014.3067
+EPOCH=		0
 
 CATEGORIES=	x11
 
@@ -15,11 +14,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://semicomplete.googlecode.com/files/
 
-WANTLIB=	X11 Xau Xdmcp Xext Xtst c pthread-stubs xcb
-NO_TEST=	Yes
+WANTLIB += X11 Xext Xinerama c cairo glib-2.0 pthread xdo
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile
+MODULES=	devel/gettext
+LIB_DEPENDS=	devel/glib2 \
+		graphics/cairo \
+		x11/xdotool
+
+MAKE_FLAGS=	CFLAGS="$$(pkg-config --cflags cairo-xlib xinerama glib-2.0) ${CFLAGS}" \
+		LDFLAGS="$$(pkg-config --libs cairo-xlib xinerama glib-2.0) ${LDFLAGS}"
+
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynav ${PREFIX}/bin

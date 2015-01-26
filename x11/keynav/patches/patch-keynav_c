@@ -1,0 +1,12 @@
+$OpenBSD: patch-keynav_c,v 1.1 2015/01/26 12:54:01 jca Exp $
+--- keynav.c.orig	Wed Oct 13 09:27:51 2010
++++ keynav.c	Mon Jan 26 01:39:45 2015
+@@ -526,7 +526,7 @@ int parse_config_line(char *orig_line) {
+ 
+   tokctx = line;
+   keyseq = strdup(strtok_r(line, " ", &tokctx));
+-  commands = strdup(tokctx);
++  commands = (tokctx != NULL) ? strdup(tokctx) : NULL;
+ 
+   /* A special config option that will clear all keybindings */
+   if (strcmp(keyseq, "clear") == 0) {
