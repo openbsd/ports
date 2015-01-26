@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/01/24 11:18:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.33 2015/01/26 21:59:55 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 ONLY_FOR_ARCHS-java =	amd64 i386
@@ -14,6 +14,7 @@ DISTNAME =		opencv-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
+REVISION-main =		0
 
 HOMEPAGE =		http://www.opencv.org/
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
