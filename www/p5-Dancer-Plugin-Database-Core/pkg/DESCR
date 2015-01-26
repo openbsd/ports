@@ -1,0 +1,2 @@
+This module should not be used directly. It is a shared library for
+Dancer::Plugin::Database and Dancer2::Plugin::Database modules.

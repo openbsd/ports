@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/26 18:32:02 benoit Exp $
+${P5SITE}/Dancer/
+${P5SITE}/Dancer/Plugin/
+${P5SITE}/Dancer/Plugin/Database/
+${P5SITE}/Dancer/Plugin/Database/Core/
+${P5SITE}/Dancer/Plugin/Database/Core.pm
+${P5SITE}/Dancer/Plugin/Database/Core/Handle.pm
+@man man/man3p/Dancer::Plugin::Database::Core.3p
+@man man/man3p/Dancer::Plugin::Database::Core::Handle.3p
