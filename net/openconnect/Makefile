@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2015/01/26 10:43:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2015/01/26 10:59:21 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-7.03
-REVISION=	0
+DISTNAME=	openconnect-7.04
 
-SHARED_LIBS +=  openconnect               4.0 # 5.0
+SHARED_LIBS +=  openconnect               4.1 # 5.1
 
 CATEGORIES=	net
 
@@ -16,7 +15,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed ltdl lzma m nettle oath p11-kit
+WANTLIB += c ffi gmp gnutls hogweed ltdl lz4 lzma m nettle oath p11-kit
 WANTLIB += pcsclite proxy pskc pthread stdc++ tasn1 xml2 xmlsec1 xslt z
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
@@ -28,7 +27,8 @@ MODPY_RUNDEP=		No
 # XXX can probably convert to using mandoc?
 BUILD_DEPENDS=		textproc/groff \
 			textproc/py-xml
-LIB_DEPENDS=		security/gnutls \
+LIB_DEPENDS=		archivers/lz4 \
+			security/gnutls \
 			security/oath-toolkit,-pskc \
 			security/pcsc-lite \
 			textproc/libxml \
