@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.702 2015/01/24 23:11:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.703 2015/01/26 10:28:04 benoit Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -222,6 +222,7 @@
      SUBDIR += p5-Dancer
      SUBDIR += p5-Dancer-Plugin-Thumbnail
      SUBDIR += p5-Dancer2
+     SUBDIR += p5-Dancer2-Plugin-Ajax
      SUBDIR += p5-Data-URIEncode
      SUBDIR += p5-Drupal-Admin
      SUBDIR += p5-FCGI-ProcManager
