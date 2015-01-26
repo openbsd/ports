@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.66 2015/01/23 18:59:41 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.67 2015/01/26 11:10:04 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -24,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/__init__.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/common.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/common.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/external.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/external.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/f4m.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/f4m.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/hls.py
@@ -79,8 +81,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/atttechchannel.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/atttechchannel.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/audiomack.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/audiomack.pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/auengine.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/auengine.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/azubu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/azubu.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bambuser.py
@@ -605,6 +605,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtbf.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtbf.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rte.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rte.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtl2.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtl2.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtlnl.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtlnl.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtlnow.py
