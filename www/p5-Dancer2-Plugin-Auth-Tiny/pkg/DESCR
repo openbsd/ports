@@ -1,0 +1,2 @@
+Dancer2 plugin which provides an extremely simple way of requiring that a
+user be logged in before allowing access to certain routes.
