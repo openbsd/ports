@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2014/04/21 12:26:19 ajacoutot Exp $
---- configure.orig	Thu Aug 15 06:36:22 2013
-+++ configure	Thu Oct 17 10:48:41 2013
-@@ -12891,6 +12891,7 @@ $as_echo "$LIBICONV" >&6; }
+$OpenBSD: patch-configure,v 1.8 2015/01/27 13:38:05 ajacoutot Exp $
+--- configure.orig	Sun Jan 18 08:00:42 2015
++++ configure	Tue Jan 27 08:57:49 2015
+@@ -13188,6 +13188,7 @@ fi
    fi
  
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.7 2014/04/21 12:26:19 ajacoutot Exp $
  
  
  
-@@ -13370,6 +13371,7 @@ $as_echo "$ac_res" >&6; }
+@@ -14333,6 +14334,7 @@ $as_echo "$ac_res" >&6; }
            INCINTL=
          fi
  

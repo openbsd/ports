@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_src_tmail_tmail_c,v 1.1 2013/10/17 09:08:09 ajacoutot Exp $
---- imap/src/tmail/tmail.c.orig	Sat Oct  2 10:37:57 2010
-+++ imap/src/tmail/tmail.c	Sun Sep 23 11:28:47 2012
-@@ -227,7 +227,6 @@ int main (int argc,char *argv[])
+$OpenBSD: patch-imap_src_tmail_tmail_c,v 1.2 2015/01/27 13:38:05 ajacoutot Exp $
+--- imap/src/tmail/tmail.c.orig	Mon Jan 12 06:12:25 2015
++++ imap/src/tmail/tmail.c	Tue Jan 27 08:57:49 2015
+@@ -224,7 +224,6 @@ int main (int argc,char *argv[])
        while ((c = getchar ()) != EOF) putc (c,f);
      }
      else {

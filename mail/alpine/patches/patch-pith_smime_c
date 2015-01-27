@@ -1,11 +1,11 @@
-$OpenBSD: patch-pith_smime_c,v 1.1 2014/08/30 08:56:04 miod Exp $
+$OpenBSD: patch-pith_smime_c,v 1.2 2015/01/27 13:38:05 ajacoutot Exp $
 
 Remove never used RAND_egd code paths; needed to compile with gcc3 (gcc4
 will optimize this out by itself)
 
---- pith/smime.c.orig	Thu Aug 15 04:36:50 2013
-+++ pith/smime.c	Sat Aug 30 07:39:52 2014
-@@ -50,9 +50,9 @@ typedef enum {Public, Private, CACert} WhichCerts;
+--- pith/smime.c.orig	Mon Jan 12 06:12:25 2015
++++ pith/smime.c	Tue Jan 27 08:58:55 2015
+@@ -48,9 +48,9 @@ static char rcsid[] = "$Id: smime.c 1176 2008-09-29 21
  
  /* internal prototypes */
  static void            forget_private_keys(void);
@@ -14,18 +14,18 @@ will optimize this out by itself)
  static void            openssl_extra_randomness(void);
 -static int             app_RAND_write_file(const char *file);
 +static int             app_RAND_write_file(void);
- static void            smime_init(void);
  static const char     *openssl_error_string(void);
- static void            create_local_cache(char *base, BODY *b);
-@@ -82,7 +82,6 @@ static X509_STORE   *s_cert_store;
+ static int             load_private_key(PERSONAL_CERT *pcert);
+ static void            create_local_cache(char *h, char *base, BODY *b, int type);
+@@ -90,7 +90,6 @@ static X509_STORE   *s_cert_store;
  
  /* State management for randomness functions below */
  static int seeded = 0;
 -static int egdsocket = 0;
  
- 
- /*
-@@ -121,18 +120,12 @@ forget_private_keys(void)
+ void *
+ create_smime_sparep(SpareType stype, void *s)
+@@ -809,18 +808,12 @@ int smime_path(char *rpath, char *fpath, size_t len)
   * taken from openssl/apps/app_rand.c
   */
  static int
@@ -47,7 +47,7 @@ will optimize this out by itself)
  
      if(file == NULL || !RAND_load_file(file, -1)){
  	if(RAND_status() == 0){
-@@ -192,11 +185,12 @@ openssl_extra_randomness(void)
+@@ -880,11 +873,12 @@ openssl_extra_randomness(void)
  
  /* taken from openssl/apps/app_rand.c */
  static int
@@ -62,7 +62,7 @@ will optimize this out by itself)
  	/*
  	 * If we did not manage to read the seed file,
  	 * we should not write a low-entropy seed file back --
-@@ -205,8 +199,7 @@ app_RAND_write_file(const char *file)
+@@ -893,8 +887,7 @@ app_RAND_write_file(const char *file)
  	 */
  	return 0;
  
@@ -72,7 +72,7 @@ will optimize this out by itself)
  
      if(file == NULL || !RAND_write_file(file)){
  	dprint((1, "unable to write 'random state'\n"));
-@@ -222,7 +215,7 @@ void
+@@ -992,7 +985,7 @@ void
  smime_deinit(void)
  {
      dprint((9, "smime_deinit()"));
@@ -81,12 +81,12 @@ will optimize this out by itself)
      free_smime_struct(&ps_global->smime);
  }
  
-@@ -244,7 +237,7 @@ smime_init(void)
+@@ -1024,7 +1017,7 @@ smime_init(void)
          OpenSSL_add_all_algorithms();
          ERR_load_crypto_strings();
  
 -	app_RAND_load_file(NULL);
 +	app_RAND_load_file();
- 
      	openssl_extra_randomness();
  	ps_global->smime->inited = 1;
+     }
