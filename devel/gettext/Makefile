@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.73 2014/10/20 18:34:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2015/01/27 00:28:34 brad Exp $
 
 COMMENT=	GNU gettext
 
-DISTNAME=	gettext-0.19.3
-SHARED_LIBS +=  intl                 6.0      # 9.2
+DISTNAME=	gettext-0.19.4
+SHARED_LIBS +=  intl                 6.0      # 9.3
 SHARED_LIBS +=  asprintf             1.1      # unknown
-SHARED_LIBS +=  gettextlib           4.0      # unknown
-SHARED_LIBS +=  gettextsrc           4.0      # unknown
-SHARED_LIBS +=  gettextpo            6.0      # 5.2
+SHARED_LIBS +=  gettextlib           5.0      # unknown
+SHARED_LIBS +=  gettextsrc           5.0      # unknown
+SHARED_LIBS +=  gettextpo            7.0      # 5.3
 
 CATEGORIES=	devel
 # DPB: parallel-safe, not worth it. Too much time in configure
