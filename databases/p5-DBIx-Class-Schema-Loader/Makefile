@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.19 2015/01/13 13:05:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/01/27 15:55:29 afresh1 Exp $
 
 COMMENT=	dynamic definition of a DBIx::Class::Schema
 
 MODULES=	cpan
 DISTNAME=	DBIx-Class-Schema-Loader-0.07015
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=	databases/p5-DBIx-Class \
 		databases/p5-DBIx-Class-IntrospectableM2M \
+		devel/p5-Carp-Clan \
 		devel/p5-Class-Unload \
 		devel/p5-Data-Dump \
 		devel/p5-List-MoreUtils \
