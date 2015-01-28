@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.263 2015/01/14 17:33:44 landry Exp $
+# $OpenBSD: Makefile,v 1.264 2015/01/28 17:45:02 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	35.0
+MOZILLA_VERSION =	35.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -54,13 +54,7 @@ CONFIGURE_ARGS +=	--enable-gstreamer=1.0
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
 
-# libxul doesnt link directly with gst but dlopens it at runtime
-# see content/media/gstreamer/GStreamerLoader.cpp
-#LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
-#WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
-#WANTLIB += gstvideo-0.10 xml2
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
-RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 MOZILLA_AUTOCONF_DIRS +=	js/src
 

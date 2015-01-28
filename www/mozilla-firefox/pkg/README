@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2014/07/24 18:03:00 landry Exp $
+$OpenBSD: README,v 1.10 2015/01/28 17:45:02 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -44,7 +44,10 @@ this package, and run firefox inside gdb, so that you can gather
 debugging logs and traces (for all threads!).
 Bug reports without that information will be ignored.
 
-H.264 support
-=============
-Due to licensing reasons, you have to manually install the
-gstreamer1-plugins-libav package to play H.264 videos.
+Html5 audio/video support
+=========================
+Due to dependencies reasons, you have to manually install some
+GStreamer packages for a full multimedia experience (ie play MP3 audio
+and MPEG videos). They will be used at runtime if firefox finds them.
+
+# pkg_add gstreamer1-plugins-good gstreamer1-plugins libav
