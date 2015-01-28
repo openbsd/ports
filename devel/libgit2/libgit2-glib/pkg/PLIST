@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/08 12:33:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/01/28 09:20:07 ajacoutot Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-blame-options.h
@@ -10,6 +10,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-branch.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-checkout-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cherry-pick-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-clone-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-commit-parents.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-commit.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config.h
@@ -41,8 +42,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-oid.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-patch.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-push-progress.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-push.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-push-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-ref-spec.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-ref.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-reflog-entry.h
@@ -54,6 +54,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-revert-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-revision-walker.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-signature.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-status-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-submodule-update-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-submodule.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tag.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-transfer-progress.h
@@ -96,7 +97,6 @@ share/gtk-doc/html/libgit2-glib-1.0/GgitObject.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitObjectFactory.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitObjectFactoryBase.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitPatch.html
-share/gtk-doc/html/libgit2-glib-1.0/GgitPush.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitRef.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitRefSpec.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitReflog.html
@@ -123,6 +123,7 @@ share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-Ggit-Main.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitError.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitMergeTreeOptions.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitMessage.html
+share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitPush.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitStatusOptions.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0.devhelp2
 share/gtk-doc/html/libgit2-glib-1.0/right-insensitive.png
