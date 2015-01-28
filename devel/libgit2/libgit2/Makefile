@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2014/12/19 08:05:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/01/28 09:19:45 ajacoutot Exp $
 
 COMMENT=		the Git library, take 2
 
-GH_VER=			v0.21.3
+GH_VER=			v0.22.1
 V=			${GH_VER:S/v//}
 PROJECT=		libgit2
-SHARED_LIBS +=  git2                      5.0 # 0.21
+SHARED_LIBS +=  git2                      6.0 # 0.21
 
 MASTER_SITES=		https://github.com/libgit2/${PROJECT}/archive/
 DISTFILES=		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
@@ -17,6 +17,10 @@ MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		security/libssh2
 
-WANTLIB+= crypto ssl ssh2 z
+WANTLIB += crypto pthread ssh2 ssl z
+
+CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="-I${LOCALBASE}/include" \
+			-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
+			-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
