@@ -1,11 +1,4 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.24 2015/01/08 16:58:00 dcoppa Exp $
-
-commit 8de3f22e8fe9e798b63eb00e35eee6404748d3bd
-Author: Rolf Eike Beer <eike@sf-mail.de>
-Date:   Wed Jan 7 23:42:35 2015 +0100
-
-FindQt4: search for versioned qmake names first before general qmake
-
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.25 2015/01/28 13:52:41 dcoppa Exp $
 --- Modules/FindQt4.cmake.orig	Mon Dec 15 14:07:43 2014
 +++ Modules/FindQt4.cmake	Thu Jan  8 10:39:46 2015
 @@ -522,7 +522,12 @@ endfunction()
