@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/16 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/01/28 09:20:28 ajacoutot Exp $
 
 COMMENT=		libgit2 bindings in Python
 
-MODPY_EGG_VERSION=	0.21.3
+MODPY_EGG_VERSION=	0.22.0
 GH_VER=			v${MODPY_EGG_VERSION}
 V=			${GH_VER:S/v//}
 PROJECT=		pygit2
@@ -16,7 +16,7 @@ MODPY_SETUPTOOLS=	Yes
 
 WANTLIB += 		git2 pthread ${MODPY_WANTLIB}
 
-LIB_DEPENDS=		devel/libgit2/libgit2>=0.21.0
+LIB_DEPENDS=		devel/libgit2/libgit2>=0.22.1
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/py-cffi
 
