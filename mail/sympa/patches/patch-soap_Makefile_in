@@ -1,7 +1,7 @@
-$OpenBSD: patch-soap_Makefile_in,v 1.3 2011/08/16 10:06:58 landry Exp $
---- soap/Makefile.in.orig	Wed Jul 20 18:37:46 2011
-+++ soap/Makefile.in	Sun Aug  7 11:37:43 2011
-@@ -527,7 +527,6 @@ install-data-am: install-defaultDATA install-modulesDA
+$OpenBSD: patch-soap_Makefile_in,v 1.4 2015/01/28 21:21:13 landry Exp $
+--- soap/Makefile.in.orig	Tue Jan 13 17:04:30 2015
++++ soap/Makefile.in	Wed Jan 28 12:13:17 2015
+@@ -532,7 +532,6 @@ install-data-am: install-defaultDATA install-modulesDA
  
  install-exec-am: install-execcgiPROGRAMS install-execcgiSCRIPTS
  	@$(NORMAL_INSTALL)

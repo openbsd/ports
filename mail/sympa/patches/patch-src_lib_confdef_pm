@@ -1,30 +1,30 @@
-$OpenBSD: patch-src_lib_confdef_pm,v 1.4 2014/08/27 06:58:00 ajacoutot Exp $
---- src/lib/confdef.pm.orig	Fri Jul 27 10:29:52 2012
-+++ src/lib/confdef.pm	Tue Aug  6 22:55:20 2013
-@@ -47,7 +47,7 @@ our @params = (
+$OpenBSD: patch-src_lib_confdef_pm,v 1.5 2015/01/28 21:21:13 landry Exp $
+--- src/lib/confdef.pm.orig	Wed Sep 24 16:46:45 2014
++++ src/lib/confdef.pm	Wed Jan 28 21:22:19 2015
+@@ -384,7 +384,7 @@ our @params = (
      },
      {
-         name    => 'etc',
--        default => Sympa::Constants::SYSCONFDIR,
-+        default => "${SYMPA_HOME}/".Sympa::Constants::SYSCONFDIR,
-         query   => 'Directory for configuration files ; it also contains scenari/ and templates/ directories',
-         file    => 'sympa.conf',
+         'name'    => 'etc',
+-        'default' => Sympa::Constants::SYSCONFDIR,
++        'default' => "${SYMPA_HOME}/".Sympa::Constants::SYSCONFDIR,
+         'query'   => 'Directory for configuration files; it also contains scenari/ and templates/ directories',
+         'file'    => 'sympa.conf',
      },
-@@ -657,7 +657,7 @@ our @params = (
+@@ -1203,7 +1203,7 @@ our @params = (
+ 
+     {
+         'name'   => 'openssl',
+-        'sample' => '/usr/bin/ssl',
++        'sample' => '/usr/bin/openssl',
+         'query'  => 'Path to OpenSSL',
+         'file'   => 'sympa.conf',
+         'edit'   => '1',
+@@ -1481,7 +1481,7 @@ our @params = (
      },
      {
-         name    => 'mhonarc',
--        default => '/usr/bin/mhonarc',
-+        default => '${LOCALBASE}/bin/mhonarc',
-         query   => 'Path to MhOnarc mail2html pluggin',
-         file    => 'wwsympa.conf',
-         edit    => '1',
-@@ -722,7 +722,7 @@ our @params = (
-     { 'title' => 'S/MIME pluggin' },
-     {
-         name   => 'openssl',
--        sample => '/usr/bin/ssl',
-+        sample => '/usr/bin/openssl',
-         query  => 'Path to OpenSSL',
-         file   => 'sympa.conf',
-         edit   => '1',
+         'name'    => 'mhonarc',
+-        'default' => '/usr/bin/mhonarc',
++        'default' => '${LOCALBASE}/bin/mhonarc',
+         'query'   => 'Path to MHonArc mail2html plugin',
+         'file'    => 'wwsympa.conf',
+         'edit'    => '1',

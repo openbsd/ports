@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_man8_Makefile_in,v 1.2 2011/08/16 10:06:58 landry Exp $
+$OpenBSD: patch-doc_man8_Makefile_in,v 1.3 2015/01/28 21:21:13 landry Exp $
 subst correct path to config file
---- doc/man8/Makefile.in.orig	Wed Jul 20 18:37:46 2011
-+++ doc/man8/Makefile.in	Sun Aug  7 11:37:43 2011
-@@ -378,7 +378,7 @@ archived.pod bounced.pod alias_manager.pod: Makefile
+--- doc/man8/Makefile.in.orig	Tue Jan 13 17:04:29 2015
++++ doc/man8/Makefile.in	Wed Jan 28 12:13:06 2015
+@@ -403,7 +403,7 @@ archived.pod bounced.pod alias_manager.pod sympa.pod: 
  	$(AM_V_GEN)$(SED) \
  		-e 's|--piddir--|$(piddir)|' \
  		-e 's|--libexecdir--|$(libexecdir)|' \

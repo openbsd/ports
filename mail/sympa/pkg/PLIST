@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/30 13:15:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/01/28 21:21:13 landry Exp $
 @newgroup _sympa:648
 @newuser _sympa:648:648:daemon:Sympa Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/sympa/*
@@ -81,7 +81,11 @@ libexec/sympa/
 @bin libexec/sympa/bouncequeue
 @bin libexec/sympa/familyqueue
 @bin libexec/sympa/queue
+@mode 4750
+@owner root
+@bin libexec/sympa/sympa_newaliases-wrapper
 @mode 6755
+@owner _sympa
 @bin libexec/sympa/sympa_soap_server-wrapper.fcgi
 @bin libexec/sympa/wwsympa-wrapper.fcgi
 @mode
@@ -90,22 +94,18 @@ libexec/sympa/
 libexec/sympa/sympa_soap_server.fcgi
 libexec/sympa/wwsympa.fcgi
 @sample /var/www/wwsympa.fcgi
+@man man/man1/sympa_newaliases.1
 @man man/man8/alias_manager.8
 @man man/man8/archived.8
 @man man/man8/bounced.8
 @man man/man8/sympa.8
 sbin/alias_manager.pl
-@mode 4750
-@group _sympa
-@bin sbin/aliaswrapper
-@bin sbin/virtualwrapper
-@mode
-@group
 sbin/archived.pl
 sbin/bounced.pl
 sbin/bulk.pl
 sbin/sympa
 sbin/sympa.pl
+sbin/sympa_newaliases.pl
 sbin/sympa_wizard.pl
 sbin/task_manager.pl
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -150,6 +150,7 @@ share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/sympa.mo
 share/locale/br/LC_MESSAGES/web_help.mo
 share/locale/ca/LC_MESSAGES/sympa.mo
+share/locale/ca/LC_MESSAGES/web_help.mo
 share/locale/cs/LC_MESSAGES/sympa.mo
 share/locale/cs/LC_MESSAGES/web_help.mo
 share/locale/de/LC_MESSAGES/sympa.mo
@@ -352,10 +353,12 @@ share/sympa/scenari/access_web_archive.owner
 share/sympa/scenari/access_web_archive.private
 share/sympa/scenari/access_web_archive.public
 share/sympa/scenari/add.auth
+share/sympa/scenari/add.authdkim
 share/sympa/scenari/add.closed
 share/sympa/scenari/add.default
 share/sympa/scenari/add.owner
 share/sympa/scenari/add.owner_notify
+share/sympa/scenari/add.ownerdkim
 share/sympa/scenari/automatic_list_creation.family_owner
 share/sympa/scenari/automatic_list_creation.listmaster
 share/sympa/scenari/automatic_list_creation.public
@@ -374,11 +377,14 @@ share/sympa/scenari/d_read.private
 share/sympa/scenari/d_read.private-https
 share/sympa/scenari/d_read.public
 share/sympa/scenari/del.auth
+share/sympa/scenari/del.authdkim
 share/sympa/scenari/del.closed
 share/sympa/scenari/del.default
 share/sympa/scenari/del.owner
 share/sympa/scenari/del.owner_notify
+share/sympa/scenari/del.ownerdkim
 share/sympa/scenari/global_remind.listmaster
+share/sympa/scenari/info.conceal
 share/sympa/scenari/info.default
 share/sympa/scenari/info.open
 share/sympa/scenari/info.private
@@ -389,7 +395,9 @@ share/sympa/scenari/invite.private
 share/sympa/scenari/invite.public
 share/sympa/scenari/remind.default
 share/sympa/scenari/remind.listmaster
+share/sympa/scenari/remind.listmasterdkim
 share/sympa/scenari/remind.owner
+share/sympa/scenari/remind.ownerdkim
 share/sympa/scenari/review.closed
 share/sympa/scenari/review.default
 share/sympa/scenari/review.intranet
@@ -400,6 +408,7 @@ share/sympa/scenari/review.public
 share/sympa/scenari/send.closed
 share/sympa/scenari/send.confidential
 share/sympa/scenari/send.default
+share/sympa/scenari/send.editordkim
 share/sympa/scenari/send.editorkey
 share/sympa/scenari/send.editorkeyonly
 share/sympa/scenari/send.editorkeyonlyauth
@@ -423,7 +432,10 @@ share/sympa/scenari/send.publicnomultipart
 share/sympa/scenari/spam_status.x-spam-status
 share/sympa/scenari/subscribe.auth
 share/sympa/scenari/subscribe.auth_notify
+share/sympa/scenari/subscribe.auth_notifydkim
 share/sympa/scenari/subscribe.auth_owner
+share/sympa/scenari/subscribe.auth_ownerdkim
+share/sympa/scenari/subscribe.authdkim
 share/sympa/scenari/subscribe.closed
 share/sympa/scenari/subscribe.default
 share/sympa/scenari/subscribe.intranet
@@ -440,6 +452,8 @@ share/sympa/scenari/topics_visibility.identified
 share/sympa/scenari/topics_visibility.noconceal
 share/sympa/scenari/unsubscribe.auth
 share/sympa/scenari/unsubscribe.auth_notify
+share/sympa/scenari/unsubscribe.auth_notifydkim
+share/sympa/scenari/unsubscribe.authdkim
 share/sympa/scenari/unsubscribe.closed
 share/sympa/scenari/unsubscribe.default
 share/sympa/scenari/unsubscribe.open
@@ -496,6 +510,7 @@ share/sympa/web_tt2/edit_template.tt2
 share/sympa/web_tt2/editfile.tt2
 share/sympa/web_tt2/editsubscriber.tt2
 share/sympa/web_tt2/error.tt2
+share/sympa/web_tt2/exclusion_table.tt2
 share/sympa/web_tt2/family_signoff.tt2
 share/sympa/web_tt2/family_signoff_request.tt2
 share/sympa/web_tt2/footer.tt2
@@ -521,7 +536,11 @@ share/sympa/web_tt2/help_user_options.tt2
 share/sympa/web_tt2/home.tt2
 share/sympa/web_tt2/info.tt2
 share/sympa/web_tt2/install_pending_list.tt2
+share/sympa/web_tt2/ja_JP/
+share/sympa/web_tt2/ja_JP/css.tt2
 share/sympa/web_tt2/javascript.tt2
+share/sympa/web_tt2/ko_KR/
+share/sympa/web_tt2/ko_KR/css.tt2
 share/sympa/web_tt2/latest_arc.tt2
 share/sympa/web_tt2/latest_d_read.tt2
 share/sympa/web_tt2/latest_lists.tt2
@@ -584,6 +603,10 @@ share/sympa/web_tt2/viewlogs.tt2
 share/sympa/web_tt2/viewmod.tt2
 share/sympa/web_tt2/which.tt2
 share/sympa/web_tt2/your_lists.tt2
+share/sympa/web_tt2/zh_CN/
+share/sympa/web_tt2/zh_CN/css.tt2
+share/sympa/web_tt2/zh_TW/
+share/sympa/web_tt2/zh_TW/css.tt2
 @exec cp -r ${PREFIX}/share/sympa/icons /var/www/sympa/
 @unexec rm -Rf /var/www/sympa/icons
 @rcscript ${RCDIR}/sympa

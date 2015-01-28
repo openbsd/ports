@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2012/08/06 10:43:46 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2015/01/28 21:21:13 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -72,9 +72,8 @@ ${TRUEPREFIX}/libexec/sympa/queue
 - the following are 6755 _sympa:_sympa
 ${TRUEPREFIX}/libexec/sympa/sympa_soap_server-wrapper.fcgi
 ${TRUEPREFIX}/libexec/sympa/wwsympa-wrapper.fcgi
-- the following are 4750 root:_sympa
-${TRUEPREFIX}/sbin/aliaswrapper
-${TRUEPREFIX}/sbin/virtualwrapper
+- the following is 4750 root:_sympa
+${TRUEPREFIX}/libexec/sympa/sympa_newaliases-wrapper
 
 For the various set-uid sympa wrappers to work fine, you have to make
 sure ${SYMPA_HOME} is in a partition mounted without nosuid.

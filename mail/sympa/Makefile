@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2014/08/27 06:58:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/01/28 21:21:13 landry Exp $
 
 COMMENT =	mailing list manager with web interface
 
-VERSION =	6.1.17
-REVISION =	2
+VERSION =	6.1.24
 DISTNAME =	sympa-${VERSION}
 
 CATEGORIES =	mail www
@@ -30,8 +29,7 @@ CONFIGURE_ARGS =	--with-modulesdir=${PREFIX}/${P5SITE}/Sympa \
 			--with-initdir=${PREFIX}/sbin \
 			--with-user=_sympa \
 			--with-group=_sympa \
-			--with-sendmail_aliases=${SYMPA_HOME}/sympa_aliases \
-			--with-virtual_aliases=${SYMPA_HOME}/sympa_virtual \
+			--with-aliases_file=${SYMPA_HOME}/sympa_aliases \
 			--with-confdir=${SYMPA_HOME}/etc/ \
 			--with-cgidir=${PREFIX}/libexec/sympa \
 			--libexecdir=${PREFIX}/libexec/sympa \
