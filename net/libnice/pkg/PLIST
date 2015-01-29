@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/10/10 12:21:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/01/29 07:02:24 ajacoutot Exp $
 @bin bin/stunbdc
 @bin bin/stund
 include/nice/
@@ -50,6 +50,7 @@ share/gtk-doc/html/libnice/ix08.html
 share/gtk-doc/html/libnice/ix09.html
 share/gtk-doc/html/libnice/ix10.html
 share/gtk-doc/html/libnice/ix11.html
+share/gtk-doc/html/libnice/ix12.html
 share/gtk-doc/html/libnice/left-insensitive.png
 share/gtk-doc/html/libnice/left.png
 share/gtk-doc/html/libnice/libnice-Bind.html
