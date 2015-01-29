@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/04/02 14:41:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/01/29 13:22:35 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ckeditor/
 ${DRUPAL_MODS}ckeditor/CHANGELOG.txt
 ${DRUPAL_MODS}ckeditor/LICENSE.txt
 ${DRUPAL_MODS}ckeditor/README.txt
-${DRUPAL_MODS}ckeditor/TROUBLESHOOTING.txt
 ${DRUPAL_MODS}ckeditor/ckeditor/
 ${DRUPAL_MODS}ckeditor/ckeditor-rtl.css
 ${DRUPAL_MODS}ckeditor/ckeditor.api.php
