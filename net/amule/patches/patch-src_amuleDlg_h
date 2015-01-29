@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_amuleDlg_h,v 1.1 2015/01/29 14:46:28 dcoppa Exp $
+
+commit eadb1a0fc4597d919aca00c7b32d8dc6f63a4ae2
+Author: upstream svn <svn@amule.org>
+Date:   Sun Jan 18 09:44:36 2015 +0000
+
+Fix a shadow warning
+
+No need to declare variables that are only used once in a single function
+as class member variables.
+
+--- src/amuleDlg.h.orig	Mon Jun 13 03:50:25 2011
++++ src/amuleDlg.h	Thu Jan 29 05:22:44 2015
+@@ -230,8 +230,6 @@ class CamuleDlg : public wxFrame  (private)
+ 	bool m_GeoIPavailable;
+ 
+ 	WX_DECLARE_STRING_HASH_MAP(wxZipEntry*, ZipCatalog);
+-	ZipCatalog::iterator it;
+-	wxZipEntry *entry;
+ 	ZipCatalog cat;
+ 
+ 	PageType m_logpages[4];

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_EncryptedStreamSocket_cpp,v 1.1 2015/01/29 14:46:28 dcoppa Exp $
+
+commit 0aefbcf2f0af62c824c0b203d4147658d361803d
+Author: upstream svn <svn@amule.org>
+Date:   Sat Nov 22 20:53:17 2014 +0000
+
+Fix always-true conditional
+
+--- src/EncryptedStreamSocket.cpp.orig	Thu Jan 29 05:13:43 2015
++++ src/EncryptedStreamSocket.cpp	Thu Jan 29 05:14:48 2015
+@@ -142,7 +142,7 @@ CEncryptedStreamSocket::~CEncryptedStreamSocket()
+ void CEncryptedStreamSocket::SetConnectionEncryption(bool bEnabled, const uint8_t* pTargetClientHash, bool bServerConnection)
+ {
+ 	if (m_StreamCryptState != ECS_UNKNOWN && m_StreamCryptState != ECS_NONE) {
+-		if (!m_StreamCryptState == ECS_NONE || bEnabled) {
++		if (bEnabled) {
+ 			wxFAIL;
+ 		}
+ 		return;

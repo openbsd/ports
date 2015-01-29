@@ -1,4 +1,14 @@
-$OpenBSD: patch-src_amuleDlg_cpp,v 1.3 2014/01/13 15:01:22 dcoppa Exp $
+$OpenBSD: patch-src_amuleDlg_cpp,v 1.4 2015/01/29 14:46:28 dcoppa Exp $
+
+commit eadb1a0fc4597d919aca00c7b32d8dc6f63a4ae2
+Author: upstream svn <svn@amule.org>
+Date:   Sun Jan 18 09:44:36 2015 +0000
+
+Fix a shadow warning
+
+No need to declare variables that are only used once in a single function
+as class member variables.
+
 
 Fix the blasted DoNetworkRearrange()
 upstream git commits:
@@ -7,9 +17,26 @@ upstream git commits:
  http://repo.or.cz/w/amule.git/commit/85ea02a3abc784f415adadfb384c654057e13c01
  http://repo.or.cz/w/amule.git/commit/d41b28c86b2f07439928720971896dde1ae89bb1
 
---- src/amuleDlg.cpp.orig	Sun Oct  9 02:19:08 2011
-+++ src/amuleDlg.cpp	Mon Jan 13 14:07:43 2014
-@@ -1433,17 +1433,13 @@ void CamuleDlg::DoNetworkRearrange()
+--- src/amuleDlg.cpp.orig	Sat Oct  8 19:19:08 2011
++++ src/amuleDlg.cpp	Thu Jan 29 05:25:28 2015
+@@ -1241,6 +1241,7 @@ bool CamuleDlg::Check_and_Init_Skin()
+ 
+ 	wxFFileInputStream in(m_skinFileName.GetFullPath());
+ 	wxZipInputStream zip(in);
++	wxZipEntry *entry;
+ 
+ 	while ((entry = zip.GetNextEntry()) != NULL) {
+ 		wxZipEntry*& current = cat[entry->GetInternalName()];
+@@ -1262,7 +1263,7 @@ void CamuleDlg::Add_Skin_Icon(
+ 		wxFFileInputStream in(m_skinFileName.GetFullPath());
+ 		wxZipInputStream zip(in);
+ 
+-		it = cat.find(wxZipEntry::GetInternalName(iconName + wxT(".png")));
++		ZipCatalog::iterator it = cat.find(wxZipEntry::GetInternalName(iconName + wxT(".png")));
+ 		if ( it != cat.end() ) {
+ 			zip.OpenEntry(*it->second);
+ 			if ( !new_image.LoadFile(zip,wxBITMAP_TYPE_PNG) ) {
+@@ -1433,17 +1434,13 @@ void CamuleDlg::DoNetworkRearrange()
  
  	wxToolBarToolBase* toolbarTool = m_wndToolbar->RemoveTool(ID_BUTTONNETWORKS);
  
@@ -28,7 +55,7 @@ upstream git commits:
  	if (thePrefs::GetNetworkED2K()) {
  #ifndef CLIENT_GUI
  		logs_notebook->AddPage(m_logpages[1].page, m_logpages[1].name);
-@@ -1451,57 +1447,88 @@ void CamuleDlg::DoNetworkRearrange()
+@@ -1451,57 +1448,88 @@ void CamuleDlg::DoNetworkRearrange()
  		logs_notebook->AddPage(m_logpages[2].page, m_logpages[2].name);
  	}
  
