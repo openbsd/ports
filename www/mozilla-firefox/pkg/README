@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2015/01/28 17:45:02 landry Exp $
+$OpenBSD: README,v 1.11 2015/01/29 17:45:31 naddy Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -50,4 +50,4 @@ Due to dependencies reasons, you have to manually install some
 GStreamer packages for a full multimedia experience (ie play MP3 audio
 and MPEG videos). They will be used at runtime if firefox finds them.
 
-# pkg_add gstreamer1-plugins-good gstreamer1-plugins libav
+# pkg_add gstreamer1-plugins-good gstreamer1-plugins-libav
