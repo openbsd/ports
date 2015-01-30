@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/10/07 13:27:15 henning Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/01/30 16:21:03 sthen Exp $
 @bin bin/aqbanking-cli
 bin/aqbanking-config
 @bin bin/aqebics-tool
@@ -205,7 +205,6 @@ lib/aqbanking/plugins/34/providers/aqnone.xml
 lib/aqbanking/plugins/34/providers/aqofxconnect.la
 lib/aqbanking/plugins/34/providers/aqofxconnect.so
 lib/aqbanking/plugins/34/providers/aqofxconnect.xml
-lib/cmake/
 lib/cmake/aqbanking-5.5/
 lib/cmake/aqbanking-5.5/aqbanking-config-version.cmake
 lib/cmake/aqbanking-5.5/aqbanking-config.cmake

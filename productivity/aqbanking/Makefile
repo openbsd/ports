@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/30 16:21:03 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	online banking interface and financial data framework
 
 # update the "release=XX" in DISTFILES, not just DISTNAME
-DISTNAME=	aqbanking-5.5.0.2git
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=03\&release=117\&file=01}
-WRKDIST=	${WRKDIR}/aqbanking-5.5.0.2-git
-REVISION=	0
+DISTNAME=	aqbanking-5.5.1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=03\&release=118\&file=01}
+WRKDIST=	${WRKDIR}/aqbanking-5.5.1
 
 SHARED_LIBS +=	aqbanking            2.0      # 39.2
 SHARED_LIBS +=	aqbankingpp          0.0      # unknown
