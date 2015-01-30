@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2015/01/30 20:58:18 sthen Exp $
+--- config.h.in.orig	Fri Jan 30 20:54:09 2015
++++ config.h.in	Fri Jan 30 20:54:32 2015
+@@ -63,6 +63,9 @@
+ /* Define to 1 if you have the <sys/types.h> header file. */
+ #undef HAVE_SYS_TYPES_H
+ 
++/* Define to 1 if you have the <sys/videoio.h> header file. */
++#undef HAVE_SYS_VIDEOIO_H
++
+ /* Define to 1 if you have the <time.h> header file. */
+ #undef HAVE_TIME_H
+ 
