@@ -1,0 +1,31 @@
+$OpenBSD: patch-tests_data-structures-tests_scm,v 1.1 2015/01/30 14:30:30 jasper Exp $
+
+Security fix for CVE-2014-9651
+http://lists.nongnu.org/archive/html/chicken-hackers/2014-12/msg00000.html
+
+--- tests/data-structures-tests.scm.orig	Sat Jun  7 14:24:41 2014
++++ tests/data-structures-tests.scm	Fri Jan 30 16:19:25 2015
+@@ -1,6 +1,6 @@
+ ;;;; data-structures-tests.scm
+ 
+-(use data-structures)
++(use data-structures lolevel)
+ 
+ (define-syntax assert-error
+   (syntax-rules ()
+@@ -42,6 +42,15 @@
+ (assert (> 0 (string-compare3-ci "foo\x00A" "foo\x00b")))
+ (assert (< 0 (string-compare3-ci "foo\x00b" "foo\x00a")))
+ (assert (< 0 (string-compare3-ci "foo\x00b" "foo\x00A")))
++
++
++;; This used to fail because substring-index and co. used to search
++;; beyond the end of the subject string when a start index > 0 was
++;; provided. We use object-evict to ensure that the strings are placed
++;; in adjacent memory ranges so we can detect this error.
++(let* ((foo (object-evict (make-string 32 #\x)))
++       (bar (object-evict "y")))
++  (assert (not (substring-index "y" foo 30))))
+ 
+ ;; topological-sort
+ 

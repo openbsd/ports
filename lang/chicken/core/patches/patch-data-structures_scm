@@ -1,0 +1,37 @@
+$OpenBSD: patch-data-structures_scm,v 1.1 2015/01/30 14:30:30 jasper Exp $
+
+Security fix for CVE-2014-9651
+http://lists.nongnu.org/archive/html/chicken-hackers/2014-12/msg00000.html
+
+--- data-structures.scm.orig	Sat Jun  7 15:18:27 2014
++++ data-structures.scm	Fri Jan 30 14:58:17 2015
+@@ -303,15 +303,21 @@
+   (define (traverse which where start test loc)
+     (##sys#check-string which loc)
+     (##sys#check-string where loc)
+-    (let ([wherelen (##sys#size where)]
+-	  [whichlen (##sys#size which)] )
++    (let* ((wherelen (##sys#size where))
++	   (whichlen (##sys#size which))
++	   (end (fx- wherelen whichlen)))
+       (##sys#check-exact start loc)
+-      (let loop ([istart start] [iend whichlen])
+-	(cond [(fx> iend wherelen) #f]
+-	      [(test istart whichlen) istart]
+-	      [else 
+-	       (loop (fx+ istart 1)
+-		     (fx+ iend 1) ) ] ) ) ) )
++      (if (and (fx>= start 0)
++	       (fx> wherelen start))
++	  (let loop ((istart start))
++	    (cond ((fx> istart end) #f)
++		  ((test istart whichlen) istart)
++		  (else (loop (fx+ istart 1)))))
++	  (##sys#error-hook (foreign-value "C_OUT_OF_RANGE_ERROR" int)
++			    loc
++			    start
++			    wherelen))))
++
+   (set! ##sys#substring-index 
+     (lambda (which where start)
+       (traverse 
