@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2015/01/15 22:34:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2015/01/30 15:15:42 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.1-P1
-REVISION=	1
+REVISION=	2
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
 SHARED_LIBS +=	isc                  2.0      # 146.0
 SHARED_LIBS +=	isccc                0.0      # 140.1
-SHARED_LIBS +=	dns                  3.0      # 147.0
+SHARED_LIBS +=	dns                  4.0      # 147.0
 SHARED_LIBS +=	isccfg               0.3      # 142.3
 SHARED_LIBS +=	bind9                0.1      # 140.7
 SHARED_LIBS +=	lwres                0.1      # 141.0
