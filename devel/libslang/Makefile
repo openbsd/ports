@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2013/10/11 23:48:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2015/01/30 14:12:26 sthen Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.4
+REVISION=	0
 PKGNAME=	lib${DISTNAME}
 SHARED_LIBS=	slang 16.0
 

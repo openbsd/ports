@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_slgetkey_c,v 1.1 2015/01/30 14:12:26 sthen Exp $
+
+backwards memcpy
+
+--- src/slgetkey.c.orig	Fri Jan 30 12:01:25 2015
++++ src/slgetkey.c	Fri Jan 30 12:03:19 2015
+@@ -45,7 +45,7 @@ unsigned int SLang_getkey (void)
+ 	SLang_Input_Buffer_Len--;
+ 	imax = SLang_Input_Buffer_Len;
+ 
+-	SLMEMCPY ((char *) SLang_Input_Buffer,
++	memmove ((char *) SLang_Input_Buffer,
+ 		(char *) (SLang_Input_Buffer + 1), imax);
+      }
+    else if (SLANG_GETKEY_ERROR == (ch = _pSLsys_getkey ())) return ch;
