@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/03/14 16:13:43 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/01/30 16:20:43 sthen Exp $
 @bin bin/gct-tool
 @bin bin/gsa
 bin/gwenhywfar-config
@@ -94,6 +94,8 @@ include/gwenhywfar4/gwenhywfar/mutex.h
 include/gwenhywfar4/gwenhywfar/o_image_be.h
 include/gwenhywfar4/gwenhywfar/padd.h
 include/gwenhywfar4/gwenhywfar/paddalgo.h
+include/gwenhywfar4/gwenhywfar/param.h
+include/gwenhywfar4/gwenhywfar/param_fns.h
 include/gwenhywfar4/gwenhywfar/passwdstore.h
 include/gwenhywfar4/gwenhywfar/path.h
 include/gwenhywfar4/gwenhywfar/pathmanager.h
@@ -131,6 +133,12 @@ include/gwenhywfar4/gwenhywfar/widget_be.h
 include/gwenhywfar4/gwenhywfar/xml.h
 include/gwenhywfar4/gwenhywfar/xmlctx.h
 include/gwenhywfar4/gwenhywfar/xsdnode.h
+lib/cmake/gwengui-qt4-4.13/
+lib/cmake/gwengui-qt4-4.13/gwengui-qt4-config-version.cmake
+lib/cmake/gwengui-qt4-4.13/gwengui-qt4-config.cmake
+lib/cmake/gwenhywfar-4.13/
+lib/cmake/gwenhywfar-4.13/gwenhywfar-config-version.cmake
+lib/cmake/gwenhywfar-4.13/gwenhywfar-config.cmake
 lib/gwenhywfar/
 lib/gwenhywfar/plugins/
 lib/gwenhywfar/plugins/60/
@@ -184,6 +192,10 @@ share/gwenhywfar/typemaker2/c/gwen_date.tm2
 share/gwenhywfar/typemaker2/c/gwen_idlist64.tm2
 share/gwenhywfar/typemaker2/c/gwen_multicache.tm2
 share/gwenhywfar/typemaker2/c/gwen_multicache_type.tm2
+share/gwenhywfar/typemaker2/c/gwen_param.tm2
+share/gwenhywfar/typemaker2/c/gwen_param_list.tm2
+share/gwenhywfar/typemaker2/c/gwen_param_list2.tm2
+share/gwenhywfar/typemaker2/c/gwen_param_tree.tm2
 share/gwenhywfar/typemaker2/c/gwen_stringlist2.tm2
 share/gwenhywfar/typemaker2/c/gwen_time.tm2
 share/gwenhywfar/typemaker2/c/idmap_base.tm2

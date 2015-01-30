@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2014/10/07 13:25:18 henning Exp $
+# $OpenBSD: Makefile,v 1.6 2015/01/30 16:20:43 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	helper library for networking and security applications
 
 # update the "release=XX" in DISTFILES, not just DISTNAME
-DISTNAME=	gwenhywfar-4.12.0beta
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=01\&release=76\&file=01}
+DISTNAME=	gwenhywfar-4.13.1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=01\&release=78\&file=01}
 
-SHARED_LIBS +=	gwenhywfar           1.2      # 72.0
+SHARED_LIBS +=	gwenhywfar           1.3      # 73.1
 SHARED_LIBS +=	gwengui-gtk2         0.0      # unknown
-SHARED_LIBS +=	gwengui-qt4          0.0      # 0.0
+SHARED_LIBS +=	gwengui-qt4          0.0      # unknown
 SHARED_LIBS +=	gwengui-cpp          0.0      # unknown
 
 CATEGORIES=	devel
