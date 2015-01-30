@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/10/03 08:32:53 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2015/01/30 18:43:12 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.0.14
+VERSION=	10.0.16
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -70,6 +70,10 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_LIBXML2=Off
+
+# The Mroonga storage engine does not build at the moment on
+# OpenBSD. https://mariadb.atlassian.net/browse/MDEV-7209
+CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1
 
 MULTI_PACKAGES=	-main -server -tests
 
