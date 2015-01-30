@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/12/04 14:17:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/01/30 10:20:15 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -213,6 +213,7 @@ ${MODRUBY_SITEDIR}/puppet/functions/inline_epp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/map.rb
 ${MODRUBY_SITEDIR}/puppet/functions/match.rb
 ${MODRUBY_SITEDIR}/puppet/functions/reduce.rb
+${MODRUBY_SITEDIR}/puppet/functions/scanf.rb
 ${MODRUBY_SITEDIR}/puppet/functions/slice.rb
 ${MODRUBY_SITEDIR}/puppet/functions/with.rb
 ${MODRUBY_SITEDIR}/puppet/graph/
@@ -554,6 +555,7 @@ ${MODRUBY_SITEDIR}/puppet/parser/functions/realize.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/reduce.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/regsubst.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/require.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/scanf.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/search.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/sha1.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/shellquote.rb
@@ -617,6 +619,12 @@ ${MODRUBY_SITEDIR}/puppet/pops/evaluator/access_operator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/callable_mismatch_describer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/callable_signature.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/closure.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/collector_transformer.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/collectors/
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/collectors/abstract_collector.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/collectors/catalog_collector.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/collectors/exported_collector.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/collectors/fixed_set_collector.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/compare_operator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/epp_evaluator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/evaluator_impl.rb
