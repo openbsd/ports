@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/12/03 18:35:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/01/31 11:02:53 ajacoutot Exp $
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/128x128/
@@ -235,6 +235,32 @@ share/icons/hicolor/48x48/stock/net/
 share/icons/hicolor/48x48/stock/object/
 share/icons/hicolor/48x48/stock/table/
 share/icons/hicolor/48x48/stock/text/
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/actions/
+share/icons/hicolor/512x512/animations/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/categories/
+share/icons/hicolor/512x512/devices/
+share/icons/hicolor/512x512/emblems/
+share/icons/hicolor/512x512/emotes/
+share/icons/hicolor/512x512/filesystems/
+share/icons/hicolor/512x512/intl/
+share/icons/hicolor/512x512/mimetypes/
+share/icons/hicolor/512x512/places/
+share/icons/hicolor/512x512/status/
+share/icons/hicolor/512x512/stock/
+share/icons/hicolor/512x512/stock/chart/
+share/icons/hicolor/512x512/stock/code/
+share/icons/hicolor/512x512/stock/data/
+share/icons/hicolor/512x512/stock/form/
+share/icons/hicolor/512x512/stock/image/
+share/icons/hicolor/512x512/stock/io/
+share/icons/hicolor/512x512/stock/media/
+share/icons/hicolor/512x512/stock/navigation/
+share/icons/hicolor/512x512/stock/net/
+share/icons/hicolor/512x512/stock/object/
+share/icons/hicolor/512x512/stock/table/
+share/icons/hicolor/512x512/stock/text/
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/actions/
 share/icons/hicolor/64x64/animations/
