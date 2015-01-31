@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.546 2014/12/19 22:21:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.547 2015/01/31 09:14:14 ratchov Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -325,7 +325,6 @@
      SUBDIR += xarchive
      SUBDIR += xarchiver
      SUBDIR += xautolock
-     SUBDIR += xawtv
      SUBDIR += xbae
      SUBDIR += xbanish
      SUBDIR += xbindkeys

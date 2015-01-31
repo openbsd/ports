@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.212 2015/01/07 20:46:48 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.213 2015/01/31 09:14:14 ratchov Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -499,6 +499,7 @@ my $obsolete_reason = {
 	'hs-regex-pcre-builtin' => 5,
 	'hs-stringtable-atom' => 5,
 	'pugs' => 5,
+	'xawtv' => 5,
 };
 
 # ->is_base_system($handle, $state):
