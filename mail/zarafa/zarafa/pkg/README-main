@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.22 2012/08/30 14:28:22 ajacoutot Exp $
+$OpenBSD: README-main,v 1.23 2015/01/31 10:01:54 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,6 +9,7 @@ $OpenBSD: README-main,v 1.22 2012/08/30 14:28:22 ajacoutot Exp $
 
 6.40 -> 7.0 upgrade
 ===================
+
 See http://doc.zarafa.com/trunk/Release_Notes/en-US/html/_upgrading_to_zcp_7_0.html
 
 The zarafa7-upgrade script is available at:
@@ -17,6 +18,7 @@ Note that this script requires the py-mysql package.
 
 Post-install/update instructions for Zarafa
 ===========================================
+
 By default the server is configured to accept SOAP connections on port
 236. If you wish to connect Outlook clients on port 80, please setup
 your web server to proxy HTTP requests with URI=/zarafa to
@@ -43,46 +45,14 @@ Adding an admin user -- see zarafa-admin(1).
 
 Mail delivery agent configuration
 =================================
-The easiest way to use zarafa-dagent system-wide under a stock OpenBSD
-sendmail(8) installation is to use procmail(1).
+
 See the following URL for other MTA integration:
-    http://www.zarafa.com/faq/mta/mta
+    http://www.zarafa.com/wiki/index.php?title=MTA_integration&oldid=2487
 
-Anyway, here are the 3 ways of integrating Zarafa with sendmail(8).
-
-* Using procmail.
-
-First, install the procmail package and configure ${SYSCONFDIR}/procmailrc
-the following way:
-
-# optional: deliver mail tagged as SPAM into the Junk mail folder
-:0w
-* ^X-Spam-Status: Yes
-| ${TRUEPREFIX}/bin/zarafa-dagent -j $LOGNAME
-EXITCODE=$?
-
-:0w
-| ${TRUEPREFIX}/bin/zarafa-dagent $LOGNAME
-EXITCODE=$?
-
-Next, you need to add the following line to your sendmail.mc file then
-restart sendmail(8):
-    FEATURE(`local_procmail')dnl
-
-* Configuring sendmail to use the zarafa-dagent directly.
-
-To enable the Zarafa dagent delivery from localhost, add the following
-lines to your sendmail.mc and restart sendmail(8):
-    FEATURE(`local_zarafa')dnl
-To enable the Zarafa dagent for all other deliveries, add the following:
-    MAILER(`zarafa')dnl
-
-* Using a .forward file.
-
-Add the following .forward file under the user(s) home directory that
-will use Zarafa:
+Alternatively add the following .forward file under the user(s) home
+directory that will use Zarafa:
 "|${TRUEPREFIX}/bin/zarafa-dagent <username>"
-
+ 
 You can automate this step by copying
     ${TRUEPREFIX}/share/examples/zarafa/createuser.dotforward
 to
@@ -92,6 +62,7 @@ Zarafa.
 
 Zarafa webaccess
 ================
+
 Zarafa webaccess is installed under
     ${INSTDIR}
 
@@ -124,9 +95,9 @@ httpd:\
 
 Documentation and help
 ======================
+
 Each zarafa-* command has its corresponding manpage.
 
-Some documentation is also available on the Internet:
+Some documentation is also available at:
     http://www.zarafa.com/wiki/index.php/Main_Page
-    http://www.zarafa.com/content/documentation
     http://doc.zarafa.com/trunk/Administrator_Manual/en-US/html/
