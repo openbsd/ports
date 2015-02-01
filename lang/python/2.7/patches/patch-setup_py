@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.10 2014/12/14 08:32:55 rpointel Exp $
+$OpenBSD: patch-setup_py,v 1.11 2015/02/01 12:52:53 ratchov Exp $
 --- setup.py.orig	Wed Dec 10 17:00:01 2014
 +++ setup.py	Sat Dec 13 12:13:40 2014
 @@ -35,6 +35,11 @@ COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig
@@ -75,16 +75,6 @@ $OpenBSD: patch-setup_py,v 1.10 2014/12/14 08:32:55 rpointel Exp $
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1608,6 +1618,9 @@ class PyBuildExt(build_ext):
-                         'freebsd7', 'freebsd8')
-             or host_platform.startswith("gnukfreebsd")):
-             exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
-+        if host_platform.startswith('openbsd'):
-+            exts.append( Extension('ossaudiodev', ['ossaudiodev.c'],
-+                                   libraries = ['ossaudio'],) )
-         else:
-             missing.append('ossaudiodev')
- 
 @@ -1820,7 +1833,7 @@ class PyBuildExt(build_ext):
          # For 8.4a2, the X11 headers are not included. Rather than include a
          # complicated search, this is a hard-coded path. It could bail out

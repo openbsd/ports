@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2014/12/14 08:32:55 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2015/02/01 12:52:53 ratchov Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -1599,7 +1599,6 @@ lib/python2.7/lib-dynload/math.so
 lib/python2.7/lib-dynload/mmap.so
 lib/python2.7/lib-dynload/nis.so
 lib/python2.7/lib-dynload/operator.so
-lib/python2.7/lib-dynload/ossaudiodev.so
 lib/python2.7/lib-dynload/parser.so
 lib/python2.7/lib-dynload/pyexpat.so
 lib/python2.7/lib-dynload/readline.so

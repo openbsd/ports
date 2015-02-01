@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.108 2015/01/22 23:03:31 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.109 2015/02/01 12:52:53 ratchov Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -73,9 +73,7 @@ RUN_DEPENDS-main =
 WANTLIB-main =		bz2 c crypto expat ffi m ncursesw panelw pthread \
 			readline sqlite3 ssl stdc++ util z \
 			${MODGETTEXT_WANTLIB}
-.if ${VERSION} == "2.7"
-WANTLIB-main +=		ossaudio
-.elif ${VERSION} == "3.4"
+.if ${VERSION} == "3.4"
 LIB_DEPENDS-main +=	archivers/xz
 WANTLIB-main +=		lzma
 .endif
