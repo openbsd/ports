@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/11/26 17:44:27 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/02/01 17:59:35 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -107,6 +107,9 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.13.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.14.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.15.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.16.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.17.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.18.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.19.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.2.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.3.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/4.4.0.txt
@@ -310,6 +313,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/inflections.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/plugins.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/no_core_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/accessed_columns.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/active_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/after_initialize.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/association_autoreloading.rb
@@ -321,6 +325,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/blacklist_security.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/boolean_readers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/caching.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/class_table_inheritance.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_conflicts.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_select.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/composition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/constraint_validations.rb
@@ -407,6 +412,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/core/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core/version_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core_extensions_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/accessed_columns_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/active_model_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/after_initialize_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/arbitrary_servers_spec.rb
@@ -419,6 +425,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/blank_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/boolean_readers_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/caching_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/class_table_inheritance_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/column_conflicts_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/column_select_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/columns_introspection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/composition_spec.rb
