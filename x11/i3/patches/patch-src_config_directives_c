@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_config_directives_c,v 1.1 2015/02/02 17:24:26 dcoppa Exp $
+
+commit 13220e75d87991508ee1c30d9a797d42b131dc21
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Sat Jan 31 22:55:45 2015 +0100
+
+Bugfix: actually parse client.placeholder
+
+--- src/config_directives.c.orig	Sun Jun 15 12:12:43 2014
++++ src/config_directives.c	Mon Feb  2 11:15:51 2015
+@@ -390,6 +390,7 @@ CFGFUN(color, const char *colorclass, const char *bord
+     APPLY_COLORS(focused);
+     APPLY_COLORS(unfocused);
+     APPLY_COLORS(urgent);
++    APPLY_COLORS(placeholder);
+ 
+ #undef APPLY_COLORS
+ }

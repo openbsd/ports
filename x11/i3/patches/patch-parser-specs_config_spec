@@ -1,0 +1,19 @@
+$OpenBSD: patch-parser-specs_config_spec,v 1.5 2015/02/02 17:24:26 dcoppa Exp $
+
+commit 13220e75d87991508ee1c30d9a797d42b131dc21
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Sat Jan 31 22:55:45 2015 +0100
+
+Bugfix: actually parse client.placeholder
+
+--- parser-specs/config.spec.orig	Sun Jun 15 12:12:43 2014
++++ parser-specs/config.spec	Mon Feb  2 11:15:51 2015
+@@ -45,7 +45,7 @@ state INITIAL:
+   exectype = 'exec_always', 'exec'         -> EXEC
+   colorclass = 'client.background'
+       -> COLOR_SINGLE
+-  colorclass = 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent'
++  colorclass = 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+       -> COLOR_BORDER
+ 
+ # We ignore comments and 'set' lines (variables).

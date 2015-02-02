@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_load_layout_c,v 1.1 2014/08/18 08:46:27 dcoppa Exp $
+$OpenBSD: patch-src_load_layout_c,v 1.2 2015/02/02 17:24:26 dcoppa Exp $
 
 commit 679a5de8cfb9211afb1a1dd882e53bd672084754
 Author: Michael Stapelberg <michael@stapelberg.de>
@@ -6,8 +6,14 @@ Date:   Tue Jul 15 10:15:04 2014 +0200
 
 Bugfix: properly restore workspace containers
 
---- src/load_layout.c.orig	Sun Jun 15 19:12:43 2014
-+++ src/load_layout.c	Mon Aug 18 08:25:05 2014
+commit 55b5f491a469ccf47c7fdc66f3f0df86ef2e1f64
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Sat Jan 31 22:40:55 2015 +0100
+
+Bugfix: correctly restore workspaces regardless of where "type" is
+
+--- src/load_layout.c.orig	Sun Jun 15 12:12:43 2014
++++ src/load_layout.c	Mon Feb  2 11:05:28 2015
 @@ -52,11 +52,13 @@ static int json_start_map(void *ctx) {
                  DLOG("New floating_node\n");
                  Con *ws = con_get_workspace(json_node);
@@ -63,14 +69,25 @@ Bugfix: properly restore workspace containers
          LOG("attaching\n");
          con_attach(json_node, json_node->parent, true);
          LOG("Creating window\n");
-@@ -390,26 +426,94 @@ static int json_double(void *ctx, double val) {
+@@ -390,26 +426,110 @@ static int json_double(void *ctx, double val) {
      return 1;
  }
  
 +static json_content_t content_result;
++static int content_level;
++
++static int json_determine_content_deeper(void *ctx) {
++    content_level++;
++    return 1;
++}
++
++static int json_determine_content_shallower(void *ctx) {
++    content_level--;
++    return 1;
++}
 +
 +static int json_determine_content_string(void *ctx, const unsigned char *val, size_t len) {
-+    if (strcasecmp(last_key, "type") != 0)
++    if (strcasecmp(last_key, "type") != 0 || content_level > 1)
 +        return 1;
 +
 +    DLOG("string = %.*s, last_key = %s\n", (int)len, val, last_key);
@@ -106,11 +123,16 @@ Bugfix: properly restore workspace containers
 +    // We default to JSON_CONTENT_CON because it is legal to not include
 +    // ""type": "con"" in the JSON files for better readability.
 +    content_result = JSON_CONTENT_CON;
++    content_level = 0;
 +    yajl_gen g;
 +    yajl_handle hand;
 +    static yajl_callbacks callbacks = {
 +        .yajl_string = json_determine_content_string,
 +        .yajl_map_key = json_key,
++        .yajl_start_array = json_determine_content_deeper,
++        .yajl_start_map = json_determine_content_deeper,
++        .yajl_end_map = json_determine_content_shallower,
++        .yajl_end_array = json_determine_content_shallower,
 +    };
 +    g = yajl_gen_alloc(NULL);
 +    hand = yajl_alloc(&callbacks, NULL, (void *)g);
