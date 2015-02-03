@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/03 18:00:47 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2015/02/03 17:41:58 jca Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
-DISTNAME=		s-nail-14.7.10
+DISTNAME=		s-nail-14.7.11
 DISTFILES=		${DISTNAME:S/./_/g}.tar.gz
 CATEGORIES=		mail
 HOMEPAGE=		http://sdaoden.users.sourceforge.net/code.html#s-nail
