@@ -1,0 +1,20 @@
+$OpenBSD: patch-gnome-session_gsm-app_c,v 1.1 2015/02/03 13:25:16 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=739424
+From FreeBSD:
+Reduces the time gnome-session will consider application, like gnome-shell,
+crashes to be fatal. And drop the user back to the login screen.
+This will hopefully allow gnome-shell to restart after triggering the bug
+above.
+
+--- gnome-session/gsm-app.c.orig	Wed Jun 25 20:06:33 2014
++++ gnome-session/gsm-app.c	Tue Feb  3 14:03:03 2015
+@@ -30,7 +30,7 @@
+ #define GSM_APP_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_APP, GsmAppPrivate))
+ 
+ /* If a component crashes twice within a minute, we count that as a fatal error */
+-#define _GSM_APP_RESPAWN_RATELIMIT_SECONDS 60
++#define _GSM_APP_RESPAWN_RATELIMIT_SECONDS 3
+ 
+ struct _GsmAppPrivate
+ {
