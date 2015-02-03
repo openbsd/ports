@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/03 12:25:45 pascal Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
@@ -12,6 +12,7 @@ PORTNAME =		rakudo
 V =			2013.05
 DISTNAME =		rakudo-star-$V
 PKGNAME =		rakudo-$V
+REVISION =		0
 
 PARROT_VERSION =	5.4.0
 NQP_VERSION =		2013.05
@@ -32,6 +33,7 @@ WANTLIB += 		readline stdc++ util ffi
 MASTER_SITES =		${HOMEPAGE}/downloads/star/
 
 BUILD_DEPENDS =		lang/nqp>=${NQP_VERSION}
+RUN_DEPENDS =		lang/nqp>=${NQP_VERSION}
 LIB_DEPENDS =		lang/parrot>=${PARROT_VERSION} \
 			textproc/icu4c
 
