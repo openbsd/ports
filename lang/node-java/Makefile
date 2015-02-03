@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/01 06:29:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/02/03 15:51:10 abieber Exp $
 
 COMMENT =	bridge API connect to Java for Node.js
 
 NPM_VERSION =	0.2.9
 NPM_NAME =	java
-REVISION =	1
+REVISION =	2
 CATEGORIES =	lang
 
 MAINTAINER =	Roman Kravchuk <kravchuk.kp@gmail.com>
