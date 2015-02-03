@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/09/18 11:51:20 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/02/03 13:26:21 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -94,6 +94,7 @@ share/highlight/langDefs/java.lang
 share/highlight/langDefs/js.lang
 share/highlight/langDefs/jsp.lang
 share/highlight/langDefs/ldif.lang
+share/highlight/langDefs/less.lang
 share/highlight/langDefs/lhs.lang
 share/highlight/langDefs/lilypond.lang
 share/highlight/langDefs/limbo.lang
@@ -153,6 +154,7 @@ share/highlight/langDefs/pyrex.lang
 share/highlight/langDefs/python.lang
 share/highlight/langDefs/q.lang
 share/highlight/langDefs/qmake.lang
+share/highlight/langDefs/qml.lang
 share/highlight/langDefs/qu.lang
 share/highlight/langDefs/r.lang
 share/highlight/langDefs/rebol.lang
@@ -165,6 +167,7 @@ share/highlight/langDefs/s.lang
 share/highlight/langDefs/sas.lang
 share/highlight/langDefs/scala.lang
 share/highlight/langDefs/scilab.lang
+share/highlight/langDefs/scss.lang
 share/highlight/langDefs/sh.lang
 share/highlight/langDefs/small.lang
 share/highlight/langDefs/smalltalk.lang
@@ -175,6 +178,7 @@ share/highlight/langDefs/spec.lang
 share/highlight/langDefs/spn.lang
 share/highlight/langDefs/sql.lang
 share/highlight/langDefs/squirrel.lang
+share/highlight/langDefs/styl.lang
 share/highlight/langDefs/swift.lang
 share/highlight/langDefs/sybase.lang
 share/highlight/langDefs/tcl.lang
