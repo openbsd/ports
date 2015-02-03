@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/02 14:26:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/03 20:32:12 pascal Exp $
 
 BROKEN-arm = needs binutils-2.17
 
-ONLY_FOR_ARCHS = amd64 arm i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS = amd64 arm hppa i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.2
@@ -30,7 +30,13 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.9,<4.10
 
-REVISION =	0
+REVISION-main =	1
+REVISION-libs =	1
+REVISION-c++ =	1
+REVISION-f95 =	1
+REVISION-java =	1
+REVISION-objc =	1
+REVISION-ada =	1
 
 SHARED_LIBS =	estdc++		17.0 \
 		gfortran	6.0 \
@@ -136,7 +142,6 @@ CONFIGURE_ARGS += \
 	--verbose \
 	--program-transform-name=s,^,e, \
 	--disable-nls  \
-	--disable-checking \
 	--with-system-zlib \
 	--disable-libmudflap \
 	--disable-libgomp \
@@ -191,15 +196,6 @@ PKG_ARGS += -DX86=0
 PKG_ARGS += -DITM=1
 .else
 PKG_ARGS += -DITM=0
-.endif
-
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arm" || \
-	${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
-	${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sh" || \
-	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
-PKG_ARGS += -DATOMIC=1
-.else
-PKG_ARGS += -DATOMIC=0
 .endif
 
 # depends on __float128

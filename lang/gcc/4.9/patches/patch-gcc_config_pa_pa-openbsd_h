@@ -1,0 +1,11 @@
+$OpenBSD: patch-gcc_config_pa_pa-openbsd_h,v 1.1 2015/02/03 20:32:12 pascal Exp $
+--- gcc/config/pa/pa-openbsd.h.orig	Mon Feb  2 09:25:56 2015
++++ gcc/config/pa/pa-openbsd.h	Mon Feb  2 09:26:04 2015
+@@ -138,6 +138,7 @@ along with GCC; see the file COPYING3.  If not see
+    %{shared:-shared} %{R*} \
+    %{static:-Bstatic} \
+    %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
+    %{assert*} \
+    -dynamic-linker /usr/libexec/ld.so"
+ 
