@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_setup_pm,v 1.1 2015/02/03 13:24:19 pascal Exp $
+--- build/setup.pm.orig	Fri Dec 12 17:40:52 2014
++++ build/setup.pm	Fri Dec 12 17:41:14 2014
+@@ -129,7 +129,7 @@ our %TC_POSIX = (
+     ccshared   => '-fPIC',
+     ldshared   => '-shared @ccshared@',
+     moarshared => '',
+-    ldrpath    => '-Wl,-rpath,@libdir@',
++    ldrpath    => '-Wl,-rpath,@libdir@ @lddir@@libdir@',
+ 
+     arflags => 'rcs',
+     arout   => '',

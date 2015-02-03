@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure_pl,v 1.1.1.1 2014/05/25 21:49:55 pascal Exp $
---- Configure.pl.orig	Thu May 22 20:46:53 2014
-+++ Configure.pl	Fri May 23 23:36:57 2014
-@@ -197,6 +197,10 @@ $config{ldflags} = join ' ', @ldflags;
+$OpenBSD: patch-Configure_pl,v 1.2 2015/02/03 13:24:19 pascal Exp $
+--- Configure.pl.orig	Wed Nov 19 17:19:32 2014
++++ Configure.pl	Fri Dec 12 17:40:47 2014
+@@ -320,6 +320,10 @@ $config{ldflags} = join ' ', @ldflags;
  $config{moarlib} = sprintf $config{lib}, $NAME;
  $config{moardll} = sprintf $config{dll}, $NAME;
  
