@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/16 22:27:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2015/02/03 19:22:52 bentley Exp $
 
 COMMENT =		modernized troff implementation
 
-V =			141029
+V =			141217
 DISTNAME =		heirloom-doctools-$V
 
 CATEGORIES =		textproc print
@@ -43,10 +43,5 @@ NO_TEST =		Yes
 MAKE_FILE =		makefile
 
 ALL_TARGET =
-
-post-extract:
-	perl -pi -e 's/man1b(.*)\.1b/man1\1.1/;' \
-		-e 's/man7b(.*)\.7b/man7\1.7/;' \
-		${WRKSRC}/*/*.mk ${WRKSRC}/*/*/*.mk
 
 .include <bsd.port.mk>

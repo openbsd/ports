@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/16 22:27:06 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/02/03 19:22:52 bentley Exp $
 heirloom-doctools/
 heirloom-doctools/bin/
 @bin heirloom-doctools/bin/addbib
@@ -436,6 +436,7 @@ share/heirloom-doctools/nterm/tab.8510
 share/heirloom-doctools/nterm/tab.X
 share/heirloom-doctools/nterm/tab.lp
 share/heirloom-doctools/nterm/tab.tn300
+share/heirloom-doctools/nterm/tab.utf8
 share/heirloom-doctools/pub/
 share/heirloom-doctools/pub/ascii
 share/heirloom-doctools/pub/eqnchar
