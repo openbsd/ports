@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/11/29 06:46:33 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.34 2015/02/03 12:51:17 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @newgroup _wesnothd:708
 @newuser _wesnothd:708:_wesnothd:daemon:Wesnoth Server:/var/wesnothd:/sbin/nologin
@@ -159,6 +159,13 @@ share/doc/wesnoth/images/orb-blue.jpg
 share/doc/wesnoth/images/orb-green.jpg
 share/doc/wesnoth/images/orb-red.jpg
 share/doc/wesnoth/images/orb-yellow.jpg
+share/doc/wesnoth/images/pt/
+share/doc/wesnoth/images/pt/game-screen-1.11.19.jpg
+share/doc/wesnoth/images/pt/main-menu-1.11.19.jpg
+share/doc/wesnoth/images/pt/multiplayer-1.11.19.jpg
+share/doc/wesnoth/images/pt/recruit-1.11.19.jpg
+share/doc/wesnoth/images/pt/right_pane-1.11.19.jpg
+share/doc/wesnoth/images/pt/top_pane-1.11.19.jpg
 share/doc/wesnoth/images/recruit-1.11.9.jpg
 share/doc/wesnoth/images/right_pane-1.11.9.jpg
 share/doc/wesnoth/images/ru/
@@ -7941,6 +7948,13 @@ share/wesnoth/data/core/images/themes/gold-bw.png
 share/wesnoth/data/core/images/themes/gold.png
 share/wesnoth/data/core/images/themes/income-bw.png
 share/wesnoth/data/core/images/themes/income.png
+share/wesnoth/data/core/images/themes/legacy/
+share/wesnoth/data/core/images/themes/legacy/rightside-bg.png
+share/wesnoth/data/core/images/themes/legacy/rightside-bottom.png
+share/wesnoth/data/core/images/themes/legacy/rightside-small.png
+share/wesnoth/data/core/images/themes/legacy/rightside.png
+share/wesnoth/data/core/images/themes/legacy/status-bg.png
+share/wesnoth/data/core/images/themes/legacy/top-bg.png
 share/wesnoth/data/core/images/themes/sand-clock-bw.png
 share/wesnoth/data/core/images/themes/sand-clock.png
 share/wesnoth/data/core/images/themes/status_box/
@@ -13139,9 +13153,10 @@ share/wesnoth/data/test/test/image/blend/FF_00FF0000.png
 share/wesnoth/data/test/test/leading_space.cfg
 share/wesnoth/data/test/test/umc.cfg
 share/wesnoth/data/themes/
+share/wesnoth/data/themes/_initial.cfg
+share/wesnoth/data/themes/classic.cfg
 share/wesnoth/data/themes/default.cfg
 share/wesnoth/data/themes/editor.cfg
-share/wesnoth/data/themes/macros.cfg
 share/wesnoth/data/themes/null.cfg
 share/wesnoth/data/themes/pandora.cfg
 share/wesnoth/data/tips.cfg
@@ -13597,6 +13612,31 @@ share/wesnoth/images/buttons/checkbox-touched.png
 share/wesnoth/images/buttons/checkbox-touched@2x.png
 share/wesnoth/images/buttons/checkbox.png
 share/wesnoth/images/buttons/checkbox@2x.png
+share/wesnoth/images/buttons/classic/
+share/wesnoth/images/buttons/classic/large-button-active.png
+share/wesnoth/images/buttons/classic/large-button-pressed.png
+share/wesnoth/images/buttons/classic/large-button.png
+share/wesnoth/images/buttons/classic/lite-active.png
+share/wesnoth/images/buttons/classic/lite-pressed.png
+share/wesnoth/images/buttons/classic/lite.png
+share/wesnoth/images/buttons/classic/pause-active.png
+share/wesnoth/images/buttons/classic/pause-pressed.png
+share/wesnoth/images/buttons/classic/pause.png
+share/wesnoth/images/buttons/classic/play-active.png
+share/wesnoth/images/buttons/classic/play-move-active.png
+share/wesnoth/images/buttons/classic/play-move-pressed.png
+share/wesnoth/images/buttons/classic/play-move.png
+share/wesnoth/images/buttons/classic/play-pressed.png
+share/wesnoth/images/buttons/classic/play-side-active.png
+share/wesnoth/images/buttons/classic/play-side-pressed.png
+share/wesnoth/images/buttons/classic/play-side.png
+share/wesnoth/images/buttons/classic/play-turn-active.png
+share/wesnoth/images/buttons/classic/play-turn-pressed.png
+share/wesnoth/images/buttons/classic/play-turn.png
+share/wesnoth/images/buttons/classic/play.png
+share/wesnoth/images/buttons/classic/stop-active.png
+share/wesnoth/images/buttons/classic/stop-pressed.png
+share/wesnoth/images/buttons/classic/stop.png
 share/wesnoth/images/buttons/fold-arrow-active.png
 share/wesnoth/images/buttons/fold-arrow-active@2x.png
 share/wesnoth/images/buttons/fold-arrow-pressed.png
@@ -14614,8 +14654,8 @@ share/wesnoth/images/icons/unit-groups/race_dwarf_30-pressed.png
 share/wesnoth/images/icons/unit-groups/race_dwarf_30.png
 share/wesnoth/images/icons/unit-groups/race_elf_30-pressed.png
 share/wesnoth/images/icons/unit-groups/race_elf_30.png
-share/wesnoth/images/icons/unit-groups/race_falcons_30-pressed.png
-share/wesnoth/images/icons/unit-groups/race_falcons_30.png
+share/wesnoth/images/icons/unit-groups/race_falcon_30-pressed.png
+share/wesnoth/images/icons/unit-groups/race_falcon_30.png
 share/wesnoth/images/icons/unit-groups/race_goblin_30-pressed.png
 share/wesnoth/images/icons/unit-groups/race_goblin_30.png
 share/wesnoth/images/icons/unit-groups/race_gryphon_30-pressed.png

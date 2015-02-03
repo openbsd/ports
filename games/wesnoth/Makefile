@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/01/19 14:43:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.59 2015/02/03 12:51:16 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -7,8 +7,7 @@ BROKEN-mips64el =	missing atomic ops
 BROKEN-hppa =		missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.12
-REVISION = 	0
+DISTNAME=	wesnoth-1.12.1
 
 CATEGORIES=	games x11
 
@@ -61,8 +60,6 @@ FLAVOR?=
 .if ${FLAVOR:Mlite}
 CONFIGURE_ARGS+=-DENABLE_LOW_MEM=ON
 .endif
-
-WRKDIST = 	${WRKDIR}/wesnoth-1.12.0
 
 post-install:
 	find ${PREFIX} -name .gitignore -exec rm -f {} \+
