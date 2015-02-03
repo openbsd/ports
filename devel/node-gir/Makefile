@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/01 06:29:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/03 15:50:28 abieber Exp $
 
 COMMENT =	GObject Introspection bindings for Node.js
 
@@ -6,7 +6,7 @@ NPM_VERSION =	0.1.0
 NPM_NAME =	gir
 CATEGORIES =	devel
 
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	https://github.com/creationix/node-gir
 
