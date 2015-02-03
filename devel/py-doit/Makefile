@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/02 11:16:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2015/02/03 23:30:54 bcallah Exp $
 
 COMMENT =	automation tool
-MODPY_EGG_VERSION =	0.26.0
+MODPY_EGG_VERSION =	0.27.0
 DISTNAME =	doit-${MODPY_EGG_VERSION}
 PKGNAME =	py-doit-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
