@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.26 2013/06/28 15:19:40 rpe Exp $
+# $OpenBSD: Makefile,v 1.27 2015/02/04 21:16:11 sthen Exp $
 
 COMMENT=	unique standard tape archiver
 
 DISTNAME=	star-1.5.2
+REVISION=	0
 CATEGORIES=	archivers sysutils
 HOMEPAGE=	http://cdrecord.berlios.de/private/star.html
 
 # CDDL
 PERMIT_PACKAGE_CDROM=	Yes
+
+# fake WANTLIB to ensure updates occur for major changes in base even for static
+WANTLIB=	c
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=pub/star/} \
 		ftp://ftp.berlios.de/pub/star/
@@ -25,8 +29,6 @@ MAKE_FLAGS=	CC="${CC}" CC++="${CXX}" \
 
 .if ${FLAVOR:Mstatic}
 MAKE_ENV+=	LDOPTX=-static
-.else
-WANTLIB=	c
 .endif
 
 post-patch:

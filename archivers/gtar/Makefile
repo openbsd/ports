@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2014/08/09 19:46:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.75 2015/02/04 21:16:11 sthen Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
 DISTNAME=	tar-1.28
+REVISION=	0
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
@@ -14,6 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.xz
+
+# fake WANTLIB to ensure updates occur for major changes in base even for static
+WANTLIB=	c
 
 MODULES=	devel/gettext
 # only force dependencies for compressors that have a single-letter option
@@ -40,7 +44,6 @@ BUILD_DEPENDS+=	devel/gettext
 CONFIGURE_ENV+=	SHLIBEXT=""
 .else
 LDSTATIC=
-WANTLIB=	c
 .endif
 
 # Test 87 is known to fail because getcwd(3) fails if the

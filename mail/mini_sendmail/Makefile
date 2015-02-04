@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/07/05 07:38:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/02/04 21:16:11 sthen Exp $
 
 COMMENT-main=	accept email on behalf of real sendmail
 COMMENT-chroot=	static mini_sendmail for chrooted apache
@@ -8,7 +8,7 @@ DISTNAME=	mini_sendmail-${V}
 PKGNAME-main=	mini_sendmail-${V}
 REVISION-main=	3
 PKGNAME-chroot=	mini_sendmail-chroot-${V}
-REVISION-chroot=1
+REVISION-chroot=2
 CATEGORIES=	mail www
 MASTER_SITES=	${HOMEPAGE}
 
@@ -25,6 +25,9 @@ MULTI_PACKAGES=	-main -chroot
 
 PREFIX-chroot=	${VARBASE}/www
 WANTLIB-main=	c
+
+# fake WANTLIB to ensure updates occur for major changes in base
+WANTLIB-chroot=	c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mini_sendmail ${PREFIX}/bin

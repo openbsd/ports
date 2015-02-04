@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2014/08/20 17:57:16 henning Exp $
+# $OpenBSD: Makefile,v 1.17 2015/02/04 21:16:11 sthen Exp $
 
 COMMENT-main=	simple SMTP client
 COMMENT-chroot=	simple SMTP client for chrooted web servers
 
 V=		1.0
+REVISION=	0
 DISTNAME=	femail-${V}
 PKGNAME-main=	femail-${V}
 PKGNAME-chroot=	femail-chroot-${V}
@@ -25,6 +26,9 @@ MULTI_PACKAGES=	-main -chroot
 
 PREFIX-chroot=	${VARBASE}/www
 WANTLIB-main=	c
+
+# fake WANTLIB to ensure updates occur for major changes in base
+WANTLIB-chroot=	c
 
 RUN_DEPENDS-chroot= ${BASE_PKGPATH},-main
 
