@@ -3,7 +3,7 @@
 .\" <http://shell.ipoline.com/~elmert/comp/docbook2X/> 
 .\" Please send any bug reports, improvements, comments, patches, 
 .\" etc. to Steve Cheng <steve@ggi-project.org>.
-.TH "HPODDER" "1" "27 April 2010" "John Goerzen"
+.TH "HPODDER" "1" "Nov  8, 2011" "John Goerzen" "hpodder 1.1.6"
 
 .SH NAME
 hpodder \- Scan and download podcasts
@@ -159,7 +159,7 @@ source distribution.
 To get started, simply run \fBhpodder\fR at your
 shell prompt.  \fBhpodder\fR will lead you through the first-time
 configuration -- which is only two questions and completely
-self-explanatory!
+self-explanatory.
 .PP
 After this, whenever you want to download the latest episodes
 for your podcast, just run \fBhpodder\fR again.
@@ -226,7 +226,7 @@ explicitly listed for each command below.
 
 .PP
 This command is used to add a new podcast to \fBhpodder\fR\&.  You
-can must provide the URL (link) to the podcast you want to add
+must provide the URL (link) to the podcast you want to add
 to this command.  For example:
 .PP
 \fBhpodder add
@@ -311,7 +311,7 @@ specifying podcast IDs for more details.
 
 .PP
 The \fBfetch\fR is the main worker command for
-\fBhpodder\fR\&.  It is simply equivolent to \fBhpodder
+\fBhpodder\fR\&.  It is simply equivalent to \fBhpodder
 update\fR followed by \fBhpodder
 download\fR\&.  That is, it will scan all podcasts for
 new episodes, then download any pending episodes.
@@ -452,7 +452,7 @@ By default, this command will operate on all podcasts.  You can limit the podcas
 
 .PP
 Each podcast in \fBhpodder\fR gets a numeric ID.  This ID is
-automatically assigned by \fBhpodder\fR and is not changable.  The
+automatically assigned by \fBhpodder\fR and is not changeable.  The
 ID is given out when a podcast is added with the
 \fBadd\fR command, or with the
 \fBlscasts\fR or \fBlsepisodes\fR
@@ -460,7 +460,7 @@ commands.
 .PP
 The ID is designed as a constant way to refer to a particular
 podcast.  A podcast's title may change, or even its feed URL,
-but the ID of a podcast will never change.  It also is short and
+but the ID of a podcast will never change.  It is also short and
 easy to type on the command line.
 .PP
 Several commands can take a list of podcast IDs.  If no IDs are
@@ -534,7 +534,7 @@ options.  This file normally lives under
 \fI~/.hpodder/hpodder.conf\fR\&.
 .PP
 The configuration file has multiple sections.  Each section has
-a name and is introduced with the name in brackets.  Each
+a name and it's introduced with the name in brackets.  Each
 section has one or more options.
 .PP
 The section named DEFAULT is special in that it provides
@@ -596,7 +596,7 @@ section.
 The maximum number of simultaneous download
 threads that will be active at any given time.
 \fBhpodder\fR can download multiple files at once, and this
-options says how many it can download simultaneously.
+option says how many it can download simultaneously.
 It defaults to 2.
 .TP
 \fBprogressinterval\fR
@@ -694,7 +694,7 @@ situations.  For each of the commands, several environment
 variables are set.  These variables are not pre-sanitized
 and may contain whitespace or special characters.
 \fBExtreme
-caution must be exercized to properly quote these variables
+caution must be exercised to properly quote these variables
 when using them in shell commands or scripts.\fR
 The following
 environment variables are set:
