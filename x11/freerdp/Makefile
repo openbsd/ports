@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/10 13:25:46 giovanni Exp $
+# $OpenBSD: Makefile,v 1.18 2015/02/04 20:51:39 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 V =			1.0.2
 COMMENT =		open source client for Windows Terminal Server
 DISTNAME =		freerdp-$V
-REVISION =		1
+REVISION =		2
 DISTFILES =		${DISTNAME}{$V}.tar.gz
 WRKDIST =		${WRKDIR}/FreeRDP-$V
 CATEGORIES =		x11 net
@@ -26,8 +26,8 @@ MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcursor Xext Xinerama Xv avcodec avutil c crypto
-WANTLIB += pcsclite pthread ssl xkbfile z cups
+WANTLIB += X11 Xcursor Xext Xinerama Xv avcodec avutil c lib/eopenssl/crypto
+WANTLIB += pcsclite pthread lib/eopenssl/ssl xkbfile z cups
 
 MASTER_SITES =		https://github.com/FreeRDP/FreeRDP/archive/ \
 			http://spacehopper.org/mirrors/
@@ -39,14 +39,17 @@ BUILD_DEPENDS =		textproc/docbook \
 
 LIB_DEPENDS =		graphics/ffmpeg \
 			print/cups,-libs \
+			security/openssl \
 			security/pcsc-lite
 
 CONFIGURE_ARGS +=	-DWITH_ALSA=Off \
 			-DWITH_PCSC=On
 
+CFLAGS +=		-I${LOCALBASE}/include/eopenssl 
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib/eopenssl -Wl,-rpath,${LOCALBASE}/lib/eopenssl"
+
 post-patch:
 	perl -pi -e 's,/usr/local,${LOCALBASE},g; s,/usr/X11R6,${X11BASE},g;' \
 	    ${WRKSRC}/CMakeLists.txt
-
 
 .include <bsd.port.mk>
