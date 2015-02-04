@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi_cgiutils_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
---- cgi/cgiutils.c.orig	Mon Jan 19 16:15:51 2015
-+++ cgi/cgiutils.c	Mon Jan 19 16:18:42 2015
+$OpenBSD: patch-cgi_cgiutils_c,v 1.2 2015/02/04 21:19:23 sthen Exp $
+--- cgi/cgiutils.c.orig	Wed Nov 19 11:12:54 2014
++++ cgi/cgiutils.c	Mon Feb  2 17:18:13 2015
 @@ -1278,7 +1278,7 @@ void document_header(int cgi_id, int use_stylesheet, c
  		printf("{ \"cgi_json_version\": \"%s\",\n", JSON_OUTPUT_VERSION);
  		printf("\"icinga_status\": {\n");
@@ -36,7 +36,7 @@ $OpenBSD: patch-cgi_cgiutils_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  	} else {
  		printf("Earlier Archive<br>");
 -		printf("<a href='%s%sts_start=%lu&amp;ts_end=%lu'><img src='%s%s' border='0' alt='Earlier Archive' title='Earlier Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", ts_start - 86400, ts_start - 1, url_images_path, LEFT_ARROW_ICON);
-+		printf("<a href='%s%sts_start=%llu&amp;ts_end=%lul'><img src='%s%s' border='0' alt='Earlier Archive' title='Earlier Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", (long long)ts_start - 86400, (long long)ts_start - 1, url_images_path, LEFT_ARROW_ICON);
++		printf("<a href='%s%sts_start=%llu&amp;ts_end=%llu'><img src='%s%s' border='0' alt='Earlier Archive' title='Earlier Archive'></a>", url, (strstr(url, "?")) ? "&amp;" : "?", (long long)ts_start - 86400, (long long)ts_start - 1, url_images_path, LEFT_ARROW_ICON);
  	}
  	printf("</td>\n");
  
