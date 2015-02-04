@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2014/04/21 22:24:17 sthen Exp $
-@conflict samba-docs-<3.6.0
+@comment $OpenBSD: PLIST-main,v 1.26 2015/02/04 11:50:21 jca Exp $
+@conflict samba-docs-<=3.6.15
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},ads,-main
 @pkgpath ${BASE_PKGPATH},cups[,ads][,ldap]
@@ -190,6 +190,19 @@ share/doc/samba/
 share/doc/samba/README
 share/examples/samba/
 @sample ${SYSCONFDIR}/samba/
+share/examples/samba/LDAP/
+share/examples/samba/LDAP/README
+share/examples/samba/LDAP/convertSambaAccount
+share/examples/samba/LDAP/get_next_oid
+share/examples/samba/LDAP/ol-schema-migrate.pl
+share/examples/samba/LDAP/samba-nds.schema
+share/examples/samba/LDAP/samba-schema-FDS.ldif
+share/examples/samba/LDAP/samba-schema-netscapeds5.x.README
+share/examples/samba/LDAP/samba-schema.IBMSecureWay
+share/examples/samba/LDAP/samba.ldif
+share/examples/samba/LDAP/samba.schema
+share/examples/samba/LDAP/samba.schema.at.IBM-DS
+share/examples/samba/LDAP/samba.schema.oc.IBM-DS
 share/examples/samba/ad-bench/
 share/examples/samba/ad-bench/README
 share/examples/samba/ad-bench/ad-bench.sh

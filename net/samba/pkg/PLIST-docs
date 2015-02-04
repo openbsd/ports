@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-docs,v 1.19 2012/09/25 20:11:11 brad Exp $
-@conflict samba-<3.6.0
+@comment $OpenBSD: PLIST-docs,v 1.20 2015/02/04 11:50:21 jca Exp $
+@conflict samba-<=3.6.15p10
 @pkgpath net/samba,-docs,ads
 @pkgpath net/samba,-docs,cups
 @pkgpath net/samba,-docs,cups,ads
@@ -27,19 +27,6 @@ share/doc/samba/pdf/
 share/doc/samba/pdf/Samba3-ByExample.pdf
 share/doc/samba/pdf/Samba3-Developers-Guide.pdf
 share/doc/samba/pdf/Samba3-HOWTO.pdf
-share/examples/samba/LDAP/
-share/examples/samba/LDAP/README
-share/examples/samba/LDAP/convertSambaAccount
-share/examples/samba/LDAP/get_next_oid
-share/examples/samba/LDAP/ol-schema-migrate.pl
-share/examples/samba/LDAP/samba-nds.schema
-share/examples/samba/LDAP/samba-schema-FDS.ldif
-share/examples/samba/LDAP/samba-schema-netscapeds5.x.README
-share/examples/samba/LDAP/samba-schema.IBMSecureWay
-share/examples/samba/LDAP/samba.ldif
-share/examples/samba/LDAP/samba.schema
-share/examples/samba/LDAP/samba.schema.at.IBM-DS
-share/examples/samba/LDAP/samba.schema.oc.IBM-DS
 share/examples/samba/README
 share/examples/samba/VFS/
 share/examples/samba/VFS/Makefile.in
