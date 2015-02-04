@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_no-mode-change-git-diff,v 1.1 2015/02/04 21:11:51 naddy Exp $
+
+Test suite portability fixes
+http://git.savannah.gnu.org/cgit/patch.git/commit/?id=7297352e16bdd22c2c0842aebdf612d40271b75d
+
+--- tests/no-mode-change-git-diff.orig	Sat Jan 31 22:14:01 2015
++++ tests/no-mode-change-git-diff	Wed Feb  4 21:03:47 2015
+@@ -29,6 +29,6 @@ check 'patch -p1 < simple.diff || echo "Status:  $?"' 
+ patching file f
+ EOF
+ 
+-check 'stat -c "%a" f'<<EOF
+-755
++check 'ls -l f | sed "s,\(..........\).*,\1,"' <<EOF
++-rwxr-xr-x
+ EOF

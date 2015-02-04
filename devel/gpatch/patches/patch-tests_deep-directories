@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_deep-directories,v 1.1 2015/02/04 21:11:51 naddy Exp $
+
+Test suite portability fixes
+http://git.savannah.gnu.org/cgit/patch.git/commit/?id=7297352e16bdd22c2c0842aebdf612d40271b75d
+
+--- tests/deep-directories.orig	Sat Jan 31 22:14:01 2015
++++ tests/deep-directories	Sun Feb  1 23:52:39 2015
+@@ -14,7 +14,7 @@ use_tmpdir
+ # Exercise the directory file descriptor cache
+ 
+ # Artificially limit to 8 cache entries
+-ulimit -n 32 >& /dev/null || exit 77
++ulimit -n 32 > /dev/null 2>&1 || exit 77
+ 
+ cat > ab.diff <<EOF
+ --- /dev/null

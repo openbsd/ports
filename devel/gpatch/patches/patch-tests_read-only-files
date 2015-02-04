@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_read-only-files,v 1.1 2015/02/04 21:11:51 naddy Exp $
+
+Test suite portability fixes
+http://git.savannah.gnu.org/cgit/patch.git/commit/?id=7297352e16bdd22c2c0842aebdf612d40271b75d
+
+--- tests/read-only-files.orig	Wed Nov 26 14:17:55 2014
++++ tests/read-only-files	Sun Feb  1 21:44:58 2015
+@@ -16,7 +16,7 @@ use_tmpdir
+ 
+ : > read-only
+ chmod a-w read-only
+-if : 2> /dev/null > read-only; then
++if ( : 2> /dev/null > read-only ); then
+     echo "Files with read-only permissions are writable" \
+ 	 "(probably running as superuser)" >&2
+     exit 77
