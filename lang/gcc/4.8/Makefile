@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2015/01/08 20:23:21 pascal Exp $
+# $OpenBSD: Makefile,v 1.43 2015/02/04 10:41:27 pascal Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
 BROKEN-alpha =	libdecnumber/decNumber.c:2267:3: internal compiler error: Segmentation fault
 
-ONLY_FOR_ARCHS = alpha amd64 i386 powerpc mips64 mips64el sparc64 
+ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc mips64 mips64el sparc64 
 DPB_PROPERTIES = parallel
 
 V = 4.8.4
@@ -31,6 +31,14 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
+
+REVISION-main =	0
+REVISION-c++ =	0
+REVISION-estdc =0
+REVISION-f95 =	0
+REVISION-java =	0
+REVISION-objc =	0
+REVISION-ada =	0
 
 SHARED_LIBS =	estdc++		16.0 \
 		gfortran	5.0 \
@@ -132,7 +140,6 @@ CONFIGURE_ARGS += \
 	--verbose \
 	--program-transform-name=s,^,e, \
 	--disable-nls  \
-	--disable-checking \
 	--with-system-zlib \
 	--disable-libmudflap \
 	--disable-libgomp \
@@ -193,13 +200,6 @@ PKG_ARGS += -DSPARC=0
 PKG_ARGS += -DITM=1
 .else
 PKG_ARGS += -DITM=0
-.endif
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" || \
-	${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
-PKG_ARGS += -DATOMIC=1
-.else
-PKG_ARGS += -DATOMIC=0
 .endif
 
 # depends on __float128
