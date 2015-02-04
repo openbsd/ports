@@ -1,7 +1,6 @@
-$OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
---- jhead.c.orig	Wed Jan 30 18:02:56 2013
-+++ jhead.c	Tue Mar  5 15:05:10 2013
-@@ -163,7 +163,8 @@
+--- jhead.c.orig	Mon Feb  2 23:24:06 2015
++++ jhead.c	Wed Feb  4 07:43:36 2015
+@@ -164,7 +164,8 @@
          }
          if (strlen(Editor) > PATH_MAX) ErrFatal("env too long");
  
@@ -11,7 +10,7 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
          a = system(QuotedPath);
      }
  
-@@ -269,7 +270,8 @@
+@@ -271,7 +272,8 @@
      if (!HasScandate && !ImageInfo.DateTime[0]){
          // Scan date is not in the file yet, and it doesn't have one built in.  Add it.
          char Temp[40];
@@ -21,18 +20,20 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
          strncat(OutComment, Temp, MAX_COMMENT_SIZE-5-strlen(OutComment));
          Modified = TRUE;
      }
-@@ -296,7 +298,9 @@
+@@ -303,8 +305,10 @@
  
      if (scale < 0.4) scale = 0.4; // Don't scale down by too much.
  
--    sprintf(CommandString, "mogrify -geometry %dx%d -quality 80 &i",(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
+-    sprintf(CommandString, "mogrify -geometry %dx%d -quality 85 &i",(int)(ImageInfo.Width*scale+0.5), 
+-                                    (int)(ImageInfo.Height*scale+0.5));
 +    snprintf(CommandString, sizeof(CommandString),
-+        "mogrify -geometry %dx%d -quality 80 &i",
-+        (int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
++        "mogrify -geometry %dx%d -quality 85 &i",
++        (int)(ImageInfo.Width*scale+0.5), (int)(ImageInfo.Height*scale+0.5));
++
      return TRUE;
  }
  
-@@ -611,7 +615,8 @@
+@@ -625,7 +629,8 @@
                          memcpy(pat, pattern+ppos, 4);
                          pat[a-ppos] = 'd'; // Replace 'i' with 'd' for '%d'
                          pat[a-ppos+1] = '\0';
@@ -42,7 +43,7 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
                          nl = strlen(num);
                          l = strlen(pattern+a+1);
                          if (ppos+nl+l+1 >= PATH_MAX) ErrFatal("str overflow");
-@@ -627,7 +632,7 @@
+@@ -641,7 +646,7 @@
          strftime(NewName, PATH_MAX, pattern, &tm);
      }else{
          // My favourite scheme.
@@ -51,7 +52,7 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
               tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
      }
  
-@@ -656,7 +661,7 @@
+@@ -670,7 +675,7 @@
              NameExtra[0] = 0;
          }
  
@@ -60,7 +61,7 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
  
          if (!strcmp(FileName, NewName)) break; // Skip if its already this name.
  
-@@ -671,7 +676,8 @@
+@@ -685,7 +690,8 @@
                  printf("%s --> %s\n",FileName, NewName);
  #ifdef _WIN32
                  if (RenameAssociatedFiles){
@@ -70,17 +71,17 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
                      RenameAssociated(FileName, NewName);
                  }
  #endif
-@@ -704,7 +710,8 @@
-                 ErrFatal("Orientation screwup");
+@@ -718,7 +724,8 @@
+                 ErrNonfatal("Unknown orientation tag",0,0);
+                 return TRUE; // Image is still modified.
              }
- 
 -            sprintf(RotateCommand, "jpegtran -trim -%s -outfile &o &i", Argument);
 +            snprintf(RotateCommand, sizeof(RotateCommand), 
 +                "jpegtran -trim -%s -outfile &o &i", Argument);
              ApplyCommand = RotateCommand;
              DoCommand(FileName, FALSE);
              ApplyCommand = NULL;
-@@ -723,7 +730,8 @@
+@@ -737,7 +744,8 @@
                  strcpy(ThumbTempName_out, FileName);
                  strcat(ThumbTempName_out, ".tho");
                  SaveThumbnail(ThumbTempName_in);
@@ -90,7 +91,7 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
                      Argument, ThumbTempName_out, ThumbTempName_in);
  
                  if (system(RotateCommand) == 0){
-@@ -751,7 +759,8 @@
+@@ -765,7 +773,8 @@
          return FALSE;
      }
  
@@ -100,7 +101,7 @@ $OpenBSD: patch-jhead_c,v 1.11 2013/03/08 07:54:31 benoit Exp $
          RegenThumbnail, RegenThumbnail, FileName);
  
      if (system(ThumbnailGenCommand) == 0){
-@@ -1091,7 +1100,7 @@
+@@ -1134,7 +1143,7 @@
  
              // Print to temp buffer first to avoid putting null termination in destination.
              // snprintf() would do the trick, hbut not available everywhere (like FreeBSD 4.4)

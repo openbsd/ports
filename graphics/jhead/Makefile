@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2015/02/04 07:00:15 benoit Exp $
 
 COMMENT =	Exif jpeg camera setting parser and thumbnail remover
 
-DISTNAME =	jhead-2.97
+DISTNAME =	jhead-3.00
 CATEGORIES =	graphics
-REVISION =	0
 
 HOMEPAGE =	http://www.sentex.net/~mwandel/jhead/
 MASTER_SITES =	${HOMEPAGE}
