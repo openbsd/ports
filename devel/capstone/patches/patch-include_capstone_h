@@ -1,16 +1,16 @@
-$OpenBSD: patch-include_capstone_h,v 1.1 2014/03/09 19:58:51 jasper Exp $
+$OpenBSD: patch-include_capstone_h,v 1.2 2015/02/04 07:33:11 benoit Exp $
 
 The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
 conflict.
 
---- include/capstone.h.orig	Sat Feb 22 12:39:18 2014
-+++ include/capstone.h	Sat Feb 22 12:41:39 2014
-@@ -108,7 +108,7 @@ typedef struct cs_detail {
+--- include/capstone.h.orig	Tue Feb  3 15:41:07 2015
++++ include/capstone.h	Wed Feb  4 08:05:44 2015
+@@ -217,7 +217,7 @@ typedef struct cs_detail {
  		cs_x86 x86;	// X86 architecture, including 16-bit, 32-bit & 64-bit mode
  		cs_arm64 arm64;	// ARM64 architecture (aka AArch64)
  		cs_arm arm;		// ARM architecture (including Thumb/Thumb2)
 -		cs_mips mips;	// MIPS architecture
 +		cs_mips mipsen;	// MIPS architecture
  		cs_ppc ppc;	// PowerPC architecture
- 	};
- } cs_detail;
+ 		cs_sparc sparc;	// Sparc architecture
+ 		cs_sysz sysz;	// SystemZ architecture
