@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2014/09/18 21:16:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2015/02/04 09:06:16 dcoppa Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
 
 V=			3.52.9
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
