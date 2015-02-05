@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/03/20 08:10:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/02/05 10:02:48 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -63,7 +63,6 @@ lib/girepository-1.0/Gsf-1.typelib
 lib/libgsf-1.a
 lib/libgsf-1.la
 @lib lib/libgsf-1.so.${LIBgsf-1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libgsf-1.pc
 @man man/man1/gsf-office-thumbnailer.1
 @man man/man1/gsf-vba-dump.1
@@ -103,12 +102,15 @@ share/gtk-doc/html/gsf/index.html
 share/gtk-doc/html/gsf/index.sgml
 share/gtk-doc/html/gsf/intro.html
 share/gtk-doc/html/gsf/io.html
+share/gtk-doc/html/gsf/left-insensitive.png
 share/gtk-doc/html/gsf/left.png
 share/gtk-doc/html/gsf/misc.html
 share/gtk-doc/html/gsf/parsers.html
+share/gtk-doc/html/gsf/right-insensitive.png
 share/gtk-doc/html/gsf/right.png
 share/gtk-doc/html/gsf/sources.html
 share/gtk-doc/html/gsf/style.css
+share/gtk-doc/html/gsf/up-insensitive.png
 share/gtk-doc/html/gsf/up.png
 share/locale/as/
 share/locale/as/LC_MESSAGES/
