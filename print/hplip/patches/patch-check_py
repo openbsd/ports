@@ -1,7 +1,7 @@
-$OpenBSD: patch-check_py,v 1.16 2013/10/15 14:21:00 ajacoutot Exp $
---- check.py.orig	Fri Oct 11 11:40:14 2013
-+++ check.py	Tue Oct 15 15:42:07 2013
-@@ -142,9 +142,9 @@ def get_comment(package, Inst_status, installed_ver):
+$OpenBSD: patch-check_py,v 1.17 2015/02/05 17:34:33 ajacoutot Exp $
+--- check.py.orig	Thu Jan 29 13:20:49 2015
++++ check.py	Thu Feb  5 16:45:04 2015
+@@ -144,9 +144,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
          if Inst_status == 'OK':
@@ -13,25 +13,7 @@ $OpenBSD: patch-check_py,v 1.16 2013/10/15 14:21:00 ajacoutot Exp $
      elif package == 'cupsext' or package == 'pcardext' or package == 'hpmudext':
          if Inst_status != 'OK':
              comment = "'Not Found or Failed to load, Please reinstall HPLIP'"
-@@ -218,7 +218,7 @@ class DependenciesCheck(CoreInstall):
-             'pyqt4':            (True,  ['gui_qt4'], "Python-Qt4", self.check_pyqt4,'4.0','FUNC#get_pyQt4_version'), # PyQt 4.x )
-             'pyqt4-dbus' :      (True,  ['gui_qt4'], "PyQt4-DBUS", self.check_pyqt4_dbus,'4.0','FUNC#get_pyQt4_version'), 
-             'pyqt':            (True,  ['gui_qt'], "Python-Qt", self.check_pyqt,'2.3','FUNC#get_pyQt_version'), 
--            'python-devel' :    (True,  ['base'], "Python-SDK", self.check_python_devel,'2.2','python --version'),
-+            'python-devel' :    (True,  ['base'], "Python-SDK", self.check_python_devel,'2.2','${MODPY_BIN} --version'),
-             'python-notify' :   (False, ['gui_qt4'], "Desktop-notifications", self.check_pynotify,'-','python-notify --version'), # Optional for libnotify style popups from hp-systray
-             'python-xml'  :     (True,  ['base'], "Python-XML-Lib", self.check_python_xml,'-','FUNC#get_python_xml_version'),
-             'pil':              (False, ['scan'], "Python-Image-Lib", self.check_pil,'-','FUNC#get_pil_version'), #required for commandline scanning with hp-scan
-@@ -229,7 +229,7 @@ class DependenciesCheck(CoreInstall):
-             COMPILEDEP:
-             { 'gcc' :             (True,  ['base'], 'gcc-Compiler', self.check_gcc, '-','gcc --version'),
-             'libtool':          (True,  ['base'], "Build-tools", self.check_libtool,'-','libtool --version'),
--            'make' :            (True,  ['base'], "GNU-Build-tools", self.check_make,'3.0','make --version'),
-+            'make' :            (True,  ['base'], "GNU-Build-tools", self.check_make,'-','-'),
-             },
-             PYEXT: 
-              { 'cupsext' :         (True,  ['base'], 'CUPS-Extension', self.check_cupsext,'-','FUNC#get_HPLIP_version'),
-@@ -310,9 +310,9 @@ class DependenciesCheck(CoreInstall):
+@@ -311,9 +311,9 @@ class DependenciesCheck(CoreInstall):
                       %(self.distro_name, self.distro_version, self.distro_name, supported_distro_vrs)))
            
          tui.header("SYSTEM INFO")
@@ -43,19 +25,31 @@ $OpenBSD: patch-check_py,v 1.16 2013/10/15 14:21:00 ajacoutot Exp $
          log.info(" Kernel: %s Host: %s Proc: %s Distribution: %s %s"\
               %(Kernel_info,Host_info,Proc_info,self.distro_name, self.distro_version))
          log.info(" Bitness: %s bit\n"%utils.getBitness())
-@@ -328,9 +328,9 @@ class DependenciesCheck(CoreInstall):
+@@ -329,9 +329,9 @@ class DependenciesCheck(CoreInstall):
                  log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.distro_name, self.distro_version))
  
              log.info()
 -            log.info(log.bold("Current contents of '/etc/hp/hplip.conf' file:"))
 +            log.info(log.bold("Current contents of '${SYSCONFDIR}/hp/hplip.conf' file:"))
              try:
--                output = file('/etc/hp/hplip.conf', 'r').read()
-+                output = file('${SYSCONFDIR}/hp/hplip.conf', 'r').read()
-             except (IOError, OSError), e:
+-                output = open('/etc/hp/hplip.conf', 'r').read()
++                output = open('${SYSCONFDIR}/hp/hplip.conf', 'r').read()
+             except (IOError, OSError) as e:
                  log.error("Could not access file: %s. Check HPLIP installation." % e.strerror)
                  self.num_errors += 1
-@@ -538,7 +538,7 @@ class DependenciesCheck(CoreInstall):
+@@ -339,9 +339,9 @@ class DependenciesCheck(CoreInstall):
+                 log.info(output)
+ 
+             log.info()
+-            log.info(log.bold("Current contents of '/var/lib/hp/hplip.state' file:"))
++            log.info(log.bold("Current contents of '/var/db/hp/hplip.state' file:"))
+             try:
+-                output = open(os.path.expanduser('/var/lib/hp/hplip.state'), 'r').read()
++                output = open(os.path.expanduser('/var/db/hp/hplip.state'), 'r').read()
+             except (IOError, OSError) as e:
+                 log.info("Plugins are not installed. Could not access file: %s" % e.strerror)
+             else:
+@@ -496,7 +496,7 @@ class DependenciesCheck(CoreInstall):
                          #log.info("Installed in HPLIP?: %s" % x)
                          log.info("Device URI: %s" % device_uri)
  

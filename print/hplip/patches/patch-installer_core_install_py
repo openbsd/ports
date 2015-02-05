@@ -1,7 +1,16 @@
-$OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot Exp $
---- installer/core_install.py.orig	Tue Oct  7 10:55:35 2014
-+++ installer/core_install.py	Wed Oct  8 10:32:17 2014
-@@ -176,7 +176,7 @@ class CoreInstall(object):
+$OpenBSD: patch-installer_core_install_py,v 1.21 2015/02/05 17:34:33 ajacoutot Exp $
+--- installer/core_install.py.orig	Thu Jan 29 13:20:24 2015
++++ installer/core_install.py	Thu Feb  5 16:58:33 2015
+@@ -110,7 +110,7 @@ HPLIP_LIST=['*.py','*.pyc', 'base', 'copier','data','i
+ 
+ PLUGIN_LIST=['fax/plugins/','prnt/plugins/','scan/plugins/']
+ 
+-PLUGIN_STATE =['/var/lib/hp/hplip.state']
++PLUGIN_STATE =['/var/db/hp/hplip.state']
+ 
+ 
+ # end
+@@ -218,7 +218,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
          self.distro_version_supported = False
@@ -10,7 +19,32 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
          self.hplip_present = False
          self.have_dependencies = {}
          self.native_cups = True
-@@ -760,7 +760,7 @@ class CoreInstall(object):
+@@ -328,7 +328,7 @@ class CoreInstall(object):
+             'cups-devel':       (True,  ['base'], CUPS_DEV_STR, self.check_cups_devel, DEPENDENCY_COMPILE_TIME,'-','cups-config --version', GENERALDEP),
+             'cups-image':       (True,  ['base'], CUPS_IMG_STR, self.check_cups_image, DEPENDENCY_COMPILE_TIME,'-','cups-config --version', GENERALDEP),
+             'gcc' :             (True,  ['base'], GCC_STR, self.check_gcc, DEPENDENCY_COMPILE_TIME, '-','gcc --version',COMPILEDEP),
+-            'make' :            (True,  ['base'], MAKE_STR, self.check_make, DEPENDENCY_COMPILE_TIME,'3.0','make --version',COMPILEDEP),
++            'make' :            (True,  ['base'], MAKE_STR, self.check_make, DEPENDENCY_COMPILE_TIME,'-','-',COMPILEDEP),
+             'libpthread' :      (True,  ['base'], THREAD_STR, self.check_libpthread, DEPENDENCY_RUN_AND_COMPILE_TIME, '-','FUNC#get_libpthread_version', GENERALDEP),
+             'gs':               (True,  ['base'], GS_STR, self.check_gs, DEPENDENCY_RUN_TIME, '7.05','gs --version', EXTERNALDEP),
+             'libusb':           (True,  ['base'], USB_STR, self.check_libusb, DEPENDENCY_RUN_AND_COMPILE_TIME, '-','FUNC#get_libusb_version', GENERALDEP),
+@@ -359,13 +359,13 @@ class CoreInstall(object):
+         }
+         
+         python2_dep = {
+-            'python2X':         (True,  ['base'], PYTHON_STR, self.check_python, DEPENDENCY_RUN_AND_COMPILE_TIME,'2.2','python --version',GENERALDEP),
++            'python2X':         (True,  ['base'], PYTHON_STR, self.check_python, DEPENDENCY_RUN_AND_COMPILE_TIME,'2.2','${MODPY_BIN} --version',GENERALDEP),
+             'python-notify' :   (False, ['gui_qt4'], PYNTF_STR, self.check_pynotify, DEPENDENCY_RUN_TIME,'-','python-notify --version',GENERALDEP), # Optional for libnotify style popups from hp-systray
+             'pyqt4-dbus' :      (True,  ['gui_qt4'], QT4DBUS_STR, self.check_pyqt4_dbus, DEPENDENCY_RUN_TIME,'4.0','FUNC#get_pyQt4_version', GENERALDEP),
+             'pyqt4':            (True,  ['gui_qt4'], QT4_STR, self.check_pyqt4, DEPENDENCY_RUN_TIME,'4.0','FUNC#get_pyQt4_version', GENERALDEP), # PyQt 4.x )
+             'python-dbus':      (True,  ['fax'], PYDBUS_STR, self.check_python_dbus, DEPENDENCY_RUN_TIME,'0.80.0','FUNC#get_python_dbus_ver', GENERALDEP),
+             'python-xml'  :     (True,  ['base'], PYXML_STR, self.check_python_xml, DEPENDENCY_RUN_TIME,'-','FUNC#get_python_xml_version',GENERALDEP),
+-            'python-devel' :    (True,  ['base'], PY_DEV_STR, self.check_python_devel, DEPENDENCY_COMPILE_TIME,'2.2','python --version',GENERALDEP),
++            'python-devel' :    (True,  ['base'], PY_DEV_STR, self.check_python_devel, DEPENDENCY_COMPILE_TIME,'2.2','${MODPY_BIN} --version',GENERALDEP),
+             'pil':              (False, ['scan'], PIL_STR, self.check_pil, DEPENDENCY_RUN_TIME,'-','FUNC#get_pil_version',GENERALDEP),
+             # Optional fax packages
+             'reportlab':        (False, ['fax'], REPORTLAB_STR, self.check_reportlab, DEPENDENCY_RUN_TIME,'2.0','FUNC#get_reportlab_version',GENERALDEP),
+@@ -838,7 +838,7 @@ class CoreInstall(object):
  
  
      def check_make(self):
@@ -19,7 +53,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
  
  
      def check_libusb(self):
-@@ -769,14 +769,14 @@ class CoreInstall(object):
+@@ -847,14 +847,14 @@ class CoreInstall(object):
              if not check_lib('libusb'):
                  return False
              if self.distro_name != "rhel":
@@ -36,7 +70,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
              else:
                  return True
  
-@@ -786,11 +786,10 @@ class CoreInstall(object):
+@@ -864,11 +864,10 @@ class CoreInstall(object):
  
  
      def check_libcrypto(self):
@@ -50,7 +84,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
  
  
      def check_libnetsnmp(self):
-@@ -842,7 +841,7 @@ class CoreInstall(object):
+@@ -920,7 +919,7 @@ class CoreInstall(object):
  
  
      def check_sane_devel(self):
@@ -59,7 +93,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
  
  
      def check_xsane(self):
-@@ -943,9 +942,8 @@ class CoreInstall(object):
+@@ -1031,9 +1030,8 @@ class CoreInstall(object):
  
  
      def check_dbus(self):
@@ -71,7 +105,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
  
  
      def check_cups_devel(self):
-@@ -963,12 +961,12 @@ class CoreInstall(object):
+@@ -1051,12 +1049,12 @@ class CoreInstall(object):
  
  
      def check_cups_image(self):
@@ -86,7 +120,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
  
  
      def check_libtool(self):
-@@ -988,9 +986,9 @@ class CoreInstall(object):
+@@ -1076,9 +1074,9 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
@@ -99,7 +133,77 @@ $OpenBSD: patch-installer_core_install_py,v 1.20 2014/10/08 09:03:00 ajacoutot E
  
  
      def check_policykit(self):
-@@ -1598,7 +1596,7 @@ class CoreInstall(object):
+@@ -1128,7 +1126,7 @@ class CoreInstall(object):
+ 
+     def check_hpaio(self):
+         found = False
+-        for path in ['/etc/sane.d/dll.conf','/etc/sane.d/dll.d/hpaio', '/etc/sane.d/dll.d/hplip']:
++        for path in ['${SYSCONFDIR}/sane.d/dll.conf','/etc/sane.d/dll.d/hpaio', '/etc/sane.d/dll.d/hplip']:
+             log.debug("'Checking for hpaio' in '%s'..." % path)
+             try:
+                 f = open(path, 'r')
+@@ -1157,12 +1155,12 @@ class CoreInstall(object):
+         if pat.match(home_dir) is not None:
+             usrlib_dir= pat.match(home_dir).group(1) + "lib/"
+             if os.path.exists(usrlib_dir+'sane/libsane-hpaio.so.1'):
+-                log.debug("'Updating hpaio' in '/etc/sane.d/dll.conf'...")
++                log.debug("'Updating hpaio' in '${SYSCONFDIR}/sane.d/dll.conf'...")
+                 try:
+-                    f = open('/etc/sane.d/dll.conf', 'r')
++                    f = open('${SYSCONFDIR}/sane.d/dll.conf', 'r')
+                 except IOError:
+-                    log.error("'/etc/sane.d/dll.conf' not found. Creating dll.conf file")
+-                    cmd = self.passwordObj.getAuthCmd()%'touch /etc/sane.d/dll.conf'
++                    log.error("'${SYSCONFDIR}/sane.d/dll.conf' not found. Creating dll.conf file")
++                    cmd = self.passwordObj.getAuthCmd()%'touch ${SYSCONFDIR}/sane.d/dll.conf'
+                     log.debug("cmd=%s"%cmd)
+                     utils.run(cmd, self.passwordObj)
+                 else:
+@@ -1175,19 +1173,19 @@ class CoreInstall(object):
+                     f.close()
+ 
+                 if not found:
+-                    st = os.stat('/etc/sane.d/dll.conf')
+-                    cmd= self.passwordObj.getAuthCmd()%'chmod 777 /etc/sane.d/dll.conf'
++                    st = os.stat('${SYSCONFDIR}/sane.d/dll.conf')
++                    cmd= self.passwordObj.getAuthCmd()%'chmod 777 ${SYSCONFDIR}/sane.d/dll.conf'
+                     log.debug("cmd=%s"%cmd)
+                     utils.run(cmd, self.passwordObj)
+                     try:
+-                        f = open('/etc/sane.d/dll.conf', 'a+')
++                        f = open('${SYSCONFDIR}/sane.d/dll.conf', 'a+')
+                     except IOError:
+-                        log.error("'/etc/sane.d/dll.conf' not found. Creating dll.conf file")
++                        log.error("'${SYSCONFDIR}/sane.d/dll.conf' not found. Creating dll.conf file")
+                     else:
+                         f.write('hpaio')
+                         f.close()
+                     actv_permissions = st.st_mode &0o777
+-                    cmd = 'chmod %o /etc/sane.d/dll.conf'%actv_permissions
++                    cmd = 'chmod %o ${SYSCONFDIR}/sane.d/dll.conf'%actv_permissions
+                     cmd= self.passwordObj.getAuthCmd()%cmd
+                     log.debug("cmd=%s"%cmd)
+                     utils.run(cmd, self.passwordObj)
+@@ -1580,11 +1578,14 @@ class CoreInstall(object):
+ 
+ 
+     def check_wget(self):
+-        if utils.which("wget"):
+-            return True
++        if sys.platform.startswith('linux'):
++            if utils.which("wget"):
++                return True
++            else:
++                log.debug("wget is not installed")
++                return False
+         else:
+-            log.debug("wget is not installed")
+-            return False
++            return True
+ 
+     def check_avahi_utils(self):
+         if utils.which("avahi-browse"):
+@@ -1667,7 +1668,7 @@ class CoreInstall(object):
      def pre_build(self,distro_ver=None):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False,distro_ver):

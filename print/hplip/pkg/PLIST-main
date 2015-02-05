@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2014/01/14 08:39:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2015/02/05 17:34:33 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf /usr/local/share/hplip/data/firmware
@@ -107,8 +107,9 @@ share/hplip/base/os_utils.py
 share/hplip/base/os_utils.pyc
 share/hplip/base/password.py
 share/hplip/base/password.pyc
-share/hplip/base/pexpect.py
-share/hplip/base/pexpect.pyc
+share/hplip/base/pexpect/
+share/hplip/base/pexpect/__init__.py
+share/hplip/base/pexpect/__init__.pyc
 share/hplip/base/pkit.py
 share/hplip/base/pkit.pyc
 share/hplip/base/pml.py
@@ -117,6 +118,10 @@ share/hplip/base/queues.py
 share/hplip/base/queues.pyc
 share/hplip/base/services.py
 share/hplip/base/services.pyc
+share/hplip/base/six.py
+share/hplip/base/six.pyc
+share/hplip/base/sixext.py
+share/hplip/base/sixext.pyc
 share/hplip/base/slp.py
 share/hplip/base/slp.pyc
 share/hplip/base/smart_install.py

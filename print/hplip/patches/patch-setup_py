@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.9 2014/10/08 09:03:00 ajacoutot Exp $
---- setup.py.orig	Tue Oct  7 10:55:57 2014
-+++ setup.py	Wed Oct  8 10:32:17 2014
-@@ -902,7 +902,7 @@ else: # INTERACTIVE_MODE
+$OpenBSD: patch-setup_py,v 1.10 2015/02/05 17:34:33 ajacoutot Exp $
+--- setup.py.orig	Thu Jan 29 13:20:49 2015
++++ setup.py	Thu Feb  5 14:28:00 2015
+@@ -906,7 +906,7 @@ else: # INTERACTIVE_MODE
                  if len(path) > 0:
                      cmd = 'hp-testpage -i %s' % param
                  else:

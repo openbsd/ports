@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/10/08 09:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2015/02/05 17:34:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.14.10
+V=			3.15.2
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -46,7 +46,7 @@ cWANTLIB += crypto m pthread
 ### -main
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
-WANTLIB-main += ssl usb-1.0 z
+WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			print/cups,-libs \
@@ -74,7 +74,8 @@ RUN_DEPENDS-common=	#empty
 ### -hpaio
 WANTLIB-hpaio += ${WANTLIB} ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 hpip hpmud
-WANTLIB-hpaio += jpeg netsnmp sane ssl tiff usb usb-1.0 z
+WANTLIB-hpaio += jpeg netsnmp sane tiff usb usb-1.0 z
+WANTLIB-hpaio += ffi gmp gnutls hogweed nettle p11-kit tasn1
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			graphics/sane-backends
@@ -82,9 +83,10 @@ LIB_DEPENDS-hpaio=	print/hplip,-common \
 RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
 
 ### -hpcups
-WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z ssl netsnmp
+WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z netsnmp
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1
-WANTLIB-hpcups += z ssl usb-1.0 avahi-client avahi-common hpmud
+WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
+WANTLIB-hpcups += ffi gmp gnutls hogweed nettle p11-kit tasn1
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
 			print/hplip,-common \
@@ -142,15 +144,10 @@ pre-configure:
 		xargs perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g'
 	perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' \
 		${WRKSRC}/fax/filters/pstotiff
-	perl -pi -e 's,/var/lib,/var/db,g' \
+	${SUBST_CMD} \
 		${WRKSRC}/Makefile.in \
-		${WRKSRC}/base/g.py \
-		${WRKSRC}/check.py \
-		${WRKSRC}/common/utils.h \
-		${WRKSRC}/common/utils.c \
-		${WRKSRC}/installer/core_install.py \
-		${WRKSRC}/installer/pluginhandler.py
-	${SUBST_CMD} ${WRKSRC}/prnt/cups.py \
+		${WRKSRC}/prnt/cups.py \
+		${WRKSRC}/prnt/filters/hpps \
 		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
 		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
 		${WRKSRC}/prnt/hpijs/hpijs.cpp \

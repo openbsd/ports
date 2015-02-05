@@ -1,12 +1,12 @@
-$OpenBSD: patch-base_mdns_py,v 1.5 2014/01/23 11:43:31 ajacoutot Exp $
+$OpenBSD: patch-base_mdns_py,v 1.6 2015/02/05 17:34:33 ajacoutot Exp $
 
 IP_MULTICAST_TTL socket option on OpenBSD currently doesn't accept
 int, only unsigned char:
 Unable to setup multicast socket... [Errno 22] Invalid argument
 
---- base/mdns.py.orig	Tue Nov 20 10:55:15 2012
-+++ base/mdns.py	Sat Jan 26 19:13:23 2013
-@@ -211,9 +211,9 @@ def detectNetworkDevices(ttl=4, timeout=10):
+--- base/mdns.py.orig	Thu Jan 29 13:20:35 2015
++++ base/mdns.py	Thu Feb  5 14:34:06 2015
+@@ -208,9 +208,9 @@ def createSocketsWithsetOption(ttl=4):
          pass
  
      try:
@@ -16,6 +16,6 @@ Unable to setup multicast socket... [Errno 22] Invalid argument
 +        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
 +        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf))
 +        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_LOOP, struct.pack('B', 1))
-     except Exception, e:
+     except Exception as e:
          log.error("Unable to setup multicast socket for mDNS: %s" % e)
-         return {}
+         if s:

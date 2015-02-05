@@ -1,6 +1,6 @@
-$OpenBSD: patch-prnt_cups_py,v 1.6 2013/03/08 06:51:46 ajacoutot Exp $
---- prnt/cups.py.orig	Wed Feb 13 17:34:10 2013
-+++ prnt/cups.py	Fri Feb 22 15:17:48 2013
+$OpenBSD: patch-prnt_cups_py,v 1.7 2015/02/05 17:34:33 ajacoutot Exp $
+--- prnt/cups.py.orig	Thu Jan 29 13:20:43 2015
++++ prnt/cups.py	Thu Feb  5 14:28:00 2015
 @@ -187,8 +187,8 @@ ppd_pat = re.compile(r'''.*hp-(.*?)(-.*)*\.ppd.*''', r
  
  def getPPDPath(addtional_paths=None):
@@ -68,7 +68,7 @@ $OpenBSD: patch-prnt_cups_py,v 1.6 2013/03/08 06:51:46 ajacoutot Exp $
 +                 '-jr', '-lidl', '-lidil', '-hpijs']
  
  
- for p in models.TECH_CLASS_PDLS.values():
+ for p in list(models.TECH_CLASS_PDLS.values()):
 @@ -616,7 +616,7 @@ def getFaxPPDFile(mq, model):
  
  
@@ -76,5 +76,5 @@ $OpenBSD: patch-prnt_cups_py,v 1.6 2013/03/08 06:51:46 ajacoutot Exp $
 -    cups_conf = '/etc/cups/cupsd.conf'
 +    cups_conf = '${SYSCONFDIR}/cups/cupsd.conf'
      try:
-         f = file(cups_conf, 'r')
+         f = open(cups_conf, 'r')
      except OSError:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-io_hpmud_jd_c,v 1.1 2012/06/26 06:17:11 ajacoutot Exp $
---- io/hpmud/jd.c.orig	Tue Jun 26 07:47:38 2012
-+++ io/hpmud/jd.c	Tue Jun 26 07:48:09 2012
-@@ -32,6 +32,8 @@
+$OpenBSD: patch-io_hpmud_jd_c,v 1.2 2015/02/05 17:34:33 ajacoutot Exp $
+--- io/hpmud/jd.c.orig	Thu Jan 29 13:20:45 2015
++++ io/hpmud/jd.c	Thu Feb  5 14:28:00 2015
+@@ -31,6 +31,8 @@
  #endif
  
  #include <signal.h>
