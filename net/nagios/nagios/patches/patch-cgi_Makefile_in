@@ -1,15 +1,14 @@
-$OpenBSD: patch-cgi_Makefile_in,v 1.6 2013/11/07 10:31:38 rpe Exp $
---- cgi/Makefile.in.orig	Wed Oct 16 01:36:42 2013
-+++ cgi/Makefile.in	Fri Nov  1 17:45:15 2013
-@@ -182,9 +182,9 @@ install-unstripped:
- 	$(MAKE) install-basic
+$OpenBSD: patch-cgi_Makefile_in,v 1.7 2015/02/05 22:58:24 sthen Exp $
+--- cgi/Makefile.in.orig	Thu Feb  5 13:24:24 2015
++++ cgi/Makefile.in	Thu Feb  5 13:24:24 2015
+@@ -36,8 +36,9 @@ JSONFLAGS=-DJSON_NAGIOS_4X
+ #CFLAGS_WARN=-Wall -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs
+ #CFLAGS_DEBUG=-ggdb3 -g3
+ #CFLAGS+=$(CFLAGS_WARN) $(CFLAGS_DEBUG)
++CFLAGS+=-fno-pie
  
- install-basic:
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
-+	$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(CGIDIR)
- 	for file in *.cgi; do \
--		$(INSTALL) -m 775 $(INSTALL_OPTS) $$file $(DESTDIR)$(CGIDIR); \
-+		$(BSD_INSTALL_PROGRAM) $$file $(DESTDIR)$(CGIDIR); \
- 	done
+-LDFLAGS=@LDFLAGS@
++LDFLAGS=-static -nopie @LDFLAGS@
+ LIBS=@LIBS@
  
- strip-post-install:
+ CGIS=archivejson.cgi avail.cgi cmd.cgi config.cgi extinfo.cgi history.cgi notifications.cgi objectjson.cgi outages.cgi showlog.cgi status.cgi statusjson.cgi statuswml.cgi summary.cgi tac.cgi $(CGIEXTRAS)

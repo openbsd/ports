@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_runcmd_c,v 1.1 2015/02/05 22:58:24 sthen Exp $
+--- lib/runcmd.c.orig	Thu Feb  5 13:03:13 2015
++++ lib/runcmd.c	Thu Feb  5 13:04:05 2015
+@@ -36,7 +36,7 @@
+ #endif
+ 
+ /* Determine whether we have setenv()/unsetenv() (see setenv(3) on Linux) */
+-#if _BSD_SOURCE || _POSIX_C_SOURCE >= 200112L || _XOPEN_SOURCE >= 600
++#if _BSD_SOURCE || _POSIX_C_SOURCE >= 200112L || _XOPEN_SOURCE >= 600 || __OpenBSD__
+ # define HAVE_SETENV
+ #endif
+ 

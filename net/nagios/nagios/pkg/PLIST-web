@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-web,v 1.8 2013/05/05 22:13:48 rpe Exp $
+@comment $OpenBSD: PLIST-web,v 1.9 2015/02/05 22:58:24 sthen Exp $
 cgi-bin/nagios/
+@bin cgi-bin/nagios/archivejson.cgi
 @bin cgi-bin/nagios/avail.cgi
 @bin cgi-bin/nagios/cmd.cgi
 @bin cgi-bin/nagios/config.cgi
@@ -7,9 +8,11 @@ cgi-bin/nagios/
 @bin cgi-bin/nagios/histogram.cgi
 @bin cgi-bin/nagios/history.cgi
 @bin cgi-bin/nagios/notifications.cgi
+@bin cgi-bin/nagios/objectjson.cgi
 @bin cgi-bin/nagios/outages.cgi
 @bin cgi-bin/nagios/showlog.cgi
 @bin cgi-bin/nagios/status.cgi
+@bin cgi-bin/nagios/statusjson.cgi
 @bin cgi-bin/nagios/statusmap.cgi
 @bin cgi-bin/nagios/statuswml.cgi
 @bin cgi-bin/nagios/statuswrl.cgi
@@ -352,10 +355,15 @@ nagios/includes/utils.inc.php
 nagios/index.php
 nagios/js/
 nagios/js/jquery-1.7.1.min.js
+nagios/js/jsonquery.js
+nagios/jsonquery.html
 nagios/main.php
 nagios/media/
 nagios/robots.txt
+nagios/rss-corebanner.php
+nagios/rss-corefeed.html
 nagios/rss-corefeed.php
+nagios/rss-newsfeed.html
 nagios/rss-newsfeed.php
 nagios/side.php
 nagios/ssi/
@@ -368,6 +376,7 @@ nagios/stylesheets/config.css
 nagios/stylesheets/extinfo.css
 nagios/stylesheets/histogram.css
 nagios/stylesheets/history.css
+nagios/stylesheets/jsonquery.css
 nagios/stylesheets/ministatus.css
 nagios/stylesheets/notifications.css
 nagios/stylesheets/outages.css

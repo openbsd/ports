@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2014/11/07 13:04:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2015/02/05 22:58:24 sthen Exp $
+
+ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		4.0.1
-REVISION-main=	4
-REVISION-web=	2
+V=		4.0.8
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
@@ -54,7 +54,6 @@ FLAVOR?=
 
 .if ${FLAVOR:Mchroot}
 CHROOT=		${VARBASE}/www
-PATCH_LIST=	patch-* chroot-*
 .else
 CHROOT=
 .endif
@@ -79,7 +78,7 @@ WANTLIB-main=	${WANTLIB} ltdl>=4
 
 NO_TEST=	Yes
 
-CFLAGS+=	-D_DIRENT_HAVE_D_TYPE
+CFLAGS+=	-D_DIRENT_HAVE_D_TYPE -Wformat
 
 EXDIR=		${PREFIX}/share/examples/nagios
 SAMPLEDIR=	${WRKSRC}/sample-config
@@ -87,6 +86,12 @@ MODSAMPLE=	${WRKINST}${PREFIX-web}/conf/modules.sample
 
 INSTALL_TARGET=	install-unstripped
 SUBST_VARS=	CHROOT
+
+.if ${FLAVOR:Mchroot}
+post-extract:
+	@perl -pi -e 's,physical_html_path=@datadir@,physical_html_path=/nagios,' \
+		${WRKSRC}/sample-config/cgi.cfg.in
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXDIR}/objects ${MODSAMPLE}
