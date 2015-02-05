@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/06/30 07:05:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/02/05 10:28:14 ajacoutot Exp $
 bin/rednotebook
 lib/python${MODPY_VERSION}/site-packages/rednotebook/
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -125,6 +125,7 @@ share/locale/fr/LC_MESSAGES/rednotebook.mo
 share/locale/ga/LC_MESSAGES/rednotebook.mo
 share/locale/gl/LC_MESSAGES/rednotebook.mo
 share/locale/he/LC_MESSAGES/rednotebook.mo
+share/locale/hi/LC_MESSAGES/rednotebook.mo
 share/locale/hr/LC_MESSAGES/rednotebook.mo
 share/locale/hu/LC_MESSAGES/rednotebook.mo
 share/locale/hy/LC_MESSAGES/rednotebook.mo
@@ -136,6 +137,7 @@ share/locale/kk/LC_MESSAGES/rednotebook.mo
 share/locale/ko/LC_MESSAGES/rednotebook.mo
 share/locale/ky/LC_MESSAGES/rednotebook.mo
 share/locale/lt/LC_MESSAGES/rednotebook.mo
+share/locale/ml/LC_MESSAGES/rednotebook.mo
 share/locale/mn/LC_MESSAGES/rednotebook.mo
 share/locale/ms/LC_MESSAGES/rednotebook.mo
 share/locale/nb/LC_MESSAGES/rednotebook.mo
@@ -150,6 +152,7 @@ share/locale/ro/LC_MESSAGES/rednotebook.mo
 share/locale/ru/LC_MESSAGES/rednotebook.mo
 share/locale/si/LC_MESSAGES/rednotebook.mo
 share/locale/sk/LC_MESSAGES/rednotebook.mo
+share/locale/sl/LC_MESSAGES/rednotebook.mo
 share/locale/sr/LC_MESSAGES/rednotebook.mo
 share/locale/sv/LC_MESSAGES/rednotebook.mo
 share/locale/ta/LC_MESSAGES/rednotebook.mo
@@ -163,6 +166,7 @@ share/locale/vi/LC_MESSAGES/rednotebook.mo
 share/locale/wae/
 share/locale/wae/LC_MESSAGES/
 share/locale/wae/LC_MESSAGES/rednotebook.mo
+share/locale/xh/LC_MESSAGES/rednotebook.mo
 share/locale/zh_CN/LC_MESSAGES/rednotebook.mo
 share/locale/zh_HK/LC_MESSAGES/rednotebook.mo
 share/locale/zh_TW/LC_MESSAGES/rednotebook.mo
