@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2015/02/04 11:50:21 jca Exp $
-@conflict samba-docs-<=3.6.15
+@comment $OpenBSD: PLIST-main,v 1.27 2015/02/05 02:04:00 jca Exp $
+@conflict samba-docs-<3.6.15p1
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},ads,-main
 @pkgpath ${BASE_PKGPATH},cups[,ads][,ldap]
