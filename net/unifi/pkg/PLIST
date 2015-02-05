@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/29 01:42:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/02/05 11:10:18 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -81,6 +81,7 @@ share/unifi/logs
 @sample /var/log/unifi/
 @owner
 share/unifi/readme.txt
+share/unifi/unifi_sh_api
 @owner _unifi
 share/unifi/webapps/
 share/unifi/webapps/ROOT.war
