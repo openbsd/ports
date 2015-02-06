@@ -1,7 +1,7 @@
-$OpenBSD: patch-main_asterisk_c,v 1.25 2014/11/10 20:43:18 sthen Exp $
---- main/asterisk.c.orig	Fri May  9 23:28:40 2014
-+++ main/asterisk.c	Mon Nov 10 19:52:06 2014
-@@ -87,11 +87,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.25 $")
+$OpenBSD: patch-main_asterisk_c,v 1.26 2015/02/06 23:27:51 sthen Exp $
+--- main/asterisk.c.orig	Mon Dec 22 19:38:58 2014
++++ main/asterisk.c	Fri Feb  6 23:03:35 2015
+@@ -87,11 +87,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.26 $")
  #elif defined(HAVE_SYSCTL)
  #include <sys/param.h>
  #include <sys/sysctl.h>
