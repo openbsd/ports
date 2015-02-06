@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/18 15:14:47 kspillner Exp $
+# $OpenBSD: Makefile,v 1.8 2015/02/06 20:14:48 kspillner Exp $
 
 COMMENT=		manage large numbers of patches
 
 DISTNAME=		quilt-0.63
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
@@ -22,7 +22,6 @@ USE_GMAKE=		Yes
 
 RUN_DEPENDS=		devel/gpatch \
 			lang/gawk \
-			mail/procmail \
 			misc/findutils \
 			misc/gnugetopt \
 			shells/bash \
