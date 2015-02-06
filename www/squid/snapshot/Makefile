@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/19 08:35:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2015/02/06 16:30:17 sthen Exp $
 
-#BROKEN=		sslbump uses functions removed in libressl
+V=		3.5.1
 
-V=		3.5.0.4
+# needs c++11. other parts for gcc MODULES are in ../Makefile.inc.
+MODGCC_ARCHS=	*
 
-# future versions will be requiring c++11 support, so let's build
-# the devel version in squid/snapshot with a newer compiler to get
-# experience with it. (other parts in ../Makefile.inc as it's
-# already required for ppc).
-MODGCC4_ARCHS=	*
+# uncommenting the following would use clang where possible, otherwise fallback
+# to gcc, but at present linking fails with clang ("local symbol 0: discarded
+# in section XXX").
+#MODULES+=	lang/clang
+#MODCLANG_ARCHS=	*
+#MODCLANG_LANGS=	c++
 
 EXTERNAL_ACL=	LDAP_group SQL_session file_userip time_quota session \
 		unix_group wbinfo_group # kerberos_ldap_group (sasl/gssapi)
