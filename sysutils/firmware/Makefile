@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/12 21:48:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/02/06 20:51:31 sthen Exp $
+
+# If adding drivers, also sync the possible_drivers list in OpenBSD/FwUpdate.pm
 
      SUBDIR =
      SUBDIR += acx
