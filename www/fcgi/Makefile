@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/06 14:55:41 sthen Exp $
 
 COMMENT=		FastCGI Development Kit
 
 DISTNAME=		fcgi-2.4.0
-REVISION=		9
+REVISION=		10
 CATEGORIES=		www
 SHARED_LIBS +=	fcgi                 0.0      # .0.0
 SHARED_LIBS +=	fcgi++               1.0      # .1.0
@@ -12,7 +12,11 @@ HOMEPAGE=		http://www.fastcgi.com/
 
 MAINTAINER=		Adam Montague <amontague@siriushosting.com>
 
-# BSD-like
+# See LICENSE.TERMS. Some source files (from the same authors) have other
+# licenses but LICENSE.TERMS says "The following terms apply to all files
+# associated with the Software and Documentation unless explicitly
+# disclaimed in individual files". Also see analysis at
+# http://www.fastcgi.com/archives/fastcgi-developers/2010-June/000559.html
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=		c m stdc++
