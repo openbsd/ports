@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.12 2015/01/08 15:01:11 pea Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.13 2015/02/06 09:01:21 pea Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
@@ -31,7 +31,6 @@ lib/postgresql/isn.so
 lib/postgresql/lo.so
 lib/postgresql/ltree.so
 lib/postgresql/moddatetime.so
-lib/postgresql/uuid-ossp.so
 lib/postgresql/pageinspect.so
 lib/postgresql/passwordcheck.so
 lib/postgresql/pg_buffercache.so
@@ -55,6 +54,7 @@ lib/postgresql/test_shm_mq.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
 lib/postgresql/unaccent.so
+lib/postgresql/uuid-ossp.so
 lib/postgresql/worker_spi.so
 @man man/man1/oid2name.1
 @man man/man1/pg_archivecleanup.1
@@ -129,9 +129,6 @@ share/postgresql/extension/ltree.control
 share/postgresql/extension/moddatetime--1.0.sql
 share/postgresql/extension/moddatetime--unpackaged--1.0.sql
 share/postgresql/extension/moddatetime.control
-share/postgresql/extension/uuid-ossp--1.0.sql
-share/postgresql/extension/uuid-ossp--unpackaged--1.0.sql
-share/postgresql/extension/uuid-ossp.control
 share/postgresql/extension/pageinspect--1.0--1.1.sql
 share/postgresql/extension/pageinspect--1.1--1.2.sql
 share/postgresql/extension/pageinspect--1.2.sql
@@ -197,6 +194,9 @@ share/postgresql/extension/tsearch2.control
 share/postgresql/extension/unaccent--1.0.sql
 share/postgresql/extension/unaccent--unpackaged--1.0.sql
 share/postgresql/extension/unaccent.control
+share/postgresql/extension/uuid-ossp--1.0.sql
+share/postgresql/extension/uuid-ossp--unpackaged--1.0.sql
+share/postgresql/extension/uuid-ossp.control
 share/postgresql/extension/worker_spi--1.0.sql
 share/postgresql/extension/worker_spi.control
 share/postgresql/extension/xml2--1.0.sql
