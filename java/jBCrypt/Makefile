@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2015/02/06 14:11:46 sthen Exp $
 
 COMMENT=	BCrypt library for Java
 
-DISTNAME=	jBCrypt-0.3
-REVISION=	1
+DISTNAME=	jBCrypt-0.4
 
 CATEGORIES=	security
 
