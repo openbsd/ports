@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/12/01 23:45:58 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/02/06 22:53:27 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingacmd:734
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -134,20 +134,6 @@ share/examples/icinga2/zones.d/
 share/examples/icinga2/zones.d/README
 @sample ${SYSCONFDIR}/icinga2/zones.d/README
 share/icinga2/
-share/icinga2-ido-mysql/
-share/icinga2-ido-mysql/schema/
-share/icinga2-ido-mysql/schema/mysql.sql
-share/icinga2-ido-mysql/schema/upgrade/
-share/icinga2-ido-mysql/schema/upgrade/2.0.2.sql
-share/icinga2-ido-mysql/schema/upgrade/2.1.0.sql
-share/icinga2-ido-mysql/schema/upgrade/2.2.0.sql
-share/icinga2-ido-pgsql/
-share/icinga2-ido-pgsql/schema/
-share/icinga2-ido-pgsql/schema/pgsql.sql
-share/icinga2-ido-pgsql/schema/upgrade/
-share/icinga2-ido-pgsql/schema/upgrade/2.0.2.sql
-share/icinga2-ido-pgsql/schema/upgrade/2.1.0.sql
-share/icinga2-ido-pgsql/schema/upgrade/2.2.0.sql
 share/icinga2/include/
 share/icinga2/include/command-icinga.conf
 share/icinga2/include/command-plugins-manubulon.conf

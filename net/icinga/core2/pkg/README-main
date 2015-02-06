@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.7 2014/12/17 22:10:30 sthen Exp $
+$OpenBSD: README-main,v 1.8 2015/02/06 22:53:27 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -29,17 +29,15 @@ on the local machine; these should work as-is.
 
 You may check your configuration file format before starting Icinga:
 
-   $ sudo -u _icinga ${TRUEPREFIX}/sbin/icinga2 daemon -C
+   $ sudo -u _icinga icinga2 daemon -C
 
 This will parse all configuration files and warn about any problems
 which have been identified.
 
-To enable automatic startup on boot for icinga2, add it to the pkg_scripts
-line in /etc/rc.conf.local.
+Enable icinga2 at boot and start it as usual:
 
-To start icinga2, reboot or start it manually:
-
-   $ sudo ${RCDIR}/icinga2 start
+   # rcctl enable icinga2
+   # rcctl start icinga2
 
 Web User-Interfaces
 ===================

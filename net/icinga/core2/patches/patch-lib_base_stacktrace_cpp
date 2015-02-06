@@ -1,15 +1,14 @@
-$OpenBSD: patch-lib_base_stacktrace_cpp,v 1.3 2014/11/22 00:13:03 sthen Exp $
---- lib/base/stacktrace.cpp.orig	Mon Nov 17 09:52:21 2014
-+++ lib/base/stacktrace.cpp	Thu Nov 20 20:03:27 2014
+$OpenBSD: patch-lib_base_stacktrace_cpp,v 1.4 2015/02/06 22:53:27 sthen Exp $
+--- lib/base/stacktrace.cpp.orig	Fri Jan  9 13:46:07 2015
++++ lib/base/stacktrace.cpp	Fri Jan 16 19:52:21 2015
 @@ -21,9 +21,9 @@
  #include "base/utility.hpp"
  #include "base/initialize.hpp"
  
 -#ifdef HAVE_BACKTRACE_SYMBOLS
--#	include <execinfo.h>
--#endif /* HAVE_BACKTRACE_SYMBOLS */
 +#if Backtrace_FOUND
-+#	include <${Backtrace_HEADER}>
+ #	include <execinfo.h>
+-#endif /* HAVE_BACKTRACE_SYMBOLS */
 +#endif /* Backtrace_FOUND */
  
  using namespace icinga;
