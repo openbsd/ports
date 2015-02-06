@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/02 17:13:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/02/06 15:54:33 sthen Exp $
 
 COMMENT=	OpenBSD improved and secured version of Apache 1.3
 
 DISTNAME=	apache-httpd-openbsd-1.3.20140502
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 
 HOMEPAGE=	https://github.com/fobser/apache-httpd-openbsd
