@@ -1,4 +1,6 @@
-$OpenBSD: patch-servers_slapd_overlays_deref_c,v 1.1 2015/02/06 11:19:33 sthen Exp $
+$OpenBSD: patch-servers_slapd_overlays_deref_c,v 1.2 2015/02/06 11:28:12 sthen Exp $
+
+http://www.openldap.org/its/?findid=8027
 
 From: Howard Chu <hyc@openldap.org>
 Date: Mon, 19 Jan 2015 22:25:53 +0000 (+0000)
