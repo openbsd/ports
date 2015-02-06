@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/06/18 11:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/02/06 14:10:12 sthen Exp $
 
 COMMENT=	RFC 2822 address parsing and creation
 
 MODULES=	cpan
-DISTNAME=	Email-Address-1.905
+DISTNAME=	Email-Address-1.907
 CATEGORIES=	mail
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
