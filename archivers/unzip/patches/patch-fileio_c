@@ -1,0 +1,29 @@
+$OpenBSD: patch-fileio_c,v 1.1 2015/02/06 21:37:04 naddy Exp $
+
+Fix CVE-2014-8141: out-of-bounds read issues in getZip64Data()
+
+--- fileio.c.orig	Mon Apr 20 02:03:44 2009
++++ fileio.c	Thu Feb  5 18:57:59 2015
+@@ -176,6 +176,8 @@ static ZCONST char Far FilenameTooLongTrunc[] =
+ #endif
+ static ZCONST char Far ExtraFieldTooLong[] =
+   "warning:  extra field too long (%d).  Ignoring...\n";
++static ZCONST char Far ExtraFieldCorrupt[] =
++  "warning:  extra field (type: 0x%04x) corrupt.  Continuing...\n";
+ 
+ #ifdef WINDLL
+    static ZCONST char Far DiskFullQuery[] =
+@@ -2295,7 +2297,12 @@ int do_string(__G__ length, option)   /* return PK-typ
+             if (readbuf(__G__ (char *)G.extra_field, length) == 0)
+                 return PK_EOF;
+             /* Looks like here is where extra fields are read */
+-            getZip64Data(__G__ G.extra_field, length);
++            if (getZip64Data(__G__ G.extra_field, length) != PK_COOL)
++            {
++                Info(slide, 0x401, ((char *)slide,
++                 LoadFarString( ExtraFieldCorrupt), EF_PKSZ64));
++                error = PK_WARN;
++            }
+ #ifdef UNICODE_SUPPORT
+             G.unipath_filename = NULL;
+             if (G.UzO.U_flag < 2) {
