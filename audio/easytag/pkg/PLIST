@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/11/25 05:48:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/02/06 19:51:26 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/appdata/
@@ -27,6 +27,50 @@ share/help/C/easytag/scanner.page
 share/help/C/easytag/starting.page
 share/help/C/easytag/tag-field.page
 share/help/C/easytag/tag.page
+share/help/cs/
+share/help/cs/easytag/
+share/help/cs/easytag/cddb-search.page
+share/help/cs/easytag/file-rename.page
+share/help/cs/easytag/file-select.page
+share/help/cs/easytag/format-specifier.page
+share/help/cs/easytag/image-delete.page
+share/help/cs/easytag/image-export.page
+share/help/cs/easytag/image.page
+share/help/cs/easytag/index.page
+share/help/cs/easytag/introduction.page
+share/help/cs/easytag/keyboard-shortcuts.page
+share/help/cs/easytag/legal.xml
+share/help/cs/easytag/media/
+share/help/cs/easytag/media/icon.png
+share/help/cs/easytag/playlist-generate.page
+share/help/cs/easytag/problems-id3.page
+share/help/cs/easytag/problems-ogg-split.page
+share/help/cs/easytag/scanner.page
+share/help/cs/easytag/starting.page
+share/help/cs/easytag/tag-field.page
+share/help/cs/easytag/tag.page
+share/help/de/
+share/help/de/easytag/
+share/help/de/easytag/cddb-search.page
+share/help/de/easytag/file-rename.page
+share/help/de/easytag/file-select.page
+share/help/de/easytag/format-specifier.page
+share/help/de/easytag/image-delete.page
+share/help/de/easytag/image-export.page
+share/help/de/easytag/image.page
+share/help/de/easytag/index.page
+share/help/de/easytag/introduction.page
+share/help/de/easytag/keyboard-shortcuts.page
+share/help/de/easytag/legal.xml
+share/help/de/easytag/media/
+share/help/de/easytag/media/icon.png
+share/help/de/easytag/playlist-generate.page
+share/help/de/easytag/problems-id3.page
+share/help/de/easytag/problems-ogg-split.page
+share/help/de/easytag/scanner.page
+share/help/de/easytag/starting.page
+share/help/de/easytag/tag-field.page
+share/help/de/easytag/tag.page
 share/help/el/
 share/help/el/easytag/
 share/help/el/easytag/cddb-search.page
