@@ -1,12 +1,12 @@
-$OpenBSD: patch-misc_Makefile,v 1.1.1.1 2013/01/23 08:38:53 jasper Exp $
---- misc/Makefile.orig	Mon Jan 21 15:21:30 2013
-+++ misc/Makefile	Mon Jan 21 15:21:38 2013
+$OpenBSD: patch-misc_Makefile,v 1.2 2015/02/07 21:52:57 sthen Exp $
+--- misc/Makefile.orig	Sat Nov 22 12:28:25 2014
++++ misc/Makefile	Sat Feb  7 20:48:59 2015
 @@ -13,10 +13,6 @@ install:
- 			$(destdir)$(prefix)/share/xca
- 	install -m 644 $(SRCPATH)xca.desktop $(destdir)$(prefix)/share/applications
- 	install -m 644 $(SRCPATH)xca.xml $(destdir)$(prefix)/share/mime/packages
+ 			$(destdir)$(xca_prefix)
+ 	install -m 644 $(SRCPATH)xca.desktop $(destdir)$(datarootdir)/applications
+ 	install -m 644 $(SRCPATH)xca.xml $(destdir)$(datarootdir)/mime/packages
 -	if test -z "$(destdir)"; then \
--	  update-mime-database $(prefix)/share/mime || :; \
+-	  update-mime-database $(datarootdir)/mime || :; \
 -	  update-desktop-database || :; \
 -	fi
  

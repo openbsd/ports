@@ -1,35 +1,17 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2013/01/23 08:38:53 jasper Exp $
---- configure.orig	Sat May 12 11:37:14 2012
-+++ configure	Mon Jan 21 15:03:26 2013
-@@ -27,7 +27,7 @@ export QTDIR="$QTDIR"
- export CFLAGS="${CFLAGS}"
- export LDFLAGS="${LDFLAGS}"
- export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
--export prefix="${prefix}"
-+export prefix="${WRKINST}${PREFIX}"
- export docdir="${docdir}"
- export RC="stop"
- exec $0 $@
-@@ -51,10 +51,10 @@ done
- DIRS="$QTDIR $DIRS /usr /usr/X11R6 /usr/local"
- STDINC="-I/usr/include"
- STDLIB="-L/usr/lib"
--prefix=${prefix:=/usr/local}
--CFLAGS=${CFLAGS:=-Wall -ggdb -O2}
-+prefix=${WRKINST}${PREFIX}
-+CFLAGS="${CFLAGS:=-Wall -ggdb -O2} -I/usr/local/include"
- CC=${CC:=gcc}
--LDFLAGS=""
-+LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
- LIBS="-lstdc++"
- LDIRS=
- MOC=moc
-@@ -97,7 +97,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2015/02/07 21:52:57 sthen Exp $
+
+Missing space causes flags to run together
+
+--- configure.orig	Sat Feb  7 21:12:28 2015
++++ configure	Sat Feb  7 21:13:22 2015
+@@ -3508,8 +3508,8 @@ fi
  
- if test -x /sbin/ldconfig; then
-   EXTRALIB=$(
--  /sbin/ldconfig -p | sed 's,.* => \(/.*/\)[^/]*\.so.*,\1,' | grep "^/" | sort -u | \
-+  /sbin/ldconfig -r | sed 's,.* => \(/.*/\)[^/]*\.so.*,\1,' | grep "^/" | sort -u | \
-   while read lib; do
-     echo -n "-L${lib} "
-   done
+ # Try to compile a little application
+ #####################################
+-CXXFLAGS="${CXXFLAGS} ${OPENSSL_CFLAGS}${QT_CFLAGS}"
+-LIBS="${LIBS} ${OPENSSL_LIBS}${QT_LIBS}"
++CXXFLAGS="${CXXFLAGS} ${OPENSSL_CFLAGS} ${QT_CFLAGS}"
++LIBS="${LIBS} ${OPENSSL_LIBS} ${QT_LIBS}"
+ 
+ if test "$cross_compiling" = yes; then :
+   echo "Skipping the compile test because of cross-compiling"

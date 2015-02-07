@@ -1,7 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/23 08:38:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/02/07 21:52:57 sthen Exp $
 @bin bin/xca
+@bin bin/xca_db_stat
 @man man/man1/xca.1
 share/applications/xca.desktop
+share/doc/xca/
+share/doc/xca/xca-1.html
+share/doc/xca/xca-10.html
+share/doc/xca/xca-11.html
+share/doc/xca/xca-12.html
+share/doc/xca/xca-13.html
+share/doc/xca/xca-14.html
+share/doc/xca/xca-15.html
+share/doc/xca/xca-16.html
+share/doc/xca/xca-2.html
+share/doc/xca/xca-3.html
+share/doc/xca/xca-4.html
+share/doc/xca/xca-5.html
+share/doc/xca/xca-6.html
+share/doc/xca/xca-7.html
+share/doc/xca/xca-8.html
+share/doc/xca/xca-9.html
+share/doc/xca/xca.html
 share/mime/packages/xca.xml
 share/pixmaps/
 share/pixmaps/xca-32x32.xpm
@@ -14,10 +33,10 @@ share/xca/dn.txt
 share/xca/eku.txt
 share/xca/oids.txt
 share/xca/release.txt
-share/xca/xca.html
 share/xca/xca_de.qm
 share/xca/xca_es.qm
 share/xca/xca_fr.qm
+share/xca/xca_hr.qm
 share/xca/xca_ru.qm
 share/xca/xca_tr.qm
 @exec %D/bin/update-desktop-database
