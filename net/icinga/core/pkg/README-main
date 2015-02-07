@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.25 2014/07/22 10:55:40 ajacoutot Exp $
+$OpenBSD: README-main,v 1.26 2015/02/07 22:39:04 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ Getting Started
 
 The main documentation for Icinga is provided in HTML format as part of
 the icinga-cgi package, see /var/www/icinga-cgi/docs/en/index.html
-or at http://docs.icinga.org/latest/en/. 
+or at http://docs.icinga.org/latest/en/.
 
 The included sample configuration carries out some simple checks
 on the local machine; these should work as-is.
@@ -21,12 +21,13 @@ You may check your configuration file format before starting Icinga:
 This will parse all configuration files and warn about any problems
 which have been identified.
 
-To enable automatic startup on boot for icinga, add it to the pkg_scripts
-line in /etc/rc.conf.local.
+Use the rcctl command to enable automatic startup on boot for icinga
+
+   $ sudo rcctl enable icinga
 
 To start icinga, reboot or start it manually:
 
-   $ sudo ${RCDIR}/icinga start
+   $ sudo rcctl start icinga
 
 
 Upgrading from a previous version
@@ -56,8 +57,8 @@ UI, you may need to set disable_cmd_cgi_csrf_protection=1 in cgi.cfg.
 Chroot Considerations
 =====================
 
-If you're using OpenBSD's default chroot environment for nginx with
-the icinga-cgi package, some files will need to be moved inside the
+If you're using OpenBSD's default chroot environment for httpd or nginx
+with the icinga-cgi package, some files will need to be moved inside the
 jail and symbolic links created.
 
    mkdir -p ${PREFIX-cgi}/etc ${PREFIX-cgi}/var/log
@@ -83,13 +84,14 @@ icinga-cgi" or "pkg_add icinga-web").
 
 1) icinga-cgi: the classic (but improved) Nagios-style interface
 
-   nginx doesn't support CGI scripts directly; instead the slowcgi(8) wrapper
-   must be used. Enable it at startup:
+   httpd and nginx don't support CGI scripts directly; instead the slowcgi(8)
+   wrapper must be used. Use the rcctl command to enable it at startup and
+   reboot or start it manually:
 
-   # echo slowcgi_flags= >> /etc/rc.conf.local
-   # /etc/rc.d/slowcgi start
+      # rcctl enable slowcgi
+      # rcctl start slowcgi
 
-   And add a configuration section like this to /etc/nginx/nginx.conf:
+   For nginx, add a configuration section like this to /etc/nginx/nginx.conf:
 
    location /icinga/ {
 	alias		/icinga-cgi/;
@@ -113,14 +115,32 @@ icinga-cgi" or "pkg_add icinga-web").
    }
 
    The example above permits access from the local machine without password,
-   and requires HTTP basic authentication from other locations. The password
-   file can be created as follows:
+   and requires HTTP basic authentication from other locations.
+
+   For httpd, add a configuration section like this to /etc/httpd.conf:
+
+      location "/cgi-bin/icinga/*cgi" {
+              fastcgi
+              root "/"
+              authenticate with "/etc/icinga/htpasswd.users"
+      }
+
+   And create a symbolic link in the htdocs directory:
+
+      # ln -s ../icinga-cgi icinga
+
+   The examples above require HTTP basic authentication. The password file can
+   be created as follows:
 
       # htpasswd ${SYSCONFDIR}/htpasswd.users <username>
 
    When done, reload the web server:
 
-      # /etc/rc.d/nginx reload
+      # rcctl reload nginx
+
+      or
+
+      # rcctl reload httpd
 
    You should then be able to access the web interface at
    http://localhost/icinga/
