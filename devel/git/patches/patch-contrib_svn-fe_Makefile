@@ -1,0 +1,14 @@
+$OpenBSD: patch-contrib_svn-fe_Makefile,v 1.1 2015/02/07 18:19:41 dcoppa Exp $
+
+No need for librt on OpenBSD
+
+--- contrib/svn-fe/Makefile.orig	Fri Feb  6 02:50:23 2015
++++ contrib/svn-fe/Makefile	Fri Feb  6 02:50:45 2015
+@@ -41,7 +41,6 @@ endif
+ 
+ ifdef HAVE_CLOCK_GETTIME
+ 	CFLAGS += -DHAVE_CLOCK_GETTIME
+-	EXTLIBS += -lrt
+ endif
+ 
+ ifdef NEEDS_LIBICONV
