@@ -1,15 +1,44 @@
-$OpenBSD: patch-remmina_CMakeLists_txt,v 1.4 2014/10/06 07:27:05 jasper Exp $
+$OpenBSD: patch-remmina_CMakeLists_txt,v 1.5 2015/02/07 11:23:43 ajacoutot Exp $
 
-Adjust to new VTE 2.91 API
+From 9ec1aea54a4f8e6883f6d85627df66197b7487b4 Mon Sep 17 00:00:00 2001
+From: Iain Lane <iain.lane@canonical.com>
+Date: Mon, 10 Nov 2014 11:14:15 +0000
+Subject: [PATCH] Update to work with vte 2.91 as well as 2.90
 
---- remmina/CMakeLists.txt.orig	Mon Oct  6 09:04:29 2014
-+++ remmina/CMakeLists.txt	Mon Oct  6 09:04:33 2014
-@@ -120,7 +120,7 @@ if(AVAHI_FOUND)
+--- remmina/CMakeLists.txt.orig	Fri Feb 10 19:54:23 2012
++++ remmina/CMakeLists.txt	Sat Feb  7 11:46:15 2015
+@@ -110,17 +110,26 @@ if(AVAHI_FOUND)
+ 	target_link_libraries(remmina ${AVAHI_LIBRARIES})
+ endif()
+ 
+-if(GTK3_FOUND)
+-	set(_VTE_VERSION_NUM 2.90)
+-else()
++option(WITH_VTE "Build with support for VTE" ON)
++if(GTK3_FOUND AND WITH_VTE)
++	set(_VTE_VERSION_NUMS 2.91 2.90)
++	foreach(__VTE_VERSION ${_VTE_VERSION_NUMS})
++		set(_VTE_VERSION_NUM ${__VTE_VERSION})
++		find_package(VTE)
++		if(VTE_FOUND)
++			break()
++		endif()
++		message(STATUS "VTE ${__VTE_VERSION} not found")
++	endforeach(__VTE_VERSION)
++elseif(WITH_VTE)
+ 	set(_VTE_VERSION_NUM)
++	find_package(VTE)
+ endif()
+ 
+-find_suggested_package(VTE _VTE_VERSION_NUM)
+-if(VTE_FOUND)
+-	add_definitions(-DHAVE_LIBVTE)
+-	include_directories(${VTE_INCLUDE_DIRS})
+-	target_link_libraries(remmina ${VTE_LIBRARIES})
++if (VTE_FOUND)
++        add_definitions(-DHAVE_LIBVTE)
++        include_directories(${VTE_INCLUDE_DIRS})
++        target_link_libraries(remmina ${VTE_LIBRARIES})
  endif()
  
  if(GTK3_FOUND)
--	set(_VTE_VERSION_NUM 2.90)
-+	set(_VTE_VERSION_NUM 2.91)
- else()
- 	set(_VTE_VERSION_NUM)
- endif()

@@ -1,19 +1,29 @@
-$OpenBSD: patch-cmake_FindVTE_cmake,v 1.1 2014/10/06 07:27:05 jasper Exp $
+$OpenBSD: patch-cmake_FindVTE_cmake,v 1.2 2015/02/07 11:23:43 ajacoutot Exp $
 
-Adjust to new VTE 2.91 API
+From 9ec1aea54a4f8e6883f6d85627df66197b7487b4 Mon Sep 17 00:00:00 2001
+From: Iain Lane <iain.lane@canonical.com>
+Date: Mon, 10 Nov 2014 11:14:15 +0000
+Subject: [PATCH] Update to work with vte 2.91 as well as 2.90
 
---- cmake/FindVTE.cmake.orig	Mon Oct  6 09:05:19 2014
-+++ cmake/FindVTE.cmake	Mon Oct  6 09:05:57 2014
-@@ -21,11 +21,9 @@ if(NOT _VTE_VERSION_NUM)
+--- cmake/FindVTE.cmake.orig	Fri Feb 10 19:54:23 2012
++++ cmake/FindVTE.cmake	Sat Feb  7 11:46:15 2015
+@@ -21,11 +21,17 @@ if(NOT _VTE_VERSION_NUM)
  	set(_VTE_LIB_NAME vte)
  	set(_VTE_VERSION vte)
  else()
 -	set(_VTE_LIB_NAME vte${_VTE_VERSION_NUM})
-+	set(_VTE_LIB_NAME vte-${_VTE_VERSION_NUM})
++	if(${_VTE_VERSION_NUM} VERSION_LESS 2.91)
++		set(_VTE_LIB_NAME vte${_VTE_VERSION_NUM})
++	else()
++		set(_VTE_LIB_NAME vte-${_VTE_VERSION_NUM})
++	endif()
  	set(_VTE_VERSION vte-${_VTE_VERSION_NUM})
  endif()
--
+ 
 -string(REPLACE . _ _VTE_LIB_NAME ${_VTE_LIB_NAME})
++if(${_VTE_VERSION_NUM} VERSION_LESS 2.91)
++	string(REPLACE . _ _VTE_LIB_NAME ${_VTE_LIB_NAME})
++endif()
  
  pkg_check_modules(PC_VTE ${_VTE_VERSION})
  

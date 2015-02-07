@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/10/06 07:27:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/02/07 11:23:43 ajacoutot Exp $
 
 ### from upstream, removed at next update
 # +patch-remmina_src_remmina_protocol_widget_c
@@ -22,7 +22,7 @@ DISTNAME=		Remmina-${V}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/FreeRDP-Remmina-356c033
 
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		x11 net
 
