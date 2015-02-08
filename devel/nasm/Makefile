@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/09/13 20:40:20 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2015/02/08 12:06:43 naddy Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE= gnu
 
 DESTDIRNAME=	INSTALLROOT
