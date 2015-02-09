@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2014/10/16 19:49:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2015/02/09 13:02:29 naddy Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
 DISTNAME=	mpg123-1.21.0
+REVISION=	0
 SHARED_LIBS=	mpg123		4.0	# 40.3
 CATEGORIES=	audio
 HOMEPAGE=	http://www.mpg123.de/
@@ -31,11 +32,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
 
 .if   ${MACHINE_ARCH} == "amd64"
-## no support for AVX instructions in as(1)
-#USE_GMAKE=	Yes
-#BUILD_DEPENDS+=	devel/yasm
-## no kernel support for AVX
-CONFIGURE_ENV+=	YASM=no
+# no support for AVX instructions in as(1)
+USE_GMAKE=	Yes
+BUILD_DEPENDS+=	devel/yasm
 
 .elif ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=--with-cpu=arm_nofpu
