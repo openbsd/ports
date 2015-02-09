@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2014/12/13 06:04:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/09 01:49:19 bcallah Exp $
 
 MODPY_EGG_VERSION =	1.11.1
 COMMENT =	pipe video streams into a video player
 DISTNAME =	livestreamer-${MODPY_EGG_VERSION}
+REVISION =	0
 CATEGORIES =	multimedia net
 
-HOMEPAGE =	http://livestreamer.tanuki.se/
+HOMEPAGE =	http://livestreamer.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
