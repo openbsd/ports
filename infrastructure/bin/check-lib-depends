@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.33 2014/07/09 11:26:11 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.34 2015/02/09 09:47:31 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -171,6 +171,7 @@ sub handle_options
 {
 	my $state = shift;
 
+	$state->{opt}{i} = 0;
 	$state->SUPER::handle_options('oid:D:fB:qs:O:',
 		'[-fiomqx] [-B destdir] [-d pkgrepo] [-O dest] [-s source]');
 
