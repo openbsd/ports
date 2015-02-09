@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/29 21:22:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2015/02/09 12:56:20 dcoppa Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -13,6 +13,7 @@ GH_PROJECT =		ninja
 GH_TAGNAME =		v$V
 GH_COMMIT =		3309498174411e02e7680ea8b470bb7d1d70bdb8
 DISTNAME =		${GH_PROJECT}-$V
+REVISION =		0
 
 CATEGORIES =		devel
 HOMEPAGE =		http://martine.github.io/ninja/
@@ -39,7 +40,7 @@ MAKE_ENV =		CXX="${CXX}"
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ./configure.py --bootstrap \
-	    --with-python=${MODPY_BIN}
+	    --verbose --with-python=${MODPY_BIN}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ninja ${PREFIX}/bin

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_graph_cc,v 1.1 2015/02/09 12:56:20 dcoppa Exp $
+
+commit 6ffb66d171a6962c2a7dad0492dffc42e65d666e
+Author: tzik <tzik@google.com>
+Date:   Fri Feb 6 19:45:42 2015 +0900
+
+Typo fix in graph.cc
+
+--- src/graph.cc.orig	Mon Feb  9 06:48:04 2015
++++ src/graph.cc	Mon Feb  9 06:48:13 2015
+@@ -439,7 +439,7 @@ bool ImplicitDepLoader::LoadDepsFromLog(Edge* edge, st
+ 
+   // Deps are invalid if the output is newer than the deps.
+   if (output->mtime() > deps->mtime) {
+-    EXPLAIN("stored deps info out of date for for '%s' (%d vs %d)",
++    EXPLAIN("stored deps info out of date for '%s' (%d vs %d)",
+             output->path().c_str(), deps->mtime, output->mtime());
+     return false;
+   }
