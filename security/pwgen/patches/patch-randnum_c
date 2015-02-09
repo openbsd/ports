@@ -1,8 +1,11 @@
-$OpenBSD: patch-randnum_c,v 1.3 2008/04/22 09:15:08 robert Exp $
---- randnum.c.orig	Thu Jul  5 01:42:19 2007
-+++ randnum.c	Tue Apr 22 11:12:27 2008
-@@ -17,6 +17,15 @@
+$OpenBSD: patch-randnum_c,v 1.4 2015/02/09 18:56:11 jasper Exp $
+--- randnum.c.orig	Tue Oct 28 02:55:43 2014
++++ randnum.c	Mon Feb  9 19:24:58 2015
+@@ -16,8 +16,18 @@
+ #include <fcntl.h>
+ #include <errno.h>
  
++#include "config.h"
  #include "pwgen.h"
  
 +#ifdef HAVE_ARC4RANDOM
@@ -17,8 +20,8 @@ $OpenBSD: patch-randnum_c,v 1.3 2008/04/22 09:15:08 robert Exp $
  #ifdef HAVE_DRAND48
  extern double drand48(void);
  #endif
-@@ -93,3 +102,4 @@ int pw_random_number(max_num)
- 	return ((int) (random() / ((float) RAND_MAX) * max_num));
- #endif
+@@ -76,3 +86,4 @@ int pw_random_number(max_num)
+ 	fprintf(stderr, "No entropy available!\n");
+ 	exit(1);
  }
 +#endif	/* HAVE_ARC4RANDOM */
