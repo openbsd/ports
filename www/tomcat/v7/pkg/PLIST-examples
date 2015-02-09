@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.24 2014/11/28 08:27:02 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.25 2015/02/09 08:16:01 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -73,6 +73,7 @@ webapps/docs/api/org/apache/catalina/Server.html
 webapps/docs/api/org/apache/catalina/Service.html
 webapps/docs/api/org/apache/catalina/Session.html
 webapps/docs/api/org/apache/catalina/SessionEvent.html
+webapps/docs/api/org/apache/catalina/SessionIdGenerator.html
 webapps/docs/api/org/apache/catalina/SessionListener.html
 webapps/docs/api/org/apache/catalina/Store.html
 webapps/docs/api/org/apache/catalina/User.html
@@ -96,8 +97,10 @@ webapps/docs/api/org/apache/catalina/ant/ServerinfoTask.html
 webapps/docs/api/org/apache/catalina/ant/SessionsTask.html
 webapps/docs/api/org/apache/catalina/ant/StartTask.html
 webapps/docs/api/org/apache/catalina/ant/StopTask.html
+webapps/docs/api/org/apache/catalina/ant/ThreaddumpTask.html
 webapps/docs/api/org/apache/catalina/ant/UndeployTask.html
 webapps/docs/api/org/apache/catalina/ant/ValidatorTask.html
+webapps/docs/api/org/apache/catalina/ant/VminfoTask.html
 webapps/docs/api/org/apache/catalina/ant/jmx/
 webapps/docs/api/org/apache/catalina/ant/jmx/Arg.html
 webapps/docs/api/org/apache/catalina/ant/jmx/JMXAccessorCondition.html
@@ -748,7 +751,8 @@ webapps/docs/api/org/apache/catalina/util/ResourceSet.html
 webapps/docs/api/org/apache/catalina/util/SchemaResolver.html
 webapps/docs/api/org/apache/catalina/util/ServerInfo.html
 webapps/docs/api/org/apache/catalina/util/SessionConfig.html
-webapps/docs/api/org/apache/catalina/util/SessionIdGenerator.html
+webapps/docs/api/org/apache/catalina/util/SessionIdGeneratorBase.html
+webapps/docs/api/org/apache/catalina/util/StandardSessionIdGenerator.html
 webapps/docs/api/org/apache/catalina/util/Strftime.html
 webapps/docs/api/org/apache/catalina/util/StringParser.html
 webapps/docs/api/org/apache/catalina/util/TomcatCSS.html
@@ -1412,6 +1416,7 @@ webapps/docs/api/org/apache/tomcat/package-frame.html
 webapps/docs/api/org/apache/tomcat/package-summary.html
 webapps/docs/api/org/apache/tomcat/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/
+webapps/docs/api/org/apache/tomcat/util/Diagnostics.html
 webapps/docs/api/org/apache/tomcat/util/DomUtil.NullResolver.html
 webapps/docs/api/org/apache/tomcat/util/DomUtil.html
 webapps/docs/api/org/apache/tomcat/util/ExceptionUtils.html
@@ -1466,6 +1471,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/StringCache.ByteEntry.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.CharEntry.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/UDecoder.html
+webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.SafeCharsSet.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/Utf8Decoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/Utf8Encoder.html
@@ -1777,6 +1783,7 @@ webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperNonSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcess.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcessManager.html
+webapps/docs/api/org/apache/tomcat/websocket/CaseInsensitiveKeyMap.html
 webapps/docs/api/org/apache/tomcat/websocket/Constants.html
 webapps/docs/api/org/apache/tomcat/websocket/DecoderEntry.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResult.html
@@ -1928,6 +1935,7 @@ webapps/docs/config/realm.html
 webapps/docs/config/resources.html
 webapps/docs/config/server.html
 webapps/docs/config/service.html
+webapps/docs/config/sessionidgenerator.html
 webapps/docs/config/systemprops.html
 webapps/docs/config/valve.html
 webapps/docs/connectors.html
