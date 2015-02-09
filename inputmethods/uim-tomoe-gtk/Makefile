@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/01/09 16:47:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/09 15:10:39 naddy Exp $
 
 COMMENT=	japanese handwriting
 
@@ -20,7 +20,7 @@ WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs tomoe tomoe-gtk
 WANTLIB += uim uim-scm xcb xcb-render xcb-shm z
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext textproc/intltool
 
 BUILD_DEPENDS=	textproc/gsed
 
