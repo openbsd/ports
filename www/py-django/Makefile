@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2014/05/22 11:20:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2015/02/10 09:49:48 rpointel Exp $
 
 COMMENT =	high-level Python web framework
 
-MODPY_EGG_VERSION =	1.5.8
+MODPY_EGG_VERSION =	1.7.4
 LNAME =			django
 DISTNAME =		Django-${MODPY_EGG_VERSION}
 PKGNAME =		py-${LNAME}-${MODPY_EGG_VERSION}
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =	${MASTER_SITE_PYPI:=D/Django/}
 
 MODULES =	lang/python
+MODPY_SETUPTOOLS = Yes
 
 SUBST_VARS +=	LNAME
 
