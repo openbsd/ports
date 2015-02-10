@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/07/11 08:54:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/02/10 08:44:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=	diegonehab
 GH_PROJECT=	luasocket
 GH_TAGNAME=	v$V
 GH_COMMIT=	22cd5833fcc0e272f26004a79c8545e959ba406b
+REVISION=	0
 DISTNAME=	${GH_PROJECT}-$V
 PKGNAME=	${DISTNAME:S/-rc/rc/}
 CATEGORIES=	net
@@ -37,14 +38,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/socket.so ${MODLUA_LIBDIR}/socket/core.so
 	${INSTALL_DATA} ${WRKSRC}/src/unix.so ${MODLUA_LIBDIR}/socket/unix.so
 	${INSTALL_DATA} ${WRKSRC}/src/mime.so ${MODLUA_LIBDIR}/mime/core.so
-	${INSTALL_DATA} ${WRKSRC}/src/socket.lua ${MODLUA_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ltn12.lua ${MODLUA_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/mime.lua ${MODLUA_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ftp.lua ${MODLUA_DATADIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/http.lua ${MODLUA_DATADIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/smtp.lua ${MODLUA_DATADIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/tp.lua ${MODLUA_DATADIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/url.lua ${MODLUA_DATADIR}/socket
+.for l in ltn12 socket mime
+	${INSTALL_DATA} ${WRKSRC}/src/$l.lua ${MODLUA_DATADIR}
+.endfor
+.for l in http url tp ftp headers smtp
+	${INSTALL_DATA} ${WRKSRC}/src/$l.lua ${MODLUA_DATADIR}/socket
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${MODLUA_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${MODLUA_EXAMPLEDIR}
 

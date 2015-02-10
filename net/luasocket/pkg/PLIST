@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/11/25 15:27:56 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/02/10 08:44:32 jasper Exp $
 lib/lua/${MODLUA_VERSION}/mime/
 lib/lua/${MODLUA_VERSION}/mime/core.so
 lib/lua/${MODLUA_VERSION}/socket/
@@ -40,6 +40,7 @@ share/lua/${MODLUA_VERSION}/mime.lua
 share/lua/${MODLUA_VERSION}/socket/
 share/lua/${MODLUA_VERSION}/socket.lua
 share/lua/${MODLUA_VERSION}/socket/ftp.lua
+share/lua/${MODLUA_VERSION}/socket/headers.lua
 share/lua/${MODLUA_VERSION}/socket/http.lua
 share/lua/${MODLUA_VERSION}/socket/smtp.lua
 share/lua/${MODLUA_VERSION}/socket/tp.lua
