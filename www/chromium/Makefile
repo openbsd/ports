@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2015/02/06 17:45:14 robert Exp $
+# $OpenBSD: Makefile,v 1.199 2015/02/10 10:12:49 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -6,6 +6,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Chromium browser
 
 V=			40.0.2214.111
+REVISION=		0
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
