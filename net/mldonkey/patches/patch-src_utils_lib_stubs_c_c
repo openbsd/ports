@@ -1,0 +1,177 @@
+$OpenBSD: patch-src_utils_lib_stubs_c_c,v 1.1 2015/02/10 11:50:09 dcoppa Exp $
+
+commit 1e7341ef879a0f42e304bdd24f3339245214b58a
+Author: ygrek <ygrek@autistici.org>
+Date:   Tue Apr 29 00:14:20 2014 +0800
+
+fix buffer overflows in DNS resolution
+
+--- src/utils/lib/stubs_c.c.orig	Sun Jul  1 12:28:06 2012
++++ src/utils/lib/stubs_c.c	Mon Feb  9 10:03:11 2015
+@@ -685,7 +685,8 @@ value ml_setlcnumeric(value no)
+ #define GETHOSTBYNAME_IS_REENTRANT 1
+ #endif /* _WIN32 */
+ 
+-static char volatile ip_job_result[256];
++#define IP_JOB_RESULT_SIZE 256
++static char volatile ip_job_result[IP_JOB_RESULT_SIZE];
+ static int volatile job_naddresses = 0;
+ static int entry_h_length;
+ 
+@@ -702,7 +703,7 @@ static void save_host_entry(struct hostent *entry)
+   entry_h_length = entry->h_length;
+ #ifdef h_addr
+   job_naddresses = 0;
+-  while(*ptrs != NULL){
++  while(*ptrs != NULL && (entry_h_length * (job_naddresses + 1) < IP_JOB_RESULT_SIZE)) {
+     save_one_addr(ip_job_result + entry_h_length * job_naddresses++, *ptrs++);
+   }
+ #else
+@@ -751,7 +752,7 @@ static int ml_gethostbyname(char *hostname)
+   return 1;
+ }
+ 
+-
++// unix/socketaddr.c
+ extern value alloc_inet_addr(struct in_addr * a);
+ 
+ static value alloc_one_addr(char volatile *a)
+@@ -761,41 +762,35 @@ static value alloc_one_addr(char volatile *a)
+   return alloc_inet_addr(&addr);
+ }
+ 
+-static void store_in_job(value job_v)
++static value addr_list_of_job(void)
+ {
+-  value adr = Val_unit;
+-  value addr_list = Val_unit;
++  CAMLparam0();
++  CAMLlocal2(v_addr, v_addr_list);
+   int i;
+ 
+ /*  printf("store_in_job %d\n", job_naddresses); */
+-  Begin_roots3 (job_v, addr_list, adr);
+-#ifdef h_addr
+-  addr_list = alloc_small(job_naddresses, 0);
++  v_addr_list = caml_alloc_tuple(job_naddresses);
+   for(i=0; i<job_naddresses; i++){
+-    adr = alloc_one_addr(ip_job_result + i * entry_h_length);
+-    modify(&Field(addr_list,i), adr);
++    v_addr = alloc_one_addr(ip_job_result + i * entry_h_length);
++    Store_field(v_addr_list, i, v_addr);
+   }
+-#else
+-  adr = alloc_one_addr(ip_job_result);
+-  addr_list = alloc_small(1, 0);
+-  Field(addr_list, 0) = adr;
+-#endif  /* h_addr */
+-  modify(&Field(job_v,1), addr_list);
+-  End_roots();
++  CAMLreturn(v_addr_list);
+ }
+ 
+ #if !defined(HAVE_PTHREAD) || (!(HAS_GETHOSTBYNAME_R || GETHOSTBYNAME_IS_REENTRANT) && !defined(HAS_SIGWAIT))
+ 
+ value ml_ip_job_start(value job_v)
+ {
++  CAMLparam1(job_v);
++
+   char *hostname = String_val(Field(job_v,0));
+   if(ml_gethostbyname(hostname)){
+-    Field(job_v, 2) = Val_false;
+-    store_in_job(job_v);
++    Store_field(job_v, 1, addr_list_of_job())
++    Store_field(job_v, 2, Val_false);
+   } else {
+-    Field(job_v, 2) = Val_true;
++    Store_field(job_v, 2, Val_true);
+   }
+-  return Val_unit;
++  CAMLreturn(Val_unit);
+ }
+ 
+ value ml_ip_job_done(value job_v)
+@@ -818,8 +813,9 @@ value ml_has_pthread(value unit)
+ 
+ static int thread_started = 0;
+ static int volatile ip_job_done = 1;
+-static char volatile job_hostname[256];
+-static int volatile job_error = 0;
++#define JOB_HOSTNAME_SIZE 256
++static char volatile job_hostname[JOB_HOSTNAME_SIZE];
++static int volatile job_result = 0;
+ 
+ static pthread_t pthread;
+ static pthread_cond_t cond;
+@@ -827,21 +823,23 @@ static pthread_mutex_t mutex;
+ 
+ value ml_ip_job_done(value job_v)
+ {
++  CAMLparam1(job_v);
++
+   if(ip_job_done){
+-    if(job_error){ 
+-      Field(job_v, 2) = Val_false;
+-      store_in_job(job_v);
++    if(job_result){ 
++      Store_field(job_v, 1, addr_list_of_job());
++      Store_field(job_v, 2, Val_false);
+     } else {
+ /*      printf("found error\n"); */
+-      Field(job_v, 2) = Val_true;
++      Store_field(job_v, 2, Val_true);
+     }
+-    return Val_true;
++    CAMLreturn(Val_true);
+   }
+ 
+-  return Val_false;
++  CAMLreturn(Val_false);
+ }
+ 
+-static void * hasher_thread(void * arg)
++static void * dns_thread(void * arg)
+ {
+   struct timeval now;
+   struct timespec timeout;
+@@ -867,10 +865,10 @@ static void * hasher_thread(void * arg)
+     pthread_cond_timedwait(&cond, &mutex, &timeout);
+     
+     if(!ip_job_done){
+-      job_error = ml_gethostbyname((char*) job_hostname);
++      job_result = ml_gethostbyname((char*) job_hostname);
+ 
+       ip_job_done = 1;
+-/*      printf("job finished %d\n", job_error); */
++/*      printf("job finished %d\n", job_result); */
+     }
+   }
+     
+@@ -879,6 +877,14 @@ static void * hasher_thread(void * arg)
+ 
+ value ml_ip_job_start(value job_v)
+ {
++  if (caml_string_length(Field(job_v, 0)) >= JOB_HOSTNAME_SIZE)
++  {
++    // hostname too long - fail immediately
++    job_result = 1;
++    ip_job_done = 1;
++    return Val_unit;
++  }
++
+   strcpy( (char*) job_hostname, String_val(Field(job_v,0)));
+ 
+   if(!thread_started){
+@@ -892,10 +898,10 @@ value ml_ip_job_start(value job_v)
+     pthread_mutex_init(&mutex, NULL);
+ 
+     thread_started = 1;
+-    retcode = pthread_create(&pthread, &attr, hasher_thread, NULL);
++    retcode = pthread_create(&pthread, &attr, dns_thread, NULL);
+ 
+     if(retcode){
+-      perror("Error while starting Hashing thread");
++      perror("Error while starting DNS thread");
+       exit(2);
+     }
+   }

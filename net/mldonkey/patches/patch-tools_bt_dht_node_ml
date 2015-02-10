@@ -1,0 +1,19 @@
+$OpenBSD: patch-tools_bt_dht_node_ml,v 1.1 2015/02/10 11:50:09 dcoppa Exp $
+
+commit ea463573d490d1c44c57ec87b63d3d5d08489e96
+Author: ygrek <ygrek@autistici.org>
+Date:   Sun Mar 9 11:43:21 2014 +0800
+
+BT/DHT: update public router addresses
+
+--- tools/bt_dht_node.ml.orig	Tue Feb 10 03:52:08 2015
++++ tools/bt_dht_node.ml	Tue Feb 10 03:55:48 2015
+@@ -53,7 +53,7 @@ let () =
+       Sys.set_signal Sys.sighup (Sys.Signal_handle (fun _ -> show dht));
+       BasicSocket.add_infinite_timer 1800. (fun () -> run_queries dht);
+       BasicSocket.add_infinite_timer 3600. (fun () -> store file dht.M.rt);
+-      let routers = ["router.utorrent.com", 6881; "router.transmission.com",6881] in
++      let routers = ["router.bittorrent.com",8991] in
+       bootstrap dht ~routers;
+       BasicSocket.loop ()
+     | _ -> Printf.eprintf "Usage : %s <storage> <port>\n" Sys.argv.(0)

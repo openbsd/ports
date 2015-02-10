@@ -1,6 +1,10 @@
-$OpenBSD: patch-src_utils_net_terminal_ml,v 1.1 2014/10/31 08:19:39 dcoppa Exp $
+$OpenBSD: patch-src_utils_net_terminal_ml,v 1.2 2015/02/10 11:50:09 dcoppa Exp $
 
-Fix string literal in comment for OCaml 4.02
+commit c91a78896526640a301f5a9eeab8b698923e285c
+Author: ygrek <ygrek@autistici.org>
+Date:   Wed Sep 17 09:56:48 2014 +0300
+
+fix build with OCaml 4.02
 
 --- src/utils/net/terminal.ml.orig	Wed Aug 20 14:20:03 2014
 +++ src/utils/net/terminal.ml	Wed Aug 20 14:19:22 2014

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_networks_bittorrent_bTOptions_ml,v 1.1 2015/02/10 11:50:09 dcoppa Exp $
+
+commit ea463573d490d1c44c57ec87b63d3d5d08489e96
+Author: ygrek <ygrek@autistici.org>
+Date:   Sun Mar 9 11:43:21 2014 +0800
+
+BT/DHT: update public router addresses
+
+--- src/networks/bittorrent/bTOptions.ml.orig	Tue Feb 10 03:52:03 2015
++++ src/networks/bittorrent/bTOptions.ml	Tue Feb 10 03:53:59 2015
+@@ -177,7 +177,6 @@ let dht_bootstrap_nodes = define_option bittorrent_sec
+   (list_option addr_option)
+   [
+     "service.ygrek.org.ua",6881;
+-    "router.utorrent.com",6881;
+-    "router.transmission.com",6881;
++    "router.bittorrent.com", 8991;
+   ]
+ 

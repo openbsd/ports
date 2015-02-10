@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_daemon_common_commonOptions_ml,v 1.1 2015/02/10 11:50:09 dcoppa Exp $
+
+commit fbc2cfe4ed7046bf88ed123b504bbbee2376bf79
+Author: ygrek <ygrek@autistici.org>
+Date:   Thu May 1 22:50:12 2014 +0800
+
+update default blocklist url
+
+--- src/daemon/common/commonOptions.ml.orig	Sun Jul  7 06:07:13 2013
++++ src/daemon/common/commonOptions.ml	Tue Feb 10 03:59:24 2015
+@@ -1046,7 +1046,7 @@ let web_infos = define_option current_section ["web_in
+     web_infos = [
+     (\"server.met\", 0, \"http://www.gruk.org/server.met.gz\");
+     (\"hublist\", 0, \"http://dchublist.com/hublist.xml.bz2\");
+-    (\"guarding.p2p\", 96, \"http://www.bluetack.co.uk/config/level1.gz\");
++    (\"guarding.p2p\", 96, \"http://upd.emule-security.org/ipfilter.zip\");
+     (\"ocl\", 24, \"http://members.lycos.co.uk/appbyhp2/FlockHelpApp/contact-files/contact.ocl\");
+     (\"contact.dat\", 168, \"http://download.overnet.org/contact.dat\");
+     (\"geoip.dat\", 168, \"http://www.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz\");
+@@ -1055,7 +1055,7 @@ let web_infos = define_option current_section ["web_in
+     (list_option (tuple3_option (string_option, int_option, string_option)))
+     [
+       ("guarding.p2p", 96,
+-        "http://www.bluetack.co.uk/config/level1.gz");
++        "http://upd.emule-security.org/ipfilter.zip");
+       ("server.met", 0,
+         "http://www.gruk.org/server.met.gz");
+       ("geoip.dat", 0,
+@@ -1670,7 +1670,7 @@ let max_displayed_results = define_expert_option curre
+ let options_version = define_expert_option current_section ["options_version"]
+   ~internal: true
+   "(internal option)"
+-    int_option 22
++    int_option 23
+ 
+ let max_comments_per_file = define_expert_option current_section ["max_comments_per_file"]
+   "Maximum number of comments per file"
+@@ -2273,5 +2273,10 @@ let rec update_options () =
+       web_infos_remove "http://download.overnet.org/contact.dat";
+       enable_overnet =:= false;
+       update 22
++
++  | 22 ->
++      web_infos_remove "http://www.bluetack.co.uk/config/level1.gz";
++      web_infos_add "guarding.p2p" 0 "http://upd.emule-security.org/ipfilter.zip";
++      update 23
+ 
+   | _ -> ()

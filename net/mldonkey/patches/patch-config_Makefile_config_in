@@ -1,0 +1,22 @@
+$OpenBSD: patch-config_Makefile_config_in,v 1.1 2015/02/10 11:50:09 dcoppa Exp $
+
+commit c67f246e4c5b4a32fec92805f9a01537dfc26082
+Author: ygrek <ygrek@autistici.org>
+Date:   Wed Dec 31 02:01:56 2014 +0800
+
+silence "deprecated" warnings
+
+--- config/Makefile.config.in.orig	Mon Feb  9 10:10:13 2015
++++ config/Makefile.config.in	Mon Feb  9 10:10:43 2015
+@@ -9,9 +9,9 @@ CXX=@CXX@
+ FIX_BROKEN_CPP=@FIX_BROKEN_CPP@
+ CONFIG_INCLUDES=@CONFIG_INCLUDES@
+ 
+-OCAMLC=@OCAMLC@
++OCAMLC=@OCAMLC@ -w -3
+ OCAMLLIB=@OCAMLLIB@
+-OCAMLOPT=@OCAMLOPT@ -inline 10
++OCAMLOPT=@OCAMLOPT@ -inline 10 -w -3
+ OCAMLLEX=@OCAMLLEX@
+ OCAMLDEP=@OCAMLDEP@ @OCAMLDEP_OPTIONS@
+ OCAMLDEP_OPTIONS=@OCAMLDEP_OPTIONS@
