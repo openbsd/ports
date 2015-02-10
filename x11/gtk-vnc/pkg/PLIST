@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/09/18 19:18:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/02/10 11:47:13 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main
 @pkgpath x11/gtk-vnc,gtk2
@@ -32,7 +32,6 @@ lib/libgtk-vnc-2.0.la
 lib/libgvnc-1.0.a
 lib/libgvnc-1.0.la
 @lib lib/libgvnc-1.0.so.${LIBgvnc-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gtk-vnc-2.0.pc
 lib/pkgconfig/gvnc-1.0.pc
 @man man/man1/gvnccapture.1
@@ -54,6 +53,9 @@ share/locale/eo/LC_MESSAGES/gtk-vnc.mo
 share/locale/es/LC_MESSAGES/gtk-vnc.mo
 share/locale/eu/LC_MESSAGES/gtk-vnc.mo
 share/locale/fr/LC_MESSAGES/gtk-vnc.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/gtk-vnc.mo
 share/locale/gl/LC_MESSAGES/gtk-vnc.mo
 share/locale/he/LC_MESSAGES/gtk-vnc.mo
 share/locale/hu/LC_MESSAGES/gtk-vnc.mo
@@ -82,6 +84,9 @@ share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gtk-vnc.mo
 share/locale/sv/LC_MESSAGES/gtk-vnc.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gtk-vnc.mo
 share/locale/tg/
 share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/gtk-vnc.mo
