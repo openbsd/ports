@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/02/03 20:32:12 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/02/10 22:04:54 brad Exp $
 @pkgpath lang/gcc/4.8
 @bin bin/ecpp
 @bin bin/egcc
@@ -22,16 +22,7 @@ lib/gcc/${CONFIG}/${V}/
 lib/gcc/${CONFIG}/${V}/include-fixed/
 lib/gcc/${CONFIG}/${V}/include-fixed/README
 lib/gcc/${CONFIG}/${V}/include-fixed/limits.h
-lib/gcc/${CONFIG}/${V}/include-fixed/rpc/
-lib/gcc/${CONFIG}/${V}/include-fixed/rpc/rpc_des.h
-lib/gcc/${CONFIG}/${V}/include-fixed/rpc/svc.h
-lib/gcc/${CONFIG}/${V}/include-fixed/stddef.h
-lib/gcc/${CONFIG}/${V}/include-fixed/stdio.h
-lib/gcc/${CONFIG}/${V}/include-fixed/stdlib.h
-lib/gcc/${CONFIG}/${V}/include-fixed/sys/
-lib/gcc/${CONFIG}/${V}/include-fixed/sys/types.h
 lib/gcc/${CONFIG}/${V}/include-fixed/syslimits.h
-lib/gcc/${CONFIG}/${V}/include-fixed/wchar.h
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/ssp/
 lib/gcc/${CONFIG}/${V}/include/ssp/ssp.h

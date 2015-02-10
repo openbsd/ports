@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/02/03 20:32:12 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2015/02/10 22:04:54 brad Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -30,7 +30,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.9,<4.10
 
-REVISION-main =	1
+REVISION-main =	2
 REVISION-libs =	1
 REVISION-c++ =	1
 REVISION-f95 =	1
