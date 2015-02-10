@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/20 20:40:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/02/10 16:02:04 kspillner Exp $
 bin/guards
 bin/quilt
 @man man/man1/guards.1
@@ -25,7 +25,6 @@ share/quilt/annotate
 share/quilt/applied
 share/quilt/compat/
 share/quilt/compat/awk
-share/quilt/compat/cp
 share/quilt/compat/date
 share/quilt/compat/diff
 share/quilt/compat/find
@@ -60,7 +59,7 @@ share/quilt/scripts/
 share/quilt/scripts/backup-files
 share/quilt/scripts/dependency-graph
 share/quilt/scripts/edmail
-share/quilt/scripts/inspect
+share/quilt/scripts/inspect-wrapper
 share/quilt/scripts/patchfns
 share/quilt/scripts/remove-trailing-ws
 share/quilt/scripts/utilfns

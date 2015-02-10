@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/02/06 20:14:48 kspillner Exp $
+# $OpenBSD: Makefile,v 1.9 2015/02/10 16:02:02 kspillner Exp $
 
 COMMENT=		manage large numbers of patches
 
-DISTNAME=		quilt-0.63
-REVISION=		1
+DISTNAME=		quilt-0.64
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
@@ -35,8 +34,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.69
-CONFIGURE_ARGS=		--with-cp=${LOCALBASE}/bin/gcp \
-			--with-date=${LOCALBASE}/bin/gdate \
+CONFIGURE_ARGS=		--with-date=${LOCALBASE}/bin/gdate \
 			--with-diff=${LOCALBASE}/bin/gdiff \
 			--with-find=${LOCALBASE}/bin/gfind \
 			--with-getopt=${LOCALBASE}/bin/gnugetopt \
