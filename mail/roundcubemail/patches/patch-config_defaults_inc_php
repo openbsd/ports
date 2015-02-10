@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_defaults_inc_php,v 1.5 2014/09/29 23:23:52 sthen Exp $
---- config/defaults.inc.php.orig	Mon Sep 29 07:56:50 2014
-+++ config/defaults.inc.php	Mon Sep 29 23:50:42 2014
+$OpenBSD: patch-config_defaults_inc_php,v 1.6 2015/02/10 11:05:33 sthen Exp $
+--- config/defaults.inc.php.orig	Sun Feb  8 13:48:55 2015
++++ config/defaults.inc.php	Tue Feb 10 10:37:57 2015
 @@ -24,7 +24,7 @@ $config = array();
  // Currently supported db_providers: mysql, pgsql, sqlite, mssql or sqlsrv
  // For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
@@ -10,10 +10,10 @@ $OpenBSD: patch-config_defaults_inc_php,v 1.5 2014/09/29 23:23:52 sthen Exp $
  
  // Database DSN for read-only operations (if empty write database will be used)
  // useful for database replication
-@@ -614,7 +614,7 @@ $config['spellcheck_dictionary'] = false;
- // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API
- // Since Google shut down their public spell checking service, you need to 
- // connect to a Nox Spell Server when using 'googie' here. Therefore specify the 'spellcheck_uri'
+@@ -649,7 +649,7 @@ $config['spellcheck_dictionary'] = false;
+ // Since Google shut down their public spell checking service, the default settings
+ // connect to http://spell.roundcube.net which is a hosted service provided by Roundcube.
+ // You can connect to any other googie-compliant service by setting 'spellcheck_uri' accordingly.
 -$config['spellcheck_engine'] = 'googie';
 +$config['spellcheck_engine'] = 'pspell';
  
