@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.69 2015/02/09 08:44:35 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.70 2015/02/10 08:17:51 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -51,6 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/adobetv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/adobetv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/adultswim.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/adultswim.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftenposten.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftenposten.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftonbladet.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aftonbladet.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/aljazeera.py
@@ -673,8 +675,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sockshare.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sockshare.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sohu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sohu.pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soulanime.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soulanime.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundgasm.py
@@ -713,6 +713,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/subtitles.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/subtitles.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sunporno.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sunporno.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/svtplay.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/svtplay.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/swrmediathek.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/swrmediathek.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/syfy.py
