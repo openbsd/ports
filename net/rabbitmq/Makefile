@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2014/12/29 09:28:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2015/02/10 17:53:51 sebastia Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.4.2
+REVISION =	0
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -40,7 +41,8 @@ RABBITUSER =	_rabbitmq
 
 SUBST_VARS +=	RABBITUSER V
 
-MODPY_ADJ_FILES =	plugins-src/rabbitmq-amqp1.0/codegen.py
+MODPY_ADJ_FILES +=	plugins-src/rabbitmq-amqp1.0/codegen.py 
+MODPY_ADJ_FILES +=	plugins-src/rabbitmq-management/bin/rabbitmqadmin
 
 NO_TEST =	Yes
 
