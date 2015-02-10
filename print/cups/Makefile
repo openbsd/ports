@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.191 2014/12/15 12:55:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2015/02/10 08:29:33 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		2.0.1
+VERSION=		2.0.2
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
-
-REVISION-main=		2
 
 CATEGORIES=		print sysutils
 
@@ -27,6 +25,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
+MODULES=		converters/libiconv
 
 WANTLIB += avahi-client avahi-common gnutls m pthread stdc++ z
 
