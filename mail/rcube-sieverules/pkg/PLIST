@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/29 20:21:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/02/10 11:05:37 sthen Exp $
 roundcubemail/plugins/sieverules/
 roundcubemail/plugins/sieverules/CHANGELOG
 roundcubemail/plugins/sieverules/README.md
@@ -6,8 +6,8 @@ roundcubemail/plugins/sieverules/composer.json
 roundcubemail/plugins/sieverules/config.inc.php.dist
 @sample roundcubemail/plugins/sieverules/config.inc.php
 roundcubemail/plugins/sieverules/importFilters/
-roundcubemail/plugins/sieverules/importFilters/avelsieve.php
-roundcubemail/plugins/sieverules/importFilters/ingo.php
+roundcubemail/plugins/sieverules/importFilters/avelsieve.php.ex
+roundcubemail/plugins/sieverules/importFilters/ingo.php.ex
 roundcubemail/plugins/sieverules/jquery.maskedinput.min.js
 roundcubemail/plugins/sieverules/lib/
 roundcubemail/plugins/sieverules/lib/Roundcube/
@@ -37,19 +37,19 @@ roundcubemail/plugins/sieverules/localization/sk_SK.inc
 roundcubemail/plugins/sieverules/localization/sl_SI.inc
 roundcubemail/plugins/sieverules/localization/sv_SE.inc
 roundcubemail/plugins/sieverules/localization/zh_TW.inc
+roundcubemail/plugins/sieverules/mail.js
 roundcubemail/plugins/sieverules/sieverules.js
 roundcubemail/plugins/sieverules/sieverules.php
 roundcubemail/plugins/sieverules/skins/
 roundcubemail/plugins/sieverules/skins/classic/
-roundcubemail/plugins/sieverules/skins/classic/ie6hacks.css
-roundcubemail/plugins/sieverules/skins/classic/iehacks.css
 roundcubemail/plugins/sieverules/skins/classic/images/
-roundcubemail/plugins/sieverules/skins/classic/images/cross.gif
-roundcubemail/plugins/sieverules/skins/classic/images/help.gif
-roundcubemail/plugins/sieverules/skins/classic/images/icons.gif
+roundcubemail/plugins/sieverules/skins/classic/images/cross.png
+roundcubemail/plugins/sieverules/skins/classic/images/help.png
 roundcubemail/plugins/sieverules/skins/classic/images/icons.png
-roundcubemail/plugins/sieverules/skins/classic/images/tick.gif
-roundcubemail/plugins/sieverules/skins/classic/safari.css
+roundcubemail/plugins/sieverules/skins/classic/images/mail_toolbar.png
+roundcubemail/plugins/sieverules/skins/classic/images/messageactions.png
+roundcubemail/plugins/sieverules/skins/classic/images/tick.png
+roundcubemail/plugins/sieverules/skins/classic/mailstyles.css
 roundcubemail/plugins/sieverules/skins/classic/sieverules.css
 roundcubemail/plugins/sieverules/skins/classic/tabstyles.css
 roundcubemail/plugins/sieverules/skins/classic/templates/
@@ -57,15 +57,17 @@ roundcubemail/plugins/sieverules/skins/classic/templates/advancededitor.html
 roundcubemail/plugins/sieverules/skins/classic/templates/editsieverule.html
 roundcubemail/plugins/sieverules/skins/classic/templates/setupsieverules.html
 roundcubemail/plugins/sieverules/skins/classic/templates/sieverules.html
+roundcubemail/plugins/sieverules/skins/classic/templates/vacation.html
 roundcubemail/plugins/sieverules/skins/larry/
-roundcubemail/plugins/sieverules/skins/larry/iehacks.css
 roundcubemail/plugins/sieverules/skins/larry/images/
 roundcubemail/plugins/sieverules/skins/larry/images/cross.png
 roundcubemail/plugins/sieverules/skins/larry/images/help.png
 roundcubemail/plugins/sieverules/skins/larry/images/icons.png
 roundcubemail/plugins/sieverules/skins/larry/images/listicons.png
+roundcubemail/plugins/sieverules/skins/larry/images/mail_toolbar.png
+roundcubemail/plugins/sieverules/skins/larry/images/messageactions.png
 roundcubemail/plugins/sieverules/skins/larry/images/tick.png
-roundcubemail/plugins/sieverules/skins/larry/safari.css
+roundcubemail/plugins/sieverules/skins/larry/mailstyles.css
 roundcubemail/plugins/sieverules/skins/larry/sieverules.css
 roundcubemail/plugins/sieverules/skins/larry/tabstyles.css
 roundcubemail/plugins/sieverules/skins/larry/templates/
@@ -73,3 +75,4 @@ roundcubemail/plugins/sieverules/skins/larry/templates/advancededitor.html
 roundcubemail/plugins/sieverules/skins/larry/templates/editsieverule.html
 roundcubemail/plugins/sieverules/skins/larry/templates/setupsieverules.html
 roundcubemail/plugins/sieverules/skins/larry/templates/sieverules.html
+roundcubemail/plugins/sieverules/skins/larry/templates/vacation.html
