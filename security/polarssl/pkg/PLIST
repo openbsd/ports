@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/02/10 12:21:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/02/11 14:07:29 sthen Exp $
 @conflict polarssl-*
 include/polarssl/
 include/polarssl/aes.h
@@ -68,51 +68,51 @@ include/polarssl/x509_csr.h
 include/polarssl/xtea.h
 lib/libmbedtls.a
 @lib lib/libmbedtls.so.${LIBmbedtls_VERSION}
-share/doc/polarssl/
-share/doc/polarssl/ChangeLog
-share/doc/polarssl/README.rst
-share/examples/polarssl/
-share/examples/polarssl/README
-@bin share/examples/polarssl/aescrypt2
-@bin share/examples/polarssl/benchmark
-@bin share/examples/polarssl/cert_app
-@bin share/examples/polarssl/cert_req
-@bin share/examples/polarssl/cert_write
-@bin share/examples/polarssl/crl_app
-@bin share/examples/polarssl/crypt_and_hash
-@bin share/examples/polarssl/dh_client
-@bin share/examples/polarssl/dh_genprime
-@bin share/examples/polarssl/dh_server
-@bin share/examples/polarssl/gen_entropy
-@bin share/examples/polarssl/gen_key
-@bin share/examples/polarssl/gen_random_ctr_drbg
-@bin share/examples/polarssl/gen_random_havege
-@bin share/examples/polarssl/generic_sum
-@bin share/examples/polarssl/hello
-@bin share/examples/polarssl/key_app
-@bin share/examples/polarssl/md5sum
-@bin share/examples/polarssl/mpi_demo
-@bin share/examples/polarssl/o_p_test
-@bin share/examples/polarssl/pem2der
-@bin share/examples/polarssl/pk_decrypt
-@bin share/examples/polarssl/pk_encrypt
-@bin share/examples/polarssl/pk_sign
-@bin share/examples/polarssl/pk_verify
-@bin share/examples/polarssl/req_app
-@bin share/examples/polarssl/rsa_decrypt
-@bin share/examples/polarssl/rsa_encrypt
-@bin share/examples/polarssl/rsa_genkey
-@bin share/examples/polarssl/rsa_sign
-@bin share/examples/polarssl/rsa_verify
-@bin share/examples/polarssl/selftest
-@bin share/examples/polarssl/sha1sum
-@bin share/examples/polarssl/sha2sum
-@bin share/examples/polarssl/ssl_cert_test
-@bin share/examples/polarssl/ssl_client1
-@bin share/examples/polarssl/ssl_client2
-@bin share/examples/polarssl/ssl_fork_server
-@bin share/examples/polarssl/ssl_mail_client
-@bin share/examples/polarssl/ssl_pthread_server
-@bin share/examples/polarssl/ssl_server
-@bin share/examples/polarssl/ssl_test
-@bin share/examples/polarssl/strerror
+share/doc/mbedtls/
+share/doc/mbedtls/ChangeLog
+share/doc/mbedtls/README.rst
+share/examples/mbedtls/
+share/examples/mbedtls/README
+@bin share/examples/mbedtls/aescrypt2
+@bin share/examples/mbedtls/benchmark
+@bin share/examples/mbedtls/cert_app
+@bin share/examples/mbedtls/cert_req
+@bin share/examples/mbedtls/cert_write
+@bin share/examples/mbedtls/crl_app
+@bin share/examples/mbedtls/crypt_and_hash
+@bin share/examples/mbedtls/dh_client
+@bin share/examples/mbedtls/dh_genprime
+@bin share/examples/mbedtls/dh_server
+@bin share/examples/mbedtls/gen_entropy
+@bin share/examples/mbedtls/gen_key
+@bin share/examples/mbedtls/gen_random_ctr_drbg
+@bin share/examples/mbedtls/gen_random_havege
+@bin share/examples/mbedtls/generic_sum
+@bin share/examples/mbedtls/hello
+@bin share/examples/mbedtls/key_app
+@bin share/examples/mbedtls/md5sum
+@bin share/examples/mbedtls/mpi_demo
+@bin share/examples/mbedtls/o_p_test
+@bin share/examples/mbedtls/pem2der
+@bin share/examples/mbedtls/pk_decrypt
+@bin share/examples/mbedtls/pk_encrypt
+@bin share/examples/mbedtls/pk_sign
+@bin share/examples/mbedtls/pk_verify
+@bin share/examples/mbedtls/req_app
+@bin share/examples/mbedtls/rsa_decrypt
+@bin share/examples/mbedtls/rsa_encrypt
+@bin share/examples/mbedtls/rsa_genkey
+@bin share/examples/mbedtls/rsa_sign
+@bin share/examples/mbedtls/rsa_verify
+@bin share/examples/mbedtls/selftest
+@bin share/examples/mbedtls/sha1sum
+@bin share/examples/mbedtls/sha2sum
+@bin share/examples/mbedtls/ssl_cert_test
+@bin share/examples/mbedtls/ssl_client1
+@bin share/examples/mbedtls/ssl_client2
+@bin share/examples/mbedtls/ssl_fork_server
+@bin share/examples/mbedtls/ssl_mail_client
+@bin share/examples/mbedtls/ssl_pthread_server
+@bin share/examples/mbedtls/ssl_server
+@bin share/examples/mbedtls/ssl_test
+@bin share/examples/mbedtls/strerror
