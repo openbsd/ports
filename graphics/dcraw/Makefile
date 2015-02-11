@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/02/10 15:33:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/02/11 20:24:38 sthen Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
 DISTNAME =	dcraw-9.23
+REVISION =	0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.cybercom.net/~dcoffin/dcraw/
