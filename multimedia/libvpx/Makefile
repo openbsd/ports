@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/01/16 11:30:05 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/11 00:07:47 brad Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
 V=		1.3.0
 DISTNAME=	libvpx-v${V}
 PKGNAME=	libvpx-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://webm.googlecode.com/files/
 EXTRACT_SUFX=	.tar.bz2
@@ -47,11 +47,6 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--disable-optimizations \
 		--disable-unit-tests
-# very heavy handed workaround for the stack overflows in the
-# VP9 assembly code.
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+=--disable-use-x86inc
-.endif
 CONFIGURE_ENV=	LD="${CC}"
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+=	CC="clang"
