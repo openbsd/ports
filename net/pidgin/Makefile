@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2015/01/09 01:34:44 brad Exp $
+# $OpenBSD: Makefile,v 1.125 2015/02/11 08:11:45 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 
+REVISION-main=		0
 REVISION-libpurple=	0
 
 SHARED_LIBS=	jabber		0.0 \

@@ -1,0 +1,16 @@
+$OpenBSD: patch-pidgin_gtkconv_c,v 1.1 2015/02/11 08:11:46 brad Exp $
+
+The code expects a deterministic result otherwise the colour
+of the nick changes with each restart of Pidgin.
+
+--- pidgin/gtkconv.c.orig	Tue Feb 10 21:10:09 2015
++++ pidgin/gtkconv.c	Tue Feb 10 21:10:46 2015
+@@ -10240,7 +10240,7 @@ generate_nick_colors(guint *color_count, GdkColor back
+ 	gdk_color_parse(DEFAULT_HIGHLIGHT_COLOR, &nick_highlight);
+ 	gdk_color_parse(DEFAULT_SEND_COLOR, &send_color);
+ 
+-	srand(background.red + background.green + background.blue + 1);
++	srand_deterministic(background.red + background.green + background.blue + 1);
+ 
+ 	breakout_time = time(NULL) + 3;
+ 
