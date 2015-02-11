@@ -1,30 +1,44 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.10 2014/07/16 22:16:54 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.11 2015/02/11 00:29:05 brad Exp $
 
 r209432
 Use stack protector strong by default on OpenBSD
 
-r211075
-Use the integrated assembler by default on OpenBSD/powerpc
-
-r213105
-Use the integrated assembler by default on OpenBSD/sparc
+r225958
+Use the integrated assembler by default on 32-bit PowerPC and SPARC.
 
 --- tools/clang/lib/Driver/ToolChains.h.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/ToolChains.h	Fri Jul 11 22:45:01 2014
-@@ -538,7 +538,15 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
++++ tools/clang/lib/Driver/ToolChains.h	Mon Feb  2 11:05:30 2015
+@@ -538,7 +538,7 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    virtual bool isPIEDefault() const { return true; }
  
    virtual unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const {
 -    return 1;
 +    return 2;
-+  }
-+
-+  virtual bool IsIntegratedAssemblerDefault() const {
-+    if (getTriple().getArch() == llvm::Triple::ppc ||
-+        getTriple().getArch() == llvm::Triple::sparc ||
-+        getTriple().getArch() == llvm::Triple::sparcv9)
-+      return true;
-+    return Generic_ELF::IsIntegratedAssemblerDefault();
+   }
+ 
+ protected:
+@@ -582,12 +582,6 @@ class LLVM_LIBRARY_VISIBILITY FreeBSD : public Generic
+   virtual void
+   AddClangCXXStdlibIncludeArgs(const llvm::opt::ArgList &DriverArgs,
+                                llvm::opt::ArgStringList &CC1Args) const;
+-  virtual bool IsIntegratedAssemblerDefault() const {
+-    if (getTriple().getArch() == llvm::Triple::ppc ||
+-        getTriple().getArch() == llvm::Triple::ppc64)
+-      return true;
+-    return Generic_ELF::IsIntegratedAssemblerDefault();
+-  }
+ 
+   virtual bool UseSjLjExceptions() const;
+   virtual bool isPIEDefault() const;
+@@ -611,11 +605,6 @@ class LLVM_LIBRARY_VISIBILITY NetBSD : public Generic_
+                                llvm::opt::ArgStringList &CC1Args) const;
+   virtual bool IsUnwindTablesDefault() const {
+     return true;
+-  }
+-  virtual bool IsIntegratedAssemblerDefault() const {
+-    if (getTriple().getArch() == llvm::Triple::ppc)
+-      return true;
+-    return Generic_ELF::IsIntegratedAssemblerDefault();
    }
  
  protected:
