@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2015/01/15 08:34:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2015/02/12 08:27:21 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.62
+DISTNAME=	cups-filters-1.0.63
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
@@ -81,8 +81,5 @@ post-install:
 # handle old filters looking for these
 	cd ${PREFIX}/libexec/cups/filter && ln -s gstopxl pstopxl
 	cd ${PREFIX}/libexec/cups/filter && ln -s gstoraster pstoraster
-# put in default PATH for direct printing
-	ln -sf ${TRUEPREFIX}/libexec/cups/filter/foomatic-rip \
-		${PREFIX}/bin/foomatic-rip
 
 .include <bsd.port.mk>
