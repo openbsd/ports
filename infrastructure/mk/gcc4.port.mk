@@ -1,4 +1,4 @@
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha"
 MODGCC4_VERSION?=4.6
 .else
 MODGCC4_VERSION?=4.8
