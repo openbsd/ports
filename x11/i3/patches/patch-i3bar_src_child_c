@@ -1,4 +1,4 @@
-$OpenBSD: patch-i3bar_src_child_c,v 1.8 2014/07/11 15:49:58 dcoppa Exp $
+$OpenBSD: patch-i3bar_src_child_c,v 1.9 2015/02/12 08:43:07 dcoppa Exp $
 
 commit 686a40e384a65bf267426dec76cdcf8819ea9a1a
 Author: Michael Stapelberg <michael@stapelberg.de>
@@ -6,8 +6,14 @@ Date:   Fri Jul 11 00:32:42 2014 +0200
 
 Bugfix: render bars after the first chunk of JSON
 
+commit bf0e8c2862631d41963fdb6bcb3f41667a7eccc9
+Author: Ingo Buerk <ingo.buerk@tngtech.com>
+Date:   Wed Feb 11 20:34:19 2015 +0100
+
+Remove one level of indentation
+
 --- i3bar/src/child.c.orig	Sun Jun 15 19:12:43 2014
-+++ i3bar/src/child.c	Fri Jul 11 16:49:11 2014
++++ i3bar/src/child.c	Thu Feb 12 09:31:13 2015
 @@ -371,7 +371,7 @@ void stdin_io_first_line_cb(struct ev_loop *loop, ev_i
          if (config.hide_on_modifier) {
              stop_child();
@@ -17,3 +23,59 @@ Bugfix: render bars after the first chunk of JSON
      } else {
          /* In case of plaintext, we just add a single block and change its
           * full_text pointer later. */
+@@ -520,33 +520,35 @@ void child_click_events_key(const char *key) {
+  *
+  */
+ void send_block_clicked(int button, const char *name, const char *instance, int x, int y) {
+-    if (child.click_events) {
+-        child_click_events_initialize();
++    if (!child.click_events) {
++        return;
++    }
+ 
+-        yajl_gen_map_open(gen);
++    child_click_events_initialize();
+ 
+-        if (name) {
+-            child_click_events_key("name");
+-            yajl_gen_string(gen, (const unsigned char *)name, strlen(name));
+-        }
++    yajl_gen_map_open(gen);
+ 
+-        if (instance) {
+-            child_click_events_key("instance");
+-            yajl_gen_string(gen, (const unsigned char *)instance, strlen(instance));
+-        }
++    if (name) {
++        child_click_events_key("name");
++        yajl_gen_string(gen, (const unsigned char *)name, strlen(name));
++    }
+ 
+-        child_click_events_key("button");
+-        yajl_gen_integer(gen, button);
++    if (instance) {
++        child_click_events_key("instance");
++        yajl_gen_string(gen, (const unsigned char *)instance, strlen(instance));
++    }
+ 
+-        child_click_events_key("x");
+-        yajl_gen_integer(gen, x);
++    child_click_events_key("button");
++    yajl_gen_integer(gen, button);
+ 
+-        child_click_events_key("y");
+-        yajl_gen_integer(gen, y);
++    child_click_events_key("x");
++    yajl_gen_integer(gen, x);
+ 
+-        yajl_gen_map_close(gen);
+-        child_write_output();
+-    }
++    child_click_events_key("y");
++    yajl_gen_integer(gen, y);
++
++    yajl_gen_map_close(gen);
++    child_write_output();
+ }
+ 
+ /*
