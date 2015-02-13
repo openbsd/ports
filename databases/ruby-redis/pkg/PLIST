@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/12/11 11:21:55 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/02/13 15:24:59 dcoppa Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.travis/
@@ -102,6 +102,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/publish_subscribe_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/remote_server_control_commands_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/scanning_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/scripting_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/sentinel_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/sorting_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/
 ${GEM_LIB}/gems/${DISTNAME}/test/support/connection/
@@ -113,7 +114,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/support/wire/
 ${GEM_LIB}/gems/${DISTNAME}/test/support/wire/synchrony.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/wire/thread.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/synchrony_driver.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test.conf
+${GEM_LIB}/gems/${DISTNAME}/test/test.conf.erb
 ${GEM_LIB}/gems/${DISTNAME}/test/thread_safety_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/transactions_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unknown_commands_test.rb

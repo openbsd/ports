@@ -1,0 +1,42 @@
+$OpenBSD: patch-Rakefile,v 1.1 2015/02/13 15:24:59 dcoppa Exp $
+--- Rakefile.orig	Wed Feb 11 13:21:18 2015
++++ Rakefile	Fri Feb 13 08:56:08 2015
+@@ -1,14 +1,12 @@
+ require "rake/testtask"
+ 
+-ENV["REDIS_BRANCH"] ||= "unstable"
+-
+ REDIS_DIR = File.expand_path(File.join("..", "test"), __FILE__)
+ REDIS_CNF = File.join(REDIS_DIR, "test.conf")
+ REDIS_CNF_TEMPLATE = File.join(REDIS_DIR, "test.conf.erb")
+ REDIS_PID = File.join(REDIS_DIR, "db", "redis.pid")
+ REDIS_LOG = File.join(REDIS_DIR, "db", "redis.log")
+ REDIS_SOCKET = File.join(REDIS_DIR, "db", "redis.sock")
+-BINARY = "tmp/redis-#{ENV["REDIS_BRANCH"]}/src/redis-server"
++BINARY = "${LOCALBASE}/sbin/redis-server"
+ 
+ task :default => :run
+ 
+@@ -48,22 +46,7 @@ end
+ 
+ desc "Clean up testing artifacts"
+ task :clean do
+-  FileUtils.rm_f(BINARY)
+   FileUtils.rm_f(REDIS_CNF)
+-end
+-
+-file BINARY do
+-  branch = ENV.fetch("REDIS_BRANCH")
+-
+-  sh <<-SH
+-  mkdir -p tmp;
+-  cd tmp;
+-  rm -rf redis-#{branch};
+-  wget https://github.com/antirez/redis/archive/#{branch}.tar.gz -O #{branch}.tar.gz;
+-  tar xf #{branch}.tar.gz;
+-  cd redis-#{branch};
+-  make
+-  SH
+ end
+ 
+ file REDIS_CNF => [REDIS_CNF_TEMPLATE, __FILE__] do |t|

@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_publish_subscribe_test_rb,v 1.3 2014/12/11 11:21:55 dcoppa Exp $
---- test/publish_subscribe_test.rb.orig	Wed Dec 10 20:27:10 2014
-+++ test/publish_subscribe_test.rb	Thu Dec 11 04:33:53 2014
-@@ -191,7 +191,7 @@ class TestPublishSubscribe < Test::Unit::TestCase
+$OpenBSD: patch-test_publish_subscribe_test_rb,v 1.4 2015/02/13 15:24:59 dcoppa Exp $
+--- test/publish_subscribe_test.rb.orig	Wed Feb 11 13:21:18 2015
++++ test/publish_subscribe_test.rb	Fri Feb 13 08:25:04 2015
+@@ -235,7 +235,7 @@ class TestPublishSubscribe < Test::Unit::TestCase
    def test_subscribe_past_a_timeout
      # For some reason, a thread here doesn't reproduce the issue.
      sleep = %{sleep #{OPTIONS[:timeout] * 2}}
