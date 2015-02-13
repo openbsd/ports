@@ -1,10 +1,10 @@
-$OpenBSD: patch-salt_modules_mount_py,v 1.5 2015/01/16 13:19:48 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_mount_py,v 1.6 2015/02/13 07:03:44 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527ba
 
---- salt/modules/mount.py.orig	Wed Jan 14 19:38:21 2015
-+++ salt/modules/mount.py	Fri Jan 16 13:45:13 2015
-@@ -121,6 +121,24 @@ def _active_mounts_solaris(ret):
+--- salt/modules/mount.py.orig	Thu Feb 12 18:55:39 2015
++++ salt/modules/mount.py	Fri Feb 13 07:49:14 2015
+@@ -124,6 +124,24 @@ def _active_mounts_solaris(ret):
      return ret
  
  
@@ -29,7 +29,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
  def active(extended=False):
      '''
      List the active mounts.
-@@ -136,6 +154,8 @@ def active(extended=False):
+@@ -139,6 +157,8 @@ def active(extended=False):
          _active_mounts_freebsd(ret)
      elif __grains__['os'] == 'Solaris':
          _active_mounts_solaris(ret)
@@ -38,7 +38,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
      else:
          if extended:
              try:
-@@ -393,13 +413,16 @@ def remount(name, device, mkmnt=False, fstype='', opts
+@@ -396,13 +416,16 @@ def remount(name, device, mkmnt=False, fstype='', opts
      mnts = active()
      if name in mnts:
          # The mount point is mounted, attempt to remount it with the given data
@@ -57,7 +57,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
          out = __salt__['cmd.run_all'](cmd, python_shell=False)
          if out['retcode']:
              return out['stderr']
-@@ -462,15 +485,28 @@ def swaps():
+@@ -465,15 +488,28 @@ def swaps():
          salt '*' mount.swaps
      '''
      ret = {}
@@ -93,7 +93,7 @@ https://github.com/saltstack/salt/commit/7edae80cce6e34c36ac8f5572aaa011e8ed527b
      return ret
  
  
-@@ -514,7 +550,10 @@ def swapoff(name):
+@@ -517,7 +553,10 @@ def swapoff(name):
      '''
      on_ = swaps()
      if name in on_:
