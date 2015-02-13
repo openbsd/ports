@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/29 10:38:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/02/13 22:29:09 sthen Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
-WVER =		1.12.1
-REVISION-main =	0
+WVER =		1.12.3
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
@@ -28,6 +27,8 @@ USE_GMAKE =	Yes
 # Mostly GPLv2 or later. Some files are less restrictive.
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM =	Yes
+
+MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MODLUA_VERSION = 5.2
 MODULES =	lang/lua lang/python
@@ -97,6 +98,6 @@ INSTALL_TARGET = install install_desktop_files
 
 post-install:
 	@find ${PREFIX}/lib/wireshark -name '*.la' -print0 | xargs -r0 rm
-	mv ${WRKINST}/usr/share/{applications,icons,mime} ${PREFIX}/share
+	-mv ${WRKINST}/usr/share/{applications,icons,mime} ${PREFIX}/share/
 
 .include <bsd.port.mk>
