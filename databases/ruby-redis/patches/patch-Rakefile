@@ -1,6 +1,6 @@
-$OpenBSD: patch-Rakefile,v 1.1 2015/02/13 15:24:59 dcoppa Exp $
+$OpenBSD: patch-Rakefile,v 1.2 2015/02/13 15:44:13 dcoppa Exp $
 --- Rakefile.orig	Wed Feb 11 13:21:18 2015
-+++ Rakefile	Fri Feb 13 08:56:08 2015
++++ Rakefile	Fri Feb 13 09:39:06 2015
 @@ -1,14 +1,12 @@
  require "rake/testtask"
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-Rakefile,v 1.1 2015/02/13 15:24:59 dcoppa Exp $
  REDIS_LOG = File.join(REDIS_DIR, "db", "redis.log")
  REDIS_SOCKET = File.join(REDIS_DIR, "db", "redis.sock")
 -BINARY = "tmp/redis-#{ENV["REDIS_BRANCH"]}/src/redis-server"
-+BINARY = "${LOCALBASE}/sbin/redis-server"
++BINARY = ENV.fetch("REDIS_BINARY")
  
  task :default => :run
  
