@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/21 05:10:34 stu Exp $
+# $OpenBSD: Makefile,v 1.14 2015/02/14 07:39:00 stu Exp $
 
 COMMENT =	Tk Standard Library
 
@@ -12,7 +12,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # Fossil checkin 2014/08/11 37ef264934e385542477652833a09b6946b3c7a6
-MASTER_SITES =	http://mirror.arieslabs.com/openbsd/
+MASTER_SITES =	http://mirror.yellow5.com/openbsd/
 MODULES =	x11/tk
 BUILD_DEPENDS =	devel/tcllib
 RUN_DEPENDS =	devel/tcllib ${MODTK_RUN_DEPENDS}
