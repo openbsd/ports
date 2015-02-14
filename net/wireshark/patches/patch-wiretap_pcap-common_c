@@ -1,0 +1,14 @@
+$OpenBSD: patch-wiretap_pcap-common_c,v 1.1 2015/02/14 00:14:31 sthen Exp $
+
+https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=10939
+
+--- wiretap/pcap-common.c.orig	Fri Feb 13 17:01:44 2015
++++ wiretap/pcap-common.c	Sat Feb 14 00:05:35 2015
+@@ -27,6 +27,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
++#include <net/bpf.h>
+ #include "wtap-int.h"
+ #include "file_wrappers.h"
+ #include "atm.h"
