@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/10/21 05:10:19 stu Exp $
+# $OpenBSD: Makefile,v 1.24 2015/02/14 07:38:35 stu Exp $
 
 COMMENT =	Tcl Standard Library
 
@@ -12,7 +12,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # Fossil checkin 2014/08/29 98f00771aefb6f3b61c458444a0b54a6b298e187
-MASTER_SITES =	http://mirror.arieslabs.com/openbsd/
+MASTER_SITES =	http://mirror.yellow5.com/openbsd/
 MODULES =	lang/tcl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
