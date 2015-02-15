@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2015/02/10 22:02:44 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2015/02/15 11:18:14 tobiasu Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
 BROKEN-alpha =	libdecnumber/decNumber.c:2267:3: internal compiler error: Segmentation fault
 
-ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc mips64 mips64el sparc64 
+ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc mips64 mips64el sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.8.4
@@ -20,6 +20,9 @@ ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
 ADASTRAP_LIBC-sparc64 = 78.0
 ADASTRAP_LIBM-sparc64 = 9.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
+ADASTRAP_LIBC-hppa = 78.1
+ADASTRAP_LIBM-hppa = 9.0
+ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -32,7 +35,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
 
-REVISION-main =	1
+REVISION-main =	2
 REVISION-c++ =	1
 REVISION-estdc =1
 REVISION-f95 =	1
@@ -57,7 +60,7 @@ SHARED_LIBS =	estdc++		16.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 i386 sparc64
+ONLY_FOR_ARCHS-ada = amd64 hppa i386 sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 powerpc sparc64
 
 MULTI_PACKAGES = -main -f95 -objc -c++ -estdc -java -ada
@@ -76,7 +79,7 @@ DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.8.jar
 ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-i386}:0 ${ECJ}:1 \
-		${ADASTRAP-sparc64}:0
+		${ADASTRAP-sparc64}:0 ${ADASTRAP-hppa}:0
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 BUILD_DEPENDS +=	devel/bison \
