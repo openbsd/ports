@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.6 2015/02/15 19:51:28 robert Exp $
+--- chrome/browser/ui/browser.cc.orig.port	Sun Feb 15 11:09:25 2015
++++ chrome/browser/ui/browser.cc	Sun Feb 15 11:09:31 2015
+@@ -1258,7 +1258,7 @@ void Browser::OnWindowDidShow() {
+   window_has_shown_ = true;
+ 
+ // CurrentProcessInfo::CreationTime() is missing on some platforms.
+-#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   // Measure the latency from startup till the first browser window becomes
+   // visible.
+   static bool is_first_browser_window = true;

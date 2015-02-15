@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_renderer_webscrollbarbehavior_impl_gtkoraura_cc,v 1.1 2015/02/15 19:51:28 robert Exp $
+--- content/renderer/webscrollbarbehavior_impl_gtkoraura.cc.orig.port	Sun Feb 15 11:01:57 2015
++++ content/renderer/webscrollbarbehavior_impl_gtkoraura.cc	Sun Feb 15 11:05:12 2015
+@@ -13,7 +13,7 @@ bool WebScrollbarBehaviorImpl::shouldCenterOnThumb(
+       blink::WebScrollbarBehavior::Button mouseButton,
+       bool shiftKeyPressed,
+       bool altKeyPressed) {
+-#if (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (mouseButton == blink::WebScrollbarBehavior::ButtonMiddle)
+     return true;
+ #endif

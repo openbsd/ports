@@ -1,0 +1,12 @@
+$OpenBSD: patch-cc_resources_raster_worker_pool_cc,v 1.1 2015/02/15 19:51:28 robert Exp $
+--- cc/resources/raster_worker_pool.cc.orig.port	Sun Feb 15 20:21:13 2015
++++ cc/resources/raster_worker_pool.cc	Sun Feb 15 20:21:24 2015
+@@ -32,7 +32,7 @@ class RasterTaskGraphRunner : public TaskGraphRunner,
+                                  static_cast<unsigned>(workers_.size() + 1))
+                   .c_str()));
+       worker->Start();
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+       worker->SetThreadPriority(base::kThreadPriority_Background);
+ #endif
+       workers_.push_back(worker.Pass());

@@ -1,0 +1,45 @@
+$OpenBSD: patch-gpu_config_gpu_info_collector_linux_cc,v 1.1 2015/02/15 19:51:28 robert Exp $
+--- gpu/config/gpu_info_collector_linux.cc.orig.port	Sun Feb 15 15:25:13 2015
++++ gpu/config/gpu_info_collector_linux.cc	Sun Feb 15 18:39:58 2015
+@@ -31,6 +31,7 @@ namespace gpu {
+ 
+ namespace {
+ 
++#if !defined(OS_BSD)
+ // This checks if a system supports PCI bus.
+ // We check the existence of /sys/bus/pci or /sys/bug/pci_express.
+ bool IsPciSupported() {
+@@ -39,6 +40,7 @@ bool IsPciSupported() {
+   return (base::PathExists(pci_path) ||
+           base::PathExists(pcie_path));
+ }
++#endif
+ 
+ // Scan /etc/ati/amdpcsdb.default for "ReleaseVersion".
+ // Return empty string on failing.
+@@ -79,6 +81,7 @@ CollectInfoResult CollectPCIVideoCardInfo(GPUInfo* gpu
+   return kCollectInfoNonFatalFailure;
+ #else
+ 
++#if !defined(OS_BSD)
+   if (IsPciSupported() == false) {
+     VLOG(1) << "PCI bus scanning is not supported";
+     return kCollectInfoNonFatalFailure;
+@@ -148,6 +151,17 @@ CollectInfoResult CollectPCIVideoCardInfo(GPUInfo* gpu
+   }
+ 
+   (libpci_loader.pci_cleanup)(access);
++#else
++  unsigned int vendor_id = 0x0000, device_id = 0x0000;
++  char *vid, *did;
++  if ((vid = getenv("OPENBSD_GPU_VENDOR")) != NULL)
++    vendor_id = strtol(vid, NULL, 16);
++  if ((did = getenv("OPENBSD_GPU_DEVICE")) != NULL)
++    device_id = strtol(did, NULL, 16);
++  bool primary_gpu_identified = true;
++  gpu_info->gpu.vendor_id = vendor_id;
++  gpu_info->gpu.device_id = device_id;
++#endif
+   if (!primary_gpu_identified)
+     return kCollectInfoNonFatalFailure;
+   return kCollectInfoSuccess;
