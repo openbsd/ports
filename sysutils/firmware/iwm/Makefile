@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/12 22:34:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/02/15 06:07:22 daniel Exp $
 
 FW_DRIVER=	iwm
 FW_VER=		0.20141130
@@ -20,7 +20,7 @@ DISTFILES=	iwlwifi-3160-ucode-$V.tgz \
 WRKDIST=	${WRKDIR}
 
 HOMEPAGE=	http://www.intellinuxwireless.org/
-MASTER_SITES=	"http://wireless.kernel.org/en/users/Drivers/iwlwifi?action=AttachFile&do=get&target=" \
+MASTER_SITES=	https://wireless.wiki.kernel.org/_media/en/users/drivers/ \
 		http://firmware.openbsd.org/firmware-dist/
 
 do-install:

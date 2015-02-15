@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/12 22:34:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/15 06:07:22 daniel Exp $
 
 FW_DRIVER=	iwn
 FW_VER=		5.11
@@ -21,7 +21,7 @@ DISTFILES=	iwlwifi-4965-ucode-228.61.2.24.tgz \
 WRKDIST=	${WRKDIR}
 
 HOMEPAGE=	http://www.intellinuxwireless.org/
-MASTER_SITES=	"http://wireless.kernel.org/en/users/Drivers/iwlwifi?action=AttachFile&do=get&target=" \
+MASTER_SITES=	https://wireless.wiki.kernel.org/_media/en/users/drivers/ \
 		http://firmware.openbsd.org/firmware-dist/
 
 FW_FILES=	iwn-4965 iwn-5000 iwn-5150 iwn-1000 iwn-100 iwn-2030 iwn-2030\
