@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/02/15 21:02:02 naddy Exp $
 
 COMMENT=	distributed command execution
 
@@ -19,7 +19,6 @@ MODULES=	lang/python
 
 WRKSRC=		${WRKDIST}/py
 
-USE_GROFF =	Yes
 TEST_IS_INTERACTIVE=	yes
 
 do-configure:
