@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/15 11:27:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/15 13:54:57 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		audio/video communications framework
 
-DISTNAME=		farstream-0.2.6
+DISTNAME=		farstream-0.2.7
 
 CATEGORIES=		net devel
 
-SHARED_LIBS +=  farstream-0.2        1.0      # 3.1
+SHARED_LIBS +=  farstream-0.2        1.1      # 5.0
 
 API_VERSION=		0.2
 SUBST_VARS+=		API_VERSION
