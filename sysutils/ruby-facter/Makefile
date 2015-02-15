@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2014/10/31 07:36:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2015/02/15 15:51:18 jasper Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
-VERSION=	2.3.0
+VERSION=	2.4.1
 DISTNAME=	facter-${VERSION}
 CATEGORIES=	sysutils
 
@@ -22,7 +22,7 @@ PKG_ARCH=	*
 
 #TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR}
 #BUILD_DEPENDS=	${MODRUBY_BUILD_DEPENDS}
-#MODRUBY_TEST=	rake rspec2
+#MODRUBY_TEST=	rake rspec3
 
 pre-configure:
 	mkdir -p ${WRKDIR}/home
