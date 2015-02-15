@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/02/15 13:05:11 naddy Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nepenthes/}
 
 LIBTOOL_FLAGS+=	--tag=disable-static
-USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 
