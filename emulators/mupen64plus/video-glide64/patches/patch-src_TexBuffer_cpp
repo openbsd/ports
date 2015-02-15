@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_TexBuffer_cpp,v 1.1 2015/02/15 06:31:03 bentley Exp $
+Backwards memcpy.
+--- src/TexBuffer.cpp.orig	Sat Feb 14 23:22:25 2015
++++ src/TexBuffer.cpp	Sat Feb 14 23:22:28 2015
+@@ -297,7 +297,7 @@ BOOL OpenTextureBuffer(COLOR_IMAGE & cimage)
+                         grRenderBuffer( GR_BUFFER_BACKBUFFER );
+             rdp.texbufs[i].count--;
+             if (j < rdp.texbufs[i].count)
+-               memcpy(&(rdp.texbufs[i].images[j]), &(rdp.texbufs[i].images[j+1]), sizeof(HIRES_COLOR_IMAGE)*(rdp.texbufs[i].count-j));
++               memmove(&(rdp.texbufs[i].images[j]), &(rdp.texbufs[i].images[j+1]), sizeof(HIRES_COLOR_IMAGE)*(rdp.texbufs[i].count-j));
+           }
+         }
+       }
+@@ -599,7 +599,7 @@ BOOL FindTextureBuffer(DWORD addr, WORD width)
+         {
+           rdp.texbufs[index].count--;
+           if (j < rdp.texbufs[index].count)
+-             memcpy(&(rdp.texbufs[index].images[j]), &(rdp.texbufs[index].images[j+1]), sizeof(HIRES_COLOR_IMAGE)*(rdp.texbufs[index].count-j));
++             memmove(&(rdp.texbufs[index].images[j]), &(rdp.texbufs[index].images[j+1]), sizeof(HIRES_COLOR_IMAGE)*(rdp.texbufs[index].count-j));
+         }
+       }
+     }
