@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.135 2015/02/06 11:19:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2015/02/16 15:32:08 sthen Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
 DISTNAME =		openldap-2.4.40
-REVISION-server =	0
+REVISION-server =	1
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -80,10 +80,11 @@ CONFIGURE_ARGS +=	--enable-bdb \
 # using mmap, so the file buffer cache is irrelevant. Of course then
 # you lose the protection that the read-only map offers."
 #
-# This is now enabled in the port, but a patch has been added to
-# enforce that MDB_WRITEMAP is used.
+# A patch has been added to this port to enforce that MDB_WRITEMAP is
+# used, however crashes have been seen with mdb in use, so this is
+# disabled at this time.
 #
-CONFIGURE_ARGS +=	--enable-mdb
+CONFIGURE_ARGS +=	--disable-mdb
 
 .if ${FLAVOR:Maci}
 CONFIGURE_ARGS +=	--enable-aci
