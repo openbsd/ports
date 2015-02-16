@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2015/02/16 22:53:55 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,11 +14,9 @@ multicast forwarding:
 and restart. Note that client machines using OpenBSD should
 be configured with multicast_host=YES.
 
-To have igmpproxy start at boot time, add this to /etc/rc.local:
+Start igmpproxy at boot time in the usual way:
 
-if [ -x ${TRUEPREFIX}/sbin/igmpproxy ]; then
-        echo -n ' igmpproxy';   ${TRUEPREFIX}/sbin/igmpproxy
-fi
+# rcctl enable igmpproxy; rcctl start igmpproxy
 
 PF must be configured so that control packets (proto igmp) and
 data packets (destination address within 224.0.0.0/4) are passed.
