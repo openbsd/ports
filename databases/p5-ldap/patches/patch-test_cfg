@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_cfg,v 1.4 2015/02/16 15:22:12 sthen Exp $
+$OpenBSD: patch-test_cfg,v 1.5 2015/02/16 15:34:10 sthen Exp $
 --- test.cfg.orig	Sun Jun  1 12:35:49 2014
-+++ test.cfg	Mon Feb 16 15:19:33 2015
-@@ -4,19 +4,19 @@
++++ test.cfg	Mon Feb 16 15:32:28 2015
+@@ -4,22 +4,22 @@
  
  # Set this to the full path of your LDAP server executable
  # (e.g '/usr/sbin/slapd')
@@ -23,4 +23,8 @@ $OpenBSD: patch-test_cfg,v 1.4 2015/02/16 15:22:12 sthen Exp $
 +$SLAPD_SCHEMA_DIR = '${SYSCONFDIR}/openldap/schema';
  
  # OpenLDAP DB type: default is mdb, alternatives: hdb, bdb, ...
- #$SLAPD_DB = 'mdb';
+-#$SLAPD_DB = 'mdb';
++$SLAPD_DB = 'hdb';
+ 
+ # Set this to the slapd module directory if your $SLAPD_DB is dynamically built
+ # (e.g. '/usr/lib/ldap/')
