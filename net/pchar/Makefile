@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=	Sandia Internet path characterization tool
 
@@ -15,7 +15,6 @@ HOMEPAGE=	http://www.kitchenlab.org/www/bmah/Software/pchar/
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ipv6 --with-pcap
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

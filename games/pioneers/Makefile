@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -40,7 +40,6 @@ LIB_DEPENDS=	x11/gnome/libgnome \
 MODGNOME_TOOLS += desktop-file-utils yelp
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 CONFIGURE_ENV=	ac_cv_path_pngtopnm=""
 CONFIGURE_ARGS=	--enable-protocol=IPv4
 

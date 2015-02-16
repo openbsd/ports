@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=		simple tcp re-engineering tool
 
@@ -22,7 +22,6 @@ MODULES=		devel/gettext
 
 FAKE_FLAGS+=		localedir="${PREFIX}/share/locale" \
 			gettextsrcdir="${PREFIX}/share/gettext/po"
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/admin

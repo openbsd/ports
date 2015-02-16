@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2014/10/14 13:52:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -27,7 +27,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=	c curses
 
-USE_GROFF =	Yes
 MULTI_PACKAGES=	-main -lang
 
 FULLPKGNAME-lang= vim-lang-${VERSION}

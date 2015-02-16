@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/02/11 20:24:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
@@ -21,7 +21,6 @@ LIB_DEPENDS =	graphics/jasper \
 
 NO_TEST =	Yes
 SEPARATE_BUILD = Yes
-USE_GROFF =	Yes
 
 WRKDIST =	${WRKDIR}/dcraw
 

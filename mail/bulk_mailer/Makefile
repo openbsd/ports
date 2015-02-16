@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/01/21 06:13:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	speed mail delivery by sorting & batching addresses
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 MAKE_ENV=	CC="${CC}"
 

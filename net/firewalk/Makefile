@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	gateway acl scanner (via static-source port traceroute)
 
@@ -24,7 +24,6 @@ ALL_TARGET=	firewalk
 
 WRKDIST=	${WRKDIR}/Firewalk
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

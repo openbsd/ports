@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/01/01 15:19:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.53 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	graphics and text browser
 VER=		2.9
@@ -21,7 +21,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-ssl
-USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=

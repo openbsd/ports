@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/01/14 17:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2015/02/16 22:57:12 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -53,7 +53,6 @@ CONFIGURE_ARGS=		--without-freetype-src \
 			--with-python-lib="$$(python${MODPY_VERSION}-config --libs)" \
 			--with-regular-link
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 NO_TEST=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=	internet relay chat (irc) server
 
@@ -24,7 +24,6 @@ CONFIGURE_STYLE= gnu old
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
 CONFIGURE_ARGS=	--logdir="/var/log/ircd" \
 		--sysconfdir=${CONFDIR}
-USE_GROFF =	Yes
 
 FLAVORS=	ipv6 hub
 FLAVOR?=	

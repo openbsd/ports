@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2014/03/25 12:23:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=		USENET software package designed for small sites
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=		devel/pcre
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-lockfile=/var/spool/news/fetchnews.lck
 CONFIGURE_ARGS+=	--with-user=_news
-USE_GROFF =		Yes
 
 DOCS=		README README-FQDN INSTALL FAQ.txt NEWS OLDNEWS
 

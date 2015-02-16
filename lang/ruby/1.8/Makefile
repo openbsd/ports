@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/11/14 17:51:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.35 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -32,7 +32,6 @@ CONFIGURE_ARGS=		--program-suffix=18 \
 CONFIGURE_ENV=		LIBruby18_VERSION=${LIBruby18_VERSION}
 
 MODULES=		converters/libiconv
-USE_GROFF =		Yes
 
 WANTLIB-main= 		c m readline termcap util crypto ncurses ssl z
 LIB_DEPENDS-main=

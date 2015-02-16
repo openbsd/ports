@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=		GNU make debugger
 
@@ -15,7 +15,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bashdb/}
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 WANTLIB=		c readline termcap
 
 do-install:

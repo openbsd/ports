@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	remote IMAP filtering utility
 
@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	-p ${PREFIX} \
 		-m ${PREFIX}/man \
 		-o ssltls=yes -o crammd5=yes
 MAKE_ENV+=	CC="${CC}"
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

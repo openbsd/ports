@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/06 13:19:05 pirofti Exp $
+# $OpenBSD: Makefile,v 1.21 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -24,7 +24,6 @@ BUILD_DEPENDS =	devel/doxygen
 LIB_DEPENDS=	devel/cln
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 TEST_TARGET=	check

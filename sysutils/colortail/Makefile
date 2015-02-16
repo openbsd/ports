@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=		color-able replacement for tail(1)
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m stdc++
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/colortail.1 ${PREFIX}/man/man1

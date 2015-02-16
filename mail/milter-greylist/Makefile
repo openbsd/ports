@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/09/17 09:13:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	greylist milter
 
@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=	--with-user=${USERNAME} \
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib/libbind \
 			    -R${LOCALBASE}/lib/libbind"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-configure:

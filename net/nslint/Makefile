@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=		performs consistency checks on BIND files
 
@@ -24,7 +24,6 @@ WANTLIB=		c
 CONFIGURE_STYLE=	gnu
 ALL_TARGET=		nslint
 INSTALL_TARGET=		install install-man
-USE_GROFF =		Yes
 
 NO_TEST=		Yes
 

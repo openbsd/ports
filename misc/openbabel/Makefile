@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/04 16:06:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	chemistry file translation program
 
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	devel/boost
 LIB_DEPENDS=	textproc/libxml
 TEST_DEPENDS=${BUILD_PKGPATH}
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

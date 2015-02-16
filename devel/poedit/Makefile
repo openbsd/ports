@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/08/22 09:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
@@ -14,8 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=poedit/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
-
-USE_GROFF =	Yes
 
 WANTLIB=	c m pthread stdc++ wx_base_xml wx_gtk2_html wx_gtk2_adv \
 		wx_gtk2_xrc wx_base wx_gtk2_core

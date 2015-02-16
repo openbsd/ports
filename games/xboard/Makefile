@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/11/10 09:04:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 
@@ -30,7 +30,6 @@ RUN_DEPENDS=		games/gnuchess \
 
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/xboard/"
 
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

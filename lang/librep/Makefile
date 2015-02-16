@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2015/01/19 09:19:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=		databases/gdbm \
 			devel/libffi
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 MAKE_FLAGS=		rep_LIBTOOL=${LIBTOOL}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=	twm with a virtual desktop
 
@@ -15,8 +15,6 @@ WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c Xau Xdmcp
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=window_managers/}
 
 WRKDIST=	${WRKDIR}/tvtwm
-
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	imake
 

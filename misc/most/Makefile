@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	browse or page through a text file
 
@@ -18,7 +18,6 @@ WANTLIB=	c m slang termcap
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

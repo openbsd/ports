@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=		utility to mirror web pages
 
@@ -18,6 +18,5 @@ RUN_DEPENDS=	www/p5-URI \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

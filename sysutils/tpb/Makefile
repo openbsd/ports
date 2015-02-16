@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:13 naddy Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_CDROM=	yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-xosd-config=${LOCALBASE}/bin/xosd-config
 
-USE_GROFF =	Yes
 MODULES=	devel/gettext
 LIB_DEPENDS=	x11/xosd
 WANTLIB=	ICE SM X11 Xext Xinerama Xt c ossaudio pthread pthread-stubs \

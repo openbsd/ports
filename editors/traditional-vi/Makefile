@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT =		traditional vi and ex
 
@@ -18,8 +18,6 @@ WANTLIB =		c ncurses
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ex-vi/}
 EXTRACT_SUFX =		.tar.bz2
-
-USE_GROFF =		Yes
 
 MAKE_FLAGS =		PREFIX="${PREFIX}"
 

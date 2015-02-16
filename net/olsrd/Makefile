@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -44,7 +44,6 @@ LIB_DEPENDS-plugins=	# empty
 RUN_DEPENDS-plugins=	olsrd-${VERSION}:net/olsrd
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 MODULES=	devel/gettext

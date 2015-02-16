@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/12/04 21:05:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -32,7 +32,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	multiprotocol traceroute tool
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	devel/p5-List-MoreUtils \
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
-USE_GROFF =	Yes
 PKG_ARCH=	*
 
 do-install:

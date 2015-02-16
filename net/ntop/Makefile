@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/01/23 17:21:26 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=	network usage, interface similar to top(1)
 
@@ -17,8 +17,6 @@ WANTLIB += c ncurses pcap pthread
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --disable-lsof
-
-USE_GROFF =	Yes
 
 ALL_TARGET=
 INSTALL_TARGET=	install install-man

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=		set of internet protocol service daemons for Unix
 
@@ -21,7 +21,6 @@ DOCS=			benefits.html ipsvd-cdb.8.html tcpsvd.8.html \
 			examples.html ipsvd-instruct.5.html udpsvd.8.html \
 			index.html ipsvd.7.html upgrade.html install.html
 PKGDOCS=		CHANGES README COPYING
-USE_GROFF =		Yes
 
 pre-build:
 	echo "${CC} ${CFLAGS} ${COPTS}" > ${WRKSRC}/conf-cc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/10 13:26:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=	tiling window manager
 
@@ -30,8 +30,6 @@ RUN_DEPENDS=	devel/ipython \
 		devel/pyrex>=0.9.9 \
 		x11/dbus-python \
 		x11/py-gtk2
-
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

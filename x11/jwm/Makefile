@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=		Joe's Window Manager
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=		devel/fribidi>=0.19.2 \
 
 NO_TEST=		Yes
 
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

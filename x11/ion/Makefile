@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2014/03/23 18:17:35 kili Exp $
+# $OpenBSD: Makefile,v 1.62 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=	light, keyboard friendly window manager
 
@@ -23,7 +23,6 @@ MODLUA_SA=	Yes
 LIB_DEPENDS=	${MODLUA_LIB_DEPENDS}
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-configure:

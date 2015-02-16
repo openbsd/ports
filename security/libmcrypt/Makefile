@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT =		interface to access block/stream encryption algorithms
 
@@ -17,8 +17,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
-
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}

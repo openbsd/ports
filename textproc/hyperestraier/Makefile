@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=		high performance full-text search system
 
@@ -23,6 +23,5 @@ LIB_DEPENDS=		databases/qdbm
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

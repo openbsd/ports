@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=	5250 telnet protocol and terminal
 
@@ -22,6 +22,5 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-os-dir=no --with-ssl
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

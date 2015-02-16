@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=		virtual keyboard for X Window System
 
@@ -17,7 +17,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 LIB_DEPENDS=		x11/Xaw3d
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 NO_TEST=		Yes
 

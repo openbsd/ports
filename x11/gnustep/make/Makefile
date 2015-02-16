@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/09/08 12:21:42 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2015/02/16 22:57:14 naddy Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -22,7 +22,6 @@ MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c++
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 MAKE_FILE=	GNUmakefile
 
 CONFIGURE_STYLE=gnu

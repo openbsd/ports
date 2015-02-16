@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/08/14 07:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT =		stylish PDF presentation generator
 
@@ -19,7 +19,6 @@ MODULES =		lang/python
 # Set NO_BUILD to prevent python.port.mk from adding Python to
 # BUILD_DEPENDS.
 NO_BUILD =		Yes
-USE_GROFF =		Yes
 RUN_DEPENDS =		graphics/py-opengl \
 			devel/pygame \
 			graphics/py-Pillow \

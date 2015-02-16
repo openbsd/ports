@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT =	tool to play previews of audio and video files
 
@@ -25,7 +25,6 @@ RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-ugly
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	approximate grep (fast approximate pattern-matching tool)
 
@@ -19,7 +19,6 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 ALL_TARGET=
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

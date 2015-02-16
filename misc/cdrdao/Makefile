@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m stdc++
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib/conf
 CONFIGURE_ARGS+=	--with-posix-threads=no \

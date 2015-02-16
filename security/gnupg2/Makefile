@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/02/12 15:36:21 pea Exp $
+# $OpenBSD: Makefile,v 1.35 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
@@ -47,7 +47,6 @@ RUN_DEPENDS = 		security/pinentry
 TEST_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 USE_GMAKE = 		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \

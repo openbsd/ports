@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT =	full and incremental backups on filesystem
 DISTNAME =	faubackup-0.5.9
@@ -22,7 +22,6 @@ FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples/faubackup
 TEST_FLAGS =		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

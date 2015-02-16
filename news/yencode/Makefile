@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=	encoder/decoder tool for the Usenet yEnc encoding format
 
@@ -19,7 +19,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

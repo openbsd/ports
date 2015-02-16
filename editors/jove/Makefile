@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	Jonathan's Own Version of Emacs
 
@@ -17,6 +17,5 @@ EXTRACT_SUFX=	.tgz
 WANTLIB=	c termcap
 
 NO_TEST=	Yes
-USE_GROFF=	Yes
 
 .include <bsd.port.mk>

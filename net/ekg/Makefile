@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--enable-dynamic \
 		--without-libgsm \
 		--without-libungif
 
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

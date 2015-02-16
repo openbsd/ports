@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=	simple menu patterned after plan9
 
@@ -19,8 +19,6 @@ WANTLIB=		X11 c pthread-stubs xcb
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib -lX11"
 MAKE_FILE=	Makefile.noimake
-
-USE_GROFF =	Yes
 
 ALL_TARGET=	9menu
 

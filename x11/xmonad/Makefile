@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/11/24 16:15:55 kili Exp $
+# $OpenBSD: Makefile,v 1.44 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -34,8 +34,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS}
 # MODGHC_BUILD contains 'nort', an explicity dependency is needed for
 # the -lib subpackage (plus the tweaks to MODGHC_SETUP_CONF_ARGS below).
 RUN_DEPENDS-lib +=		lang/ghc=${MODGHC_VER}
-
-USE_GROFF =		Yes
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${PREFIX}/man/man1

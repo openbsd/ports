@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/10/23 01:03:39 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2015/02/16 22:57:10 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=	graphics/jpeg \
 MAKE_FLAGS=	V=1
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--disable-lirc \
 		--disable-nvtvsimple \

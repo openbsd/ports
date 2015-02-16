@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/06/04 18:41:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -23,7 +23,6 @@ CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--with-extra-incpath=${LOCALBASE}/include \
 			--with-extra-ldpath=${LOCALBASE}/lib \
 			--enable-grace-home=${PREFIX}/grace
-USE_GROFF =	Yes
 
 LIB_DEPENDS =	graphics/jpeg \
 		graphics/png \

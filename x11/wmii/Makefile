@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=	dynamic window manager
 
@@ -20,8 +20,6 @@ MODULES=	converters/libiconv
 BUILD_DEPENDS=	devel/libixp
 
 RUN_DEPENDS=	x11/dmenu
-
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

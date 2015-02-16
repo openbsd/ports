@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/24 15:18:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
@@ -22,7 +22,6 @@ WANTLIB=		c
 
 MODULES=		devel/gettext
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-static
 

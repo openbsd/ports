@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2015/01/24 03:52:53 lteo Exp $
+# $OpenBSD: Makefile,v 1.90 2015/02/16 22:57:11 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c crypto daq dnet m pcap pcre pthread z
 
 MASTER_SITES =		https://www.snort.org/downloads/snort/
-
-USE_GROFF =		Yes
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

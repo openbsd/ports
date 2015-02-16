@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/08/07 21:33:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/02/16 22:57:14 naddy Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -36,7 +36,6 @@ RUN_DEPENDS=	x11/py-gtk2 \
 MODULES=	devel/cmake lang/python devel/gettext
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 CONFIGURE_ARGS=	-DMANDIR="${PREFIX}/man"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/04/27 15:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	flexible POP3 server
 
@@ -24,7 +24,6 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		 --enable-last --enable-bulletins --enable-nonip \
 		 --enable-ipv6 --enable-resolve --enable-connect \
 		 --enable-logextend --enable-statistics 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 # enable support for APOP authentication.

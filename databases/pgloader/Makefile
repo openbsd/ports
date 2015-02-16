@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/16 22:57:07 naddy Exp $
 
 COMMENT=	import CSV data and Large Object to PostgreSQL
 
@@ -19,7 +19,6 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	databases/py-psycopg2
 
-USE_GROFF =	Yes
 NO_BUILD=	Yes
 NO_TEST=	Yes
 

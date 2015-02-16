@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=		ICMP active OS fingerprint scanner
 
@@ -17,7 +17,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xprobe/}
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfg-scripts
 
-USE_GROFF=		Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>

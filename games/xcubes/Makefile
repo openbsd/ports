@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2015/02/16 22:57:08 naddy Exp $
 #
 
 COMMENT=	cube puzzle for X11
@@ -16,7 +16,6 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/xpuzzles/}
 
 WRKDIST=	${WRKDIR}/xcubes
 CONFIGURE_STYLE=imake
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-install:

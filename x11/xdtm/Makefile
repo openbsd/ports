@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/11 20:40:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=		Desktop Manager: a graphical shell for X11
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c m
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 WRKDIST=		${WRKDIR}/xdtm
 

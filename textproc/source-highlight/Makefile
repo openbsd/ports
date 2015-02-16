@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	devel/doxygen \
 		devel/help2man \
 		textproc/texi2html
 TEST_DEPENDS=	textproc/gsed
-
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \

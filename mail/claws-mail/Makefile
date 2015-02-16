@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/01/14 12:18:42 landry Exp $
+# $OpenBSD: Makefile,v 1.76 2015/02/16 22:57:09 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -113,7 +113,6 @@ CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 
 MODULES=		devel/gettext
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 

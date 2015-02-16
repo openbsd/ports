@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	Amiga Workbench lookalike window manager
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	restrictive
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu c m
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE= 	gnu dest
 
 CONFIGURE_ENV=		CPPFLAGS='${CPPFLAGS} -I${X11BASE}/include'

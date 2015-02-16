@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/04/20 16:26:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -30,7 +30,6 @@ MAKE_ENV =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		NO_SHARED_LIBS=${NO_SHARED_LIBS}
 
 WRKDIST =	${WRKDIR}/ssvnc-$V
-USE_GROFF =	Yes
 
 NO_TEST =	Yes
 

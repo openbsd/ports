@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=	scan C/C++ source code for security problems
 
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--prefix='${PREFIX}' \
 WRKDIST=	${WRKDIR}/its4
 
 NO_TEST=	Yes
-USE_GROFF=	Yes
 
 FETCH_MANUALLY=	"The source to this port may not be automatically fetched" \
 		"due to licensing restrictions. You MUST fetch the source" \

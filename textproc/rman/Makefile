@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	reverse compile man pages from formatted form
 
@@ -12,7 +12,6 @@ WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=polyglotman/}
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

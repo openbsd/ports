@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT =		high level firewall language
 
@@ -26,7 +26,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 NO_TEST =		Yes
-USE_GROFF =		Yes
 
 pre-install:
 	@perl -pi -e 's#\$${prefix}\/share\/hlfl\/services\.hlfl#${SYSCONFDIR}/services.hlfl#' ${WRKSRC}/doc/hlfl.1

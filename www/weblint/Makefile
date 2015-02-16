@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	perl lint program for html
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 NO_BUILD=	Yes
 PKG_ARCH=	*
-USE_GROFF =	Yes
 
 TEST_TARGET=	test
 

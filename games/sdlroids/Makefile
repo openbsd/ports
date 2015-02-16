@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/05/26 09:30:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	essentially an Asteroids clone
 
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=	SDL c m pthread SDL_mixer
 
 LIB_DEPENDS=	devel/sdl-mixer
-
-USE_GROFF =	Yes
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu

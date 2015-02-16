@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	verifies XML documents
 V=		2.0.1
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 WRKSRC=			${WRKDIR}/expat-$V/xmlwf
 WANTLIB=		c expat
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-configure:		

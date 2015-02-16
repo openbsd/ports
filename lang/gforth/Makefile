@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/27 21:53:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:09 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
 
@@ -18,7 +18,6 @@ MASTER_SITES =		${MASTER_SITE_GNU:=gforth/}
 WANTLIB =		c m
 
 CONFIGURE_STYLE =	gnu
-USE_GROFF =	Yes
 
 CFLAGS +=		-Dunix
 FAKE_FLAGS+=		DESTDIR="${WRKINST}"

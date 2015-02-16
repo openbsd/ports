@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2014/11/06 17:13:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2015/02/16 22:57:13 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -76,7 +76,6 @@ WANTLIB-streaming += speex theoradec theoraenc vorbis vorbisenc vpx
 WANTLIB-streaming += x264 xvidcore z opus ssl
 RUN_DEPENDS-streaming = ${BASE_PKGPATH}
 
-USE_GROFF =	Yes
 USE_GMAKE =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	mirror files and directories from a remote FTP server
 
@@ -16,7 +16,6 @@ WANTLIB=	c
 MAINTAINER=	Vladimir Kotal <vlada@devnull.cz>
 
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 
 MAN1=		fmirror.1
 

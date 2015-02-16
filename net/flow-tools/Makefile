@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/08/07 21:32:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2015/02/16 22:57:10 naddy Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -42,7 +42,6 @@ MAKE_FLAGS+=		SUBDIRS="lib src bin configs docs"
 FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/flow-tools
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 
 # let configure generate a new ftconfig.h, the supplied one has
 # problems with libwrap

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ethertypes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-USE_GROFF =	Yes
 
 MODULES=	lang/python
 RUN_DEPENDS=	net/libdnet,-python \

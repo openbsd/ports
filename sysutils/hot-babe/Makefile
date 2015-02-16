@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=	small utility which displays system activity
 
@@ -24,7 +24,6 @@ MASTER_SITES=	${HOMEPAGE}/downloads/
 MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

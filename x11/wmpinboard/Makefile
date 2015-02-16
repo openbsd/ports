@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/05/06 12:00:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=		wm-dockapp; resembling a miniature pin board
 
@@ -11,7 +11,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 Xext Xpm c
 
 SEPARATE_BUILD=		Yes
-USE_GROFF =		Yes
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
 

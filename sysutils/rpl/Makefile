@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT =		replace strings with new strings in multiple text files
 
@@ -13,7 +13,6 @@ MASTER_SITES =		http://downloads.laffeycomputer.com/current_builds/
 PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_STYLE =	gnu
-USE_GROFF =		Yes
 WANTLIB =		c
 
 .include <bsd.port.mk>

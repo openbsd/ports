@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
@@ -29,7 +29,6 @@ SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
 SUBST_VARS=		SAMPLES_DIR
 
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
-USE_GROFF =		Yes
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/rsnapshot.1 ${WRKSRC}/README \

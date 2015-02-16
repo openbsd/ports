@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/09/18 00:24:25 nigel Exp $
+# $OpenBSD: Makefile,v 1.25 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	texinfo to HTML converter
 
@@ -16,7 +16,6 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH:=texi2html/}
 CONFIGURE_STYLE= gnu
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 MAKE_FLAGS+=	texinfohtmldir=${PREFIX}/share/doc/texi2html
 

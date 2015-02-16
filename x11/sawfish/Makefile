@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/05/31 15:35:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=	extensible window manager
 
@@ -40,7 +40,6 @@ WANTLIB += rep xcb xcb-render xcb-shm z pangox-1.0
 
 MODULES=	devel/gettext
 
-USE_GROFF =	Yes
 USE_GMAKE=      Yes
 
 CONFIGURE_STYLE=gnu

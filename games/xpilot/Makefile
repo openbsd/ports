@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	multiplayer 2d space battles game
 
@@ -16,7 +16,6 @@ WANTLIB=	X11 Xau Xdmcp Xext c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpilotgame/}
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE= imake

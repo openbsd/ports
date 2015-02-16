@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/31 07:42:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=		simple SMTP client
 
@@ -13,7 +13,6 @@ MASTER_SITES=		http://distfiles.nl/
 
 CONFIGURE_STYLE=	gnu dest
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>

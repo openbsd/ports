@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/03/26 20:57:14 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:11 naddy Exp $
 
 COMMENT=	UUCP suite
 
@@ -17,7 +17,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/libexec/uucp \
 		--with-newconfigdir=${SYSCONFDIR}/uucp \
 		--with-oldconfigdir=${SYSCONFDIR}/uucp
-USE_GROFF =	Yes
 
 SAMPLES=	call config dial dialcode passwd port sys1 sys2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/01/28 21:21:13 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -37,8 +37,6 @@ CONFIGURE_ARGS =	--with-modulesdir=${PREFIX}/${P5SITE}/Sympa \
 			--with-docdir=${PREFIX}/share/examples/sympa \
 			--sbindir=${PREFIX}/sbin \
 			--with-localedir=${PREFIX}/share/locale
-
-USE_GROFF =	Yes
 
 # no MODULE, doesn't link with it
 BUILD_DEPENDS =	devel/gettext

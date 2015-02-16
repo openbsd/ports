@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/01/19 10:40:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=		WWW OFFLine Explorer
 
@@ -21,7 +21,6 @@ FLAVOR?=
 MAKE_ENV=		FLAVOR="${FLAVOR}"
 MAKE_FLAGS=		prefix="${PREFIX}"
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 # These index.htmls are symlinks and @sample doesn't like that.

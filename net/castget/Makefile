@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/22 13:44:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=		command-line podcast downloader
 
@@ -29,8 +29,6 @@ LIB_DEPENDS=            audio/id3lib \
 CONFIGURE_STYLE=        gnu
 CONFIGURE_ENV=          CPPFLAGS="-lm -I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
-
-USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/castget

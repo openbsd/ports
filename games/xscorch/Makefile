@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/24 12:34:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=		Scorched Earth-clone
 
@@ -24,8 +24,6 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		audio/libmikmod \
 			x11/gtk+2
-
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-x \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	PGP sign/encrypt/decrypt messages automatically
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	security/pgp
 WRKDIST=	${WRKDIR}/pgpsendmail
 INSTALL_TARGET=	all_install
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=		command line MPEG audio/video/system file toolbox
 
@@ -20,7 +20,6 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ENV+= 	CC="${CXX}"
 
 ALL_TARGET=
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>

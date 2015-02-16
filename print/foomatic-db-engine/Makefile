@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/02/15 08:00:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=		Foomatic PPD generator
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=		databases/p5-DBI \
 RUN_DEPENDS +=		print/foomatic-db
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu

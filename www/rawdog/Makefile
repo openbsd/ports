@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/09/16 15:19:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	RSS Aggregator Without Delusions Of Grandeur
 
@@ -19,7 +19,6 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	textproc/py-feedparser
 
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/rawdog

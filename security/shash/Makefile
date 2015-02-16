@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=	generates or checks digests or mac
 
@@ -16,7 +16,6 @@ MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/shash/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CFLAGS='-I${LOCALBASE}/include -L${LOCALBASE}/lib'
-USE_GROFF =		Yes
 
 FLAVORS=		static
 FLAVOR?=

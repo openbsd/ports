@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=	sniffer for LanManager environment (ms/samba workstations)
 DISTNAME=	smbsniff-0.0.1b
@@ -15,7 +15,6 @@ WANTLIB=		c pcap
 WRKDIST=	${WRKDIR}
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/smbsniff ${PREFIX}/sbin

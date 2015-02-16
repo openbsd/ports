@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	graphical front end to Unix diff
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m Xm
 
 LIB_DEPENDS+=		x11/openmotif
-USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 

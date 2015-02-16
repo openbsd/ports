@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2014/12/28 15:21:50 robert Exp $
+# $OpenBSD: Makefile,v 1.54 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -18,7 +18,6 @@ WANTLIB += c m pcre pthread termcap glib-2.0 gmodule-2.0 slang
 WANTLIB += crypto ssl z ssh2
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 
 MODULES=		devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/22 13:39:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	jpeg pixel interpolator
 
@@ -20,6 +20,5 @@ LIB_DEPENDS=		graphics/jpeg
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-nls \
 			--with-jpeglib=${LOCALBASE}
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

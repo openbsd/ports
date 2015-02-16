@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:10 naddy Exp $
 
 COMMENT=	move/copy/append/link multiple files with wildcards
 
@@ -21,7 +21,6 @@ WRKDIST=	${WRKDIR}
 EXTRACT_CASES=	*.Z) ${GZIP_CMD} -cd ${FULLDISTDIR}/$$archive | \
 		sed '1,/^\#! \/bin\/sh/d' | sh ;;
 PATCH_DIST_ARGS= -z ${DISTORIG} -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
-USE_GROFF =	Yes
 
 post-extract:
 	@cd ${WRKSRC} && cat mmv.c.? >mmv.c && rm mmv.c.?

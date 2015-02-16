@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/03/22 10:26:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2015/02/16 22:57:10 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -37,7 +37,6 @@ MODULES =	devel/gettext \
 
 MODFORTRAN_COMPILER = g77
 
-USE_GROFF =	Yes
 BUILD_DEPENDS =	print/ghostscript/gnu-fonts \
 		${MODFORTRAN_BUILD_DEPENDS}
 

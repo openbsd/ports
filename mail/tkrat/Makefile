@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	mail user agent for X in C with a Tcl/Tk frontend
 
@@ -27,7 +27,6 @@ MAKE_FLAGS=	BUSYLIB= DUMMYLIB= RATLIB_SUFFIX=.so.2.1 \
 
 FAKE_FLAGS=	UTIL_DIR=\$${prefix}/lib/tcl/tkrat/util
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-tcl-bin="${LOCALBASE}/bin" \
 		--with-tcl-include="${MODTCL_INCDIR}" \

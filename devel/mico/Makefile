@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 
@@ -24,7 +24,6 @@ WANTLIB=		c m ncurses readline stdc++
 WANTLIB+=		crypto ssl ICE SM X11 Xt pthread
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LIB_VERSION=${LIB_VERSION}
 CONFIGURE_ARGS+=	--disable-optimize

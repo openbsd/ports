@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/01/02 14:26:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2015/02/16 22:57:09 naddy Exp $
 
 BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -40,7 +40,6 @@ CONFIGURE_ARGS =	--enable-mt \
 			${CONFIGURE_SHARED}
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 # Don't pick up bash
 MAKE_ENV =		MAKESHELL=/bin/sh

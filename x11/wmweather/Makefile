@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/10/03 12:47:41 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=		wm-dockapp; weather monitor
 
@@ -17,7 +17,6 @@ MASTER_SITES=		${HOMEPAGE}
 LIB_DEPENDS=		net/curl
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu

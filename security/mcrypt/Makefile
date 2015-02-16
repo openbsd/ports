@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/11/30 05:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT =	extendable encryption program that supports many ciphers
 
@@ -18,7 +18,6 @@ WANTLIB =		c ltdl mcrypt mhash z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 MODULES =		devel/gettext
 LIB_DEPENDS =		security/libmcrypt \
 			security/mhash \

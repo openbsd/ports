@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/08/24 18:05:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.34 2015/02/16 22:57:11 naddy Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -37,7 +37,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 SAMPLES_DIR=		${DESTDIR}${LOCALBASE}/share/examples/kismet
 FAKE_FLAGS+=		ETC=${SAMPLES_DIR}

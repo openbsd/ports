@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:09 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 LIB_DEPENDS=	x11/gtk+2 \
 		inputmethods/scim
 
-USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

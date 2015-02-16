@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=		control chroot and su access rights by application
 
@@ -22,7 +22,6 @@ ALL_TARGET=		chrootuid
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_TEST=		Yes
-USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/chrootuid ${PREFIX}/sbin/chrootuid

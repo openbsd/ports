@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/02/06 15:19:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=	apache HTTP server
 
@@ -15,7 +15,6 @@ HOMEPAGE=	http://httpd.apache.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 SHARED_ONLY=		Yes
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 WANTLIB += c crypto m ssl expat apr-1 db>=4 z pcre pthread aprutil-1>=2

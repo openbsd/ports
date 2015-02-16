@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/06/04 05:07:59 giovanni Exp $
+# $OpenBSD: Makefile,v 1.57 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=	small and fast window manager
 
@@ -36,8 +36,6 @@ CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-USE_GROFF=	Yes
 
 .include <bsd.port.arch.mk>
 

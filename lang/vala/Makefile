@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2015/01/19 09:00:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -24,8 +24,6 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		devel/glib2
 TEST_DEPENDS=		shells/bash
-
-USE_GROFF=		Yes
 
 SUBST_VARS+=		API_V
 

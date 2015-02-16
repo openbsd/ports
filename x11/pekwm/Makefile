@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/10/23 07:21:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/02/16 22:57:14 naddy Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -23,7 +23,6 @@ EXTRACT_SUFX=	.tar.bz2
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu

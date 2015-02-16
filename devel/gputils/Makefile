@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/20 08:18:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT =		GNU PIC assembler and utilities
 
@@ -25,7 +25,6 @@ CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		"CC=${CC}" "CPP=${CPP}" "CFLAGS=${CFLAGS}" "CPPFLAGS=${CPPFLAGS}" "LDFLAGS=${LDFLAGS}"
 CONFIGURE_ARGS +=	--disable-html-doc
 
-USE_GROFF =		Yes
 USE_GMAKE =		Yes
 
 AUTOCONF_VERSION =	2.69

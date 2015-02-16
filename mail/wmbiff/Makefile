@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2015/02/16 22:57:09 naddy Exp $
 
 COMMENT=	multiple mailbox checker dockapp
 DISTNAME=	wmbiff-0.4.27
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB += X11 Xext Xpm c gcrypt gnutls gpg-error pthread z
 
 MODULES=	devel/gettext
-
-USE_GROFF =	Yes
 
 LIB_DEPENDS=	security/gnutls \
 		security/libgcrypt

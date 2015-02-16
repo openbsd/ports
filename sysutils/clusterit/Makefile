@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/21 22:35:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:12 naddy Exp $
 
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
@@ -24,7 +24,6 @@ FLAVORS=		no_x11
 FLAVOR?=
 
 X11_SUBDIRS=		dvt rvt
-USE_GROFF =		Yes
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS=		--without-x11

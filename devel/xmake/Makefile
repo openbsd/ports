@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 10:50:32 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2015/02/16 22:57:08 naddy Exp $
 
 COMMENT=	powerful make utility
 
@@ -24,7 +24,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xmake ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xmake.1     ${PREFIX}/man/man1
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
