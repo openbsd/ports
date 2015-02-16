@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_libs_libgroff_uniglyph_cpp,v 1.1 2015/02/16 15:45:11 schwarze Exp $
+remove duplicate glyph definitions; accepted and committed upstream
+--- src/libs/libgroff/uniglyph.cpp.orig	Tue Nov  4 09:38:35 2014
++++ src/libs/libgroff/uniglyph.cpp	Tue Dec 30 10:26:13 2014
+@@ -460,12 +460,6 @@ struct S {
+ //{ "23AD", "bracerightbt" },
+   { "23AF", "an" },
+   { "2502", "br" },
+-  { "251D", "rk" },
+-  { "2525", "lk" },
+-  { "256D", "lt" },
+-  { "256E", "rt" },
+-  { "256F", "rb" },
+-  { "2570", "lb" },
+   { "25A1", "sq" },
+   { "25CA", "lz" },
+   { "25CB", "ci" },

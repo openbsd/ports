@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_libs_libgroff_glyphuni_cpp,v 1.1 2015/02/16 15:45:11 schwarze Exp $
+remove duplicate glyph definitions; accepted and committed upstream
+--- src/libs/libgroff/glyphuni.cpp.orig	Tue Nov  4 09:38:35 2014
++++ src/libs/libgroff/glyphuni.cpp	Tue Dec 30 10:19:07 2014
+@@ -474,12 +474,6 @@ struct S {
+   { "bracerightbt", "23AD" },
+   { "an", "23AF" },
+   { "br", "2502" },
+-  { "rk", "251D" },
+-  { "lk", "2525" },
+-  { "lt", "256D" },
+-  { "rt", "256E" },
+-  { "rb", "256F" },
+-  { "lb", "2570" },
+   { "sq", "25A1" },
+   { "lz", "25CA" },
+   { "ci", "25CB" },
