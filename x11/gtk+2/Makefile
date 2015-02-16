@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.201 2014/10/10 17:03:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2015/02/16 20:27:55 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
 
-GNOME_VERSION=		2.24.25
+GNOME_VERSION=		2.24.26
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
@@ -11,8 +11,8 @@ PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-x11-2.0          2400.0   # 2400.23
-SHARED_LIBS +=  gtk-x11-2.0          2400.0   # 2400.23
+SHARED_LIBS +=  gdk-x11-2.0          2400.0   # 2400.26
+SHARED_LIBS +=  gtk-x11-2.0          2400.0   # 2400.26
 SHARED_LIBS +=  gailutil             26.0     # 18.1
 
 HOMEPAGE=		http://www.gtk.org/
@@ -50,10 +50,11 @@ RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic # pulls x11/gnome/icon-theme
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-main += Xrandr Xrender atk-1.0 avahi-client avahi-common c
-WANTLIB-main += cairo crypto cups dbus-1 expat fontconfig freetype
+WANTLIB-main += cairo cups dbus-1 expat fontconfig freetype
 WANTLIB-main += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB-main += gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += pixman-1 pthread pthread-stubs ssl xcb xcb-render xcb-shm
+WANTLIB-main += pixman-1 pthread pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-main += gmp gnutls hogweed nettle p11-kit tasn1
 
 WANTLIB-guic += ${WANTLIB}
 WANTLIB-guic += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pthread
