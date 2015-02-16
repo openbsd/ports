@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/11/24 12:05:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/02/16 08:47:34 ajacoutot Exp $
 bin/caribou-preferences
 include/libcaribou/
 include/libcaribou/caribou.h
@@ -62,6 +62,7 @@ share/caribou/layouts/scan/
 share/caribou/layouts/scan/us.xml
 share/caribou/layouts/touch/
 share/caribou/layouts/touch/ara.xml
+share/caribou/layouts/touch/fr.xml
 share/caribou/layouts/touch/il.xml
 share/caribou/layouts/touch/us.xml
 share/dbus-1/services/org.gnome.Caribou.Antler.service
