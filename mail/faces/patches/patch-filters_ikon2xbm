@@ -1,7 +1,7 @@
-$OpenBSD: patch-filters_ikon2xbm,v 1.1 2000/06/04 23:08:34 espie Exp $
+$OpenBSD: patch-filters_ikon2xbm,v 1.2 2015/02/17 22:03:26 naddy Exp $
 --- filters/ikon2xbm.orig	Tue May  7 00:51:50 1991
-+++ filters/ikon2xbm	Mon Jun  5 00:48:26 2000
-@@ -26,7 +26,7 @@ sed -e 's/\(0x....\),\(0x....\),\(0x....
++++ filters/ikon2xbm	Tue Feb 17 23:02:06 2015
+@@ -26,7 +26,7 @@ sed -e 's/\(0x....\),\(0x....\),\(0x....\),/\1\
  \2\
  \3/' > $tmp
  

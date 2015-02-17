@@ -1,7 +1,7 @@
-$OpenBSD: patch-compface_compface_1,v 1.1 2000/06/04 23:08:34 espie Exp $
+$OpenBSD: patch-compface_compface_1,v 1.2 2015/02/17 22:03:26 naddy Exp $
 --- compface/compface.1.orig	Fri Mar 15 06:10:29 1991
-+++ compface/compface.1	Mon Jun  5 00:48:26 2000
-@@ -12,6 +12,8 @@ compface, uncompface \- compress and exp
++++ compface/compface.1	Tue Feb 17 23:02:06 2015
+@@ -12,6 +12,8 @@ compface, uncompface \- compress and expand 48x48x1 fa
  .LP
  .B uncompface
  [
@@ -10,7 +10,7 @@ $OpenBSD: patch-compface_compface_1,v 1.1 2000/06/04 23:08:34 espie Exp $
  .I infile
  [
  .I outfile
-@@ -25,7 +27,7 @@ is a filter for generating highly compre
+@@ -25,7 +27,7 @@ is a filter for generating highly compressed represent
  face image files.
  .I uncompface
  is an inverse filter which performs an inverse transformation with no

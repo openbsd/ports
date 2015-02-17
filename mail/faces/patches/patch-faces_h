@@ -1,7 +1,7 @@
-$OpenBSD: patch-faces_h,v 1.1 2000/06/04 23:08:34 espie Exp $
+$OpenBSD: patch-faces_h,v 1.2 2015/02/17 22:03:26 naddy Exp $
 --- faces.h.orig	Tue Nov 19 05:00:49 1991
-+++ faces.h	Mon Jun  5 00:48:26 2000
-@@ -102,9 +102,10 @@ enum min_type { ICON_NOTFOUND,  ICON_MIS
++++ faces.h	Tue Feb 17 23:02:06 2015
+@@ -102,9 +102,10 @@ enum min_type { ICON_NOTFOUND,  ICON_MISC_UNKNOWN, ICO
  enum mon_type { MONNEW, MONALL, MONPRINTER, MONPROG, MONUSERS } ;
  
  /* X resources used by faces. */
@@ -15,7 +15,7 @@ $OpenBSD: patch-faces_h,v 1.1 2000/06/04 23:08:34 espie Exp $
  #ifdef AUDIO_SUPPORT
                  R_AUDIO,   R_AUDIOCMD, R_BELLFILE
  #endif /*AUDIO_SUPPORT*/
-@@ -193,8 +194,6 @@ struct utimbuf {      /* Make a utime() 
+@@ -193,8 +194,6 @@ struct utimbuf {      /* Make a utime() definition for
  #endif /*NOUTIME*/
  
  extern char *getenv P(()) ;
