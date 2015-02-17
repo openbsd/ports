@@ -1,0 +1,16 @@
+$OpenBSD: patch-DOCS_man_options_rst,v 1.1 2015/02/17 01:27:11 brad Exp $
+--- DOCS/man/options.rst.orig	Fri Feb 13 22:05:13 2015
++++ DOCS/man/options.rst	Fri Feb 13 22:05:39 2015
+@@ -1786,10 +1786,10 @@ Disc Devices
+ ------------
+ 
+ ``--cdrom-device=<path>``
+-    Specify the CD-ROM device (default: ``/dev/cdrom``).
++    Specify the CD-ROM device (default: ``/dev/rcd0c``).
+ 
+ ``--dvd-device=<path>``
+-    Specify the DVD device or .iso filename (default: ``/dev/dvd``). You can
++    Specify the DVD device or .iso filename (default: ``/dev/rcd0c``). You can
+     also specify a directory that contains files previously copied directly
+     from a DVD (with e.g. vobcopy).
+ 

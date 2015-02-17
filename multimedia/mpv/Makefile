@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/02/13 13:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/02/17 01:27:11 brad Exp $
 
 # requires 64-bit atomic ops.
 # some other arch could probably be added..certainly fails on i386
@@ -7,6 +7,7 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =		movie player based on MPlayer/mplayer2
 V =			0.7.3
 DISTNAME =		mpv-${V}
+REVISION =		0
 
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv

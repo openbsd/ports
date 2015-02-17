@@ -1,0 +1,12 @@
+$OpenBSD: patch-DOCS_man_mpv_rst,v 1.1 2015/02/17 01:27:11 brad Exp $
+--- DOCS/man/mpv.rst.orig	Fri Feb 13 22:10:04 2015
++++ DOCS/man/mpv.rst	Fri Feb 13 22:10:15 2015
+@@ -847,7 +847,7 @@ Play a multi-angle DVD:
+     ``mpv dvd://1 --dvd-angle=2``
+ 
+ Play from a different DVD device:
+-    ``mpv dvd://1 --dvd-device=/dev/dvd2``
++    ``mpv dvd://1 --dvd-device=/dev/rcd2c``
+ 
+ Play DVD video from a directory with VOB files:
+     ``mpv dvd://1 --dvd-device=/path/to/directory/``
