@@ -1,24 +1,24 @@
-$OpenBSD: patch-configure,v 1.8 2014/05/04 20:17:35 landry Exp $
---- configure.orig	Wed Apr 16 22:04:49 2014
-+++ configure	Wed Apr 30 22:15:37 2014
-@@ -22142,9 +22142,9 @@ $as_echo "$as_me: OpenJPEG (JPEG2000) support disabled
- 
- elif test "$with_openjpeg" = "yes" -o "$with_openjpeg" = "" ; then
- 
--  for ac_header in openjpeg-2.0/openjpeg.h
-+  for ac_header in openjp2/openjpeg.h
+$OpenBSD: patch-configure,v 1.9 2015/02/17 21:47:43 landry Exp $
+--- configure.orig	Tue Feb 10 13:12:08 2015
++++ configure	Tue Feb 17 22:19:37 2015
+@@ -22201,9 +22201,9 @@ fi
+         LIBS="-lopenjp2 $LIBS"
+     fi
+   else
+-    for ac_header in openjpeg-2.1/openjpeg.h
++    for ac_header in openjp2/openjpeg.h
  do :
--  ac_fn_c_check_header_mongrel "$LINENO" "openjpeg-2.0/openjpeg.h" "ac_cv_header_openjpeg_2_0_openjpeg_h" "$ac_includes_default"
-+  ac_fn_c_check_header_mongrel "$LINENO" "openjp2/openjpeg.h" "ac_cv_header_openjpeg_2_0_openjpeg_h" "$ac_includes_default"
- if test "x$ac_cv_header_openjpeg_2_0_openjpeg_h" = xyes; then :
+-  ac_fn_c_check_header_mongrel "$LINENO" "openjpeg-2.1/openjpeg.h" "ac_cv_header_openjpeg_2_1_openjpeg_h" "$ac_includes_default"
++  ac_fn_c_check_header_mongrel "$LINENO" "openjp2/openjpeg.h" "ac_cv_header_openjpeg_2_1_openjpeg_h" "$ac_includes_default"
+ if test "x$ac_cv_header_openjpeg_2_1_openjpeg_h" = xyes; then :
    cat >>confdefs.h <<_ACEOF
- #define HAVE_OPENJPEG_2_0_OPENJPEG_H 1
-@@ -22204,7 +22204,7 @@ fi
- else
- 
+ #define HAVE_OPENJPEG_2_1_OPENJPEG_H 1
+@@ -22267,7 +22267,7 @@ else
    HAVE_OPENJPEG=yes
--  if test -r $with_openjpeg/include/openjpeg-2.0/openjpeg.h ; then
-+  if test -r $with_openjpeg/include/openjp2/openjpeg.h ; then
+   if test -r $with_openjpeg/include/openjpeg-2.0/openjpeg.h ; then
+     EXTRA_INCLUDES="-I$with_openjpeg/include $EXTRA_INCLUDES"
+-  elif test -r $with_openjpeg/include/openjpeg-2.1/openjpeg.h ; then
++  elif test -r $with_openjpeg/include/openjp2/openjpeg.h ; then
+     OPENJPEG_VERSION=20100
      EXTRA_INCLUDES="-I$with_openjpeg/include $EXTRA_INCLUDES"
    else
-     as_fn_error $? "openjpeg.h not found in $with_openjpeg/include/openjpeg-2.0" "$LINENO" 5

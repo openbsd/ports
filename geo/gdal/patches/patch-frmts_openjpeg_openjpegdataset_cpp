@@ -1,43 +1,12 @@
-$OpenBSD: patch-frmts_openjpeg_openjpegdataset_cpp,v 1.3 2014/11/29 13:25:46 sthen Exp $
-
-cope with API change in openjpeg 2.1.0 - similar to diff in
-https://trac.osgeo.org/gdal/changeset/27538, but without #ifdefs.
-
---- frmts/openjpeg/openjpegdataset.cpp.orig	Wed Sep 24 14:48:04 2014
-+++ frmts/openjpeg/openjpegdataset.cpp	Sat Nov 29 00:05:00 2014
+$OpenBSD: patch-frmts_openjpeg_openjpegdataset_cpp,v 1.4 2015/02/17 21:47:43 landry Exp $
+--- frmts/openjpeg/openjpegdataset.cpp.orig	Tue Feb 17 22:16:39 2015
++++ frmts/openjpeg/openjpegdataset.cpp	Tue Feb 17 22:16:55 2015
 @@ -30,7 +30,7 @@
  /* This file is to be used with openjpeg 2.0 */
  
- #include <stdio.h> /* openjpeg.h needs FILE* */
--#include <openjpeg-2.0/openjpeg.h>
+ #if defined(OPENJPEG_VERSION) && OPENJPEG_VERSION >= 20100
+-#include <openjpeg-2.1/openjpeg.h>
 +#include <openjp2/openjpeg.h>
- #include <vector>
- 
- #include "gdaljp2abstractdataset.h"
-@@ -612,7 +612,7 @@ CPLErr JP2OpenJPEGDataset::ReadBlock( int nBand, VSILF
-     opj_stream_set_read_function(pStream, JP2OpenJPEGDataset_Read);
-     opj_stream_set_seek_function(pStream, JP2OpenJPEGDataset_Seek);
-     opj_stream_set_skip_function(pStream, JP2OpenJPEGDataset_Skip);
--    opj_stream_set_user_data(pStream, fp);
-+    opj_stream_set_user_data(pStream, fp, NULL);
- 
-     if(!opj_read_header(pStream,pCodec,&psImage))
-     {
-@@ -950,7 +950,7 @@ GDALDataset *JP2OpenJPEGDataset::Open( GDALOpenInfo * 
-     opj_stream_set_read_function(pStream, JP2OpenJPEGDataset_Read);
-     opj_stream_set_seek_function(pStream, JP2OpenJPEGDataset_Seek);
-     opj_stream_set_skip_function(pStream, JP2OpenJPEGDataset_Skip);
--    opj_stream_set_user_data(pStream, fp);
-+    opj_stream_set_user_data(pStream, fp, NULL);
- 
-     opj_image_t * psImage = NULL;
-     OPJ_INT32  nX0,nY0;
-@@ -1498,7 +1498,7 @@ GDALDataset * JP2OpenJPEGDataset::CreateCopy( const ch
-     opj_stream_set_write_function(pStream, JP2OpenJPEGDataset_Write);
-     opj_stream_set_seek_function(pStream, JP2OpenJPEGDataset_Seek);
-     opj_stream_set_skip_function(pStream, JP2OpenJPEGDataset_Skip);
--    opj_stream_set_user_data(pStream, fp);
-+    opj_stream_set_user_data(pStream, fp, NULL);
- 
-     if (!opj_start_compress(pCodec,psImage,pStream))
-     {
+ #else
+ #include <stdio.h> /* openjpeg.h needs FILE* */
+ #include <openjpeg-2.0/openjpeg.h>
