@@ -1,0 +1,12 @@
+$OpenBSD: patch-glimpse_1,v 1.1 2015/02/17 22:56:48 naddy Exp $
+--- glimpse.1.orig	Wed Nov 12 09:21:41 1997
++++ glimpse.1	Tue Feb 17 23:53:29 2015
+@@ -800,7 +800,7 @@ will output the names of all (indexed) .c files that h
+ their name (including anywhere on the path from the index).
+ Setting the following alias in the .login file may be useful:
+ .br
+-alias findfile 'glimpse -h \!:1 ~/.glimpse_filenames'
++alias findfile 'glimpse -h \e!:1 ~/.glimpse_filenames'
+ .IP ".\fBglimpse_index\fP"
+ contains the index.  The index consists of lines, each starting with a
+ word followed by a list of block numbers (unless the -o or -b options 

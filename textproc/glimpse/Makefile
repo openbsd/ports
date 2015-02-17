@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2015/02/17 22:56:48 naddy Exp $
 
 COMMENT=	text search engine
 
 DISTNAME=	glimpse-4.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc databases
 
 PERMIT_PACKAGE_CDROM=	no fee
@@ -19,7 +19,6 @@ pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
 
 CFLAGS+=-D__STRICT_ANSI__ -Dlog=mylog
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 post-install:
