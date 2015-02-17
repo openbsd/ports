@@ -4,11 +4,13 @@ the ASA5500 Series, IOS 12.4(9)T or later on Cisco SR500, 870, 880, 1800, 2800,
 is not officially supported by, or associated in any way with, Cisco Systems.
 It just happens to interoperate with their equipment.  Features include:
 
-- Connection through HTTP/SOCKS5 proxy.
-- Automatic detection of IPv4 and IPv6 address, routes.
-- Authentication via HTTP forms and SSL certificates.
-- Data transport over TCP (HTTPS) or UDP (DTLS).
-- Keepalive and Dead Peer Detection on both HTTPS and DTLS.
-- Automatic update of VPN server list / configuration.
-- Roaming support, allowing reconnection when the local IP address changes.
-- LZS/LZ4 compression.
+- Connection through HTTP/SOCKS5 proxy
+- Automatic detection of IPv4 and IPv6 address, routes
+- Authentication via HTTP forms and SSL certificates
+- Data transport over TCP (HTTPS) or UDP (DTLS)
+- Keepalive and Dead Peer Detection on both HTTPS and DTLS
+- Automatic update of VPN server list / configuration
+- Roaming support, allowing reconnection when the local IP address changes
+- LZS/LZ4 compression
+
+As well as the Cisco server, an open-source server is available (ocserv).
