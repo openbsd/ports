@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_crawl_6,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
---- docs/crawl.6.orig	Wed Oct 19 12:01:32 2005
-+++ docs/crawl.6	Wed Oct 19 12:01:42 2005
+$OpenBSD: patch-docs_crawl_6,v 1.2 2015/02/17 19:47:01 naddy Exp $
+--- docs/crawl.6.orig	Wed Sep 12 20:46:36 2001
++++ docs/crawl.6	Tue Feb 17 18:53:51 2015
 @@ -1,9 +1,9 @@
  .TH crawl 6 "02 April 2001"
  .IX crawl
@@ -13,3 +13,25 @@ $OpenBSD: patch-docs_crawl_6,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
  [-scores [N]]
  [-name <string>]
  [-race <letter>]
+@@ -708,8 +708,8 @@ or secret doors adjacent to you.
+ .PP
+ The section of the viewing window which is coloured (with the '@' representing
+ you at the centre) is what you can see around you. The dark grey around it is
+-the parts of the level which you have visited, but cannot currently see. The
+-'x' command lets you move the cursor around to get a description of the
++the parts of the level which you have visited, but cannot currently see. The 'x'
++command lets you move the cursor around to get a description of the
+ various dungeon features, and typing '?' when the cursor is over a monster
+ brings up a short description of that monster (these are all rather sketchy;
+ I'll write better descriptions when I have time). You can get a map of the
+@@ -937,8 +937,8 @@ items (such as some weapons) by invoking them in this 
+ .PP
+ You pick items up with the ',' (comma) command and drop them with the 'd'rop
+ command. When you are given a prompt like "drop which item?" or "pick up
+-<x>?", if you type a number before either the letter of the item, or 'y' or
+-'n' for yes or no, you will drop or get that quantity of the item.
++<x>?", if you type a number before either the letter of the item, or 'y' or 'n'
++for yes or no, you will drop or get that quantity of the item.
+ .PP
+ Typing 'i' gives you an inventory of what you are carrying. When you
+ are given a prompt like "Throw [or wield, wear, etc] which item?", you can

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2015/02/17 19:47:01 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	Tcl bindings for Curl
 DISTNAME =	TclCurl-7.19.6
 SHARED_LIBS =	TclCurl7196 0.0
 CATEGORIES =	net
-REVISION =	1
+REVISION =	2
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
@@ -25,7 +25,6 @@ FAKE_FLAGS =	PKG_DIR=tclcurl \
 		INSTALL_LIBRARY='${INSTALL_DATA}'
 
 SEPARATE_BUILD =Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \

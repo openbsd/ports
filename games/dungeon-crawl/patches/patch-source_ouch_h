@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_ouch_h,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
---- source/ouch.h.orig	Tue Oct 18 23:53:25 2005
-+++ source/ouch.h	Tue Oct 18 23:53:32 2005
-@@ -54,7 +54,7 @@ void scrolls_burn(char burn_strength, ch
+$OpenBSD: patch-source_ouch_h,v 1.2 2015/02/17 19:47:01 naddy Exp $
+--- source/ouch.h.orig	Fri Feb 28 02:55:32 2003
++++ source/ouch.h	Tue Feb 17 18:52:57 2015
+@@ -54,7 +54,7 @@ void scrolls_burn(char burn_strength, char target_clas
   * called from: acr - bang - beam - command - effects - fight - misc -
   *              ouch - output - religion - spells - spells2 - spells4
   * *********************************************************************** */

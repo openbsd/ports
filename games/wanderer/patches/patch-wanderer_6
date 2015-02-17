@@ -1,0 +1,31 @@
+$OpenBSD: patch-wanderer_6,v 1.1 2015/02/17 19:47:01 naddy Exp $
+--- wanderer.6.orig	Wed Dec 19 03:20:35 2001
++++ wanderer.6	Tue Feb 17 19:00:26 2015
+@@ -65,8 +65,8 @@ By pressing 'W' you can redraw the screen, and '#' wil
+ icon style and single character. '!' wil display the map in icon mode, and '?'
+ will display the help screen. Finally, '~' will prompt for a password to jump
+ levels. The masterpassword will give a prompt for the required level
+-number, and then respond with the correct password before jumping. If the file
+-'no_pws' is readable in the screens directory, then pressing '~' will just
++number, and then respond with the correct password before jumping. If the
++file 'no_pws' is readable in the screens directory, then pressing '~' will just
+ cause a request for the required screen number. On no account may anyone
+ who has not given the masterpassword jump back a level.
+ .SH THE EDITOR
+@@ -84,12 +84,12 @@ of the screen with their meanings.
+ .PP
+ To play the game, press either 'p' to play with the iconic screen, or 'n'
+ to play with the full screen. When you are in the game, you will recieve an
+-extra 'memory' option on the righthand side of the screen. This allows you to
+-'record' moves in a solution to be replayed after changes to the screen.
++extra 'memory' option on the righthand side of the screen. This allows you
++to 'record' moves in a solution to be replayed after changes to the screen.
+ .PP
+ Pressing '(' will start recording from the beginning of the memory, and ')'
+-will stop recording. At any point during recording, '-' will add a
+-'checkpoint'. This will cause the program to return control to the user during
++will stop recording. At any point during recording, '-' will add a 'checkpoint'.
++This will cause the program to return control to the user during
+ playback when it reaches this point, without moving the memory pointer.
+ Pressing '+' will then continue playing, or '&' will start recording from this
+ point, leaving the previous data unaffected.

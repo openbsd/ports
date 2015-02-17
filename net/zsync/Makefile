@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/02/17 19:47:01 naddy Exp $
 
 COMMENT=	gzip-aware file mirroring over http
 
 DISTNAME=	zsync-0.6.2
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net
@@ -19,6 +20,5 @@ WANTLIB += c m
 MASTER_SITES=	${HOMEPAGE}download/
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF=		Yes
 
 .include <bsd.port.mk>

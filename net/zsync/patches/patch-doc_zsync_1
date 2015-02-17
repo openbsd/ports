@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_zsync_1,v 1.1 2015/02/17 19:47:01 naddy Exp $
+--- doc/zsync.1.orig	Thu Sep 16 19:17:49 2010
++++ doc/zsync.1	Tue Feb 17 20:41:19 2015
+@@ -22,7 +22,7 @@ zsync retrieves the rest of the target file over HTTP.
+ \fB\-A\fR \fIhostname\fP=\fIusername\fR:\fIpassword\fR
+ Specifies a username and password to be used with the given hostname. \fB-A\fR
+ can be used multiple times (with different hostnames), in cases where e.g. the
+-.zsync file is on a different server from the download, or there are multiple
++\&.zsync file is on a different server from the download, or there are multiple
+ download servers (there could be different auth details for different servers -
+ and zsync never assumes that your password should be sent to a server other
+ than the one named - otherwise redirects would be dangerous!).

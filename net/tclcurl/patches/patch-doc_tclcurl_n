@@ -1,0 +1,44 @@
+$OpenBSD: patch-doc_tclcurl_n,v 1.1 2015/02/17 19:47:01 naddy Exp $
+--- doc/tclcurl.n.orig	Mon Sep 28 14:52:48 2009
++++ doc/tclcurl.n	Tue Feb 17 19:16:16 2015
+@@ -1,7 +1,7 @@
+ .\" You can view this file with:
+ .\" nroff -man [file]
+ .\" Adapted from libcurl docs by fandom@telefonica.net
+-.TH TclCurl n "30 September 2009" "TclCurl 7.19.6 "TclCurl Easy Interface"
++.TH TclCurl n "30 September 2009" "TclCurl 7.19.6" "TclCurl Easy Interface"
+ .SH NAME
+ TclCurl: - get  a  URL with FTP, FTPS, HTTP, HTTPS, SCP, SFTP, TFTP, TELNET, DICT, FILE or LDAP syntax.
+ .SH SYNOPSIS
+@@ -791,8 +791,8 @@ response will be treated as a valid HTTP header line s
+ .TP
+ .B -cookie
+ Pass a string as parameter. It will be used to
+-set a cookie in the http request. The format of the string should be
+-'[NAME]=[CONTENTS];'. Where NAME is the cookie name and  CONTENTS is
++set a cookie in the http request. The format of the string should
++be '[NAME]=[CONTENTS];'. Where NAME is the cookie name and  CONTENTS is
+ what the cookie should contain.
+ 
+ If  you  need  to  set mulitple cookies, you need to set them all using
+@@ -1530,8 +1530,9 @@ consists of one or more cipher strings separated by co
+ are also acceptable separators but colons are normally used, , - and + can be
+ used as operators. 
+ 
+-For OpenSSL and GnuTLS valid examples of cipher lists include 'RC4-SHA', 'SHA1+DES',
+-'TLSv1' and 'DEFAULT'. The default list is normally set when you compile OpenSSL.
++For OpenSSL and GnuTLS valid examples of cipher lists
++include 'RC4-SHA', 'SHA1+DES', 'TLSv1' and 'DEFAULT'.
++The default list is normally set when you compile OpenSSL.
+ 
+ You will find more details about cipher lists on this URL:
+     http://www.openssl.org/docs/apps/ciphers.html
+@@ -1716,7 +1717,7 @@ same handle. Let it return first before invoking it an
+ you want parallel transfers, you must use several curl handles.
+ .TP
+ .B RETURN VALUE
+-'0' if all went well, non-zero if it didn't. In case of error, if the
++\&'0' if all went well, non-zero if it didn't. In case of error, if the
+ .I errorbuffer
+ was set with
+ .I configure

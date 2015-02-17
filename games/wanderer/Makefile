@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/02/17 19:47:01 naddy Exp $
 
 COMMENT=	Rogue like adventure game
 
 DISTNAME=	wanderer-3.2
-REVISION =	1
+REVISION=	2
 
 CATEGORIES=	games
 
@@ -17,8 +17,10 @@ WANTLIB=		c curses
 
 MASTER_SITES=	http://www.e271.net/~marina/
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
+
+pre-patch:
+	@rm ${WRKSRC}/Makefile.orig
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wanderer
