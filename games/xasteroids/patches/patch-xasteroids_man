@@ -1,0 +1,27 @@
+$OpenBSD: patch-xasteroids_man,v 1.1 2015/02/17 20:56:34 naddy Exp $
+--- xasteroids.man.orig	Tue Feb 17 21:50:09 2015
++++ xasteroids.man	Tue Feb 17 21:50:02 2015
+@@ -61,10 +61,16 @@ Phil Goetz
+ .br
+ goetz@cs.Buffalo.EDU
+ .SH CONTRIBUTORS
+-Peter Phillips	pphillip@cs.ubc.ca
+-Pat Ryan	pat@jaameri.gsfc.nasa.gov
+-Craig Smith	csmith@cscs.UUCP
+-Doug Merritt	doug@netcom.com
+-James Berg	berg@plains		(makefile)
+-Chris Moore	moore@src.bae.co.uk	(hi score script)
+-David Partain	dlp@ida.liu.se		(original man page)
++Peter Phillips <pphillip@cs.ubc.ca>
++.br
++Pat Ryan <pat@jaameri.gsfc.nasa.gov>
++.br
++Craig Smith <csmith@cscs.UUCP>
++.br
++Doug Merritt <doug@netcom.com>
++.br
++James Berg <berg@plains> (makefile)
++.br
++Chris Moore <moore@src.bae.co.uk> (hi score script)
++.br
++David Partain <dlp@ida.liu.se> (original man page)
