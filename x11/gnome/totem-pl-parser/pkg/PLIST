@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/03/27 16:11:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/02/17 14:54:24 ajacoutot Exp $
 include/totem-pl-parser/
 include/totem-pl-parser/1/
 include/totem-pl-parser/1/plparser/
@@ -87,6 +87,7 @@ share/locale/is/LC_MESSAGES/totem-pl-parser.mo
 share/locale/it/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ja/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ka/LC_MESSAGES/totem-pl-parser.mo
+share/locale/kk/LC_MESSAGES/totem-pl-parser.mo
 share/locale/km/LC_MESSAGES/totem-pl-parser.mo
 share/locale/kn/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ko/LC_MESSAGES/totem-pl-parser.mo
