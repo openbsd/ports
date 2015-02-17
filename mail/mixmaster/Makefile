@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2014/04/20 10:00:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2015/02/17 22:39:31 naddy Exp $
 
 COMMENT=	client for anonymous remailing
 
 DISTNAME=	mixmaster-2.9.1
-REVISION =	1
+REVISION=	2
 CATEGORIES=	mail security
 
 # custom
@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIST}/Src
 CFLAGS+=	-DGLOBALMIXCONF="\"${SYSCONFDIR}/mixmaster/client.cfg\"" \
 		-DHOMEMIXDIR="\".Mix\""
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 MIXMASTER_FILES=${WRKDIST}/conf/* ${WRKDIST}/README \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mix_1,v 1.1 2015/02/17 22:39:31 naddy Exp $
+--- mix.1.orig	Sun Nov  9 12:12:27 2003
++++ mix.1	Tue Feb 17 23:36:51 2015
+@@ -859,7 +859,7 @@ In addition, regular expressions can be substituted. B
+ are supported. For example
+ 
+  /^From: *([^@]*) <.*>/From: $1/
+- /^From:.* \\(([^@]*)\)/From: $1/
++ /^From:.* \e(([^@]*)\e)/From: $1/
+  /^From: *([^@]*).*$/From: $1 <\fInobody@remailer.domain\fR>/
+ 
+ would allow user-defined names in the
