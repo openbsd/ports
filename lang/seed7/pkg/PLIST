@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/01/05 04:55:53 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/02/17 07:09:47 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -18,6 +18,7 @@ lib/seed7/lib/bigfile.s7i
 lib/seed7/lib/bigint.s7i
 lib/seed7/lib/bigrat.s7i
 lib/seed7/lib/bin32.s7i
+lib/seed7/lib/bin64.s7i
 lib/seed7/lib/bitmapfont.s7i
 lib/seed7/lib/bitset.s7i
 lib/seed7/lib/bitsetof.s7i
@@ -40,6 +41,7 @@ lib/seed7/lib/comp/act_act.s7i
 lib/seed7/lib/comp/action.s7i
 lib/seed7/lib/comp/arr_act.s7i
 lib/seed7/lib/comp/big_act.s7i
+lib/seed7/lib/comp/bin_act.s7i
 lib/seed7/lib/comp/bln_act.s7i
 lib/seed7/lib/comp/bst_act.s7i
 lib/seed7/lib/comp/chr_act.s7i
@@ -186,6 +188,7 @@ lib/seed7/lib/text.s7i
 lib/seed7/lib/time.s7i
 lib/seed7/lib/tls.s7i
 lib/seed7/lib/unicode.s7i
+lib/seed7/lib/unionfnd.s7i
 lib/seed7/lib/upper.s7i
 lib/seed7/lib/utf16.s7i
 lib/seed7/lib/utf8.s7i
@@ -283,6 +286,7 @@ share/examples/seed7/orange.dna
 share/examples/seed7/pac.sd7
 share/examples/seed7/pairs.sd7
 share/examples/seed7/panic.sd7
+share/examples/seed7/percolation.sd7
 share/examples/seed7/planets.sd7
 share/examples/seed7/prime.sd7
 share/examples/seed7/printpi1.sd7
