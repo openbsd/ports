@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/02/10 22:04:54 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/17 12:04:44 tobiasu Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -9,15 +9,18 @@ V = 4.9.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 77.2
+ADASTRAP_LIBC-i386 = 78.1
 ADASTRAP_LIBM-i386 = 9.0
-ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
-ADASTRAP_LIBC-amd64 = 77.2
+ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
+ADASTRAP_LIBC-amd64 = 78.1
 ADASTRAP_LIBM-amd64 = 9.0
-ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
-ADASTRAP_LIBC-sparc64 = 77.2
+ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
+ADASTRAP_LIBC-sparc64 = 78.1
 ADASTRAP_LIBM-sparc64 = 9.0
-ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
+ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tar.xz
+ADASTRAP_LIBC-hppa = 78.1
+ADASTRAP_LIBM-hppa = 9.0
+ADASTRAP-hppa = adastrap-hppa-$V-1.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}
@@ -30,13 +33,13 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.9,<4.10
 
-REVISION-main =	2
+REVISION-main =	3
 REVISION-libs =	1
 REVISION-c++ =	1
 REVISION-f95 =	1
 REVISION-java =	1
 REVISION-objc =	1
-REVISION-ada =	1
+REVISION-ada =	2
 
 SHARED_LIBS =	estdc++		17.0 \
 		gfortran	6.0 \
@@ -56,8 +59,7 @@ SHARED_LIBS =	estdc++		17.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-# XXX broken with memcpy that checks for overlap
-ONLY_FOR_ARCHS-ada = #amd64 i386 sparc64
+ONLY_FOR_ARCHS-ada = amd64 i386 sparc64 hppa
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada
@@ -76,7 +78,7 @@ DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.9.jar
 ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-i386}:0 ${ECJ}:1 \
-		${ADASTRAP-sparc64}:0
+		${ADASTRAP-sparc64}:0 ${ADASTRAP-hppa}:0
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 BUILD_DEPENDS +=	devel/bison \
@@ -239,7 +241,7 @@ post-extract:
 .endfor
 .for f in gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
-	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/e$f "$$@"' >>${WRKDIR}/bin/$f
+	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
 	rm -rf ${WRKDIR}/bootstrap/lib/gcc/*-unknown-openbsd*/$V/include-fixed

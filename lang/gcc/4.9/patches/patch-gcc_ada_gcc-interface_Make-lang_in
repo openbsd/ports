@@ -1,6 +1,24 @@
-$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
---- gcc/ada/gcc-interface/Make-lang.in.orig	Thu Dec 12 23:50:07 2013
-+++ gcc/ada/gcc-interface/Make-lang.in	Fri Feb 14 21:33:08 2014
+$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.2 2015/02/17 12:04:44 tobiasu Exp $
+--- gcc/ada/gcc-interface/Make-lang.in.orig	Tue Mar 11 00:58:30 2014
++++ gcc/ada/gcc-interface/Make-lang.in	Sat Feb 14 14:43:08 2015
+@@ -774,7 +774,7 @@ ada.install-common:
+ 	-if [ -f gnat1$(exeext) ] ; \
+ 	then \
+ 	  for tool in $(ADA_TOOLS) ; do \
+-	    install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	    install_name=$$tool$(exeext); \
+ 	    $(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	    if [ -f $$tool-cross$(exeext) ] ; \
+ 	    then \
+@@ -811,7 +811,7 @@ ada.install-plugin:
+ 
+ ada.uninstall:
+ 	for tool in $(ADA_TOOLS) ; do \
+-	  install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	  install_name=$$tool$(exeext); \
+ 	  -$(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	done
+ 	-$(RM) $(DESTDIR)$(tooldir)/bin/gnatdll$(exeext)
 @@ -878,8 +878,8 @@ ada.stagefeedback: stagefeedback-start
  
  lang_checks += check-gnat
