@@ -1,0 +1,21 @@
+$OpenBSD: patch-faces_man,v 1.1 2015/02/17 22:11:41 naddy Exp $
+--- faces.man.orig	Wed Dec  2 17:02:23 1992
++++ faces.man	Tue Feb 17 23:04:51 2015
+@@ -590,7 +590,7 @@ and there should be a trailing blank line. Here is a t
+ .sp 0.5
+ .nf
+ X-Face: *7O.<19S{MCsaxxe=iCc*y5!i:>e,K40m^btp"<`~gNx5>o?eJMzUng=j]%KybY
+-	\/VaZ/3a4pD%#rGu7D<M$.TDpaDN8#8eJC&^^&Mr]@~}Pa,*F-ePrMg5.}e,,bu
++	\e/VaZ/3a4pD%#rGu7D<M$.TDpaDN8#8eJC&^^&Mr]@~}Pa,*F-ePrMg5.}e,,bu
+ 	qROdT{Vzn{!ouXy.&*#V#Q&Zf7a8lX2Kb}"$UT^VhnsJ?){wFU5r+,duO>4@L
+ .sp 1.5
+ .fi
+@@ -618,7 +618,7 @@ each line. There is also no trailing blank line. Here'
+ .sp 0.5
+ .nf
+ *7O.<19S{MCsaxxe=iCc*y5!i:>e,K40m^btp"<`~gNx5>o?eJMzUng=j]%KybY
+-\/VaZ/3a4pD%#rGu7D<M$.TDpaDN8#8eJC&^^&Mr]@~}Pa,*F-ePrMg5.}e,,bu
++\e/VaZ/3a4pD%#rGu7D<M$.TDpaDN8#8eJC&^^&Mr]@~}Pa,*F-ePrMg5.}e,,bu
+ qROdT{Vzn{!ouXy.&*#V#Q&Zf7a8lX2Kb}"$UT^VhnsJ?){wFU5r+,duO>4@L
+ .sp 1.5
+ .fi 

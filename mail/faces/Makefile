@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/01/23 22:33:57 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2015/02/17 22:11:41 naddy Exp $
 
 COMMENT=	visual mail, user and print face server
 
 DISTNAME=	faces-1.6.1
-REVISION =	1
+REVISION=	2
 SHARED_LIBS=	compface	1.0
 CATEGORIES=	mail
 
@@ -13,8 +13,6 @@ WANTLIB=		X11 c pthread-stubs xcb
 
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/faces-1.6.1/
 EXTRACT_SUFX=	.tar.Z
-
-USE_GROFF =	Yes
 
 WRKDIST=	$(WRKDIR)/faces
 
