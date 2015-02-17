@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/11/14 17:39:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/02/17 17:18:21 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -16,7 +16,7 @@ PKGNAME-gdbm =		ruby20-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby20-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby20-ri_docs-${VERSION}.${PATCHLEVEL}
 
-REVISION-main =		0
+REVISION-main =		1
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
@@ -28,6 +28,7 @@ BUILD_DEPENDS =		shells/bash
 CONFIGURE_ARGS =	--program-suffix=20 \
 			--with-soname=ruby20 \
 			--with-ruby-version=minor \
+			--with-mantype=doc \
 			--enable-pthread \
 			--enable-ipv6 \
 			--disable-option-checking
@@ -40,8 +41,6 @@ CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ./configure
 
 ALL_TARGET =		V=1 main
 INSTALL_TARGET =	V=1 install-nodoc
-
-USE_GROFF =		Yes
 
 WANTLIB-main =		c crypto ffi m ncurses ncursesw pthread readline ssl \
 			termcap util yaml z
@@ -88,7 +87,7 @@ SUBST_VARS +=		RUBYLIBREV
 TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 pre-install:
-	find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm
+	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
 do-test:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/15 11:36:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2015/02/17 17:18:22 jeremy Exp $
 
 BROKEN-mips64 =		miniruby spins on rbconfig.rb
 
@@ -17,6 +17,8 @@ PKGNAME-gdbm =		ruby21-gdbm-${VERSION}
 PKGNAME-tk =		ruby21-tk-${VERSION}
 PKGNAME-ri_docs =	ruby21-ri_docs-${VERSION}
 
+REVISION-main =		0
+
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
 
@@ -26,6 +28,7 @@ PKGSPEC-main =		ruby->=${RUBYLIBREV},<${NEXTVER}
 CONFIGURE_ARGS =	--program-suffix=21 \
 			--with-soname=ruby21 \
 			--with-ruby-version=minor \
+			--with-mantype=doc \
 			--enable-pthread \
 			--enable-ipv6 \
 			--disable-option-checking
@@ -39,8 +42,6 @@ MAKE_ENV =		DLDFLAGS="-I${LOCALBASE}/lib"
 
 ALL_TARGET =		V=1 main
 INSTALL_TARGET =	V=1 install-nodoc
-
-USE_GROFF =		Yes
 
 WANTLIB-main =		c crypto ffi gmp m ncurses pthread readline ssl \
 			util yaml z
@@ -90,7 +91,7 @@ SUBST_VARS +=		VERSION RUBYLIBREV
 TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 pre-install:
-	find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm
+	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 
 do-test:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/11/14 17:40:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.50 2015/02/17 17:18:21 jeremy Exp $
 
 BROKEN-alpha =		miniruby abort trap when generating rdoc
 
@@ -19,7 +19,7 @@ PKGNAME-dbm =		ruby-dbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby-ri_docs-${VERSION}.${PATCHLEVEL}
 
-REVISION-main =		0
+REVISION-main =		1
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
@@ -28,6 +28,7 @@ PKGSPEC-main =		ruby->=1.9,<1.10
 
 CONFIGURE_ARGS =	--program-suffix=19 \
 			--with-soname=ruby19 \
+			--with-mantype=doc \
 			--enable-pthread \
 			--enable-ipv6 \
 			--disable-option-checking
@@ -40,7 +41,6 @@ ALL_TARGET =		V=1 main
 INSTALL_TARGET =	V=1 install-nodoc
 
 MODULES =		converters/libiconv
-USE_GROFF =		Yes
 
 WANTLIB-main =		c crypto ffi m ncurses ncursesw pthread readline ssl \
 			termcap util yaml z ${MODLIBICONV_WANTLIB}
