@@ -1,6 +1,6 @@
-$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.12 2014/11/14 06:18:42 brad Exp $
+$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.13 2015/02/17 01:23:11 brad Exp $
 --- DOCS/man/en/mplayer.1.orig	Mon Nov  3 01:29:02 2014
-+++ DOCS/man/en/mplayer.1	Mon Nov  3 01:34:51 2014
++++ DOCS/man/en/mplayer.1	Mon Feb 16 20:12:27 2015
 @@ -1546,7 +1546,7 @@ May be negative.
  .
  .TP
@@ -10,6 +10,15 @@ $OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.12 2014/11/14 06:18:42 brad Exp $
  .
  .TP
  .B \-channels <number> (also see \-af channels)
+@@ -12252,7 +12252,7 @@ mplayer dvd://1 \-dvdangle 2
+ .PP
+ .B Play from a different DVD device:
+ .nf
+-mplayer dvd://1 \-dvd\-device /dev/\:dvd2
++mplayer dvd://1 \-dvd\-device /dev/rcd2c
+ .fi
+ .
+ .PP
 @@ -12318,11 +12318,11 @@ mplayer \-vo zr2 \-vf scale=352:288,zrmjpeg file.avi
  .PP
  .B Play DTS-CD with passthrough:
