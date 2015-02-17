@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.8 2015/02/17 20:19:05 naddy Exp $
 
 BROKEN-i386= java
 
 COMMENT=		Scheme and language framework for the Java platform
 
 DISTNAME=		kawa-1.13
-REVISION=		2
+REVISION=		3
 CATEGORIES=		lang java
 
 HOMEPAGE=		https://www.gnu.org/software/kawa/
@@ -19,7 +19,6 @@ MODULES=		java
 MODJAVA_VER=		1.6+
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 
 WANTLIB += c ncurses readline
 
