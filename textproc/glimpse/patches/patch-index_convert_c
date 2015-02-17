@@ -1,7 +1,7 @@
-$OpenBSD: patch-index_convert_c,v 1.1 2003/04/25 20:25:14 avsm Exp $
---- index/convert.c.orig	Sat Apr 19 17:37:47 2003
-+++ index/convert.c	Sat Apr 19 17:38:07 2003
-@@ -791,7 +791,7 @@ change_format(InputFilenames, ReadIntoMe
+$OpenBSD: patch-index_convert_c,v 1.2 2015/02/17 22:52:51 naddy Exp $
+--- index/convert.c.orig	Thu Nov 21 21:42:06 1996
++++ index/convert.c	Tue Feb 17 23:52:13 2015
+@@ -791,7 +791,7 @@ change_format(InputFilenames, ReadIntoMemory, InputTyp
  			sprintf(s, "mv -f %s %s", outname, realname);
  			if (system(s) == -1) fprintf(stderr, "Errno=%d -- could not execute: %s\n", errno, s);
  #else

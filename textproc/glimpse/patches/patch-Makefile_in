@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/01/04 18:42:42 espie Exp $
---- Makefile.in.orig	2004-01-04 19:38:04.000000000 +0100
-+++ Makefile.in	2004-01-04 19:38:10.000000000 +0100
-@@ -32,7 +32,7 @@ TEMPLATESRC     = $(srcdir)/$(TEMPLATEDI
+$OpenBSD: patch-Makefile_in,v 1.2 2015/02/17 22:52:51 naddy Exp $
+--- Makefile.in.orig	Thu Nov 21 03:28:42 1996
++++ Makefile.in	Tue Feb 17 23:52:13 2015
+@@ -32,7 +32,7 @@ TEMPLATESRC     = $(srcdir)/$(TEMPLATEDIR)
  COMPRESSDIR	= compress
  COMPRESSSRC	= $(srcdir)/$(COMPRESSDIR)
  
