@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/24 23:10:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/02/17 18:02:42 zhuk Exp $
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
-GH_ACCOUNT =		Emdek
-GH_PROJECT =		otter
+GH_ACCOUNT =		OtterBrowser
+GH_PROJECT =		otter-browser
 GH_TAGNAME =		v0.9.04
 # This is the actual tagged revision
 # GH_COMMIT =		869d29d19719b3057e137a79d4a10025d2c920f6
@@ -12,8 +12,7 @@ GH_TAGNAME =		v0.9.04
 # as it's considered an important fix affecting the majority of users
 GH_COMMIT =		23d7ee6f9cd636e750687a01975b177c1c9c2e53
 
-PKGNAME =		otter-browser-0.9.04
-DISTNAME =		${PKGNAME}
+DISTNAME =		${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 
 CATEGORIES =		www
 
