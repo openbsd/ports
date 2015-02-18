@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/06 08:22:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/02/18 18:06:59 naddy Exp $
 
 COMMENT=		C-based regular expression scanner generator
 
 DISTNAME=		re2c-0.13.6
+REVISION=		0
 CATEGORIES=		devel
 HOMEPAGE=		http://re2c.org/
 
@@ -16,6 +17,5 @@ WANTLIB += c m stdc++
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=re2c/}
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
