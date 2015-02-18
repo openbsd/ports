@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_backend_libpq_ip_c,v 1.1 2015/02/18 17:49:56 jca Exp $
+
+Use the address family from the address, not from the netmask,
+since the latter is unreliable. Fixes "samenet"/"samehost".
+
+--- src/backend/libpq/ip.c.orig	Mon Feb 16 23:36:42 2015
++++ src/backend/libpq/ip.c	Mon Feb 16 23:47:56 2015
+@@ -496,17 +496,16 @@ run_ifaddr_callback(PgIfAddrCallback callback, void *c
+ 	/* Check that the mask is valid */
+ 	if (mask)
+ 	{
+-		if (mask->sa_family != addr->sa_family)
++
++		/* mask->sa_family can be different from addr->sa_family. */
++
++		if (addr->sa_family == AF_INET)
+ 		{
+-			mask = NULL;
+-		}
+-		else if (mask->sa_family == AF_INET)
+-		{
+ 			if (((struct sockaddr_in *) mask)->sin_addr.s_addr == INADDR_ANY)
+ 				mask = NULL;
+ 		}
+ #ifdef HAVE_IPV6
+-		else if (mask->sa_family == AF_INET6)
++		else if (addr->sa_family == AF_INET6)
+ 		{
+ 			if (IN6_IS_ADDR_UNSPECIFIED(&((struct sockaddr_in6 *) mask)->sin6_addr))
+ 				mask = NULL;
