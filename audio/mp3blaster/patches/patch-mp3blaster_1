@@ -1,0 +1,14 @@
+$OpenBSD: patch-mp3blaster_1,v 1.1 2015/02/18 16:15:37 naddy Exp $
+--- mp3blaster.1.orig	Sat Jan 24 16:25:12 2009
++++ mp3blaster.1	Wed Feb 18 17:12:45 2015
+@@ -281,8 +281,8 @@ Some keywords can have multiple values, in that case i
+ .TP
+ \fBKeyword\fR = \fBValue1\fR, \fBValue2\fR
+ .PP
+-Escape comma's in a value with a backslash (\,). If you want a litteral
+-backslash, escape it with another backslash (\\). Keywords are case-sensitive.
++Escape commas in a value with a backslash (\e,). If you want a litteral
++backslash, escape it with another backslash (\e\e). Keywords are case-sensitive.
+ .PP
+ There are a few types of values: numbers, booleans, keybindings, colours,
+ and everything else is a string. The syntax of these types are:
