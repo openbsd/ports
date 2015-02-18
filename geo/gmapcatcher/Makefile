@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.23 2015/02/18 20:00:21 naddy Exp $
 
 BROKEN=		triggers unlocking a mutex which is not locked (bug probably in py-gtk2, but some other py-gtk2 ports do still work)
 
@@ -28,8 +28,6 @@ RUN_DEPENDS=	x11/py-gtk2 \
 		databases/py-sqlite2 \
 		graphics/py-Pillow \
 		devel/desktop-file-utils
-
-USE_GROFF=	Yes
 
 NO_TEST=	Yes
 
