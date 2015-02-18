@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.214 2015/02/10 12:22:05 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.215 2015/02/18 12:21:37 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -549,6 +549,7 @@ sub filter_obsolete
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
 			    $msg[$reason]);
 		} else {
+			$state->say("Not obsolete: #1", $pkgname);
 			push(@$list, $pkgname);
 		}
 	}
@@ -594,6 +595,7 @@ my $cve = {
 	'shells/bash' => 'bash-<4.3.27',
 	'www/drupal7/core' => 'drupal->=7.0,<7.32',
 	'audio/flac' => 'flac-<1.3.0p1',
+	'www/drupal6/views' => 'drupal6-views-<2.18',
 };
 
 # ->check_security($path)
