@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2014/04/27 09:28:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/02/18 12:51:31 sthen Exp $
 
 COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
 DISTNAME=	netbsd-iscsi-20111006
 PKGNAME=	${DISTNAME:S/-iscsi/-iscsi-target/}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net sysutils
-
-MAINTAINER=	Roman Kravchuk <kravchuk.kp@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
