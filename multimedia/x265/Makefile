@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/02/17 01:28:01 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/18 03:59:26 brad Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_or_4'
@@ -38,7 +38,9 @@ BUILD_DEPENDS+=	devel/yasm
 .endif
 
 SEPARATE_BUILD=	Yes
+CONFIGURE_ARGS=	-DENABLE_TESTS=On
 
-NO_TEST=	Yes
+do-test:
+	${WRKBUILD}/test/TestBench
 
 .include <bsd.port.mk>
