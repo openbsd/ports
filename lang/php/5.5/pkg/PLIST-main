@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/11/06 20:22:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2015/02/19 20:14:41 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.5,<5.6
 @conflict php5-core->=5.2
@@ -233,6 +233,7 @@ share/php-${PV}/include/ext/mysqlnd/mysqlnd_reverse_api.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_statistics.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_structs.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_wireprotocol.h
+share/php-${PV}/include/ext/mysqlnd/mysql_float_to_double.h
 share/php-${PV}/include/ext/mysqlnd/php_mysqlnd.h
 share/php-${PV}/include/ext/mysqlnd/php_mysqlnd_config.h
 share/php-${PV}/include/ext/pcre/

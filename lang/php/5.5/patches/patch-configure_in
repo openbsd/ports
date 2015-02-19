@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
---- configure.in.orig.port	Sat Jul 27 18:41:49 2013
-+++ configure.in	Sat Jul 27 18:43:26 2013
-@@ -1025,16 +1025,16 @@ case $php_sapi_module in
+$OpenBSD: patch-configure_in,v 1.2 2015/02/19 20:14:41 sthen Exp $
+--- configure.in.orig.port	Wed Feb 18 15:39:54 2015
++++ configure.in	Thu Feb 19 14:23:11 2015
+@@ -1039,16 +1039,16 @@ case $php_sapi_module in
      enable_static=no
      case $with_pic in
        yes)
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1225,7 +1225,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1239,7 +1239,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
