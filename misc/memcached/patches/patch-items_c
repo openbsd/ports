@@ -1,9 +1,6 @@
-$OpenBSD: patch-items_c,v 1.8 2014/11/04 15:11:05 giovanni Exp $
+$OpenBSD: patch-items_c,v 1.9 2015/02/19 08:01:59 giovanni Exp $
 
 printf format string fix for long long time_t
-
-and fix buffer-overrun when logging keys (CVE-2013-0179)
-https://github.com/memcached/memcached/commit/fbe823d9a61b5149cd6e3b5e17bd28dd3b8dd760
 
 --- items.c.orig	Mon Oct 13 05:33:10 2014
 +++ items.c	Fri Oct 31 14:56:50 2014

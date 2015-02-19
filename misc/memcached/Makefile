@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2014/11/04 21:16:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/02/19 08:01:59 giovanni Exp $
 
 COMMENT=	distributed memory object caching system
 
 DISTNAME=	memcached-1.4.21
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.memcached.org/
@@ -21,7 +21,7 @@ FLAVORS=	sasl
 MASTER_SITES=		http://memcached.org/files/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--with-libevent=/usr \
 			--disable-coverage \
