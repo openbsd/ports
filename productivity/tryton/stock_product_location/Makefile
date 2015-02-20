@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2014/04/29 08:05:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/02/20 04:30:07 ajacoutot Exp $
+
+MODPY_EGG_VERSION =	3.2.1
 
 TRYTOND_MODULE =	stock_product_location
 
