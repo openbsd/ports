@@ -1,6 +1,6 @@
-$OpenBSD: patch-config,v 1.9 2013/01/07 22:13:40 dcoppa Exp $
---- config.orig	Tue Oct 20 22:54:35 2009
-+++ config	Sun Jul  8 19:36:28 2012
+$OpenBSD: patch-config,v 1.10 2015/02/20 08:17:30 dcoppa Exp $
+--- config.orig	Thu Jan 15 19:58:20 2015
++++ config	Tue Feb 10 21:14:38 2015
 @@ -3,9 +3,9 @@
  # Default installation prefix
 -PREFIX=/usr/local
