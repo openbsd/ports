@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/02/12 08:26:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/02/20 07:09:19 jasper Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/elasticsearch/*
@@ -10,7 +10,7 @@ elasticsearch/lib/
 elasticsearch/lib/antlr-runtime-3.5.jar
 elasticsearch/lib/asm-4.1.jar
 elasticsearch/lib/asm-commons-4.1.jar
-elasticsearch/lib/elasticsearch-1.4.3.jar
+elasticsearch/lib/elasticsearch-1.4.4.jar
 elasticsearch/lib/groovy-all-2.3.2.jar
 elasticsearch/lib/jna-4.1.0.jar
 elasticsearch/lib/jts-1.13.jar
