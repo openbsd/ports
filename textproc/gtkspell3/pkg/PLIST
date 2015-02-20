@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/25 10:14:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/02/20 04:16:20 ajacoutot Exp $
 include/gtkspell-3.0/
 include/gtkspell-3.0/gtkspell/
 include/gtkspell-3.0/gtkspell/gtkspell.h
@@ -7,7 +7,6 @@ lib/girepository-1.0/GtkSpell-3.0.typelib
 lib/libgtkspell3-3.a
 lib/libgtkspell3-3.la
 @lib lib/libgtkspell3-3.so.${LIBgtkspell3-3_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gtkspell3-3.0.pc
 share/gir-1.0/
 share/gir-1.0/GtkSpell-3.0.gir
