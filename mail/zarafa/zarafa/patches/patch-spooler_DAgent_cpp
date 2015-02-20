@@ -1,6 +1,6 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.24 2014/09/02 11:09:38 robert Exp $
---- spooler/DAgent.cpp.orig	Sun Aug 24 12:27:06 2014
-+++ spooler/DAgent.cpp	Mon Sep  1 20:07:29 2014
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.25 2015/02/20 14:44:42 robert Exp $
+--- spooler/DAgent.cpp.orig	Sun Aug 24 04:27:06 2014
++++ spooler/DAgent.cpp	Fri Feb 20 07:38:20 2015
 @@ -97,6 +97,11 @@
  #include <sys/mman.h>
  #include <pwd.h>
@@ -32,6 +32,15 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.24 2014/09/02 11:09:38 robert Exp $
  	}
  	if (WriteOrLogError(fd, szHeader, strlen(szHeader)) != hrSuccess)
  		goto exit;
+@@ -3462,7 +3473,7 @@ int main(int argc, char *argv[]) {
+ 
+ 	DeliveryArgs sDeliveryArgs;
+ 	sDeliveryArgs.strPath = "";
+-	sDeliveryArgs.strAutorespond = "/usr/bin/zarafa-autorespond";
++	sDeliveryArgs.strAutorespond = "/usr/local/bin/zarafa-autorespond";
+ 	sDeliveryArgs.bCreateFolder = false;
+ 	sDeliveryArgs.strDeliveryFolder.clear();
+ 	sDeliveryArgs.szPathSeperator = '\\';
 @@ -3527,10 +3538,10 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
