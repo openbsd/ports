@@ -1,6 +1,15 @@
-$OpenBSD: patch-honeyd_8,v 1.3 2007/07/25 22:27:01 rui Exp $
---- honeyd.8.orig	Mon May 28 07:05:05 2007
-+++ honeyd.8	Wed Jul 18 11:55:08 2007
+$OpenBSD: patch-honeyd_8,v 1.4 2015/02/20 16:55:36 naddy Exp $
+--- honeyd.8.orig	Mon May 28 08:05:05 2007
++++ honeyd.8	Fri Feb 20 17:53:50 2015
+@@ -110,7 +110,7 @@ specified by
+ Read
+ .Nm nmap
+ style fingerprints.  The names defined after the
+-.va Fingerprint
++.Va Fingerprint
+ token are stored as personalities.
+ The personalities can be used in the configuration file to modify the
+ behaviour of the simulated TCP stack.
 @@ -574,7 +574,7 @@ add template tcp port 80 "sh scripts/web.sh"
  add template tcp port 22 "sh scripts/test.sh $ipsrc $dport"
  add template udp port 53 proxy yournameserver:53
