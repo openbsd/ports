@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2015/02/21 00:01:20 schwarze Exp $
 
 COMMENT=		ICQ console client with encryption support
 
 DISTNAME=		ysmv7_2_9_9_1
 PKGNAME=		${DISTNAME:S/_/-/:S/_/./g}
 CATEGORIES=		net
+REVISION=		0
 
 HOMEPAGE=		http://ysmv7.sourceforge.net/
 
@@ -20,7 +21,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
