@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/12/06 11:32:56 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/02/22 16:49:40 rpe Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-galaxy
@@ -910,6 +910,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/su_prompts.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/su_prompts.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/unicode.py
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/unicode.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/vault.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/vault.pyc
 @man man/man1/ansible-doc.1
