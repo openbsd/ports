@@ -1,0 +1,12 @@
+$OpenBSD: patch-JPEG_Makefile_PL,v 1.1 2015/02/22 15:27:44 sthen Exp $
+--- JPEG/Makefile.PL.orig	Sat Feb 21 22:18:15 2015
++++ JPEG/Makefile.PL	Sat Feb 21 22:18:16 2015
+@@ -8,7 +8,7 @@ use Tk::MMtry;
+ 
+ if ($Tk::MMtry::VERSION ge '4.007' && try_run("config/has_jpeg.c",['-I/usr/local/include'],['-ljpeg']))
+  {
+-  push(@args, LIBS => ['-ljpeg'],
++  push(@args, LIBS => ['-L/usr/local/lib -ljpeg'],
+               INC  => '-I/usr/local/include',
+               DEFINE => '-DHAVE_JPEGLIB_H',
+       );
