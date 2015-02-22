@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2015/02/22 05:58:34 robert Exp $
+# $OpenBSD: Makefile,v 1.203 2015/02/22 11:33:57 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -7,6 +7,7 @@ COMMENT=		Chromium browser
 
 V=			40.0.2214.115
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -157,13 +158,10 @@ do-configure:
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
-	${CC} ${CLAGS} -o ${BUILDDIR}/gpuid -I${X11BASE}/include \
-		-L${X11BASE}/lib ${FILESDIR}/gpuid.c -lGL
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome
 	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/chrome
-	${INSTALL_PROGRAM} ${BUILDDIR}/gpuid ${PREFIX}/chrome
 	${SUBST_PROGRAM} ${FILESDIR}/chrome ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 

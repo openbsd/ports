@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.45 2015/02/15 19:51:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.46 2015/02/22 11:33:57 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
 @bin chrome/chrome
 chrome/chrome_100_percent.pak
 chrome/content_resources.pak
-@bin chrome/gpuid
 chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/libexif.so

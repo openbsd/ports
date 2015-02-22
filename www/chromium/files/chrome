@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.12 2015/02/15 19:51:28 robert Exp $
+# $OpenBSD: chrome,v 1.13 2015/02/22 11:33:57 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -39,7 +39,5 @@ fi
 # https://code.google.com/p/chromium/issues/detail?id=395446
 #
 [ -z ${LANG} ] && _l=en_US.UTF-8 || _l=${LANG}
-
-eval `/usr/local/chrome/gpuid`
 
 LANG=${_l} exec "/usr/local/chrome/chrome" "${@}"
