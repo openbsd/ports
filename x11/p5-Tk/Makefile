@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2015/02/22 15:27:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2015/02/22 17:15:17 nigel Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ MODULES=	cpan
 VERSION=	804.033
 DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
+REVISION-main=	0
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
 CATEGORIES=	x11 devel
 
@@ -19,8 +20,9 @@ MULTI_PACKAGES=	-main -demo
 
 MAKE_FLAGS=	OPTIMIZE="${CFLAGS}"
 
-WANTLIB-main=	${WANTLIB} X11 m z png
-LIB_DEPENDS-main= graphics/png
+WANTLIB-main=	${WANTLIB} X11 m jpeg z png
+LIB_DEPENDS-main =	graphics/jpeg \
+			graphics/png
 
 WANTLIB-demo=
 
