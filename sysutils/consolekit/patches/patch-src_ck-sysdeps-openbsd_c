@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.18 2014/11/27 09:38:22 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Thu Nov 27 10:30:57 2014
-+++ src/ck-sysdeps-openbsd.c	Thu Nov 27 10:32:12 2014
-@@ -0,0 +1,471 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.19 2015/02/25 10:35:06 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Wed Feb 25 07:05:22 2015
++++ src/ck-sysdeps-openbsd.c	Wed Feb 25 07:07:52 2015
+@@ -0,0 +1,467 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
@@ -133,17 +133,13 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.18 2014/11/27 09:38:22 ajacoutot Ex
 +        size_t len;
 +
 +        int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
-+                      sizeof(struct kinfo_proc), 0 };
++                      sizeof(struct kinfo_proc), 1 };
 +
 +#ifndef nitems
 +#define nitems(_a)      (sizeof((_a)) / sizeof((_a)[0]))
 +#endif
 +
-+        if (sysctl(mib, nitems(mib), NULL, &len, NULL, 0) < 0)
-+            return FALSE;
-+
-+        mib[5] = (len / sizeof(struct kinfo_proc));
-+
++        len = sizeof(*p);
 +        if (sysctl(mib, nitems(mib), p, &len, NULL, 0) < 0)
 +            return FALSE;
 +

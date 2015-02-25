@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2014/11/27 09:38:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2015/02/25 10:35:06 ajacoutot Exp $
 
 # NOTE: spam in /var/log/authlog is "expected"
 # http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=678506
@@ -10,7 +10,7 @@ COMMENT=	framework for defining and tracking users
 DISTNAME=	ConsoleKit-0.4.6
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${DISTNAME:L}
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	sysutils	
 
