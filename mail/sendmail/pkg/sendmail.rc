@@ -1,8 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: sendmail.rc,v 1.1.1.1 2014/09/16 17:09:32 jca Exp $
+# $OpenBSD: sendmail.rc,v 1.2 2015/02/25 15:07:38 jca Exp $
 
 daemon="${TRUEPREFIX}/libexec/sendmail/sendmail"
+daemon_flags="-L sm-mta -C${SYSCONFDIR}/mail/localhost.cf -bd -q30m"
 
 . /etc/rc.d/rc.subr
 

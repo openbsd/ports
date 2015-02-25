@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/02/20 14:39:18 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/02/25 15:07:38 jca Exp $
 @newgroup _smmsp:745
 @newuser _smmsp:745:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
 @bin libexec/mail.local
@@ -12,9 +12,9 @@ libexec/sendmail/
 @owner
 @group
 @bin libexec/smrsh
-@man man/man1/mailq.1
-@man man/man1/newaliases.1
-@man man/man5/aliases.5
+@man man/man1/sendmail-mailq.1
+@man man/man1/sendmail-newaliases.1
+@man man/man5/sendmail-aliases.5
 @man man/man8/editmap.8
 @man man/man8/mail.local.8
 @man man/man8/mailstats.8
