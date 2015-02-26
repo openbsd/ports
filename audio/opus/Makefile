@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/16 19:56:09 miod Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/26 14:56:40 sthen Exp $
 
 # invalid use of `restrict'
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -28,8 +28,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-maintainer-mode
 CONFIGURE_ARGS+=--disable-doc	# requires doxygen
 
-.if ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS+=--enable-fixed-point
-.endif
+# fixed-point asm code requires EABI.
+#.if ${MACHINE_ARCH} == "arm"
+#CONFIGURE_ARGS+=--enable-fixed-point
+#.endif
 
 .include <bsd.port.mk>
