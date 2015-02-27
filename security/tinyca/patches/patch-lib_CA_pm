@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_CA_pm,v 1.1 2015/02/27 17:24:44 jca Exp $
+--- lib/CA.pm.orig	Sat Feb 21 18:36:47 2015
++++ lib/CA.pm	Sat Feb 21 18:37:21 2015
+@@ -1392,7 +1392,7 @@ sub _rm_dir {
+          unlink($dir."/".$f);
+       }
+    }
+-   closedir(DIR);
++   closedir($dirh);
+ 
+    rmdir($dir);
+    
