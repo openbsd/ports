@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/01 10:44:05 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2015/02/27 17:32:52 jca Exp $
+
+BROKEN =		affected by CVE-2014-8143 and CVE-2015-0240
 
 SHARED_ONLY =		Yes
 VERSION =		4.0.22
