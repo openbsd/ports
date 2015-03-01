@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.9 2014/06/26 00:30:16 sthen Exp $
---- doc/Makefile.in.orig	Mon Jun 23 16:16:46 2014
-+++ doc/Makefile.in	Tue Jun 24 15:23:16 2014
-@@ -351,7 +351,7 @@ gnupg1_TEXINFOS = gnupg1.texi
+$OpenBSD: patch-doc_Makefile_in,v 1.10 2015/03/01 12:12:54 jca Exp $
+--- doc/Makefile.in.orig	Fri Feb 27 09:37:51 2015
++++ doc/Makefile.in	Fri Feb 27 22:39:17 2015
+@@ -422,7 +422,7 @@ gnupg1_TEXINFOS = gnupg1.texi
  
  # Need this to avoid building of dvis with automake 1.4
  DVIS = 

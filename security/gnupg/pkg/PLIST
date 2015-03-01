@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2014/06/26 00:30:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2015/03/01 12:12:55 jca Exp $
 @option no-default-conflict
 @conflict gnupg-<2
 @pkgpath ${BASE_PKGPATH},idea
@@ -14,7 +14,6 @@ libexec/gnupg/
 @man man/man1/gpg-zip.1
 @man man/man1/gpg.1
 @man man/man1/gpgv.1
-@man man/man7/gnupg.7
 share/doc/gnupg/
 share/doc/gnupg/AUTHORS
 share/doc/gnupg/BUGS
