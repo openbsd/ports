@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/14 20:53:36 jturner Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
-DISTNAME =		trojita-0.4.1
+DISTNAME =		trojita-0.5
 
 CATEGORIES =		mail x11
 
-SHARED_LIBS =		trojita_plugins	0.0 # 0.0
+SHARED_LIBS =		trojita_plugins	1.0 # 1.0
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
@@ -17,8 +17,8 @@ EXTRACT_SUFX =		.tar.bz2
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
-WANTLIB +=		lib/qt4/QtWebKit c m pthread z X11
+WANTLIB += 		lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB +=		lib/qt4/QtSql lib/qt4/QtWebKit c m pthread z X11
 
 MODULES =		devel/cmake gcc4 x11/qt4
 

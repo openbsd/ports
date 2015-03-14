@@ -1,28 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/09 20:54:07 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/14 20:53:36 jturner Exp $
 @bin bin/be.contacts
 @bin bin/trojita
 @lib lib/libtrojita_plugins.so.${LIBtrojita_plugins_VERSION}
+share/appdata/
+share/appdata/trojita.appdata.xml
 share/applications/trojita.desktop
 share/icons/hicolor/32x32/apps/trojita.png
 share/icons/hicolor/scalable/apps/trojita.svg
 share/trojita/
 share/trojita/locale/
+share/trojita/locale/trojita_common_ar.qm
 share/trojita/locale/trojita_common_bs.qm
+share/trojita/locale/trojita_common_ca.qm
 share/trojita/locale/trojita_common_cs.qm
 share/trojita/locale/trojita_common_da.qm
 share/trojita/locale/trojita_common_de.qm
 share/trojita/locale/trojita_common_el.qm
+share/trojita/locale/trojita_common_en_GB.qm
 share/trojita/locale/trojita_common_es.qm
 share/trojita/locale/trojita_common_et.qm
+share/trojita/locale/trojita_common_fi.qm
 share/trojita/locale/trojita_common_fr.qm
 share/trojita/locale/trojita_common_ga.qm
 share/trojita/locale/trojita_common_gl.qm
 share/trojita/locale/trojita_common_hu.qm
 share/trojita/locale/trojita_common_ia.qm
 share/trojita/locale/trojita_common_it.qm
+share/trojita/locale/trojita_common_ja.qm
 share/trojita/locale/trojita_common_lt.qm
 share/trojita/locale/trojita_common_mr.qm
 share/trojita/locale/trojita_common_nb.qm
+share/trojita/locale/trojita_common_nds.qm
 share/trojita/locale/trojita_common_nl.qm
 share/trojita/locale/trojita_common_pl.qm
 share/trojita/locale/trojita_common_pt.qm
@@ -33,7 +41,6 @@ share/trojita/locale/trojita_common_sv.qm
 share/trojita/locale/trojita_common_tr.qm
 share/trojita/locale/trojita_common_ug.qm
 share/trojita/locale/trojita_common_uk.qm
-share/trojita/locale/trojita_common_x_test.qm
 share/trojita/locale/trojita_common_zh_CN.qm
 share/trojita/locale/trojita_common_zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
