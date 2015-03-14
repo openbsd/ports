@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/03/14 20:52:46 naddy Exp $
 
 COMMENT=		IPv4/IPv6 traffic collector
 
 DISTNAME=		cnupm-3.11
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net
 
 HOMEPAGE=		http://pdp-11.org.ru/~form/cnupm
@@ -20,8 +20,8 @@ FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR:Mstatic}
-LDSTATIC=		-static
-MAKE_ENV+=		LDSTATIC=${LDSTATIC}
+LDSTATIC=		${STATIC}
+MAKE_ENV+=		LDSTATIC="${LDSTATIC}"
 .else
 WANTLIB=		c pcap
 .endif

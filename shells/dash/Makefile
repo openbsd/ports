@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/06 21:41:41 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/14 20:52:46 naddy Exp $
 
 COMMENT =		Debian Almquist shell, POSIX-compliant
 
 DISTNAME =		dash-0.5.8
+REVISION =		0
 CATEGORIES =		shells
 
 HOMEPAGE =		http://gondor.apana.org.au/~herbert/dash/
@@ -29,7 +30,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mstatic}
 # --enable-static will fail because it also brings --Wl,--fatal-warnings
-CONFIGURE_ENV +=	LDFLAGS="-static"
+CONFIGURE_ENV +=	LDFLAGS="${STATIC}"
 .endif
 
 .include <bsd.port.mk>

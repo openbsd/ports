@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/16 10:44:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/14 20:52:47 naddy Exp $
 
 COMMENT=	tiny cgi web script handler using shell or Lua
 
 DISTNAME=	haserl-0.9.33
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -34,7 +35,7 @@ LIB_DEPENDS=	${MODLUA_LIB_DEPENDS}
 .endif
 
 .if ${FLAVOR:Mstatic}
-LDFLAGS+=	-static
+LDFLAGS+=	${STATIC}
 .endif
 
 .include <bsd.port.mk>

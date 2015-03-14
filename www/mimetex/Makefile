@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/10 10:11:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/14 20:52:47 naddy Exp $
 
 COMMENT=		parse LaTeX math expressions into gif images
 
 DISTNAME=		mimetex-1.65
-REVISION=		1
+REVISION=		2
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.forkosh.com/mimetex.html
@@ -20,8 +20,8 @@ PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/cgi-bin
 
 do-build:
-	cd ${WRKDIST} && ${CC} ${CFLAGS} -static -DAA mimetex.c gifsave.c -lm \
-	    -o ${WRKDIST}/mimetex
+	cd ${WRKDIST} && ${CC} ${CFLAGS} ${STATIC} -DAA mimetex.c gifsave.c \
+	    -lm -o ${WRKDIST}/mimetex
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

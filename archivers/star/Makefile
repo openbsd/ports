@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/02/04 21:16:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/03/14 20:52:46 naddy Exp $
 
 COMMENT=	unique standard tape archiver
 
 DISTNAME=	star-1.5.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	archivers sysutils
 HOMEPAGE=	http://cdrecord.berlios.de/private/star.html
 
@@ -28,7 +28,7 @@ MAKE_FLAGS=	CC="${CC}" CC++="${CXX}" \
 		GMAKE_NOWARN=1
 
 .if ${FLAVOR:Mstatic}
-MAKE_ENV+=	LDOPTX=-static
+MAKE_ENV+=	LDOPTX="${STATIC}"
 .endif
 
 post-patch:

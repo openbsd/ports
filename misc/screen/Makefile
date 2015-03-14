@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2015/03/14 20:52:46 naddy Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
 
 VERSION=	4.0.3
 DISTNAME=	screen-${VERSION}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 
@@ -26,7 +26,7 @@ FLAVORS=	static shm
 FLAVOR?=
 
 .if ${FLAVOR} == "static"
-CONFIGURE_ENV=	LDFLAGS="-static"
+CONFIGURE_ENV=	LDFLAGS="${STATIC}"
 .else
 WANTLIB=	c curses util
 .endif

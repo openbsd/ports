@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2015/01/12 13:10:10 millert Exp $
+# $OpenBSD: Makefile,v 1.53 2015/03/14 20:52:46 naddy Exp $
 
 COMMENT=	extended C-shell with many useful features
 
 DISTNAME=	tcsh-6.18.01
-REVISION=	1
+REVISION=	2
 CATEGORIES=	shells
 HOMEPAGE=	http://www.tcsh.org/
 
@@ -21,7 +21,7 @@ FLAVORS=	static
 FLAVOR?=
 
 .if ${FLAVOR} == "static"
-CONFIGURE_ENV=	LDFLAGS="-static"
+CONFIGURE_ENV=	LDFLAGS="${STATIC}"
 .endif
 
 CONFIGURE_STYLE=gnu

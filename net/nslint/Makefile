@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/14 20:52:46 naddy Exp $
 
 COMMENT=		performs consistency checks on BIND files
 
 DISTNAME=		nslint-2.0.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 MAINTAINER=		Wangden Kelsang <wngdn@src.uchicago.edu>
@@ -16,7 +16,7 @@ FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR} == "static"
-CONFIGURE_ENV+=		LDFLAGS=-static
+CONFIGURE_ENV+=		LDFLAGS="${STATIC}"
 .else
 WANTLIB=		c
 .endif
