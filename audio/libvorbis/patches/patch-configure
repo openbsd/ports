@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.15 2014/01/29 21:36:06 brad Exp $
---- configure.orig	Wed Jan 22 06:10:03 2014
-+++ configure	Mon Jan 27 03:39:10 2014
-@@ -12119,7 +12119,7 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.16 2015/03/14 20:56:14 naddy Exp $
+--- configure.orig	Thu Feb 26 23:09:49 2015
++++ configure	Thu Mar  5 16:51:32 2015
+@@ -12672,7 +12672,7 @@ if test -z "$GCC"; then
  		PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
  	*)
  		DEBUG="-g"
@@ -10,13 +10,13 @@ $OpenBSD: patch-configure,v 1.15 2014/01/29 21:36:06 brad Exp $
  		PROFILE="-g -p" ;;
          esac
  else
-@@ -12263,9 +12263,9 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
- 		CFLAGS="-O20 -Wall -W -ffast-math -D_REENTRANT -fsigned-char"
- 		PROFILE="-pg -g -O20 -ffast-math -D_REENTRANT -fsigned-char";;
+@@ -12816,9 +12816,9 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+ 		CFLAGS="-O3 -Wall -W -ffast-math -D_REENTRANT -fsigned-char"
+ 		PROFILE="-pg -g -O3 -ffast-math -D_REENTRANT -fsigned-char";;
   	*)
 -		DEBUG="-g -Wall -Wextra -D__NO_MATH_INLINES -fsigned-char"
--		CFLAGS="-O20 -Wall -Wextra -D__NO_MATH_INLINES -fsigned-char"
--		PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
+-		CFLAGS="-O3 -Wall -Wextra -D__NO_MATH_INLINES -fsigned-char"
+-		PROFILE="-O3 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
 +		DEBUG="-g -Wall -fsigned-char"
 +		CFLAGS="-Wall -fsigned-char"
 +		PROFILE="-g -pg -fsigned-char" ;;

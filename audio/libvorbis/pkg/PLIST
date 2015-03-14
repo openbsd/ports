@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/03/27 16:37:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/03/14 20:56:14 naddy Exp $
 include/vorbis/
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
@@ -12,15 +12,14 @@ lib/libvorbisenc.la
 lib/libvorbisfile.a
 lib/libvorbisfile.la
 @lib lib/libvorbisfile.so.${LIBvorbisfile_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/vorbis.pc
 lib/pkgconfig/vorbisenc.pc
 lib/pkgconfig/vorbisfile.pc
 share/aclocal/
 share/aclocal/vorbis.m4
 share/doc/libvorbis/
+share/doc/libvorbis/doxygen-build.stamp
 share/doc/libvorbis/eightphase.png
-share/doc/libvorbis/evenlsp.png
 share/doc/libvorbis/fish_xiph_org.png
 share/doc/libvorbis/floor1_inverse_dB_table.html
 share/doc/libvorbis/floorval.png
@@ -74,8 +73,6 @@ share/doc/libvorbis/libvorbis/vorbis_synthesis_read.html
 share/doc/libvorbis/libvorbis/vorbis_synthesis_restart.html
 share/doc/libvorbis/libvorbis/vorbis_synthesis_trackonly.html
 share/doc/libvorbis/libvorbis/vorbis_version_string.html
-share/doc/libvorbis/lspmap.png
-share/doc/libvorbis/oddlsp.png
 share/doc/libvorbis/oggstream.html
 share/doc/libvorbis/programming.html
 share/doc/libvorbis/rfc5215.txt
@@ -87,7 +84,6 @@ share/doc/libvorbis/v-comment.html
 share/doc/libvorbis/vorbis-clip.txt
 share/doc/libvorbis/vorbis-errors.txt
 share/doc/libvorbis/vorbis-fidelity.html
-share/doc/libvorbis/vorbis.html
 share/doc/libvorbis/vorbisenc/
 share/doc/libvorbis/vorbisenc/changes.html
 share/doc/libvorbis/vorbisenc/examples.html
@@ -161,6 +157,3 @@ share/doc/libvorbis/vorbisfile/seekingexample.html
 share/doc/libvorbis/vorbisfile/style.css
 share/doc/libvorbis/vorbisfile/threads.html
 share/doc/libvorbis/vorbisfile/vorbisfile_example_c.html
-share/doc/libvorbis/vorbisword2.png
-share/doc/libvorbis/wait.png
-share/doc/libvorbis/white-xifish.png
