@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/30 22:01:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/14 21:07:29 schwarze Exp $
 
 V =		2.9
 COMMENT =	modal webkit-based browser inspired by vim
 DISTNAME =	vimb-${V}
 CATEGORIES =	www x11
+REVISION =	0
 
 HOMEPAGE =	http://fanglingsu.github.io/vimb/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -41,7 +42,6 @@ LIB_DEPENDS =	www/webkit
 .endif
 
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
 
 FAKE_FLAGS =	BINDIR=${PREFIX}/bin \
 		MANDIR1=${PREFIX}/man/man1
