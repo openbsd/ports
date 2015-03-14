@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2015/01/19 16:07:12 jturner Exp $
+# $OpenBSD: Makefile,v 1.46 2015/03/14 20:52:23 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
 DISTNAME =		fossil-src-20150119112900
 PKGNAME =		fossil-1.30
+REVISION =		0
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -34,12 +35,15 @@ PREFIX =		${VARBASE}/www
 CONFLICT_MARKER =	fossil-*-static
 .endif
 
-SUBST_VARS +=		CONFLICT_MARKER
+SUBST_VARS +=		CONFLICT_MARKER STATIC
 
 TEST_DEPENDS =		${MODTCL_RUN_DEPENDS}
 
 post-extract:
 	@rm -f ${WRKSRC}/src/sqlite3.h
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/auto.def
 
 do-test:
 	@cd ${WRKSRC} && ${MODTCL_BIN} test/tester.tcl fossil

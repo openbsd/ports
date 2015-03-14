@@ -1,0 +1,12 @@
+$OpenBSD: patch-auto_def,v 1.1 2015/03/14 20:52:23 jturner Exp $
+--- auto.def.orig	Sat Dec 27 14:33:25 2014
++++ auto.def	Sat Dec 27 14:34:05 2014
+@@ -88,7 +88,7 @@ if {[opt-bool json]} {
+ 
+ if {[opt-bool static]} {
+     # XXX: This will not work on all systems.
+-    define-append EXTRA_LDFLAGS -static
++    define-append EXTRA_LDFLAGS ${STATIC}
+ }
+ 
+ set tclpath [opt-val with-tcl]
