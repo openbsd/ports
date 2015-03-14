@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/12/11 15:24:24 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/03/14 21:01:28 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -75,6 +75,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/afreeca.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/afreeca.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/afreecatv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/afreecatv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/aftonbladet.py
@@ -107,6 +109,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cybergame.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cybergame.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/disney_de.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/disney_de.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud_embed.py
@@ -145,6 +149,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mlgtv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mlgtv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nhkworld.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nhkworld.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nos.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nos.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/npo.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/npo.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nrk.py
@@ -167,6 +173,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/streamlive.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/streamlive.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/svtplay.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/svtplay.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tga.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tga.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tv4play.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tv4play.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/twitch.py
@@ -183,6 +191,10 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viagame.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viagame.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viasat.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viasat.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viasat_embed.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/viasat_embed.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/wattv.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/wattv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/weeb.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/weeb.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/youtube.py
