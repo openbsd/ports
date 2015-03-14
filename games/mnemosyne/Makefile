@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2014/08/14 07:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/03/14 21:05:39 bcallah Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION=2.3.1
+MODPY_EGG_VERSION=2.3.2
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
-REVISION=	0
 
 HOMEPAGE=	http://www.mnemosyne-proj.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
