@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/14 21:01:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2015/03/14 22:26:21 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.2
+REVISION=	0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -21,6 +22,8 @@ SHARED_LIBS +=	irs                  0.0      # 141.2
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.isc.org/software/bind
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
