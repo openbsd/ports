@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.151 2014/11/22 12:44:37 espie Exp $
+# $OpenBSD: Port.pm,v 1.152 2015/03/14 20:45:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -133,7 +133,6 @@ sub run
 
 	unshift(@args, @l);
 	$core->shell
-	    ->chdir($ports)
 	    ->sudo($self->{sudo})
 	    ->env(SUBDIR => $fullpkgpath, 
 		PHASE => $t, 

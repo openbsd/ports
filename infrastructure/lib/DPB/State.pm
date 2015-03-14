@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.8 2014/03/17 10:48:40 espie Exp $
+# $OpenBSD: State.pm,v 1.9 2015/03/14 20:45:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -202,7 +202,7 @@ sub make
 sub make_args
 {
 	my $self = shift;
-	my @l = ($self->{make});
+	my @l = ($self->{make}, "-C", $self->{ports});
 	if ($self->{build_once}) {
 		push(@l, 'BUILD_ONCE=Yes');
 	}

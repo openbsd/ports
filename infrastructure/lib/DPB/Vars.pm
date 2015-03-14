@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.40 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: Vars.pm,v 1.41 2015/03/14 20:45:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -29,9 +29,6 @@ sub run_command
 {
 	my ($class, $core, $shell, $grabber, $subdirs, @args) = @_;
 
-	my $ports = $grabber->ports;
-
-	$shell->chdir($ports);
 	if (defined $subdirs) {
 		$shell->env(SUBDIR => $class->subdirlist($subdirs));
 	}
@@ -83,8 +80,7 @@ EOT
 	} else {
 		close STDIN;
 		open(STDIN, '<&', $rh);
-		$shell->chdir('/')
-			->exec($make, '-f', '-', 'print-data');
+		$shell->exec($make, '-C', '/', '-f', '-', 'print-data');
 		DPB::Util->die("oops couldn't exec $make");
     	}
 	return @list;
