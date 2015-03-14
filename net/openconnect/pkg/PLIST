@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/01/26 10:59:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/03/14 21:25:25 sthen Exp $
 include/openconnect.h
 lib/libopenconnect.a
 lib/libopenconnect.la
@@ -7,6 +7,7 @@ lib/pkgconfig/openconnect.pc
 @man man/man8/openconnect.8
 @bin sbin/openconnect
 share/doc/openconnect/
+share/doc/openconnect/anyconnect.html
 share/doc/openconnect/building.html
 share/doc/openconnect/changelog.html
 share/doc/openconnect/charset.html
@@ -32,6 +33,7 @@ share/doc/openconnect/inc/content.tmpl
 share/doc/openconnect/inc/footer.tmpl
 share/doc/openconnect/inc/header.tmpl
 share/doc/openconnect/index.html
+share/doc/openconnect/juniper.html
 share/doc/openconnect/mail.html
 share/doc/openconnect/manual.html
 share/doc/openconnect/nonroot.html
@@ -40,7 +42,6 @@ share/doc/openconnect/pkcs11.html
 share/doc/openconnect/platforms.html
 share/doc/openconnect/styles/
 share/doc/openconnect/styles/main.css
-share/doc/openconnect/technical.html
 share/doc/openconnect/token.html
 share/doc/openconnect/vpnc-script.html
 share/locale/ar/LC_MESSAGES/openconnect.mo
