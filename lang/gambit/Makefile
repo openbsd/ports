@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2014/12/08 14:28:00 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/14 23:34:17 juanfra Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-hppa=	ICE on _gambc.c since 2014-09-29 
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.7.3
+V=		4.7.4
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 
@@ -32,12 +32,13 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 
 MAKE_FILE=	${WRKSRC}/makefile
 
-# Until we figure out how to make it play nice with a staged directory.
-NO_TEST=	Yes
-
 post-install:
 .for l in gambc gambcgsc gambcgsi
 	cd ${PREFIX}/lib/ && ln -s gambit-c/lib$l.so
 .endfor
+
+do-test:
+	cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} ${MAKE_PROGRAM} \
+		${TEST_FLAGS} -f makefile ${TEST_TARGET}
 
 .include <bsd.port.mk>
