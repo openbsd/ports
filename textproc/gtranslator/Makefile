@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2014/04/02 14:34:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2015/03/15 14:44:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
-GNOME_VERSION=	2.91.6
-REVISION=	4
+GNOME_VERSION=	2.91.7
 
 CATEGORIES=	textproc devel
 
@@ -21,7 +20,7 @@ WANTLIB += gettextpo gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 gtksourceview-3.0
 WANTLIB += harfbuzz json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += secret-1 xcb xcb-render xcb-shm xml2 z
+WANTLIB += secret-1 xcb xcb-render xcb-shm xml2 z lzma
 
 MODULES=	devel/gettext \
 		x11/gnome \

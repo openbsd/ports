@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/04/01 10:46:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/03/15 14:44:59 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -47,6 +47,7 @@ lib/gtranslator/plugins/libsourcecodeview.so
 lib/gtranslator/plugins/libtranslation-memory.so
 lib/pkgconfig/gtranslator.pc
 @man man/man1/gtranslator.1
+share/appdata/gtranslator.appdata.xml
 share/applications/gtranslator.desktop
 share/glib-2.0/schemas/org.gnome.gtranslator.gschema.xml
 share/glib-2.0/schemas/org.gnome.gtranslator.plugins.codeview.gschema.xml
@@ -79,9 +80,12 @@ share/gtk-doc/html/gtranslator/gtranslator.devhelp2
 share/gtk-doc/html/gtranslator/home.png
 share/gtk-doc/html/gtranslator/index.html
 share/gtk-doc/html/gtranslator/index.sgml
+share/gtk-doc/html/gtranslator/left-insensitive.png
 share/gtk-doc/html/gtranslator/left.png
+share/gtk-doc/html/gtranslator/right-insensitive.png
 share/gtk-doc/html/gtranslator/right.png
 share/gtk-doc/html/gtranslator/style.css
+share/gtk-doc/html/gtranslator/up-insensitive.png
 share/gtk-doc/html/gtranslator/up.png
 share/gtranslator/
 share/gtranslator/dtd/
@@ -592,6 +596,59 @@ share/help/ja/gtranslator/gtr-use-delete-entry.page
 share/help/ja/gtranslator/gtr-wizzard.page
 share/help/ja/gtranslator/index.page
 share/help/ja/gtranslator/license.page
+share/help/pt_BR/gtranslator/
+share/help/pt_BR/gtranslator/figures/
+share/help/pt_BR/gtranslator/figures/Gtranslator_022.png
+share/help/pt_BR/gtranslator/figures/Gtranslator_023.png
+share/help/pt_BR/gtranslator/figures/Gtranslator_025.png
+share/help/pt_BR/gtranslator/figures/Gtranslator_026.png
+share/help/pt_BR/gtranslator/figures/Gtranslator_027.png
+share/help/pt_BR/gtranslator/figures/add-profile.png
+share/help/pt_BR/gtranslator/figures/comment-text.png
+share/help/pt_BR/gtranslator/figures/edit-profile.png
+share/help/pt_BR/gtranslator/figures/edit-text.png
+share/help/pt_BR/gtranslator/figures/edit-toolbar.png
+share/help/pt_BR/gtranslator/figures/edit_header.png
+share/help/pt_BR/gtranslator/figures/edit_header2.png
+share/help/pt_BR/gtranslator/figures/gtr-prefs-tm.png
+share/help/pt_BR/gtranslator/figures/gtrans_go_to_string_menu.png
+share/help/pt_BR/gtranslator/figures/gtranslator-plugins.png
+share/help/pt_BR/gtranslator/figures/gtranslator.png
+share/help/pt_BR/gtranslator/figures/gtranslator22.png
+share/help/pt_BR/gtranslator/figures/gtranslator32.png
+share/help/pt_BR/gtranslator/figures/gtranslator_interface.png
+share/help/pt_BR/gtranslator/figures/gtranslator_tm_strings.png
+share/help/pt_BR/gtranslator/figures/message-detail.png
+share/help/pt_BR/gtranslator/figures/mover1.png
+share/help/pt_BR/gtranslator/figures/mover2.png
+share/help/pt_BR/gtranslator/figures/mover3.png
+share/help/pt_BR/gtranslator/figures/mover4.png
+share/help/pt_BR/gtranslator/figures/mover5.png
+share/help/pt_BR/gtranslator/figures/profiles2.png
+share/help/pt_BR/gtranslator/figures/tm-manager.png
+share/help/pt_BR/gtranslator/figures/use-tm-entry.png
+share/help/pt_BR/gtranslator/gtr-add-comment-po.page
+share/help/pt_BR/gtranslator/gtr-concepts.page
+share/help/pt_BR/gtranslator/gtr-create-tm.page
+share/help/pt_BR/gtranslator/gtr-custom.page
+share/help/pt_BR/gtranslator/gtr-edit-header.page
+share/help/pt_BR/gtranslator/gtr-edit-po.page
+share/help/pt_BR/gtranslator/gtr-faq.page
+share/help/pt_BR/gtranslator/gtr-goto-string-po.page
+share/help/pt_BR/gtranslator/gtr-join-users.page
+share/help/pt_BR/gtranslator/gtr-main-window.page
+share/help/pt_BR/gtranslator/gtr-open-po.page
+share/help/pt_BR/gtranslator/gtr-plugins.page
+share/help/pt_BR/gtranslator/gtr-profiles.page
+share/help/pt_BR/gtranslator/gtr-quickstart.page
+share/help/pt_BR/gtranslator/gtr-report-problem.page
+share/help/pt_BR/gtranslator/gtr-save-po.page
+share/help/pt_BR/gtranslator/gtr-shortcut-keys.page
+share/help/pt_BR/gtranslator/gtr-translate.page
+share/help/pt_BR/gtranslator/gtr-use-delete-entry.page
+share/help/pt_BR/gtranslator/gtr-wizzard.page
+share/help/pt_BR/gtranslator/index.page
+share/help/pt_BR/gtranslator/license.page
 share/help/ru/gtranslator/
 share/help/ru/gtranslator/figures/
 share/help/ru/gtranslator/figures/Gtranslator_022.png
