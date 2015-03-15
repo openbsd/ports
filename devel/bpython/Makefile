@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/01 19:36:34 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/15 10:18:48 jasper Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_EGG_VERSION=0.13.1
+MODPY_EGG_VERSION=0.14.1
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
 
@@ -18,6 +18,8 @@ MODULES=	lang/python
 MODPY_SETUPTOOLS=Yes
 
 RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/py-curtsies<0.2.0 \
+		devel/py-greenlet \
 		devel/py-urwid \
 		textproc/py-pygments
 BUILD_DEPENDS=	devel/py-babel \
