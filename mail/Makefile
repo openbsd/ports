@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2015/02/16 18:10:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.324 2015/03/15 11:40:23 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -29,7 +29,6 @@
      SUBDIR += cucipop
      SUBDIR += cue
      SUBDIR += cyrus-imapd
-     SUBDIR += cyrus-imapd,drac
      SUBDIR += dkim-milter
      SUBDIR += dkimproxy
      SUBDIR += dovecot
