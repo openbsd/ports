@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/02/10 09:49:48 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/03/15 07:15:09 rpointel Exp $
 @comment bin/${LNAME}-admin
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -63,6 +63,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/__init__.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/formats.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/az/formats.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/be/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/be/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/be/LC_MESSAGES/${LNAME}.mo
@@ -7588,6 +7592,8 @@ share/doc/${LNAME}/releases/1.6.txt
 share/doc/${LNAME}/releases/1.7.1.txt
 share/doc/${LNAME}/releases/1.7.2.txt
 share/doc/${LNAME}/releases/1.7.3.txt
+share/doc/${LNAME}/releases/1.7.4.txt
+share/doc/${LNAME}/releases/1.7.5.txt
 share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${LNAME}/releases/1.7.txt
 share/doc/${LNAME}/releases/index.txt
