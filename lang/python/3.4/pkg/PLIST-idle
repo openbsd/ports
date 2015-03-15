@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.3 2014/12/19 20:32:07 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.4 2015/03/15 07:42:11 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=3.4,<3.5
 @pkgpath lang/python3/3.4,-idle
@@ -188,8 +188,6 @@ lib/python3.4/idlelib/__pycache__/run.cpython-34.pyc
 lib/python3.4/idlelib/__pycache__/run.cpython-34.pyo
 lib/python3.4/idlelib/__pycache__/tabbedpages.cpython-34.pyc
 lib/python3.4/idlelib/__pycache__/tabbedpages.cpython-34.pyo
-lib/python3.4/idlelib/__pycache__/testcode.cpython-34.pyc
-lib/python3.4/idlelib/__pycache__/testcode.cpython-34.pyo
 lib/python3.4/idlelib/__pycache__/textView.cpython-34.pyc
 lib/python3.4/idlelib/__pycache__/textView.cpython-34.pyo
 lib/python3.4/idlelib/aboutDialog.py
@@ -285,5 +283,4 @@ lib/python3.4/idlelib/macosxSupport.py
 lib/python3.4/idlelib/rpc.py
 lib/python3.4/idlelib/run.py
 lib/python3.4/idlelib/tabbedpages.py
-lib/python3.4/idlelib/testcode.py
 lib/python3.4/idlelib/textView.py
