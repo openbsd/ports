@@ -1,12 +1,12 @@
-$OpenBSD: patch-auto_def,v 1.1 2015/03/14 20:52:23 jturner Exp $
---- auto.def.orig	Sat Dec 27 14:33:25 2014
-+++ auto.def	Sat Dec 27 14:34:05 2014
-@@ -88,7 +88,7 @@ if {[opt-bool json]} {
+$OpenBSD: patch-auto_def,v 1.2 2015/03/15 21:44:39 jturner Exp $
+--- auto.def.orig	Mon Jan 19 06:29:00 2015
++++ auto.def	Sun Mar 15 17:42:36 2015
+@@ -107,7 +107,7 @@ if {[opt-bool with-th1-hooks]} {
  
  if {[opt-bool static]} {
      # XXX: This will not work on all systems.
 -    define-append EXTRA_LDFLAGS -static
 +    define-append EXTRA_LDFLAGS ${STATIC}
+     msg-result "Trying to link statically"
  }
  
- set tclpath [opt-val with-tcl]
