@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.7 2014/03/20 17:33:09 ajacoutot Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.8 2015/03/15 08:45:10 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -459,7 +459,7 @@ sndio_thread(void *arg)
 
 		mio_pollfd(u->mio, fds_mio, POLLIN);
 
-		if ((ret = pa_rtpoll_run(u->rtpoll, true)) < 0)
+		if ((ret = pa_rtpoll_run(u->rtpoll)) < 0)
 	    		goto fail;
 		if (ret == 0)
 	    		goto finish;

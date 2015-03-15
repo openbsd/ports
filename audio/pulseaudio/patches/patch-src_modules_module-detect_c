@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.8 2014/03/20 17:33:09 ajacoutot Exp $
---- src/modules/module-detect.c.orig	Thu Jan 23 19:57:55 2014
-+++ src/modules/module-detect.c	Thu Mar 20 15:49:28 2014
-@@ -34,6 +34,10 @@
+$OpenBSD: patch-src_modules_module-detect_c,v 1.9 2015/03/15 08:45:10 ajacoutot Exp $
+--- src/modules/module-detect.c.orig	Thu Feb 12 15:10:35 2015
++++ src/modules/module-detect.c	Mon Feb 16 14:45:37 2015
+@@ -32,6 +32,10 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.8 2014/03/20 17:33:09 ajacoutot 
  #include <pulsecore/core-error.h>
  #include <pulsecore/module.h>
  #include <pulsecore/modargs.h>
-@@ -48,7 +52,9 @@ PA_MODULE_DESCRIPTION("Detect available audio hardware
+@@ -46,7 +50,9 @@ PA_MODULE_DESCRIPTION("Detect available audio hardware
  PA_MODULE_VERSION(PACKAGE_VERSION);
  PA_MODULE_LOAD_ONCE(true);
  PA_MODULE_USAGE("just-one=<boolean>");
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.8 2014/03/20 17:33:09 ajacoutot 
  
  static const char* const valid_modargs[] = {
      "just-one",
-@@ -205,6 +211,19 @@ static int detect_solaris(pa_core *c, int just_one) {
+@@ -203,6 +209,19 @@ static int detect_solaris(pa_core *c, int just_one) {
  }
  #endif
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.8 2014/03/20 17:33:09 ajacoutot 
  #ifdef OS_IS_WIN32
  static int detect_waveout(pa_core *c, int just_one) {
      /*
-@@ -246,6 +265,9 @@ int pa__init(pa_module*m) {
+@@ -244,6 +263,9 @@ int pa__init(pa_module*m) {
  #endif
  #ifdef OS_IS_WIN32
      if ((n = detect_waveout(m->core, just_one)) <= 0)
