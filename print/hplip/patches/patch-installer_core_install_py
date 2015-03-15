@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_core_install_py,v 1.21 2015/02/05 17:34:33 ajacoutot Exp $
+$OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot Exp $
 --- installer/core_install.py.orig	Thu Jan 29 13:20:24 2015
-+++ installer/core_install.py	Thu Feb  5 16:58:33 2015
++++ installer/core_install.py	Thu Mar 12 12:12:17 2015
 @@ -110,7 +110,7 @@ HPLIP_LIST=['*.py','*.pyc', 'base', 'copier','data','i
  
  PLUGIN_LIST=['fax/plugins/','prnt/plugins/','scan/plugins/']
@@ -93,6 +93,15 @@ $OpenBSD: patch-installer_core_install_py,v 1.21 2015/02/05 17:34:33 ajacoutot E
  
  
      def check_xsane(self):
+@@ -977,7 +976,7 @@ class CoreInstall(object):
+ 
+ 
+     def check_python_devel(self):
+-        dir_list = glob.glob('/usr/include/python%d*'%sys.version_info[0])
++        dir_list = glob.glob('${LOCALBASE}/include/python%d*'%sys.version_info[0])
+         Found = False
+         for p in dir_list:
+               if check_file('Python.h',dir=p):
 @@ -1031,9 +1030,8 @@ class CoreInstall(object):
  
  

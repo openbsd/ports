@@ -1,9 +1,11 @@
-$OpenBSD: patch-io_hpmud_musb_c,v 1.7 2014/10/08 09:03:00 ajacoutot Exp $
+$OpenBSD: patch-io_hpmud_musb_c,v 1.8 2015/03/15 08:46:52 ajacoutot Exp $
 
 Fix probing HP PS 8250 printer, from FreeBSD.
 
---- io/hpmud/musb.c.orig	Tue Oct  7 10:55:54 2014
-+++ io/hpmud/musb.c	Wed Oct  8 10:32:17 2014
+backwards memcpy
+
+--- io/hpmud/musb.c.orig	Thu Jan 29 13:20:45 2015
++++ io/hpmud/musb.c	Wed Mar 11 15:42:47 2015
 @@ -25,6 +25,7 @@
  Author: Naga Samrat Chowdary Narla, Sarbeswar Meher
  \*****************************************************************************/
@@ -27,3 +29,21 @@ Fix probing HP PS 8250 printer, from FreeBSD.
  			continue;
  		}
  		break;
+@@ -769,7 +774,7 @@ static int device_id(int fd, unsigned char *buffer, in
+ 		len = size-1;   /* leave byte for zero termination */
+ 	if (len > 2)
+ 		len -= 2;
+-	memcpy(buffer, buffer+2, len);    /* remove length */
++	memmove(buffer, buffer+2, len);    /* remove length */
+ 	buffer[len]=0;
+ 	DBG("read actual device_id successfully fd=%d len=%d\n", fd, len);
+ 
+@@ -1254,7 +1259,7 @@ enum HPMUD_RESULT __attribute__ ((visibility ("hidden"
+ 
+ 	if (*len)
+ 	{
+-		memcpy(buf, pd->id, *len > size ? size : *len);
++		memmove(buf, pd->id, *len > size ? size : *len);
+ 		stat = HPMUD_R_OK;
+ 	}
+ 
