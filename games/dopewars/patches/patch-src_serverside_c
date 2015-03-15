@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_serverside_c,v 1.3 2015/03/15 10:05:04 jasper Exp $
+
+Security fix for CVE-2009-3591,
+dopewars: DoS via REQUESTJET message with an invalid location
+
+http://sourceforge.net/p/dopewars/code/1033/
+
+--- src/serverside.c.orig	Sun Mar  1 12:31:08 2015
++++ src/serverside.c	Sun Mar  1 12:31:44 2015
+@@ -504,6 +504,12 @@ void HandleServerMessage(gchar *buf, Player *Play)
+     break;
+   case C_REQUESTJET:
+     i = atoi(Data);
++    /* Make sure value is within range */
++    if (i < 0 || i >= NumLocation) {
++      dopelog(3, LF_SERVER, _("%s: DENIED jet to invalid location %s"),
++              GetPlayerName(Play), Data);
++      break;
++    }
+     if (Play->EventNum == E_FIGHT || Play->EventNum == E_FIGHTASK) {
+       if (CanRunHere(Play)) {
+         break;
