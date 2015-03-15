@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2014/12/22 13:09:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2015/03/15 08:31:00 ajacoutot Exp $
 @bin bin/gcompris
 @bin bin/gcompris-gnuchess
 lib/gcompris/
@@ -1146,8 +1146,6 @@ share/gcompris/boards/foot.svg
 share/gcompris/boards/france_region.svg
 share/gcompris/boards/fun.svg
 share/gcompris/boards/fun.xml
-share/gcompris/boards/gcompris/
-share/gcompris/boards/gcompris/mimetypes/
 share/gcompris/boards/geo_country/
 share/gcompris/boards/geo_country.xml
 share/gcompris/boards/geo_country/argentina/
@@ -2067,7 +2065,6 @@ share/gcompris/boards/geography/southamerica/south_america.png
 share/gcompris/boards/geography/southamerica/suriname.png
 share/gcompris/boards/geography/southamerica/uruguay.png
 share/gcompris/boards/geography/southamerica/venezuela.png
-share/gcompris/boards/geography_country/
 share/gcompris/boards/geometry.svg
 share/gcompris/boards/geometry.xml
 share/gcompris/boards/gletters/
@@ -3724,7 +3721,6 @@ share/gcompris/boards/memory_tux.svg
 share/gcompris/boards/memory_tux.xml
 share/gcompris/boards/memory_wordnumber.xml
 share/gcompris/boards/menu.xml
-share/gcompris/boards/mimetypes/
 share/gcompris/boards/mining/
 share/gcompris/boards/mining.svg
 share/gcompris/boards/mining.xml
@@ -6639,6 +6635,7 @@ share/gcompris/boards/voices/en/words/cold.ogg
 share/gcompris/boards/voices/en/words/color.ogg
 share/gcompris/boards/voices/en/words/comb.ogg
 share/gcompris/boards/voices/en/words/cone.ogg
+share/gcompris/boards/voices/en/words/content.json
 share/gcompris/boards/voices/en/words/content.txt
 share/gcompris/boards/voices/en/words/cookie.ogg
 share/gcompris/boards/voices/en/words/corn.ogg
@@ -7522,6 +7519,7 @@ share/gcompris/boards/voices/es/words/cold.ogg
 share/gcompris/boards/voices/es/words/color.ogg
 share/gcompris/boards/voices/es/words/comb.ogg
 share/gcompris/boards/voices/es/words/cone.ogg
+share/gcompris/boards/voices/es/words/content.json
 share/gcompris/boards/voices/es/words/content.txt
 share/gcompris/boards/voices/es/words/cookie.ogg
 share/gcompris/boards/voices/es/words/corn.ogg
@@ -8939,6 +8937,7 @@ share/gcompris/boards/voices/fr/words/color.ogg
 share/gcompris/boards/voices/fr/words/colt.ogg
 share/gcompris/boards/voices/fr/words/comb.ogg
 share/gcompris/boards/voices/fr/words/cone.ogg
+share/gcompris/boards/voices/fr/words/content.json
 share/gcompris/boards/voices/fr/words/content.txt
 share/gcompris/boards/voices/fr/words/cookie.ogg
 share/gcompris/boards/voices/fr/words/cork.ogg
@@ -10398,6 +10397,7 @@ share/gcompris/boards/voices/gd/words/cold.ogg
 share/gcompris/boards/voices/gd/words/color.ogg
 share/gcompris/boards/voices/gd/words/comb.ogg
 share/gcompris/boards/voices/gd/words/cone.ogg
+share/gcompris/boards/voices/gd/words/content.json
 share/gcompris/boards/voices/gd/words/content.txt
 share/gcompris/boards/voices/gd/words/cook.ogg
 share/gcompris/boards/voices/gd/words/cookie.ogg
@@ -10852,6 +10852,7 @@ share/gcompris/boards/voices/gd/words/yarn.ogg
 share/gcompris/boards/voices/gd/words/yummy.ogg
 share/gcompris/boards/voices/gd/words/zoo.ogg
 share/gcompris/boards/voices/generate_voices_rcc.sh
+share/gcompris/boards/voices/generate_voices_without_words_rcc.sh
 share/gcompris/boards/voices/he/
 share/gcompris/boards/voices/he/alphabet/
 share/gcompris/boards/voices/he/alphabet/10.ogg
@@ -13855,6 +13856,7 @@ share/gcompris/boards/voices/pt_BR/misc/quit.ogg
 share/gcompris/boards/voices/pt_BR/misc/super.ogg
 share/gcompris/boards/voices/pt_BR/misc/welcome.ogg
 share/gcompris/boards/voices/pt_BR/words/
+share/gcompris/boards/voices/pt_BR/words/content.json
 share/gcompris/boards/voices/pt_BR/words/content.txt
 share/gcompris/boards/voices/ru/
 share/gcompris/boards/voices/ru/alphabet/
@@ -14243,7 +14245,6 @@ share/gcompris/boards/voices/sk/geography/venezuela.ogg
 share/gcompris/boards/voices/sk/geography/western_sahara.ogg
 share/gcompris/boards/voices/sk/geography/zambia.ogg
 share/gcompris/boards/voices/sk/geography/zimbabwe.ogg
-share/gcompris/boards/voices/sk/intro/
 share/gcompris/boards/voices/sk/misc/
 share/gcompris/boards/voices/sk/misc/about.ogg
 share/gcompris/boards/voices/sk/misc/awesome.ogg
