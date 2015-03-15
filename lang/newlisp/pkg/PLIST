@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/10 20:20:16 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/15 10:07:43 jasper Exp $
 bin/newlisp
 @bin bin/newlisp-${V}
 bin/newlisp-edit
@@ -57,7 +57,6 @@ share/newlisp-${V}/modules/cgi.lsp
 share/newlisp-${V}/modules/crypto.lsp
 share/newlisp-${V}/modules/ftp.lsp
 share/newlisp-${V}/modules/getopts.lsp
-share/newlisp-${V}/modules/gmp.lsp
 share/newlisp-${V}/modules/gsl.lsp
 share/newlisp-${V}/modules/infix.lsp
 share/newlisp-${V}/modules/mysql.lsp

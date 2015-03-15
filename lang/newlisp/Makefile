@@ -1,8 +1,8 @@
-#       $OpenBSD: Makefile,v 1.13 2014/04/10 20:20:16 bcallah Exp $
+#       $OpenBSD: Makefile,v 1.14 2015/03/15 10:07:43 jasper Exp $
 
 COMMENT=	newLISP is a LISP like, general purpose scripting language
 
-V=		10.6.0
+V=		10.6.2
 DISTNAME=	newlisp-$V
 CATEGORIES=	lang
 HOMEPAGE=	http://newlisp.org/
