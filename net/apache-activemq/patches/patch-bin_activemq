@@ -1,25 +1,20 @@
-$OpenBSD: patch-bin_activemq,v 1.5 2014/05/20 19:34:48 jasper Exp $
---- bin/activemq.orig	Tue Apr  1 02:13:54 2014
-+++ bin/activemq	Thu May 15 22:20:21 2014
-@@ -29,7 +29,7 @@
- 
- # ------------------------------------------------------------------------
- # CONFIGURATION
--ACTIVEMQ_CONFIGS="/etc/default/activemq $HOME/.activemqrc"
-+ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemq.conf $HOME/.activemqrc"
- 
- # Backup invocation parameters
- COMMANDLINE_ARGS="$@"
-@@ -38,7 +38,7 @@ EXEC_OPTION=""
+$OpenBSD: patch-bin_activemq,v 1.6 2015/03/15 10:08:37 jasper Exp $
+--- bin/activemq.orig	Fri Feb 13 19:05:11 2015
++++ bin/activemq	Mon Mar  2 17:11:22 2015
+@@ -148,10 +148,10 @@ fi
  # For using instances
  if ( basename $0 | grep "activemq-instance-" > /dev/null);then
-    INST="`basename $0|sed 's/^activemq-instance-//;s/\.sh$//'`"
--   ACTIVEMQ_CONFIGS="/etc/default/activemq-instance-${INST} $HOME/.activemqrc-instance-${INST}"
-+   ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemq-instance-${INST}.conf $HOME/.activemqrc-instance-${INST}"
-    echo "INFO: Using alternative activemq configuration files: $ACTIVEMQ_CONFIGS"
+   INST="`basename $0|sed 's/^activemq-instance-//;s/\.sh$//'`"
+-  ACTIVEMQ_CONFIGS="/etc/default/activemq-instance-${INST} $HOME/.activemqrc-instance-${INST}"
++  ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemq-instance-${INST} $HOME/.activemqrc-instance-${INST}"
+   echo "INFO: Using alternative activemq configuration files: $ACTIVEMQ_CONFIGS"
+ else
+-  ACTIVEMQ_CONFIGS="/etc/default/activemq $HOME/.activemqrc $ACTIVEMQ_HOME/bin/env"
++  ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemq.conf $HOME/.activemqrc $ACTIVEMQ_HOME/bin/env"
  fi
  
-@@ -595,7 +595,6 @@ invoke_stop(){
+ # load activemq configuration
+@@ -498,7 +498,6 @@ invoke_stop(){
           echo
           echo "INFO: Regular shutdown not successful,  sending SIGKILL to process with pid '$PID'"
           kill -KILL $PID
@@ -27,16 +22,19 @@ $OpenBSD: patch-bin_activemq,v 1.5 2014/05/20 19:34:48 jasper Exp $
         fi
      elif [ -f "$ACTIVEMQ_PIDFILE" ];then
         echo "ERROR: No or outdated process id in '$ACTIVEMQ_PIDFILE'"
-@@ -653,10 +652,10 @@ Tasks provided by the sysv init script:
-                       (see next usage section)
+@@ -558,7 +557,7 @@ The configuration of this script is read from the foll
  
- Configuration of this script:
--    The configuration of this script can be placed on /etc/default/activemq or $HOME/.activemqrc.
-+    The configuration of this script can be placed on ${SYSCONFDIR}/activemq.conf or $HOME/.activemqrc.
      To use additional configurations for running multiple instances on the same operating system
      rename or symlink script to a name matching to activemq-instance-<INSTANCENAME>.
 -    This changes the configuration location to /etc/default/activemq-instance-<INSTANCENAME> and
-+    This changes the configuration location to ${SYSCONFDIR}/activemq-instance-<INSTANCENAME>.conf and
-     \$HOME/.activemqrc-instance-<INSTANCENAME>. Configuration files in /etc have higher precedence.
++    This changes the configuration location to ${SYSCONFDIR}/activemq-instance-<INSTANCENAME> and
+     \$HOME/.activemqrc-instance-<INSTANCENAME>.
  EOF
-   exit $RET
+   exit 1
+@@ -595,4 +594,4 @@ case "$1" in
+     ;;
+   *)
+     invoke_task
+-esac
+\ No newline at end of file
++esac
