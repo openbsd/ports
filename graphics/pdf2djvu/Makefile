@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/09 12:18:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/15 10:58:15 kili Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
-V =			0.7.17
-DISTNAME =		pdf2djvu_${V}
-PKGNAME =		pdf2djvu-${V}
-REVISION =		0
+DISTNAME =		pdf2djvu-0.7.19
 
 CATEGORIES =		graphics
 
@@ -19,7 +16,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GraphicsMagick GraphicsMagick++ c djvulibre m poppler
 WANTLIB += pthread stdc++ xml2 xslt z
 
-MASTER_SITES =		https://pdf2djvu.googlecode.com/files/
+MASTER_SITES =		https://bitbucket.org/jwilk/pdf2djvu/downloads/
+
+EXTRACT_SUFX =		.tar.xz
 
 # https://code.google.com/p/pdf2djvu/wiki/BuildDepends
 MODULES =		devel/gettext
@@ -27,6 +26,7 @@ LIB_DEPENDS =		graphics/GraphicsMagick \
 			textproc/libxslt \
 			print/poppler \
 			graphics/djvulibre
+TEST_DEPENDS =		devel/py-nose
 
 # Weird things like "API specificationu[3]d for details"
 USE_GROFF =		Yes
@@ -38,7 +38,7 @@ CONFIGURE_ARGS +=	--disable-openmp \
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-NO_TEST =		Yes
+TEST_TARGET = test
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
