@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/16 07:53:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/15 17:45:11 benoit Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to bzip2 compression library
 
-DISTNAME =	Compress-Bzip2-2.20
+DISTNAME =	Compress-Bzip2-2.22
 CATEGORIES=	archivers
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
