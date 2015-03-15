@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2014/11/13 21:33:02 pascal Exp $
+# $OpenBSD: Makefile,v 1.35 2015/03/15 02:58:07 pascal Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-7.8.1
+DISTNAME=	gdb-7.9
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
 DIST_SUBDIR=	gdb
+EXTRACT_SUFX=	.tar.xz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 

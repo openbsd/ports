@@ -1,13 +1,13 @@
-$OpenBSD: patch-libiberty_filename_cmp_c,v 1.1 2014/10/18 10:07:52 chrisz Exp $
+$OpenBSD: patch-libiberty_filename_cmp_c,v 1.2 2015/03/15 02:58:07 pascal Exp $
 
 Our libiberty does not have filename_cmp(), but since it would simply
 call strcmp(), use a macro when building gdb and most of all libbfd.
 
 Fixes linking against libbfd with our system libiberty.
 
---- libiberty/filename_cmp.c.orig	Fri Oct 17 13:04:21 2014
-+++ libiberty/filename_cmp.c	Fri Oct 17 13:06:28 2014
-@@ -47,6 +47,7 @@ and backward slashes are equal.
+--- libiberty/filename_cmp.c.orig	Thu Feb 19 12:58:08 2015
++++ libiberty/filename_cmp.c	Fri Feb 20 22:12:26 2015
+@@ -52,6 +52,7 @@ and backward slashes are equal.
  
  */
  
@@ -15,7 +15,7 @@ Fixes linking against libbfd with our system libiberty.
  int
  filename_cmp (const char *s1, const char *s2)
  {
-@@ -141,6 +142,7 @@ filename_ncmp (const char *s1, const char *s2, size_t 
+@@ -146,6 +147,7 @@ filename_ncmp (const char *s1, const char *s2, size_t 
    return 0;
  #endif
  }
