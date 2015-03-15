@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/02/07 14:39:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/15 10:09:42 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	1.2.12
+MODPY_EGG_VERSION =	1.2.13
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
 
@@ -24,7 +24,8 @@ WANTLIB =		pthread virt virt-lxc virt-qemu ${MODPY_WANTLIB}
 LIB_DEPENDS =		sysutils/libvirt>=${MODPY_EGG_VERSION}
 
 TEST_DEPENDS =		devel/py-nose \
-			textproc/py-lxml
+			textproc/py-lxml \
+			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 
 do-test:
 	perl -pi -e 's,/usr/bin/nosetests,${LOCALBASE}/bin/nosetests,' \
