@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/12/15 13:50:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/03/15 10:15:55 jasper Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=	spice-gtk-0.27
+DISTNAME=	spice-gtk-0.28
 CATEGORIES=	x11 net
 
 SHARED_LIBS +=  spice-client-glib-2.0     2.0 # 13.0
@@ -62,7 +62,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-usbredir \
 		--enable-introspection \
 		--enable-vala \
-		--with-audio=gstreamer1
+		--with-audio=gstreamer
+
+# XXX: Requires new phodav port
+CONFIGURE_ARGS+=--disable-webdav
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
