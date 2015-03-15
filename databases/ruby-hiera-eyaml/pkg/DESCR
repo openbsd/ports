@@ -1,0 +1,2 @@
+hiera-eyaml is a backend for Hiera that provides per-value encryption of
+sensitive data within yaml files to be used by Puppet.
