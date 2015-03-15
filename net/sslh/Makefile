@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/13 11:15:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/15 12:26:16 sthen Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
 GH_ACCOUNT =	yrutschle
 GH_PROJECT =	sslh
-GH_COMMIT =	9d2deff6ad51622e2de1788af1d1465c5b37075e
-V =		1.16
+GH_COMMIT =	3550cbe77c3429d32f849c2a7074896719055a0c
+V =		1.17
 GH_TAGNAME =	v$V
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 CATEGORIES =	security net
