@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/09 07:53:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/15 10:13:14 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -27,6 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad_18.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_good.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/deprecation_notice.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/fail_error.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/fail_warning.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/future_syntax.pp
