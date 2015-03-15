@@ -1,0 +1,32 @@
+$OpenBSD: patch-gcc_gengtype_c,v 1.1 2015/03/15 19:56:36 jasper Exp $
+
+Quality workaround for quality code.
+regcomp() would occasionally fail with REG_ESIZE for as of yet unknown
+reasons. so retry it a few times..
+
+--- gcc/gengtype.c.orig	Wed Feb 15 00:31:42 2012
++++ gcc/gengtype.c	Sun Mar 15 14:42:31 2015
+@@ -1986,13 +1986,19 @@ get_output_file_with_visibility (input_file *inpf)
+ 	if (!files_rules[rulix].frul_re)
+ 	  {
+ 	    /* Compile the regexpr lazily.  */
+-	    int err = 0;
++            int try = 1;
++again:
+ 	    files_rules[rulix].frul_re = XCNEW (regex_t);
+-	    err = regcomp (files_rules[rulix].frul_re,
++	    if (regcomp (files_rules[rulix].frul_re,
+ 			   files_rules[rulix].frul_srcexpr,
+-			   files_rules[rulix].frul_rflags);
+-	    if (err)
++			   files_rules[rulix].frul_rflags))
+ 	      {
++		/* Reasonable number where it should work at least once... */
++		if (try < 10) {
++			printf("Round and round she goes, when she stops...nobody knows!\n");
++			try++;
++			goto again;
++		}
+ 		/* The regular expression compilation fails only when
+ 		   file_rules is buggy.  */
+ 		gcc_unreachable ();
