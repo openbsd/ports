@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.33 2014/12/01 10:16:06 ajacoutot Exp $
+$OpenBSD: README,v 1.34 2015/03/15 08:49:10 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,24 +6,29 @@ $OpenBSD: README,v 1.33 2014/12/01 10:16:06 ajacoutot Exp $
 
 ownCloud is installed under
     ${INSTDIR}
-It should point to the root directory of the HTTP server. e.g.
-    # ln -s ../owncloud /var/www/htdocs/owncloud
 
-Official installation intructions are available at:
-    http://doc.owncloud.org/server/${VR}/admin_manual/installation/installation_source.html
+Official documentation is available at:
+    http://doc.owncloud.org/server/${VR}/admin_manual/
 
 Post-installation instructions
 ==============================
+
+chroot(2)
+---------
 ownCloud attempts to use the UTF-8 locale, which does not work by
 default inside the /var/www chroot. This causes warning messages in
 ownCloud's admin configuration page and logs. To prevent this problem,
 run the following as root:
-  # mkdir -p /var/www/usr/share/locale/UTF-8/
-  # cp /usr/share/locale/UTF-8/LC_CTYPE \
-          /var/www/usr/share/locale/UTF-8/
+    # mkdir -p /var/www/usr/share/locale/UTF-8/
+    # cp /usr/share/locale/UTF-8/LC_CTYPE \
+        /var/www/usr/share/locale/UTF-8/
 
-nginx(8) configuration
-----------------------
+OpenBSD HTTP daemon
+-------------------
+TBD
+
+nginx
+-----
 This configuration chunk can be adapted and used in a server{} block:
 
 -8<---------------------------------------------------------------------
@@ -69,15 +74,27 @@ This configuration chunk can be adapted and used in a server{} block:
         }
 -8<---------------------------------------------------------------------
 
-PHP configuration
------------------
-Default PHP values should be adapted according to the setup by editing:
-   ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini
+Apache2
+-------
+Apache2 configuration for ownCloud is stored under:
+    ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
 
-allow_url_fopen = On
-memory_limit = 512M
-upload_max_filesize = 513M	# to accept large files upload
-post_max_size = 513M		# sync with above value	
+The httpd2 user group must be set to "www".
+
+Both can be done by editing ${SYSCONFDIR}/apache2/httpd2.conf:
+    Include ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
+    Group www
+
+PHP  
+---              
+Default PHP values for Apache2 are set under:
+    ${TINSTDIR}/config/.htaccess
+
+OpenBSD HTTP daemon users can match these .htaccess file values by
+editing ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini or ${SYSCONFDIR}/php-fpm.conf.
+
+nginx users can match these .htaccess file values by configuring
+fastcgi_param with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
 
 For enhanced performance, a PHP opcode cache can be used, either
 use "opcache" (built-in to PHP 5.5+, enable "opcache.ini" to use it)
@@ -93,11 +110,9 @@ another database, the corresponding package needs to be installed
 
 Configuration is done under:
     ${INSTDIR}/config/config.php
+and the default "datadirectory" is set to:
+    ${TINSTDIR}/data
 When running chrooted, /var/www must be stripped from paths.
-
-By default, "datadirectory" is set to:
-    /owncloud-data
-which expends to ${PREFIX}/owncloud-data outside the chroot.
 
 Cron job
 --------
@@ -131,7 +146,7 @@ installation and create a new admin user.
 Updating
 ========
 Before updating to a new release, read:
-    http://doc.owncloud.org/server/${VR}/admin_manual/maintenance/update.html
+    http://doc.owncloud.org/server/${VR}/admin_manual/maintenance/upgrade.html
 
 When using a PostgreSQL or MariaDB, the corresponding MDB2 php package
 must be installed to properly upgrade the database:

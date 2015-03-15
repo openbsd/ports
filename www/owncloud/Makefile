@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.80 2014/12/12 12:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2015/03/15 08:49:10 ajacoutot Exp $
 
 COMMENT=	easy and universal access to shared and/or personal files
 
-V=		7.0.4
+V=		8.0.2
 DISTNAME=	owncloud-${V}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -49,5 +49,9 @@ do-install:
 	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
+
+	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
+	${SUBST_CMD} -c ${FILESDIR}/httpd-owncloud.conf.dist.in \
+		${PREFIX}/conf/modules.sample/httpd-owncloud.conf.dist
 
 .include <bsd.port.mk>
