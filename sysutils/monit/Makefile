@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2014/12/28 12:33:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2015/03/15 10:10:12 jasper Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-5.11
+DISTNAME=	monit-5.12.1
 
 CATEGORIES=	sysutils
 
@@ -17,9 +17,7 @@ WANTLIB += c crypto kvm pthread ssl
 
 MASTER_SITES=	${HOMEPAGE}/dist/
 
-# XXX: Switch back to 'gnu' once patch-configure_ac has been merged
-AUTOCONF_VERSION=2.69
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/monit
