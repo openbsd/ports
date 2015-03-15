@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome-initial-setup_pages_language_cc-common-language_c,v 1.1 2014/09/21 13:03:56 ajacoutot Exp $
---- gnome-initial-setup/pages/language/cc-common-language.c.orig	Sun Sep 21 14:25:16 2014
-+++ gnome-initial-setup/pages/language/cc-common-language.c	Sun Sep 21 14:25:24 2014
-@@ -277,7 +277,7 @@ static void
+$OpenBSD: patch-gnome-initial-setup_pages_language_cc-common-language_c,v 1.2 2015/03/15 08:35:59 ajacoutot Exp $
+--- gnome-initial-setup/pages/language/cc-common-language.c.orig	Tue Feb 17 21:36:59 2015
++++ gnome-initial-setup/pages/language/cc-common-language.c	Thu Feb 26 08:32:40 2015
+@@ -281,7 +281,7 @@ static void
  insert_language (GHashTable *ht,
                   const char *lang)
  {
