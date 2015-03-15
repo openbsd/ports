@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/15 10:16:40 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/blessings/
+lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/blessings/__init__.py
+lib/python${MODPY_VERSION}/site-packages/blessings/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/blessings/tests.py
+lib/python${MODPY_VERSION}/site-packages/blessings/tests.pyc
