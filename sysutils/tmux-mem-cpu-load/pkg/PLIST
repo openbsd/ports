@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/15 11:47:03 jasper Exp $
+@bin bin/tmux-mem-cpu-load
