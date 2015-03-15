@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.27 2014/10/13 16:58:02 ajacoutot Exp $
---- gtk/Makefile.in.orig	Mon Oct 13 17:52:20 2014
-+++ gtk/Makefile.in	Mon Oct 13 18:39:28 2014
-@@ -1147,11 +1147,11 @@ SUBDIRS = inspector native .
+$OpenBSD: patch-gtk_Makefile_in,v 1.28 2015/03/15 08:42:17 ajacoutot Exp $
+--- gtk/Makefile.in.orig	Wed Feb 25 22:23:35 2015
++++ gtk/Makefile.in	Thu Feb 26 07:54:26 2015
+@@ -1158,11 +1158,11 @@ SUBDIRS = inspector native .
  @OS_DARWIN_TRUE@ECHO = "echo"
  @HAVE_CLOUDPRINT_FALSE@@HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
  @HAVE_CLOUDPRINT_FALSE@@HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_TRUE@GTK_PRINT_BACKENDS = file,papi
