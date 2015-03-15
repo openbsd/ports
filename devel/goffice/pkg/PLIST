@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2014/06/10 07:00:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/03/15 08:37:03 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -101,6 +101,7 @@ include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-action-combo-color.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-action-combo-pixmaps.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-action-combo-stack.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-action-combo-text.h
+include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-arrow-sel.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-calendar-button.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-charmap-sel.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-color-group.h
