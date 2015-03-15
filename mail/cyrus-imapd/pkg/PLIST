@@ -1,64 +1,203 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/07/24 17:53:17 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/03/15 08:51:07 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
+@pkgpath mail/cyrus-imapd,drac
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/nonexistent:/sbin/nologin
 bin/cyradm
 @bin bin/imtest
 bin/installsieve
-@bin bin/lmtptest
-@bin bin/mupdatetest
-@bin bin/nntptest
-@bin bin/pop3test
+bin/lmtptest
+bin/mupdatetest
+bin/nntptest
+bin/pop3test
 bin/sieveshell
-@bin bin/sivtest
-@bin bin/smtptest
-@bin bin/synctest
+bin/sivtest
+bin/smtptest
+bin/synctest
+cyrus/
+cyrus/bin/
+@bin cyrus/bin/arbitron
+@bin cyrus/bin/chk_cyrus
+@bin cyrus/bin/ctl_cyrusdb
+@bin cyrus/bin/ctl_deliver
+@bin cyrus/bin/ctl_mboxlist
+@bin cyrus/bin/cvt_cyrusdb
+@bin cyrus/bin/cyr_dbtool
+@bin cyrus/bin/cyr_deny
+@bin cyrus/bin/cyr_df
+@bin cyrus/bin/cyr_expire
+@bin cyrus/bin/cyr_info
+@bin cyrus/bin/cyr_sequence
+@bin cyrus/bin/cyr_synclog
+@bin cyrus/bin/cyr_userseen
+@bin cyrus/bin/cyrdump
+@bin cyrus/bin/deliver
+@bin cyrus/bin/fetchnews
+@bin cyrus/bin/fud
+@bin cyrus/bin/idled
+@bin cyrus/bin/imapd
+@bin cyrus/bin/ipurge
+@bin cyrus/bin/lmtpd
+cyrus/bin/lmtpproxyd
+@bin cyrus/bin/master
+@bin cyrus/bin/mbexamine
+@bin cyrus/bin/mbpath
+@bin cyrus/bin/mbtool
+@bin cyrus/bin/mupdate
+@bin cyrus/bin/nntpd
+@bin cyrus/bin/notifyd
+@bin cyrus/bin/pop3d
+cyrus/bin/pop3proxyd
+cyrus/bin/proxyd
+@bin cyrus/bin/quota
+@bin cyrus/bin/reconstruct
+@bin cyrus/bin/sievec
+@bin cyrus/bin/sieved
+@bin cyrus/bin/smmapd
+@bin cyrus/bin/squatter
+@bin cyrus/bin/timsieved
+@bin cyrus/bin/tls_prune
+@bin cyrus/bin/unexpunge
+cyrus/man/
+cyrus/man/man1/
+@man cyrus/man/man1/cyradm.1
+@man cyrus/man/man1/imtest.1
+@man cyrus/man/man1/installsieve.1
+@man cyrus/man/man1/lmtptest.1
+@man cyrus/man/man1/mupdatetest.1
+@man cyrus/man/man1/nntptest.1
+@man cyrus/man/man1/pop3test.1
+@man cyrus/man/man1/sieveshell.1
+@man cyrus/man/man1/sivtest.1
+@man cyrus/man/man1/smtptest.1
+cyrus/man/man2/
+cyrus/man/man3/
+@man cyrus/man/man3/imclient.3
+cyrus/man/man3f/
+cyrus/man/man3p/
+@man cyrus/man/man3p/Cyrus::Annotator::Daemon.3p
+@man cyrus/man/man3p/Cyrus::Annotator::Message.3p
+@man cyrus/man/man3p/Cyrus::IMAP.3p
+@man cyrus/man/man3p/Cyrus::IMAP::Admin.3p
+@man cyrus/man/man3p/Cyrus::IMAP::IMSP.3p
+@man cyrus/man/man3p/Cyrus::IMAP::Shell.3p
+@man cyrus/man/man3p/Cyrus::SIEVE::managesieve.3p
+cyrus/man/man4/
+cyrus/man/man5/
+@man cyrus/man/man5/cyrus.conf.5
+@man cyrus/man/man5/imapd.conf.5
+@man cyrus/man/man5/krb.equiv.5
+cyrus/man/man6/
+cyrus/man/man7/
+cyrus/man/man8/
+@man cyrus/man/man8/arbitron.8
+@man cyrus/man/man8/chk_cyrus.8
+@man cyrus/man/man8/ctl_cyrusdb.8
+@man cyrus/man/man8/ctl_deliver.8
+@man cyrus/man/man8/ctl_mboxlist.8
+@man cyrus/man/man8/cvt_cyrusdb.8
+@man cyrus/man/man8/cyr_dbtool.8
+@man cyrus/man/man8/cyr_deny.8
+@man cyrus/man/man8/cyr_df.8
+@man cyrus/man/man8/cyr_expire.8
+@man cyrus/man/man8/cyr_info.8
+@man cyrus/man/man8/cyr_synclog.8
+@man cyrus/man/man8/deliver.8
+@man cyrus/man/man8/fetchnews.8
+@man cyrus/man/man8/fud.8
+@man cyrus/man/man8/idled.8
+@man cyrus/man/man8/imapd.8
+@man cyrus/man/man8/ipurge.8
+@man cyrus/man/man8/lmtpd.8
+@man cyrus/man/man8/master.8
+@man cyrus/man/man8/mbexamine.8
+@man cyrus/man/man8/mbpath.8
+@man cyrus/man/man8/nntpd.8
+@man cyrus/man/man8/notifyd.8
+@man cyrus/man/man8/pop3d.8
+@man cyrus/man/man8/quota.8
+@man cyrus/man/man8/reconstruct.8
+@man cyrus/man/man8/rmnews.8
+@man cyrus/man/man8/smmapd.8
+@man cyrus/man/man8/squatter.8
+@man cyrus/man/man8/sync_client.8
+@man cyrus/man/man8/sync_reset.8
+@man cyrus/man/man8/sync_server.8
+@man cyrus/man/man8/timsieved.8
+@man cyrus/man/man8/tls_prune.8
+@man cyrus/man/man8/unexpunge.8
+cyrus/man/man9/
+cyrus/man/manl/
+cyrus/man/mann/
 include/cyrus/
 include/cyrus/acl.h
+include/cyrus/arrayu64.h
 include/cyrus/assert.h
 include/cyrus/auth.h
+include/cyrus/auth_pts.h
+include/cyrus/bitvector.h
 include/cyrus/bsearch.h
-include/cyrus/byteorder64.h
 include/cyrus/charset.h
+include/cyrus/chartable.h
+include/cyrus/command.h
 include/cyrus/crc32.h
 include/cyrus/cyr_lock.h
 include/cyrus/cyrusdb.h
+include/cyrus/exitcodes.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
 include/cyrus/hash.h
+include/cyrus/hashu64.h
 include/cyrus/imapopts.h
 include/cyrus/imapurl.h
 include/cyrus/imclient.h
 include/cyrus/imparse.h
+include/cyrus/iostat.h
 include/cyrus/iptostring.h
-include/cyrus/libconfig.h
 include/cyrus/libcyr_cfg.h
 include/cyrus/lsort.h
 include/cyrus/map.h
-include/cyrus/md5.h
+include/cyrus/mappedfile.h
 include/cyrus/mkgmtime.h
 include/cyrus/mpool.h
 include/cyrus/nonblock.h
 include/cyrus/parseaddr.h
-include/cyrus/prot.h
 include/cyrus/retry.h
-include/cyrus/rfc822date.h
+include/cyrus/rfc822tok.h
+include/cyrus/sieve/
+include/cyrus/sieve/sieve_err.h
+include/cyrus/sieve/sieve_interface.h
 include/cyrus/signals.h
 include/cyrus/strarray.h
 include/cyrus/strhash.h
 include/cyrus/stristr.h
 include/cyrus/sysexits.h
-include/cyrus/util.h
+include/cyrus/times.h
+include/cyrus/tok.h
+include/cyrus/vparse.h
+include/cyrus/wildmat.h
 include/cyrus/xmalloc.h
-include/cyrus/xstrlcat.h
-include/cyrus/xstrlcpy.h
 lib/libcyrus.a
+lib/libcyrus.la
+@lib lib/libcyrus.so.${LIBcyrus_VERSION}
+lib/libcyrus_imap.a
+lib/libcyrus_imap.la
+@lib lib/libcyrus_imap.so.${LIBcyrus_imap_VERSION}
 lib/libcyrus_min.a
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.16.3/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.16.3/perllocal.pod
+lib/libcyrus_min.la
+@lib lib/libcyrus_min.so.${LIBcyrus_min_VERSION}
+lib/libcyrus_sieve.a
+lib/libcyrus_sieve.la
+@lib lib/libcyrus_sieve.so.${LIBcyrus_sieve_VERSION}
+lib/pkgconfig/libcyrus.pc
+lib/pkgconfig/libcyrus_min.pc
+lib/pkgconfig/libcyrus_sieve.pc
+libdata/perl5/site_perl/Cyrus/
+libdata/perl5/site_perl/Cyrus/Annotator/
+libdata/perl5/site_perl/Cyrus/Annotator/Daemon.pm
+libdata/perl5/site_perl/Cyrus/Annotator/Message.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/
@@ -75,105 +214,9 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.so
-libexec/cyrus-imapd/
-@bin libexec/cyrus-imapd/arbitron
-@bin libexec/cyrus-imapd/chk_cyrus
-@bin libexec/cyrus-imapd/ctl_cyrusdb
-@bin libexec/cyrus-imapd/ctl_deliver
-@bin libexec/cyrus-imapd/ctl_mboxlist
-@bin libexec/cyrus-imapd/cvt_cyrusdb
-@bin libexec/cyrus-imapd/cyr_dbtool
-@bin libexec/cyrus-imapd/cyr_df
-@bin libexec/cyrus-imapd/cyr_expire
-@bin libexec/cyrus-imapd/cyr_sequence
-@bin libexec/cyrus-imapd/cyr_synclog
-@bin libexec/cyrus-imapd/cyr_userseen
-@bin libexec/cyrus-imapd/cyrdump
-@bin libexec/cyrus-imapd/deliver
-@bin libexec/cyrus-imapd/fetchnews
-@bin libexec/cyrus-imapd/fud
-@bin libexec/cyrus-imapd/idled
-@bin libexec/cyrus-imapd/imapd
-@bin libexec/cyrus-imapd/ipurge
-@bin libexec/cyrus-imapd/lmtpd
-@bin libexec/cyrus-imapd/lmtpproxyd
-@bin libexec/cyrus-imapd/master
-@bin libexec/cyrus-imapd/mbexamine
-@bin libexec/cyrus-imapd/mbpath
-@bin libexec/cyrus-imapd/mupdate
-@bin libexec/cyrus-imapd/nntpd
-@bin libexec/cyrus-imapd/notifyd
-@bin libexec/cyrus-imapd/pop3d
-@bin libexec/cyrus-imapd/pop3proxyd
-@bin libexec/cyrus-imapd/proxyd
-@bin libexec/cyrus-imapd/quota
-@bin libexec/cyrus-imapd/reconstruct
-@bin libexec/cyrus-imapd/sievec
-@bin libexec/cyrus-imapd/sieved
-@bin libexec/cyrus-imapd/smmapd
-@bin libexec/cyrus-imapd/squatter
-@bin libexec/cyrus-imapd/timsieved
-@bin libexec/cyrus-imapd/tls_prune
-@bin libexec/cyrus-imapd/unexpunge
-@man man/man1/cyradm.1
-@man man/man1/imtest.1
-@man man/man1/installsieve.1
-@man man/man1/lmtptest.1
-@man man/man1/mupdatetest.1
-@man man/man1/nntptest.1
-@man man/man1/pop3test.1
-@man man/man1/sieveshell.1
-@man man/man1/sivtest.1
-@man man/man1/smtptest.1
-@man man/man3/imclient.3
-@man man/man3p/Cyrus::IMAP.3p
-@man man/man3p/Cyrus::IMAP::Admin.3p
-@man man/man3p/Cyrus::IMAP::IMSP.3p
-@man man/man3p/Cyrus::IMAP::Shell.3p
-@man man/man3p/Cyrus::SIEVE::managesieve.3p
-@man man/man5/cyrus.conf.5
-@man man/man5/imapd.conf.5
-@man man/man5/krb.equiv.5
-@man man/man8/arbitron.8
-@man man/man8/chk_cyrus.8
-@man man/man8/ctl_cyrusdb.8
-@man man/man8/ctl_deliver.8
-@man man/man8/ctl_mboxlist.8
-@man man/man8/cvt_cyrusdb.8
-@man man/man8/cyr_dbtool.8
-@man man/man8/cyr_df.8
-@man man/man8/cyr_expire.8
-@man man/man8/cyr_synclog.8
-@man man/man8/cyrus-deliver.8
-@man man/man8/cyrus-fetchnews.8
-@man man/man8/cyrus-idled.8
-@man man/man8/cyrus-imapd.8
-@man man/man8/cyrus-master.8
-@man man/man8/cyrus-pop3d.8
-@man man/man8/fud.8
-@man man/man8/ipurge.8
-@man man/man8/lmtpd.8
-@man man/man8/mbexamine.8
-@man man/man8/mbpath.8
-@man man/man8/nntpd.8
-@man man/man8/notifyd.8
-@man man/man8/quota.8
-@man man/man8/reconstruct.8
-@man man/man8/rmnews.8
-@man man/man8/smmapd.8
-@man man/man8/squatter.8
-@man man/man8/sync_client.8
-@man man/man8/sync_reset.8
-@man man/man8/sync_server.8
-@man man/man8/syncnews.8
-@man man/man8/timsieved.8
-@man man/man8/tls_prune.8
-@man man/man8/unexpunge.8
 share/doc/cyrus-imapd/
 share/doc/cyrus-imapd/COPYRIGHT
 share/doc/cyrus-imapd/text/
-share/doc/cyrus-imapd/text/.cvsignore
-share/doc/cyrus-imapd/text/Makefile
 share/doc/cyrus-imapd/text/ag
 share/doc/cyrus-imapd/text/altnamespace
 share/doc/cyrus-imapd/text/anoncvs
@@ -188,6 +231,7 @@ share/doc/cyrus-imapd/text/install-admin-mb
 share/doc/cyrus-imapd/text/install-auth
 share/doc/cyrus-imapd/text/install-compile
 share/doc/cyrus-imapd/text/install-configure
+share/doc/cyrus-imapd/text/install-http
 share/doc/cyrus-imapd/text/install-murder
 share/doc/cyrus-imapd/text/install-netnews
 share/doc/cyrus-imapd/text/install-perf
@@ -208,7 +252,6 @@ share/doc/cyrus-imapd/text/readme
 share/doc/cyrus-imapd/text/sieve
 share/doc/cyrus-imapd/text/sieve-protocol
 share/doc/cyrus-imapd/text/specs
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/cyrus-imapd/
 share/examples/cyrus-imapd/cmu-backend.conf
 share/examples/cyrus-imapd/cmu-frontend.conf
@@ -220,16 +263,18 @@ share/examples/cyrus-imapd/prefork.conf
 share/examples/cyrus-imapd/small.conf
 share/examples/cyrus-imapd/tools/
 share/examples/cyrus-imapd/tools/arbitronsort.pl
+share/examples/cyrus-imapd/tools/compile_st.pl
 share/examples/cyrus-imapd/tools/config2header
 share/examples/cyrus-imapd/tools/config2man
 share/examples/cyrus-imapd/tools/convert-sieve.pl
 share/examples/cyrus-imapd/tools/dohash
+share/examples/cyrus-imapd/tools/fixsearchpath.pl
+share/examples/cyrus-imapd/tools/jenkins-build.sh
 share/examples/cyrus-imapd/tools/masssievec
 share/examples/cyrus-imapd/tools/migrate-metadata
 share/examples/cyrus-imapd/tools/mkimap
 share/examples/cyrus-imapd/tools/mknewsgroups
 share/examples/cyrus-imapd/tools/mupdate-loadgen.pl
-share/examples/cyrus-imapd/tools/not-mkdep
 share/examples/cyrus-imapd/tools/rehash
 share/examples/cyrus-imapd/tools/translatesieve
 share/examples/cyrus-imapd/tools/undohash

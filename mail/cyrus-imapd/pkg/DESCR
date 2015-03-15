@@ -9,6 +9,3 @@ efficiency, scalability, and administratability. Multiple concurrent
 read/write connections to the same mailbox are permitted. The server
 supports access control lists on mailboxes and storage quotas on mailbox
 hierarchies.
-
-Available flavor:
-    drac     - Build drac support (i.e. pop before smtp)

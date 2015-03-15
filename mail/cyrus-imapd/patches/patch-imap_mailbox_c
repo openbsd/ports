@@ -1,16 +1,16 @@
-$OpenBSD: patch-imap_mailbox_c,v 1.9 2014/06/19 08:38:31 ajacoutot Exp $
+$OpenBSD: patch-imap_mailbox_c,v 1.10 2015/03/15 08:51:07 ajacoutot Exp $
 
 https://bugzilla.cyrusimap.org/show_bug.cgi?id=3376
 
---- imap/mailbox.c.orig	Sat Dec  1 20:57:54 2012
-+++ imap/mailbox.c	Thu Jun 19 10:20:48 2014
-@@ -1960,10 +1960,10 @@ bit32 make_sync_crc(struct mailbox *mailbox, struct in
+--- imap/mailbox.c.orig	Tue Mar  3 13:09:17 2015
++++ imap/mailbox.c	Thu Mar 12 13:58:09 2015
+@@ -2234,10 +2234,10 @@ static uint32_t crc_basic(const struct mailbox *mailbo
  	flagcrc ^= crc32_cstring(buf);
      }
  
--    snprintf(buf, 4096, "%u " MODSEQ_FMT " %lu (%u) %lu %s",
+-    snprintf(buf, sizeof(buf), "%u " MODSEQ_FMT " %lu (%u) %lu %s",
 -	    record->uid, record->modseq, record->last_updated,
-+    snprintf(buf, 4096, "%u " MODSEQ_FMT " " MODSEQ_FMT " (%u) " MODSEQ_FMT " %s",
++    snprintf(buf, sizeof(buf), "%u " MODSEQ_FMT " " MODSEQ_FMT " (%u) " MODSEQ_FMT " %s", 
 +	    record->uid, record->modseq, (modseq_t)record->last_updated,
  	    flagcrc,
 -	    record->internaldate,

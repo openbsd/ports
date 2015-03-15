@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_util_c,v 1.1 2012/04/20 20:54:17 ajacoutot Exp $
+$OpenBSD: patch-lib_util_c,v 1.2 2015/03/15 08:51:07 ajacoutot Exp $
 
 util.c:284: error: 'UINT32_MAX' undeclared (first use in this function)
 
---- lib/util.c.orig	Fri Apr 20 22:38:29 2012
-+++ lib/util.c	Fri Apr 20 22:39:23 2012
-@@ -45,6 +45,7 @@
+--- lib/util.c.orig	Tue Mar  3 13:09:17 2015
++++ lib/util.c	Thu Mar 12 13:52:02 2015
+@@ -43,6 +43,7 @@
  #include <config.h>
  
  #include <stdio.h>
