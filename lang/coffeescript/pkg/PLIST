@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/08/31 10:48:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/15 10:07:18 jasper Exp $
 bin/cake
 bin/coffee
 lib/node_modules/coffee-script/
@@ -11,6 +11,7 @@ lib/node_modules/coffee-script/README.md
 lib/node_modules/coffee-script/bin/
 lib/node_modules/coffee-script/bin/cake
 lib/node_modules/coffee-script/bin/coffee
+lib/node_modules/coffee-script/bower.json
 lib/node_modules/coffee-script/lib/
 lib/node_modules/coffee-script/lib/coffee-script/
 lib/node_modules/coffee-script/lib/coffee-script/browser.js
