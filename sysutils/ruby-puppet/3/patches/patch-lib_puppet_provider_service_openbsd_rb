@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.24 2015/01/28 08:43:50 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.25 2015/03/15 10:12:47 jasper Exp $
 
 * From 93f6754f9c886922d39e938251d4885c1ebb5a29 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -10,7 +10,10 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.24 2015/01/28 08:43:5
   Date: Thu, 4 Dec 2014 09:17:14 +0100
   Subject: [PATCH] (PUP-3736) Restart a service when the flags are modified
 
-* https://github.com/puppetlabs/puppet/pull/3510
+* From 55ef06ea1baff10ab518c93e3649f5f27c365055 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Fri, 23 Jan 2015 08:30:06 +0100
+  Subject: [PATCH] (PUP-3939) Sync with upstream OpenBSD rcctl(1) changes
 
 --- lib/puppet/provider/service/openbsd.rb.orig	Mon Nov  3 23:23:13 2014
 +++ lib/puppet/provider/service/openbsd.rb	Wed Jan 28 10:34:13 2015
@@ -306,7 +309,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.24 2015/01/28 08:43:5
 -      else
 -        :true
 -      end
-+    output = Puppet::Util::Execution.execute([command(:rcctl), "get", @resource[:name], "status"],
++    output = execute([command(:rcctl), "get", @resource[:name], "status"],
 +                     :failonfail => false, :combine => false, :squelch => false)
 +    if output.exitstatus == 0
 +      self.debug("Is enabled")
