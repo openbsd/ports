@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/12/15 13:50:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/03/15 10:09:01 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -140,6 +140,8 @@ share/doc/libvirt/html/libvirt-net-physical.png
 share/doc/libvirt/html/libvirt-object-model.png
 share/doc/libvirt/html/libvirt.css
 share/doc/libvirt/html/libvirtLogo.png
+share/doc/libvirt/html/locking-lockd.html
+share/doc/libvirt/html/locking-sanlock.html
 share/doc/libvirt/html/locking.html
 share/doc/libvirt/html/logging.html
 share/doc/libvirt/html/madeWith.png
