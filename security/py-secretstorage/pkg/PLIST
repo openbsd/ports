@@ -1,17 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/14 19:57:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 11:07:27 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/SecretStorage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/secretstorage/
 lib/python${MODPY_VERSION}/site-packages/secretstorage/__init__.py
-lib/python${MODPY_VERSION}/site-packages/secretstorage/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}collection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}defines.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}dhcrypto.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/secretstorage/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/secretstorage/collection.py
-lib/python${MODPY_VERSION}/site-packages/secretstorage/collection.pyc
 lib/python${MODPY_VERSION}/site-packages/secretstorage/defines.py
-lib/python${MODPY_VERSION}/site-packages/secretstorage/defines.pyc
 lib/python${MODPY_VERSION}/site-packages/secretstorage/dhcrypto.py
-lib/python${MODPY_VERSION}/site-packages/secretstorage/dhcrypto.pyc
 lib/python${MODPY_VERSION}/site-packages/secretstorage/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/secretstorage/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/secretstorage/item.py
-lib/python${MODPY_VERSION}/site-packages/secretstorage/item.pyc
 lib/python${MODPY_VERSION}/site-packages/secretstorage/util.py
-lib/python${MODPY_VERSION}/site-packages/secretstorage/util.pyc

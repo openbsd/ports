@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/14 19:57:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/16 11:07:27 ajacoutot Exp $
 
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
 MODPY_EGG_VERSION=	2.1.1
 DISTNAME=		SecretStorage-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
+REVISION=		0
 
 CATEGORIES=   		security
 
@@ -19,8 +20,11 @@ MODULES=		lang/python
 
 NO_TEST=		Yes
 
-RUN_DEPENDS=		devel/py-gobject3 \
-			x11/dbus-python
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			x11/dbus-python${MODPY_FLAVOR}
+
+FLAVORS =		python3
+FLAVOR ?=
 
 # (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)
 RUN_DEPENDS +=		x11/gnome/keyring
