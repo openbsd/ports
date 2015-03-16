@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/14 19:52:46 matthieu Exp $
+# $OpenBSD: Makefile,v 1.31 2015/03/16 20:44:05 landry Exp $
 
 COMMENT=	Xfce4 xkb layout switcher panel plugin
 
-XFCE_VERSION=	0.5.6
+XFCE_VERSION=	0.7.1
 XFCE_PLUGIN=	xkb
-REVISION=	0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
