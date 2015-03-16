@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/17 17:18:21 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/03/16 19:37:14 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -6,17 +6,15 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		2.0.0
-PATCHLEVEL =		598
+PATCHLEVEL =		643
 RUBYLIBREV =		2.0
 DISTNAME =		ruby-${VERSION}-p${PATCHLEVEL}
 
-SHARED_LIBS =		ruby20	1.0
+SHARED_LIBS =		ruby20	1.1
 PKGNAME-main =		ruby-${VERSION}.${PATCHLEVEL}
 PKGNAME-gdbm =		ruby20-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby20-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby20-ri_docs-${VERSION}.${PATCHLEVEL}
-
-REVISION-main =		1
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
