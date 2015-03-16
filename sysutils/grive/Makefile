@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/31 10:06:35 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/16 21:40:57 landry Exp $
 
+BROKEN-hppa =	no atomic ops
 COMMENT =	third-party client for Google Drive
 
 VERSION =	0.3.1-pre
