@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2014/12/06 16:55:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.56 2015/03/16 19:53:55 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -58,9 +58,12 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.dic
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-bin
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/clearkey.info
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozalloc.so.${LIBmozalloc_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozilla-xremote-client
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/plugin-container

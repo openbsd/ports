@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.265 2015/01/29 17:45:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.266 2015/03/16 19:53:55 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	35.0.1
+MOZILLA_VERSION =	36.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =		0
 
-SO_VERSION =	53.0
+SO_VERSION =	54.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
+MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul clearkey
 
 CATEGORIES =	www
 
