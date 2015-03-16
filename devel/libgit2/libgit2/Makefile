@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2015/01/28 09:19:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/03/16 21:42:37 landry Exp $
 
+BROKEN-hppa =		no atomic ops
 COMMENT=		the Git library, take 2
 
 GH_VER=			v0.22.1
