@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2015/01/21 17:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2015/03/16 21:45:18 landry Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -42,6 +42,10 @@ MODULES=	devel/gettext \
 MODULES +=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
+
+.if ${MACHINE_ARCH} == "hppa"
+CFLAGS +=	-O0
+.endif   
 
 MODPY_RUNDEP=	No
 

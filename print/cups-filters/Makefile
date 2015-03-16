@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/03/15 08:29:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2015/03/16 21:45:18 landry Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
@@ -29,6 +29,10 @@ MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 MODULES +=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
+
+.if ${MACHINE_ARCH} == "hppa"
+CFLAGS +=	-O0
+.endif
 
 BUILD_DEPENDS=	print/ghostscript/gnu
 
