@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.383 2015/01/18 20:54:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.384 2015/03/16 15:20:25 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -209,6 +209,7 @@
      SUBDIR += pecl-imagick
      SUBDIR += pho
      SUBDIR += pigment
+     SUBDIR += pinta
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcrush
