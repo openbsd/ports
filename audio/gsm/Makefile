@@ -1,26 +1,30 @@
-# $OpenBSD: Makefile,v 1.42 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.43 2015/03/16 09:43:29 sthen Exp $
 
 COMMENT=	u-law to gsm encoding audio converter and library
 
-DISTNAME=	gsm-1.0.13
-REVISION=	2
-CATEGORIES=	audio
-HOMEPAGE=	http://www.quut.com/gsm/
-MASTER_SITES=	${HOMEPAGE}
+DISTNAME=	gsm-1.0.14
+WRKDIST=	${WRKDIR}/gsm-1.0-pl14
 
 SHARED_LIBS=	gsm	1.0
+
+CATEGORIES=	audio
+
+HOMEPAGE=	http://www.quut.com/gsm/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC-like
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
+MASTER_SITES=	${HOMEPAGE}
+
 MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)' \
 		LIBgsm_VERSION=${LIBgsm_VERSION}
 
 FAKE_FLAGS=	INSTALL_ROOT="${WRKINST}${PREFIX}"
 
-WRKDIST=	${WRKDIR}/gsm-1.0-pl13
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
