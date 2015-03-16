@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/16 21:41:55 landry Exp $
 
+BROKEN-hppa =	ICE/double-free/cc1(30516) in malloc(): error: recursive call 
 COMMENT=	SWF manipulation and generation utilities
 
 DISTNAME=	swftools-0.9.1
