@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.3 2014/11/10 16:05:17 landry Exp $
+$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.4 2015/03/16 20:06:33 landry Exp $
 Fix paths to various doc files, installed in share/doc/qgis
 per doc/CMakeLists.txt patch
---- src/core/qgsapplication.cpp.orig	Fri Oct 31 15:17:19 2014
-+++ src/core/qgsapplication.cpp	Fri Nov  7 14:32:50 2014
-@@ -421,21 +421,21 @@ const QString QgsApplication::themeName()
+--- src/core/qgsapplication.cpp.orig	Thu Feb 26 10:12:00 2015
++++ src/core/qgsapplication.cpp	Tue Mar  3 10:18:12 2015
+@@ -433,25 +433,25 @@ const QString QgsApplication::themeName()
  */
  const QString QgsApplication::authorsFilePath()
  {
@@ -18,6 +18,11 @@ per doc/CMakeLists.txt patch
 -  return ABISYM( mPkgDataPath ) + QString( "/doc/CONTRIBUTORS" );
 +  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/CONTRIBUTORS" );
  }
+ const QString QgsApplication::developersMapFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/developersmap.html" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/developersmap.html" );
+ }
  /*!
    Returns the path to the sponsors file.
  */
@@ -28,7 +33,7 @@ per doc/CMakeLists.txt patch
  }
  
  /*!
-@@ -443,19 +443,19 @@ const QString QgsApplication::sponsorsFilePath()
+@@ -459,19 +459,19 @@ const QString QgsApplication::sponsorsFilePath()
  */
  const QString QgsApplication::donorsFilePath()
  {

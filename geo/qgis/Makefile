@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.38 2014/12/11 13:29:29 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2015/03/16 20:06:32 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 SHARED_ONLY =	Yes
 
-DISTNAME =	qgis-2.6.1
+DISTNAME =	qgis-2.8.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	7.0 \
-		qgis_gui	6.0 \
-		qgis_analysis	3.0 \
-		qgispython	2.0 \
+SHARED_LIBS =	qgis_core	8.0 \
+		qgis_gui	7.0 \
+		qgis_analysis	3.1 \
+		qgis_server	0.0 \
+		qgispython	2.1 \
 		qgis_networkanalysis 0.0
 
 HOMEPAGE =	http://www.qgis.org/
@@ -63,13 +64,14 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 WANTLIB += ${MODPY_WANTLIB} jpeg tiff
 
 CONFIGURE_ENV+=	VERBOSE=1
-CONFIGURE_ARGS =	-DWITH_MAPSERVER=TRUE -DWITH_PYSPATIALITE=TRUE
+CONFIGURE_ARGS =	-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_PYSPATIALITE=TRUE
 
 pre-configure:
 		# otherwise takes precedence over systemwide file
 		rm -f ${WRKSRC}/cmake/FindIconv.cmake
 		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake
 		#install bison-2.6-generated files
+		#bison -o /tmp/qgsexpressionparser.cpp -dvt src/core/qgsexpressionparser.yy
 		cp ${FILESDIR}/qgsrastercalcparser.{c,h}pp ${WRKSRC}/src/analysis/raster/
 		cp ${FILESDIR}/qgsexpressionparser.{c,h}pp ${WRKSRC}/src/core/
 

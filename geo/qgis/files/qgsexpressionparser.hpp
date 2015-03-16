@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
-# define EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP
+#ifndef EXP_TMP_QGSEXPRESSIONPARSER_HPP
+# define EXP_TMP_QGSEXPRESSIONPARSER_HPP
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -61,26 +61,27 @@ extern int exp_debug;
      MINUS = 270,
      MUL = 271,
      DIV = 272,
-     MOD = 273,
-     CONCAT = 274,
-     POW = 275,
-     NOT = 276,
-     IN = 277,
-     NUMBER_FLOAT = 278,
-     NUMBER_INT = 279,
-     NULLVALUE = 280,
-     CASE = 281,
-     WHEN = 282,
-     THEN = 283,
-     ELSE = 284,
-     END = 285,
-     STRING = 286,
-     COLUMN_REF = 287,
-     FUNCTION = 288,
-     SPECIAL_COL = 289,
-     COMMA = 290,
-     Unknown_CHARACTER = 291,
-     UMINUS = 292
+     INTDIV = 273,
+     MOD = 274,
+     CONCAT = 275,
+     POW = 276,
+     NOT = 277,
+     IN = 278,
+     NUMBER_FLOAT = 279,
+     NUMBER_INT = 280,
+     NULLVALUE = 281,
+     CASE = 282,
+     WHEN = 283,
+     THEN = 284,
+     ELSE = 285,
+     END = 286,
+     STRING = 287,
+     COLUMN_REF = 288,
+     FUNCTION = 289,
+     SPECIAL_COL = 290,
+     COMMA = 291,
+     Unknown_CHARACTER = 292,
+     UMINUS = 293
    };
 #endif
 
@@ -89,7 +90,7 @@ extern int exp_debug;
 typedef union YYSTYPE
 {
 /* Line 2049 of yacc.c  */
-#line 77 "/usr/obj/ports/qgis-2.6.0/qgis-2.6.0/src/core/qgsexpressionparser.yy"
+#line 77 "src/core/qgsexpressionparser.yy"
 
   QgsExpression::Node* node;
   QgsExpression::NodeList* nodelist;
@@ -103,7 +104,7 @@ typedef union YYSTYPE
 
 
 /* Line 2049 of yacc.c  */
-#line 107 "/usr/obj/ports/qgis-2.6.0/build-amd64/src/core/qgsexpressionparser.hpp"
+#line 108 "/tmp/qgsexpressionparser.hpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -125,4 +126,4 @@ int exp_parse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !EXP_USR_OBJ_PORTS_QGIS_2_6_0_BUILD_AMD64_SRC_CORE_QGSEXPRESSIONPARSER_HPP  */
+#endif /* !EXP_TMP_QGSEXPRESSIONPARSER_HPP  */

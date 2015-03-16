@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_helpviewer_CMakeLists_txt,v 1.2 2014/08/20 08:54:45 landry Exp $
---- src/helpviewer/CMakeLists.txt.orig	Wed Sep 11 01:06:52 2013
-+++ src/helpviewer/CMakeLists.txt	Tue Sep 24 22:17:13 2013
-@@ -70,9 +70,9 @@ IF (NOT WITH_INTERNAL_SPATIALITE)
- ENDIF (NOT WITH_INTERNAL_SPATIALITE)
+$OpenBSD: patch-src_helpviewer_CMakeLists_txt,v 1.3 2015/03/16 20:06:33 landry Exp $
+--- src/helpviewer/CMakeLists.txt.orig	Thu Feb 26 10:12:00 2015
++++ src/helpviewer/CMakeLists.txt	Tue Mar  3 10:16:43 2015
+@@ -60,9 +60,9 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}
  
  TARGET_LINK_LIBRARIES(qgis_help
+   qgis_core
 -  ${QT_QTCORE_LIBRARY}
 -  ${QT_QTGUI_LIBRARY}
 -  ${QT_QTNETWORK_LIBRARY}
