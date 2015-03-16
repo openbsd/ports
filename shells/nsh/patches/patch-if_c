@@ -1,4 +1,4 @@
-$OpenBSD: patch-if_c,v 1.7 2015/01/10 13:06:14 sthen Exp $
+$OpenBSD: patch-if_c,v 1.8 2015/03/16 15:21:58 naddy Exp $
 
 Initial handling of NOINET6 removal (post-5.6).
 
@@ -7,9 +7,36 @@ explicitly or implicitly added) is not yet supported.
 
 XXX "inet6 autoconf" also needs to be handled (replacement for rtsol).
 
---- if.c.orig	Sat May  3 22:50:07 2014
-+++ if.c	Sat Jan 10 12:41:53 2015
-@@ -628,12 +628,32 @@ set_ifxflags(char *ifname, int ifs, int flags)
+--- if.c.orig	Sat May  3 23:50:07 2014
++++ if.c	Mon Mar 16 16:16:19 2015
+@@ -16,7 +16,6 @@
+ 
+ #include <stdio.h>
+ #include <ctype.h>
+-#include <tzfile.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+@@ -173,12 +172,12 @@ show_int(int argc, char **argv)
+ 	if (if_data.ifi_lastchange.tv_sec) {
+ 		gettimeofday(&tv, (struct timezone *)0);
+ 		c = difftime(tv.tv_sec, if_data.ifi_lastchange.tv_sec);
+-		days = c / SECSPERDAY;
+-		c %= SECSPERDAY;
+-		hours = c / SECSPERHOUR;
+-		c %= SECSPERHOUR;
+-		mins = c / SECSPERMIN;
+-		c %= SECSPERMIN;
++		days = c / (24 * 60 * 60);
++		c %= (24 * 60 * 60);
++		hours = c / (60 * 60);
++		c %= (60 * 60);
++		mins = c / 60;
++		c %= 60;
+ 		printf(" (last change ");
+ 		if (days)
+ 			printf("%id ", days);
+@@ -628,12 +627,32 @@ set_ifxflags(char *ifname, int ifs, int flags)
  	ifr.ifr_flags = flags;
  
  	if (ioctl(ifs, SIOCSIFXFLAGS, (caddr_t)&ifr) < 0) {
@@ -43,7 +70,7 @@ XXX "inet6 autoconf" also needs to be handled (replacement for rtsol).
  int
  intip(char *ifname, int ifs, int argc, char **argv)
  {
-@@ -1496,7 +1516,7 @@ intxflags(char *ifname, int ifs, int argc, char **argv
+@@ -1496,7 +1515,7 @@ intxflags(char *ifname, int ifs, int argc, char **argv
  	} else if (isprefix(argv[0], "mpls")) {
  		value = IFXF_MPLS;
  	} else if (isprefix(argv[0], "inet6")) {
@@ -52,7 +79,7 @@ XXX "inet6 autoconf" also needs to be handled (replacement for rtsol).
  	} else if (isprefix(argv[0], "wol")) {
  		value = IFXF_WOL;
  	} else {
-@@ -1793,6 +1813,7 @@ intrtd(char *ifname, int ifs, int argc, char **argv)
+@@ -1793,6 +1812,7 @@ intrtd(char *ifname, int ifs, int argc, char **argv)
  		set = 1;
  
  	if (isprefix(argv[0], "rtsol")) {
