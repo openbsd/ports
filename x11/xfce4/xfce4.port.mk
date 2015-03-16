@@ -1,9 +1,9 @@
-# $OpenBSD: xfce4.port.mk,v 1.21 2014/03/25 09:02:07 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.22 2015/03/16 20:19:05 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
 
-XFCE_DESKTOP_VERSION=	4.10.1
+XFCE_DESKTOP_VERSION=	4.12.0
 CATEGORIES+=	x11/xfce4
 
 USE_GMAKE?=	Yes
@@ -37,8 +37,10 @@ MODXFCE_RUN_DEPENDS+=  x11/gtk+2,-guic
 HOMEPAGE?=	http://goodies.xfce.org/projects/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin
 
 MASTER_SITES?=	http://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
+MASTER_SITES_GIT?=	http://git.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/snapshot/
 DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
-PKGNAME?=	${DISTNAME:S/-plugin//}
+DISTNAME_GIT?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_COMMIT}
+PKGNAME?=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}
 
 MODXFCE_LIB_DEPENDS=	x11/xfce4/xfce4-panel
 MODXFCE_WANTLIB=	xfce4panel-1.0
@@ -47,7 +49,10 @@ MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
 MASTER_SITES?=	http://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
+MASTER_SITES_GIT?=	http://git.xfce.org/apps/${XFCE_GOODIE:L}/snapshot/
 DISTNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
+DISTNAME_GIT?=	${XFCE_GOODIE}-${XFCE_COMMIT}
+PKGNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 .elif defined(XFCE_ARTWORK)
 HOMEPAGE?=	http://www.xfce.org/projects/
 
@@ -64,7 +69,22 @@ MODXFCE_PURGE_LA ?=	lib/thunarx-2
 HOMEPAGE?=	http://www.xfce.org/projects/${XFCE_PROJECT}
 
 MASTER_SITES?=	http://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
+MASTER_SITES_GIT?=	http://git.xfce.org/xfce/${XFCE_PROJECT:L}/snapshot/
 DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
+DISTNAME_GIT?=	${XFCE_PROJECT}-${XFCE_COMMIT}
+PKGNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
+.endif
+
+.if defined(XFCE_COMMIT)
+DISTNAME =	${DISTNAME_GIT}
+MASTER_SITES =	${MASTER_SITES_GIT}
+CONFIGURE_ARGS +=	--enable-maintainer-mode --enable-debug
+AUTOMAKE_VERSION =	1.12
+AUTOCONF_VERSION =	2.65
+pre-configure:
+	cd ${WRKSRC} && env NOCONFIGURE=yes \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		./autogen.sh
 .endif
 
 # remove useless .la file
