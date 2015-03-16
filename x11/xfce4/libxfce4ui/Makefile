@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2014/04/20 21:19:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/16 20:21:13 landry Exp $
 
 COMMENT=	Xfce4 widget library
 
-XFCE_VERSION =	4.10.0
+XFCE_VERSION=	4.12.1
 XFCE_PROJECT=	libxfce4ui
-REVISION =	6
 
 SHARED_LIBS=	xfce4ui-1		0.1	\
-		xfce4kbd-private-2	1.0	# 0.0
+		xfce4ui-2		0.0	\
+		xfce4kbd-private-2	1.0	\
+		xfce4kbd-private-3	0.0	# 0.0
 
 HOMEPAGE=	http://www.xfce.org/projects/libraries
 
@@ -20,8 +21,9 @@ MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
 CONFIGURE_ARGS +=	--disable-gladeui
 
-LIB_DEPENDS=	x11/xfce4/xfconf>=4.8.0 \
+LIB_DEPENDS=	x11/xfce4/xfconf>=4.12.0 \
 		x11/gtk+2 \
+		x11/gtk+3 \
 		devel/startup-notification
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
@@ -32,6 +34,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4util xfconf-0 z c pthread harfbuzz graphite2
+
+WANTLIB += atk-bridge-2.0 atspi cairo-gobject gdk-3 gtk-3
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfconf
 
