@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.52 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2015/03/16 17:10:05 sthen Exp $
 
 COMMENT=		SLang-based newsreader
 
-DISTNAME=		slrn-1.0.1
+DISTNAME=		slrn-1.0.2
 CATEGORIES=		news
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
 HOMEPAGE=		http://www.slrn.org/
 
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c crypto m ssl termcap slang
+
+MASTER_SITES=		http://jedsoft.org/releases/slrn/ \
+			http://jedsoft.org/releases/slrn/old/
 
 MAKE_ARGS+=		LDFLAGS="${LDFLAGS}"
 
@@ -22,12 +24,27 @@ LIB_DEPENDS=		devel/libslang
 MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-inews --with-ssl --with-slrnpull --enable-spool
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
+AUTOCONF_VERSION=	2.69
+AUTOCONF_DIR=		${WRKSRC}/autoconf
+CONFIGURE_ARGS+=	--disable-inews \
+			--with-libiconv-prefix=${LOCALBASE} \
+			--with-ssl \
+			--with-slrnpull \
+			--enable-spool
 LDFLAGS=		-L${LOCALBASE}/lib -lm
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--with-slang=${LOCALBASE} \
-			--with-libiconv=${LOCALBASE}
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
+
+# replace bundled m4 files with the newer (working ;) ones from gettext
+post-patch:
+.for i in gettext lib-ld lib-prefix nls progtest iconv lib-link po
+	cp ${LOCALBASE}/share/aclocal/$i.m4 ${WRKSRC}/autoconf/include/
+.endfor
+	cd ${WRKSRC}/autoconf && \
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf && \
+	    mv configure ..
 
 .include <bsd.port.mk>
