@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/01/02 17:12:21 landry Exp $
-@conflict gtk-xfce-engine-<=3.0.0p0
+@comment $OpenBSD: PLIST,v 1.10 2015/03/16 20:25:58 landry Exp $
+@conflict gtk-xfce-engine->=3.0.0p0
 @pkgpath x11/xfce4/gtk-xfce-engine
-lib/gtk-2.0/
-lib/gtk-2.0/2.10.0/
-lib/gtk-2.0/2.10.0/engines/
+@pkgpath x11/xfce4/gtk-xfce-engine,-main
 lib/gtk-2.0/2.10.0/engines/libxfce.so
 share/themes/Xfce/
 share/themes/Xfce-4.0/
@@ -36,6 +34,9 @@ share/themes/Xfce-dawn/gtk-2.0/gtkrc
 share/themes/Xfce-dusk/
 share/themes/Xfce-dusk/gtk-2.0/
 share/themes/Xfce-dusk/gtk-2.0/gtkrc
+share/themes/Xfce-flat/
+share/themes/Xfce-flat/gtk-2.0/
+share/themes/Xfce-flat/gtk-2.0/gtkrc
 share/themes/Xfce-kde2/
 share/themes/Xfce-kde2/gtk-2.0/
 share/themes/Xfce-kde2/gtk-2.0/gtkrc
