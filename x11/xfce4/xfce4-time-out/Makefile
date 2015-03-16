@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/20 21:19:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/03/16 20:42:12 landry Exp $
 
 COMMENT=	Xfce4 periodical screen locker panel plugin
 
-XFCE_VERSION=	1.0.1
+XFCE_VERSION=	1.0.2
 XFCE_PLUGIN=	time-out
-REVISION =	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
