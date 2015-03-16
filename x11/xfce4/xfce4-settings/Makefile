@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/04/14 19:52:45 matthieu Exp $
+# $OpenBSD: Makefile,v 1.27 2015/03/16 20:32:15 landry Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
-REVISION=	0
+XFCE_VERSION=	4.12.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,6 +12,7 @@ MODULES =	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes
 LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.9.0 \
 		devel/libnotify \
+		sysutils/upower \
 		x11/xfce4/garcon>=0.1.10 \
 		x11/xfce4/exo>=0.7.1 \
 		x11/gnome/libxklavier>=5 \
@@ -26,7 +27,7 @@ WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4kbd-private-2 xfce4ui-1
 WANTLIB += xfce4util xfconf-0 xkbfile xklavier xml2 z garcon-1
-WANTLIB += harfbuzz graphite2
+WANTLIB += harfbuzz graphite2 upower-glib lzma
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-settings \
 		menudir=${PREFIX}/share/examples/xfce4-settings \
