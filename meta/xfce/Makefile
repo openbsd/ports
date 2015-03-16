@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2014/05/18 11:22:01 stsp Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/16 20:51:47 landry Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
 
-V =		4.10
+V =		4.12
 PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-main = 1
-REVISION-extras = 1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -29,8 +27,7 @@ RUN_DEPENDS-main += \
 # theme packages
 RUN_DEPENDS-main += \
 		x11/xfce4/xfwm4-themes \
-		x11/xfce4/gtk-xfce-engine \
-		x11/xfce4/gtk-xfce-engine,-gtk3
+		x11/xfce4/gtk-xfce-engine
 # x11/xfce4/xfce4-icon-theme (outdated)
 
 # common apps
@@ -80,6 +77,7 @@ RUN_DEPENDS-extras += \
 		x11/xfce4/xfce4-time-out \
 		x11/xfce4/xfce4-verve \
 		x11/xfce4/xfce4-wavelan \
-		x11/xfce4/xfce4-weather
+		x11/xfce4/xfce4-weather \
+		x11/xfce4/xfce4-whiskermenu
 
 .include <bsd.port.mk>
