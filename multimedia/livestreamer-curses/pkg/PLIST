@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/11/27 17:58:53 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 05:34:05 bcallah Exp $
 bin/livestreamer-curses
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -10,11 +10,13 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/__init__.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/config.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/config.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/main.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/main.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/streamlist.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer_curses/streamlist.pyc
 share/doc/livestreamer-curses/
-share/doc/livestreamer-curses/README.md
+share/doc/livestreamer-curses/README.rst
 share/examples/livestreamer-curses/
 share/examples/livestreamer-curses/livestreamer-cursesrc.sample
