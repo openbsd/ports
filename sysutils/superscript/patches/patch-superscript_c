@@ -1,0 +1,20 @@
+$OpenBSD: patch-superscript_c,v 1.1 2015/03/16 15:04:46 naddy Exp $
+--- superscript.c.orig	Tue Sep 27 11:59:40 2005
++++ superscript.c	Mon Mar 16 16:03:19 2015
+@@ -69,7 +69,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <termios.h>
+-#include <tzfile.h>
+ #include <unistd.h>
+ 
+ #include <util.h>
+@@ -305,7 +304,7 @@ dooutput(const char *fname, int oflg, int silent)
+ 	sa.sa_handler = scriptflush;
+ 	(void)sigaction(SIGALRM, &sa, NULL);
+ 
+-	value.it_interval.tv_sec = SECSPERMIN / 2;
++	value.it_interval.tv_sec = 30;
+ 	value.it_interval.tv_usec = 0;
+ 	value.it_value = value.it_interval;
+ 	(void)setitimer(ITIMER_REAL, &value, NULL);
