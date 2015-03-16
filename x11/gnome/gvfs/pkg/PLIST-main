@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2014/10/06 10:49:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2015/03/16 13:19:24 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -67,7 +67,22 @@ lib/gvfs/libgvfsdaemon.so
 @man man/man1/gvfsd.1
 @man man/man7/gvfs.7
 share/GConf/gsettings/gvfs-dns-sd.convert
-share/bash-completion/completions/gvfs
+share/bash-completion/completions/gvfs-cat
+share/bash-completion/completions/gvfs-copy
+share/bash-completion/completions/gvfs-info
+share/bash-completion/completions/gvfs-less
+share/bash-completion/completions/gvfs-ls
+share/bash-completion/completions/gvfs-mkdir
+share/bash-completion/completions/gvfs-monitor-dir
+share/bash-completion/completions/gvfs-monitor-file
+share/bash-completion/completions/gvfs-move
+share/bash-completion/completions/gvfs-open
+share/bash-completion/completions/gvfs-rename
+share/bash-completion/completions/gvfs-rm
+share/bash-completion/completions/gvfs-save
+share/bash-completion/completions/gvfs-set-attribute
+share/bash-completion/completions/gvfs-trash
+share/bash-completion/completions/gvfs-tree
 share/dbus-1/services/gvfs-daemon.service
 share/dbus-1/services/gvfs-metadata.service
 share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml
@@ -99,6 +114,7 @@ share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
 share/locale/bn/LC_MESSAGES/gvfs.mo
 share/locale/bn_IN/LC_MESSAGES/gvfs.mo
+share/locale/bs/LC_MESSAGES/gvfs.mo
 share/locale/ca/LC_MESSAGES/gvfs.mo
 share/locale/ca@valencia/LC_MESSAGES/gvfs.mo
 share/locale/cs/LC_MESSAGES/gvfs.mo
