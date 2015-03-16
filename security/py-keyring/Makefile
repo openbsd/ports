@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/16 11:09:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/16 22:49:46 ajacoutot Exp $
 
 COMMENT=		store and access your passwords safely
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	5.3
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
+REVISION=		0
 
 CATEGORIES=   		security
 
@@ -19,6 +20,7 @@ MASTER_SITES=		${MASTER_SITE_PYPI:=k/keyring/}
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
+MODPY_ADJ_FILES=	keyring/cli.py
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			security/py-secretstorage${MODPY_FLAVOR}

@@ -1,0 +1,23 @@
+$OpenBSD: patch-setup_py,v 1.1 2015/03/16 22:49:46 ajacoutot Exp $
+
+Allow building with USE_SYSTRACE.
+
+--- setup.py.orig	Mon Mar 16 23:46:16 2015
++++ setup.py	Mon Mar 16 23:46:19 2015
+@@ -69,7 +69,7 @@ pytest_runner = (
+ 
+ setup_params = dict(
+     name='keyring',
+-    use_vcs_version=True,
++	version = "%{version}",
+     description="Store and access your passwords safely.",
+     url="http://bitbucket.org/kang/python-keyring-lib",
+     keywords="keyring Keychain GnomeKeyring Kwallet password storage",
+@@ -93,7 +93,6 @@ setup_params = dict(
+     extras_require={'test': test_requirements},
+     tests_require=test_requirements,
+     setup_requires=[
+-        'hgtools',
+     ] + pytest_runner,
+     entry_points={
+         'console_scripts': [
