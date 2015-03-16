@@ -1,0 +1,13 @@
+$OpenBSD: patch-panel-plugins_power-manager-plugin_xfce_xfce-power-manager-plugin_c,v 1.1 2015/03/16 20:30:55 landry Exp $
+http://git.xfce.org/xfce/xfce4-power-manager/commit/?id=7e3be2a03b4d4b950b31554bb93ce0cebf29475e
+--- panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c.orig	Sun Mar  1 22:26:54 2015
++++ panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c	Sun Mar  1 22:27:12 2015
+@@ -66,6 +66,8 @@ power_manager_plugin_new (XfcePanelPlugin *plugin)
+     /* pointer to plugin */
+     power_manager_plugin->plugin = plugin;
+ 
++    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
++
+     /* create some panel ebox */
+     power_manager_plugin->ebox = gtk_event_box_new ();
+     gtk_widget_show (power_manager_plugin->ebox);

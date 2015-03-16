@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/04/14 19:52:45 matthieu Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/16 20:30:55 landry Exp $
 
 COMMENT =	Xfce4 power manager
 
-XFCE_VERSION =	1.2.0
+XFCE_VERSION =	1.4.3
 XFCE_GOODIE =	xfce4-power-manager
-REVISION =	5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,11 +11,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES =	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE =	Yes
+MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 
 LIB_DEPENDS =	x11/xfce4/xfce4-panel \
+		sysutils/upower \
 		devel/libnotify
-
-RUN_DEPENDS =	sysutils/upower
 
 # share/polkit-1/actions/org.xfce.power.policy
 RUN_DEPENDS +=	sysutils/polkit
@@ -24,6 +23,7 @@ RUN_DEPENDS +=	sysutils/polkit
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
 
+#CONFIGURE_ARGS = --enable-debug
 CONFIGURE_ENV +=ac_cv_lib_Xext_DPMSQueryExtension=yes
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-power-manager
 
@@ -35,6 +35,6 @@ WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz m notify
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
-WANTLIB += xfce4util xfconf-0 z
+WANTLIB += xfce4util xfconf-0 z upower-glib
 
 .include <bsd.port.mk>
