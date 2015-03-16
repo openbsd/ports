@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:49:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:57 naddy Exp $
 include/cgi.h
 lib/libcgiparse.a
+@lib lib/libcgiparse.so.${LIBcgiparse_VERSION}
 lib/libcgiparse_p.a
 @man man/man3/cgiclose.3
 @man man/man3/cgigetvalue.3
 @man man/man3/cginewquerystr.3
-%%SHARED%%

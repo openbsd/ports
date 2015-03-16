@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/05/24 22:42:08 espie Exp $
-@lib lib/gcc-lib/${CONFIG}/${V}/libg2c.so.${LIBg2c_VERSION}
-@lib lib/libg2c.so.${LIBg2c_VERSION}

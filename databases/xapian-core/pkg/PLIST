@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/07 12:03:29 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:39 naddy Exp $
 @bin bin/copydatabase
 @bin bin/delve
 @bin bin/quest
@@ -53,6 +52,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.a
 lib/libxapian.la
+@lib lib/libxapian.so.${LIBxapian_VERSION}
 @man man/man1/copydatabase.1
 @man man/man1/delve.1
 @man man/man1/quest.1

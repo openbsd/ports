@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:55 naddy Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -7,7 +7,7 @@ COMMENT=	FreeIPMI provides in-band and out-of-band IPMI software
 
 V=		0.4.6
 DISTNAME=	freeipmi-${V}
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  freeipmi 4.0                  # .4.0
 SHARED_LIBS +=  ipmidetect 0.0                # .0.0

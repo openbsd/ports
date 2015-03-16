@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/25 11:49:21 steven Exp $
-@lib lib/libaspell.so.${LIBaspell_VERSION}
-@lib lib/libpspell.so.${LIBpspell_VERSION}

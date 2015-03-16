@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/07 21:58:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:56 naddy Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
 DISTNAME =		LRDF-0.5.0
 PKGNAME =		lib${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		textproc
 
 SHARED_LIBS =		lrdf	1.0	# 0.0

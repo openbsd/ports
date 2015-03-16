@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 13:19:05 steven Exp $
-@lib lib/libcompface.so.${LIBcompface_VERSION}

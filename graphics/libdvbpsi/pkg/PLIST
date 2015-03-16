@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/11/06 20:28:11 kili Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:47 naddy Exp $
 include/dvbpsi/
 include/dvbpsi/bat.h
 include/dvbpsi/cat.h
@@ -47,5 +46,5 @@ include/dvbpsi/sis.h
 include/dvbpsi/tot.h
 lib/libdvbpsi.a
 lib/libdvbpsi.la
-lib/pkgconfig/
+@lib lib/libdvbpsi.so.${LIBdvbpsi_VERSION}
 lib/pkgconfig/libdvbpsi.pc

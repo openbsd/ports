@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:44 naddy Exp $
 
 COMMENT =		object-oriented input system
 
 V =			1.3
 DISTNAME =		ois-v${V:S/./-/g}
 PKGNAME =		ois-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		OIS	0.0
 

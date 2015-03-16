@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/08 11:05:58 ajacoutot Exp $
-@lib lib/libBPM.so.${LIBBPM_VERSION}
-@lib lib/libSoundTouch.so.${LIBSoundTouch_VERSION}

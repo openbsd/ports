@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/20 16:45:10 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:39 naddy Exp $
 include/argtable2.h
 lib/libargtable2.a
 lib/libargtable2.la
-lib/pkgconfig/
+@lib lib/libargtable2.so.${LIBargtable2_VERSION}
 lib/pkgconfig/argtable2.pc
 @comment @man man/man3/argtable.3
 @man man/man3/argtable2.3

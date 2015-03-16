@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/14 00:00:18 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:56 naddy Exp $
 bin/adnmz
 bin/bnamazu
 bin/gcnmz
@@ -35,6 +34,7 @@ include/namazu/var.h
 include/namazu/wakati.h
 lib/libnmz.a
 lib/libnmz.la
+@lib lib/libnmz.so.${LIBnmz_VERSION}
 @bin libexec/namazu.cgi
 @man man/man1/mknmz.1
 @man man/man1/namazu.1

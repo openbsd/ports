@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:49 naddy Exp $
 
 COMMENT=	mail purpose library
 
 DISTNAME=	libetpan-1.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libetpan/}
 

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/01 12:02:27 naddy Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:46 naddy Exp $
 include/GL/
 include/GL/glpng.h
 lib/libglpng.a
+@lib lib/libglpng.so.${LIBglpng_VERSION}
 lib/libglpng_p.a
 share/doc/glpng/
 share/doc/glpng/glpng.html

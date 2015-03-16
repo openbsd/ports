@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/24 20:20:31 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:57 naddy Exp $
 @conflict openjade-<=1.3
 @bin bin/onsgmls
 @bin bin/osgmlnorm
@@ -147,6 +146,7 @@ include/OpenSP/types.h
 include/OpenSP/xnew.h
 lib/libosp.a
 lib/libosp.la
+@lib lib/libosp.so.${LIBosp_VERSION}
 @man man/man1/onsgmls.1
 @man man/man1/osgmlnorm.1
 @man man/man1/ospam.1

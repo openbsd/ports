@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/22 16:29:46 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:48 naddy Exp $
 bin/libwmf-config
 bin/libwmf-fontmap
 @bin bin/wmf2eps
@@ -23,10 +22,14 @@ include/libwmf/macro.h
 include/libwmf/svg.h
 include/libwmf/types.h
 include/libwmf/x.h
+@lib lib/libwmf-0.2.so.${LIBwmf-0.2_VERSION}
 lib/libwmf.a
 lib/libwmf.la
+@lib lib/libwmf.so.${LIBwmf_VERSION}
+@lib lib/libwmflite-0.2.so.${LIBwmflite-0.2_VERSION}
 lib/libwmflite.a
 lib/libwmflite.la
+@lib lib/libwmflite.so.${LIBwmflite_VERSION}
 share/doc/libwmf/
 share/doc/libwmf/caolan/
 share/doc/libwmf/caolan/2.html

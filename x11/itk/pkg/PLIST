@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/01/05 19:15:09 sebastia Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:59 naddy Exp $
 include/itk/
 include/itk/itk.h
 include/itk/itkDecls.h
+@lib lib/libitk33.so.${LIBitk33_VERSION}
 lib/tcl/itk/
 lib/tcl/itk/Archetype.itk
 lib/tcl/itk/Toplevel.itk

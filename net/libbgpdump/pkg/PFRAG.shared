@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/08/17 19:48:36 sthen Exp $
-@lib lib/libbgpdump.so.${LIBbgpdump_VERSION}

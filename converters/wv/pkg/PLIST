@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/19 17:26:17 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:38 naddy Exp $
 bin/wvAbw
 bin/wvCleanLatex
 @bin bin/wvConvert
@@ -18,8 +17,10 @@ bin/wvText
 bin/wvWml
 include/wv/
 include/wv/wv.h
+@lib lib/libwv-1.2.so.${LIBwv-1.2_VERSION}
 lib/libwv.a
 lib/libwv.la
+@lib lib/libwv.so.${LIBwv_VERSION}
 lib/pkgconfig/wv-1.0.pc
 @man man/man1/wvAbw.1
 @man man/man1/wvCleanLatex.1

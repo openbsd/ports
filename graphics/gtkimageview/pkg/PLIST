@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 11:50:20 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:47 naddy Exp $
 include/gtkimageview/
 include/gtkimageview/cursors.h
 include/gtkimageview/gdkpixbufdrawcache.h
@@ -17,7 +16,7 @@ include/gtkimageview/mouse_handler.h
 include/gtkimageview/utils.h
 lib/libgtkimageview.a
 lib/libgtkimageview.la
-lib/pkgconfig/
+@lib lib/libgtkimageview.so.${LIBgtkimageview_VERSION}
 lib/pkgconfig/gtkimageview.pc
 share/gtk-doc/
 share/gtk-doc/html/

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/03/13 19:24:13 jasper Exp $
-@lib lib/libtidyp-1.04.so.${LIBtidyp-1.04_VERSION}
-@lib lib/libtidyp.so.${LIBtidyp_VERSION}

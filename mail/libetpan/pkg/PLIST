@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/17 12:34:29 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:49 naddy Exp $
 bin/libetpan-config
 include/libetpan/
 include/libetpan.h
@@ -138,10 +137,15 @@ include/libetpan/pop3driver_cached_message.h
 include/libetpan/pop3driver_message.h
 include/libetpan/pop3driver_types.h
 include/libetpan/pop3storage.h
+include/libetpan/quota.h
+include/libetpan/quota_parser.h
+include/libetpan/quota_sender.h
+include/libetpan/quota_types.h
 include/libetpan/uidplus.h
 include/libetpan/uidplus_types.h
 lib/libetpan.a
 lib/libetpan.la
+@lib lib/libetpan.so.${LIBetpan_VERSION}
 share/doc/libetpan/
 share/doc/libetpan/API.txt
 share/doc/libetpan/COPYRIGHT

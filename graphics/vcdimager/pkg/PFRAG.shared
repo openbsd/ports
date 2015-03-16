@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2010/06/27 21:20:43 ajacoutot Exp $
-@lib lib/libvcdinfo.so.${LIBvcdinfo_VERSION}

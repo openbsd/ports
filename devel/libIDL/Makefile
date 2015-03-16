@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2013/09/28 08:50:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2015/03/16 18:07:41 naddy Exp $
 
 COMMENT=		IDL parsing library
 
 GNOME_PROJECT=		libIDL
 GNOME_VERSION=		0.8.14
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=	IDL-2                0.1      # .0.0
 

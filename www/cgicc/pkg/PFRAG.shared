@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/30 22:26:50 sturm Exp $
-@lib lib/libcgicc.so.${LIBcgicc_VERSION}

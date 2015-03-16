@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/05/11 11:43:49 ajacoutot Exp $
-@lib lib/liblog4c.so.${LIBlog4c_VERSION}

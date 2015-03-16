@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/16 18:07:43 naddy Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 
 V=		2.3.13
 DISTNAME=	mico-${V}
 CATEGORIES=	devel
+REVISION=	0
 
 # The build framework accommodates only a single shared lib extension.
 SHARED_LIBS=	mico${V}	${LIB_VERSION} \

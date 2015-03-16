@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:48 naddy Exp $
 
 COMMENT=	video capture library
 
 DISTNAME=	libvidcap-0.2.1
-REVISION =	0
+REVISION =	1
 SHARED_LIBS=	vidcap	0.0
 CATEGORIES=	graphics
 

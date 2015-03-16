@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2014/09/02 15:01:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:49 naddy Exp $
 
 COMMENT=	open source COBOL compiler
 
 DISTNAME=	open-cobol-1.1
 SHARED_LIBS +=	cob                  3.0      # .2.0
 CATEGORIES=	lang
+REVISION=	0
 
 HOMEPAGE=	http://www.opencobol.org/
 

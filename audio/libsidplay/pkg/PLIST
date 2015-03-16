@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:36 naddy Exp $
 include/sidplay/
 include/sidplay/compconf.h
 include/sidplay/emucfg.h
@@ -12,4 +12,4 @@ include/sidplay/sidtune.h
 include/sidplay/version.h
 lib/libsidplay.a
 lib/libsidplay.la
-%%SHARED%%
+@lib lib/libsidplay.so.${LIBsidplay_VERSION}

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/07 06:15:06 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:55 naddy Exp $
 @bin bin/addrinfo
 @bin bin/localinfo
 @bin bin/sip-date
@@ -124,9 +123,10 @@ include/sofia-sip-${API}/sofia-sip/url_tag.h
 include/sofia-sip-${API}/sofia-sip/url_tag_class.h
 lib/libsofia-sip-ua-glib.a
 lib/libsofia-sip-ua-glib.la
+@lib lib/libsofia-sip-ua-glib.so.${LIBsofia-sip-ua-glib_VERSION}
 lib/libsofia-sip-ua.a
 lib/libsofia-sip-ua.la
-lib/pkgconfig/
+@lib lib/libsofia-sip-ua.so.${LIBsofia-sip-ua_VERSION}
 lib/pkgconfig/sofia-sip-ua-glib.pc
 lib/pkgconfig/sofia-sip-ua.pc
 @man man/man1/addrinfo.1

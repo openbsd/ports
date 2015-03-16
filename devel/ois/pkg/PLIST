@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/18 14:27:22 pascal Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:44 naddy Exp $
 include/OIS/
 include/OIS/OIS.h
 include/OIS/OISConfig.h
@@ -18,5 +17,5 @@ include/OIS/OISObject.h
 include/OIS/OISPrereqs.h
 lib/libOIS.a
 lib/libOIS.la
-lib/pkgconfig/
+@lib lib/libOIS.so.${LIBOIS_VERSION}
 lib/pkgconfig/OIS.pc

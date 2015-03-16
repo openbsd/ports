@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/02/03 20:52:30 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:47 naddy Exp $
 bin/libart2-config
 include/libart-2.0/
 include/libart-2.0/libart_lgpl/
@@ -49,5 +48,5 @@ include/libart-2.0/libart_lgpl/libart-features.h
 include/libart-2.0/libart_lgpl/libart.h
 lib/libart_lgpl_2.a
 lib/libart_lgpl_2.la
-lib/pkgconfig/
+@lib lib/libart_lgpl_2.so.${LIBart_lgpl_2_VERSION}
 lib/pkgconfig/libart-2.0.pc

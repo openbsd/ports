@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/01/20 09:00:47 benoit Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.11 2015/03/16 18:07:54 naddy Exp $
 include/libssh2.h
 include/libssh2_publickey.h
 include/libssh2_sftp.h
 lib/libssh2.a
 lib/libssh2.la
-lib/pkgconfig/
+@lib lib/libssh2.so.${LIBssh2_VERSION}
 lib/pkgconfig/libssh2.pc
 @man man/man3/libssh2_agent_connect.3
 @man man/man3/libssh2_agent_disconnect.3

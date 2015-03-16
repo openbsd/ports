@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/05/21 13:07:10 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/03/16 18:07:57 naddy Exp $
 @bin bin/sabcmd
 bin/sablot-config
 include/sabcfg.h
@@ -9,6 +9,7 @@ include/shandler.h
 include/sxpath.h
 lib/libsablot.a
 lib/libsablot.la
+@lib lib/libsablot.so.${LIBsablot_VERSION}
 @man man/man1/sabcmd.1
 share/doc/sablotron/
 share/doc/sablotron/jsdom-ref/
@@ -223,4 +224,3 @@ share/doc/sablotron/sxp/apidocs/sparse-toc-grp.html
 share/doc/sablotron/sxp/apidocs/sparse-toc.html
 share/doc/sablotron/sxp/complete-frameset.html
 share/doc/sablotron/sxp/sparse-frameset.html
-%%SHARED%%

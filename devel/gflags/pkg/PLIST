@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/24 19:51:44 espie Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:40 naddy Exp $
 bin/gflags_completions.sh
 include/gflags/
 include/gflags/gflags.h
@@ -9,8 +8,10 @@ include/google/gflags.h
 include/google/gflags_completions.h
 lib/libgflags.a
 lib/libgflags.la
+@lib lib/libgflags.so.${LIBgflags_VERSION}
 lib/libgflags_nothreads.a
 lib/libgflags_nothreads.la
+@lib lib/libgflags_nothreads.so.${LIBgflags_nothreads_VERSION}
 share/doc/gflags/
 share/doc/gflags/AUTHORS
 share/doc/gflags/COPYING

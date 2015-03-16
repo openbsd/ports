@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:40 naddy Exp $
 
 # arm: doesn't build super-old and broken assember files
 ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
 COMMENT=	foreign function call libraries
 
 DISTNAME=	ffcall-1.10
-REVISION =	1
+REVISION =	2
 SHARED_LIBS=	avcall		1.0 \
 		callback	1.0
 CATEGORIES=	devel

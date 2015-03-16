@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/10/17 11:56:22 pea Exp $
-@lib lib/libnpth.so.${LIBnpth_VERSION}

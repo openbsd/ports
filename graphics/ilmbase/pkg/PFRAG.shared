@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/04/11 11:06:26 jasper Exp $
-@lib lib/libHalf.so.${LIBHalf_VERSION}
-@lib lib/libIex.so.${LIBIex_VERSION}
-@lib lib/libIlmThread.so.${LIBIlmThread_VERSION}
-@lib lib/libImath.so.${LIBImath_VERSION}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:36 naddy Exp $
 
 COMMENT=	library for reading ID3 tags
 
 DISTNAME=	libid3tag-0.15.1b
-REVISION=	3
+REVISION=	4
 SHARED_LIBS +=	id3tag               4.0      # .3.0
 
 CATEGORIES=	audio

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/10/04 23:50:21 ckuethe Exp $
-@lib lib/libclog.so.${LIBclog_VERSION}

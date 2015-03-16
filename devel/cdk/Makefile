@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/22 14:10:46 pea Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/16 18:07:39 naddy Exp $
 
 COMMENT=	curses development kit
 
 V=		5.0-20060507
 DISTNAME=	cdk-${V}
 PKGNAME=	cdk-${V:S/-/./}
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX=	.tgz
 

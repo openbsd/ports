@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/11/26 14:13:26 espie Exp $
-@lib lib/libfreeipmi.so.${LIBfreeipmi_VERSION}
-@lib lib/libipmiconsole.so.${LIBipmiconsole_VERSION}
-@lib lib/libipmidetect.so.${LIBipmidetect_VERSION}
-@lib lib/libipmimonitoring.so.${LIBipmimonitoring_VERSION}

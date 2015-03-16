@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/12/27 09:44:15 jasper Exp $
-@lib lib/libtwolame.so.${LIBtwolame_VERSION}

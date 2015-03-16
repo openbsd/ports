@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:50 naddy Exp $
 
 COMMENT =		computing the convex hull
 
 VERSION =		2011.1
 DISTNAME =		qhull-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		qhull6		0.0 # 6.2
 

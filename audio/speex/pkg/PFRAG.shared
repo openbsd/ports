@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2008/05/04 15:16:43 jasper Exp $
-@lib lib/libspeex.so.${LIBspeex_VERSION}
-@lib lib/libspeexdsp.so.${LIBspeexdsp_VERSION}

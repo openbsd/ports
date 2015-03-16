@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/16 11:42:04 steven Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:45 naddy Exp $
 include/agg2/
 include/agg2/agg_alpha_mask_u8.h
 include/agg2/agg_arc.h
@@ -143,13 +142,16 @@ include/agg2/util/agg_color_conv_rgb16.h
 include/agg2/util/agg_color_conv_rgb8.h
 lib/libagg.a
 lib/libagg.la
+@lib lib/libagg.so.${LIBagg_VERSION}
 lib/libaggfontfreetype.a
 lib/libaggfontfreetype.la
+@lib lib/libaggfontfreetype.so.${LIBaggfontfreetype_VERSION}
 lib/libaggplatformX11.a
 lib/libaggplatformX11.la
+@lib lib/libaggplatformX11.so.${LIBaggplatformX11_VERSION}
 lib/libaggplatformsdl.a
 lib/libaggplatformsdl.la
-lib/pkgconfig/
+@lib lib/libaggplatformsdl.so.${LIBaggplatformsdl_VERSION}
 lib/pkgconfig/libagg.pc
 share/aclocal/
 share/aclocal/libagg.m4

@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2008/07/25 14:20:18 brad Exp $
-@lib lib/libtheora.so.${LIBtheora_VERSION}
-@lib lib/libtheoradec.so.${LIBtheoradec_VERSION}
-@lib lib/libtheoraenc.so.${LIBtheoraenc_VERSION}

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/06/28 13:43:03 dcoppa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:46 naddy Exp $
 @bin bin/ffmpegthumbnailer
 include/libffmpegthumbnailer/
 include/libffmpegthumbnailer/filmstripfilter.h
@@ -10,6 +9,6 @@ include/libffmpegthumbnailer/videothumbnailer.h
 include/libffmpegthumbnailer/videothumbnailerc.h
 lib/libffmpegthumbnailer.a
 lib/libffmpegthumbnailer.la
-lib/pkgconfig/
+@lib lib/libffmpegthumbnailer.so.${LIBffmpegthumbnailer_VERSION}
 lib/pkgconfig/libffmpegthumbnailer.pc
 @man man/man1/ffmpegthumbnailer.1

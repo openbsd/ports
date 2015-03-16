@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/11/19 17:12:15 millert Exp $
-@lib lib/libofa.so.${LIBofa_VERSION}

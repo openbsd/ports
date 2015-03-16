@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/03/16 18:07:57 naddy Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
 DISTNAME=	cgicc-3.2.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0
 MODGNU_SHARED_LIBS=cgicc ''

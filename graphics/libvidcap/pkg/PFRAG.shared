@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/06/06 13:43:19 sthen Exp $
-@lib lib/libvidcap.so.${LIBvidcap_VERSION}

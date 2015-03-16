@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/22 12:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:54 naddy Exp $
 
 COMMENT=	strong hash library
 
@@ -7,6 +7,7 @@ CATEGORIES=	security
 SHARED_LIBS=	mhash	2.1	# .2.1
 MODGNU_SHARED_LIBS=mhash ''
 LIBmhash_ALIAS=	realmhash
+REVISION=	0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mhash/}
 

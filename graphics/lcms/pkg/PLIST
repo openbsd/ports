@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/06/10 00:42:40 okan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:47 naddy Exp $
 @bin bin/icc2ps
 @bin bin/icclink
 @bin bin/icctrans
@@ -10,7 +10,7 @@ include/icc34.h
 include/lcms.h
 lib/liblcms.a
 lib/liblcms.la
-lib/pkgconfig/
+@lib lib/liblcms.so.${LIBlcms_VERSION}
 lib/pkgconfig/lcms.pc
 @man man/man1/icc2ps.1
 @man man/man1/icclink.1
@@ -20,4 +20,3 @@ lib/pkgconfig/lcms.pc
 share/doc/lcms/
 share/doc/lcms/LCMSAPI.TXT
 share/doc/lcms/TUTORIAL.TXT
-%%SHARED%%

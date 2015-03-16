@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2010/03/25 06:27:44 jasper Exp $
-@lib lib/libgtkgl-2.0.so.${LIBgtkgl-2.0_VERSION}

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/02/16 22:10:35 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:58 naddy Exp $
 bin/croco-0.6-config
 @bin bin/csslint-0.6
 include/libcroco-0.6/
@@ -34,7 +33,7 @@ include/libcroco-0.6/libcroco/libcroco-config.h
 include/libcroco-0.6/libcroco/libcroco.h
 lib/libcroco-0.6.a
 lib/libcroco-0.6.la
-lib/pkgconfig/
+@lib lib/libcroco-0.6.so.${LIBcroco-0.6_VERSION}
 lib/pkgconfig/libcroco-0.6.pc
 share/gtk-doc/
 share/gtk-doc/html/

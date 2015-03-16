@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/04/02 20:33:21 jsg Exp $
-@lib lib/libmpc.so.${LIBmpc_VERSION}

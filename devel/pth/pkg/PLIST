@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 09:43:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:44 naddy Exp $
 bin/pth-config
 include/pth.h
 lib/libpth.a
 lib/libpth.la
+@lib lib/libpth.so.${LIBpth_VERSION}
 @man man/man1/pth-config.1
 @man man/man3/pth.3
 share/aclocal/
 share/aclocal/pth.m4
-%%SHARED%%

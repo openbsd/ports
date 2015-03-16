@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:37 naddy Exp $
 
 COMMENT=	optimised MPEG Audio Layer 2 (MP2) encoder
 
 DISTNAME=	twolame-0.3.13
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  twolame              0.0      # 0.0
 
 CATEGORIES=	audio

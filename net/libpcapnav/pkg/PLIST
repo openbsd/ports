@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/09/26 20:14:37 rui Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:52 naddy Exp $
 bin/pcapnav-config
 include/pcapnav.h
 lib/libpcapnav.a
 lib/libpcapnav.la
+@lib lib/libpcapnav.so.${LIBpcapnav_VERSION}
 share/doc/libpcapnav/
 share/doc/libpcapnav/a1466.html
 share/doc/libpcapnav/api.html

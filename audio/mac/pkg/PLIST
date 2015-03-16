@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/19 16:24:37 jasper Exp $
-%%SHARED%%
-bin/mac
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:36 naddy Exp $
+@bin bin/mac
 include/mac/
 include/mac/APECompress.h
 include/mac/APECompressCore.h
@@ -25,3 +24,4 @@ include/mac/StdLibFileIO.h
 include/mac/config.h
 lib/libmac.a
 lib/libmac.la
+@lib lib/libmac.so.${LIBmac_VERSION}

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/08 05:22:09 jakemsr Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:39 naddy Exp $
 bin/ccgnu2-config
 include/cc++/
 include/cc++/address.h
@@ -43,9 +42,10 @@ include/cc++/zstream.h
 @info info/commoncpp2.info
 lib/libccext2.a
 lib/libccext2.la
+@lib lib/libccext2.so.${LIBccext2_VERSION}
 lib/libccgnu2.a
 lib/libccgnu2.la
-lib/pkgconfig/
+@lib lib/libccgnu2.so.${LIBccgnu2_VERSION}
 lib/pkgconfig/libccext2.pc
 lib/pkgconfig/libccgnu2.pc
 share/aclocal/

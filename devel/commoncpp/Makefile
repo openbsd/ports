@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/16 18:07:39 naddy Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
 VER=		1.7.3
 DISTNAME=	commoncpp2-${VER}
 PKGNAME=	commoncpp-${VER}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=commoncpp/}
 

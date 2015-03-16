@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/11/24 20:23:15 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:57 naddy Exp $
 @bin bin/openjade
 lib/libogrove.a
 lib/libogrove.la
+@lib lib/libogrove.so.${LIBogrove_VERSION}
 lib/libospgrove.a
 lib/libospgrove.la
+@lib lib/libospgrove.so.${LIBospgrove_VERSION}
 lib/libostyle.a
 lib/libostyle.la
+@lib lib/libostyle.so.${LIBostyle_VERSION}
 share/doc/openjade/
 share/doc/openjade/autoconf.htm
 share/doc/openjade/contributors.htm

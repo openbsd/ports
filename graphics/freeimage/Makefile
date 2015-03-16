@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:46 naddy Exp $
 
 COMMENT=		c++ library for common image format
 
 DISTNAME=		FreeImage3152
 PKGNAME=		freeimage-3.15.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		graphics
 
 SHARED_LIBS+=		freeimage	2.0

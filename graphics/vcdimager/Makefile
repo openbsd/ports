@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/11 23:49:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/03/16 18:07:48 naddy Exp $
 
 COMMENT=	(S)VCD authoring software
 
 DISTNAME=	vcdimager-0.7.23
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics
 
 SHARED_LIBS +=  vcdinfo 0.0 # .2.0

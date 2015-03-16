@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/16 12:26:28 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:36 naddy Exp $
 @bin bin/oscdump
 @bin bin/oscsend
 include/lo/
@@ -13,5 +12,5 @@ include/lo/lo_throw.h
 include/lo/lo_types.h
 lib/liblo.a
 lib/liblo.la
-lib/pkgconfig/
+@lib lib/liblo.so.${LIBlo_VERSION}
 lib/pkgconfig/liblo.pc

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/28 17:46:57 jason Exp $
-%%SHARED%%
-bin/nec2++
-bin/nec2diff
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:37 naddy Exp $
+@bin bin/nec2++
+@bin bin/nec2diff
 include/libnecpp.h
 lib/libnecpp.a
 lib/libnecpp.la
+@lib lib/libnecpp.so.${LIBnecpp_VERSION}
 share/examples/necpp/
 share/examples/necpp/36dip.nec
 share/examples/necpp/Collinear_1L.nec

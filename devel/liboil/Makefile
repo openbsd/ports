@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/16 18:07:42 naddy Exp $
 
 COMMENT=	library of optimized inner loops
 
 DISTNAME=	liboil-0.3.17
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}/download/
 

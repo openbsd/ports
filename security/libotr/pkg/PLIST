@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/08/15 16:33:22 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:54 naddy Exp $
 @bin bin/otr_mackey
 @bin bin/otr_modify
 @bin bin/otr_parse
@@ -25,7 +24,7 @@ include/libotr/userstate.h
 include/libotr/version.h
 lib/libotr.a
 lib/libotr.la
-lib/pkgconfig/
+@lib lib/libotr.so.${LIBotr_VERSION}
 lib/pkgconfig/libotr.pc
 @man man/man1/otr_mackey.1
 @man man/man1/otr_modify.1

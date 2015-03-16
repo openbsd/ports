@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/16 18:07:51 naddy Exp $
 
 COMMENT=	extensible open standard audio/video container library
 
@@ -6,6 +6,7 @@ DISTNAME=	libmatroska-1.3.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 SHARED_LIBS=	matroska	3.0
 

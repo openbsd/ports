@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/09/16 08:13:12 jasper Exp $
-@lib lib/freehdl/libieee.so.${LIBieee_VERSION}
-@lib lib/libfreehdl-cdfggen.so.${LIBfreehdl-cdfggen_VERSION}
-@lib lib/libfreehdl-fire.so.${LIBfreehdl-fire_VERSION}
-@lib lib/libfreehdl-kernel.so.${LIBfreehdl-kernel_VERSION}
-@lib lib/libfreehdl-std.so.${LIBfreehdl-std_VERSION}
-@lib lib/libfreehdl-vaul.so.${LIBfreehdl-vaul_VERSION}

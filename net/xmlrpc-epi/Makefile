@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/16 18:07:53 naddy Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
 
 DISTNAME=	xmlrpc-epi-0.51
-REVISION=	2
+REVISION=	3
 SHARED_LIBS +=	xmlrpc-epi	0.3
 
 HOMEPAGE=	http://xmlrpc-epi.sourceforge.net/

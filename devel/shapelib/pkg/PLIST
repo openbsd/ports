@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/01 12:02:27 naddy Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:45 naddy Exp $
 include/libshp/
 include/libshp/shapefil.h
 lib/libshp.a
+@lib lib/libshp.so.${LIBshp_VERSION}
 lib/libshp_p.a

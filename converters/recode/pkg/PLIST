@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/25 18:02:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:38 naddy Exp $
 @bin bin/recode
 include/recode.h
 include/recodext.h
@@ -6,6 +6,7 @@ include/recodext.h
 @comment lib/charset.alias
 lib/librecode.a
 lib/librecode.la
+@lib lib/librecode.so.${LIBrecode_VERSION}
 @man man/man1/recode.1
 share/locale/da/LC_MESSAGES/recode.mo
 share/locale/de/LC_MESSAGES/recode.mo
@@ -19,4 +20,3 @@ share/locale/pl/LC_MESSAGES/recode.mo
 share/locale/pt/LC_MESSAGES/recode.mo
 share/locale/sl/LC_MESSAGES/recode.mo
 share/locale/sv/LC_MESSAGES/recode.mo
-%%SHARED%%

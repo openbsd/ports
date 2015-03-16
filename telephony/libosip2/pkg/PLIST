@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/01/17 17:29:36 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:55 naddy Exp $
 include/osip2/
 include/osip2/osip.h
 include/osip2/osip_condv.h
@@ -48,8 +47,9 @@ include/osipparser2/osip_uri.h
 include/osipparser2/sdp_message.h
 lib/libosip2.a
 lib/libosip2.la
+@lib lib/libosip2.so.${LIBosip2_VERSION}
 lib/libosipparser2.a
 lib/libosipparser2.la
-lib/pkgconfig/
+@lib lib/libosipparser2.so.${LIBosipparser2_VERSION}
 lib/pkgconfig/libosip2.pc
 @man man/man1/osip.1

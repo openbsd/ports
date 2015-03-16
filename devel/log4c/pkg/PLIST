@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/11 11:43:49 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
 bin/log4c-config
 include/log4c/
 include/log4c.h
@@ -28,6 +27,7 @@ include/log4c/rollingpolicy_type_sizewin.h
 include/log4c/version.h
 lib/liblog4c.a
 lib/liblog4c.la
+@lib lib/liblog4c.so.${LIBlog4c_VERSION}
 share/aclocal/
 share/aclocal/log4c.m4
 share/examples/log4c/

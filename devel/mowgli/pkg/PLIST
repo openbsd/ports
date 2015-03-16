@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/12/02 06:36:28 shadchin Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:44 naddy Exp $
 include/libmowgli/
 include/libmowgli/mowgli.h
 include/libmowgli/mowgli_alloc.h
@@ -36,5 +35,5 @@ include/libmowgli/mowgli_signal.h
 include/libmowgli/mowgli_spinlock.h
 include/libmowgli/mowgli_stdinc.h
 include/libmowgli/mowgli_string.h
-lib/pkgconfig/
+@lib lib/libmowgli.so.${LIBmowgli_VERSION}
 lib/pkgconfig/libmowgli.pc

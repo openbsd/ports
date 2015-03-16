@@ -1,17 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/05/11 02:08:12 kevlo Exp $
-bin/tsiadd
-bin/tsidel
-bin/tsidump
-bin/tsiguess
-bin/tsiyincheck
-bin/tsiyindump
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:38 naddy Exp $
+@bin bin/tsiadd
+@bin bin/tsidel
+@bin bin/tsidump
+@bin bin/tsiguess
+@bin bin/tsiyincheck
+@bin bin/tsiyindump
 include/bims.h
 include/tabe.h
 lib/libbims.a
 lib/libbims.la
+@lib lib/libbims.so.${LIBbims_VERSION}
 lib/libtabe.a
 lib/libtabe.la
+@lib lib/libtabe.so.${LIBtabe_VERSION}
 lib/tabe/
 lib/tabe/tsi.db
 lib/tabe/yin.db
-%%SHARED%%

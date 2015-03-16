@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/07/06 17:21:11 sthen Exp $
-@lib lib/libopencore-amrnb.so.${LIBopencore-amrnb_VERSION}
-@lib lib/libopencore-amrwb.so.${LIBopencore-amrwb_VERSION}

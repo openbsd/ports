@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/02 10:25:13 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:48 naddy Exp $
 include/libmng.h
 include/libmng_conf.h
 include/libmng_types.h
 lib/libmng.a
+@lib lib/libmng.so.${LIBmng_VERSION}
 @man man/man3/libmng.3
 @man man/man5/jng.5
 @man man/man5/mng.5

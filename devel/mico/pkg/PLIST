@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/22 08:42:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:44 naddy Exp $
 @pkgpath devel/mico,ssl
-%%SHARED%%
 @bin bin/eventd
 @bin bin/idl
 @bin bin/imr
@@ -351,10 +350,15 @@ include/ministl/string
 include/ministl/vector
 include/ministl/vector.h
 lib/libmico${V}.a
+@lib lib/libmico${V}.so.${LIBmico2.3.13_VERSION}
 lib/libmicoaux${V}.a
+@lib lib/libmicoaux${V}.so.${LIBmicoaux2.3.13_VERSION}
 lib/libmicocoss${V}.a
+@lib lib/libmicocoss${V}.so.${LIBmicocoss2.3.13_VERSION}
 lib/libmicoir${V}.a
+@lib lib/libmicoir${V}.so.${LIBmicoir2.3.13_VERSION}
 lib/libmicox${V}.a
+@lib lib/libmicox${V}.so.${LIBmicox2.3.13_VERSION}
 lib/mico-setup.csh
 lib/mico-setup.sh
 @man man/man1/idl.1

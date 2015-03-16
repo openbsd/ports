@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/15 16:44:03 naddy Exp $
-%%SHARED%%
-bin/lp5250d
-bin/scs2ascii
-bin/scs2pdf
-bin/scs2ps
-bin/tn5250
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:53 naddy Exp $
+@bin bin/lp5250d
+@bin bin/scs2ascii
+@bin bin/scs2pdf
+@bin bin/scs2ps
+@bin bin/tn5250
 bin/tn5250-config
 bin/xt5250
 include/tn5250/
@@ -33,7 +32,7 @@ include/tn5250/window.h
 include/tn5250/wtd.h
 lib/lib5250.a
 lib/lib5250.la
-lib/pkgconfig/
+@lib lib/lib5250.so.${LIB5250_VERSION}
 lib/pkgconfig/tn5250.pc
 @man man/man1/lp5250d.1
 @man man/man1/scs2ascii.1

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/05/25 17:32:33 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.10 2015/03/16 18:07:40 naddy Exp $
 bin/gsl-config
 @bin bin/gsl-histogram
 @bin bin/gsl-randist
@@ -226,9 +225,10 @@ include/gsl/gsl_wavelet2d.h
 @info info/gsl-ref.info
 lib/libgsl.a
 lib/libgsl.la
+@lib lib/libgsl.so.${LIBgsl_VERSION}
 lib/libgslcblas.a
 lib/libgslcblas.la
-lib/pkgconfig/
+@lib lib/libgslcblas.so.${LIBgslcblas_VERSION}
 lib/pkgconfig/gsl.pc
 @man man/man1/gsl-config.1
 @man man/man1/gsl-histogram.1

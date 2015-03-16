@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/05 12:54:51 eric Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:51 naddy Exp $
 @bin bin/oggz
 @bin bin/oggz-chop
 @bin bin/oggz-codecs
@@ -29,7 +28,7 @@ include/oggz/oggz_table.h
 include/oggz/oggz_write.h
 lib/liboggz.a
 lib/liboggz.la
-lib/pkgconfig/
+@lib lib/liboggz.so.${LIBoggz_VERSION}
 lib/pkgconfig/oggz.pc
 @man man/man1/oggz-chop.1
 @man man/man1/oggz-codecs.1

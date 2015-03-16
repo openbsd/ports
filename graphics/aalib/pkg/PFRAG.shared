@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 15:14:12 steven Exp $
-@lib lib/libaa.so.${LIBaa_VERSION}

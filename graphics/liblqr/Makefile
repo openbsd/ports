@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/16 18:07:47 naddy Exp $
 
 SHARED_ONLY =			Yes
 
@@ -10,6 +10,7 @@ DISTNAME = 			liblqr-1-0.4.1
 PKGNAME = 			liblqr-0.4.1
 MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
 EXTRACT_SUFX =			.tar.bz2
+REVISION =                      0
 
 # Library is LGPLv3, examples are GPLv3
 PERMIT_PACKAGE_CDROM =		Yes

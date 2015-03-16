@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/25 14:20:18 brad Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:51 naddy Exp $
 include/theora/
 include/theora/codec.h
 include/theora/theora.h
@@ -7,11 +6,13 @@ include/theora/theoradec.h
 include/theora/theoraenc.h
 lib/libtheora.a
 lib/libtheora.la
+@lib lib/libtheora.so.${LIBtheora_VERSION}
 lib/libtheoradec.a
 lib/libtheoradec.la
+@lib lib/libtheoradec.so.${LIBtheoradec_VERSION}
 lib/libtheoraenc.a
 lib/libtheoraenc.la
-lib/pkgconfig/
+@lib lib/libtheoraenc.so.${LIBtheoraenc_VERSION}
 lib/pkgconfig/theora.pc
 lib/pkgconfig/theoradec.pc
 lib/pkgconfig/theoraenc.pc

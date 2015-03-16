@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/31 16:33:45 naddy Exp $
-@lib lib/libXawM.so.${LIBXawM_VERSION}

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/02 13:35:08 pea Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:58 naddy Exp $
 include/gtkdatabox.h
 include/gtkdatabox_bars.h
 include/gtkdatabox_cross_simple.h
@@ -15,7 +14,7 @@ include/gtkdatabox_typedefs.h
 include/gtkdatabox_xyc_graph.h
 lib/libgtkdatabox.a
 lib/libgtkdatabox.la
-lib/pkgconfig/
+@lib lib/libgtkdatabox.so.${LIBgtkdatabox_VERSION}
 lib/pkgconfig/gtkdatabox.pc
 share/gtk-doc/
 share/gtk-doc/html/

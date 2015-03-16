@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.54 2015/03/16 18:07:35 naddy Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
 DISTNAME=	lame-3.99.5
+REVISION=	0
 
 SHARED_LIBS +=  mp3lame              2.1      # 0.1
 

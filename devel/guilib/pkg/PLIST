@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/03 19:56:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:40 naddy Exp $
 include/GUI/
 include/GUI/GUI.h
 include/GUI/GUI_C.h
@@ -18,4 +18,4 @@ include/GUI/GUI_widget.h
 include/GUI/GUI_widgets.h
 lib/libGUI.a
 lib/libGUI.la
-%%SHARED%%
+@lib lib/libGUI.so.${LIBGUI_VERSION}

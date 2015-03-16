@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2012/10/30 23:51:21 brad Exp $
-@lib lib/libphysfs.so.${LIBphysfs_VERSION}

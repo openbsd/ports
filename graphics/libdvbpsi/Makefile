@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:47 naddy Exp $
 
 COMMENT=	library for decoding/generating MPEG TS/DVB PSI tables
 
@@ -8,6 +8,7 @@ CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.videolan.org/pub/libdvbpsi/${V}/ \
 		http://www.fr.videolan.org/pub/libdvbpsi/${V}/
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 SHARED_LIBS=	dvbpsi	7.0
 

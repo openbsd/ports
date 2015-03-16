@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/16 18:31:41 steven Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:55 naddy Exp $
 include/eventlog/
 include/eventlog/evtlog.h
 include/eventlog/evtmaps.h
 lib/libevtlog.a
 lib/libevtlog.la
-lib/pkgconfig/
+@lib lib/libevtlog.so.${LIBevtlog_VERSION}
 lib/pkgconfig/eventlog.pc
 share/doc/eventlog/
 share/doc/eventlog/API.txt

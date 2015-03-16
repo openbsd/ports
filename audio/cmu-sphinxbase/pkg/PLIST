@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/26 07:12:30 eric Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:34 naddy Exp $
 @bin bin/sphinx_cepview
 @bin bin/sphinx_cont_adseg
 @bin bin/sphinx_cont_fileseg
@@ -54,7 +53,8 @@ include/sphinxbase/unlimit.h
 include/sphinxbase/yin.h
 lib/libsphinxad.a
 lib/libsphinxad.la
+@lib lib/libsphinxad.so.${LIBsphinxad_VERSION}
 lib/libsphinxbase.a
 lib/libsphinxbase.la
-lib/pkgconfig/
+@lib lib/libsphinxbase.so.${LIBsphinxbase_VERSION}
 lib/pkgconfig/sphinxbase.pc

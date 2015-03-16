@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/14 20:38:04 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:45 naddy Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS=	udis86		1.0
 

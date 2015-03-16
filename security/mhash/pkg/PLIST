@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/09/03 21:02:31 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:54 naddy Exp $
 include/mhash.h
 include/mutils/
 include/mutils/mglobal.h
@@ -9,5 +9,5 @@ include/mutils/mtypes.h
 include/mutils/mutils.h
 lib/libmhash.a
 lib/libmhash.la
+@lib lib/libmhash.so.${LIBmhash_VERSION}
 @man man/man3/mhash.3
-%%SHARED%%

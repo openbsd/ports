@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/03/16 18:07:55 naddy Exp $
 
 COMMENT=	GNU oSIP library
 
 DISTNAME=	libosip2-3.5.0
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	osipparser2          4.0      # 8.0
 SHARED_LIBS +=	osip2                4.0      # 8.0

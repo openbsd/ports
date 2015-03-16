@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/13 22:49:11 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:43 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ SHARED_LIBS=	talloc 0.0	# .2.0
 
 COMMENT=	hierarchical memory pool system with destructors
 DISTNAME=	talloc-2.0.1
-REVISION=	0
+REVISION=	1
 PKGNAME=	lib${DISTNAME}
 
 CATEGORIES=	devel

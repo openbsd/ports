@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/06 13:43:19 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:48 naddy Exp $
 include/vidcap/
 include/vidcap/converters.h
 include/vidcap/vidcap.h
 lib/libvidcap.a
 lib/libvidcap.la
-lib/pkgconfig/
+@lib lib/libvidcap.so.${LIBvidcap_VERSION}
 lib/pkgconfig/vidcap.pc

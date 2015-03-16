@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/18 08:33:49 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:42 naddy Exp $
 include/oop-adns.h
 include/oop-glib.h
 include/oop-read.h
@@ -9,6 +8,6 @@ include/oop-www.h
 include/oop.h
 lib/liboop.a
 lib/liboop.la
-lib/pkgconfig/
+@lib lib/liboop.so.${LIBoop_VERSION}
 lib/pkgconfig/liboop-glib2.pc
 lib/pkgconfig/liboop.pc

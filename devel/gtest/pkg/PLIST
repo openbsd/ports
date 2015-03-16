@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/31 11:21:13 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:40 naddy Exp $
 bin/gtest-config
 include/gtest/
 include/gtest/gtest-death-test.h
@@ -24,7 +23,9 @@ include/gtest/internal/gtest-tuple.h
 include/gtest/internal/gtest-type-util.h
 lib/libgtest.a
 lib/libgtest.la
+@lib lib/libgtest.so.${LIBgtest_VERSION}
 lib/libgtest_main.a
 lib/libgtest_main.la
+@lib lib/libgtest_main.so.${LIBgtest_main_VERSION}
 share/aclocal/
 share/aclocal/gtest.m4

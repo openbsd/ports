@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/17 20:42:00 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:49 naddy Exp $
 include/compat_time.h
 include/doublefann.h
 include/fann.h
@@ -14,13 +13,16 @@ include/fixedfann.h
 include/floatfann.h
 lib/libdoublefann.a
 lib/libdoublefann.la
+@lib lib/libdoublefann.so.${LIBdoublefann_VERSION}
 lib/libfann.a
 lib/libfann.la
+@lib lib/libfann.so.${LIBfann_VERSION}
 lib/libfixedfann.a
 lib/libfixedfann.la
+@lib lib/libfixedfann.so.${LIBfixedfann_VERSION}
 lib/libfloatfann.a
 lib/libfloatfann.la
-lib/pkgconfig/
+@lib lib/libfloatfann.so.${LIBfloatfann_VERSION}
 lib/pkgconfig/fann.pc
 share/doc/fann/
 share/doc/fann/advancedusage.txt

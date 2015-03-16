@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/03/24 19:01:04 robert Exp $
-@lib lib/libfprint.so.${LIBfprint_VERSION}

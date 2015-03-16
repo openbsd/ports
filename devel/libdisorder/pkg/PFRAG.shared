@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/08/26 01:10:16 kevlo Exp $
-@lib lib/libdisorder.so.${LIBdisorder_VERSION}

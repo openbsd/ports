@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/11 18:49:57 kili Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:39 naddy Exp $
 @bin bin/autogen
 bin/autoopts-config
 @bin bin/columns
@@ -11,9 +10,10 @@ include/autogen/autoopts/options.h
 include/autogen/autoopts/usage-txt.h
 lib/libguileopts.a
 lib/libguileopts.la
+@lib lib/libguileopts.so.${LIBguileopts_VERSION}
 lib/libopts.a
 lib/libopts.la
-lib/pkgconfig/
+@lib lib/libopts.so.${LIBopts_VERSION}
 lib/pkgconfig/autoopts.pc
 @man man/man1/autogen.1
 @man man/man1/autoopts-config.1

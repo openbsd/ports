@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:58 naddy Exp $
 
 COMMENT =	dbus bindings for Tcl
 
@@ -8,6 +8,7 @@ SHARED_LIBS =	dbus-tcl11 0.0
 CATEGORIES =	x11
 HOMEPAGE =	http://dbus-tcl.sourceforge.net/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =	0
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

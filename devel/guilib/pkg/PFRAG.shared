@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/07 14:48:47 bernd Exp $
-@lib lib/libGUI.so.${LIBGUI_VERSION}

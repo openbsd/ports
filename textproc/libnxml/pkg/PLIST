@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/10 20:15:36 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:56 naddy Exp $
 include/nxml.h
 lib/libnxml.a
 lib/libnxml.la
-lib/pkgconfig/
+@lib lib/libnxml.so.${LIBnxml_VERSION}
 lib/pkgconfig/nxml.pc

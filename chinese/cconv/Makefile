@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:37 naddy Exp $
 
 COMMENT=	simplified-traditional chinese translate tool
 
 DISTNAME=	cconv-0.6.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	chinese converters
 

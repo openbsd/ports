@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/22 12:48:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:58 naddy Exp $
 include/FL/Fl_Editor.H
 include/FL/Fl_Editor.h
 include/FL/Fl_FancyEditor.H
@@ -17,4 +17,4 @@ include/FL/lists.h
 include/FL/stringsup.h
 include/FL/wstring.h
 lib/libfleditor.a
-%%SHARED%%
+@lib lib/libfleditor.so.${LIBfleditor_VERSION}

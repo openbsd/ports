@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/07/23 21:07:05 laurent Exp $
-@lib lib/libcal3d.so.${LIBcal3d_VERSION}

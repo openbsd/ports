@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/12 11:14:08 espie Exp $
-%%SHARED%%
-bin/fitscopy
-bin/imcopy
-bin/listhead
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:49 naddy Exp $
+@bin bin/fitscopy
+@bin bin/imcopy
+@bin bin/listhead
 include/drvrsmem.h
 include/fitsio.h
 include/fitsio2.h
 include/longnam.h
 lib/libcfitsio.a
+@lib lib/libcfitsio.so.${LIBcfitsio_VERSION}
 share/doc/cfitsio/
 share/doc/cfitsio/License.txt
 share/doc/cfitsio/README

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 18:02:45 steven Exp $
-@lib lib/libmpeg.so.${LIBmpeg_VERSION}

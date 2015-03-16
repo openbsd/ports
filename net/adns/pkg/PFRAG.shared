@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2006/11/28 05:19:49 msf Exp $
-@lib lib/libadns.so.${LIBadns_VERSION}

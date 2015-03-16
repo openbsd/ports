@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2005/12/31 17:29:38 naddy Exp $
-@lib lib/libXaw3d.so.${LIBXaw3d_VERSION}

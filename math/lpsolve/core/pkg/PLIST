@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/20 09:54:11 edd Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:50 naddy Exp $
 @bin bin/lp_solve
 @bin bin/lp_solve_demo
 include/lpsolve/
@@ -33,6 +32,7 @@ include/lpsolve/lpsolve.h
 include/lpsolve/ufortify.h
 include/lpsolve/yacc_read.h
 lib/liblpsolve55.a
+@lib lib/liblpsolve55.so.${LIBlpsolve55_VERSION}
 share/doc/lpsolve/
 share/doc/lpsolve/.DS_Store
 share/doc/lpsolve/AMPL.htm

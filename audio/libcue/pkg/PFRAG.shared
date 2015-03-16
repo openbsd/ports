@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/12/10 20:45:53 shadchin Exp $
-@lib lib/libcue.so.${LIBcue_VERSION}

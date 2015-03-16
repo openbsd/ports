@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:49 naddy Exp $
 
 COMMENT=		Fast Artificial Neural Network Library
 
@@ -8,6 +8,7 @@ SHARED_LIBS +=  doublefann           0.0      # .2.1
 SHARED_LIBS +=  fixedfann            0.0      # .2.1
 SHARED_LIBS +=  fann                 0.0      # .2.1
 CATEGORIES=		math devel
+REVISION=		0
 
 HOMEPAGE=		http://leenissen.dk/fann/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/21 06:22:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:59 naddy Exp $
 
 COMMENT =	implementation of the XDG Base Directory specification
 
 DISTNAME =	libxdg-basedir-1.2.0
 SHARED_LIBS +=  xdg-basedir	2.0	# .3.0
 CATEGORIES =	x11 devel
+REVISION =	0
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 

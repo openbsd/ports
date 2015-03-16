@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/04/27 11:22:07 jasper Exp $
-@lib lib/libunique-3.0.so.${LIBunique-3.0_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/10/22 19:08:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2015/03/16 18:07:43 naddy Exp $
 
 PORTROACH +=	limit:^1
 
@@ -9,7 +9,7 @@ COMMENT =	library for writing single instance GTK+2 applications
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	1.1.6
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel

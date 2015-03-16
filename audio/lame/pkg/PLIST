@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/10/23 09:14:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/03/16 18:07:35 naddy Exp $
 @pkgpath audio/lame
 @pkgpath audio/lame,no_x11
 @bin bin/lame
@@ -7,6 +7,7 @@ include/lame/
 include/lame/lame.h
 lib/libmp3lame.a
 lib/libmp3lame.la
+@lib lib/libmp3lame.so.${LIBmp3lame_VERSION}
 @man man/man1/lame.1
 share/doc/lame/
 share/doc/lame/about.html
@@ -23,4 +24,3 @@ share/doc/lame/list.html
 share/doc/lame/ms_stereo.html
 share/doc/lame/usage.html
 share/doc/lame/vbr.html
-%%SHARED%%

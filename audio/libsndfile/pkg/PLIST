@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/04/14 07:27:00 dcoppa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.11 2015/03/16 18:07:36 naddy Exp $
 @bin bin/sndfile-cmp
 @bin bin/sndfile-concat
 @bin bin/sndfile-convert
@@ -15,7 +14,7 @@ include/sndfile.h
 include/sndfile.hh
 lib/libsndfile.a
 lib/libsndfile.la
-lib/pkgconfig/
+@lib lib/libsndfile.so.${LIBsndfile_VERSION}
 lib/pkgconfig/sndfile.pc
 @man man/man1/sndfile-cmp.1
 @man man/man1/sndfile-concat.1

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/27 19:33:15 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:53 naddy Exp $
 include/loudmouth-1.0/
 include/loudmouth-1.0/loudmouth/
 include/loudmouth-1.0/loudmouth/lm-connection.h
@@ -13,7 +12,7 @@ include/loudmouth-1.0/loudmouth/lm-utils.h
 include/loudmouth-1.0/loudmouth/loudmouth.h
 lib/libloudmouth-1.a
 lib/libloudmouth-1.la
-lib/pkgconfig/
+@lib lib/libloudmouth-1.so.${LIBloudmouth-1_VERSION}
 lib/pkgconfig/loudmouth-1.0.pc
 share/gtk-doc/
 share/gtk-doc/html/

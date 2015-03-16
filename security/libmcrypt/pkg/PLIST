@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/05/29 19:53:16 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:54 naddy Exp $
 bin/libmcrypt-config
 include/mcrypt.h
 include/mutils/
@@ -6,7 +6,7 @@ include/mutils/mcrypt.h
 lib/libmcrypt/
 lib/libmcrypt.a
 lib/libmcrypt.la
+@lib lib/libmcrypt.so.${LIBmcrypt_VERSION}
 @man man/man3/mcrypt.3
 share/aclocal/
 share/aclocal/libmcrypt.m4
-%%SHARED%%

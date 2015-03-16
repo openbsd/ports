@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2010/06/07 14:39:46 sthen Exp $
-@lib lib/libitcl34.so.${LIBitcl34_VERSION}

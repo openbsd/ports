@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2007/11/29 13:43:09 okan Exp $
-@lib lib/libnetcdf.so.${LIBnetcdf_VERSION}
-@lib lib/libnetcdf_c++.so.${LIBnetcdf_c++_VERSION}
-@lib lib/libnetcdff.so.${LIBnetcdff_VERSION}

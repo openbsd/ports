@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/04/20 09:54:11 edd Exp $
-@lib lib/liblpsolve55.so.${LIBlpsolve55_VERSION}

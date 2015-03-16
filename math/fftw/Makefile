@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2014/11/10 08:14:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2015/03/16 18:07:49 naddy Exp $
 
 PORTROACH=	limit:^2\.
 
 COMMENT=	C routines for computing the Discrete Fourier Transform
 
 DISTNAME=	fftw-2.1.5
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	fftw	2.7 \
 		rfftw	2.7
 CATEGORIES=	math

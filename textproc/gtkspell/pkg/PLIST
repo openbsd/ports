@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/04/09 17:09:28 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:56 naddy Exp $
 include/gtkspell-2.0/
 include/gtkspell-2.0/gtkspell/
 include/gtkspell-2.0/gtkspell/gtkspell.h
 lib/libgtkspell.a
 lib/libgtkspell.la
-lib/pkgconfig/
+@lib lib/libgtkspell.so.${LIBgtkspell_VERSION}
 lib/pkgconfig/gtkspell-2.0.pc
 share/gtk-doc/
 share/gtk-doc/html/

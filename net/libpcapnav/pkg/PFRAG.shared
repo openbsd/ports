@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/30 22:51:31 steven Exp $
-@lib lib/libpcapnav.so.${LIBpcapnav_VERSION}

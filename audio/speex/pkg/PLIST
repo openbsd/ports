@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/08/31 19:40:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:37 naddy Exp $
 @bin bin/speexdec
 @bin bin/speexenc
 include/speex/
@@ -16,9 +16,10 @@ include/speex/speex_stereo.h
 include/speex/speex_types.h
 lib/libspeex.a
 lib/libspeex.la
+@lib lib/libspeex.so.${LIBspeex_VERSION}
 lib/libspeexdsp.a
 lib/libspeexdsp.la
-lib/pkgconfig/
+@lib lib/libspeexdsp.so.${LIBspeexdsp_VERSION}
 lib/pkgconfig/speex.pc
 lib/pkgconfig/speexdsp.pc
 @man man/man1/speexdec.1
@@ -27,4 +28,3 @@ share/aclocal/
 share/aclocal/speex.m4
 share/doc/speex/
 share/doc/speex/manual.pdf
-%%SHARED%%

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/24 13:46:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.27 2015/03/16 18:07:38 naddy Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
 DISTNAME =	wv-1.2.4
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0

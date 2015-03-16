@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/10/24 18:52:18 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:44 naddy Exp $
 include/popt.h
 @comment lib/charset.alias
 lib/libpopt.a
 lib/libpopt.la
-lib/pkgconfig/
+@lib lib/libpopt.so.${LIBpopt_VERSION}
 lib/pkgconfig/popt.pc
 @man man/man3/popt.3
 share/locale/cs/LC_MESSAGES/popt.mo

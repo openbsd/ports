@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/18 10:17:17 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:39 naddy Exp $
 
 COMMENT =		library to simplify writing unit tests for C applications
 
 DISTNAME =		cmockery-0.1.2
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		cmockery                  0.0 # 0.0
 

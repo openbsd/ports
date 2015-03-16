@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/19 13:56:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/16 18:07:42 naddy Exp $
 
 COMMENT =		library for handling page faults in user mode
 
 DISTNAME =		libsigsegv-2.10
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		sigsegv 1.0
 CATEGORIES =		devel
 

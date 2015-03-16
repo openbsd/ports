@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:37 naddy Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
 DISTNAME=	soundtouch-1.3.1
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=	BPM		0.0      # .0.0
 SHARED_LIBS +=	SoundTouch	0.0      # .0.0
 CATEGORIES=	audio devel

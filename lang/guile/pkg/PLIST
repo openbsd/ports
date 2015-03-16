@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/12/08 12:21:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/03/16 18:07:49 naddy Exp $
 @conflict slib-guile-*
 @pkgpath devel/slib-guile
-%%SHARED%%
 @bin bin/guile
 bin/guile-config
 bin/guile-snarf
@@ -123,17 +122,22 @@ include/libguile/weaks.h
 @comment @info info/r5rs.info
 lib/libguile-srfi-srfi-1-v-3.a
 lib/libguile-srfi-srfi-1-v-3.la
+@lib lib/libguile-srfi-srfi-1-v-3.so.${LIBguile-srfi-srfi-1-v-3_VERSION}
 lib/libguile-srfi-srfi-13-14-v-3.a
 lib/libguile-srfi-srfi-13-14-v-3.la
+@lib lib/libguile-srfi-srfi-13-14-v-3.so.${LIBguile-srfi-srfi-13-14-v-3_VERSION}
 lib/libguile-srfi-srfi-4-v-3.a
 lib/libguile-srfi-srfi-4-v-3.la
+@lib lib/libguile-srfi-srfi-4-v-3.so.${LIBguile-srfi-srfi-4-v-3_VERSION}
 lib/libguile-srfi-srfi-60-v-2.a
 lib/libguile-srfi-srfi-60-v-2.la
+@lib lib/libguile-srfi-srfi-60-v-2.so.${LIBguile-srfi-srfi-60-v-2_VERSION}
 lib/libguile.a
 lib/libguile.la
+@lib lib/libguile.so.${LIBguile_VERSION}
 lib/libguilereadline-v-17.a
 lib/libguilereadline-v-17.la
-lib/pkgconfig/
+@lib lib/libguilereadline-v-17.so.${LIBguilereadline-v-17_VERSION}
 lib/pkgconfig/guile-${V}.pc
 @man man/man1/guile.1
 share/aclocal/guile.m4

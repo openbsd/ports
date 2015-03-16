@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/16 18:07:58 naddy Exp $
 
 COMMENT=		modular webapplication server for C++
 
 DISTNAME=		tntnet-1.6.2
-REVISION=		2
+REVISION=		3
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://www.tntnet.org/

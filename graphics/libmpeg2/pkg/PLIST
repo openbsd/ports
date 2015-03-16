@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/09/23 00:44:17 brad Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:48 naddy Exp $
 @bin bin/corrupt_mpeg2
 @bin bin/extract_mpeg2
 @bin bin/mpeg2dec
@@ -8,9 +7,10 @@ include/mpeg2dec/mpeg2.h
 include/mpeg2dec/mpeg2convert.h
 lib/libmpeg2.a
 lib/libmpeg2.la
+@lib lib/libmpeg2.so.${LIBmpeg2_VERSION}
 lib/libmpeg2convert.a
 lib/libmpeg2convert.la
-lib/pkgconfig/
+@lib lib/libmpeg2convert.so.${LIBmpeg2convert_VERSION}
 lib/pkgconfig/libmpeg2.pc
 lib/pkgconfig/libmpeg2convert.pc
 @man man/man1/extract_mpeg2.1

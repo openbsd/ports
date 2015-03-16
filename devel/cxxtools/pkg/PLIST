@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/05/27 21:48:37 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:40 naddy Exp $
 bin/cxxtools-config
 include/cxxtools/
 include/cxxtools/any.h
@@ -91,3 +90,4 @@ include/cxxtools/void.h
 include/cxxtools/xmltag.h
 lib/libcxxtools.a
 lib/libcxxtools.la
+@lib lib/libcxxtools.so.${LIBcxxtools_VERSION}

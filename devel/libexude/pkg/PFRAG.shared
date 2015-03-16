@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/05/16 20:21:14 dhill Exp $
-@lib lib/libexude.so.${LIBexude_VERSION}

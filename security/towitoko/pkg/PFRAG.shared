@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/25 15:52:38 sturm Exp $
-@lib lib/libtowitoko.so.${LIBtowitoko_VERSION}

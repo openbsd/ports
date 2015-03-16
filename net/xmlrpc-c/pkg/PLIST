@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/14 19:01:31 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:53 naddy Exp $
 @bin bin/xmlrpc
 bin/xmlrpc-c-config
 @bin bin/xmlrpc_transport
@@ -37,23 +36,32 @@ include/xmlrpc_server_w32httpsys.h
 lib/libxmlrpc++.a
 lib/libxmlrpc.a
 lib/libxmlrpc.la
+@lib lib/libxmlrpc.so.${LIBxmlrpc_VERSION}
 lib/libxmlrpc_abyss.a
 lib/libxmlrpc_abyss.la
+@lib lib/libxmlrpc_abyss.so.${LIBxmlrpc_abyss_VERSION}
 lib/libxmlrpc_client++.a
 lib/libxmlrpc_client.a
 lib/libxmlrpc_client.la
+@lib lib/libxmlrpc_client.so.${LIBxmlrpc_client_VERSION}
 lib/libxmlrpc_cpp.a
 lib/libxmlrpc_server++.a
 lib/libxmlrpc_server.a
 lib/libxmlrpc_server.la
+@lib lib/libxmlrpc_server.so.${LIBxmlrpc_server_VERSION}
 lib/libxmlrpc_server_abyss++.a
 lib/libxmlrpc_server_abyss.a
 lib/libxmlrpc_server_abyss.la
+@lib lib/libxmlrpc_server_abyss.so.${LIBxmlrpc_server_abyss_VERSION}
 lib/libxmlrpc_server_cgi.a
 lib/libxmlrpc_server_cgi.la
+@lib lib/libxmlrpc_server_cgi.so.${LIBxmlrpc_server_cgi_VERSION}
 lib/libxmlrpc_util.a
 lib/libxmlrpc_util.la
+@lib lib/libxmlrpc_util.so.${LIBxmlrpc_util_VERSION}
 lib/libxmlrpc_xmlparse.a
 lib/libxmlrpc_xmlparse.la
+@lib lib/libxmlrpc_xmlparse.so.${LIBxmlrpc_xmlparse_VERSION}
 lib/libxmlrpc_xmltok.a
 lib/libxmlrpc_xmltok.la
+@lib lib/libxmlrpc_xmltok.so.${LIBxmlrpc_xmltok_VERSION}

@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/05/01 09:05:13 fgsch Exp $
-%%SHARED%%
-bin/cd-drive
-bin/cd-info
-bin/cd-paranoia
-bin/cd-read
-bin/cdda-player
-bin/iso-info
-bin/iso-read
-bin/mmc-tool
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:35 naddy Exp $
+@bin bin/cd-drive
+@bin bin/cd-info
+@bin bin/cd-paranoia
+@bin bin/cd-read
+@bin bin/cdda-player
+@bin bin/iso-info
+@bin bin/iso-read
+@bin bin/mmc-tool
 include/cdio/
 include/cdio++/
 include/cdio++/cdio.hpp
@@ -53,19 +52,25 @@ include/cdio/xa.h
 @info info/libcdio.info
 lib/libcdio++.a
 lib/libcdio++.la
+@lib lib/libcdio++.so.${LIBcdio++_VERSION}
 lib/libcdio.a
 lib/libcdio.la
+@lib lib/libcdio.so.${LIBcdio_VERSION}
 lib/libcdio_cdda.a
 lib/libcdio_cdda.la
+@lib lib/libcdio_cdda.so.${LIBcdio_cdda_VERSION}
 lib/libcdio_paranoia.a
 lib/libcdio_paranoia.la
+@lib lib/libcdio_paranoia.so.${LIBcdio_paranoia_VERSION}
 lib/libiso9660++.a
 lib/libiso9660++.la
+@lib lib/libiso9660++.so.${LIBiso9660++_VERSION}
 lib/libiso9660.a
 lib/libiso9660.la
+@lib lib/libiso9660.so.${LIBiso9660_VERSION}
 lib/libudf.a
 lib/libudf.la
-lib/pkgconfig/
+@lib lib/libudf.so.${LIBudf_VERSION}
 lib/pkgconfig/libcdio++.pc
 lib/pkgconfig/libcdio.pc
 lib/pkgconfig/libcdio_cdda.pc

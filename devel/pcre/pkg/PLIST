@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/06/11 19:03:00 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/03/16 18:07:44 naddy Exp $
 bin/pcre-config
 @bin bin/pcregrep
 @bin bin/pcretest
@@ -10,13 +10,16 @@ include/pcrecpparg.h
 include/pcreposix.h
 lib/libpcre.a
 lib/libpcre.la
+@lib lib/libpcre.so.${LIBpcre_VERSION}
 lib/libpcre16.a
 lib/libpcre16.la
+@lib lib/libpcre16.so.${LIBpcre16_VERSION}
 lib/libpcrecpp.a
 lib/libpcrecpp.la
+@lib lib/libpcrecpp.so.${LIBpcrecpp_VERSION}
 lib/libpcreposix.a
 lib/libpcreposix.la
-lib/pkgconfig/
+@lib lib/libpcreposix.so.${LIBpcreposix_VERSION}
 lib/pkgconfig/libpcre.pc
 lib/pkgconfig/libpcre16.pc
 lib/pkgconfig/libpcrecpp.pc
@@ -121,7 +124,6 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcreposix.3
 @man man/man3/pcreprecompile.3
 @man man/man3/pcresample.3
-%%SHARED%%
 @man man/man3/pcrestack.3
 @man man/man3/pcresyntax.3
 @man man/man3/pcreunicode.3

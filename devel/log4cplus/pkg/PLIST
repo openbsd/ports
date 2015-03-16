@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/26 09:06:34 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
 include/log4cplus/
 include/log4cplus/appender.h
 include/log4cplus/config/
@@ -50,3 +49,4 @@ include/log4cplus/tstring.h
 include/log4cplus/version.h
 lib/liblog4cplus.a
 lib/liblog4cplus.la
+@lib lib/liblog4cplus.so.${LIBlog4cplus_VERSION}

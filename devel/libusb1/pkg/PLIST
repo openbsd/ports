@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/02 14:31:56 mpi Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
 include/libusb-1.0/
 include/libusb-1.0/libusb.h
 lib/libusb-1.0.a
 lib/libusb-1.0.la
-lib/pkgconfig/
+@lib lib/libusb-1.0.so.${LIBusb-1.0_VERSION}
 lib/pkgconfig/libusb-1.0.pc

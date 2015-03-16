@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/12 16:39:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:42 naddy Exp $
 @conflict gcj-<4.2.4p3
-%%SHARED%%
 include/ffi.h
 include/ffitarget.h
 @info info/libffi.info
 lib/libffi.a
 lib/libffi.la
-lib/pkgconfig/
+@lib lib/libffi.so.${LIBffi_VERSION}
 lib/pkgconfig/libffi.pc
 @man man/man3/ffi.3
 @man man/man3/ffi_call.3
 @man man/man3/ffi_prep_cif.3
+@man man/man3/ffi_prep_cif_var.3

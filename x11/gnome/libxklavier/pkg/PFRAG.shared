@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/08 15:43:36 steven Exp $
-@lib lib/libxklavier.so.${LIBxklavier_VERSION}

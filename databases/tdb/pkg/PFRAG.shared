@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/07/28 21:37:26 jasper Exp $
-@lib lib/libtdb.so.${LIBtdb_VERSION}

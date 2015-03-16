@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/16 19:56:10 miod Exp $
+# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:46 naddy Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
 
 COMMENT =		open source alternative to glut
 DISTNAME =		freeglut-2.8.0
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		glut 5.0
 CATEGORIES =		graphics
 HOMEPAGE =		http://freeglut.sourceforge.net/

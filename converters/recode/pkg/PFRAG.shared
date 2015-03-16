@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/24 15:03:42 espie Exp $
-@lib lib/librecode.so.${LIBrecode_VERSION}

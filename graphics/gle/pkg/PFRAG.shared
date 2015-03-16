@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/27 12:01:19 steven Exp $
-@lib lib/libgle.so.${LIBgle_VERSION}

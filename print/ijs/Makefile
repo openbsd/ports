@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:50:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:53 naddy Exp $
 
 COMMENT=		raster image transmission library
 
 DISTNAME=		ijs-0.35
-REVISION=		1
+REVISION=		2
 CATEGORIES=		print
 
 SHARED_LIBS=		ijs 0.0

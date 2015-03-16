@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.13 2005/12/25 16:13:44 steven Exp $
-@lib lib/libsablot.so.${LIBsablot_VERSION}

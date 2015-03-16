@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/05/15 21:20:00 merdely Exp $
-@lib lib/libssh2.so.${LIBssh2_VERSION}

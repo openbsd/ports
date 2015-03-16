@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 12:31:44 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:46 naddy Exp $
 include/CTL/
 include/CTL/CtlAddr.h
 include/CTL/CtlAlign.h
@@ -24,11 +23,13 @@ include/CTL/CtlType.h
 include/CTL/CtlVersion.h
 lib/libIlmCtl.a
 lib/libIlmCtl.la
+@lib lib/libIlmCtl.so.${LIBIlmCtl_VERSION}
 lib/libIlmCtlMath.a
 lib/libIlmCtlMath.la
+@lib lib/libIlmCtlMath.so.${LIBIlmCtlMath_VERSION}
 lib/libIlmCtlSimd.a
 lib/libIlmCtlSimd.la
-lib/pkgconfig/
+@lib lib/libIlmCtlSimd.so.${LIBIlmCtlSimd_VERSION}
 lib/pkgconfig/CTL.pc
 share/doc/CTL-1.4.1/
 share/doc/CTL-1.4.1/CtlManual.doc

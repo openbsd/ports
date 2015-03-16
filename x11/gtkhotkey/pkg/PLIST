@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/27 19:14:44 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:59 naddy Exp $
 include/gtkhotkey-1.0/
 include/gtkhotkey-1.0/gtk-hotkey-error.h
 include/gtkhotkey-1.0/gtk-hotkey-info.h
@@ -10,7 +9,7 @@ include/gtkhotkey-1.0/gtk-hotkey-x11-listener.h
 include/gtkhotkey-1.0/gtkhotkey.h
 lib/libgtkhotkey.a
 lib/libgtkhotkey.la
-lib/pkgconfig/
+@lib lib/libgtkhotkey.so.${LIBgtkhotkey_VERSION}
 lib/pkgconfig/gtkhotkey-1.0.pc
 share/gtk-doc/
 share/gtk-doc/html/

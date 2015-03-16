@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/10/16 07:03:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:51 naddy Exp $
 @conflict rpm2cpio-*
-%%SHARED%%
 bin/gendiff
 @bin bin/rpm
 @bin bin/rpm2cpio
@@ -17,8 +16,10 @@ include/rpm/rpmurl.h
 include/rpm/stringbuf.h
 lib/librpm.a
 lib/librpm.la
+@lib lib/librpm.so.${LIBrpm_VERSION}
 lib/librpmbuild.a
 lib/librpmbuild.la
+@lib lib/librpmbuild.so.${LIBrpmbuild_VERSION}
 lib/rpm/
 lib/rpm/brp-compress
 lib/rpm/brp-redhat

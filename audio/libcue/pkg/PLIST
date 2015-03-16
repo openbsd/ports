@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/10 20:45:53 shadchin Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:35 naddy Exp $
 include/libcue/
 include/libcue/cd.h
 include/libcue/cdtext.h
@@ -8,5 +7,5 @@ include/libcue/rem.h
 include/libcue/time.h
 lib/libcue.a
 lib/libcue.la
-lib/pkgconfig/
+@lib lib/libcue.so.${LIBcue_VERSION}
 lib/pkgconfig/libcue.pc

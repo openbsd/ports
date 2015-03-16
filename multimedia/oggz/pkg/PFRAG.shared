@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/11/05 12:54:51 eric Exp $
-@lib lib/liboggz.so.${LIBoggz_VERSION}

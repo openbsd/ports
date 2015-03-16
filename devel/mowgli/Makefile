@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/10 12:12:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:44 naddy Exp $
 
 COMMENT =	performance and usability oriented extensions to C
 
 DISTNAME =	libmowgli-1.0.0
 PKGNAME =	${DISTNAME:S/lib//}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	mowgli	1.1
 

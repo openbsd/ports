@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/16 18:07:54 naddy Exp $
 
 COMMENT =		library implementing the SSH2 protocol
 
 DISTNAME =		libssh2-1.4.3
 CATEGORIES =		security
 SHARED_LIBS +=		ssh2	6.0	# .1.1
+REVISION =		0
 
 HOMEPAGE =              http://www.libssh2.org/
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:38 naddy Exp $
 
 COMMENT=		OBEX protocol implementation
 DISTNAME=		openobex-1.0.1
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=	openobex             1.1      # .1.0
 

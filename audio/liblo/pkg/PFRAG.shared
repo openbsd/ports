@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/08/16 12:26:28 stsp Exp $
-@lib lib/liblo.so.${LIBlo_VERSION}

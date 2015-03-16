@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/03/16 18:07:51 naddy Exp $
 
 COMMENT=		Quasar DV codec
 
 DISTNAME=		libdv-1.0.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://libdv.sourceforge.net/

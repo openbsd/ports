@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/21 13:19:01 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:45 naddy Exp $
 include/geoclue/
 include/geoclue/gc-iface-address.h
 include/geoclue/gc-iface-geoclue.h
@@ -24,7 +23,7 @@ include/geoclue/geoclue-types.h
 include/geoclue/geoclue-velocity.h
 lib/libgeoclue.a
 lib/libgeoclue.la
-lib/pkgconfig/
+@lib lib/libgeoclue.so.${LIBgeoclue_VERSION}
 lib/pkgconfig/geoclue.pc
 @comment libexec/geoclue-example
 @bin libexec/geoclue-geonames

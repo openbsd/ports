@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2012/11/12 13:32:38 sthen Exp $
-@lib lib/libraptor2.so.${LIBraptor2_VERSION}

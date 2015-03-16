@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:44 naddy Exp $
 
 COMMENT=	getopt(3)-like library with a number of enhancements
 
 DISTNAME=	popt-1.16
 CATEGORIES=	devel
 MASTER_SITES=	http://rpm5.org/files/popt/
+REVISION=	0
 
 SHARED_LIBS=	popt	1.0
 

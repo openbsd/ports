@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/07/18 17:37:51 rpointel Exp $
-@lib lib/libcmockery.so.${LIBcmockery_VERSION}

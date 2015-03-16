@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/18 11:29:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:54 naddy Exp $
 
 # WARNING: When trying to update this port to 4.x.x, please be
 # aware that the following ports need adjustments for the new
@@ -11,6 +11,7 @@ COMMENT=	portable OTR messaging library and toolkit
 
 DISTNAME=	libotr-4.0.0
 CATEGORIES=	security
+REVISION=	0
 
 SHARED_LIBS +=  otr                  4.0      # 5.0
 

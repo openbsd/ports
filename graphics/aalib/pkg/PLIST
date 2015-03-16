@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/05/08 12:28:03 okan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:45 naddy Exp $
 @pkgpath graphics/aalib,no_x11
 @bin bin/aafire
 @bin bin/aainfo
@@ -9,7 +9,7 @@ include/aalib.h
 @info info/aalib.info
 lib/libaa.a
 lib/libaa.la
-%%SHARED%%
+@lib lib/libaa.so.${LIBaa_VERSION}
 @man man/man1/aafire.1
 @man man/man3/aa_attrs.3
 @man man/man3/aa_autoinit.3

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/16 18:07:45 naddy Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
 DISTNAME=	agg-2.5
-REVISION=	4
+REVISION=	5
 SHARED_LIBS=	agg		3.0 \
 		aggfontfreetype	3.0 \
 		aggplatformsdl	3.0 \

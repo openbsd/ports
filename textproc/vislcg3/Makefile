@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/16 18:07:57 naddy Exp $
 
 COMMENT =		constraint grammar formalism variant
 
 DISTNAME =		vislcg3-0.9.8.8406
+REVISION =		0
 
 SHARED_LIBS =		cg3                       0.0 # 0.0
 

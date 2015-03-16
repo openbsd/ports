@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/07/09 15:25:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:43 naddy Exp $
 @conflict zarafa-libvmime-*
 @pkgpath mail/zarafa/libvmime
-%%SHARED%%
 include/vmime/
 include/vmime/address.hpp
 include/vmime/addressList.hpp
@@ -190,7 +189,7 @@ include/vmime/word.hpp
 include/vmime/wordEncoder.hpp
 lib/libvmime.a
 lib/libvmime.la
-lib/pkgconfig/
+@lib lib/libvmime.so.${LIBvmime_VERSION}
 lib/pkgconfig/vmime.pc
 share/doc/vmime/
 share/doc/vmime/AUTHORS

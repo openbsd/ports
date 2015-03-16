@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/17 11:56:22 pea Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:44 naddy Exp $
 bin/npth-config
 include/npth.h
+lib/libnpth.a
 lib/libnpth.la
+@lib lib/libnpth.so.${LIBnpth_VERSION}
 share/aclocal/
 share/aclocal/npth.m4

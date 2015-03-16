@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 15:37:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/16 18:07:47 naddy Exp $
 
 COMMENT=	ILM base libraries
 
 DISTNAME=	ilmbase-1.0.1
-REVISION =	2
+REVISION =	3
 CATEGORIES=	graphics
 
 SHARED_LIBS +=	Half                 4.0      # .6.0

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/03/26 09:06:34 sthen Exp $
-@lib lib/liblog4cplus.so.${LIBlog4cplus_VERSION}

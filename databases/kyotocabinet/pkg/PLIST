@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/29 14:32:51 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:38 naddy Exp $
 @bin bin/kccachetest
 @bin bin/kcdirmgr
 @bin bin/kcdirtest
@@ -37,7 +36,7 @@ include/kctextdb.h
 include/kcthread.h
 include/kcutil.h
 lib/libkyotocabinet.a
-lib/pkgconfig/
+@lib lib/libkyotocabinet.so.${LIBkyotocabinet_VERSION}
 lib/pkgconfig/kyotocabinet.pc
 @man man/man1/kccachetest.1
 @man man/man1/kcdirmgr.1

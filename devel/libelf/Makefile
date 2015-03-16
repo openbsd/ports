@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/10/17 12:18:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/16 18:07:41 naddy Exp $
 
 COMMENT=	read, modify, create ELF files on any arch
 
 DISTNAME=	libelf-0.8.13
-REVISION=	2
+REVISION=	3
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 SHARED_LIBS=	elf 1.1

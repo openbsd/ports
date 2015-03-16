@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/24 20:05:27 steven Exp $
-@lib lib/libcruft.so.${LIBcruft_VERSION}
-@lib lib/liboctave.so.${LIBoctave_VERSION}
-@lib lib/liboctinterp.so.${LIBoctinterp_VERSION}

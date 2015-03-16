@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/16 18:07:39 naddy Exp $
 
 COMMENT=	handling CHM files
 CATEGORIES=	devel textproc
@@ -7,7 +7,7 @@ HOMEPAGE=	http://www.jedrea.com/chmlib/
 MASTER_SITES=	${HOMEPAGE}
 
 DISTNAME=	chmlib-0.40
-REVISION =	1
+REVISION =	2
 SHARED_LIBS +=	chm                  0.2      # .0.0
 
 CONFIGURE_STYLE=gnu

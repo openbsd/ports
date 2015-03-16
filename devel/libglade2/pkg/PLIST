@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/03/20 17:06:45 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.11 2015/03/16 18:07:42 naddy Exp $
 bin/libglade-convert
 include/libglade-2.0/
 include/libglade-2.0/glade/
@@ -10,6 +9,7 @@ include/libglade-2.0/glade/glade-xml.h
 include/libglade-2.0/glade/glade.h
 lib/libglade-2.0.a
 lib/libglade-2.0.la
+@lib lib/libglade-2.0.so.${LIBglade-2.0_VERSION}
 lib/pkgconfig/libglade-2.0.pc
 share/gtk-doc/html/libglade/
 share/gtk-doc/html/libglade/GladeXML.html

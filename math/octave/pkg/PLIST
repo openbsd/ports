@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/12/21 22:07:57 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.18 2015/03/16 18:07:50 naddy Exp $
 bin/mkoctfile
 @bin bin/octave
 bin/octave-bug
@@ -608,6 +607,9 @@ include/octave-${VERSION}/octave/xdiv.h
 include/octave-${VERSION}/octave/xpow.h
 include/octave-${VERSION}/octave/zfstream.h
 @info info/octave.info
+@lib lib/libcruft.so.${LIBcruft_VERSION}
+@lib lib/liboctave.so.${LIBoctave_VERSION}
+@lib lib/liboctinterp.so.${LIBoctinterp_VERSION}
 libexec/octave/
 libexec/octave/${VERSION}/
 libexec/octave/${VERSION}/exec/
@@ -617,79 +619,79 @@ libexec/octave/${VERSION}/exec/${GNU_ARCH}/info-emacs-octave-help
 libexec/octave/${VERSION}/oct/
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/PKG_ADD
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__contourc__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__delaunayn__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__dsearchn__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__glpk__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__gnuplot_raw__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__lin_interpn__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__pchip_deriv__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__qp__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/__voronoi__.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/balance.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/besselj.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/betainc.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/bsxfun.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/ccolamd.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/cellfun.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/chol.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/colamd.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/colloc.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/conv2.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/convhulln.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/daspk.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/dasrt.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/dassl.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/det.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/dispatch.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/eig.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/expm.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/fft.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/fft2.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/fftn.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/fftw.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/filter.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/find.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/fsolve.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/gammainc.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/gcd.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/getgrent.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/getpwent.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/getrusage.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/givens.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/hess.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/inv.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/kron.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/lsode.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/lu.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/luinc.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/matrix_type.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/max.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/md5sum.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/pinv.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/qr.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/quad.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/qz.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/rand.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/regexp.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/schur.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/sort.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/sparse.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/spchol.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/spdet.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/spfind.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/spkron.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/splu.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/spparms.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/spqr.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/sqrtm.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/svd.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/syl.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/symrcm.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/time.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/tsearch.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/typecast.oct
-libexec/octave/${VERSION}/oct/${GNU_ARCH}/urlwrite.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__contourc__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__delaunayn__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__dsearchn__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__glpk__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__gnuplot_raw__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__lin_interpn__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__pchip_deriv__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__qp__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/__voronoi__.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/balance.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/besselj.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/betainc.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/bsxfun.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/ccolamd.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/cellfun.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/chol.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/colamd.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/colloc.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/conv2.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/convhulln.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/daspk.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/dasrt.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/dassl.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/det.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/dispatch.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/eig.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/expm.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/fft.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/fft2.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/fftn.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/fftw.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/filter.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/find.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/fsolve.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/gammainc.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/gcd.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/getgrent.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/getpwent.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/getrusage.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/givens.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/hess.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/inv.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/kron.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/lsode.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/lu.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/luinc.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/matrix_type.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/max.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/md5sum.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/pinv.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/qr.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/quad.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/qz.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/rand.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/regexp.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/schur.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/sort.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/sparse.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/spchol.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/spdet.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/spfind.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/spkron.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/splu.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/spparms.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/spqr.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/sqrtm.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/svd.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/syl.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/symrcm.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/time.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/tsearch.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/typecast.oct
+@bin libexec/octave/${VERSION}/oct/${GNU_ARCH}/urlwrite.oct
 libexec/octave/${VERSION}/site/
 libexec/octave/${VERSION}/site/exec/
 libexec/octave/${VERSION}/site/exec/${GNU_ARCH}/

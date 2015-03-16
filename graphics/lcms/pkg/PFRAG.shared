@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/26 17:27:24 steven Exp $
-@lib lib/liblcms.so.${LIBlcms_VERSION}

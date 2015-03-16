@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/16 18:07:52 naddy Exp $
 
 COMMENT=		Easy Publish and Consume library
 
 GNOME_PROJECT=		libepc
 GNOME_VERSION=		0.4.4
-REVISION=		2
+REVISION=		3
 SHARED_LIBS +=  epc-1.0              0.0      # 3.0
 SHARED_LIBS +=  epc-ui-1.0           0.0      # 3.0
 CATEGORIES=		net

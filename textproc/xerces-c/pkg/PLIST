@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/26 23:15:17 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:57 naddy Exp $
 include/xercesc/
 include/xercesc/dom/
 include/xercesc/dom/DOM.hpp
@@ -490,6 +489,8 @@ include/xercesc/validators/schema/identity/XPathMatcher.hpp
 include/xercesc/validators/schema/identity/XPathMatcherStack.hpp
 include/xercesc/validators/schema/identity/XPathSymbols.hpp
 include/xercesc/validators/schema/identity/XercesXPath.hpp
+@lib lib/libxerces-c.so.${LIBxerces-c_VERSION}
+@lib lib/libxerces-depdom.so.${LIBxerces-depdom_VERSION}
 share/doc/xerces-c/
 share/doc/xerces-c/html/
 share/doc/xerces-c/html/ApacheDOMC++Binding.html

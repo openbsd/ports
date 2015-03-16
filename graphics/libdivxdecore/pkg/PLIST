@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:47 naddy Exp $
 include/divx/
 include/divx/decore.h
 lib/libdivxdecore.a
 lib/libdivxdecore.la
-%%SHARED%%
+@lib lib/libdivxdecore.so.${LIBdivxdecore_VERSION}

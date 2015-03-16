@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/01/08 15:27:25 alek Exp $
-@lib lib/libmeanwhile.so.${LIBmeanwhile_VERSION}

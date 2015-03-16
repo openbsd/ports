@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/13 13:49:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
 @conflict libusb-*
 @pkgpath devel/libusb
-%%SHARED%%
 bin/libusb-config
 include/usb.h
 lib/libusb.a
 lib/libusb.la
-lib/pkgconfig/
+@lib lib/libusb.so.${LIBusb_VERSION}
 lib/pkgconfig/libusb.pc

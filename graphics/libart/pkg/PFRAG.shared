@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2005/12/26 16:20:09 steven Exp $
-@lib lib/libart_lgpl_2.so.${LIBart_lgpl_2_VERSION}

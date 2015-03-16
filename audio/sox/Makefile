@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2014/12/29 10:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2015/03/16 18:07:37 naddy Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 DISTNAME=	sox-14.4.1
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=	sox 3.0 # .2.1
 
 CATEGORIES=	audio

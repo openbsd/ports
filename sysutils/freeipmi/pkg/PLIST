@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/13 20:53:19 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:55 naddy Exp $
 include/freeipmi/
 include/freeipmi/fiid.h
 include/freeipmi/freeipmi.h
@@ -81,12 +80,16 @@ include/ipmidetect.h
 @info info/freeipmi-faq.info
 lib/libfreeipmi.a
 lib/libfreeipmi.la
+@lib lib/libfreeipmi.so.${LIBfreeipmi_VERSION}
 lib/libipmiconsole.a
 lib/libipmiconsole.la
+@lib lib/libipmiconsole.so.${LIBipmiconsole_VERSION}
 lib/libipmidetect.a
 lib/libipmidetect.la
+@lib lib/libipmidetect.so.${LIBipmidetect_VERSION}
 lib/libipmimonitoring.a
 lib/libipmimonitoring.la
+@lib lib/libipmimonitoring.so.${LIBipmimonitoring_VERSION}
 @man man/man3/libipmiconsole.3
 @man man/man3/libipmidetect.3
 @man man/man3/libipmimonitoring.3

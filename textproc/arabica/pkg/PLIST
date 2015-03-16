@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/05 18:03:37 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:55 naddy Exp $
 @bin bin/mangle
 include/arabica/
 include/arabica/Arabica/
@@ -274,5 +273,5 @@ include/arabica/text/UnicodeCharacters.hpp
 include/arabica/text/normalize_whitespace.hpp
 lib/libarabica.a
 lib/libarabica.la
-lib/pkgconfig/
+@lib lib/libarabica.so.${LIBarabica_VERSION}
 lib/pkgconfig/arabica.pc

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/15 12:01:53 pea Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:54 naddy Exp $
 bin/ksba-config
 include/ksba.h
 @info info/ksba.info
 lib/libksba.a
 lib/libksba.la
+@lib lib/libksba.so.${LIBksba_VERSION}
 share/aclocal/ksba.m4

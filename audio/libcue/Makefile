@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:35 naddy Exp $
 
 COMMENT =		cue sheet parser library
 
 DISTNAME =		libcue-1.4.0
 CATEGORIES =		audio
+REVISION =		0
 
 HOMEPAGE =		http://libcue.sourceforge.net/
 

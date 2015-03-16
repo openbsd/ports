@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/05 18:55:32 sebastia Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:41 naddy Exp $
 include/itcl/
 include/itcl/itcl.h
 include/itcl/itclDecls.h
 include/itcl/itclInt.h
 include/itcl/itclIntDecls.h
+@lib lib/libitcl34.so.${LIBitcl34_VERSION}
 lib/libitclstub34.a
 lib/tcl/itcl/
 lib/tcl/itcl/itcl.tcl

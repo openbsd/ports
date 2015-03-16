@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/03 20:48:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:54 naddy Exp $
 bin/opencdk-config
 include/opencdk.h
 lib/libopencdk.a
 lib/libopencdk.la
-lib/pkgconfig/
+@lib lib/libopencdk.so.${LIBopencdk_VERSION}
 lib/pkgconfig/opencdk.pc
 share/doc/opencdk/
 share/doc/opencdk/README
@@ -29,4 +29,3 @@ share/examples/opencdk/t-stream.c
 share/examples/opencdk/testpa.c
 share/examples/opencdk/ts.gpg
 share/examples/opencdk/wkold.gpg
-%%SHARED%%

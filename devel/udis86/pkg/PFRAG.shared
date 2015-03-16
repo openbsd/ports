@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/05/13 22:19:14 pirofti Exp $
-@lib lib/libudis86.so.${LIBudis86_VERSION}

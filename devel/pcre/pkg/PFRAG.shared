@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2012/02/17 08:32:34 ajacoutot Exp $
-@lib lib/libpcre.so.${LIBpcre_VERSION}
-@lib lib/libpcre16.so.${LIBpcre16_VERSION}
-@lib lib/libpcrecpp.so.${LIBpcrecpp_VERSION}
-@lib lib/libpcreposix.so.${LIBpcreposix_VERSION}

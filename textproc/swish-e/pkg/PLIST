@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/26 12:21:35 merdely Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:57 naddy Exp $
 bin/swish-config
 @bin bin/swish-e
 bin/swish-filter-test
 include/swish-e.h
 lib/libswish-e.a
 lib/libswish-e.la
-lib/pkgconfig/
+@lib lib/libswish-e.so.${LIBswish-e_VERSION}
 lib/pkgconfig/swish-e.pc
 lib/swish-e/
 lib/swish-e/DirTree.pl

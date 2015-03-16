@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2013/08/09 18:45:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2015/03/16 18:07:45 naddy Exp $
 
 COMMENT =	easy to use, graphical editor
 
 DISTNAME =	cooledit-3.17.17
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	editors
 

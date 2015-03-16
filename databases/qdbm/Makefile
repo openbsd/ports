@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2014/10/23 15:13:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2015/03/16 18:07:38 naddy Exp $
 
 COMMENT=		high performance embedded database library
 
 DISTNAME=		qdbm-1.8.78
 CATEGORIES=		databases
 SHARED_LIBS=		qdbm	14.14
+REVISION=		0
 
 HOMEPAGE=		http://fallabs.com/qdbm/
 

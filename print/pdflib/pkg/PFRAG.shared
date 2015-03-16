@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/02 20:05:09 sturm Exp $
-@lib lib/libpdf.so.${LIBpdf_VERSION}

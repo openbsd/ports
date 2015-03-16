@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/01/11 12:39:58 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:47 naddy Exp $
 include/goocanvas-1.0/
 include/goocanvas-1.0/goocanvas.h
 include/goocanvas-1.0/goocanvasellipse.h
@@ -21,7 +20,7 @@ include/goocanvas-1.0/goocanvasutils.h
 include/goocanvas-1.0/goocanvaswidget.h
 lib/libgoocanvas.a
 lib/libgoocanvas.la
-lib/pkgconfig/
+@lib lib/libgoocanvas.so.${LIBgoocanvas_VERSION}
 lib/pkgconfig/goocanvas.pc
 share/gtk-doc/
 share/gtk-doc/html/

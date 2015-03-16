@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/02/04 07:36:39 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:56 naddy Exp $
 @bin bin/estbutler
 @bin bin/estcall
 @bin bin/estcmd
@@ -13,7 +12,7 @@ include/estmtdb.h
 include/estnode.h
 include/estraier.h
 lib/libestraier.a
-lib/pkgconfig/
+@lib lib/libestraier.so.${LIBestraier_VERSION}
 lib/pkgconfig/hyperestraier.pc
 @bin libexec/estfraud.cgi
 @bin libexec/estproxy.cgi

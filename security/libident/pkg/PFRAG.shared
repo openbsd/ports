@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2011/05/04 16:16:24 gsoares Exp $
-@lib lib/libident.so.${LIBident_VERSION}

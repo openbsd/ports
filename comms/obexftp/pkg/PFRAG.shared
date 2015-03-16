@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/23 14:16:01 bernd Exp $
-@lib lib/libbfb.so.${LIBbfb_VERSION}
-@lib lib/libcobexbfb.so.${LIBcobexbfb_VERSION}
-@lib lib/libobexftp.so.${LIBobexftp_VERSION}

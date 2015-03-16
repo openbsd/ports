@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:57 naddy Exp $
 
 COMMENT=	object-oriented SGML parser
 
 DISTNAME=	OpenSP-1.5.2
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	textproc
+REVISION=	0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
 

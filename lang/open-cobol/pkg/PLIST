@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/22 16:38:21 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:49 naddy Exp $
 bin/cob-config
 @bin bin/cobc
 @bin bin/cobcrun
@@ -21,6 +20,7 @@ include/libcob/termio.h
 @info info/open-cobol.info
 lib/libcob.a
 lib/libcob.la
+@lib lib/libcob.so.${LIBcob_VERSION}
 share/locale/ja/LC_MESSAGES/open-cobol.mo
 share/open-cobol/
 share/open-cobol/config/

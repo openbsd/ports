@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/14 19:20:10 steven Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:59 naddy Exp $
 include/libsexy/
 include/libsexy/sexy-enum-types.h
 include/libsexy/sexy-icon-entry.h
@@ -10,7 +9,7 @@ include/libsexy/sexy-url-label.h
 include/libsexy/sexy.h
 lib/libsexy.a
 lib/libsexy.la
-lib/pkgconfig/
+@lib lib/libsexy.so.${LIBsexy_VERSION}
 lib/pkgconfig/libsexy.pc
 share/gtk-doc/
 share/gtk-doc/html/

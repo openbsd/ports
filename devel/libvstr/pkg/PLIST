@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/12 21:38:59 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
 include/vstr-arch.h
 include/vstr-conf.h
 include/vstr-const.h
@@ -8,9 +7,10 @@ include/vstr-extern.h
 include/vstr-inline.h
 include/vstr-switch.h
 include/vstr.h
+@lib lib/libvstr-1.0.so.${LIBvstr-1.0_VERSION}
 lib/libvstr.a
 lib/libvstr.la
-lib/pkgconfig/
+@lib lib/libvstr.so.${LIBvstr_VERSION}
 lib/pkgconfig/vstr.pc
 @man man/man3/vstr.3
 @man man/man3/vstr_const.3

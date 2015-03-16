@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:43 naddy Exp $
 
 COMMENT=		logging API for C++
 
 DISTNAME=		log4cplus-1.0.4
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 SHARED_LIBS +=  log4cplus             0.0 # 0.0
 

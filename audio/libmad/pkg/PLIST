@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/06/04 15:30:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:36 naddy Exp $
 @conflict mad-*
 include/mad.h
 lib/libmad.a
 lib/libmad.la
-%%SHARED%%
-lib/pkgconfig/
+@lib lib/libmad.so.${LIBmad_VERSION}
 lib/pkgconfig/mad.pc

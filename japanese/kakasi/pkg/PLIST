@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/02/27 20:31:52 espie Exp $
-bin/atoc_conv
-bin/kakasi
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:48 naddy Exp $
+@bin bin/atoc_conv
+@bin bin/kakasi
 bin/kakasi-config
-bin/mkkanwa
-bin/rdic_conv
-bin/wx2_conv
+@bin bin/mkkanwa
+@bin bin/rdic_conv
+@bin bin/wx2_conv
 include/libkakasi.h
 lib/libkakasi.a
 lib/libkakasi.la
+@lib lib/libkakasi.so.${LIBkakasi_VERSION}
 @man man/ja_JP.EUC/cat1/kakasi.0
 @man man/ja_JP.EUC/man1/kakasi.1
 share/kakasi/
 share/kakasi/itaijidict
 share/kakasi/kanwadict
-%%SHARED%%

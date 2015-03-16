@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/22 14:32:54 shadchin Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:40 naddy Exp $
 @bin bin/glpsol
 include/glpk.h
 lib/libglpk.a
 lib/libglpk.la
+@lib lib/libglpk.so.${LIBglpk_VERSION}
 share/doc/glpk/
 share/doc/glpk/glpk.pdf
 share/doc/glpk/glpk_faq.txt

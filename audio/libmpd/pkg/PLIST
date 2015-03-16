@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/04/23 19:20:02 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:36 naddy Exp $
 include/libmpd-1.0/
 include/libmpd-1.0/libmpd/
 include/libmpd-1.0/libmpd/debug_printf.h
@@ -15,5 +14,5 @@ include/libmpd-1.0/libmpd/libmpd.h
 include/libmpd-1.0/libmpd/libmpdclient.h
 lib/libmpd.a
 lib/libmpd.la
-lib/pkgconfig/
+@lib lib/libmpd.so.${LIBmpd_VERSION}
 lib/pkgconfig/libmpd.pc

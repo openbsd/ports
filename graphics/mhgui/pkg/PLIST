@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/10/23 11:06:17 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:48 naddy Exp $
 include/mhgui/
 include/mhgui/AbstractListener.h
 include/mhgui/CGUtilities.h
@@ -28,5 +27,5 @@ include/mhgui/Widget.h
 include/mhgui/Window.h
 lib/libmhgui.a
 lib/libmhgui.la
-lib/pkgconfig/
+@lib lib/libmhgui.so.${LIBmhgui_VERSION}
 lib/pkgconfig/mhgui.pc

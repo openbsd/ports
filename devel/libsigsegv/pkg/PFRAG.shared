@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/07/09 22:27:34 jasper Exp $
-@lib lib/libsigsegv.so.${LIBsigsegv_VERSION}

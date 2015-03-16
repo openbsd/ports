@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/10/04 08:59:41 giovanni Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:51 naddy Exp $
 include/matroska/
 include/matroska/FileKax.h
 include/matroska/KaxAttached.h
@@ -32,3 +31,4 @@ include/matroska/c/
 include/matroska/c/libmatroska.h
 include/matroska/c/libmatroska_t.h
 lib/libmatroska.a
+@lib lib/libmatroska.so.${LIBmatroska_VERSION}

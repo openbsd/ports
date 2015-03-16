@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/09 09:21:54 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:52 naddy Exp $
 include/dclib/
 include/dclib/cclient.h
 include/dclib/cclientssl.h
@@ -60,8 +60,7 @@ include/dclib/hash/tiger.h
 include/dclib/hash/tigertree.h
 lib/libdc.a
 lib/libdc.la
-lib/pkgconfig/
+@lib lib/libdc.so.${LIBdc_VERSION}
 lib/pkgconfig/dclib.pc
-%%SHARED%%
 share/dclib/
 share/dclib/plugin/

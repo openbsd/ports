@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/26 09:30:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:39 naddy Exp $
 @conflict samba-<3.5.0
-%%SHARED%%
 @bin bin/tdbbackup
 @bin bin/tdbdump
 @bin bin/tdbrestore
 @bin bin/tdbtool
 include/tdb.h
 lib/libtdb.a
-lib/pkgconfig/
+@lib lib/libtdb.so.${LIBtdb_VERSION}
 lib/pkgconfig/tdb.pc
 share/doc/tdb/
 share/doc/tdb/README

@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/12/17 18:37:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/03/16 18:07:58 naddy Exp $
 @conflict ja-eterm-*
 @conflict eterm-*
-%%SHARED%%
 @bin bin/Esetroot
 @bin bin/Etbg
 bin/Etbg_update_list
 bin/Etcolors
-@group utmp
 @mode g+s
+@group utmp
 @bin bin/Eterm
 @mode
 @group
@@ -16,6 +15,7 @@ bin/Etsearch
 bin/kEsetroot
 lib/libEterm.a
 lib/libEterm.la
+@lib lib/libEterm.so.${LIBEterm_VERSION}
 @man man/man1/Eterm.1
 share/Eterm/
 share/Eterm/gdb.scr

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/16 18:07:59 naddy Exp $
 
 COMMENT=		drag and drop library
 
 DISTNAME=		dnd.1.1
 PKGNAME=		libdnd-1.1
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS=		Dnd++	1.0 \
 			Dnd	0.0

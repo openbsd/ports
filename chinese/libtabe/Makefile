@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2015/03/16 18:07:37 naddy Exp $
 
 COMMENT=	library for Chinese language processing
 
 DISTNAME=	libtabe-0.2.6
 PKGNAME=	zh-${DISTNAME}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	chinese
 SHARED_LIBS +=	tabe                 2.1      # .0.0
 SHARED_LIBS +=	bims                 2.1      # .0.0

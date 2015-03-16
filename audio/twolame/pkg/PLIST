@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/27 09:44:15 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:37 naddy Exp $
 @bin bin/twolame
 include/twolame.h
 lib/libtwolame.a
 lib/libtwolame.la
-lib/pkgconfig/
+@lib lib/libtwolame.so.${LIBtwolame_VERSION}
 lib/pkgconfig/twolame.pc
 @man man/man1/twolame.1
 share/doc/twolame/

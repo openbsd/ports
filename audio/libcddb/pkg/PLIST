@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/19 14:37:54 jasper Exp $
-%%SHARED%%
-bin/cddb_query
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:35 naddy Exp $
+@bin bin/cddb_query
 include/cddb/
 include/cddb/cddb.h
 include/cddb/cddb_cmd.h
@@ -14,5 +13,5 @@ include/cddb/cddb_track.h
 include/cddb/version.h
 lib/libcddb.a
 lib/libcddb.la
-lib/pkgconfig/
+@lib lib/libcddb.so.${LIBcddb_VERSION}
 lib/pkgconfig/libcddb.pc

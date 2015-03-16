@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2014/11/04 16:01:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.72 2015/03/16 18:07:40 naddy Exp $
 
 PORTROACH=	limit:^1\.2\.
 
@@ -9,7 +9,7 @@ SHARED_LIBS +=	glib                 1.2      # .1.2
 SHARED_LIBS +=	gmodule              1.2      # .1.2
 SHARED_LIBS +=	gthread              1.2      # .1.2
 
-REVISION =	5
+REVISION =	6
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/glib/1.2/}

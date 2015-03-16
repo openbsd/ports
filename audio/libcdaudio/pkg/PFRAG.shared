@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/23 16:12:24 espie Exp $
-@lib lib/libcdaudio.so.${LIBcdaudio_VERSION}

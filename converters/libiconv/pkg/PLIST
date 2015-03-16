@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/04/24 18:56:49 naddy Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.10 2015/03/16 18:07:38 naddy Exp $
 @bin bin/iconv
 include/iconv.h
 include/libcharset.h
@@ -7,8 +6,10 @@ include/localcharset.h
 lib/charset.alias
 lib/libcharset.a
 lib/libcharset.la
+@lib lib/libcharset.so.${LIBcharset_VERSION}
 lib/libiconv.a
 lib/libiconv.la
+@lib lib/libiconv.so.${LIBiconv_VERSION}
 @man man/man1/iconv.1
 @man man/man3/iconv.3
 @man man/man3/iconv_close.3

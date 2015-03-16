@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/08 13:04:48 okan Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:38 naddy Exp $
 @bin bin/cbcodec
 @bin bin/cbtest
 @bin bin/crmgr
@@ -28,7 +27,7 @@ include/relic.h
 include/villa.h
 include/vista.h
 lib/libqdbm.a
-lib/pkgconfig/
+@lib lib/libqdbm.so.${LIBqdbm_VERSION}
 lib/pkgconfig/qdbm.pc
 @man man/man1/cbcodec.1
 @man man/man1/cbtest.1

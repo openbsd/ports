@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/06/10 20:15:36 landry Exp $
-@lib lib/libnxml.so.${LIBnxml_VERSION}

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/06/25 01:03:09 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:37 naddy Exp $
 @conflict aguri-*
 @conflict pscan-*
-%%SHARED%%
 @bin bin/aaindexextract
 @bin bin/abiview
 @bin bin/acdc
@@ -296,12 +295,16 @@ include/eplplot/plxwd.h
 include/eplplot/ps.h
 lib/libajax.a
 lib/libajax.la
+@lib lib/libajax.so.${LIBajax_VERSION}
 lib/libajaxg.a
 lib/libajaxg.la
+@lib lib/libajaxg.so.${LIBajaxg_VERSION}
 lib/libeplplot.a
 lib/libeplplot.la
+@lib lib/libeplplot.so.${LIBeplplot_VERSION}
 lib/libnucleus.a
 lib/libnucleus.la
+@lib lib/libnucleus.so.${LIBnucleus_VERSION}
 share/EMBOSS/
 share/EMBOSS/acd/
 share/EMBOSS/acd/aaindexextract.acd

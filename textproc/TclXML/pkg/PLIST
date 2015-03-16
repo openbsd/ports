@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/10/03 08:41:59 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:55 naddy Exp $
 @conflict TclXML-*
-%%SHARED%%
 include/tclxml/
 include/tclxml/docObj.h
 include/tclxml/tcldom-libxml2.h
@@ -9,6 +8,7 @@ include/tclxml/tclxml-libxml2.h
 include/tclxml/tclxslt.h
 lib/tcl/TclxmlConfig.sh
 lib/tcl/tclxml/
+@lib lib/tcl/tclxml/libTclxml32.so.${LIBTclxml32_VERSION}
 lib/tcl/tclxml/libTclxmlstub32.a
 lib/tcl/tclxml/pkgIndex.tcl
 lib/tcl/tclxml/process.tcl

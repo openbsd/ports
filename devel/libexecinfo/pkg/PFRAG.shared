@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/11/14 19:14:18 sthen Exp $
-@lib lib/libexecinfo.so.${LIBexecinfo_VERSION}

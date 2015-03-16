@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/02 09:34:19 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:46 naddy Exp $
 include/GL/
 include/GL/gle.h
 lib/libgle.a
 lib/libgle.la
+@lib lib/libgle.so.${LIBgle_VERSION}
 @man man/man3/gle.3
 @man man/man3/gleExtrusion.3
 @man man/man3/gleHelicoid.3

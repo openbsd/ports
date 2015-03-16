@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:51 naddy Exp $
 
 COMMENT =	inspect, edit and validate Ogg files
 
@@ -7,6 +7,7 @@ PKGNAME =	oggz-${V}
 DISTNAME =	liboggz-${V}
 CATEGORIES =	multimedia
 HOMEPAGE =	http://www.xiph.org/oggz/
+REVISION =	0
 
 MAINTAINER =	Eric Faurot <eric@openbsd.org>
 

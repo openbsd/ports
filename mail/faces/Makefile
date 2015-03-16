@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2015/02/17 22:11:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/03/16 18:07:49 naddy Exp $
 
 COMMENT=	visual mail, user and print face server
 
 DISTNAME=	faces-1.6.1
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	compface	1.0
 CATEGORIES=	mail
 

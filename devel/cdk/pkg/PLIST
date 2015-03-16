@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/17 13:22:06 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:39 naddy Exp $
 include/cdk/
 include/cdk/alphalist.h
 include/cdk/binding.h
@@ -43,6 +42,7 @@ include/cdk/uslider.h
 include/cdk/viewer.h
 lib/libcdk.a
 lib/libcdk.la
+@lib lib/libcdk.so.${LIBcdk_VERSION}
 @man man/man3/Beep.3
 @man man/man3/CDKallocStrings.3
 @man man/man3/CDKcountStrings.3

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/10/24 08:13:53 sebastia Exp $
-@lib lib/libgsasl.so.${LIBgsasl_VERSION}

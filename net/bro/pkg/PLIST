@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/17 01:34:53 kevlo Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:51 naddy Exp $
 @bin bin/bro
 bin/broccoli-config
 include/broccoli.h
 lib/libbroccoli.a
 lib/libbroccoli.la
+@lib lib/libbroccoli.so.${LIBbroccoli_VERSION}
 share/bro/
 share/bro/OS-fingerprint.bro
 share/bro/adu.bro

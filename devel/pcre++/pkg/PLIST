@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/05 14:16:40 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:44 naddy Exp $
 bin/pcre++-config
 include/pcre++.h
 lib/libpcre++.a
 lib/libpcre++.la
+@lib lib/libpcre++.so.${LIBpcre++_VERSION}
 @man man/man3/Pcre.3
 share/doc/pcre++/
 @comment share/doc/pcre++/AUTHORS
@@ -41,4 +42,3 @@ share/doc/pcre++/search_8cc-source.html
 share/doc/pcre++/search_8cc.html
 share/doc/pcre++/split_8cc-source.html
 share/doc/pcre++/split_8cc.html
-%%SHARED%%

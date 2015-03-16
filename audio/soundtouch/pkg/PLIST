@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/08 11:05:58 ajacoutot Exp $
-%%SHARED%%
-bin/soundstretch
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:37 naddy Exp $
+@bin bin/soundstretch
 include/soundtouch/
 include/soundtouch/BPMDetect.h
 include/soundtouch/FIFOSampleBuffer.h
@@ -10,9 +9,10 @@ include/soundtouch/SoundTouch.h
 include/soundtouch/soundtouch_config.h
 lib/libBPM.a
 lib/libBPM.la
+@lib lib/libBPM.so.${LIBBPM_VERSION}
 lib/libSoundTouch.a
 lib/libSoundTouch.la
-lib/pkgconfig/
+@lib lib/libSoundTouch.so.${LIBSoundTouch_VERSION}
 lib/pkgconfig/soundtouch-1.0.pc
 share/aclocal/
 share/aclocal/soundtouch.m4

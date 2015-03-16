@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/06/04 18:41:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:48 naddy Exp $
 
 COMMENT=	WMF handling and conversion library
 
 DISTNAME=	libwmf-0.2.8.4
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	wmf		8.0	\
 		wmf-0.2		8.0	\
 		wmflite		7.1	\

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/23 15:03:07 espie Exp $
-@lib lib/libid3.so.${LIBid3_VERSION}

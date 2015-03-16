@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/16 18:07:39 naddy Exp $
 
 COMMENT=	implementation of the Real-time Transport Protocol
 
 DISTNAME=	ccrtp-1.7.1
-REVISION =	3
+REVISION =	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ccrtp/}
 

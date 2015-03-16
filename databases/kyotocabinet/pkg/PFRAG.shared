@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/08/29 14:32:51 ajacoutot Exp $
-@lib lib/libkyotocabinet.so.${LIBkyotocabinet_VERSION}

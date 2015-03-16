@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/17 09:12:26 kirby Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:52 naddy Exp $
 
 COMMENT=	Library for direct-connect protocol
 
 DISTNAME=	dclib-0.3.7
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 SHARED_LIBS=	dc	1.0
 

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/02/28 19:26:22 nigel Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:52 naddy Exp $
 bin/smicache
 @bin bin/smidiff
 @bin bin/smidump
@@ -10,7 +9,7 @@ bin/smistrip
 include/smi.h
 lib/libsmi.a
 lib/libsmi.la
-lib/pkgconfig/
+@lib lib/libsmi.so.${LIBsmi_VERSION}
 lib/pkgconfig/libsmi.pc
 @man man/man1/smicache.1
 @man man/man1/smidiff.1

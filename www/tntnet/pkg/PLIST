@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/05/27 21:49:31 jasper Exp $
-%%SHARED%%
-bin/ecppc
-bin/ecppl
-bin/ecppll
-bin/tntnet
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:58 naddy Exp $
+@bin bin/ecppc
+@bin bin/ecppl
+@bin bin/ecppll
+@bin bin/tntnet
 bin/tntnet-config
 include/tnt/
 include/tnt/compident.h
@@ -56,10 +55,13 @@ include/tnt/worker.h
 include/tnt/zdata.h
 lib/libtntnet.a
 lib/libtntnet.la
+@lib lib/libtntnet.so.${LIBtntnet_VERSION}
 lib/libtntnet_cgi.a
 lib/libtntnet_cgi.la
+@lib lib/libtntnet_cgi.so.${LIBtntnet_cgi_VERSION}
 lib/libtntnet_sdk.a
 lib/libtntnet_sdk.la
+@lib lib/libtntnet_sdk.so.${LIBtntnet_sdk_VERSION}
 lib/tntnet/
 lib/tntnet/alldemos.a
 lib/tntnet/alldemos.la

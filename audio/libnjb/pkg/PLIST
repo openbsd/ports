@@ -1,31 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/07 19:34:57 jasper Exp $
-%%SHARED%%
-bin/njb-cursesplay
-bin/njb-delfile
-bin/njb-deltr
-bin/njb-dumpeax
-bin/njb-dumptime
-bin/njb-files
-bin/njb-fwupgrade
-bin/njb-getfile
-bin/njb-getowner
-bin/njb-gettr
-bin/njb-getusage
-bin/njb-handshake
-bin/njb-pl
-bin/njb-play
-bin/njb-playlists
-bin/njb-sendfile
-bin/njb-sendtr
-bin/njb-setowner
-bin/njb-setpbm
-bin/njb-settime
-bin/njb-tagtr
-bin/njb-tracks
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:36 naddy Exp $
+@bin bin/njb-cursesplay
+@bin bin/njb-delfile
+@bin bin/njb-deltr
+@bin bin/njb-dumpeax
+@bin bin/njb-dumptime
+@bin bin/njb-files
+@bin bin/njb-fwupgrade
+@bin bin/njb-getfile
+@bin bin/njb-getowner
+@bin bin/njb-gettr
+@bin bin/njb-getusage
+@bin bin/njb-handshake
+@bin bin/njb-pl
+@bin bin/njb-play
+@bin bin/njb-playlists
+@bin bin/njb-sendfile
+@bin bin/njb-sendtr
+@bin bin/njb-setowner
+@bin bin/njb-setpbm
+@bin bin/njb-settime
+@bin bin/njb-tagtr
+@bin bin/njb-tracks
 include/libnjb.h
 lib/libnjb.a
 lib/libnjb.la
-lib/pkgconfig/
+@lib lib/libnjb.so.${LIBnjb_VERSION}
 lib/pkgconfig/libnjb.pc
 share/doc/libnjb/
 share/doc/libnjb/FAQ

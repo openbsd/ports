@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/01/17 10:59:27 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:55 naddy Exp $
 @bin bin/aspell
 bin/aspell-import
 bin/precat
@@ -77,8 +76,10 @@ lib/aspell/split.kbd
 lib/aspell/standard.kbd
 lib/libaspell.a
 lib/libaspell.la
+@lib lib/libaspell.so.${LIBaspell_VERSION}
 lib/libpspell.a
 lib/libpspell.la
+@lib lib/libpspell.so.${LIBpspell_VERSION}
 @man man/man1/aspell-import.1
 @man man/man1/aspell.1
 @man man/man1/prezip-bin.1

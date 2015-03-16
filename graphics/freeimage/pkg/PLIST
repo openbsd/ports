@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/20 13:53:04 eric Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:46 naddy Exp $
 include/FreeImage.h
 lib/libfreeimage.a
+@lib lib/libfreeimage.so.${LIBfreeimage_VERSION}

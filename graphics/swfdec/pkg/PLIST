@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 11:52:16 phessler Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:48 naddy Exp $
 include/swfdec-0.8/
 include/swfdec-0.8/swfdec/
 include/swfdec-0.8/swfdec-gtk/
@@ -38,13 +37,12 @@ include/swfdec-0.8/swfdec/swfdec_url.h
 include/swfdec-0.8/swfdec/swfdec_version.h
 lib/libswfdec-0.8.a
 lib/libswfdec-0.8.la
+@lib lib/libswfdec-0.8.so.${LIBswfdec-0.8_VERSION}
 lib/libswfdec-gtk-0.8.a
 lib/libswfdec-gtk-0.8.la
-lib/pkgconfig/
+@lib lib/libswfdec-gtk-0.8.so.${LIBswfdec-gtk-0.8_VERSION}
 lib/pkgconfig/swfdec-0.8.pc
 lib/pkgconfig/swfdec-gtk-0.8.pc
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/swfdec/
 share/gtk-doc/html/swfdec/SwfdecAsArray.html
 share/gtk-doc/html/swfdec/SwfdecAsContext.html

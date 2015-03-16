@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2010/05/14 08:45:58 ajacoutot Exp $
-@lib lib/libqrupdate.so.${LIBqrupdate_VERSION}

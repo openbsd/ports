@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/31 15:42:58 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:56 naddy Exp $
 @bin bin/createfp
 include/textcat.h
 lib/libtextcat.a
 lib/libtextcat.la
+@lib lib/libtextcat.so.${LIBtextcat_VERSION}
 share/doc/libtextcat/
 share/doc/libtextcat/README
 share/libtextcat/

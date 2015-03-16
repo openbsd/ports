@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/25 09:19:23 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:36 naddy Exp $
 include/musicbrainz3/
 include/musicbrainz3/artist.h
 include/musicbrainz3/artistalias.h
@@ -28,5 +27,5 @@ include/musicbrainz3/track.h
 include/musicbrainz3/user.h
 include/musicbrainz3/utils.h
 include/musicbrainz3/webservice.h
-lib/pkgconfig/
+@lib lib/libmusicbrainz3.so.${LIBmusicbrainz3_VERSION}
 lib/pkgconfig/libmusicbrainz3.pc

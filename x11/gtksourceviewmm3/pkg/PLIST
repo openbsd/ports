@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/13 08:28:20 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:59 naddy Exp $
 include/gtksourceviewmm-${MAJOR_VERSION}/
 include/gtksourceviewmm-${MAJOR_VERSION}/gtksourceviewmm/
 include/gtksourceviewmm-${MAJOR_VERSION}/gtksourceviewmm.h
@@ -58,7 +57,7 @@ lib/gtksourceviewmm-${MAJOR_VERSION}/include/
 lib/gtksourceviewmm-${MAJOR_VERSION}/include/gtksourceviewmmconfig.h
 lib/libgtksourceviewmm-${MAJOR_VERSION}.a
 lib/libgtksourceviewmm-${MAJOR_VERSION}.la
-lib/pkgconfig/
+@lib lib/libgtksourceviewmm-${MAJOR_VERSION}.so.${LIBgtksourceviewmm-3.0_VERSION}
 lib/pkgconfig/gtksourceviewmm-${MAJOR_VERSION}.pc
 share/devhelp/
 share/devhelp/books/

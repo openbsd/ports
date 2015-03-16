@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/10/03 21:10:24 armani Exp $
-@lib lib/libhid.so.${LIBhid_VERSION}

@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:32:14 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:37 naddy Exp $
 @bin bin/gerbv
 include/gerbv-2.5.0/
 include/gerbv-2.5.0/gerbv.h
 lib/libgerbv.a
 lib/libgerbv.la
-lib/pkgconfig/
+@lib lib/libgerbv.so.${LIBgerbv_VERSION}
 lib/pkgconfig/libgerbv.pc
 @man man/man1/gerbv.1
 share/applications/gerbv.desktop
@@ -16,25 +15,11 @@ share/gerbv/scheme/
 share/gerbv/scheme/gerb-debug.scm
 share/gerbv/scheme/gerb-ps.scm
 share/gerbv/scheme/init.scm
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gerbv-16.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gerbv-22.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gerbv-24.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gerbv-32.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gerbv-48.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gerbv.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

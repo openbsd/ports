@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2014/04/14 19:50:09 matthieu Exp $
+# $OpenBSD: Makefile,v 1.26 2015/03/16 18:07:45 naddy Exp $
 
 COMMENT=		library for tracking application startup
 
 DISTNAME=		startup-notification-0.12
 CATEGORIES=		devel x11
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  startup-notification-1 2.0      # .0.0
 

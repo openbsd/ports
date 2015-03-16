@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/12 08:04:22 grange Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:38 naddy Exp $
 bin/openobex-config
 include/openobex/
 include/openobex/obex.h
 include/openobex/obex_const.h
 lib/libopenobex.a
 lib/libopenobex.la
+@lib lib/libopenobex.so.${LIBopenobex_VERSION}
 share/aclocal/
 share/aclocal/openobex.m4

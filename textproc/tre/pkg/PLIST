@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/28 21:08:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:57 naddy Exp $
 @conflict agrep-*
 @conflict glimpse-*
 @bin bin/agrep
@@ -8,9 +8,8 @@ include/tre/tre-config.h
 include/tre/tre.h
 lib/libtre.a
 lib/libtre.la
-lib/pkgconfig/
+@lib lib/libtre.so.${LIBtre_VERSION}
 lib/pkgconfig/tre.pc
 @man man/man1/agrep.1
 share/locale/fi/LC_MESSAGES/tre.mo
 share/locale/sv/LC_MESSAGES/tre.mo
-%%SHARED%%

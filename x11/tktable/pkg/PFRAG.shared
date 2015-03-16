@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2011/01/05 17:03:34 stu Exp $
-@lib lib/tcl/tktable/${TKTABLE_LIB}.so.${LIBTktable210_VERSION}

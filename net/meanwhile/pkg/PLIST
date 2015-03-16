@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/08 15:27:25 alek Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:53 naddy Exp $
 include/meanwhile/
 include/meanwhile/mw_channel.h
 include/meanwhile/mw_cipher.h
@@ -19,7 +18,7 @@ include/meanwhile/mw_srvc_store.h
 include/meanwhile/mw_st_list.h
 lib/libmeanwhile.a
 lib/libmeanwhile.la
-lib/pkgconfig/
+@lib lib/libmeanwhile.so.${LIBmeanwhile_VERSION}
 lib/pkgconfig/meanwhile.pc
 share/examples/meanwhile/
 share/examples/meanwhile/README

@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/18 12:54:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/03/16 18:07:49 naddy Exp $
 @conflict compface-*
 bin/addxface
-bin/compface
+@bin bin/compface
 bin/face_update
-bin/faces
+@bin bin/faces
 bin/faces.sendmail
 bin/facesaddr
 bin/facesall
 bin/from.faces
 bin/fs2ikon
 bin/fs2xbm
-bin/icon2ikon
-bin/ikon2icon
+@bin bin/icon2ikon
+@bin bin/ikon2icon
 bin/ikon2xbm
 bin/lpqall.faces
 bin/mailq.faces
@@ -19,14 +19,15 @@ bin/mkfacesindex
 bin/newscheck.faces
 bin/newsfrom.faces
 bin/rotary.faces
-bin/rs2icon
-bin/uncompface
+@bin bin/rs2icon
+@bin bin/uncompface
 bin/xbm2ikon
 bin/xbmcut48
 bin/xbmsize48
 include/compface.h
 lib/X11/app-defaults/Faces
 lib/libcompface.a
+@lib lib/libcompface.so.${LIBcompface_VERSION}
 @man man/man1/compface.1
 @man man/man1/face_update.1
 @man man/man1/faces.1
@@ -36,4 +37,3 @@ lib/libcompface.a
 share/faces/
 share/faces/machine.tab
 share/faces/people.tab
-%%SHARED%%

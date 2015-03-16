@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/09 10:06:34 robert Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:56 naddy Exp $
 @bin bin/wpd2html
 @bin bin/wpd2raw
 @bin bin/wpd2text
@@ -17,8 +16,9 @@ include/libwpd-0.8/libwpd/libwpd.h
 include/libwpd-0.8/libwpd/libwpd_types.h
 lib/libwpd-0.8.a
 lib/libwpd-0.8.la
+@lib lib/libwpd-0.8.so.${LIBwpd-0.8_VERSION}
 lib/libwpd-stream-0.8.a
 lib/libwpd-stream-0.8.la
-lib/pkgconfig/
+@lib lib/libwpd-stream-0.8.so.${LIBwpd-stream-0.8_VERSION}
 lib/pkgconfig/libwpd-0.8.pc
 lib/pkgconfig/libwpd-stream-0.8.pc

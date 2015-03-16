@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/09/13 16:36:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/03/16 18:07:56 naddy Exp $
 
 PORTROACH+=	limit:^2
 
@@ -7,7 +7,7 @@ DISTNAME=	gtkspell-2.0.16
 
 SHARED_LIBS=	gtkspell 1.0 # .0.0
 
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	textproc x11
 

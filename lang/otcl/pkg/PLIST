@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/28 18:06:29 stu Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:49 naddy Exp $
 @bin bin/otclsh
 @bin bin/owish
 include/otcl.h
 lib/libotcl.a
-%%SHARED%%
+@lib lib/libotcl.so.${LIBotcl_VERSION}

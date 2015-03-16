@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/16 18:07:45 naddy Exp $
 
 COMMENT=	shapefile manipulation library
 
 DISTNAME=	shapelib-1.2.10
-REVISION =	2
+REVISION =	3
 SHARED_LIBS=	shp 1.2
 CATEGORIES=    	devel
 

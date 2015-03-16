@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2012/08/30 18:41:09 ajacoutot Exp $
-@lib lib/libclucene-contribs-lib.so.${LIBclucene-contribs-lib_VERSION}
-@lib lib/libclucene-core.so.${LIBclucene-core_VERSION}
-@lib lib/libclucene-shared.so.${LIBclucene-shared_VERSION}

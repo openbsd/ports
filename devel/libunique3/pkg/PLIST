@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/27 11:22:07 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
 include/unique-3.0/
 include/unique-3.0/unique/
 include/unique-3.0/unique/unique.h
@@ -12,7 +11,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/Unique-3.0.typelib
 lib/libunique-3.0.a
 lib/libunique-3.0.la
-lib/pkgconfig/
+@lib lib/libunique-3.0.so.${LIBunique-3.0_VERSION}
 lib/pkgconfig/unique-3.0.pc
 share/gir-1.0/
 share/gir-1.0/Unique-3.0.gir

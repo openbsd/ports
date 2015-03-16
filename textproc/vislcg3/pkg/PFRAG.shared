@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/10/11 16:42:57 bentley Exp $
-@lib lib/libcg3.so.${LIBcg3_VERSION}

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/01 12:02:27 naddy Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:50 naddy Exp $
 lib/liblapack.a
+@lib lib/liblapack.so.${LIBlapack_VERSION}
 lib/liblapack_p.a
 @man man/man3f/cbdsqr.3f
 @man man/man3f/cgbbrd.3f

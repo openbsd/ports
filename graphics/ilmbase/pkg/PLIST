@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/11 11:15:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:47 naddy Exp $
 @conflict OpenEXR-<=1.2.2p3
-%%SHARED%%
 include/OpenEXR/
 include/OpenEXR/Iex.h
 include/OpenEXR/IexBaseExc.h
@@ -47,11 +46,14 @@ include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
 lib/libHalf.a
 lib/libHalf.la
+@lib lib/libHalf.so.${LIBHalf_VERSION}
 lib/libIex.a
 lib/libIex.la
+@lib lib/libIex.so.${LIBIex_VERSION}
 lib/libIlmThread.a
 lib/libIlmThread.la
+@lib lib/libIlmThread.so.${LIBIlmThread_VERSION}
 lib/libImath.a
 lib/libImath.la
-lib/pkgconfig/
+@lib lib/libImath.so.${LIBImath_VERSION}
 lib/pkgconfig/IlmBase.pc

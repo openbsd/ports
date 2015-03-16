@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2014/01/11 11:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2015/03/16 18:07:53 naddy Exp $
 
 COMMENT=		C library to produce PDF files
 
 DISTNAME=		pdflib-4.0.3
-REVISION = 		4
+REVISION = 		5
 CATEGORIES=     	print
 SHARED_LIBS=		pdf	2.3
 

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/05 03:28:12 espie Exp $
-bin/id3convert
-bin/id3cp
-bin/id3info
-bin/id3tag
+@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:35 naddy Exp $
+@bin bin/id3convert
+@bin bin/id3cp
+@bin bin/id3info
+@bin bin/id3tag
 include/id3/
 include/id3.h
 include/id3/field.h
@@ -20,4 +20,4 @@ include/id3/writer.h
 include/id3/writers.h
 lib/libid3.a
 lib/libid3.la
-%%SHARED%%
+@lib lib/libid3.so.${LIBid3_VERSION}

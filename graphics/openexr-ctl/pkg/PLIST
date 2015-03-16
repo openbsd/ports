@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 12:32:23 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:48 naddy Exp $
 @bin bin/exr_ctl_exr
 @bin bin/exrdpx
 include/OpenEXR/
@@ -13,5 +12,5 @@ lib/CTL/transform_display_video.ctl
 lib/CTL/utilities.ctl
 lib/libIlmImfCtl.a
 lib/libIlmImfCtl.la
-lib/pkgconfig/
+@lib lib/libIlmImfCtl.so.${LIBIlmImfCtl_VERSION}
 lib/pkgconfig/OpenEXR_CTL.pc

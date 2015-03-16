@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/06/26 16:47:37 jasper Exp $
-@lib lib/libcxxtools.so.${LIBcxxtools_VERSION}

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/07/08 09:13:59 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:46 naddy Exp $
 @pkgpath graphics/djvulibre,no_x11
-%%SHARED%%
 @comment bin/any2djvu
 @bin bin/bzz
 @bin bin/c44
@@ -25,7 +24,7 @@ include/libdjvu/ddjvuapi.h
 include/libdjvu/miniexp.h
 lib/libdjvulibre.a
 lib/libdjvulibre.la
-lib/pkgconfig/
+@lib lib/libdjvulibre.so.${LIBdjvulibre_VERSION}
 lib/pkgconfig/ddjvuapi.pc
 @comment @man man/man1/any2djvu.1
 @man man/man1/bzz.1

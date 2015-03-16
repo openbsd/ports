@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:46 naddy Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
 DISTNAME =		ctl-1.4.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  IlmCtl               0.0      # .2.0
 SHARED_LIBS +=  IlmCtlMath           0.0      # .2.0

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/22 01:26:57 jolan Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:56 naddy Exp $
 include/ebml/
 include/ebml/Debug.h
 include/ebml/EbmlBinary.h
@@ -29,3 +28,4 @@ include/ebml/StdIOCallback.h
 include/ebml/c/
 include/ebml/c/libebml_t.h
 lib/libebml.a
+@lib lib/libebml.so.${LIBebml_VERSION}

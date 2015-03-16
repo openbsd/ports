@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/08/21 08:04:16 armani Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/16 18:07:40 naddy Exp $
 
 COMMENT=		various reusable C++-components
 
 DISTNAME=		cxxtools-1.4.7
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=	cxxtools             2.0      # .5.0
 CATEGORIES=		devel
 

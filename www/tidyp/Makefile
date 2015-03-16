@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/07 21:58:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:58 naddy Exp $
 
 COMMENT=	validate, correct and pretty-print HTML
 
@@ -8,6 +8,7 @@ EPOCH=		0
 SHARED_LIBS +=  tidyp-$V                  0.0 # 0.0
 SHARED_LIBS +=  tidyp                     0.0 # 0.0
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	http://www.tidyp.com/
 

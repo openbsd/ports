@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/27 12:33:42 aanriot Exp $
-@lib lib/libCw.so.${LIBCw_VERSION}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:35 naddy Exp $
 
 COMMENT=	compact disk input and control library
 
 DISTNAME=	libcdio-0.80
-REVISION=	6
+REVISION=	7
 CATEGORIES=	audio devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 

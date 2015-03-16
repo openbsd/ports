@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/12 08:06:54 grange Exp $
-%%SHARED%%
-bin/obexftp
-bin/obexftpd
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:38 naddy Exp $
+@bin bin/obexftp
+@bin bin/obexftpd
 include/bfb/
 include/bfb/bfb.h
 include/bfb/bfb_io.h
@@ -13,8 +12,11 @@ include/obexftp/obexftp.h
 include/obexftp/object.h
 lib/libbfb.a
 lib/libbfb.la
+@lib lib/libbfb.so.${LIBbfb_VERSION}
 lib/libcobexbfb.a
 lib/libcobexbfb.la
+@lib lib/libcobexbfb.so.${LIBcobexbfb_VERSION}
 lib/libobexftp.a
 lib/libobexftp.la
+@lib lib/libobexftp.so.${LIBobexftp_VERSION}
 @man man/man1/obexftp.1

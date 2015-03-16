@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/11/13 13:49:50 ajacoutot Exp $
-@lib lib/libusb.so.${LIBusb_VERSION}

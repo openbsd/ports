@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/10/10 10:14:37 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:53 naddy Exp $
 bin/yaz-asncomp
 @bin bin/yaz-client
 bin/yaz-config
@@ -106,11 +105,13 @@ include/yaz/zgdu.h
 include/yaz/zoom.h
 lib/libyaz.a
 lib/libyaz.la
+@lib lib/libyaz.so.${LIByaz_VERSION}
 lib/libyaz_icu.a
 lib/libyaz_icu.la
+@lib lib/libyaz_icu.so.${LIByaz_icu_VERSION}
 lib/libyaz_server.a
 lib/libyaz_server.la
-lib/pkgconfig/
+@lib lib/libyaz_server.so.${LIByaz_server_VERSION}
 lib/pkgconfig/yaz.pc
 @man man/man1/yaz-asncomp.1
 @man man/man1/yaz-client.1
@@ -124,7 +125,6 @@ lib/pkgconfig/yaz.pc
 @man man/man7/yaz.7
 @man man/man8/yaz-config.8
 @man man/man8/yaz-ztest.8
-share/aclocal/
 share/aclocal/yaz.m4
 share/doc/yaz/
 share/doc/yaz/apilayer.png

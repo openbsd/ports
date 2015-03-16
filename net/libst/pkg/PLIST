@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/05/24 20:12:53 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:53 naddy Exp $
 include/st.h
 lib/libst.a
+@lib lib/libst.so.${LIBst_VERSION}
 share/doc/libst/
 share/doc/libst/fig.gif
 share/doc/libst/notes.html
@@ -15,4 +16,3 @@ share/examples/libst/lookupdns.c
 share/examples/libst/proxy.c
 share/examples/libst/res.c
 share/examples/libst/server.c
-%%SHARED%%

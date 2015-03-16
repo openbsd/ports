@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/26 18:45:11 naddy Exp $
-@lib lib/libxosd.so.${LIBxosd_VERSION}

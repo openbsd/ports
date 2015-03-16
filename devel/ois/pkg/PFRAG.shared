@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/03/18 14:27:22 pascal Exp $
-@lib lib/libOIS.so.${LIBOIS_VERSION}

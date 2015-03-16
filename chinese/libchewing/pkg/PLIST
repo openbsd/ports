@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/09 07:33:51 kevlo Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:37 naddy Exp $
 include/chewing/
 include/chewing/chewing.h
 include/chewing/chewingio.h
@@ -7,7 +6,7 @@ include/chewing/global.h
 include/chewing/mod_aux.h
 lib/libchewing.a
 lib/libchewing.la
-lib/pkgconfig/
+@lib lib/libchewing.so.${LIBchewing_VERSION}
 lib/pkgconfig/chewing.pc
 share/chewing/
 share/chewing/ch_index_begin.dat

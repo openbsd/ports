@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/06/16 09:48:38 ajacoutot Exp $
-@lib lib/libiniparser.so.${LIBiniparser_VERSION}

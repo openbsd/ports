@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2011/06/29 09:06:17 jasper Exp $
-@lib lib/libenet.so.${LIBenet_VERSION}

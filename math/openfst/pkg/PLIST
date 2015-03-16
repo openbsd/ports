@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/20 04:35:55 bentley Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:50 naddy Exp $
 @bin bin/fstarcsort
 @bin bin/fstclosure
 @bin bin/fstcompile
@@ -187,5 +186,7 @@ include/fst/visit.h
 include/fst/weight.h
 lib/libfst.a
 lib/libfst.la
+@lib lib/libfst.so.${LIBfst_VERSION}
 lib/libfstscript.a
 lib/libfstscript.la
+@lib lib/libfstscript.so.${LIBfstscript_VERSION}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:41 naddy Exp $
 
 COMMENT=	ini file parsing library
 
 DISTNAME=	iniparser-3.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	iniparser 0.0 # 0
 

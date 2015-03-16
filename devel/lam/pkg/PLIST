@@ -1,31 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/02/01 20:28:17 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:41 naddy Exp $
 @conflict openmpi-*
-%%SHARED%%
 bin/balky
-bin/hboot
-bin/hcc
+@bin bin/hboot
+@bin bin/hcc
 bin/hcp
-bin/hf77
-bin/lamboot
-bin/lamclean
-bin/lamd
-bin/lamexec
-bin/lamgrow
-bin/lamhalt
-bin/lamnodes
-bin/lamshrink
-bin/lamtrace
+@bin bin/hf77
+@bin bin/lamboot
+@bin bin/lamclean
+@bin bin/lamd
+@bin bin/lamexec
+@bin bin/lamgrow
+@bin bin/lamhalt
+@bin bin/lamnodes
+@bin bin/lamshrink
+@bin bin/lamtrace
 bin/mpiCC
 bin/mpic++
 bin/mpicc
 bin/mpif77
-bin/mpimsg
-bin/mpirun
-bin/mpitask
-bin/recon
-bin/tkill
-bin/tping
-bin/wipe
+@bin bin/mpimsg
+@bin bin/mpirun
+@bin bin/mpitask
+@bin bin/recon
+@bin bin/tkill
+@bin bin/tping
+@bin bin/wipe
 include/lam_config.h
 include/mpi++.h
 include/mpi.h
@@ -63,14 +62,18 @@ include/mpio.h
 include/mpiof.h
 lib/liblam.a
 lib/liblam.la
+@lib lib/liblam.so.${LIBlam_VERSION}
 lib/liblamf77mpi.a
 lib/liblamf77mpi.la
+@lib lib/liblamf77mpi.so.${LIBlamf77mpi_VERSION}
 lib/liblammpi++.a
 lib/liblammpio.a
 lib/libmpi.a
 lib/libmpi.la
+@lib lib/libmpi.so.${LIBmpi_VERSION}
 lib/libpmpi.a
 lib/libpmpi.la
+@lib lib/libpmpi.so.${LIBpmpi_VERSION}
 @man man/man1/hboot.1
 @man man/man1/hcc.1
 @man man/man1/hcp.1

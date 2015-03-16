@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/30 05:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:46 naddy Exp $
 
 COMMENT=		OpenGL Extrusion library
 
 DISTNAME=		gle-3.1.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=     	graphics devel
 
 SHARED_LIBS +=  gle                  4.0      # 4.0

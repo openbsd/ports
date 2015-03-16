@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:35 naddy Exp $
 
 COMMENT=	OpenAL Utility Toolkit
 
 DISTNAME=	freealut-1.1.0
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  alut                 1.0      # .1.0
 CATEGORIES=	audio
 
