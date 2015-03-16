@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/03/26 14:36:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/16 09:16:53 jasper Exp $
 @bin bin/json-glib-format
 @bin bin/json-glib-validate
 include/json-glib-1.0/
@@ -20,7 +20,6 @@ lib/girepository-1.0/Json-1.0.typelib
 lib/libjson-glib-1.0.a
 lib/libjson-glib-1.0.la
 @lib lib/libjson-glib-1.0.so.${LIBjson-glib-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/json-glib-1.0.pc
 @man man/man1/json-glib-format.1
 @man man/man1/json-glib-validate.1
@@ -50,6 +49,8 @@ share/gtk-doc/html/json-glib/ix05.html
 share/gtk-doc/html/json-glib/ix06.html
 share/gtk-doc/html/json-glib/ix07.html
 share/gtk-doc/html/json-glib/ix08.html
+share/gtk-doc/html/json-glib/ix09.html
+share/gtk-doc/html/json-glib/ix10.html
 share/gtk-doc/html/json-glib/json-advanced.html
 share/gtk-doc/html/json-glib/json-base.html
 share/gtk-doc/html/json-glib/json-format-tool.html
@@ -82,6 +83,9 @@ share/locale/bg/LC_MESSAGES/json-glib-1.0.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/json-glib-1.0.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ca/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ca@valencia/
 share/locale/ca@valencia/LC_MESSAGES/
