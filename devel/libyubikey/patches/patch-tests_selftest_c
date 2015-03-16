@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_selftest_c,v 1.1 2012/04/06 17:56:03 jasper Exp $
---- tests/selftest.c.orig	Fri Apr  6 19:54:52 2012
-+++ tests/selftest.c	Fri Apr  6 19:55:03 2012
+$OpenBSD: patch-tests_selftest_c,v 1.2 2015/03/16 09:48:00 sthen Exp $
+--- tests/selftest.c.orig	Wed Nov 26 13:47:43 2014
++++ tests/selftest.c	Mon Mar 16 09:45:26 2015
 @@ -30,7 +30,7 @@
   *
   */
@@ -8,5 +8,5 @@ $OpenBSD: patch-tests_selftest_c,v 1.1 2012/04/06 17:56:03 jasper Exp $
 -#include <yubikey.h>
 +#include "../yubikey.h"
  #include <stdio.h>
+ #include <assert.h>
  
- int
