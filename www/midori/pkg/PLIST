@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.36 2014/05/07 15:08:52 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.37 2015/03/16 19:37:08 landry Exp $
 !%%gtk3%%
 @bin bin/midori
 @lib lib/libmidori-core.so.${LIBmidori-core_VERSION}
 lib/midori/
+lib/midori/libabout.so
 lib/midori/libadblock.so
 lib/midori/libapps.so
 lib/midori/libcolorful-tabs.so
@@ -25,6 +26,7 @@ lib/midori/libtabby.so
 lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libtransfers.so
+lib/midori/libwebmedia-now-playing.so
 share/appdata/
 share/appdata/midori.appdata.xml
 share/applications/midori-private.desktop
@@ -57,11 +59,13 @@ share/icons/hicolor/22x22/status/internet-news-reader.png
 share/icons/hicolor/scalable/apps/midori.svg
 share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/internet-news-reader.svg
+share/locale/af/LC_MESSAGES/midori.mo
 share/locale/am/LC_MESSAGES/midori.mo
 share/locale/ar/LC_MESSAGES/midori.mo
 share/locale/ast/LC_MESSAGES/midori.mo
 share/locale/be/LC_MESSAGES/midori.mo
 share/locale/bg/LC_MESSAGES/midori.mo
+share/locale/bn/LC_MESSAGES/midori.mo
 share/locale/bs/LC_MESSAGES/midori.mo
 share/locale/ca/LC_MESSAGES/midori.mo
 share/locale/ckb/
@@ -85,12 +89,14 @@ share/locale/fr/LC_MESSAGES/midori.mo
 share/locale/gd/LC_MESSAGES/midori.mo
 share/locale/gl/LC_MESSAGES/midori.mo
 share/locale/he/LC_MESSAGES/midori.mo
+share/locale/hi/LC_MESSAGES/midori.mo
 share/locale/hr/LC_MESSAGES/midori.mo
 share/locale/hu/LC_MESSAGES/midori.mo
 share/locale/ia/LC_MESSAGES/midori.mo
 share/locale/id/LC_MESSAGES/midori.mo
 share/locale/it/LC_MESSAGES/midori.mo
 share/locale/ja/LC_MESSAGES/midori.mo
+share/locale/ka/LC_MESSAGES/midori.mo
 share/locale/kk/LC_MESSAGES/midori.mo
 share/locale/km/LC_MESSAGES/midori.mo
 share/locale/ko/LC_MESSAGES/midori.mo
@@ -99,6 +105,9 @@ share/locale/lt/LC_MESSAGES/midori.mo
 share/locale/lv/LC_MESSAGES/midori.mo
 share/locale/ml/LC_MESSAGES/midori.mo
 share/locale/ms/LC_MESSAGES/midori.mo
+share/locale/nap/
+share/locale/nap/LC_MESSAGES/
+share/locale/nap/LC_MESSAGES/midori.mo
 share/locale/nb/LC_MESSAGES/midori.mo
 share/locale/nl/LC_MESSAGES/midori.mo
 share/locale/nn/LC_MESSAGES/midori.mo
@@ -115,6 +124,8 @@ share/locale/sq/LC_MESSAGES/midori.mo
 share/locale/sr/LC_MESSAGES/midori.mo
 share/locale/sr@latin/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
+share/locale/ta/LC_MESSAGES/midori.mo
+share/locale/te/LC_MESSAGES/midori.mo
 share/locale/th/LC_MESSAGES/midori.mo
 share/locale/tr/LC_MESSAGES/midori.mo
 share/locale/ug/LC_MESSAGES/midori.mo

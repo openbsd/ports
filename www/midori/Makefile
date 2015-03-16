@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.67 2014/10/13 09:41:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2015/03/16 19:37:08 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.5.8
-REVISION =	1
+XFCE_VERSION =	0.5.9
 XFCE_GOODIE =	midori
-WRKDIST =	${WRKDIR}
+DISTNAME =	midori_0.5.9_all_
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -17,7 +17,7 @@ SHARED_LIBS +=	midori-core 0.0 # 0.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	x11/xfce4 devel/cmake
-MASTER_SITES =	https://launchpad.net/${XFCE_GOODIE}/trunk/${XFCE_VERSION}/+download/
+MASTER_SITES =	http://midori-browser.org/downloads/
 
 MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE =	Yes
