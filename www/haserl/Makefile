@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/14 20:52:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/16 09:14:05 sthen Exp $
 
 COMMENT=	tiny cgi web script handler using shell or Lua
 
-DISTNAME=	haserl-0.9.33
-REVISION=	0
+DISTNAME=	haserl-0.9.35
 
 CATEGORIES=	www
 
