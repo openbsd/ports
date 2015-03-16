@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2015/03/16 20:35:55 landry Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
-XFCE_VERSION=	0.6.3
+XFCE_VERSION=	0.8.0
 XFCE_GOODIE=	ristretto
 
 # GPLv2
@@ -20,10 +20,10 @@ LIB_DEPENDS=	x11/dbus-glib \
 
 WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes SM ICE \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 \
-		exif expat fontconfig freetype gdk-x11-2.0 \
+		exif fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread xfce4util xfce4ui-1 z \
-		pthread-stubs xcb xfconf-0 xcb-render GL xcb-shm
+		pangoft2-1.0 pthread xfce4util xfce4ui-1 z \
+		xcb xfconf-0
 
 .include <bsd.port.mk>
