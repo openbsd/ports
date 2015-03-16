@@ -1,7 +1,12 @@
-$OpenBSD: patch-src_libjasper_base_jas_malloc_c,v 1.1 2008/05/17 09:32:16 espie Exp $
---- src/libjasper/base/jas_malloc.c.orig	Fri Jan 19 22:43:05 2007
-+++ src/libjasper/base/jas_malloc.c	Fri May 16 21:39:45 2008
-@@ -76,6 +76,8 @@
+$OpenBSD: patch-src_libjasper_base_jas_malloc_c,v 1.2 2015/03/16 19:49:33 sthen Exp $
+--- src/libjasper/base/jas_malloc.c.orig	Fri Jan 19 21:43:05 2007
++++ src/libjasper/base/jas_malloc.c	Mon Mar 16 19:46:41 2015
+@@ -72,10 +72,13 @@
+ \******************************************************************************/
+ 
+ #include <stdio.h>
++#include <stdint.h>
+ #include <stdlib.h>
  
  /* We need the prototype for memset. */
  #include <string.h>
@@ -10,7 +15,7 @@ $OpenBSD: patch-src_libjasper_base_jas_malloc_c,v 1.1 2008/05/17 09:32:16 espie 
  
  #include "jasper/jas_malloc.h"
  
-@@ -113,18 +115,50 @@ void jas_free(void *ptr)
+@@ -113,18 +116,50 @@ void jas_free(void *ptr)
  
  void *jas_realloc(void *ptr, size_t size)
  {
