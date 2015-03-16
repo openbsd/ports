@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/02/25 15:07:38 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/16 12:56:46 ajacoutot Exp $
 
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
@@ -6,7 +6,7 @@ COMMENT-libmilter =	mail filter support library for sendmail
 V=			8.15.1
 DISTNAME =		sendmail.${V}
 PKGNAME-main =		sendmail-${V}
-REVISION-main =		1
+REVISION-main =		2
 PKGNAME-libmilter =	libmilter-${V}
 FULLPKGNAME-libmilter =	libmilter-${V}
 FULLPKGPATH-libmilter =	mail/sendmail,-libmilter
