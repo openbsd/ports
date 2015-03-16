@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/14 19:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/16 11:09:37 ajacoutot Exp $
 
 COMMENT=		store and access your passwords safely
 
-MODPY_EGG_VERSION=	3.8
+MODPY_EGG_VERSION=	5.3
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
@@ -20,10 +20,15 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		devel/py-gobject3 \
-			security/py-secretstorage
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			security/py-secretstorage${MODPY_FLAVOR}
 
+FLAVORS =		python3
+FLAVOR ?=
+
+.if ${FLAVOR:Mpython3}
 post-install:
-	chmod 0644 ${WRKINST}/${MODPY_SITEPKG}/keyring-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/*
+	mv ${PREFIX}/bin/keyring ${PREFIX}/bin/keyring-${MODPY_VERSION}
+.endif
 
 .include <bsd.port.mk>
