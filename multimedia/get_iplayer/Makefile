@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2015/03/16 08:43:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2015/03/17 10:34:07 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 V=			2.92
+REVISION=		0
 PORTROACH=		limit:[0-9]
 DISTNAME=		get_iplayer-$V
 DISTFILES=		${DISTNAME}{v$V}${EXTRACT_SUFX}
@@ -20,6 +21,7 @@ MASTER_SITES=		https://github.com/get-iplayer/get_iplayer/archive/
 
 RUN_DEPENDS=		audio/id3lib \
 			audio/p5-MP3-Tag \
+			graphics/ffmpeg \
 			multimedia/atomicparsley \
 			net/rtmpdump>=2.4 \
 			textproc/p5-XML-Simple \
