@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2015/01/11 12:58:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.30 2015/03/17 22:47:02 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -210,6 +210,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_SSL_SESSIONID_CACHE.3
 @man man/man3/CURLOPT_SSL_VERIFYHOST.3
 @man man/man3/CURLOPT_SSL_VERIFYPEER.3
+@man man/man3/CURLOPT_SSL_VERIFYSTATUS.3
 @man man/man3/CURLOPT_STDERR.3
 @man man/man3/CURLOPT_TCP_KEEPALIVE.3
 @man man/man3/CURLOPT_TCP_KEEPIDLE.3
@@ -293,6 +294,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/libcurl-errors.3
 @man man/man3/libcurl-multi.3
 @man man/man3/libcurl-share.3
+@man man/man3/libcurl-symbols.3
 @man man/man3/libcurl-tutorial.3
 @man man/man3/libcurl.3
 share/aclocal/libcurl.m4
