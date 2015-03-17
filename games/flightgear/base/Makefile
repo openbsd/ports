@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/09 19:53:12 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/17 17:20:55 pascal Exp $
 
 COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}
 
 WANTLIB += GL GLU ICE OpenThreads SM SimGearCore SimGearScene
-WANTLIB += X11 Xext Xft Xi Xinerama Xmu c fltk fltk_forms fltk_gl
-WANTLIB += fltk_images glut m openal osg osgDB osgFX osgGA osgParticle
-WANTLIB += osgSim osgText osgUtil osgViewer png pthread sqlite3
-WANTLIB += stdc++ z
+WANTLIB += X11 Xext Xft Xi Xinerama Xmu bz2 c fltk fltk_forms
+WANTLIB += fltk_gl fltk_images glut m openal osg osgDB osgFX osgGA
+WANTLIB += osgParticle osgSim osgText osgUtil osgViewer png pthread
+WANTLIB += sqlite3 z
 
 MASTER_SITES =	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 		http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Source/
 
-MODULES =	devel/cmake
+MODULES =	devel/cmake gcc4
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS =	c++
 BUILD_DEPENDS =	devel/boost \
 		devel/plib
 LIB_DEPENDS =	graphics/freeglut \
