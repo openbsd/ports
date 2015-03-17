@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/03/09 19:53:12 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/17 17:20:17 pascal Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
-DISTNAME =		simgear-3.0.0
+DISTNAME =		simgear-3.4.0
 
-SHARED_LIBS +=  SimGearCore               1.0 # 2.10
-SHARED_LIBS +=  SimGearScene              1.0 # 2.10
+SHARED_LIBS +=  SimGearCore               2.0 # 2.10
+SHARED_LIBS +=  SimGearScene              2.0 # 2.10
 
 CATEGORIES =		graphics
 
@@ -21,9 +21,11 @@ EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB += GL GLU ICE OpenThreads SM X11 Xext expat m openal osg
 WANTLIB += osgDB osgGA osgParticle osgSim osgText osgUtil pthread
-WANTLIB += stdc++ z
+WANTLIB += z
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c++
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		graphics/openscenegraph \
 			audio/openal
