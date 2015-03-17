@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/14 15:37:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/17 23:43:25 bcallah Exp $
 
 COMMENT =	action RPG mod based upon the FLARE engine
 DISTNAME =	polymorphable-20130410
@@ -12,7 +12,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3 & CC-BY-SA-3.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://devio.us/~bcallah/source/
+MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
 RUN_DEPENDS =	games/flare
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/17 23:43:25 bcallah Exp $
 
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1pl1
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m SDL SDL_image SDL_mixer
 WANTLIB += SDL_ttf pthread
 
-MASTER_SITES=	http://devio.us/~bcallah/source/
+MASTER_SITES=	http://mirrors.nycbug.org/pub/distfiles/
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \

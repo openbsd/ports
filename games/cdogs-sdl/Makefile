@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/08 02:53:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/17 23:43:25 bcallah Exp $
 
 COMMENT =	open source, classic overhead run-and-gun game
 DISTNAME =	cdogs-sdl-0.5.5.1
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_net c m pthread
 
-MASTER_SITES =	http://devio.us/~bcallah/source/
+MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
 MODULES =	devel/cmake
 

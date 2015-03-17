@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/02 21:55:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.17 2015/03/17 23:43:25 bcallah Exp $
 
 COMMENT =	command line app.net client
 DISTNAME =	texapp-0.6.9
@@ -11,7 +11,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Floodgap Free Software License
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://devio.us/~bcallah/source/
+MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
 MODULES =	perl
 

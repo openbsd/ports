@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/09 20:49:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/17 23:43:25 bcallah Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -21,7 +21,7 @@ MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 # GPLv2+ 
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://devio.us/~bcallah/source/
+MASTER_SITES =		http://mirrors.nycbug.org/pub/distfiles/
 
 MULTI_PACKAGES =	-main -python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/06/25 18:29:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/17 23:43:25 bcallah Exp $
 
 V =		0.1.2
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
@@ -18,7 +18,7 @@ WANTLIB += FLAC SDL SDL_mixer c expat freetype jpeg m ogg openal
 WANTLIB += pixman-1 png pthread sndfile stdc++ vorbis vorbisenc z
 
 MASTER_SITES0 =	https://github.com/EasyRPG/Player/archive/
-MASTER_SITES1 =	http://devio.us/~bcallah/source/
+MASTER_SITES1 =	http://mirrors.nycbug.org/pub/distfiles/
 
 MODULES +=	converters/libiconv \
 		devel/cmake \
