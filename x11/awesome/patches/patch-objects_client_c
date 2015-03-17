@@ -1,0 +1,63 @@
+$OpenBSD: patch-objects_client_c,v 1.11 2015/03/17 15:45:37 dcoppa Exp $
+
+commit c03ee8ab362d9960d4742cb9c3baffa61db215c8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Feb 25 21:52:03 2015 +0100
+
+Ignore more events while minimizing a client
+
+When minimizing a client, we temporarily ignore events for the client window (so
+that we don't get the UnmapNotify event that we are causing for the unmap) and
+for the root window (I don't actually know why, no "harmful" events should be
+caused...).
+
+However, we weren't ignoring events on the frame window itself. This commit
+fixes that oversight.
+
+The problem here is that the pointer could be inside the window that is being
+minimized. When we then unmap said window, the pointer will now be inside of the
+frame window and the X11 server will thus generate an EnterNotify. When we
+handle this event later on, we emit mouse::enter on the client and e.g. the
+default config then focuses this client, which undoes the minimization.
+
+This fixes a regression introduced in commit 3aeac3870ca4855 and fixes #92.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/client.c.orig	Sat Jan 10 13:36:35 2015
++++ objects/client.c	Mon Mar  2 03:12:51 2015
+@@ -868,13 +868,18 @@ client_set_minimized(lua_State *L, int cidx, bool s)
+             xwindow_set_state(c->window, XCB_ICCCM_WM_STATE_ICONIC);
+ 
+             uint32_t no_event[] = { 0 };
+-            const uint32_t select_input_val[] = { CLIENT_SELECT_INPUT_EVENT_MASK };
++            const uint32_t client_select_input_val[] = { CLIENT_SELECT_INPUT_EVENT_MASK };
++            const uint32_t frame_select_input_val[] = { FRAME_SELECT_INPUT_EVENT_MASK };
+             xcb_grab_server(globalconf.connection);
+             xcb_change_window_attributes(globalconf.connection,
+                                          globalconf.screen->root,
+                                          XCB_CW_EVENT_MASK,
+                                          no_event);
+             xcb_change_window_attributes(globalconf.connection,
++                                         c->frame_window,
++                                         XCB_CW_EVENT_MASK,
++                                         no_event);
++            xcb_change_window_attributes(globalconf.connection,
+                                          c->window,
+                                          XCB_CW_EVENT_MASK,
+                                          no_event);
+@@ -884,9 +889,13 @@ client_set_minimized(lua_State *L, int cidx, bool s)
+                                          XCB_CW_EVENT_MASK,
+                                          ROOT_WINDOW_EVENT_MASK);
+             xcb_change_window_attributes(globalconf.connection,
++                                         c->frame_window,
++                                         XCB_CW_EVENT_MASK,
++                                         frame_select_input_val);
++            xcb_change_window_attributes(globalconf.connection,
+                                          c->window,
+                                          XCB_CW_EVENT_MASK,
+-                                         select_input_val);
++                                         client_select_input_val);
+             xcb_ungrab_server(globalconf.connection);
+         }
+         else
