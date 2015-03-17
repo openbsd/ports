@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/03/16 20:23:41 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/03/17 08:10:14 landry Exp $
 @bin bin/exo-csource
 @bin bin/exo-desktop-item-edit
 @bin bin/exo-open
@@ -47,6 +47,54 @@ share/examples/exo/
 @sample ${SYSCONFDIR}/xdg/xfce4/
 share/examples/exo/helpers.rc
 @sample ${SYSCONFDIR}/xdg/xfce4/helpers.rc
+share/gtk-doc/html/exo-1/
+share/gtk-doc/html/exo-1/ExoCellRendererEllipsizedText.html
+share/gtk-doc/html/exo-1/ExoCellRendererIcon.html
+share/gtk-doc/html/exo-1/ExoIconBar.html
+share/gtk-doc/html/exo-1/ExoIconChooserDialog.html
+share/gtk-doc/html/exo-1/ExoIconView.html
+share/gtk-doc/html/exo-1/ExoJob.html
+share/gtk-doc/html/exo-1/ExoSimpleJob.html
+share/gtk-doc/html/exo-1/ExoToolbarsEditor.html
+share/gtk-doc/html/exo-1/ExoToolbarsEditorDialog.html
+share/gtk-doc/html/exo-1/ExoToolbarsModel.html
+share/gtk-doc/html/exo-1/ExoToolbarsView.html
+share/gtk-doc/html/exo-1/ExoTreeView.html
+share/gtk-doc/html/exo-1/ExoWrapTable.html
+share/gtk-doc/html/exo-1/ExoXsessionClient.html
+share/gtk-doc/html/exo-1/ch01.html
+share/gtk-doc/html/exo-1/exo-1.devhelp2
+share/gtk-doc/html/exo-1/exo-Binding-Properties-Functions.html
+share/gtk-doc/html/exo-1/exo-Executing-Applications.html
+share/gtk-doc/html/exo-1/exo-Extensions-to-GObject.html
+share/gtk-doc/html/exo-1/exo-Extensions-to-Gtk.html
+share/gtk-doc/html/exo-1/exo-Extensions-to-gdk-pixbuf.html
+share/gtk-doc/html/exo-1/exo-Miscellaneous-Utility-Functions.html
+share/gtk-doc/html/exo-1/exo-String-Utility-Functions.html
+share/gtk-doc/html/exo-1/exo-Version-Information.html
+share/gtk-doc/html/exo-1/exo-cell-renderers.html
+share/gtk-doc/html/exo-1/exo-csource.html
+share/gtk-doc/html/exo-1/exo-extensions.html
+share/gtk-doc/html/exo-1/exo-gtk-file-chooser-add-thumbnail-preview.png
+share/gtk-doc/html/exo-1/exo-icon-chooser-dialog.png
+share/gtk-doc/html/exo-1/exo-jobs.html
+share/gtk-doc/html/exo-1/exo-miscelleanous.html
+share/gtk-doc/html/exo-1/exo-overview.html
+share/gtk-doc/html/exo-1/exo-toolbars-editor-dialog.png
+share/gtk-doc/html/exo-1/exo-toolbars-editor.png
+share/gtk-doc/html/exo-1/exo-toolbars-view.png
+share/gtk-doc/html/exo-1/exo-toolbars.html
+share/gtk-doc/html/exo-1/exo-tools.html
+share/gtk-doc/html/exo-1/exo-widgets.html
+share/gtk-doc/html/exo-1/exo-wrap-table.png
+share/gtk-doc/html/exo-1/home.png
+share/gtk-doc/html/exo-1/index.html
+share/gtk-doc/html/exo-1/index.sgml
+share/gtk-doc/html/exo-1/ix01.html
+share/gtk-doc/html/exo-1/left.png
+share/gtk-doc/html/exo-1/right.png
+share/gtk-doc/html/exo-1/style.css
+share/gtk-doc/html/exo-1/up.png
 share/icons/hicolor/24x24/apps/preferences-desktop-default-applications.png
 share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
 share/icons/hicolor/48x48/categories/applications-internet.png
