@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2015/02/17 01:27:11 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/17 09:00:56 czarkoff Exp $
 
 # requires 64-bit atomic ops.
 # some other arch could probably be added..certainly fails on i386
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		movie player based on MPlayer/mplayer2
-V =			0.7.3
+V =			0.8.2
 DISTNAME =		mpv-${V}
-REVISION =		0
 
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv
@@ -26,7 +25,8 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB += EGL GL X11 Xext Xinerama Xrandr Xss Xv ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil c cdio
 WANTLIB += cdio_cdda cdio_paranoia dvdnav dvdread jpeg lcms2
-WANTLIB += m postproc pthread smbclient sndio swscale z ${MODLUA_WANTLIB}
+WANTLIB += m postproc pthread smbclient sndio swresample swscale z
+WANTLIB += ${MODLUA_WANTLIB}
 
 MODULES =		converters/libiconv \
 			lang/lua \
@@ -66,7 +66,6 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--disable-optimization \
 			--disable-openal \
 			--disable-pulse \
-			--disable-portaudio \
 			--disable-rsound
 
 # pkg-config says smbclient's version is 0
