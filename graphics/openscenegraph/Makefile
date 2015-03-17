@@ -1,33 +1,33 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/19 22:16:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/17 17:16:47 pascal Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		3D graphics toolkit
 
-V =			3.2.0
+V =			3.2.1
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
 
 SUBST_VARS +=		V
 
-SHARED_LIBS  =  OpenThreads               0.0 # 2.6
-SHARED_LIBS +=  osg                       0.0 # 3.0
-SHARED_LIBS +=  osgAnimation              0.0 # 3.0
-SHARED_LIBS +=  osgDB                     0.0 # 3.0
-SHARED_LIBS +=  osgFX                     0.0 # 3.0
-SHARED_LIBS +=  osgGA                     0.0 # 3.0
-SHARED_LIBS +=  osgManipulator            0.0 # 3.0
-SHARED_LIBS +=  osgParticle               0.0 # 3.0
-SHARED_LIBS +=  osgPresentation           0.0 # 3.0
-SHARED_LIBS +=  osgQt                     0.0 # 3.0
-SHARED_LIBS +=  osgShadow                 0.0 # 3.0
-SHARED_LIBS +=  osgSim                    0.0 # 3.0
-SHARED_LIBS +=  osgTerrain                0.0 # 3.0
-SHARED_LIBS +=  osgText                   0.0 # 3.0
-SHARED_LIBS +=  osgUtil                   0.0 # 3.0
-SHARED_LIBS +=  osgViewer                 0.0 # 3.0
-SHARED_LIBS +=  osgVolume                 0.0 # 3.0
-SHARED_LIBS +=  osgWidget                 0.0 # 3.0
+SHARED_LIBS  =  OpenThreads               1.0 # 2.6
+SHARED_LIBS +=  osg                       1.0 # 3.0
+SHARED_LIBS +=  osgAnimation              1.0 # 3.0
+SHARED_LIBS +=  osgDB                     1.0 # 3.0
+SHARED_LIBS +=  osgFX                     1.0 # 3.0
+SHARED_LIBS +=  osgGA                     1.0 # 3.0
+SHARED_LIBS +=  osgManipulator            1.0 # 3.0
+SHARED_LIBS +=  osgParticle               1.0 # 3.0
+SHARED_LIBS +=  osgPresentation           1.0 # 3.0
+SHARED_LIBS +=  osgQt                     1.0 # 3.0
+SHARED_LIBS +=  osgShadow                 1.0 # 3.0
+SHARED_LIBS +=  osgSim                    1.0 # 3.0
+SHARED_LIBS +=  osgTerrain                1.0 # 3.0
+SHARED_LIBS +=  osgText                   1.0 # 3.0
+SHARED_LIBS +=  osgUtil                   1.0 # 3.0
+SHARED_LIBS +=  osgViewer                 1.0 # 3.0
+SHARED_LIBS +=  osgVolume                 1.0 # 3.0
+SHARED_LIBS +=  osgWidget                 1.0 # 3.0
 
 CATEGORIES =		graphics
 
@@ -58,7 +58,8 @@ LIB_DEPENDS =		graphics/openexr \
 			print/poppler \
 			x11/gnome/librsvg
 
-CONFIGURE_ARGS =	-DDESIRED_QT_VERSION=4
+CONFIGURE_ARGS =	-DDESIRED_QT_VERSION=4 \
+			-DOSG_USE_AGGRESSIVE_WARNINGS=OFF
 
 NO_TEST =		Yes
 

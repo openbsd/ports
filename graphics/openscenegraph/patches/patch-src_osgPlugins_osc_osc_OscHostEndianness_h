@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osgPlugins_osc_osc_OscHostEndianness_h,v 1.1.1.1 2013/11/24 21:58:24 pascal Exp $
---- src/osgPlugins/osc/osc/OscHostEndianness.h.orig	Sat Nov 23 14:19:35 2013
-+++ src/osgPlugins/osc/osc/OscHostEndianness.h	Sat Nov 23 14:23:09 2013
-@@ -60,6 +60,14 @@
+$OpenBSD: patch-src_osgPlugins_osc_osc_OscHostEndianness_h,v 1.2 2015/03/17 17:16:47 pascal Exp $
+--- src/osgPlugins/osc/osc/OscHostEndianness.h.orig	Wed Oct  2 13:29:56 2013
++++ src/osgPlugins/osc/osc/OscHostEndianness.h	Sat Jan  3 14:49:46 2015
+@@ -69,6 +69,14 @@
          #else
              #error Unknown machine endianness detected.
          #endif
