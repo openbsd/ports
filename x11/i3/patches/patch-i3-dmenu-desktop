@@ -1,11 +1,4 @@
-$OpenBSD: patch-i3-dmenu-desktop,v 1.4 2014/07/11 15:49:58 dcoppa Exp $
-
-commit 9b0ec8b2ae56e3a66487ac420eca236f64aa4c4c
-Author: Michael Stapelberg <michael@stapelberg.de>
-Date:   Fri Jul 11 09:51:05 2014 +0200
-
-Bugfix: i3-dmenu-desktop: quote path
-
+$OpenBSD: patch-i3-dmenu-desktop,v 1.5 2015/03/17 15:39:47 dcoppa Exp $
 --- i3-dmenu-desktop.orig	Sun Jun 15 19:12:43 2014
 +++ i3-dmenu-desktop	Fri Jul 11 16:49:32 2014
 @@ -107,7 +107,7 @@ $xdg_data_home = $ENV{HOME} . '/.local/share' if
@@ -32,15 +25,6 @@ Bugfix: i3-dmenu-desktop: quote path
  #       }
  #   };
  
-@@ -410,7 +410,7 @@ $exec =~ s/%k/$location/g;
- $exec =~ s/%%/%/g;
- 
- if (exists($app->{Path}) && $app->{Path} ne '') {
--    $exec = 'cd ' . $app->{Path} . ' && ' . $exec;
-+    $exec = 'cd ' . quote($app->{Path}) . ' && ' . $exec;
- }
- 
- my $nosn = '';
 @@ -420,7 +420,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
      # we need to create a temporary script that contains the full command line
      # as the syntax for starting commands with arguments varies from terminal

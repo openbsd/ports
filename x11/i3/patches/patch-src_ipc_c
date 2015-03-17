@@ -1,12 +1,6 @@
-$OpenBSD: patch-src_ipc_c,v 1.13 2014/07/11 15:49:58 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.14 2015/03/17 15:39:48 dcoppa Exp $
 
 Add missing header
-
-commit c159fc4197ad06d603ba404add501ac02d76c64f
-Author: Michael Stapelberg <michael@stapelberg.de>
-Date:   Fri Jun 27 09:04:51 2014 +0200
-
-Bugfix: create the directory for storing the restart state
 
 --- src/ipc.c.orig	Sun Jun 15 19:12:43 2014
 +++ src/ipc.c	Fri Jul 11 16:39:36 2014
@@ -18,12 +12,3 @@ Bugfix: create the directory for storing the restart state
  #include <sys/socket.h>
  #include <sys/un.h>
  #include <fcntl.h>
-@@ -41,7 +42,7 @@ static void set_nonblock(int sockfd) {
-  * Emulates mkdir -p (creates any missing folders)
-  *
-  */
--static bool mkdirp(const char *path) {
-+bool mkdirp(const char *path) {
-     if (mkdir(path, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH) == 0)
-         return true;
-     if (errno != ENOENT) {

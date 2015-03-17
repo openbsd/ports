@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.91 2015/02/12 08:43:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.92 2015/03/17 15:39:47 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.8
-REVISION =	3
+DISTNAME =	i3-4.9.1
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -14,11 +13,12 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =   Yes
 
-WANTLIB =	X11 c>=68.3 cairo ev fontconfig freetype \
+WANTLIB =	c>=68.3 cairo ev fontconfig freetype \
 		glib-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pthread startup-notification-1 \
 		xcb xcb-cursor xcb-util xcb-icccm xcb-keysyms \
-		xcb-randr xcb-xinerama yajl z
+		xcb-randr xcb-render xcb-xinerama xcb-xkb \
+		xkbcommon xkbcommon-x11 yajl z
 
 MODULES =	devel/gettext
 
@@ -26,7 +26,8 @@ LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
 		devel/pcre \
-		devel/startup-notification
+		devel/startup-notification \
+		x11/xkbcommon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/dmenu \

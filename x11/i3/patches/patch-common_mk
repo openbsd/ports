@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_mk,v 1.21 2014/07/11 15:49:58 dcoppa Exp $
---- common.mk.orig	Sun Jun 15 19:12:43 2014 
-+++ common.mk		Wed Jul  2 20:14:26 2014 
+$OpenBSD: patch-common_mk,v 1.22 2015/03/17 15:39:47 dcoppa Exp $
+--- common.mk.orig	Wed Feb 25 01:50:09 2015
++++ common.mk	Wed Feb 25 02:26:18 2015
 @@ -1,5 +1,5 @@
  UNAME=$(shell uname)
 -DEBUG=1
@@ -8,7 +8,7 @@ $OpenBSD: patch-common_mk,v 1.21 2014/07/11 15:49:58 dcoppa Exp $
  COVERAGE=0
  INSTALL=install
  LN=ln
-@@ -157,9 +157,9 @@ I3_LDFLAGS += -Wl,-rpath,/usr/local/lib -Wl,-rpath,/us
+@@ -159,9 +159,9 @@ I3_LDFLAGS += -Wl,-rpath,/usr/local/lib -Wl,-rpath,/us
  endif
  
  ifeq ($(UNAME),OpenBSD)

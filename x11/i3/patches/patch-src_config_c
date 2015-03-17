@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_c,v 1.13 2014/07/11 15:49:58 dcoppa Exp $
---- src/config.c.orig	Sun Jun 15 19:12:43 2014
-+++ src/config.c	Thu Jul  3 21:06:32 2014
-@@ -87,7 +87,7 @@ static char *get_config_path(const char *override_conf
+$OpenBSD: patch-src_config_c,v 1.14 2015/03/17 15:39:47 dcoppa Exp $
+--- src/config.c.orig	Wed Feb 25 01:50:09 2015
++++ src/config.c	Wed Feb 25 02:16:28 2015
+@@ -85,7 +85,7 @@ static char *get_config_path(const char *override_conf
  
      /* 4: check for $XDG_CONFIG_DIRS/i3/config */
      if ((xdg_config_dirs = getenv("XDG_CONFIG_DIRS")) == NULL)
