@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/22 17:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/17 15:16:26 dcoppa Exp $
 
 COMMENT =	network traffic monitor and statistics
 DISTNAME =	slurm-0.3.3
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.wormulon.net/slurm/

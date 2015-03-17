@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_openbsd_c,v 1.1 2015/03/17 15:16:26 dcoppa Exp $
+--- src/openbsd.c.orig	Sun Feb 23 11:26:02 2003
++++ src/openbsd.c	Mon Feb 23 05:19:51 2015
+@@ -128,7 +128,7 @@ int get_stat(void)
+             /* search for the right network interface */
+             if (sdl->sdl_family != AF_LINK)
+                 continue;
+-            if (strcmp(sdl->sdl_data, ifdata.if_name) != 0)
++            if (strncmp(sdl->sdl_data, ifdata.if_name, sdl->sdl_nlen) != 0)
+                 continue;
+             strncpy(s, sdl->sdl_data, sdl->sdl_nlen);
+             s[sdl->sdl_nlen] = '\0';
