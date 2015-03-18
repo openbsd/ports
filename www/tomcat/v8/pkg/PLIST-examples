@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2015/01/28 13:35:45 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2015/03/18 14:59:56 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -30,7 +30,11 @@ webapps/docs/WEB-INF/
 webapps/docs/WEB-INF/web.xml
 webapps/docs/aio.html
 webapps/docs/api/
+webapps/docs/api/allclasses-frame.html
+webapps/docs/api/allclasses-noframe.html
 webapps/docs/api/constant-values.html
+webapps/docs/api/deprecated-list.html
+webapps/docs/api/help-doc.html
 webapps/docs/api/index-all.html
 webapps/docs/api/index.html
 webapps/docs/api/org/
@@ -1525,6 +1529,7 @@ webapps/docs/api/org/apache/tomcat/jni/File.html
 webapps/docs/api/org/apache/tomcat/jni/FileInfo.html
 webapps/docs/api/org/apache/tomcat/jni/Global.html
 webapps/docs/api/org/apache/tomcat/jni/Library.html
+webapps/docs/api/org/apache/tomcat/jni/LibraryNotFoundError.html
 webapps/docs/api/org/apache/tomcat/jni/Local.html
 webapps/docs/api/org/apache/tomcat/jni/Lock.html
 webapps/docs/api/org/apache/tomcat/jni/Mmap.html
@@ -1920,7 +1925,6 @@ webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.html
 webapps/docs/api/org/apache/tomcat/util/net/NioSelectorPool.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLImplementation.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLSessionManager.html
-webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.CipherData.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNio2Channel.ApplicationBufferHandler.html
@@ -1938,6 +1942,7 @@ webapps/docs/api/org/apache/tomcat/util/net/jsse/JSSEKeyManager.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/JSSESocketFactory.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/NioX509KeyManager.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/openssl/
+webapps/docs/api/org/apache/tomcat/util/net/jsse/openssl/Cipher.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/openssl/OpenSSLCipherConfigurationParser.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/openssl/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/openssl/package-summary.html
@@ -2065,6 +2070,7 @@ webapps/docs/api/org/apache/tomcat/websocket/server/package-frame.html
 webapps/docs/api/org/apache/tomcat/websocket/server/package-summary.html
 webapps/docs/api/org/apache/tomcat/websocket/server/package-tree.html
 webapps/docs/api/overview-frame.html
+webapps/docs/api/overview-summary.html
 webapps/docs/api/overview-tree.html
 webapps/docs/api/package-list
 webapps/docs/api/resources/
@@ -2073,6 +2079,7 @@ webapps/docs/api/resources/tab.gif
 webapps/docs/api/resources/titlebar.gif
 webapps/docs/api/resources/titlebar_end.gif
 webapps/docs/api/serialized-form.html
+webapps/docs/api/stylesheet.css
 webapps/docs/appdev/
 webapps/docs/appdev/build.xml.txt
 webapps/docs/appdev/deployment.html
