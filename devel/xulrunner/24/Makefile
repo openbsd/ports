@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/16 20:03:56 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/18 19:10:35 landry Exp $
 
 # XXX remember to bump www/conkeror because it has a symlink pointing to lib/xulrunner-${MOZILLA_VER}
 MOZILLA_VERSION =	24.8.0esr
@@ -38,7 +38,7 @@ post-install:
 	# manually install the header to avoir packaging hacks
 .if ${MACHINE_ARCH} == "powerpc"
 	${INSTALL_DATA} ${WRKSRC}/gfx/gl/GLContextSkia.h \
-		${PREFIX}/include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}
+		${PREFIX}/include/${MOZILLA_PROJECT}-${MOZILLA_VER}
 .endif
 
 .include <bsd.port.mk>
