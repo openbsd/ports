@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/03/14 21:25:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/03/18 15:10:32 sthen Exp $
 include/openconnect.h
 lib/libopenconnect.a
 lib/libopenconnect.la
@@ -45,6 +45,7 @@ share/doc/openconnect/styles/main.css
 share/doc/openconnect/token.html
 share/doc/openconnect/vpnc-script.html
 share/locale/ar/LC_MESSAGES/openconnect.mo
+share/locale/bs/LC_MESSAGES/openconnect.mo
 share/locale/cs/LC_MESSAGES/openconnect.mo
 share/locale/de/LC_MESSAGES/openconnect.mo
 share/locale/el/LC_MESSAGES/openconnect.mo
