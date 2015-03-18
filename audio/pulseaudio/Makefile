@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/03/15 08:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2015/03/18 18:47:35 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -19,6 +19,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		6.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                4.0      # .18.0
 SHARED_LIBS +=  pulse-simple         0.0      # .1.0
@@ -137,5 +138,7 @@ post-install:
 	rm ${PREFIX}/lib/pulse-${VERSION}/modules/*.a
 # we don't install padsp
 	cd ${PREFIX} && rm man/man1/padsp.1
+# see WRKSRC/Makefile and the @exec/@unexec in PLIST
+	rm ${PREFIX}/share/examples/pulseaudio/bash_completion.d/pa*
 
 .include <bsd.port.mk>
