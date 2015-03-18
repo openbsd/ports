@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/16 09:24:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/18 15:07:58 sthen Exp $
 
 COMMENT=	Nagios plugin to check full email delivery loop (SMTP/IMAP)
 
 DISTNAME=	check_email_delivery-0.7.1b
-PORTROACH=	ignore
+PORTROACH=	ignore:1
 REVISION=	2
 CATEGORIES=	net mail
 
