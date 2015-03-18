@@ -1,6 +1,6 @@
-$OpenBSD: patch-xmobar_cabal,v 1.13 2014/10/28 17:27:15 dcoppa Exp $
---- xmobar.cabal.orig	Sat Oct 11 20:46:25 2014
-+++ xmobar.cabal	Tue Oct 28 18:03:16 2014
+$OpenBSD: patch-xmobar_cabal,v 1.14 2015/03/18 15:32:02 dcoppa Exp $
+--- xmobar.cabal.orig	Fri Feb 13 03:20:07 2015
++++ xmobar.cabal	Fri Feb 13 03:21:36 2015
 @@ -93,10 +93,12 @@ executable xmobar
        Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
        Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
@@ -12,6 +12,6 @@ $OpenBSD: patch-xmobar_cabal,v 1.13 2014/10/28 17:27:15 dcoppa Exp $
      ghc-prof-options:   -prof -auto-all
      ghc-options: -funbox-strict-fields -Wall -fno-warn-unused-do-bind
 +    c-sources: src/Plugins/Monitors/Batt/apm.c
-     extra-libraries: Xrandr
+     extra-libraries: Xrandr Xrender
  
      build-depends:

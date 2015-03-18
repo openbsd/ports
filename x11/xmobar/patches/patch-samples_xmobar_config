@@ -1,13 +1,15 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.8 2014/10/28 17:27:15 dcoppa Exp $
---- samples/xmobar.config.orig	Sat Oct 11 20:46:25 2014
-+++ samples/xmobar.config	Tue Oct 28 18:07:37 2014
-@@ -1,4 +1,4 @@
+$OpenBSD: patch-samples_xmobar_config,v 1.9 2015/03/18 15:32:02 dcoppa Exp $
+--- samples/xmobar.config.orig	Sun Mar  8 08:08:58 2015
++++ samples/xmobar.config	Wed Mar 18 10:19:16 2015
+@@ -1,5 +1,5 @@
 -Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+-       , addtionalFonts = []
 +Config { font = "fixed"
++       , additionalFonts = []
         , borderColor = "black"
         , border = TopB
         , bgColor = "black"
-@@ -16,19 +16,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+@@ -20,19 +20,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                                            "--normal","green",
                                            "--high","red",
                                            "--low","lightblue"] 36000
