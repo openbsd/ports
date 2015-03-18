@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2015/01/20 18:38:09 landry Exp $
+# $OpenBSD: Makefile,v 1.58 2015/03/18 19:15:07 landry Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 BROKEN-hppa =	error: No native atomic implementation found.
+BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
 V=		R16B03-1
 DISTNAME=	otp_src_${V}
