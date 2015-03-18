@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2015/03/16 18:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2015/03/18 13:13:08 naddy Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-DISTNAME=	sox-14.4.1
-REVISION=	1
-SHARED_LIBS +=	sox 3.0 # .2.1
+DISTNAME=	sox-14.4.2
+SHARED_LIBS +=	sox 4.0 # 3.0
 
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
@@ -17,36 +16,41 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		converters/libiconv
 
 WANTLIB += c m z sndio
-WANTLIB += ogg vorbis vorbisenc vorbisfile FLAC
+WANTLIB += FLAC gsm mad id3tag mp3lame ogg
+WANTLIB += sndfile vorbis vorbisenc vorbisfile
 WANTLIB += opencore-amrnb opencore-amrwb
-WANTLIB += mad id3tag mp3lame twolame
-WANTLIB += wavpack gsm sndfile
+WANTLIB += opus opusfile twolame wavpack
 WANTLIB += magic png
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
 # see CONFIGURE_ARGS below
 LIB_DEPENDS=			\
-	devel/libmagic		\
-	graphics/png		\
+	audio/flac		\
+	audio/gsm		\
 	audio/libmad		\
 	audio/libid3tag		\
 	audio/lame		\
-	audio/twolame		\
-	audio/libvorbis		\
-	audio/flac		\
-	audio/wavpack		\
+	audio/libogg		\
 	audio/libsndfile	\
+	audio/libvorbis		\
 	audio/opencore-amr	\
-	audio/gsm
+	audio/opus		\
+	audio/opusfile		\
+	audio/twolame		\
+	audio/wavpack		\
+	devel/libmagic		\
+	graphics/png
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--datarootdir=${LOCALBASE}      \
-		--disable-silent-libtool
-
-# Don't use modules
-CONFIGURE_ARGS+=--without-libltdl
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
+	--datarootdir=${LOCALBASE}      \
+	--enable-largefile		\
+	--disable-silent-libtool	\
+	--disable-openmp		\
+	--enable-symlinks		\
+	--without-libltdl		\
+	--with-distro=OpenBSD
 
 # Sound drivers
 CONFIGURE_ARGS+=		\
@@ -69,14 +73,15 @@ CONFIGURE_ARGS+=		\
 	--with-lame		\
 	--with-twolame		\
 	--with-oggvorbis	\
+	--with-opus		\
 	--with-flac		\
 	--with-amrwb		\
 	--with-amrnb		\
 	--with-wavpack		\
 	--with-sndfile		\
-	--without-ffmpeg	\
 	--with-mp3		\
-	--with-gsm
+	--with-gsm		\
+	--with-lpc10
 
 CONFIGURE_ENV= \
 	CPPFLAGS="-I${LOCALBASE}/include" \
