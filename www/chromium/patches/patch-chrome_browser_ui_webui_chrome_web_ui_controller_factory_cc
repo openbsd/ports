@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.1 2015/02/15 19:51:28 robert Exp $
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig.port	Sun Feb 15 11:08:46 2015
-+++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	Sun Feb 15 11:08:59 2015
-@@ -484,7 +484,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
- 
- #endif  // defined(ENABLE_CONFIGURATION_POLICY)
- 
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.2 2015/03/18 19:26:29 robert Exp $
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig.port	Wed Mar 11 07:34:47 2015
++++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	Wed Mar 11 07:35:05 2015
+@@ -481,7 +481,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+   if (url.host() == chrome::kChromeUINaClHost)
+     return &NewWebUI<NaClUI>;
+ #endif
 -#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
 +#if ((defined(OS_LINUX) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
    if (url.host() == chrome::kChromeUITabModalConfirmDialogHost) {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-remoting_remoting_host_gypi,v 1.7 2015/01/22 11:16:41 robert Exp $
---- remoting/remoting_host.gypi.orig.port	Thu Dec 18 10:41:00 2014
-+++ remoting/remoting_host.gypi	Sun Dec 21 15:31:02 2014
+$OpenBSD: patch-remoting_remoting_host_gypi,v 1.8 2015/03/18 19:26:29 robert Exp $
+--- remoting/remoting_host.gypi.orig.port	Wed Mar 11 07:47:46 2015
++++ remoting/remoting_host.gypi	Wed Mar 11 07:53:47 2015
 @@ -12,7 +12,7 @@
    'variables': {
      'conditions': [
@@ -10,18 +10,18 @@ $OpenBSD: patch-remoting_remoting_host_gypi,v 1.7 2015/01/22 11:16:41 robert Exp
          'enable_me2me_host': 1,
          'enable_it2me_host': 1,
          'enable_remoting_host': 1,
-@@ -302,7 +302,7 @@
-             'host/win/wts_terminal_observer.h',
+@@ -60,7 +60,7 @@
+             '<@(remoting_host_sources)',
            ],
            'conditions': [
 -            ['OS=="linux"', {
 +            ['OS=="linux" or os_bsd==1', {
-               'dependencies': [
-                 '../build/linux/system.gyp:x11',
-                 '../build/linux/system.gyp:xext',
-@@ -311,13 +311,8 @@
-                 '../build/linux/system.gyp:xrandr',
-                 '../build/linux/system.gyp:xtst',
+               'conditions': [
+                 ['use_x11==1', {
+                   'dependencies': [
+@@ -79,11 +79,6 @@
+                   ],
+                 }]
                ],
 -              'link_settings': {
 -                'libraries': [
@@ -29,12 +29,9 @@ $OpenBSD: patch-remoting_remoting_host_gypi,v 1.7 2015/01/22 11:16:41 robert Exp
 -                ],
 -              },
              }],
--            ['OS=="linux" and chromeos==0 and use_ozone==0', {
-+            ['(OS=="linux" or os_bsd==1) and chromeos==0 and use_ozone==0', {
+             ['chromeos==1', {
                'dependencies' : [
-                 # Always use GTK on Linux, even for Aura builds.
-                 '../build/linux/system.gyp:gtk',
-@@ -910,7 +905,7 @@
+@@ -668,7 +663,7 @@
              'host/it2me/it2me_native_messaging_host_main.h',
            ],
            'conditions': [

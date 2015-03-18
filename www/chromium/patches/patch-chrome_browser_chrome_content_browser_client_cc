@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.16 2015/01/22 11:16:40 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu Dec 18 10:40:59 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Sun Dec 21 15:30:57 2014
-@@ -166,7 +166,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.17 2015/03/18 19:26:29 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Mar 11 07:29:41 2015
++++ chrome/browser/chrome_content_browser_client.cc	Wed Mar 11 07:30:28 2015
+@@ -167,7 +167,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.16 2015/01/2
  #include "base/debug/leak_annotations.h"
  #include "components/crash/app/breakpad_linux.h"
  #include "components/crash/browser/crash_handler_host_linux.h"
-@@ -435,7 +435,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -443,7 +443,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -19,21 +19,21 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.16 2015/01/2
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1197,7 +1197,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
- 
+@@ -1232,7 +1232,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
-     CommandLine* command_line, int child_process_id) {
+     base::CommandLine* command_line,
+     int child_process_id) {
 -#if defined(OS_POSIX)
 +#if defined(OS_POSIX) && !defined(OS_BSD)
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2455,7 +2455,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2434,7 +2434,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
-     const CommandLine& command_line,
+     const base::CommandLine& command_line,
      int child_process_id,

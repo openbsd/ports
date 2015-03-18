@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_message_center_views_message_center_view_cc,v 1.3 2014/11/19 21:27:32 robert Exp $
---- ui/message_center/views/message_center_view.cc.orig.port	Wed Nov 19 06:13:11 2014
-+++ ui/message_center/views/message_center_view.cc	Wed Nov 19 08:38:27 2014
+$OpenBSD: patch-ui_message_center_views_message_center_view_cc,v 1.4 2015/03/18 19:26:29 robert Exp $
+--- ui/message_center/views/message_center_view.cc.orig.port	Tue Mar 10 23:29:17 2015
++++ ui/message_center/views/message_center_view.cc	Wed Mar 11 07:22:50 2015
 @@ -47,7 +47,7 @@ namespace message_center {
  namespace {
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_message_center_views_message_center_view_cc,v 1.3 2014/11/19 
  const SkColor kTransparentColor = SkColorSetARGB(0, 0, 0, 0);
  #endif
  const int kAnimateClearingNextNotificationDelayMS = 40;
-@@ -79,7 +79,7 @@ NoNotificationMessageView::NoNotificationMessageView()
+@@ -86,7 +86,7 @@ NoNotificationMessageView::NoNotificationMessageView()
    label_->SetEnabledColor(kNoNotificationsTextColor);
    // Set transparent background to ensure that subpixel rendering
    // is disabled. See crbug.com/169056

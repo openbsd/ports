@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_app_list_views_app_list_view_cc,v 1.5 2015/01/22 11:16:41 robert Exp $
---- ui/app_list/views/app_list_view.cc.orig.port	Wed Dec  3 03:32:12 2014
-+++ ui/app_list/views/app_list_view.cc	Sat Dec  6 11:34:27 2014
-@@ -74,7 +74,7 @@ bool SupportsShadow() {
+$OpenBSD: patch-ui_app_list_views_app_list_view_cc,v 1.6 2015/03/18 19:26:29 robert Exp $
+--- ui/app_list/views/app_list_view.cc.orig.port	Tue Mar 10 23:41:42 2015
++++ ui/app_list/views/app_list_view.cc	Wed Mar 11 07:22:50 2015
+@@ -75,7 +75,7 @@ bool SupportsShadow() {
            ::switches::kDisableDwmComposition)) {
      return false;
    }
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_app_list_views_app_list_view_cc,v 1.5 2015/01/22 11:16:41 rob
    // Shadows are not supported on (non-ChromeOS) Linux.
    return false;
  #endif
-@@ -441,7 +441,7 @@ void AppListView::OnBeforeBubbleWidgetInit(
+@@ -549,7 +549,7 @@ void AppListView::OnBeforeBubbleWidgetInit(
    // the taskbar for these versions of Windows.
    if (base::win::GetVersion() >= base::win::VERSION_WIN7)
      params->force_show_in_taskbar = true;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_app_list_app_list_constants_h,v 1.4 2015/01/22 11:16:41 robert Exp $
---- ui/app_list/app_list_constants.h.orig.port	Wed Dec  3 03:32:12 2014
-+++ ui/app_list/app_list_constants.h	Sat Dec  6 11:34:27 2014
-@@ -73,7 +73,7 @@ APP_LIST_EXPORT extern const size_t kMaxFolderNameChar
+$OpenBSD: patch-ui_app_list_app_list_constants_h,v 1.5 2015/03/18 19:26:29 robert Exp $
+--- ui/app_list/app_list_constants.h.orig.port	Tue Mar 10 23:41:42 2015
++++ ui/app_list/app_list_constants.h	Wed Mar 11 07:22:50 2015
+@@ -79,7 +79,7 @@ APP_LIST_EXPORT extern const size_t kMaxFolderNameChar
  
  APP_LIST_EXPORT extern const ui::ResourceBundle::FontStyle kItemTextFontStyle;
  

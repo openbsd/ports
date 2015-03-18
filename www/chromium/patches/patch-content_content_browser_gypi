@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.29 2015/01/22 11:16:41 robert Exp $
---- content/content_browser.gypi.orig.port	Wed Dec  3 03:32:12 2014
-+++ content/content_browser.gypi	Sat Dec  6 11:34:27 2014
-@@ -1859,9 +1859,26 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.30 2015/03/18 19:26:29 robert Exp $
+--- content/content_browser.gypi.orig.port	Tue Mar 10 23:41:41 2015
++++ content/content_browser.gypi	Wed Mar 11 07:22:50 2015
+@@ -1888,9 +1888,26 @@
        ],
      }],
      ['os_bsd==1', {
@@ -30,7 +30,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.29 2015/01/22 11:16:41 robert E
      }],
      ['use_aura==1', {
        'dependencies': [
-@@ -1907,7 +1924,7 @@
+@@ -1936,7 +1953,7 @@
          'browser/geolocation/empty_wifi_data_provider.cc',
        ],
      }],

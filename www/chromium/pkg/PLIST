@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2015/02/22 11:33:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.47 2015/03/18 19:26:29 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -107,6 +107,7 @@ chrome/resources/inspector/Images/localStorage.png
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
 chrome/resources/inspector/Images/paneAddButtons.png
+chrome/resources/inspector/Images/paneAnimationsButtons.png
 chrome/resources/inspector/Images/paneElementStateButtons.png
 chrome/resources/inspector/Images/paneFilterButtons.png
 chrome/resources/inspector/Images/paneRefreshButtons.png
@@ -143,8 +144,6 @@ chrome/resources/inspector/Images/thumbVert.png
 chrome/resources/inspector/Images/toolbarItemSelected.png
 chrome/resources/inspector/Images/touchCursor.png
 chrome/resources/inspector/Images/touchCursor_2x.png
-chrome/resources/inspector/Images/transformControls.png
-chrome/resources/inspector/Images/transformControls_2x.png
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
 chrome/resources/inspector/audits_module.js
@@ -154,9 +153,11 @@ chrome/resources/inspector/devtools.css
 chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools.js
 chrome/resources/inspector/devtools_extension_api.js
-chrome/resources/inspector/documentation_module.js
 chrome/resources/inspector/elements_module.js
 chrome/resources/inspector/heap_snapshot_worker_module.js
+chrome/resources/inspector/inspector.css
+chrome/resources/inspector/inspector.html
+chrome/resources/inspector/inspector.js
 chrome/resources/inspector/layers_module.js
 chrome/resources/inspector/network_module.js
 chrome/resources/inspector/profiler_module.js

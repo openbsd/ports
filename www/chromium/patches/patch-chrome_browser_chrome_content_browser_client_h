@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.10 2015/01/22 11:16:40 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Thu Dec 18 10:40:59 2014
-+++ chrome/browser/chrome_content_browser_client.h	Sun Dec 21 15:30:57 2014
-@@ -262,7 +262,7 @@ class ChromeContentBrowserClient : public content::Con
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.11 2015/03/18 19:26:29 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Tue Mar 10 23:41:40 2015
++++ chrome/browser/chrome_content_browser_client.h	Wed Mar 11 07:22:50 2015
+@@ -258,7 +258,7 @@ class ChromeContentBrowserClient : public content::Con
    net::CookieStore* OverrideCookieStoreForRenderProcess(
        int render_process_id) override;
  
