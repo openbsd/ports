@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.103 2015/01/08 17:07:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2015/03/18 14:51:33 sthen Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
 DISTNAME=	lftp-4.6.1
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -33,5 +34,8 @@ MODULES=	devel/gettext
 NO_TEST=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/lftp
+
+post-install:
+	rm -f ${PREFIX}/lib/liblftp-{jobs,tasks}.{a,la}
 
 .include <bsd.port.mk>
