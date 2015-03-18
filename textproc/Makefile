@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.434 2015/01/20 11:07:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.435 2015/03/18 08:37:58 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -404,6 +404,7 @@
      SUBDIR += swish-e
      SUBDIR += tcpdf
      SUBDIR += texi2html
+     SUBDIR += texi2mdoc
      SUBDIR += the_silver_searcher
      SUBDIR += tinyxml
      SUBDIR += tre
