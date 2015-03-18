@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/18 08:39:47 bentley Exp $
+@bin bin/megadf
+@bin bin/megadl
+@bin bin/megafs
+@bin bin/megaget
+@bin bin/megals
+@bin bin/megamkdir
+@bin bin/megamv
+@bin bin/megaput
+@bin bin/megareg
+@bin bin/megarm
+@bin bin/megasync
+include/mega/
+include/mega/mega-aes-ctr-encryptor.h
+include/mega/mega-aes-key.h
+include/mega/mega-chunked-cbc-mac.h
+include/mega/mega-enum-types.h
+include/mega/mega-http-client.h
+include/mega/mega-http-input-stream.h
+include/mega/mega-http-io-stream.h
+include/mega/mega-http-output-stream.h
+include/mega/mega-rsa-key.h
+include/mega/mega.h
+include/mega/megatypes.h
+include/mega/utils.h
+lib/libmega.a
+lib/libmega.la
+@lib lib/libmega.so.${LIBmega_VERSION}
+lib/pkgconfig/libmega.pc
+@man man/man1/megadf.1
+@man man/man1/megadl.1
+@man man/man1/megafs.1
+@man man/man1/megaget.1
+@man man/man1/megals.1
+@man man/man1/megamkdir.1
+@man man/man1/megamv.1
+@man man/man1/megaput.1
+@man man/man1/megareg.1
+@man man/man1/megarm.1
+@man man/man1/megasync.1
+@man man/man5/megarc.5
+@man man/man7/megatools.7
+share/doc/megatools/
+share/doc/megatools/HACKING
+share/doc/megatools/INSTALL
+share/doc/megatools/LICENSE
+share/doc/megatools/NEWS
+share/doc/megatools/README
+share/doc/megatools/TODO
