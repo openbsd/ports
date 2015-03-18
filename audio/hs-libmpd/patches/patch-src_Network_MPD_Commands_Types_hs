@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Network_MPD_Commands_Types_hs,v 1.1 2015/03/18 16:00:19 dcoppa Exp $
+--- src/Network/MPD/Commands/Types.hs.orig	Wed Mar 18 10:52:29 2015
++++ src/Network/MPD/Commands/Types.hs	Wed Mar 18 10:52:43 2015
+@@ -38,7 +38,7 @@ module Network.MPD.Commands.Types
+ 
+ import           Network.MPD.Commands.Arg (MPDArg(prep), Args(Args))
+ 
+-import           Data.Default.Class
++import           Data.Default
+ 
+ import qualified Data.Map as M
+ import           Data.Time.Clock (UTCTime)

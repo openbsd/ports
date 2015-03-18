@@ -1,0 +1,21 @@
+$OpenBSD: patch-libmpd_cabal,v 1.5 2015/03/18 16:00:19 dcoppa Exp $
+--- libmpd.cabal.orig	Wed Mar 18 10:49:48 2015
++++ libmpd.cabal	Wed Mar 18 10:50:38 2015
+@@ -49,7 +49,7 @@ Library
+       , text >= 0.11 && < 2
+ 
+         -- Additional dependencies
+-      , data-default-class >= 0.0.1 && < 1
++      , data-default >= 0.4 && < 1
+       , network >= 2.1 && < 3
+       , utf8-string >= 0.3.1 && < 1.1
+ 
+@@ -123,7 +123,7 @@ Test-Suite specs
+       , time
+ 
+         -- Additional dependencies
+-      , data-default-class
++      , data-default
+       , network
+       , utf8-string
+ 
