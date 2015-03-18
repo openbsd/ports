@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/23 12:09:26 jsing Exp $
+# $OpenBSD: Makefile,v 1.24 2015/03/18 16:21:02 kspillner Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
