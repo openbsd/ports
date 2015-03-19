@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/06/18 20:24:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/03/19 20:23:57 naddy Exp $
 @pkgpath lang/gcc/4.6
-%%SHARED%%
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcov
@@ -50,6 +49,7 @@ lib/gcc/${CONFIG}/${V}/libgcov.a
 @comment lib/libiberty.a
 lib/libssp.a
 lib/libssp.la
+@lib lib/libssp.so.${LIBssp_VERSION}
 lib/libssp_nonshared.a
 lib/libssp_nonshared.la
 libexec/gcc/
@@ -63,6 +63,7 @@ libexec/gcc/${CONFIG}/${V}/install-tools/fixinc.sh
 libexec/gcc/${CONFIG}/${V}/install-tools/mkheaders
 libexec/gcc/${CONFIG}/${V}/install-tools/mkinstalldirs
 libexec/gcc/${CONFIG}/${V}/liblto_plugin.la
+@lib libexec/gcc/${CONFIG}/${V}/liblto_plugin.so.${LIBlto_plugin_VERSION}
 @bin libexec/gcc/${CONFIG}/${V}/lto-wrapper
 @bin libexec/gcc/${CONFIG}/${V}/lto1
 %%I386%%

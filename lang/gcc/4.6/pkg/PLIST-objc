@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-objc,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-objc,v 1.2 2015/03/19 20:23:57 naddy Exp $
 lib/gcc/${CONFIG}/${V}/include/objc/
 lib/gcc/${CONFIG}/${V}/include/objc/NXConstStr.h
 lib/gcc/${CONFIG}/${V}/include/objc/Object.h
@@ -48,5 +47,6 @@ lib/gcc/${CONFIG}/${V}/include/objc/thr.h
 lib/gcc/${CONFIG}/${V}/include/objc/typedstream.h
 lib/libobjc.a
 lib/libobjc.la
+@lib lib/libobjc.so.${LIBobjc_VERSION}
 @bin libexec/gcc/${CONFIG}/${V}/cc1obj
 %%PIC%%

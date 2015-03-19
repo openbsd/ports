@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-go,v 1.1 2011/11/19 22:19:53 pascal Exp $
-@lib lib/libgo.so.${LIBgo_VERSION}

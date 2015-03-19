@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-f95,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
+@comment $OpenBSD: PLIST-f95,v 1.2 2015/03/19 20:23:57 naddy Exp $
 @conflict gfortran-*
 @conflict libgfortran-*
 @bin bin/egfortran
@@ -9,8 +9,8 @@ lib/gcc/${CONFIG}/${V}/libgfortranbegin.a
 lib/gcc/${CONFIG}/${V}/libgfortranbegin.la
 lib/libgfortran.a
 lib/libgfortran.la
+@lib lib/libgfortran.so.${LIBgfortran_VERSION}
 lib/libgfortran.spec
 @bin libexec/gcc/${CONFIG}/${V}/f951
-%%SHARED%%
 %%PIC%%
 @man man/man1/egfortran.1
