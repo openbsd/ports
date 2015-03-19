@@ -1,0 +1,12 @@
+$OpenBSD: patch-jsapi_cpp,v 1.1 2015/03/19 19:27:57 landry Exp $
+--- jsapi.cpp.orig	Fri Dec  6 15:52:35 2013
++++ jsapi.cpp	Mon Mar 16 07:11:01 2015
+@@ -866,6 +866,8 @@ JSRuntime::JSRuntime(JSUseHelperThreads useHelperThrea
+ 
+ #if JS_STACK_GROWTH_DIRECTION > 0
+     nativeStackLimit = UINTPTR_MAX;
++#else
++    mainThread.nativeStackLimit = 0;
+ #endif
+ }
+ 
