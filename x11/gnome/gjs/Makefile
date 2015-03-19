@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/10/04 19:41:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2015/03/19 19:28:37 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,7 @@ MODULES=		devel/gettext \
 
 # sync with devel/spidermonkey
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_ARCHS =		powerpc sparc64 alpha i386 hppa
 MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
