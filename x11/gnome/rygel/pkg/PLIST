@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/08/14 06:28:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/03/19 15:06:48 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
@@ -6,18 +6,21 @@ include/rygel-${API_V}/rygel-core.h
 include/rygel-${API_V}/rygel-renderer-gst.h
 include/rygel-${API_V}/rygel-renderer.h
 include/rygel-${API_V}/rygel-server.h
+lib/girepository-1.0/RygelCore-${API_V}.typelib
+lib/girepository-1.0/RygelRenderer-${API_V}.typelib
+lib/girepository-1.0/RygelServer-${API_V}.typelib
 lib/librygel-core-${API_V}.a
 lib/librygel-core-${API_V}.la
-@lib lib/librygel-core-${API_V}.so.${LIBrygel-core-2.2_VERSION}
+@lib lib/librygel-core-${API_V}.so.${LIBrygel-core-2.4_VERSION}
 lib/librygel-renderer-${API_V}.a
 lib/librygel-renderer-${API_V}.la
-@lib lib/librygel-renderer-${API_V}.so.${LIBrygel-renderer-2.2_VERSION}
+@lib lib/librygel-renderer-${API_V}.so.${LIBrygel-renderer-2.4_VERSION}
 lib/librygel-renderer-gst-${API_V}.a
 lib/librygel-renderer-gst-${API_V}.la
-@lib lib/librygel-renderer-gst-${API_V}.so.${LIBrygel-renderer-gst-2.2_VERSION}
+@lib lib/librygel-renderer-gst-${API_V}.so.${LIBrygel-renderer-gst-2.4_VERSION}
 lib/librygel-server-${API_V}.a
 lib/librygel-server-${API_V}.la
-@lib lib/librygel-server-${API_V}.so.${LIBrygel-server-2.2_VERSION}
+@lib lib/librygel-server-${API_V}.so.${LIBrygel-server-2.4_VERSION}
 lib/pkgconfig/rygel-core-${API_V}.pc
 lib/pkgconfig/rygel-renderer-${API_V}.pc
 lib/pkgconfig/rygel-renderer-gst-${API_V}.pc
@@ -30,7 +33,9 @@ lib/rygel-${API_V}/engines/media-engine-gst.plugin
 lib/rygel-${API_V}/engines/media-engine-simple.plugin
 lib/rygel-${API_V}/plugins/
 lib/rygel-${API_V}/plugins/external.plugin
+lib/rygel-${API_V}/plugins/gst-launch.plugin
 lib/rygel-${API_V}/plugins/librygel-external.so
+lib/rygel-${API_V}/plugins/librygel-gst-launch.so
 lib/rygel-${API_V}/plugins/librygel-media-export.so
 lib/rygel-${API_V}/plugins/librygel-mpris.so
 lib/rygel-${API_V}/plugins/librygel-playbin.so
@@ -47,6 +52,9 @@ share/dbus-1/services/org.gnome.Rygel1.service
 share/examples/rygel/
 share/examples/rygel/rygel.conf
 @sample ${SYSCONFDIR}/rygel.conf
+share/gir-1.0/RygelCore-${API_V}.gir
+share/gir-1.0/RygelRenderer-${API_V}.gir
+share/gir-1.0/RygelServer-${API_V}.gir
 share/gtk-doc/html/librygel-core/
 share/gtk-doc/html/librygel-core/RygelBaseConfiguration.html
 share/gtk-doc/html/librygel-core/RygelBasicManagement.html
