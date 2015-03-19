@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.216 2015/02/27 12:37:04 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.217 2015/03/19 18:01:35 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -501,6 +501,7 @@ my $obsolete_reason = {
 	'hs-stringtable-atom' => 5,
 	'pugs' => 5,
 	'xawtv' => 5,
+	'qt4-eventsview' => 0,
 };
 
 # ->is_base_system($handle, $state):

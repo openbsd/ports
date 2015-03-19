@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/03 10:29:11 espie Exp $
-@lib lib/libeventsview.so.${LIBeventsview_VERSION}
