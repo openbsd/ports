@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1 2015/03/19 08:12:49 czarkoff Exp $
+bin/bookman
+bin/src2man
+bin/txt2man
+@man man/man1/bookman.1
+@man man/man1/src2man.1
+@man man/man1/txt2man.1

@@ -1,0 +1,5 @@
+Txt2man converts flat ASCII text to man page format. It is a shell script using
+gnu awk, that should run on any Unix like system.
+
+A command to extract comments from source code - src2man, - and a command to
+build an indexed volume from a set of man pages - bookman  - are also provided.

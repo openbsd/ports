@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile,v 1.1 2015/03/19 08:12:49 czarkoff Exp $
+--- Makefile.orig	Tue Jan 20 13:51:53 2015
++++ Makefile	Tue Jan 20 13:55:53 2015
+@@ -1,5 +1,5 @@
+ # Makefile
+-prefix ?= /usr/local
++PREFIX ?= /usr/local
+ version = txt2man-1.5.6
+ BIN = src2man bookman txt2man
+ MAN1 = src2man.1 txt2man.1 bookman.1
+@@ -7,9 +7,10 @@ MAN1 = src2man.1 txt2man.1 bookman.1
+ all: $(MAN1)
+ 
+ install: $(MAN1)
+-	mkdir -p $(prefix)/bin $(prefix)/man/man1
+-	cp $(BIN) $(prefix)/bin/
+-	cp $(MAN1) $(prefix)/man/man1
++	${BSD_INSTALL_SCRIPT_DIR} $(PREFIX)/bin
++	${BSD_INSTALL_MAN_DIR} $(PREFIX)/man/man1
++	${BSD_INSTALL_SCRIPT} $(BIN) $(PREFIX)/bin/
++	${BSD_INSTALL_MAN} $(MAN1) $(PREFIX)/man/man1
+ 
+ clean:
+ 	rm -f *.1 *.txt *.ps *.pdf *.html
