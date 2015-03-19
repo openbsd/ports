@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/07/05 12:03:52 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2015/03/19 20:25:26 naddy Exp $
 @option no-default-conflict
 @conflict db->=4,<5
 @pkgpath databases/db/v4,no_tcl
 @pkgpath databases/db/v4
-bin/db4_archive
-bin/db4_checkpoint
-bin/db4_codegen
-bin/db4_deadlock
-bin/db4_dump
-bin/db4_dump185
-bin/db4_hotbackup
-bin/db4_load
-bin/db4_printlog
-bin/db4_recover
-bin/db4_stat
-bin/db4_upgrade
-bin/db4_verify
+@bin bin/db4_archive
+@bin bin/db4_checkpoint
+@bin bin/db4_codegen
+@bin bin/db4_deadlock
+@bin bin/db4_dump
+@bin bin/db4_dump185
+@bin bin/db4_hotbackup
+@bin bin/db4_load
+@bin bin/db4_printlog
+@bin bin/db4_recover
+@bin bin/db4_stat
+@bin bin/db4_upgrade
+@bin bin/db4_verify
 include/db4/
 include/db4/db.h
 include/db4/db_185.h

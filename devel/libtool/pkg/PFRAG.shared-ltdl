@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-ltdl,v 1.5 2005/12/23 17:02:46 bernd Exp $
-@lib lib/libltdl.so.${LIBltdl_VERSION}

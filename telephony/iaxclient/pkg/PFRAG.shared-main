@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2010/06/18 17:32:21 sebastia Exp $
-@lib lib/libiaxclient.so.${LIBiaxclient_VERSION}

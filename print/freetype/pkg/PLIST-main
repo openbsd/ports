@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 10:07:26 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/03/19 20:25:27 naddy Exp $
 @pkgpath print/freetype
 include/freetype1/
 include/freetype1/freetype/
@@ -18,4 +18,4 @@ include/freetype1/freetype/ftxsbit.h
 include/freetype1/freetype/ftxwidth.h
 lib/libttf.a
 lib/libttf.la
-%%SHARED%%
+@lib lib/libttf.so.${LIBttf_VERSION}

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2013/10/10 09:50:17 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2015/03/19 20:25:26 naddy Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
 @pkgpath devel/subversion
 @conflict subversion-*-gnome_keyring
-%%SHARED%%
 @comment @bin bin/diff
 @comment @bin bin/diff3
 @comment @bin bin/diff4
@@ -71,32 +70,46 @@ include/subversion-1/svn_xml.h
 @comment lib/apache2/
 lib/libsvn_client-1.a
 lib/libsvn_client-1.la
+@lib lib/libsvn_client-1.so.${LIBsvn_client-1_VERSION}
 lib/libsvn_delta-1.a
 lib/libsvn_delta-1.la
+@lib lib/libsvn_delta-1.so.${LIBsvn_delta-1_VERSION}
 lib/libsvn_diff-1.a
 lib/libsvn_diff-1.la
+@lib lib/libsvn_diff-1.so.${LIBsvn_diff-1_VERSION}
 lib/libsvn_fs-1.a
 lib/libsvn_fs-1.la
+@lib lib/libsvn_fs-1.so.${LIBsvn_fs-1_VERSION}
 lib/libsvn_fs_base-1.a
 lib/libsvn_fs_base-1.la
+@lib lib/libsvn_fs_base-1.so.${LIBsvn_fs_base-1_VERSION}
 lib/libsvn_fs_fs-1.a
 lib/libsvn_fs_fs-1.la
+@lib lib/libsvn_fs_fs-1.so.${LIBsvn_fs_fs-1_VERSION}
 lib/libsvn_fs_util-1.a
 lib/libsvn_fs_util-1.la
+@lib lib/libsvn_fs_util-1.so.${LIBsvn_fs_util-1_VERSION}
 lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
+@lib lib/libsvn_ra-1.so.${LIBsvn_ra-1_VERSION}
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
+@lib lib/libsvn_ra_local-1.so.${LIBsvn_ra_local-1_VERSION}
 lib/libsvn_ra_serf-1.a
 lib/libsvn_ra_serf-1.la
+@lib lib/libsvn_ra_serf-1.so.${LIBsvn_ra_serf-1_VERSION}
 lib/libsvn_ra_svn-1.a
 lib/libsvn_ra_svn-1.la
+@lib lib/libsvn_ra_svn-1.so.${LIBsvn_ra_svn-1_VERSION}
 lib/libsvn_repos-1.a
 lib/libsvn_repos-1.la
+@lib lib/libsvn_repos-1.so.${LIBsvn_repos-1_VERSION}
 lib/libsvn_subr-1.a
 lib/libsvn_subr-1.la
+@lib lib/libsvn_subr-1.so.${LIBsvn_subr-1_VERSION}
 lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
+@lib lib/libsvn_wc-1.so.${LIBsvn_wc-1_VERSION}
 @comment lib/python${MODPY_VERSION}/
 @comment lib/python${MODPY_VERSION}/site-packages/
 @comment lib/ruby/

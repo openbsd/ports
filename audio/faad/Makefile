@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2014/06/04 21:37:30 miod Exp $
+# $OpenBSD: Makefile,v 1.56 2015/03/19 20:25:26 naddy Exp $
 
 # gcc -iquote
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -10,6 +10,7 @@ V=		2.7
 DISTNAME=	faad2-${V}
 PKGNAME-main=	faad-${V}
 PKGNAME-xmms=	xmms-faad-${V}
+REVISION-main=	0
 REVISION-xmms=	1
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}

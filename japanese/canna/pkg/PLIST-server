@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-server,v 1.4 2005/09/04 23:29:44 espie Exp $
+@comment $OpenBSD: PLIST-server,v 1.5 2015/03/19 20:25:26 naddy Exp $
 bin/addwords
-bin/canlisp
-bin/cannacheck
+@bin bin/canlisp
+@bin bin/cannacheck
 bin/cannakill
 @mode u+s,g+s
 @owner daemon
@@ -10,32 +10,32 @@ bin/cannaserver
 @mode
 @owner
 @group
-bin/cannastat
-bin/catdic
+@bin bin/cannastat
+@bin bin/catdic
 bin/cpdic
-bin/crfreq
-bin/crxdic
-bin/crxgram
-bin/cshost
-bin/ctow
+@bin bin/crfreq
+@bin bin/crxdic
+@bin bin/crxgram
+@bin bin/cshost
+@bin bin/ctow
 bin/delwords
-bin/dicar
+@bin bin/dicar
 bin/dpbindic
-bin/dpromdic
-bin/dpxdic
-bin/forcpp
-bin/forsort
-bin/kpdic
+@bin bin/dpromdic
+@bin bin/dpxdic
+@bin bin/forcpp
+@bin bin/forsort
+@bin bin/kpdic
 bin/lsdic
-bin/mergeword
+@bin bin/mergeword
 bin/mkbindic
 bin/mkdic
 bin/mkromdic
 bin/mvdic
 bin/rmdic
-bin/splitword
+@bin bin/splitword
 bin/syncdic
-bin/wtoc
+@bin bin/wtoc
 @man man/cat1/addwords.0
 @man man/cat1/cannacheck.0
 @man man/cat1/cannakill.0

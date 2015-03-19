@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/21 21:17:31 espie Exp $
-@lib lib/libRKC.so.${LIBRKC_VERSION}
-@lib lib/libRKC16.so.${LIBRKC16_VERSION}
-@lib lib/libcanna.so.${LIBcanna_VERSION}
-@lib lib/libcanna16.so.${LIBcanna16_VERSION}

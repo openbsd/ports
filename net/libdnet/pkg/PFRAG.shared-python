@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-python,v 1.2 2007/10/22 15:07:15 ajacoutot Exp $
-lib/python${MODPY_VERSION}/site-packages/dnet.so

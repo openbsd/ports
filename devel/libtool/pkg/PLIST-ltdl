@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ltdl,v 1.4 2011/09/22 21:10:19 jasper Exp $
+@comment $OpenBSD: PLIST-ltdl,v 1.5 2015/03/19 20:25:26 naddy Exp $
 include/libltdl/
 include/libltdl/lt_dlloader.h
 include/libltdl/lt_error.h
@@ -6,6 +6,7 @@ include/libltdl/lt_system.h
 include/ltdl.h
 lib/libltdl.a
 lib/libltdl.la
+@lib lib/libltdl.so.${LIBltdl_VERSION}
 share/aclocal/
 share/aclocal/ltdl.m4
 share/libtool/
@@ -47,4 +48,3 @@ share/libtool/libltdl/lt_error.c
 share/libtool/libltdl/ltdl.c
 share/libtool/libltdl/ltdl.h
 share/libtool/libltdl/slist.c
-%%SHARED%%

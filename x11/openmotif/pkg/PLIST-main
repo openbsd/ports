@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/10/28 11:05:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2015/03/19 20:25:27 naddy Exp $
 @conflict lesstif-*
 @pkgpath x11/openmotif
 @bin bin/mwm
@@ -286,10 +286,13 @@ lib/X11/config/Motif.tmpl
 lib/X11/system.mwmrc
 lib/libMrm.a
 lib/libMrm.la
+@lib lib/libMrm.so.${LIBMrm_VERSION}
 lib/libUil.a
 lib/libUil.la
+@lib lib/libUil.so.${LIBUil_VERSION}
 lib/libXm.a
 lib/libXm.la
+@lib lib/libXm.so.${LIBXm_VERSION}
 @man man/man1/mwm.1
 @man man/man1/uil.1
 @man man/man1/xmbind.1
@@ -999,4 +1002,3 @@ share/doc/openmotif/README
 share/doc/openmotif/RELEASE
 share/doc/openmotif/RELNOTES
 share/doc/openmotif/TODO
-%%SHARED%%

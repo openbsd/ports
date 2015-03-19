@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 21:17:31 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/03/19 20:25:26 naddy Exp $
 @pkgpath japanese/canna
 include/canna/
 include/canna/RK.h
@@ -23,9 +23,13 @@ lib/dic/vje.cbp
 lib/dic/wx2+.cbp
 lib/engine.cf
 lib/libRKC.a
+@lib lib/libRKC.so.${LIBRKC_VERSION}
 lib/libRKC16.a
+@lib lib/libRKC16.so.${LIBRKC16_VERSION}
 lib/libcanna.a
+@lib lib/libcanna.so.${LIBcanna_VERSION}
 lib/libcanna16.a
+@lib lib/libcanna16.so.${LIBcanna16_VERSION}
 lib/sample/
 lib/sample/1.1.canna
 lib/sample/1.2.canna
@@ -143,4 +147,3 @@ lib/sample/wx2+.canna
 @man man/ja_JP.EUC/cat3/jrKanjiControl.0
 @man man/ja_JP.EUC/cat3/jrKanjiString.0
 @man man/ja_JP.EUC/cat3/uilib.0
-%%SHARED%%

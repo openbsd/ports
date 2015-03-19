@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2010/06/18 17:32:21 sebastia Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-main,v 1.2 2015/03/19 20:25:27 naddy Exp $
 @sample ${SYSCONFDIR}/iaxmodem/
 @bin bin/testcall
 include/iaxclient.h
 lib/libiaxclient.a
 lib/libiaxclient.la
-lib/pkgconfig/
+@lib lib/libiaxclient.so.${LIBiaxclient_VERSION}
 lib/pkgconfig/iaxclient.pc

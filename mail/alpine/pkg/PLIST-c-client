@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-c-client,v 1.1 2013/10/17 09:08:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-c-client,v 1.2 2015/03/19 20:25:26 naddy Exp $
 @pkgpath mail/c-client
 @pkgpath mail/imap-uw,-c-client
 @pkgpath mail/imap-uw,-c-client,plaintext
 @pkgpath mail/re-alpine,-c-client
-%%SHARED%%
 include/c-client/
 include/c-client/c-client.h
 include/c-client/dummy.h
@@ -35,3 +34,4 @@ include/c-client/unix.h
 include/c-client/utf8.h
 include/c-client/utf8aux.h
 lib/libc-client.a
+@lib lib/libc-client.so.${LIBc-client_VERSION}

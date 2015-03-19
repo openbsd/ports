@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2008/04/11 11:16:20 jasper Exp $
-@lib lib/libIlmImf.so.${LIBIlmImf_VERSION}

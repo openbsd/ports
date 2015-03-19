@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/07/11 16:18:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/03/19 20:25:26 naddy Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -10,9 +10,9 @@ PKGNAME-main=	cannalib-3.5b2
 PKGNAME-dict=	cannadict-3.5b2
 PKGNAME-server=	cannaserver-3.5b2
 
-REVISION-main =	4
+REVISION-main =	5
 REVISION-dict =	0
-REVISION-server = 6
+REVISION-server = 7
 
 SHARED_LIBS=	RKC	1.0 \
 		RKC16	1.0 \
