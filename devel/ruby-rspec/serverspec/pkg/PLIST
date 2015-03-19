@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/12/06 10:26:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/03/19 08:04:58 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -46,6 +46,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/subject.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/bond.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/bridge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/cgroup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/command.rb
@@ -55,6 +56,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/docker_base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/docker_container.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/docker_image.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/fstab.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/iis_app_pool.rb
@@ -82,6 +84,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/windows_feature.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/windows_hot_fix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/windows_registry_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/windows_scheduled_task.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/x509_certificate.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/x509_private_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/yumrepo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/zfs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/version.rb
@@ -142,11 +146,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/type/gentoo/
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/gentoo/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/gentoo/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/
+${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/bond_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/bridge_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/cgroup_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/docker_container_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/docker_image_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/fstab_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/ip6tables_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/iptables_spec.rb
@@ -155,6 +161,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/linux_kernel_parameter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/lxc_container_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/selinux_module_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/selinux_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/x509_certificate_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/x509_private_key_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/nixos/
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/nixos/package_spec.rb
