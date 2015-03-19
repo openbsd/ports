@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/20 07:52:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/19 08:03:09 jasper Exp $
 
 COMMENT =		rspec attribute matchers
-DISTNAME =		rspec-its-1.0.1
-REVISION =		1
+DISTNAME =		rspec-its-1.2.0
 
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS =		devel/ruby-rspec/3/core,${MODRUBY_FLAVOR} \
