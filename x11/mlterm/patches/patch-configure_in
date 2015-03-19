@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.8 2015/02/19 09:33:45 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.9 2015/03/19 10:54:50 dcoppa Exp $
 
 OpenBSD lacks 'nm -D'
 
@@ -6,9 +6,9 @@ setuid root/setgid utmp are handled by PLIST
 
 Do not enable VTE support if libvte is around
 
---- configure.in.orig	Tue Feb 10 10:00:47 2015
-+++ configure.in	Thu Feb 19 03:16:12 2015
-@@ -313,7 +313,7 @@ AC_SUBST(IMAGELIB_LIBS)
+--- configure.in.orig	Fri Mar 13 23:47:32 2015
++++ configure.in	Thu Mar 19 05:42:50 2015
+@@ -318,7 +318,7 @@ AC_SUBST(IMAGELIB_LIBS)
  for ml_cv_lib_path in /lib /usr/lib /lib/* `echo $LIBRARY_PATH | tr ":" " "` ; do
  	libm_files=`ls $ml_cv_lib_path/libm\\.so* $ml_cv_lib_path/libm\\.sl* 2> /dev/null`
  	for libm_file in $libm_files ; do
@@ -17,7 +17,7 @@ Do not enable VTE support if libvte is around
  			ml_cv_libm_dir=`dirname $libm_file`
  		fi
  	done
-@@ -656,39 +656,12 @@ AC_ARG_ENABLE(pty_helper,
+@@ -661,46 +661,14 @@ AC_ARG_ENABLE(pty_helper,
  	pty_helper=$enable_pty_helper)
  if test "$utmp" = "yes" -a "$pty_helper" != "yes" ; then
  	UTMP_CFLAGS="-DUSE_UTMP"
@@ -38,11 +38,16 @@ Do not enable VTE support if libvte is around
  
  AC_SUBST(UTMP_CFLAGS)
  AC_SUBST(INSTALL_OPT)
--
+ 
 -if test "${have_gtk}" = "yes" ; then
 -	if test "${gtk_version}" = "3.0" ; then
--		PKG_CHECK_MODULES(VTE, vte-2.90, have_vte=yes, have_vte=no)
--		LIBVTE_SUFFIX=2_90
+-		PKG_CHECK_MODULES(VTE, vte-2.91, have_vte=yes, have_vte=no)
+-		if test "$have_vte" = "yes" ; then
+-			LIBVTE_SUFFIX=-2.91
+-		else
+-			PKG_CHECK_MODULES(VTE, vte-2.90, have_vte=yes, have_vte=no)
+-			LIBVTE_SUFFIX=2_90
+-		fi
 -		AC_SUBST(LIBVTE_SUFFIX)
 -	else
 -		PKG_CHECK_MODULES(VTE, vte, have_vte=yes, have_vte=no)
@@ -54,7 +59,10 @@ Do not enable VTE support if libvte is around
 -		VTE_CFLAGS="`echo $VTE_CFLAGS | tr -d '\r'`"
 -		AC_SUBST(VTE_CFLAGS)
 -	fi
+-else
+-	have_vte=no
 -fi
++have_vte=no
  
  tools="mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader,registobmp"
  AC_ARG_WITH(tools,
