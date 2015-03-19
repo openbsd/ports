@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/29 10:03:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/03/19 12:12:20 naddy Exp $
 @conflict smstools-*
-%%SHARED%%
 !%%no_x11%%
 @bin bin/gnokii
 bin/ppm2nokia
@@ -24,7 +23,7 @@ include/gnokii/virtmodem.h
 include/gnokii/wappush.h
 lib/libgnokii.a
 lib/libgnokii.la
-lib/pkgconfig/
+@lib lib/libgnokii.so.${LIBgnokii_VERSION}
 lib/pkgconfig/gnokii.pc
 @man man/man1/gnokii.1
 @bin sbin/gnokiid
@@ -46,5 +45,3 @@ share/locale/sk/LC_MESSAGES/gnokii.mo
 share/locale/sl/LC_MESSAGES/gnokii.mo
 share/locale/sv/LC_MESSAGES/gnokii.mo
 share/locale/zh_CN/LC_MESSAGES/gnokii.mo
-share/pixmaps/
-share/pixmaps/xgnokii.xpm

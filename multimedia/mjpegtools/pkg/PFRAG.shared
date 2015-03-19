@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2012/06/20 08:45:37 jasper Exp $
-@lib lib/liblavfile.so.${LIBlavfile_VERSION}
-@lib lib/liblavjpeg.so.${LIBlavjpeg_VERSION}
-@lib lib/liblavplay.so.${LIBlavplay_VERSION}
-@lib lib/libmjpegutils.so.${LIBmjpegutils_VERSION}
-@lib lib/libmpeg2encpp.so.${LIBmpeg2encpp_VERSION}
-@lib lib/libmplex2.so.${LIBmplex2_VERSION}

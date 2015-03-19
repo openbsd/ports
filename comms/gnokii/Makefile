@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2015/01/24 13:46:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.40 2015/03/19 12:12:20 naddy Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-REVISION=	17
+REVISION=	18
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/10/01 09:32:36 sebastia Exp $
-@lib lib/libhashkit.so.${LIBhashkit_VERSION}
-@lib lib/libmemcached.so.${LIBmemcached_VERSION}
-@lib lib/libmemcachedprotocol.so.${LIBmemcachedprotocol_VERSION}
-@lib lib/libmemcachedutil.so.${LIBmemcachedutil_VERSION}

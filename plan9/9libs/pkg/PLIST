@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:23:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/19 12:12:20 naddy Exp $
 include/9libs/
 include/9libs/conf9libs.h
 include/9libs/frame.h
@@ -8,10 +8,13 @@ include/9libs/regexp.h
 include/9libs/u.h
 lib/libXg.a
 lib/libXg.la
+@lib lib/libXg.so.${LIBXg_VERSION}
 lib/libframe.a
 lib/libframe.la
+@lib lib/libframe.so.${LIBframe_VERSION}
 lib/libplan9c.a
 lib/libplan9c.la
+@lib lib/libplan9c.so.${LIBplan9c_VERSION}
 @man man/man3/add.3
 @man man/man3/balloc.3
 @man man/man3/bitblt.3
@@ -26,4 +29,3 @@ lib/libplan9c.la
 @man man/man4/utf.4
 @man man/man6/bitmap.6
 @man man/man6/regexp.6
-%%SHARED%%

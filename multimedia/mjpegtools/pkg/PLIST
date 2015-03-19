@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/06/20 08:45:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/19 12:12:20 naddy Exp $
 @conflict mplex-*
-%%SHARED%%
 %%quicktime%%
 bin/anytovcd.sh
 @bin bin/glav
@@ -113,17 +112,22 @@ include/mjpegtools/yuv4mpeg.h
 info/mjpeg-howto.info
 lib/liblavfile.a
 lib/liblavfile.la
+@lib lib/liblavfile.so.${LIBlavfile_VERSION}
 lib/liblavjpeg.a
 lib/liblavjpeg.la
+@lib lib/liblavjpeg.so.${LIBlavjpeg_VERSION}
 lib/liblavplay.a
 lib/liblavplay.la
+@lib lib/liblavplay.so.${LIBlavplay_VERSION}
 lib/libmjpegutils.a
 lib/libmjpegutils.la
+@lib lib/libmjpegutils.so.${LIBmjpegutils_VERSION}
 lib/libmpeg2encpp.a
 lib/libmpeg2encpp.la
+@lib lib/libmpeg2encpp.so.${LIBmpeg2encpp_VERSION}
 lib/libmplex2.a
 lib/libmplex2.la
-lib/pkgconfig/
+@lib lib/libmplex2.so.${LIBmplex2_VERSION}
 lib/pkgconfig/mjpegtools.pc
 @man man/man1/jpeg2yuv.1
 @man man/man1/lav2mpeg.1
