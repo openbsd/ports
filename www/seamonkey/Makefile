@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2015/03/16 20:00:29 landry Exp $
+# $OpenBSD: Makefile,v 1.168 2015/03/19 19:49:49 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -31,9 +31,9 @@ MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_ARCHS =		powerpc sparc64 alpha
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64
+MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
 # fix for 982693, apply only on clang archs

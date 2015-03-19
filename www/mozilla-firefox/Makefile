@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.266 2015/03/16 19:53:55 landry Exp $
+# $OpenBSD: Makefile,v 1.267 2015/03/19 19:49:49 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -26,9 +26,9 @@ MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_ARCHS =		powerpc sparc64 alpha
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64
+MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
 # Regression tests are too hard to adapt to run here
