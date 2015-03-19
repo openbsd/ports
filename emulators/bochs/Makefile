@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2014/12/31 08:42:26 landry Exp $
+# $OpenBSD: Makefile,v 1.63 2015/03/19 18:56:57 landry Exp $
 
 COMMENT=	x86 machine simulator
 BROKEN-hppa=	./iodev/hdimage/hdimage.cc:807: error: 'bx_bswap32' was not declared in this scope
+BROKEN-powerpc= error: 'bx_bswap32' was not declared in this scope
 
 DISTNAME=	bochs-2.6.7
 CATEGORIES=	emulators
