@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/19 19:27:57 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2015/03/19 20:02:53 landry Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 24 engine
@@ -6,7 +6,6 @@ SHARED_ONLY=	Yes
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on sparc64 & mips64 (SIGBUS in jsutil.h:33)
 # but let's keep them to build more packages
-# XXX: sync with net/libproxy and x11/gtk+3
 ONLY_FOR_ARCHS =	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
 
 COMMENT =	Mozilla C implementation of JavaScript
