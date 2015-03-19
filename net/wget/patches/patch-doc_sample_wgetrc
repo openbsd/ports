@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_sample_wgetrc,v 1.6 2014/01/29 06:08:42 dcoppa Exp $
---- doc/sample.wgetrc.orig	Sat Jan  4 13:49:47 2014
-+++ doc/sample.wgetrc	Mon Jan 27 13:15:20 2014
+$OpenBSD: patch-doc_sample_wgetrc,v 1.7 2015/03/19 20:53:43 dcoppa Exp $
+--- doc/sample.wgetrc.orig	Sun Dec 21 06:35:04 2014
++++ doc/sample.wgetrc	Thu Mar 19 10:52:38 2015
 @@ -10,7 +10,7 @@
  ## Or online here:
  ##   https://www.gnu.org/software/wget/manual/wget.html#Startup-File
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_sample_wgetrc,v 1.6 2014/01/29 06:08:42 dcoppa Exp $
  ## (global, for all users) or $HOME/.wgetrc (for a single user).
  ##
  ## To use the settings in this file, you will have to uncomment them,
-@@ -19,7 +19,7 @@
+@@ -22,7 +22,7 @@
  
  
  ##
