@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/14 23:34:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/19 15:47:38 juanfra Exp $
 
 SHARED_ONLY=	Yes
-BROKEN-hppa=	ICE on _gambc.c since 2014-09-29 
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
@@ -40,5 +39,10 @@ post-install:
 do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} ${MAKE_PROGRAM} \
 		${TEST_FLAGS} -f makefile ${TEST_TARGET}
+
+# "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
+.if ${MACHINE_ARCH} == "hppa"
+CFLAGS += -O0
+.endif
 
 .include <bsd.port.mk>
