@@ -1,8 +1,7 @@
-#  $OpenBSD: Makefile,v 1.4 2014/11/27 09:19:14 jeremy Exp $
+#  $OpenBSD: Makefile,v 1.5 2015/03/19 08:02:58 jasper Exp $
 
 COMMENT =		rspec expectations and matchers
-DISTNAME =		rspec-expectations-3.1.2
-REVISION =		1
+DISTNAME =		rspec-expectations-3.2.0
 
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS =		devel/ruby-diff-lcs,${MODRUBY_FLAVOR} \
