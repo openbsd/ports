@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2015/02/10 11:05:33 sthen Exp $
-@extraunexec rm -rf %D/roundcubemail/logs/*
+@comment $OpenBSD: PLIST,v 1.40 2015/03/19 11:21:11 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -24,6 +23,7 @@ roundcubemail/SQL/mssql/2013042700.sql
 roundcubemail/SQL/mssql/2013052500.sql
 roundcubemail/SQL/mssql/2013061000.sql
 roundcubemail/SQL/mssql/2014042900.sql
+roundcubemail/SQL/mssql/2015030800.sql
 roundcubemail/SQL/mysql/
 roundcubemail/SQL/mysql.initial.sql
 roundcubemail/SQL/mysql/2008030300.sql
@@ -44,7 +44,10 @@ roundcubemail/SQL/mysql/2013042700.sql
 roundcubemail/SQL/mysql/2013052500.sql
 roundcubemail/SQL/mysql/2013061000.sql
 roundcubemail/SQL/mysql/2014042900.sql
+roundcubemail/SQL/mysql/2015030800.sql
+roundcubemail/SQL/oracle/
 roundcubemail/SQL/oracle.initial.sql
+roundcubemail/SQL/oracle/2015030800.sql
 roundcubemail/SQL/postgres/
 roundcubemail/SQL/postgres.initial.sql
 roundcubemail/SQL/postgres/2008030300.sql
@@ -64,6 +67,7 @@ roundcubemail/SQL/postgres/2013042700.sql
 roundcubemail/SQL/postgres/2013052500.sql
 roundcubemail/SQL/postgres/2013061000.sql
 roundcubemail/SQL/postgres/2014042900.sql
+roundcubemail/SQL/postgres/2015030800.sql
 roundcubemail/SQL/sqlite/
 roundcubemail/SQL/sqlite.initial.sql
 roundcubemail/SQL/sqlite/2008030300.sql
@@ -84,6 +88,7 @@ roundcubemail/SQL/sqlite/2013042700.sql
 roundcubemail/SQL/sqlite/2013052500.sql
 roundcubemail/SQL/sqlite/2013061000.sql
 roundcubemail/SQL/sqlite/2014042900.sql
+roundcubemail/SQL/sqlite/2015030800.sql
 roundcubemail/UPGRADING
 @mode 750
 @owner root
@@ -2183,6 +2188,7 @@ roundcubemail/program/steps/addressbook/list.inc
 roundcubemail/program/steps/addressbook/mailto.inc
 roundcubemail/program/steps/addressbook/move.inc
 roundcubemail/program/steps/addressbook/photo.inc
+roundcubemail/program/steps/addressbook/print.inc
 roundcubemail/program/steps/addressbook/save.inc
 roundcubemail/program/steps/addressbook/search.inc
 roundcubemail/program/steps/addressbook/show.inc
@@ -2347,6 +2353,7 @@ roundcubemail/skins/classic/templates/compose.html
 roundcubemail/skins/classic/templates/contact.html
 roundcubemail/skins/classic/templates/contactadd.html
 roundcubemail/skins/classic/templates/contactedit.html
+roundcubemail/skins/classic/templates/contactprint.html
 roundcubemail/skins/classic/templates/contactsearch.html
 roundcubemail/skins/classic/templates/error.html
 roundcubemail/skins/classic/templates/folderedit.html
@@ -2430,6 +2437,7 @@ roundcubemail/skins/larry/templates/addressbook.html
 roundcubemail/skins/larry/templates/compose.html
 roundcubemail/skins/larry/templates/contact.html
 roundcubemail/skins/larry/templates/contactedit.html
+roundcubemail/skins/larry/templates/contactprint.html
 roundcubemail/skins/larry/templates/contactsearch.html
 roundcubemail/skins/larry/templates/error.html
 roundcubemail/skins/larry/templates/folderedit.html
