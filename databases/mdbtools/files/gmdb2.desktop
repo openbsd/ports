@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=GMDB2
+GenericName=MDB file viewer
+Comment=View and export contents from Microsoft Access 1.0-2003 files
+Exec=gmdb2 %f
+TryExec=gmdb2
+Icon=${LOCALBASE}/share/gmdb/glade/logo.xpm
+Terminal=false
+Type=Application
+MimeType=application/x-msaccess
+Categories=System;FileTools;GTK;
+Actions=View
+NoDisplay=true
+
+[Desktop Action View]
+Name=View with GMDB2
+Exec=gmdb2 %f

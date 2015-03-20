@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST-gmdb,v 1.2 2008/12/30 20:56:41 sthen Exp $
+@comment $OpenBSD: PLIST-gmdb,v 1.1 2015/03/20 16:07:08 czarkoff Exp $
+@pkgpath databases/mdbtools/snapshot,-gmdb
 @bin bin/gmdb2
+include/gmdb.h
+@man man/man1/gmdb2.1
+share/applications/
+share/applications/gmdb2.desktop
 share/gmdb/
 share/gmdb/glade/
+share/gmdb/glade/COPYING
 share/gmdb/glade/code.xpm
 share/gmdb/glade/debug.xpm
 share/gmdb/glade/form_big.xpm
@@ -11,8 +17,8 @@ share/gmdb/glade/gmdb-export.glade
 share/gmdb/glade/gmdb-prefs.glade
 share/gmdb/glade/gmdb-props.glade
 share/gmdb/glade/gmdb-schema.glade
-share/gmdb/glade/gmdb-sql-file.glade
 share/gmdb/glade/gmdb-sql.glade
+share/gmdb/glade/gmdb-tabledef.glade
 share/gmdb/glade/gmdb.glade
 share/gmdb/glade/logo.xpm
 share/gmdb/glade/macro_big.xpm
@@ -36,3 +42,5 @@ share/gnome/help/gmdb/C/figures/gmdb2_sql_window.png
 share/gnome/help/gmdb/C/figures/gmdb2_window.png
 share/gnome/help/gmdb/C/gmdb.xml
 share/gnome/help/gmdb/C/legal.xml
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
