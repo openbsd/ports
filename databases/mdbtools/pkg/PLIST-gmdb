@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-gmdb,v 1.1 2015/03/20 16:07:08 czarkoff Exp $
+@comment $OpenBSD: PLIST-gmdb,v 1.2 2015/03/20 16:27:28 ajacoutot Exp $
 @pkgpath databases/mdbtools/snapshot,-gmdb
 @bin bin/gmdb2
 include/gmdb.h
 @man man/man1/gmdb2.1
-share/applications/
 share/applications/gmdb2.desktop
 share/gmdb/
 share/gmdb/glade/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/20 16:07:08 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/20 16:27:28 ajacoutot Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -10,6 +10,8 @@ GH_TAGNAME =		0.7.1
 DISTNAME =		mdbtools-${GH_TAGNAME}
 PKGNAME-main =		mdbtools-${GH_TAGNAME}
 PKGNAME-gmdb =		gmdb-${GH_TAGNAME}
+REVISION-main =		0
+REVISION-gmdb =		0
 EPOCH =			0
 
 CATEGORIES =		databases converters
@@ -29,15 +31,16 @@ SHARED_LIBS +=  mdbodbcW             0.0
 # GPLv2+, LGPL v2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c glib-2.0 pthread
+WANTLIB-main += ${MODLIBICONV_WANTLIB}
+WANTLIB-main += c glib-2.0 iodbcinst pthread readline
 
-WANTLIB-main += ${WANTLIB} iodbcinst pcre readline
-
-WANTLIB-gmdb += ${WANTLIB} gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 gnome-2
+WANTLIB-gmdb += ${MODGETTEXT_WANTLIB}
+WANTLIB-gmdb += c gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 gnome-2
 WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 mdb mdbsql pango-1.0
+WANTLIB-gmdb += pthread
 
 MODULES =		gcc4 \
-			devel/gettext
+			converters/libiconv
 
 MODGCC4_ARCHS =		"*"
 
@@ -46,17 +49,17 @@ BUILD_DEPENDS =		devel/bison \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
-LIB_DEPENDS =		devel/glib2
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
+LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS} \
 			databases/iodbc,-main \
-			devel/pcre
-LIB_DEPENDS-gmdb =	${LIB_DEPENDS} \
+			devel/glib2
+LIB_DEPENDS-gmdb =	${MODGETTEXT_LIB_DEPENDS} \
 			databases/mdbtools,-main>=0.7.1v0 \
 			x11/gnome/libgnomeui
 
-RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
+RUN_DEPENDS-gmdb =	${MODGETTEXT_RUN_DEPENDS}
 
-CONFIGURE_ENV =		YACC="bison -y"
+YACC=			bison -y
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-iodbc=${LOCALBASE}
 
@@ -70,7 +73,7 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gmdb}
 .endif
 
 .if ${BUILD_PACKAGES:M-gmdb}
-MODULES +=		x11/gnome
+MODULES +=		devel/gettext x11/gnome
 MODGNOME_TOOLS +=	yelp desktop-file-utils
 .else
 CONFIGURE_ARGS +=	--disable-gmdb2
