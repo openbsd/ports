@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/03/26 14:12:27 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/03/20 12:07:41 sthen Exp $
 @pkgpath databases/iodbc
 @extraunexec rm -rf ${SYSCONFDIR}/iodbc/ODBCDataSources/*
 bin/iodbc-config
@@ -21,7 +21,6 @@ lib/libiodbc.la
 lib/libiodbcinst.a
 lib/libiodbcinst.la
 @lib lib/libiodbcinst.so.${LIBiodbcinst_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libiodbc.pc
 @man man/man1/iodbc-config.1
 @man man/man1/iodbctest.1
