@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:54 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2015/03/20 22:47:40 naddy Exp $
 ${P5ARCH}/
 ${P5ARCH}/BSD/
 ${P5ARCH}/BSD/arc4random.pm
+${P5ARCH}/BSD/arc4random.pm.orig
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/BSD/
 ${P5ARCH}/auto/BSD/arc4random/
-@comment ${P5ARCH}/auto/BSD/arc4random/arc4random.bs
+${P5ARCH}/auto/BSD/arc4random/arc4random.so
 @man man/man3p/BSD::arc4random.3p

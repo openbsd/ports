@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/06/14 23:24:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/20 22:47:40 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		roles which support overloading
 
 MODULES=		cpan
 DISTNAME=		MooseX-Role-WithOverloading-0.09
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>

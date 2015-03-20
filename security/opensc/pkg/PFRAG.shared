@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2014/08/13 11:22:39 dcoppa Exp $
-lib/pkcs11/onepin-opensc-pkcs11.so
-lib/pkcs11/opensc-pkcs11.so
-lib/pkcs11/pkcs11-spy.so

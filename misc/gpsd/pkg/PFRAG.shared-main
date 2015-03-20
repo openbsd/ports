@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2010/11/25 08:55:24 sebastia Exp $
-@lib lib/libgps.so.${LIBgps_VERSION}
-@lib lib/libgpsd.so.${LIBgpsd_VERSION}
-lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.so
-lib/python${MODPY_VERSION}/site-packages/gps/packet.so

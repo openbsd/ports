@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:21 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2015/03/20 22:47:41 naddy Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/Kakasi/
@@ -8,6 +7,6 @@ ${P5ARCH}/Text/Kakasi/JP.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Text/
 ${P5ARCH}/auto/Text/Kakasi/
-@comment ${P5ARCH}/auto/Text/Kakasi/Kakasi.bs
+${P5ARCH}/auto/Text/Kakasi/Kakasi.so
 @man man/man3p/Text::Kakasi.3p
 @man man/man3p/Text::Kakasi::JP.3p

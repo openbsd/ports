@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/09/17 21:19:06 jasper Exp $
-lib/ejabberd/priv/lib/ejabberd_zlib_drv.so
-lib/ejabberd/priv/lib/expat_erl.so
-lib/ejabberd/priv/lib/iconv_erl.so
-lib/ejabberd/priv/lib/stringprep_drv.so
-lib/ejabberd/priv/lib/tls_drv.so

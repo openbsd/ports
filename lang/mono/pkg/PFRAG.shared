@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2014/07/18 16:01:33 ajacoutot Exp $
-lib/libMonoPosixHelper.so
-lib/libMonoSupportW.so
-lib/libikvm-native.so

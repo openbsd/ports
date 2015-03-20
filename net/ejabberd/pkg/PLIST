@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/12/10 15:25:05 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/03/20 22:47:41 naddy Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
-%%SHARED%%
 lib/ejabberd/
 lib/ejabberd/ebin/
 lib/ejabberd/ebin/ELDAPv3.beam
@@ -189,7 +188,12 @@ lib/ejabberd/priv/bin/
 lib/ejabberd/priv/bin/captcha.sh
 @mode
 lib/ejabberd/priv/lib/
+lib/ejabberd/priv/lib/ejabberd_zlib_drv.so
+lib/ejabberd/priv/lib/expat_erl.so
+lib/ejabberd/priv/lib/iconv_erl.so
 lib/ejabberd/priv/lib/sha_drv.so
+lib/ejabberd/priv/lib/stringprep_drv.so
+lib/ejabberd/priv/lib/tls_drv.so
 lib/ejabberd/priv/msgs/
 lib/ejabberd/priv/msgs/ca.msg
 lib/ejabberd/priv/msgs/cs.msg
@@ -269,9 +273,9 @@ share/examples/ejabberd/transport-configs/init-scripts/jabber-gg-transport
 share/examples/ejabberd/transport-configs/init-scripts/jit
 share/examples/ejabberd/transport-configs/init-scripts/msn-transport
 share/examples/ejabberd/transport-configs/init-scripts/yahoo-transport-2
+@mode 0750
 @owner _ejabberd
 @group _ejabberd
-@mode 0750
 @sample /var/log/ejabberd/
 @sample /var/db/ejabberd/
 @sample /var/db/ejabberd/ejabberd/

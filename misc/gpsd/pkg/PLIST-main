@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2012/01/26 08:03:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/03/20 22:47:41 naddy Exp $
 @conflict gpsd-python-<=2.38p3
 @pkgpath misc/gpsd,-python
 @newuser _gpsd:551:dialer:daemon:GPS server:/nonexistent:/sbin/nologin
-%%SHARED%%
 @bin bin/cgps
 bin/gpscat
 @bin bin/gpsctl
@@ -19,8 +18,10 @@ include/gpsd_config.h
 include/libgpsmm.h
 lib/libgps.a
 lib/libgps.la
+@lib lib/libgps.so.${LIBgps_VERSION}
 lib/libgpsd.a
 lib/libgpsd.la
+@lib lib/libgpsd.so.${LIBgpsd_VERSION}
 lib/pkgconfig/libgps.pc
 lib/pkgconfig/libgpsd.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
@@ -29,12 +30,14 @@ lib/python${MODPY_VERSION}/site-packages/gps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gps/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gps/client.py
 lib/python${MODPY_VERSION}/site-packages/gps/client.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.so
 lib/python${MODPY_VERSION}/site-packages/gps/fake.py
 lib/python${MODPY_VERSION}/site-packages/gps/fake.pyc
 lib/python${MODPY_VERSION}/site-packages/gps/gps.py
 lib/python${MODPY_VERSION}/site-packages/gps/gps.pyc
 lib/python${MODPY_VERSION}/site-packages/gps/misc.py
 lib/python${MODPY_VERSION}/site-packages/gps/misc.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/packet.so
 lib/python${MODPY_VERSION}/site-packages/gpscap.py
 lib/python${MODPY_VERSION}/site-packages/gpscap.pyc
 lib/python${MODPY_VERSION}/site-packages/gpscap.pyo

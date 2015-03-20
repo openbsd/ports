@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/01/17 12:24:25 robert Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.19 2015/03/20 22:47:41 naddy Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -126,10 +125,13 @@ include/mono-2.0/mono/utils/mono-logger.h
 include/mono-2.0/mono/utils/mono-publib.h
 lib/libMonoPosixHelper.a
 lib/libMonoPosixHelper.la
+lib/libMonoPosixHelper.so
 lib/libMonoSupportW.a
 lib/libMonoSupportW.la
+lib/libMonoSupportW.so
 lib/libikvm-native.a
 lib/libikvm-native.la
+lib/libikvm-native.so
 lib/libmono-2.0.a
 lib/libmono-2.0.la
 @lib lib/libmono-2.0.so.${LIBmono-2.0_VERSION}

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/08/13 11:22:39 dcoppa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.8 2015/03/20 22:47:42 naddy Exp $
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
@@ -24,8 +23,11 @@ lib/libsmm-local.la
 @lib lib/libsmm-local.so.${LIBsmm-local_VERSION}
 lib/pkcs11/
 lib/pkcs11/onepin-opensc-pkcs11.la
+lib/pkcs11/onepin-opensc-pkcs11.so
 lib/pkcs11/opensc-pkcs11.la
+lib/pkcs11/opensc-pkcs11.so
 lib/pkcs11/pkcs11-spy.la
+lib/pkcs11/pkcs11-spy.so
 lib/pkgconfig/libopensc.pc
 @man man/man1/cardos-tool.1
 @man man/man1/cryptoflex-tool.1

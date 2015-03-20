@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/02 11:35:42 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2015/03/20 22:47:42 naddy Exp $
 bin/rdiff-backup
 bin/rdiff-backup-statistics
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup/C.so
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/FilenameMapping.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/FilenameMapping.pyc
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/Globals.py
@@ -24,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiff_backup/Time.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/Time.pyc
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup/_librsync.so
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/backup.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/backup.pyc
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/compare.py

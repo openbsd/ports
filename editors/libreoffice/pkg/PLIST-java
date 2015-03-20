@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.13 2014/10/10 17:13:10 robert Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-java,v 1.14 2015/03/20 22:47:41 naddy Exp $
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
 lib/libreoffice/program/classes/ScriptProviderForBeanShell.jar
@@ -33,6 +32,9 @@ lib/libreoffice/program/classes/smoketest.jar
 lib/libreoffice/program/classes/table.jar
 lib/libreoffice/program/classes/unoil.jar
 lib/libreoffice/program/classes/xmerge.jar
+lib/libreoffice/program/libhsqldb.so
+lib/libreoffice/program/libjdbclo.so
+lib/libreoffice/program/libofficebean.so
 lib/libreoffice/program/services/scriptproviderforbeanshell.rdb
 lib/libreoffice/program/services/scriptproviderforjavascript.rdb
 lib/libreoffice/share/Scripts/beanshell/
@@ -173,6 +175,13 @@ lib/libreoffice/share/registry/reportbuilder.xcd
 lib/libreoffice/share/template/common/wizard/report/default.otr
 @bin lib/libreoffice/ure/bin/javaldx
 lib/libreoffice/ure/lib/JREProperties.class
+lib/libreoffice/ure/lib/libjava_uno.so
+lib/libreoffice/ure/lib/libjavaloaderlo.so
+lib/libreoffice/ure/lib/libjavavmlo.so
+lib/libreoffice/ure/lib/libjpipe.so
+lib/libreoffice/ure/lib/libjuh.so
+lib/libreoffice/ure/lib/libjuhx.so
+lib/libreoffice/ure/lib/libsunjavapluginlo.so
 lib/libreoffice/ure/share/java/
 lib/libreoffice/ure/share/java/java_uno.jar
 lib/libreoffice/ure/share/java/juh.jar
