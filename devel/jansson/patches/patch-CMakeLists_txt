@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/20 13:28:23 kirby Exp $
+--- CMakeLists.txt.orig	Thu Mar 19 15:35:52 2015
++++ CMakeLists.txt	Thu Mar 19 15:37:45 2015
+@@ -605,7 +605,7 @@ file(RELATIVE_PATH 
+ # so that the include dirs are given relative to where the 
+ # config file is located.
+ set(JANSSON__INCLUDE_DIRS 
+-    "\${JANSSON_CMAKE_DIR}/${REL_INCLUDE_DIR}") 
++    "${CMAKE_INSTALL_PREFIX}/include") 
+ configure_file(${PROJECT_SOURCE_DIR}/cmake/JanssonConfig.cmake.in
+                 ${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/JanssonConfig.cmake 
+                 @ONLY)
