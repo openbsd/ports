@@ -1,13 +1,13 @@
-$OpenBSD: patch-dodo_py,v 1.8 2014/11/08 15:52:03 bcallah Exp $
+$OpenBSD: patch-dodo_py,v 1.9 2015/03/20 04:26:56 bcallah Exp $
 
 glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
 
---- dodo.py.orig	Fri Nov  7 04:49:33 2014
-+++ dodo.py	Sat Nov  8 10:08:43 2014
-@@ -88,13 +88,12 @@ def task_pkg_flags():
- 
+--- dodo.py.orig	Sat Mar 14 17:09:16 2015
++++ dodo.py	Sat Mar 14 17:10:23 2015
+@@ -89,13 +89,12 @@ def task_pkg_flags():
  
  valac_options = [
+ 	'--thread',
 -	'--enable-experimental-non-null',
  	'--enable-experimental',
  	'--target-glib=2.34', # see bug 0000004
@@ -19,7 +19,7 @@ glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from null
  def task_libbirdxml():
  
      if config.POSIXVALA == True:
-@@ -107,7 +106,7 @@ def task_libbirdxml():
+@@ -108,7 +107,7 @@ def task_libbirdxml():
      yield libbirdxml.gen_ln()
      
  

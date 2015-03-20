@@ -1,7 +1,7 @@
-$OpenBSD: patch-install_py,v 1.5 2014/10/09 17:40:00 bcallah Exp $
---- install.py.orig	Sun Oct  5 16:26:44 2014
-+++ install.py	Tue Oct  7 19:41:33 2014
-@@ -122,10 +122,8 @@ if os.path.isfile ('build/bin/libbirdfont.so.' + versi
+$OpenBSD: patch-install_py,v 1.6 2015/03/20 04:26:56 bcallah Exp $
+--- install.py.orig	Sat Mar  7 09:32:47 2015
++++ install.py	Sat Mar  7 11:32:04 2015
+@@ -125,10 +125,8 @@ if os.path.isfile ('build/bin/libbirdfont.so.' + versi
  	install ('build/bin/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
  	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
  	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
@@ -14,7 +14,7 @@ $OpenBSD: patch-install_py,v 1.5 2014/10/09 17:40:00 bcallah Exp $
  elif os.path.isfile ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib'):
  	install ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib', libdir, 644)
  	link (libdir, 'libbirdfont.' + version.SO_VERSION + '.dylib', ' libbirdfont.dylib.' + version.SO_VERSION_MAJOR)
-@@ -139,10 +137,8 @@ if os.path.isfile ('build/bin/libbirdxml.so.' + versio
+@@ -142,10 +140,8 @@ if os.path.isfile ('build/bin/libbirdxml.so.' + versio
          install ('build/bin/libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION, libdir, 644)
          link (libdir, 'libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION, ' libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION_MAJOR)
          link (libdir, 'libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION, ' libbirdxml.so')
