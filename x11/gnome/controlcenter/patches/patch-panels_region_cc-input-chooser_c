@@ -1,13 +1,13 @@
-$OpenBSD: patch-panels_region_cc-input-chooser_c,v 1.4 2014/11/13 17:32:17 ajacoutot Exp $
+$OpenBSD: patch-panels_region_cc-input-chooser_c,v 1.5 2015/03/20 15:52:03 ajacoutot Exp $
 
 From 880f9f147531e0b21b2566ff96c905dd19ec19dd Mon Sep 17 00:00:00 2001
 From: Rui Matos <tiagomatos@gmail.com>
 Date: Mon, 20 Jan 2014 22:42:56 +0100
 Subject: Use 'UTF-8' instead of 'utf8' as locale codeset suffix
 
---- panels/region/cc-input-chooser.c.orig	Tue Nov 11 17:17:51 2014
-+++ panels/region/cc-input-chooser.c	Wed Nov 12 10:00:36 2014
-@@ -897,7 +897,7 @@ get_ibus_locale_infos (GtkWidget *chooser)
+--- panels/region/cc-input-chooser.c.orig	Thu Mar 19 19:36:58 2015
++++ panels/region/cc-input-chooser.c	Fri Mar 20 16:30:33 2015
+@@ -898,7 +898,7 @@ get_ibus_locale_infos (GtkWidget *chooser)
            lang_code != NULL &&
            country_code != NULL)
          {
@@ -16,7 +16,7 @@ Subject: Use 'UTF-8' instead of 'utf8' as locale codeset suffix
  
            info = g_hash_table_lookup (priv->locales, locale);
            if (info)
-@@ -1023,9 +1023,9 @@ get_locale_infos (GtkWidget *chooser)
+@@ -1024,9 +1024,9 @@ get_locale_infos (GtkWidget *chooser)
          continue;
  
        if (country_code != NULL)
