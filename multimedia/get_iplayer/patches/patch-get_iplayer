@@ -1,6 +1,12 @@
-$OpenBSD: patch-get_iplayer,v 1.69 2015/03/14 20:45:42 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.70 2015/03/20 14:50:16 sthen Exp $
 --- get_iplayer.orig	Fri Mar 13 19:14:58 2015
-+++ get_iplayer	Sat Mar 14 20:44:59 2015
++++ get_iplayer	Fri Mar 20 14:49:50 2015
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ #
+ # get_iplayer - Lists, Records and Streams BBC iPlayer TV and Radio programmes + other Programmes via 3rd-party plugins
+ #
 @@ -388,6 +388,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
  }
  
