@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/22 15:31:46 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.17 2015/03/20 14:09:01 gonzalo Exp $
 
 COMMENT=		SSH monitoring
 
-DISTNAME=		autossh-1.4d
+DISTNAME=		autossh-1.4e
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${HOMEPAGE}
