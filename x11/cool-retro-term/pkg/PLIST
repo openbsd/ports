@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/21 19:14:40 bcallah Exp $
+@bin bin/cool-retro-term
+lib/qt5/
+lib/qt5/qml/
+lib/qt5/qml/QMLTermWidget/
+lib/qt5/qml/QMLTermWidget/QMLTermScrollbar.qml
+lib/qt5/qml/QMLTermWidget/color-schemes/
+lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnLightYellow.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnRandomLight.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnWhite.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/DarkPastels.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/GreenOnBlack.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/Linux.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/WhiteOnBlack.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/color-schemes.qrc
+lib/qt5/qml/QMLTermWidget/color-schemes/cool-retro-term.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/BlackOnLightColor.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/DarkPicture.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/Example.Schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/GreenOnBlack.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/GreenTint.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/GreenTint_MC.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/LightPicture.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/Linux.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/README.Schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/README.default.Schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/Transparent.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/Transparent_MC.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/Transparent_darkbg.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/Transparent_lightbg.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/XTerm.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/syscolor.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/historic/vim.schema
+lib/qt5/qml/QMLTermWidget/kb-layouts/
+lib/qt5/qml/QMLTermWidget/kb-layouts/README
+lib/qt5/qml/QMLTermWidget/kb-layouts/default.keytab
+lib/qt5/qml/QMLTermWidget/kb-layouts/historic/
+lib/qt5/qml/QMLTermWidget/kb-layouts/historic/vt100.keytab
+lib/qt5/qml/QMLTermWidget/kb-layouts/historic/x11r5.keytab
+lib/qt5/qml/QMLTermWidget/kb-layouts/kb-layouts.qrc
+lib/qt5/qml/QMLTermWidget/kb-layouts/linux.keytab
+lib/qt5/qml/QMLTermWidget/kb-layouts/macbook.keytab
+lib/qt5/qml/QMLTermWidget/kb-layouts/solaris.keytab
+lib/qt5/qml/QMLTermWidget/kb-layouts/vt420pc.keytab
+lib/qt5/qml/QMLTermWidget/libqmltermwidget.so
+lib/qt5/qml/QMLTermWidget/qmldir
+share/applications/cool-retro-term.desktop
+share/icons/hicolor/128x128/apps/cool-retro-term.png
+share/icons/hicolor/256x256/apps/cool-retro-term.png
+share/icons/hicolor/32x32/apps/cool-retro-term.png
+share/icons/hicolor/64x64/apps/cool-retro-term.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
