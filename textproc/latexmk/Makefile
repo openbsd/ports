@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/21 13:52:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/21 13:54:17 ajacoutot Exp $
 
 COMMENT=	LaTeX documents output generation automation tool
 
 DISTNAME=	latexmk-443a
 EXTRACT_SUFX=	.zip
+REVISION=	0
 
 CATEGORIES=	textproc print
 
