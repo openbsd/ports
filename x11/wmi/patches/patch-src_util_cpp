@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_util_cpp,v 1.1 2015/03/21 19:43:35 jca Exp $
+$OpenBSD: patch-src_util_cpp,v 1.2 2015/03/21 19:47:36 jca Exp $
+
+find_first_of returns npos, which is a size_t.
+
 --- src/util.cpp.orig	Mon Sep 27 20:22:51 2004
 +++ src/util.cpp	Tue Feb 24 02:28:48 2015
 @@ -10,6 +10,7 @@ extern "C" {

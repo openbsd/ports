@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_draw_cpp,v 1.1 2015/03/21 19:43:35 jca Exp $
+$OpenBSD: patch-src_draw_cpp,v 1.2 2015/03/21 19:47:36 jca Exp $
+
+Fix buffer overrun.
+
 --- src/draw.cpp.orig	Tue Jan 20 13:58:35 2015
 +++ src/draw.cpp	Tue Jan 20 13:58:54 2015
 @@ -235,7 +235,7 @@ void Draw::drawInputModeButton(Window window, GC gc, R
