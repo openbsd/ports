@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/21 19:14:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/21 19:54:08 ajacoutot Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 DISTNAME =	cool-retro-term-1.0.0
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://github.com/Swordfish90/cool-retro-term
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
