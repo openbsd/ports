@@ -1,10 +1,10 @@
-$OpenBSD: patch-ext_odbc_config_m4,v 1.1 2014/11/15 13:43:01 robert Exp $
+$OpenBSD: patch-ext_odbc_config_m4,v 1.2 2015/03/21 22:33:01 sthen Exp $
 
 don't link php binary with iodbc
 
---- ext/odbc/config.m4.orig.port	Fri Sep 20 15:48:07 2013
-+++ ext/odbc/config.m4	Fri Sep 20 15:48:28 2013
-@@ -373,7 +373,6 @@ PHP_ARG_WITH(iodbc,,
+--- ext/odbc/config.m4.orig.port	Thu Mar 19 00:19:30 2015
++++ ext/odbc/config.m4	Fri Mar 20 14:18:19 2015
+@@ -378,7 +378,6 @@ PHP_ARG_WITH(iodbc,,
        AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
      fi 
      if test -x "$PKG_CONFIG" && $PKG_CONFIG --exists libiodbc ; then
