@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/09 22:17:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/21 13:52:13 ajacoutot Exp $
 
 COMMENT=	LaTeX documents output generation automation tool
 
-DISTNAME=	latexmk-439
+DISTNAME=	latexmk-443a
 EXTRACT_SUFX=	.zip
 
 CATEGORIES=	textproc print
@@ -16,7 +16,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 RUN_DEPENDS=	print/texlive/base
 
-WRKDIST=	${WRKDIR}
+WRKDIST=	${WRKDIR}/latexmk
 NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*

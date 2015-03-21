@@ -1,7 +1,7 @@
-$OpenBSD: patch-latexmk_pl,v 1.2 2014/03/09 22:17:03 ajacoutot Exp $
---- latexmk.pl.orig	Sun Nov 10 19:07:12 2013
-+++ latexmk.pl	Sun Mar  2 10:37:59 2014
-@@ -958,6 +958,9 @@ else {
+$OpenBSD: patch-latexmk_pl,v 1.3 2015/03/21 13:52:13 ajacoutot Exp $
+--- latexmk.pl.orig	Thu Feb  5 23:00:49 2015
++++ latexmk.pl	Sat Mar 21 14:50:51 2015
+@@ -1053,6 +1053,9 @@ else {
          $lpr_pdf  = 'lpr %O %S';
          $pscmd = "ps -ww -u $ENV{USER}"; 
      }
