@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2015/03/21 21:26:50 naddy Exp $
 
 COMMENT=	text editor
 
 DISTNAME=	jed-0.99-19
 PKGNAME=	jed-0.99.19
-REVISION=	0
+REVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v0.99/ \
@@ -26,7 +26,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 FLAVORS=	no_x11
 FLAVOR?=
-USE_GROFF =	Yes
 
 .if ${FLAVOR} == "no_x11"
 ALL_TARGET=	all getmail

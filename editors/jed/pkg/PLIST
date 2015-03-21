@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/09/13 07:36:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/03/21 21:26:50 naddy Exp $
 @bin bin/jed
 bin/jed-script
 lib/jed/
@@ -180,7 +180,7 @@ lib/jed/lib/wordstar.sl
 lib/jed/lib/xformreg.sl
 lib/jed/lib/yankpop.sl
 @man man/man1/jed.1
-@man man/man1/rgrep.1
+@comment @man man/man1/rgrep.1
 share/doc/jed/
 share/doc/jed/README
 share/doc/jed/hlp/
