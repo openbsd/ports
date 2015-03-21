@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/11 20:39:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2015/03/21 21:28:27 naddy Exp $
 
 COMMENT=	John Horton Conway's Game of Life
 
 DISTNAME=	xlife-5.3
-REVISION =	4
+REVISION =	5
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.catb.org/~esr/software.html
@@ -21,7 +21,6 @@ MAKE_FLAGS=XLIFEPATSDIR=${PREFIX}/share/xlife
 FAKE_FLAGS=XLIFEPATSDIR=${TRUEPREFIX}/share/xlife
 
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 post-build:
 	cd ${WRKDIST}/lifesrc-3.5 && ${MAKE} CFLAGS="${CFLAGS}"

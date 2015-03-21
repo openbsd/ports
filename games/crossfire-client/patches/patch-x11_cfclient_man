@@ -1,0 +1,12 @@
+$OpenBSD: patch-x11_cfclient_man,v 1.1 2015/03/21 21:28:27 naddy Exp $
+--- x11/cfclient.man.orig	Tue Jan 29 08:29:06 2008
++++ x11/cfclient.man	Sat Mar 21 21:53:18 2015
+@@ -226,7 +226,7 @@ CPU intensive, but is generally harder to read.
+ .B bind unbind
+ bind is used to add new keybindings.  Do you want to be able to press
+ one key to cast a fireball?  This is what the bind command does.
+-'help bind gives much more detailed information.  Once a command
++\&'help bind gives much more detailed information.  Once a command
+ is bound, it is stored in ~/.crossfire/keys and will be used in future
+ plays.
+ .TP

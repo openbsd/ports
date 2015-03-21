@@ -1,7 +1,7 @@
-$OpenBSD: patch-xlife_save_c,v 1.1 2000/12/16 15:39:33 espie Exp $
---- xlife/save.c.orig	Thu Dec 14 03:51:52 2000
-+++ xlife/save.c	Thu Dec 14 03:52:10 2000
-@@ -753,7 +753,7 @@ static void *get_list_of_sorted_cellbox_
+$OpenBSD: patch-xlife_save_c,v 1.2 2015/03/21 21:28:27 naddy Exp $
+--- xlife/save.c.orig	Sat Feb 28 21:35:54 1998
++++ xlife/save.c	Sat Mar 21 02:52:49 2015
+@@ -753,7 +753,7 @@ static void *get_list_of_sorted_cellbox_ptr(pattern *c
      } 
      ctr /= 3;
      if (ctr>0)

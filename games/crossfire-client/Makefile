@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2013/08/09 19:04:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2015/03/21 21:28:27 naddy Exp $
 
 COMMENT=	graphical networked AD&D style game
 
 VERSION=	1.11.0
 DISTNAME=	crossfire-client-${VERSION}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -32,8 +32,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 		devel/sdl-image \
 		graphics/freeglut \
 		net/curl
-
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

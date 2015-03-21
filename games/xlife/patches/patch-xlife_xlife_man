@@ -1,7 +1,7 @@
-$OpenBSD: patch-xlife_xlife_man,v 1.1 2000/12/16 15:39:33 espie Exp $
---- xlife/xlife.man.orig	Thu Dec 14 04:19:03 2000
-+++ xlife/xlife.man	Thu Dec 14 04:19:14 2000
-@@ -191,7 +191,7 @@ default) all live cells are displayed no
+$OpenBSD: patch-xlife_xlife_man,v 1.2 2015/03/21 21:28:27 naddy Exp $
+--- xlife/xlife.man.orig	Wed Jan 28 23:43:03 1998
++++ xlife/xlife.man	Sat Mar 21 22:07:03 2015
+@@ -191,7 +191,7 @@ default) all live cells are displayed normally.  In di
  cells changed from the previous generation are shown (whether alive or dead).
  Your display mode is reset to zero by the `l' command or by selecting a
  tentative battern.
@@ -10,3 +10,26 @@ $OpenBSD: patch-xlife_xlife_man,v 1.1 2000/12/16 15:39:33 espie Exp $
  Change tentative-display mode.  By default the tentative-pattern cells are
  displayed in normal state colors but with a bounding box.  In the alternate
  (`wireframe') mode, tentative-pattern cells are displayed as open rectangles
+@@ -254,7 +254,7 @@ Force tentative pattern to be incorporated into main p
+ .IP \fBW\fR 10 
+ Write (and flush from memory) script of loaded patterns into a file with `.l'
+ extension. The origin of the written pattern will be the mouse position when
+-'W' is typed.  Also save to the file any comments created via 'A', and clear
++`W' is typed.  Also save to the file any comments created via `A', and clear
+ the internal comment area.
+ .IP \fBD\fR 10 
+ Discard the current load script, including any tentative pattern, but leave the
+@@ -789,11 +789,11 @@ may be prevented by using the `D' command \fBafter\fR 
+ incorporated into the universe.  The effects of having the template written
+ to the load script are non-fatal, and may be corrected with a text editor.
+ However, it is best to get in the habit of typing `I' (include pattern),
+-'D' (discard load script) immediately upon loading a template.
++`D' (discard load script) immediately upon loading a template.
+ 
+ The mirror in ex.l is already given in a structured way, but it will suffice
+ to illustrate the technique.  To place the template, load ex:mirror, and type
+-'I' and `D' as mentioned above.  Now, load in succession two eaters (ex:eater)
++`I' and `D' as mentioned above.  Now, load in succession two eaters (ex:eater)
+ and the oscillator (ex:oscil) and place each pattern over the corresponding
+ part of the old image.  Use `W' to write the load script.
+ 

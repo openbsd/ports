@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2015/03/21 21:28:27 naddy Exp $
 
 COMMENT =	easy to use, graphical editor
 
 DISTNAME =	cooledit-3.17.17
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	editors
 
@@ -30,7 +30,6 @@ CONFIGURE_ENV +=NOPYTHON=Yes
 .endif
 
 MODULES +=	devel/gettext
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV += XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"

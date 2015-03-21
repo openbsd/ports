@@ -1,0 +1,23 @@
+$OpenBSD: patch-calc_man,v 1.1 2015/03/21 21:28:27 naddy Exp $
+--- calc.man.orig	Sat Jan 18 22:19:31 2003
++++ calc.man	Sat Mar 21 22:15:24 2015
+@@ -437,7 +437,7 @@ may have to be replaced by:
+ .sp 1
+ .in +5n
+ .nf
+-print 27! ^2	or	print 27\!^2
++print 27! ^2	or	print 27\e!^2
+ .fi
+ .in -5n
+ 
+@@ -510,8 +510,8 @@ searches in succession:
+ .sp 1
+ .in +5n
+ .nf
+-./myfile
+-./myfile.cal
++\&./myfile
++\&./myfile.cal
+ ${LIBDIR}/myfile
+ ${LIBDIR}/myfile.cal
+ ${CUSTOMCALDIR}/myfile

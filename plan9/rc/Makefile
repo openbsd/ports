@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/08/09 23:17:56 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/21 21:28:27 naddy Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-history
 FLAVORS=	readline editline
 FLAVOR?=
 
-USE_GROFF =	Yes
 TEST_TARGET= trip
 
 .if defined(WITH_READLINE) && ${WITH_READLINE:U} == YES
