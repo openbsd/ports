@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.19 2015/03/18 19:26:29 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Tue Mar 10 23:41:39 2015
-+++ chrome/app/chrome_main_delegate.cc	Wed Mar 11 07:22:50 2015
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.20 2015/03/21 14:11:19 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig.port	Fri Mar 20 04:21:21 2015
++++ chrome/app/chrome_main_delegate.cc	Sat Mar 21 11:55:17 2015
 @@ -98,11 +98,11 @@
  #include "ui/base/x/x11_util.h"
  #endif
@@ -51,7 +51,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.19 2015/03/18 19:26:29 ro
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -651,7 +651,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -658,7 +658,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.19 2015/03/18 19:26:29 ro
    crash_reporter::SetCrashReporterClient(g_chrome_crash_client.Pointer());
  #endif
  
-@@ -778,7 +778,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -785,7 +785,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  #endif
    }
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.19 2015/03/18 19:26:29 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -901,7 +901,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -908,7 +908,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
  #endif
    return process_type == switches::kRelauncherProcess;
  }
