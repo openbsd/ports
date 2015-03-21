@@ -1,13 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: godoc.rc,v 1.1.1.1 2015/03/21 18:05:12 czarkoff Exp $
+# $OpenBSD: godoc.rc,v 1.2 2015/03/21 19:44:36 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/godoc"
 daemon_flags="-http=localhost:6060 -v=true"
 daemon_user=www
-rc_bg=YES
-rc_reload=NO
 
 . /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
 
 rc_cmd $1

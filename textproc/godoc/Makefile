@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/21 18:05:12 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/21 19:44:36 ajacoutot Exp $
 
 COMMENT =		go documentation tool
 V =			1.4
@@ -6,6 +6,7 @@ DISTNAME =		gotools-${V}
 PKGNAME =		godoc-${V}
 CATEGORIES =		textproc devel
 HOMEPAGE =		http://golang.org/
+REVISION =		0
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
