@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2015/03/19 15:11:53 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.437 2015/03/21 19:26:09 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -39,6 +39,7 @@
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnuvd
+     SUBDIR += godoc
      SUBDIR += gonzui
      SUBDIR += gpresent
      SUBDIR += grepcidr
