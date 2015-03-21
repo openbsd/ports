@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_util_cpp,v 1.1 2015/03/21 19:43:35 jca Exp $
+--- src/util.cpp.orig	Mon Sep 27 20:22:51 2004
++++ src/util.cpp	Tue Feb 24 02:28:48 2015
+@@ -10,6 +10,7 @@ extern "C" {
+ 
+ #include <sstream>
+ #include <iostream>
++#include <cstddef>
+ 
+ #include "util.h"
+ 
+@@ -59,7 +60,7 @@ string Util::truncate(string str, char c) {
+ 
+ string Util::canonicalDir(string path) {
+     string dir = canonicalPath(path);
+-    unsigned int pos = 0;
++    size_t pos = 0;
+ 
+     pos = dir.find_last_of('/');
+     if (pos != string::npos) {
+@@ -123,7 +124,7 @@ string Util::encodeEscapes(string str) {
+ string Util::lastToken(string str, char delim) {
+ 
+     string result = "";
+-    unsigned int pos = str.find_last_of(delim);
++    size_t pos = str.find_last_of(delim);
+ 
+     if (pos != string::npos) {
+         result = str.substr(pos + 1, str.length() - pos);
+@@ -381,7 +382,7 @@ string Util::shortenString(string str, unsigned int n)
+ 
+ set<string> Util::stringSplit(string s, string delimiter){
+     set<string> res;
+-    unsigned int pos = 0;
++    size_t pos = 0;
+     while (pos != string::npos){
+         pos = s.find_first_of(delimiter);
+         res.insert(s.substr(0, pos));

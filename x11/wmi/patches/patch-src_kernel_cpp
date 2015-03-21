@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_kernel_cpp,v 1.1 2015/03/21 19:43:35 jca Exp $
+--- src/kernel.cpp.orig	Tue Feb 24 12:35:42 2015
++++ src/kernel.cpp	Tue Feb 24 12:36:09 2015
+@@ -832,7 +832,7 @@ void Kernel::handlePropertyNotify(XPropertyEvent *even
+                     Atoms::WMI_ACTIONCMD, &actionCmd))
+         {
+             string bind, arg;
+-            unsigned int pos = actionCmd.find_first_of('+');
++            size_t pos = actionCmd.find_first_of('+');
+             if (pos != string::npos) {
+                 bind = actionCmd.substr(0, pos);
+                 arg = actionCmd.substr(pos + 1);
