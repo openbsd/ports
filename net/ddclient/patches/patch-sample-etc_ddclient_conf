@@ -1,0 +1,12 @@
+$OpenBSD: patch-sample-etc_ddclient_conf,v 1.1 2015/03/22 08:30:20 pascal Exp $
+--- sample-etc_ddclient.conf.orig	Tue Nov 25 14:37:20 2014
++++ sample-etc_ddclient.conf	Tue Nov 25 14:37:49 2014
+@@ -22,7 +22,7 @@ daemon=300				# check every 300 seconds
+ syslog=yes				# log update msgs to syslog
+ mail=root				# mail all msgs to root
+ mail-failure=root			# mail failed update msgs to root
+-pid=/var/run/ddclient.pid		# record PID in file.
++pid=/var/run/ddclient/ddclient.pid	# record PID in file.
+ ssl=yes					# use ssl-support.  Works with
+ 					# ssl-library
+ # postscript=script			# run script after updating.  The

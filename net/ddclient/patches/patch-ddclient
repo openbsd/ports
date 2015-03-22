@@ -1,0 +1,20 @@
+$OpenBSD: patch-ddclient,v 1.1 2015/03/22 08:30:20 pascal Exp $
+--- ddclient.orig	Tue Nov 25 15:02:26 2014
++++ ddclient	Tue Nov 25 15:03:18 2014
+@@ -997,16 +997,6 @@ sub _read_config {
+ 	# fatal("Cannot open file '%s'. ($!)", $file);
+ 	warning("Cannot open file '%s'. ($!)", $file);
+     }
+-    # Check for only owner has any access to config file
+-    my ($dev, $ino, $mode, @statrest) = stat(FD);
+-    if ($mode & 077) {                          
+-	if (-f FD && (chmod 0600, $file)) {
+-	    warning("file $file must be accessible only by its owner (fixed).");
+-	} else {
+-	    # fatal("file $file must be accessible only by its owner.");
+-	    warning("file $file must be accessible only by its owner.");
+-	}
+-    }
+ 
+     local $lineno       = 0;
+     my    $continuation = '';
