@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.346 2015/01/10 17:35:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.347 2015/03/22 06:34:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -208,7 +208,6 @@
      SUBDIR += quodlibet
      SUBDIR += radiotray
      SUBDIR += rhythmbox
-     SUBDIR += rioutil
      SUBDIR += rplay
      SUBDIR += rsynth
      SUBDIR += rtunes
