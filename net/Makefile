@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.891 2015/03/18 08:40:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.892 2015/03/22 22:48:26 jturner Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -312,6 +312,7 @@
      SUBDIR += p5-IO-Socket-Timeout
      SUBDIR += p5-IP-Country
      SUBDIR += p5-IRC-Utils
+     SUBDIR += p5-Net-Abuse-Utils-Spamhaus
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP
      SUBDIR += p5-Net-CIDR
