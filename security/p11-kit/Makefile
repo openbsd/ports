@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/10/12 06:16:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2015/03/22 07:39:48 ajacoutot Exp $
 
 PORTROACH=	limitw:1,even
 
@@ -7,6 +7,7 @@ SHARED_ONLY=	Yes
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
 DISTNAME=	p11-kit-0.22.1
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -41,6 +42,8 @@ CONFIGURE_ARGS += --disable-nls
 FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 
 post-install:
+# see the install-exec-hook target in p11-kit/Makefile.am
+	ln -sf libp11-kit.so.${LIBp11-kit_VERSION} ${PREFIX}/lib/p11-kit-proxy.so
 	rm ${PREFIX}/lib/pkcs11/*.{a,la}
 
 .include <bsd.port.mk>
