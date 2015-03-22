@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.244 2015/02/14 11:11:16 sthen Exp $
+$OpenBSD: user.list,v 1.245 2015/03/22 08:25:56 pascal Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -258,3 +258,4 @@ id  user		group		port options
 747 _mfi		_mfi		net/mfi
 748 _elasticsearch	_elasticsearch	textproc/elasticsearch
 749 _ocserv		_ocserv		net/ocserv
+750 _ddclient		_ddclient	net/ddclient
