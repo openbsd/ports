@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/16 21:39:31 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/22 15:10:46 bcallah Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander like file manager for X
-DISTNAME =	worker-3.6.1
+DISTNAME =	worker-3.6.2
 CATEGORIES =	x11
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
