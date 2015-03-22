@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/20 04:26:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.19 2015/03/22 05:05:17 bcallah Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-2.3.0
+DISTNAME =	birdfont-2.3.1
 CATEGORIES =	graphics print
 
 # Both libs must have the same SO number!
 # See scripts/bavala.py (or patches/patch-scripts_bavala_py)
-SHARED_LIBS +=	birdfont			8.0 # 2.3.0
-SHARED_LIBS +=	birdxml				8.0 # 2.3.0
+SHARED_LIBS +=	birdfont			9.0 # 2.3.1
+SHARED_LIBS +=	birdxml				9.0 # 2.3.1
 
 HOMEPAGE =	http://birdfont.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
