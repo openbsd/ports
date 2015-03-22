@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/02/17 07:09:47 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/03/22 20:54:08 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -160,6 +160,7 @@ lib/seed7/lib/scanstri.s7i
 lib/seed7/lib/seed7_05.s7i
 lib/seed7/lib/set.s7i
 lib/seed7/lib/shell.s7i
+lib/seed7/lib/smtp.s7i
 lib/seed7/lib/sockbase.s7i
 lib/seed7/lib/socket.s7i
 lib/seed7/lib/sokoban1.s7i
@@ -235,6 +236,7 @@ share/examples/seed7/celsius.sd7
 share/examples/seed7/chk_all.sd7
 share/examples/seed7/chkbig.sd7
 share/examples/seed7/chkbool.sd7
+share/examples/seed7/chkchr.sd7
 share/examples/seed7/chkcmd.sd7
 share/examples/seed7/chkdb.sd7
 share/examples/seed7/chkexc.sd7
