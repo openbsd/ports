@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/10/12 20:57:06 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/03/23 11:06:39 czarkoff Exp $
 bin/dul-receive-pack
 bin/dul-upload-pack
-bin/dul-web
 bin/dulwich
 lib/python${MODPY_VERSION}/site-packages/dulwich/
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -11,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/_compat.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/_diff_tree.c
 lib/python${MODPY_VERSION}/site-packages/dulwich/_diff_tree.so
 lib/python${MODPY_VERSION}/site-packages/dulwich/_objects.c
@@ -306,3 +307,13 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/walk.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/walk.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/web.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/web.pyc
+share/doc/dulwich/
+share/doc/dulwich/tutorial/
+share/doc/dulwich/tutorial/conclusion.txt
+share/doc/dulwich/tutorial/file-format.txt
+share/doc/dulwich/tutorial/index.txt
+share/doc/dulwich/tutorial/introduction.txt
+share/doc/dulwich/tutorial/object-store.txt
+share/doc/dulwich/tutorial/remote.txt
+share/doc/dulwich/tutorial/repo.txt
+share/doc/dulwich/tutorial/tag.txt
