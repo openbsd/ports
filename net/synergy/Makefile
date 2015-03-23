@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/03 04:59:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.27 2015/03/23 19:05:48 bcallah Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
 DISTNAME=		synergy-${GH_TAGNAME}
+REVISION=		0
 CATEGORIES=		net x11
 
 GH_ACCOUNT=		synergy
@@ -11,7 +12,6 @@ GH_TAGNAME=		1.6.2
 GH_COMMIT=		ebba77fd33f4c9ab347fe72ff6f530eff08297b7
 
 HOMEPAGE=		http://synergy-foss.org/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
