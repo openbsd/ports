@@ -1,0 +1,11 @@
+$OpenBSD: patch-thirdparty_qzip_qzip_cpp,v 1.1 2015/03/23 19:08:52 bcallah Exp $
+--- thirdparty/qzip/qzip.cpp.orig	Tue Dec 23 13:24:28 2014
++++ thirdparty/qzip/qzip.cpp	Tue Dec 23 13:25:07 2014
+@@ -46,6 +46,7 @@
+ #include "qzipwriter_p.h"
+ 
+ #include <zlib.h>
++#include <sys/stat.h>
+ 
+ #if defined(Q_OS_WIN) or defined(Q_OS_ANDROID)
+ #  undef S_IFREG

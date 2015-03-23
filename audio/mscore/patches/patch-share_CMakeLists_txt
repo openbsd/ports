@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_CMakeLists_txt,v 1.1 2015/03/23 19:08:52 bcallah Exp $
+
+The qm files that are supposed to be generated from the locale directory are
+never generated. They're not mandatory so let's just skip them for now...
+
+--- share/CMakeLists.txt.orig	Sat Mar 21 17:32:01 2015
++++ share/CMakeLists.txt	Sat Mar 21 17:32:07 2015
+@@ -18,7 +18,7 @@
+ #  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ #=============================================================================
+ 
+-subdirs(templates wallpaper locale styles sound manual
++subdirs(templates wallpaper styles sound manual
+    workspaces instruments)
+ 
+ install (DIRECTORY
