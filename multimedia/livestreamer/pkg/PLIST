@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/03/14 21:01:28 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/03/23 16:09:39 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -137,6 +137,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/goodgame.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/goodgame.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hitbox.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hitbox.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/itvplayer.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/itvplayer.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/letontv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/letontv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestation.py
@@ -175,8 +177,14 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/svtplay.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/svtplay.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tga.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tga.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tv3cat.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tv3cat.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tv4play.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tv4play.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tvcatchup.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tvcatchup.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tvplayer.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/tvplayer.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/twitch.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/twitch.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ustreamtv.py

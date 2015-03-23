@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/14 21:01:28 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/23 16:09:39 bcallah Exp $
 
-MODPY_EGG_VERSION =	1.12.0
+MODPY_EGG_VERSION =	1.12.1
 COMMENT =	pipe video streams into a video player
 DISTNAME =	livestreamer-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
