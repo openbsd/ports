@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_nrpe_c,v 1.9 2014/07/22 08:55:45 jca Exp $
+$OpenBSD: patch-src_nrpe_c,v 1.10 2015/03/23 09:16:55 sthen Exp $
 
 - http://seclists.org/fulldisclosure/2014/Apr/240 plus \r suggested on oss-sec
 - fix reading of non-blocking sockets
@@ -7,8 +7,8 @@ $OpenBSD: patch-src_nrpe_c,v 1.9 2014/07/22 08:55:45 jca Exp $
   From: http://comments.gmane.org/gmane.network.nagios.devel/6774
   Bug-Ubuntu: https://launchpad.net/bugs/1126890
 
---- src/nrpe.c.orig	Fri Sep  6 17:27:13 2013
-+++ src/nrpe.c	Tue Jul 22 00:52:20 2014
+--- src/nrpe.c.orig	Fri Sep  6 16:27:13 2013
++++ src/nrpe.c	Mon Mar 23 09:01:19 2015
 @@ -30,6 +30,8 @@
  #include "utils.h"
  #include "acl.h"
@@ -32,11 +32,21 @@ $OpenBSD: patch-src_nrpe_c,v 1.9 2014/07/22 08:55:45 jca Exp $
  char    *macro_argv[MAX_COMMAND_ARGUMENTS];
  
 -char    config_file[MAX_INPUT_BUFFER]="nrpe.cfg";
-+char    config_file[MAX_INPUT_BUFFER]="${SYSCONFDIR}/nrpe.cfg";
++char    config_file[MAX_INPUT_BUFFER]="/etc/nrpe.cfg";
  int     log_facility=LOG_DAEMON;
  int     server_port=DEFAULT_SERVER_PORT;
  char    server_address[NI_MAXHOST]="";
-@@ -969,8 +971,14 @@ void wait_for_connections(void){
+@@ -100,7 +102,9 @@ int     debug=FALSE;
+ int     use_src=FALSE; /* Define parameter for SRC option */
+ 
+ 
++#ifdef HAVE_SSL
+ void complete_SSL_shutdown( SSL *);
++#endif
+ 
+ 
+ int main(int argc, char **argv){
+@@ -969,8 +973,14 @@ void wait_for_connections(void){
  					continue;
  
  				/* socket is nonblocking and we don't have a connection yet */
@@ -52,7 +62,7 @@ $OpenBSD: patch-src_nrpe_c,v 1.9 2014/07/22 08:55:45 jca Exp $
  
  				/* fix for HP-UX 11.0 - just retry */
  				if(errno==ENOBUFS)
-@@ -998,7 +1006,7 @@ void wait_for_connections(void){
+@@ -998,7 +1008,7 @@ void wait_for_connections(void){
  						/* close socket prioer to exiting */
  						close(sock);
  			
@@ -61,7 +71,7 @@ $OpenBSD: patch-src_nrpe_c,v 1.9 2014/07/22 08:55:45 jca Exp $
  						}
  
  					/* handle signals */
-@@ -1022,7 +1030,7 @@ void wait_for_connections(void){
+@@ -1022,7 +1032,7 @@ void wait_for_connections(void){
  				        /* close socket prior to exiting */
  						close(new_sd);
  
@@ -70,3 +80,19 @@ $OpenBSD: patch-src_nrpe_c,v 1.9 2014/07/22 08:55:45 jca Exp $
  						}
  
  					/* is this is a blessed machine? */
+@@ -1796,6 +1806,7 @@ int remove_pid_file(void){
+ 	return OK;
+         }
+ 
++#ifdef HAVE_SSL
+ void complete_SSL_shutdown( SSL *ssl) {
+ 
+ 	/*  
+@@ -1816,6 +1827,7 @@ void complete_SSL_shutdown( SSL *ssl) {
+ 		if( SSL_shutdown( ssl)) break;
+ 	}
+ }
++#endif
+ 
+ /* bail if daemon is running as root */
+ int check_privileges(void){
