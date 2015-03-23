@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/02/16 08:47:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/03/23 08:37:33 ajacoutot Exp $
 bin/caribou-preferences
 include/libcaribou/
 include/libcaribou/caribou.h
@@ -84,6 +84,7 @@ share/locale/ast/LC_MESSAGES/caribou.mo
 share/locale/be/LC_MESSAGES/caribou.mo
 share/locale/bg/LC_MESSAGES/caribou.mo
 share/locale/bn_IN/LC_MESSAGES/caribou.mo
+share/locale/bs/LC_MESSAGES/caribou.mo
 share/locale/ca/LC_MESSAGES/caribou.mo
 share/locale/ca@valencia/LC_MESSAGES/caribou.mo
 share/locale/cs/LC_MESSAGES/caribou.mo
