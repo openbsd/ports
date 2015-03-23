@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/11/13 17:28:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/03/23 13:59:40 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -411,8 +411,11 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/${MODPY_PYCACHE}formatting.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/${MODPY_PYCACHE}/
@@ -1213,6 +1216,7 @@ share/locale/be/LC_MESSAGES/orca.mo
 share/locale/bg/LC_MESSAGES/orca.mo
 share/locale/bn/LC_MESSAGES/orca.mo
 share/locale/bn_IN/LC_MESSAGES/orca.mo
+share/locale/bs/LC_MESSAGES/orca.mo
 share/locale/ca/LC_MESSAGES/orca.mo
 share/locale/ca@valencia/LC_MESSAGES/orca.mo
 share/locale/cs/LC_MESSAGES/orca.mo
