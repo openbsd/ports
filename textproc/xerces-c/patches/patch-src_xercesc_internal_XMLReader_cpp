@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_xercesc_internal_XMLReader_cpp,v 1.1 2015/03/23 14:36:38 jasper Exp $
+
+Security fix for CVE-2015-0252: Apache Xerces-C XML Parser Crashes on Malformed Input
+http://xerces.apache.org/xerces-c/secadv/CVE-2015-0252.txt
+
+--- src/xercesc/internal/XMLReader.cpp.orig	Mon Mar 23 15:29:21 2015
++++ src/xercesc/internal/XMLReader.cpp	Mon Mar 23 15:31:35 2015
+@@ -1430,6 +1430,17 @@ void XMLReader::doInitDecode()
+ 
+             while (fRawBufIndex < fRawBytesAvail)
+             {
++                // Security fix: make sure there are at least sizeof(UCS4Ch) bytes to consume.
++                if (fRawBufIndex + sizeof(UCS4Ch) > fRawBytesAvail) {
++                    ThrowXMLwithMemMgr1
++                    (
++                        TranscodingException
++                        , XMLExcepts::Reader_CouldNotDecodeFirstLine
++                        , fSystemId
++                        , fMemoryManager
++                    );
++                }
++
+                 // Get out the current 4 byte value and inc our raw buf index
+                 UCS4Ch curVal = *asUCS++;
+                 fRawBufIndex += sizeof(UCS4Ch);
+@@ -1589,6 +1600,17 @@ void XMLReader::doInitDecode()
+ 
+             while (fRawBufIndex < fRawBytesAvail)
+             {
++                // Security fix: make sure there are at least sizeof(UTF16Ch) bytes to consume.
++                if (fRawBufIndex + sizeof(UTF16Ch) > fRawBytesAvail) {
++                    ThrowXMLwithMemMgr1
++                    (
++                        TranscodingException
++                        , XMLExcepts::Reader_CouldNotDecodeFirstLine
++                        , fSystemId
++                        , fMemoryManager
++                    );
++                }
++
+                 // Get out the current 2 byte value
+                 UTF16Ch curVal = *asUTF16++;
+                 fRawBufIndex += sizeof(UTF16Ch);
+@@ -1678,6 +1700,17 @@ void XMLReader::doInitDecode()
+ //
+ void XMLReader::refreshRawBuffer()
+ {
++    // Security fix: make sure we don't underflow on the subtraction.
++    if (fRawBufIndex > fRawBytesAvail) {
++        ThrowXMLwithMemMgr1
++        (
++            RuntimeException
++            , XMLExcepts::Str_StartIndexPastEnd
++            , fSystemId
++            , fMemoryManager
++        );
++    }
++
+     //
+     //  If there are any bytes left, move them down to the start. There
+     //  should only ever be (max bytes per char - 1) at the most.
