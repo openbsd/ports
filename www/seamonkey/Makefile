@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.168 2015/03/19 19:49:49 landry Exp $
+# $OpenBSD: Makefile,v 1.169 2015/03/23 21:05:12 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 
-MOZILLA_VERSION =	2.33
+MOZILLA_VERSION =	2.33.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
@@ -11,6 +11,7 @@ MOZILLA_CODENAME =	suite
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-3.8
+REVISION-lightning =	0
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
@@ -35,11 +36,6 @@ MODGCC4_ARCHS =		powerpc sparc64 alpha
 MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
-
-# fix for 982693, apply only on clang archs
-.if ${MACHINE_ARCH:Mamd64}
-MAKE_ENV += VPXHACK="-fno-integrated-as"
-.endif
 
 NO_TEST=	Yes
 
