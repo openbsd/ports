@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_ipc_IpcClientProxy_cpp,v 1.2 2015/01/03 04:59:27 bcallah Exp $
+$OpenBSD: patch-src_lib_ipc_IpcClientProxy_cpp,v 1.3 2015/03/23 18:11:19 landry Exp $
 
 On loongson/sparc64/hppa:
 Same as CIpcServerProxy.cpp
@@ -10,7 +10,7 @@ Same as CIpcServerProxy.cpp
  		const IpcLogLineMessage& llm = static_cast<const IpcLogLineMessage&>(message);
  		String logLine = llm.logLine();
 +#if defined(__mips64__) || defined(__sparc64__) || defined(__hppa__)
-+		ProtocolUtil::writef(static_cast<void*>(&m_stream), static cast<const char*>(kIpcMsgLogLine), &logLine);
++		ProtocolUtil::writef(static_cast<void*>(&m_stream), static_cast<const char*>(kIpcMsgLogLine), &logLine);
 +#else
  		ProtocolUtil::writef(&m_stream, kIpcMsgLogLine, &logLine);
 +#endif
