@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2015/03/21 19:26:09 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.438 2015/03/24 09:58:15 giovanni Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -293,6 +293,7 @@
      SUBDIR += palm-bookmarks
      SUBDIR += par
      SUBDIR += patchutils
+     SUBDIR += pdfgrep
      SUBDIR += pdftk
      SUBDIR += pear-File
      SUBDIR += pear-File-Find
