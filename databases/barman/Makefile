@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/26 09:37:52 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/24 20:25:01 landry Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	1.2.2
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 HOMEPAGE =	http://www.pgbarman.org/
-REVISION =	0
+
+MAINTAINER=	Eric Lalonde <eric.c.lalonde@gmail.com>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,6 +21,9 @@ RUN_DEPENDS =	databases/py-psycopg2 \
 		net/rsync \
 		devel/py-dateutil \
 		devel/py-argh
+
+# needs pytest-timeout and pytest-capturelog
+NO_TEST =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/barman
