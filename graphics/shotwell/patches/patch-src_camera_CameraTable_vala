@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_camera_CameraTable_vala,v 1.6 2013/10/10 15:40:40 ajacoutot Exp $
+$OpenBSD: patch-src_camera_CameraTable_vala,v 1.7 2015/03/24 08:03:55 ajacoutot Exp $
 
 remove gudev requirement
 
---- src/camera/CameraTable.vala.orig	Fri Sep  6 21:13:45 2013
-+++ src/camera/CameraTable.vala	Thu Oct 10 17:30:34 2013
+--- src/camera/CameraTable.vala.orig	Sat Feb 14 01:50:15 2015
++++ src/camera/CameraTable.vala	Tue Mar 24 08:44:48 2015
 @@ -26,7 +26,6 @@ public class CameraTable {
      
      private static CameraTable instance = null;
@@ -65,10 +65,10 @@ remove gudev requirement
 -        return null;
 -    }
 -    
--    private GLib.Icon? get_icon_for_uuid(string uuid) {
+-    private string? get_icon_for_uuid(string uuid) {
 -        foreach (Volume volume in volume_monitor.get_volumes()) {
 -            if (volume.get_identifier(VolumeIdentifier.UUID) == uuid) {
--                return volume.get_icon();
+-                return volume.get_icon().to_string();
 -            }
 -        }
 -        return null;

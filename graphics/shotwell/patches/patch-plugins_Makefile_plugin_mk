@@ -1,12 +1,15 @@
-$OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.5 2013/03/23 15:19:45 ajacoutot Exp $
---- plugins/Makefile.plugin.mk.orig	Mon Mar 18 19:48:16 2013
-+++ plugins/Makefile.plugin.mk	Sat Mar 23 16:01:41 2013
+$OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.6 2015/03/24 08:03:55 ajacoutot Exp $
+
+drop -nostdlib: shotwell-publishing.so: undefined symbol '__guard_local'
+
+--- plugins/Makefile.plugin.mk.orig	Tue Mar  4 23:54:12 2014
++++ plugins/Makefile.plugin.mk	Tue Mar 24 08:57:23 2015
 @@ -34,7 +34,7 @@ SRC_FILES := ../common/Resources.vala $(SRC_FILES)
  CFILES := $(notdir $(SRC_FILES:.vala=.c))
  OFILES := $(notdir $(SRC_FILES:.vala=.o))
  
 -CFLAGS := `pkg-config --print-errors --cflags $(EXT_PKGS) $(PLUGIN_PKGS)` -nostdlib -export-dynamic $(PLUGIN_CFLAGS)
-+CFLAGS := `pkg-config --print-errors --cflags $(EXT_PKGS) $(PLUGIN_PKGS)` -I${LOCALBASE}/include -nostdlib -export-dynamic $(PLUGIN_CFLAGS)
++CFLAGS := `pkg-config --print-errors --cflags $(EXT_PKGS) $(PLUGIN_PKGS)` -I${LOCALBASE}/include -export-dynamic $(PLUGIN_CFLAGS)
  LIBS := `pkg-config --print-errors --libs $(EXT_PKGS) $(PLUGIN_PKGS)`
  DEFINES := -D_VERSION='"$(PLUGINS_VERSION)"' -DGETTEXT_PACKAGE='"shotwell"'
  
