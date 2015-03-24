@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.218 2015/03/22 06:34:54 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.219 2015/03/24 00:06:40 bcallah Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -360,6 +360,7 @@ my $stem_extensions = {
 	'symon-mux' => 'symux',
 	'ruby-dbus' => 'ruby21-dbus',
 	'polarssl' => 'mbedtls',
+	'mscore' => 'musescore',
 };
 
 # reasons for obsolete packages
