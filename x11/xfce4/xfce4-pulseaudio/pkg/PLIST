@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/24 21:05:02 landry Exp $
+lib/xfce4/panel/plugins/libpulseaudio-plugin.so
+share/icons/hicolor/48x48/apps/xfce4-pulseaudio-plugin.png
+share/icons/hicolor/scalable/apps/xfce4-pulseaudio-plugin.svg
+share/xfce4/panel/plugins/pulseaudio.desktop

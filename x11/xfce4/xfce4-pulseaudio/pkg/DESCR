@@ -1,0 +1,4 @@
+The Xfce PulseAudio Plugin is a plugin for the Xfce panel which provides
+a convenient way to adjust the audio volume of the PulseAudio sound
+system and to an auto mixer tool like pavucontrol. It can optionally
+handle multimedia keys for controlling the audio volume.
