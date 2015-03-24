@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_2geom_hvlinesegment_h,v 1.1 2015/03/24 18:45:12 landry Exp $
+--- src/2geom/hvlinesegment.h.orig	Tue Mar 17 22:36:38 2015
++++ src/2geom/hvlinesegment.h	Tue Mar 17 22:36:46 2015
+@@ -1,10 +1,10 @@
+-﻿/**
++/**
+  * \file
+  * \brief  Horizontal and vertical line segment
+  *//*
+  * Authors:
+  *   Marco Cecchetti <mrcekets at gmail.com>
+- *   Krzysztof Kosiński <tweenk.pl@gmail.com>
++ *   Krzysztof KosiÅski <tweenk.pl@gmail.com>
+  * Copyright 2008-2011 Authors
+  *
+  * This library is free software; you can redistribute it and/or

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2014/12/13 18:58:37 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2015/03/24 18:45:11 landry Exp $
 
 COMMENT=	SVG vector drawing application
 
-DISTNAME=	inkscape-0.48.5
+DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 
+MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/
 
 # GPLv2 and LGPLv2.1
@@ -19,6 +19,10 @@ WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 gsl gslcblas gthread-2.0
 WANTLIB += gtk-x11-2.0 gtkmm-2.4 gtkspell lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib popt
 WANTLIB += pthread sigc-2.0 stdc++ xml2 xslt z
+WANTLIB += ICE MagickWand SM Xt bz2 djvulibre enchant expat ffi
+WANTLIB += fftw3 gmodule-2.0 graphite2 harfbuzz jasper jbig jpeg
+WANTLIB += ltdl lzma openjpeg pcre pixman-1 pthread-stubs tiff
+WANTLIB += webp wmf-0.2 wmflite-0.2 xcb xcb-render xcb-shm
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -51,8 +55,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
+#AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--without-gnome-vfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
