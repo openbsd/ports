@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/24 00:24:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.17 2015/03/24 21:23:44 kili Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -38,7 +38,8 @@ MODULES +=		gcc4
 MODGCC4_ARCHS +=	*
 MODGCC4_LANGS +=	c++
 
-BUILD_DEPENDS =	misc/findutils
+BUILD_DEPENDS =	audio/lame \
+		misc/findutils
 
 LIB_DEPENDS =	audio/portaudio-svn \
 		audio/libsndfile>=1.0.25p0
