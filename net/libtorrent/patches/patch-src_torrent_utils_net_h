@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_torrent_utils_net_h,v 1.1 2015/03/24 13:35:09 dcoppa Exp $
+
+Add missing include.
+
+--- src/torrent/utils/net.h.orig	Tue Mar 24 04:31:31 2015
++++ src/torrent/utils/net.h	Tue Mar 24 04:31:55 2015
+@@ -37,6 +37,7 @@
+ #ifndef LIBTORRENT_UTILS_NET_H
+ #define LIBTORRENT_UTILS_NET_H
+ 
++#include <sys/socket.h>
+ #include <netdb.h>
+ #include <tr1/functional>
+ 
