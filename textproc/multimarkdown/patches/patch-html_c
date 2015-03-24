@@ -1,0 +1,59 @@
+$OpenBSD: patch-html_c,v 1.1.1.1 2015/03/24 19:16:13 okan Exp $
+
+Switch to using arc4random(3) everywhere, since they don't really want
+repeatability (as evidenced by the arguments they pass to srand(3)).
+
+--- html.c.orig	Mon Mar  9 18:52:39 2015
++++ html.c	Sat Mar 21 15:44:10 2015
+@@ -112,8 +112,12 @@ void print_html_node(GString *out, node *n, scratch_pa
+ 				scratch->footnote_para_counter --;
+ 				if (scratch->footnote_para_counter == 0) {
+ 					if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_ARC4RANDOM
++						random = arc4random_uniform(99999) + 1;
++#else
+ 						srand(scratch->random_seed_base + scratch->footnote_to_print);
+ 						random = rand() % 99999 + 1;
++#endif
+ 					} else {
+ 						random = scratch->footnote_to_print;
+ 					}
+@@ -574,8 +578,12 @@ void print_html_node(GString *out, node *n, scratch_pa
+ 			temp_node = node_for_count(scratch->used_notes, lev);
+ 			
+ 			if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_ARC4RANDOM
++				random = arc4random_uniform(99999) + 1;
++#else
+ 				srand(scratch->random_seed_base + lev);
+ 				random = rand() % 99999 + 1;
++#endif
+ 			} else {
+ 				random = lev;
+ 			}
+@@ -628,8 +636,12 @@ void print_html_node(GString *out, node *n, scratch_pa
+ 					fprintf(stderr, "matching cite found - %d\n",lev);
+ #endif
+ 					if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_ARC4RANDOM
++						random = arc4random_uniform(99999) + 1;
++#else
+ 						srand(scratch->random_seed_base + lev);
+ 						random = rand() % 99999 + 1;
++#endif
+ 					} else {
+ 						random = lev;
+ 					}
+@@ -901,8 +913,12 @@ void print_html_endnotes(GString *out, scratch_pad *sc
+ 		pad(out, 1, scratch);
+ 		
+ 		if (scratch->extensions & EXT_RANDOM_FOOT) {
++#ifdef HAVE_ARC4RANDOM
++			random = arc4random_uniform(99999) + 1;
++#else
+ 			srand(scratch->random_seed_base + counter);
+ 			random = rand() % 99999 + 1;
++#endif
+ 		} else {
+ 			random = counter;
+ 		}

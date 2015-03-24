@@ -1,0 +1,29 @@
+$OpenBSD: patch-latex_c,v 1.1.1.1 2015/03/24 19:16:13 okan Exp $
+
+Switch from strcat(3) to a safer idiom.
+
+--- latex.c.orig	Mon Mar  9 18:52:39 2015
++++ latex.c	Sat Mar 21 15:44:10 2015
+@@ -1202,16 +1202,16 @@ void print_latex_url(GString *out, char *str, scratch_
+ char * correct_dimension_units(char *original) {
+ 	char *result;
+ 	int i;
+-	
++	size_t result_len;
++
+ 	result = strdup(original);
+-	
++	result_len = strlen(result);
++
+ 	for (i = 0; result[i]; i++)
+ 		result[i] = tolower(result[i]);
+ 	
+-	if (strstr(&result[strlen(result)-2],"px")) {
+-		result[strlen(result)-2] = '\0';
+-		strcat(result, "pt");
+-	}
++	if (strstr(&result[result_len-2],"px"))
++		result[result_len-1] = 't';
+ 	
+ 	return result;
+ }

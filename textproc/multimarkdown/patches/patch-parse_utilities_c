@@ -1,0 +1,52 @@
+$OpenBSD: patch-parse_utilities_c,v 1.1.1.1 2015/03/24 19:16:13 okan Exp $
+
+ifdef out pragmas that don't work under OpenBSD.  Use arc4random(3).
+
+--- parse_utilities.c.orig	Mon Sep 22 12:57:41 2014
++++ parse_utilities.c	Wed Jan  7 16:02:19 2015
+@@ -22,7 +22,9 @@
+ #include "parser.h"
+ #include <libgen.h>
+ 
++#ifndef __OpenBSD__
+ #pragma mark - Parse Tree
++#endif /* __OpenBSD__ */
+ 
+ /* Create a new node in the parse tree */
+ node * mk_node(int key) {
+@@ -219,7 +221,9 @@ void append_list(node *new, node *list) {
+ 	}
+ }
+ 
++#ifndef __OpenBSD__
+ #pragma mark - Parser Data
++#endif /* __OpenBSD__ */
+ 
+ /* Create parser data - this is where you stash stuff to communicate 
+ 	into and out of the parser */
+@@ -250,7 +254,9 @@ void free_parser_data(parser_data *data) {
+ }
+ 
+ /* mk_scratch_pad -- store stuff here while exporting the result tree */
++#ifndef HAVE_ARC4RANDOM
+ void ran_start(long seed);
++#endif
+ scratch_pad * mk_scratch_pad(unsigned long extensions) {
+ 	scratch_pad *result = (scratch_pad *)malloc(sizeof(scratch_pad));
+ 	result->extensions = extensions;
+@@ -277,6 +283,7 @@ scratch_pad * mk_scratch_pad(unsigned long extensions)
+ 	result->table_alignment = NULL;
+ 	result->table_column = 0;
+ 
++#ifndef HAVE_ARC4RANDOM
+ 	if (extensions & EXT_RANDOM_FOOT) {
+ 	    srand((int)time(NULL));
+ 		result->random_seed_base = rand() % 32000;
+@@ -285,6 +292,7 @@ scratch_pad * mk_scratch_pad(unsigned long extensions)
+ 		result->random_seed_base = 0;
+ 	}
+ 	ran_start(310952L);
++#endif /* !HAVE_ARC4RANDOM */
+ 	
+ 	result->lyx_para_type = PARA;             /* CRC - Simple paragraph */
+ 	result->lyx_level = 0;                    /* CRC - out outside level */

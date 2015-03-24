@@ -1,0 +1,8 @@
+If you want to use either the memoir or beamer LaTeX classes
+with multimarkdown it is recommended you grab the author's
+LaTeX support files:
+
+https://github.com/fletcher/peg-multimarkdown-latex-support
+
+They are usually installed under your ~/texmf directory, e.g.
+~/texmf/tex/latex/mmd.

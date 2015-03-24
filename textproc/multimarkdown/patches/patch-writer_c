@@ -1,0 +1,42 @@
+$OpenBSD: patch-writer_c,v 1.1.1.1 2015/03/24 19:16:13 okan Exp $
+
+Switch from strcat to a safer idiom.
+
+--- writer.c.orig	Mon Mar  9 18:52:39 2015
++++ writer.c	Sat Mar 21 15:44:10 2015
+@@ -648,6 +648,7 @@ char * dimension_for_attribute(char *querystring, node
+     int i;
+     char *upper;
+     GString *result;
++    size_t dimension_len;
+ 
+     attribute = node_for_attribute(querystring, list);
+     if (attribute == NULL) return NULL;
+@@ -655,6 +656,7 @@ char * dimension_for_attribute(char *querystring, node
+ 	fprintf(stderr, "a\n");
+ #endif
+ 
++    dimension_len = strlen(attribute->children->str);
+     dimension = strdup(attribute->children->str);
+     upper = strdup(attribute->children->str);
+ 
+@@ -667,15 +669,13 @@ char * dimension_for_attribute(char *querystring, node
+ 	fprintf(stderr, "b\n");
+ #endif
+ 
+-    if (strstr(dimension, "px")) {
+-        ptr = strstr(dimension,"px");
+-        ptr[0] = '\0';
+-        strcat(ptr,"pt");
+-    }
++    ptr = strstr(dimension, "px");
++    if (ptr)
++        ptr[1] = 't';
+ 
+     result = g_string_new(dimension);
+     
+-    if ((strcmp(dimension,upper) == 0) && (dimension[strlen(dimension) -1] != '%')) {
++    if ((strcmp(dimension,upper) == 0) && (dimension[dimension_len-1] != '%')) {
+         /* no units */
+         g_string_append_printf(result, "pt");
+     }

@@ -1,0 +1,19 @@
+$OpenBSD: patch-parser_leg,v 1.1.1.1 2015/03/24 19:16:13 okan Exp $
+
+Switch from sprintf(3) to snprintf(3)
+
+--- parser.leg.orig	Mon Mar  9 18:52:39 2015
++++ parser.leg	Sat Mar 21 15:44:10 2015
+@@ -562,8 +562,10 @@ AutoLinkUrl =   '<' < [A-Za-z]+ "://" ( !Newline !'>' 
+ 
+ AutoLinkEmail = '<' ( "mailto:" )? < [-A-Za-z0-9+_./!%~$]+ '@' ( !Newline !'>' . )+ > '>'
+ 	{
+-		char *mailto = malloc(strlen(yytext) + 8);
+-		sprintf(mailto, "mailto:%s", yytext);
++		size_t mailto_len = strlen(yytext) + 8;
++		char *mailto = malloc(mailto_len);
++		assert(mailto);
++		assert(snprintf(mailto,mailto_len,"mailto:%s",yytext) < mailto_len);
+ 		$$ = mk_link(str(yytext), NULL, mailto, NULL, NULL);
+ 		free(mailto);
+ 	}

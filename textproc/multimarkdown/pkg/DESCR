@@ -1,0 +1,4 @@
+MultiMarkdown is a derivative of Markdown that adds new syntax
+features, such as footnotes, tables, and metadata. Additionally, it
+offers mechanisms to convert plain text into LaTeX in addition to
+HTML.
