@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/10/05 22:07:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/03/24 10:11:23 jasper Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyo
@@ -65,6 +65,7 @@ share/locale/as/LC_MESSAGES/eog-plugins.mo
 share/locale/be@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/bg/LC_MESSAGES/eog-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/eog-plugins.mo
+share/locale/bs/LC_MESSAGES/eog-plugins.mo
 share/locale/ca/LC_MESSAGES/eog-plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/eog-plugins.mo
 share/locale/cs/LC_MESSAGES/eog-plugins.mo
@@ -106,6 +107,7 @@ share/locale/sr@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/sv/LC_MESSAGES/eog-plugins.mo
 share/locale/ta/LC_MESSAGES/eog-plugins.mo
 share/locale/te/LC_MESSAGES/eog-plugins.mo
+share/locale/tr/LC_MESSAGES/eog-plugins.mo
 share/locale/uk/LC_MESSAGES/eog-plugins.mo
 share/locale/vi/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
