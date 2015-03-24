@@ -1,0 +1,20 @@
+$OpenBSD: patch-launcher_launchers_in,v 1.1 2015/03/24 20:29:10 landry Exp $
+2nd chunk needed for:
+Error: could not find libjava.so
+Error: Could not find Java SE Runtime Environment.
+--- launcher/launchers.in.orig	Wed Nov 26 17:39:23 2014
++++ launcher/launchers.in	Tue Mar 24 21:15:51 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${TRUEPREFIX}/bin/bash
+ 
+ JAVA=@JAVA@
+ LAUNCHER_BOOTCLASSPATH=@LAUNCHER_BOOTCLASSPATH@
+@@ -95,6 +95,6 @@ while [ "$j" -lt "${#ARGS[@]}" ]; do
+   k=$((k+1))
+ done
+ 
+-exec -a "$PROGRAM_NAME" "${COMMAND[@]}"
++exec "${COMMAND[@]}"
+ 
+ exit $?

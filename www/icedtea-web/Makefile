@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/04/21 20:46:57 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/24 20:29:10 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
-DISTNAME =	icedtea-web-1.4.2
+DISTNAME =	icedtea-web-1.5.2
 CATEGORIES =	www
-REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -15,6 +14,7 @@ MASTER_SITES =	http://icedtea.classpath.org/download/source/
 HOMEPAGE =	http://icedtea.classpath.org/wiki/IcedTea-Web
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		BIN_BASH=${LOCALBASE}/bin/bash
 CONFIGURE_ARGS =	--with-jdk-home=${LOCALBASE}/jdk-1.7.0 \
 			--disable-docs \
 			--libdir=${TRUEPREFIX}/lib/mozilla/plugins
@@ -24,11 +24,19 @@ MODULES =	java \
 
 MODJAVA_VER=	1.7+
 
-BUILD_DEPENDS =	archivers/zip \
+#build system does horrible things with bash and gsed
+RUN_DEPENDS =	shells/bash \
+		textproc/gsed
+BUILD_DEPENDS =	${RUN_DEPENDS} \
+		archivers/zip \
 		devel/xulrunner/24,-devel
 
 USE_GMAKE =	Yes
 LIB_DEPENDS =	devel/glib2
 WANTLIB += glib-2.0 m stdc++
+
+post-patch:
+	ln -sf ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed;
+	${SUBST_CMD} ${WRKSRC}/launcher/launchers.in
 
 .include <bsd.port.mk>

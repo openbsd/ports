@@ -1,19 +1,36 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2014/04/19 08:27:24 ajacoutot Exp $
---- Makefile.in.orig	Tue Feb  4 13:00:58 2014
-+++ Makefile.in	Sat Apr 19 10:14:26 2014
-@@ -945,8 +945,8 @@ clean-liveconnect:
+$OpenBSD: patch-Makefile_in,v 1.7 2015/03/24 20:29:10 landry Exp $
+javaws/itweb-settings/policyeditor are scripts not programs..
+--- Makefile.in.orig	Wed Nov 26 17:39:55 2014
++++ Makefile.in	Tue Mar 24 21:16:40 2015
+@@ -859,9 +859,9 @@ install-exec-local:
+ @ENABLE_PLUGIN_TRUE@	${INSTALL_DATA} $(abs_top_builddir)/liveconnect/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/plugin.jar
+ 	${INSTALL_DATA} $(NETX_DIR)/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
+ 	${INSTALL_DATA} $(NETX_SRCDIR)/javaws_splash.png $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/javaws_splash.png
+-	${INSTALL_PROGRAM} launcher.build/$(javaws) $(DESTDIR)$(bindir)
+-	${INSTALL_PROGRAM} launcher.build/$(itweb_settings) $(DESTDIR)$(bindir)
+-	${INSTALL_PROGRAM} launcher.build/$(policyeditor) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} launcher.build/$(javaws) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} launcher.build/$(itweb_settings) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} launcher.build/$(policyeditor) $(DESTDIR)$(bindir)
  
- netx-source-files.txt:
- 	find $(NETX_SRCDIR) -name '*.java' | sort > $@
+ install-data-local:
+ 	${mkinstalldirs} -d $(DESTDIR)$(mandir)/man1
+@@ -1049,10 +1049,10 @@ netx-source-files.txt:
+ 	find $(NETX_SRCDIR) -name '*.java' | sort > $@ ; \
+ 	for src in $(NETX_EXCLUDE_SRCS) ; \
+ 	do \
+-	  sed -i "/$${src}/ d" $@ ; \
++	  perl -pi -e "s/.*$${src}.*//" $@ ; \
+ 	done
 -@WITH_RHINO_FALSE@	sed -i '/RhinoBasedPacEvaluator/ d' $@
 -@HAVE_JAVA7_FALSE@	sed -i '/VariableX509TrustManagerJDK7/ d' $@
 +@WITH_RHINO_FALSE@	perl -pi -e 's/^.*RhinoBasedPacEvaluator.*//' $@
 +@HAVE_JAVA7_FALSE@	perl -pi -e 's/^.*VariableX509TrustManagerJDK7.*//' $@
  
- stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
- 	mkdir -p $(NETX_DIR)
-@@ -956,14 +956,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/bootst
- 	    -bootclasspath $(RUNTIME) \
+ stamps/netx-html-gen.stamp:
+ 	(cd $$NETX_SRCDIR/..; \
+@@ -1075,14 +1075,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/bootst
+ 	    $(NETX_CLASSPATH_ARG) \
  	    @netx-source-files.txt
  	(cd $(NETX_RESOURCE_DIR); \
 +	 install -d $(NETX_DIR)/net/sourceforge/jnlp/resources/ ; \
@@ -31,15 +48,3 @@ $OpenBSD: patch-Makefile_in,v 1.6 2014/04/19 08:27:24 ajacoutot Exp $
  	mkdir -p stamps
  	touch $@
  
-@@ -999,9 +1000,10 @@ stamps/extra-class-files.stamp: extra-source-files.txt
-           -sourcepath $(abs_top_srcdir)/extra -cp netx.build \
-           -bootclasspath $(RUNTIME) @extra-source-files.txt
- 	(cd $(NETX_EXTRA_DIR); \
-+	 install -d $(NETX_EXTRA_DIST_DIR) ; \
- 	 for files in $$(find . -type f); \
- 	 do \
--	   ${INSTALL_DATA} -D $${files} \
-+	   install -c -m 644 $${files} \
- 	   $(NETX_EXTRA_DIST_DIR)/$${files}; \
- 	 done)
- 	mkdir -p stamps
