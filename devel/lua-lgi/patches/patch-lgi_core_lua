@@ -1,9 +1,12 @@
-$OpenBSD: patch-lgi_core_lua,v 1.1 2013/05/21 07:50:28 dcoppa Exp $
---- lgi/core.lua.orig	Mon May 20 14:17:43 2013
-+++ lgi/core.lua	Mon May 20 14:18:24 2013
-@@ -11,4 +11,4 @@
+$OpenBSD: patch-lgi_core_lua,v 1.2 2015/03/25 09:34:43 jasper Exp $
+--- lgi/core.lua.orig	Tue Mar 24 20:07:39 2015
++++ lgi/core.lua	Tue Mar 24 20:07:54 2015
+@@ -11,7 +11,7 @@
  -- This module decides what kind of core routines should be loaded.
  -- Currently only one implementation exists, standard-Lua C-side
  -- implementation, LuaJIT-FFI-based one is planned.
--return require 'lgi.corelgilua51'
-+return require 'lgi.corelgilua${MODLUA_DEP_VERSION}'
+-local core = require 'lgi.corelgilua51'
++local core = require 'lgi.corelgilua${MODLUA_DEP_VERSION}'
+
+ -- Helper methods for converting between CamelCase and uscore_delim
+ -- names.

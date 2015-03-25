@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/09/29 07:40:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/03/25 09:34:43 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,8 @@ COMMENT=	lua bindings to libraries using GObject-Introspection
 
 GH_ACCOUNT=	pavouk
 GH_PROJECT=	lgi
-GH_TAGNAME=	0.8.0
-GH_COMMIT=	051170efd8c176fbea7f16abf690dab176d96864
-REVISION=	0
+GH_TAGNAME=	0.9.0
+GH_COMMIT=	0f203a0cd0a5cfa1c034fdd267ca3307fae78494
 
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=	lua-${DISTNAME}
@@ -16,10 +15,13 @@ CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/pavouk/lgi
 
+MAINTAINER=	Florian Stinglmayr <florian@n0la.org>
+
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext \
+MODULES=	converters/libiconv \
+		devel/gettext \
 		lang/lua
 
 WANTLIB += ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
