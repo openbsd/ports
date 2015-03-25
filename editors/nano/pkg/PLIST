@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2010/12/03 16:45:07 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/03/25 20:27:19 naddy Exp $
 @pkgpath editors/nano,slang
 @bin bin/nano
 bin/rnano
@@ -13,6 +13,7 @@ bin/rnano
 @man man/man1/rnano.1
 @man man/man5/nanorc.5
 share/doc/nano/
+share/doc/nano/faq.html
 share/doc/nano/fr/
 share/doc/nano/fr/nano.1.html
 share/doc/nano/fr/nanorc.5.html
@@ -27,6 +28,7 @@ share/locale/ca/LC_MESSAGES/nano.mo
 share/locale/cs/LC_MESSAGES/nano.mo
 share/locale/da/LC_MESSAGES/nano.mo
 share/locale/de/LC_MESSAGES/nano.mo
+share/locale/eo/LC_MESSAGES/nano.mo
 share/locale/es/LC_MESSAGES/nano.mo
 share/locale/eu/LC_MESSAGES/nano.mo
 share/locale/fi/LC_MESSAGES/nano.mo
@@ -36,6 +38,7 @@ share/locale/gl/LC_MESSAGES/nano.mo
 share/locale/hu/LC_MESSAGES/nano.mo
 share/locale/id/LC_MESSAGES/nano.mo
 share/locale/it/LC_MESSAGES/nano.mo
+share/locale/ja/LC_MESSAGES/nano.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/nano.mo
@@ -46,9 +49,7 @@ share/locale/pl/LC_MESSAGES/nano.mo
 share/locale/pt_BR/LC_MESSAGES/nano.mo
 share/locale/ro/LC_MESSAGES/nano.mo
 share/locale/ru/LC_MESSAGES/nano.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
-share/locale/rw/LC_MESSAGES/nano.mo
+share/locale/sl/LC_MESSAGES/nano.mo
 share/locale/sr/LC_MESSAGES/nano.mo
 share/locale/sv/LC_MESSAGES/nano.mo
 share/locale/tr/LC_MESSAGES/nano.mo
@@ -60,14 +61,20 @@ share/nano/
 share/nano/asm.nanorc
 share/nano/awk.nanorc
 share/nano/c.nanorc
+share/nano/changelog.nanorc
 share/nano/cmake.nanorc
 share/nano/css.nanorc
 share/nano/debian.nanorc
+share/nano/default.nanorc
 share/nano/fortran.nanorc
 share/nano/gentoo.nanorc
+share/nano/go.nanorc
 share/nano/groff.nanorc
 share/nano/html.nanorc
 share/nano/java.nanorc
+share/nano/javascript.nanorc
+share/nano/json.nanorc
+share/nano/lua.nanorc
 share/nano/makefile.nanorc
 share/nano/man.nanorc
 share/nano/mgp.nanorc
@@ -78,10 +85,13 @@ share/nano/ocaml.nanorc
 share/nano/patch.nanorc
 share/nano/perl.nanorc
 share/nano/php.nanorc
+share/nano/po.nanorc
 share/nano/pov.nanorc
 share/nano/python.nanorc
 share/nano/ruby.nanorc
 share/nano/sh.nanorc
+share/nano/spec.nanorc
 share/nano/tcl.nanorc
 share/nano/tex.nanorc
+share/nano/texinfo.nanorc
 share/nano/xml.nanorc
