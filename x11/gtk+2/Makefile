@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2015/03/15 08:41:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.204 2015/03/25 06:27:57 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -8,6 +8,8 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-guic=		0
 
 CATEGORIES=		x11 devel
 
