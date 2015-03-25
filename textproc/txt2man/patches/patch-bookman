@@ -1,0 +1,15 @@
+$OpenBSD: patch-bookman,v 1.1 2015/03/25 11:11:37 czarkoff Exp $
+
+GNUism.
+
+--- bookman.orig	Fri Feb 18 19:12:35 2011
++++ bookman	Wed Mar 25 10:51:04 2015
+@@ -127,7 +127,7 @@ date=${date:-$(date +'%d %B %Y')}
+ 			name = $0
+ 		}
+ 		END {print ".XE"; print ".PX"}'
+-	} | groff -Z -ms | head --lines=-1
++	} | groff -Z -ms | sed '$d'
+ 
+ 	# Output content, in gtroff intermediate format.
+ 	for f

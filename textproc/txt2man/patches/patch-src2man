@@ -1,0 +1,15 @@
+$OpenBSD: patch-src2man,v 1.1 2015/03/25 11:11:37 czarkoff Exp $
+
+Fix awk(1) limitation.
+
+--- src2man.orig	Thu Mar 17 00:01:38 2011
++++ src2man	Wed Mar 25 10:43:25 2015
+@@ -100,7 +100,7 @@ date=${date:-$(date +'%d %B %Y')}
+ # Extract manpages from source files. Man page content is enclosed in
+ # commment blocks starting by "/** sectnum"
+ #
+-awk -v release="$release" -v volume="$volume" -v nogen=$nogen '
++gawk -v release="$release" -v volume="$volume" -v nogen=$nogen '
+ $1 == "/**" && $2 ~ /^[0-9]/ {
+ 	sect = $2
+ 	getline
