@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/01/31 11:02:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/03/25 06:26:50 ajacoutot Exp $
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/128x128/
@@ -366,3 +366,5 @@ share/icons/hicolor/scalable/stock/net/
 share/icons/hicolor/scalable/stock/object/
 share/icons/hicolor/scalable/stock/table/
 share/icons/hicolor/scalable/stock/text/
+share/icons/hicolor/symbolic/
+share/icons/hicolor/symbolic/apps/
