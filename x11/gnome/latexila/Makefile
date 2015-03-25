@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/01/07 16:11:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/03/25 10:36:48 ajacoutot Exp $
 
 COMMENT=		integrated LaTeX environment for GNOME
 
 GNOME_PROJECT=		latexila
-GNOME_VERSION=		3.14.3
+GNOME_VERSION=		3.14.4
 
 CATEGORIES=		editors print
 

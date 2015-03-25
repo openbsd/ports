@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/10/04 17:00:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/03/25 10:36:48 ajacoutot Exp $
 @bin bin/latexila
 @man man/man1/latexila.1
 share/appdata/
@@ -120,6 +120,7 @@ share/latexila/templates/report.xml
 share/latexila/ui/
 share/latexila/ui/preferences_dialog.ui
 share/latexila/ui/ui.xml
+share/locale/bs/LC_MESSAGES/latexila.mo
 share/locale/ca/LC_MESSAGES/latexila.mo
 share/locale/cs/LC_MESSAGES/latexila.mo
 share/locale/de/LC_MESSAGES/latexila.mo
