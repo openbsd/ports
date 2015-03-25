@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/10 00:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/25 13:55:45 jturner Exp $
 
-VERSION=	5.2.3
-REVISION=	0
+VERSION=	5.2.4
 PKGSPEC=	lua->=5.2,<5.3
 
 SHARED_LIBS=	lua5.2 ${VERSION:R}
