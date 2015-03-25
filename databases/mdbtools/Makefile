@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/20 16:27:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/25 07:13:02 landry Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -45,6 +45,7 @@ MODULES =		gcc4 \
 MODGCC4_ARCHS =		"*"
 
 BUILD_DEPENDS =		devel/bison \
+			devel/libtool \
 			textproc/txt2man \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
