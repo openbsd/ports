@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2015/03/25 16:22:18 ajacoutot Exp $
 
 COMMENT=		internationalization tools
 
-V=			0.50.2
+V=			0.51.0
 DISTNAME=		intltool-${V}
 CATEGORIES=		textproc
 
@@ -13,9 +13,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/trunk/${V}/+download/
 
-RUN_DEPENDS=		textproc/p5-XML-Parser \
-			devel/gettext
 BUILD_DEPENDS=		textproc/p5-XML-Parser
+
+RUN_DEPENDS=		devel/gettext \
+			textproc/p5-XML-Parser
 
 CONFIGURE_STYLE= 	gnu
 
