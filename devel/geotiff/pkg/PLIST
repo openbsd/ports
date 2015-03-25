@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/18 20:40:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/03/25 15:13:34 landry Exp $
 @bin bin/applygeo
 @bin bin/geotifcp
 @bin bin/listgeo
@@ -44,6 +44,8 @@ share/epsg_csv/coordinate_operation_parameter_value.csv
 share/epsg_csv/coordinate_operation_path.csv
 share/epsg_csv/coordinate_reference_system.csv
 share/epsg_csv/coordinate_system.csv
+share/epsg_csv/csv2c.py
+share/epsg_csv/csv_tools.py
 share/epsg_csv/datum.csv
 share/epsg_csv/datum_shift.csv
 share/epsg_csv/datum_shift_pref.csv
