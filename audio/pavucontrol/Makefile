@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/24 20:49:44 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/25 06:18:32 ajacoutot Exp $
 
 COMMENT =	Pulseaudio volume mixer
 
 DISTNAME =	pavucontrol-2.0
 HOMEPAGE =	http://freedesktop.org/software/pulseaudio/pavucontrol/
 MASTER_SITES =	${HOMEPAGE}
-EXT_SUFFIX =	.tar.xz
 CATEGORIES =	audio
+REVISION =	0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	devel/gettext
-CONFIGURE_STYLE =	gnu
 USE_GMAKE =	Yes
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS =	gtk3
 FLAVOR ?=
@@ -25,7 +28,7 @@ LIB_DEPENDS +=	audio/pulseaudio
 LIB_DEPENDS +=	x11/gtk3mm \
 		audio/libcanberra,-gtk3
 # the two patches are only needed for gtk2mm compat
-PATCH_LIST =
+PATCH_LIST =	gtk3-patch-*
 
 WANTLIB += cairo-gobject canberra-gtk3 gdk-3 gdkmm-3.0 gtk-3 gtkmm-3.0
 
