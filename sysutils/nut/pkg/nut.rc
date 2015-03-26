@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: nut.rc,v 1.1 2015/03/26 01:07:32 sthen Exp $
+
+# "meta" script running the following rc.d(8) scripts with the given argument;
+# note that daemon_flags, daemon_user and daemon_class are not passed to
+# the child scripts.
+
+if [ "$1" = restart ]; then
+	$0 stop && $0 start
+	exit
+fi
+
+if [ "$1" = stop ]; then
+	_pkg_scripts="upsmon upsd"
+else
+	_pkg_scripts="upsd upsmon"
+fi
+
+for _i in ${_pkg_scripts}; do
+	if [[ -x ${RCDIR}/${_i} ]]; then
+		${RCDIR}/${_i} $@ || exit $?
+	fi
+done

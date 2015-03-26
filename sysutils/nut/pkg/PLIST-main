@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2014/08/14 06:54:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2015/03/26 01:07:32 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -241,5 +241,6 @@ share/examples/nut/upsset.conf.sample
 share/ups/
 share/ups/cmdvartab
 share/ups/driver.list
+@rcscript ${RCDIR}/nut
 @rcscript ${RCDIR}/upsd
 @rcscript ${RCDIR}/upsmon

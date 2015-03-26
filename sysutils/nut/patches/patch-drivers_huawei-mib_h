@@ -1,0 +1,16 @@
+$OpenBSD: patch-drivers_huawei-mib_h,v 1.1 2015/03/26 01:07:32 sthen Exp $
+
+Support Huawei UPS5000-E
+
+--- drivers/huawei-mib.h.orig	Wed Mar 25 22:56:19 2015
++++ drivers/huawei-mib.h	Wed Mar 25 22:56:27 2015
+@@ -0,0 +1,9 @@
++#ifndef HUAWEI_MIB_H
++#define HUAWEI_MIB_H
++
++#include "main.h"
++#include "snmp-ups.h"
++
++extern mib2nut_info_t huawei;
++
++#endif /* HUAWEI_MIB_H */
