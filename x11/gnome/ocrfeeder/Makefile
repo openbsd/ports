@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/26 12:10:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/26 12:12:11 sthen Exp $
 
 COMMENT=		OCR and DAR program
 
 GNOME_PROJECT=		ocrfeeder
 GNOME_VERSION=		0.8.1
+REVISION=		0
 
 CATEGORIES=		graphics textproc
 
@@ -29,7 +30,7 @@ BUILD_DEPENDS +=	devel/py-gobject
 RUN_DEPENDS=		devel/iso-codes \
 			devel/py-gobject3 \
 			graphics/goocanvas2 \
-			graphics/py-Pillow,-sane \
+			graphics/py-sane \
 			print/py-reportlab/reportlab \
 			print/unpaper \
 			textproc/gtkspell3 \
