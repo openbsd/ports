@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.8 2014/11/04 16:57:14 landry Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.9 2015/03/26 08:07:49 dcoppa Exp $
 --- src/CMakeLists.txt.orig	Mon Jul  7 00:06:06 2014
 +++ src/CMakeLists.txt	Tue Nov  4 17:10:05 2014
 @@ -31,6 +31,8 @@ set(USE_GETTEXT 0)
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.8 2014/11/04 16:57:14 landry Exp $
  if(ENABLE_GETTEXT)
  	find_package(GettextLib)
 +	find_package(Iconv)
-+	find_package(Libintl)
++	find_package(Intl)
  else()
  	MARK_AS_ADVANCED(GETTEXT_ICONV_DLL GETTEXT_INCLUDE_DIR GETTEXT_LIBRARY GETTEXT_MSGFMT)
  endif()
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.8 2014/11/04 16:57:14 landry Exp $
  		${X11_LIBRARIES}
 -		${GETTEXT_LIBRARY}
 +		${ICONV_LIBRARIES}
-+		${LIBINTL_LIBRARIES}
++		${Intl_LIBRARIES}
  		${SOUND_LIBRARIES}
  		${SQLITE3_LIBRARY}
  		${LUA_LIBRARY}
@@ -38,7 +38,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.8 2014/11/04 16:57:14 landry Exp $
  		${JSON_LIBRARY}
 -		${GETTEXT_LIBRARY}
 +		${ICONV_LIBRARIES}
-+		${LIBINTL_LIBRARIES}
++		${Intl_LIBRARIES}
  		${LUA_LIBRARY}
  		${PLATFORM_LIBS}
  	)
