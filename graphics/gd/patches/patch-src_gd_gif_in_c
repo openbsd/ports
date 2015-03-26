@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_gd_gif_in_c,v 1.1 2015/03/26 09:16:31 jasper Exp $
+
+Security fix for CVE-2014-9709, gd: buffer read overflow in gd_gif_in.c
+
+--- src/gd_gif_in.c.orig	Thu Mar 26 10:07:17 2015
++++ src/gd_gif_in.c	Thu Mar 26 10:08:35 2015
+@@ -75,8 +75,10 @@ static struct {
+ 
+ #define STACK_SIZE ((1<<(MAX_LWZ_BITS))*2)
+ 
++#define CSD_BUF_SIZE 280
++
+ typedef struct {
+-	unsigned char buf[280];
++	unsigned char buf[CSD_BUF_SIZE];
+ 	int curbit;
+ 	int lastbit;
+ 	int done;
+@@ -410,7 +412,12 @@ GetCode_(gdIOCtx *fd, CODE_STATIC_DATA *scd, int code_
+ 
+ 	ret = 0;
+ 	for (i = scd->curbit, j = 0; j < code_size; ++i, ++j) {
+-		ret |= ((scd->buf[i / 8] & (1 << (i % 8))) != 0) << j;
++		if (i < CSD_BUF_SIZE * 8) {
++			ret |= ((scd->buf[i / 8] & (1 << (i % 8))) != 0) << j;
++		} else {
++			ret = -1;
++			break;
++		}
+ 	}
+ 
+ 	scd->curbit += code_size;
