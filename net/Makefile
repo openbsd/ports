@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.892 2015/03/22 22:48:26 jturner Exp $
+# $OpenBSD: Makefile,v 1.893 2015/03/26 02:08:07 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -275,6 +275,7 @@
      SUBDIR += ntop
      SUBDIR += ntp
      SUBDIR += nylon
+     SUBDIR += ocserv
      SUBDIR += ocsync
      SUBDIR += oggfwd
      SUBDIR += oidentd
