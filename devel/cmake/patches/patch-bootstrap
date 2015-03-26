@@ -1,11 +1,11 @@
-$OpenBSD: patch-bootstrap,v 1.7 2014/12/31 11:06:02 dcoppa Exp $
+$OpenBSD: patch-bootstrap,v 1.8 2015/03/26 07:10:02 dcoppa Exp $
 
 Use Ninja to build CMake
 XXX: broken on arm and m88k
 
---- bootstrap.orig	Mon Dec 15 14:07:45 2014
-+++ bootstrap	Thu Dec 18 05:37:12 2014
-@@ -156,7 +156,11 @@ if ${cmake_system_mingw}; then
+--- bootstrap.orig	Tue Mar 10 09:38:46 2015
++++ bootstrap	Wed Mar 18 06:24:00 2015
+@@ -157,7 +157,11 @@ if ${cmake_system_mingw}; then
    cmake_bootstrap_generator="MSYS Makefiles"
  else
    # Bootstrapping from a standard UNIX prompt.

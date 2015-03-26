@@ -1,10 +1,10 @@
-$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.15 2014/12/31 11:06:02 dcoppa Exp $
+$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.16 2015/03/26 07:10:02 dcoppa Exp $
 
 Don't spam systrace by attempting to create dirs which already exist
 
---- Source/kwsys/SystemTools.cxx.orig	Mon Dec 15 14:07:43 2014
-+++ Source/kwsys/SystemTools.cxx	Thu Dec 18 05:37:12 2014
-@@ -261,11 +261,13 @@ inline void Realpath(const kwsys_stl::string& path, kw
+--- Source/kwsys/SystemTools.cxx.orig	Tue Mar 10 09:38:44 2015
++++ Source/kwsys/SystemTools.cxx	Wed Mar 18 06:24:00 2015
+@@ -268,11 +268,13 @@ inline void Realpath(const kwsys_stl::string& path, kw
  }
  #else
  #include <sys/types.h>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2015/02/13 14:17:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.124 2015/03/26 07:10:02 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -9,7 +9,7 @@ CFLAGS +=	-O1 -fno-stack-protector
 
 COMMENT =	portable build system
 
-VER =		3.1.3
+VER =		3.2.1
 DISTNAME =	cmake-${VER}
 
 CATEGORIES =	devel
@@ -23,8 +23,8 @@ MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		archive c curl expat form m ncurses \
-			stdc++ z
+WANTLIB =		archive c curl expat form jsoncpp \
+			m ncurses stdc++ z
 
 # XXX: CMake's built-in ELF parser is broken on arm
 # XXX: Ninja is broken on m88k
@@ -35,6 +35,7 @@ BUILD_DEPENDS =		devel/ninja>=1.5.1
 BUILD_DEPENDS +=	textproc/py-sphinx>=1.1.3p1
 
 LIB_DEPENDS =		archivers/libarchive \
+			devel/jsoncpp \
 			net/curl
 
 CONFIGURE_STYLE =	simple
@@ -61,7 +62,6 @@ TEST_TARGET =		test
 MAKE_FLAGS +=		VERBOSE=1
 
 pre-configure:
-	rm -f ${WRKSRC}/Help/manual/cmake-gui.1.rst
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
 	${SUBST_CMD} ${WRKSRC}/Modules/CMakeDetermineJavaCompiler.cmake \
 		${WRKSRC}/Modules/FindJNI.cmake \
@@ -90,8 +90,7 @@ do-test:
 .endif
 
 post-install:
-	rm ${WRKINST}${LOCALBASE}/share/cmake/Help/*.orig \
-		${WRKINST}${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig} \
+	rm ${WRKINST}${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig} \
 		${WRKINST}${LOCALBASE}/share/cmake/Modules/Compiler/*.orig \
 		${WRKINST}${LOCALBASE}/share/cmake/Modules/Platform/*.orig
 

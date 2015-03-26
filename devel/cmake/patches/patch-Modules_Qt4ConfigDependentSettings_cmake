@@ -1,12 +1,12 @@
-$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.9 2014/09/11 10:24:38 dcoppa Exp $
---- Modules/Qt4ConfigDependentSettings.cmake.orig	Thu Jul 31 17:03:56 2014
-+++ Modules/Qt4ConfigDependentSettings.cmake	Wed Sep  3 08:10:09 2014
+$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.10 2015/03/26 07:10:02 dcoppa Exp $
+--- Modules/Qt4ConfigDependentSettings.cmake.orig	Tue Mar 10 09:38:44 2015
++++ Modules/Qt4ConfigDependentSettings.cmake	Wed Mar 18 07:12:09 2015
 @@ -32,6 +32,10 @@
  # if a user needs the dependencies, and they couldn't be found, they can set
  # the variables themselves.
  
 +include(FindIconv)
-+include(FindLibintl)
++include(FindIntl)
 +include(FindLCMS)
 +
  set(QT_QTGUI_LIB_DEPENDENCIES "")
@@ -53,13 +53,13 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.9 2014/09/11 10:24:
 +endif(ICONV_FOUND)
 +
 +## libintl
-+if(LIBINTL_FOUND)
++if(Intl_FOUND)
 +  find_library(QT_INTL_LIBRARY NAMES intl)
 +  mark_as_advanced(QT_INTL_LIBRARY)
 +  if(QT_INTL_LIBRARY)
 +    set(QT_QTCORE_LIB_DEPENDENCIES ${QT_QTCORE_LIB_DEPENDENCIES} ${QT_INTL_LIBRARY})
 +  endif(QT_INTL_LIBRARY)
-+endif(LIBINTL_FOUND)
++endif(Intl_FOUND)
  
  ## openssl
  if(NOT Q_WS_WIN)

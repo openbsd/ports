@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.3 2012/11/11 17:13:31 dcoppa Exp $
---- Modules/Compiler/GNU-Fortran.cmake.orig	Fri Nov  2 08:16:46 2012
-+++ Modules/Compiler/GNU-Fortran.cmake	Fri Nov  2 08:17:05 2012
-@@ -4,10 +4,6 @@ __compiler_gnu(Fortran)
+$OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.4 2015/03/26 07:10:02 dcoppa Exp $
+--- Modules/Compiler/GNU-Fortran.cmake.orig	Tue Mar 10 09:38:44 2015
++++ Modules/Compiler/GNU-Fortran.cmake	Wed Mar 18 06:15:27 2015
+@@ -4,9 +4,5 @@ __compiler_gnu(Fortran)
  set(CMAKE_Fortran_FORMAT_FIXED_FLAG "-ffixed-form")
  set(CMAKE_Fortran_FORMAT_FREE_FLAG "-ffree-form")
  
@@ -9,6 +9,5 @@ $OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.3 2012/11/11 17:13:31 dco
 -set(CMAKE_Fortran_FLAGS_MINSIZEREL_INIT "-Os")
 -set(CMAKE_Fortran_FLAGS_RELEASE_INIT "-O3")
 -
- # We require updates to CMake C++ code to support preprocessing rules
- # for Fortran.
- set(CMAKE_Fortran_CREATE_PREPROCESSED_SOURCE)
+ # Fortran-specific feature flags.
+ set(CMAKE_Fortran_MODDIR_FLAG -J)
