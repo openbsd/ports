@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/26 12:14:15 sthen Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-hppa=		ghostscript segfaults during build
@@ -6,7 +6,7 @@ BROKEN-hppa=		ghostscript segfaults during build
 DISTNAME=		asymptote-2.24.src
 PKGNAME=		asymptote-2.24
 CATEGORIES=		graphics
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
 

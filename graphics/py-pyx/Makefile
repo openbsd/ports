@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/14 07:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/03/26 12:14:15 sthen Exp $
 
 COMMENT =	package for creating PostScript/PDF graphics
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION = 0.12.1
 DISTNAME =	PyX-${MODPY_EGG_VERSION}
 PKGNAME =	py-pyx-${MODPY_EGG_VERSION}
 CATEGORIES =	graphics devel
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://pyx.sourceforge.net/
 
