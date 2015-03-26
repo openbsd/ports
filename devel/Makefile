@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1319 2015/03/21 13:20:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1320 2015/03/26 06:53:52 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -312,6 +312,7 @@
      SUBDIR += jimarc4random
      SUBDIR += json-c
      SUBDIR += json-glib
+     SUBDIR += jsoncpp
      SUBDIR += kdbg
      SUBDIR += kdevelop
      SUBDIR += kdevplatform
