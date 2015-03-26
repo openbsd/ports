@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_test-iroute,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+--- tests/test-iroute.orig	Thu Mar 26 01:54:19 2015
++++ tests/test-iroute	Thu Mar 26 01:52:33 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #
+ # Copyright (C) 2013 Nikos Mavrogiannopoulos
+ #

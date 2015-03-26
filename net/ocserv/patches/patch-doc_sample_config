@@ -1,0 +1,75 @@
+$OpenBSD: patch-doc_sample_config,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+
+no freeradius-client in ports yet (also disabled in autoconf)
+no seccomp
+
+--- doc/sample.config.orig	Sat Feb 14 10:14:07 2015
++++ doc/sample.config	Sun Feb 15 10:56:02 2015
+@@ -1,7 +1,7 @@
+ # User authentication method. Could be set multiple times and in 
+ # that case all should succeed. To enable multiple methods use
+ # multiple auth directives. Available options: certificate,
+-# plain, pam, radius[configfile,groupconfig]. 
++# plain, pam.
+ 
+ # certificate:
+ #  This indicates that all connecting users must present a certificate.
+@@ -17,26 +17,11 @@
+ # One entry must be listed per line, and 'ocpasswd' should be used
+ # to generate password entries.
+ #
+-# radius[/etc/radiusclient/radiusclient.conf,groupconfig]:
+-#  The radius option requires specifying freeradius-client configuration
+-# file. If the groupconfig option is set, then config-per-user will be overriden,
+-# and all configuration will be read from radius. The supported atributes for
+-# radius configuration are:
+-# Group-Name, Framed-IPv6-Address, Framed-IPv6-Prefix, DNS-Server-IPv6-Address,
+-# Framed-IP-Address, Framed-IP-Netmask, MS-Primary-DNS-Server, MS-Secondary-DNS-Server
+-
+ #auth = "certificate"
+ #auth = "pam"
+ #auth = "pam[gid-min=1000]"
+ auth = "plain[./sample.passwd]"
+-#auth = "radius[/etc/radiusclient/radiusclient.conf,groupconfig]"
+ 
+-# Whether to enable seccomp/Linux namespaces worker isolation. That restricts the number of 
+-# system calls allowed to a worker process, in order to reduce damage from a
+-# bug in the worker process. It is available on Linux systems at a performance cost.
+-# The performance cost is roughly 2% overhead at transfer time (tested on a Linux 3.17.8).
+-isolate-workers = true
+-
+ # A banner to be displayed on clients
+ #banner = "Welcome"
+ 
+@@ -107,8 +92,8 @@ try-mtu-discovery = false
+ #
+ # There may be multiple server-cert and server-key directives,
+ # but each key should correspond to the preceding certificate.
+-server-cert = ../tests/server-cert.pem
+-server-key = ../tests/server-key.pem
++server-cert = ${SYSCONFDIR}/ocserv/server-cert.pem
++server-key = ${SYSCONFDIR}/ocserv/server-key.pem
+ 
+ # Diffie-Hellman parameters. Only needed if you require support
+ # for the DHE ciphersuites (by default this server supports ECDHE).
+@@ -250,16 +235,16 @@ use-occtl = true
+ pid-file = /var/run/ocserv.pid
+ 
+ # The default server directory. Does not require any devices present.
+-#chroot-dir = /path/to/chroot
++chroot-dir = /var/run/ocserv
+ 
+ # socket file used for server IPC (worker-main), will be appended with .PID
+ # It must be accessible within the chroot environment (if any)
+-socket-file = /var/run/ocserv-socket
++socket-file = ocserv-socket
+ 
+ # The user the worker processes will be run as. It should be
+ # unique (no other services run as this user).
+-run-as-user = nobody
+-run-as-group = daemon
++run-as-user = _ocserv
++run-as-group = _ocserv
+ 
+ # Set the protocol-defined priority (SO_PRIORITY) for packets to
+ # be sent. That is a number from 0 to 6 with 0 being the lowest

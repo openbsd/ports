@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_common_sh,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+--- tests/common.sh.orig	Thu Mar 26 01:58:49 2015
++++ tests/common.sh	Thu Mar 26 01:58:52 2015
+@@ -27,7 +27,7 @@ if [ $? != 0 ];then
+ 	exit 77
+ fi
+ 
+-if ! test -x /usr/sbin/openconnect;then
++if ! test -x /usr/local/sbin/openconnect;then
+ 	echo "You need openconnect to run this test"
+ 	exit 77
+ fi

@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_ocpasswd_c,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+
+Generate blowfish crypts, using the simple crypt_newhash API. OpenBSD doesn't
+support SHA2 ($5$ hashes) and has removed support for MD5 ($1$).
+
+--- src/ocpasswd.c.orig	Fri Feb 13 14:31:21 2015
++++ src/ocpasswd.c	Fri Feb 13 14:48:08 2015
+@@ -26,6 +26,10 @@
+ #ifndef _XOPEN_SOURCE
+ # define _XOPEN_SOURCE
+ #endif
++#ifndef __BSD_VISIBLE
++# define __BSD_VISIBLE
++#endif
++#include <pwd.h>
+ #include <unistd.h>
+ #include <gnutls/gnutls.h>
+ #include <gnutls/crypto.h>	/* for random */
+@@ -47,9 +51,8 @@ static void
+ crypt_int(const char *fpasswd, const char *username, const char *groupname,
+ 	  const char *passwd)
+ {
+-	uint8_t _salt[SALT_SIZE];
+-	char salt[SALT_SIZE+16];
+-	char *p, *cr_passwd;
++	char cr_passwd[_PASSWORD_LEN];
++	char *p;
+ 	char *tmp_passwd;
+ 	unsigned i;
+ 	unsigned fpasswd_len = strlen(fpasswd);
+@@ -62,36 +65,8 @@ crypt_int(const char *fpasswd, const char *username, c
+ 	ssize_t len, l;
+ 	int ret;
+ 
+-	ret = gnutls_rnd(GNUTLS_RND_NONCE, _salt, sizeof(_salt));
+-	if (ret < 0) {
+-		fprintf(stderr, "Error generating nonce: %s\n",
+-			gnutls_strerror(ret));
+-		exit(1);
+-	}
+-
+-#ifdef TRY_SHA2_CRYPT
+-	strcpy(salt, "$5$");
+-#else
+-	strcpy(salt, "$1$");
+-#endif
+-	p = salt + 3;
+-
+-	for (i = 0; i < sizeof(_salt); i++) {
+-		*p = alphabet[_salt[i] % (sizeof(alphabet) - 1)];
+-		p++;
+-	}
+-	*p = '$';
+-	p++;
+-	*p = 0;
+-	p++;
+-
+-	cr_passwd = crypt(passwd, salt);
+-	if (cr_passwd == NULL) { /* try MD5 */
+-		salt[1] = '1';
+-		cr_passwd = crypt(passwd, salt);
+-	}
+-	if (cr_passwd == NULL) {
+-		fprintf(stderr, "Error in crypt().\n");
++	if (crypt_newhash(passwd, "blowfish,a", cr_passwd, sizeof(cr_passwd)) != 0) {
++		fprintf(stderr, "Error in crypt_newhash().\n");
+ 		exit(1);
+ 	}
+ 

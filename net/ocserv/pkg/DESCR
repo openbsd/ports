@@ -1,0 +1,10 @@
+OpenConnect VPN server (or ocserv) implements the AnyConnect SSL VPN
+protocol and is compatible with the OpenConnect VPN client. Its purpose
+is to be a small, secure and configurable VPN server that depends on
+standard protocols like TLS 1.2, and Datagram TLS. The AnyConnect
+SSL VPN protocol was the closest protocol to match this requirement.
+
+The VPN users can be authenticated using password, certificate
+authentication or both methods. Authenticated users are assigned their
+own unprivileged worker process and obtain a networking (tun) device
+and IP from a configurable pool of addresses.

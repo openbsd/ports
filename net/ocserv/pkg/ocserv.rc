@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: ocserv.rc,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/ocserv"
+daemon_flags="-c ${SYSCONFDIR}/ocserv/ocserv.conf"
+
+. /etc/rc.d/rc.subr
+
+pexp="ocserv: ocserv-main"
+
+rc_pre() {
+	/usr/bin/install -d -o _ocserv /var/run/ocserv
+}
+
+rc_cmd $1
