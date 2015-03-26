@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/16 15:20:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/26 19:58:08 sthen Exp $
+
+BROKEN-i386 =	unreliable build, frequently hangs after compiling translations
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
