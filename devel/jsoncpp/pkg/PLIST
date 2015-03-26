@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
+include/jsoncpp/
+include/jsoncpp/json/
+include/jsoncpp/json/assertions.h
+include/jsoncpp/json/autolink.h
+include/jsoncpp/json/config.h
+include/jsoncpp/json/features.h
+include/jsoncpp/json/forwards.h
+include/jsoncpp/json/json.h
+include/jsoncpp/json/reader.h
+include/jsoncpp/json/value.h
+include/jsoncpp/json/version.h
+include/jsoncpp/json/writer.h
+@lib lib/libjsoncpp.so.${LIBjsoncpp_VERSION}
+lib/pkgconfig/jsoncpp.pc
+share/doc/jsoncpp/
+share/doc/jsoncpp/AUTHORS
+share/doc/jsoncpp/LICENSE
+share/doc/jsoncpp/NEWS.txt
+share/doc/jsoncpp/README.md

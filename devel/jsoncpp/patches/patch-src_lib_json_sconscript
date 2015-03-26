@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_json_sconscript,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
+
+Rename lib to avoid conflicts against json-c
+
+--- src/lib_json/sconscript.orig	Sun Mar 15 14:25:04 2015
++++ src/lib_json/sconscript	Wed Mar 18 05:30:33 2015
+@@ -5,4 +5,4 @@ buildLibrary( env, Split( """
+     json_value.cpp 
+     json_writer.cpp
+      """ ),
+-    'json' )
++    'jsoncpp' )
