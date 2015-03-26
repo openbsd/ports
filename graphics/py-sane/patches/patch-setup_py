@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2015/03/26 12:08:11 sthen Exp $
+--- setup.py.orig	Fri Feb 13 09:23:42 2015
++++ setup.py	Fri Feb 13 09:24:51 2015
+@@ -18,9 +18,10 @@ except ImportError:
+ 
+ sane = Extension('_sane',
+                  include_dirs = [
+-                     os.path.join(distutils.sysconfig.get_python_inc(), "Imaging")
++                     os.path.join(distutils.sysconfig.get_python_inc(), "Imaging"), '${MODPY_SITEPKG}/numpy/core/include', '${LOCALBASE}/include'
+                  ],
+                  libraries = ['sane'],
++                 library_dirs = ['${LOCALBASE}/lib'],
+                  define_macros = defs,
+                  extra_compile_args = extra_compile_args,
+                  sources = ['_sane.c'])

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/26 12:08:11 sthen Exp $
+@pkgpath graphics/py-Pillow,-sane${MODPY_FLAVOR}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sane.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_sane.so
+lib/python${MODPY_VERSION}/site-packages/pysane-2.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/sane.py
