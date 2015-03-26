@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/11/28 22:20:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/03/26 12:09:15 sthen Exp $
 @conflict py-Imaging-*
-@pkgpath graphics/py-Pillow${MODPY_FLAVOR}
+@pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-docs[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
@@ -18,9 +18,8 @@ bin/pilprint${MODPY_BIN_SUFFIX}
 bin/player${MODPY_BIN_SUFFIX}
 bin/thresholder${MODPY_BIN_SUFFIX}
 bin/viewer${MODPY_BIN_SUFFIX}
-include/python${MODPY_VERSION}/
-include/python${MODPY_VERSION}/ImPlatform.h
-include/python${MODPY_VERSION}/Imaging.h
+${INCL_DIR}/ImPlatform.h
+${INCL_DIR}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
 lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BmpImagePlugin.py
