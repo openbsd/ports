@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2015/03/27 16:00:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2015/03/27 16:23:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,6 +15,11 @@ PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
+REVISION-main=		0
+REVISION-cups=		0
+REVISION-cloudprint=	0
+REVISION-guic=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS +=  gdk-3                1600.0   # 1600.0
@@ -28,8 +33,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m
-WANTLIB += pcre png pthread z
+WANTLIB += epoxy ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += m pcre png pthread z
 
 MULTI_PACKAGES=		-main -cups -cloudprint -guic
 
