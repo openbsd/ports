@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/27 08:43:01 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
@@ -8,7 +8,7 @@ COMMENT =		digital audio workstation
 DISTNAME =		ardour-2.8.14
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
-REVISION =		6
+REVISION =		7
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -51,11 +51,11 @@ MODSCONS_ENV=	CC="${CC}" \
 
 # the fd.or utilities are needed at build time (FREEDESKTOP=1)
 BUILD_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			misc/shared-mime-info
 
 RUN_DEPENDS = 		devel/desktop-file-utils \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			misc/shared-mime-info
 LIB_DEPENDS =		audio/aubio \
 			audio/liblo \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/05 23:44:01 edd Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:43:01 ajacoutot Exp $
 
 COMMENT =		Fasttracker II inspired MOD tracker
 
 DISTNAME =		milkytracker-0.90.86
 CATEGORIES =		audio
+REVISION =		0
 
 HOMEPAGE =		http://www.milkytracker.org/
 
@@ -17,7 +18,7 @@ MASTER_SITES =		${HOMEPAGE}files/
 # libjack accessed via dlopen()
 RUN_DEPENDS =		audio/jack \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 BUILD_DEPENDS =		audio/jack
 LIB_DEPENDS =		devel/sdl
 

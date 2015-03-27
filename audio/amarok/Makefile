@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2015/03/27 08:43:01 ajacoutot Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-REVISION =	23
+REVISION =	24
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL
@@ -30,7 +30,7 @@ WANTLIB += ${KDE}/konqsidebarplugin ${KDE}/kparts ${KDE}/kutils
 WANTLIB += ${KDE}/kwalletclient
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	x11/kde/libs3 \
 		x11/kde/base3 \

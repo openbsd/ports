@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/01 21:22:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2015/03/27 08:43:02 ajacoutot Exp $
 
 COMMENT =	japanese input engine for ibus
 
 DISTNAME =	ibus-anthy-1.5.4
+REVISION =	0
 
 SHARED_LIBS =	anthygobject-1.0	1.0 # 5.504
 
@@ -26,7 +27,7 @@ MODULES =	devel/gettext \
 BUILD_DEPENDS =	inputmethods/ibus>=1.5.0
 RUN_DEPENDS =	devel/desktop-file-utils \
 		inputmethods/ibus>=1.5.0 \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS =	inputmethods/anthy
 
 USE_GMAKE =	Yes

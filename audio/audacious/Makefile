@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/12/30 21:50:24 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2015/03/27 08:43:01 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
@@ -7,6 +7,7 @@ BROKEN-hppa =	tinylock.c:58: internal compiler error: in extract_insn, at recog.
 COMMENT =		Gtk+3 media player
 
 DISTNAME =		audacious-3.5.2
+REVISION =		0
 
 SHARED_LIBS +=		audcore		3.0 	# 1.0
 SHARED_LIBS +=		audgui		3.0	# 1.0
@@ -31,7 +32,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/gettext
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/libguess>=1.2 \
 			x11/gtk+3
 

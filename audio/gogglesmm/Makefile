@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/30 14:01:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/27 08:43:01 ajacoutot Exp $
 
 COMMENT =	music collection manager and player
 DISTNAME =	gogglesmm-0.12.7
 EXTRACT_SUFX =	.tar.xz
-REVISION =	1
+REVISION =	2
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://code.google.com/p/gogglesmm/
@@ -26,7 +26,7 @@ LIB_DEPENDS =	audio/taglib \
 		x11/dbus
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--with-md5=internal

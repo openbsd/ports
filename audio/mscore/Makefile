@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/24 21:23:44 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/27 08:43:01 ajacoutot Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -45,7 +45,7 @@ LIB_DEPENDS =	audio/portaudio-svn \
 		audio/libsndfile>=1.0.25p0
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_JACK=OFF

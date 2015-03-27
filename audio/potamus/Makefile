@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/22 06:42:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/27 08:43:01 ajacoutot Exp $
 
 COMMENT =	lightweight audio player with a simple interface
 DISTNAME =	potamus-16
 CATEGORIES =	audio x11
+REVISION =	0
 
 HOMEPAGE =	http://offog.org/code/potamus/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -33,7 +34,7 @@ LIB_DEPENDS =	audio/libao \
 		x11/gtk+2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-output-jack

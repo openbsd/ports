@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/10 08:30:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/27 08:43:02 ajacoutot Exp $
 
 COMMENT =		grid-entry natural handwriting input panel
 
 DISTNAME =		cellwriter-1.3.5
+REVISION =		0
 
 CATEGORIES =		inputmethods x11
 
@@ -23,7 +24,7 @@ MASTER_SITES =		http://pub.risujin.org/cellwriter/
 
 MODULES =		devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		x11/gtk+2
 
 CONFIGURE_STYLE =	gnu

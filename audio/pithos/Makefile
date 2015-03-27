@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/29 07:02:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:43:01 ajacoutot Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
@@ -7,7 +7,7 @@ GH_COMMIT =	8a1942e92dde225c8f3677cc199a159a8a67a291
 
 COMMENT =	Pandora client for GNOME
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	audio x11
 SUBST_VARS +=	GH_TAGNAME
 
@@ -33,7 +33,7 @@ RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \
 		multimedia/gstreamer1/plugins-libav \
 		x11/dbus-python${MODPY_FLAVOR} \
 		x11/keybinder3 \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 TEST_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11
 
