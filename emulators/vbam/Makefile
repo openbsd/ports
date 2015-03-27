@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/08/19 05:53:59 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/27 08:11:27 ajacoutot Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -6,7 +6,7 @@ BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 
 DISTNAME =		vbam-1.8.0.1054-src
 PKGNAME =		${DISTNAME:S/-src//}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		emulators
 
@@ -32,7 +32,7 @@ MODULES =		devel/cmake \
 			devel/gettext
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS =		devel/sdl \
 			x11/gtkglextmm

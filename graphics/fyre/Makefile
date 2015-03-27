@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/04/05 08:02:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-REVISION=		14
+REVISION=		15
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -26,7 +26,7 @@ LIB_DEPENDS=		devel/libglade2 \
 			graphics/openexr
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 USE_GMAKE=		Yes
 

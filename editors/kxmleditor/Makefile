@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.44 2015/03/27 08:11:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	XML editor for KDE
 
 DISTNAME=	kxmleditor-1.1.3
-REVISION=	12
+REVISION=	13
 CATEGORIES=	editors x11 x11/kde
 
 SHARED_LIBS=	kxmleditorpart	2.0
@@ -25,7 +25,7 @@ WANTLIB +=	${KDE}/kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
-RUN_DEPENDS=	x11/gtk+2,-guic
+RUN_DEPENDS=	x11/gtk+3,-guic
 LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/kde devel/gettext

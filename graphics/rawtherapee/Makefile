@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/27 08:11:29 ajacoutot Exp $
 
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-4.1
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -28,7 +29,7 @@ EXTRACT_SUFX = 		.tar.xz
 MODULES =		devel/cmake \
 			devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS =		audio/libcanberra,-gtk \
 			devel/libsigc++-2 \

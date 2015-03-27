@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2015/03/27 08:11:27 ajacoutot Exp $
 
 COMMENT=	simple GTK+ text editor
 
 DISTNAME=	leafpad-0.8.18.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	editors x11
 
 HOMEPAGE=	http://tarot.freeshell.org/leafpad/
@@ -26,7 +26,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 USE_GMAKE=	Yes
 

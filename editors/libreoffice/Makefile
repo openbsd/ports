@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2015/03/20 22:47:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.125 2015/03/27 08:11:27 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -18,7 +18,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-kde=	0
 REVISION-java=	0
 EPOCH=		0
@@ -223,7 +223,7 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			misc/shared-mime-info \
 			security/nss \
 			textproc/clucene \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	editors/libreoffice

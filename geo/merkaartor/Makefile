@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/27 08:11:27 ajacoutot Exp $
 
 COMMENT =	OpenStreetMap editor
 
 DISTNAME =	merkaartor-0.18.1
 EXTRACT_SUFX =	.tar.bz2
 SHARED_ONLY =	Yes
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -19,7 +20,7 @@ MASTER_SITES =	http://merkaartor.be/attachments/download/301/
 NO_TEST =	Yes
 MODULES =	devel/gettext x11/qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	devel/proj geo/gdal
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2015/01/02 14:26:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2015/03/27 08:11:26 ajacoutot Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		24.4
-REVISION=		0
+REVISION=		1
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -62,7 +62,7 @@ LIB_DEPENDS+=		x11/dbus \
 			graphics/ImageMagick
 RUN_DEPENDS+=		devel/desktop-file-utils \
 			devel/xdg-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 . if ${FLAVOR} == "athena"
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d

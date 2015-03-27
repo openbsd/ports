@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/26 21:29:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 DISTNAME =	birdfont-2.4.0
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics print
+REVISION =	0
 
 # Both libs must have the same SO number!
 # See scripts/bavala.py (or patches/patch-scripts_bavala_py)
@@ -41,7 +42,7 @@ LIB_DEPENDS =	devel/libgee \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	simple
 

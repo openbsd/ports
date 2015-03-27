@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/15 10:03:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/03/27 08:11:24 ajacoutot Exp $
 
 COMMENT=		GTK+-based electronic waveform viewer
 
 DISTNAME=		gtkwave-3.3.64
 CATEGORIES=		cad
+REVISION=		0
 
 HOMEPAGE=		http://gtkwave.sourceforge.net/
 
@@ -23,7 +24,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		devel/gperf
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/xz \
 			x11/gtk+2

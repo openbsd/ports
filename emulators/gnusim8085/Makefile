@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:11:27 ajacoutot Exp $
 
 COMMENT =		graphical 8085 simulator, assembler, and debugger
 
 V =			1.3.7
 DISTNAME =		gnusim8085-${V}
+REVISION =		0
 
 CATEGORIES =		emulators devel
 
@@ -23,7 +24,7 @@ MASTER_SITES =		http://launchpad.net/gnusim8085/trunk/${V}/+download/
 
 MODULES =		devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		x11/gtksourceview
 
 CONFIGURE_STYLE =	gnu

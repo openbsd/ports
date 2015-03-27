@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.100 2014/10/18 14:27:11 giovanni Exp $
+# $OpenBSD: Makefile,v 1.101 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	gimp-2.8.14
+REVISION=	0
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -31,7 +32,7 @@ EXTRACT_SUFX=	.tar.bz2
 BUILD_DEPENDS=	textproc/libxslt \
 		x11/py-gtk2
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		x11/py-gtk2
 LIB_DEPENDS=	x11/gtk+2 \
 		graphics/aalib \

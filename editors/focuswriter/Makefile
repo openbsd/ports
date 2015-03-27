@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/26 18:52:03 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/27 08:11:26 ajacoutot Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
 DISTNAME =	focuswriter-1.4.4
 CATEGORIES =	editors
 EXTRACT_SUFX =	-src.tar.bz2
+REVISION =	0
 
 HOMEPAGE =	http://gottcode.org/focuswriter/
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES +=	devel/gettext
 MODULES +=	x11/qt4
-RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+2,-guic
+RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+3,-guic
 LIB_DEPENDS +=	archivers/libzip textproc/enchant
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 WANTLIB +=	QtNetwork enchant glib-2.0 gmodule-2.0 z

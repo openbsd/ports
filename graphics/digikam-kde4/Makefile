@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/02 08:01:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -21,8 +21,13 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
+REVISION-face =		0
+REVISION-kipi =		0
+REVISION-main =		0
+REVISION-mediawiki =	0
+REVISION-vkontakte =	0
 
-REVISION-geomap =	0
+REVISION-geomap =	1
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -131,14 +136,14 @@ RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-desktop-ontologies \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			databases/mariadb,-server \
 			misc/shared-desktop-ontologies \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 RUN_DEPENDS-vkontakte =	${MODKDE4_RUN_DEPENDS}
 

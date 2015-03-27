@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2014/07/09 12:42:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2015/03/27 08:11:26 ajacoutot Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-2.0
-REVISION=	8
+REVISION=	9
 CATEGORIES=	editors x11/kde
 
 HOMEPAGE=	http://kile.sourceforge.net/
@@ -27,7 +27,7 @@ WANTLIB +=	${KDE}/kutils ${KDE}/kwalletclient ${KDE}/vcard
 RUN_DEPENDS=	x11/kde/graphics3 \
 		print/texlive/base \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS=	x11/kde/libs3
 

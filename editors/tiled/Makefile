@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/28 09:48:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/27 08:11:27 ajacoutot Exp $
 
 COMMENT =		tile map editor
 
 V =			0.9.1
 DISTNAME =		tiled-qt-${V}
 PKGNAME =		tiled-${V}
+REVISION =		0
 
 SHARED_LIBS +=		tiled                     0.0 # 1.0
 
@@ -21,7 +22,7 @@ WANTLIB += c fontconfig freetype m pthread stdc++ z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tiled/}
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 MODULES =		x11/qt4
 
 MAKE_FLAGS =		CC="${CC}" \

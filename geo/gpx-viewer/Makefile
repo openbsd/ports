@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2015/02/10 10:17:45 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2015/03/27 08:11:27 ajacoutot Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.4.0
 DISTNAME =	gpx-viewer-${VERSION}
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -28,7 +29,7 @@ LIB_DEPENDS =	geo/libchamplain>=0.12.0 \
 		x11/gnome/gdl
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/applications
 

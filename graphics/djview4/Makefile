@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2014/11/25 13:37:19 schwarze Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.9
-REVISION=	0
+REVISION=	1
 PKGNAME=	${DISTNAME:S/djview/djview4/}
 CATEGORIES=	graphics print
 
@@ -24,7 +24,7 @@ MODULES=	x11/qt4
 LIB_DEPENDS=	graphics/djvulibre
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

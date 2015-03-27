@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/15 18:13:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/27 08:11:26 ajacoutot Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-2.8.7
 CATEGORIES =	editors
+REVISION =	0
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
@@ -120,7 +121,7 @@ RUN_DEPENDS =	databases/mariadb \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
 		productivity/librcps \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	databases/freetds \
 		databases/libpqxx>=3,<5 \

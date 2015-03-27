@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/03/27 08:11:27 ajacoutot Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -6,7 +6,7 @@ DISTNAME =	snes9x-1.52-src
 PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	emulators games
 
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://www.snes9x.com/
 
@@ -26,7 +26,7 @@ MASTER_SITES =	https://sites.google.com/site/bearoso/snes9x/
 EXTRACT_SUFX =	.tar.bz2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS =	devel/libglade2 \
 		devel/sdl \
 		graphics/png \

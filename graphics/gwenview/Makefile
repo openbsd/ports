@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2013/12/24 20:56:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.64 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.2
 PKGSPEC=	gwenview-<4
-REVISION =	17
+REVISION =	18
 
 SHARED_LIBS +=	gwenviewcore         5.0      # .1.0
 CATEGORIES=	graphics x11 x11/kde
@@ -26,7 +26,7 @@ WANTLIB += ${KDE}/kmediaplayer ${KDE}/kutils ${KDE}/kwalletclient
 WANTLIB += ${KDE}/kipi
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS=	x11/kde/libs3 \
 		graphics/libkipi \

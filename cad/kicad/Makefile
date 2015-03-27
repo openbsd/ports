@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/11/04 14:58:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2015/03/27 08:11:25 ajacoutot Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -10,8 +10,8 @@ PKGNAME=	kicad-${V:S/-//g}
 PKGNAME-main=	kicad-${V:S/-//g}
 PKGNAME-docs=	kicad-docs-${V:S/-//g}
 
-REVISION-main=	4
-REVISION-docs=	0
+REVISION-main=	5
+REVISION-docs=	1
 
 CATEGORIES=	cad
 
@@ -40,7 +40,7 @@ BUILD_DEPENDS =	devel/boost
 RUN_DEPENDS-main=	cad/kicad-library \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS=	x11/wxWidgets
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2015/03/26 12:14:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-4.0.4
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=	graphics/py-Pillow \
 		x11/py-gtk2 \
 		misc/shared-mime-info \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 NO_TEST=	Yes
 

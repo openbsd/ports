@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/12/25 15:38:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.35 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT-main =		KDE image plugins API
 COMMENT-icons =		icons for libkipi
@@ -8,8 +8,8 @@ DISTNAME =		libkipi-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-icons =		libkipi-icons-$V
 PKGSPEC-main =		libkipi-<1
-REVISION-main =		10
-REVISION-icons =	4
+REVISION-main =		11
+REVISION-icons =	5
 
 SHARED_LIBS +=	kipi                 1.4      # .2.0
 
@@ -24,7 +24,7 @@ LIB_DEPENDS-icons =
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			STEM-*|kde4-libkipi-icons-*:${BUILD_PKGPATH},-icons
-RUN_DEPENDS-icons =	x11/gtk+2,-guic
+RUN_DEPENDS-icons =	x11/gtk+3,-guic
 
 WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat fam

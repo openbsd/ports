@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/03/16 18:07:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.25.3
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	djvulibre	25.0	# 25.0
 CATEGORIES=	graphics print
 
@@ -21,7 +21,7 @@ WANTLIB=	c m jpeg pthread stdc++ tiff z
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/tiff
 
-RUN_DEPENDS+=	x11/gtk+2,-guic
+RUN_DEPENDS+=	x11/gtk+3,-guic
 
 BUILD_DEPENDS+=	x11/gnome/librsvg
 

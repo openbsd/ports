@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/15 13:04:15 edd Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/27 08:11:27 ajacoutot Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
@@ -9,6 +9,7 @@ V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
+REVISION =		0
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -27,7 +28,7 @@ LIB_DEPENDS =		devel/sdl \
 			audio/openal \
 			devel/glib2
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 USE_GMAKE =		Yes
 

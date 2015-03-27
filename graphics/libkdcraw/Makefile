@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/12/13 09:38:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT-main =	grab raw data from digital cameras
 COMMENT-icons =	icons for libkdcraw
@@ -8,8 +8,8 @@ V =		0.1.9
 DISTNAME =	libkdcraw-${V}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-icons =	libkdcraw-icons-${V}
-REVISION-main =	9
-REVISION-icons =1
+REVISION-main =	10
+REVISION-icons =2
 
 PKGSPEC-main =	libkdcraw-<0.2.0
 
@@ -41,7 +41,7 @@ LIB_DEPENDS-icons =
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			graphics/dcraw \
 			STEM-*|kde4-libkdcraw-icons-*:${BUILD_PKGPATH},-icons
-RUN_DEPENDS-icons =	x11/gtk+2,-guic
+RUN_DEPENDS-icons =	x11/gtk+3,-guic
 
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama

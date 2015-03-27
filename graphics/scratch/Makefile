@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/12 20:12:02 stu Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:11:29 ajacoutot Exp $
 
 COMMENT =	visual programming environment and toolkit
 
 DISTNAME =	${PKGNAME}.src
 PKGNAME =	scratch-1.4.0.7
-REVISION =	0
+REVISION =	1
 CATEGORIES =	graphics
 HOMEPAGE =	http://scratch.mit.edu/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -27,7 +27,7 @@ RUN_DEPENDS =	lang/squeak/vm \
 		devel/desktop-file-utils \
 		devel/xdg-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	devel/pango
 SEPARATE_BUILD = Yes

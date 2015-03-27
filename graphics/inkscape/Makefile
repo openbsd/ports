@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2015/03/24 18:45:11 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
+REVISION=	0
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/
@@ -52,7 +53,7 @@ LIB_DEPENDS=	devel/boehm-gc \
 		x11/gtk2mm>=2.24.4
 RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/py-lxml \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

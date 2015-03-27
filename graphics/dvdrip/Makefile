@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/01/22 20:26:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/27 08:11:28 ajacoutot Exp $
 
 COMMENT=	full featured DVD copy program
 
 VERSION=	0.98.11
-REVISION=	0
+REVISION=	1
 DISTNAME=	dvdrip-${VERSION}
 CATEGORIES=	graphics audio multimedia perl5
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	graphics/ImageMagick \
 		x11/p5-Gtk2-Ex-FormFactory \
 		multimedia/ogmtools \
 		multimedia/lsdvd>=0.15 \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 BUILD_DEPENDS=	devel/p5-Event-ExecFlow \
 		net/p5-Event-RPC \
 		x11/p5-Gtk2-Ex-FormFactory
