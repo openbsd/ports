@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/11/13 17:30:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/03/27 16:01:17 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -42,9 +42,10 @@ lib/pkgconfig/atspi-2.pc
 @bin libexec/at-spi-bus-launcher
 @bin libexec/at-spi2-registryd
 share/dbus-1/
+share/dbus-1/accessibility-services/
+share/dbus-1/accessibility-services/org.a11y.atspi.Registry.service
 share/dbus-1/services/
 share/dbus-1/services/org.a11y.Bus.service
-share/dbus-1/services/org.a11y.atspi.Registry.service
 share/examples/at-spi2-core/
 share/examples/at-spi2-core/at-spi2/
 @sample ${SYSCONFDIR}/at-spi2/
@@ -117,6 +118,9 @@ share/locale/bg/LC_MESSAGES/at-spi2-core.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/at-spi2-core.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/at-spi2-core.mo
 share/locale/ca/LC_MESSAGES/at-spi2-core.mo
 share/locale/ca@valencia/
 share/locale/ca@valencia/LC_MESSAGES/
@@ -156,6 +160,9 @@ share/locale/hu/LC_MESSAGES/at-spi2-core.mo
 share/locale/id/LC_MESSAGES/at-spi2-core.mo
 share/locale/it/LC_MESSAGES/at-spi2-core.mo
 share/locale/ja/LC_MESSAGES/at-spi2-core.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/at-spi2-core.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/at-spi2-core.mo
