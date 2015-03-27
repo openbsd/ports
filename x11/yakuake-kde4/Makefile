@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/10 09:44:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/27 08:16:25 ajacoutot Exp $
 
 CATEGORIES =	x11 sysutils
 COMMENT =	quake-style terminal emulator for KDE 4
 HOMEPAGE =	http://yakuake.kde.org/
 VERSION =	2.9.9
 DISTNAME =	yakuake-${VERSION}
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
@@ -24,7 +25,7 @@ WANTLIB += soprano
 
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/konsole \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 SUBST_VARS =	PKGNAME
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2015/03/16 20:35:55 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2015/03/27 08:16:24 ajacoutot Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
 XFCE_VERSION=	0.8.0
 XFCE_GOODIE=	ristretto
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

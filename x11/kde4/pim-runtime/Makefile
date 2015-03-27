@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2014/11/01 21:09:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
@@ -42,7 +43,7 @@ BUILD_DEPENDS =	devel/boost \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	databases/soprano \
 		devel/qjson \

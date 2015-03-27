@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/04/14 19:52:45 matthieu Exp $
+# $OpenBSD: Makefile,v 1.42 2015/03/27 08:16:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	Xfce4 battery monitor panel plugin
 
 XFCE_VERSION=	1.0.5
 XFCE_PLUGIN=	battery
-REVISION =	2
+REVISION =	3
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

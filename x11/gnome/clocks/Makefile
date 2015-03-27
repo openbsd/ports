@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2014/10/15 08:52:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/27 08:16:16 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		3.14.1
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

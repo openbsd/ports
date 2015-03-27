@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/20 21:58:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT =	UML editor for KDE
 DISTNAME =	umbrello-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel productivity
 HOMEPAGE =	http://umbrello.kde.org/
@@ -17,7 +18,7 @@ WANTLIB += soprano xml2 xslt
 BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	textproc/libxml \
 		textproc/libxslt

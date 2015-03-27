@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/01/13 20:38:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.47 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
@@ -10,12 +10,12 @@ PKGSPEC =		kdeadmin>=3,<4
 MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS =	x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-REVISION =	12
+REVISION =	13
 
 WANTLIB =  c expat m pthread pthread-stubs stdc++ util z
 WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt fontconfig freetype xcb

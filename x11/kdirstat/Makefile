@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2015/01/21 06:23:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.31 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=	x11
 
@@ -22,7 +22,7 @@ WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2
 
-RUN_DEPENDS=	x11/gtk+2,-guic
+RUN_DEPENDS=	x11/gtk+3,-guic
 LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	devel/gettext \

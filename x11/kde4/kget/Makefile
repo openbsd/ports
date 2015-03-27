@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/01 21:09:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:16:20 ajacoutot Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${MODKDE4_VERSION}
@@ -24,7 +24,7 @@ MODULES =	devel/gettext multimedia/phonon
 MODKDE4_USE =	pim workspace
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	multimedia/libmms \
 		net/libktorrent,${MODKDE4_FLAVOR} \

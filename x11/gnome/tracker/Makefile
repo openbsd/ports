@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2014/12/10 12:36:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2015/03/27 08:16:17 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -13,6 +13,7 @@ GNOME_VERSION=		1.2.5
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
 PKGNAME=		meta-tracker-${VERSION}
+REVISION=		0
 
 # NOTE: when TRACKER_API changes, increment accordingly and bump:
 # x11/gnome/documents

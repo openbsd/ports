@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/04/03 06:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT=		Tango icon theme
 
 DISTNAME=		tango-icon-theme-0.8.90
-REVISION=		8
+REVISION=		9
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		textproc/intltool
 
-RUN_DEPENDS=		x11/gtk+2,-guic
+RUN_DEPENDS=		x11/gtk+3,-guic
 BUILD_DEPENDS=          x11/icon-naming-utils \
 			graphics/ImageMagick
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/07/09 20:03:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/27 08:16:19 ajacoutot Exp $
 
 BROKEN =	requires key dependencies update
 COMMENT =	periodic system of elements for KDE
@@ -28,7 +28,7 @@ BUILD_DEPENDS =	math/eigen2 \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		math/facile \
 		misc/chemical-mime-data \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS = 	education/avogadro \
 		misc/openbabel

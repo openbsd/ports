@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2013/10/11 23:51:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2015/03/27 08:16:25 ajacoutot Exp $
 
 COMMENT=	virtual sticky pad system
 
 DISTNAME=	xpad-4.0
-REVISION=	6
+REVISION=	7
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpad/}
@@ -17,7 +17,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/13 11:31:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:16:25 ajacoutot Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
 DISTNAME=		yad-0.23.1
 CATEGORIES=		x11
+REVISION=		0
 
 HOMEPAGE=		https://yad.googlecode.com/
 
@@ -23,7 +24,7 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 LIB_DEPENDS=		x11/gtk+3
-RUN_DEPENDS=		x11/gtk+2,-guic
+RUN_DEPENDS=		x11/gtk+3,-guic
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-gtk=gtk3 \

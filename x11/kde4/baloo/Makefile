@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/20 21:58:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdelibs/baloo
@@ -27,7 +28,7 @@ WANTLIB += qjson xapian
 MODKDE4_USE =	pim libs
 MODKDE4_SYSCONF_FILES =	dbus-1	share/examples
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	x11/gtk+3,-guic
 
 LIB_DEPENDS =	databases/xapian-core \
 		devel/qjson \

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/27 08:16:20 ajacoutot Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread ${MODPY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -16,7 +17,7 @@ MODULES =	lang/python
 
 LIB_DEPENDS =	devel/boost
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/pykig/pykig.py

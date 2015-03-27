@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.71 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -15,11 +15,11 @@ SHARED_LIBS +=	kolf                 4.0      # .3.0
 MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS = 	x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
-REVISION =	13
+REVISION =	14
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
 	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \

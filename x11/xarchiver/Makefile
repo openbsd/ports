@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2014/10/20 09:53:26 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/27 08:16:24 ajacoutot Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
 DISTNAME =	xarchiver-0.5.4
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xarchiver/}
@@ -27,7 +28,7 @@ RUN_DEPENDS =	archivers/zip \
 		archivers/p7zip \
 		devel/xdg-utils \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

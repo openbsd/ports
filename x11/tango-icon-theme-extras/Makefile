@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT=		Tango icon theme extras for GNOME and KDE
 
 DISTNAME=		tango-icon-theme-extras-0.1.0
-REVISION=		5
+REVISION=		6
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 BUILD_DEPENDS=          x11/icon-naming-utils \
 			graphics/ImageMagick
 RUN_DEPENDS=		x11/tango-icon-theme \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CONFIGURE_STYLE= 	gnu
 USE_GMAKE=		Yes

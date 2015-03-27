@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	KDE screensaver of outer space with Tux
 DISTNAME =	ktux-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	games
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdetoys/ktux
@@ -13,6 +14,6 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kscreensaver
 
 MODKDE4_USE =	workspace
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	x11/gtk+3,-guic
 
 .include <bsd.port.mk>

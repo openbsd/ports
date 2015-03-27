@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT=		Human icon theme from Ubuntu
 
 V=			0.36
 DISTNAME=		human-icon-theme_${V}
 PKGNAME=		human-icon-theme-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -19,7 +19,7 @@ MASTER_SITES=		https://launchpad.net/ubuntu/oneiric/+source/human-icon-theme/${V
 WRKDIST=	${WRKDIR}/human-icon-theme
 MODULES=	textproc/intltool
 
-RUN_DEPENDS=	x11/gtk+2,-guic
+RUN_DEPENDS=	x11/gtk+3,-guic
 BUILD_DEPENDS=	x11/icon-naming-utils
 
 # Add the corresponding "Inherits" theme.

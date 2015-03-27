@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2015/01/22 13:11:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.75 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, developer extensions
 COMMENT-svn =		K Desktop Environment, svn extensions
 CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
-REVISION-main =		20
-REVISION-svn =		21
+REVISION-main =		21
+REVISION-svn =		22
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
@@ -24,14 +24,14 @@ MULTI_PACKAGES =	-main -svn
 MODULES =		x11/kde devel/gettext
 
 RUN_DEPENDS-main +=	devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS =		x11/kde/libs3
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/kde/pim3
 
-RUN_DEPENDS-svn =	x11/gtk+2,-guic
+RUN_DEPENDS-svn =	x11/gtk+3,-guic
 LIB_DEPENDS-svn =	${LIB_DEPENDS} \
 			devel/subversion
 

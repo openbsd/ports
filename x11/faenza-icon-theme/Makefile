@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:32:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/27 08:16:16 ajacoutot Exp $
 
 COMMENT =		complete, colourful suite of squared icons
 
 V =			1.3
 DISTNAME =		faenza-icon-theme_${V}
 PKGNAME =		faenza-icon-theme-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		x11
 
 HOMEPAGE =		http://tiheum.deviantart.com/art/Faenza-Icons-173323228
@@ -21,7 +21,7 @@ PKG_ARCH =		*
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-RUN_DEPENDS =		x11/gtk+2,-guic
+RUN_DEPENDS =		x11/gtk+3,-guic
 
 WRKDIST =		${WRKDIR}
 ICONSDIR =		${PREFIX}/share/icons/

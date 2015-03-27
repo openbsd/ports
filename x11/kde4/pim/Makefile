@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/20 21:58:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-${MODKDE4_VERSION}
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
+REVISION =	0
 
 SHARED_LIBS =	akonadi_next			53.0
 SHARED_LIBS +=	akregatorinterfaces		53.0
@@ -101,7 +102,7 @@ BUILD_DEPENDS =	devel/boost \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		${MODKDE4_DEP_DIR}/baloo-widgets>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	databases/soprano \

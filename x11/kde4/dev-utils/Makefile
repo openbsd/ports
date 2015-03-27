@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT =	KDE development helper utilities
 DISTNAME =	kde-dev-utils-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kde-dev-utils
@@ -17,6 +18,6 @@ BUILD_DEPENDS =	devel/libtool,-ltdl
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/libtool,-ltdl \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>

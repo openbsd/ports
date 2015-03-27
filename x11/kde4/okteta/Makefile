@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	hex file editor for KDE
 DISTNAME =	okteta-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/okteta
@@ -28,7 +29,7 @@ BUILD_DEPENDS =	misc/shared-mime-info
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	security/qca2
 

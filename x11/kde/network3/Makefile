@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.79 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, network applications
 COMMENT-kopsounds =	notification sounds for Kopete
@@ -10,7 +10,8 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-kopsounds =	kde3-kopete-sounds-${VERSION}
 PKGSPEC-main =		kdenetwork->=3,<4
 PKG_ARCH-kopsounds =	*
-REVISION-main = 	13
+REVISION-main = 	14
+REVISION-kopsounds =	0
 
 SHARED_LIBS +=	kopete               2.0      # .1.0
 SHARED_LIBS +=	kopete_videodevice   1.0      # .0.0
@@ -27,7 +28,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			kde3-kopete-sounds-*|kde4-kopete-sounds-*:${BUILD_PKGPATH},-kopsounds \
 			devel/desktop-file-utils \
 			security/qca-tls \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS-kopsounds =
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \

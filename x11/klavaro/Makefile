@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-1.5.0
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	x11
 
@@ -30,7 +30,7 @@ EXTRACT_SUFX = 	.tar.bz2
 
 MODULES =       devel/gettext
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	x11/gtk+3,-guic
 
 LIB_DEPENDS = 	x11/gtk+2 \
 		x11/gtkdatabox \

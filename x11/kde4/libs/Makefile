@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/01/20 21:58:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.63 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -11,6 +11,9 @@ PKGNAME-langlist =	kde4-langlist-${MODKDE4_VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs-${MODKDE4_SPEC}
+REVISION-en_US =	0
+REVISION-langlist =	0
+REVISION-main =		0
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -100,7 +103,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			sysutils/upower \
 			x11/dbus \
 			x11/grantlee \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION} \
 			${BUILD_PKGPATH},-langlist>=${MODKDE4_DEP_VERSION} \
 			${BUILD_PKGPATH},-en_US>=${MODKDE4_DEP_VERSION}

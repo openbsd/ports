@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/20 21:58:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.25 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT-main =		KDE graphics, styles and screensavers
 COMMENT-emoticons =	KDE emoticons
@@ -12,6 +12,10 @@ PKGNAME-nuvola =	nuvola-icon-theme-${MODKDE4_VERSION}
 PKG_ARCH-emoticons =	*
 PKG_ARCH-mono =		*
 PKG_ARCH-nuvola =	*
+REVISION-emoticons =	0
+REVISION-main =		0
+REVISION-mono =		0
+REVISION-nuvola =	0
 
 PKGSPEC-main =		kdeartwork-${MODKDE4_SPEC}
 
@@ -35,8 +39,8 @@ BUILD_DEPENDS =		math/eigen3 \
 			x11/xscreensaver
 
 RUN_DEPENDS-emoticons =
-RUN_DEPENDS-mono =	x11/gtk+2,-guic
-RUN_DEPENDS-nuvola =	x11/gtk+2,-guic
+RUN_DEPENDS-mono =	x11/gtk+3,-guic
+RUN_DEPENDS-nuvola =	x11/gtk+3,-guic
 RUN_DEPENDS-main =	x11/xscreensaver
 
 LIB_DEPENDS-emoticons =

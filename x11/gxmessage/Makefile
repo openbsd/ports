@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2014/10/27 12:00:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT=	GTK+3 based xmessage(1) clone
 
 DISTNAME=	gxmessage-3.4.0
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -22,7 +23,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	x11/gtk+3
 
-RUN_DEPENDS=	x11/gtk+2,-guic
+RUN_DEPENDS=	x11/gtk+3,-guic
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

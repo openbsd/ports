@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/09 20:03:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT =	development-related KIO modules
 DISTNAME =	kdesdk-kioslaves-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kdesdk-kioslaves
@@ -15,7 +16,7 @@ WANTLIB +=
 
 MODKDE4_USE =	libs
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	x11/gtk+3,-guic
 
 LIB_DEPENDS =	devel/subversion
 

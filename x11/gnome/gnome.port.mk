@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.97 2014/12/21 11:49:48 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.98 2015/03/27 08:16:16 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -85,7 +85,7 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-update-icon-cache}
-        MODGNOME_RUN_DEPENDS+=	x11/gtk+2,-guic
+        MODGNOME_RUN_DEPENDS+=	x11/gtk+3,-guic
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mshared-mime-info}

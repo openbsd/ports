@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/08 15:45:45 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT =		browse and download YouTube videos
 
 DISTNAME =		smtube-14.12.0
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -24,7 +25,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/qt4
 RUN_DEPENDS =		x11/smplayer \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 USE_GMAKE =		Yes
 

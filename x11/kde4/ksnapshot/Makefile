@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/09 20:03:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:16:21 ajacoutot Exp $
 
 COMMENT =	screen capture program for KDE
 DISTNAME =	ksnapshot-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread
 WANTLIB += ICE SM X11 Xext Xfixes
@@ -10,7 +11,7 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kipi
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/libkipi>=${MODKDE4_DEP_VERSION}
 

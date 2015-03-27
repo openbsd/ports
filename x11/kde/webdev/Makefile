@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2013/12/22 19:24:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.47 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdewebdev-${VERSION}
-REVISION =		12
+REVISION =		13
 MODKDE_VERSION =	3.5.8
 PKGSPEC =		kdewebdev->=3,<4
 
@@ -15,7 +15,7 @@ SHARED_LIBS +=	kommanderwidgets     1.0      # .0.0
 MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS =	x11/kde/libs3 \
     		textproc/libxslt \
     		x11/kde/sdk3

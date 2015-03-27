@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2014/04/29 22:02:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.144 2015/03/27 08:16:18 ajacoutot Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,8 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		34
+REVISION-main =		35
+REVISION-langlist =	0
 
 MODKDE_VERSION =	3.5.8
 
@@ -78,7 +79,7 @@ RUN_DEPENDS-langlist =
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			kde3-langlist-*|kde4-langlist-*:${BUILD_PKGPATH},-langlist \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS-langlist =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \

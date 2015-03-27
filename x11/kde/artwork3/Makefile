@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/10/28 12:16:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.74 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, additional artwork
 COMMENT-emoticons =	KDE emoticons
@@ -8,7 +8,8 @@ DISTNAME =		kdeartwork-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-emoticons =	kde-emoticons-${VERSION}
 PKGSPEC-main =		kdeartwork->=3,<4
-REVISION-main =		16
+REVISION-main =		17
+REVISION-emoticons =	0
 
 MODULES =		x11/kde devel/gettext
 MODKDE_VERSION =	3.5.8
@@ -19,7 +20,7 @@ BUILD_DEPENDS =		x11/xscreensaver
 
 RUN_DEPENDS-emoticons =
 RUN_DEPENDS =		x11/xscreensaver \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS-emoticons =
 LIB_DEPENDS =		x11/kde/libs3 \

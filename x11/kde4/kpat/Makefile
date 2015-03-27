@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/18 08:17:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:16:21 ajacoutot Exp $
 
 COMMENT =	solitare games collection for KDE
 DISTNAME =	kpat-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kcardgame	50.0
 
@@ -17,6 +18,6 @@ BUILD_DEPENDS =	misc/shared-mime-info
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>

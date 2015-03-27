@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/15 09:13:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/27 08:16:17 ajacoutot Exp $
 
 COMMENT =		IRC Client for GNOME
 
 GNOME_PROJECT = 	polari
 GNOME_VERSION = 	3.14.1
+REVISION =              0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

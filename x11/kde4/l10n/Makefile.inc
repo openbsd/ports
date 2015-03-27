@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/12/08 19:13:32 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2015/03/27 08:16:22 ajacoutot Exp $
 
 IGNORE_SILENT =		Yes
 COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE4_VERSION}
+REVISION =		0
 
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =		libs
@@ -13,7 +14,7 @@ MODKDE4_USE =		libs
 SUPDISTFILES +=	kde-l10n-${L}-${MODKDE4_VERSION}${EXTRACT_SUFX}
 .endfor
 
-RUN_DEPENDS +=	x11/gtk+2,-guic
+RUN_DEPENDS +=	x11/gtk+3,-guic
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/kde-l10n/}
 

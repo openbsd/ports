@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/04/03 08:08:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT=		Industrial icon theme from OpenSUSE
 
 DISTNAME=		industrial-icon-theme-11.0.5
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		x11
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		textproc/intltool
 
-RUN_DEPENDS=		x11/gtk+2,-guic
+RUN_DEPENDS=		x11/gtk+3,-guic
 
 BUILD_DEPENDS=		x11/icon-naming-utils
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/01 21:09:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	multimedia
 
@@ -15,7 +16,7 @@ WANTLIB += soprano
 MODULES =	multimedia/phonon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 # XXX share/apps/solid/ should be kept in PLIST,
 # it comes from vlc via phonon-vlc, and the latter

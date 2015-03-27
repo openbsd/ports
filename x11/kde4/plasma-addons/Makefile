@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	lancelot-datamodels		51.1 # 1.7
 SHARED_LIBS +=	lancelot			51.1 # 1.9
@@ -42,7 +43,7 @@ MODKDE4_USE =	pim workspace
 BUILD_DEPENDS =	math/eigen2
 
 RUN_DEPENDS =	misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	devel/qjson \
 		graphics/qimageblitz \

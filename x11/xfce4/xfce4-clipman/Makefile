@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2015/03/16 20:39:15 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2015/03/27 08:16:24 ajacoutot Exp $
 
 COMMENT=	Xfce4 clipboard history panel plugin
 
 XFCE_VERSION=	1.2.6
 XFCE_PLUGIN=	clipman
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

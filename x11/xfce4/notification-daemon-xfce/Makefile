@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2014/04/14 19:52:45 matthieu Exp $
+# $OpenBSD: Makefile,v 1.34 2015/03/27 08:16:24 ajacoutot Exp $
 
 COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.3.7
 XFCE_GOODIE=	notification-daemon-xfce
-REVISION=	22
+REVISION=	23
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_GOODIE}/${XFCE_BRANCH}/
 # GPLv2

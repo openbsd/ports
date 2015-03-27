@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/09 20:03:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/27 08:16:21 ajacoutot Exp $
 
 COMMENT =	sudoku game for KDE
 DISTNAME =	ksudoku-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread
 WANTLIB += GL GLU ICE SM X11 Xext
@@ -12,6 +13,6 @@ WANTLIB += ${KDE4LIB}/kdegamesprivate ${KDE4LIB}/kdeui ${KDE4LIB}/kio
 MODKDE4_USE =	games
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>

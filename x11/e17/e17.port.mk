@@ -1,4 +1,4 @@
-# $OpenBSD: e17.port.mk,v 1.1 2013/02/03 12:09:27 rpe Exp $
+# $OpenBSD: e17.port.mk,v 1.2 2015/03/27 08:16:16 ajacoutot Exp $
 
 # Module for e17 related ports
 
@@ -9,7 +9,7 @@ MODE17_RUN_DEPENDS+=	devel/desktop-file-utils
 
 # Set to 'yes' if there are icon files under share/icons/.
 .if defined(MODE17_ICON_CACHE) && ${MODE17_ICON_CACHE:L} == "yes"
-MODE17_RUN_DEPENDS+= x11/gtk+2,-guic
+MODE17_RUN_DEPENDS+= x11/gtk+3,-guic
 .endif
 
 # Set to 'yes' if there are mime xml files under share/mime/.

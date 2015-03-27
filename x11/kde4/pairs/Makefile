@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/18 08:17:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	memory and pairs game for KDE
 DISTNAME =	pairs-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
@@ -13,6 +14,6 @@ WANTLIB += ${KDE4LIB}/knewstuff3
 MODULES =	multimedia/phonon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>

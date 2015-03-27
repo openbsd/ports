@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2014/04/29 22:06:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.87 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT = 		KDE personal information applications
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
 PKGSPEC =		kdepim->=3,<4
-REVISION =		19
+REVISION =		20
 
 MODKDE_VERSION =	3.5.8
 
@@ -87,7 +87,7 @@ LIB_DEPENDS =	x11/kde/libs3 \
 
 RUN_DEPENDS =	x11/kde/base3 \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 # make sure we do not grab boost on the way
 CONFIGURE_ENV += ac_cv_header_boost_format_hpp=no

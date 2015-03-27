@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/01 21:09:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT =	language pronunciation improver
 DISTNAME =	artikulate-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	education
 
@@ -21,7 +22,7 @@ WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3 ${KDE4LIB}/plasma
 
 BUILD_DEPENDS =		devel/boost
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			${MODKDE4_DEP_DIR}/kqtquickcharts>=${MODKDE4_DEP_VERSION}
 LIB_DEPENDS =		multimedia/qt-gstreamer
 

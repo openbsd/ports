@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/11/13 17:29:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/03/27 08:16:17 ajacoutot Exp $
 
 # XXX should RUN_DEPENDS on dleyna-renderer; not ported (signalfd)
 
@@ -8,6 +8,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.14.2
+REVISION=		0
 
 CATEGORIES=		graphics
 

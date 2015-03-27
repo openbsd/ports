@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.22 2015/03/16 20:19:05 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.23 2015/03/27 08:16:24 ajacoutot Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -30,7 +30,7 @@ MODXFCE_RUN_DEPENDS+=	devel/desktop-file-utils
 
 # Set to 'yes' if there are icon files under share/icons/.
 .if defined(MODXFCE_ICON_CACHE) && ${MODXFCE_ICON_CACHE:L} == "yes"
-MODXFCE_RUN_DEPENDS+=  x11/gtk+2,-guic
+MODXFCE_RUN_DEPENDS+=  x11/gtk+3,-guic
 .endif
 
 .if defined(XFCE_PLUGIN)

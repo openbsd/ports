@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT=		background browser and setter for X11
 
 DISTNAME=		nitrogen-1.5.2
-REVISION=		6
+REVISION=		7
 CATEGORIES=		x11 graphics
 
 HOMEPAGE=		http://projects.l3ib.org/nitrogen/
@@ -26,7 +26,7 @@ WANTLIB += pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
 WANTLIB += xcb-shm z
 
 LIB_DEPENDS=		x11/gtk2mm
-RUN_DEPENDS=		x11/gtk+2,-guic
+RUN_DEPENDS=		x11/gtk+3,-guic
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-inotify

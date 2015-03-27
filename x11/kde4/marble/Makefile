@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/20 21:58:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	world maps
 DISTNAME =	marble-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	marblewidget		52.0 # 0.12
 SHARED_LIBS +=	astro			 1.0 # 0.17
@@ -21,7 +22,7 @@ MODULES =	multimedia/phonon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS = 	archivers/quazip \
 		devel/protobuf \

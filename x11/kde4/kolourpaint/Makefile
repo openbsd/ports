@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:16:21 ajacoutot Exp $
 
 COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kolourpaint_lgpl	51.0	# 4.7
 
@@ -14,7 +15,7 @@ WANTLIB += ${KDE4LIB}/kutils
 WANTLIB += qimageblitz
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS = 	graphics/qimageblitz
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/01/20 21:58:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT =	web development tools for KDE
 DISTNAME =	kdewebdev-${MODKDE4_VERSION}
 PKGSPEC =	kdewebdev-${MODKDE4_SPEC}
+REVISION =	0
 
 SHARED_LIBS =	klinkstatuscommon	51.0
 SHARED_LIBS +=	kommandercore		51.0
@@ -25,7 +26,7 @@ MODKDE4_USE =	pim
 CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		${MODKDE4_DEP_DIR}/korundum>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	www/tidyp

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2013/12/22 19:24:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.78 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeutils-${VERSION}
 MODKDE_VERSION =	3.5.8
-REVISION =		16
+REVISION =		17
 
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
@@ -16,7 +16,7 @@ SHARED_LIBS +=	ksimcore             2.0      # .1.0
 MODULES =	x11/kde devel/gettext lang/python
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	audio/xmms \
 		devel/gmp \

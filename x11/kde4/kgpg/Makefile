@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 20:03:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:16:20 ajacoutot Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
@@ -18,7 +19,7 @@ MODKDE4_USE =	pim
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		security/gnupg \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -DBOOST_NO_EXCEPTIONS"
 

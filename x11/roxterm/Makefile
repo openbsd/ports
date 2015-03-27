@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2014/10/05 21:33:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.9.4
 CATEGORIES=		x11
+REVISION=		0
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
@@ -31,7 +32,7 @@ BUILD_DEPENDS=		sysutils/py-lockfile \
 			textproc/xmlto
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 # XXX: Not ported to vte-2.91 yet, so keep using gtk2/vte-0.28
 CONFIGURE_ARGS+=	--disable-gtk3 \

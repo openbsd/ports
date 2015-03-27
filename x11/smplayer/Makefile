@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/31 13:51:36 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.19 2015/03/27 08:16:23 ajacoutot Exp $
 
 COMMENT =		complete front-end for MPlayer
 
 DISTNAME =		smplayer-14.9.0
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -24,7 +25,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/qt4
 RUN_DEPENDS =		x11/mplayer>=20090708 \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 USE_GMAKE =		Yes
 

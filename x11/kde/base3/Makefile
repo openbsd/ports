@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2014/04/29 22:09:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.130 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,10 +13,10 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		36
-REVISION-samba =	13
-REVISION-en_US =	0
-REVISION-locale =	0
+REVISION-main =		37
+REVISION-samba =	14
+REVISION-en_US =	1
+REVISION-locale =	1
 
 MODKDE_VERSION =	3.5.8
 
@@ -46,7 +46,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			kde3-locale-en_US-*|kde4-locale-en_US-*:${BUILD_PKGPATH},-en_US \
 			kde3-locale-*|kde4-locale-*:${BUILD_PKGPATH},-locale \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			x11/kde-shared-data
 
 LIB_DEPENDS =		openldap-client->=2,<3:databases/openldap \

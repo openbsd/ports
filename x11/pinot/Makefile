@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2013/10/14 10:44:06 nigel Exp $
+# $OpenBSD: Makefile,v 1.49 2015/03/27 08:16:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.06
+REVISION=	0
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -56,7 +57,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/unrtf \
 		textproc/antiword \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 # pdftotext(1)
 RUN_DEPENDS +=	print/poppler,-utils

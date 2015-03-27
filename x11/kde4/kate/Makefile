@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kateinterfaces			50.0 # 4.7
 SHARED_LIBS +=	katepartinterfaces		50.0 # 4.7
@@ -24,7 +25,7 @@ BUILD_DEPENDS =	devel/py-sip,${MODPY_FLAVOR} \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/02/07 11:23:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/27 08:16:23 ajacoutot Exp $
 
 ### from upstream, removed at next update
 # +patch-remmina_src_remmina_protocol_widget_c
@@ -22,7 +22,7 @@ DISTNAME=		Remmina-${V}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/FreeRDP-Remmina-356c033
 
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		x11 net
 
@@ -55,7 +55,7 @@ LIB_DEPENDS=		devel/vte3 \
 			x11/gnome/libgnome-keyring
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 

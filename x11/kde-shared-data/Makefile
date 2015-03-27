@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2014/07/11 17:37:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT =	common run-time components for KDE3 and KDE4
 CATEGORIES =	x11 x11/kde3
 PKGNAME =	kde-shared-data-${MODKDE4_VERSION}
 PKG_ARCH =	*
+REVISION =	0
 
 MODULES =		x11/kde4
 MODKDE4_USE =
@@ -23,7 +24,7 @@ MASTER_SITES0 =		${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/}
 
 BUILD_DEPENDS =
 LIB_DEPENDS =
-RUN_DEPENDS =		x11/gtk+2,-guic
+RUN_DEPENDS =		x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	none
 NO_BUILD =		Yes

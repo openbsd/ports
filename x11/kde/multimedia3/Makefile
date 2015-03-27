@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.82 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		16
+REVISION =		17
 DISTNAME =		kdemultimedia-${VERSION}
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
@@ -51,7 +51,7 @@ LIB_DEPENDS =	x11/kde/libs3 \
 
 RUN_DEPENDS =	graphics/xanim \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame

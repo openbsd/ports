@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/18 08:17:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	jigsaw puzzle game for KDE
 DISTNAME =	palapeli-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	pala		51.0
 
@@ -17,6 +18,6 @@ MODKDE4_USE =	games
 RUN_DEPENDS =	devel/desktop-file-utils \
 		math/qhull \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>

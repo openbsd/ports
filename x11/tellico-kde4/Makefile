@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/10 21:02:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:23 ajacoutot Exp $
 
 # XXX remove patch-src_gui_CMakeLists_txt on the next update,
 # upstream removed dependency of GUI on tellico-config.h.
 
 COMMENT =	organizer for book/music/video collections for KDE4
 DISTNAME =	tellico-2.3.9
+REVISION =	0
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -34,7 +35,7 @@ BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	audio/taglib \
 		devel/qjson \

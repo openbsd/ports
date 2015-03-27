@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.55 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT-main = 		X11 toolkit, accessibility aids
 COMMENT-mono = 		one-colour KDE icon theme
@@ -11,22 +11,23 @@ PKG_ARCH-mono =		*
 MODKDE_VERSION ?=	3.5.8
 SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
 SHARED_LIBS +=	kttsd                2.0      # .1.0
+REVISION-mono =		0
 
 MULTI_PACKAGES =	-main -mono
 
 MODULES =	x11/kde devel/gettext
 
-RUN_DEPENDS-mono =	x11/gtk+2,-guic
+RUN_DEPENDS-mono =	x11/gtk+3,-guic
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS-main =	x11/kde/libs3 
 LIB_DEPENDS-mono =
 
 SEPARATE_BUILD =	flavored
 
-REVISION-main =	17
+REVISION-main =	18
 
 WANTLIB =	GL FLAC ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xtst Xxf86vm art_lgpl_2

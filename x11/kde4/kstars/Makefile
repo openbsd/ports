@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/20 21:58:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/27 08:16:21 ajacoutot Exp $
 
 COMMENT =	planetarium simulator for KDE
 DISTNAME =	kstars-${MODKDE4_VERSION}
+REVISION =	0
 
 # Crashed after following actions:
 #   1. Enable OpenGL;
@@ -33,7 +34,7 @@ BUILD_DEPENDS =	math/eigen3 \
 		x11/xplanet
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		x11/xplanet
 
 # not ported

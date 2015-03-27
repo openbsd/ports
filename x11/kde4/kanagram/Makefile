@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/20 21:58:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT =	letter order game for KDE
 DISTNAME =	kanagram-${MODKDE4_VERSION}
+REVISION =	0
 
 #SHARED_LIBS =	kanagramengine		51.0
 
@@ -15,7 +16,7 @@ WANTLIB += ${KDE4LIB}/keduvocdocument ${KDE4LIB}/kio ${KDE4LIB}/plasma
 MODULES =	multimedia/phonon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
 

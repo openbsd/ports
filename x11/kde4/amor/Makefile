@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT =	fun desktop animation
 DISTNAME =	amor-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	games
 #HOMEPAGE =	http://amor.kde.org/
@@ -13,6 +14,6 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += ${KDE4LIB}/kdeui
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>

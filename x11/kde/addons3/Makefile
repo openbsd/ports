@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.74 2014/04/20 12:55:39 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		15
+REVISION =		16
 DISTNAME =		kdeaddons-${VERSION}
 MODKDE_VERSION =	3.5.8
 
 MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS = 	x11/kde/libs3 \
 		sdl-*-!no_x11:devel/sdl \
 		x11/kde/multimedia3 \

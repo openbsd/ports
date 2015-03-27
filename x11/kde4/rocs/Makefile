@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/01 21:09:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:16:22 ajacoutot Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${MODKDE4_VERSION}
+REVISION =	0
 
 # XXX Crashes sometimes.
 
@@ -22,7 +23,7 @@ WANTLIB += grantlee_core soprano
 BUILD_DEPENDS =	devel/boost>=1.49
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	x11/grantlee
 

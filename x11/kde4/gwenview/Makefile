@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/20 21:58:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/27 08:16:19 ajacoutot Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${MODKDE4_VERSION}
 PKGSPEC =	gwenview-${MODKDE4_SPEC}
+REVISION =	0
 
 SHARED_LIBS =	gwenviewlib               52.0 # 4.7
 
@@ -24,7 +25,7 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS = 	databases/soprano>=${MIN_SOPRANO_VERSION} \
 		graphics/exiv2 \

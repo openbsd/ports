@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2015/01/22 20:26:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2015/03/27 08:16:18 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment bindings for scripting languages
 CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdebindings-${VERSION}
 MODKDE_VERSION =	3.5.8
-REVISION =		25
+REVISION =		26
 
 SHARED_LIBS +=	kjsembed             2.0      # .1.0
 SHARED_LIBS +=	smokeqt              4.0      # .3.2
@@ -17,7 +17,7 @@ MODRUBY_REV =	1.8
 BUILD_DEPENDS =	x11/kde/base3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		x11/kde/base3
 
 LIB_DEPENDS =	x11/kde/libs3 \
