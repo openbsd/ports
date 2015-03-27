@@ -1,0 +1,76 @@
+$OpenBSD: patch-gdk_x11_gdkglcontext-x11_c,v 1.1 2015/03/27 16:00:55 ajacoutot Exp $
+
+From d4c7fcd050b3d4eb8f8f7d322b44829198556fd8 Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Wed, 25 Mar 2015 14:34:42 +0000
+Subject: x11/gl: Trap GL context creation
+
+From 732671f6392618c43b850a2b188f4e2fb86dde5c Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Wed, 25 Mar 2015 15:18:44 +0000
+Subject: x11/gl: Do not try to call MakeCurrent with a NULL context
+
+From c7dd439d4f8eaccf7712a389c53390a174c54224 Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Thu, 26 Mar 2015 17:26:29 +0000
+Subject: x11/gl: Do not use GLX_EXT_texture_from_pixmap if not available
+
+--- gdk/x11/gdkglcontext-x11.c.orig	Sun Mar 22 00:53:50 2015
++++ gdk/x11/gdkglcontext-x11.c	Fri Mar 27 14:31:50 2015
+@@ -432,7 +432,12 @@ gdk_x11_gl_context_texture_from_surface (GdkGLContext 
+   double sx, sy;
+   float uscale, vscale;
+   GdkTexturedQuad *quads;
++  GdkX11Display *display_x11;
+ 
++  display_x11 = GDK_X11_DISPLAY (gdk_gl_context_get_display (paint_context));
++  if (!display_x11->has_glx_texture_from_pixmap)
++    return FALSE;
++
+   if (cairo_surface_get_type (surface) != CAIRO_SURFACE_TYPE_XLIB)
+     return FALSE;
+ 
+@@ -558,17 +563,25 @@ create_gl3_context (GdkDisplay   *display,
+     GLX_CONTEXT_FLAGS_ARB, flags,
+     None,
+   };
++  GLXContext res;
+ 
+   GdkX11GLContext *share_x11 = NULL;
+ 
+   if (share != NULL)
+     share_x11 = GDK_X11_GL_CONTEXT (share);
+ 
+-  return glXCreateContextAttribsARB (gdk_x11_display_get_xdisplay (display),
+-                                     config,
+-                                     share_x11 != NULL ? share_x11->glx_context : NULL,
+-                                     True,
+-                                     attrib_list);
++  gdk_x11_display_error_trap_push (display);
++
++  res = glXCreateContextAttribsARB (gdk_x11_display_get_xdisplay (display),
++                                    config,
++                                    share_x11 != NULL ? share_x11->glx_context : NULL,
++                                    True,
++                                    attrib_list);
++
++  if (gdk_x11_display_error_trap_pop (display))
++    return NULL;
++
++  return res;
+ }
+ 
+ static gboolean
+@@ -1206,6 +1219,12 @@ gdk_x11_display_make_gl_context_current (GdkDisplay   
+     }
+ 
+   context_x11 = GDK_X11_GL_CONTEXT (context);
++  if (context_x11->glx_context == NULL)
++    {
++      g_critical ("No GLX context associated to the GdkGLContext; you must "
++                  "call gdk_gl_context_realize() first.");
++      return FALSE;
++    }
+ 
+   GDK_NOTE (OPENGL,
+             g_print ("Making GLX context current to drawable %lu\n",

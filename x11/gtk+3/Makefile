@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2015/03/27 08:09:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2015/03/27 16:00:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,22 +7,18 @@ COMMENT-cups=		gtk+3 CUPS print backend
 COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
-GNOME_VERSION=		3.14.10
 GNOME_PROJECT=		gtk+
+GNOME_VERSION=		3.16.0
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-cups=		0
-REVISION-cloudprint=	0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                1400.0   # 1400.9
-SHARED_LIBS +=  gtk-3                1400.0   # 1400.9
+SHARED_LIBS +=  gdk-3                1600.0   # 1600.0
+SHARED_LIBS +=  gtk-3                1600.0   # 1600.0
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -44,7 +40,8 @@ MODULES=		devel/gettext \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/gdk-pixbuf2 \
-			x11/gnome/at-spi2-atk>=2.12.0
+			graphics/libepoxy \
+			x11/gnome/at-spi2-atk
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/hicolor-icon-theme
 
