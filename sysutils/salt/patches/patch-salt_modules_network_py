@@ -1,10 +1,10 @@
-$OpenBSD: patch-salt_modules_network_py,v 1.4 2015/01/16 13:19:48 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_network_py,v 1.5 2015/03/27 14:40:04 ajacoutot Exp $
 
 https://github.com/saltstack/salt/commit/294ea72d9419e69f3f613e951a7cfd5f4840c66f
 
---- salt/modules/network.py.orig	Wed Jan 14 19:38:21 2015
-+++ salt/modules/network.py	Fri Jan 16 13:29:58 2015
-@@ -417,7 +417,12 @@ def arp():
+--- salt/modules/network.py.orig	Wed Mar 25 00:26:39 2015
++++ salt/modules/network.py	Fri Mar 27 15:38:04 2015
+@@ -419,7 +419,12 @@ def arp():
          comps = line.split()
          if len(comps) < 4:
              continue
@@ -18,7 +18,7 @@ https://github.com/saltstack/salt/commit/294ea72d9419e69f3f613e951a7cfd5f4840c66
      return ret
  
  
-@@ -611,6 +616,9 @@ def mod_hostname(hostname):
+@@ -613,6 +618,9 @@ def mod_hostname(hostname):
                      fh.write(i)
      elif __grains__['os_family'] == 'Debian':
          with salt.utils.fopen('/etc/hostname', 'w') as fh:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/02/13 07:03:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/03/27 14:40:04 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -115,8 +115,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/libcloud_aws.py
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/libcloud_aws.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/linode.py
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/linode.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/linodepy.py
-lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/linodepy.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/lxc.py
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/lxc.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/cloud/clouds/msazure.py
