@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/09/27 17:49:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.9.4
-REVISION=		7
+REVISION=		8
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/
@@ -25,7 +25,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
 BUILD_DEPENDS=		devel/py-cheetah
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS=		devel/gconf2 \
 			multimedia/gstreamer-0.10/core \
 			x11/dbus-glib \

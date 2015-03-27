@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
 CATEGORIES =	net security
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.fwbuilder.org/
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/cppunit
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 COPTS =		${DEBUG}
 

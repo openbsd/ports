@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2013/11/25 21:48:53 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/27 08:14:15 ajacoutot Exp $
 
 COMMENT =	html help viewer
 BROKEN =	doesnt work with newer xulrunner
 
 DISTNAME =	chmsee-2.0.2
+REVISION =	0
 
 CATEGORIES =	textproc x11
 
@@ -32,7 +33,7 @@ BUILD_DEPENDS =	devel/xulrunner/24,-devel \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xulrunner/24 \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS =	devel/nspr \
 		devel/chmlib
 WANTLIB += chm m nspr4 plc4 plds4 pthread stdc++

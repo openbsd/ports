@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/14 20:17:17 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT =		application for notetaking & annotating PDF files
 DISTNAME =		xournal-0.4.8
 CATEGORIES =		print
+REVISION =		0
 
 HOMEPAGE =		http://xournal.sourceforge.net/
 
@@ -23,7 +24,7 @@ LIB_DEPENDS =		print/poppler \
 			x11/gnome/libgnomecanvas
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

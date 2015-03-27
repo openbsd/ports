@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/30 19:36:42 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
 
 DISTNAME=	grisbi-1.0.0
+REVISION=	0
 
 CATEGORIES=	productivity x11
 
@@ -38,7 +39,7 @@ LIB_DEPENDS=	textproc/libxml \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 USE_GMAKE=	Yes
 

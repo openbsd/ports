@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2015/02/10 08:29:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -125,7 +125,7 @@ post-install:
 # Remove desktop file and icons; we don't really need them (it's just a
 # launcher for http://localhost:631 and we may actually want to
 # configure a remote server); this is needed to prevent a dependency
-# loop: cups->gtk+2,-guic->cups
+# loop: cups->gtk+3,-guic->cups
 	rm -rf ${PREFIX}/share/icons
 	rm -rf ${PREFIX}/share/applications
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/02 10:33:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:14:15 ajacoutot Exp $
 
 COMMENT =	powerful batch file renamer for KDE4
 
@@ -10,7 +10,7 @@ DOCFILES =	krename-3.0.12.pdf \
 		krename-3.0.3-ru.pdf
 DISTFILES =	${SRCFILES} ${DOCFILES}
 EXTRACT_ONLY =	${SRCFILES}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils x11
 HOMEPAGE =	http://www.krename.net/
@@ -33,7 +33,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=krename/}
 MODULES =	x11/kde4 devel/gettext
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	audio/taglib \
 		graphics/exiv2 \

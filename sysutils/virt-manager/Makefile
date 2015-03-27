@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/19 12:43:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:14:15 ajacoutot Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
 DISTNAME=		virt-manager-1.1.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://virt-manager.org/
@@ -36,7 +36,7 @@ RUN_DEPENDS +=		x11/gtk+3
 NO_BUILD=		Yes
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 MODPY_ADJ_FILES=	virt-clone virt-convert virt-install virt-manager \
 			virt-xml

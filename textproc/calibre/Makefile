@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/03/26 12:14:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2015/03/27 08:14:15 ajacoutot Exp $
 
 COMMENT =		ebook management application
 
@@ -7,7 +7,7 @@ DISTNAME =		calibre-1.48.0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -67,7 +67,7 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			print/poppler,-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LDFLAGS +=		-L${LOCALBASE}/lib
 MAKE_ENV +=		QMAKE="${LOCALBASE}/bin/qmake4"

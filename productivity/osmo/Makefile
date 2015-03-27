@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2013/06/24 06:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.10
 CATEGORIES=	productivity
+REVISION=	0
 
 HOMEPAGE=	http://clayo.org/osmo/
 
@@ -30,7 +31,7 @@ LIB_DEPENDS=	security/libgringotts \
 		archivers/libtar
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 USE_GMAKE=	Yes
 

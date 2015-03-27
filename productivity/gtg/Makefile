@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2014/01/09 13:31:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 MODPY_EGG_VERSION=	0.3.1
 DISTNAME=		gtg-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -24,7 +25,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-suds \
 			devel/py-xdg \
 			x11/dbus-python \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 MODPY_ADJ_FILES=	GTG/gtg.py gtg
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/06 19:01:58 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-1.1
 CATEGORIES =	productivity
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}
 HOMEPAGE =	http://entomologist.sourceforge.net
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	x11/qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2 \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 WANTLIB +=	QtGui QtNetwork QtSql QtXml c m pthread stdc++
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 

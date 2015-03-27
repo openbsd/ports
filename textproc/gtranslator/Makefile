@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/03/15 14:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2015/03/27 08:14:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	2.91.7
+REVISION=	0
 
 CATEGORIES=	textproc devel
 

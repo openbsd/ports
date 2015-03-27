@@ -2,4 +2,4 @@ incorrect gtk-update-icon-cache invocation: %D/bin/gtk-update-icon-cache -q %D/s
 incorrect gtk-update-icon-cache invocation: %D/bin/gtk-update-icon-cache -q -t %D/share/icons
 missing @exec of gtk-update-icon-cache for icon theme bartheme
 missing @unexec-delete of gtk-update-icon-cache for icon theme bartheme
-missing RDEP on x11/gtk+2,-guic
+missing RDEP on x11/gtk+3,-guic

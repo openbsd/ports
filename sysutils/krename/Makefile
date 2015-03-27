@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/02 10:33:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/27 08:14:15 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	powerful KDE batch file renamer
 
 DISTNAME =	krename-3.0.14
-REVISION =	12
+REVISION =	13
 
 SRCFILES =	${DISTNAME}.tar.bz2
 DOCFILES =	krename-3.0.12.pdf \
@@ -38,7 +38,7 @@ MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/kde/base3 \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS =	graphics/libart \
 		devel/libidn>=1.1 \
 		x11/kde/libs3

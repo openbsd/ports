@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/14 10:55:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT =		birthday reminder with tray notification
 
 DISTNAME =		gbirthday-0.6.7
+REVISION =		0
 
 CATEGORIES =		productivity x11
 
@@ -18,7 +19,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gbirthday/}
 MODULES =		lang/python
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-notify \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			x11/py-gtk2
 NO_TEST =		Yes
 

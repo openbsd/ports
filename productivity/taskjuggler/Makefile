@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/03/16 18:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2015/03/27 08:14:14 ajacoutot Exp $
 
 COMMENT=	project management tool
 BROKEN-i386=	self-checks fail with 64-bit time_t
@@ -6,7 +6,7 @@ BROKEN-hppa=	self-checks fail with 64-bit time_t
 BROKEN-powerpc=	self-checks fail with 64-bit time_t
 
 DISTNAME=	taskjuggler-2.4.1
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	productivity
 
@@ -42,7 +42,7 @@ CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
 		ac_cv_prog_DOCBOOK_TO_MAN=no
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS=	x11/kde/pim3
 
