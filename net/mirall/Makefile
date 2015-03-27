@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:13:03 ajacoutot Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		mirall-1.4.2
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		owncloudsync 0.0
 
@@ -28,7 +28,7 @@ MODULES =		devel/cmake x11/qt4 gcc4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS = 	c++
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/libinotify \
 			net/ocsync
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2014/11/04 15:04:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.63 2015/03/27 08:13:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
 DISTNAME=	ettercap-0.7.5.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+= -DENABLE_GTK=off
 .else
 LIB_DEPENDS+=	x11/gtk+2
 RUN_DEPENDS+=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 WANTLIB += atk-1.0 cairo curl freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0

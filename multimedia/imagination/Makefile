@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/22 22:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:13:02 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		multimedia
 
@@ -40,7 +40,7 @@ BUILD_DEPENDS =	audio/sox
 
 RUN_DEPENDS =	audio/sox \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 post-install:
 	@rm -f ${PREFIX}/lib/imagination/*.la

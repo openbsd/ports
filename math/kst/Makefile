@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.27 2015/03/27 08:13:02 ajacoutot Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
-REVISION=	10
+REVISION=	11
 SHARED_ONLY=	Yes
 SHARED_LIBS=	kst		4.0 \
 		kstapp		4.0 \
@@ -32,7 +32,7 @@ LIBTOOL_FLAGS =		--tag=disable-static
 PORTHOME =		${WRKDIR}
 SEPARATE_BUILD =	Yes
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	x11/gtk+3,-guic
 
 LIB_DEPENDS =	x11/kde/libs3 \
 		devel/gsl>=1.6 \

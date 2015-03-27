@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2014/07/15 08:56:20 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2015/03/27 08:13:02 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 
 DISTNAME =		k3b-1.0.4
-REVISION=		22
+REVISION=		23
 CATEGORIES =		multimedia
 
 SHARED_LIBS =		k3b	0.0	# 3.0
@@ -38,7 +38,7 @@ RUN_DEPENDS =		sysutils/cdrtools \
 			misc/cdrdao \
 			audio/sox \
 			multimedia/transcode \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			devel/desktop-file-utils
 
 LIB_DEPENDS =		audio/flac \

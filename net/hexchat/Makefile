@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/05 14:12:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:13:03 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,6 +6,7 @@ COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.10.2
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
+REVISION =		0
 
 HOMEPAGE =		http://hexchat.github.io/
 MAINTAINER =		Florian Stinglmayr <florian@n0la.org>
@@ -40,7 +41,7 @@ MODPY_BUILDDEP =	No
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/iso-codes \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2015/02/11 08:11:45 brad Exp $
+# $OpenBSD: Makefile,v 1.126 2015/03/27 08:13:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,8 +19,9 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION-main=		0
-REVISION-libpurple=	0
+REVISION-main=		1
+REVISION-libpurple=	1
+REVISION-finch=	0
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
@@ -58,7 +59,7 @@ LIB_DEPENDS=		devel/glib2
 RUN_DEPENDS-main=	x11/dbus-python \
 			x11/py-gtk2 \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gtk+2
 RUN_DEPENDS-finch=	# empty

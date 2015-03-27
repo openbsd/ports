@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/09/10 13:26:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/27 08:13:03 ajacoutot Exp $
 
 COMMENT=		media aggregator and podcast client
 
 MODPY_EGG_VERSION=	3.1.0
 DISTNAME=		gpodder-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net www
 
 HOMEPAGE=		http://gpodder.org/
@@ -25,7 +25,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			net/mygpoclient \
 			textproc/py-feedparser \
 			x11/dbus-python \
-			x11/gtk+2,-guic \
+			x11/gtk+3,-guic \
 			x11/py-gtk2
 TEST_DEPENDS=	devel/py-minimock \
 			net/mygpoclient \

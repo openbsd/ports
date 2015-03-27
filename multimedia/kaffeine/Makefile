@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2014/07/14 09:17:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.37 2015/03/27 08:13:02 ajacoutot Exp $
 
 COMMENT=	video player for KDE
 
 VERSION=	0.8.8
 DISTNAME=	kaffeine-${VERSION}
-REVISION=	14
+REVISION=	15
 CATEGORIES=	multimedia x11 x11/kde
 MASTER_SITES=	http://hftom.free.fr/ \
 		${MASTER_SITE_SOURCEFORGE:=kaffeine/}
@@ -27,7 +27,7 @@ WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
 WANTLIB += ${KDE}/kparts ${KDE}/kutils ${KDE}/kwalletclient
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS=	x11/kde/libs3 \
 		audio/libvorbis \
 		audio/libcdio \

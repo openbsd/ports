@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.35 2015/03/27 08:13:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	BitTorrent client for KDE
 
 VERSION=	2.2.8
 DISTNAME=	ktorrent-${VERSION}
-REVISION=	11
+REVISION=	12
 CATEGORIES=	net x11 x11/kde
 EXTRACT_SUFX=	.tar.bz2
 
@@ -29,7 +29,7 @@ WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio
 WANTLIB += ${KDE}/kjs ${KDE}/kparts ${KDE}/kutils ${KDE}/kwalletclient
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS=	x11/kde/libs3 \
 		devel/gmp \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/09 16:52:23 shadchin Exp $
+# $OpenBSD: Makefile,v 1.22 2015/03/27 08:13:03 ajacoutot Exp $
 
 COMMENT=	multiplatform Jabber client
 
 DISTNAME=	psi-0.15
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://psi-im.org/
@@ -28,7 +28,7 @@ LIB_DEPENDS=		security/qca2 \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			security/qca-gnupg \
 			security/qca-ossl \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CONFIGURE_STYLE=	simple
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/22 11:34:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/27 08:13:02 ajacoutot Exp $
 
 COMMENT =		guitar tab editor
 
 DISTNAME =		kguitar-0.5.1
-REVISION=		6
+REVISION=		7
 
 CATEGORIES =		multimedia kde
 
@@ -27,7 +27,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/gettext \
 			x11/kde
 LIB_DEPENDS =		x11/kde/libs3
-RUN_DEPENDS =		x11/gtk+2,-guic
+RUN_DEPENDS =		x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-midisupport \

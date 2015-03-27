@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/14 21:46:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/03/27 08:13:04 ajacoutot Exp $
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
@@ -10,6 +10,8 @@ DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
 SHARED_ONLY =	Yes
+REVISION-main =	0
+REVISION-text =	0
 
 SHARED_LIBS +=	wsutil               1.0      # 5.0
 SHARED_LIBS +=	wiretap              1.0      # 4.4
@@ -59,7 +61,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			devel/xdg-utils \
 			misc/shared-mime-info \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS-text =	${LIB_DEPENDS} \
 			${MODLUA_LIB_DEPENDS} \

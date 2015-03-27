@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/21 19:10:27 stsp Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/27 08:13:03 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		secure decentralised communication platform
@@ -7,6 +7,7 @@ DISTNAME =		retroshare_0.5.5-0.7068
 PKGNAME =		retroshare-${V}
 CATEGORIES =		net security
 HOMEPAGE =		http://retroshare.sourceforge.net
+REVISION =		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,7 +20,7 @@ WANTLIB += 	speexdsp ssh ssh_threads ssl stdc++ upnp xml2 xslt z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retroshare/RetroShare/${V}/}
 MODULES =		x11/qt4
 RUN_DEPENDS = 		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/speex \
 			devel/protobuf \
 			net/curl \

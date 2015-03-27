@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2015/03/27 08:13:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ DISTNAME=	xine-ui-0.99.9
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -20,7 +21,7 @@ WANTLIB=	X11 Xext Xft Xinerama Xss Xtst Xv Xxf86vm c curl jpeg m ncurses \
 MODULES=	devel/gettext
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		multimedia/xine-lib \

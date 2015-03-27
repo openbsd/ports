@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/27 06:11:27 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:13:02 ajacoutot Exp $
 
 # requires 64-bit atomic ops.
 # some other arch could probably be added..certainly fails on i386
@@ -7,6 +7,7 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =		movie player based on MPlayer/mplayer2
 V =			0.8.3
 DISTNAME =		mpv-${V}
+REVISION =		0
 
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv
@@ -46,7 +47,7 @@ LIB_DEPENDS =		audio/libcdio \
 			net/samba
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CFLAGS +=		-I. -I.. -I${LOCALBASE}/include
 

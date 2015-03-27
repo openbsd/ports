@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/13 09:24:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/27 08:13:03 ajacoutot Exp $
 
 CATEGORIES =	net
 COMMENT =	IRC client for KDE 4
@@ -6,6 +6,7 @@ V =		1.5
 DISTNAME =	konversation-$V
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 HOMEPAGE =	http://konversation.kde.org/
+REVISION =	0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
@@ -26,7 +27,7 @@ MODULES =	x11/kde4 multimedia/phonon devel/gettext lang/python
 MODKDE4_USE =	pim
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	security/qca2
 

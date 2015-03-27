@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/20 09:17:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/27 08:13:02 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 COMMENT-main =		multimedia transformations framework
@@ -7,8 +7,8 @@ VERSION =		0.9.2
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
-REVISION-main =		0
-REVISION-gpl2 =		0
+REVISION-main =		1
+REVISION-gpl2 =		1
 
 # XXX versions should be kept in sync together
 SHARED_LIBS =		mlt		0.0
@@ -46,7 +46,7 @@ BUILD_DEPENDS =		audio/ladspa \
 			${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
 
 RUN_DEPENDS-main =	audio/ladspa \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
 			audio/jack \

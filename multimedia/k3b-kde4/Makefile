@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/12 08:06:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:13:02 ajacoutot Exp $
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.2
 CATEGORIES =		multimedia
-REVISION =		0
+REVISION =		1
 
 # bump away from KDE3 version
 SHARED_LIBS =		k3blib		50.0
@@ -35,7 +35,7 @@ MODULES =		x11/kde4 devel/gettext
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 # Optional
 #			audio/sox \
