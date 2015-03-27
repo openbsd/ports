@@ -1,10 +1,10 @@
-$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.2 2015/03/27 18:38:45 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=61137
 
---- Source/JavaScriptCore/jit/ExecutableAllocator.h.orig	Tue Aug 26 09:37:13 2014
-+++ Source/JavaScriptCore/jit/ExecutableAllocator.h	Sun Sep 28 10:08:58 2014
-@@ -89,7 +89,8 @@ class DemandExecutableAllocator;
+--- Source/JavaScriptCore/jit/ExecutableAllocator.h.orig	Wed Mar  4 15:25:16 2015
++++ Source/JavaScriptCore/jit/ExecutableAllocator.h	Fri Mar 27 10:17:17 2015
+@@ -83,7 +83,8 @@ class DemandExecutableAllocator;
  #if ENABLE(EXECUTABLE_ALLOCATOR_FIXED)
  #if CPU(ARM) || CPU(ARM64)
  static const size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;

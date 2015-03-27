@@ -1,11 +1,10 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.3 2014/11/13 08:33:06 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.4 2015/03/27 18:38:45 ajacoutot Exp $
 
-https://bugs.webkit.org/show_bug.cgi?id=129839
 https://bugs.webkit.org/show_bug.cgi?id=129963
 
---- Source/WTF/wtf/Platform.h.orig	Tue Nov 11 14:07:54 2014
-+++ Source/WTF/wtf/Platform.h	Wed Nov 12 18:43:31 2014
-@@ -150,6 +150,12 @@
+--- Source/WTF/wtf/Platform.h.orig	Mon Mar 23 09:08:04 2015
++++ Source/WTF/wtf/Platform.h	Fri Mar 27 10:17:17 2015
+@@ -153,6 +153,12 @@
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
  
@@ -18,7 +17,7 @@ https://bugs.webkit.org/show_bug.cgi?id=129963
  /* CPU(X86) - i386 / x86 32-bit */
  #if   defined(__i386__) \
      || defined(i386)     \
-@@ -333,7 +339,7 @@
+@@ -340,7 +346,7 @@
  
  #endif /* ARM */
  
@@ -27,9 +26,9 @@ https://bugs.webkit.org/show_bug.cgi?id=129963
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -645,7 +651,8 @@
-     || CPU(ARM64) \
+@@ -653,7 +659,8 @@
      || CPU(S390X) \
+     || CPU(MIPS64) \
      || CPU(PPC64) \
 -    || CPU(PPC64LE)
 +    || CPU(PPC64LE) \
@@ -37,7 +36,7 @@ https://bugs.webkit.org/show_bug.cgi?id=129963
  #define WTF_USE_JSVALUE64 1
  #else
  #define WTF_USE_JSVALUE32_64 1
-@@ -713,7 +720,7 @@
+@@ -720,7 +727,7 @@
  
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT)
  /* Enable the DFG JIT on X86 and X86_64. */
@@ -46,12 +45,3 @@ https://bugs.webkit.org/show_bug.cgi?id=129963
  #define ENABLE_DFG_JIT 1
  #endif
  /* Enable the DFG JIT on ARMv7.  Only tested on iOS and Qt/GTK+ Linux. */
-@@ -816,7 +823,7 @@
- #define ENABLE_REGEXP_TRACING 0
- 
- /* Yet Another Regex Runtime - turned on by default for JIT enabled ports. */
--#if !defined(ENABLE_YARR_JIT)
-+#if !defined(ENABLE_YARR_JIT) && ENABLE(JIT)
- #define ENABLE_YARR_JIT 1
- 
- /* Setting this flag compares JIT results with interpreter results. */
