@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2014/10/09 07:14:43 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2015/03/27 08:46:21 ajacoutot Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -14,8 +14,8 @@ GNOME_VERSION=		0.22.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-editor=		dconf-editor-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-editor=	0
+REVISION-main=		2
+REVISION-editor=	1
 
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 SHARED_LIBS +=		dconf-dbus-1 1.0 # 1.0.0

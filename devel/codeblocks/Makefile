@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/12/30 21:50:24 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2015/03/27 08:46:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
@@ -8,7 +8,7 @@ V=		13.12
 P=		1
 DISTNAME=	codeblocks_${V}-${P}
 PKGNAME=	codeblocks-${V}
-REVISION=	0
+REVISION=	1
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}
 
@@ -56,7 +56,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 # XXX <command-line>:0: internal compiler error: Segmentation fault
 MODULES +=	gcc4

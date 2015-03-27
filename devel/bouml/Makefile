@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/08/09 19:39:34 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/27 08:46:20 ajacoutot Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -8,8 +8,8 @@ DISTNAME=		bouml_$V
 PKGNAME=		bouml-$V
 PKGNAME-main=		bouml-$V
 PKGNAME-docs=		bouml-docs-$V
-REVISION-main=		4
-REVISION-docs=		1
+REVISION-main=		5
+REVISION-docs=		2
 
 CATEGORIES=		devel x11
 
@@ -29,7 +29,7 @@ MULTI_PACKAGES= 	-main -docs
 WANTLIB =		X11 Xext c m pthread stdc++
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 MODULES=		x11/qt3
 USE_GMAKE=		Yes

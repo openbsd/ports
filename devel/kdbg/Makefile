@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2013/10/22 11:34:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.38 2015/03/27 08:46:21 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
 
 DISTNAME=	kdbg-1.2.5
-REVISION =	9
+REVISION =	10
 CATEGORIES=	devel
 HOMEPAGE=	http://www.kdbg.org/
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kdbg/}
 
 MODULES=	x11/kde devel/gettext
 
-RUN_DEPENDS=	x11/gtk+2,-guic
+RUN_DEPENDS=	x11/gtk+3,-guic
 LIB_DEPENDS=	x11/kde/libs3
 
 CONFIGURE_STYLE= autoconf autoheader
