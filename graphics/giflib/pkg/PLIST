@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/09/25 07:52:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/03/27 11:34:23 sthen Exp $
 @conflict libungif-*
 @pkgpath graphics/libungif
-@bin bin/gif2raw
 @bin bin/gif2rgb
 @bin bin/gifbuild
 @bin bin/gifclrmp
@@ -14,7 +13,6 @@ include/gif_lib.h
 lib/libgif.a
 lib/libgif.la
 @lib lib/libgif.so.${LIBgif_VERSION}
-@man man/man1/gif2raw.1
 @man man/man1/gif2rgb.1
 @man man/man1/gifbg.1
 @man man/man1/gifbuild.1

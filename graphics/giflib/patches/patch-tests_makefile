@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_makefile,v 1.1.1.1 2013/09/25 07:49:50 sthen Exp $
+$OpenBSD: patch-tests_makefile,v 1.2 2015/03/27 11:34:23 sthen Exp $
 
 #1, gmake-ism
 
@@ -8,9 +8,9 @@ value isn't read in the original order; same on Linux
 #3, "head --bytes=-20" means "display most of the file, but trim last 20 bytes"
 which isn't easily replicable with base tools, so just use ghead from coreutils
 
---- tests/makefile.orig	Mon Sep 23 21:44:53 2013
-+++ tests/makefile	Mon Sep 23 22:27:54 2013
-@@ -29,12 +29,12 @@ rebuild: render-rebuild \
+--- tests/makefile.orig	Wed May 14 19:17:54 2014
++++ tests/makefile	Tue Dec 30 14:41:31 2014
+@@ -27,12 +27,12 @@ rebuild: render-rebuild \
  UTILS = ../util
  PICS = ../pic
  
@@ -25,16 +25,7 @@ which isn't easily replicable with base tools, so just use ghead from coreutils
  	do \
  	    stem=`basename $${test} | sed -e "s/.gif$$//"`; \
  	    if echo "Testing RGB rendering of $${test}" >&2; \
-@@ -52,7 +52,7 @@ render-rebuild:
- 
- gif2raw-regress:
- 	@echo "gif2raw: Checking that it can self-invert."
--	@$(UTILS)/gif2raw <$(PICS)/treescap.gif | $(UTILS)/gif2raw -s 40 40 -p treescap.map | $(UTILS)/gif2rgb | cmp - treescap.rgb
-+	@$(UTILS)/gif2raw <$(PICS)/treescap.gif | $(UTILS)/gif2raw -p treescap.map -s 40 40 | $(UTILS)/gif2rgb | cmp - treescap.rgb
- 
- gif2rgb-rebuild:
- 	@echo "Rebuilding gif2rgb checkfile."
-@@ -109,10 +109,10 @@ giffilter-regress:
+@@ -103,10 +103,10 @@ giffilter-regress:
  
  giffix-rebuild:
  	@echo "Rebuilding giffix test."
