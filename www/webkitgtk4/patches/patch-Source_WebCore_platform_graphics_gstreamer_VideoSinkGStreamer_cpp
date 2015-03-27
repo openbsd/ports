@@ -1,0 +1,51 @@
+$OpenBSD: patch-Source_WebCore_platform_graphics_gstreamer_VideoSinkGStreamer_cpp,v 1.1 2015/03/27 16:03:07 ajacoutot Exp $
+
+https://trac.webkit.org/changeset/179866
+
+--- Source/WebCore/platform/graphics/gstreamer/VideoSinkGStreamer.cpp.orig	Wed Jan 14 15:36:54 2015
++++ Source/WebCore/platform/graphics/gstreamer/VideoSinkGStreamer.cpp	Thu Mar 26 13:23:33 2015
+@@ -117,7 +117,7 @@ static void webkitVideoSinkTimeoutCallback(WebKitVideo
+ {
+     WebKitVideoSinkPrivate* priv = sink->priv;
+ 
+-    GMutexLocker<GMutex> lock(priv->sampleMutex);
++    WTF::GMutexLocker<GMutex> lock(priv->sampleMutex);
+     GstSample* sample = priv->sample;
+     priv->sample = 0;
+ 
+@@ -136,7 +136,7 @@ static GstFlowReturn webkitVideoSinkRender(GstBaseSink
+     WebKitVideoSink* sink = WEBKIT_VIDEO_SINK(baseSink);
+     WebKitVideoSinkPrivate* priv = sink->priv;
+ 
+-    GMutexLocker<GMutex> lock(priv->sampleMutex);
++    WTF::GMutexLocker<GMutex> lock(priv->sampleMutex);
+ 
+     if (priv->unlocked)
+         return GST_FLOW_OK;
+@@ -234,7 +234,7 @@ static void webkitVideoSinkFinalize(GObject* object)
+ 
+ static void unlockSampleMutex(WebKitVideoSinkPrivate* priv)
+ {
+-    GMutexLocker<GMutex> lock(priv->sampleMutex);
++    WTF::GMutexLocker<GMutex> lock(priv->sampleMutex);
+ 
+     if (priv->sample) {
+         gst_sample_unref(priv->sample);
+@@ -260,7 +260,7 @@ static gboolean webkitVideoSinkUnlockStop(GstBaseSink*
+     WebKitVideoSinkPrivate* priv = WEBKIT_VIDEO_SINK(baseSink)->priv;
+ 
+     {
+-        GMutexLocker<GMutex> lock(priv->sampleMutex);
++        WTF::GMutexLocker<GMutex> lock(priv->sampleMutex);
+         priv->unlocked = false;
+     }
+ 
+@@ -285,7 +285,7 @@ static gboolean webkitVideoSinkStart(GstBaseSink* base
+ {
+     WebKitVideoSinkPrivate* priv = WEBKIT_VIDEO_SINK(baseSink)->priv;
+ 
+-    GMutexLocker<GMutex> lock(priv->sampleMutex);
++    WTF::GMutexLocker<GMutex> lock(priv->sampleMutex);
+     priv->unlocked = false;
+     return TRUE;
+ }

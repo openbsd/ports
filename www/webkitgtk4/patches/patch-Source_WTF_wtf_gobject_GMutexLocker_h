@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_WTF_wtf_gobject_GMutexLocker_h,v 1.1 2015/03/27 16:03:07 ajacoutot Exp $
+
+https://trac.webkit.org/changeset/179866
+
+--- Source/WTF/wtf/gobject/GMutexLocker.h.orig	Wed Jan  7 14:16:08 2015
++++ Source/WTF/wtf/gobject/GMutexLocker.h	Thu Mar 26 13:23:55 2015
+@@ -97,8 +97,6 @@ class GMutexLocker { (private)
+ 
+ } // namespace WTF
+ 
+-using WTF::GMutexLocker;
+-
+ #endif // USE(GLIB)
+ 
+ #endif // GMutexLocker_h

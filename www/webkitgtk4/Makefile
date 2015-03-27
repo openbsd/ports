@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/16 12:56:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/27 16:03:07 ajacoutot Exp $
 
 BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
@@ -16,6 +16,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     0.0 # 18.0
 SHARED_LIBS +=  webkit2gtk-${API}            0.0 # 37.2
