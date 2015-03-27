@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/14 07:46:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/27 08:15:03 ajacoutot Exp $
 
 CATEGORIES =	www
 COMMENT =	Webkit-based KPart for KDE
 HOMEPAGE =	https://projects.kde.org/projects/extragear/base/kwebkitpart
 DISTNAME =	kwebkitpart-1.2
-REVISION =	4
+REVISION =	5
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
@@ -21,7 +21,7 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/kdewebkit ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += soprano
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	x11/gtk+3,-guic
 
 MODULES =	x11/kde4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/07/16 06:47:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2015/03/27 08:15:03 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -10,6 +10,7 @@ OPERA_BUILD=	1860
 DISTNAME=	opera-${V}-${OPERA_BUILD}.i386.linux
 PKGNAME=	opera-${V}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -27,7 +28,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		emulators/fedora/base>=10.0 \
 		emulators/fedora/cups>=10.0 \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

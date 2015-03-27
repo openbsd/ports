@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2015/03/21 14:11:19 robert Exp $
+# $OpenBSD: Makefile,v 1.206 2015/03/27 08:15:03 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -7,6 +7,7 @@ COMMENT=		Chromium browser
 
 V=			41.0.2272.101
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -52,7 +53,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		graphics/libexif \
 		x11/gnome/libgnome-keyring \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \

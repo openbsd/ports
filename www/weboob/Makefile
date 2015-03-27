@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/26 12:14:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:15:04 ajacoutot Exp $
 
 COMMENT =	web out of browsers
 
 MODPY_EGG_VERSION =	1.0
 DISTNAME =	weboob-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 HOMEPAGE =	http://weboob.org
@@ -21,7 +21,7 @@ MODPY_DISTUTILS_BUILDARGS = --qt --xdg
 
 BUILD_DEPENDS +=	x11/py-qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		www/py-mako \
 		www/py-clientform \
 		www/py-mechanize \

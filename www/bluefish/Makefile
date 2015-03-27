@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2015/03/27 08:15:03 ajacoutot Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
 DISTNAME =	bluefish-2.2.5
 CATEGORIES=	www editors
 HOMEPAGE=	http://bluefish.openoffice.nl/
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/
 
@@ -28,7 +28,7 @@ MODULES=	devel/gettext \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS=	textproc/enchant \
 		x11/gnome/gucharmap

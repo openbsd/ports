@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/02/17 18:02:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:15:03 ajacoutot Exp $
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
@@ -13,6 +13,7 @@ GH_TAGNAME =		v0.9.04
 GH_COMMIT =		23d7ee6f9cd636e750687a01975b177c1c9c2e53
 
 DISTNAME =		${GH_PROJECT}-${GH_TAGNAME:C/^v//}
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -27,7 +28,7 @@ WANTLIB +=		c m pthread Qt5Core Qt5Gui Qt5Multimedia
 WANTLIB +=		Qt5Network Qt5PrintSupport Qt5Script
 WANTLIB +=		Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets
 
-RUN_DEPENDS =		devel/desktop-file-utils x11/gtk+2,-guic
+RUN_DEPENDS =		devel/desktop-file-utils x11/gtk+3,-guic
 
 # Dependencies
 #
