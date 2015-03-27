@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_botl_c,v 1.1 2015/03/27 11:11:01 tobiasu Exp $
+--- src/botl.c.orig	Sat Mar 21 10:22:30 2015
++++ src/botl.c	Sat Mar 21 10:25:35 2015
+@@ -543,7 +543,7 @@ bot2()
+ 	if (Upolyd)
+ 		Sprintf(nb = eos(nb), " HD:%d", mons[u.umonnum].mlevel);
+ 	Sprintf(nb = eos(nb), " Level:%u  Exp:%-1ld(%-1ld)", u.ulevel,u.uexp,newuexp(u.ulevel));
+-	Sprintf(nb = eos(nb), "  Wt:%ld/%ld",inv_weight()+weight_cap(),weight_cap());
++	Sprintf(nb = eos(nb), "  Wt:%d/%d",inv_weight()+weight_cap(),weight_cap());
+ 	if(strcmp(hu_stat[u.uhs], "        ")) {
+ 		Sprintf(nb = eos(nb), " ");
+ 		Strcat(newbot2, hu_stat[u.uhs]);
+@@ -571,7 +571,7 @@ bot3()
+ 	  else	Sprintf(newbot3, "Dlvl:%-2d ", depth(&u.uz));
+ #ifdef SCORE_ON_BOTL
+ 	Sprintf(nb = eos(newbot3),
+-		"%c:%-2ld  Score:%d", oc_syms[GOLD_CLASS],
++		"%c:%-2ld  Score:%ld", oc_syms[GOLD_CLASS],
+ 		u.ugold, botl_score());
+ 	Sprintf(nb = eos(nb), "  Turn:%ld", moves);
+ #else

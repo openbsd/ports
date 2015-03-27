@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_shk_c,v 1.1 2015/03/27 11:11:01 tobiasu Exp $
+--- src/shk.c.orig	Sat Mar 21 10:27:30 2015
++++ src/shk.c	Sat Mar 21 10:28:08 2015
+@@ -4577,7 +4577,7 @@ shk_offer_price(slang, charge, shkp)
+ 	char sbuf[BUFSZ];
+ 
+ 	/* Ask y/n if player wants to pay */
+-	Sprintf(sbuf, "It'll cost you %ld zorkmid%s.  Interested?",
++	Sprintf(sbuf, "It'll cost you %d zorkmid%s.  Interested?",
+ 		charge, plur(charge));
+ 
+ 	if ( yn(sbuf) != 'y' )

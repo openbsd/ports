@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dokick_c,v 1.1 2015/03/27 11:11:01 tobiasu Exp $
+--- src/dokick.c.orig	Sat Mar 21 10:26:12 2015
++++ src/dokick.c	Sat Mar 21 10:27:00 2015
+@@ -76,7 +76,7 @@ register boolean clumsy;
+ 	}
+ 	dmg += u.udaminc;	/* add ring(s) of increase damage */
+ 	if (dmg > 0) {
+-		pline("You hit.[%ld pts.]",dmg);
++		pline("You hit.[%d pts.]",dmg);
+ 		mon->mhp -= dmg;
+ 	}
+ 	if(mon->mhp > 0 && martial() && !bigmonst(mon->data) && !rn2(3)

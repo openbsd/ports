@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_unixconf_h,v 1.1 2000/04/16 21:19:07 espie Exp $
+$OpenBSD: patch-include_unixconf_h,v 1.2 2015/03/27 11:11:01 tobiasu Exp $
 --- include/unixconf.h.orig	Tue Dec 10 21:20:08 1996
-+++ include/unixconf.h	Fri Apr 14 15:15:02 2000
++++ include/unixconf.h	Thu Mar 19 22:54:05 2015
 @@ -19,12 +19,16 @@
   */
  
@@ -65,7 +65,15 @@ $OpenBSD: patch-include_unixconf_h,v 1.1 2000/04/16 21:19:07 espie Exp $
  
  /* The Andrew Message System does mail a little differently from normal
   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
-@@ -286,7 +292,7 @@
+@@ -263,6 +269,7 @@
+ 
+ #if defined(BSD) || defined(ULTRIX)
+ # if !defined(DGUX) && !defined(SUNOS4)
++#include <string.h>
+ #define memcpy(d, s, n)		bcopy(s, d, n)
+ #define memcmp(s1, s2, n)	bcmp(s2, s1, n)
+ # endif
+@@ -286,7 +293,7 @@
  #endif
  
  #ifdef TIMED_DELAY
