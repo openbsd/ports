@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2015/03/27 16:23:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2015/03/27 18:14:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,10 +15,10 @@ PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-cups=		0
-REVISION-cloudprint=	0
-REVISION-guic=		0
+REVISION-main=		1
+REVISION-cups=		1
+REVISION-cloudprint=	1
+REVISION-guic=		1
 
 CATEGORIES=		x11 devel
 
@@ -33,8 +33,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += epoxy ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += m pcre png pthread z
+WANTLIB += m ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += pcre png pthread z
 
 MULTI_PACKAGES=		-main -cups -cloudprint -guic
 
@@ -55,7 +55,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
-WANTLIB-main += ${WANTLIB} c
+WANTLIB-main += ${WANTLIB} c epoxy
 WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
@@ -67,7 +67,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cups=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cups += ${WANTLIB}
+WANTLIB-cups += ${WANTLIB} epoxy
 WANTLIB-cups += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
@@ -82,7 +82,7 @@ LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cloudprint += ${WANTLIB}
+WANTLIB-cloudprint += ${WANTLIB} epoxy
 WANTLIB-cloudprint += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cloudprint += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cloudprint += cairo cairo-gobject dbus-1 expat fontconfig freetype
@@ -117,6 +117,13 @@ CONFIGURE_ARGS +=	--disable-colord
 .endif
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
+
+# XXX prevent a cyclic dependency (gtk+3 -> libcanberra-gtk3 -> gtk+3);
+# only used for the gtk3-widget-factory example;
+# see patch-configure_ac
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS +=	--disable-libcanberra
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
