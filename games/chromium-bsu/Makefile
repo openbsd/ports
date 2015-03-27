@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/04 22:07:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/27 08:41:05 ajacoutot Exp $
 
 COMMENT =		fast paced arcade-style space shooter
 DISTNAME =		chromium-bsu-0.9.15.1
 CATEGORIES =		games x11
 HOMEPAGE =		http://chromium-bsu.sourceforge.net/
+REVISION =		0
 
 MAINTAINER =		Antti Harri <iku@openbsd.fi>
 
@@ -17,7 +18,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chromium-bsu/}
 
 MODULES =		devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		graphics/ftgl	\
 			graphics/glpng	\
 			audio/freealut	\

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/16 19:19:24 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2015/03/27 08:41:06 ajacoutot Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
 BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp	
 COMMENT =		open source reimplementation of the original X-Com
 DISTNAME =		openxcom-1.0.0
-REVISION = 		0
+REVISION = 		1
 EPOCH =			0
 CATEGORIES =		games x11
 
@@ -23,7 +23,7 @@ MODULES =		devel/cmake
 
 RUN_DEPENDS =		audio/timidity \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/sdl-gfx \
 			devel/sdl-image \
 			devel/sdl-mixer \

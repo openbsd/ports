@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2014/12/23 11:32:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2015/03/27 08:41:05 ajacoutot Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
 V =		1.4.4
 DISTNAME =	openttd-${V}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX=	-source.tar.gz
 GFX_V =		0.5.1
 SFX_V=		0.2.3
@@ -40,7 +40,7 @@ LIB_DEPENDS=		archivers/lzo2 \
 			x11/libxdg-basedir
 
 RUN_DEPENDS=            devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \

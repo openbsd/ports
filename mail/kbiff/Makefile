@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2015/03/27 08:41:04 ajacoutot Exp $
 
 COMMENT=		new mail notification utility for KDE
 
 DISTNAME=		kbiff-3.8
-REVISION =		8
+REVISION =		9
 SHARED_LIBS=		kbiff 2.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2
@@ -23,7 +23,7 @@ WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient>=1
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kbiff/}
 
-RUN_DEPENDS=		x11/gtk+2,-guic
+RUN_DEPENDS=		x11/gtk+3,-guic
 LIB_DEPENDS=		x11/kde/libs3
 
 MODULES=        	x11/kde devel/gettext

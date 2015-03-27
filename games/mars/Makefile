@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/27 08:41:05 ajacoutot Exp $
 
 V =		0.7.5
 COMMENT =	ridiculous shoot-em-up game
 DISTNAME =	mars_source_${V}
 PKGNAME =	mars-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://mars-game.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -26,7 +27,7 @@ LIB_DEPENDS =	audio/taglib \
 		multimedia/sfml
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/mars-game

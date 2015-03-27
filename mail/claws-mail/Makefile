@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2015/03/27 08:41:04 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,6 +18,12 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+REVISION-bogofilter=	0
+REVISION-gdata=		0
+REVISION-htmlviewer=	0
+REVISION-main=		0
+REVISION-pdfviewer=	0
+REVISION-spamassassin=	0
 
 CATEGORIES=		mail news
 
@@ -83,7 +89,7 @@ LIB_DEPENDS=		archivers/libarchive \
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/startup-notification \

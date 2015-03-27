@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/04 16:57:14 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2015/03/27 08:41:05 ajacoutot Exp $
 
 COMMENT =	infinite-world block sandbox game
 V =		0.4.10
 DISTNAME =	minetest-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://www.minetest.net/
 
@@ -20,7 +21,7 @@ MODULES =	devel/cmake \
 CONFIGURE_ARGS =	-DENABLE_GETTEXT=ON -DCUSTOM_MANDIR=${PREFIX}/man
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS =	audio/openal \
 		audio/libogg \
 		audio/libvorbis \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/20 22:05:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:41:06 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -14,8 +14,8 @@ MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
 V=		1.4
-REVISION-main=	2
-REVISION-data=	2
+REVISION-main=	3
+REVISION-data=	3
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
@@ -29,7 +29,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data \
 			devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 BUILD_DEPENDS=		textproc/gsed
 LIB_DEPENDS-main=	devel/sdl-mixer \

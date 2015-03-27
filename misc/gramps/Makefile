@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2015/03/26 12:14:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2015/03/27 08:41:06 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION=	4.1.1
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		misc x11
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/gtkspell3 \
 			textproc/py-ICU \
 			www/webkit,gtk3 \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 MODPY_DISTUTILS_BUILD=	build
 NO_TEST=		Yes

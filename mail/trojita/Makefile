@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/14 20:53:36 jturner Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/27 08:41:04 ajacoutot Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.5
+REVISION =		0
 
 CATEGORIES =		mail x11
 
@@ -26,7 +27,7 @@ MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
 CONFIGURE_ARGS +=	-DWITH_HARMATTAN=OFF \

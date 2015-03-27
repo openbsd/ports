@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/22 17:23:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/27 08:41:06 ajacoutot Exp $
 
 COMMENT =	free J-RPG game
 DISTNAME =	valyriatear-${GH_TAGNAME}
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear
@@ -35,7 +36,7 @@ LIB_DEPENDS =	audio/libogg \
 		devel/sdl-ttf
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 # PCH (Precompiled Headers) are known to be broken so disable
 # the use of PCH.

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2013/12/19 19:49:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2015/03/27 08:41:05 ajacoutot Exp $
 
 COMMENT=	puzzle game for KDE
 
 DISTNAME=	kslide-1.0.1
 CATEGORIES=	games
+REVISION=	0
 
 HOMEPAGE=	http://kde-apps.org/content/show.php/KSlide?content=10317
 
@@ -22,7 +23,7 @@ WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 MASTER_SITES=	${_MASTER_SITE_FREEBSD}
 EXTRACT_SUFX=	.tar.bz2
 
-RUN_DEPENDS=	x11/gtk+2,-guic
+RUN_DEPENDS=	x11/gtk+3,-guic
 LIB_DEPENDS=	x11/kde/libs3
 DPB_PROPERTIES =	tag:kde3
 

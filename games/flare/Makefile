@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/04 15:22:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/27 08:41:05 ajacoutot Exp $
 
 COMMENT =		free/libre action roleplaying engine
 
 V =			0.19
 PKGNAME =		flare-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -23,7 +23,7 @@ DISTFILES =		flare-engine.${V}.tar.gz \
 
 MODULES =		devel/cmake
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-mixer \
 			devel/sdl-ttf

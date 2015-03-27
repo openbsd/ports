@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/06 23:05:11 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2015/03/27 08:41:06 ajacoutot Exp $
 
 COMMENT =	collection of puzzles games
 
 DISTNAME =	puzzles-20141206
 CATEGORIES =	games
+REVISION =	0
 
 MASTER_SITES =	http://rhaalovely.net/stuff/
 HOMEPAGE =	http://www.chiark.greenend.org.uk/~sgtatham/puzzles/
@@ -22,7 +23,7 @@ MAKE_FILE =	Makefile.gtk
 MODULES =	devel/gettext
 LIB_DEPENDS =	x11/gtk+2
 RUN_DEPENDS =	devel/desktop-file-utils devel/xdg-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 MAKE_FLAGS =	CC="${CC}"
 
 WANTLIB += atk-1.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0

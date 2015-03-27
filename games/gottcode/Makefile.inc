@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/05/16 20:45:30 rpe Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2015/03/27 08:41:05 ajacoutot Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
 MODULES +=	x11/qt4
-RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+2,-guic
+RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+3,-guic
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 WANTLIB +=	QtGui c m pthread stdc++
 

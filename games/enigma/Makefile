@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/22 17:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2015/03/27 08:41:05 ajacoutot Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
 V=		1.01
 DISTNAME=	enigma-${V}-64bit
 PKGNAME=	enigma-${V}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	games x11
 
@@ -25,7 +25,7 @@ WRKDIST=	${WRKDIR}/enigma-${V}
 MODULES=	devel/gettext
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \
 		devel/sdl-ttf \
