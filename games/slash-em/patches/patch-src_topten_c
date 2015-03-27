@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_topten_c,v 1.1 2015/03/27 11:04:28 tobiasu Exp $
+--- src/topten.c.orig	Mon Mar 23 16:13:42 2015
++++ src/topten.c	Mon Mar 23 16:20:20 2015
+@@ -220,7 +220,7 @@ struct toptenentry *tt;
+ 			for(dp = tt->death; *dp; dp++) {
+ 				if(!strncmp(dp, " Conduct=", 9)) {
+ 					dp2 = dp + 9;
+-					sscanf(dp2, "%d", &tt->conduct);
++					sscanf(dp2, "%ld", &tt->conduct);
+ 					/* Find trailing null or space */
+ 					while(*dp2 && *dp2 != ' ')
+ 						dp2++;
+@@ -262,7 +262,7 @@ struct toptenentry *tt;
+ 	/* Add a trailing " Conduct=%d" to tt->death */
+ 	if(tt->conduct != 4095) {
+ 		cp = tt->death + strlen(tt->death);
+-		Sprintf(cp, " Conduct=%d", tt->conduct);
++		Sprintf(cp, " Conduct=%ld", tt->conduct);
+ 	}
+ #endif
+ 

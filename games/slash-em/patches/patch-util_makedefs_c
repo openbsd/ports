@@ -1,0 +1,21 @@
+$OpenBSD: patch-util_makedefs_c,v 1.1 2015/03/27 11:04:28 tobiasu Exp $
+--- util/makedefs.c.orig	Thu Mar 19 23:39:33 2015
++++ util/makedefs.c	Thu Mar 19 23:41:44 2015
+@@ -593,7 +593,7 @@ const char *build_date;
+ void
+ do_date()
+ {
+-	long clocktim = 0;
++	time_t clocktim = 0;
+ 	char *c,  *cbuf, buf[BUFSZ];
+ 	const char *ul_sfx;
+ 
+@@ -625,7 +625,7 @@ do_date()
+ 	ul_sfx = "L";
+ #endif
+ 	Fprintf(ofp,"#define BUILD_DATE \"%s\"\n", cbuf);
+-	Fprintf(ofp,"#define BUILD_TIME (%ldL)\n", clocktim);
++	Fprintf(ofp,"#define BUILD_TIME (%lldLL)\n", (long long)clocktim);
+ 	Fprintf(ofp,"\n");
+ 	Fprintf(ofp,"#define VERSION_NUMBER 0x%08lx%s\n",
+ 		version.incarnation, ul_sfx);

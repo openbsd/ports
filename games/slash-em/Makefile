@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2015/03/27 11:04:28 tobiasu Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
 PKGNAME =	slash-em-3.4.3.7e7f1
-REVISION =	3
+REVISION =	4
 V =		3.4.3.7e7f1
 CATEGORIES =	games
 

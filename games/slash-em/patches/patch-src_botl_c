@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_botl_c,v 1.1 2015/03/27 11:04:28 tobiasu Exp $
+--- src/botl.c.orig	Mon Mar 23 16:05:46 2015
++++ src/botl.c	Mon Mar 23 16:09:38 2015
+@@ -559,7 +559,7 @@ boolean reconfig;
+     *rv++ = reconfig ? "hunger" : strcmp(hu_stat[u.uhs], "        ") ?
+ 	    hu_stat[u.uhs] : "";
+     *rv++ = reconfig ? "encumberance" : enc_stat[near_capacity()];
+-    *rv++ = reconfig ? "flags" : (Sprintf(flgs, "%lX",
++    *rv++ = reconfig ? "flags" : (Sprintf(flgs, "%X",
+         (Levitation ? RAW_STAT_LEVITATION : 0) |
+ 	(Confusion ? RAW_STAT_CONFUSION : 0) |
+ 	(Sick && (u.usick_type & SICK_VOMITABLE) ? RAW_STAT_FOODPOIS : 0) |

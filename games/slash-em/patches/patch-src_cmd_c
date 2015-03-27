@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cmd_c,v 1.1 2015/03/27 11:04:28 tobiasu Exp $
+--- src/cmd.c.orig	Mon Mar 23 16:10:22 2015
++++ src/cmd.c	Mon Mar 23 16:12:46 2015
+@@ -1511,7 +1511,7 @@ int final;	/* 0 => still in progress; 1 => over, survi
+ 		Sprintf(buf, "%s health", u.uhealbonus > 0 ? "extra" :
+ 			"reduced");
+ #ifdef WIZARD
+-	    if (wizard) Sprintf(eos(buf), " (%d)", u.uhealbonus);
++	    if (wizard) Sprintf(eos(buf), " (%ld)", u.uhealbonus);
+ #endif
+ 		you_have(buf);
+ 	}
