@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_gifwrite_c,v 1.1 2013/09/25 07:58:42 sthen Exp $
+$OpenBSD: patch-src_gifwrite_c,v 1.2 2015/03/28 17:59:17 sthen Exp $
 
 giflib 5.0+
 
---- src/gifwrite.c.orig	Thu Sep 19 16:50:20 2013
-+++ src/gifwrite.c	Thu Sep 19 16:54:09 2013
+--- src/gifwrite.c.orig	Wed Jun 22 19:04:32 2011
++++ src/gifwrite.c	Sat Mar 28 17:51:30 2015
 @@ -52,7 +52,7 @@ ColorMapObject *ColorMapObject_val( value cmap )
  fprintf(stderr, "Creating map with length = %d ...\n", len);
  fflush(stderr);
@@ -22,6 +22,15 @@ giflib 5.0+
      failwith("EGifOpenFileName");
    }
    /* gcc -fwritable-strings is required to compile libungif */
+@@ -88,7 +88,7 @@ value eGifCloseFile( value hdl )
+      segmentation faults */
+   ((GifFileType *)hdl)->Image.ColorMap = NULL; 
+ 
+-  EGifCloseFile( (GifFileType *) hdl );
++  EGifCloseFile( (GifFileType *) hdl, NULL );
+   CAMLreturn(Val_unit);
+ }
+ 
 @@ -133,7 +133,7 @@ value eGifPutLine( value oc, value buf )
  
    if ( EGifPutLine(GifFileOut, String_val(buf), GifFileOut->Image.Width) 

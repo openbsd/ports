@@ -1,10 +1,35 @@
-$OpenBSD: patch-gutils_gimagereadgif_c,v 1.1 2013/09/25 07:58:46 sthen Exp $
+$OpenBSD: patch-gutils_gimagereadgif_c,v 1.2 2015/03/28 17:59:17 sthen Exp $
 
 giflib 5.0+
 
---- gutils/gimagereadgif.c.orig	Thu Sep 19 06:41:58 2013
-+++ gutils/gimagereadgif.c	Thu Sep 19 06:44:24 2013
-@@ -220,7 +220,7 @@ GImage *GImageReadGif(char *filename) {
+--- gutils/gimagereadgif.c.orig	Thu Aug  2 16:09:09 2012
++++ gutils/gimagereadgif.c	Sat Mar 28 17:55:56 2015
+@@ -132,13 +132,13 @@ GImage *GImageReadGif(char *filename) {
+ 	if ( !loadgif())
+ return( NULL );
+ 
+-    if ((gif = _DGifOpenFileName(filename)) == NULL) {
++    if ((gif = _DGifOpenFileName(filename, NULL)) == NULL) {
+ 	fprintf( stderr, "can't open %s\n", filename);
+ return( NULL );
+     }
+ 
+     if ( _DGifSlurp(gif)==GIF_ERROR ) {
+-	_DGifCloseFile(gif);
++	_DGifCloseFile(gif, NULL);
+ 	fprintf( stderr, "Bad gif file %s\n", filename );
+ return( NULL );
+     }
+@@ -150,7 +150,7 @@ return( NULL );
+ 	ret = images[0];
+     else
+ 	ret = GImageCreateAnimation(images,gif->ImageCount);
+-    _DGifCloseFile(gif);
++    _DGifCloseFile(gif, NULL);
+     free(images);
+ return( ret );
+ }
+@@ -220,13 +220,13 @@ GImage *GImageReadGif(char *filename) {
      GifFileType *gif;
      int i;
  
@@ -13,3 +38,19 @@ giflib 5.0+
  	fprintf( stderr, "can't open %s\n", filename);
  return( NULL );
      }
+ 
+     if ( DGifSlurp(gif)==GIF_ERROR ) {
+-	DGifCloseFile(gif);
++	DGifCloseFile(gif, NULL);
+ 	fprintf(stderr,"Bad gif file %s\n", filename );
+ return( NULL );
+     }
+@@ -238,7 +238,7 @@ return( NULL );
+ 	ret = images[0];
+     else
+ 	ret = GImageCreateAnimation(images,gif->ImageCount);
+-    DGifCloseFile(gif);
++    DGifCloseFile(gif, NULL);
+     free(images);
+ return( ret );
+ }

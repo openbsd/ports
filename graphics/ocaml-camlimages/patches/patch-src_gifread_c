@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_gifread_c,v 1.1 2013/09/25 07:58:41 sthen Exp $
+$OpenBSD: patch-src_gifread_c,v 1.2 2015/03/28 17:59:17 sthen Exp $
 
 giflib 5.0+
 
---- src/gifread.c.orig	Thu Sep 19 16:51:12 2013
-+++ src/gifread.c	Thu Sep 19 16:53:32 2013
+--- src/gifread.c.orig	Wed Jun 22 19:04:32 2011
++++ src/gifread.c	Sat Mar 28 17:52:02 2015
 @@ -140,7 +140,7 @@ value dGifOpenFileName( value name )
    GifFileType *GifFile;
    int i;
@@ -12,6 +12,15 @@ giflib 5.0+
 +  if((GifFile = DGifOpenFileName( String_val(name), NULL )) == NULL){
      failwith("DGifOpenFileName");
    }
+ 
+@@ -161,7 +161,7 @@ value dGifCloseFile( value hdl )
+      segmentation faults */
+   ((GifFileType *)hdl)->Image.ColorMap = NULL; 
+ 
+-  DGifCloseFile( (GifFileType *) hdl );
++  DGifCloseFile( (GifFileType *) hdl, NULL );
+   CAMLreturn(Val_unit);
+ }
  
 @@ -200,7 +200,7 @@ value dGifGetLine( value hdl )
  

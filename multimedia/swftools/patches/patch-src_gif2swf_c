@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_gif2swf_c,v 1.1 2013/09/25 07:58:45 sthen Exp $
+$OpenBSD: patch-src_gif2swf_c,v 1.2 2015/03/28 17:59:17 sthen Exp $
 
 giflib 5.0+
 
---- src/gif2swf.c.orig	Thu Sep 19 15:04:17 2013
-+++ src/gif2swf.c	Thu Sep 19 15:14:51 2013
+--- src/gif2swf.c.orig	Wed Aug 12 12:57:28 2009
++++ src/gif2swf.c	Sat Mar 28 17:49:39 2015
 @@ -230,13 +230,13 @@ TAG *MovieAddFrame(SWF * swf, TAG * t, char *sname, in
      }
      fclose(fi);
@@ -20,6 +20,15 @@ giflib 5.0+
          return t;
      }
  
+@@ -455,7 +455,7 @@ TAG *MovieAddFrame(SWF * swf, TAG * t, char *sname, in
+ 
+     free(pal);
+     free(imagedata);
+-    DGifCloseFile(gft);
++    DGifCloseFile(gft, NULL);
+ 
+     return t;
+ }
 @@ -488,7 +488,7 @@ int CheckInputFile(char *fname, char **realname)
      }
      fclose(fi);
@@ -38,3 +47,12 @@ giflib 5.0+
          return -1;
      }
      // After DGifSlurp() call, gft->ImageCount become available
+@@ -518,7 +518,7 @@ int CheckInputFile(char *fname, char **realname)
+             fprintf(stderr, "frame: %u, delay: %.3f sec\n", i + 1, getGifDelayTime(gft, i) / 100.0);
+     }
+ 
+-    DGifCloseFile(gft);
++    DGifCloseFile(gft, NULL);
+ 
+     return 0;
+ }
