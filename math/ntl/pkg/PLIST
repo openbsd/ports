@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/12/26 08:42:02 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/03/28 09:49:24 benoit Exp $
 include/NTL/
 include/NTL/FFT.h
 include/NTL/FacVec.h
@@ -64,6 +64,7 @@ include/NTL/pair_ZZ_pX_long.h
 include/NTL/pair_lzz_pEX_long.h
 include/NTL/pair_lzz_pX_long.h
 include/NTL/quad_float.h
+include/NTL/sp_arith.h
 include/NTL/thread.h
 include/NTL/tools.h
 include/NTL/vec_GF2.h
