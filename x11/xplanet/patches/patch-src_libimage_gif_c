@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libimage_gif_c,v 1.1 2013/09/25 07:58:52 sthen Exp $
---- src/libimage/gif.c.orig	Sat Mar 25 15:50:51 2006
-+++ src/libimage/gif.c	Thu Sep 19 15:52:28 2013
+$OpenBSD: patch-src_libimage_gif_c,v 1.2 2015/03/28 17:23:23 sthen Exp $
+--- src/libimage/gif.c.orig	Sat Mar 25 22:50:51 2006
++++ src/libimage/gif.c	Sat Mar 28 17:18:01 2015
 @@ -33,6 +33,7 @@ read_gif(const char *filename, int *width, int *height
  {
      int interlace_offset[] = { 0, 4, 2, 1 };
@@ -58,6 +58,15 @@ $OpenBSD: patch-src_libimage_gif_c,v 1.1 2013/09/25 07:58:52 sthen Exp $
                      return(0);
                  }
              }
+@@ -154,7 +155,7 @@ read_gif(const char *filename, int *width, int *height
+     
+     free(buffer);
+ 
+-    DGifCloseFile(infile);
++    DGifCloseFile(infile, NULL);
+     return(1);
+ }
+ 
 @@ -178,7 +179,7 @@ write_gif(const char *filename, int width, int height,
          return(0);
      }
@@ -119,11 +128,13 @@ $OpenBSD: patch-src_libimage_gif_c,v 1.1 2013/09/25 07:58:52 sthen Exp $
              return(0);
          }
          ptr += width;
-@@ -233,7 +234,7 @@ write_gif(const char *filename, int width, int height,
+@@ -232,8 +233,8 @@ write_gif(const char *filename, int width, int height,
+ 
      EGifSpew(outfile);
  
-     if (EGifCloseFile(outfile) == GIF_ERROR) 
+-    if (EGifCloseFile(outfile) == GIF_ERROR) 
 -        PrintGifError();
++    if (EGifCloseFile(outfile, NULL) == GIF_ERROR) 
 +        fprintf(stderr, "giflib error: %s\n", GifErrorString(outfile->Error));
  
      free(buffer);

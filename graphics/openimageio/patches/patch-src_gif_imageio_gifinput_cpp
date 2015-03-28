@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gif_imageio_gifinput_cpp,v 1.1 2015/03/28 17:23:23 sthen Exp $
+--- src/gif.imageio/gifinput.cpp.orig	Sat Mar 28 17:08:05 2015
++++ src/gif.imageio/gifinput.cpp	Sat Mar 28 17:08:14 2015
+@@ -497,7 +497,7 @@ inline bool
+ GIFInput::close (void)
+ {
+     if (m_gif_file) {
+-        if (DGifCloseFile (m_gif_file) == GIF_ERROR) {
++        if (DGifCloseFile (m_gif_file, NULL) == GIF_ERROR) {
+             error ("Error trying to close the file.");
+             return false;
+         }

@@ -1,36 +1,24 @@
-$OpenBSD: patch-wrlib_gif_c,v 1.1 2013/09/25 07:58:51 sthen Exp $
+$OpenBSD: patch-wrlib_gif_c,v 1.2 2015/03/28 17:23:23 sthen Exp $
 
-handle giflib 5.0+
+handle giflib 5.1+
 
---- wrlib/gif.c.orig	Tue Oct 12 12:21:01 2004
-+++ wrlib/gif.c	Thu Sep 19 14:59:11 2013
-@@ -49,6 +49,7 @@ RLoadGIF(RContext *context, char *file, int index)
-     GifPixelType *buffer = NULL;
-     int i, j, k;
-     int width, height;
-+    int giferr = 0;
-     GifRecordType recType;
-     ColorMapObject *colormap;
-     unsigned char rmap[256];
-@@ -61,10 +62,10 @@ RLoadGIF(RContext *context, char *file, int index)
-     /* default error message */
-     RErrorCode = RERR_BADINDEX;
+--- wrlib/gif.c.orig	Sat Mar 28 17:16:05 2015
++++ wrlib/gif.c	Sat Mar 28 17:16:14 2015
+@@ -80,7 +80,7 @@ RLoadGIF(RContext *context, char *file, int index)
+     }
  
--    gif = DGifOpenFileName(file);
-+    gif = DGifOpenFileName(file, &giferr);
+     if (gif->SWidth<1 || gif->SHeight<1) {
+-        DGifCloseFile(gif);
++        DGifCloseFile(gif, NULL);
+         RErrorCode = RERR_BADIMAGEFILE;
+         return NULL;
+     }
+@@ -224,7 +224,7 @@ did_not_get_any_errors:
+         free(buffer);
  
-     if (!gif) {
--        switch (GifLastError()) {
-+        switch (giferr) {
-         case D_GIF_ERR_OPEN_FAILED:
-             RErrorCode = RERR_OPEN;
-             break;
-@@ -202,7 +203,7 @@ RLoadGIF(RContext *context, char *file, int index)
-     /* yuck! */
-     goto did_not_get_any_errors;
- giferr:
--    switch (GifLastError()) {
-+    switch (gif->Error) {
-     case D_GIF_ERR_OPEN_FAILED:
-         RErrorCode = RERR_OPEN;
-         break;
+     if (gif)
+-        DGifCloseFile(gif);
++        DGifCloseFile(gif, NULL);
+ 
+     return image;
+ }
