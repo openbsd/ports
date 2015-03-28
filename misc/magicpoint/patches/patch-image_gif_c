@@ -1,9 +1,9 @@
-$OpenBSD: patch-image_gif_c,v 1.1 2013/09/25 07:58:43 sthen Exp $
+$OpenBSD: patch-image_gif_c,v 1.2 2015/03/28 17:27:04 sthen Exp $
 
 support giflib 5.0+
 
---- image/gif.c.orig	Mon Mar  6 23:59:56 2000
-+++ image/gif.c	Fri Sep 20 03:51:20 2013
+--- image/gif.c.orig	Tue Mar  7 06:59:56 2000
++++ image/gif.c	Sat Mar 28 17:26:33 2015
 @@ -15,6 +15,7 @@
  
  #ifdef USE_GIF
@@ -73,16 +73,18 @@ support giflib 5.0+
  					exit(-1);
  				}
  			}
-@@ -180,7 +181,7 @@ gifLoad(fullname, name, verbose)
+@@ -179,8 +180,8 @@ gifLoad(fullname, name, verbose)
+ 			pixline[x] = GifRow[x];
  	}
  
- 	if (DGifCloseFile(GifFile) == GIF_ERROR) {
+-	if (DGifCloseFile(GifFile) == GIF_ERROR) {
 -		PrintGifError();
++	if (DGifCloseFile(GifFile, NULL) == GIF_ERROR) {
 +		fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
  		exit(-1);
  	}
  
-@@ -196,7 +197,7 @@ gifIdent(fullname, name)
+@@ -196,11 +197,11 @@ gifIdent(fullname, name)
  	GifFileType *gifp;
  	int ret;
  
@@ -91,3 +93,8 @@ support giflib 5.0+
  	if (gifp == NULL)
  		ret = 0;
  	else {
+-		DGifCloseFile(gifp);
++		DGifCloseFile(gifp, NULL);
+ 		tellAboutImage(name);
+ 		ret = 1;
+ 	}
