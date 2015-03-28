@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2015/01/23 19:40:50 bluhm Exp $
+# $OpenBSD: Makefile,v 1.55 2015/03/28 16:43:07 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		module to interface the DNS resolver
 
-DISTNAME =		Net-DNS-0.82
+DISTNAME =		Net-DNS-0.83
 
 CATEGORIES =		net
 

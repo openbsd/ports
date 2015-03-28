@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/01/23 19:40:50 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/03/28 16:43:07 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
@@ -21,6 +21,7 @@ ${P5ARCH}/Net/DNS/RR/APL.pm
 ${P5ARCH}/Net/DNS/RR/CAA.pm
 ${P5ARCH}/Net/DNS/RR/CERT.pm
 ${P5ARCH}/Net/DNS/RR/CNAME.pm
+${P5ARCH}/Net/DNS/RR/CSYNC.pm
 ${P5ARCH}/Net/DNS/RR/DHCID.pm
 ${P5ARCH}/Net/DNS/RR/DNAME.pm
 ${P5ARCH}/Net/DNS/RR/EUI48.pm
@@ -93,6 +94,7 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::CAA.3p
 @man man/man3p/Net::DNS::RR::CERT.3p
 @man man/man3p/Net::DNS::RR::CNAME.3p
+@man man/man3p/Net::DNS::RR::CSYNC.3p
 @man man/man3p/Net::DNS::RR::DHCID.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
 @man man/man3p/Net::DNS::RR::EUI48.3p
