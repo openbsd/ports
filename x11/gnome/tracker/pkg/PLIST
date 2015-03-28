@@ -1,17 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/10/06 10:58:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2015/03/28 18:04:06 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
 @pkgpath x11/gnome/tracker,-nautilus
-@bin bin/tracker-control
-@bin bin/tracker-import
-@bin bin/tracker-info
+@bin bin/tracker
+bin/tracker-control
+bin/tracker-import
+bin/tracker-info
 @bin bin/tracker-needle
 @bin bin/tracker-preferences
-@bin bin/tracker-search
-@bin bin/tracker-sparql
-@bin bin/tracker-stats
-@bin bin/tracker-tag
+bin/tracker-search
+bin/tracker-sparql
+bin/tracker-stats
+bin/tracker-tag
 include/tracker-${TRACKER_API}/
 include/tracker-${TRACKER_API}/libtracker-control/
 include/tracker-${TRACKER_API}/libtracker-control/tracker-control.h
@@ -22,7 +23,6 @@ include/tracker-${TRACKER_API}/libtracker-miner/tracker-decorator-fs.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-decorator.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-enumerator.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-indexing-tree.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-common.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-enum-types.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-enums.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-fs.h
@@ -31,6 +31,7 @@ include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-online.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner.h
 include/tracker-${TRACKER_API}/libtracker-sparql/
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-generated.h
+include/tracker-${TRACKER_API}/libtracker-sparql/tracker-ontologies.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-sparql.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-version.h
 lib/girepository-${TRACKER_API}/Tracker-${TRACKER_API}.typelib
@@ -72,6 +73,7 @@ lib/tracker-${TRACKER_API}/extract-modules/libextract-ps.so
 lib/tracker-${TRACKER_API}/extract-modules/libextract-text.so
 lib/tracker-${TRACKER_API}/extract-modules/libextract-tiff.so
 lib/tracker-${TRACKER_API}/extract-modules/libextract-xmp.so
+lib/tracker-${TRACKER_API}/extract-modules/libextract-xps.so
 lib/tracker-${TRACKER_API}/libtracker-common.a
 lib/tracker-${TRACKER_API}/libtracker-common.la
 @lib lib/tracker-${TRACKER_API}/libtracker-common.so.${LIBtracker-common_VERSION}
@@ -90,19 +92,27 @@ lib/tracker-${TRACKER_API}/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-miner-user-guides
 @bin libexec/tracker-store
 @bin libexec/tracker-writeback
-@man man/man1/tracker-control.1
+@man man/man1/tracker-daemon.1
 @man man/man1/tracker-extract.1
-@man man/man1/tracker-import.1
+@man man/man1/tracker-index.1
 @man man/man1/tracker-info.1
 @man man/man1/tracker-miner-fs.1
 @man man/man1/tracker-needle.1
 @man man/man1/tracker-preferences.1
+@man man/man1/tracker-reset.1
 @man man/man1/tracker-search.1
 @man man/man1/tracker-sparql.1
-@man man/man1/tracker-stats.1
+@man man/man1/tracker-sql.1
+@man man/man1/tracker-status.1
 @man man/man1/tracker-store.1
 @man man/man1/tracker-tag.1
 @man man/man1/tracker-writeback.1
+@man man/man5/tracker-db.cfg.5
+@man man/man5/tracker-extract.cfg.5
+@man man/man5/tracker-fts.cfg.5
+@man man/man5/tracker-miner-fs.cfg.5
+@man man/man5/tracker-store.cfg.5
+@man man/man5/tracker-writeback.cfg.5
 share/appdata/
 share/appdata/tracker-needle.appdata.xml
 share/appdata/tracker-preferences.appdata.xml
@@ -115,6 +125,10 @@ share/dbus-1/services/org.freedesktop.Tracker1.Miner.Userguides.service
 share/dbus-1/services/org.freedesktop.Tracker1.Writeback.service
 share/dbus-1/services/org.freedesktop.Tracker1.service
 share/examples/meta-tracker/
+share/examples/meta-tracker/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/meta-tracker/bash_completion.d/tracker-prompt.sh
+@sample ${SYSCONFDIR}/bash_completion.d/tracker-prompt.sh
 share/examples/meta-tracker/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/meta-tracker/xdg/autostart/
@@ -178,7 +192,6 @@ share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerFileDataProvider.htm
 share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerFileEnumerator.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerThumbnailer.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-reference.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner-tracker-miner-common.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner.devhelp2
 share/gtk-doc/html/libtracker-miner/right-insensitive.png
 share/gtk-doc/html/libtracker-miner/right.png
@@ -224,6 +237,7 @@ share/icons/hicolor/scalable/apps/tracker.svg
 share/locale/ar/LC_MESSAGES/tracker.mo
 share/locale/as/LC_MESSAGES/tracker.mo
 share/locale/be@latin/LC_MESSAGES/tracker.mo
+share/locale/bs/LC_MESSAGES/tracker.mo
 share/locale/ca/LC_MESSAGES/tracker.mo
 share/locale/ca@valencia/LC_MESSAGES/tracker.mo
 share/locale/cs/LC_MESSAGES/tracker.mo
@@ -295,6 +309,7 @@ share/tracker/extract-rules/10-ps.rule
 share/tracker/extract-rules/10-svg.rule
 share/tracker/extract-rules/10-tiff.rule
 share/tracker/extract-rules/10-xmp.rule
+share/tracker/extract-rules/10-xps.rule
 share/tracker/extract-rules/11-iso.rule
 share/tracker/extract-rules/11-msoffice-xml.rule
 share/tracker/extract-rules/15-gstreamer-guess.rule
@@ -304,25 +319,11 @@ share/tracker/extract-rules/90-gstreamer-audio-generic.rule
 share/tracker/extract-rules/90-gstreamer-image-generic.rule
 share/tracker/extract-rules/90-gstreamer-video-generic.rule
 share/tracker/extract-rules/90-text-generic.rule
-share/tracker/languages/
-share/tracker/languages/stopwords.da
-share/tracker/languages/stopwords.de
-share/tracker/languages/stopwords.en
-share/tracker/languages/stopwords.es
-share/tracker/languages/stopwords.fi
-share/tracker/languages/stopwords.fr
-share/tracker/languages/stopwords.hu
-share/tracker/languages/stopwords.it
-share/tracker/languages/stopwords.nb
-share/tracker/languages/stopwords.nl
-share/tracker/languages/stopwords.pt
-share/tracker/languages/stopwords.ru
-share/tracker/languages/stopwords.sv
 share/tracker/miners/
-share/tracker/miners/tracker-miner-applications.desktop
-share/tracker/miners/tracker-miner-extract.desktop
-share/tracker/miners/tracker-miner-files.desktop
-share/tracker/miners/tracker-miner-userguides.desktop
+share/tracker/miners/org.freedesktop.Tracker1.Miner.Applications.service
+share/tracker/miners/org.freedesktop.Tracker1.Miner.Extract.service
+share/tracker/miners/org.freedesktop.Tracker1.Miner.Files.service
+share/tracker/miners/org.freedesktop.Tracker1.Miner.Userguides.service
 share/tracker/ontologies/
 share/tracker/ontologies/10-xsd.description
 share/tracker/ontologies/10-xsd.ontology
@@ -364,10 +365,24 @@ share/tracker/ontologies/92-slo.description
 share/tracker/ontologies/92-slo.ontology
 share/tracker/ontologies/93-libosinfo.description
 share/tracker/ontologies/93-libosinfo.ontology
+share/tracker/stop-words/
+share/tracker/stop-words/stopwords.da
+share/tracker/stop-words/stopwords.de
+share/tracker/stop-words/stopwords.en
+share/tracker/stop-words/stopwords.es
+share/tracker/stop-words/stopwords.fi
+share/tracker/stop-words/stopwords.fr
+share/tracker/stop-words/stopwords.hu
+share/tracker/stop-words/stopwords.it
+share/tracker/stop-words/stopwords.nb
+share/tracker/stop-words/stopwords.nl
+share/tracker/stop-words/stopwords.pt
+share/tracker/stop-words/stopwords.ru
+share/tracker/stop-words/stopwords.sv
 share/tracker/tracker-backup.xml
 share/tracker/tracker-extract-priority.xml
 share/tracker/tracker-extract.xml
-share/tracker/tracker-miner-web.xml
+share/tracker/tracker-miner-files-index.xml
 share/tracker/tracker-miner.xml
 share/tracker/tracker-needle.ui
 share/tracker/tracker-preferences.ui
