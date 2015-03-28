@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2014/02/07 10:32:36 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2015/03/28 06:34:52 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -18,7 +18,7 @@ Then re-generate your .cf file.
 When using administrator notifications, it is advised to add the
 "_mdefang" user to the list of users that are allowed to set their
 envelope "from" address to a different user. This is done in:
-    /etc/mail/trusted-user
+    ${SYSCONFDIR}/mail/trusted-user
 
 Improving performance
 ---------------------
@@ -50,3 +50,4 @@ relays. The content of this file is generated using:
 Start-up order
 ==============
 Be sure to start mimedefang_multiplexor before mimedefang in rc.local(8).
+    # rcctl order mimedefang_multiplexor mimedefang
