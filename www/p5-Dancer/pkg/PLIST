@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 10:55:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/28 22:05:59 sthen Exp $
 bin/dancer
 ${P5SITE}/Dancer/
 ${P5SITE}/Dancer.pm
@@ -63,6 +63,7 @@ ${P5SITE}/Dancer/Plugin/
 ${P5SITE}/Dancer/Plugin.pm
 ${P5SITE}/Dancer/Plugin/Ajax.pm
 ${P5SITE}/Dancer/Plugins.pod
+${P5SITE}/Dancer/Policy.pod
 ${P5SITE}/Dancer/Renderer.pm
 ${P5SITE}/Dancer/Request/
 ${P5SITE}/Dancer/Request.pm
@@ -77,6 +78,7 @@ ${P5SITE}/Dancer/Serializer.pm
 ${P5SITE}/Dancer/Serializer/Abstract.pm
 ${P5SITE}/Dancer/Serializer/Dumper.pm
 ${P5SITE}/Dancer/Serializer/JSON.pm
+${P5SITE}/Dancer/Serializer/JSONP.pm
 ${P5SITE}/Dancer/Serializer/Mutable.pm
 ${P5SITE}/Dancer/Serializer/XML.pm
 ${P5SITE}/Dancer/Serializer/YAML.pm
@@ -96,8 +98,17 @@ ${P5SITE}/Dancer/Timer.pm
 ${P5SITE}/Dancer/Tutorial.pod
 @man man/man1/dancer.1
 @man man/man3p/Dancer.3p
+@man man/man3p/Dancer::App.3p
 @man man/man3p/Dancer::Config.3p
 @man man/man3p/Dancer::Config::Object.3p
+@man man/man3p/Dancer::Continuation.3p
+@man man/man3p/Dancer::Continuation::Halted.3p
+@man man/man3p/Dancer::Continuation::Route.3p
+@man man/man3p/Dancer::Continuation::Route::ErrorSent.3p
+@man man/man3p/Dancer::Continuation::Route::FileSent.3p
+@man man/man3p/Dancer::Continuation::Route::Forwarded.3p
+@man man/man3p/Dancer::Continuation::Route::Passed.3p
+@man man/man3p/Dancer::Continuation::Route::Templated.3p
 @man man/man3p/Dancer::Cookbook.3p
 @man man/man3p/Dancer::Cookie.3p
 @man man/man3p/Dancer::Cookies.3p
@@ -109,10 +120,14 @@ ${P5SITE}/Dancer/Tutorial.pod
 @man man/man3p/Dancer::Error.3p
 @man man/man3p/Dancer::Exception.3p
 @man man/man3p/Dancer::Exception::Base.3p
+@man man/man3p/Dancer::Factory::Hook.3p
 @man man/man3p/Dancer::FileUtils.3p
+@man man/man3p/Dancer::GetOpt.3p
 @man man/man3p/Dancer::HTTP.3p
+@man man/man3p/Dancer::Handler.3p
 @man man/man3p/Dancer::Handler::Debug.3p
 @man man/man3p/Dancer::Handler::PSGI.3p
+@man man/man3p/Dancer::Handler::Standalone.3p
 @man man/man3p/Dancer::Hook.3p
 @man man/man3p/Dancer::Hook::Properties.3p
 @man man/man3p/Dancer::Introduction.3p
@@ -132,12 +147,19 @@ ${P5SITE}/Dancer/Tutorial.pod
 @man man/man3p/Dancer::Plugin.3p
 @man man/man3p/Dancer::Plugin::Ajax.3p
 @man man/man3p/Dancer::Plugins.3p
+@man man/man3p/Dancer::Policy.3p
+@man man/man3p/Dancer::Renderer.3p
 @man man/man3p/Dancer::Request.3p
 @man man/man3p/Dancer::Request::Upload.3p
 @man man/man3p/Dancer::Response.3p
+@man man/man3p/Dancer::Route.3p
 @man man/man3p/Dancer::Route::Cache.3p
+@man man/man3p/Dancer::Route::Registry.3p
 @man man/man3p/Dancer::Serializer.3p
+@man man/man3p/Dancer::Serializer::Abstract.3p
+@man man/man3p/Dancer::Serializer::Dumper.3p
 @man man/man3p/Dancer::Serializer::JSON.3p
+@man man/man3p/Dancer::Serializer::JSONP.3p
 @man man/man3p/Dancer::Serializer::Mutable.3p
 @man man/man3p/Dancer::Serializer::XML.3p
 @man man/man3p/Dancer::Serializer::YAML.3p
@@ -145,6 +167,7 @@ ${P5SITE}/Dancer/Tutorial.pod
 @man man/man3p/Dancer::Session::Abstract.3p
 @man man/man3p/Dancer::Session::Simple.3p
 @man man/man3p/Dancer::Session::YAML.3p
+@man man/man3p/Dancer::SharedData.3p
 @man man/man3p/Dancer::Template.3p
 @man man/man3p/Dancer::Template::Abstract.3p
 @man man/man3p/Dancer::Template::Simple.3p
