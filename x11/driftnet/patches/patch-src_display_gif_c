@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_display_gif_c,v 1.1 2013/09/25 07:58:47 sthen Exp $
---- src/display/gif.c.orig	Thu Sep 19 16:47:28 2013
-+++ src/display/gif.c	Thu Sep 19 16:47:48 2013
+$OpenBSD: patch-src_display_gif_c,v 1.2 2015/03/28 16:01:55 sthen Exp $
+--- src/display/gif.c.orig	Sun May 12 16:16:43 2013
++++ src/display/gif.c	Sat Mar 28 15:57:39 2015
 @@ -22,7 +22,7 @@
   */
  int gif_load_hdr(img I) {
@@ -10,3 +10,21 @@ $OpenBSD: patch-src_display_gif_c,v 1.1 2013/09/25 07:58:47 sthen Exp $
      if (!I->us) {
          I->err = IE_HDRFORMAT;
          return 0;
+@@ -38,7 +38,7 @@ int gif_load_hdr(img I) {
+  * Abort loading a GIF file after the header is done.
+  */
+ int gif_abort_load(img I) {
+-    DGifCloseFile((GifFileType*)I->us);
++    DGifCloseFile((GifFileType*)I->us, NULL);
+     return 1;
+ }
+ 
+@@ -116,7 +116,7 @@ int gif_load_img(img I) {
+     ret = 1;
+ fail:
+ 
+-    DGifCloseFile(g);
++    DGifCloseFile(g, NULL);
+ 
+     return ret;
+ }
