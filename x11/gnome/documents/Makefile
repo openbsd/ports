@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/03/27 08:16:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2015/03/28 18:06:26 ajacoutot Exp $
 
 TRACKER_API=	1.0
 
@@ -8,27 +8,28 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.14.2
-REVISION=	0
+REVISION=	1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
-WANTLIB += atspi cairo cairo-gobject crypto curl dbus-1 lzma
-WANTLIB += enchant evdocument3 evview3 expat ffi fontconfig freetype
+WANTLIB += atspi cairo cairo-gobject crypto curl dbus-1 enchant
+WANTLIB += epoxy evdocument3 evview3 expat ffi fontconfig freetype
 WANTLIB += gbm gck-1 gcr-base-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gmodule-2.0
-WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gio-2.0 girepository-1.0 gjs glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuuc idn javascriptcoregtk-3.0
-WANTLIB += jpeg json-glib-1.0 kvm m mediaart-1.0 mozjs-24 ncursesw
-WANTLIB += nspr4 nss3 oauth orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += readline rest-0.7 secret-1 smime3 softokn3 soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 stdc++ uuid webkitgtk-3.0
-WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z zapojit-0.0
+WANTLIB += jpeg json-glib-1.0 kvm lzma m mediaart-2.0 mozjs-24
+WANTLIB += ncursesw nspr4 nss3 oauth orc-0.4 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png pthread pthread-stubs readline rest-0.7 secret-1
+WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl
+WANTLIB += ssl3 stdc++ uuid webkitgtk-3.0 webp xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt z zapojit-0.0
 WANTLIB += tracker-control-${TRACKER_API}
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data

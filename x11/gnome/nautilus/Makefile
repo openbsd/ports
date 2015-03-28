@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2015/01/07 11:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2015/03/28 18:06:26 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.14.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -17,13 +17,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 exempi exif expat ffi
-WANTLIB += fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += c cairo cairo-gobject dbus-1 epoxy exempi exif expat
+WANTLIB += ffi fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
-WANTLIB += icudata icui18n icuuc kvm sqlite3 uuid lzma
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icui18n
+WANTLIB += icuuc kvm lzma m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sqlite3 uuid
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
