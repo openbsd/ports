@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_image_c,v 1.3 2013/09/25 07:58:46 sthen Exp $
+$OpenBSD: patch-src_image_c,v 1.4 2015/03/28 16:06:48 sthen Exp $
 
-Fix build with giflib-5.0
+Fix build with giflib-5.1
 
---- src/image.c.orig	Wed Feb  8 06:02:15 2012
-+++ src/image.c	Thu Sep 19 05:01:14 2013
+--- src/image.c.orig	Wed Dec  3 11:58:33 2014
++++ src/image.c	Sat Mar 28 16:03:38 2015
 @@ -905,7 +905,7 @@ int gif2bitmap(char *inbuf, int insize, raw_bitmap **o
  	desc.size=insize;
  	desc.x.pos=0;
@@ -13,6 +13,15 @@ Fix build with giflib-5.0
      		return( IMG_RET_ERR_UNKNOWN + IMG_RET_FLG_WHILE_DECOMP);//more possible reasons
  
  	bmp = new_raw_bitmap();
+@@ -1083,7 +1083,7 @@ int gif2bitmap(char *inbuf, int insize, raw_bitmap **o
+ 	}
+ 	bmp->pal_bpp = bmp->bpp;
+ 	
+-	DGifCloseFile(GifFile);
++	DGifCloseFile(GifFile, NULL);
+ 	return IMG_RET_OK;
+ }
+ 
 @@ -1738,7 +1738,7 @@ static int bitmap2jp2 (raw_bitmap *bmp, float rate, ch
  		cmptparm->width = cwidth [cmptno];
  		cmptparm->height = cheight [cmptno];
