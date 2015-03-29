@@ -1,0 +1,12 @@
+$OpenBSD: patch-libtiff_tif_luv_c,v 1.4 2015/03/29 17:39:22 naddy Exp $
+--- libtiff/tif_luv.c.orig	Sat Apr  2 22:54:09 2011
++++ libtiff/tif_luv.c	Sun Mar 29 17:24:13 2015
+@@ -688,7 +688,7 @@ LogLuvEncodeTile(TIFF* tif, uint8* bp, tmsize_t cc, ui
+ 
+ #define itrunc(x,m)	((m)==SGILOGENCODE_NODITHER ? \
+ 				(int)(x) : \
+-				(int)((x) + rand()*(1./RAND_MAX) - .5))
++				(int)((x) + arc4random()*(1./UINT_MAX) - .5))
+ 
+ #if !LOGLUV_PUBLIC
+ static

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2013/05/03 11:00:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2015/03/29 17:39:22 naddy Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.0.3
-SHARED_LIBS=	tiff	39.2	# 7.0
-SHARED_LIBS+=	tiffxx	40.1	# 7.0
-REVISION=	2
+DISTNAME=	tiff-4.0.4beta
+SHARED_LIBS=	tiff	39.2	# 7.1
+SHARED_LIBS+=	tiffxx	40.1	# 7.1
 CATEGORIES=	graphics
 
 MASTER_SITES=	http://download.osgeo.org/libtiff/
@@ -18,8 +17,7 @@ WANTLIB=	c m stdc++ z jpeg
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-jbig \
 		--disable-lzma \
@@ -29,5 +27,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-x
 SEPARATE_BUILD=	Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
+
+post-install:
+	cd ${PREFIX}/share/doc/tiff && mv html/* . && rmdir html
 
 .include <bsd.port.mk>
