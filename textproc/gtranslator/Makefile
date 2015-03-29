@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/03/27 08:14:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2015/03/29 09:03:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	2.91.7
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc devel
 
@@ -15,13 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
-WANTLIB += gcrypt gda-5.0 gdict-1.0 gdk-3 gdk_pixbuf-2.0 gdl-3
-WANTLIB += gettextpo gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += harfbuzz json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += c cairo cairo-gobject dbus-1 enchant epoxy expat ffi
+WANTLIB += fontconfig freetype gcrypt gda-5.0 gdict-1.0 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gdl-3 gettextpo gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 gtkspell3-3 harfbuzz
+WANTLIB += json-glib-1.0 lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += secret-1 xcb xcb-render xcb-shm xml2 z lzma
+WANTLIB += secret-1 stdc++ xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -36,6 +37,7 @@ BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
 LIB_DEPENDS=	devel/gobject-introspection \
 		devel/json-glib \
 		devel/libpeas \
+		textproc/gtkspell3 \
 		x11/gnome/gdl \
 		x11/gtksourceview3 \
 		x11/gnome/dictionary \
@@ -47,9 +49,6 @@ MODGNOME_TOOLS += yelp
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 
 CONFIGURE_STYLE=gnu
-
-# XXX needs to be ported to gtkspell3
-CONFIGURE_ARGS += --without-gtkspell3
 
 post-install:
 	rm ${PREFIX}/lib/gtranslator/*.{a,la}
