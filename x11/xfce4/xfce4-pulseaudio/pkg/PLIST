@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/24 21:05:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/29 12:16:48 landry Exp $
 lib/xfce4/panel/plugins/libpulseaudio-plugin.so
 share/icons/hicolor/48x48/apps/xfce4-pulseaudio-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-pulseaudio-plugin.svg
+share/icons/hicolor/scalable/status/audio-volume-high-symbolic.svg
+share/icons/hicolor/scalable/status/audio-volume-low-symbolic.svg
+share/icons/hicolor/scalable/status/audio-volume-medium-symbolic.svg
+share/icons/hicolor/scalable/status/audio-volume-muted-symbolic.svg
 share/xfce4/panel/plugins/pulseaudio.desktop
