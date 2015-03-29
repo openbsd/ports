@@ -1,36 +1,86 @@
-$OpenBSD: patch-doc_sample_config,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.2 2015/03/29 20:02:41 sthen Exp $
 
 no freeradius-client in ports yet (also disabled in autoconf)
-no seccomp
+no seccomp, gssapi
 
---- doc/sample.config.orig	Sat Feb 14 10:14:07 2015
-+++ doc/sample.config	Sun Feb 15 10:56:02 2015
+--- doc/sample.config.orig	Sat Mar 14 17:58:07 2015
++++ doc/sample.config	Sun Mar 29 20:57:46 2015
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
- # multiple auth directives. Available options: certificate,
--# plain, pam, radius[configfile,groupconfig]. 
+ # multiple auth directives. Available options: certificate, 
+-# plain, pam, radius, gssapi.
 +# plain, pam.
+ #
+ # Note that authentication methods cannot be changed with reload.
  
- # certificate:
- #  This indicates that all connecting users must present a certificate.
-@@ -17,26 +17,11 @@
+@@ -18,45 +18,23 @@
+ # "username:groupname1,groupname2:encoded-password"
  # One entry must be listed per line, and 'ocpasswd' should be used
  # to generate password entries.
- #
--# radius[/etc/radiusclient/radiusclient.conf,groupconfig]:
+-#
+-# radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true,nas-identifier=name]:
 -#  The radius option requires specifying freeradius-client configuration
 -# file. If the groupconfig option is set, then config-per-user will be overriden,
 -# and all configuration will be read from radius. The supported atributes for
 -# radius configuration are:
 -# Group-Name, Framed-IPv6-Address, Framed-IPv6-Prefix, DNS-Server-IPv6-Address,
 -# Framed-IP-Address, Framed-IP-Netmask, MS-Primary-DNS-Server, MS-Secondary-DNS-Server
--
- #auth = "certificate"
+-#
+-# gssapi[keytab=/etc/key.tab,require-local-user-map=false]
+-#  The gssapi option allows to use authentication methods supported by GSSAPI,
+-# such as Kerberos tickets with ocserv. It should be best used as an alternative
+-# to PAM (i.e., have pam in auth and gssapi in enable-auth), to allow users with
+-# tickets and without tickets to login. The default value for require-local-user-map
+-# is true.
+ 
  #auth = "pam"
  #auth = "pam[gid-min=1000]"
- auth = "plain[./sample.passwd]"
--#auth = "radius[/etc/radiusclient/radiusclient.conf,groupconfig]"
+ auth = "plain[passwd=./sample.passwd]"
+ #auth = "certificate"
+-#auth = "radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true]"
+ 
+ # Specify alternative authentication methods that are sufficient
+ # for authentication. That is, if set, any of the methods enabled
+ # will be sufficient to login.
+ #enable-auth = certificate
+-#enable-auth = gssapi
+-#enable-auth = "gssapi[keytab=/etc/key.tab,require-local-user-map=true]"
+ 
+ # Accounting methods available:
+ # pam: can only be combined with PAM authentication method, it provides
+ #      a session opened using PAM.
+ #
+-# radius: can be combined with any authentication method, it provides
+-#      radius accounting to available users (see also stats-report-time).
+-#
+ # Only one accounting method can be specified.
+ #acct = "pam"
+-#acct = "radius[config=/etc/radiusclient/radiusclient.conf]"
+ 
+ # Use listen-host to limit to specific IPs or to the IPs of a provided 
+ # hostname.
+@@ -79,8 +57,8 @@ udp-port = 443
+ 
+ # The user the worker processes will be run as. It should be
+ # unique (no other services run as this user).
+-run-as-user = nobody
+-run-as-group = daemon
++run-as-user = _ocserv
++run-as-group = _ocserv
+ 
+ # socket file used for IPC with occtl. You only need to set that,
+ # if you use more than a single servers.
+@@ -92,18 +70,12 @@ run-as-group = daemon
+ socket-file = /var/run/ocserv-socket
+ 
+ # The default server directory. Does not require any devices present.
+-#chroot-dir = /path/to/chroot
++chroot-dir = /var/run/ocserv
+ 
+ 
+ ### All configuration options below this line are reloaded on a SIGHUP.
+ ### The options above, will remain unchanged.
  
 -# Whether to enable seccomp/Linux namespaces worker isolation. That restricts the number of 
 -# system calls allowed to a worker process, in order to reduce damage from a
@@ -41,7 +91,17 @@ no seccomp
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -107,8 +92,8 @@ try-mtu-discovery = false
+@@ -127,7 +99,8 @@ max-same-clients = 2
+ # Stats report time. The number of seconds after which each
+ # worker process will report its usage statistics (number of
+ # bytes transferred etc). This is useful when accounting like
+-# radius is in use.
++# radius is in use. (Radius is not currently available in the
++# OpenBSD package).
+ #stats-report-time = 360
+ 
+ # Keepalive in seconds
+@@ -160,8 +133,8 @@ try-mtu-discovery = false
  #
  # There may be multiple server-cert and server-key directives,
  # but each key should correspond to the preceding certificate.
@@ -52,24 +112,3 @@ no seccomp
  
  # Diffie-Hellman parameters. Only needed if you require support
  # for the DHE ciphersuites (by default this server supports ECDHE).
-@@ -250,16 +235,16 @@ use-occtl = true
- pid-file = /var/run/ocserv.pid
- 
- # The default server directory. Does not require any devices present.
--#chroot-dir = /path/to/chroot
-+chroot-dir = /var/run/ocserv
- 
- # socket file used for server IPC (worker-main), will be appended with .PID
- # It must be accessible within the chroot environment (if any)
--socket-file = /var/run/ocserv-socket
-+socket-file = ocserv-socket
- 
- # The user the worker processes will be run as. It should be
- # unique (no other services run as this user).
--run-as-user = nobody
--run-as-group = daemon
-+run-as-user = _ocserv
-+run-as-group = _ocserv
- 
- # Set the protocol-defined priority (SO_PRIORITY) for packets to
- # be sent. That is a number from 0 to 6 with 0 being the lowest

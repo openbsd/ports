@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_occtl_c,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
---- src/occtl.c.orig	Fri Feb 13 12:00:20 2015
-+++ src/occtl.c	Fri Feb 13 12:01:24 2015
-@@ -227,7 +227,7 @@ static int handle_help_cmd(CONN_TYPE * conn, const cha
+$OpenBSD: patch-src_occtl_c,v 1.2 2015/03/29 20:02:41 sthen Exp $
+--- src/occtl.c.orig	Sun Mar  1 08:46:17 2015
++++ src/occtl.c	Thu Mar 26 08:57:59 2015
+@@ -233,7 +233,7 @@ static int handle_help_cmd(CONN_TYPE * conn, const cha
  static int handle_reset_cmd(CONN_TYPE * conn, const char *arg)
  {
  	rl_reset_terminal(NULL);

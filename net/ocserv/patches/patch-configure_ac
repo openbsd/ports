@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
---- configure.ac.orig	Wed Feb 18 07:11:53 2015
-+++ configure.ac	Thu Mar 26 01:50:11 2015
+$OpenBSD: patch-configure_ac,v 1.2 2015/03/29 20:02:41 sthen Exp $
+--- configure.ac.orig	Sat Mar 14 18:24:23 2015
++++ configure.ac	Thu Mar 26 08:57:59 2015
 @@ -16,11 +16,11 @@ AM_PROG_CC_C_O
  if [ test "$GCC" = "yes" ];then
  	CFLAGS="$CFLAGS -Wall"
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
  #include <stdio.h>
  #include <readline/readline.h>], [rl_replace_line(0,0);])
    if test x$ac_cv_libreadline = xyes; then
-@@ -438,7 +438,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";then
+@@ -452,7 +452,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";then
  			cp -f $i $nam
  		fi
  	done
