@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/01/13 15:40:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/03/29 20:06:45 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -658,6 +658,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/InterWiki
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/PageTemplates
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/RecentChanges
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/SandBox
+lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TicketQuery
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TitleIndex
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracAccessibility
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracAdmin
@@ -665,6 +666,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracBackup
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracBatchModify
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracBrowser
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracCgi
+lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracChangeLog
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracChangeset
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracEnvironment
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/default-pages/TracFastCgi
@@ -804,6 +806,7 @@ share/examples/trac/contrib/sourceforge2trac.py
 share/examples/trac/contrib/trac-pre-commit-hook
 share/examples/trac/contrib/trac-svn-hook
 share/examples/trac/contrib/trac-svn-post-commit-hook.cmd
+share/examples/trac/contrib/wiki2rst.py
 share/examples/trac/contrib/workflow/
 share/examples/trac/contrib/workflow/README
 share/examples/trac/contrib/workflow/enterprise-workflow.ini
