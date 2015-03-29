@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2014/09/30 07:46:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2015/03/29 12:35:34 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -111,6 +111,8 @@ lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}musicbrainz.${MODPY_PYC_MAGIC_TA
 lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}musicbrainz.${MODPY_PYC_MAGIC_TAG}pyo
 lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}oldcache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}oldcache.${MODPY_PYC_MAGIC_TAG}pyo
+lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}songinfo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/artsearch/${MODPY_PYCACHE}songinfo.${MODPY_PYC_MAGIC_TAG}pyo
 lib/rhythmbox/plugins/artsearch/artsearch.plugin
 lib/rhythmbox/plugins/artsearch/artsearch.py
 lib/rhythmbox/plugins/artsearch/embedded.py
@@ -118,6 +120,7 @@ lib/rhythmbox/plugins/artsearch/lastfm.py
 lib/rhythmbox/plugins/artsearch/local.py
 lib/rhythmbox/plugins/artsearch/musicbrainz.py
 lib/rhythmbox/plugins/artsearch/oldcache.py
+lib/rhythmbox/plugins/artsearch/songinfo.py
 lib/rhythmbox/plugins/audiocd/
 lib/rhythmbox/plugins/audiocd/audiocd.plugin
 lib/rhythmbox/plugins/audiocd/libaudiocd.so
@@ -274,6 +277,12 @@ lib/rhythmbox/plugins/sendto/${MODPY_PYCACHE}sendto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/sendto/${MODPY_PYCACHE}sendto.${MODPY_PYC_MAGIC_TAG}pyo
 lib/rhythmbox/plugins/sendto/sendto.plugin
 lib/rhythmbox/plugins/sendto/sendto.py
+lib/rhythmbox/plugins/soundcloud/
+lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}/
+lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TAG}pyo
+lib/rhythmbox/plugins/soundcloud/soundcloud.plugin
+lib/rhythmbox/plugins/soundcloud/soundcloud.py
 lib/rhythmbox/sample-plugins/
 lib/rhythmbox/sample-plugins/sample/
 lib/rhythmbox/sample-plugins/sample-python/
@@ -290,7 +299,6 @@ lib/rhythmbox/sample-plugins/sample/sample.plugin
 @bin libexec/rhythmbox-metadata
 @man man/man1/rhythmbox-client.1
 @man man/man1/rhythmbox.1
-share/appdata/
 share/appdata/rhythmbox.appdata.xml
 share/applications/rhythmbox-device.desktop
 share/applications/rhythmbox.desktop
@@ -799,6 +807,7 @@ share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
 share/locale/bn_IN/LC_MESSAGES/rhythmbox.mo
 share/locale/br/LC_MESSAGES/rhythmbox.mo
+share/locale/bs/LC_MESSAGES/rhythmbox.mo
 share/locale/ca/LC_MESSAGES/rhythmbox.mo
 share/locale/ca@valencia/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
@@ -828,6 +837,7 @@ share/locale/id/LC_MESSAGES/rhythmbox.mo
 share/locale/is/LC_MESSAGES/rhythmbox.mo
 share/locale/it/LC_MESSAGES/rhythmbox.mo
 share/locale/ja/LC_MESSAGES/rhythmbox.mo
+share/locale/kk/LC_MESSAGES/rhythmbox.mo
 share/locale/kn/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
 share/locale/lt/LC_MESSAGES/rhythmbox.mo
@@ -899,9 +909,13 @@ share/rhythmbox/plugins/audiocd/
 share/rhythmbox/plugins/audiocd/album-info.ui
 share/rhythmbox/plugins/audiocd/audiocd-toolbar.ui
 share/rhythmbox/plugins/audioscrobbler/
-share/rhythmbox/plugins/audioscrobbler/Last.fm-symbolic.svg
 share/rhythmbox/plugins/audioscrobbler/audioscrobbler-preferences.ui
 share/rhythmbox/plugins/audioscrobbler/audioscrobbler-profile.ui
+share/rhythmbox/plugins/audioscrobbler/icons/
+share/rhythmbox/plugins/audioscrobbler/icons/hicolor/
+share/rhythmbox/plugins/audioscrobbler/icons/hicolor/scalable/
+share/rhythmbox/plugins/audioscrobbler/icons/hicolor/scalable/places/
+share/rhythmbox/plugins/audioscrobbler/icons/hicolor/scalable/places/Last.fm-symbolic.svg
 share/rhythmbox/plugins/context/
 share/rhythmbox/plugins/context/img/
 share/rhythmbox/plugins/context/img/Allmusic16x16.png
@@ -931,13 +945,25 @@ share/rhythmbox/plugins/iradio/station-properties.ui
 share/rhythmbox/plugins/lyrics/
 share/rhythmbox/plugins/lyrics/lyrics-prefs.ui
 share/rhythmbox/plugins/magnatune/
+share/rhythmbox/plugins/magnatune/icons/
+share/rhythmbox/plugins/magnatune/icons/hicolor/
+share/rhythmbox/plugins/magnatune/icons/hicolor/scalable/
+share/rhythmbox/plugins/magnatune/icons/hicolor/scalable/places/
+share/rhythmbox/plugins/magnatune/icons/hicolor/scalable/places/magnatune-symbolic.svg
 share/rhythmbox/plugins/magnatune/magnatune-loading.ui
 share/rhythmbox/plugins/magnatune/magnatune-popup.ui
 share/rhythmbox/plugins/magnatune/magnatune-prefs.ui
-share/rhythmbox/plugins/magnatune/magnatune-symbolic.svg
 share/rhythmbox/plugins/magnatune/magnatune-toolbar.ui
 share/rhythmbox/plugins/magnatune/magnatune_logo_color_small.png
 share/rhythmbox/plugins/magnatune/magnatune_logo_color_tiny.png
+share/rhythmbox/plugins/soundcloud/
+share/rhythmbox/plugins/soundcloud/icons/
+share/rhythmbox/plugins/soundcloud/icons/hicolor/
+share/rhythmbox/plugins/soundcloud/icons/hicolor/scalable/
+share/rhythmbox/plugins/soundcloud/icons/hicolor/scalable/places/
+share/rhythmbox/plugins/soundcloud/icons/hicolor/scalable/places/soundcloud-symbolic.svg
+share/rhythmbox/plugins/soundcloud/powered-by-soundcloud.png
+share/rhythmbox/plugins/soundcloud/soundcloud.ui
 share/rhythmbox/podcast-add-dialog.ui
 share/rhythmbox/podcast-feed-properties.ui
 share/rhythmbox/podcast-popups.ui

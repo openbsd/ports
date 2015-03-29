@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.144 2015/03/27 08:43:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2015/03/29 12:35:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		3.1
-REVISION=		1
+GNOME_VERSION=		3.2
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -20,15 +19,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1
-WANTLIB += enchant expat ffi fontconfig freetype gbm gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0
-WANTLIB += gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error gpod graphite2
-WANTLIB += grilo-0.2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstcontroller-1.0
-WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz harfbuzz-icu
-WANTLIB += icudata icui18n icuuc javascriptcoregtk-3.0 jpeg json-glib-1.0
-WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 enchant epoxy
+WANTLIB += expat ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error gpod graphite2 grilo-0.2 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstcontroller-1.0 gstfft-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu icudata icui18n
+WANTLIB += icuuc javascriptcoregtk-3.0 jpeg json-glib-1.0 lzma
+WANTLIB += m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 plist png pthread
 WANTLIB += pthread-stubs secret-1 soup-2.4 sqlite3 stdc++ tdb
 WANTLIB += totem-plparser webkitgtk-3.0 webp xcb xcb-render xcb-shm
