@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_tracker_tracker-process_c,v 1.1 2015/03/28 18:04:06 ajacoutot Exp $
+$OpenBSD: patch-src_tracker_tracker-process_c,v 1.2 2015/03/29 12:23:38 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=697719
+From 95ddae1b224c75b37b2dbe5f1f6b4cb69ea79bdd Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 28 Mar 2015 17:56:44 +0100
+Subject: openbsd: implement tracker_process_get_uid_for_pid()
 
 --- src/tracker/tracker-process.c.orig	Tue Jan 27 00:58:43 2015
 +++ src/tracker/tracker-process.c	Sat Mar 28 17:15:30 2015
