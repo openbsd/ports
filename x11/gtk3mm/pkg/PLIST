@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/10/01 08:43:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/03/29 11:53:00 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -109,6 +109,7 @@ include/gtkmm-3.0/gtkmm/combobox.h
 include/gtkmm-3.0/gtkmm/comboboxtext.h
 include/gtkmm-3.0/gtkmm/container.h
 include/gtkmm-3.0/gtkmm/cssprovider.h
+include/gtkmm-3.0/gtkmm/csssection.h
 include/gtkmm-3.0/gtkmm/dialog.h
 include/gtkmm-3.0/gtkmm/drawingarea.h
 include/gtkmm-3.0/gtkmm/editable.h
@@ -253,6 +254,7 @@ include/gtkmm-3.0/gtkmm/private/combobox_p.h
 include/gtkmm-3.0/gtkmm/private/comboboxtext_p.h
 include/gtkmm-3.0/gtkmm/private/container_p.h
 include/gtkmm-3.0/gtkmm/private/cssprovider_p.h
+include/gtkmm-3.0/gtkmm/private/csssection_p.h
 include/gtkmm-3.0/gtkmm/private/dialog_p.h
 include/gtkmm-3.0/gtkmm/private/drawingarea_p.h
 include/gtkmm-3.0/gtkmm/private/editable_p.h
@@ -375,6 +377,7 @@ include/gtkmm-3.0/gtkmm/private/socket_p.h
 include/gtkmm-3.0/gtkmm/private/spinbutton_p.h
 include/gtkmm-3.0/gtkmm/private/spinner_p.h
 include/gtkmm-3.0/gtkmm/private/stack_p.h
+include/gtkmm-3.0/gtkmm/private/stacksidebar_p.h
 include/gtkmm-3.0/gtkmm/private/stackswitcher_p.h
 include/gtkmm-3.0/gtkmm/private/statusbar_p.h
 include/gtkmm-3.0/gtkmm/private/statusicon_p.h
@@ -422,6 +425,7 @@ include/gtkmm-3.0/gtkmm/private/volumebutton_p.h
 include/gtkmm-3.0/gtkmm/private/widget_p.h
 include/gtkmm-3.0/gtkmm/private/widgetpath_p.h
 include/gtkmm-3.0/gtkmm/private/window_p.h
+include/gtkmm-3.0/gtkmm/private/windowgroup_p.h
 include/gtkmm-3.0/gtkmm/progressbar.h
 include/gtkmm-3.0/gtkmm/radioaction.h
 include/gtkmm-3.0/gtkmm/radiobutton.h
@@ -457,6 +461,7 @@ include/gtkmm-3.0/gtkmm/socket.h
 include/gtkmm-3.0/gtkmm/spinbutton.h
 include/gtkmm-3.0/gtkmm/spinner.h
 include/gtkmm-3.0/gtkmm/stack.h
+include/gtkmm-3.0/gtkmm/stacksidebar.h
 include/gtkmm-3.0/gtkmm/stackswitcher.h
 include/gtkmm-3.0/gtkmm/statusbar.h
 include/gtkmm-3.0/gtkmm/statusicon.h
@@ -464,6 +469,7 @@ include/gtkmm-3.0/gtkmm/stock.h
 include/gtkmm-3.0/gtkmm/stockid.h
 include/gtkmm-3.0/gtkmm/stockitem.h
 include/gtkmm-3.0/gtkmm/stylecontext.h
+include/gtkmm-3.0/gtkmm/styleproperty.h
 include/gtkmm-3.0/gtkmm/styleprovider.h
 include/gtkmm-3.0/gtkmm/switch.h
 include/gtkmm-3.0/gtkmm/table.h
@@ -509,6 +515,7 @@ include/gtkmm-3.0/gtkmm/volumebutton.h
 include/gtkmm-3.0/gtkmm/widget.h
 include/gtkmm-3.0/gtkmm/widgetpath.h
 include/gtkmm-3.0/gtkmm/window.h
+include/gtkmm-3.0/gtkmm/windowgroup.h
 include/gtkmm-3.0/gtkmm/wrap_init.h
 lib/gdkmm-3.0/
 lib/gdkmm-3.0/include/
