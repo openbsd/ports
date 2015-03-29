@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2014/12/15 14:37:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2015/03/29 11:54:37 ajacoutot Exp $
 share/help/
 share/help/C/
 share/help/C/accessibility-devel-guide/
@@ -39,7 +39,6 @@ share/help/C/gnome-devel-demos/aboutdialog.vala.page
 share/help/C/gnome-devel-demos/audio-player/
 share/help/C/gnome-devel-demos/audio-player.vala.page
 share/help/C/gnome-devel-demos/audio-player/audio-player.vala
-share/help/C/gnome-devel-demos/beginner.c.page
 share/help/C/gnome-devel-demos/beginner.js.page
 share/help/C/gnome-devel-demos/beginner.py.page
 share/help/C/gnome-devel-demos/beginner.vala.page
@@ -65,6 +64,7 @@ share/help/C/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/C/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/C/gnome-devel-demos/comboboxtext.js.page
 share/help/C/gnome-devel-demos/cpp.page
+share/help/C/gnome-devel-demos/custom-gsource.c.page
 share/help/C/gnome-devel-demos/dialog.c.page
 share/help/C/gnome-devel-demos/dialog.js.page
 share/help/C/gnome-devel-demos/dialog.py.page
@@ -125,6 +125,7 @@ share/help/C/gnome-devel-demos/label.c.page
 share/help/C/gnome-devel-demos/label.js.page
 share/help/C/gnome-devel-demos/label.py.page
 share/help/C/gnome-devel-demos/label.vala.page
+share/help/C/gnome-devel-demos/legal.xml
 share/help/C/gnome-devel-demos/license.page
 share/help/C/gnome-devel-demos/linkbutton.c.page
 share/help/C/gnome-devel-demos/linkbutton.js.page
@@ -300,6 +301,7 @@ share/help/C/gnome-devel-demos/samples/entry.c
 share/help/C/gnome-devel-demos/samples/entry.js
 share/help/C/gnome-devel-demos/samples/entry.py
 share/help/C/gnome-devel-demos/samples/entry.vala
+share/help/C/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/C/gnome-devel-demos/samples/filechooserdialog.py
 share/help/C/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/C/gnome-devel-demos/samples/filechooserdialog.vala
@@ -707,7 +709,25 @@ share/help/C/programming-guidelines/
 share/help/C/programming-guidelines/additional-materials.page
 share/help/C/programming-guidelines/c-coding-style.page
 share/help/C/programming-guidelines/cc-by-sa-3-0.xml
+share/help/C/programming-guidelines/databases.page
+share/help/C/programming-guidelines/documentation.page
+share/help/C/programming-guidelines/example-docs.xml
+share/help/C/programming-guidelines/file-system.page
+share/help/C/programming-guidelines/gerror.page
+share/help/C/programming-guidelines/glist.page
 share/help/C/programming-guidelines/index.page
+share/help/C/programming-guidelines/introspection.page
+share/help/C/programming-guidelines/logging.page
+share/help/C/programming-guidelines/main-contexts.page
+share/help/C/programming-guidelines/memory-management.page
+share/help/C/programming-guidelines/namespacing.page
+share/help/C/programming-guidelines/parallel-installability.page
+share/help/C/programming-guidelines/preconditions.page
+share/help/C/programming-guidelines/threading.page
+share/help/C/programming-guidelines/tooling.page
+share/help/C/programming-guidelines/unit-testing.page
+share/help/C/programming-guidelines/version-control.page
+share/help/C/programming-guidelines/versioning.page
 share/help/C/programming-guidelines/writing-good-code.page
 share/help/ca/
 share/help/ca/gnome-devel-demos/
@@ -724,7 +744,6 @@ share/help/ca/gnome-devel-demos/aboutdialog.vala.page
 share/help/ca/gnome-devel-demos/audio-player/
 share/help/ca/gnome-devel-demos/audio-player.vala.page
 share/help/ca/gnome-devel-demos/audio-player/audio-player.vala
-share/help/ca/gnome-devel-demos/beginner.c.page
 share/help/ca/gnome-devel-demos/beginner.js.page
 share/help/ca/gnome-devel-demos/beginner.py.page
 share/help/ca/gnome-devel-demos/beginner.vala.page
@@ -750,6 +769,7 @@ share/help/ca/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/ca/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/ca/gnome-devel-demos/comboboxtext.js.page
 share/help/ca/gnome-devel-demos/cpp.page
+share/help/ca/gnome-devel-demos/custom-gsource.c.page
 share/help/ca/gnome-devel-demos/dialog.c.page
 share/help/ca/gnome-devel-demos/dialog.js.page
 share/help/ca/gnome-devel-demos/dialog.py.page
@@ -810,6 +830,7 @@ share/help/ca/gnome-devel-demos/label.c.page
 share/help/ca/gnome-devel-demos/label.js.page
 share/help/ca/gnome-devel-demos/label.py.page
 share/help/ca/gnome-devel-demos/label.vala.page
+share/help/ca/gnome-devel-demos/legal.xml
 share/help/ca/gnome-devel-demos/license.page
 share/help/ca/gnome-devel-demos/linkbutton.c.page
 share/help/ca/gnome-devel-demos/linkbutton.js.page
@@ -985,6 +1006,7 @@ share/help/ca/gnome-devel-demos/samples/entry.c
 share/help/ca/gnome-devel-demos/samples/entry.js
 share/help/ca/gnome-devel-demos/samples/entry.py
 share/help/ca/gnome-devel-demos/samples/entry.vala
+share/help/ca/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/ca/gnome-devel-demos/samples/filechooserdialog.py
 share/help/ca/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/ca/gnome-devel-demos/samples/filechooserdialog.vala
@@ -1385,7 +1407,6 @@ share/help/de/gnome-devel-demos/aboutdialog.vala.page
 share/help/de/gnome-devel-demos/audio-player/
 share/help/de/gnome-devel-demos/audio-player.vala.page
 share/help/de/gnome-devel-demos/audio-player/audio-player.vala
-share/help/de/gnome-devel-demos/beginner.c.page
 share/help/de/gnome-devel-demos/beginner.js.page
 share/help/de/gnome-devel-demos/beginner.py.page
 share/help/de/gnome-devel-demos/beginner.vala.page
@@ -1411,6 +1432,7 @@ share/help/de/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/de/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/de/gnome-devel-demos/comboboxtext.js.page
 share/help/de/gnome-devel-demos/cpp.page
+share/help/de/gnome-devel-demos/custom-gsource.c.page
 share/help/de/gnome-devel-demos/dialog.c.page
 share/help/de/gnome-devel-demos/dialog.js.page
 share/help/de/gnome-devel-demos/dialog.py.page
@@ -1471,6 +1493,7 @@ share/help/de/gnome-devel-demos/label.c.page
 share/help/de/gnome-devel-demos/label.js.page
 share/help/de/gnome-devel-demos/label.py.page
 share/help/de/gnome-devel-demos/label.vala.page
+share/help/de/gnome-devel-demos/legal.xml
 share/help/de/gnome-devel-demos/license.page
 share/help/de/gnome-devel-demos/linkbutton.c.page
 share/help/de/gnome-devel-demos/linkbutton.js.page
@@ -1646,6 +1669,7 @@ share/help/de/gnome-devel-demos/samples/entry.c
 share/help/de/gnome-devel-demos/samples/entry.js
 share/help/de/gnome-devel-demos/samples/entry.py
 share/help/de/gnome-devel-demos/samples/entry.vala
+share/help/de/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/de/gnome-devel-demos/samples/filechooserdialog.py
 share/help/de/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/de/gnome-devel-demos/samples/filechooserdialog.vala
@@ -2084,7 +2108,6 @@ share/help/el/gnome-devel-demos/aboutdialog.vala.page
 share/help/el/gnome-devel-demos/audio-player/
 share/help/el/gnome-devel-demos/audio-player.vala.page
 share/help/el/gnome-devel-demos/audio-player/audio-player.vala
-share/help/el/gnome-devel-demos/beginner.c.page
 share/help/el/gnome-devel-demos/beginner.js.page
 share/help/el/gnome-devel-demos/beginner.py.page
 share/help/el/gnome-devel-demos/beginner.vala.page
@@ -2110,6 +2133,7 @@ share/help/el/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/el/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/el/gnome-devel-demos/comboboxtext.js.page
 share/help/el/gnome-devel-demos/cpp.page
+share/help/el/gnome-devel-demos/custom-gsource.c.page
 share/help/el/gnome-devel-demos/dialog.c.page
 share/help/el/gnome-devel-demos/dialog.js.page
 share/help/el/gnome-devel-demos/dialog.py.page
@@ -2170,6 +2194,7 @@ share/help/el/gnome-devel-demos/label.c.page
 share/help/el/gnome-devel-demos/label.js.page
 share/help/el/gnome-devel-demos/label.py.page
 share/help/el/gnome-devel-demos/label.vala.page
+share/help/el/gnome-devel-demos/legal.xml
 share/help/el/gnome-devel-demos/license.page
 share/help/el/gnome-devel-demos/linkbutton.c.page
 share/help/el/gnome-devel-demos/linkbutton.js.page
@@ -2345,6 +2370,7 @@ share/help/el/gnome-devel-demos/samples/entry.c
 share/help/el/gnome-devel-demos/samples/entry.js
 share/help/el/gnome-devel-demos/samples/entry.py
 share/help/el/gnome-devel-demos/samples/entry.vala
+share/help/el/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/el/gnome-devel-demos/samples/filechooserdialog.py
 share/help/el/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/el/gnome-devel-demos/samples/filechooserdialog.vala
@@ -2783,7 +2809,6 @@ share/help/es/gnome-devel-demos/aboutdialog.vala.page
 share/help/es/gnome-devel-demos/audio-player/
 share/help/es/gnome-devel-demos/audio-player.vala.page
 share/help/es/gnome-devel-demos/audio-player/audio-player.vala
-share/help/es/gnome-devel-demos/beginner.c.page
 share/help/es/gnome-devel-demos/beginner.js.page
 share/help/es/gnome-devel-demos/beginner.py.page
 share/help/es/gnome-devel-demos/beginner.vala.page
@@ -2809,6 +2834,7 @@ share/help/es/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/es/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/es/gnome-devel-demos/comboboxtext.js.page
 share/help/es/gnome-devel-demos/cpp.page
+share/help/es/gnome-devel-demos/custom-gsource.c.page
 share/help/es/gnome-devel-demos/dialog.c.page
 share/help/es/gnome-devel-demos/dialog.js.page
 share/help/es/gnome-devel-demos/dialog.py.page
@@ -2869,6 +2895,7 @@ share/help/es/gnome-devel-demos/label.c.page
 share/help/es/gnome-devel-demos/label.js.page
 share/help/es/gnome-devel-demos/label.py.page
 share/help/es/gnome-devel-demos/label.vala.page
+share/help/es/gnome-devel-demos/legal.xml
 share/help/es/gnome-devel-demos/license.page
 share/help/es/gnome-devel-demos/linkbutton.c.page
 share/help/es/gnome-devel-demos/linkbutton.js.page
@@ -3044,6 +3071,7 @@ share/help/es/gnome-devel-demos/samples/entry.c
 share/help/es/gnome-devel-demos/samples/entry.js
 share/help/es/gnome-devel-demos/samples/entry.py
 share/help/es/gnome-devel-demos/samples/entry.vala
+share/help/es/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/es/gnome-devel-demos/samples/filechooserdialog.py
 share/help/es/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/es/gnome-devel-demos/samples/filechooserdialog.vala
@@ -3482,7 +3510,6 @@ share/help/fr/gnome-devel-demos/aboutdialog.vala.page
 share/help/fr/gnome-devel-demos/audio-player/
 share/help/fr/gnome-devel-demos/audio-player.vala.page
 share/help/fr/gnome-devel-demos/audio-player/audio-player.vala
-share/help/fr/gnome-devel-demos/beginner.c.page
 share/help/fr/gnome-devel-demos/beginner.js.page
 share/help/fr/gnome-devel-demos/beginner.py.page
 share/help/fr/gnome-devel-demos/beginner.vala.page
@@ -3508,6 +3535,7 @@ share/help/fr/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/fr/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/fr/gnome-devel-demos/comboboxtext.js.page
 share/help/fr/gnome-devel-demos/cpp.page
+share/help/fr/gnome-devel-demos/custom-gsource.c.page
 share/help/fr/gnome-devel-demos/dialog.c.page
 share/help/fr/gnome-devel-demos/dialog.js.page
 share/help/fr/gnome-devel-demos/dialog.py.page
@@ -3568,6 +3596,7 @@ share/help/fr/gnome-devel-demos/label.c.page
 share/help/fr/gnome-devel-demos/label.js.page
 share/help/fr/gnome-devel-demos/label.py.page
 share/help/fr/gnome-devel-demos/label.vala.page
+share/help/fr/gnome-devel-demos/legal.xml
 share/help/fr/gnome-devel-demos/license.page
 share/help/fr/gnome-devel-demos/linkbutton.c.page
 share/help/fr/gnome-devel-demos/linkbutton.js.page
@@ -3743,6 +3772,7 @@ share/help/fr/gnome-devel-demos/samples/entry.c
 share/help/fr/gnome-devel-demos/samples/entry.js
 share/help/fr/gnome-devel-demos/samples/entry.py
 share/help/fr/gnome-devel-demos/samples/entry.vala
+share/help/fr/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/fr/gnome-devel-demos/samples/filechooserdialog.py
 share/help/fr/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/fr/gnome-devel-demos/samples/filechooserdialog.vala
@@ -4049,7 +4079,6 @@ share/help/gl/gnome-devel-demos/aboutdialog.vala.page
 share/help/gl/gnome-devel-demos/audio-player/
 share/help/gl/gnome-devel-demos/audio-player.vala.page
 share/help/gl/gnome-devel-demos/audio-player/audio-player.vala
-share/help/gl/gnome-devel-demos/beginner.c.page
 share/help/gl/gnome-devel-demos/beginner.js.page
 share/help/gl/gnome-devel-demos/beginner.py.page
 share/help/gl/gnome-devel-demos/beginner.vala.page
@@ -4075,6 +4104,7 @@ share/help/gl/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/gl/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/gl/gnome-devel-demos/comboboxtext.js.page
 share/help/gl/gnome-devel-demos/cpp.page
+share/help/gl/gnome-devel-demos/custom-gsource.c.page
 share/help/gl/gnome-devel-demos/dialog.c.page
 share/help/gl/gnome-devel-demos/dialog.js.page
 share/help/gl/gnome-devel-demos/dialog.py.page
@@ -4135,6 +4165,7 @@ share/help/gl/gnome-devel-demos/label.c.page
 share/help/gl/gnome-devel-demos/label.js.page
 share/help/gl/gnome-devel-demos/label.py.page
 share/help/gl/gnome-devel-demos/label.vala.page
+share/help/gl/gnome-devel-demos/legal.xml
 share/help/gl/gnome-devel-demos/license.page
 share/help/gl/gnome-devel-demos/linkbutton.c.page
 share/help/gl/gnome-devel-demos/linkbutton.js.page
@@ -4310,6 +4341,7 @@ share/help/gl/gnome-devel-demos/samples/entry.c
 share/help/gl/gnome-devel-demos/samples/entry.js
 share/help/gl/gnome-devel-demos/samples/entry.py
 share/help/gl/gnome-devel-demos/samples/entry.vala
+share/help/gl/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/gl/gnome-devel-demos/samples/filechooserdialog.py
 share/help/gl/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/gl/gnome-devel-demos/samples/filechooserdialog.vala
@@ -4877,7 +4909,6 @@ share/help/pt_BR/gnome-devel-demos/aboutdialog.vala.page
 share/help/pt_BR/gnome-devel-demos/audio-player/
 share/help/pt_BR/gnome-devel-demos/audio-player.vala.page
 share/help/pt_BR/gnome-devel-demos/audio-player/audio-player.vala
-share/help/pt_BR/gnome-devel-demos/beginner.c.page
 share/help/pt_BR/gnome-devel-demos/beginner.js.page
 share/help/pt_BR/gnome-devel-demos/beginner.py.page
 share/help/pt_BR/gnome-devel-demos/beginner.vala.page
@@ -4903,6 +4934,7 @@ share/help/pt_BR/gnome-devel-demos/combobox_multicolumn.py.page
 share/help/pt_BR/gnome-devel-demos/combobox_multicolumn.vala.page
 share/help/pt_BR/gnome-devel-demos/comboboxtext.js.page
 share/help/pt_BR/gnome-devel-demos/cpp.page
+share/help/pt_BR/gnome-devel-demos/custom-gsource.c.page
 share/help/pt_BR/gnome-devel-demos/dialog.c.page
 share/help/pt_BR/gnome-devel-demos/dialog.js.page
 share/help/pt_BR/gnome-devel-demos/dialog.py.page
@@ -4963,6 +4995,7 @@ share/help/pt_BR/gnome-devel-demos/label.c.page
 share/help/pt_BR/gnome-devel-demos/label.js.page
 share/help/pt_BR/gnome-devel-demos/label.py.page
 share/help/pt_BR/gnome-devel-demos/label.vala.page
+share/help/pt_BR/gnome-devel-demos/legal.xml
 share/help/pt_BR/gnome-devel-demos/license.page
 share/help/pt_BR/gnome-devel-demos/linkbutton.c.page
 share/help/pt_BR/gnome-devel-demos/linkbutton.js.page
@@ -5138,6 +5171,7 @@ share/help/pt_BR/gnome-devel-demos/samples/entry.c
 share/help/pt_BR/gnome-devel-demos/samples/entry.js
 share/help/pt_BR/gnome-devel-demos/samples/entry.py
 share/help/pt_BR/gnome-devel-demos/samples/entry.vala
+share/help/pt_BR/gnome-devel-demos/samples/example-custom-gsource.c
 share/help/pt_BR/gnome-devel-demos/samples/filechooserdialog.py
 share/help/pt_BR/gnome-devel-demos/samples/filechooserdialog.ui
 share/help/pt_BR/gnome-devel-demos/samples/filechooserdialog.vala
