@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2015/03/27 18:14:28 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2015/03/29 07:28:06 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=746904
+From ae430b1b808c0b930021c843b26faa259c11f3e8 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 27 Mar 2015 19:04:20 +0100
+Subject: make libcanberra support optional
 
 --- configure.ac.orig	Mon Mar 23 02:50:55 2015
 +++ configure.ac	Fri Mar 27 18:57:17 2015

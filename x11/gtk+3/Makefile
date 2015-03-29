@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2015/03/27 18:14:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2015/03/29 07:28:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -118,8 +118,6 @@ CONFIGURE_ARGS +=	--disable-colord
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 
-# XXX prevent a cyclic dependency (gtk+3 -> libcanberra-gtk3 -> gtk+3);
-# only used for the gtk3-widget-factory example;
 # see patch-configure_ac
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
