@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/10/01 08:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2015/03/29 11:52:16 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -82,6 +82,7 @@ include/giomm-${V}/giomm/menumodel.h
 include/giomm-${V}/giomm/mount.h
 include/giomm-${V}/giomm/mountoperation.h
 include/giomm-${V}/giomm/networkaddress.h
+include/giomm-${V}/giomm/networkmonitor.h
 include/giomm-${V}/giomm/networkservice.h
 include/giomm-${V}/giomm/notification.h
 include/giomm-${V}/giomm/outputstream.h
@@ -164,6 +165,7 @@ include/giomm-${V}/giomm/private/menumodel_p.h
 include/giomm-${V}/giomm/private/mount_p.h
 include/giomm-${V}/giomm/private/mountoperation_p.h
 include/giomm-${V}/giomm/private/networkaddress_p.h
+include/giomm-${V}/giomm/private/networkmonitor_p.h
 include/giomm-${V}/giomm/private/networkservice_p.h
 include/giomm-${V}/giomm/private/notification_p.h
 include/giomm-${V}/giomm/private/outputstream_p.h
@@ -192,6 +194,7 @@ include/giomm-${V}/giomm/private/socketlistener_p.h
 include/giomm-${V}/giomm/private/socketservice_p.h
 include/giomm-${V}/giomm/private/srvtarget_p.h
 include/giomm-${V}/giomm/private/tcpconnection_p.h
+include/giomm-${V}/giomm/private/tcpwrapperconnection_p.h
 include/giomm-${V}/giomm/private/themedicon_p.h
 include/giomm-${V}/giomm/private/threadedsocketservice_p.h
 include/giomm-${V}/giomm/private/tlscertificate_p.h
@@ -235,6 +238,7 @@ include/giomm-${V}/giomm/socketservice.h
 include/giomm-${V}/giomm/socketsource.h
 include/giomm-${V}/giomm/srvtarget.h
 include/giomm-${V}/giomm/tcpconnection.h
+include/giomm-${V}/giomm/tcpwrapperconnection.h
 include/giomm-${V}/giomm/themedicon.h
 include/giomm-${V}/giomm/threadedsocketservice.h
 include/giomm-${V}/giomm/tlscertificate.h
@@ -262,6 +266,7 @@ include/glibmm-${V}/glibmm.h
 include/glibmm-${V}/glibmm/arrayhandle.h
 include/glibmm-${V}/glibmm/balancedtree.h
 include/glibmm-${V}/glibmm/base64.h
+include/glibmm-${V}/glibmm/binding.h
 include/glibmm-${V}/glibmm/bytearray.h
 include/glibmm-${V}/glibmm/bytes.h
 include/glibmm-${V}/glibmm/checksum.h
@@ -299,6 +304,7 @@ include/glibmm-${V}/glibmm/pattern.h
 include/glibmm-${V}/glibmm/priorities.h
 include/glibmm-${V}/glibmm/private/
 include/glibmm-${V}/glibmm/private/balancedtree_p.h
+include/glibmm-${V}/glibmm/private/binding_p.h
 include/glibmm-${V}/glibmm/private/bytearray_p.h
 include/glibmm-${V}/glibmm/private/bytes_p.h
 include/glibmm-${V}/glibmm/private/checksum_p.h
@@ -442,9 +448,10 @@ share/doc/glibmm-${V}/reference/
 share/doc/glibmm-${V}/reference/glibmm-${V}.tag
 share/doc/glibmm-${V}/reference/html/
 share/doc/glibmm-${V}/reference/html/annotated.html
+share/doc/glibmm-${V}/reference/html/arrowdown.png
+share/doc/glibmm-${V}/reference/html/arrowright.png
 share/doc/glibmm-${V}/reference/html/bc_s.png
 share/doc/glibmm-${V}/reference/html/bdwn.png
-share/doc/glibmm-${V}/reference/html/classChecksumType.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Action-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Action.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ActionGroup-members.html
@@ -661,6 +668,9 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1Mount__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkAddress-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkAddress.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkAddress__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkMonitor-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkMonitor.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkMonitor__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkService-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkService.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkService__inherit__graph.png
@@ -697,6 +707,8 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1ResolverError-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ResolverError.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ResolverError__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Resolver__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1Resource-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1Resource.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ResourceError-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ResourceError.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ResourceError__inherit__graph.png
@@ -752,6 +764,9 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1SrvTarget.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1TcpConnection-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1TcpConnection.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1TcpConnection__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1TcpWrapperConnection-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1TcpWrapperConnection.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1TcpWrapperConnection__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1ThemedIcon-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ThemedIcon.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1ThemedIcon__inherit__graph.png
@@ -824,6 +839,9 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1ArrayHandler_3_01bool_01_4-mem
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ArrayHandler_3_01bool_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1BalancedTree-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1BalancedTree.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Binding-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Binding.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Binding__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ByteArray-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ByteArray.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Bytes-members.html
@@ -1143,6 +1161,9 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01long_01_4__inherit__
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01long_01long_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01long_01long_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01long_01long_01_4__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01signed_01char_01_4-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01signed_01char_01_4.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01signed_01char_01_4__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1string_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1string_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1string_01_4__inherit__graph.png
@@ -1255,23 +1276,14 @@ share/doc/glibmm-${V}/reference/html/closed.png
 share/doc/glibmm-${V}/reference/html/deprecated.html
 share/doc/glibmm-${V}/reference/html/dir_02fef2a40270467d72a7f717cf991d8a.html
 share/doc/glibmm-${V}/reference/html/dir_98c789a82e29670547769c353b486e1a.html
+share/doc/glibmm-${V}/reference/html/doc.png
+share/doc/glibmm-${V}/reference/html/doxygen-extra.css
 share/doc/glibmm-${V}/reference/html/doxygen.css
 share/doc/glibmm-${V}/reference/html/doxygen.png
 share/doc/glibmm-${V}/reference/html/dynsections.js
 share/doc/glibmm-${V}/reference/html/examples.html
-share/doc/glibmm-${V}/reference/html/ftv2blank.png
-share/doc/glibmm-${V}/reference/html/ftv2doc.png
-share/doc/glibmm-${V}/reference/html/ftv2folderclosed.png
-share/doc/glibmm-${V}/reference/html/ftv2folderopen.png
-share/doc/glibmm-${V}/reference/html/ftv2lastnode.png
-share/doc/glibmm-${V}/reference/html/ftv2link.png
-share/doc/glibmm-${V}/reference/html/ftv2mlastnode.png
-share/doc/glibmm-${V}/reference/html/ftv2mnode.png
-share/doc/glibmm-${V}/reference/html/ftv2node.png
-share/doc/glibmm-${V}/reference/html/ftv2plastnode.png
-share/doc/glibmm-${V}/reference/html/ftv2pnode.png
-share/doc/glibmm-${V}/reference/html/ftv2splitbar.png
-share/doc/glibmm-${V}/reference/html/ftv2vertline.png
+share/doc/glibmm-${V}/reference/html/folderclosed.png
+share/doc/glibmm-${V}/reference/html/folderopen.png
 share/doc/glibmm-${V}/reference/html/functions.html
 share/doc/glibmm-${V}/reference/html/functions_b.html
 share/doc/glibmm-${V}/reference/html/functions_c.html
@@ -1606,8 +1618,10 @@ share/doc/glibmm-${V}/reference/html/since_2_38.html
 share/doc/glibmm-${V}/reference/html/since_2_4.html
 share/doc/glibmm-${V}/reference/html/since_2_40.html
 share/doc/glibmm-${V}/reference/html/since_2_42.html
+share/doc/glibmm-${V}/reference/html/since_2_44.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/since_3_2.html
+share/doc/glibmm-${V}/reference/html/splitbar.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits_3_01Glib_1_1RefPtr_3_01Gio_1_1Drive_01_4_01_4.html
