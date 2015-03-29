@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2015/03/27 08:16:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2015/03/29 09:11:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.14.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -17,6 +17,7 @@ HOMEPAGE=		http://www.anjuta.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
 WANTLIB += apr-1 aprutil-1 atk-1.0 atk-bridge-2.0 atspi c cairo
@@ -35,8 +36,7 @@ WANTLIB += svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
 WANTLIB += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += util vala-0.26 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
-WANTLIB += xslt z
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += epoxy gmp gnutls hogweed nettle notify p11-kit tasn1 xslt z
 
 MODULES=		devel/dconf \
 			devel/gettext \
