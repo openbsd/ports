@@ -1,9 +1,9 @@
-$OpenBSD: patch-util_gif2dbl_c,v 1.1 2013/09/25 07:58:44 sthen Exp $
+$OpenBSD: patch-util_gif2dbl_c,v 1.2 2015/03/29 10:50:24 sthen Exp $
 
 support giflib 5.0+, from http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/multimedia/ming/patches/
 
---- util/gif2dbl.c.orig	Sat Jun  8 08:08:51 2013
-+++ util/gif2dbl.c	Fri Sep 20 02:52:09 2013
+--- util/gif2dbl.c.orig	Sat Jun  8 15:08:51 2013
++++ util/gif2dbl.c	Sun Mar 29 11:49:57 2015
 @@ -19,10 +19,12 @@
  
  #include "libming.h"
@@ -27,3 +27,12 @@ support giflib 5.0+, from http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/multimedia/
      error("Error opening file");
  
    if(DGifSlurp(file) != GIF_OK)
+@@ -190,7 +192,7 @@ unsigned char *readGif(char *fileName, int *length, in
+   }
+ 
+ 	/* Done! */
+-  DGifCloseFile(file);
++  DGifCloseFile(file, NULL);
+ 
+   *length = size;
+   return data;
