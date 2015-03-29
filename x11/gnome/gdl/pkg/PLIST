@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/10/05 19:52:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/03/29 09:04:50 ajacoutot Exp $
 include/libgdl-3.0/
 include/libgdl-3.0/gdl/
 include/libgdl-3.0/gdl/gdl-dock-bar.h
@@ -45,10 +45,13 @@ share/gtk-doc/html/gdl-3.0/gdl-3.0.devhelp2
 share/gtk-doc/html/gdl-3.0/home.png
 share/gtk-doc/html/gdl-3.0/index.html
 share/gtk-doc/html/gdl-3.0/index.sgml
+share/gtk-doc/html/gdl-3.0/left-insensitive.png
 share/gtk-doc/html/gdl-3.0/left.png
 share/gtk-doc/html/gdl-3.0/private.html
+share/gtk-doc/html/gdl-3.0/right-insensitive.png
 share/gtk-doc/html/gdl-3.0/right.png
 share/gtk-doc/html/gdl-3.0/style.css
+share/gtk-doc/html/gdl-3.0/up-insensitive.png
 share/gtk-doc/html/gdl-3.0/up.png
 share/gtk-doc/html/gdl-3.0/widget.html
 share/locale/am/
@@ -71,6 +74,9 @@ share/locale/bg/LC_MESSAGES/gdl-3.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gdl-3.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/gdl-3.mo
 share/locale/ca/LC_MESSAGES/gdl-3.mo
 share/locale/ca@valencia/
 share/locale/ca@valencia/LC_MESSAGES/
