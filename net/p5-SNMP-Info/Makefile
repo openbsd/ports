@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/12/18 07:44:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2015/03/29 14:52:45 benoit Exp $
 
 COMMENT =	perl5 interface to network devices and MIBs through SNMP
 
 MODULES =	cpan
 
-DISTNAME =	SNMP-Info-3.23
+DISTNAME =	SNMP-Info-3.26
 CATEGORIES =	net
 
 # BSD
