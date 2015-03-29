@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/29 04:46:09 bcallah Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-2.4.0
+DISTNAME =	birdfont-2.4.2
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics print
-REVISION =	0
 
 # Both libs must have the same SO number!
 # See scripts/bavala.py (or patches/patch-scripts_bavala_py)
@@ -19,12 +18,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 expat fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-3 harfbuzz javascriptcoregtk-3.0 m
-WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs soup-2.4 webkitgtk-3.0 xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 harfbuzz javascriptcoregtk-3.0
+WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 webkitgtk-3.0
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	http://birdfont.org/releases/
 
