@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.22 2014/10/04 15:20:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/03/29 09:07:40 ajacoutot Exp $
 
-PKG_ARCH=	*
+PKG_ARCH=		*
 
-COMMENT=	XSLT stylesheets for yelp
+COMMENT=		XSLT stylesheets for yelp
 
-GNOME_PROJECT=	yelp-xsl
-GNOME_VERSION=	3.14.0
+GNOME_PROJECT=		yelp-xsl
+GNOME_VERSION=		3.16.0
 
 # GPLv2 - LGPLv2.1 - MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	x11/gnome
+MODULES=		x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		textproc/itstool
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			textproc/itstool
 
-RUN_DEPENDS=	devel/gettext \
-		textproc/libxslt
+RUN_DEPENDS=		devel/gettext \
+			textproc/libxslt
 
 .include <bsd.port.mk>
