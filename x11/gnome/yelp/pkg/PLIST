@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2014/10/04 15:22:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2015/03/29 11:53:33 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
@@ -205,9 +205,6 @@ share/yelp/icons/hicolor/16x16/status/yelp-page-tip.png
 share/yelp/icons/hicolor/16x16/status/yelp-page-ui.png
 share/yelp/icons/hicolor/16x16/status/yelp-page-video.png
 share/yelp/icons/hicolor/scalable/
-share/yelp/icons/hicolor/scalable/actions/
-share/yelp/icons/hicolor/scalable/actions/yelp-bookmark-add-symbolic.svg
-share/yelp/icons/hicolor/scalable/actions/yelp-bookmark-remove-symbolic.svg
 share/yelp/icons/hicolor/scalable/status/
 share/yelp/icons/hicolor/scalable/status/yelp-page-problem-symbolic.svg
 share/yelp/icons/hicolor/scalable/status/yelp-page-search-symbolic.svg
