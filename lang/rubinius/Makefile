@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/12/30 21:50:24 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2015/03/29 23:36:29 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,6 +14,7 @@ COMMENT =	Ruby virtual machine and core library
 V=		2.2.9
 EXTRACT_SUFX=	.tar.bz2
 DISTNAME =	rubinius-${V}
+REVISION =	0
 
 MASTER_SITES =	http://releases.rubini.us/
 
