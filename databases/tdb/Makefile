@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/29 12:28:21 ajacoutot Exp $
 
 COMMENT=	trivial database library
 
 DISTNAME=	tdb-1.2.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	databases
 SHARED_LIBS+=	tdb	3.0
 
