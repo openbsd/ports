@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/30 02:55:29 bentley Exp $
+include/nsutils/
+include/nsutils/base64.h
+include/nsutils/errors.h
+include/nsutils/time.h
+@lib lib/libnsutils.so.${LIBnsutils_VERSION}
+lib/pkgconfig/libnsutils.pc
