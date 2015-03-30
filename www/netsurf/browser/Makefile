@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/06 00:21:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/30 03:01:51 bentley Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.2
-REVISION =		1
+NETSURF_VERSION =	3.3
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
@@ -12,11 +11,13 @@ MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
 MODULES =		devel/gettext
 
 BUILD_DEPENDS =		www/p5-HTML-Parser
-LIB_DEPENDS =		www/netsurf/hubbub>=0.3.0 \
-			www/netsurf/libcss>=0.4.0 \
-			www/netsurf/libnsgif>=0.1.1 \
-			www/netsurf/libnsbmp>=0.1.1 \
-			www/netsurf/libdom>=0.1.1 \
+LIB_DEPENDS =		www/netsurf/hubbub>=0.3.1 \
+			www/netsurf/libcss>=0.5.0 \
+			www/netsurf/libnsgif>=0.1.2 \
+			www/netsurf/libnsbmp>=0.1.2 \
+			www/netsurf/libdom>=0.1.2 \
+			www/netsurf/libnsutils \
+			www/netsurf/libutf8proc \
 			graphics/libwebp \
 			x11/gtk+2 \
 			x11/gnome/librsvg \
@@ -29,7 +30,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 hubbub jpeg m nsbmp nsgif pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 parserutils png pthread
-WANTLIB += rsvg-2 ssl wapcaplet webp z
+WANTLIB += rsvg-2 ssl utf8proc wapcaplet webp z nsutils
 
 MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \
@@ -49,7 +50,7 @@ post-patch:
 		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/gtk/res/options.gtk2.ui ; done
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/netsurf.desktop \
+	${INSTALL_DATA} ${WRKSRC}/gtk/res/netsurf-gtk.desktop \
 		${PREFIX}/share/applications/netsurf.desktop
 # bug in pkg_add -u prevents symlink->directory in pkg updates
 	rm -rf ${PREFIX}/share/netsurf/C

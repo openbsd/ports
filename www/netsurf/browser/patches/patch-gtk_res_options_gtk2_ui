@@ -1,12 +1,970 @@
-$OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.3 2014/10/22 09:35:20 landry Exp $
---- gtk/res/options.gtk2.ui.orig	Tue Oct 14 21:42:16 2014
-+++ gtk/res/options.gtk2.ui	Tue Oct 14 21:42:44 2014
+$OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
+--- gtk/res/options.gtk2.ui.orig	Tue Mar 10 08:37:37 2015
++++ gtk/res/options.gtk2.ui	Wed Mar 11 16:35:45 2015
+@@ -5,7 +5,7 @@
+   <object class="GtkDialog" id="dialogPreferences">
+     <property name="can_focus">False</property>
+     <property name="border_width">5</property>
+-    <property name="title" translatable="yes">preferencesTitle</property>
++    <property name="title" translatable="yes">Netsurf Preferences</property>
+     <property name="window_position">center-on-parent</property>
+     <property name="destroy_with_parent">True</property>
+     <property name="type_hint">dialog</property>
+@@ -94,7 +94,7 @@
+                                   <object class="GtkLabel" id="label_startup_page">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesStartupPage</property>
++                                    <property name="label" translatable="yes">Page</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -138,7 +138,7 @@
+                                 </child>
+                                 <child>
+                                   <object class="GtkButton" id="setDefaultPage">
+-                                    <property name="label" translatable="yes">preferencesStartupPageDefault</property>
++                                    <property name="label" translatable="yes">Use Default Page</property>
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">True</property>
+                                     <property name="receives_default">True</property>
+@@ -153,7 +153,7 @@
+                                 </child>
+                                 <child>
+                                   <object class="GtkButton" id="setCurrentPage">
+-                                    <property name="label" translatable="yes">preferencesStartupPageCurrent</property>
++                                    <property name="label" translatable="yes">Use Current Page</property>
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">True</property>
+                                     <property name="receives_default">True</property>
+@@ -181,7 +181,7 @@
+                       <object class="GtkLabel" id="label_main_startup">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesStartup</property>
++                        <property name="label" translatable="yes">&lt;b>Startup&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -213,7 +213,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkUrlSearch">
+-                                <property name="label" translatable="yes">preferencesSearchURLBar</property>
++                                <property name="label" translatable="yes">Search from URL bar</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -236,7 +236,7 @@
+                                   <object class="GtkLabel" id="label5">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesSearchProvider</property>
++                                    <property name="label" translatable="yes">Provider</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -279,7 +279,7 @@
+                       <object class="GtkLabel" id="label4">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesSearch</property>
++                        <property name="label" translatable="yes">&lt;b>Search&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -311,7 +311,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkClearDownloads">
+-                                <property name="label" translatable="yes">preferencesDownloadsRemove</property>
++                                <property name="label" translatable="yes">Remove download from list when complete</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -327,7 +327,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkRequestOverwrite">
+-                                <property name="label" translatable="yes">preferencesDownloadsConfirm</property>
++                                <property name="label" translatable="yes">Confirm before overwriting files</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -350,7 +350,7 @@
+                                   <object class="GtkLabel" id="label8">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesDownloadsLocation</property>
++                                    <property name="label" translatable="yes">Location</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -387,7 +387,7 @@
+                       <object class="GtkLabel" id="label7">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesDownloads</property>
++                        <property name="label" translatable="yes">&lt;b>Downloads&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -405,7 +405,7 @@
+               <object class="GtkLabel" id="label1">
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+-                <property name="label" translatable="yes">preferencesMainTabtitle</property>
++                <property name="label" translatable="yes">Main</property>
+               </object>
+               <packing>
+                 <property name="tab_fill">False</property>
+@@ -456,7 +456,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkButton" id="buttonAddTheme">
+-                                <property name="label" translatable="yes">preferencesThemesAdd</property>
++                                <property name="label" translatable="yes">Add Theme...</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">True</property>
+@@ -477,7 +477,7 @@
+                       <object class="GtkLabel" id="label3">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesThemes</property>
++                        <property name="label" translatable="yes">&lt;b>Themes&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -509,7 +509,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkShowSingleTab">
+-                                <property name="label" translatable="yes">preferencesTabsAlways</property>
++                                <property name="label" translatable="yes">Always show tab bar</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -525,7 +525,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkFocusNew">
+-                                <property name="label" translatable="yes">preferencesTabsSwitch</property>
++                                <property name="label" translatable="yes">Switch to newly opened tabs immediately</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -541,7 +541,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkNewBlank">
+-                                <property name="label" translatable="yes">preferencesTabsNewly</property>
++                                <property name="label" translatable="yes">Newly opened tabs are blank</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -564,7 +564,7 @@
+                                   <object class="GtkLabel" id="label9">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesTabsPosition</property>
++                                    <property name="label" translatable="yes">Position</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -607,7 +607,7 @@
+                       <object class="GtkLabel" id="label6">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesTabs</property>
++                        <property name="label" translatable="yes">&lt;b>Tabs&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -646,7 +646,7 @@
+                                   <object class="GtkLabel" id="label13">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesDeveloperView</property>
++                                    <property name="label" translatable="yes">Open developer views in a</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -689,7 +689,7 @@
+                       <object class="GtkLabel" id="label12">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesTools</property>
++                        <property name="label" translatable="yes">&lt;b>Tools&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -721,7 +721,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkDisplayRecentURLs">
+-                                <property name="label" translatable="yes">preferencesURLbarDisplay</property>
++                                <property name="label" translatable="yes">Display recently visited URLs as you type</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -743,7 +743,7 @@
+                       <object class="GtkLabel" id="label14">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesURLbar</property>
++                        <property name="label" translatable="yes">&lt;b>URLbar&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -782,7 +782,7 @@
+                                   <object class="GtkLabel" id="label16">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesToolbarButtons</property>
++                                    <property name="label" translatable="yes">Buttons</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -825,7 +825,7 @@
+                       <object class="GtkLabel" id="label15">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesToolbar</property>
++                        <property name="label" translatable="yes">&lt;b>Toolbar&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -846,7 +846,7 @@
+               <object class="GtkLabel" id="label2">
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+-                <property name="label" translatable="yes">preferencesAppearanceTabtitle</property>
++                <property name="label" translatable="yes">Appearance</property>
+               </object>
+               <packing>
+                 <property name="position">1</property>
+@@ -878,7 +878,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkDisablePopups">
+-                                <property name="label" translatable="yes">preferencesControlPrevent</property>
++                                <property name="label" translatable="yes">Prevent pop-up windows</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -894,7 +894,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkHideAdverts">
+-                                <property name="label" translatable="yes">preferencesControlHide</property>
++                                <property name="label" translatable="yes">Hide Adverts</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -910,7 +910,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkEnableJavascript">
+-                                <property name="label" translatable="yes">preferencesControlEnable</property>
++                                <property name="label" translatable="yes">Enable JavaScript</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -926,7 +926,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkDisablePlugins">
+-                                <property name="label" translatable="yes">preferencesControlDisable</property>
++                                <property name="label" translatable="yes">Disable plug-ins</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -942,7 +942,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkResampleImages">
+-                                <property name="label" translatable="yes">preferencesControlHigh</property>
++                                <property name="label" translatable="yes">High quality image scaling</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -965,7 +965,7 @@
+                                   <object class="GtkLabel" id="label17">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesControlLoad</property>
++                                    <property name="label" translatable="yes">Load and display</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -1008,7 +1008,7 @@
+                       <object class="GtkLabel" id="label11">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesControl</property>
++                        <property name="label" translatable="yes">&lt;b>Control&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -1040,7 +1040,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkEnableAnimations">
+-                                <property name="label" translatable="yes">preferencesAnimationEnable</property>
++                                <property name="label" translatable="yes">Enable</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -1063,7 +1063,7 @@
+                                   <object class="GtkLabel" id="label19">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesAnimationMinimum</property>
++                                    <property name="label" translatable="yes">Minimum time between frames</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -1076,7 +1076,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">True</property>
+                                     <property name="has_tooltip">True</property>
+-                                    <property name="tooltip_text" translatable="yes">preferencesAnimationMinimumTooltip</property>
++                                    <property name="tooltip_text" translatable="yes">Do not update animations any more often than this.</property>
+                                     <property name="invisible_char">●</property>
+                                     <property name="primary_icon_activatable">False</property>
+                                     <property name="secondary_icon_activatable">False</property>
+@@ -1111,7 +1111,7 @@
+                       <object class="GtkLabel" id="label18">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesAnimation</property>
++                        <property name="label" translatable="yes">&lt;b>Animation&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -1150,7 +1150,7 @@
+                                   <object class="GtkLabel" id="label26">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesFontsDefault</property>
++                                    <property name="label" translatable="yes">Default</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -1194,7 +1194,7 @@
+                                   <object class="GtkLabel" id="label27">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesFontsSize</property>
++                                    <property name="label" translatable="yes">Size</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -1207,7 +1207,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">True</property>
+                                     <property name="has_tooltip">True</property>
+-                                    <property name="tooltip_text" translatable="yes">preferencesFontsSizeTooltip</property>
++                                    <property name="tooltip_text" translatable="yes">The base-line font size to use.</property>
+                                     <property name="max_length">4</property>
+                                     <property name="invisible_char">●</property>
+                                     <property name="width_chars">4</property>
+@@ -1237,7 +1237,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkButton" id="fontPreview">
+-                                <property name="label" translatable="yes">preferencesFontsPreview</property>
++                                <property name="label" translatable="yes">_Preview</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">True</property>
+@@ -1259,7 +1259,7 @@
+                       <object class="GtkLabel" id="label20">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesFonts</property>
++                        <property name="label" translatable="yes">&lt;b>Fonts&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -1297,7 +1297,7 @@
+                                   <object class="GtkLabel" id="label21">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesLanguagePreferred</property>
++                                    <property name="label" translatable="yes">Preferred language</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -1310,7 +1310,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+                                     <property name="has_tooltip">True</property>
+-                                    <property name="tooltip_text" translatable="yes">preferencesLanguagePreferredTooltip</property>
++                                    <property name="tooltip_text" translatable="yes">The preferred language for web pages</property>
+                                     <property name="model">liststore_content_language</property>
+                                     <signal name="changed" handler="nsgtk_preferences_comboboxLanguage_changed" swapped="no"/>
+                                     <signal name="realize" handler="nsgtk_preferences_comboboxLanguage_realize" swapped="no"/>
+@@ -1352,7 +1352,7 @@
+                       <object class="GtkLabel" id="label25">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesLanguage</property>
++                        <property name="label" translatable="yes">&lt;b>Language&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -1372,7 +1372,7 @@
+               <object class="GtkLabel" id="label10">
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+-                <property name="label" translatable="yes">preferencesContentTabtitle</property>
++                <property name="label" translatable="yes">Content</property>
+               </object>
+               <packing>
+                 <property name="position">2</property>
+@@ -1404,7 +1404,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkSendReferer">
+-                                <property name="label" translatable="yes">preferencesGeneralReferral</property>
++                                <property name="label" translatable="yes">Enable referral submission</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -1420,7 +1420,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkSendDNT">
+-                                <property name="label" translatable="yes">preferencesGeneralDNT</property>
++                                <property name="label" translatable="yes">Enable sending "Do Not Track" request</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -1442,7 +1442,7 @@
+                       <object class="GtkLabel" id="label61">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesGeneral</property>
++                        <property name="label" translatable="yes">&lt;b>General&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -1474,7 +1474,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkHoverURLs">
+-                                <property name="label" translatable="yes">preferencesHistoryShow</property>
++                                <property name="label" translatable="yes">Local history shows URL in tooltip</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -1497,7 +1497,7 @@
+                                   <object class="GtkLabel" id="label28">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesHistoryRemember</property>
++                                    <property name="label" translatable="yes">Remember browsing history for up to</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -1533,7 +1533,7 @@
+                                   <object class="GtkLabel" id="label29">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesHistoryDays</property>
++                                    <property name="label" translatable="yes">days</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -1556,7 +1556,7 @@
+                       <object class="GtkLabel" id="label23">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesHistory</property>
++                        <property name="label" translatable="yes">&lt;b>History&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -1599,7 +1599,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+                                     <property name="xalign">0</property>
+-                                    <property name="label" translatable="yes">preferencesCacheMemory</property>
++                                    <property name="label" translatable="yes">Memory cache size</property>
+                                   </object>
+                                   <packing>
+                                     <property name="x_options">GTK_FILL</property>
+@@ -1610,7 +1610,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+                                     <property name="xalign">0</property>
+-                                    <property name="label" translatable="yes">preferencesCacheDisc</property>
++                                    <property name="label" translatable="yes">Disc cache size</property>
+                                   </object>
+                                   <packing>
+                                     <property name="top_attach">1</property>
+@@ -1623,7 +1623,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+                                     <property name="xalign">0</property>
+-                                    <property name="label" translatable="yes">preferencesCacheExpire</property>
++                                    <property name="label" translatable="yes">Expire cache entries after</property>
+                                   </object>
+                                   <packing>
+                                     <property name="top_attach">2</property>
+@@ -1734,7 +1734,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+                                     <property name="xalign">0</property>
+-                                    <property name="label" translatable="yes">preferencesHistoryDays</property>
++                                    <property name="label" translatable="yes">days</property>
+                                   </object>
+                                   <packing>
+                                     <property name="left_attach">2</property>
+@@ -1760,7 +1760,7 @@
+                                 </child>
+                                 <child>
+                                   <object class="GtkButton" id="buttonCacheMaintenance">
+-                                    <property name="label" translatable="yes">preferencesCacheMaintenance</property>
++                                    <property name="label" translatable="yes">Maintenance</property>
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">True</property>
+                                     <property name="receives_default">True</property>
+@@ -1786,7 +1786,7 @@
+                       <object class="GtkLabel" id="label24">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesCache</property>
++                        <property name="label" translatable="yes">&lt;b>Cache&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -1807,7 +1807,7 @@
+               <object class="GtkLabel" id="label22">
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+-                <property name="label" translatable="yes">preferencesPrivacyTabtitle</property>
++                <property name="label" translatable="yes">Privacy</property>
+               </object>
+               <packing>
+                 <property name="position">3</property>
+@@ -1845,7 +1845,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesProxyType</property>
++                                <property name="label" translatable="yes">Proxy type</property>
+                               </object>
+                               <packing>
+                                 <property name="x_options">GTK_FILL</property>
+@@ -1856,7 +1856,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesProxyHost</property>
++                                <property name="label" translatable="yes">Host</property>
+                               </object>
+                               <packing>
+                                 <property name="top_attach">1</property>
+@@ -1869,7 +1869,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesProxyUsername</property>
++                                <property name="label" translatable="yes">Username</property>
+                               </object>
+                               <packing>
+                                 <property name="top_attach">2</property>
+@@ -1882,7 +1882,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesProxyPassword</property>
++                                <property name="label" translatable="yes">Password</property>
+                               </object>
+                               <packing>
+                                 <property name="top_attach">3</property>
+@@ -1895,7 +1895,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="has_tooltip">True</property>
+-                                <property name="tooltip_text" translatable="yes">preferencesProxyTypeTooltip</property>
++                                <property name="tooltip_text" translatable="yes">The type of HTTP proxy server.</property>
+                                 <property name="model">liststore_proxy_type</property>
+                                 <signal name="changed" handler="nsgtk_preferences_comboProxyType_changed" swapped="no"/>
+                                 <signal name="realize" handler="nsgtk_preferences_comboProxyType_realize" swapped="no"/>
+@@ -1921,7 +1921,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">True</property>
+                                     <property name="has_tooltip">True</property>
+-                                    <property name="tooltip_text" translatable="yes">preferencesProxyHostTooltip</property>
++                                    <property name="tooltip_text" translatable="yes">Host name of your proxy server.</property>
+                                     <property name="invisible_char">●</property>
+                                     <property name="primary_icon_activatable">False</property>
+                                     <property name="secondary_icon_activatable">False</property>
+@@ -1953,7 +1953,7 @@
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">True</property>
+                                     <property name="has_tooltip">True</property>
+-                                    <property name="tooltip_text" translatable="yes">preferencesProxyPortTooltip</property>
++                                    <property name="tooltip_text" translatable="yes">Port number to connect to on proxy server.</property>
+                                     <property name="max_length">5</property>
+                                     <property name="invisible_char">●</property>
+                                     <property name="width_chars">5</property>
+@@ -1987,7 +1987,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="has_tooltip">True</property>
+-                                <property name="tooltip_text" translatable="yes">preferencesProxyUsernameTooltip</property>
++                                <property name="tooltip_text" translatable="yes">Username to access the proxy.</property>
+                                 <property name="invisible_char">●</property>
+                                 <property name="primary_icon_activatable">False</property>
+                                 <property name="secondary_icon_activatable">False</property>
+@@ -2008,7 +2008,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="has_tooltip">True</property>
+-                                <property name="tooltip_text" translatable="yes">preferencesProxyPasswordTooltip</property>
++                                <property name="tooltip_text" translatable="yes"></property>
+                                 <property name="visibility">False</property>
+                                 <property name="invisible_char">●</property>
+                                 <property name="primary_icon_activatable">False</property>
+@@ -2030,7 +2030,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesProxyNoproxy</property>
++                                <property name="label" translatable="yes">No Proxy For</property>
+                               </object>
+                               <packing>
+                                 <property name="top_attach">4</property>
+@@ -2043,7 +2043,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="has_tooltip">True</property>
+-                                <property name="tooltip_text" translatable="yes">preferencesProxyNoproxyTooltip</property>
++                                <property name="tooltip_text" translatable="yes">Comma separated list of host names that should not be proxied.</property>
+                                 <property name="caps_lock_warning">False</property>
+                                 <property name="primary_icon_activatable">False</property>
+                                 <property name="secondary_icon_activatable">False</property>
+@@ -2067,7 +2067,7 @@
+                       <object class="GtkLabel" id="label37">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesProxy</property>
++                        <property name="label" translatable="yes">&lt;b>HTTP Proxy&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -2105,7 +2105,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesFetchingMax</property>
++                                <property name="label" translatable="yes">Maximum fetchers</property>
+                               </object>
+                               <packing>
+                                 <property name="x_options">GTK_FILL</property>
+@@ -2116,7 +2116,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesFetchingPerhost</property>
++                                <property name="label" translatable="yes">Fetches per host</property>
+                               </object>
+                               <packing>
+                                 <property name="top_attach">1</property>
+@@ -2129,7 +2129,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+                                 <property name="xalign">0</property>
+-                                <property name="label" translatable="yes">preferencesFetchingCached</property>
++                                <property name="label" translatable="yes">Cached connections</property>
+                               </object>
+                               <packing>
+                                 <property name="top_attach">2</property>
+@@ -2142,7 +2142,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="has_tooltip">True</property>
+-                                <property name="tooltip_text" translatable="yes">preferencesFetchingMaxTooltip</property>
++                                <property name="tooltip_text" translatable="yes">Maximum number of concurrent items to fetch at once.</property>
+                                 <property name="invisible_char">●</property>
+                                 <property name="width_chars">3</property>
+                                 <property name="primary_icon_activatable">False</property>
+@@ -2166,7 +2166,7 @@
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="has_tooltip">True</property>
+-                                <property name="tooltip_text" translatable="yes">preferencesFetchingPerhostTooltip</property>
++                                <property name="tooltip_text" translatable="yes">Maximum number of item fetches per web server.</property>
+                                 <property name="invisible_char">●</property>
+                                 <property name="width_chars">3</property>
+                                 <property name="primary_icon_activatable">False</property>
 @@ -2192,7 +2192,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="has_tooltip">True</property>
 -                                <property name="tooltip_text" translatable="yes">preferencesFetchingCachedTooltip.</property>
-+                                <property name="tooltip_text" translatable="yes">preferencesFetchingCachedTooltip</property>
++                                <property name="tooltip_text" translatable="yes">Number of connections to keep in case they are needed again.</property>
                                  <property name="invisible_char">●</property>
                                  <property name="width_chars">3</property>
                                  <property name="primary_icon_activatable">False</property>
+@@ -2221,7 +2221,7 @@
+                       <object class="GtkLabel" id="label38">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesFetching</property>
++                        <property name="label" translatable="yes">&lt;b>Fetching&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -2242,7 +2242,7 @@
+               <object class="GtkLabel" id="label36">
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+-                <property name="label" translatable="yes">preferencesNetworkTabtitle</property>
++                <property name="label" translatable="yes">Network</property>
+               </object>
+               <packing>
+                 <property name="position">4</property>
+@@ -2274,7 +2274,7 @@
+                             <property name="spacing">6</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkSuppressImages">
+-                                <property name="label" translatable="yes">preferencesAppearanceImages</property>
++                                <property name="label" translatable="yes">No images in output</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -2290,7 +2290,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkRemoveBackgrounds">
+-                                <property name="label" translatable="yes">preferencesAppearanceBackground</property>
++                                <property name="label" translatable="yes">No background images in output</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -2306,7 +2306,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkFitPage">
+-                                <property name="label" translatable="yes">preferencesAppearanceScalefit</property>
++                                <property name="label" translatable="yes">Scale output to fit page</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -2329,7 +2329,7 @@
+                                   <object class="GtkLabel" id="label59">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesAppearanceScale</property>
++                                    <property name="label" translatable="yes">Scale output</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -2388,7 +2388,7 @@
+                       <object class="GtkLabel" id="label48">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesAppearance</property>
++                        <property name="label" translatable="yes">&lt;b>Appearance&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -2426,7 +2426,7 @@
+                                   <object class="GtkLabel" id="label62">
+                                     <property name="visible">True</property>
+                                     <property name="can_focus">False</property>
+-                                    <property name="label" translatable="yes">preferencesMarginsMeasurements</property>
++                                    <property name="label" translatable="yes">measurements in mm</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>
+@@ -2671,7 +2671,7 @@
+                       <object class="GtkLabel" id="label49">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesMargins</property>
++                        <property name="label" translatable="yes">&lt;b>Margins&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -2703,7 +2703,7 @@
+                             <property name="spacing">7</property>
+                             <child>
+                               <object class="GtkCheckButton" id="checkCompressPDF">
+-                                <property name="label" translatable="yes">preferencesGenerationCompressed</property>
++                                <property name="label" translatable="yes">Output is compressed</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -2719,7 +2719,7 @@
+                             </child>
+                             <child>
+                               <object class="GtkCheckButton" id="checkPasswordPDF">
+-                                <property name="label" translatable="yes">preferencesGenerationPassword</property>
++                                <property name="label" translatable="yes">Output has a password</property>
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">True</property>
+                                 <property name="receives_default">False</property>
+@@ -2741,7 +2741,7 @@
+                       <object class="GtkLabel" id="label50">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="label" translatable="yes">preferencesGeneration</property>
++                        <property name="label" translatable="yes">&lt;b>Generation&lt;/b></property>
+                         <property name="use_markup">True</property>
+                       </object>
+                     </child>
+@@ -2762,7 +2762,7 @@
+               <object class="GtkLabel" id="label47">
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+-                <property name="label" translatable="yes">preferencesPDFTabtitle</property>
++                <property name="label" translatable="yes">PDF</property>
+               </object>
+               <packing>
+                 <property name="position">5</property>
+@@ -2861,16 +2861,16 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">preferencesTabLocTop</col>
++        <col id="0" translatable="yes">Top</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesTabLocLeft</col>
++        <col id="0" translatable="yes">Left</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesTabLocRight</col>
++        <col id="0" translatable="yes">Right</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesTabLocBottom</col>
++        <col id="0" translatable="yes">Bottom</col>
+       </row>
+     </data>
+   </object>
+@@ -2881,16 +2881,16 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">preferencesButtonTypeSmall</col>
++        <col id="0" translatable="yes">Small Icons</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesButtonTypeLarge</col>
++        <col id="0" translatable="yes">Large Icons</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesButtonTypeLargeText</col>
++        <col id="0" translatable="yes">Large Icons and Text</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesButtonTypeText</col>
++        <col id="0" translatable="yes">Text only</col>
+       </row>
+     </data>
+   </object>
+@@ -2901,16 +2901,16 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">preferencesImageLoadBoth</col>
++        <col id="0" translatable="yes">foreground and background images</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesImageLoadFore</col>
++        <col id="0" translatable="yes">foreground images</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesImageLoadBack</col>
++        <col id="0" translatable="yes">background images</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesImageLoadNone</col>
++        <col id="0" translatable="yes">no images</col>
+       </row>
+     </data>
+   </object>
+@@ -2921,19 +2921,19 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">preferencesFonttypeSans</col>
++        <col id="0" translatable="yes">Sans-serif</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesFonttypeSerif</col>
++        <col id="0" translatable="yes">Serif</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesFonttypeMonospace</col>
++        <col id="0" translatable="yes">Monospace</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesFonttypeCursive</col>
++        <col id="0" translatable="yes">Cursive</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesFonttypeFantasy</col>
++        <col id="0" translatable="yes">Fantasy</col>
+       </row>
+     </data>
+   </object>
+@@ -2950,19 +2950,19 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">preferencesProxyTypeDirect</col>
++        <col id="0" translatable="yes">Direct connection</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesProxyTypeManual</col>
++        <col id="0" translatable="yes">Manual with no authentication</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesProxyTypeBasic</col>
++        <col id="0" translatable="yes">Manual with basic authentication</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesProxyTypeNLTM</col>
++        <col id="0" translatable="yes">Manual with NTLM authentication</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesProxyTypeSystem</col>
++        <col id="0" translatable="yes">System settings</col>
+       </row>
+     </data>
+   </object>
+@@ -3064,7 +3064,7 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">preferencesThemeTypeDefault</col>
++        <col id="0" translatable="yes">Default</col>
+       </row>
+     </data>
+   </object>
+@@ -3075,13 +3075,13 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">preferencesDeveloperViewWindow</col>
++        <col id="0" translatable="yes">Window</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesDeveloperViewTab</col>
++        <col id="0" translatable="yes">Tab</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">preferencesDeveloperViewEditor</col>
++        <col id="0" translatable="yes">Editor</col>
+       </row>
+     </data>
+   </object>
