@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2015/01/05 09:27:41 brad Exp $
+# $OpenBSD: Makefile,v 1.57 2015/03/30 07:12:15 eric Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.14.0
-REVISION=		1
+DISTNAME=		cairo-1.14.2
 SHARED_LIBS+=		cairo 12.3
 SHARED_LIBS+=		cairo-gobject 1.1
 SHARED_LIBS+=		cairo-script-interpreter 1.1

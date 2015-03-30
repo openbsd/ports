@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/11/17 12:50:14 eric Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/03/30 07:12:15 eric Exp $
 %%SHARED%%
 @bin bin/cairo-sphinx
 include/cairo/
@@ -101,7 +101,10 @@ share/gtk-doc/html/cairo/index-all.html
 share/gtk-doc/html/cairo/index.html
 share/gtk-doc/html/cairo/index.sgml
 share/gtk-doc/html/cairo/language-bindings.html
+share/gtk-doc/html/cairo/left-insensitive.png
 share/gtk-doc/html/cairo/left.png
+share/gtk-doc/html/cairo/right-insensitive.png
 share/gtk-doc/html/cairo/right.png
 share/gtk-doc/html/cairo/style.css
+share/gtk-doc/html/cairo/up-insensitive.png
 share/gtk-doc/html/cairo/up.png
