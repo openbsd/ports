@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/01/13 17:32:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/03/30 17:11:45 zhuk Exp $
 @conflict kdepim-runtime-<4.13
 @bin bin/akonadi2xml
+@bin bin/akonadi_benchmarker
 @bin bin/akonaditest
 include/kde4/KDE/Akonadi/
 include/kde4/KDE/Akonadi/AgentBase
@@ -172,11 +173,13 @@ include/kde4/KDE/KABC/ContactGroup
 include/kde4/KDE/KABC/ContactGroupTool
 include/kde4/KDE/KABC/DistributionList
 include/kde4/KDE/KABC/DistributionListDialog
+include/kde4/KDE/KABC/Email
 include/kde4/KDE/KABC/EmailSelectDialog
 include/kde4/KDE/KABC/ErrorHandler
 include/kde4/KDE/KABC/Field
 include/kde4/KDE/KABC/Format
 include/kde4/KDE/KABC/FormatFactory
+include/kde4/KDE/KABC/Gender
 include/kde4/KDE/KABC/Geo
 include/kde4/KDE/KABC/Key
 include/kde4/KDE/KABC/LDIFConverter
@@ -666,12 +669,14 @@ include/kde4/akonadi/tag.h
 include/kde4/akonadi/tagattribute.h
 include/kde4/akonadi/tagcreatejob.h
 include/kde4/akonadi/tagdeletejob.h
+include/kde4/akonadi/tageditwidget.h
 include/kde4/akonadi/tagfetchjob.h
 include/kde4/akonadi/tagfetchscope.h
 include/kde4/akonadi/tagmanagementdialog.h
 include/kde4/akonadi/tagmodel.h
 include/kde4/akonadi/tagmodifyjob.h
 include/kde4/akonadi/tagselectiondialog.h
+include/kde4/akonadi/tagselectwidget.h
 include/kde4/akonadi/tagwidget.h
 include/kde4/akonadi/transactionjobs.h
 include/kde4/akonadi/transactionsequence.h
@@ -731,18 +736,23 @@ include/kde4/kabc/addressee.h
 include/kde4/kabc/addresseedialog.h
 include/kde4/kabc/addresseelist.h
 include/kde4/kabc/addresslineedit.h
+include/kde4/kabc/calendarurl.h
 include/kde4/kabc/contactgroup.h
 include/kde4/kabc/contactgrouptool.h
 include/kde4/kabc/distributionlist.h
 include/kde4/kabc/distributionlistdialog.h
+include/kde4/kabc/email.h
 include/kde4/kabc/emailselectdialog.h
 include/kde4/kabc/errorhandler.h
 include/kde4/kabc/field.h
 include/kde4/kabc/format.h
 include/kde4/kabc/formatfactory.h
+include/kde4/kabc/gender.h
 include/kde4/kabc/geo.h
+include/kde4/kabc/impp.h
 include/kde4/kabc/kabc_export.h
 include/kde4/kabc/key.h
+include/kde4/kabc/lang.h
 include/kde4/kabc/ldifconverter.h
 include/kde4/kabc/lock.h
 include/kde4/kabc/locknull.h
@@ -940,6 +950,9 @@ include/kde4/kimap/setquotajob.h
 include/kde4/kimap/storejob.h
 include/kde4/kimap/subscribejob.h
 include/kde4/kimap/unsubscribejob.h
+include/kde4/kimaptest/
+include/kde4/kimaptest/fakeserver.h
+include/kde4/kimaptest/mockjob.h
 include/kde4/kldap/
 include/kde4/kldap/ber.h
 include/kde4/kldap/kldap_export.h
@@ -1147,6 +1160,9 @@ lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake
 lib/gpgmepp/
 lib/gpgmepp/GpgmeppConfig.cmake
 lib/gpgmepp/GpgmeppLibraryDepends.cmake
+lib/kde4/akonadi/
+lib/kde4/akonadi/akonadi_test_searchplugin.so
+lib/kde4/akonadi/akonaditestsearchplugin.desktop
 lib/kde4/akonadi_knut_resource.so
 lib/kde4/akonadi_serializer_socialfeeditem.so
 lib/kde4/kabc_directory.so
@@ -1222,6 +1238,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libkcalutils.so.${LIBkcalutils_VERSION}
 @lib lib/libkholidays.so.${LIBkholidays_VERSION}
 @lib lib/libkimap.so.${LIBkimap_VERSION}
+lib/libkimaptest.a
 @lib lib/libkldap.so.${LIBkldap_VERSION}
 @lib lib/libkmbox.so.${LIBkmbox_VERSION}
 @lib lib/libkmime.so.${LIBkmime_VERSION}
@@ -1236,6 +1253,9 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libmicroblog.so.${LIBmicroblog_VERSION}
 @lib lib/libqgpgme.so.${LIBqgpgme_VERSION}
 @lib lib/libsyndication.so.${LIBsyndication_VERSION}
+share/akonadi/
+share/akonadi/agents/
+share/akonadi/agents/knutresource.desktop
 share/apps/akonadi/
 share/apps/akonadi-kde/
 share/apps/akonadi-kde/kcfg2dbus.xsl
@@ -1263,6 +1283,8 @@ share/apps/akonadi/contact/pics/world.jpg
 share/apps/akonadi/plugins/
 share/apps/akonadi/plugins/serializer/
 share/apps/akonadi/plugins/serializer/akonadi_serializer_socialfeeditem.desktop
+share/apps/akonadi_knut_resource/
+share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/cmake/modules/AkonadiMacros.cmake
 share/apps/cmake/modules/CheckTimezone.cmake
 share/apps/cmake/modules/FindGpgme.cmake
@@ -1329,6 +1351,7 @@ share/apps/libkholidays/plan2/holiday_gb-sct_en-gb
 share/apps/libkholidays/plan2/holiday_gf_fr
 share/apps/libkholidays/plan2/holiday_gp_fr
 share/apps/libkholidays/plan2/holiday_gr_el
+share/apps/libkholidays/plan2/holiday_gr_el_nameday
 share/apps/libkholidays/plan2/holiday_gt_es
 share/apps/libkholidays/plan2/holiday_hk_en-gb
 share/apps/libkholidays/plan2/holiday_hk_zh-cn

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2015/03/30 17:11:45 zhuk Exp $
 
 COMMENT =	KDE workspace
-MODKDE4_VERSION =	4.11.13
-DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	2
+DISTNAME =	kde-workspace-4.11.17
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/4.14.2/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/14.12.3/src/}
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -62,7 +60,7 @@ WANTLIB += xcb-randr xcb-render xcb-shape xcb-sync xcb-xfixes
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtTest
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 
 WANTLIB += ${KDE4LIB}/akonadi-calendar
 WANTLIB += ${KDE4LIB}/akonadi-kcal ${KDE4LIB}/akonadi-kde
@@ -81,7 +79,7 @@ WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/solid ${KDE4LIB}/threadweaver
 WANTLIB += ${KDE4LIB}/syndication
 
-WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg png
+WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg kvm png
 WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
 WANTLIB += usb xml2 xmms
 

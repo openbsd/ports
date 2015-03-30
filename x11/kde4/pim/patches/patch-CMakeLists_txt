@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/07/18 08:17:13 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/03/30 17:11:45 zhuk Exp $
 Insert this text just after cmake searches for KDE packages
---- CMakeLists.txt.orig	Wed Jul  9 14:18:50 2014
-+++ CMakeLists.txt	Sun Jul 13 11:37:49 2014
+--- CMakeLists.txt.orig	Fri Feb 27 00:32:46 2015
++++ CMakeLists.txt	Wed Mar 25 14:53:44 2015
 @@ -103,6 +103,8 @@ include(KDE4Defaults)
- find_package(KdepimLibs 4.13.3)
+ find_package(KdepimLibs 4.14.6)
  set_package_properties(KdepimLibs PROPERTIES DESCRIPTION "The KDEPIM libraries" URL "http://www.kde.org" TYPE REQUIRED)
  
 +set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")

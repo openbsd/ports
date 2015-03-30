@@ -1,0 +1,17 @@
+$OpenBSD: patch-ksysguard_ksysguardd_CMakeLists_txt,v 1.1 2015/03/30 17:11:45 zhuk Exp $
+--- ksysguard/ksysguardd/CMakeLists.txt.orig	Fri Feb  6 20:45:57 2015
++++ ksysguard/ksysguardd/CMakeLists.txt	Fri Feb  6 20:46:31 2015
+@@ -57,10 +57,10 @@ endif( ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
+       target_link_libraries(ksysguardd ${KDE4_KDEFAKES_LIBS})
+    endif( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR NOT ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
+ 
+-if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
+-  message(STATUS "Adding kvm library on NetBSD")
++if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++  message(STATUS "Adding kvm library on NetBSD/OpenBSD")
+   target_link_libraries(ksysguardd kvm)
+-endif( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
++endif()
+ if( ${CMAKE_SYSTEM_NAME} MATCHES "DragonFly" )
+   message(STATUS "Adding kinfo library on DragonFly BSD")
+   target_link_libraries(ksysguardd kinfo)

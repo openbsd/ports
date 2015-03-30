@@ -1,0 +1,12 @@
+$OpenBSD: patch-plasma_generic_dataengines_geolocation_CMakeLists_txt,v 1.1 2015/03/30 17:11:45 zhuk Exp $
+Allow shared library version overrie.
+--- plasma/generic/dataengines/geolocation/CMakeLists.txt.orig	Thu Feb  5 01:37:00 2015
++++ plasma/generic/dataengines/geolocation/CMakeLists.txt	Thu Feb  5 01:37:37 2015
+@@ -9,7 +9,6 @@ target_link_libraries(plasma-geolocation-interface
+                       LINK_INTERFACE_LIBRARIES ${KDE4_KIO_LIBS} ${KDE4_PLASMA_LIBS})
+ set_target_properties(plasma-geolocation-interface PROPERTIES
+    VERSION ${GENERIC_LIB_VERSION}
+-   SOVERSION ${GENERIC_LIB_SOVERSION}
+ )
+ install(TARGETS plasma-geolocation-interface ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2015/03/27 08:16:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/03/30 17:11:45 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
-DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
-REVISION =	0
+DISTNAME =	kdepim-runtime-4.14.6
 
 DPB_PROPERTIES =	parallel
+
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/14.12.3/src/}
 
 SHARED_LIBS =	akonadi-filestore	52.0 # 4.7
 #SHARED_LIBS +=	akonadi-xml		51.0 # 4.7
@@ -50,7 +51,7 @@ LIB_DEPENDS =	databases/soprano \
 		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 		productivity/libkfbapi,${MODKDE4_FLAVOR}>=1.0 \
 		productivity/libkgapi,${MODKDE4_FLAVOR}>=2.2.0 \
-		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_VERSION}
+		${MODKDE4_DEP_DIR}/pimlibs>=${DISTNAME:C/.*-//}
 
 # Long dependency chain, not ported yet.
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab=Yes \

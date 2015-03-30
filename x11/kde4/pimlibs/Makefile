@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/20 21:58:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.35 2015/03/30 17:11:45 zhuk Exp $
 
 COMMENT =	libraries for KDE PIM services
-DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
+DISTNAME =	kdepimlibs-4.14.6
 
 DPB_PROPERTIES =	parallel
+
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/14.12.3/src/}
 
 SHARED_LIBS =	kabc                 53.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       53.0      # .4.0
@@ -77,7 +79,7 @@ LIB_DEPENDS =	databases/openldap \
 TEST_IS_INTERACTIVE =	X11
 
 # XXX Until issues with similar names for test targets are resolved.
-NO_TEST =	Yes
+#NO_TEST =	Yes
 
 post-extract:
 	cp ${FILESDIR}/*.cmake ${WRKDIST}/cmake/modules

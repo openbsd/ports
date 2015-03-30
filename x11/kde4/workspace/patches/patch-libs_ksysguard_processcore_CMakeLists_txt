@@ -1,0 +1,28 @@
+$OpenBSD: patch-libs_ksysguard_processcore_CMakeLists_txt,v 1.1 2015/03/30 17:11:45 zhuk Exp $
+Link to -lkvm on OpenBSD, too.
+--- libs/ksysguard/processcore/CMakeLists.txt.orig	Thu Feb  5 17:27:43 2015
++++ libs/ksysguard/processcore/CMakeLists.txt	Sat Feb  7 14:26:29 2015
+@@ -16,10 +16,10 @@ kde4_add_library(processcore SHARED ${ksysguard_LIB_SR
+ 
+ target_link_libraries(processcore ${KDE4_KDECORE_LIBS} ${ZLIB_LIBRARIES} )
+ target_link_libraries(processcore LINK_INTERFACE_LIBRARIES ${KDE4_KDECORE_LIBS} )
+-if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
+-  message(STATUS "Adding kvm library on NetBSD")
++if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++  message(STATUS "Adding kvm library on NetBSD/OpenBSD")
+   target_link_libraries(processcore kvm)
+-endif( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
++endif()
+ 
+ set_target_properties(processcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+ install(TARGETS processcore EXPORT kdeworkspaceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS} )
+@@ -39,6 +39,9 @@ set(ksysguardprocesslist_helper_srcs
+ 
+ kde4_add_executable(ksysguardprocesslist_helper ${ksysguardprocesslist_helper_srcs})
+ target_link_libraries(ksysguardprocesslist_helper ${KDE4_KDECORE_LIBS})
++if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++  target_link_libraries(ksysguardprocesslist_helper kvm)
++endif()
+ install(TARGETS ksysguardprocesslist_helper DESTINATION ${LIBEXEC_INSTALL_DIR})
+ 
+ kde4_install_auth_helper_files(ksysguardprocesslist_helper org.kde.ksysguard.processlisthelper root)

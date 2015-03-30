@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/11/01 21:09:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/03/30 17:11:45 zhuk Exp $
 @bin bin/accountwizard
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_davgroupware_resource
@@ -162,6 +162,7 @@ share/apps/akonadi/accountwizard/vcarddir/vcarddirwizard.desktop
 share/apps/akonadi/accountwizard/vcarddir/vcarddirwizard.es
 share/apps/akonadi/accountwizard/vcarddir/vcarddirwizard.ui
 share/apps/akonadi/firstrun/
+share/apps/akonadi/firstrun/birthdaycalendar
 share/apps/akonadi/firstrun/defaultaddressbook
 share/apps/akonadi/firstrun/defaultcalendar
 share/apps/akonadi/firstrun/defaultnotebook

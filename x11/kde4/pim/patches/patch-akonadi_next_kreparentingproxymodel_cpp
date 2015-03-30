@@ -1,0 +1,10 @@
+$OpenBSD: patch-akonadi_next_kreparentingproxymodel_cpp,v 1.1 2015/03/30 17:11:45 zhuk Exp $
+Unbreak build (exported symbols from MOC present in two object files).
+--- akonadi_next/kreparentingproxymodel.cpp.orig	Wed Mar 25 14:59:16 2015
++++ akonadi_next/kreparentingproxymodel.cpp	Wed Mar 25 14:59:21 2015
+@@ -1465,5 +1465,3 @@ Qt::DropActions KReparentingProxyModel::supportedDropA
+   return sourceModel()->supportedDropActions();
+ }
+ 
+-
+-#include "moc_kreparentingproxymodel.cpp"

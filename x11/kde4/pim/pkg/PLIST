@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/01 21:09:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/03/30 17:11:45 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -196,6 +196,7 @@ lib/kde4/ktimetrackerpart.so
 @lib ${KDE4LIB}/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib ${KDE4LIB}/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
 @lib ${KDE4LIB}/libcalendarsupport.so.${LIBcalendarsupport_VERSION}
+@lib ${KDE4LIB}/libcalendarsupportcollectionpage.so.${LIBcalendarsupportcollectionpage_VERSION}
 @lib ${KDE4LIB}/libcomposereditorng.so.${LIBcomposereditorng_VERSION}
 @lib ${KDE4LIB}/libeventviews.so.${LIBeventviews_VERSION}
 @lib ${KDE4LIB}/libfollowupreminder.so.${LIBfollowupreminder_VERSION}
@@ -253,6 +254,7 @@ lib/kde4/plugins/grantlee/0.3/grantlee_messageheaderfilters.so
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
 @lib lib/libcalendarsupport.so.${LIBcalendarsupport_VERSION}
+@lib lib/libcalendarsupportcollectionpage.so.${LIBcalendarsupportcollectionpage_VERSION}
 @lib lib/libcomposereditorng.so.${LIBcomposereditorng_VERSION}
 @lib lib/libeventviews.so.${LIBeventviews_VERSION}
 @lib lib/libfollowupreminder.so.${LIBfollowupreminder_VERSION}
