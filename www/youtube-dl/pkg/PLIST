@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.72 2015/03/19 11:16:50 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.73 2015/03/30 16:38:56 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -441,6 +441,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/laola1tv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/laola1tv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/letv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/letv.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/libsyn.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/libsyn.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/lifenews.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/lifenews.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/liveleak.py
@@ -683,6 +685,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutv.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/safari.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/safari.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sandia.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sandia.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sapo.py
@@ -853,6 +857,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tweakers.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tweakers.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/twentyfourvideo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/twentyfourvideo.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/twentytwotracks.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/twentytwotracks.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/twitch.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/twitch.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ubu.py
@@ -873,6 +879,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/veehd.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/veehd.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/veoh.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/veoh.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vessel.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vessel.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vesti.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vesti.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vevo.py
