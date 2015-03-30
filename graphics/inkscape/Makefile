@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/03/30 22:48:12 sthen Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/
@@ -12,18 +12,12 @@ HOMEPAGE=	http://www.inkscape.org/
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Magick++ MagickCore X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender aspell atk-1.0
-WANTLIB += atkmm-1.6 c cairo cairomm-1.0 fontconfig freetype gc
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 gsl gslcblas gthread-2.0
-WANTLIB += gtk-x11-2.0 gtkmm-2.4 gtkspell lcms2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib popt
-WANTLIB += pthread sigc-2.0 stdc++ xml2 xslt z
-WANTLIB += ICE MagickWand SM Xt bz2 djvulibre enchant expat ffi
-WANTLIB += fftw3 gmodule-2.0 graphite2 harfbuzz jasper jbig jpeg
-WANTLIB += ltdl lzma openjpeg pcre pixman-1 pthread-stubs tiff
-WANTLIB += webp wmf-0.2 wmflite-0.2 xcb xcb-render xcb-shm
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xt bz2 c expat ffi fontconfig
+WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 jasper jpeg lzma m pcre pixman-1
+WANTLIB += png pthread pthread-stubs stdc++ tiff xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt z
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -45,6 +39,7 @@ LIB_DEPENDS=	devel/boehm-gc \
 		devel/popt \
 		graphics/ImageMagick \
 		graphics/lcms2 \
+		graphics/libexif \
 		graphics/png \
 		print/poppler \
 		textproc/aspell/core \
