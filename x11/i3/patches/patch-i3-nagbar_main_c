@@ -1,8 +1,8 @@
-$OpenBSD: patch-i3-nagbar_main_c,v 1.5 2014/01/22 13:48:38 dcoppa Exp $
---- i3-nagbar/main.c.orig	Tue Jan 21 19:21:08 2014
-+++ i3-nagbar/main.c	Wed Jan 22 13:19:44 2014
-@@ -167,7 +167,7 @@ static void handle_button_release(xcb_connection_t *co
-     symlink(exe_path, link_path);
+$OpenBSD: patch-i3-nagbar_main_c,v 1.6 2015/03/30 12:33:46 dcoppa Exp $
+--- i3-nagbar/main.c.orig	Sun Mar 29 19:07:08 2015
++++ i3-nagbar/main.c	Mon Mar 30 14:13:25 2015
+@@ -169,7 +169,7 @@ static void handle_button_release(xcb_connection_t *co
+     }
  
      char *terminal_cmd;
 -    sasprintf(&terminal_cmd, "i3-sensible-terminal -e %s", link_path);
