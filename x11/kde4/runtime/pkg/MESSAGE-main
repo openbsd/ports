@@ -5,3 +5,6 @@ So you'll need to tweak sysctl values like that:
   sysctl kern.maxfiles=20000
 
 Remember to save those values in /etc/sysctl.conf after successful testing.
+
+Per-process open files limit should be at least 4000 due to the kded4
+file monitoring technique.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/01 21:09:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2015/03/30 16:10:12 zhuk Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -6,6 +6,7 @@ DISTNAME =		kde-runtime-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
 PKG_ARCH-locale =	*
+REVISION-main =		0
 
 DPB_PROPERTIES =	parallel
 
