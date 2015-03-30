@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
---- base/checks.c.orig	Fri Jan 16 17:52:14 2015
-+++ base/checks.c	Fri Jan 16 17:55:52 2015
+$OpenBSD: patch-base_checks_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
+--- base/checks.c.orig	Mon Mar 30 09:38:53 2015
++++ base/checks.c	Mon Mar 30 23:28:35 2015
 @@ -683,7 +683,7 @@ int run_async_service_check(service *svc, int check_op
  		fprintf(check_result_info.output_file_fp, "scheduled_check=%d\n", check_result_info.scheduled_check);
  		fprintf(check_result_info.output_file_fp, "reschedule_check=%d\n", check_result_info.reschedule_check);
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
  				fprintf(check_result_info.output_file_fp, "early_timeout=%d\n", check_result_info.early_timeout);
  				fprintf(check_result_info.output_file_fp, "exited_ok=%d\n", check_result_info.exited_ok);
  				fprintf(check_result_info.output_file_fp, "return_code=%d\n", check_result_info.return_code);
-@@ -914,7 +914,7 @@ int run_async_service_check(service *svc, int check_op
+@@ -917,7 +917,7 @@ int run_async_service_check(service *svc, int check_op
  				/* write check result to file */
  				if (check_result_info.output_file_fp) {
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
  					fprintf(check_result_info.output_file_fp, "early_timeout=%d\n", check_result_info.early_timeout);
  					fprintf(check_result_info.output_file_fp, "exited_ok=%d\n", check_result_info.exited_ok);
  					fprintf(check_result_info.output_file_fp, "return_code=%d\n", check_result_info.return_code);
-@@ -973,7 +973,7 @@ int run_async_service_check(service *svc, int check_op
+@@ -976,7 +976,7 @@ int run_async_service_check(service *svc, int check_op
  				fp = check_result_info.output_file_fp;
  				check_result_info.output_file_fp = NULL;
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
  				fprintf(fp, "early_timeout=%d\n", check_result_info.early_timeout);
  				fprintf(fp, "exited_ok=%d\n", check_result_info.exited_ok);
  				fprintf(fp, "return_code=%d\n", check_result_info.return_code);
-@@ -2164,9 +2164,9 @@ void check_for_orphaned_services(void) {
+@@ -2167,9 +2167,9 @@ void check_for_orphaned_services(void) {
  			log_debug_info(DEBUGL_CHECKS, 1, "Service '%s' on host '%s' was orphaned, so we're scheduling an immediate check...\n", temp_service->description, temp_service->host_name);
  
  			if (log_level(DEBUGL_CHECKS, 1))
@@ -50,7 +50,7 @@ $OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
  
  			/* decrement the number of running service checks */
  			if (currently_running_service_checks > 0)
-@@ -3295,7 +3295,7 @@ int run_async_host_check_3x(host *hst, int check_optio
+@@ -3298,7 +3298,7 @@ int run_async_host_check_3x(host *hst, int check_optio
  		fprintf(check_result_info.output_file_fp, "scheduled_check=%d\n", check_result_info.scheduled_check);
  		fprintf(check_result_info.output_file_fp, "reschedule_check=%d\n", check_result_info.reschedule_check);
  		fprintf(check_result_info.output_file_fp, "latency=%f\n", hst->latency);
@@ -59,7 +59,7 @@ $OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
  
  		/* flush buffer or we'll end up writing twice when we fork() */
  		fflush(check_result_info.output_file_fp);
-@@ -3403,7 +3403,7 @@ int run_async_host_check_3x(host *hst, int check_optio
+@@ -3409,7 +3409,7 @@ int run_async_host_check_3x(host *hst, int check_optio
  				fp = check_result_info.output_file_fp;
  				check_result_info.output_file_fp = NULL;
  
@@ -68,7 +68,7 @@ $OpenBSD: patch-base_checks_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
  				fprintf(fp, "early_timeout=%d\n", check_result_info.early_timeout);
  				fprintf(fp, "exited_ok=%d\n", check_result_info.exited_ok);
  				fprintf(fp, "return_code=%d\n", check_result_info.return_code);
-@@ -4133,7 +4133,7 @@ int process_host_check_result_3x(host *hst, int new_st
+@@ -4139,7 +4139,7 @@ int process_host_check_result_3x(host *hst, int new_st
  		run_async_check = TRUE;
  		temp_host = (host *)hostlist_item->object_ptr;
  

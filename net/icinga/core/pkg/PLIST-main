@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2014/06/20 13:13:54 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2015/03/30 22:43:42 sthen Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
 @comment done this way (rather than SYSCONFDIR/*) for safety...
@@ -29,6 +29,10 @@ share/examples/icinga/conf.d/
 share/examples/icinga/icinga.cfg
 @sample ${SYSCONFDIR}/icinga.cfg
 share/examples/icinga/modules/
+share/examples/icinga/modules/flapjack.cfg
+share/examples/icinga/modules/livestatus.cfg
+share/examples/icinga/modules/mod_gearman.cfg
+share/examples/icinga/modules/pnp4nagios.cfg
 share/examples/icinga/objects/
 share/examples/icinga/objects/commands.cfg
 @sample ${SYSCONFDIR}/objects/commands.cfg
@@ -69,10 +73,6 @@ share/examples/icinga/updates/icinga.cfg_added_1.10_to_1.11.cfg
 share/examples/icinga/updates/icinga.cfg_added_1.7_to_1.8.cfg
 share/examples/icinga/updates/icinga.cfg_added_1.9_to_1.10.cfg
 share/examples/icinga/updates/icinga.cfg_removed_1.9_to_1.10.cfg
-share/examples/icinga/updates/ido2db.cfg_added_1.9_to_1.10.cfg
-share/examples/icinga/updates/ido2db.cfg_removed_1.9_to_1.10.cfg
-share/examples/icinga/updates/idomod.cfg_added_1.10_to_1.11.cfg
-share/examples/icinga/updates/idomod.cfg_added_1.9_to_1.10.cfg
 @mode 755
 @owner _icinga
 @group _icinga

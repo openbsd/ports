@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.14 2014/08/14 09:00:06 sthen Exp $
+$OpenBSD: patch-configure,v 1.15 2015/03/30 22:43:42 sthen Exp $
 
 merged patches; cannot add new files to cvs until unlock
 
---- configure.orig	Sat May 10 21:27:34 2014
-+++ configure	Sat May 10 22:57:55 2014
-@@ -5240,7 +5240,7 @@ cat >>confdefs.h <<_ACEOF
+--- configure.orig	Mon Mar 30 09:38:53 2015
++++ configure	Mon Mar 30 23:28:35 2015
+@@ -5245,7 +5245,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$icinga_grp"
  _ACEOF
  
@@ -13,7 +13,7 @@ merged patches; cannot add new files to cvs until unlock
  
  
  
-@@ -5261,7 +5261,7 @@ fi
+@@ -5266,7 +5266,7 @@ fi
  
  
  
@@ -22,7 +22,7 @@ merged patches; cannot add new files to cvs until unlock
  
  
  
-@@ -5999,7 +5999,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+@@ -6018,7 +6018,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
    $as_echo_n "(cached) " >&6
  else
    ac_save_LIBS="$LIBS"
@@ -31,7 +31,7 @@ merged patches; cannot add new files to cvs until unlock
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  	/* Override any gcc2 internal prototype to avoid an error.  */
-@@ -6030,7 +6030,7 @@ fi
+@@ -6049,7 +6049,7 @@ fi
  $as_echo "yes" >&6; }
  
  			GDLIBFOUND=yep
@@ -40,7 +40,7 @@ merged patches; cannot add new files to cvs until unlock
  
  	else
  	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-@@ -7289,7 +7289,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
+@@ -7308,7 +7308,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
  		found_ssl=no
  		for dir in $ssl_lib_dir $ssl_dir /usr/lib/*-linux-gnu /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
  			ssllibdir="$dir"

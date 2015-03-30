@@ -1,7 +1,7 @@
-$OpenBSD: patch-module_idoutils_src_db_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
---- module/idoutils/src/db.c.orig	Mon Jan 19 16:12:36 2015
-+++ module/idoutils/src/db.c	Mon Jan 19 16:14:09 2015
-@@ -2880,7 +2880,7 @@ int ido2db_db_update_config_dump(ido2db_idi *idi, int 
+$OpenBSD: patch-module_idoutils_src_db_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
+--- module/idoutils/src/db.c.orig	Mon Mar 30 09:38:53 2015
++++ module/idoutils/src/db.c	Mon Mar 30 23:28:35 2015
+@@ -2886,7 +2886,7 @@ int ido2db_db_update_config_dump(ido2db_idi *idi, int 
  	int result = IDO_ERROR;
  	char * buf = NULL;
  	int progress = 0;

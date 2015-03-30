@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_commands_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
---- base/commands.c.orig	Fri Jan 16 17:56:09 2015
-+++ base/commands.c	Fri Jan 16 17:57:05 2015
-@@ -3963,7 +3963,7 @@ void disable_all_notifications_expire_time(int cmd, ch
+$OpenBSD: patch-base_commands_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
+--- base/commands.c.orig	Mon Mar 30 09:38:53 2015
++++ base/commands.c	Mon Mar 30 23:28:35 2015
+@@ -3979,7 +3979,7 @@ void disable_all_notifications_expire_time(int cmd, ch
  	/* log that we will expire disabled notifications */
  	tm = localtime_r(&disable_notifications_expire_time, &tm_s);
  	strftime(temp_time, 80, "%c", tm);
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_commands_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
  }
  
  /* enables notifications for a service */
-@@ -5551,8 +5551,8 @@ void process_passive_checks(void) {
+@@ -5567,8 +5567,8 @@ void process_passive_checks(void) {
  			fprintf(checkresult_file_fp, "scheduled_check=0\n");
  			fprintf(checkresult_file_fp, "reschedule_check=0\n");
  			fprintf(checkresult_file_fp, "latency=%f\n", temp_pcr->latency);
