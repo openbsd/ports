@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2015/03/27 08:16:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.219 2015/03/30 12:29:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,11 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.14.1
-REVISION=		2
+REVISION=		3
+
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES0=		http://www.openbsd.org/art/puffy/
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
@@ -16,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender accountsservice atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
-WANTLIB += canberra-gtk3 dbus-1 expat ffi fontconfig freetype
+WANTLIB += canberra-gtk3 dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz ltdl m ogg pam
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
@@ -88,12 +92,15 @@ pre-configure:
 		${WRKSRC}/daemon/gdm-session-worker.c
 
 post-install:
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/puflogh1000X248.gif \
+		${PREFIX}/share/pixmaps/
 	rm -rf ${WRKINST}/var/run/gdm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d
-	${INSTALL_DATA} ${FILESDIR}/10_org.gnome.login-screen.gschema.override \
-		${PREFIX}/share/glib-2.0/schemas
+	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${FILESDIR}/10_org.gnome.login-screen.gschema.override \
+		${PREFIX}/share/glib-2.0/schemas/10_org.gnome.login-screen.gschema.override
 	mv ${WRKINST}/etc/gdm ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db

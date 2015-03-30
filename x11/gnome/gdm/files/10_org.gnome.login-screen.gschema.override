@@ -1,6 +1,7 @@
-# $OpenBSD: 10_org.gnome.login-screen.gschema.override,v 1.1 2013/01/11 10:11:57 ajacoutot Exp $
+# $OpenBSD: 10_org.gnome.login-screen.gschema.override,v 1.2 2015/03/30 12:29:09 ajacoutot Exp $
 
 # corresponding PAM support is not available on OpenBSD
 [org.gnome.login-screen]
 enable-fingerprint-authentication=false
 enable-smartcard-authentication=false
+logo='${TRUEPREFIX}/share/pixmaps/puflogh1000X248.gif'
