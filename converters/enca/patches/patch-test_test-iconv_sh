@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_test-iconv_sh,v 1.1 2015/03/31 15:45:25 juanfra Exp $
+--- test/test-iconv.sh.orig	Tue Mar 31 16:09:27 2015
++++ test/test-iconv.sh	Tue Mar 31 16:10:02 2015
+@@ -24,7 +24,7 @@ if $ENCA --list converters | grep '^iconv$' >/dev/null
+   diff $TEST_TEXT $TESTNAME.actual || DIE=1
+   # One copy doesn't contain enough characters to overweight the noise
+   cat $TESTNAME.tmp $TESTNAME.tmp $TESTNAME.tmp >$TESTNAME.actual
+-  echo 'è' >>$TESTNAME.actual
++  perl -i -pe 's/$/\xe8\n/' $TESTNAME.actual
+   cat $TESTNAME.actual >$TESTNAME.tmp
+   $ENCA $OPTS -x ISO-8859-2 $TESTNAME.tmp 2>/dev/null && DIE=1
+   diff $TESTNAME.tmp $TESTNAME.actual || DIE=1
