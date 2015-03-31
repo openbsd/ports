@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:49:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/31 09:44:48 ajacoutot Exp $
 
 COMMENT=		scrolling 'Matrix'-like screen
 DISTNAME=		cmatrix-1.2a
 CATEGORIES=		games misc
+REVISION=		0
 
 HOMEPAGE=		http://www.asty.org/cmatrix/
 
@@ -14,7 +15,7 @@ MASTER_SITES=		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=	gnu
 
-FONTDIR=		${PREFIX}/lib/X11/fonts/misc
+FONTDIR=		${PREFIX}/share/fonts/misc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmatrix ${PREFIX}/bin/cmatrix

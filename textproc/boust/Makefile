@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/31 09:44:48 ajacoutot Exp $
 
 COMMENT=		boustrophedon text reader
 DISTNAME=		boust-0.161
-REVISION =		2
+REVISION =		3
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://traevoli.com/boust/
@@ -19,7 +19,7 @@ NO_TEST=		Yes
 PKG_ARCH=		*
 SUBST_VARS=		FONTDIR PKGNAME
 FONTS=			10x20bw.pcf.gz 10x20fw.pcf.gz 10x20ud.pcf.gz
-FONTDIR=		${PREFIX}/lib/X11/fonts/boust
+FONTDIR=		${PREFIX}/share/fonts/boust
 
 do-configure:
 	@${SUBST_CMD} ${WRKSRC}/boust

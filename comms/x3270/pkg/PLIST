@@ -1,42 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/28 21:18:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/03/31 09:44:48 ajacoutot Exp $
 @comment bin/pr3287
-bin/x3270
+@bin bin/x3270
 @comment bin/x3270if
-lib/X11/fonts/
-@fontdir lib/X11/fonts/x3270/
-lib/X11/fonts/x3270/3270-12.pcf.gz
-lib/X11/fonts/x3270/3270-12b.pcf.gz
-lib/X11/fonts/x3270/3270-20.pcf.gz
-lib/X11/fonts/x3270/3270-20b.pcf.gz
-lib/X11/fonts/x3270/3270.pcf.gz
-lib/X11/fonts/x3270/3270b.pcf.gz
-lib/X11/fonts/x3270/3270e-12.pcf.gz
-lib/X11/fonts/x3270/3270e-12b.pcf.gz
-lib/X11/fonts/x3270/3270e-20.pcf.gz
-lib/X11/fonts/x3270/3270e-20b.pcf.gz
-lib/X11/fonts/x3270/3270e.pcf.gz
-lib/X11/fonts/x3270/3270eb.pcf.gz
-lib/X11/fonts/x3270/3270egt12.pcf.gz
-lib/X11/fonts/x3270/3270egt12b.pcf.gz
-lib/X11/fonts/x3270/3270egt16.pcf.gz
-lib/X11/fonts/x3270/3270egt16b.pcf.gz
-lib/X11/fonts/x3270/3270egt24.pcf.gz
-lib/X11/fonts/x3270/3270egt24b.pcf.gz
-lib/X11/fonts/x3270/3270egt32.pcf.gz
-lib/X11/fonts/x3270/3270egt32b.pcf.gz
-lib/X11/fonts/x3270/3270egt8.pcf.gz
-lib/X11/fonts/x3270/3270gr.pcf.gz
-lib/X11/fonts/x3270/3270gt12.pcf.gz
-lib/X11/fonts/x3270/3270gt12b.pcf.gz
-lib/X11/fonts/x3270/3270gt16.pcf.gz
-lib/X11/fonts/x3270/3270gt16b.pcf.gz
-lib/X11/fonts/x3270/3270gt24.pcf.gz
-lib/X11/fonts/x3270/3270gt24b.pcf.gz
-lib/X11/fonts/x3270/3270gt32.pcf.gz
-lib/X11/fonts/x3270/3270gt32b.pcf.gz
-lib/X11/fonts/x3270/3270gt8.pcf.gz
-lib/X11/fonts/x3270/3270h.pcf.gz
-@comment lib/X11/fonts/x3270/fonts.dir
 @man man/man1/pr3287.1
 @man man/man1/x3270-script.1
 @man man/man1/x3270.1
@@ -46,3 +11,38 @@ share/examples/x3270/
 @sample ${SYSCONFDIR}/x3270/
 share/examples/x3270/ibm_hosts
 @sample ${SYSCONFDIR}/x3270/ibm_hosts
+share/fonts/
+@fontdir share/fonts/x3270/
+share/fonts/x3270/3270-12.pcf.gz
+share/fonts/x3270/3270-12b.pcf.gz
+share/fonts/x3270/3270-20.pcf.gz
+share/fonts/x3270/3270-20b.pcf.gz
+share/fonts/x3270/3270.pcf.gz
+share/fonts/x3270/3270b.pcf.gz
+share/fonts/x3270/3270e-12.pcf.gz
+share/fonts/x3270/3270e-12b.pcf.gz
+share/fonts/x3270/3270e-20.pcf.gz
+share/fonts/x3270/3270e-20b.pcf.gz
+share/fonts/x3270/3270e.pcf.gz
+share/fonts/x3270/3270eb.pcf.gz
+share/fonts/x3270/3270egt12.pcf.gz
+share/fonts/x3270/3270egt12b.pcf.gz
+share/fonts/x3270/3270egt16.pcf.gz
+share/fonts/x3270/3270egt16b.pcf.gz
+share/fonts/x3270/3270egt24.pcf.gz
+share/fonts/x3270/3270egt24b.pcf.gz
+share/fonts/x3270/3270egt32.pcf.gz
+share/fonts/x3270/3270egt32b.pcf.gz
+share/fonts/x3270/3270egt8.pcf.gz
+share/fonts/x3270/3270gr.pcf.gz
+share/fonts/x3270/3270gt12.pcf.gz
+share/fonts/x3270/3270gt12b.pcf.gz
+share/fonts/x3270/3270gt16.pcf.gz
+share/fonts/x3270/3270gt16b.pcf.gz
+share/fonts/x3270/3270gt24.pcf.gz
+share/fonts/x3270/3270gt24b.pcf.gz
+share/fonts/x3270/3270gt32.pcf.gz
+share/fonts/x3270/3270gt32b.pcf.gz
+share/fonts/x3270/3270gt8.pcf.gz
+share/fonts/x3270/3270h.pcf.gz
+@comment share/fonts/x3270/fonts.dir

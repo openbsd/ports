@@ -1,12 +1,12 @@
-$OpenBSD: patch-OpenBSD_cf,v 1.4 2013/10/11 20:36:18 naddy Exp $
+$OpenBSD: patch-OpenBSD_cf,v 1.5 2015/03/31 09:44:48 ajacoutot Exp $
 --- OpenBSD.cf.orig	Fri Oct 16 23:45:42 2009
 +++ OpenBSD.cf	Thu Oct 10 17:25:16 2013
 @@ -26,10 +26,12 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #define LibDir			/usr/local/lib/X11
  #define UsrLibDir		/usr/local/lib
  #define ManDirectoryRoot	/usr/local/man
-+#define FontDir			${LOCALBASE}/lib/X11/fonts
-+#define FontEncDir		${LOCALBASE}/lib/X11/fonts/encodings
++#define FontDir			${LOCALBASE}/share/fonts
++#define FontEncDir		${LOCALBASE}/share/fonts/encodings
  #define LdPreLib		-L/usr/X11R6/lib -L/usr/local/lib
  #define XpmLibDir		/usr/X11R6/lib
  #define XpmIncDir		/usr/X11R6/include

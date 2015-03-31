@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_fonts_fonts_conf,v 1.3 2013/12/04 15:53:33 ajacoutot Exp $
+$OpenBSD: patch-etc_fonts_fonts_conf,v 1.4 2015/03/31 09:44:48 ajacoutot Exp $
 
 Sync font directory list with base system.
 
@@ -16,7 +16,7 @@ to make it clear it is used by the Linux compatibility layer.
 -	<dir>/usr/share/fonts</dir>
 -	<dir>/usr/share/X11/fonts/Type1</dir> <dir>/usr/share/X11/fonts/TTF</dir> <dir>/usr/local/share/fonts</dir>
 +	<dir>/usr/X11R6/lib/X11/fonts</dir>
-+	<dir>/usr/local/lib/X11/fonts</dir>
++	<dir>/usr/local/share/fonts</dir>
  	<dir>~/.fonts</dir>
  
  <!--

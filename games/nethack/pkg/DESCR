@@ -5,9 +5,8 @@ and finish the game ?   At least, you're starting with a bonus: a puppy
 If you find that game too easy, you may want to try slash instead.
 
 To use nethack with X11 graphics, you will also have to add 
-${PREFIX}/lib/X11/fonts/hack to your fontpath, see xset(1) and 
-Xserver(1), also /usr/X11R6/lib/X11/xdm or 
-/usr/X11R6/lib/X11/xinit for proper configuration.
+${PREFIX}/share/fonts/hack to your fontpath, see xset(1) and 
+Xserver(1).
 
 The tty version with colors uses ANSI colors, unless it finds a suitable
 termcap entry, for instance xterm-color. 

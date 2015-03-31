@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/31 09:44:48 ajacoutot Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
 DISTNAME=	x3270-3.3.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=    	comms
 
 HOMEPAGE=	http://x3270.bgp.nu/
@@ -25,7 +25,7 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 NO_TEST=		Yes
 
-CONFIGURE_ARGS=		--with-fontdir=${PREFIX}/lib/X11/fonts/x3270 \
+CONFIGURE_ARGS=		--with-fontdir=${PREFIX}/share/fonts/x3270 \
 			--with-x
 
 WRKDIST=		${WRKDIR}/x3270-3.3

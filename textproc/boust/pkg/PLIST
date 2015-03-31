@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/02/01 17:07:41 stu Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/03/31 09:44:48 ajacoutot Exp $
 bin/boust
-lib/X11/fonts/
-@fontdir lib/X11/fonts/boust/
-lib/X11/fonts/boust/10x20bw.pcf.gz
-lib/X11/fonts/boust/10x20fw.pcf.gz
-lib/X11/fonts/boust/10x20ud.pcf.gz
 @man man/man1/boust.1
 share/doc/boust/
 share/doc/boust/README
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/fonts/
+@fontdir share/fonts/boust/
+share/fonts/boust/10x20bw.pcf.gz
+share/fonts/boust/10x20fw.pcf.gz
+share/fonts/boust/10x20ud.pcf.gz

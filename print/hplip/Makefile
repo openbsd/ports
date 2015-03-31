@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2015/03/26 12:14:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2015/03/31 09:44:48 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,7 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-common=	1
 REVISION-gui=		0
 REVISION-hpaio=		0

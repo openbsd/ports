@@ -1,4 +1,4 @@
-$OpenBSD: patch-fax_coverpages_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+$OpenBSD: patch-fax_coverpages_py,v 1.2 2015/03/31 09:44:48 ajacoutot Exp $
 --- fax/coverpages.py.orig	Thu Jul  2 17:30:02 2009
 +++ fax/coverpages.py	Thu Jul  2 17:31:08 2009
 @@ -73,7 +73,7 @@ def createStandardCoverPage(page_size=PAGE_SIZE_LETTER
@@ -6,7 +6,7 @@ $OpenBSD: patch-fax_coverpages_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
  
      #print prop.locale
 -    #TTFSearchPath.append('/usr/share/fonts/truetype/arphic')
-+    #TTFSearchPath.append('${LOCALBASE}/lib/X11/fonts/truetype/arphic')
++    #TTFSearchPath.append('${LOCALBASE}/share/fonts/truetype/arphic')
      #pdfmetrics.registerFont(TTFont('UMing', 'uming.ttf'))
  
      ps = ParagraphStyle(name="title",

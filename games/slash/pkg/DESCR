@@ -6,8 +6,7 @@ This is a sequel to nethack: more classes, more objects, bigger dungeon,
 more difficult.
 
 - in order to use slash with X11 graphics, you will have to add
-${PREFIX}/lib/X11/fonts/hack to your fontpath, see xset(1) and Xserver(1), also
-/usr/X11R6/lib/X11/xdm or /usr/X11R6/lib/X11/xinit for proper configuration.
+${PREFIX}/share/fonts/hack to your fontpath, see xset(1) and Xserver(1).
 
 - the tty with colors mode expects a black background and white foreground to 
 run properly, e.g., xterm -fg white -bg black
