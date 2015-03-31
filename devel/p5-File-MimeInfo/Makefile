@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/03/31 13:33:15 benoit Exp $
 
 COMMENT=		determine file types
 
-DISTNAME=		File-MimeInfo-0.26
+DISTNAME =		File-MimeInfo-0.27
 CATEGORIES=		devel
 
 # perl
