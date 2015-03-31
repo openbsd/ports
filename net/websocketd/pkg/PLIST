@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/31 15:38:37 kspillner Exp $
+@bin bin/websocketd
+@man man/man8/websocketd.8
+share/examples/websocketd/
+share/examples/websocketd/bash/
+share/examples/websocketd/bash/count.sh
+share/examples/websocketd/cgi-bin/
+share/examples/websocketd/cgi-bin/README.txt
+share/examples/websocketd/cgi-bin/dump-env.sh
+share/examples/websocketd/html/
+share/examples/websocketd/html/count.html
