@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/23 13:00:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/31 09:02:20 benoit Exp $
 
-COMMENT=		framework for more readable interactive test scripts
+COMMENT =		framework for more readable interactive test scripts
 
-DISTNAME =		Test-Inter-1.05
-CATEGORIES=		devel
+DISTNAME =		Test-Inter-1.06
+CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		cpan
-
-CONFIGURE_STYLE=	modbuild
+MODULES =		cpan
 
 .include <bsd.port.mk>
