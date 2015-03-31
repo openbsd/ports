@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_main_c,v 1.3 2015/03/31 15:36:52 naddy Exp $
+
+CVE-2015-1197: cpio directory traversal
+
+--- src/main.c.orig	Fri Feb 12 12:35:09 2010
++++ src/main.c	Sun Mar 29 21:11:10 2015
+@@ -57,7 +57,8 @@ enum cpio_options {
+   FORCE_LOCAL_OPTION,            
+   DEBUG_OPTION,                  
+   BLOCK_SIZE_OPTION,             
+-  TO_STDOUT_OPTION
++  TO_STDOUT_OPTION,
++  EXTRACT_OVER_SYMLINKS
+ };
+ 
+ const char *program_authors[] =
+@@ -222,6 +223,8 @@ static struct argp_option options[] = {
+    N_("Create leading directories where needed"), GRID+1 },
+   {"no-preserve-owner", NO_PRESERVE_OWNER_OPTION, 0, 0,
+    N_("Do not change the ownership of the files"), GRID+1 },
++  {"extract-over-symlinks", EXTRACT_OVER_SYMLINKS, 0, 0,
++   N_("Force writing over symbolic links"), GRID+1 },
+   {"unconditional", 'u', NULL, 0,
+    N_("Replace all files unconditionally"), GRID+1 },
+   {"sparse", SPARSE_OPTION, NULL, 0,
+@@ -410,6 +413,10 @@ crc newc odc bin ustar tar (all-caps also recognized)"
+ 	error (PAXEXIT_FAILURE, 0, 
+                _("--no-preserve-owner cannot be used with --owner"));
+       no_chown_flag = true;
++      break;
++
++    case EXTRACT_OVER_SYMLINKS:		        /* --extract-over-symlinks */
++      extract_over_symlinks = true;
+       break;
+ 
+     case 'o':		/* Copy-out mode.  */
