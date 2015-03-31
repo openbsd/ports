@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
 @pkgpath japanese/intlfonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/ja/
-lib/X11/fonts/ja/a18rk.pcf.gz
-lib/X11/fonts/ja/a18rkb.pcf.gz
-lib/X11/fonts/ja/a18rki.pcf.gz
-lib/X11/fonts/ja/fonts.alias-gnu
-@comment lib/X11/fonts/ja/fonts.dir
-lib/X11/fonts/ja/j78-16.pcf.gz
-lib/X11/fonts/ja/j83-18.pcf.gz
-lib/X11/fonts/ja/j83-18b.pcf.gz
-lib/X11/fonts/ja/j83-18i.pcf.gz
-lib/X11/fonts/ja/j83-32.pcf.gz
-lib/X11/fonts/ja/j83-48.pcf.gz
-lib/X11/fonts/ja/j90-16.pcf.gz
-lib/X11/fonts/ja/jksp16.pcf.gz
-lib/X11/fonts/ja/jksp24.pcf.gz
-lib/X11/fonts/ja/jksp40.pcf.gz
+share/fonts/
+@fontdir share/fonts/ja/
+share/fonts/ja/a18rk.pcf.gz
+share/fonts/ja/a18rkb.pcf.gz
+share/fonts/ja/a18rki.pcf.gz
+share/fonts/ja/fonts.alias-gnu
+@comment share/fonts/ja/fonts.dir
+share/fonts/ja/j78-16.pcf.gz
+share/fonts/ja/j83-18.pcf.gz
+share/fonts/ja/j83-18b.pcf.gz
+share/fonts/ja/j83-18i.pcf.gz
+share/fonts/ja/j83-32.pcf.gz
+share/fonts/ja/j83-48.pcf.gz
+share/fonts/ja/j90-16.pcf.gz
+share/fonts/ja/jksp16.pcf.gz
+share/fonts/ja/jksp24.pcf.gz
+share/fonts/ja/jksp40.pcf.gz

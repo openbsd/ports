@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/17 19:46:21 juanfra Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/31 09:45:11 ajacoutot Exp $
 
 COMMENT =	sans-serif typeface family of Android OS
 
 # 2013-10-31 Version 1.2 (the date in the specimen filename in the website)
 V =		1.2
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 DISTNAME =	roboto-${V}
 PKGNAME =	roboto-fonts-${V}
 
@@ -27,7 +27,7 @@ NO_TEST =	Yes
 PKG_ARCH =	*
 WRKDIST =	${WRKDIR}/Roboto_v${V}
 
-FONTDIR =	${PREFIX}/lib/X11/fonts/roboto
+FONTDIR =	${PREFIX}/share/fonts/roboto
 DOCDIR =	${PREFIX}/share/doc/roboto-fonts
 
 do-install:

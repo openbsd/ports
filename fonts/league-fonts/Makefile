@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:11 ajacoutot Exp $
 
 COMMENT =		fonts from the League of Moveable Type
 
 PKGNAME =		league-fonts-0.1
-REVISION =		1
+REVISION =		2
 PKG_ARCH =		*
 EXTRACT_SUFX =		.zip
 .for font in \
@@ -32,7 +32,7 @@ DIST_SUBDIR =		leaguefonts
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-INST_DIR=       ${PREFIX}/lib/X11/fonts/league-fonts/
+INST_DIR=       ${PREFIX}/share/fonts/league-fonts/
 
 post-extract:
 	rm -r ${WRKDIR}/__MACOSX/

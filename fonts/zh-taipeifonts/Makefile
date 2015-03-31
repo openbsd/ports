@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:12 ajacoutot Exp $
 
 COMMENT=	extra chinese fonts
 
 DISTNAME=       zh-fonts-taipei-1.01
-REVISION=	1
+REVISION=	2
 CATEGORIES=     fonts chinese x11
 
 DIST_SUBDIR=    zh-fonts
@@ -25,7 +25,7 @@ EXTRACT_ONLY=
 
 CONFIGURE_STYLE=	imake
 
-FONTDIR=	${PREFIX}/lib/X11/fonts/chinese
+FONTDIR=	${PREFIX}/share/fonts/chinese
 
 post-extract:
 	@mkdir -p ${WRKDIST}

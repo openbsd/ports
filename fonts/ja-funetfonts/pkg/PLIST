@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:13:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
 @pkgpath japanese/funetfonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/ja/
-lib/X11/fonts/ja/7x14maru.pcf.gz
-lib/X11/fonts/ja/7x14rkmaru.pcf.gz
-lib/X11/fonts/ja/a16.pcf.gz
-lib/X11/fonts/ja/a16rk.pcf.gz
-lib/X11/fonts/ja/a18.pcf.gz
-lib/X11/fonts/ja/fonts.alias-funet
-@comment lib/X11/fonts/ja/fonts.dir
-@comment lib/X11/fonts/ja/fonts.scale
-lib/X11/fonts/ja/kanji16.pcf.gz
-lib/X11/fonts/ja/kanji18.pcf.gz
-lib/X11/fonts/ja/kanji24.pcf.gz
-lib/X11/fonts/ja/kanji26.pcf.gz
-lib/X11/fonts/ja/maru14.pcf.gz
-lib/X11/fonts/ja/maru16.pcf.gz
-lib/X11/fonts/ja/maru18.pcf.gz
+share/fonts/
+@fontdir share/fonts/ja/
+share/fonts/ja/7x14maru.pcf.gz
+share/fonts/ja/7x14rkmaru.pcf.gz
+share/fonts/ja/a16.pcf.gz
+share/fonts/ja/a16rk.pcf.gz
+share/fonts/ja/a18.pcf.gz
+share/fonts/ja/fonts.alias-funet
+@comment share/fonts/ja/fonts.dir
+@comment share/fonts/ja/fonts.scale
+share/fonts/ja/kanji16.pcf.gz
+share/fonts/ja/kanji18.pcf.gz
+share/fonts/ja/kanji24.pcf.gz
+share/fonts/ja/kanji26.pcf.gz
+share/fonts/ja/maru14.pcf.gz
+share/fonts/ja/maru16.pcf.gz
+share/fonts/ja/maru18.pcf.gz

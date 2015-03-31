@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:11 ajacoutot Exp $
 
 COMMENT=	extra Korean fonts
 
 PKGNAME=	ko-hanterm-fonts-3.1
 DISTNAME=	hanterm-font-3.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	fonts korean x11
 USE_X11 =	Yes
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	yes
 
 # bdftopcf, mkfontdir
 
-FONTDIR=	${PREFIX}/lib/X11/fonts/korean
+FONTDIR=	${PREFIX}/share/fonts/korean
 WRKDIST=	${WRKDIR}/hanterm-font
 
 do-build:

@@ -1,9 +1,9 @@
-Be sure to add ${PREFIX}/lib/X11/fonts/jmk to your fontpath,
+Be sure to add ${PREFIX}/share/fonts/jmk to your fontpath,
 preferably in your xorg.conf by adding this line:
 
-	FontPath "${PREFIX}/lib/X11/fonts/jmk/"
+	FontPath "${PREFIX}/share/fonts/jmk/"
 
 Or, if you wish, from your shell:
 
-	$ xset fp+ ${PREFIX}/lib/X11/fonts/jmk
+	$ xset fp+ ${PREFIX}/share/fonts/jmk
 	$ xset fp rehash

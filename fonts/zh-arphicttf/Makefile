@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/31 09:45:12 ajacoutot Exp $
 
 COMMENT=	chinese big5/gb truetype fonts
 
 DISTNAME=       zh-arphicttf-2.11
 PKGNAME=	zh-fonts-arphicttf-2.11
-REVISION=	3
+REVISION=	4
 CATEGORIES=     fonts chinese x11
 
 PERMIT_PACKAGE_CDROM=   Yes
@@ -15,7 +15,7 @@ PKG_ARCH=	*
 
 WRKDIST=        ${WRKDIR}/arphic
 
-FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
+FONTDIR=	${PREFIX}/share/fonts/TrueType
 
 FONTS=		bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf
 

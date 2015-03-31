@@ -1,4 +1,4 @@
-$OpenBSD: patch-bg5ps_conf,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+$OpenBSD: patch-bg5ps_conf,v 1.2 2015/03/31 09:45:12 ajacoutot Exp $
 --- bg5ps.conf.orig	Mon Feb 14 21:28:35 2000
 +++ bg5ps.conf	Fri Jul  8 11:33:55 2011
 @@ -4,7 +4,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-bg5ps_conf,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
  
  #chineseFontPath: 指定中文字型的路徑(預設值: 與 bg5ps 同) 
 -chineseFontPath="/usr/share/fonts/ttf/"
-+chineseFontPath="${LOCALBASE}/lib/X11/fonts/TrueType"
++chineseFontPath="${LOCALBASE}/share/fonts/TrueType"
  
  #modify the above line
  

@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST-de,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+@comment $OpenBSD: PLIST-de,v 1.2 2015/03/31 09:45:09 ajacoutot Exp $
 @pkgpath x11/artwiz-aleczapka,de
-@fontdir lib/X11/fonts/artwiz-aleczapka/
-lib/X11/fonts/artwiz-aleczapka/anorexia.de.pcf
-lib/X11/fonts/artwiz-aleczapka/aqui.de.pcf
-lib/X11/fonts/artwiz-aleczapka/cure.de.pcf
-lib/X11/fonts/artwiz-aleczapka/drift.de.pcf
-lib/X11/fonts/artwiz-aleczapka/edges.de.pcf
-lib/X11/fonts/artwiz-aleczapka/fkp.de.pcf
-lib/X11/fonts/artwiz-aleczapka/gelly.de.pcf
-lib/X11/fonts/artwiz-aleczapka/glisp-bold.de.pcf
-lib/X11/fonts/artwiz-aleczapka/glisp.de.pcf
-lib/X11/fonts/artwiz-aleczapka/kates.de.pcf
-lib/X11/fonts/artwiz-aleczapka/lime.de.pcf
-lib/X11/fonts/artwiz-aleczapka/mints-mild.de.pcf
-lib/X11/fonts/artwiz-aleczapka/mints-strong.de.pcf
-lib/X11/fonts/artwiz-aleczapka/nu.de.pcf
-lib/X11/fonts/artwiz-aleczapka/smoothansi.de.pcf
-lib/X11/fonts/artwiz-aleczapka/snap.de.pcf
+@fontdir share/fonts/artwiz-aleczapka/
+share/fonts/artwiz-aleczapka/anorexia.de.pcf
+share/fonts/artwiz-aleczapka/aqui.de.pcf
+share/fonts/artwiz-aleczapka/cure.de.pcf
+share/fonts/artwiz-aleczapka/drift.de.pcf
+share/fonts/artwiz-aleczapka/edges.de.pcf
+share/fonts/artwiz-aleczapka/fkp.de.pcf
+share/fonts/artwiz-aleczapka/gelly.de.pcf
+share/fonts/artwiz-aleczapka/glisp-bold.de.pcf
+share/fonts/artwiz-aleczapka/glisp.de.pcf
+share/fonts/artwiz-aleczapka/kates.de.pcf
+share/fonts/artwiz-aleczapka/lime.de.pcf
+share/fonts/artwiz-aleczapka/mints-mild.de.pcf
+share/fonts/artwiz-aleczapka/mints-strong.de.pcf
+share/fonts/artwiz-aleczapka/nu.de.pcf
+share/fonts/artwiz-aleczapka/smoothansi.de.pcf
+share/fonts/artwiz-aleczapka/snap.de.pcf

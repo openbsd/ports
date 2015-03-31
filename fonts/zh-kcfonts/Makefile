@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:12 ajacoutot Exp $
 
 COMMENT=	extra chinese fonts
 
 DISTNAME=       zh-fonts-kc-1.05
-REVISION=	1
+REVISION=	2
 CATEGORIES=     fonts chinese x11
 
 PERMIT_PACKAGE_CDROM=   Yes
@@ -21,7 +21,7 @@ PKG_ARCH=	*
 
 FONTS=		kc8x15.pcf.gz kc12x24.pcf.gz kc15f.pcf.gz kc24f.pcf.gz
 
-FONTDIR=	${PREFIX}/lib/X11/fonts/chinese
+FONTDIR=	${PREFIX}/share/fonts/chinese
 
 post-extract:
 	@mkdir -p ${WRKDIST}

@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:12 ajacoutot Exp $
 @pkgpath x11/un-fonts/extra
-lib/X11/fonts/
-@fontdir lib/X11/fonts/korean/
-lib/X11/fonts/korean/UnBom.ttf
-lib/X11/fonts/korean/UnJamoBatang.ttf
-lib/X11/fonts/korean/UnJamoDotum.ttf
-lib/X11/fonts/korean/UnJamoNovel.ttf
-lib/X11/fonts/korean/UnJamoSora.ttf
-lib/X11/fonts/korean/UnPen.ttf
-lib/X11/fonts/korean/UnPenheulim.ttf
-lib/X11/fonts/korean/UnPilgia.ttf
-lib/X11/fonts/korean/UnShinmun.ttf
-lib/X11/fonts/korean/UnTaza.ttf
-lib/X11/fonts/korean/UnVada.ttf
-lib/X11/fonts/korean/UnYetgul.ttf
+share/fonts/
+@fontdir share/fonts/korean/
+share/fonts/korean/UnBom.ttf
+share/fonts/korean/UnJamoBatang.ttf
+share/fonts/korean/UnJamoDotum.ttf
+share/fonts/korean/UnJamoNovel.ttf
+share/fonts/korean/UnJamoSora.ttf
+share/fonts/korean/UnPen.ttf
+share/fonts/korean/UnPenheulim.ttf
+share/fonts/korean/UnPilgia.ttf
+share/fonts/korean/UnShinmun.ttf
+share/fonts/korean/UnTaza.ttf
+share/fonts/korean/UnVada.ttf
+share/fonts/korean/UnYetgul.ttf

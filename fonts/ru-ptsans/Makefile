@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/02 10:33:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/31 09:45:11 ajacoutot Exp $
 
 COMMENT =	free Cyrillic fonts
 PKG_ARCH =	*
 DISTNAME =	ptsans-2.0
 PKGNAME =	ru-${DISTNAME}
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-FONTSDIR =		${PREFIX}/lib/X11/fonts/ptsans
+FONTSDIR =		${PREFIX}/share/fonts/ptsans
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ptsans

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:12 ajacoutot Exp $
 @pkgpath chinese/bg5ps
 bin/bg5ps
-bin/ttf2psm
+@bin bin/ttf2psm
 lib/bg5ps/
 lib/bg5ps/bg5ps.conf
 share/doc/bg5ps/

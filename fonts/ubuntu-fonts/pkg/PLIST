@@ -1,19 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/08 15:03:31 dcoppa Exp $
-lib/X11/fonts/
-@fontdir lib/X11/fonts/ubuntu/
-lib/X11/fonts/ubuntu/Ubuntu-B.ttf
-lib/X11/fonts/ubuntu/Ubuntu-BI.ttf
-lib/X11/fonts/ubuntu/Ubuntu-C.ttf
-lib/X11/fonts/ubuntu/Ubuntu-L.ttf
-lib/X11/fonts/ubuntu/Ubuntu-LI.ttf
-lib/X11/fonts/ubuntu/Ubuntu-M.ttf
-lib/X11/fonts/ubuntu/Ubuntu-MI.ttf
-lib/X11/fonts/ubuntu/Ubuntu-R.ttf
-lib/X11/fonts/ubuntu/Ubuntu-RI.ttf
-lib/X11/fonts/ubuntu/UbuntuMono-B.ttf
-lib/X11/fonts/ubuntu/UbuntuMono-BI.ttf
-lib/X11/fonts/ubuntu/UbuntuMono-R.ttf
-lib/X11/fonts/ubuntu/UbuntuMono-RI.ttf
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 share/doc/ubuntu-fonts/
 share/doc/ubuntu-fonts/CONTRIBUTING.txt
 share/doc/ubuntu-fonts/FONTLOG.txt
@@ -22,3 +7,18 @@ share/doc/ubuntu-fonts/LICENCE.txt
 share/doc/ubuntu-fonts/README.txt
 share/doc/ubuntu-fonts/TRADEMARKS.txt
 share/doc/ubuntu-fonts/copyright.txt
+share/fonts/
+@fontdir share/fonts/ubuntu/
+share/fonts/ubuntu/Ubuntu-B.ttf
+share/fonts/ubuntu/Ubuntu-BI.ttf
+share/fonts/ubuntu/Ubuntu-C.ttf
+share/fonts/ubuntu/Ubuntu-L.ttf
+share/fonts/ubuntu/Ubuntu-LI.ttf
+share/fonts/ubuntu/Ubuntu-M.ttf
+share/fonts/ubuntu/Ubuntu-MI.ttf
+share/fonts/ubuntu/Ubuntu-R.ttf
+share/fonts/ubuntu/Ubuntu-RI.ttf
+share/fonts/ubuntu/UbuntuMono-B.ttf
+share/fonts/ubuntu/UbuntuMono-BI.ttf
+share/fonts/ubuntu/UbuntuMono-R.ttf
+share/fonts/ubuntu/UbuntuMono-RI.ttf

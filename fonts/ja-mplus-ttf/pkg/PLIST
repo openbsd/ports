@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:13:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
 @pkgpath japanese/mplus-ttf
-lib/X11/fonts/
-@fontdir lib/X11/fonts/mplus/
-lib/X11/fonts/mplus/M+1P+IPAG-circle.ttf
-lib/X11/fonts/mplus/M+1P+IPAG.ttf
-lib/X11/fonts/mplus/M+1VM+IPAG-circle.ttf
-lib/X11/fonts/mplus/M+2P+IPAG-circle.ttf
-lib/X11/fonts/mplus/M+2P+IPAG.ttf
-lib/X11/fonts/mplus/M+2VM+IPAG-circle.ttf
-lib/X11/fonts/mplus/ipag.ttf
-lib/X11/fonts/mplus/ipagp.ttf
-lib/X11/fonts/mplus/ipagui.ttf
-lib/X11/fonts/mplus/ipam.ttf
-lib/X11/fonts/mplus/ipamp.ttf
+share/fonts/
+@fontdir share/fonts/mplus/
+share/fonts/mplus/M+1P+IPAG-circle.ttf
+share/fonts/mplus/M+1P+IPAG.ttf
+share/fonts/mplus/M+1VM+IPAG-circle.ttf
+share/fonts/mplus/M+2P+IPAG-circle.ttf
+share/fonts/mplus/M+2P+IPAG.ttf
+share/fonts/mplus/M+2VM+IPAG-circle.ttf
+share/fonts/mplus/ipag.ttf
+share/fonts/mplus/ipagp.ttf
+share/fonts/mplus/ipagui.ttf
+share/fonts/mplus/ipam.ttf
+share/fonts/mplus/ipamp.ttf

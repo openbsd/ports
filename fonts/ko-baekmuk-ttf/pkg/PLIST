@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:13:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 @pkgpath korean/baekmuk-ttf
-lib/X11/fonts/
-@fontdir lib/X11/fonts/korean/
-lib/X11/fonts/korean/batang.ttf
-lib/X11/fonts/korean/dotum.ttf
-lib/X11/fonts/korean/gulim.ttf
-lib/X11/fonts/korean/hline.ttf
+share/fonts/
+@fontdir share/fonts/korean/
+share/fonts/korean/batang.ttf
+share/fonts/korean/dotum.ttf
+share/fonts/korean/gulim.ttf
+share/fonts/korean/hline.ttf

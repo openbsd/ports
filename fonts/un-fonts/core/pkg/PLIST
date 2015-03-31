@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1 2011/07/19 09:18:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 @pkgpath x11/un-fonts/core
-lib/X11/fonts/
-@fontdir lib/X11/fonts/korean/
-lib/X11/fonts/korean/UnBatang.ttf
-lib/X11/fonts/korean/UnBatangBold.ttf
-lib/X11/fonts/korean/UnDinaru.ttf
-lib/X11/fonts/korean/UnDinaruBold.ttf
-lib/X11/fonts/korean/UnDinaruLight.ttf
-lib/X11/fonts/korean/UnDotum.ttf
-lib/X11/fonts/korean/UnDotumBold.ttf
-lib/X11/fonts/korean/UnGraphic.ttf
-lib/X11/fonts/korean/UnGraphicBold.ttf
-lib/X11/fonts/korean/UnGungseo.ttf
-lib/X11/fonts/korean/UnPilgi.ttf
-lib/X11/fonts/korean/UnPilgiBold.ttf
+share/fonts/
+@fontdir share/fonts/korean/
+share/fonts/korean/UnBatang.ttf
+share/fonts/korean/UnBatangBold.ttf
+share/fonts/korean/UnDinaru.ttf
+share/fonts/korean/UnDinaruBold.ttf
+share/fonts/korean/UnDinaruLight.ttf
+share/fonts/korean/UnDotum.ttf
+share/fonts/korean/UnDotumBold.ttf
+share/fonts/korean/UnGraphic.ttf
+share/fonts/korean/UnGraphicBold.ttf
+share/fonts/korean/UnGungseo.ttf
+share/fonts/korean/UnPilgi.ttf
+share/fonts/korean/UnPilgiBold.ttf

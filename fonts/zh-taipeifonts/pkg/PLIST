@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:12 ajacoutot Exp $
 @pkgpath chinese/taipeifonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/chinese/
-lib/X11/fonts/chinese/fonts.alias-taipei
-@comment lib/X11/fonts/chinese/fonts.dir
-@comment lib/X11/fonts/chinese/fonts.scale
-lib/X11/fonts/chinese/taipei16.pcf.gz
-lib/X11/fonts/chinese/taipei24.pcf.gz
-lib/X11/fonts/chinese/taipeik20.pcf.gz
-lib/X11/fonts/chinese/taipeik24.pcf.gz
-lib/X11/fonts/chinese/taipeim20.pcf.gz
-lib/X11/fonts/chinese/taipeim24.pcf.gz
+share/fonts/
+@fontdir share/fonts/chinese/
+share/fonts/chinese/fonts.alias-taipei
+@comment share/fonts/chinese/fonts.dir
+@comment share/fonts/chinese/fonts.scale
+share/fonts/chinese/taipei16.pcf.gz
+share/fonts/chinese/taipei24.pcf.gz
+share/fonts/chinese/taipeik20.pcf.gz
+share/fonts/chinese/taipeik24.pcf.gz
+share/fonts/chinese/taipeim20.pcf.gz
+share/fonts/chinese/taipeim24.pcf.gz

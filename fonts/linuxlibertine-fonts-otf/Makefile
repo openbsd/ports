@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:11 ajacoutot Exp $
 
 COMMENT =		high-quality libre OTF fonts (serif, 19th century book type)
 
@@ -6,6 +6,7 @@ DISTNAME =		LinLibertineOTF_${V}_${D}
 PKGNAME =		linuxlibertine-fonts-otf-${V}
 V =			5.3.0
 D =			2012_07_02
+REVISION =		0
 
 CATEGORIES =		fonts
 
@@ -22,7 +23,7 @@ NO_TEST =		Yes
 
 PKG_ARCH =	*
 
-FONTSDIR =	${PREFIX}/lib/X11/fonts/linuxlibertine
+FONTSDIR =	${PREFIX}/share/fonts/linuxlibertine
 DOCDIR =	${PREFIX}/share/doc/linuxlibertine-fonts-otf
 
 do-install:

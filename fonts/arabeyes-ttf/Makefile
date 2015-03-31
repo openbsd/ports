@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:09 ajacoutot Exp $
 
 COMMENT=	Arabeyes TrueType Arabic fonts
 
 V=		2.0
 DISTNAME=	ttf-arabeyes_$V.orig
 PKGNAME=	arabeyes-ttf-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=	fonts x11
 
 HOMEPAGE=	http://www.arabeyes.org/project.php?proj=Khotot
@@ -19,7 +19,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/ttf-arabeyes-$V
-FONTSDIR=		${PREFIX}/lib/X11/fonts/arabeyes
+FONTSDIR=		${PREFIX}/share/fonts/arabeyes
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTSDIR}

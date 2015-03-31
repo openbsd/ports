@@ -1,19 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/12 16:23:19 rpe Exp $
-lib/X11/fonts/
-@fontdir lib/X11/fonts/linuxlibertine/
-lib/X11/fonts/linuxlibertine/LinBiolinum_K.otf
-lib/X11/fonts/linuxlibertine/LinBiolinum_R.otf
-lib/X11/fonts/linuxlibertine/LinBiolinum_RB.otf
-lib/X11/fonts/linuxlibertine/LinBiolinum_RI.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_DR.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_I.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_M.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_R.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_RB.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_RBI.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_RI.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_RZ.otf
-lib/X11/fonts/linuxlibertine/LinLibertine_RZI.otf
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 share/doc/linuxlibertine-fonts-otf/
 share/doc/linuxlibertine-fonts-otf/Bugs.txt
 share/doc/linuxlibertine-fonts-otf/ChangeLog.txt
@@ -24,3 +9,18 @@ share/doc/linuxlibertine-fonts-otf/OFL-1.1.txt
 share/doc/linuxlibertine-fonts-otf/README
 share/doc/linuxlibertine-fonts-otf/Readme-TEX.txt
 share/doc/linuxlibertine-fonts-otf/ToDo.txt
+share/fonts/
+@fontdir share/fonts/linuxlibertine/
+share/fonts/linuxlibertine/LinBiolinum_K.otf
+share/fonts/linuxlibertine/LinBiolinum_R.otf
+share/fonts/linuxlibertine/LinBiolinum_RB.otf
+share/fonts/linuxlibertine/LinBiolinum_RI.otf
+share/fonts/linuxlibertine/LinLibertine_DR.otf
+share/fonts/linuxlibertine/LinLibertine_I.otf
+share/fonts/linuxlibertine/LinLibertine_M.otf
+share/fonts/linuxlibertine/LinLibertine_R.otf
+share/fonts/linuxlibertine/LinLibertine_RB.otf
+share/fonts/linuxlibertine/LinLibertine_RBI.otf
+share/fonts/linuxlibertine/LinLibertine_RI.otf
+share/fonts/linuxlibertine/LinLibertine_RZ.otf
+share/fonts/linuxlibertine/LinLibertine_RZI.otf

@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:12 ajacoutot Exp $
 @pkgpath x11/wqy-bitmapfont
-lib/X11/fonts/
-@fontdir lib/X11/fonts/wqy/
-lib/X11/fonts/wqy/fonts.alias-wqy
-lib/X11/fonts/wqy/wenquanyi_10pt.pcf
-lib/X11/fonts/wqy/wenquanyi_10ptb.pcf
-lib/X11/fonts/wqy/wenquanyi_11pt.pcf
-lib/X11/fonts/wqy/wenquanyi_11ptb.pcf
-lib/X11/fonts/wqy/wenquanyi_12pt.pcf
-lib/X11/fonts/wqy/wenquanyi_12ptb.pcf
-lib/X11/fonts/wqy/wenquanyi_9pt.pcf
-lib/X11/fonts/wqy/wenquanyi_9ptb.pcf
+share/fonts/
+@fontdir share/fonts/wqy/
+share/fonts/wqy/fonts.alias-wqy
+share/fonts/wqy/wenquanyi_10pt.pcf
+share/fonts/wqy/wenquanyi_10ptb.pcf
+share/fonts/wqy/wenquanyi_11pt.pcf
+share/fonts/wqy/wenquanyi_11ptb.pcf
+share/fonts/wqy/wenquanyi_12pt.pcf
+share/fonts/wqy/wenquanyi_12ptb.pcf
+share/fonts/wqy/wenquanyi_9pt.pcf
+share/fonts/wqy/wenquanyi_9ptb.pcf

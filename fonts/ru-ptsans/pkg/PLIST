@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 @pkgpath x11/ptsans
-lib/X11/fonts/
-@fontdir lib/X11/fonts/ptsans/
-lib/X11/fonts/ptsans/PTC55F.ttf
-lib/X11/fonts/ptsans/PTC75F.ttf
-lib/X11/fonts/ptsans/PTN57F.ttf
-lib/X11/fonts/ptsans/PTN77F.ttf
-lib/X11/fonts/ptsans/PTS55F.ttf
-lib/X11/fonts/ptsans/PTS56F.ttf
-lib/X11/fonts/ptsans/PTS75F.ttf
-lib/X11/fonts/ptsans/PTS76F.ttf
+share/fonts/
+@fontdir share/fonts/ptsans/
+share/fonts/ptsans/PTC55F.ttf
+share/fonts/ptsans/PTC75F.ttf
+share/fonts/ptsans/PTN57F.ttf
+share/fonts/ptsans/PTN77F.ttf
+share/fonts/ptsans/PTS55F.ttf
+share/fonts/ptsans/PTS56F.ttf
+share/fonts/ptsans/PTS75F.ttf
+share/fonts/ptsans/PTS76F.ttf
 share/ptsans/
 share/ptsans/PTSansOFL.txt

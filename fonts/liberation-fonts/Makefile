@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/31 09:45:11 ajacoutot Exp $
 
 PKG_ARCH =	*
 
@@ -7,6 +7,7 @@ COMMENT =	substitute for MS TTF core fonts
 DISTNAME =	liberation-fonts-ttf-2.00.1
 PKGNAME =	${DISTNAME:S/-ttf//}
 CATEGORIES =	fonts x11
+REVISION =	0
 
 HOMEPAGE =	https://fedorahosted.org/liberation-fonts
 
@@ -20,7 +21,7 @@ MASTER_SITES =	https://fedorahosted.org/releases/l/i/liberation-fonts/
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-FONTDIR =	${PREFIX}/lib/X11/fonts/Liberation
+FONTDIR =	${PREFIX}/share/fonts/Liberation
 DOCDIR =	${PREFIX}/share/doc/liberation-fonts
 
 do-install:

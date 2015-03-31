@@ -1,32 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/02/28 11:53:04 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/03/31 09:45:11 ajacoutot Exp $
 @pkgpath x11/league-fonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/league-fonts/
-lib/X11/fonts/league-fonts/Blackout -CCLicense.pdf
-lib/X11/fonts/league-fonts/Blackout-2am.ttf
-lib/X11/fonts/league-fonts/Blackout-Midnight.ttf
-lib/X11/fonts/league-fonts/Chunk.otf
-lib/X11/fonts/league-fonts/Chunk.ttf
-lib/X11/fonts/league-fonts/Flaminia -CCLicense.pdf
-lib/X11/fonts/league-fonts/Flaminia -Disclaimer.rtf
-lib/X11/fonts/league-fonts/GoudyBookletter1911.otf
-lib/X11/fonts/league-fonts/Junction 02.otf
-lib/X11/fonts/league-fonts/Junction 02.ttf
-lib/X11/fonts/league-fonts/Junction FONTLOG.txt
-lib/X11/fonts/league-fonts/League Gothic.otf
-lib/X11/fonts/league-fonts/LeagueScript.otf
-lib/X11/fonts/league-fonts/LindenHill-Italic.otf
-lib/X11/fonts/league-fonts/LindenHill.otf
-lib/X11/fonts/league-fonts/OFL - Copyright.txt
-lib/X11/fonts/league-fonts/OFLGoudyStM-Italic.otf
-lib/X11/fonts/league-fonts/OFLGoudyStM.otf
-lib/X11/fonts/league-fonts/OFLGoudyStMTT-Italic.ttf
-lib/X11/fonts/league-fonts/OFLGoudyStMTT.ttf
-lib/X11/fonts/league-fonts/Open Font License.txt
-lib/X11/fonts/league-fonts/Orbitron_readme.txt
-lib/X11/fonts/league-fonts/Prociono.otf
-lib/X11/fonts/league-fonts/ProcionoTT.ttf
-lib/X11/fonts/league-fonts/Sniglet_Regular.otf
-lib/X11/fonts/league-fonts/Sniglet_Regular.ttf
-lib/X11/fonts/league-fonts/raleway_thin.otf
-lib/X11/fonts/league-fonts/raleway_thin.ttf
+share/fonts/
+@fontdir share/fonts/league-fonts/
+share/fonts/league-fonts/Blackout -CCLicense.pdf
+share/fonts/league-fonts/Blackout-2am.ttf
+share/fonts/league-fonts/Blackout-Midnight.ttf
+share/fonts/league-fonts/Chunk.otf
+share/fonts/league-fonts/Chunk.ttf
+share/fonts/league-fonts/Flaminia -CCLicense.pdf
+share/fonts/league-fonts/Flaminia -Disclaimer.rtf
+share/fonts/league-fonts/GoudyBookletter1911.otf
+share/fonts/league-fonts/Junction 02.otf
+share/fonts/league-fonts/Junction 02.ttf
+share/fonts/league-fonts/Junction FONTLOG.txt
+share/fonts/league-fonts/League Gothic.otf
+share/fonts/league-fonts/LeagueScript.otf
+share/fonts/league-fonts/LindenHill-Italic.otf
+share/fonts/league-fonts/LindenHill.otf
+share/fonts/league-fonts/OFL - Copyright.txt
+share/fonts/league-fonts/OFLGoudyStM-Italic.otf
+share/fonts/league-fonts/OFLGoudyStM.otf
+share/fonts/league-fonts/OFLGoudyStMTT-Italic.ttf
+share/fonts/league-fonts/OFLGoudyStMTT.ttf
+share/fonts/league-fonts/Open Font License.txt
+share/fonts/league-fonts/Orbitron_readme.txt
+share/fonts/league-fonts/Prociono.otf
+share/fonts/league-fonts/ProcionoTT.ttf
+share/fonts/league-fonts/Sniglet_Regular.otf
+share/fonts/league-fonts/Sniglet_Regular.ttf
+share/fonts/league-fonts/raleway_thin.otf
+share/fonts/league-fonts/raleway_thin.ttf

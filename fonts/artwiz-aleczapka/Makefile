@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/31 09:45:09 ajacoutot Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -13,9 +13,9 @@ PKGNAME-se=	${NAME}-se-${V}
 CATEGORIES=	fonts x11
 USE_X11 =	Yes
 
-REVISION-main=	5
-REVISION-de=	3
-REVISION-se=	3
+REVISION-main=	6
+REVISION-de=	4
+REVISION-se=	4
 
 HOMEPAGE=	http://artwizaleczapka.sourceforge.net/
 
@@ -31,7 +31,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-INST_DIR=	${PREFIX}/lib/X11/fonts/artwiz-aleczapka
+INST_DIR=	${PREFIX}/share/fonts/artwiz-aleczapka
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${NAME}-de-${V}${EXTRACT_SUFX} \

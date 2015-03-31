@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  #chineseFontPath: 指定中文字型的路徑(預設值: 與 bg5ps 同) 
 -chineseFontPath="/usr/share/fonts/ttf/"
-+chineseFontPath="/usr/local/lib/X11/fonts/TrueType/"
++chineseFontPath="/usr/local/share/fonts/TrueType/"
  
  #modify the above line
  

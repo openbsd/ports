@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:09 ajacoutot Exp $
 @pkgpath x11/droid-fonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/Droid/
-lib/X11/fonts/Droid/DroidSans-Bold.ttf
-lib/X11/fonts/Droid/DroidSans.ttf
-lib/X11/fonts/Droid/DroidSansFallback.ttf
-lib/X11/fonts/Droid/DroidSansMono.ttf
-lib/X11/fonts/Droid/DroidSerif-Bold.ttf
-lib/X11/fonts/Droid/DroidSerif-BoldItalic.ttf
-lib/X11/fonts/Droid/DroidSerif-Italic.ttf
-lib/X11/fonts/Droid/DroidSerif-Regular.ttf
+share/fonts/
+@fontdir share/fonts/Droid/
+share/fonts/Droid/DroidSans-Bold.ttf
+share/fonts/Droid/DroidSans.ttf
+share/fonts/Droid/DroidSansFallback.ttf
+share/fonts/Droid/DroidSansMono.ttf
+share/fonts/Droid/DroidSerif-Bold.ttf
+share/fonts/Droid/DroidSerif-BoldItalic.ttf
+share/fonts/Droid/DroidSerif-Italic.ttf
+share/fonts/Droid/DroidSerif-Regular.ttf

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:09 ajacoutot Exp $
 @pkgpath x11/ecoliercour-fonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/ecoliercourt/
-lib/X11/fonts/ecoliercourt/ec_cour.ttf
-lib/X11/fonts/ecoliercourt/ecl_cour.ttf
+share/fonts/
+@fontdir share/fonts/ecoliercourt/
+share/fonts/ecoliercourt/ec_cour.ttf
+share/fonts/ecoliercourt/ecl_cour.ttf

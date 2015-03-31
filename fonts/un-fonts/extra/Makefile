@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 
 COMMENT =	extra Asian truetype fonts designed by Koaunghi Un
 DISTNAME =	un-fonts-extra-${VERSION}
 PKGNAME =	un-fonts-extra-${VERSION:S/-/./}
-REVISION =	0
+REVISION =	1
 
 # N.B. MASTER_SITES directory will need changing for version updates
 VERSION =	1.0.2-080608

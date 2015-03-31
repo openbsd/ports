@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/31 09:45:12 ajacoutot Exp $
 
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
 V=		0.9.9-0
 DISTNAME=	wqy-bitmapfont-pcf-$V
-REVISION=	1
+REVISION=	2
 PKGNAME=	zh-wqy-bitmapfont-${V:S/-/./}
 
 CATEGORIES=	fonts x11 chinese
@@ -20,7 +20,7 @@ WRKDIST=	${WRKDIR}/wqy-bitmapfont
 NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
-WQYFONTDIR=	${PREFIX}/lib/X11/fonts/wqy
+WQYFONTDIR=	${PREFIX}/share/fonts/wqy
 USE_X11 =	Yes
 
 do-install:

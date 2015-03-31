@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:10 ajacoutot Exp $
 
 COMMENT=		free TrueType Persian fonts
 
 DISTNAME=		freefarsi-ttf-1.0.0b
-REVISION=		0
+REVISION=		1
 CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://sourceforge.net/projects/fpf/
@@ -19,7 +19,7 @@ PKG_ARCH=		*
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-FONTSDIR=               ${PREFIX}/lib/X11/fonts/freefarsi
+FONTSDIR=               ${PREFIX}/share/fonts/freefarsi
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTSDIR}

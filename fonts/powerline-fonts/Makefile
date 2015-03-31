@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/15 02:03:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 
 COMMENT=	patched fonts with symbols for powerline/airline
 
 V=		0.20140429
 DISTNAME=	powerline-fonts-$V
+REVISION=	0
 
 CATEGORIES=	fonts
 
@@ -19,11 +20,11 @@ GH_COMMIT=	99be8480bb39f2b9daa52f03a22941a45cd1b8cf
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-FONTS_DIR=	${PREFIX}/lib/X11/fonts/powerline
+FONTS_DIR=	${PREFIX}/share/fonts/powerline
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTS_DIR} ${DOCS_DIR}
-	cd ${WRKSRC}; pax -rw * ${FONTS_DIR}
+	cd ${WRKDIR}/fonts-${GH_COMMIT}; pax -rw * ${FONTS_DIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${FONTS_DIR}
 	mv ${FONTS_DIR}/Terminus/PCF/* ${FONTS_DIR}/Terminus
 	rm -rf ${FONTS_DIR}/Terminus/{BDF,PSF}

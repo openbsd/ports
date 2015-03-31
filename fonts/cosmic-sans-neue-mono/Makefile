@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:09 ajacoutot Exp $
 
 COMMENT =	programming font designed with functionality in mind
 DISTNAME =	cosmic-sans-neue-mono-1.3.1
 CATEGORIES =	fonts x11
+REVISION =	0
 
 HOMEPAGE =	http://openfontlibrary.org/en/font/cosmic-sans-neue-mono
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -16,7 +17,7 @@ PKG_ARCH =	*
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-FONTDIR =	${PREFIX}/lib/X11/fonts/CosmicSansNeueMono
+FONTDIR =	${PREFIX}/share/fonts/CosmicSansNeueMono
 DOCDIR =	${PREFIX}/share/doc/cosmic-sans-neue-mono
 
 do-install:

@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
 @pkgpath x11/freefont-ttf
-lib/X11/fonts/
-@fontdir lib/X11/fonts/freefont/
-lib/X11/fonts/freefont/FreeMono.ttf
-lib/X11/fonts/freefont/FreeMonoBold.ttf
-lib/X11/fonts/freefont/FreeMonoBoldOblique.ttf
-lib/X11/fonts/freefont/FreeMonoOblique.ttf
-lib/X11/fonts/freefont/FreeSans.ttf
-lib/X11/fonts/freefont/FreeSansBold.ttf
-lib/X11/fonts/freefont/FreeSansBoldOblique.ttf
-lib/X11/fonts/freefont/FreeSansOblique.ttf
-lib/X11/fonts/freefont/FreeSerif.ttf
-lib/X11/fonts/freefont/FreeSerifBold.ttf
-lib/X11/fonts/freefont/FreeSerifBoldItalic.ttf
-lib/X11/fonts/freefont/FreeSerifItalic.ttf
+share/fonts/
+@fontdir share/fonts/freefont/
+share/fonts/freefont/FreeMono.ttf
+share/fonts/freefont/FreeMonoBold.ttf
+share/fonts/freefont/FreeMonoBoldOblique.ttf
+share/fonts/freefont/FreeMonoOblique.ttf
+share/fonts/freefont/FreeSans.ttf
+share/fonts/freefont/FreeSansBold.ttf
+share/fonts/freefont/FreeSansBoldOblique.ttf
+share/fonts/freefont/FreeSansOblique.ttf
+share/fonts/freefont/FreeSerif.ttf
+share/fonts/freefont/FreeSerifBold.ttf
+share/fonts/freefont/FreeSerifBoldItalic.ttf
+share/fonts/freefont/FreeSerifItalic.ttf

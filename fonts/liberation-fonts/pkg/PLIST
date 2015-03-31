@@ -1,22 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/11/18 10:21:57 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/03/31 09:45:11 ajacoutot Exp $
 @pkgpath x11/liberation-fonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/Liberation/
-lib/X11/fonts/Liberation/LiberationMono-Bold.ttf
-lib/X11/fonts/Liberation/LiberationMono-BoldItalic.ttf
-lib/X11/fonts/Liberation/LiberationMono-Italic.ttf
-lib/X11/fonts/Liberation/LiberationMono-Regular.ttf
-lib/X11/fonts/Liberation/LiberationSans-Bold.ttf
-lib/X11/fonts/Liberation/LiberationSans-BoldItalic.ttf
-lib/X11/fonts/Liberation/LiberationSans-Italic.ttf
-lib/X11/fonts/Liberation/LiberationSans-Regular.ttf
-lib/X11/fonts/Liberation/LiberationSerif-Bold.ttf
-lib/X11/fonts/Liberation/LiberationSerif-BoldItalic.ttf
-lib/X11/fonts/Liberation/LiberationSerif-Italic.ttf
-lib/X11/fonts/Liberation/LiberationSerif-Regular.ttf
 share/doc/liberation-fonts/
 share/doc/liberation-fonts/AUTHORS
 share/doc/liberation-fonts/ChangeLog
 share/doc/liberation-fonts/LICENSE
 share/doc/liberation-fonts/README
 share/doc/liberation-fonts/TODO
+share/fonts/
+@fontdir share/fonts/Liberation/
+share/fonts/Liberation/LiberationMono-Bold.ttf
+share/fonts/Liberation/LiberationMono-BoldItalic.ttf
+share/fonts/Liberation/LiberationMono-Italic.ttf
+share/fonts/Liberation/LiberationMono-Regular.ttf
+share/fonts/Liberation/LiberationSans-Bold.ttf
+share/fonts/Liberation/LiberationSans-BoldItalic.ttf
+share/fonts/Liberation/LiberationSans-Italic.ttf
+share/fonts/Liberation/LiberationSans-Regular.ttf
+share/fonts/Liberation/LiberationSerif-Bold.ttf
+share/fonts/Liberation/LiberationSerif-BoldItalic.ttf
+share/fonts/Liberation/LiberationSerif-Italic.ttf
+share/fonts/Liberation/LiberationSerif-Regular.ttf

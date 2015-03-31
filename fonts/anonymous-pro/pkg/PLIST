@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/05/21 14:34:59 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/03/31 09:45:09 ajacoutot Exp $
 @pkgpath x11/anonymous-pro
-lib/X11/fonts/
-@fontdir lib/X11/fonts/anonymous-pro/
-lib/X11/fonts/anonymous-pro/AnonymousPro.ttf
-lib/X11/fonts/anonymous-pro/AnonymousProB.ttf
-lib/X11/fonts/anonymous-pro/AnonymousProBI.ttf
-lib/X11/fonts/anonymous-pro/AnonymousProI.ttf
 share/doc/anonymous-pro/
 share/doc/anonymous-pro/FONTLOG.txt
 share/doc/anonymous-pro/OFL-FAQ.txt
 share/doc/anonymous-pro/OFL.txt
 share/doc/anonymous-pro/README.txt
+share/fonts/
+@fontdir share/fonts/anonymous-pro/
+share/fonts/anonymous-pro/AnonymousPro.ttf
+share/fonts/anonymous-pro/AnonymousProB.ttf
+share/fonts/anonymous-pro/AnonymousProBI.ttf
+share/fonts/anonymous-pro/AnonymousProI.ttf

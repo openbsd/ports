@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:12 ajacoutot Exp $
 @pkgpath x11/wqy-zenhei-ttf
-lib/X11/fonts/
-@fontdir lib/X11/fonts/wqy/
-lib/X11/fonts/wqy/wqy-zenhei.ttf
+share/fonts/
+@fontdir share/fonts/wqy/
+share/fonts/wqy/wqy-zenhei.ttf

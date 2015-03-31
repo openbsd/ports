@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 16:51:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:12 ajacoutot Exp $
 @pkgpath chinese/kcfonts
-lib/X11/fonts/
-@fontdir lib/X11/fonts/chinese/
-lib/X11/fonts/chinese/fonts.alias-kc
-@comment lib/X11/fonts/chinese/fonts.dir
-@comment lib/X11/fonts/chinese/fonts.scale
-lib/X11/fonts/chinese/kc12x24.pcf.gz
-lib/X11/fonts/chinese/kc15f.pcf.gz
-lib/X11/fonts/chinese/kc24f.pcf.gz
-lib/X11/fonts/chinese/kc8x15.pcf.gz
+share/fonts/
+@fontdir share/fonts/chinese/
+share/fonts/chinese/fonts.alias-kc
+@comment share/fonts/chinese/fonts.dir
+@comment share/fonts/chinese/fonts.scale
+share/fonts/chinese/kc12x24.pcf.gz
+share/fonts/chinese/kc15f.pcf.gz
+share/fonts/chinese/kc24f.pcf.gz
+share/fonts/chinese/kc8x15.pcf.gz

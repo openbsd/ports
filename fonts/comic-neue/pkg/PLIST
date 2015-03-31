@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/25 21:32:08 benoit Exp $
-lib/X11/fonts/
-@fontdir lib/X11/fonts/comic-neue/
-lib/X11/fonts/comic-neue/ComicNeue-Angular-Bold-Oblique.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Angular-Bold.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Angular-Light-Oblique.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Angular-Light.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Angular-Regular-Oblique.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Angular-Regular.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Bold-Oblique.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Bold.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Light-Oblique.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Light.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Regular-Oblique.ttf
-lib/X11/fonts/comic-neue/ComicNeue-Regular.ttf
-share/doc/pkg-readmes/${FULLPKGNAME}
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:09 ajacoutot Exp $
 share/comic-neue/
 share/comic-neue/30-comic-sans-aliases.conf
+share/fonts/
+@fontdir share/fonts/comic-neue/
+share/fonts/comic-neue/ComicNeue-Angular-Bold-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-Angular-Bold.ttf
+share/fonts/comic-neue/ComicNeue-Angular-Light-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-Angular-Light.ttf
+share/fonts/comic-neue/ComicNeue-Angular-Regular-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-Angular-Regular.ttf
+share/fonts/comic-neue/ComicNeue-Bold-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-Bold.ttf
+share/fonts/comic-neue/ComicNeue-Light-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-Light.ttf
+share/fonts/comic-neue/ComicNeue-Regular-Oblique.ttf
+share/fonts/comic-neue/ComicNeue-Regular.ttf
+share/doc/pkg-readmes/${FULLPKGNAME}

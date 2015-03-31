@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/10 15:01:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:11 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -8,6 +8,7 @@ VERSION=	2.5.3
 PKGNAME=	lohit-fonts-${VERSION}
 CATEGORIES=	fonts x11
 HOMEPAGE=	https://fedorahosted.org/lohit/
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -25,9 +26,9 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/fonts/lohit
-	${INSTALL_DATA} ${WRKDIST}/*/*.ttf ${PREFIX}/lib/X11/fonts/lohit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/lohit
+	${INSTALL_DATA} ${WRKDIST}/*/*.ttf ${PREFIX}/share/fonts/lohit
 	${INSTALL_DATA} ${WRKDIST}/lohit-devanagari-ttf-${VERSION}/OFL.txt \
-	    ${PREFIX}/lib/X11/fonts/lohit
+	    ${PREFIX}/share/fonts/lohit
 
 .include <bsd.port.mk>

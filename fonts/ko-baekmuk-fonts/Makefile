@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/04 13:16:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/03/31 09:45:10 ajacoutot Exp $
 
 COMMENT=	extra Korean fonts
 
 V=		2.0
 DISTNAME=	baekmuk-${V}
 PKGNAME=	ko-baekmuk-fonts-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	fonts korean x11
 
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD/distfiles/ \
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # bdftopcf, mkfontdir
 
-FONTDIR=${PREFIX}/lib/X11/fonts/korean
+FONTDIR=${PREFIX}/share/fonts/korean
 WRKDIST=${WRKDIR}
 USE_X11 =	Yes
 

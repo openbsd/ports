@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/11/10 15:01:24 naddy Exp $
-lib/X11/fonts/
-@fontdir lib/X11/fonts/lohit/
-lib/X11/fonts/lohit/Lohit-Assamese.ttf
-lib/X11/fonts/lohit/Lohit-Bengali.ttf
-lib/X11/fonts/lohit/Lohit-Devanagari.ttf
-lib/X11/fonts/lohit/Lohit-Gujarati.ttf
-lib/X11/fonts/lohit/Lohit-Kannada.ttf
-lib/X11/fonts/lohit/Lohit-Malayalam.ttf
-lib/X11/fonts/lohit/Lohit-Marathi.ttf
-lib/X11/fonts/lohit/Lohit-Nepali.ttf
-lib/X11/fonts/lohit/Lohit-Oriya.ttf
-lib/X11/fonts/lohit/Lohit-Punjabi.ttf
-lib/X11/fonts/lohit/Lohit-Tamil-Classical.ttf
-lib/X11/fonts/lohit/Lohit-Tamil.ttf
-lib/X11/fonts/lohit/Lohit-Telugu.ttf
-lib/X11/fonts/lohit/OFL.txt
+@comment $OpenBSD: PLIST,v 1.3 2015/03/31 09:45:11 ajacoutot Exp $
+share/fonts/
+@fontdir share/fonts/lohit/
+share/fonts/lohit/Lohit-Assamese.ttf
+share/fonts/lohit/Lohit-Bengali.ttf
+share/fonts/lohit/Lohit-Devanagari.ttf
+share/fonts/lohit/Lohit-Gujarati.ttf
+share/fonts/lohit/Lohit-Kannada.ttf
+share/fonts/lohit/Lohit-Malayalam.ttf
+share/fonts/lohit/Lohit-Marathi.ttf
+share/fonts/lohit/Lohit-Nepali.ttf
+share/fonts/lohit/Lohit-Oriya.ttf
+share/fonts/lohit/Lohit-Punjabi.ttf
+share/fonts/lohit/Lohit-Tamil-Classical.ttf
+share/fonts/lohit/Lohit-Tamil.ttf
+share/fonts/lohit/Lohit-Telugu.ttf
+share/fonts/lohit/OFL.txt
