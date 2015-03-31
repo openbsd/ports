@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2015/03/27 08:15:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2015/03/31 06:45:36 jasper Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
@@ -7,7 +7,7 @@ XFCE_VERSION =	0.5.9
 XFCE_GOODIE =	midori
 DISTNAME =	midori_0.5.9_all_
 WRKDIST =	${WRKDIR}/${PKGNAME}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -63,5 +63,7 @@ WANTLIB += soup-2.4 sqlite3 soup-gnome-2.4
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+# CMake Error: CMake can not determine linker language for target: history-list.orig ????
+	rm ${WRKSRC}/extensions/history-list.vala.orig
 
 .include <bsd.port.mk>
