@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/12/17 09:30:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/03/31 10:57:56 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -309,6 +309,7 @@ share/doc/gnucash/ChangeLog.2010
 share/doc/gnucash/ChangeLog.2011
 share/doc/gnucash/ChangeLog.2012
 share/doc/gnucash/ChangeLog.2013
+share/doc/gnucash/ChangeLog.2014
 share/doc/gnucash/DOCUMENTERS
 share/doc/gnucash/HACKING
 share/doc/gnucash/INSTALL
@@ -1339,6 +1340,8 @@ share/gnucash/accounts/ko/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/ko/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/ko/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/ko/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/lt/
+share/gnucash/accounts/lt/acctchrt_business.gnucash-xea
 share/gnucash/accounts/lv/
 share/gnucash/accounts/lv/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/lv/acctchrt_business.gnucash-xea
@@ -1856,6 +1859,13 @@ share/locale/kok@latin/LC_MESSAGES/gnucash.mo
 share/locale/ks/LC_MESSAGES/gnucash.mo
 share/locale/lt/LC_MESSAGES/gnucash.mo
 share/locale/lv/LC_MESSAGES/gnucash.mo
+share/locale/mai/LC_MESSAGES/gnucash.mo
+share/locale/mni/
+share/locale/mni/LC_MESSAGES/
+share/locale/mni/LC_MESSAGES/gnucash.mo
+share/locale/mni@bengali/
+share/locale/mni@bengali/LC_MESSAGES/
+share/locale/mni@bengali/LC_MESSAGES/gnucash.mo
 share/locale/mr/LC_MESSAGES/gnucash.mo
 share/locale/nb/LC_MESSAGES/gnucash.mo
 share/locale/ne/LC_MESSAGES/gnucash.mo
