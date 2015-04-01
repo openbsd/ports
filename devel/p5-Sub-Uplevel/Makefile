@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/19 10:49:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/01 09:42:53 benoit Exp $
 
 COMMENT = 	Perl library for manipulating frame stack
 
 MODULES =	cpan
-DISTNAME =	Sub-Uplevel-0.24
+DISTNAME =	Sub-Uplevel-0.25
 EPOCH =		0
 CATEGORIES =	devel
 
