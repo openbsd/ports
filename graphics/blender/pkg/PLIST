@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/01/10 00:30:49 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/04/01 21:26:40 pascal Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -96,6 +96,7 @@ share/blender/datafiles/blender_icons16/icon16_file_blank.dat
 share/blender/datafiles/blender_icons16/icon16_file_blend.dat
 share/blender/datafiles/blender_icons16/icon16_file_folder.dat
 share/blender/datafiles/blender_icons16/icon16_file_font.dat
+share/blender/datafiles/blender_icons16/icon16_file_hidden.dat
 share/blender/datafiles/blender_icons16/icon16_file_image.dat
 share/blender/datafiles/blender_icons16/icon16_file_movie.dat
 share/blender/datafiles/blender_icons16/icon16_file_parent.dat
@@ -246,6 +247,7 @@ share/blender/datafiles/blender_icons16/icon16_mod_build.dat
 share/blender/datafiles/blender_icons16/icon16_mod_cast.dat
 share/blender/datafiles/blender_icons16/icon16_mod_cloth.dat
 share/blender/datafiles/blender_icons16/icon16_mod_curve.dat
+share/blender/datafiles/blender_icons16/icon16_mod_data_transfer.dat
 share/blender/datafiles/blender_icons16/icon16_mod_decim.dat
 share/blender/datafiles/blender_icons16/icon16_mod_displace.dat
 share/blender/datafiles/blender_icons16/icon16_mod_dynamicpaint.dat
@@ -257,6 +259,7 @@ share/blender/datafiles/blender_icons16/icon16_mod_mask.dat
 share/blender/datafiles/blender_icons16/icon16_mod_meshdeform.dat
 share/blender/datafiles/blender_icons16/icon16_mod_mirror.dat
 share/blender/datafiles/blender_icons16/icon16_mod_multires.dat
+share/blender/datafiles/blender_icons16/icon16_mod_normaledit.dat
 share/blender/datafiles/blender_icons16/icon16_mod_ocean.dat
 share/blender/datafiles/blender_icons16/icon16_mod_particles.dat
 share/blender/datafiles/blender_icons16/icon16_mod_physics.dat
@@ -570,6 +573,7 @@ share/blender/datafiles/blender_icons32/icon32_file_blank.dat
 share/blender/datafiles/blender_icons32/icon32_file_blend.dat
 share/blender/datafiles/blender_icons32/icon32_file_folder.dat
 share/blender/datafiles/blender_icons32/icon32_file_font.dat
+share/blender/datafiles/blender_icons32/icon32_file_hidden.dat
 share/blender/datafiles/blender_icons32/icon32_file_image.dat
 share/blender/datafiles/blender_icons32/icon32_file_movie.dat
 share/blender/datafiles/blender_icons32/icon32_file_parent.dat
@@ -720,6 +724,7 @@ share/blender/datafiles/blender_icons32/icon32_mod_build.dat
 share/blender/datafiles/blender_icons32/icon32_mod_cast.dat
 share/blender/datafiles/blender_icons32/icon32_mod_cloth.dat
 share/blender/datafiles/blender_icons32/icon32_mod_curve.dat
+share/blender/datafiles/blender_icons32/icon32_mod_data_transfer.dat
 share/blender/datafiles/blender_icons32/icon32_mod_decim.dat
 share/blender/datafiles/blender_icons32/icon32_mod_displace.dat
 share/blender/datafiles/blender_icons32/icon32_mod_dynamicpaint.dat
@@ -731,6 +736,7 @@ share/blender/datafiles/blender_icons32/icon32_mod_mask.dat
 share/blender/datafiles/blender_icons32/icon32_mod_meshdeform.dat
 share/blender/datafiles/blender_icons32/icon32_mod_mirror.dat
 share/blender/datafiles/blender_icons32/icon32_mod_multires.dat
+share/blender/datafiles/blender_icons32/icon32_mod_normaledit.dat
 share/blender/datafiles/blender_icons32/icon32_mod_ocean.dat
 share/blender/datafiles/blender_icons32/icon32_mod_particles.dat
 share/blender/datafiles/blender_icons32/icon32_mod_physics.dat
@@ -1119,6 +1125,7 @@ share/blender/datafiles/locale/po/ja.po
 share/blender/datafiles/locale/po/ko.po
 share/blender/datafiles/locale/po/ky.po
 share/blender/datafiles/locale/po/nl.po
+share/blender/datafiles/locale/po/pl.po
 share/blender/datafiles/locale/po/pt.po
 share/blender/datafiles/locale/po/pt_BR.po
 share/blender/datafiles/locale/po/ru.po
@@ -1407,18 +1414,13 @@ share/blender/scripts/addons/mocap/mocap_constraints.py
 share/blender/scripts/addons/mocap/mocap_tools.py
 share/blender/scripts/addons/mocap/retarget.py
 share/blender/scripts/addons/modules/
-share/blender/scripts/addons/modules/constants_utils.py
-share/blender/scripts/addons/modules/cursor_utils.py
 share/blender/scripts/addons/modules/extensions_framework/
 share/blender/scripts/addons/modules/extensions_framework/__init__.py
 share/blender/scripts/addons/modules/extensions_framework/ui.py
 share/blender/scripts/addons/modules/extensions_framework/util.py
 share/blender/scripts/addons/modules/extensions_framework/validate.py
-share/blender/scripts/addons/modules/geometry_utils.py
-share/blender/scripts/addons/modules/misc_utils.py
 share/blender/scripts/addons/modules/rna_wiki_reference.py
 share/blender/scripts/addons/modules/selection_utils.py
-share/blender/scripts/addons/modules/ui_utils.py
 share/blender/scripts/addons/netrender/
 share/blender/scripts/addons/netrender/__init__.py
 share/blender/scripts/addons/netrender/baking.py
@@ -1465,7 +1467,7 @@ share/blender/scripts/addons/netrender/thumbnail.py
 share/blender/scripts/addons/netrender/ui.py
 share/blender/scripts/addons/netrender/utils.py
 share/blender/scripts/addons/netrender/versioning.py
-share/blender/scripts/addons/node_efficiency_tools.py
+share/blender/scripts/addons/node_wrangler.py
 share/blender/scripts/addons/object_add_chain.py
 share/blender/scripts/addons/object_animrenderbake.py
 share/blender/scripts/addons/object_cloud_gen.py
@@ -1490,6 +1492,7 @@ share/blender/scripts/addons/object_print3d_utils/report.py
 share/blender/scripts/addons/object_print3d_utils/todo.rst
 share/blender/scripts/addons/object_print3d_utils/ui.py
 share/blender/scripts/addons/paint_palette.py
+share/blender/scripts/addons/render_auto_tile_size.py
 share/blender/scripts/addons/render_copy_settings/
 share/blender/scripts/addons/render_copy_settings/__init__.py
 share/blender/scripts/addons/render_copy_settings/operator.py
@@ -1499,6 +1502,7 @@ share/blender/scripts/addons/render_copy_settings/translations.py
 share/blender/scripts/addons/render_freestyle_svg.py
 share/blender/scripts/addons/render_povray/
 share/blender/scripts/addons/render_povray/__init__.py
+share/blender/scripts/addons/render_povray/df3.py
 share/blender/scripts/addons/render_povray/render.py
 share/blender/scripts/addons/render_povray/ui.py
 share/blender/scripts/addons/render_povray/update_files.py
@@ -1569,8 +1573,6 @@ share/blender/scripts/addons/rigify/rigs/pitchipoy/tentacle.py
 share/blender/scripts/addons/rigify/rigs/spine.py
 share/blender/scripts/addons/rigify/ui.py
 share/blender/scripts/addons/rigify/utils.py
-share/blender/scripts/addons/sequencer_extra_actions/
-share/blender/scripts/addons/sequencer_extra_actions/operators_extra_actions.py
 share/blender/scripts/addons/space_view3d_3d_navigation.py
 share/blender/scripts/addons/space_view3d_copy_attributes.py
 share/blender/scripts/addons/space_view3d_materials_utils.py
@@ -1586,7 +1588,6 @@ share/blender/scripts/addons/system_demo_mode/__init__.py
 share/blender/scripts/addons/system_demo_mode/config.py
 share/blender/scripts/addons/system_demo_mode/demo_mode.py
 share/blender/scripts/addons/system_property_chart.py
-share/blender/scripts/addons/texture_paint_layer_manager.py
 share/blender/scripts/addons/ui_layer_manager.py
 share/blender/scripts/addons/ui_pie_menus_official.py
 share/blender/scripts/addons/ui_translate/
@@ -1643,7 +1644,6 @@ share/blender/scripts/freestyle/styles/sketchy_topology_broken.py
 share/blender/scripts/freestyle/styles/sketchy_topology_preserved.py
 share/blender/scripts/freestyle/styles/split_at_highest_2d_curvatures.py
 share/blender/scripts/freestyle/styles/split_at_tvertices.py
-share/blender/scripts/freestyle/styles/stroke_texture.py
 share/blender/scripts/freestyle/styles/suggestive.py
 share/blender/scripts/freestyle/styles/thickness_fof_depth_discontinuity.py
 share/blender/scripts/freestyle/styles/tipremover.py
@@ -1771,6 +1771,8 @@ share/blender/scripts/presets/framerate/50.py
 share/blender/scripts/presets/framerate/59.94.py
 share/blender/scripts/presets/framerate/60.py
 share/blender/scripts/presets/framerate/Custom.py
+share/blender/scripts/presets/hair_dynamics/
+share/blender/scripts/presets/hair_dynamics/default.py
 share/blender/scripts/presets/interaction/
 share/blender/scripts/presets/interaction/3dsmax.py
 share/blender/scripts/presets/interaction/blender.py
@@ -1779,8 +1781,10 @@ share/blender/scripts/presets/interface_theme/
 share/blender/scripts/presets/interface_theme/back_to_black.xml
 share/blender/scripts/presets/interface_theme/blender_24x.xml
 share/blender/scripts/presets/interface_theme/elsyiun.xml
+share/blender/scripts/presets/interface_theme/flatty_light.xml
 share/blender/scripts/presets/interface_theme/graph.xml
 share/blender/scripts/presets/interface_theme/hexagon.xml
+share/blender/scripts/presets/interface_theme/rtheme.xml
 share/blender/scripts/presets/interface_theme/science_lab.xml
 share/blender/scripts/presets/interface_theme/softimage.xml
 share/blender/scripts/presets/interface_theme/ubuntu_ambiance.xml
@@ -1803,6 +1807,10 @@ share/blender/scripts/presets/render/TV_NTSC_16_colon_9.py
 share/blender/scripts/presets/render/TV_NTSC_4_colon_3.py
 share/blender/scripts/presets/render/TV_PAL_16_colon_9.py
 share/blender/scripts/presets/render/TV_PAL_4_colon_3.py
+share/blender/scripts/presets/safe_areas/
+share/blender/scripts/presets/safe_areas/14_colon_9_in_16_colon_9.py
+share/blender/scripts/presets/safe_areas/16_colon_9.py
+share/blender/scripts/presets/safe_areas/4_colon_3_in_16_colon_9.py
 share/blender/scripts/presets/sss/
 share/blender/scripts/presets/sss/apple.py
 share/blender/scripts/presets/sss/chicken.py

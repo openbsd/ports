@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2015/01/10 00:30:48 pascal Exp $
+# $OpenBSD: Makefile,v 1.66 2015/04/01 21:26:40 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.73
+DISTNAME =	blender-2.74
 
 CATEGORIES =	graphics
 
@@ -31,7 +31,8 @@ CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DWITH_INTERNATIONAL=OFF \
 			-DWITH_RAYOPTIMIZATION=OFF \
 			-DWITH_OPENCOLORIO=ON \
-			-DWITH_SYSTEM_OPENJPEG=ON
+			-DWITH_SYSTEM_OPENJPEG=ON \
+			-DWITH_CPU_SSE=OFF
 
 BUILD_DEPENDS =	devel/gflags
 LIB_DEPENDS =	graphics/png \
