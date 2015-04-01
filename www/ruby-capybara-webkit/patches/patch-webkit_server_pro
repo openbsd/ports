@@ -1,9 +1,0 @@
-$OpenBSD: patch-webkit_server_pro,v 1.1.1.1 2012/12/20 16:22:28 jeremy Exp $
---- webkit_server.pro.orig	Tue Jan 31 10:12:52 2012
-+++ webkit_server.pro	Tue Jan 31 10:13:30 2012
-@@ -1,4 +1,4 @@
- TEMPLATE = subdirs
- CONFIG += ordered
- SUBDIRS += src/webkit_server.pro
--
-+unix:LIBS += -pthread

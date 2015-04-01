@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:03 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/04/01 20:55:45 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/Appraisals
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
 ${GEM_LIB}/gems/${DISTNAME}/GOALS
@@ -13,16 +14,17 @@ ${GEM_LIB}/gems/${DISTNAME}/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/NEWS.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/Vagrantfile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/Info.plist
 @bin ${GEM_LIB}/gems/${DISTNAME}/bin/webkit_server
 ${GEM_LIB}/gems/${DISTNAME}/capybara-webkit.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/gemfiles/
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/1.0.gemfile
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/1.0.gemfile.lock
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/1.1.gemfile
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/1.1.gemfile.lock
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.3.gemfile
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.3.gemfile.lock
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.4.gemfile
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.4.gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara-webkit.rb
@@ -46,16 +48,23 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/cookie_jar_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/driver_rendering_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/driver_resize_window_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/driver_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/errors_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/
-${GEM_LIB}/gems/${DISTNAME}/spec/integration/driver_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/session_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/selenium_compatibility_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/self_signed_ssl_cert.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/app_runner.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers/
+${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers/include_response.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/output_writer.rb
 ${GEM_LIB}/gems/${DISTNAME}/templates/
 ${GEM_LIB}/gems/${DISTNAME}/templates/Command.cpp
 ${GEM_LIB}/gems/${DISTNAME}/templates/Command.h
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/testignoredebugoutput.cpp
+${GEM_LIB}/gems/${DISTNAME}/test/testwebkitserver.pro
+${GEM_LIB}/gems/${DISTNAME}/vagrant_setup.sh
 ${GEM_LIB}/gems/${DISTNAME}/webkit_server.pro
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
