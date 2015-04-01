@@ -1,0 +1,2 @@
+Gmail users upgrading from isync-1.0.x, note: now mbsync recurses into "[Gmail]"
+IMAP folder, so changes to mbsync configuration may be needed.
