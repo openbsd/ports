@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/20 16:20:31 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/01 20:52:37 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xpath/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xpath.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/dsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xpath/expression.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xpath/html.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/literal.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/xpath/renderer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xpath/union.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xpath/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
