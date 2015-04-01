@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.5 2015/03/16 01:59:27 jsg Exp $
---- Makefile.orig	Thu Jan 29 16:31:24 2015
-+++ Makefile	Thu Jan 29 19:30:51 2015
-@@ -18,7 +18,7 @@ VERSION     = 1.34b
+$OpenBSD: patch-Makefile,v 1.6 2015/04/01 14:57:07 gsoares Exp $
+--- Makefile.orig	Fri Mar 27 03:47:58 2015
++++ Makefile	Wed Apr  1 10:36:53 2015
+@@ -18,7 +18,7 @@ VERSION     = 1.58b
  
  PREFIX     ?= /usr/local
  BIN_PATH    = $(PREFIX)/bin
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.5 2015/03/16 01:59:27 jsg Exp $
  DOC_PATH    = $(PREFIX)/share/doc/afl
  MISC_PATH   = $(PREFIX)/share/afl
  
-@@ -37,7 +37,7 @@ endif
+@@ -41,7 +41,7 @@ endif
  
  COMM_HDR    = alloc-inl.h config.h debug.h types.h
  
