@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/30 10:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=		library to write SQL queries
 
@@ -8,7 +8,7 @@ PKGNAME=		py-sql-${MODPY_EGG_VERSION}
 
 CATEGORIES=		databases
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/python-sql/}
+MODPY_PI =		Yes
 HOMEPAGE=		https://pypi.python.org/pypi/python-sql/
 
 # BSD

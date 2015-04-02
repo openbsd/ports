@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/15 10:03:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =		command-line client for speedtest.net bandwidth tester
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/sivel/speedtest-cli
 # Apache 2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=s/speedtest-cli/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

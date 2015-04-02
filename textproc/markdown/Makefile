@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/08 20:18:34 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	lang/python
 TEST_DEPENDS=	devel/py-nose
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=M/Markdown/}
+MODPY_PI =	Yes
 
 do-test:
 	cd ${WRKSRC}/tests && nosetests

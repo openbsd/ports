@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/09/29 07:02:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -15,7 +15,7 @@ MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=n/nose/}
+MODPY_PI =		Yes
 
 BUILD_DEPENDS=		archivers/gtar
 MODULES=		lang/python

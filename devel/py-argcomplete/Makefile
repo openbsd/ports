@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/10 13:59:06 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	Bash tab completion for argparse
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://packages.python.org/argcomplete
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=a/argcomplete/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

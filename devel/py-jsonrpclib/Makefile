@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =		json-rpc over http
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://pypi.python.org/pypi/jsonrpclib/
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=j/jsonrpclib/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

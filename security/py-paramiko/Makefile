@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/12/20 07:52:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.39 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT = 	Python module that implements the SSH2 protocol
 
@@ -14,7 +14,7 @@ MAINTAINER = 		Benoit Lecocq <benoit@openbsd.org>
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES = 		${MASTER_SITE_PYPI:=p/paramiko/}
+MODPY_PI = 		Yes
 
 MODULES = 		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	helper to test wsgi applications
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://webtest.pythonpaste.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebTest/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

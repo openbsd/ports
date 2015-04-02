@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/11/28 22:25:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/02 14:21:17 jasper Exp $
 COMMENT=	Python syntax highlighter
 
 MODPY_EGG_VERSION = 2.0.1
@@ -15,7 +15,7 @@ PKG_ARCH=	*
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=P/Pygments/}
+MODPY_PI =	Yes
 
 MODPY_SETUPTOOLS=	Yes
 TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}

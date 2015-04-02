@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/12 07:24:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT=		the simplest possible mock library, for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://pypi.python.org/pypi/MiniMock
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=M/MiniMock/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

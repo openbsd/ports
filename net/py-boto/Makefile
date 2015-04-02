@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/12 20:35:50 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =	python interface to amazon web services
 
@@ -8,7 +8,7 @@ PKGNAME = 	py-${DISTNAME}
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/boto/boto
-MASTER_SITES =	${MASTER_SITE_PYPI:=b/boto/}
+MODPY_PI =	Yes
 
 MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 

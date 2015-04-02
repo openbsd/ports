@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/12/31 08:42:27 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 BROKEN-hppa=	OOM on src/lxml/lxml.etree.c
@@ -13,7 +13,7 @@ HOMEPAGE=	http://lxml.de/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=l/lxml/}
+MODPY_PI =	Yes
 EXTRACT_SUFX=	.tar.gz
 
 WANTLIB=	m xml2 z exslt xslt ${MODPY_WANTLIB}

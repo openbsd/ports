@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/29 19:59:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		random assortment of WSGI servers, middleware
 
@@ -16,7 +16,7 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=f/flup/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

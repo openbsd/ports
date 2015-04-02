@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/17 00:47:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		WSGI utility collection
 
@@ -11,7 +11,7 @@ CATEGORIES =		www devel
 
 HOMEPAGE =		http://werkzeug.pocoo.org/
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=W/Werkzeug/}
+MODPY_PI =		Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =	help visualize profiling data collected with the cProfile
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.bitbucket.org/ogrisel/pyprof2calltree/
 # BSD-derived
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=p/pyprof2calltree/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

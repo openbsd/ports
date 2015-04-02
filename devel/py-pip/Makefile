@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/08 23:38:55 edd Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =		Python easy_install replacement
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.pip-installer.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=p/pip/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT=	object interface infrastructure from Zope 3
 
@@ -16,7 +16,7 @@ MAINTAINER=	Eric Faurot <eric@openbsd.org>
 # Zope Public License
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=z/zope.interface/}
+MODPY_PI =	Yes
 
 MODULES=	lang/python
 

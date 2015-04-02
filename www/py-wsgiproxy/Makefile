@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/22 00:16:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	http proxying tools for wsgi apps
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://pythonpaste.org/wsgiproxy/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=W/WSGIProxy/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

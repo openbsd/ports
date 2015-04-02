@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/27 16:11:24 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		ssl.match_hostname() function from Python 3.4
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://pypi.python.org/pypi/backports.ssl_match_hostname
 # Python Software Foundation License
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=b/backports.ssl_match_hostname/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

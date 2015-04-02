@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/09 17:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:12 jasper Exp $
 
 COMMENT =	CLI tools to manage music collections
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://beets.radbox.org/
 # MIT
 PERMIT_PACKAGE_CDROM =  Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=b/beets/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

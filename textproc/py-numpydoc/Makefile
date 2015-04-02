@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/28 20:05:30 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT =		Sphinx extension to support docstrings in Numpy format
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/numpy/numpydoc
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=n/numpydoc/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

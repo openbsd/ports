@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/23 11:06:39 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=d/dulwich/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

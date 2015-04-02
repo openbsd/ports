@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/28 19:52:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=		library for working with the PuppetDB API
 
@@ -16,7 +16,7 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/pypuppetdb/}
+MODPY_PI =		Yes
 
 RUN_DEPENDS=		www/py-requests>=1.2.3
 BUILD_DEPENDS=		${RUN_DEPENDS}

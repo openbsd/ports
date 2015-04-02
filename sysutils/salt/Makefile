@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2015/03/31 06:17:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2015/04/02 14:21:17 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -27,7 +27,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=s/salt/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

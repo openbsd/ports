@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/29 19:39:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	Python driver for mongodb
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	pthread ${MODPY_WANTLIB}
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=p/pymongo/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

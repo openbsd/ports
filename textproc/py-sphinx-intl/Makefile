@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1 2014/10/13 00:47:30 yasuoka Exp $
+#	$OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT =		internationalization helper for Sphinx
 
@@ -13,7 +13,7 @@ HOMEPAGE = 		https://pypi.python.org/pypi/sphinx-intl
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=s/sphinx-intl/}
+MODPY_PI =		Yes
 
 
 MODULES =		lang/python

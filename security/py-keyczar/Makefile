@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/25 07:35:46 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT =		toolkit for safe and simple cryptography
 
@@ -16,7 +16,7 @@ MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
 # Apache2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=p/python-keyczar/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/16 08:59:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		Python implementation of ECDSA cryptography
 
@@ -14,7 +14,7 @@ MAINTAINER = 		Benoit Lecocq <benoit@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM = 	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=e/ecdsa/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

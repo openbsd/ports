@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/31 12:05:06 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	Python interface to Discogs website
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/discogs/discogs_client
 # MIT
 PERMIT_PACKAGE_CDROM =  Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=d/discogs-client/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/03/15 07:15:09 rpointel Exp $
+# $OpenBSD: Makefile,v 1.34 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT =	high-level Python web framework
 
@@ -15,7 +15,7 @@ MAINTAINER =	Ryan Boggs <rmboggs@gmail.com>
 # BSD License
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=D/Django/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

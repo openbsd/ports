@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=		Natural Language ToolKit
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.nltk.org/
 # Apache License, Version 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=n/nltk/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

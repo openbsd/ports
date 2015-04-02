@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	Python MPD client library
 
@@ -15,7 +15,7 @@ MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=p/python-mpd/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

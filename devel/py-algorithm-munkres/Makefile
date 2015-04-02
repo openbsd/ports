@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/11 20:53:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	munkres algorithm for the Assignment Problem
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://software.clapper.org/munkres/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=/m/munkres/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

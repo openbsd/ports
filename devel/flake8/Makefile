@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/18 12:10:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
@@ -14,7 +14,7 @@ MAINTAINER =		Bertrand Janin <b@janin.com>
 # MIT 
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=f/flake8/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

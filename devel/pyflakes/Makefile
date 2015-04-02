@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/04 05:58:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		passive checker of Python programs
 
@@ -14,7 +14,7 @@ MAINTAINER =		frantisek holop <minusf@obiit.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=p/pyflakes/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

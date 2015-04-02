@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/05/01 13:05:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =	code coverage measurement for Python
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	${MODPY_WANTLIB} pthread
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=c/coverage/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

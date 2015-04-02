@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/22 15:06:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	python bindings for Chromaprint and the Acoustid API
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/sampsyo/pyacoustid/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=p/pyacoustid/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/23 13:33:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=		XML bomb protection for Python stdlib modules
 
@@ -10,7 +10,7 @@ CATEGORIES=		textproc www
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=d/defusedxml/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

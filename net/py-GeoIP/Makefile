@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/13 12:29:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		GeoIP Python API
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} GeoIP>=8 pthread
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=G/GeoIP/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	examples/*.py

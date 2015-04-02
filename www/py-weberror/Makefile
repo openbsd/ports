@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/06/04 07:57:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	web error handling and exception catching
 
@@ -12,7 +12,7 @@ CATEGORIES =	www devel
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebError/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

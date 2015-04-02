@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/15 10:17:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		curses-like terminal wrapper
 
@@ -14,7 +14,7 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=c/curtsies/}
+MODPY_PI =		Yes
 
 RUN_DEPENDS =		devel/py-blessings
 

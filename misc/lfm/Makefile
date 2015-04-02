@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/22 22:58:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		powerful curses interface python file manager
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://katxi.org/devel/lfm/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	 Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=l/lfm/}
+MODPY_PI =		Yes
 
 MAINTAINER =		Patrikas Kugrinas <pkugrinas@gmail.com>
 

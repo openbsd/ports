@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/02 07:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT=	futures implementation for Python
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=f/futures/}
+MODPY_PI =	Yes
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes

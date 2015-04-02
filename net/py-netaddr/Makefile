@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/01 20:46:24 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		network address representation and manipulation library
 
@@ -15,7 +15,7 @@ MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=n/netaddr/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

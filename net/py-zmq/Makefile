@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/23 12:08:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		${MODPY_WANTLIB} pthread zmq
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=p/pyzmq/} \
-			https://github.com/downloads/zeromq/pyzmq/
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

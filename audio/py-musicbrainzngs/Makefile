@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/12 16:04:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	python bindings for musicbrainz NGS webservice
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://python-musicbrainzngs.readthedocs.org/
 # BSD
 PERMIT_PACKAGE_CDROM =  Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=/m/musicbrainzngs/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

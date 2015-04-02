@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/10 08:09:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT =		common testing tools used in the Salt Stack projects
 
@@ -15,7 +15,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=S/SaltTesting/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 NO_TEST =		Yes

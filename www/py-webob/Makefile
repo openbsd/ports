@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/05/08 16:20:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	wsgi request and response object
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://webob.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebOb/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

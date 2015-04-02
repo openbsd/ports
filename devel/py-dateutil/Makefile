@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/12/25 19:44:47 shadchin Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		Python API for advanced date calculations
 
@@ -13,7 +13,7 @@ MAINTAINER =		frantisek holop <minusf@obiit.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=p/python-dateutil/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

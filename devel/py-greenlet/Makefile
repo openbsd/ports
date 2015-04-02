@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =	lightweight in-process concurrent programming
 # see slp_platformselect.h
@@ -15,7 +15,7 @@ HOMEPAGE =	http://pypi.python.org/pypi/greenlet
 # BSD-like
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=g/greenlet/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

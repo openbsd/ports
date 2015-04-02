@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/04 09:28:31 giovanni Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =	module for RFC 5451 Authentication-Results Headers
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://launchpad.net/authentication-results-python
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=a/authres/}
+MODPY_PI =	Yes
 
 MODULES	=	lang/python
 

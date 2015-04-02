@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/12 23:08:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		python package to check certificates using the OpenBSD CA
 
@@ -15,7 +15,7 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=c/certifi/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

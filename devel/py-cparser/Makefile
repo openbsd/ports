@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/08 14:29:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT=		C parser in pure Python
 
@@ -10,7 +10,7 @@ CATEGORIES=		devel textproc
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/pycparser/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

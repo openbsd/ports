@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/28 21:07:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=		implements an XML/HTML/XHTML markup safe string
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://pypi.python.org/pypi/MarkupSafe/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=M/MarkupSafe/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

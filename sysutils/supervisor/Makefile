@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/15 10:13:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=		system to monitor and control processes
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://supervisord.org/
 # BSD-derived
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=s/supervisor/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

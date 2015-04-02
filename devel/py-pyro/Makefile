@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/14 13:56:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =	distributed object middleware for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://irmen.home.xs4all.nl/pyro3/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=P/Pyro/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

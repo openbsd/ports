@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/14 06:38:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=	spellchecking library for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://packages.python.org/pyenchant/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=p/pyenchant/}
+MODPY_PI =	Yes
 
 MODULES=	lang/python
 

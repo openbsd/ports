@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=		fixed size round-robin style database
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=w/whisper/}
+MODPY_PI =		Yes
 
 RUN_DEPENDS=		net/rrdtool,-python
 

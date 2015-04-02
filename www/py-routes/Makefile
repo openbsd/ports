@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	re-implementation of the rails routes system
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://routes.groovie.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=R/Routes/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

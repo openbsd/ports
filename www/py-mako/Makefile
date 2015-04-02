@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/09/29 07:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	super-fast templating language
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://www.makotemplates.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=M/Mako/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/04 23:45:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=	test network latency under load via netperf
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/tohojo/netperf-wrapper
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=n/netperf-wrapper/}
+MODPY_PI =	Yes
 
 MODULES=	lang/python
 RUN_DEPENDS=	benchmarks/netperf \

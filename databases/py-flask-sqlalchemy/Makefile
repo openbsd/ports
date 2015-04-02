@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/27 09:12:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:13 jasper Exp $
 
 REVISION=0
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://github.com/mitsuhiko/flask-sqlalchemy/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=F/Flask-SQLAlchemy/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

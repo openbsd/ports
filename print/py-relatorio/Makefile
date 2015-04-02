@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT=		templating library able to output odt and pdf files
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://relatorio.openhex.org/
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=r/relatorio/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

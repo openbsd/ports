@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/29 08:11:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		Python classes providing access to network packets
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&t
 # Apache modified
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=i/impacket/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=		complementary command-line interface for Git
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.git-legit.org/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=l/legit/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

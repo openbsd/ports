@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/14 11:27:49 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://pypi.python.org/pypi/pycountry
 # LGPL2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/pycountry/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

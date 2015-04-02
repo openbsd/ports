@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/09/13 18:09:20 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2015/04/02 14:21:13 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX =	.zip
 WANTLIB +=	crypto m pthread ssl z ${MODPY_WANTLIB}
 WANTLIB +=	lib/mysql/mysqlclient_r
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=M/MySQL-python/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 BUILD_DEPENDS =	textproc/py-sphinx

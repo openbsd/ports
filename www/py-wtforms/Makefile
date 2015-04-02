@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/02/08 14:58:21 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT=	flexible forms validation and rendering library
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=W/WTForms/}
+MODPY_PI =		Yes
 EXTRACT_SUFX=		.zip
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/06/03 11:32:18 rpointel Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/02 14:21:13 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -17,8 +17,7 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=p/psycopg2/} \
-		http://initd.org/psycopg/tarballs/PSYCOPG-2-4/
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql

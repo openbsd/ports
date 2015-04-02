@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/27 17:13:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =		python style guide checker
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://github.com/jcrocholl/pep8
 # Expat
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=p/pep8/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

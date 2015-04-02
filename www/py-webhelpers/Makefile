@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	helper functions focused on web applications
 
@@ -11,7 +11,7 @@ CATEGORIES =	www devel
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebHelpers/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

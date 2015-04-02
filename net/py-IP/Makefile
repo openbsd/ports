@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/10/17 07:59:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.29 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =	Python module to handle IPv4 and IPv6 address
 
@@ -14,7 +14,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=I/IPy/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT=		library used to interact with Git repositories
 
@@ -12,7 +12,8 @@ CATEGORIES=		devel
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=G/GitPython/}
+MODPY_PI =		Yes
+MODPY_PI_DIR =		G/GitPython
 
 MODULES=		lang/python
 

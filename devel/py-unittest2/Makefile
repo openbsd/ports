@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/12 10:39:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		backport of new features added to unittest
 
@@ -13,7 +13,7 @@ MAINTAINER =		frantisek holop <minusf@obiit.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=u/unittest2/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/31 21:39:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT=		refactoring library
 
@@ -10,7 +10,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 HOMEPAGE=		http://rope.sf.net/
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=/r/rope/}
+MODPY_PI =		Yes
+MODPY_PI_DIR =		r/rope
 
 MODPY_SETUPTOOLS=	Yes
 

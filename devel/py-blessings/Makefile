@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/15 10:16:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		wrapper around terminal coloring, styling, and positioning
 
@@ -14,7 +14,7 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=b/blessings/}
+MODPY_PI =		Yes
 
 TEST_DEPENDS =		devel/py-nose
 

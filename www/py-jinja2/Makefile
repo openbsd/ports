@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/28 21:04:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
@@ -16,7 +16,7 @@ MAINTAINER =		frantisek holop <minusf@obiit.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=J/Jinja2/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		textproc/py-MarkupSafe${MODPY_FLAVOR}

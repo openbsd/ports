@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/09/29 07:02:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
@@ -16,7 +16,7 @@ MAINTAINER=		Eric Faurot <eric@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/py/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

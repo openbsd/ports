@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/29 07:02:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
@@ -9,7 +9,7 @@ PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=    		devel
 
 HOMEPAGE=		http://babel.pocoo.org/
-MASTER_SITES=		${MASTER_SITE_PYPI:=B/Babel/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 PKG_ARCH=		*

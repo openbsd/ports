@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/16 19:09:10 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT=	buildslave for the buildbot CI system
 
@@ -15,7 +15,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=b/buildbot-slave/}
+MODPY_PI =	Yes
 
 MODULES=	lang/python
 

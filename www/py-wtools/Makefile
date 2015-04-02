@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/23 13:32:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT=		WSDL parsing services package for Python
 
@@ -10,7 +10,7 @@ CATEGORIES=		www
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=w/wstools/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=		backend data caching and persistence daemon for Graphite
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=c/carbon/}
+MODPY_PI =		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		databases/py-whisper \

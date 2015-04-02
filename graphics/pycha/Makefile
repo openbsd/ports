@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT = 		Python charting module
 
@@ -14,7 +14,7 @@ MAINTAINER = 		Niall O Higgins <niallo@openbsd.org>
 # LGPL
 PERMIT_PACKAGE_CDROM = 	Yes
 
-MASTER_SITES = 		${MASTER_SITE_PYPI:=p/pycha/}
+MODPY_PI = 		Yes
 
 MODULES = 		lang/python
 MODPY_SETUPTOOLS = 	Yes

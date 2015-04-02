@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/08 15:28:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:14 jasper Exp $
 
 # XXX: Bump REVISION of the following ports when updating as the _cffi__ hash
 # changes: devel/libgit/py-git2
@@ -13,7 +13,7 @@ CATEGORIES=		devel
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=c/cffi/}
+MODPY_PI =		Yes
 
 WANTLIB=		ffi pthread ${MODPY_WANTLIB}
 

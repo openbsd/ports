@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/30 21:43:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	very small text templating language
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://pythonpaste.org/tempita/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=T/Tempita/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =		Object Relational Manager
 
@@ -16,7 +16,7 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=S/SQLObject/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-formencode

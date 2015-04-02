@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/07 21:31:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =		INI parser for Python
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://code.google.com/p/iniparse/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=i/iniparse/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

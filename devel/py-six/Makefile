@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/17 01:44:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =	Python 2 and 3 compatibility library
 MODPY_EGG_VERSION =	1.9.0
@@ -12,7 +12,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=s/six/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

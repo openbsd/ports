@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/02 20:12:47 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT=	Python module for GnuPG interface
 
@@ -13,7 +13,8 @@ HOMEPAGE=	https://bitbucket.org/vinay.sajip/python-gnupg
 # BSD 3-clause
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=p/python-gnupg/}
+MODPY_PI =	Yes
+MODPY_PI_DIR =	p/python-gnupg
 
 MODULES=	lang/python
 

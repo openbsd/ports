@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/12/25 18:45:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT = 	microframework based on Werkzeug and Jinja 2
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://flask.pocoo.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=F/Flask/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

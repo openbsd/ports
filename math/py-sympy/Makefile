@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/28 14:56:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		computer algebra system (CAS) in Python
 
@@ -12,8 +12,7 @@ HOMEPAGE =		http://sympy.org
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=s/sympy/} \
-			https://sympy.googlecode.com/files/
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		devel/ipython

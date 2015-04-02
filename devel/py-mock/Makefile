@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/28 23:36:28 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT=		python mocking and patching library for testing
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.voidspace.org.uk/python/mock/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=m/mock/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

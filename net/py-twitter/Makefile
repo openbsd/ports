@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/01/22 00:25:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT=		twitter python module
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://mike.verdone.ca/twitter/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=t/twitter/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

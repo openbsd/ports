@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/29 07:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://beaker.readthedocs.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=B/Beaker/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/13 11:55:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =	Python subprocess interface
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/amoffat/sh
 # MIT
 PERMIT_PACKAGE_CDROM =  Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=s/sh/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 NO_TEST =	Yes

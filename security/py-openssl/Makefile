@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/04/21 19:17:50 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	crypto ssl ${MODPY_WANTLIB}
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=p/pyOpenSSL/}
+MODPY_PI =	Yes
 
 MODULES=	lang/python
 

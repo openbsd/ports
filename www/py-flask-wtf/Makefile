@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/22 08:53:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT=	simple integration of Flask and WTForms
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=F/Flask-WTF/}
+MODPY_PI =		Yes
 
 MODPY_SETUPTOOLS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/26 12:09:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT=		Python Imaging Library (fork)
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 FLAVORS=		python3
 FLAVOR?=
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=P/Pillow/}
+MODPY_PI =		Yes
 EXTRACT_SUFX=		.zip
 
 WANTLIB=		freetype jpeg lcms2 pthread tiff webp z \

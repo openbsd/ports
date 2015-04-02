@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/01 17:45:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =		send files to the trash natively
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/hsoft/send2trash
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=S/Send2Trash/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

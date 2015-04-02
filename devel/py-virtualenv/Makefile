@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/12 08:27:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		virtual Python environment builder
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.virtualenv.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=v/virtualenv/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 BUILD_DEPENDS =		textproc/py-sphinx

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/01/24 20:00:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		tools for using web server gateway interface stack
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://pythonpaste.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=P/Paste/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-flup

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/21 13:20:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT =		classes and setuptools plugin for Mercurial repositories
 
@@ -15,7 +15,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=h/hgtools/}
+MODPY_PI =		Yes
 EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python

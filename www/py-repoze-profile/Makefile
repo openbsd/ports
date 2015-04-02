@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/03 23:00:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	aggregate profiling for wsgi requests
 
@@ -12,7 +12,7 @@ CATEGORIES =	www devel
 # BSD-derived
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=r/repoze.profile/}
+MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-pyprof2calltree
 TEST_DEPENDS = ${RUN_DEPENDS}

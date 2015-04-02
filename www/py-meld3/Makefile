@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/03 23:02:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		html/xml templating engine
 
@@ -15,7 +15,7 @@ MAINTAINER =		frantisek holop <minusf@obiit.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=m/meld3/}
+MODPY_PI =	Yes
 
 MODULES =		lang/python
 

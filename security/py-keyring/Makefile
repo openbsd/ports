@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/21 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=		store and access your passwords safely
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://pypi.python.org/pypi/keyring
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=k/keyring/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

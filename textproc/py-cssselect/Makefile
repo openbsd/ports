@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/09 13:57:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT =	parse CSS3 Selectors and translates them to XPath 1.0
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://pypi.python.org/pypi/cssselect
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=c/cssselect/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/18 23:02:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:15 jasper Exp $
 
 MODPY_EGG_VERSION =	3.4.0.3
 COMMENT =	backport of functools.singledispatch to Python 2.6-3.3
@@ -12,7 +12,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=s/singledispatch/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

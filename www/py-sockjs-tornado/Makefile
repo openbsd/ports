@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/01 20:48:39 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		sockjs python server implementation for tornado
 
@@ -15,7 +15,7 @@ MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=s/sockjs-tornado/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

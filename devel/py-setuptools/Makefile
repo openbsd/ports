@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/09/29 07:07:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
@@ -11,7 +11,7 @@ PKG_ARCH=		*
 
 REVISION =		2
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=s/setuptools/}
+MODPY_PI =	Yes
 HOMEPAGE=	http://peak.telecommunity.com/DevCenter/setuptools
 
 # Zope Public License or Python Software Foundation license

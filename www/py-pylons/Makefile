@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =	rapid web application development framework
 
@@ -14,7 +14,8 @@ HOMEPAGE =	http://www.pylonshq.com/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=P/Pylons/}
+MODPY_PI =	Yes
+MODPY_PI_DIR =	P/Pylons
 
 MODULES =	lang/python
 

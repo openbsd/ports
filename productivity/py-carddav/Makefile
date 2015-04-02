@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/04 08:16:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT=	console CardDAV client with mutt support
 
@@ -13,7 +13,7 @@ CATEGORIES=		productivity
 # Expat/MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/pyCardDAV/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

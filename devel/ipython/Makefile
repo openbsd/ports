@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/12/21 05:01:42 daniel Exp $
+# $OpenBSD: Makefile,v 1.32 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -39,7 +39,7 @@ BUILD_DEPENDS =		textproc/py-sphinx \
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=i/ipython/}
+MODPY_PI =	Yes
 
 pre-patch:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python

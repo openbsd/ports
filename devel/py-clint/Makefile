@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/03 11:19:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:14 jasper Exp $
 
 COMMENT =		command line interface tools for Python
 
@@ -13,7 +13,7 @@ MAINTAINER =		frantisek holop <minusf@obiit.org>
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=c/clint/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 

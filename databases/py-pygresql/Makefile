@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT =	PostgreSQL module for Python
 
@@ -20,7 +20,7 @@ WANTLIB +=	pq>=5 ${MODPY_WANTLIB} pthread
 BUILD_DEPENDS =	databases/postgresql,-server
 RUN_DEPENDS =	databases/postgresql,-main
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=P/PyGreSQL/}
+MODPY_PI =	Yes
 EXTRACT_SUFX =	.tgz
 NO_TEST =	Yes
 

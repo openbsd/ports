@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/04 21:41:43 rpe Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT =		crypto and ssl toolkit for python
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		crypto pthread ssl ${MODPY_WANTLIB}
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=M/M2Crypto/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

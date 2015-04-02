@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:17 jasper Exp $
 
 COMMENT=		library to implement a Unix daemon process
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://pypi.python.org/pypi/python-daemon/
 # PSF-2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/python-daemon/}
+MODPY_PI =		Yes
 
 MODULES=		lang/python
 

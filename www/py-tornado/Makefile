@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/29 20:15:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		scalable, non-blocking web server
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.tornadoweb.org/
 # Apache v2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=t/tornado/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:15 jasper Exp $
 
 COMMENT=	extensions to the Python unit testing framework
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://pypi.python.org/pypi/testtools
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=t/testtools/}
+MODPY_PI =	Yes
 
 MODULES=	lang/python
 

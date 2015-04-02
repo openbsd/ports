@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/25 15:23:38 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT = 	helpers to pass trusted data to untrusted environments
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://pythonhosted.org/itsdangerous/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=i/itsdangerous/}
+MODPY_PI =	Yes
 
 MODULES =	lang/python
 

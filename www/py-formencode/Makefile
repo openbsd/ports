@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/02 14:21:18 jasper Exp $
 
 COMMENT =		HTML form validation, generation, and conversion
 
@@ -15,7 +15,7 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 # PSF
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=F/FormEncode/}
+MODPY_PI =		Yes
 
 MODULES =		devel/gettext \
 			lang/python

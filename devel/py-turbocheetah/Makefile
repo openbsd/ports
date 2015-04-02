@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/02 14:21:16 jasper Exp $
 
 COMMENT=		plugin to support use of Cheetah templates
 
@@ -16,7 +16,8 @@ MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=T/TurboCheetah/}
+MODPY_PI =		Yes
+MODPY_PI_DIR =		T/TurboCheetah
 
 MODULES=		lang/python
 RUN_DEPENDS=		devel/py-cheetah

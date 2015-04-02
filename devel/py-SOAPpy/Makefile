@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/06/23 13:37:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/02 14:21:13 jasper Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -12,7 +12,7 @@ MODULES=	lang/python
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PYPI:=S/SOAPpy/}
+MODPY_PI =	Yes
 EXTRACT_SUFX=	.zip
 
 MODPY_SETUPTOOLS=	Yes

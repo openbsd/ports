@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/09 13:19:36 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/02 14:21:15 jasper Exp $
 
 PKG_ARCH =		*
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://pypi.python.org/pypi/isodate/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=i/isodate/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 
