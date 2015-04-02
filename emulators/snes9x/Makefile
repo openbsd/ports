@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/27 08:11:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/04/02 14:14:33 landry Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
+BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
+BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 
 DISTNAME =	snes9x-1.52-src
 PKGNAME =	${DISTNAME:S/-src//}
