@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/11/13 17:31:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/04/02 17:43:30 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -166,7 +166,6 @@ share/help/C/gnome-help/figures/shell-files.png
 share/help/C/gnome-help/figures/shell-introduction.png
 share/help/C/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/C/gnome-help/figures/shell-lock.png
-share/help/C/gnome-help/figures/shell-message-tray.png
 share/help/C/gnome-help/figures/shell-notification.png
 share/help/C/gnome-help/figures/shell-top-bar-classic.png
 share/help/C/gnome-help/figures/shell-top-bar.png
@@ -202,6 +201,7 @@ share/help/C/gnome-help/files-tilde.page
 share/help/C/gnome-help/files.page
 share/help/C/gnome-help/get-involved.page
 share/help/C/gnome-help/gnome-classic.page
+share/help/C/gnome-help/gnome-version.page
 share/help/C/gnome-help/hardware-auth.page
 share/help/C/gnome-help/hardware-cardreader.page
 share/help/C/gnome-help/hardware-driver.page
@@ -408,6 +408,9 @@ share/help/C/system-admin-guide/index.page
 share/help/C/system-admin-guide/keyboard-layout.page
 share/help/C/system-admin-guide/legal.xml
 share/help/C/system-admin-guide/lockdown-command-line.page
+share/help/C/system-admin-guide/lockdown-file-saving.page
+share/help/C/system-admin-guide/lockdown-printing.page
+share/help/C/system-admin-guide/lockdown-repartitioning.page
 share/help/C/system-admin-guide/login-automatic.page
 share/help/C/system-admin-guide/login-banner.page
 share/help/C/system-admin-guide/login-enterprise.page
@@ -589,7 +592,6 @@ share/help/as/gnome-help/figures/shell-files.png
 share/help/as/gnome-help/figures/shell-introduction.png
 share/help/as/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/as/gnome-help/figures/shell-lock.png
-share/help/as/gnome-help/figures/shell-message-tray.png
 share/help/as/gnome-help/figures/shell-notification.png
 share/help/as/gnome-help/figures/shell-top-bar-classic.png
 share/help/as/gnome-help/figures/shell-top-bar.png
@@ -625,6 +627,7 @@ share/help/as/gnome-help/files-tilde.page
 share/help/as/gnome-help/files.page
 share/help/as/gnome-help/get-involved.page
 share/help/as/gnome-help/gnome-classic.page
+share/help/as/gnome-help/gnome-version.page
 share/help/as/gnome-help/hardware-auth.page
 share/help/as/gnome-help/hardware-cardreader.page
 share/help/as/gnome-help/hardware-driver.page
@@ -977,7 +980,6 @@ share/help/ca/gnome-help/figures/shell-files.png
 share/help/ca/gnome-help/figures/shell-introduction.png
 share/help/ca/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/ca/gnome-help/figures/shell-lock.png
-share/help/ca/gnome-help/figures/shell-message-tray.png
 share/help/ca/gnome-help/figures/shell-notification.png
 share/help/ca/gnome-help/figures/shell-top-bar-classic.png
 share/help/ca/gnome-help/figures/shell-top-bar.png
@@ -1013,6 +1015,7 @@ share/help/ca/gnome-help/files-tilde.page
 share/help/ca/gnome-help/files.page
 share/help/ca/gnome-help/get-involved.page
 share/help/ca/gnome-help/gnome-classic.page
+share/help/ca/gnome-help/gnome-version.page
 share/help/ca/gnome-help/hardware-auth.page
 share/help/ca/gnome-help/hardware-cardreader.page
 share/help/ca/gnome-help/hardware-driver.page
@@ -1365,7 +1368,6 @@ share/help/cs/gnome-help/figures/shell-files.png
 share/help/cs/gnome-help/figures/shell-introduction.png
 share/help/cs/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/cs/gnome-help/figures/shell-lock.png
-share/help/cs/gnome-help/figures/shell-message-tray.png
 share/help/cs/gnome-help/figures/shell-notification.png
 share/help/cs/gnome-help/figures/shell-top-bar-classic.png
 share/help/cs/gnome-help/figures/shell-top-bar.png
@@ -1401,6 +1403,7 @@ share/help/cs/gnome-help/files-tilde.page
 share/help/cs/gnome-help/files.page
 share/help/cs/gnome-help/get-involved.page
 share/help/cs/gnome-help/gnome-classic.page
+share/help/cs/gnome-help/gnome-version.page
 share/help/cs/gnome-help/hardware-auth.page
 share/help/cs/gnome-help/hardware-cardreader.page
 share/help/cs/gnome-help/hardware-driver.page
@@ -1753,7 +1756,6 @@ share/help/de/gnome-help/figures/shell-files.png
 share/help/de/gnome-help/figures/shell-introduction.png
 share/help/de/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/de/gnome-help/figures/shell-lock.png
-share/help/de/gnome-help/figures/shell-message-tray.png
 share/help/de/gnome-help/figures/shell-notification.png
 share/help/de/gnome-help/figures/shell-top-bar-classic.png
 share/help/de/gnome-help/figures/shell-top-bar.png
@@ -1789,6 +1791,7 @@ share/help/de/gnome-help/files-tilde.page
 share/help/de/gnome-help/files.page
 share/help/de/gnome-help/get-involved.page
 share/help/de/gnome-help/gnome-classic.page
+share/help/de/gnome-help/gnome-version.page
 share/help/de/gnome-help/hardware-auth.page
 share/help/de/gnome-help/hardware-cardreader.page
 share/help/de/gnome-help/hardware-driver.page
@@ -2141,7 +2144,6 @@ share/help/el/gnome-help/figures/shell-files.png
 share/help/el/gnome-help/figures/shell-introduction.png
 share/help/el/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/el/gnome-help/figures/shell-lock.png
-share/help/el/gnome-help/figures/shell-message-tray.png
 share/help/el/gnome-help/figures/shell-notification.png
 share/help/el/gnome-help/figures/shell-top-bar-classic.png
 share/help/el/gnome-help/figures/shell-top-bar.png
@@ -2177,6 +2179,7 @@ share/help/el/gnome-help/files-tilde.page
 share/help/el/gnome-help/files.page
 share/help/el/gnome-help/get-involved.page
 share/help/el/gnome-help/gnome-classic.page
+share/help/el/gnome-help/gnome-version.page
 share/help/el/gnome-help/hardware-auth.page
 share/help/el/gnome-help/hardware-cardreader.page
 share/help/el/gnome-help/hardware-driver.page
@@ -2529,7 +2532,6 @@ share/help/es/gnome-help/figures/shell-files.png
 share/help/es/gnome-help/figures/shell-introduction.png
 share/help/es/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/es/gnome-help/figures/shell-lock.png
-share/help/es/gnome-help/figures/shell-message-tray.png
 share/help/es/gnome-help/figures/shell-notification.png
 share/help/es/gnome-help/figures/shell-top-bar-classic.png
 share/help/es/gnome-help/figures/shell-top-bar.png
@@ -2565,6 +2567,7 @@ share/help/es/gnome-help/files-tilde.page
 share/help/es/gnome-help/files.page
 share/help/es/gnome-help/get-involved.page
 share/help/es/gnome-help/gnome-classic.page
+share/help/es/gnome-help/gnome-version.page
 share/help/es/gnome-help/hardware-auth.page
 share/help/es/gnome-help/hardware-cardreader.page
 share/help/es/gnome-help/hardware-driver.page
@@ -2917,7 +2920,6 @@ share/help/fi/gnome-help/figures/shell-files.png
 share/help/fi/gnome-help/figures/shell-introduction.png
 share/help/fi/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/fi/gnome-help/figures/shell-lock.png
-share/help/fi/gnome-help/figures/shell-message-tray.png
 share/help/fi/gnome-help/figures/shell-notification.png
 share/help/fi/gnome-help/figures/shell-top-bar-classic.png
 share/help/fi/gnome-help/figures/shell-top-bar.png
@@ -2953,6 +2955,7 @@ share/help/fi/gnome-help/files-tilde.page
 share/help/fi/gnome-help/files.page
 share/help/fi/gnome-help/get-involved.page
 share/help/fi/gnome-help/gnome-classic.page
+share/help/fi/gnome-help/gnome-version.page
 share/help/fi/gnome-help/hardware-auth.page
 share/help/fi/gnome-help/hardware-cardreader.page
 share/help/fi/gnome-help/hardware-driver.page
@@ -3305,7 +3308,6 @@ share/help/fr/gnome-help/figures/shell-files.png
 share/help/fr/gnome-help/figures/shell-introduction.png
 share/help/fr/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/fr/gnome-help/figures/shell-lock.png
-share/help/fr/gnome-help/figures/shell-message-tray.png
 share/help/fr/gnome-help/figures/shell-notification.png
 share/help/fr/gnome-help/figures/shell-top-bar-classic.png
 share/help/fr/gnome-help/figures/shell-top-bar.png
@@ -3341,6 +3343,7 @@ share/help/fr/gnome-help/files-tilde.page
 share/help/fr/gnome-help/files.page
 share/help/fr/gnome-help/get-involved.page
 share/help/fr/gnome-help/gnome-classic.page
+share/help/fr/gnome-help/gnome-version.page
 share/help/fr/gnome-help/hardware-auth.page
 share/help/fr/gnome-help/hardware-cardreader.page
 share/help/fr/gnome-help/hardware-driver.page
@@ -3693,7 +3696,6 @@ share/help/gl/gnome-help/figures/shell-files.png
 share/help/gl/gnome-help/figures/shell-introduction.png
 share/help/gl/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/gl/gnome-help/figures/shell-lock.png
-share/help/gl/gnome-help/figures/shell-message-tray.png
 share/help/gl/gnome-help/figures/shell-notification.png
 share/help/gl/gnome-help/figures/shell-top-bar-classic.png
 share/help/gl/gnome-help/figures/shell-top-bar.png
@@ -3729,6 +3731,7 @@ share/help/gl/gnome-help/files-tilde.page
 share/help/gl/gnome-help/files.page
 share/help/gl/gnome-help/get-involved.page
 share/help/gl/gnome-help/gnome-classic.page
+share/help/gl/gnome-help/gnome-version.page
 share/help/gl/gnome-help/hardware-auth.page
 share/help/gl/gnome-help/hardware-cardreader.page
 share/help/gl/gnome-help/hardware-driver.page
@@ -4081,7 +4084,6 @@ share/help/gu/gnome-help/figures/shell-files.png
 share/help/gu/gnome-help/figures/shell-introduction.png
 share/help/gu/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/gu/gnome-help/figures/shell-lock.png
-share/help/gu/gnome-help/figures/shell-message-tray.png
 share/help/gu/gnome-help/figures/shell-notification.png
 share/help/gu/gnome-help/figures/shell-top-bar-classic.png
 share/help/gu/gnome-help/figures/shell-top-bar.png
@@ -4117,6 +4119,7 @@ share/help/gu/gnome-help/files-tilde.page
 share/help/gu/gnome-help/files.page
 share/help/gu/gnome-help/get-involved.page
 share/help/gu/gnome-help/gnome-classic.page
+share/help/gu/gnome-help/gnome-version.page
 share/help/gu/gnome-help/hardware-auth.page
 share/help/gu/gnome-help/hardware-cardreader.page
 share/help/gu/gnome-help/hardware-driver.page
@@ -4469,7 +4472,6 @@ share/help/hi/gnome-help/figures/shell-files.png
 share/help/hi/gnome-help/figures/shell-introduction.png
 share/help/hi/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/hi/gnome-help/figures/shell-lock.png
-share/help/hi/gnome-help/figures/shell-message-tray.png
 share/help/hi/gnome-help/figures/shell-notification.png
 share/help/hi/gnome-help/figures/shell-top-bar-classic.png
 share/help/hi/gnome-help/figures/shell-top-bar.png
@@ -4505,6 +4507,7 @@ share/help/hi/gnome-help/files-tilde.page
 share/help/hi/gnome-help/files.page
 share/help/hi/gnome-help/get-involved.page
 share/help/hi/gnome-help/gnome-classic.page
+share/help/hi/gnome-help/gnome-version.page
 share/help/hi/gnome-help/hardware-auth.page
 share/help/hi/gnome-help/hardware-cardreader.page
 share/help/hi/gnome-help/hardware-driver.page
@@ -4857,7 +4860,6 @@ share/help/hu/gnome-help/figures/shell-files.png
 share/help/hu/gnome-help/figures/shell-introduction.png
 share/help/hu/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/hu/gnome-help/figures/shell-lock.png
-share/help/hu/gnome-help/figures/shell-message-tray.png
 share/help/hu/gnome-help/figures/shell-notification.png
 share/help/hu/gnome-help/figures/shell-top-bar-classic.png
 share/help/hu/gnome-help/figures/shell-top-bar.png
@@ -4893,6 +4895,7 @@ share/help/hu/gnome-help/files-tilde.page
 share/help/hu/gnome-help/files.page
 share/help/hu/gnome-help/get-involved.page
 share/help/hu/gnome-help/gnome-classic.page
+share/help/hu/gnome-help/gnome-version.page
 share/help/hu/gnome-help/hardware-auth.page
 share/help/hu/gnome-help/hardware-cardreader.page
 share/help/hu/gnome-help/hardware-driver.page
@@ -5245,7 +5248,6 @@ share/help/id/gnome-help/figures/shell-files.png
 share/help/id/gnome-help/figures/shell-introduction.png
 share/help/id/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/id/gnome-help/figures/shell-lock.png
-share/help/id/gnome-help/figures/shell-message-tray.png
 share/help/id/gnome-help/figures/shell-notification.png
 share/help/id/gnome-help/figures/shell-top-bar-classic.png
 share/help/id/gnome-help/figures/shell-top-bar.png
@@ -5281,6 +5283,7 @@ share/help/id/gnome-help/files-tilde.page
 share/help/id/gnome-help/files.page
 share/help/id/gnome-help/get-involved.page
 share/help/id/gnome-help/gnome-classic.page
+share/help/id/gnome-help/gnome-version.page
 share/help/id/gnome-help/hardware-auth.page
 share/help/id/gnome-help/hardware-cardreader.page
 share/help/id/gnome-help/hardware-driver.page
@@ -5633,7 +5636,6 @@ share/help/it/gnome-help/figures/shell-files.png
 share/help/it/gnome-help/figures/shell-introduction.png
 share/help/it/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/it/gnome-help/figures/shell-lock.png
-share/help/it/gnome-help/figures/shell-message-tray.png
 share/help/it/gnome-help/figures/shell-notification.png
 share/help/it/gnome-help/figures/shell-top-bar-classic.png
 share/help/it/gnome-help/figures/shell-top-bar.png
@@ -5669,6 +5671,7 @@ share/help/it/gnome-help/files-tilde.page
 share/help/it/gnome-help/files.page
 share/help/it/gnome-help/get-involved.page
 share/help/it/gnome-help/gnome-classic.page
+share/help/it/gnome-help/gnome-version.page
 share/help/it/gnome-help/hardware-auth.page
 share/help/it/gnome-help/hardware-cardreader.page
 share/help/it/gnome-help/hardware-driver.page
@@ -6021,7 +6024,6 @@ share/help/ja/gnome-help/figures/shell-files.png
 share/help/ja/gnome-help/figures/shell-introduction.png
 share/help/ja/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/ja/gnome-help/figures/shell-lock.png
-share/help/ja/gnome-help/figures/shell-message-tray.png
 share/help/ja/gnome-help/figures/shell-notification.png
 share/help/ja/gnome-help/figures/shell-top-bar-classic.png
 share/help/ja/gnome-help/figures/shell-top-bar.png
@@ -6057,6 +6059,7 @@ share/help/ja/gnome-help/files-tilde.page
 share/help/ja/gnome-help/files.page
 share/help/ja/gnome-help/get-involved.page
 share/help/ja/gnome-help/gnome-classic.page
+share/help/ja/gnome-help/gnome-version.page
 share/help/ja/gnome-help/hardware-auth.page
 share/help/ja/gnome-help/hardware-cardreader.page
 share/help/ja/gnome-help/hardware-driver.page
@@ -6409,7 +6412,6 @@ share/help/kn/gnome-help/figures/shell-files.png
 share/help/kn/gnome-help/figures/shell-introduction.png
 share/help/kn/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/kn/gnome-help/figures/shell-lock.png
-share/help/kn/gnome-help/figures/shell-message-tray.png
 share/help/kn/gnome-help/figures/shell-notification.png
 share/help/kn/gnome-help/figures/shell-top-bar-classic.png
 share/help/kn/gnome-help/figures/shell-top-bar.png
@@ -6445,6 +6447,7 @@ share/help/kn/gnome-help/files-tilde.page
 share/help/kn/gnome-help/files.page
 share/help/kn/gnome-help/get-involved.page
 share/help/kn/gnome-help/gnome-classic.page
+share/help/kn/gnome-help/gnome-version.page
 share/help/kn/gnome-help/hardware-auth.page
 share/help/kn/gnome-help/hardware-cardreader.page
 share/help/kn/gnome-help/hardware-driver.page
@@ -6797,7 +6800,6 @@ share/help/lv/gnome-help/figures/shell-files.png
 share/help/lv/gnome-help/figures/shell-introduction.png
 share/help/lv/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/lv/gnome-help/figures/shell-lock.png
-share/help/lv/gnome-help/figures/shell-message-tray.png
 share/help/lv/gnome-help/figures/shell-notification.png
 share/help/lv/gnome-help/figures/shell-top-bar-classic.png
 share/help/lv/gnome-help/figures/shell-top-bar.png
@@ -6833,6 +6835,7 @@ share/help/lv/gnome-help/files-tilde.page
 share/help/lv/gnome-help/files.page
 share/help/lv/gnome-help/get-involved.page
 share/help/lv/gnome-help/gnome-classic.page
+share/help/lv/gnome-help/gnome-version.page
 share/help/lv/gnome-help/hardware-auth.page
 share/help/lv/gnome-help/hardware-cardreader.page
 share/help/lv/gnome-help/hardware-driver.page
@@ -7185,7 +7188,6 @@ share/help/mr/gnome-help/figures/shell-files.png
 share/help/mr/gnome-help/figures/shell-introduction.png
 share/help/mr/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/mr/gnome-help/figures/shell-lock.png
-share/help/mr/gnome-help/figures/shell-message-tray.png
 share/help/mr/gnome-help/figures/shell-notification.png
 share/help/mr/gnome-help/figures/shell-top-bar-classic.png
 share/help/mr/gnome-help/figures/shell-top-bar.png
@@ -7221,6 +7223,7 @@ share/help/mr/gnome-help/files-tilde.page
 share/help/mr/gnome-help/files.page
 share/help/mr/gnome-help/get-involved.page
 share/help/mr/gnome-help/gnome-classic.page
+share/help/mr/gnome-help/gnome-version.page
 share/help/mr/gnome-help/hardware-auth.page
 share/help/mr/gnome-help/hardware-cardreader.page
 share/help/mr/gnome-help/hardware-driver.page
@@ -7573,7 +7576,6 @@ share/help/nl/gnome-help/figures/shell-files.png
 share/help/nl/gnome-help/figures/shell-introduction.png
 share/help/nl/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/nl/gnome-help/figures/shell-lock.png
-share/help/nl/gnome-help/figures/shell-message-tray.png
 share/help/nl/gnome-help/figures/shell-notification.png
 share/help/nl/gnome-help/figures/shell-top-bar-classic.png
 share/help/nl/gnome-help/figures/shell-top-bar.png
@@ -7609,6 +7611,7 @@ share/help/nl/gnome-help/files-tilde.page
 share/help/nl/gnome-help/files.page
 share/help/nl/gnome-help/get-involved.page
 share/help/nl/gnome-help/gnome-classic.page
+share/help/nl/gnome-help/gnome-version.page
 share/help/nl/gnome-help/hardware-auth.page
 share/help/nl/gnome-help/hardware-cardreader.page
 share/help/nl/gnome-help/hardware-driver.page
@@ -7961,7 +7964,6 @@ share/help/pa/gnome-help/figures/shell-files.png
 share/help/pa/gnome-help/figures/shell-introduction.png
 share/help/pa/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/pa/gnome-help/figures/shell-lock.png
-share/help/pa/gnome-help/figures/shell-message-tray.png
 share/help/pa/gnome-help/figures/shell-notification.png
 share/help/pa/gnome-help/figures/shell-top-bar-classic.png
 share/help/pa/gnome-help/figures/shell-top-bar.png
@@ -7997,6 +7999,7 @@ share/help/pa/gnome-help/files-tilde.page
 share/help/pa/gnome-help/files.page
 share/help/pa/gnome-help/get-involved.page
 share/help/pa/gnome-help/gnome-classic.page
+share/help/pa/gnome-help/gnome-version.page
 share/help/pa/gnome-help/hardware-auth.page
 share/help/pa/gnome-help/hardware-cardreader.page
 share/help/pa/gnome-help/hardware-driver.page
@@ -8349,7 +8352,6 @@ share/help/pt_BR/gnome-help/figures/shell-files.png
 share/help/pt_BR/gnome-help/figures/shell-introduction.png
 share/help/pt_BR/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/pt_BR/gnome-help/figures/shell-lock.png
-share/help/pt_BR/gnome-help/figures/shell-message-tray.png
 share/help/pt_BR/gnome-help/figures/shell-notification.png
 share/help/pt_BR/gnome-help/figures/shell-top-bar-classic.png
 share/help/pt_BR/gnome-help/figures/shell-top-bar.png
@@ -8385,6 +8387,7 @@ share/help/pt_BR/gnome-help/files-tilde.page
 share/help/pt_BR/gnome-help/files.page
 share/help/pt_BR/gnome-help/get-involved.page
 share/help/pt_BR/gnome-help/gnome-classic.page
+share/help/pt_BR/gnome-help/gnome-version.page
 share/help/pt_BR/gnome-help/hardware-auth.page
 share/help/pt_BR/gnome-help/hardware-cardreader.page
 share/help/pt_BR/gnome-help/hardware-driver.page
@@ -8737,7 +8740,6 @@ share/help/ru/gnome-help/figures/shell-files.png
 share/help/ru/gnome-help/figures/shell-introduction.png
 share/help/ru/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/ru/gnome-help/figures/shell-lock.png
-share/help/ru/gnome-help/figures/shell-message-tray.png
 share/help/ru/gnome-help/figures/shell-notification.png
 share/help/ru/gnome-help/figures/shell-top-bar-classic.png
 share/help/ru/gnome-help/figures/shell-top-bar.png
@@ -8773,6 +8775,7 @@ share/help/ru/gnome-help/files-tilde.page
 share/help/ru/gnome-help/files.page
 share/help/ru/gnome-help/get-involved.page
 share/help/ru/gnome-help/gnome-classic.page
+share/help/ru/gnome-help/gnome-version.page
 share/help/ru/gnome-help/hardware-auth.page
 share/help/ru/gnome-help/hardware-cardreader.page
 share/help/ru/gnome-help/hardware-driver.page
@@ -9125,7 +9128,6 @@ share/help/sl/gnome-help/figures/shell-files.png
 share/help/sl/gnome-help/figures/shell-introduction.png
 share/help/sl/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/sl/gnome-help/figures/shell-lock.png
-share/help/sl/gnome-help/figures/shell-message-tray.png
 share/help/sl/gnome-help/figures/shell-notification.png
 share/help/sl/gnome-help/figures/shell-top-bar-classic.png
 share/help/sl/gnome-help/figures/shell-top-bar.png
@@ -9161,6 +9163,7 @@ share/help/sl/gnome-help/files-tilde.page
 share/help/sl/gnome-help/files.page
 share/help/sl/gnome-help/get-involved.page
 share/help/sl/gnome-help/gnome-classic.page
+share/help/sl/gnome-help/gnome-version.page
 share/help/sl/gnome-help/hardware-auth.page
 share/help/sl/gnome-help/hardware-cardreader.page
 share/help/sl/gnome-help/hardware-driver.page
@@ -9513,7 +9516,6 @@ share/help/sr/gnome-help/figures/shell-files.png
 share/help/sr/gnome-help/figures/shell-introduction.png
 share/help/sr/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/sr/gnome-help/figures/shell-lock.png
-share/help/sr/gnome-help/figures/shell-message-tray.png
 share/help/sr/gnome-help/figures/shell-notification.png
 share/help/sr/gnome-help/figures/shell-top-bar-classic.png
 share/help/sr/gnome-help/figures/shell-top-bar.png
@@ -9549,6 +9551,7 @@ share/help/sr/gnome-help/files-tilde.page
 share/help/sr/gnome-help/files.page
 share/help/sr/gnome-help/get-involved.page
 share/help/sr/gnome-help/gnome-classic.page
+share/help/sr/gnome-help/gnome-version.page
 share/help/sr/gnome-help/hardware-auth.page
 share/help/sr/gnome-help/hardware-cardreader.page
 share/help/sr/gnome-help/hardware-driver.page
@@ -9901,7 +9904,6 @@ share/help/sr@latin/gnome-help/figures/shell-files.png
 share/help/sr@latin/gnome-help/figures/shell-introduction.png
 share/help/sr@latin/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/sr@latin/gnome-help/figures/shell-lock.png
-share/help/sr@latin/gnome-help/figures/shell-message-tray.png
 share/help/sr@latin/gnome-help/figures/shell-notification.png
 share/help/sr@latin/gnome-help/figures/shell-top-bar-classic.png
 share/help/sr@latin/gnome-help/figures/shell-top-bar.png
@@ -9937,6 +9939,7 @@ share/help/sr@latin/gnome-help/files-tilde.page
 share/help/sr@latin/gnome-help/files.page
 share/help/sr@latin/gnome-help/get-involved.page
 share/help/sr@latin/gnome-help/gnome-classic.page
+share/help/sr@latin/gnome-help/gnome-version.page
 share/help/sr@latin/gnome-help/hardware-auth.page
 share/help/sr@latin/gnome-help/hardware-cardreader.page
 share/help/sr@latin/gnome-help/hardware-driver.page
@@ -10289,7 +10292,6 @@ share/help/sv/gnome-help/figures/shell-files.png
 share/help/sv/gnome-help/figures/shell-introduction.png
 share/help/sv/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/sv/gnome-help/figures/shell-lock.png
-share/help/sv/gnome-help/figures/shell-message-tray.png
 share/help/sv/gnome-help/figures/shell-notification.png
 share/help/sv/gnome-help/figures/shell-top-bar-classic.png
 share/help/sv/gnome-help/figures/shell-top-bar.png
@@ -10325,6 +10327,7 @@ share/help/sv/gnome-help/files-tilde.page
 share/help/sv/gnome-help/files.page
 share/help/sv/gnome-help/get-involved.page
 share/help/sv/gnome-help/gnome-classic.page
+share/help/sv/gnome-help/gnome-version.page
 share/help/sv/gnome-help/hardware-auth.page
 share/help/sv/gnome-help/hardware-cardreader.page
 share/help/sv/gnome-help/hardware-driver.page
@@ -10677,7 +10680,6 @@ share/help/ta/gnome-help/figures/shell-files.png
 share/help/ta/gnome-help/figures/shell-introduction.png
 share/help/ta/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/ta/gnome-help/figures/shell-lock.png
-share/help/ta/gnome-help/figures/shell-message-tray.png
 share/help/ta/gnome-help/figures/shell-notification.png
 share/help/ta/gnome-help/figures/shell-top-bar-classic.png
 share/help/ta/gnome-help/figures/shell-top-bar.png
@@ -10713,6 +10715,7 @@ share/help/ta/gnome-help/files-tilde.page
 share/help/ta/gnome-help/files.page
 share/help/ta/gnome-help/get-involved.page
 share/help/ta/gnome-help/gnome-classic.page
+share/help/ta/gnome-help/gnome-version.page
 share/help/ta/gnome-help/hardware-auth.page
 share/help/ta/gnome-help/hardware-cardreader.page
 share/help/ta/gnome-help/hardware-driver.page
@@ -11065,7 +11068,6 @@ share/help/te/gnome-help/figures/shell-files.png
 share/help/te/gnome-help/figures/shell-introduction.png
 share/help/te/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/te/gnome-help/figures/shell-lock.png
-share/help/te/gnome-help/figures/shell-message-tray.png
 share/help/te/gnome-help/figures/shell-notification.png
 share/help/te/gnome-help/figures/shell-top-bar-classic.png
 share/help/te/gnome-help/figures/shell-top-bar.png
@@ -11101,6 +11103,7 @@ share/help/te/gnome-help/files-tilde.page
 share/help/te/gnome-help/files.page
 share/help/te/gnome-help/get-involved.page
 share/help/te/gnome-help/gnome-classic.page
+share/help/te/gnome-help/gnome-version.page
 share/help/te/gnome-help/hardware-auth.page
 share/help/te/gnome-help/hardware-cardreader.page
 share/help/te/gnome-help/hardware-driver.page
@@ -11453,7 +11456,6 @@ share/help/vi/gnome-help/figures/shell-files.png
 share/help/vi/gnome-help/figures/shell-introduction.png
 share/help/vi/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/vi/gnome-help/figures/shell-lock.png
-share/help/vi/gnome-help/figures/shell-message-tray.png
 share/help/vi/gnome-help/figures/shell-notification.png
 share/help/vi/gnome-help/figures/shell-top-bar-classic.png
 share/help/vi/gnome-help/figures/shell-top-bar.png
@@ -11489,6 +11491,7 @@ share/help/vi/gnome-help/files-tilde.page
 share/help/vi/gnome-help/files.page
 share/help/vi/gnome-help/get-involved.page
 share/help/vi/gnome-help/gnome-classic.page
+share/help/vi/gnome-help/gnome-version.page
 share/help/vi/gnome-help/hardware-auth.page
 share/help/vi/gnome-help/hardware-cardreader.page
 share/help/vi/gnome-help/hardware-driver.page
@@ -11841,7 +11844,6 @@ share/help/zh_CN/gnome-help/figures/shell-files.png
 share/help/zh_CN/gnome-help/figures/shell-introduction.png
 share/help/zh_CN/gnome-help/figures/shell-keyboard-shortcuts.png
 share/help/zh_CN/gnome-help/figures/shell-lock.png
-share/help/zh_CN/gnome-help/figures/shell-message-tray.png
 share/help/zh_CN/gnome-help/figures/shell-notification.png
 share/help/zh_CN/gnome-help/figures/shell-top-bar-classic.png
 share/help/zh_CN/gnome-help/figures/shell-top-bar.png
@@ -11877,6 +11879,7 @@ share/help/zh_CN/gnome-help/files-tilde.page
 share/help/zh_CN/gnome-help/files.page
 share/help/zh_CN/gnome-help/get-involved.page
 share/help/zh_CN/gnome-help/gnome-classic.page
+share/help/zh_CN/gnome-help/gnome-version.page
 share/help/zh_CN/gnome-help/hardware-auth.page
 share/help/zh_CN/gnome-help/hardware-cardreader.page
 share/help/zh_CN/gnome-help/hardware-driver.page
