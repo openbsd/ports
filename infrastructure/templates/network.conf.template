@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.193 2014/09/08 21:21:05 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.194 2015/04/02 11:51:37 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -222,10 +222,10 @@ MASTER_SITE_MYSQL+= \
 	ftp://ftp.cbn.net.id/mirror/mysql/
 
 MASTER_SITE_PYPI +=	\
-	http://pypi.python.org/packages/source/
+	https://pypi.python.org/packages/source/
 
 MASTER_SITE_RUBYGEMS += \
-	http://rubygems.org/downloads/
+	https://rubygems.org/downloads/
 
 MASTER_SITE_NPM += \
 	https://registry.npmjs.org/
