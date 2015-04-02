@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.220 2015/03/29 17:44:35 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.221 2015/04/02 11:58:29 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -504,6 +504,7 @@ my $obsolete_reason = {
 	'xawtv' => 5,
 	'qt4-eventsview' => 0,
 	'rioutil' => 3,
+	'chmsee' => 0,
 };
 
 # ->is_base_system($handle, $state):
