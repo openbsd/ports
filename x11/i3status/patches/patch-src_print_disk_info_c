@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_print_disk_info_c,v 1.3 2015/04/02 14:27:20 jasper Exp $
+$OpenBSD: patch-src_print_disk_info_c,v 1.4 2015/04/02 20:16:02 jasper Exp $
 
-Properly guard a Linux-only header
+From ae50bbe2575e8e3234a70f89a7897b544cc4f3f0 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 2 Apr 2015 20:31:17 +0200
+Subject: [PATCH] sys/dkstat.h has been removed from OpenBSD and it's functionality actually lived/lives in sys/sched.h
 
 --- src/print_disk_info.c.orig	Mon Mar 23 11:07:26 2015
 +++ src/print_disk_info.c	Mon Mar 23 11:07:33 2015
