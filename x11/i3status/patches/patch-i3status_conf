@@ -1,20 +1,14 @@
-$OpenBSD: patch-i3status_conf,v 1.12 2014/01/30 13:19:40 jasper Exp $
+$OpenBSD: patch-i3status_conf,v 1.13 2015/04/02 14:27:20 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
 
---- i3status.conf.orig	Sun Jan  5 12:34:06 2014
-+++ i3status.conf	Thu Jan 30 14:00:30 2014
-@@ -1,49 +1,46 @@
- # i3status configuration file.
- # see "man i3status" for documentation.
+--- i3status.conf.orig	Sun Mar 22 18:03:23 2015
++++ i3status.conf	Mon Mar 23 11:04:23 2015
+@@ -7,43 +7,45 @@
+ # If the above line is not correctly displayed, fix your editor first!
  
--# It is important that this file is edited as UTF-8.
--# The following line should contain a sharp s:
--# ß
--# If the above line is not correctly displayed, fix your editor first!
--
  general {
-+	output_format = "i3bar"
++        output_format = "i3bar"
          colors = true
          interval = 5
  }
@@ -23,8 +17,8 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
  order += "disk /"
 -order += "run_watch DHCP"
 -order += "run_watch VPN"
--order += "wireless wlan0"
--order += "ethernet eth0"
+-order += "wireless _first_"
+-order += "ethernet _first_"
 +order += "wireless iwn0"
 +order += "ethernet em0"
  order += "battery 0"
@@ -34,7 +28,7 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 +order += "cpu_temperature acpitz0"
 +order += "volume master"
  
--wireless wlan0 {
+-wireless _first_ {
 -        format_up = "W: (%quality at %essid) %ip"
 +cpu_temperature cpu0 {
 +         format = "C: %degrees C"
@@ -50,7 +44,7 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
          format_down = "W: down"
  }
  
--ethernet eth0 {
+-ethernet _first_ {
 -        # if you use %speed, i3status requires root privileges
 +ethernet em0 {
          format_up = "E: %ip (%speed)"
@@ -73,7 +67,7 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
  tztime local {
          format = "%Y-%m-%d %H:%M:%S"
  }
-@@ -54,4 +51,8 @@ load {
+@@ -54,4 +56,8 @@ load {
  
  disk "/" {
          format = "%avail"
