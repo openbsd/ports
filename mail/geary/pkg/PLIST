@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/12/20 09:47:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/04/02 13:19:55 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -10,28 +10,6 @@ share/applications/geary.desktop
 share/contractor/
 share/contractor/geary-attach.contract
 share/geary/
-share/geary/icons/
-share/geary/icons/archive-symbolic.svg
-share/geary/icons/close-symbolic.svg
-share/geary/icons/detach-symbolic.svg
-share/geary/icons/document-symbolic.svg
-share/geary/icons/edit-symbolic.svg
-share/geary/icons/format-text-remove-symbolic.svg
-share/geary/icons/forward-rtl-symbolic.svg
-share/geary/icons/forward-symbolic.svg
-share/geary/icons/inbox-symbolic.svg
-share/geary/icons/marker-symbolic.svg
-share/geary/icons/outbox-symbolic.svg
-share/geary/icons/reply-all-rtl-symbolic.svg
-share/geary/icons/reply-all-symbolic.svg
-share/geary/icons/reply-rtl-symbolic.svg
-share/geary/icons/reply-symbolic.svg
-share/geary/icons/sent-rtl-symbolic.svg
-share/geary/icons/sent-symbolic.svg
-share/geary/icons/spam-rtl-symbolic.svg
-share/geary/icons/spam-symbolic.svg
-share/geary/icons/tag-rtl-symbolic.svg
-share/geary/icons/tag-symbolic.svg
 share/geary/sql/
 share/geary/sql/version-001.sql
 share/geary/sql/version-002.sql
@@ -55,6 +33,8 @@ share/geary/sql/version-019.sql
 share/geary/sql/version-020.sql
 share/geary/sql/version-021.sql
 share/geary/sql/version-022.sql
+share/geary/sql/version-023.sql
+share/geary/sql/version-024.sql
 share/geary/theming/
 share/geary/theming/message-viewer.css
 share/geary/theming/message-viewer.html
@@ -67,14 +47,15 @@ share/geary/ui/app_menu.interface
 share/geary/ui/certificate_warning_dialog.glade
 share/geary/ui/composer.glade
 share/geary/ui/composer_accelerators.ui
+share/geary/ui/edit_alternate_emails.glade
 share/geary/ui/find_bar.glade
 share/geary/ui/login.glade
 share/geary/ui/message.glade
 share/geary/ui/password-dialog.glade
 share/geary/ui/preferences.glade
 share/geary/ui/remove_confirm.glade
+share/geary/ui/toolbar_empty_menu.ui
 share/geary/ui/toolbar_mark_menu.ui
-share/geary/ui/toolbar_menu.ui
 share/geary/ui/upgrade_dialog.glade
 share/glib-2.0/schemas/org.yorba.geary.gschema.xml
 share/gnome/
@@ -178,10 +159,30 @@ share/icons/hicolor/24x24/apps/geary.png
 share/icons/hicolor/256x256/apps/geary.png
 share/icons/hicolor/32x32/apps/geary.png
 share/icons/hicolor/48x48/apps/geary.png
-share/icons/hicolor/512x512/
-share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/geary.png
+share/icons/hicolor/scalable/actions/close-symbolic.svg
+share/icons/hicolor/scalable/actions/detach-symbolic.svg
+share/icons/hicolor/scalable/actions/edit-symbolic.svg
+share/icons/hicolor/scalable/actions/format-text-remove-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-archive-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-forward-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-forward-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-inbox-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-outbox-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-reply-all-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-reply-all-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-reply-sender-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-reply-sender-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-sent-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-sent-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-spam-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-spam-symbolic.svg
+share/icons/hicolor/scalable/actions/marker-symbolic.svg
+share/icons/hicolor/scalable/actions/tag-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/tag-symbolic.svg
+share/icons/hicolor/scalable/actions/text-x-generic-symbolic.svg
 share/locale/ar/LC_MESSAGES/geary.mo
+share/locale/bs/LC_MESSAGES/geary.mo
 share/locale/ca/LC_MESSAGES/geary.mo
 share/locale/cs/LC_MESSAGES/geary.mo
 share/locale/da/LC_MESSAGES/geary.mo
