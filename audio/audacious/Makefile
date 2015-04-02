@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2015/03/27 08:43:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2015/04/02 14:12:53 landry Exp $
 
 SHARED_ONLY =		Yes
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
-BROKEN-hppa =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
+BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT =		Gtk+3 media player
 
