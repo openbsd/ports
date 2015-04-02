@@ -1,20 +1,20 @@
-$OpenBSD: patch-tests_libpeas_plugins_extension-python_Makefile_in,v 1.4 2014/10/04 19:41:13 jasper Exp $
+$OpenBSD: patch-tests_libpeas_plugins_extension-python_Makefile_in,v 1.5 2015/04/02 19:22:41 jasper Exp $
 
 sed(1) doesn't support -i, so use perl(1) instead.
 
---- tests/libpeas/plugins/extension-python/Makefile.in.orig	Mon Sep 22 16:37:44 2014
-+++ tests/libpeas/plugins/extension-python/Makefile.in	Sat Oct  4 16:54:43 2014
-@@ -559,14 +559,14 @@ extension-py.%:
+--- tests/libpeas/plugins/extension-python/Makefile.in.orig	Tue Mar 24 09:03:03 2015
++++ tests/libpeas/plugins/extension-python/Makefile.in	Thu Apr  2 21:08:33 2015
+@@ -564,14 +564,14 @@ extension-py.%:
  
- extension-python.gschema.xml extension-python3.gschema.xml: extension-py.gschema.xml
+ extension-python.gschema.xml extension-python3.gschema.xml: extension-py.gschema.xml.in
  	$(AM_V_GEN) cp $< $@ && \
 -	$(SED) -i -e 's%PY_LOADER%$(@:extension-%.gschema.xml=%)%g' $@
 +	/usr/bin/perl -pi -e 's%PY_LOADER%$(@:extension-%.gschema.xml=%)%g' $@
  
- extension-python.py extension-python3.py: extension-py.py
+ extension-python.py extension-python3.py: extension-py.py.in
  	$(AM_V_GEN) $(LN_S) $< $@
  
- extension-python.plugin extension-python3.plugin: extension-py.plugin
+ extension-python.plugin extension-python3.plugin: extension-py.plugin.in
  	$(AM_V_GEN) cp $< $@ && \
 -	$(SED) -i -e 's%PY_LOADER%$(@:extension-%.plugin=%)%g' $@
 +	/usr/bin/perl -pi -e 's%PY_LOADER%$(@:extension-%.plugin=%)%g' $@

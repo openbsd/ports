@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2015/03/27 08:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2015/04/02 19:22:41 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	1.12.1
-REVISION=	1
+GNOME_VERSION=	1.14.0
 
 CATEGORIES=	devel
 
@@ -28,7 +27,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs util xcb xcb-render xcb-shm z
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += epoxy ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 
