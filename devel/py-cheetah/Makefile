@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/02 19:38:21 jasper Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
-VERSION=		2.4.4
+MODPY_EGG_VERSION=	2.4.4
 REVISION=		2
-DISTNAME=		Cheetah-${VERSION}
-PKGNAME=		py-cheetah-${VERSION}
+DISTNAME=		Cheetah-${MODPY_EGG_VERSION}
+PKGNAME=		py-cheetah-${MODPY_EGG_VERSION}
 CATEGORIES=		devel textproc
 
 HOMEPAGE=		http://www.cheetahtemplate.org/
@@ -14,16 +14,13 @@ HOMEPAGE=		http://www.cheetahtemplate.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODPY_PI =		Yes
-MODPY_PI_DIR =		C/Cheetah
 
 MODULES=		lang/python
-TEST_DEPENDS=	devel/py-cheetah
+TEST_DEPENDS=		devel/py-cheetah
 MODPY_SETUPTOOLS=	Yes
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
 
 WANTLIB +=		${MODPY_WANTLIB}
-
-SUBST_VARS=		VERSION
 
 RUN_DEPENDS=		textproc/markdown
 
