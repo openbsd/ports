@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/26 09:50:35 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/02 20:23:56 czarkoff Exp $
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/tkabber-plugins/
 share/doc/tkabber-plugins/COPYING
@@ -162,6 +162,7 @@ share/tkabber-plugins/ctcomp/ctcomp.tcl
 share/tkabber-plugins/ctcomp/license.terms
 share/tkabber-plugins/ctcomp/msgs/
 share/tkabber-plugins/ctcomp/msgs/de.msg
+share/tkabber-plugins/ctcomp/msgs/ru.msg
 share/tkabber-plugins/custom-urls/
 share/tkabber-plugins/custom-urls/custom-urls.tcl
 share/tkabber-plugins/custom-urls/msgs/

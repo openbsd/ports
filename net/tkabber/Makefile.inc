@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2014/03/26 09:50:34 kirby Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2015/04/02 20:23:56 czarkoff Exp $
 
 CATEGORIES =		net/tkabber x11
 
@@ -9,7 +9,7 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-VERSION = 		1.1
+VERSION = 		1.1.1
 
 MASTER_SITES =		http://files.jabber.ru/tkabber/
 EXTRACT_SUFX =		.tar.xz
