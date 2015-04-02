@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2015/03/23 13:59:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2015/04/02 18:07:09 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -61,6 +61,8 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}liveregions.${MODP
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}liveregions.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}mathsymbols.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}mathsymbols.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}messages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}messages.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}mouse_review.${MODPY_PYC_MAGIC_TAG}pyc
@@ -163,6 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/label_inference.py
 lib/python${MODPY_VERSION}/site-packages/orca/laptop_keyboardmap.py
 lib/python${MODPY_VERSION}/site-packages/orca/liveregions.py
 lib/python${MODPY_VERSION}/site-packages/orca/logger.py
+lib/python${MODPY_VERSION}/site-packages/orca/mathsymbols.py
 lib/python${MODPY_VERSION}/site-packages/orca/messages.py
 lib/python${MODPY_VERSION}/site-packages/orca/mouse_review.py
 lib/python${MODPY_VERSION}/site-packages/orca/notification_messages.py
@@ -299,9 +302,18 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}braille_generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}braille_generator.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/braille_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/script_utilities.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gajim/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gajim/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gajim/${MODPY_PYCACHE}/
