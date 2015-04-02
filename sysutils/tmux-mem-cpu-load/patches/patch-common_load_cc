@@ -1,0 +1,26 @@
+$OpenBSD: patch-common_load_cc,v 1.1 2015/04/02 13:54:39 jasper Exp $
+
+From 512185a6b388fb0bee2c24ccc464945890e124dd Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 2 Apr 2015 14:14:09 +0200
+Subject: [PATCH] Don't print trailing whitespace for last element
+
+--- common/load.cc.orig	Thu Apr  2 15:53:02 2015
++++ common/load.cc	Thu Apr  2 15:53:08 2015
+@@ -61,7 +61,15 @@ std::string load_string( bool use_colors = false )
+     {
+       // Round to nearest, make sure this is only a 0.00 value not a 0.0000
+       float avg = floorf( static_cast<float>( averages[i] ) * 100 + 0.5 ) / 100;
+-      ss << avg << " ";
++      // Don't print trailing whitespace for last element
++      if ( i == nelem-1 )
++      {
++        ss << avg;
++      }
++      else
++      {
++        ss << avg << " ";
++      }
+     }
+ 
+     if( use_colors )
