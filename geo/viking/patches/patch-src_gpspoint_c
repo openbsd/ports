@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_gpspoint_c,v 1.1.1.1 2010/10/23 15:40:19 landry Exp $
+$OpenBSD: patch-src_gpspoint_c,v 1.2 2015/04/02 13:59:32 landry Exp $
 taken from pkgsrc/geography/viking/patch-aa
 http://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=40695
---- src/gpspoint.c.orig	Thu Jan 14 21:19:52 2010
-+++ src/gpspoint.c	Sat Oct 23 11:27:25 2010
-@@ -81,8 +81,8 @@ static gdouble line_altitude = VIK_DEFAULT_ALTITUDE;
+--- src/gpspoint.c.orig	Tue Oct 21 22:25:06 2014
++++ src/gpspoint.c	Thu Apr  2 15:01:24 2015
+@@ -88,8 +88,8 @@ static gdouble line_altitude = VIK_DEFAULT_ALTITUDE;
  static gboolean line_visible = TRUE;
  
  static gboolean line_extended = FALSE;

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/02 13:59:31 landry Exp $
 
 COMMENT =	GPS track manager
 
-DISTNAME =	viking-1.5.1
-REVISION =	1
+DISTNAME =	viking-1.6
 
 CATEGORIES =	geo x11
 
@@ -26,7 +25,8 @@ USE_GMAKE =	Yes
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/libidn \
 		devel/libmagic \
-		graphics/libexif \
+		graphics/libgexiv2 \
+		graphics/mapnik \
 		misc/gpsd \
 		net/curl \
 		x11/gtk+2
@@ -35,9 +35,13 @@ RUN_DEPENDS =	geo/gpsbabel
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo crypto curl expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gps gtk-x11-2.0 exif
-WANTLIB += idn m magic pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread ssl z
+WANTLIB += gobject-2.0 gthread-2.0 gps gtk-x11-2.0
+WANTLIB += idn m magic pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pthread ssl z gexiv2 mapnik sqlite3 stdc++
+
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
 	@rm -f ${PREFIX}/share/gnome/help/viking/C/figures/*
