@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.79 2014/12/17 00:31:52 daniel Exp $
+# $OpenBSD: python.port.mk,v 1.80 2015/04/02 13:57:10 jasper Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -104,6 +104,11 @@ _MODPY_PRE_BUILD_STEPS +=	\
 	;exec 1>&3
 MODPY_SETUPUTILS =	No
 _MODPY_USERBASE =	${WRKDIR}
+.endif
+
+.if defined(MODPY_PI) && ${MODPY_PI:L} == "yes"
+MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${DISTNAME:S/-${MODPY_EGG_VERSION}//}
+MASTER_SITES =		${MASTER_SITE_PYPI:=${MODPY_PI_DIR}/}
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:L} != "yes"
