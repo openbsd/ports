@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/10/05 15:29:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/04/02 18:02:35 ajacoutot Exp $
 share/backgrounds/
 share/backgrounds/gnome/
 share/backgrounds/gnome/Blinds.jpg
@@ -54,6 +54,9 @@ share/locale/bn/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gnome-backgrounds.mo
