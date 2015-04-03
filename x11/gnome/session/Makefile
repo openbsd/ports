@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.246 2015/03/27 08:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.247 2015/04/03 12:43:19 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.14.0
-REVISION=		2
+GNOME_VERSION=		3.16.0
 
 CATEGORIES=		x11
 
@@ -14,43 +13,44 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += dbus-1 dbus-glib-1 drm execinfo expat ffi fontconfig
+WANTLIB += dbus-1 dbus-glib-1 drm epoxy execinfo expat ffi fontconfig
 WANTLIB += freetype gconf-2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi
 WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs stdc++ xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += pthread-stubs stdc++ xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += xcb-shm z
 
-MODULES=	devel/dconf \
-		devel/gettext \
-		x11/gnome
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
-BUILD_DEPENDS=	textproc/xmlto \
-		x11/gnome/settings-daemon
+BUILD_DEPENDS=		textproc/xmlto \
+			x11/gnome/settings-daemon
 
-LIB_DEPENDS=	devel/libexecinfo \
-		x11/gtk+3 \
-		devel/gconf2 \
-		devel/json-glib
+LIB_DEPENDS=		devel/gconf2 \
+			devel/json-glib \
+			devel/libexecinfo \
+			x11/gtk+3
 
 # polkit(8) almost always needs to know the "active" session
-RUN_DEPENDS +=	sysutils/consolekit
+RUN_DEPENDS +=		sysutils/consolekit
 
 # gnome.session RequiredComponents
-RUN_DEPENDS+=	x11/gnome/settings-daemon \
-		x11/gnome/shell
+RUN_DEPENDS+=		x11/gnome/settings-daemon \
+			x11/gnome/shell
 
 # use for init errors, gnome-session/gsm-util.c
-RUN_DEPENDS +=	x11/gnome/zenity
+RUN_DEPENDS +=		x11/gnome/zenity
 
-RUN_DEPENDS+=	devel/gsettings-desktop-schemas
+RUN_DEPENDS+=		devel/gsettings-desktop-schemas
 
-MODGNOME_TOOLS=	gtk-update-icon-cache
+MODGNOME_TOOLS=		gtk-update-icon-cache
 
-MODGNOME_CPPFLAGS=-I${X11BASE}/include
-MODGNOME_LDFLAGS=-L${X11BASE}/lib
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS=	--disable-systemd
+CONFIGURE_ARGS=		--disable-systemd \
+			--enable-consolekit
 
 .include <bsd.port.mk>
