@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2015/04/03 11:45:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/03 18:16:52 ajacoutot Exp $
 
 # XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -11,6 +11,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.16.0
+REVISION=		0
 
 CATEGORIES=		x11
 

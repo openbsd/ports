@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/04/03 11:45:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/03 18:16:52 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
 @conflict gdm-<3.0.4
 @pkgpath x11/gnome/controlcenter2
+@pkgpath x11/gnome/controlcenter
 @bin bin/gnome-control-center
 @bin libexec/cc-remote-login-helper
 @bin libexec/gnome-control-center-search-provider
