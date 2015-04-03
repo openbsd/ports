@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2015/03/27 08:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/03 10:59:07 ajacoutot Exp $
 
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		3.14.1
-REVISION=		0
+GNOME_VERSION=		3.16.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/dconf \
+			lang/python \
 			x11/gnome
 
 BUILD_DEPENDS=		x11/gnome/gjs \
@@ -22,6 +22,17 @@ RUN_DEPENDS=		x11/gnome/gjs \
 			x11/gnome/libgweather \
 			x11/gtk+3
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection gtk-update-icon-cache
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
+MODPY_ADJ_FILES=	tests/world_view.py
+
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+			gtk-update-icon-cache
+
+# configure checks for "appstream-util"; this is only needed for the "check"
+# target and we don't want to enforce a BUILD_DEPENDS
+CONFIGURE_ARGS=		--disable-appstream-util
+
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 .include <bsd.port.mk>
