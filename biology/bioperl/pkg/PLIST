@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/23 13:10:22 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/04/03 09:46:53 jasper Exp $
 bin/bp_aacomp.pl
-bin/bp_biblio.pl
 bin/bp_biofetch_genbank_proxy.pl
 bin/bp_bioflat_index.pl
 bin/bp_biogetseq.pl
@@ -9,9 +8,9 @@ bin/bp_bulk_load_gff.pl
 bin/bp_chaos_plot.pl
 bin/bp_classify_hits_kingdom.pl
 bin/bp_composite_LD.pl
+bin/bp_das_server.pl
 bin/bp_dbsplit.pl
 bin/bp_download_query_genbank.pl
-bin/bp_einfo.pl
 bin/bp_extract_feature_seq.pl
 bin/bp_fast_load_gff.pl
 bin/bp_fastam9_to_table.pl
@@ -33,12 +32,12 @@ bin/bp_mask_by_search.pl
 bin/bp_meta_gff.pl
 bin/bp_mrtrans.pl
 bin/bp_mutate.pl
+bin/bp_netinstall.pl
 bin/bp_nexus2nh.pl
 bin/bp_nrdb.pl
 bin/bp_oligo_count.pl
 bin/bp_pairwise_kaks.pl
 bin/bp_parse_hmmsearch.pl
-bin/bp_pg_bulk_load_gff.pl
 bin/bp_process_gadfly.pl
 bin/bp_process_sgd.pl
 bin/bp_process_wormbase.pl
@@ -52,9 +51,11 @@ bin/bp_search2table.pl
 bin/bp_search2tribe.pl
 bin/bp_seq_length.pl
 bin/bp_seqconvert.pl
+bin/bp_seqcut.pl
 bin/bp_seqfeature_delete.pl
 bin/bp_seqfeature_gff3.pl
 bin/bp_seqfeature_load.pl
+bin/bp_seqpart.pl
 bin/bp_seqret.pl
 bin/bp_seqretsplit.pl
 bin/bp_split_seq.pl
@@ -68,6 +69,7 @@ ${P5SITE}/Bio/
 ${P5SITE}/Bio/Align/
 ${P5SITE}/Bio/Align/AlignI.pm
 ${P5SITE}/Bio/Align/DNAStatistics.pm
+${P5SITE}/Bio/Align/Graphics.pm
 ${P5SITE}/Bio/Align/PairwiseStatistics.pm
 ${P5SITE}/Bio/Align/ProteinStatistics.pm
 ${P5SITE}/Bio/Align/StatisticsI.pm
@@ -88,6 +90,7 @@ ${P5SITE}/Bio/AlignIO/mega.pm
 ${P5SITE}/Bio/AlignIO/meme.pm
 ${P5SITE}/Bio/AlignIO/metafasta.pm
 ${P5SITE}/Bio/AlignIO/msf.pm
+${P5SITE}/Bio/AlignIO/nexml.pm
 ${P5SITE}/Bio/AlignIO/nexus.pm
 ${P5SITE}/Bio/AlignIO/pfam.pm
 ${P5SITE}/Bio/AlignIO/phylip.pm
@@ -124,45 +127,16 @@ ${P5SITE}/Bio/Assembly/ContigAnalysis.pm
 ${P5SITE}/Bio/Assembly/IO/
 ${P5SITE}/Bio/Assembly/IO.pm
 ${P5SITE}/Bio/Assembly/IO/ace.pm
+${P5SITE}/Bio/Assembly/IO/bowtie.pm
+${P5SITE}/Bio/Assembly/IO/maq.pm
 ${P5SITE}/Bio/Assembly/IO/phrap.pm
+${P5SITE}/Bio/Assembly/IO/sam.pm
 ${P5SITE}/Bio/Assembly/IO/tigr.pm
 ${P5SITE}/Bio/Assembly/Scaffold.pm
 ${P5SITE}/Bio/Assembly/ScaffoldI.pm
 ${P5SITE}/Bio/Assembly/Singlet.pm
 ${P5SITE}/Bio/Assembly/Tools/
 ${P5SITE}/Bio/Assembly/Tools/ContigSpectrum.pm
-${P5SITE}/Bio/Biblio/
-${P5SITE}/Bio/Biblio.pm
-${P5SITE}/Bio/Biblio/Article.pm
-${P5SITE}/Bio/Biblio/BiblioBase.pm
-${P5SITE}/Bio/Biblio/Book.pm
-${P5SITE}/Bio/Biblio/BookArticle.pm
-${P5SITE}/Bio/Biblio/IO/
-${P5SITE}/Bio/Biblio/IO.pm
-${P5SITE}/Bio/Biblio/IO/medline2ref.pm
-${P5SITE}/Bio/Biblio/IO/medlinexml.pm
-${P5SITE}/Bio/Biblio/IO/pubmed2ref.pm
-${P5SITE}/Bio/Biblio/IO/pubmedxml.pm
-${P5SITE}/Bio/Biblio/Journal.pm
-${P5SITE}/Bio/Biblio/JournalArticle.pm
-${P5SITE}/Bio/Biblio/MedlineArticle.pm
-${P5SITE}/Bio/Biblio/MedlineBook.pm
-${P5SITE}/Bio/Biblio/MedlineBookArticle.pm
-${P5SITE}/Bio/Biblio/MedlineJournal.pm
-${P5SITE}/Bio/Biblio/MedlineJournalArticle.pm
-${P5SITE}/Bio/Biblio/Organisation.pm
-${P5SITE}/Bio/Biblio/Patent.pm
-${P5SITE}/Bio/Biblio/Person.pm
-${P5SITE}/Bio/Biblio/Proceeding.pm
-${P5SITE}/Bio/Biblio/Provider.pm
-${P5SITE}/Bio/Biblio/PubmedArticle.pm
-${P5SITE}/Bio/Biblio/PubmedBookArticle.pm
-${P5SITE}/Bio/Biblio/PubmedJournalArticle.pm
-${P5SITE}/Bio/Biblio/Ref.pm
-${P5SITE}/Bio/Biblio/Service.pm
-${P5SITE}/Bio/Biblio/TechReport.pm
-${P5SITE}/Bio/Biblio/Thesis.pm
-${P5SITE}/Bio/Biblio/WebResource.pm
 ${P5SITE}/Bio/Cluster/
 ${P5SITE}/Bio/Cluster/ClusterFactory.pm
 ${P5SITE}/Bio/Cluster/FamilyI.pm
@@ -193,16 +167,10 @@ ${P5SITE}/Bio/Coordinate/ResultI.pm
 ${P5SITE}/Bio/Coordinate/Utils.pm
 ${P5SITE}/Bio/DB/
 ${P5SITE}/Bio/DB/Ace.pm
-${P5SITE}/Bio/DB/Biblio/
-${P5SITE}/Bio/DB/Biblio/biofetch.pm
-${P5SITE}/Bio/DB/Biblio/eutils.pm
-${P5SITE}/Bio/DB/Biblio/soap.pm
-${P5SITE}/Bio/DB/BiblioI.pm
 ${P5SITE}/Bio/DB/BioFetch.pm
 ${P5SITE}/Bio/DB/CUTG.pm
 ${P5SITE}/Bio/DB/DBFetch.pm
 ${P5SITE}/Bio/DB/EMBL.pm
-${P5SITE}/Bio/DB/EUtilities.pm
 ${P5SITE}/Bio/DB/EntrezGene.pm
 ${P5SITE}/Bio/DB/Expression/
 ${P5SITE}/Bio/DB/Expression.pm
@@ -283,6 +251,7 @@ ${P5SITE}/Bio/DB/HIV/HIVAnnotProcessor.pm
 ${P5SITE}/Bio/DB/HIV/HIVQueryHelper.pm
 ${P5SITE}/Bio/DB/HIV/lanl-schema.xml
 ${P5SITE}/Bio/DB/InMemoryCache.pm
+${P5SITE}/Bio/DB/IndexedBase.pm
 ${P5SITE}/Bio/DB/LocationI.pm
 ${P5SITE}/Bio/DB/MeSH.pm
 ${P5SITE}/Bio/DB/NCBIHelper.pm
@@ -331,7 +300,9 @@ ${P5SITE}/Bio/DB/Taxonomy/
 ${P5SITE}/Bio/DB/Taxonomy.pm
 ${P5SITE}/Bio/DB/Taxonomy/entrez.pm
 ${P5SITE}/Bio/DB/Taxonomy/flatfile.pm
+${P5SITE}/Bio/DB/Taxonomy/greengenes.pm
 ${P5SITE}/Bio/DB/Taxonomy/list.pm
+${P5SITE}/Bio/DB/Taxonomy/silva.pm
 ${P5SITE}/Bio/DB/Universal.pm
 ${P5SITE}/Bio/DB/UpdateableSeqI.pm
 ${P5SITE}/Bio/DB/WebDBSeqI.pm
@@ -341,21 +312,11 @@ ${P5SITE}/Bio/Das/FeatureTypeI.pm
 ${P5SITE}/Bio/Das/SegmentI.pm
 ${P5SITE}/Bio/DasI.pm
 ${P5SITE}/Bio/DescribableI.pm
+${P5SITE}/Bio/Draw/
+${P5SITE}/Bio/Draw/Pictogram.pm
 ${P5SITE}/Bio/Event/
 ${P5SITE}/Bio/Event/EventGeneratorI.pm
 ${P5SITE}/Bio/Event/EventHandlerI.pm
-${P5SITE}/Bio/Expression/
-${P5SITE}/Bio/Expression/Contact.pm
-${P5SITE}/Bio/Expression/DataSet.pm
-${P5SITE}/Bio/Expression/FeatureGroup/
-${P5SITE}/Bio/Expression/FeatureGroup.pm
-${P5SITE}/Bio/Expression/FeatureGroup/FeatureGroupMas50.pm
-${P5SITE}/Bio/Expression/FeatureI.pm
-${P5SITE}/Bio/Expression/FeatureSet/
-${P5SITE}/Bio/Expression/FeatureSet/FeatureSetMas50.pm
-${P5SITE}/Bio/Expression/Platform.pm
-${P5SITE}/Bio/Expression/ProbeI.pm
-${P5SITE}/Bio/Expression/Sample.pm
 ${P5SITE}/Bio/Factory/
 ${P5SITE}/Bio/Factory/AnalysisI.pm
 ${P5SITE}/Bio/Factory/ApplicationFactoryI.pm
@@ -373,14 +334,6 @@ ${P5SITE}/Bio/Factory/SequenceProcessorI.pm
 ${P5SITE}/Bio/Factory/SequenceStreamI.pm
 ${P5SITE}/Bio/Factory/TreeFactoryI.pm
 ${P5SITE}/Bio/FeatureHolderI.pm
-${P5SITE}/Bio/FeatureIO/
-${P5SITE}/Bio/FeatureIO.pm
-${P5SITE}/Bio/FeatureIO/bed.pm
-${P5SITE}/Bio/FeatureIO/gff.pm
-${P5SITE}/Bio/FeatureIO/gtf.pm
-${P5SITE}/Bio/FeatureIO/interpro.pm
-${P5SITE}/Bio/FeatureIO/ptt.pm
-${P5SITE}/Bio/FeatureIO/vecscreen_simple.pm
 ${P5SITE}/Bio/HandlerBaseI.pm
 ${P5SITE}/Bio/IdCollectionI.pm
 ${P5SITE}/Bio/IdentifiableI.pm
@@ -499,6 +452,9 @@ ${P5SITE}/Bio/Matrix/PhylipDist.pm
 ${P5SITE}/Bio/Matrix/Scoring.pm
 ${P5SITE}/Bio/MolEvol/
 ${P5SITE}/Bio/MolEvol/CodonModel.pm
+${P5SITE}/Bio/Nexml/
+${P5SITE}/Bio/Nexml/Factory.pm
+${P5SITE}/Bio/NexmlIO.pm
 ${P5SITE}/Bio/Ontology/
 ${P5SITE}/Bio/Ontology/DocumentRegistry.pm
 ${P5SITE}/Bio/Ontology/GOterm.pm
@@ -517,7 +473,6 @@ ${P5SITE}/Bio/Ontology/RelationshipI.pm
 ${P5SITE}/Bio/Ontology/RelationshipType.pm
 ${P5SITE}/Bio/Ontology/SimpleGOEngine/
 ${P5SITE}/Bio/Ontology/SimpleGOEngine/GraphAdaptor.pm
-${P5SITE}/Bio/Ontology/SimpleGOEngine/GraphAdaptor02.pm
 ${P5SITE}/Bio/Ontology/SimpleOntologyEngine.pm
 ${P5SITE}/Bio/Ontology/Term.pm
 ${P5SITE}/Bio/Ontology/TermFactory.pm
@@ -610,9 +565,7 @@ ${P5SITE}/Bio/Root/IO.pm
 ${P5SITE}/Bio/Root/Root.pm
 ${P5SITE}/Bio/Root/RootI.pm
 ${P5SITE}/Bio/Root/Storable.pm
-${P5SITE}/Bio/Root/Test/
 ${P5SITE}/Bio/Root/Test.pm
-${P5SITE}/Bio/Root/Test/Warn.pm
 ${P5SITE}/Bio/Root/Utilities.pm
 ${P5SITE}/Bio/Root/Version.pm
 ${P5SITE}/Bio/Search/
@@ -647,6 +600,7 @@ ${P5SITE}/Bio/Search/Hit/HmmpfamHit.pm
 ${P5SITE}/Bio/Search/Hit/ModelHit.pm
 ${P5SITE}/Bio/Search/Hit/PsiBlastHit.pm
 ${P5SITE}/Bio/Search/Hit/PullHitI.pm
+${P5SITE}/Bio/Search/Hit/hmmer3Hit.pm
 ${P5SITE}/Bio/Search/Iteration/
 ${P5SITE}/Bio/Search/Iteration/GenericIteration.pm
 ${P5SITE}/Bio/Search/Iteration/IterationI.pm
@@ -662,6 +616,7 @@ ${P5SITE}/Bio/Search/Result/PullResultI.pm
 ${P5SITE}/Bio/Search/Result/ResultFactory.pm
 ${P5SITE}/Bio/Search/Result/ResultI.pm
 ${P5SITE}/Bio/Search/Result/WABAResult.pm
+${P5SITE}/Bio/Search/Result/hmmer3Result.pm
 ${P5SITE}/Bio/Search/SearchUtils.pm
 ${P5SITE}/Bio/Search/StatisticsI.pm
 ${P5SITE}/Bio/Search/Tiling/
@@ -698,6 +653,8 @@ ${P5SITE}/Bio/SearchIO/exonerate.pm
 ${P5SITE}/Bio/SearchIO/fasta.pm
 ${P5SITE}/Bio/SearchIO/gmap_f9.pm
 ${P5SITE}/Bio/SearchIO/hmmer.pm
+${P5SITE}/Bio/SearchIO/hmmer2.pm
+${P5SITE}/Bio/SearchIO/hmmer3.pm
 ${P5SITE}/Bio/SearchIO/hmmer_pull.pm
 ${P5SITE}/Bio/SearchIO/infernal.pm
 ${P5SITE}/Bio/SearchIO/megablast.pm
@@ -729,6 +686,7 @@ ${P5SITE}/Bio/Seq/SeqFactory.pm
 ${P5SITE}/Bio/Seq/SeqFastaSpeedFactory.pm
 ${P5SITE}/Bio/Seq/SeqWithQuality.pm
 ${P5SITE}/Bio/Seq/SequenceTrace.pm
+${P5SITE}/Bio/Seq/SimulatedRead.pm
 ${P5SITE}/Bio/Seq/TraceI.pm
 ${P5SITE}/Bio/SeqAnalysisParserI.pm
 ${P5SITE}/Bio/SeqEvolution/
@@ -736,7 +694,7 @@ ${P5SITE}/Bio/SeqEvolution/DNAPoint.pm
 ${P5SITE}/Bio/SeqEvolution/EvolutionI.pm
 ${P5SITE}/Bio/SeqEvolution/Factory.pm
 ${P5SITE}/Bio/SeqFeature/
-${P5SITE}/Bio/SeqFeature/Annotated.pm
+${P5SITE}/Bio/SeqFeature/Amplicon.pm
 ${P5SITE}/Bio/SeqFeature/AnnotationAdaptor.pm
 ${P5SITE}/Bio/SeqFeature/Collection.pm
 ${P5SITE}/Bio/SeqFeature/CollectionI.pm
@@ -763,6 +721,7 @@ ${P5SITE}/Bio/SeqFeature/SiRNA/Oligo.pm
 ${P5SITE}/Bio/SeqFeature/SiRNA/Pair.pm
 ${P5SITE}/Bio/SeqFeature/Similarity.pm
 ${P5SITE}/Bio/SeqFeature/SimilarityPair.pm
+${P5SITE}/Bio/SeqFeature/SubSeq.pm
 ${P5SITE}/Bio/SeqFeature/Tools/
 ${P5SITE}/Bio/SeqFeature/Tools/FeatureNamer.pm
 ${P5SITE}/Bio/SeqFeature/Tools/IDHandler.pm
@@ -804,6 +763,7 @@ ${P5SITE}/Bio/SeqIO/game/gameSubs.pm
 ${P5SITE}/Bio/SeqIO/game/gameWriter.pm
 ${P5SITE}/Bio/SeqIO/game/seqHandler.pm
 ${P5SITE}/Bio/SeqIO/gbdriver.pm
+${P5SITE}/Bio/SeqIO/gbxml.pm
 ${P5SITE}/Bio/SeqIO/gcg.pm
 ${P5SITE}/Bio/SeqIO/genbank.pm
 ${P5SITE}/Bio/SeqIO/interpro.pm
@@ -811,13 +771,17 @@ ${P5SITE}/Bio/SeqIO/kegg.pm
 ${P5SITE}/Bio/SeqIO/largefasta.pm
 ${P5SITE}/Bio/SeqIO/lasergene.pm
 ${P5SITE}/Bio/SeqIO/locuslink.pm
+${P5SITE}/Bio/SeqIO/mbsout.pm
 ${P5SITE}/Bio/SeqIO/metafasta.pm
+${P5SITE}/Bio/SeqIO/msout.pm
+${P5SITE}/Bio/SeqIO/nexml.pm
 ${P5SITE}/Bio/SeqIO/phd.pm
 ${P5SITE}/Bio/SeqIO/pir.pm
 ${P5SITE}/Bio/SeqIO/pln.pm
 ${P5SITE}/Bio/SeqIO/qual.pm
 ${P5SITE}/Bio/SeqIO/raw.pm
 ${P5SITE}/Bio/SeqIO/scf.pm
+${P5SITE}/Bio/SeqIO/seqxml.pm
 ${P5SITE}/Bio/SeqIO/strider.pm
 ${P5SITE}/Bio/SeqIO/swiss.pm
 ${P5SITE}/Bio/SeqIO/swissdriver.pm
@@ -867,6 +831,7 @@ ${P5SITE}/Bio/Tools/AlignFactory.pm
 ${P5SITE}/Bio/Tools/Alignment/
 ${P5SITE}/Bio/Tools/Alignment/Consed.pm
 ${P5SITE}/Bio/Tools/Alignment/Trim.pm
+${P5SITE}/Bio/Tools/AmpliconSearch.pm
 ${P5SITE}/Bio/Tools/Analysis/
 ${P5SITE}/Bio/Tools/Analysis/DNA/
 ${P5SITE}/Bio/Tools/Analysis/DNA/ESEfinder.pm
@@ -890,29 +855,6 @@ ${P5SITE}/Bio/Tools/EMBOSS/Palindrome.pm
 ${P5SITE}/Bio/Tools/EPCR.pm
 ${P5SITE}/Bio/Tools/ERPIN.pm
 ${P5SITE}/Bio/Tools/ESTScan.pm
-${P5SITE}/Bio/Tools/EUtilities/
-${P5SITE}/Bio/Tools/EUtilities.pm
-${P5SITE}/Bio/Tools/EUtilities/Cookie.pm
-${P5SITE}/Bio/Tools/EUtilities/EUtilDataI.pm
-${P5SITE}/Bio/Tools/EUtilities/EUtilParameters.pm
-${P5SITE}/Bio/Tools/EUtilities/History.pm
-${P5SITE}/Bio/Tools/EUtilities/HistoryI.pm
-${P5SITE}/Bio/Tools/EUtilities/Info/
-${P5SITE}/Bio/Tools/EUtilities/Info.pm
-${P5SITE}/Bio/Tools/EUtilities/Info/FieldInfo.pm
-${P5SITE}/Bio/Tools/EUtilities/Info/LinkInfo.pm
-${P5SITE}/Bio/Tools/EUtilities/Link/
-${P5SITE}/Bio/Tools/EUtilities/Link.pm
-${P5SITE}/Bio/Tools/EUtilities/Link/LinkSet.pm
-${P5SITE}/Bio/Tools/EUtilities/Link/UrlLink.pm
-${P5SITE}/Bio/Tools/EUtilities/Query/
-${P5SITE}/Bio/Tools/EUtilities/Query.pm
-${P5SITE}/Bio/Tools/EUtilities/Query/GlobalQuery.pm
-${P5SITE}/Bio/Tools/EUtilities/Summary/
-${P5SITE}/Bio/Tools/EUtilities/Summary.pm
-${P5SITE}/Bio/Tools/EUtilities/Summary/DocSum.pm
-${P5SITE}/Bio/Tools/EUtilities/Summary/Item.pm
-${P5SITE}/Bio/Tools/EUtilities/Summary/ItemContainerI.pm
 ${P5SITE}/Bio/Tools/Eponine.pm
 ${P5SITE}/Bio/Tools/Est2Genome.pm
 ${P5SITE}/Bio/Tools/Fgenesh.pm
@@ -946,6 +888,7 @@ ${P5SITE}/Bio/Tools/Phylo/Molphy.pm
 ${P5SITE}/Bio/Tools/Phylo/Molphy/Result.pm
 ${P5SITE}/Bio/Tools/Phylo/PAML/
 ${P5SITE}/Bio/Tools/Phylo/PAML.pm
+${P5SITE}/Bio/Tools/Phylo/PAML/Codeml.pm
 ${P5SITE}/Bio/Tools/Phylo/PAML/ModelResult.pm
 ${P5SITE}/Bio/Tools/Phylo/PAML/Result.pm
 ${P5SITE}/Bio/Tools/Phylo/Phylip/
@@ -977,7 +920,10 @@ ${P5SITE}/Bio/Tools/Run/RemoteBlast.pm
 ${P5SITE}/Bio/Tools/Run/StandAloneBlast.pm
 ${P5SITE}/Bio/Tools/Run/StandAloneNCBIBlast.pm
 ${P5SITE}/Bio/Tools/Run/StandAloneWUBlast.pm
+${P5SITE}/Bio/Tools/Run/WrapperBase/
 ${P5SITE}/Bio/Tools/Run/WrapperBase.pm
+${P5SITE}/Bio/Tools/Run/WrapperBase/CommandExts.pm
+${P5SITE}/Bio/Tools/Run/hmmer3.pm
 ${P5SITE}/Bio/Tools/Seg.pm
 ${P5SITE}/Bio/Tools/SeqPattern/
 ${P5SITE}/Bio/Tools/SeqPattern.pm
@@ -1025,10 +971,12 @@ ${P5SITE}/Bio/Tree/TreeFunctionsI.pm
 ${P5SITE}/Bio/Tree/TreeI.pm
 ${P5SITE}/Bio/TreeIO/
 ${P5SITE}/Bio/TreeIO.pm
+${P5SITE}/Bio/TreeIO/NewickParser.pm
 ${P5SITE}/Bio/TreeIO/TreeEventBuilder.pm
 ${P5SITE}/Bio/TreeIO/cluster.pm
 ${P5SITE}/Bio/TreeIO/lintree.pm
 ${P5SITE}/Bio/TreeIO/newick.pm
+${P5SITE}/Bio/TreeIO/nexml.pm
 ${P5SITE}/Bio/TreeIO/nexus.pm
 ${P5SITE}/Bio/TreeIO/nhx.pm
 ${P5SITE}/Bio/TreeIO/pag.pm
@@ -1051,7 +999,6 @@ ${P5SITE}/Bio/Variation/SeqDiff.pm
 ${P5SITE}/Bio/Variation/VariantI.pm
 ${P5SITE}/Bio/WebAgent.pm
 @man man/man1/bp_aacomp.pl.1
-@man man/man1/bp_biblio.pl.1
 @man man/man1/bp_biofetch_genbank_proxy.pl.1
 @man man/man1/bp_bioflat_index.pl.1
 @man man/man1/bp_biogetseq.pl.1
@@ -1062,7 +1009,6 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man1/bp_composite_LD.pl.1
 @man man/man1/bp_dbsplit.pl.1
 @man man/man1/bp_download_query_genbank.pl.1
-@man man/man1/bp_einfo.pl.1
 @man man/man1/bp_extract_feature_seq.pl.1
 @man man/man1/bp_fast_load_gff.pl.1
 @man man/man1/bp_fastam9_to_table.pl.1
@@ -1084,6 +1030,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man1/bp_meta_gff.pl.1
 @man man/man1/bp_mrtrans.pl.1
 @man man/man1/bp_mutate.pl.1
+@man man/man1/bp_netinstall.pl.1
 @man man/man1/bp_nexus2nh.pl.1
 @man man/man1/bp_nrdb.pl.1
 @man man/man1/bp_oligo_count.pl.1
@@ -1102,6 +1049,9 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man1/bp_search2tribe.pl.1
 @man man/man1/bp_seq_length.pl.1
 @man man/man1/bp_seqconvert.pl.1
+@man man/man1/bp_seqcut.pl.1
+@man man/man1/bp_seqfeature_load.pl.1
+@man man/man1/bp_seqpart.pl.1
 @man man/man1/bp_seqret.pl.1
 @man man/man1/bp_seqretsplit.pl.1
 @man man/man1/bp_split_seq.pl.1
@@ -1113,6 +1063,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man1/bp_unflatten_seq.pl.1
 @man man/man3p/Bio::Align::AlignI.3p
 @man man/man3p/Bio::Align::DNAStatistics.3p
+@man man/man3p/Bio::Align::Graphics.3p
 @man man/man3p/Bio::Align::PairwiseStatistics.3p
 @man man/man3p/Bio::Align::ProteinStatistics.3p
 @man man/man3p/Bio::Align::StatisticsI.3p
@@ -1131,6 +1082,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::AlignIO::meme.3p
 @man man/man3p/Bio::AlignIO::metafasta.3p
 @man man/man3p/Bio::AlignIO::msf.3p
+@man man/man3p/Bio::AlignIO::nexml.3p
 @man man/man3p/Bio::AlignIO::nexus.3p
 @man man/man3p/Bio::AlignIO::pfam.3p
 @man man/man3p/Bio::AlignIO::phylip.3p
@@ -1164,42 +1116,15 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Assembly::ContigAnalysis.3p
 @man man/man3p/Bio::Assembly::IO.3p
 @man man/man3p/Bio::Assembly::IO::ace.3p
+@man man/man3p/Bio::Assembly::IO::bowtie.3p
+@man man/man3p/Bio::Assembly::IO::maq.3p
 @man man/man3p/Bio::Assembly::IO::phrap.3p
+@man man/man3p/Bio::Assembly::IO::sam.3p
 @man man/man3p/Bio::Assembly::IO::tigr.3p
 @man man/man3p/Bio::Assembly::Scaffold.3p
 @man man/man3p/Bio::Assembly::ScaffoldI.3p
 @man man/man3p/Bio::Assembly::Singlet.3p
 @man man/man3p/Bio::Assembly::Tools::ContigSpectrum.3p
-@man man/man3p/Bio::Biblio.3p
-@man man/man3p/Bio::Biblio::Article.3p
-@man man/man3p/Bio::Biblio::BiblioBase.3p
-@man man/man3p/Bio::Biblio::Book.3p
-@man man/man3p/Bio::Biblio::BookArticle.3p
-@man man/man3p/Bio::Biblio::IO.3p
-@man man/man3p/Bio::Biblio::IO::medline2ref.3p
-@man man/man3p/Bio::Biblio::IO::medlinexml.3p
-@man man/man3p/Bio::Biblio::IO::pubmed2ref.3p
-@man man/man3p/Bio::Biblio::IO::pubmedxml.3p
-@man man/man3p/Bio::Biblio::Journal.3p
-@man man/man3p/Bio::Biblio::JournalArticle.3p
-@man man/man3p/Bio::Biblio::MedlineArticle.3p
-@man man/man3p/Bio::Biblio::MedlineBook.3p
-@man man/man3p/Bio::Biblio::MedlineBookArticle.3p
-@man man/man3p/Bio::Biblio::MedlineJournal.3p
-@man man/man3p/Bio::Biblio::MedlineJournalArticle.3p
-@man man/man3p/Bio::Biblio::Organisation.3p
-@man man/man3p/Bio::Biblio::Patent.3p
-@man man/man3p/Bio::Biblio::Person.3p
-@man man/man3p/Bio::Biblio::Proceeding.3p
-@man man/man3p/Bio::Biblio::Provider.3p
-@man man/man3p/Bio::Biblio::PubmedArticle.3p
-@man man/man3p/Bio::Biblio::PubmedBookArticle.3p
-@man man/man3p/Bio::Biblio::PubmedJournalArticle.3p
-@man man/man3p/Bio::Biblio::Ref.3p
-@man man/man3p/Bio::Biblio::Service.3p
-@man man/man3p/Bio::Biblio::TechReport.3p
-@man man/man3p/Bio::Biblio::Thesis.3p
-@man man/man3p/Bio::Biblio::WebResource.3p
 @man man/man3p/Bio::Cluster::ClusterFactory.3p
 @man man/man3p/Bio::Cluster::FamilyI.3p
 @man man/man3p/Bio::Cluster::SequenceFamily.3p
@@ -1224,15 +1149,10 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Coordinate::ResultI.3p
 @man man/man3p/Bio::Coordinate::Utils.3p
 @man man/man3p/Bio::DB::Ace.3p
-@man man/man3p/Bio::DB::Biblio::biofetch.3p
-@man man/man3p/Bio::DB::Biblio::eutils.3p
-@man man/man3p/Bio::DB::Biblio::soap.3p
-@man man/man3p/Bio::DB::BiblioI.3p
 @man man/man3p/Bio::DB::BioFetch.3p
 @man man/man3p/Bio::DB::CUTG.3p
 @man man/man3p/Bio::DB::DBFetch.3p
 @man man/man3p/Bio::DB::EMBL.3p
-@man man/man3p/Bio::DB::EUtilities.3p
 @man man/man3p/Bio::DB::EntrezGene.3p
 @man man/man3p/Bio::DB::Expression.3p
 @man man/man3p/Bio::DB::Expression::geo.3p
@@ -1301,6 +1221,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::DB::HIV::HIVAnnotProcessor.3p
 @man man/man3p/Bio::DB::HIV::HIVQueryHelper.3p
 @man man/man3p/Bio::DB::InMemoryCache.3p
+@man man/man3p/Bio::DB::IndexedBase.3p
 @man man/man3p/Bio::DB::LocationI.3p
 @man man/man3p/Bio::DB::MeSH.3p
 @man man/man3p/Bio::DB::NCBIHelper.3p
@@ -1342,7 +1263,9 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::DB::Taxonomy.3p
 @man man/man3p/Bio::DB::Taxonomy::entrez.3p
 @man man/man3p/Bio::DB::Taxonomy::flatfile.3p
+@man man/man3p/Bio::DB::Taxonomy::greengenes.3p
 @man man/man3p/Bio::DB::Taxonomy::list.3p
+@man man/man3p/Bio::DB::Taxonomy::silva.3p
 @man man/man3p/Bio::DB::Universal.3p
 @man man/man3p/Bio::DB::UpdateableSeqI.3p
 @man man/man3p/Bio::DB::WebDBSeqI.3p
@@ -1351,17 +1274,9 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Das::SegmentI.3p
 @man man/man3p/Bio::DasI.3p
 @man man/man3p/Bio::DescribableI.3p
+@man man/man3p/Bio::Draw::Pictogram.3p
 @man man/man3p/Bio::Event::EventGeneratorI.3p
 @man man/man3p/Bio::Event::EventHandlerI.3p
-@man man/man3p/Bio::Expression::Contact.3p
-@man man/man3p/Bio::Expression::DataSet.3p
-@man man/man3p/Bio::Expression::FeatureGroup.3p
-@man man/man3p/Bio::Expression::FeatureGroup::FeatureGroupMas50.3p
-@man man/man3p/Bio::Expression::FeatureI.3p
-@man man/man3p/Bio::Expression::FeatureSet::FeatureSetMas50.3p
-@man man/man3p/Bio::Expression::Platform.3p
-@man man/man3p/Bio::Expression::ProbeI.3p
-@man man/man3p/Bio::Expression::Sample.3p
 @man man/man3p/Bio::Factory::AnalysisI.3p
 @man man/man3p/Bio::Factory::ApplicationFactoryI.3p
 @man man/man3p/Bio::Factory::DriverFactory.3p
@@ -1378,13 +1293,6 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Factory::SequenceStreamI.3p
 @man man/man3p/Bio::Factory::TreeFactoryI.3p
 @man man/man3p/Bio::FeatureHolderI.3p
-@man man/man3p/Bio::FeatureIO.3p
-@man man/man3p/Bio::FeatureIO::bed.3p
-@man man/man3p/Bio::FeatureIO::gff.3p
-@man man/man3p/Bio::FeatureIO::gtf.3p
-@man man/man3p/Bio::FeatureIO::interpro.3p
-@man man/man3p/Bio::FeatureIO::ptt.3p
-@man man/man3p/Bio::FeatureIO::vecscreen_simple.3p
 @man man/man3p/Bio::HandlerBaseI.3p
 @man man/man3p/Bio::IdCollectionI.3p
 @man man/man3p/Bio::IdentifiableI.3p
@@ -1492,6 +1400,8 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Matrix::PhylipDist.3p
 @man man/man3p/Bio::Matrix::Scoring.3p
 @man man/man3p/Bio::MolEvol::CodonModel.3p
+@man man/man3p/Bio::Nexml::Factory.3p
+@man man/man3p/Bio::NexmlIO.3p
 @man man/man3p/Bio::Ontology::DocumentRegistry.3p
 @man man/man3p/Bio::Ontology::GOterm.3p
 @man man/man3p/Bio::Ontology::InterProTerm.3p
@@ -1508,7 +1418,6 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Ontology::RelationshipI.3p
 @man man/man3p/Bio::Ontology::RelationshipType.3p
 @man man/man3p/Bio::Ontology::SimpleGOEngine::GraphAdaptor.3p
-@man man/man3p/Bio::Ontology::SimpleGOEngine::GraphAdaptor02.3p
 @man man/man3p/Bio::Ontology::SimpleOntologyEngine.3p
 @man man/man3p/Bio::Ontology::Term.3p
 @man man/man3p/Bio::Ontology::TermFactory.3p
@@ -1589,7 +1498,6 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Root::RootI.3p
 @man man/man3p/Bio::Root::Storable.3p
 @man man/man3p/Bio::Root::Test.3p
-@man man/man3p/Bio::Root::Test::Warn.3p
 @man man/man3p/Bio::Root::Utilities.3p
 @man man/man3p/Bio::Root::Version.3p
 @man man/man3p/Bio::Search::BlastStatistics.3p
@@ -1621,6 +1529,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Search::Hit::ModelHit.3p
 @man man/man3p/Bio::Search::Hit::PsiBlastHit.3p
 @man man/man3p/Bio::Search::Hit::PullHitI.3p
+@man man/man3p/Bio::Search::Hit::hmmer3Hit.3p
 @man man/man3p/Bio::Search::Iteration::GenericIteration.3p
 @man man/man3p/Bio::Search::Iteration::IterationI.3p
 @man man/man3p/Bio::Search::Processor.3p
@@ -1634,6 +1543,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Search::Result::ResultFactory.3p
 @man man/man3p/Bio::Search::Result::ResultI.3p
 @man man/man3p/Bio::Search::Result::WABAResult.3p
+@man man/man3p/Bio::Search::Result::hmmer3Result.3p
 @man man/man3p/Bio::Search::SearchUtils.3p
 @man man/man3p/Bio::Search::StatisticsI.3p
 @man man/man3p/Bio::Search::Tiling::MapTileUtils.3p
@@ -1666,6 +1576,8 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::SearchIO::fasta.3p
 @man man/man3p/Bio::SearchIO::gmap_f9.3p
 @man man/man3p/Bio::SearchIO::hmmer.3p
+@man man/man3p/Bio::SearchIO::hmmer2.3p
+@man man/man3p/Bio::SearchIO::hmmer3.3p
 @man man/man3p/Bio::SearchIO::hmmer_pull.3p
 @man man/man3p/Bio::SearchIO::infernal.3p
 @man man/man3p/Bio::SearchIO::megablast.3p
@@ -1695,12 +1607,13 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Seq::SeqFastaSpeedFactory.3p
 @man man/man3p/Bio::Seq::SeqWithQuality.3p
 @man man/man3p/Bio::Seq::SequenceTrace.3p
+@man man/man3p/Bio::Seq::SimulatedRead.3p
 @man man/man3p/Bio::Seq::TraceI.3p
 @man man/man3p/Bio::SeqAnalysisParserI.3p
 @man man/man3p/Bio::SeqEvolution::DNAPoint.3p
 @man man/man3p/Bio::SeqEvolution::EvolutionI.3p
 @man man/man3p/Bio::SeqEvolution::Factory.3p
-@man man/man3p/Bio::SeqFeature::Annotated.3p
+@man man/man3p/Bio::SeqFeature::Amplicon.3p
 @man man/man3p/Bio::SeqFeature::AnnotationAdaptor.3p
 @man man/man3p/Bio::SeqFeature::Collection.3p
 @man man/man3p/Bio::SeqFeature::CollectionI.3p
@@ -1725,6 +1638,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::SeqFeature::SiRNA::Pair.3p
 @man man/man3p/Bio::SeqFeature::Similarity.3p
 @man man/man3p/Bio::SeqFeature::SimilarityPair.3p
+@man man/man3p/Bio::SeqFeature::SubSeq.3p
 @man man/man3p/Bio::SeqFeature::Tools::FeatureNamer.3p
 @man man/man3p/Bio::SeqFeature::Tools::IDHandler.3p
 @man man/man3p/Bio::SeqFeature::Tools::TypeMapper.3p
@@ -1762,6 +1676,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::SeqIO::game::gameWriter.3p
 @man man/man3p/Bio::SeqIO::game::seqHandler.3p
 @man man/man3p/Bio::SeqIO::gbdriver.3p
+@man man/man3p/Bio::SeqIO::gbxml.3p
 @man man/man3p/Bio::SeqIO::gcg.3p
 @man man/man3p/Bio::SeqIO::genbank.3p
 @man man/man3p/Bio::SeqIO::interpro.3p
@@ -1769,13 +1684,17 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::SeqIO::largefasta.3p
 @man man/man3p/Bio::SeqIO::lasergene.3p
 @man man/man3p/Bio::SeqIO::locuslink.3p
+@man man/man3p/Bio::SeqIO::mbsout.3p
 @man man/man3p/Bio::SeqIO::metafasta.3p
+@man man/man3p/Bio::SeqIO::msout.3p
+@man man/man3p/Bio::SeqIO::nexml.3p
 @man man/man3p/Bio::SeqIO::phd.3p
 @man man/man3p/Bio::SeqIO::pir.3p
 @man man/man3p/Bio::SeqIO::pln.3p
 @man man/man3p/Bio::SeqIO::qual.3p
 @man man/man3p/Bio::SeqIO::raw.3p
 @man man/man3p/Bio::SeqIO::scf.3p
+@man man/man3p/Bio::SeqIO::seqxml.3p
 @man man/man3p/Bio::SeqIO::strider.3p
 @man man/man3p/Bio::SeqIO::swiss.3p
 @man man/man3p/Bio::SeqIO::swissdriver.3p
@@ -1815,6 +1734,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Tools::AlignFactory.3p
 @man man/man3p/Bio::Tools::Alignment::Consed.3p
 @man man/man3p/Bio::Tools::Alignment::Trim.3p
+@man man/man3p/Bio::Tools::AmpliconSearch.3p
 @man man/man3p/Bio::Tools::Analysis::DNA::ESEfinder.3p
 @man man/man3p/Bio::Tools::Analysis::Protein::Domcut.3p
 @man man/man3p/Bio::Tools::Analysis::Protein::ELM.3p
@@ -1834,24 +1754,6 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Tools::EPCR.3p
 @man man/man3p/Bio::Tools::ERPIN.3p
 @man man/man3p/Bio::Tools::ESTScan.3p
-@man man/man3p/Bio::Tools::EUtilities.3p
-@man man/man3p/Bio::Tools::EUtilities::Cookie.3p
-@man man/man3p/Bio::Tools::EUtilities::EUtilDataI.3p
-@man man/man3p/Bio::Tools::EUtilities::EUtilParameters.3p
-@man man/man3p/Bio::Tools::EUtilities::History.3p
-@man man/man3p/Bio::Tools::EUtilities::HistoryI.3p
-@man man/man3p/Bio::Tools::EUtilities::Info.3p
-@man man/man3p/Bio::Tools::EUtilities::Info::FieldInfo.3p
-@man man/man3p/Bio::Tools::EUtilities::Info::LinkInfo.3p
-@man man/man3p/Bio::Tools::EUtilities::Link.3p
-@man man/man3p/Bio::Tools::EUtilities::Link::LinkSet.3p
-@man man/man3p/Bio::Tools::EUtilities::Link::UrlLink.3p
-@man man/man3p/Bio::Tools::EUtilities::Query.3p
-@man man/man3p/Bio::Tools::EUtilities::Query::GlobalQuery.3p
-@man man/man3p/Bio::Tools::EUtilities::Summary.3p
-@man man/man3p/Bio::Tools::EUtilities::Summary::DocSum.3p
-@man man/man3p/Bio::Tools::EUtilities::Summary::Item.3p
-@man man/man3p/Bio::Tools::EUtilities::Summary::ItemContainerI.3p
 @man man/man3p/Bio::Tools::Eponine.3p
 @man man/man3p/Bio::Tools::Est2Genome.3p
 @man man/man3p/Bio::Tools::Fgenesh.3p
@@ -1881,6 +1783,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Tools::Phylo::Molphy.3p
 @man man/man3p/Bio::Tools::Phylo::Molphy::Result.3p
 @man man/man3p/Bio::Tools::Phylo::PAML.3p
+@man man/man3p/Bio::Tools::Phylo::PAML::Codeml.3p
 @man man/man3p/Bio::Tools::Phylo::PAML::ModelResult.3p
 @man man/man3p/Bio::Tools::Phylo::PAML::Result.3p
 @man man/man3p/Bio::Tools::Phylo::Phylip::ProtDist.3p
@@ -1908,6 +1811,7 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Tools::Run::StandAloneNCBIBlast.3p
 @man man/man3p/Bio::Tools::Run::StandAloneWUBlast.3p
 @man man/man3p/Bio::Tools::Run::WrapperBase.3p
+@man man/man3p/Bio::Tools::Run::WrapperBase::CommandExts.3p
 @man man/man3p/Bio::Tools::Seg.3p
 @man man/man3p/Bio::Tools::SeqPattern.3p
 @man man/man3p/Bio::Tools::SeqPattern::Backtranslate.3p
@@ -1946,10 +1850,12 @@ ${P5SITE}/Bio/WebAgent.pm
 @man man/man3p/Bio::Tree::TreeFunctionsI.3p
 @man man/man3p/Bio::Tree::TreeI.3p
 @man man/man3p/Bio::TreeIO.3p
+@man man/man3p/Bio::TreeIO::NewickParser.3p
 @man man/man3p/Bio::TreeIO::TreeEventBuilder.3p
 @man man/man3p/Bio::TreeIO::cluster.3p
 @man man/man3p/Bio::TreeIO::lintree.3p
 @man man/man3p/Bio::TreeIO::newick.3p
+@man man/man3p/Bio::TreeIO::nexml.3p
 @man man/man3p/Bio::TreeIO::nexus.3p
 @man man/man3p/Bio::TreeIO::nhx.3p
 @man man/man3p/Bio::TreeIO::pag.3p
@@ -1973,14 +1879,11 @@ share/examples/bioperl/
 share/examples/bioperl/Bio-DB-GFF/
 share/examples/bioperl/Bio-DB-GFF/load_ucsc.pl
 share/examples/bioperl/align/
+share/examples/bioperl/align/FastAlign.pl
 share/examples/bioperl/align/align_on_codons.pl
 share/examples/bioperl/align/aligntutorial.pl
 share/examples/bioperl/align/clustalw.pl
 share/examples/bioperl/align/simplealign.pl
-share/examples/bioperl/biblio/
-share/examples/bioperl/biblio/biblio-eutils-example.pl
-share/examples/bioperl/biblio/biblio-soap-example.pl
-share/examples/bioperl/biblio/biblio_soap.pl
 share/examples/bioperl/bioperl.pl
 share/examples/bioperl/cluster/
 share/examples/bioperl/cluster/dbsnp.pl
@@ -2014,11 +1917,6 @@ share/examples/bioperl/root/exceptions2.pl
 share/examples/bioperl/root/exceptions3.pl
 share/examples/bioperl/root/exceptions4.pl
 share/examples/bioperl/root/lib/
-share/examples/bioperl/root/lib/Bio/
-share/examples/bioperl/root/lib/Bio/PrimarySeq.pm
-share/examples/bioperl/root/lib/Bio/PrimarySeqI.pm
-share/examples/bioperl/root/lib/Bio/Seq.pm
-share/examples/bioperl/root/lib/Bio/SeqI.pm
 share/examples/bioperl/root/lib/TestInterface.pm
 share/examples/bioperl/root/lib/TestObject.pm
 share/examples/bioperl/searchio/

@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/03/28 11:40:16 sthen Exp $
-
-BROKEN=		needs update for perl 5.18
+# $OpenBSD: Makefile,v 1.17 2015/04/03 09:46:53 jasper Exp $
 
 COMMENT=	perl tools for bioinformatics
 
-DISTNAME=	BioPerl-1.6.1
+DISTNAME=	BioPerl-1.6.924
 PKGNAME=	${DISTNAME:L}# No p5-prefix here.
-REVISION=	2
 CATEGORIES=	biology
 
 HOMEPAGE=	http://bioperl.org/
@@ -14,7 +11,7 @@ HOMEPAGE=	http://bioperl.org/
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/DIST/
+CPAN_AUTHOR=	CJFIELDS
 
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
