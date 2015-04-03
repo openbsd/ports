@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2015/03/27 08:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2015/04/03 11:24:16 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		3.14.3
-REVISION=		0
+GNOME_VERSION=		3.16.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +16,7 @@ WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0
 WANTLIB += atk-bridge-2.0 atspi avahi-client avahi-common c cairo
 WANTLIB += cairo-gobject canberra canberra-gtk3 colord colordprivate
-WANTLIB += cups dbus-1 execinfo expat ffi fontconfig freetype
+WANTLIB += cups dbus-1 epoxy execinfo expat ffi fontconfig freetype
 WANTLIB += gdbm gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gnome-desktop-3 gnutls gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 gweather-3 harfbuzz hogweed
