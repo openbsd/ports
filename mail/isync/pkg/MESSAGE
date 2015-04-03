@@ -1,2 +1,3 @@
-Gmail users upgrading from isync-1.0.x, note: now mbsync recurses into "[Gmail]"
-IMAP folder, so changes to mbsync configuration may be needed.
+Configuration format has changed; consult manual page for details.
+
+The "isync" wrapper is deprecated and will be removed in future versions.

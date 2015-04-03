@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/01 08:26:03 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.27 2015/04/03 18:51:46 czarkoff Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
-DISTNAME=	isync-1.1.2
+DISTNAME=	isync-1.2.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 
@@ -11,17 +11,19 @@ HOMEPAGE=	http://isync.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto ssl lib/db4/db>=4
+WANTLIB= c crypto db sasl2 ssl z
 
-LIB_DEPENDS=		databases/db/v4
+LIB_DEPENDS=		databases/db/v4 \
+			security/cyrus-sasl2
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV+=		 CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4"	\
-			 LDFLAGS=-L${LOCALBASE}/lib/db4
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4 -g" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/isync
-	${INSTALL_DATA} ${WRKSRC}/src/mbsyncrc.sample ${PREFIX}/share/examples/isync
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	mv ${PREFIX}/share/doc/isync/examples ${PREFIX}/share/examples/isync
 
 .include <bsd.port.mk>
