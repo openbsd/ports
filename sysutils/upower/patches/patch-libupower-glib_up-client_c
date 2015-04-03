@@ -1,0 +1,54 @@
+$OpenBSD: patch-libupower-glib_up-client_c,v 1.3 2015/04/03 12:08:10 landry Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=89890
+
+--- libupower-glib/up-client.c.orig	Thu May  8 09:27:51 2014
++++ libupower-glib/up-client.c	Fri Apr  3 13:37:32 2015
+@@ -96,6 +96,7 @@ up_client_get_devices (UpClient *client)
+ 	g_return_val_if_fail (UP_IS_CLIENT (client), NULL);
+ 
+ 	array = g_ptr_array_new ();
++	if (!UP_IS_CLIENT_GLUE (client->priv->proxy)) return array;
+ 
+ 	if (up_client_glue_call_enumerate_devices_sync (client->priv->proxy,
+ 							&devices,
+@@ -166,6 +167,7 @@ up_client_get_critical_action (UpClient *client)
+ 	char *action;
+ 
+ 	g_return_val_if_fail (UP_IS_CLIENT (client), NULL);
++	if (!UP_IS_CLIENT_GLUE (client->priv->proxy)) return NULL;
+ 	if (!up_client_glue_call_get_critical_action_sync (client->priv->proxy,
+ 							   &action,
+ 							   NULL, NULL)) {
+@@ -188,6 +190,7 @@ const gchar *
+ up_client_get_daemon_version (UpClient *client)
+ {
+ 	g_return_val_if_fail (UP_IS_CLIENT (client), NULL);
++	if (!UP_IS_CLIENT_GLUE (client->priv->proxy)) return NULL;
+ 	return up_client_glue_get_daemon_version (client->priv->proxy);
+ }
+ 
+@@ -205,6 +208,7 @@ gboolean
+ up_client_get_lid_is_closed (UpClient *client)
+ {
+ 	g_return_val_if_fail (UP_IS_CLIENT (client), FALSE);
++	if (!UP_IS_CLIENT_GLUE (client->priv->proxy)) return FALSE;
+ 	return up_client_glue_get_lid_is_closed (client->priv->proxy);
+ }
+ 
+@@ -222,6 +226,7 @@ gboolean
+ up_client_get_lid_is_present (UpClient *client)
+ {
+ 	g_return_val_if_fail (UP_IS_CLIENT (client), FALSE);
++	if (!UP_IS_CLIENT_GLUE (client->priv->proxy)) return FALSE;
+ 	return up_client_glue_get_lid_is_present (client->priv->proxy);
+ }
+ 
+@@ -239,6 +244,7 @@ gboolean
+ up_client_get_on_battery (UpClient *client)
+ {
+ 	g_return_val_if_fail (UP_IS_CLIENT (client), FALSE);
++	if (!UP_IS_CLIENT_GLUE (client->priv->proxy)) return FALSE;
+ 	return up_client_glue_get_on_battery (client->priv->proxy);
+ }
+ 
