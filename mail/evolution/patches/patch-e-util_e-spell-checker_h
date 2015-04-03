@@ -1,0 +1,16 @@
+$OpenBSD: patch-e-util_e-spell-checker_h,v 1.1 2015/04/03 17:07:29 ajacoutot Exp $
+
+XXX push upstream
+../e-util/e-spell-checker.h:50: error: redefinition of typedef 'ESpellChecker'
+../e-util/e-spell-dictionary.h:53: error: previous declaration of 'ESpellChecker' was here
+
+--- e-util/e-spell-checker.h.orig	Fri Apr  3 17:47:03 2015
++++ e-util/e-spell-checker.h	Fri Apr  3 17:47:09 2015
+@@ -47,7 +47,6 @@
+ 
+ G_BEGIN_DECLS
+ 
+-typedef struct _ESpellChecker ESpellChecker;
+ typedef struct _ESpellCheckerPrivate ESpellCheckerPrivate;
+ typedef struct _ESpellCheckerClass ESpellCheckerClass;
+ 

@@ -1,19 +1,11 @@
-# $OpenBSD: Makefile,v 1.240 2015/03/27 08:41:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.241 2015/04/03 17:07:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.12.11
-REVISION=		0
-
-# NOTE: when EVO_VERSION changes, increment accordingly and bump:
-# mail/evolution-ews
-# mail/evolution-rss
-# x11/gnome/tracker
-EVO_VERSION=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-SUBST_VARS=		EVO_VERSION
+GNOME_VERSION=		3.16.0
 
 CATEGORIES=		mail
 
@@ -24,10 +16,10 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
-WANTLIB += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
-WANTLIB += edataserver-1.2 gailutil-3 gcr-ui-3 gcr-base-3 gdata gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 gtkspell3-3
+WANTLIB += cryptui ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
+WANTLIB += edataserver-1.2 edataserverui-1.2 enchant gailutil-3
+WANTLIB += gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 gtk-3 gtkspell3-3
 WANTLIB += gweather-3 ical icalvcal ldap-2.4 m notify nspr4 nss3
 WANTLIB += pango-1.0 pangocairo-1.0 pst pthread secret-1 smime3
 WANTLIB += soup-2.4 webkitgtk-3.0 xml2
@@ -44,9 +36,9 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			databases/evolution-data-server>=${GNOME_VERSION} \
 			devel/libnotify \
 			textproc/gtkspell3 \
-			www/gtkhtml4 \
 			www/webkit,gtk3 \
-			x11/gnome/desktop
+			x11/gnome/desktop \
+			x11/gnome/libcryptui
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
@@ -54,14 +46,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 BUILD_DEPENDS +=	textproc/highlight
 RUN_DEPENDS +=		textproc/highlight
 
-# module-bogofilter.so
-BUILD_DEPENDS +=	mail/bogofilter
-RUN_DEPENDS +=		mail/bogofilter
-
-# module-spamassassin.so
-BUILD_DEPENDS +=	mail/p5-Mail-SpamAssassin
-
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
@@ -72,13 +57,18 @@ YACC=			bison
 
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS=		--with-openldap="${LOCALBASE}" \
+CONFIGURE_ARGS=		--with-bogofilter=${LOCALBASE}/bin/bogofilter \
+			--with-openldap="${LOCALBASE}" \
+			--with-sa-learn=${LOCALBASE}/bin/sa-learn \
+			--with-spamassassin=${LOCALBASE}/bin/spamassassin \
 			--with-sub-version="OpenBSD Ports"
+
+# requires gnome-autoar
+CONFIGURE_ARGS +=	--disable-autoar
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
 post-install:
-	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/{modules,plugins}/*.{a,la}
-	find ${PREFIX}/share/evolution/${EVO_VERSION}/default -perm 444 -exec chmod 644 {} \;
+	rm ${PREFIX}/lib/evolution/{modules,plugins}/*.{a,la}
 
 .include <bsd.port.mk>
