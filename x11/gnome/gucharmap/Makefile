@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2014/11/13 16:32:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2015/04/03 11:01:39 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		3.14.2
+GNOME_VERSION=		3.16.0
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
@@ -18,7 +18,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z epoxy
 
 MODULES=		devel/gettext \
 			devel/dconf \
