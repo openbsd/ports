@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/01/15 11:13:21 edd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/04/03 15:23:57 edd Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
 lib/prosody/
@@ -91,10 +91,6 @@ lib/prosody/net/server_event.lua
 lib/prosody/net/server_select.lua
 lib/prosody/prosody.version
 lib/prosody/util/
-lib/prosody/util/encodings.so
-lib/prosody/util/hashes.so
-lib/prosody/util/pposix.so
-lib/prosody/util/signal.so
 lib/prosody/util/adhoc.lua
 lib/prosody/util/array.lua
 lib/prosody/util/caps.lua
@@ -103,9 +99,11 @@ lib/prosody/util/datamanager.lua
 lib/prosody/util/datetime.lua
 lib/prosody/util/debug.lua
 lib/prosody/util/dependencies.lua
+lib/prosody/util/encodings.so
 lib/prosody/util/envload.lua
 lib/prosody/util/events.lua
 lib/prosody/util/filters.lua
+lib/prosody/util/hashes.so
 lib/prosody/util/helpers.lua
 lib/prosody/util/hmac.lua
 lib/prosody/util/http.lua
@@ -119,6 +117,7 @@ lib/prosody/util/multitable.lua
 lib/prosody/util/net.so
 lib/prosody/util/openssl.lua
 lib/prosody/util/pluginloader.lua
+lib/prosody/util/pposix.so
 lib/prosody/util/prosodyctl.lua
 lib/prosody/util/pubsub.lua
 lib/prosody/util/rfc6724.lua
@@ -131,6 +130,7 @@ lib/prosody/util/sasl/scram.lua
 lib/prosody/util/sasl_cyrus.lua
 lib/prosody/util/serialization.lua
 lib/prosody/util/set.lua
+lib/prosody/util/signal.so
 lib/prosody/util/sql.lua
 lib/prosody/util/stanza.lua
 lib/prosody/util/template.lua
