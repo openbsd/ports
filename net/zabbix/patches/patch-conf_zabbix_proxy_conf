@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.4 2014/12/28 15:17:10 robert Exp $
---- conf/zabbix_proxy.conf.orig	Tue Dec 16 07:37:44 2014
-+++ conf/zabbix_proxy.conf	Sun Dec 28 16:00:03 2014
+$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.5 2015/04/03 21:06:20 robert Exp $
+--- conf/zabbix_proxy.conf.orig	Mon Feb 23 13:28:13 2015
++++ conf/zabbix_proxy.conf	Fri Apr  3 22:58:55 2015
 @@ -74,7 +74,7 @@ Hostname=Zabbix proxy
  # Default:
  # LogFile=
@@ -35,7 +35,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.4 2014/12/28 15:17:10 robert Exp $
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -440,6 +442,7 @@ DBUser=root
+@@ -456,6 +458,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # ExternalScripts=${datadir}/zabbix/externalscripts
@@ -43,7 +43,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.4 2014/12/28 15:17:10 robert Exp $
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -448,6 +451,7 @@ DBUser=root
+@@ -464,6 +467,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -51,7 +51,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.4 2014/12/28 15:17:10 robert Exp $
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -457,6 +461,7 @@ DBUser=root
+@@ -473,6 +477,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
