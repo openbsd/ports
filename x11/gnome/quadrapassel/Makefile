@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/03 16:40:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/03 23:02:27 jasper Exp $
 
 COMMENT =		fit falling blocks together
 
@@ -25,8 +25,5 @@ MODGNOME_TOOLS =	vala desktop-file-utils gtk-update-icon-cache yelp
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			graphics/clutter/clutter-gtk
-
-# 'make test'
-CONFIGURE_ENV=		APPDATA_VALIDATE="/usr/bin/true"
 
 .include <bsd.port.mk>
