@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/10/05 12:31:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/04/03 08:53:32 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -27,6 +27,7 @@ share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.lockdown.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.media-handling.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.notifications.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.peripherals.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.privacy.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.screensaver.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.search-providers.gschema.xml
@@ -41,6 +42,7 @@ share/glib-2.0/schemas/org.gnome.system.location.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
 share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/bg/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/bs/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ca/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ca@valencia/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -61,6 +63,7 @@ share/locale/hu/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/kk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lv/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ml/LC_MESSAGES/gsettings-desktop-schemas.mo
