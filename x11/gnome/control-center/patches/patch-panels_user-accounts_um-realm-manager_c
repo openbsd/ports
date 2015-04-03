@@ -1,4 +1,4 @@
-$OpenBSD: patch-panels_user-accounts_um-realm-manager_c,v 1.5 2015/04/03 11:42:41 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_um-realm-manager_c,v 1.1 2015/04/03 11:45:46 ajacoutot Exp $
 
 XXX push upsteam: fix build with Heimdal
 

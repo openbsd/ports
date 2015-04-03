@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/04/24 13:19:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.1 2015/04/03 11:45:46 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
