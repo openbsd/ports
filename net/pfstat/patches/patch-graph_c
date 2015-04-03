@@ -1,0 +1,15 @@
+$OpenBSD: patch-graph_c,v 1.1 2015/04/03 10:11:24 jasper Exp $
+
+Use best quality for JPEG images.
+
+--- graph.c.orig	Fri Apr  3 12:02:58 2015
++++ graph.c	Fri Apr  3 12:03:16 2015
+@@ -199,7 +199,7 @@ graph_generate_images(struct matrix *matrices)
+ 			return (1);
+ 		}
+ 		if (matrix->type == 0)
+-			gdImageJpeg(im, out, 95);
++			gdImageJpeg(im, out, 100);
+ 		else
+ 			gdImagePng(im, out);
+ 		fclose(out);
