@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.69 2015/01/22 16:04:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2015/04/03 09:29:44 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		3.14.3
+GNOME_VERSION=		3.16.0
 
-SHARED_LIBS +=		gweather-3             2.2      # 7.3
+SHARED_LIBS +=		gweather-3             2.3      # 10.1
 
 CATEGORIES=		net
 
@@ -21,7 +21,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += xcb xcb-render xcb-shm xml2 z lzma
+WANTLIB += xcb xcb-render xcb-shm xml2 z lzma epoxy
 
 MODULES=		devel/gettext \
 			devel/dconf \
