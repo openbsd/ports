@@ -1,28 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/01/22 17:27:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/04/03 17:14:52 ajacoutot Exp $
 @pkgpath mail/evolution-plugin-rss
 @bin bin/evolution-import-rss
-lib/evolution/${EVO_VERSION}/modules/evolution-module-rss.so
-lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.so
-lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.eplug
-lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.xml
+lib/evolution/modules/evolution-module-rss.so
+lib/evolution/plugins/liborg-gnome-evolution-rss.so
+lib/evolution/plugins/org-gnome-evolution-rss.eplug
+lib/evolution/plugins/org-gnome-evolution-rss.xml
 share/GConf/gsettings/evolution-rss.convert
 share/appdata/evolution-rss.metainfo.xml
 share/applications/evolution-rss.desktop
-share/evolution/${EVO_VERSION}/errors/org-gnome-evolution-rss.error
-share/evolution/${EVO_VERSION}/images/pix.png
-share/evolution/${EVO_VERSION}/images/rss-16.png
-share/evolution/${EVO_VERSION}/images/rss-22.png
-share/evolution/${EVO_VERSION}/images/rss-24.png
-share/evolution/${EVO_VERSION}/images/rss-icon-read.png
-share/evolution/${EVO_VERSION}/images/rss-icon-unread.png
-share/evolution/${EVO_VERSION}/images/rss-text-html.png
-share/evolution/${EVO_VERSION}/images/rss-text-x-generic.png
-share/evolution/${EVO_VERSION}/images/rss.png
-share/evolution/${EVO_VERSION}/ui/rss-html-rendering.ui
-share/evolution/${EVO_VERSION}/ui/rss-main.ui
+share/evolution/errors/org-gnome-evolution-rss.error
+share/evolution/images/pix.png
+share/evolution/images/rss-16.png
+share/evolution/images/rss-22.png
+share/evolution/images/rss-24.png
+share/evolution/images/rss-icon-read.png
+share/evolution/images/rss-icon-unread.png
+share/evolution/images/rss-text-html.png
+share/evolution/images/rss-text-x-generic.png
+share/evolution/images/rss.png
+share/evolution/ui/rss-html-rendering.ui
+share/evolution/ui/rss-main.ui
 share/glib-2.0/schemas/org.gnome.evolution.plugin.evolution-rss.gschema.xml
 share/locale/as/LC_MESSAGES/evolution-rss.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-rss.mo
+share/locale/bs/LC_MESSAGES/evolution-rss.mo
 share/locale/ca/LC_MESSAGES/evolution-rss.mo
 share/locale/ca@valencia/LC_MESSAGES/evolution-rss.mo
 share/locale/cs/LC_MESSAGES/evolution-rss.mo
@@ -40,6 +41,7 @@ share/locale/hi/LC_MESSAGES/evolution-rss.mo
 share/locale/hu/LC_MESSAGES/evolution-rss.mo
 share/locale/it/LC_MESSAGES/evolution-rss.mo
 share/locale/kn/LC_MESSAGES/evolution-rss.mo
+share/locale/lt/LC_MESSAGES/evolution-rss.mo
 share/locale/lv/LC_MESSAGES/evolution-rss.mo
 share/locale/ml/LC_MESSAGES/evolution-rss.mo
 share/locale/mr/LC_MESSAGES/evolution-rss.mo
