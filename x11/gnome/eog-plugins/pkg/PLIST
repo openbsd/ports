@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/03/24 10:11:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/04/03 12:17:14 jasper Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyo
 lib/eog/plugins/${MODPY_PYCACHE}fullscreenbg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/${MODPY_PYCACHE}fullscreenbg.${MODPY_PYC_MAGIC_TAG}pyo
+lib/eog/plugins/${MODPY_PYCACHE}maximize-windows.${MODPY_PYC_MAGIC_TAG}pyc
+lib/eog/plugins/${MODPY_PYCACHE}maximize-windows.${MODPY_PYC_MAGIC_TAG}pyo
 lib/eog/plugins/${MODPY_PYCACHE}slideshowshuffle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/${MODPY_PYCACHE}slideshowshuffle.${MODPY_PYC_MAGIC_TAG}pyo
 lib/eog/plugins/exif-display.plugin
@@ -22,6 +24,8 @@ lib/eog/plugins/libpostasa.so
 lib/eog/plugins/libsend-by-mail.so
 lib/eog/plugins/light-theme.plugin
 lib/eog/plugins/map.plugin
+lib/eog/plugins/maximize-windows.plugin
+lib/eog/plugins/maximize-windows.py
 lib/eog/plugins/postasa.plugin
 lib/eog/plugins/pythonconsole/
 lib/eog/plugins/pythonconsole.plugin
@@ -45,6 +49,7 @@ share/appdata/eog-fullscreenbg.metainfo.xml
 share/appdata/eog-hide-titlebar.metainfo.xml
 share/appdata/eog-light-theme.metainfo.xml
 share/appdata/eog-map.metainfo.xml
+share/appdata/eog-maximize-windows.metainfo.xml
 share/appdata/eog-postasa.metainfo.xml
 share/appdata/eog-pythonconsole.metainfo.xml
 share/appdata/eog-send-by-mail.metainfo.xml
