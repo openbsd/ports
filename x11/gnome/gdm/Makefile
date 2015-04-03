@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.220 2015/03/30 16:12:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.221 2015/04/03 18:39:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.14.2
+GNOME_VERSION=		3.16.0.1
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -66,9 +66,11 @@ AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS=		--disable-systemd-journal \
 			--without-systemd \
 			--mandir=${PREFIX}/man \
+			--without-plymouth \
 			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
 			--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
 			--with-custom-conf=${SYSCONFDIR}/gdm/custom.conf \
+			--with-console-kit \
 			--with-dbus-sys=${SYSCONFDIR}/dbus-1/system.d \
 			--with-log-dir=/var/log/gdm \
 			--with-working-directory=/var/db/gdm \

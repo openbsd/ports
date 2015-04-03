@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.78 2015/03/30 12:29:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.79 2015/04/03 18:39:06 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -29,6 +29,8 @@ lib/pkgconfig/gdm.pc
 @bin libexec/gdm-host-chooser
 @bin libexec/gdm-session-worker
 @bin libexec/gdm-simple-chooser
+@bin libexec/gdm-wayland-session
+@bin libexec/gdm-x-session
 @bin sbin/gdm
 share/dconf/
 share/dconf/profile/
@@ -107,19 +109,16 @@ share/gdm/gdm.schemas
 share/gdm/greeter/
 share/gdm/greeter-dconf-defaults
 share/gdm/greeter/applications/
+share/gdm/greeter/applications/gnome-shell-wayland.desktop
 share/gdm/greeter/applications/gnome-shell.desktop
 share/gdm/greeter/applications/mime-dummy-handler.desktop
 share/gdm/greeter/applications/mimeapps.list
 share/gdm/greeter/autostart/
-share/gdm/greeter/autostart/caribou-autostart.desktop
 share/gdm/greeter/autostart/orca-autostart.desktop
 share/gdm/locale.alias
 share/gir-1.0/Gdm-1.0.gir
 share/glib-2.0/schemas/10_org.gnome.login-screen.gschema.override
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
-share/gnome-session/
-share/gnome-session/sessions/
-share/gnome-session/sessions/gdm-shell.session
 share/help/C/gdm/
 share/help/C/gdm/index.docbook
 share/help/C/gdm/legal.xml

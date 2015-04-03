@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-server_c,v 1.5 2014/03/30 18:43:44 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-server_c,v 1.6 2015/04/03 18:39:06 ajacoutot Exp $
 
 REVERT - OpenBSD lacks sigwaitinfo(2)
 From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
@@ -6,8 +6,8 @@ From: Jasper St. Pierre <jstpierre@mecheye.net>
 Date: Fri, 14 Feb 2014 19:32:50 +0000
 Subject: server: Process SIGUSR1 more carefully
 
---- daemon/gdm-server.c.orig	Wed Mar 19 16:15:29 2014
-+++ daemon/gdm-server.c	Sun Mar 30 20:43:02 2014
+--- daemon/gdm-server.c.orig	Tue Mar 10 12:46:40 2015
++++ daemon/gdm-server.c	Fri Apr  3 20:24:53 2015
 @@ -94,6 +94,7 @@ struct GdmServerPrivate
          char    *auth_file;
  
@@ -146,7 +146,7 @@ Subject: server: Process SIGUSR1 more carefully
          if (!g_spawn_async_with_pipes (NULL,
                                         argv,
                                         (char **)env->pdata,
-@@ -1105,11 +1029,16 @@ gdm_server_class_init (GdmServerClass *klass)
+@@ -1096,11 +1020,16 @@ gdm_server_class_init (GdmServerClass *klass)
  static void
  gdm_server_init (GdmServer *server)
  {
@@ -163,7 +163,7 @@ Subject: server: Process SIGUSR1 more carefully
  }
  
  static void
-@@ -1123,6 +1052,9 @@ gdm_server_finalize (GObject *object)
+@@ -1114,6 +1043,9 @@ gdm_server_finalize (GObject *object)
          server = GDM_SERVER (object);
  
          g_return_if_fail (server->priv != NULL);

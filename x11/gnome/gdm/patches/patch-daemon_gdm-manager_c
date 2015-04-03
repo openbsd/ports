@@ -1,0 +1,15 @@
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.5 2015/04/03 18:39:06 ajacoutot Exp $
+
+XXX fix+push upstream
+
+--- daemon/gdm-manager.c.orig	Fri Apr  3 20:28:07 2015
++++ daemon/gdm-manager.c	Fri Apr  3 20:28:15 2015
+@@ -68,7 +68,7 @@
+ #define CK_SEAT_INTERFACE    "org.freedesktop.ConsoleKit.Seat"
+ #define CK_SESSION_INTERFACE "org.freedesktop.ConsoleKit.Session"
+ 
+-#define INITIAL_SETUP_USERNAME "gnome-initial-setup"
++#define INITIAL_SETUP_USERNAME "_gnome-initial-setup"
+ 
+ typedef struct
+ {

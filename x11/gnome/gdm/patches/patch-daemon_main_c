@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_main_c,v 1.1 2014/03/30 14:45:32 ajacoutot Exp $
+$OpenBSD: patch-daemon_main_c,v 1.2 2015/04/03 18:39:06 ajacoutot Exp $
 
 REVERT - OpenBSD lacks sigwaitinfo(2)
 From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
@@ -6,9 +6,9 @@ From: Jasper St. Pierre <jstpierre@mecheye.net>
 Date: Fri, 14 Feb 2014 19:32:50 +0000
 Subject: server: Process SIGUSR1 more carefully
 
---- daemon/main.c.orig	Sun Mar 30 11:34:52 2014
-+++ daemon/main.c	Sun Mar 30 11:36:03 2014
-@@ -295,19 +295,6 @@ is_debug_set (void)
+--- daemon/main.c.orig	Fri Mar 20 01:26:35 2015
++++ daemon/main.c	Fri Apr  3 20:24:57 2015
+@@ -289,19 +289,6 @@ is_debug_set (void)
          return debug;
  }
  
@@ -28,7 +28,7 @@ Subject: server: Process SIGUSR1 more carefully
  int
  main (int    argc,
        char **argv)
-@@ -327,8 +314,6 @@ main (int    argc,
+@@ -321,8 +308,6 @@ main (int    argc,
  
                  { NULL }
          };

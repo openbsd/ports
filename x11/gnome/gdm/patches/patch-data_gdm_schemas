@@ -1,4 +1,7 @@
-$OpenBSD: patch-data_gdm_schemas,v 1.1 2011/09/12 07:39:21 ajacoutot Exp $
+$OpenBSD: patch-data_gdm_schemas,v 1.2 2015/04/03 18:39:06 ajacoutot Exp $
+
+XXX fix+push upstream
+
 --- data/gdm.schemas.orig	Thu Jun 16 19:06:12 2011
 +++ data/gdm.schemas	Thu Jun 16 19:06:36 2011
 @@ -15,12 +15,12 @@

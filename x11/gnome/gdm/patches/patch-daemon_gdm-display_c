@@ -1,0 +1,24 @@
+$OpenBSD: patch-daemon_gdm-display_c,v 1.1 2015/04/03 18:39:06 ajacoutot Exp $
+
+XXX fix+push upstream
+
+--- daemon/gdm-display.c.orig	Fri Apr  3 20:26:42 2015
++++ daemon/gdm-display.c	Fri Apr  3 20:27:20 2015
+@@ -50,7 +50,7 @@
+ #include "gdm-dbus-util.h"
+ #include "gdm-xerrors.h"
+ 
+-#define INITIAL_SETUP_USERNAME "gnome-initial-setup"
++#define INITIAL_SETUP_USERNAME "_gnome-initial-setup"
+ #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
+ 
+ #define GDM_DISPLAY_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GDM_TYPE_DISPLAY, GdmDisplayPrivate))
+@@ -307,7 +307,7 @@ setup_xhost_auth (XHostAddress              *host_entr
+         si_entries[1].value       = GDM_USERNAME;
+         si_entries[1].valuelength = strlen (GDM_USERNAME);
+         si_entries[2].value       = "gnome-initial-setup";
+-        si_entries[2].valuelength = strlen ("gnome-initial-setup");
++        si_entries[2].valuelength = strlen ("_gnome-initial-setup");
+ 
+         host_entries[0].family    = FamilyServerInterpreted;
+         host_entries[0].address   = (char *) &si_entries[0];
