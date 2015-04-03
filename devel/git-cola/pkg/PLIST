@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/01/02 15:54:38 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/03 18:52:14 jca Exp $
 bin/git-cola
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -103,6 +103,8 @@ share/git-cola/lib/cola/widgets/defs.py
 share/git-cola/lib/cola/widgets/diff.py
 share/git-cola/lib/cola/widgets/editremotes.py
 share/git-cola/lib/cola/widgets/filelist.py
+share/git-cola/lib/cola/widgets/filetree.py
+share/git-cola/lib/cola/widgets/finder.py
 share/git-cola/lib/cola/widgets/grep.py
 share/git-cola/lib/cola/widgets/highlighter.py
 share/git-cola/lib/cola/widgets/log.py
