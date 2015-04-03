@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/03 23:23:18 schwarze Exp $
 
 COMMENT=	UCB's MPEG-I video stream encoder
 
@@ -16,7 +16,6 @@ MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/
 LIB_DEPENDS=    graphics/jpeg
 
 WRKDIST=	${WRKDIR}/mpeg_encode
-USE_GROFF =	Yes
 
 TEST_TARGET=	test_all
 
