@@ -1,10 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/03/25 10:36:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/04/03 15:14:06 ajacoutot Exp $
 @bin bin/latexila
 @man man/man1/latexila.1
 share/appdata/
 share/appdata/latexila.appdata.xml
 share/applications/latexila.desktop
 share/glib-2.0/schemas/org.gnome.latexila.gschema.xml
+share/gtk-doc/html/latexila/
+share/gtk-doc/html/latexila/LatexilaBuildJob.html
+share/gtk-doc/html/latexila/LatexilaBuildTool.html
+share/gtk-doc/html/latexila/LatexilaBuildTools.html
+share/gtk-doc/html/latexila/LatexilaBuildToolsDefault.html
+share/gtk-doc/html/latexila/LatexilaBuildToolsPersonal.html
+share/gtk-doc/html/latexila/LatexilaBuildView.html
+share/gtk-doc/html/latexila/LatexilaPostProcessor.html
+share/gtk-doc/html/latexila/LatexilaPostProcessorAllOutput.html
+share/gtk-doc/html/latexila/LatexilaPostProcessorLatex.html
+share/gtk-doc/html/latexila/LatexilaPostProcessorLatexmk.html
+share/gtk-doc/html/latexila/LatexilaSynctex.html
+share/gtk-doc/html/latexila/annotation-glossary.html
+share/gtk-doc/html/latexila/api-index-full.html
+share/gtk-doc/html/latexila/ch01.html
+share/gtk-doc/html/latexila/home.png
+share/gtk-doc/html/latexila/index.html
+share/gtk-doc/html/latexila/index.sgml
+share/gtk-doc/html/latexila/latexila-LatexilaUtils.html
+share/gtk-doc/html/latexila/latexila.devhelp2
+share/gtk-doc/html/latexila/left-insensitive.png
+share/gtk-doc/html/latexila/left.png
+share/gtk-doc/html/latexila/object-tree.html
+share/gtk-doc/html/latexila/right-insensitive.png
+share/gtk-doc/html/latexila/right.png
+share/gtk-doc/html/latexila/style.css
+share/gtk-doc/html/latexila/up-insensitive.png
+share/gtk-doc/html/latexila/up.png
 share/help/
 share/help/C/
 share/help/C/latexila/
