@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/03/26 14:44:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/04/03 11:49:35 ajacoutot Exp $
 @bin bin/gnome-power-statistics
 share/appdata/
 share/appdata/gnome-power-statistics.appdata.xml
@@ -35,6 +35,7 @@ share/locale/be@latin/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bg/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bn/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-power-manager.mo
+share/locale/bs/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-power-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-power-manager.mo

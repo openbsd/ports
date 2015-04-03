@@ -1,39 +1,42 @@
-# $OpenBSD: Makefile,v 1.40 2015/03/27 08:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2015/04/03 11:49:35 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
-GNOME_VERSION=		3.14.1
-REVISION=		0
+GNOME_VERSION=		3.16.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 expat ffi
-WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs upower-glib xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs upower-glib xcb xcb-render
+WANTLIB += xcb-shm z
 
-MODULES=	devel/dconf \
-		devel/gettext \
-		x11/gnome
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-LIB_DEPENDS=	sysutils/upower \
-		x11/gtk+3
+LIB_DEPENDS=		sysutils/upower \
+			x11/gtk+3
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ENV=	ac_cv_path_DOCBOOK2MAN=no \
-		ac_cv_path_XMLTO=no
+CONFIGURE_ENV=		ac_cv_path_DOCBOOK2MAN=no \
+			ac_cv_path_XMLTO=no
 
 # our old gcc does not handle some of the warning flags
-MAKE_FLAGS=	WARNINGFLAGS=
+MAKE_FLAGS=		WARNINGFLAGS=
+
+# configure checks for "appstream-util"; this is only needed for the "check"
+# target and we don't want to enforce a BUILD_DEPENDS
+CONFIGURE_ARGS +=	--disable-appstream-util
 
 .include <bsd.port.mk>
