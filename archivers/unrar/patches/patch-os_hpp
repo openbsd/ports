@@ -1,7 +1,7 @@
-$OpenBSD: patch-os_hpp,v 1.11 2014/09/08 18:54:30 naddy Exp $
---- os.hpp.orig	Tue Jun 10 19:14:06 2014
-+++ os.hpp	Tue Sep  2 22:22:52 2014
-@@ -136,6 +136,7 @@
+$OpenBSD: patch-os_hpp,v 1.12 2015/04/03 11:58:51 naddy Exp $
+--- os.hpp.orig	Sun Feb 15 09:02:48 2015
++++ os.hpp	Fri Apr  3 13:57:04 2015
+@@ -137,6 +137,7 @@
    #endif
  #endif
  #if defined(__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined(__APPLE__)
@@ -9,9 +9,9 @@ $OpenBSD: patch-os_hpp,v 1.11 2014/09/08 18:54:30 naddy Exp $
  #endif
  #include <pwd.h>
  #include <grp.h>
-@@ -154,6 +155,10 @@
- #include <utime.h>
+@@ -156,6 +157,10 @@
  #include <locale.h>
+ 
  
 +#ifdef OPENSSL_AES
 +#include <openssl/evp.h>
@@ -20,7 +20,7 @@ $OpenBSD: patch-os_hpp,v 1.11 2014/09/08 18:54:30 naddy Exp $
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
-@@ -235,7 +240,7 @@
+@@ -242,7 +247,7 @@
    #endif
  #endif
  
