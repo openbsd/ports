@@ -1,8 +1,8 @@
-$OpenBSD: patch-cogl_winsys_cogl-winsys-egl-kms_c,v 1.5 2014/03/27 13:07:32 jasper Exp $
---- cogl/winsys/cogl-winsys-egl-kms.c.orig	Fri Mar 21 16:50:34 2014
-+++ cogl/winsys/cogl-winsys-egl-kms.c	Thu Mar 27 13:48:15 2014
-@@ -112,7 +112,7 @@ typedef struct _CoglOnscreenKMS
-   CoglBool pending_swap_notify;
+$OpenBSD: patch-cogl_winsys_cogl-winsys-egl-kms_c,v 1.6 2015/04/03 16:31:24 jasper Exp $
+--- cogl/winsys/cogl-winsys-egl-kms.c.orig	Mon Feb 23 19:36:56 2015
++++ cogl/winsys/cogl-winsys-egl-kms.c	Fri Apr  3 11:33:43 2015
+@@ -115,7 +115,7 @@ typedef struct _CoglOnscreenKMS
+   struct gbm_surface *pending_surface;
  } CoglOnscreenKMS;
  
 -static const char device_name[] = "/dev/dri/card0";
