@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/10/15 08:52:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/04/03 16:02:08 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/appdata/
 share/appdata/org.gnome.clocks.appdata.xml
@@ -225,6 +225,7 @@ share/locale/as/LC_MESSAGES/gnome-clocks.mo
 share/locale/be/LC_MESSAGES/gnome-clocks.mo
 share/locale/bg/LC_MESSAGES/gnome-clocks.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-clocks.mo
+share/locale/bs/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-clocks.mo
 share/locale/cs/LC_MESSAGES/gnome-clocks.mo
@@ -239,6 +240,8 @@ share/locale/eu/LC_MESSAGES/gnome-clocks.mo
 share/locale/fa/LC_MESSAGES/gnome-clocks.mo
 share/locale/fi/LC_MESSAGES/gnome-clocks.mo
 share/locale/fr/LC_MESSAGES/gnome-clocks.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-clocks.mo
 share/locale/ga/LC_MESSAGES/gnome-clocks.mo
 share/locale/gd/LC_MESSAGES/gnome-clocks.mo
