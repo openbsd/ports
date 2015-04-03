@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/10/16 11:55:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/04/03 09:15:51 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -20,6 +20,8 @@ lib/girepository-1.0/Goa-1.0.typelib
 lib/goa-1.0/
 lib/goa-1.0/include/
 lib/goa-1.0/include/goaconfig.h
+lib/goa-1.0/web-extensions/
+lib/goa-1.0/web-extensions/libgoawebextension.so
 lib/libgoa-1.0.a
 lib/libgoa-1.0.la
 @lib lib/libgoa-1.0.so.${LIBgoa-1.0_VERSION}
@@ -37,14 +39,13 @@ share/gir-1.0/
 share/gir-1.0/Goa-1.0.gir
 share/glib-2.0/schemas/org.gnome.online-accounts.gschema.xml
 share/gnome-online-accounts/
-share/gnome-online-accounts/goawebview.css
 share/gnome-online-accounts/irc-networks.xml
 share/icons/hicolor/16x16/apps/goa-account-facebook.png
 share/icons/hicolor/16x16/apps/goa-account-flickr.png
+share/icons/hicolor/16x16/apps/goa-account-foursquare.png
 share/icons/hicolor/16x16/apps/goa-account-google.png
 share/icons/hicolor/16x16/apps/goa-account-owncloud.png
 share/icons/hicolor/16x16/apps/goa-account-pocket.png
-share/icons/hicolor/16x16/apps/goa-account-yahoo.png
 share/icons/hicolor/16x16/apps/goa-account.png
 share/icons/hicolor/16x16/apps/im-aim.png
 share/icons/hicolor/16x16/apps/im-ekiga.png
@@ -69,10 +70,10 @@ share/icons/hicolor/16x16/apps/im-yahoo.png
 share/icons/hicolor/16x16/apps/im-zephyr.png
 share/icons/hicolor/22x22/apps/goa-account-facebook.png
 share/icons/hicolor/22x22/apps/goa-account-flickr.png
+share/icons/hicolor/22x22/apps/goa-account-foursquare.png
 share/icons/hicolor/22x22/apps/goa-account-google.png
 share/icons/hicolor/22x22/apps/goa-account-owncloud.png
 share/icons/hicolor/22x22/apps/goa-account-pocket.png
-share/icons/hicolor/22x22/apps/goa-account-yahoo.png
 share/icons/hicolor/22x22/apps/goa-account.png
 share/icons/hicolor/22x22/apps/im-aim.png
 share/icons/hicolor/22x22/apps/im-ekiga.png
@@ -97,10 +98,10 @@ share/icons/hicolor/22x22/apps/im-yahoo.png
 share/icons/hicolor/22x22/apps/im-zephyr.png
 share/icons/hicolor/24x24/apps/goa-account-facebook.png
 share/icons/hicolor/24x24/apps/goa-account-flickr.png
+share/icons/hicolor/24x24/apps/goa-account-foursquare.png
 share/icons/hicolor/24x24/apps/goa-account-google.png
 share/icons/hicolor/24x24/apps/goa-account-owncloud.png
 share/icons/hicolor/24x24/apps/goa-account-pocket.png
-share/icons/hicolor/24x24/apps/goa-account-yahoo.png
 share/icons/hicolor/24x24/apps/goa-account.png
 share/icons/hicolor/24x24/apps/im-aim.png
 share/icons/hicolor/24x24/apps/im-ekiga.png
@@ -125,10 +126,10 @@ share/icons/hicolor/24x24/apps/im-zephyr.png
 share/icons/hicolor/256x256/apps/goa-account.png
 share/icons/hicolor/32x32/apps/goa-account-facebook.png
 share/icons/hicolor/32x32/apps/goa-account-flickr.png
+share/icons/hicolor/32x32/apps/goa-account-foursquare.png
 share/icons/hicolor/32x32/apps/goa-account-google.png
 share/icons/hicolor/32x32/apps/goa-account-owncloud.png
 share/icons/hicolor/32x32/apps/goa-account-pocket.png
-share/icons/hicolor/32x32/apps/goa-account-yahoo.png
 share/icons/hicolor/32x32/apps/goa-account.png
 share/icons/hicolor/32x32/apps/im-aim.png
 share/icons/hicolor/32x32/apps/im-ekiga.png
@@ -152,10 +153,10 @@ share/icons/hicolor/32x32/apps/im-yahoo.png
 share/icons/hicolor/32x32/apps/im-zephyr.png
 share/icons/hicolor/48x48/apps/goa-account-facebook.png
 share/icons/hicolor/48x48/apps/goa-account-flickr.png
+share/icons/hicolor/48x48/apps/goa-account-foursquare.png
 share/icons/hicolor/48x48/apps/goa-account-google.png
 share/icons/hicolor/48x48/apps/goa-account-owncloud.png
 share/icons/hicolor/48x48/apps/goa-account-pocket.png
-share/icons/hicolor/48x48/apps/goa-account-yahoo.png
 share/icons/hicolor/48x48/apps/goa-account.png
 share/icons/hicolor/48x48/apps/im-aim.png
 share/icons/hicolor/48x48/apps/im-ekiga.png
@@ -219,6 +220,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-online-accounts-tpaw.mo
+share/locale/bs/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ca/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-online-accounts-tpaw.mo
@@ -273,6 +275,7 @@ share/locale/hu/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/hu/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/id/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/id/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/is/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/it/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/it/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ja/LC_MESSAGES/gnome-online-accounts-tpaw.mo
