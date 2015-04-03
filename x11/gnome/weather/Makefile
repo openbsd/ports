@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/03 10:59:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/04/03 11:29:24 ajacoutot Exp $
 
 COMMENT=		weather application for GNOME
 
@@ -31,7 +31,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 
 # configure checks for "appstream-util"; this is only needed for the "check"
 # target and we don't want to enforce a BUILD_DEPENDS
-CONFIGURE_ARGS=		--disable-appstream-util
+CONFIGURE_ARGS +=	--disable-appstream-util
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
 
