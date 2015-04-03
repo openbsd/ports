@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/04/03 11:33:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/04/03 22:37:18 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
@@ -41,10 +41,6 @@ CONFIGURE_ENV +=	ac_cv_path_DOCBOOK2MAN=no
 
 # our old gcc does not handle some of the warning flags
 MAKE_FLAGS=		WARNINGFLAGS_C=
-
-# configure checks for "appstream-util"; this is only needed for the "check"
-# target and we don't want to enforce a BUILD_DEPENDS
-CONFIGURE_ARGS +=	--disable-appstream-util
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${LOCALBASE}/share,g;' \

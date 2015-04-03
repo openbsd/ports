@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/04/03 11:49:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2015/04/03 22:37:19 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
@@ -34,9 +34,5 @@ CONFIGURE_ENV=		ac_cv_path_DOCBOOK2MAN=no \
 
 # our old gcc does not handle some of the warning flags
 MAKE_FLAGS=		WARNINGFLAGS=
-
-# configure checks for "appstream-util"; this is only needed for the "check"
-# target and we don't want to enforce a BUILD_DEPENDS
-CONFIGURE_ARGS +=	--disable-appstream-util
 
 .include <bsd.port.mk>

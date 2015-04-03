@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2015/04/03 18:41:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2015/04/03 22:37:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,9 +36,5 @@ LIB_DEPENDS=		devel/vte3 \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
-
-# configure checks for "appstream-util"; this is only needed for the "check"
-# target and we don't want to enforce a BUILD_DEPENDS
-CONFIGURE_ARGS +=	--disable-appstream-util
 
 .include <bsd.port.mk>
