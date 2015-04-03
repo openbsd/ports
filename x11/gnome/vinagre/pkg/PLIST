@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2014/10/06 08:32:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/04/03 18:41:51 ajacoutot Exp $
 @bin bin/vinagre
 @man man/man1/vinagre.1
 share/GConf/gsettings/org.gnome.Vinagre.convert
@@ -16,7 +16,7 @@ share/help/C/vinagre/connect-reverse.page
 share/help/C/vinagre/connect.page
 share/help/C/vinagre/figures/
 share/help/C/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/C/vinagre/figures/vinagre-connected.png
+share/help/C/vinagre/figures/vinagre-connected-3-16.png
 share/help/C/vinagre/fullscreen.page
 share/help/C/vinagre/index.page
 share/help/C/vinagre/introduction.page
@@ -32,7 +32,7 @@ share/help/cs/vinagre/connect-reverse.page
 share/help/cs/vinagre/connect.page
 share/help/cs/vinagre/figures/
 share/help/cs/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/cs/vinagre/figures/vinagre-connected.png
+share/help/cs/vinagre/figures/vinagre-connected-3-16.png
 share/help/cs/vinagre/fullscreen.page
 share/help/cs/vinagre/index.page
 share/help/cs/vinagre/introduction.page
@@ -48,7 +48,7 @@ share/help/de/vinagre/connect-reverse.page
 share/help/de/vinagre/connect.page
 share/help/de/vinagre/figures/
 share/help/de/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/de/vinagre/figures/vinagre-connected.png
+share/help/de/vinagre/figures/vinagre-connected-3-16.png
 share/help/de/vinagre/fullscreen.page
 share/help/de/vinagre/index.page
 share/help/de/vinagre/introduction.page
@@ -64,7 +64,7 @@ share/help/el/vinagre/connect-reverse.page
 share/help/el/vinagre/connect.page
 share/help/el/vinagre/figures/
 share/help/el/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/el/vinagre/figures/vinagre-connected.png
+share/help/el/vinagre/figures/vinagre-connected-3-16.png
 share/help/el/vinagre/fullscreen.page
 share/help/el/vinagre/index.page
 share/help/el/vinagre/introduction.page
@@ -80,7 +80,7 @@ share/help/es/vinagre/connect-reverse.page
 share/help/es/vinagre/connect.page
 share/help/es/vinagre/figures/
 share/help/es/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/es/vinagre/figures/vinagre-connected.png
+share/help/es/vinagre/figures/vinagre-connected-3-16.png
 share/help/es/vinagre/fullscreen.page
 share/help/es/vinagre/index.page
 share/help/es/vinagre/introduction.page
@@ -96,7 +96,7 @@ share/help/eu/vinagre/connect-reverse.page
 share/help/eu/vinagre/connect.page
 share/help/eu/vinagre/figures/
 share/help/eu/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/eu/vinagre/figures/vinagre-connected.png
+share/help/eu/vinagre/figures/vinagre-connected-3-16.png
 share/help/eu/vinagre/fullscreen.page
 share/help/eu/vinagre/index.page
 share/help/eu/vinagre/introduction.page
@@ -112,7 +112,7 @@ share/help/fa/vinagre/connect-reverse.page
 share/help/fa/vinagre/connect.page
 share/help/fa/vinagre/figures/
 share/help/fa/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/fa/vinagre/figures/vinagre-connected.png
+share/help/fa/vinagre/figures/vinagre-connected-3-16.png
 share/help/fa/vinagre/fullscreen.page
 share/help/fa/vinagre/index.page
 share/help/fa/vinagre/introduction.page
@@ -128,7 +128,7 @@ share/help/fr/vinagre/connect-reverse.page
 share/help/fr/vinagre/connect.page
 share/help/fr/vinagre/figures/
 share/help/fr/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/fr/vinagre/figures/vinagre-connected.png
+share/help/fr/vinagre/figures/vinagre-connected-3-16.png
 share/help/fr/vinagre/fullscreen.page
 share/help/fr/vinagre/index.page
 share/help/fr/vinagre/introduction.page
@@ -144,7 +144,7 @@ share/help/gl/vinagre/connect-reverse.page
 share/help/gl/vinagre/connect.page
 share/help/gl/vinagre/figures/
 share/help/gl/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/gl/vinagre/figures/vinagre-connected.png
+share/help/gl/vinagre/figures/vinagre-connected-3-16.png
 share/help/gl/vinagre/fullscreen.page
 share/help/gl/vinagre/index.page
 share/help/gl/vinagre/introduction.page
@@ -160,7 +160,7 @@ share/help/hu/vinagre/connect-reverse.page
 share/help/hu/vinagre/connect.page
 share/help/hu/vinagre/figures/
 share/help/hu/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/hu/vinagre/figures/vinagre-connected.png
+share/help/hu/vinagre/figures/vinagre-connected-3-16.png
 share/help/hu/vinagre/fullscreen.page
 share/help/hu/vinagre/index.page
 share/help/hu/vinagre/introduction.page
@@ -176,7 +176,7 @@ share/help/id/vinagre/connect-reverse.page
 share/help/id/vinagre/connect.page
 share/help/id/vinagre/figures/
 share/help/id/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/id/vinagre/figures/vinagre-connected.png
+share/help/id/vinagre/figures/vinagre-connected-3-16.png
 share/help/id/vinagre/fullscreen.page
 share/help/id/vinagre/index.page
 share/help/id/vinagre/introduction.page
@@ -192,7 +192,7 @@ share/help/lv/vinagre/connect-reverse.page
 share/help/lv/vinagre/connect.page
 share/help/lv/vinagre/figures/
 share/help/lv/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/lv/vinagre/figures/vinagre-connected.png
+share/help/lv/vinagre/figures/vinagre-connected-3-16.png
 share/help/lv/vinagre/fullscreen.page
 share/help/lv/vinagre/index.page
 share/help/lv/vinagre/introduction.page
@@ -208,7 +208,7 @@ share/help/pt_BR/vinagre/connect-reverse.page
 share/help/pt_BR/vinagre/connect.page
 share/help/pt_BR/vinagre/figures/
 share/help/pt_BR/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/pt_BR/vinagre/figures/vinagre-connected.png
+share/help/pt_BR/vinagre/figures/vinagre-connected-3-16.png
 share/help/pt_BR/vinagre/fullscreen.page
 share/help/pt_BR/vinagre/index.page
 share/help/pt_BR/vinagre/introduction.page
@@ -224,7 +224,7 @@ share/help/ru/vinagre/connect-reverse.page
 share/help/ru/vinagre/connect.page
 share/help/ru/vinagre/figures/
 share/help/ru/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/ru/vinagre/figures/vinagre-connected.png
+share/help/ru/vinagre/figures/vinagre-connected-3-16.png
 share/help/ru/vinagre/fullscreen.page
 share/help/ru/vinagre/index.page
 share/help/ru/vinagre/introduction.page
@@ -240,7 +240,7 @@ share/help/sl/vinagre/connect-reverse.page
 share/help/sl/vinagre/connect.page
 share/help/sl/vinagre/figures/
 share/help/sl/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/sl/vinagre/figures/vinagre-connected.png
+share/help/sl/vinagre/figures/vinagre-connected-3-16.png
 share/help/sl/vinagre/fullscreen.page
 share/help/sl/vinagre/index.page
 share/help/sl/vinagre/introduction.page
@@ -256,7 +256,7 @@ share/help/zh_CN/vinagre/connect-reverse.page
 share/help/zh_CN/vinagre/connect.page
 share/help/zh_CN/vinagre/figures/
 share/help/zh_CN/vinagre/figures/preferences-desktop-remote-desktop.png
-share/help/zh_CN/vinagre/figures/vinagre-connected.png
+share/help/zh_CN/vinagre/figures/vinagre-connected-3-16.png
 share/help/zh_CN/vinagre/fullscreen.page
 share/help/zh_CN/vinagre/index.page
 share/help/zh_CN/vinagre/introduction.page
@@ -289,6 +289,7 @@ share/locale/be@latin/LC_MESSAGES/vinagre.mo
 share/locale/bg/LC_MESSAGES/vinagre.mo
 share/locale/bn/LC_MESSAGES/vinagre.mo
 share/locale/bn_IN/LC_MESSAGES/vinagre.mo
+share/locale/bs/LC_MESSAGES/vinagre.mo
 share/locale/ca/LC_MESSAGES/vinagre.mo
 share/locale/ca@valencia/LC_MESSAGES/vinagre.mo
 share/locale/cs/LC_MESSAGES/vinagre.mo
