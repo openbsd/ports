@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2015/03/31 06:43:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2015/04/03 08:49:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -71,7 +71,6 @@ MODGNOME_TOOLS += gobject-introspection vala yelp
 
 YACC=			bison -y
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-symbol-db-shm=/tmp \
 			--disable-neon
 
