@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2015/04/03 11:18:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2015/04/03 16:01:12 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -8,6 +8,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.16.0
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -77,6 +78,6 @@ pre-configure:
 	perl -pi -e 's,-Wnoexcept,,' ${WRKSRC}/configure
 
 post-install:
-	rm ${PREFIX}/lib/evolution-data-server/{,*}/*.{a,la}
+	rm ${PREFIX}/lib/evolution-data-server/*/*.{a,la}
 
 .include <bsd.port.mk>
