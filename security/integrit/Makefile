@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/22 21:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/03 15:12:28 pascal Exp $
 
 COMMENT=		file integrity checker
 
 DISTNAME=		integrit-4.1
+REVISION=		0
 CATEGORIES=		security
 
 HOMEPAGE=		http://sourceforge.net/projects/integrit/

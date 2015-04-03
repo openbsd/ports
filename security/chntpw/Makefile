@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/03 15:12:28 pascal Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		reset NT/W2K/XP/Vista/W7 password
 
 V =			100627
-REVISION =		2
+REVISION =		3
 DISTNAME =		chntpw-source-${V}
 PKGNAME =		chntpw-${V}
 EXTRACT_SUFX =		.zip

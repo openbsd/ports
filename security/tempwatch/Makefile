@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/01 09:07:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/03 15:12:28 pascal Exp $
 
 COMMENT=		temporary file auditing tool
 
 PKGNAME=		tempwatch-1.0
+REVISION=		0
 CATEGORIES=		security
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
