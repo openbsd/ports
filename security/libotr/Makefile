@@ -1,21 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:54 naddy Exp $
-
-# WARNING: When trying to update this port to 4.x.x, please be
-# aware that the following ports need adjustments for the new
-# OTRv4 API:
-# net/climm
-# net/bitlbee,otr
-# net/mcabber (diff ready)
+# $OpenBSD: Makefile,v 1.26 2015/04/03 16:15:40 stsp Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
-DISTNAME=	libotr-4.0.0
+DISTNAME=	libotr-4.1.0
 CATEGORIES=	security
-REVISION=	0
 
-SHARED_LIBS +=  otr                  4.0      # 5.0
+SHARED_LIBS +=  otr                  4.1      # 6.0
 
-HOMEPAGE=	http://www.cypherpunks.ca/otr/
+HOMEPAGE=	http://otr.cypherpunks.ca/
 
 MASTER_SITES=	${HOMEPAGE}
 
