@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/11/27 13:14:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2015/04/03 09:34:13 schwarze Exp $
 
 COMMENT=		finds and then operates on files
 
@@ -25,6 +25,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/db
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
