@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.44 2014/10/05 14:27:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2015/04/03 12:22:40 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
-include/gedit-3.12/
-include/gedit-3.12/gedit/
-include/gedit-3.12/gedit/gedit-app-activatable.h
-include/gedit-3.12/gedit/gedit-app.h
-include/gedit-3.12/gedit/gedit-commands.h
-include/gedit-3.12/gedit/gedit-debug.h
-include/gedit-3.12/gedit/gedit-document.h
-include/gedit-3.12/gedit/gedit-encodings-combo-box.h
-include/gedit-3.12/gedit/gedit-menu-extension.h
-include/gedit-3.12/gedit/gedit-message-bus.h
-include/gedit-3.12/gedit/gedit-message.h
-include/gedit-3.12/gedit/gedit-progress-info-bar.h
-include/gedit-3.12/gedit/gedit-statusbar.h
-include/gedit-3.12/gedit/gedit-tab.h
-include/gedit-3.12/gedit/gedit-utils.h
-include/gedit-3.12/gedit/gedit-view-activatable.h
-include/gedit-3.12/gedit/gedit-view.h
-include/gedit-3.12/gedit/gedit-window-activatable.h
-include/gedit-3.12/gedit/gedit-window.h
+include/gedit-3.14/
+include/gedit-3.14/gedit/
+include/gedit-3.14/gedit/gedit-app-activatable.h
+include/gedit-3.14/gedit/gedit-app.h
+include/gedit-3.14/gedit/gedit-commands.h
+include/gedit-3.14/gedit/gedit-debug.h
+include/gedit-3.14/gedit/gedit-document.h
+include/gedit-3.14/gedit/gedit-encodings-combo-box.h
+include/gedit-3.14/gedit/gedit-menu-extension.h
+include/gedit-3.14/gedit/gedit-message-bus.h
+include/gedit-3.14/gedit/gedit-message.h
+include/gedit-3.14/gedit/gedit-progress-info-bar.h
+include/gedit-3.14/gedit/gedit-statusbar.h
+include/gedit-3.14/gedit/gedit-tab.h
+include/gedit-3.14/gedit/gedit-utils.h
+include/gedit-3.14/gedit/gedit-view-activatable.h
+include/gedit-3.14/gedit/gedit-view.h
+include/gedit-3.14/gedit/gedit-window-activatable.h
+include/gedit-3.14/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.130 2015/02/05 10:14:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.131 2015/04/03 12:22:40 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.14.3
+GNOME_VERSION=		3.16.0
 
 CATEGORIES=		editors
 
@@ -18,7 +18,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render
-WANTLIB += xcb-shm xml2 z lzma
+WANTLIB += xcb-shm xml2 z lzma epoxy
 
 MODULES=		devel/dconf \
 			devel/gettext \
