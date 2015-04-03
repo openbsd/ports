@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2014/10/06 08:29:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2015/04/03 13:04:04 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -114,6 +114,8 @@ share/locale/eu/LC_MESSAGES/nautilus.mo
 share/locale/fa/LC_MESSAGES/nautilus.mo
 share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/nautilus.mo
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
@@ -229,9 +231,6 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/nautilus.mo
-share/mime/packages/nautilus.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.149 2015/03/28 18:06:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2015/04/03 13:04:04 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.14.2
-REVISION=		1
+GNOME_VERSION=		3.16.0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -21,7 +20,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 epoxy exempi exif expat
 WANTLIB += ffi fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icui18n
-WANTLIB += icuuc kvm lzma m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += icuuc kvm lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sqlite3 uuid
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 WANTLIB += tracker-sparql-${TRACKER_API}
@@ -36,12 +35,11 @@ RUN_DEPENDS=		x11/gnome/gvfs \
 			devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		x11/gnome/desktop \
-			devel/libnotify \
 			graphics/libexif \
 			textproc/exempi \
 			x11/gnome/tracker
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection shared-mime-info
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
