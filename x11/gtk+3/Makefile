@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2015/03/29 07:28:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2015/04/03 17:56:04 bcallah Exp $
 
 SHARED_ONLY=		Yes
 
@@ -106,10 +106,10 @@ TEST_IS_INTERACTIVE=	x11
 CONFIGURE_STYLE=	gnu
 
 # sync with devel/mozjs17: colord -> polkit -> mozjs17
+# not for mips64* since devel/mozjs17 does not compile there (OOM)
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
-    ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "mips64"
+    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64"
 LIB_DEPENDS-cups +=	graphics/colord
 WANTLIB-cups +=	colordprivate colord lcms2
 .else
