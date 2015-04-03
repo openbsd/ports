@@ -1,14 +1,12 @@
-$OpenBSD: patch-cgi_Makefile_in,v 1.7 2015/02/05 22:58:24 sthen Exp $
---- cgi/Makefile.in.orig	Thu Feb  5 13:24:24 2015
-+++ cgi/Makefile.in	Thu Feb  5 13:24:24 2015
-@@ -36,8 +36,9 @@ JSONFLAGS=-DJSON_NAGIOS_4X
- #CFLAGS_WARN=-Wall -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs
+$OpenBSD: patch-cgi_Makefile_in,v 1.8 2015/04/03 15:09:15 pascal Exp $
+--- cgi/Makefile.in.orig	Tue Aug 12 17:00:01 2014
++++ cgi/Makefile.in	Thu Apr  2 13:42:46 2015
+@@ -37,7 +37,7 @@ JSONFLAGS=-DJSON_NAGIOS_4X
  #CFLAGS_DEBUG=-ggdb3 -g3
  #CFLAGS+=$(CFLAGS_WARN) $(CFLAGS_DEBUG)
-+CFLAGS+=-fno-pie
  
 -LDFLAGS=@LDFLAGS@
-+LDFLAGS=-static -nopie @LDFLAGS@
++LDFLAGS=-static @LDFLAGS@
  LIBS=@LIBS@
  
  CGIS=archivejson.cgi avail.cgi cmd.cgi config.cgi extinfo.cgi history.cgi notifications.cgi objectjson.cgi outages.cgi showlog.cgi status.cgi statusjson.cgi statuswml.cgi summary.cgi tac.cgi $(CGIEXTRAS)
