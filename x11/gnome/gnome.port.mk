@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.98 2015/03/27 08:16:16 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.99 2015/04/03 22:32:27 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -72,6 +72,7 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 
 .   if ${MODGNOME_TOOLS:Mdesktop-file-utils}
         MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
+        MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/appstream-util;
         MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
 .   endif
 
