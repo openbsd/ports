@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2014/11/16 13:59:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.43 2015/04/03 12:17:02 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -42,7 +42,6 @@ share/appdata/
 share/appdata/eog.appdata.xml
 share/applications/eog.desktop
 share/eog/
-share/eog/eog-toolbar.xml
 share/eog/gir-1.0/
 share/eog/gir-1.0/Eog-3.0.gir
 share/eog/icons/
@@ -74,8 +73,6 @@ share/eog/icons/hicolor/scalable/actions/
 share/eog/icons/hicolor/scalable/actions/eog-image-gallery.svg
 share/eog/icons/hicolor/scalable/actions/eog-plugin.svg
 share/eog/icons/hicolor/scalable/actions/slideshow-play.svg
-share/eog/pixmaps/
-share/eog/pixmaps/thumbnail-frame.png
 share/glib-2.0/schemas/org.gnome.eog.enums.xml
 share/glib-2.0/schemas/org.gnome.eog.gschema.xml
 share/gtk-doc/html/eog/
@@ -1130,56 +1127,6 @@ share/help/pa/eog/toolbar.page
 share/help/pa/eog/translate.page
 share/help/pa/eog/view.page
 share/help/pa/eog/zoom.page
-share/help/pl/
-share/help/pl/eog/
-share/help/pl/eog/bug-filing.page
-share/help/pl/eog/commandline.page
-share/help/pl/eog/copy-paste.page
-share/help/pl/eog/default.page
-share/help/pl/eog/desktop-background.page
-share/help/pl/eog/develop.page
-share/help/pl/eog/documentation.page
-share/help/pl/eog/edit.page
-share/help/pl/eog/figures/
-share/help/pl/eog/figures/eog-logo.png
-share/help/pl/eog/figures/eog-toolbar-editor.png
-share/help/pl/eog/figures/eog-trail.png
-share/help/pl/eog/figures/image-view-prefs.png
-share/help/pl/eog/figures/multiple-convert.png
-share/help/pl/eog/figures/multiple-rename-count.png
-share/help/pl/eog/figures/plugin-send-by-mail.png
-share/help/pl/eog/figures/plugins-all.png
-share/help/pl/eog/figures/prefs-plugins-date.png
-share/help/pl/eog/figures/prefs-plugins-fullscreen.png
-share/help/pl/eog/figures/prefs-plugins.png
-share/help/pl/eog/figures/slideshow-prefs.png
-share/help/pl/eog/flip-rotate.page
-share/help/pl/eog/format-change.page
-share/help/pl/eog/formats-save.page
-share/help/pl/eog/formats-view.page
-share/help/pl/eog/index.page
-share/help/pl/eog/introduction.page
-share/help/pl/eog/legal.xml
-share/help/pl/eog/license.page
-share/help/pl/eog/open.page
-share/help/pl/eog/plugin-exif-digital.page
-share/help/pl/eog/plugin-fullscreen-background.page
-share/help/pl/eog/plugin-fullscreen-double-click.page
-share/help/pl/eog/plugin-picasa.page
-share/help/pl/eog/plugin-python-console.page
-share/help/pl/eog/plugin-send-by-mail.page
-share/help/pl/eog/plugin-slideshow-shuffle.page
-share/help/pl/eog/plugin-zoom-width.page
-share/help/pl/eog/plugins.page
-share/help/pl/eog/preferences.page
-share/help/pl/eog/print.page
-share/help/pl/eog/rename-multiple.page
-share/help/pl/eog/shortcuts.page
-share/help/pl/eog/slideshow.page
-share/help/pl/eog/toolbar.page
-share/help/pl/eog/translate.page
-share/help/pl/eog/view.page
-share/help/pl/eog/zoom.page
 share/help/pt_BR/
 share/help/pt_BR/eog/
 share/help/pt_BR/eog/bug-filing.page
@@ -1685,7 +1632,6 @@ share/icons/hicolor/22x22/apps/eog.png
 share/icons/hicolor/24x24/apps/eog.png
 share/icons/hicolor/256x256/apps/eog.png
 share/icons/hicolor/32x32/apps/eog.png
-share/icons/hicolor/scalable/apps/eog.svg
 share/locale/af/LC_MESSAGES/eog.mo
 share/locale/am/LC_MESSAGES/eog.mo
 share/locale/an/LC_MESSAGES/eog.mo
@@ -1718,6 +1664,8 @@ share/locale/eu/LC_MESSAGES/eog.mo
 share/locale/fa/LC_MESSAGES/eog.mo
 share/locale/fi/LC_MESSAGES/eog.mo
 share/locale/fr/LC_MESSAGES/eog.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/eog.mo
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
