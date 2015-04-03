@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.108 2015/03/24 13:36:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.109 2015/04/03 16:47:44 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.14.4
+GNOME_VERSION=		3.16.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +25,7 @@ WANTLIB += png polkit-agent-1 polkit-gobject-1 pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib readline secret-1 smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ telepathy-glib upower-glib vorbis vorbisenc
-WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z
+WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z epoxy
 WANTLIB += EGL Xau Xdmcp drm gbm glapi xcb-dri2 xcb-randr xcb-shape
 WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile lzma
 
@@ -41,6 +41,8 @@ MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
 MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas
@@ -54,7 +56,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			www/libcroco \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.14.4
+			x11/gnome/mutter>=3.16.0
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
@@ -69,7 +71,7 @@ RUN_DEPENDS +=		x11/gnome/caribou
 RUN_DEPENDS +=		sysutils/consolekit
 
 # gnome-shell-extension-tool, gnome-shell-perf-tool
-RUN_DEPENDS +=		devel/py-gobject3
+RUN_DEPENDS +=		devel/py-gobject3,python3
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can

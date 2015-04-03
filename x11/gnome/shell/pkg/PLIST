@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/03/24 13:36:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/04/03 16:47:44 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -38,44 +38,8 @@ share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
+share/gnome-shell/gnome-shell-theme.gresource
 share/gnome-shell/perf-background.xml
-share/gnome-shell/theme/
-share/gnome-shell/theme/calendar-arrow-left.svg
-share/gnome-shell/theme/calendar-arrow-right.svg
-share/gnome-shell/theme/calendar-today.svg
-share/gnome-shell/theme/checkbox-focused.svg
-share/gnome-shell/theme/checkbox-off-focused.svg
-share/gnome-shell/theme/checkbox-off.svg
-share/gnome-shell/theme/checkbox.svg
-share/gnome-shell/theme/close-window.svg
-share/gnome-shell/theme/close.svg
-share/gnome-shell/theme/corner-ripple-ltr.png
-share/gnome-shell/theme/corner-ripple-rtl.png
-share/gnome-shell/theme/dash-placeholder.svg
-share/gnome-shell/theme/filter-selected-ltr.svg
-share/gnome-shell/theme/filter-selected-rtl.svg
-share/gnome-shell/theme/gnome-shell.css
-share/gnome-shell/theme/logged-in-indicator.svg
-share/gnome-shell/theme/message-tray-background.png
-share/gnome-shell/theme/more-results.svg
-share/gnome-shell/theme/noise-texture.png
-share/gnome-shell/theme/page-indicator-active.svg
-share/gnome-shell/theme/page-indicator-checked.svg
-share/gnome-shell/theme/page-indicator-hover.svg
-share/gnome-shell/theme/page-indicator-inactive.svg
-share/gnome-shell/theme/panel-button-border.svg
-share/gnome-shell/theme/panel-button-highlight-narrow.svg
-share/gnome-shell/theme/panel-button-highlight-wide.svg
-share/gnome-shell/theme/process-working.svg
-share/gnome-shell/theme/running-indicator.svg
-share/gnome-shell/theme/source-button-border.svg
-share/gnome-shell/theme/summary-counter.svg
-share/gnome-shell/theme/toggle-off-intl.svg
-share/gnome-shell/theme/toggle-off-us.svg
-share/gnome-shell/theme/toggle-on-intl.svg
-share/gnome-shell/theme/toggle-on-us.svg
-share/gnome-shell/theme/ws-switch-arrow-down.png
-share/gnome-shell/theme/ws-switch-arrow-up.png
 share/gtk-doc/html/shell/
 share/gtk-doc/html/shell/ShellApp.html
 share/gtk-doc/html/shell/ShellAppSystem.html
@@ -85,7 +49,6 @@ share/gtk-doc/html/shell/ShellGenericContainer.html
 share/gtk-doc/html/shell/ShellGlobal.html
 share/gtk-doc/html/shell/ShellGtkEmbed.html
 share/gtk-doc/html/shell/ShellMountOperation.html
-share/gtk-doc/html/shell/ShellSlicer.html
 share/gtk-doc/html/shell/ShellStack.html
 share/gtk-doc/html/shell/ShellTpClient.html
 share/gtk-doc/html/shell/ShellTrayIcon.html
@@ -111,7 +74,7 @@ share/gtk-doc/html/shell/left.png
 share/gtk-doc/html/shell/object-tree.html
 share/gtk-doc/html/shell/right-insensitive.png
 share/gtk-doc/html/shell/right.png
-share/gtk-doc/html/shell/shell-shell-keybinding-modes.html
+share/gtk-doc/html/shell/shell-shell-action-modes.html
 share/gtk-doc/html/shell/shell-shell-polkit-authentication-agent.html
 share/gtk-doc/html/shell/shell-shell-recorder.html
 share/gtk-doc/html/shell/shell-shell-util.html
@@ -190,6 +153,7 @@ share/locale/hi/LC_MESSAGES/gnome-shell.mo
 share/locale/hu/LC_MESSAGES/gnome-shell.mo
 share/locale/ia/LC_MESSAGES/gnome-shell.mo
 share/locale/id/LC_MESSAGES/gnome-shell.mo
+share/locale/is/LC_MESSAGES/gnome-shell.mo
 share/locale/it/LC_MESSAGES/gnome-shell.mo
 share/locale/ja/LC_MESSAGES/gnome-shell.mo
 share/locale/kk/LC_MESSAGES/gnome-shell.mo
@@ -228,6 +192,7 @@ share/locale/th/LC_MESSAGES/gnome-shell.mo
 share/locale/tr/LC_MESSAGES/gnome-shell.mo
 share/locale/ug/LC_MESSAGES/gnome-shell.mo
 share/locale/uk/LC_MESSAGES/gnome-shell.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-shell.mo
 share/locale/vi/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-shell.mo
