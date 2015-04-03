@@ -1,29 +1,31 @@
-# $OpenBSD: Makefile,v 1.42 2015/03/31 06:45:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2015/04/03 16:48:39 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.14.2
-REVISION=		0
+GNOME_VERSION=		3.16.0
 
 CATEGORIES=		productivity
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject camel-1.2 db dbus-1 dbus-glib-1
-WANTLIB += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 edata-book-1.2
-WANTLIB += edataserver-1.2 expat ffi folks folks-eds folks-telepathy
-WANTLIB += fontconfig freetype gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz icudata icui18n icuuc m notify nspr4
-WANTLIB += nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
-WANTLIB += xcb xcb-render xcb-shm xml2 z zeitgeist-2.0 lzma
+WANTLIB += EGL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject camel-1.2
+WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
+WANTLIB += edata-book-1.2 edataserver-1.2 edataserverui-1.2 epoxy
+WANTLIB += expat ffi folks folks-eds folks-telepathy fontconfig
+WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gee-0.8 geocode-glib gio-2.0 glapi glib-2.0
+WANTLIB += gmodule-2.0 gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icui18n
+WANTLIB += icuuc json-glib-1.0 lzma m notify nspr4 nss3 nssutil3
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs secret-1
+WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
+WANTLIB += xcb xcb-dri2 xcb-render xcb-shape xcb-shm xcb-xfixes
+WANTLIB += xml2 z zeitgeist-2.0
 
 MODULES=		devel/gettext \
 			x11/gnome \
