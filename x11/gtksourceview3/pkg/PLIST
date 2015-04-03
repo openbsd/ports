@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/10/05 12:44:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/04/03 11:53:43 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -29,6 +29,9 @@ include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcesearchcontext.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcesearchsettings.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcestyle.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcestylescheme.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcestyleschemechooser.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcestyleschemechooserbutton.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcestyleschemechooserwidget.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcestyleschememanager.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcetypes.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceundomanager.h
@@ -71,6 +74,9 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceSearchContext.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceSearchSettings.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyle.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleScheme.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleSchemeChooser.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleSchemeChooserButton.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleSchemeChooserWidget.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleSchemeManager.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceUndoManager.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceView.html
@@ -79,11 +85,18 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-0.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-10.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-12.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-14.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-16.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-4.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-deprecated.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-full.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch01.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch02.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch03.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch04.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch05.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch06.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch07.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch08.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}-GtkSourceUtils.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}.devhelp2
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/home.png
@@ -94,6 +107,8 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/lang-tutorial.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/left-insensitive.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/left.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/object-tree.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/pt01.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/pt02.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/right-insensitive.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/right.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/style-reference.html
@@ -140,6 +155,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/fortran.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/fsharp.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gap.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gdb-log.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/genie.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/glsl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/go.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gtk-doc.lang
@@ -187,6 +203,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/opencl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/pascal.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/perl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/php.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/pig.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/pkgconfig.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/po.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/prolog.lang
@@ -209,6 +226,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/systemverilog.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/t2t.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/tcl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/texinfo.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/thrift.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/vala.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/vbnet.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/verilog.lang
@@ -295,6 +313,9 @@ share/locale/hu/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/id/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/it/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
