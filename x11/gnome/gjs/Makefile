@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2015/03/19 19:28:37 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2015/04/03 15:35:23 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.42.0
+GNOME_VERSION=		1.43.3
 
-SHARED_LIBS +=  gjs                  4.1      # 0.0
+SHARED_LIBS +=  gjs                  4.2      # 0.0
 
 CATEGORIES=		devel
 
@@ -20,7 +20,7 @@ WANTLIB += X11 Xext Xrender c cairo cairo-gobject expat ffi fontconfig
 WANTLIB += freetype gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m mozjs-24 ncurses ncursesw
 WANTLIB += nspr4 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += readline stdc++ xcb xcb-render xcb-shm z Xrandr
+WANTLIB += readline stdc++ xcb xcb-render xcb-shm z Xrandr epoxy
 WANTLIB += ICE SM Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi dbus-1 gdk-3 gdk_pixbuf-2.0
 WANTLIB += graphite2 gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
