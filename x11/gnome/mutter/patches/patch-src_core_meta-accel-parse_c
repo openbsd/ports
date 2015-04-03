@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_core_meta-accel-parse_c,v 1.1 2015/04/03 16:47:17 jasper Exp $
+
+Prevent duplicate declaration of MetaKeyCombo
+
+--- src/core/meta-accel-parse.c.orig	Fri Apr  3 17:12:57 2015
++++ src/core/meta-accel-parse.c	Fri Apr  3 17:15:09 2015
+@@ -24,8 +24,8 @@
+ 
+ #include "config.h"
+ 
+-#include "meta-accel-parse.h"
+ #include "keybindings-private.h"
++#include "meta-accel-parse.h"
+ 
+ #include <xkbcommon/xkbcommon.h>
+ #include <string.h>

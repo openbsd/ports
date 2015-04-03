@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2015/03/24 13:36:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2015/04/03 16:47:17 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.14.4
+GNOME_VERSION=		3.16.0
 
-SHARED_LIBS +=  mutter                    0.2 # 0.0
+SHARED_LIBS +=  mutter                    1.0 # 0.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 upower-glib vorbis vorbisfile
 WANTLIB += xcb xcb-dri2 xcb-randr xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-util xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
-WANTLIB += xkbfile z
+WANTLIB += xkbfile z epoxy
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -38,10 +38,10 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			x11/xkbcommon \
 			sysutils/upower
 
-BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 			x11/gnome/zenity
 
-RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 			x11/gnome/zenity
 
 # disable -Werror which breaks at least hppa/mips64/sparc64
