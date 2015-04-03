@@ -1,6 +1,6 @@
-$OpenBSD: patch-uac_crt_c,v 1.1 2005/02/22 15:13:09 naddy Exp $
+$OpenBSD: patch-uac_crt_c,v 1.2 2015/04/03 11:26:27 naddy Exp $
 --- uac_crt.c.orig	Wed Jul  1 10:29:00 1998
-+++ uac_crt.c	Mon Feb 14 17:51:47 2005
++++ uac_crt.c	Fri Apr  3 13:17:55 2015
 @@ -33,12 +33,15 @@
  
  /* gets file name from header
@@ -20,7 +20,7 @@ $OpenBSD: patch-uac_crt_c,v 1.1 2005/02/22 15:13:09 naddy Exp $
     s[i] = 0;
  
     if (nopath)
-@@ -56,22 +59,72 @@ CHAR *ace_fname(CHAR * s, thead * head, 
+@@ -56,22 +59,72 @@ CHAR *ace_fname(CHAR * s, thead * head, INT nopath)
     }
  #endif
  

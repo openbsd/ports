@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2015/04/03 11:26:26 naddy Exp $
 
 COMMENT=	extract, view & test ACE archives
 
@@ -11,8 +11,8 @@ PERMIT_PACKAGE_CDROM=	no terms
 PERMIT_PACKAGE_FTP=	no terms
 PERMIT_DISTFILES_FTP=	unclear terms
 
-REVISION =	0
-WANTLIB=		c
+REVISION =	1
+WANTLIB=	c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DUNIX -DCASEINSENSE"
 MAKE_FILE=	unix/makefile
