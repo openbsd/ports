@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2015/04/03 12:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2015/04/03 18:14:41 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,6 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -24,7 +25,7 @@ RUN_DEPENDS-main +=	audio/libcanberra,-gtk
 RUN_DEPENDS-main +=	x11/gnome/desktop=${V}
 
 # minimal dependencies for a working desktop
-RUN_DEPENDS-main +=	x11/gnome/controlcenter \
+RUN_DEPENDS-main +=	x11/gnome/control-center \
 			x11/gnome/nautilus \
 			x11/gnome/session \
 			x11/gnome/terminal

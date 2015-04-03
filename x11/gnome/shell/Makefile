@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.109 2015/04/03 16:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2015/04/03 18:14:41 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.16.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -60,8 +61,8 @@ LIB_DEPENDS=		audio/pulseaudio \
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
-BUILD_DEPENDS +=	x11/gnome/controlcenter
-RUN_DEPENDS +=		x11/gnome/controlcenter
+BUILD_DEPENDS +=	x11/gnome/control-center
+RUN_DEPENDS +=		x11/gnome/control-center
 
 # onscreen keyboard
 BUILD_DEPENDS +=	x11/gnome/caribou
