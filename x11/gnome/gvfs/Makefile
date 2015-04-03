@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2015/03/16 13:19:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2015/04/03 09:34:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-smb=		GVFS mount module for samba
 COMMENT-goa=		GVFS volume monitor for gnome-online-account
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.22.4
+GNOME_VERSION=		1.24.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -32,7 +32,7 @@ WANTLIB-main += fontconfig freetype fuse gdk-3 gdk_pixbuf-2.0 xml2
 WANTLIB-main += archive gtk-3 harfbuzz lzma m pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
 WANTLIB-main += soup-2.4 sqlite3 gthread-2.0 xcb xcb-render
-WANTLIB-main += gcrypt gpg-error secret-1
+WANTLIB-main += gcrypt gpg-error secret-1 epoxy
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += smbclient execinfo talloc tdb wbclient
@@ -69,6 +69,9 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-gudev \
 			--disable-udev \
 			--disable-gdu
+
+# requires libnfs
+CONFIGURE_ARGS +=	--disable-nfs
 
 MULTI_PACKAGES=		-main -smb -goa
 
