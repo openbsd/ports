@@ -1,16 +1,16 @@
-$OpenBSD: patch-dbus-1_Makefile_in,v 1.13 2014/03/27 08:02:49 ajacoutot Exp $
---- dbus-1/Makefile.in.orig	Mon Mar 24 20:24:40 2014
-+++ dbus-1/Makefile.in	Wed Mar 26 17:10:17 2014
+$OpenBSD: patch-dbus-1_Makefile_in,v 1.14 2015/04/03 08:43:30 ajacoutot Exp $
+--- dbus-1/Makefile.in.orig	Mon Mar 23 18:08:53 2015
++++ dbus-1/Makefile.in	Thu Apr  2 20:55:35 2015
 @@ -82,7 +82,7 @@ POST_UNINSTALL = :
  DIST_COMMON = $(top_srcdir)/Makefile.gtester $(srcdir)/Makefile.in \
  	$(srcdir)/Makefile.am $(srcdir)/dconf-dbus-1.pc.in \
- 	$(top_srcdir)/aux/depcomp $(dconf_dbus_1include_HEADERS)
+ 	$(top_srcdir)/build-aux/depcomp $(dconf_dbus_1include_HEADERS)
 -shlib_PROGRAMS = libdconf-dbus-1.so.0.0.0$(EXEEXT)
 +shlib_PROGRAMS = libdconf-dbus-1.so.${LIBdconf-dbus-1_VERSION}$(EXEEXT)
  subdir = dbus-1
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
-@@ -397,9 +397,9 @@ libdconf_dbus_1_so_0_0_0_LDADD = \
+@@ -360,9 +360,9 @@ libdconf_dbus_1_so_0_0_0_LDADD = \
  	 $(dbus_LIBS)					\
  	$(glib_LIBS)
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.13 2014/03/27 08:02:49 ajacoutot Exp $
  CLEANFILES = libdconf-dbus-1.so.0 libdconf-dbus-1.so
  all: all-am
  
-@@ -494,8 +494,8 @@ uninstall-shlibPROGRAMS:
+@@ -457,8 +457,8 @@ uninstall-shlibPROGRAMS:
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.13 2014/03/27 08:02:49 ajacoutot Exp $
  	$(AM_V_CCLD)$(libdconf_dbus_1_so_0_0_0_LINK) $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_LDADD) $(LIBS)
  
  mostlyclean-compile:
-@@ -884,13 +884,6 @@ test-report perf-report full-report:	${TEST_PROGS}
+@@ -847,13 +847,6 @@ test-report perf-report full-report:	${TEST_PROGS}
  
  # run tests in cwd as part of make check
  check-local: test-nonrecursive
