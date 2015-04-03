@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2015/04/03 09:57:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2015/04/03 12:47:47 jasper Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
+
+REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -84,7 +86,6 @@ RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			sysutils/deja-dup \
 			www/epiphany \
 			x11/gnome/empathy \
-			x11/gnome/polari \
 			x11/gnome/rygel \
 			x11/gnome/totem \
 			x11/gnome/user-share \
