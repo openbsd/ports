@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/13 17:29:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/04/03 18:17:41 ajacoutot Exp $
 @bin bin/gnome-photos
 share/appdata/
 share/appdata/org.gnome.Photos.appdata.xml
@@ -26,6 +26,7 @@ share/help/C/gnome-photos/media/
 share/help/C/gnome-photos/media/logo1.png
 share/help/C/gnome-photos/view-album.page
 share/help/C/gnome-photos/view-favorites.page
+share/help/C/gnome-photos/view-photos.page
 share/help/C/gnome-photos/view.page
 share/help/cs/
 share/help/cs/gnome-photos/
@@ -37,6 +38,7 @@ share/help/cs/gnome-photos/media/
 share/help/cs/gnome-photos/media/logo1.png
 share/help/cs/gnome-photos/view-album.page
 share/help/cs/gnome-photos/view-favorites.page
+share/help/cs/gnome-photos/view-photos.page
 share/help/cs/gnome-photos/view.page
 share/help/de/
 share/help/de/gnome-photos/
@@ -48,6 +50,7 @@ share/help/de/gnome-photos/media/
 share/help/de/gnome-photos/media/logo1.png
 share/help/de/gnome-photos/view-album.page
 share/help/de/gnome-photos/view-favorites.page
+share/help/de/gnome-photos/view-photos.page
 share/help/de/gnome-photos/view.page
 share/help/el/
 share/help/el/gnome-photos/
@@ -59,6 +62,7 @@ share/help/el/gnome-photos/media/
 share/help/el/gnome-photos/media/logo1.png
 share/help/el/gnome-photos/view-album.page
 share/help/el/gnome-photos/view-favorites.page
+share/help/el/gnome-photos/view-photos.page
 share/help/el/gnome-photos/view.page
 share/help/es/
 share/help/es/gnome-photos/
@@ -70,6 +74,7 @@ share/help/es/gnome-photos/media/
 share/help/es/gnome-photos/media/logo1.png
 share/help/es/gnome-photos/view-album.page
 share/help/es/gnome-photos/view-favorites.page
+share/help/es/gnome-photos/view-photos.page
 share/help/es/gnome-photos/view.page
 share/help/fr/
 share/help/fr/gnome-photos/
@@ -81,6 +86,7 @@ share/help/fr/gnome-photos/media/
 share/help/fr/gnome-photos/media/logo1.png
 share/help/fr/gnome-photos/view-album.page
 share/help/fr/gnome-photos/view-favorites.page
+share/help/fr/gnome-photos/view-photos.page
 share/help/fr/gnome-photos/view.page
 share/help/gl/
 share/help/gl/gnome-photos/
@@ -92,6 +98,7 @@ share/help/gl/gnome-photos/media/
 share/help/gl/gnome-photos/media/logo1.png
 share/help/gl/gnome-photos/view-album.page
 share/help/gl/gnome-photos/view-favorites.page
+share/help/gl/gnome-photos/view-photos.page
 share/help/gl/gnome-photos/view.page
 share/help/hu/
 share/help/hu/gnome-photos/
@@ -103,6 +110,7 @@ share/help/hu/gnome-photos/media/
 share/help/hu/gnome-photos/media/logo1.png
 share/help/hu/gnome-photos/view-album.page
 share/help/hu/gnome-photos/view-favorites.page
+share/help/hu/gnome-photos/view-photos.page
 share/help/hu/gnome-photos/view.page
 share/help/ko/
 share/help/ko/gnome-photos/
@@ -114,6 +122,7 @@ share/help/ko/gnome-photos/media/
 share/help/ko/gnome-photos/media/logo1.png
 share/help/ko/gnome-photos/view-album.page
 share/help/ko/gnome-photos/view-favorites.page
+share/help/ko/gnome-photos/view-photos.page
 share/help/ko/gnome-photos/view.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-photos/
@@ -125,6 +134,7 @@ share/help/pt_BR/gnome-photos/media/
 share/help/pt_BR/gnome-photos/media/logo1.png
 share/help/pt_BR/gnome-photos/view-album.page
 share/help/pt_BR/gnome-photos/view-favorites.page
+share/help/pt_BR/gnome-photos/view-photos.page
 share/help/pt_BR/gnome-photos/view.page
 share/help/ro/
 share/help/ro/gnome-photos/
@@ -136,35 +146,19 @@ share/help/ro/gnome-photos/media/
 share/help/ro/gnome-photos/media/logo1.png
 share/help/ro/gnome-photos/view-album.page
 share/help/ro/gnome-photos/view-favorites.page
+share/help/ro/gnome-photos/view-photos.page
 share/help/ro/gnome-photos/view.page
-share/icons/HighContrast/
-share/icons/HighContrast/16x16/
-share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/gnome-photos.png
-share/icons/HighContrast/22x22/
-share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/gnome-photos.png
-share/icons/HighContrast/24x24/
-share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/gnome-photos.png
-share/icons/HighContrast/256x256/
-share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/gnome-photos.png
-share/icons/HighContrast/32x32/
-share/icons/HighContrast/32x32/apps/
-share/icons/HighContrast/32x32/apps/gnome-photos.png
-share/icons/HighContrast/48x48/
-share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/gnome-photos.png
 share/icons/hicolor/16x16/apps/gnome-photos.png
 share/icons/hicolor/22x22/apps/gnome-photos.png
 share/icons/hicolor/24x24/apps/gnome-photos.png
 share/icons/hicolor/256x256/apps/gnome-photos.png
 share/icons/hicolor/32x32/apps/gnome-photos.png
 share/icons/hicolor/48x48/apps/gnome-photos.png
+share/icons/hicolor/scalable/apps/gnome-photos-symbolic.svg
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
 share/locale/bg/LC_MESSAGES/gnome-photos.mo
+share/locale/bs/LC_MESSAGES/gnome-photos.mo
 share/locale/ca/LC_MESSAGES/gnome-photos.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-photos.mo
 share/locale/cs/LC_MESSAGES/gnome-photos.mo
@@ -179,6 +173,8 @@ share/locale/eu/LC_MESSAGES/gnome-photos.mo
 share/locale/fa/LC_MESSAGES/gnome-photos.mo
 share/locale/fi/LC_MESSAGES/gnome-photos.mo
 share/locale/fr/LC_MESSAGES/gnome-photos.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-photos.mo
 share/locale/ga/LC_MESSAGES/gnome-photos.mo
 share/locale/gd/LC_MESSAGES/gnome-photos.mo

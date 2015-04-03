@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/28 18:06:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/04/03 18:17:41 ajacoutot Exp $
 
 # XXX should RUN_DEPENDS on dleyna-renderer; not ported (signalfd)
 
@@ -7,8 +7,7 @@ TRACKER_API=		1.0
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
-GNOME_VERSION=		3.14.2
-REVISION=		1
+GNOME_VERSION=		3.16.0
 
 CATEGORIES=		graphics
 
@@ -18,9 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += babl-0.1 c cairo cairo-gobject croco-0.6 crypto curl
-WANTLIB += dbus-1 epoxy execinfo exempi exif expat ffi fontconfig
-WANTLIB += freetype gck-1 gcr-base-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0
-WANTLIB += gegl-0.2 gfbgraph-0.2 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += dbus-1 epoxy exempi exif expat ffi fontconfig freetype
+WANTLIB += gck-1 gcr-base-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0
+WANTLIB += gegl-0.3 gfbgraph-0.2 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += grilo-0.2 gthread-2.0 gtk-3 harfbuzz icudata icui18n
 WANTLIB += icuuc idn json-glib-1.0 kvm lcms2 lzma m mediaart-2.0
@@ -40,7 +39,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 LIB_DEPENDS=		devel/libgdata \
-			graphics/gegl \
+			graphics/gegl03 \
 			x11/gnome/desktop \
 			x11/gnome/gfbgraph \
 			x11/gnome/grilo \
@@ -49,5 +48,12 @@ LIB_DEPENDS=		devel/libgdata \
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
+
+# XXX
+# cc1: error: unrecognized command line option "-Wunused-but-set-variable"
+# cc1: error: unrecognized command line option "-Warray-bounds"
+pre-configure:
+	perl -pi -e 's,-Wunused-but-set-variable,,g;' \
+		-e 's,-Warray-bounds,,g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
