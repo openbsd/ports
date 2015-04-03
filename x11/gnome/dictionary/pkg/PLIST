@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/11/13 17:33:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/03 12:53:32 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 include/gdict-1.0/
@@ -16,24 +16,27 @@ include/gdict-1.0/gdict/gdict-strategy-chooser.h
 include/gdict-1.0/gdict/gdict-utils.h
 include/gdict-1.0/gdict/gdict-version.h
 include/gdict-1.0/gdict/gdict.h
+lib/girepository-1.0/
+lib/girepository-1.0/Gdict-1.0.typelib
 lib/libgdict-1.0.a
 lib/libgdict-1.0.la
 @lib lib/libgdict-1.0.so.${LIBgdict-1.0_VERSION}
 lib/pkgconfig/gdict-1.0.pc
 @man man/man1/gnome-dictionary.1
 share/appdata/
-share/appdata/gnome-dictionary.appdata.xml
-share/applications/gnome-dictionary.desktop
+share/appdata/org.gnome.Dictionary.appdata.xml
+share/applications/org.gnome.Dictionary.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.Dictionary.service
 share/gdict-1.0/
 share/gdict-1.0/sources/
 share/gdict-1.0/sources/default.desktop
 share/gdict-1.0/sources/spanish.desktop
 share/gdict-1.0/sources/thai.desktop
+share/gir-1.0/
+share/gir-1.0/Gdict-1.0.gir
 share/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
-share/gnome-dictionary/
-share/gnome-dictionary/gnome-dictionary-menus.ui
-share/gnome-dictionary/gnome-dictionary-preferences.ui
-share/gnome-dictionary/gnome-dictionary-source.ui
 share/gtk-doc/html/gdict/
 share/gtk-doc/html/gdict/GdictClientContext.html
 share/gtk-doc/html/gdict/GdictContext.html
@@ -44,6 +47,7 @@ share/gtk-doc/html/gdict/GdictSourceChooser.html
 share/gtk-doc/html/gdict/GdictSourceLoader.html
 share/gtk-doc/html/gdict/GdictSpeller.html
 share/gtk-doc/html/gdict/GdictStrategyChooser.html
+share/gtk-doc/html/gdict/annotation-glossary.html
 share/gtk-doc/html/gdict/ch05.html
 share/gtk-doc/html/gdict/ch06.html
 share/gtk-doc/html/gdict/context-types.html
@@ -653,6 +657,8 @@ share/locale/eu/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fa/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fi/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fr/LC_MESSAGES/gnome-dictionary.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ga/LC_MESSAGES/gnome-dictionary.mo
 share/locale/gl/LC_MESSAGES/gnome-dictionary.mo
