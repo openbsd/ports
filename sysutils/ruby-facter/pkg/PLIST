@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/10/31 07:36:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/04/03 08:48:02 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -63,6 +63,7 @@ ${MODRUBY_SITEDIR}/facter/operatingsystem/base.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystem/cumuluslinux.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystem/implementation.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystem/linux.rb
+${MODRUBY_SITEDIR}/facter/operatingsystem/osreleaselinux.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystem/sunos.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystem/vmkernel.rb
 ${MODRUBY_SITEDIR}/facter/operatingsystem/windows.rb
