@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/02/04 08:20:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/03 10:21:21 jasper Exp $
 
 COMMENT=		GNOME 3 calendar
 
 GNOME_PROJECT=		california
-GNOME_VERSION=		0.3.1
+GNOME_VERSION=		0.4.0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
