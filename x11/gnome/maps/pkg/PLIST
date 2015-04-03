@@ -1,11 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/13 15:33:53 ajacoutot Exp $
-@bin bin/gnome-maps
+@comment $OpenBSD: PLIST,v 1.7 2015/04/03 16:27:28 ajacoutot Exp $
+bin/gnome-maps
+lib/gnome-maps/
+lib/gnome-maps/girepository-1.0/
+lib/gnome-maps/girepository-1.0/GnomeMaps-1.0.typelib
+lib/gnome-maps/libgnome-maps.a
+lib/gnome-maps/libgnome-maps.la
+@lib lib/gnome-maps/libgnome-maps.so.${LIBgnome-maps_VERSION}
 share/appdata/
 share/appdata/org.gnome.Maps.appdata.xml
 share/applications/org.gnome.Maps.desktop
 share/dbus-1/services/
 share/dbus-1/services/org.gnome.Maps.service
-share/glib-2.0/schemas/org.gnome.maps.gschema.xml
+share/gir-1.0/GnomeMaps-1.0.gir
+share/glib-2.0/schemas/org.gnome.Maps.gschema.xml
 share/gnome-maps/
 share/gnome-maps/icons/
 share/gnome-maps/icons/hicolor/
@@ -33,7 +40,9 @@ share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpright-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
-share/gnome-maps/icons/hicolor/32x32/apps/maps-pin.svg
+share/gnome-maps/org.gnome.Maps
+share/gnome-maps/org.gnome.Maps.data.gresource
+share/gnome-maps/org.gnome.Maps.src.gresource
 share/icons/HighContrast/
 share/icons/HighContrast/16x16/
 share/icons/HighContrast/16x16/apps/
@@ -63,6 +72,7 @@ share/locale/af/LC_MESSAGES/gnome-maps.mo
 share/locale/an/LC_MESSAGES/gnome-maps.mo
 share/locale/ar/LC_MESSAGES/gnome-maps.mo
 share/locale/as/LC_MESSAGES/gnome-maps.mo
+share/locale/bs/LC_MESSAGES/gnome-maps.mo
 share/locale/ca/LC_MESSAGES/gnome-maps.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-maps.mo
 share/locale/cs/LC_MESSAGES/gnome-maps.mo
@@ -77,6 +87,8 @@ share/locale/eu/LC_MESSAGES/gnome-maps.mo
 share/locale/fa/LC_MESSAGES/gnome-maps.mo
 share/locale/fi/LC_MESSAGES/gnome-maps.mo
 share/locale/fr/LC_MESSAGES/gnome-maps.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-maps.mo
 share/locale/ga/LC_MESSAGES/gnome-maps.mo
 share/locale/gl/LC_MESSAGES/gnome-maps.mo
@@ -85,6 +97,7 @@ share/locale/hu/LC_MESSAGES/gnome-maps.mo
 share/locale/id/LC_MESSAGES/gnome-maps.mo
 share/locale/it/LC_MESSAGES/gnome-maps.mo
 share/locale/ja/LC_MESSAGES/gnome-maps.mo
+share/locale/kk/LC_MESSAGES/gnome-maps.mo
 share/locale/kn/LC_MESSAGES/gnome-maps.mo
 share/locale/ko/LC_MESSAGES/gnome-maps.mo
 share/locale/lt/LC_MESSAGES/gnome-maps.mo
