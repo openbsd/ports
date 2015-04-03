@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/27 08:11:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/03 09:11:58 jasper Exp $
 
 COMMENT=	convenience library for the geocoding
 
-GNOME_VERSION=	3.14.0
+GNOME_VERSION=	3.16.0
 GNOME_PROJECT=	geocode-glib
-REVISION=	0
 
 SHARED_LIBS +=	geocode-glib         0.0      # 0.0
 
@@ -20,7 +19,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 json-glib-1.0
-WANTLIB += m pcre pthread soup-2.4 sqlite3 xml2 z
+WANTLIB += lzma m pcre pthread soup-2.4 sqlite3 xml2 z
 
 LIB_DEPENDS=	devel/json-glib>=1.0.0 \
 		devel/libsoup
