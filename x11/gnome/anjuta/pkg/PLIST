@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2015/01/26 08:38:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2015/04/03 15:35:45 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -2193,6 +2193,7 @@ share/locale/ast/LC_MESSAGES/anjuta.mo
 share/locale/az/LC_MESSAGES/anjuta.mo
 share/locale/be@latin/LC_MESSAGES/anjuta.mo
 share/locale/bg/LC_MESSAGES/anjuta.mo
+share/locale/bs/LC_MESSAGES/anjuta.mo
 share/locale/ca/LC_MESSAGES/anjuta.mo
 share/locale/ca@valencia/LC_MESSAGES/anjuta.mo
 share/locale/cs/LC_MESSAGES/anjuta.mo

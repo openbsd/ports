@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.126 2015/04/03 08:49:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2015/04/03 15:35:44 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.14.1
-REVISION=		2
+GNOME_VERSION=		3.16.0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
