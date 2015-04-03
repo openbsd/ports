@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.63 2014/11/19 09:41:05 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.64 2015/04/03 12:21:20 schwarze Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -53,7 +53,6 @@ FLAVORS+=		no_suhosin
 .endif
 FLAVOR?=
 
-USE_GROFF=		Yes
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION?=	2.69
