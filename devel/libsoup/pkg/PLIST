@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/10/05 13:07:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/04/03 09:09:30 ajacoutot Exp $
 @conflict libsoup-gnome-*
 @pkgpath devel/libsoup,-main
 @pkgpath devel/libsoup,-gnome
@@ -52,6 +52,8 @@ include/libsoup-${API_VERSION}/libsoup/soup-types.h
 include/libsoup-${API_VERSION}/libsoup/soup-uri.h
 include/libsoup-${API_VERSION}/libsoup/soup-value-utils.h
 include/libsoup-${API_VERSION}/libsoup/soup-version.h
+include/libsoup-${API_VERSION}/libsoup/soup-websocket-connection.h
+include/libsoup-${API_VERSION}/libsoup/soup-websocket.h
 include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc.h
 include/libsoup-${API_VERSION}/libsoup/soup.h
 include/libsoup-gnome-${API_VERSION}/
@@ -121,6 +123,7 @@ share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Soup-Miscellane
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupServer-deprecated-API.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Top-Level-Domain-utils.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Version-Information.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-WebSockets.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-XMLRPC-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-method.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-status.html
@@ -140,6 +143,7 @@ share/locale/as/LC_MESSAGES/libsoup.mo
 share/locale/be/LC_MESSAGES/libsoup.mo
 share/locale/bg/LC_MESSAGES/libsoup.mo
 share/locale/bn_IN/LC_MESSAGES/libsoup.mo
+share/locale/bs/LC_MESSAGES/libsoup.mo
 share/locale/ca/LC_MESSAGES/libsoup.mo
 share/locale/ca@valencia/LC_MESSAGES/libsoup.mo
 share/locale/cs/LC_MESSAGES/libsoup.mo
