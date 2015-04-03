@@ -1,26 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/03/19 15:06:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/04/03 17:22:44 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
 include/rygel-${API_V}/rygel-core.h
 include/rygel-${API_V}/rygel-renderer-gst.h
 include/rygel-${API_V}/rygel-renderer.h
+include/rygel-${API_V}/rygel-ruih.h
 include/rygel-${API_V}/rygel-server.h
 lib/girepository-1.0/RygelCore-${API_V}.typelib
 lib/girepository-1.0/RygelRenderer-${API_V}.typelib
+lib/girepository-1.0/RygelRendererGst-${API_V}.typelib
 lib/girepository-1.0/RygelServer-${API_V}.typelib
 lib/librygel-core-${API_V}.a
 lib/librygel-core-${API_V}.la
-@lib lib/librygel-core-${API_V}.so.${LIBrygel-core-2.4_VERSION}
+@lib lib/librygel-core-${API_V}.so.${LIBrygel-core-2.6_VERSION}
 lib/librygel-renderer-${API_V}.a
 lib/librygel-renderer-${API_V}.la
-@lib lib/librygel-renderer-${API_V}.so.${LIBrygel-renderer-2.4_VERSION}
+@lib lib/librygel-renderer-${API_V}.so.${LIBrygel-renderer-2.6_VERSION}
 lib/librygel-renderer-gst-${API_V}.a
 lib/librygel-renderer-gst-${API_V}.la
-@lib lib/librygel-renderer-gst-${API_V}.so.${LIBrygel-renderer-gst-2.4_VERSION}
+@lib lib/librygel-renderer-gst-${API_V}.so.${LIBrygel-renderer-gst-2.6_VERSION}
+lib/librygel-ruih-2.0.a
+lib/librygel-ruih-2.0.la
+@lib lib/librygel-ruih-2.0.so.${LIBrygel-ruih-2.0_VERSION}
 lib/librygel-server-${API_V}.a
 lib/librygel-server-${API_V}.la
-@lib lib/librygel-server-${API_V}.so.${LIBrygel-server-2.4_VERSION}
+@lib lib/librygel-server-${API_V}.so.${LIBrygel-server-2.6_VERSION}
 lib/pkgconfig/rygel-core-${API_V}.pc
 lib/pkgconfig/rygel-renderer-${API_V}.pc
 lib/pkgconfig/rygel-renderer-gst-${API_V}.pc
@@ -39,10 +44,12 @@ lib/rygel-${API_V}/plugins/librygel-gst-launch.so
 lib/rygel-${API_V}/plugins/librygel-media-export.so
 lib/rygel-${API_V}/plugins/librygel-mpris.so
 lib/rygel-${API_V}/plugins/librygel-playbin.so
+lib/rygel-${API_V}/plugins/librygel-ruih.so
 lib/rygel-${API_V}/plugins/librygel-tracker.so
 lib/rygel-${API_V}/plugins/media-export.plugin
 lib/rygel-${API_V}/plugins/mpris.plugin
 lib/rygel-${API_V}/plugins/playbin.plugin
+lib/rygel-${API_V}/plugins/ruih.plugin
 lib/rygel-${API_V}/plugins/tracker.plugin
 @man man/man1/rygel.1
 @man man/man5/rygel.conf.5
@@ -54,6 +61,7 @@ share/examples/rygel/rygel.conf
 @sample ${SYSCONFDIR}/rygel.conf
 share/gir-1.0/RygelCore-${API_V}.gir
 share/gir-1.0/RygelRenderer-${API_V}.gir
+share/gir-1.0/RygelRendererGst-${API_V}.gir
 share/gir-1.0/RygelServer-${API_V}.gir
 share/gtk-doc/html/librygel-core/
 share/gtk-doc/html/librygel-core/RygelBaseConfiguration.html
@@ -63,6 +71,7 @@ share/gtk-doc/html/librygel-core/RygelConnectionManager.html
 share/gtk-doc/html/librygel-core/RygelDBusInterface.html
 share/gtk-doc/html/librygel-core/RygelDLNAProfile.html
 share/gtk-doc/html/librygel-core/RygelDescriptionFile.html
+share/gtk-doc/html/librygel-core/RygelEnergyManagement.html
 share/gtk-doc/html/librygel-core/RygelIconInfo.html
 share/gtk-doc/html/librygel-core/RygelLogHandler.html
 share/gtk-doc/html/librygel-core/RygelMediaDevice.html
@@ -76,7 +85,7 @@ share/gtk-doc/html/librygel-core/RygelRootDevice.html
 share/gtk-doc/html/librygel-core/RygelRootDeviceFactory.html
 share/gtk-doc/html/librygel-core/RygelStateMachine.html
 share/gtk-doc/html/librygel-core/RygelV1Hacks.html
-share/gtk-doc/html/librygel-core/RygelXMLUtils.html
+share/gtk-doc/html/librygel-core/RygelXMLUtilsIterator.html
 share/gtk-doc/html/librygel-core/annotation-glossary.html
 share/gtk-doc/html/librygel-core/api-index-full.html
 share/gtk-doc/html/librygel-core/api-main-list-c.html
@@ -124,6 +133,7 @@ share/gtk-doc/html/librygel-renderer-gst/up.png
 share/gtk-doc/html/librygel-renderer/RygelMediaPlayer.html
 share/gtk-doc/html/librygel-renderer/RygelMediaRenderer.html
 share/gtk-doc/html/librygel-renderer/RygelMediaRendererPlugin.html
+share/gtk-doc/html/librygel-renderer/RygelPlayerController.html
 share/gtk-doc/html/librygel-renderer/annotation-glossary.html
 share/gtk-doc/html/librygel-renderer/api-index-full.html
 share/gtk-doc/html/librygel-renderer/api-main-list.html
@@ -147,29 +157,52 @@ share/gtk-doc/html/librygel-renderer/up-insensitive.png
 share/gtk-doc/html/librygel-renderer/up.png
 share/gtk-doc/html/librygel-server/
 share/gtk-doc/html/librygel-server/RygelAudioItem.html
+share/gtk-doc/html/librygel-server/RygelContentDirectory.html
+share/gtk-doc/html/librygel-server/RygelDLNAAvailableSeekRangeRequest.html
+share/gtk-doc/html/librygel-server/RygelDLNAAvailableSeekRangeResponse.html
+share/gtk-doc/html/librygel-server/RygelDTCPCleartextRequest.html
+share/gtk-doc/html/librygel-server/RygelDTCPCleartextResponse.html
 share/gtk-doc/html/librygel-server/RygelDataSource.html
-share/gtk-doc/html/librygel-server/RygelHTTPSeek.html
+share/gtk-doc/html/librygel-server/RygelHTTPByteSeekRequest.html
+share/gtk-doc/html/librygel-server/RygelHTTPByteSeekResponse.html
+share/gtk-doc/html/librygel-server/RygelHTTPGet.html
+share/gtk-doc/html/librygel-server/RygelHTTPGetHandler.html
+share/gtk-doc/html/librygel-server/RygelHTTPItemURI.html
+share/gtk-doc/html/librygel-server/RygelHTTPRequest.html
+share/gtk-doc/html/librygel-server/RygelHTTPResponse.html
+share/gtk-doc/html/librygel-server/RygelHTTPResponseElement.html
+share/gtk-doc/html/librygel-server/RygelHTTPSeekRequest.html
+share/gtk-doc/html/librygel-server/RygelHTTPServer.html
+share/gtk-doc/html/librygel-server/RygelHTTPTimeSeekRequest.html
+share/gtk-doc/html/librygel-server/RygelHTTPTimeSeekResponse.html
 share/gtk-doc/html/librygel-server/RygelImageItem.html
 share/gtk-doc/html/librygel-server/RygelLogicalExpression.html
 share/gtk-doc/html/librygel-server/RygelMediaArtStore.html
 share/gtk-doc/html/librygel-server/RygelMediaContainer.html
 share/gtk-doc/html/librygel-server/RygelMediaEngine.html
+share/gtk-doc/html/librygel-server/RygelMediaFileItem.html
 share/gtk-doc/html/librygel-server/RygelMediaItem.html
 share/gtk-doc/html/librygel-server/RygelMediaObject.html
 share/gtk-doc/html/librygel-server/RygelMediaObjects.html
+share/gtk-doc/html/librygel-server/RygelMediaResource.html
 share/gtk-doc/html/librygel-server/RygelMediaServer.html
 share/gtk-doc/html/librygel-server/RygelMediaServerPlugin.html
 share/gtk-doc/html/librygel-server/RygelMusicItem.html
 share/gtk-doc/html/librygel-server/RygelPhotoItem.html
+share/gtk-doc/html/librygel-server/RygelPlaySpeed.html
+share/gtk-doc/html/librygel-server/RygelPlaySpeedRequest.html
+share/gtk-doc/html/librygel-server/RygelPlaySpeedResponse.html
+share/gtk-doc/html/librygel-server/RygelPlaylistItem.html
 share/gtk-doc/html/librygel-server/RygelRelationalExpression.html
 share/gtk-doc/html/librygel-server/RygelSearchExpression.html
 share/gtk-doc/html/librygel-server/RygelSearchableContainer.html
+share/gtk-doc/html/librygel-server/RygelSerializer.html
 share/gtk-doc/html/librygel-server/RygelSimpleContainer.html
 share/gtk-doc/html/librygel-server/RygelSubtitle.html
 share/gtk-doc/html/librygel-server/RygelThumbnail.html
 share/gtk-doc/html/librygel-server/RygelTrackableContainer.html
-share/gtk-doc/html/librygel-server/RygelTranscodeManager.html
-share/gtk-doc/html/librygel-server/RygelTranscoder.html
+share/gtk-doc/html/librygel-server/RygelTrackableItem.html
+share/gtk-doc/html/librygel-server/RygelUpdatableObject.html
 share/gtk-doc/html/librygel-server/RygelVideoItem.html
 share/gtk-doc/html/librygel-server/RygelVisualItem.html
 share/gtk-doc/html/librygel-server/RygelWritableContainer.html
@@ -207,6 +240,7 @@ share/locale/ar/LC_MESSAGES/rygel.mo
 share/locale/as/LC_MESSAGES/rygel.mo
 share/locale/bg/LC_MESSAGES/rygel.mo
 share/locale/bn_IN/LC_MESSAGES/rygel.mo
+share/locale/bs/LC_MESSAGES/rygel.mo
 share/locale/ca/LC_MESSAGES/rygel.mo
 share/locale/ca@valencia/LC_MESSAGES/rygel.mo
 share/locale/cs/LC_MESSAGES/rygel.mo
@@ -234,6 +268,7 @@ share/locale/lt/LC_MESSAGES/rygel.mo
 share/locale/lv/LC_MESSAGES/rygel.mo
 share/locale/ml/LC_MESSAGES/rygel.mo
 share/locale/nb/LC_MESSAGES/rygel.mo
+share/locale/ne/LC_MESSAGES/rygel.mo
 share/locale/nl/LC_MESSAGES/rygel.mo
 share/locale/pa/LC_MESSAGES/rygel.mo
 share/locale/pl/LC_MESSAGES/rygel.mo
@@ -283,9 +318,13 @@ share/rygel/xml/BasicManagement2.xml
 share/rygel/xml/ConnectionManager.xml
 share/rygel/xml/ContentDirectory-NoTrack.xml
 share/rygel/xml/ContentDirectory.xml
+share/rygel/xml/EnergyManagement.xml
 share/rygel/xml/MediaRenderer2.xml
 share/rygel/xml/MediaServer3.xml
+share/rygel/xml/RemoteUIServerService.xml
 share/rygel/xml/RenderingControl2.xml
+share/rygel/xml/RuihServer2.xml
+share/rygel/xml/UIList.xml
 share/rygel/xml/X_MS_MediaReceiverRegistrar1.xml
 share/vala/vapi/rygel-core-${API_V}.deps
 share/vala/vapi/rygel-core-${API_V}.vapi
@@ -293,9 +332,12 @@ share/vala/vapi/rygel-renderer-${API_V}.deps
 share/vala/vapi/rygel-renderer-${API_V}.vapi
 share/vala/vapi/rygel-renderer-gst-${API_V}.deps
 share/vala/vapi/rygel-renderer-gst-${API_V}.vapi
+share/vala/vapi/rygel-ruih-2.0.deps
+share/vala/vapi/rygel-ruih-2.0.vapi
 share/vala/vapi/rygel-server-${API_V}.deps
 share/vala/vapi/rygel-server-${API_V}.vapi
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+
