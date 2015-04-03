@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/03 08:48:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/03 08:50:46 ajacoutot Exp $
 
 COMMENT=		graphical dconf(1) editor
 
@@ -6,9 +6,6 @@ GNOME_PROJECT=		dconf-editor
 GNOME_VERSION=		3.16.0
 
 CATEGORIES=		sysutils
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
