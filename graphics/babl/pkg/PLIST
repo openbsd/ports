@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/01 14:52:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/04/03 16:27:50 ajacoutot Exp $
 include/babl-${API_VERSION}/
 include/babl-${API_VERSION}/babl/
+include/babl-${API_VERSION}/babl/babl-introspect.h
 include/babl-${API_VERSION}/babl/babl-macros.h
 include/babl-${API_VERSION}/babl/babl-types.h
 include/babl-${API_VERSION}/babl/babl-version.h
 include/babl-${API_VERSION}/babl/babl.h
 lib/babl-${API_VERSION}/
 lib/babl-${API_VERSION}/CIE.so
+lib/babl-${API_VERSION}/HSL.so
+lib/babl-${API_VERSION}/HSV.so
 lib/babl-${API_VERSION}/cairo.so
 lib/babl-${API_VERSION}/fast-float.so
 lib/babl-${API_VERSION}/float.so
@@ -14,10 +17,15 @@ lib/babl-${API_VERSION}/gegl-fixups.so
 lib/babl-${API_VERSION}/gggl-lies.so
 lib/babl-${API_VERSION}/gggl.so
 lib/babl-${API_VERSION}/gimp-8bit.so
+lib/babl-${API_VERSION}/grey.so
 lib/babl-${API_VERSION}/naive-CMYK.so
-lib/babl-${API_VERSION}/sse-fixups.so
+lib/babl-${API_VERSION}/simple.so
+lib/babl-${API_VERSION}/sse2-float.so
+lib/babl-${API_VERSION}/sse2-int16.so
+lib/babl-${API_VERSION}/sse2-int8.so
+lib/babl-${API_VERSION}/two-table.so
+lib/babl-${API_VERSION}/ycbcr.so
 lib/libbabl-${API_VERSION}.a
 lib/libbabl-${API_VERSION}.la
 @lib lib/libbabl-${API_VERSION}.so.${LIBbabl-0.1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/babl.pc
