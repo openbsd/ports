@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2014/10/16 07:23:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2015/04/03 11:24:55 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 lib/epiphany/
@@ -33,8 +33,11 @@ share/help/C/epiphany/bookmark-topic.page
 share/help/C/epiphany/bookmark.page
 share/help/C/epiphany/browse-local.page
 share/help/C/epiphany/browse-private.page
+share/help/C/epiphany/browse-tab.page
 share/help/C/epiphany/browse-web.page
+share/help/C/epiphany/browse-webapps-del.page
 share/help/C/epiphany/browse-webapps.page
+share/help/C/epiphany/cert.page
 share/help/C/epiphany/cookies.xml
 share/help/C/epiphany/data-cookies.page
 share/help/C/epiphany/data-passwords.page
@@ -56,6 +59,7 @@ share/help/C/epiphany/pref-font.page
 share/help/C/epiphany/pref-passwords.page
 share/help/C/epiphany/pref.page
 share/help/C/epiphany/prob-restore-closed-page.page
+share/help/C/epiphany/proxy.page
 share/help/cs/epiphany/
 share/help/cs/epiphany/bookmark-add.page
 share/help/cs/epiphany/bookmark-delete.page
@@ -65,8 +69,11 @@ share/help/cs/epiphany/bookmark-topic.page
 share/help/cs/epiphany/bookmark.page
 share/help/cs/epiphany/browse-local.page
 share/help/cs/epiphany/browse-private.page
+share/help/cs/epiphany/browse-tab.page
 share/help/cs/epiphany/browse-web.page
+share/help/cs/epiphany/browse-webapps-del.page
 share/help/cs/epiphany/browse-webapps.page
+share/help/cs/epiphany/cert.page
 share/help/cs/epiphany/cookies.xml
 share/help/cs/epiphany/data-cookies.page
 share/help/cs/epiphany/data-passwords.page
@@ -88,6 +95,7 @@ share/help/cs/epiphany/pref-font.page
 share/help/cs/epiphany/pref-passwords.page
 share/help/cs/epiphany/pref.page
 share/help/cs/epiphany/prob-restore-closed-page.page
+share/help/cs/epiphany/proxy.page
 share/help/de/epiphany/
 share/help/de/epiphany/bookmark-add.page
 share/help/de/epiphany/bookmark-delete.page
@@ -97,8 +105,11 @@ share/help/de/epiphany/bookmark-topic.page
 share/help/de/epiphany/bookmark.page
 share/help/de/epiphany/browse-local.page
 share/help/de/epiphany/browse-private.page
+share/help/de/epiphany/browse-tab.page
 share/help/de/epiphany/browse-web.page
+share/help/de/epiphany/browse-webapps-del.page
 share/help/de/epiphany/browse-webapps.page
+share/help/de/epiphany/cert.page
 share/help/de/epiphany/cookies.xml
 share/help/de/epiphany/data-cookies.page
 share/help/de/epiphany/data-passwords.page
@@ -120,6 +131,7 @@ share/help/de/epiphany/pref-font.page
 share/help/de/epiphany/pref-passwords.page
 share/help/de/epiphany/pref.page
 share/help/de/epiphany/prob-restore-closed-page.page
+share/help/de/epiphany/proxy.page
 share/help/el/epiphany/
 share/help/el/epiphany/bookmark-add.page
 share/help/el/epiphany/bookmark-delete.page
@@ -129,8 +141,11 @@ share/help/el/epiphany/bookmark-topic.page
 share/help/el/epiphany/bookmark.page
 share/help/el/epiphany/browse-local.page
 share/help/el/epiphany/browse-private.page
+share/help/el/epiphany/browse-tab.page
 share/help/el/epiphany/browse-web.page
+share/help/el/epiphany/browse-webapps-del.page
 share/help/el/epiphany/browse-webapps.page
+share/help/el/epiphany/cert.page
 share/help/el/epiphany/cookies.xml
 share/help/el/epiphany/data-cookies.page
 share/help/el/epiphany/data-passwords.page
@@ -152,6 +167,7 @@ share/help/el/epiphany/pref-font.page
 share/help/el/epiphany/pref-passwords.page
 share/help/el/epiphany/pref.page
 share/help/el/epiphany/prob-restore-closed-page.page
+share/help/el/epiphany/proxy.page
 share/help/es/epiphany/
 share/help/es/epiphany/bookmark-add.page
 share/help/es/epiphany/bookmark-delete.page
@@ -161,8 +177,11 @@ share/help/es/epiphany/bookmark-topic.page
 share/help/es/epiphany/bookmark.page
 share/help/es/epiphany/browse-local.page
 share/help/es/epiphany/browse-private.page
+share/help/es/epiphany/browse-tab.page
 share/help/es/epiphany/browse-web.page
+share/help/es/epiphany/browse-webapps-del.page
 share/help/es/epiphany/browse-webapps.page
+share/help/es/epiphany/cert.page
 share/help/es/epiphany/cookies.xml
 share/help/es/epiphany/data-cookies.page
 share/help/es/epiphany/data-passwords.page
@@ -184,6 +203,7 @@ share/help/es/epiphany/pref-font.page
 share/help/es/epiphany/pref-passwords.page
 share/help/es/epiphany/pref.page
 share/help/es/epiphany/prob-restore-closed-page.page
+share/help/es/epiphany/proxy.page
 share/help/fr/epiphany/
 share/help/fr/epiphany/bookmark-add.page
 share/help/fr/epiphany/bookmark-delete.page
@@ -193,8 +213,11 @@ share/help/fr/epiphany/bookmark-topic.page
 share/help/fr/epiphany/bookmark.page
 share/help/fr/epiphany/browse-local.page
 share/help/fr/epiphany/browse-private.page
+share/help/fr/epiphany/browse-tab.page
 share/help/fr/epiphany/browse-web.page
+share/help/fr/epiphany/browse-webapps-del.page
 share/help/fr/epiphany/browse-webapps.page
+share/help/fr/epiphany/cert.page
 share/help/fr/epiphany/cookies.xml
 share/help/fr/epiphany/data-cookies.page
 share/help/fr/epiphany/data-passwords.page
@@ -216,6 +239,7 @@ share/help/fr/epiphany/pref-font.page
 share/help/fr/epiphany/pref-passwords.page
 share/help/fr/epiphany/pref.page
 share/help/fr/epiphany/prob-restore-closed-page.page
+share/help/fr/epiphany/proxy.page
 share/help/hu/epiphany/
 share/help/hu/epiphany/bookmark-add.page
 share/help/hu/epiphany/bookmark-delete.page
@@ -225,8 +249,11 @@ share/help/hu/epiphany/bookmark-topic.page
 share/help/hu/epiphany/bookmark.page
 share/help/hu/epiphany/browse-local.page
 share/help/hu/epiphany/browse-private.page
+share/help/hu/epiphany/browse-tab.page
 share/help/hu/epiphany/browse-web.page
+share/help/hu/epiphany/browse-webapps-del.page
 share/help/hu/epiphany/browse-webapps.page
+share/help/hu/epiphany/cert.page
 share/help/hu/epiphany/cookies.xml
 share/help/hu/epiphany/data-cookies.page
 share/help/hu/epiphany/data-passwords.page
@@ -248,6 +275,7 @@ share/help/hu/epiphany/pref-font.page
 share/help/hu/epiphany/pref-passwords.page
 share/help/hu/epiphany/pref.page
 share/help/hu/epiphany/prob-restore-closed-page.page
+share/help/hu/epiphany/proxy.page
 share/help/pt_BR/epiphany/
 share/help/pt_BR/epiphany/bookmark-add.page
 share/help/pt_BR/epiphany/bookmark-delete.page
@@ -257,8 +285,11 @@ share/help/pt_BR/epiphany/bookmark-topic.page
 share/help/pt_BR/epiphany/bookmark.page
 share/help/pt_BR/epiphany/browse-local.page
 share/help/pt_BR/epiphany/browse-private.page
+share/help/pt_BR/epiphany/browse-tab.page
 share/help/pt_BR/epiphany/browse-web.page
+share/help/pt_BR/epiphany/browse-webapps-del.page
 share/help/pt_BR/epiphany/browse-webapps.page
+share/help/pt_BR/epiphany/cert.page
 share/help/pt_BR/epiphany/cookies.xml
 share/help/pt_BR/epiphany/data-cookies.page
 share/help/pt_BR/epiphany/data-passwords.page
@@ -280,6 +311,7 @@ share/help/pt_BR/epiphany/pref-font.page
 share/help/pt_BR/epiphany/pref-passwords.page
 share/help/pt_BR/epiphany/pref.page
 share/help/pt_BR/epiphany/prob-restore-closed-page.page
+share/help/pt_BR/epiphany/proxy.page
 share/help/ru/
 share/help/ru/epiphany/
 share/help/ru/epiphany/bookmark-add.page
@@ -290,8 +322,11 @@ share/help/ru/epiphany/bookmark-topic.page
 share/help/ru/epiphany/bookmark.page
 share/help/ru/epiphany/browse-local.page
 share/help/ru/epiphany/browse-private.page
+share/help/ru/epiphany/browse-tab.page
 share/help/ru/epiphany/browse-web.page
+share/help/ru/epiphany/browse-webapps-del.page
 share/help/ru/epiphany/browse-webapps.page
+share/help/ru/epiphany/cert.page
 share/help/ru/epiphany/cookies.xml
 share/help/ru/epiphany/data-cookies.page
 share/help/ru/epiphany/data-passwords.page
@@ -313,6 +348,7 @@ share/help/ru/epiphany/pref-font.page
 share/help/ru/epiphany/pref-passwords.page
 share/help/ru/epiphany/pref.page
 share/help/ru/epiphany/prob-restore-closed-page.page
+share/help/ru/epiphany/proxy.page
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/an/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
@@ -361,6 +397,7 @@ share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
 share/locale/ja/LC_MESSAGES/epiphany.mo
 share/locale/ka/LC_MESSAGES/epiphany.mo
+share/locale/kk/LC_MESSAGES/epiphany.mo
 share/locale/km/LC_MESSAGES/epiphany.mo
 share/locale/kn/LC_MESSAGES/epiphany.mo
 share/locale/ko/LC_MESSAGES/epiphany.mo
