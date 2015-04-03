@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2014/10/15 10:54:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.50 2015/04/03 16:47:34 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -38,7 +38,7 @@ share/help/C/gnome-terminal/pref-profile-encoding.page
 share/help/C/gnome-terminal/pref-profiles.page
 share/help/C/gnome-terminal/pref-scrolling.page
 share/help/C/gnome-terminal/pref-tab-window.page
-share/help/C/gnome-terminal/pref-theme.page
+share/help/C/gnome-terminal/pref-user-input.page
 share/help/C/gnome-terminal/pref.page
 share/help/C/gnome-terminal/prob-reset.page
 share/help/C/gnome-terminal/profile.page
@@ -72,7 +72,7 @@ share/help/cs/gnome-terminal/pref-profile-encoding.page
 share/help/cs/gnome-terminal/pref-profiles.page
 share/help/cs/gnome-terminal/pref-scrolling.page
 share/help/cs/gnome-terminal/pref-tab-window.page
-share/help/cs/gnome-terminal/pref-theme.page
+share/help/cs/gnome-terminal/pref-user-input.page
 share/help/cs/gnome-terminal/pref.page
 share/help/cs/gnome-terminal/prob-reset.page
 share/help/cs/gnome-terminal/profile.page
@@ -106,7 +106,7 @@ share/help/de/gnome-terminal/pref-profile-encoding.page
 share/help/de/gnome-terminal/pref-profiles.page
 share/help/de/gnome-terminal/pref-scrolling.page
 share/help/de/gnome-terminal/pref-tab-window.page
-share/help/de/gnome-terminal/pref-theme.page
+share/help/de/gnome-terminal/pref-user-input.page
 share/help/de/gnome-terminal/pref.page
 share/help/de/gnome-terminal/prob-reset.page
 share/help/de/gnome-terminal/profile.page
@@ -140,7 +140,7 @@ share/help/el/gnome-terminal/pref-profile-encoding.page
 share/help/el/gnome-terminal/pref-profiles.page
 share/help/el/gnome-terminal/pref-scrolling.page
 share/help/el/gnome-terminal/pref-tab-window.page
-share/help/el/gnome-terminal/pref-theme.page
+share/help/el/gnome-terminal/pref-user-input.page
 share/help/el/gnome-terminal/pref.page
 share/help/el/gnome-terminal/prob-reset.page
 share/help/el/gnome-terminal/profile.page
@@ -174,7 +174,7 @@ share/help/es/gnome-terminal/pref-profile-encoding.page
 share/help/es/gnome-terminal/pref-profiles.page
 share/help/es/gnome-terminal/pref-scrolling.page
 share/help/es/gnome-terminal/pref-tab-window.page
-share/help/es/gnome-terminal/pref-theme.page
+share/help/es/gnome-terminal/pref-user-input.page
 share/help/es/gnome-terminal/pref.page
 share/help/es/gnome-terminal/prob-reset.page
 share/help/es/gnome-terminal/profile.page
@@ -208,7 +208,7 @@ share/help/fi/gnome-terminal/pref-profile-encoding.page
 share/help/fi/gnome-terminal/pref-profiles.page
 share/help/fi/gnome-terminal/pref-scrolling.page
 share/help/fi/gnome-terminal/pref-tab-window.page
-share/help/fi/gnome-terminal/pref-theme.page
+share/help/fi/gnome-terminal/pref-user-input.page
 share/help/fi/gnome-terminal/pref.page
 share/help/fi/gnome-terminal/prob-reset.page
 share/help/fi/gnome-terminal/profile.page
@@ -242,7 +242,7 @@ share/help/fr/gnome-terminal/pref-profile-encoding.page
 share/help/fr/gnome-terminal/pref-profiles.page
 share/help/fr/gnome-terminal/pref-scrolling.page
 share/help/fr/gnome-terminal/pref-tab-window.page
-share/help/fr/gnome-terminal/pref-theme.page
+share/help/fr/gnome-terminal/pref-user-input.page
 share/help/fr/gnome-terminal/pref.page
 share/help/fr/gnome-terminal/prob-reset.page
 share/help/fr/gnome-terminal/profile.page
@@ -276,7 +276,7 @@ share/help/gl/gnome-terminal/pref-profile-encoding.page
 share/help/gl/gnome-terminal/pref-profiles.page
 share/help/gl/gnome-terminal/pref-scrolling.page
 share/help/gl/gnome-terminal/pref-tab-window.page
-share/help/gl/gnome-terminal/pref-theme.page
+share/help/gl/gnome-terminal/pref-user-input.page
 share/help/gl/gnome-terminal/pref.page
 share/help/gl/gnome-terminal/prob-reset.page
 share/help/gl/gnome-terminal/profile.page
@@ -310,7 +310,7 @@ share/help/hu/gnome-terminal/pref-profile-encoding.page
 share/help/hu/gnome-terminal/pref-profiles.page
 share/help/hu/gnome-terminal/pref-scrolling.page
 share/help/hu/gnome-terminal/pref-tab-window.page
-share/help/hu/gnome-terminal/pref-theme.page
+share/help/hu/gnome-terminal/pref-user-input.page
 share/help/hu/gnome-terminal/pref.page
 share/help/hu/gnome-terminal/prob-reset.page
 share/help/hu/gnome-terminal/profile.page
@@ -344,7 +344,7 @@ share/help/pt_BR/gnome-terminal/pref-profile-encoding.page
 share/help/pt_BR/gnome-terminal/pref-profiles.page
 share/help/pt_BR/gnome-terminal/pref-scrolling.page
 share/help/pt_BR/gnome-terminal/pref-tab-window.page
-share/help/pt_BR/gnome-terminal/pref-theme.page
+share/help/pt_BR/gnome-terminal/pref-user-input.page
 share/help/pt_BR/gnome-terminal/pref.page
 share/help/pt_BR/gnome-terminal/prob-reset.page
 share/help/pt_BR/gnome-terminal/profile.page
@@ -379,7 +379,7 @@ share/help/ru/gnome-terminal/pref-profile-encoding.page
 share/help/ru/gnome-terminal/pref-profiles.page
 share/help/ru/gnome-terminal/pref-scrolling.page
 share/help/ru/gnome-terminal/pref-tab-window.page
-share/help/ru/gnome-terminal/pref-theme.page
+share/help/ru/gnome-terminal/pref-user-input.page
 share/help/ru/gnome-terminal/pref.page
 share/help/ru/gnome-terminal/prob-reset.page
 share/help/ru/gnome-terminal/profile.page

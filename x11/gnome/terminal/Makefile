@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.129 2015/03/24 13:36:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.130 2015/04/03 16:47:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.14.3
+GNOME_VERSION=	3.16.0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +19,7 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs util vte-2.91 xcb xcb-render
 WANTLIB += xcb-shm z nautilus-extension
+WANTLIB += epoxy gmp gnutls hogweed nettle p11-kit tasn1
 
 MODULES=	devel/dconf \
 		devel/gettext \
