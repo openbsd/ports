@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/10/06 09:46:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/04/03 18:21:02 ajacoutot Exp $
 @bin libexec/vino-server
-share/GConf/
-share/GConf/gsettings/
-share/GConf/gsettings/org.gnome.Vino.convert
 share/applications/vino-server.desktop
 share/dbus-1/
 share/dbus-1/services/
