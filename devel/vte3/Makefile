@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.55 2014/12/16 11:25:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2015/04/03 11:26:01 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.38.3
+GNOME_VERSION=		0.40.0
 API_V=			2.91
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
-SHARED_LIBS +=  vte-2.91              0.0      # 3800.0
+SHARED_LIBS +=  vte-2.91              0.0      # 4000.0
 
 CATEGORIES=		devel
 
@@ -27,6 +27,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs util xcb xcb-render xcb-shm z
+WANTLIB += epoxy gmp gnutls hogweed nettle p11-kit tasn1
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -34,7 +35,8 @@ MODULES=		devel/gettext \
 # src/box_drawing_generate.sh
 BUILD_DEPENDS=		shells/bash
 
-LIB_DEPENDS=		x11/gtk+3
+LIB_DEPENDS=		security/gnutls \
+			x11/gtk+3
 
 MODGNOME_TOOLS=		gobject-introspection
 

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/11/13 14:40:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/04/03 11:26:01 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 include/vte-${API_V}/
 include/vte-${API_V}/vte/
 include/vte-${API_V}/vte/vte.h
+include/vte-${API_V}/vte/vtedeprecated.h
 include/vte-${API_V}/vte/vteenums.h
 include/vte-${API_V}/vte/vteglobals.h
 include/vte-${API_V}/vte/vtemacros.h
@@ -25,6 +26,7 @@ share/gir-1.0/Vte-${API_V}.gir
 share/gtk-doc/html/vte-${API_V}/
 share/gtk-doc/html/vte-${API_V}/VteTerminal.html
 share/gtk-doc/html/vte-${API_V}/annotation-glossary.html
+share/gtk-doc/html/vte-${API_V}/api-index-0-40.html
 share/gtk-doc/html/vte-${API_V}/api-index-deprecated.html
 share/gtk-doc/html/vte-${API_V}/api-index-full.html
 share/gtk-doc/html/vte-${API_V}/ch01.html
@@ -90,6 +92,7 @@ share/locale/is/LC_MESSAGES/vte-${API_V}.mo
 share/locale/it/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ja/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ka/LC_MESSAGES/vte-${API_V}.mo
+share/locale/kk/LC_MESSAGES/vte-${API_V}.mo
 share/locale/kn/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ko/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ku/LC_MESSAGES/vte-${API_V}.mo
