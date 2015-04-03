@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/08/24 18:32:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/04/03 17:22:13 jasper Exp $
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
 @bin bin/grl-launch-${API}
@@ -48,7 +48,9 @@ lib/libgrlpls-${API}.la
 lib/pkgconfig/grilo-${API}.pc
 lib/pkgconfig/grilo-net-${API}.pc
 lib/pkgconfig/grilo-pls-${API}.pc
-@man man/man1/grl-inspect.1
+@man man/man1/grilo-test-ui-${API}.1
+@man man/man1/grl-inspect-${API}.1
+@man man/man1/grl-launch-${API}.1
 share/gir-1.0/
 share/gir-1.0/Grl-${API}.gir
 share/gir-1.0/GrlNet-${API}.gir

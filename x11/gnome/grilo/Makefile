@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2015/03/24 13:37:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2015/04/03 17:22:13 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.2.11
+GNOME_VERSION=	0.2.12
 API=		0.2
 SUBST_VARS=	API
 
@@ -25,7 +25,7 @@ WANTLIB += gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz idn
 WANTLIB += lzma m nspr4 nss3 oauth pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 totem-plparser
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z epoxy
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -36,6 +36,7 @@ LIB_DEPENDS=	devel/libsoup \
 		x11/gtk+3
 
 MODGNOME_TOOLS += gobject-introspection vala
+
 # Own the grilo plugins directory to prevent warnings that this
 # directory does not exist when no plugin is installed.
 post-install:
