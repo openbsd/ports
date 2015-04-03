@@ -1,0 +1,70 @@
+$OpenBSD: patch-src_fr-archive-libarchive_c,v 1.2 2015/04/03 12:31:10 jasper Exp $
+
+XXX: Make lrzip/lzop support conditional until libarchive is updated.
+
+--- src/fr-archive-libarchive.c.orig	Sun Feb 15 11:49:09 2015
++++ src/fr-archive-libarchive.c	Fri Apr  3 14:29:20 2015
+@@ -78,10 +78,14 @@ const char *libarchiver_mime_types[] = {
+ 		"application/x-cpio",
+ 		"application/x-deb",
+ 		"application/x-lha",
++#ifdef ARCHIVE_FILTER_LRZIP
+ 		"application/x-lrzip-compressed-tar",
++#endif
+ 		"application/x-lzip-compressed-tar",
+ 		"application/x-lzma-compressed-tar",
++#ifndef ARCHIVE_FILTER_LZOP
+ 		"application/x-lzop-compressed-tar",
++#endif
+ 		"application/x-rar",
+ 		"application/x-rpm",
+ 		"application/x-tar",
+@@ -1083,10 +1087,12 @@ _archive_write_set_format_from_context (struct archive
+ 		archive_write_set_format_pax_restricted (a);
+ 		archive_filter = ARCHIVE_FILTER_GZIP;
+ 	}
++#ifdef ARCHIVE_FILTER_LRZIP
+ 	else if (_g_str_equal (mime_type, "application/x-lrzip-compressed-tar")) {
+ 		archive_write_set_format_pax_restricted (a);
+ 		archive_filter = ARCHIVE_FILTER_LRZIP;
+ 	}
++#endif
+ 	else if (_g_str_equal (mime_type, "application/x-lzip-compressed-tar")) {
+ 		archive_write_set_format_pax_restricted (a);
+ 		archive_filter = ARCHIVE_FILTER_LZIP;
+@@ -1095,10 +1101,12 @@ _archive_write_set_format_from_context (struct archive
+ 		archive_write_set_format_pax_restricted (a);
+ 		archive_filter = ARCHIVE_FILTER_LZMA;
+ 	}
++#ifdef ARCHIVE_FILTER_LZOP
+ 	else if (_g_str_equal (mime_type, "application/x-lzop-compressed-tar")) {
+ 		archive_write_set_format_pax_restricted (a);
+ 		archive_filter = ARCHIVE_FILTER_LZOP;
+ 	}
++#endif
+ 	else if (_g_str_equal (mime_type, "application/x-xz-compressed-tar")) {
+ 		archive_write_set_format_pax_restricted (a);
+ 		archive_filter = ARCHIVE_FILTER_XZ;
+@@ -1142,18 +1150,22 @@ _archive_write_set_format_from_context (struct archive
+ 		case ARCHIVE_FILTER_GZIP:
+ 			archive_write_add_filter_gzip (a);
+ 			break;
++#ifdef ARCHIVE_FILTER_LRZIP
+ 		case ARCHIVE_FILTER_LRZIP:
+ 			archive_write_add_filter_lrzip (a);
+ 			break;
++#endif
+ 		case ARCHIVE_FILTER_LZIP:
+ 			archive_write_add_filter_lzip (a);
+ 			break;
+ 		case ARCHIVE_FILTER_LZMA:
+ 			archive_write_add_filter_lzma (a);
+ 			break;
++#ifdef ARCHIVE_FILTER_LZOP
+ 		case ARCHIVE_FILTER_LZOP:
+ 			archive_write_add_filter_lzop (a);
+ 			break;
++#endif
+ 		case ARCHIVE_FILTER_XZ:
+ 			archive_write_add_filter_xz (a);
+ 			break;
