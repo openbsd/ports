@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/03 09:54:09 czarkoff Exp $
+@bin bin/aac-enc
+include/fdk-aac/
+include/fdk-aac/FDK_audio.h
+include/fdk-aac/aacdecoder_lib.h
+include/fdk-aac/aacenc_lib.h
+include/fdk-aac/genericStds.h
+include/fdk-aac/machine_type.h
+lib/libfdk-aac.a
+lib/libfdk-aac.la
+@lib lib/libfdk-aac.so.${LIBfdk-aac_VERSION}
+lib/pkgconfig/fdk-aac.pc
+share/doc/fdk-aac/
+share/doc/fdk-aac/NOTICE
+share/doc/fdk-aac/aacDecoder.pdf
+share/doc/fdk-aac/aacEncoder.pdf
