@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_facter_processors_os_rb,v 1.4 2015/04/03 09:04:00 jasper Exp $
+
+Simplify processorspeed calculation.
+
+--- lib/facter/processors/os.rb.orig	Fri Apr  3 10:57:00 2015
++++ lib/facter/processors/os.rb	Fri Apr  3 10:57:07 2015
+@@ -183,8 +183,7 @@ module Facter
+         if speed < 1000
+           "#{speed} MHz"
+         else
+-          speed = speed.to_f / 1000
+-          "#{(speed * 100).round.to_f / 100.0} GHz"
++          "#{(speed / 10).round.to_f / 100.0} GHz"
+         end
+       end
+     end
