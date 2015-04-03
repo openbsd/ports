@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/28 18:06:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/04/03 16:48:23 jasper Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.14.2
-REVISION=		1
+GNOME_VERSION=		3.16.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,18 +17,16 @@ MODULES=		devel/dconf \
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject camel-1.2 db dbus-1 ebackend-1.2
-WANTLIB += ebook-1.2 ebook-contacts-1.2 ecal-1.2 edata-book-1.2
-WANTLIB += edataserver-1.2 enchant epoxy expat ffi fontconfig
-WANTLIB += freetype gailutil-3 gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-1.2 enchant
+WANTLIB += epoxy expat ffi fontconfig freetype gbm gck-1 gcr-base-3
+WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gtkhtml-4.0 gtkhtml-editor-4.0 gtkspell3-3 harfbuzz
-WANTLIB += harfbuzz-icu ical icalss icalvcal icudata icui18n icuuc
-WANTLIB += javascriptcoregtk-3.0 jpeg kvm lzma m nspr4 nss3 nssutil3
-WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += harfbuzz harfbuzz-icu ical icalss icalvcal icudata
+WANTLIB += icui18n icuuc javascriptcoregtk-3.0 jpeg kvm lzma m
+WANTLIB += nspr4 nss3 nssutil3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++
 WANTLIB += uuid webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2
 WANTLIB += xslt z zeitgeist-2.0
