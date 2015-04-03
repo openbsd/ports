@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/20 18:06:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/03 17:54:42 bcallah Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 17 engine
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on sparc64 & mips64 (SIGBUS in jsutil.h:33)
+# Do not include mips64* in this list. Build fails (OOM). Leaving off so that gtk+3 can build there.
 # but let's keep them to build more packages
 # sync with x11/gtk+3
-ONLY_FOR_ARCHS =	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
+ONLY_FOR_ARCHS =	alpha amd64 i386 hppa powerpc sparc64
 
 COMMENT =	Mozilla C implementation of JavaScript
 
