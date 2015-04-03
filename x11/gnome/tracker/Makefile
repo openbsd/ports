@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2015/03/28 18:04:06 ajacoutot Exp $
-
-EVO_VERSION=		3.12
-SUBST_VARS +=		EVO_VERSION
+# $OpenBSD: Makefile,v 1.184 2015/04/03 17:08:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -120,7 +117,7 @@ pre-configure:
 post-install:
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/extract-modules/*.{a,la}
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/writeback-modules/*.{a,la}
-#	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.{a,la}
+#	rm ${PREFIX}/lib/evolution/plugins/*.{a,la}
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=746939
 	find ${PREFIX}/bin -type f ! -perm 0755 -exec chmod 0755 '{}' +
