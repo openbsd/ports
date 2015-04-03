@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.387 2015/04/03 08:31:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.388 2015/04/03 18:33:20 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -63,6 +63,7 @@
      SUBDIR += gdk-pixbuf2
      SUBDIR += geeqie
      SUBDIR += gegl
+     SUBDIR += gegl03
      SUBDIR += geomview
      SUBDIR += gfract
      SUBDIR += gif2png
