@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/06 10:16:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/03 19:10:16 ajacoutot Exp $
 @newgroup _gnome-initial-setup:724
 @newuser _gnome-initial-setup:724:_gnome-initial-setup:daemon:GNOME Initial Setup:/nonexistent:/sbin/nologin
 @bin libexec/gnome-initial-setup
@@ -33,6 +33,7 @@ share/locale/as/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/be/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/bg/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-initial-setup.mo
+share/locale/bs/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ca/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/cs/LC_MESSAGES/gnome-initial-setup.mo
@@ -47,6 +48,8 @@ share/locale/eu/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/fa/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/fi/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/fr/LC_MESSAGES/gnome-initial-setup.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ga/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/gl/LC_MESSAGES/gnome-initial-setup.mo
