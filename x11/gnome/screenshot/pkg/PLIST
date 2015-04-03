@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/15 13:36:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/03 11:28:31 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-screenshot
 @man man/man1/gnome-screenshot.1
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/gnome-screenshot.convert
+share/appdata/
+share/appdata/org.gnome.Screenshot.appdata.xml
 share/applications/org.gnome.Screenshot.desktop
 share/dbus-1/
 share/dbus-1/services/
@@ -47,6 +49,8 @@ share/locale/eu/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fa/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fi/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fr/LC_MESSAGES/gnome-screenshot.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ga/LC_MESSAGES/gnome-screenshot.mo
 share/locale/gd/
@@ -59,9 +63,11 @@ share/locale/hi/LC_MESSAGES/gnome-screenshot.mo
 share/locale/hr/LC_MESSAGES/gnome-screenshot.mo
 share/locale/hu/LC_MESSAGES/gnome-screenshot.mo
 share/locale/id/LC_MESSAGES/gnome-screenshot.mo
+share/locale/is/LC_MESSAGES/gnome-screenshot.mo
 share/locale/it/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ja/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ka/LC_MESSAGES/gnome-screenshot.mo
+share/locale/kk/LC_MESSAGES/gnome-screenshot.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gnome-screenshot.mo
