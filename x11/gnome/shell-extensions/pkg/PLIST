@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/03/24 13:36:09 jasper Exp $
-share/applications/gnome-shell-classic.desktop
+@comment $OpenBSD: PLIST,v 1.14 2015/04/03 16:47:55 jasper Exp $
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
@@ -58,11 +57,6 @@ share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcam
 share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/
-share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/convenience.js
-share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/extension.js
-share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/systemMonitor@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/convenience.js
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/extension.js
@@ -88,11 +82,13 @@ share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/modes/
 share/gnome-shell/modes/classic.json
+share/gnome-shell/theme/
 share/gnome-shell/theme/classic-process-working.svg
 share/gnome-shell/theme/classic-toggle-off-intl.svg
 share/gnome-shell/theme/classic-toggle-off-us.svg
 share/gnome-shell/theme/classic-toggle-on-intl.svg
 share/gnome-shell/theme/classic-toggle-on-us.svg
+share/gnome-shell/theme/gnome-classic-high-contrast.css
 share/gnome-shell/theme/gnome-classic.css
 share/locale/af/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/an/LC_MESSAGES/gnome-shell-extensions.mo
@@ -122,6 +118,7 @@ share/locale/he/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/hi/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/hu/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/id/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/is/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ja/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/kk/LC_MESSAGES/gnome-shell-extensions.mo
@@ -141,6 +138,7 @@ share/locale/pa/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pl/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pt/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/ro/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ru/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/sk/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/sl/LC_MESSAGES/gnome-shell-extensions.mo
