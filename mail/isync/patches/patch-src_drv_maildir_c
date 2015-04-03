@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_drv_maildir_c,v 1.1 2015/04/03 20:08:10 czarkoff Exp $
+--- src/drv_maildir.c.orig	Fri Apr  3 17:24:41 2015
++++ src/drv_maildir.c	Fri Apr  3 17:25:15 2015
+@@ -1464,7 +1464,7 @@ maildir_set_msg_flags( store_t *gctx, message_t *gmsg,
+ 			for (i = 0; i < as(Flags); i++) {
+ 				if ((p = strchr( s, Flags[i] ))) {
+ 					if (del & (1 << i)) {
+-						memcpy( p, p + 1, fl - (p - s) );
++						memmove( p, p + 1, fl - (p - s) );
+ 						fl--;
+ 					}
+ 				} else if (add & (1 << i)) {
