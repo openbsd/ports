@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.350 2015/04/03 09:59:41 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.351 2015/04/03 16:29:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -60,6 +60,7 @@
      SUBDIR += gqmpeg
      SUBDIR += grip
      SUBDIR += gsm
+     SUBDIR += gsound
      SUBDIR += gtkpod
      SUBDIR += herrie
      SUBDIR += hgd
