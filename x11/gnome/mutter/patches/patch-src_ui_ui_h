@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ui_ui_h,v 1.1 2015/04/03 16:47:17 jasper Exp $
+$OpenBSD: patch-src_ui_ui_h,v 1.2 2015/04/04 08:12:27 jasper Exp $
 
-Prevent duplicate declaration of MetaUIFrame
+https://bugzilla.gnome.org/show_bug.cgi?id=747326
 
 --- src/ui/ui.h.orig	Fri Apr  3 17:41:52 2015
 +++ src/ui/ui.h	Fri Apr  3 17:49:21 2015

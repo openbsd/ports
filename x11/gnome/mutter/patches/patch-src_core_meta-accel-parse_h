@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_core_meta-accel-parse_h,v 1.1 2015/04/03 16:47:17 jasper Exp $
+$OpenBSD: patch-src_core_meta-accel-parse_h,v 1.2 2015/04/04 08:12:27 jasper Exp $
 
-Prevent duplicate declaration of MetaKeyCombo
+https://bugzilla.gnome.org/show_bug.cgi?id=747326
 
 --- src/core/meta-accel-parse.h.orig	Fri Apr  3 17:12:18 2015
 +++ src/core/meta-accel-parse.h	Fri Apr  3 17:12:23 2015
