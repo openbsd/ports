@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/04 15:33:07 ajacoutot Exp $
 
 # XXX updating requires Thread Local Storage support
 
@@ -8,15 +8,13 @@ COMMENT=	bidirectional directories synchronizer (owncloud version)
 
 DISTNAME=	ocsync-0.90.4
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	ocsync                    0.0 # 0.2
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://owncloud.org/sync-clients/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
