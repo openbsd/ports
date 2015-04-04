@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/05/30 13:14:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/04/04 08:22:29 landry Exp $
+@newgroup _backuppc:682
+@newuser _backuppc:682:682:daemon:BackupPC Daemon:/var/empty:/sbin/nologin
 bin/BackupPC
 bin/BackupPC_Admin
 bin/BackupPC_Admin.fcgi
