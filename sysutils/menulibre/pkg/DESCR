@@ -1,0 +1,6 @@
+MenuLibre is an advanced FreeDesktop.org compliant menu editor.
+
+All fields specified in the FreeDesktop.org Desktop Entry and Menu
+specifications are available to quickly update.
+Additionally, MenuLibre provides an editor for the launcher actions
+used by applications such as Unity and Plank.

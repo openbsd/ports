@@ -1,0 +1,88 @@
+$OpenBSD: patch-menulibre_util_py,v 1.1.1.1 2015/04/04 18:37:11 landry Exp $
+--- menulibre/util.py.orig	Sun Mar  1 19:56:49 2015
++++ menulibre/util.py	Sun Mar  1 19:57:16 2015
+@@ -20,9 +20,6 @@ import re
+ 
+ import getpass
+ 
+-import psutil
+-old_psutil_format = isinstance(psutil.Process.username, property)
+-
+ from gi.repository import GLib
+ 
+ import logging
+@@ -41,73 +38,9 @@ MenuItemTypes = enum(
+ )
+ 
+ 
+-def getProcessUsername(process):
+-    """Get the username of the process owner. Return None if fail."""
+-    username = None
+-
+-    try:
+-        if old_psutil_format:
+-            username = process.username
+-        else:
+-            username = process.username()
+-    except:
+-        pass
+-
+-    return username
+-
+-
+-def getProcessName(process):
+-    """Get the process name. Return None if fail."""
+-    p_name = None
+-
+-    try:
+-        if old_psutil_format:
+-            p_name = process.name
+-        else:
+-            p_name = process.name()
+-    except:
+-        pass
+-
+-    return p_name
+-
+-
+-def getProcessList():
+-    """Return a list of unique process names for the current user."""
+-    username = getpass.getuser()
+-    processes = []
+-    for pid in psutil.get_pid_list():
+-        try:
+-            process = psutil.Process(pid)
+-            p_user = getProcessUsername(process)
+-            if p_user == username:
+-                p_name = getProcessName(process)
+-                if p_name is not None and p_name not in processes:
+-                    processes.append(p_name)
+-        except:
+-            pass
+-    processes.sort()
+-    return processes
+-
+-
+ def getDefaultMenuPrefix():
+     """Return the default menu prefix."""
+-    prefix = os.environ.get('XDG_MENU_PREFIX', '')
+-
+-    # Cinnamon doesn't set this variable
+-    if prefix == "":
+-        if 'cinnamon' in os.environ.get('DESKTOP_SESSION', ''):
+-            prefix = 'cinnamon-'
+-
+-    if prefix == "":
+-        processes = getProcessList()
+-        if 'xfce4-panel' in processes:
+-            prefix = 'xfce-'
+-
+-    if len(prefix) == 0:
+-        logger.warning("No menu prefix found, MenuLibre will not function "
+-                       "properly.")
+-
+-    return prefix
++    return os.environ.get('XDG_MENU_PREFIX', '')
+ 
+ 
+ def getItemPath(file_id):

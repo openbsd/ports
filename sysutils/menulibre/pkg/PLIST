@@ -1,0 +1,76 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/04 18:37:11 landry Exp $
+bin/menulibre
+lib/python${MODPY_VERSION}/site-packages/menulibre/
+lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/menulibre/MenuEditor.py
+lib/python${MODPY_VERSION}/site-packages/menulibre/MenulibreApplication.py
+lib/python${MODPY_VERSION}/site-packages/menulibre/MenulibreXdg.py
+lib/python${MODPY_VERSION}/site-packages/menulibre/XmlMenuElementTree.py
+lib/python${MODPY_VERSION}/site-packages/menulibre/__init__.py
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}MenuEditor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}MenulibreApplication.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}MenulibreXdg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}XmlMenuElementTree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre/util.py
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}menulibreconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/helpers.py
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/menulibreconfig.py
+@man man/man1/menulibre.1
+share/applications/menulibre.desktop
+share/doc/menulibre/
+share/doc/menulibre/NEWS
+share/doc/menulibre/README
+share/icons/hicolor/16x16/apps/menulibre.svg
+share/icons/hicolor/24x24/apps/menulibre.svg
+share/icons/hicolor/32x32/apps/menulibre.svg
+share/icons/hicolor/48x48/apps/menulibre.svg
+share/icons/hicolor/64x64/apps/menulibre.svg
+share/icons/hicolor/scalable/apps/menulibre.svg
+share/locale/ca/LC_MESSAGES/menulibre.mo
+share/locale/cs/LC_MESSAGES/menulibre.mo
+share/locale/de/LC_MESSAGES/menulibre.mo
+share/locale/el/LC_MESSAGES/menulibre.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/menulibre.mo
+share/locale/en_GB/LC_MESSAGES/menulibre.mo
+share/locale/es/LC_MESSAGES/menulibre.mo
+share/locale/eu/LC_MESSAGES/menulibre.mo
+share/locale/fi/LC_MESSAGES/menulibre.mo
+share/locale/fr/LC_MESSAGES/menulibre.mo
+share/locale/he/LC_MESSAGES/menulibre.mo
+share/locale/hr/LC_MESSAGES/menulibre.mo
+share/locale/it/LC_MESSAGES/menulibre.mo
+share/locale/ja/LC_MESSAGES/menulibre.mo
+share/locale/ko/LC_MESSAGES/menulibre.mo
+share/locale/ml/LC_MESSAGES/menulibre.mo
+share/locale/ms/LC_MESSAGES/menulibre.mo
+share/locale/nl/LC_MESSAGES/menulibre.mo
+share/locale/pl/LC_MESSAGES/menulibre.mo
+share/locale/pt/LC_MESSAGES/menulibre.mo
+share/locale/pt_BR/LC_MESSAGES/menulibre.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/menulibre.mo
+share/locale/ru/LC_MESSAGES/menulibre.mo
+share/locale/sr/LC_MESSAGES/menulibre.mo
+share/locale/zh_CN/LC_MESSAGES/menulibre.mo
+share/locale/zh_HK/LC_MESSAGES/menulibre.mo
+share/locale/zh_TW/LC_MESSAGES/menulibre.mo
+share/menulibre/
+share/menulibre/ui/
+share/menulibre/ui/MenulibreWindow.ui
+share/pixmaps/
+share/pixmaps/menulibre.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

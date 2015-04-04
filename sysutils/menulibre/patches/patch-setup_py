@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2015/04/04 18:37:11 landry Exp $
+Doesnt cope with desktop file encoding when in iso
+--- setup.py.orig	Sat Sep 27 17:05:07 2014
++++ setup.py	Sat Apr  4 18:57:26 2015
+@@ -178,7 +178,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.aut
+         desktop_file = get_desktop_file(self.root, target_data, self.prefix)
+         print(("Desktop File: %s\n" % desktop_file))
+         move_icon_file(self.root, target_data, self.prefix)
+-        update_desktop_file(desktop_file, script_path)
++#        update_desktop_file(desktop_file, script_path)
+ 
+ DistUtilsExtra.auto.setup(
+     name='menulibre',
+@@ -191,6 +191,6 @@ DistUtilsExtra.auto.setup(
+                      'and full Unity action support. Suitable for lightweight '
+                      'desktop environments.',
+     url='https://launchpad.net/menulibre',
+-    data_files=[('share/man/man1', ['menulibre.1'])],
++    data_files=[('man/man1', ['menulibre.1'])],
+     cmdclass={'install': InstallAndUpdateDataDirectory}
+     )
