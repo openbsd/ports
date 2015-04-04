@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_test_lua,v 1.1 2015/04/04 11:42:17 edd Exp $
+
+Spoke with upstream, apparently this should not be here.
+
+--- tests/test.lua.orig	Tue Mar 24 19:18:04 2015
++++ tests/test.lua	Fri Apr  3 18:13:45 2015
+@@ -12,9 +12,7 @@ function run_all_tests()
+ 	package.loaded["net.connlisteners"] = { get = function () return {} end };
+ 	dotest "util.jid"
+ 	dotest "util.multitable"
+-	dotest "util.rfc3484"
+ 	dotest "net.http"
+-	dotest "core.modulemanager"
+ 	dotest "core.stanza_router"
+ 	dotest "core.s2smanager"
+ 	dotest "core.configmanager"

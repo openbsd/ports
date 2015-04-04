@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2015/04/03 15:23:57 edd Exp $
+# $OpenBSD: Makefile,v 1.34 2015/04/04 11:42:17 edd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
 DISTNAME =	prosody-0.9.8
+REVISION =	0
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -23,11 +24,10 @@ MODLUA_RUN_DEPENDS+= archivers/luazlib \
 		devel/luafs \
 		security/luasec \
 		textproc/luaexpat>=1.3.0
+TEST_DEPENDS =	${MODLUA_RUN_DEPENDS}
 WANTLIB+=	crypto idn
 
 SUBST_VARS+=	FLAVOR MAKE_PROGRAM
-
-NO_TEST=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
@@ -44,7 +44,8 @@ FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/prosody ${WRKSRC}/prosodyctl \
-		${WRKSRC}/certs/Makefile
+		${WRKSRC}/certs/Makefile \
+		${WRKSRC}/tests/run_tests.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody
@@ -52,5 +53,8 @@ post-install:
 		${PREFIX}/share/doc/prosody
 	touch ${PREFIX}/share/examples/prosody/prosody.log
 	rm -f ${PREFIX}/share/examples/prosody/certs/Makefile.*
+
+do-test:
+	cd ${WRKSRC}/tests && sh run_tests.sh 0
 
 .include <bsd.port.mk>
