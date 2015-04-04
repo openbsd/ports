@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.94 2015/03/27 08:09:54 ajacoutot Exp $
+# $OpenBSD: portcheck,v 1.95 2015/04/04 17:23:52 sthen Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -787,6 +787,9 @@ sub_checks() {
 #   * If package installs .mo files under ${PREFIX}/share/locale/, then
 #     run-time dependency on devel/gettext should exists.
 #
+#   * If package installs files under ${PREFIX}/share/dbus-1/system-services/,
+#     it must have a run-time dependency on x11/dbus,-suid.
+#
 #   * Each .py should have corresponding .pyc files, to avoid
 #     generation of the latter at run-time.
 #
@@ -841,6 +844,9 @@ check_plist() {
 
 	local gettext_dep=false
 	local translation_found=false
+
+	local dbus_suid_dep=false
+	local dbus_suid_dep_needed=false
 
 	# Lists of .py, .pyc and .pyo items found, accordingly
 	local py_files=   pyc_files=   pyo_files=
@@ -988,6 +994,13 @@ check_plist() {
 			;;
 		share/locale/*/*/*.mo)
 			translation_found=true
+			;;
+
+		share/dbus-1/system-services/*)
+			dbus_suid_dep_needed=true
+			;;
+		"@depend x11/dbus,-suid"*)
+			dbus_suid_dep=true
 			;;
 
 		# XXX KSH arrays are limited to 10239 items
@@ -1146,6 +1159,14 @@ check_plist() {
 		[[ $fullpkgname != gettext-* ]] &&
 		err "${portref}translation file(s) found without" \
 		    "devel/gettext dependency in MODULES or RUN_DEPENDS"
+
+	# dbus,-suid
+	if $dbus_suid_dep_needed; then
+		if ! $dbus_suid_dep; then
+			err "${portref}missing" \
+			    "RUN_DEPENDS${subpkg}+=x11/dbus,-suid"
+		fi
+	fi
 
 	# Python modules
 	((${#py_files[@]} > 0))  && set -sA py_files  -- "${py_files[@]}"
