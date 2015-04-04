@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.14 2014/10/08 12:06:21 ajacoutot Exp $
+$OpenBSD: README-main,v 1.15 2015/04/04 08:24:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,8 +21,8 @@ ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
 Printer backends are also available as packages.
 e.g. cups-bjnp, hpcups/hplip, ptouch-driver, splix...
 
-To be able to use CUPS printers from GTK+3 applications, the gtk+3-cups
-package needs to be installed.
+To be able to use CUPS printers from GTK+ applications, the gtk+2-cups and/or
+gtk+3-cups packages need to be installed.
 
 USB
 ===
