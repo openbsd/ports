@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.170 2014/11/04 21:16:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.171 2015/04/04 10:20:20 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
-     SUBDIR += appdata-tools
      SUBDIR += astrolog
      SUBDIR += bible-kjv
      SUBDIR += brltty
