@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:51:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/04 17:32:17 jca Exp $
 
 COMMENT=	simple xrandr config tool
 
-DISTNAME=	lxrandr-0.1.2
-REVISION=	0
+DISTNAME=	lxrandr-0.3.0
 
 CATEGORIES=	x11 sysutils
 
 HOMEPAGE=	http://lxde.org/
 
-# GPLv3
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lxde/}
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	devel/gettext
 # needed for regression test

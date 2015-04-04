@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/15 08:24:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/04/04 17:32:17 jca Exp $
 @bin bin/lxrandr
 @man man/man1/lxrandr.1
 share/applications/lxrandr.desktop
@@ -49,8 +49,14 @@ share/locale/he/LC_MESSAGES/lxrandr.mo
 share/locale/hr/LC_MESSAGES/lxrandr.mo
 share/locale/hu/LC_MESSAGES/lxrandr.mo
 share/locale/id/LC_MESSAGES/lxrandr.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
+share/locale/is/LC_MESSAGES/lxrandr.mo
 share/locale/it/LC_MESSAGES/lxrandr.mo
 share/locale/ja/LC_MESSAGES/lxrandr.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/lxrandr.mo
 share/locale/ko/LC_MESSAGES/lxrandr.mo
 share/locale/lg/
 share/locale/lg/LC_MESSAGES/
@@ -67,6 +73,7 @@ share/locale/ms/LC_MESSAGES/lxrandr.mo
 share/locale/nb/LC_MESSAGES/lxrandr.mo
 share/locale/nl/LC_MESSAGES/lxrandr.mo
 share/locale/nn/LC_MESSAGES/lxrandr.mo
+share/locale/pa/LC_MESSAGES/lxrandr.mo
 share/locale/pl/LC_MESSAGES/lxrandr.mo
 share/locale/ps/
 share/locale/ps/LC_MESSAGES/
@@ -92,6 +99,9 @@ share/locale/tr/LC_MESSAGES/lxrandr.mo
 share/locale/tt_RU/
 share/locale/tt_RU/LC_MESSAGES/
 share/locale/tt_RU/LC_MESSAGES/lxrandr.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/lxrandr.mo
 share/locale/uk/LC_MESSAGES/lxrandr.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
