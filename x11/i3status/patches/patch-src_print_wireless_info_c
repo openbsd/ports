@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.7 2015/04/04 08:55:32 jasper Exp $
+$OpenBSD: patch-src_print_wireless_info_c,v 1.8 2015/04/04 16:07:16 jasper Exp $
 
-Use the maximum rssi, not the scaled percentage for the signal level.
+From e91891729e799e45561c707768269bb755ca34e9 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sat, 4 Apr 2015 10:56:58 +0200
+Subject: [PATCH] Use the maximum rssi, not the scaled percentage for the signal level.
 
 --- src/print_wireless_info.c.orig	Sat Apr  4 10:51:30 2015
 +++ src/print_wireless_info.c	Sat Apr  4 10:52:18 2015
