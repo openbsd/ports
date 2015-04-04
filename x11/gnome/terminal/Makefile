@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2015/04/04 09:21:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2015/04/04 10:19:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,6 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
-		misc/appdata-tools \
 		x11/gnome/shell
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2015/04/04 10:19:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,7 +27,6 @@ MODULES=		devel/gettext \
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
 
-BUILD_DEPENDS=		misc/appdata-tools
 LIB_DEPENDS=		x11/gtk+3,-main
 
 # error: -Bsymbolic requested but not supported by ld
