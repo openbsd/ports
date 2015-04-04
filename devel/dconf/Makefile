@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.66 2015/04/03 08:43:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2015/04/04 09:10:09 ajacoutot Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		configuration backend system
+COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
 GNOME_VERSION=		0.24.0
-
-PKGNAME-main=		${DISTNAME}
+REVISION=		0
 
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 SHARED_LIBS +=		dconf-dbus-1 1.0 # 1.0.0
@@ -24,8 +23,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c dbus-1 gio-2.0 glib-2.0 gobject-2.0 pthread
-
-MULTI_PACKAGES=		-main
 
 MODULES=		devel/gettext \
 			x11/gnome

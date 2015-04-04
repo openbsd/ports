@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2015/04/03 08:43:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/04/04 09:10:09 ajacoutot Exp $
 @conflict vala-<0.10
-@pkgpath devel/dconf
+@pkgpath devel/dconf,-main
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/profile/*
 @bin bin/dconf
