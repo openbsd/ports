@@ -1,39 +1,38 @@
-$OpenBSD: patch-naev-confupdate_sh,v 1.1 2012/03/14 22:54:28 sthen Exp $
---- naev-confupdate.sh.orig	Wed Feb 29 23:42:03 2012
-+++ naev-confupdate.sh	Sun Mar 11 20:53:16 2012
+$OpenBSD: patch-naev-confupdate_sh,v 1.2 2015/04/04 12:19:26 kirby Exp $
+--- naev-confupdate.sh.orig	Mon Feb 16 20:49:03 2015
++++ naev-confupdate.sh	Tue Feb 17 23:32:50 2015
 @@ -16,29 +16,24 @@ cd "$HOME/.naev" || exit
  
  if mkdir -p "$XDG_DATA_HOME/naev"; then
     # Attempt to migrate each save, but don't overwrite existing ones.
--   if [[ -d saves/ ]] && mkdir -p "$XDG_DATA_HOME/naev/saves"; then
+-   if test -d saves/ && mkdir -p "$XDG_DATA_HOME/naev/saves"; then
 -      mv -n saves/*.ns "$XDG_DATA_HOME/naev/saves/"
 -      stat *.ns.backup >/dev/null 2>&1 && mv -n saves/*.ns.backup "$XDG_DATA_HOME/naev/saves"
 -   fi
 +   [[ -d saves/ ]] && cp -r saves/ "$XDG_DATA_HOME/naev/"
  
     # Screenshots are numbered from zero, so old screenshots cannot coexist with new ones.
--   [[ -d screenshots/ ]] && mv -n screenshots/ "$XDG_DATA_HOME/naev/"
-+   [[ -d screenshots/ ]] && cp -r screenshots/ "$XDG_DATA_HOME/naev/"
+-   test -d screenshots/ && mv -n screenshots/ "$XDG_DATA_HOME/naev/"
++   test -d screenshots/ && cp -r screenshots/ "$XDG_DATA_HOME/naev/"
  fi
  
  # Naev writes the config on exit. Clobber if necessary.
  if mkdir -p "$XDG_CONFIG_HOME/naev"; then
--   [[ -r conf.lua ]] && mv conf.lua "$XDG_CONFIG_HOME/naev/"
--   [[ -r conf.lua.backup ]] && mv conf.lua.backup "$XDG_CONFIG_HOME/naev/"
-+   [[ -r conf.lua ]] && cp conf.lua "$XDG_CONFIG_HOME/naev/"
-+   [[ -r conf.lua.backup ]] && cp conf.lua.backup "$XDG_CONFIG_HOME/naev/"
+-   test -r conf.lua && mv conf.lua "$XDG_CONFIG_HOME/naev/"
+-   test -r conf.lua.backup && mv conf.lua.backup "$XDG_CONFIG_HOME/naev/"
++   test -r conf.lua && cp conf.lua "$XDG_CONFIG_HOME/naev/"
++   test -r conf.lua.backup && cp conf.lua.backup "$XDG_CONFIG_HOME/naev/"
  fi
  
  # Nebula images are generated on first-run if absent; we'll clobber the new ones if necessary.
--if [[ -d gen/ ]] && mkdir -p "$XDG_CACHE_HOME/naev/nebula"; then
+ if test -d gen/ && mkdir -p "$XDG_CACHE_HOME/naev/nebula"; then
 -   mv gen/nebu_bg_*.png "$XDG_CACHE_HOME/naev/nebula/"
-+if [[ -d nebula/ ]] && mkdir -p "$XDG_CACHE_HOME/naev/nebula"; then
-+   cp nebula/nebu_bg_*.png "$XDG_CACHE_HOME/naev/nebula/"
++   cp gen/nebu_bg_*.png "$XDG_CACHE_HOME/naev/nebula/"
  fi
  
 -# Clean up if nothing remains.
 -for dir in saves screenshots gen; do
--   [[ -d $dir ]] && rmdir --ignore-fail-on-non-empty "$dir/"
+-   test -d "$dir" && rmdir --ignore-fail-on-non-empty "$dir/"
 -done
 +# Save old data
 +mv "$HOME/.naev/" "$HOME/.naev.bak/"
