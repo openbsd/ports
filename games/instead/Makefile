@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/04 14:46:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/04 19:11:30 zhuk Exp $
 
 COMMENT =		simple text adventure interpreter
 V =			2.2.3
@@ -7,6 +7,7 @@ PKGNAME =		${DISTNAME:C/_/-/}
 CATEGORIES =		games devel/lua
 HOMEPAGE =		http://instead.sourceforge.net
 MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
+REVISION =		0
 
 # MIT, LGPL (SDL_anigif), zlib (SDL_gfx), 3-clause BSDL (tinymt32)
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,2 +1,9 @@
-INSTEAD was designed to interpret the games that are the mix of visual novels,
-text quests and classical 90'ss quests.
+INSTEAD was designed to interpret games that are a mix of visual novels,
+text adventure games and classical 90's quests.
+
+- high portable
+- easy game development (Lua for game scripts)
+- oldschool
+
+Some existing games can be downloaded from the homepage; this includes
+puzzles and various others, not just adventure games.
