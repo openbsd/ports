@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.548 2015/03/21 19:15:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.549 2015/04/04 13:19:00 landry Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -56,6 +56,7 @@
      SUBDIR += eterm
      SUBDIR += eterm,kanji
      SUBDIR += evilwm
+     SUBDIR += faba-icon-theme
      SUBDIR += faenza-icon-theme
      SUBDIR += fbpanel
      SUBDIR += fleditor
@@ -158,6 +159,7 @@
      SUBDIR += lxrandr
      SUBDIR += menu-cache
      SUBDIR += mlterm
+     SUBDIR += moka-icon-theme
      SUBDIR += mono-gtk2
      SUBDIR += mouseclock
      SUBDIR += mowitz
