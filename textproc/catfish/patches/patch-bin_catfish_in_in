@@ -1,0 +1,9 @@
+$OpenBSD: patch-bin_catfish_in_in,v 1.1 2015/04/04 16:01:22 landry Exp $
+--- bin/catfish.in.in.orig	Sat Apr  4 16:47:56 2015
++++ bin/catfish.in.in	Sat Apr  4 16:48:02 2015
+@@ -1,2 +1,2 @@
+-#!/usr/bin/env bash
+-%python% %prefix%/share/catfish/bin/catfish.py "$@"
+\ No newline at end of file
++#!/bin/sh
++%python% %prefix%/share/catfish/bin/catfish.py "$@"

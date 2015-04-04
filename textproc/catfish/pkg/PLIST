@@ -1,10 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/10 20:54:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/04/04 16:01:22 landry Exp $
 bin/catfish
+share/appdata/
+share/appdata/catfish.appdata.xml
 share/applications/catfish.desktop
 share/catfish/
-share/catfish/catfish.glade
-share/catfish/catfish.pyc
+share/catfish/bin/
+share/catfish/bin/catfish.py
+share/catfish/catfish/
 share/catfish/catfish.svg
+share/catfish/catfish/AboutCatfishDialog.py
+share/catfish/catfish/CatfishSearchEngine.py
+share/catfish/catfish/CatfishWindow.py
+share/catfish/catfish/__init__.py
+share/catfish/catfish_lib/
+share/catfish/catfish_lib/AboutDialog.py
+share/catfish/catfish_lib/Builder.py
+share/catfish/catfish_lib/CatfishSettings.py
+share/catfish/catfish_lib/SudoDialog.py
+share/catfish/catfish_lib/Window.py
+share/catfish/catfish_lib/__init__.py
+share/catfish/catfish_lib/catfishconfig.py
+share/catfish/catfish_lib/helpers.py
+share/catfish/data/
+share/catfish/data/ui/
+share/catfish/data/ui/AboutCatfishDialog.ui
+share/catfish/data/ui/CatfishWindow.ui
+share/catfish/data/ui/about_catfish_dialog.xml
+share/catfish/data/ui/catfish_window.xml
 share/catfish/locale
 share/doc/catfish/
 share/doc/catfish/AUTHORS
@@ -14,12 +36,36 @@ share/doc/catfish/INSTALL
 share/doc/catfish/README
 share/icons/hicolor/scalable/apps/catfish.svg
 share/locale/be/LC_MESSAGES/catfish.mo
+share/locale/bg/LC_MESSAGES/catfish.mo
+share/locale/ca/LC_MESSAGES/catfish.mo
 share/locale/cs/LC_MESSAGES/catfish.mo
 share/locale/de/LC_MESSAGES/catfish.mo
+share/locale/el/LC_MESSAGES/catfish.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/catfish.mo
 share/locale/es/LC_MESSAGES/catfish.mo
+share/locale/eu/LC_MESSAGES/catfish.mo
 share/locale/fi/LC_MESSAGES/catfish.mo
 share/locale/fr/LC_MESSAGES/catfish.mo
+share/locale/hu/LC_MESSAGES/catfish.mo
+share/locale/id/LC_MESSAGES/catfish.mo
+share/locale/it/LC_MESSAGES/catfish.mo
+share/locale/ja/LC_MESSAGES/catfish.mo
+share/locale/ko/LC_MESSAGES/catfish.mo
+share/locale/lv/LC_MESSAGES/catfish.mo
+share/locale/ml/LC_MESSAGES/catfish.mo
+share/locale/nl/LC_MESSAGES/catfish.mo
 share/locale/pl/LC_MESSAGES/catfish.mo
+share/locale/pt/LC_MESSAGES/catfish.mo
+share/locale/pt_BR/LC_MESSAGES/catfish.mo
+share/locale/ru/LC_MESSAGES/catfish.mo
+share/locale/si/LC_MESSAGES/catfish.mo
+share/locale/sk/LC_MESSAGES/catfish.mo
+share/locale/sr/LC_MESSAGES/catfish.mo
+share/locale/tr/LC_MESSAGES/catfish.mo
+share/locale/uk/LC_MESSAGES/catfish.mo
+share/locale/zh_TW/LC_MESSAGES/catfish.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

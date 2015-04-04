@@ -1,37 +1,33 @@
-# $OpenBSD: Makefile,v 1.19 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/04 16:01:22 landry Exp $
 
 COMMENT =	versatile file searching tool
 
-DISTNAME =	catfish-search-0.4.0.1
-PKGNAME =	${DISTNAME:S/-search//}
+DISTNAME =	catfish-1.2.2
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	6
-
-HOMEPAGE =	http://www.twotoasts.de/index.php?/pages/catfish_summary.html
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
+
+HOMEPAGE =	http://smdavis.us/projects/catfish/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	https://launchpad.net/catfish-search/0.4/0.4.0.1/+download/
+MASTER_SITES =	https://launchpad.net/catfish-search/1.2/1.2.2/+download/
 
 MODULES=	lang/python
-CONFIGURE_STYLE=none
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS=--python=${MODPY_BIN}
 USE_GMAKE=	Yes
 
 RUN_DEPENDS =	devel/py-gobject3 \
 		x11/dbus-python \
 		devel/desktop-file-utils \
 		devel/py-xdg \
+		devel/py-pexpect \
 		x11/gtk+3,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
-
-pre-configure:
-	cd ${WRKSRC} && ${SUBST_CMD} -c Makefile.in Makefile
-	cd ${WRKSRC} && ${SUBST_CMD} -c catfish.in catfish
 
 .include <bsd.port.mk>
