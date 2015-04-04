@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2015/04/03 12:47:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.246 2015/04/04 08:13:06 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -30,6 +30,7 @@
      SUBDIR += empathy
      SUBDIR += eog
      SUBDIR += eog-plugins
+     SUBDIR += epub-thumbnailer
      SUBDIR += file-roller
      SUBDIR += font-viewer
      SUBDIR += gcr
