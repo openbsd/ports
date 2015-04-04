@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/10/17 16:39:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/04/04 06:57:43 ajacoutot Exp $
+bin/gnome-books
 bin/gnome-documents
 lib/gnome-documents/
 lib/gnome-documents/girepository-1.0/
@@ -6,11 +7,16 @@ lib/gnome-documents/girepository-1.0/Gd-1.0.typelib
 lib/gnome-documents/girepository-1.0/GdPrivate-1.0.typelib
 lib/gnome-documents/libgd.so
 lib/gnome-documents/libgdprivate-1.0.so
+@man man/man1/gnome-books.1
 @man man/man1/gnome-documents.1
+share/appdata/org.gnome.Books.appdata.xml
 share/appdata/org.gnome.Documents.appdata.xml
+share/applications/org.gnome.Books.desktop
 share/applications/org.gnome.Documents.desktop
+share/dbus-1/services/org.gnome.Books.service
 share/dbus-1/services/org.gnome.Documents.service
 share/glib-2.0/schemas/org.gnome.Documents.enums.xml
+share/glib-2.0/schemas/org.gnome.books.gschema.xml
 share/glib-2.0/schemas/org.gnome.documents.gschema.xml
 share/gnome-documents/
 share/gnome-documents/gir-1.0/
@@ -24,7 +30,9 @@ share/gnome-documents/js/config.js
 share/gnome-documents/js/documents.js
 share/gnome-documents/js/edit.js
 share/gnome-documents/js/embed.js
+share/gnome-documents/js/errorBox.js
 share/gnome-documents/js/main.js
+share/gnome-documents/js/mainBooks.js
 share/gnome-documents/js/mainToolbar.js
 share/gnome-documents/js/mainWindow.js
 share/gnome-documents/js/manager.js
@@ -598,18 +606,29 @@ share/help/zh_CN/gnome-documents/search.page
 share/help/zh_CN/gnome-documents/view-add.page
 share/help/zh_CN/gnome-documents/view.page
 share/help/zh_CN/gnome-documents/viewgrid.page
+share/icons/hicolor/16x16/apps/gnome-books.png
 share/icons/hicolor/16x16/apps/gnome-documents.png
+share/icons/hicolor/22x22/apps/gnome-books.png
 share/icons/hicolor/22x22/apps/gnome-documents.png
+share/icons/hicolor/24x24/apps/gnome-books.png
 share/icons/hicolor/24x24/apps/gnome-documents.png
+share/icons/hicolor/256x256/apps/gnome-books.png
 share/icons/hicolor/256x256/apps/gnome-documents.png
+share/icons/hicolor/32x32/apps/gnome-books.png
 share/icons/hicolor/32x32/apps/gnome-documents.png
+share/icons/hicolor/48x48/apps/gnome-books.png
 share/icons/hicolor/48x48/apps/gnome-documents.png
+share/icons/hicolor/512x512/apps/gnome-books.png
+share/icons/hicolor/512x512/apps/gnome-documents.png
+share/icons/hicolor/scalable/apps/gnome-books-symbolic.svg
+share/icons/hicolor/scalable/apps/gnome-documents-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-documents.mo
 share/locale/ar/LC_MESSAGES/gnome-documents.mo
 share/locale/as/LC_MESSAGES/gnome-documents.mo
 share/locale/be/LC_MESSAGES/gnome-documents.mo
 share/locale/bg/LC_MESSAGES/gnome-documents.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-documents.mo
+share/locale/bs/LC_MESSAGES/gnome-documents.mo
 share/locale/ca/LC_MESSAGES/gnome-documents.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-documents.mo
 share/locale/cs/LC_MESSAGES/gnome-documents.mo
@@ -650,6 +669,7 @@ share/locale/pa/LC_MESSAGES/gnome-documents.mo
 share/locale/pl/LC_MESSAGES/gnome-documents.mo
 share/locale/pt/LC_MESSAGES/gnome-documents.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-documents.mo
+share/locale/ro/LC_MESSAGES/gnome-documents.mo
 share/locale/ru/LC_MESSAGES/gnome-documents.mo
 share/locale/sk/LC_MESSAGES/gnome-documents.mo
 share/locale/sl/LC_MESSAGES/gnome-documents.mo

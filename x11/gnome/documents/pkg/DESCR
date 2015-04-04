@@ -1,1 +1,3 @@
-Documents is a document manager application for GNOME.
+Documents provides two applications:
+    gnome-documents, a document manager application for GNOME
+    gnome-books, an e-books manager application for GNOME
