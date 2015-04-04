@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/04/28 11:40:05 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2015/04/04 09:21:02 ajacoutot Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
@@ -7,7 +7,7 @@ BROKEN-sparc64= gcj blows during build
 COMMENT=	essential libraries for Java
 
 DISTNAME=	classpath-0.98
-REVISION=	17
+REVISION=	18
 
 CATEGORIES=	lang java
 

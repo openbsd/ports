@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/04 09:21:02 ajacoutot Exp $
 
 COMMENT =		AppData tools
 
 DISTNAME =		appdata-tools-0.1.8
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		misc
 

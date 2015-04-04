@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/04 09:21:08 ajacoutot Exp $
 
 COMMENT =	GTK+3 library for registering keyboard shortcuts
 DISTNAME =	keybinder3-0.3.0
 CATEGORIES =	x11 devel
+REVISION =	0
 
 SHARED_LIBS =	keybinder-3.0		0.0	# 0.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/11/01 18:33:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2015/04/04 09:21:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
 GNOME_VERSION=		3.6.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gnomekbd             8.0      # 8.0
 SHARED_LIBS +=  gnomekbdui           8.0      # 8.0

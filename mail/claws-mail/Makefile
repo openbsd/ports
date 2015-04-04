@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2015/03/27 08:41:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2015/04/04 09:21:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,12 +18,12 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-bogofilter=	0
-REVISION-gdata=		0
-REVISION-htmlviewer=	0
-REVISION-main=		0
-REVISION-pdfviewer=	0
-REVISION-spamassassin=	0
+REVISION-bogofilter=	1
+REVISION-gdata=		1
+REVISION-htmlviewer=	1
+REVISION-main=		1
+REVISION-pdfviewer=	1
+REVISION-spamassassin=	1
 
 CATEGORIES=		mail news
 

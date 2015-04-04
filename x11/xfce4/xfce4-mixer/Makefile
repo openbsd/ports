@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2015/03/16 20:41:07 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2015/04/04 09:21:09 ajacoutot Exp $
 
 COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer
 XFCE_VERSION=	4.11.0
+REVISION=	0
 HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer
 
 # GPLv2

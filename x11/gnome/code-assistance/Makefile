@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/31 06:43:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/04 09:21:05 ajacoutot Exp $
 
 COMMENT=		code assistance services for GNOME
 
 GNOME_PROJECT=		gnome-code-assistance
 GNOME_VERSION=		3.14.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 

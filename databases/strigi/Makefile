@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/07 10:05:29 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/04 09:21:00 ajacoutot Exp $
 
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
@@ -7,7 +7,7 @@ HOMEPAGE =	https://projects.kde.org/projects/kdesupport/strigi/
 
 # hand-rolled from strigi* submodules at quickgit.kde.org
 DISTNAME =	strigi-0.7.7pl1
-REVISION =	0
+REVISION =	1
 SHARED_ONLY =	Yes
 
 MASTER_SITES =	http://spacehopper.org/mirrors/ \

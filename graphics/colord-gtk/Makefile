@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/12/04 07:16:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/04 09:21:01 ajacoutot Exp $
 
 COMMENT=	GTK+ support library for colord
 
 DISTNAME=	colord-gtk-0.1.26
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS +=  colord-gtk           0.0      # 1.0
 

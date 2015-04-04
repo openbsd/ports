@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/05 15:32:16 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/04 09:21:00 ajacoutot Exp $
 
 COMMENT =	streaming radio player
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.7.3
 DISTNAME =	radiotray-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 HOMEPAGE =	http://radiotray.sourceforge.net/
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Fred Crowson <openbsd@crowsons.com>
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/25 07:46:44 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/04 09:21:05 ajacoutot Exp $
 
 COMMENT =		EFL thumbnail generation library
 
 DISTNAME =		ethumb-1.7.10
+REVISION =		0
 
 SHARED_LIBS +=	ethumb                    1.0 # 8.10
 SHARED_LIBS +=	ethumb_client             1.0 # 8.10

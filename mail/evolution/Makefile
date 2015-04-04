@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2015/04/03 17:07:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.242 2015/04/04 09:21:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.16.0
+REVISION=		0
 
 CATEGORIES=		mail
 

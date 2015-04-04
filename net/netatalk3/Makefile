@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/25 09:33:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/04 09:21:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ V=			3.1.7
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGSPEC =               netatalk->=3,<4
+REVISION=		0
 
 SHARED_LIBS +=  atalk                16.0     # 16.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2015/04/03 11:26:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2015/04/04 09:21:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,6 +9,7 @@ GNOME_VERSION=		0.40.0
 API_V=			2.91
 
 PKGNAME=		vte3-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  vte-2.91              0.0      # 4000.0
 

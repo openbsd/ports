@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/01/09 16:45:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2015/04/04 09:21:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 DPB_PROPERTIES=		tag:kde3
@@ -20,6 +20,12 @@ PKGNAME-gtk3=		uim-gtk3-$V
 PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
+REVISION-gtk=		0
+REVISION-gtk3=		0
+REVISION-kde=		0
+REVISION-main=		0
+REVISION-qt=		0
+REVISION-qt4=		0
 
 MASTER_SITES=		https://uim.googlecode.com/files/
 HOMEPAGE=		https://code.google.com/p/uim/

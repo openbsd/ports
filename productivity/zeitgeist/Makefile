@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2014/07/09 17:43:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/04 09:21:04 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
 V =			0.9.14
 DISTNAME =		zeitgeist-${V}
 EPOCH =			0
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=	zeitgeist-2.0             0.0 # 0.0
 

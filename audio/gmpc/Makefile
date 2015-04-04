@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2015/03/27 08:43:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2015/04/04 09:20:59 ajacoutot Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES=		audio
 

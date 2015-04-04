@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2013/10/18 21:24:09 schwarze Exp $
+# $OpenBSD: Makefile,v 1.35 2015/04/04 09:21:02 ajacoutot Exp $
 
 COMMENT =		graphical network monitor
 
 DISTNAME =		etherape-0.9.13
 CATEGORIES =		net
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://etherape.sourceforge.net/
 

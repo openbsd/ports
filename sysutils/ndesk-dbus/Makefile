@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/04 09:21:04 ajacoutot Exp $
 
 COMMENT=	C\# implementation of dbus
 DISTNAME=	ndesk-dbus-0.6.1a
-REVISION =	4
+REVISION =	5
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/

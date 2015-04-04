@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/10/25 14:29:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/04/04 09:21:00 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,8 +9,8 @@ VERSION =	11.8.16
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
-REVISION-main =		4
-REVISION-wikipedia =	6
+REVISION-main =		5
+REVISION-wikipedia =	7
 
 CATEGORIES =	audio
 

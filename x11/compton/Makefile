@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/04 09:21:05 ajacoutot Exp $
 
 COMMENT =	lightweight compositor for X, forked from xcompmgr-dana
 
@@ -9,6 +9,7 @@ GH_TAGNAME =	v${VERSION}
 DISTNAME =	compton-${VERSION:S/_//}
 CATEGORIES =	x11
 HOMEPAGE =	https://github.com/chjj/compton
+REVISION =	0
 
 MAINTAINER =	Sunil Nimmagadda <sunil@nimmagadda.net>
 

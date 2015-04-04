@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/13 12:32:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/04 09:21:01 ajacoutot Exp $
 
 COMMENT =	japanese skk input engine for ibus
 
 V =		1.4.2
 DISTNAME =	ibus-skk-${V}
+REVISION =	0
 
 CATEGORIES =	inputmethods japanese
 

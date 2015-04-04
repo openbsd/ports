@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/03 23:02:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/04 09:21:07 ajacoutot Exp $
 
 COMMENT =		fit falling blocks together
 
 GNOME_PROJECT =		quadrapassel
 GNOME_VERSION =		3.16.0
+REVISION =		0
 
 CATEGORIES =		games
 

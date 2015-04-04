@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/09/05 14:45:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2015/04/04 09:21:04 ajacoutot Exp $
 
 PORTROACH+=		limit:^3
 
@@ -16,7 +16,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		gtkhtml3-${VERSION}
 
-REVISION=		8
+REVISION=		9
 
 SHARED_LIBS +=  gtkhtml-3.14         4.0      # 20.1
 SHARED_LIBS +=  gtkhtml-editor-3.14  0.0      # unknown

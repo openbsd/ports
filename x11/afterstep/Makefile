@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2013/06/04 18:41:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2015/04/04 09:21:04 ajacoutot Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 DISTNAME=	AfterStep-2.2.9
 PKGNAME=	${DISTNAME:L}
-REVISION=	5
+REVISION=	6
 CATEGORIES=     x11
 MASTER_SITES=   http://distfiles.nl/ \
 		ftp://ftp.afterstep.org/stable/

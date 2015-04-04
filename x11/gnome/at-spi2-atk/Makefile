@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/03/27 16:01:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/04/04 09:21:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		atk-bridge for at-spi2
 
 GNOME_PROJECT=		at-spi2-atk
 GNOME_VERSION=		2.16.0
+REVISION=		0
 
 SHARED_LIBS +=  atk-bridge-2.0       0.0      # 0.0
 

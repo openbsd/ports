@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/03 15:35:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2015/04/04 09:21:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.43.3
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  4.2      # 0.0
 

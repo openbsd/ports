@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/27 08:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/04/04 09:21:04 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.9.4
-REVISION=		8
+REVISION=		9
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/

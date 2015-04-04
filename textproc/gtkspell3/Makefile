@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/02/20 04:16:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/04/04 09:21:04 ajacoutot Exp $
 
 COMMENT=	gtk+3 spelling checker
 
 DISTNAME=	gtkspell3-3.0.7
+REVISION=	0
 
 SHARED_LIBS +=  gtkspell3-3          0.1      # 1.0
 

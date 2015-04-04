@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2015/03/27 08:13:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2015/04/04 09:21:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,9 +19,9 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION-main=		1
-REVISION-libpurple=	1
-REVISION-finch=	0
+REVISION-main=		2
+REVISION-libpurple=	2
+REVISION-finch=	1
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \

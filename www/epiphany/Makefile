@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2015/04/03 11:24:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.124 2015/04/04 09:21:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.16.0
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
+REVISION=	0
 
 CATEGORIES=	www
 

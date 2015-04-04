@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/04 09:21:01 ajacoutot Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
-REVISION=	11
+REVISION=	12
 
 CATEGORIES =	games
 

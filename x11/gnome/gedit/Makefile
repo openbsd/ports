@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.131 2015/04/03 12:22:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2015/04/04 09:21:06 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.16.0
+REVISION=		0
 
 CATEGORIES=		editors
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/27 08:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/04 09:21:03 ajacoutot Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 MODPY_EGG_VERSION=	0.3.1
 DISTNAME=		gtg-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		productivity
 

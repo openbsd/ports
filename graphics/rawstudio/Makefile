@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/01/02 12:21:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/04 09:21:01 ajacoutot Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	9
+REVISION =	10
 
 CATEGORIES =	graphics
 

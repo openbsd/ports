@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/10/15 10:09:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2015/04/04 09:21:04 ajacoutot Exp $
 
 PORTROACH+=		limit:^4
 
@@ -13,6 +13,7 @@ API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
 
 PKGNAME=		gtkhtml4-${VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  gtkhtml-4.0               0.0 # 0.0
 SHARED_LIBS +=  gtkhtml-editor-4.0        0.0 # 0.0

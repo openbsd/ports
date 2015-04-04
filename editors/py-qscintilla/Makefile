@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/14 22:35:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/04 09:21:01 ajacoutot Exp $
 
 COMMENT =	Python binding for the Scintilla source code editor
 
@@ -6,6 +6,7 @@ VERSION =	2.8
 DISTNAME =	QScintilla-gpl-${VERSION}
 PKGNAME =	py-qscintilla-${VERSION}
 CATEGORIES =	editors x11 devel
+REVISION =	0
 
 HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 

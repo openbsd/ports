@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/17 11:22:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/04 09:21:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	Perl API to the dbus inter-application messaging system
 MODULES=	cpan
 DISTNAME=	Net-DBus-1.1.0
 CATEGORIES=	net x11
+REVISION=	0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/04/01 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/04 09:21:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.8.17
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	goffice08-${GNOME_VERSION}
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 

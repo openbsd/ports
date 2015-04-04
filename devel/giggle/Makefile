@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2015/03/27 08:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2015/04/04 09:21:00 ajacoutot Exp $
 
 COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.7
 GNOME_PROJECT=	giggle
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel x11
 

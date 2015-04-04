@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2015/04/04 09:21:08 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		16
+REVISION =		17
 DISTNAME =		kdeaddons-${VERSION}
 MODKDE_VERSION =	3.5.8
 
