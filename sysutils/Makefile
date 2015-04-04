@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.339 2015/03/15 11:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.340 2015/04/04 18:37:45 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -103,6 +103,7 @@
      SUBDIR += memtest86+
      SUBDIR += memtester
      SUBDIR += mencal
+     SUBDIR += menulibre
      SUBDIR += modlogan
      SUBDIR += monit
      SUBDIR += monitord
