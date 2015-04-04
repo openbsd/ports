@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/10/07 16:54:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/04/04 10:17:02 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -94,8 +94,6 @@ lib/totem/plugins/vimeo/vimeo.plugin
 lib/totem/plugins/zeitgeist-dp/
 lib/totem/plugins/zeitgeist-dp/libtotem-zeitgeist-dp-plugin.so
 lib/totem/plugins/zeitgeist-dp/zeitgeist-dp.plugin
-libexec/totem/
-libexec/totem/totem-bugreport.py
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1
 share/GConf/gsettings/opensubtitles.convert
@@ -518,6 +516,7 @@ share/locale/bg/LC_MESSAGES/totem.mo
 share/locale/bn/LC_MESSAGES/totem.mo
 share/locale/bn_IN/LC_MESSAGES/totem.mo
 share/locale/br/LC_MESSAGES/totem.mo
+share/locale/bs/LC_MESSAGES/totem.mo
 share/locale/ca/LC_MESSAGES/totem.mo
 share/locale/ca@valencia/LC_MESSAGES/totem.mo
 share/locale/crh/LC_MESSAGES/totem.mo
