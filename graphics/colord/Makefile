@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2015/04/04 09:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2015/04/04 09:30:30 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
 V=		1.2.9
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  colordprivate        1.1      # 2.3
 SHARED_LIBS +=  colord               1.2      # 2.3
@@ -38,6 +38,9 @@ LIB_DEPENDS=	graphics/lcms2 \
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
+
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS +=	x11/dbus,-suid
 
 # cd-self-test.c:1528:colord_client_func: assertion failed (version == version_str)
 TEST_DEPENDS=	STEM-=${V}:${BUILD_PKGPATH}

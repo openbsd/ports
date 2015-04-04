@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2015/04/04 09:30:30 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -26,7 +26,7 @@ PKGNAME-qt3=		avahi-qt3-${V}
 PKGNAME-qt4=		avahi-qt4-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		16
+REVISION-main=		17
 REVISION-gtk=		6
 REVISION-gtk3=		6
 REVISION-gui=		9
@@ -67,6 +67,11 @@ BUILD_DEPENDS=		converters/xmltoman \
 WANTLIB-main += c expat glib-2.0 gobject-2.0 pcre pthread gdbm daemon
 WANTLIB-main += dbus-1 ffi
 WANTLIB-main += ${MODGETTEXT_WANTLIB}
+
+RUN_DEPENDS-main=	${RUN_DEPENDS}
+
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS-main +=	x11/dbus,-suid
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			devel/glib2 \

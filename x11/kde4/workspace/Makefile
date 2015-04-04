@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/04 09:30:30 ajacoutot Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.17
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/14.12.3/src/}
 
@@ -99,6 +99,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/polkit-qt4 \
 		${MODKDE4_DEP_DIR}/base-artwork>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
+
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS +=	x11/dbus,-suid
 
 LIB_DEPENDS =	audio/xmms \
 		databases/soprano \

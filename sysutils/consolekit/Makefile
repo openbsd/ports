@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/04/04 09:30:30 ajacoutot Exp $
 
 # NOTE: spam in /var/log/authlog is "expected"
 # http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=678506
@@ -10,7 +10,7 @@ COMMENT=	framework for defining and tracking users
 DISTNAME=	ConsoleKit-0.4.6
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${DISTNAME:L}
-REVISION=	13
+REVISION=	14
 
 CATEGORIES=	sysutils	
 
@@ -33,6 +33,9 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	sysutils/polkit \
 		x11/dbus-glib
+
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS +=	x11/dbus,-suid
 
 AUTOCONF_VERSION= 2.69
 CONFIGURE_STYLE= autoconf

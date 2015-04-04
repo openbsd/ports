@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/30 17:11:45 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/04 09:30:30 ajacoutot Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.6
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/14.12.3/src/}
 
@@ -107,6 +108,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic \
 		${MODKDE4_DEP_DIR}/baloo-widgets>=${MODKDE4_DEP_VERSION}
+
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS +=	x11/dbus,-suid
 
 LIB_DEPENDS =	databases/soprano \
 		productivity/akonadi>=${MIN_AKONADI_VERSION} \

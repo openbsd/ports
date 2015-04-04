@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/07/12 07:26:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/04 09:30:30 ajacoutot Exp $
 
 COMMENT=	fine-grained privileges PolicyKit helper for CUPS
 
 DISTNAME=	cups-pk-helper-0.2.5
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	print sysutils
 
@@ -27,6 +28,9 @@ LIB_DEPENDS=	sysutils/polkit \
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
+
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS +=	x11/dbus,-suid
 
 USE_GMAKE=	Yes
 
