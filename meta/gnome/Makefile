@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2015/04/04 10:14:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2015/04/04 10:29:02 jasper Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -61,7 +61,7 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
 			x11/gnome/gvfs,-smb,
 
 # "Make it fancy!"
-RUN_DEPENDS-main +=	x11/gnome/california \
+RUN_DEPENDS-main +=	x11/gnome/calendar \
 			x11/gnome/contacts \
 			x11/gnome/documents \
 			x11/gnome/eog-plugins \
