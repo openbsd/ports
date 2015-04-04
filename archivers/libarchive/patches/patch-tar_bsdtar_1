@@ -1,6 +1,6 @@
-$OpenBSD: patch-tar_bsdtar_1,v 1.8 2012/04/01 10:50:47 naddy Exp $
---- tar/bsdtar.1.orig	Sat Mar 31 21:50:32 2012
-+++ tar/bsdtar.1	Sat Mar 31 21:51:27 2012
+$OpenBSD: patch-tar_bsdtar_1,v 1.9 2015/04/04 11:05:19 naddy Exp $
+--- tar/bsdtar.1.orig	Mon Jan 14 02:43:45 2013
++++ tar/bsdtar.1	Sat Mar 23 00:24:09 2013
 @@ -28,7 +28,7 @@
  .Dt TAR 1
  .Os
@@ -10,7 +10,7 @@ $OpenBSD: patch-tar_bsdtar_1,v 1.8 2012/04/01 10:50:47 naddy Exp $
  .Nd manipulate tape archives
  .Sh SYNOPSIS
  .Nm
-@@ -194,11 +194,8 @@ The filename can be
+@@ -214,11 +214,8 @@ The filename can be
  for standard input or standard output.
  The default varies by system;
  on
