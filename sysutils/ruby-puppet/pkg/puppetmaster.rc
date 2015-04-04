@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetmasterd.rc,v 1.4 2013/03/13 14:35:39 ajacoutot Exp $
+# $OpenBSD: puppetmaster.rc,v 1.1 2015/04/04 09:28:45 jasper Exp $
 
 daemon="${TRUEPREFIX}/bin/puppet master"
 

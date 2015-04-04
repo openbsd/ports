@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetd.rc,v 1.7 2014/04/17 14:15:53 jasper Exp $
+# $OpenBSD: puppet.rc,v 1.1 2015/04/04 09:28:45 jasper Exp $
 
 daemon="${TRUEPREFIX}/bin/puppet agent"
 
