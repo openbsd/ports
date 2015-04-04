@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/02 19:43:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/04 08:38:15 jasper Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -41,8 +41,7 @@ BUILD_DEPENDS =		shells/bash
 
 CONFIGURE_ARGS =	--with-card-theme-formats=svg
 
-CONFIGURE_ENV=		APPDATA_VALIDATE="/usr/bin/true" \
-			CONFIG_SHELL="${LOCALBASE}/bin/bash" \
+CONFIGURE_ENV=		CONFIG_SHELL="${LOCALBASE}/bin/bash" \
 			GUILE="${LOCALBASE}/bin/guile2"
 
 .include <bsd.port.mk>
