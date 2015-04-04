@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-suid,v 1.1 2015/04/04 09:18:54 ajacoutot Exp $
-@conflict dbus-<1.8.16v0p0
+@comment $OpenBSD: PLIST-suid,v 1.2 2015/04/04 15:50:45 ajacoutot Exp $
+@conflict dbus-<1.8.16p0v0
 @mode 4750
 @group _dbus
 @bin libexec/dbus-daemon-launch-helper
