@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/04/04 06:57:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2015/04/04 08:13:22 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -8,6 +8,7 @@ COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
 GNOME_VERSION=		3.16.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -55,8 +56,11 @@ LIB_DEPENDS=		devel/libgdata \
 			x11/gnome/libzapojit \
 			x11/gnome/tracker
 
+# gnome-books
+RUN_DEPENDS +=		x11/gnome/epub-thumbnailer
+
 # src/application.js
-RUN_DEPENDS=		x11/gnome/online-miners
+RUN_DEPENDS +=		x11/gnome/online-miners
 
 post-install:
 	rm ${PREFIX}/lib/gnome-documents/*.{a,la}
