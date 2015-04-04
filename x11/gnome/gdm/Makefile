@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.223 2015/04/04 17:38:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -81,7 +81,6 @@ CONFIGURE_ARGS=		--disable-systemd-journal \
 			--with-screenshot-dir=/var/run/gdm/greeter \
 			--with-user=_gdm \
 			--with-group=_gdm \
-			--with-console-kit \
 			--with-xauth-dir=/var/run/gdm \
 			--with-initial-vt=05
 
