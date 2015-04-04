@@ -1,0 +1,13 @@
+$OpenBSD: patch-docs_mpeg_encode_1,v 1.1 2015/04/04 09:14:00 naddy Exp $
+--- docs/mpeg_encode.1.orig	Wed Mar 29 23:15:09 1995
++++ docs/mpeg_encode.1	Sat Apr  4 10:10:52 2015
+@@ -109,8 +109,7 @@ INPUT_DIR <directory>
+ .RS
+ all input files must reside in this directory.  If you want to refer to the
+ current directory, use '.' (an empty INPUT_DIR value would refer to the root
+-directory).  If input files will be coming in from standard input, use
+-'stdin'.
++directory).  If input files will be coming in from standard input, use 'stdin'.
+ .RE
+ .HP
+ INPUT
