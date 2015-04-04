@@ -1,0 +1,10 @@
+$OpenBSD: README,v 1.1.1.1 2015/04/04 14:46:12 zhuk Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Download games from http://instead-games.sourceforge.net
+and put them into ~/.instead/games directory.
+
+Have fun!
