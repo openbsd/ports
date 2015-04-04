@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/04 08:12:40 ajacoutot Exp $
+@bin bin/gnome-epub-thumbnailer
+@bin bin/gnome-mobi-thumbnailer
+share/thumbnailers/
+share/thumbnailers/gnome-epub-thumbnailer.thumbnailer
+share/thumbnailers/gnome-mobi-thumbnailer.thumbnailer
