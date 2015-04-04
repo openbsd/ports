@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-client,v 1.12 2015/01/11 13:26:35 kirby Exp $
+@comment $OpenBSD: PLIST-client,v 1.13 2015/04/04 18:15:12 kirby Exp $
 @conflict freeciv-share-<2
 @conflict freeciv-server-<2.4.4
 @pkgpath games/freeciv,-client,gtk2
 @bin bin/freeciv-gtk2
-@bin bin/freeciv-modpack
+@bin bin/freeciv-mp-gtk2
 @comment @man man/man6/freeciv-ftwl.6
 @comment lib/libfreeciv.a
 @comment lib/libfreeciv.la
@@ -11,14 +11,18 @@
 @man man/man6/freeciv-gtk2.6
 @comment @man man/man6/freeciv-gtk3.6
 @man man/man6/freeciv-modpack.6
+@comment @man man/man6/freeciv-mp-cli.6
+@man man/man6/freeciv-mp-gtk2.6
+@comment man/man6/freeciv-mp-gtk3.6
+@comment man/man6/freeciv-mp-qt.6
 @comment @man man/man6/freeciv-qt.6
 @comment @man man/man6/freeciv-sdl.6
 @comment @man man/man6/freeciv-xaw.6
 share/appdata/
 share/appdata/freeciv-gtk2.appdata.xml
-share/appdata/freeciv-modpack.appdata.xml
-share/applications/freeciv-modpack.desktop
-share/applications/freeciv.desktop
+share/appdata/freeciv-mp-gtk2.appdata.xml
+share/applications/freeciv-gtk2.desktop
+share/applications/freeciv-mp-gtk2.desktop
 share/freeciv/buildings/
 share/freeciv/buildings/airport.png
 share/freeciv/buildings/aqueduct.png
@@ -61,7 +65,6 @@ share/freeciv/buildings/supermarket.png
 share/freeciv/buildings/temple.png
 share/freeciv/buildings/university.png
 share/freeciv/default.serv
-share/freeciv/default/script.lua
 share/freeciv/flags/
 share/freeciv/flags/abkhazia-large.png
 share/freeciv/flags/abkhazia-shield-large.png
@@ -355,6 +358,10 @@ share/freeciv/flags/bulgaria-large.png
 share/freeciv/flags/bulgaria-shield-large.png
 share/freeciv/flags/bulgaria-shield.png
 share/freeciv/flags/bulgaria.png
+share/freeciv/flags/burgundic-large.png
+share/freeciv/flags/burgundic-shield-large.png
+share/freeciv/flags/burgundic-shield.png
+share/freeciv/flags/burgundic.png
 share/freeciv/flags/burgundy-large.png
 share/freeciv/flags/burgundy-shield-large.png
 share/freeciv/flags/burgundy-shield.png
@@ -411,6 +418,10 @@ share/freeciv/flags/car-large.png
 share/freeciv/flags/car-shield-large.png
 share/freeciv/flags/car-shield.png
 share/freeciv/flags/car.png
+share/freeciv/flags/carantanian-large.png
+share/freeciv/flags/carantanian-shield-large.png
+share/freeciv/flags/carantanian-shield.png
+share/freeciv/flags/carantanian.png
 share/freeciv/flags/cartago-large.png
 share/freeciv/flags/cartago-shield-large.png
 share/freeciv/flags/cartago-shield.png
@@ -575,6 +586,10 @@ share/freeciv/flags/czechoslovakia-large.png
 share/freeciv/flags/czechoslovakia-shield-large.png
 share/freeciv/flags/czechoslovakia-shield.png
 share/freeciv/flags/czechoslovakia.png
+share/freeciv/flags/dacian-large.png
+share/freeciv/flags/dacian-shield-large.png
+share/freeciv/flags/dacian-shield.png
+share/freeciv/flags/dacian.png
 share/freeciv/flags/dahomey-large.png
 share/freeciv/flags/dahomey-shield-large.png
 share/freeciv/flags/dahomey-shield.png
@@ -707,6 +722,10 @@ share/freeciv/flags/florence-large.png
 share/freeciv/flags/florence-shield-large.png
 share/freeciv/flags/florence-shield.png
 share/freeciv/flags/florence.png
+share/freeciv/flags/formosan-large.png
+share/freeciv/flags/formosan-shield-large.png
+share/freeciv/flags/formosan-shield.png
+share/freeciv/flags/formosan.png
 share/freeciv/flags/france-large.png
 share/freeciv/flags/france-shield-large.png
 share/freeciv/flags/france-shield.png
@@ -755,6 +774,10 @@ share/freeciv/flags/georgia-large.png
 share/freeciv/flags/georgia-shield-large.png
 share/freeciv/flags/georgia-shield.png
 share/freeciv/flags/georgia.png
+share/freeciv/flags/gepid-large.png
+share/freeciv/flags/gepid-shield-large.png
+share/freeciv/flags/gepid-shield.png
+share/freeciv/flags/gepid.png
 share/freeciv/flags/germanic-large.png
 share/freeciv/flags/germanic-shield-large.png
 share/freeciv/flags/germanic-shield.png
@@ -971,6 +994,10 @@ share/freeciv/flags/israel_ancient-large.png
 share/freeciv/flags/israel_ancient-shield-large.png
 share/freeciv/flags/israel_ancient-shield.png
 share/freeciv/flags/israel_ancient.png
+share/freeciv/flags/italian_greek-large.png
+share/freeciv/flags/italian_greek-shield-large.png
+share/freeciv/flags/italian_greek-shield.png
+share/freeciv/flags/italian_greek.png
 share/freeciv/flags/italy-large.png
 share/freeciv/flags/italy-shield-large.png
 share/freeciv/flags/italy-shield.png
@@ -1059,6 +1086,10 @@ share/freeciv/flags/khmer-large.png
 share/freeciv/flags/khmer-shield-large.png
 share/freeciv/flags/khmer-shield.png
 share/freeciv/flags/khmer.png
+share/freeciv/flags/khoisan-large.png
+share/freeciv/flags/khoisan-shield-large.png
+share/freeciv/flags/khoisan-shield.png
+share/freeciv/flags/khoisan.png
 share/freeciv/flags/khwarezm-large.png
 share/freeciv/flags/khwarezm-shield-large.png
 share/freeciv/flags/khwarezm-shield.png
@@ -1071,6 +1102,10 @@ share/freeciv/flags/kiribati-large.png
 share/freeciv/flags/kiribati-shield-large.png
 share/freeciv/flags/kiribati-shield.png
 share/freeciv/flags/kiribati.png
+share/freeciv/flags/komi-large.png
+share/freeciv/flags/komi-shield-large.png
+share/freeciv/flags/komi-shield.png
+share/freeciv/flags/komi.png
 share/freeciv/flags/kongo-large.png
 share/freeciv/flags/kongo-shield-large.png
 share/freeciv/flags/kongo-shield.png
@@ -1095,6 +1130,10 @@ share/freeciv/flags/kurd-large.png
 share/freeciv/flags/kurd-shield-large.png
 share/freeciv/flags/kurd-shield.png
 share/freeciv/flags/kurd.png
+share/freeciv/flags/kushan-large.png
+share/freeciv/flags/kushan-shield-large.png
+share/freeciv/flags/kushan-shield.png
+share/freeciv/flags/kushan.png
 share/freeciv/flags/kuwait-large.png
 share/freeciv/flags/kuwait-shield-large.png
 share/freeciv/flags/kuwait-shield.png
@@ -1163,6 +1202,10 @@ share/freeciv/flags/liguria-large.png
 share/freeciv/flags/liguria-shield-large.png
 share/freeciv/flags/liguria-shield.png
 share/freeciv/flags/liguria.png
+share/freeciv/flags/ligurian-large.png
+share/freeciv/flags/ligurian-shield-large.png
+share/freeciv/flags/ligurian-shield.png
+share/freeciv/flags/ligurian.png
 share/freeciv/flags/lipkatatar-large.png
 share/freeciv/flags/lipkatatar-shield-large.png
 share/freeciv/flags/lipkatatar-shield.png
@@ -1175,6 +1218,10 @@ share/freeciv/flags/lithuania-large.png
 share/freeciv/flags/lithuania-shield-large.png
 share/freeciv/flags/lithuania-shield.png
 share/freeciv/flags/lithuania.png
+share/freeciv/flags/lombardy-large.png
+share/freeciv/flags/lombardy-shield-large.png
+share/freeciv/flags/lombardy-shield.png
+share/freeciv/flags/lombardy.png
 share/freeciv/flags/lorraine-large.png
 share/freeciv/flags/lorraine-shield-large.png
 share/freeciv/flags/lorraine-shield.png
@@ -1195,6 +1242,10 @@ share/freeciv/flags/luxembourg-large.png
 share/freeciv/flags/luxembourg-shield-large.png
 share/freeciv/flags/luxembourg-shield.png
 share/freeciv/flags/luxembourg.png
+share/freeciv/flags/lycian-large.png
+share/freeciv/flags/lycian-shield-large.png
+share/freeciv/flags/lycian-shield.png
+share/freeciv/flags/lycian.png
 share/freeciv/flags/maasai-large.png
 share/freeciv/flags/maasai-shield-large.png
 share/freeciv/flags/maasai-shield.png
@@ -1267,6 +1318,10 @@ share/freeciv/flags/mars-large.png
 share/freeciv/flags/mars-shield-large.png
 share/freeciv/flags/mars-shield.png
 share/freeciv/flags/mars.png
+share/freeciv/flags/marshall_islands-large.png
+share/freeciv/flags/marshall_islands-shield-large.png
+share/freeciv/flags/marshall_islands-shield.png
+share/freeciv/flags/marshall_islands.png
 share/freeciv/flags/mauritania-large.png
 share/freeciv/flags/mauritania-shield-large.png
 share/freeciv/flags/mauritania-shield.png
@@ -1471,6 +1526,10 @@ share/freeciv/flags/norway-large.png
 share/freeciv/flags/norway-shield-large.png
 share/freeciv/flags/norway-shield.png
 share/freeciv/flags/norway.png
+share/freeciv/flags/novgorod-large.png
+share/freeciv/flags/novgorod-shield-large.png
+share/freeciv/flags/novgorod-shield.png
+share/freeciv/flags/novgorod.png
 share/freeciv/flags/nubia-large.png
 share/freeciv/flags/nubia-shield-large.png
 share/freeciv/flags/nubia-shield.png
@@ -1671,6 +1730,10 @@ share/freeciv/flags/russia-large.png
 share/freeciv/flags/russia-shield-large.png
 share/freeciv/flags/russia-shield.png
 share/freeciv/flags/russia.png
+share/freeciv/flags/rusyn-large.png
+share/freeciv/flags/rusyn-shield-large.png
+share/freeciv/flags/rusyn-shield.png
+share/freeciv/flags/rusyn.png
 share/freeciv/flags/rvn-large.png
 share/freeciv/flags/rvn-shield-large.png
 share/freeciv/flags/rvn-shield.png
@@ -2103,6 +2166,10 @@ share/freeciv/flags/unknown-large.png
 share/freeciv/flags/unknown-shield-large.png
 share/freeciv/flags/unknown-shield.png
 share/freeciv/flags/unknown.png
+share/freeciv/flags/urartu-large.png
+share/freeciv/flags/urartu-shield-large.png
+share/freeciv/flags/urartu-shield.png
+share/freeciv/flags/urartu.png
 share/freeciv/flags/uruguay-large.png
 share/freeciv/flags/uruguay-shield-large.png
 share/freeciv/flags/uruguay-shield.png
@@ -2328,6 +2395,8 @@ share/freeciv/misc/editor.png
 share/freeciv/misc/editor.spec
 share/freeciv/misc/flags-large.spec
 share/freeciv/misc/flags.spec
+share/freeciv/misc/governments.png
+share/freeciv/misc/governments.spec
 share/freeciv/misc/icons.spec
 share/freeciv/misc/intro.png
 share/freeciv/misc/mpicon.png
@@ -2340,6 +2409,8 @@ share/freeciv/misc/small.png
 share/freeciv/misc/small.spec
 share/freeciv/misc/space.png
 share/freeciv/misc/space.spec
+share/freeciv/misc/specialists.png
+share/freeciv/misc/specialists.spec
 share/freeciv/misc/techs.png
 share/freeciv/misc/techs.spec
 share/freeciv/misc/treaty.png
@@ -2359,6 +2430,7 @@ share/freeciv/stdsounds/Splash.ogg
 share/freeciv/stdsounds/THover.ogg
 share/freeciv/stdsounds/Tread.ogg
 share/freeciv/stdsounds/foot3.ogg
+share/freeciv/stdsounds/illegal.ogg
 share/freeciv/stdsounds/inh2o.ogg
 share/freeciv/stdsounds/metbrk.ogg
 share/freeciv/stdsounds/wall01.ogg
@@ -2536,6 +2608,7 @@ share/freeciv/wonders/great_library.png
 share/freeciv/wonders/great_wall.png
 share/freeciv/wonders/hanging_gardens.png
 share/freeciv/wonders/hoover_dam.png
+share/freeciv/wonders/internet.png
 share/freeciv/wonders/isaac_newtons_college.png
 share/freeciv/wonders/js_bachs_cathedral.png
 share/freeciv/wonders/king_richards_crusade.png
@@ -2544,13 +2617,16 @@ share/freeciv/wonders/lighthouse.png
 share/freeciv/wonders/magellans_expedition.png
 share/freeciv/wonders/manhattan_project.png
 share/freeciv/wonders/marco_polos_embassy.png
+share/freeciv/wonders/mausoleum_of_halicarnassus.png
 share/freeciv/wonders/michelangelos_chapel.png
 share/freeciv/wonders/oracle.png
 share/freeciv/wonders/pyramids.png
 share/freeciv/wonders/seti_program.png
 share/freeciv/wonders/shakespeares_theatre.png
 share/freeciv/wonders/statue_of_liberty.png
+share/freeciv/wonders/statue_of_zeus.png
 share/freeciv/wonders/sun_tzus_war_academy.png
+share/freeciv/wonders/temple_of_artemis.png
 share/freeciv/wonders/united_nations.png
 share/freeciv/wonders/womens_suffrage.png
 share/icons/hicolor/128x128/apps/freeciv-client.png

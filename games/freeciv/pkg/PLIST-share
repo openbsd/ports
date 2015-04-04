@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-share,v 1.13 2015/01/11 13:26:35 kirby Exp $
+@comment $OpenBSD: PLIST-share,v 1.14 2015/04/04 18:15:12 kirby Exp $
 @comment share/applications/
 share/freeciv/
 share/freeciv/amplio2/
@@ -13,6 +13,8 @@ share/freeciv/amplio2/grid.png
 share/freeciv/amplio2/grid.spec
 share/freeciv/amplio2/hills.png
 share/freeciv/amplio2/hills.spec
+share/freeciv/amplio2/maglev.png
+share/freeciv/amplio2/maglev.spec
 share/freeciv/amplio2/medievalcities.png
 share/freeciv/amplio2/medievalcities.spec
 share/freeciv/amplio2/moderncities.png
@@ -66,21 +68,36 @@ share/freeciv/civ2/script.lua
 share/freeciv/civ2/techs.ruleset
 share/freeciv/civ2/terrain.ruleset
 share/freeciv/civ2/units.ruleset
+share/freeciv/civ2civ3/
+share/freeciv/civ2civ3.serv
+share/freeciv/civ2civ3/buildings.ruleset
+share/freeciv/civ2civ3/cities.ruleset
+share/freeciv/civ2civ3/effects.ruleset
+share/freeciv/civ2civ3/game.ruleset
+share/freeciv/civ2civ3/governments.ruleset
+share/freeciv/civ2civ3/nations.ruleset
+share/freeciv/civ2civ3/script.lua
+share/freeciv/civ2civ3/techs.ruleset
+share/freeciv/civ2civ3/terrain.ruleset
+share/freeciv/civ2civ3/units.ruleset
+share/freeciv/classic/
+share/freeciv/classic.serv
+share/freeciv/classic/buildings.ruleset
+share/freeciv/classic/cities.ruleset
+share/freeciv/classic/effects.ruleset
+share/freeciv/classic/game.ruleset
+share/freeciv/classic/governments.ruleset
+share/freeciv/classic/nations.ruleset
+share/freeciv/classic/script.lua
+share/freeciv/classic/techs.ruleset
+share/freeciv/classic/terrain.ruleset
+share/freeciv/classic/units.ruleset
 share/freeciv/default/
 share/freeciv/default/ai_effects.ruleset
-share/freeciv/default/buildings.ruleset
-share/freeciv/default/cities.ruleset
 share/freeciv/default/default.lua
-share/freeciv/default/effects.ruleset
-share/freeciv/default/game.ruleset
-share/freeciv/default/governments.ruleset
-share/freeciv/default/nations.ruleset
-share/freeciv/default/techs.ruleset
-share/freeciv/default/terrain.ruleset
-share/freeciv/default/units.ruleset
+share/freeciv/default/nationlist.ruleset
 share/freeciv/experimental/
 share/freeciv/experimental.serv
-share/freeciv/experimental/ai_effects.ruleset
 share/freeciv/experimental/buildings.ruleset
 share/freeciv/experimental/cities.ruleset
 share/freeciv/experimental/effects.ruleset
@@ -94,7 +111,6 @@ share/freeciv/experimental/units.ruleset
 share/freeciv/gtk_menus.xml
 share/freeciv/multiplayer/
 share/freeciv/multiplayer.serv
-share/freeciv/multiplayer/ai_effects.ruleset
 share/freeciv/multiplayer/buildings.ruleset
 share/freeciv/multiplayer/cities.ruleset
 share/freeciv/multiplayer/effects.ruleset
@@ -183,6 +199,7 @@ share/freeciv/nation/briton.ruleset
 share/freeciv/nation/bruneian.ruleset
 share/freeciv/nation/bulgarian.ruleset
 share/freeciv/nation/burgundian.ruleset
+share/freeciv/nation/burgundic.ruleset
 share/freeciv/nation/burkinabe.ruleset
 share/freeciv/nation/burmese.ruleset
 share/freeciv/nation/burundi.ruleset
@@ -195,6 +212,7 @@ share/freeciv/nation/canadian.ruleset
 share/freeciv/nation/canari.ruleset
 share/freeciv/nation/cantonese.ruleset
 share/freeciv/nation/capeverdean.ruleset
+share/freeciv/nation/carantanian.ruleset
 share/freeciv/nation/carthaginian.ruleset
 share/freeciv/nation/castilian.ruleset
 share/freeciv/nation/catalan.ruleset
@@ -242,6 +260,7 @@ share/freeciv/nation/cypriot.ruleset
 share/freeciv/nation/cyrenaican.ruleset
 share/freeciv/nation/czech.ruleset
 share/freeciv/nation/czechoslovak.ruleset
+share/freeciv/nation/dacian.ruleset
 share/freeciv/nation/dahomean.ruleset
 share/freeciv/nation/danish.ruleset
 share/freeciv/nation/darfuri.ruleset
@@ -273,6 +292,7 @@ share/freeciv/nation/filipino.ruleset
 share/freeciv/nation/finnish.ruleset
 share/freeciv/nation/flemish.ruleset
 share/freeciv/nation/florentine.ruleset
+share/freeciv/nation/formosan.ruleset
 share/freeciv/nation/franconian.ruleset
 share/freeciv/nation/frankish.ruleset
 share/freeciv/nation/french.ruleset
@@ -286,6 +306,7 @@ share/freeciv/nation/gallic.ruleset
 share/freeciv/nation/gambian.ruleset
 share/freeciv/nation/genoese.ruleset
 share/freeciv/nation/georgian.ruleset
+share/freeciv/nation/gepid.ruleset
 share/freeciv/nation/german.ruleset
 share/freeciv/nation/germanbelgian.ruleset
 share/freeciv/nation/germanic.ruleset
@@ -339,6 +360,7 @@ share/freeciv/nation/iroquois.ruleset
 share/freeciv/nation/israeli.ruleset
 share/freeciv/nation/israelite.ruleset
 share/freeciv/nation/italian.ruleset
+share/freeciv/nation/italiangreek.ruleset
 share/freeciv/nation/ivoirian.ruleset
 share/freeciv/nation/jaffna.ruleset
 share/freeciv/nation/jamaican.ruleset
@@ -357,16 +379,20 @@ share/freeciv/nation/kazakh.ruleset
 share/freeciv/nation/kenyan.ruleset
 share/freeciv/nation/khazar.ruleset
 share/freeciv/nation/khmer.ruleset
+share/freeciv/nation/khoisan.ruleset
 share/freeciv/nation/khwarezmian.ruleset
 share/freeciv/nation/kiribati.ruleset
 share/freeciv/nation/kittitian.ruleset
+share/freeciv/nation/komi.ruleset
 share/freeciv/nation/kongo.ruleset
 share/freeciv/nation/korean.ruleset
 share/freeciv/nation/kosovar.ruleset
 share/freeciv/nation/kuna.ruleset
 share/freeciv/nation/kurd.ruleset
+share/freeciv/nation/kushan.ruleset
 share/freeciv/nation/kuwaiti.ruleset
 share/freeciv/nation/kyrgyz.ruleset
+share/freeciv/nation/langobardic.ruleset
 share/freeciv/nation/lankese.ruleset
 share/freeciv/nation/laotian.ruleset
 share/freeciv/nation/latin.ruleset
@@ -379,6 +405,7 @@ share/freeciv/nation/liberian.ruleset
 share/freeciv/nation/liburnian.ruleset
 share/freeciv/nation/libyan.ruleset
 share/freeciv/nation/liechtensteiner.ruleset
+share/freeciv/nation/ligurian.ruleset
 share/freeciv/nation/lipkatatar.ruleset
 share/freeciv/nation/lippe.ruleset
 share/freeciv/nation/lithuanian.ruleset
@@ -386,6 +413,7 @@ share/freeciv/nation/lojbanistani.ruleset
 share/freeciv/nation/lorrain.ruleset
 share/freeciv/nation/luwian.ruleset
 share/freeciv/nation/luxembourgish.ruleset
+share/freeciv/nation/lycian.ruleset
 share/freeciv/nation/maasai.ruleset
 share/freeciv/nation/macedon.ruleset
 share/freeciv/nation/macedonian.ruleset
@@ -403,6 +431,7 @@ share/freeciv/nation/manx.ruleset
 share/freeciv/nation/maori.ruleset
 share/freeciv/nation/mapuche.ruleset
 share/freeciv/nation/marathi.ruleset
+share/freeciv/nation/marshallese.ruleset
 share/freeciv/nation/martian.ruleset
 share/freeciv/nation/mauritanian.ruleset
 share/freeciv/nation/mauritian.ruleset
@@ -451,6 +480,7 @@ share/freeciv/nation/norman.ruleset
 share/freeciv/nation/northkorean.ruleset
 share/freeciv/nation/northumbrian.ruleset
 share/freeciv/nation/norwegian.ruleset
+share/freeciv/nation/novgorodian.ruleset
 share/freeciv/nation/nubian.ruleset
 share/freeciv/nation/numidian.ruleset
 share/freeciv/nation/nuu-chah-nulth.ruleset
@@ -501,6 +531,7 @@ share/freeciv/nation/roman.ruleset
 share/freeciv/nation/romanian.ruleset
 share/freeciv/nation/romansh.ruleset
 share/freeciv/nation/russian.ruleset
+share/freeciv/nation/rusyn.ruleset
 share/freeciv/nation/ruthenian.ruleset
 share/freeciv/nation/rwandan.ruleset
 share/freeciv/nation/ryukyuan.ruleset
@@ -606,6 +637,7 @@ share/freeciv/nation/tyrolian.ruleset
 share/freeciv/nation/ugandan.ruleset
 share/freeciv/nation/ukrainian.ruleset
 share/freeciv/nation/un.ruleset
+share/freeciv/nation/urartian.ruleset
 share/freeciv/nation/uruguayan.ruleset
 share/freeciv/nation/uyghur.ruleset
 share/freeciv/nation/uzbek.ruleset
@@ -673,6 +705,7 @@ share/freeciv/scenarios/tutorial.sav.gz
 @comment share/icons/hicolor/64x64/apps/
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/freeciv-nations.mo
 share/locale/ar/LC_MESSAGES/freeciv.mo
 share/locale/ca/LC_MESSAGES/freeciv.mo
 share/locale/cs/LC_MESSAGES/freeciv.mo
@@ -681,12 +714,14 @@ share/locale/de/LC_MESSAGES/freeciv.mo
 share/locale/el/LC_MESSAGES/freeciv.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/freeciv-nations.mo
 share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/eo/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
 share/locale/et/LC_MESSAGES/freeciv.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
+share/locale/fa/LC_MESSAGES/freeciv-nations.mo
 share/locale/fa/LC_MESSAGES/freeciv.mo
 share/locale/fi/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
@@ -697,10 +732,10 @@ share/locale/ja/LC_MESSAGES/freeciv.mo
 share/locale/ko/LC_MESSAGES/freeciv.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/freeciv-nations.mo
 share/locale/lt/LC_MESSAGES/freeciv.mo
 share/locale/nb/LC_MESSAGES/freeciv.mo
 share/locale/nl/LC_MESSAGES/freeciv.mo
-share/locale/no/LC_MESSAGES/freeciv.mo
 share/locale/pl/LC_MESSAGES/freeciv.mo
 share/locale/pt/LC_MESSAGES/freeciv.mo
 share/locale/pt_BR/LC_MESSAGES/freeciv.mo
