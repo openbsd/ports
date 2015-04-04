@@ -1,0 +1,13 @@
+$OpenBSD: patch-nmixer_1,v 1.1 2015/04/04 14:45:36 schwarze Exp $
+--- nmixer.1.orig	Sat Jan 24 15:25:12 2009
++++ nmixer.1	Sat Apr  4 15:38:09 2015
+@@ -21,7 +21,8 @@ volume for the currently highlighted device, and (if y
+ you can use home/end/PgUp/PgDn on the numerical keyboard to set left
+ and right volume independantly. You can also use 0..5 to set the
+ volume to the position indicated by the numbers on top of the screen.
+-.PPIf a device can be recorded from, red brackets will be displayed under
++.PP
++If a device can be recorded from, red brackets will be displayed under
+ the device's name. If it's selected as recording source, a red 'X' is
+ displayed as well. You can set a recording device with the space bar.
+ .PP
