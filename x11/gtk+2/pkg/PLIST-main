@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2015/03/27 08:08:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2015/04/04 08:39:02 ajacoutot Exp $
 @conflict gail-*
-@conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
 @pkgpath x11/gtk+2
-@pkgpath x11/gtk+2,-cups
 @pkgpath x11/gtk+2,-docs
 @unexec-delete rm -f %D/lib/gtk-2.0/2.10.0/immodules.cache
 bin/gtk-builder-convert
@@ -296,7 +294,6 @@ lib/gtk-2.0/2.10.0/immodules/im-ti-et.so
 lib/gtk-2.0/2.10.0/immodules/im-viqr.so
 lib/gtk-2.0/2.10.0/immodules/im-xim.so
 lib/gtk-2.0/2.10.0/printbackends/
-lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
 lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.so
 lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
 lib/gtk-2.0/include/
