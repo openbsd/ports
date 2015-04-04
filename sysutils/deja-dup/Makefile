@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/04/04 12:56:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	simple encrypted backup tool for GNOME
 
 GNOME_VERSION=	32.0
 GNOME_PROJECT=	deja-dup
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -36,6 +36,7 @@ MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache vala yelp
 RUN_DEPENDS=	sysutils/duplicity
 
 LIB_DEPENDS=	devel/libpeas \
+		devel/libnotify \
 		x11/gnome/nautilus
 
 CONFIGURE_ARGS=	-DENABLE_UNITY:BOOL=OFF \
