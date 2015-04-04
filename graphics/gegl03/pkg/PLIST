@@ -1,13 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/03 18:32:53 ajacoutot Exp $
-@bin bin/2geglbuffer
-@bin bin/gegl
-@bin bin/gegl-convert
-@bin bin/gegl-imgcmp
-@bin bin/gegl-slicer
-@bin bin/gegl-tester
-@bin bin/geglbuffer-add-image
-@bin bin/geglbuffer-clock
-@bin bin/hello-world
+@comment $OpenBSD: PLIST,v 1.2 2015/04/04 13:55:32 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-buffer-backend.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/03 18:32:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/04 13:55:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		graph based image processing framework (API version 0.3)
 API_VERSION=		0.3
 SUBST_VARS=		API_VERSION
 WRKDIST=		${WRKDIR}/gegl-0.3.0
+REVISION=		0
 
 # synced with Fedora
 DISTNAME=		gegl-0.3.0-c9bbc81
@@ -75,5 +76,7 @@ CONFIGURE_ARGS +=	--enable-mmx \
 
 post-install:
 	rm ${PREFIX}/lib/gegl-${API_VERSION}/*.{a,la}
+# fix conflict with graphics/gegl
+	rm -rf ${PREFIX}/bin/
 
 .include <bsd.port.mk>
