@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/04/02 19:21:24 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2015/04/04 09:36:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,4 +8,4 @@ To get all upower(1) functionalities, apmd(8) and the system-wide D-Bus
 daemon needs to be running.
 
 # rcctl enable apmd
-# rcctl enable dbus_daemon
+# rcctl enable messagebus

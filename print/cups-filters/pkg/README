@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2014/11/02 14:38:38 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2015/04/04 09:36:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ pointing to these printers. This requires the avahi-daemon(8) to be
 running first. To start it at boot time, the rc.conf.local(8)
 pkg_scripts line can be edited as follow:
 
-    pkg_scripts=[...] dbus_daemon avahi_daemon cups_browsed [...]
+    pkg_scripts=[...] messagebus avahi_daemon cups_browsed [...]
 
 lpd(8) using direct printing with foomatic-rip(1)
 =================================================

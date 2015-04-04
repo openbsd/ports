@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2014/05/18 11:22:01 stsp Exp $
+$OpenBSD: README-main,v 1.4 2015/04/04 09:36:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,7 +28,7 @@ to the /etc/sudoers file using visudo:
 $your_username ALL=NOPASSWD: ${LOCALBASE}/lib/xfce4/session/xfsm-shutdown-helper
 
 An alternative is to use consolekit and policykit, but you'll need to
-run a systemwide D-BUS service (add dbus_daemon to pkg_scripts in
+run a systemwide D-BUS service (add messagebus to pkg_scripts in
 rc.local) and pass --with-ck-launch argument to startxfce4. If you run
 a systemwide D-BUS service, have consolekit/policykit installed and
 don't use --with-ck-launch you will not be able to shutdown/reboot.

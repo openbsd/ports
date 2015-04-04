@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.33 2014/09/21 13:02:54 ajacoutot Exp $
+$OpenBSD: README-main,v 1.34 2015/04/04 09:36:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,7 +21,7 @@ Starting GNOME
 DBus
 ----
 Before running gnome-session(1), a system-wide D-Bus daemon needs to be
-running ("dbus_daemon" must be added to "pkg_scripts" in rc.conf.local(8)).
+running ("messagebus" must be added to "pkg_scripts" in rc.conf.local(8)).
 
 GDM
 ---
@@ -50,7 +50,7 @@ will not work at all without it (e.g. seahorse-sharing(1)).
 
 To make use of it, rc.conf.local(8) needs to contain the following line:
     multicast_host=YES
-and "avahi_daemon" must be added to "pkg_scripts" _after_ "dbus_daemon".
+and "avahi_daemon" must be added to "pkg_scripts" _after_ "messagebus".
 
 GNOME Welcome Tour
 ==================
@@ -63,5 +63,5 @@ Cheat sheet
 $ echo "yes" > ~/.config/run-welcome-tour
 # rcctl disable xdm
 # rcctl enable multicast_host
-# for i in dbus_daemon avahi_daemon gdm; do rcctl enable $i; done
+# for i in messagebus avahi_daemon gdm; do rcctl enable $i; done
 # reboot
