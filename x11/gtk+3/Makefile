@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2015/04/03 17:56:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.128 2015/04/04 08:27:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,7 +15,7 @@ PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-cups=		1
 REVISION-cloudprint=	1
 REVISION-guic=		1
