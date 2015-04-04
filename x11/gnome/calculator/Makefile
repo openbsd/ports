@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/04 14:10:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/04 14:33:35 ajacoutot Exp $
 
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
 GNOME_VERSION=		3.16.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		math
 
@@ -26,9 +26,6 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS+=		devel/mpfr \
 			x11/gtksourceview3
-
-# needed to download IMF/ECB rates (Financial mode)
-RUN_DEPENDS=		x11/gnome/gvfs
 
 MODGNOME_TOOLS=		desktop-file-utils vala yelp
 
