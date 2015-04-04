@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/04 14:19:27 landry Exp $
 
 COMMENT=		add support for i18n, documentation and icons to distutils
 
-MODPY_EGG_VERSION=	2.36
+MODPY_EGG_VERSION=	2.38
 DISTNAME=		python-distutils-extra-${MODPY_EGG_VERSION}
 PKGNAME=		py-distutils-extra-${MODPY_EGG_VERSION}
 
@@ -17,5 +17,7 @@ MASTER_SITES=		https://launchpad.net/python-distutils-extra/trunk/${MODPY_EGG_VE
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
+FLAVORS =		python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
