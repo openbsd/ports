@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/04 13:55:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/04 14:01:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		graph based image processing framework (API version 0.3)
 API_VERSION=		0.3
 SUBST_VARS=		API_VERSION
 WRKDIST=		${WRKDIR}/gegl-0.3.0
-REVISION=		0
+REVISION=		1
 
 # synced with Fedora
 DISTNAME=		gegl-0.3.0-c9bbc81
@@ -23,7 +23,7 @@ HOMEPAGE=		http://gegl.org/
 # GPLv3/LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xrender babl-0.1 c cairo croco-0.6 expat ffi
+WANTLIB += X11 Xext Xrender babl-0.1 cairo croco-0.6 expat ffi
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += jasper jpeg json-glib-1.0 lcms2 lzma m pango-1.0 pangocairo-1.0
@@ -76,7 +76,7 @@ CONFIGURE_ARGS +=	--enable-mmx \
 
 post-install:
 	rm ${PREFIX}/lib/gegl-${API_VERSION}/*.{a,la}
-# fix conflict with graphics/gegl
+# fix conflict with graphics/gegl; we currently only care about the libraries
 	rm -rf ${PREFIX}/bin/
 
 .include <bsd.port.mk>
