@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/05 14:58:42 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-GH_TAG =	v2.0.0
+#GH_TAGNAME =	v2.0.0
+GH_COMMIT =	d6ed2cba4c574b8ac463632df451b6f011fd522d
 GH_PROJECT =	pgrouting
 GH_ACCOUNT =	pgRouting
 REVISION =	0
