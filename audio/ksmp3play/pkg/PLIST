@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/05 03:28:12 espie Exp $
-bin/ksmp3play
-@man man/man1/ksmp3play.1
-share/doc/ksmp3play/
-share/doc/ksmp3play/README
