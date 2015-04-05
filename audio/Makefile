@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.351 2015/04/03 16:29:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.352 2015/04/05 22:47:21 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -69,7 +69,6 @@
      SUBDIR += id3ed
      SUBDIR += id3lib
      SUBDIR += jack
-     SUBDIR += ksmp3play
      SUBDIR += ladspa
      SUBDIR += lame
      SUBDIR += liba52
