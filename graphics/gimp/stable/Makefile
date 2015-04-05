@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.102 2015/04/04 09:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2015/04/05 07:58:08 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	gimp-2.8.14
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -34,7 +34,8 @@ BUILD_DEPENDS=	textproc/libxslt \
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		x11/py-gtk2
-LIB_DEPENDS=	x11/gtk+2 \
+LIB_DEPENDS=	devel/libexecinfo \
+		x11/gtk+2 \
 		graphics/aalib \
 		x11/dbus-glib \
 		graphics/libexif \
@@ -61,6 +62,7 @@ WANTLIB += jbig2dec jpeg lcms lcms2 m mng ncurses openjpeg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
 WANTLIB += poppler-glib pthread pthread-stubs rsvg-2 ssl tiff
 WANTLIB += wmf-0.2 wmflite-0.2 xcb xcb-render xcb-shm xml2 z
+WANTLIB += gmp gnutls hogweed lzma nettle p11-kit tasn1
 
 MODULES=	devel/gettext \
 		textproc/intltool \
