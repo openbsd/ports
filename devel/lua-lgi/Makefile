@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/25 09:34:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/05 13:31:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,6 @@ COMMENT=	lua bindings to libraries using GObject-Introspection
 GH_ACCOUNT=	pavouk
 GH_PROJECT=	lgi
 GH_TAGNAME=	0.9.0
-GH_COMMIT=	0f203a0cd0a5cfa1c034fdd267ca3307fae78494
 
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=	lua-${DISTNAME}

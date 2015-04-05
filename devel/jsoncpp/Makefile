@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:13 sthen Exp $
 
 # assumes it can build static and shared libs out of the same (pic) obj files
 SHARED_ONLY =		Yes
@@ -8,7 +8,6 @@ COMMENT =		JSON parsing C++ API
 GH_ACCOUNT =		open-source-parsers
 GH_PROJECT =		jsoncpp
 GH_TAGNAME =		0.10.0
-GH_COMMIT =		1021ff66d34f2a17c9adfe41c5e25489d82a075e
 DISTNAME =		${GH_PROJECT}-${GH_TAGNAME}
 
 # no upstream revision

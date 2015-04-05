@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/08/27 08:05:17 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =	abstract engine for text edition
 CATEGORIES =	devel
@@ -6,7 +6,6 @@ CATEGORIES =	devel
 GH_ACCOUNT =	diml
 GH_PROJECT =	zed
 GH_TAGNAME =	1.3
-GH_COMMIT =	b8da01e8a4493d2182c0379b16aa8511c6264f01
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	ocaml-${DISTNAME}
 

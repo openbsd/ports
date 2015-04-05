@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/18 07:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/05 13:31:14 sthen Exp $
 
 COMMENT=	nyancat in your terminal
 
@@ -6,8 +6,7 @@ GH_ACCOUNT=	klange
 GH_PROJECT=	nyancat
 GH_TAGNAME=	1.4.4
 EPOCH =		0
-GH_COMMIT=	c502754f9b79b03c912815f6139ccfcc75ecf513
-WRKDIST=	${WRKDIR}/nyancat-${GH_COMMIT}
+WRKDIST=	${WRKDIR}/nyancat-c502754f9b79b03c912815f6139ccfcc75ecf513
 
 DISTNAME=	nyancat-${GH_TAGNAME}
 

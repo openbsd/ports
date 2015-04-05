@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
@@ -8,7 +8,6 @@ DISTNAME =	lambda-term-1.6
 GH_ACCOUNT =	diml
 GH_PROJECT =	lambda-term
 GH_TAGNAME =	$V
-GH_COMMIT =	3f31956c450f450fc265f98107242373824cded1
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
 

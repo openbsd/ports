@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/06 02:57:12 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:14 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 GH_ACCOUNT =		aryler
 GH_PROJECT =		Tclarc4random
 GH_TAGNAME =		0.3
-GH_COMMIT =		b5987ef2ec284eaef2240e3e886ba79c176bc28f
 
 MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}

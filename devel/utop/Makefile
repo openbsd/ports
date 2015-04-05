@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/05 13:31:14 sthen Exp $
 
 COMMENT =	enhanced OCaml toplevel
 CATEGORIES =	devel
@@ -7,7 +7,6 @@ V =		1.15
 GH_ACCOUNT =	diml
 GH_PROJECT =	utop
 GH_TAGNAME =	${V}
-GH_COMMIT =	c77830eb9dc52e39c5ebcafac6ffe760a9dff012
 DISTNAME =	${GH_PROJECT}-$V
 
 HOMEPAGE =	https://github.com/diml/utop

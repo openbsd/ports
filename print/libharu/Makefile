@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/10 11:06:37 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/05 13:31:14 sthen Exp $
 
 COMMENT =	PDF creation library
 
@@ -6,7 +6,6 @@ VERSION =	2_3_0
 GH_ACCOUNT =	libharu
 GH_PROJECT =	libharu
 GH_TAGNAME =	RELEASE_${VERSION}
-GH_COMMIT =	4ae1d5f4c84459f130bf1b1ef4c5c330af8eca5d
 DISTNAME =	${GH_PROJECT}-${VERSION:S/_/./g}
 SHARED_LIBS=	hpdf 0.1 #2.3
 CATEGORIES =	print

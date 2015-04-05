@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/11 16:28:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/05 13:31:14 sthen Exp $
 
 COMMENT =	remotely determine DNS server versions
 
 GH_ACCOUNT =	kirei
 GH_PROJECT =	fpdns
 GH_TAGNAME =	20130404
-GH_COMMIT =	24a2f18e8b4b41513ebdbdca408769b039810277
 DISTNAME =	${GH_PROJECT}-0.10.0.${GH_TAGNAME}
 
 CATEGORIES =	net

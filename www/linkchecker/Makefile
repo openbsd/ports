@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/12/06 21:26:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.42 2015/04/05 13:31:15 sthen Exp $
 
 COMMENT=	checks HTML documents for broken links
 
@@ -7,7 +7,6 @@ MODPY_EGG_VERSION=${V}
 GH_ACCOUNT=	wummel
 GH_PROJECT=	linkchecker
 GH_TAGNAME=	upstream/$V
-GH_COMMIT=	85dadc1f1a1d1379d6e3565fc20697adb6f69521
 
 DISTNAME=	${GH_PROJECT}-${V}
 CATEGORIES=    	www

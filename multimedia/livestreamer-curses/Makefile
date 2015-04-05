@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/16 05:34:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/05 13:31:14 sthen Exp $
 
 MODPY_EGG_VERSION =	1.5.2
 COMMENT =	curses-based front-end for livestreamer
 GH_ACCOUNT =	gapato
 GH_PROJECT =	livestreamer-curses
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-GH_COMMIT =	9255cb1b4c2bbad68280eeb8110caaf5d906072a
 DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
 

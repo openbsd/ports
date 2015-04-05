@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/09 13:46:35 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT=	framework for creating extensible applications
 
@@ -10,7 +10,6 @@ HOMEPAGE=	http://monoaddins.codeplex.com/
 GH_ACCOUNT=	mono
 GH_PROJECT=	mono-addins
 GH_TAGNAME=	${DISTNAME}
-GH_COMMIT=	64a45d96f39d4714ec85adf0fe04b68ec7273ae1
 
 # MIT X11, MPL
 PERMIT_PACKAGE_CDROM=	Yes

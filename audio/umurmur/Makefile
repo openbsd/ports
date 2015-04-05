@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/04 12:33:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =		minimalistic Mumble server
 
@@ -6,7 +6,6 @@ V =			0.2.15
 GH_ACCOUNT =		fatbob313
 GH_PROJECT =		umurmur
 GH_TAGNAME =		${V}
-GH_COMMIT =		f66c0c3d630aaff1c4d589bc4d884067f00b6529
 DISTNAME =		${GH_PROJECT}-${V}
 
 CATEGORIES =		audio

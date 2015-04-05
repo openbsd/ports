@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/06 17:13:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =		read-eval-print loop for PHP
 
@@ -8,7 +8,6 @@ REVISION =		2
 GH_ACCOUNT =		d11wtq
 GH_PROJECT =		boris
 GH_TAGNAME =		v$V
-GH_COMMIT =		125dd4e5752639af7678a22ea597115646d89c6e
 
 DISTNAME =		${GH_PROJECT}-$V
 

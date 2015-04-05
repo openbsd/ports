@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/02/20 08:17:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/05 13:31:13 sthen Exp $
 SHARED_ONLY =	Yes
 
 COMMENT =	file system library for the lua language
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 GH_ACCOUNT =	keplerproject
 GH_PROJECT =	luafilesystem
 GH_TAGNAME =	v_${V}
-GH_COMMIT =	8014725009e195ffb502bcd65ca4e93b60a1b21c
 
 MODULES =	lang/lua
 

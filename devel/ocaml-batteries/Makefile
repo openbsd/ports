@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/22 13:00:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
@@ -7,7 +7,6 @@ V =		2.2.0
 GH_ACCOUNT =	ocaml-batteries-team
 GH_PROJECT =	batteries-included
 GH_TAGNAME =	v$V
-GH_COMMIT =	9370680ef30e225e50c76fc05654a897d79ee79d
 DISTNAME =	${GH_PROJECT}-$V
 PKGNAME =	ocaml-batteries-$V
 REVISION =	1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
@@ -6,7 +6,6 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocsigen
 GH_PROJECT =	lwt
 GH_TAGNAME =	2.4.5
-GH_COMMIT =	75b1dc1aefae75dc4ac6455f5a2688b3a52adabd
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	ocaml-${DISTNAME}
 

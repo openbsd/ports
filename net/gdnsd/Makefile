@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/17 18:26:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/05 13:31:14 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,6 @@ COMMENT=		geographically-aware, authoritative-only DNS server
 GH_ACCOUNT=		blblack
 GH_PROJECT=		gdnsd
 GH_TAGNAME=		v1.11.5
-GH_COMMIT=		094e7afac546693856aba0364c3dcf6e7511a0e8
 REVISION=		0
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME:S/v//g}

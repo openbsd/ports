@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/12/23 12:34:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/05 13:31:14 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,7 +8,6 @@ GH_ACCOUNT = 		OpenImageIO
 GH_PROJECT = 		oiio
 V =			1.3.12
 GH_TAGNAME =		Release-$V
-GH_COMMIT = 		e7b18284770ea51d6d63d7caa4d93c7820620e19
 DISTNAME =		openimageio-${V}
 REVISION =		0
 

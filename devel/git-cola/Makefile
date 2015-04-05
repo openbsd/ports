@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/03 18:52:14 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =	python powered git gui
 
@@ -8,7 +8,6 @@ DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
 GH_ACCOUNT =	git-cola
 GH_PROJECT =	git-cola
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-GH_COMMIT =	58e3fec
 
 CATEGORIES =	devel x11
 

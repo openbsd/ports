@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/03 19:23:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =	music related metadata searchengine
 
 GH_ACCOUNT =	sahib
 GH_PROJECT =	glyr
 GH_TAGNAME =	1.0.2
-GH_COMMIT =	e9e3423072ae032cb41107087a8bf92547e81f95
 
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	audio net

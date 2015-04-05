@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/06 08:28:35 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/05 13:31:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,6 @@ COMMENT=	GIS WMTS/TMS tile caching server
 
 GH_TAGNAME =	rel-1-2-1
 GH_ACCOUNT =	mapserver
-GH_COMMIT =	70d3c3c7140c7e97953fabd3df670de82db1c8cb
 GH_PROJECT =	mapcache
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	${GH_PROJECT}-1.2.1

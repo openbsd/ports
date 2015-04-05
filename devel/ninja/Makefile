@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/02/09 12:56:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/05 13:31:13 sthen Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -11,7 +11,6 @@ V =			1.5.3
 GH_ACCOUNT =		martine
 GH_PROJECT =		ninja
 GH_TAGNAME =		v$V
-GH_COMMIT =		3309498174411e02e7680ea8b470bb7d1d70bdb8
 DISTNAME =		${GH_PROJECT}-$V
 REVISION =		0
 

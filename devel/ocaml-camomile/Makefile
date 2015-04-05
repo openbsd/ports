@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/05 13:31:13 sthen Exp $
 
 COMMENT =	unicode library for objective caml
 
@@ -8,7 +8,6 @@ V =		0.8.5
 GH_ACCOUNT =	yoriyuki
 GH_PROJECT =	Camomile
 GH_TAGNAME =	rel-${V}
-GH_COMMIT =	07415d3049eaad11914523468904ee117db149e3
 DISTNAME =	camomile-${V}
 WRKSRC =	${WRKDIST}/Camomile
 PKGNAME =	ocaml-${DISTNAME}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/27 08:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/05 13:31:14 sthen Exp $
 
 COMMENT =	free J-RPG game
 DISTNAME =	valyriatear-${GH_TAGNAME}
@@ -8,7 +8,6 @@ REVISION =	0
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear
 GH_TAGNAME =	1.0.0
-GH_COMMIT =	8b81360c98b02f2140447b29e0c175b3ff028bb2
 
 HOMEPAGE =	http://valyriatear.blogspot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

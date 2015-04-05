@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/31 15:38:37 kspillner Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:14 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -10,7 +10,6 @@ DISTNAME =		websocketd-$V
 GH_ACCOUNT =		joewalnes
 GH_PROJECT =		websocketd
 GH_TAGNAME =		v$V
-GH_COMMIT =		2690f55d518c864cb2a37a1cd53e84ff4bc4bbdf
 
 CATEGORIES =		net www
 
