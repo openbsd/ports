@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1288 2015/01/04 05:47:07 brad Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1289 2015/04/05 13:32:16 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1168,6 +1168,9 @@ MASTER_SITE_OVERRIDE ?= No
 .endif
 
 .if !empty(GH_ACCOUNT) && !empty(GH_PROJECT)
+.  if !empty(GH_COMMIT) && !empty(GH_TAGNAME)
+ERRORS += "Fatal: specifying both GH_TAGNAME and GH_COMMIT is invalid"
+.  endif
 .  if ${GH_TAGNAME} == master
 ERRORS += "Fatal: using master as GH_TAGNAME is invalid"
 .  endif
