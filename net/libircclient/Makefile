@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 09:16:20 ajacoutot Exp $ 
+# $OpenBSD: Makefile,v 1.6 2015/04/05 23:31:08 stsp Exp $ 
 
 COMMENT =		library which implements the IRC protocol
 DISTNAME =		libircclient-1.8
@@ -14,7 +14,6 @@ WANTLIB += crypto ssl
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libircclient/}
 
-USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 CONFIGURE_STYLE =	gnu
