@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/05 11:11:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/05 12:38:45 ajacoutot Exp $
 @bin bin/soapcpp2
 @bin bin/wsdl2h
 include/stdsoap2.h
@@ -16,6 +16,7 @@ lib/pkgconfig/gsoapssl++.pc
 lib/pkgconfig/gsoapssl.pc
 share/gsoap/
 share/gsoap/WS/
+share/gsoap/WS/LEGAL.txt
 share/gsoap/WS/README.txt
 share/gsoap/WS/WS-Addressing.xsd
 share/gsoap/WS/WS-Addressing03.xsd
@@ -28,13 +29,21 @@ share/gsoap/WS/WS-Policy12.xsd
 share/gsoap/WS/WS-ReliableMessaging.wsdl
 share/gsoap/WS/WS-ReliableMessaging.xsd
 share/gsoap/WS/WS-Routing.xsd
+share/gsoap/WS/WS-SecureConversation.xsd
 share/gsoap/WS/WS-SecurityPolicy.xsd
+share/gsoap/WS/WS-Trust.wsdl
+share/gsoap/WS/WS-Trust.xsd
 share/gsoap/WS/WS-typemap.dat
 share/gsoap/WS/discovery.xsd
 share/gsoap/WS/ds.xsd
 share/gsoap/WS/enumeration.xsd
 share/gsoap/WS/reference-1.1.xsd
 share/gsoap/WS/typemap.dat
+share/gsoap/WS/ws-bpel_abstract_common_base.xsd
+share/gsoap/WS/ws-bpel_executable.xsd
+share/gsoap/WS/ws-bpel_plnktype.xsd
+share/gsoap/WS/ws-bpel_serviceref.xsd
+share/gsoap/WS/ws-bpel_varprop.xsd
 share/gsoap/WS/ws-reliability-1.1.xsd
 share/gsoap/WS/wsse.xsd
 share/gsoap/WS/wsu.xsd
@@ -49,6 +58,9 @@ share/gsoap/custom/struct_timeval.c
 share/gsoap/custom/struct_timeval.h
 share/gsoap/custom/struct_tm.c
 share/gsoap/custom/struct_tm.h
+share/gsoap/custom/wsrmdemo-duration.o
+share/gsoap/custom/wsrmdemo_ssl-duration.o
+share/gsoap/custom/wsrmdemo_udp-duration.o
 share/gsoap/extras/
 share/gsoap/extras/README.txt
 share/gsoap/extras/ckdb.c
@@ -67,7 +79,9 @@ share/gsoap/import/c14n.h
 share/gsoap/import/dom.h
 share/gsoap/import/ds.h
 share/gsoap/import/ds2.h
+share/gsoap/import/plnk.h
 share/gsoap/import/ref.h
+share/gsoap/import/ser.h
 share/gsoap/import/soap12.h
 share/gsoap/import/stdstring.h
 share/gsoap/import/stl.h
@@ -75,18 +89,28 @@ share/gsoap/import/stldeque.h
 share/gsoap/import/stllist.h
 share/gsoap/import/stlset.h
 share/gsoap/import/stlvector.h
+share/gsoap/import/vprop.h
 share/gsoap/import/wsa.h
 share/gsoap/import/wsa3.h
 share/gsoap/import/wsa4.h
 share/gsoap/import/wsa5.h
+share/gsoap/import/wsc.h
+share/gsoap/import/wsc2.h
+share/gsoap/import/wsdd.h
+share/gsoap/import/wsdd10.h
+share/gsoap/import/wsdx.h
 share/gsoap/import/wsp.h
 share/gsoap/import/wsrm.h
 share/gsoap/import/wsrm4.h
+share/gsoap/import/wsrm5.h
 share/gsoap/import/wsrp.h
 share/gsoap/import/wsrx.h
+share/gsoap/import/wsrx5.h
 share/gsoap/import/wsse.h
 share/gsoap/import/wsse11.h
 share/gsoap/import/wsse2.h
+share/gsoap/import/wst.h
+share/gsoap/import/wstx.h
 share/gsoap/import/wsu.h
 share/gsoap/import/xenc.h
 share/gsoap/import/xlink.h
@@ -102,6 +126,7 @@ share/gsoap/plugin/
 share/gsoap/plugin/README.txt
 share/gsoap/plugin/cacerts.c
 share/gsoap/plugin/cacerts.h
+share/gsoap/plugin/calcrest.h
 share/gsoap/plugin/httpda.c
 share/gsoap/plugin/httpda.h
 share/gsoap/plugin/httpdatest.c
@@ -110,6 +135,7 @@ share/gsoap/plugin/httpform.c
 share/gsoap/plugin/httpform.h
 share/gsoap/plugin/httpget.c
 share/gsoap/plugin/httpget.h
+share/gsoap/plugin/httpget.o
 share/gsoap/plugin/httpgettest.c
 share/gsoap/plugin/httpgettest.h
 share/gsoap/plugin/httpmd5.c
@@ -118,6 +144,7 @@ share/gsoap/plugin/httpmd5test.c
 share/gsoap/plugin/httpmd5test.h
 share/gsoap/plugin/httppost.c
 share/gsoap/plugin/httppost.h
+share/gsoap/plugin/httppost.o
 share/gsoap/plugin/httpposttest.c
 share/gsoap/plugin/httpposttest.h
 share/gsoap/plugin/logging.c
@@ -126,18 +153,36 @@ share/gsoap/plugin/md5evp.c
 share/gsoap/plugin/md5evp.h
 share/gsoap/plugin/mecevp.c
 share/gsoap/plugin/mecevp.h
+share/gsoap/plugin/mq.c
+share/gsoap/plugin/mq.h
 share/gsoap/plugin/plugin.c
 share/gsoap/plugin/plugin.h
 share/gsoap/plugin/smdevp.c
 share/gsoap/plugin/smdevp.h
+share/gsoap/plugin/sslserver-threads.o
 share/gsoap/plugin/threads.c
 share/gsoap/plugin/threads.h
 share/gsoap/plugin/wsaapi.c
 share/gsoap/plugin/wsaapi.h
+share/gsoap/plugin/wsademo-wsaapi.o
+share/gsoap/plugin/wsddapi.c
+share/gsoap/plugin/wsddapi.h
 share/gsoap/plugin/wsrmapi.c
 share/gsoap/plugin/wsrmapi.h
+share/gsoap/plugin/wsrmdemo-threads.o
+share/gsoap/plugin/wsrmdemo-wsaapi.o
+share/gsoap/plugin/wsrmdemo-wsrmapi.o
+share/gsoap/plugin/wsrmdemo_ssl-threads.o
+share/gsoap/plugin/wsrmdemo_ssl-wsaapi.o
+share/gsoap/plugin/wsrmdemo_ssl-wsrmapi.o
+share/gsoap/plugin/wsrmdemo_udp-threads.o
+share/gsoap/plugin/wsrmdemo_udp-wsaapi.o
+share/gsoap/plugin/wsrmdemo_udp-wsrmapi.o
 share/gsoap/plugin/wsse2api.c
 share/gsoap/plugin/wsse2api.h
 share/gsoap/plugin/wsseapi.c
 share/gsoap/plugin/wsseapi.cpp
 share/gsoap/plugin/wsseapi.h
+share/gsoap/plugin/wssedemo-mecevp.o
+share/gsoap/plugin/wssedemo-smdevp.o
+share/gsoap/plugin/wssedemo-wsseapi.o
