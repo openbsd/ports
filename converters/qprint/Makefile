@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/05 12:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/05 12:17:01 rpe Exp $
 
 COMMENT=	converter to/from quoted-printable encoding
 
-DISTNAME=	qprint-1.0
+DISTNAME=	qprint-1.1
 CATEGORIES=	converters
 HOMEPAGE=	http://www.fourmilab.ch/webtools/qprint/
 
