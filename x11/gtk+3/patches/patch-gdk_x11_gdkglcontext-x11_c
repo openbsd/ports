@@ -1,4 +1,4 @@
-$OpenBSD: patch-gdk_x11_gdkglcontext-x11_c,v 1.1 2015/03/27 16:00:55 ajacoutot Exp $
+$OpenBSD: patch-gdk_x11_gdkglcontext-x11_c,v 1.2 2015/04/05 12:16:15 ajacoutot Exp $
 
 From d4c7fcd050b3d4eb8f8f7d322b44829198556fd8 Mon Sep 17 00:00:00 2001
 From: Emmanuele Bassi <ebassi@gnome.org>
@@ -15,9 +15,43 @@ From: Emmanuele Bassi <ebassi@gnome.org>
 Date: Thu, 26 Mar 2015 17:26:29 +0000
 Subject: x11/gl: Do not use GLX_EXT_texture_from_pixmap if not available
 
+From 49ec67c7eb52a8b20a7a18c37c63020c5612df0e Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <fourdan@xfce.org>
+Date: Fri, 3 Apr 2015 17:51:57 +0200
+Subject: x11/gl: Fix use after free
+
 --- gdk/x11/gdkglcontext-x11.c.orig	Sun Mar 22 00:53:50 2015
-+++ gdk/x11/gdkglcontext-x11.c	Fri Mar 27 14:31:50 2015
-@@ -432,7 +432,12 @@ gdk_x11_gl_context_texture_from_surface (GdkGLContext 
++++ gdk/x11/gdkglcontext-x11.c	Sun Apr  5 14:15:25 2015
+@@ -309,9 +309,9 @@ glx_pixmap_get (cairo_surface_t *surface, guint textur
+ {
+   Display *display = cairo_xlib_surface_get_display (surface);
+   Screen *screen = cairo_xlib_surface_get_screen (surface);
+-  Visual *visual = cairo_xlib_surface_get_visual (surface);;
++  Visual *visual = cairo_xlib_surface_get_visual (surface);
+   GdkGLXPixmap *glx_pixmap;
+-  GLXFBConfig *fbconfigs;
++  GLXFBConfig *fbconfigs, config;
+   int nfbconfigs;
+   XVisualInfo *visinfo;
+   VisualID visualid;
+@@ -393,6 +393,7 @@ glx_pixmap_get (cairo_surface_t *surface, guint textur
+       if (value == TRUE)
+         y_inverted = TRUE;
+ 
++      config = fbconfigs[i];
+       break;
+     }
+ 
+@@ -407,7 +408,7 @@ glx_pixmap_get (cairo_surface_t *surface, guint textur
+   glx_pixmap = g_slice_new0 (GdkGLXPixmap);
+   glx_pixmap->y_inverted = y_inverted;
+   glx_pixmap->display = display;
+-  glx_pixmap->drawable = glXCreatePixmap (display, fbconfigs[i],
++  glx_pixmap->drawable = glXCreatePixmap (display, config,
+ 					  cairo_xlib_surface_get_drawable (surface),
+ 					  pixmap_attributes);
+ 
+@@ -432,7 +433,12 @@ gdk_x11_gl_context_texture_from_surface (GdkGLContext 
    double sx, sy;
    float uscale, vscale;
    GdkTexturedQuad *quads;
@@ -30,7 +64,7 @@ Subject: x11/gl: Do not use GLX_EXT_texture_from_pixmap if not available
    if (cairo_surface_get_type (surface) != CAIRO_SURFACE_TYPE_XLIB)
      return FALSE;
  
-@@ -558,17 +563,25 @@ create_gl3_context (GdkDisplay   *display,
+@@ -558,17 +564,25 @@ create_gl3_context (GdkDisplay   *display,
      GLX_CONTEXT_FLAGS_ARB, flags,
      None,
    };
@@ -61,7 +95,7 @@ Subject: x11/gl: Do not use GLX_EXT_texture_from_pixmap if not available
  }
  
  static gboolean
-@@ -1206,6 +1219,12 @@ gdk_x11_display_make_gl_context_current (GdkDisplay   
+@@ -1206,6 +1220,12 @@ gdk_x11_display_make_gl_context_current (GdkDisplay   
      }
  
    context_x11 = GDK_X11_GL_CONTEXT (context);
