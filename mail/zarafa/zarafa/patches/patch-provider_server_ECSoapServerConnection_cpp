@@ -1,12 +1,13 @@
-$OpenBSD: patch-provider_server_ECSoapServerConnection_cpp,v 1.4 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/server/ECSoapServerConnection.cpp.orig	Mon May 31 19:28:59 2010
-+++ provider/server/ECSoapServerConnection.cpp	Mon Jun 14 09:16:44 2010
-@@ -58,6 +58,10 @@
+$OpenBSD: patch-provider_server_ECSoapServerConnection_cpp,v 1.5 2015/04/05 22:25:08 robert Exp $
+--- provider/server/ECSoapServerConnection.cpp.orig	Thu Mar  5 16:54:03 2015
++++ provider/server/ECSoapServerConnection.cpp	Sun Apr  5 14:47:42 2015
+@@ -53,6 +53,11 @@
  #include <sys/un.h>
  #endif
  
 +#ifdef __OpenBSD__
 +#include <sys/stat.h>
++#include <signal.h>
 +#endif
 +
  #include "ECSoapServerConnection.h"

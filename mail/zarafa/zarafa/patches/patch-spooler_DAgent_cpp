@@ -1,7 +1,7 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.25 2015/02/20 14:44:42 robert Exp $
---- spooler/DAgent.cpp.orig	Sun Aug 24 04:27:06 2014
-+++ spooler/DAgent.cpp	Fri Feb 20 07:38:20 2015
-@@ -97,6 +97,11 @@
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.26 2015/04/05 22:25:08 robert Exp $
+--- spooler/DAgent.cpp.orig	Thu Mar  5 16:54:04 2015
++++ spooler/DAgent.cpp	Fri Apr  3 23:11:10 2015
+@@ -92,6 +92,11 @@
  #include <sys/mman.h>
  #include <pwd.h>
  
@@ -13,8 +13,8 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.25 2015/02/20 14:44:42 robert Exp $
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -1488,12 +1493,18 @@ HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LPMDB lpM
- 		goto exit;
+@@ -1664,12 +1669,18 @@ HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LPMDB lpM
+ 	}
  
  	{
 +#ifndef __OpenBSD__
@@ -30,9 +30,9 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.25 2015/02/20 14:44:42 robert Exp $
 +		strftime(szHeader, PATH_MAX, "\nDate: %a, %d %b %Y %T %z", &local);
 +#endif
  	}
- 	if (WriteOrLogError(fd, szHeader, strlen(szHeader)) != hrSuccess)
- 		goto exit;
-@@ -3462,7 +3473,7 @@ int main(int argc, char *argv[]) {
+ 
+ 	if (WriteOrLogError(fd, szHeader, strlen(szHeader)) != hrSuccess) {
+@@ -3763,7 +3774,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";
@@ -41,7 +41,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.25 2015/02/20 14:44:42 robert Exp $
  	sDeliveryArgs.bCreateFolder = false;
  	sDeliveryArgs.strDeliveryFolder.clear();
  	sDeliveryArgs.szPathSeperator = '\\';
-@@ -3527,10 +3538,10 @@ int main(int argc, char *argv[]) {
+@@ -3828,10 +3839,10 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },

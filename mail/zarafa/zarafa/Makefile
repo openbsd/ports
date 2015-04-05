@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2015/02/20 14:44:42 robert Exp $
+# $OpenBSD: Makefile,v 1.182 2015/04/05 22:25:08 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,9 +6,6 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-
-REVISION-main=	11
-REVISION-web=	3
 
 CATEGORIES=	mail www productivity
 
@@ -38,7 +35,8 @@ MODPHP_DO_SAMPLE=mapi
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
-BUILD_DEPENDS=	devel/swig \
+BUILD_DEPENDS=\
+		devel/swig \
 		textproc/xmlto \
 		sysutils/coreutils
 
@@ -47,25 +45,25 @@ BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
 WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc
-WANTLIB += boost_filesystem-mt boost_system-mt uuid
+WANTLIB += boost_filesystem-mt boost_system-mt lzma
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += c crypto ical icalss lber-2.4
-WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2 kyotocabinet
-WANTLIB-main += ldap_r-2.4 clucene-core clucene-shared
+WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2
+WANTLIB-main += ldap_r-2.4 gsoapssl++
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
+		databases/xapian-bindings,-python \
+		lang/python/2.7,-bsddb \
 		textproc/catdoc
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		databases/kyotocabinet \
 		databases/mariadb \
 		databases/openldap \
 		devel/boost \
+		devel/gsoap \
 		devel/libexecinfo \
 		devel/libvmime>=0.9.2p1 \
-		sysutils/e2fsprogs>=1.42.7 \
-		textproc/clucene>=2.3.3.4 \
 		textproc/icu4c \
 		textproc/libical \
 		textproc/libxml
@@ -105,6 +103,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
+		--with-gsoap-prefix=${LOCALBASE} \
 		--with-mapi-configdir=${SYSCONFDIR}/mapi \
 		--with-userscript-prefix=${SYSCONFDIR}/zarafa/userscripts \
 		--with-quotatemplate-prefix=${SYSCONFDIR}/zarafa/quotamail \
@@ -226,6 +225,14 @@ post-install:
 	rmdir ${WRKINST}/var/lib/zarafa/report
 	rmdir ${WRKINST}/var/lib/zarafa/
 	rmdir ${WRKINST}/var/lib/
+
+	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+		${PREFIX}/bin/zarafa-search \
+		${PREFIX}/bin/zarafa-search-xapian-compact.py \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/zarafa_search/__init__.py \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/zarafa_search/plaintext.py \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/version_info.py
+
 
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/zarafa-dagent/python \

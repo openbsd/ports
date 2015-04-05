@@ -1,16 +1,16 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.20 2014/09/02 11:09:38 robert Exp $
---- installer/linux/server.cfg.orig	Sun Aug 24 11:52:55 2014
-+++ installer/linux/server.cfg	Mon Sep  1 18:00:46 2014
+$OpenBSD: patch-installer_linux_server_cfg,v 1.21 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/server.cfg.orig	Sun Apr  5 17:45:06 2015
++++ installer/linux/server.cfg	Sun Apr  5 17:47:09 2015
 @@ -46,16 +46,16 @@ owner_auto_full_access = true
  system_email_address	= postmaster@localhost
  
  # drop privileges and run the process as this user
 -run_as_user		= 
-+run_as_user		= _zarafa 
++run_as_user		= _zarafa
  
  # drop privileges and run the process as this group
 -run_as_group		= 
-+run_as_group		= _zarafa 
++run_as_group		= _zarafa
  
  # create a pid file for stopping the service via the init.d scripts
  pid_file		= /var/run/zarafa-server.pid
@@ -39,7 +39,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.20 2014/09/02 11:09:38 robert Exp
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -147,22 +147,22 @@ server_ssl_enabled	= no
+@@ -147,13 +147,13 @@ server_ssl_enabled	= no
  server_ssl_port		= 237
  
  # Required Server certificate, contains the certificate and the private key parts
@@ -54,11 +54,9 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.20 2014/09/02 11:09:38 robert Exp
 +server_ssl_ca_file	= ${SYSCONFDIR}/zarafa/ssl/cacert.pem
  
  # Path with CA certificates, e.g. /etc/ssl/certs
--server_ssl_ca_path	=
-+server_ssl_ca_path	= ${SYSCONFDIR}/ssl/cert.pem
- 
- # Accept SSLv2 only connections. Normally v3 connections are used.
- server_ssl_enable_v2 = no
+ server_ssl_ca_path	=
+@@ -168,7 +168,7 @@ server_ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
+ server_ssl_prefer_server_ciphers = no
  
  # Path of SSL Public keys of clients
 -sslkeys_path		= /etc/zarafa/sslkeys
@@ -66,11 +64,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.20 2014/09/02 11:09:38 robert Exp
  
  ##############################################################
  # THREAD SETTINGS
-@@ -291,23 +291,24 @@ companyquota_warn      = 0
- # Name of the plugin that handles users
- # Required, default = db
- # Values: ldap, unix, db, ldapms (available in enterprise license)
-+# note: the unix plugin is not yet supported on OpenBSD
+@@ -300,20 +300,20 @@ companyquota_warn      = 0
  user_plugin		= db
  
  # configuration file of the user plugin, examples can be found in /usr/share/doc/zarafa/example-config
@@ -99,7 +93,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.20 2014/09/02 11:09:38 robert Exp
  
  # Set this option to 'yes' to skip the creation and deletion of new users
  # The action will be logged, so you can see if your changes to the plugin
-@@ -364,7 +365,7 @@ client_update_enabled = false
+@@ -370,7 +370,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

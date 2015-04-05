@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.47 2015/01/30 20:38:40 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.48 2015/04/05 22:25:08 robert Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
@@ -20,7 +20,8 @@ bin/zarafa-mailbox-permissions
 @bin bin/zarafa-monitor
 bin/zarafa-mr-accept
 @bin bin/zarafa-passwd
-@bin bin/zarafa-search
+bin/zarafa-search
+bin/zarafa-search-xapian-compact.py
 @bin bin/zarafa-server
 bin/zarafa-set-oof
 @bin bin/zarafa-spooler
@@ -65,15 +66,6 @@ include/libfreebusy/freebusyguid.h
 include/libfreebusy/freebusytags.h
 include/libfreebusy/freebusyutil.h
 include/libfreebusy/recurrence.h
-include/libmapicalendar/
-include/libmapicalendar/Appointment.h
-include/libmapicalendar/CalendarTable.h
-include/libmapicalendar/Conversions.h
-include/libmapicalendar/IAppointment.h
-include/libmapicalendar/IOccurrence.h
-include/libmapicalendar/MAPICalendar.h
-include/libmapicalendar/PropertyPool.h
-include/libmapicalendar/RecurrencePattern.h
 include/libzarafasync/
 include/libzarafasync/ECLibSync.h
 include/libzarafasync/ECOfflineABImporter.h
@@ -95,8 +87,6 @@ include/mapi4linux/mapispi.h
 include/mapi4linux/mapitags.h
 include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
-include/mapitimezone/
-include/mapitimezone/ECMAPITimezone.h
 include/zarafa/
 include/zarafa/CommonUtil.h
 include/zarafa/ConsoleTable.h
@@ -230,12 +220,8 @@ include/zarafa/utf8/unchecked.h
 @lib lib/libinetmapi.so.${LIBinetmapi_VERSION}
 @comment lib/libmapi.la
 @lib lib/libmapi.so.${LIBmapi_VERSION}
-@comment lib/libmapicalendar.la
-@lib lib/libmapicalendar.so.${LIBmapicalendar_VERSION}
-@comment lib/libmapitimezone.la
-@lib lib/libmapitimezone.so.${LIBmapitimezone_VERSION}
 @comment lib/libzarafaclient.la
-@lib lib/libzarafaclient.so.${LIBzarafaclient_VERSION}
+lib/libzarafaclient.so
 @comment lib/libzarafacontacts.la
 @lib lib/libzarafacontacts.so.${LIBzarafacontacts_VERSION}
 @comment lib/libzarafasync.la
@@ -274,20 +260,45 @@ lib/python${MODPY_VERSION}/site-packages/_inetmapi.la
 lib/python${MODPY_VERSION}/site-packages/_inetmapi.so
 lib/python${MODPY_VERSION}/site-packages/_licenseclient.la
 lib/python${MODPY_VERSION}/site-packages/_licenseclient.so
-lib/python${MODPY_VERSION}/site-packages/_mapicalendar.la
-lib/python${MODPY_VERSION}/site-packages/_mapicalendar.so
-lib/python${MODPY_VERSION}/site-packages/_mapitimezone.la
-lib/python${MODPY_VERSION}/site-packages/_mapitimezone.so
 lib/python${MODPY_VERSION}/site-packages/icalmapi.py
 lib/python${MODPY_VERSION}/site-packages/icalmapi.pyc
 lib/python${MODPY_VERSION}/site-packages/inetmapi.py
 lib/python${MODPY_VERSION}/site-packages/inetmapi.pyc
 lib/python${MODPY_VERSION}/site-packages/licenseclient.py
 lib/python${MODPY_VERSION}/site-packages/licenseclient.pyc
-lib/python${MODPY_VERSION}/site-packages/mapicalendar.py
-lib/python${MODPY_VERSION}/site-packages/mapicalendar.pyc
-lib/python${MODPY_VERSION}/site-packages/mapitimezone.py
-lib/python${MODPY_VERSION}/site-packages/mapitimezone.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/
+lib/python${MODPY_VERSION}/site-packages/zarafa-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/zarafa/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/daemon.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/daemon.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/pidlockfile.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/pidlockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/runner.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/runner.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/version_info.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/version_info.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa/lockfile.py
+lib/python${MODPY_VERSION}/site-packages/zarafa/lockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/
+lib/python${MODPY_VERSION}/site-packages/zarafa_search-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/magic.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/magic.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/plaintext.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/plaintext.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/plugin_solr.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/plugin_solr.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/plugin_xapian.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/plugin_xapian.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_search/xmltotext.xslt
 lib/zarafa/
 @comment lib/zarafa/dbplugin.la
 lib/zarafa/dbplugin.so
@@ -346,6 +357,8 @@ share/doc/zarafa/zarafa.ldif
 @mode 0555
 share/doc/zarafa/zarafa7-upgrade
 @mode
+share/examples/bash_completion.d/
+share/examples/bash_completion.d/zarafa-bash-completion.sh
 share/examples/zarafa/
 @sample ${SYSCONFDIR}/zarafa/
 @mode 750
@@ -387,6 +400,7 @@ share/examples/zarafa/mapi/zcontacts.inf
 @sample ${SYSCONFDIR}/mapi/zcontacts.inf
 share/examples/zarafa/monitor.cfg
 @sample ${SYSCONFDIR}/zarafa/monitor.cfg
+share/examples/zarafa/presence.cfg
 share/examples/zarafa/quotamail/
 @sample ${SYSCONFDIR}/zarafa/quotamail/
 share/examples/zarafa/quotamail/companywarning.mail
@@ -508,7 +522,6 @@ share/locale/tr/LC_MESSAGES/zarafa.mo
 share/locale/uk/LC_MESSAGES/zarafa.mo
 share/locale/zh_CN/LC_MESSAGES/zarafa.mo
 share/locale/zh_TW/LC_MESSAGES/zarafa.mo
-share/zarafa/
 share/zarafa-dagent/
 share/zarafa-dagent/python/
 share/zarafa-dagent/python/mapiplugin.py
@@ -564,108 +577,6 @@ share/zarafa-spooler/python/zunit.pyc
 @sample /var/db/zarafa/client/
 @sample /var/db/zarafa/index/
 @sample /var/log/zarafa/
-share/zarafa/timezones/
-share/zarafa/timezones/AUS Central Standard Time
-share/zarafa/timezones/AUS Eastern Standard Time
-share/zarafa/timezones/Afghanistan Standard Time
-share/zarafa/timezones/Alaskan Standard Time
-share/zarafa/timezones/Arab Standard Time
-share/zarafa/timezones/Arabian Standard Time
-share/zarafa/timezones/Arabic Standard Time
-share/zarafa/timezones/Argentina Standard Time
-share/zarafa/timezones/Atlantic Standard Time
-share/zarafa/timezones/Azerbaijan Standard Time
-share/zarafa/timezones/Azores Standard Time
-share/zarafa/timezones/Bahia Standard Time
-share/zarafa/timezones/Bangladesh Standard Time
-share/zarafa/timezones/Canada Central Standard Time
-share/zarafa/timezones/Cape Verde Standard Time
-share/zarafa/timezones/Caucasus Standard Time
-share/zarafa/timezones/Cen. Australia Standard Time
-share/zarafa/timezones/Central America Standard Time
-share/zarafa/timezones/Central Asia Standard Time
-share/zarafa/timezones/Central Brazilian Standard Time
-share/zarafa/timezones/Central Europe Standard Time
-share/zarafa/timezones/Central European Standard Time
-share/zarafa/timezones/Central Pacific Standard Time
-share/zarafa/timezones/Central Standard Time
-share/zarafa/timezones/Central Standard Time (Mexico)
-share/zarafa/timezones/China Standard Time
-share/zarafa/timezones/Dateline Standard Time
-share/zarafa/timezones/E. Africa Standard Time
-share/zarafa/timezones/E. Australia Standard Time
-share/zarafa/timezones/E. Europe Standard Time
-share/zarafa/timezones/E. South America Standard Time
-share/zarafa/timezones/Eastern Standard Time
-share/zarafa/timezones/Egypt Standard Time
-share/zarafa/timezones/Ekaterinburg Standard Time
-share/zarafa/timezones/FLE Standard Time
-share/zarafa/timezones/Fiji Standard Time
-share/zarafa/timezones/GMT Standard Time
-share/zarafa/timezones/GTB Standard Time
-share/zarafa/timezones/Georgian Standard Time
-share/zarafa/timezones/Greenland Standard Time
-share/zarafa/timezones/Greenwich Standard Time
-share/zarafa/timezones/Hawaiian Standard Time
-share/zarafa/timezones/India Standard Time
-share/zarafa/timezones/Iran Standard Time
-share/zarafa/timezones/Israel Standard Time
-share/zarafa/timezones/Jordan Standard Time
-share/zarafa/timezones/Kaliningrad Standard Time
-share/zarafa/timezones/Kamchatka Standard Time
-share/zarafa/timezones/Korea Standard Time
-share/zarafa/timezones/Magadan Standard Time
-share/zarafa/timezones/Mauritius Standard Time
-share/zarafa/timezones/Mid-Atlantic Standard Time
-share/zarafa/timezones/Middle East Standard Time
-share/zarafa/timezones/Montevideo Standard Time
-share/zarafa/timezones/Morocco Standard Time
-share/zarafa/timezones/Mountain Standard Time
-share/zarafa/timezones/Mountain Standard Time (Mexico)
-share/zarafa/timezones/Myanmar Standard Time
-share/zarafa/timezones/N. Central Asia Standard Time
-share/zarafa/timezones/Namibia Standard Time
-share/zarafa/timezones/Nepal Standard Time
-share/zarafa/timezones/New Zealand Standard Time
-share/zarafa/timezones/Newfoundland Standard Time
-share/zarafa/timezones/North Asia East Standard Time
-share/zarafa/timezones/North Asia Standard Time
-share/zarafa/timezones/Pacific SA Standard Time
-share/zarafa/timezones/Pacific Standard Time
-share/zarafa/timezones/Pacific Standard Time (Mexico)
-share/zarafa/timezones/Pakistan Standard Time
-share/zarafa/timezones/Paraguay Standard Time
-share/zarafa/timezones/Romance Standard Time
-share/zarafa/timezones/Russian Standard Time
-share/zarafa/timezones/SA Eastern Standard Time
-share/zarafa/timezones/SA Pacific Standard Time
-share/zarafa/timezones/SA Western Standard Time
-share/zarafa/timezones/SE Asia Standard Time
-share/zarafa/timezones/Samoa Standard Time
-share/zarafa/timezones/Singapore Standard Time
-share/zarafa/timezones/South Africa Standard Time
-share/zarafa/timezones/Sri Lanka Standard Time
-share/zarafa/timezones/Syria Standard Time
-share/zarafa/timezones/Taipei Standard Time
-share/zarafa/timezones/Tasmania Standard Time
-share/zarafa/timezones/Tokyo Standard Time
-share/zarafa/timezones/Tonga Standard Time
-share/zarafa/timezones/Turkey Standard Time
-share/zarafa/timezones/US Eastern Standard Time
-share/zarafa/timezones/US Mountain Standard Time
-share/zarafa/timezones/UTC
-share/zarafa/timezones/UTC+12
-share/zarafa/timezones/UTC-02
-share/zarafa/timezones/UTC-11
-share/zarafa/timezones/Ulaanbaatar Standard Time
-share/zarafa/timezones/Venezuela Standard Time
-share/zarafa/timezones/Vladivostok Standard Time
-share/zarafa/timezones/W. Australia Standard Time
-share/zarafa/timezones/W. Central Africa Standard Time
-share/zarafa/timezones/W. Europe Standard Time
-share/zarafa/timezones/West Asia Standard Time
-share/zarafa/timezones/West Pacific Standard Time
-share/zarafa/timezones/Yakutsk Standard Time
 @mode
 @owner
 @group

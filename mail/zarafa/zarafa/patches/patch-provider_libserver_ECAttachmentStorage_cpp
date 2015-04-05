@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.7 2011/11/17 15:14:37 ajacoutot Exp $
---- provider/libserver/ECAttachmentStorage.cpp.orig	Thu Nov 17 03:03:24 2011
-+++ provider/libserver/ECAttachmentStorage.cpp	Thu Nov 17 13:59:31 2011
-@@ -1215,7 +1215,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
+$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.8 2015/04/05 22:25:08 robert Exp $
+--- provider/libserver/ECAttachmentStorage.cpp.orig	Thu Mar  5 16:54:01 2015
++++ provider/libserver/ECAttachmentStorage.cpp	Sun Apr  5 14:46:14 2015
+@@ -1255,7 +1255,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
  	m_lpLogger = lpLogger;
  	
  	if (m_basepath.empty())
@@ -10,3 +10,45 @@ $OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.7 2011/11/17 15:1
  	
  	m_bTransaction = false;
  }
+@@ -1384,8 +1384,10 @@ ECRESULT ECFileAttachment::LoadAttachmentInstance(stru
+ 
+ exit:
+ 	/* ignore the result: it is odd if this call fails but it is not fatal if the kernel buffers the file */
++#ifndef __OpenBSD__
+ 	if (fd != -1)
+ 		(void)posix_fadvise(fd, 0, 0, POSIX_FADV_DONTNEED);
++#endif
+ 
+ 	if (gzfp)
+ 		gzclose(gzfp);
+@@ -1491,8 +1493,10 @@ ECRESULT ECFileAttachment::LoadAttachmentInstance(ULON
+ 	*lpiSize = ulSize;
+ 
+ exit:
++#ifndef __OpenBSD__
+ 	if (fd != -1)
+ 		(void)posix_fadvise(fd, 0, 0, POSIX_FADV_DONTNEED);
++#endif
+ 
+ 	if (gzfp)
+ 		gzclose(gzfp);
+@@ -1540,7 +1544,9 @@ ECRESULT ECFileAttachment::SaveAttachmentInstance(ULON
+ 		// kernel can now look for the best disk allocation
+ 		// pattern as it knows how much date is going to be
+ 		// inserted
++#ifndef __OpenBSD__
+ 		posix_fallocate(fileno(f), 0, iSize);
++#endif
+ 
+ 		iWritten = fwrite(lpData, 1, iSize, f);
+ 		fclose(f);
+@@ -1621,7 +1627,9 @@ ECRESULT ECFileAttachment::SaveAttachmentInstance(ULON
+ 		// kernel can now look for the best disk allocation
+ 		// pattern as it knows how much date is going to be
+ 		// inserted
++#ifndef __OpenBSD__
+ 		posix_fallocate(fileno(f), 0, iSize);
++#endif
+ 
+ 		// file created on disk, now in transaction
+ 		if (m_bTransaction)

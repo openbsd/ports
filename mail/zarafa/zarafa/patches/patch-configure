@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.33 2014/11/06 17:11:01 sthen Exp $
---- configure.orig	Sun Aug 24 03:53:42 2014
-+++ configure	Wed Oct 29 08:29:56 2014
-@@ -16750,11 +16750,6 @@ esac
+$OpenBSD: patch-configure,v 1.34 2015/04/05 22:25:08 robert Exp $
+--- configure.orig	Thu Mar  5 16:52:48 2015
++++ configure	Fri Apr  3 23:11:10 2015
+@@ -16770,11 +16770,6 @@ esac
  # disable write-strings: too much complains about "" being 'cast' to char* (since const char* is not in the declarations) on g++-4.2 and higher
  ZCPPFLAGS="$ZCPPFLAGS $BUILDOS -DHAVE_CONFIG_H"
  ZCXXFLAGS="$ZCXXFLAGS -g -rdynamic -Wall -Wno-write-strings"
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.33 2014/11/06 17:11:01 sthen Exp $
  
  # programs that use files >2gb need 64bit file support
  LFS_CFLAGS=`getconf LFS_CFLAGS`
-@@ -19764,68 +19759,6 @@ rm -f core conftest.err conftest.$ac_objext \
+@@ -18986,68 +18981,6 @@ rm -f core conftest.err conftest.$ac_objext \
  
  LIBS=$LIBS_system
  
@@ -82,7 +82,7 @@ $OpenBSD: patch-configure,v 1.33 2014/11/06 17:11:01 sthen Exp $
  # Only specific links with uuid and dl, clients only with crypto and ssl for ssl connections
  SSL_LIBS=
  # TODO: version of ssl check??
-@@ -19836,7 +19769,7 @@ if ${ac_cv_lib_ssl_SSL_accept+:} false; then :
+@@ -19058,7 +18991,7 @@ if ${ac_cv_lib_ssl_SSL_accept+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

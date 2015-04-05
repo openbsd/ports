@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_zarafa-fsck_zarafa-fsck_cpp,v 1.3 2013/11/01 11:20:20 robert Exp $
---- ECtools/zarafa-fsck/zarafa-fsck.cpp.orig	Sat Sep 28 00:58:27 2013
-+++ ECtools/zarafa-fsck/zarafa-fsck.cpp	Wed Oct 30 14:32:59 2013
-@@ -560,8 +560,10 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-ECtools_zarafa-fsck_zarafa-fsck_cpp,v 1.4 2015/04/05 22:25:08 robert Exp $
+--- ECtools/zarafa-fsck/zarafa-fsck.cpp.orig	Thu Mar  5 16:54:04 2015
++++ ECtools/zarafa-fsck/zarafa-fsck.cpp	Fri Apr  3 23:11:10 2015
+@@ -558,8 +558,10 @@ int main(int argc, char *argv[])
  	bool acceptDisclaimer = false;
  
  	setlocale(LC_MESSAGES, "");

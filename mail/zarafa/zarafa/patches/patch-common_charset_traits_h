@@ -1,10 +1,10 @@
-$OpenBSD: patch-common_charset_traits_h,v 1.1 2011/06/02 12:46:37 ajacoutot Exp $
+$OpenBSD: patch-common_charset_traits_h,v 1.2 2015/04/05 22:25:08 robert Exp $
 
 On OpenBSD, _N is defined in ctype.h
 
---- common/charset/traits.h.orig	Wed Apr 20 19:51:45 2011
-+++ common/charset/traits.h	Sun May 29 15:28:04 2011
-@@ -107,31 +107,31 @@ class iconv_charset<const char*> { (public)
+--- common/charset/traits.h.orig	Thu Mar  5 16:54:04 2015
++++ common/charset/traits.h	Fri Apr  3 23:11:10 2015
+@@ -102,31 +102,31 @@ class iconv_charset<const char*> { (public)
  	}
  };
  
@@ -46,7 +46,7 @@ On OpenBSD, _N is defined in ctype.h
  	}
  };
  
-@@ -179,31 +179,31 @@ class iconv_charset<const wchar_t*> { (public)
+@@ -174,31 +174,31 @@ class iconv_charset<const wchar_t*> { (public)
  	}
  };
  

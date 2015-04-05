@@ -1,12 +1,12 @@
-$OpenBSD: patch-installer_linux_search_cfg,v 1.3 2014/04/07 13:46:06 robert Exp $
---- installer/linux/search.cfg.orig	Thu Jan 30 12:43:17 2014
-+++ installer/linux/search.cfg	Mon Feb  3 11:25:37 2014
+$OpenBSD: patch-installer_linux_search_cfg,v 1.4 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/search.cfg.orig	Thu Mar  5 16:52:42 2015
++++ installer/linux/search.cfg	Mon Apr  6 00:19:28 2015
 @@ -2,19 +2,19 @@
  # INDEXED SEARCH SERVICE SETTINGS
  
  # Location of the index files
--index_path          =   /var/lib/zarafa/index/
-+index_path          =   /var/db/zarafa/index/
+-index_path          =   /var/lib/zarafa/search/
++index_path          =   /var/db/zarafa/search/
  
  # run as specific user
 -run_as_user         =
@@ -17,7 +17,8 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.3 2014/04/07 13:46:06 robert Exp 
 +run_as_group        = _zarafa
  
  # control pid file
- pid_file            =   /var/run/zarafa-search.pid
+-pid_file            =   /var/run/zarafa-search.pid
++pid_file            =   /var/run/zarafa-search/zarafa-search.pid
  
  # run server in this path (when not using the -F switch)
 -running_path        =   /
@@ -29,12 +30,12 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.3 2014/04/07 13:46:06 robert Exp 
  server_socket   =   file:///var/run/zarafa
  
  # Login to the Zarafa server using this SSL Key
--sslkey_file         = /etc/zarafa/ssl/search.pem
-+sslkey_file         = ${SYSCONFDIR}/zarafa/ssl/search.pem
+-#sslkey_file         = /etc/zarafa/ssl/search.pem
++#sslkey_file         = ${SYSCONFDIR}/zarafa/ssl/search.pem
  
  # The password of the SSL Key
- sslkey_pass         = replace-with-server-cert-password
-@@ -45,10 +45,10 @@ sslkey_pass         = replace-with-server-cert-passwor
+ #sslkey_pass         = replace-with-server-cert-password
+@@ -45,10 +45,10 @@ server_socket   =   file:///var/run/zarafa
  server_bind_name   =   file:///var/run/zarafa-search
  
  # File with RSA key for SSL, used then server_bind_name uses https
@@ -47,7 +48,7 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.3 2014/04/07 13:46:06 robert Exp 
  
  ##############################################################
  # LOG SETTINGS
-@@ -99,7 +99,7 @@ index_attachments	= no
+@@ -94,7 +94,7 @@ index_attachments	= no
  index_attachment_max_size = 5M
  
  # Scripts to attachment to text parser

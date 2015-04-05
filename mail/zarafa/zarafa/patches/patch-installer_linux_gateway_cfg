@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.13 2014/07/03 06:14:40 robert Exp $
---- installer/linux/gateway.cfg.orig	Fri May 23 15:03:19 2014
-+++ installer/linux/gateway.cfg	Wed Jul  2 17:28:25 2014
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.14 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/gateway.cfg.orig	Thu Mar  5 16:52:42 2015
++++ installer/linux/gateway.cfg	Sun Apr  5 23:30:25 2015
 @@ -14,16 +14,16 @@ server_hostname = 
  server_hostname_greeting = no
  
@@ -35,3 +35,12 @@ $OpenBSD: patch-installer_linux_gateway_cfg,v 1.13 2014/07/03 06:14:40 robert Ex
  
  # Verify client certificate
  ssl_verify_client	=	no
+@@ -94,7 +94,7 @@ ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
+ ssl_prefer_server_ciphers = no
+ 
+ # Process model, using pthreads (thread) or processes (fork)
+-process_model = fork
++process_model = thread
+ 
+ ##############################################################
+ # GATEWAY LOG SETTINGS

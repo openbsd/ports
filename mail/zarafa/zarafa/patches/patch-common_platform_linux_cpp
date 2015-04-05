@@ -1,7 +1,15 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.5 2014/09/04 20:30:45 robert Exp $
---- common/platform.linux.cpp.orig	Sun Aug 24 12:27:07 2014
-+++ common/platform.linux.cpp	Thu Sep  4 22:29:31 2014
-@@ -70,7 +70,7 @@
+$OpenBSD: patch-common_platform_linux_cpp,v 1.6 2015/04/05 22:25:08 robert Exp $
+--- common/platform.linux.cpp.orig	Thu Mar  5 16:54:04 2015
++++ common/platform.linux.cpp	Fri Apr  3 23:13:47 2015
+@@ -57,6 +57,7 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <limits.h>
++#include <signal.h>
+ 
+ #include <string>
+ #include <map>
+@@ -66,7 +67,7 @@
  #define ICONV_CONST const
  #elif OPENBSD
  // bsd
@@ -10,7 +18,7 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.5 2014/09/04 20:30:45 robert Exp $
  #else
  // linux
  #define ICONV_CONST
-@@ -96,22 +96,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
+@@ -92,22 +93,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
  		return MAPI_E_INVALID_PARAMETER;
  
  #if HAVE_UUID_CREATE

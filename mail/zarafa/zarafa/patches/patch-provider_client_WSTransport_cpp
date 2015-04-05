@@ -1,32 +1,13 @@
-$OpenBSD: patch-provider_client_WSTransport_cpp,v 1.8 2011/12/22 17:10:04 ajacoutot Exp $
---- provider/client/WSTransport.cpp.orig	Thu Dec 22 01:02:35 2011
-+++ provider/client/WSTransport.cpp	Thu Dec 22 12:14:19 2011
-@@ -56,6 +56,10 @@
- 
- #include <fstream>
- 
-+#ifdef __OpenBSD__
-+#include <pthread.h>
-+#endif
-+
- #include "ECIConv.h"
- #include "WSTransport.h"
- #include "ProviderUtil.h"
-@@ -63,7 +67,6 @@
- #include "soapH.h"
- #include "ZarafaUtil.h"
- 
--
- // The header files we use for communication with the server
- #include "ZarafaCode.h"
- #include "soapZarafaCmdProxy.h"
-@@ -101,6 +104,10 @@ static char THIS_FILE[] = __FILE__;
+$OpenBSD: patch-provider_client_WSTransport_cpp,v 1.9 2015/04/05 22:25:08 robert Exp $
+--- provider/client/WSTransport.cpp.orig	Sun Apr  5 14:58:01 2015
++++ provider/client/WSTransport.cpp	Sun Apr  5 14:58:18 2015
+@@ -96,6 +96,10 @@ using namespace std;
+ static char THIS_FILE[] = __FILE__;
  #endif
  
- #define	pbMUIDECSABGuid	"\xac\x21\xa9\x50\x40\xd3\xee\x48\xb3\x19\xfb\xa7\x53\x30\x44\x25"
-+
 +#ifdef __OpenBSD__
 +#define PTHREAD_MUTEX_RECURSIVE_NP PTHREAD_MUTEX_RECURSIVE
++#define PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP PTHREAD_MUTEX_INITIALIZER
 +#endif
  
  /*

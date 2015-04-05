@@ -1,15 +1,15 @@
-$OpenBSD: patch-installer_linux_dagent_cfg,v 1.4 2014/04/07 13:46:06 robert Exp $
---- installer/linux/dagent.cfg.orig	Thu Jan 30 12:43:17 2014
-+++ installer/linux/dagent.cfg	Mon Feb  3 11:25:37 2014
+$OpenBSD: patch-installer_linux_dagent_cfg,v 1.5 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/dagent.cfg.orig	Sun Apr  5 17:40:46 2015
++++ installer/linux/dagent.cfg	Sun Apr  5 17:41:34 2015
 @@ -11,7 +11,7 @@ server_socket	=	file:///var/run/zarafa
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key
--sslkey_file = /etc/zarafa/ssl/dagent.pem
-+sslkey_file = ${SYSCONFDIR}/zarafa/ssl/dagent.pem
+-#sslkey_file = /etc/zarafa/ssl/dagent.pem
++#sslkey_file = ${SYSCONFDIR}/zarafa/ssl/dagent.pem
  
  # The password of the SSL Key
- sslkey_pass = replace-with-dagent-cert-password
+ #sslkey_pass = replace-with-dagent-cert-password
 @@ -95,16 +95,16 @@ archive_on_delivery = no
  plugin_enabled = yes
  
@@ -24,9 +24,8 @@ $OpenBSD: patch-installer_linux_dagent_cfg,v 1.4 2014/04/07 13:46:06 robert Exp 
  #   link in the 'plugin_path' directory.
  #
  # Example:
--#  $ ln -s /usr/share/zarafa-dagent/python/plugins/BMP2PNG.py /var/lib/zarafa/dagent/plugins/BMP2PNG.py
+ #  $ ln -s /usr/share/zarafa-dagent/python/plugins/BMP2PNG.py /var/lib/zarafa/dagent/plugins/BMP2PNG.py
 -plugin_path = /var/lib/zarafa/dagent/plugins
-+#  $ ln -s ${PREFIX}/share/zarafa-dagent/python/plugins/BMP2PNG.py /var/db/zarafa/dagent/plugins/BMP2PNG.py
 +plugin_path = /var/db/zarafa/dagent/plugins
  
  ##############################################################

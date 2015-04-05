@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_ical_cfg,v 1.3 2010/10/27 18:26:17 ajacoutot Exp $
---- installer/linux/ical.cfg.orig	Wed Oct 20 12:42:55 2010
-+++ installer/linux/ical.cfg	Wed Oct 27 19:18:52 2010
+$OpenBSD: patch-installer_linux_ical_cfg,v 1.4 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/ical.cfg.orig	Thu Mar  5 16:52:42 2015
++++ installer/linux/ical.cfg	Sun Apr  5 23:30:17 2015
 @@ -2,16 +2,16 @@
  # ICAL SETTINGS
  
@@ -22,6 +22,15 @@ $OpenBSD: patch-installer_linux_ical_cfg,v 1.3 2010/10/27 18:26:17 ajacoutot Exp
  
  # IP Address to bind to (0.0.0.0 for ANY)
  server_bind = 0.0.0.0
+@@ -33,7 +33,7 @@ icals_port = 8443
+ server_socket = http://localhost:236/zarafa
+ 
+ # Process model, using pthreads (thread) or processes (fork)
+-process_model = fork
++process_model = thread
+ 
+ ##############################################################
+ # ICAL LOG SETTINGS
 @@ -54,10 +54,10 @@ log_timestamp = 1
  # ICAL SSL SETTINGS FOR INCOMING CONNECTIONS
  

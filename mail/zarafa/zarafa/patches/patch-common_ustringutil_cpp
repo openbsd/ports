@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_ustringutil_cpp,v 1.3 2012/10/28 21:51:08 robert Exp $
---- common/ustringutil.cpp.orig	Thu Oct 18 19:06:56 2012
-+++ common/ustringutil.cpp	Sun Oct 28 21:08:55 2012
-@@ -165,12 +165,14 @@ int ECSortKey::compareTo(const ECSortKey &other) const
+$OpenBSD: patch-common_ustringutil_cpp,v 1.4 2015/04/05 22:25:08 robert Exp $
+--- common/ustringutil.cpp.orig	Thu Mar  5 16:54:04 2015
++++ common/ustringutil.cpp	Fri Apr  3 23:11:10 2015
+@@ -160,12 +160,14 @@ int ECSortKey::compareTo(const ECSortKey &other) const
   */
  const char* str_ifind(const char *haystack, const char *needle)
  {
@@ -17,7 +17,7 @@ $OpenBSD: patch-common_ustringutil_cpp,v 1.3 2012/10/28 21:51:08 robert Exp $
  			needlepos++;
  
  			if(*needlepos == 0)
-@@ -185,7 +187,9 @@ const char* str_ifind(const char *haystack, const char
+@@ -180,7 +182,9 @@ const char* str_ifind(const char *haystack, const char
  	needlestart = NULL;
  
  exit:
@@ -27,7 +27,7 @@ $OpenBSD: patch-common_ustringutil_cpp,v 1.3 2012/10/28 21:51:08 robert Exp $
  
  	return needlestart;
  }
-@@ -1601,8 +1605,10 @@ ECLocale::ECLocale(const ECLocale &other)
+@@ -1596,8 +1600,10 @@ ECLocale::ECLocale(const ECLocale &other)
  }
  
  ECLocale::~ECLocale() {

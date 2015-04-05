@@ -1,10 +1,10 @@
-$OpenBSD: patch-common_mapi_ptr_mapi_memory_ptr_h,v 1.3 2011/12/22 17:10:04 ajacoutot Exp $
+$OpenBSD: patch-common_mapi_ptr_mapi_memory_ptr_h,v 1.4 2015/04/05 22:25:08 robert Exp $
 
 On OpenBSD, _U is defined in ctype.h.
 
---- common/mapi_ptr/mapi_memory_ptr.h.orig	Thu Dec 22 01:02:34 2011
-+++ common/mapi_ptr/mapi_memory_ptr.h	Thu Dec 22 12:14:19 2011
-@@ -165,11 +165,11 @@ class mapi_memory_ptr (public)
+--- common/mapi_ptr/mapi_memory_ptr.h.orig	Thu Mar  5 16:54:04 2015
++++ common/mapi_ptr/mapi_memory_ptr.h	Fri Apr  3 23:11:10 2015
+@@ -160,11 +160,11 @@ class mapi_memory_ptr (public)
  		return proxy(&m_lpMemory);
  	}
  

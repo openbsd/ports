@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.15 2014/09/02 11:09:38 robert Exp $
---- common/platform.linux.h.orig	Sun Aug 24 12:27:07 2014
-+++ common/platform.linux.h	Mon Sep  1 20:54:38 2014
-@@ -63,7 +63,14 @@
+$OpenBSD: patch-common_platform_linux_h,v 1.16 2015/04/05 22:25:08 robert Exp $
+--- common/platform.linux.h.orig	Thu Mar  5 16:54:04 2015
++++ common/platform.linux.h	Fri Apr  3 23:11:10 2015
+@@ -58,7 +58,14 @@
  #include <dlfcn.h>
  #include <stddef.h>
  #include <libgen.h>
@@ -16,7 +16,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.15 2014/09/02 11:09:38 robert Exp $
  #include <endian.h>
  #include <errno.h>
  #include <locale.h>
-@@ -99,6 +106,8 @@
+@@ -94,6 +101,8 @@
  #define _snprintf snprintf
  #ifdef HAVE_VSNPRINTF_L
  #define _vsnprintf_l vsnprintf_l
@@ -25,7 +25,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.15 2014/09/02 11:09:38 robert Exp $
  #else
  inline int _vsnprintf_l(char *str, size_t size, const char *format, locale_t locale, va_list ap) {
  	locale_t prev = uselocale(locale);
-@@ -683,7 +692,11 @@ time_t GetProcessTime();
+@@ -680,7 +689,11 @@ time_t GetProcessTime();
  
  #ifndef ntohll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN
@@ -37,7 +37,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.15 2014/09/02 11:09:38 robert Exp $
  	#else
  		#define ntohll(x) (x)
  	#endif
-@@ -691,14 +704,18 @@ time_t GetProcessTime();
+@@ -688,14 +701,18 @@ time_t GetProcessTime();
  
  #ifndef htonll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN

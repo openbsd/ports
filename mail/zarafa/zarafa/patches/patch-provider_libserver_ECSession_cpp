@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.13 2014/07/03 06:14:40 robert Exp $
---- provider/libserver/ECSession.cpp.orig	Fri May 23 15:56:38 2014
-+++ provider/libserver/ECSession.cpp	Wed Jul  2 17:28:25 2014
-@@ -603,14 +603,22 @@ void ECSession::RemoveBusyState(pthread_t threadId)
+$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.14 2015/04/05 22:25:08 robert Exp $
+--- provider/libserver/ECSession.cpp.orig	Thu Mar  5 16:54:01 2015
++++ provider/libserver/ECSession.cpp	Fri Apr  3 23:11:10 2015
+@@ -617,14 +617,22 @@ void ECSession::RemoveBusyState(pthread_t threadId)
  	i = m_mapBusyStates.find(threadId);
  
  	if(i != m_mapBusyStates.end()) {
@@ -25,7 +25,7 @@ $OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.13 2014/07/03 06:14:40 robe
  		} else {
  			ASSERT(FALSE);
  		}
-@@ -939,11 +947,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
+@@ -952,11 +960,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
  	uid_t uid;
  	char strbuf[1024];
  #ifdef SO_PEERCRED

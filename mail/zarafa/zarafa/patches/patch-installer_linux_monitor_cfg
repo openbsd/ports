@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_monitor_cfg,v 1.5 2014/07/03 06:14:40 robert Exp $
---- installer/linux/monitor.cfg.orig	Fri May 23 15:03:19 2014
-+++ installer/linux/monitor.cfg	Wed Jul  2 17:28:25 2014
+$OpenBSD: patch-installer_linux_monitor_cfg,v 1.6 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/monitor.cfg.orig	Sun Apr  5 17:42:38 2015
++++ installer/linux/monitor.cfg	Sun Apr  5 17:43:45 2015
 @@ -8,16 +8,16 @@ server_socket	=	file:///var/run/zarafa
  servers =
  
@@ -12,8 +12,7 @@ $OpenBSD: patch-installer_linux_monitor_cfg,v 1.5 2014/07/03 06:14:40 robert Exp
 -run_as_group = 
 +run_as_group = _zarafa
  
--# create a pid file for stopping the service via the init.d scripts
-+# write the process ID number to this file
+ # create a pid file for stopping the service via the init.d scripts
  pid_file = /var/run/zarafa-monitor.pid
  
  # run server in this path (when not using the -F switch)
@@ -26,23 +25,19 @@ $OpenBSD: patch-installer_linux_monitor_cfg,v 1.5 2014/07/03 06:14:40 robert Exp
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key
--sslkey_file = /etc/zarafa/ssl/monitor.pem
-+sslkey_file = ${SYSCONFDIR}/zarafa/ssl/monitor.pem
+-#sslkey_file = /etc/zarafa/ssl/monitor.pem
++#sslkey_file = ${SYSCONFDIR}/zarafa/ssl/monitor.pem
  
  # The password of the SSL Key
- sslkey_pass = replace-with-monitor-cert-password
-@@ -60,10 +60,10 @@ mailquota_resend_interval = 1
+ #sslkey_pass = replace-with-monitor-cert-password
+@@ -60,8 +60,8 @@ mailquota_resend_interval = 1
  
- # Templates to be used for quota emails which are send to the user
+ # Template to be used for quota emails which are send to the user
  # when the various user quota levels have been exceeded.
--userquota_warning_template  =   /etc/zarafa/quotamail/userwarning.mail
--userquota_soft_template     =   /etc/zarafa/quotamail/usersoft.mail
--userquota_hard_template     =   /etc/zarafa/quotamail/userhard.mail
-+userquota_warning_template  =   ${SYSCONFDIR}/zarafa/quotamail/userwarning.mail
-+userquota_soft_template     =   ${SYSCONFDIR}/zarafa/quotamail/usersoft.mail
-+userquota_hard_template     =   ${SYSCONFDIR}/zarafa/quotamail/userhard.mail
+-userquota_warning_template = /etc/zarafa/quotamail/userwarning.mail
++userquota_warning_template = ${SYSCONFDIR}/zarafa/quotamail/userwarning.mail
  
  # Templates to be used for quota emails which are send to the company administrators
  # when the company quota level has been exceeded.
--companyquota_warning_template   =   /etc/zarafa/quotamail/companywarning.mail
-+companyquota_warning_template   =   ${SYSCONFDIR}/zarafa/quotamail/companywarning.mail
+-companyquota_warning_template = /etc/zarafa/quotamail/companywarning.mail
++companyquota_warning_template = ${SYSCONFDIR}/zarafa/quotamail/companywarning.mail
