@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/05 22:19:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2015/04/05 22:26:34 jasper Exp $
 
 COMMENT=		fast and easy porn downloader
 
@@ -41,6 +41,7 @@ AUTOFUCK_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 pre-configure:
-	cd ${WRKSRC} ${SETENV} ${AUTOFUCK_ENV} autoreconf
+	cd ${WRKSRC} && \
+		${SETENV} ${AUTOFUCK_ENV} autoreconf
 
 .include <bsd.port.mk>
