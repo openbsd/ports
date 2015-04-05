@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/05 11:11:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/05 12:11:39 ajacoutot Exp $
 
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
@@ -7,6 +7,7 @@ DISTNAME=		gsoap_${V}
 PKGNAME=		gsoap-${V}
 EXTRACT_SUFX=		.zip
 WRKDIST=		${WRKDIR}/gsoap-${V:R}
+REVISION=		0
 
 CATEGORIES=		devel
 
