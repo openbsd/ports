@@ -1,0 +1,12 @@
+$OpenBSD: patch-gsoap_samples_autotest_Makefile_am,v 1.1 2015/04/05 15:25:51 robert Exp $
+--- gsoap/samples/autotest/Makefile.am.orig	Sun Dec  7 00:30:43 2014
++++ gsoap/samples/autotest/Makefile.am	Sun Apr  5 17:06:18 2015
+@@ -14,7 +14,7 @@ SOAP_FLAGS=-SL -T -I$(top_srcdir)/gsoap/import
+ WSDLINPUT=$(srcdir)/examples.wsdl
+ SOAPHEADER=$(srcdir)/examples.h
+ SOAP_CPP_SRC=soapC.cpp soapServer.cpp
+-SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.a
++SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.la
+ 
+ $(SOAP_CPP_SRC) : $(WSDLINPUT)
+ 	$(WSDL) $(WSDL_FLAGS) $(WSDLINPUT)

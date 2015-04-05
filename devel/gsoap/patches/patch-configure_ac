@@ -1,0 +1,42 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/04/05 15:25:51 robert Exp $
+--- configure.ac.orig	Sun Dec  7 00:30:38 2014
++++ configure.ac	Sun Apr  5 17:06:18 2015
+@@ -16,8 +16,7 @@ AM_PROG_CC_C_O
+ AM_PROG_LEX
+ AC_PROG_YACC
+ AC_PROG_CPP
+-AC_PROG_RANLIB
+-#AM_PROG_LIBTOOL
++AM_PROG_LIBTOOL
+ AC_PROG_LN_S
+ AC_PROG_AWK
+ AC_PROG_INSTALL
+@@ -236,16 +235,16 @@ if test "x$with_openssl" = "xyes"; then
+     WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lgnutls -lgcrypt -lgpg-error -lz"
+     SAMPLE_INCLUDES=
+     SAMPLE_SSL_LIBS="-lgnutls -lgcrypt -lgpg-error -lz"
+-    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
++    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.la"
+   else
+     AC_MSG_RESULT(no)
+     WSDL2H_EXTRA_FLAGS="-DWITH_OPENSSL -DWITH_GZIP"
+     # an ugly hack to get httpda and md5evp plugins to conditionally
+     # compile with wsdl2h when OPENSSL is available
+-    WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} ../plugin/httpda.c ../plugin/md5evp.c ../plugin/threads.c -lssl -lcrypto -lz"
++    WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} ../plugin/httpda.c ../plugin/md5evp.c ../plugin/threads.c -lcrypto"
+     SAMPLE_INCLUDES=
+     SAMPLE_SSL_LIBS="-lssl -lcrypto -lz"
+-    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
++    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.la"
+   fi
+   if test -n "$OPENSSL"; then
+     WSDL2H_EXTRA_FLAGS="-I${OPENSSL}/include ${WSDL2H_EXTRA_FLAGS}"
+@@ -258,7 +257,7 @@ else
+   WSDL2H_EXTRA_FLAGS=
+   SAMPLE_SSL_LIBS=
+   SAMPLE_INCLUDES=
+-  WSDL2H_SOAP_CPP_LIB="libgsoap++.a"
++  WSDL2H_SOAP_CPP_LIB="libgsoap++.la"
+ fi
+ AC_SUBST(WSDL2H_EXTRA_FLAGS)
+ AC_SUBST(WSDL2H_EXTRA_LIBS)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gsoap_samples_databinding_Makefile_am,v 1.1 2015/04/05 15:25:51 robert Exp $
+--- gsoap/samples/databinding/Makefile.am.orig	Sun Dec  7 00:30:44 2014
++++ gsoap/samples/databinding/Makefile.am	Sun Apr  5 17:06:18 2015
+@@ -14,7 +14,7 @@ SOAP_FLAGS=-0 -CS -p address -I$(top_srcdir)/gsoap/imp
+ WSDLINPUT=$(srcdir)/address.xsd
+ SOAPHEADER=$(srcdir)/address.h
+ SOAP_CPP_SRC=addressC.cpp
+-SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.a
++SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.la
+ 
+ $(SOAP_CPP_SRC) : $(WSDLINPUT)
+ 	$(WSDL) $(WSDL_FLAGS) $(WSDLINPUT)

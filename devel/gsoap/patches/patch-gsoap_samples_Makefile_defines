@@ -1,0 +1,23 @@
+$OpenBSD: patch-gsoap_samples_Makefile_defines,v 1.1 2015/04/05 15:25:51 robert Exp $
+--- gsoap/samples/Makefile.defines.orig	Sun Dec  7 00:30:44 2014
++++ gsoap/samples/Makefile.defines	Sun Apr  5 17:06:18 2015
+@@ -13,13 +13,13 @@ SOAP_H_FILES=soapH.h soapStub.h 
+ SOAP_C_CORE=soapC.c
+ SOAP_C_CLIENT=soapClient.c $(SOAP_C_CORE)
+ SOAP_C_SERVER=soapServer.c $(SOAP_C_CORE)
+-SOAP_C_LIB=$(top_builddir)/gsoap/libgsoap.a
+-SOAP_C_LIB_CK=$(top_builddir)/gsoap/libgsoapck.a
+-SOAP_C_LIB_SSL=$(top_builddir)/gsoap/libgsoapssl.a
++SOAP_C_LIB=$(top_builddir)/gsoap/libgsoap.la
++SOAP_C_LIB_CK=$(top_builddir)/gsoap/libgsoapck.la
++SOAP_C_LIB_SSL=$(top_builddir)/gsoap/libgsoapssl.la
+ 
+ SOAP_CPP_CORE=soapC.cpp
+ SOAP_CPP_CLIENT=soapClient.cpp $(SOAP_CPP_CORE)
+ SOAP_CPP_SERVER=soapServer.cpp $(SOAP_CPP_CORE)
+-SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.a
+-SOAP_CPP_LIB_CK=$(top_builddir)/gsoap/libgsoapck++.a
+-SOAP_CPP_LIB_SSL=$(top_builddir)/gsoap/libgsoapssl++.a
++SOAP_CPP_LIB=$(top_builddir)/gsoap/libgsoap++.la
++SOAP_CPP_LIB_CK=$(top_builddir)/gsoap/libgsoapck++.la
++SOAP_CPP_LIB_SSL=$(top_builddir)/gsoap/libgsoapssl++.la
