@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/05 23:11:15 schwarze Exp $
 
 COMMENT=		gnutella client with an easy to use interface
 
@@ -17,6 +17,5 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mutella/}
 SEPARATE_BUILD=		Yes
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
