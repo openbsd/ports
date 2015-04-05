@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.171 2015/04/04 10:20:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2015/04/05 18:50:48 jung Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
      SUBDIR += astrolog
      SUBDIR += bible-kjv
+     SUBDIR += blink1
      SUBDIR += brltty
      SUBDIR += bsdiff
      SUBDIR += buffer
