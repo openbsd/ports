@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/21 00:08:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2015/04/05 23:12:00 afresh1 Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		SQLite drivers for the Perl DBI
 
 MODULES=		cpan
-DISTNAME=		DBD-SQLite-1.35
-EPOCH=			0
-REVISION =		3
+DISTNAME=		DBD-SQLite-1.46
 CATEGORIES=		databases
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -17,10 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c sqlite3
 
-CPAN_AUTHOR=		ADAMK
-
-BUILD_DEPENDS =		databases/p5-DBI>=1.08
-RUN_DEPENDS =		databases/p5-DBI>=1.08
+BUILD_DEPENDS =		databases/p5-DBI>=1.57
+RUN_DEPENDS =		databases/p5-DBI>=1.57
 
 CONFIGURE_ARGS=		SQLITE_LOCATION=/usr
 MAKE_FLAGS=		CC='${CC}' \
