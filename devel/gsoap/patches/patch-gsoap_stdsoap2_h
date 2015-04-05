@@ -1,0 +1,14 @@
+$OpenBSD: patch-gsoap_stdsoap2_h,v 1.1.1.1 2015/04/05 11:11:25 ajacoutot Exp $
+--- gsoap/stdsoap2.h.orig	Sun Apr  5 12:59:04 2015
++++ gsoap/stdsoap2.h	Sun Apr  5 12:59:32 2015
+@@ -342,7 +342,9 @@ A commercial use license is available from Genivia, In
+ #  define HAVE_STRTOUL
+ #  define HAVE_STRTOLL
+ #  define HAVE_STRTOULL
+-#  define HAVE_SYS_TIMEB_H
++#  ifndef __OpenBSD__
++#    define HAVE_SYS_TIMEB_H
++#  endif
+ #  define HAVE_FTIME
+ #  define HAVE_RAND_R
+ #  define HAVE_GMTIME_R

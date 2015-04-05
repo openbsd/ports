@@ -1,0 +1,7 @@
+The gSOAP toolkit provides a cross-platform software development toolkit for C
+and C++ server and client Web service applications, and simplifies the overall
+use of XML in any type of application. The toolkit supports SOAP 1.1/1.2 RPC
+encoding and document/literal styles, WSDL 1.1, MTOM/MIME/DIME attachments
+(streaming), SOAP-over-UDP, request-response and one-way messaging. The toolkit
+also supports WS-Addressing and WS-Security, with several other WS-* available
+or under development.
