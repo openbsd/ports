@@ -1,5 +1,7 @@
-$OpenBSD: patch-gtklp_file_c,v 1.1 2015/04/05 14:09:17 landry Exp $
+$OpenBSD: patch-gtklp_file_c,v 1.2 2015/04/05 14:26:54 ajacoutot Exp $
+
 Fix display of file arguments passed on the cmdline
+
 --- gtklp/file.c.orig	Sun Apr  5 15:58:29 2015
 +++ gtklp/file.c	Sun Apr  5 15:59:26 2015
 @@ -407,7 +407,7 @@ void FileFrame(GtkWidget *container)
