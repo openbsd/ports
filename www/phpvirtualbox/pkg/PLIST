@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/12/17 08:50:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/05 07:10:40 ajacoutot Exp $
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
 phpvirtualbox/GPLv3.txt
@@ -461,8 +461,8 @@ phpvirtualbox/js/chooser.js
 phpvirtualbox/js/datamediator.js
 phpvirtualbox/js/dialogs.js
 phpvirtualbox/js/eventlistener.js
-phpvirtualbox/js/jquery-1.10.2-min.js
-phpvirtualbox/js/jquery-ui-1.10.3-min.js
+phpvirtualbox/js/jquery-1.11.2.min.js
+phpvirtualbox/js/jquery-ui-1.11.4.min.js
 phpvirtualbox/js/jquery.jec-1.3.1.js
 phpvirtualbox/js/jquery.projectPlugins.js
 phpvirtualbox/js/jquery.scrollTo-min.js
