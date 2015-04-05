@@ -1,0 +1,12 @@
+$OpenBSD: patch-python_Makefile_in,v 1.1.1.1 2015/04/05 21:41:02 robert Exp $
+--- python/Makefile.in.orig	Sun Apr  5 20:46:30 2015
++++ python/Makefile.in	Sun Apr  5 20:46:41 2015
+@@ -942,7 +942,7 @@ xapian/__init__.pyo: xapian/__init__.py xapian/_xapian
+ 
+ xapian/_xapian$(PYTHON_SO): _xapian.la
+ 	-test -d xapian || mkdir xapian
+-	$(LIBTOOL) --config > libtoolconfig.tmp
++	$(LIBTOOL) --config | grep -v pic > libtoolconfig.tmp
+ 	. ./libtoolconfig.tmp; cp $$objdir/_xapian$(PYTHON_SO) xapian
+ 	rm -f libtoolconfig.tmp
+ 

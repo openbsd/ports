@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2015/04/05 21:41:02 robert Exp $
+lib/python${MODPY_VERSION}/site-packages/xapian/
+lib/python${MODPY_VERSION}/site-packages/xapian/__init__.py
+lib/python${MODPY_VERSION}/site-packages/xapian/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/xapian/__init__.pyo
+@comment lib/python${MODPY_VERSION}/site-packages/xapian/_xapian.a
+lib/python${MODPY_VERSION}/site-packages/xapian/_xapian.so
+share/doc/xapian-bindings/
+share/doc/xapian-bindings/python/
+share/doc/xapian-bindings/python/examples/
+share/doc/xapian-bindings/python/examples/simpleexpand.py
+share/doc/xapian-bindings/python/examples/simpleindex.py
+share/doc/xapian-bindings/python/examples/simplematchdecider.py
+share/doc/xapian-bindings/python/examples/simplesearch.py
+share/doc/xapian-bindings/python/index.html
