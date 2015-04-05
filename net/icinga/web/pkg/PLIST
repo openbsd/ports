@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/10/02 21:05:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/04/05 12:15:08 rpe Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -1522,6 +1522,7 @@ doc/
 doc/AUTHORS
 doc/CHANGELOG-1.10
 doc/CHANGELOG-1.11
+doc/CHANGELOG-1.12
 doc/CHANGELOG-1.6
 doc/CHANGELOG-1.7
 doc/CHANGELOG-1.8
@@ -4481,8 +4482,6 @@ log/
 @group
 pub/
 pub/.htaccess
-pub/api/
-pub/api/api.js
 pub/images/
 pub/images/ajax/
 pub/images/ajax/circle-ball.gif

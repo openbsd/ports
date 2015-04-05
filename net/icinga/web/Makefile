@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2014/11/06 17:13:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/04/05 12:15:08 rpe Exp $
 
 COMMENT =	web UI for icinga
 
-V =		1.11.2
+V =		1.12.0
 DISTNAME =	icinga-web-$V
-REVISION =	0
 
 MASTER_SITES =	https://github.com/Icinga/icinga-web/releases/download/v$V/
 
@@ -58,7 +57,7 @@ pre-configure:
 post-configure:
 	find ${WRKSRC}/bin -name '*.sh' -print0 | xargs -0r \
 		perl -pi -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g'
-	${SUBST_CMD} ${WRKSRC}/etc/apache2/icinga-web.conf.in
+	${SUBST_CMD} ${WRKSRC}/etc/apache2/icinga-web.conf
 
 pre-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${VARBASE}/www/conf/modules.sample
