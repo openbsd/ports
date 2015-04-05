@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/04/05 21:04:42 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		3.16.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		productivity
 
@@ -26,13 +26,15 @@ WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs secret-1
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
 WANTLIB += xcb xcb-dri2 xcb-render xcb-shape xcb-shm xcb-xfixes
-WANTLIB += xml2 z zeitgeist-2.0
+WANTLIB += xml2 z zeitgeist-2.0 cogl-path
+WANTLIB += champlain-0.12 clutter-1.0 clutter-gtk-1.0 cogl cogl-pango
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
 LIB_DEPENDS=		devel/libnotify \
+			geo/libchamplain \
 			net/telepathy/folks \
 			x11/gnome/desktop
 
