@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.9 2015/03/26 08:07:49 dcoppa Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.10 2015/04/05 21:06:23 landry Exp $
 --- src/CMakeLists.txt.orig	Mon Jul  7 00:06:06 2014
 +++ src/CMakeLists.txt	Tue Nov  4 17:10:05 2014
 @@ -31,6 +31,8 @@ set(USE_GETTEXT 0)
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.9 2015/03/26 08:07:49 dcoppa Exp $
  else()
  	MARK_AS_ADVANCED(GETTEXT_ICONV_DLL GETTEXT_INCLUDE_DIR GETTEXT_LIBRARY GETTEXT_MSGFMT)
  endif()
-@@ -166,7 +168,10 @@ else()
+@@ -182,7 +184,10 @@ else()
  	if(APPLE)
  		set(PLATFORM_LIBS "-framework CoreFoundation" ${PLATFORM_LIBS})
  	else()
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.9 2015/03/26 08:07:49 dcoppa Exp $
  	endif(APPLE)
  	#set(CLIENT_PLATFORM_LIBS -lXxf86vm)
  	# This way Xxf86vm is found on OpenBSD too
-@@ -518,7 +523,8 @@ if(BUILD_CLIENT)
+@@ -544,7 +549,8 @@ if(BUILD_CLIENT)
  		${BZIP2_LIBRARIES}
  		${PNG_LIBRARIES}
  		${X11_LIBRARIES}
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.9 2015/03/26 08:07:49 dcoppa Exp $
  		${SOUND_LIBRARIES}
  		${SQLITE3_LIBRARY}
  		${LUA_LIBRARY}
-@@ -572,7 +578,8 @@ if(BUILD_SERVER)
+@@ -598,7 +604,8 @@ if(BUILD_SERVER)
  		${ZLIB_LIBRARIES}
  		${SQLITE3_LIBRARY}
  		${JSON_LIBRARY}
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.9 2015/03/26 08:07:49 dcoppa Exp $
  		${LUA_LIBRARY}
  		${PLATFORM_LIBS}
  	)
-@@ -640,13 +647,11 @@ else()
+@@ -666,14 +673,12 @@ else()
  		set(OTHER_FLAGS "-mthreads -fexceptions")
  	endif()
  
@@ -53,8 +53,9 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.9 2015/03/26 08:07:49 dcoppa Exp $
 -	else()
 -		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -fomit-frame-pointer")
  	endif(APPLE)
--	set(CMAKE_CXX_FLAGS_DEBUG "-g -O1 -Wall ${WARNING_FLAGS} ${OTHER_FLAGS}")
-+	set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall ${WARNING_FLAGS} ${OTHER_FLAGS}")
+ 	set(CMAKE_CXX_FLAGS_SEMIDEBUG "-g -O1 -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
+-	set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
++	set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
  
  	if(USE_GPROF)
  		set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -pg")

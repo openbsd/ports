@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/05 21:06:23 landry Exp $
 
 COMMENT =	infinite-world block sandbox game
-V =		0.4.10
+V =		0.4.12
 DISTNAME =	minetest-${V}
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	http://www.minetest.net/
 
@@ -19,6 +18,7 @@ DISTFILES =	minetest-{minetest/archive/}${V}${EXTRACT_SUFX} \
 MODULES =	devel/cmake \
 		devel/gettext
 CONFIGURE_ARGS =	-DENABLE_GETTEXT=ON -DCUSTOM_MANDIR=${PREFIX}/man
+CONFIGURE_ENV +=	CXXFLAGS="-I${X11BASE}/include"
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
