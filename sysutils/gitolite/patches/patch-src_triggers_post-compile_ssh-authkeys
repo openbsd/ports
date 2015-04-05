@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_triggers_post-compile_ssh-authkeys,v 1.1 2015/04/05 21:57:41 jasper Exp $
+
+openssh 6.8 compat
+https://github.com/sitaramc/gitolite/commit/ed807a40c6683960e357bc995b3acf721ec088b4
+
+--- src/triggers/post-compile/ssh-authkeys.orig	Mon Nov 10 04:11:59 2014
++++ src/triggers/post-compile/ssh-authkeys	Sun Apr  5 10:45:58 2015
+@@ -115,7 +115,7 @@ sub fp_file {
+     my $f  = shift;
+     my $fp = `ssh-keygen -l -f '$f'`;
+     chomp($fp);
+-    _die "fingerprinting failed for '$f'" unless $fp =~ /([0-9a-f][0-9a-f](:[0-9a-f][0-9a-f])+)/;
++    _die "fingerprinting failed for '$f'" unless $fp =~ /([0-9a-f][0-9a-f](:[0-9a-f][0-9a-f])+)/ or $fp =~ m(SHA256:([A-ZA-z0-9+/]+));
+     $fp = $1;
+     return $fp;
+ }

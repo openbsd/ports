@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/05 13:31:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/05 21:57:40 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		secure hosting of Git repositories
 
 V=			3.6.2
-REVISION=		0
+REVISION=		1
 GH_ACCOUNT=		sitaramc
 GH_PROJECT=		gitolite
 GH_TAGNAME=		v$V
