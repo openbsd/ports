@@ -1,0 +1,98 @@
+$OpenBSD: patch-commandline_Makefile,v 1.1.1.1 2015/04/05 18:47:13 jung Exp $
+
+todo: submit to upstream
+
+--- commandline/Makefile.orig	Sat Jan 31 00:45:10 2015
++++ commandline/Makefile	Sat Mar 28 14:19:54 2015
+@@ -111,9 +111,13 @@ ifeq "$(UNAME)" "FreeBSD"
+ 	OS=freebsd
+ endif
+ 
++ifeq "$(UNAME)" "OpenBSD"
++	OS=openbsd
++endif
+ 
+ MACH_TYPE:="$(strip $(shell uname -m))"
+-GIT_TAG:="$(strip $(shell git tag 2>&1 | tail -1 | cut -f1 -d' '))"
++#GIT_TAG:="$(strip $(shell git tag 2>&1 | tail -1 | cut -f1 -d' '))"
++GIT_TAG:=${GH_TAGNAME}
+ # deal with case of no git or no git tags, check for presence of "v" (i.e. "v1.93")
+ ifneq ($(findstring v,$(GIT_TAG)), v)
+   GIT_TAG:="v0"
+@@ -275,6 +279,37 @@ INCLOCATION ?= $(PREFIX)/include
+ 
+ endif
+ 
++#################  OpenBSD  ###################################################
++ifeq "$(OS)" "openbsd"
++LIBTARGET = libblink1.so.${SO_V}
++# was blink1-lib.so
++
++ifeq "$(USBLIB_TYPE)" "HIDAPI"
++CFLAGS += -DUSE_HIDAPI
++CFLAGS += -I./hidapi/hidapi
++OBJS = ./hidapi/libusb/hid.o
++CFLAGS += `pkg-config libusb-1.0 --cflags` -I/usr/local/include -fPIC
++LIBS   += `pkg-config libusb-1.0 --libs` -L/usr/local/lib -lpthread -liconv
++endif
++
++ifeq "$(USBLIB_TYPE)" "HIDDATA"
++CFLAGS += -DUSE_HIDDATA
++OBJS = ./hiddata.o
++CFLAGS += `pkg-config libusb --cflags` -fPIC
++LIBS   += `pkg-config libusb --libs`
++endif
++
++LIBFLAGS = -shared -o $(LIBTARGET) $(LIBS)
++EXE=
++
++#INSTALL = install
++PREFIX ?= /usr/local
++EXELOCATION ?= $(PREFIX)/bin
++LIBLOCATION ?= $(PREFIX)/lib
++INCLOCATION ?= $(PREFIX)/include
++
++endif
++
+ #################  WRT Linux  ################################################
+ ifeq "$(OS)" "wrtlinux"
+ LIBTARGET = libblink1.so
+@@ -364,7 +399,7 @@ endif
+ 
+ #CFLAGS += -O -Wall -std=gnu99 -I ../hardware/firmware 
+ CFLAGS += -std=gnu99 
+-CFLAGS += -g
++#CFLAGS += -g
+ CFLAGS += -DBLINK1_VERSION=\"$(BLINK1_VERSION)\"
+ 
+ OBJS +=  blink1-lib.o 
+@@ -382,6 +417,7 @@ help:
+ 	@echo "make OS=windows ... build Windows  blink1-lib and blink1-tool" 
+ 	@echo "make OS=linux   ... build Linux    blink1-lib and blink1-tool" 
+ 	@echo "make OS=freebsd ... build FreeBSD    blink1-lib and blink1-tool" 
++	@echo "make OS=openbsd ... build OpenBSD    blink1-lib and blink1-tool" 
+ 	@echo "make OS=macosx  ... build Mac OS X blink1-lib and blink1-tool" 
+ 	@echo "make OS=wrt     ... build OpenWrt blink1-lib and blink1-tool"
+ 	@echo "make OS=wrtcross... build for OpenWrt using cross-compiler"
+@@ -402,7 +438,7 @@ $(OBJS): %.o: %.c
+ 
+ blink1-tool: $(OBJS) blink1-tool.o
+ 	$(CC) $(CFLAGS) -c blink1-tool.c -o blink1-tool.o
+-	$(CC) $(CFLAGS) $(EXEFLAGS) -g $(OBJS) $(LIBS) blink1-tool.o -o blink1-tool$(EXE) 
++	$(CC) $(CFLAGS) $(EXEFLAGS) $(OBJS) $(LIBS) blink1-tool.o -o blink1-tool$(EXE) 
+ 
+ # FIXME: verify we don't need MONGOOSE_LIBS and pthread & dl are avilable everywhere
+ blink1-tiny-server: $(OBJS) server/blink1-tiny-server.c
+@@ -421,9 +457,9 @@ package: lib blink1-tool
+ 	@#mkdir -f builds && cp blink1-tool-$(PKGOKS).zip builds
+ 
+ install: all
+-	$(INSTALL) blink1-tool$(EXE) $(DESTDIR)$(EXELOCATION)/blink1-tool$(EXE)
+-	$(INSTALL) $(LIBTARGET) $(DESTDIR)$(LIBLOCATION)/$(LIBTARGET)
+-	$(INSTALL) blink1-lib.h $(DESTDIR)$(INCLOCATION)/blink1-lib.h
++	$(BSD_INSTALL_PROGRAM) blink1-tool$(EXE) $(DESTDIR)$(EXELOCATION)/blink1-tool$(EXE)
++	$(BSD_INSTALL_DATA) $(LIBTARGET) $(DESTDIR)$(LIBLOCATION)/$(LIBTARGET)
++	$(BSD_INSTALL_DATA) blink1-lib.h $(DESTDIR)$(INCLOCATION)/blink1-lib.h
+ 
+ .PHONY: install
+ 
