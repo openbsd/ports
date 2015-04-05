@@ -1,0 +1,17 @@
+$OpenBSD: patch-popclient_man,v 1.1 2015/04/05 09:32:50 schwarze Exp $
+Avoid bogus vertical spacing escape which loses part of the text.
+While here, delete paragraph macros which spoil indentation with groff.
+--- popclient.man.orig	Thu Sep  7 23:53:49 1995
++++ popclient.man	Sun Apr  5 10:08:24 2015
+@@ -191,10 +191,8 @@ to be modified or omitted.
+ Displays the version information for your copy of 
+ .I popclient.
+ If you specify the 
+-.B \version
++.B version
+ option, all other options are ignored and no POP connection is made.
+-.TP
+-.PP
+ .SH PROTOCOL SELECTION
+ The selection of the correct Post Office Protocol (POP2 or POP3) depends upon
+ the configuration of the mailserver from which you retrieve your mail.  The
