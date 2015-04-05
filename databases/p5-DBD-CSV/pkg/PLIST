@@ -1,7 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/02/13 16:28:09 msf Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/05 20:56:03 afresh1 Exp $
 ${P5SITE}/Bundle/DBD/
 ${P5SITE}/Bundle/DBD/CSV.pm
 ${P5SITE}/DBD/
+${P5SITE}/DBD/CSV/
 ${P5SITE}/DBD/CSV.pm
+${P5SITE}/DBD/CSV/GetInfo.pm
+${P5SITE}/DBD/CSV/TypeInfo.pm
+${P5SITE}/DBI/
+${P5SITE}/DBI/Test/
+${P5SITE}/DBI/Test/Case/
+${P5SITE}/DBI/Test/Case/DBD/
+${P5SITE}/DBI/Test/Case/DBD/CSV/
+${P5SITE}/DBI/Test/Case/DBD/CSV/t10_base.pm
+${P5SITE}/DBI/Test/Case/DBD/CSV/t11_dsnlist.pm
+${P5SITE}/DBI/Test/Case/DBD/CSV/t20_createdrop.pm
+${P5SITE}/DBI/Test/Case/DBD/CSV/t85_error.pm
+${P5SITE}/DBI/Test/DBD/
+${P5SITE}/DBI/Test/DBD/CSV/
+${P5SITE}/DBI/Test/DBD/CSV/Conf.pm
+${P5SITE}/DBI/Test/DBD/CSV/List.pm
 @man man/man3p/Bundle::DBD::CSV.3p
 @man man/man3p/DBD::CSV.3p
