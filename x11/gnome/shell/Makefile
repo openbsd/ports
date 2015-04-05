@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.111 2015/04/04 09:21:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2015/04/05 23:28:57 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.16.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +25,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png polkit-agent-1 polkit-gobject-1 pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib readline secret-1 smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
-WANTLIB += stdc++ telepathy-glib upower-glib vorbis vorbisenc
+WANTLIB += telepathy-glib upower-glib vorbis vorbisenc
 WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z epoxy
 WANTLIB += EGL Xau Xdmcp drm gbm glapi xcb-dri2 xcb-randr xcb-shape
 WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile lzma
@@ -35,12 +35,9 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-# sync with devel/spidermonkey
-MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha i386 hppa
+MODULES +=		gcc4
+MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64
-MODCLANG_LANGS =	c c++
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
