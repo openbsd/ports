@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:15:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/05 13:13:38 sthen Exp $
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 GH_ACCOUNT =		OtterBrowser
 GH_PROJECT =		otter-browser
-GH_TAGNAME =		v0.9.04
-# This is the actual tagged revision
-# GH_COMMIT =		869d29d19719b3057e137a79d4a10025d2c920f6
-# but we were asked by upstream to release from the following commit
-# as it's considered an important fix affecting the majority of users
+V =			0.9.04
+#GH_TAGNAME =		v$V
+# We were asked by upstream to release from the following commit instead of
+# the tag as it's considered an important fix affecting the majority of users.
 GH_COMMIT =		23d7ee6f9cd636e750687a01975b177c1c9c2e53
 
-DISTNAME =		${GH_PROJECT}-${GH_TAGNAME:C/^v//}
-REVISION =		0
+DISTNAME =		${GH_PROJECT}-$Vpl0
 
 CATEGORIES =		www
 
