@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/05/10 03:02:08 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/05 23:09:21 afresh1 Exp $
 
 COMMENT =	helper for installing code into packages
 
-DISTNAME =	Sub-Install-0.927
+DISTNAME =	Sub-Install-0.928
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
