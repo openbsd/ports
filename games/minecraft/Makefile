@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/14 18:45:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/05 12:59:00 ajacoutot Exp $
 
 COMMENT=	wrapper for a game about breaking and placing blocks
 
@@ -7,6 +7,7 @@ GH_PROJECT=	minecraft
 GH_ACCOUNT=	qbit
 GH_TAGNAME=	${GH_PROJECT}-${V}
 DISTNAME=	${GH_TAGNAME}
+REVISION=	0
 
 CATEGORIES=	games
 
@@ -22,8 +23,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 RUN_DEPENDS= 	games/lwjgl \
 		java/javaPathHelper
 
+MAKE_FLAGS=	PREFIX=${PREFIX}
+
 do-configure:
-	perl -pi -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/minecraft
+	${SUBST_CMD} ${WRKSRC}/minecraft
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/minecraft ${PREFIX}/bin/

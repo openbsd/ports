@@ -1,0 +1,39 @@
+$OpenBSD: patch-minecraft,v 1.1 2015/04/05 12:59:00 ajacoutot Exp $
+
+XXX NEEDS INVESTIGATING
+(java uses some GLib symbols when running under GNOME)
+
+--- minecraft.orig	Fri Oct 10 02:43:44 2014
++++ minecraft	Sun Apr  5 14:56:29 2015
+@@ -97,7 +97,7 @@ EOF
+ 
+    msg "${CONF_FILE} written, now you can now just run 'minecraft' to start the game!"
+ else
+-  WORKDIR="${PREFIX}/share/lwjgl"
++  WORKDIR="${LOCALBASE}/share/lwjgl"
+   LWJGL_JLP_OVRD="$WORKDIR/"
+   LWJGL_OVRD="$WORKDIR/lwjgl.jar"
+   LWJGL_UTIL_OVRD="$WORKDIR/lwjgl_util.jar"
+@@ -133,10 +133,13 @@ else
+   # by the mc launcher
+   TARGS=$(echo -n ${@})
+   REV=$(uname -r)
++  if [ "${XDG_CURRENT_DESKTOP}" = "GNOME" ]; then
++      export LD_PRELOAD=${LOCALBASE}/lib/libgthread-2.0.so:${LOCALBASE}/lib/libgio-2.0.so
++  fi
+   if [ "${TARGS}X" == "X" ]; then
+       # Starting Minecraft.jar here
+       set_ulimit
+-      $(${PREFIX}/bin/javaPathHelper -c minecraft) -jar ${FULL_PATH}
++      $(${LOCALBASE}/bin/javaPathHelper -c minecraft) -jar ${FULL_PATH}
+   else
+       i=0
+       for var in "${@}"
+@@ -155,6 +158,6 @@ else
+       done
+       # This is sent to the minecraft launcher
+       set_ulimit
+-      $(${PREFIX}/bin/javaPathHelper -c minecraft) ${args[@]} -jar ${FULL_PATH}
++      $(${LOCALBASE}/bin/javaPathHelper -c minecraft) ${args[@]} -jar ${FULL_PATH}
+   fi
+ fi
