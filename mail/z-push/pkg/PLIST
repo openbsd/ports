@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/07/13 08:39:41 robert Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/04/05 22:26:17 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
 z-push/
 z-push/INSTALL
 z-push/LICENSE
+z-push/autodiscover/
+z-push/autodiscover/INSTALL
+z-push/autodiscover/autodiscover.php
+z-push/autodiscover/config.php
+z-push/autodiscover/response.xml
 z-push/backend/
 z-push/backend/combined/
 z-push/backend/combined/combined.php
@@ -182,6 +187,7 @@ z-push/lib/webservice/webservice.php
 z-push/lib/webservice/webservicedevice.php
 z-push/lib/webservice/webserviceusers.php
 z-push/tools/
+z-push/tools/fix-meetings-2.0.8+2.1.0-ios7.py
 z-push/tools/migrate-2.0.x-2.1.0.php
 z-push/version.php
 z-push/z-push-admin.php
