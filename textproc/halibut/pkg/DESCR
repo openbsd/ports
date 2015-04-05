@@ -1,0 +1,15 @@
+Halibut reads documentation source in a single input format, and
+produces multiple output formats containing the same text. The
+supported output formats are:
+
+* Plain ASCII text
+* HTML
+* PDF
+* PostScript
+* Unix man pages
+* Unix info, generated directly as .info files rather than .texi
+  sources
+* Windows HTML Help (.CHM files), or rather source which can be fed to
+  the MS HTML Help compiler to generate them
+* Windows WinHelp (old-style .HLP files), generated directly without
+  needing a help compiler.
