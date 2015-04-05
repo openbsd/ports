@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.35 2014/11/01 19:30:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/05 22:19:53 jasper Exp $
 
 COMMENT=		fast and easy porn downloader
 
-DISTNAME=		gnaughty-1.2.5
+DISTNAME=		gnaughty-1.2.6
 CATEGORIES +=		net graphics biology productivity education
 CATEGORIES +=		inputmethods benchmarks japanese geo
-
-REVISION=		19
 
 HOMEPAGE=		http://gnaughty.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnaughty/}
+MASTER_SITES=		http://distfiles.nl/ \
+			${MASTER_SITE_SOURCEFORGE:=gnaughty/}
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo curl fontconfig freetype
@@ -32,8 +31,16 @@ RUN_DEPENDS=		devel/desktop-file-utils
 
 MODGCONF2_SCHEMAS_DIR=	gnaughty
 
+AUTOCONF_VERSION=	2.62
+AUTOMAKE_VERSION=	1.11
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+AUTOFUCK_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+
+pre-configure:
+	cd ${WRKSRC} ${SETENV} ${AUTOFUCK_ENV} autoreconf
 
 .include <bsd.port.mk>
