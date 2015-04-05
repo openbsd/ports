@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2015/03/27 08:11:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2015/04/05 09:33:42 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -18,7 +18,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-kde=	0
 REVISION-java=	0
 EPOCH=		0
@@ -160,10 +160,9 @@ BUILD_DEPENDS+=	archivers/zip \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
-# configure checks for cups, librsvg support; no LIB/RUN_DEPENDS because libcups
-# and librsvg is only dlopen()ed if found
-BUILD_DEPENDS +=	print/cups,-libs \
-			x11/gnome/librsvg
+# configure checks for librsvg support; no LIB/RUN_DEPENDS because librsvg
+# is only dlopen()ed if found
+BUILD_DEPENDS +=	x11/gnome/librsvg
 
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
@@ -189,6 +188,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/raptor \
 		net/curl \
 		net/neon \
+		print/cups,-libs \
 		print/poppler \
 		textproc/icu4c \
 		textproc/redland \
