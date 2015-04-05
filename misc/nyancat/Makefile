@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/05 20:00:55 rpe Exp $
+
+PORTROACH=      limit:^[0-9].*
 
 COMMENT=	nyancat in your terminal
 
