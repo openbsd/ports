@@ -1,0 +1,49 @@
+$OpenBSD: README,v 1.1 2015/04/05 22:07:59 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Cgit config
+===========
+By default, the cgitrc config file is searched in ${PREFIX}/conf/cgitrc.
+Refer to http://git.zx2c4.com/cgit/tree/cgitrc.5.txt for the syntax.
+
+Webserver config
+================
+
+Nginx
+-----
+An example nginx config snippet is provided below, to run with
+slowcgi:
+
+server {
+	server_name cgit.example.com;
+	access_log logs/cgit-access main;
+	error_log logs/cgit-error warn;
+	location ~ /cgit.(png|css) {
+		root /var/www/htdocs;
+	}
+	location / {
+		rewrite /(.*) /cgi-bin/cgit.cgi/$1;
+	}
+	location /cgi-bin/ {
+		fastcgi_pass unix:run/slowcgi.sock;
+		fastcgi_split_path_info ^(/cgi-bin/[^/]+)(.*);
+		fastcgi_param  PATH_INFO $fastcgi_path_info;
+		include fastcgi_params;
+	}
+}
+
+Apache config
+-------------
+
+That config snipped works with apache-httpd-openbsd:
+
+ScriptAlias /cgit /cgi-bin/cgit.cgi
+<Location "/cgit">
+	AllowOverride None
+	Options +ExecCGI
+	Order allow,deny
+	Allow from all
+</Location>

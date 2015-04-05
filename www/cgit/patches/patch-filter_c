@@ -1,0 +1,19 @@
+$OpenBSD: patch-filter_c,v 1.1 2015/04/05 22:07:59 landry Exp $
+Wtf.
+--- filter.c.orig	Fri Mar 13 16:22:11 2015
++++ filter.c	Sun Apr  5 23:11:50 2015
+@@ -51,12 +51,13 @@ void cgit_cleanup_filters(void)
+ 
+ void cgit_init_filters(void)
+ {
++	return;
+ 	libc_write = dlsym(RTLD_NEXT, "write");
+ 	if (!libc_write)
+ 		die("Could not locate libc's write function");
+ }
+ 
+-ssize_t write(int fd, const void *buf, size_t count)
++ssize_t wtf__write(int fd, const void *buf, size_t count)
+ {
+ 	if (fd != STDOUT_FILENO || !filter_write)
+ 		return libc_write(fd, buf, count);

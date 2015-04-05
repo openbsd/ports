@@ -1,8 +1,0 @@
-To enable cgit please create a symbolic link from
- ${PREFIX}/conf/modules.sample/cgit.conf
-to /var/www/conf/modules/cgit.conf.
-
-ln -s ../modules.sample/cgit.conf /var/www/conf/modules
-
-By default, the cgitrc config file is searched in
-${PREFIX}/conf/cgitrc
