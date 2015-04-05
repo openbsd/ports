@@ -1,0 +1,13 @@
+$OpenBSD: patch-gtklp_file_c,v 1.1 2015/04/05 14:09:17 landry Exp $
+Fix display of file arguments passed on the cmdline
+--- gtklp/file.c.orig	Sun Apr  5 15:58:29 2015
++++ gtklp/file.c	Sun Apr  5 15:59:26 2015
+@@ -407,7 +407,7 @@ void FileFrame(GtkWidget *container)
+ 
+ 	for(i1 = 0; i1 < filesToPrintAnz; i1++)
+ 	{
+-		entry[0][0]=g_filename_to_utf8((gchar *)filesToPrint[i1],(size_t)MAXPATH,NULL,NULL,NULL);
++		entry[0][0]=g_filename_to_utf8((gchar *)filesToPrint[i1],-1,NULL,NULL,NULL);
+ 		gtk_clist_append(GTK_CLIST(fileList),entry[0]);
+ 		g_free(entry[0][0]);
+ 	}
