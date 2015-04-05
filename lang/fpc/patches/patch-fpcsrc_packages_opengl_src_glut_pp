@@ -1,0 +1,17 @@
+$OpenBSD: patch-fpcsrc_packages_opengl_src_glut_pp,v 1.1 2015/04/05 17:10:07 pascal Exp $
+--- fpcsrc/packages/opengl/src/glut.pp.orig	Sun Apr  5 18:49:33 2015
++++ fpcsrc/packages/opengl/src/glut.pp	Sun Apr  5 18:49:58 2015
+@@ -765,13 +765,7 @@ initialization
+   {$ifdef darwin}
+   LoadGlut('/System/Library/Frameworks/GLUT.framework/GLUT');
+   {$else}
+-  {$IFDEF haiku}
+   LoadGlut('libglut.so');
+-  {$ELSE}
+-  {$IFNDEF MORPHOS}
+-  LoadGlut('libglut.so.3');
+-  {$ENDIF}
+-  {$ENDIF}
+   {$endif}
+   {$ENDIF}
+ 

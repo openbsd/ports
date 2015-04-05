@@ -1,0 +1,17 @@
+$OpenBSD: patch-fpcsrc_packages_opengl_src_glu_pp,v 1.1 2015/04/05 17:10:07 pascal Exp $
+--- fpcsrc/packages/opengl/src/glu.pp.orig	Sun Apr  5 18:36:26 2015
++++ fpcsrc/packages/opengl/src/glu.pp	Sun Apr  5 18:38:12 2015
+@@ -73,13 +73,7 @@ Const                      
+ {$ifdef darwin}
+   GLU_LIB =  '/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib';
+ {$else}
+-{$IFDEF haiku}
+   GLU_LIB = 'libGLU.so';
+-{$ELSE}
+-{$ifndef MorphOS}
+-  GLU_LIB = 'libGLU.so.1';
+-{$endif}
+-{$ENDIF}
+ {$ENDIF}
+ {$endif}
+                               

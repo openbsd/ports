@@ -1,0 +1,15 @@
+$OpenBSD: patch-fpcsrc_packages_opengl_src_gl_pp,v 1.1 2015/04/05 17:10:07 pascal Exp $
+--- fpcsrc/packages/opengl/src/gl.pp.orig	Sun Apr  5 18:36:00 2015
++++ fpcsrc/packages/opengl/src/gl.pp	Sun Apr  5 18:36:20 2015
+@@ -2262,11 +2262,7 @@ initialization
+   {$IFDEF MorphOS}
+   InitTinyGLLibrary;
+   {$ELSE}
+-  {$ifdef haiku}
+   LoadOpenGL('libGL.so');
+-  {$else}
+-  LoadOpenGL('libGL.so.1');
+-  {$endif}
+   {$ENDIF}
+   {$endif}
+   {$ENDIF}
