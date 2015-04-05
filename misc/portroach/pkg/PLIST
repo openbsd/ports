@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/26 19:24:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/04/05 12:50:47 jasper Exp $
 @pkgpath misc/portscout
 bin/portroach
 ${P5SITE}/Portroach/
@@ -9,12 +9,10 @@ ${P5SITE}/Portroach/Const.pm
 ${P5SITE}/Portroach/DataSrc/
 ${P5SITE}/Portroach/DataSrc.pm
 ${P5SITE}/Portroach/DataSrc/Ports.pm
-${P5SITE}/Portroach/Make.pm
 ${P5SITE}/Portroach/SQL/
 ${P5SITE}/Portroach/SQL.pm
 ${P5SITE}/Portroach/SQL/Pg.pm
 ${P5SITE}/Portroach/SQL/SQLite.pm
-${P5SITE}/Portroach/SQL/mysql.pm
 ${P5SITE}/Portroach/SiteHandler/
 ${P5SITE}/Portroach/SiteHandler.pm
 ${P5SITE}/Portroach/SiteHandler/CPAN.pm
@@ -23,6 +21,7 @@ ${P5SITE}/Portroach/SiteHandler/Hackage.pm
 ${P5SITE}/Portroach/SiteHandler/NPM.pm
 ${P5SITE}/Portroach/SiteHandler/Pear.pm
 ${P5SITE}/Portroach/SiteHandler/Pecl.pm
+${P5SITE}/Portroach/SiteHandler/PyPI.pm
 ${P5SITE}/Portroach/SiteHandler/RubyGems.pm
 ${P5SITE}/Portroach/SiteHandler/SourceForge.pm
 ${P5SITE}/Portroach/Template.pm
@@ -38,7 +37,6 @@ share/examples/portroach/portroach.conf.dist
 @mode
 share/portroach/
 share/portroach/sql/
-share/portroach/sql/mysql_init.sql
 share/portroach/sql/pgsql_destroy.sql
 share/portroach/sql/pgsql_init.sql
 share/portroach/sql/sqlite_destroy.sql
@@ -49,6 +47,7 @@ share/portroach/templates/dynamic/assets/
 share/portroach/templates/dynamic/assets/angular.min.js
 share/portroach/templates/dynamic/assets/app.js
 share/portroach/templates/dynamic/assets/favicon.ico
+share/portroach/templates/dynamic/assets/portroach.css
 share/portroach/templates/dynamic/index.html
 share/portroach/templates/dynamic/maintainer.html
 share/portroach/templates/dynamic/restricted-ports.html
