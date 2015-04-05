@@ -1,15 +1,29 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/05 13:13:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/05 14:35:57 sthen Exp $
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 GH_ACCOUNT =		OtterBrowser
 GH_PROJECT =		otter-browser
-V =			0.9.04
+V =			0.9.05
 #GH_TAGNAME =		v$V
-# We were asked by upstream to release from the following commit instead of
-# the tag as it's considered an important fix affecting the majority of users.
-GH_COMMIT =		23d7ee6f9cd636e750687a01975b177c1c9c2e53
+# We were asked by upstream to release from the following commit
+# as it contains fixes for crashes & serious issues
+# - Adhere to cppcheck reports
+# - #767 Browser isn't starting after "Toolbars > Reset to Defaults..."
+# - Crash when cloning tab
+# - #768 "Navigation Bar > Remove..." is not working
+# - Escape ampersand for TabBarWidget
+# - #769 Transfer completed notification was triggered on download stop
+# - Fix check that could prevent configuration or removal of custom
+#   toolbars
+# - Small code refactorizations
+# - Prevent crashes in modal dialog for cookie saving when more then
+#   one is already stored
+# - #779 build warning fixes (was not present in release code)
+# - #190 Initial work for storing session data
+# - Ensuring that bookmarks model always emits signals on modification
+GH_COMMIT =		1ea5df13f908495df4ccccad9d634d997f6fd4c9
 
 DISTNAME =		${GH_PROJECT}-$Vpl0
 
