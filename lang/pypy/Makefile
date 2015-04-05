@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/12/13 13:53:18 edd Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/05 11:15:07 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -12,7 +12,7 @@ COMMENT =		fast implementation of the Python language
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
-V =			2.4.0
+V =			2.5.1
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
@@ -65,7 +65,7 @@ post-extract:
 	    exit 1; fi
 .if !${FLAVOR:Mno_bootstrap}
 	echo '#!/bin/sh' > ${WRKDIR}/bin/pypy
-	echo 'LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/pypy "$$@"' >> ${WRKDIR}/bin/pypy
+	echo 'LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs:${WRKDIR}/bootstrap/pypy/lib exec ${WRKDIR}/bootstrap/bin/pypy "$$@"' >> ${WRKDIR}/bin/pypy
 	chmod +x ${WRKDIR}/bin/pypy
 .endif
 
@@ -78,7 +78,7 @@ pre-configure:
 
 # When updating the port, see pypy/tool/release/package.py and check for
 # new modules which require a cffi cache.
-CFFI_CACHES =	_sqlite3, _curses, syslog, _tkinter, gdbm
+CFFI_CACHES =	_sqlite3, audioop, _curses, syslog, gdbm, _tkinter
 
 do-build:
 .if ${FLAVOR:Mno_bootstrap}
@@ -96,9 +96,15 @@ do-build:
 .endif
 	cd ${WRKDIR}/usession/testing_1 && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 
+PYPY_INST_LIB_DIR = ${PREFIX}/pypy/lib
+PYPY_LD_LIBRARY_PATH = LD_LIBRARY_PATH=${PYPY_INST_LIB_DIR}
 do-install:
 	mkdir -p ${PREFIX}/pypy/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/usession/testing_1/pypy-c ${PREFIX}/pypy/bin/pypy
+	mkdir -p ${PYPY_INST_LIB_DIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/usession/testing_1/pypy-c \
+		${PREFIX}/pypy/bin/pypy
+	${INSTALL_PROGRAM} ${WRKDIR}/usession/testing_1/libpypy-c.so \
+		${PYPY_INST_LIB_DIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy/include
 	cp -rp ${WRKSRC}/include/* ${PREFIX}/pypy/include
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/include
@@ -106,15 +112,17 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib-python/2.7
 	cp -rp ${WRKSRC}/lib_pypy/* ${PREFIX}/pypy/lib_pypy
 	cp -rp ${WRKSRC}/lib-python/2.7/* ${PREFIX}/pypy/lib-python/2.7
-	${PREFIX}/pypy/bin/pypy -m compileall ${PREFIX}/pypy/lib_pypy
-	find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
-	  | xargs ${PREFIX}/pypy/bin/pypy -m compileall
+	${PYPY_LD_LIBRARY_PATH} ${PREFIX}/pypy/bin/pypy \
+		-m compileall ${PREFIX}/pypy/lib_pypy
+	${PYPY_LD_LIBRARY_PATH} sh -c \
+		'find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
+		  | xargs ${PREFIX}/pypy/bin/pypy -m compileall'
 	# make cffi cache
 	# this will generate various __pycache__ directories in lib_pypy.
 	# and it puts absolute paths in there too, yay...
-	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include \
+	${PYPY_LD_LIBRARY_PATH} LDFLAGS=-L${LOCALBASE}/lib \
+		CPPFLAGS=-I${LOCALBASE}/include \
 		${PREFIX}/pypy/bin/pypy -c 'import ${CFFI_CACHES}'
-	# but it contains absolute paths, so we fix that:
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
 	mv ${PREFIX}/pypy/lib_pypy/__pycache__/${PREFIX}/pypy/* \
 		${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
@@ -126,6 +134,7 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
+	cd ${PREFIX}/lib && ln -s ../pypy/lib/libpypy-c.so
 	# remove patch orig files so they dont appear in the plist
 	find ${PREFIX} -name '*.py.orig' | xargs rm
 
@@ -141,8 +150,8 @@ bootstrap: ${PYPY_PKG}
 	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${PYPY_PKG}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
-	for i in `ldd ${WRKDIR}/prepare/bootstrap/bin/pypy | grep 'lib/' | \
-	    awk '{ print $$7 }'` ; do \
+	for i in `LD_LIBRARY_PATH=${WRKDIR}/prepare/bootstrap/pypy/lib ldd ${WRKDIR}/prepare/bootstrap/bin/pypy | grep 'lib/' | grep -v 'libpypy-c' | \
+	        awk '{ print $$7 }'` ; do \
 		cp $$i ${WRKDIR}/prepare/bootstrap/system-libs; done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
 	    xz > ${FULLDISTDIR}/${BOOTSTRAP-${MACHINE_ARCH}}

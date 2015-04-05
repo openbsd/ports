@@ -1,11 +1,11 @@
-$OpenBSD: patch-pypy_module__ssl___init___py,v 1.1 2014/04/24 21:44:07 sthen Exp $
---- pypy/module/_ssl/__init__.py.orig	Thu Apr 24 16:24:13 2014
-+++ pypy/module/_ssl/__init__.py	Thu Apr 24 16:24:19 2014
-@@ -24,7 +24,6 @@ class Module(MixedModule):
+$OpenBSD: patch-pypy_module__ssl___init___py,v 1.2 2015/04/05 11:15:08 edd Exp $
+--- pypy/module/_ssl/__init__.py.orig	Mon Mar 23 16:17:54 2015
++++ pypy/module/_ssl/__init__.py	Thu Apr  2 19:25:50 2015
+@@ -44,7 +44,6 @@ class Module(MixedModule):
          if HAVE_OPENSSL_RAND:
              Module.interpleveldefs['RAND_add'] = "interp_ssl.RAND_add"
              Module.interpleveldefs['RAND_status'] = "interp_ssl.RAND_status"
 -            Module.interpleveldefs['RAND_egd'] = "interp_ssl.RAND_egd"
  
-         super(Module, cls).buildloaders()
- 
+         for name, value in ssl_data.ALERT_DESCRIPTION_CODES.items():
+             Module.interpleveldefs[name] = "space.wrap(%r)" % value
