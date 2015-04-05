@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.107 2015/04/03 21:06:20 robert Exp $
+# $OpenBSD: Makefile,v 1.108 2015/04/05 10:18:42 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
+
+REVISION-web =		0
 
 VERSION =		2.4.4
 DISTNAME =		zabbix-${VERSION}

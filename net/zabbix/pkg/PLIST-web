@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.25 2014/12/28 15:17:10 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.26 2015/04/05 10:18:42 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -489,6 +489,8 @@ zabbix/include/classes/validators/CColorValidator.php
 zabbix/include/classes/validators/CDecimalStringValidator.php
 zabbix/include/classes/validators/CDecimalValidator.php
 zabbix/include/classes/validators/CFunctionValidator.php
+zabbix/include/classes/validators/CIPRangeValidator.php
+zabbix/include/classes/validators/CIPValidator.php
 zabbix/include/classes/validators/CIdValidator.php
 zabbix/include/classes/validators/CLdapAuthValidator.php
 zabbix/include/classes/validators/CLimitedSetValidator.php

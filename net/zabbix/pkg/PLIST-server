@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-server,v 1.14 2014/12/28 15:17:10 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.15 2015/04/05 10:18:42 robert Exp $
 @conflict zabbix-agent-<=1.8.3p5
 @man man/man8/zabbix_proxy.8
 @man man/man8/zabbix_server.8
 @sample ${SYSCONFDIR}/zabbix/
 @bin sbin/zabbix_proxy
 @bin sbin/zabbix_server
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/zabbix/zabbix_proxy.conf
 @mode 640
 @group _zabbix
@@ -72,8 +71,3 @@ share/zabbix/schema/sqlite3/schema.sql
 @owner _zabbix
 @group _zabbix
 @sample /var/db/zabbix/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/zabbix_proxy
-@rcscript ${RCDIR}/zabbix_server
