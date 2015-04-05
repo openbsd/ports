@@ -1,28 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:23:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/04/05 12:20:20 rpe Exp $
 ${P5ARCH}/
+${P5ARCH}/POD2/
+${P5ARCH}/POD2/JA/
+${P5ARCH}/POD2/JA/Text/
+${P5ARCH}/POD2/JA/Text/LineFold.pod
+${P5ARCH}/POD2/JA/Unicode/
+${P5ARCH}/POD2/JA/Unicode/GCString.pod
+${P5ARCH}/POD2/JA/Unicode/LineBreak.pod
 ${P5ARCH}/Text/
-${P5ARCH}/Text/LineFold/
 ${P5ARCH}/Text/LineFold.pm
-${P5ARCH}/Text/LineFold/JA_JP.pod
 ${P5ARCH}/Unicode/
-${P5ARCH}/Unicode/GCString/
 ${P5ARCH}/Unicode/GCString.pm
 ${P5ARCH}/Unicode/GCString.pod
-${P5ARCH}/Unicode/GCString/JA_JP.pod
 ${P5ARCH}/Unicode/LineBreak/
 ${P5ARCH}/Unicode/LineBreak.pm
 ${P5ARCH}/Unicode/LineBreak.pod
 ${P5ARCH}/Unicode/LineBreak/Constants.pm
 ${P5ARCH}/Unicode/LineBreak/Defaults.pm.sample
-${P5ARCH}/Unicode/LineBreak/JA_JP.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unicode/
 ${P5ARCH}/auto/Unicode/LineBreak/
 @comment ${P5ARCH}/auto/Unicode/LineBreak/LineBreak.bs
 ${P5ARCH}/auto/Unicode/LineBreak/LineBreak.so
+${P5ARCH}/auto/sombok/
+${P5ARCH}/auto/sombok/extralibs.ld
+@man man/man3p/POD2::JA::Text::LineFold.3p
+@man man/man3p/POD2::JA::Unicode::GCString.3p
+@man man/man3p/POD2::JA::Unicode::LineBreak.3p
 @man man/man3p/Text::LineFold.3p
-@man man/man3p/Text::LineFold::JA_JP.3p
 @man man/man3p/Unicode::GCString.3p
-@man man/man3p/Unicode::GCString::JA_JP.3p
 @man man/man3p/Unicode::LineBreak.3p
-@man man/man3p/Unicode::LineBreak::JA_JP.3p
