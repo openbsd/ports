@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/27 08:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/05 15:51:49 landry Exp $
 
 COMMENT =	collection of puzzles games
 
-DISTNAME =	puzzles-20141206
+DISTNAME =	puzzles-20150325
 CATEGORIES =	games
-REVISION =	0
 
 MASTER_SITES =	http://rhaalovely.net/stuff/
 HOMEPAGE =	http://www.chiark.greenend.org.uk/~sgtatham/puzzles/
 
 #gitweb generates tarballs on the fly with varying timestamps
-GIT_COMMIT =	c2f111dd556320cfbf28f1aa6bc640a709d41710
-GIT_COMMIT_SHORT = c2f111d
+GIT_COMMIT =	10460d1bc7dab94e84c5fbbde221c3d20f9e263b
+GIT_COMMIT_SHORT = 10460d1
 GITWEB_URL =	http://tartarus.org/~simon-git/gitweb/
 
 # MIT
