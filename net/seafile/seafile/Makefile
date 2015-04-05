@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/15 22:41:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/05 14:55:19 sthen Exp $
 
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
-GH_COMMIT = 		4bc0effee428cd23829b35e6798d83cf42713dc9
 PKGNAME = 		${GH_PROJECT}-daemon-${V}
 
 SHARED_LIBS =		seafile 0.0

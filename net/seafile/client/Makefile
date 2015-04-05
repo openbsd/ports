@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/27 08:13:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/05 14:55:19 sthen Exp $
 
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
-GH_COMMIT = 		a46c6c1c62bfb08a303f0c1a52fee824e5b279bf
 REVISION =		0
 
 WANTLIB += QtDBus QtGui QtNetwork QtXml c ccnet crypto gio-2.0
