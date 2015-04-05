@@ -1,18 +1,53 @@
-# $OpenBSD: Makefile,v 1.15 2014/12/09 17:13:50 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/05 22:25:53 robert Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
-WAPP_BUILD=	45357
-WAPP_VERSION=	1.6
+WAPP_BUILD=	48619
+WAPP_VERSION=	2.0.2
 EPOCH=		0
-REVISION=	0
 
-DISTNAME=	zarafa-webapp-${WAPP_VERSION}-${WAPP_BUILD}.noarch.rpm
+PLUGINS_WITH_DEFCONF= \
+		browsercompatibility \
+		contactfax \
+		extbox \
+		facebook \
+		feedback \
+		gmaps \
+		pdfbox \
+		pimfolder \
+		spreed \
+		statslogging \
+		sugarcrm \
+		titlecounter \
+		webappmanual \
+		webodf \
+		xmpp \
+		zperformance
+
+PLUGINS=	${PLUGINS_WITH_DEFCONF} \
+		clockwidget \
+		facebookwidget \
+		folderwidgets \
+		lang \
+		oauthlib \
+		quickitems \
+		shellgame \
+		twidget
+
+RPMVER=		116.1
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
 
 EXTRACT_SUFX=	# empty
 
-MASTER_SITES=	http://download.zarafa.com/community/final/WebApp/${WAPP_VERSION}/rhel/
+.for _dfile in ${PLUGINS}
+EDISTFILES+=    zarafa-webapp-${_dfile}-${WAPP_VERSION}.${WAPP_BUILD}-${RPMVER}.noarch.rpm
+.endfor
+EXTRACT_ONLY=   ${EDISTFILES:C/:[0-9]$//}
+
+DISTFILES+=	zarafa-webapp-${WAPP_VERSION}.${WAPP_BUILD}-${RPMVER}.noarch.rpm \
+		${EDISTFILES}
+
+MASTER_SITES=	http://download.zarafa.com/community/final/WebApp/${WAPP_VERSION}/rhel-5/
 
 CATEGORIES=	mail www
 
@@ -36,8 +71,10 @@ TINSTDIR=	${TRUEPREFIX}/zarafa-webapp
 SUBST_VARS=	INSTDIR TINSTDIR
 
 do-extract:
+.for _dfile in ${DISTFILES}
 	cd ${WRKDIR} && \
-		${LOCALBASE}/bin/rpm2cpio ${FULLDISTDIR}/${DISTNAME} | cpio -id
+		${LOCALBASE}/bin/rpm2cpio ${FULLDISTDIR}/${_dfile} | cpio -id
+.endfor
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/zarafa/webapp/config.php
@@ -48,12 +85,10 @@ do-install:
 		${INSTDIR}/zarafa-webapp.conf.dist
 	cat ${WRKSRC}/etc/zarafa/webapp/config.php > \
 		${INSTDIR}/config.php.dist
-	rm ${INSTDIR}/config.php
 
-.for _c in browsercompatibility statslogging xmpp zdeveloper zperformance
+.for _c in ${PLUGINS_WITH_DEFCONF}
 	cat ${WRKSRC}/etc/zarafa/webapp/config-${_c}.php > \
 		${INSTDIR}/plugins/${_c}/config.php.dist
-	rm ${INSTDIR}/plugins/${_c}/config.php
 .endfor
 
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}

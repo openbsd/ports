@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_zarafa_webapp_config_php,v 1.4 2013/11/01 11:20:54 robert Exp $
---- etc/zarafa/webapp/config.php.orig	Wed Oct 30 14:52:24 2013
-+++ etc/zarafa/webapp/config.php	Wed Oct 30 14:53:02 2013
-@@ -46,12 +46,13 @@
+$OpenBSD: patch-etc_zarafa_webapp_config_php,v 1.5 2015/04/05 22:25:53 robert Exp $
+--- etc/zarafa/webapp/config.php.orig	Sun Apr  5 18:45:42 2015
++++ etc/zarafa/webapp/config.php	Sun Apr  5 18:45:42 2015
+@@ -42,12 +42,13 @@
  
  	// Defines the temp path (absolute). Here uploaded attachments will be saved.
  	// The web client doesn't work without this directory.
