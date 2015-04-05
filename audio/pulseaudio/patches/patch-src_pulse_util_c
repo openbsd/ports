@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_pulse_util_c,v 1.8 2015/04/04 15:37:12 ajacoutot Exp $
+$OpenBSD: patch-src_pulse_util_c,v 1.9 2015/04/05 10:12:34 ajacoutot Exp $
 
 Implement pa_get_binary_name().
 
 --- src/pulse/util.c.orig	Thu Feb 12 15:10:35 2015
-+++ src/pulse/util.c	Sat Apr  4 17:36:33 2015
++++ src/pulse/util.c	Sun Apr  5 11:46:45 2015
 @@ -52,6 +52,11 @@
  #include <sys/sysctl.h>
  #endif
@@ -16,10 +16,10 @@ Implement pa_get_binary_name().
  #include <pulse/xmalloc.h>
  #include <pulse/timeval.h>
  
-@@ -277,6 +282,30 @@ char *pa_get_binary_name(char *s, size_t l) {
-         /* fall thru */
+@@ -224,6 +229,30 @@ char *pa_get_binary_name(char *s, size_t l) {
+         }
      }
- #endif /* OS_IS_DARWIN */
+ #endif
 +
 +#ifdef __OpenBSD__
 +    {
@@ -45,5 +45,5 @@ Implement pa_get_binary_name().
 +    }
 +#endif /* __OpenBSD__ */
  
-     errno = ENOENT;
-     return NULL;
+ #if defined(HAVE_DLADDR) && defined(PA_GCC_WEAKREF)
+     {
