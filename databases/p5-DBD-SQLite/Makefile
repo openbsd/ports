@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/04/05 23:12:00 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/06 11:46:17 jca Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		SQLite drivers for the Perl DBI
 
 MODULES=		cpan
 DISTNAME=		DBD-SQLite-1.46
+EPOCH=			0
 CATEGORIES=		databases
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
