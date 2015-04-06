@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/12/10 17:53:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/04/06 16:52:14 czarkoff Exp $
 @group games
 @bin bin/xlennart
 @group
 @man man/man6/xlennart.6
+share/applications/xlennart.desktop
 share/examples/xlennart/
 share/examples/xlennart/xlennart.scores
 @mode g+w
@@ -77,3 +78,5 @@ share/xlennart/pixmaps/suncpu.xpm
 share/xlennart/pixmaps/suse.xpm
 share/xlennart/pixmaps/toaster.xpm
 share/xlennart/pixmaps/ubuntu.xpm
+@exec %D/bin/update-desktop-database                                                                                                                                                             
+@unexec-delete %D/bin/update-desktop-database                                                                                                                                                    
