@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/05 13:24:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/06 12:33:20 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
-DISTNAME=	speech-dispatcher-0.8.1
+DISTNAME=	speech-dispatcher-0.8.2
 
-SHARED_LIBS +=  speechd              1.0      # .6.0
+SHARED_LIBS +=  speechd              2.0      # .7.0
 
 CATEGORIES=	audio
 
@@ -38,6 +38,8 @@ LIB_DEPENDS=	audio/espeak>=1.47.03p0 \
 
 # undefined reference to `lt__PROGRAM__LTX_preloaded_symbols'
 USE_LIBTOOL=	gnu
+
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
