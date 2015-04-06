@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.225 2015/04/05 22:48:06 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.226 2015/04/06 15:13:04 stsp Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -510,6 +510,7 @@ my $obsolete_reason = {
 	'p5-Image-Scale' => 0,
 	'appdata-tools' => 3,
 	'ksmp3play' => 3,
+	'xchat' => 3,
 };
 
 # ->is_base_system($handle, $state):
