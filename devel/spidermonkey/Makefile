@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/05 23:28:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/04/06 08:48:54 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -32,6 +32,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES =		lang/python
 
+# sync with games/0ad/base x11/gnome/builder x11/gnome/shell x11/gnome/gjs
 MODULES +=		gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++

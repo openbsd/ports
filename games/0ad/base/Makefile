@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/19 07:46:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/06 08:48:54 ajacoutot Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -28,13 +28,16 @@ LIB_DEPENDS =		audio/libvorbis \
 			textproc/libxml
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/0ad/data
-MODULES =		gcc4 \
-			lang/python \
+MODULES =		lang/python \
 			converters/libiconv
+
+# sync with devel/spidermonkey
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c c++
+
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.4/bin/cxxtestgen
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
 
 MAKE_FLAGS =		SILENT=
 MAKE_ENV =		CC="${CC}" \
