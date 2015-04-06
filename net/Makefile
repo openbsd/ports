@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.894 2015/03/31 15:41:41 kspillner Exp $
+# $OpenBSD: Makefile,v 1.895 2015/04/06 14:53:03 stsp Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -656,7 +656,6 @@
      SUBDIR += wmnetload
      SUBDIR += wmwave
      SUBDIR += wol
-     SUBDIR += xchat
      SUBDIR += xl2tpd
      SUBDIR += xmlrpc-c
      SUBDIR += xmlrpc-epi
