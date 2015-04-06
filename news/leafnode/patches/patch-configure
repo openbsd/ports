@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.10 2015/04/06 16:29:48 jca Exp $
+...
+--- configure.orig	Fri Jan  2 22:06:29 2015
++++ configure	Fri Jan  2 22:08:17 2015
+@@ -7428,11 +7428,7 @@ fi
+ 
+ 
+ tmp="`echo $sysconfdir | sed -f ${srcdir}/sanitize.sed`"
+-msysconfdir="`(
+-if test "x$prefix" = xNONE ; then
+-  prefix=$ac_default_prefix
+-fi
+-eval echo \"\\\"$tmp\\\"\" )`"
++msysconfdir="$sysconfdir"
+ 
+ ac_config_files="$ac_config_files subst leafnode.spec Makefile doc_german/Makefile"
+ 
