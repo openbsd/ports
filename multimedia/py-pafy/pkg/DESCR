@@ -1,0 +1,14 @@
+Pafy is a Python library to download YouTube content and retrieve metadata.
+
+Features:
+* Retrieve metadata such as viewcount, duration, rating, author, thumbnail
+  and keywords
+* Download video or audio at requested resolution/bitrate/format/filesize
+* Command line tool (ytdl) for downloading directly from the command line
+* Retrieve the URL to stream the video in a player such as vlc or mplayer
+* Works with age-restricted videos and non-embeddable videos
+* Small, standalone, single importable module file (pafy.py)
+* Select highest quality stream for download or streaming
+* Video only (no audio) download option (m4v or webm)
+* Audio only (no video) download option (ogg or m4a)
+* Retrieve playlists and playlist metadata
