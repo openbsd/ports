@@ -1,6 +1,9 @@
-$OpenBSD: patch-libide_ide-log_c,v 1.1.1.1 2015/04/06 10:06:09 ajacoutot Exp $
+$OpenBSD: patch-libide_ide-log_c,v 1.2 2015/04/06 19:58:15 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=747400
+From 42a3d2a4ca6793d1ff8dd97914999921268c2667 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 6 Apr 2015 11:23:26 +0200
+Subject: Fix build on OpenBSD.
 
 --- libide/ide-log.c.orig	Tue Mar 24 00:58:20 2015
 +++ libide/ide-log.c	Mon Apr  6 01:39:42 2015
