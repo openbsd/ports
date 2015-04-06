@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.307 2015/04/04 14:46:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.308 2015/04/06 22:20:01 stsp Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -77,6 +77,7 @@
      SUBDIR += extremetuxracer
      SUBDIR += f1spirit
      SUBDIR += falconseye
+     SUBDIR += fillets-ng
      SUBDIR += fire
      SUBDIR += flare
      SUBDIR += flightgear
