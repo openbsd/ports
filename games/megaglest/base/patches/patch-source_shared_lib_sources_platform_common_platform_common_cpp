@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 1.1.1.1 2013/01/28 13:58:49 stsp Exp $
---- source/shared_lib/sources/platform/common/platform_common.cpp.orig	Wed Jan  9 16:26:09 2013
-+++ source/shared_lib/sources/platform/common/platform_common.cpp	Wed Jan  9 16:29:40 2013
-@@ -946,7 +946,7 @@ uint32 getFolderTreeContentsCheckSumRecursively(const 
+$OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 1.2 2015/04/06 12:49:52 stsp Exp $
+--- source/shared_lib/sources/platform/common/platform_common.cpp.orig	Mon Mar  9 00:09:09 2015
++++ source/shared_lib/sources/platform/common/platform_common.cpp	Mon Apr  6 10:27:35 2015
+@@ -1057,7 +1057,7 @@ uint32 getFolderTreeContentsCheckSumRecursively(const 
  	glob_t globbuf;
  
  	int res = glob(mypath.c_str(), 0, 0, &globbuf);
@@ -10,7 +10,7 @@ $OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 
  	if(res < 0) {
  		std::stringstream msg;
  		msg << "#2 Couldn't scan directory '" << mypath << "': " << strerror(errno);
-@@ -980,13 +980,13 @@ uint32 getFolderTreeContentsCheckSumRecursively(const 
+@@ -1091,13 +1091,13 @@ uint32 getFolderTreeContentsCheckSumRecursively(const 
  	globfree(&globbuf);
  
      // Look recursively for sub-folders
@@ -26,16 +26,16 @@ $OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 
  	if(res < 0) {
  		std::stringstream msg;
  		msg << "#3 Couldn't scan directory '" << mypath << "': " << strerror(errno);
-@@ -995,7 +995,7 @@ uint32 getFolderTreeContentsCheckSumRecursively(const 
+@@ -1106,7 +1106,7 @@ uint32 getFolderTreeContentsCheckSumRecursively(const 
  #endif
  
- 	for(int i = 0; i < globbuf.gl_pathc; ++i) {
+ 	for(int i = 0; i < (int)globbuf.gl_pathc; ++i) {
 -#if defined(__APPLE__) || defined(__FreeBSD__)
 +#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
  		struct stat statStruct;
  		// only process if dir..
  		int actStat = lstat( globbuf.gl_pathv[i], &statStruct);
-@@ -1127,7 +1127,7 @@ vector<string> getFolderTreeContentsListRecursively(co
+@@ -1238,7 +1238,7 @@ vector<string> getFolderTreeContentsListRecursively(co
  	}
  
  	int res = glob(mypath.c_str(), globFlags, 0, &globbuf);
@@ -44,7 +44,7 @@ $OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 
  	if(res < 0) {
  		std::stringstream msg;
  		msg << "#4 Couldn't scan directory '" << mypath << "': " << strerror(errno);
-@@ -1160,14 +1160,14 @@ vector<string> getFolderTreeContentsListRecursively(co
+@@ -1271,14 +1271,14 @@ vector<string> getFolderTreeContentsListRecursively(co
  	globfree(&globbuf);
  
      // Look recursively for sub-folders
@@ -61,16 +61,16 @@ $OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 
  	if(res < 0) {
  		std::stringstream msg;
  		msg << "#5 Couldn't scan directory '" << mypath << "': " << strerror(errno);
-@@ -1176,7 +1176,7 @@ vector<string> getFolderTreeContentsListRecursively(co
+@@ -1287,7 +1287,7 @@ vector<string> getFolderTreeContentsListRecursively(co
  #endif
  
- 	for(int i = 0; i < globbuf.gl_pathc; ++i) {
+ 	for(int i = 0; i < (int)globbuf.gl_pathc; ++i) {
 -#if defined(__APPLE__) || defined(__FreeBSD__)
 +#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
  		struct stat statStruct;
  		// only get if dir..
  		int actStat = lstat( globbuf.gl_pathv[ i], &statStruct);
-@@ -1268,7 +1268,7 @@ vector<std::pair<string,uint32> > getFolderTreeContent
+@@ -1379,7 +1379,7 @@ vector<std::pair<string,uint32> > getFolderTreeContent
  
  	int res = glob(mypath.c_str(), 0, 0, &globbuf);
  
@@ -79,7 +79,7 @@ $OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 
  	if(res < 0) {
  		std::stringstream msg;
  		msg << "#6 Couldn't scan directory '" << mypath << "': " << strerror(errno);
-@@ -1300,13 +1300,13 @@ vector<std::pair<string,uint32> > getFolderTreeContent
+@@ -1411,13 +1411,13 @@ vector<std::pair<string,uint32> > getFolderTreeContent
  	globfree(&globbuf);
  
      // Look recursively for sub-folders
@@ -95,10 +95,10 @@ $OpenBSD: patch-source_shared_lib_sources_platform_common_platform_common_cpp,v 
  	if(res < 0) {
  		std::stringstream msg;
  		msg << "#7 Couldn't scan directory '" << mypath << "': " << strerror(errno);
-@@ -1315,7 +1315,7 @@ vector<std::pair<string,uint32> > getFolderTreeContent
+@@ -1426,7 +1426,7 @@ vector<std::pair<string,uint32> > getFolderTreeContent
  #endif
  
- 	for(int i = 0; i < globbuf.gl_pathc; ++i) {
+ 	for(int i = 0; i < (int)globbuf.gl_pathc; ++i) {
 -#if defined(__APPLE__) || defined(__FreeBSD__)
 +#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
  		struct stat statStruct;

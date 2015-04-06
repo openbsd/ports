@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/28 13:58:49 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/06 12:49:52 stsp Exp $
 @bin bin/megaglest
 @bin bin/megaglest_editor
 @bin bin/megaglest_g3dviewer
@@ -8,11 +8,11 @@ share/applications/megaglest_editor.desktop
 share/applications/megaglest_g3dviewer.desktop
 share/megaglest/editor.ico
 share/megaglest/g3dviewer.ico
+share/megaglest/glest.ini
+share/megaglest/glestkeys.ini
+share/megaglest/servers.ini
 share/pixmaps/
-share/pixmaps/editor.ico
-share/pixmaps/g3dviewer.ico
-share/pixmaps/glest.ico
-share/pixmaps/megaglest.bmp
+share/pixmaps/megaglest.ico
 share/pixmaps/megaglest.png
 share/pixmaps/megaglest.xpm
 @exec %D/bin/update-desktop-database

@@ -1,17 +1,17 @@
-$OpenBSD: patch-source_g3d_viewer_CMakeLists_txt,v 1.1.1.1 2013/01/28 13:58:49 stsp Exp $
+$OpenBSD: patch-source_g3d_viewer_CMakeLists_txt,v 1.2 2015/04/06 12:49:52 stsp Exp $
 Program fails to start ("unable to init GTK") when help2man runs it.
---- source/g3d_viewer/CMakeLists.txt.orig	Wed Jan  9 20:33:02 2013
-+++ source/g3d_viewer/CMakeLists.txt	Wed Jan  9 20:37:31 2013
-@@ -149,7 +149,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
+--- source/g3d_viewer/CMakeLists.txt.orig	Mon Mar  9 00:09:09 2015
++++ source/g3d_viewer/CMakeLists.txt	Mon Apr  6 10:26:10 2015
+@@ -166,7 +166,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
  	ENDIF()
  	TARGET_LINK_LIBRARIES(${TARGET_NAME} ${EXTERNAL_LIBS})
  
 -	IF(EXISTS ${HELP2MAN})
 +	IF(FALSE)
- 		MESSAGE("***-- Found help2man: ${HELP2MAN} about to build manpage in [${EXECUTABLE_OUTPUT_PATH}/${TARGET_NAME_MANPAGE}]")
+ 		MESSAGE("***-- Found help2man: ${HELP2MAN} about to build manpage in [${HELP2MAN_OUT_PATH}${TARGET_NAME_MANPAGE}]")
  
-                 SET(MG_MANPAGE_DESCRIPTION "G3D Model editor for the popular 3D realtime stragegy game")
-@@ -174,7 +174,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
+                 SET(MG_MANPAGE_DESCRIPTION "G3D Model editor for the popular 3D realtime strategy game")
+@@ -191,7 +191,7 @@ IF(BUILD_MEGAGLEST_MODEL_VIEWER)
  		        ${TARGET_NAME} 
  		        DESTINATION ${MEGAGLEST_BIN_INSTALL_PATH})
  

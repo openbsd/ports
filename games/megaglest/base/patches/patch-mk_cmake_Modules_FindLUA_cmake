@@ -1,16 +1,16 @@
-$OpenBSD: patch-mk_cmake_Modules_FindLUA_cmake,v 1.1.1.1 2013/01/28 13:58:49 stsp Exp $
---- mk/cmake/Modules/FindLUA.cmake.orig	Mon Nov 12 05:42:05 2012
-+++ mk/cmake/Modules/FindLUA.cmake	Wed Jan  9 15:50:08 2013
-@@ -24,6 +24,8 @@ FIND_PATH(LUA_INCLUDE_DIR NAMES lua.hpp 
- 				/usr/include/lua5.1
+$OpenBSD: patch-mk_cmake_Modules_FindLUA_cmake,v 1.2 2015/04/06 12:49:52 stsp Exp $
+--- mk/cmake/Modules/FindLUA.cmake.orig	Mon Mar  9 00:09:10 2015
++++ mk/cmake/Modules/FindLUA.cmake	Mon Apr  6 10:37:53 2015
+@@ -48,6 +48,8 @@ FIND_PATH(LUA_INCLUDE_DIR NAMES lua.hpp 
+ 		PATHS 	${LUA_FIND_INCLUDE_PATHS}
  		IF(FreeBSD)
                  	SET(PATHS "/usr/local/include/lua51")
 +		IF(OpenBSD)
 +                	SET(PATHS "${TRUEPREFIX}/include/lua-${MODLUA_VERSION}")
                  ENDIF()
- 				$ENV{LUA_HOME}
+ 		$ENV{LUA_HOME}
  		)
-@@ -33,6 +35,8 @@ IF (LUA_STATIC AND NOT LUA_LIBRARIES)
+@@ -57,6 +59,8 @@ IF (LUA_STATIC AND NOT LUA_LIBRARIES)
  		PATHS 
                  IF(FreeBSD)
                         SET(PATHS "/usr/local/lib/lua51")
@@ -19,7 +19,7 @@ $OpenBSD: patch-mk_cmake_Modules_FindLUA_cmake,v 1.1.1.1 2013/01/28 13:58:49 sts
                  ENDIF()
                  $ENV{LUA_HOME})
  
-@@ -41,6 +45,8 @@ ELSE()
+@@ -65,6 +69,8 @@ ELSE()
  		PATHS 
                  IF(FreeBSD)
                         SET(PATHS "/usr/local/lib/lua51")
