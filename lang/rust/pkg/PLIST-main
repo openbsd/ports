@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/04/06 16:01:08 landry Exp $
+bin/rustc
+@bin bin/rustdoc
+lib/rustlib/
+lib/rustlib/${TRIPLE_ARCH}/
+lib/rustlib/${TRIPLE_ARCH}/bin/
+@bin lib/rustlib/${TRIPLE_ARCH}/bin/rustc
+lib/rustlib/${TRIPLE_ARCH}/lib/
+lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libarena-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libarena-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libcollections-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler-rt.a
+lib/rustlib/${TRIPLE_ARCH}/lib/libcore-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libflate-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libflate-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liblog-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liblog-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libmorestack.a
+lib/rustlib/${TRIPLE_ARCH}/lib/librand-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librbml-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librbml-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_bitflags-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libterm-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libterm-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libunicode-4e7c5e5c.rlib
+@man man/man1/rustc.1
+@man man/man1/rustdoc.1
+share/doc/rust/
+share/doc/rust/COPYRIGHT
+share/doc/rust/LICENSE-APACHE
+share/doc/rust/LICENSE-MIT
+share/doc/rust/README.md

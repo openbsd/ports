@@ -1,0 +1,6 @@
+#!/bin/sh
+ARGS="x $@"
+if [ "${ARGS}" = "${ARGS#* --sysroot }" ]; then
+  EXTRA="--sysroot ${TRUEPREFIX}"
+fi
+exec ${TRUEPREFIX}/lib/rustlib/x86_64-unknown-openbsd/bin/rustc ${EXTRA} "${@}"

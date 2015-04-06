@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_etc_mklldeps_py,v 1.1.1.1 2015/04/06 16:01:05 landry Exp $
+Configure linking to estdc++ (stdc++ library from devel/gcc, not from base)
+--- src/etc/mklldeps.py.orig	Thu Apr  2 18:29:13 2015
++++ src/etc/mklldeps.py	Fri Apr  3 20:04:01 2015
+@@ -88,12 +88,12 @@ for lib in out.strip().split(' '):
+ out = run([llconfig, '--cxxflags'])
+ if enable_static == '1':
+     assert('stdlib=libc++' not in out)
+-    f.write("#[link(name = \"stdc++\", kind = \"static\")]\n")
++    f.write("#[link(name = \"estdc++\", kind = \"static\")]\n")
+ else:
+     if 'stdlib=libc++' in out:
+         f.write("#[link(name = \"c++\")]\n")
+     else:
+-        f.write("#[link(name = \"stdc++\")]\n")
++        f.write("#[link(name = \"estdc++\")]\n")
+ 
+ # Attach everything to an extern block
+ f.write("extern {}\n")
