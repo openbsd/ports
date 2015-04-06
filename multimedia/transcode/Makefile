@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/11/19 09:36:53 brad Exp $
+# $OpenBSD: Makefile,v 1.59 2015/04/06 16:03:00 schwarze Exp $
 
 SHARED_ONLY=	Yes
 
@@ -67,7 +67,6 @@ BUILD_DEPENDS+=	devel/libtool \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
 SEPARATE_BUILD=	Yes
-USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
