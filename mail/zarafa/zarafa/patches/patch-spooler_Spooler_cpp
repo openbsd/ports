@@ -1,6 +1,6 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.17 2015/04/05 22:25:08 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.18 2015/04/06 09:01:45 robert Exp $
 --- spooler/Spooler.cpp.orig	Thu Mar  5 16:54:04 2015
-+++ spooler/Spooler.cpp	Fri Apr  3 23:11:10 2015
++++ spooler/Spooler.cpp	Mon Apr  6 11:00:48 2015
 @@ -1145,8 +1145,8 @@ int main(int argc, char *argv[]) {
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
@@ -20,12 +20,13 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.17 2015/04/05 22:25:08 robert Exp $
  		char buffer[256];
  		confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
  		if (strncmp(buffer, "linuxthreads", strlen("linuxthreads")) == 0) {
-@@ -1267,6 +1268,9 @@ int main(int argc, char *argv[]) {
+@@ -1267,6 +1268,10 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: your system is running with outdated linuxthreads.");
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}
 +#elif defined(__OpenBSD__)
-+		bNPTL = true;
++		bNPTL = false;
++		g_lpConfig->AddSetting("max_threads","1");
 +#endif
  	}
  
