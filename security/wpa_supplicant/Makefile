@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/02 17:32:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/06 16:03:45 schwarze Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	security/pcsc-lite
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 NO_TEST=	Yes
 MAKE_FLAGS=	V=1
 MAKE_ENV=	CFLAGS="${CFLAGS}" CC="${CC}"
