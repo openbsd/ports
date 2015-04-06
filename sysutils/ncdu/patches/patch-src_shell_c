@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_shell_c,v 1.1 2015/04/06 19:25:50 bcallah Exp $
+
+Sent upstream.
+
+--- src/shell.c.orig	Mon Apr  6 15:07:22 2015
++++ src/shell.c	Mon Apr  6 15:07:51 2015
+@@ -32,6 +32,7 @@
+ #include <ncurses.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <sys/wait.h>
+ 
+ void shell_draw() {
+   char *full_path;
