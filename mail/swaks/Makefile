@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/21 10:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/06 12:48:51 schwarze Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
 DISTNAME=	swaks-20130209.0
-REVISION =	0
+REVISION =	1
 CATEGORIES=	mail
 
 HOMEPAGE=	http://jetmore.org/john/code/swaks/

@@ -1,2 +1,7 @@
-swaks is the Swiss Army Knife for SMTP transaction testing.  It provides
+Swaks is the Swiss Army Knife for SMTP transaction testing.  It provides
 command line SMTP testing capabilities, including TLS and AUTH.
+
+Some features are only available after installing additional packages:
+
+p5-Authen-NTLM  is required for  NTLM/SPA/MSN authentication
+p5-Digest-SHA1  is required for  CRAM-SHA1 authentication
