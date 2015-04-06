@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2015/04/06 16:26:22 jca Exp $
 
 COMMENT=		USENET software package designed for small sites
 
-DISTNAME=		leafnode-1.11.8
+DISTNAME=		leafnode-1.11.10
 CATEGORIES=		news
-REVISION=		1
 
 HOMEPAGE=		http://leafnode.sourceforge.net/
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c pcre
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=leafnode/}
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 
 LIB_DEPENDS=		devel/pcre
 
