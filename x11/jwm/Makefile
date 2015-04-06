@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/06 11:13:31 jca Exp $
 
 COMMENT=		Joe's Window Manager
 
 DISTNAME=		jwm-2.1.0
+REVISION=		0
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.joewing.net/programs/jwm/
-
-MAINTAINER=		Edd Barrett <edd@openbsd.org>
+HOMEPAGE=		http://www.joewing.net/projects/jwm/index.shtml
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xext Xft Xinerama Xmu Xpm Xrender c fribidi \
-			jpeg m png z
+WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c fribidi jpeg
+WANTLIB += png
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=jwm/} \
-			${HOMEPAGE}/releases/
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES=		http://www.joewing.net/projects/jwm/releases/
+EXTRACT_SUFX=		.tar.xz
 
 LIB_DEPENDS=		devel/fribidi>=0.19.2 \
 			graphics/png \
