@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/12/06 21:26:42 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2015/04/06 13:11:14 kirby Exp $
+@pkgpath www/linkchecker
 bin/linkchecker
-@comment bin/linkchecker-gui
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/_LinkChecker_configdata.py
 lib/python${MODPY_VERSION}/site-packages/_LinkChecker_configdata.pyc
@@ -267,16 +267,26 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/url.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/url.pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/winutil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/winutil.pyc
-@man man/man1/linkchecker-gui.1
 @man man/man1/linkchecker.1
 @man man/man5/linkcheckerrc.5
-share/applications/linkchecker-gui.desktop
-share/applications/linkchecker.desktop
+@comment share/applications/
 share/examples/linkchecker/
 share/examples/linkchecker/check_blacklist.sh
 share/examples/linkchecker/check_for_x_errors.sh
 share/examples/linkchecker/check_urls.sh
 share/examples/linkchecker/linkchecker-completion
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/128x128/
+@comment share/icons/hicolor/128x128/apps/
+@comment share/icons/hicolor/16x16/
+@comment share/icons/hicolor/16x16/apps/
+@comment share/icons/hicolor/32x32/
+@comment share/icons/hicolor/32x32/apps/
+@comment share/icons/hicolor/48x48/
+@comment share/icons/hicolor/48x48/apps/
+@comment share/icons/hicolor/64x64/
+@comment share/icons/hicolor/64x64/apps/
 share/linkchecker/
 share/linkchecker/examples/
 share/linkchecker/examples/check.js
@@ -291,5 +301,3 @@ share/linkchecker/linkcheckerrc
 share/locale/de/LC_MESSAGES/linkchecker.mo
 share/locale/es/LC_MESSAGES/linkchecker.mo
 share/locale/fr/LC_MESSAGES/linkchecker.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

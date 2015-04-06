@@ -11,4 +11,5 @@ o proxy support
 o username/password authorization for HTTP and FTP
 o robots.txt exclusion protocol support
 o i18n support
-o a command line interface
+
+This package contains a command line interface.
