@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/05 21:30:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/06 16:35:23 jasper Exp $
 
 COMMENT=		OpenBSD ports distfile version scanner
 
 GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
-GH_TAGNAME=		2.0.1
+GH_TAGNAME=		2.0.2
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=		misc
@@ -25,7 +25,6 @@ RUN_DEPENDS=		converters/p5-JSON \
 			devel/p5-Try-Tiny \
 			mail/p5-MIME-Lite \
 			sysutils/p5-Proc-Queue \
-			textproc/p5-XML-XPath \
 			www/p5-HTML-Parser \
 			www/p5-URI \
 			www/p5-XML-Feed \
