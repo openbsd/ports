@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/04/06 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2015/04/06 09:19:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,7 @@ WANTLIB += graphite2 gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 MODULES=		devel/gettext \
 			x11/gnome
 
-# sync with devel/spidermonkey
+# devel/spidermonkey headers requires gcc>=4.4
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c c++
