@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/06 21:04:30 ajacoutot Exp $
 
 COMMENT=		35 standard PostScript fonts with Adobe name aliases
 
 DISTNAME=		ghostscript-fonts-std-8.11
 PKGNAME=		${DISTNAME:S,-std-,-,}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11 print fonts
 
 HOMEPAGE=		http://www.cs.wisc.edu/~ghost/doc/cvs/Fonts.htm
@@ -18,7 +18,7 @@ WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
-FONTDIR=	${PREFIX}/share/ghostscript/fonts
+FONTDIR=	${PREFIX}/share/fonts/ghostscript
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
