@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_seafile-applet_cpp,v 1.1 2014/10/30 15:53:30 kirby Exp $
+$OpenBSD: patch-src_seafile-applet_cpp,v 1.2 2015/04/06 20:59:47 kirby Exp $
 
 Disable checking for updates.
 
---- src/seafile-applet.cpp.orig	Thu Oct 30 18:13:27 2014
-+++ src/seafile-applet.cpp	Thu Oct 30 18:14:00 2014
-@@ -174,10 +174,6 @@ void SeafileApplet::onDaemonStarted()
+--- src/seafile-applet.cpp.orig	Fri Mar 27 10:28:30 2015
++++ src/seafile-applet.cpp	Sun Apr  5 21:15:29 2015
+@@ -318,10 +318,6 @@ void SeafileApplet::onDaemonStarted()
      configurator_->installCustomUrlHandler();
  #endif
  
@@ -13,5 +13,5 @@ Disable checking for updates.
 -    }
 -
      OpenLocalHelper::instance()->checkPendingOpenLocalRequest();
- }
  
+     QTimer::singleShot(kIntervalForUpdateRepoProperty,

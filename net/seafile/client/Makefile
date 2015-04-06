@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/05 14:55:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/06 20:59:47 kirby Exp $
 
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
-REVISION =		0
 
-WANTLIB += QtDBus QtGui QtNetwork QtXml c ccnet crypto gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 jansson m pthread seafile searpc
-WANTLIB += sqlite3 ssl stdc++
+WANTLIB += QtDBus QtGui QtNetwork c ccnet crypto event_core
+WANTLIB += event_extra gio-2.0 glib-2.0 gobject-2.0 jansson
+WANTLIB += m pthread seafile searpc sqlite3 ssl stdc++ uuid
 
 MODULES =		devel/cmake devel/gettext x11/qt4
 LIB_DEPENDS =		net/seafile/seafile

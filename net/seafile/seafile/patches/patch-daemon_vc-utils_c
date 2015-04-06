@@ -1,7 +1,7 @@
-$OpenBSD: patch-daemon_vc-utils_c,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
---- daemon/vc-utils.c.orig	Tue Aug  5 09:28:35 2014
-+++ daemon/vc-utils.c	Wed Aug  6 19:51:51 2014
-@@ -287,7 +287,7 @@ compare_file_content (const char *path, SeafStat *st, 
+$OpenBSD: patch-daemon_vc-utils_c,v 1.2 2015/04/06 20:59:47 kirby Exp $
+--- daemon/vc-utils.c.orig	Fri Mar 27 10:23:47 2015
++++ daemon/vc-utils.c	Sun Apr  5 21:14:26 2015
+@@ -376,7 +376,7 @@ compare_file_content (const char *path, SeafStat *st, 
      return hashcmp (sha1, ce_sha1);
  }
  
