@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/06 09:19:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/06 09:34:48 ajacoutot Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -31,7 +31,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 MODULES =		lang/python \
 			converters/libiconv
 
-# devel/spidermonkey headers requires gcc>=4.4
+# sync with devel/spidermonkey
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c c++
