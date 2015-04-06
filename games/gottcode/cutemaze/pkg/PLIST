@@ -1,6 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/30 11:24:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/06 14:59:52 landry Exp $
 @bin bin/cutemaze
 share/applications/cutemaze.desktop
+share/cutemaze/
+share/cutemaze/translations/
+share/cutemaze/translations/cutemaze_de.qm
+share/cutemaze/translations/cutemaze_en.qm
+share/cutemaze/translations/cutemaze_es.qm
+share/cutemaze/translations/cutemaze_fr.qm
+share/cutemaze/translations/cutemaze_he.qm
+share/cutemaze/translations/cutemaze_pl.qm
+share/cutemaze/translations/cutemaze_pt_BR.qm
+share/cutemaze/translations/cutemaze_ro.qm
+share/cutemaze/translations/cutemaze_ru.qm
+share/cutemaze/translations/cutemaze_tr.qm
 share/icons/hicolor/48x48/apps/cutemaze.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
