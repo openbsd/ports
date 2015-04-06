@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/26 18:52:03 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/04/06 13:40:50 landry Exp $
 @bin bin/focuswriter
+@man man/man1/focuswriter.1
+share/appdata/
+share/appdata/focuswriter.appdata.xml
 share/applications/focuswriter.desktop
 share/focuswriter/
 share/focuswriter/icons/
 share/focuswriter/icons/hicolor/
 share/focuswriter/icons/hicolor/16/
+share/focuswriter/icons/hicolor/16/accessories-dictionary.png
 share/focuswriter/icons/hicolor/16/application-exit.png
 share/focuswriter/icons/hicolor/16/applications-graphics.png
 share/focuswriter/icons/hicolor/16/arrow-down.png
@@ -49,12 +53,14 @@ share/focuswriter/icons/hicolor/16/help-about.png
 share/focuswriter/icons/hicolor/16/preferences-desktop-locale.png
 share/focuswriter/icons/hicolor/16/preferences-system.png
 share/focuswriter/icons/hicolor/16/tools-check-spelling.png
+share/focuswriter/icons/hicolor/16/view-calendar.png
 share/focuswriter/icons/hicolor/16/view-choose.png
 share/focuswriter/icons/hicolor/16/view-fullscreen.png
 share/focuswriter/icons/hicolor/16/view-refresh.png
 share/focuswriter/icons/hicolor/16/window-close.png
 share/focuswriter/icons/hicolor/16/window-new.png
 share/focuswriter/icons/hicolor/22/
+share/focuswriter/icons/hicolor/22/accessories-dictionary.png
 share/focuswriter/icons/hicolor/22/application-exit.png
 share/focuswriter/icons/hicolor/22/applications-graphics.png
 share/focuswriter/icons/hicolor/22/arrow-down.png
@@ -95,6 +101,7 @@ share/focuswriter/icons/hicolor/22/help-about.png
 share/focuswriter/icons/hicolor/22/preferences-desktop-locale.png
 share/focuswriter/icons/hicolor/22/preferences-system.png
 share/focuswriter/icons/hicolor/22/tools-check-spelling.png
+share/focuswriter/icons/hicolor/22/view-calendar.png
 share/focuswriter/icons/hicolor/22/view-choose.png
 share/focuswriter/icons/hicolor/22/view-fullscreen.png
 share/focuswriter/icons/hicolor/22/view-refresh.png
@@ -105,22 +112,34 @@ share/focuswriter/sounds/
 share/focuswriter/sounds/keyany.wav
 share/focuswriter/sounds/keyenter.wav
 share/focuswriter/symbols510.dat
+share/focuswriter/themes/
+share/focuswriter/themes/gentleblues.theme
+share/focuswriter/themes/images/
+share/focuswriter/themes/images/spacedreams.jpg
+share/focuswriter/themes/images/writingdesk.jpg
+share/focuswriter/themes/oldschool.theme
+share/focuswriter/themes/spacedreams.theme
+share/focuswriter/themes/writingdesk.theme
 share/focuswriter/translations/
+share/focuswriter/translations/focuswriter_ar.qm
 share/focuswriter/translations/focuswriter_ca.qm
 share/focuswriter/translations/focuswriter_cs.qm
 share/focuswriter/translations/focuswriter_da.qm
 share/focuswriter/translations/focuswriter_de.qm
 share/focuswriter/translations/focuswriter_el.qm
 share/focuswriter/translations/focuswriter_en.qm
+share/focuswriter/translations/focuswriter_en_GB.qm
 share/focuswriter/translations/focuswriter_es.qm
 share/focuswriter/translations/focuswriter_es_MX.qm
 share/focuswriter/translations/focuswriter_fi.qm
 share/focuswriter/translations/focuswriter_fr.qm
 share/focuswriter/translations/focuswriter_he.qm
 share/focuswriter/translations/focuswriter_hu.qm
+share/focuswriter/translations/focuswriter_hy.qm
 share/focuswriter/translations/focuswriter_id.qm
 share/focuswriter/translations/focuswriter_it.qm
 share/focuswriter/translations/focuswriter_ja.qm
+share/focuswriter/translations/focuswriter_ko.qm
 share/focuswriter/translations/focuswriter_nl.qm
 share/focuswriter/translations/focuswriter_pl.qm
 share/focuswriter/translations/focuswriter_pt.qm
@@ -128,10 +147,13 @@ share/focuswriter/translations/focuswriter_pt_BR.qm
 share/focuswriter/translations/focuswriter_ro.qm
 share/focuswriter/translations/focuswriter_ru.qm
 share/focuswriter/translations/focuswriter_sk.qm
+share/focuswriter/translations/focuswriter_sr.qm
 share/focuswriter/translations/focuswriter_sv.qm
 share/focuswriter/translations/focuswriter_tr.qm
 share/focuswriter/translations/focuswriter_uk.qm
+share/focuswriter/translations/focuswriter_vi.qm
 share/focuswriter/translations/focuswriter_zh_CN.qm
+share/focuswriter/translations/focuswriter_zh_TW.qm
 share/icons/hicolor/128x128/apps/focuswriter.png
 share/icons/hicolor/16x16/apps/focuswriter.png
 share/icons/hicolor/22x22/apps/focuswriter.png
