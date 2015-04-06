@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/06 10:06:09 ajacoutot Exp $
+@bin bin/gnome-builder
+lib/girepository-1.0/Ide-1.0.typelib
+lib/libide-1.0.a
+lib/libide-1.0.la
+@lib lib/libide-1.0.so.${LIBide-1.0_VERSION}
+lib/pkgconfig/libide-1.0.pc
+share/appdata/org.gnome.Builder.appdata.xml
+share/applications/org.gnome.Builder.desktop
+share/dbus-1/services/org.gnome.Builder.service
+share/doc/gnome-builder/
+share/doc/gnome-builder/COPYING
+share/doc/gnome-builder/NEWS
+share/doc/gnome-builder/README
+share/gir-1.0/Ide-1.0.gir
+share/glib-2.0/schemas/org.gnome.builder.editor.gschema.xml
+share/glib-2.0/schemas/org.gnome.builder.editor.language.gschema.xml
+share/glib-2.0/schemas/org.gnome.builder.experimental.gschema.xml
+share/gtksourceview-3.0/styles/builder-dark.xml
+share/gtksourceview-3.0/styles/builder.xml
+share/icons/hicolor/16x16/apps/builder.png
+share/icons/hicolor/24x24/apps/builder.png
+share/icons/hicolor/256x256/apps/builder.png
+share/icons/hicolor/32x32/apps/builder.png
+share/icons/hicolor/48x48/apps/builder.png
+share/icons/hicolor/512x512/apps/builder.png
+share/icons/hicolor/scalable/actions/builder-split-tab-symbolic.svg
+share/icons/hicolor/scalable/apps/builder-documentation-symbolic.svg
+share/icons/hicolor/scalable/apps/builder-editor-symbolic.svg
+share/icons/hicolor/scalable/autocomplete/
+share/icons/hicolor/scalable/autocomplete/lang-class-symbolic.svg
+share/icons/hicolor/scalable/autocomplete/lang-enum-symbolic.svg
+share/icons/hicolor/scalable/autocomplete/lang-enum-value-symbolic.svg
+share/icons/hicolor/scalable/autocomplete/lang-function-symbolic.svg
+share/icons/hicolor/scalable/autocomplete/lang-method-symbolic.svg
+share/icons/hicolor/scalable/autocomplete/lang-struct-symbolic.svg
+share/icons/hicolor/scalable/autocomplete/struct-field-symbolic.svg
+share/locale/bs/LC_MESSAGES/gnome-builder.mo
+share/locale/cs/LC_MESSAGES/gnome-builder.mo
+share/locale/de/LC_MESSAGES/gnome-builder.mo
+share/locale/es/LC_MESSAGES/gnome-builder.mo
+share/locale/fr/LC_MESSAGES/gnome-builder.mo
+share/locale/gl/LC_MESSAGES/gnome-builder.mo
+share/locale/he/LC_MESSAGES/gnome-builder.mo
+share/locale/id/LC_MESSAGES/gnome-builder.mo
+share/locale/ko/LC_MESSAGES/gnome-builder.mo
+share/locale/pl/LC_MESSAGES/gnome-builder.mo
+share/locale/sl/LC_MESSAGES/gnome-builder.mo
+share/locale/sr/LC_MESSAGES/gnome-builder.mo
+share/locale/tr/LC_MESSAGES/gnome-builder.mo
+share/locale/uk/LC_MESSAGES/gnome-builder.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-builder.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
