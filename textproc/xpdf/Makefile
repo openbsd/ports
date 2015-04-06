@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2014/06/08 18:56:33 kili Exp $
+# $OpenBSD: Makefile,v 1.85 2015/04/06 21:05:07 ajacoutot Exp $
 
 COMMENT=	PDF viewer for X11
 
 DISTNAME=	xpdf-3.04
 CATEGORIES=	textproc x11
+REVISION=	0
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		http://mirror.ctan.org/support/xpdf/

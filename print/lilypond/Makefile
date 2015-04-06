@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/01/18 21:27:21 kili Exp $
+# $OpenBSD: Makefile,v 1.43 2015/04/06 21:05:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,7 @@ DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
+REVISION-main=		0
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
 EXTRACT_ONLY=		${DISTNAME}.tar.gz
@@ -42,7 +43,7 @@ CONFIGURE_ARGS+=	--disable-debugging \
 			--disable-documentation \
 			--disable-optimising \
 			--disable-pipe \
-			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts \
+			--with-ncsb-dir=${LOCALBASE}/share/fonts/ghostscript \
 			--with-python-include=${MODPY_INCDIR}
 USE_GMAKE=		Yes
 MAKE_FILE=		GNUmakefile

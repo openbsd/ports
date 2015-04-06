@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/06 21:05:07 ajacoutot Exp $
 
 COMMENT=	WMF handling and conversion library
 
 DISTNAME=	libwmf-0.2.8.4
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	wmf		8.0	\
 		wmf-0.2		8.0	\
 		wmflite		7.1	\
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-freetype=${X11BASE} \
 		--with-jpeg=${LOCALBASE} \
 		--with-zlib=/usr \
-		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts/ \
+		--with-gsfontdir=${LOCALBASE}/share/fonts/ghostscript \
 		--disable-gd
 CONFIGURE_ENV=	PKG_CONFIG="/usr/bin/false"
 
