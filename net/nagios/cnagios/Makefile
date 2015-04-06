@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/11 23:50:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/06 13:12:03 rpe Exp $
 
 COMMENT =		console interface for nagios
 
 DISTNAME =		cnagios-0.30
+REVISION =		0
 CATEGORIES =		net
-
-HOMEPAGE =		http://noc.hep.wisc.edu/cnagios.txt
 
 WANTLIB =		c perl util curses m
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		ftp://noc.hep.wisc.edu/src/cnagios/ \
-			ftp://noc.hep.wisc.edu/src/cnagios/old-versions/
 
 NO_TEST =		Yes
 
