@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2015/04/06 01:36:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.87 2015/04/06 15:43:05 landry Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -48,7 +48,6 @@
      SUBDIR += mkvtoolnix,no_x11
      SUBDIR += mlbviewer
      SUBDIR += mlt
-     SUBDIR += moovida
      SUBDIR += motion
      SUBDIR += mpgtx
      SUBDIR += mpv
