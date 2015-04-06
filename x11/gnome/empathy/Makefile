@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.168 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2015/04/06 11:48:07 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.12.8
-REVISION=		2
+REVISION=		3
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -57,6 +57,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			net/telepathy/telepathy-logger \
 			net/telepathy/telepathy-mission-control \
 			textproc/enchant \
+			www/webkit,gtk3 \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
 
