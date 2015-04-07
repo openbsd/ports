@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tkgate_verilog_out_c,v 1.1.1.1 2015/04/07 14:00:07 kirby Exp $
+--- src/tkgate/verilog_out.c.orig	Wed Nov  9 13:55:14 2011
++++ src/tkgate/verilog_out.c	Wed Nov  9 13:57:51 2011
+@@ -892,7 +892,7 @@ static int check_file(const char *name)
+   system(cmd);
+ #endif
+ 
+-  sprintf(cmd,"%s/libexec/tkgate",TkGate.homedir);
++  sprintf(cmd,"%${PREFIX}/bin/tkgate",TkGate.homedir);
+   if (!(pid = fork())) {
+     execl(cmd,cmd,"-Vq",name,0);
+     exit(1);

@@ -1,0 +1,6 @@
+TkGate is a graphical editor and event-driven simulator for digital
+circuits with a tcl/tk-based interface.  Supported circuit elements
+include basic gates (AND, OR, etc.), tri-state gates, adders,
+multipliers, registers, memories and mos transistors.  Hierarchical
+design is also supported with support for user defined modules.  Save
+files are based on the Verilog netlist format.
