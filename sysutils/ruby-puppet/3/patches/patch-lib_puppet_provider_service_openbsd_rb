@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.25 2015/03/15 10:12:47 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.26 2015/04/07 17:05:57 sebastia Exp $
 
 * From 93f6754f9c886922d39e938251d4885c1ebb5a29 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -15,9 +15,11 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.25 2015/03/15 10:12:4
   Date: Fri, 23 Jan 2015 08:30:06 +0100
   Subject: [PATCH] (PUP-3939) Sync with upstream OpenBSD rcctl(1) changes
 
---- lib/puppet/provider/service/openbsd.rb.orig	Mon Nov  3 23:23:13 2014
-+++ lib/puppet/provider/service/openbsd.rb	Wed Jan 28 10:34:13 2015
-@@ -2,341 +2,98 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+* enhance initial service provisioning with regard to service_flags
+
+--- lib/puppet/provider/service/openbsd.rb.orig	Tue Jan 27 00:46:47 2015
++++ lib/puppet/provider/service/openbsd.rb	Tue Apr  7 11:46:42 2015
+@@ -2,341 +2,108 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    desc "Provider for OpenBSD's rc.d daemon control scripts"
  
@@ -33,6 +35,15 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.25 2015/03/15 10:12:4
 -  def self.defpath
 -    ["/etc/rc.d"]
 +  def startcmd
++    if @resource[:flags] and flags != @resource[:flags]
++      # Unfortunately, the startcmd gets called, before
++      # the service is enabled (in case its supposed to be enabled).
++      # Setting flags via rcctl is only possible, when the service is enabled
++      # In case the service is not to be enabled, it will be automatically
++      # disabled later in the same puppet run.
++      self.enable
++      self.flags = @resource[:flags]
++    end
 +    [command(:rcctl), '-f', :start, @resource[:name]]
    end
  
@@ -162,6 +173,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.25 2015/03/15 10:12:4
 +      execpipe([command(:rcctl), :getall]) do |process|
 +        process.each_line do |line|
 +          match = /^(.*?)(?:_flags)?=(.*)$/.match(line)
++          next if match[1].match(/.*?_timeout$|.*?_user$/)
 +          attributes_hash = {
 +            :name      => match[1],
 +            :flags     => match[2],
@@ -309,7 +321,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.25 2015/03/15 10:12:4
 -      else
 -        :true
 -      end
-+    output = execute([command(:rcctl), "get", @resource[:name], "status"],
++    output = Puppet::Util::Execution.execute([command(:rcctl), "get", @resource[:name], "status"],
 +                     :failonfail => false, :combine => false, :squelch => false)
 +    if output.exitstatus == 0
 +      self.debug("Is enabled")

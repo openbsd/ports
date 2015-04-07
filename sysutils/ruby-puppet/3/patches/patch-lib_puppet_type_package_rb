@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_puppet_type_package_rb,v 1.1 2015/04/07 17:05:57 sebastia Exp $
+
+add new feature flavorable, and switch handling the flavor 
+as a property instead of a parameter
+
+--- lib/puppet/type/package.rb.orig	Tue Apr  7 11:51:08 2015
++++ lib/puppet/type/package.rb	Tue Apr  7 11:51:13 2015
+@@ -56,6 +56,7 @@ module Puppet
+       provider-specific.",
+       :methods => [:package_settings_insync?, :package_settings, :package_settings=]
+     feature :virtual_packages, "The provider accepts virtual package names for install and uninstall."
++    feature :flavorable, "The provider accepts package flavors."
+ 
+     ensurable do
+       desc <<-EOT
+@@ -371,7 +372,7 @@ module Puppet
+       newvalues(:true, :false)
+     end
+ 
+-    newparam(:flavor) do
++    newproperty(:flavor, :required_features => :flavorable) do
+       desc "OpenBSD supports 'flavors', which are further specifications for
+         which type of package you want."
+     end

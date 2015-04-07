@@ -1,13 +1,94 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.27 2014/11/06 20:28:16 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.28 2015/04/07 17:05:57 sebastia Exp $
 
 From a85e6635d608a280a1766d21da8d5d114b04034e Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Wed, 29 Oct 2014 16:23:39 +0100
 Subject: [PATCH] (PUP-3604) Rework handling of :ensure with a version
 
---- lib/puppet/provider/package/openbsd.rb.orig	Mon Nov  3 23:23:13 2014
-+++ lib/puppet/provider/package/openbsd.rb	Thu Nov  6 21:27:12 2014
-@@ -149,18 +149,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+Handle the flavor as a property, not as a parameter.
+
+--- lib/puppet/provider/package/openbsd.rb.orig	Tue Jan 27 00:46:47 2015
++++ lib/puppet/provider/package/openbsd.rb	Tue Apr  7 11:46:59 2015
+@@ -20,48 +20,49 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+   has_feature :install_options
+   has_feature :uninstall_options
+   has_feature :upgradeable
++  has_feature :flavorable
+ 
++  mk_resource_methods
++
+   def self.instances
+-    packages = []
++    # our regex for matching pkg_info output
++    regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
++    fields = [:name, :ensure, :flavor ]
+ 
+     begin
+-      execpipe(listcmd) do |process|
+-        # our regex for matching pkg_info output
+-        regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
+-        fields = [:name, :ensure, :flavor ]
+-        hash = {}
+-
+-        # now turn each returned line into a package object
+-        process.each_line { |line|
+-          if match = regex.match(line.split[0])
+-            fields.zip(match.captures) { |field,value|
+-              hash[field] = value
+-            }
+-
+-            hash[:provider] = self.name
+-
+-            packages << new(hash)
+-            hash = {}
+-          else
+-            unless line =~ /Updating the pkgdb/
+-              # Print a warning on lines we can't match, but move
+-              # on, since it should be non-fatal
+-              warning("Failed to match line #{line}")
+-            end
++      packages = pkginfo('-a')
++      packages.split("\n").collect do |package|
++        if match = regex.match(package.split[0])
++	  new( :name => match.captures[0],
++               :ensure => match.captures[1],
++               :flavor => match.captures[2],
++          )
++        else
++          unless line =~ /Updating the pkgdb/
++            # Print a warning on lines we can't match, but move
++            # on, since it should be non-fatal
++            warning("Failed to match line #{line}")
+           end
+-        }
++        end
+       end
+-
+-      return packages
+     rescue Puppet::ExecutionFailure
+       return nil
+     end
+   end
+ 
+-  def self.listcmd
+-    [command(:pkginfo), "-a"]
++  def self.prefetch(resources)
++    packages = instances
++    resources.keys.each do |name|
++      if provider = packages.find{ |pkg| pkg.name == name }
++        resources[name].provider = provider
++      end
++    end
+   end
+ 
++  def flavor=(value)
++    install
++  end
++
+   def latest
+     parse_pkgconf
+ 
+@@ -149,31 +150,46 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
  
      if @resource[:source][-1,1] == ::File::SEPARATOR
        e_vars = { 'PKG_PATH' => @resource[:source] }
@@ -27,7 +108,15 @@ Subject: [PATCH] (PUP-3604) Rework handling of :ensure with a version
      else
        e_vars = {}
        full_name = @resource[:source]
-@@ -174,6 +163,31 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+     end
+ 
++    cmd << '-r'
+     cmd << install_options
+     cmd << full_name
+ 
+     if latest
+-      cmd.unshift('-rz')
++      cmd.unshift('-z')
      end
  
      Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact }
