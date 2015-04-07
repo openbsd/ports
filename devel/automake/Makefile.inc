@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2015/04/07 09:25:48 jasper Exp $
 
 COMMENT ?=	GNU Standards-compliant Makefile generator
 HOMEPAGE ?=	https://www.gnu.org/software/automake/
@@ -14,3 +14,4 @@ PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
 PERMIT_DISTFILES_FTP ?=		Yes
 
+PORTROACH =	limit:^${VERSION}
