@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/07 05:09:29 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/07 15:49:25 jca Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
@@ -30,6 +30,7 @@ RUN_DEPENDS =		devel/py-gevent \
 # The other failed tests are related to this bug:
 # https://github.com/surfly/gevent/issues/446
 TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-mock \
 			devel/py-nose \
 			devel/git,-main
 
