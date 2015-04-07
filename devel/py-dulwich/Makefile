@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/07 05:09:29 czarkoff Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION =	0.10.0
+MODPY_EGG_VERSION =	0.10.1a
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
