@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_dat_des_branches_dis_des,v 1.1 2015/04/07 10:10:28 stsp Exp $
+--- source/dat/des/branches/dis.des.orig	Mon Apr  6 16:05:20 2015
++++ source/dat/des/branches/dis.des	Mon Apr  6 16:05:29 2015
+@@ -209,8 +209,7 @@ KMONS:   E = lich
+ KMONS:   F = executioner
+ KMONS:   ! = iron devil / skeletal warrior / hell knight / place:Zot:1 skeleton w:15
+ KMONS:   ? = patrolling iron imp
+-: dgn.delayed_decay(_G, '%', 'human corpse / human skeleton, \
+-:                             human corpse / human skeleton')
++: dgn.delayed_decay(_G, '%', 'human corpse / human skeleton, human corpse / human skeleton')
+ : else
+ KMONS:   01 = ghost moth
+ KMONS:   23 = golden dragon

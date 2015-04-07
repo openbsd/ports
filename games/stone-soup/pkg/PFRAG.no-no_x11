@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2013/01/12 16:21:43 stsp Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2015/04/07 10:10:28 stsp Exp $
 share/applications/stone-soup.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/feat.png
@@ -11,6 +11,8 @@ share/crawl/dat/tiles/player.png
 share/crawl/dat/tiles/stone_soup_icon-32x32.png
 share/crawl/dat/tiles/stone_soup_icon-512x512.png
 share/crawl/dat/tiles/stone_soup_icon-win32.png
+share/crawl/dat/tiles/title_baconkid_gastronok.png
+share/crawl/dat/tiles/title_baconkid_mnoleg.png
 share/crawl/dat/tiles/title_denzi_dragon.png
 share/crawl/dat/tiles/title_denzi_evil_mage.png
 share/crawl/dat/tiles/title_denzi_invasion.png
@@ -19,7 +21,10 @@ share/crawl/dat/tiles/title_denzi_summoner.png
 share/crawl/dat/tiles/title_denzi_undead_warrior.png
 share/crawl/dat/tiles/title_firemage.png
 share/crawl/dat/tiles/title_omndra_zot_demon.png
+share/crawl/dat/tiles/title_peileppe_bloax_eye.png
 share/crawl/dat/tiles/title_pooryurik_knight.png
+share/crawl/dat/tiles/title_psiweapon_kiku.png
+share/crawl/dat/tiles/title_psiweapon_roxanne.png
 share/crawl/dat/tiles/title_shadyamish_octm.png
 share/crawl/dat/tiles/title_white_noise_entering_the_dungeon.png
 share/crawl/dat/tiles/title_white_noise_grabbing_the_orb.png
