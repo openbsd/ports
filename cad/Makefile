@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/03/21 20:01:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/07 14:02:01 kirby Exp $
 
      SUBDIR =
      SUBDIR += fritzing
@@ -15,6 +15,7 @@
      SUBDIR += pcb
      SUBDIR += qcad
      SUBDIR += qucs
+     SUBDIR += tkgate
      SUBDIR += xcircuit
      SUBDIR += xnecview
      SUBDIR += xtrkcad
