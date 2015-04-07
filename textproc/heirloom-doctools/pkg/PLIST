@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/02/03 19:22:52 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/04/07 09:49:28 bentley Exp $
 heirloom-doctools/
 heirloom-doctools/bin/
 @bin heirloom-doctools/bin/addbib
 @bin heirloom-doctools/bin/checkeq
 @bin heirloom-doctools/bin/checknr
 @bin heirloom-doctools/bin/col
-@bin heirloom-doctools/bin/daps
 @bin heirloom-doctools/bin/dpost
 @bin heirloom-doctools/bin/eqn
 @bin heirloom-doctools/bin/grap
@@ -13,7 +12,7 @@ heirloom-doctools/bin/indxbib
 @bin heirloom-doctools/bin/lookbib
 @bin heirloom-doctools/bin/neqn
 @bin heirloom-doctools/bin/nroff
-@bin heirloom-doctools/bin/otfdump
+@bin heirloom-doctools/bin/otf_info
 @bin heirloom-doctools/bin/pic
 @bin heirloom-doctools/bin/picpack
 @bin heirloom-doctools/bin/ptx
@@ -37,7 +36,7 @@ heirloom-doctools/man/man1/
 @man heirloom-doctools/man/man1/lookbib.1
 @man heirloom-doctools/man/man1/neqn.1
 @man heirloom-doctools/man/man1/nroff.1
-@man heirloom-doctools/man/man1/otfdump.1
+@man heirloom-doctools/man/man1/otf_info.1
 @man heirloom-doctools/man/man1/pic.1
 @man heirloom-doctools/man/man1/picpack.1
 @man heirloom-doctools/man/man1/ptx.1
@@ -72,103 +71,6 @@ libexec/heirloom-doctools/vgrindefs
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/heirloom-doctools/
 share/heirloom-doctools/font/
-share/heirloom-doctools/font/devaps/
-share/heirloom-doctools/font/devaps/B
-share/heirloom-doctools/font/devaps/B.add
-share/heirloom-doctools/font/devaps/B.out
-share/heirloom-doctools/font/devaps/BI
-share/heirloom-doctools/font/devaps/BI.out
-share/heirloom-doctools/font/devaps/C
-share/heirloom-doctools/font/devaps/C.out
-share/heirloom-doctools/font/devaps/CE
-share/heirloom-doctools/font/devaps/CE.out
-share/heirloom-doctools/font/devaps/CI
-share/heirloom-doctools/font/devaps/CI.out
-share/heirloom-doctools/font/devaps/CT
-share/heirloom-doctools/font/devaps/CT.add
-share/heirloom-doctools/font/devaps/CT.out
-share/heirloom-doctools/font/devaps/CW
-share/heirloom-doctools/font/devaps/CW.add
-share/heirloom-doctools/font/devaps/CW.out
-share/heirloom-doctools/font/devaps/CX
-share/heirloom-doctools/font/devaps/CX.add
-share/heirloom-doctools/font/devaps/CX.out
-share/heirloom-doctools/font/devaps/DESC
-share/heirloom-doctools/font/devaps/DESC.out
-share/heirloom-doctools/font/devaps/G
-share/heirloom-doctools/font/devaps/G.out
-share/heirloom-doctools/font/devaps/GB
-share/heirloom-doctools/font/devaps/GB.add
-share/heirloom-doctools/font/devaps/GB.out
-share/heirloom-doctools/font/devaps/GI
-share/heirloom-doctools/font/devaps/GI.add
-share/heirloom-doctools/font/devaps/GI.out
-share/heirloom-doctools/font/devaps/GR
-share/heirloom-doctools/font/devaps/GR.add
-share/heirloom-doctools/font/devaps/GR.out
-share/heirloom-doctools/font/devaps/GS
-share/heirloom-doctools/font/devaps/GS.add
-share/heirloom-doctools/font/devaps/GS.out
-share/heirloom-doctools/font/devaps/H
-share/heirloom-doctools/font/devaps/H.out
-share/heirloom-doctools/font/devaps/HB
-share/heirloom-doctools/font/devaps/HB.out
-share/heirloom-doctools/font/devaps/HI
-share/heirloom-doctools/font/devaps/HI.add
-share/heirloom-doctools/font/devaps/HI.out
-share/heirloom-doctools/font/devaps/HK
-share/heirloom-doctools/font/devaps/HK.add
-share/heirloom-doctools/font/devaps/HK.out
-share/heirloom-doctools/font/devaps/HL
-share/heirloom-doctools/font/devaps/HL.out
-share/heirloom-doctools/font/devaps/HM.out
-share/heirloom-doctools/font/devaps/HX
-share/heirloom-doctools/font/devaps/HX.add
-share/heirloom-doctools/font/devaps/HX.out
-share/heirloom-doctools/font/devaps/I
-share/heirloom-doctools/font/devaps/I.add
-share/heirloom-doctools/font/devaps/I.out
-share/heirloom-doctools/font/devaps/MB
-share/heirloom-doctools/font/devaps/MB.out
-share/heirloom-doctools/font/devaps/MI
-share/heirloom-doctools/font/devaps/MI.out
-share/heirloom-doctools/font/devaps/MR
-share/heirloom-doctools/font/devaps/MR.out
-share/heirloom-doctools/font/devaps/MX
-share/heirloom-doctools/font/devaps/MX.out
-share/heirloom-doctools/font/devaps/PA
-share/heirloom-doctools/font/devaps/PA.out
-share/heirloom-doctools/font/devaps/PB
-share/heirloom-doctools/font/devaps/PB.out
-share/heirloom-doctools/font/devaps/PI
-share/heirloom-doctools/font/devaps/PI.out
-share/heirloom-doctools/font/devaps/PO
-share/heirloom-doctools/font/devaps/PO.add
-share/heirloom-doctools/font/devaps/PO.out
-share/heirloom-doctools/font/devaps/PX
-share/heirloom-doctools/font/devaps/PX.add
-share/heirloom-doctools/font/devaps/PX.out
-share/heirloom-doctools/font/devaps/R
-share/heirloom-doctools/font/devaps/R.add
-share/heirloom-doctools/font/devaps/R.out
-share/heirloom-doctools/font/devaps/S
-share/heirloom-doctools/font/devaps/S.add
-share/heirloom-doctools/font/devaps/S.out
-share/heirloom-doctools/font/devaps/S1
-share/heirloom-doctools/font/devaps/S1.add
-share/heirloom-doctools/font/devaps/S1.out
-share/heirloom-doctools/font/devaps/SC
-share/heirloom-doctools/font/devaps/SC.add
-share/heirloom-doctools/font/devaps/SC.out
-share/heirloom-doctools/font/devaps/SM
-share/heirloom-doctools/font/devaps/SM.add
-share/heirloom-doctools/font/devaps/SM.out
-share/heirloom-doctools/font/devaps/TB
-share/heirloom-doctools/font/devaps/TB.out
-share/heirloom-doctools/font/devaps/TX
-share/heirloom-doctools/font/devaps/TX.add
-share/heirloom-doctools/font/devaps/TX.out
-share/heirloom-doctools/font/devaps/version
 share/heirloom-doctools/font/devpost/
 share/heirloom-doctools/font/devpost/AB
 share/heirloom-doctools/font/devpost/AB.name
@@ -487,5 +389,6 @@ share/heirloom-doctools/tmac/srefs
 share/heirloom-doctools/tmac/taa
 share/heirloom-doctools/tmac/tbl.me
 share/heirloom-doctools/tmac/thesis.me
+share/heirloom-doctools/tmac/tmac.gchar
 share/heirloom-doctools/tmac/v
 share/heirloom-doctools/tmac/vgrind
