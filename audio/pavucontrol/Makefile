@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/25 06:18:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/08 23:04:53 sthen Exp $
 
 COMMENT =	Pulseaudio volume mixer
 
@@ -11,7 +11,8 @@ REVISION =	0
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		textproc/intltool
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
