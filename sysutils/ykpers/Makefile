@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2015/03/24 20:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/08 08:17:42 sthen Exp $
 
 COMMENT=	library and tools to program YubiKeys
 BROKEN-hppa=	ykpers-json.c:42: error: redefinition of typedef 'json_bool'
 
-DISTNAME=	ykpers-1.16.4
+DISTNAME=	ykpers-1.17.1
 
-SHARED_LIBS +=	ykpers-1                  0.4 # 17.0
+SHARED_LIBS +=	ykpers-1                  0.5 # 18.0
 
 CATEGORIES=	sysutils security
 
