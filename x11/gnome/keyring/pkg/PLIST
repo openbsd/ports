@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2014/05/14 07:04:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2015/04/08 13:00:25 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
@@ -71,6 +71,7 @@ share/locale/is/LC_MESSAGES/gnome-keyring.mo
 share/locale/it/LC_MESSAGES/gnome-keyring.mo
 share/locale/ja/LC_MESSAGES/gnome-keyring.mo
 share/locale/ka/LC_MESSAGES/gnome-keyring.mo
+share/locale/kk/LC_MESSAGES/gnome-keyring.mo
 share/locale/km/LC_MESSAGES/gnome-keyring.mo
 share/locale/kn/LC_MESSAGES/gnome-keyring.mo
 share/locale/ko/LC_MESSAGES/gnome-keyring.mo

@@ -1,36 +1,39 @@
-# $OpenBSD: Makefile,v 1.110 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2015/04/08 13:00:25 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	password agent for the GNOME project
+COMMENT=		password agent for the GNOME project
 
-GNOME_PROJECT=	gnome-keyring
-GNOME_VERSION=	3.14.0
-REVISION=	0
+GNOME_PROJECT=		gnome-keyring
+GNOME_VERSION=		3.16.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
-WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
+WANTLIB += freetype gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
-MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
-MODGNOME_TOOLS=	docbook
+MODGNOME_TOOLS=		docbook
 
-LIB_DEPENDS=	x11/gnome/gcr
+# C11 typedef redefinition
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
 
-CONFIGURE_ARGS=	--disable-pam
+LIB_DEPENDS=		x11/gnome/gcr
 
-FAKE_FLAGS=	configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
+CONFIGURE_ARGS=		--disable-pam
+
+FAKE_FLAGS=		configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-keyring
