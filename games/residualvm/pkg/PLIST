@@ -1,18 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/11 15:07:13 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/08 14:38:11 kirby Exp $
 @bin bin/residualvm
 @man man/man6/residualvm.6
+share/applications/residualvm.desktop
 share/doc/residualvm/
 share/doc/residualvm/AUTHORS
 share/doc/residualvm/COPYING
 share/doc/residualvm/COPYING.BSD
 share/doc/residualvm/COPYING.FREEFONT
+share/doc/residualvm/COPYING.ISC
 share/doc/residualvm/COPYING.LGPL
+share/doc/residualvm/COPYING.LUA
+share/doc/residualvm/COPYING.MIT
+share/doc/residualvm/COPYING.TINYGL
 share/doc/residualvm/COPYRIGHT
 share/doc/residualvm/KNOWN_BUGS
 share/doc/residualvm/NEWS
-share/doc/residualvm/README
+share/doc/residualvm/README.md
+share/icons/hicolor/scalable/apps/residualvm.svg
 share/pixmaps/
 share/pixmaps/residualvm.xpm
 share/residualvm/
 share/residualvm/modern.zip
 share/residualvm/residualvm-grim-patch.lab
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

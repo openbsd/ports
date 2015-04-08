@@ -1,26 +1,26 @@
-$OpenBSD: patch-configure,v 1.2 2014/12/01 07:47:35 jsg Exp $
+$OpenBSD: patch-configure,v 1.3 2015/04/08 14:38:11 kirby Exp $
 Freetype's headers conflict with -pedantic.
---- configure.orig	Sun Feb 10 07:38:56 2013
-+++ configure	Sat Nov 29 20:05:29 2014
-@@ -1601,7 +1601,7 @@ fi;
+--- configure.orig	Wed Dec 31 14:06:05 2014
++++ configure	Sun Jan 11 23:07:37 2015
+@@ -1818,7 +1818,7 @@ echo $_use_cxx11
  # However, some platforms use GNU extensions in system header files, so
  # for these we must not use -pedantic.
  case $_host_os in
--android | gamecube | psp | wii | webos)
-+android | gamecube | psp | wii | webos | openbsd*)
+-android | gamecube | psp | tizen | wii | webos)
++android | gamecube | psp | tizen | wii | webos | openbsd* )
  	;;
  *)
  	# ICC does not support pedantic, while GCC and clang do.
-@@ -1775,7 +1775,7 @@ cc_check_clean tmp_find_type_with_size.cpp
+@@ -2002,7 +2002,7 @@ cc_check_clean tmp_find_type_with_size.cpp
  # for the smaller sizes.
  echo_n "Alignment required... "
  case $_host_cpu in
--	i[3-6]86 | x86_64 | ppc*)
+-	i[3-6]86 | amd64 | x86_64 | ppc*)
 +	i[3-6]86 | amd64 | x86_64 | powerpc* | ppc*)
  		# Unaligned access should work
  		_need_memalign=no
  		;;
-@@ -1816,11 +1816,11 @@ case $_host_cpu in
+@@ -2045,7 +2045,7 @@ case $_host_cpu in
  		echo "MIPS"
  		DEFINES="$DEFINES -DMIPS_TARGET"
  		;;
@@ -29,8 +29,3 @@ Freetype's headers conflict with -pedantic.
  		echo "PowerPC"
  		DEFINES="$DEFINES -DPPC_TARGET"
  		;;
--	x86_64)
-+	amd64 | x86_64)
- 		echo "x86_64"
- 		;;
- 	*)
