@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.61 2014/12/24 16:35:12 jca Exp $
+# $OpenBSD: Makefile,v 1.62 2015/04/08 14:12:44 sthen Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
-# NTP has a 'pN' in its version number, which we don't want
-# to confuse with the ports system's 'pN' convention, so we
-# convert it to 'pl' for local use.
+# NTP sometimes has a 'pN' in its version number, which we don't want
+# to confuse with the ports system's 'pN' convention, so convert it to
+# 'pl' for local use.
 
-VERSION=	4.2.8
+VERSION=	4.2.8p2
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
-REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://archive.ntp.org/ntp4/ntp-4.2/
 

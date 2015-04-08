@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/12/24 16:35:12 jca Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/04/08 14:12:44 sthen Exp $
 @conflict ntp-doc-*
 @pkgpath net/ntp,-main
 @man man/man5/ntp.conf.5
@@ -10,6 +10,7 @@
 @man man/man8/ntpq.8
 @man man/man8/ntptrace.8
 @man man/man8/sntp.8
+@man man/man8/update-leap.8
 @bin sbin/ntp-keygen
 sbin/ntp-wait
 @bin sbin/ntpd
@@ -18,6 +19,7 @@ sbin/ntp-wait
 @bin sbin/ntpq
 sbin/ntptrace
 @bin sbin/sntp
+sbin/update-leap
 share/doc/ntp/
 share/doc/ntp/html/
 share/doc/ntp/html/access.html
@@ -269,6 +271,7 @@ share/doc/ntp/ntpsnmpd.html
 share/doc/ntp/ntpsweep.html
 share/doc/ntp/ntptrace.html
 share/doc/ntp/sntp.html
+share/doc/ntp/update-leap.html
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ntp/
 share/examples/ntp/README
