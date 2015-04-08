@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/06 16:01:05 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/08 13:02:57 sthen Exp $
 
 # snapshots are only available for amd64, for now
-ONLY_FOR_ARCHS-main =	amd64
+ONLY_FOR_ARCHS =	amd64
 PKG_ARCH-doc =		*
 
 COMMENT-main =		compiler for Rust Language
