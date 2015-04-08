@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2015/04/08 21:42:14 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -13,7 +13,7 @@ EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -62,6 +62,7 @@ CONFIGURE_ENV =	ac_cv_path_FLEX=${LOCALBASE}/bin/gflex \
 		AR_FLAGS="cru" \
 		ac_cv_path_RUBY=${RUBY}
 CONFIGURE_ARGS= --disable-static \
+		--disable-webkit2 \
 		--enable-spellcheck \
 		--with-gtk=${GTK_API_VERSION}
 
@@ -105,10 +106,6 @@ BUILD_DEPENDS =	devel/bison \
 
 RUN_DEPENDS =	geo/geoclue2
 
-# WebKitPluginProcess links against gtk2 for flash plugin, even with gtk3 ?
-LIB_DEPENDS +=	x11/gtk+2,-main
-WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0
-
 FLAVORS = gtk3
 FLAVOR ?=
 
@@ -121,17 +118,16 @@ CFLAGS+=-march=i686
 
 FULLPKGNAME =	webkit-gtk3-${V}
 LIB_DEPENDS +=	x11/gtk+3,-main
-WANTLIB +=	cairo-gobject gdk-3 gtk-3
-WANTLIB +=	atk-bridge-2.0 atspi
+WANTLIB +=	cairo-gobject gdk-3 gtk-3 epoxy atk-bridge-2.0 atspi
 
 WEBKIT_API_VERSION =	3.0
 GTK_API_VERSION =	3.0
-SHARED_LIBS += webkit2gtk-${WEBKIT_API_VERSION}		1.0 # 35.8
 .else
-# only works with gtk+3
-CONFIGURE_ARGS+=	--disable-webkit2
+
 WEBKIT_API_VERSION =	1.0
 GTK_API_VERSION =	2.0
+LIB_DEPENDS +=	x11/gtk+2,-main
+WANLIB +=	gdk-x11-2.0 gtk-x11-2.0
 .endif
 
 pre-configure:
@@ -145,7 +141,6 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Programs/.libs/GtkLauncher ${PREFIX}/bin/GtkLauncher
 .if ${FLAVOR:Mgtk3}
 	mv ${PREFIX}/bin/GtkLauncher ${PREFIX}/bin/GtkLauncher-3
-	${INSTALL_PROGRAM} ${WRKSRC}/Programs/.libs/MiniBrowser ${PREFIX}/bin/MiniBrowser
 .endif
 
 .include <bsd.port.mk>
