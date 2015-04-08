@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/27 06:35:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/08 18:21:48 pascal Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
-DISTNAME =		osh-20140410
+V =			20150115
+DISTNAME =		osh-$V
+
+SUBST_VARS +=		V
 
 CATEGORIES =		shells
 
@@ -17,7 +20,10 @@ WANTLIB =		c
 
 MASTER_SITES =		${HOMEPAGE}/src/
 
-MAKE_FLAGS =		SYSCONFDIR="${SYSCONFDIR}" PREFIX="${TRUEPREFIX}"
+MAKE_FLAGS =		SYSCONFDIR="${SYSCONFDIR}" PREFIX="${TRUEPREFIX}" \
+			BINGRP="-g ${BINGRP}" MANGRP="-g ${MANGRP}" \
+			BINMODE="-m ${BINMODE}" MANMODE="-m ${MANMODE}" \
+			MANDIR="${PREFIX}/man/man1"
 
 NO_TEST =		Yes
 
