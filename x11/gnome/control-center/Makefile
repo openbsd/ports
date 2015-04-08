@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/08 06:46:56 ajacoutot Exp $
 
 # XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -11,33 +11,31 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.16.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst
-WANTLIB += accountsservice atk-1.0 atk-bridge-2.0 atspi avahi-common
-WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
-WANTLIB += colord-gtk colordprivate com_err crack crypto cups
-WANTLIB += dbus-1 dbus-glib-1 enchant epoxy execinfo expat ffi
-WANTLIB += fontconfig freetype gbm gcrypt gdbm gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-desktop-3 goa-1.0
-WANTLIB += goa-backend-1.0 gobject-2.0 gpg-error graphite2 grilo-0.2
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst accountsservice
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-common c cairo cairo-gobject
+WANTLIB += canberra canberra-gtk3 colord colord-gtk colordprivate
+WANTLIB += com_err crack crypto cups dbus-1 dbus-glib-1 epoxy
+WANTLIB += execinfo expat ffi fontconfig freetype gcrypt gdbm
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp
+WANTLIB += gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
+WANTLIB += gpg-error graphite2 grilo-0.2 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gtop-2.0 harfbuzz harfbuzz-icu hogweed ibus-1.0 icudata
-WANTLIB += icui18n icuuc javascriptcoregtk-3.0 jpeg json-c json-glib-1.0
-WANTLIB += kvm lcms2 ltdl lzma m nettle ogg orc-0.4 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
-WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib pwquality
-WANTLIB += rest-0.7 secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 stdc++ tasn1 telepathy-glib upower-glib vorbis
-WANTLIB += vorbisenc vorbisfile webkitgtk-3.0 webp xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += gtop-2.0 harfbuzz hogweed ibus-1.0 icudata icuuc javascriptcoregtk-4.0
+WANTLIB += json-c json-glib-1.0 kvm lcms2 ltdl lzma m nettle ogg
+WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png polkit-gobject-1 pthread pthread-stubs
+WANTLIB += pulse pulse-mainloop-glib pwquality rest-0.7 secret-1
+WANTLIB += smbclient sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
+WANTLIB += tasn1 telepathy-glib upower-glib vorbis vorbisenc vorbisfile
+WANTLIB += webkit2gtk-4.0 xcb xcb-render xcb-shm xml2 z
 WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		devel/gettext \
