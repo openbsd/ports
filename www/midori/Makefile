@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2015/03/31 06:45:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2015/04/08 21:41:30 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
@@ -7,7 +7,7 @@ XFCE_VERSION =	0.5.9
 XFCE_GOODIE =	midori
 DISTNAME =	midori_0.5.9_all_
 WRKDIST =	${WRKDIR}/${PKGNAME}
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -30,11 +30,11 @@ FLAVOR ?=
 CONFIGURE_ARGS = -DUSE_ZEITGEIST:Bool=No
 
 .if ${FLAVOR:Mgtk3}
-CONFIGURE_ARGS += -DUSE_GTK3:Bool=Yes -DHALF_BRO_INCOM_WEBKIT2:Bool=Yes
-LIB_DEPENDS =	www/webkit,gtk3 \
+CONFIGURE_ARGS += -DUSE_GTK3:Bool=Yes
+LIB_DEPENDS =	www/webkit,gtk3>=2.4.8p3v1 \
 		x11/gnome/gcr
-WANTLIB += cairo-gobject gck-1 gcr-ui-3 gcr-base-3 gdk-3 gtk-3 javascriptcoregtk-3.0
-WANTLIB += p11-kit webkit2gtk-3.0
+WANTLIB += cairo-gobject gck-1 gcr-ui-3 gcr-base-3 gdk-3 gtk-3 javascriptcoregtk-1.0
+WANTLIB += p11-kit webkitgtk-1.0
 
 .else
 LIB_DEPENDS =	www/webkit>=1.8.1v0
